@@ -4,9 +4,10 @@ binary = "G:\\decomp\\VtMB\\Vampire\\dlls\\vampire.dll"
 sha1 = "3fe64bc0d9d7eca64976adc668617ca2814e5e4a"
 
 [compiler]
-cl = "C:\\VC6\\VC98\\Bin\\CL.EXE"
+cl = "G:\\decomp\\tools\\vc6\\VC98\\BIN\\CL.EXE"
+vcvars = "G:\\decomp\\tools\\vc6\\vcvars32.bat"
 prelude = "vampire.h"
-flags = []
+flags = ["/O2"]
 timeout_s = 30
 
 [agents]
