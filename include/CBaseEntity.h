@@ -8,4 +8,5 @@ class CBaseEntity
 public:
 	void vfunc168();
 	void vfunc194();
+	void vfunc195();
 };
