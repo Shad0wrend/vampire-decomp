@@ -14,3 +14,14 @@ void C::foo()
 	(*(Fn *)((char *)*(void **)this + 0xf8))(this);
 }
 // END FUNCTION
+
+// FUNCTION: 0x102885f0 size=0x8
+struct NPCStub;
+struct NPCStubVtbl { void (__fastcall *f[256])(NPCStub *); };
+struct NPCStub { NPCStubVtbl *vt; };
+
+void __fastcall sub_102885f0(NPCStub *o)
+{
+	o->vt->f[221](o);
+}
+// END FUNCTION
