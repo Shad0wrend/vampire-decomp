@@ -20,3 +20,15 @@ void CBaseEntity::vfunc194()
 	(*(Fn *)((char *)*(void **)this + 0x36c))(this);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b4be0 size=0x8
+#include "CBaseEntity.h"
+
+typedef void (__fastcall *VFunc)(CBaseEntity *);
+
+// TARGET: CBaseEntity::vfunc195
+void CBaseEntity::vfunc195()
+{
+	(*(VFunc **)this)[221](this);
+}
+// END FUNCTION
