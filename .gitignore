@@ -1,0 +1,5 @@
+cache/
+project.db
+project.db-wal
+project.db-shm
+.pcdecomp.lock

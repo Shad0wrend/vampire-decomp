@@ -1,0 +1,14 @@
+[game]
+name = "Vampire: The Masquerade - Bloodlines"
+binary = "G:\\decomp\\VtMB\\Vampire\\dlls\\vampire.dll"
+sha1 = "3fe64bc0d9d7eca64976adc668617ca2814e5e4a"
+
+[compiler]
+cl = "C:\\VC6\\VC98\\Bin\\CL.EXE"
+prelude = "vampire.h"
+flags = []
+timeout_s = 30
+
+[agents]
+claim_expiry_min = 30
+max_attempts_per_claim = 20
