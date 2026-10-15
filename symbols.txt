@@ -505,6 +505,7 @@
 0x100130b1 func   _npc_VAndreiBlood npc_VAndreiBlood
 0x1001312e func   _logic_lineto logic_lineto
 0x10013575 func   _light_spot light_spot
+0x100135d4 func   ?sub_102a96f0@@YIXPAUTroikaStub@@@Z sub_102a96f0
 0x1001363d func   _infodecal infodecal
 0x1001364c func   _keyframe_track keyframe_track
 0x100136f1 func   _item_w_ithaca_m_37 item_w_ithaca_m_37
