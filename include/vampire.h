@@ -2,3 +2,4 @@
 #pragma once
 
 #include "CAI_BaseNPC.h"
+#include "CSceneEntity.h"
