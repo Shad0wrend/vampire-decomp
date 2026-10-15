@@ -7,4 +7,5 @@ class CBaseEntity
 {
 public:
 	void vfunc168();
+	void vfunc194();
 };
