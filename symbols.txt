@@ -170,6 +170,7 @@
 0x100078a6 func   _vgui_screen vgui_screen
 0x10007900 func   ?sub_102885d0@@YIXPAX@Z sub_102885d0
 0x100079a5 func   _item_w_colt_anaconda item_w_colt_anaconda
+0x10007a77 func   ?vfunc103@CSceneEntity@@UAEXXZ CSceneEntity::vfunc103
 0x10007a86 func   _item_w_glock_17c item_w_glock_17c
 0x10007b71 func   _func_brush func_brush
 0x10007be9 func   _func_areaportalwindow func_areaportalwindow
