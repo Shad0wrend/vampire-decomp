@@ -1,4 +1,5 @@
 0x10001082 func   _trigger_brush trigger_brush
+0x1000114a func   ?vfunc194@CBaseEntity@@QAEXXZ CBaseEntity::vfunc194
 0x10001285 func   _npc_VVentrue npc_VVentrue
 0x10001398 func   _ai_sound ai_sound
 0x10001456 func   _logic_pythoncheck logic_pythoncheck
