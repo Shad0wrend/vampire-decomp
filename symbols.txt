@@ -228,6 +228,7 @@
 0x10009778 func   _mover_keyframe mover_keyframe
 0x100097b9 func   _trigger_werewolf_zone trigger_werewolf_zone
 0x100097c3 func   _hud_image hud_image
+0x10009890 func   ?vfunc567@CAI_BaseNPC@@UAEHH@Z CAI_BaseNPC::vfunc567
 0x100098e0 func   _point_hurt point_hurt
 0x100099d0 func   _item_g_pisha_fetish item_g_pisha_fetish
 0x10009a61 func   _hud_timer hud_timer
