@@ -98,6 +98,7 @@
 0x10003da0 func   _item_g_keyring item_g_keyring
 0x10003f94 func   _logic_case_toggle logic_case_toggle
 0x100040a7 func   ?sub_10078c30@@YIXPAH@Z sub_10078c30
+0x10004232 func   ?sub_10158da0@@YIXPAPAX@Z sub_10158da0
 0x10004269 func   _params_particle params_particle
 0x10004313 func   ?sub_10078b70@@YIXPAH@Z sub_10078b70
 0x1000432c func   ?sub_1010f4e0@@YIXPAPAX@Z sub_1010f4e0
