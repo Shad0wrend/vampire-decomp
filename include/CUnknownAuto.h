@@ -9,6 +9,7 @@
 #include "CUnknown1006ccc0.h"
 #include "CUnknown10074050.h"
 #include "CUnknown10076670.h"
+#include "CUnknown100766f0.h"
 #include "CUnknown100ddf40.h"
 #include "CUnknown100f97b0.h"
 #include "CUnknown101578b0.h"
