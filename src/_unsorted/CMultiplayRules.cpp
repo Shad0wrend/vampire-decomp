@@ -24,6 +24,19 @@ extern float g_104454c0;
 float CMultiplayRules::vfunc30(int a) { return g_104454c0; }
 // END FUNCTION
 
+// FUNCTION: 0x10141a90 size=0xb
+struct Unk1070b228 {
+	char pad[0xc];
+	float m_value;
+};
+extern Unk1070b228 *g_1070b228;
+
+float CMultiplayRules::vfunc38(int a)
+{
+	return g_1070b228->m_value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141af0 size=0x8
 #include "CMultiplayRules.h"
 

@@ -691,6 +691,7 @@
 0x10010a14 func   _prop_keypad prop_keypad
 0x10010a9b func   ?sub_101bd940@@YIXPAD@Z sub_101bd940
 0x10010aaf func   _tectonic tectonic
+0x10010ae6 func   ?vfunc38@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc38
 0x10010b09 func   ?vfunc116@CBaseEntity@@UAEHXZ CBaseEntity::vfunc116
 0x10010b95 func   ?sub_101c2b10@CUnknown101c2b10@@QAEXD@Z CUnknown101c2b10::sub_101c2b10
 0x10010c26 func   _multisource multisource
