@@ -466,6 +466,7 @@
 0x1000b05f func   ?sub_101f95d0@@YAXH@Z sub_101f95d0
 0x1000b069 func   ?sub_101852f0@@YIXPAH@Z sub_101852f0
 0x1000b0aa func   _npc_VBrujah npc_VBrujah
+0x1000b0ff func   ?vfunc585@CCineNPC@@UAE_NXZ CCineNPC::vfunc585
 0x1000b140 func   _camera_animated camera_animated
 0x1000b24e func   ?sub_10136470@@YIXPADHH@Z sub_10136470
 0x1000b398 func   ?sub_102dcd10@CUnknown102dcd10@@QAEXH@Z CUnknown102dcd10::sub_102dcd10
