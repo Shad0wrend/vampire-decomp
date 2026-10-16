@@ -337,6 +337,7 @@
 0x1000c9a0 func   _info_node_kick_at info_node_kick_at
 0x1000ca8b func   _npc_VNosferatu npc_VNosferatu
 0x1000cab3 func   _events_player events_player
+0x1000cb53 func   ?vfunc119@CAI_Hint@@UAEXXZ CAI_Hint::vfunc119
 0x1000cbd0 func   _env_firesource env_firesource
 0x1000ccde func   _item_w_werewolf_attacks item_w_werewolf_attacks
 0x1000ce00 func   _item_container item_container
