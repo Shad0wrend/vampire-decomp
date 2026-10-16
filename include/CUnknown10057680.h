@@ -8,4 +8,5 @@ public:
 	int m_unk4;
 
 	void sub_10057680();
+	CUnknown10057680 *sub_10057660();
 };
