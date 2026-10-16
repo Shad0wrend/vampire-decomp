@@ -7,6 +7,7 @@
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CRagdollPropSpecial.h"
 #include "CUnknown1006ccc0.h"
+#include "CUnknown100732b0.h"
 #include "CUnknown10074050.h"
 #include "CUnknown10076670.h"
 #include "CUnknown100766f0.h"
