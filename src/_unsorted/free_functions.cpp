@@ -663,6 +663,15 @@ void __fastcall sub_100deb10(char *self, int, char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df010 size=0xe
+struct S100df010 { int a, b, c, d; };
+
+bool sub_100df010(S100df010 *p)
+{
+	return p->d == -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb130 size=0x8
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION
