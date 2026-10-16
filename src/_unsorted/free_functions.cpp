@@ -131,6 +131,11 @@ extern char g_1070b264;
 void sub_1011a430() { g_1070b264 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x1012cf30 size=0x8
+void sub_100027ac();
+void __stdcall sub_1012cf30(int) { sub_100027ac(); }
+// END FUNCTION
+
 // FUNCTION: 0x1015ef00 size=0x8
 struct CUnknown1015ef00 { char pad[0x19f5]; char m_Flag; void sub_1015ef00(); };
 void CUnknown1015ef00::sub_1015ef00() { m_Flag = 1; }
