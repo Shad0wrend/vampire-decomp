@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CUnknown100779b0.h"
+#include "CUnknown100b99b0.h"
 
 class CUnknown1018f700
 {
