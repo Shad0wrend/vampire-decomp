@@ -919,6 +919,13 @@ const char *sub_101dbb00(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1850 size=0xc
+unsigned int __stdcall sub_101e1850(unsigned int value)
+{
+	return value & 0x7fffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1870 size=0xc
 unsigned int __stdcall sub_101e1870(unsigned int v)
 {
