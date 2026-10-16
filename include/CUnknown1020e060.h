@@ -8,4 +8,5 @@ public:
 	char m_bFlag;
 
 	void sub_1020e060(int unused);
+	void sub_1020e080(int unused);
 };
