@@ -1126,6 +1126,13 @@ void sub_1023f040(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023f060 size=0xb
+void sub_1023f060(unsigned int *p)
+{
+	*p = ~*p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102457d0 size=0xa
 void CUnknown102457d0::sub_102457d0(int value)
 {
