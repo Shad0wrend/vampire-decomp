@@ -127,6 +127,13 @@ void CUnknown10073920::sub_10073920(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073a30 size=0xd
+void CUnknown10073a30::sub_10073a30(char value)
+{
+	m_bFlag88 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073b60 size=0xd
 void CUnknown10073b60::sub_10073b60(int value)
 {
