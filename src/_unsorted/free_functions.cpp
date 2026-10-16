@@ -1367,6 +1367,13 @@ CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102d0080 size=0xa
+void __fastcall sub_102d0080(int *self, int, int value)
+{
+	self[1] = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d41f0 size=0x8
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION
