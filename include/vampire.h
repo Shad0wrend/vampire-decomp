@@ -43,6 +43,7 @@
 #include "CUnknown100bc580.h"
 #include "CUnknown100bc5c0.h"
 #include "CUnknown100be040.h"
+#include "CUnknown100cd640.h"
 #include "CUnknown100fdce0.h"
 #include "CUnknown1019d490.h"
 #include "CUnknown101a1f70.h"
