@@ -51,6 +51,19 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1003c450(void **p) { ((Fn *)*p)[134](p); }
 // END FUNCTION
 
+// FUNCTION: 0x10050860 size=0xd
+#include "CUnknown10050860.h"
+
+extern char g_1053e044[];
+
+const char *CUnknown10050860::sub_10050860()
+{
+	if (m_pszName)
+		return m_pszName;
+	return g_1053e044;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006ccc0 size=0xd
 CUnknown1006ccc0 *CUnknown1006ccc0::sub_1006ccc0()
 {
