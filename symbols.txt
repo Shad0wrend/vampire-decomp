@@ -683,6 +683,7 @@
 0x1000fbcd func   _move_rope move_rope
 0x1000fc27 func   ?sub_100737b0@CUnknown100737b0@@QAEXH@Z CUnknown100737b0::sub_100737b0
 0x1000fcb8 func   ?sub_101e80a0@@YGHH@Z sub_101e80a0
+0x1000fcea func   ?sub_10260750@@YIXPAD@Z sub_10260750
 0x1000fd03 func   ?sub_101c4790@CUnknown101c4790@@QAEPAU1@H@Z CUnknown101c4790::sub_101c4790
 0x1000fd71 func   ?sub_1042d700@@YIIPAI@Z sub_1042d700
 0x1000febb func   _item_w_occultblade item_w_occultblade

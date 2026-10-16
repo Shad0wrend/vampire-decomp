@@ -1338,6 +1338,13 @@ char __fastcall sub_1025db50(int *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260750 size=0xb
+void __fastcall sub_10260750(char *self)
+{
+	*(int *)(self + 0x5f9c) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260980 size=0xa
 struct CUnknown10260980 { int p; int a; CUnknown10260980* sub_10260980(); };
 // TARGET: CUnknown10260980::sub_10260980
