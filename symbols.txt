@@ -121,6 +121,7 @@
 0x10003503 func   _scripted_target scripted_target
 0x10003512 func   ?sub_10218080@@YIXPADHH@Z sub_10218080
 0x1000352b func   _npc_VTzimisce npc_VTzimisce
+0x10003580 func   ?sub_10058200@CUnknown10058200@@QAEXH@Z CUnknown10058200::sub_10058200
 0x100035d0 func   ?sub_102e2610@CAI_Motor@@QAEHXZ CAI_Motor::sub_102e2610
 0x100035f8 func   _trigger_once trigger_once
 0x10003652 func   ?vfunc191@CRagdollPropSpecial@@UAEXH@Z CRagdollPropSpecial::vfunc191
