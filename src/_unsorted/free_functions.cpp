@@ -4344,6 +4344,38 @@ void CUnknown102dcd10::sub_102dcd10(int unused)
 void __fastcall sub_102dce10(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102dcec0 size=0x67
+struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+
+// TARGET: sub_102dcec0
+void __fastcall sub_102dcec0(Mem4 *self, int, int num)
+{
+	if (self->m_nGrowSize == -1)
+		return;
+	int alloc = self->m_nAllocationCount;
+	int need = alloc + num;
+	if (alloc < need) {
+		do {
+			if (alloc != 0) {
+				if (self->m_nGrowSize != 0)
+					alloc = alloc + self->m_nGrowSize;
+				else
+					alloc = alloc + alloc;
+			} else {
+				alloc = 8;
+			}
+		} while (alloc < need);
+		self->m_nAllocationCount = alloc;
+	}
+	if (self->m_pMemory)
+		self->m_pMemory = g_109f3638(self->m_pMemory, self->m_nAllocationCount << 2);
+	else
+		self->m_pMemory = g_109f3634(self->m_nAllocationCount << 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd450 size=0x9
 bool CUnknown102dd450::sub_102dd450()
 {
