@@ -11,6 +11,7 @@
 #include "CNPC_VSheriffMan.h"
 #include "CNPC_VVampireBoss.h"
 #include "CRagdollPropSpecial.h"
+#include "CSaveRestoreBlockSet.h"
 #include "CUnknown10058220.h"
 #include "CUnknown1006ccc0.h"
 #include "CUnknown1006e890.h"
