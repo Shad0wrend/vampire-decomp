@@ -2542,6 +2542,15 @@ void CUnknown102b5dc0::sub_102b5dc0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c3690 size=0xe
+extern const char *g_105d1068[];
+
+const char *CAI_BaseNPCTroika::sub_102c3690(int task)
+{
+	return g_105d1068[task];
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6590 size=0xc
 int *CUnknown102c6590::sub_102c6590(int index)
 {
