@@ -1478,6 +1478,13 @@ void A::sub_102e2800(int x) { b->sub_1000108c(x); }
 void __fastcall sub_102e8250(float *p) { p[6] = 3.402823466e+38f; }
 // END FUNCTION
 
+// FUNCTION: 0x102e8a80 size=0xa
+void __fastcall sub_102e8a80(int *self, int, int value)
+{
+	self[0xb] = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ecc00 size=0xa
 struct CUnknown102ecc00Outer { char p[0x5d3c]; int a; };
 struct CUnknown102ecc00 { int v; CUnknown102ecc00Outer *o; int sub_102ecc00(); };

@@ -503,6 +503,7 @@
 0x1000ce91 func   ?sub_101318a0@@YGXH@Z sub_101318a0
 0x1000cec8 func   _npc_VCamera npc_VCamera
 0x1000ceff func   _npc_VProneDialog npc_VProneDialog
+0x1000cf1d func   ?sub_102e8a80@@YIXPAHHH@Z sub_102e8a80
 0x1000cffe func   _item_p_research_mg_finance item_p_research_mg_finance
 0x1000d003 func   _npc_VManBat npc_VManBat
 0x1000d035 func   _item_w_mingxiao_melee item_w_mingxiao_melee
