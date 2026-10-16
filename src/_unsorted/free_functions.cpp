@@ -1227,6 +1227,16 @@ void sub_1024b070() { g_105c5338 = 0; }
 void CBaseCombatWeapon::sub_102507b0() { vfunc361(); }
 // END FUNCTION
 
+// FUNCTION: 0x10256200 size=0xb
+unsigned char __fastcall sub_10256200(unsigned char *self)
+{
+	unsigned char v = self[0x778];
+	v >>= 1;
+	v &= 1;
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258870 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
