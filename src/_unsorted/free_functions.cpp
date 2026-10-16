@@ -3021,6 +3021,14 @@ struct CUnknown103eee60 {
 void CUnknown103eee60::sub_103eee60() { slot375(); }
 // END FUNCTION
 
+// FUNCTION: 0x103f04f0 size=0xd
+CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
+{
+	m_unk0 = other.m_unk0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104121d0 size=0xb
 extern int g_109d3080;
 void sub_104121d0()

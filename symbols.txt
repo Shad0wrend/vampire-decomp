@@ -939,6 +939,7 @@
 0x10012e22 func   _info_node_air_hint info_node_air_hint
 0x10012eb3 func   _item_k_hannahs_safe_key item_k_hannahs_safe_key
 0x10012f08 func   _item_g_oh_diary item_g_oh_diary
+0x10012f17 func   ?sub_103f04f0@CUnknown103f04f0@@QAEPAV1@ABV1@@Z CUnknown103f04f0::sub_103f04f0
 0x10012f2b func   _info_node_tzimisce info_node_tzimisce
 0x10012fa3 func   _item_p_occult_heal_rate item_p_occult_heal_rate
 0x10012fdf func   _item_k_hitman_lu_key item_k_hitman_lu_key
