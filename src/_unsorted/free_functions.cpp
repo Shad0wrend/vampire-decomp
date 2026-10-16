@@ -1191,6 +1191,14 @@ void CUnknown101c1b40::sub_101c1b80(int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1ba0 size=0xd
+void CUnknown101c1b60::sub_101c1ba0(int value)
+{
+	value = 3;
+	sub_101c1bc0(value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2a10 size=0xa
 struct CUnknown101c2a10 { char p[0x40]; int a; void sub_101c2a10(int v); };
 // TARGET: CUnknown101c2a10::sub_101c2a10
