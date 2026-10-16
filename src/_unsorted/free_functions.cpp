@@ -332,6 +332,20 @@ struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x101e4a90 size=0x8
+#define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
+#define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
+struct CUnknown101e4a90 {
+	V25(p0) V25(p1) V25(p2) V25(p3) V25(p4) V25(p5) V25(p6) V25(p7) V25(p8)
+	V5(q0) V5(q1) V5(q2)
+	V25(r0)
+	virtual void f0();
+	virtual void slot266();
+	void sub_101e4a90();
+};
+void CUnknown101e4a90::sub_101e4a90() { slot266(); }
+// END FUNCTION
+
 // FUNCTION: 0x101e80a0 size=0x8
 int __stdcall sub_101e80a0(int) { return 10; }
 // END FUNCTION
