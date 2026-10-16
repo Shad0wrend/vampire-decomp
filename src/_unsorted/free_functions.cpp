@@ -2324,6 +2324,13 @@ void CUnknown102ee120::sub_102ee120(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee1c0 size=0xd
+void CUnknown102ee120::sub_102ee1c0(int value)
+{
+	m_unk30->m_unk28 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee4f0 size=0x8
 struct CInner100016b3 { void sub_100016b3(); };
 struct CUnknown102ee4f0 { char pad[0x30]; CInner100016b3 *m_pInner; void sub_102ee4f0(); };
