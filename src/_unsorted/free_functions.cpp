@@ -834,6 +834,15 @@ void sub_100027ac();
 void __stdcall sub_1012cf30(int) { sub_100027ac(); }
 // END FUNCTION
 
+// FUNCTION: 0x1012cf50 size=0xd
+#include "CUnknown1012cf50.h"
+// TARGET: CUnknown1012cf50::sub_1012cf50
+void CUnknown1012cf50::sub_1012cf50(int value)
+{
+	sub_1012d4e0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cf90 size=0x8
 void sub_10003a94();
 void __stdcall sub_1012cf90(int) { sub_10003a94(); }
