@@ -289,6 +289,10 @@ short __fastcall sub_10323a70(char *p)
 void __fastcall sub_10349a00(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10349ea0 size=0x8
+void __fastcall sub_10349ea0(int *p) { p[3] = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10359ba0 size=0x8
 void __fastcall sub_10359ba0(int *p) { p[3] = 0; }
 // END FUNCTION
