@@ -448,6 +448,11 @@ struct CUnknown1027fc40 {
 void CUnknown1027fc40::sub_1027fc40() { slot431(); }
 // END FUNCTION
 
+// FUNCTION: 0x10288540 size=0x9
+struct CUnknown10288540 { int m_p; CUnknown10288540 *sub_10288540(); };
+CUnknown10288540 *CUnknown10288540::sub_10288540() { m_p = 0; return this; }
+// END FUNCTION
+
 // FUNCTION: 0x102885d0 size=0x8
 typedef void (__fastcall *Fn102885d0)(void *);
 

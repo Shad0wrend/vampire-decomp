@@ -423,6 +423,7 @@
 0x1000d3eb func   _scripted_sentence scripted_sentence
 0x1000d418 func   _trigger_discipline_context trigger_discipline_context
 0x1000d445 func   _item_w_avamp_blade item_w_avamp_blade
+0x1000d49f func   ?sub_10288540@CUnknown10288540@@QAEPAU1@XZ CUnknown10288540::sub_10288540
 0x1000d526 func   _ai_changetarget ai_changetarget
 0x1000d599 func   _npc_VGuard1 npc_VGuard1
 0x1000d5bc func   _physics_prop physics_prop
