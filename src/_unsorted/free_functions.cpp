@@ -569,6 +569,12 @@ struct CUnknown10258af0 {
 void CUnknown10258af0::sub_10258af0() { slot407(); }
 // END FUNCTION
 
+// FUNCTION: 0x1025d820 size=0x9
+struct CUnknown1025d820 { int a; CUnknown1025d820* sub_1025d820(); };
+// TARGET: CUnknown1025d820::sub_1025d820
+CUnknown1025d820* CUnknown1025d820::sub_1025d820() { a = -1; return this; }
+// END FUNCTION
+
 // FUNCTION: 0x1027fbf0 size=0x9
 struct CUnknown1027fbf0 { int a; CUnknown1027fbf0* sub_1027fbf0(); };
 // TARGET: CUnknown1027fbf0::sub_1027fbf0

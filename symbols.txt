@@ -230,6 +230,7 @@
 0x1000765d func   _npc_maker npc_maker
 0x100076f8 func   ?sub_101b6a30@@YIXPAH@Z sub_101b6a30
 0x10007824 func   _item_p_occult_dexterity item_p_occult_dexterity
+0x1000785b func   ?sub_1025d820@CUnknown1025d820@@QAEPAU1@XZ CUnknown1025d820::sub_1025d820
 0x10007865 func   _item_g_ring03 item_g_ring03
 0x10007879 func   ?vfunc11@CAI_Motor@@UAEMH@Z CAI_Motor::vfunc11
 0x100078a6 func   _vgui_screen vgui_screen
