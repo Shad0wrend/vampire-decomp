@@ -248,6 +248,7 @@
 0x10006cad func   _npc_VChangBros npc_VChangBros
 0x10006d39 func   _npc_VMalkavian npc_VMalkavian
 0x10006d7f func   _item_p_occult_obfuscate item_p_occult_obfuscate
+0x10006db1 func   ?sub_100f0e70@@YIXPAD@Z sub_100f0e70
 0x10006e5b func   _item_g_pisha_book item_g_pisha_book
 0x10006e8d func   ?sub_10185600@@YIXPAH@Z sub_10185600
 0x10006ed3 func   ?sub_1012f850@@YAMM@Z sub_1012f850
