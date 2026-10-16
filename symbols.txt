@@ -144,6 +144,7 @@
 0x10004ac0 func   _item_g_guy_magazine item_g_guy_magazine
 0x10004bb5 func   _func_particle func_particle
 0x10004c41 func   ?sub_102cc520@CUnknown102cc520@@QAEPAV1@XZ CUnknown102cc520::sub_102cc520
+0x10004f2a func   ?sub_1042da80@CUnknown1042da80@@QAEXH@Z CUnknown1042da80::sub_1042da80
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
 0x100050e2 func   _item_p_research_mg_brawl item_p_research_mg_brawl
 0x1000515f func   ?vfunc5@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc5
