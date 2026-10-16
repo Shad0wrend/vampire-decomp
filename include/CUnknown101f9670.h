@@ -7,4 +7,5 @@ public:
 	int m_unk0;
 
 	CUnknown101f9670 *sub_101f9670();
+	void sub_101f9690();
 };
