@@ -6,4 +6,6 @@ class CNPC_VSabbatLeader
 public:
 	void sub_103a7760(int arg);
 	void sub_1000b8a2(int arg);
+	void sub_103aa480(int arg);
+	void sub_10001b45(int arg);
 };
