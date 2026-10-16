@@ -1823,6 +1823,13 @@ void __fastcall sub_102a96f0(TroikaStub *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9750 size=0xd
+void CUnknown102a9750::sub_102a9750(int value)
+{
+	m_unk3ec = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a99c0 size=0xa
 void CUnknown102a99c0::sub_102a99c0(char value)
 {

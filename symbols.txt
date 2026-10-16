@@ -215,6 +215,7 @@
 0x100058b2 func   ?vfunc75@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc75
 0x10005916 func   ?sub_101c2a10@CUnknown101c2a10@@QAEXH@Z CUnknown101c2a10::sub_101c2a10
 0x10005984 func   _item_k_clinic_maintenance_key item_k_clinic_maintenance_key
+0x100059fc func   ?sub_102a9750@CUnknown102a9750@@QAEXH@Z CUnknown102a9750::sub_102a9750
 0x10005ab0 func   ?sub_10206300@@YIPAHPAHHH@Z sub_10206300
 0x10005b32 func   _dynamic_prop dynamic_prop
 0x10005b96 func   ?sub_100792e0@CUnknown100792c0@@QAEXH@Z CUnknown100792c0::sub_100792e0
