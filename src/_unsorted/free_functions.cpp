@@ -1598,6 +1598,14 @@ unsigned char __fastcall sub_10256200(unsigned char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258500 size=0xc
+extern const char *g_105c6388[];
+const char *sub_10258500(int index)
+{
+	return g_105c6388[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258870 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)

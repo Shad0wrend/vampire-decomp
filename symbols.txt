@@ -368,6 +368,7 @@
 0x10008d14 func   _info_landmark info_landmark
 0x10008d5a func   ?sub_1011a430@@YAXXZ sub_1011a430
 0x10008d82 func   _env_floating_camera env_floating_camera
+0x10008e0e func   ?sub_10258500@@YAPBDH@Z sub_10258500
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point
 0x10008ebd func   ?vfunc274@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc274
