@@ -2916,6 +2916,33 @@ bool CUnknown102dd450::sub_102dd450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd8b0 size=0x65
+struct PatrolPlace { char pad[676]; };
+extern int g_10931bc8;
+extern int g_10931bcc;
+extern char g_10927280[];
+extern PatrolPlace g_109272c8[];
+extern char g_1060d800[];
+extern "C" __declspec(dllimport) void Error(const char* fmt, ...);
+
+// TARGET: sub_102dd8b0
+PatrolPlace* sub_102dd8b0()
+{
+	int i = g_10931bc8;
+	while (i < 0x40) {
+		if (!g_10927280[i]) {
+			g_10931bc8++;
+			g_10931bcc++;
+			g_10927280[i] = 1;
+			return &g_109272c8[i];
+		}
+		i++;
+	}
+	Error(g_1060d800, 0x40);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102deea0 size=0x8
 void __fastcall sub_102deea0(int *p)
 {
