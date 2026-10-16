@@ -81,4 +81,5 @@ public:
 	virtual void vfunc350(); virtual void vfunc351(); virtual void vfunc352(); virtual void vfunc353(); virtual void vfunc354();
 	virtual void vfunc355(); virtual void vfunc356(); virtual void vfunc357(); virtual void vfunc358(); virtual void vfunc359();
 	virtual void vfunc360(); virtual void vfunc361();
+	void sub_102507b0();
 };
