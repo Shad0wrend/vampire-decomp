@@ -1,6 +1,10 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10032a20 size=0x8
+void __fastcall sub_10032a20(int *p) { p[3] = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x10032b00 size=0x8
 void __fastcall sub_10032b00(int *p)
 {

@@ -107,6 +107,7 @@
 0x10004aac func   _player_pickup player_pickup
 0x10004ac0 func   _item_g_guy_magazine item_g_guy_magazine
 0x10004bb5 func   _func_particle func_particle
+0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
 0x100050e2 func   _item_p_research_mg_brawl item_p_research_mg_brawl
 0x1000515f func   ?vfunc5@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc5
 0x10005178 func   _trigger_checkvolume trigger_checkvolume
