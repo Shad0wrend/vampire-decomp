@@ -1263,6 +1263,16 @@ void sub_101e94b0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9880 size=0xd
+CUnknown101e9880* CUnknown101e9880::sub_101e9880()
+{
+	m_unk0 = 0;
+	m_unk4 = 0;
+	m_unk8 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eaa40 size=0xa
 extern int g_1073a38c;
 
