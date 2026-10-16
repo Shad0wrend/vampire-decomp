@@ -1374,6 +1374,13 @@ void __fastcall sub_102d0080(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d00c0 size=0xa
+void __fastcall sub_102d00c0(int *self, int, int value)
+{
+	self[2] = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d41f0 size=0x8
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION
