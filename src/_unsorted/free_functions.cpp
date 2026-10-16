@@ -8,6 +8,13 @@ void __fastcall sub_10032b00(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ef40 size=0x8
+void __fastcall sub_1015ef40(char *p)
+{
+	p[0x19f7] = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102885d0 size=0x8
 typedef void (__fastcall *Fn102885d0)(void *);
 
