@@ -2861,6 +2861,39 @@ void __fastcall sub_102deea0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0900 size=0x64
+extern int vt_1049d79c[];
+extern int vt_1049d854[];
+extern int vt_1049d824[];
+
+CAI_Motor *CAI_Motor::sub_102e0900(int outer)
+{
+	m_pOuter = (char *)outer;
+	*(volatile int *)&m_0c = -1;
+	*(volatile int *)&m_14 = 0;
+	*(void * volatile *)&m_pSinkVtbl = vt_1049d79c;
+	m_54 = 0;
+	m_58 = 0;
+	m_5c = 0;
+	m_60 = 0;
+	m_64 = 0;
+	*(void **)this = vt_1049d854;
+	m_pSinkVtbl = vt_1049d824;
+	m_30 = 0;
+	m_34 = 0;
+	m_38 = 0;
+	m_3c = 0;
+	m_40 = 0;
+	m_44 = 0;
+	m_68 = 0;
+	m_18 = 0;
+	m_1c = 0x43340000;
+	m_28 = 0;
+	m_2c = 0xbf800000;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0a40 size=0xa
 struct CUnknown102e0a40 { int p[6]; int a; void sub_102e0a40(int v); };
 // TARGET: CUnknown102e0a40::sub_102e0a40
