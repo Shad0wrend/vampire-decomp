@@ -28,6 +28,33 @@ public:
 	virtual void vfunc20();
 
 	char *m_pOuter;	// 0x0004, CAI_Component::m_pOuter (the owning NPC)
+	int m_08;
+	int m_0c;
+	void *m_pSinkVtbl;	// 0x0010
+	int m_14;
+	int m_18;
+	int m_1c;
+	int m_20;
+	int m_24;
+	char m_28;
+	char m_29[3];
+	int m_2c;
+	int m_30;
+	int m_34;
+	int m_38;
+	int m_3c;
+	int m_40;
+	int m_44;
+	int m_48;
+	int m_4c;
+	int m_50;
+	int m_54;
+	int m_58;
+	int m_5c;
+	int m_60;
+	int m_64;
+	int m_68;
 
 	int sub_102e2610();
+	void sub_102e0900(int outer);
 };
