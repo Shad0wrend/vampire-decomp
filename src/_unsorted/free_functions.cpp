@@ -2343,6 +2343,13 @@ struct A { char pad[0x30]; B *b; void sub_102ee590(int *x); };
 void A::sub_102ee590(int *x) { b->sub_10014ef2(x); }
 // END FUNCTION
 
+// FUNCTION: 0x102ee5e0 size=0x8
+CUnknown1030bc20_Record *CUnknown102ee120::sub_102ee5e0()
+{
+	return ((CUnknown1030bc20 *)m_unk30)->sub_1030b7c0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee600 size=0x8
 struct CInner1000a704 { int sub_1000a704(); };
 struct CUnknown102ee600 { char pad[0x30]; CInner1000a704 *m_pInner; int sub_102ee600(); };

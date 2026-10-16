@@ -433,6 +433,7 @@
 0x10009ebc func   ??0CPlayerMove@@QAE@XZ CPlayerMove::CPlayerMove
 0x10009ef8 func   _prop_hacking prop_hacking
 0x10009f39 func   _prop_haunted prop_haunted
+0x10009fca func   ?sub_102ee5e0@CUnknown102ee120@@QAEPAUCUnknown1030bc20_Record@@XZ CUnknown102ee120::sub_102ee5e0
 0x10009fde func   _npc_VGhoulCroucher npc_VGhoulCroucher
 0x10009fed func   _info_node_sabbat_top info_node_sabbat_top
 0x1000a015 func   _item_k_key_generic item_k_key_generic
