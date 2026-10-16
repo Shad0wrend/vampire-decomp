@@ -2674,6 +2674,40 @@ void CUnknown10289cc0::sub_10289cc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028eb30 size=0x66
+struct Vec3 { int x, y, z; };
+struct HandleObj {
+	virtual void vf0();
+	virtual int* vf1();
+};
+struct Holder {
+	char pad0[0x6368];
+	int f6368;
+	char pad1[0x6374 - 0x636c];
+	int f6374, f6378, f637c;
+	char pad2[0x6390 - 0x6380];
+	int f6390;
+	char f6394;
+	void sub_1028eb30(int a, Vec3* v, HandleObj* h, char c);
+};
+
+// TARGET: Holder::sub_1028eb30
+void Holder::sub_1028eb30(int a, Vec3* v, HandleObj* h, char c)
+{
+	f6368 = a;
+	f6374 = v->x;
+	f6378 = v->y;
+	f637c = v->z;
+	if (h) {
+		f6390 = *h->vf1();
+		f6394 = c;
+		return;
+	}
+	f6390 = -1;
+	f6394 = c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029ca30 size=0xd
 extern float g_10457f54;
 float __stdcall sub_1029ca30(float x)
