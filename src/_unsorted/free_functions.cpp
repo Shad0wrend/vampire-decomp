@@ -899,6 +899,17 @@ struct CUnknown10260980 { int p; int a; CUnknown10260980* sub_10260980(); };
 CUnknown10260980* CUnknown10260980::sub_10260980() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10265800 size=0xa
+extern unsigned char g_1092053c;
+
+unsigned char sub_10265800()
+{
+	unsigned char v = ~g_1092053c;
+	v &= 1;
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d990 size=0xa
 struct CUnknown1027d990Sub { int p[6]; int a; };
 struct CUnknown1027d990 { char p[0x5d34]; CUnknown1027d990Sub *m; int sub_1027d990(); };
