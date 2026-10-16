@@ -1351,6 +1351,13 @@ struct CUnknown10260980 { int p; int a; CUnknown10260980* sub_10260980(); };
 CUnknown10260980* CUnknown10260980::sub_10260980() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10264450 size=0xb
+void CUnknown102e12c0::sub_10264450()
+{
+	m_pOuter->vfunc310();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10265800 size=0xa
 extern unsigned char g_1092053c;
 
