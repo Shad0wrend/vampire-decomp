@@ -2,7 +2,7 @@
 // 19 slots, all of them inherited from its only base ICollideable at +0x0.
 #pragma once
 
-class CBaseEntity;
+#include "CBaseEntity.h"
 
 class ICollideable
 {
@@ -21,7 +21,7 @@ public:
 	virtual void vfunc11();
 	virtual void vfunc12();
 	virtual void vfunc13();
-	virtual void vfunc14();
+	virtual int vfunc14();
 	virtual void vfunc15();
 	virtual void vfunc16();
 	virtual void vfunc17();
@@ -32,6 +32,7 @@ class CCollisionProperty : public ICollideable
 {
 public:
 	virtual int vfunc6();
+	virtual int vfunc14();
 
 	char m_04[0x3c - 0x04];
 	// The entity the collision property belongs to; several slots just forward to it.
