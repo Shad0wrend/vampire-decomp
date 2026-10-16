@@ -837,6 +837,13 @@ struct CUnknown10248a50 { int p[4]; int a; void sub_10248a50(int v); };
 void CUnknown10248a50::sub_10248a50(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10249450 size=0xa
+void CUnknown10249450::sub_10249450(int value)
+{
+	m_unk4 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024b070 size=0x8
 extern char g_105c5338;
 void sub_1024b070() { g_105c5338 = 0; }
