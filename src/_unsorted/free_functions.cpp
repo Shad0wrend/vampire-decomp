@@ -358,6 +358,13 @@ extern int g_1058d1ac;
 void sub_1018e9d0(int a, int b) { g_1058d1ac = b; }
 // END FUNCTION
 
+// FUNCTION: 0x101ac2f0 size=0xa
+unsigned int CAmbientGeneric::sub_101ac2f0()
+{
+	return m_spawnflags & 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afba0 size=0x8
 struct CUnknown101afba0 { char pad[0x100]; char m_Flag; void sub_101afba0(); };
 void CUnknown101afba0::sub_101afba0() { m_Flag = 0; }
