@@ -482,6 +482,7 @@
 0x10010532 func   _trigger_teleport trigger_teleport
 0x100105eb func   _func_pushable func_pushable
 0x100107b7 func   _info_node_crosswalk info_node_crosswalk
+0x1001084d func   ?sub_100b47e0@@YIXPAH@Z sub_100b47e0
 0x100108c0 func   _point_teleport point_teleport
 0x100108cf func   _item_g_sewerbook_1 item_g_sewerbook_1
 0x100109ba func   _prop_switch prop_switch
