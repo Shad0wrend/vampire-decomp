@@ -567,6 +567,11 @@ extern char g_1093412c;
 void sub_102f99b0() { g_1093412c = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x1030f660 size=0x8
+extern char g_106b8540;
+char * __stdcall sub_1030f660(int) { return &g_106b8540; }
+// END FUNCTION
+
 // FUNCTION: 0x10323a70 size=0x8
 short __fastcall sub_10323a70(char *p)
 {
