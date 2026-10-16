@@ -91,7 +91,7 @@ public:
 	virtual void vfunc405(); virtual void vfunc406(); virtual void vfunc407(); virtual void vfunc408(); virtual void vfunc409();
 	virtual void vfunc410(); virtual void vfunc411(); virtual void vfunc412(); virtual void vfunc413(); virtual void vfunc414();
 	virtual void vfunc415(); virtual void vfunc416(char value); virtual void vfunc417(); virtual void vfunc418(); virtual void vfunc419();
-	virtual void vfunc420(); virtual void vfunc421(); virtual void vfunc422(); virtual void vfunc423(); virtual void vfunc424();
+	virtual void vfunc420(); virtual void vfunc421(); virtual void vfunc422(); virtual unsigned int vfunc423(); virtual void vfunc424();
 	virtual void vfunc425(); virtual void vfunc426(); virtual void vfunc427(); virtual void vfunc428(); virtual void vfunc429();
 	virtual void vfunc430(); virtual void vfunc431(); virtual void vfunc432(); virtual void vfunc433(); virtual void vfunc434();
 	virtual void vfunc435(); virtual void vfunc436(); virtual void vfunc437(); virtual void vfunc438(); virtual void vfunc439();
