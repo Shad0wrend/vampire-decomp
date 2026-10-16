@@ -12,6 +12,7 @@
 #include "CDirtySpatialPartitionEntityList.h"
 #include "CEffectsServer.h"
 #include "CGameRules.h"
+#include "CGlobalEntityList.h"
 #include "CLagCompensationManager.h"
 #include "CMoveHelperServer.h"
 #include "CMultiplayRules.h"
