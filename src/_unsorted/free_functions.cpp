@@ -1804,6 +1804,13 @@ int *CUnknown102c6590::sub_102c6590(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6740 size=0xc
+CUnknown102c6740_Elem *CUnknown102c6740::sub_102c6740(int index)
+{
+	return &m_pMemory[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6bd0 size=0x8
 void __fastcall sub_102c6bd0(int *p) { p[3] = 0; }
 // END FUNCTION

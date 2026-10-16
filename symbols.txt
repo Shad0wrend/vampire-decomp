@@ -849,6 +849,7 @@
 0x10012b02 func   _item_k_malkavian_refrigerator_key item_k_malkavian_refrigerator_key
 0x10012b9d func   ?sub_10248a50@CUnknown10248a50@@QAEXH@Z CUnknown10248a50::sub_10248a50
 0x10012bd4 func   _info_node_chang_jumpbase info_node_chang_jumpbase
+0x10012c2e func   ?sub_102c6740@CUnknown102c6740@@QAEPAUCUnknown102c6740_Elem@@H@Z CUnknown102c6740::sub_102c6740
 0x10012c65 func   ?sub_1003c1c0@@YIXPAH@Z sub_1003c1c0
 0x10012cb5 func   ?sub_100bc560@CUnknown100bc560@@QAEXXZ CUnknown100bc560::sub_100bc560
 0x10012cbf func   ?sub_100f0300@@YIXPAD@Z sub_100f0300
