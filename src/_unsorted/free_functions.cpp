@@ -785,6 +785,13 @@ bool CUnknown101578b0::sub_101578b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157910 size=0xd
+void CUnknown101578b0::sub_10157910(int value)
+{
+	m_unk104c = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158d60 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_10158d60(void **p) { ((Fn *)*p)[243](p); }
