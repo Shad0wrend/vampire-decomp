@@ -67,6 +67,7 @@
 0x10002ae5 func   _prop_ragdoll_attached prop_ragdoll_attached
 0x10002af4 func   _item_g_edane_print_report item_g_edane_print_report
 0x10002b9e func   _env_particle_hud env_particle_hud
+0x10002bc6 func   ?sub_101eaae0@@YAXH@Z sub_101eaae0
 0x10002c7a func   _info_player_start info_player_start
 0x10002cc5 func   _phys_convert phys_convert
 0x10002d79 func   _ai_network ai_network
