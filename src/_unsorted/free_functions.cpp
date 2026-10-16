@@ -86,6 +86,13 @@ void __fastcall sub_102a96f0(TroikaStub *o)
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102deea0 size=0x8
+void __fastcall sub_102deea0(int *p)
+{
+	p[3] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0b40 size=0x8
 void __fastcall sub_102e0b40(float *p)
 {
