@@ -1,6 +1,7 @@
 // Aggregator for newly recovered small classes; add new headers here instead of editing vampire.h.
 #pragma once
 
+#include "CAI_BaseHumanoid.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_InterestingPlaceConverstation.h"
 #include "CAI_Navigator.h"
