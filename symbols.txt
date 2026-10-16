@@ -970,6 +970,7 @@
 0x10013a6b func   _item_g_giovanni_invitation_maria item_g_giovanni_invitation_maria
 0x10013a89 func   ?sub_101dbb00@@YAPBDH@Z sub_101dbb00
 0x10013c28 func   ?sub_100fa690@@YIXPAUCSlots@@HH@Z sub_100fa690
+0x10013c87 func   ?sub_10245790@CUnknown10245790@@QAEXI@Z CUnknown10245790::sub_10245790
 0x10013d4f func   ?sub_102a95e0@CUnknown102a95e0@@QAEPAHH@Z CUnknown102a95e0::sub_102a95e0
 0x10013d6d func   ?sub_102d41f0@@YIXPAH@Z sub_102d41f0
 0x10013db3 func   ?sub_102c6bd0@@YIXPAH@Z sub_102c6bd0

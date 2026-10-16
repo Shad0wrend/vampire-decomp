@@ -1811,6 +1811,13 @@ void sub_1023f060(unsigned int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245790 size=0xd
+void CUnknown10245790::sub_10245790(unsigned int flags)
+{
+	m_unk4->m_flags |= flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102457d0 size=0xa
 void CUnknown102457d0::sub_102457d0(int value)
 {
