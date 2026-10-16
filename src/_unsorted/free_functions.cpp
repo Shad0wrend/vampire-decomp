@@ -730,6 +730,15 @@ CUnknown101f9670 *CUnknown101f9670::sub_101f9670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203e30 size=0xa
+extern int g_1074ede0;
+
+void sub_10203e30(int value)
+{
+	g_1074ede0 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102056d0 size=0x9
 struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
