@@ -221,6 +221,7 @@
 0x100079ff func   ?sub_1021e160@@YIXPAH@Z sub_1021e160
 0x10007a77 func   ?vfunc103@CSceneEntity@@UAEXXZ CSceneEntity::vfunc103
 0x10007a86 func   _item_w_glock_17c item_w_glock_17c
+0x10007b0d func   ?sub_102f9990@@YAXXZ sub_102f9990
 0x10007b71 func   _func_brush func_brush
 0x10007be9 func   _func_areaportalwindow func_areaportalwindow
 0x10007c07 func   _item_w_crossbow item_w_crossbow
