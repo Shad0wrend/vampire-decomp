@@ -1,4 +1,4 @@
-// CUnknown10081e70: object with a 245+ slot vtable whose slot 244 is called by a one-argument method; real name not yet known.
+// CUnknown10081e70: object with a 245+ slot vtable whose slots 242/244 are called by one-argument methods; real name not yet known.
 // The slots below are placeholders (16 per chain level) that keep the slot numbers right.
 #pragma once
 
@@ -31,4 +31,5 @@ public:
 	virtual void vfunc244();
 
 	void sub_10081e70(int unused);
+	void sub_100fa6b0(int unused);
 };
