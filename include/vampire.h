@@ -12,3 +12,4 @@
 #include "CMoveHelperServer.h"
 #include "CMultiplayRules.h"
 #include "CSceneEntity.h"
+#include "CSkyCamera.h"
