@@ -3325,6 +3325,15 @@ struct CUnknown103eee60 {
 void CUnknown103eee60::sub_103eee60() { slot375(); }
 // END FUNCTION
 
+// FUNCTION: 0x103eeec0 size=0xd
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+void sub_103eeec0()
+{
+	Msg("CWeaponIThrownGrenade::Detonate");
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f04f0 size=0xd
 CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
 {

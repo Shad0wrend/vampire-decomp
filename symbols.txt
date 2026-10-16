@@ -518,6 +518,7 @@
 0x1000a9c0 func   _camera_keyframe camera_keyframe
 0x1000a9c5 func   _item_g_idol_crane item_g_idol_crane
 0x1000aa7e func   ?sub_10050860@CUnknown10050860@@QAEPBDXZ CUnknown10050860::sub_10050860
+0x1000aaf6 func   ?sub_103eeec0@@YAXXZ sub_103eeec0
 0x1000ab41 func   _ai_hint ai_hint
 0x1000ab55 func   ?sub_101eddd0@@YAXH@Z sub_101eddd0
 0x1000ab87 func   ?sub_102e7e60@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e7e60
