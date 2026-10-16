@@ -29,6 +29,28 @@ unsigned int CAI_BaseNPC::vfunc552()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027dc80 size=0x66
+struct FObj { char pad[0x28]; float m_f; };
+struct IObj { char pad[0x4f8]; int m_state; };
+extern double g_104493d0;
+
+// TARGET: sub_1027dc80
+bool __stdcall sub_1027dc80(FObj* p, IObj* q, float f, int* out)
+{
+	if (p->m_f < f)
+		return false;
+	if (q->m_state != 1 && q->m_state != 3)
+		return false;
+	if (f < g_104493d0) {
+		*out = -1;
+		return true;
+	}
+	p->m_f = f;
+	*out = 0;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027e120 size=0xd
 struct NpcFlags204 { char pad[0x204]; unsigned int m; };
 unsigned int CAI_BaseNPC::vfunc423()
