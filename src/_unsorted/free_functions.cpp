@@ -1230,6 +1230,13 @@ unsigned char sub_10265800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026dc60 size=0xb
+void CUnknown1026dc60::sub_1026dc60()
+{
+	m_unk5cec = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d990 size=0xa
 struct CUnknown1027d990Sub { int p[6]; int a; };
 struct CUnknown1027d990 { char p[0x5d34]; CUnknown1027d990Sub *m; int sub_1027d990(); };

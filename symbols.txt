@@ -540,6 +540,7 @@
 0x1000d909 func   _item_p_research_hg_computers item_p_research_hg_computers
 0x1000d95e func   ?sub_10307b40@CUnknown10307b40@@QAEXH@Z CUnknown10307b40::sub_10307b40
 0x1000d968 func   _item_g_lilly_purse item_g_lilly_purse
+0x1000d990 func   ?sub_1026dc60@CUnknown1026dc60@@QAEXXZ CUnknown1026dc60::sub_1026dc60
 0x1000d9d6 func   _npc_VPlaceholder npc_VPlaceholder
 0x1000d9e5 func   _item_g_lilly_diary item_g_lilly_diary
 0x1000da03 func   _item_w_steyr_aug item_w_steyr_aug
