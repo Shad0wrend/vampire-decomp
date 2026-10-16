@@ -544,6 +544,12 @@ struct A { char pad[0x30]; B *b; void sub_102ee590(int *x); };
 void A::sub_102ee590(int *x) { b->sub_10014ef2(x); }
 // END FUNCTION
 
+// FUNCTION: 0x102ee600 size=0x8
+struct CInner1000a704 { int sub_1000a704(); };
+struct CUnknown102ee600 { char pad[0x30]; CInner1000a704 *m_pInner; int sub_102ee600(); };
+int CUnknown102ee600::sub_102ee600() { return m_pInner->sub_1000a704(); }
+// END FUNCTION
+
 // FUNCTION: 0x102f8ef0 size=0x8
 void __fastcall sub_102f8ef0(int *p)
 {

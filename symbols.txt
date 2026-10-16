@@ -182,6 +182,7 @@
 0x100067c6 func   _item_g_drugs_drug_box item_g_drugs_drug_box
 0x100067f8 func   _trigger_environmental_audio trigger_environmental_audio
 0x1000683e func   _item_g_ghost_pendant item_g_ghost_pendant
+0x1000693d func   ?sub_102ee600@CUnknown102ee600@@QAEHXZ CUnknown102ee600::sub_102ee600
 0x1000697e func   _npc_VTzimisceRunner npc_VTzimisceRunner
 0x10006a7d func   _func_lod func_lod
 0x10006b72 func   _npc_VChangBrosClaw npc_VChangBrosClaw
