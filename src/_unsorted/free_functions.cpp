@@ -2725,6 +2725,16 @@ void __fastcall sub_102f8ef0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9900 size=0xd
+extern int g_10610be8;
+extern char g_1093412c;
+void sub_102f9900()
+{
+	g_10610be8 = 0;
+	g_1093412c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9990 size=0x8
 extern char g_1093412c;
 void sub_102f9990() { g_1093412c = 0; }
