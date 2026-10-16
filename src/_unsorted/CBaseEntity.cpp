@@ -11,6 +11,12 @@ void CBaseEntity::vfunc168()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027490 size=0xa
+#include "CBaseEntity.h"
+// TARGET: CBaseEntity::vfunc116
+int CBaseEntity::vfunc116() { return m_flags268 & 1; }
+// END FUNCTION
+
 // FUNCTION: 0x100b4bc0 size=0x8
 #include "CBaseEntity.h"
 

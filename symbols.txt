@@ -595,6 +595,7 @@
 0x10010a14 func   _prop_keypad prop_keypad
 0x10010a9b func   ?sub_101bd940@@YIXPAD@Z sub_101bd940
 0x10010aaf func   _tectonic tectonic
+0x10010b09 func   ?vfunc116@CBaseEntity@@UAEHXZ CBaseEntity::vfunc116
 0x10010c26 func   _multisource multisource
 0x10010c2b func   ?sub_100f0320@@YIXPAD@Z sub_100f0320
 0x10010ce9 func   _env_soundscape env_soundscape
