@@ -18,3 +18,4 @@
 #include "CUnknown1030bc20.h"
 #include "CUnknown1036c7f0.h"
 #include "CUnknown10398d90.h"
+#include "CUnknown1039a6e0.h"
