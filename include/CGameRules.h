@@ -56,7 +56,7 @@ public:
 	virtual void vfunc46();
 	virtual void vfunc47();
 	virtual void vfunc48();
-	virtual void vfunc49();
+	virtual float vfunc49(int a);
 	virtual void vfunc50();
 	virtual void vfunc51();
 	virtual void vfunc52();
