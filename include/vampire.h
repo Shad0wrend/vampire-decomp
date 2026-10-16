@@ -9,6 +9,7 @@
 #include "CBaseButton.h"
 #include "CBaseCombatWeapon.h"
 #include "CBasePlayer.h"
+#include "CBaseVampireSkillEntity.h"
 #include "CCollisionProperty.h"
 #include "CCopyRecipientFilter.h"
 #include "CDirtySpatialPartitionEntityList.h"
