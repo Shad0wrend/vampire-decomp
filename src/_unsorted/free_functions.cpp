@@ -104,6 +104,13 @@ void CUnknown10073920::sub_10073920(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073b60 size=0xd
+void CUnknown10073b60::sub_10073b60(int value)
+{
+	m_unk84 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073f40 size=0xa
 struct CUnknown10073f40 { char p[0x4c]; int a; void sub_10073f40(int v); };
 // TARGET: CUnknown10073f40::sub_10073f40
