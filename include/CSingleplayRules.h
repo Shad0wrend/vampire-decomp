@@ -8,5 +8,6 @@ class CSingleplayRules : public CGameRules
 public:
 	virtual int vfunc43(int a, int b);
 	virtual int vfunc48(int index);
+	virtual int vfunc61(int index);
 	virtual const char *vfunc63(int index);
 };
