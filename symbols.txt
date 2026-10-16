@@ -37,6 +37,7 @@
 0x100021e4 func   ?vfunc407@CBasePlayer@@UAEXXZ CBasePlayer::vfunc407
 0x1000222a func   _item_g_garys_tape item_g_garys_tape
 0x10002289 func   _viewmodel viewmodel
+0x100022e8 func   ?sub_10156d30@@YIXPAD@Z sub_10156d30
 0x1000240a func   _item_k_carson_apartment_key item_k_carson_apartment_key
 0x10002423 func   _prop_slashable prop_slashable
 0x1000248c func   _env_message env_message
