@@ -599,6 +599,46 @@ struct CUtlVectorBase { int a, b, c, m_Size; void sub_100b4950(); };
 void CUtlVectorBase::sub_100b4950() { m_Size = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100b4a40 size=0x67
+extern "C" {
+__declspec(dllimport) void* Plat_Alloc(int size);
+__declspec(dllimport) void* Plat_Realloc(void* p, int size);
+}
+
+struct UtlMem3 {
+	int* m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_100b4a40(int num);
+};
+
+// TARGET: UtlMem3::sub_100b4a40
+void UtlMem3::sub_100b4a40(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int newAlloc = m_nAllocationCount;
+	int target = newAlloc + num;
+	if (newAlloc < target) {
+		do {
+			if (newAlloc != 0) {
+				if (m_nGrowSize != 0)
+					newAlloc += m_nGrowSize;
+				else
+					newAlloc += newAlloc;
+			} else {
+				newAlloc = 8;
+			}
+		} while (newAlloc < target);
+		m_nAllocationCount = newAlloc;
+	}
+	if (m_pMemory)
+		m_pMemory = (int*)Plat_Realloc(m_pMemory, m_nAllocationCount * 4);
+	else
+		m_pMemory = (int*)Plat_Alloc(m_nAllocationCount * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4e80 size=0xa
 extern int g_106cff54;
 // TARGET: sub_100b4e80
