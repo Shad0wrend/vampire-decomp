@@ -59,6 +59,7 @@
 0x10003017 func   _ai_changehintgroup ai_changehintgroup
 0x10003058 func   _item_k_museum_storeroom_key item_k_museum_storeroom_key
 0x10003076 func   _info_node_sabbat_arch info_node_sabbat_arch
+0x100030b2 func   ?vfunc67@CGameRules@@UAEPBDH@Z CGameRules::vfunc67
 0x100030f3 func   _game_ui game_ui
 0x10003111 func   _env_sun env_sun
 0x100031ca func   _trigger_hurt trigger_hurt
