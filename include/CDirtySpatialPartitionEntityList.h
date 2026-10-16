@@ -1,0 +1,43 @@
+// class CDirtySpatialPartitionEntityList (RTTI .?AVCDirtySpatialPartitionEntityList@@),
+// primary vtable 0x10454124 with 9 slots, secondary vtable 0x10454118 for
+// IPartitionQueryCallback at +0x8.
+//
+// Bases per RTTI: CAutoGameSystem / CBaseGameSystem / IGameSystem all at +0x0 and
+// IPartitionQueryCallback at +0x8.  The game-system side is modelled by one class that
+// contributes the nine primary slots and occupies 8 bytes, so that the second vptr lands
+// at +0x8 like in the game.
+#pragma once
+
+class IPartitionQueryCallback
+{
+public:
+	virtual void qfunc0();
+};
+
+class CAutoGameSystem
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual void vfunc5();
+	virtual void vfunc6();
+	virtual void vfunc7();
+	virtual void vfunc8();
+
+	char m_04[4];
+};
+
+class CDirtySpatialPartitionEntityList : public CAutoGameSystem, public IPartitionQueryCallback
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc5();
+	virtual void vfunc8();
+
+	char m_0c[0x18 - 0x0c];
+	int m_18;
+};
