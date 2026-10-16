@@ -935,6 +935,7 @@
 0x10011ce8 func   ?sub_1013e7e0@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e7e0
 0x10011d29 func   ?sub_100c6590@@YAHH@Z sub_100c6590
 0x10011d33 func   _prop_doorknob prop_doorknob
+0x10011dce func   ?sub_10057660@CUnknown10057680@@QAEPAV1@XZ CUnknown10057680::sub_10057660
 0x10011e14 func   ?sub_1027d9b0@@YIXPAD@Z sub_1027d9b0
 0x10011e5f func   ?sub_1042d720@@YIIPAI@Z sub_1042d720
 0x10011eb9 func   ?sub_1012e6a0@CUnknown1012e6a0@@QAEXH@Z CUnknown1012e6a0::sub_1012e6a0

@@ -64,6 +64,14 @@ const char *CUnknown10050860::sub_10050860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057660 size=0xc
+CUnknown10057680 *CUnknown10057680::sub_10057660()
+{
+	sub_10057680();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057680 size=0xe
 void CUnknown10057680::sub_10057680()
 {
