@@ -167,6 +167,11 @@ void __fastcall sub_101bc000(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db9a0 size=0x8
+void __fastcall sub_100107d5(char *p);
+void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }
+// END FUNCTION
+
 // FUNCTION: 0x1021e410 size=0x8
 void __fastcall sub_1021e410(int *p)
 {
