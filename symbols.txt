@@ -93,6 +93,7 @@
 0x10003440 func   ?sub_102056d0@CUnknown102056d0@@QAEPAU1@XZ CUnknown102056d0::sub_102056d0
 0x10003503 func   _scripted_target scripted_target
 0x1000352b func   _npc_VTzimisce npc_VTzimisce
+0x100035d0 func   ?sub_102e2610@CAI_Motor@@QAEHXZ CAI_Motor::sub_102e2610
 0x100035f8 func   _trigger_once trigger_once
 0x10003657 func   _trigger_wind trigger_wind
 0x100036ac func   _trigger_push trigger_push

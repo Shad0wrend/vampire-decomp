@@ -1103,6 +1103,13 @@ void __fastcall sub_102e0b40(float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2610 size=0xa
+int CAI_Motor::sub_102e2610()
+{
+	return *(int *)(m_pOuter + 0x5d34);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2800 size=0x8
 struct B { void sub_1000108c(int); };
 struct A { int a; B *b; void sub_102e2800(int x); };
