@@ -343,6 +343,13 @@ void CUnknown101c2a90::sub_101c2a90(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2ad0 size=0xa
+void CUnknown101c2a90::sub_101c2ad0(char value)
+{
+	m_bFlag2 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2b10 size=0xa
 struct CUnknown101c2b10 { char p[0x4a]; char a; void sub_101c2b10(char v); };
 // TARGET: CUnknown101c2b10::sub_101c2b10
