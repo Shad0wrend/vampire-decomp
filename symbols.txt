@@ -532,6 +532,7 @@
 0x1001407e func   _item_g_drugs_pill_bottle item_g_drugs_pill_bottle
 0x10014187 func   _logic_npc_condition logic_npc_condition
 0x10014268 func   _logic_multicompare logic_multicompare
+0x100142cc func   ?vfunc1@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc1
 0x1001438a func   _item_w_fireaxe item_w_fireaxe
 0x100143ad func   _func_button func_button
 0x10014402 func   _env_particle env_particle
