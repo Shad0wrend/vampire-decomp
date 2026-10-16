@@ -401,6 +401,22 @@ struct CUtlVectorBase { int a, b, c, m_Size; void sub_100f9790(); };
 void CUtlVectorBase::sub_100f9790() { m_Size = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100fa690 size=0xb
+#define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+struct CSlots
+{
+	H(a) H(b) T(c0) T(c1) T(c2) T(c3)
+	virtual void g0();
+	virtual void target();
+};
+
+void __fastcall sub_100fa690(CSlots *self, int, int)
+{
+	self->target();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fdcc0 size=0xa
 void __fastcall sub_100fdcc0(char *self, int, int)
 {
