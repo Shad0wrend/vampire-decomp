@@ -151,6 +151,7 @@
 0x10003c83 func   _item_k_edane_key item_k_edane_key
 0x10003d0f func   ?sub_100db3f0@@YAXXZ sub_100db3f0
 0x10003da0 func   _item_g_keyring item_g_keyring
+0x10003f44 func   ?sub_10246430@@YAXHPAH0@Z sub_10246430
 0x10003f71 func   ?sub_102477a0@CUnknown102477a0@@QAEXXZ CUnknown102477a0::sub_102477a0
 0x10003f94 func   _logic_case_toggle logic_case_toggle
 0x10004002 func   ?sub_101e83d0@CUnknown101e83d0@@QAEXPAHPAXH@Z CUnknown101e83d0::sub_101e83d0
