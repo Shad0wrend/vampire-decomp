@@ -40,6 +40,7 @@
 #include "CUnknown101f6c30.h"
 #include "CUnknown101f9670.h"
 #include "CUnknown1020e060.h"
+#include "CUnknown10249450.h"
 #include "CUnknown102457d0.h"
 #include "CUnknown102a99c0.h"
 #include "CUnknown102cc520.h"
