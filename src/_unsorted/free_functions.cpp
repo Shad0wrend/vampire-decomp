@@ -1637,6 +1637,27 @@ void __fastcall sub_102e7e00(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e7e40 size=0xb
+#define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+struct CSlots
+{
+	H(a) T(b0) T(b1) T(b2) T(b3) T(b4) T(b5)
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4(); virtual void g5();
+	virtual void target();
+};
+struct COwner
+{
+	int pad;
+	CSlots *m_pOuter;
+};
+
+void __fastcall sub_102e7e40(COwner *self)
+{
+	self->m_pOuter->target();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e8250 size=0x8
 void __fastcall sub_102e8250(float *p) { p[6] = 3.402823466e+38f; }
 // END FUNCTION

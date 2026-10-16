@@ -737,6 +737,7 @@
 0x10011379 func   ?vfunc195@CBaseEntity@@QAEXXZ CBaseEntity::vfunc195
 0x100113ce func   _trigger_electric_bugaloo trigger_electric_bugaloo
 0x100113d3 func   _npc_VChangBrosBlade npc_VChangBrosBlade
+0x100114aa func   ?sub_102e7e40@@YIXPAUCOwner@@@Z sub_102e7e40
 0x1001151d func   _intersting_place intersting_place
 0x100115d6 func   _item_k_skyline_haven_key item_k_skyline_haven_key
 0x100117ac func   ?sub_1020b000@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z CBaseVampireSkillEntity::sub_1020b000
