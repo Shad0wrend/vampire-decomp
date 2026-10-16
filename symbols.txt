@@ -184,6 +184,7 @@
 0x10004395 func   ?sub_101cc7d0@CUnknown101cc7d0@@QAEXXZ CUnknown101cc7d0::sub_101cc7d0
 0x1000439a func   ?sub_101cc7c0@@YIXPAPAX@Z sub_101cc7c0
 0x1000439f func   ?sub_101cc790@@YIXPAPAX@Z sub_101cc790
+0x100043a4 func   ?sub_101e4a00@UtlMem4@@QAEXH@Z UtlMem4::sub_101e4a00
 0x100043b8 func   ?sub_1034a230@CUnknown1034a230@@QAEXXZ CUnknown1034a230::sub_1034a230
 0x100043bd func   ?sub_101cc810@@YIXPAPAX@Z sub_101cc810
 0x10004426 func   _item_k_chinese_theatre_key item_k_chinese_theatre_key

@@ -1829,6 +1829,46 @@ struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x101e4a00 size=0x67
+extern "C" {
+__declspec(dllimport) void* Plat_Alloc(int size);
+__declspec(dllimport) void* Plat_Realloc(void* p, int size);
+}
+
+struct UtlMem4 {
+	int* m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_101e4a00(int num);
+};
+
+// TARGET: UtlMem4::sub_101e4a00
+void UtlMem4::sub_101e4a00(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int newAlloc = m_nAllocationCount;
+	int target = newAlloc + num;
+	if (newAlloc < target) {
+		do {
+			if (newAlloc != 0) {
+				if (m_nGrowSize != 0)
+					newAlloc += m_nGrowSize;
+				else
+					newAlloc += newAlloc;
+			} else {
+				newAlloc = 8;
+			}
+		} while (newAlloc < target);
+		m_nAllocationCount = newAlloc;
+	}
+	if (m_pMemory)
+		m_pMemory = (int*)Plat_Realloc(m_pMemory, m_nAllocationCount * 4);
+	else
+		m_pMemory = (int*)Plat_Alloc(m_nAllocationCount * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e4a90 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
