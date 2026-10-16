@@ -7,5 +7,5 @@
 class CNPC_VWerewolf
 {
 public:
-	virtual void vfunc600(int unused);
+	virtual bool vfunc600(int unused);
 };
