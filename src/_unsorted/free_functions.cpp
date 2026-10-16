@@ -314,6 +314,13 @@ void __fastcall sub_100fdcc0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fdce0 size=0xa
+void CUnknown100fdce0::sub_100fdce0(int unused)
+{
+	m_unk458 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104630 size=0x8
 void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
