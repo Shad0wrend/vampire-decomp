@@ -18,3 +18,11 @@ void CServerGameClients::vfunc1()
 	g_1070ba0c->target();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1011d490 size=0xc
+extern int g_1070b25c;
+void __fastcall sub_1011d490(void *, int, int value)
+{
+	g_1070b25c = value;
+}
+// END FUNCTION
