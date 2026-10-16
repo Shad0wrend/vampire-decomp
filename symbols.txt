@@ -643,6 +643,7 @@
 0x10010037 func   _math_counter math_counter
 0x10010113 func   _npc_VSheriffMan npc_VSheriffMan
 0x10010163 func   ?sub_1007ee00@@YIXPAH@Z sub_1007ee00
+0x10010267 func   ?sub_10216830@@YIXPADHH@Z sub_10216830
 0x10010311 func   _item_g_bluebloodpack item_g_bluebloodpack
 0x10010398 func   ?sub_101afba0@CUnknown101afba0@@QAEXXZ CUnknown101afba0::sub_101afba0
 0x100103b1 func   _funCBaseFlex funCBaseFlex
