@@ -2471,6 +2471,13 @@ unsigned char __fastcall sub_1038f640(char *self)
 void __fastcall sub_10390040(char *p) { p[0x66b8] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10398d90 size=0xd
+void CUnknown10398d90::sub_10398d90(int value)
+{
+	m_unk673c = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be090 size=0xc
 bool CUnknown10381be0::sub_103be090()
 {
