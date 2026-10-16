@@ -1146,6 +1146,14 @@ CUnknown101f9670 *CUnknown101f9670::sub_101f9670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202780 size=0xc
+extern int g_105a6fd8[];
+int sub_10202780(int i)
+{
+	return g_105a6fd8[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203dd0 size=0xc
 extern void (*g_1074ede0)();
 void sub_10203dd0(void)
