@@ -190,6 +190,10 @@ void CUtlVectorBase::sub_1021e100() { m_Size = 0; }
 void __fastcall sub_1021e160(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1021e1c0 size=0x8
+void __fastcall sub_1021e1c0(int *p) { p[3] = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x1021e410 size=0x8
 void __fastcall sub_1021e410(int *p)
 {

@@ -85,6 +85,7 @@
 0x1000373d func   _item_w_unarmed item_w_unarmed
 0x100038c3 func   ?sub_102deea0@@YIXPAH@Z sub_102deea0
 0x10003922 func   _item_g_bloodpack item_g_bloodpack
+0x10003a3a func   ?sub_1021e1c0@@YIXPAH@Z sub_1021e1c0
 0x10003a80 func   _soundent soundent
 0x10003abc func   _env_shooter env_shooter
 0x10003bc5 func   _vampireprojectile vampireprojectile
