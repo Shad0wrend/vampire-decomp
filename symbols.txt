@@ -460,6 +460,7 @@
 0x1000d288 func   _trigger_player_activity_level trigger_player_activity_level
 0x1000d292 func   _item_p_research_hg_dodge item_p_research_hg_dodge
 0x1000d297 func   _item_p_research_hg_melee item_p_research_hg_melee
+0x1000d2fb func   ?sub_10260980@CUnknown10260980@@QAEPAU1@XZ CUnknown10260980::sub_10260980
 0x1000d30f func   _camera_cinematic camera_cinematic
 0x1000d31e func   _info_node_air info_node_air
 0x1000d3b4 func   _item_g_edane_report item_g_edane_report
