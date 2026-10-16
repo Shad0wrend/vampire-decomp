@@ -413,6 +413,14 @@ int __fastcall sub_101f4280(int *p) { return (*p)++; }
 bool __fastcall sub_101f74e0(int *p) { bool r = p[3] != -1; return r; }
 // END FUNCTION
 
+// FUNCTION: 0x101f9670 size=0x9
+CUnknown101f9670 *CUnknown101f9670::sub_101f9670()
+{
+	m_unk0 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102056d0 size=0x9
 struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
