@@ -1412,6 +1412,16 @@ void CUnknown10249450::sub_10249450(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024afe0 size=0xb
+void sub_100139d5();
+extern int g_1088ae3c;
+int sub_1024afe0()
+{
+	sub_100139d5();
+	return g_1088ae3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024b070 size=0x8
 extern char g_105c5338;
 void sub_1024b070() { g_105c5338 = 0; }
