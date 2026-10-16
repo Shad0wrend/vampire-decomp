@@ -1684,6 +1684,16 @@ unsigned char sub_10265800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10267350 size=0xd
+extern int g_10920544;
+extern int g_10920548;
+void sub_10267350()
+{
+	g_10920544 = 0;
+	g_10920548 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026dc60 size=0xb
 void CUnknown1026dc60::sub_1026dc60()
 {

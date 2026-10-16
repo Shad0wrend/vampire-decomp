@@ -674,6 +674,7 @@
 0x1000e7f0 func   ?sub_101e1850@@YGII@Z sub_101e1850
 0x1000e7fa func   _env_terrainmorph env_terrainmorph
 0x1000e81d func   _item_w_rem_m_700_bach item_w_rem_m_700_bach
+0x1000e827 func   ?sub_10267350@@YAXXZ sub_10267350
 0x1000e85e func   ?sub_1039a6e0@CUnknown1039a6e0@@QAEXH@Z CUnknown1039a6e0::sub_1039a6e0
 0x1000e8a9 func   _ambient_generic ambient_generic
 0x1000e98a func   ?vfunc288@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc288
