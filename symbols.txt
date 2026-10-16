@@ -288,6 +288,7 @@
 0x1000891d func   _momentary_rot_button momentary_rot_button
 0x100089f4 func   _func_breakable func_breakable
 0x10008a85 func   _item_g_eyes item_g_eyes
+0x10008b8e func   ?sub_10074a70@CUnknown10074a70@@QAEXH@Z CUnknown10074a70::sub_10074a70
 0x10008c1f func   _item_g_eldervitaepack item_g_eldervitaepack
 0x10008c42 func   _info_target info_target
 0x10008cd8 func   ?sub_100de610@@YGXH@Z sub_100de610
