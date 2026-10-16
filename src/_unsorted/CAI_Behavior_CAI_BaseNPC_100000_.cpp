@@ -40,3 +40,20 @@ char CAI_Behavior<CAI_BaseNPC,100000>::vfunc24(int a) { m_flag10 = 0; return 0; 
 // TARGET: CAI_Behavior<CAI_BaseNPC,100000>::vfunc25
 char CAI_Behavior<CAI_BaseNPC,100000>::vfunc25(int a) { m_flag10 = 0; return 1; }
 // END FUNCTION
+
+// FUNCTION: 0x102c8a10 size=0xb
+#include "CAI_Behavior.h"
+#define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+struct CSlots
+{
+	H(a) H(b) H(c) H(d) H(e) T(f0) T(f1) T(f2) T(f3) T(f4) T(f5) T(f6) T(f7)
+	virtual void target();
+};
+
+// TARGET: CAI_Behavior<CAI_BaseNPC,100000>::vfunc6
+void CAI_Behavior<CAI_BaseNPC,100000>::vfunc6()
+{
+	((CSlots *)m_p0004)->target();
+}
+// END FUNCTION
