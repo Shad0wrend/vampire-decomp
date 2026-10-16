@@ -230,6 +230,7 @@
 0x10007414 func   _phys_pulleyconstraint phys_pulleyconstraint
 0x1000745f func   _item_k_sarcophagus_key item_k_sarcophagus_key
 0x100074c3 func   _activity_copy_prop activity_copy_prop
+0x100074f0 func   ?vfunc6@ConCommand@@UAEXXZ ConCommand::vfunc6
 0x1000762b func   _item_k_lilly_key item_k_lilly_key
 0x1000765d func   _npc_maker npc_maker
 0x100076f8 func   ?sub_101b6a30@@YIXPAH@Z sub_101b6a30
