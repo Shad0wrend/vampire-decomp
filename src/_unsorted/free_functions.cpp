@@ -344,6 +344,15 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc810(void **p) { ((Fn *)*p)[246](p); }
 // END FUNCTION
 
+// FUNCTION: 0x101daf60 size=0x9
+bool CUnknown101daf60::sub_101daf60()
+{
+	if (m_pData)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db9a0 size=0x8
 void __fastcall sub_100107d5(char *p);
 void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }
