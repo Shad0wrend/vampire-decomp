@@ -1646,6 +1646,13 @@ struct CUnknown1035b1c0 { int sub_1035b1c0(int, int, int, int); };
 int CUnknown1035b1c0::sub_1035b1c0(int, int, int, int) { return 1; }
 // END FUNCTION
 
+// FUNCTION: 0x103661d0 size=0xa
+void __fastcall sub_103661d0(char *self, int, int)
+{
+	self[0x66a8] = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10373420 size=0x8
 void __fastcall sub_10373420(int *p) { p[3] = 0; }
 // END FUNCTION

@@ -113,6 +113,7 @@
 0x10003a3a func   ?sub_1021e1c0@@YIXPAH@Z sub_1021e1c0
 0x10003a80 func   _soundent soundent
 0x10003abc func   _env_shooter env_shooter
+0x10003ba2 func   ?sub_103661d0@@YIXPADHH@Z sub_103661d0
 0x10003bc5 func   _vampireprojectile vampireprojectile
 0x10003be8 func   ?sub_10203e30@@YAXH@Z sub_10203e30
 0x10003c83 func   _item_k_edane_key item_k_edane_key
