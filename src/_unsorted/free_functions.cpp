@@ -79,6 +79,15 @@ struct CUnknown100737b0 { int m_val; void sub_100737b0(int v); };
 void CUnknown100737b0::sub_100737b0(int v) { m_val = v; }
 // END FUNCTION
 
+// FUNCTION: 0x100737d0 size=0xd
+#include "CUnknown100737d0.h"
+
+void CUnknown100737d0::sub_100737d0(char value)
+{
+	m_bFlag98 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073f40 size=0xa
 struct CUnknown10073f40 { char p[0x4c]; int a; void sub_10073f40(int v); };
 // TARGET: CUnknown10073f40::sub_10073f40
