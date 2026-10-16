@@ -86,6 +86,11 @@ extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x100de610 size=0x8
+void sub_100055b5();
+void __stdcall sub_100de610(int) { sub_100055b5(); }
+// END FUNCTION
+
 // FUNCTION: 0x100eb130 size=0x8
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION
