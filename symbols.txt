@@ -105,6 +105,7 @@
 0x1000431d func   ?sub_101cc7a0@CUnknown101cc7a0@@QAEXXZ CUnknown101cc7a0::sub_101cc7a0
 0x1000432c func   ?sub_1010f4e0@@YIXPAPAX@Z sub_1010f4e0
 0x1000433b func   _info_node_werewolf info_node_werewolf
+0x1000439a func   ?sub_101cc7c0@@YIXPAPAX@Z sub_101cc7c0
 0x1000439f func   ?sub_101cc790@@YIXPAPAX@Z sub_101cc790
 0x10004426 func   _item_k_chinese_theatre_key item_k_chinese_theatre_key
 0x10004430 func   _item_p_research_mg_melee item_p_research_mg_melee
