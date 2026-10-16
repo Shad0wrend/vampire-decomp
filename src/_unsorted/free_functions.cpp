@@ -3782,6 +3782,38 @@ char __fastcall sub_1025db50(int *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025e140 size=0x67
+struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+
+// TARGET: sub_1025e140
+void __fastcall sub_1025e140(Mem4 *self, int, int num)
+{
+	if (self->m_nGrowSize == -1)
+		return;
+	int alloc = self->m_nAllocationCount;
+	int need = alloc + num;
+	if (alloc < need) {
+		do {
+			if (alloc != 0) {
+				if (self->m_nGrowSize != 0)
+					alloc = alloc + self->m_nGrowSize;
+				else
+					alloc = alloc + alloc;
+			} else {
+				alloc = 8;
+			}
+		} while (alloc < need);
+		self->m_nAllocationCount = alloc;
+	}
+	if (self->m_pMemory)
+		self->m_pMemory = g_109f3638(self->m_pMemory, self->m_nAllocationCount << 2);
+	else
+		self->m_pMemory = g_109f3634(self->m_nAllocationCount << 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260750 size=0xb
 void __fastcall sub_10260750(char *self)
 {
