@@ -31,6 +31,13 @@ void CBaseEntity::vfunc168()
 int CBaseEntity::vfunc116() { return m_flags268 & 1; }
 // END FUNCTION
 
+// FUNCTION: 0x100aa5a0 size=0xd
+void CBaseEntity::vfunc130(int a)
+{
+	vfunc6(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4bc0 size=0x8
 #include "CBaseEntity.h"
 
