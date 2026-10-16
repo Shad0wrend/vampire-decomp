@@ -5,9 +5,7 @@
 
 struct CAI_Navigator_Arg
 {
-	int v;
-	CAI_Navigator_Arg() {}
-	CAI_Navigator_Arg &operator=(const CAI_Navigator_Arg &o) { v = o.v; return *this; }
+	char v[4];
 };
 
 class CAI_Navigator
