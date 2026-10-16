@@ -1165,6 +1165,41 @@ int sub_100c6590(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c83a0 size=0x67
+extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
+
+struct CMem4c_t {
+	void *m_pMemory; int m_nAllocationCount; int m_nGrowSize;
+	// TARGET: CMem4c_t::sub_100c83a0
+	void sub_100c83a0(int num);
+};
+
+void CMem4c_t::sub_100c83a0(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int alloc = m_nAllocationCount;
+	int newAlloc = num + alloc;
+	if (alloc < newAlloc) {
+		do {
+			if (alloc != 0) {
+				if (m_nGrowSize != 0)
+					alloc += m_nGrowSize;
+				else
+					alloc += alloc;
+			} else
+				alloc = 8;
+		} while (alloc < newAlloc);
+		m_nAllocationCount = alloc;
+	}
+	if (m_pMemory)
+		m_pMemory = Plat_Realloc(m_pMemory, m_nAllocationCount << 2);
+	else
+		m_pMemory = Plat_Alloc(m_nAllocationCount << 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c89e0 size=0xa
 void __fastcall sub_100c89e0(char *self, int, int)
 {
