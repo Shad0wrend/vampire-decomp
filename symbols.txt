@@ -319,6 +319,7 @@
 0x1000ba9b func   _item_g_gargoyle_book item_g_gargoyle_book
 0x1000bba9 func   _item_w_bush_hook item_w_bush_hook
 0x1000bbc7 func   __firesmoke _firesmoke
+0x1000bc44 func   ?sub_10323a70@@YIFPAD@Z sub_10323a70
 0x1000bcdf func   _auspex_aura auspex_aura
 0x1000bdfc func   _func_keyframed_mover func_keyframed_mover
 0x1000be1a func   _vampire_skill vampire_skill

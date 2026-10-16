@@ -116,6 +116,13 @@ extern char g_1093412c;
 void sub_102f99b0() { g_1093412c = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x10323a70 size=0x8
+short __fastcall sub_10323a70(char *p)
+{
+	return *(short *)(p + 0x10b0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10359ba0 size=0x8
 void __fastcall sub_10359ba0(int *p) { p[3] = 0; }
 // END FUNCTION
