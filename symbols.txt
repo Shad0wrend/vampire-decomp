@@ -44,6 +44,7 @@
 0x10001f9b func   _item_k_leopold_int_key item_k_leopold_int_key
 0x10001fd7 func   ?vfunc62@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc62
 0x10001ffa func   _item_d_holy_light item_d_holy_light
+0x10002027 func   ?sub_102e26f0@@YIXPAUCOwner@@@Z sub_102e26f0
 0x1000211c func   _sheriff_teleport_bats sheriff_teleport_bats
 0x1000212b func   _item_k_shrekhub_three_key item_k_shrekhub_three_key
 0x10002153 func   _item_g_car_stereo item_g_car_stereo
