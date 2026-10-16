@@ -856,6 +856,13 @@ void sub_10003a94();
 void __stdcall sub_1012cf90(int) { sub_10003a94(); }
 // END FUNCTION
 
+// FUNCTION: 0x1012e6a0 size=0xd
+void CUnknown1012e6a0::sub_1012e6a0(int unused)
+{
+	m_unk450 = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f850 size=0x9
 // TARGET: sub_1012f850
 float sub_1012f850(float x) { return x * x; }

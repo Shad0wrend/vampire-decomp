@@ -898,6 +898,7 @@
 0x10011d33 func   _prop_doorknob prop_doorknob
 0x10011e14 func   ?sub_1027d9b0@@YIXPAD@Z sub_1027d9b0
 0x10011e5f func   ?sub_1042d720@@YIIPAI@Z sub_1042d720
+0x10011eb9 func   ?sub_1012e6a0@CUnknown1012e6a0@@QAEXH@Z CUnknown1012e6a0::sub_1012e6a0
 0x10011ee6 func   ?sub_102dce10@@YIXPAH@Z sub_102dce10
 0x10011f04 func   ?sub_100f97b0@CUnknown100f97b0@@QAEPAUCUnknown100f97b0_Elem@@H@Z CUnknown100f97b0::sub_100f97b0
 0x10011f09 func   _worldevents worldevents
