@@ -2956,6 +2956,14 @@ void CUnknown10398d90::sub_10398d90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039aaf0 size=0xd
+// TARGET: CUnknown1039aaf0::sub_1039aaf0
+void CUnknown1039aaf0::sub_1039aaf0(char value)
+{
+	m_unk6750 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be090 size=0xc
 bool CUnknown10381be0::sub_103be090()
 {
