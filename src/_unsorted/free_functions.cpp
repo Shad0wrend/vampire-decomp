@@ -2527,3 +2527,19 @@ void CUnknown1042da80::sub_1042da80(int value)
 	m_unk0 = value;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1043ac71 size=0xc
+__declspec(naked) void sub_1043ac71(int *p)
+{
+	__asm {
+		push edi
+		mov edi, dword ptr [esp + 8]
+		xor eax, eax
+		stosd
+		stosd
+		stosd
+		pop edi
+		ret
+	}
+}
+// END FUNCTION
