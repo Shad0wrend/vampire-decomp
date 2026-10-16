@@ -437,6 +437,7 @@
 0x1000a394 func   _simple_physics_prop simple_physics_prop
 0x1000a3c6 func   ?sub_101eab00@@YAXH@Z sub_101eab00
 0x1000a457 func   _func_rotating func_rotating
+0x1000a4bb func   ?sub_10231ed0@CUnknown10231ed0@@QAEIXZ CUnknown10231ed0::sub_10231ed0
 0x1000a5f1 func   _npc_VCombatman npc_VCombatman
 0x1000a641 func   _item_k_oh_front_key item_k_oh_front_key
 0x1000a64b func   ?sub_1042d650@CUnknown1042d650@@QAEPAU1@XZ CUnknown1042d650::sub_1042d650

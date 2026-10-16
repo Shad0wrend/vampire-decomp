@@ -1475,6 +1475,13 @@ unsigned int __fastcall sub_10231e60(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231ed0 size=0xc
+unsigned int CUnknown10231ed0::sub_10231ed0()
+{
+	return (m_flags464 >> 1) & 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232520 size=0xa
 void __fastcall sub_10232520(int *self, int, int value)
 {
