@@ -2423,6 +2423,41 @@ struct CUnknown101c2b10 { char p[0x4a]; char a; void sub_101c2b10(char v); };
 void CUnknown101c2b10::sub_101c2b10(char v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101c4490 size=0x67
+extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
+
+struct CMem4e_t {
+	void *m_pMemory; int m_nAllocationCount; int m_nGrowSize;
+	// TARGET: CMem4e_t::sub_101c4490
+	void sub_101c4490(int num);
+};
+
+void CMem4e_t::sub_101c4490(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int alloc = m_nAllocationCount;
+	int newAlloc = num + alloc;
+	if (alloc < newAlloc) {
+		do {
+			if (alloc != 0) {
+				if (m_nGrowSize != 0)
+					alloc += m_nGrowSize;
+				else
+					alloc += alloc;
+			} else
+				alloc = 8;
+		} while (alloc < newAlloc);
+		m_nAllocationCount = alloc;
+	}
+	if (m_pMemory)
+		m_pMemory = Plat_Realloc(m_pMemory, m_nAllocationCount << 2);
+	else
+		m_pMemory = Plat_Alloc(m_nAllocationCount << 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4790 size=0xa
 struct CUnknown101c4790 { CUnknown101c4790 *a; CUnknown101c4790 *b; CUnknown101c4790* sub_101c4790(int x); };
 // TARGET: CUnknown101c4790::sub_101c4790
