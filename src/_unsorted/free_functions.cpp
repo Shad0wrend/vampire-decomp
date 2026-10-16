@@ -166,6 +166,46 @@ void CUnknown100732b0::sub_100732b0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100732f0 size=0x67
+extern "C" {
+__declspec(dllimport) void* Plat_Alloc(int size);
+__declspec(dllimport) void* Plat_Realloc(void* p, int size);
+}
+
+struct UtlMem5 {
+	int* m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_100732f0(int num);
+};
+
+// TARGET: UtlMem5::sub_100732f0
+void UtlMem5::sub_100732f0(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int newAlloc = m_nAllocationCount;
+	int target = newAlloc + num;
+	if (newAlloc < target) {
+		do {
+			if (newAlloc != 0) {
+				if (m_nGrowSize != 0)
+					newAlloc += m_nGrowSize;
+				else
+					newAlloc += newAlloc;
+			} else {
+				newAlloc = 8;
+			}
+		} while (newAlloc < target);
+		m_nAllocationCount = newAlloc;
+	}
+	if (m_pMemory)
+		m_pMemory = (int*)Plat_Realloc(m_pMemory, m_nAllocationCount * 4);
+	else
+		m_pMemory = (int*)Plat_Alloc(m_nAllocationCount * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100737b0 size=0x9
 struct CUnknown100737b0 { int m_val; void sub_100737b0(int v); };
 void CUnknown100737b0::sub_100737b0(int v) { m_val = v; }
