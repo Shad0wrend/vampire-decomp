@@ -9,4 +9,5 @@ class CHL2_Player
 public:
 	virtual void vfunc475(int value);
 	virtual float vfunc480();
+	virtual float vfunc481();
 };
