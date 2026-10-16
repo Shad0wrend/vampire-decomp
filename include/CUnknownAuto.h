@@ -2,3 +2,4 @@
 #pragma once
 
 #include "CUnknown100ddf40.h"
+#include "CUnknown100f97b0.h"
