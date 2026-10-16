@@ -1775,6 +1775,13 @@ void __fastcall sub_102e7e40(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e7e60 size=0xb
+void CUnknown102e12c0::sub_102e7e60()
+{
+	m_pOuter->vfunc521();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e8250 size=0x8
 void __fastcall sub_102e8250(float *p) { p[6] = 3.402823466e+38f; }
 // END FUNCTION
