@@ -29,6 +29,7 @@
 #include "CSingleplayRules.h"
 #include "CSkyCamera.h"
 #include "CStealthKillRules.h"
+#include "CUnknown1012cf10.h"
 #include "CUnknown101daf60.h"
 #include "CUnknown102dd450.h"
 #include "CWeaponRanged.h"
