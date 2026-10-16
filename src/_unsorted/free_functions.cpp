@@ -1294,6 +1294,14 @@ struct CUnknown102886f0 { char p[0x40]; int a; void sub_102886f0(int v); };
 void CUnknown102886f0::sub_102886f0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x102a0eb0 size=0xb
+void __fastcall sub_100037e2(void *);
+void __fastcall sub_102a0eb0(char *self)
+{
+	sub_100037e2(*(void **)(self + 0x5d34));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a95e0 size=0xa
 struct CUnknown102a95e0 { int a[1]; int *sub_102a95e0(int i); };
 // TARGET: CUnknown102a95e0::sub_102a95e0
