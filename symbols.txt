@@ -446,6 +446,7 @@
 0x1000a7e5 func   _npc_VHengeyokai npc_VHengeyokai
 0x1000a80d func   _env_fog_controller env_fog_controller
 0x1000a821 func   ?vfunc408@CBasePlayer@@UAEXXZ CBasePlayer::vfunc408
+0x1000a830 func   ?sub_101f9690@CUnknown101f9670@@QAEXXZ CUnknown101f9670::sub_101f9690
 0x1000a853 func   ?sub_102cc7e0@@YIXPAH@Z sub_102cc7e0
 0x1000a867 func   ?sub_102886f0@CUnknown102886f0@@QAEXH@Z CUnknown102886f0::sub_102886f0
 0x1000a899 func   _npc_VSabbatGunman npc_VSabbatGunman
