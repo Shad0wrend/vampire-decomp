@@ -453,6 +453,7 @@
 0x1000b627 func   _func_wall func_wall
 0x1000b67c func   ?sub_1020e060@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e060
 0x1000b6a4 func   _env_sprite env_sprite
+0x1000b6f4 func   ?vfunc305@CBaseMoneyObject@@QAEXXZ CBaseMoneyObject::vfunc305
 0x1000b717 func   _item_w_sheriff_sword item_w_sheriff_sword
 0x1000b726 func   _npc_VTremere npc_VTremere
 0x1000b749 func   _npc_VMingXiao npc_VMingXiao
