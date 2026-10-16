@@ -1890,6 +1890,13 @@ void CUnknown102b5dc0::sub_102ae7f0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ae8c0 size=0xd
+void CUnknown102b5dc0::sub_102ae8c0(int value)
+{
+	m_unk65cc = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5dc0 size=0xd
 void CUnknown102b5dc0::sub_102b5dc0(int value)
 {
