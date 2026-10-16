@@ -383,6 +383,7 @@
 0x10007cde func   _player player
 0x10007d42 func   ?vfunc4@CRecipientFilter@@UAEDXZ CRecipientFilter::vfunc4
 0x10007d5b func   _item_k_gimble_key item_k_gimble_key
+0x10007dd3 func   ?sub_100f9940@@YIXPAUMem4@@HH@Z sub_100f9940
 0x10007df6 func   ?sub_101a1f70@CUnknown101a1f70@@QAEHXZ CUnknown101a1f70::sub_101a1f70
 0x10007e14 func   _npc_maker_fleshpile npc_maker_fleshpile
 0x10007e32 func   ?sub_10216850@@YIXPADHH@Z sub_10216850
