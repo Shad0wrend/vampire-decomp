@@ -5,6 +5,7 @@
 #include "CUnknown100b99b0.h"
 #include "CUnknown101030e0.h"
 #include "CUnknown1012cf70.h"
+#include "CUnknown1015ef20.h"
 #include "CUnknown101c1b40.h"
 #include "CUnknown102237e0.h"
 #include "CUnknown102d00a0.h"
