@@ -26,5 +26,6 @@
 #include "CSceneEntity.h"
 #include "CSingleplayRules.h"
 #include "CSkyCamera.h"
+#include "CStealthKillRules.h"
 #include "CWeaponRanged.h"
 #include "CWeaponThrown_Grenade_Frag.h"
