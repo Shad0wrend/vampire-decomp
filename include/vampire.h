@@ -11,6 +11,7 @@
 #include "CCollisionProperty.h"
 #include "CDirtySpatialPartitionEntityList.h"
 #include "CEffectsServer.h"
+#include "CFuncPlat.h"
 #include "CGameRules.h"
 #include "CGlobalEntityList.h"
 #include "CLagCompensationManager.h"
