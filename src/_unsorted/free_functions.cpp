@@ -305,6 +305,12 @@ float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4820 size=0x9
+struct CUnknown101c4760 { int a; int b; int c; void sub_101c4760(); };
+// TARGET: sub_101c4820
+void sub_101c4820(CUnknown101c4760 *p) { p->sub_101c4760(); }
+// END FUNCTION
+
 // FUNCTION: 0x101cc790 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc790(void **p) { ((Fn *)*p)[247](p); }
