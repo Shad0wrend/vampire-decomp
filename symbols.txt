@@ -825,6 +825,7 @@
 0x100124a4 func   _point_camera point_camera
 0x100124b3 func   _CreateInterface CreateInterface
 0x100124c7 func   _item_g_badlucktalisman item_g_badlucktalisman
+0x100124ea func   ?sub_103be090@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be090
 0x1001252b func   _info_node_chang_ledge info_node_chang_ledge
 0x100127c4 func   ?sub_100295f0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295f0
 0x100127d8 func   ?sub_102507b0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_102507b0
