@@ -847,6 +847,13 @@ void __fastcall sub_100107d5(char *p);
 void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }
 // END FUNCTION
 
+// FUNCTION: 0x101e1870 size=0xc
+unsigned int __stdcall sub_101e1870(unsigned int v)
+{
+	return v | 0x80000000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e22b0 size=0x8
 struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
