@@ -34,3 +34,9 @@ void __fastcall sub_102c6f70(BehaviorStub *b)
 // TARGET: CAI_Behavior<CAI_BaseNPC,100000>::vfunc24
 char CAI_Behavior<CAI_BaseNPC,100000>::vfunc24(int a) { m_flag10 = 0; return 0; }
 // END FUNCTION
+
+// FUNCTION: 0x102c6fd0 size=0x9
+#include "CAI_Behavior.h"
+// TARGET: CAI_Behavior<CAI_BaseNPC,100000>::vfunc25
+char CAI_Behavior<CAI_BaseNPC,100000>::vfunc25(int a) { m_flag10 = 0; return 1; }
+// END FUNCTION
