@@ -699,6 +699,7 @@
 0x100124b3 func   _CreateInterface CreateInterface
 0x100124c7 func   _item_g_badlucktalisman item_g_badlucktalisman
 0x1001252b func   _info_node_chang_ledge info_node_chang_ledge
+0x100127c4 func   ?sub_100295f0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295f0
 0x100127d8 func   ?sub_102507b0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_102507b0
 0x100127e2 func   ?vfunc35@CPushable@@UAEHH@Z CPushable::vfunc35
 0x10012864 func   _item_k_murietta_key item_k_murietta_key
