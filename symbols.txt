@@ -264,6 +264,7 @@
 0x1000a75e func   _item_g_brotherhood_flyer item_g_brotherhood_flyer
 0x1000a7e5 func   _npc_VHengeyokai npc_VHengeyokai
 0x1000a80d func   _env_fog_controller env_fog_controller
+0x1000a821 func   ?vfunc408@CBasePlayer@@UAEXXZ CBasePlayer::vfunc408
 0x1000a899 func   _npc_VSabbatGunman npc_VSabbatGunman
 0x1000a9c0 func   _camera_keyframe camera_keyframe
 0x1000a9c5 func   _item_g_idol_crane item_g_idol_crane

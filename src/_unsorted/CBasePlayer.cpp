@@ -9,3 +9,11 @@ void CBasePlayer::vfunc407()
 	m_b19F6 = true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1015eea0 size=0x8
+// TARGET: CBasePlayer::vfunc408
+void CBasePlayer::vfunc408()
+{
+	m_b19F6 = false;
+}
+// END FUNCTION
