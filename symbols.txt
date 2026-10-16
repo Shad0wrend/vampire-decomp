@@ -526,6 +526,7 @@
 0x10011d33 func   _prop_doorknob prop_doorknob
 0x10011f09 func   _worldevents worldevents
 0x10011f0e func   _npc_VVampireBoss npc_VVampireBoss
+0x10011f27 func   ?sub_1015ef00@CUnknown1015ef00@@QAEXXZ CUnknown1015ef00::sub_1015ef00
 0x10011f68 func   ?sub_1015ef40@@YIXPAD@Z sub_1015ef40
 0x10012003 func   _math_colorblend math_colorblend
 0x10012008 func   _flame_cluster flame_cluster
