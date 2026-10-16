@@ -5,7 +5,7 @@
 
 struct CAI_Navigator_Arg
 {
-	char v[4];
+	float v;
 };
 
 class CAI_Navigator
