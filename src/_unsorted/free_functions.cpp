@@ -1191,6 +1191,16 @@ const char *sub_101dbb00(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0040 size=0xd
+CUnknown101e0040* CUnknown101e0040::sub_101e0040()
+{
+	m_unk8 = 0;
+	m_unk0 = 0;
+	m_unk4 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1850 size=0xc
 unsigned int __stdcall sub_101e1850(unsigned int value)
 {

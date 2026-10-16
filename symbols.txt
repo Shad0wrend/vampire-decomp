@@ -458,6 +458,7 @@
 0x1000a0ba func   _logic_squad_condition logic_squad_condition
 0x1000a0d3 func   ?sub_10312320@CUnknown10312320@@QAEXXZ CUnknown10312320::sub_10312320
 0x1000a12d func   _item_g_driver_license_gimble item_g_driver_license_gimble
+0x1000a178 func   ?sub_101e0040@CUnknown101e0040@@QAEPAV1@XZ CUnknown101e0040::sub_101e0040
 0x1000a19b func   _ai_goal_standoff ai_goal_standoff
 0x1000a1a5 func   _prop_dynamic prop_dynamic
 0x1000a1d7 func   ?sub_100740f0@CUnknown100740f0@@QAEXD@Z CUnknown100740f0::sub_100740f0
