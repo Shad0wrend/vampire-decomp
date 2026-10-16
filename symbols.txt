@@ -886,6 +886,7 @@
 0x10013917 func   _info_hint info_hint
 0x1001393f func   _info_null info_null
 0x10013a6b func   _item_g_giovanni_invitation_maria item_g_giovanni_invitation_maria
+0x10013a89 func   ?sub_101dbb00@@YAPBDH@Z sub_101dbb00
 0x10013c28 func   ?sub_100fa690@@YIXPAUCSlots@@HH@Z sub_100fa690
 0x10013d4f func   ?sub_102a95e0@CUnknown102a95e0@@QAEPAHH@Z CUnknown102a95e0::sub_102a95e0
 0x10013d6d func   ?sub_102d41f0@@YIXPAH@Z sub_102d41f0

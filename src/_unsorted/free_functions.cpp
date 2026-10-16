@@ -889,6 +889,14 @@ const char *sub_101dba50(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dbb00 size=0xc
+extern const char *g_105a1c20[];
+const char *sub_101dbb00(int index)
+{
+	return g_105a1c20[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1870 size=0xc
 unsigned int __stdcall sub_101e1870(unsigned int v)
 {
