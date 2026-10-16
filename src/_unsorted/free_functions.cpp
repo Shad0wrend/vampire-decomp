@@ -181,6 +181,10 @@ bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return fa
 int __fastcall sub_101f4280(int *p) { return (*p)++; }
 // END FUNCTION
 
+// FUNCTION: 0x1021e160 size=0x8
+void __fastcall sub_1021e160(int *p) { p[3] = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x1021e410 size=0x8
 void __fastcall sub_1021e410(int *p)
 {
