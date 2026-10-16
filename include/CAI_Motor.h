@@ -26,4 +26,8 @@ public:
 	virtual void vfunc18();
 	virtual void vfunc19();
 	virtual void vfunc20();
+
+	char *m_pOuter;	// 0x0004, CAI_Component::m_pOuter (the owning NPC)
+
+	int sub_102e2610();
 };
