@@ -56,5 +56,5 @@ public:
 	int m_68;
 
 	int sub_102e2610();
-	void sub_102e0900(int outer);
+	CAI_Motor *sub_102e0900(int outer);
 };
