@@ -668,6 +668,7 @@
 0x1000f501 func   ?sub_10258870@CUnknown10258870@@QAEXXZ CUnknown10258870::sub_10258870
 0x1000f506 func   ?sub_10217160@CUnknown10217160@@QAEXXZ CUnknown10217160::sub_10217160
 0x1000f51f func   _item_k_empire_mafia_key item_k_empire_mafia_key
+0x1000f560 func   ?sub_10321ec0@@YAXXZ sub_10321ec0
 0x1000f57e func   ?sub_10258af0@CUnknown10258af0@@QAEXXZ CUnknown10258af0::sub_10258af0
 0x1000f588 func   ?sub_1003c450@@YIXPAPAX@Z sub_1003c450
 0x1000f682 func   ?vfunc63@CMultiplayRules@@UAEPBDH@Z CMultiplayRules::vfunc63

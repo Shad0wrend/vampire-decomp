@@ -1892,6 +1892,14 @@ struct CUnknown10319fe0 { int a; void sub_10319fe0(int v); };
 void CUnknown10319fe0::sub_10319fe0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10321ec0 size=0xb
+extern int g_10937ccc;
+void sub_10321ec0(void)
+{
+	g_10937ccc = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323a70 size=0x8
 short __fastcall sub_10323a70(char *p)
 {
