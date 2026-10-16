@@ -1459,6 +1459,16 @@ extern int g_1073938c;
 void sub_101d8890(int v) { g_1073938c = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101da960 size=0xe
+#include "CUnknown101da960.h"
+extern const char *g_105a1bdc[];
+// TARGET: CUnknown101da960::sub_101da960
+const char *CUnknown101da960::sub_101da960(int index)
+{
+	return g_105a1bdc[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101daf60 size=0x9
 bool CUnknown101daf60::sub_101daf60()
 {
