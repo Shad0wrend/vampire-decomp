@@ -98,6 +98,13 @@ struct CUnknown10074a90 { int p[4]; int a; void sub_10074a90(int v); };
 void CUnknown10074a90::sub_10074a90(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10076670 size=0xd
+void CUnknown10076670::sub_10076670(int value)
+{
+	m_unk2b4 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078860 size=0xb
 void __fastcall sub_10078860(char *self)
 {
