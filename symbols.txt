@@ -252,6 +252,7 @@
 0x10009a61 func   _hud_timer hud_timer
 0x10009aed func   _env_swarm_bats env_swarm_bats
 0x10009b97 func   _npc_VToreador npc_VToreador
+0x10009c19 func   ?sub_10373420@@YIXPAH@Z sub_10373420
 0x10009cdc func   _phys_slideconstraint phys_slideconstraint
 0x10009eb7 func   _prop_padlock prop_padlock
 0x10009ef8 func   _prop_hacking prop_hacking
