@@ -2481,6 +2481,14 @@ void sub_104121d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10429240 size=0xc
+extern const char *g_106ac3a0[];
+const char *sub_10429240(int index)
+{
+	return g_106ac3a0[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c4a0 size=0xb
 extern int g_109eed5c;
 void sub_1042c4a0(void)
