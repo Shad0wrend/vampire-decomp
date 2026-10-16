@@ -170,6 +170,7 @@
 0x10004002 func   ?sub_101e83d0@CUnknown101e83d0@@QAEXPAHPAXH@Z CUnknown101e83d0::sub_101e83d0
 0x100040a7 func   ?sub_10078c30@@YIXPAH@Z sub_10078c30
 0x100041e2 func   ?sub_101f9610@@YAXH@Z sub_101f9610
+0x1000420a func   ?sub_101bdf90@@YIXPAUMem4@@HH@Z sub_101bdf90
 0x1000420f func   ?sub_10076670@CUnknown10076670@@QAEXH@Z CUnknown10076670::sub_10076670
 0x10004232 func   ?sub_10158da0@@YIXPAPAX@Z sub_10158da0
 0x10004269 func   _params_particle params_particle
