@@ -538,6 +538,12 @@ struct CUnknown102ee4f0 { char pad[0x30]; CInner100016b3 *m_pInner; void sub_102
 void CUnknown102ee4f0::sub_102ee4f0() { m_pInner->sub_100016b3(); }
 // END FUNCTION
 
+// FUNCTION: 0x102ee590 size=0x8
+struct B { void sub_10014ef2(int *); };
+struct A { char pad[0x30]; B *b; void sub_102ee590(int *x); };
+void A::sub_102ee590(int *x) { b->sub_10014ef2(x); }
+// END FUNCTION
+
 // FUNCTION: 0x102f8ef0 size=0x8
 void __fastcall sub_102f8ef0(int *p)
 {

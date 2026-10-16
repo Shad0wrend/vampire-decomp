@@ -513,6 +513,7 @@
 0x1000f88a func   _playerevents playerevents
 0x1000f993 func   _phys_animlink phys_animlink
 0x1000fa79 func   _item_w_tzimisce3_claw item_w_tzimisce3_claw
+0x1000fa7e func   ?sub_102ee590@A@@QAEXPAH@Z A::sub_102ee590
 0x1000fa83 func   ?sub_102c6f70@@YIXPAUBehaviorStub@@@Z sub_102c6f70
 0x1000fb1e func   _trigger_transition trigger_transition
 0x1000fbb4 func   _point_anglesensor point_anglesensor
