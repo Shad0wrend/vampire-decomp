@@ -97,6 +97,11 @@ struct CUtlVectorBase { int a, b, c, m_Size; void sub_100f9790(); };
 void CUtlVectorBase::sub_100f9790() { m_Size = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1011a430 size=0x8
+extern char g_1070b264;
+void sub_1011a430() { g_1070b264 = 1; }
+// END FUNCTION
+
 // FUNCTION: 0x1015ef40 size=0x8
 void __fastcall sub_1015ef40(char *p)
 {

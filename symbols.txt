@@ -229,6 +229,7 @@
 0x10008c1f func   _item_g_eldervitaepack item_g_eldervitaepack
 0x10008c42 func   _info_target info_target
 0x10008d14 func   _info_landmark info_landmark
+0x10008d5a func   ?sub_1011a430@@YAXXZ sub_1011a430
 0x10008d82 func   _env_floating_camera env_floating_camera
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point
