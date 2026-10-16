@@ -1479,6 +1479,13 @@ unsigned int COwner::sub_101e8250(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e83f0 size=0xd
+void __stdcall sub_101e83f0(int* out, int b, int c)
+{
+	*out = 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e94b0 size=0xa
 extern int g_1073a144;
 

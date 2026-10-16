@@ -367,6 +367,7 @@
 0x10008035 func   ?sub_101e94b0@@YAXH@Z sub_101e94b0
 0x10008062 func   ?sub_1012cf10@CUnknown1012cf10@@QAEPAV1@XZ CUnknown1012cf10::sub_1012cf10
 0x1000808a func   ?sub_1042ba00@CUnknown1042ba00@@QAEXH@Z CUnknown1042ba00::sub_1042ba00
+0x100080cb func   ?sub_101e83f0@@YGXPAHHH@Z sub_101e83f0
 0x10008107 func   _phys_keepupright phys_keepupright
 0x1000812f func   ?sub_102d00c0@@YIXPAHHH@Z sub_102d00c0
 0x10008175 func   ?sub_10428eb0@@YAHPAD@Z sub_10428eb0
