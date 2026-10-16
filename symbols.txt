@@ -378,6 +378,7 @@
 0x1000ad6c func   _npc_VTaxiDriver npc_VTaxiDriver
 0x1000adda func   _logic_proximity logic_proximity
 0x1000adf3 func   ?vfunc375@CNPC_VWolfMorph@@UAEHH@Z CNPC_VWolfMorph::vfunc375
+0x1000ae02 func   ?sub_101eaa40@@YAXH@Z sub_101eaa40
 0x1000ae48 func   _item_p_occult_blood_buff item_p_occult_blood_buff
 0x1000ae61 func   ?sub_1020b020@CUnknown1020b020@@QAEHH@Z CUnknown1020b020::sub_1020b020
 0x1000aee3 func   _item_k_hitman_ji_key item_k_hitman_ji_key
