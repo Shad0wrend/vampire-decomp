@@ -238,6 +238,7 @@
 0x1000665e func   ?sub_100eb130@@YIXPAH@Z sub_100eb130
 0x100066c7 func   ?sub_102180a0@@YIXPADHH@Z sub_102180a0
 0x10006721 func   ?sub_102e12e0@@YIXPAUCOwner@@@Z sub_102e12e0
+0x1000673f func   ?sub_102c6d90@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102c6d90
 0x10006749 func   _item_g_horrortape_1 item_g_horrortape_1
 0x10006753 func   _item_g_horrortape_2 item_g_horrortape_2
 0x100067c6 func   _item_g_drugs_drug_box item_g_drugs_drug_box

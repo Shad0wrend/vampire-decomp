@@ -1672,6 +1672,19 @@ struct CUnknown102c6d80 {
 void CUnknown102c6d80::sub_102c6d80() { slot486(); }
 // END FUNCTION
 
+// FUNCTION: 0x102c6d90 size=0xb
+struct CAI_BaseNPC_Ext : public CAI_BaseNPC {
+	virtual void vfunc569(); virtual void vfunc570(); virtual void vfunc571(); virtual void vfunc572();
+	virtual void vfunc573(); virtual void vfunc574(); virtual void vfunc575(); virtual void vfunc576();
+	virtual void vfunc577(); virtual void vfunc578(); virtual void vfunc579(); virtual void vfunc580();
+};
+
+void CUnknown102e12c0::sub_102c6d90()
+{
+	((CAI_BaseNPC_Ext *)m_pOuter)->vfunc580();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c7390 size=0xa
 void CUnknown102c7390::sub_102c7390(char value)
 {
