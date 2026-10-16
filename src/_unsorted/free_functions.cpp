@@ -89,6 +89,13 @@ CUnknown1006ccc0 *CUnknown1006ccc0::sub_1006ccc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006e890 size=0xe
+bool CUnknown1006e890::sub_1006e890()
+{
+	return m_unk638 != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006ed20 size=0xd
 void CUnknown1006ed20::sub_1006ed20(int value)
 {
