@@ -2355,6 +2355,13 @@ struct CUnknown102eeba0 { int p[6]; int a; void sub_102eeba0(int v); };
 void CUnknown102eeba0::sub_102eeba0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x102f2fe0 size=0xd
+void CUnknown102ee120::sub_102f2fe0(int value)
+{
+	m_unk30->m_unk20 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f8ef0 size=0x8
 void __fastcall sub_102f8ef0(int *p)
 {
