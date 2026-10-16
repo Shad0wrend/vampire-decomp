@@ -3044,6 +3044,14 @@ const char *sub_10429240(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ba00 size=0xd
+// TARGET: CUnknown1042ba00::sub_1042ba00
+void CUnknown1042ba00::sub_1042ba00(int value)
+{
+	m_unk730 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c4a0 size=0xb
 extern int g_109eed5c;
 void sub_1042c4a0(void)
