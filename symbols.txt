@@ -557,6 +557,7 @@
 0x1000eb7e func   _env_beam env_beam
 0x1000eb97 func   _npc_VHumanCombatant npc_VHumanCombatant
 0x1000ebc9 func   _env_glow env_glow
+0x1000ec1e func   ?sub_101eab60@@YAXH@Z sub_101eab60
 0x1000ecb9 func   _env_player_surface_trigger env_player_surface_trigger
 0x1000ecc8 func   _npc_VPedestrian npc_VPedestrian
 0x1000ed9a func   ?sub_102dd450@CUnknown102dd450@@QAE_NXZ CUnknown102dd450::sub_102dd450
