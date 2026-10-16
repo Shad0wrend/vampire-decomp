@@ -995,6 +995,13 @@ void CUnknown1020e060::sub_1020e060(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e080 size=0xa
+void CUnknown1020e060::sub_1020e080(int unused)
+{
+	m_bFlag = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020f2c0 size=0xa
 void __fastcall sub_1020f2c0(char *self, int, int)
 {
