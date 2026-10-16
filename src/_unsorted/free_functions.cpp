@@ -299,6 +299,11 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc7e0(void **p) { ((Fn *)*p)[243](p); }
 // END FUNCTION
 
+// FUNCTION: 0x101cc7f0 size=0x8
+typedef void (__fastcall *Fn)(void *);
+void __fastcall sub_101cc7f0(void **p) { ((Fn *)*p)[244](p); }
+// END FUNCTION
+
 // FUNCTION: 0x101db9a0 size=0x8
 void __fastcall sub_100107d5(char *p);
 void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }
