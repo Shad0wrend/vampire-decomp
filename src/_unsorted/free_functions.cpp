@@ -2038,6 +2038,17 @@ void __fastcall sub_10232520(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10237c30 size=0xd
+extern int g_10751a54;
+extern int g_10752954;
+
+void sub_10237c30()
+{
+	g_10751a54 = 0;
+	g_10752954 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023f040 size=0xb
 void sub_1023f040(int *p)
 {
