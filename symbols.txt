@@ -46,6 +46,7 @@
 0x1000269e func   _info_node_chang_teleport info_node_chang_teleport
 0x1000275c func   _scripted_sequence scripted_sequence
 0x10002789 func   _npc_VAsianVampire npc_VAsianVampire
+0x100027a2 func   ?sub_10359ba0@@YIXPAH@Z sub_10359ba0
 0x100027de func   _item_m_wallet item_m_wallet
 0x100027f7 func   _light_dynamic light_dynamic
 0x100028ce func   _item_g_garys_cd item_g_garys_cd
