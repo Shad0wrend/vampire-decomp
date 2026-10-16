@@ -10,6 +10,7 @@
 #include "CBasePlayer.h"
 #include "CCollisionProperty.h"
 #include "CDirtySpatialPartitionEntityList.h"
+#include "CEffectsServer.h"
 #include "CGameRules.h"
 #include "CLagCompensationManager.h"
 #include "CMoveHelperServer.h"
