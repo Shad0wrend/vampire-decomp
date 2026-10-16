@@ -3191,6 +3191,15 @@ extern char g_106b8540;
 char * __stdcall sub_1030f660(int) { return &g_106b8540; }
 // END FUNCTION
 
+// FUNCTION: 0x1030fe50 size=0xe
+#include "CUnknown1030fe50.h"
+// TARGET: CUnknown1030fe50::sub_1030fe50
+void CUnknown1030fe50::sub_1030fe50()
+{
+	m_pOwner->m_unk1f8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312320 size=0x8
 struct CSub10002397 { void sub_10002397(); };
 struct CUnknown10312320 { char pad[0x30]; CSub10002397 m_Sub; void sub_10312320(); };
