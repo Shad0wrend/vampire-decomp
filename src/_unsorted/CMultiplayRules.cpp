@@ -28,6 +28,14 @@ int CMultiplayRules::vfunc43(int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142280 size=0x8
+// TARGET: CMultiplayRules::vfunc61
+int CMultiplayRules::vfunc61(int index)
+{
+	return 8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101422a0 size=0x8
 #include "CMultiplayRules.h"
 
