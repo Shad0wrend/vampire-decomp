@@ -532,6 +532,12 @@ void A::sub_102e2800(int x) { b->sub_1000108c(x); }
 void __fastcall sub_102e8250(float *p) { p[6] = 3.402823466e+38f; }
 // END FUNCTION
 
+// FUNCTION: 0x102ee4f0 size=0x8
+struct CInner100016b3 { void sub_100016b3(); };
+struct CUnknown102ee4f0 { char pad[0x30]; CInner100016b3 *m_pInner; void sub_102ee4f0(); };
+void CUnknown102ee4f0::sub_102ee4f0() { m_pInner->sub_100016b3(); }
+// END FUNCTION
+
 // FUNCTION: 0x102f8ef0 size=0x8
 void __fastcall sub_102f8ef0(int *p)
 {

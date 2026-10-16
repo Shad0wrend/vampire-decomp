@@ -493,6 +493,7 @@
 0x1000f17d func   _item_g_vv_photo item_g_vv_photo
 0x1000f182 func   _info_player_deathmatch info_player_deathmatch
 0x1000f1aa func   _item_p_research_lg_computers item_p_research_lg_computers
+0x1000f1d7 func   ?sub_102ee4f0@CUnknown102ee4f0@@QAEXXZ CUnknown102ee4f0::sub_102ee4f0
 0x1000f1fa func   _trigger_bomb_site trigger_bomb_site
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
 0x1000f39e func   ?vfunc329@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc329
