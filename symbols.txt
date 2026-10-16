@@ -185,6 +185,7 @@
 0x10005916 func   ?sub_101c2a10@CUnknown101c2a10@@QAEXH@Z CUnknown101c2a10::sub_101c2a10
 0x10005984 func   _item_k_clinic_maintenance_key item_k_clinic_maintenance_key
 0x10005b32 func   _dynamic_prop dynamic_prop
+0x10005b96 func   ?sub_100792e0@CUnknown100792c0@@QAEXH@Z CUnknown100792c0::sub_100792e0
 0x10005c4f func   _prop_base prop_base
 0x10005c8b func   _npc_VGargoyle npc_VGargoyle
 0x10005cb3 func   _npc_VWerewolf npc_VWerewolf
