@@ -191,6 +191,7 @@
 0x1000683e func   _item_g_ghost_pendant item_g_ghost_pendant
 0x1000693d func   ?sub_102ee600@CUnknown102ee600@@QAEHXZ CUnknown102ee600::sub_102ee600
 0x1000697e func   _npc_VTzimisceRunner npc_VTzimisceRunner
+0x100069a6 func   ?sub_10146790@CUnknown10146790@@QAEXXZ CUnknown10146790::sub_10146790
 0x10006a7d func   _func_lod func_lod
 0x10006b72 func   _npc_VChangBrosClaw npc_VChangBrosClaw
 0x10006c5d func   _filter_base filter_base
