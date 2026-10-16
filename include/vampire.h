@@ -3,3 +3,4 @@
 
 #include "CAI_BaseNPC.h"
 #include "CSceneEntity.h"
+#include "CDirtySpatialPartitionEntityList.h"
