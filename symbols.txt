@@ -297,6 +297,7 @@
 0x100070d6 func   _raggib raggib
 0x10007130 func   _item_p_research_lg_firearms item_p_research_lg_firearms
 0x10007194 func   ?sub_1018e9d0@@YAXHH@Z sub_1018e9d0
+0x100071a8 func   ?sub_10073920@CUnknown10073920@@QAEXH@Z CUnknown10073920::sub_10073920
 0x100071d0 func   _item_a_lt_leather item_a_lt_leather
 0x100071d5 func   ?sub_101d8890@@YAXH@Z sub_101d8890
 0x1000724d func   _phys_constraintsystem phys_constraintsystem
