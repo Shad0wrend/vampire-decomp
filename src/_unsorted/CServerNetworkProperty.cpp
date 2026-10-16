@@ -53,3 +53,10 @@ void CServerNetworkProperty::vfunc1()
 	((CSlots *)m_pOuter)->target();
 }
 // END FUNCTION
+
+// FUNCTION: 0x101ab7e0 size=0xb
+void CServerNetworkProperty::vfunc9()
+{
+	((CBaseEntity *)m_pOuter)->vfunc86();
+}
+// END FUNCTION
