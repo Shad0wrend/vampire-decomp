@@ -895,6 +895,7 @@
 0x100122d8 func   _func_elevator func_elevator
 0x100122e2 func   _trigger_inventory_check trigger_inventory_check
 0x100122e7 func   ?vfunc2@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc2
+0x1001241d func   ?sub_101e8080@CUnknown101e8080@@QAEXPAHPAXMH@Z CUnknown101e8080::sub_101e8080
 0x100124a4 func   _point_camera point_camera
 0x100124b3 func   _CreateInterface CreateInterface
 0x100124c7 func   _item_g_badlucktalisman item_g_badlucktalisman

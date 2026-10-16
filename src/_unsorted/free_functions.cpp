@@ -1234,6 +1234,14 @@ struct CUnknown101e4a90 {
 void CUnknown101e4a90::sub_101e4a90() { slot266(); }
 // END FUNCTION
 
+// FUNCTION: 0x101e8080 size=0xd
+// TARGET: CUnknown101e8080::sub_101e8080
+void CUnknown101e8080::sub_101e8080(int *out, void *ent, float dist, int flags)
+{
+	*out = 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e80a0 size=0x8
 int __stdcall sub_101e80a0(int) { return 10; }
 // END FUNCTION
