@@ -3091,6 +3091,20 @@ void CUnknown1042da80::sub_1042da80(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10436e0e size=0xd
+__declspec(naked) void sub_10436e0e()
+{
+	__asm {
+		cmp word ptr [esp], 0x27f
+		je skip
+		fldcw word ptr [esp]
+	skip:
+		pop edx
+		ret
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1043ac71 size=0xc
 __declspec(naked) void sub_1043ac71(int *p)
 {

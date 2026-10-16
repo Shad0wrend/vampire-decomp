@@ -1077,6 +1077,7 @@
 0x10015d93 func   ?vfunc337@CBaseCombatWeapon@@UAEMHH@Z CBaseCombatWeapon::vfunc337
 0x10015e3d func   ?sub_102e0a40@CUnknown102e0a40@@QAEXH@Z CUnknown102e0a40::sub_102e0a40
 0x104340be func   ?vfunc1@exception@@UBEPBDXZ exception::vfunc1
+0x10436e0e func   ?sub_10436e0e@@YAXXZ sub_10436e0e
 0x1043ac71 func   ?sub_1043ac71@@YAXPAH@Z sub_1043ac71
 0x10445024 vtable ??_7CPhysForce@@6B@ CPhysForce::vftable
 0x104454b8 vtable ??_7CConstantForceController@@6B@ CConstantForceController::vftable
