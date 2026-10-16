@@ -12,7 +12,7 @@ public:
 	virtual void vfunc4();
 	virtual void vfunc5();
 	virtual void vfunc6();
-	virtual void vfunc7();
+	virtual unsigned int vfunc7();
 	virtual void vfunc8();
 	unsigned int m_flags;
 };
