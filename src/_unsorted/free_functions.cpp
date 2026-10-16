@@ -15,6 +15,10 @@ void __fastcall sub_1003c1c0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ee00 size=0x8
+void __fastcall sub_1007ee00(int *p) { p[3] = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x1015ef40 size=0x8
 void __fastcall sub_1015ef40(char *p)
 {

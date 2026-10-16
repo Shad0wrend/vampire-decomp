@@ -465,6 +465,7 @@
 0x1001000f func   _item_k_museum_office_key item_k_museum_office_key
 0x10010037 func   _math_counter math_counter
 0x10010113 func   _npc_VSheriffMan npc_VSheriffMan
+0x10010163 func   ?sub_1007ee00@@YIXPAH@Z sub_1007ee00
 0x10010311 func   _item_g_bluebloodpack item_g_bluebloodpack
 0x100103b1 func   _funCBaseFlex funCBaseFlex
 0x100104c9 func   _item_k_fu_office_key item_k_fu_office_key
