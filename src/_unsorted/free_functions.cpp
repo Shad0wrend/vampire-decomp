@@ -1030,6 +1030,13 @@ void __fastcall sub_10216830(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10216850 size=0xa
+void __fastcall sub_10216850(char *self, int, int)
+{
+	self[0x734] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10217160 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
