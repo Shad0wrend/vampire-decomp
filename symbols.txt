@@ -182,6 +182,7 @@
 0x100047aa func   ?sub_10032b00@@YIXPAH@Z sub_10032b00
 0x100047c3 func   _item_w_tzimisce2_head item_w_tzimisce2_head
 0x1000482c func   _item_w_tzimisce2_claw item_w_tzimisce2_claw
+0x100048e0 func   ?sub_10183100@CUnknown10183100@@QAEXH@Z CUnknown10183100::sub_10183100
 0x10004903 func   _vdisciplineprojectile vdisciplineprojectile
 0x100049e9 func   ?sub_10157890@CUnknown101578b0@@QAEXD@Z CUnknown101578b0::sub_10157890
 0x10004aac func   _player_pickup player_pickup

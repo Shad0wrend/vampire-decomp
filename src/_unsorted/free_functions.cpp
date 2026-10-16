@@ -851,6 +851,15 @@ void __fastcall sub_10181600(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10183100 size=0xd
+#include "CUnknown10183100.h"
+
+void CUnknown10183100::sub_10183100(int value)
+{
+	m_unk1df8 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184360 size=0x8
 void __fastcall sub_10184360(int *p)
 {
