@@ -50,6 +50,7 @@
 0x100027f7 func   _light_dynamic light_dynamic
 0x100028ce func   _item_g_garys_cd item_g_garys_cd
 0x100029a0 func   _hud_counter hud_counter
+0x10002acc func   ?vfunc404@CNPC_VNewscaster@@UAEHH@Z CNPC_VNewscaster::vfunc404
 0x10002ae5 func   _prop_ragdoll_attached prop_ragdoll_attached
 0x10002af4 func   _item_g_edane_print_report item_g_edane_print_report
 0x10002b9e func   _env_particle_hud env_particle_hud
