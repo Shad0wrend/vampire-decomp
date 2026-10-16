@@ -261,6 +261,15 @@ void CUnknown100b7c60::sub_100b7c60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc380 size=0xc
+extern void (*g_106d2a10)();
+void sub_100bc380()
+{
+	if (g_106d2a10)
+		g_106d2a10();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc3a0 size=0xa
 extern int g_106d2a10;
 
