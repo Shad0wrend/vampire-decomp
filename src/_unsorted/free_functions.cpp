@@ -5019,6 +5019,38 @@ void __fastcall sub_10349ea0(int *p) { p[3] = 0; }
 void __fastcall sub_1034a010(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1034a1a0 size=0x67
+struct Mem16 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+
+// TARGET: sub_1034a1a0
+void __fastcall sub_1034a1a0(Mem16 *self, int, int num)
+{
+	if (self->m_nGrowSize == -1)
+		return;
+	int alloc = self->m_nAllocationCount;
+	int need = alloc + num;
+	if (alloc < need) {
+		do {
+			if (alloc != 0) {
+				if (self->m_nGrowSize != 0)
+					alloc = alloc + self->m_nGrowSize;
+				else
+					alloc = alloc + alloc;
+			} else {
+				alloc = 2;
+			}
+		} while (alloc < need);
+		self->m_nAllocationCount = alloc;
+	}
+	if (self->m_pMemory)
+		self->m_pMemory = g_109f3638(self->m_pMemory, self->m_nAllocationCount << 4);
+	else
+		self->m_pMemory = g_109f3634(self->m_nAllocationCount << 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034a230 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
