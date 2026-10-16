@@ -110,6 +110,14 @@ void CUnknown100737d0::sub_100737d0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100738e0 size=0xd
+// TARGET: CUnknown100738e0::sub_100738e0
+void CUnknown100738e0::sub_100738e0(int value)
+{
+	m_unk80 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073920 size=0xd
 #include "CUnknown10073920.h"
 

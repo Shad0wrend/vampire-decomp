@@ -97,6 +97,7 @@
 0x10002cc5 func   _phys_convert phys_convert
 0x10002d79 func   _ai_network ai_network
 0x10002dbf func   _item_w_thirtyeight item_w_thirtyeight
+0x10002dd8 func   ?sub_100738e0@CUnknown100738e0@@QAEXH@Z CUnknown100738e0::sub_100738e0
 0x10002e4b func   _item_g_watch_fancy item_g_watch_fancy
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
 0x10003017 func   _ai_changehintgroup ai_changehintgroup
