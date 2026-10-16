@@ -1180,6 +1180,14 @@ CUnknown101f9670 *CUnknown101f9670::sub_101f9670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202760 size=0xc
+extern int g_105a6fc8[];
+int sub_10202760(int index)
+{
+	return g_105a6fc8[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202780 size=0xc
 extern int g_105a6fd8[];
 int sub_10202780(int i)
