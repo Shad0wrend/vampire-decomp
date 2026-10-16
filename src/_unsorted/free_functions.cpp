@@ -1725,6 +1725,14 @@ struct CUnknown1027fc40 {
 void CUnknown1027fc40::sub_1027fc40() { slot431(); }
 // END FUNCTION
 
+// FUNCTION: 0x10280d10 size=0xc
+bool CUnknown10280d10::sub_10280d10()
+{
+	bool r = m_unk5c38 != 0;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10288540 size=0x9
 struct CUnknown10288540 { int m_p; CUnknown10288540 *sub_10288540(); };
 CUnknown10288540 *CUnknown10288540::sub_10288540() { m_p = 0; return this; }
