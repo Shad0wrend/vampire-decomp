@@ -285,6 +285,13 @@ struct CUnknown1007dfc0 { char p[0x78]; int a; void sub_1007dfc0(int v); };
 void CUnknown1007dfc0::sub_1007dfc0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x1007dfe0 size=0xd
+void CUnknown1007dfe0::sub_1007dfe0(int value)
+{
+	m_unkA0 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e580 size=0x8
 void __fastcall sub_1007e580(int *p) { p[0x5c / 4] = 0; }
 // END FUNCTION
