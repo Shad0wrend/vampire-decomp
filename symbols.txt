@@ -459,6 +459,7 @@
 0x10009732 func   ?sub_10330ce0@CUnknown10330ce0@@QAEXD@Z CUnknown10330ce0::sub_10330ce0
 0x1000973c func   ?sub_100eb420@CUnknown100eb420@@QAE_NXZ CUnknown100eb420::sub_100eb420
 0x10009778 func   _mover_keyframe mover_keyframe
+0x10009787 func   ?vfunc601@CNPC_VHengeyokai@@UAEXH@Z CNPC_VHengeyokai::vfunc601
 0x100097b9 func   _trigger_werewolf_zone trigger_werewolf_zone
 0x100097c3 func   _hud_image hud_image
 0x10009890 func   ?vfunc567@CAI_BaseNPC@@UAEHH@Z CAI_BaseNPC::vfunc567
