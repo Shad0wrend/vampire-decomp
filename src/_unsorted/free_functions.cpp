@@ -1134,6 +1134,17 @@ void CUnknown101d4f20::sub_101d4f40(CUnknown101d4f20_Value *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d54f0 size=0xd
+// TARGET: CUnknown101d54f0::sub_101d54f0
+CUnknown101d54f0 *CUnknown101d54f0::sub_101d54f0()
+{
+	m_unk8 = 0;
+	m_unk0 = 0;
+	m_unk4 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8890 size=0xa
 extern int g_1073938c;
 // TARGET: sub_101d8890

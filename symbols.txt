@@ -671,6 +671,7 @@
 0x1000e07f func   _env_physimpact env_physimpact
 0x1000e093 func   ?vfunc30@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc30
 0x1000e0c0 func   _item_g_hatters_screenplay item_g_hatters_screenplay
+0x1000e106 func   ?sub_101d54f0@CUnknown101d54f0@@QAEPAV1@XZ CUnknown101d54f0::sub_101d54f0
 0x1000e11f func   ?vfunc89@CBaseEntity@@UAEXXZ CBaseEntity::vfunc89
 0x1000e147 func   ?sub_101d4f40@CUnknown101d4f20@@QAEXPAUCUnknown101d4f20_Value@@@Z CUnknown101d4f20::sub_101d4f40
 0x1000e214 func   _func_platrot func_platrot
