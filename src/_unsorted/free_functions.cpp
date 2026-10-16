@@ -208,6 +208,13 @@ void CUnknown10077730::sub_10077730(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100784b0 size=0xd
+void CUnknown10077730::sub_100784b0(float value)
+{
+	m_flSequenceDuration = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078540 size=0xd
 void CUnknown10078540::sub_10078540(int value)
 {

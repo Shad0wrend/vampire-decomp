@@ -1018,6 +1018,7 @@
 0x10015393 func   _item_w_sabbatleader_attack item_w_sabbatleader_attack
 0x100153e8 func   ?vfunc4@CSave@@UAEXXZ CSave::vfunc4
 0x10015406 func   _trigger_autosave trigger_autosave
+0x100154b0 func   ?sub_100784b0@CUnknown10077730@@QAEXM@Z CUnknown10077730::sub_100784b0
 0x10015555 func   ?vfunc49@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc49
 0x100155b9 func   _item_w_uzi item_w_uzi
 0x100155be func   _prop_ragdoll prop_ragdoll
