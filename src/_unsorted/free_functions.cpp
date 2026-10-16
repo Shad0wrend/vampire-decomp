@@ -168,6 +168,15 @@ struct CUnknown10083960 { int p; int a; void sub_10083960(int v); };
 void CUnknown10083960::sub_10083960(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10098810 size=0xb
+CUnknown10098810 *CUnknown10098810::sub_10098810()
+{
+	m_unk14 = 0;
+	m_unk4 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8220 size=0xa
 unsigned int CUnknown100a8220::sub_100a8220()
 {
