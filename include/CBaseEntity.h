@@ -14,7 +14,7 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual void vfunc5();
-	virtual void vfunc6();
+	virtual void vfunc6(int a);
 	virtual void vfunc7();
 	virtual int vfunc8();
 	virtual void vfunc9(); virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13();
@@ -40,6 +40,10 @@ public:
 	virtual void vfunc109(); virtual void vfunc110(); virtual void vfunc111(); virtual void vfunc112(); virtual void vfunc113();
 	virtual void vfunc114(); virtual void vfunc115();
 	virtual int vfunc116();
+	virtual void vfunc117(); virtual void vfunc118(); virtual void vfunc119();
+	virtual void vfunc120(); virtual void vfunc121(); virtual void vfunc122(); virtual void vfunc123(); virtual void vfunc124();
+	virtual void vfunc125(); virtual void vfunc126(); virtual void vfunc127(); virtual void vfunc128(); virtual void vfunc129();
+	virtual void vfunc130(int a);
 
 	// Slots whose callers call them directly, so far only declared as plain members.
 	void vfunc168();
