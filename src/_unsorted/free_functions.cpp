@@ -363,6 +363,13 @@ extern char g_1070b264;
 void sub_1011a430() { g_1070b264 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x101251e0 size=0xb
+void __fastcall sub_101251e0(char *self)
+{
+	*(int *)(self + 0xac) = -9999;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cf10 size=0x9
 CUnknown1012cf10 *CUnknown1012cf10::sub_1012cf10()
 {
