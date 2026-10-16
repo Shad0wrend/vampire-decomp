@@ -9,6 +9,7 @@ class CBasePlayer
 {
 public:
 	virtual void vfunc407();
+	virtual void vfunc408();
 
 	char m_pad0004[0x19F2];	// 0x0004 .. 0x19F5
 	bool m_b19F6;
