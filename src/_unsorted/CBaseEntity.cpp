@@ -67,3 +67,10 @@ void CBaseEntity::vfunc195()
 	(*(VFunc **)this)[221](this);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b4f10 size=0xd
+void CBaseEntity::vfunc84(int flags)
+{
+	m_flags268 = flags;
+}
+// END FUNCTION

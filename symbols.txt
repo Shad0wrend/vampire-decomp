@@ -596,6 +596,7 @@
 0x1000d3eb func   _scripted_sentence scripted_sentence
 0x1000d418 func   _trigger_discipline_context trigger_discipline_context
 0x1000d445 func   _item_w_avamp_blade item_w_avamp_blade
+0x1000d468 func   ?vfunc84@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc84
 0x1000d49f func   ?sub_10288540@CUnknown10288540@@QAEPAU1@XZ CUnknown10288540::sub_10288540
 0x1000d526 func   _ai_changetarget ai_changetarget
 0x1000d56c func   ?vfunc8@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc8
