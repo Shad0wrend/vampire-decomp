@@ -1244,6 +1244,14 @@ struct CUnknown1027d990 { char p[0x5d34]; CUnknown1027d990Sub *m; int sub_1027d9
 int CUnknown1027d990::sub_1027d990() { return m->a; }
 // END FUNCTION
 
+// FUNCTION: 0x1027d9b0 size=0xb
+void __fastcall sub_102eeba0(void *);
+void __fastcall sub_1027d9b0(char *self)
+{
+	sub_102eeba0(*(void **)(self + 0x5d34));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027fbf0 size=0x9
 struct CUnknown1027fbf0 { int a; CUnknown1027fbf0* sub_1027fbf0(); };
 // TARGET: CUnknown1027fbf0::sub_1027fbf0
