@@ -2250,6 +2250,13 @@ CUnknown102508f0_Elem *CUnknown102508f0::sub_102508f0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252450 size=0xe
+float CUnknown10252450::sub_10252450(int index)
+{
+	return m_unk730[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10256200 size=0xb
 unsigned char __fastcall sub_10256200(unsigned char *self)
 {
