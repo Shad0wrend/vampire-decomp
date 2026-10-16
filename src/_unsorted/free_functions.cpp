@@ -3128,6 +3128,15 @@ short __fastcall sub_10323a70(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10330ce0 size=0xd
+#include "CUnknown10330ce0.h"
+// TARGET: CUnknown10330ce0::sub_10330ce0
+void CUnknown10330ce0::sub_10330ce0(char value)
+{
+	m_unkfc8 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349a00 size=0x8
 void __fastcall sub_10349a00(int *p) { p[3] = 0; }
 // END FUNCTION
