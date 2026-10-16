@@ -44,6 +44,7 @@
 #include "CUnknown100be040.h"
 #include "CUnknown100fdce0.h"
 #include "CUnknown1019d490.h"
+#include "CUnknown101ed9e0.h"
 #include "CUnknown10215910.h"
 #include "CUnknown10227210.h"
 #include "CUnknown10248850.h"
