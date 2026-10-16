@@ -6,6 +6,7 @@
 class CMultiplayRules : public CGameRules
 {
 public:
+	virtual float vfunc30(int a);
 	virtual int vfunc43(int a, int b);
 	virtual int vfunc61(int index);
 	virtual int vfunc62(int index);
