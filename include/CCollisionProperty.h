@@ -32,6 +32,7 @@ class CCollisionProperty : public ICollideable
 {
 public:
 	virtual int vfunc6();
+	virtual void vfunc8();
 	virtual int vfunc14();
 
 	char m_04[0x3c - 0x04];
