@@ -2108,6 +2108,13 @@ void sub_10246430(int unused, int *src, int *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10246490 size=0xd
+void sub_10246490(int unused, int *src, int *dst)
+{
+	*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102464b0 size=0xb
 void sub_102464b0(int a, int b, int *c)
 {

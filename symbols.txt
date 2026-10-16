@@ -493,6 +493,7 @@
 0x1000a358 func   ?sub_10381be0@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_10381be0
 0x1000a380 func   ?sub_100fa6b0@CUnknown10081e70@@QAEXH@Z CUnknown10081e70::sub_100fa6b0
 0x1000a394 func   _simple_physics_prop simple_physics_prop
+0x1000a399 func   ?sub_10246490@@YAXHPAH0@Z sub_10246490
 0x1000a3c6 func   ?sub_101eab00@@YAXH@Z sub_101eab00
 0x1000a457 func   _func_rotating func_rotating
 0x1000a4bb func   ?sub_10231ed0@CUnknown10231ed0@@QAEIXZ CUnknown10231ed0::sub_10231ed0
