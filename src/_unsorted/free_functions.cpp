@@ -108,6 +108,11 @@ void __fastcall sub_100eb3b0(int *p) { p[4] = 0; }
 void __fastcall sub_100eb400(int *p) { p[4] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100eb420 size=0x9
+struct CUnknown100eb420 { int pad[4]; int m_p; bool sub_100eb420(); };
+bool CUnknown100eb420::sub_100eb420() { if (m_p != 0) return true; return false; }
+// END FUNCTION
+
 // FUNCTION: 0x100f0300 size=0x8
 void __fastcall sub_100f0300(char *p) { p[0x55c] = 1; }
 // END FUNCTION

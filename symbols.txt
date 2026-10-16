@@ -289,6 +289,7 @@
 0x10009697 func   _test_traceline test_traceline
 0x100096ab func   _te_tester te_tester
 0x100096f6 func   _item_g_werewolf_bloodpack item_g_werewolf_bloodpack
+0x1000973c func   ?sub_100eb420@CUnknown100eb420@@QAE_NXZ CUnknown100eb420::sub_100eb420
 0x10009778 func   _mover_keyframe mover_keyframe
 0x100097b9 func   _trigger_werewolf_zone trigger_werewolf_zone
 0x100097c3 func   _hud_image hud_image
