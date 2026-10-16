@@ -6,6 +6,7 @@
 #include "CHL2_Player.h"
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CRagdollPropSpecial.h"
+#include "CUnknown10074050.h"
 #include "CUnknown100ddf40.h"
 #include "CUnknown100f97b0.h"
 #include "CUnknown101578b0.h"
