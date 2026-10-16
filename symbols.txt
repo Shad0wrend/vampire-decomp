@@ -964,6 +964,7 @@
 0x10013534 func   ?vfunc130@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc130
 0x10013557 func   ?vfunc7@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc7
 0x10013575 func   _light_spot light_spot
+0x100135b1 func   ?sub_1007ed50@CUnknown1007ecf0@@QAEXH@Z CUnknown1007ecf0::sub_1007ed50
 0x100135c0 func   ?sub_10224150@@YIXPAUCSlots@@HH@Z sub_10224150
 0x100135d4 func   ?sub_102a96f0@@YIXPAUTroikaStub@@@Z sub_102a96f0
 0x100135f7 func   ?sub_10289cc0@CUnknown10289cc0@@QAEXXZ CUnknown10289cc0::sub_10289cc0

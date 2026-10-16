@@ -370,6 +370,13 @@ void CUnknown1007ecf0::sub_1007ecf0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ed50 size=0xd
+void CUnknown1007ecf0::sub_1007ed50(int value)
+{
+	m_unk130 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ee00 size=0x8
 void __fastcall sub_1007ee00(int *p) { p[3] = 0; }
 // END FUNCTION
