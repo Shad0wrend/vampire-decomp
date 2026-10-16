@@ -2324,6 +2324,14 @@ struct CUnknown10312320 { char pad[0x30]; CSub10002397 m_Sub; void sub_10312320(
 void CUnknown10312320::sub_10312320() { m_Sub.sub_10002397(); }
 // END FUNCTION
 
+// FUNCTION: 0x10319f10 size=0xc
+bool sub_1000528b(void *);
+bool CUnknown10319f10::sub_10319f10()
+{
+	return sub_1000528b(m_unk0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319fe0 size=0x9
 struct CUnknown10319fe0 { int a; void sub_10319fe0(int v); };
 // TARGET: CUnknown10319fe0::sub_10319fe0
