@@ -104,6 +104,7 @@
 0x1000336e func   ?sub_1015ef60@@YIXPAD@Z sub_1015ef60
 0x10003427 func   _monster_generic monster_generic
 0x10003440 func   ?sub_102056d0@CUnknown102056d0@@QAEPAU1@XZ CUnknown102056d0::sub_102056d0
+0x100034db func   ?sub_10081e90@@YIXPAUCSlots@@HH@Z sub_10081e90
 0x10003503 func   _scripted_target scripted_target
 0x10003512 func   ?sub_10218080@@YIXPADHH@Z sub_10218080
 0x1000352b func   _npc_VTzimisce npc_VTzimisce
