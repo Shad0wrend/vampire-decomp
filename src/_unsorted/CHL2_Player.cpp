@@ -17,3 +17,12 @@ float CHL2_Player::vfunc480()
 	return p->a - p->b;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1034f450 size=0xd
+struct HL2PlayerFloats { char pad[0x2534]; float a; float b; };
+float CHL2_Player::vfunc481()
+{
+	HL2PlayerFloats *p = (HL2PlayerFloats *)this;
+	return p->b - p->a;
+}
+// END FUNCTION
