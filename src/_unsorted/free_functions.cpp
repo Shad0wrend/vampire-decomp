@@ -1837,6 +1837,13 @@ struct CUnknown102a9ea0 { int a[1]; int sub_102a9ea0(int i); };
 int CUnknown102a9ea0::sub_102a9ea0(int i) { return a[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x102b5dc0 size=0xd
+void CUnknown102b5dc0::sub_102b5dc0(int value)
+{
+	m_unk63f4 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6590 size=0xc
 int *CUnknown102c6590::sub_102c6590(int index)
 {
