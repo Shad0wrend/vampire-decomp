@@ -1412,6 +1412,13 @@ void CUnknown10249450::sub_10249450(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10249960 size=0xb
+unsigned int __fastcall sub_10249960(char **self)
+{
+	return *(unsigned short *)(*self + 0x12);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024afe0 size=0xb
 void sub_100139d5();
 extern int g_1088ae3c;
