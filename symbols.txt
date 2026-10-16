@@ -668,6 +668,7 @@
 0x10010e0b func   _npc_bullseye npc_bullseye
 0x10010f14 func   _beam beam
 0x10010f69 func   _gibshooter gibshooter
+0x10010f91 func   ?sub_101f95b0@@YAXH@Z sub_101f95b0
 0x10010f9b func   _npc_VStalker npc_VStalker
 0x10010ffa func   _trigger_multiple trigger_multiple
 0x10011013 func   _worldspawn worldspawn
