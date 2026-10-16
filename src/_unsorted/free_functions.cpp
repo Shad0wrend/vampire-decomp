@@ -1064,6 +1064,13 @@ void __fastcall sub_10218080(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102180a0 size=0xa
+void __fastcall sub_102180a0(char *self, int, int)
+{
+	self[0x80c] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e100 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_1021e100(); };
 void CUtlVectorBase::sub_1021e100() { m_Size = 0; }
