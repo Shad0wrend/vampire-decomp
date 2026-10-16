@@ -83,6 +83,7 @@
 0x100036ac func   _trigger_push trigger_push
 0x100036d9 func   _trigger_look trigger_look
 0x1000373d func   _item_w_unarmed item_w_unarmed
+0x100038b9 func   ?sub_100eb3b0@@YIXPAH@Z sub_100eb3b0
 0x100038c3 func   ?sub_102deea0@@YIXPAH@Z sub_102deea0
 0x10003922 func   _item_g_bloodpack item_g_bloodpack
 0x10003a3a func   ?sub_1021e1c0@@YIXPAH@Z sub_1021e1c0

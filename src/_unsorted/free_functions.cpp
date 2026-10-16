@@ -95,6 +95,10 @@ void __stdcall sub_100de610(int) { sub_100055b5(); }
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100eb3b0 size=0x8
+void __fastcall sub_100eb3b0(int *p) { p[4] = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100eb400 size=0x8
 void __fastcall sub_100eb400(int *p) { p[4] = 0; }
 // END FUNCTION
