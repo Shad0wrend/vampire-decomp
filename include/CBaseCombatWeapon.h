@@ -1,9 +1,10 @@
 // CBaseCombatWeapon: base of every carryable weapon.
 // Only the vtable slots that decompiled code needs are given their real names,
 // the others are placeholders that keep the slot indices of the game's primary
-// vtable. The vtable has at least 362 slots; the ones past 361 are not declared
-// yet, add them as they turn up.
+// vtable. The vtable has 372 slots.
 #pragma once
+
+struct CWeaponHolder_t;
 
 class CBaseCombatWeapon
 {
@@ -80,6 +81,11 @@ public:
 	virtual void vfunc345(); virtual void vfunc346(); virtual void vfunc347(); virtual void vfunc348(); virtual void vfunc349();
 	virtual void vfunc350(); virtual void vfunc351(); virtual void vfunc352(); virtual void vfunc353(); virtual void vfunc354();
 	virtual void vfunc355(); virtual void vfunc356(); virtual void vfunc357(); virtual void vfunc358(); virtual void vfunc359();
-	virtual void vfunc360(); virtual void vfunc361();
+	virtual void vfunc360(); virtual void vfunc361(); virtual void vfunc362(); virtual void vfunc363(); virtual void vfunc364();
+	virtual void vfunc365(); virtual void vfunc366(); virtual void vfunc367(); virtual void vfunc368(); virtual void vfunc369();
+	virtual void vfunc370(int *event, CBaseCombatWeapon *other); virtual void vfunc371();
 	void sub_102507b0();
+
+	char m_pad004[0x2dc];
+	CWeaponHolder_t *m_pHolder; // 0x2e0
 };
