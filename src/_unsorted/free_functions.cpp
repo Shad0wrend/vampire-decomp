@@ -108,6 +108,13 @@ void sub_100055b5();
 void __stdcall sub_100de610(int) { sub_100055b5(); }
 // END FUNCTION
 
+// FUNCTION: 0x100dea90 size=0x9
+void CUnknown100dea90::sub_100dea90(int value)
+{
+	m_unk0 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb130 size=0x8
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION
