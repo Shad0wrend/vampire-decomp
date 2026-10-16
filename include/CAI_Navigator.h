@@ -18,4 +18,5 @@ public:
 	virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual void vfunc14();
 	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20();
+	virtual void vfuncX(int a, CAI_Navigator_Arg b);
 };
