@@ -807,6 +807,7 @@
 0x1000eb97 func   _npc_VHumanCombatant npc_VHumanCombatant
 0x1000eba1 func   ?sub_1020f2e0@@YIXPADHH@Z sub_1020f2e0
 0x1000ebab func   ?sub_10136450@@YIXPADHH@Z sub_10136450
+0x1000ebc4 func   ?sub_100b49b0@CMem16c_t@@QAEXH@Z CMem16c_t::sub_100b49b0
 0x1000ebc9 func   _env_glow env_glow
 0x1000ec1e func   ?sub_101eab60@@YAXH@Z sub_101eab60
 0x1000ec64 func   ?sub_100bc580@CUnknown100bc580@@QAEXD@Z CUnknown100bc580::sub_100bc580
