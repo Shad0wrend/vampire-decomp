@@ -518,6 +518,7 @@
 0x1000d003 func   _npc_VManBat npc_VManBat
 0x1000d035 func   _item_w_mingxiao_melee item_w_mingxiao_melee
 0x1000d0f8 func   ?sub_101c2a90@CUnknown101c2a90@@QAEXD@Z CUnknown101c2a90::sub_101c2a90
+0x1000d0fd func   ?vfunc1@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc1
 0x1000d16b func   _filter_activator_inventory filter_activator_inventory
 0x1000d175 func   _item_k_shrekhub_one_key item_k_shrekhub_one_key
 0x1000d288 func   _trigger_player_activity_level trigger_player_activity_level

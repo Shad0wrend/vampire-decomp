@@ -38,3 +38,18 @@ void CServerNetworkProperty::vfunc3()
 	((CSlots *)m_pOuter)->target();
 }
 // END FUNCTION
+
+// FUNCTION: 0x101ab6d0 size=0xb
+#define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CSlots
+{
+	T(a0) T(a1) T(a2) T(a3) T(a4) T(a5) T(a6) T(a7)
+	virtual void target();
+};
+
+// TARGET: CServerNetworkProperty::vfunc1
+void CServerNetworkProperty::vfunc1()
+{
+	((CSlots *)m_pOuter)->target();
+}
+// END FUNCTION
