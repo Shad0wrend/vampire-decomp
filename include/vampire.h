@@ -32,6 +32,7 @@
 #include "CUnknown100a8220.h"
 #include "CUnknown100dea90.h"
 #include "CUnknown1012cf10.h"
+#include "CUnknown101c2a90.h"
 #include "CUnknown101daf60.h"
 #include "CUnknown101f6c30.h"
 #include "CUnknown101f9670.h"
