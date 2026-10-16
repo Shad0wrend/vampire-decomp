@@ -189,6 +189,7 @@
 0x10006221 func   _item_k_gallery_noir_key item_k_gallery_noir_key
 0x10006226 func   _item_g_warr_ledger_1 item_g_warr_ledger_1
 0x1000622b func   _item_g_warr_ledger_2 item_g_warr_ledger_2
+0x10006438 func   ?sub_102a9ea0@CUnknown102a9ea0@@QAEHH@Z CUnknown102a9ea0::sub_102a9ea0
 0x10006505 func   _item_g_larry_briefcase item_g_larry_briefcase
 0x10006546 func   _npc_VGangrel npc_VGangrel
 0x1000656e func   ?sub_101f74e0@@YI_NPAH@Z sub_101f74e0
