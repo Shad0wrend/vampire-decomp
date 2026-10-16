@@ -48,6 +48,10 @@ void __fastcall sub_10078c30(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e580 size=0x8
+void __fastcall sub_1007e580(int *p) { p[0x5c / 4] = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x1007ee00 size=0x8
 void __fastcall sub_1007ee00(int *p) { p[3] = 0; }
 // END FUNCTION
