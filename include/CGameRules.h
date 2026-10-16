@@ -50,7 +50,7 @@ public:
 	virtual void vfunc40();
 	virtual void vfunc41();
 	virtual void vfunc42();
-	virtual int vfunc43(int a, int b);
+	virtual void vfunc43();
 	virtual void vfunc44();
 	virtual void vfunc45();
 	virtual void vfunc46();
@@ -68,7 +68,7 @@ public:
 	virtual void vfunc58();
 	virtual void vfunc59();
 	virtual void vfunc60();
-	virtual void vfunc61();
+	virtual int vfunc61(int index);
 	virtual void vfunc62();
 	virtual const char *vfunc63(int index);
 	virtual void vfunc64();
