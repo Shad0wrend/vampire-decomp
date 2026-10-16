@@ -474,6 +474,7 @@
 0x1000febb func   _item_w_occultblade item_w_occultblade
 0x1000ff7e func   _item_p_research_mg_security item_p_research_mg_security
 0x1000ffdd func   _item_container_lock item_container_lock
+0x1000ffe2 func   ?sub_100f9790@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100f9790
 0x1001000f func   _item_k_museum_office_key item_k_museum_office_key
 0x10010037 func   _math_counter math_counter
 0x10010113 func   _npc_VSheriffMan npc_VSheriffMan
