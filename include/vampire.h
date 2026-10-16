@@ -20,3 +20,4 @@
 #include "CSingleplayRules.h"
 #include "CSkyCamera.h"
 #include "CWeaponRanged.h"
+#include "CWeaponThrown_Grenade_Frag.h"
