@@ -245,6 +245,7 @@
 0x100079a5 func   _item_w_colt_anaconda item_w_colt_anaconda
 0x100079c8 func   ?vfunc48@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc48
 0x100079ff func   ?sub_1021e160@@YIXPAH@Z sub_1021e160
+0x10007a68 func   ?sub_100b4e80@@YAXH@Z sub_100b4e80
 0x10007a77 func   ?vfunc103@CSceneEntity@@UAEXXZ CSceneEntity::vfunc103
 0x10007a86 func   _item_w_glock_17c item_w_glock_17c
 0x10007b0d func   ?sub_102f9990@@YAXXZ sub_102f9990

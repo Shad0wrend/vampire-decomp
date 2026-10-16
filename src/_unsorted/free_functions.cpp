@@ -93,6 +93,12 @@ struct CUtlVectorBase { int a, b, c, m_Size; void sub_100b4950(); };
 void CUtlVectorBase::sub_100b4950() { m_Size = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100b4e80 size=0xa
+extern int g_106cff54;
+// TARGET: sub_100b4e80
+void sub_100b4e80(int v) { g_106cff54 = v; }
+// END FUNCTION
+
 // FUNCTION: 0x100bc560 size=0x9
 struct CUnknown100bc560 { int p[3]; int a; char b; void sub_100bc560(); };
 // TARGET: CUnknown100bc560::sub_100bc560
