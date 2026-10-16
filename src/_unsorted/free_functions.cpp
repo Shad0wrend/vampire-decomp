@@ -266,6 +266,13 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101bd960(void **p) { void **q = p - 1; ((Fn *)*q)[0](q); }
 // END FUNCTION
 
+// FUNCTION: 0x101be1d0 size=0x9
+float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
+{
+	return m_flRange;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cc790 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc790(void **p) { ((Fn *)*p)[247](p); }
