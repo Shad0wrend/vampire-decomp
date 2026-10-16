@@ -1119,6 +1119,7 @@
 0x10015c6c func   _env_firesensor env_firesensor
 0x10015c80 func   ?sub_10073b60@CUnknown10073b60@@QAEXH@Z CUnknown10073b60::sub_10073b60
 0x10015cda func   _aitesthull aitesthull
+0x10015ce4 func   ?vfunc153@CBaseMoveBehavior@@UAE_NXZ CBaseMoveBehavior::vfunc153
 0x10015d93 func   ?vfunc337@CBaseCombatWeapon@@UAEMHH@Z CBaseCombatWeapon::vfunc337
 0x10015e3d func   ?sub_102e0a40@CUnknown102e0a40@@QAEXH@Z CUnknown102e0a40::sub_102e0a40
 0x104340be func   ?vfunc1@exception@@UBEPBDXZ exception::vfunc1
