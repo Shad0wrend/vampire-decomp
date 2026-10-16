@@ -501,6 +501,13 @@ void __fastcall sub_10081eb0(CSlots *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10082e40 size=0xe
+bool CUnknown10082e40::sub_10082e40()
+{
+	return m_unk4bc != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10083960 size=0xa
 struct CUnknown10083960 { int p; int a; void sub_10083960(int v); };
 // TARGET: CUnknown10083960::sub_10083960
