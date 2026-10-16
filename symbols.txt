@@ -40,6 +40,7 @@
 0x10001a32 func   ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ CBaseVampireSkillEntity::vfunc272
 0x10001c26 func   _npc_VSabbatLeader npc_VSabbatLeader
 0x10001c49 func   ?vfunc297@CBaseCombatWeapon@@UAEXH@Z CBaseCombatWeapon::vfunc297
+0x10001cad func   ?sub_100b99b0@CUnknown100b99b0@@QAEXD@Z CUnknown100b99b0::sub_100b99b0
 0x10001cda func   ?sub_101dba50@@YAPBDH@Z sub_101dba50
 0x10001d43 func   _npc_VZombie npc_VZombie
 0x10001db1 func   ?sub_10265800@@YAEXZ sub_10265800

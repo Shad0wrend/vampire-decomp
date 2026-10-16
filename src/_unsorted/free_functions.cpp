@@ -513,6 +513,13 @@ void CUnknown100b7c60::sub_100b7c60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b99b0 size=0xd
+void CUnknown100b99b0::sub_100b99b0(char value)
+{
+	m_unk8d4 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc380 size=0xc
 extern void (*g_106d2a10)();
 void sub_100bc380()
