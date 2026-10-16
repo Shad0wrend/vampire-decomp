@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1002cc60 size=0xa
+struct CUnknown1002cc60 { int p[3]; int a; CUnknown1002cc60* sub_1002cc60(); };
+// TARGET: CUnknown1002cc60::sub_1002cc60
+CUnknown1002cc60* CUnknown1002cc60::sub_1002cc60() { a = -1; return this; }
+// END FUNCTION
+
 // FUNCTION: 0x10032a20 size=0x8
 void __fastcall sub_10032a20(int *p) { p[3] = 0; }
 // END FUNCTION
