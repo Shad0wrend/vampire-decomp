@@ -81,6 +81,7 @@
 #include "CUnknown102dd450.h"
 #include "CUnknown1042d9a0.h"
 #include "CUnknown1042da80.h"
+#include "CUnknownAuto.h"
 #include "CVampireProjectile.h"
 #include "CWeaponRanged.h"
 #include "CWeaponThrown_Grenade_Frag.h"
