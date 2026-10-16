@@ -405,6 +405,7 @@
 0x1000b069 func   ?sub_101852f0@@YIXPAH@Z sub_101852f0
 0x1000b0aa func   _npc_VBrujah npc_VBrujah
 0x1000b140 func   _camera_animated camera_animated
+0x1000b24e func   ?sub_10136470@@YIXPADHH@Z sub_10136470
 0x1000b3b1 func   _item_m_money_envelope item_m_money_envelope
 0x1000b3d4 func   _npc_VVampire npc_VVampire
 0x1000b3de func   _func_door func_door

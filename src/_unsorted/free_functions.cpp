@@ -377,6 +377,13 @@ void __fastcall sub_10136450(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136470 size=0xa
+void __fastcall sub_10136470(char *self, int, int)
+{
+	self[0x451] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146790 size=0x9
 struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 void CUnknown10146790::sub_10146790() { c = 0; b = 0; }
