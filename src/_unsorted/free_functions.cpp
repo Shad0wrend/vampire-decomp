@@ -872,6 +872,14 @@ void sub_101f9550(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9570 size=0xa
+extern int g_1074e00c;
+void sub_101f9570(int value)
+{
+	g_1074e00c = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9590 size=0xa
 extern int g_1074e010;
 
