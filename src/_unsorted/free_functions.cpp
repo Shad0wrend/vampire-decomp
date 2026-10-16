@@ -71,6 +71,11 @@ void __fastcall sub_1007ee40(int *p) { p[3] = 0; }
 void __fastcall sub_100b47e0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100b4950 size=0x8
+struct CUtlVectorBase { int a, b, c, m_Size; void sub_100b4950(); };
+void CUtlVectorBase::sub_100b4950() { m_Size = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100eb130 size=0x8
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION
