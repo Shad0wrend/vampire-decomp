@@ -90,6 +90,7 @@
 0x10003c83 func   _item_k_edane_key item_k_edane_key
 0x10003da0 func   _item_g_keyring item_g_keyring
 0x10003f94 func   _logic_case_toggle logic_case_toggle
+0x100040a7 func   ?sub_10078c30@@YIXPAH@Z sub_10078c30
 0x10004269 func   _params_particle params_particle
 0x10004313 func   ?sub_10078b70@@YIXPAH@Z sub_10078b70
 0x1000433b func   _info_node_werewolf info_node_werewolf
