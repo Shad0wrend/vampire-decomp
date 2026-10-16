@@ -26,6 +26,7 @@
 0x1000173a func   _filter_activator_feat filter_activator_feat
 0x10001753 func   _filter_activator_mass filter_activator_mass
 0x1000178f func   _npc_VDog npc_VDog
+0x100017c6 func   ?vfunc437@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc437
 0x100017cb func   _npc_VCop npc_VCop
 0x100017da func   _npc_VRat npc_VRat
 0x100017e9 func   _npc_crow npc_crow
