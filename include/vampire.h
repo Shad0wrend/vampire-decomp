@@ -14,6 +14,7 @@
 #include "CLagCompensationManager.h"
 #include "CMoveHelperServer.h"
 #include "CMultiplayRules.h"
+#include "CNPC_VGargoyle.h"
 #include "CRecipientFilter.h"
 #include "CSceneEntity.h"
 #include "CSingleplayRules.h"
