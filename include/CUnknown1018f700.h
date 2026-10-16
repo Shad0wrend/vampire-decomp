@@ -7,6 +7,7 @@
 #include "CUnknown1012cf70.h"
 #include "CUnknown1015ef20.h"
 #include "CUnknown101c1b40.h"
+#include "CUnknown10252450.h"
 #include "CUnknown102237e0.h"
 #include "CUnknown102d00a0.h"
 #include "CBaseMoveBehavior.h"
