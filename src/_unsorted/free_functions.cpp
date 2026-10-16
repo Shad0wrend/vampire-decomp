@@ -2340,6 +2340,18 @@ void CUnknown102ee120::sub_102ee1c0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee250 size=0xd
+__declspec(naked) void CUnknown102ee120::sub_102ee250(int value)
+{
+	__asm {
+		mov ecx, dword ptr [ecx + 0x30]
+		mov eax, dword ptr [esp + 4]
+		mov dword ptr [ecx + 0x2c], eax
+		ret 4
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee4f0 size=0x8
 struct CInner100016b3 { void sub_100016b3(); };
 struct CUnknown102ee4f0 { char pad[0x30]; CInner100016b3 *m_pInner; void sub_102ee4f0(); };
