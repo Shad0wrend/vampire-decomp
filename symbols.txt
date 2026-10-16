@@ -167,6 +167,7 @@
 0x100052a9 func   _item_g_cash_box item_g_cash_box
 0x10005317 func   _prop_radio prop_radio
 0x1000532b func   _prop_mover prop_mover
+0x100053bc func   ?sub_101f9630@@YAXH@Z sub_101f9630
 0x10005434 func   _item_g_hannahs_appt_book item_g_hannahs_appt_book
 0x10005439 func   ?sub_101bd960@@YIXPAPAX@Z sub_101bd960
 0x10005448 func   _item_g_idol_elephant item_g_idol_elephant
