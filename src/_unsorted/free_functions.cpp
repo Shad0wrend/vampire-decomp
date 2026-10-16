@@ -1576,6 +1576,13 @@ int CAI_Motor::sub_102e2610()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2750 size=0xb
+void CUnknown102e12c0::sub_102e2750()
+{
+	m_pOuter->vfunc515();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e27b0 size=0xa
 float __fastcall sub_102e27b0(char *self)
 {
