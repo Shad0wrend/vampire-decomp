@@ -5,6 +5,7 @@
 #include "CAI_BaseNPC.h"
 #include "CAreaPortal.h"
 #include "CBaseButton.h"
+#include "CBasePlayer.h"
 #include "CCollisionProperty.h"
 #include "CDirtySpatialPartitionEntityList.h"
 #include "CGameRules.h"
