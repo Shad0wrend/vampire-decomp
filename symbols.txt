@@ -301,6 +301,7 @@
 0x1000af1f func   _point_explosion point_explosion
 0x1000af24 func   _env_steamjet env_steamjet
 0x1000b037 func   _npc_VHunter npc_VHunter
+0x1000b069 func   ?sub_101852f0@@YIXPAH@Z sub_101852f0
 0x1000b0aa func   _npc_VBrujah npc_VBrujah
 0x1000b140 func   _camera_animated camera_animated
 0x1000b3b1 func   _item_m_money_envelope item_m_money_envelope
