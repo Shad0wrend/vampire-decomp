@@ -92,6 +92,7 @@
 0x100028ce func   _item_g_garys_cd item_g_garys_cd
 0x10002982 func   ?sub_10319fe0@CUnknown10319fe0@@QAEXH@Z CUnknown10319fe0::sub_10319fe0
 0x100029a0 func   _hud_counter hud_counter
+0x10002a09 func   ?sub_1013e800@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e800
 0x10002acc func   ?vfunc404@CNPC_VNewscaster@@UAEHH@Z CNPC_VNewscaster::vfunc404
 0x10002ae5 func   _prop_ragdoll_attached prop_ragdoll_attached
 0x10002af4 func   _item_g_edane_print_report item_g_edane_print_report
