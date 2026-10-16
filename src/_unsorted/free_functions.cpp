@@ -171,6 +171,11 @@ void sub_10003a94();
 void __stdcall sub_1012cf90(int) { sub_10003a94(); }
 // END FUNCTION
 
+// FUNCTION: 0x1012f850 size=0x9
+// TARGET: sub_1012f850
+float sub_1012f850(float x) { return x * x; }
+// END FUNCTION
+
 // FUNCTION: 0x101318a0 size=0x8
 void sub_10002441();
 void __stdcall sub_101318a0(int) { sub_10002441(); }
