@@ -3099,6 +3099,14 @@ void CUnknown1042da80::sub_1042da80(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10436900 size=0xd
+#pragma optimize("s", on)
+int sub_10436900(char **ap)
+{
+	return *(int *)((*ap += 4) - 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10436e0e size=0xd
 __declspec(naked) void sub_10436e0e()
 {
