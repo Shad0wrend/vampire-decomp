@@ -120,6 +120,12 @@ void __fastcall sub_1007ee20(int *p)
 void __fastcall sub_1007ee40(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10083960 size=0xa
+struct CUnknown10083960 { int p; int a; void sub_10083960(int v); };
+// TARGET: CUnknown10083960::sub_10083960
+void CUnknown10083960::sub_10083960(int v) { a = v; }
+// END FUNCTION
+
 // FUNCTION: 0x100a8220 size=0xa
 unsigned int CUnknown100a8220::sub_100a8220()
 {

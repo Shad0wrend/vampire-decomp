@@ -183,6 +183,7 @@
 0x10005ccc func   _item_k_tutorial_chopshop_stairs_key item_k_tutorial_chopshop_stairs_key
 0x10005cfe func   _func_rot_button func_rot_button
 0x10005d21 func   ?vfunc63@CSingleplayRules@@UAEPBDH@Z CSingleplayRules::vfunc63
+0x10005d9e func   ?sub_10083960@CUnknown10083960@@QAEXH@Z CUnknown10083960::sub_10083960
 0x10005dfd func   _prop_sign prop_sign
 0x10005ea2 func   ?sub_1012cf90@@YGXH@Z sub_1012cf90
 0x10005f4c func   _info_node_shoot_at info_node_shoot_at
