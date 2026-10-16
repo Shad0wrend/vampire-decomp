@@ -853,6 +853,14 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc810(void **p) { ((Fn *)*p)[246](p); }
 // END FUNCTION
 
+// FUNCTION: 0x101d4f20 size=0xc
+void CUnknown101d4f20::sub_101d4f20(CUnknown101d4f20_Value *out)
+{
+	CUnknown101d4f20_Value v = m_unk78;
+	*out = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8890 size=0xa
 extern int g_1073938c;
 // TARGET: sub_101d8890
