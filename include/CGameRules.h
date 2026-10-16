@@ -70,14 +70,14 @@ public:
 	virtual void vfunc60();
 	virtual void vfunc61();
 	virtual void vfunc62();
-	virtual void vfunc63();
+	virtual const char *vfunc63(int index);
 	virtual void vfunc64();
 	virtual void vfunc65();
 	virtual void vfunc66();
 	virtual const char *vfunc67(int index);
 	virtual void vfunc68();
 	virtual void vfunc69();
-	virtual const char *vfunc70(int index);
+	virtual void vfunc70();
 	virtual void vfunc71();
 	virtual void vfunc72();
 	virtual void vfunc73();
@@ -86,4 +86,6 @@ public:
 	virtual void vfunc76();
 	virtual void vfunc77();
 	virtual void vfunc78();
+	virtual void vfunc79();
+	virtual void vfunc80();
 };
