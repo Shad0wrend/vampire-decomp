@@ -14,4 +14,5 @@ public:
 	CUnknown1030bc20_Record *m_unk24;
 
 	int sub_1030bc20();
+	CUnknown1030bc20_Record *sub_1030b7c0();
 };
