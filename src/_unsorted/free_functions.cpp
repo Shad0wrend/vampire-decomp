@@ -385,6 +385,13 @@ void CUnknown1007ecf0::sub_1007ed50(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ed90 size=0xd
+void CUnknown1007ed90::sub_1007ed90(char value)
+{
+	m_bFlag12d = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ee00 size=0x8
 void __fastcall sub_1007ee00(int *p) { p[3] = 0; }
 // END FUNCTION
