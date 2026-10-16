@@ -888,6 +888,7 @@
 0x10011bd0 func   ?sub_100b79c0@@YIPADPAD@Z sub_100b79c0
 0x10011cd4 func   ?sub_10078bd0@@YIXPAH@Z sub_10078bd0
 0x10011ce3 func   _item_w_mingxiao_tentacle item_w_mingxiao_tentacle
+0x10011d29 func   ?sub_100c6590@@YAHH@Z sub_100c6590
 0x10011d33 func   _prop_doorknob prop_doorknob
 0x10011e14 func   ?sub_1027d9b0@@YIXPAD@Z sub_1027d9b0
 0x10011e5f func   ?sub_1042d720@@YIIPAI@Z sub_1042d720

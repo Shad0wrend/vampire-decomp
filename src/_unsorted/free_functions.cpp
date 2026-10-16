@@ -585,6 +585,13 @@ void CUnknown100be040::sub_100be040(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6590 size=0xd
+int sub_100c6590(int p)
+{
+	return *(int *)(p + 0x188) + p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c89e0 size=0xa
 void __fastcall sub_100c89e0(char *self, int, int)
 {
