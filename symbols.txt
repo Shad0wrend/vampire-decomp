@@ -34,6 +34,7 @@
 0x100019a1 func   _npc_VNewscaster npc_VNewscaster
 0x10001a32 func   ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ CBaseVampireSkillEntity::vfunc272
 0x10001c26 func   _npc_VSabbatLeader npc_VSabbatLeader
+0x10001cda func   ?sub_101dba50@@YAPBDH@Z sub_101dba50
 0x10001d43 func   _npc_VZombie npc_VZombie
 0x10001db1 func   ?sub_10265800@@YAEXZ sub_10265800
 0x10001dc0 func   _npc_TestBaseHumanoid npc_TestBaseHumanoid

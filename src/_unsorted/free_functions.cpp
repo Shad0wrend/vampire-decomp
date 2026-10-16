@@ -881,6 +881,14 @@ void __fastcall sub_100107d5(char *p);
 void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }
 // END FUNCTION
 
+// FUNCTION: 0x101dba50 size=0xc
+extern const char *g_105a1c18[];
+const char *sub_101dba50(int index)
+{
+	return g_105a1c18[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1870 size=0xc
 unsigned int __stdcall sub_101e1870(unsigned int v)
 {
