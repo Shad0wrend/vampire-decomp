@@ -19,6 +19,7 @@
 0x100017da func   _npc_VRat npc_VRat
 0x100017e9 func   _npc_crow npc_crow
 0x10001861 func   _item_p_research_lg_dodge item_p_research_lg_dodge
+0x1000193d func   ?vfunc9@CEffectsServer@@UAEMXZ CEffectsServer::vfunc9
 0x1000199c func   _info_constraint_anchor info_constraint_anchor
 0x100019a1 func   _npc_VNewscaster npc_VNewscaster
 0x10001c26 func   _npc_VSabbatLeader npc_VSabbatLeader
