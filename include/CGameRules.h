@@ -50,7 +50,7 @@ public:
 	virtual void vfunc40();
 	virtual void vfunc41();
 	virtual void vfunc42();
-	virtual void vfunc43();
+	virtual int vfunc43(int a, int b);
 	virtual void vfunc44();
 	virtual void vfunc45();
 	virtual void vfunc46();
