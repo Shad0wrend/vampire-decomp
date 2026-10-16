@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10026b70 size=0xb
+struct CUnknown10146790 {
+	char m_unk0;
+	char m_unk1;
+	char m_unk2;
+	void sub_10146790();
+};
+
+void CBaseEntity::vfunc89()
+{
+	((CUnknown10146790*)((char*)this + 0x1b0))->sub_10146790();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027020 size=0x8
 #include "CBaseEntity.h"
 
