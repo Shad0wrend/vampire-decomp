@@ -5,6 +5,8 @@
 struct CAI_Navigator_Arg
 {
 	int m_value;
+	CAI_Navigator_Arg() {}
+	CAI_Navigator_Arg(const CAI_Navigator_Arg &o) { m_value = o.m_value; }
 };
 
 class CAI_Navigator
