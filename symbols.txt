@@ -796,6 +796,7 @@
 0x10010ffa func   _trigger_multiple trigger_multiple
 0x10011013 func   _worldspawn worldspawn
 0x1001103b func   _item_w_hengeyokai_fist item_w_hengeyokai_fist
+0x100110c2 func   ?vfunc3@CCopyRecipientFilter@@UAEHH@Z CCopyRecipientFilter::vfunc3
 0x100110fe func   ?sub_101ac2f0@CAmbientGeneric@@QAEIXZ CAmbientGeneric::sub_101ac2f0
 0x100111bc func   _trigger_small_hull trigger_small_hull
 0x100111cb func   ?sub_10280d10@CUnknown10280d10@@QAE_NXZ CUnknown10280d10::sub_10280d10
