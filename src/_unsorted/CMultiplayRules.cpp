@@ -19,6 +19,11 @@ void CMultiplayRules::vfunc75()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141940 size=0x9
+extern float g_104454c0;
+float CMultiplayRules::vfunc30(int a) { return g_104454c0; }
+// END FUNCTION
+
 // FUNCTION: 0x10141af0 size=0x8
 #include "CMultiplayRules.h"
 

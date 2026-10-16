@@ -457,6 +457,7 @@
 0x1000e075 func   _item_g_ring_silver item_g_ring_silver
 0x1000e07a func   _trigger_stealth_mod trigger_stealth_mod
 0x1000e07f func   _env_physimpact env_physimpact
+0x1000e093 func   ?vfunc30@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc30
 0x1000e0c0 func   _item_g_hatters_screenplay item_g_hatters_screenplay
 0x1000e214 func   _func_platrot func_platrot
 0x1000e237 func   _npc_VMercurio npc_VMercurio
