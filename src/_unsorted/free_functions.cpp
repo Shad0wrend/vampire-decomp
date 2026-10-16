@@ -665,6 +665,15 @@ void sub_101eddb0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eddd0 size=0xa
+extern int g_1073a3b8;
+
+void sub_101eddd0(int value)
+{
+	g_1073a3b8 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2500 size=0x9
 struct CUnknown101f2500 { int a; char sub_101f2500(); };
 // TARGET: CUnknown101f2500::sub_101f2500

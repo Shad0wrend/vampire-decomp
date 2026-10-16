@@ -376,6 +376,7 @@
 0x1000a9c0 func   _camera_keyframe camera_keyframe
 0x1000a9c5 func   _item_g_idol_crane item_g_idol_crane
 0x1000ab41 func   _ai_hint ai_hint
+0x1000ab55 func   ?sub_101eddd0@@YAXH@Z sub_101eddd0
 0x1000ac95 func   _keyframe_rope keyframe_rope
 0x1000acb3 func   _npc_VLasombra npc_VLasombra
 0x1000ace0 func   _prop_doorknob_electronic prop_doorknob_electronic
