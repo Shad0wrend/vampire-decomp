@@ -20,3 +20,11 @@ int CAI_BaseNPC::vfunc567(int unused)
 extern float g_104454c4;
 float CAI_BaseNPC::vfunc568(int a) { return g_104454c4; }
 // END FUNCTION
+
+// FUNCTION: 0x1027a400 size=0xd
+struct NpcFlags204 { char pad[0x204]; unsigned int m; };
+unsigned int CAI_BaseNPC::vfunc552()
+{
+	return (((NpcFlags204 *)this)->m >> 9) & 1;
+}
+// END FUNCTION
