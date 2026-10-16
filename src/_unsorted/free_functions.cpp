@@ -244,6 +244,10 @@ void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102dce10 size=0x8
+void __fastcall sub_102dce10(int *p) { p[3] = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x102deea0 size=0x8
 void __fastcall sub_102deea0(int *p)
 {

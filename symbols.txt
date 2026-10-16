@@ -536,6 +536,7 @@
 0x10011cd4 func   ?sub_10078bd0@@YIXPAH@Z sub_10078bd0
 0x10011ce3 func   _item_w_mingxiao_tentacle item_w_mingxiao_tentacle
 0x10011d33 func   _prop_doorknob prop_doorknob
+0x10011ee6 func   ?sub_102dce10@@YIXPAH@Z sub_102dce10
 0x10011f09 func   _worldevents worldevents
 0x10011f0e func   _npc_VVampireBoss npc_VVampireBoss
 0x10011f27 func   ?sub_1015ef00@CUnknown1015ef00@@QAEXXZ CUnknown1015ef00::sub_1015ef00
