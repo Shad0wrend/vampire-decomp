@@ -27,3 +27,12 @@ int CMultiplayRules::vfunc43(int, int)
 	return 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101422a0 size=0x8
+#include "CMultiplayRules.h"
+
+int CMultiplayRules::vfunc62(int)
+{
+	return 11;
+}
+// END FUNCTION

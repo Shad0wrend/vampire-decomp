@@ -421,6 +421,7 @@
 0x1000f1aa func   _item_p_research_lg_computers item_p_research_lg_computers
 0x1000f1fa func   _trigger_bomb_site trigger_bomb_site
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
+0x1000f4ca func   ?vfunc62@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc62
 0x1000f51f func   _item_k_empire_mafia_key item_k_empire_mafia_key
 0x1000f682 func   ?vfunc63@CMultiplayRules@@UAEPBDH@Z CMultiplayRules::vfunc63
 0x1000f6c8 func   _npc_VWolfMorph npc_VWolfMorph
