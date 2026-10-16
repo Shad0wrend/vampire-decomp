@@ -184,6 +184,7 @@
 0x10004bb5 func   _func_particle func_particle
 0x10004c00 func   ?sub_10249450@CUnknown10249450@@QAEXH@Z CUnknown10249450::sub_10249450
 0x10004c41 func   ?sub_102cc520@CUnknown102cc520@@QAEPAV1@XZ CUnknown102cc520::sub_102cc520
+0x10004dea func   ?vfunc423@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc423
 0x10004def func   ?sub_102a99a0@CUnknown102a9750@@QAEXD@Z CUnknown102a9750::sub_102a99a0
 0x10004f2a func   ?sub_1042da80@CUnknown1042da80@@QAEXH@Z CUnknown1042da80::sub_1042da80
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
