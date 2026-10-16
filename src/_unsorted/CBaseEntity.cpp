@@ -15,6 +15,14 @@ void CBaseEntity::vfunc89()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026c50 size=0xd
+void CBaseEntity::vfunc133()
+{
+	if (m_pfn0114)
+		(this->*m_pfn0114)();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027020 size=0x8
 #include "CBaseEntity.h"
 

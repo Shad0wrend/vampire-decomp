@@ -418,6 +418,7 @@
 0x10009c19 func   ?sub_10373420@@YIXPAH@Z sub_10373420
 0x10009c37 func   ?sub_10202760@@YAHH@Z sub_10202760
 0x10009cdc func   _phys_slideconstraint phys_slideconstraint
+0x10009d6d func   ?vfunc133@CBaseEntity@@UAEXXZ CBaseEntity::vfunc133
 0x10009d86 func   ?vfunc241@CFuncPlat@@UAEEXZ CFuncPlat::vfunc241
 0x10009e21 func   ?sub_1042c4a0@@YAXXZ sub_1042c4a0
 0x10009eb7 func   _prop_padlock prop_padlock
