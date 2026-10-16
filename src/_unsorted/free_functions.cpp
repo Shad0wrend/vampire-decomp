@@ -1098,6 +1098,13 @@ void __fastcall sub_10227230(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231e60 size=0xa
+unsigned int __fastcall sub_10231e60(char *self)
+{
+	return *(unsigned int *)(self + 0x464) & 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102457d0 size=0xa
 void CUnknown102457d0::sub_102457d0(int value)
 {
