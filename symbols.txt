@@ -934,6 +934,7 @@
 0x100151d6 func   _func_areaportal func_areaportal
 0x100151e0 func   _logic_case logic_case
 0x10015221 func   _npc_sabbat npc_sabbat
+0x10015280 func   ?sub_103be130@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be130
 0x100152c1 func   _prop_physics prop_physics
 0x10015393 func   _item_w_sabbatleader_attack item_w_sabbatleader_attack
 0x100153e8 func   ?vfunc4@CSave@@UAEXXZ CSave::vfunc4

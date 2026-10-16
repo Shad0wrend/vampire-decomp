@@ -2283,6 +2283,14 @@ unsigned char __fastcall sub_1038f640(char *self)
 void __fastcall sub_10390040(char *p) { p[0x66b8] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x103be130 size=0xc
+bool CUnknown10381be0::sub_103be130()
+{
+	bool r = (m_flags14b8 >> 5) & 1;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c76b0 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
