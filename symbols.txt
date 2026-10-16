@@ -25,6 +25,7 @@
 0x10001eb0 func   _math_remap math_remap
 0x10001f5f func   _item_w_zombie_fists item_w_zombie_fists
 0x10001f9b func   _item_k_leopold_int_key item_k_leopold_int_key
+0x10001fd7 func   ?vfunc62@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc62
 0x10001ffa func   _item_d_holy_light item_d_holy_light
 0x1000211c func   _sheriff_teleport_bats sheriff_teleport_bats
 0x1000212b func   _item_k_shrekhub_three_key item_k_shrekhub_three_key
