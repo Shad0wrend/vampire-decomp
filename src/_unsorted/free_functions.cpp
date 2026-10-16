@@ -791,6 +791,14 @@ void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102d9150 size=0xa
+CUnknown102d9150 *CUnknown102d9150::sub_102d9150()
+{
+	m_unk4 = -1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dce10 size=0x8
 void __fastcall sub_102dce10(int *p) { p[3] = 0; }
 // END FUNCTION
