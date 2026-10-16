@@ -38,6 +38,7 @@
 #include "CUnknown101f9670.h"
 #include "CUnknown102a99c0.h"
 #include "CUnknown102cc520.h"
+#include "CUnknown102d9150.h"
 #include "CUnknown102dd450.h"
 #include "CUnknown1042da80.h"
 #include "CWeaponRanged.h"
