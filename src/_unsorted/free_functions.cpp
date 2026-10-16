@@ -568,6 +568,15 @@ void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 void __fastcall sub_102dce10(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102dd450 size=0x9
+bool CUnknown102dd450::sub_102dd450()
+{
+	if (m_nCount > 0)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102deea0 size=0x8
 void __fastcall sub_102deea0(int *p)
 {
