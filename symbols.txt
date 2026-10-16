@@ -716,6 +716,7 @@
 0x1000ffe2 func   ?sub_100f9790@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100f9790
 0x1001000f func   _item_k_museum_office_key item_k_museum_office_key
 0x10010037 func   _math_counter math_counter
+0x100100e1 func   ?sub_1038f640@@YIEPAD@Z sub_1038f640
 0x10010113 func   _npc_VSheriffMan npc_VSheriffMan
 0x10010163 func   ?sub_1007ee00@@YIXPAH@Z sub_1007ee00
 0x10010267 func   ?sub_10216830@@YIXPADHH@Z sub_10216830

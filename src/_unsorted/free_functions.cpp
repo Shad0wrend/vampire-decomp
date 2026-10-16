@@ -2238,6 +2238,15 @@ unsigned char __fastcall sub_10381c80(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038f640 size=0xc
+unsigned char __fastcall sub_1038f640(char *self)
+{
+	unsigned char v = (unsigned char)(*(unsigned int *)(self + 0x14b8) >> 5);
+	v &= 1;
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10390040 size=0x8
 void __fastcall sub_10390040(char *p) { p[0x66b8] = 0; }
 // END FUNCTION
