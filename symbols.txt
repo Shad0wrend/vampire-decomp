@@ -978,6 +978,7 @@
 0x100138b8 func   _player_weaponstrip player_weaponstrip
 0x10013917 func   _info_hint info_hint
 0x1001393f func   _info_null info_null
+0x100139df func   ?sub_10077890@CUnknown10077890@@QAEXH@Z CUnknown10077890::sub_10077890
 0x10013a6b func   _item_g_giovanni_invitation_maria item_g_giovanni_invitation_maria
 0x10013a89 func   ?sub_101dbb00@@YAPBDH@Z sub_101dbb00
 0x10013c28 func   ?sub_100fa690@@YIXPAUCSlots@@HH@Z sub_100fa690
