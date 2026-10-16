@@ -654,6 +654,7 @@
 0x1001103b func   _item_w_hengeyokai_fist item_w_hengeyokai_fist
 0x100110fe func   ?sub_101ac2f0@CAmbientGeneric@@QAEIXZ CAmbientGeneric::sub_101ac2f0
 0x100111bc func   _trigger_small_hull trigger_small_hull
+0x1001122f func   ?sub_102457d0@CUnknown102457d0@@QAEXH@Z CUnknown102457d0::sub_102457d0
 0x100112cf func   ?sub_1034d590@CUnknown1034d590@@QAEXH@Z CUnknown1034d590::sub_1034d590
 0x1001131f func   _item_g_bach_journal item_g_bach_journal
 0x10011338 func   _item_k_fu_cell_key item_k_fu_cell_key
