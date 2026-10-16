@@ -109,6 +109,7 @@
 0x1000431d func   ?sub_101cc7a0@CUnknown101cc7a0@@QAEXXZ CUnknown101cc7a0::sub_101cc7a0
 0x1000432c func   ?sub_1010f4e0@@YIXPAPAX@Z sub_1010f4e0
 0x1000433b func   _info_node_werewolf info_node_werewolf
+0x10004377 func   ?sub_103c76b0@CUnknown103c76b0@@QAEXXZ CUnknown103c76b0::sub_103c76b0
 0x10004386 func   ?sub_101cc7e0@@YIXPAPAX@Z sub_101cc7e0
 0x10004390 func   ?sub_1034a240@CUnknown1034a240@@QAEXXZ CUnknown1034a240::sub_1034a240
 0x10004395 func   ?sub_101cc7d0@CUnknown101cc7d0@@QAEXXZ CUnknown101cc7d0::sub_101cc7d0

@@ -662,6 +662,20 @@ void __fastcall sub_10373420(int *p) { p[3] = 0; }
 void __fastcall sub_10390040(char *p) { p[0x66b8] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x103c76b0 size=0x8
+#define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
+#define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
+#define V100(n) V25(n##0) V25(n##1) V25(n##2) V25(n##3)
+struct CUnknown103c76b0 {
+	V100(p) V100(q) V100(r) V100(s) V100(t) V100(u)
+	V5(w0) V5(w1) V5(w2)
+	virtual void f0(); virtual void f1();
+	virtual void slot617();
+	void sub_103c76b0();
+};
+void CUnknown103c76b0::sub_103c76b0() { slot617(); }
+// END FUNCTION
+
 // FUNCTION: 0x103dc260 size=0x8
 void __fastcall sub_103dc260(int *p)
 {
