@@ -62,6 +62,17 @@ struct CUnknown10073f40 { char p[0x4c]; int a; void sub_10073f40(int v); };
 void CUnknown10073f40::sub_10073f40(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10074050 size=0xd
+extern char g_106b8540[];
+
+const char *CUnknown10074050::sub_10074050()
+{
+	if (m_unk4 == 0)
+		return g_106b8540;
+	return m_unk4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100740f0 size=0xa
 struct CUnknown100740f0 { int p[2]; char a; void sub_100740f0(char v); };
 // TARGET: CUnknown100740f0::sub_100740f0
