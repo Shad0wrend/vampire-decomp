@@ -49,6 +49,13 @@ void CBaseCombatWeapon::vfunc340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10257230 size=0xe
+bool CBaseCombatWeapon::vfunc303()
+{
+	return vfunc304() ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102577c0 size=0x8
 // TARGET: CBaseCombatWeapon::vfunc288
 void CBaseCombatWeapon::vfunc288()
