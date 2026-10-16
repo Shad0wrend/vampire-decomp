@@ -417,6 +417,13 @@ void __fastcall sub_100fa690(CSlots *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fa6b0 size=0xb
+void CUnknown10081e70::sub_100fa6b0(int unused)
+{
+	vfunc242();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fdcc0 size=0xa
 void __fastcall sub_100fdcc0(char *self, int, int)
 {
