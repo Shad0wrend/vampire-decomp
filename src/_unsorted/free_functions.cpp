@@ -835,6 +835,15 @@ void __fastcall sub_1015ef40(char *p)
 void __fastcall sub_1015ef60(char *p) { p[0x19f7] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10160680 size=0xd
+extern float g_10725c9c;
+// TARGET: CUnknown10160680::sub_10160680
+float CUnknown10160680::sub_10160680()
+{
+	return g_10725c9c * m_flUnk1ddc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016b440 size=0xb
 struct IUnk1070ba0c {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
