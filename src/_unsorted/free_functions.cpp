@@ -263,6 +263,13 @@ void CUnknown100dea90::sub_100dea90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100deb10 size=0xa
+void __fastcall sub_100deb10(char *self, int, char value)
+{
+	self[8] = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb130 size=0x8
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION
