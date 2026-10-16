@@ -861,6 +861,7 @@
 0x10015221 func   _npc_sabbat npc_sabbat
 0x100152c1 func   _prop_physics prop_physics
 0x10015393 func   _item_w_sabbatleader_attack item_w_sabbatleader_attack
+0x100153e8 func   ?vfunc4@CSave@@UAEXXZ CSave::vfunc4
 0x10015406 func   _trigger_autosave trigger_autosave
 0x10015555 func   ?vfunc49@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc49
 0x100155b9 func   _item_w_uzi item_w_uzi
