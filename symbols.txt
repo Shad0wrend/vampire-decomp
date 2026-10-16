@@ -132,6 +132,7 @@
 0x10004430 func   _item_p_research_mg_melee item_p_research_mg_melee
 0x100044ad func   ?sub_101f3060@@YIXPAD@Z sub_101f3060
 0x100044b2 func   _trigger_changelevel trigger_changelevel
+0x100044f8 func   ?sub_102e0a60@CUnknown102e0a60@@QAEXH@Z CUnknown102e0a60::sub_102e0a60
 0x10004539 func   _physics_prop_ragdoll physics_prop_ragdoll
 0x1000453e func   _item_g_giovanni_invitation_victor item_g_giovanni_invitation_victor
 0x100045a2 func   _npc_VScurrying npc_VScurrying
