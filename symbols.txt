@@ -760,10 +760,10 @@
 0x104492fc vtable ??_7IPartitionEnumerator@@6B@ IPartitionEnumerator::vftable
 0x10449308 vtable ??_7CTraceFilterAgainstEntityList@@6B@ CTraceFilterAgainstEntityList::vftable
 0x10449318 vtable ??_7CDataObjectAccessSystem@@6B@ CDataObjectAccessSystem::vftable
-0x10449348 vtable ??_7?$CEntityDataInstantiator@UModelWidthScale@@@@6B@ ?$CEntityDataInstantiator@UModelWidthScale@@::vftable
-0x10449360 vtable ??_7?$CEntityDataInstantiator@UStepSimulationData@@@@6B@ ?$CEntityDataInstantiator@UStepSimulationData@@::vftable
-0x10449378 vtable ??_7?$CEntityDataInstantiator@Ugroundlink_t@@@@6B@ ?$CEntityDataInstantiator@Ugroundlink_t@@::vftable
-0x10449390 vtable ??_7?$CEntityDataInstantiator@Utouchlink_t@@@@6B@ ?$CEntityDataInstantiator@Utouchlink_t@@::vftable
+0x10449348 vtable ??_7?$CEntityDataInstantiator@UModelWidthScale@@@@6B@ CEntityDataInstantiator<ModelWidthScale>::vftable
+0x10449360 vtable ??_7?$CEntityDataInstantiator@UStepSimulationData@@@@6B@ CEntityDataInstantiator<StepSimulationData>::vftable
+0x10449378 vtable ??_7?$CEntityDataInstantiator@Ugroundlink_t@@@@6B@ CEntityDataInstantiator<groundlink_t>::vftable
+0x10449390 vtable ??_7?$CEntityDataInstantiator@Utouchlink_t@@@@6B@ CEntityDataInstantiator<touchlink_t>::vftable
 0x104493a8 vtable ??_7IEntityDataInstantiator@@6B@ IEntityDataInstantiator::vftable
 0x10449410 vtable ??_7CPhysSaveRestoreBlockHandler@@6BIEntityListener@@@ CPhysSaveRestoreBlockHandler::vftable
 0x10449420 vtable ??_7CPhysSaveRestoreBlockHandler@@6BIPhysSaveRestoreManager@@@ CPhysSaveRestoreBlockHandler::vftable
@@ -852,7 +852,7 @@
 0x10450a10 vtable ??_7IServerEntity@@6B@ IServerEntity::vftable
 0x10450a58 vtable ??_7CTraceFilterWorldOnly@@6B@ CTraceFilterWorldOnly::vftable
 0x10450a68 vtable ??_7CThinkContextsSaveDataOps@@6B@ CThinkContextsSaveDataOps::vftable
-0x10450a84 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08::vftable
+0x10450a84 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@6B@ CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>::vftable
 0x10450abc vtable ??_7CBaseFlex@@6B@ CBaseFlex::vftable
 0x1045103c vtable ??_7CBaseLandmark@@6B@ CBaseLandmark::vftable
 0x104514cc vtable ??_7CBaseNetworkable@@6BIServerNetworkable@@@ CBaseNetworkable::vftable
@@ -879,7 +879,7 @@
 0x10454154 vtable ??_7CCollisionProperty@@6B@ CCollisionProperty::vftable
 0x104541bc vtable ??_7CTerrainMorph@@6B@ CTerrainMorph::vftable
 0x10454648 vtable ??_7CDebugSaveRestoreOps@@6B@ CDebugSaveRestoreOps::vftable
-0x1045467c vtable ??_7?$CSecureTypeBase@UCPfnTraits3@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits3@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits3@MvsnSec@@H@2@@MvsnSec@@6B@ ?$CSecureTypeBase@UCPfnTraits3@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits3@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits3@MvsnSec@@H@2@@MvsnSec::vftable
+0x1045467c vtable ??_7?$CSecureTypeBase@UCPfnTraits3@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits3@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits3@MvsnSec@@H@2@@MvsnSec@@6B@ MvsnSec::CSecureTypeBase<MvsnSec::CPfnTraits3,int,MvsnSec::CSecureCoderPfn<MvsnSec::CPfnTraits3,int>,MvsnSec::CSecureCoderBasic<MvsnSec::CPfnTraits3,int> >::vftable
 0x10454688 vtable ??_7CReliableSingleUserRecipientFilter@@6B@ CReliableSingleUserRecipientFilter::vftable
 0x104546b4 vtable ??_7CLocalDLLChain@@6B@ CLocalDLLChain::vftable
 0x104546d4 vtable ??_7CBaseDoor@@6B@ CBaseDoor::vftable
@@ -969,7 +969,7 @@
 0x10464cfc vtable ??_7CPositionInterpolator_CatmullRom@@6B@ CPositionInterpolator_CatmullRom::vftable
 0x10464d18 vtable ??_7CPositionInterpolator_Rope@@6B@ CPositionInterpolator_Rope::vftable
 0x10464d34 vtable ??_7CRopeDelegate@@6B@ CRopeDelegate::vftable
-0x10464d44 vtable ??_7?$CRopePhysics@$09@@6B@ ?$CRopePhysics@$09::vftable
+0x10464d44 vtable ??_7?$CRopePhysics@$09@@6B@ CRopePhysics<10>::vftable
 0x10464d54 vtable ??_7IPositionInterpolator@@6B@ IPositionInterpolator::vftable
 0x10464d74 vtable ??_7CLight@@6B@ CLight::vftable
 0x10465204 vtable ??_7CEnvLight@@6B@ CEnvLight::vftable
@@ -1015,12 +1015,12 @@
 0x1046ed1c vtable ??_7CFuncPlat@@6B@ CFuncPlat::vftable
 0x1046f1c4 vtable ??_7CPlatTrigger@@6B@ CPlatTrigger::vftable
 0x1046f654 vtable ??_7CFuncPlatRot@@6B@ CFuncPlatRot::vftable
-0x1046fb40 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@$08@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@$08::vftable
-0x1046fb5c vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UMAP_ACCESS@@V?$CUtlMemory@UMAP_ACCESS@@@@@@$08@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@UMAP_ACCESS@@V?$CUtlMemory@UMAP_ACCESS@@@@@@$08::vftable
-0x1046fb78 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08::vftable
-0x1046fb94 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UASSIGNED_QUEST@@V?$CUtlMemory@UASSIGNED_QUEST@@@@@@$08@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@UASSIGNED_QUEST@@V?$CUtlMemory@UASSIGNED_QUEST@@@@@@$08::vftable
+0x1046fb40 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@$08@@6B@ CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vftable
+0x1046fb5c vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UMAP_ACCESS@@V?$CUtlMemory@UMAP_ACCESS@@@@@@$08@@6B@ CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>::vftable
+0x1046fb78 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@6B@ CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>::vftable
+0x1046fb94 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UASSIGNED_QUEST@@V?$CUtlMemory@UASSIGNED_QUEST@@@@@@$08@@6B@ CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_QUEST> >,9>::vftable
 0x1046fbb4 vtable ??_7CBasePlayer@@6B@ CBasePlayer::vftable
-0x10470484 vtable ??_7?$CSecureTypeBase@UCPfnTraits1@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits1@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits1@MvsnSec@@H@2@@MvsnSec@@6B@ ?$CSecureTypeBase@UCPfnTraits1@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits1@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits1@MvsnSec@@H@2@@MvsnSec::vftable
+0x10470484 vtable ??_7?$CSecureTypeBase@UCPfnTraits1@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits1@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits1@MvsnSec@@H@2@@MvsnSec@@6B@ MvsnSec::CSecureTypeBase<MvsnSec::CPfnTraits1,int,MvsnSec::CSecureCoderPfn<MvsnSec::CPfnTraits1,int>,MvsnSec::CSecureCoderBasic<MvsnSec::CPfnTraits1,int> >::vftable
 0x10470490 vtable ??_7CPlayerLocalPredictedData@@6B@ CPlayerLocalPredictedData::vftable
 0x104704e4 vtable ??_7CSprayCan@@6B@ CSprayCan::vftable
 0x10470974 vtable ??_7CBloodSplat@@6B@ CBloodSplat::vftable
@@ -1057,7 +1057,7 @@
 0x10477084 vtable ??_7CRestore@@6B@ CRestore::vftable
 0x10477130 vtable ??_7CEntitySaveRestoreBlockHandler@@6B@ CEntitySaveRestoreBlockHandler::vftable
 0x10477160 vtable ??_7CSaveRestoreBlockSet@@6B@ CSaveRestoreBlockSet::vftable
-0x1047719c vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08::vftable
+0x1047719c vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@6B@ CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vftable
 0x104771b8 vtable ??_7CCineNPC@@6BCAI_DefMovementSink@@@ CCineNPC::vftable
 0x104771e4 vtable ??_7CCineNPC@@6B@ CCineNPC::vftable
 0x10477cf0 vtable ??_7CCineAI@@6BCAI_DefMovementSink@@@ CCineAI::vftable
@@ -1078,7 +1078,7 @@
 0x1047b3c0 vtable ??_7CSoundEmitterSystemBase@@6B@ CSoundEmitterSystemBase::vftable
 0x1047b3dc vtable ??_7CSoundEnt@@6B@ CSoundEnt::vftable
 0x1047b87c vtable ??_7CAISound@@6B@ CAISound::vftable
-0x1047bd08 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03::vftable
+0x1047bd08 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@6B@ CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vftable
 0x1047bd24 vtable ??_7CCopyRecipientFilter@@6B@ CCopyRecipientFilter::vftable
 0x1047bd54 vtable ??_7CSoundControllerImp@@6BCAutoGameSystem@@@ CSoundControllerImp::vftable
 0x1047bd84 vtable ??_7CSoundControllerImp@@6B@ CSoundControllerImp::vftable
@@ -1088,7 +1088,7 @@
 0x1047c764 vtable ??_7CBaseToggle@@6B@ CBaseToggle::vftable
 0x1047cbf4 vtable ??_7CSun@@6B@ CSun::vftable
 0x1047d08c vtable ??_7CBaseTrigger@@6B@ CBaseTrigger::vftable
-0x1047d548 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCBaseEntity@@@@V?$CUtlMemory@V?$CHandle@VCBaseEntity@@@@@@@@$0M@@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCBaseEntity@@@@V?$CUtlMemory@V?$CHandle@VCBaseEntity@@@@@@@@$0M@::vftable
+0x1047d548 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCBaseEntity@@@@V?$CUtlMemory@V?$CHandle@VCBaseEntity@@@@@@@@$0M@@@6B@ CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >,12>::vftable
 0x1047d564 vtable ??_7CTriggerHurt@@6B@ CTriggerHurt::vftable
 0x1047da24 vtable ??_7CTriggerMultiple@@6B@ CTriggerMultiple::vftable
 0x1047dee4 vtable ??_7CTriggerOnce@@6B@ CTriggerOnce::vftable
@@ -1211,7 +1211,7 @@
 0x10499444 vtable ??_7CAI_HumanoidNavigator@@6B@ CAI_HumanoidNavigator::vftable
 0x104994f8 vtable ??_7CTriggerTraceEnum@@6B@ CTriggerTraceEnum::vftable
 0x10499554 vtable ??_7CTraceFilterSoundOcclude@@6B@ CTraceFilterSoundOcclude::vftable
-0x10499578 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08::vftable
+0x10499578 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08@@6B@ CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vftable
 0x10499594 vtable ??_7CAI_BaseNPC@@6BCAI_DefMovementSink@@@ CAI_BaseNPC::vftable
 0x104995c4 vtable ??_7CAI_BaseNPC@@6B@ CAI_BaseNPC::vftable
 0x1049a0b8 vtable ??_7CAI_MoveAndShootOverlay@@6B@ CAI_MoveAndShootOverlay::vftable
@@ -1223,16 +1223,16 @@
 0x1049a210 vtable ??_7CAI_NPCPatrolPathSaveRestoreOps@@6B@ CAI_NPCPatrolPathSaveRestoreOps::vftable
 0x1049a22c vtable ??_7CAI_BaseNPCTroika@@6BCAI_DefMovementSink@@@ CAI_BaseNPCTroika::vftable
 0x1049a25c vtable ??_7CAI_BaseNPCTroika@@6B@ CAI_BaseNPCTroika::vftable
-0x1049adf4 vtable ??_7?$CSecureTypeBase@UCPfnTraits2@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits2@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits2@MvsnSec@@H@2@@MvsnSec@@6B@ ?$CSecureTypeBase@UCPfnTraits2@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits2@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits2@MvsnSec@@H@2@@MvsnSec::vftable
+0x1049adf4 vtable ??_7?$CSecureTypeBase@UCPfnTraits2@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits2@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits2@MvsnSec@@H@2@@MvsnSec@@6B@ MvsnSec::CSecureTypeBase<MvsnSec::CPfnTraits2,int,MvsnSec::CSecureCoderPfn<MvsnSec::CPfnTraits2,int>,MvsnSec::CSecureCoderBasic<MvsnSec::CPfnTraits2,int> >::vftable
 0x1049ae1c vtable ??_7CTraceFilterHintLOS@@6B@ CTraceFilterHintLOS::vftable
 0x1049aedc vtable ??_7CAI_StandoffBehavior@@6B@ CAI_StandoffBehavior::vftable
-0x1049af6c vtable ??_7?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@6B@ ?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@::vftable
+0x1049af6c vtable ??_7?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@6B@ CAI_Behavior<CAI_BaseNPC,100000>::vftable
 0x1049aff8 vtable ??_7CAI_StandoffGoal@@6BIEntityListener@@@ CAI_StandoffGoal::vftable
 0x1049b00c vtable ??_7CAI_StandoffGoal@@6B@ CAI_StandoffGoal::vftable
 0x1049b4b0 vtable ??_7CAI_CsActList@@6B@ CAI_CsActList::vftable
 0x1049b4c4 vtable ??_7CAI_SystemHook@@6B@ CAI_SystemHook::vftable
 0x1049b4f4 vtable ??_7CAI_DynamicLink@@6B@ CAI_DynamicLink::vftable
-0x1049b980 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCAI_BaseNPC@@@@V?$CUtlMemory@V?$CHandle@VCAI_BaseNPC@@@@@@@@$0M@@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCAI_BaseNPC@@@@V?$CUtlMemory@V?$CHandle@VCAI_BaseNPC@@@@@@@@$0M@::vftable
+0x1049b980 vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCAI_BaseNPC@@@@V?$CUtlMemory@V?$CHandle@VCAI_BaseNPC@@@@@@@@$0M@@@6B@ CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vftable
 0x1049b9a4 vtable ??_7CAI_Hint@@6B@ CAI_Hint::vftable
 0x1049be30 vtable ??_7CAI_TestHull@@6BCAI_DefMovementSink@@@ CAI_TestHull::vftable
 0x1049be5c vtable ??_7CAI_TestHull@@6B@ CAI_TestHull::vftable
@@ -1244,7 +1244,7 @@
 0x1049d76c vtable ??_7CAI_LocalNavigator@@6B@ CAI_LocalNavigator::vftable
 0x1049d79c vtable ??_7CAI_ProxyMovementSink@@6B@ CAI_ProxyMovementSink::vftable
 0x1049d7ec vtable ??_7CAI_MemoryListSaveRestoreOps@@6B@ CAI_MemoryListSaveRestoreOps::vftable
-0x1049d808 vtable ??_7?$CUtlVectorDataOps@VCAI_InterestTarget@@$08@@6B@ ?$CUtlVectorDataOps@VCAI_InterestTarget@@$08::vftable
+0x1049d808 vtable ??_7?$CUtlVectorDataOps@VCAI_InterestTarget@@$08@@6B@ CUtlVectorDataOps<CAI_InterestTarget,9>::vftable
 0x1049d824 vtable ??_7CAI_Motor@@6BCAI_ProxyMovementSink@@@ CAI_Motor::vftable
 0x1049d854 vtable ??_7CAI_Motor@@6B@ CAI_Motor::vftable
 0x1049d8c0 vtable ??_7CTraceFilterNav@@6B@ CTraceFilterNav::vftable
@@ -1260,9 +1260,9 @@
 0x1049df90 vtable ??_7CAI_PlaneSolver@@6B@ CAI_PlaneSolver::vftable
 0x1049dfb0 vtable ??_7CAI_SaveRestoreBlockHandler@@6B@ CAI_SaveRestoreBlockHandler::vftable
 0x1049dff8 vtable ??_7CAI_Expresser@@6B@ CAI_Expresser::vftable
-0x1049e00c vtable ??_7?$CBitStringSaveRestoreOps@VCBitString@@@@6B@ ?$CBitStringSaveRestoreOps@VCBitString@@::vftable
+0x1049e00c vtable ??_7?$CBitStringSaveRestoreOps@VCBitString@@@@6B@ CBitStringSaveRestoreOps<CBitString>::vftable
 0x1049e080 vtable ??_7CRelationshipSaveDataOps@@6B@ CRelationshipSaveDataOps::vftable
-0x1049e09c vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08::vftable
+0x1049e09c vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@6B@ CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vftable
 0x1049e0dc vtable ??_7CBaseCombatCharacter@@6B@ CBaseCombatCharacter::vftable
 0x1049e8b4 vtable ??_7CGenericNPC@@6BCAI_DefMovementSink@@@ CGenericNPC::vftable
 0x1049e8e4 vtable ??_7CGenericNPC@@6B@ CGenericNPC::vftable
@@ -1336,7 +1336,7 @@
 0x104b5c74 vtable ??_7CNPC_VGuard1@@6B@ CNPC_VGuard1::vftable
 0x104b6810 vtable ??_7CNPC_VHengeyokai@@6BCAI_DefMovementSink@@@ CNPC_VHengeyokai::vftable
 0x104b683c vtable ??_7CNPC_VHengeyokai@@6B@ CNPC_VHengeyokai::vftable
-0x104b73dc vtable ??_7?$CSecureTypeBase@UCPfnTraits4@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits4@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits4@MvsnSec@@H@2@@MvsnSec@@6B@ ?$CSecureTypeBase@UCPfnTraits4@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits4@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits4@MvsnSec@@H@2@@MvsnSec::vftable
+0x104b73dc vtable ??_7?$CSecureTypeBase@UCPfnTraits4@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits4@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits4@MvsnSec@@H@2@@MvsnSec@@6B@ MvsnSec::CSecureTypeBase<MvsnSec::CPfnTraits4,int,MvsnSec::CSecureCoderPfn<MvsnSec::CPfnTraits4,int>,MvsnSec::CSecureCoderBasic<MvsnSec::CPfnTraits4,int> >::vftable
 0x104b73fc vtable ??_7CNPC_VHuman@@6BCAI_DefMovementSink@@@ CNPC_VHuman::vftable
 0x104b742c vtable ??_7CNPC_VHuman@@6B@ CNPC_VHuman::vftable
 0x104b7fc4 vtable ??_7CNPC_VHumanCombatant@@6BCAI_DefMovementSink@@@ CNPC_VHumanCombatant::vftable
@@ -1351,7 +1351,7 @@
 0x104baf14 vtable ??_7CNPC_VMalkavian@@6B@ CNPC_VMalkavian::vftable
 0x104bbac0 vtable ??_7CNPC_VManBat@@6BCAI_DefMovementSink@@@ CNPC_VManBat::vftable
 0x104bbaec vtable ??_7CNPC_VManBat@@6B@ CNPC_VManBat::vftable
-0x104bc684 vtable ??_7?$CSecureTypeBase@UCPfnTraits0@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits0@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits0@MvsnSec@@H@2@@MvsnSec@@6B@ ?$CSecureTypeBase@UCPfnTraits0@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits0@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits0@MvsnSec@@H@2@@MvsnSec::vftable
+0x104bc684 vtable ??_7?$CSecureTypeBase@UCPfnTraits0@MvsnSec@@HU?$CSecureCoderPfn@UCPfnTraits0@MvsnSec@@H@2@U?$CSecureCoderBasic@UCPfnTraits0@MvsnSec@@H@2@@MvsnSec@@6B@ MvsnSec::CSecureTypeBase<MvsnSec::CPfnTraits0,int,MvsnSec::CSecureCoderPfn<MvsnSec::CPfnTraits0,int>,MvsnSec::CSecureCoderBasic<MvsnSec::CPfnTraits0,int> >::vftable
 0x104bc6b0 vtable ??_7CTraceFilterManBatNoIBeamEntity@@6B@ CTraceFilterManBatNoIBeamEntity::vftable
 0x104bc6d4 vtable ??_7CNPC_VMingXiao@@6BCAI_DefMovementSink@@@ CNPC_VMingXiao::vftable
 0x104bc704 vtable ??_7CNPC_VMingXiao@@6B@ CNPC_VMingXiao::vftable
@@ -1567,7 +1567,7 @@
 0x105124bc vtable ??_7CItemGVVPhoto@@6B@ CItemGVVPhoto::vftable
 0x10512bbc vtable ??_7CItemKSarcophagusKey@@6B@ CItemKSarcophagusKey::vftable
 0x105132bc vtable ??_7CItemGSewerBook1@@6B@ CItemGSewerBook1::vftable
-0x105139bc vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UKEYRING_ENTRY@@V?$CUtlMemory@UKEYRING_ENTRY@@@@@@$08@@6B@ ?$CUtlVectorDataOps@V?$CUtlVector@UKEYRING_ENTRY@@V?$CUtlMemory@UKEYRING_ENTRY@@@@@@$08::vftable
+0x105139bc vtable ??_7?$CUtlVectorDataOps@V?$CUtlVector@UKEYRING_ENTRY@@V?$CUtlMemory@UKEYRING_ENTRY@@@@@@$08@@6B@ CUtlVectorDataOps<CUtlVector<KEYRING_ENTRY,CUtlMemory<KEYRING_ENTRY> >,9>::vftable
 0x105139dc vtable ??_7CItemGKeyring@@6B@ CItemGKeyring::vftable
 0x105140dc vtable ??_7CItemKeyGeneric@@6B@ CItemKeyGeneric::vftable
 0x105147dc vtable ??_7CWeaponIWritten@@6B@ CWeaponIWritten::vftable
@@ -1583,7 +1583,7 @@
 0x10516c64 vtable ??_7CAutoGameSystem@@6B@ CAutoGameSystem::vftable
 0x10516c94 vtable ??_7IGameSystem@@6B@ IGameSystem::vftable
 0x10516cc4 vtable ??_7CHangRope@@6B@ CHangRope::vftable
-0x10516cd4 vtable ??_7?$CRopePhysics@$0CAA@@@6B@ ?$CRopePhysics@$0CAA@::vftable
+0x10516cd4 vtable ??_7?$CRopePhysics@$0CAA@@@6B@ CRopePhysics<512>::vftable
 0x10516ce4 vtable ??_7CSharedGameRules@@6B@ CSharedGameRules::vftable
 0x10516cf4 vtable ??_7CSprite@@6B@ CSprite::vftable
 0x10517180 vtable ??_7CSafeDiscSaveRestoreOps_0@@6B@ CSafeDiscSaveRestoreOps_0::vftable
