@@ -183,6 +183,7 @@
 0x100047c3 func   _item_w_tzimisce2_head item_w_tzimisce2_head
 0x1000482c func   _item_w_tzimisce2_claw item_w_tzimisce2_claw
 0x10004903 func   _vdisciplineprojectile vdisciplineprojectile
+0x100049e9 func   ?sub_10157890@CUnknown101578b0@@QAEXD@Z CUnknown101578b0::sub_10157890
 0x10004aac func   _player_pickup player_pickup
 0x10004ac0 func   _item_g_guy_magazine item_g_guy_magazine
 0x10004bb5 func   _func_particle func_particle

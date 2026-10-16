@@ -768,6 +768,15 @@ void CUnknown10146790::sub_10146790() { c = 0; b = 0; }
 void __fastcall sub_10156d30(char *p) { p[0x105c] = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x10157890 size=0xd
+#include "CUnknown101578b0.h"
+
+void CUnknown101578b0::sub_10157890(char value)
+{
+	m_bFlag103c = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101578b0 size=0xc
 bool CUnknown101578b0::sub_101578b0()
 {
