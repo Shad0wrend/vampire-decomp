@@ -640,6 +640,12 @@ struct CUnknown102a95e0 { int a[1]; int *sub_102a95e0(int i); };
 int *CUnknown102a95e0::sub_102a95e0(int i) { return &a[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x102a9600 size=0xa
+struct CUnknown102a9600 { float a[1]; float sub_102a9600(int i); };
+// TARGET: CUnknown102a9600::sub_102a9600
+float CUnknown102a9600::sub_102a9600(int i) { return a[i]; }
+// END FUNCTION
+
 // FUNCTION: 0x102a96f0 size=0x8
 struct TroikaStub;
 struct TroikaStubVtbl { void (__fastcall *f[256])(TroikaStub *); };

@@ -257,6 +257,7 @@
 0x10008030 func   _info_node_sabbat_nojump info_node_sabbat_nojump
 0x10008062 func   ?sub_1012cf10@CUnknown1012cf10@@QAEPAV1@XZ CUnknown1012cf10::sub_1012cf10
 0x10008107 func   _phys_keepupright phys_keepupright
+0x1000829c func   ?sub_102a9600@CUnknown102a9600@@QAEMH@Z CUnknown102a9600::sub_102a9600
 0x10008328 func   _item_a_body_armor item_a_body_armor
 0x1000833c func   _bodyque bodyque
 0x100083dc func   ?sub_100eb400@@YIXPAH@Z sub_100eb400
