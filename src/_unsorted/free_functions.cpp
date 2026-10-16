@@ -1691,6 +1691,13 @@ void CUnknown1026dc60::sub_1026dc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10270290 size=0xd
+void CUnknown10270290::sub_10270290(int value)
+{
+	m_unk5b90 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102718e0 size=0xd
 CUnknown102718e0 *CUnknown102718e0::sub_102718e0(const CUnknown102718e0 *other)
 {
