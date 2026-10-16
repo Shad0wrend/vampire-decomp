@@ -593,6 +593,14 @@ void CUnknown100be040::sub_100be040(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0c60 size=0xd
+void CUnknown100c0c60::sub_100c0c60(float value)
+{
+	value = 0.0f;
+	sub_100c0970(value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6590 size=0xd
 int sub_100c6590(int p)
 {
