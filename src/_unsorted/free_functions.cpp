@@ -1346,6 +1346,15 @@ void CUnknown102c7390::sub_102c7390(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c8ca0 size=0xa
+extern char g_109203dc;
+void __fastcall sub_1000c3c9(void *);
+void sub_102c8ca0(void)
+{
+	sub_1000c3c9(&g_109203dc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc520 size=0x9
 CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 {

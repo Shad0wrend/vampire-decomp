@@ -451,6 +451,7 @@
 0x1000bba9 func   _item_w_bush_hook item_w_bush_hook
 0x1000bbc7 func   __firesmoke _firesmoke
 0x1000bc44 func   ?sub_10323a70@@YIFPAD@Z sub_10323a70
+0x1000bc49 func   ?sub_102c8ca0@@YAXXZ sub_102c8ca0
 0x1000bcdf func   _auspex_aura auspex_aura
 0x1000bd48 func   ?sub_10390040@@YIXPAD@Z sub_10390040
 0x1000bdfc func   _func_keyframed_mover func_keyframed_mover
