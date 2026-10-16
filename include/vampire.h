@@ -46,6 +46,7 @@
 #include "CUnknown102c7390.h"
 #include "CUnknown102cc520.h"
 #include "CUnknown102d9150.h"
+#include "CUnknown102db420.h"
 #include "CUnknown102dd450.h"
 #include "CUnknown1042da80.h"
 #include "CWeaponRanged.h"
