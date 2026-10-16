@@ -368,6 +368,7 @@
 0x1000b3d4 func   _npc_VVampire npc_VVampire
 0x1000b3de func   _func_door func_door
 0x1000b40b func   _logic_visibility_test logic_visibility_test
+0x1000b43d func   ?sub_10248980@CUnknown10248980@@QAEDXZ CUnknown10248980::sub_10248980
 0x1000b460 func   _item_k_museum_storage_key item_k_museum_storage_key
 0x1000b46f func   _func_plat func_plat
 0x1000b488 func   _env_global env_global
