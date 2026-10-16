@@ -2621,6 +2621,13 @@ void __fastcall sub_102d0080(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d00a0 size=0xd
+void CUnknown102d00a0::sub_102d00a0(unsigned int mask)
+{
+	m_flags |= mask;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d00c0 size=0xa
 void __fastcall sub_102d00c0(int *self, int, int value)
 {
