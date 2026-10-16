@@ -293,6 +293,12 @@ void __fastcall sub_101bc000(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd940 size=0x9
+struct S { virtual void v0(); virtual void v1(); };
+// TARGET: sub_101bd940
+void __fastcall sub_101bd940(char *t) { ((S *)(t - 4))->v1(); }
+// END FUNCTION
+
 // FUNCTION: 0x101bd960 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101bd960(void **p) { void **q = p - 1; ((Fn *)*q)[0](q); }
