@@ -857,6 +857,18 @@ struct CUnknown101c2a50 { char p[0x44]; int a; void sub_101c2a50(int v); };
 void CUnknown101c2a50::sub_101c2a50(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101c2a70 size=0xd
+#include "CUnknown101c2a90.h"
+
+float CUnknown101c2a90::sub_101c2a70()
+{
+	float f = m_fValue;
+	if (m_pScale)
+		f *= m_pScale->m_fScale;
+	return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2a90 size=0xa
 void CUnknown101c2a90::sub_101c2a90(char value)
 {
