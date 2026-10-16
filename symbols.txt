@@ -593,6 +593,7 @@
 0x1000f6c8 func   _npc_VWolfMorph npc_VWolfMorph
 0x1000f7f4 func   _item_i_written item_i_written
 0x1000f88a func   _playerevents playerevents
+0x1000f95c func   ?sub_101eddb0@@YAXH@Z sub_101eddb0
 0x1000f993 func   _phys_animlink phys_animlink
 0x1000fa6f func   ?sub_100bdfe0@CUnknown100bdfe0@@QAEXXZ CUnknown100bdfe0::sub_100bdfe0
 0x1000fa79 func   _item_w_tzimisce3_claw item_w_tzimisce3_claw
