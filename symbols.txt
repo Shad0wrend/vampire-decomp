@@ -775,6 +775,7 @@
 0x1000ec1e func   ?sub_101eab60@@YAXH@Z sub_101eab60
 0x1000ec64 func   ?sub_100bc580@CUnknown100bc580@@QAEXD@Z CUnknown100bc580::sub_100bc580
 0x1000ec6e func   ?sub_100be000@@YIXPADHD@Z sub_100be000
+0x1000ec8c func   ?vfunc291@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc291
 0x1000ecb9 func   _env_player_surface_trigger env_player_surface_trigger
 0x1000ecc8 func   _npc_VPedestrian npc_VPedestrian
 0x1000ed9a func   ?sub_102dd450@CUnknown102dd450@@QAE_NXZ CUnknown102dd450::sub_102dd450
