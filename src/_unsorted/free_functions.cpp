@@ -389,6 +389,12 @@ void CUnknown101e4a90::sub_101e4a90() { slot266(); }
 int __stdcall sub_101e80a0(int) { return 10; }
 // END FUNCTION
 
+// FUNCTION: 0x101f2500 size=0x9
+struct CUnknown101f2500 { int a; char sub_101f2500(); };
+// TARGET: CUnknown101f2500::sub_101f2500
+char CUnknown101f2500::sub_101f2500() { int v = ((int *)this)[-5]; return v != 0; }
+// END FUNCTION
+
 // FUNCTION: 0x101f3060 size=0x8
 void __fastcall sub_1000be01(char *p);
 void __fastcall sub_101f3060(char *p) { sub_1000be01(p - *(int *)(p - 4)); }
