@@ -1637,6 +1637,13 @@ void __fastcall sub_102e7e00(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e7e20 size=0xb
+void CUnknown102e12c0::sub_102e7e20()
+{
+	m_pOuter->vfunc523();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e7e40 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
