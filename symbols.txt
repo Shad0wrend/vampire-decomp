@@ -312,6 +312,7 @@
 0x1000762b func   _item_k_lilly_key item_k_lilly_key
 0x1000765d func   _npc_maker npc_maker
 0x10007671 func   ?sub_10081eb0@@YIXPAUCSlots@@HH@Z sub_10081eb0
+0x100076d5 func   ?sub_10075ce0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10075ce0
 0x100076f8 func   ?sub_101b6a30@@YIXPAH@Z sub_101b6a30
 0x1000780b func   ?sub_101e1870@@YGII@Z sub_101e1870
 0x10007824 func   _item_p_occult_dexterity item_p_occult_dexterity
