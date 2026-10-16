@@ -105,6 +105,7 @@
 0x10002dbf func   _item_w_thirtyeight item_w_thirtyeight
 0x10002dd8 func   ?sub_100738e0@CUnknown100738e0@@QAEXH@Z CUnknown100738e0::sub_100738e0
 0x10002e4b func   _item_g_watch_fancy item_g_watch_fancy
+0x10002e69 func   ?sub_102461b0@CUnknown102461b0@@QAEXXZ CUnknown102461b0::sub_102461b0
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
 0x10003017 func   _ai_changehintgroup ai_changehintgroup
 0x10003030 func   ?sub_10076af0@CUnknown10076af0@@QAEXD@Z CUnknown10076af0::sub_10076af0

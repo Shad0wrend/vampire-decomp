@@ -2094,6 +2094,13 @@ void CUnknown102457d0::sub_102457d0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102461b0 size=0xd
+void CUnknown102461b0::sub_102461b0()
+{
+	m_pTarget->vfunc6(m_pTarget->m_unk1c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246300 size=0xd
 void sub_10246300(int unused, int *src, int *dst)
 {
