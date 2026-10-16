@@ -663,6 +663,15 @@ void CUnknown1019d490::sub_1019d490(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1f70 size=0xc
+int CUnknown101a1f70::sub_101a1f70()
+{
+	if (m_unk18 == 0)
+		return 0;
+	return m_unk18->m_unk4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac2f0 size=0xa
 unsigned int CAmbientGeneric::sub_101ac2f0()
 {
