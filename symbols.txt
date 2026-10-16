@@ -320,6 +320,7 @@
 0x10008062 func   ?sub_1012cf10@CUnknown1012cf10@@QAEPAV1@XZ CUnknown1012cf10::sub_1012cf10
 0x10008107 func   _phys_keepupright phys_keepupright
 0x1000812f func   ?sub_102d00c0@@YIXPAHHH@Z sub_102d00c0
+0x10008189 func   ?sub_102e2730@@YIXPAUCOwner@@@Z sub_102e2730
 0x1000823d func   ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ CUnknown102d9150::sub_102d9150
 0x1000826a func   ?sub_100295d0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295d0
 0x1000829c func   ?sub_102a9600@CUnknown102a9600@@QAEMH@Z CUnknown102a9600::sub_102a9600
