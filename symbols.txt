@@ -560,6 +560,7 @@
 0x10013917 func   _info_hint info_hint
 0x1001393f func   _info_null info_null
 0x10013a6b func   _item_g_giovanni_invitation_maria item_g_giovanni_invitation_maria
+0x10013d6d func   ?sub_102d41f0@@YIXPAH@Z sub_102d41f0
 0x10013ebc func   _item_k_museum_basement_key item_k_museum_basement_key
 0x10014006 func   _item_w_crossbow_flaming item_w_crossbow_flaming
 0x10014010 func   _npc_VSheriffSwarm npc_VSheriffSwarm
