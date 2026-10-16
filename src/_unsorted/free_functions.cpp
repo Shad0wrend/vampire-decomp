@@ -937,6 +937,15 @@ void CUnknown1013e7e0::sub_1013e800(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101466e0 size=0xe
+#include "CUnknown101466e0.h"
+// TARGET: CUnknown101466e0::sub_101466e0
+void CUnknown101466e0::sub_101466e0(char value)
+{
+	m_value = value != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146790 size=0x9
 struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 void CUnknown10146790::sub_10146790() { c = 0; b = 0; }
