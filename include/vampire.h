@@ -32,6 +32,7 @@
 #include "CUnknown1012cf10.h"
 #include "CUnknown101daf60.h"
 #include "CUnknown101f9670.h"
+#include "CUnknown102cc520.h"
 #include "CUnknown102dd450.h"
 #include "CWeaponRanged.h"
 #include "CWeaponThrown_Grenade_Frag.h"
