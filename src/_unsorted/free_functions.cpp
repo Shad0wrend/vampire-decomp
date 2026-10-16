@@ -599,6 +599,13 @@ void sub_1016b440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10181600 size=0xb
+void __fastcall sub_10181600(char *self)
+{
+	*(int *)(self + 0x1d60) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184360 size=0x8
 void __fastcall sub_10184360(int *p)
 {
