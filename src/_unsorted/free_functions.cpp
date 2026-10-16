@@ -458,6 +458,22 @@ void __fastcall sub_1015ef40(char *p)
 void __fastcall sub_1015ef60(char *p) { p[0x19f7] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1016b440 size=0xb
+struct IUnk1070ba0c {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21();
+};
+extern IUnk1070ba0c *g_1070ba0c;
+
+void sub_1016b440()
+{
+	g_1070ba0c->v21();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184360 size=0x8
 void __fastcall sub_10184360(int *p)
 {
