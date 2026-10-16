@@ -75,6 +75,7 @@
 0x100027de func   _item_m_wallet item_m_wallet
 0x100027e3 func   ?sub_10264450@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_10264450
 0x100027f7 func   _light_dynamic light_dynamic
+0x100027fc func   ?sub_102464b0@@YAXHHPAH@Z sub_102464b0
 0x100028ce func   _item_g_garys_cd item_g_garys_cd
 0x10002982 func   ?sub_10319fe0@CUnknown10319fe0@@QAEXH@Z CUnknown10319fe0::sub_10319fe0
 0x100029a0 func   _hud_counter hud_counter

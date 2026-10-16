@@ -1367,6 +1367,13 @@ void CUnknown102457d0::sub_102457d0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102464b0 size=0xb
+void sub_102464b0(int a, int b, int *c)
+{
+	*c = b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102477a0 size=0x9
 struct CUnknown102477a0 { int a; int b; int c; int d; void sub_102477a0(); };
 // TARGET: CUnknown102477a0::sub_102477a0
