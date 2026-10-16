@@ -32,6 +32,14 @@ void CBaseCombatWeapon::vfunc305()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253280 size=0xd
+struct WeaponField890 { char pad[0x890]; int m; };
+void CBaseCombatWeapon::vfunc306(int value)
+{
+	((WeaponField890 *)this)->m = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10255030 size=0x8
 #include "CBaseCombatWeapon.h"
 
