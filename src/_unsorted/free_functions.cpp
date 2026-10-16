@@ -79,6 +79,10 @@ void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 void __fastcall sub_100eb400(int *p) { p[4] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100f0300 size=0x8
+void __fastcall sub_100f0300(char *p) { p[0x55c] = 1; }
+// END FUNCTION
+
 // FUNCTION: 0x1015ef40 size=0x8
 void __fastcall sub_1015ef40(char *p)
 {
