@@ -1176,6 +1176,7 @@
 0x10015ce4 func   ?vfunc153@CBaseMoveBehavior@@UAE_NXZ CBaseMoveBehavior::vfunc153
 0x10015d93 func   ?vfunc337@CBaseCombatWeapon@@UAEMHH@Z CBaseCombatWeapon::vfunc337
 0x10015e3d func   ?sub_102e0a40@CUnknown102e0a40@@QAEXH@Z CUnknown102e0a40::sub_102e0a40
+0x1019be80 func   ?sub_1019be80@@YAPAUPyObj@@PBD0@Z sub_1019be80
 0x104340be func   ?vfunc1@exception@@UBEPBDXZ exception::vfunc1
 0x10436900 func   ?sub_10436900@@YAHPAPAD@Z sub_10436900
 0x10436e0e func   ?sub_10436e0e@@YAXXZ sub_10436e0e

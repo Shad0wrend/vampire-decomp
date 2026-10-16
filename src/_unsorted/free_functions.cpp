@@ -1611,6 +1611,36 @@ void sub_10199e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019be80 size=0x67
+struct PyObj;
+struct PyType { char pad[0x18]; void (*dealloc)(PyObj*); };
+struct PyObj { int refcnt; PyType* type; };
+extern "C" {
+__declspec(dllimport) PyObj* PyImport_ImportModule(const char* name);
+__declspec(dllimport) PyObj* PyModule_GetDict(PyObj* m);
+__declspec(dllimport) PyObj* PyDict_GetItemString(PyObj* d, const char* key);
+}
+
+// TARGET: sub_1019be80
+PyObj* sub_1019be80(const char* module, const char* name)
+{
+	PyObj* result = 0;
+	PyObj* mod = PyImport_ImportModule(module);
+	if (mod) {
+		PyObj* dict = PyModule_GetDict(mod);
+		if (dict) {
+			dict->refcnt++;
+			result = PyDict_GetItemString(dict, name);
+			if (--dict->refcnt == 0)
+				dict->type->dealloc(dict);
+		}
+		if (--mod->refcnt == 0)
+			mod->type->dealloc(mod);
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d490 size=0xa
 void CUnknown1019d490::sub_1019d490(char value)
 {
