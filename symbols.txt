@@ -128,6 +128,7 @@
 0x10005cb3 func   _npc_VWerewolf npc_VWerewolf
 0x10005ccc func   _item_k_tutorial_chopshop_stairs_key item_k_tutorial_chopshop_stairs_key
 0x10005cfe func   _func_rot_button func_rot_button
+0x10005d21 func   ?vfunc63@CSingleplayRules@@UAEPBDH@Z CSingleplayRules::vfunc63
 0x10005dfd func   _prop_sign prop_sign
 0x10005f4c func   _info_node_shoot_at info_node_shoot_at
 0x1000604b func   _prop_physics_contested prop_physics_contested
