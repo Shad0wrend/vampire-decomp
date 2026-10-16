@@ -9,4 +9,5 @@ public:
 	virtual void vfunc416(char value);
 
 	char sub_102a9ec0(int index);
+	const char *sub_102c3690(int task);
 };
