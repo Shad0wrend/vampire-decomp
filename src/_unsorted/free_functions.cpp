@@ -42,6 +42,12 @@ struct CUnknown100737b0 { int m_val; void sub_100737b0(int v); };
 void CUnknown100737b0::sub_100737b0(int v) { m_val = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10073f40 size=0xa
+struct CUnknown10073f40 { char p[0x4c]; int a; void sub_10073f40(int v); };
+// TARGET: CUnknown10073f40::sub_10073f40
+void CUnknown10073f40::sub_10073f40(int v) { a = v; }
+// END FUNCTION
+
 // FUNCTION: 0x10078b10 size=0x8
 void __fastcall sub_10078b10(int *p) { p[3] = 0; }
 // END FUNCTION
