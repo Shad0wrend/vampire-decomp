@@ -404,6 +404,7 @@
 0x1000df71 func   _npc_VMingXiaoTentacle npc_VMingXiaoTentacle
 0x1000dfa8 func   _item_k_netcafe_office_key item_k_netcafe_office_key
 0x1000dfb7 func   ?vfunc103@CAreaPortal@@UAEXXZ CAreaPortal::vfunc103
+0x1000dff3 func   ?sub_10184f70@@YIXPAH@Z sub_10184f70
 0x1000e01b func   _item_m_money_clip item_m_money_clip
 0x1000e034 func   _prop_largehull_ignore prop_largehull_ignore
 0x1000e075 func   _item_g_ring_silver item_g_ring_silver

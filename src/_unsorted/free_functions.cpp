@@ -129,6 +129,10 @@ void __fastcall sub_10184360(int *p)
 void __fastcall sub_10184380(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10184f70 size=0x8
+void __fastcall sub_10184f70(int *p) { p[3] = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x101bc000 size=0x8
 void __fastcall sub_101bc000(int *p)
 {
