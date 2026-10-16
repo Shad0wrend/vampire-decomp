@@ -336,6 +336,7 @@
 0x10008d82 func   _env_floating_camera env_floating_camera
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point
+0x10008ebd func   ?vfunc274@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc274
 0x10008f67 func   _info_node_climb info_node_climb
 0x1000904d func   _light_environment light_environment
 0x100090cf func   _logic_relay logic_relay
