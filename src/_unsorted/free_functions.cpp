@@ -753,6 +753,13 @@ void A::sub_102e2800(int x) { b->sub_1000108c(x); }
 void __fastcall sub_102e8250(float *p) { p[6] = 3.402823466e+38f; }
 // END FUNCTION
 
+// FUNCTION: 0x102ecc00 size=0xa
+struct CUnknown102ecc00Outer { char p[0x5d3c]; int a; };
+struct CUnknown102ecc00 { int v; CUnknown102ecc00Outer *o; int sub_102ecc00(); };
+// TARGET: CUnknown102ecc00::sub_102ecc00
+int CUnknown102ecc00::sub_102ecc00() { return o->a; }
+// END FUNCTION
+
 // FUNCTION: 0x102ee4f0 size=0x8
 struct CInner100016b3 { void sub_100016b3(); };
 struct CUnknown102ee4f0 { char pad[0x30]; CInner100016b3 *m_pInner; void sub_102ee4f0(); };

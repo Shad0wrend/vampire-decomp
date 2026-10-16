@@ -678,6 +678,7 @@
 0x10012fa3 func   _item_p_occult_heal_rate item_p_occult_heal_rate
 0x10012fdf func   _item_k_hitman_lu_key item_k_hitman_lu_key
 0x10012fe4 func   _item_w_katana item_w_katana
+0x10013011 func   ?sub_102ecc00@CUnknown102ecc00@@QAEHXZ CUnknown102ecc00::sub_102ecc00
 0x1001305c func   _item_g_wireless_camera_1 item_g_wireless_camera_1
 0x10013075 func   _item_g_wireless_camera_2 item_g_wireless_camera_2
 0x1001307f func   _item_g_wireless_camera_3 item_g_wireless_camera_3
