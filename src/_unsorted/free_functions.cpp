@@ -2206,6 +2206,15 @@ void __fastcall sub_103661d0(char *self, int, int)
 void __fastcall sub_10373420(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10381c80 size=0xc
+unsigned char __fastcall sub_10381c80(char *self)
+{
+	unsigned char v = (unsigned char)(*(unsigned int *)(self + 0x14b8) >> 5);
+	v &= 1;
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10390040 size=0x8
 void __fastcall sub_10390040(char *p) { p[0x66b8] = 0; }
 // END FUNCTION

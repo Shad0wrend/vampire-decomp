@@ -797,6 +797,7 @@
 0x10012003 func   _math_colorblend math_colorblend
 0x10012008 func   _flame_cluster flame_cluster
 0x10012017 func   _info_node_link info_node_link
+0x1001205d func   ?sub_10381c80@@YIEPAD@Z sub_10381c80
 0x1001218e func   ?sub_101c2ad0@CUnknown101c2a90@@QAEXD@Z CUnknown101c2a90::sub_101c2ad0
 0x100121e3 func   _npc_VMoleman npc_VMoleman
 0x10012292 func   ?vfunc568@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc568
