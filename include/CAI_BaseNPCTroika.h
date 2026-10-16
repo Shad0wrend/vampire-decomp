@@ -7,4 +7,6 @@ class CAI_BaseNPCTroika : public CAI_BaseNPC
 {
 public:
 	virtual void vfunc416(char value);
+
+	char sub_102a9ec0(int index);
 };
