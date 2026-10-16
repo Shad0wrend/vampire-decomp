@@ -2067,6 +2067,38 @@ void UtlMem8::sub_101857f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10185910 size=0x67
+struct Mem16 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+
+// TARGET: sub_10185910
+void __fastcall sub_10185910(Mem16 *self, int, int num)
+{
+	if (self->m_nGrowSize == -1)
+		return;
+	int alloc = self->m_nAllocationCount;
+	int need = alloc + num;
+	if (alloc < need) {
+		do {
+			if (alloc != 0) {
+				if (self->m_nGrowSize != 0)
+					alloc = alloc + self->m_nGrowSize;
+				else
+					alloc = alloc + alloc;
+			} else {
+				alloc = 2;
+			}
+		} while (alloc < need);
+		self->m_nAllocationCount = alloc;
+	}
+	if (self->m_pMemory)
+		self->m_pMemory = g_109f3638(self->m_pMemory, self->m_nAllocationCount << 4);
+	else
+		self->m_pMemory = g_109f3634(self->m_nAllocationCount << 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c4d0 size=0xd
 void CUnknown1018c4d0::sub_1018c4d0(char value)
 {

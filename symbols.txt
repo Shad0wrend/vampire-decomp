@@ -268,6 +268,7 @@
 0x10005c8b func   _npc_VGargoyle npc_VGargoyle
 0x10005cb3 func   _npc_VWerewolf npc_VWerewolf
 0x10005ccc func   _item_k_tutorial_chopshop_stairs_key item_k_tutorial_chopshop_stairs_key
+0x10005cef func   ?sub_10185910@@YIXPAUMem16@@HH@Z sub_10185910
 0x10005cfe func   _func_rot_button func_rot_button
 0x10005d21 func   ?vfunc63@CSingleplayRules@@UAEPBDH@Z CSingleplayRules::vfunc63
 0x10005d9e func   ?sub_10083960@CUnknown10083960@@QAEXH@Z CUnknown10083960::sub_10083960
