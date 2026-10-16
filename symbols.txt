@@ -702,6 +702,7 @@
 0x100104c9 func   _item_k_fu_office_key item_k_fu_office_key
 0x10010532 func   _trigger_teleport trigger_teleport
 0x100105eb func   _func_pushable func_pushable
+0x100106ae func   ?sub_101ed9e0@CUnknown101ed9e0@@QAEPAV1@H@Z CUnknown101ed9e0::sub_101ed9e0
 0x100107b7 func   _info_node_crosswalk info_node_crosswalk
 0x10010839 func   ?sub_10349a00@@YIXPAH@Z sub_10349a00
 0x1001084d func   ?sub_100b47e0@@YIXPAH@Z sub_100b47e0

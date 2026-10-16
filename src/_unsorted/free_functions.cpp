@@ -868,6 +868,14 @@ void sub_101eab60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ed9e0 size=0xb
+CUnknown101ed9e0 *CUnknown101ed9e0::sub_101ed9e0(int value)
+{
+	m_unk0 = value;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eddb0 size=0xa
 extern int g_1073a3b4;
 
