@@ -38,3 +38,10 @@ void __fastcall sub_102a96f0(TroikaStub *o)
 	o->vt->f[220](o);
 }
 // END FUNCTION
+
+// FUNCTION: 0x102e0b40 size=0x8
+void __fastcall sub_102e0b40(float *p)
+{
+	p[11] = -1.0f;
+}
+// END FUNCTION
