@@ -578,6 +578,14 @@ void CUnknown10146790::sub_10146790() { c = 0; b = 0; }
 void __fastcall sub_10156d30(char *p) { p[0x105c] = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x101578b0 size=0xc
+bool CUnknown101578b0::sub_101578b0()
+{
+	bool r = (m_flags204 >> 4) & 1;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158d60 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_10158d60(void **p) { ((Fn *)*p)[243](p); }
