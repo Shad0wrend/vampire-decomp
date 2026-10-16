@@ -664,6 +664,12 @@ extern char g_1093412c;
 void sub_102f99b0() { g_1093412c = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x10307b40 size=0x9
+struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
+// TARGET: CUnknown10307b40::sub_10307b40
+void CUnknown10307b40::sub_10307b40(int v) { a = v; }
+// END FUNCTION
+
 // FUNCTION: 0x1030f660 size=0x8
 extern char g_106b8540;
 char * __stdcall sub_1030f660(int) { return &g_106b8540; }
