@@ -3952,6 +3952,36 @@ void CUnknown102ee120::sub_102f2fe0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f48b0 size=0x67
+extern char g_1061052c[];
+extern void (*g_109f3630)(const char* fmt, ...);
+
+struct NodeObj { char pad[0x94]; int m_type; };
+struct NodeGraph {
+	int m_nNodes;
+	NodeObj** m_pNodes;
+	bool sub_102f48b0(int a, int b);
+};
+
+// TARGET: NodeGraph::sub_102f48b0
+bool NodeGraph::sub_102f48b0(int a, int b)
+{
+	if (a > m_nNodes || b > m_nNodes) {
+		g_109f3630(g_1061052c);
+		return false;
+	}
+	if (a == b)
+		return true;
+	int ta = m_pNodes[a]->m_type;
+	int tb = m_pNodes[b]->m_type;
+	if (ta == 1 || tb == 1)
+		return false;
+	if (ta == 3 || tb == 3)
+		return true;
+	return ta == tb;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f65b0 size=0xd
 extern char g_1093408c;
 extern int g_1093407c;
