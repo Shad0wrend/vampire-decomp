@@ -864,6 +864,14 @@ bool CUnknown101f6c30::sub_101f6c30()
 bool __fastcall sub_101f74e0(int *p) { bool r = p[3] != -1; return r; }
 // END FUNCTION
 
+// FUNCTION: 0x101f9550 size=0xa
+extern int g_1074e008;
+void sub_101f9550(int value)
+{
+	g_1074e008 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9590 size=0xa
 extern int g_1074e010;
 
