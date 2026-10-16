@@ -451,6 +451,7 @@
 0x1000caea func   ?sub_102c6e90@@YIXPAV?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@@Z sub_102c6e90
 0x1000cb53 func   ?vfunc119@CAI_Hint@@UAEXXZ CAI_Hint::vfunc119
 0x1000cbd0 func   _env_firesource env_firesource
+0x1000cc02 func   ?sub_10080750@CUnknown10080750@@QAEXH@Z CUnknown10080750::sub_10080750
 0x1000ccde func   _item_w_werewolf_attacks item_w_werewolf_attacks
 0x1000cd29 func   ?sub_1034a010@@YIXPAH@Z sub_1034a010
 0x1000ce00 func   _item_container item_container
