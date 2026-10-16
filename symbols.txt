@@ -442,6 +442,7 @@
 0x1000af1f func   _point_explosion point_explosion
 0x1000af24 func   _env_steamjet env_steamjet
 0x1000af2e func   ?vfunc5@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc5
+0x1000afd3 func   ?sub_102ecce0@@YIXPAUCOwner@@@Z sub_102ecce0
 0x1000b037 func   _npc_VHunter npc_VHunter
 0x1000b041 func   ?sub_101f9570@@YAXH@Z sub_101f9570
 0x1000b05f func   ?sub_101f95d0@@YAXH@Z sub_101f95d0
