@@ -489,6 +489,15 @@ void __fastcall sub_100f0f30(CSlots *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f5600 size=0xd
+#include "CUnknown100f5600.h"
+
+void CUnknown100f5600::sub_100f5600(float value)
+{
+	m_fUnk454 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f9790 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_100f9790(); };
 void CUtlVectorBase::sub_100f9790() { m_Size = 0; }
