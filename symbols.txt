@@ -861,6 +861,7 @@
 0x10014eed func   _item_g_warr_clipboard item_g_warr_clipboard
 0x10014f1a func   ?sub_1020f2c0@@YIXPADHH@Z sub_1020f2c0
 0x10014f3d func   ?sub_101bc000@@YIXPAH@Z sub_101bc000
+0x10014f56 func   ?vfunc305@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc305
 0x10014f88 func   ?sub_100c89e0@@YIXPADHH@Z sub_100c89e0
 0x100150af func   ?sub_10215910@CUnknown10215910@@QAEXH@Z CUnknown10215910::sub_10215910
 0x100151d6 func   _func_areaportal func_areaportal

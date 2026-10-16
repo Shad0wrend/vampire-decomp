@@ -15,6 +15,15 @@ void CBaseCombatWeapon::vfunc359()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252e80 size=0xb
+void sub_1000c6f8();
+
+void CBaseCombatWeapon::vfunc305()
+{
+	*(void **)((char *)this + 0x1ec) = (void *)sub_1000c6f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10255030 size=0x8
 #include "CBaseCombatWeapon.h"
 
