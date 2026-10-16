@@ -147,6 +147,10 @@ struct CUtlVectorBase { int a, b, c, m_Size; void sub_10185490(); };
 void CUtlVectorBase::sub_10185490() { m_Size = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10185600 size=0x8
+void __fastcall sub_10185600(int *p) { p[3] = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x101bc000 size=0x8
 void __fastcall sub_101bc000(int *p)
 {
