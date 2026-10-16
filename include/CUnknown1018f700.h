@@ -8,6 +8,7 @@
 #include "CUnknown101c1b40.h"
 #include "CUnknown102237e0.h"
 #include "CUnknown102d00a0.h"
+#include "CBaseMoveBehavior.h"
 
 class CUnknown1018f700
 {
