@@ -402,6 +402,14 @@ void __stdcall sub_1012cf90(int) { sub_10003a94(); }
 float sub_1012f850(float x) { return x * x; }
 // END FUNCTION
 
+// FUNCTION: 0x10130100 size=0xb
+extern void (*g_105751b8[])();
+void sub_10130100(int i)
+{
+	g_105751b8[i]();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101318a0 size=0x8
 void sub_10002441();
 void __stdcall sub_101318a0(int) { sub_10002441(); }
