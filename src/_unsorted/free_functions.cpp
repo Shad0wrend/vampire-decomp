@@ -1688,6 +1688,13 @@ void sub_102c8ca0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ca760 size=0xb
+void __fastcall sub_102ca760(char *self)
+{
+	*(int *)(self + 0xa04) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc520 size=0x9
 CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 {
