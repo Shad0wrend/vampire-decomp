@@ -671,6 +671,37 @@ char *CUnknown100cd640::sub_100cd640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce810 size=0x65
+struct Slot_t { void *pEnt; unsigned int serial; };
+struct Entry_t { int unused; Slot_t slot; };
+extern Entry_t *g_10566458;
+
+struct Ev_t {
+	char pad0[0x18]; unsigned int handle;
+	char pad1[0x18]; int type;
+	char pad2[0x8]; int a; int b; char pad3[4]; int c;
+};
+
+static inline void *Lookup(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		Slot_t *s = &g_10566458[h & 0x1fff].slot;
+		if (s->serial == h >> 13)
+			return s->pEnt;
+	}
+	return 0;
+}
+
+unsigned char __stdcall sub_100ce810(Ev_t *ev, void *ent, int *p)
+{
+	if (ev->type == 2) {
+		if (Lookup(ev->handle) == ent && ev->a == p[0] && ev->b == p[1])
+			return ev->c == p[3];
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db3f0 size=0x8
 extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
