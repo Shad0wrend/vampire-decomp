@@ -192,6 +192,13 @@ void CUnknown10077730::sub_10076ad0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076af0 size=0xd
+void CUnknown10076af0::sub_10076af0(char value)
+{
+	m_unk1b0 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077730 size=0xd
 #include "CUnknown10077730.h"
 

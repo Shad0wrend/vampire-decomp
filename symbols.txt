@@ -100,6 +100,7 @@
 0x10002e4b func   _item_g_watch_fancy item_g_watch_fancy
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
 0x10003017 func   _ai_changehintgroup ai_changehintgroup
+0x10003030 func   ?sub_10076af0@CUnknown10076af0@@QAEXD@Z CUnknown10076af0::sub_10076af0
 0x10003058 func   _item_k_museum_storeroom_key item_k_museum_storeroom_key
 0x10003076 func   _info_node_sabbat_arch info_node_sabbat_arch
 0x100030b2 func   ?vfunc67@CGameRules@@UAEPBDH@Z CGameRules::vfunc67
