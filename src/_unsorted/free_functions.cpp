@@ -3001,6 +3001,13 @@ void __fastcall sub_103dc260(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eec60 size=0xd
+void CUnknown103eec60::sub_103eec60(char value)
+{
+	m_unk931 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eee60 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
