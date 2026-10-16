@@ -173,6 +173,15 @@ const char *CUnknown10074050::sub_10074050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10074070 size=0xe
+#include "CUnknown10074070.h"
+// TARGET: CUnknown10074070::sub_10074070
+int CUnknown10074070::sub_10074070(int index)
+{
+	return m_records[index].m_value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100740f0 size=0xa
 struct CUnknown100740f0 { int p[2]; char a; void sub_100740f0(char v); };
 // TARGET: CUnknown100740f0::sub_100740f0
