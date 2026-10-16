@@ -8,4 +8,5 @@ class CNPC_VGargoyle
 {
 public:
 	virtual int vfunc359(int index);
+	virtual void vfunc601(int unused);
 };
