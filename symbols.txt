@@ -413,6 +413,7 @@
 0x10008d5a func   ?sub_1011a430@@YAXXZ sub_1011a430
 0x10008d82 func   _env_floating_camera env_floating_camera
 0x10008dc8 func   ?sub_10078580@CUnknown10078540@@QAEXH@Z CUnknown10078540::sub_10078580
+0x10008dcd func   ?sub_101e8410@@YGXPAHHH@Z sub_101e8410
 0x10008e0e func   ?sub_10258500@@YAPBDH@Z sub_10258500
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point

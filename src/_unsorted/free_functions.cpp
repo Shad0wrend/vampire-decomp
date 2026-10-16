@@ -1486,6 +1486,13 @@ void __stdcall sub_101e83f0(int* out, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8410 size=0xd
+void __stdcall sub_101e8410(int *p, int a, int b)
+{
+	*p = 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e94b0 size=0xa
 extern int g_1073a144;
 
