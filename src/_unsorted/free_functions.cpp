@@ -1837,6 +1837,13 @@ void CUnknown102a9750::sub_102a9940(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a99a0 size=0xd
+void CUnknown102a9750::sub_102a99a0(char value)
+{
+	m_unk6498 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a99c0 size=0xa
 void CUnknown102a99c0::sub_102a99c0(char value)
 {
