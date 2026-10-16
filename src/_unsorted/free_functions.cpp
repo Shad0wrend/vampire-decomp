@@ -252,6 +252,13 @@ void CUnknown10077890::sub_10077890(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100779b0 size=0xd
+void CUnknown100779b0::sub_100779b0(int value)
+{
+	m_unk330 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100784b0 size=0xd
 void CUnknown10077730::sub_100784b0(float value)
 {
