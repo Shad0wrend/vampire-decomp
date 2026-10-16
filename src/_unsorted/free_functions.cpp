@@ -671,6 +671,32 @@ char *CUnknown100cd640::sub_100cd640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce450 size=0x64
+struct Node_t { char pad[0x38]; Node_t *next; };
+struct CList_t {
+	char pad0[0x38]; Node_t *m_pFirst; char pad1[0x18]; Node_t *m_pCur;
+	unsigned char sub_100ce810(Node_t *n, void *ent, int *p);
+	// TARGET: CList_t::sub_100ce450
+	bool sub_100ce450(void *ent, int *p);
+};
+
+bool CList_t::sub_100ce450(void *ent, int *p)
+{
+	if (m_pCur && sub_100ce810(m_pCur, ent, p))
+		return true;
+	Node_t *n = m_pFirst;
+	while (n) {
+		if (sub_100ce810(n, ent, p)) {
+			m_pCur = n;
+			return true;
+		}
+		n = n->next;
+	}
+	m_pCur = 0;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce810 size=0x65
 struct Slot_t { void *pEnt; unsigned int serial; };
 struct Entry_t { int unused; Slot_t slot; };
