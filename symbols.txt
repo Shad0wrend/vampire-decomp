@@ -695,6 +695,7 @@
 0x1000e827 func   ?sub_10267350@@YAXXZ sub_10267350
 0x1000e85e func   ?sub_1039a6e0@CUnknown1039a6e0@@QAEXH@Z CUnknown1039a6e0::sub_1039a6e0
 0x1000e8a9 func   _ambient_generic ambient_generic
+0x1000e8b8 func   ?sub_100732b0@CUnknown100732b0@@QAEXD@Z CUnknown100732b0::sub_100732b0
 0x1000e98a func   ?vfunc288@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc288
 0x1000e9e9 func   _window_pane window_pane
 0x1000e9fd func   ?sub_102e2710@@YIXPAUCOwner@@@Z sub_102e2710

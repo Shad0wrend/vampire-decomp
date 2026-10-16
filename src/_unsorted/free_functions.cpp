@@ -74,6 +74,13 @@ CUnknown1006ccc0 *CUnknown1006ccc0::sub_1006ccc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100732b0 size=0xd
+void CUnknown100732b0::sub_100732b0(char value)
+{
+	m_unk178 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100737b0 size=0x9
 struct CUnknown100737b0 { int m_val; void sub_100737b0(int v); };
 void CUnknown100737b0::sub_100737b0(int v) { m_val = v; }
