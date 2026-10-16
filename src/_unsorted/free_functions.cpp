@@ -205,6 +205,13 @@ struct CUnknown100bc560 { int p[3]; int a; char b; void sub_100bc560(); };
 void CUnknown100bc560::sub_100bc560() { a = 0; b = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100bc580 size=0xa
+void CUnknown100bc580::sub_100bc580(char value)
+{
+	m_unk11 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc5e0 size=0xa
 void __fastcall sub_100bc5e0(int *self, int, int value)
 {
