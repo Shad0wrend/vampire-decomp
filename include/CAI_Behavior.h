@@ -20,8 +20,9 @@ public:
 	virtual char vfunc24(int a);
 	virtual char vfunc25(int a);
 
-	char m_pad0004[0xc];	// 0x0004 .. 0x000F
-	char m_flag10;	// 0x0010
+	void *m_p0004;
+	char m_pad0008[8];
+	char m_flag10;
 	char m_pad0011[3];
-	NPC_CLASS *m_pOuter;	// 0x0014
+	NPC_CLASS *m_pOuter;
 };
