@@ -1112,6 +1112,13 @@ unsigned int __fastcall sub_10231e60(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10232520 size=0xa
+void __fastcall sub_10232520(int *self, int, int value)
+{
+	self[4] = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102457d0 size=0xa
 void CUnknown102457d0::sub_102457d0(int value)
 {
