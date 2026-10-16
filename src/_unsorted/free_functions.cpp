@@ -2680,6 +2680,15 @@ void __fastcall sub_102d00c0(int *self, int, int value)
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102d6210 size=0xe
+extern int *g_1060a750[];
+
+int sub_102d6210(int i)
+{
+	return *g_1060a750[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d9150 size=0xa
 CUnknown102d9150 *CUnknown102d9150::sub_102d9150()
 {
