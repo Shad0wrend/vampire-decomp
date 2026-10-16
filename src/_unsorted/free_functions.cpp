@@ -508,6 +508,14 @@ unsigned int CAmbientGeneric::sub_101ac2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af9b0 size=0xa
+char * __fastcall sub_101af9b0(char *self)
+{
+	self[0x100] = 0;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afba0 size=0x8
 struct CUnknown101afba0 { char pad[0x100]; char m_Flag; void sub_101afba0(); };
 void CUnknown101afba0::sub_101afba0() { m_Flag = 0; }
