@@ -1041,6 +1041,13 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_10158da0(void **p) { ((Fn *)*p)[245](p); }
 // END FUNCTION
 
+// FUNCTION: 0x1015eec0 size=0xe
+bool CUnknown1015ef20::sub_1015eec0()
+{
+	return m_unk19f5 == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015eee0 size=0x8
 void __fastcall sub_1015eee0(char *p) { p[0x19f5] = 0; }
 // END FUNCTION
