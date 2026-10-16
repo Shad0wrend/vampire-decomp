@@ -2451,6 +2451,13 @@ void __fastcall sub_103661d0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036c7f0 size=0xd
+void CUnknown1036c7f0::sub_1036c7f0(int value)
+{
+	m_unk66b8 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10373420 size=0x8
 void __fastcall sub_10373420(int *p) { p[3] = 0; }
 // END FUNCTION

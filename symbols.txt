@@ -31,6 +31,7 @@
 0x100017e9 func   _npc_crow npc_crow
 0x10001861 func   _item_p_research_lg_dodge item_p_research_lg_dodge
 0x1000193d func   ?vfunc9@CEffectsServer@@UAEMXZ CEffectsServer::vfunc9
+0x10001974 func   ?sub_1036c7f0@CUnknown1036c7f0@@QAEXH@Z CUnknown1036c7f0::sub_1036c7f0
 0x1000199c func   _info_constraint_anchor info_constraint_anchor
 0x100019a1 func   _npc_VNewscaster npc_VNewscaster
 0x100019d8 func   ?sub_100ddf40@CUnknown100ddf40@@QAEPAHH@Z CUnknown100ddf40::sub_100ddf40
