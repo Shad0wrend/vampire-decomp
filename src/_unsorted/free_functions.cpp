@@ -1462,6 +1462,41 @@ void __fastcall sub_100f9940(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f99d0 size=0x67
+extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
+
+struct CMem8e_t {
+	void *m_pMemory; int m_nAllocationCount; int m_nGrowSize;
+	// TARGET: CMem8e_t::sub_100f99d0
+	void sub_100f99d0(int num);
+};
+
+void CMem8e_t::sub_100f99d0(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int alloc = m_nAllocationCount;
+	int newAlloc = num + alloc;
+	if (alloc < newAlloc) {
+		do {
+			if (alloc != 0) {
+				if (m_nGrowSize != 0)
+					alloc += m_nGrowSize;
+				else
+					alloc += alloc;
+			} else
+				alloc = 4;
+		} while (alloc < newAlloc);
+		m_nAllocationCount = alloc;
+	}
+	if (m_pMemory)
+		m_pMemory = Plat_Realloc(m_pMemory, m_nAllocationCount << 3);
+	else
+		m_pMemory = Plat_Alloc(m_nAllocationCount << 3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fa690 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
