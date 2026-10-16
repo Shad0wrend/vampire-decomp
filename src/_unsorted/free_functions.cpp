@@ -968,6 +968,27 @@ void CUnknown1012e6a0::sub_1012e6a0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f100 size=0x65
+struct ScopeEnt { const char* a; const void* b; const void* c; };
+extern ScopeEnt* g_109f3620;
+extern int* g_109f3680;
+extern char g_10574f74[];
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) int __stdcall FreeLibrary(void* h);
+
+// TARGET: sub_1012f100
+void sub_1012f100(void* h)
+{
+	g_109f3620[*g_109f3680].a = g_10574f74;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (h)
+		FreeLibrary(h);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f850 size=0x9
 // TARGET: sub_1012f850
 float sub_1012f850(float x) { return x * x; }
