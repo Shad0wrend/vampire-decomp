@@ -87,6 +87,13 @@ struct CUnknown10074a90 { int p[4]; int a; void sub_10074a90(int v); };
 void CUnknown10074a90::sub_10074a90(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10078860 size=0xb
+void __fastcall sub_10078860(char *self)
+{
+	*(int *)(self + 0x1a8) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078b10 size=0x8
 void __fastcall sub_10078b10(int *p) { p[3] = 0; }
 // END FUNCTION

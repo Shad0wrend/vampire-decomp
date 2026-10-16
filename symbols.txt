@@ -157,6 +157,7 @@
 0x1000453e func   _item_g_giovanni_invitation_victor item_g_giovanni_invitation_victor
 0x100045a2 func   _npc_VScurrying npc_VScurrying
 0x100045b1 func   _scripted_scene scripted_scene
+0x100046dd func   ?sub_10078860@@YIXPAD@Z sub_10078860
 0x1000470a func   ?sub_1016b440@@YAXXZ sub_1016b440
 0x10004773 func   _point_target point_target
 0x1000478c func   ?vfunc1@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc1
