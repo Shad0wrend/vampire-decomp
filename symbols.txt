@@ -553,6 +553,7 @@
 0x100149cf func   _phys_spring phys_spring
 0x10014a06 func   _info_node_tzimisce_claw_left info_node_tzimisce_claw_left
 0x10014a92 func   _info_node_hint info_node_hint
+0x10014c4f func   ?vfunc43@CMultiplayRules@@UAEHHH@Z CMultiplayRules::vfunc43
 0x10014d26 func   _item_p_gargoyle_talisman item_p_gargoyle_talisman
 0x10014d35 func   _item_a_hvy_cloth item_a_hvy_cloth
 0x10014dd5 func   _item_w_remington_m_700 item_w_remington_m_700
