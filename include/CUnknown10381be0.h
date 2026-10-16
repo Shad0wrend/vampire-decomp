@@ -1,4 +1,4 @@
-// CUnknown10381be0: NPC_VHengeyokai-area object with a flags dword at +0x14b8 (same field read by CNPC_VTzimisce code); real name not yet known.
+// CUnknown10381be0: NPC_VHengeyokai-area object with a flags dword at +0x14b8 (same field read by CNPC_VTzimisce and CNPC_VGargoyle code); real name not yet known.
 #pragma once
 
 class CUnknown10381be0
@@ -10,4 +10,5 @@ public:
 	bool sub_10381be0();
 	bool sub_103be130();
 	bool sub_103be090();
+	bool sub_10379040();
 };
