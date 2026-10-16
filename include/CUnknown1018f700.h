@@ -4,6 +4,7 @@
 #include "CUnknown100779b0.h"
 #include "CUnknown100b99b0.h"
 #include "CUnknown101030e0.h"
+#include "CUnknown1012cf70.h"
 
 class CUnknown1018f700
 {
