@@ -603,6 +603,7 @@
 0x10012008 func   _flame_cluster flame_cluster
 0x10012017 func   _info_node_link info_node_link
 0x100121e3 func   _npc_VMoleman npc_VMoleman
+0x10012292 func   ?vfunc568@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc568
 0x100122a1 func   _item_k_empire_jezebel_key item_k_empire_jezebel_key
 0x100122d8 func   _func_elevator func_elevator
 0x100122e2 func   _trigger_inventory_check trigger_inventory_check

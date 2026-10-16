@@ -8,3 +8,8 @@ int CAI_BaseNPC::vfunc567(int unused)
 	return 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1026a910 size=0x9
+extern float g_104454c4;
+float CAI_BaseNPC::vfunc568(int a) { return g_104454c4; }
+// END FUNCTION
