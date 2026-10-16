@@ -472,6 +472,7 @@
 0x1000f3cb func   ?sub_1007e580@@YIXPAH@Z sub_1007e580
 0x1000f4ca func   ?vfunc62@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc62
 0x1000f51f func   _item_k_empire_mafia_key item_k_empire_mafia_key
+0x1000f588 func   ?sub_1003c450@@YIXPAPAX@Z sub_1003c450
 0x1000f682 func   ?vfunc63@CMultiplayRules@@UAEPBDH@Z CMultiplayRules::vfunc63
 0x1000f6af func   ?vfunc61@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc61
 0x1000f6c8 func   _npc_VWolfMorph npc_VWolfMorph

@@ -26,6 +26,11 @@ void __fastcall sub_1003c1c0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003c450 size=0x8
+typedef void (__fastcall *Fn)(void *);
+void __fastcall sub_1003c450(void **p) { ((Fn *)*p)[134](p); }
+// END FUNCTION
+
 // FUNCTION: 0x10078b10 size=0x8
 void __fastcall sub_10078b10(int *p) { p[3] = 0; }
 // END FUNCTION
