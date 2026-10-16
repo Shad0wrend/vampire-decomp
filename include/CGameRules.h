@@ -55,9 +55,9 @@ public:
 	virtual void vfunc45();
 	virtual void vfunc46();
 	virtual void vfunc47();
-	virtual void vfunc48();
+	virtual int vfunc48(int index);
 	virtual float vfunc49(int a);
-	virtual void vfunc50();
+	virtual float vfunc50(int a);
 	virtual void vfunc51();
 	virtual void vfunc52();
 	virtual void vfunc53();
@@ -68,7 +68,7 @@ public:
 	virtual void vfunc58();
 	virtual void vfunc59();
 	virtual void vfunc60();
-	virtual void vfunc61();
+	virtual int vfunc61(int index);
 	virtual int vfunc62(int index);
 	virtual const char *vfunc63(int index);
 	virtual void vfunc64();
