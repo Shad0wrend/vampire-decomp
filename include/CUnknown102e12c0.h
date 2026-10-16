@@ -14,4 +14,5 @@ public:
 	void sub_102e7e20();
 	void sub_10264450();
 	void sub_102e7e60();
+	void sub_102c6d90();
 };
