@@ -322,6 +322,7 @@
 0x1000886e func   _aiscripted_sequence aiscripted_sequence
 0x100088f0 func   ?sub_100bc3a0@@YAXH@Z sub_100bc3a0
 0x1000891d func   _momentary_rot_button momentary_rot_button
+0x1000896d func   ?vfunc483@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc483
 0x100089f4 func   _func_breakable func_breakable
 0x10008a80 func   ?vfunc242@CEnvParticle@@QAEXXZ CEnvParticle::vfunc242
 0x10008a85 func   _item_g_eyes item_g_eyes
