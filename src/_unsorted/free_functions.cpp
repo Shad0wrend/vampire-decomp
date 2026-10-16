@@ -2025,6 +2025,14 @@ struct CUnknown103eee60 {
 void CUnknown103eee60::sub_103eee60() { slot375(); }
 // END FUNCTION
 
+// FUNCTION: 0x104121d0 size=0xb
+extern int g_109d3080;
+void sub_104121d0()
+{
+	g_109d3080 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d650 size=0x9
 struct CUnknown1042d650 { int a; CUnknown1042d650* sub_1042d650(); };
 // TARGET: CUnknown1042d650::sub_1042d650
