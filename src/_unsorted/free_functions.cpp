@@ -2270,6 +2270,13 @@ CUnknown1042d650* CUnknown1042d650::sub_1042d650() { a = 0; return this; }
 unsigned int __fastcall sub_1042d700(unsigned int *p) { return (*p >> 1) & 0x1f; }
 // END FUNCTION
 
+// FUNCTION: 0x1042d720 size=0xb
+unsigned int __fastcall sub_1042d720(unsigned int *self)
+{
+	return *self >> 6 & 0x3ff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d9a0 size=0xa
 unsigned short CUnknown1042d9a0::sub_1042d9a0()
 {
