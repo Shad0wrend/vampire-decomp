@@ -522,6 +522,12 @@ void __fastcall sub_102e0b40(float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2800 size=0x8
+struct B { void sub_1000108c(int); };
+struct A { int a; B *b; void sub_102e2800(int x); };
+void A::sub_102e2800(int x) { b->sub_1000108c(x); }
+// END FUNCTION
+
 // FUNCTION: 0x102e8250 size=0x8
 void __fastcall sub_102e8250(float *p) { p[6] = 3.402823466e+38f; }
 // END FUNCTION
