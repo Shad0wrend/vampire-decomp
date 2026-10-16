@@ -785,6 +785,7 @@
 0x10010f69 func   _gibshooter gibshooter
 0x10010f91 func   ?sub_101f95b0@@YAXH@Z sub_101f95b0
 0x10010f9b func   _npc_VStalker npc_VStalker
+0x10010fe1 func   ?sub_102a9940@CUnknown102a9750@@QAEXH@Z CUnknown102a9750::sub_102a9940
 0x10010ffa func   _trigger_multiple trigger_multiple
 0x10011013 func   _worldspawn worldspawn
 0x1001103b func   _item_w_hengeyokai_fist item_w_hengeyokai_fist
