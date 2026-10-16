@@ -119,6 +119,7 @@
 0x1000352b func   _npc_VTzimisce npc_VTzimisce
 0x100035d0 func   ?sub_102e2610@CAI_Motor@@QAEHXZ CAI_Motor::sub_102e2610
 0x100035f8 func   _trigger_once trigger_once
+0x10003652 func   ?vfunc191@CRagdollPropSpecial@@UAEXH@Z CRagdollPropSpecial::vfunc191
 0x10003657 func   _trigger_wind trigger_wind
 0x100036ac func   _trigger_push trigger_push
 0x100036d9 func   _trigger_look trigger_look
