@@ -649,6 +649,11 @@ void CUnknown1034d590::sub_1034d590(int) { sub_1000a1b4(); }
 void __fastcall sub_10359ba0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1035b1c0 size=0x8
+struct CUnknown1035b1c0 { int sub_1035b1c0(int, int, int, int); };
+int CUnknown1035b1c0::sub_1035b1c0(int, int, int, int) { return 1; }
+// END FUNCTION
+
 // FUNCTION: 0x10373420 size=0x8
 void __fastcall sub_10373420(int *p) { p[3] = 0; }
 // END FUNCTION
