@@ -9,6 +9,7 @@
 #include "CAreaPortal.h"
 #include "CBaseButton.h"
 #include "CBaseCombatWeapon.h"
+#include "CBaseGrenade.h"
 #include "CBasePlayer.h"
 #include "CBaseVampireSkillEntity.h"
 #include "CCollisionProperty.h"
