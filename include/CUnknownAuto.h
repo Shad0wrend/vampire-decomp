@@ -20,6 +20,7 @@
 #include "CUnknown100ddf40.h"
 #include "CUnknown100f97b0.h"
 #include "CUnknown101578b0.h"
+#include "CUnknown1018c4d0.h"
 #include "CUnknown101db5f0.h"
 #include "CUnknown10231ed0.h"
 #include "CUnknown102652d0.h"
