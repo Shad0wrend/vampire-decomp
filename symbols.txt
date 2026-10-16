@@ -381,6 +381,7 @@
 0x1000a64b func   ?sub_1042d650@CUnknown1042d650@@QAEPAU1@XZ CUnknown1042d650::sub_1042d650
 0x1000a65a func   _item_w_grenade_frag item_w_grenade_frag
 0x1000a65f func   _prop_destructable prop_destructable
+0x1000a682 func   ?sub_101f95f0@@YAXH@Z sub_101f95f0
 0x1000a75e func   _item_g_brotherhood_flyer item_g_brotherhood_flyer
 0x1000a7e5 func   _npc_VHengeyokai npc_VHengeyokai
 0x1000a80d func   _env_fog_controller env_fog_controller
