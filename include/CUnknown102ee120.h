@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CUnknown10319f70.h"
+#include "CUnknown1030bc20.h"
 
 struct CUnknown102ee120_Target
 {
@@ -22,4 +23,5 @@ public:
 	void sub_102ee120(int a, int b, int c);
 	void sub_102ee1c0(int value);
 	void sub_102f2fe0(int value);
+	CUnknown1030bc20_Record *sub_102ee5e0();
 };
