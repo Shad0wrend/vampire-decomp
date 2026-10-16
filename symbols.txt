@@ -589,6 +589,7 @@
 0x10014d35 func   _item_a_hvy_cloth item_a_hvy_cloth
 0x10014dd5 func   _item_w_remington_m_700 item_w_remington_m_700
 0x10014eed func   _item_g_warr_clipboard item_g_warr_clipboard
+0x10014f3d func   ?sub_101bc000@@YIXPAH@Z sub_101bc000
 0x100151d6 func   _func_areaportal func_areaportal
 0x100151e0 func   _logic_case logic_case
 0x10015221 func   _npc_sabbat npc_sabbat
