@@ -19,6 +19,11 @@ int CSingleplayRules::vfunc43(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101abf80 size=0x9
+extern float g_104492dc;
+float CSingleplayRules::vfunc49(int a) { return g_104492dc; }
+// END FUNCTION
+
 // FUNCTION: 0x101ac000 size=0x8
 // TARGET: CSingleplayRules::vfunc48
 int CSingleplayRules::vfunc48(int index)
