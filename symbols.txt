@@ -473,6 +473,7 @@
 0x1000954d func   _phys_torque phys_torque
 0x100095e8 func   ?vfunc38@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc38
 0x1000961f func   _item_k_malcolm_office_key item_k_malcolm_office_key
+0x1000966f func   ?sub_1004add0@CMem16_t@@QAEXH@Z CMem16_t::sub_1004add0
 0x10009697 func   _test_traceline test_traceline
 0x100096ab func   _te_tester te_tester
 0x100096f6 func   _item_g_werewolf_bloodpack item_g_werewolf_bloodpack
