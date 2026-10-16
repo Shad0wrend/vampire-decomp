@@ -100,6 +100,10 @@ void __fastcall sub_102e0b40(float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e8250 size=0x8
+void __fastcall sub_102e8250(float *p) { p[6] = 3.402823466e+38f; }
+// END FUNCTION
+
 // FUNCTION: 0x10359ba0 size=0x8
 void __fastcall sub_10359ba0(int *p) { p[3] = 0; }
 // END FUNCTION
