@@ -37,7 +37,7 @@ public:
 	virtual void vfunc27();
 	virtual void vfunc28();
 	virtual void vfunc29();
-	virtual void vfunc30();
+	virtual float vfunc30(int a);
 	virtual void vfunc31();
 	virtual void vfunc32();
 	virtual void vfunc33();
