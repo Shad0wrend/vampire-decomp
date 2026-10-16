@@ -68,6 +68,14 @@ void CBaseEntity::vfunc195()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4dc0 size=0xe
+// TARGET: CBaseEntity::vfunc158
+bool CBaseEntity::vfunc158()
+{
+	return m_field200 == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4f10 size=0xd
 void CBaseEntity::vfunc84(int flags)
 {
