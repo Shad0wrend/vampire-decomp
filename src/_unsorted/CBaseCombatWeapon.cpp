@@ -14,6 +14,31 @@ extern float g_104454c4;
 float CBaseCombatWeapon::vfunc337(int a, int b) { return g_104454c4; }
 // END FUNCTION
 
+// FUNCTION: 0x1024f030 size=0x64
+struct CNameObj_t { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual const char *GetName(); };
+struct CNameSrc_t { virtual void v0(); virtual void v1(); virtual void v2(); virtual CNameObj_t *Get(); };
+extern const char g_106b8540[];
+extern const char g_105c55d0[];
+struct CWeaponHolder_t {
+	char pad[0x40]; CNameSrc_t *m_pSrc;
+	const char *GetName() {
+		if (!m_pSrc)
+			return g_106b8540;
+		return m_pSrc->Get()->GetName();
+	}
+};
+
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *fmt, ...);
+
+// TARGET: CBaseCombatWeapon::vfunc370
+void CBaseCombatWeapon::vfunc370(int *event, CBaseCombatWeapon *other)
+{
+	const char *a = m_pHolder->GetName();
+	const char *b = other->m_pHolder->GetName();
+	DevWarning(2, g_105c55d0, *event, b, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f790 size=0x8
 #include "CBaseCombatWeapon.h"
 
