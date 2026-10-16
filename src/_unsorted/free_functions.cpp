@@ -1749,6 +1749,15 @@ struct CUnknown101f2500 { int a; char sub_101f2500(); };
 char CUnknown101f2500::sub_101f2500() { int v = ((int *)this)[-5]; return v != 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101f2ae0 size=0xe
+void sub_101f3030(void* p);
+
+void __stdcall sub_101f2ae0(void* p)
+{
+	sub_101f3030(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2cd0 size=0xa
 struct CUnknown101f2cd0 { int p[6]; int a; void sub_101f2cd0(int v); };
 // TARGET: CUnknown101f2cd0::sub_101f2cd0
