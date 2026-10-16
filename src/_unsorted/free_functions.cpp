@@ -424,6 +424,12 @@ struct CUnknown101c2b10 { char p[0x4a]; char a; void sub_101c2b10(char v); };
 void CUnknown101c2b10::sub_101c2b10(char v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101c4790 size=0xa
+struct CUnknown101c4790 { CUnknown101c4790 *a; CUnknown101c4790 *b; CUnknown101c4790* sub_101c4790(int x); };
+// TARGET: CUnknown101c4790::sub_101c4790
+CUnknown101c4790* CUnknown101c4790::sub_101c4790(int x) { b = this; a = this; return this; }
+// END FUNCTION
+
 // FUNCTION: 0x101c4820 size=0x9
 struct CUnknown101c4760 { int a; int b; int c; void sub_101c4760(); };
 // TARGET: sub_101c4820
