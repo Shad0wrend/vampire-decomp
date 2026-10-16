@@ -600,6 +600,7 @@
 0x1000e426 func   _path_corner_crash path_corner_crash
 0x1000e4b7 func   ?vfunc6@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXXZ CAI_Behavior<CAI_BaseNPC,100000>::vfunc6
 0x1000e570 func   _env_laser env_laser
+0x1000e58e func   ?sub_10224170@@YIXPAUCSlots@@HH@Z sub_10224170
 0x1000e5a7 func   _item_p_research_hg_firearms item_p_research_hg_firearms
 0x1000e5c0 func   _item_w_supershotgun item_w_supershotgun
 0x1000e5c5 func   _env_microphone env_microphone
