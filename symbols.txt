@@ -435,6 +435,7 @@
 0x1000ef8e func   _ambient_soundscheme ambient_soundscheme
 0x1000efb6 func   _item_k_lucky_star_murder_key item_k_lucky_star_murder_key
 0x1000f0ce func   _item_p_occult_lockpicking item_p_occult_lockpicking
+0x1000f0f6 func   ?sub_1021e410@@YIXPAH@Z sub_1021e410
 0x1000f12d func   _item_w_sledgehammer item_w_sledgehammer
 0x1000f17d func   _item_g_vv_photo item_g_vv_photo
 0x1000f182 func   _info_player_deathmatch info_player_deathmatch
