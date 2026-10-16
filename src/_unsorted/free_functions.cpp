@@ -1326,6 +1326,15 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc810(void **p) { ((Fn *)*p)[246](p); }
 // END FUNCTION
 
+// FUNCTION: 0x101cf620 size=0xd
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+void sub_101cf620()
+{
+	Msg("UTIL_ParticleEffect:  Disabled\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4f20 size=0xc
 void CUnknown101d4f20::sub_101d4f20(CUnknown101d4f20_Value *out)
 {

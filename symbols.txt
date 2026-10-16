@@ -863,6 +863,7 @@
 0x10010ffa func   _trigger_multiple trigger_multiple
 0x10011013 func   _worldspawn worldspawn
 0x1001103b func   _item_w_hengeyokai_fist item_w_hengeyokai_fist
+0x100110a9 func   ?sub_101cf620@@YAXXZ sub_101cf620
 0x100110c2 func   ?vfunc3@CCopyRecipientFilter@@UAEHH@Z CCopyRecipientFilter::vfunc3
 0x100110fe func   ?sub_101ac2f0@CAmbientGeneric@@QAEIXZ CAmbientGeneric::sub_101ac2f0
 0x1001113f func   ?vfunc306@CBaseCombatWeapon@@UAEXH@Z CBaseCombatWeapon::vfunc306
