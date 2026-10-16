@@ -975,6 +975,14 @@ struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10206300 size=0xb
+int * __fastcall sub_10206300(int *self, int, int value)
+{
+	*self = value;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b000 size=0x9
 int CBaseVampireSkillEntity::sub_1020b000(CBaseEntity *pPlayer)
 {
