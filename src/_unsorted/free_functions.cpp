@@ -359,6 +359,19 @@ void __fastcall sub_101f3060(char *p) { sub_1000be01(p - *(int *)(p - 4)); }
 int __fastcall sub_101f4280(int *p) { return (*p)++; }
 // END FUNCTION
 
+// FUNCTION: 0x10217160 size=0x8
+#define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
+#define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
+struct CUnknown10217160 {
+	V25(p0) V25(p1) V25(p2) V25(p3) V25(p4) V25(p5) V25(p6) V25(p7) V25(p8)
+	V5(q0) V5(q1) V5(q2)
+	V25(r0)
+	virtual void slot265();
+	void sub_10217160();
+};
+void CUnknown10217160::sub_10217160() { slot265(); }
+// END FUNCTION
+
 // FUNCTION: 0x1021e100 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_1021e100(); };
 void CUtlVectorBase::sub_1021e100() { m_Size = 0; }
