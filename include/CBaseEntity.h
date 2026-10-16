@@ -48,4 +48,6 @@ public:
 
 	char m_pad0004[0x264];
 	unsigned int m_flags268;
+	char m_pad026c[0xfc];
+	int m_field368;
 };
