@@ -119,6 +119,7 @@
 0x10003f71 func   ?sub_102477a0@CUnknown102477a0@@QAEXXZ CUnknown102477a0::sub_102477a0
 0x10003f94 func   _logic_case_toggle logic_case_toggle
 0x100040a7 func   ?sub_10078c30@@YIXPAH@Z sub_10078c30
+0x100041e2 func   ?sub_101f9610@@YAXH@Z sub_101f9610
 0x10004232 func   ?sub_10158da0@@YIXPAPAX@Z sub_10158da0
 0x10004269 func   _params_particle params_particle
 0x1000429b func   ?sub_101cc800@CUnknown101cc800@@QAEXXZ CUnknown101cc800::sub_101cc800
