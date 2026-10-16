@@ -19,6 +19,7 @@ public:
 	virtual void vfunc12();
 	virtual void vfunc13();
 	virtual void vfunc14();
-	char m_pad4[0xc];
+	void *m_pOuter;
+	char m_pad8[8];
 	char m_unk10[4];
 };
