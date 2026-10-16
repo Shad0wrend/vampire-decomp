@@ -6,6 +6,7 @@
 class CMultiplayRules : public CGameRules
 {
 public:
+	virtual int vfunc43(int a, int b);
 	virtual const char *vfunc63(int index);
 	virtual void vfunc75();
 };
