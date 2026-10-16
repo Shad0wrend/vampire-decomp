@@ -359,6 +359,10 @@ void __fastcall sub_101f3060(char *p) { sub_1000be01(p - *(int *)(p - 4)); }
 int __fastcall sub_101f4280(int *p) { return (*p)++; }
 // END FUNCTION
 
+// FUNCTION: 0x101f74e0 size=0x8
+bool __fastcall sub_101f74e0(int *p) { bool r = p[3] != -1; return r; }
+// END FUNCTION
+
 // FUNCTION: 0x10217160 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
