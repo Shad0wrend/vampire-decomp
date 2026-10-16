@@ -355,6 +355,7 @@
 0x1000adda func   _logic_proximity logic_proximity
 0x1000adf3 func   ?vfunc375@CNPC_VWolfMorph@@UAEHH@Z CNPC_VWolfMorph::vfunc375
 0x1000ae48 func   _item_p_occult_blood_buff item_p_occult_blood_buff
+0x1000ae61 func   ?sub_1020b020@CUnknown1020b020@@QAEHH@Z CUnknown1020b020::sub_1020b020
 0x1000aee3 func   _item_k_hitman_ji_key item_k_hitman_ji_key
 0x1000af1f func   _point_explosion point_explosion
 0x1000af24 func   _env_steamjet env_steamjet
