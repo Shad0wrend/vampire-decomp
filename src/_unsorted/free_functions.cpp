@@ -863,6 +863,22 @@ void CUnknown101e4a90::sub_101e4a90() { slot266(); }
 int __stdcall sub_101e80a0(int) { return 10; }
 // END FUNCTION
 
+// FUNCTION: 0x101e8250 size=0xb
+struct CInner { unsigned int sub_1000f03d(int a); };
+struct CMid { char pad[0x14]; CInner *m_p14; };
+struct COwner
+{
+	char pad[0x1c];
+	CMid *m_p1c;
+	unsigned int sub_101e8250(int a);
+};
+
+unsigned int COwner::sub_101e8250(int a)
+{
+	return m_p1c->m_p14->sub_1000f03d(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e94b0 size=0xa
 extern int g_1073a144;
 
