@@ -414,6 +414,7 @@
 0x1000b9f1 func   _item_k_shrekhub_four_key item_k_shrekhub_four_key
 0x1000ba87 func   _grenade grenade
 0x1000ba9b func   _item_g_gargoyle_book item_g_gargoyle_book
+0x1000baf5 func   ?sub_101eaa60@@YAXH@Z sub_101eaa60
 0x1000bba9 func   _item_w_bush_hook item_w_bush_hook
 0x1000bbc7 func   __firesmoke _firesmoke
 0x1000bc44 func   ?sub_10323a70@@YIFPAD@Z sub_10323a70
