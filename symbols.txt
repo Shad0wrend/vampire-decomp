@@ -318,6 +318,7 @@
 0x10009cdc func   _phys_slideconstraint phys_slideconstraint
 0x10009d86 func   ?vfunc241@CFuncPlat@@UAEEXZ CFuncPlat::vfunc241
 0x10009eb7 func   _prop_padlock prop_padlock
+0x10009ebc func   ??0CPlayerMove@@QAE@XZ CPlayerMove::CPlayerMove
 0x10009ef8 func   _prop_hacking prop_hacking
 0x10009f39 func   _prop_haunted prop_haunted
 0x10009fde func   _npc_VGhoulCroucher npc_VGhoulCroucher
