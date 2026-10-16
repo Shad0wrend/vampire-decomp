@@ -115,6 +115,7 @@
 0x100055e2 func   _info_node_bach_teleport_3 info_node_bach_teleport_3
 0x100055ec func   _info_node_bach_teleport_4 info_node_bach_teleport_4
 0x1000560a func   _inspection_node inspection_node
+0x100057d1 func   ?vfunc6@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc6
 0x100057e0 func   _prop_button prop_button
 0x100057e5 func   _inspection_brush inspection_brush
 0x10005984 func   _item_k_clinic_maintenance_key item_k_clinic_maintenance_key
