@@ -761,6 +761,14 @@ void CUnknown100fdce0::sub_100fdce0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101030e0 size=0xd
+void CUnknown101030e0::sub_101030e0(int mode)
+{
+	mode = 0;
+	sub_10102dd0(mode);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103100 size=0xd
 #include "CUnknown10103100.h"
 // TARGET: CUnknown10103100::sub_10103100
