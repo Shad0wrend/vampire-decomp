@@ -24,6 +24,7 @@
 #include "CPushable.h"
 #include "CRecipientFilter.h"
 #include "CSceneEntity.h"
+#include "CServerNetworkProperty.h"
 #include "CSingleplayRules.h"
 #include "CSkyCamera.h"
 #include "CStealthKillRules.h"
