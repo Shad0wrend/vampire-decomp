@@ -51,6 +51,16 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1003c450(void **p) { ((Fn *)*p)[134](p); }
 // END FUNCTION
 
+// FUNCTION: 0x1006ccc0 size=0xd
+CUnknown1006ccc0 *CUnknown1006ccc0::sub_1006ccc0()
+{
+	m_unk0 = 0;
+	m_unk4 = 0;
+	m_unk8 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100737b0 size=0x9
 struct CUnknown100737b0 { int m_val; void sub_100737b0(int v); };
 void CUnknown100737b0::sub_100737b0(int v) { m_val = v; }

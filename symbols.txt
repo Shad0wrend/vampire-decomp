@@ -241,6 +241,7 @@
 0x1000604b func   _prop_physics_contested prop_physics_contested
 0x100060b4 func   _item_w_claws_protean4 item_w_claws_protean4
 0x100060b9 func   _item_w_claws_protean5 item_w_claws_protean5
+0x10006212 func   ?sub_1006ccc0@CUnknown1006ccc0@@QAEPAV1@XZ CUnknown1006ccc0::sub_1006ccc0
 0x10006221 func   _item_k_gallery_noir_key item_k_gallery_noir_key
 0x10006226 func   _item_g_warr_ledger_1 item_g_warr_ledger_1
 0x1000622b func   _item_g_warr_ledger_2 item_g_warr_ledger_2
