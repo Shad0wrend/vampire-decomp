@@ -62,6 +62,7 @@
 #include "CUnknown102e12c0.h"
 #include "CUnknown102e8a40.h"
 #include "CUnknown102ee120.h"
+#include "CUnknown1039aaf0.h"
 #include "CUnknown10074a30.h"
 #include "CUnknown10080750.h"
 #include "CUnknown10081e70.h"
