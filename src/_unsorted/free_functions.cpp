@@ -1026,6 +1026,13 @@ struct CUnknown102c6d80 {
 void CUnknown102c6d80::sub_102c6d80() { slot486(); }
 // END FUNCTION
 
+// FUNCTION: 0x102c7390 size=0xa
+void CUnknown102c7390::sub_102c7390(char value)
+{
+	m_bFlag = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc520 size=0x9
 CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 {

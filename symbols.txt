@@ -777,6 +777,7 @@
 0x1001491b func   _info_node_bach_run_2 info_node_bach_run_2
 0x10014966 func   _item_a_lt_cloth item_a_lt_cloth
 0x100149a2 func   _logic_auto logic_auto
+0x100149b6 func   ?sub_102c7390@CUnknown102c7390@@QAEXD@Z CUnknown102c7390::sub_102c7390
 0x100149cf func   _phys_spring phys_spring
 0x10014a06 func   _info_node_tzimisce_claw_left info_node_tzimisce_claw_left
 0x10014a92 func   _info_node_hint info_node_hint
