@@ -2264,6 +2264,15 @@ struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 void CUnknown10307b40::sub_10307b40(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x1030bc20 size=0xc
+int CUnknown1030bc20::sub_1030bc20()
+{
+	if (m_unk24 == 0)
+		return 0;
+	return m_unk24->m_unk28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f660 size=0x8
 extern char g_106b8540;
 char * __stdcall sub_1030f660(int) { return &g_106b8540; }
