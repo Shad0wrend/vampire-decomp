@@ -1138,6 +1138,13 @@ struct CUnknown102477c0 { int p[6]; int a; int b; void sub_102477c0(); };
 void CUnknown102477c0::sub_102477c0() { a = 0; b = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10248850 size=0xa
+void CUnknown10248850::sub_10248850(int value)
+{
+	m_unk18 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248980 size=0x9
 struct CUnknown10248980 { int p[5]; int a; char sub_10248980(); };
 // TARGET: CUnknown10248980::sub_10248980

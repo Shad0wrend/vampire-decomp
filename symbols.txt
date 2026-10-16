@@ -358,6 +358,7 @@
 0x100098e0 func   _point_hurt point_hurt
 0x10009980 func   ?sub_102e0b40@@YIXPAM@Z sub_102e0b40
 0x100099d0 func   _item_g_pisha_fetish item_g_pisha_fetish
+0x10009a16 func   ?sub_10248850@CUnknown10248850@@QAEXH@Z CUnknown10248850::sub_10248850
 0x10009a61 func   _hud_timer hud_timer
 0x10009ab6 func   ?sub_10185790@@YIXPAH@Z sub_10185790
 0x10009aed func   _env_swarm_bats env_swarm_bats
