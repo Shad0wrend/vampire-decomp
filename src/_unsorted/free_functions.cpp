@@ -1003,6 +1003,16 @@ bool CUnknown101daf60::sub_101daf60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db5f0 size=0xd
+CUnknown101db5f0* CUnknown101db5f0::sub_101db5f0()
+{
+	m_unk8 = 0;
+	m_unk0 = 0;
+	m_unk4 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db9a0 size=0x8
 void __fastcall sub_100107d5(char *p);
 void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }
