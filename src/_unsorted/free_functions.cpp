@@ -355,6 +355,11 @@ void __fastcall sub_1000be01(char *p);
 void __fastcall sub_101f3060(char *p) { sub_1000be01(p - *(int *)(p - 4)); }
 // END FUNCTION
 
+// FUNCTION: 0x101f3070 size=0x8
+void __fastcall sub_10001807(char *p);
+void __fastcall sub_101f3070(char *p) { sub_10001807(p - *(int *)(p - 4)); }
+// END FUNCTION
+
 // FUNCTION: 0x101f4280 size=0x8
 int __fastcall sub_101f4280(int *p) { return (*p)++; }
 // END FUNCTION

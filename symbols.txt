@@ -304,6 +304,7 @@
 0x1000a12d func   _item_g_driver_license_gimble item_g_driver_license_gimble
 0x1000a19b func   _ai_goal_standoff ai_goal_standoff
 0x1000a1a5 func   _prop_dynamic prop_dynamic
+0x1000a2c2 func   ?sub_101f3070@@YIXPAD@Z sub_101f3070
 0x1000a394 func   _simple_physics_prop simple_physics_prop
 0x1000a457 func   _func_rotating func_rotating
 0x1000a5f1 func   _npc_VCombatman npc_VCombatman
