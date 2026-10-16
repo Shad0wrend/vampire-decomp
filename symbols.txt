@@ -528,6 +528,7 @@
 0x100136f1 func   _item_w_ithaca_m_37 item_w_ithaca_m_37
 0x1001376e func   _item_k_oceanhouse_basement_key item_k_oceanhouse_basement_key
 0x1001379b func   _info_teleport_destination info_teleport_destination
+0x100137e1 func   ?vfunc103@CSkyCamera@@UAEXXZ CSkyCamera::vfunc103
 0x1001389a func   _info_node info_node
 0x100138b8 func   _player_weaponstrip player_weaponstrip
 0x10013917 func   _info_hint info_hint
