@@ -936,6 +936,14 @@ void sub_101f9630(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9650 size=0xa
+extern int g_1074e028;
+void sub_101f9650(int value)
+{
+	g_1074e028 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9670 size=0x9
 CUnknown101f9670 *CUnknown101f9670::sub_101f9670()
 {
