@@ -9,4 +9,5 @@ public:
 
 	bool sub_10381be0();
 	bool sub_103be130();
+	bool sub_103be090();
 };
