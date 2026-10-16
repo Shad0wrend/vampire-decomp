@@ -43,14 +43,16 @@ public:
 	virtual void vfunc117(); virtual void vfunc118(); virtual void vfunc119();
 	virtual void vfunc120(); virtual void vfunc121(); virtual void vfunc122(); virtual void vfunc123(); virtual void vfunc124();
 	virtual void vfunc125(); virtual void vfunc126(); virtual void vfunc127(); virtual void vfunc128(); virtual void vfunc129();
-	virtual void vfunc130(int a);
+	virtual void vfunc130(int a); virtual void vfunc131(); virtual void vfunc132(); virtual void vfunc133();
 
 	// Slots whose callers call them directly, so far only declared as plain members.
 	void vfunc168();
 	void vfunc194();
 	void vfunc195();
 
-	char m_pad0004[0x264];
+	char m_pad0004[0x110];
+	void (CBaseEntity::*m_pfn0114)();
+	char m_pad0118[0x150];
 	unsigned int m_flags268;
 	char m_pad026c[0xfc];
 	int m_field368;
