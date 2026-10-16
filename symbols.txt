@@ -229,6 +229,7 @@
 0x10007130 func   _item_p_research_lg_firearms item_p_research_lg_firearms
 0x10007194 func   ?sub_1018e9d0@@YAXHH@Z sub_1018e9d0
 0x100071d0 func   _item_a_lt_leather item_a_lt_leather
+0x100071d5 func   ?sub_101d8890@@YAXH@Z sub_101d8890
 0x1000724d func   _phys_constraintsystem phys_constraintsystem
 0x1000732e func   _item_k_clinic_cs_key item_k_clinic_cs_key
 0x100073f6 func   _momentary_door momentary_door

@@ -507,6 +507,12 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc810(void **p) { ((Fn *)*p)[246](p); }
 // END FUNCTION
 
+// FUNCTION: 0x101d8890 size=0xa
+extern int g_1073938c;
+// TARGET: sub_101d8890
+void sub_101d8890(int v) { g_1073938c = v; }
+// END FUNCTION
+
 // FUNCTION: 0x101daf60 size=0x9
 bool CUnknown101daf60::sub_101daf60()
 {
