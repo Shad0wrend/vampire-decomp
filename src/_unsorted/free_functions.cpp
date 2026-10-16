@@ -504,6 +504,12 @@ struct CUnknown10258af0 {
 void CUnknown10258af0::sub_10258af0() { slot407(); }
 // END FUNCTION
 
+// FUNCTION: 0x1027fbf0 size=0x9
+struct CUnknown1027fbf0 { int a; CUnknown1027fbf0* sub_1027fbf0(); };
+// TARGET: CUnknown1027fbf0::sub_1027fbf0
+CUnknown1027fbf0* CUnknown1027fbf0::sub_1027fbf0() { a = -1; return this; }
+// END FUNCTION
+
 // FUNCTION: 0x1027fc40 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
