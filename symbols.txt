@@ -591,6 +591,7 @@
 0x100113d3 func   _npc_VChangBrosBlade npc_VChangBrosBlade
 0x1001151d func   _intersting_place intersting_place
 0x100115d6 func   _item_k_skyline_haven_key item_k_skyline_haven_key
+0x100117ac func   ?sub_1020b000@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z CBaseVampireSkillEntity::sub_1020b000
 0x10011829 func   _item_g_jumbles_flyer item_g_jumbles_flyer
 0x10011833 func   ?vfunc14@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHHHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc14
 0x10011865 func   _path_corner path_corner

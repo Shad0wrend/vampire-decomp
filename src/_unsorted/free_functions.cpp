@@ -404,6 +404,13 @@ struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x1020b000 size=0x9
+int CBaseVampireSkillEntity::sub_1020b000(CBaseEntity *pPlayer)
+{
+	return m_unk78c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10217160 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
