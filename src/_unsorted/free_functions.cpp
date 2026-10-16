@@ -217,6 +217,12 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1010f4e0(void **p) { ((Fn *)*p)[241](p); }
 // END FUNCTION
 
+// FUNCTION: 0x101151a0 size=0xa
+struct CUnknown101151a0 { char p[0x204]; unsigned int a; unsigned int sub_101151a0(); };
+// TARGET: CUnknown101151a0::sub_101151a0
+unsigned int CUnknown101151a0::sub_101151a0() { return a & 1; }
+// END FUNCTION
+
 // FUNCTION: 0x1011a430 size=0x8
 extern char g_1070b264;
 void sub_1011a430() { g_1070b264 = 1; }
