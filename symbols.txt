@@ -480,6 +480,7 @@
 0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43
 0x1000ddeb func   _info_node_cover_corner info_node_cover_corner
 0x1000de95 func   _item_g_bertrams_cd item_g_bertrams_cd
+0x1000de9a func   ?vfunc14@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc14
 0x1000df49 func   ?sub_1030f660@@YGPADH@Z sub_1030f660
 0x1000df71 func   _npc_VMingXiaoTentacle npc_VMingXiaoTentacle
 0x1000dfa8 func   _item_k_netcafe_office_key item_k_netcafe_office_key
