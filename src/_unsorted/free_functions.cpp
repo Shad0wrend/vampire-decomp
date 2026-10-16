@@ -913,6 +913,13 @@ void __fastcall sub_10185600(int *p) { p[3] = 0; }
 void __fastcall sub_10185790(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1018c4d0 size=0xd
+void CUnknown1018c4d0::sub_1018c4d0(char value)
+{
+	m_bFlag458 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e9d0 size=0xa
 extern int g_1058d1ac;
 // TARGET: sub_1018e9d0
