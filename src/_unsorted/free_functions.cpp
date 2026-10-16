@@ -1057,6 +1057,13 @@ CUnknown102d9150 *CUnknown102d9150::sub_102d9150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db420 size=0xa
+void CUnknown102db420::sub_102db420(int unused)
+{
+	m_bFlag = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dce10 size=0x8
 void __fastcall sub_102dce10(int *p) { p[3] = 0; }
 // END FUNCTION
