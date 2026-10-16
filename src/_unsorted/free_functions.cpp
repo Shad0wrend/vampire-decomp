@@ -560,6 +560,12 @@ struct CUnknown10248980 { int p[5]; int a; char sub_10248980(); };
 char CUnknown10248980::sub_10248980() { int v = a; return v != 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10248a50 size=0xa
+struct CUnknown10248a50 { int p[4]; int a; void sub_10248a50(int v); };
+// TARGET: CUnknown10248a50::sub_10248a50
+void CUnknown10248a50::sub_10248a50(int v) { a = v; }
+// END FUNCTION
+
 // FUNCTION: 0x1024b070 size=0x8
 extern char g_105c5338;
 void sub_1024b070() { g_105c5338 = 0; }

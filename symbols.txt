@@ -669,6 +669,7 @@
 0x10012ae9 func   _info_node_kick_over info_node_kick_over
 0x10012afd func   _func_door_rotating func_door_rotating
 0x10012b02 func   _item_k_malkavian_refrigerator_key item_k_malkavian_refrigerator_key
+0x10012b9d func   ?sub_10248a50@CUnknown10248a50@@QAEXH@Z CUnknown10248a50::sub_10248a50
 0x10012bd4 func   _info_node_chang_jumpbase info_node_chang_jumpbase
 0x10012c65 func   ?sub_1003c1c0@@YIXPAH@Z sub_1003c1c0
 0x10012cb5 func   ?sub_100bc560@CUnknown100bc560@@QAEXXZ CUnknown100bc560::sub_100bc560
