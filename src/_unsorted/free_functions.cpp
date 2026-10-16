@@ -413,6 +413,19 @@ struct CUnknown10258870 {
 void CUnknown10258870::sub_10258870() { slot305(); }
 // END FUNCTION
 
+// FUNCTION: 0x10258af0 size=0x8
+#define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
+#define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
+struct CUnknown10258af0 {
+	V25(p0) V25(p1) V25(p2) V25(p3) V25(p4) V25(p5) V25(p6) V25(p7) V25(p8) V25(p9)
+	V25(q0) V25(q1) V25(q2) V25(q3) V25(q4) V25(q5)
+	V5(r0) virtual void f0(); virtual void f1();
+	virtual void slot407();
+	void sub_10258af0();
+};
+void CUnknown10258af0::sub_10258af0() { slot407(); }
+// END FUNCTION
+
 // FUNCTION: 0x102885d0 size=0x8
 typedef void (__fastcall *Fn102885d0)(void *);
 
