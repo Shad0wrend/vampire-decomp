@@ -2047,6 +2047,13 @@ void __fastcall sub_102ecce0(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee120 size=0xb
+void CUnknown102ee120::sub_102ee120(int a, int b, int c)
+{
+	m_unk30->m_unk24.sub_10319f70(a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee4f0 size=0x8
 struct CInner100016b3 { void sub_100016b3(); };
 struct CUnknown102ee4f0 { char pad[0x30]; CInner100016b3 *m_pInner; void sub_102ee4f0(); };
