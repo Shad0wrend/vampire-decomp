@@ -7,6 +7,7 @@
 0x10001285 func   _npc_VVentrue npc_VVentrue
 0x1000129e func   ?sub_102f99b0@@YAXXZ sub_102f99b0
 0x100012b7 func   ?sub_101f2500@CUnknown101f2500@@QAEDXZ CUnknown101f2500::sub_101f2500
+0x1000130c func   ?vfunc600@CNPC_VWerewolf@@UAE_NH@Z CNPC_VWerewolf::vfunc600
 0x10001398 func   _ai_sound ai_sound
 0x100013b1 func   ?sub_100792c0@CUnknown100792c0@@QAEXH@Z CUnknown100792c0::sub_100792c0
 0x100013ca func   ?sub_10227230@@YIXPADHH@Z sub_10227230
