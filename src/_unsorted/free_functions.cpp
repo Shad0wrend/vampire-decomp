@@ -141,6 +141,11 @@ void sub_10003a94();
 void __stdcall sub_1012cf90(int) { sub_10003a94(); }
 // END FUNCTION
 
+// FUNCTION: 0x101318a0 size=0x8
+void sub_10002441();
+void __stdcall sub_101318a0(int) { sub_10002441(); }
+// END FUNCTION
+
 // FUNCTION: 0x1015ef00 size=0x8
 struct CUnknown1015ef00 { char pad[0x19f5]; char m_Flag; void sub_1015ef00(); };
 void CUnknown1015ef00::sub_1015ef00() { m_Flag = 1; }
