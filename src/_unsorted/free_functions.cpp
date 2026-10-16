@@ -2229,6 +2229,14 @@ void __fastcall sub_103661d0(char *self, int, int)
 void __fastcall sub_10373420(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10381be0 size=0xc
+bool CUnknown10381be0::sub_10381be0()
+{
+	bool r = (m_flags14b8 >> 4) & 1;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10381c80 size=0xc
 unsigned char __fastcall sub_10381c80(char *self)
 {
