@@ -72,6 +72,13 @@ void CUnknown10058200::sub_10058200(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10058220 size=0xd
+void CUnknown10058220::sub_10058220(int unused)
+{
+	m_unk468 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006ccc0 size=0xd
 CUnknown1006ccc0 *CUnknown1006ccc0::sub_1006ccc0()
 {
