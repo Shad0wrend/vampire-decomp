@@ -117,7 +117,7 @@ public:
 	virtual void vfunc535(); virtual void vfunc536(); virtual void vfunc537(); virtual void vfunc538(); virtual void vfunc539();
 	virtual void vfunc540(); virtual void vfunc541(); virtual void vfunc542(); virtual void vfunc543(); virtual void vfunc544();
 	virtual void vfunc545(); virtual void vfunc546(); virtual void vfunc547(); virtual void vfunc548(); virtual void vfunc549();
-	virtual void vfunc550(); virtual void vfunc551(); virtual void vfunc552(); virtual void vfunc553(); virtual void vfunc554();
+	virtual void vfunc550(); virtual void vfunc551(); virtual unsigned int vfunc552(); virtual void vfunc553(); virtual void vfunc554();
 	virtual void vfunc555(); virtual void vfunc556(); virtual void vfunc557(); virtual void vfunc558(); virtual void vfunc559();
 	virtual void vfunc560(); virtual void vfunc561(); virtual void vfunc562(); virtual void vfunc563(); virtual void vfunc564();
 	virtual void vfunc565(); virtual void vfunc566(); virtual int vfunc567(int unused); virtual float vfunc568(int a);
