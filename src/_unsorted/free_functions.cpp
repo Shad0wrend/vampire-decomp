@@ -572,6 +572,12 @@ extern char g_106b8540;
 char * __stdcall sub_1030f660(int) { return &g_106b8540; }
 // END FUNCTION
 
+// FUNCTION: 0x10312320 size=0x8
+struct CSub10002397 { void sub_10002397(); };
+struct CUnknown10312320 { char pad[0x30]; CSub10002397 m_Sub; void sub_10312320(); };
+void CUnknown10312320::sub_10312320() { m_Sub.sub_10002397(); }
+// END FUNCTION
+
 // FUNCTION: 0x10323a70 size=0x8
 short __fastcall sub_10323a70(char *p)
 {
