@@ -1691,6 +1691,14 @@ void CUnknown1026dc60::sub_1026dc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102718e0 size=0xd
+CUnknown102718e0 *CUnknown102718e0::sub_102718e0(const CUnknown102718e0 *other)
+{
+	m_unk0 = other->m_unk0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d990 size=0xa
 struct CUnknown1027d990Sub { int p[6]; int a; };
 struct CUnknown1027d990 { char p[0x5d34]; CUnknown1027d990Sub *m; int sub_1027d990(); };
