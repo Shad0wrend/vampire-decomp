@@ -9,7 +9,7 @@ struct CUnknown102ee120_Target
 	CUnknown10319f70 m_unk24;
 	char pad25[3];
 	int m_unk28;
-	volatile int m_unk2c;
+	int m_unk2c;
 };
 
 class CUnknown102ee120
@@ -20,5 +20,4 @@ public:
 
 	void sub_102ee120(int a, int b, int c);
 	void sub_102ee1c0(int value);
-	void sub_102ee250(int value);
 };
