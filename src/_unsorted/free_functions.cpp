@@ -519,6 +519,46 @@ void __fastcall sub_1007ee20(int *p)
 void __fastcall sub_1007ee40(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1007fce0 size=0x67
+extern "C" {
+__declspec(dllimport) void* Plat_Alloc(int size);
+__declspec(dllimport) void* Plat_Realloc(void* p, int size);
+}
+
+struct UtlMem6 {
+	int* m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_1007fce0(int num);
+};
+
+// TARGET: UtlMem6::sub_1007fce0
+void UtlMem6::sub_1007fce0(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int newAlloc = m_nAllocationCount;
+	int target = newAlloc + num;
+	if (newAlloc < target) {
+		do {
+			if (newAlloc != 0) {
+				if (m_nGrowSize != 0)
+					newAlloc += m_nGrowSize;
+				else
+					newAlloc += newAlloc;
+			} else {
+				newAlloc = 8;
+			}
+		} while (newAlloc < target);
+		m_nAllocationCount = newAlloc;
+	}
+	if (m_pMemory)
+		m_pMemory = (int*)Plat_Realloc(m_pMemory, m_nAllocationCount * 4);
+	else
+		m_pMemory = (int*)Plat_Alloc(m_nAllocationCount * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080750 size=0xa
 void CUnknown10080750::sub_10080750(int value)
 {
