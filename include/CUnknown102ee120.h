@@ -9,7 +9,7 @@ struct CUnknown102ee120_Target
 	CUnknown10319f70 m_unk24;
 	char pad25[3];
 	int m_unk28;
-	int m_unk2c;
+	volatile int m_unk2c;
 };
 
 class CUnknown102ee120
