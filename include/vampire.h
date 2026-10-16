@@ -16,3 +16,4 @@
 #include "CSceneEntity.h"
 #include "CSingleplayRules.h"
 #include "CSkyCamera.h"
+#include "CWeaponRanged.h"
