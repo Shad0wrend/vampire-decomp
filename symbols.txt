@@ -593,6 +593,7 @@
 0x1001581b func   _npc_VBatSwarm npc_VBatSwarm
 0x10015852 func   _item_w_flamethrower item_w_flamethrower
 0x100159d3 func   _npc_VDialogPedestrian npc_VDialogPedestrian
+0x10015a37 func   ?vfunc266@CWeaponThrown_Grenade_Frag@@UAEXXZ CWeaponThrown_Grenade_Frag::vfunc266
 0x10015a9b func   _info_intermission info_intermission
 0x10015ae6 func   ?vfunc5@CLagCompensationManager@@UAEXXZ CLagCompensationManager::vfunc5
 0x10015c6c func   _env_firesensor env_firesensor
