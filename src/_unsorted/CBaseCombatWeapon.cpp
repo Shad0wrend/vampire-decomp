@@ -63,3 +63,11 @@ void CBaseCombatWeapon::vfunc288()
 	vfunc349();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10258560 size=0xe
+// TARGET: CBaseCombatWeapon::vfunc291
+void CBaseCombatWeapon::vfunc291()
+{
+	vfunc307(0xc4);
+}
+// END FUNCTION
