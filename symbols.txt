@@ -223,6 +223,7 @@
 0x10008751 func   _item_container_one_item_filtered item_container_one_item_filtered
 0x10008788 func   _item_g_drugs_perscription_bottle item_g_drugs_perscription_bottle
 0x100087d8 func   _trigger trigger
+0x100087e2 func   ?sub_101e22b0@CUnknown101e22b0@@QAE_NXZ CUnknown101e22b0::sub_101e22b0
 0x1000885a func   _gravity_pellet gravity_pellet
 0x1000886e func   _aiscripted_sequence aiscripted_sequence
 0x1000891d func   _momentary_rot_button momentary_rot_button
