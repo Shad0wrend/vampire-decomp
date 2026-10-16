@@ -1,6 +1,8 @@
 // CUnknown1018f700: prop-like entity with a byte flag at +0x778 (set to 1 by CBaseCombatCharacter::CorpseGib); real name not yet known.
 #pragma once
 
+#include "CUnknown100779b0.h"
+
 class CUnknown1018f700
 {
 public:
