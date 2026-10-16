@@ -856,6 +856,7 @@
 0x1000fd0d func   ?sub_102c6590@CUnknown102c6590@@QAEPAHH@Z CUnknown102c6590::sub_102c6590
 0x1000fd71 func   ?sub_1042d700@@YIIPAI@Z sub_1042d700
 0x1000febb func   _item_w_occultblade item_w_occultblade
+0x1000ff51 func   ?sub_100eb280@UtlMem2@@QAEXH@Z UtlMem2::sub_100eb280
 0x1000ff7e func   _item_p_research_mg_security item_p_research_mg_security
 0x1000ffba func   ?vfunc412@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc412
 0x1000ffdd func   _item_container_lock item_container_lock
