@@ -324,6 +324,16 @@ void __fastcall sub_100c8a00(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd640 size=0xc
+extern char g_106b8540[];
+char *CUnknown100cd640::sub_100cd640()
+{
+	if (m_pString)
+		return m_pString;
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db3f0 size=0x8
 extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
