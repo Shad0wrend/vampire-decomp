@@ -1850,6 +1850,27 @@ void __fastcall sub_102e26f0(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2710 size=0xb
+#define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+struct CSlots
+{
+	H(a) H(b) H(c) H(d) H(e) T(f0) T(f1)
+	virtual void g0(); virtual void g1(); virtual void g2();
+	virtual void target();
+};
+struct COwner
+{
+	int pad;
+	CSlots *m_pOuter;
+};
+
+void __fastcall sub_102e2710(COwner *self)
+{
+	self->m_pOuter->target();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2750 size=0xb
 void CUnknown102e12c0::sub_102e2750()
 {
