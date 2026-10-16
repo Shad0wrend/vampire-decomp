@@ -12,6 +12,7 @@
 #include "CRagdollPropSpecial.h"
 #include "CUnknown10058220.h"
 #include "CUnknown1006ccc0.h"
+#include "CUnknown1006e890.h"
 #include "CUnknown1006ed20.h"
 #include "CUnknown100732b0.h"
 #include "CUnknown10073a30.h"
