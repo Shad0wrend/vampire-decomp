@@ -149,6 +149,7 @@
 0x10005cfe func   _func_rot_button func_rot_button
 0x10005d21 func   ?vfunc63@CSingleplayRules@@UAEPBDH@Z CSingleplayRules::vfunc63
 0x10005dfd func   _prop_sign prop_sign
+0x10005ea2 func   ?sub_1012cf90@@YGXH@Z sub_1012cf90
 0x10005f4c func   _info_node_shoot_at info_node_shoot_at
 0x1000604b func   _prop_physics_contested prop_physics_contested
 0x100060b4 func   _item_w_claws_protean4 item_w_claws_protean4
