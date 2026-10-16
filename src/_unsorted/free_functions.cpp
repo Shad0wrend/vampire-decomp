@@ -1557,6 +1557,13 @@ void sub_1024b070() { g_105c5338 = 0; }
 void CBaseCombatWeapon::sub_102507b0() { vfunc361(); }
 // END FUNCTION
 
+// FUNCTION: 0x102508f0 size=0xc
+CUnknown102508f0_Elem *CUnknown102508f0::sub_102508f0(int index)
+{
+	return &m_pMemory[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10256200 size=0xb
 unsigned char __fastcall sub_10256200(unsigned char *self)
 {
