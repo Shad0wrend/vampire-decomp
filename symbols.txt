@@ -155,6 +155,7 @@
 0x10003a3a func   ?sub_1021e1c0@@YIXPAH@Z sub_1021e1c0
 0x10003a80 func   _soundent soundent
 0x10003abc func   _env_shooter env_shooter
+0x10003b8e func   ?sub_101bdeb0@CMem4d_t@@QAEXH@Z CMem4d_t::sub_101bdeb0
 0x10003ba2 func   ?sub_103661d0@@YIXPADHH@Z sub_103661d0
 0x10003bc0 func   ?sub_103a7760@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::sub_103a7760
 0x10003bc5 func   _vampireprojectile vampireprojectile
