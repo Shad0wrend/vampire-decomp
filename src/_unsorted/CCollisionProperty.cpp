@@ -46,3 +46,10 @@ void CCollisionProperty::vfunc4()
 	((CEntSlots *)m_pOuter)->target();
 }
 // END FUNCTION
+
+// FUNCTION: 0x100dc980 size=0xb
+void CCollisionProperty::vfunc5()
+{
+	m_pOuter->vfunc100();
+}
+// END FUNCTION
