@@ -1630,6 +1630,27 @@ void CUnknown102e12c0::sub_102e12c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e12e0 size=0xb
+#define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+struct CSlots
+{
+	H(a) H(b) T(c0) T(c1) T(c2) T(c3)
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4(); virtual void g5(); virtual void g6(); virtual void g7(); virtual void g8();
+	virtual void target();
+};
+struct COwner
+{
+	int pad;
+	CSlots *m_pOuter;
+};
+
+void __fastcall sub_102e12e0(COwner *self)
+{
+	self->m_pOuter->target();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2610 size=0xa
 int CAI_Motor::sub_102e2610()
 {
