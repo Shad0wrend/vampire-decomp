@@ -191,6 +191,15 @@ void CUnknown1007dfc0::sub_1007dfc0(int v) { a = v; }
 void __fastcall sub_1007e580(int *p) { p[0x5c / 4] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1007e5a0 size=0xd
+#include "CUnknown1007e5a0.h"
+
+void CUnknown1007e5a0::sub_1007e5a0(float value)
+{
+	m_fUnk98 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ee00 size=0x8
 void __fastcall sub_1007ee00(int *p) { p[3] = 0; }
 // END FUNCTION
