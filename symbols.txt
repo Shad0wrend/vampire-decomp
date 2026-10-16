@@ -842,6 +842,7 @@
 0x100134c1 func   ?sub_100dea90@CUnknown100dea90@@QAEXH@Z CUnknown100dea90::sub_100dea90
 0x10013557 func   ?vfunc7@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc7
 0x10013575 func   _light_spot light_spot
+0x100135c0 func   ?sub_10224150@@YIXPAUCSlots@@HH@Z sub_10224150
 0x100135d4 func   ?sub_102a96f0@@YIXPAUTroikaStub@@@Z sub_102a96f0
 0x100135f7 func   ?sub_10289cc0@CUnknown10289cc0@@QAEXXZ CUnknown10289cc0::sub_10289cc0
 0x1001363d func   _infodecal infodecal
