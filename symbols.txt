@@ -329,6 +329,7 @@
 0x1000a457 func   _func_rotating func_rotating
 0x1000a5f1 func   _npc_VCombatman npc_VCombatman
 0x1000a641 func   _item_k_oh_front_key item_k_oh_front_key
+0x1000a64b func   ?sub_1042d650@CUnknown1042d650@@QAEPAU1@XZ CUnknown1042d650::sub_1042d650
 0x1000a65a func   _item_w_grenade_frag item_w_grenade_frag
 0x1000a65f func   _prop_destructable prop_destructable
 0x1000a75e func   _item_g_brotherhood_flyer item_g_brotherhood_flyer

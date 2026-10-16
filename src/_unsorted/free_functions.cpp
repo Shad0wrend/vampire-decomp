@@ -762,6 +762,12 @@ struct CUnknown103eee60 {
 void CUnknown103eee60::sub_103eee60() { slot375(); }
 // END FUNCTION
 
+// FUNCTION: 0x1042d650 size=0x9
+struct CUnknown1042d650 { int a; CUnknown1042d650* sub_1042d650(); };
+// TARGET: CUnknown1042d650::sub_1042d650
+CUnknown1042d650* CUnknown1042d650::sub_1042d650() { a = 0; return this; }
+// END FUNCTION
+
 // FUNCTION: 0x1042d700 size=0x8
 unsigned int __fastcall sub_1042d700(unsigned int *p) { return (*p >> 1) & 0x1f; }
 // END FUNCTION
