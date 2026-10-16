@@ -961,6 +961,7 @@
 0x100144cf func   _item_w_chang_ghost item_w_chang_ghost
 0x1001450b func   ?sub_1025db50@@YIDPAH@Z sub_1025db50
 0x10014510 func   ?sub_10032a40@@YIXPAH@Z sub_10032a40
+0x100145b0 func   ?sub_100766b0@CUnknown10076670@@QAEXH@Z CUnknown10076670::sub_100766b0
 0x100145ba func   ?sub_1013da70@@YAXH@Z sub_1013da70
 0x100145ce func   _info_node_tzimisce_claw_right info_node_tzimisce_claw_right
 0x1001469b func   ?vfunc275@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc275
