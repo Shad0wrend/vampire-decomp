@@ -1,11 +1,12 @@
-// CUnknown102ee120: object with a pointer at +0x30 to a structure holding a CUnknown10319f70 at +0x24 and dwords at +0x28, +0x2c; real name not yet known.
+// CUnknown102ee120: object with a pointer at +0x30 to a structure holding dwords at +0x20, +0x28, +0x2c and a CUnknown10319f70 at +0x24; real name not yet known.
 #pragma once
 
 #include "CUnknown10319f70.h"
 
 struct CUnknown102ee120_Target
 {
-	char pad0[0x24];
+	char pad0[0x20];
+	int m_unk20;
 	CUnknown10319f70 m_unk24;
 	char pad25[3];
 	int m_unk28;
@@ -20,4 +21,5 @@ public:
 
 	void sub_102ee120(int a, int b, int c);
 	void sub_102ee1c0(int value);
+	void sub_102f2fe0(int value);
 };
