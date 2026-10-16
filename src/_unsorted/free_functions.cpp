@@ -501,6 +501,13 @@ extern int g_1058d1ac;
 void sub_1018e9d0(int a, int b) { g_1058d1ac = b; }
 // END FUNCTION
 
+// FUNCTION: 0x1019d490 size=0xa
+void CUnknown1019d490::sub_1019d490(char value)
+{
+	m_unk29 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac2f0 size=0xa
 unsigned int CAmbientGeneric::sub_101ac2f0()
 {
