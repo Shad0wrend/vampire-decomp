@@ -1893,6 +1893,16 @@ void CUnknown10289cc0::sub_10289cc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029ca30 size=0xd
+extern float g_10457f54;
+float __stdcall sub_1029ca30(float x)
+{
+	float r = x;
+	r *= g_10457f54;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0eb0 size=0xb
 void __fastcall sub_100037e2(void *);
 void __fastcall sub_102a0eb0(char *self)

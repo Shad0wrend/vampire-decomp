@@ -359,6 +359,7 @@
 0x10008558 func   _npc_VHumanCombatPatrol npc_VHumanCombatPatrol
 0x100085ad func   _game_sign game_sign
 0x100085e4 func   ?vfunc481@CHL2_Player@@UAEMXZ CHL2_Player::vfunc481
+0x10008620 func   ?sub_1029ca30@@YGMM@Z sub_1029ca30
 0x1000868e func   ?sub_1007ecf0@CUnknown1007ecf0@@QAEXD@Z CUnknown1007ecf0::sub_1007ecf0
 0x10008698 func   _item_w_chang_claw item_w_chang_claw
 0x1000869d func   _npc_VBach npc_VBach
