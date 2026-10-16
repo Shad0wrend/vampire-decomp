@@ -1445,6 +1445,17 @@ void __fastcall sub_101f3070(char *p) { sub_10001807(p - *(int *)(p - 4)); }
 int __fastcall sub_101f4280(int *p) { return (*p)++; }
 // END FUNCTION
 
+// FUNCTION: 0x101f5d60 size=0xd
+extern char g_106b8540[];
+// TARGET: CUnknown101f5d60::sub_101f5d60
+const char *CUnknown101f5d60::sub_101f5d60()
+{
+	if (m_pszUnk24)
+		return m_pszUnk24;
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f6c30 size=0x9
 bool CUnknown101f6c30::sub_101f6c30()
 {
