@@ -3,6 +3,11 @@
 // vfunc9/vfunc10 take (int, 4-byte value); the exact type of the second argument is unknown.
 #pragma once
 
+struct CAI_Navigator_Arg
+{
+	int v;
+};
+
 class CAI_Navigator
 {
 public:
