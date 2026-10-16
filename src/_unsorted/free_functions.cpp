@@ -346,6 +346,13 @@ extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x100ddf40 size=0xc
+int *CUnknown100ddf40::sub_100ddf40(int index)
+{
+	return &m_pMemory[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100de610 size=0x8
 void sub_100055b5();
 void __stdcall sub_100de610(int) { sub_100055b5(); }
