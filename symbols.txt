@@ -547,6 +547,7 @@
 0x1000ecc8 func   _npc_VPedestrian npc_VPedestrian
 0x1000ed9a func   ?sub_102dd450@CUnknown102dd450@@QAE_NXZ CUnknown102dd450::sub_102dd450
 0x1000ee8f func   _item_k_oceanhouse_upstairs_key item_k_oceanhouse_upstairs_key
+0x1000ef52 func   ?sub_10074a30@CUnknown10074a30@@QAEXD@Z CUnknown10074a30::sub_10074a30
 0x1000ef7a func   _item_g_warrens4_passkey item_g_warrens4_passkey
 0x1000ef8e func   _ambient_soundscheme ambient_soundscheme
 0x1000efb6 func   _item_k_lucky_star_murder_key item_k_lucky_star_murder_key
