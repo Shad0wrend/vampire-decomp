@@ -15,3 +15,11 @@ void CBaseGrenade::vfunc191(int value)
 	((GrenadeField19c0 *)this)->m = value;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1042b260 size=0xd
+struct GrenadeField19b8 { char pad[0x19b8]; int m; };
+void CBaseGrenade::vfunc412(int value)
+{
+	((GrenadeField19b8 *)this)->m = value;
+}
+// END FUNCTION
