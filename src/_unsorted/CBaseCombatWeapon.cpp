@@ -1,6 +1,11 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10149e60 size=0x9
+extern float g_104454c4;
+float CBaseCombatWeapon::vfunc337(int a, int b) { return g_104454c4; }
+// END FUNCTION
+
 // FUNCTION: 0x1024f790 size=0x8
 #include "CBaseCombatWeapon.h"
 
