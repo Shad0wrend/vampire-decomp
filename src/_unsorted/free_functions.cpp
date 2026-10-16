@@ -2365,6 +2365,13 @@ void sub_102db630(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db740 size=0xd
+void CAI_InterestingPlaceConverstation::sub_102db740(int value)
+{
+	m_unk608 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dcd10 size=0xa
 void CUnknown102dcd10::sub_102dcd10(int unused)
 {
