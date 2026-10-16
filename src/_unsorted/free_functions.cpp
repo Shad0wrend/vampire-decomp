@@ -530,6 +530,26 @@ unsigned int CUnknown100a8220::sub_100a8220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b03b0 size=0x66
+struct ScopeEnt { const char* a; const void* b; const void* c; };
+extern ScopeEnt* g_109f3620;
+extern int* g_109f3680;
+extern char g_1055813c[];
+extern char g_106b8540[];
+extern char g_106cff51;
+
+// TARGET: sub_100b03b0
+void sub_100b03b0()
+{
+	g_109f3620[*g_109f3680].a = g_1055813c;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	g_106cff51 = g_106cff51 == 0;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b47e0 size=0x8
 void __fastcall sub_100b47e0(int *p) { p[3] = 0; }
 // END FUNCTION
