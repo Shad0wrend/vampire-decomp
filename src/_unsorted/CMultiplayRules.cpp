@@ -9,3 +9,12 @@ const char *CMultiplayRules::vfunc63(int)
 	return "";
 }
 // END FUNCTION
+
+// FUNCTION: 0x101410d0 size=0x8
+#include "CMultiplayRules.h"
+
+void CMultiplayRules::vfunc75()
+{
+	vfunc80();
+}
+// END FUNCTION

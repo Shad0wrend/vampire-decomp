@@ -119,6 +119,7 @@
 0x100057d1 func   ?vfunc6@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc6
 0x100057e0 func   _prop_button prop_button
 0x100057e5 func   _inspection_brush inspection_brush
+0x100058b2 func   ?vfunc75@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc75
 0x10005984 func   _item_k_clinic_maintenance_key item_k_clinic_maintenance_key
 0x10005b32 func   _dynamic_prop dynamic_prop
 0x10005c4f func   _prop_base prop_base
