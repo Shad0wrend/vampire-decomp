@@ -3361,6 +3361,46 @@ CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102cef30 size=0x67
+extern "C" {
+__declspec(dllimport) void* Plat_Alloc(int size);
+__declspec(dllimport) void* Plat_Realloc(void* p, int size);
+}
+
+struct UtlMem9 {
+	int* m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_102cef30(int num);
+};
+
+// TARGET: UtlMem9::sub_102cef30
+void UtlMem9::sub_102cef30(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int newAlloc = m_nAllocationCount;
+	int target = newAlloc + num;
+	if (newAlloc < target) {
+		do {
+			if (newAlloc != 0) {
+				if (m_nGrowSize != 0)
+					newAlloc += m_nGrowSize;
+				else
+					newAlloc += newAlloc;
+			} else {
+				newAlloc = 8;
+			}
+		} while (newAlloc < target);
+		m_nAllocationCount = newAlloc;
+	}
+	if (m_pMemory)
+		m_pMemory = (int*)Plat_Realloc(m_pMemory, m_nAllocationCount * 4);
+	else
+		m_pMemory = (int*)Plat_Alloc(m_nAllocationCount * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d0080 size=0xa
 void __fastcall sub_102d0080(int *self, int, int value)
 {
