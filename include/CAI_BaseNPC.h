@@ -103,7 +103,7 @@ public:
 	virtual void vfunc465(); virtual void vfunc466(); virtual void vfunc467(); virtual void vfunc468(); virtual void vfunc469();
 	virtual void vfunc470(); virtual void vfunc471(); virtual void vfunc472(); virtual void vfunc473(); virtual void vfunc474();
 	virtual void vfunc475(); virtual void vfunc476(); virtual void vfunc477(); virtual void vfunc478(); virtual void vfunc479();
-	virtual void vfunc480(); virtual void vfunc481(); virtual void vfunc482(); virtual void vfunc483(); virtual void vfunc484();
+	virtual void vfunc480(); virtual void vfunc481(); virtual void vfunc482(); virtual void vfunc483(int unused); virtual void vfunc484();
 	virtual void vfunc485(); virtual void vfunc486(); virtual void vfunc487(); virtual void vfunc488(); virtual void vfunc489();
 	virtual void vfunc490(); virtual void vfunc491(); virtual void vfunc492(); virtual void vfunc493(); virtual void vfunc494();
 	virtual void vfunc495(); virtual void vfunc496(); virtual void vfunc497(); virtual void vfunc498(); virtual void vfunc499();
