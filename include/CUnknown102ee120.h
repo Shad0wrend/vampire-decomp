@@ -3,19 +3,13 @@
 
 #include "CUnknown10319f70.h"
 
-struct CUnknown102ee120_Value
-{
-	int m_value;
-	void Set(int value) { m_value = value; }
-};
-
 struct CUnknown102ee120_Target
 {
 	char pad0[0x24];
 	CUnknown10319f70 m_unk24;
 	char pad25[3];
 	int m_unk28;
-	CUnknown102ee120_Value m_unk2c;
+	void *m_unk2c;
 };
 
 class CUnknown102ee120
@@ -26,5 +20,5 @@ public:
 
 	void sub_102ee120(int a, int b, int c);
 	void sub_102ee1c0(int value);
-	void sub_102ee250(int value);
+	void sub_102ee250(void *value);
 };
