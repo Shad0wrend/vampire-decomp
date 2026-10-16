@@ -249,6 +249,10 @@ void __fastcall sub_1021e410(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102507b0 size=0x8
+void CBaseCombatWeapon::sub_102507b0() { vfunc361(); }
+// END FUNCTION
+
 // FUNCTION: 0x102885d0 size=0x8
 typedef void (__fastcall *Fn102885d0)(void *);
 
