@@ -761,6 +761,15 @@ void CUnknown100fdce0::sub_100fdce0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103100 size=0xd
+#include "CUnknown10103100.h"
+// TARGET: CUnknown10103100::sub_10103100
+void CUnknown10103100::sub_10103100(int value)
+{
+	sub_10102dd0(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104630 size=0x8
 void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }

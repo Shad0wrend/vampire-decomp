@@ -136,6 +136,7 @@
 0x100038b9 func   ?sub_100eb3b0@@YIXPAH@Z sub_100eb3b0
 0x100038c3 func   ?sub_102deea0@@YIXPAH@Z sub_102deea0
 0x10003922 func   _item_g_bloodpack item_g_bloodpack
+0x1000398b func   ?sub_10103100@CUnknown10103100@@QAEXH@Z CUnknown10103100::sub_10103100
 0x1000399f func   ?sub_101eab40@@YAXH@Z sub_101eab40
 0x10003a26 func   ?sub_10104630@@YGXH@Z sub_10104630
 0x10003a3a func   ?sub_1021e1c0@@YIXPAH@Z sub_1021e1c0
