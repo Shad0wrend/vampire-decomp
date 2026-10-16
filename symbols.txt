@@ -346,6 +346,7 @@
 0x1000a80d func   _env_fog_controller env_fog_controller
 0x1000a821 func   ?vfunc408@CBasePlayer@@UAEXXZ CBasePlayer::vfunc408
 0x1000a853 func   ?sub_102cc7e0@@YIXPAH@Z sub_102cc7e0
+0x1000a867 func   ?sub_102886f0@CUnknown102886f0@@QAEXH@Z CUnknown102886f0::sub_102886f0
 0x1000a899 func   _npc_VSabbatGunman npc_VSabbatGunman
 0x1000a9c0 func   _camera_keyframe camera_keyframe
 0x1000a9c5 func   _item_g_idol_crane item_g_idol_crane

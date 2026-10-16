@@ -628,6 +628,12 @@ void __fastcall sub_102885f0(NPCStub *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102886f0 size=0xa
+struct CUnknown102886f0 { char p[0x40]; int a; void sub_102886f0(int v); };
+// TARGET: CUnknown102886f0::sub_102886f0
+void CUnknown102886f0::sub_102886f0(int v) { a = v; }
+// END FUNCTION
+
 // FUNCTION: 0x102a96f0 size=0x8
 struct TroikaStub;
 struct TroikaStubVtbl { void (__fastcall *f[256])(TroikaStub *); };
