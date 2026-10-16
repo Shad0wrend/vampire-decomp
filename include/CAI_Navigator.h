@@ -6,6 +6,7 @@
 struct CAI_Navigator_Arg
 {
 	int v;
+	CAI_Navigator_Arg(const CAI_Navigator_Arg &o) : v(o.v) {}
 };
 
 class CAI_Navigator
