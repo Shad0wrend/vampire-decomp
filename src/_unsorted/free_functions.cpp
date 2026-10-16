@@ -64,6 +64,14 @@ const char *CUnknown10050860::sub_10050860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057680 size=0xe
+void CUnknown10057680::sub_10057680()
+{
+	m_unk0 = 0;
+	m_unk4 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058200 size=0xd
 // TARGET: CUnknown10058200::sub_10058200
 void CUnknown10058200::sub_10058200(int unused)
