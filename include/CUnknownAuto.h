@@ -4,6 +4,7 @@
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_InterestingPlaceConverstation.h"
 #include "CAI_Navigator.h"
+#include "CBaseDoor.h"
 #include "CHL2_Player.h"
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CRagdollPropSpecial.h"
