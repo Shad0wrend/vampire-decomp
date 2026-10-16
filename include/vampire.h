@@ -9,6 +9,7 @@
 #include "CBaseCombatWeapon.h"
 #include "CBasePlayer.h"
 #include "CCollisionProperty.h"
+#include "CCopyRecipientFilter.h"
 #include "CDirtySpatialPartitionEntityList.h"
 #include "CEffectsServer.h"
 #include "CFuncPlat.h"
