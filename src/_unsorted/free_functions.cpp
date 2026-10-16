@@ -2017,6 +2017,30 @@ void CUnknown101f9670::sub_101f9690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fb3e0 size=0x66
+struct ScopeTrace_t { const char *name; const char *a; const char *b; };
+extern ScopeTrace_t *g_109f3620;
+extern int *g_109f3680;
+extern const char g_106b8540[];
+extern const char g_105a75f0[];
+
+struct CVDmg_t {
+	char pad[0x40]; unsigned int m_nFlags;
+	// TARGET: CVDmg_t::sub_101fb3e0
+	void sub_101fb3e0(unsigned int flags);
+};
+
+void CVDmg_t::sub_101fb3e0(unsigned int flags)
+{
+	g_109f3620[*g_109f3680].name = g_105a75f0;
+	g_109f3620[*g_109f3680].a = g_106b8540;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	++*g_109f3680;
+	m_nFlags |= flags;
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202760 size=0xc
 extern int g_105a6fc8[];
 int sub_10202760(int index)
