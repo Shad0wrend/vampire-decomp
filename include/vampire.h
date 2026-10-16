@@ -18,6 +18,7 @@
 #include "CFuncPlat.h"
 #include "CGameRules.h"
 #include "CGlobalEntityList.h"
+#include "CItemContainerLock.h"
 #include "CLagCompensationManager.h"
 #include "CMoveHelperServer.h"
 #include "CMultiplayRules.h"
