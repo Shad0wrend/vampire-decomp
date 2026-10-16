@@ -767,6 +767,12 @@ void __fastcall sub_102deea0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0a40 size=0xa
+struct CUnknown102e0a40 { int p[6]; int a; void sub_102e0a40(int v); };
+// TARGET: CUnknown102e0a40::sub_102e0a40
+void CUnknown102e0a40::sub_102e0a40(int v) { a = v; }
+// END FUNCTION
+
 // FUNCTION: 0x102e0a60 size=0xa
 struct CUnknown102e0a60 { int p[7]; int a; void sub_102e0a60(int v); };
 // TARGET: CUnknown102e0a60::sub_102e0a60
