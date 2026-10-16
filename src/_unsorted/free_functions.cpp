@@ -121,6 +121,11 @@ void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
 // END FUNCTION
 
+// FUNCTION: 0x1010f4e0 size=0x8
+typedef void (__fastcall *Fn)(void *);
+void __fastcall sub_1010f4e0(void **p) { ((Fn *)*p)[241](p); }
+// END FUNCTION
+
 // FUNCTION: 0x1011a430 size=0x8
 extern char g_1070b264;
 void sub_1011a430() { g_1070b264 = 1; }
