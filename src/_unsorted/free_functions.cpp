@@ -1200,6 +1200,37 @@ void CUnknown1018f700::sub_1018f700(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10199e20 size=0x65
+struct PyObj;
+struct PyType { char pad[0x18]; void (*dealloc)(PyObj*); };
+struct PyObj { int refcnt; PyType* type; };
+extern "C" {
+__declspec(dllimport) int Py_IsInitialized();
+__declspec(dllimport) PyObj* PyDict_New();
+}
+extern PyObj* g_1072b370;
+extern PyObj* g_1072b374;
+
+// TARGET: sub_10199e20
+void sub_10199e20()
+{
+	if (Py_IsInitialized()) {
+		if (g_1072b370) {
+			g_1072b370->refcnt--;
+			if (g_1072b370->refcnt == 0)
+				g_1072b370->type->dealloc(g_1072b370);
+			g_1072b370 = PyDict_New();
+		}
+		if (g_1072b374) {
+			g_1072b374->refcnt--;
+			if (g_1072b374->refcnt == 0)
+				g_1072b374->type->dealloc(g_1072b374);
+			g_1072b374 = PyDict_New();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d490 size=0xa
 void CUnknown1019d490::sub_1019d490(char value)
 {
