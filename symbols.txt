@@ -662,6 +662,7 @@
 0x1000f1d2 func   ?sub_10073f40@CUnknown10073f40@@QAEXH@Z CUnknown10073f40::sub_10073f40
 0x1000f1d7 func   ?sub_102ee4f0@CUnknown102ee4f0@@QAEXXZ CUnknown102ee4f0::sub_102ee4f0
 0x1000f1fa func   _trigger_bomb_site trigger_bomb_site
+0x1000f222 func   ?sub_100f0f30@@YIXPAUCSlots@@@Z sub_100f0f30
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
 0x1000f39e func   ?vfunc329@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc329
 0x1000f3cb func   ?sub_1007e580@@YIXPAH@Z sub_1007e580
