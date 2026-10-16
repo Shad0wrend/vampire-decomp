@@ -6,6 +6,7 @@
 class CSingleplayRules : public CGameRules
 {
 public:
+	virtual float vfunc38(int a);
 	virtual int vfunc43(int a, int b);
 	virtual int vfunc48(int index);
 	virtual float vfunc49(int a);
