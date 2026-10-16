@@ -24,6 +24,7 @@
 #include "CMoveHelperServer.h"
 #include "CMultiplayRules.h"
 #include "CNPC_VGargoyle.h"
+#include "CNPC_VWerewolf.h"
 #include "CPropSign.h"
 #include "CPushable.h"
 #include "CRecipientFilter.h"
