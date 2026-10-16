@@ -641,6 +641,7 @@
 0x10013089 func   _item_g_wireless_camera_4 item_g_wireless_camera_4
 0x100130b1 func   _npc_VAndreiBlood npc_VAndreiBlood
 0x1001312e func   _logic_lineto logic_lineto
+0x100131dd func   ?vfunc35@CPropSign@@UAEHH@Z CPropSign::vfunc35
 0x10013575 func   _light_spot light_spot
 0x100135d4 func   ?sub_102a96f0@@YIXPAUTroikaStub@@@Z sub_102a96f0
 0x1001363d func   _infodecal infodecal
