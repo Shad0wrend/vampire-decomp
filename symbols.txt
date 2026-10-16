@@ -153,6 +153,7 @@
 0x10003da0 func   _item_g_keyring item_g_keyring
 0x10003f71 func   ?sub_102477a0@CUnknown102477a0@@QAEXXZ CUnknown102477a0::sub_102477a0
 0x10003f94 func   _logic_case_toggle logic_case_toggle
+0x10004002 func   ?sub_101e83d0@CUnknown101e83d0@@QAEXPAHPAXH@Z CUnknown101e83d0::sub_101e83d0
 0x100040a7 func   ?sub_10078c30@@YIXPAH@Z sub_10078c30
 0x100041e2 func   ?sub_101f9610@@YAXH@Z sub_101f9610
 0x1000420f func   ?sub_10076670@CUnknown10076670@@QAEXH@Z CUnknown10076670::sub_10076670

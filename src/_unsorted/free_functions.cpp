@@ -1479,6 +1479,15 @@ unsigned int COwner::sub_101e8250(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e83d0 size=0xd
+#include "CUnknown101e83d0.h"
+// TARGET: CUnknown101e83d0::sub_101e83d0
+void CUnknown101e83d0::sub_101e83d0(int *out, void *ent, int flags)
+{
+	*out = 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e83f0 size=0xd
 void __stdcall sub_101e83f0(int* out, int b, int c)
 {
