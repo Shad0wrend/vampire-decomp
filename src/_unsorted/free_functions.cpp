@@ -2551,6 +2551,15 @@ const char *CAI_BaseNPCTroika::sub_102c3690(int task)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c36b0 size=0xe
+extern const char* g_105d1488[];
+
+const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
+{
+	return g_105d1488[schedule];
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6590 size=0xc
 int *CUnknown102c6590::sub_102c6590(int index)
 {
