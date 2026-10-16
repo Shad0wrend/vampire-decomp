@@ -9,3 +9,13 @@ const char *CGameRules::vfunc67(int)
 	return "";
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129600 size=0x8
+extern char g_106b8540[];
+
+// TARGET: CGameRules::vfunc70
+const char *CGameRules::vfunc70(int index)
+{
+	return g_106b8540;
+}
+// END FUNCTION
