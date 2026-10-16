@@ -520,6 +520,14 @@ void CUnknown100b99b0::sub_100b99b0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba120 size=0xd
+// TARGET: CUnknown100ba120::sub_100ba120
+void CUnknown100ba120::sub_100ba120(char value)
+{
+	m_unk73c = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc380 size=0xc
 extern void (*g_106d2a10)();
 void sub_100bc380()
