@@ -663,6 +663,13 @@ void __fastcall sub_102a96f0(TroikaStub *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a99c0 size=0xa
+void CUnknown102a99c0::sub_102a99c0(char value)
+{
+	m_bFlag = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9ea0 size=0xa
 struct CUnknown102a9ea0 { int a[1]; int sub_102a9ea0(int i); };
 // TARGET: CUnknown102a9ea0::sub_102a9ea0
