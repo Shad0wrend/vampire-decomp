@@ -267,6 +267,7 @@
 0x10007eff func   _func_monitor func_monitor
 0x10007ffe func   _item_k_clinic_stairs_key item_k_clinic_stairs_key
 0x10008030 func   _info_node_sabbat_nojump info_node_sabbat_nojump
+0x10008035 func   ?sub_101e94b0@@YAXH@Z sub_101e94b0
 0x10008062 func   ?sub_1012cf10@CUnknown1012cf10@@QAEPAV1@XZ CUnknown1012cf10::sub_1012cf10
 0x10008107 func   _phys_keepupright phys_keepupright
 0x1000823d func   ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ CUnknown102d9150::sub_102d9150

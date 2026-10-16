@@ -557,6 +557,15 @@ void CUnknown101e4a90::sub_101e4a90() { slot266(); }
 int __stdcall sub_101e80a0(int) { return 10; }
 // END FUNCTION
 
+// FUNCTION: 0x101e94b0 size=0xa
+extern int g_1073a144;
+
+void sub_101e94b0(int value)
+{
+	g_1073a144 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2500 size=0x9
 struct CUnknown101f2500 { int a; char sub_101f2500(); };
 // TARGET: CUnknown101f2500::sub_101f2500
