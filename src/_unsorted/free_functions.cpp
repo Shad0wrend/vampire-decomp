@@ -5,6 +5,13 @@
 void __fastcall sub_10032a20(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10032a40 size=0x8
+void __fastcall sub_10032a40(int *p)
+{
+	p[3] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032b00 size=0x8
 void __fastcall sub_10032b00(int *p)
 {

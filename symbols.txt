@@ -582,6 +582,7 @@
 0x10014448 func   _env_dustpuff env_dustpuff
 0x100144c5 func   _item_p_occult_hacking item_p_occult_hacking
 0x100144cf func   _item_w_chang_ghost item_w_chang_ghost
+0x10014510 func   ?sub_10032a40@@YIXPAH@Z sub_10032a40
 0x100145ce func   _info_node_tzimisce_claw_right info_node_tzimisce_claw_right
 0x100148a8 func   _npc_VPlayerController npc_VPlayerController
 0x10014911 func   _info_node_bach_run_1 info_node_bach_run_1
