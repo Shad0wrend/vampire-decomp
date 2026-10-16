@@ -611,6 +611,7 @@
 0x10010311 func   _item_g_bluebloodpack item_g_bluebloodpack
 0x10010398 func   ?sub_101afba0@CUnknown101afba0@@QAEXXZ CUnknown101afba0::sub_101afba0
 0x100103b1 func   _funCBaseFlex funCBaseFlex
+0x100103d9 func   ?sub_101eaac0@@YAXH@Z sub_101eaac0
 0x100104c9 func   _item_k_fu_office_key item_k_fu_office_key
 0x10010532 func   _trigger_teleport trigger_teleport
 0x100105eb func   _func_pushable func_pushable
