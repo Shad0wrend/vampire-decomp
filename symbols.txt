@@ -949,6 +949,7 @@
 0x10015852 func   _item_w_flamethrower item_w_flamethrower
 0x1001585c func   ?sub_102e7e00@@YIXPAUCOwner@@@Z sub_102e7e00
 0x1001586b func   ?sub_10349ea0@@YIXPAH@Z sub_10349ea0
+0x10015884 func   ?sub_1011be00@@YIXPAXHH@Z sub_1011be00
 0x100159d3 func   _npc_VDialogPedestrian npc_VDialogPedestrian
 0x10015a0f func   ?sub_101c4820@@YAXPAUCUnknown101c4760@@@Z sub_101c4820
 0x10015a14 func   ?sub_10158d80@CUnknown10158d80@@QAEXXZ CUnknown10158d80::sub_10158d80
