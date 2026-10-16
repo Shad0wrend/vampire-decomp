@@ -1020,6 +1020,13 @@ struct CUnknown1015ef00 { char pad[0x19f5]; char m_Flag; void sub_1015ef00(); };
 void CUnknown1015ef00::sub_1015ef00() { m_Flag = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x1015ef20 size=0xe
+bool CUnknown1015ef20::sub_1015ef20()
+{
+	return m_unk19f7 == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ef40 size=0x8
 void __fastcall sub_1015ef40(char *p)
 {
