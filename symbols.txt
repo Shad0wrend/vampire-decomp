@@ -524,6 +524,7 @@
 0x100115d6 func   _item_k_skyline_haven_key item_k_skyline_haven_key
 0x10011829 func   _item_g_jumbles_flyer item_g_jumbles_flyer
 0x10011865 func   _path_corner path_corner
+0x100118d3 func   ?sub_101f4280@@YIHPAH@Z sub_101f4280
 0x1001196e func   _npc_VFrenzyShadow npc_VFrenzyShadow
 0x10011a3b func   _entityflame entityflame
 0x10011a81 func   _item_k_tawni_apartment_key item_k_tawni_apartment_key
