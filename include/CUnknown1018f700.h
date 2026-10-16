@@ -9,6 +9,7 @@
 #include "CUnknown102237e0.h"
 #include "CUnknown102d00a0.h"
 #include "CBaseMoveBehavior.h"
+#include "CNPC_VFrenzyShadow.h"
 
 class CUnknown1018f700
 {
