@@ -10,4 +10,5 @@ public:
 	CAI_BaseNPC *m_pOuter;
 
 	void sub_102e12c0();
+	void sub_102e2750();
 };
