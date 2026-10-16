@@ -30,6 +30,7 @@
 #include "CSingleplayRules.h"
 #include "CSkyCamera.h"
 #include "CStealthKillRules.h"
+#include "CUnknown100295d0.h"
 #include "CUnknown100a8220.h"
 #include "CUnknown10074a30.h"
 #include "CUnknown10080750.h"
