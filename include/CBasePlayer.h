@@ -11,6 +11,16 @@ public:
 	virtual void vfunc407();
 	virtual void vfunc408();
 
-	char m_pad0004[0x19F2];	// 0x0004 .. 0x19F5
+	char m_pad0004[0x2DC];	// 0x0004 .. 0x02DF
+	int m_n02E0;
+	char m_pad02E4[0x1712];	// 0x02E4 .. 0x19F5
 	bool m_b19F6;
+	char m_pad19F7[0x6B1];	// 0x19F7 .. 0x20A7
+	char m_b20A8;
+	char m_pad20A9[0x1FF];	// 0x20A9 .. 0x22A7
+	float m_f22A8;
+	float m_f22AC;
+	float m_f22B0;
+
+	void sub_10177120();
 };
