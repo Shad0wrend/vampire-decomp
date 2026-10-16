@@ -6,6 +6,7 @@
 0x1000129e func   ?sub_102f99b0@@YAXXZ sub_102f99b0
 0x100012b7 func   ?sub_101f2500@CUnknown101f2500@@QAEDXZ CUnknown101f2500::sub_101f2500
 0x10001398 func   _ai_sound ai_sound
+0x100013b1 func   ?sub_100792c0@CUnknown100792c0@@QAEXH@Z CUnknown100792c0::sub_100792c0
 0x10001456 func   _logic_pythoncheck logic_pythoncheck
 0x100014d8 func   ?vfunc11@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc11
 0x10001550 func   ?sub_101db9a0@@YIXPAD@Z sub_101db9a0

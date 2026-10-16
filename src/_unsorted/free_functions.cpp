@@ -109,6 +109,13 @@ void __fastcall sub_10078c30(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100792c0 size=0xa
+void CUnknown100792c0::sub_100792c0(int value)
+{
+	m_unk8 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfc0 size=0xa
 struct CUnknown1007dfc0 { char p[0x78]; int a; void sub_1007dfc0(int v); };
 // TARGET: CUnknown1007dfc0::sub_1007dfc0
