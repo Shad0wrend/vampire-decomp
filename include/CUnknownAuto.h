@@ -8,6 +8,7 @@
 #include "CBaseDoor.h"
 #include "CHL2_Player.h"
 #include "CNPC_VMingXiaoTentacle.h"
+#include "CNPC_VSheriffMan.h"
 #include "CNPC_VVampireBoss.h"
 #include "CRagdollPropSpecial.h"
 #include "CUnknown10058220.h"
