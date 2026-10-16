@@ -1589,6 +1589,26 @@ struct A { int a; B *b; void sub_102e2800(int x); };
 void A::sub_102e2800(int x) { b->sub_1000108c(x); }
 // END FUNCTION
 
+// FUNCTION: 0x102e2840 size=0xb
+#define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CSlots
+{
+	T(a0) T(a1) T(a2) T(a3) T(a4) T(a5) T(a6) T(a7) T(a8)
+	virtual void d0(); virtual void d1(); virtual void d2();
+	virtual void target();
+};
+struct COwner
+{
+	int pad;
+	CSlots *m_pOuter;
+};
+
+void __fastcall sub_102e2840(COwner *self)
+{
+	self->m_pOuter->target();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e8250 size=0x8
 void __fastcall sub_102e8250(float *p) { p[6] = 3.402823466e+38f; }
 // END FUNCTION
