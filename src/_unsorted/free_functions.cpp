@@ -232,6 +232,13 @@ void __fastcall sub_100be000(char *self, int, char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be040 size=0xa
+void CUnknown100be040::sub_100be040(int value)
+{
+	m_unk14 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c89e0 size=0xa
 void __fastcall sub_100c89e0(char *self, int, int)
 {

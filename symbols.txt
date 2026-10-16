@@ -538,6 +538,7 @@
 0x1000e0c0 func   _item_g_hatters_screenplay item_g_hatters_screenplay
 0x1000e214 func   _func_platrot func_platrot
 0x1000e237 func   _npc_VMercurio npc_VMercurio
+0x1000e24b func   ?sub_100be040@CUnknown100be040@@QAEXH@Z CUnknown100be040::sub_100be040
 0x1000e250 func   _item_g_vampyr_apocrypha item_g_vampyr_apocrypha
 0x1000e296 func   _func_physbox func_physbox
 0x1000e345 func   _env_steam env_steam
