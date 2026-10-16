@@ -1294,6 +1294,13 @@ struct CUnknown102886f0 { char p[0x40]; int a; void sub_102886f0(int v); };
 void CUnknown102886f0::sub_102886f0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10289cc0 size=0xb
+void CUnknown10289cc0::sub_10289cc0()
+{
+	m_unk5cf4.sub_102e8a40();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0eb0 size=0xb
 void __fastcall sub_100037e2(void *);
 void __fastcall sub_102a0eb0(char *self)
