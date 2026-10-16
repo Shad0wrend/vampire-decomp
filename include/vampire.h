@@ -38,6 +38,7 @@
 #include "CUnknown100bc5c0.h"
 #include "CUnknown100be040.h"
 #include "CUnknown100fdce0.h"
+#include "CUnknown1019d490.h"
 #include "CUnknown10074a30.h"
 #include "CUnknown10080750.h"
 #include "CUnknown100dea90.h"
