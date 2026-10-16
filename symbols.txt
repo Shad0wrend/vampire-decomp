@@ -70,6 +70,7 @@
 0x100030b2 func   ?vfunc67@CGameRules@@UAEPBDH@Z CGameRules::vfunc67
 0x100030f3 func   _game_ui game_ui
 0x10003111 func   _env_sun env_sun
+0x1000311b func   ?sub_10158d60@@YIXPAPAX@Z sub_10158d60
 0x100031ca func   _trigger_hurt trigger_hurt
 0x100031f2 func   _func_dustcloud func_dustcloud
 0x10003215 func   _func_dustmotes func_dustmotes
