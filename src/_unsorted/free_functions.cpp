@@ -596,6 +596,14 @@ struct CUnknown102c6d80 {
 void CUnknown102c6d80::sub_102c6d80() { slot486(); }
 // END FUNCTION
 
+// FUNCTION: 0x102cc520 size=0x9
+CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
+{
+	m_unk0 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc7e0 size=0x8
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
