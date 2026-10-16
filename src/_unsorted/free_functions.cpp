@@ -190,6 +190,15 @@ void CUnknown100b7c60::sub_100b7c60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc3a0 size=0xa
+extern int g_106d2a10;
+
+void sub_100bc3a0(int value)
+{
+	g_106d2a10 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc560 size=0x9
 struct CUnknown100bc560 { int p[3]; int a; char b; void sub_100bc560(); };
 // TARGET: CUnknown100bc560::sub_100bc560
