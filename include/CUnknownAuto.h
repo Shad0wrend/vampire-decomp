@@ -45,5 +45,6 @@
 #include "CUnknown10398d90.h"
 #include "CUnknown1039a6e0.h"
 #include "CUnknown103eec60.h"
+#include "CUnknown103f04f0.h"
 #include "CWorld.h"
 #include "exception.h"
