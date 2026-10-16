@@ -984,6 +984,7 @@
 0x10011f27 func   ?sub_1015ef00@CUnknown1015ef00@@QAEXXZ CUnknown1015ef00::sub_1015ef00
 0x10011f68 func   ?sub_1015ef40@@YIXPAD@Z sub_1015ef40
 0x10011f95 func   ?sub_1020e080@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e080
+0x10011fa9 func   ?sub_101074c0@@YIXPAUMem32@@HH@Z sub_101074c0
 0x10012003 func   _math_colorblend math_colorblend
 0x10012008 func   _flame_cluster flame_cluster
 0x10012017 func   _info_node_link info_node_link

@@ -1596,6 +1596,38 @@ void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
 // END FUNCTION
 
+// FUNCTION: 0x101074c0 size=0x67
+struct Mem32 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+
+// TARGET: sub_101074c0
+void __fastcall sub_101074c0(Mem32 *self, int, int num)
+{
+	if (self->m_nGrowSize == -1)
+		return;
+	int alloc = self->m_nAllocationCount;
+	int need = alloc + num;
+	if (alloc < need) {
+		do {
+			if (alloc != 0) {
+				if (self->m_nGrowSize != 0)
+					alloc = alloc + self->m_nGrowSize;
+				else
+					alloc = alloc + alloc;
+			} else {
+				alloc = 1;
+			}
+		} while (alloc < need);
+		self->m_nAllocationCount = alloc;
+	}
+	if (self->m_pMemory)
+		self->m_pMemory = g_109f3638(self->m_pMemory, self->m_nAllocationCount << 5);
+	else
+		self->m_pMemory = g_109f3634(self->m_nAllocationCount << 5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109da0 size=0xa
 void __fastcall sub_10109da0(char *self, int, int)
 {
