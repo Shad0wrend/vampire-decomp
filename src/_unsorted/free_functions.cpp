@@ -392,6 +392,11 @@ void __fastcall sub_1021e410(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024b070 size=0x8
+extern char g_105c5338;
+void sub_1024b070() { g_105c5338 = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x102507b0 size=0x8
 void CBaseCombatWeapon::sub_102507b0() { vfunc361(); }
 // END FUNCTION
