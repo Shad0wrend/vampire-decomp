@@ -9,4 +9,5 @@
 #include "CDirtySpatialPartitionEntityList.h"
 #include "CGameRules.h"
 #include "CMoveHelperServer.h"
+#include "CMultiplayRules.h"
 #include "CSceneEntity.h"
