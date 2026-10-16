@@ -2385,6 +2385,16 @@ struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 void CUnknown10307b40::sub_10307b40(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x1030b7c0 size=0xd
+extern CUnknown1030bc20_Record g_10936afc;
+CUnknown1030bc20_Record *CUnknown1030bc20::sub_1030b7c0()
+{
+	if (m_unk24)
+		return m_unk24;
+	return &g_10936afc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030bc20 size=0xc
 int CUnknown1030bc20::sub_1030bc20()
 {
