@@ -3,6 +3,7 @@
 
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
+#include "CAI_Hint.h"
 #include "CAreaPortal.h"
 #include "CBaseButton.h"
 #include "CBaseCombatWeapon.h"
