@@ -558,6 +558,7 @@
 0x10015406 func   _trigger_autosave trigger_autosave
 0x100155b9 func   _item_w_uzi item_w_uzi
 0x100155be func   _prop_ragdoll prop_ragdoll
+0x10015703 func   ?vfunc104@CBaseButton@@UAEXXZ CBaseButton::vfunc104
 0x10015726 func   _item_w_claws_ghoul item_w_claws_ghoul
 0x100157c6 func   _item_container_animated item_container_animated
 0x100157f3 func   _item_w_deserteagle item_w_deserteagle
