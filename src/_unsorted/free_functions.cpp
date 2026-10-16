@@ -3218,6 +3218,14 @@ CUnknown1030bc20_Record *CUnknown1030bc20::sub_1030b7c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030ba50 size=0xe
+void CUnknown1030ba50::sub_1030ba50(int value)
+{
+	m_bSet58 = 1;
+	m_unk5c = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030bc20 size=0xc
 int CUnknown1030bc20::sub_1030bc20()
 {
