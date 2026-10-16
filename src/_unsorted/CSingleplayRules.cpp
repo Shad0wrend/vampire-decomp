@@ -11,6 +11,15 @@ const char *CSingleplayRules::vfunc63(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101abf00 size=0xb
+extern char *g_1070b228;
+
+float CSingleplayRules::vfunc38(int a)
+{
+	return *(float *)(g_1070b228 + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abf20 size=0x8
 // TARGET: CSingleplayRules::vfunc43
 int CSingleplayRules::vfunc43(int a, int b)
