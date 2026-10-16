@@ -60,6 +60,12 @@ struct CUnknown10074a70 { int p[3]; int a; void sub_10074a70(int v); };
 void CUnknown10074a70::sub_10074a70(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10074a90 size=0xa
+struct CUnknown10074a90 { int p[4]; int a; void sub_10074a90(int v); };
+// TARGET: CUnknown10074a90::sub_10074a90
+void CUnknown10074a90::sub_10074a90(int v) { a = v; }
+// END FUNCTION
+
 // FUNCTION: 0x10078b10 size=0x8
 void __fastcall sub_10078b10(int *p) { p[3] = 0; }
 // END FUNCTION
