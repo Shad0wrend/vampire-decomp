@@ -72,6 +72,7 @@
 0x10003215 func   _func_dustmotes func_dustmotes
 0x10003328 func   _gib gib
 0x1000332d func   _item_g_junkyard_businesscard item_g_junkyard_businesscard
+0x1000336e func   ?sub_1015ef60@@YIXPAD@Z sub_1015ef60
 0x10003427 func   _monster_generic monster_generic
 0x10003503 func   _scripted_target scripted_target
 0x1000352b func   _npc_VTzimisce npc_VTzimisce
