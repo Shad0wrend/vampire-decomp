@@ -1492,6 +1492,13 @@ struct CUnknown102ecc00 { int v; CUnknown102ecc00Outer *o; int sub_102ecc00(); }
 int CUnknown102ecc00::sub_102ecc00() { return o->a; }
 // END FUNCTION
 
+// FUNCTION: 0x102ecc20 size=0xa
+int __fastcall sub_102ecc20(char *self)
+{
+	return *(int *)(*(char **)(self + 4) + 0x5d3c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee4f0 size=0x8
 struct CInner100016b3 { void sub_100016b3(); };
 struct CUnknown102ee4f0 { char pad[0x30]; CInner100016b3 *m_pInner; void sub_102ee4f0(); };
