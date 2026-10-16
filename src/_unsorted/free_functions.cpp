@@ -1070,6 +1070,15 @@ void sub_1016b440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101800e0 size=0xe
+#include "CUnknown101800e0.h"
+// TARGET: CUnknown101800e0::sub_101800e0
+float CUnknown101800e0::sub_101800e0(int index)
+{
+	return m_values[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181600 size=0xb
 void __fastcall sub_10181600(char *self)
 {

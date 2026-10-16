@@ -376,6 +376,7 @@
 0x10007e64 func   _phys_hinge phys_hinge
 0x10007ed7 func   _phys_motor phys_motor
 0x10007eff func   _func_monitor func_monitor
+0x10007f22 func   ?sub_101800e0@CUnknown101800e0@@QAEMH@Z CUnknown101800e0::sub_101800e0
 0x10007ffe func   _item_k_clinic_stairs_key item_k_clinic_stairs_key
 0x10008030 func   _info_node_sabbat_nojump info_node_sabbat_nojump
 0x10008035 func   ?sub_101e94b0@@YAXH@Z sub_101e94b0
