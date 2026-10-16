@@ -3022,6 +3022,13 @@ void sub_104121d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428eb0 size=0xd
+int sub_10428eb0(char *p)
+{
+	return *(int *)(p + 0x188) + (int)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10429240 size=0xc
 extern const char *g_106ac3a0[];
 const char *sub_10429240(int index)
