@@ -843,6 +843,14 @@ void CUnknown1012cf50::sub_1012cf50(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012cf70 size=0xd
+void CUnknown1012cf70::sub_1012cf70(int flags)
+{
+	flags = 0;
+	sub_100125f8(flags);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cf90 size=0x8
 void sub_10003a94();
 void __stdcall sub_1012cf90(int) { sub_10003a94(); }
