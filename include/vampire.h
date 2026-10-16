@@ -4,6 +4,7 @@
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CAI_Hint.h"
+#include "CAI_Motor.h"
 #include "CAreaPortal.h"
 #include "CBaseButton.h"
 #include "CBaseCombatWeapon.h"
