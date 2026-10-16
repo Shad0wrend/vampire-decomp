@@ -1,0 +1,19 @@
+// CUnknown102ee120: object with a pointer at +0x30 to a structure holding a CUnknown10319f70 at +0x24; real name not yet known.
+#pragma once
+
+#include "CUnknown10319f70.h"
+
+struct CUnknown102ee120_Target
+{
+	char pad0[0x24];
+	CUnknown10319f70 m_unk24;
+};
+
+class CUnknown102ee120
+{
+public:
+	char pad0[0x30];
+	CUnknown102ee120_Target *m_unk30;
+
+	void sub_102ee120(int a, int b, int c);
+};
