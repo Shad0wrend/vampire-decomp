@@ -141,6 +141,14 @@ extern char g_1070b264;
 void sub_1011a430() { g_1070b264 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x1012cf10 size=0x9
+CUnknown1012cf10 *CUnknown1012cf10::sub_1012cf10()
+{
+	m_unk0 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cf30 size=0x8
 void sub_100027ac();
 void __stdcall sub_1012cf30(int) { sub_100027ac(); }
