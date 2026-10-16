@@ -1,5 +1,5 @@
 // class CBaseGrenade; modelled as a direct CBaseEntity subclass (the real bases are not declared).
-// Slots 117..406 are placeholders that keep the slot numbers of vfunc144 and vfunc407 right.
+// Slots 134..406 are placeholders that keep the slot numbers of vfunc144 and vfunc407 right.
 #pragma once
 
 #include "CBaseEntity.h"
@@ -7,10 +7,7 @@
 class CBaseGrenade : public CBaseEntity
 {
 public:
-	virtual void vfunc117(); virtual void vfunc118(); virtual void vfunc119();
-	virtual void vfunc120(); virtual void vfunc121(); virtual void vfunc122(); virtual void vfunc123(); virtual void vfunc124();
-	virtual void vfunc125(); virtual void vfunc126(); virtual void vfunc127(); virtual void vfunc128(); virtual void vfunc129();
-	virtual void vfunc130(int a); virtual void vfunc131(); virtual void vfunc132(); virtual void vfunc133(); virtual void vfunc134();
+	virtual void vfunc134();
 	virtual void vfunc135(); virtual void vfunc136(); virtual void vfunc137(); virtual void vfunc138(); virtual void vfunc139();
 	virtual void vfunc140(); virtual void vfunc141(); virtual void vfunc142(); virtual void vfunc143(); virtual void vfunc144(int unused);
 	virtual void vfunc145(); virtual void vfunc146(); virtual void vfunc147(); virtual void vfunc148(); virtual void vfunc149();
@@ -22,7 +19,7 @@ public:
 	virtual void vfunc175(); virtual void vfunc176(); virtual void vfunc177(); virtual void vfunc178(); virtual void vfunc179();
 	virtual void vfunc180(); virtual void vfunc181(); virtual void vfunc182(); virtual void vfunc183(); virtual void vfunc184();
 	virtual void vfunc185(); virtual void vfunc186(); virtual void vfunc187(); virtual void vfunc188(); virtual void vfunc189();
-	virtual void vfunc190(); virtual void vfunc191(); virtual void vfunc192(); virtual void vfunc193(); virtual void vfunc194();
+	virtual void vfunc190(); virtual void vfunc191(int value); virtual void vfunc192(); virtual void vfunc193(); virtual void vfunc194();
 	virtual void vfunc195(); virtual void vfunc196(); virtual void vfunc197(); virtual void vfunc198(); virtual void vfunc199();
 	virtual void vfunc200(); virtual void vfunc201(); virtual void vfunc202(); virtual void vfunc203(); virtual void vfunc204();
 	virtual void vfunc205(); virtual void vfunc206(); virtual void vfunc207(); virtual void vfunc208(); virtual void vfunc209();
