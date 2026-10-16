@@ -1412,6 +1412,13 @@ int * __fastcall sub_101f0270(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0d40 size=0xd
+void CUnknown101f0d40::sub_101f0d40(int* dest)
+{
+	dest[13] = m_unk8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2500 size=0x9
 struct CUnknown101f2500 { int a; char sub_101f2500(); };
 // TARGET: CUnknown101f2500::sub_101f2500
