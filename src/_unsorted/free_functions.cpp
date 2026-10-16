@@ -304,6 +304,19 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc7f0(void **p) { ((Fn *)*p)[244](p); }
 // END FUNCTION
 
+// FUNCTION: 0x101cc800 size=0x8
+#define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
+#define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
+struct CUnknown101cc800 {
+	V25(p0) V25(p1) V25(p2) V25(p3) V25(p4) V25(p5) V25(p6) V25(p7) V25(p8)
+	V5(q0) V5(q1) V5(q2)
+	V5(r0)
+	virtual void slot245();
+	void sub_101cc800();
+};
+void CUnknown101cc800::sub_101cc800() { slot245(); }
+// END FUNCTION
+
 // FUNCTION: 0x101db9a0 size=0x8
 void __fastcall sub_100107d5(char *p);
 void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }
