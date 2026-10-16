@@ -153,6 +153,7 @@
 0x10006505 func   _item_g_larry_briefcase item_g_larry_briefcase
 0x10006546 func   _npc_VGangrel npc_VGangrel
 0x10006596 func   _func_breakable_surf func_breakable_surf
+0x1000665e func   ?sub_100eb130@@YIXPAH@Z sub_100eb130
 0x10006749 func   _item_g_horrortape_1 item_g_horrortape_1
 0x10006753 func   _item_g_horrortape_2 item_g_horrortape_2
 0x100067c6 func   _item_g_drugs_drug_box item_g_drugs_drug_box
