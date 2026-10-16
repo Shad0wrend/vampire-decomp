@@ -40,3 +40,4 @@
 #include "CUnknown1042da80.h"
 #include "CWeaponRanged.h"
 #include "CWeaponThrown_Grenade_Frag.h"
+#include "ConCommand.h"
