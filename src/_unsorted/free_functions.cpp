@@ -1518,6 +1518,48 @@ void __fastcall sub_10185600(int *p) { p[3] = 0; }
 void __fastcall sub_10185790(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101857f0 size=0x67
+extern "C" {
+__declspec(dllimport) void* Plat_Alloc(int size);
+__declspec(dllimport) void* Plat_Realloc(void* p, int size);
+}
+
+struct Elem16 { int a, b, c, d; };
+
+struct UtlMem8 {
+	Elem16* m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_101857f0(int num);
+};
+
+// TARGET: UtlMem8::sub_101857f0
+void UtlMem8::sub_101857f0(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int newAlloc = m_nAllocationCount;
+	int target = newAlloc + num;
+	if (newAlloc < target) {
+		do {
+			if (newAlloc != 0) {
+				if (m_nGrowSize != 0)
+					newAlloc += m_nGrowSize;
+				else
+					newAlloc += newAlloc;
+			} else {
+				newAlloc = 2;
+			}
+		} while (newAlloc < target);
+		m_nAllocationCount = newAlloc;
+	}
+	if (m_pMemory)
+		m_pMemory = (Elem16*)Plat_Realloc(m_pMemory, m_nAllocationCount * sizeof(Elem16));
+	else
+		m_pMemory = (Elem16*)Plat_Alloc(m_nAllocationCount * sizeof(Elem16));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c4d0 size=0xd
 void CUnknown1018c4d0::sub_1018c4d0(char value)
 {

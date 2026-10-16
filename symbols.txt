@@ -884,6 +884,7 @@
 0x100104c9 func   _item_k_fu_office_key item_k_fu_office_key
 0x10010532 func   _trigger_teleport trigger_teleport
 0x100105eb func   _func_pushable func_pushable
+0x1001064a func   ?sub_101857f0@UtlMem8@@QAEXH@Z UtlMem8::sub_101857f0
 0x100106ae func   ?sub_101ed9e0@CUnknown101ed9e0@@QAEPAV1@H@Z CUnknown101ed9e0::sub_101ed9e0
 0x100107b7 func   _info_node_crosswalk info_node_crosswalk
 0x10010834 func   ?vfunc475@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc475
