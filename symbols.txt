@@ -350,6 +350,7 @@
 0x1000c18a func   ?vfunc359@CNPC_VGargoyle@@UAEHH@Z CNPC_VGargoyle::vfunc359
 0x1000c2ac func   ?sub_1007ee40@@YIXPAH@Z sub_1007ee40
 0x1000c3b0 func   _light light
+0x1000c3bf func   ?sub_1021e100@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_1021e100
 0x1000c4be func   _npc_payphone npc_payphone
 0x1000c630 func   _item_g_drugs_morphine_bottle item_g_drugs_morphine_bottle
 0x1000c644 func   _info_node_patrol_point info_node_patrol_point
