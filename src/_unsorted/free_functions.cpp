@@ -332,6 +332,10 @@ struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x101e80a0 size=0x8
+int __stdcall sub_101e80a0(int) { return 10; }
+// END FUNCTION
+
 // FUNCTION: 0x101f4280 size=0x8
 int __fastcall sub_101f4280(int *p) { return (*p)++; }
 // END FUNCTION

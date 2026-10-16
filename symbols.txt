@@ -505,6 +505,7 @@
 0x1000fb1e func   _trigger_transition trigger_transition
 0x1000fbb4 func   _point_anglesensor point_anglesensor
 0x1000fbcd func   _move_rope move_rope
+0x1000fcb8 func   ?sub_101e80a0@@YGHH@Z sub_101e80a0
 0x1000fd71 func   ?sub_1042d700@@YIIPAI@Z sub_1042d700
 0x1000febb func   _item_w_occultblade item_w_occultblade
 0x1000ff7e func   _item_p_research_mg_security item_p_research_mg_security
