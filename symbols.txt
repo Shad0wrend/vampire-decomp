@@ -290,6 +290,7 @@
 0x100069a6 func   ?sub_10146790@CUnknown10146790@@QAEXXZ CUnknown10146790::sub_10146790
 0x10006a7d func   _func_lod func_lod
 0x10006a82 func   ?sub_100fdce0@CUnknown100fdce0@@QAEXH@Z CUnknown100fdce0::sub_100fdce0
+0x10006aeb func   ?sub_10246300@@YAXHPAH0@Z sub_10246300
 0x10006b72 func   _npc_VChangBrosClaw npc_VChangBrosClaw
 0x10006b7c func   ?sub_100cd640@CUnknown100cd640@@QAEPADXZ CUnknown100cd640::sub_100cd640
 0x10006c5d func   _filter_base filter_base
