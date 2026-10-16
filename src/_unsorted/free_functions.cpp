@@ -1489,6 +1489,41 @@ void CUnknown101afba0::sub_101afba0() { m_Flag = 0; }
 void __fastcall sub_101b6a30(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101b72e0 size=0x67
+extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
+
+struct CMem8_t {
+	void *m_pMemory; int m_nAllocationCount; int m_nGrowSize;
+	// TARGET: CMem8_t::sub_101b72e0
+	void sub_101b72e0(int num);
+};
+
+void CMem8_t::sub_101b72e0(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int alloc = m_nAllocationCount;
+	int newAlloc = num + alloc;
+	if (alloc < newAlloc) {
+		do {
+			if (alloc != 0) {
+				if (m_nGrowSize != 0)
+					alloc += m_nGrowSize;
+				else
+					alloc += alloc;
+			} else
+				alloc = 4;
+		} while (alloc < newAlloc);
+		m_nAllocationCount = alloc;
+	}
+	if (m_pMemory)
+		m_pMemory = Plat_Realloc(m_pMemory, m_nAllocationCount << 3);
+	else
+		m_pMemory = Plat_Alloc(m_nAllocationCount << 3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc000 size=0x8
 void __fastcall sub_101bc000(int *p)
 {
