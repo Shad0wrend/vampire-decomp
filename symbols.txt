@@ -16,6 +16,7 @@
 0x10001550 func   ?sub_101db9a0@@YIXPAD@Z sub_101db9a0
 0x1000156e func   ?vfunc340@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc340
 0x10001604 func   _filter_multi filter_multi
+0x10001645 func   ?sub_1023f040@@YAXPAH@Z sub_1023f040
 0x1000164a func   ?sub_102885f0@@YIXPAUNPCStub@@@Z sub_102885f0
 0x100016db func   _logic_choreographed_scene logic_choreographed_scene
 0x100016e5 func   _vampireprojectile_mingxiaospit vampireprojectile_mingxiaospit
