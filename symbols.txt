@@ -278,6 +278,7 @@
 0x10008062 func   ?sub_1012cf10@CUnknown1012cf10@@QAEPAV1@XZ CUnknown1012cf10::sub_1012cf10
 0x10008107 func   _phys_keepupright phys_keepupright
 0x1000823d func   ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ CUnknown102d9150::sub_102d9150
+0x1000826a func   ?sub_100295d0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295d0
 0x1000829c func   ?sub_102a9600@CUnknown102a9600@@QAEMH@Z CUnknown102a9600::sub_102a9600
 0x10008300 func   ?sub_101c2a50@CUnknown101c2a50@@QAEXH@Z CUnknown101c2a50::sub_101c2a50
 0x10008328 func   _item_a_body_armor item_a_body_armor

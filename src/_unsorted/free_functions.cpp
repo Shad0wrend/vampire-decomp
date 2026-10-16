@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100295d0 size=0xa
+void CUnknown100295d0::sub_100295d0(int unused)
+{
+	m_bFlag = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002cc60 size=0xa
 struct CUnknown1002cc60 { int p[3]; int a; CUnknown1002cc60* sub_1002cc60(); };
 // TARGET: CUnknown1002cc60::sub_1002cc60
