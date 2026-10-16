@@ -26,3 +26,11 @@ int CSingleplayRules::vfunc48(int index)
 	return 2;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101ac080 size=0x8
+// TARGET: CSingleplayRules::vfunc61
+int CSingleplayRules::vfunc61(int index)
+{
+	return 9;
+}
+// END FUNCTION

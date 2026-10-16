@@ -325,6 +325,7 @@
 0x1000c630 func   _item_g_drugs_morphine_bottle item_g_drugs_morphine_bottle
 0x1000c644 func   _info_node_patrol_point info_node_patrol_point
 0x1000c702 func   _item_g_garys_film item_g_garys_film
+0x1000c784 func   ?vfunc61@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc61
 0x1000c7cf func   _instanced_scripted_scene instanced_scripted_scene
 0x1000c81f func   _item_k_tatoo_parlor_key item_k_tatoo_parlor_key
 0x1000c833 func   _item_w_chang_energy_ball item_w_chang_energy_ball
