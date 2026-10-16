@@ -1407,6 +1407,14 @@ void CUnknown102db420::sub_102db420(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db630 size=0xa
+extern char g_1092719c;
+void sub_102db630(char value)
+{
+	g_1092719c = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dce10 size=0x8
 void __fastcall sub_102dce10(int *p) { p[3] = 0; }
 // END FUNCTION
