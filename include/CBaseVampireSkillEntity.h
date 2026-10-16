@@ -11,4 +11,5 @@ public:
 	int m_unk78c;
 
 	int sub_1020b000(CBaseEntity *pPlayer);
+	void vfunc272();
 };
