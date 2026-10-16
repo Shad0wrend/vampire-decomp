@@ -494,6 +494,7 @@
 0x10010a14 func   _prop_keypad prop_keypad
 0x10010aaf func   _tectonic tectonic
 0x10010c26 func   _multisource multisource
+0x10010c2b func   ?sub_100f0320@@YIXPAD@Z sub_100f0320
 0x10010ce9 func   _env_soundscape env_soundscape
 0x10010dd9 func   _item_p_occult_frenzy item_p_occult_frenzy
 0x10010e0b func   _npc_bullseye npc_bullseye
