@@ -43,6 +43,7 @@
 0x100021ad func   _trigger_fog trigger_fog
 0x100021e4 func   ?vfunc407@CBasePlayer@@UAEXXZ CBasePlayer::vfunc407
 0x1000222a func   _item_g_garys_tape item_g_garys_tape
+0x10002266 func   ?sub_100bc5e0@@YIXPAHHH@Z sub_100bc5e0
 0x10002289 func   _viewmodel viewmodel
 0x100022e8 func   ?sub_10156d30@@YIXPAD@Z sub_10156d30
 0x100023a1 func   ?sub_1027d990@CUnknown1027d990@@QAEHXZ CUnknown1027d990::sub_1027d990
