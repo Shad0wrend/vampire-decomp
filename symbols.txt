@@ -1,4 +1,5 @@
 0x10001037 func   ?sub_1034b540@CUnknown1034b540@@QAEXH@Z CUnknown1034b540::sub_1034b540
+0x10001041 func   ?sub_102ae7f0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102ae7f0
 0x10001078 func   ?sub_101be1d0@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101be1d0
 0x10001082 func   _trigger_brush trigger_brush
 0x1000114a func   ?vfunc194@CBaseEntity@@QAEXXZ CBaseEntity::vfunc194
