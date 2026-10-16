@@ -86,6 +86,7 @@
 0x100038b9 func   ?sub_100eb3b0@@YIXPAH@Z sub_100eb3b0
 0x100038c3 func   ?sub_102deea0@@YIXPAH@Z sub_102deea0
 0x10003922 func   _item_g_bloodpack item_g_bloodpack
+0x10003a26 func   ?sub_10104630@@YGXH@Z sub_10104630
 0x10003a3a func   ?sub_1021e1c0@@YIXPAH@Z sub_1021e1c0
 0x10003a80 func   _soundent soundent
 0x10003abc func   _env_shooter env_shooter
