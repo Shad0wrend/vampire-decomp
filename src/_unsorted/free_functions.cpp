@@ -886,6 +886,14 @@ void sub_101eddd0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0270 size=0xb
+int * __fastcall sub_101f0270(int *self, int, int value)
+{
+	*self = value;
+	return self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2500 size=0x9
 struct CUnknown101f2500 { int a; char sub_101f2500(); };
 // TARGET: CUnknown101f2500::sub_101f2500
