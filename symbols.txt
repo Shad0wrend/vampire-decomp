@@ -100,6 +100,7 @@
 0x100040a7 func   ?sub_10078c30@@YIXPAH@Z sub_10078c30
 0x10004232 func   ?sub_10158da0@@YIXPAPAX@Z sub_10158da0
 0x10004269 func   _params_particle params_particle
+0x100042a0 func   ?sub_101cc7b0@@YIXPAPAX@Z sub_101cc7b0
 0x10004313 func   ?sub_10078b70@@YIXPAH@Z sub_10078b70
 0x1000432c func   ?sub_1010f4e0@@YIXPAPAX@Z sub_1010f4e0
 0x1000433b func   _info_node_werewolf info_node_werewolf
