@@ -2708,6 +2708,16 @@ void CUnknown102ee120::sub_102f2fe0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f65b0 size=0xd
+extern char g_1093408c;
+extern int g_1093407c;
+void sub_102f65b0()
+{
+	g_1093408c = 0;
+	g_1093407c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f8ef0 size=0x8
 void __fastcall sub_102f8ef0(int *p)
 {
