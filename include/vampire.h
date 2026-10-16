@@ -38,6 +38,7 @@
 #include "CStealthKillRules.h"
 #include "CUnknown100295d0.h"
 #include "CUnknown10058200.h"
+#include "CUnknown100738e0.h"
 #include "CUnknown100792c0.h"
 #include "CUnknown100a8220.h"
 #include "CUnknown100b7c60.h"
