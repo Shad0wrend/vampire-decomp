@@ -590,6 +590,7 @@
 0x1000b488 func   _env_global env_global
 0x1000b4ba func   ?vfunc50@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc50
 0x1000b4ec func   ?sub_1025b5b0@@YAHXZ sub_1025b5b0
+0x1000b532 func   ?sub_1004b990@CMem16b_t@@QAEXH@Z CMem16b_t::sub_1004b990
 0x1000b555 func   _item_k_oceanhouse_sewer_key item_k_oceanhouse_sewer_key
 0x1000b55f func   ?sub_101da960@CUnknown101da960@@QAEPBDH@Z CUnknown101da960::sub_101da960
 0x1000b5d7 func   ?sub_101c2a70@CUnknown101c2a90@@QAEMXZ CUnknown101c2a90::sub_101c2a70
