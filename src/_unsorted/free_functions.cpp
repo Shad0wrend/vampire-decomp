@@ -92,6 +92,12 @@ struct CUnknown100bc560 { int p[3]; int a; char b; void sub_100bc560(); };
 void CUnknown100bc560::sub_100bc560() { a = 0; b = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100bdfe0 size=0x9
+struct CUnknown100bdfe0 { int p[3]; int a; char b; void sub_100bdfe0(); };
+// TARGET: CUnknown100bdfe0::sub_100bdfe0
+void CUnknown100bdfe0::sub_100bdfe0() { a = 0; b = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x100db3f0 size=0x8
 extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
