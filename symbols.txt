@@ -351,6 +351,7 @@
 0x10007c2f func   _item_w_baseball_bat item_w_baseball_bat
 0x10007c4d func   ?sub_1006ed20@CUnknown1006ed20@@QAEXH@Z CUnknown1006ed20::sub_1006ed20
 0x10007c5c func   _light_glspot light_glspot
+0x10007ca7 func   ?sub_101c1b60@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1b60
 0x10007cde func   _player player
 0x10007d42 func   ?vfunc4@CRecipientFilter@@UAEDXZ CRecipientFilter::vfunc4
 0x10007d5b func   _item_k_gimble_key item_k_gimble_key
