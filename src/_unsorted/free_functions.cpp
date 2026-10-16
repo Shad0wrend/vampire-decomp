@@ -2614,6 +2614,23 @@ extern char g_105c5338;
 void sub_1024b070() { g_105c5338 = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1024cef0 size=0x67
+struct CBlock64_t {
+	int d[16];
+	// TARGET: CBlock64_t::sub_1024cef0
+	CBlock64_t *sub_1024cef0(const CBlock64_t *o);
+};
+
+CBlock64_t *CBlock64_t::sub_1024cef0(const CBlock64_t *o)
+{
+	d[0] = o->d[0]; d[1] = o->d[1]; d[2] = o->d[2]; d[3] = o->d[3];
+	d[4] = o->d[4]; d[5] = o->d[5]; d[6] = o->d[6]; d[7] = o->d[7];
+	d[8] = o->d[8]; d[9] = o->d[9]; d[10] = o->d[10]; d[11] = o->d[11];
+	d[12] = o->d[12]; d[13] = o->d[13]; d[14] = o->d[14]; d[15] = o->d[15];
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102507b0 size=0x8
 void CBaseCombatWeapon::sub_102507b0() { vfunc361(); }
 // END FUNCTION

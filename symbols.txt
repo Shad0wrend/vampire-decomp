@@ -447,6 +447,7 @@
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point
 0x10008ebd func   ?vfunc274@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc274
 0x10008f67 func   _info_node_climb info_node_climb
+0x10008fb7 func   ?sub_1024cef0@CBlock64_t@@QAEPAU1@PBU1@@Z CBlock64_t::sub_1024cef0
 0x1000904d func   _light_environment light_environment
 0x100090cf func   _logic_relay logic_relay
 0x1000911a func   ?sub_10256200@@YIEPAE@Z sub_10256200
