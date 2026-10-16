@@ -141,6 +141,14 @@ void CUnknown10073a30::sub_10073a30(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073b20 size=0xd
+// TARGET: CUnknown10073b20::sub_10073b20
+void CUnknown10073b20::sub_10073b20(int value)
+{
+	m_unk80 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073b60 size=0xd
 void CUnknown10073b60::sub_10073b60(int value)
 {
