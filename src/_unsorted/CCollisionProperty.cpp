@@ -30,3 +30,19 @@ int CCollisionProperty::vfunc6()
 	return m_pOuter->vfunc8();
 }
 // END FUNCTION
+
+// FUNCTION: 0x100dc960 size=0xb
+#define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CEntSlots
+{
+	T(a0) T(a1) T(a2) T(a3) T(a4) T(a5) T(a6) T(a7) T(a8)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8();
+	virtual void target();
+};
+
+// TARGET: CCollisionProperty::vfunc4
+void CCollisionProperty::vfunc4()
+{
+	((CEntSlots *)m_pOuter)->target();
+}
+// END FUNCTION
