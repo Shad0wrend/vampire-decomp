@@ -569,6 +569,15 @@ struct CUnknown10258af0 {
 void CUnknown10258af0::sub_10258af0() { slot407(); }
 // END FUNCTION
 
+// FUNCTION: 0x1025b5b0 size=0x9
+extern unsigned short g_1089d7da;
+
+int sub_1025b5b0()
+{
+	return g_1089d7da;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d820 size=0x9
 struct CUnknown1025d820 { int a; CUnknown1025d820* sub_1025d820(); };
 // TARGET: CUnknown1025d820::sub_1025d820
