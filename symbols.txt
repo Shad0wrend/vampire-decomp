@@ -2,6 +2,7 @@
 0x10001078 func   ?sub_101be1d0@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101be1d0
 0x10001082 func   _trigger_brush trigger_brush
 0x1000114a func   ?vfunc194@CBaseEntity@@QAEXXZ CBaseEntity::vfunc194
+0x1000127b func   ?sub_100c8a00@@YIXPADHH@Z sub_100c8a00
 0x10001285 func   _npc_VVentrue npc_VVentrue
 0x1000129e func   ?sub_102f99b0@@YAXXZ sub_102f99b0
 0x100012b7 func   ?sub_101f2500@CUnknown101f2500@@QAEDXZ CUnknown101f2500::sub_101f2500

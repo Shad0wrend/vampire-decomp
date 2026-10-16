@@ -239,6 +239,13 @@ void __fastcall sub_100c89e0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c8a00 size=0xa
+void __fastcall sub_100c8a00(char *self, int, int)
+{
+	self[0x5c4] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db3f0 size=0x8
 extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
