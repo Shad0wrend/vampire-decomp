@@ -690,6 +690,7 @@
 0x100155be func   _prop_ragdoll prop_ragdoll
 0x100155d2 func   ?sub_10185180@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_10185180
 0x10015703 func   ?vfunc104@CBaseButton@@UAEXXZ CBaseButton::vfunc104
+0x10015712 func   ?sub_1034b560@CUnknown1034b560@@QAEXH@Z CUnknown1034b560::sub_1034b560
 0x10015726 func   _item_w_claws_ghoul item_w_claws_ghoul
 0x10015758 func   ?sub_10184360@@YIXPAH@Z sub_10184360
 0x10015780 func   ?vfunc359@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc359
