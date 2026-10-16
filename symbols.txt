@@ -279,6 +279,7 @@
 0x10008788 func   _item_g_drugs_perscription_bottle item_g_drugs_perscription_bottle
 0x100087d8 func   _trigger trigger
 0x100087e2 func   ?sub_101e22b0@CUnknown101e22b0@@QAE_NXZ CUnknown101e22b0::sub_101e22b0
+0x10008832 func   ?sub_102eeba0@CUnknown102eeba0@@QAEXH@Z CUnknown102eeba0::sub_102eeba0
 0x10008850 func   ?sub_101daf60@CUnknown101daf60@@QAE_NXZ CUnknown101daf60::sub_101daf60
 0x1000885a func   _gravity_pellet gravity_pellet
 0x1000886e func   _aiscripted_sequence aiscripted_sequence

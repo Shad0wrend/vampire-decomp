@@ -796,6 +796,12 @@ struct CUnknown102ee600 { char pad[0x30]; CInner1000a704 *m_pInner; int sub_102e
 int CUnknown102ee600::sub_102ee600() { return m_pInner->sub_1000a704(); }
 // END FUNCTION
 
+// FUNCTION: 0x102eeba0 size=0xa
+struct CUnknown102eeba0 { int p[6]; int a; void sub_102eeba0(int v); };
+// TARGET: CUnknown102eeba0::sub_102eeba0
+void CUnknown102eeba0::sub_102eeba0(int v) { a = v; }
+// END FUNCTION
+
 // FUNCTION: 0x102f8ef0 size=0x8
 void __fastcall sub_102f8ef0(int *p)
 {
