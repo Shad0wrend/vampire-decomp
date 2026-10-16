@@ -1,14 +1,15 @@
-// class CBasePlayer (RTTI .?AVCBasePlayer@@), primary vtable 0x1046fbb4, 469 slots.
-// The derivation CBaseEntity -> CBaseToggle -> CBaseAnimating -> CBaseAnimatingOverlay ->
-// CBaseFlex -> CBaseCombatCharacter -> CBasePlayer (all at +0x0) is not modelled yet, so
-// only the slots and members decompiled code needs are declared, at their real offsets.
+// CBasePlayer: the player entity.
+// Barely recovered yet: only the members decompiled code needs are named, the
+// rest is padding that keeps their offsets. The vtable slots are *not* modelled
+// here, so the declaration order of the virtuals below carries no meaning --
+// add the padding slots before using a virtual call through this class.
 #pragma once
 
 class CBasePlayer
 {
 public:
-	virtual void vfunc408();
+	virtual void vfunc407();
 
-	char m_04[0x19f6 - 0x04];
-	bool m_19f6;
+	char m_pad0004[0x19F2];	// 0x0004 .. 0x19F5
+	bool m_b19F6;
 };
