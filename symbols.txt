@@ -102,6 +102,7 @@
 0x10004269 func   _params_particle params_particle
 0x1000429b func   ?sub_101cc800@CUnknown101cc800@@QAEXXZ CUnknown101cc800::sub_101cc800
 0x100042a0 func   ?sub_101cc7b0@@YIXPAPAX@Z sub_101cc7b0
+0x100042a5 func   ?sub_102c6d80@CUnknown102c6d80@@QAEXXZ CUnknown102c6d80::sub_102c6d80
 0x10004313 func   ?sub_10078b70@@YIXPAH@Z sub_10078b70
 0x10004318 func   ?sub_101cc7f0@@YIXPAPAX@Z sub_101cc7f0
 0x1000431d func   ?sub_101cc7a0@CUnknown101cc7a0@@QAEXXZ CUnknown101cc7a0::sub_101cc7a0

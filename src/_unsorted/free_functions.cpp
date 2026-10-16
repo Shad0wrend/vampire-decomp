@@ -483,6 +483,19 @@ void __fastcall sub_102a96f0(TroikaStub *o)
 void __fastcall sub_102c6bd0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102c6d80 size=0x8
+#define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
+#define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
+struct CUnknown102c6d80 {
+	V25(p0) V25(p1) V25(p2) V25(p3) V25(p4) V25(p5) V25(p6) V25(p7) V25(p8) V25(p9)
+	V25(q0) V25(q1) V25(q2) V25(q3) V25(q4) V25(q5) V25(q6) V25(q7) V25(q8)
+	V5(r0) V5(r1) virtual void f0();
+	virtual void slot486();
+	void sub_102c6d80();
+};
+void CUnknown102c6d80::sub_102c6d80() { slot486(); }
+// END FUNCTION
+
 // FUNCTION: 0x102cc7e0 size=0x8
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
