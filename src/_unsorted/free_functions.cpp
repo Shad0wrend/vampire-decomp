@@ -319,6 +319,13 @@ void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
 // END FUNCTION
 
+// FUNCTION: 0x10109da0 size=0xa
+void __fastcall sub_10109da0(char *self, int, int)
+{
+	self[0x490] = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f4e0 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1010f4e0(void **p) { ((Fn *)*p)[241](p); }
