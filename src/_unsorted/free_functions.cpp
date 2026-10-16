@@ -2514,6 +2514,13 @@ struct CUnknown102a9ea0 { int a[1]; int sub_102a9ea0(int i); };
 int CUnknown102a9ea0::sub_102a9ea0(int i) { return a[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x102a9ec0 size=0xe
+char CAI_BaseNPCTroika::sub_102a9ec0(int index)
+{
+	return *((char *)this + index + 0x88);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ae7f0 size=0xd
 void CUnknown102b5dc0::sub_102ae7f0(int value)
 {
