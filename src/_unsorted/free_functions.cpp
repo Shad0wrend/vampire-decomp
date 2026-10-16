@@ -122,6 +122,15 @@ void CUnknown10076670::sub_100766b0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077730 size=0xd
+#include "CUnknown10077730.h"
+
+void CUnknown10077730::sub_10077730(char value)
+{
+	m_bFlag320 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078860 size=0xb
 void __fastcall sub_10078860(char *self)
 {
