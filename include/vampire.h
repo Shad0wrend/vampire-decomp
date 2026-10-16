@@ -30,6 +30,7 @@
 #include "CSkyCamera.h"
 #include "CStealthKillRules.h"
 #include "CUnknown100a8220.h"
+#include "CUnknown10074a30.h"
 #include "CUnknown100dea90.h"
 #include "CUnknown1012cf10.h"
 #include "CUnknown101c2a90.h"
