@@ -54,6 +54,7 @@
 #include "CUnknown102e8a40.h"
 #include "CUnknown10074a30.h"
 #include "CUnknown10080750.h"
+#include "CUnknown10098810.h"
 #include "CUnknown100dea90.h"
 #include "CUnknown1012cf10.h"
 #include "CUnknown101c2a90.h"
