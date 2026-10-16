@@ -1673,6 +1673,15 @@ void CUnknown102e12c0::sub_10264450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102652d0 size=0xd
+int CUnknown102652d0::sub_102652d0()
+{
+	if (m_unkC != 0)
+		return m_unk0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10265800 size=0xa
 extern unsigned char g_1092053c;
 
