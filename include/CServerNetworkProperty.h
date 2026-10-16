@@ -1,11 +1,6 @@
 #pragma once
 
-struct CUnknown10146790 {
-	char m_pad0;
-	char m_b1;
-	char m_b2;
-	void sub_10146790();
-};
+struct CUnknown10146790;
 
 class CServerNetworkProperty {
 public:
@@ -25,5 +20,5 @@ public:
 	virtual void vfunc13();
 	virtual void vfunc14();
 	char m_pad4[0xc];
-	CUnknown10146790 m_unk10;
+	char m_unk10[4];
 };
