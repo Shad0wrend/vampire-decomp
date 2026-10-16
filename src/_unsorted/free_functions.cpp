@@ -160,6 +160,10 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_10158da0(void **p) { ((Fn *)*p)[245](p); }
 // END FUNCTION
 
+// FUNCTION: 0x1015eee0 size=0x8
+void __fastcall sub_1015eee0(char *p) { p[0x19f5] = 0; }
+// END FUNCTION
+
 // FUNCTION: 0x1015ef00 size=0x8
 struct CUnknown1015ef00 { char pad[0x19f5]; char m_Flag; void sub_1015ef00(); };
 void CUnknown1015ef00::sub_1015ef00() { m_Flag = 1; }
