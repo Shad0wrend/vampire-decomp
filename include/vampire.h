@@ -15,6 +15,7 @@
 #include "CCopyRecipientFilter.h"
 #include "CDirtySpatialPartitionEntityList.h"
 #include "CEffectsServer.h"
+#include "CEnvParticle.h"
 #include "CFuncPlat.h"
 #include "CGameRules.h"
 #include "CGlobalEntityList.h"
