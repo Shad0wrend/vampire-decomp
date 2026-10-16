@@ -1971,6 +1971,14 @@ void CUnknown102237c0::sub_102237c0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102237e0 size=0xd
+void CUnknown102237e0::sub_102237e0(int index)
+{
+	index = -1;
+	sub_1000e5ca(index);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10223800 size=0xd
 #include "CUnknown10223800.h"
 // TARGET: CUnknown10223800::sub_10223800
