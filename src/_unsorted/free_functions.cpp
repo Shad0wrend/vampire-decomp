@@ -1415,6 +1415,13 @@ void sub_102db630(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dcd10 size=0xa
+void CUnknown102dcd10::sub_102dcd10(int unused)
+{
+	m_unk45d = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dce10 size=0x8
 void __fastcall sub_102dce10(int *p) { p[3] = 0; }
 // END FUNCTION
