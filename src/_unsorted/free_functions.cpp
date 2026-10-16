@@ -183,6 +183,15 @@ void CUnknown100766f0::sub_100766f0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076ad0 size=0xd
+#include "CUnknown10077730.h"
+
+void CUnknown10077730::sub_10076ad0(char value)
+{
+	m_bFlag198 = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077730 size=0xd
 #include "CUnknown10077730.h"
 
