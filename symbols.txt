@@ -371,6 +371,7 @@
 0x1000da58 func   _aiscripted_schedule aiscripted_schedule
 0x1000db16 func   _item_p_occult_experience item_p_occult_experience
 0x1000dbc5 func   _trigger_proximity trigger_proximity
+0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43
 0x1000ddeb func   _info_node_cover_corner info_node_cover_corner
 0x1000de95 func   _item_g_bertrams_cd item_g_bertrams_cd
 0x1000df71 func   _npc_VMingXiaoTentacle npc_VMingXiaoTentacle
