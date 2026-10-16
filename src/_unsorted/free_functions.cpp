@@ -1091,6 +1091,13 @@ void __fastcall sub_1021e410(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227210 size=0xa
+void CUnknown10227210::sub_10227210(int unused)
+{
+	m_unk450 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227230 size=0xa
 void __fastcall sub_10227230(char *self, int, int)
 {

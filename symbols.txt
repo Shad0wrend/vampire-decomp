@@ -167,6 +167,7 @@
 0x10005178 func   _trigger_checkvolume trigger_checkvolume
 0x10005196 func   _npc_VTzimisceHeadClaw npc_VTzimisceHeadClaw
 0x100052a9 func   _item_g_cash_box item_g_cash_box
+0x100052ef func   ?sub_10227210@CUnknown10227210@@QAEXH@Z CUnknown10227210::sub_10227210
 0x10005317 func   _prop_radio prop_radio
 0x1000532b func   _prop_mover prop_mover
 0x100053bc func   ?sub_101f9630@@YAXH@Z sub_101f9630
