@@ -30,6 +30,13 @@ void __fastcall sub_1003c1c0(int *p)
 void __fastcall sub_10078b10(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10078b70 size=0x8
+void __fastcall sub_10078b70(int *p)
+{
+	p[3] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ee00 size=0x8
 void __fastcall sub_1007ee00(int *p) { p[3] = 0; }
 // END FUNCTION
