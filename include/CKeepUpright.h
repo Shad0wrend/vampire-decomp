@@ -8,6 +8,8 @@ class CKeepUpright : public CBaseEntity
 {
 public:
 	void vfunc113();
+	CKeepUpright *vfunc5(unsigned int flags);	// scalar deleting destructor, declared as a plain member
+	void sub_100057c2();	// destructor body
 
 	char m_padKU[0x450 - sizeof(CBaseEntity)];
 	void *m_motionEvent;        // 0x450 IMotionEvent sub-object (vtable)
