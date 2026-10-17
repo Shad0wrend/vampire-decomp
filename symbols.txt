@@ -1156,6 +1156,7 @@
 0x10010519 func   ?sub_1013fd20@CUtlMemory96@@QAEXH@Z CUtlMemory96::sub_1013fd20
 0x10010532 func   _trigger_teleport trigger_teleport
 0x100105eb func   _func_pushable func_pushable
+0x1001061d func   ?IsValidExpression@CExpressionTable@@QAE_NH@Z CExpressionTable::IsValidExpression
 0x1001061d func   ?sub_10104ff0@@YI_NPAUTable@@HH@Z sub_10104ff0
 0x1001064a func   ?sub_101857f0@UtlMem8@@QAEXH@Z UtlMem8::sub_101857f0
 0x1001064f func   ?sub_100df7b0@@YA_NXZ sub_100df7b0
