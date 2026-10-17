@@ -62,6 +62,24 @@ void CBaseEntity::vfunc238(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009ad70 size=0x78
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+char * __fastcall sub_1009ad70(char *self)
+{
+    const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::DebugGetEntityName";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    (*g_109f3680)--;
+    return self + 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009faf0 size=0x6f
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
