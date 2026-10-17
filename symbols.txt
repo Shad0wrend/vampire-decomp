@@ -1144,6 +1144,7 @@
 0x1000ef52 func   ?sub_10074a30@CUnknown10074a30@@QAEXD@Z CUnknown10074a30::sub_10074a30
 0x1000ef7a func   _item_g_warrens4_passkey item_g_warrens4_passkey
 0x1000ef8e func   _ambient_soundscheme ambient_soundscheme
+0x1000efb1 func   ?vfunc2@CTETracer@@UAEPAV1@I@Z CTETracer::vfunc2
 0x1000efb6 func   _item_k_lucky_star_murder_key item_k_lucky_star_murder_key
 0x1000eff2 func   ?vfunc2@CTEBeamEnts@@UAEPAV1@I@Z CTEBeamEnts::vfunc2
 0x1000f024 func   ?sub_1024a080@NodeHolder@@QAEHG@Z NodeHolder::sub_1024a080
