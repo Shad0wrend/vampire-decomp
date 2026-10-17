@@ -1,4 +1,4 @@
-// CExpressionTable: expression table (no vtable). Only what the constructor touches.
+// CExpressionTable: expression table (no vtable). Only what decompiled code touches.
 #pragma once
 
 #include "CUnknown1024b2d0.h"
@@ -14,4 +14,5 @@ public:
 	CUnknown1024b2d0 m_list;	// +0x14
 
 	CExpressionTable();
+	bool IsValidExpression(int index);	// 0 <= index < m_field0c
 };
