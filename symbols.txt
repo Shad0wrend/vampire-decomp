@@ -186,6 +186,7 @@
 0x1000353f func   ?vfunc440@CNPC_VChangBros@@QAEHH@Z CNPC_VChangBros::vfunc440
 0x10003580 func   ?sub_10058200@CUnknown10058200@@QAEXH@Z CUnknown10058200::sub_10058200
 0x100035d0 func   ?sub_102e2610@CAI_Motor@@QAEHXZ CAI_Motor::sub_102e2610
+0x100035e9 func   ?vfunc104@CEnvSpark@@UAEXXZ CEnvSpark::vfunc104
 0x100035f8 func   _trigger_once trigger_once
 0x10003652 func   ?vfunc191@CRagdollPropSpecial@@UAEXH@Z CRagdollPropSpecial::vfunc191
 0x10003657 func   _trigger_wind trigger_wind
