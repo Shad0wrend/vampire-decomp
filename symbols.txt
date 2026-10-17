@@ -1198,6 +1198,7 @@
 0x10011347 func   _npc_generic_bathack npc_generic_bathack
 0x1001134c func   ?sub_1027f1e0@@YGPBDH@Z sub_1027f1e0
 0x10011379 func   ?vfunc195@CBaseEntity@@QAEXXZ CBaseEntity::vfunc195
+0x10011383 func   ?sub_1024b230@@YA_NPBUStrRef@@0@Z sub_1024b230
 0x100113ce func   _trigger_electric_bugaloo trigger_electric_bugaloo
 0x100113d3 func   _npc_VChangBrosBlade npc_VChangBrosBlade
 0x100113ec func   ?sub_1012f190@@YAHH@Z sub_1012f190
