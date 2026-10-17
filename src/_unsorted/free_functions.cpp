@@ -5953,6 +5953,70 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10336920 size=0xe7
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern TraceEnt *g_109f3620;
+extern int *g_109f3680;
+extern char g_1062147c[];
+extern char g_105387dc[];
+extern char g_106b8540[];
+extern unsigned char g_109f0b2a;
+void sub_10012a8a();
+int sub_10430923(void (*)());
+
+struct Slot {
+	int pad[4];
+	int field10;
+	void sub_10013ba6(int);
+	int sub_10010609(int);
+};
+extern Slot g_109f0b40;
+
+struct Ent {
+	char pad[0x26c];
+	const char *name;
+	char pad2[0x13bc - 0x270];
+	int count;
+	Slot **slots;
+	bool sub_10336920();
+};
+
+bool Ent::sub_10336920()
+{
+	const char *n;
+	if (this != 0) {
+		n = name;
+		if (!n)
+			n = g_106b8540;
+	} else
+		n = g_105387dc;
+	g_109f3620[*g_109f3680].a = g_1062147c;
+	g_109f3620[*g_109f3680].b = n;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	Slot *s;
+	for (int i = 0; i < count; i++) {
+		if (slots[i]->field10 == 0) {
+			s = slots[i];
+			goto call;
+		}
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		g_109f0b40.sub_10013ba6(-1);
+		sub_10430923(sub_10012a8a);
+	}
+	s = &g_109f0b40;
+call:
+	if (s->sub_10010609(11) == 1) {
+		--*g_109f3680;
+		return true;
+	}
+	--*g_109f3680;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349a00 size=0x8
 void __fastcall sub_10349a00(int *p) { p[3] = 0; }
 // END FUNCTION
