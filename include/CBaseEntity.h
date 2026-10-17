@@ -50,6 +50,7 @@ public:
 	void vfunc168();
 	void vfunc194();
 	void vfunc195();
+	float *vfunc214();	// "CBaseEntity::GetSize": returns &field at +0x38c
 	void vfunc228(int a, int b);
 	void vfunc238(int a, int b, int c, int d);
 
