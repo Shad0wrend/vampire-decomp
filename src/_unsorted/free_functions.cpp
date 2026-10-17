@@ -4741,6 +4741,31 @@ int sub_1012f340(const char *a, const char *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f640 size=0x81
+struct SFloatPair { float lo; float range; };
+
+extern void (*g_109f3890)(char *dest, const char *src, int count);
+char *sub_10432c14(char *str, const char *delim);
+double sub_1043136f(const char *str);
+
+SFloatPair sub_1012f640(const char *text)
+{
+    SFloatPair r;
+    r.lo = 0;
+    r.range = 0;
+    char buf[128];
+    g_109f3890(buf, text, 128);
+    char *tok = sub_10432c14(buf, ",");
+    if (tok) {
+        r.lo = (float)sub_1043136f(tok);
+        tok = sub_10432c14(0, ",");
+        if (tok)
+            r.range = sub_1043136f(tok) - r.lo;
+    }
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f850 size=0x9
 // TARGET: sub_1012f850
 float sub_1012f850(float x) { return x * x; }
