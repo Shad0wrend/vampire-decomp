@@ -13,6 +13,7 @@
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CNPC_VSheriffMan.h"
 #include "CNPC_VVampireBoss.h"
+#include "CRagdollProp.h"
 #include "CRagdollPropSpecial.h"
 #include "CSaveRestoreBlockSet.h"
 #include "CUnknown10058220.h"
