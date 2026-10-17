@@ -9,6 +9,7 @@ class CBaseCombatCharacter : public CBaseEntity
 public:
 	void sub_103326b0(float amount);
 
-	// Slot 403, called directly so far; declared as a plain member.
+	// Slots called directly so far; declared as plain members.
+	void vfunc335();
 	void vfunc403();
 };
