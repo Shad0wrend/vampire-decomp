@@ -2012,6 +2012,41 @@ void UtlMem7::sub_100fdd50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10100ef0 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10568c10[2];
+void sub_100073c9();
+
+int *sub_10100ef0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_Duration", {0x450, 0}, 1, 0x6, "duration" },
+        { 1, "m_HoldTime", {0x454, 0}, 1, 0x6, "holdtime" },
+        { 0, "InputFade", {0x0, 0}, 1, 0x8, "Fade", 0, (void *)sub_100073c9 },
+        { 10, "m_OnBeginFade", {0x458, 0}, 1, 0x16, "OnBeginFade", g_1055dc70 },
+    };
+    g_10568c10[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10568c10[0] = (int)&dataDesc[1];
+    return g_10568c10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102410 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
