@@ -769,6 +769,7 @@
 0x1000db70 func   ?sub_104121d0@@YAXXZ sub_104121d0
 0x1000dbbb func   ?sub_102c3690@CAI_BaseNPCTroika@@QAEPBDH@Z CAI_BaseNPCTroika::sub_102c3690
 0x1000dbc5 func   _trigger_proximity trigger_proximity
+0x1000dbca func   ?sub_10102410@@YAPAHXZ sub_10102410
 0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43
 0x1000dddc func   ?sub_102f1690@CUnknown102ee120_x@@QAE_NPAUHelperParams102f1690@@@Z CUnknown102ee120_x::sub_102f1690
 0x1000ddeb func   _info_node_cover_corner info_node_cover_corner

@@ -1976,6 +1976,45 @@ void UtlMem7::sub_100fdd50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102410 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105698f8[2];
+void sub_10003701();
+void sub_10011022();
+
+int *sub_10102410()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_nSoundMask", {0x458, 0}, 1, 6, "SoundMask" },
+        { 1, "m_flSensitivity", {0x45c, 0}, 1, 6, "Sensitivity" },
+        { 1, "m_flSmoothFactor", {0x460, 0}, 1, 6, "SmoothFactor" },
+        { 5, "m_bDisabled", {0x450, 0}, 1, 6, "StartDisabled" },
+        { 0, "InputEnable", {0, 0}, 1, 8, "Enable", 0, (void *)sub_10003701 },
+        { 0, "InputDisable", {0, 0}, 1, 8, "Disable", 0, (void *)sub_10011022 },
+        { 10, "m_SoundLevel", {0x464, 0}, 1, 0x16, "SoundLevel", g_1055dc70 },
+    };
+    g_105698f8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105698f8[0] = (int)&dataDesc[1];
+    return g_105698f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101030e0 size=0xd
 void CUnknown101030e0::sub_101030e0(int mode)
 {
