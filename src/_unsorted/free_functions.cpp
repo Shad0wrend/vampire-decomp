@@ -6335,6 +6335,27 @@ CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f3540 size=0x49
+#include "CWeaponIArmor_Hvy_Cloth.h"
+extern void* vt_104e4cbc;
+extern const char g_105875ec[];
+void* sub_1000db89(unsigned int);
+
+// TARGET: item_a_hvy_cloth
+extern "C" CWeaponIArmor_Hvy_Cloth* item_a_hvy_cloth()
+{
+	CWeaponIArmor_Hvy_Cloth* p = (CWeaponIArmor_Hvy_Cloth*)sub_1000db89(0x910);
+	if (p) {
+		p->sub_10001a3c();
+		*(void**)p = &vt_104e4cbc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_105875ec);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104121d0 size=0xb
 extern int g_109d3080;
 void sub_104121d0()
