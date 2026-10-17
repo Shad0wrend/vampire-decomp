@@ -6922,6 +6922,50 @@ int CUnknown1030bc20::sub_1030bc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030bec0 size=0x69
+extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
+
+struct TObj {
+	char pad0[0x11];
+	char f11;
+	char pad12[2];
+	int v14, v18, v1c;
+	char pad20[4];
+	int f24, f28, f2c, f30;
+	char pad34[0xc];
+	int f40, f44;
+	char pad48[4];
+	int v4c, v50, v54;
+	char pad58[4];
+	int f5c, f60;
+	char pad64[0xc];
+	int f70;
+	TObj *sub_1030bec0();
+};
+
+TObj *TObj::sub_1030bec0()
+{
+	f24 = 0;
+	f30 = -1;
+	f70 = -1;
+	f5c = 0;
+	v4c = g_1070d1b0;
+	v50 = g_1070d1b4;
+	v54 = g_1070d1b8;
+	f28 = 0;
+	f2c = 1;
+	f30 = -1;
+	f60 = 0;
+	f44 = -1;
+	f40 = 0x3dcccccd;
+	f11 = 0;
+	v14 = g_1070d1b0;
+	v18 = g_1070d1b4;
+	v1c = g_1070d1b8;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030ca70 size=0x67
 extern "C" int _strcmpi(const char *, const char *);
 extern void (*g_109f366c)(const char *, ...);

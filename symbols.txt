@@ -905,6 +905,7 @@
 0x1000f1d7 func   ?sub_102ee4f0@CUnknown102ee4f0@@QAEXXZ CUnknown102ee4f0::sub_102ee4f0
 0x1000f1fa func   _trigger_bomb_site trigger_bomb_site
 0x1000f222 func   ?sub_100f0f30@@YIXPAUCSlots@@@Z sub_100f0f30
+0x1000f25e func   ?sub_1030bec0@TObj@@QAEPAU1@XZ TObj::sub_1030bec0
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
 0x1000f326 func   ?sub_101cfd80@@YA?AUTVec@@XZ sub_101cfd80
 0x1000f39e func   ?vfunc329@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc329
