@@ -15,11 +15,21 @@ struct CsActSaveIface
 	virtual void WriteInt(int *p, int n);
 };
 
+// Slots of the restore interface that CAI_CsActList::vfunc1 uses (3 = ReadFields, 15 = ReadInt).
+struct CsActRestoreIface
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual int ReadFields(const char *name, void *base, int a, int b, int c);
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void ReadInt(int *p, int n, int unused);
+};
+
 class CAI_CsActList
 {
 public:
 	virtual void vfunc0(CsActSaveIface *pSave);	// Save
-	virtual void vfunc1();
+	virtual void vfunc1(CsActRestoreIface *pRestore);	// Restore
 	virtual void vfunc2();
 
 	CSAct m_acts[0x40];	// 0x004 .. 0xa03
