@@ -4396,6 +4396,37 @@ void CVDmg_t::sub_101fb3e0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fc950 size=0x68
+struct TScope {
+	const char *name;
+	void *a;
+	void *b;
+};
+extern int *g_109f3680;
+extern TScope *g_109f3620;
+extern char g_105a7940[];
+extern char g_106b8540[];
+
+struct TStat {
+	char pad0[4];
+	int f4;
+	char pad8[0x34];
+	int f3c;
+	void sub_101fc950(int a, int b);
+};
+
+void TStat::sub_101fc950(int a, int b)
+{
+	g_109f3620[*g_109f3680].name = g_105a7940;
+	g_109f3620[*g_109f3680].a = g_106b8540;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	(*g_109f3680)++;
+	f4 = a;
+	f3c = b;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202760 size=0xc
 extern int g_105a6fc8[];
 int sub_10202760(int index)
