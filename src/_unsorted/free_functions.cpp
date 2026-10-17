@@ -7820,6 +7820,25 @@ void S104273f0::sub_104273f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10427700 size=0x69
+#include "CUnknown10427700.h"
+#include <string.h>
+
+extern char *(*g_109f3890)(char *, const char *, int);
+
+bool CUnknown10427700::sub_10427700(const char *name, int a, int b)
+{
+    if (m_nEntries == 0x20)
+        return false;
+    unsigned int len = strlen(name);
+    m_entries[m_nEntries].m_pName = (char *)operator new(len + 1);
+    g_109f3890(m_entries[m_nEntries].m_pName, name, len + 1);
+    m_entries[m_nEntries].m_a = a;
+    m_entries[m_nEntries].m_b = b;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428eb0 size=0xd
 int sub_10428eb0(char *p)
 {
