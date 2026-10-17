@@ -5236,6 +5236,33 @@ void __fastcall sub_101251e0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b290 size=0x49
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_100103fc(GP *);
+extern int vt_10462b8c;
+extern char g_10566070[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: gib
+extern "C" GP *gib()
+{
+	GP *p = (GP *)sub_1000db89(0x740);
+	if (p) {
+		sub_100103fc(p);
+		*(int **)p = &vt_10462b8c;
+	} else {
+		p = 0;
+	}
+	p->name(g_10566070);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c9c0 size=0x6a
 struct TEnt;
 struct TEntry {
