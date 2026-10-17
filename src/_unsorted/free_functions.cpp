@@ -3250,6 +3250,29 @@ int *sub_101931c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196ea0 size=0x68
+struct SPyObj { int refcnt; void **type; };
+struct SSink { void sub_1000769e(SPyObj *a, int b, int c); };
+extern SSink g_106e7050;
+extern int (*g_109f37a0)(void *, const char *, ...);
+extern SPyObj *(*g_109f37c8)(const char *);
+extern "C" __declspec(dllimport) SPyObj _Py_NoneStruct;
+// TARGET: sub_10196ea0
+SPyObj *sub_10196ea0(void *self, void *args)
+{
+    int n;
+    const char *s;
+    if (g_109f37a0(args, "fs", &n, &s)) {
+        SPyObj *o = g_109f37c8(s);
+        g_106e7050.sub_1000769e(o, n, 0);
+        if (--o->refcnt == 0)
+            ((void (*)(SPyObj *))o->type[6])(o);
+    }
+    _Py_NoneStruct.refcnt++;
+    return &_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199e20 size=0x65
 struct PyObj;
 struct PyType { char pad[0x18]; void (*dealloc)(PyObj*); };
