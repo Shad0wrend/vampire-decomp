@@ -75,6 +75,41 @@ void __fastcall sub_10032b00(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032fb0 size=0x6a
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct S10032fb0 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_10032fb0(int num);
+};
+// TARGET: S10032fb0::sub_10032fb0
+void S10032fb0::sub_10032fb0(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 2;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 0x18);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 0x18);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033040 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
