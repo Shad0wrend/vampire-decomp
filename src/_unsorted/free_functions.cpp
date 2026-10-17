@@ -8571,6 +8571,43 @@ void __fastcall sub_1021e6c0(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10220e10 size=0x83
+#include "QuestJournal.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct CScopeGuard {
+    CScopeGuard(const char *name)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = g_106b8540;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+QuestJournal *QuestJournal::sub_10220e10()
+{
+    m_field[0] = 0;
+    m_field[1] = 0;
+    m_field[2] = 0;
+    m_field[3] = 0;
+    m_field[4] = 0;
+    m_field[5] = 0;
+    m_field[6] = 0;
+    m_field[7] = 0;
+    m_field[8] = 0;
+    m_field[9] = 0;
+    CScopeGuard guard("QuestJournal::QuestJournal");
+    m_flag28 = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10222da0 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
