@@ -1434,6 +1434,7 @@
 0x10014a06 func   _info_node_tzimisce_claw_left info_node_tzimisce_claw_left
 0x10014a92 func   _info_node_hint info_node_hint
 0x10014ace func   ?sub_10230280@@YAXPAUR@@H@Z sub_10230280
+0x10014add func   ?sub_1011a580@@YAXPAUSHandleHolder@@@Z sub_1011a580
 0x10014bcd func   ?vfunc228@CBaseEntity@@QAEXHH@Z CBaseEntity::vfunc228
 0x10014bf5 func   ?sub_10184380@@YIXPAH@Z sub_10184380
 0x10014c1d func   ?sub_100ce810@@YGEPAUEv_t@@PAXPAH@Z sub_100ce810
