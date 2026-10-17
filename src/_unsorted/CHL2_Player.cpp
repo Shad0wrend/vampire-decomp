@@ -26,3 +26,21 @@ float CHL2_Player::vfunc481()
 	return p->b - p->a;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103528d0 size=0x70
+#include "CHL2_Player.h"
+struct Globals { char pad[0x10]; float frametime; };
+extern Globals *g_1070b228;
+
+void CHL2_Player::vfunc472()
+{
+    if (vfunc479()) {
+        vfunc474(g_1070b228->frametime * 4.2);
+    } else if (m_n252c != 0) {
+        if (!vfunc473(m_f2530 * g_1070b228->frametime)) {
+            if (vfunc445() != 0)
+                vfunc447();
+        }
+    }
+}
+// END FUNCTION
