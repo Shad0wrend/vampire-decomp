@@ -6937,6 +6937,25 @@ void __fastcall sub_1027d9b0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027ef20 size=0x6f
+#include "CUnknown1027ef20.h"
+
+extern "C" void *memset(void *, int, unsigned);
+int sub_10431c2f(char *, const char *, ...);
+
+void CUnknown1027ef20::sub_1027ef20(const char *text)
+{
+    if (text) {
+        m_pos += sub_10431c2f(m_buf + m_pos, text);
+        if (m_pos >= 0x3e00) {
+            memset(m_buf + m_pos, 0, 0x4000 - m_pos);
+            m_overflow = 1;
+            m_pos = 0;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027f1e0 size=0x6c
 const char * __stdcall sub_1027f1e0(int state)
 {
