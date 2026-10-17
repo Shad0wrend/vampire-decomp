@@ -844,6 +844,7 @@
 0x1000d9d6 func   _npc_VPlaceholder npc_VPlaceholder
 0x1000d9e5 func   _item_g_lilly_diary item_g_lilly_diary
 0x1000da03 func   _item_w_steyr_aug item_w_steyr_aug
+0x1000da21 func   ?sub_1024b2d0@CUnknown1024b2d0@@QAEPAV1@HHD@Z CUnknown1024b2d0::sub_1024b2d0
 0x1000da58 func   _aiscripted_schedule aiscripted_schedule
 0x1000db16 func   _item_p_occult_experience item_p_occult_experience
 0x1000db34 func   ?sub_102f9330@CMem4_t@@QAEXH@Z CMem4_t::sub_102f9330

@@ -6892,6 +6892,34 @@ extern char g_105c5338;
 void sub_1024b070() { g_105c5338 = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1024b2d0 size=0x71
+#include "CUnknown1024b2d0.h"
+
+void sub_10011383();
+void sub_1000c496();
+extern void *(*g_109f3634)(int);
+
+CUnknown1024b2d0 *CUnknown1024b2d0::sub_1024b2d0(int arg, int count, char flag)
+{
+    m_pfn = flag ? (void *)sub_10011383 : (void *)sub_1000c496;
+    m_pData = 0;
+    m_count = count;
+    m_arg = arg;
+    if (count != 0)
+        m_pData = g_109f3634(count * 12);
+    m_w12 = 0;
+    m_w10 = 0xffff;
+    m_w14 = 0xffff;
+    m_w16 = 0;
+    m_i18 = 0;
+    m_i1c = 0;
+    m_i20 = 8;
+    m_i24 = 0;
+    m_i28 = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024c050 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
