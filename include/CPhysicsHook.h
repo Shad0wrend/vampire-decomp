@@ -3,6 +3,7 @@
 // CPhysicsHook : CBaseGameSystem (IGameSystem), vtable 0x1044916c
 class CPhysicsHook {
 public:
+    void vfunc4(); // LevelShutdownPreEntity
     void vfunc7(); // FrameUpdatePostEntityThink
 
     void *m_vtbl;    // 0x00
