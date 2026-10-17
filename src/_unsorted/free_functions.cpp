@@ -1633,6 +1633,53 @@ extern int g_106cff54;
 void sub_100b4e80(int v) { g_106cff54 = v; }
 // END FUNCTION
 
+// FUNCTION: 0x100b68d0 size=0x6a
+struct TRandom {
+	virtual void v0();
+	virtual void v1();
+	virtual int RandomInt(int lo, int hi);
+};
+extern TRandom *g_1070b244;
+
+struct TItem {
+	int a;
+	int weight;
+};
+
+struct TSet {
+	char pad0[4];
+	int type;
+	int count;
+	char pad0c[4];
+	int selected;
+	int offset;
+
+	TItem *Get(int i)
+	{
+		if (type == 1 && i >= 0 && i < count)
+			return (TItem *)((char *)this + offset + i * 8);
+		return 0;
+	}
+};
+
+void sub_100b68d0(int unused, TSet *s)
+{
+	if (s->type != 1)
+		return;
+	int chosen = 0;
+	int total = 0;
+	for (int i = 0; i < s->count; i++) {
+		TItem *it = s->Get(i);
+		if (it) {
+			total += it->weight;
+			if (total == 0 || g_1070b244->RandomInt(0, total - 1) < it->weight)
+				chosen = i;
+		}
+	}
+	s->selected = chosen;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7130 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
