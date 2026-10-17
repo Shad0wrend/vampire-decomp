@@ -3645,6 +3645,37 @@ void S101859a0::sub_101859a0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10185a30 size=0x6a
+#include "CUnknown10185a30.h"
+
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUnknown10185a30::sub_10185a30(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int requested = m_nAllocationCount + num;
+    int alloc = m_nAllocationCount;
+    if (alloc < requested) {
+        while (alloc < requested) {
+            if (alloc) {
+                if (m_nGrowSize)
+                    alloc += m_nGrowSize;
+                else
+                    alloc += alloc;
+            } else
+                alloc = 1;
+        }
+        m_nAllocationCount = alloc;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 0x240);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 0x240);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101895d0 size=0x64
 #include "CRagdollProp.h"
 
