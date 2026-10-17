@@ -3703,6 +3703,41 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017cf90 size=0x6f
+struct EntInfo { void *ent; unsigned int serial; int pad; };
+struct EntList {
+    int vptr;
+    EntInfo arr[1];
+};
+extern EntList *g_10566458;
+struct EHandle {
+    unsigned int m_Index;
+    void *Get() const
+    {
+        if (m_Index == 0xffffffff)
+            return 0;
+        const EntInfo *p = &g_10566458->arr[m_Index & 0x1fff];
+        if (p->serial == (m_Index >> 13))
+            return p->ent;
+        return 0;
+    }
+};
+struct Holder {
+    char pad0[0x19b4];
+    EHandle m_hEnt;
+    char pad1[0x1ec4 - 0x19b8];
+    int m_nCount;
+};
+
+void * __fastcall sub_1017cf90(Holder *self)
+{
+    void *r = 0;
+    if (self->m_nCount > 0 && self->m_hEnt.Get() != 0)
+        r = self->m_hEnt.Get();
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101800e0 size=0xe
 #include "CUnknown101800e0.h"
 // TARGET: CUnknown101800e0::sub_101800e0
