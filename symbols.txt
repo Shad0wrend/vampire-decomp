@@ -972,6 +972,7 @@
 0x1000d34b func   ?sub_1009b5a0@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b5a0
 0x1000d364 func   ?sub_102db630@@YAXD@Z sub_102db630
 0x1000d3b4 func   _item_g_edane_report item_g_edane_report
+0x1000d3c3 func   ?vfunc2@CTEDynamicLight@@UAEPAV1@I@Z CTEDynamicLight::vfunc2
 0x1000d3eb func   _scripted_sentence scripted_sentence
 0x1000d418 func   _trigger_discipline_context trigger_discipline_context
 0x1000d445 func   _item_w_avamp_blade item_w_avamp_blade
