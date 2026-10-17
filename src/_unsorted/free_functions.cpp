@@ -15630,6 +15630,27 @@ extern "C" CItemGWarrLedger1* item_p_occult_strength()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fada0 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_104f3abc[];
+extern char g_106812f4[];
+
+// TARGET: item_p_occult_experience
+extern "C" CItemGWarrLedger1* item_p_occult_experience()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_104f3abc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_106812f4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
