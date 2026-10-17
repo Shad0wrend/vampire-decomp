@@ -17058,6 +17058,27 @@ extern "C" CItemGWarrLedger1* item_g_bertrams_cd()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10406b90 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_105116bc[];
+extern char g_10682b24[];
+
+// TARGET: item_g_ring_serial_killer_1
+extern "C" CItemGWarrLedger1* item_g_ring_serial_killer_1()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_105116bc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10682b24);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b120 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
