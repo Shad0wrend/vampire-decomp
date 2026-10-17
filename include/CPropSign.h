@@ -11,7 +11,7 @@ public:
 	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23(); virtual void vfunc24();
 	virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28(); virtual void vfunc29();
-	virtual void vfunc30(); virtual void vfunc31(); virtual void vfunc32(); virtual void vfunc33(); virtual void vfunc34();
+	virtual void vfunc30(); virtual void vfunc31(); virtual bool vfunc32(void *pEntity); virtual void vfunc33(); virtual void vfunc34();
 	virtual int vfunc35(int a);
 	char m_pad[0x768 - 4];
 	int m_field768;
