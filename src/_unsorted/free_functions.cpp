@@ -2026,6 +2026,30 @@ void CBaseEntity::sub_100b3b00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b40f0 size=0x71
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_10558ffc[];
+extern char g_105387dc[];
+extern char g_106b8540[];
+void CBaseEntity::sub_100b40f0(int a)
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_10558ffc;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4280 size=0x71
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

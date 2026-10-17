@@ -706,6 +706,7 @@
 0x1000b749 func   _npc_VMingXiao npc_VMingXiao
 0x1000b762 func   _item_g_watch_normal item_g_watch_normal
 0x1000b7a8 func   ?vfunc168@CBaseEntity@@QAEXXZ CBaseEntity::vfunc168
+0x1000b7b7 func   ?sub_100b40f0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100b40f0
 0x1000b7df func   _info_node_chang_column info_node_chang_column
 0x1000b843 func   ?sub_100a8220@CUnknown100a8220@@QAEIXZ CUnknown100a8220::sub_100a8220
 0x1000b87f func   _prop_model_state prop_model_state
