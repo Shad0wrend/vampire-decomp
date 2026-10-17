@@ -1510,6 +1510,28 @@ void CUnknown100c0c60::sub_100c0c60(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c40e0 size=0x54
+struct Elem_100c40e0 { char pad[0x88]; unsigned char flags; char pad2[3]; int type; char pad3[0xa0-0x90]; };
+struct Base_100c40e0 { char pad[0xf4]; int offset; };
+void sub_1001377d(Elem_100c40e0 *, int, int);
+void sub_1000e7cd(Elem_100c40e0 *, int, int);
+bool sub_100c40e0(Base_100c40e0 *p, int idx, int arg)
+{
+    Elem_100c40e0 *base = (Elem_100c40e0 *)((char *)p + p->offset);
+    if (base[idx].flags & 1) {
+        switch (base[idx].type) {
+        case 1:
+            sub_1000e7cd(base, idx, arg);
+            return true;
+        case 2:
+            sub_1001377d(base, idx, arg);
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6590 size=0xd
 int sub_100c6590(int p)
 {
