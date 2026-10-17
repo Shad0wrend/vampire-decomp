@@ -272,6 +272,7 @@
 0x10005196 func   _npc_VTzimisceHeadClaw npc_VTzimisceHeadClaw
 0x10005213 func   ?sub_101d4f20@CUnknown101d4f20@@QAEXPAUCUnknown101d4f20_Value@@@Z CUnknown101d4f20::sub_101d4f20
 0x100052a9 func   _item_g_cash_box item_g_cash_box
+0x100052e0 func   ??0CGrabController@@QAE@XZ CGrabController::CGrabController
 0x100052ef func   ?sub_10227210@CUnknown10227210@@QAEXH@Z CUnknown10227210::sub_10227210
 0x10005317 func   _prop_radio prop_radio
 0x1000532b func   _prop_mover prop_mover
