@@ -7396,6 +7396,30 @@ int *sub_103c50c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6df0 size=0x69
+#include "CNPC_VVampireBoss.h"
+
+struct TScope {
+	const char *name;
+	void *a;
+	void *b;
+};
+extern int *g_109f3680;
+extern TScope *g_109f3620;
+extern char g_1065ee4c[];
+extern char g_106b8540[];
+
+void CNPC_VVampireBoss::sub_103c6df0(int index, const char *name)
+{
+	g_109f3620[*g_109f3680].name = g_1065ee4c;
+	g_109f3620[*g_109f3680].a = g_106b8540;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	(*g_109f3680)++;
+	m_pBodyEmitterNames[index] = name;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c76b0 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
