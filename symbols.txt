@@ -298,6 +298,7 @@
 0x10004f2a func   ?sub_1042da80@CUnknown1042da80@@QAEXH@Z CUnknown1042da80::sub_1042da80
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
 0x100050e2 func   _item_p_research_mg_brawl item_p_research_mg_brawl
+0x10005123 func   ?vfunc619@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::vfunc619
 0x1000515f func   ?vfunc5@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc5
 0x10005178 func   _trigger_checkvolume trigger_checkvolume
 0x10005196 func   _npc_VTzimisceHeadClaw npc_VTzimisceHeadClaw
