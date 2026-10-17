@@ -13,5 +13,6 @@ public:
 	// Slots called directly so far; declared as plain members.
 	void vfunc335();
 	void vfunc336();
+	void vfunc338(int a, int b, int c);
 	void vfunc403();
 };
