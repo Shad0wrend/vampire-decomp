@@ -5808,6 +5808,41 @@ void __fastcall sub_102d00c0(int *self, int, int value)
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102d4390 size=0x67
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct S102d4390 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_102d4390(int num);
+};
+// TARGET: S102d4390::sub_102d4390
+void S102d4390::sub_102d4390(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 2;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount << 4);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount << 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d6210 size=0xe
 extern int *g_1060a750[];
 

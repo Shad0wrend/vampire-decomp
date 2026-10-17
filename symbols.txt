@@ -424,6 +424,7 @@
 0x10008107 func   _phys_keepupright phys_keepupright
 0x1000812f func   ?sub_102d00c0@@YIXPAHHH@Z sub_102d00c0
 0x1000814d func   ?vfunc7@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc7
+0x1000816b func   ?sub_102d4390@S102d4390@@QAEXH@Z S102d4390::sub_102d4390
 0x10008175 func   ?sub_10428eb0@@YAHPAD@Z sub_10428eb0
 0x10008184 func   ?sub_101895d0@@YAXPAVCBaseEntity@@HH@Z sub_101895d0
 0x10008189 func   ?sub_102e2730@@YIXPAUCOwner@@@Z sub_102e2730
