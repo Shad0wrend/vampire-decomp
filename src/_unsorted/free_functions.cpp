@@ -13575,6 +13575,33 @@ struct CUnknown1034d590 { void sub_1000a1b4(); void sub_1034d590(int); };
 void CUnknown1034d590::sub_1034d590(int) { sub_1000a1b4(); }
 // END FUNCTION
 
+// FUNCTION: 0x10355d70 size=0x49
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_100103fc(GP *);
+extern int vt_104a320c;
+extern char g_10628024[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: bodyque
+extern "C" GP *bodyque()
+{
+	GP *p = (GP *)sub_1000db89(0x734);
+	if (p) {
+		sub_100103fc(p);
+		*(int **)p = &vt_104a320c;
+	} else {
+		p = 0;
+	}
+	p->name(g_10628024);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10359ba0 size=0x8
 void __fastcall sub_10359ba0(int *p) { p[3] = 0; }
 // END FUNCTION
