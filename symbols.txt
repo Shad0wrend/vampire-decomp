@@ -1216,6 +1216,7 @@
 0x10014010 func   _npc_VSheriffSwarm npc_VSheriffSwarm
 0x1001402e func   ?sub_102ee1c0@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102ee1c0
 0x1001407e func   _item_g_drugs_pill_bottle item_g_drugs_pill_bottle
+0x10014123 func   ?vfunc0@CAI_CsActList@@UAEXPAUCsActSaveIface@@@Z CAI_CsActList::vfunc0
 0x10014187 func   _logic_npc_condition logic_npc_condition
 0x100141fa func   ?vfunc9@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc9
 0x10014259 func   ?vfunc130@CWorld@@UAEXH@Z CWorld::vfunc130
