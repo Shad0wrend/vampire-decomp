@@ -4184,6 +4184,30 @@ void CUnknown1012e6a0::sub_1012e6a0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ee70 size=0x7c
+#include "InterfaceReg.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern InterfaceReg *g_1070c4bc;
+
+InterfaceReg *InterfaceReg::sub_1012ee70(void *createFn, const char *pName)
+{
+    m_pName = pName;
+    g_109f3620[*g_109f3680].name = "InterfaceReg::InterfaceReg";
+    g_109f3620[*g_109f3680].ent = g_106b8540;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    m_CreateFn = createFn;
+    m_pNext = g_1070c4bc;
+    g_1070c4bc = this;
+    --*g_109f3680;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f100 size=0x65
 struct ScopeEnt { const char* a; const void* b; const void* c; };
 extern ScopeEnt* g_109f3620;
