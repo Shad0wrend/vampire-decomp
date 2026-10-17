@@ -302,6 +302,7 @@
 0x1000574a func   ?sub_101f9590@@YAXH@Z sub_101f9590
 0x10005768 func   ?sub_10078b10@@YIXPAH@Z sub_10078b10
 0x100057d1 func   ?vfunc6@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc6
+0x100057db func   ?sub_10183880@StatOwner@@QAEPAVCVStatList_t@@H@Z StatOwner::sub_10183880
 0x100057e0 func   _prop_button prop_button
 0x100057e5 func   _inspection_brush inspection_brush
 0x10005876 func   ?sub_102e8250@@YIXPAM@Z sub_102e8250

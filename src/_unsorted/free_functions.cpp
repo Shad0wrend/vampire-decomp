@@ -4395,6 +4395,26 @@ void CUnknown10183100::sub_10183100(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10183880 size=0x67
+#include "CVStatList_t.h"
+struct StatInfoRef { char pad[0x10]; int id; };
+struct StatOwner {
+    char pad[0x14];
+    int m_count;
+    StatInfoRef **m_items;
+    CVStatList_t *sub_10183880(int id);
+};
+CVStatList_t *StatOwner::sub_10183880(int id)
+{
+    for (int i = 0; i < m_count; i++) {
+        if (m_items[i]->id == id)
+            return (CVStatList_t *)m_items[i];
+    }
+    static CVStatList_t s_default(-1);
+    return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184360 size=0x8
 void __fastcall sub_10184360(int *p)
 {
