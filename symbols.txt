@@ -888,6 +888,7 @@
 0x1000ebc4 func   ?sub_100b49b0@CMem16c_t@@QAEXH@Z CMem16c_t::sub_100b49b0
 0x1000ebc9 func   _env_glow env_glow
 0x1000ec1e func   ?sub_101eab60@@YAXH@Z sub_101eab60
+0x1000ec3c func   ?sub_100436c0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_100436c0
 0x1000ec64 func   ?sub_100bc580@CUnknown100bc580@@QAEXD@Z CUnknown100bc580::sub_100bc580
 0x1000ec6e func   ?sub_100be000@@YIXPADHD@Z sub_100be000
 0x1000ec8c func   ?vfunc291@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc291
