@@ -15087,6 +15087,27 @@ extern "C" CWeaponIArmor_Hvy_Cloth* item_a_hvy_leather()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f3e40 size=0x49
+#include "CWeaponIArmor_Hvy_Cloth.h"
+extern void* vt_104e61bc;
+extern const char g_105875a4[];
+void* sub_1000db89(unsigned int);
+
+// TARGET: item_a_body_armor
+extern "C" CWeaponIArmor_Hvy_Cloth* item_a_body_armor()
+{
+	CWeaponIArmor_Hvy_Cloth* p = (CWeaponIArmor_Hvy_Cloth*)sub_1000db89(0x910);
+	if (p) {
+		p->sub_10001a3c();
+		*(void**)p = &vt_104e61bc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_105875a4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
