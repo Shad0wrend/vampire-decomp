@@ -6181,6 +6181,43 @@ void CUnknown10398d90::sub_10398d90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10399c70 size=0x95
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+class CVProfile {
+public:
+	__declspec(dllimport) void EnterScope(const char *, int, const char *, bool);
+	__declspec(dllimport) void ExitScope();
+};
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern CVProfile *g_109f3648;
+extern char g_10647288[];
+extern char g_106472b4[];
+extern char g_1053a868[];
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+// TARGET: sub_10399c70
+void __fastcall sub_10399c70(char *self)
+{
+	const char *name;
+	if (self) {
+		name = *(const char **)(self + 0x26c);
+		if (!name)
+			name = g_106b8540;
+	} else {
+		name = g_105387dc;
+	}
+	g_109f3620[*g_109f3680].a = g_10647288;
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	g_109f3648->EnterScope(g_106472b4, 0, g_1053a868, false);
+	g_109f3648->ExitScope();
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039aaf0 size=0xd
 // TARGET: CUnknown1039aaf0::sub_1039aaf0
 void CUnknown1039aaf0::sub_1039aaf0(char value)
