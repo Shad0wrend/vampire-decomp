@@ -16071,6 +16071,27 @@ extern "C" CItemGWarrLedger1* item_g_watch_normal()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fed40 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_104fcdbc[];
+extern char g_10681a00[];
+
+// TARGET: item_g_watch_fancy
+extern "C" CItemGWarrLedger1* item_g_watch_fancy()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_104fcdbc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10681a00);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
