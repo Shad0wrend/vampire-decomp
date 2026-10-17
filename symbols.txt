@@ -1004,6 +1004,7 @@
 0x1000e124 func   ?sub_101e0310@S101e0310@@QAEXXZ S101e0310::sub_101e0310
 0x1000e147 func   ?sub_101d4f40@CUnknown101d4f20@@QAEXPAUCUnknown101d4f20_Value@@@Z CUnknown101d4f20::sub_101d4f40
 0x1000e214 func   _func_platrot func_platrot
+0x1000e219 func   ??0StatDefault@@QAE@H@Z StatDefault::StatDefault
 0x1000e237 func   _npc_VMercurio npc_VMercurio
 0x1000e24b func   ?sub_100be040@CUnknown100be040@@QAEXH@Z CUnknown100be040::sub_100be040
 0x1000e250 func   _item_g_vampyr_apocrypha item_g_vampyr_apocrypha
