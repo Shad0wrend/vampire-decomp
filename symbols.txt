@@ -155,6 +155,7 @@
 0x1000332d func   _item_g_junkyard_businesscard item_g_junkyard_businesscard
 0x1000336e func   ?sub_1015ef60@@YIXPAD@Z sub_1015ef60
 0x100033cd func   ?vfunc416@CAI_BaseNPCTroika@@UAEXD@Z CAI_BaseNPCTroika::vfunc416
+0x10003409 func   ?sub_100330d0@@YIXPAUMem@@HH@Z sub_100330d0
 0x10003427 func   _monster_generic monster_generic
 0x10003440 func   ?sub_102056d0@CUnknown102056d0@@QAEPAU1@XZ CUnknown102056d0::sub_102056d0
 0x100034db func   ?sub_10081e90@@YIXPAUCSlots@@HH@Z sub_10081e90
