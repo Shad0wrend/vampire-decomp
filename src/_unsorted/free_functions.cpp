@@ -16932,6 +16932,27 @@ extern "C" CItemGWarrLedger1* item_g_idol_dragon()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10405b70 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_1050ecbc[];
+extern char g_1068292c[];
+
+// TARGET: item_g_idol_elephant
+extern "C" CItemGWarrLedger1* item_g_idol_elephant()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_1050ecbc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_1068292c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b120 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
