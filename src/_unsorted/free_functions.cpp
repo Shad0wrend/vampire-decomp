@@ -5563,6 +5563,34 @@ struct CUnknown101afba0 { char pad[0x100]; char m_Flag; void sub_101afba0(); };
 void CUnknown101afba0::sub_101afba0() { m_Flag = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101b24d0 size=0x7b
+struct ChanEnt { int value; const char *name; };
+extern ChanEnt g_10598c78[7];
+extern char g_10599140[];
+extern char g_105990e8[];
+extern int (*g_109f3848)(const char *, const char *, int);
+extern int (*g_109f3880)(const char *, const char *);
+extern void (*g_109f3630)(const char *, ...);
+extern "C" unsigned strlen(const char *);
+extern "C" int atoi(const char *);
+int sub_101b24d0(const char *s)
+{
+    if (!s)
+        return 0;
+    if (g_109f3848(s, g_10599140, strlen(g_10599140)) != 0)
+        return atoi(s);
+    int (*cmp)(const char *, const char *) = g_109f3880;
+    int i = 0;
+    do {
+        if (cmp(s, g_10598c78[i].name) == 0)
+            return g_10598c78[i].value;
+        i++;
+    } while (i < 7);
+    g_109f3630(g_105990e8, s);
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6a30 size=0x8
 void __fastcall sub_101b6a30(int *p) { p[3] = 0; }
 // END FUNCTION

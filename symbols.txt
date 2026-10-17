@@ -1501,6 +1501,7 @@
 0x10015e3d func   ?sub_102e0a40@CUnknown102e0a40@@QAEXH@Z CUnknown102e0a40::sub_102e0a40
 0x1012f340 func   ?sub_1012f340@@YAHPBD0@Z sub_1012f340
 0x1019be80 func   ?sub_1019be80@@YAPAUPyObj@@PBD0@Z sub_1019be80
+0x101b24d0 func   ?sub_101b24d0@@YAHPBD@Z sub_101b24d0
 0x104307ca func   __cfltcvt_init _cfltcvt_init
 0x10430802 func   ___setfflag __setfflag
 0x10430812 func   __purecall _purecall
