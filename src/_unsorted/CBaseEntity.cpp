@@ -271,6 +271,25 @@ int __fastcall sub_100ad850(CBaseEntity *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b17f0 size=0x79
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int __fastcall sub_100b17f0(char *self)
+{
+    const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::GetModelIndex";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int r = *(int *)(self + 0x1a4);
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4bc0 size=0x8
 #include "CBaseEntity.h"
 
