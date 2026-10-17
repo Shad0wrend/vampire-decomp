@@ -539,6 +539,7 @@
 0x1000841d func   ?sub_10348a60@@YI_NPAVCBaseEntity@@@Z sub_10348a60
 0x10008445 func   ?sub_1024afe0@@YAHXZ sub_1024afe0
 0x1000844f func   ?sub_101bd0f0@SFilter@@QAEPAU1@E@Z SFilter::sub_101bd0f0
+0x100084bd func   ?vfunc619@CNPC_VAndreiBlood@@QAEXH@Z CNPC_VAndreiBlood::vfunc619
 0x10008558 func   _npc_VHumanCombatPatrol npc_VHumanCombatPatrol
 0x100085ad func   _game_sign game_sign
 0x100085e4 func   ?vfunc481@CHL2_Player@@UAEMXZ CHL2_Player::vfunc481

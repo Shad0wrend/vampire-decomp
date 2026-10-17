@@ -27,3 +27,23 @@ void CNPC_VAndreiBlood::vfunc104()
     g_1070b22c->PrecacheEmitter("Andrei_Summon-Emitter", 1);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1035dba0 size=0x64
+#include "CNPC_VAndreiBlood.h"
+struct ScopeEnt { const char* a; const void* b; const void* c; };
+extern ScopeEnt* g_109f3620;
+extern int* g_109f3680;
+extern char g_1062b244[];
+extern char g_106b8540[];
+
+// TARGET: CNPC_VAndreiBlood::vfunc619
+void CNPC_VAndreiBlood::vfunc619(int arg)
+{
+	g_109f3620[*g_109f3680].a = g_1062b244;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_1000c27a(arg);
+	(*g_109f3680)--;
+}
+// END FUNCTION
