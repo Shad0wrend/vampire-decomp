@@ -9,6 +9,7 @@ class CBaseCombatCharacter : public CBaseEntity
 public:
 	void sub_103326b0(float amount);
 	void sub_10339560();
+	int sub_10337a60();	// "CBaseCombatCharacter::GetVHistor..." getter
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc295(int a);
@@ -22,4 +23,7 @@ public:
 	int vfunc376(int a);
 	int vfunc393();
 	void vfunc403();
+
+	char m_pad03e0[0x13a0 - 0x3e0];
+	int m_field13a0;
 };
