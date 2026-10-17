@@ -45,4 +45,9 @@ public:
 	virtual void vfunc37();
 	virtual void vfunc38();
 	virtual void vfunc39();
+
+	char m_pad0004[0x18];
+	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
+
+	int sub_101a08f0(void *pEntity);	// index of the entity in the table, or -1
 };
