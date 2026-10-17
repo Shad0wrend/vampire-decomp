@@ -2379,6 +2379,43 @@ int *sub_10131a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10132db0 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1057658c[2];
+void sub_100120bc();
+
+int *sub_10132db0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 12, "m_rgEntities", {0x450, 0}, 0x20, 2 },
+        { 4, "m_rgTriggered", {0x4d0, 0}, 0x20, 2 },
+        { 4, "m_iTotal", {0x568, 0}, 1, 2 },
+        { 2, "m_globalstate", {0x56c, 0}, 1, 6, "globalstate" },
+        { 0, "CMultiSourceRegister", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100120bc },
+        { 10, "m_OnTrigger", {0x550, 0}, 1, 0x16, "OnTrigger", g_1055dc70 },
+    };
+    g_1057658c[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1057658c[0] = (int)&dataDesc[1];
+    return g_1057658c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136450 size=0xa
 void __fastcall sub_10136450(char *self, int, int)
 {
