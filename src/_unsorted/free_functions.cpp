@@ -2243,6 +2243,32 @@ void sub_1009a0c0(TEnt *ent, int unused, int *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009b440 size=0x83
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern void (*g_109f3630)(const char *fmt, ...);
+
+void CBaseEntity::sub_1009b440(const char *msg)
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].name = "CBaseEntity::TraceMessageBareBase";
+    g_109f3620[*g_109f3680].ent = n;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    if (msg)
+        g_109f3630(msg);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fa60 size=0x6f
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
