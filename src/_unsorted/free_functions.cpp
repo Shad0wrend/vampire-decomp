@@ -3491,6 +3491,45 @@ void sub_1013da70(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013dbb0 size=0x70
+struct Blob { Blob *m_pNext; Blob *m_pPrev; int m_NumBytes; char m_Data[1]; };
+struct BlobHead { Blob *m_pNext; Blob *m_pPrev; };
+struct Pool {
+    int m_BlockSize;
+    int m_BlocksPerBlob;
+    int m_GrowMode;
+    BlobHead m_BlobHead;
+    char pad[0x1c - 0x14];
+    void *m_pHeadOfFreeList;
+    char pad2[0x28 - 0x20];
+    unsigned short m_NumBlobs;
+};
+void *sub_104320f7(unsigned int);
+
+void __fastcall sub_1013dbb0(Pool *self)
+{
+    if (self->m_GrowMode == 2 || self->m_GrowMode != 0 || self->m_NumBlobs == 0) {
+        int nElements = (self->m_NumBlobs + 1) * self->m_BlocksPerBlob;
+        int sizeMultiplier = self->m_BlockSize * nElements;
+        Blob *pBlob = (Blob *)sub_104320f7(sizeMultiplier + 0xf);
+        pBlob->m_NumBytes = sizeMultiplier;
+        pBlob->m_pPrev = (Blob *)&self->m_BlobHead;
+        pBlob->m_pNext = self->m_BlobHead.m_pNext;
+        pBlob->m_pNext->m_pPrev = pBlob;
+        pBlob->m_pPrev->m_pNext = pBlob;
+        char *p = pBlob->m_Data;
+        self->m_pHeadOfFreeList = p;
+        for (int i = nElements - 1; i > 0; i--) {
+            char *next = p + self->m_BlockSize;
+            *(char **)p = next;
+            p = next;
+        }
+        *(char **)p = 0;
+        self->m_NumBlobs++;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e7e0 size=0xd
 #include "CUnknown1013e7e0.h"
 // TARGET: CUnknown1013e7e0::sub_1013e7e0
