@@ -10195,6 +10195,25 @@ void CBaseCombatCharacter::sub_10339560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033c9c0 size=0x79
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int __fastcall sub_1033c9c0(char *self)
+{
+    const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::GetMiscFlags";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int r = *(int *)(self + 0xfe4);
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d380 size=0x69
 struct SInner { char *ent; unsigned serial; };
 struct SEnt { int pad; SInner in; };
