@@ -2310,6 +2310,38 @@ void CBaseEntity::sub_1009b440(const char *msg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f200 size=0x85
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct CScopeGuard {
+    CScopeGuard(const char *name, const char *ent)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = ent;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+const char *CBaseEntity::sub_1009f200()
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    CScopeGuard guard("CBaseEntity::GetClassname", n);
+    const char *s = *(const char **)((char *)this + 0x11c);
+    return s ? s : g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fa60 size=0x6f
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
