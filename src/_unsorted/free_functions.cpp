@@ -11785,6 +11785,32 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10334600 size=0x83
+#include "CBaseCombatCharacter.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_10334600(int count, int ammoIndex)
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].name = "CBaseCombatCharacter::SetAmmoCount";
+    g_109f3620[*g_109f3680].ent = n;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    *(int *)((char *)this + 0x15a4 + ammoIndex * 4) = count;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10336920 size=0xe7
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern TraceEnt *g_109f3620;
