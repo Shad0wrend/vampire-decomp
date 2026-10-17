@@ -12,6 +12,7 @@
 #include "CBaseGrenade.h"
 #include "CBasePlayer.h"
 #include "CBaseVampireSkillEntity.h"
+#include "CBloodSplat.h"
 #include "CCineNPC.h"
 #include "CCollisionProperty.h"
 #include "CCopyRecipientFilter.h"
