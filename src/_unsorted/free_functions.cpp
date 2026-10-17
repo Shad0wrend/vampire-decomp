@@ -3610,6 +3610,41 @@ void __fastcall sub_10185910(Mem16 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101859a0 size=0x6a
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct S101859a0 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_101859a0(int num);
+};
+// TARGET: S101859a0::sub_101859a0
+void S101859a0::sub_101859a0(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 1;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 0x48);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 0x48);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101895d0 size=0x64
 #include "CRagdollProp.h"
 
