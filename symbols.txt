@@ -1151,6 +1151,7 @@
 0x1001393f func   _info_null info_null
 0x100139d0 func   ?sub_10100ef0@@YAPAHXZ sub_10100ef0
 0x100139df func   ?sub_10077890@CUnknown10077890@@QAEXH@Z CUnknown10077890::sub_10077890
+0x10013a0c func   ?sub_101a1400@SRestore@@QAEPAU1@E@Z SRestore::sub_101a1400
 0x10013a6b func   _item_g_giovanni_invitation_maria item_g_giovanni_invitation_maria
 0x10013a89 func   ?sub_101dbb00@@YAPBDH@Z sub_101dbb00
 0x10013c28 func   ?sub_100fa690@@YIXPAUCSlots@@HH@Z sub_100fa690
