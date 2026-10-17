@@ -7270,6 +7270,41 @@ void sub_104121d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104273f0 size=0x67
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct S104273f0 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_104273f0(int num);
+};
+// TARGET: S104273f0::sub_104273f0
+void S104273f0::sub_104273f0(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 4;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount << 3);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount << 3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428eb0 size=0xd
 int sub_10428eb0(char *p)
 {
