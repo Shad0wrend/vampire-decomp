@@ -1126,6 +1126,7 @@
 0x100121cf func   ?sub_102652d0@CUnknown102652d0@@QAEHXZ CUnknown102652d0::sub_102652d0
 0x100121e3 func   _npc_VMoleman npc_VMoleman
 0x1001221a func   ?sub_1015ef20@CUnknown1015ef20@@QAE_NXZ CUnknown1015ef20::sub_1015ef20
+0x10012242 func   ?vfunc125@CBaseEntity@@UAEXXZ CBaseEntity::vfunc125
 0x10012292 func   ?vfunc568@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc568
 0x100122a1 func   _item_k_empire_jezebel_key item_k_empire_jezebel_key
 0x100122ba func   ??0CMeasureSectionInstance@@QAE@H@Z CMeasureSectionInstance::CMeasureSectionInstance
