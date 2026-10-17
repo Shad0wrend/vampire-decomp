@@ -308,6 +308,7 @@
 0x100057e0 func   _prop_button prop_button
 0x100057e5 func   _inspection_brush inspection_brush
 0x10005876 func   ?sub_102e8250@@YIXPAM@Z sub_102e8250
+0x10005885 func   ?sub_10099ca0@@YAXPAUAnimEnt@@HPAI@Z sub_10099ca0
 0x100058b2 func   ?vfunc75@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc75
 0x10005916 func   ?sub_101c2a10@CUnknown101c2a10@@QAEXH@Z CUnknown101c2a10::sub_101c2a10
 0x10005984 func   _item_k_clinic_maintenance_key item_k_clinic_maintenance_key

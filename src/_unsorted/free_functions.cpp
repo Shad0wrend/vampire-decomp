@@ -1951,6 +1951,26 @@ CUnknown10098810 *CUnknown10098810::sub_10098810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099ca0 size=0x76
+struct TraceEnt { const char *a; const char *b; const char *c; };
+struct AnimEnt { char pad[0x174]; float m_animtime; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_10554b0c[];
+extern char g_106b8540[];
+extern float g_10450564;
+void sub_10099ca0(AnimEnt *ent, int unused, unsigned int *out)
+{
+    g_109f3620[*g_109f3680].a = g_10554b0c;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    float t = ent->m_animtime;
+    *out = (int)(t * g_10450564) & 0xff;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009a030 size=0x68
 struct TScope {
 	const char *name;
