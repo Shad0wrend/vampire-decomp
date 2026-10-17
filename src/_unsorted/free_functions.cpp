@@ -16491,6 +16491,27 @@ extern "C" CItemGWarrLedger1* item_g_guy_magazine()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10402300 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_105059bc[];
+extern char g_10682184[];
+
+// TARGET: item_g_brotherhood_flyer
+extern "C" CItemGWarrLedger1* item_g_brotherhood_flyer()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_105059bc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10682184);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
