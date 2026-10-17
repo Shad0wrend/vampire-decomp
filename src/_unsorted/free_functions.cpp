@@ -6623,6 +6623,38 @@ void sub_101eab60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ed170 size=0x7b
+#include "CUnknown101ed170.h"
+
+void CUnknown101ed170::sub_101ed170()
+{
+    if (m_p10 != 0) {
+        delete m_p10;
+        m_p10 = 0;
+    }
+    if (m_p14 != 0) {
+        delete m_p14;
+        m_p14 = 0;
+    }
+    if (m_p18 != 0) {
+        delete m_p18;
+        m_p18 = 0;
+    }
+    if (m_p20 != 0) {
+        delete m_p20;
+        m_p20 = 0;
+    }
+    if (m_p24 != 0) {
+        delete m_p24;
+        m_p24 = 0;
+    }
+    if (m_p28 != 0) {
+        delete m_p28;
+        m_p28 = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ed9e0 size=0xb
 CUnknown101ed9e0 *CUnknown101ed9e0::sub_101ed9e0(int value)
 {
