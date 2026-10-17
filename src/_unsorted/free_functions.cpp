@@ -7276,6 +7276,37 @@ void __fastcall sub_102e8a80(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ec320 size=0x6a
+#include "CUnknown102ec320.h"
+
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUnknown102ec320::sub_102ec320(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int requested = m_nAllocationCount + num;
+    int alloc = m_nAllocationCount;
+    if (alloc < requested) {
+        while (alloc < requested) {
+            if (alloc) {
+                if (m_nGrowSize)
+                    alloc += m_nGrowSize;
+                else
+                    alloc += alloc;
+            } else
+                alloc = 3;
+        }
+        m_nAllocationCount = alloc;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 12);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 12);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ecbe0 size=0xd
 bool sub_102ecbe0(int a)
 {
