@@ -5611,6 +5611,58 @@ PyObj* sub_1019be80(const char* module, const char* name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019c950 size=0x7d
+struct IApi {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+    virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(void *p);
+    virtual void v21(); virtual void v22();
+    virtual void v23(void *p);
+    virtual void v24(void *p);
+};
+extern IApi *g_10723940;
+struct Item24 { int a; int b; int c; int d; int e; int f; };
+struct Block {
+    int count;
+    void *m_p;
+    int pad[2];
+    int m_u14;
+    Item24 items[1];
+};
+void sub_1019c950(int *s)
+{
+    int *b = s;
+    if (*b != 0) {
+        int i = 0;
+        int *p;
+        if (0 < *b) {
+            p = b + 6;
+            do {
+                g_10723940->v23((void *)*p);
+                *p = 0;
+                i++;
+                p += 6;
+            } while (i < *b);
+        }
+        i = 0;
+        if (0 < *b) {
+            p = b + 5;
+            do {
+                g_10723940->v20((void *)*p);
+                *p = 0;
+                i++;
+                p += 6;
+            } while (i < *b);
+        }
+        g_10723940->v24((void *)b[1]);
+        b[1] = 0;
+        *b = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d130 size=0x6c
 #include "CUnknown1019d130.h"
 struct IObj {
