@@ -874,6 +874,7 @@
 0x1000ce00 func   _item_container item_container
 0x1000ce19 func   ?sub_10081e70@CUnknown10081e70@@QAEXH@Z CUnknown10081e70::sub_10081e70
 0x1000ce78 func   _trigger_impact trigger_impact
+0x1000ce82 func   ?sub_10327960@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10327960
 0x1000ce91 func   ?sub_101318a0@@YGXH@Z sub_101318a0
 0x1000cec8 func   _npc_VCamera npc_VCamera
 0x1000ceff func   _npc_VProneDialog npc_VProneDialog
