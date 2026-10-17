@@ -973,6 +973,7 @@
 0x10010c4e func   ?sub_10204550@@YAXH@Z sub_10204550
 0x10010ce9 func   _env_soundscape env_soundscape
 0x10010d4d func   ?sub_101b72e0@CMem8_t@@QAEXH@Z CMem8_t::sub_101b72e0
+0x10010d7f func   ?sub_101db7e0@S101db7e0@@QAEXXZ S101db7e0::sub_101db7e0
 0x10010dd9 func   _item_p_occult_frenzy item_p_occult_frenzy
 0x10010e0b func   _npc_bullseye npc_bullseye
 0x10010f14 func   _beam beam

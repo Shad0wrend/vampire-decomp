@@ -3667,6 +3667,34 @@ CUnknown101db5f0* CUnknown101db5f0::sub_101db5f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db7e0 size=0x66
+struct Elem101db7e0 { void sub_100123f0(); };
+struct S101db7e0 {
+    int m0;
+    int m4;
+    Elem101db7e0 **m8;
+    void sub_101db7e0();
+};
+// TARGET: S101db7e0::sub_101db7e0
+void S101db7e0::sub_101db7e0()
+{
+    if (m8) {
+        for (int i = 0; i < m4; i++) {
+            Elem101db7e0 *e = m8[i];
+            if (e) {
+                e->sub_100123f0();
+                delete e;
+            }
+            m8[i] = 0;
+        }
+        delete m8;
+        m8 = 0;
+    }
+    m4 = 0;
+    m0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db9a0 size=0x8
 void __fastcall sub_100107d5(char *p);
 void __fastcall sub_101db9a0(char *p) { sub_100107d5(p + 0x24); }
