@@ -1467,6 +1467,24 @@ void CUnknown100792c0::sub_100792e0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079450 size=0x6e
+struct Obj {
+    int f[30];
+    void sub_10079910(int a);
+    Obj *sub_10079450(int a);
+};
+
+Obj *Obj::sub_10079450(int a)
+{
+    f[0] = 0; f[1] = 0; f[2] = 0; f[3] = 0; f[4] = 0; f[5] = 0; f[6] = 0; f[7] = 0;
+    f[8] = 0; f[9] = 0; f[10] = 0; f[11] = 0; f[12] = 0; f[13] = 0; f[14] = 0; f[15] = 0;
+    f[16] = 0; f[17] = 0; f[18] = 0; f[19] = 0; f[20] = 0; f[21] = 0; f[22] = 0; f[23] = 0;
+    f[24] = 0; f[25] = 0; f[26] = 0; f[27] = 0; f[28] = 0; f[29] = 0;
+    sub_10079910(a);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079910 size=0x71
 struct Obj {
     char pad0[0x78];
