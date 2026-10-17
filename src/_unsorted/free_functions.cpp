@@ -7395,6 +7395,41 @@ void NameSet::sub_10206980(const char *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209a20 size=0x7c
+#include "CItemContainer.h"
+struct Sub { void *pEnt; unsigned int serial; };
+struct EntInfo { int pad; Sub s; };
+extern EntInfo *g_10566458;
+extern char g_10538764[];
+extern char g_105a9bac[];
+extern "C" void *__RTDynamicCast(void *, long, void *, void *, int);
+static inline void *HGet(const CItemContainerHandle *h)
+{
+    if (h->m_Index != 0xffffffff) {
+        Sub *e = &g_10566458[h->m_Index & 0x1fff].s;
+        if (e->serial == (h->m_Index >> 13))
+            return e->pEnt;
+    }
+    return 0;
+}
+static inline void *HPeek(const CItemContainerHandle *h)
+{
+    if (h->m_Index != 0xffffffff) {
+        Sub *e = &g_10566458[h->m_Index & 0x1fff].s;
+        if (e->serial == (h->m_Index >> 13))
+            return e->pEnt;
+    }
+    return 0;
+}
+void *CItemContainer::sub_10209a20()
+{
+    void *p = HPeek(&m_hLock);
+    if (p == 0)
+        return 0;
+    return __RTDynamicCast(HGet(&m_hLock), 0, g_10538764, g_105a9bac, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b000 size=0x9
 int CBaseVampireSkillEntity::sub_1020b000(CBaseEntity *pPlayer)
 {
