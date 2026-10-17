@@ -2437,6 +2437,29 @@ struct CUnknown100eb420 { int pad[4]; int m_p; bool sub_100eb420(); };
 bool CUnknown100eb420::sub_100eb420() { if (m_p != 0) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x100ecc60 size=0x6d
+struct Entry { char pad[0x244]; int vals[3]; char pad2[0x264 - 0x250]; };
+struct EntryTable {
+    int pad0;
+    int m_def;
+    Entry *m_entries;
+    int pad1[2];
+    int m_max;
+    int sub_100ecc60(int idx, int slot);
+};
+extern int (*g_109f3868)(int, int);
+int EntryTable::sub_100ecc60(int idx, int slot)
+{
+    if (idx < 0 || idx > m_max)
+        idx = m_def;
+    if (slot >= 3)
+        return -1;
+    if (slot == 0 && m_entries[idx].vals[0] == -1)
+        return g_109f3868(1, 9);
+    return m_entries[idx].vals[slot];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0300 size=0x8
 void __fastcall sub_100f0300(char *p) { p[0x55c] = 1; }
 // END FUNCTION
