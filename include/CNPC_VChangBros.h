@@ -8,4 +8,5 @@ class CNPC_VChangBros : public CNPC_VHuman
 public:
 	// Slot 440 (TranslateSchedule override); declared as a plain member.
 	int vfunc440(int schedule);
+	void vfunc619(int arg);
 };
