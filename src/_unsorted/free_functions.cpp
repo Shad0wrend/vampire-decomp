@@ -6240,6 +6240,41 @@ void CUtlMemory24::sub_10222da0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10222e30 size=0x70
+struct Elem { char data[0x68]; };
+struct Mem {
+    Elem *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+};
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+
+void __fastcall sub_10222e30(Mem *self, int, int num)
+{
+    if (self->m_nGrowSize == -1)
+        return;
+    int nAllocationRequested = self->m_nAllocationCount + num;
+    if (self->m_nAllocationCount < nAllocationRequested) {
+        int count = self->m_nAllocationCount;
+        do {
+            if (count != 0) {
+                if (self->m_nGrowSize != 0)
+                    count += self->m_nGrowSize;
+                else
+                    count += count;
+            } else
+                count = 1;
+        } while (count < nAllocationRequested);
+        self->m_nAllocationCount = count;
+    }
+    if (self->m_pMemory)
+        self->m_pMemory = (Elem *)g_109f3638(self->m_pMemory, self->m_nAllocationCount * sizeof(Elem));
+    else
+        self->m_pMemory = (Elem *)g_109f3634(self->m_nAllocationCount * sizeof(Elem));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10222ec0 size=0x6a
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
