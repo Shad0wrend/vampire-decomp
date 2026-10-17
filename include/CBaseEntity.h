@@ -57,6 +57,7 @@ public:
 	void sub_1003eb50();
 	void sub_1009fa60();
 	void sub_100abbf0(int a, int b);
+	int sub_100b3700();	// "CBaseEntity::GetFlags": returns the field at +0x434
 	void sub_100b3b00();
 	int sub_100b3d10();	// "CBaseEntity::GetEdict" scope; returns the field at +0x2e0
 	void sub_100b40f0(int a);
