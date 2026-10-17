@@ -6461,6 +6461,26 @@ CVStatList_t *StatOwner::sub_10183880(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10183910 size=0x66
+#include "StatDefault2.h"
+struct StatItem2 { int id; };
+struct StatOwner2 {
+    char pad[0x14];
+    int m_count;
+    StatItem2 **m_items;
+    StatDefault2 *sub_10183910(int id);
+};
+StatDefault2 *StatOwner2::sub_10183910(int id)
+{
+    for (int i = 0; i < m_count; i++) {
+        if (m_items[i]->id == id)
+            return (StatDefault2 *)m_items[i];
+    }
+    static StatDefault2 s_default(-1);
+    return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184360 size=0x8
 void __fastcall sub_10184360(int *p)
 {
