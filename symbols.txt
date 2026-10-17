@@ -1110,6 +1110,7 @@
 0x10013089 func   _item_g_wireless_camera_4 item_g_wireless_camera_4
 0x100130b1 func   _npc_VAndreiBlood npc_VAndreiBlood
 0x100130ca func   ?sub_102db420@CUnknown102db420@@QAEXH@Z CUnknown102db420::sub_102db420
+0x100130f7 func   ?sub_1006cd00@S1006cd00@@QAEXXZ S1006cd00::sub_1006cd00
 0x1001312e func   _logic_lineto logic_lineto
 0x1001317e func   ?sub_1003eb50@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003eb50
 0x100131dd func   ?vfunc35@CPropSign@@UAEHH@Z CPropSign::vfunc35

@@ -736,6 +736,34 @@ CUnknown1006ccc0 *CUnknown1006ccc0::sub_1006ccc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006cd00 size=0x66
+struct Elem1006cd00 { void sub_10002d10(); };
+struct S1006cd00 {
+    int m0;
+    int m4;
+    Elem1006cd00 **m8;
+    void sub_1006cd00();
+};
+// TARGET: S1006cd00::sub_1006cd00
+void S1006cd00::sub_1006cd00()
+{
+    if (m8) {
+        for (int i = 0; i < m4; i++) {
+            Elem1006cd00 *e = m8[i];
+            if (e) {
+                e->sub_10002d10();
+                delete e;
+            }
+            m8[i] = 0;
+        }
+        delete m8;
+        m8 = 0;
+    }
+    m4 = 0;
+    m0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006e890 size=0xe
 bool CUnknown1006e890::sub_1006e890()
 {
