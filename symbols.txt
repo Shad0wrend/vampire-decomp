@@ -1335,6 +1335,7 @@
 0x10015280 func   ?sub_103be130@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be130
 0x100152c1 func   _prop_physics prop_physics
 0x10015325 func   ?sub_1010cbc0@CMem8f_t@@QAEXH@Z CMem8f_t::sub_1010cbc0
+0x1001538e func   ?sub_10079910@@YIXPAUObj@@HH@Z sub_10079910
 0x10015393 func   _item_w_sabbatleader_attack item_w_sabbatleader_attack
 0x100153e8 func   ?vfunc4@CSave@@UAEXXZ CSave::vfunc4
 0x10015406 func   _trigger_autosave trigger_autosave

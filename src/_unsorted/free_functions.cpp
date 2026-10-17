@@ -1467,6 +1467,52 @@ void CUnknown100792c0::sub_100792e0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079910 size=0x71
+struct Obj {
+    char pad0[0x78];
+    float f78;
+    int f7c;
+    int f80;
+    int f84;
+    int f88;
+    int f8c;
+    int f90;
+    int f94;
+    int f98;
+    int f9c;
+    int fa0;
+    int fa4;
+    int fa8;
+    char fac;
+    char pad1[0x12c - 0xad];
+    char f12c;
+    char f12d;
+    char pad2[2];
+    int f130;
+};
+
+void __fastcall sub_10079910(Obj *self, int, int a)
+{
+    self->fa8 = 0;
+    self->fac = 0;
+    self->f7c = 0;
+    self->f84 = 0;
+    self->f88 = 0;
+    self->f98 = 0;
+    self->fa0 = 0;
+    self->f9c = 0;
+    self->f8c = 0;
+    self->f90 = 0;
+    self->f94 = 0;
+    self->fa4 = a;
+    self->f12c = 0;
+    self->f130 = 0x3c;
+    self->f12d = 0;
+    self->f78 = -1.0f;
+    self->f80 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079b70 size=0xd
 void CUnknown10079b70::sub_10079b70(int value)
 {
