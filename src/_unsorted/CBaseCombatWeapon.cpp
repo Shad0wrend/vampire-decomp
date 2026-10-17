@@ -39,6 +39,47 @@ void CBaseCombatWeapon::vfunc370(int *event, CBaseCombatWeapon *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024f330 size=0x71
+#include "CBaseCombatWeapon.h"
+#define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define HUN(p) TEN(p##0) TEN(p##1) TEN(p##2) TEN(p##3) TEN(p##4) TEN(p##5) TEN(p##6) TEN(p##7) TEN(p##8) TEN(p##9)
+struct O0 { HUN(a) };
+struct O1 : O0 { HUN(b) };
+struct O2 : O1 { HUN(c) };
+struct O3 : O2 { TEN(d0) TEN(d1) TEN(d2) TEN(d3) TEN(d4) TEN(d5) TEN(d6) TEN(d7) virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void e9(void *out, int a); };
+struct Ent {
+    char pad[0x94];
+    O3 *m_p94;
+};
+struct EntInfo { void *ent; unsigned int serial; int pad; };
+struct EntList {
+    int vptr;
+    EntInfo arr[1];
+};
+extern EntList *g_10566458;
+struct EHandle {
+    unsigned int m_Index;
+    void *Get() const
+    {
+        if (m_Index == 0xffffffff)
+            return 0;
+        const EntInfo *p = &g_10566458->arr[m_Index & 0x1fff];
+        if (p->serial == (m_Index >> 13))
+            return p->ent;
+        return 0;
+    }
+};
+
+void CBaseCombatWeapon::vfunc364(int a, int b, int c)
+{
+    Ent *owner = (Ent *)((EHandle *)&m_hOwner)->Get();
+    O3 *p = owner->m_p94;
+    char local[12];
+    p->e9(local, a);
+    vfunc284(p, p, local, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f790 size=0x8
 #include "CBaseCombatWeapon.h"
 
