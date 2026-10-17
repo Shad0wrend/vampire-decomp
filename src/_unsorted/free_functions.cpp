@@ -6105,6 +6105,27 @@ void sub_101cf620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf720 size=0x7b
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern char g_1072d4b8[];
+extern int (*g_109f387c)(char *, int, const char *, char *);
+
+char *sub_101cf720(const char *format, ...)
+{
+    g_109f3620[*g_109f3680].name = "UTIL_VarArgs";
+    g_109f3620[*g_109f3680].ent = g_106b8540;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    char *argptr = (char *)&format + sizeof(format);
+    g_109f387c(g_1072d4b8, 0x400, format, argptr);
+    --*g_109f3680;
+    return g_1072d4b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf9b0 size=0x6f
 struct IInner {
     virtual void v0();
