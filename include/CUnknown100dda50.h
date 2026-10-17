@@ -47,5 +47,5 @@ public:
 	char pad2[0x1f];
 	CUnknown100dda50Owner *m_pOwner;
 
-	bool sub_100dda50();
+	char sub_100dda50();
 };
