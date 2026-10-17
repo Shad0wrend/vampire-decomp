@@ -405,6 +405,7 @@
 0x100080cb func   ?sub_101e83f0@@YGXPAHHH@Z sub_101e83f0
 0x10008107 func   _phys_keepupright phys_keepupright
 0x1000812f func   ?sub_102d00c0@@YIXPAHHH@Z sub_102d00c0
+0x1000814d func   ?vfunc7@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc7
 0x10008175 func   ?sub_10428eb0@@YAHPAD@Z sub_10428eb0
 0x10008189 func   ?sub_102e2730@@YIXPAUCOwner@@@Z sub_102e2730
 0x100081f2 func   ?vfunc525@CNPC_VVampireBoss@@QAE_NH@Z CNPC_VVampireBoss::vfunc525
