@@ -583,6 +583,7 @@
 0x100088f0 func   ?sub_100bc3a0@@YAXH@Z sub_100bc3a0
 0x10008913 func   ?sub_1030ba50@CUnknown1030ba50@@QAEXH@Z CUnknown1030ba50::sub_1030ba50
 0x1000891d func   _momentary_rot_button momentary_rot_button
+0x10008940 func   ?vfunc5@CPhysImpact@@UAEPAV1@I@Z CPhysImpact::vfunc5
 0x1000896d func   ?vfunc483@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc483
 0x10008977 func   ?sub_103245a0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_103245a0
 0x100089f4 func   _func_breakable func_breakable
