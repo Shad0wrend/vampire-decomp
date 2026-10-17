@@ -1336,6 +1336,7 @@
 0x1001376e func   _item_k_oceanhouse_basement_key item_k_oceanhouse_basement_key
 0x1001379b func   _info_teleport_destination info_teleport_destination
 0x100137e1 func   ?vfunc103@CSkyCamera@@UAEXXZ CSkyCamera::vfunc103
+0x100137fa func   ?vfunc104@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc104
 0x10013804 func   ?sub_100c0c60@CUnknown100c0c60@@QAEXM@Z CUnknown100c0c60::sub_100c0c60
 0x1001384a func   ?vfunc202@CNodeEnt@@QAEXH@Z CNodeEnt::vfunc202
 0x10013854 func   ?sub_10185490@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_10185490
