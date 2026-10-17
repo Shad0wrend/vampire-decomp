@@ -64,6 +64,7 @@ public:
 	void sub_100abbf0(int a, int b);
 	void sub_100acef0(int a);	// "CBaseEntity::InputKill": calls vfunc119
 	void sub_100b12e0(char value);	// "CBaseEntity::SetSentLastFrame": stores the byte at +0x380 (slot 7 override)
+	void sub_100b1750(int index);	// "CBaseEntity::SetModelIndex": stores the dword at +0x1a4 (slot 10 override)
 	int sub_100b3700();	// "CBaseEntity::GetFlags": returns the field at +0x434
 	void sub_100b37a0();	// "CBaseEntity::ClearFlags": stores 0 at +0x434
 	void sub_100b3a60();	// "CBaseEntity::ClearFlags2": stores 0 at +0x438
