@@ -1096,6 +1096,7 @@
 0x1001317e func   ?sub_1003eb50@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003eb50
 0x100131dd func   ?vfunc35@CPropSign@@UAEHH@Z CPropSign::vfunc35
 0x10013228 func   ?sub_10043630@@YIXPAUMem8@@HH@Z sub_10043630
+0x10013331 func   ?vfunc599@CNPC_VTzimisceRunner@@UAE_NPAX@Z CNPC_VTzimisceRunner::vfunc599
 0x100134c1 func   ?sub_100dea90@CUnknown100dea90@@QAEXH@Z CUnknown100dea90::sub_100dea90
 0x10013534 func   ?vfunc130@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc130
 0x10013557 func   ?vfunc7@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc7
