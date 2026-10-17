@@ -14426,6 +14426,33 @@ extern "C" GP *item_w_zombie_fists()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e5ec0 size=0x49
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_1000955c(GP *);
+extern int vt_104d6cdc;
+extern char g_1067c0cc[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: item_w_fireaxe
+extern "C" GP *item_w_fireaxe()
+{
+	GP *p = (GP *)sub_1000db89(0x910);
+	if (p) {
+		sub_1000955c(p);
+		*(int **)p = &vt_104d6cdc;
+	} else {
+		p = 0;
+	}
+	p->name(g_1067c0cc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eec60 size=0xd
 void CUnknown103eec60::sub_103eec60(char value)
 {
