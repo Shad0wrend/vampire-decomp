@@ -16680,6 +16680,27 @@ extern "C" CItemGWarrLedger1* item_g_wireless_camera_4()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10403b30 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_105098bc[];
+extern char g_106824ec[];
+
+// TARGET: item_g_eyes
+extern "C" CItemGWarrLedger1* item_g_eyes()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_105098bc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_106824ec);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
