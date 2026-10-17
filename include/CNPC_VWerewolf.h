@@ -8,4 +8,7 @@ class CNPC_VWerewolf
 {
 public:
 	virtual bool vfunc600(int unused);
+
+	// Slot 421, called directly so far; declared as a plain member.
+	void vfunc421();
 };
