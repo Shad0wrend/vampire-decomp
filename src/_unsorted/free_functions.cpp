@@ -2959,6 +2959,31 @@ void __fastcall sub_10185910(Mem16 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101895d0 size=0x64
+#include "CRagdollProp.h"
+
+struct IPlayerPickupVPhysics {
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2(int a, int b);
+};
+
+extern int g_10538764, g_10589544, g_1057c684;
+extern "C" void *__cdecl sub_10430b64(void *, long, void *, void *, int);
+
+void sub_101895d0(CBaseEntity *ent, int a, int b)
+{
+	IPlayerPickupVPhysics *p = (IPlayerPickupVPhysics *)sub_10430b64(ent, 0, &g_10538764, &g_10589544, 0);
+	if (p) {
+		p->vfunc2(a, b);
+		return;
+	}
+	CRagdollProp *r = (CRagdollProp *)sub_10430b64(ent, 0, &g_10538764, &g_1057c684, 0);
+	if (r)
+		r->vfunc271(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c4d0 size=0xd
 void CUnknown1018c4d0::sub_1018c4d0(char value)
 {
