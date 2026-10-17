@@ -32,4 +32,6 @@ class CNPC_VAndreiBlood : public CNPC_VHuman
 {
 public:
 	virtual void vfunc104();
+	void vfunc619(int arg);	// slot 619, not modelled as virtual yet
+	void sub_1000c27a(int arg);
 };
