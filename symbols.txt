@@ -31,6 +31,7 @@
 0x10001604 func   _filter_multi filter_multi
 0x10001645 func   ?sub_1023f040@@YAXPAH@Z sub_1023f040
 0x1000164a func   ?sub_102885f0@@YIXPAUNPCStub@@@Z sub_102885f0
+0x10001677 func   ?vfunc5@CPhysMotor@@UAEPAV1@I@Z CPhysMotor::vfunc5
 0x10001681 func   ?sub_100779b0@CUnknown100779b0@@QAEXH@Z CUnknown100779b0::sub_100779b0
 0x100016d6 func   ?sub_101346e0@CUnknown101346e0@@QAEHH@Z CUnknown101346e0::sub_101346e0
 0x100016db func   _logic_choreographed_scene logic_choreographed_scene
