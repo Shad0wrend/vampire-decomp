@@ -1633,6 +1633,7 @@
 0x100155e6 func   ?vfunc25@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc25
 0x100156bd func   ?sub_10130100@@YAXH@Z sub_10130100
 0x100156cc func   ?sub_102b5dc0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102b5dc0
+0x100156f4 func   ?vfunc2@CTETParticleAttached@@UAEPAV1@I@Z CTETParticleAttached::vfunc2
 0x10015703 func   ?vfunc104@CBaseButton@@UAEXXZ CBaseButton::vfunc104
 0x10015712 func   ?sub_1034b560@CUnknown1034b560@@QAEXH@Z CUnknown1034b560::sub_1034b560
 0x10015726 func   _item_w_claws_ghoul item_w_claws_ghoul
