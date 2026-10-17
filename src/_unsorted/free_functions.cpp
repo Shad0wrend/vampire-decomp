@@ -7148,6 +7148,41 @@ void CMem4b_t::sub_103dc400(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc490 size=0x67
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct S103dc490 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_103dc490(int num);
+};
+// TARGET: S103dc490::sub_103dc490
+void S103dc490::sub_103dc490(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 8;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount << 2);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount << 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eec60 size=0xd
 void CUnknown103eec60::sub_103eec60(char value)
 {
