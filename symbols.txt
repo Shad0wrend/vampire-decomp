@@ -1157,6 +1157,7 @@
 0x1001470e func   ?sub_1035b1c0@CUnknown1035b1c0@@QAEHHHHH@Z CUnknown1035b1c0::sub_1035b1c0
 0x10014718 func   ?vfunc3@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc3
 0x10014777 func   ?sub_10379040@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_10379040
+0x1001483f func   ?sub_103326b0@CBaseCombatCharacter@@QAEXM@Z CBaseCombatCharacter::sub_103326b0
 0x100148a8 func   _npc_VPlayerController npc_VPlayerController
 0x10014911 func   _info_node_bach_run_1 info_node_bach_run_1
 0x1001491b func   _info_node_bach_run_2 info_node_bach_run_2

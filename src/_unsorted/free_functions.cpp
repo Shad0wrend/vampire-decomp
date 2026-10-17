@@ -5887,6 +5887,72 @@ void CUnknown10330ce0::sub_10330ce0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103326b0 size=0xf9
+struct ScopeEntry { const char *name; const char *ent; const char *extra; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern char g_10620b4c[];
+
+struct CSlowUnk
+{
+	void sub_10013ba6(int);
+	void sub_1000e66a(int, int);
+	char pad[0x10];
+	int m_f10;
+};
+extern unsigned char g_109f0b2a;
+extern CSlowUnk g_109f0b40;
+void sub_10430923(void (*)());
+void sub_10012a8a();
+
+// TARGET: CBaseCombatCharacter::sub_103326b0
+void CBaseCombatCharacter::sub_103326b0(float amount)
+{
+	const char *name;
+	if (this) {
+		name = *(const char **)((char *)this + 0x26c);
+		if (!name)
+			name = g_106b8540;
+	} else {
+		name = g_105387dc;
+	}
+	g_109f3620[*g_109f3680].name = g_10620b4c;
+	g_109f3620[*g_109f3680].ent = name;
+	g_109f3620[*g_109f3680].extra = g_106b8540;
+	++*g_109f3680;
+
+	int i = 0;
+	float *pf = (float *)((char *)this + 0x10a8);
+	*pf = amount + *pf;
+	CSlowUnk *p;
+	int n;
+	if ((n = *(int *)((char *)this + 0x13bc)) > 0) {
+		CSlowUnk **list = *(CSlowUnk ***)((char *)this + 0x13c0);
+		CSlowUnk **q = list;
+		do {
+			int f = (*q)->m_f10;
+			if (f == 0) {
+				p = list[i];
+				goto done;
+			}
+			i++;
+			q++;
+		} while (i < n);
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		g_109f0b40.sub_10013ba6(-1);
+		sub_10430923(sub_10012a8a);
+	}
+	p = &g_109f0b40;
+done:
+	p->sub_1000e66a(0x1a, (int)amount);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349a00 size=0x8
 void __fastcall sub_10349a00(int *p) { p[3] = 0; }
 // END FUNCTION
