@@ -4379,6 +4379,38 @@ void S1011d6a0::sub_1011d6a0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011d8e0 size=0x7f
+#include <stdarg.h>
+struct IFileSys {
+    virtual void *Open(const char *file, const char *mode, const char *pathId);
+    virtual void Close(void *h);
+    virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+    virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16();
+    virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+    virtual int FPrintf(void *h, const char *fmt, ...);
+};
+extern IFileSys *g_1070b238;
+extern int (*g_109f387c)(char *, int, const char *, char *);
+extern char g_105724c8[];
+extern char g_105724c4[];
+extern char g_105490b0[];
+void sub_1011d8e0(const char *file, const char *fmt, ...)
+{
+    char buf[1024];
+    va_list ap;
+    if (!file)
+        file = g_105724c8;
+    va_start(ap, fmt);
+    g_109f387c(buf, 1024, fmt, ap);
+    void *h = g_1070b238->Open(file, g_105724c4, 0);
+    if (h) {
+        g_1070b238->FPrintf(h, g_105490b0, buf);
+        g_1070b238->Close(h);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101251e0 size=0xb
 void __fastcall sub_101251e0(char *self)
 {
