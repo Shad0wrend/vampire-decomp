@@ -5948,6 +5948,38 @@ void CUnknown10194da0::sub_10194da0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196c50 size=0x81
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+#define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
+struct IEng {
+    V100(a) V10(b) V10(c)
+    virtual int v120();
+};
+struct PyObj { int refcnt; };
+extern IEng *g_1070b22c;
+extern int (*g_109f37a0)(PyObj *, const char *, ...);
+extern PyObj *(*g_109f3798)(long);
+extern void (*g_109f375c)();
+extern char g_10590f48[];
+PyObj *sub_10196c50(PyObj *self, PyObj *args)
+{
+    PyObj *r = 0;
+    int local_8 = 0;
+    int local_4 = 0;
+    if (g_109f37a0(args, g_10590f48, &local_4, &local_8)) {
+        int v = g_1070b22c->v120();
+        if (v % local_8 == local_4 - 1)
+            r = g_109f3798(1);
+        else
+            r = g_109f3798(0);
+        r->refcnt++;
+    } else {
+        g_109f375c();
+    }
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196ea0 size=0x68
 struct SPyObj { int refcnt; void **type; };
 struct SSink { void sub_1000769e(SPyObj *a, int b, int c); };

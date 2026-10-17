@@ -576,6 +576,7 @@
 0x10008cd8 func   ?sub_100de610@@YGXH@Z sub_100de610
 0x10008d14 func   _info_landmark info_landmark
 0x10008d5a func   ?sub_1011a430@@YAXXZ sub_1011a430
+0x10008d6e func   ?sub_10196c50@@YAPAUPyObj@@PAU1@0@Z sub_10196c50
 0x10008d82 func   _env_floating_camera env_floating_camera
 0x10008dc8 func   ?sub_10078580@CUnknown10078540@@QAEXH@Z CUnknown10078540::sub_10078580
 0x10008dcd func   ?sub_101e8410@@YGXPAHHH@Z sub_101e8410
