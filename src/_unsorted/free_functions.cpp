@@ -5870,6 +5870,45 @@ void CUnknown1018c4d0::sub_1018c4d0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c6e0 size=0x82
+#include "UtlMem.h"
+
+void *sub_10430fa0(void *, const void *, unsigned);
+
+struct SHandleVec {
+    UtlMem m_mem;
+    int m_size;
+    int *m_pElements;
+};
+extern SHandleVec g_1072ada4;
+
+struct SHandleHolder {
+    virtual void v0();
+    virtual int *GetHandle();
+};
+
+void sub_1018c6e0(SHandleHolder *holder)
+{
+    int h;
+    if (holder)
+        h = *holder->GetHandle();
+    else
+        h = -1;
+    int idx = g_1072ada4.m_size;
+    int next = g_1072ada4.m_size + 1;
+    if (next > g_1072ada4.m_mem.m_allocationCount)
+        g_1072ada4.m_mem.sub_10055ec0(g_1072ada4.m_size - g_1072ada4.m_mem.m_allocationCount + 1);
+    g_1072ada4.m_size++;
+    g_1072ada4.m_pElements = g_1072ada4.m_mem.m_pMemory;
+    int move = g_1072ada4.m_size - idx - 1;
+    if (move > 0)
+        sub_10430fa0(g_1072ada4.m_mem.m_pMemory + next, g_1072ada4.m_mem.m_pMemory + idx, move * 4);
+    int *slot = g_1072ada4.m_mem.m_pMemory + idx;
+    if (slot)
+        *slot = h;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e9d0 size=0xa
 extern int g_1058d1ac;
 // TARGET: sub_1018e9d0
