@@ -81,6 +81,7 @@
 0x10002153 func   _item_g_car_stereo item_g_car_stereo
 0x100021ad func   _trigger_fog trigger_fog
 0x100021e4 func   ?vfunc407@CBasePlayer@@UAEXXZ CBasePlayer::vfunc407
+0x100021ee func   ?vfunc32@CPropSign@@UAE_NPAX@Z CPropSign::vfunc32
 0x1000222a func   _item_g_garys_tape item_g_garys_tape
 0x10002266 func   ?sub_100bc5e0@@YIXPAHHH@Z sub_100bc5e0
 0x10002289 func   _viewmodel viewmodel
