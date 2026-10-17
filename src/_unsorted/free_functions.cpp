@@ -10346,6 +10346,41 @@ void CUtlMemory12::sub_103dc520(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e3ec0 size=0x76
+struct Elem1c { char d[0x1c]; };
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct Mem1c {
+    Elem1c *m_p;
+    int m_alloc;
+    int m_grow;
+    void sub_103e3ec0(int num);
+};
+void Mem1c::sub_103e3ec0(int num)
+{
+    if (m_grow == -1)
+        return;
+    int want = m_alloc + num;
+    if (m_alloc < want) {
+        int n = m_alloc;
+        do {
+            if (n != 0) {
+                if (m_grow != 0)
+                    n += m_grow;
+                else
+                    n += n;
+            } else
+                n = 2;
+        } while (n < want);
+        m_alloc = n;
+    }
+    if (m_p)
+        m_p = (Elem1c *)g_109f3638(m_p, m_alloc * 0x1c);
+    else
+        m_p = (Elem1c *)g_109f3634(m_alloc * 0x1c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3f60 size=0x67
 extern void *(__cdecl *g_109f3638)(void *, int);
 extern void *(__cdecl *g_109f3634)(int);
