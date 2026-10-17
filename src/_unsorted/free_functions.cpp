@@ -2680,6 +2680,26 @@ bool sub_100df010(S100df010 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df7b0 size=0x72
+struct ICommandLine {
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual int CheckParm(const char *name, const char **ppValue);
+};
+__declspec(dllimport) ICommandLine *CommandLine();
+
+bool sub_100df7b0()
+{
+    static int s_bLogSpeech = CommandLine()->CheckParm("-log_speech_files", 0);
+    if (s_bLogSpeech)
+        return true;
+    static int s_bDialogDebug = CommandLine()->CheckParm("-dialog_debug", 0);
+    bool r = s_bDialogDebug != 0;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7480 size=0x70
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

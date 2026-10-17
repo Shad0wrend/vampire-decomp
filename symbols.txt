@@ -1042,6 +1042,7 @@
 0x10010532 func   _trigger_teleport trigger_teleport
 0x100105eb func   _func_pushable func_pushable
 0x1001064a func   ?sub_101857f0@UtlMem8@@QAEXH@Z UtlMem8::sub_101857f0
+0x1001064f func   ?sub_100df7b0@@YA_NXZ sub_100df7b0
 0x100106ae func   ?sub_101ed9e0@CUnknown101ed9e0@@QAEPAV1@H@Z CUnknown101ed9e0::sub_101ed9e0
 0x100107b7 func   _info_node_crosswalk info_node_crosswalk
 0x10010811 func   ?sub_10222da0@CUtlMemory24@@QAEXH@Z CUtlMemory24::sub_10222da0
