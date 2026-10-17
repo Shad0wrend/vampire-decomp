@@ -64,6 +64,38 @@ void CBaseEntity::vfunc168()
 int CBaseEntity::vfunc116() { return m_flags268 & 1; }
 // END FUNCTION
 
+// FUNCTION: 0x10027570 size=0x7e
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct ICollSolid {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9(); virtual void v10();
+    virtual int GetSolid();
+};
+
+int CBaseEntity::sub_10027570()
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].name = "CBaseEntity::GetSolid";
+    g_109f3620[*g_109f3680].ent = n;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    int solid = ((ICollSolid *)((char *)this + 0x270))->GetSolid();
+    --*g_109f3680;
+    return solid;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039ff0 size=0x71
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
