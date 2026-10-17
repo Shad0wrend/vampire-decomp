@@ -62,6 +62,7 @@
 0x10001c5d func   ?sub_10043320@@YIXPAUMem8@@HH@Z sub_10043320
 0x10001c71 func   ?sub_102d6210@@YAHH@Z sub_102d6210
 0x10001cad func   ?sub_100b99b0@CUnknown100b99b0@@QAEXD@Z CUnknown100b99b0::sub_100b99b0
+0x10001ccb func   ?vfunc104@CBaseGrenade@@UAEXXZ CBaseGrenade::vfunc104
 0x10001cda func   ?sub_101dba50@@YAPBDH@Z sub_101dba50
 0x10001d43 func   _npc_VZombie npc_VZombie
 0x10001d6b func   ?vfunc335@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc335
