@@ -2296,6 +2296,38 @@ void sub_10002441();
 void __stdcall sub_101318a0(int) { sub_10002441(); }
 // END FUNCTION
 
+// FUNCTION: 0x10131a40 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105760fc[2];
+
+int *sub_10131a40()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_SourceName", {0x468, 0}, 1, 6, "source" },
+        { 10, "m_Line", {0x450, 0}, 1, 0x16, "Line", g_1055dc70 },
+    };
+    g_105760fc[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105760fc[0] = (int)&dataDesc[1];
+    return g_105760fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136450 size=0xa
 void __fastcall sub_10136450(char *self, int, int)
 {
