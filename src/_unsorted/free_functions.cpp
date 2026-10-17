@@ -2746,6 +2746,43 @@ unsigned char __stdcall sub_100ce810(Ev_t *ev, void *ent, int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cfd00 size=0x77
+struct SaveX {
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual int WriteFields(const char *name, void *base, void *data, void *desc, int n);
+};
+extern char g_1055dc74[];
+extern char g_1055dca0[];
+struct PEvent {
+    char pad[0x38];
+    PEvent *m_pNext;
+};
+struct Queue {
+    char pad[0x38];
+    PEvent *m_pNext;
+    char pad2[0x50 - 0x3c];
+    int m_Count;
+    int sub_100cfd00(SaveX *save);
+};
+
+int Queue::sub_100cfd00(SaveX *save)
+{
+    PEvent *e = m_pNext;
+    m_Count = 0;
+    for (; e != 0; e = e->m_pNext)
+        m_Count++;
+    if (!save->WriteFields("EventQueue", this, 0, g_1055dc74, 1))
+        return 0;
+    for (e = m_pNext; e != 0; e = e->m_pNext) {
+        if (!save->WriteFields("PEvent", e, 0, g_1055dca0, 12))
+            return 0;
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6820 size=0x51
 #define V(n) virtual void v##n();
 #define V10(n) V(n##0) V(n##1) V(n##2) V(n##3) V(n##4) V(n##5) V(n##6) V(n##7) V(n##8) V(n##9)
