@@ -1655,6 +1655,34 @@ unsigned char __stdcall sub_100ce810(Ev_t *ev, void *ent, int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6820 size=0x51
+#define V(n) virtual void v##n();
+#define V10(n) V(n##0) V(n##1) V(n##2) V(n##3) V(n##4) V(n##5) V(n##6) V(n##7) V(n##8) V(n##9)
+struct I1070b22c {
+    V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7)
+    V(80) V(81) V(82) V(83)
+    virtual int f84(int);
+    virtual int f85();
+};
+struct H2 { void sub_1000a448(int); };
+struct H1 { H2 *sub_10012ab2(); };
+struct H0 { char pad[0xa8]; H1 *p; };
+H0 *sub_10008d8c();
+int sub_10431447(int);
+extern I1070b22c *g_1070b22c;
+
+void sub_100d6820()
+{
+    H0 *o = sub_10008d8c();
+    if (o && o->p) {
+        H1 *p = o->p;
+        if (g_1070b22c->f85() == 2) {
+            p->sub_10012ab2()->sub_1000a448(sub_10431447(g_1070b22c->f84(1)));
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db3f0 size=0x8
 extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
