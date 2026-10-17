@@ -1514,6 +1514,26 @@ void S1006cd00::sub_1006cd00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006cff0 size=0x66
+#include "StatDefault.h"
+struct StatItem { int id; };
+struct StatOwner {
+    char pad[0x4];
+    int m_count;
+    StatItem **m_items;
+    StatDefault *sub_1006cff0(int id);
+};
+StatDefault *StatOwner::sub_1006cff0(int id)
+{
+    for (int i = 0; i < m_count; i++) {
+        if (m_items[i]->id == id)
+            return (StatDefault *)m_items[i];
+    }
+    static StatDefault s_default(-1);
+    return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006e890 size=0xe
 bool CUnknown1006e890::sub_1006e890()
 {
