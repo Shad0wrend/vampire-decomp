@@ -6741,6 +6741,49 @@ void CUnknown1039aaf0::sub_1039aaf0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103adb00 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_106504e8[2];
+void sub_10014817();
+void sub_1000157d();
+
+int *sub_103adb00()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 12, "m_hTeleportSwarm", {0x66d0, 0}, 1, 2 },
+        { 3, "m_vLastTeleportPosition", {0x66d4, 0}, 1, 2 },
+        { 15, "m_fLastTeleportTime", {0x66e0, 0}, 1, 2 },
+        { 5, "m_bTeleporting", {0x66e4, 0}, 1, 2 },
+        { 5, "m_bDead", {0x66e5, 0}, 1, 2 },
+        { 5, "m_bActivated", {0x66e6, 0}, 1, 2 },
+        { 1, "m_fTeleportSpeed", {0x66f0, 0}, 1, 2 },
+        { 15, "m_fTeleportStartTime", {0x66f4, 0}, 1, 2 },
+        { 0, "StartAttacking", {0, 0}, 1, 8, "StartAttacking", 0, (void *)sub_10014817 },
+        { 0, "StartTransformation", {0, 0}, 1, 8, "StartTransformation", 0, (void *)sub_1000157d },
+        { 10, "m_OnFinishTransformation", {0x66b8, 0}, 1, 0x16, "OnFinishTransformation", g_1055dc70 },
+    };
+    g_106504e8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_106504e8[0] = (int)&dataDesc[1];
+    return g_106504e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be090 size=0xc
 bool CUnknown10381be0::sub_103be090()
 {
