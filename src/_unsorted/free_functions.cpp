@@ -5178,6 +5178,26 @@ void CUnknown1019d490::sub_1019d490(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a17c0 size=0x77
+#include "CRestore.h"
+struct CRestoreField { int pad; const char *fieldName; char rest[0x2c - 8]; };
+extern "C" int _strcmpi(const char *, const char *);
+CRestoreField *CRestore::sub_101a17c0(const char *name, CRestoreField *fields, int count, int *pStart)
+{
+    if (name) {
+        for (int i = 0; i < count; i++) {
+            CRestoreField *f = &fields[(*pStart)++];
+            if (*pStart == count)
+                *pStart = 0;
+            if (!_strcmpi(f->fieldName, name))
+                return f;
+        }
+    }
+    *pStart = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1f70 size=0xc
 int CUnknown101a1f70::sub_101a1f70()
 {
