@@ -50,6 +50,7 @@ public:
 	void vfunc168();
 	void vfunc194();
 	void vfunc195();
+	void vfunc228(int a, int b);
 
 	const char *sub_1000ea11();
 	void sub_1003eb50();
