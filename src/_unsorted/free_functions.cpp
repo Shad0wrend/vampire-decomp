@@ -10434,6 +10434,25 @@ bool CUnknown10381be0::sub_10379040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037bb20 size=0x79
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool __fastcall sub_1037bb20(char *self)
+{
+    const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CNPC_VGhoulCroucher::IsDisturbed";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    bool r = *(bool *)(self + 0x6666);
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10381be0 size=0xc
 bool CUnknown10381be0::sub_10381be0()
 {
