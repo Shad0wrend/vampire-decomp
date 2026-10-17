@@ -1045,6 +1045,7 @@
 0x1000ef7a func   _item_g_warrens4_passkey item_g_warrens4_passkey
 0x1000ef8e func   _ambient_soundscheme ambient_soundscheme
 0x1000efb6 func   _item_k_lucky_star_murder_key item_k_lucky_star_murder_key
+0x1000f024 func   ?sub_1024a080@NodeHolder@@QAEHG@Z NodeHolder::sub_1024a080
 0x1000f0ce func   _item_p_occult_lockpicking item_p_occult_lockpicking
 0x1000f0f1 func   ?sub_1024b070@@YAXXZ sub_1024b070
 0x1000f0f6 func   ?sub_1021e410@@YIXPAH@Z sub_1021e410

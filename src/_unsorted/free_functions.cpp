@@ -8737,6 +8737,40 @@ unsigned int __fastcall sub_10249960(char **self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024a080 size=0x7e
+struct Node16 {
+    unsigned short m_Left, m_Right, m_Parent, m_Tag;
+    int m_pad8;
+    int m_Elem;
+};
+struct Hdr { int m_pad0; Node16 *m_pNodes; };
+extern unsigned char g_109f085d;
+extern Node16 g_1088ae24;
+struct NodeHolder {
+    Hdr *m_pHdr;
+    int sub_1024a080(unsigned short idx);
+};
+int NodeHolder::sub_1024a080(unsigned short idx)
+{
+    Hdr *h = m_pHdr;
+    if (!(g_109f085d & 1)) {
+        g_109f085d |= 1;
+        g_1088ae24.m_Left = 0xffff;
+        g_1088ae24.m_Right = 0xffff;
+        g_1088ae24.m_Parent = 0xffff;
+        g_1088ae24.m_Tag = 1;
+    }
+    Node16 *n;
+    if (idx != 0xffff)
+        n = &h->m_pNodes[idx];
+    else
+        n = &g_1088ae24;
+    if (n->m_Left == idx)
+        return 0;
+    return m_pHdr->m_pNodes[idx].m_Elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024afe0 size=0xb
 void sub_100139d5();
 extern int g_1088ae3c;
