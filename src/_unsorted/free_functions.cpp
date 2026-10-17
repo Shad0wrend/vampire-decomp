@@ -3047,6 +3047,27 @@ void sub_101895d0(CBaseEntity *ent, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189660 size=0x64
+struct IPlayerPickupVPhysics {
+    virtual void vf0();
+    virtual void vf1(int a, int b);
+};
+extern "C" void *__RTDynamicCast(void *, long, void *, void *, int);
+extern int g_10538764, g_10589544, g_1057c684;
+
+void sub_10189660(CBaseEntity *ent, int a, int b)
+{
+    IPlayerPickupVPhysics *p = (IPlayerPickupVPhysics *)__RTDynamicCast(ent, 0, &g_10538764, &g_10589544, 0);
+    if (p) {
+        p->vf1(a, b);
+        return;
+    }
+    CRagdollProp *r = (CRagdollProp *)__RTDynamicCast(ent, 0, &g_10538764, &g_1057c684, 0);
+    if (r)
+        r->vfunc270(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c4d0 size=0xd
 void CUnknown1018c4d0::sub_1018c4d0(char value)
 {
