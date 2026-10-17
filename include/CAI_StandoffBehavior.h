@@ -26,7 +26,7 @@ public:
 	float m_flTime3c;
 	float m_flMin40;
 	float m_flMax44;
-	int m_unk48;
+	float m_flUnk48;
 	char m_unk4c;
 	char pad004d[3];
 	float m_savedUnk50;
