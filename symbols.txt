@@ -682,6 +682,7 @@
 0x1000b9e7 func   ?sub_1040b120@CUtlMemory192@@QAEXH@Z CUtlMemory192::sub_1040b120
 0x1000b9f1 func   _item_k_shrekhub_four_key item_k_shrekhub_four_key
 0x1000ba0a func   ?sub_101eaaa0@@YAXH@Z sub_101eaaa0
+0x1000ba46 func   ?sub_10043750@S10043750@@QAEXH@Z S10043750::sub_10043750
 0x1000ba82 func   ?sub_1002ccc0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_1002ccc0
 0x1000ba87 func   _grenade grenade
 0x1000ba9b func   _item_g_gargoyle_book item_g_gargoyle_book

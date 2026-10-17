@@ -439,6 +439,41 @@ void CUtlMemory20::sub_100436c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043750 size=0x6a
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct S10043750 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_10043750(int num);
+};
+// TARGET: S10043750::sub_10043750
+void S10043750::sub_10043750(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 2;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 0x14);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100437e0 size=0x6a
 #include "CUnknown100437e0.h"
 
