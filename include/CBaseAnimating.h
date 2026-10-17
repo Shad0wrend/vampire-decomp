@@ -12,6 +12,7 @@ public:
 	float sub_10091740();	// "CBaseAnimating::GetIdealSpeed": returns the float at +0x654
 	float sub_1008d190();	// "CBaseAnimating::GetGroundSpeedScalar": returns the float at +0x564
 	void sub_1008d0f0(float scalar);	// "CBaseAnimating::SetGroundSpeedScalar": stores the float at +0x564
+	char sub_100903e0();	// "CBaseAnimating::IsRagdoll": (field at +0x168) == 0x17
 	void sub_10096490(int set);	// "CBaseAnimating::SetHitboxSet": stores the argument at +0x680
 
 	// Slot 249, called directly so far; declared as a plain member.
