@@ -597,6 +597,7 @@
 0x10009e21 func   ?sub_1042c4a0@@YAXXZ sub_1042c4a0
 0x10009e30 func   ?sub_1003e250@@YAPAUtrace21@@PAU1@@Z sub_1003e250
 0x10009e85 func   ?vfunc480@CHL2_Player@@UAEMXZ CHL2_Player::vfunc480
+0x10009ea8 func   ?sub_1027da90@@YI_NPADHH@Z sub_1027da90
 0x10009eb7 func   _prop_padlock prop_padlock
 0x10009ebc func   ??0CPlayerMove@@QAE@XZ CPlayerMove::CPlayerMove
 0x10009ec6 func   ?sub_10078540@CUnknown10078540@@QAEXH@Z CUnknown10078540::sub_10078540
