@@ -8217,6 +8217,44 @@ void CUnknown102a99c0::sub_102a99c0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9c80 size=0x77
+struct Vec3 { int x, y, z; };
+extern Vec3 g_1093404c;
+extern Vec3 g_10934060;
+struct Obj {
+    int f0;
+    Vec3 v4;
+    int f10;
+    int f14;
+    int f18;
+    int f1c;
+    int f20;
+    int f24;
+    int f28;
+    Vec3 v2c;
+    int f38;
+    int f3c;
+    Obj *sub_102a9c80(int a1, int a2, int a3, int a4, int a5);
+};
+
+Obj *Obj::sub_102a9c80(int a1, int a2, int a3, int a4, int a5)
+{
+    f0 = a1;
+    v4 = g_1093404c;
+    f14 = a2;
+    f10 = -1;
+    f18 = -1;
+    f1c = -1;
+    f20 = a3;
+    f24 = a4;
+    f28 = a5;
+    v2c = g_10934060;
+    f38 = 0;
+    f3c = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9dc0 size=0x72
 struct Vec3 { int x, y, z; };
 extern Vec3 g_10934060;
