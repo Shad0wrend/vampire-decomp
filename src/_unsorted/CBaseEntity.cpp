@@ -115,6 +115,25 @@ void CBaseEntity::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa680 size=0x74
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool __fastcall sub_100aa680(CBaseEntity *self)
+{
+    const char *name = self ? (self->m_name26c ? self->m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::ShouldSavePhysics";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    (*g_109f3680)--;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4bc0 size=0x8
 #include "CBaseEntity.h"
 
