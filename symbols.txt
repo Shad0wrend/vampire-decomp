@@ -1381,6 +1381,7 @@
 0x10013a0c func   ?sub_101a1400@SRestore@@QAEPAU1@E@Z SRestore::sub_101a1400
 0x10013a6b func   _item_g_giovanni_invitation_maria item_g_giovanni_invitation_maria
 0x10013a89 func   ?sub_101dbb00@@YAPBDH@Z sub_101dbb00
+0x10013b79 func   ?sub_100a9470@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9470
 0x10013ba6 func   ??0CVStatList_t@@QAE@H@Z CVStatList_t::CVStatList_t
 0x10013c28 func   ?sub_100fa690@@YIXPAUCSlots@@HH@Z sub_100fa690
 0x10013c87 func   ?sub_10245790@CUnknown10245790@@QAEXI@Z CUnknown10245790::sub_10245790
