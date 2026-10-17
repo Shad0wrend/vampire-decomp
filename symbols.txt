@@ -313,6 +313,7 @@
 0x1000628a func   ?sub_102e2840@@YIXPAUCOwner@@@Z sub_102e2840
 0x10006438 func   ?sub_102a9ea0@CUnknown102a9ea0@@QAEHH@Z CUnknown102a9ea0::sub_102a9ea0
 0x100064ce func   ?sub_100bc5c0@CUnknown100bc5c0@@QAEXH@Z CUnknown100bc5c0::sub_100bc5c0
+0x100064f1 func   ?sub_1009a030@@YAXPAUTEnt@@HPAH@Z sub_1009a030
 0x10006505 func   _item_g_larry_briefcase item_g_larry_briefcase
 0x10006546 func   _npc_VGangrel npc_VGangrel
 0x1000656e func   ?sub_101f74e0@@YI_NPAH@Z sub_101f74e0
