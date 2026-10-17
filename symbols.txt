@@ -962,6 +962,7 @@
 0x1000e8b8 func   ?sub_100732b0@CUnknown100732b0@@QAEXD@Z CUnknown100732b0::sub_100732b0
 0x1000e8c7 func   ?sub_101fd430@TList@@QAEPAU1@XZ TList::sub_101fd430
 0x1000e930 func   ?sub_100b4a40@UtlMem3@@QAEXH@Z UtlMem3::sub_100b4a40
+0x1000e93f func   ?sub_1036b6b0@@YG_NH@Z sub_1036b6b0
 0x1000e98a func   ?vfunc288@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc288
 0x1000e9e9 func   _window_pane window_pane
 0x1000e9fd func   ?sub_102e2710@@YIXPAUCOwner@@@Z sub_102e2710
