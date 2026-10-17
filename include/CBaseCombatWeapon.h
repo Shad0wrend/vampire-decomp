@@ -65,7 +65,7 @@ public:
 	virtual void vfunc265(); virtual void vfunc266(); virtual void vfunc267(); virtual void vfunc268(); virtual void vfunc269();
 	virtual void vfunc270(); virtual void vfunc271(); virtual void vfunc272(); virtual void vfunc273(); virtual void vfunc274();
 	virtual void vfunc275(); virtual void vfunc276(); virtual void vfunc277(); virtual void vfunc278(); virtual void vfunc279();
-	virtual void vfunc280(); virtual void vfunc281(); virtual void vfunc282(); virtual void vfunc283(); virtual void vfunc284();
+	virtual void vfunc280(); virtual void vfunc281(); virtual void vfunc282(); virtual void vfunc283(); virtual void vfunc284(void *a, void *b, void *c, int d, int e);
 	virtual void vfunc285(); virtual void vfunc286(); virtual void vfunc287(); virtual void vfunc288(); virtual void vfunc289();
 	virtual void vfunc290(); virtual void vfunc291(); virtual void vfunc292(); virtual void vfunc293(); virtual void vfunc294();
 	virtual void vfunc295(); virtual void vfunc296(); virtual void vfunc297(int value); virtual void vfunc298(); virtual void vfunc299();
@@ -81,11 +81,13 @@ public:
 	virtual void vfunc345(); virtual void vfunc346(); virtual void vfunc347(); virtual void vfunc348(); virtual void vfunc349();
 	virtual void vfunc350(); virtual void vfunc351(); virtual void vfunc352(); virtual void vfunc353(); virtual void vfunc354();
 	virtual void vfunc355(); virtual void vfunc356(); virtual void vfunc357(); virtual void vfunc358(); virtual void vfunc359();
-	virtual void vfunc360(); virtual void vfunc361(); virtual void vfunc362(); virtual void vfunc363(); virtual void vfunc364();
+	virtual void vfunc360(); virtual void vfunc361(); virtual void vfunc362(); virtual void vfunc363(); virtual void vfunc364(int a, int b, int c);
 	virtual void vfunc365(); virtual void vfunc366(); virtual void vfunc367(); virtual void vfunc368(); virtual void vfunc369();
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other); virtual void vfunc371();
 	void sub_102507b0();
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
+	char m_pad2e4[0x88c - 0x2e4];
+	unsigned int m_hOwner; // 0x88c
 };
