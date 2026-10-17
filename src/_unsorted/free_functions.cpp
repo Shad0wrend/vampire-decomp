@@ -2706,6 +2706,50 @@ extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x100dc300 size=0x76
+extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
+struct Rec64 {
+    int m00;
+    int m04, m08, m0c, m10, m14, m18;
+    char m1c;
+    int m20, m24, m28, m2c, m30, m34, m38;
+    int m3c;
+    int m40;
+    short m44;
+    int m48;
+    int m4c, m50, m54;
+    int m58, m5c, m60;
+    void sub_100dc300(int v);
+};
+void Rec64::sub_100dc300(int v)
+{
+    m3c = v;
+    m04 = 0;
+    m08 = 0;
+    m0c = 0;
+    m10 = 0;
+    m14 = 0;
+    m18 = 0;
+    m48 = 0;
+    m20 = 0;
+    m44 = 0;
+    m40 = 0;
+    m1c = 0;
+    m4c = g_1070d1b0;
+    m50 = g_1070d1b4;
+    m54 = g_1070d1b8;
+    m58 = g_1070d1b0;
+    m5c = g_1070d1b4;
+    m60 = g_1070d1b8;
+    m24 = 0;
+    m28 = 0;
+    m2c = 0;
+    m30 = 0;
+    m34 = 0;
+    m38 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ddf40 size=0xc
 int *CUnknown100ddf40::sub_100ddf40(int index)
 {
