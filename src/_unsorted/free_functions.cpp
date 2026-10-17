@@ -2849,6 +2849,31 @@ extern int g_106cff54;
 void sub_100b4e80(int v) { g_106cff54 = v; }
 // END FUNCTION
 
+// FUNCTION: 0x100b6510 size=0x7f
+extern "C" unsigned strlen(const char *);
+extern void (*g_109f3890)(char *dest, const char *src, int count);
+
+void sub_100b6510(const char *in, char *out)
+{
+    int len = strlen(in);
+    int end = len - 1;
+    while (end && in[end] != '.' && in[end] != '/' && in[end] != '\\')
+        end--;
+    if (in[end] != '.')
+        end = len - 1;
+    else
+        end--;
+    int start = len - 1;
+    while (start >= 0 && in[start] != '/' && in[start] != '\\')
+        start--;
+    if (start >= 0 && (in[start] == '/' || in[start] == '\\'))
+        start++;
+    else
+        start = 0;
+    g_109f3890(out, &in[start], end - start + 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b68d0 size=0x6a
 struct TRandom {
 	virtual void v0();
