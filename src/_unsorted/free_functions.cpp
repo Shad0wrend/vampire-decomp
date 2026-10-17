@@ -2946,6 +2946,29 @@ bool sub_100df7b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e09a0 size=0x77
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char *(*g_109f3890)(char *, const char *, int);
+struct Dialog {
+    char pad[0x33ad];
+    char m_Name[0x104];
+    void sub_100e09a0(const char *name);
+};
+
+void Dialog::sub_100e09a0(const char *name)
+{
+    g_109f3620[*g_109f3680].a = "CDialog::Acquire";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    g_109f3890(m_Name, name, 0x104);
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7480 size=0x70
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
