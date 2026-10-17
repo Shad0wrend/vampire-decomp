@@ -13,4 +13,5 @@ public:
 	CItemContainerHandle m_hLock;	// EHANDLE to the CItemContainerLock
 
 	void *sub_10209a20();	// returns the lock entity (dynamic_cast<CItemContainerLock *>) or NULL
+	void vfunc71();
 };
