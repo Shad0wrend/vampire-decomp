@@ -151,6 +151,40 @@ void CBaseCombatCharacter::vfunc403()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032d2e0 size=0x7a
+#include "CBaseCombatCharacter.h"
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+#define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
+struct Slot386 {
+    V100(a) V100(b) V100(c)
+    V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j) V10(k)
+    virtual void l0(); virtual void l1(); virtual void l2(); virtual void l3(); virtual void l4(); virtual void l5();
+    virtual void v386();
+};
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_10620140[];
+extern char g_105387dc[];
+extern char g_106b8540[];
+void CBaseCombatCharacter::vfunc387()
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_10620140;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    ((Slot386 *)this)->v386();
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103315e0 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
