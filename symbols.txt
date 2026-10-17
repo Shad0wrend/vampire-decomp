@@ -515,6 +515,7 @@
 0x10009be7 func   ?sub_1039aaf0@CUnknown1039aaf0@@QAEXD@Z CUnknown1039aaf0::sub_1039aaf0
 0x10009c19 func   ?sub_10373420@@YIXPAH@Z sub_10373420
 0x10009c37 func   ?sub_10202760@@YAHH@Z sub_10202760
+0x10009c9b func   ?sub_102696f0@@YIXPAD@Z sub_102696f0
 0x10009cdc func   _phys_slideconstraint phys_slideconstraint
 0x10009d6d func   ?vfunc133@CBaseEntity@@UAEXXZ CBaseEntity::vfunc133
 0x10009d86 func   ?vfunc241@CFuncPlat@@UAEEXZ CFuncPlat::vfunc241

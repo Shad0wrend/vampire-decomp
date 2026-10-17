@@ -4587,6 +4587,38 @@ void sub_10267350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102696f0 size=0x8e
+struct Globals { char pad0[0xc]; float curtime; char pad1[4]; int maxclients; };
+extern Globals *g_1070b228;
+extern float g_1044e664;
+#define D5(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4();
+#define D10(p) D5(p##a) D5(p##b)
+#define D100(p) D10(p##0) D10(p##1) D10(p##2) D10(p##3) D10(p##4) D10(p##5) D10(p##6) D10(p##7) D10(p##8) D10(p##9)
+struct E {
+	D100(a) D100(b) virtual void c0();
+	virtual char v201(void *, int, int, int);
+	D100(d) D10(e0) D10(e1) D10(e2) D10(e3) D10(e4) D10(e5) virtual void h0();
+	virtual char v363(void *);
+};
+E *sub_1000ac8b(int);
+char sub_10015960(void *, void *);
+void sub_10014614(void *);
+
+// TARGET: sub_102696f0
+void __fastcall sub_102696f0(char *self)
+{
+	for (int i = 0; i < g_1070b228->maxclients; i++) {
+		E *p = sub_1000ac8b(i + 1);
+		if (p && p->v363(self) && sub_10015960(self, p) && p->v201(self, 0x2804091, 0, 0)) {
+			float t = g_1070b228->curtime;
+			*(float *)(self + 0x17c) = t + g_1044e664;
+			return;
+		}
+	}
+	sub_10014614(self);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026dc60 size=0xb
 void CUnknown1026dc60::sub_1026dc60()
 {
