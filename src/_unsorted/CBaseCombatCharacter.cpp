@@ -63,6 +63,47 @@ bool __fastcall sub_10325f00(CBaseEntity *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10325fa0 size=0x7f
+#include "CBaseCombatCharacter.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct EntSlots138 {
+    S100(a)
+    S10(b0)
+    S10(b1)
+    S10(b2)
+    virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4();
+    virtual void c5(); virtual void c6(); virtual void c7();
+    virtual void v138();
+};
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+char CBaseCombatCharacter::sub_10325fa0()
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].name = "CBaseCombatCharacter::HasAlienGibs";
+    g_109f3620[*g_109f3680].ent = n;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    ((EntSlots138 *)this)->v138();
+    --*g_109f3680;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10326d40 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
