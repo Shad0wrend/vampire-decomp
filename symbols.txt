@@ -46,6 +46,7 @@
 0x100017cb func   _npc_VCop npc_VCop
 0x100017da func   _npc_VRat npc_VRat
 0x100017e9 func   _npc_crow npc_crow
+0x10001848 func   ?vfunc5@CPhysThruster@@UAEPAV1@I@Z CPhysThruster::vfunc5
 0x10001861 func   _item_p_research_lg_dodge item_p_research_lg_dodge
 0x10001898 func   ?sub_100ba120@CUnknown100ba120@@QAEXD@Z CUnknown100ba120::sub_100ba120
 0x1000193d func   ?vfunc9@CEffectsServer@@UAEMXZ CEffectsServer::vfunc9
