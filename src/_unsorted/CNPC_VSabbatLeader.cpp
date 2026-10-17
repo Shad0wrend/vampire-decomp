@@ -48,6 +48,34 @@ void CNPC_VSabbatLeader::sub_103a7760(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a9340 size=0x84
+#include "CNPC_VSabbatLeader.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct CScopeGuard {
+    CScopeGuard(const char *name)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = g_106b8540;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+char CNPC_VSabbatLeader::sub_103a9340(CNPC_VSabbatLeaderHint *pHint)
+{
+    CScopeGuard guard("CNPC_VSabbatLeader::FValidateHintType");
+    if (pHint->m_hintType >= 16000 && pHint->m_hintType <= 16005)
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103aa480 size=0x65
 #include "CNPC_VSabbatLeader.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };

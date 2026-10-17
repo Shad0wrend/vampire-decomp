@@ -845,6 +845,7 @@
 0x1000c12b func   _weapon_physcannon weapon_physcannon
 0x1000c18a func   ?vfunc359@CNPC_VGargoyle@@UAEHH@Z CNPC_VGargoyle::vfunc359
 0x1000c1a3 func   ?sub_100732f0@UtlMem5@@QAEXH@Z UtlMem5::sub_100732f0
+0x1000c1c6 func   ?sub_103a9340@CNPC_VSabbatLeader@@QAEDPAUCNPC_VSabbatLeaderHint@@@Z CNPC_VSabbatLeader::sub_103a9340
 0x1000c1da func   ?sub_1007dfe0@CUnknown1007dfe0@@QAEXH@Z CUnknown1007dfe0::sub_1007dfe0
 0x1000c1e9 func   ?sub_101f0d40@CUnknown101f0d40@@QAEXPAH@Z CUnknown101f0d40::sub_101f0d40
 0x1000c202 func   ?sub_100ed6c0@@YIXPAXHH@Z sub_100ed6c0
