@@ -5730,6 +5730,19 @@ void __fastcall sub_1021e160(int *p) { p[3] = 0; }
 void __fastcall sub_1021e1c0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1021e350 size=0x6d
+struct Elem { char data[0x2b4]; };
+struct Vec { Elem *m_pMemory; int pad[2]; int m_Size; };
+void *sub_10430fa0(void *, const void *, unsigned int);
+
+void __fastcall sub_1021e350(Vec *v, int, int index, int count)
+{
+    int n = v->m_Size - index - count;
+    if (n > 0 && count > 0)
+        sub_10430fa0(&v->m_pMemory[index + count], &v->m_pMemory[index], n * sizeof(Elem));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e410 size=0x8
 void __fastcall sub_1021e410(int *p)
 {
