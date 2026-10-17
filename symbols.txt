@@ -825,6 +825,7 @@
 0x1000bcdf func   _auspex_aura auspex_aura
 0x1000bd48 func   ?sub_10390040@@YIXPAD@Z sub_10390040
 0x1000bd7a func   ?sub_100766f0@CUnknown100766f0@@QAEXH@Z CUnknown100766f0::sub_100766f0
+0x1000bdac func   ?sub_100adfd0@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100adfd0
 0x1000bdfc func   _func_keyframed_mover func_keyframed_mover
 0x1000be06 func   ?sub_1027dc80@@YG_NPAUFObj@@PAUIObj@@MPAH@Z sub_1027dc80
 0x1000be1a func   _vampire_skill vampire_skill

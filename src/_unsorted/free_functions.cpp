@@ -2588,6 +2588,46 @@ void CBaseEntity::sub_100acef0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100adfd0 size=0x84
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct IModelSink {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12();
+    virtual int PrecacheModel(const char *s, int n);
+};
+extern IModelSink *g_1070b22c;
+
+struct CScopeGuard {
+    CScopeGuard(const char *name, const char *ent)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = ent;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+int CBaseEntity::sub_100adfd0(const char *name)
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    CScopeGuard guard("CBaseEntity::PrecacheModel", n);
+    return g_1070b22c->PrecacheModel(name, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ae090 size=0x83
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
