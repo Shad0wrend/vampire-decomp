@@ -6678,6 +6678,37 @@ void __fastcall sub_1021e410(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021e580 size=0x75
+#include "CUnknown1021e580.h"
+
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUnknown1021e580::sub_1021e580(int num)
+{
+    if (m_growSize == -1)
+        return;
+    int newAlloc = m_allocationCount;
+    int target = num + newAlloc;
+    if (newAlloc < target) {
+        do {
+            if (newAlloc != 0) {
+                if (m_growSize != 0)
+                    newAlloc += m_growSize;
+                else
+                    newAlloc += newAlloc;
+            } else
+                newAlloc = 1;
+        } while (newAlloc < target);
+        m_allocationCount = newAlloc;
+    }
+    if (m_pMemory)
+        m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount * 0xd4);
+    else
+        m_pMemory = (char *)g_109f3634(m_allocationCount * 0xd4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e620 size=0x7c
 #include "CUnknown1021e620.h"
 
