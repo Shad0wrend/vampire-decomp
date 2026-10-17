@@ -28,6 +28,27 @@ void CNPC_VAndreiBlood::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035cf80 size=0x65
+#include "CNPC_VAndreiBlood.h"
+struct ScopeEnt { const char* a; const void* b; const void* c; };
+extern ScopeEnt* g_109f3620;
+extern int* g_109f3680;
+extern char g_1062b158[];
+extern char g_106b8540[];
+
+// TARGET: CNPC_VAndreiBlood::vfunc127
+int CNPC_VAndreiBlood::vfunc127(int arg)
+{
+	g_109f3620[*g_109f3680].a = g_1062b158;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int r = sub_1000b28f(arg);
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035dba0 size=0x64
 #include "CNPC_VAndreiBlood.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
