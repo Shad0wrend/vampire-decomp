@@ -10573,6 +10573,53 @@ bool CUnknown10315ec0::sub_10315ec0(CUnknown10315ec0Ent *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103167f0 size=0x72
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+struct Ent {
+    V10(a) V10(b) V10(c) V10(d) V10(e)
+    virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3();
+    virtual bool v54(void *arg);
+};
+struct Sub { Ent *pEnt; unsigned int serial; };
+struct EntInfo { int pad; Sub s; };
+struct Handle { unsigned int m_Index; };
+extern EntInfo *g_10566458;
+static inline Ent *HGet(const Handle *h)
+{
+    if (h->m_Index != 0xffffffff) {
+        Sub *e = &g_10566458[h->m_Index & 0x1fff].s;
+        if (e->serial == (h->m_Index >> 13))
+            return e->pEnt;
+    }
+    return 0;
+}
+static inline Ent *HPeek(const Handle *h)
+{
+    if (h->m_Index != 0xffffffff) {
+        Sub *e = &g_10566458[h->m_Index & 0x1fff].s;
+        if (e->serial == (h->m_Index >> 13))
+            return e->pEnt;
+    }
+    return 0;
+}
+struct HandleList {
+    char pad[0x1c];
+    Handle m_h[16];
+    int m_count;
+    bool sub_103167f0(void *arg);
+};
+bool HandleList::sub_103167f0(void *arg)
+{
+    for (int i = 0; i < m_count; i++) {
+        if (HPeek(&m_h[i]) != 0) {
+            if (!HGet(&m_h[i])->v54(arg))
+                return false;
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319f10 size=0xc
 bool sub_1000528b(void *);
 bool CUnknown10319f10::sub_10319f10()
