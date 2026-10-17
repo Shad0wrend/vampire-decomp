@@ -11,4 +11,6 @@ public:
 
 	// Slot 421, called directly so far; declared as a plain member.
 	void vfunc421();
+
+	void sub_103d1ca0();	// "CNPC_VWerewolf::StartSearchTimer": stores the time stamp counter in a global
 };
