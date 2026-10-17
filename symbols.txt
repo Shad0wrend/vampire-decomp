@@ -722,6 +722,7 @@
 0x1000ace0 func   _prop_doorknob_electronic prop_doorknob_electronic
 0x1000ad44 func   ?sub_1012f2b0@@YAHPBD@Z sub_1012f2b0
 0x1000ad6c func   _npc_VTaxiDriver npc_VTaxiDriver
+0x1000add5 func   ?vfunc32@CFuncMonitor@@QAE_NPAX@Z CFuncMonitor::vfunc32
 0x1000adda func   _logic_proximity logic_proximity
 0x1000adf3 func   ?vfunc375@CNPC_VWolfMorph@@UAEHH@Z CNPC_VWolfMorph::vfunc375
 0x1000ae02 func   ?sub_101eaa40@@YAXH@Z sub_101eaa40
