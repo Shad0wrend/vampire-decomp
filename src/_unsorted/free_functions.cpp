@@ -14968,6 +14968,33 @@ void sub_103eeec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ef550 size=0x49
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_1000c748(GP *);
+extern int vt_104e1d5c;
+extern char g_1062eac4[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: item_w_grenade_frag
+extern "C" GP *item_w_grenade_frag()
+{
+	GP *p = (GP *)sub_1000db89(0x934);
+	if (p) {
+		sub_1000c748(p);
+		*(int **)p = &vt_104e1d5c;
+	} else {
+		p = 0;
+	}
+	p->name(g_1062eac4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f04f0 size=0xd
 CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
 {
