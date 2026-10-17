@@ -7777,6 +7777,26 @@ extern char g_1093412c;
 void sub_102f99b0() { g_1093412c = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x102fc540 size=0x6b
+#include <stdarg.h>
+#include <stdio.h>
+
+extern int g_10610bec, g_10610bf0;
+extern void (*g_109f3630)(const char *);
+
+void sub_102fc540(int a, int b, const char *fmt, ...)
+{
+    char buf[256];
+    if ((a == g_10610bec && b == g_10610bf0) || (a == g_10610bf0 && b == g_10610bec)) {
+        va_list args;
+        va_start(args, fmt);
+        _vsnprintf(buf, 255, fmt, args);
+        buf[255] = 0;
+        g_109f3630(buf);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307b40 size=0x9
 struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 // TARGET: CUnknown10307b40::sub_10307b40
