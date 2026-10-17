@@ -280,6 +280,7 @@
 0x100045a2 func   _npc_VScurrying npc_VScurrying
 0x100045b1 func   _scripted_scene scripted_scene
 0x1000463d func   ?sub_1042c0c0@THL@@QAE_NHH@Z THL::sub_1042c0c0
+0x100046ba func   ?vfunc2@CTESparks@@UAEPAV1@I@Z CTESparks::vfunc2
 0x100046dd func   ?sub_10078860@@YIXPAD@Z sub_10078860
 0x100046fb func   ?sub_1018c4d0@CUnknown1018c4d0@@QAEXD@Z CUnknown1018c4d0::sub_1018c4d0
 0x1000470a func   ?sub_1016b440@@YAXXZ sub_1016b440
