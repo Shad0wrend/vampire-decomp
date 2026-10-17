@@ -19,6 +19,7 @@ public:
 	void vfunc338(int a, int b, int c);
 	void vfunc339(int a, int b, int c);
 	void vfunc340(int a, int b, int c);
+	int vfunc376(int a);
 	int vfunc393();
 	void vfunc403();
 };
