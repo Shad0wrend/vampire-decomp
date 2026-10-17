@@ -4,8 +4,12 @@
 class CNPC_VSabbatLeader
 {
 public:
+	char pad0[0x66c0];
+	int m_nFailureType;
+
 	void sub_103a7760(int arg);
 	void sub_1000b8a2(int arg);
 	int sub_103aa480(int arg);
 	int sub_10001b45(int arg);
+	void sub_103a9d00();	// FlipFailureType
 };
