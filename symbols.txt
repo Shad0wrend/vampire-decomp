@@ -830,6 +830,7 @@
 0x1000e9e9 func   _window_pane window_pane
 0x1000e9fd func   ?sub_102e2710@@YIXPAUCOwner@@@Z sub_102e2710
 0x1000eade func   _logic_branch logic_branch
+0x1000eaf7 func   ?vfunc104@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc104
 0x1000eb56 func   _env_wind env_wind
 0x1000eb5b func   _env_fade env_fade
 0x1000eb6a func   _env_fire env_fire
