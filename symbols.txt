@@ -977,6 +977,7 @@
 0x1000dd5f func   ?sub_1019c950@@YAXPAH@Z sub_1019c950
 0x1000dddc func   ?sub_102f1690@CUnknown102ee120_x@@QAE_NPAUHelperParams102f1690@@@Z CUnknown102ee120_x::sub_102f1690
 0x1000ddeb func   _info_node_cover_corner info_node_cover_corner
+0x1000de0e func   ?sub_100ce3c0@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce3c0
 0x1000de63 func   ?sub_103bf580@CNPC_VTzimisce@@QAEPAXPAX@Z CNPC_VTzimisce::sub_103bf580
 0x1000de95 func   _item_g_bertrams_cd item_g_bertrams_cd
 0x1000de9a func   ?vfunc14@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc14
