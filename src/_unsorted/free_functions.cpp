@@ -1944,6 +1944,24 @@ void __fastcall sub_1008b490(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10090b20 size=0x79
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void __fastcall sub_10090b20(char *self)
+{
+    const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::RepositionOnAnimationExit";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    self[0x5b4] = 1;
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091c80 size=0x6f
 #include "CBaseAnimating.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };

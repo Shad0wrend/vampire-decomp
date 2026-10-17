@@ -1259,6 +1259,7 @@
 0x10012a53 func   _params_explosion params_explosion
 0x10012a8f func   ?sub_10078fd0@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_10078fd0
 0x10012ab7 func   ?sub_101f9650@@YAXH@Z sub_101f9650
+0x10012ada func   ?sub_10090b20@@YIXPAD@Z sub_10090b20
 0x10012ae9 func   _info_node_kick_over info_node_kick_over
 0x10012afd func   _func_door_rotating func_door_rotating
 0x10012b02 func   _item_k_malkavian_refrigerator_key item_k_malkavian_refrigerator_key
