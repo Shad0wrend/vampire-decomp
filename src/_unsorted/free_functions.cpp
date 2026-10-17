@@ -7825,6 +7825,31 @@ int CVDmg_t::sub_101faa70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fb200 size=0x83
+#include "CVDmg_t.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern int (*g_1074e7bc)(CVDmg_t *, int, int);
+
+int CVDmg_t::sub_101fb200(int a, int b)
+{
+    g_109f3620[*g_109f3680].name = "CVDmg_t::Apply";
+    g_109f3620[*g_109f3680].ent = g_106b8540;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    if (g_1074e7bc) {
+        int r = g_1074e7bc(this, a, b);
+        --*g_109f3680;
+        return r;
+    }
+    --*g_109f3680;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fb340 size=0x7e
 #include "CVDmg_t.h"
 

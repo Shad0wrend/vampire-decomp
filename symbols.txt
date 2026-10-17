@@ -1207,6 +1207,7 @@
 0x10010e0b func   _npc_bullseye npc_bullseye
 0x10010f14 func   _beam beam
 0x10010f41 func   ?sub_1013dbb0@@YIXPAUPool@@@Z sub_1013dbb0
+0x10010f46 func   ?sub_101fb200@CVDmg_t@@QAEHHH@Z CVDmg_t::sub_101fb200
 0x10010f69 func   _gibshooter gibshooter
 0x10010f91 func   ?sub_101f95b0@@YAXH@Z sub_101f95b0
 0x10010f9b func   _npc_VStalker npc_VStalker
