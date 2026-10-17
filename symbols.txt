@@ -1301,6 +1301,7 @@
 0x10012864 func   _item_k_murietta_key item_k_murietta_key
 0x10012887 func   ?sub_100b39c0@@YIHPAD@Z sub_100b39c0
 0x100129c2 func   _npc_generic npc_generic
+0x100129d6 func   ?sub_103282e0@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_103282e0
 0x100129e5 func   ?vfunc24@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc24
 0x10012a2b func   ?sub_1007ee20@@YIXPAH@Z sub_1007ee20
 0x10012a3f func   _func_movelinear func_movelinear

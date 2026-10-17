@@ -11198,6 +11198,41 @@ void CBaseCombatCharacter::sub_10327960(int color)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103282e0 size=0x7e
+#include "CBaseCombatCharacter.h"
+
+struct Ent { bool sub_10336920(); };
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct CScopeGuard {
+    CScopeGuard(const char *name, const char *ent)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = ent;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+int CBaseCombatCharacter::sub_103282e0()
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    CScopeGuard guard("CBaseCombatCharacter::GetGrappleSize", n);
+    return ((Ent *)this)->sub_10336920() != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10330ce0 size=0xd
 #include "CUnknown10330ce0.h"
 // TARGET: CUnknown10330ce0::sub_10330ce0
