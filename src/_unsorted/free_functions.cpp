@@ -296,6 +296,41 @@ void __fastcall sub_10043630(Mem8 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100437e0 size=0x6a
+#include "CUnknown100437e0.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, unsigned long size);
+
+void CUnknown100437e0::sub_100437e0(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+
+	int nAllocationRequested = m_nAllocationCount + num;
+	if (m_nAllocationCount < nAllocationRequested)
+	{
+		do
+		{
+			if (m_nAllocationCount)
+			{
+				if (m_nGrowSize)
+					m_nAllocationCount += m_nGrowSize;
+				else
+					m_nAllocationCount += m_nAllocationCount;
+			}
+			else
+				m_nAllocationCount = 2;
+		} while (m_nAllocationCount < nAllocationRequested);
+	}
+
+	if (m_pMemory)
+		m_pMemory = Plat_Realloc(m_pMemory, m_nAllocationCount * 20);
+	else
+		m_pMemory = Plat_Alloc(m_nAllocationCount * 20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004add0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
