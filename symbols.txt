@@ -540,6 +540,7 @@
 0x100080cb func   ?sub_101e83f0@@YGXPAHHH@Z sub_101e83f0
 0x10008107 func   _phys_keepupright phys_keepupright
 0x1000812f func   ?sub_102d00c0@@YIXPAHHH@Z sub_102d00c0
+0x10008143 func   ?vfunc2@CTEBeamPoints@@UAEPAV1@I@Z CTEBeamPoints::vfunc2
 0x1000814d func   ?vfunc7@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc7
 0x1000816b func   ?sub_102d4390@S102d4390@@QAEXH@Z S102d4390::sub_102d4390
 0x10008175 func   ?sub_10428eb0@@YAHPAD@Z sub_10428eb0
