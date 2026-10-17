@@ -9668,6 +9668,33 @@ void CUnknown10223800::sub_10223800(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10223f20 size=0x49
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_10011f9a(GP *);
+extern int vt_1048bed4;
+extern char g_105b2080[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: func_keyframed_mover
+extern "C" GP *func_keyframed_mover()
+{
+	GP *p = (GP *)sub_1000db89(0x600);
+	if (p) {
+		sub_10011f9a(p);
+		*(int **)p = &vt_1048bed4;
+	} else {
+		p = 0;
+	}
+	p->name(g_105b2080);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224150 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
