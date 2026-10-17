@@ -3410,6 +3410,34 @@ int __stdcall sub_100e7480(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e77f0 size=0x7d
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct CScopeGuard {
+    CScopeGuard(const char *name)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = g_106b8540;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+int sub_100e77f0(const int *a, const int *b)
+{
+    CScopeGuard guard("compare_lines");
+    if (*a < *b)
+        return -1;
+    if (*a == *b)
+        return 0;
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb130 size=0x8
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION
