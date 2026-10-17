@@ -295,6 +295,30 @@ void CBaseEntity::sub_100b12e0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1750 size=0x7e
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_100b1750(int index)
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].name = "CBaseEntity::SetModelIndex";
+    g_109f3620[*g_109f3680].ent = n;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    *(int *)((char *)this + 0x1a4) = index;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b17f0 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
