@@ -4278,6 +4278,38 @@ void CUnknown1021e620::sub_1021e620(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10223030 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105b19d0[2];
+
+int *sub_10223030()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_iszNextKey", {0x450, 0}, 1, 6, "NextKey" },
+        { 10, "m_OnReached", {0x45c, 0}, 1, 0x16, "OnReached", g_1055dc70 },
+    };
+    g_105b19d0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105b19d0[0] = (int)&dataDesc[1];
+    return g_105b19d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102237c0 size=0xd
 void CUnknown102237c0::sub_102237c0(int value)
 {
