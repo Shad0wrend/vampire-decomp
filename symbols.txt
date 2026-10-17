@@ -578,6 +578,7 @@
 0x1000ab55 func   ?sub_101eddd0@@YAXH@Z sub_101eddd0
 0x1000ab87 func   ?sub_102e7e60@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e7e60
 0x1000ac95 func   _keyframe_rope keyframe_rope
+0x1000ac9f func   ?vfunc1@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAX@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc1
 0x1000acb3 func   _npc_VLasombra npc_VLasombra
 0x1000ace0 func   _prop_doorknob_electronic prop_doorknob_electronic
 0x1000ad6c func   _npc_VTaxiDriver npc_VTaxiDriver
