@@ -7615,6 +7615,43 @@ void CUnknown102a99c0::sub_102a99c0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9dc0 size=0x72
+struct Vec3 { int x, y, z; };
+extern Vec3 g_10934060;
+struct Obj {
+    int f0;
+    Vec3 v4;
+    int f10;
+    int f14;
+    int f18;
+    int f1c;
+    int f20;
+    int f24;
+    int f28;
+    Vec3 v2c;
+    int f38;
+    int f3c;
+    Obj *sub_102a9dc0(int a1, Vec3 *a2, int a3, int a4, int a5, int a6, int a7, int a8);
+};
+
+Obj *Obj::sub_102a9dc0(int a1, Vec3 *a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    f0 = a1;
+    v4 = *a2;
+    f14 = a3;
+    f10 = -1;
+    f18 = -1;
+    f1c = -1;
+    f20 = a4;
+    f24 = a5;
+    f28 = a6;
+    v2c = g_10934060;
+    f38 = 0;
+    f3c = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9e60 size=0xc
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)

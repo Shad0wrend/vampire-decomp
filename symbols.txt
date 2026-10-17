@@ -929,6 +929,7 @@
 0x1000eaf7 func   ?vfunc104@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc104
 0x1000eb56 func   _env_wind env_wind
 0x1000eb5b func   _env_fade env_fade
+0x1000eb65 func   ?sub_102a9dc0@Obj@@QAEPAU1@HPAUVec3@@HHHHHH@Z Obj::sub_102a9dc0
 0x1000eb6a func   _env_fire env_fire
 0x1000eb7e func   _env_beam env_beam
 0x1000eb97 func   _npc_VHumanCombatant npc_VHumanCombatant
