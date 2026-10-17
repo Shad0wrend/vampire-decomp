@@ -10223,6 +10223,36 @@ void CUnknown102b5dc0::sub_102b5dc0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c1170 size=0x85
+#include "CAI_BaseNPCTroika.h"
+
+struct SEnt { int pad; };
+struct SHandleEntry { SEnt *p; unsigned serial; int pad; };
+struct SEntList { int pad; SHandleEntry e[1]; };
+extern SEntList *g_10566458;
+
+char CAI_BaseNPCTroika::sub_102c1170()
+{
+    if (*((char *)this + 0x64c0))
+        return 1;
+    if (*((char *)this + 0x64ec))
+        return 1;
+    unsigned h = *(unsigned *)((char *)this + 0xfe8);
+    if (h != 0xffffffff) {
+        SHandleEntry *he = &g_10566458->e[h & 0x1fff];
+        if (he->serial == (h >> 13) && he->p != 0)
+            return 1;
+    }
+    h = *(unsigned *)((char *)this + 0x6554);
+    if (h != 0xffffffff) {
+        SHandleEntry *he = &g_10566458->e[h & 0x1fff];
+        if (he->serial == (h >> 13) && he->p != 0)
+            return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c3690 size=0xe
 extern const char *g_105d1068[];
 
