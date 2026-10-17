@@ -1780,6 +1780,36 @@ char *CUnknown100cd640::sub_100cd640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd7e0 size=0x69
+extern int g_1055dc00, g_1055dc04, g_1055da88, g_1055da8c;
+
+struct TSave {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual int v3(const char *name, void *data, int a, int b, int c);
+};
+
+struct TOutput {
+	char pad[0x14];
+	TOutput *next0;
+	char pad2[4];
+	TOutput *next;
+	int sub_100cd7e0(TSave *save);
+};
+
+int TOutput::sub_100cd7e0(TSave *save)
+{
+	if (!save->v3("Value", this, 0, g_1055dc00, g_1055dc04))
+		return 0;
+	for (TOutput *p = next0; p; p = p->next) {
+		if (!save->v3("EntityOutput", p, 0, g_1055da88, g_1055da8c))
+			return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce450 size=0x64
 struct Node_t { char pad[0x38]; Node_t *next; };
 struct CList_t {
