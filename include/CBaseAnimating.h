@@ -10,4 +10,5 @@ public:
 	int sub_100945e0(int index);	// "CBaseAnimating::GetFlexDescFacs"
 	void sub_10091c80();	// "CBaseAnimating::OnSequenceFinish" scope only
 	float sub_10091740();	// "CBaseAnimating::GetIdealSpeed": returns the float at +0x654
+	float sub_1008d190();	// "CBaseAnimating::GetGroundSpeedScalar": returns the float at +0x564
 };
