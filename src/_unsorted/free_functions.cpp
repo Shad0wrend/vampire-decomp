@@ -460,6 +460,82 @@ void CUnknown10045110::sub_10045110(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10046050 size=0x1d0
+struct Vec { int x, y, z; void sub_1003e4b0(const Vec &o); };
+struct Box {
+	Vec a, b;
+	void sub_100462d0(const Box &o);
+	void Assign(const Box &o) { a.sub_1003e4b0(o.a); b.sub_1003e4b0(o.b); }
+};
+struct Hdr {
+	int a0, a1, a2, a3, a4; Box box; int c, d;
+	void sub_10047190(const Hdr &o);
+	void Assign(const Hdr &o) { a0 = o.a0; a1 = o.a1; a2 = o.a2; a3 = o.a3; a4 = o.a4; box.Assign(o.box); c = o.c; d = o.d; }
+	void Assign2(const Hdr &o) { a0 = o.a0; a1 = o.a1; a2 = o.a2; a3 = o.a3; a4 = o.a4; box.sub_100462d0(o.box); c = o.c; d = o.d; }
+	void Assign3(const Hdr &o) { a0 = o.a0; a1 = o.a1; a2 = o.a2; a3 = o.a3; a4 = o.a4; box.a.x = o.box.a.x; box.a.y = o.box.a.y; box.a.z = o.box.a.z; box.b.sub_1003e4b0(o.box.b); c = o.c; d = o.d; }
+};
+struct Elem {
+	Hdr h; int p;
+	void sub_100462a0();
+	void CopyFrom(const Elem &o) { h.sub_10047190(o.h); p = o.p; }
+	void Assign(const Elem &o) { h.Assign(o.h); p = o.p; }
+	void Assign2(const Elem &o) { h.Assign2(o.h); p = o.p; }
+	void Assign3(const Elem &o) { h.Assign3(o.h); p = o.p; }
+};
+
+struct PQ {
+	Elem *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	Elem *m_pElements;
+	bool (*m_LessFunc)(const Elem &, const Elem &);
+	void sub_10049da0(int num);
+	void sub_10047200(int elem, int num);
+	void GrowVector(int num = 1)
+	{
+		if (m_Size + num > m_nAllocationCount)
+			sub_10049da0(m_Size + num - m_nAllocationCount);
+		m_Size += num;
+		m_pElements = m_pMemory;
+	}
+	int InsertBefore(int elem)
+	{
+		GrowVector();
+		sub_10047200(elem, 1);
+		Elem *e = &m_pMemory[elem];
+		if (e)
+			e->sub_100462a0();
+		return elem;
+	}
+	int AddToTail() { return InsertBefore(m_Size); }
+	Elem &Element(int i) { return m_pMemory[i]; }
+	void Swap(int i1, int i2)
+	{
+		Elem tmp;
+		tmp.CopyFrom(Element(i1));
+		Element(i1).Assign2(Element(i2));
+		Element(i2).Assign3(tmp);
+	}
+	void sub_10046050(const Elem &src);
+};
+
+void PQ::sub_10046050(const Elem &src)
+{
+	int index = AddToTail();
+	Element(index).Assign(src);
+
+	while (index != 0) {
+		Elem *base = m_pMemory;
+		int parent = (index + 1) / 2 - 1;
+		if (m_LessFunc(base[index], base[parent]))
+			break;
+		Swap(parent, index);
+		index = parent;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004add0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
