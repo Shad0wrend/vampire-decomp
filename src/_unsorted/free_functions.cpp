@@ -4190,6 +4190,47 @@ void __fastcall sub_101f3070(char *p) { sub_10001807(p - *(int *)(p - 4)); }
 int __fastcall sub_101f4280(int *p) { return (*p)++; }
 // END FUNCTION
 
+// FUNCTION: 0x101f4570 size=0x68
+struct TInner {
+	char pad[0x14];
+	int count;
+};
+
+struct TSeg {
+	char pad[8];
+	TInner *inner;
+	int *sizes;
+	void sub_101f4570(int target, int *outIndex, int *outOffset);
+};
+
+void TSeg::sub_101f4570(int target, int *outIndex, int *outOffset)
+{
+	int n = inner->count;
+	int sum = 0;
+	int i = 0;
+	if (0 < n) {
+		int *p = sizes;
+		do {
+			int next = *p + sum;
+			if (next > target) {
+				if (outIndex)
+					*outIndex = i;
+				if (outOffset)
+					*outOffset = target - sum;
+				return;
+			}
+			i++;
+			p++;
+			sum = next;
+		} while (i < n);
+	}
+	if (outIndex)
+		*outIndex = 0;
+	if (outOffset)
+		*outOffset = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5d60 size=0xd
 extern char g_106b8540[];
 // TARGET: CUnknown101f5d60::sub_101f5d60
