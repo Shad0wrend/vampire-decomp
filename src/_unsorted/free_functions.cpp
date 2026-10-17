@@ -6945,6 +6945,45 @@ extern char g_106b8540;
 char * __stdcall sub_1030f660(int) { return &g_106b8540; }
 // END FUNCTION
 
+// FUNCTION: 0x1030fc90 size=0x68
+struct SInner { void *ent; unsigned serial; };
+struct SEnt { int pad; SInner in; };
+extern SEnt *g_10566458;
+struct SHandle {
+    unsigned v;
+    void *Get() const
+    {
+        if (v == 0xffffffff)
+            return 0;
+        SInner *e = &g_10566458[v & 0x1fff].in;
+        if (e->serial != (v >> 13))
+            return 0;
+        return e->ent;
+    }
+};
+struct SBox { SHandle *p; char pad[8]; int count; };
+struct S1030fc90 {
+    char pad[0x5c];
+    SBox *m5c[3];
+    void *sub_1030fc90(unsigned *out);
+};
+// TARGET: S1030fc90::sub_1030fc90
+void *S1030fc90::sub_1030fc90(unsigned *out)
+{
+    unsigned i = 0;
+    do {
+        if (m5c[i]->count != 0) {
+            ((unsigned short *)out)[0] = (unsigned short)i;
+            ((unsigned short *)out)[1] = 1;
+            return m5c[i]->p->Get();
+        }
+        i++;
+    } while (i < 3);
+    *out = 0xffffffff;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fe50 size=0xe
 #include "CUnknown1030fe50.h"
 // TARGET: CUnknown1030fe50::sub_1030fe50

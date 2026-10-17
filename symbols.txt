@@ -1053,6 +1053,7 @@
 0x10011cd4 func   ?sub_10078bd0@@YIXPAH@Z sub_10078bd0
 0x10011ce3 func   _item_w_mingxiao_tentacle item_w_mingxiao_tentacle
 0x10011ce8 func   ?sub_1013e7e0@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e7e0
+0x10011d1f func   ?sub_1030fc90@S1030fc90@@QAEPAXPAI@Z S1030fc90::sub_1030fc90
 0x10011d29 func   ?sub_100c6590@@YAHH@Z sub_100c6590
 0x10011d33 func   _prop_doorknob prop_doorknob
 0x10011dce func   ?sub_10057660@CUnknown10057680@@QAEPAV1@XZ CUnknown10057680::sub_10057660
