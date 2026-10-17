@@ -17898,6 +17898,27 @@ extern "C" CItemGWarrLedger1* item_k_hitman_lu_key()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104098a0 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_105140dc[];
+extern char g_10683174[];
+
+// TARGET: item_k_hitman_ji_key
+extern "C" CItemGWarrLedger1* item_k_hitman_ji_key()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_105140dc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10683174);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b120 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
