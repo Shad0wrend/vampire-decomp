@@ -11927,6 +11927,31 @@ struct CUnknown1035b1c0 { int sub_1035b1c0(int, int, int, int); };
 int CUnknown1035b1c0::sub_1035b1c0(int, int, int, int) { return 1; }
 // END FUNCTION
 
+// FUNCTION: 0x10362670 size=0x81
+#include "CNPC_VAsianVampire.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+struct GlobalVars { char pad[0xc]; float curtime; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern GlobalVars *g_1070b228;
+extern char g_1062cfec[];
+extern char g_106b8540[];
+extern float g_104a9318;
+bool CNPC_VAsianVampire::sub_10362670()
+{
+    g_109f3620[*g_109f3680].a = g_1062cfec;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (g_1070b228->curtime - m_flStationaryTime >= g_104a9318) {
+        --*g_109f3680;
+        return true;
+    }
+    --*g_109f3680;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103661d0 size=0xa
 void __fastcall sub_103661d0(char *self, int, int)
 {
