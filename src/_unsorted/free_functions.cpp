@@ -3842,6 +3842,15 @@ void CUnknown100f5600::sub_100f5600(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6d80 size=0x84
+#include "CUnknown100f6d80.h"
+
+void CUnknown100f6d80::sub_100f6d80(int value)
+{
+    m_vec.AddToTailUnique(value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8e20 size=0x80
 void *sub_10430fa0(void *, const void *, unsigned);
 
