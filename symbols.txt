@@ -746,6 +746,7 @@
 0x1000c1e9 func   ?sub_101f0d40@CUnknown101f0d40@@QAEXPAH@Z CUnknown101f0d40::sub_101f0d40
 0x1000c202 func   ?sub_100ed6c0@@YIXPAXHH@Z sub_100ed6c0
 0x1000c20c func   ?sub_10082e40@CUnknown10082e40@@QAE_NXZ CUnknown10082e40::sub_10082e40
+0x1000c220 func   ?vfunc340@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc340
 0x1000c248 func   ?sub_1021e6c0@@YIXPAUMem@@HH@Z sub_1021e6c0
 0x1000c2ac func   ?sub_1007ee40@@YIXPAH@Z sub_1007ee40
 0x1000c2bb func   ?sub_10232520@@YIXPAHHH@Z sub_10232520
