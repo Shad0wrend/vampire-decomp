@@ -7,6 +7,7 @@
 class CBaseGrenade : public CBaseEntity
 {
 public:
+	virtual void vfunc104();
 	virtual void vfunc134();
 	virtual void vfunc135(); virtual void vfunc136(); virtual void vfunc137(); virtual void vfunc138(); virtual void vfunc139();
 	virtual void vfunc140(); virtual void vfunc141(); virtual void vfunc142(); virtual void vfunc143(); virtual void vfunc144(int unused);
