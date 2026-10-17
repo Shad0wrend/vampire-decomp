@@ -1803,6 +1803,29 @@ void sub_100b03b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b3b00 size=0x6f
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_100b3b00()
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].name = "CBaseEntity::Relink";
+    g_109f3620[*g_109f3680].ent = n;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b47e0 size=0x8
 void __fastcall sub_100b47e0(int *p) { p[3] = 0; }
 // END FUNCTION

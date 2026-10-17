@@ -1304,6 +1304,7 @@
 0x10014f88 func   ?sub_100c89e0@@YIXPADHH@Z sub_100c89e0
 0x1001505f func   ?sub_10237c30@@YAXXZ sub_10237c30
 0x100150af func   ?sub_10215910@CUnknown10215910@@QAEXH@Z CUnknown10215910::sub_10215910
+0x1001514a func   ?sub_100b3b00@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3b00
 0x100151d6 func   _func_areaportal func_areaportal
 0x100151e0 func   _logic_case logic_case
 0x10015221 func   _npc_sabbat npc_sabbat
