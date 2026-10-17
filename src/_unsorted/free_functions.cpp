@@ -2309,6 +2309,37 @@ void CUnknown100b7c60::sub_100b7c60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b97e0 size=0x73
+struct Vec3 { float x, y, z; };
+struct Entry {
+    Vec3 v;
+    float f0c;
+    float f10;
+    char flag;
+    char pad2[0x28 - 0x15];
+};
+struct Obj {
+    char pad[0x740];
+    int m_nCount;
+    Entry m_Entries[10];
+    void sub_100b97e0(const Vec3 *pos, float a, float b);
+};
+
+void Obj::sub_100b97e0(const Vec3 *pos, float a, float b)
+{
+    if (m_nCount < 10) {
+        Vec3 *p = &m_Entries[m_nCount].v;
+        p->x = pos->x;
+        p->y = pos->y;
+        p->z = pos->z;
+        m_Entries[m_nCount].f0c = a;
+        m_Entries[m_nCount].f10 = b;
+        m_Entries[m_nCount].flag = 1;
+        m_nCount++;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b99b0 size=0xd
 void CUnknown100b99b0::sub_100b99b0(char value)
 {
