@@ -4165,6 +4165,96 @@ struct CUnknown102477c0 { int p[6]; int a; int b; void sub_102477c0(); };
 void CUnknown102477c0::sub_102477c0() { a = 0; b = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102480f0 size=0x159
+struct IFileSys
+{
+	virtual int Open(const char *name, const char *mode, const char *path);
+	virtual void Close(int fh);
+	virtual int Read(void *out, int size, int fh);
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual int Size(int fh);
+};
+
+int sub_10431510(const char *, const char *);
+char *sub_102482f0(const char *, IFileSys *);
+char *sub_102482b0(char **buf, int);
+void sub_10430964(char *);
+void sub_10431641(char *);
+void *sub_104320f7(int);
+void *sub_104312d5(int);
+extern char g_10546e4c[];
+extern char g_105596cc[];
+
+class CUnknown10248a50
+{
+public:
+	char *m_name;
+	CUnknown10248a50 *sub_10247ba0(const char *name);
+	void sub_10247cf0(const char *name);
+	void sub_10248510(char **buf, IFileSys *fs);
+	void sub_10248a50(CUnknown10248a50 *next);
+	bool sub_102480f0(const char *resourceName, IFileSys *fs, const char *pathID, bool b);
+};
+
+bool CUnknown10248a50::sub_102480f0(const char *resourceName, IFileSys *fs, const char *pathID, bool b)
+{
+	char *buffer = 0;
+	char *mem = 0;
+	if (b)
+	{
+		if (sub_10431510(resourceName, g_10546e4c))
+			buffer = sub_102482f0(resourceName, fs);
+		if (buffer)
+			goto parse;
+	}
+	{
+		int fh = fs->Open(resourceName, g_105596cc, pathID);
+		if (!fh)
+			return false;
+		int size = fs->Size(fh);
+		mem = (char *)sub_104320f7(size + 1);
+		fs->Read(mem, size, fh);
+		fs->Close(fh);
+		mem[size] = 0;
+		buffer = mem;
+	}
+parse:
+	CUnknown10248a50 *pPrev = 0;
+	CUnknown10248a50 *pCur = this;
+	while (1)
+	{
+		char *s = sub_102482b0(&buffer, 0);
+		if (!buffer)
+			break;
+		if (!pCur)
+		{
+			void *m = sub_104312d5(0x1c);
+			if (m)
+				pCur = ((CUnknown10248a50 *)m)->sub_10247ba0(s);
+			else
+				pCur = 0;
+			if (pPrev)
+				pPrev->sub_10248a50(pCur);
+		}
+		else
+		{
+			sub_10430964(pCur->m_name);
+			pCur->sub_10247cf0(s);
+		}
+		s = sub_102482b0(&buffer, 0);
+		if (pCur->m_name && s && *s == '{')
+			pCur->sub_10248510(&buffer, fs);
+		pPrev = pCur;
+		pCur = 0;
+	}
+	if (mem)
+		sub_10431641(mem);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248850 size=0xa
 void CUnknown10248850::sub_10248850(int value)
 {

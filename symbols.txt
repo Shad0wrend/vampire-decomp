@@ -928,6 +928,7 @@
 0x10010834 func   ?vfunc475@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc475
 0x10010839 func   ?sub_10349a00@@YIXPAH@Z sub_10349a00
 0x1001084d func   ?sub_100b47e0@@YIXPAH@Z sub_100b47e0
+0x100108b6 func   ?sub_102480f0@CUnknown10248a50@@QAE_NPBDPAUIFileSys@@0_N@Z CUnknown10248a50::sub_102480f0
 0x100108c0 func   _point_teleport point_teleport
 0x100108cf func   _item_g_sewerbook_1 item_g_sewerbook_1
 0x10010979 func   ?sub_1012cf30@@YGXH@Z sub_1012cf30
