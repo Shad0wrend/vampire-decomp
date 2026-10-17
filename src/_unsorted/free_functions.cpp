@@ -7218,6 +7218,42 @@ void S103dc490::sub_103dc490(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e3f60 size=0x67
+extern void *(__cdecl *g_109f3638)(void *, int);
+extern void *(__cdecl *g_109f3634)(int);
+
+struct CUtlMemory8 {
+	void *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_103e3f60(int num);
+};
+
+void CUtlMemory8::sub_103e3f60(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int requested = m_nAllocationCount + num;
+	if (m_nAllocationCount < requested) {
+		int n = m_nAllocationCount;
+		do {
+			if (n) {
+				if (m_nGrowSize)
+					n = n + m_nGrowSize;
+				else
+					n = n + n;
+			} else
+				n = 4;
+		} while (n < requested);
+		m_nAllocationCount = n;
+	}
+	if (m_pMemory)
+		m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount << 3);
+	else
+		m_pMemory = g_109f3634(m_nAllocationCount << 3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eec60 size=0xd
 void CUnknown103eec60::sub_103eec60(char value)
 {
