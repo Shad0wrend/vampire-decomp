@@ -486,6 +486,7 @@
 0x10008300 func   ?sub_101c2a50@CUnknown101c2a50@@QAEXH@Z CUnknown101c2a50::sub_101c2a50
 0x10008328 func   _item_a_body_armor item_a_body_armor
 0x1000833c func   _bodyque bodyque
+0x10008346 func   ?sub_10264370@Mem38@@QAEXH@Z Mem38::sub_10264370
 0x100083dc func   ?sub_100eb400@@YIXPAH@Z sub_100eb400
 0x1000841d func   ?sub_10348a60@@YI_NPAVCBaseEntity@@@Z sub_10348a60
 0x10008445 func   ?sub_1024afe0@@YAHXZ sub_1024afe0

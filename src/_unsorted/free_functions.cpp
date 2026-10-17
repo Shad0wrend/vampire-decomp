@@ -7744,6 +7744,41 @@ struct CUnknown10260980 { int p; int a; CUnknown10260980* sub_10260980(); };
 CUnknown10260980* CUnknown10260980::sub_10260980() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10264370 size=0x76
+struct Elem38 { char d[0x38]; };
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct Mem38 {
+    Elem38 *m_p;
+    int m_alloc;
+    int m_grow;
+    void sub_10264370(int num);
+};
+void Mem38::sub_10264370(int num)
+{
+    if (m_grow == -1)
+        return;
+    int want = m_alloc + num;
+    if (m_alloc < want) {
+        int n = m_alloc;
+        do {
+            if (n != 0) {
+                if (m_grow != 0)
+                    n += m_grow;
+                else
+                    n += n;
+            } else
+                n = 1;
+        } while (n < want);
+        m_alloc = n;
+    }
+    if (m_p)
+        m_p = (Elem38 *)g_109f3638(m_p, m_alloc * 0x38);
+    else
+        m_p = (Elem38 *)g_109f3634(m_alloc * 0x38);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10264450 size=0xb
 void CUnknown102e12c0::sub_10264450()
 {
