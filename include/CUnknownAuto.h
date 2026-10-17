@@ -6,6 +6,7 @@
 #include "CAI_InterestingPlaceConverstation.h"
 #include "CAI_Navigator.h"
 #include "CBaseDoor.h"
+#include "CCameraAnimated.h"
 #include "CHL2_Player.h"
 #include "CKeepUpright.h"
 #include "CNPC_VMingXiaoTentacle.h"
