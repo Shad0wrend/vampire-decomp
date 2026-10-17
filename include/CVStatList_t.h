@@ -11,4 +11,5 @@ public:
 	int m_field10;
 
 	CVStatList_t(int a);
+	~CVStatList_t();
 };
