@@ -1997,6 +1997,39 @@ void CBaseAnimating::sub_1008d0f0(float scalar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100903e0 size=0x82
+#include "CBaseAnimating.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct CScopeGuard {
+    CScopeGuard(const char *name, const char *ent)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = ent;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+char CBaseAnimating::sub_100903e0()
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    CScopeGuard guard("CBaseAnimating::IsRagdoll", n);
+    return *(int *)((char *)this + 0x168) == 0x17;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10090b20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

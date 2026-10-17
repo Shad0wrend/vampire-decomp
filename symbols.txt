@@ -188,6 +188,7 @@
 0x100035f8 func   _trigger_once trigger_once
 0x10003652 func   ?vfunc191@CRagdollPropSpecial@@UAEXH@Z CRagdollPropSpecial::vfunc191
 0x10003657 func   _trigger_wind trigger_wind
+0x10003698 func   ?sub_100903e0@CBaseAnimating@@QAEDXZ CBaseAnimating::sub_100903e0
 0x1000369d func   ?sub_1003c9f0@CDataObjectAccessSystem@@QAEXHPAX@Z CDataObjectAccessSystem::sub_1003c9f0
 0x100036ac func   _trigger_push trigger_push
 0x100036d9 func   _trigger_look trigger_look
