@@ -17,7 +17,7 @@ public:
 	virtual void vfunc6(int a);
 	virtual void vfunc7();
 	virtual int vfunc8();
-	virtual void vfunc9(); virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13();
+	virtual void vfunc9(int *pOut); virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13();
 	virtual void vfunc14(); virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18();
 	virtual void vfunc19(); virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23();
 	virtual void vfunc24(); virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28();
