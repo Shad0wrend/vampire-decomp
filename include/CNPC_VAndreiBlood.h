@@ -34,4 +34,6 @@ public:
 	virtual void vfunc104();
 	void vfunc619(int arg);	// slot 619, not modelled as virtual yet
 	void sub_1000c27a(int arg);
+	int vfunc127(int arg);	// slot 127, not modelled as virtual yet
+	int sub_1000b28f(int arg);
 };
