@@ -5395,6 +5395,26 @@ int CUnknown101f9c70::sub_101f9c70(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fa8d0 size=0x6e
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+struct CVDmg_t { int f0; int f4; int f8; int fc; int f10; };
+
+void __fastcall sub_101fa8d0(CVDmg_t *self, int, int a, int b, int c)
+{
+    g_109f3620[*g_109f3680].a = "CVDmg_t::Set";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    self->f0 = a;
+    self->f10 = b;
+    self->f4 = c;
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fb3e0 size=0x66
 struct ScopeTrace_t { const char *name; const char *a; const char *b; };
 extern ScopeTrace_t *g_109f3620;
