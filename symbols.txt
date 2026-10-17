@@ -1407,6 +1407,7 @@
 0x100122d8 func   _func_elevator func_elevator
 0x100122e2 func   _trigger_inventory_check trigger_inventory_check
 0x100122e7 func   ?vfunc2@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc2
+0x10012341 func   ?vfunc5@CTestTraceline@@UAEPAV1@I@Z CTestTraceline::vfunc5
 0x1001235a func   ?sub_10252450@CUnknown10252450@@QAEMH@Z CUnknown10252450::sub_10252450
 0x1001241d func   ?sub_101e8080@CUnknown101e8080@@QAEXPAHPAXMH@Z CUnknown101e8080::sub_101e8080
 0x10012477 func   ?sub_101cd070@@YGPAUEnt@@PAU1@@Z sub_101cd070
