@@ -582,6 +582,7 @@
 0x10008dcd func   ?sub_101e8410@@YGXPAHHH@Z sub_101e8410
 0x10008e0e func   ?sub_10258500@@YAPBDH@Z sub_10258500
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
+0x10008e8b func   ?vfunc1@PyServerSystem@@UAEXXZ PyServerSystem::vfunc1
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point
 0x10008ebd func   ?vfunc274@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc274
 0x10008f67 func   _info_node_climb info_node_climb
