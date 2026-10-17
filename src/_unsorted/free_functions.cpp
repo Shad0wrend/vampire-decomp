@@ -15840,6 +15840,27 @@ extern "C" CItemGWarrLedger1* item_g_eldervitaepack()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fcfb0 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_104f80bc[];
+extern char g_10681618[];
+
+// TARGET: item_g_car_stereo
+extern "C" CItemGWarrLedger1* item_g_car_stereo()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_104f80bc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10681618);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
