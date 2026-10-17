@@ -840,6 +840,7 @@
 0x1000b726 func   _npc_VTremere npc_VTremere
 0x1000b749 func   _npc_VMingXiao npc_VMingXiao
 0x1000b762 func   _item_g_watch_normal item_g_watch_normal
+0x1000b794 func   ?vfunc2@CTEImpact@@UAEPAV1@I@Z CTEImpact::vfunc2
 0x1000b7a8 func   ?vfunc168@CBaseEntity@@QAEXXZ CBaseEntity::vfunc168
 0x1000b7b7 func   ?sub_100b40f0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100b40f0
 0x1000b7df func   _info_node_chang_column info_node_chang_column
