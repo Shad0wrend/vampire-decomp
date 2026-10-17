@@ -10958,6 +10958,32 @@ int __fastcall sub_1033c9c0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033ca60 size=0x7c
+#include "CBaseCombatCharacter.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_1033ca60()
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].name = "CBaseCombatCharacter::ClearMiscFlags";
+    g_109f3620[*g_109f3680].ent = n;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    *(int *)((char *)this + 0xfe4) = 0;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d380 size=0x69
 struct SInner { char *ent; unsigned serial; };
 struct SEnt { int pad; SInner in; };
