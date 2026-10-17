@@ -96,3 +96,4 @@
 #include "CWeaponRanged.h"
 #include "CWeaponThrown_Grenade_Frag.h"
 #include "ConCommand.h"
+#include "CPhysicsHook.h"
