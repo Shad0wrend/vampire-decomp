@@ -61,6 +61,7 @@ public:
 	void sub_1009fa60();
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
 	void sub_100abbf0(int a, int b);
+	void sub_100acef0(int a);	// "CBaseEntity::InputKill": calls vfunc119
 	int sub_100b3700();	// "CBaseEntity::GetFlags": returns the field at +0x434
 	void sub_100b37a0();	// "CBaseEntity::ClearFlags": stores 0 at +0x434
 	void sub_100b3b00();
