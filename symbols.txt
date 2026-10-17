@@ -961,6 +961,7 @@
 0x10010aaf func   _tectonic tectonic
 0x10010ae6 func   ?vfunc38@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc38
 0x10010b09 func   ?vfunc116@CBaseEntity@@UAEHXZ CBaseEntity::vfunc116
+0x10010b7c func   ?sub_10216c20@@YAPAHXZ sub_10216c20
 0x10010b95 func   ?sub_101c2b10@CUnknown101c2b10@@QAEXD@Z CUnknown101c2b10::sub_101c2b10
 0x10010c26 func   _multisource multisource
 0x10010c2b func   ?sub_100f0320@@YIXPAD@Z sub_100f0320

@@ -4160,6 +4160,38 @@ void __fastcall sub_10216850(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10216c20 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105ac944[2];
+
+int *sub_10216c20()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_iszItemName", {0x598, 0}, 1, 6, "itemname" },
+        { 10, "m_OnPlayerHasItem", {0x59c, 0}, 1, 0x16, "OnPlayerHasItem", g_1055dc70 },
+    };
+    g_105ac944[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105ac944[0] = (int)&dataDesc[1];
+    return g_105ac944;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10217160 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
