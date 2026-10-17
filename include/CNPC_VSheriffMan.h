@@ -6,6 +6,8 @@ class CNPC_VSheriffMan
 public:
 	int sub_10005e20(int a);
 	int vfunc440(int a);
+	void vfunc448(int arg);
+	void sub_100054bb(int arg);
 	void vfunc619(int arg);
 	void sub_1000c27a(int arg);
 };
