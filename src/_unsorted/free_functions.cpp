@@ -11236,6 +11236,25 @@ int S1030ca70::sub_1030ca70(const char *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030d650 size=0x82
+int sub_1043e780(const char *, const char *);
+extern void (*g_109f366c)(const char *fmt, ...);
+
+int __stdcall sub_1030d650(const char *phase)
+{
+    if (sub_1043e780(phase, "TENTACLE") == 0)
+        return 0;
+    if (sub_1043e780(phase, "TENTACLE_TO_GRUB") == 0)
+        return 1;
+    if (sub_1043e780(phase, "GRUB") == 0)
+        return 2;
+    if (sub_1043e780(phase, "GRUB_TO_PROXY") == 0)
+        return 3;
+    g_109f366c("Schedule has invalid MXTPHASE: ID '%s'\n", phase);
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f660 size=0x8
 extern char g_106b8540;
 char * __stdcall sub_1030f660(int) { return &g_106b8540; }
