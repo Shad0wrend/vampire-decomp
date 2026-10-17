@@ -3249,6 +3249,41 @@ struct CUnknown101c4760 { int a; int b; int c; void sub_101c4760(); };
 void sub_101c4820(CUnknown101c4760 *p) { p->sub_101c4760(); }
 // END FUNCTION
 
+// FUNCTION: 0x101c67e0 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1059da9c[2];
+void sub_10015212();
+void sub_1000ae1b();
+
+int *sub_101c67e0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, "CTriggerMultipleMultiTouch", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10015212 },
+        { 0, "CTriggerMultipleMultiWaitOver", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000ae1b },
+        { 10, "m_OnTrigger", {0x598, 0}, 1, 0x16, "OnTrigger", g_1055dc70 },
+    };
+    g_1059da9c[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1059da9c[0] = (int)&dataDesc[1];
+    return g_1059da9c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cc790 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc790(void **p) { ((Fn *)*p)[247](p); }
