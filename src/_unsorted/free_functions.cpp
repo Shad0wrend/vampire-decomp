@@ -8144,6 +8144,34 @@ CUnknown101e0040* CUnknown101e0040::sub_101e0040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0310 size=0x66
+struct Elem101e0310 { void sub_1000c7e3(); };
+struct S101e0310 {
+    int m0;
+    int m4;
+    Elem101e0310 **m8;
+    void sub_101e0310();
+};
+// TARGET: S101e0310::sub_101e0310
+void S101e0310::sub_101e0310()
+{
+    if (m8) {
+        for (int i = 0; i < m4; i++) {
+            Elem101e0310 *e = m8[i];
+            if (e) {
+                e->sub_1000c7e3();
+                delete e;
+            }
+            m8[i] = 0;
+        }
+        delete m8;
+        m8 = 0;
+    }
+    m4 = 0;
+    m0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1850 size=0xc
 unsigned int __stdcall sub_101e1850(unsigned int value)
 {
