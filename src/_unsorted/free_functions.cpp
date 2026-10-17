@@ -16785,6 +16785,27 @@ extern "C" CItemGWarrLedger1* item_g_warr_ledger_1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104048a0 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_1050bbbc[];
+extern char g_106826a0[];
+
+// TARGET: item_g_warr_ledger_2
+extern "C" CItemGWarrLedger1* item_g_warr_ledger_2()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_1050bbbc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_106826a0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b120 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
