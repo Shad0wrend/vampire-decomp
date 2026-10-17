@@ -4032,6 +4032,32 @@ void __fastcall sub_1022d410(Mem256 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230280 size=0x75
+struct H { int v; H(const H &); };
+struct R { void sub_10204270(); void sub_102042d0(int t, int v); };
+struct Mgr { H sub_1021e870(int name); };
+extern Mgr g_1074f898;
+struct Obj { virtual void f0(); virtual bool f1(); int sub_10013d13(); };
+struct Src { virtual void f0(); virtual void f1(); virtual Obj *f2(int name); };
+extern Src *g_1070b234;
+H sub_1042bff0(int);
+
+void sub_10230280(R *out, int name)
+{
+    int v = g_1074f898.sub_1021e870(name).v;
+    if (v != 0) {
+        out->sub_102042d0(6, v);
+        return;
+    }
+    Obj *o = g_1070b234->f2(name);
+    if (o != 0 && !o->f1()) {
+        out->sub_102042d0(7, sub_1042bff0(o->sub_10013d13()).v);
+        return;
+    }
+    out->sub_10204270();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231e60 size=0xa
 unsigned int __fastcall sub_10231e60(char *self)
 {
