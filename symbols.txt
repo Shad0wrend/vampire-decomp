@@ -2677,3 +2677,4 @@
 0x105172a4 vtable ??_7bad_typeid@@6B@ bad_typeid::vftable
 0x10517328 vtable ??_7bad_cast@@6B@ bad_cast::vftable
 0x1051738c vtable ??_7exception@@6B@ exception::vftable
+0x109f3874 data   __imp_?CommandLine@@YAPAUICommandLine@@XZ _imp_?CommandLine
