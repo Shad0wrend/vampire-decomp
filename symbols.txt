@@ -1112,6 +1112,7 @@
 0x100141fa func   ?vfunc9@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc9
 0x10014259 func   ?vfunc130@CWorld@@UAEXH@Z CWorld::vfunc130
 0x10014268 func   _logic_multicompare logic_multicompare
+0x10014272 func   ?vfunc113@CKeepUpright@@UAEXXZ CKeepUpright::vfunc113
 0x100142cc func   ?vfunc1@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc1
 0x1001438a func   _item_w_fireaxe item_w_fireaxe
 0x100143ad func   _func_button func_button
