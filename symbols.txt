@@ -2478,6 +2478,7 @@
 0x1049d76c vtable ??_7CAI_LocalNavigator@@6B@ CAI_LocalNavigator::vftable
 0x1049d79c vtable ??_7CAI_ProxyMovementSink@@6B@ CAI_ProxyMovementSink::vftable
 0x1049d7ec vtable ??_7CAI_MemoryListSaveRestoreOps@@6B@ CAI_MemoryListSaveRestoreOps::vftable
+0x1049d808 data   ??_7?$CUtlVectorDataOps@UCAI_InterestTarget@@$08@@6B@ ??_7?$CUtlVectorDataOps@UCAI_InterestTarget@@$08@@6B@
 0x1049d808 vtable ??_7?$CUtlVectorDataOps@VCAI_InterestTarget@@$08@@6B@ CUtlVectorDataOps<CAI_InterestTarget,9>::vftable
 0x1049d824 vtable ??_7CAI_Motor@@6BCAI_ProxyMovementSink@@@ CAI_Motor::vftable
 0x1049d854 vtable ??_7CAI_Motor@@6B@ CAI_Motor::vftable
