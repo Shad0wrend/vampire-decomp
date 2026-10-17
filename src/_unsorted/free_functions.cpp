@@ -2023,6 +2023,25 @@ int CBaseAnimating::sub_100945e0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096600 size=0x79
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int __fastcall sub_10096600(char *self)
+{
+    const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::GetHitboxSet";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int r = *(int *)(self + 0x680);
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098810 size=0xb
 CUnknown10098810 *CUnknown10098810::sub_10098810()
 {

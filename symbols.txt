@@ -1090,6 +1090,7 @@
 0x10010212 func   ?sub_100916a0@@YIMPAD@Z sub_100916a0
 0x10010253 func   ?sub_10315ec0@CUnknown10315ec0@@QAE_NPAUCUnknown10315ec0Ent@@@Z CUnknown10315ec0::sub_10315ec0
 0x10010267 func   ?sub_10216830@@YIXPADHH@Z sub_10216830
+0x1001028a func   ?sub_10096600@@YIHPAD@Z sub_10096600
 0x10010299 func   ?sub_100ed500@Mem44@@QAEXH@Z Mem44::sub_100ed500
 0x100102c6 func   ?sub_100785f0@CUnknown10078540@@QAEXH@Z CUnknown10078540::sub_100785f0
 0x10010311 func   _item_g_bluebloodpack item_g_bluebloodpack
