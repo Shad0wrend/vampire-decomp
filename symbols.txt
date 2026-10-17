@@ -690,6 +690,7 @@
 0x1000b140 func   _camera_animated camera_animated
 0x1000b22b func   ?vfunc134@CBloodSplat@@QAEXXZ CBloodSplat::vfunc134
 0x1000b24e func   ?sub_10136470@@YIXPADHH@Z sub_10136470
+0x1000b2d0 func   ?sub_10341850@@YI_NPADHH@Z sub_10341850
 0x1000b361 func   ?sub_103159d0@@YIXPAUSquad@@HPAUEnt@@@Z sub_103159d0
 0x1000b398 func   ?sub_102dcd10@CUnknown102dcd10@@QAEXH@Z CUnknown102dcd10::sub_102dcd10
 0x1000b3b1 func   _item_m_money_envelope item_m_money_envelope
