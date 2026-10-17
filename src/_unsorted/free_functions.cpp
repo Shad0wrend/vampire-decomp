@@ -6647,6 +6647,22 @@ void __fastcall sub_1027d9b0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027f1e0 size=0x6c
+const char * __stdcall sub_1027f1e0(int state)
+{
+    switch (state) {
+    case 0: return "PLAYING";
+    case 1: return "WAIT";
+    case 2: return "POST_IDLE";
+    case 3: return "CLEANUP";
+    case 4: return "WALK_TO_MARK";
+    case 5: return "RUN_TO_MARK";
+    case 6: return "CUSTOM_MOVE_TO_MARK";
+    default: return "**UNKNOWN**";
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027fbf0 size=0x9
 struct CUnknown1027fbf0 { int a; CUnknown1027fbf0* sub_1027fbf0(); };
 // TARGET: CUnknown1027fbf0::sub_1027fbf0

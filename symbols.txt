@@ -1056,6 +1056,7 @@
 0x1001131f func   _item_g_bach_journal item_g_bach_journal
 0x10011338 func   _item_k_fu_cell_key item_k_fu_cell_key
 0x10011347 func   _npc_generic_bathack npc_generic_bathack
+0x1001134c func   ?sub_1027f1e0@@YGPBDH@Z sub_1027f1e0
 0x10011379 func   ?vfunc195@CBaseEntity@@QAEXXZ CBaseEntity::vfunc195
 0x100113ce func   _trigger_electric_bugaloo trigger_electric_bugaloo
 0x100113d3 func   _npc_VChangBrosBlade npc_VChangBrosBlade
