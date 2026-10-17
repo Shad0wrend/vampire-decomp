@@ -5545,6 +5545,116 @@ struct CUnknown102eeba0 { int p[6]; int a; void sub_102eeba0(int v); };
 void CUnknown102eeba0::sub_102eeba0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x102f1690 size=0x168
+#include "CUnknown102ee120.h"
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+
+#define VP(n) virtual void v##n();
+#define VP10(n) VP(n##0) VP(n##1) VP(n##2) VP(n##3) VP(n##4) VP(n##5) VP(n##6) VP(n##7) VP(n##8) VP(n##9)
+struct HelperEnt102f1690
+{
+	VP10(0) VP10(1) VP10(2) VP10(3) VP10(4) VP10(5) VP10(6) VP10(7) VP10(8) VP10(9)
+	VP10(10) VP10(11) VP10(12) VP10(13) VP10(14) VP10(15) VP10(16) VP10(17) VP10(18) VP10(19)
+	VP10(20) VP(210) VP(211) VP(212) VP(213) VP(214) VP(215) VP(216) VP(217) VP(218) VP(219)
+	virtual float *v220();
+};
+
+struct HelperTrace102f1690
+{
+	int m_0;
+	int pad4[6];
+	int m_1c;
+	int pad20;
+	float m_24;
+	int pad28[4];
+};
+
+struct HelperParams102f1690
+{
+	int m_0;
+	float m_4;
+	float m_8;
+	int pad0c[2];
+	int m_14;
+	int m_18;
+	char m_1c;
+};
+
+struct HelperTracer102f1690
+{
+	void sub_102e6d70(int a, float *b, int c, int d, int e, float f, int g, HelperTrace102f1690 *h, int i, int j);
+};
+
+struct HelperSelf102f1690
+{
+	char pad0[4];
+	HelperEnt102f1690 *m_4;
+	char pad8[0x1c];
+	HelperTracer102f1690 *m_24;
+	char pad28[8];
+	CUnknown1030bc20 *m_30;
+};
+
+class CUnknown1030bc20_x : public CUnknown1030bc20
+{
+public:
+	bool sub_1030bd50();
+	int sub_1030b7e0();
+};
+
+extern float (*g_10579660)(float);
+
+static inline float Dist102f1690(const float *b, const float *a)
+{
+	float dx = b[0] - a[0];
+	float dy = b[1] - a[1];
+	float dz = b[2] - a[2];
+	return g_10579660(dx * dx + dy * dy + dz * dz);
+}
+
+class CUnknown102ee120_x : public CUnknown102ee120
+{
+public:
+	bool sub_102f1690(HelperParams102f1690 *p);
+	void sub_102f0400();
+	void sub_102ede30(float f, int a);
+};
+
+bool CUnknown102ee120_x::sub_102f1690(HelperParams102f1690 *p)
+{
+	HelperSelf102f1690 *self = (HelperSelf102f1690 *)this;
+	if (((CUnknown1030bc20_x *)self->m_30)->m_unk24 == 0)
+		return false;
+	bool result = false;
+	if ((p->m_1c && !(((CUnknown1030bc20_x *)self->m_30)->sub_1030bc20() & 0x22))
+		|| Dist102f1690((float *)sub_102ee5e0(), self->m_4->v220()) < p->m_4)
+	{
+		if (((CUnknown1030bc20_x *)self->m_30)->sub_1030bd50())
+			return false;
+		HelperTrace102f1690 tr;
+		memset(&tr, 0, sizeof(tr));
+		CUnknown1030bc20_x *t = (CUnknown1030bc20_x *)self->m_30;
+		float *eye = self->m_4->v220();
+		HelperTracer102f1690 *tracer = self->m_24;
+		int p18 = p->m_18;
+		int p0 = p->m_0;
+		int mask = t->sub_1030b7e0();
+		tracer->sub_102e6d70(2, eye, mask, p0, p18, 100.0f, 0, &tr, 0, 0);
+		if (tr.m_24 - p->m_8 < 0.01 || (p->m_14 == 2 && tr.m_0 == -3))
+		{
+			sub_102f0400();
+			result = true;
+		}
+		else if (tr.m_1c != 0 && p->m_14 == 1)
+		{
+			sub_102ede30(tr.m_24, 0);
+		}
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f2fe0 size=0xd
 void CUnknown102ee120::sub_102f2fe0(int value)
 {
