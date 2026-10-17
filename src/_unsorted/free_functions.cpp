@@ -2047,6 +2047,44 @@ int *sub_10100ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101e30 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105694a8[2];
+void sub_1000a79a();
+
+int *sub_10101e30()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_iszMessage", {0x450, 0}, 1, 0x6, "message" },
+        { 17, "m_sNoise", {0x460, 0}, 1, 0x6, "messagesound" },
+        { 4, "m_MessageAttenuation", {0x458, 0}, 1, 0x6, "messageattenuation" },
+        { 1, "m_MessageVolume", {0x454, 0}, 1, 0x6, "messagevolume" },
+        { 1, "m_Radius", {0x45c, 0}, 1, 0x2 },
+        { 0, "InputShowMessage", {0x0, 0}, 1, 0x8, "ShowMessage", 0, (void *)sub_1000a79a },
+        { 10, "m_OnShowMessage", {0x464, 0}, 1, 0x16, "OnShowMessage", g_1055dc70 },
+    };
+    g_105694a8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105694a8[0] = (int)&dataDesc[1];
+    return g_105694a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102410 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
