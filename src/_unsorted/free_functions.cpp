@@ -2037,6 +2037,41 @@ void CMem8e_t::sub_100f99d0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fa600 size=0x68
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct S100fa600 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_100fa600(int num);
+};
+// TARGET: S100fa600::sub_100fa600
+void S100fa600::sub_100fa600(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 6;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 6);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fa690 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)

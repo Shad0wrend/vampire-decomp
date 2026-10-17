@@ -1217,6 +1217,7 @@
 0x10014c4f func   ?vfunc43@CMultiplayRules@@UAEHHH@Z CMultiplayRules::vfunc43
 0x10014d26 func   _item_p_gargoyle_talisman item_p_gargoyle_talisman
 0x10014d35 func   _item_a_hvy_cloth item_a_hvy_cloth
+0x10014d49 func   ?sub_100fa600@S100fa600@@QAEXH@Z S100fa600::sub_100fa600
 0x10014d5d func   ?sub_102158f0@@YIXPADHH@Z sub_102158f0
 0x10014dd5 func   _item_w_remington_m_700 item_w_remington_m_700
 0x10014e34 func   ?sub_101931c0@@YAPAHXZ sub_101931c0
