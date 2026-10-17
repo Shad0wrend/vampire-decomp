@@ -1060,6 +1060,7 @@
 0x1000ffe2 func   ?sub_100f9790@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100f9790
 0x1001000f func   _item_k_museum_office_key item_k_museum_office_key
 0x10010037 func   _math_counter math_counter
+0x10010055 func   ?sub_10332240@@YIMPAD@Z sub_10332240
 0x100100e1 func   ?sub_1038f640@@YIEPAD@Z sub_1038f640
 0x10010104 func   ?sub_100cd7e0@TOutput@@QAEHPAUTSave@@@Z TOutput::sub_100cd7e0
 0x10010113 func   _npc_VSheriffMan npc_VSheriffMan
