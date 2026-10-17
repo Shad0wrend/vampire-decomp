@@ -4,6 +4,7 @@
 class CCollisionEvent
 {
 public:
-	// Slot 8, declared as a plain member.
+	// Slots 8 and 9, declared as plain members.
 	void vfunc8(void *pObject1, void *pObject2);	// "CCollisionEvent::ObjectEnterTrigger"
+	void vfunc9(void *pObject1, void *pObject2);	// "CCollisionEvent::ObjectLeaveTrigger"
 };
