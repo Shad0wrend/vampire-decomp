@@ -10253,6 +10253,34 @@ void __stdcall sub_102d00e0(S102d4390 *vec, const float *v, float w)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d2840 size=0x82
+extern "C" int strcmp(const char *, const char *);
+extern char g_106b8540[];
+
+struct SNode {
+    char pad0[0x5d8];
+    SNode *m_pNext;
+    int m_type;
+    char pad5e0[0x5f0 - 0x5e0];
+    const char *m_pName;
+};
+extern SNode *g_10925450;
+
+SNode *sub_102d2840(int unused, const char *name)
+{
+    for (SNode *n = g_10925450; n; n = n->m_pNext) {
+        if (n->m_type == 10000 || n->m_type == 800) {
+            const char *s = n->m_pName;
+            if (!s)
+                s = g_106b8540;
+            if (strcmp(s, name) == 0)
+                return n;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d41f0 size=0x8
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION
