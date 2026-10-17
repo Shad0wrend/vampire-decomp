@@ -80,6 +80,7 @@
 0x1000222a func   _item_g_garys_tape item_g_garys_tape
 0x10002266 func   ?sub_100bc5e0@@YIXPAHHH@Z sub_100bc5e0
 0x10002289 func   _viewmodel viewmodel
+0x100022bb func   ?sub_10339560@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10339560
 0x100022e8 func   ?sub_10156d30@@YIXPAD@Z sub_10156d30
 0x10002351 func   ?sub_10181600@@YIXPAD@Z sub_10181600
 0x1000236f func   ?sub_101cb6b0@@YAPAHXZ sub_101cb6b0

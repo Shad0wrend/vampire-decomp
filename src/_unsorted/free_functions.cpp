@@ -8546,6 +8546,31 @@ call:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10339560 size=0x6f
+#include "CBaseCombatCharacter.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_106219d8[];
+extern char g_105387dc[];
+extern char g_106b8540[];
+void CBaseCombatCharacter::sub_10339560()
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_106219d8;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d380 size=0x69
 struct SInner { char *ent; unsigned serial; };
 struct SEnt { int pad; SInner in; };
