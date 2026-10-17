@@ -293,6 +293,26 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1003c450(void **p) { ((Fn *)*p)[134](p); }
 // END FUNCTION
 
+// FUNCTION: 0x1003c9f0 size=0x77
+#include "CDataObjectAccessSystem.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CDataObjectAccessSystem::sub_1003c9f0(int index, void *pData)
+{
+    g_109f3620[*g_109f3680].name = "CDataObjectAccessSystem::AddDataAccessor";
+    g_109f3620[*g_109f3680].ent = g_106b8540;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    if (index >= 0 && index < 32 && m_data[index] == 0)
+        m_data[index] = pData;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003e250 size=0x6d
 struct TraceEnt { const char *a; void *b; void *c; };
 struct trace21 { int d[21]; };
