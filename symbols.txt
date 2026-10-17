@@ -1321,6 +1321,7 @@
 0x10011865 func   _path_corner path_corner
 0x100118b0 func   ?sub_1034b520@CUnknown1034b520@@QAEXH@Z CUnknown1034b520::sub_1034b520
 0x100118d3 func   ?sub_101f4280@@YIHPAH@Z sub_101f4280
+0x10011937 func   ?vfunc2@CTEBloodSprite@@UAEPAV1@I@Z CTEBloodSprite::vfunc2
 0x1001196e func   _npc_VFrenzyShadow npc_VFrenzyShadow
 0x10011973 func   ?sub_102ecc20@@YIHPAD@Z sub_102ecc20
 0x10011991 func   ?sub_10183910@StatOwner2@@QAEPAUStatDefault2@@H@Z StatOwner2::sub_10183910
