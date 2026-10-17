@@ -4980,6 +4980,34 @@ void CUnknown101f0d40::sub_101f0d40(int* dest)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1050 size=0x6b
+#include "CUnknown101f1050.h"
+
+extern void (*g_109f3628)(const char *, ...);
+
+int *CUnknown101f1050::sub_101f1050()
+{
+    int *p = (int *)operator new(m_nCount * 4 + 4);
+    if (p) {
+        int i = 0;
+        if (m_nCount > 0) {
+            do {
+                i++;
+                p[i - 1] = m_pData[i - 1];
+            } while (i < m_nCount);
+        }
+        delete m_pData;
+        int n = m_nCount + 1;
+        m_pData = p;
+        m_nCount = n;
+        int *q = &m_pData[m_nCount - 1];
+        return q;
+    }
+    g_109f3628("Unable to allocate memory for strings in ReactionInfoList!.\n");
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2500 size=0x9
 struct CUnknown101f2500 { int a; char sub_101f2500(); };
 // TARGET: CUnknown101f2500::sub_101f2500
