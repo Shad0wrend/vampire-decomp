@@ -6242,6 +6242,51 @@ bool CUnknown10381be0::sub_103be130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c50c0 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1065e418[2];
+void sub_103c76b0();
+
+int *sub_103c50c0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bJumping", {0x6498, 0}, 1, 2 },
+        { 2, "m_pMonsterModelName", {0x6680, 0}, 1, 2 },
+        { 2, "m_pBodyEmitterNames", {0x6684, 0}, 4, 2 },
+        { 3, "m_vJumpOrigin", {0x649c, 0}, 1, 2 },
+        { 3, "m_vJumpTarget", {0x64a8, 0}, 1, 2 },
+        { 1, "m_fJumpHeight", {0x64b4, 0}, 1, 2 },
+        { 1, "m_HealthPercentRecord", {0x6698, 0}, 1, 2 },
+        { 1, "m_fJumpGravity", {0x64b8, 0}, 1, 2 },
+        { 15, "m_fTaskStartTime", {0x669c, 0}, 1, 2 },
+        { 12, "m_hParticleEmitters", {0x66a0, 0}, 4, 2 },
+        { 12, "m_hTransformPartner", {0x66b0, 0}, 1, 2 },
+        { 16, "m_MorphModelName", {0x667c, 0}, 1, 6, "MorphModel" },
+        { 0, "InputTransformModel", {0, 0}, 1, 8, "TransformModel", 0, (void *)sub_103c76b0 },
+        { 10, "m_OnTransformComplete", {0x6664, 0}, 1, 0x16, "OnTransformComplete", g_1055dc70 },
+    };
+    g_1065e418[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1065e418[0] = (int)&dataDesc[1];
+    return g_1065e418;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c76b0 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
