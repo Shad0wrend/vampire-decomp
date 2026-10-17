@@ -245,6 +245,7 @@
 0x10004cc3 func   ?sub_10136330@@YAPAHXZ sub_10136330
 0x10004dea func   ?vfunc423@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc423
 0x10004def func   ?sub_102a99a0@CUnknown102a9750@@QAEXD@Z CUnknown102a9750::sub_102a99a0
+0x10004e9e func   ?sub_1022d260@CUnknown1022d260@@QAEXH@Z CUnknown1022d260::sub_1022d260
 0x10004ed5 func   ?sub_104273f0@S104273f0@@QAEXH@Z S104273f0::sub_104273f0
 0x10004f2a func   ?sub_1042da80@CUnknown1042da80@@QAEXH@Z CUnknown1042da80::sub_1042da80
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
