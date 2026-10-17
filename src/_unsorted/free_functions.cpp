@@ -15546,6 +15546,27 @@ extern "C" CItemGWarrLedger1* item_p_occult_lockpicking()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fa1a0 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_104f1ebc[];
+extern char g_10681194[];
+
+// TARGET: item_p_occult_presence
+extern "C" CItemGWarrLedger1* item_p_occult_presence()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_104f1ebc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10681194);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
