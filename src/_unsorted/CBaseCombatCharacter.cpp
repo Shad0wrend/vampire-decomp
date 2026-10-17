@@ -178,6 +178,24 @@ void CBaseCombatCharacter::vfunc339(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103404f0 size=0x76
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool __fastcall sub_103404f0(char *self, int, int a)
+{
+    const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::ReceivesImpactDamage";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    (*g_109f3680)--;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103415f0 size=0x6f
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
