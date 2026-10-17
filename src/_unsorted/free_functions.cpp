@@ -1170,6 +1170,41 @@ void __fastcall sub_1007ee20(int *p)
 void __fastcall sub_1007ee40(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1007f580 size=0x67
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct S1007f580 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_1007f580(int num);
+};
+// TARGET: S1007f580::sub_1007f580
+void S1007f580::sub_1007f580(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 8;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount << 2);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount << 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007fce0 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
