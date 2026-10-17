@@ -3888,6 +3888,43 @@ void CUtlMemory96::sub_1013fd20(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141b10 size=0x72
+#include "IScorer.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct EntSlots138 {
+    S100(a)
+    S10(b0)
+    S10(b1)
+    S10(b2)
+    virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4();
+    virtual void c5(); virtual void c6(); virtual void c7();
+    virtual int v138();
+};
+
+extern int g_10538764;
+extern int g_1057abf8;
+void *sub_10430b64(void *, int, void *, void *, int);
+
+CBaseEntity *__stdcall sub_10141b10(CBaseEntity *a, CBaseEntity *b)
+{
+    if (a) {
+        if (((EntSlots138 *)a)->v138() == 1)
+            return a;
+        IScorer *s = (IScorer *)sub_10430b64(a, 0, &g_10538764, &g_1057abf8, 0);
+        if (s)
+            return s->vfunc0();
+        s = (IScorer *)sub_10430b64(b, 0, &g_10538764, &g_1057abf8, 0);
+        if (s)
+            return s->vfunc0();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101466e0 size=0xe
 #include "CUnknown101466e0.h"
 // TARGET: CUnknown101466e0::sub_101466e0

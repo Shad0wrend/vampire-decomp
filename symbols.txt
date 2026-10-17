@@ -403,6 +403,7 @@
 0x1000724d func   _phys_constraintsystem phys_constraintsystem
 0x10007261 func   ?sub_10074050@CUnknown10074050@@QAEPBDXZ CUnknown10074050::sub_10074050
 0x1000732e func   _item_k_clinic_cs_key item_k_clinic_cs_key
+0x100073b0 func   ?sub_10141b10@@YGPAVCBaseEntity@@PAV1@0@Z sub_10141b10
 0x100073d3 func   ?sub_102ca760@@YIXPAD@Z sub_102ca760
 0x100073f6 func   _momentary_door momentary_door
 0x10007414 func   _phys_pulleyconstraint phys_pulleyconstraint
