@@ -1,6 +1,33 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103a6f70 size=0x69
+struct TScope {
+	const char *name;
+	void *a;
+	void *b;
+};
+extern int *g_109f3680;
+extern TScope *g_109f3620;
+extern char g_1064eba8[];
+extern char g_106b8540[];
+
+struct TLeader {
+	void sub_103a6f70(int a, int b);
+	void sub_10011234(int a, int b);
+};
+
+void TLeader::sub_103a6f70(int a, int b)
+{
+	g_109f3620[*g_109f3680].name = g_1064eba8;
+	g_109f3620[*g_109f3680].a = g_106b8540;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	(*g_109f3680)++;
+	sub_10011234(a, b);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a7760 size=0x64
 #include "CNPC_VSabbatLeader.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
