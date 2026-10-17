@@ -5411,6 +5411,49 @@ void __fastcall sub_10181600(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182810 size=0x80
+#include "CUnknown10182810.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct SVF158 {
+    V100(a)
+    V10(d0) V10(d1) V10(d2) V10(d3) V10(d4)
+    virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+    virtual void e5(); virtual void e6(); virtual void e7();
+    virtual bool v158();
+};
+
+struct SEntB { char pad[0x9c]; SVF158 *m_p9c; };
+struct SHandleEntry { SEntB *p; unsigned serial; int pad; };
+struct SEntList { int pad; SHandleEntry e[1]; };
+extern SEntList *g_10566458;
+
+static inline SEntB *GetEnt(unsigned h)
+{
+    SEntB *ent;
+    if (h == 0xffffffff)
+        ent = 0;
+    else {
+        SHandleEntry *he = &g_10566458->e[h & 0x1fff];
+        ent = (he->serial == (h >> 13)) ? he->p : 0;
+    }
+    return ent;
+}
+
+int CUnknown10182810::sub_10182810()
+{
+    if (GetEnt(m_hTarget) != 0) {
+        SEntB *e = GetEnt(*(volatile unsigned *)&m_hTarget);
+        if (e->m_p9c != 0 && e->m_p9c->v158())
+            return m_result1cc8;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10183100 size=0xd
 #include "CUnknown10183100.h"
 
