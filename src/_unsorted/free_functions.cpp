@@ -2183,6 +2183,47 @@ void sub_10099ca0(AnimEnt *ent, int unused, unsigned int *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099d40 size=0x84
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct SAnimating { char pad[0x70c]; char m_bClientSideAnimation; };
+
+struct SEntV137 {
+    S100(a)
+    S10(b0) S10(b1) S10(b2)
+    virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4();
+    virtual void c5(); virtual void c6();
+    virtual SAnimating *v137();
+};
+
+struct CScopeGuard {
+    CScopeGuard(const char *name)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = g_106b8540;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+int sub_10099d40(SEntV137 *ent, int value)
+{
+    CScopeGuard guard("SendProxy_ClientSideAnimation");
+    SAnimating *anim = ent->v137();
+    if (anim && !anim->m_bClientSideAnimation)
+        return value;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009a030 size=0x68
 struct TScope {
 	const char *name;
