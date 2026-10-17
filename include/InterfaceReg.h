@@ -9,5 +9,5 @@ public:
 	InterfaceReg *m_pNext;
 
 	// The constructor, InterfaceReg(createFn, name); registers this node at the head of the global list.
-	void sub_1012ee70(void *createFn, const char *pName);
+	InterfaceReg *sub_1012ee70(void *createFn, const char *pName);
 };
