@@ -7447,6 +7447,26 @@ void TStat::sub_101fc950(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fd110 size=0x7d
+#include "CVStatAction_t.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_105a7abc[];
+extern char g_106b8540[];
+extern void (*g_1074e7c8)(CVStatAction_t *, int, int, int, int);
+void CVStatAction_t::sub_101fd110(int a, int b, int c, int d)
+{
+    g_109f3620[*g_109f3680].a = g_105a7abc;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (g_1074e7c8)
+        g_1074e7c8(this, a, b, c, d);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fd1b0 size=0x78
 #include "CVStatAction_t.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
