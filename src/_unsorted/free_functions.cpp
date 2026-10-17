@@ -2866,6 +2866,38 @@ int *sub_10192a30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101931c0 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1058dba0[2];
+
+int *sub_101931c0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_nDamagedSkin", {0x730, 0}, 1, 6, "damaged_skin" },
+        { 10, "m_OnSlashed", {0x734, 0}, 1, 0x16, "OnSlashed", g_1055dc70 },
+    };
+    g_1058dba0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1058dba0[0] = (int)&dataDesc[1];
+    return g_1058dba0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199e20 size=0x65
 struct PyObj;
 struct PyType { char pad[0x18]; void (*dealloc)(PyObj*); };
