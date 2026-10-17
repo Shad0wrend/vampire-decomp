@@ -9,4 +9,6 @@ public:
 	float m_flStationaryTime;	// +0x66d8
 
 	bool sub_10362670();	// "CNPC_VAsianVampire::StationaryFor...": curtime - m_flStationaryTime >= constant
+	void vfunc619(int arg);
+	void sub_1000c27a(int arg);
 };
