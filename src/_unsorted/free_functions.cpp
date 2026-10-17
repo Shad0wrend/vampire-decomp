@@ -4750,6 +4750,29 @@ int *sub_10132db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101346e0 size=0x7f
+#include "CUnknown101346e0.h"
+
+int CUnknown101346e0::sub_101346e0(int steps)
+{
+    while (steps > 0) {
+        m_current++;
+        if (m_current < 0 || m_current >= 16)
+            m_current = 0;
+        if (m_slots[m_current] != 0)
+            steps--;
+    }
+    while (steps < 0) {
+        m_current--;
+        if (m_current < 0 || m_current >= 16)
+            m_current = 15;
+        if (m_slots[m_current] != 0)
+            steps++;
+    }
+    return m_current;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136330 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
