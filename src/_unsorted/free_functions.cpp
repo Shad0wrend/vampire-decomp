@@ -8625,6 +8625,37 @@ extern char g_106b8540;
 char * __stdcall sub_1030f660(int) { return &g_106b8540; }
 // END FUNCTION
 
+// FUNCTION: 0x1030f680 size=0x70
+inline void *operator new(unsigned, void *p) { return p; }
+struct Z24 { int d[6]; Z24() { for (int i = 0; i < 6; i++) d[i] = 0; } };
+extern char *(*g_109f3890)(char *, const char *, int);
+extern "C" unsigned strlen(const char *);
+struct Helper1030f680 {
+    int a[6];
+    int m18;
+    int m1c;
+    int m20;
+    int m24;
+    int b[6];
+    char *m40;
+    int m44;
+    Helper1030f680 *sub_1030f680(const char *s, int v1, int v2);
+};
+Helper1030f680 *Helper1030f680::sub_1030f680(const char *s, int v1, int v2)
+{
+    new (a) Z24;
+    new (b) Z24;
+    m1c = v1;
+    int n = strlen(s);
+    m40 = new char[n + 1];
+    g_109f3890(m40, s, n + 1);
+    m20 = 0;
+    m24 = 0;
+    m44 = v2;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fc90 size=0x68
 struct SInner { void *ent; unsigned serial; };
 struct SEnt { int pad; SInner in; };
