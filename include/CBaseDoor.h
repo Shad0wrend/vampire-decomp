@@ -4,5 +4,6 @@
 class CBaseDoor
 {
 public:
+	void vfunc71();
 	void vfunc246(int a, int* b, int c);
 };
