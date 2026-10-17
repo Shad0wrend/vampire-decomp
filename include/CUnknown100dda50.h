@@ -30,7 +30,7 @@ public:
 	virtual void v92(); virtual void v93();
 	virtual int v94();
 
-	char pad[0x36c];
+	char pad[0x368];
 	int m_unk36c;
 };
 
