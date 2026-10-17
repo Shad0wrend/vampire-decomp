@@ -57,6 +57,46 @@ void CUtlMemory20::sub_1002ccc0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002dfe0 size=0x85
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct IPhysicsEnv {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+    virtual void v16(); virtual void v17(); virtual void v18();
+    virtual int CreateBbox(int mins, int maxs);
+};
+struct IPhysCallback {
+    virtual void OnCreate(int mins, int maxs, int obj);
+};
+extern IPhysicsEnv *g_1072393c;
+extern IPhysCallback *g_1053c5e0;
+
+struct CScopeGuard {
+    CScopeGuard(const char *name)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = g_106b8540;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+int sub_1002dfe0(int mins, int maxs)
+{
+    CScopeGuard guard("PhysCreateBbox");
+    int obj = g_1072393c->CreateBbox(mins, maxs);
+    g_1053c5e0->OnCreate(mins, maxs, obj);
+    return obj;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002e0a0 size=0x7c
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
