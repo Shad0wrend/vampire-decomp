@@ -58,6 +58,7 @@ public:
 
 	const char *sub_1000ea11();
 	void sub_10026c70();	// "CBaseEntity::Think": calls the think function pointer at +0x118
+	int sub_10027570();	// "CBaseEntity::GetSolid": forwards to slot 11 of the collision object at +0x270
 	void sub_1003eb50();
 	void sub_1009fa60();
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
