@@ -5277,6 +5277,28 @@ void CVDmg_t::sub_101fb3e0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fb8f0 size=0x6c
+struct TraceEnt { const char *a; void *b; void *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_105a768c[];
+extern char g_106b8540[];
+struct CVStatSubCost_t { int v; bool sub_101fb8f0(); };
+bool CVStatSubCost_t::sub_101fb8f0()
+{
+    g_109f3620[*g_109f3680].a = g_105a768c;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (v != 10000) {
+        --*g_109f3680;
+        return false;
+    }
+    --*g_109f3680;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fc950 size=0x68
 struct TScope {
 	const char *name;
