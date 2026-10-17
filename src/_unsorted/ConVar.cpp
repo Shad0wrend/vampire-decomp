@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10245cf0 size=0x6e
+#include "ConVar.h"
+extern "C" double atof(const char *);
+extern int (*g_109f388c)(char *, int, const char *, ...);
+
+void ConVar::vfunc7(const char *value)
+{
+    float fNewValue = (float)atof(value);
+    char tempVal[32];
+    if (vfunc10(&fNewValue)) {
+        g_109f388c(tempVal, 32, "%f", fNewValue);
+        value = tempVal;
+    }
+    m_fValue = fNewValue;
+    m_nValue = (int)m_fValue;
+    vfunc11(value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245f50 size=0x68
 extern int (*g_109f388c)(char *, int, const char *, ...);
 struct SConVar {
