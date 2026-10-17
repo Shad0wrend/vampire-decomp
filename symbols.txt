@@ -1462,6 +1462,7 @@
 0x100149b6 func   ?sub_102c7390@CUnknown102c7390@@QAEXD@Z CUnknown102c7390::sub_102c7390
 0x100149cf func   _phys_spring phys_spring
 0x10014a06 func   _info_node_tzimisce_claw_left info_node_tzimisce_claw_left
+0x10014a79 func   ?sub_103d1ca0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d1ca0
 0x10014a92 func   _info_node_hint info_node_hint
 0x10014ace func   ?sub_10230280@@YAXPAUR@@H@Z sub_10230280
 0x10014add func   ?sub_1011a580@@YAXPAUSHandleHolder@@@Z sub_1011a580
