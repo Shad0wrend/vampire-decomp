@@ -945,6 +945,32 @@ void CUnknown10057680::sub_10057680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057850 size=0x6d
+struct IVisitor { virtual void v0(); virtual void v1(); virtual void v2(); virtual int v3(const char *name, void *data, int a, void *desc, int n); };
+extern char g_1053fdd4[];
+extern char g_1053fdcc[];
+extern char g_1053fc54[];
+extern char g_1053fc80[];
+struct ListNode { char pad[0x64]; ListNode *next; };
+struct SaveList {
+    ListNode *head;
+    int count;
+    int sub_10057850(IVisitor *v);
+};
+int SaveList::sub_10057850(IVisitor *v)
+{
+    if (!v->v3(g_1053fdd4, this, 0, g_1053fc54, 1))
+        return 0;
+    ListNode *p = head;
+    for (int i = 0; i < count && p; i++) {
+        if (!v->v3(g_1053fdcc, p, 0, g_1053fc80, 3))
+            return 0;
+        p = p->next;
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058200 size=0xd
 // TARGET: CUnknown10058200::sub_10058200
 void CUnknown10058200::sub_10058200(int unused)
