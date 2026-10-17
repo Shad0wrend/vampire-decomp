@@ -334,6 +334,7 @@
 0x10005434 func   _item_g_hannahs_appt_book item_g_hannahs_appt_book
 0x10005439 func   ?sub_101bd960@@YIXPAPAX@Z sub_101bd960
 0x10005448 func   _item_g_idol_elephant item_g_idol_elephant
+0x100054f2 func   ?vfunc2@CTEShowLine@@UAEPAV1@I@Z CTEShowLine::vfunc2
 0x1000551f func   _item_g_idol_cat item_g_idol_cat
 0x10005538 func   _intersting_place_conversation intersting_place_conversation
 0x10005560 func   _item_g_ring_serial_killer_1 item_g_ring_serial_killer_1
