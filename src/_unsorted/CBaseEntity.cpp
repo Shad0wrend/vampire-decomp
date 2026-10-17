@@ -290,6 +290,31 @@ int __fastcall sub_100b17f0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1960 size=0x7b
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_10558b14[];
+extern char g_105387dc[];
+extern char g_106b8540[];
+float *CBaseEntity::vfunc214()
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_10558b14;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    --*g_109f3680;
+    return (float *)((char *)this + 0x38c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3d10 size=0x79
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
