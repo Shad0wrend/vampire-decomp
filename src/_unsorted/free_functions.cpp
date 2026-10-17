@@ -331,6 +331,135 @@ void CUnknown100437e0::sub_100437e0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10045110 size=0x1c9
+struct Node8 { int key; int val; };
+struct Links_t { unsigned short left, right, parent, tag; };
+struct RBNode { Links_t links; Node8 data; };
+typedef bool (*LessFunc_t)(const Node8 &, const Node8 &);
+extern RBNode *g_109f0b6c;
+extern RBNode *g_109f0b64;
+extern unsigned char g_109f0b68;
+extern Links_t g_106bdb50;
+
+struct Tree1
+{
+	LessFunc_t m_LessFunc;
+	RBNode *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	unsigned short m_Root, m_NumElements, m_FirstFree, m_pad;
+	RBNode *m_pElements;
+
+	Links_t &sub_10048960(unsigned short i);
+	void sub_100489e0(unsigned short i);
+
+	unsigned short Find(const Node8 &n)
+	{
+		if (m_pElements)
+			g_109f0b6c = m_pElements;
+		unsigned short i = m_Root;
+		while (i != 0xffff)
+		{
+			if (m_LessFunc(n, m_pMemory[i].data))
+				i = sub_10048960(i).left;
+			else if (m_LessFunc(m_pMemory[i].data, n))
+				i = sub_10048960(i).right;
+			else
+				return i;
+		}
+		return 0xffff;
+	}
+	bool Remove(int key)
+	{
+		Node8 n;
+		n.key = key;
+		unsigned short i = Find(n);
+		if (i == 0xffff)
+			return false;
+		sub_100489e0(i);
+		m_pMemory[i].links.left = i;
+		m_pMemory[i].links.right = m_FirstFree;
+		m_FirstFree = i;
+		m_NumElements--;
+		return true;
+	}
+};
+
+struct Tree2
+{
+	LessFunc_t m_LessFunc;
+	RBNode *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	unsigned short m_Root, m_NumElements, m_FirstFree, m_pad;
+	RBNode *m_pElements;
+
+	Links_t &sub_100492b0(unsigned short i);
+	void sub_10049330(unsigned short i);
+
+	const Links_t &Links(unsigned short i)
+	{
+		if (!(g_109f0b68 & 1))
+		{
+			g_109f0b68 |= 1;
+			g_106bdb50.tag = 1;
+			g_106bdb50.left = 0xffff;
+			g_106bdb50.right = 0xffff;
+			g_106bdb50.parent = 0xffff;
+		}
+		return (i != 0xffff) ? m_pMemory[i].links : g_106bdb50;
+	}
+
+	unsigned short Find(const Node8 &n)
+	{
+		if (m_pElements)
+			g_109f0b64 = m_pElements;
+		unsigned short i = m_Root;
+		while (i != 0xffff)
+		{
+			if (m_LessFunc(n, m_pMemory[i].data))
+				i = sub_100492b0(i).left;
+			else if (m_LessFunc(m_pMemory[i].data, n))
+				i = Links(i).right;
+			else
+				return i;
+		}
+		return 0xffff;
+	}
+	bool Remove(int key)
+	{
+		Node8 n;
+		n.key = key;
+		unsigned short i = Find(n);
+		if (i == 0xffff)
+			return false;
+		sub_10049330(i);
+		m_pMemory[i].links.left = i;
+		m_pMemory[i].links.right = m_FirstFree;
+		m_FirstFree = i;
+		m_NumElements--;
+		return true;
+	}
+};
+
+class CUnknown10045110
+{
+public:
+	char pad0[0x40];
+	Tree1 m_Tree1;
+	Tree2 m_Tree2;
+
+	void sub_10045110(int key);
+};
+
+void CUnknown10045110::sub_10045110(int key)
+{
+	if (m_Tree1.Remove(key))
+		return;
+	m_Tree2.Remove(key);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004add0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
