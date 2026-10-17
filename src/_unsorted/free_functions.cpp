@@ -4060,6 +4060,41 @@ float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0240 size=0x6a
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct S101c0240 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_101c0240(int num);
+};
+// TARGET: S101c0240::sub_101c0240
+void S101c0240::sub_101c0240(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 3;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 0xc);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1b40 size=0xd
 void CUnknown101c1b40::sub_101c1b40(int mode)
 {
