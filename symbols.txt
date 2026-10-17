@@ -1020,6 +1020,7 @@
 0x1000f6af func   ?vfunc61@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc61
 0x1000f6c8 func   _npc_VWolfMorph npc_VWolfMorph
 0x1000f7f4 func   _item_i_written item_i_written
+0x1000f7f9 func   ?sub_103d0780@@YIHPAD@Z sub_103d0780
 0x1000f88a func   _playerevents playerevents
 0x1000f8b2 func   ?sub_1024c050@@YIXPAUMem4@@HH@Z sub_1024c050
 0x1000f92f func   ?sub_1012d0a0@@YAPAHXZ sub_1012d0a0
