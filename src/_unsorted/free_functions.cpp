@@ -12466,6 +12466,29 @@ void CUnknown1042da80::sub_1042da80(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042daa0 size=0x7e
+#include "CUnknown1042d9a0.h"
+
+unsigned __fastcall sub_1042d700(unsigned *p) { return *p >> 1 & 0x1f; }
+unsigned __fastcall sub_1042d720(unsigned *p) { return *p >> 6 & 0x3ff; }
+unsigned __fastcall sub_1042d9a0(unsigned *p) { return ((unsigned short *)p)[1] & 0xfff; }
+unsigned __fastcall sub_10011e4b(unsigned *p) { return *p >> 28; }
+
+// TARGET: CUnknown1042d9a0::sub_1042daa0
+char CUnknown1042d9a0::sub_1042daa0(CUnknown1042d9a0 *other)
+{
+    if (this == other)
+        return 1;
+    if (sub_1042d700((unsigned *)this) != sub_1042d700((unsigned *)other))
+        return 0;
+    if (sub_1042d720((unsigned *)this) != sub_1042d720((unsigned *)other))
+        return 0;
+    if (::sub_1042d9a0((unsigned *)this) != ::sub_1042d9a0((unsigned *)other))
+        return 0;
+    return sub_10011e4b((unsigned *)this) == sub_10011e4b((unsigned *)other);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10436900 size=0xd
 #pragma optimize("s", on)
 int sub_10436900(char **ap)
