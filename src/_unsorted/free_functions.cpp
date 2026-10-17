@@ -15108,6 +15108,27 @@ extern "C" CWeaponIArmor_Hvy_Cloth* item_a_body_armor()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4d00 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_104e76bc[];
+extern char g_105876fc[];
+
+// TARGET: item_g_lockpick
+extern "C" CItemGWarrLedger1* item_g_lockpick()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_104e76bc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_105876fc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
