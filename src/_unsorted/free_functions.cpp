@@ -8552,6 +8552,41 @@ void __fastcall sub_102e8a80(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e9e50 size=0x73
+struct Elem { char data[0x118]; };
+struct Mem {
+    Elem *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+};
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+
+void __fastcall sub_102e9e50(Mem *self, int, int num)
+{
+    if (self->m_nGrowSize == -1)
+        return;
+    int nAllocationRequested = self->m_nAllocationCount + num;
+    if (self->m_nAllocationCount < nAllocationRequested) {
+        int count = self->m_nAllocationCount;
+        do {
+            if (count != 0) {
+                if (self->m_nGrowSize != 0)
+                    count += self->m_nGrowSize;
+                else
+                    count += count;
+            } else
+                count = 1;
+        } while (count < nAllocationRequested);
+        self->m_nAllocationCount = count;
+    }
+    if (self->m_pMemory)
+        self->m_pMemory = (Elem *)g_109f3638(self->m_pMemory, self->m_nAllocationCount * sizeof(Elem));
+    else
+        self->m_pMemory = (Elem *)g_109f3634(self->m_nAllocationCount * sizeof(Elem));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ec320 size=0x6a
 #include "CUnknown102ec320.h"
 

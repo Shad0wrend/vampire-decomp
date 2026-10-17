@@ -82,6 +82,7 @@
 0x10002289 func   _viewmodel viewmodel
 0x100022bb func   ?sub_10339560@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10339560
 0x100022e8 func   ?sub_10156d30@@YIXPAD@Z sub_10156d30
+0x100022f7 func   ?sub_102e9e50@@YIXPAUMem@@HH@Z sub_102e9e50
 0x10002351 func   ?sub_10181600@@YIXPAD@Z sub_10181600
 0x1000236f func   ?sub_101cb6b0@@YAPAHXZ sub_101cb6b0
 0x100023a1 func   ?sub_1027d990@CUnknown1027d990@@QAEHXZ CUnknown1027d990::sub_1027d990
