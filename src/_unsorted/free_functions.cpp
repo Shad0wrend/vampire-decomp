@@ -1432,6 +1432,29 @@ unsigned int CUnknown100a8220::sub_100a8220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa7b0 size=0x69
+struct SScope { const char *a; const char *b; const char *c; };
+struct SMem { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+ virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+ virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+ virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+ virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(void *p); };
+extern "C" __declspec(dllimport) SScope g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern char g_106b8540[];
+extern SMem *g_1070b22c;
+// TARGET: sub_100aa7b0
+void sub_100aa7b0(void *p)
+{
+    g_ScopeTraceStack[g_ScopeTraceStackDepth].a = "CBaseEntity::operator delete";
+    g_ScopeTraceStack[g_ScopeTraceStackDepth].b = g_106b8540;
+    g_ScopeTraceStack[g_ScopeTraceStackDepth].c = g_106b8540;
+    g_ScopeTraceStackDepth++;
+    g_1070b22c->v46(p);
+    g_ScopeTraceStackDepth--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b03b0 size=0x66
 struct ScopeEnt { const char* a; const void* b; const void* c; };
 extern ScopeEnt* g_109f3620;
