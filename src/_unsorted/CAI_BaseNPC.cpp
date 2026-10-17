@@ -72,6 +72,39 @@ unsigned int CAI_BaseNPC::vfunc552()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027a530 size=0x6d
+#define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct S0 { TEN(a) };
+struct S1 : S0 { TEN(b) };
+struct S2 : S1 { TEN(c) };
+struct S3 : S2 { TEN(d) };
+struct S4 : S3 { TEN(e) };
+struct S5 : S4 { TEN(f) };
+struct S6 : S5 { TEN(g) };
+struct S7 : S6 { TEN(h) };
+struct S8 : S7 { TEN(i) };
+struct S9 : S8 { TEN(j) };
+struct S10 : S9 { TEN(k) };
+struct S11 : S10 { virtual void l0(); virtual void l1(); virtual void l2(); virtual void l3(); virtual void l4(); virtual void l5(); virtual void l6(); virtual void l7(); virtual void l8(); virtual double l9(int); };
+struct IChk { virtual void m0(); virtual void m1(); virtual int m2(int, int); };
+extern S11 *g_1070b22c;
+extern IChk *g_1070b244;
+
+bool CAI_BaseNPC::vfunc510()
+{
+    int state = *(int *)((char *)this + 0x10e8);
+    if (state == 0)
+        return false;
+    if (state == 8)
+        return false;
+    double t = *(float *)((char *)this + 0x10ec);
+    if (g_1070b22c->l9(0) < t)
+        return false;
+    bool r = g_1070b244->m2(0, *(int *)((char *)this + 0x10e8)) == 0;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027dc80 size=0x66
 struct FObj { char pad[0x28]; float m_f; };
 struct IObj { char pad[0x4f8]; int m_state; };
