@@ -2294,6 +2294,37 @@ void __fastcall sub_100deb10(char *self, int, char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dec20 size=0x6a
+#include "CUnknown100dec20.h"
+
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUnknown100dec20::sub_100dec20(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int requested = m_nAllocationCount + num;
+    int alloc = m_nAllocationCount;
+    if (alloc < requested) {
+        while (alloc < requested) {
+            if (alloc) {
+                if (m_nGrowSize)
+                    alloc += m_nGrowSize;
+                else
+                    alloc += alloc;
+            } else
+                alloc = 3;
+        }
+        m_nAllocationCount = alloc;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 12);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 12);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df010 size=0xe
 struct S100df010 { int a, b, c, d; };
 
