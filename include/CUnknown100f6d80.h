@@ -18,36 +18,51 @@ struct CUnknown100f6d80Vec
 	int m_size;
 	int *m_pElements;
 
+	int Count() { return m_size; }
+	int &Element(int i) { return m_mem.m_pMemory[i]; }
+
 	int Find(int src)
 	{
-		for (int i = 0; i < m_size; i++) {
-			if (m_mem.m_pMemory[i] == src)
+		for (int i = 0; i < Count(); i++) {
+			if (Element(i) == src)
 				return i;
 		}
 		return -1;
 	}
 
-	void AddToTail(int src)
+	void GrowVector(int num)
 	{
-		int idx = m_size;
-		int next = idx + 1;
-		if (next > m_mem.m_allocationCount)
-			m_mem.sub_100f9940(m_size - m_mem.m_allocationCount + 1);
-		int *mem = m_mem.m_pMemory;
-		m_size++;
-		m_pElements = mem;
-		int move = m_size - idx - 1;
-		if (move > 0)
-			sub_10430fa0(mem + next, mem + idx, move * 4);
-		int *slot = m_mem.m_pMemory + idx;
-		if (slot)
-			*slot = src;
+		if (m_size + num > m_mem.m_allocationCount)
+			m_mem.sub_100f9940(m_size + num - m_mem.m_allocationCount);
+		m_size += num;
+		m_pElements = m_mem.m_pMemory;
 	}
 
-	void AddToTailUnique(int src)
+	void ShiftElementsRight(int elem, int num)
 	{
-		if (Find(src) < 0)
-			AddToTail(src);
+		int numToMove = m_size - elem - num;
+		if (numToMove > 0)
+			sub_10430fa0(&Element(elem + num), &Element(elem), numToMove * 4);
+	}
+
+	int InsertBefore(int elem, int src)
+	{
+		GrowVector(1);
+		ShiftElementsRight(elem, 1);
+		int *p = &Element(elem);
+		if (p)
+			*p = src;
+		return elem;
+	}
+
+	int AddToTail(int src) { return InsertBefore(m_size, src); }
+
+	int AddToTailUnique(int src)
+	{
+		int idx = Find(src);
+		if (idx >= 0)
+			return idx;
+		return AddToTail(src);
 	}
 };
 
