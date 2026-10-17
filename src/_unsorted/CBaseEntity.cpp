@@ -290,6 +290,31 @@ int __fastcall sub_100b17f0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b3d10 size=0x79
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+int CBaseEntity::sub_100b3d10()
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].name = "CBaseEntity::GetEdict";
+    g_109f3620[*g_109f3680].ent = n;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    int edict = *(int *)((char *)this + 0x2e0);
+    --*g_109f3680;
+    return edict;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4bc0 size=0x8
 #include "CBaseEntity.h"
 
