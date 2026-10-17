@@ -105,6 +105,24 @@ bool CAI_BaseNPC::vfunc510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027d9f0 size=0x76
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool __fastcall sub_1027d9f0(char *self, int, int a, int b)
+{
+    const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CAI_BaseNPC::OverrideMoveFacing";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    (*g_109f3680)--;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027dc80 size=0x66
 struct FObj { char pad[0x28]; float m_f; };
 struct IObj { char pad[0x4f8]; int m_state; };
