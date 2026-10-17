@@ -8229,6 +8229,39 @@ void __fastcall sub_10313f70(Mem16 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103159d0 size=0x6d
+struct Squad;
+struct Ent {
+    virtual void v0();
+    virtual int *v1();
+    char pad[0x5da4 - 4];
+    Squad *m_pSquad;
+};
+struct Squad {
+    int pad0;
+    int m_pName;
+    char pad1[0x1c - 8];
+    int m_Members[16];
+    int m_Count;
+};
+extern void (*g_109f3630)(const char *, ...);
+
+void __fastcall sub_103159d0(Squad *self, int, Ent *ent)
+{
+    if (self->m_Count + 1 >= 16) {
+        g_109f3630("Error!! Squad %s is too big!!! Replacing last member\n", self->m_pName);
+        self->m_Count--;
+    }
+    int *slot = &self->m_Members[self->m_Count];
+    if (ent)
+        *slot = *ent->v1();
+    else
+        *slot = -1;
+    ent->m_pSquad = self;
+    self->m_Count++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319f10 size=0xc
 bool sub_1000528b(void *);
 bool CUnknown10319f10::sub_10319f10()
