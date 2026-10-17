@@ -127,6 +127,7 @@
 0x100027fc func   ?sub_102464b0@@YAXHHPAH@Z sub_102464b0
 0x100028a1 func   ?sub_10334600@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_10334600
 0x100028a6 func   ?sub_102a9e60@@YIMPAUCSlots@@@Z sub_102a9e60
+0x100028ab func   ?vfunc2@CTEBubbles@@UAEPAV1@I@Z CTEBubbles::vfunc2
 0x100028ce func   _item_g_garys_cd item_g_garys_cd
 0x100028d8 func   ?vfunc339@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc339
 0x10002982 func   ?sub_10319fe0@CUnknown10319fe0@@QAEXH@Z CUnknown10319fe0::sub_10319fe0
