@@ -2938,6 +2938,41 @@ void __fastcall sub_101074c0(Mem32 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107550 size=0x6d
+struct Elem400 { char d[400]; };
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct Mem400 {
+    Elem400 *m_p;
+    int m_alloc;
+    int m_grow;
+    void sub_10107550(int num);
+};
+void Mem400::sub_10107550(int num)
+{
+    if (m_grow == -1)
+        return;
+    int want = m_alloc + num;
+    if (m_alloc < want) {
+        int n = m_alloc;
+        do {
+            if (n != 0) {
+                if (m_grow != 0)
+                    n += m_grow;
+                else
+                    n += n;
+            } else
+                n = 1;
+        } while (n < want);
+        m_alloc = n;
+    }
+    if (m_p)
+        m_p = (Elem400 *)g_109f3638(m_p, m_alloc * 400);
+    else
+        m_p = (Elem400 *)g_109f3634(m_alloc * 400);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109da0 size=0xa
 void __fastcall sub_10109da0(char *self, int, int)
 {
