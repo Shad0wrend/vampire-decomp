@@ -273,6 +273,7 @@
 0x100046fb func   ?sub_1018c4d0@CUnknown1018c4d0@@QAEXD@Z CUnknown1018c4d0::sub_1018c4d0
 0x1000470a func   ?sub_1016b440@@YAXXZ sub_1016b440
 0x10004773 func   _point_target point_target
+0x10004782 func   ?vfunc71@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc71
 0x1000478c func   ?vfunc1@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc1
 0x100047aa func   ?sub_10032b00@@YIXPAH@Z sub_10032b00
 0x100047c3 func   _item_w_tzimisce2_head item_w_tzimisce2_head
