@@ -56,6 +56,7 @@ public:
 	const char *sub_1000ea11();
 	void sub_1003eb50();
 	void sub_1009fa60();
+	void sub_100abbf0(int a, int b);
 	void sub_100b3b00();
 
 	char m_pad0004[0x110];
