@@ -2588,6 +2588,39 @@ void CBaseEntity::sub_100acef0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ae090 size=0x83
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+struct ISoundSink { virtual int PrecacheSound(const char *s, int n); };
+extern ISoundSink *g_1070b248;
+
+struct CScopeGuard {
+    CScopeGuard(const char *name, const char *ent)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = ent;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+int CBaseEntity::sub_100ae090(const char *name)
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    CScopeGuard guard("CBaseEntity::PrecacheSound", n);
+    return g_1070b248->PrecacheSound(name, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b03b0 size=0x66
 struct ScopeEnt { const char* a; const void* b; const void* c; };
 extern ScopeEnt* g_109f3620;

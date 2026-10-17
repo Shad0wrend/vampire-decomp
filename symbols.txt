@@ -1229,6 +1229,7 @@
 0x1001122a func   ?sub_1022d380@@YIXPAUMem4@@HH@Z sub_1022d380
 0x1001122f func   ?sub_102457d0@CUnknown102457d0@@QAEXH@Z CUnknown102457d0::sub_102457d0
 0x1001123e func   ?sub_100fdcc0@@YIXPADHH@Z sub_100fdcc0
+0x10011243 func   ?sub_100ae090@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100ae090
 0x1001129d func   ?sub_1012f640@@YA?AUSFloatPair@@PBD@Z sub_1012f640
 0x100112cf func   ?sub_1034d590@CUnknown1034d590@@QAEXH@Z CUnknown1034d590::sub_1034d590
 0x1001131f func   _item_g_bach_journal item_g_bach_journal
