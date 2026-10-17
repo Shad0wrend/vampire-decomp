@@ -1433,6 +1433,7 @@
 0x100131dd func   ?vfunc35@CPropSign@@UAEHH@Z CPropSign::vfunc35
 0x100131e7 func   ?sub_102d2840@@YAPAUSNode@@HPBD@Z sub_102d2840
 0x10013228 func   ?sub_10043630@@YIXPAUMem8@@HH@Z sub_10043630
+0x10013232 func   ?vfunc5@CPhysExplosion@@UAEPAV1@I@Z CPhysExplosion::vfunc5
 0x100132a0 func   ?vfunc238@CBaseEntity@@QAEXHHHH@Z CBaseEntity::vfunc238
 0x10013331 func   ?vfunc599@CNPC_VTzimisceRunner@@UAE_NPAX@Z CNPC_VTzimisceRunner::vfunc599
 0x1001345d func   ?sub_100b1130@@YIHPAVCBaseEntity@@@Z sub_100b1130
