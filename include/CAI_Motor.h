@@ -2,6 +2,11 @@
 // are not modelled; primary vtable 0x1049d854 has 21 slots.
 #pragma once
 
+#include "CUtlVectorDataOps.h"
+
+struct CAI_InterestTarget;
+struct ISaveRestoreOps;
+
 class CAI_Motor
 {
 public:
@@ -57,4 +62,14 @@ public:
 
 	int sub_102e2610();
 	CAI_Motor *sub_102e0900(int outer);
+
+	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
+	static int *sub_102e0860();
+	static ISaveRestoreOps *GetFacingQueueOps();
 };
+
+inline ISaveRestoreOps *CAI_Motor::GetFacingQueueOps()
+{
+	static CUtlVectorDataOps<CAI_InterestTarget,9> ops;
+	return (ISaveRestoreOps *)&ops;
+}
