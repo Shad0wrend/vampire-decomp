@@ -11,6 +11,7 @@ public:
 	void sub_10339560();
 
 	// Slots called directly so far; declared as plain members.
+	void vfunc333(int a);
 	void vfunc335();
 	void vfunc336();
 	void vfunc338(int a, int b, int c);
