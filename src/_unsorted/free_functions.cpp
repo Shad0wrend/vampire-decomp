@@ -4514,6 +4514,33 @@ void CUnknown10081e70::sub_100fa6b0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fbef0 size=0x49
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_1000a9d4(GP *);
+extern int vt_104563bc;
+extern char g_1056768c[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: inspection_node
+extern "C" GP *inspection_node()
+{
+	GP *p = (GP *)sub_1000db89(0x4a8);
+	if (p) {
+		sub_1000a9d4(p);
+		*(int **)p = &vt_104563bc;
+	} else {
+		p = 0;
+	}
+	p->name(g_1056768c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fdcc0 size=0xa
 void __fastcall sub_100fdcc0(char *self, int, int)
 {
