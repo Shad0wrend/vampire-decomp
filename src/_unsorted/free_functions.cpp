@@ -2250,6 +2250,57 @@ void sub_10003a94();
 void __stdcall sub_1012cf90(int) { sub_10003a94(); }
 // END FUNCTION
 
+// FUNCTION: 0x1012d0a0 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10573960[2];
+void sub_1000b7d0();
+void sub_10010979();
+void sub_1000d058();
+void sub_1000b8e8();
+void sub_10005ea2();
+void sub_1000bd0c();
+
+int *sub_1012d0a0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_flCountTime", {0x468, 0}, 1, 0xe, "count_time" },
+        { 4, "m_nCountType", {0x46c, 0}, 1, 6, "count_type" },
+        { 0xf, "m_flRemainingTime", {0x480, 0}, 1, 6, "remaining_time" },
+        { 0xf, "m_flLastTime", {0x47c, 0}, 1, 2 },
+        { 5, "m_bIsPaused", {0x470, 0}, 1, 2 },
+        { 5, "m_bShowTimer", {0x478, 0}, 1, 2 },
+        { 4, "m_nTimerFlags", {0x488, 0}, 1, 2 },
+        { 0, "CHudTimerTimerThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000b7d0 },
+        { 0, "InputRestartTimer", {0, 0}, 1, 8, "RestartTimer", 0, (void *)sub_10010979 },
+        { 0, "InputRestartTimer", {0, 0}, 1, 8, "ResetTimer", 0, (void *)sub_10010979 },
+        { 0, "InputStartTimer", {0, 0}, 1, 8, "StartTimer", 0, (void *)sub_1000d058 },
+        { 0, "InputPauseTimer", {0, 0}, 1, 8, "PauseTimer", 0, (void *)sub_1000b8e8 },
+        { 0, "InputShow", {0, 0}, 1, 8, "Show", 0, (void *)sub_10005ea2 },
+        { 0, "InputHide", {0, 0}, 1, 8, "Hide", 0, (void *)sub_1000bd0c },
+        { 10, "m_OnTimerComplete", {0x450, 0}, 1, 0x16, "OnTimerComplete", g_1055dc70 },
+    };
+    g_10573960[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10573960[0] = (int)&dataDesc[1];
+    return g_10573960;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e6a0 size=0xd
 void CUnknown1012e6a0::sub_1012e6a0(int unused)
 {
