@@ -2830,6 +2830,41 @@ int EntryTable::sub_100ecc60(int idx, int slot)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ed500 size=0x72
+struct Elem44 { char d[0x44]; };
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct Mem44 {
+    Elem44 *m_p;
+    int m_alloc;
+    int m_grow;
+    void sub_100ed500(int num);
+};
+void Mem44::sub_100ed500(int num)
+{
+    if (m_grow == -1)
+        return;
+    int want = m_alloc + num;
+    if (m_alloc < want) {
+        int n = m_alloc;
+        do {
+            if (n != 0) {
+                if (m_grow != 0)
+                    n += m_grow;
+                else
+                    n += n;
+            } else
+                n = 1;
+        } while (n < want);
+        m_alloc = n;
+    }
+    if (m_p)
+        m_p = (Elem44 *)g_109f3638(m_p, m_alloc * 0x44);
+    else
+        m_p = (Elem44 *)g_109f3634(m_alloc * 0x44);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0300 size=0x8
 void __fastcall sub_100f0300(char *p) { p[0x55c] = 1; }
 // END FUNCTION
