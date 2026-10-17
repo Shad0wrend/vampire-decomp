@@ -1432,6 +1432,38 @@ unsigned int CUnknown100a8220::sub_100a8220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa720 size=0x6a
+struct TScope {
+	const char *name;
+	void *a;
+	void *b;
+};
+extern int *g_109f3680;
+extern TScope *g_109f3620;
+extern char g_10556c1c[];
+extern char g_106b8540[];
+
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); \
+	virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct TIface {
+	V10(a) V10(b) V10(c) V10(d)
+	virtual void e0(); virtual void e12(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual int v45(int a);
+};
+extern TIface *g_1070b22c;
+
+int sub_100aa720(int a)
+{
+	g_109f3620[*g_109f3680].name = g_10556c1c;
+	g_109f3620[*g_109f3680].a = g_106b8540;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	(*g_109f3680)++;
+	int r = g_1070b22c->v45(a);
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa7b0 size=0x69
 struct SScope { const char *a; const char *b; const char *c; };
 struct SMem { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
