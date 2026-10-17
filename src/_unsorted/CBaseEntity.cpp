@@ -209,6 +209,37 @@ bool __fastcall sub_100aa680(CBaseEntity *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa840 size=0x81
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct CScopeGuard {
+    CScopeGuard(const char *name, const char *ent)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = ent;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+char CBaseEntity::sub_100aa840()
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    CScopeGuard guard("CBaseEntity::IsTransparent", n);
+    return *(int *)((char *)this + 0x16c) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa900 size=0x76
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
