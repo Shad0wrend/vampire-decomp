@@ -15183,6 +15183,33 @@ extern "C" GP *item_m_money_clip()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f60c0 size=0x49
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_10004d9f(GP *);
+extern int vt_104e99bc;
+extern char g_10680a74[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: item_m_money_envelope
+extern "C" GP *item_m_money_envelope()
+{
+	GP *p = (GP *)sub_1000db89(0x918);
+	if (p) {
+		sub_10004d9f(p);
+		*(int **)p = &vt_104e99bc;
+	} else {
+		p = 0;
+	}
+	p->name(g_10680a74);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
