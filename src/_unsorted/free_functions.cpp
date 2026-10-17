@@ -3985,6 +3985,29 @@ void sub_1012f100(void* h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f190 size=0x78
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern int (__stdcall *g_109f34ac)(int, const char *);
+
+int sub_1012f190(int hModule)
+{
+    g_109f3620[*g_109f3680].a = "Sys_GetFactory";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (!hModule) {
+        (*g_109f3680)--;
+        return 0;
+    }
+    int r = g_109f34ac(hModule, "CreateInterface");
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f2b0 size=0x69
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
