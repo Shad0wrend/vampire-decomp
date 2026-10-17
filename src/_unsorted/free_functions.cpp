@@ -9043,6 +9043,31 @@ void __fastcall sub_102d00c0(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d00e0 size=0x79
+#include "S102d4390.h"
+
+void *sub_10430fa0(void *, const void *, unsigned);
+
+void __stdcall sub_102d00e0(S102d4390 *vec, const float *v, float w)
+{
+    int old = vec->m_size;
+    if (old + 1 > vec->m_allocationCount)
+        vec->sub_102d4390(old - vec->m_allocationCount + 1);
+    int newSize = vec->m_size + 1;
+    S102d4390Element *mem = vec->m_pMemory;
+    vec->m_pElements = mem;
+    vec->m_size = newSize;
+    int move = newSize - old - 1;
+    if (move > 0)
+        sub_10430fa0(mem + (old + 1), mem + old, move * 16);
+    S102d4390Element *e = vec->m_pMemory + old;
+    e->x = v[0];
+    e->y = v[1];
+    e->z = v[2];
+    vec->m_pMemory[old].w = w;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d41f0 size=0x8
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION

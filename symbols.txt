@@ -518,6 +518,7 @@
 0x1000868e func   ?sub_1007ecf0@CUnknown1007ecf0@@QAEXD@Z CUnknown1007ecf0::sub_1007ecf0
 0x10008698 func   _item_w_chang_claw item_w_chang_claw
 0x1000869d func   _npc_VBach npc_VBach
+0x100086c5 func   ?sub_102d00e0@@YGXPAVS102d4390@@PBMM@Z sub_102d00e0
 0x100086d4 func   ?sub_1003c950@@YIXPAUSys@@@Z sub_1003c950
 0x100086e3 func   _game_text game_text
 0x100086ed func   _npc_VTest npc_VTest
