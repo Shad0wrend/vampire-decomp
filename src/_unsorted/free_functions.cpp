@@ -2032,6 +2032,50 @@ void CUnknown10103100::sub_10103100(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103c80 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1056a578[2];
+void sub_10002126();
+void sub_1000279d();
+void sub_1000fb37();
+void sub_10013381();
+void sub_10003eb3();
+
+int *sub_10103c80()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_flDelay", {0x450, 0}, 1, 6, "MaxDelay" },
+        { 4, "m_nMagnitude", {0x458, 0}, 1, 6, "Magnitude" },
+        { 4, "m_nTrailLength", {0x45c, 0}, 1, 6, "TrailLength" },
+        { 0, "CEnvSparkSparkThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10002126 },
+        { 0, "InputStartSpark", {0, 0}, 1, 8, "StartSpark", 0, (void *)sub_1000279d },
+        { 0, "InputStopSpark", {0, 0}, 1, 8, "StopSpark", 0, (void *)sub_1000fb37 },
+        { 0, "InputToggleSpark", {0, 0}, 1, 8, "ToggleSpark", 0, (void *)sub_10013381 },
+        { 0, "InputSparkOnce", {0, 0}, 1, 8, "SparkOnce", 0, (void *)sub_10003eb3 },
+        { 10, "m_OnSpark", {0x460, 0}, 1, 0x16, "OnSpark", g_1055dc70 },
+    };
+    g_1056a578[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1056a578[0] = (int)&dataDesc[1];
+    return g_1056a578;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104630 size=0x8
 void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
