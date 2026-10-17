@@ -3252,6 +3252,42 @@ CUnknown101e9880* CUnknown101e9880::sub_101e9880()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9a80 size=0xac
+struct HNode { virtual void v0(); virtual void v1(); virtual HNode* Find(const char*); virtual HNode* Next(); };
+struct HStream { virtual void v0(); virtual void Close(); };
+struct HFile { virtual void v0(); virtual void v1(); virtual HNode* Find(const char*); int* vb; };
+struct HItem { void sub_1000a989(HNode*); };
+struct HOwner { HItem* sub_1000e18d(); char sub_101e9a80(const char*); };
+extern void* g_1070b238;
+HFile* sub_1000a119(const char*, void*);
+extern void (*g_109f3628)(const char*, ...);
+extern char g_105a4674[];
+extern char g_105a4664[];
+extern char g_105a4610[];
+// TARGET: HOwner::sub_101e9a80
+char HOwner::sub_101e9a80(const char* name)
+{
+	HFile* f = sub_1000a119(name, g_1070b238);
+	if (!f) {
+		g_109f3628(g_105a4674, name);
+		return 0;
+	}
+	HNode* n = f->Find(g_105a4664);
+	while (n) {
+		HItem* it = sub_1000e18d();
+		if (!it) {
+			g_109f3628(g_105a4610, name);
+			((HStream*)((char*)f + f->vb[1] + 4))->Close();
+			return 0;
+		}
+		it->sub_1000a989(n);
+		n = n->Next();
+	}
+	((HStream*)((char*)f + f->vb[1] + 4))->Close();
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eaa40 size=0xa
 extern int g_1073a38c;
 
