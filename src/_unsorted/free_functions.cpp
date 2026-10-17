@@ -8515,6 +8515,28 @@ void CNPC_VVampireBoss::sub_103c6df0(int index, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6eb0 size=0x6b
+struct ScopeEntry {
+    const char *a;
+    const char *b;
+    const char *c;
+};
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CNPC_VVampireBoss::sub_103c6eb0()
+{
+    g_109f3620[*g_109f3680].a = "CNPC_VVampireBoss::ClearBodyEmitterNames";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    for (int i = 0; i < 4; i++)
+        m_pBodyEmitterNames[i] = 0;
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c76b0 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
