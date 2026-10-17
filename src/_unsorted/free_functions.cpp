@@ -3860,6 +3860,27 @@ void sub_101cf620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cfd80 size=0x69
+struct TRandom {
+	virtual void v0();
+	virtual float RandomFloat(float lo, float hi);
+};
+extern TRandom *g_1070b244;
+
+struct TVec {
+	float x, y, z;
+};
+
+TVec sub_101cfd80()
+{
+	TVec v;
+	v.x = g_1070b244->RandomFloat(-1.0f, 1.0f);
+	v.y = g_1070b244->RandomFloat(-1.0f, 1.0f);
+	v.z = g_1070b244->RandomFloat(0.0f, 1.0f);
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4f20 size=0xc
 void CUnknown101d4f20::sub_101d4f20(CUnknown101d4f20_Value *out)
 {
