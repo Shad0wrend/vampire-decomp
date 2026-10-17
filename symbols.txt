@@ -54,6 +54,7 @@
 0x100019d8 func   ?sub_100ddf40@CUnknown100ddf40@@QAEPAHH@Z CUnknown100ddf40::sub_100ddf40
 0x10001a32 func   ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ CBaseVampireSkillEntity::vfunc272
 0x10001aa0 func   ?vfunc291@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc291
+0x10001b2c func   ?vfunc448@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::vfunc448
 0x10001b40 func   ?sub_103321a0@@YIMPAD@Z sub_103321a0
 0x10001b59 func   ?sub_101fb8f0@CVStatSubCost_t@@QAE_NXZ CVStatSubCost_t::sub_101fb8f0
 0x10001c26 func   _npc_VSabbatLeader npc_VSabbatLeader
