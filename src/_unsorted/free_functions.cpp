@@ -2606,6 +2606,46 @@ void __fastcall sub_101251e0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c9c0 size=0x6a
+struct TEnt;
+struct TEntry {
+	TEnt *ent;
+	unsigned int serial;
+	int pad;
+};
+extern char *g_10566458;
+
+struct THandle {
+	unsigned int index;
+	TEnt *Get() const
+	{
+		TEnt *r;
+		if (index == 0xffffffff)
+			r = 0;
+		else {
+			TEntry *e = (TEntry *)(g_10566458 + 4) + (index & 0x1fff);
+			if (e->serial == (index >> 13))
+				r = e->ent;
+			else
+				r = 0;
+		}
+		return r;
+	}
+};
+
+struct TEnt {
+	char pad[0x25c];
+	THandle moveParent;
+};
+
+TEnt *sub_1012c9c0(TEnt *e)
+{
+	while (e->moveParent.Get())
+		e = e->moveParent.Get();
+	return e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cf10 size=0x9
 CUnknown1012cf10 *CUnknown1012cf10::sub_1012cf10()
 {
