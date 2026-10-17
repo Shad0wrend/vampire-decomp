@@ -7631,6 +7631,37 @@ struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 void CUnknown10307b40::sub_10307b40(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x1030b2f0 size=0x6a
+#include "CUnknown1030b2f0.h"
+
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUnknown1030b2f0::sub_1030b2f0(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int requested = m_nAllocationCount + num;
+    int alloc = m_nAllocationCount;
+    if (alloc < requested) {
+        while (alloc < requested) {
+            if (alloc) {
+                if (m_nGrowSize)
+                    alloc += m_nGrowSize;
+                else
+                    alloc += alloc;
+            } else
+                alloc = 2;
+        }
+        m_nAllocationCount = alloc;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 0x18);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 0x18);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b7c0 size=0xd
 extern CUnknown1030bc20_Record g_10936afc;
 CUnknown1030bc20_Record *CUnknown1030bc20::sub_1030b7c0()
