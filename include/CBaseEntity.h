@@ -64,6 +64,7 @@ public:
 	void sub_100acef0(int a);	// "CBaseEntity::InputKill": calls vfunc119
 	int sub_100b3700();	// "CBaseEntity::GetFlags": returns the field at +0x434
 	void sub_100b37a0();	// "CBaseEntity::ClearFlags": stores 0 at +0x434
+	void sub_100b3a60();	// "CBaseEntity::ClearFlags2": stores 0 at +0x438
 	void sub_100b3b00();
 	int sub_100b3d10();	// "CBaseEntity::GetEdict" scope; returns the field at +0x2e0
 	void sub_100b40f0(int a);
