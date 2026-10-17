@@ -193,6 +193,26 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1003c450(void **p) { ((Fn *)*p)[134](p); }
 // END FUNCTION
 
+// FUNCTION: 0x1003e250 size=0x6d
+struct TraceEnt { const char *a; void *b; void *c; };
+struct trace21 { int d[21]; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_1053be28[];
+extern char g_106b8540[];
+extern trace21 g_106bd8b0;
+trace21 *sub_1003e250(trace21 *out)
+{
+    g_109f3620[*g_109f3680].a = g_1053be28;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    *out = g_106bd8b0;
+    --*g_109f3680;
+    return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003eb50 size=0x1b3
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 struct MaxVel { virtual void v0(); virtual bool v1(); char pad[0x24]; float val; };
