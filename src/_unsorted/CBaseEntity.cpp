@@ -137,6 +137,30 @@ char * __fastcall sub_1009ad70(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009b500 size=0x7e
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_1009b500(const char *msg)
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].name = "CBaseEntity::TraceMessageBare";
+    g_109f3620[*g_109f3680].ent = n;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    sub_1009b440(msg);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009faf0 size=0x6f
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;

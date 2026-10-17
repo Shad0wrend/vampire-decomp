@@ -281,6 +281,7 @@
 0x100049f8 func   ?sub_102f48b0@NodeGraph@@QAE_NHH@Z NodeGraph::sub_102f48b0
 0x10004aac func   _player_pickup player_pickup
 0x10004ac0 func   _item_g_guy_magazine item_g_guy_magazine
+0x10004b6a func   ?sub_1009b500@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b500
 0x10004bb5 func   _func_particle func_particle
 0x10004bce func   ?vfunc295@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::vfunc295
 0x10004c00 func   ?sub_10249450@CUnknown10249450@@QAEXH@Z CUnknown10249450::sub_10249450
