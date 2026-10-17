@@ -23,6 +23,31 @@ void CBaseEntity::vfunc133()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026c70 size=0x7e
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_10026c70()
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].name = "CBaseEntity::Think";
+    g_109f3620[*g_109f3680].ent = n;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    if (m_pfnThink)
+        (this->*m_pfnThink)();
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027020 size=0x8
 #include "CBaseEntity.h"
 
