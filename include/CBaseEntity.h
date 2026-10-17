@@ -51,12 +51,18 @@ public:
 	void vfunc194();
 	void vfunc195();
 
+	const char *sub_1000ea11();
+	void sub_1003eb50();
+
 	char m_pad0004[0x110];
 	void (CBaseEntity::*m_pfn0114)();
 	char m_pad0118[0xe8];
 	int m_field200;
 	char m_pad0204[0x64];
 	unsigned int m_flags268;
-	char m_pad026c[0xfc];
+	const char *m_name26c;
+	char m_pad0270[0xf8];
 	int m_field368;
+	char m_pad036c[0x68];
+	float m_vel3d4[3];
 };
