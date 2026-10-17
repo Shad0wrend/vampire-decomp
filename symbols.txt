@@ -607,6 +607,7 @@
 0x1000a3c6 func   ?sub_101eab00@@YAXH@Z sub_101eab00
 0x1000a457 func   _func_rotating func_rotating
 0x1000a4bb func   ?sub_10231ed0@CUnknown10231ed0@@QAEIXZ CUnknown10231ed0::sub_10231ed0
+0x1000a52e func   ?sub_1027ee90@@YAXXZ sub_1027ee90
 0x1000a5ab func   ?sub_100d6820@@YAXXZ sub_100d6820
 0x1000a5d8 func   ?sub_10132db0@@YAPAHXZ sub_10132db0
 0x1000a5f1 func   _npc_VCombatman npc_VCombatman

@@ -6937,6 +6937,41 @@ void __fastcall sub_1027d9b0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027ee90 size=0x6c
+#include "CUnknown1027ef20.h"
+
+struct SEnt { char pad[0x94]; CUnknown1027ef20 *m_p94; };
+struct SHandleEntry { SEnt *p; unsigned serial; int pad; };
+struct SEntList { int pad; SHandleEntry e[1]; };
+struct SLogEntry { unsigned handle; char text[0x200]; };
+extern int g_10920538;
+extern SLogEntry g_1090ff60[];
+extern SEntList *g_10566458;
+
+void sub_1027ee90()
+{
+    int i = 0;
+    if (0 < g_10920538) {
+        SLogEntry *l = g_1090ff60;
+        do {
+            unsigned h = l->handle;
+            SEnt *ent;
+            if (h == 0xffffffff)
+                ent = 0;
+            else {
+                SHandleEntry *he = &g_10566458->e[h & 0x1fff];
+                ent = (he->serial == (h >> 13)) ? he->p : 0;
+            }
+            if (ent->m_p94)
+                ent->m_p94->sub_1027ef20(l->text);
+            i++;
+            l++;
+        } while (i < g_10920538);
+    }
+    g_10920538 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027ef20 size=0x6f
 #include "CUnknown1027ef20.h"
 
