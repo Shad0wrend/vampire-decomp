@@ -456,6 +456,7 @@
 0x100074c3 func   _activity_copy_prop activity_copy_prop
 0x100074f0 func   ?vfunc6@ConCommand@@UAEXXZ ConCommand::vfunc6
 0x10007572 func   ?sub_100509b0@SFilter@@QAEPAU1@E@Z SFilter::sub_100509b0
+0x10007590 func   ?sub_101fc160@CVStatCost_t@@QAE_NXZ CVStatCost_t::sub_101fc160
 0x1000762b func   _item_k_lilly_key item_k_lilly_key
 0x1000765d func   _npc_maker npc_maker
 0x10007671 func   ?sub_10081eb0@@YIXPAUCSlots@@HH@Z sub_10081eb0

@@ -7763,6 +7763,29 @@ bool CVStatSubCost_t::sub_101fb8f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fc160 size=0x81
+#include "CVStatCost_t.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+bool CVStatCost_t::sub_101fc160()
+{
+    g_109f3620[*g_109f3680].name = "CVStatCost_t::IsNull";
+    g_109f3620[*g_109f3680].ent = g_106b8540;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    if (m_first.sub_101fb8f0() && m_second.sub_101fb8f0()) {
+        --*g_109f3680;
+        return true;
+    }
+    --*g_109f3680;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fc950 size=0x68
 struct TScope {
 	const char *name;
