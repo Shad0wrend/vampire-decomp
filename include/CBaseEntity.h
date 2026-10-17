@@ -57,6 +57,7 @@ public:
 	void vfunc238(int a, int b, int c, int d);
 
 	const char *sub_1000ea11();
+	void sub_10026c70();	// "CBaseEntity::Think": calls the think function pointer at +0x118
 	void sub_1003eb50();
 	void sub_1009fa60();
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
@@ -74,7 +75,8 @@ public:
 
 	char m_pad0004[0x110];
 	void (CBaseEntity::*m_pfn0114)();
-	char m_pad0118[0xe8];
+	void (CBaseEntity::*m_pfnThink)();
+	char m_pad011c[0xe4];
 	int m_field200;
 	char m_pad0204[0x64];
 	unsigned int m_flags268;
