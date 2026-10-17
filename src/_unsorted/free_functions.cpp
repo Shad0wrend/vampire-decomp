@@ -6506,6 +6506,24 @@ int CUnknown1030bc20::sub_1030bc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030ca70 size=0x67
+extern "C" int _strcmpi(const char *, const char *);
+extern void (*g_109f366c)(const char *, ...);
+struct S1030ca70 { int sub_1030ca70(const char *s); };
+// TARGET: S1030ca70::sub_1030ca70
+int S1030ca70::sub_1030ca70(const char *s)
+{
+    if (!_strcmpi(s, "TRAVEL"))
+        return 0;
+    if (!_strcmpi(s, "LOS"))
+        return 1;
+    if (!_strcmpi(s, "COVER"))
+        return 2;
+    g_109f366c("Schedule has invalid path ID '%s'\n", s);
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f660 size=0x8
 extern char g_106b8540;
 char * __stdcall sub_1030f660(int) { return &g_106b8540; }
