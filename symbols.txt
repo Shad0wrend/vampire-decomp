@@ -399,6 +399,7 @@
 0x10006f9b func   ?vfunc144@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc144
 0x10006fd7 func   ?sub_102ee250@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102ee250
 0x10006feb func   ?vfunc70@CGameRules@@UAEPBDH@Z CGameRules::vfunc70
+0x10006ff0 func   ?sub_100ad6e0@@YIHPAD@Z sub_100ad6e0
 0x10006ff5 func   _phys_thruster phys_thruster
 0x10007036 func   _item_g_stake item_g_stake
 0x100070d6 func   _raggib raggib

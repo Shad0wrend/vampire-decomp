@@ -178,6 +178,24 @@ bool __fastcall sub_100aa9a0(CBaseEntity *self, int, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ad6e0 size=0x77
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int __fastcall sub_100ad6e0(char *self)
+{
+    const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::Illumination";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    (*g_109f3680)--;
+    return 0x80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ad850 size=0x74
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
