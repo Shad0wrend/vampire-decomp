@@ -947,6 +947,7 @@
 0x1000d297 func   _item_p_research_hg_melee item_p_research_hg_melee
 0x1000d2b5 func   ?sub_100ee750@CUnknown100ee750@@QAEXPAX@Z CUnknown100ee750::sub_100ee750
 0x1000d2e2 func   ?sub_10160680@CUnknown10160680@@QAEMXZ CUnknown10160680::sub_10160680
+0x1000d2f6 func   ?vfunc8@CDataObjectAccessSystem@@UAEPAV1@I@Z CDataObjectAccessSystem::vfunc8
 0x1000d2fb func   ?sub_10260980@CUnknown10260980@@QAEPAU1@XZ CUnknown10260980::sub_10260980
 0x1000d30f func   _camera_cinematic camera_cinematic
 0x1000d314 func   ?sub_101fed00@CVStatInfo_t@@QAE_NXZ CVStatInfo_t::sub_101fed00

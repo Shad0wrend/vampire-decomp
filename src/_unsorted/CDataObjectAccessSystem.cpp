@@ -25,3 +25,16 @@ void __fastcall sub_1003c950(Sys *self)
     (*g_109f3680)--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1003ca90 size=0x1e
+#include "CDataObjectAccessSystem.h"
+
+// TARGET: CDataObjectAccessSystem::vfunc8
+CDataObjectAccessSystem *CDataObjectAccessSystem::vfunc8(unsigned int flags)
+{
+	sub_1000cfbd();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
