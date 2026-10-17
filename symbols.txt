@@ -483,6 +483,7 @@
 0x10008328 func   _item_a_body_armor item_a_body_armor
 0x1000833c func   _bodyque bodyque
 0x100083dc func   ?sub_100eb400@@YIXPAH@Z sub_100eb400
+0x1000841d func   ?sub_10348a60@@YI_NPAVCBaseEntity@@@Z sub_10348a60
 0x10008445 func   ?sub_1024afe0@@YAHXZ sub_1024afe0
 0x1000844f func   ?sub_101bd0f0@SFilter@@QAEPAU1@E@Z SFilter::sub_101bd0f0
 0x10008558 func   _npc_VHumanCombatPatrol npc_VHumanCombatPatrol

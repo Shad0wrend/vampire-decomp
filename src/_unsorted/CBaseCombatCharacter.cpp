@@ -159,3 +159,22 @@ void CBaseCombatCharacter::vfunc336()
     (*g_109f3680)--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10348a60 size=0x74
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool __fastcall sub_10348a60(CBaseEntity *self)
+{
+    const char *name = self ? (self->m_name26c ? self->m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::HasExplosiveGibs";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    (*g_109f3680)--;
+    return true;
+}
+// END FUNCTION
