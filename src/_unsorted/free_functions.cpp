@@ -6717,6 +6717,26 @@ void TStat::sub_101fc950(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fd1b0 size=0x78
+#include "CVStatAction_t.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_105a7ad8[];
+extern char g_106b8540[];
+extern void (*g_1074e7cc)(CVStatAction_t *, int, int, int);
+void CVStatAction_t::sub_101fd1b0(int a, int b, int c)
+{
+    g_109f3620[*g_109f3680].a = g_105a7ad8;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (g_1074e7cc)
+        g_1074e7cc(this, a, b, c);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fd430 size=0x69
 struct TScope {
 	const char *name;
