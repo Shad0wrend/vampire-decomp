@@ -20,13 +20,13 @@ public:
 		m_f28 = 3.402823466e+38F;
 		m_f2c = 3.402823466e+38F;
 		m_b30 = 0;
-		m_f38 = g_1049df80 - g_10445e08;
+		m_f38 = (float)(g_1049df80 - g_10445e08);
 		m_f34 = -1.0F;
-		m_f3c = 0;
-		m_f40 = 0;
-		m_f44 = 0;
-		m_f48 = 0;
-		m_f4c = 0;
+		m_i3c = 0;
+		m_i40 = 0;
+		m_i44 = 0;
+		m_i48 = 0;
+		m_i4c = 0;
 		m_pBuf50 = 0;
 		m_i58 = 0;
 		m_i5c = 0;
@@ -50,11 +50,11 @@ public:
 	char m_pad31[3];
 	float m_f34;
 	float m_f38;
-	float m_f3c;
-	float m_f40;
-	float m_f44;
-	float m_f48;
-	float m_f4c;
+	int m_i3c;
+	int m_i40;
+	int m_i44;
+	int m_i48;
+	int m_i4c;
 	void *m_pBuf50;			// 0x50: 0x8c0 byte buffer
 	int m_i54;
 	int m_i58;
