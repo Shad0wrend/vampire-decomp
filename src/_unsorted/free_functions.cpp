@@ -6776,6 +6776,33 @@ extern int g_1073938c;
 void sub_101d8890(int v) { g_1073938c = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101d9210 size=0x7f
+#include "CUnknown101d9210.h"
+
+struct SHandleMgr { void sub_10202fb0(int handle); };
+extern SHandleMgr g_1074e968;
+
+void CUnknown101d9210::sub_101d9210()
+{
+    if (m_pBuf0c != 0) {
+        delete m_pBuf0c;
+        m_pBuf0c = 0;
+        m_count0 = 0;
+    }
+    g_1074e968.sub_10202fb0(m_handle10);
+    m_handle10 = -1;
+    g_1074e968.sub_10202fb0(m_handle14);
+    m_handle14 = -1;
+    g_1074e968.sub_10202fb0(m_handle18);
+    m_handle18 = -1;
+    if (m_pBuf20 != 0) {
+        delete m_pBuf20;
+        m_pBuf20 = 0;
+        m_count1c = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101da960 size=0xe
 #include "CUnknown101da960.h"
 extern const char *g_105a1bdc[];

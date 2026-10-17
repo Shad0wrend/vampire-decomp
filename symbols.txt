@@ -1184,6 +1184,7 @@
 0x10010c2b func   ?sub_100f0320@@YIXPAD@Z sub_100f0320
 0x10010c4e func   ?sub_10204550@@YAXH@Z sub_10204550
 0x10010ce9 func   _env_soundscape env_soundscape
+0x10010cf3 func   ?sub_101d9210@CUnknown101d9210@@QAEXXZ CUnknown101d9210::sub_101d9210
 0x10010d4d func   ?sub_101b72e0@CMem8_t@@QAEXH@Z CMem8_t::sub_101b72e0
 0x10010d7f func   ?sub_101db7e0@S101db7e0@@QAEXXZ S101db7e0::sub_101db7e0
 0x10010d93 func   ?sub_101fd110@CVStatAction_t@@QAEXHHHH@Z CVStatAction_t::sub_101fd110
