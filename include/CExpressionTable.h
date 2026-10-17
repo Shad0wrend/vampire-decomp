@@ -15,4 +15,5 @@ public:
 
 	CExpressionTable();
 	bool IsValidExpression(int index);	// 0 <= index < m_field0c
+	void sub_10105090(int index);	// "CBaseCombatCharacter::GetExpress..." callee
 };
