@@ -28,6 +28,33 @@ extern "C" GP *phys_thruster()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100281f0 size=0x49
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_10007810(GP *);
+extern int vt_10445974;
+extern char g_1053887c[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: phys_torque
+extern "C" GP *phys_torque()
+{
+	GP *p = (GP *)sub_1000db89(0x4a8);
+	if (p) {
+		sub_10007810(p);
+		*(int **)p = &vt_10445974;
+	} else {
+		p = 0;
+	}
+	p->name(g_1053887c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100295d0 size=0xa
 void CUnknown100295d0::sub_100295d0(int unused)
 {
