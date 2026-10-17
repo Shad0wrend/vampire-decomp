@@ -11172,6 +11172,32 @@ void CBaseCombatCharacter::sub_10324500(int action)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103245a0 size=0x7e
+#include "CBaseCombatCharacter.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_1061f20c[];
+extern char g_105387dc[];
+extern char g_106b8540[];
+void CBaseCombatCharacter::sub_103245a0(int translated)
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_1061f20c;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    *(int *)((char *)this + 0xff4) = translated;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10327960 size=0x7e
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
