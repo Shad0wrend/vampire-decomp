@@ -7943,6 +7943,34 @@ CUnknown101d54f0 *CUnknown101d54f0::sub_101d54f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d5660 size=0x66
+struct Elem101d5660 { void sub_1000c63f(); };
+struct S101d5660 {
+    int m0;
+    int m4;
+    Elem101d5660 **m8;
+    void sub_101d5660();
+};
+// TARGET: S101d5660::sub_101d5660
+void S101d5660::sub_101d5660()
+{
+    if (m8) {
+        for (int i = 0; i < m4; i++) {
+            Elem101d5660 *e = m8[i];
+            if (e) {
+                e->sub_1000c63f();
+                delete e;
+            }
+            m8[i] = 0;
+        }
+        delete m8;
+        m8 = 0;
+    }
+    m4 = 0;
+    m0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8890 size=0xa
 extern int g_1073938c;
 // TARGET: sub_101d8890
