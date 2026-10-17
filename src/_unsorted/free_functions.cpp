@@ -9817,6 +9817,34 @@ void sub_102f65b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f7970 size=0x79
+#include "CUnknown102f7970.h"
+
+extern int g_106c994c;
+
+static inline CUnknown102f7970Node *NodeAt(CUnknown102f7970Vec *v, int i)
+{
+    if (i < 0 || i >= v->m_count) {
+        g_106c994c++;
+        return 0;
+    }
+    return v->m_pData[i];
+}
+
+void CUnknown102f7970::sub_102f7970()
+{
+    m_flags |= 8;
+    int i = 0;
+    if (m_pVec->m_count > 0) {
+        do {
+            NodeAt(m_pVec, i)->m_flags74 &= 0xdfffffff;
+            NodeAt(m_pVec, i)->m_flags74 &= 0xefffffff;
+            i++;
+        } while (i < m_pVec->m_count);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f8ef0 size=0x8
 void __fastcall sub_102f8ef0(int *p)
 {

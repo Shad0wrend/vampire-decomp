@@ -623,6 +623,7 @@
 0x10009cdc func   _phys_slideconstraint phys_slideconstraint
 0x10009d6d func   ?vfunc133@CBaseEntity@@UAEXXZ CBaseEntity::vfunc133
 0x10009d86 func   ?vfunc241@CFuncPlat@@UAEEXZ CFuncPlat::vfunc241
+0x10009df4 func   ?sub_102f7970@CUnknown102f7970@@QAEXXZ CUnknown102f7970::sub_102f7970
 0x10009e21 func   ?sub_1042c4a0@@YAXXZ sub_1042c4a0
 0x10009e30 func   ?sub_1003e250@@YAPAUtrace21@@PAU1@@Z sub_1003e250
 0x10009e85 func   ?vfunc480@CHL2_Player@@UAEMXZ CHL2_Player::vfunc480
