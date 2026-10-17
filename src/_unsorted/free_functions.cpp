@@ -2896,6 +2896,41 @@ extern char g_1070b264;
 void sub_1011a430() { g_1070b264 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x1011d6a0 size=0x6a
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct S1011d6a0 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_1011d6a0(int num);
+};
+// TARGET: S1011d6a0::sub_1011d6a0
+void S1011d6a0::sub_1011d6a0(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 1;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 0x60);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 0x60);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101251e0 size=0xb
 void __fastcall sub_101251e0(char *self)
 {
