@@ -7971,6 +7971,34 @@ void S101d5660::sub_101d5660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6d50 size=0x66
+struct Elem101d6d50 { void sub_1000f9b1(); };
+struct S101d6d50 {
+    int m0;
+    int m4;
+    Elem101d6d50 **m8;
+    void sub_101d6d50();
+};
+// TARGET: S101d6d50::sub_101d6d50
+void S101d6d50::sub_101d6d50()
+{
+    if (m8) {
+        for (int i = 0; i < m4; i++) {
+            Elem101d6d50 *e = m8[i];
+            if (e) {
+                e->sub_1000f9b1();
+                delete e;
+            }
+            m8[i] = 0;
+        }
+        delete m8;
+        m8 = 0;
+    }
+    m4 = 0;
+    m0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8890 size=0xa
 extern int g_1073938c;
 // TARGET: sub_101d8890
