@@ -8800,6 +8800,36 @@ QuestJournal *QuestJournal::sub_10220e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10221be0 size=0x85
+#include "QuestJournal.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct CScopeGuard {
+    CScopeGuard(const char *name)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = g_106b8540;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+char QuestJournal::sub_10221be0(int index)
+{
+    CScopeGuard guard("QuestJournal::IsQuestIndexValid");
+    if (index < 0)
+        return 0;
+    if (index >= m_field[8])
+        return 0;
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10222da0 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);

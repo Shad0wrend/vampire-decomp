@@ -1517,6 +1517,7 @@
 0x10014f56 func   ?vfunc305@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc305
 0x10014f88 func   ?sub_100c89e0@@YIXPADHH@Z sub_100c89e0
 0x1001505f func   ?sub_10237c30@@YAXXZ sub_10237c30
+0x10015078 func   ?sub_10221be0@QuestJournal@@QAEDH@Z QuestJournal::sub_10221be0
 0x100150af func   ?sub_10215910@CUnknown10215910@@QAEXH@Z CUnknown10215910::sub_10215910
 0x100150b9 func   ?vfunc141@CBatSwarm@@QAEXPAHHPAX@Z CBatSwarm::vfunc141
 0x1001514a func   ?sub_100b3b00@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3b00
