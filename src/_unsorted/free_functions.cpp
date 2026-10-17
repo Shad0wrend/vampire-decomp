@@ -1998,6 +1998,43 @@ void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
 // END FUNCTION
 
+// FUNCTION: 0x10106490 size=0xbc
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern void (*g_109f3624)(void *);
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern char g_1056bb3c[];
+
+// TARGET: sub_10106490
+void __fastcall sub_10106490(char *p)
+{
+	const char *name;
+	if (p) {
+		name = *(const char **)(p + 0x26c);
+		if (!name)
+			name = g_106b8540;
+	} else {
+		name = g_105387dc;
+	}
+	g_109f3620[*g_109f3680].a = g_1056bb3c;
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	*(int *)(p + 0x10c8) = 0;
+	if (*(int *)(p + 0x10c4) != -1) {
+		if (*(void **)(p + 0x10bc)) {
+			g_109f3624(*(void **)(p + 0x10bc));
+			*(void **)(p + 0x10bc) = 0;
+		}
+		*(int *)(p + 0x10c0) = 0;
+	}
+	*(int *)(p + 0x10cc) = *(int *)(p + 0x10bc);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101074c0 size=0x67
 struct Mem32 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
