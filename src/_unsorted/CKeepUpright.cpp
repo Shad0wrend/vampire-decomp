@@ -1,6 +1,21 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10029680 size=0x1e
+#include "CKeepUpright.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CKeepUpright::vfunc5
+CKeepUpright *CKeepUpright::vfunc5(unsigned int flags)
+{
+	sub_100057c2();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029780 size=0xdc
 struct Handle_10029780
 {

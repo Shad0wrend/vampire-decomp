@@ -465,6 +465,7 @@
 0x10007261 func   ?sub_10074050@CUnknown10074050@@QAEPBDXZ CUnknown10074050::sub_10074050
 0x100072c0 func   ?sub_103315e0@@YIHPADHH@Z sub_103315e0
 0x1000732e func   _item_k_clinic_cs_key item_k_clinic_cs_key
+0x10007383 func   ?vfunc5@CKeepUpright@@QAEPAV1@I@Z CKeepUpright::vfunc5
 0x100073a1 func   ?sub_10189510@Mem784@@QAEXH@Z Mem784::sub_10189510
 0x100073b0 func   ?sub_10141b10@@YGPAVCBaseEntity@@PAV1@0@Z sub_10141b10
 0x100073d3 func   ?sub_102ca760@@YIXPAD@Z sub_102ca760
