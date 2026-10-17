@@ -6,12 +6,17 @@ extern float g_1049df80;
 extern double g_10445e08;
 extern void *(*g_109f3634)(int);
 
+struct CAI_PlaneSolverZero5
+{
+	int a, b, c, d, e;
+	CAI_PlaneSolverZero5() { a = 0; b = 0; c = 0; d = 0; e = 0; }
+};
+
 class CAI_PlaneSolverBase
 {
 public:
-	CAI_PlaneSolverBase(int owner)
+	CAI_PlaneSolverBase(int owner) : m_owner(owner), m_f38(g_1049df80 - g_10445e08)
 	{
-		m_owner = owner;
 		m_f08 = 3.402823466e+38F;
 		m_f0c = 3.402823466e+38F;
 		m_f10 = 3.402823466e+38F;
@@ -20,13 +25,7 @@ public:
 		m_f28 = 3.402823466e+38F;
 		m_f2c = 3.402823466e+38F;
 		m_b30 = 0;
-		m_f38 = (float)(g_1049df80 - g_10445e08);
 		m_f34 = -1.0F;
-		m_i3c = 0;
-		m_i40 = 0;
-		m_i44 = 0;
-		m_i48 = 0;
-		m_i4c = 0;
 		m_pBuf50 = 0;
 		m_i58 = 0;
 		m_i5c = 0;
@@ -50,11 +49,7 @@ public:
 	char m_pad31[3];
 	float m_f34;
 	float m_f38;
-	int m_i3c;
-	int m_i40;
-	int m_i44;
-	int m_i48;
-	int m_i4c;
+	CAI_PlaneSolverZero5 m_zero3c;
 	void *m_pBuf50;			// 0x50: 0x8c0 byte buffer
 	int m_i54;
 	int m_i58;
