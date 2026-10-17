@@ -1660,6 +1660,45 @@ bool CList_t::sub_100ce450(void *ent, int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce4e0 size=0x64
+struct CList_node;
+struct CList_t {
+    char pad0[0x38];
+    CList_node *m_head;
+    char pad1[0x54 - 0x3c];
+    CList_node *m_cur;
+    bool sub_100ce450(void *, int *);
+    bool sub_100ce4e0(void *, int *);
+};
+struct CList_node {
+    char pad[0x38];
+    CList_node *next;
+};
+// TARGET: CList_t::sub_100ce4e0
+bool CList_t::sub_100ce4e0(void *a, int *b)
+{
+    if (sub_100ce450(a, b) && m_cur) {
+        CList_node *p = m_head;
+        if (p != m_cur) {
+            for (; p; p = p->next) {
+                if (p->next == m_cur) {
+                    p->next = m_cur->next;
+                    goto done;
+                }
+            }
+            return false;
+        } else {
+            m_head = m_cur->next;
+        }
+done:
+        delete m_cur;
+        m_cur = 0;
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce810 size=0x65
 struct Slot_t { void *pEnt; unsigned int serial; };
 struct Entry_t { int unused; Slot_t slot; };
