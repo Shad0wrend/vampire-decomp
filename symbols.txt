@@ -1337,6 +1337,7 @@
 0x100114d2 func   ?vfunc337@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc337
 0x1001151d func   _intersting_place intersting_place
 0x10011527 func   ?sub_102f2fe0@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102f2fe0
+0x1001155e func   ?vfunc0@CFlexAnimationTrack@@UAEPAV1@I@Z CFlexAnimationTrack::vfunc0
 0x10011563 func   ?sub_10074070@CUnknown10074070@@QAEHH@Z CUnknown10074070::sub_10074070
 0x10011572 func   ?sub_10336000@@YI_NPADHH@Z sub_10336000
 0x100115d6 func   _item_k_skyline_haven_key item_k_skyline_haven_key
