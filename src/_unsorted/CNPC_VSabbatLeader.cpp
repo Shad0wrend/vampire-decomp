@@ -106,6 +106,26 @@ char CNPC_VSabbatLeader::sub_103a9340(CNPC_VSabbatLeaderHint *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a9fd0 size=0x64
+#include "CNPC_VSabbatLeader.h"
+struct ScopeEnt { const char* a; const void* b; const void* c; };
+extern ScopeEnt* g_109f3620;
+extern int* g_109f3680;
+extern char g_1064efb4[];
+extern char g_106b8540[];
+
+// TARGET: CNPC_VSabbatLeader::vfunc619
+void CNPC_VSabbatLeader::vfunc619(int arg)
+{
+	g_109f3620[*g_109f3680].a = g_1064efb4;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_1000c27a(arg);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103aa480 size=0x65
 #include "CNPC_VSabbatLeader.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };

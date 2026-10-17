@@ -840,6 +840,7 @@
 0x1000bed8 func   ?sub_1008b490@@YIXPAD@Z sub_1008b490
 0x1000bf32 func   _phys_ballsocket phys_ballsocket
 0x1000bf64 func   _logic_compare logic_compare
+0x1000bfb9 func   ?vfunc619@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::vfunc619
 0x1000bfc3 func   _info_node_cover_med info_node_cover_med
 0x1000c013 func   _item_g_ring_gold item_g_ring_gold
 0x1000c031 func   _item_p_research_lg_stealth item_p_research_lg_stealth
