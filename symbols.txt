@@ -22,6 +22,7 @@
 0x100013ca func   ?sub_10227230@@YIXPADHH@Z sub_10227230
 0x100013d9 func   ?sub_100ad850@@YIHPAVCBaseEntity@@@Z sub_100ad850
 0x100013f7 func   ?vfunc104@CNPC_VHuman@@UAEXXZ CNPC_VHuman::vfunc104
+0x1000143d func   ?sub_10096490@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_10096490
 0x10001456 func   _logic_pythoncheck logic_pythoncheck
 0x100014d8 func   ?vfunc11@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc11
 0x10001541 func   ?sub_10101e30@@YAPAHXZ sub_10101e30

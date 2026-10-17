@@ -2076,6 +2076,32 @@ int CBaseAnimating::sub_100945e0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096490 size=0x7e
+#include "CBaseAnimating.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_105503cc[];
+extern char g_105387dc[];
+extern char g_106b8540[];
+void CBaseAnimating::sub_10096490(int set)
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_105503cc;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    *(int *)((char *)this + 0x680) = set;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096600 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
