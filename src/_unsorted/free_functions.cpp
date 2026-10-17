@@ -1141,6 +1141,31 @@ void CUnknown10058220::sub_10058220(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006cc20 size=0x79
+int sub_10431c2f(char *, const char *, ...);
+void sub_10203dd0(char *);
+extern char g_106b8540[];
+struct Dump {
+    char pad[8];
+    const char *m_pName;
+    char pad2[0x10 - 0xc];
+    int m_nCount;
+    float *m_pValues;
+    void sub_1006cc20();
+};
+
+void Dump::sub_1006cc20()
+{
+    char buf[128];
+    sub_10431c2f(buf, "\n\t%s:\n", m_pName ? m_pName : g_106b8540);
+    sub_10203dd0(buf);
+    for (int i = 0; i < m_nCount; i++) {
+        sub_10431c2f(buf, "(%d):\t\t%8.3f\n", i, m_pValues[i]);
+        sub_10203dd0(buf);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006ccc0 size=0xd
 CUnknown1006ccc0 *CUnknown1006ccc0::sub_1006ccc0()
 {
