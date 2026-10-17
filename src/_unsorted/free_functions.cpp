@@ -5533,6 +5533,28 @@ bool TInfo::sub_101fdf40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fed00 size=0x6d
+struct TraceEnt { const char *a; void *b; void *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_105a80c0[];
+extern char g_106b8540[];
+struct CVStatInfo_t { char pad[0xfc]; int m_hidden; bool sub_101fed00(); };
+bool CVStatInfo_t::sub_101fed00()
+{
+    g_109f3620[*g_109f3680].a = g_105a80c0;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (m_hidden == 0) {
+        --*g_109f3680;
+        return false;
+    }
+    --*g_109f3680;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202760 size=0xc
 extern int g_105a6fc8[];
 int sub_10202760(int index)
