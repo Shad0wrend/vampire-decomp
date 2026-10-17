@@ -3822,6 +3822,24 @@ void __fastcall sub_10136490(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d900 size=0x72
+extern int g_10579690[4][2][3];
+bool sub_1013d900(int a, int b, int c, int *out)
+{
+    if (a < 0 || b < 0 || c < 0)
+        return false;
+    if (a >= 4 || b >= 2 || c >= 3)
+        return false;
+    for (int i = 0; i < 4; i++) {
+        int idx = a + i;
+        if (idx >= 4)
+            idx -= 4;
+        out[i] = g_10579690[idx][b][c];
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013da70 size=0xa
 extern int g_1071a240;
 void sub_1013da70(int value)
