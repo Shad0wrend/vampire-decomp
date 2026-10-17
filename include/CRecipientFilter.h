@@ -4,7 +4,7 @@
 class CRecipientFilter
 {
 public:
-	virtual void vfunc0();
+	virtual CRecipientFilter *vfunc0(unsigned char flags);	// scalar deleting destructor
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
@@ -13,6 +13,11 @@ public:
 	virtual void vfunc6();
 	virtual void vfunc7();
 
-	char m_pad0004[0x18];	// 0x0004 .. 0x001B
+	char m_pad0004[4];
+	void *m_pMemory;	// 0x0008
+	int m_allocCount;	// 0x000C
+	int m_growSize;		// 0x0010
+	int m_size;			// 0x0014
+	void *m_pElements;	// 0x0018
 	int m_1c;
 };
