@@ -1069,6 +1069,7 @@
 0x100130b1 func   _npc_VAndreiBlood npc_VAndreiBlood
 0x100130ca func   ?sub_102db420@CUnknown102db420@@QAEXH@Z CUnknown102db420::sub_102db420
 0x1001312e func   _logic_lineto logic_lineto
+0x1001317e func   ?sub_1003eb50@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003eb50
 0x100131dd func   ?vfunc35@CPropSign@@UAEHH@Z CPropSign::vfunc35
 0x10013228 func   ?sub_10043630@@YIXPAUMem8@@HH@Z sub_10043630
 0x100134c1 func   ?sub_100dea90@CUnknown100dea90@@QAEXH@Z CUnknown100dea90::sub_100dea90

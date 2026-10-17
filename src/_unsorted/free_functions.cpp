@@ -86,6 +86,82 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1003c450(void **p) { ((Fn *)*p)[134](p); }
 // END FUNCTION
 
+// FUNCTION: 0x1003eb50 size=0x1b3
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+struct MaxVel { virtual void v0(); virtual bool v1(); char pad[0x24]; float val; };
+
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct VtOrigin
+{
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j) V10(k)
+	V10(l) V10(m) V10(n) V10(o) V10(p) V10(q) V10(r) V10(s) V10(t) V10(u) V10(w)
+	virtual float *GetOrigin();
+};
+struct VtSet
+{
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f)
+	virtual void s60(); virtual void s61();
+	virtual void SetOrigin(float *v);
+};
+
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern void (*g_109f3628)(const char *fmt, const char *arg);
+extern MaxVel *g_109eeee4;
+extern unsigned int g_1046a420;
+extern float g_104454c4;
+extern char g_105387dc[];
+extern char g_106b8540[];
+extern char g_1053bf70[];
+extern char g_1053bf50[];
+extern char g_1053bf34[];
+
+#define MAXV (g_109eeee4->v1() ? g_104454c4 : g_109eeee4->val)
+
+// TARGET: CBaseEntity::sub_1003eb50
+void CBaseEntity::sub_1003eb50()
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : g_106b8540;
+	else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = g_1053bf70;
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+
+	unsigned int org[3];
+	unsigned int *p = (unsigned int *)((VtOrigin *)this)->GetOrigin();
+	org[0] = p[0];
+	org[1] = p[1];
+	org[2] = p[2];
+
+	void (*msg)(const char *, const char *) = g_109f3628;
+	int i;
+	float *pv;
+	for (i = 0, pv = m_vel3d4; i < 3; i++, pv++)
+	{
+		if ((*(unsigned int *)pv & g_1046a420) == g_1046a420)
+		{
+			msg(g_1053bf50, sub_1000ea11());
+			*pv = 0;
+		}
+		if ((org[i] & g_1046a420) == g_1046a420)
+		{
+			msg(g_1053bf34, sub_1000ea11());
+			org[i] = 0;
+			((VtSet *)this)->SetOrigin((float *)org);
+		}
+		if (*pv > MAXV)
+			*pv = MAXV;
+		else if (*pv < -MAXV)
+			*pv = -MAXV;
+	}
+	*g_109f3680 = *g_109f3680 - 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042d00 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
