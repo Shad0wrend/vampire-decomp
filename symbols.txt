@@ -123,6 +123,7 @@
 0x10002b49 func   ?sub_101f4570@TSeg@@QAEXHPAH0@Z TSeg::sub_101f4570
 0x10002b9e func   _env_particle_hud env_particle_hud
 0x10002bc6 func   ?sub_101eaae0@@YAXH@Z sub_101eaae0
+0x10002be9 func   ?vfunc333@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::vfunc333
 0x10002c52 func   ?vfunc472@CHL2_Player@@UAEXXZ CHL2_Player::vfunc472
 0x10002c7a func   _info_player_start info_player_start
 0x10002cc5 func   _phys_convert phys_convert
