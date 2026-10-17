@@ -322,6 +322,7 @@
 0x10005330 func   ?vfunc158@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc158
 0x1000537b func   ?vfunc265@CVampireProjectile@@UAE_NXZ CVampireProjectile::vfunc265
 0x100053bc func   ?sub_101f9630@@YAXH@Z sub_101f9630
+0x100053f8 func   ?vfunc2@CTEArmorRicochet@@UAEPAV1@I@Z CTEArmorRicochet::vfunc2
 0x10005434 func   _item_g_hannahs_appt_book item_g_hannahs_appt_book
 0x10005439 func   ?sub_101bd960@@YIXPAPAX@Z sub_101bd960
 0x10005448 func   _item_g_idol_elephant item_g_idol_elephant
