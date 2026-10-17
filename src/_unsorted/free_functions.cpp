@@ -5327,6 +5327,43 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc810(void **p) { ((Fn *)*p)[246](p); }
 // END FUNCTION
 
+// FUNCTION: 0x101cd070 size=0x73
+struct EntInfo { void *ent; unsigned int serial; int pad; };
+struct EntList {
+    int vptr;
+    EntInfo arr[1];
+};
+extern EntList *g_10566458;
+struct Ent;
+struct EHandle {
+    unsigned int m_Index;
+    Ent *Get() const
+    {
+        if (m_Index == 0xffffffff)
+            return 0;
+        const EntInfo *p = &g_10566458->arr[m_Index & 0x1fff];
+        if (p->serial == (m_Index >> 13))
+            return (Ent *)p->ent;
+        return 0;
+    }
+};
+struct Ent {
+    char pad[0x25c];
+    EHandle m_hParent;
+};
+
+Ent * __stdcall sub_101cd070(Ent *ent)
+{
+    if (ent == 0)
+        return 0;
+    while (ent->m_hParent.Get() != 0) {
+        Ent *p = ent->m_hParent.Get();
+        ent = p;
+    }
+    return ent;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf620 size=0xd
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 
