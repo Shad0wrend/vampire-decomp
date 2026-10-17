@@ -23,7 +23,8 @@ struct CUnknown100f6d80Vec
 
 	int Find(int src)
 	{
-		for (int i = 0; i < Count(); i++) {
+		int n = *(volatile int *)&m_size;
+		for (int i = 0; i < n; i++) {
 			if (Element(i) == src)
 				return i;
 		}
