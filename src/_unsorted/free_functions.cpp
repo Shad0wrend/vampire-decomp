@@ -6616,6 +6616,41 @@ void CUnknown1036c7f0::sub_1036c7f0(int value)
 void __fastcall sub_10373420(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10377970 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1063949c[2];
+
+int *sub_10377970()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 12, "m_hPillarTarget", {0x667c, 0}, 1, 2 },
+        { 4, "m_iShunnedFindPillar", {0x6680, 0}, 1, 2 },
+        { 4, "m_iDoingGibDeath", {0x6684, 0}, 1, 2 },
+        { 4, "m_iCanKnockback", {0x6688, 0}, 1, 2 },
+        { 10, "m_OnGibDeath", {0x6664, 0}, 1, 0x16, "OnGibDeath", g_1055dc70 },
+    };
+    g_1063949c[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1063949c[0] = (int)&dataDesc[1];
+    return g_1063949c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379040 size=0xc
 bool CUnknown10381be0::sub_10379040()
 {
