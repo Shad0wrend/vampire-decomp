@@ -3750,6 +3750,52 @@ void CUnknown100f5600::sub_100f5600(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8e20 size=0x80
+void *sub_10430fa0(void *, const void *, unsigned);
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct SEntV116 {
+    S100(a)
+    S10(b0)
+    virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5();
+    virtual bool v116();
+};
+
+struct UtlMem3 {
+    SEntV116 **m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    void sub_100b4a40(int num);
+};
+struct SEntVec {
+    UtlMem3 m_mem;
+    int m_size;
+    SEntV116 **m_pElements;
+};
+extern SEntVec g_107036b4;
+
+void sub_100f8e20(SEntV116 *ent)
+{
+    if (!ent->v116()) {
+        int idx = g_107036b4.m_size;
+        int next = g_107036b4.m_size + 1;
+        if (next > g_107036b4.m_mem.m_allocationCount)
+            g_107036b4.m_mem.sub_100b4a40(g_107036b4.m_size - g_107036b4.m_mem.m_allocationCount + 1);
+        g_107036b4.m_size++;
+        g_107036b4.m_pElements = g_107036b4.m_mem.m_pMemory;
+        int move = g_107036b4.m_size - idx - 1;
+        if (move > 0)
+            sub_10430fa0(g_107036b4.m_mem.m_pMemory + next, g_107036b4.m_mem.m_pMemory + idx, move * 4);
+        SEntV116 **slot = g_107036b4.m_mem.m_pMemory + idx;
+        if (slot)
+            *slot = ent;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f9790 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_100f9790(); };
 void CUtlVectorBase::sub_100f9790() { m_Size = 0; }

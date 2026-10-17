@@ -1242,6 +1242,7 @@
 0x10011a3b func   _entityflame entityflame
 0x10011a54 func   ?sub_100b37a0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b37a0
 0x10011a81 func   _item_k_tawni_apartment_key item_k_tawni_apartment_key
+0x10011a9a func   ?sub_100f8e20@@YAXPAUSEntV116@@@Z sub_100f8e20
 0x10011b08 func   ?sub_10319f10@CUnknown10319f10@@QAE_NXZ CUnknown10319f10::sub_10319f10
 0x10011b26 func   ?sub_103a1320@CUnknown103a1320@@QAEXH@Z CUnknown103a1320::sub_103a1320
 0x10011b3a func   _player_loadsaved player_loadsaved
