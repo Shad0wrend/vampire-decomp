@@ -645,6 +645,7 @@
 0x1000966f func   ?sub_1004add0@CMem16_t@@QAEXH@Z CMem16_t::sub_1004add0
 0x10009697 func   _test_traceline test_traceline
 0x100096ab func   _te_tester te_tester
+0x100096c4 func   ?vfunc5@CConstraintAnchor@@UAEPAV1@I@Z CConstraintAnchor::vfunc5
 0x100096f6 func   _item_g_werewolf_bloodpack item_g_werewolf_bloodpack
 0x10009732 func   ?sub_10330ce0@CUnknown10330ce0@@QAEXD@Z CUnknown10330ce0::sub_10330ce0
 0x1000973c func   ?sub_100eb420@CUnknown100eb420@@QAE_NXZ CUnknown100eb420::sub_100eb420
