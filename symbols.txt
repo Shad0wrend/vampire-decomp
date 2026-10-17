@@ -1134,6 +1134,7 @@
 0x1000f25e func   ?sub_1030bec0@TObj@@QAEPAU1@XZ TObj::sub_1030bec0
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
 0x1000f326 func   ?sub_101cfd80@@YA?AUTVec@@XZ sub_101cfd80
+0x1000f34e func   ?vfunc2@CTEBaseBeam@@UAEPAV1@I@Z CTEBaseBeam::vfunc2
 0x1000f39e func   ?vfunc329@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc329
 0x1000f3cb func   ?sub_1007e580@@YIXPAH@Z sub_1007e580
 0x1000f411 func   ?sub_102dd8b0@@YAPAUPatrolPlace@@XZ sub_102dd8b0
