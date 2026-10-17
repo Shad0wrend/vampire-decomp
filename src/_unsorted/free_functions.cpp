@@ -3227,6 +3227,26 @@ void sub_1012f100(void* h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f340 size=0x6e
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern int (__stdcall *g_109f3588)(const char *, const char *);
+extern int (__stdcall *g_109f34ac)(int);
+
+int sub_1012f340(const char *a, const char *b)
+{
+    g_109f3620[*g_109f3680].a = "Sys_GetProcAddress";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int r = g_109f34ac(g_109f3588(a, b));
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f850 size=0x9
 // TARGET: sub_1012f850
 float sub_1012f850(float x) { return x * x; }
