@@ -16365,6 +16365,27 @@ extern "C" CItemGWarrLedger1* item_g_vampyr_apocrypha()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104012e0 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_10502fbc[];
+extern char g_10681f04[];
+
+// TARGET: item_g_pisha_fetish
+extern "C" CItemGWarrLedger1* item_g_pisha_fetish()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_10502fbc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10681f04);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
