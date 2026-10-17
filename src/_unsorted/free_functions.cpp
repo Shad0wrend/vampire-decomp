@@ -16239,6 +16239,27 @@ extern "C" CItemGWarrLedger1* item_g_jumbles_flyer()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104002c0 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_105005bc[];
+extern char g_10681cf4[];
+
+// TARGET: item_g_larry_briefcase
+extern "C" CItemGWarrLedger1* item_g_larry_briefcase()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_105005bc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10681cf4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
