@@ -1901,6 +1901,24 @@ struct CUnknown10083960 { int p; int a; void sub_10083960(int v); };
 void CUnknown10083960::sub_10083960(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x1008b490 size=0x79
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void __fastcall sub_1008b490(char *self)
+{
+    const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::UseClientSideAnimation";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    self[0x70c] = 1;
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091c80 size=0x6f
 #include "CBaseAnimating.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
