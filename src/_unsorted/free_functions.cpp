@@ -8848,6 +8848,57 @@ void sub_102c8ca0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ca6c0 size=0x79
+struct EntInfo { void *ent; unsigned int serial; int pad; };
+struct EntList {
+    int vptr;
+    EntInfo arr[1];
+};
+extern EntList *g_10566458;
+struct EntX {
+    virtual void v0();
+    virtual unsigned int *v1();
+};
+struct EHandle {
+    unsigned int m_Index;
+    EntX *Get() const
+    {
+        if (m_Index == 0xffffffff)
+            return 0;
+        const EntInfo *p = &g_10566458->arr[m_Index & 0x1fff];
+        if (p->serial == (m_Index >> 13))
+            return (EntX *)p->ent;
+        return 0;
+    }
+};
+struct Slot {
+    char pad[0x20];
+    EHandle m_h;
+    char pad2[0x28 - 0x24];
+};
+struct Obj {
+    char pad[4];
+    Slot m_Slots[1];
+    void sub_102ca6c0(EntX *target, EntX *newEnt);
+};
+
+void Obj::sub_102ca6c0(EntX *target, EntX *newEnt)
+{
+    if (target != 0) {
+        Slot *s = m_Slots;
+        Slot *end = s + *(int *)((char *)this + 0xa04);
+        for (; s < end; s++) {
+            if (target == s->m_h.Get()) {
+                if (newEnt != 0)
+                    s->m_h.m_Index = *newEnt->v1();
+                else
+                    s->m_h.m_Index = 0xffffffff;
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ca760 size=0xb
 void __fastcall sub_102ca760(char *self)
 {
