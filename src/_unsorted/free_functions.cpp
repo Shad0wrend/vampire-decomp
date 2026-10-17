@@ -2416,6 +2416,49 @@ int *sub_10132db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136330 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10579058[2];
+void sub_1000ebab();
+void sub_1000b24e();
+void sub_10005e89();
+void sub_100089d6();
+void sub_1000af6f();
+
+int *sub_10136330()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bWaitForRefire", {0x451, 0}, 1, 2 },
+        { 5, "m_bDisabled", {0x450, 0}, 1, 6, "StartDisabled" },
+        { 0, "InputEnable", {0, 0}, 1, 8, "Enable", 0, (void *)sub_1000ebab },
+        { 0, "InputEnableRefire", {0, 0}, 1, 8, "EnableRefire", 0, (void *)sub_1000b24e },
+        { 0, "InputDisable", {0, 0}, 1, 8, "Disable", 0, (void *)sub_10005e89 },
+        { 0, "InputToggle", {0, 0}, 1, 8, "Toggle", 0, (void *)sub_100089d6 },
+        { 0, "InputTrigger", {0, 0}, 1, 8, "Trigger", 0, (void *)sub_1000af6f },
+        { 10, "m_OnTrigger", {0x454, 0}, 1, 0x16, "OnTrigger", g_1055dc70 },
+    };
+    g_10579058[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10579058[0] = (int)&dataDesc[1];
+    return g_10579058;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136450 size=0xa
 void __fastcall sub_10136450(char *self, int, int)
 {
