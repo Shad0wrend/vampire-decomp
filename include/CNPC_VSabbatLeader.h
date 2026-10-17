@@ -18,5 +18,6 @@ public:
 	int sub_103aa480(int arg);
 	int sub_10001b45(int arg);
 	void sub_103a9d00();	// FlipFailureType
+	int sub_103a7390(int schedule);	// "TranslateSchedule" (slot 440 override): schedules 0xe5/0xe6 map to 0x15f, else the CNPC_VHuman version
 	char sub_103a9340(CNPC_VSabbatLeaderHint *pHint);	// "FValidateHintType": hint type in [0x3e80, 0x3e85]
 };
