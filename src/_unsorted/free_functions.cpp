@@ -3567,6 +3567,34 @@ void CUnknown101f9670::sub_101f9690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9c70 size=0xb6
+#include "CUnknown101f9c70.h"
+struct TraceEnt { const char *a; const void *b; const void *c; };
+struct Res { void sub_10002d5b(); };
+struct Loc { char buf[0x44]; void sub_10005ba0(int, int, int); int sub_1000b712(); };
+struct Mgr { Res *sub_1000c5d1(int, Loc *); };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_106b8540[];
+extern Mgr g_1074df78;
+
+// TARGET: CUnknown101f9c70::sub_101f9c70
+int CUnknown101f9c70::sub_101f9c70(int a, int b, int c)
+{
+	g_109f3620[*g_109f3680].a = "CVTraitEffectList_t::Effect_Calc_Clan";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	Loc loc;
+	loc.sub_10005ba0(a, b, c);
+	for (int i = 0; i < m_count; i++)
+		g_1074df78.sub_1000c5d1(m_items[i], &loc)->sub_10002d5b();
+	int r = loc.sub_1000b712();
+	--*g_109f3680;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fb3e0 size=0x66
 struct ScopeTrace_t { const char *name; const char *a; const char *b; };
 extern ScopeTrace_t *g_109f3620;

@@ -689,6 +689,7 @@
 0x1000c9a0 func   _info_node_kick_at info_node_kick_at
 0x1000c9af func   ?vfunc71@CBaseDoor@@QAEXXZ CBaseDoor::vfunc71
 0x1000ca31 func   ?sub_101c1ba0@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1ba0
+0x1000ca81 func   ?sub_101f9c70@CUnknown101f9c70@@QAEHHHH@Z CUnknown101f9c70::sub_101f9c70
 0x1000ca8b func   _npc_VNosferatu npc_VNosferatu
 0x1000cab3 func   _events_player events_player
 0x1000caea func   ?sub_102c6e90@@YIXPAV?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@@Z sub_102c6e90
