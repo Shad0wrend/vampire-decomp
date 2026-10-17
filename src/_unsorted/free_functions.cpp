@@ -7144,6 +7144,41 @@ int * __fastcall sub_10206300(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10206980 size=0x7a
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" int _strcmpi(const char *, const char *);
+extern char g_10546244[];
+extern char g_106b8540[];
+void sub_10203dd0(char *);
+struct StrHolder {
+    const char *s;
+    const char *Get() const { return s ? s : g_106b8540; }
+};
+struct NameItem { char pad[0xc]; StrHolder h; };
+struct NameSet {
+    char pad0[0xc];
+    const char *m_name;
+    int pad10;
+    int m_count;
+    NameItem **m_items;
+    void sub_10206980(const char *other);
+};
+void NameSet::sub_10206980(const char *other)
+{
+    char buf[128];
+    const char *n = m_name;
+    if (!n)
+        n = g_106b8540;
+    sprintf(buf, g_10546244, n);
+    sub_10203dd0(buf);
+    if (other) {
+        for (int i = 0; i < m_count; i++) {
+            _strcmpi(m_items[i]->h.Get(), other);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b000 size=0x9
 int CBaseVampireSkillEntity::sub_1020b000(CBaseEntity *pPlayer)
 {
