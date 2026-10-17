@@ -4228,6 +4228,35 @@ void __fastcall sub_10106490(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106f90 size=0x81
+#include "CBaseCombatCharacter.h"
+#include "CExpressionTable.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_1056bd64[];
+extern char g_105387dc[];
+extern char g_106b8540[];
+extern CExpressionTable g_10709200;
+bool CBaseCombatCharacter::sub_10106f90(int expression)
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_1056bd64;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    bool r = g_10709200.IsValidExpression(expression);
+    --*g_109f3680;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101074c0 size=0x67
 struct Mem32 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
