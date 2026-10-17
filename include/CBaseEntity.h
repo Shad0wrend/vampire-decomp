@@ -58,6 +58,7 @@ public:
 	void sub_1009fa60();
 	void sub_100abbf0(int a, int b);
 	void sub_100b3b00();
+	void sub_100b40f0(int a);
 
 	char m_pad0004[0x110];
 	void (CBaseEntity::*m_pfn0114)();
