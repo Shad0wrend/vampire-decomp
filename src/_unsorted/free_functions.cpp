@@ -3484,6 +3484,32 @@ void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
 // END FUNCTION
 
+// FUNCTION: 0x10104ff0 size=0x77
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+struct Table {
+    char pad[0xc];
+    int m_nCount;
+};
+
+bool __fastcall sub_10104ff0(Table *self, int, int idx)
+{
+    g_109f3620[*g_109f3680].a = "CExpressionTable::IsValidExpressionIndex";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    bool r;
+    if (idx >= 0 && idx < self->m_nCount)
+        r = true;
+    else
+        r = false;
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106490 size=0xbc
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
