@@ -64,6 +64,43 @@ void CAI_BaseNPC::vfunc538()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026d7f0 size=0x75
+struct SHandleEntry { void *p; unsigned serial; int pad; };
+struct SEntList { int pad; SHandleEntry e[1]; };
+extern SEntList *g_10566458;
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct SEnt459 {
+    V100(a) V100(b) V100(c) V100(d)
+    V10(e0) V10(e1) V10(e2) V10(e3) V10(e4)
+    virtual void e50(); virtual void e51(); virtual void e52(); virtual void e53(); virtual void e54();
+    virtual void e55(); virtual void e56(); virtual void e57(); virtual void e58();
+    virtual void v459();
+};
+
+static inline SEnt459 *GetEnt(unsigned h)
+{
+    SEnt459 *ent;
+    if (h == 0xffffffff)
+        ent = 0;
+    else {
+        SHandleEntry *he = &g_10566458->e[h & 0x1fff];
+        ent = (he->serial == (h >> 13)) ? (SEnt459 *)he->p : 0;
+    }
+    return ent;
+}
+
+void CAI_BaseNPC::vfunc459()
+{
+    unsigned *ph = (unsigned *)((char *)this + 0x5d74);
+    if (*(int *)((char *)this + 0x5cc0) == 4 && GetEnt(*ph) != 0)
+        GetEnt(*(volatile unsigned *)ph)->v459();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027a400 size=0xd
 struct NpcFlags204 { char pad[0x204]; unsigned int m; };
 unsigned int CAI_BaseNPC::vfunc552()

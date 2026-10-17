@@ -934,6 +934,7 @@
 0x1000d73d func   _move_keyframed move_keyframed
 0x1000d7ab func   _item_w_gargoyle_fist item_w_gargoyle_fist
 0x1000d850 func   _item_w_manbat_claw item_w_manbat_claw
+0x1000d864 func   ?vfunc459@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc459
 0x1000d882 func   ?vfunc387@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc387
 0x1000d909 func   _item_p_research_hg_computers item_p_research_hg_computers
 0x1000d95e func   ?sub_10307b40@CUnknown10307b40@@QAEXH@Z CUnknown10307b40::sub_10307b40
