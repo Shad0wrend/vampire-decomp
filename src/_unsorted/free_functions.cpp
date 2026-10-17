@@ -3791,6 +3791,45 @@ void __fastcall sub_1021e410(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021e620 size=0x7c
+#include "CUnknown1021e620.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, unsigned long size);
+
+struct Elem1021e620 { char data[0x2b4]; };
+
+void CUnknown1021e620::sub_1021e620(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+
+	int nAllocationRequested = m_nAllocationCount + num;
+	if (m_nAllocationCount < nAllocationRequested)
+	{
+		do
+		{
+			if (m_nAllocationCount)
+			{
+				if (m_nGrowSize)
+					m_nAllocationCount += m_nGrowSize;
+				else
+					m_nAllocationCount += m_nAllocationCount;
+			}
+			else
+			{
+				m_nAllocationCount = 1;
+			}
+		} while (m_nAllocationCount < nAllocationRequested);
+	}
+
+	if (m_pMemory)
+		m_pMemory = Plat_Realloc(m_pMemory, m_nAllocationCount * sizeof(Elem1021e620));
+	else
+		m_pMemory = Plat_Alloc(m_nAllocationCount * sizeof(Elem1021e620));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102237c0 size=0xd
 void CUnknown102237c0::sub_102237c0(int value)
 {
