@@ -7160,6 +7160,45 @@ call:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d380 size=0x69
+struct SInner { char *ent; unsigned serial; };
+struct SEnt { int pad; SInner in; };
+extern SEnt *g_10566458;
+struct SHandle {
+    unsigned v;
+    char *Get() const
+    {
+        if (v == 0xffffffff)
+            return 0;
+        SInner *e = &g_10566458[v & 0x1fff].in;
+        if (e->serial != (v >> 13))
+            return 0;
+        return e->ent;
+    }
+};
+struct SItem { int key; SHandle handle; int a; int b; };
+struct S1033d380 {
+    char pad0[0xfb4];
+    SItem *m_items;
+    char pad1[0xfc0 - 0xfb8];
+    int m_count;
+    int sub_1033d380(int key);
+};
+// TARGET: S1033d380::sub_1033d380
+int S1033d380::sub_1033d380(int key)
+{
+    for (int i = 0; i < m_count; i++) {
+        if (m_items[i].key == key) {
+            char *ent = m_items[i].handle.Get();
+            if (!ent)
+                return 0;
+            return *(int *)(ent + 0x9c);
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349a00 size=0x8
 void __fastcall sub_10349a00(int *p) { p[3] = 0; }
 // END FUNCTION
