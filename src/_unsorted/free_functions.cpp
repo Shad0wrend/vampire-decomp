@@ -16533,6 +16533,27 @@ extern "C" CItemGWarrLedger1* item_g_milligans_businesscard()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10402860 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_105067bc[];
+extern char g_10682258[];
+
+// TARGET: item_g_pisha_book
+extern "C" CItemGWarrLedger1* item_g_pisha_book()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_105067bc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10682258);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
