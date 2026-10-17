@@ -3955,6 +3955,36 @@ void Mem44::sub_100ed500(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee750 size=0x85
+#include "CUnknown100ee750.h"
+
+struct SHandleEntry { void *p; unsigned serial; int pad; };
+struct SEntList { int pad; SHandleEntry e[1]; };
+extern SEntList *g_10566458;
+
+static inline void *GetEnt(unsigned h)
+{
+    void *ent;
+    if (h == 0xffffffff)
+        ent = 0;
+    else {
+        SHandleEntry *he = &g_10566458->e[h & 0x1fff];
+        ent = (he->serial == (h >> 13)) ? he->p : 0;
+    }
+    return ent;
+}
+
+void CUnknown100ee750::sub_100ee750(void *pEntity)
+{
+    if (GetEnt(m_hFirst) == pEntity) {
+        m_hFirst = 0xffffffff;
+        return;
+    }
+    if (GetEnt(m_hSecond) == pEntity)
+        m_hSecond = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0300 size=0x8
 void __fastcall sub_100f0300(char *p) { p[0x55c] = 1; }
 // END FUNCTION
