@@ -2794,6 +2794,37 @@ void UtlMem2::sub_100eb280(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eb310 size=0x72
+#include "CUnknown100eb310.h"
+
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUnknown100eb310::sub_100eb310(int num)
+{
+    if (m_growSize == -1)
+        return;
+    int newAlloc = m_allocationCount;
+    int target = num + newAlloc;
+    if (newAlloc < target) {
+        do {
+            if (newAlloc != 0) {
+                if (m_growSize != 0)
+                    newAlloc += m_growSize;
+                else
+                    newAlloc += newAlloc;
+            } else
+                newAlloc = 1;
+        } while (newAlloc < target);
+        m_allocationCount = newAlloc;
+    }
+    if (m_pMemory)
+        m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount * 0x1004);
+    else
+        m_pMemory = (char *)g_109f3634(m_allocationCount * 0x1004);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb3b0 size=0x8
 void __fastcall sub_100eb3b0(int *p) { p[4] = 0; }
 // END FUNCTION
