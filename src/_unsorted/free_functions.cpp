@@ -9192,6 +9192,26 @@ int sub_10202780(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203190 size=0x66
+#include "CUnknown102029c0.h"
+struct StatOwner2 {
+    char pad[0x8];
+    int m_count;
+    CUnknown102029c0 **m_items;
+    CUnknown102029c0 *sub_10203190(int id);
+};
+// TARGET: StatOwner2::sub_10203190
+CUnknown102029c0 *StatOwner2::sub_10203190(int id)
+{
+    for (int i = 0; i < m_count; i++) {
+        if (m_items[i]->m_id == id)
+            return m_items[i];
+    }
+    static CUnknown102029c0 s_default(-1);
+    return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203dd0 size=0xc
 extern void (*g_1074ede0)();
 void sub_10203dd0(void)
