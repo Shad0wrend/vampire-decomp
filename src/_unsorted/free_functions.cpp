@@ -6929,6 +6929,34 @@ void __fastcall sub_101fa8d0(CVDmg_t *self, int, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101faa70 size=0x7b
+#include "CVDmg_t.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_105a73fc[];
+extern char g_106b8540[];
+int CVDmg_t::sub_101faa70()
+{
+    g_109f3620[*g_109f3680].a = g_105a73fc;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (m_field08 > 0) {
+        int v = m_field08;
+        --*g_109f3680;
+        return v;
+    }
+    if (m_field08 == 0) {
+        int v = m_field04;
+        --*g_109f3680;
+        return v;
+    }
+    --*g_109f3680;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fb3e0 size=0x66
 struct ScopeTrace_t { const char *name; const char *a; const char *b; };
 extern ScopeTrace_t *g_109f3620;
