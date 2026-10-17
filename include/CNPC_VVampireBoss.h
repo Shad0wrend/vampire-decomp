@@ -11,4 +11,5 @@ public:
 
 	bool vfunc525(int unused);
 	void sub_103c6df0(int index, const char *name);
+	void sub_103c6eb0();	// ClearBodyEmitterNames
 };
