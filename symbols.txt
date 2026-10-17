@@ -983,6 +983,7 @@
 0x1000d70b func   _physics_cannister physics_cannister
 0x1000d73d func   _move_keyframed move_keyframed
 0x1000d7ab func   _item_w_gargoyle_fist item_w_gargoyle_fist
+0x1000d846 func   ?vfunc5@CDynamicLight@@UAEPAV1@I@Z CDynamicLight::vfunc5
 0x1000d850 func   _item_w_manbat_claw item_w_manbat_claw
 0x1000d864 func   ?vfunc459@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc459
 0x1000d882 func   ?vfunc387@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc387
