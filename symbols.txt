@@ -699,6 +699,7 @@
 0x1000a871 func   ?sub_102ca6c0@Obj@@QAEXPAUEntX@@0@Z Obj::sub_102ca6c0
 0x1000a899 func   _npc_VSabbatGunman npc_VSabbatGunman
 0x1000a89e func   ?sub_10185880@@YIXPAUMem@@HH@Z sub_10185880
+0x1000a907 func   ?sub_100b0720@@YAXXZ sub_100b0720
 0x1000a984 func   ?sub_101fd1b0@CVStatAction_t@@QAEXHHH@Z CVStatAction_t::sub_101fd1b0
 0x1000a9c0 func   _camera_keyframe camera_keyframe
 0x1000a9c5 func   _item_g_idol_crane item_g_idol_crane

@@ -2448,6 +2448,38 @@ void sub_100b03b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b0720 size=0x7d
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern int g_10552814;
+
+#define E10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct IEngine {
+    E10(a0) E10(a1) E10(a2) E10(a3) E10(a4) E10(a5) E10(a6) E10(a7)
+    virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3();
+    virtual const char *Cmd_Argv(int n);
+};
+extern IEngine *g_1070b22c;
+int sub_10431447(const char *);
+
+void sub_100b0720()
+{
+    g_109f3620[*g_109f3680].name = "CC_Ent_Step";
+    g_109f3620[*g_109f3680].ent = g_106b8540;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    int steps = sub_10431447(g_1070b22c->Cmd_Argv(1));
+    if (steps <= 0)
+        steps = 1;
+    g_10552814 = steps;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b1380 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
