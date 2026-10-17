@@ -5966,6 +5966,30 @@ const char *sub_101dbb00(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ddb40 size=0x78
+extern int (*g_109f388c)(char *, int, const char *, ...);
+extern void (*g_109f3628)(const char *, ...);
+struct Range {
+    int m_Min;
+    int m_Max;
+    void sub_101ddb40(const char *name);
+};
+
+void Range::sub_101ddb40(const char *name)
+{
+    char buf[512];
+    if (m_Min == m_Max) {
+        if (m_Max == 0)
+            return;
+    }
+    if (m_Min != m_Max)
+        g_109f388c(buf, 512, "[%s]: %d - %d\n", name, m_Min, m_Max);
+    else
+        g_109f388c(buf, 512, "[%s]: %d\n", name, m_Min);
+    g_109f3628("%s", buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0040 size=0xd
 CUnknown101e0040* CUnknown101e0040::sub_101e0040()
 {
