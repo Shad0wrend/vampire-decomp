@@ -16197,6 +16197,27 @@ extern "C" CItemGWarrLedger1* item_g_driver_license_gimble()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ffd60 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_104ff7bc[];
+extern char g_10681c30[];
+
+// TARGET: item_g_werewolf_bloodpack
+extern "C" CItemGWarrLedger1* item_g_werewolf_bloodpack()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_104ff7bc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10681c30);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
