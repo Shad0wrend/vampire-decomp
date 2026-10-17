@@ -5465,6 +5465,41 @@ void CUtlMemory24::sub_10222da0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10222ec0 size=0x6a
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct S10222ec0 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_10222ec0(int num);
+};
+// TARGET: S10222ec0::sub_10222ec0
+void S10222ec0::sub_10222ec0(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 3;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 0xc);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10223030 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
