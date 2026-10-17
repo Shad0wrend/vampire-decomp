@@ -4145,6 +4145,33 @@ float CUnknown10160680::sub_10160680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10168e60 size=0x72
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+struct EntX {
+    V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j) V10(k) V10(l) V10(m)
+    virtual void n0(); virtual void n1(); virtual void n2(); virtual void n3(); virtual void n4(); virtual void n5(); virtual void n6(); virtual void n7();
+    virtual int v138();
+};
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_10586828[];
+extern char g_106b8540[];
+bool sub_10168e60(void *unused, EntX *ent)
+{
+    g_109f3620[*g_109f3680].a = g_10586828;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (ent->v138() == 13) {
+        --*g_109f3680;
+        return true;
+    }
+    --*g_109f3680;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016b440 size=0xb
 struct IUnk1070ba0c {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
