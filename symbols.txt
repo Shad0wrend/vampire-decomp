@@ -748,6 +748,7 @@
 0x1000d468 func   ?vfunc84@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc84
 0x1000d490 func   ?vfunc9@CAI_Navigator@@UAEXHM@Z CAI_Navigator::vfunc9
 0x1000d49f func   ?sub_10288540@CUnknown10288540@@QAEPAU1@XZ CUnknown10288540::sub_10288540
+0x1000d4d6 func   ?sub_101c9cf0@@YAPAHXZ sub_101c9cf0
 0x1000d4fe func   ?vfunc586@CAI_BaseHumanoid@@QAE_NXZ CAI_BaseHumanoid::vfunc586
 0x1000d526 func   _ai_changetarget ai_changetarget
 0x1000d56c func   ?vfunc8@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc8

@@ -3284,6 +3284,41 @@ int *sub_101c67e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9cf0 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1059e208[2];
+void sub_1000ffbf();
+
+int *sub_101c9cf0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0, "CTriggerProximityMeasureThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000ffbf },
+        { 2, "m_iszMeasureTarget", {0x59c, 0}, 1, 6, "measuretarget" },
+        { 1, "m_fRadius", {0x5a0, 0}, 1, 6, "radius" },
+        { 10, "m_NearestEntityDistance", {0x5a8, 0}, 1, 0x16, "NearestEntityDistance", g_1055dc70 },
+    };
+    g_1059e208[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1059e208[0] = (int)&dataDesc[1];
+    return g_1059e208;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cc790 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc790(void **p) { ((Fn *)*p)[247](p); }
