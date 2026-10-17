@@ -232,6 +232,32 @@ void CBaseCombatCharacter::vfunc336()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103417b0 size=0x76
+#include "CBaseCombatCharacter.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_106236f4[];
+extern char g_105387dc[];
+extern char g_106b8540[];
+bool CBaseCombatCharacter::vfunc295(int a)
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_106236f4;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    --*g_109f3680;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10341850 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
