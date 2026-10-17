@@ -9,6 +9,6 @@ public:
 
 	char m_pad0450[0x450 - sizeof(CBaseEntity)];
 	void *m_pTargetName;
-	CBaseEntity *m_pNext;
+	CMoverKeyFrame *m_pNext;
 	CMoverKeyFrame *m_pPrev;
 };
