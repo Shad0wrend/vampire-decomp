@@ -982,6 +982,7 @@
 0x100103d9 func   ?sub_101eaac0@@YAXH@Z sub_101eaac0
 0x10010492 func   ?sub_101251e0@@YIXPAD@Z sub_101251e0
 0x100104c9 func   _item_k_fu_office_key item_k_fu_office_key
+0x10010519 func   ?sub_1013fd20@CUtlMemory96@@QAEXH@Z CUtlMemory96::sub_1013fd20
 0x10010532 func   _trigger_teleport trigger_teleport
 0x100105eb func   _func_pushable func_pushable
 0x1001064a func   ?sub_101857f0@UtlMem8@@QAEXH@Z UtlMem8::sub_101857f0
