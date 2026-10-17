@@ -6,6 +6,9 @@ class CNPC_VVampireBoss
 public:
 	char pad0[0x6498];
 	char m_bFlag6498;
+	char pad6499[0x6684 - 0x6499];
+	const char *m_pBodyEmitterNames[4];
 
 	bool vfunc525(int unused);
+	void sub_103c6df0(int index, const char *name);
 };
