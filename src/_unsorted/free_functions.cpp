@@ -1395,6 +1395,36 @@ void sub_1009a030(TEnt *ent, int unused, int *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009a0c0 size=0x68
+struct TScope {
+	const char *name;
+	void *a;
+	void *b;
+};
+extern int *g_109f3680;
+extern TScope *g_109f3620;
+extern char g_10554b98[];
+extern char g_106b8540[];
+
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); \
+	virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct TEnt {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i)
+	virtual void j0(); virtual void j1(); virtual void j2(); virtual void j3(); virtual void j4();
+	virtual int v95();
+};
+
+void sub_1009a0c0(TEnt *ent, int unused, int *out)
+{
+	g_109f3620[*g_109f3680].name = g_10554b98;
+	g_109f3620[*g_109f3680].a = g_106b8540;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	(*g_109f3680)++;
+	*out = ent->v95();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8220 size=0xa
 unsigned int CUnknown100a8220::sub_100a8220()
 {
