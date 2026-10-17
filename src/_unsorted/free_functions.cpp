@@ -606,6 +606,42 @@ void CMem16b_t::sub_1004b990(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050170 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1053d31c[2];
+void sub_1000bcfd();
+
+int *sub_10050170()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_swapModel", {0x468, 0}, 1, 0x6, "swapmodel" },
+        { 5, "m_makeDebris", {0x46c, 0}, 1, 0x6, "makedebris" },
+        { 5, "m_makePhyshandTarget", {0x46d, 0}, 1, 0x6, "make_physhand_target" },
+        { 0, "InputConvertTarget", {0x0, 0}, 1, 0x8, "ConvertTarget", 0, (void *)sub_1000bcfd },
+        { 10, "m_OnConvert", {0x450, 0}, 1, 0x16, "OnConvert", g_1055dc70 },
+    };
+    g_1053d31c[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1053d31c[0] = (int)&dataDesc[1];
+    return g_1053d31c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050860 size=0xd
 #include "CUnknown10050860.h"
 
