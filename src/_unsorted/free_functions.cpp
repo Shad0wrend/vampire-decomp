@@ -15210,6 +15210,27 @@ extern "C" GP *item_m_money_envelope()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f6400 size=0x49
+#include "CItemGWarrLedger1.h"
+extern void* sub_1000db89(unsigned int);
+extern void* vt_104ea0bc[];
+extern char g_10587204[];
+
+// TARGET: item_g_wallet
+extern "C" CItemGWarrLedger1* item_g_wallet()
+{
+	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
+	if (p) {
+		p->sub_1000d26f();
+		*(void***)p = vt_104ea0bc;
+	} else {
+		p = 0;
+	}
+	p->vfunc106(g_10587204);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
