@@ -4299,6 +4299,42 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175180 size=0x74
+#define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define HUN(p) TEN(p##0) TEN(p##1) TEN(p##2) TEN(p##3) TEN(p##4) TEN(p##5) TEN(p##6) TEN(p##7) TEN(p##8) TEN(p##9)
+struct E0 { HUN(a) };
+struct Ent : E0 { TEN(b0) TEN(b1) TEN(b2) virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7(); virtual int Slot138(); };
+struct EntInfo { void *ent; unsigned int serial; int pad; };
+struct EntList {
+    int vptr;
+    EntInfo arr[1];
+};
+extern EntList *g_10566458;
+struct EHandle {
+    unsigned int m_Index;
+    Ent *Get() const
+    {
+        if (m_Index == 0xffffffff)
+            return 0;
+        const EntInfo *p = &g_10566458->arr[m_Index & 0x1fff];
+        if (p->serial == (m_Index >> 13))
+            return (Ent *)p->ent;
+        return 0;
+    }
+};
+struct Holder {
+    char pad[0x1db0];
+    EHandle m_hEnt;
+};
+
+bool __fastcall sub_10175180(Holder *self)
+{
+    if (self->m_hEnt.Get() != 0 && self->m_hEnt.Get()->Slot138() == 3)
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017cf90 size=0x6f
 struct EntInfo { void *ent; unsigned int serial; int pad; };
 struct EntList {
