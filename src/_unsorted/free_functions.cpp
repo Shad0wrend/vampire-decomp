@@ -2516,6 +2516,26 @@ bool sub_100df010(S100df010 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7480 size=0x70
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+struct IDialog { virtual void v0(); virtual void v1(int a); };
+extern IDialog *g_1070b238;
+
+int __stdcall sub_100e7480(int a)
+{
+    g_109f3620[*g_109f3680].a = "CDialog::dclose";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    g_1070b238->v1(a);
+    (*g_109f3680)--;
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb130 size=0x8
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION
