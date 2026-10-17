@@ -8,5 +8,5 @@ public:
 	unsigned short m_unk2;
 
 	unsigned short sub_1042d9a0();
-	bool sub_1042daa0(CUnknown1042d9a0 *other);	// equality: compares the bit fields one by one
+	char sub_1042daa0(CUnknown1042d9a0 *other);	// equality: compares the bit fields one by one
 };
