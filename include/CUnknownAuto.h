@@ -7,6 +7,7 @@
 #include "CAI_Navigator.h"
 #include "CBaseDoor.h"
 #include "CHL2_Player.h"
+#include "CKeepUpright.h"
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CNPC_VSheriffMan.h"
 #include "CNPC_VVampireBoss.h"
