@@ -6794,6 +6794,33 @@ void CUnknown1018f700::sub_1018f700(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190b10 size=0x49
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_10001eba(GP *);
+extern int vt_1047473c;
+extern char g_1058efcc[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: prop_dynamic_ornament
+extern "C" GP *prop_dynamic_ornament()
+{
+	GP *p = (GP *)sub_1000db89(0x8e4);
+	if (p) {
+		sub_10001eba(p);
+		*(int **)p = &vt_1047473c;
+	} else {
+		p = 0;
+	}
+	p->name(g_1058efcc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192a30 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
