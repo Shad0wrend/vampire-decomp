@@ -2831,6 +2831,41 @@ void CUnknown1018f700::sub_1018f700(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192a30 size=0x52
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1058da80[2];
+
+int *sub_10192a30()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_nRequiredStr", {0x78c, 0}, 1, 6, "required_strength" },
+        { 2, "m_sBreakSnd", {0x7a8, 0}, 1, 6, "break_sound" },
+        { 2, "m_sBreakSnd", {0x7a8, 0}, 1, 6, "break_sound" },
+        { 5, "m_bConstraintBroken", {0x7ac, 0}, 1, 2 },
+        { 10, "m_OnBreakConstraint", {0x790, 0}, 1, 0x16, "OnBreakConstraint", g_1055dc70 },
+    };
+    g_1058da80[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1058da80[0] = (int)&dataDesc[1];
+    return g_1058da80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199e20 size=0x65
 struct PyObj;
 struct PyType { char pad[0x18]; void (*dealloc)(PyObj*); };

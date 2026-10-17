@@ -1136,6 +1136,7 @@
 0x10013d6d func   ?sub_102d41f0@@YIXPAH@Z sub_102d41f0
 0x10013db3 func   ?sub_102c6bd0@@YIXPAH@Z sub_102c6bd0
 0x10013de0 func   ?sub_102cef30@UtlMem9@@QAEXH@Z UtlMem9::sub_102cef30
+0x10013e17 func   ?sub_10192a30@@YAPAHXZ sub_10192a30
 0x10013ebc func   _item_k_museum_basement_key item_k_museum_basement_key
 0x10013f25 func   ?sub_101c1b40@CUnknown101c1b40@@QAEXH@Z CUnknown101c1b40::sub_101c1b40
 0x10014006 func   _item_w_crossbow_flaming item_w_crossbow_flaming
