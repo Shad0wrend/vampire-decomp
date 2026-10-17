@@ -323,6 +323,7 @@
 0x10005ab0 func   ?sub_10206300@@YIPAHPAHHH@Z sub_10206300
 0x10005b23 func   ?sub_101f2ae0@@YGXPAX@Z sub_101f2ae0
 0x10005b32 func   _dynamic_prop dynamic_prop
+0x10005b4b func   ?sub_100a93d0@@YI_NPAD@Z sub_100a93d0
 0x10005b96 func   ?sub_100792e0@CUnknown100792c0@@QAEXH@Z CUnknown100792c0::sub_100792e0
 0x10005bb9 func   ?sub_101a17c0@CRestore@@QAEPAUCRestoreField@@PBDPAU2@HPAH@Z CRestore::sub_101a17c0
 0x10005be1 func   ?sub_10223800@CUnknown10223800@@QAEXH@Z CUnknown10223800::sub_10223800
