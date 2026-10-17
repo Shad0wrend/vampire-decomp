@@ -769,6 +769,7 @@
 0x1000c040 func   _npc_maker_zombie npc_maker_zombie
 0x1000c045 func   _events_world events_world
 0x1000c072 func   _item_g_mercurio_journal item_g_mercurio_journal
+0x1000c0d6 func   ?sub_103cab50@@YIHPAD@Z sub_103cab50
 0x1000c126 func   _info_node_cover_low info_node_cover_low
 0x1000c12b func   _weapon_physcannon weapon_physcannon
 0x1000c18a func   ?vfunc359@CNPC_VGargoyle@@UAEHH@Z CNPC_VGargoyle::vfunc359
