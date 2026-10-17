@@ -540,6 +540,7 @@
 0x1000879c func   ?sub_10337a60@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10337a60
 0x100087d8 func   _trigger trigger
 0x100087e2 func   ?sub_101e22b0@CUnknown101e22b0@@QAE_NXZ CUnknown101e22b0::sub_101e22b0
+0x10008800 func   ?vfunc134@CVampireProjectile@@UAEXXZ CVampireProjectile::vfunc134
 0x1000880f func   ?vfunc601@CNPC_VFrenzyShadow@@UAEXH@Z CNPC_VFrenzyShadow::vfunc601
 0x10008832 func   ?sub_102eeba0@CUnknown102eeba0@@QAEXH@Z CUnknown102eeba0::sub_102eeba0
 0x1000884b func   ?sub_10313f70@@YIXPAUMem16@@HH@Z sub_10313f70
