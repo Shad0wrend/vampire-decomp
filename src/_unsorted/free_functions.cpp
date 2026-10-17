@@ -3834,6 +3834,43 @@ TEnt *sub_1012c9c0(TEnt *e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ca50 size=0x78
+struct EntInfo { void *ent; unsigned int serial; int pad; };
+struct EntList {
+    int vptr;
+    EntInfo arr[1];
+};
+extern EntList *g_10566458;
+struct Ent;
+struct EHandle {
+    unsigned int m_Index;
+    Ent *Get() const
+    {
+        if (m_Index == 0xffffffff)
+            return 0;
+        const EntInfo *p = &g_10566458->arr[m_Index & 0x1fff];
+        if (p->serial == (m_Index >> 13))
+            return (Ent *)p->ent;
+        return 0;
+    }
+};
+struct Ent {
+    char pad[0x25c];
+    EHandle m_hParent;
+};
+
+bool sub_1012ca50(Ent *target, Ent *ent)
+{
+    while (ent->m_hParent.Get() != 0) {
+        Ent *p = ent->m_hParent.Get();
+        ent = p;
+        if (target == ent)
+            return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cf10 size=0x9
 CUnknown1012cf10 *CUnknown1012cf10::sub_1012cf10()
 {
