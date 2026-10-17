@@ -1108,6 +1108,7 @@
 0x10011527 func   ?sub_102f2fe0@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102f2fe0
 0x10011563 func   ?sub_10074070@CUnknown10074070@@QAEHH@Z CUnknown10074070::sub_10074070
 0x100115d6 func   _item_k_skyline_haven_key item_k_skyline_haven_key
+0x10011676 func   ?sub_10031bd0@@YA_NPAX@Z sub_10031bd0
 0x100116a8 func   ?sub_1011d6a0@S1011d6a0@@QAEXH@Z S1011d6a0::sub_1011d6a0
 0x1001173e func   ?sub_1007fce0@UtlMem6@@QAEXH@Z UtlMem6::sub_1007fce0
 0x100117ac func   ?sub_1020b000@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z CBaseVampireSkillEntity::sub_1020b000

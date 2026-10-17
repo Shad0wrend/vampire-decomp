@@ -57,6 +57,36 @@ void CUtlMemory20::sub_1002ccc0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10031bd0 size=0x72
+struct Sub { void *pEnt; unsigned int serial; };
+struct EntInfo { int pad; Sub s; };
+struct Slot { unsigned int handle; float time; };
+struct GlobalVars { char pad[0xc]; float curtime; };
+extern EntInfo *g_10566458;
+extern GlobalVars *g_1070b228;
+extern Slot g_106b8698[8];
+static inline void *Resolve(unsigned int h)
+{
+    if (h != 0xffffffff) {
+        Sub *e = &g_10566458[h & 0x1fff].s;
+        if (e->serial == (h >> 13))
+            return e->pEnt;
+    }
+    return 0;
+}
+bool sub_10031bd0(void *ent)
+{
+    for (Slot *s = g_106b8698; (int)s < (int)(g_106b8698 + 8); s++) {
+        if (Resolve(s->handle) == ent) {
+            if (!(g_1070b228->curtime >= s->time))
+                return true;
+            s->handle = 0xffffffff;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032a20 size=0x8
 void __fastcall sub_10032a20(int *p) { p[3] = 0; }
 // END FUNCTION
