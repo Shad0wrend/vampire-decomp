@@ -4830,6 +4830,41 @@ void CUnknown10185a30::sub_10185a30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189510 size=0x77
+struct Elem784 { char d[0x784]; };
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+struct Mem784 {
+    Elem784 *m_p;
+    int m_alloc;
+    int m_grow;
+    void sub_10189510(int num);
+};
+void Mem784::sub_10189510(int num)
+{
+    if (m_grow == -1)
+        return;
+    int want = m_alloc + num;
+    if (m_alloc < want) {
+        int n = m_alloc;
+        do {
+            if (n != 0) {
+                if (m_grow != 0)
+                    n += m_grow;
+                else
+                    n += n;
+            } else
+                n = 1;
+        } while (n < want);
+        m_alloc = n;
+    }
+    if (m_p)
+        m_p = (Elem784 *)g_109f3638(m_p, m_alloc * 0x784);
+    else
+        m_p = (Elem784 *)g_109f3634(m_alloc * 0x784);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101895d0 size=0x64
 #include "CRagdollProp.h"
 
