@@ -9004,6 +9004,35 @@ void __fastcall sub_103159d0(Squad *self, int, Ent *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10315ec0 size=0x71
+#include "CUnknown10315ec0.h"
+
+struct SEnt { int pad; };
+struct SHandleEntry { SEnt *p; unsigned serial; int pad; };
+struct SEntList { int pad; SHandleEntry e[1]; };
+extern SEntList *g_10566458;
+
+bool CUnknown10315ec0::sub_10315ec0(CUnknown10315ec0Ent *pEnt)
+{
+    CUnknown10315ec0Owner *owner = pEnt->m_pOwner;
+    if (owner && owner->m_count5bb0 <= 0) {
+        for (int i = 0; i < m_numHandles; i++) {
+            unsigned h = m_handles[i];
+            SEnt *ent;
+            if (h == 0xffffffff)
+                ent = 0;
+            else {
+                SHandleEntry *he = &g_10566458->e[h & 0x1fff];
+                ent = (he->serial == (h >> 13)) ? he->p : 0;
+            }
+            if ((void *)ent == (void *)owner)
+                return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319f10 size=0xc
 bool sub_1000528b(void *);
 bool CUnknown10319f10::sub_10319f10()
