@@ -60,6 +60,7 @@ public:
 	void sub_10026c70();	// "CBaseEntity::Think": calls the think function pointer at +0x118
 	int sub_10027570();	// "CBaseEntity::GetSolid": forwards to slot 11 of the collision object at +0x270
 	void sub_1003eb50();
+	void sub_1009b440(const char *msg);	// "CBaseEntity::TraceMessageBareBase": DevMsg(msg) when msg is set
 	void sub_1009fa60();
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
 	void sub_100a8c90(int a);	// "CBaseEntity::InputScriptUnhide": calls vfunc78
@@ -67,7 +68,6 @@ public:
 	void sub_100a9470(char value);	// "CBaseEntity::SetOccludesSound": stores the byte at +0xfe (slot 103 override in many subclasses)
 	void sub_100abbf0(int a, int b);
 	void sub_100acef0(int a);	// "CBaseEntity::InputKill": calls vfunc119
-	void sub_100aa840_unused();
 	char sub_100aa840();	// "CBaseEntity::IsTransparent": (field at +0x16c) != 0
 	void sub_100b12e0(char value);	// "CBaseEntity::SetSentLastFrame": stores the byte at +0x380 (slot 7 override)
 	void sub_100b1750(int index);	// "CBaseEntity::SetModelIndex": stores the dword at +0x1a4 (slot 10 override)
