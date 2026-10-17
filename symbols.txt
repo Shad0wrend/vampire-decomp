@@ -315,6 +315,7 @@
 0x100067f8 func   _trigger_environmental_audio trigger_environmental_audio
 0x10006811 func   ?sub_102ee120@CUnknown102ee120@@QAEXHHH@Z CUnknown102ee120::sub_102ee120
 0x1000683e func   _item_g_ghost_pendant item_g_ghost_pendant
+0x10006898 func   ?vfunc113@CMoverKeyFrame@@UAEXXZ CMoverKeyFrame::vfunc113
 0x1000693d func   ?sub_102ee600@CUnknown102ee600@@QAEHXZ CUnknown102ee600::sub_102ee600
 0x1000697e func   _npc_VTzimisceRunner npc_VTzimisceRunner
 0x100069a6 func   ?sub_10146790@CUnknown10146790@@QAEXXZ CUnknown10146790::sub_10146790
