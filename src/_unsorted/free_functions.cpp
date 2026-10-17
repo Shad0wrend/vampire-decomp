@@ -8858,6 +8858,33 @@ void __fastcall sub_1022d410(Mem256 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022eb60 size=0x82
+struct TStat { void sub_101fc950(int a, int b); };
+
+int sub_1043e780(const char *, const char *);
+extern void (*g_109f3628)(const char *fmt, ...);
+void sub_100087f1();
+void sub_10014489();
+void sub_1000b893();
+
+void sub_1022eb60(TStat *stat, const char *name)
+{
+    if (sub_1043e780(name, "BloodHealFunc") == 0) {
+        stat->sub_101fc950(3, (int)sub_100087f1);
+        return;
+    }
+    if (sub_1043e780(name, "ExperienceFunc") == 0) {
+        stat->sub_101fc950(3, (int)sub_10014489);
+        return;
+    }
+    if (sub_1043e780(name, "BloodPoolEmptyFunc") == 0) {
+        stat->sub_101fc950(3, (int)sub_1000b893);
+        return;
+    }
+    g_109f3628("Unable to read StatAction modifier: %s!\n", name);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230280 size=0x75
 struct H { int v; H(const H &); };
 struct R { void sub_10204270(); void sub_102042d0(int t, int v); };
