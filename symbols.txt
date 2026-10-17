@@ -1013,6 +1013,7 @@
 0x1000de63 func   ?sub_103bf580@CNPC_VTzimisce@@QAEPAXPAX@Z CNPC_VTzimisce::sub_103bf580
 0x1000de95 func   _item_g_bertrams_cd item_g_bertrams_cd
 0x1000de9a func   ?vfunc14@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc14
+0x1000df30 func   ?vfunc5@CFireSmoke@@UAEPAV1@I@Z CFireSmoke::vfunc5
 0x1000df49 func   ?sub_1030f660@@YGPADH@Z sub_1030f660
 0x1000df71 func   _npc_VMingXiaoTentacle npc_VMingXiaoTentacle
 0x1000dfa8 func   _item_k_netcafe_office_key item_k_netcafe_office_key
