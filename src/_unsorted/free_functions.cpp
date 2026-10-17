@@ -4614,6 +4614,37 @@ TList *TList::sub_101fd430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fdf40 size=0x69
+struct TScope {
+	const char *name;
+	void *a;
+	void *b;
+};
+extern int *g_109f3680;
+extern TScope *g_109f3620;
+extern char g_105a7d34[];
+extern char g_106b8540[];
+
+struct TInfo {
+	void *p;
+	bool sub_101fdf40();
+};
+
+bool TInfo::sub_101fdf40()
+{
+	g_109f3620[*g_109f3680].name = g_105a7d34;
+	g_109f3620[*g_109f3680].a = g_106b8540;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	(*g_109f3680)++;
+	if (p) {
+		(*g_109f3680)--;
+		return true;
+	}
+	(*g_109f3680)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202760 size=0xc
 extern int g_105a6fc8[];
 int sub_10202760(int index)
