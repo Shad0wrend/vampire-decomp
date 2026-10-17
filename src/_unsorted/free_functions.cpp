@@ -4732,6 +4732,40 @@ void sub_101cf620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf9b0 size=0x6f
+struct IInner {
+    virtual void v0();
+    virtual bool IsFlagged();
+    char pad[0x28];
+    int m_val2c;
+};
+struct IVar {
+    int pad0;
+    IInner *m_pInner;
+};
+struct IVarFinder {
+    virtual void v0(); virtual void v1();
+    virtual IVar *Find(const char *name);
+};
+extern IVarFinder *g_1070b234;
+
+bool sub_101cf9b0(int id)
+{
+    if (id != -1) {
+        if (id == 0xf7) {
+            IVar *v = g_1070b234->Find("violence_hblood");
+            if (v && !v->m_pInner->IsFlagged() && v->m_pInner->m_val2c != 0)
+                return true;
+        } else {
+            IVar *v = g_1070b234->Find("violence_ablood");
+            if (v && !v->m_pInner->IsFlagged() && v->m_pInner->m_val2c != 0)
+                return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cfd80 size=0x69
 struct TRandom {
 	virtual void v0();
