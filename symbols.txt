@@ -340,6 +340,7 @@
 0x10005d85 func   ?sub_10250910@@YIXPAUMem8@@HH@Z sub_10250910
 0x10005d9e func   ?sub_10083960@CUnknown10083960@@QAEXH@Z CUnknown10083960::sub_10083960
 0x10005dfd func   _prop_sign prop_sign
+0x10005e20 func   ?vfunc440@CNPC_VHuman@@QAEHH@Z CNPC_VHuman::vfunc440
 0x10005e89 func   ?sub_10136490@@YIXPADHH@Z sub_10136490
 0x10005e9d func   ?sub_100d1cc0@SFilter@@QAEPAU1@E@Z SFilter::sub_100d1cc0
 0x10005ea2 func   ?sub_1012cf90@@YGXH@Z sub_1012cf90
