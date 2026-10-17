@@ -8293,6 +8293,37 @@ void CUnknown1039aaf0::sub_1039aaf0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1320 size=0x6a
+#include "CUnknown103a1320.h"
+
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUnknown103a1320::sub_103a1320(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int requested = m_nAllocationCount + num;
+    int alloc = m_nAllocationCount;
+    if (alloc < requested) {
+        while (alloc < requested) {
+            if (alloc) {
+                if (m_nGrowSize)
+                    alloc += m_nGrowSize;
+                else
+                    alloc += alloc;
+            } else
+                alloc = 1;
+        }
+        m_nAllocationCount = alloc;
+    }
+    if (m_pMemory)
+        m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 0x28);
+    else
+        m_pMemory = g_109f3634(m_nAllocationCount * 0x28);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103adb00 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
