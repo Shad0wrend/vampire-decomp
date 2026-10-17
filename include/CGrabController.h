@@ -2,6 +2,12 @@
 // primary vtable 0x10514edc has 1 slot.
 #pragma once
 
+struct CGrabHandle
+{
+	int m_Index;
+	CGrabHandle() { m_Index = -1; }
+};
+
 class CGrabController
 {
 public:
@@ -20,7 +26,7 @@ public:
 	float m_f38;
 	float m_f3c;
 	char m_pad0040[0x10c];		// 0x0040 .. 0x014B
-	int m_h14c;
+	CGrabHandle m_h14c;
 	float m_v150[3];
 	char m_b15c;
 };
