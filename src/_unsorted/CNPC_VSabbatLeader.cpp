@@ -28,6 +28,36 @@ void TLeader::sub_103a6f70(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a7390 size=0x85
+#include "CNPC_VSabbatLeader.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct SHumanBase { int sub_10005e20(int schedule); };
+
+struct CScopeGuard {
+    CScopeGuard(const char *name)
+    {
+        g_109f3620[*g_109f3680].name = name;
+        g_109f3620[*g_109f3680].ent = g_106b8540;
+        g_109f3620[*g_109f3680].extra = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~CScopeGuard() { --*g_109f3680; }
+};
+
+int CNPC_VSabbatLeader::sub_103a7390(int schedule)
+{
+    CScopeGuard guard("CNPC_VSabbatLeader::TranslateSchedule");
+    if (schedule >= 0xe5 && schedule <= 0xe6)
+        return 0x15f;
+    return ((SHumanBase *)this)->sub_10005e20(schedule);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a7760 size=0x64
 #include "CNPC_VSabbatLeader.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
