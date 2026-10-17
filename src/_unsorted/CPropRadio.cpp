@@ -1,6 +1,33 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1022c0e0 size=0x7b
+#include "CPropRadio.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_105b49d0[];
+extern char g_105387dc[];
+extern char g_106b8540[];
+int CPropRadio::vfunc35(int a)
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_105b49d0;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    int v = *(int *)((char *)this + 0x730);
+    --*g_109f3680;
+    return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022c180 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

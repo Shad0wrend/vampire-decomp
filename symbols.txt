@@ -463,6 +463,7 @@
 0x10007acc func   ?sub_102e27b0@@YIMPAD@Z sub_102e27b0
 0x10007b0d func   ?sub_102f9990@@YAXXZ sub_102f9990
 0x10007b21 func   ?sub_100b17f0@@YIHPAD@Z sub_100b17f0
+0x10007b26 func   ?vfunc35@CPropRadio@@QAEHH@Z CPropRadio::vfunc35
 0x10007b3a func   ?sub_104110d0@@YG_NPAUHolder@@@Z sub_104110d0
 0x10007b71 func   _func_brush func_brush
 0x10007be9 func   _func_areaportalwindow func_areaportalwindow
