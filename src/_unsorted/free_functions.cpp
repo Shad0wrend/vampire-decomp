@@ -57,6 +57,33 @@ void CUtlMemory20::sub_1002ccc0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002e0a0 size=0x7c
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct IPhysObj {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6();
+    virtual void SetGameFlags(unsigned short flags);
+    virtual unsigned short GetGameFlags();
+};
+
+unsigned short sub_1002e0a0(IPhysObj *obj, unsigned short flags)
+{
+    g_109f3620[*g_109f3680].name = "PhysSetFlags";
+    g_109f3620[*g_109f3680].ent = g_106b8540;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    unsigned short r = obj->GetGameFlags();
+    r |= flags;
+    obj->SetGameFlags(r);
+    --*g_109f3680;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031bd0 size=0x72
 struct Sub { void *pEnt; unsigned int serial; };
 struct EntInfo { int pad; Sub s; };
