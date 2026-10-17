@@ -4501,6 +4501,31 @@ void CUnknown1013e7e0::sub_1013e800(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013eb90 size=0x7a
+extern "C" int _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+extern char g_1056eeec[];
+bool __stdcall sub_1013eb90(CBaseEntity *ent, unsigned int flags)
+{
+    if (flags != 0) {
+        if ((flags & 1) && *(int *)((char *)ent + 0xa8) != 0)
+            return false;
+        if ((flags & 2) && *(int *)((char *)ent + 0x2e0) != 0) {
+            if (ent->sub_100b3700() & 0x2000)
+                return false;
+        }
+        if (flags & 4) {
+            const char *s = *(const char **)((char *)ent + 0x11c);
+            if (!s)
+                s = g_106b8540;
+            if (!_strcmpi(s, g_1056eeec))
+                return false;
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fd20 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
