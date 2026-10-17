@@ -39,6 +39,29 @@ void CBaseEntity::vfunc168()
 int CBaseEntity::vfunc116() { return m_flags268 & 1; }
 // END FUNCTION
 
+// FUNCTION: 0x10039ff0 size=0x71
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CBaseEntity::vfunc238(int a, int b, int c, int d)
+{
+    const char *n;
+    if (this) {
+        n = m_name26c;
+        if (!n)
+            n = g_106b8540;
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].name = "CBaseEntity::PerformCustomPhysics";
+    g_109f3620[*g_109f3680].ent = n;
+    g_109f3620[*g_109f3680].extra = g_106b8540;
+    ++*g_109f3680;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009faf0 size=0x6f
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
