@@ -1221,6 +1221,42 @@ struct CUnknown10083960 { int p; int a; void sub_10083960(int v); };
 void CUnknown10083960::sub_10083960(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x100945e0 size=0x9f
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_10094 { const char *a; const char *b; const char *c; };
+extern ScopeTraceEntry_10094 *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+int CBaseAnimating::sub_100945e0(int index)
+{
+	const char *name;
+	if (this != 0)
+	{
+		name = *(const char **)((char *)this + 0x26c);
+		if (name == 0)
+			name = g_106b8540;
+	}
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::GetFlexDescFacs";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	char *hdr = (char *)sub_100952d0(-1);
+	if (hdr == 0)
+	{
+		(*g_109f3680)--;
+		return 0;
+	}
+	int *p = (int *)(hdr + *(int *)(hdr + 0x15c) + index * 4);
+	int r = *p + (int)p;
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098810 size=0xb
 CUnknown10098810 *CUnknown10098810::sub_10098810()
 {

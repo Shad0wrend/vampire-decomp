@@ -2,6 +2,7 @@
 0x10001041 func   ?sub_102ae7f0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102ae7f0
 0x10001078 func   ?sub_101be1d0@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101be1d0
 0x10001082 func   _trigger_brush trigger_brush
+0x10001122 func   ?sub_100945e0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_100945e0
 0x1000114a func   ?vfunc194@CBaseEntity@@QAEXXZ CBaseEntity::vfunc194
 0x1000121c func   ?vfunc17@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc17
 0x10001226 func   ?vfunc113@CBaseEntity@@UAEXXZ CBaseEntity::vfunc113
