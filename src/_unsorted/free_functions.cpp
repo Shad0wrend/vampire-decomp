@@ -4619,6 +4619,21 @@ void __fastcall sub_102696f0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026d0c0 size=0x43
+struct Helper { void sub_1000a8a8(void*); };
+// TARGET: sub_1026d0c0
+void __fastcall sub_1026d0c0(char* p)
+{
+	if (--*(int*)(p + 0x5bb0) <= 0) {
+		Helper* h = *(Helper**)(p + 0x5da4);
+		if (h)
+			h->sub_1000a8a8(p);
+		*(int*)(p + 0x5bb0) = 0;
+	}
+	*(unsigned int*)(p + 0x14bc) &= 0x7f7fffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026dc60 size=0xb
 void CUnknown1026dc60::sub_1026dc60()
 {
