@@ -1633,6 +1633,7 @@
 0x10015a0f func   ?sub_101c4820@@YAXPAUCUnknown101c4760@@@Z sub_101c4820
 0x10015a14 func   ?sub_10158d80@CUnknown10158d80@@QAEXXZ CUnknown10158d80::sub_10158d80
 0x10015a37 func   ?vfunc266@CWeaponThrown_Grenade_Frag@@UAEXXZ CWeaponThrown_Grenade_Frag::vfunc266
+0x10015a46 func   ?vfunc2@CTEBubbleTrail@@UAEPAV1@I@Z CTEBubbleTrail::vfunc2
 0x10015a91 func   ?vfunc403@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc403
 0x10015a9b func   _info_intermission info_intermission
 0x10015ae6 func   ?vfunc5@CLagCompensationManager@@UAEXXZ CLagCompensationManager::vfunc5
