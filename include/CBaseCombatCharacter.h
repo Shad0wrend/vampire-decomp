@@ -10,6 +10,7 @@ public:
 	void sub_103326b0(float amount);
 	void sub_10339560();
 	int sub_10337a60();	// "CBaseCombatCharacter::GetVHistor..." getter
+	int sub_10323210();	// "CBaseCombatCharacter::GetPresenceBenefit": returns the field at +0xe80
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc295(int a);
