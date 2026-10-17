@@ -1167,6 +1167,7 @@
 0x1000f588 func   ?sub_1003c450@@YIXPAPAX@Z sub_1003c450
 0x1000f5ab func   ?sub_100aa9a0@@YI_NPAVCBaseEntity@@HHHH@Z sub_100aa9a0
 0x1000f5e2 func   ?sub_10249960@@YIIPAPAD@Z sub_10249960
+0x1000f641 func   ?vfunc2@CTEShatterSurface@@UAEPAV1@I@Z CTEShatterSurface::vfunc2
 0x1000f682 func   ?vfunc63@CMultiplayRules@@UAEPBDH@Z CMultiplayRules::vfunc63
 0x1000f6af func   ?vfunc61@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc61
 0x1000f6c8 func   _npc_VWolfMorph npc_VWolfMorph
