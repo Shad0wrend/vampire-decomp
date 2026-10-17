@@ -879,6 +879,7 @@
 0x1000e81d func   _item_w_rem_m_700_bach item_w_rem_m_700_bach
 0x1000e827 func   ?sub_10267350@@YAXXZ sub_10267350
 0x1000e85e func   ?sub_1039a6e0@CUnknown1039a6e0@@QAEXH@Z CUnknown1039a6e0::sub_1039a6e0
+0x1000e868 func   ?sub_101f7b20@CUnknown101f7b20@@QAEPAHXZ CUnknown101f7b20::sub_101f7b20
 0x1000e8a9 func   _ambient_generic ambient_generic
 0x1000e8b8 func   ?sub_100732b0@CUnknown100732b0@@QAEXD@Z CUnknown100732b0::sub_100732b0
 0x1000e8c7 func   ?sub_101fd430@TList@@QAEPAU1@XZ TList::sub_101fd430

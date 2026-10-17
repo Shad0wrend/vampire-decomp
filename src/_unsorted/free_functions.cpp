@@ -5108,6 +5108,34 @@ bool CUnknown101f6c30::sub_101f6c30()
 bool __fastcall sub_101f74e0(int *p) { bool r = p[3] != -1; return r; }
 // END FUNCTION
 
+// FUNCTION: 0x101f7b20 size=0x6b
+#include "CUnknown101f7b20.h"
+
+extern void (*g_109f3628)(const char *, ...);
+
+int *CUnknown101f7b20::sub_101f7b20()
+{
+    int *p = (int *)operator new(m_nCount * 4 + 4);
+    if (p) {
+        int i = 0;
+        if (m_nCount > 0) {
+            do {
+                i++;
+                p[i - 1] = m_pData[i - 1];
+            } while (i < m_nCount);
+        }
+        delete m_pData;
+        int n = m_nCount + 1;
+        m_pData = p;
+        m_nCount = n;
+        int *q = &m_pData[m_nCount - 1];
+        return q;
+    }
+    g_109f3628("Unable to allocate memory for strings in TraitEffectInfoList!.\n");
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9550 size=0xa
 extern int g_1074e008;
 void sub_101f9550(int value)
