@@ -9172,6 +9172,38 @@ void CUtlMemory192::sub_1040b120(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104110d0 size=0x6d
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+#define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
+struct Info { char pad[0x70]; short m_type; };
+struct IReg { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual Info *v5(int id); };
+struct Item { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+    virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual int v19(); };
+struct Holder {
+    V100(a) V100(b)
+    V10(c) V10(d) V10(e)
+    virtual void m0(); virtual void m1(); virtual void m2();
+    virtual int v233(Item **out, int max);
+};
+extern IReg *g_10723944;
+bool __stdcall sub_104110d0(Holder *h)
+{
+    Item *items[64];
+    int n = h->v233(items, 64);
+    int i = 0;
+    while (i < n) {
+        int id = items[i]->v19();
+        short t = g_10723944->v5(id)->m_type;
+        if (t == 0x46 || t == 0x42 || t == 0x48)
+            return true;
+        i++;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104121d0 size=0xb
 extern int g_109d3080;
 void sub_104121d0()
