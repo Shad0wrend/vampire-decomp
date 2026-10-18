@@ -17409,6 +17409,26 @@ char sub_103a1590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1ef0 size=0x33
+void sub_100053cb();
+void sub_1000fbf5();
+extern int g_1064b1a8;
+extern char g_1064b1a4;
+extern int g_10936b68;
+
+char sub_103a1ef0()
+{
+    sub_100053cb();
+    if (g_1064b1a8 != g_10936b68) {
+        sub_1000fbf5();
+        g_1064b1a4 = 1;
+        g_1064b1a8 = g_10936b68;
+        return 1;
+    }
+    return g_1064b1a4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103adb00 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
