@@ -499,6 +499,7 @@
 0x1000622b func   _item_g_warr_ledger_2 item_g_warr_ledger_2
 0x10006249 func   ?sub_10349400@TOps@@QAE_NPAPAH@Z TOps::sub_10349400
 0x1000628a func   ?sub_102e2840@@YIXPAUCOwner@@@Z sub_102e2840
+0x10006299 func   ?sub_1042fde0@@YAII@Z sub_1042fde0
 0x1000636b func   ?sub_10032f00@UtlVec8@@QAEXHH@Z UtlVec8::sub_10032f00
 0x10006389 func   ?sub_10387800@@YADXZ sub_10387800
 0x1000638e func   ?sub_1022d1e0@@YAXPAUCBlock4k@@PBU1@@Z sub_1022d1e0
