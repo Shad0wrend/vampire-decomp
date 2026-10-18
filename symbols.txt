@@ -1634,6 +1634,7 @@
 0x10010ac8 func   ?sub_10168e60@@YA_NPAXPAUEntX@@@Z sub_10168e60
 0x10010ae6 func   ?vfunc38@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc38
 0x10010b09 func   ?vfunc116@CBaseEntity@@UAEHXZ CBaseEntity::vfunc116
+0x10010b5e func   ?vfunc0@CGameRules@@UAEPAV1@I@Z CGameRules::vfunc0
 0x10010b7c func   ?sub_10216c20@@YAPAHXZ sub_10216c20
 0x10010b95 func   ?sub_101c2b10@CUnknown101c2b10@@QAEXD@Z CUnknown101c2b10::sub_101c2b10
 0x10010c08 func   ?sub_10158570@@YAXHPAUIFieldSink@@PAUIRestoreSrc@@@Z sub_10158570

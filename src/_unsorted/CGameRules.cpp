@@ -19,3 +19,16 @@ const char *CGameRules::vfunc70(int index)
 	return g_106b8540;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101296a0 size=0x1e
+#include "CGameRules.h"
+
+// TARGET: CGameRules::vfunc0
+CGameRules *CGameRules::vfunc0(unsigned int flags)
+{
+	sub_1000d189();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
