@@ -1955,6 +1955,7 @@
 0x10011f86 func   ?vfunc616@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::vfunc616
 0x10011f95 func   ?sub_1020e080@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e080
 0x10011fa9 func   ?sub_101074c0@@YIXPAUMem32@@HH@Z sub_101074c0
+0x10011fc7 func   ?vfunc5@COccultPassiveDurations@@QAEPAV1@I@Z COccultPassiveDurations::vfunc5
 0x10011fd6 func   ?vfunc2@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc2
 0x10011ffe func   ?vfunc5@CWeaponMelee_Torch@@QAEPAV1@I@Z CWeaponMelee_Torch::vfunc5
 0x10012003 func   _math_colorblend math_colorblend
