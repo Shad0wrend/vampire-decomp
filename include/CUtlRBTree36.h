@@ -10,13 +10,6 @@ public:
 		unsigned short m_Right;
 		unsigned short m_Parent;
 		unsigned short m_Tag;
-		Links_t()
-		{
-			m_Tag = 1;
-			m_Left = 0xffff;
-			m_Right = 0xffff;
-			m_Parent = 0xffff;
-		}
 	};
 	struct Node_t
 	{
@@ -31,10 +24,12 @@ public:
 	unsigned short m_Root;
 	unsigned short m_NumElements;
 
+	static unsigned short InvalidIndex() { return 0xffff; }
+
 	const Links_t &Links(unsigned short i) const
 	{
-		static Links_t s_Sentinel;
-		return i != 0xffff ? m_pElements[i].m_Links : s_Sentinel;
+		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
 	}
 
 	unsigned short sub_10046930(const void *search) const;	// "CUtlRBTree::Find"
