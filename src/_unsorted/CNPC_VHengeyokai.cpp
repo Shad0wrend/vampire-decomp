@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1037ea60 size=0x1d
+#include "CNPC_VHengeyokai.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093b27c;
+extern B g_10936c74;
+int CNPC_VHengeyokai::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093b27c.sub_10012300(x));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10380f90 size=0x18
 #include "CNPC_VHengeyokai.h"
 
