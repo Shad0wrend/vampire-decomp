@@ -69,6 +69,7 @@
 0x10001848 func   ?vfunc5@CPhysThruster@@UAEPAV1@I@Z CPhysThruster::vfunc5
 0x10001861 func   _item_p_research_lg_dodge item_p_research_lg_dodge
 0x10001898 func   ?sub_100ba120@CUnknown100ba120@@QAEXD@Z CUnknown100ba120::sub_100ba120
+0x1000189d func   ?vfunc5@CScriptedSentence@@QAEPAV1@I@Z CScriptedSentence::vfunc5
 0x1000191a func   ?sub_100bc0f0@CUnknown100bc0f0@@QAEXPAUCInputData100bc0f0@@@Z CUnknown100bc0f0::sub_100bc0f0
 0x1000193d func   ?vfunc9@CEffectsServer@@UAEMXZ CEffectsServer::vfunc9
 0x10001956 func   ?vfunc520@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc520
