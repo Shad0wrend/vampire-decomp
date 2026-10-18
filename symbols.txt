@@ -481,6 +481,7 @@
 0x100053cb func   ?sub_10384150@@YADXZ sub_10384150
 0x100053d5 func   ?sub_10043230@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10043230
 0x100053f8 func   ?vfunc2@CTEArmorRicochet@@UAEPAV1@I@Z CTEArmorRicochet::vfunc2
+0x1000542a func   ?vfunc546@CNPC_VMingXiao@@QAEHH@Z CNPC_VMingXiao::vfunc546
 0x10005434 func   _item_g_hannahs_appt_book item_g_hannahs_appt_book
 0x10005439 func   ?sub_101bd960@@YIXPAPAX@Z sub_101bd960
 0x10005448 func   _item_g_idol_elephant item_g_idol_elephant
