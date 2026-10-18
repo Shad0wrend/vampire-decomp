@@ -334,6 +334,7 @@
 0x10004ed5 func   ?sub_104273f0@S104273f0@@QAEXH@Z S104273f0::sub_104273f0
 0x10004efd func   ?sub_1007e000@S1007e050@@QAEXH@Z S1007e050::sub_1007e000
 0x10004f2a func   ?sub_1042da80@CUnknown1042da80@@QAEXH@Z CUnknown1042da80::sub_1042da80
+0x10004fa7 func   ?sub_10059fe0@CTEMetalSparks@@QAEXHH@Z CTEMetalSparks::sub_10059fe0
 0x10004fde func   ?sub_1007f510@@YAXPAHPBH@Z sub_1007f510
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
 0x100050e2 func   _item_p_research_mg_brawl item_p_research_mg_brawl
