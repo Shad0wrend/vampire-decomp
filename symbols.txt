@@ -1262,6 +1262,7 @@
 0x1000ca8b func   _npc_VNosferatu npc_VNosferatu
 0x1000cab3 func   _events_player events_player
 0x1000caea func   ?sub_102c6e90@@YIXPAV?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@@Z sub_102c6e90
+0x1000cb21 func   ?vfunc5@CAI_Hint@@UAEPAV1@I@Z CAI_Hint::vfunc5
 0x1000cb26 func   ?sub_10033160@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10033160
 0x1000cb53 func   ?vfunc119@CAI_Hint@@UAEXXZ CAI_Hint::vfunc119
 0x1000cb5d func   ?vfunc427@CAI_BaseNPC@@UAEPAVCAI_Motor@@XZ CAI_BaseNPC::vfunc427
