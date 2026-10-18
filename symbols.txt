@@ -1796,6 +1796,7 @@
 0x1001519f func   ?vfunc249@CBaseAnimating@@QAEMXZ CBaseAnimating::vfunc249
 0x100151d6 func   _func_areaportal func_areaportal
 0x100151e0 func   _logic_case logic_case
+0x100151ea func   ?vfunc32@CPropKeypad@@QAEDH@Z CPropKeypad::vfunc32
 0x10015221 func   _npc_sabbat npc_sabbat
 0x10015226 func   ?sub_101578b0@CUnknown101578b0@@QAE_NXZ CUnknown101578b0::sub_101578b0
 0x10015280 func   ?sub_103be130@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be130

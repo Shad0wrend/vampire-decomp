@@ -11,3 +11,14 @@ const char *CPropKeypad::sub_1021dc20()
 	return g_106b8540;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1021ddc0 size=0x14
+#include "CPropKeypad.h"
+#include "CBaseTerminal.h"
+char CPropKeypad::vfunc32(int a)
+{
+	if (m_bFlag8b8)
+		return 0;
+	return ((CBaseTerminal *)this)->sub_102180c0(a);
+}
+// END FUNCTION
