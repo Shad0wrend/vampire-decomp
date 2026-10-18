@@ -88,3 +88,17 @@ bool CBasePlayer::sub_10168e10()
 	return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10174e20 size=0x21
+#include "CBasePlayer.h"
+
+struct V3 {
+	float x, y, z;
+};
+
+float *CBasePlayer::vfunc367(float *out)
+{
+	*(V3 *)out = *(V3 *)((char *)this + 0x206c);
+	return out;
+}
+// END FUNCTION
