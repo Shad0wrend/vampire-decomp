@@ -24,11 +24,13 @@ public:
 	int m_padC;
 	unsigned short m_Root;
 
+	static unsigned short InvalidIndex() { return (unsigned short)~0; }
+
 	const RBTreeFind16Links &Links(unsigned short i) const
 	{
-		static RBTreeFind16Links s_Sentinel = { 0xffff, 0xffff, 0xffff, 1 };
-		return (i != 0xffff) ? m_pElements[i].m_Links : s_Sentinel;
+		static RBTreeFind16Links s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+		return (i != InvalidIndex()) ? m_pElements[i].m_Links : s_Sentinel;
 	}
 
-	unsigned short sub_10046390(const void *search);	// Find: index of the node equal to search, or 0xffff
+	unsigned short sub_10046390(const void *search);	// Find: index of the node equal to search, or InvalidIndex()
 };
