@@ -16,6 +16,18 @@ CNPC_VAndreiBlood *CNPC_VAndreiBlood::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035c460 size=0x1d
+#include "CNPC_VAndreiBlood.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093a470;
+extern B g_10936c74;
+int CNPC_VAndreiBlood::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093a470.sub_10012300(x));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035cb90 size=0x6f
 #include "CNPC_VAndreiBlood.h"
 
