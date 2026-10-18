@@ -1339,6 +1339,7 @@
 0x1000e24b func   ?sub_100be040@CUnknown100be040@@QAEXH@Z CUnknown100be040::sub_100be040
 0x1000e250 func   _item_g_vampyr_apocrypha item_g_vampyr_apocrypha
 0x1000e27d func   ?sub_100acef0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100acef0
+0x1000e282 func   ?sub_10041c30@@YA_NPAH0@Z sub_10041c30
 0x1000e296 func   _func_physbox func_physbox
 0x1000e2b9 func   ?sub_10382b30@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::sub_10382b30
 0x1000e345 func   _env_steam env_steam

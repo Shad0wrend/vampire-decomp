@@ -945,6 +945,13 @@ bool sub_10041be0(int *a, int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10041c30 size=0x16
+bool sub_10041c30(int *a, int *b)
+{
+	return *a == *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041c80 size=0x80
 #include "UtlHash8.h"
 #include "CUtlVector20.h"
