@@ -750,6 +750,17 @@ trace21 *sub_1003e250(trace21 *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003e4b0 size=0x19
+#include "Vector.h"
+Vector &Vector::sub_1003e4b0(const Vector &v)
+{
+	x = v.x;
+	y = v.y;
+	z = v.z;
+	return *this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003eb50 size=0x1b3
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 struct MaxVel { virtual void v0(); virtual bool v1(); char pad[0x24]; float val; };
