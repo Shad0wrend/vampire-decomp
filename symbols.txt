@@ -1805,6 +1805,7 @@
 0x10011d1f func   ?sub_1030fc90@S1030fc90@@QAEPAXPAI@Z S1030fc90::sub_1030fc90
 0x10011d29 func   ?sub_100c6590@@YAHH@Z sub_100c6590
 0x10011d33 func   _prop_doorknob prop_doorknob
+0x10011d97 func   ?vfunc5@CWeaponRanged_Rifle_Remington@@QAEPAV1@I@Z CWeaponRanged_Rifle_Remington::vfunc5
 0x10011dce func   ?sub_10057660@CUnknown10057680@@QAEPAV1@XZ CUnknown10057680::sub_10057660
 0x10011e14 func   ?sub_1027d9b0@@YIXPAD@Z sub_1027d9b0
 0x10011e37 func   ?sub_100a9290@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9290
