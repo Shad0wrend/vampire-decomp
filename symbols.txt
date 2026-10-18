@@ -2156,6 +2156,7 @@
 0x10013d77 func   ?vfunc619@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::vfunc619
 0x10013d81 func   ?vfunc5@CNPC_ProneDialog@@QAEPAV1@I@Z CNPC_ProneDialog::vfunc5
 0x10013d86 func   ?sub_100abbf0@CBaseEntity@@QAEXHH@Z CBaseEntity::sub_100abbf0
+0x10013da9 func   ?vfunc5@CResearchBook_LG_STEALTH@@QAEPAV1@I@Z CResearchBook_LG_STEALTH::vfunc5
 0x10013db3 func   ?sub_102c6bd0@@YIXPAH@Z sub_102c6bd0
 0x10013dcc func   ?sub_102496a0@CUnknown102496a0@@QAEPAV1@XZ CUnknown102496a0::sub_102496a0
 0x10013dd1 func   ?sub_10065430@@YAXHH@Z sub_10065430
