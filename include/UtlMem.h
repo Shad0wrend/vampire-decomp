@@ -10,4 +10,5 @@ public:
 	int m_growSize;
 
 	void sub_10055ec0(int num);
+	void sub_1002cbd0();	// "CUtlMemory::Purge": frees the allocation unless the grow size is -1 (external memory)
 };
