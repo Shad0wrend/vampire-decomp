@@ -16,3 +16,14 @@ int CPointAngleSensor::vfunc126(int a)
 	return r;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1018d340 size=0x28
+#include "CPointAngleSensor.h"
+void __cdecl sub_10015311(void *p, int mode);
+int CPointAngleSensor::vfunc127(int a)
+{
+	int r = CBaseEntity::vfunc127(a);
+	sub_10015311((char *)this + 0x464, 3);
+	return r;
+}
+// END FUNCTION
