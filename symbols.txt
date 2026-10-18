@@ -1667,6 +1667,7 @@
 0x1001389a func   _info_node info_node
 0x100138b8 func   _player_weaponstrip player_weaponstrip
 0x10013917 func   _info_hint info_hint
+0x1001393a func   ?sub_1034b500@S@@QAEXH@Z S::sub_1034b500
 0x1001393f func   _info_null info_null
 0x10013994 func   ?vfunc104@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc104
 0x1001399e func   ?vfunc104@CCameraAnimated@@QAEXXZ CCameraAnimated::vfunc104
