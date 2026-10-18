@@ -34,7 +34,9 @@ public:
 	virtual void vfunc307(int value);
 	CBCW_V(308)
 	virtual bool vfunc309();	// true when gpGlobals->curtime is past the time at +0x894
-	CBCW_V10(31)
+	CBCW_V(310) CBCW_V(311) CBCW_V(312) CBCW_V(313) CBCW_V(314) CBCW_V(315)
+	virtual char vfunc316(int a);
+	CBCW_V(317) CBCW_V(318) CBCW_V(319)
 	CBCW_V10(32) CBCW_V(330) CBCW_V(331) CBCW_V(332) CBCW_V(333) CBCW_V(334) CBCW_V(335) CBCW_V(336)
 	virtual float vfunc337(int a, int b);
 	CBCW_V(338) CBCW_V(339)
