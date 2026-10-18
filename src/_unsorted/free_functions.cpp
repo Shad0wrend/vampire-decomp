@@ -13447,6 +13447,20 @@ char CAI_BaseNPCTroika::sub_102c1170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c2a30 size=0x21
+#include "CAI_BaseNPCTroika.h"
+#include "inputdata_t.h"
+void CAI_BaseNPCTroika::sub_102c2a30(inputdata_t *data)
+{
+	char v;
+	if (data->value.fieldType == 5)
+		v = *(char *)&data->value;
+	else
+		v = 0;
+	m_b63d8 = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c3690 size=0xe
 extern const char *g_105d1068[];
 
