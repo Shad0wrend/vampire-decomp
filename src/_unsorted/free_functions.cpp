@@ -1596,6 +1596,30 @@ S10046310 *S10046310::sub_10046310(int c, int count, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10046390 size=0x108
+#include "CUtlRBTreeFind16.h"
+
+inline const RBTreeFind16Links &CUtlRBTreeFind16::Links(unsigned short i) const
+{
+	static RBTreeFind16Links s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+	return (i != InvalidIndex()) ? m_pElements[i].m_Links : s_Sentinel;
+}
+
+unsigned short CUtlRBTreeFind16::sub_10046390(const void *search)
+{
+	unsigned short current = m_Root;
+	while (current != InvalidIndex()) {
+		if (m_LessFunc(search, m_pElements[current].m_Data))
+			current = Links(current).m_Left;
+		else if (m_LessFunc(m_pElements[current].m_Data, search))
+			current = Links(current).m_Right;
+		else
+			break;
+	}
+	return current;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10046930 size=0x109
 #include "CUtlRBTree36.h"
 
