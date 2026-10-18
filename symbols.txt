@@ -2291,6 +2291,7 @@
 0x10013890 func   ?sub_1015eee0@@YIXPAD@Z sub_1015eee0
 0x1001389a func   _info_node info_node
 0x100138b8 func   _player_weaponstrip player_weaponstrip
+0x100138e0 func   ?vfunc5@CTriggerImpact@@QAEPAV1@I@Z CTriggerImpact::vfunc5
 0x1001390d func   ?vfunc0@CChoreoQueueItem@@QAEPAV1@I@Z CChoreoQueueItem::vfunc0
 0x10013917 func   _info_hint info_hint
 0x1001393a func   ?sub_1034b500@S@@QAEXH@Z S::sub_1034b500
