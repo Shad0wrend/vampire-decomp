@@ -2085,6 +2085,7 @@
 0x10014ca9 func   ?sub_1013d900@@YA_NHHHPAH@Z sub_1013d900
 0x10014cf4 func   ?sub_102382f0@@YAXXZ sub_102382f0
 0x10014d17 func   ?sub_102a97d0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97d0
+0x10014d1c func   ?vfunc5@CBaseDMStart@@QAEPAV1@I@Z CBaseDMStart::vfunc5
 0x10014d26 func   _item_p_gargoyle_talisman item_p_gargoyle_talisman
 0x10014d2b func   ?sub_1035a870@S@@QAEXH@Z S::sub_1035a870
 0x10014d35 func   _item_a_hvy_cloth item_a_hvy_cloth
