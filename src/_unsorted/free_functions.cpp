@@ -14470,6 +14470,14 @@ SNode *sub_102d2840(int unused, const char *name)
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102d4320 size=0x11
+void sub_102d4320(int *dst, const int *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d4390 size=0x67
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
