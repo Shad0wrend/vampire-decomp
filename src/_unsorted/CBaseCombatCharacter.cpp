@@ -342,6 +342,26 @@ bool __fastcall sub_10336000(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033cb90 size=0x74
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::vfunc119()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::Kill";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	CBaseEntity::vfunc119();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033cc30 size=0x71
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

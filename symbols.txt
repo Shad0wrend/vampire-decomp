@@ -1738,6 +1738,7 @@
 0x100145ce func   _info_node_tzimisce_claw_right info_node_tzimisce_claw_right
 0x10014605 func   ?sub_102237c0@CUnknown102237c0@@QAEXH@Z CUnknown102237c0::sub_102237c0
 0x1001461e func   ?sub_1012c9c0@@YAPAUTEnt@@PAU1@@Z sub_1012c9c0
+0x10014628 func   ?vfunc119@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc119
 0x1001464b func   ?sub_10324500@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10324500
 0x10014650 func   ?vfunc2@CTEPlayerDecal@@UAEPAV1@I@Z CTEPlayerDecal::vfunc2
 0x1001469b func   ?vfunc275@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc275
