@@ -13337,6 +13337,33 @@ char sub_102b97a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102becb0 size=0x59
+#include "CUnknown102becb0.h"
+
+extern void (__cdecl *g_109f3624)(void *);
+
+void CUnknown102becb0::sub_102becb0()
+{
+	void (__cdecl *pFree)(void *) = g_109f3624;
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			pFree(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			pFree(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c1170 size=0x85
 #include "CAI_BaseNPCTroika.h"
 
