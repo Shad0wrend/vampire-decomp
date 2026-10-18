@@ -17612,6 +17612,26 @@ char sub_103b29a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b30c0 size=0x33
+void sub_100053cb();
+void sub_100077d4();
+extern int g_10651f4c;
+extern char g_10651f48;
+extern int g_10936b68;
+
+char sub_103b30c0()
+{
+    sub_100053cb();
+    if (g_10651f4c != g_10936b68) {
+        sub_100077d4();
+        g_10651f48 = 1;
+        g_10651f4c = g_10936b68;
+        return 1;
+    }
+    return g_10651f48;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be090 size=0xc
 bool CUnknown10381be0::sub_103be090()
 {
