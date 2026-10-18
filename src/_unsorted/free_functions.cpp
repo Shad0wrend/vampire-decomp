@@ -23731,6 +23731,21 @@ int sub_104281f0(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428280 size=0x6e
+int sub_10008ef9(int, int, char *, char *, int, int, int, int);
+int sub_1000b0b9(int, char *, char *);
+
+int sub_10428280(int a, int b, int c, int d, int e)
+{
+	char x[0x2000];
+	char y[0x2000];
+	if (a == 0)
+		return 0;
+	int r = sub_10008ef9(a, b, x, y, 0, c, d, e);
+	return sub_1000b0b9(r, x, y);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428eb0 size=0xd
 int sub_10428eb0(char *p)
 {
