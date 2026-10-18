@@ -7,6 +7,19 @@ struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 void CServerNetworkProperty::vfunc11() { ((CUnknown10146790*)m_unk10)->sub_10146790(); }
 // END FUNCTION
 
+// FUNCTION: 0x101ab520 size=0x1e
+#include "CServerNetworkProperty.h"
+
+// TARGET: CServerNetworkProperty::vfunc14
+CServerNetworkProperty *CServerNetworkProperty::vfunc14(unsigned int flags)
+{
+	sub_10004246();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab690 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CSlots
