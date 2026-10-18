@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10199f40 size=0x1e
+#include "PyServerSystem.h"
+
+// TARGET: PyServerSystem::vfunc8
+PyServerSystem *PyServerSystem::vfunc8(unsigned int flags)
+{
+	sub_1000cfbd();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019a3d0 size=0x82
 #include "PyServerSystem.h"
 
