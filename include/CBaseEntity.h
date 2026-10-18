@@ -51,6 +51,7 @@ public:
 	void vfunc180();
 	void vfunc194();
 	void vfunc195();
+	int vfunc196(int a);	// slot 196: forwards its argument to slot 193 and returns it
 	float *vfunc214();	// "CBaseEntity::GetSize": returns &field at +0x38c
 	float *vfunc220();	// "CBaseEntity::GetOrigin": returns &field at +0x41c
 	float *vfunc221();	// "CBaseEntity::GetAngles": returns &field at +0x428
