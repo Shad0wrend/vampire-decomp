@@ -139,6 +139,20 @@ bool CBaseCombatWeapon::vfunc303()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10257250 size=0x11
+#include "CBaseCombatWeapon.h"
+
+struct CWeaponOwner {
+	char pad[0x2444];
+	int field2444;
+};
+
+char CBaseCombatWeapon::vfunc304()
+{
+	return sub_102517b0()->field2444 != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102577c0 size=0x8
 // TARGET: CBaseCombatWeapon::vfunc288
 void CBaseCombatWeapon::vfunc288()
