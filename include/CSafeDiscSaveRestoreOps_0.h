@@ -1,0 +1,27 @@
+// CSafeDiscSaveRestoreOps_0: SafeDisc-obfuscated save/restore ops (primary vtable 0x10517180, 5 slots).
+#pragma once
+
+struct CSafeDiscWriter
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual void vfunc5();
+	virtual void vfunc6();
+	virtual void vfunc7();
+	virtual void vfunc8();
+	virtual void vfunc9();
+	virtual void vfunc10(int *pData, int count);	// slot 10 (+0x28): writes count dwords
+};
+
+class CSafeDiscSaveRestoreOps_0
+{
+public:
+	virtual void vfunc0(int **ppObject, CSafeDiscWriter *pSave);
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+};
