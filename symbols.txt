@@ -662,6 +662,7 @@
 0x10008328 func   _item_a_body_armor item_a_body_armor
 0x1000833c func   _bodyque bodyque
 0x10008346 func   ?sub_10264370@Mem38@@QAEXH@Z Mem38::sub_10264370
+0x10008382 func   ?vfunc103@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc103
 0x100083a0 func   ?sub_10041b40@@YA_NPAH0@Z sub_10041b40
 0x100083dc func   ?sub_100eb400@@YIXPAH@Z sub_100eb400
 0x1000841d func   ?sub_10348a60@@YI_NPAVCBaseEntity@@@Z sub_10348a60
