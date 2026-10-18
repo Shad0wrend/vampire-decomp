@@ -1,11 +1,13 @@
-// CTEMetalSparks: metal sparks temp entity. Declared flat (bases not recovered).
+// CTEMetalSparks: metal sparks temp entity (derived from the CBaseTempEntity head at +0x0).
 #pragma once
 
-class CTEMetalSparks
+#include "CBaseTempEntity.h"
+
+class CTEMetalSparks : public CBaseTempEntityHead
 {
 public:
-	virtual void vfunc0();
-	virtual void vfunc1();
+	CTEMetalSparks(const char *name);	// 0x10059e10
+
 	virtual CTEMetalSparks *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	void sub_1000e340();	// destructor body
