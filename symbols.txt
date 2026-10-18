@@ -478,6 +478,7 @@
 0x10006249 func   ?sub_10349400@TOps@@QAE_NPAPAH@Z TOps::sub_10349400
 0x1000628a func   ?sub_102e2840@@YIXPAUCOwner@@@Z sub_102e2840
 0x1000636b func   ?sub_10032f00@UtlVec8@@QAEXHH@Z UtlVec8::sub_10032f00
+0x10006389 func   ?sub_10387800@@YADXZ sub_10387800
 0x1000642e func   ?vfunc9@CCollisionEvent@@QAEXPAX0@Z CCollisionEvent::vfunc9
 0x10006438 func   ?sub_102a9ea0@CUnknown102a9ea0@@QAEHH@Z CUnknown102a9ea0::sub_102a9ea0
 0x1000646f func   ?sub_10185a30@CUnknown10185a30@@QAEXH@Z CUnknown10185a30::sub_10185a30
