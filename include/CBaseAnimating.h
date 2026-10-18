@@ -19,6 +19,7 @@ public:
 	void sub_100926e0(int bone, int b, int c);	// "CBaseAnimating::GetBonePosition0"
 	void sub_10092610(int a, int b, int c);	// "CBaseAnimating::GetBonePosition01": LookupBone(a), then GetBonePosition0(bone, b, c)
 	void sub_10093cb0(int a);	// "CBaseAnimating::GetBodygroupName": scope trace, then a studio helper on GetModelPtr(-1)
+	void sub_10090bc0(unsigned int flags);	// "CBaseAnimating::AddEffectsForNextSequence": scope trace, ors flags into the dword at +0x5b0
 
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
