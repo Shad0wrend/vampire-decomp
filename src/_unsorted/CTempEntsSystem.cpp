@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100582f0 size=0x64
+#include "CTempEntsSystem.h"
+
+void sub_1000a99d(CUnknown1019d130 *filter, int a, int b, int c, int d);
+
+void CTempEntsSystem::vfunc2(CUnknown1019d130 *filter, int a, int b, int c, int d)
+{
+	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+		if (!filter->sub_1000aa60())
+			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+		if (!filter->vfunc2())
+			return;
+	}
+	sub_1000a99d(filter, a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100584a0 size=0x5f
 #include "CTempEntsSystem.h"
 
