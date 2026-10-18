@@ -1123,6 +1123,7 @@
 0x1000c482 func   ?sub_1042ff00@@YAXXZ sub_1042ff00
 0x1000c4be func   _npc_payphone npc_payphone
 0x1000c568 func   ?sub_103eee60@CUnknown103eee60@@QAEXXZ CUnknown103eee60::sub_103eee60
+0x1000c5b3 func   ?sub_1021e320@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e320
 0x1000c5b8 func   ?sub_10107550@Mem400@@QAEXH@Z Mem400::sub_10107550
 0x1000c630 func   _item_g_drugs_morphine_bottle item_g_drugs_morphine_bottle
 0x1000c63f func   ??1StatDefault3@@QAE@XZ StatDefault3::~StatDefault3

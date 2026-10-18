@@ -11854,6 +11854,19 @@ void sub_1021e270(int *dst, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021e320 size=0x18
+struct CBlock4k
+{
+	int m_data[0x35];
+};
+
+void sub_1021e320(CBlock4k *dst, const CBlock4k *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e350 size=0x6d
 struct Elem { char data[0x2b4]; };
 struct Vec { Elem *m_pMemory; int pad[2]; int m_Size; };
