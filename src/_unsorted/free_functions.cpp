@@ -10411,6 +10411,24 @@ void TSeg::sub_101f4570(int target, int *outIndex, int *outOffset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f4f50 size=0x1d
+struct S9 {
+	int a, b, c, d, e, f, g, h, i;
+	S9 *sub_101f4f50();
+};
+S9 *S9::sub_101f4f50()
+{
+	a = 1;
+	b = 0;
+	e = 0;
+	f = 0;
+	g = 0;
+	h = 0;
+	i = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5d60 size=0xd
 extern char g_106b8540[];
 // TARGET: CUnknown101f5d60::sub_101f5d60
