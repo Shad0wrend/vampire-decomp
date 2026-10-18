@@ -488,6 +488,7 @@
 0x10005cef func   ?sub_10185910@@YIXPAUMem16@@HH@Z sub_10185910
 0x10005cfe func   _func_rot_button func_rot_button
 0x10005d21 func   ?vfunc63@CSingleplayRules@@UAEPBDH@Z CSingleplayRules::vfunc63
+0x10005d26 func   ?vfunc5@CRagGib@@QAEPAV1@I@Z CRagGib::vfunc5
 0x10005d85 func   ?sub_10250910@@YIXPAUMem8@@HH@Z sub_10250910
 0x10005d9e func   ?sub_10083960@CUnknown10083960@@QAEXH@Z CUnknown10083960::sub_10083960
 0x10005dc1 func   ?sub_10264300@@YAXPAUCBlock4k@@PBU1@@Z sub_10264300
