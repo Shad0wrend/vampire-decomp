@@ -11880,6 +11880,19 @@ void __fastcall sub_1021e350(Vec *v, int, int index, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021e3e0 size=0x18
+struct CBlock4k
+{
+	int m_data[0xad];
+};
+
+void sub_1021e3e0(CBlock4k *dst, const CBlock4k *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e410 size=0x8
 void __fastcall sub_1021e410(int *p)
 {
