@@ -11727,6 +11727,25 @@ void __fastcall sub_10227230(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227320 size=0x3a
+#include "inputdata_t.h"
+extern char g_106b8540[];
+struct S {
+	void sub_100096b0(const char *s);
+	void sub_10227320(inputdata_t *data);
+};
+static inline const char *String(variant_t *v)
+{
+	if (v->fieldType == 2)
+		return v->iszValue ? v->iszValue : g_106b8540;
+	return v->sub_10008805();
+}
+void S::sub_10227320(inputdata_t *data)
+{
+	sub_100096b0(String(&data->value));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102273b0 size=0x18
 #include "CUnknown102273b0.h"
 char *sub_101cd9e0(int index);
