@@ -1082,6 +1082,7 @@
 0x1000d337 func   ?sub_1007ed90@CUnknown1007ed90@@QAEXD@Z CUnknown1007ed90::sub_1007ed90
 0x1000d34b func   ?sub_1009b5a0@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b5a0
 0x1000d364 func   ?sub_102db630@@YAXD@Z sub_102db630
+0x1000d396 func   ??0CHL2_Player@@QAE@XZ CHL2_Player::CHL2_Player
 0x1000d3b4 func   _item_g_edane_report item_g_edane_report
 0x1000d3c3 func   ?vfunc2@CTEDynamicLight@@UAEPAV1@I@Z CTEDynamicLight::vfunc2
 0x1000d3eb func   _scripted_sentence scripted_sentence
