@@ -5144,6 +5144,19 @@ int Queue::sub_100cfd00(SaveX *save)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d30a0 size=0x1c
+#include "CUnknown100d30a0.h"
+
+CUnknown100d30a0Holder *sub_10008d8c();
+
+void sub_100d30a0()
+{
+	CUnknown100d30a0Holder *holder = sub_10008d8c();
+	if (holder && holder->m_pObject)
+		holder->m_pObject->slot456();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6820 size=0x51
 #define V(n) virtual void v##n();
 #define V10(n) V(n##0) V(n##1) V(n##2) V(n##3) V(n##4) V(n##5) V(n##6) V(n##7) V(n##8) V(n##9)
