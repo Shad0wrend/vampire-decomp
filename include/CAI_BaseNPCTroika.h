@@ -3,6 +3,8 @@
 
 #include "CAI_BaseNPC.h"
 
+struct variant_t;
+
 class CAI_BaseNPCTroika : public CAI_BaseNPC
 {
 public:
@@ -18,7 +20,10 @@ public:
 	char sub_102c1170();	// true when one of two flag bytes (+0x64c0, +0x64ec) is set or one of two entity handles (+0xfe8, +0x6554) is valid
 	void sub_10015839(int a);	// base-class slot 616 implementation, called directly
 	void sub_102a97a0(unsigned int flags);	// ORs flags into the dword at +0x14b8
+	void sub_102c2a30(const variant_t *value);	// stores the variant's byte (0 unless it is type 5) at +0x63d8
 
-	char m_pad0004[0x65b8];
+	char m_pad0004[0x63d4];
+	char m_b63d8;
+	char m_pad63d9[0x65bc - 0x63d9];
 	float m_f65bc;
 };
