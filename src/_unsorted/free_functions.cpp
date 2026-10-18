@@ -18961,6 +18961,45 @@ void __fastcall sub_10379e80(E *e, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037a740 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1063a9f0[2];
+
+int *sub_1037a740()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bSpawnBurning", {0x6665, 0}, 1, 6, "on_fire" },
+        { 5, "m_bSpawnDisturbed", {0x6664, 0}, 1, 6, "disturbed" },
+        { 5, "m_bWasDisturbed", {0x6666, 0}, 1, 2 },
+        { 5, "m_bUnawareExited", {0x6667, 0}, 1, 2 },
+        { 4, "m_nUnawareType", {0x6668, 0}, 1, 2 },
+        { 15, "m_flNextTouchBurnTime", {0x666c, 0}, 1, 2 },
+        { 12, "m_hBurningParticle", {0x6670, 0}, 1, 2 },
+        { 10, "m_OnDisturbed", {0x6674, 0}, 1, 0x16, "OnDisturbed", g_1055dc70 },
+        { 10, "m_OnDisturbedByPlayer", {0x668c, 0}, 1, 0x16, "OnDisturbedByPlayer", g_1055dc70 },
+    };
+    g_1063a9f0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1063a9f0[0] = (int)&dataDesc[1];
+    return g_1063a9f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037a8a0 size=0x33
 void sub_1000ef84();
 void sub_100097a0();
