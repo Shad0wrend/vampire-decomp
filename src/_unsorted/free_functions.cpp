@@ -12925,6 +12925,14 @@ const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c63b0 size=0x47
+#include "CUnknown102c63b0.h"
+bool CUnknown102c63b0::sub_102c63b0(void *pEntity) const
+{
+	return Get() == pEntity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6590 size=0xc
 int *CUnknown102c6590::sub_102c6590(int index)
 {
