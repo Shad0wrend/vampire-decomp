@@ -9,9 +9,14 @@ public:
 	virtual void vfunc416(char value);
 
 	void vfunc497();
+	void vfunc616();	// slot 616: base call with 0x30, then stamps curtime + 15 at +0x65bc
 
 	char sub_102a9ec0(int index);
 	const char *sub_102c3690(int task);
 	const char *sub_102c36b0(int schedule);
 	char sub_102c1170();	// true when one of two flag bytes (+0x64c0, +0x64ec) is set or one of two entity handles (+0xfe8, +0x6554) is valid
+	void sub_10015839(int a);	// base-class slot 616 implementation, called directly
+
+	char m_pad0004[0x65b8];
+	float m_f65bc;
 };
