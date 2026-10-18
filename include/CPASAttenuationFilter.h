@@ -62,7 +62,7 @@ class CPASAttenuationFilter : public IRecipientFilter
 {
 public:
 	CPASAttenuationFilter();
-	virtual ~CPASAttenuationFilter();
+	virtual ~CPASAttenuationFilter() {}
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
