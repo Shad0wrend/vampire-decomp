@@ -2108,6 +2108,7 @@
 0x10014a92 func   _info_node_hint info_node_hint
 0x10014ace func   ?sub_10230280@@YAXPAUR@@H@Z sub_10230280
 0x10014add func   ?sub_1011a580@@YAXPAUSHandleHolder@@@Z sub_1011a580
+0x10014aec func   ?vfunc5@CWeaponRanged_MingXiao_Spit@@QAEPAV1@I@Z CWeaponRanged_MingXiao_Spit::vfunc5
 0x10014bcd func   ?vfunc228@CBaseEntity@@QAEXHH@Z CBaseEntity::vfunc228
 0x10014be1 func   ?sub_100464f0@S100464f0@@QAEPAU1@HHH@Z S100464f0::sub_100464f0
 0x10014bf5 func   ?sub_10184380@@YIXPAH@Z sub_10184380
