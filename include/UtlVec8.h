@@ -20,4 +20,5 @@ public:
 
 	void sub_10032f00(int elem, int num);	// ShiftElementsRight
 	int sub_10042200(int elem, const UtlVec8Elem *src);	// "CUtlVector::InsertBefore": grows by one, shifts the tail up, stores *src
+	void GrowVector(int num);
 };
