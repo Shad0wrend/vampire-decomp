@@ -615,6 +615,7 @@
 0x1000785b func   ?sub_1025d820@CUnknown1025d820@@QAEPAU1@XZ CUnknown1025d820::sub_1025d820
 0x10007865 func   _item_g_ring03 item_g_ring03
 0x10007879 func   ?vfunc11@CAI_Motor@@UAEMH@Z CAI_Motor::vfunc11
+0x10007897 func   ?sub_103c49d0@@YADXZ sub_103c49d0
 0x100078a6 func   _vgui_screen vgui_screen
 0x10007900 func   ?sub_102885d0@@YIXPAX@Z sub_102885d0
 0x10007969 func   ?vfunc103@CItemContainerOneItemFiltered@@UAEXXZ CItemContainerOneItemFiltered::vfunc103
