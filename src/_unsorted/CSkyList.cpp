@@ -8,3 +8,16 @@ void sub_1018a450(void)
 	g_1072a498 = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1018a4b0 size=0x1e
+#include "CSkyList.h"
+
+// TARGET: CSkyList::vfunc8
+CSkyList *CSkyList::vfunc8(unsigned int flags)
+{
+	sub_1000cfbd();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
