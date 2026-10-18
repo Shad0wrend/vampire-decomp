@@ -1429,6 +1429,32 @@ void PQ::sub_10046050(const Elem &src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10046310 size=0x51
+extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
+
+struct S10046310 {
+	int m_a; void *m_pMemory; int m_count; int m_c;
+	unsigned short m_h0, m_h1, m_h2, m_h3;
+	// TARGET: S10046310::sub_10046310
+	S10046310 *sub_10046310(int c, int count, int a);
+};
+
+S10046310 *S10046310::sub_10046310(int c, int count, int a)
+{
+	m_a = a;
+	m_pMemory = 0;
+	m_count = count;
+	m_c = c;
+	if (count)
+		m_pMemory = Plat_Alloc(count << 4);
+	m_h1 = 0;
+	m_h0 = 0xffff;
+	m_h2 = 0xffff;
+	m_h3 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10049da0 size=0x76
 struct Elem { char data[0x38]; };
 struct Mem {
