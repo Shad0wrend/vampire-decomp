@@ -42,6 +42,15 @@ bool CSave::vfunc10(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fad0 size=0x14
+#include "CSave.h"
+
+bool CSave::vfunc14(const void *pData, int nBytes)
+{
+	return sub_1000643d(pData, nBytes * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fc20 size=0x1a
 #include "CSave.h"
 
