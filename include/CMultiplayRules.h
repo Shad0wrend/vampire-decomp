@@ -9,6 +9,7 @@ public:
 	virtual float vfunc30(int a);
 	virtual float vfunc38(int a);
 	virtual int vfunc43(int a, int b);
+	virtual Vector vfunc51(CBaseEntity *pEnt);
 	virtual int vfunc61(int index);
 	virtual int vfunc62(int index);
 	virtual const char *vfunc63(int index);
