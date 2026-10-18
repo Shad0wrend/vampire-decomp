@@ -1509,6 +1509,7 @@
 0x1000d990 func   ?sub_1026dc60@CUnknown1026dc60@@QAEXXZ CUnknown1026dc60::sub_1026dc60
 0x1000d9d6 func   _npc_VPlaceholder npc_VPlaceholder
 0x1000d9e5 func   _item_g_lilly_diary item_g_lilly_diary
+0x1000d9ef func   ?vfunc546@CNPC_VMoleman@@QAEHH@Z CNPC_VMoleman::vfunc546
 0x1000da03 func   _item_w_steyr_aug item_w_steyr_aug
 0x1000da21 func   ?sub_1024b2d0@CUnknown1024b2d0@@QAEPAV1@HHD@Z CUnknown1024b2d0::sub_1024b2d0
 0x1000da58 func   _aiscripted_schedule aiscripted_schedule
