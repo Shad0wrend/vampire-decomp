@@ -1869,6 +1869,7 @@
 0x1001064a func   ?sub_101857f0@UtlMem8@@QAEXH@Z UtlMem8::sub_101857f0
 0x1001064f func   ?sub_100df7b0@@YA_NXZ sub_100df7b0
 0x100106ae func   ?sub_101ed9e0@CUnknown101ed9e0@@QAEPAV1@H@Z CUnknown101ed9e0::sub_101ed9e0
+0x1001072b func   ?vfunc4@CTEBloodSprite@@QAEXHH@Z CTEBloodSprite::vfunc4
 0x1001075d func   ?vfunc6@CEQ_SaveRestoreBlockHandler@@UAEXPAVIRestoreRead@@@Z CEQ_SaveRestoreBlockHandler::vfunc6
 0x100107b7 func   _info_node_crosswalk info_node_crosswalk
 0x100107df func   ?sub_100bd540@bf_write@@QAEXI@Z bf_write::sub_100bd540

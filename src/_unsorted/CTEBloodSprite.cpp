@@ -21,3 +21,15 @@ CTEBloodSprite *CTEBloodSprite::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005db00 size=0x39
+#include "CTEBloodSprite.h"
+#include "IVEngineServerFull.h"
+
+extern IVEngineServerFull *g_1070b22c;
+
+void CTEBloodSprite::vfunc4(int a, int b)
+{
+	g_1070b22c->PlaybackTempEntity(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
