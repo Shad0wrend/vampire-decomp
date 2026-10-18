@@ -7,7 +7,9 @@ struct UtlHash8Bucket
 	int m_allocationCount;
 	int m_growSize;
 	int m_Size;
-	int m_pad;
+	char *m_pad;
+
+	void PurgeMemory();	// frees the allocation unless the grow size is -1 (external memory)
 };
 
 class UtlHash8
@@ -25,4 +27,5 @@ public:
 
 	unsigned int sub_10041d20(void *pData);	// Find: (bucket << 16) | index, or -1
 	UtlHash8 *sub_10041c80(int nBuckets, int growSize, int initSize, bool (__cdecl *pCompare)(void *, void *), unsigned int (__cdecl *pKey)(void *));	// constructor
+	void sub_10042580();	// destroys every bucket (last to first) and empties the bucket vector
 };
