@@ -1218,6 +1218,7 @@
 0x1000db70 func   ?sub_104121d0@@YAXXZ sub_104121d0
 0x1000db89 func   ?sub_100aa720@@YAHH@Z sub_100aa720
 0x1000dbbb func   ?sub_102c3690@CAI_BaseNPCTroika@@QAEPBDH@Z CAI_BaseNPCTroika::sub_102c3690
+0x1000dbc0 func   ?sub_103a3ba0@@YADXZ sub_103a3ba0
 0x1000dbc5 func   _trigger_proximity trigger_proximity
 0x1000dbca func   ?sub_10102410@@YAPAHXZ sub_10102410
 0x1000dc42 func   ?sub_101b6650@@YA_NPAG0@Z sub_101b6650
