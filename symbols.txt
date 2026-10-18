@@ -2286,6 +2286,7 @@
 0x1001427c func   ?sub_1012ca50@@YA_NPAUEnt@@0@Z sub_1012ca50
 0x1001428b func   ?vfunc316@CBaseCombatWeapon@@UAEDH@Z CBaseCombatWeapon::vfunc316
 0x100142cc func   ?vfunc1@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc1
+0x100142f9 func   ?vfunc546@CNPC_VLasombra@@QAEHH@Z CNPC_VLasombra::vfunc546
 0x10014385 func   ?vfunc5@CWeaponIThrown@@QAEPAV1@I@Z CWeaponIThrown::vfunc5
 0x1001438a func   _item_w_fireaxe item_w_fireaxe
 0x100143ad func   _func_button func_button

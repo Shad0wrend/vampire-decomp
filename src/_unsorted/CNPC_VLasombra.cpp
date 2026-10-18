@@ -15,3 +15,15 @@ CNPC_VLasombra *CNPC_VLasombra::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10388f80 size=0x1d
+#include "CNPC_VLasombra.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093b680;
+extern B g_10936c74;
+int CNPC_VLasombra::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093b680.sub_10012300(x));
+}
+// END FUNCTION
