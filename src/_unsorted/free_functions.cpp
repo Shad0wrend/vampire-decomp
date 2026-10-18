@@ -6075,6 +6075,26 @@ void S100fb850::sub_100fb850(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fb8a0 size=0x31
+struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
+
+struct S100fb8a0 {
+	void sub_1000348b(float f);
+	// TARGET: S100fb8a0::sub_100fb8a0
+	void sub_100fb8a0(inputdata_t &in);
+};
+
+void S100fb8a0::sub_100fb8a0(inputdata_t &in)
+{
+	float f;
+	if (in.m_fieldType == 1)
+		f = in.m_fl;
+	else
+		f = 0.0f;
+	sub_1000348b(f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbc20 size=0x19
 #include "CBaseEntity.h"
 

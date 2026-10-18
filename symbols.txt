@@ -307,6 +307,7 @@
 0x100042af func   ?sub_10079450@Obj@@QAEPAU1@H@Z Obj::sub_10079450
 0x100042d2 func   ?vfunc538@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc538
 0x100042e1 func   ?vfunc2@CTETParticle@@UAEPAV1@I@Z CTETParticle::vfunc2
+0x100042eb func   ?sub_100fb8a0@S100fb8a0@@QAEXAAUinputdata_t@@@Z S100fb8a0::sub_100fb8a0
 0x100042f5 func   ?sub_1021e580@CUnknown1021e580@@QAEXH@Z CUnknown1021e580::sub_1021e580
 0x10004313 func   ?sub_10078b70@@YIXPAH@Z sub_10078b70
 0x10004318 func   ?sub_101cc7f0@@YIXPAPAX@Z sub_101cc7f0
