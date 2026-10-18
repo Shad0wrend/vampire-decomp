@@ -1727,6 +1727,7 @@
 0x1000f6af func   ?vfunc61@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc61
 0x1000f6c8 func   _npc_VWolfMorph npc_VWolfMorph
 0x1000f6d2 func   ?vfunc5@CItemGWerewolfBlood@@QAEPAV1@I@Z CItemGWerewolfBlood::vfunc5
+0x1000f763 func   ?vfunc5@CBaseViewModel@@QAEPAV1@I@Z CBaseViewModel::vfunc5
 0x1000f77c func   ?vfunc5@CItemMMoneyEnvelope@@QAEPAV1@I@Z CItemMMoneyEnvelope::vfunc5
 0x1000f7f4 func   _item_i_written item_i_written
 0x1000f7f9 func   ?sub_103d0780@@YIHPAD@Z sub_103d0780
