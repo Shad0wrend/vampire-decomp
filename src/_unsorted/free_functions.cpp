@@ -2638,6 +2638,21 @@ void CUnknown10079b70::sub_10079b70(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a270 size=0x1a
+struct S1007a270 {
+	int *m_pMemory; int m_allocationCount; int m_growSize; int m_size;
+	// TARGET: S1007a270::sub_1007a270
+	int sub_1007a270(int index);
+};
+
+int S1007a270::sub_1007a270(int index)
+{
+	if (index >= 0 && index < m_size)
+		return m_pMemory[index];
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfc0 size=0xa
 struct CUnknown1007dfc0 { char p[0x78]; int a; void sub_1007dfc0(int v); };
 // TARGET: CUnknown1007dfc0::sub_1007dfc0
