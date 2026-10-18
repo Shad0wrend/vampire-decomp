@@ -306,6 +306,7 @@
 0x10003c65 func   ?sub_1023f060@@YAXPAI@Z sub_1023f060
 0x10003c83 func   _item_k_edane_key item_k_edane_key
 0x10003cb0 func   ?vfunc2@CTETParticleHUD@@UAEPAV1@I@Z CTETParticleHUD::vfunc2
+0x10003cba func   ?vfunc5@CWeaponMelee_HengeyokaiFist@@QAEPAV1@I@Z CWeaponMelee_HengeyokaiFist::vfunc5
 0x10003cc9 func   ?sub_102d6180@@YAMH@Z sub_102d6180
 0x10003cdd func   ?sub_10103c80@@YAPAHXZ sub_10103c80
 0x10003d0f func   ?sub_100db3f0@@YAXXZ sub_100db3f0
