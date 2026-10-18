@@ -30,6 +30,21 @@ void CVampireProjectile::vfunc134()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee3a0 size=0x1e
+#include "CVampireProjectile.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CVampireProjectile::vfunc5
+CVampireProjectile *CVampireProjectile::vfunc5(unsigned int flags)
+{
+	sub_100085d5();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee750 size=0xb
 struct S168 { char pad[0x168]; int v; };
 bool CVampireProjectile::vfunc265()
