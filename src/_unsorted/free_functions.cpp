@@ -1462,6 +1462,18 @@ bool sub_10046b10(const unsigned int *a, const unsigned int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10047160 size=0x17
+struct E8 { int a, b; };
+
+void sub_10047160(E8 *dst, const E8 *src)
+{
+	if (dst) {
+		dst->a = src->a;
+		dst->b = src->b;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10049da0 size=0x76
 struct Elem { char data[0x38]; };
 struct Mem {
