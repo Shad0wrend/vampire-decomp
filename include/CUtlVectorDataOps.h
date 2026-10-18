@@ -12,7 +12,7 @@ public:
 	CUtlVectorDataOps() {}
 	virtual ~CUtlVectorDataOps() {}
 	virtual void vfunc1(void *fieldInfo, void *pRestore);	// Restore(SaveRestoreFieldInfo_t &, IRestore *)
-	virtual void vfunc2();
+	virtual bool vfunc2(void *pFieldData);	// IsEmpty: the size (+0xc) of the vector the field points to is zero
 	virtual int vfunc3(void *pFieldData);	// MakeEmpty: zeroes the size (+0xc) of the vector the field points to
 	virtual void vfunc4();
 };
