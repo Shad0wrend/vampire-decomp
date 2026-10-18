@@ -221,6 +221,7 @@
 0x100031f2 func   _func_dustcloud func_dustcloud
 0x10003215 func   _func_dustmotes func_dustmotes
 0x10003292 func   ?vfunc220@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc220
+0x100032f6 func   ?vfunc5@CEntityFlame@@QAEPAV1@I@Z CEntityFlame::vfunc5
 0x10003305 func   ?sub_1030fe50@CUnknown1030fe50@@QAEXXZ CUnknown1030fe50::sub_1030fe50
 0x10003328 func   _gib gib
 0x1000332d func   _item_g_junkyard_businesscard item_g_junkyard_businesscard
