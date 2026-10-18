@@ -19732,6 +19732,14 @@ char CUnknown1042d9a0::sub_1042daa0(CUnknown1042d9a0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042fd40 size=0x2e
+#pragma optimize("", off)
+unsigned int sub_1042fd40(unsigned int x)
+{
+	return x ^ ((((x & 0x4df36a35) ^ 0x7b05c52d) - 0x40a5ea2b ^ 0x25170cd8) & 0xb20c95ca) ^ 0x4d832fa5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10436900 size=0xd
 #pragma optimize("s", on)
 int sub_10436900(char **ap)
