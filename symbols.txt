@@ -279,6 +279,7 @@
 0x10003436 func   ?vfunc5@CWeaponMelee_GargoyleFist@@QAEPAV1@I@Z CWeaponMelee_GargoyleFist::vfunc5
 0x10003440 func   ?sub_102056d0@CUnknown102056d0@@QAEPAU1@XZ CUnknown102056d0::sub_102056d0
 0x10003463 func   ?sub_100b6510@@YAXPBDPAD@Z sub_100b6510
+0x100034ae func   ?vfunc499@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc499
 0x100034db func   ?sub_10081e90@@YIXPAUCSlots@@HH@Z sub_10081e90
 0x10003503 func   _scripted_target scripted_target
 0x10003512 func   ?sub_10218080@@YIXPADHH@Z sub_10218080
