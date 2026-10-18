@@ -30,7 +30,9 @@ class CAI_CsActList
 public:
 	virtual void vfunc0(CsActSaveIface *pSave);	// Save
 	virtual void vfunc1(CsActRestoreIface *pRestore);	// Restore
-	virtual void vfunc2();
+	virtual void vfunc2(char flag);	// calls sub_102ca760 when flag is set
+
+	void sub_102ca760();
 
 	CSAct m_acts[0x40];	// 0x004 .. 0xa03
 	int m_nActs;		// 0xa04
