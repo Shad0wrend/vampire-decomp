@@ -20,3 +20,12 @@ void CPhysBox::sub_1004e910(int a)
 	((CPhysBoxHelper498 *)((char *)this + 0x498))->sub_10010794(a, this, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1004e940 size=0x16
+#include "CPhysBox.h"
+
+void CPhysBox::vfunc243(int a)
+{
+	((CPhysBoxHelper498 *)((char *)this + 0x4b0))->sub_10010794(a, this, 0);
+}
+// END FUNCTION
