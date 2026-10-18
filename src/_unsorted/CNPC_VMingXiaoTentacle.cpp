@@ -16,6 +16,18 @@ CNPC_VMingXiaoTentacle *CNPC_VMingXiaoTentacle::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039b230 size=0x1d
+#include "CNPC_VMingXiaoTentacle.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093bd80;
+extern B g_10936c74;
+int CNPC_VMingXiaoTentacle::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093bd80.sub_10012300(x));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039de00 size=0xd
 struct TentacleField1b2c { char pad[0x1b2c]; int m; };
 int CNPC_VMingXiaoTentacle::vfunc437()
