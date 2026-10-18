@@ -7986,6 +7986,42 @@ int *sub_10135570()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135a20 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105775b0[2];
+void sub_1000cf59();
+
+int *sub_10135a20()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_sCondition", {0x450, 0}, 1, 6, "condition" },
+        { 2, "m_sSquadName", {0x454, 0}, 1, 6, "squad_name" },
+        { 0, "InputTest", {0, 0}, 1, 8, "Test", 0, (void *)sub_1000cf59 },
+        { 10, "m_OnTrue", {0x458, 0}, 1, 0x16, "OnTrue", g_1055dc70 },
+        { 10, "m_OnFalse", {0x470, 0}, 1, 0x16, "OnFalse", g_1055dc70 },
+    };
+    g_105775b0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105775b0[0] = (int)&dataDesc[1];
+    return g_105775b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136330 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
