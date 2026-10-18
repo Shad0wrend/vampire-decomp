@@ -6511,6 +6511,45 @@ extern "C" GP *inspection_brush()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fd680 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10567a68[2];
+void sub_1001123e();
+void sub_10006a82();
+
+int *sub_100fd680()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_iTargetGameMaterial", {0x450, 0}, 1, 6, "gamematerial" },
+        { 4, "m_iCurrentGameMaterial", {0x454, 0}, 1, 2 },
+        { 5, "m_bDisabled", {0x458, 0}, 1, 2 },
+        { 0, "InputDisable", {0, 0}, 1, 8, "Disable", 0, (void *)sub_1001123e },
+        { 0, "InputEnable", {0, 0}, 1, 8, "Enable", 0, (void *)sub_10006a82 },
+        { 10, "m_OnSurfaceChangedToTarget", {0x45c, 0}, 1, 0x16, "OnSurfaceChangedToTarget", g_1055dc70 },
+        { 10, "m_OnSurfaceChangedFromTarget", {0x474, 0}, 1, 0x16, "OnSurfaceChangedFromTarget", g_1055dc70 },
+    };
+    g_10567a68[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10567a68[0] = (int)&dataDesc[1];
+    return g_10567a68;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fdcc0 size=0xa
 void __fastcall sub_100fdcc0(char *self, int, int)
 {
