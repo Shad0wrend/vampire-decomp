@@ -55,6 +55,25 @@ extern "C" GP *phys_torque()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029200 size=0x43
+#include "CKeepUpright.h"
+void *sub_100aa720(int size);
+extern char g_1053896c[];
+
+// TARGET: phys_keepupright
+extern "C" CBaseEntity *phys_keepupright()
+{
+	void *mem = sub_100aa720(0x480);
+	CKeepUpright *p;
+	if (mem)
+		p = ((CKeepUpright *)mem)->sub_10029610();
+	else
+		p = 0;
+	p->vfunc106(g_1053896c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100295d0 size=0xa
 void CUnknown100295d0::sub_100295d0(int unused)
 {
