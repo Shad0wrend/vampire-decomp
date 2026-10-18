@@ -2175,6 +2175,7 @@
 0x1001231e func   ?vfunc5@CPointAngleSensor@@QAEPAV1@I@Z CPointAngleSensor::vfunc5
 0x10012341 func   ?vfunc5@CTestTraceline@@UAEPAV1@I@Z CTestTraceline::vfunc5
 0x1001235a func   ?sub_10252450@CUnknown10252450@@QAEMH@Z CUnknown10252450::sub_10252450
+0x10012369 func   ?vfunc490@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc490
 0x1001241d func   ?sub_101e8080@CUnknown101e8080@@QAEXPAHPAXMH@Z CUnknown101e8080::sub_101e8080
 0x10012477 func   ?sub_101cd070@@YGPAUEnt@@PAU1@@Z sub_101cd070
 0x100124a4 func   _point_camera point_camera
