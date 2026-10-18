@@ -22319,6 +22319,21 @@ unsigned int sub_1042fc30(unsigned int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042fc60 size=0x22
+extern int g_106af774;
+extern int g_106af7fc;
+extern void (*g_106af804)();
+void sub_10013499();
+#pragma optimize("", off)
+void sub_1042fc60()
+{
+    if (g_106af774 == 0)
+        sub_10013499();
+    if (g_106af7fc == 0)
+        g_106af804();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042fc90 size=0x36
 #pragma optimize("", off)
 unsigned int sub_1042fc90(unsigned int x)
