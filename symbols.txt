@@ -1409,6 +1409,7 @@
 0x1000e0b6 func   ?sub_10430100@@YAXXZ sub_10430100
 0x1000e0c0 func   _item_g_hatters_screenplay item_g_hatters_screenplay
 0x1000e0de func   ?sub_102dcec0@@YIXPAUMem4@@HH@Z sub_102dcec0
+0x1000e0e8 func   ?vfunc5@CWeaponRanged_Rifle_SuperShotgun@@QAEPAV1@I@Z CWeaponRanged_Rifle_SuperShotgun::vfunc5
 0x1000e106 func   ?sub_101d54f0@CUnknown101d54f0@@QAEPAV1@XZ CUnknown101d54f0::sub_101d54f0
 0x1000e11f func   ?vfunc89@CBaseEntity@@UAEXXZ CBaseEntity::vfunc89
 0x1000e124 func   ?sub_101e0310@S101e0310@@QAEXXZ S101e0310::sub_101e0310
