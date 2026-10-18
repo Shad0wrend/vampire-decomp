@@ -16,6 +16,18 @@ CNPC_VCamera *CNPC_VCamera::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10368550 size=0x1d
+#include "CNPC_VCamera.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093a7bc;
+extern B g_10936c74;
+int CNPC_VCamera::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093a7bc.sub_10012300(x));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10368f20 size=0x10
 #include "CNPC_VCamera.h"
 int CNPC_VCamera::sub_10368f20()
