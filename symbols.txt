@@ -536,6 +536,7 @@
 0x10006d7f func   _item_p_occult_obfuscate item_p_occult_obfuscate
 0x10006db1 func   ?sub_100f0e70@@YIXPAD@Z sub_100f0e70
 0x10006dca func   ?sub_1013a600@@YAHM@Z sub_1013a600
+0x10006dd9 func   ?sub_1037a8a0@@YADXZ sub_1037a8a0
 0x10006e15 func   ?sub_101faa70@CVDmg_t@@QAEHXZ CVDmg_t::sub_101faa70
 0x10006e5b func   _item_g_pisha_book item_g_pisha_book
 0x10006e8d func   ?sub_10185600@@YIXPAH@Z sub_10185600

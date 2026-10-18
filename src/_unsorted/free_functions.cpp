@@ -16928,6 +16928,26 @@ bool CUnknown10381be0::sub_10379040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037a8a0 size=0x33
+void sub_1000ef84();
+void sub_100097a0();
+extern int g_1063abc4;
+extern char g_1063abc0;
+extern int g_10936b68;
+
+char sub_1037a8a0()
+{
+    sub_1000ef84();
+    if (g_1063abc4 != g_10936b68) {
+        sub_100097a0();
+        g_1063abc0 = 1;
+        g_1063abc4 = g_10936b68;
+        return 1;
+    }
+    return g_1063abc0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037bb20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
