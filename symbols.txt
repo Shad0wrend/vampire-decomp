@@ -582,6 +582,7 @@
 0x100076f8 func   ?sub_101b6a30@@YIXPAH@Z sub_101b6a30
 0x10007752 func   ?sub_10245f50@SConVar@@QAEXH@Z SConVar::sub_10245f50
 0x100077ed func   ?sub_10079060@CUnknown10079060@@QAEXH@Z CUnknown10079060::sub_10079060
+0x100077f2 func   ?vfunc2@CAI_CsActList@@UAEXD@Z CAI_CsActList::vfunc2
 0x1000780b func   ?sub_101e1870@@YGII@Z sub_101e1870
 0x10007824 func   _item_p_occult_dexterity item_p_occult_dexterity
 0x1000785b func   ?sub_1025d820@CUnknown1025d820@@QAEPAU1@XZ CUnknown1025d820::sub_1025d820

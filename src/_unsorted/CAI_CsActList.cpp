@@ -39,3 +39,12 @@ void CAI_CsActList::vfunc1(CsActRestoreIface *pRestore)
     m_field_a08 = tmp;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102ca280 size=0x10
+#include "CAI_CsActList.h"
+void CAI_CsActList::vfunc2(char flag)
+{
+	if (flag)
+		sub_102ca760();
+}
+// END FUNCTION
