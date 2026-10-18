@@ -12,7 +12,7 @@ public:
 	virtual void vfunc4();
 	virtual void vfunc5(const void *p);
 	virtual void vfunc6();
-	virtual void vfunc7();
+	virtual void vfunc7(int a, int b, int count);	// forwards to sub_101a05b0 with the count doubled (shorts to bytes)
 	virtual void vfunc8();
 	virtual void vfunc9();
 	virtual void vfunc10();
@@ -50,4 +50,5 @@ public:
 	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
 
 	int sub_101a08f0(void *pEntity);	// index of the entity in the table, or -1
+	void sub_101a05b0(int a, int bytes, int b);
 };
