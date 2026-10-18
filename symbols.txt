@@ -1114,6 +1114,7 @@
 0x1000d08a func   ?sub_1009b2c0@CBaseEntity@@QAEXHH@Z CBaseEntity::sub_1009b2c0
 0x1000d0f8 func   ?sub_101c2a90@CUnknown101c2a90@@QAEXD@Z CUnknown101c2a90::sub_101c2a90
 0x1000d0fd func   ?vfunc1@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc1
+0x1000d134 func   ?vfunc621@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc621
 0x1000d16b func   _filter_activator_inventory filter_activator_inventory
 0x1000d175 func   _item_k_shrekhub_one_key item_k_shrekhub_one_key
 0x1000d18e func   ?sub_10097b00@CUtlMemory60@@QAEPAU1@HH@Z CUtlMemory60::sub_10097b00

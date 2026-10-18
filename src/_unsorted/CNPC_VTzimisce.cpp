@@ -18,6 +18,23 @@ void CNPC_VTzimisce::vfunc490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9980 size=0x92
+#include "CNPC_VTzimisce.h"
+extern CNPC_VTzimisceConVar *g_1093cf94;
+extern CNPC_VTzimisceConVar *g_1093cfdc;
+extern CNPC_VTzimisceConVar *g_1093cebc;
+void sub_10002414(int, const char *, float, int, int, int);
+
+void CNPC_VTzimisce::vfunc621()
+{
+	int a = g_1093cf94->vfunc1() ? 0 : g_1093cf94->m_n2c;
+	int b = g_1093cfdc->vfunc1() ? 0 : g_1093cfdc->m_n2c;
+	float c = g_1093cebc->vfunc1() ? 0 : g_1093cebc->m_f28;
+	sub_10002414(m_n02e0, "SPI_ATTACK_HIT", c, b, 0, a);
+	sub_103b9f90(2, 0.5f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b9b20 size=0x84
 #include "CNPC_VTzimisce.h"
 extern CNPC_VTzimisceConVar *g_1093cf94;
