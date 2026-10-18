@@ -10415,6 +10415,17 @@ int *CUnknown101f1050::sub_101f1050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f18f0 size=0x18
+#include "CUnknown101f0e50.h"
+
+bool CUnknown101f0e50::sub_101f18f0(int index)
+{
+	if (index != -1 && index < m_f04)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2500 size=0x9
 struct CUnknown101f2500 { int a; char sub_101f2500(); };
 // TARGET: CUnknown101f2500::sub_101f2500
