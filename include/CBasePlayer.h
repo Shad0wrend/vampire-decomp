@@ -26,4 +26,5 @@ public:
 
 	void sub_10177120();
 	CBaseEntity *sub_1015dc60();	// slot 167 override: resolves the entity handle at +0x1c60 (null when stale)
+	bool sub_10168e10();	// slot 361 override: true when the entity handle at +0xfe8 does not resolve
 };
