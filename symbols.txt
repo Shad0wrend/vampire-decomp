@@ -1382,6 +1382,7 @@
 0x10011356 func   ?vfunc1@CAI_CsActList@@UAEXPAUCsActRestoreIface@@@Z CAI_CsActList::vfunc1
 0x10011379 func   ?vfunc195@CBaseEntity@@QAEXXZ CBaseEntity::vfunc195
 0x10011383 func   ?sub_1024b230@@YA_NPBUStrRef@@0@Z sub_1024b230
+0x1001139c func   ?sub_1004d140@CPhysicsSpring@@QAEXPAUinputdata_t@@@Z CPhysicsSpring::sub_1004d140
 0x100113ce func   _trigger_electric_bugaloo trigger_electric_bugaloo
 0x100113d3 func   _npc_VChangBrosBlade npc_VChangBrosBlade
 0x100113ec func   ?sub_1012f190@@YAHH@Z sub_1012f190
