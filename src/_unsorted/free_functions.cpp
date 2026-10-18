@@ -16987,6 +16987,26 @@ char sub_1037c750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037e9b0 size=0x33
+void sub_10007897();
+void sub_10008517();
+extern int g_1063c034;
+extern char g_1063c030;
+extern int g_10936b68;
+
+char sub_1037e9b0()
+{
+    sub_10007897();
+    if (g_1063c034 != g_10936b68) {
+        sub_10008517();
+        g_1063c030 = 1;
+        g_1063c034 = g_10936b68;
+        return 1;
+    }
+    return g_1063c030;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103816e0 size=0x4a
 struct V3 { float x, y, z; };
 #define D(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
