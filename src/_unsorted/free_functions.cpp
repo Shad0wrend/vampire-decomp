@@ -15651,6 +15651,22 @@ unsigned char __fastcall sub_10381c80(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10382aa0 size=0x69
+#include "CNPC_VHengeyokai.h"
+struct CUnknownGlobals1070b228 { int m_pad[3]; float m_curtime; };
+extern CUnknownGlobals1070b228 *g_1070b228;
+bool CNPC_VHengeyokai::sub_10382aa0(int key)
+{
+	int idx = sub_10382b30(key);
+	if (idx != -1) {
+		if (g_1070b228->m_curtime < m_Timers.Element(idx).m_time)
+			return true;
+		m_Timers.FastRemove(idx);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038f290 size=0x1e
 #include "CNPC_VManBat.h"
 bool CNPC_VManBat::sub_1038f290()
