@@ -8,6 +8,7 @@ struct inputdata_t;
 class CAI_BaseNPCTroika : public CAI_BaseNPC
 {
 public:
+	virtual int vfunc293();	// the dword at +0x9c of the entity the handle at +0x647c resolves to (0 when stale)
 	virtual void vfunc416(char value);
 
 	void vfunc488();	// slot 488: plays the "Death" sound
