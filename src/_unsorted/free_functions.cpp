@@ -14989,6 +14989,25 @@ void CAI_BaseNPCTroika::sub_102c2a30(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c3350 size=0x3a
+#include "inputdata_t.h"
+extern char g_106b8540[];
+struct S {
+	void sub_10008fbc(const char *s);
+	void sub_102c3350(inputdata_t *data);
+};
+static inline const char *String(variant_t *v)
+{
+	if (v->fieldType == 2)
+		return v->iszValue ? v->iszValue : g_106b8540;
+	return v->sub_10008805();
+}
+void S::sub_102c3350(inputdata_t *data)
+{
+	sub_10008fbc(String(&data->value));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c3690 size=0xe
 extern const char *g_105d1068[];
 
