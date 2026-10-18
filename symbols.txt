@@ -438,6 +438,7 @@
 0x100055e2 func   _info_node_bach_teleport_3 info_node_bach_teleport_3
 0x100055ec func   _info_node_bach_teleport_4 info_node_bach_teleport_4
 0x1000560a func   _inspection_node inspection_node
+0x1000562d func   ?vfunc5@CEnvFireSource@@QAEPAV1@I@Z CEnvFireSource::vfunc5
 0x100056eb func   ?sub_102d9170@CUnknown102d9170@@QAEXH@Z CUnknown102d9170::sub_102d9170
 0x100056f5 func   ?sub_10073b20@CUnknown10073b20@@QAEXH@Z CUnknown10073b20::sub_10073b20
 0x100056ff func   ?sub_1004dcf0@@YAHXZ sub_1004dcf0
