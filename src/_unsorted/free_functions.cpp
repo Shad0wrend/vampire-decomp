@@ -2997,6 +2997,28 @@ int S1007a270::sub_1007a270(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007b9b0 size=0x19
+struct S1007b9b0 {
+	char m_pad[0xac];
+	char m_name[64];
+	// TARGET: S1007b9b0::sub_1007b9b0
+	void sub_1007b9b0(const char *src);
+};
+
+void S1007b9b0::sub_1007b9b0(const char *src)
+{
+	const char *p = src;
+	char *d = m_name;
+	char c;
+	do {
+		c = *p;
+		*d = c;
+		p++;
+		d++;
+	} while (c != 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfc0 size=0xa
 struct CUnknown1007dfc0 { char p[0x78]; int a; void sub_1007dfc0(int v); };
 // TARGET: CUnknown1007dfc0::sub_1007dfc0
