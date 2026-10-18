@@ -713,6 +713,7 @@
 0x10009a16 func   ?sub_10248850@CUnknown10248850@@QAEXH@Z CUnknown10248850::sub_10248850
 0x10009a34 func   ?sub_10182810@CUnknown10182810@@QAEHXZ CUnknown10182810::sub_10182810
 0x10009a61 func   _hud_timer hud_timer
+0x10009a7f func   ?sub_1004e910@CPhysBox@@QAEXH@Z CPhysBox::sub_1004e910
 0x10009ab6 func   ?sub_10185790@@YIXPAH@Z sub_10185790
 0x10009ae8 func   ?sub_10027570@CBaseEntity@@QAEHXZ CBaseEntity::sub_10027570
 0x10009aed func   _env_swarm_bats env_swarm_bats
