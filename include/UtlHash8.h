@@ -1,15 +1,35 @@
 // UtlHash8: a CUtlHash-like container of buckets (0x14 bytes each: element pointer at +0, count at +0xc) holding 8-byte elements.
 #pragma once
 
+#include "CAnchorList.h"
+
 struct UtlHash8Bucket
 {
+	~UtlHash8Bucket()
+	{
+		m_Size = 0;
+		if (m_growSize != -1) {
+			if (m_pElements) {
+				g_109f3624(m_pElements);
+				m_pElements = 0;
+			}
+			m_allocationCount = 0;
+		}
+		m_pad = m_pElements;
+		if (m_growSize != -1) {
+			if (m_pElements) {
+				g_109f3624(m_pElements);
+				m_pElements = 0;
+			}
+			m_allocationCount = 0;
+		}
+	}
+
 	char *m_pElements;
 	int m_allocationCount;
 	int m_growSize;
 	int m_Size;
 	char *m_pad;
-
-	void PurgeMemory(void (__cdecl *pfnFree)(void *));	// frees the allocation unless the grow size is -1 (external memory)
 };
 
 class UtlHash8
