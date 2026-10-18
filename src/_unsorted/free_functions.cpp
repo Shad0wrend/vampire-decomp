@@ -20081,6 +20081,14 @@ char CUnknown1042d9a0::sub_1042daa0(CUnknown1042d9a0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042fc30 size=0x1f
+#pragma optimize("", off)
+unsigned int sub_1042fc30(unsigned int x)
+{
+	return (x ^ 1) ^ (((x ^ 1) & 0x71f99735) & 0x8e0668ca);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042fd40 size=0x2e
 #pragma optimize("", off)
 unsigned int sub_1042fd40(unsigned int x)
