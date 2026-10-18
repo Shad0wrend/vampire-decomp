@@ -6976,6 +6976,55 @@ extern "C" GP *light_environment()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131490 size=0x116
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10575e50[2];
+void sub_10001cfd();
+void sub_10012297();
+void sub_10011469();
+void sub_1000b5b9();
+void sub_1000ce91();
+
+int *sub_10131490()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_iDisabled", {0x498, 0}, 1, 6, "StartDisabled" },
+        { 1, "m_flRefireTime", {0x49c, 0}, 1, 6, "RefireTime" },
+        { 5, "m_bUpDownState", {0x4a0, 0}, 1, 2 },
+        { 1, "InputRefireTime", {0, 0}, 1, 8, "RefireTime", 0, (void *)sub_10001cfd },
+        { 0, "InputFireTimer", {0, 0}, 1, 8, "FireTimer", 0, (void *)sub_10012297 },
+        { 0, "InputEnable", {0, 0}, 1, 8, "Enable", 0, (void *)sub_10011469 },
+        { 0, "InputDisable", {0, 0}, 1, 8, "Disable", 0, (void *)sub_1000b5b9 },
+        { 0, "InputToggle", {0, 0}, 1, 8, "Toggle", 0, (void *)sub_1000ce91 },
+        { 4, "m_iUseRandomTime", {0x4a4, 0}, 1, 0xe, "UseRandomTime" },
+        { 1, "m_flLowerRandomBound", {0x4a8, 0}, 1, 0xe, "LowerRandomBound" },
+        { 1, "m_flUpperRandomBound", {0x4ac, 0}, 1, 0xe, "UpperRandomBound" },
+        { 10, "m_OnTimer", {0x450, 0}, 1, 0x16, "OnTimer", g_1055dc70 },
+        { 10, "m_OnTimerHigh", {0x468, 0}, 1, 0x16, "OnTimerHigh", g_1055dc70 },
+        { 10, "m_OnTimerLow", {0x480, 0}, 1, 0x16, "OnTimerLow", g_1055dc70 },
+    };
+    g_10575e50[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10575e50[0] = (int)&dataDesc[1];
+    return g_10575e50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101318a0 size=0x8
 void sub_10002441();
 void __stdcall sub_101318a0(int) { sub_10002441(); }
