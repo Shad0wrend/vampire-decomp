@@ -35,6 +35,7 @@ public:
 	unsigned short sub_10046930(const void *search) const;	// "CUtlRBTree::Find"
 	void sub_100498c0(unsigned short i, unsigned short parent, bool isLeft);	// "CUtlRBTree::LinkToParent" (with InsertRebalance inlined)
 	bool sub_1004c4c0(unsigned short i) const;	// "CUtlRBTree::IsLeftChild"
+	void sub_1004c5b0(unsigned short elem);	// "CUtlRBTree::RotateLeft"
 
 	const Links_t &sub_10009b51(unsigned short i) const;	// out-of-line Links()
 	bool sub_10009999(unsigned short i) const;	// IsLeftChild
