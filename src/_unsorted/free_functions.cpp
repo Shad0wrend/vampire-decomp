@@ -9906,6 +9906,18 @@ int CUnknown101d5bd0::sub_101d5d20(const char *name, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d5e80 size=0x4b
+#include "CStatDefault3List.h"
+
+StatDefault3 *CStatDefault3List::sub_101d5e80(int index)
+{
+	if (index >= 0 && index < m_count)
+		return m_pItems[index];
+	static StatDefault3 s_default(-1);
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6d50 size=0x66
 struct Elem101d6d50 { void sub_1000f9b1(); };
 struct S101d6d50 {
