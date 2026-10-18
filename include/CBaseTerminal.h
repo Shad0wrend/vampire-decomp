@@ -5,5 +5,5 @@ class CBaseTerminal
 {
 public:
 	void vfunc71();
-	char vfunc32(int a);
+	char sub_102180c0(int a);	// slot 32
 };
