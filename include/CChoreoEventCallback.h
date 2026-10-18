@@ -5,9 +5,9 @@
 class CChoreoEventCallback
 {
 public:
-	virtual void vfunc0(int a, int b, int c);	// forwards to CSceneEntity slot 248
-	virtual void vfunc1(int a, int b, int c);	// slot 249
-	virtual void vfunc2(int a, int b, int c);	// slot 250
+	virtual void vfunc0(float a, int b, int c);	// forwards to CSceneEntity slot 248
+	virtual void vfunc1(float a, int b, int c);	// slot 249
+	virtual void vfunc2(float a, int b, int c);	// slot 250
 	virtual void vfunc3();
 
 	CSceneEntity *m_pScene;
