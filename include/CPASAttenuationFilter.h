@@ -3,7 +3,7 @@
 // CUtlVector destructor chain.
 #pragma once
 
-extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
+extern void (__cdecl * const g_109f3624)(void *);	// Plat_Free
 
 struct IRecipientFilter
 {
@@ -62,7 +62,6 @@ class CPASAttenuationFilter : public IRecipientFilter
 {
 public:
 	CPASAttenuationFilter();
-	virtual ~CPASAttenuationFilter() {}
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
