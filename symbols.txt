@@ -1571,6 +1571,7 @@
 0x10012017 func   _info_node_link info_node_link
 0x1001205d func   ?sub_10381c80@@YIEPAD@Z sub_10381c80
 0x10012099 func   ?vfunc243@CBaseFire@@QAEXH@Z CBaseFire::vfunc243
+0x100120df func   ?vfunc32@CPhysicsProp@@UAE_NH@Z CPhysicsProp::vfunc32
 0x10012125 func   ?sub_10088a80@@YAXXZ sub_10088a80
 0x1001212f func   ?sub_10076ad0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10076ad0
 0x1001218e func   ?sub_101c2ad0@CUnknown101c2a90@@QAEXD@Z CUnknown101c2a90::sub_101c2ad0
