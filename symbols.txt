@@ -350,6 +350,7 @@
 0x10003ff3 func   ?sub_1025c670@@YA_NPAG0@Z sub_1025c670
 0x10004002 func   ?sub_101e83d0@CUnknown101e83d0@@QAEXPAHPAXH@Z CUnknown101e83d0::sub_101e83d0
 0x10004020 func   ?sub_103816e0@@YIXPAUE@@HH@Z sub_103816e0
+0x1000407f func   ?vfunc22@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc22
 0x10004084 func   ?sub_1035ac30@@YADXZ sub_1035ac30
 0x100040a7 func   ?sub_10078c30@@YIXPAH@Z sub_10078c30
 0x100040e3 func   ?vfunc3@CEntitySaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CEntitySaveRestoreBlockHandler::vfunc3
