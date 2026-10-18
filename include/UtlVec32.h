@@ -1,7 +1,7 @@
 // UtlVec32: a CUtlVector-like container of 32-byte elements (memory pointer at +0, size at +0xc).
 #pragma once
 
-void *__cdecl memmove(void *, const void *, unsigned int);
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
 class UtlVec32
 {
