@@ -1509,6 +1509,7 @@
 0x1000e34f func   _env_shake env_shake
 0x1000e381 func   ?sub_102477c0@CUnknown102477c0@@QAEXXZ CUnknown102477c0::sub_102477c0
 0x1000e3c7 func   ?sub_102e2800@A@@QAEXH@Z A::sub_102e2800
+0x1000e3cc func   ?vfunc5@CResearchBook_HG_COMP@@QAEPAV1@I@Z CResearchBook_HG_COMP::vfunc5
 0x1000e3db func   _simple_physics_brush simple_physics_brush
 0x1000e3ea func   ?sub_103dc260@@YIXPAH@Z sub_103dc260
 0x1000e421 func   ?sub_1002cc60@CUnknown1002cc60@@QAEPAU1@XZ CUnknown1002cc60::sub_1002cc60
