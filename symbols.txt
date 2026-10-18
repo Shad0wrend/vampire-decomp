@@ -87,6 +87,7 @@
 0x10001fd7 func   ?vfunc62@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc62
 0x10001ffa func   _item_d_holy_light item_d_holy_light
 0x10002027 func   ?sub_102e26f0@@YIXPAUCOwner@@@Z sub_102e26f0
+0x10002031 func   ?vfunc5@CBaseCineCam@@UAEPAV1@I@Z CBaseCineCam::vfunc5
 0x1000204f func   ?sub_10227b20@@YIXPAUMem4@@HH@Z sub_10227b20
 0x1000209a func   ?sub_100437e0@CUnknown100437e0@@QAEXH@Z CUnknown100437e0::sub_100437e0
 0x100020d6 func   ?vfunc2@CTESpriteSpray@@UAEPAV1@I@Z CTESpriteSpray::vfunc2
