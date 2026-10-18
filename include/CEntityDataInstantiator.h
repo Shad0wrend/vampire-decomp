@@ -23,7 +23,7 @@ public:
 	virtual void vfunc0();
 	virtual int vfunc1(unsigned int key);
 	virtual void vfunc2();
-	virtual void vfunc3();
+	virtual void vfunc3(unsigned int key);
 
 	EntityDataBucket_t *m_pBuckets;
 	int m_pad8;
