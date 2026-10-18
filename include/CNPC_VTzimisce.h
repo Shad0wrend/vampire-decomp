@@ -18,14 +18,14 @@ public:
 	virtual void *vfunc220();
 };
 
-// A console-variable-like global: slot 1 says "unset", otherwise the ints at +0x28 / +0x2c hold the value.
+// A console-variable-like global: slot 1 says "unset", otherwise the values at +0x28 / +0x2c hold the value.
 class CNPC_VTzimisceConVar
 {
 public:
 	virtual void vfunc0();
 	virtual bool vfunc1();
 	char m_pad0004[0x24];
-	int m_n28;
+	float m_f28;
 	int m_n2c;
 };
 
