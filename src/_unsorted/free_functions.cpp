@@ -11800,6 +11800,21 @@ void sub_10230280(R *out, int name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230700 size=0x1e
+#include "StatDefault.h"
+
+struct StatOwner
+{
+	StatDefault *sub_1006cff0(int id);
+};
+extern StatOwner g_106c7c34;
+
+void __stdcall sub_10230700(int a, int b)
+{
+	g_106c7c34.sub_1006cff0(a)->sub_10015528(b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231e60 size=0xa
 unsigned int __fastcall sub_10231e60(char *self)
 {
