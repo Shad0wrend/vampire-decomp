@@ -941,6 +941,7 @@
 0x1000a1a5 func   _prop_dynamic prop_dynamic
 0x1000a1d7 func   ?sub_100740f0@CUnknown100740f0@@QAEXD@Z CUnknown100740f0::sub_100740f0
 0x1000a1e6 func   ?sub_102a97a0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97a0
+0x1000a231 func   ?vfunc5@CFuncParticle@@QAEPAV1@I@Z CFuncParticle::vfunc5
 0x1000a240 func   ?vfunc516@CGeneric_NPC@@UAEMXZ CGeneric_NPC::vfunc516
 0x1000a281 func   ?sub_1021e3e0@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e3e0
 0x1000a290 func   ?vfunc2@CTEBeamRingPoint@@UAEPAV1@I@Z CTEBeamRingPoint::vfunc2
