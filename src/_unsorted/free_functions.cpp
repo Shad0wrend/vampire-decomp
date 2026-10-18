@@ -15110,6 +15110,15 @@ void sub_102db630(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db650 size=0x10
+extern bool g_1092719c;
+
+void sub_102db650()
+{
+	g_1092719c = !g_1092719c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db740 size=0xd
 void CAI_InterestingPlaceConverstation::sub_102db740(int value)
 {

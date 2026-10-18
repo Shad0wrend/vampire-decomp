@@ -817,6 +817,7 @@
 0x10009467 func   ?sub_100b1380@@YI_NPAD@Z sub_100b1380
 0x1000947b func   _item_g_milligans_businesscard item_g_milligans_businesscard
 0x1000948f func   ?sub_100f5fc0@SFilter@@QAEPAU1@E@Z SFilter::sub_100f5fc0
+0x100094ad func   ?sub_102db650@@YAXXZ sub_102db650
 0x100094b2 func   _item_w_tire_iron item_w_tire_iron
 0x100094d5 func   ?vfunc103@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc103
 0x100094df func   ?sub_103dc8a0@@YADXZ sub_103dc8a0
