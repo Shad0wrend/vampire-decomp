@@ -12,7 +12,7 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
-	virtual void vfunc5();
+	virtual CBaseButton *vfunc5(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();
@@ -80,4 +80,6 @@ public:
 	virtual void vfunc70();
 	virtual void vfunc71();
 	virtual void vfunc104();
+
+	void sub_1000cb8a();	// destructor body (the CBaseToggle/CBaseEntity part)
 };
