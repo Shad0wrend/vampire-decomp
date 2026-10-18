@@ -11253,6 +11253,18 @@ void __fastcall sub_10227230(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102273b0 size=0x18
+#include "CUnknown102273b0.h"
+char *sub_101cd9e0(int index);
+void __fastcall sub_1015ef40(char *pPlayer);
+void CUnknown102273b0::sub_102273b0(int unused)
+{
+	char *p = sub_101cd9e0(1);
+	if (p)
+		sub_1015ef40(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227b20 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
