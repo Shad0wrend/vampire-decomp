@@ -2335,6 +2335,7 @@
 0x10015c62 func   ?sub_1019d490@CUnknown1019d490@@QAEXD@Z CUnknown1019d490::sub_1019d490
 0x10015c6c func   _env_firesensor env_firesensor
 0x10015c80 func   ?sub_10073b60@CUnknown10073b60@@QAEXH@Z CUnknown10073b60::sub_10073b60
+0x10015c99 func   ?vfunc5@CWeaponIArmor_Hvy_Cloth@@UAEPAV1@I@Z CWeaponIArmor_Hvy_Cloth::vfunc5
 0x10015cda func   _aitesthull aitesthull
 0x10015ce4 func   ?vfunc153@CBaseMoveBehavior@@UAE_NXZ CBaseMoveBehavior::vfunc153
 0x10015cf3 func   ?sub_10206980@NameSet@@QAEXPBD@Z NameSet::sub_10206980
