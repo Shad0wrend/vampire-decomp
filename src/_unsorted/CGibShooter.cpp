@@ -11,3 +11,18 @@ void CGibShooter::sub_100f4730(int a, int b, int c, int d)
 	m_nNextThink = g_1070b228->curtime;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100f5aa0 size=0x1e
+#include "CGibShooter.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CGibShooter::vfunc5
+CGibShooter *CGibShooter::vfunc5(unsigned int flags)
+{
+	sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
