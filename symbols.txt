@@ -837,6 +837,7 @@
 0x10008dc8 func   ?sub_10078580@CUnknown10078540@@QAEXH@Z CUnknown10078540::sub_10078580
 0x10008dcd func   ?sub_101e8410@@YGXPAHHH@Z sub_101e8410
 0x10008dd2 func   ?sub_1034a170@@YAXPAUCBlock4k@@PBU1@@Z sub_1034a170
+0x10008dd7 func   ?vfunc5@CItemContainerOneItemFiltered@@QAEPAV1@I@Z CItemContainerOneItemFiltered::vfunc5
 0x10008e0e func   ?sub_10258500@@YAPBDH@Z sub_10258500
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
 0x10008e8b func   ?vfunc1@PyServerSystem@@UAEXXZ PyServerSystem::vfunc1
