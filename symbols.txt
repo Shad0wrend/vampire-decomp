@@ -2169,6 +2169,7 @@
 0x10013499 func   ?sub_1042fc60@@YAXXZ sub_1042fc60
 0x100134c1 func   ?sub_100dea90@CUnknown100dea90@@QAEXH@Z CUnknown100dea90::sub_100dea90
 0x100134d0 func   ?sub_1042ffb0@@YAXXZ sub_1042ffb0
+0x10013507 func   ?vfunc5@CSprite@@QAEPAV1@I@Z CSprite::vfunc5
 0x10013534 func   ?vfunc130@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc130
 0x10013552 func   ?vfunc5@CItemGWarrLedger2@@QAEPAV1@I@Z CItemGWarrLedger2::vfunc5
 0x10013557 func   ?vfunc7@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc7
