@@ -608,6 +608,7 @@
 0x10006e5b func   _item_g_pisha_book item_g_pisha_book
 0x10006e8d func   ?sub_10185600@@YIXPAH@Z sub_10185600
 0x10006ed3 func   ?sub_1012f850@@YAMM@Z sub_1012f850
+0x10006ed8 func   ?vfunc5@CAI_ChangeHintGroup@@QAEPAV1@I@Z CAI_ChangeHintGroup::vfunc5
 0x10006f28 func   ?sub_100b7c60@CUnknown100b7c60@@QAEXH@Z CUnknown100b7c60::sub_100b7c60
 0x10006f2d func   _item_w_baton item_w_baton
 0x10006f32 func   ?vfunc144@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc144
