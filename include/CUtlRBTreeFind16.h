@@ -26,11 +26,7 @@ public:
 
 	static unsigned short InvalidIndex() { return (unsigned short)~0; }
 
-	const RBTreeFind16Links &Links(unsigned short i) const
-	{
-		static RBTreeFind16Links s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-		return (i != InvalidIndex()) ? m_pElements[i].m_Links : s_Sentinel;
-	}
+	const RBTreeFind16Links &Links(unsigned short i) const;	// the node's links, or a shared sentinel for InvalidIndex()
 
 	unsigned short sub_10046390(const void *search);	// Find: index of the node equal to search, or InvalidIndex()
 };
