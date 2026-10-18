@@ -18506,6 +18506,45 @@ extern "C" GP *bodyque()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356550 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10628520[2];
+void sub_100097fa();
+void sub_10007ef0();
+void sub_100116c1();
+
+int *sub_10356550()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0xc, "m_hPainPartner", {0x5f44, 0}, 1, 2 },
+        { 0, "CNPC_BullseyeBullseyeThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100097fa },
+        { 0, "InputTargeted", {0, 0}, 1, 8, "InputTargeted", 0, (void *)sub_10007ef0 },
+        { 0, "InputReleased", {0, 0}, 1, 8, "InputReleased", 0, (void *)sub_100116c1 },
+        { 10, "m_OnTargeted", {0x5f48, 0}, 1, 0x16, "OnTargeted", g_1055dc70 },
+        { 10, "m_OnReleased", {0x5f60, 0}, 1, 0x16, "OnReleased", g_1055dc70 },
+    };
+    g_10628520[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10628520[0] = (int)&dataDesc[1];
+    return g_10628520;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10359190 size=0x33
 void sub_1000b15e();
 void sub_1000215d();
