@@ -32,3 +32,18 @@ bool CFuncRotating::vfunc223()
 	return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100c0e20 size=0x1e
+#include "CFuncRotating.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CFuncRotating::vfunc5
+CFuncRotating *CFuncRotating::vfunc5(unsigned int flags)
+{
+	sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
