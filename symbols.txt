@@ -475,6 +475,7 @@
 0x100059fc func   ?sub_102a9750@CUnknown102a9750@@QAEXH@Z CUnknown102a9750::sub_102a9750
 0x10005a01 func   ?sub_102c2a30@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2a30
 0x10005a0b func   ?vfunc433@CNPC_VAndreiBlood@@QAEXXZ CNPC_VAndreiBlood::vfunc433
+0x10005a83 func   ?vfunc5@CBaseProp@@QAEPAV1@I@Z CBaseProp::vfunc5
 0x10005ab0 func   ?sub_10206300@@YIPAHPAHHH@Z sub_10206300
 0x10005add func   ?sub_103e1680@@YAMXZ sub_103e1680
 0x10005ae7 func   ??0CWeaponMelee_TzimisceMelee@@QAE@XZ CWeaponMelee_TzimisceMelee::CWeaponMelee_TzimisceMelee
