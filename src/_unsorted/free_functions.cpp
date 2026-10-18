@@ -2666,6 +2666,24 @@ void CUnknown1007dfe0::sub_1007dfe0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e050 size=0x24
+struct S1007e050 {
+	char m_pad[0x14];
+	int *m_pMemory; int m_allocationCount; int m_growSize; int m_size;
+	// TARGET: S1007e050::sub_1007e050
+	int sub_1007e050(int value);
+};
+
+int S1007e050::sub_1007e050(int value)
+{
+	for (int i = 0; i < m_size; i++) {
+		if (value == m_pMemory[i])
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e580 size=0x8
 void __fastcall sub_1007e580(int *p) { p[0x5c / 4] = 0; }
 // END FUNCTION
