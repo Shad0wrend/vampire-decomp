@@ -12,4 +12,5 @@ public:
 
 	CVStatList_t(int a);
 	~CVStatList_t();
+	int sub_10010609(int a);
 };
