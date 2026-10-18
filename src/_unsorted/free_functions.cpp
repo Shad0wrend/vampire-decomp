@@ -20098,6 +20098,21 @@ char CUnknown1042d9a0::sub_1042daa0(CUnknown1042d9a0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042fb20 size=0x22
+extern int g_106af554;
+extern int g_106af5dc;
+extern void (*g_106af5e4)();
+void sub_10002dc9();
+#pragma optimize("", off)
+void sub_1042fb20()
+{
+    if (g_106af554 == 0)
+        sub_10002dc9();
+    if (g_106af5dc == 0)
+        g_106af5e4();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042fc30 size=0x1f
 #pragma optimize("", off)
 unsigned int sub_1042fc30(unsigned int x)
