@@ -3,6 +3,8 @@
 // virtuals below carries no meaning.
 #pragma once
 
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
 struct CNPC_VHengeyokaiTimer
 {
 	int m_key;
@@ -21,4 +23,13 @@ public:
 
 	int sub_10382b30(int key);
 	bool sub_10382aa0(int key);
+
+	// Inlined CUtlVector::FastRemove.
+	void FastRemove(int elem)
+	{
+		if (m_nTimers > 0) {
+			memmove(&m_pTimers[elem], &m_pTimers[m_nTimers - 1], sizeof(CNPC_VHengeyokaiTimer));
+			m_nTimers--;
+		}
+	}
 };
