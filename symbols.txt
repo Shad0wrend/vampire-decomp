@@ -971,6 +971,7 @@
 0x1000c2f2 func   ?sub_103167f0@HandleList@@QAE_NPAX@Z HandleList::sub_103167f0
 0x1000c301 func   ?vfunc2@CTEBeamRing@@UAEPAV1@I@Z CTEBeamRing::vfunc2
 0x1000c351 func   ?sub_102f9900@@YAXXZ sub_102f9900
+0x1000c356 func   ?sub_100b5ce0@CBaseFlex@@QAEXXZ CBaseFlex::sub_100b5ce0
 0x1000c3b0 func   _light light
 0x1000c3b5 func   ?sub_101f9670@CUnknown101f9670@@QAEPAV1@XZ CUnknown101f9670::sub_101f9670
 0x1000c3bf func   ?sub_1021e100@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_1021e100

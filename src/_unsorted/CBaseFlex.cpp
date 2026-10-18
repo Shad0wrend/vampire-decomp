@@ -11,3 +11,12 @@ void CBaseFlex::sub_100b5b00(const float *v)
 	m_vec848[2] = v[2];
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b5ce0 size=0x14
+#include "CBaseFlex.h"
+
+void CBaseFlex::sub_100b5ce0()
+{
+	m_toggle854 = !m_toggle854;
+}
+// END FUNCTION
