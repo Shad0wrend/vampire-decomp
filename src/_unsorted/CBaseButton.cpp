@@ -30,3 +30,12 @@ void CBaseButton::vfunc104()
 	vfunc71();
 }
 // END FUNCTION
+
+// FUNCTION: 0x100c8990 size=0x16
+#include "CBaseButton.h"
+
+bool CBaseButton::sub_100c8990(int a)
+{
+	return vfunc35(a) != 0;
+}
+// END FUNCTION
