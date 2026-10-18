@@ -14,9 +14,11 @@ public:
 	void sub_10007c9d();	// destructor body
 	void sub_10056fa0(int a, int b);	// slot 242: stores two dwords at +0x454 and +0x458
 	void sub_10056fd0(int a, int b, int c);	// slot 241: stores three dwords at +0x450..+0x458
+	void vfunc243(int on);	// slot 243: sets or clears bit 0 of the flags at +0x45c
 
 	char m_pad0004[0x44c];
 	int m_field450;
 	int m_field454;
 	int m_field458;
+	unsigned int m_flags45c;
 };
