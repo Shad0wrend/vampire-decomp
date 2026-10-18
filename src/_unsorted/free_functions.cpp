@@ -3098,6 +3098,15 @@ struct CUnknown10083960 { int p; int a; void sub_10083960(int v); };
 void CUnknown10083960::sub_10083960(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10088a80 size=0x10
+extern bool g_10924fbb;
+
+void sub_10088a80()
+{
+	g_10924fbb = !g_10924fbb;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b490 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
