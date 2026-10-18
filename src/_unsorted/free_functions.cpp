@@ -2654,6 +2654,24 @@ void S100734f0::sub_100734f0(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073720 size=0x2a
+struct S10073720 {
+	char m_pad[0x84];
+	int *m_pMemory; int m_allocationCount; int m_growSize; int m_size;
+	// TARGET: S10073720::sub_10073720
+	int sub_10073720(int value);
+};
+
+int S10073720::sub_10073720(int value)
+{
+	for (int i = 0; i < m_size; i++) {
+		if (value == m_pMemory[i])
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100737b0 size=0x9
 struct CUnknown100737b0 { int m_val; void sub_100737b0(int v); };
 void CUnknown100737b0::sub_100737b0(int v) { m_val = v; }
