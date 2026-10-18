@@ -11127,6 +11127,46 @@ void S101e0310::sub_101e0310()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1360 size=0xa8
+extern "C" char *_strlwr(char *);
+extern "C" char *strstr(const char *, const char *);
+extern char g_106b8540[];
+struct Sub {
+	const char *name;
+	const char *Get() { return name ? name : g_106b8540; }
+};
+struct Entry {
+	int a, b;
+	Sub sub;
+};
+struct List {
+	int pad;
+	int m_count;
+	Entry **m_items;
+	int sub_101e1360(const char *name);
+};
+static inline void Cpy(char *d, const char *s)
+{
+	while ((*d++ = *s++))
+		;
+}
+int List::sub_101e1360(const char *name)
+{
+	char lowName[128];
+	char lowEntry[128];
+	Cpy(lowName, name);
+	_strlwr(lowName);
+	for (int i = 0; i < m_count; i++) {
+		const char *n = m_items[i]->sub.Get();
+		Cpy(lowEntry, n);
+		_strlwr(lowEntry);
+		if (strstr(lowEntry, lowName) == lowEntry)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1850 size=0xc
 unsigned int __stdcall sub_101e1850(unsigned int value)
 {
