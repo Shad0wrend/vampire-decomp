@@ -13753,6 +13753,15 @@ void S102d4390::sub_102d4390(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d6180 size=0x12
+struct CUnknownRange { float m_f0; float m_f4; float m_min; float m_f0c; float m_f10; float m_max; };
+extern CUnknownRange *g_1060a750[];
+float sub_102d6180(int index)
+{
+	return g_1060a750[index]->m_max - g_1060a750[index]->m_min;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d6210 size=0xe
 extern int *g_1060a750[];
 
