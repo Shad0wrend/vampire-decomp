@@ -6930,6 +6930,41 @@ void Mem400::sub_10107550(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107760 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1056c1e8[2];
+void sub_100070b3();
+
+int *sub_10107760()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bReverseOutcome", {0x450, 0}, 1, 6, "reverse_outcome" },
+        { 0x12, "InputTestActivator", {0, 0}, 1, 8, "TestActivator", 0, (void *)sub_100070b3 },
+        { 10, "m_OnPass", {0x454, 0}, 1, 0x16, "OnPass", g_1055dc70 },
+        { 10, "m_OnFail", {0x46c, 0}, 1, 0x16, "OnFail", g_1055dc70 },
+    };
+    g_1056c1e8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1056c1e8[0] = (int)&dataDesc[1];
+    return g_1056c1e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108e00 size=0x27
 #include "CUnknown10108e00.h"
 
