@@ -2015,6 +2015,7 @@
 0x10014187 func   _logic_npc_condition logic_npc_condition
 0x100141aa func   ?sub_10046b40@@YA_NPBI0@Z sub_10046b40
 0x100141fa func   ?vfunc9@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc9
+0x100141ff func   ?vfunc5@CAmbientGeneric@@QAEPAV1@I@Z CAmbientGeneric::vfunc5
 0x10014259 func   ?vfunc130@CWorld@@UAEXH@Z CWorld::vfunc130
 0x10014268 func   _logic_multicompare logic_multicompare
 0x10014272 func   ?vfunc113@CKeepUpright@@UAEXXZ CKeepUpright::vfunc113
