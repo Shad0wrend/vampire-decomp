@@ -12633,6 +12633,51 @@ void sub_10237c30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023ee30 size=0xcb
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern void *(__cdecl *g_109f3634)(int);
+extern void *(__cdecl *g_109f3638)(void *, int);
+
+struct IntVec {
+	int *pMemory;
+	int allocationCount;
+	int growSize;
+	int size;
+	int *pElements;
+};
+extern IntVec g_10752dc4;
+
+void sub_1023ee30(int src)
+{
+	int num = g_10752dc4.size + 1;
+	int elem = g_10752dc4.size;
+	if (num > g_10752dc4.allocationCount && g_10752dc4.growSize != -1) {
+		while (g_10752dc4.allocationCount < num) {
+			if (g_10752dc4.allocationCount) {
+				if (g_10752dc4.growSize)
+					g_10752dc4.allocationCount += g_10752dc4.growSize;
+				else
+					g_10752dc4.allocationCount += g_10752dc4.allocationCount;
+			} else {
+				g_10752dc4.allocationCount = 8;
+			}
+		}
+		if (g_10752dc4.pMemory)
+			g_10752dc4.pMemory = (int *)g_109f3638(g_10752dc4.pMemory, g_10752dc4.allocationCount * 4);
+		else
+			g_10752dc4.pMemory = (int *)g_109f3634(g_10752dc4.allocationCount * 4);
+	}
+	g_10752dc4.size++;
+	g_10752dc4.pElements = g_10752dc4.pMemory;
+	int toMove = g_10752dc4.size - elem - 1;
+	if (toMove > 0)
+		memmove(g_10752dc4.pMemory + num, g_10752dc4.pMemory + elem, toMove * 4);
+	int *p = g_10752dc4.pMemory + elem;
+	if (p)
+		*p = src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023f040 size=0xb
 void sub_1023f040(int *p)
 {
