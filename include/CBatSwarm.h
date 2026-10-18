@@ -12,4 +12,6 @@ public:
 
 	// Slot 141, called directly so far; declared as a plain member.
 	void vfunc141(int *pRef, int unused, void *pInfo);
+
+	bool sub_100ba0c0(void *pEntity);	// slot 68: true when the entity is set and its field at +0xa8 is non-null
 };
