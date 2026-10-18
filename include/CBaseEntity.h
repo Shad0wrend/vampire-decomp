@@ -71,6 +71,7 @@ public:
 	void sub_100a8c90(int a);	// "CBaseEntity::InputScriptUnhide": calls vfunc78
 	void sub_100a9290(char value);	// "CBaseEntity::SetNPCTransparent": stores the byte at +0xfc
 	void sub_100a9470(char value);	// "CBaseEntity::SetOccludesSound": stores the byte at +0xfe (slot 103 override in many subclasses)
+	CBaseEntity *sub_100a9c90();	// "CBaseEntity::GetOwnerEntity" (slot 97): resolves the handle at +0x364
 	void sub_100abbf0(int a, int b);
 	void sub_100acef0(int a);	// "CBaseEntity::InputKill": calls vfunc119
 	int sub_100adfd0(const char *name);	// "CBaseEntity::PrecacheModel": forwards to the engine, returns its result
@@ -93,7 +94,8 @@ public:
 	char m_pad0204[0x64];
 	unsigned int m_flags268;
 	const char *m_name26c;
-	char m_pad0270[0xf8];
+	char m_pad0270[0xf4];
+	unsigned int m_hOwner364;	// owner entity handle
 	int m_field368;
 	char m_pad036c[0x68];
 	float m_vel3d4[3];
