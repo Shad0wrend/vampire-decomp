@@ -170,6 +170,7 @@
 0x10002bee func   ?sub_100f6d80@CUnknown100f6d80@@QAEXH@Z CUnknown100f6d80::sub_100f6d80
 0x10002c52 func   ?vfunc472@CHL2_Player@@UAEXXZ CHL2_Player::vfunc472
 0x10002c7a func   _info_player_start info_player_start
+0x10002c84 func   ?sub_1042fc90@@YAII@Z sub_1042fc90
 0x10002cb6 func   ?sub_10032db0@CUtlVector20@@QAEXH@Z CUtlVector20::sub_10032db0
 0x10002cc5 func   _phys_convert phys_convert
 0x10002d79 func   _ai_network ai_network

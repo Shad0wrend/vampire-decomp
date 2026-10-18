@@ -20643,6 +20643,14 @@ unsigned int sub_1042fc30(unsigned int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042fc90 size=0x36
+#pragma optimize("", off)
+unsigned int sub_1042fc90(unsigned int x)
+{
+	return (x ^ 0x4d832fa5) ^ (((((x ^ 0x4d832fa5) & 0x4df36a35) ^ 0x7b05c52d) - 0x40a5ea2b ^ 0x25170cd8) & 0xb20c95ca);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042fd40 size=0x2e
 #pragma optimize("", off)
 unsigned int sub_1042fd40(unsigned int x)
