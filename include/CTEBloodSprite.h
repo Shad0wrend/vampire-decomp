@@ -1,13 +1,13 @@
-// CTEBloodSprite: blood sprite temp entity. Declared flat (base CBaseTempEntity at +0x0 not modelled); only the vtable head is modelled.
+// CTEBloodSprite: blood sprite temp entity (derived from the CBaseTempEntity head at +0x0); only the vtable head is modelled.
 #pragma once
 
-class CTEBloodSprite
+#include "CBaseTempEntity.h"
+
+class CTEBloodSprite : public CBaseTempEntityHead
 {
 public:
 	CTEBloodSprite(const char *name);	// 0x1005d8f0
 
-	virtual void vfunc0();
-	virtual void vfunc1();
 	virtual CTEBloodSprite *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	void sub_1000d4b8();	// destructor body
