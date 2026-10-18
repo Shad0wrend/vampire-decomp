@@ -10957,6 +10957,21 @@ int sub_10202780(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202c40 size=0x10
+struct S4 {
+	int a, b, c, d;
+	S4 *sub_10202c40();
+};
+S4 *S4::sub_10202c40()
+{
+	a = 0;
+	b = 0;
+	c = 0;
+	d = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203190 size=0x66
 #include "CUnknown102029c0.h"
 struct StatOwner2 {
