@@ -5,4 +5,5 @@ class CBaseTerminal
 {
 public:
 	void vfunc71();
+	char vfunc32(int a);
 };
