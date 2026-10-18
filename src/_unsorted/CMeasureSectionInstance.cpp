@@ -21,3 +21,16 @@ CMeasureSectionInstance::CMeasureSectionInstance(int section)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10247a90 size=0x1e
+#include "CMeasureSectionInstance.h"
+
+// TARGET: CMeasureSectionInstance::vfunc0
+CMeasureSectionInstance *CMeasureSectionInstance::vfunc0(unsigned int flags)
+{
+	sub_10001d16();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
