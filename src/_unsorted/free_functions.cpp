@@ -15066,6 +15066,14 @@ unsigned char __fastcall sub_10381c80(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038f290 size=0x1e
+#include "CNPC_VManBat.h"
+bool CNPC_VManBat::sub_1038f290()
+{
+	return m_f6684 > 0.0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038f640 size=0xc
 unsigned char __fastcall sub_1038f640(char *self)
 {
