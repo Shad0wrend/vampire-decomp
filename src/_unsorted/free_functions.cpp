@@ -12401,6 +12401,19 @@ void __fastcall sub_10227b20(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022d1e0 size=0x18
+struct CBlock4k
+{
+	int m_data[0x12];
+};
+
+void sub_1022d1e0(CBlock4k *dst, const CBlock4k *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022d260 size=0x6a
 #include "CUnknown1022d260.h"
 
