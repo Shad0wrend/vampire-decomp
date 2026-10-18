@@ -1417,6 +1417,7 @@
 0x1000de63 func   ?sub_103bf580@CNPC_VTzimisce@@QAEPAXPAX@Z CNPC_VTzimisce::sub_103bf580
 0x1000de95 func   _item_g_bertrams_cd item_g_bertrams_cd
 0x1000de9a func   ?vfunc14@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc14
+0x1000def4 func   ?vfunc5@CNPC_VFrenzyShadow@@QAEPAV1@I@Z CNPC_VFrenzyShadow::vfunc5
 0x1000df30 func   ?vfunc5@CFireSmoke@@UAEPAV1@I@Z CFireSmoke::vfunc5
 0x1000df3a func   ?sub_10367960@@YADXZ sub_10367960
 0x1000df49 func   ?sub_1030f660@@YGPADH@Z sub_1030f660

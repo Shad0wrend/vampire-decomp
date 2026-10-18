@@ -37,3 +37,18 @@ void CNPC_VFrenzyShadow::vfunc601(int unused)
 	g_10924edc->slot1();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10376f20 size=0x1e
+#include "CNPC_VFrenzyShadow.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CNPC_VFrenzyShadow::vfunc5
+CNPC_VFrenzyShadow *CNPC_VFrenzyShadow::vfunc5(unsigned int flags)
+{
+	sub_100123af();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
