@@ -6,4 +6,7 @@ class CBaseFlex : public CBaseEntity
 {
 public:
 	void sub_100b5b00(const float *v);	// slot 277 override: stores three floats at +0x848
+
+	char m_pad03e0[0x848 - 0x3e0];
+	float m_vec848[3];
 };
