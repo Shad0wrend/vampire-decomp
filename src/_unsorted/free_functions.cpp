@@ -1680,6 +1680,16 @@ void CMem16b_t::sub_1004b990(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004c4c0 size=0xbd
+#include "CUtlRBTree36.h"
+
+bool CUtlRBTree36::sub_1004c4c0(unsigned short i) const
+{
+	unsigned short parent = Links(i).m_Parent;
+	return Links(parent).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050170 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
