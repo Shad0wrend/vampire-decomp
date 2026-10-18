@@ -1051,6 +1051,7 @@
 0x1000ba87 func   _grenade grenade
 0x1000ba9b func   _item_g_gargoyle_book item_g_gargoyle_book
 0x1000babe func   ?sub_10180220@@YAXXZ sub_10180220
+0x1000bac3 func   ?sub_10430170@@YAII@Z sub_10430170
 0x1000baf0 func   ?vfunc104@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc104
 0x1000baf5 func   ?sub_101eaa60@@YAXH@Z sub_101eaa60
 0x1000bb09 func   ?vfunc336@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc336
