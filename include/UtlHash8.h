@@ -9,7 +9,7 @@ struct UtlHash8Bucket
 	int m_Size;
 	char *m_pad;
 
-	void PurgeMemory();	// frees the allocation unless the grow size is -1 (external memory)
+	void PurgeMemory(void (__cdecl *pfnFree)(void *));	// frees the allocation unless the grow size is -1 (external memory)
 };
 
 class UtlHash8
