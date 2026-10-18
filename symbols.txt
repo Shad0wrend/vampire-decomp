@@ -649,6 +649,7 @@
 0x10008850 func   ?sub_101daf60@CUnknown101daf60@@QAE_NXZ CUnknown101daf60::sub_101daf60
 0x1000885a func   _gravity_pellet gravity_pellet
 0x1000886e func   _aiscripted_sequence aiscripted_sequence
+0x1000889b func   ?sub_10093ef0@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10093ef0
 0x100088f0 func   ?sub_100bc3a0@@YAXH@Z sub_100bc3a0
 0x10008913 func   ?sub_1030ba50@CUnknown1030ba50@@QAEXH@Z CUnknown1030ba50::sub_1030ba50
 0x1000891d func   _momentary_rot_button momentary_rot_button
