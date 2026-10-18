@@ -15,3 +15,15 @@ CNPC_VVentrue *CNPC_VVentrue::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c7950 size=0x1d
+#include "CNPC_VVentrue.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093d394;
+extern B g_10936c74;
+int CNPC_VVentrue::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093d394.sub_10012300(x));
+}
+// END FUNCTION
