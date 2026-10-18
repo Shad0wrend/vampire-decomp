@@ -1578,6 +1578,7 @@
 0x1000ec0a func   ?vfunc5@CWeaponMelee_ChangClaw@@QAEPAV1@I@Z CWeaponMelee_ChangClaw::vfunc5
 0x1000ec1e func   ?sub_101eab60@@YAXH@Z sub_101eab60
 0x1000ec3c func   ?sub_100436c0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_100436c0
+0x1000ec55 func   ?vfunc5@CWeaponWallet@@QAEPAV1@I@Z CWeaponWallet::vfunc5
 0x1000ec64 func   ?sub_100bc580@CUnknown100bc580@@QAEXD@Z CUnknown100bc580::sub_100bc580
 0x1000ec69 func   ?sub_100aa840@CBaseEntity@@QAEDXZ CBaseEntity::sub_100aa840
 0x1000ec6e func   ?sub_100be000@@YIXPADHD@Z sub_100be000
