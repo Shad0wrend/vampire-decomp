@@ -1185,6 +1185,7 @@
 0x1000ba0a func   ?sub_101eaaa0@@YAXH@Z sub_101eaaa0
 0x1000ba46 func   ?sub_10043750@S10043750@@QAEXH@Z S10043750::sub_10043750
 0x1000ba5f func   ?vfunc8@CSoundscapeSystem@@QAEPAV1@I@Z CSoundscapeSystem::vfunc8
+0x1000ba78 func   ?vfunc5@CWeaponMelee_TzimisceMelee@@QAEPAV1@I@Z CWeaponMelee_TzimisceMelee::vfunc5
 0x1000ba82 func   ?sub_1002ccc0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_1002ccc0
 0x1000ba87 func   _grenade grenade
 0x1000ba9b func   _item_g_gargoyle_book item_g_gargoyle_book
