@@ -52,6 +52,7 @@
 0x1000172b func   ?sub_101af9b0@@YIPADPAD@Z sub_101af9b0
 0x10001730 func   ?vfunc601@CNPC_VGargoyle@@UAEXH@Z CNPC_VGargoyle::vfunc601
 0x1000173a func   _filter_activator_feat filter_activator_feat
+0x10001744 func   ?vfunc5@CItemGIdolCat@@QAEPAV1@I@Z CItemGIdolCat::vfunc5
 0x10001753 func   _filter_activator_mass filter_activator_mass
 0x10001776 func   ?vfunc5@CHudEntity@@QAEPAV1@I@Z CHudEntity::vfunc5
 0x1000177b func   ?sub_10376ba0@CNPC_VFrenzyShadow@@QAE_NH@Z CNPC_VFrenzyShadow::sub_10376ba0
