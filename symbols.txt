@@ -329,6 +329,7 @@
 0x10004e94 func   ?vfunc2@CTEExplosion@@UAEPAV1@I@Z CTEExplosion::vfunc2
 0x10004e9e func   ?sub_1022d260@CUnknown1022d260@@QAEXH@Z CUnknown1022d260::sub_1022d260
 0x10004ed5 func   ?sub_104273f0@S104273f0@@QAEXH@Z S104273f0::sub_104273f0
+0x10004efd func   ?sub_1007e000@S1007e050@@QAEXH@Z S1007e050::sub_1007e000
 0x10004f2a func   ?sub_1042da80@CUnknown1042da80@@QAEXH@Z CUnknown1042da80::sub_1042da80
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
 0x100050e2 func   _item_p_research_mg_brawl item_p_research_mg_brawl

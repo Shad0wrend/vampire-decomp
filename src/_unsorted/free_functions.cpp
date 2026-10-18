@@ -2810,6 +2810,23 @@ void CUnknown1007dfe0::sub_1007dfe0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e000 size=0x3b
+#include "S1007e050.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+void S1007e050::sub_1007e000(int elem)
+{
+	int idx = sub_1007e050(elem);
+	if (idx != -1) {
+		int num = m_size - idx - 1;
+		if (num > 0)
+			memmove(&m_pElements[idx], &m_pElements[idx + 1], num * sizeof(int));
+		m_size--;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e050 size=0x24
 struct S1007e050 {
 	char m_pad[0x14];
