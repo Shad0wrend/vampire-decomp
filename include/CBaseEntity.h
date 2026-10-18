@@ -85,6 +85,8 @@ public:
 	void sub_100b3b00();
 	int sub_100b3d10();	// "CBaseEntity::GetEdict" scope; returns the field at +0x2e0
 	void sub_100b40f0(int a);
+	void sub_100fbbb0(float time);	// "CBaseEntity::SetNextThink": stores time + gpGlobals->curtime at +0x17c (0 clears it)
+	void sub_100fbc20();	// calls slot 242, then sub_100fbbb0(2.0f)
 
 	char m_pad0004[0x110];
 	void (CBaseEntity::*m_pfn0114)();
