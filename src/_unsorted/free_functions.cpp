@@ -9570,6 +9570,13 @@ bool sub_101b6650(unsigned short *a, unsigned short *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6680 size=0x13
+bool sub_101b6680(unsigned short *a, unsigned short *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6a30 size=0x8
 void __fastcall sub_101b6a30(int *p) { p[3] = 0; }
 // END FUNCTION
