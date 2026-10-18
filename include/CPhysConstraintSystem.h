@@ -12,4 +12,8 @@ public:
 	virtual CPhysConstraintSystem *vfunc5(unsigned int flags);	// scalar deleting destructor
 
 	void sub_1000cb8a();	// destructor body
+	void vfunc103();	// slot 103, declared as a plain member
+
+	char m_pad0004[0x450 - 4];
+	void *m_pSystem;	// 0x450
 };
