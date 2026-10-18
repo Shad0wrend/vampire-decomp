@@ -1869,6 +1869,7 @@
 0x10010848 func   ?vfunc5@CTerrainMorph@@QAEPAV1@I@Z CTerrainMorph::vfunc5
 0x1001084d func   ?sub_100b47e0@@YIXPAH@Z sub_100b47e0
 0x1001086b func   ?vfunc5@CEnvGlobal@@QAEPAV1@I@Z CEnvGlobal::vfunc5
+0x1001088e func   ?vfunc546@CNPC_VSheriffMan@@QAEHH@Z CNPC_VSheriffMan::vfunc546
 0x100108a7 func   ?vfunc546@CNPC_VChangBrosBlade@@QAEHH@Z CNPC_VChangBrosBlade::vfunc546
 0x100108b1 func   ?sub_10049da0@@YIXPAUMem@@HH@Z sub_10049da0
 0x100108b6 func   ?sub_102480f0@CUnknown10248a50@@QAE_NPBDPAUIFileSys@@0_N@Z CUnknown10248a50::sub_102480f0
