@@ -103,6 +103,7 @@
 0x10001efb func   ?vfunc2@CTEDecal@@UAEPAV1@I@Z CTEDecal::vfunc2
 0x10001f5f func   _item_w_zombie_fists item_w_zombie_fists
 0x10001f9b func   _item_k_leopold_int_key item_k_leopold_int_key
+0x10001faa func   ?vfunc5@CWindowPane@@QAEPAV1@I@Z CWindowPane::vfunc5
 0x10001fd7 func   ?vfunc62@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc62
 0x10001ffa func   _item_d_holy_light item_d_holy_light
 0x10002027 func   ?sub_102e26f0@@YIXPAUCOwner@@@Z sub_102e26f0
