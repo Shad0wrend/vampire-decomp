@@ -1111,6 +1111,7 @@
 0x1000dbbb func   ?sub_102c3690@CAI_BaseNPCTroika@@QAEPBDH@Z CAI_BaseNPCTroika::sub_102c3690
 0x1000dbc5 func   _trigger_proximity trigger_proximity
 0x1000dbca func   ?sub_10102410@@YAPAHXZ sub_10102410
+0x1000dc42 func   ?sub_101b6650@@YA_NPAG0@Z sub_101b6650
 0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43
 0x1000dca1 func   ?vfunc421@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc421
 0x1000dd19 func   ?vfunc5@CPhysTorque@@UAEPAV1@I@Z CPhysTorque::vfunc5
