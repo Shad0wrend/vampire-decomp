@@ -9998,6 +9998,21 @@ const char *CUnknown101da960::sub_101da960(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dae70 size=0x16
+struct S6 {
+	int a, b, c, d, e, f;
+	S6 *sub_101dae70(int v);
+};
+S6 *S6::sub_101dae70(int v)
+{
+	a = v;
+	c = 0;
+	e = 0;
+	f = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101daf60 size=0x9
 bool CUnknown101daf60::sub_101daf60()
 {
