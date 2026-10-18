@@ -22425,6 +22425,21 @@ void sub_1042ffb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10430050 size=0x22
+extern int g_106afdd4;
+extern int g_106afe5c;
+extern void (*g_106afe64)();
+void sub_10002e37();
+#pragma optimize("", off)
+void sub_10430050()
+{
+    if (g_106afdd4 == 0)
+        sub_10002e37();
+    if (g_106afe5c == 0)
+        g_106afe64();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10436900 size=0xd
 #pragma optimize("s", on)
 int sub_10436900(char **ap)
