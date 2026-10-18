@@ -41,3 +41,12 @@ bool CPropSign::vfunc32(void *pEntity)
 // FUNCTION: 0x10211d20 size=0x9
 int CPropSign::vfunc35(int a) { return m_field768; }
 // END FUNCTION
+
+// FUNCTION: 0x10211d40 size=0x16
+#include "CPropSign.h"
+
+bool CPropSign::vfunc34(int a)
+{
+	return vfunc35(a) != 0;
+}
+// END FUNCTION
