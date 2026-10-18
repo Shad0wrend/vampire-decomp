@@ -687,6 +687,7 @@
 0x10007879 func   ?vfunc11@CAI_Motor@@UAEMH@Z CAI_Motor::vfunc11
 0x10007897 func   ?sub_103c49d0@@YADXZ sub_103c49d0
 0x100078a6 func   _vgui_screen vgui_screen
+0x100078dd func   ?vfunc5@CPointTarget@@QAEPAV1@I@Z CPointTarget::vfunc5
 0x10007900 func   ?sub_102885d0@@YIXPAX@Z sub_102885d0
 0x10007914 func   ?sub_1007b9b0@S1007b9b0@@QAEXPBD@Z S1007b9b0::sub_1007b9b0
 0x10007923 func   ?vfunc8@CEntityListSystem@@QAEPAV1@I@Z CEntityListSystem::vfunc8
