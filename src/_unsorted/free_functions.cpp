@@ -17913,6 +17913,26 @@ struct CUnknown103c76b0 {
 void CUnknown103c76b0::sub_103c76b0() { slot617(); }
 // END FUNCTION
 
+// FUNCTION: 0x103c78a0 size=0x33
+void sub_10007897();
+void sub_10005f2e();
+extern int g_1065f0e4;
+extern char g_1065f0e0;
+extern int g_10936b68;
+
+char sub_103c78a0()
+{
+    sub_10007897();
+    if (g_1065f0e4 != g_10936b68) {
+        sub_10005f2e();
+        g_1065f0e0 = 1;
+        g_1065f0e4 = g_10936b68;
+        return 1;
+    }
+    return g_1065f0e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d1ca0 size=0x81
 #include "CNPC_VWerewolf.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
