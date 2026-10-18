@@ -1216,6 +1216,43 @@ void CMem8d_t::sub_10043010(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043230 size=0xba
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct E8 { int a, b; };
+
+struct CMem8c_t {
+	E8 *m_pMemory; int m_nAllocationCount; int m_nGrowSize; int m_Size; E8 *m_pElements;
+	void sub_10043320(int num);
+	// TARGET: CMem8c_t::sub_10043230
+	int sub_10043230(int elem, int num, const E8 *src);
+};
+
+int CMem8c_t::sub_10043230(int elem, int num, const E8 *src)
+{
+	if (num == 0)
+		return elem;
+	if (m_Size + num > m_nAllocationCount)
+		sub_10043320(m_Size - m_nAllocationCount + num);
+	m_Size += num;
+	m_pElements = m_pMemory;
+	int toMove = m_Size - elem - num;
+	if (toMove > 0) {
+		if (num > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], toMove * 8);
+	}
+	for (int i = 0; i < num; i++) {
+		E8 *p = &m_pMemory[elem + i];
+		if (p) { p->a = 0; p->b = 0; }
+	}
+	if (src) {
+		for (int i = 0; i < num; i++)
+			m_pMemory[elem + i] = src[i];
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043320 size=0x67
 struct Mem8 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
