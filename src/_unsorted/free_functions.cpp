@@ -88,6 +88,23 @@ void CUnknown100295d0::sub_100295f0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029ea0 size=0x4b
+#include "CConstraintAnchor.h"
+
+void *sub_100aa720(unsigned int size);
+inline void *operator new(unsigned int, void *p) { return p; }
+extern const char g_1053938c[];
+
+// TARGET: info_constraint_anchor
+extern "C" CConstraintAnchor *info_constraint_anchor()
+{
+	void *mem = sub_100aa720(0x450);
+	CConstraintAnchor *p = mem ? new(mem) CConstraintAnchor : 0;
+	p->vfunc106(g_1053938c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b790 size=0x49
 void *sub_1000db89(int);
 struct GP;
