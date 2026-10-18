@@ -14475,6 +14475,35 @@ int sub_102d6210(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d7210 size=0x53
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_10006659(GP *);
+extern int vt_1049be5c;
+extern int vt_1049be30;
+extern char g_1060b100[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: aitesthull
+extern "C" GP *aitesthull()
+{
+	GP *p = (GP *)sub_1000db89(0x5f48);
+	if (p) {
+		sub_10006659(p);
+		*(int **)p = &vt_1049be5c;
+		*(int **)((char *)p + 0x19b0) = &vt_1049be30;
+	} else {
+		p = 0;
+	}
+	p->name(g_1060b100);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d9150 size=0xa
 CUnknown102d9150 *CUnknown102d9150::sub_102d9150()
 {
