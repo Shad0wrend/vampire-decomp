@@ -65,6 +65,7 @@
 0x10001a32 func   ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ CBaseVampireSkillEntity::vfunc272
 0x10001a91 func   ?vfunc9@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc9
 0x10001aa0 func   ?vfunc291@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc291
+0x10001ab9 func   ?sub_10368f20@CNPC_VCamera@@QAEHXZ CNPC_VCamera::sub_10368f20
 0x10001b2c func   ?vfunc448@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::vfunc448
 0x10001b40 func   ?sub_103321a0@@YIMPAD@Z sub_103321a0
 0x10001b59 func   ?sub_101fb8f0@CVStatSubCost_t@@QAE_NXZ CVStatSubCost_t::sub_101fb8f0
