@@ -7,5 +7,6 @@
 class CPhysicsProp : public CBaseEntity
 {
 public:
+	virtual bool vfunc32(int a);	// slot 32 override
 	void vfunc226(int a);	// slot 226 override: base implementation, then sets the byte at +0x1b1
 };
