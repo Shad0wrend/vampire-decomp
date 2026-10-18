@@ -648,6 +648,17 @@ void CBaseEntity::vfunc195()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4c00 size=0x14
+#include "CBaseEntity.h"
+#include "CBaseEntitySlots.h"
+
+int CBaseEntity::vfunc196(int a)
+{
+	((CBaseEntitySlots *)this)->slot193(a);
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4dc0 size=0xe
 // TARGET: CBaseEntity::vfunc158
 bool CBaseEntity::vfunc158()

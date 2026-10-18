@@ -836,6 +836,7 @@
 0x1000a89e func   ?sub_10185880@@YIXPAUMem@@HH@Z sub_10185880
 0x1000a8b2 func   ?vfunc8@CCollisionEvent@@QAEXPAX0@Z CCollisionEvent::vfunc8
 0x1000a907 func   ?sub_100b0720@@YAXXZ sub_100b0720
+0x1000a961 func   ?vfunc196@CBaseEntity@@QAEHH@Z CBaseEntity::vfunc196
 0x1000a975 func   ?vfunc5@CPhysHinge@@UAEPAV1@I@Z CPhysHinge::vfunc5
 0x1000a984 func   ?sub_101fd1b0@CVStatAction_t@@QAEXHHH@Z CVStatAction_t::sub_101fd1b0
 0x1000a9c0 func   _camera_keyframe camera_keyframe
