@@ -6152,6 +6152,19 @@ void Mem400::sub_10107550(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108e00 size=0x27
+#include "CUnknown10108e00.h"
+
+bool CUnknown10108e00::sub_10108e00(int value)
+{
+	if (m_count >= m_capacity)
+		return false;
+	m_pData[m_count] = value;
+	m_count++;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109da0 size=0xa
 void __fastcall sub_10109da0(char *self, int, int)
 {
