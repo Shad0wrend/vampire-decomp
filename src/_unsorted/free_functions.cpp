@@ -1880,6 +1880,21 @@ void CUnknown10058220::sub_10058220(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005a330 size=0x4f
+extern CTEMetalSparks g_106beadc;
+
+void sub_1005a330(int a, int b, const int *pos, const int *dir)
+{
+	g_106beadc.m_pos[0] = pos[0];
+	g_106beadc.m_pos[1] = pos[1];
+	g_106beadc.m_pos[2] = pos[2];
+	g_106beadc.m_dir[0] = dir[0];
+	g_106beadc.m_dir[1] = dir[1];
+	g_106beadc.m_dir[2] = dir[2];
+	g_106beadc.sub_10059fe0(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cc20 size=0x79
 int sub_10431c2f(char *, const char *, ...);
 void sub_10203dd0(char *);
