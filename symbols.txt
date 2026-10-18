@@ -452,6 +452,7 @@
 0x10006596 func   _func_breakable_surf func_breakable_surf
 0x100065aa func   ?sub_101e9880@CUnknown101e9880@@QAEPAV1@XZ CUnknown101e9880::sub_101e9880
 0x100065be func   ?sub_1042d9a0@CUnknown1042d9a0@@QAEGXZ CUnknown1042d9a0::sub_1042d9a0
+0x100065d2 func   ?vfunc126@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc126
 0x1000665e func   ?sub_100eb130@@YIXPAH@Z sub_100eb130
 0x100066b8 func   ?vfunc552@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc552
 0x100066c7 func   ?sub_102180a0@@YIXPADHH@Z sub_102180a0
