@@ -911,6 +911,43 @@ bool sub_10041b40(int *a, int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10041c80 size=0x80
+#include "UtlHash8.h"
+#include "CUtlVector20.h"
+
+struct E8;
+struct CMem8c_t
+{
+	char *m_p;
+	int m_alloc;
+	int m_grow;
+	int m_size;
+	int m_pad;
+	int sub_10042c10(int elem, int num, const E8 *pToCopy);
+};
+
+UtlHash8 *UtlHash8::sub_10041c80(int nBuckets, int growSize, int initSize, bool (__cdecl *pCompare)(void *, void *), unsigned int (__cdecl *pKey)(void *))
+{
+	m_pBuckets = 0;
+	m_pad4 = 0;
+	m_pad8 = 0;
+	m_pad10 = 0;
+	m_pCompare = pCompare;
+	m_pKey = pKey;
+	m_bucketCount = 0;
+	((CUtlVector20 *)this)->sub_10042a80(0, nBuckets, 0);
+	for (int i = 0; i < nBuckets; i++) {
+		CMem8c_t *b = (CMem8c_t *)m_pBuckets + i;
+		b->m_size = 0;
+		b->sub_10042c10(0, initSize, 0);
+		m_pBuckets[i].m_growSize = growSize;
+	}
+	m_bPowerOfTwo = (nBuckets & (nBuckets - 1)) == 0;
+	m_ModMask = m_bPowerOfTwo ? nBuckets - 1 : 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042c10 size=0xba
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
