@@ -17389,6 +17389,26 @@ void CUnknown103a1320::sub_103a1320(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1590 size=0x33
+void sub_10007897();
+void sub_10010131();
+extern int g_1064acbc;
+extern char g_1064acb8;
+extern int g_10936b68;
+
+char sub_103a1590()
+{
+    sub_10007897();
+    if (g_1064acbc != g_10936b68) {
+        sub_10010131();
+        g_1064acb8 = 1;
+        g_1064acbc = g_10936b68;
+        return 1;
+    }
+    return g_1064acb8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103adb00 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
