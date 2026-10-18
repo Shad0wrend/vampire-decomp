@@ -2,8 +2,14 @@
 #pragma once
 #include "CBaseEntity.h"
 
+struct CPointAngleSensorTarget
+{
+	void sub_101cf2f0(int mode);	// reached through the stub 0x10015311
+};
+
 class CPointAngleSensor : public CBaseEntity
 {
 public:
 	virtual int vfunc126(int a);	// brackets the base implementation with enter/leave calls on the member at +0x464
+	virtual int vfunc127(int a);	// base implementation, then a call on the member at +0x464 with mode 3
 };
