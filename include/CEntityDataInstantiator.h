@@ -1,0 +1,39 @@
+// CEntityDataInstantiator<T>: per-entity data hash (bases IEntityDataInstantiator not modelled). Only the members
+// used by the matched functions are declared; the bucket table is a CUtlHash with 0x14-byte buckets.
+#pragma once
+
+struct EntityDataKey_t
+{
+	unsigned int key;
+	int pad;
+};
+
+struct EntityDataBucket_t
+{
+	char *elems;
+	int pad[2];
+	int count;
+	int pad2;
+};
+
+template <class T>
+class CEntityDataInstantiator
+{
+public:
+	virtual void vfunc0();
+	virtual int vfunc1(unsigned int key);
+	virtual void vfunc2();
+	virtual void vfunc3();
+
+	EntityDataBucket_t *m_pBuckets;
+	int m_pad8;
+	int m_padC;
+	unsigned int m_nBuckets;
+	int m_pad14;
+	bool (*m_pCompare)(void *elem, EntityDataKey_t *key);
+	unsigned int (*m_pHash)(EntityDataKey_t *key);
+	bool m_bPow2;
+	unsigned int m_nMask;
+};
+
+struct touchlink_t;
