@@ -564,6 +564,7 @@
 0x10006159 func   ?sub_100f5600@CUnknown100f5600@@QAEXM@Z CUnknown100f5600::sub_100f5600
 0x1000617c func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>::vfunc3
 0x1000618b func   ?vfunc221@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc221
+0x10006195 func   ?vfunc5@CItemGHorrorTape_2@@QAEPAV1@I@Z CItemGHorrorTape_2::vfunc5
 0x10006212 func   ?sub_1006ccc0@CUnknown1006ccc0@@QAEPAV1@XZ CUnknown1006ccc0::sub_1006ccc0
 0x10006221 func   _item_k_gallery_noir_key item_k_gallery_noir_key
 0x10006226 func   _item_g_warr_ledger_1 item_g_warr_ledger_1
