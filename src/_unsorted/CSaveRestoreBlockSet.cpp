@@ -17,3 +17,16 @@ void CSaveRestoreBlockSet::vfunc2(void *pSave)
 	m_nSize = s->vfunc0() - start;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a5020 size=0xa7
+#include "CSaveRestoreBlockSet.h"
+void CSaveRestoreBlockSet::vfunc9(void *pHandler)
+{
+	int idx = m_nHandlers;
+	GrowVector();
+	ShiftElementsRight(idx);
+	void **p = &m_pHandlers[idx];
+	if (p)
+		*p = pHandler;
+}
+// END FUNCTION
