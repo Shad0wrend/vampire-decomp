@@ -1128,6 +1128,7 @@
 0x1000c1e9 func   ?sub_101f0d40@CUnknown101f0d40@@QAEXPAH@Z CUnknown101f0d40::sub_101f0d40
 0x1000c1ee func   ?sub_10430470@@YAII@Z sub_10430470
 0x1000c1f3 func   ?sub_104301d0@@YAII@Z sub_104301d0
+0x1000c1f8 func   ?sub_103dbf00@UtlVec8@@QAEPAU1@HH@Z UtlVec8::sub_103dbf00
 0x1000c202 func   ?sub_100ed6c0@@YIXPAXHH@Z sub_100ed6c0
 0x1000c207 func   ?sub_1042ff30@@YAII@Z sub_1042ff30
 0x1000c20c func   ?sub_10082e40@CUnknown10082e40@@QAE_NXZ CUnknown10082e40::sub_10082e40
