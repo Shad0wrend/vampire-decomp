@@ -4903,6 +4903,48 @@ extern "C" GP *func_rot_button()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb670 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1055ce68[2];
+
+int *sub_100cb670()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_iNextKey", {0x450, 0}, 1, 6, "NextKey" },
+        { 1, "m_flRollDegrees", {0x45c, 0}, 1, 6, "Roll" },
+        { 1, "m_fl35mmFocalLength", {0x460, 0}, 1, 6, "FocalLength" },
+        { 5, "m_bTimeControlsSpeed", {0x464, 0}, 1, 6, "TimeControl" },
+        { 1, "m_flMoveSpeed", {0x468, 0}, 1, 6, "MoveSpeed" },
+        { 1, "m_flMoveTime", {0x46c, 0}, 1, 6, "MoveTime" },
+        { 1, "m_flPauseTime", {0x470, 0}, 1, 6, "Pause" },
+        { 1, "m_flRateIn", {0x474, 0}, 1, 6, "RateIn" },
+        { 1, "m_flRateOut", {0x478, 0}, 1, 6, "RateOut" },
+        { 5, "m_bCorner", {0x47c, 0}, 1, 6, "Corner" },
+        { 10, "m_OnReached", {0x480, 0}, 1, 0x16, "OnReachedKeyframe", g_1055dc70 },
+        { 10, "m_OnLeaving", {0x498, 0}, 1, 0x16, "OnLeavingKeyframe", g_1055dc70 },
+    };
+    g_1055ce68[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1055ce68[0] = (int)&dataDesc[1];
+    return g_1055ce68;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd640 size=0xc
 extern char g_106b8540[];
 char *CUnknown100cd640::sub_100cd640()
