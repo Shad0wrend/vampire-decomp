@@ -18119,6 +18119,26 @@ char sub_103dc8a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd140 size=0x33
+void sub_1000ef84();
+void sub_1000fa9c();
+extern int g_10663ebc;
+extern char g_10663eb8;
+extern int g_10936b68;
+
+char sub_103dd140()
+{
+    sub_1000ef84();
+    if (g_10663ebc != g_10936b68) {
+        sub_1000fa9c();
+        g_10663eb8 = 1;
+        g_10663ebc = g_10936b68;
+        return 1;
+    }
+    return g_10663eb8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1680 size=0x20
 #include "CUnknown103e1680.h"
 extern CUnknown103e1680 *g_10940644;
