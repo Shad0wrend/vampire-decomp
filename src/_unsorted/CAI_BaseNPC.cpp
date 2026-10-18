@@ -101,6 +101,23 @@ void CAI_BaseNPC::vfunc459()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10278e00 size=0x13
+#include "CAI_BaseNPC.h"
+
+struct CAI_Helper5d44 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual float v15(int a);
+};
+
+float CAI_BaseNPC::vfunc520(int a)
+{
+	float f = (*(CAI_Helper5d44 **)((char *)this + 0x5d44))->v15(a);
+	return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027a400 size=0xd
 struct NpcFlags204 { char pad[0x204]; unsigned int m; };
 unsigned int CAI_BaseNPC::vfunc552()
