@@ -15,3 +15,18 @@ template<> int CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> 
 	return (int)pVec;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b45e0 size=0x13
+#include "CUtlVectorDataOps.h"
+
+struct thinkfunc_t;
+
+// TARGET: CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>::vfunc2
+template <class VEC, int N>
+bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+{
+	return *(int *)(*(char **)pFieldData + 0xc) == 0;
+}
+
+template class CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>;
+// END FUNCTION
