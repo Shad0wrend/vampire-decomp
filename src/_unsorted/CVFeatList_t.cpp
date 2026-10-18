@@ -25,3 +25,11 @@ float CVFeatList_t::vfunc2(int index)
 	return m_records[index].m_value;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101e89e0 size=0x11
+#include "CVFeatList_t.h"
+float CVFeatList_t::vfunc3(int index)
+{
+	return (float)*(int *)((char *)this + 0x16c + index * 0x18);
+}
+// END FUNCTION
