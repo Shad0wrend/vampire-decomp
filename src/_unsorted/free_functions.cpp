@@ -10115,6 +10115,36 @@ void __stdcall sub_101e8410(int *p, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e85a0 size=0x78
+#include "CVStatList_t.h"
+struct P {
+	char pad[0x13bc];
+	int m_count;
+	CVStatList_t **m_items;
+};
+struct S {
+	virtual void v0();
+	virtual void v1(int a);
+	void sub_101e85a0(P *p);
+};
+void S::sub_101e85a0(P *p)
+{
+	CVStatList_t *l;
+	for (int i = 0; i < p->m_count; i++) {
+		if (p->m_items[i]->m_field10 == 0) {
+			l = p->m_items[i];
+			goto done;
+		}
+	}
+	{
+		static CVStatList_t def(-1);
+		l = &def;
+	}
+done:
+	v1(l->sub_10010609(1) - 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e94b0 size=0xa
 extern int g_1073a144;
 
