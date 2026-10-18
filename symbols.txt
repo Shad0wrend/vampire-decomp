@@ -1238,6 +1238,7 @@
 0x1000b140 func   _camera_animated camera_animated
 0x1000b172 func   ?vfunc36@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHH@Z CTempEntsSystem::vfunc36
 0x1000b181 func   ?sub_1011d8e0@@YAXPBD0ZZ sub_1011d8e0
+0x1000b1f9 func   ?vfunc212@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc212
 0x1000b22b func   ?vfunc134@CBloodSplat@@QAEXXZ CBloodSplat::vfunc134
 0x1000b24e func   ?sub_10136470@@YIXPADHH@Z sub_10136470
 0x1000b2d0 func   ?sub_10341850@@YI_NPADHH@Z sub_10341850
