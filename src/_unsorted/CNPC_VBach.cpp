@@ -15,3 +15,15 @@ CNPC_VBach *CNPC_VBach::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10362df0 size=0x1d
+#include "CNPC_VBach.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093a608;
+extern B g_10936c74;
+int CNPC_VBach::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093a608.sub_10012300(x));
+}
+// END FUNCTION
