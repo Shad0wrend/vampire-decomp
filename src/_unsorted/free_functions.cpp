@@ -9052,6 +9052,38 @@ struct CUtlVectorBase { int a, b, c, m_Size; void sub_10185180(); };
 void CUtlVectorBase::sub_10185180() { m_Size = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101851a0 size=0x8c
+#include "CUtlVector64.h"
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUtlVector64::sub_101851a0(int num)
+{
+    if (m_size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 1;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount << 6);
+        else
+            m_pMemory = (char *)g_109f3634(m_allocationCount << 6);
+    }
+    m_size += num;
+    m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101852f0 size=0x8
 void __fastcall sub_101852f0(int *p) { p[3] = 0; }
 // END FUNCTION
