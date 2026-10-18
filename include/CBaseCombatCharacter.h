@@ -3,12 +3,24 @@
 #pragma once
 
 #include "CBaseEntity.h"
+#include "CVStatList_t.h"
 
 struct inputdata_t;
+
+#define CBCC_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 
 class CBaseCombatCharacter : public CBaseEntity
 {
 public:
+	// Placeholder slots 134..251 (the base declares slots up to 133).
+	CBCC_SLOTS10(a0) CBCC_SLOTS10(a1) CBCC_SLOTS10(a2) CBCC_SLOTS10(a3) CBCC_SLOTS10(a4)
+	CBCC_SLOTS10(a5) CBCC_SLOTS10(a6) CBCC_SLOTS10(a7) CBCC_SLOTS10(a8) CBCC_SLOTS10(a9)
+	CBCC_SLOTS10(b0)
+	virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13();
+	virtual void b14(); virtual void b15(); virtual void b16(); virtual void b17();
+	virtual void vfunc252(int a, int b, int c);
+
 	void sub_103326b0(float amount);
 	void sub_10339560();
 	int sub_10337a60();	// "CBaseCombatCharacter::GetVHistor..." getter
@@ -45,4 +57,7 @@ public:
 
 	char m_pad03e0[0x13a0 - 0x3e0];
 	int m_field13a0;
+	char m_pad13a4[0x13bc - 0x13a4];
+	int m_nStatLists;
+	CVStatList_t **m_pStatLists;
 };
