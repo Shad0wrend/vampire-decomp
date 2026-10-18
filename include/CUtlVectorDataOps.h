@@ -11,7 +11,7 @@ class CUtlVectorDataOps
 public:
 	CUtlVectorDataOps() {}
 	virtual ~CUtlVectorDataOps() {}
-	virtual void vfunc1();
+	virtual void vfunc1(void *fieldInfo, void *pRestore);	// Restore(SaveRestoreFieldInfo_t &, IRestore *)
 	virtual void vfunc2();
 	virtual int vfunc3(void *pFieldData);	// MakeEmpty: zeroes the size (+0xc) of the vector the field points to
 	virtual void vfunc4();
