@@ -1796,6 +1796,7 @@
 0x10014c1d func   ?sub_100ce810@@YGEPAUEv_t@@PAXPAH@Z sub_100ce810
 0x10014c4f func   ?vfunc43@CMultiplayRules@@UAEHHH@Z CMultiplayRules::vfunc43
 0x10014ca9 func   ?sub_1013d900@@YA_NHHHPAH@Z sub_1013d900
+0x10014d17 func   ?sub_102a97d0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97d0
 0x10014d26 func   _item_p_gargoyle_talisman item_p_gargoyle_talisman
 0x10014d35 func   _item_a_hvy_cloth item_a_hvy_cloth
 0x10014d49 func   ?sub_100fa600@S100fa600@@QAEXH@Z S100fa600::sub_100fa600
