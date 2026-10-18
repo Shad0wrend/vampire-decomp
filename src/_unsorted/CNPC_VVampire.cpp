@@ -15,3 +15,15 @@ CNPC_VVampire *CNPC_VVampire::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c4a80 size=0x1d
+#include "CNPC_VVampire.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093d2a4;
+extern B g_10936c74;
+int CNPC_VVampire::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093d2a4.sub_10012300(x));
+}
+// END FUNCTION
