@@ -5587,6 +5587,23 @@ void CUnknown100ee750::sub_100ee750(void *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0120 size=0x3a
+#include "CUnknown100f0120.h"
+#include "CBaseEntity.h"
+
+void __fastcall sub_100f0300(char *p);
+
+void CUnknown100f0120::sub_100f0120(inputdata_t *inputdata)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)inputdata->pActivator;
+	if (pEnt)
+		m_hEntity = *pEnt->vfunc1();
+	else
+		m_hEntity = 0xffffffff;
+	sub_100f0300((char *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0300 size=0x8
 void __fastcall sub_100f0300(char *p) { p[0x55c] = 1; }
 // END FUNCTION
