@@ -50,8 +50,8 @@ struct CRecipientVec
 	}
 	void Purge()
 	{
-		void (__cdecl *pfnFree)(void *) = g_109f3624;
 		RemoveAll();
+		void (__cdecl *pfnFree)(void *) = g_109f3624;
 		m_Memory.Purge(pfnFree);
 		m_pElements = m_Memory.m_pMemory;
 		m_Memory.Purge(pfnFree);
