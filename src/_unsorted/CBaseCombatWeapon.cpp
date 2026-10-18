@@ -89,6 +89,21 @@ void CBaseCombatWeapon::vfunc359()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10250c20 size=0x1e
+#include "CBaseCombatWeapon.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CBaseCombatWeapon::vfunc5
+CBaseCombatWeapon *CBaseCombatWeapon::vfunc5(unsigned int flags)
+{
+	sub_10013a57();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102526c0 size=0x1d
 #include "CBaseCombatWeapon.h"
 
