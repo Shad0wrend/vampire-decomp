@@ -10439,6 +10439,58 @@ struct CUnknown101c4760 { int a; int b; int c; void sub_101c4760(); };
 void sub_101c4820(CUnknown101c4760 *p) { p->sub_101c4760(); }
 // END FUNCTION
 
+// FUNCTION: 0x101c49e0 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1059d570[2];
+void sub_1000432c();
+void sub_1000439a();
+void sub_10004386();
+void sub_10004318();
+void sub_1000429b();
+void sub_100043bd();
+void sub_1000439f();
+void sub_1000431d();
+void sub_100042a0();
+
+int *sub_101c49e0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_iFilterName", {0x560, 0}, 1, 6, "filtername" },
+        { 5, "m_bDisabled", {0x55c, 0}, 1, 6, "StartDisabled" },
+        { 0, "InputEnable", {0, 0}, 1, 8, "Enable", 0, (void *)sub_1000432c },
+        { 0, "InputDisable", {0, 0}, 1, 8, "Disable", 0, (void *)sub_1000439a },
+        { 0, "InputToggle", {0, 0}, 1, 8, "Toggle", 0, (void *)sub_10004386 },
+        { 0, "InputToggleFlagClient", {0, 0}, 1, 8, "ToggleFlagClient", 0, (void *)sub_10004318 },
+        { 0, "InputToggleFlagNPC", {0, 0}, 1, 8, "ToggleFlagNPC", 0, (void *)sub_1000429b },
+        { 0, "InputEnableFlagClient", {0, 0}, 1, 8, "EnableFlagClient", 0, (void *)sub_100043bd },
+        { 0, "InputEnableFlagNPC", {0, 0}, 1, 8, "EnableFlagNPC", 0, (void *)sub_1000439f },
+        { 0, "InputDisableFlagClient", {0, 0}, 1, 8, "DisableFlagClient", 0, (void *)sub_1000431d },
+        { 0, "InputDisableFlagNPC", {0, 0}, 1, 8, "DisableFlagNPC", 0, (void *)sub_100042a0 },
+        { 10, "m_OnStartTouch", {0x568, 0}, 1, 0x16, "OnStartTouch", g_1055dc70 },
+        { 10, "m_OnEndTouch", {0x580, 0}, 1, 0x16, "OnEndTouch", g_1055dc70 },
+    };
+    g_1059d570[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1059d570[0] = (int)&dataDesc[1];
+    return g_1059d570;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4ac0 size=0x69
 void *sub_1000db89(int);
 struct GP;
