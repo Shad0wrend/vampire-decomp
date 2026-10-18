@@ -6,7 +6,7 @@ class CUnknown101f0e50
 {
 public:
 	int m_f00;
-	int m_f04;
+	int m_f04;	// element count
 	int m_f08;
 	int m_f0c;
 	int m_f10;
@@ -14,4 +14,5 @@ public:
 	int m_f18;
 
 	CUnknown101f0e50 *sub_101f0e50();	// zeroes the fields above and returns this
+	bool sub_101f18f0(int index);	// "IsValidIndex": index is not -1 and below the count at +0x4
 };
