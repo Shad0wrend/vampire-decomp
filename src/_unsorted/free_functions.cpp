@@ -10155,6 +10155,38 @@ bool sub_101b6680(unsigned short *a, unsigned short *b)
 void __fastcall sub_101b6a30(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101b6a50 size=0x8c
+#include "UtlVec8.h"
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void UtlVec8::sub_101b6a50(int num)
+{
+    if (m_Size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_Size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 4;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount << 3);
+        else
+            m_pMemory = (char *)g_109f3634(m_allocationCount << 3);
+    }
+    m_Size += num;
+    m_pElements = (UtlVec8Elem *)m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b72e0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
