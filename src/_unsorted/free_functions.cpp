@@ -5670,6 +5670,19 @@ int EntryTable::sub_100ecc60(int idx, int slot)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ed4d0 size=0x18
+struct CBlock4k
+{
+	int m_data[0x11];
+};
+
+void sub_100ed4d0(CBlock4k *dst, const CBlock4k *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ed500 size=0x72
 struct Elem44 { char d[0x44]; };
 extern void *(*g_109f3638)(void *, int);
