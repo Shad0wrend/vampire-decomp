@@ -1362,6 +1362,7 @@
 0x1000f263 func   ?sub_10092610@CBaseAnimating@@QAEXHHH@Z CBaseAnimating::sub_10092610
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
 0x1000f312 func   ?vfunc13@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHH@Z CTempEntsSystem::vfunc13
+0x1000f317 func   ?sub_1037c750@@YADXZ sub_1037c750
 0x1000f31c func   ?vfunc461@CNPC_VCamera@@UAEHXZ CNPC_VCamera::vfunc461
 0x1000f326 func   ?sub_101cfd80@@YA?AUTVec@@XZ sub_101cfd80
 0x1000f34e func   ?vfunc2@CTEBaseBeam@@UAEPAV1@I@Z CTEBaseBeam::vfunc2
