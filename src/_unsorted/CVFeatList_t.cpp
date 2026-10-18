@@ -33,3 +33,11 @@ float CVFeatList_t::vfunc3(int index)
 	return (float)*(int *)((char *)this + 0x16c + index * 0x18);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101e8a10 size=0x11
+#include "CVFeatList_t.h"
+float CVFeatList_t::vfunc4(int index)
+{
+	return (float)*(int *)((char *)this + 0x170 + index * 0x18);
+}
+// END FUNCTION
