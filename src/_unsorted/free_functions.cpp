@@ -2147,6 +2147,21 @@ void sub_1005a330(int a, int b, const int *pos, const int *dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005a6a0 size=0x4f
+extern CTEMetalSparks g_106beb04;
+
+void sub_1005a6a0(int a, int b, const int *pos, const int *dir)
+{
+	g_106beb04.m_pos[0] = pos[0];
+	g_106beb04.m_pos[1] = pos[1];
+	g_106beb04.m_pos[2] = pos[2];
+	g_106beb04.m_dir[0] = dir[0];
+	g_106beb04.m_dir[1] = dir[1];
+	g_106beb04.m_dir[2] = dir[2];
+	g_106beb04.sub_10059fe0(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005fc00 size=0x76
 #include "CTEBubbles.h"
 
