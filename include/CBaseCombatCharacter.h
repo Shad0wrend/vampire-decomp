@@ -38,6 +38,8 @@ public:
 	void sub_10332570(inputdata_t *data);	// "CBaseCombatCharacter::InputSetHeadAsCameraTarget": scope trace, then sub_103322e0(1, 0)
 	void sub_103322e0(int a, int b);
 	char sub_10339b50();	// "CBaseCombatCharacter::IsBlueBlood": scope trace (entity name), then the byte at +0x93 of this entity's stat record
+	void sub_10325940(inputdata_t *data);	// "CBaseCombatCharacter::InputLookAtEntityEye": scope trace, finds the named entity, then sub_10325cb0(ent, 1)
+	void sub_10325cb0(void *ent, int a);
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc295(int a);
