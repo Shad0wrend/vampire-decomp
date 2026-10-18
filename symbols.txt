@@ -497,6 +497,7 @@
 0x10006749 func   _item_g_horrortape_1 item_g_horrortape_1
 0x10006753 func   _item_g_horrortape_2 item_g_horrortape_2
 0x100067c6 func   _item_g_drugs_drug_box item_g_drugs_drug_box
+0x100067cb func   ?vfunc69@CNPC_VHengeyokai@@UAEDPAX@Z CNPC_VHengeyokai::vfunc69
 0x100067f8 func   _trigger_environmental_audio trigger_environmental_audio
 0x10006811 func   ?sub_102ee120@CUnknown102ee120@@QAEXHHH@Z CUnknown102ee120::sub_102ee120
 0x1000683e func   _item_g_ghost_pendant item_g_ghost_pendant
