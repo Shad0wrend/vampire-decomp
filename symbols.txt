@@ -181,6 +181,7 @@
 0x10002969 func   ?vfunc103@CPhysConstraintSystem@@QAEXXZ CPhysConstraintSystem::vfunc103
 0x10002982 func   ?sub_10319fe0@CUnknown10319fe0@@QAEXH@Z CUnknown10319fe0::sub_10319fe0
 0x100029a0 func   _hud_counter hud_counter
+0x100029e1 func   ?vfunc5@CNPC_VAndreiBlood@@QAEPAV1@I@Z CNPC_VAndreiBlood::vfunc5
 0x10002a09 func   ?sub_1013e800@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e800
 0x10002a1d func   ?sub_10399c70@@YIXPAD@Z sub_10399c70
 0x10002a4a func   ?sub_1006cc20@Dump@@QAEXXZ Dump::sub_1006cc20
