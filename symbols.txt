@@ -1011,6 +1011,7 @@
 0x1000d56c func   ?vfunc8@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc8
 0x1000d599 func   _npc_VGuard1 npc_VGuard1
 0x1000d5bc func   _physics_prop physics_prop
+0x1000d63e func   ?vfunc103@CPhysConstraint@@UAEXXZ CPhysConstraint::vfunc103
 0x1000d666 func   _item_g_astrolite item_g_astrolite
 0x1000d67a func   _item_g_lilly_photo item_g_lilly_photo
 0x1000d6a7 func   _prop_clockhand prop_clockhand
