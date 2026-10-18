@@ -12811,6 +12811,43 @@ void __fastcall sub_1020f2e0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020f8b0 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105ab490[2];
+void sub_10010b8b();
+
+int *sub_1020f8b0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_sTargetEnt", {0x450, 0}, 1, 6, "target_ent" },
+        { 2, "m_sSourceEnt", {0x454, 0}, 1, 6, "source_ent" },
+        { 1, "m_flRadius", {0x458, 0}, 1, 6, "radius" },
+        { 0, "InputCheckVisibility", {0, 0}, 1, 8, "CheckVisibility", 0, (void *)sub_10010b8b },
+        { 10, "m_OnCanSeeTarget", {0x45c, 0}, 1, 0x16, "OnCanSeeTarget", g_1055dc70 },
+        { 10, "m_OnNotSeeTarget", {0x474, 0}, 1, 0x16, "OnNotSeeTarget", g_1055dc70 },
+    };
+    g_105ab490[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105ab490[0] = (int)&dataDesc[1];
+    return g_105ab490;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102158f0 size=0xa
 void __fastcall sub_102158f0(char *self, int, int)
 {
