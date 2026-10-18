@@ -395,6 +395,7 @@
 0x100059fc func   ?sub_102a9750@CUnknown102a9750@@QAEXH@Z CUnknown102a9750::sub_102a9750
 0x10005ab0 func   ?sub_10206300@@YIPAHPAHHH@Z sub_10206300
 0x10005add func   ?sub_103e1680@@YAMXZ sub_103e1680
+0x10005ae7 func   ??0CWeaponMelee_TzimisceMelee@@QAE@XZ CWeaponMelee_TzimisceMelee::CWeaponMelee_TzimisceMelee
 0x10005b23 func   ?sub_101f2ae0@@YGXPAX@Z sub_101f2ae0
 0x10005b32 func   _dynamic_prop dynamic_prop
 0x10005b4b func   ?sub_100a93d0@@YI_NPAD@Z sub_100a93d0
