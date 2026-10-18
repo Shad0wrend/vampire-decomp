@@ -2081,6 +2081,7 @@
 0x100159d3 func   _npc_VDialogPedestrian npc_VDialogPedestrian
 0x10015a0f func   ?sub_101c4820@@YAXPAUCUnknown101c4760@@@Z sub_101c4820
 0x10015a14 func   ?sub_10158d80@CUnknown10158d80@@QAEXXZ CUnknown10158d80::sub_10158d80
+0x10015a2d func   ?sub_101802e0@@YAXXZ sub_101802e0
 0x10015a37 func   ?vfunc266@CWeaponThrown_Grenade_Frag@@UAEXXZ CWeaponThrown_Grenade_Frag::vfunc266
 0x10015a46 func   ?vfunc2@CTEBubbleTrail@@UAEPAV1@I@Z CTEBubbleTrail::vfunc2
 0x10015a91 func   ?vfunc403@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc403

@@ -8432,6 +8432,17 @@ void sub_10180220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101802e0 size=0x11
+struct P { void sub_1015ef40(); };
+P *sub_10008d8c();
+void sub_101802e0()
+{
+	P *p = sub_10008d8c();
+	if (p)
+		p->sub_1015ef40();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181600 size=0xb
 void __fastcall sub_10181600(char *self)
 {
