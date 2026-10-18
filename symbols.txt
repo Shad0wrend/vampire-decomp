@@ -1254,6 +1254,7 @@
 0x1000d396 func   ??0CHL2_Player@@QAE@XZ CHL2_Player::CHL2_Player
 0x1000d3b4 func   _item_g_edane_report item_g_edane_report
 0x1000d3c3 func   ?vfunc2@CTEDynamicLight@@UAEPAV1@I@Z CTEDynamicLight::vfunc2
+0x1000d3cd func   ?sub_10379e80@@YIXPAUE@@HH@Z sub_10379e80
 0x1000d3eb func   _scripted_sentence scripted_sentence
 0x1000d413 func   ?sub_10382aa0@CNPC_VHengeyokai@@QAE_NH@Z CNPC_VHengeyokai::sub_10382aa0
 0x1000d418 func   _trigger_discipline_context trigger_discipline_context
