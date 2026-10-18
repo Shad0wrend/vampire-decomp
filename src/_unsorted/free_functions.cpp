@@ -500,6 +500,16 @@ void CUtlVector32::sub_10032c60(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032f00 size=0x34
+#include "UtlVec8.h"
+void UtlVec8::sub_10032f00(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&m_pMemory[(elem + num) * 8], &m_pMemory[elem * 8], numToMove * 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032fb0 size=0x6a
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
