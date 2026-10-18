@@ -1,20 +1,18 @@
-// CUnknown102dd500: object with a name-table index at +4 and the table's context data at +8; real name not yet known.
+// CUnknown102dd500: weighted string table: entry count at +4, entries (string, weight) from +8; real name not yet known.
 #pragma once
 
-struct CUnknown102dd500Data
+struct CUnknown102dd500Entry
 {
-	int m_unk;
+	const char *m_pString;
+	float m_flWeight;
 };
 
-class CUnknown102dd500Head
+class CUnknown102dd500
 {
 public:
 	int m_unk0;
-	int m_nIndex;
-};
+	int m_nCount;
+	CUnknown102dd500Entry m_Entries[1];
 
-class CUnknown102dd500 : public CUnknown102dd500Head, public CUnknown102dd500Data
-{
-public:
-	const char *sub_102dd500();	// the name for index m_nIndex (the empty string when unset)
+	const char *sub_102dd500();	// the weighted pick among the entries (the empty string when there are none)
 };
