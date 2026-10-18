@@ -132,6 +132,25 @@ void CBaseCombatWeapon::vfunc340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102556d0 size=0x14
+#include "CBaseCombatWeapon.h"
+#define V(n) virtual void n();
+#define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct CWeaponOwner {
+    V100(b) V100(c) V100(d) V100(e)
+    V10(f0) V10(f1) V(g0) V(g1) V(g2) V(g3) V(g4) V(g5) V(g6) V(g7) V(g8)
+    virtual void vfunc429();
+};
+
+void CBaseCombatWeapon::vfunc327()
+{
+    CWeaponOwner *o = sub_10252290();
+    if (o)
+        o->vfunc429();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257230 size=0xe
 bool CBaseCombatWeapon::vfunc303()
 {
