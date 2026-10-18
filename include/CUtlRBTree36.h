@@ -18,8 +18,9 @@ public:
 			m_Parent = 0xffff;
 		}
 	};
-	struct Node_t : Links_t
+	struct Node_t
 	{
+		Links_t m_Links;
 		char m_Data[28];
 	};
 
@@ -33,8 +34,7 @@ public:
 	const Links_t &Links(unsigned short i) const
 	{
 		static Links_t s_Sentinel;
-		const Links_t &node = m_pElements[i];
-		return i != 0xffff ? node : s_Sentinel;
+		return i != 0xffff ? m_pElements[i].m_Links : s_Sentinel;
 	}
 
 	unsigned short sub_10046930(const void *search) const;	// "CUtlRBTree::Find"
