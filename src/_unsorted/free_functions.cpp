@@ -4761,6 +4761,15 @@ void bf_write::sub_100bd540(unsigned int curData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bde40 size=0x14
+#include "CUnknown100bde40.h"
+
+bool CUnknown100bde40::sub_100bde40(const void *pData, int nBytes)
+{
+	return sub_10010c1c(pData, nBytes * 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bdfe0 size=0x9
 struct CUnknown100bdfe0 { int p[3]; int a; char b; void sub_100bdfe0(); };
 // TARGET: CUnknown100bdfe0::sub_100bdfe0
