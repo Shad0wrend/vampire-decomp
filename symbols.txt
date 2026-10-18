@@ -5,6 +5,7 @@
 0x10001078 func   ?sub_101be1d0@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101be1d0
 0x10001082 func   _trigger_brush trigger_brush
 0x10001122 func   ?sub_100945e0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_100945e0
+0x10001127 func   ?vfunc370@CWeaponMelee_MingXiaoMelee@@QAEXPAUCWeaponMeleeEvent@@H@Z CWeaponMelee_MingXiaoMelee::vfunc370
 0x1000114a func   ?vfunc194@CBaseEntity@@QAEXXZ CBaseEntity::vfunc194
 0x10001172 func   ?sub_10106490@@YIXPAD@Z sub_10106490
 0x100011db func   ?sub_1007f580@S1007f580@@QAEXH@Z S1007f580::sub_1007f580
