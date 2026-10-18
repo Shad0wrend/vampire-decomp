@@ -1280,6 +1280,7 @@
 0x1000be5b func   _prop_ragdoll_special prop_ragdoll_special
 0x1000bec4 func   ?sub_10231e60@@YIIPAD@Z sub_10231e60
 0x1000bed8 func   ?sub_1008b490@@YIXPAD@Z sub_1008b490
+0x1000bf14 func   ?vfunc546@CNPC_VBatSwarm@@QAEHH@Z CNPC_VBatSwarm::vfunc546
 0x1000bf32 func   _phys_ballsocket phys_ballsocket
 0x1000bf50 func   ?vfunc2@CTESmoke@@UAEPAV1@I@Z CTESmoke::vfunc2
 0x1000bf5f func   ?sub_1005fc00@@YAXHHPBH0HHHH@Z sub_1005fc00
