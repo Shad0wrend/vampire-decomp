@@ -14559,6 +14559,15 @@ int CAI_Motor::sub_102e2610()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2630 size=0x12
+#include "CUnknown102e2630.h"
+
+int CUnknown102e2630::sub_102e2630(int activity)
+{
+    return m_pOuter->sub_1008dc40(activity, -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e26f0 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
