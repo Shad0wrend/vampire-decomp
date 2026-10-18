@@ -1,13 +1,6 @@
 // CSoundscapeSystem: soundscape game system (base chain simplified). Only what decompiled code needs.
 #pragma once
 
-class CBaseGameSystem
-{
-public:
-	virtual ~CBaseGameSystem();
-	int m_pad;
-};
-
 struct CSoundscapeSystemMember8
 {
 	~CSoundscapeSystemMember8();
