@@ -13998,6 +13998,13 @@ int NodeHolder::sub_1024a080(unsigned short idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024a2b0 size=0x13
+bool sub_1024a2b0(unsigned short *a, unsigned short *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024afe0 size=0xb
 void sub_100139d5();
 extern int g_1088ae3c;
