@@ -1135,6 +1135,7 @@
 0x1000cf31 func   ?sub_100eb310@CUnknown100eb310@@QAEXH@Z CUnknown100eb310::sub_100eb310
 0x1000cf3b func   ?sub_1022d2f0@CMem32_t@@QAEXH@Z CMem32_t::sub_1022d2f0
 0x1000cf4a func   ?sub_101e85a0@S@@QAEXPAUP@@@Z S::sub_101e85a0
+0x1000cfa4 func   ?sub_103912e0@@YADXZ sub_103912e0
 0x1000cfa9 func   ?vfunc226@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc226
 0x1000cfbd func   ??1CBaseGameSystem@@UAE@XZ CBaseGameSystem::~CBaseGameSystem
 0x1000cfd1 func   ?sub_101c0240@S101c0240@@QAEXH@Z S101c0240::sub_101c0240

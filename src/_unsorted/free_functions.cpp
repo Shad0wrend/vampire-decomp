@@ -17246,6 +17246,26 @@ unsigned char __fastcall sub_1038f640(char *self)
 void __fastcall sub_10390040(char *p) { p[0x66b8] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x103912e0 size=0x33
+void sub_10014d7b();
+void sub_10013386();
+extern int g_106433a4;
+extern char g_106433a0;
+extern int g_10936b68;
+
+char sub_103912e0()
+{
+    sub_10014d7b();
+    if (g_106433a4 != g_10936b68) {
+        sub_10013386();
+        g_106433a0 = 1;
+        g_106433a4 = g_10936b68;
+        return 1;
+    }
+    return g_106433a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398d90 size=0xd
 void CUnknown10398d90::sub_10398d90(int value)
 {
