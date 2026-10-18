@@ -1,6 +1,15 @@
 // CPhysicsSpring: physics spring. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
 
+#include "inputdata_t.h"
+
+struct IPhysicsSpringStub
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void SetSpringConstant(float flSpringConstant);
+};
+
 class CPhysicsSpring
 {
 public:
@@ -13,7 +22,10 @@ public:
 
 	void sub_10013840();	// destructor body
 	void sub_1004d100();	// destructor body (the function behind the stub above)
+	void sub_1004d140(inputdata_t *inputdata);	// input: spring constant
 
 	char m_pad0004[0x44c];
-	void *m_pSpring;	// 0x450: IPhysicsSpring, destroyed with the environment
+	IPhysicsSpringStub *m_pSpring;	// 0x450: IPhysicsSpring, destroyed with the environment
+	char m_pad0454[4];
+	float m_flSpringConstant;	// 0x458
 };
