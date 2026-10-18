@@ -282,6 +282,7 @@
 0x10004313 func   ?sub_10078b70@@YIXPAH@Z sub_10078b70
 0x10004318 func   ?sub_101cc7f0@@YIXPAPAX@Z sub_101cc7f0
 0x1000431d func   ?sub_101cc7a0@CUnknown101cc7a0@@QAEXXZ CUnknown101cc7a0::sub_101cc7a0
+0x10004322 func   ?vfunc490@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc490
 0x10004327 func   ?sub_101f5d60@CUnknown101f5d60@@QAEPBDXZ CUnknown101f5d60::sub_101f5d60
 0x1000432c func   ?sub_1010f4e0@@YIXPAPAX@Z sub_1010f4e0
 0x1000433b func   _info_node_werewolf info_node_werewolf
