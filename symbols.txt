@@ -1427,6 +1427,7 @@
 0x1000e430 func   ?vfunc303@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc303
 0x1000e45d func   ?sub_10398d90@CUnknown10398d90@@QAEXH@Z CUnknown10398d90::sub_10398d90
 0x1000e4b7 func   ?vfunc6@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXXZ CAI_Behavior<CAI_BaseNPC,100000>::vfunc6
+0x1000e520 func   ?vfunc5@CVGuiScreen@@QAEPAV1@I@Z CVGuiScreen::vfunc5
 0x1000e56b func   ?sub_102ce100@@YA_NPBI0@Z sub_102ce100
 0x1000e570 func   _env_laser env_laser
 0x1000e57a func   ?sub_1036f440@@YADXZ sub_1036f440
