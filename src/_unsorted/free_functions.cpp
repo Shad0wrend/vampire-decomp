@@ -5416,6 +5416,26 @@ void CUnknown10081e70::sub_100fa6b0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fb850 size=0x31
+struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
+
+struct S100fb850 {
+	void sub_10007103(float f);
+	// TARGET: S100fb850::sub_100fb850
+	void sub_100fb850(inputdata_t &in);
+};
+
+void S100fb850::sub_100fb850(inputdata_t &in)
+{
+	float f;
+	if (in.m_fieldType == 1)
+		f = in.m_fl;
+	else
+		f = 0.0f;
+	sub_10007103(f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbef0 size=0x49
 void *sub_1000db89(int);
 struct GP;
