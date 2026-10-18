@@ -26,6 +26,7 @@
 0x1000143d func   ?sub_10096490@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_10096490
 0x10001456 func   _logic_pythoncheck logic_pythoncheck
 0x100014d8 func   ?vfunc11@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc11
+0x10001537 func   ??_GIRecipientFilter@@UAEPAXI@Z ??_GIRecipientFilter@@UAEPAXI@Z
 0x10001541 func   ?sub_10101e30@@YAPAHXZ sub_10101e30
 0x10001550 func   ?sub_101db9a0@@YIXPAD@Z sub_101db9a0
 0x1000156e func   ?vfunc340@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc340
