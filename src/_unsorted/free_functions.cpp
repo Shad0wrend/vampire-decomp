@@ -13388,6 +13388,14 @@ void CUnknown102e12c0::sub_102e2750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2770 size=0x10
+#include "CUnknown102e2770.h"
+void CUnknown102e2770::sub_102e2770(int a, float b)
+{
+	m_pTarget->sub_1000a7c7(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e27b0 size=0xa
 float __fastcall sub_102e27b0(char *self)
 {
