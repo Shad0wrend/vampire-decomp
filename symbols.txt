@@ -1238,6 +1238,7 @@
 0x1000b6cc func   ?sub_10157910@CUnknown101578b0@@QAEXH@Z CUnknown101578b0::sub_10157910
 0x1000b6d6 func   ?vfunc5@CPointCamera@@QAEPAV1@I@Z CPointCamera::vfunc5
 0x1000b6e0 func   ?sub_100bc380@@YAXXZ sub_100bc380
+0x1000b6ea func   ?vfunc546@CNPC_VTremere@@QAEHH@Z CNPC_VTremere::vfunc546
 0x1000b6f4 func   ?vfunc305@CBaseMoneyObject@@QAEXXZ CBaseMoneyObject::vfunc305
 0x1000b6fe func   ?sub_101c1b80@CUnknown101c1b40@@QAEXH@Z CUnknown101c1b40::sub_101c1b80
 0x1000b717 func   _item_w_sheriff_sword item_w_sheriff_sword
