@@ -1257,6 +1257,7 @@
 0x1000cbe9 func   ?vfunc5@CTriggerVolume@@QAEPAV1@I@Z CTriggerVolume::vfunc5
 0x1000cc02 func   ?sub_10080750@CUnknown10080750@@QAEXH@Z CUnknown10080750::sub_10080750
 0x1000cc16 func   ?vfunc367@CWeaponMelee@@UAEXHHH@Z CWeaponMelee::vfunc367
+0x1000cc5c func   ?vfunc0@CVoiceGameMgr@@QAEPAV1@I@Z CVoiceGameMgr::vfunc0
 0x1000ccde func   _item_w_werewolf_attacks item_w_werewolf_attacks
 0x1000cce8 func   ?sub_10189660@@YAXPAVCBaseEntity@@HH@Z sub_10189660
 0x1000cd29 func   ?sub_1034a010@@YIXPAH@Z sub_1034a010
