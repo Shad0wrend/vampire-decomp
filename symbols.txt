@@ -534,6 +534,7 @@
 0x100057e5 func   _inspection_brush inspection_brush
 0x10005808 func   ?vfunc5@CNPC_VGangrel@@QAEPAV1@I@Z CNPC_VGangrel::vfunc5
 0x10005876 func   ?sub_102e8250@@YIXPAM@Z sub_102e8250
+0x1000587b func   ?vfunc14@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHH@Z CTempEntsSystem::vfunc14
 0x10005885 func   ?sub_10099ca0@@YAXPAUAnimEnt@@HPAI@Z sub_10099ca0
 0x1000589e func   ?sub_1035c3b0@@YADXZ sub_1035c3b0
 0x100058a3 func   ?sub_101d5660@S101d5660@@QAEXXZ S101d5660::sub_101d5660
