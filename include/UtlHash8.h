@@ -24,4 +24,5 @@ public:
 	unsigned int m_ModMask;
 
 	unsigned int sub_10041d20(void *pData);	// Find: (bucket << 16) | index, or -1
+	UtlHash8 *sub_10041c80(int nBuckets, int growSize, int initSize, bool (__cdecl *pCompare)(void *, void *), unsigned int (__cdecl *pKey)(void *));	// constructor
 };
