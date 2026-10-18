@@ -6774,6 +6774,26 @@ struct CUnknown101151a0 { char p[0x204]; unsigned int a; unsigned int sub_101151
 unsigned int CUnknown101151a0::sub_101151a0() { return a & 1; }
 // END FUNCTION
 
+// FUNCTION: 0x101172c0 size=0x31
+struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
+
+struct S101172c0 {
+	void sub_1000c068(float f);
+	// TARGET: S101172c0::sub_101172c0
+	void sub_101172c0(inputdata_t &in);
+};
+
+void S101172c0::sub_101172c0(inputdata_t &in)
+{
+	float f;
+	if (in.m_fieldType == 1)
+		f = in.m_fl;
+	else
+		f = 0.0f;
+	sub_1000c068(f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a430 size=0x8
 extern char g_1070b264;
 void sub_1011a430() { g_1070b264 = 1; }
