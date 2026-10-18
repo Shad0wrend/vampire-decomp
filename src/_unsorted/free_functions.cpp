@@ -1792,6 +1792,37 @@ bool CUtlRBTree36::sub_1004c4c0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d100 size=0x27
+#include "CPhysicsSpring.h"
+
+struct IPhysicsEnvironmentStub
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual void vfunc14();
+	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
+	virtual void vfunc20();
+	virtual void DestroySpring(void *pSpring);
+};
+
+struct CBaseEntityDtor
+{
+	void sub_1009df20();	// CBaseEntity destructor body
+};
+
+extern IPhysicsEnvironmentStub *g_10723940;
+extern void *vt_104494ec[];
+
+// TARGET: CPhysicsSpring::sub_1004d100
+void CPhysicsSpring::sub_1004d100()
+{
+	*(void ***)this = vt_104494ec;
+	if (m_pSpring)
+		g_10723940->DestroySpring(m_pSpring);
+	((CBaseEntityDtor *)this)->sub_1009df20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050170 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
