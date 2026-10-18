@@ -14268,6 +14268,13 @@ int sub_1025b5b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025c670 size=0x13
+bool sub_1025c670(unsigned short *a, unsigned short *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d820 size=0x9
 struct CUnknown1025d820 { int a; CUnknown1025d820* sub_1025d820(); };
 // TARGET: CUnknown1025d820::sub_1025d820
