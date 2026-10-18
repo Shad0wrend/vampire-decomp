@@ -8254,6 +8254,15 @@ void *sub_1019b7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019ba30 size=0x19
+extern int g_1058f600[];
+extern void *(__cdecl *g_109f3724)(void *, void *, char *);
+void *sub_1019ba30(void *self, char *name)
+{
+	return g_109f3724(g_1058f600, self, name);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019be80 size=0x67
 struct PyObj;
 struct PyType { char pad[0x18]; void (*dealloc)(PyObj*); };
