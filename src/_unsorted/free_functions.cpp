@@ -15530,6 +15530,18 @@ void CUtlMemory12::sub_103dc520(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e1680 size=0x20
+#include "CUnknown103e1680.h"
+extern CUnknown103e1680 *g_10940644;
+extern float g_104454c4;
+float sub_103e1680()
+{
+	if (g_10940644->vfunc1())
+		return g_104454c4;
+	return g_10940644->m_f28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3ec0 size=0x76
 struct Elem1c { char d[0x1c]; };
 extern void *(*g_109f3638)(void *, int);
