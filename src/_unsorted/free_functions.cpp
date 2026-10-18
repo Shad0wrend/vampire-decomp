@@ -8014,6 +8014,25 @@ void __fastcall sub_1015ef40(char *p)
 void __fastcall sub_1015ef60(char *p) { p[0x19f7] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1015f100 size=0x3a
+#include "inputdata_t.h"
+extern char g_106b8540[];
+struct S {
+	void sub_100153c5(const char *s);
+	void sub_1015f100(inputdata_t *data);
+};
+static inline const char *String(variant_t *v)
+{
+	if (v->fieldType == 2)
+		return v->iszValue ? v->iszValue : g_106b8540;
+	return v->sub_10008805();
+}
+void S::sub_1015f100(inputdata_t *data)
+{
+	sub_100153c5(String(&data->value));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160680 size=0xd
 extern float g_10725c9c;
 // TARGET: CUnknown10160680::sub_10160680
