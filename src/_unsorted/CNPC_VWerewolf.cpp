@@ -1,6 +1,21 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ca790 size=0x1e
+#include "CNPC_VWerewolf.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CNPC_VWerewolf::vfunc5
+CNPC_VWerewolf *CNPC_VWerewolf::vfunc5(unsigned int flags)
+{
+	sub_10003648();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cab50 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
