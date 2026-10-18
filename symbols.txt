@@ -851,6 +851,7 @@
 0x10008f26 func   ?vfunc2@CTEBeamSpline@@UAEPAV1@I@Z CTEBeamSpline::vfunc2
 0x10008f67 func   _info_node_climb info_node_climb
 0x10008f85 func   ?sub_10033040@CUtlMemory36@@QAEXH@Z CUtlMemory36::sub_10033040
+0x10008f8f func   ?vfunc0@CMeasureSection@@QAEPAV1@I@Z CMeasureSection::vfunc0
 0x10008fa3 func   ?sub_10370a20@@YADXZ sub_10370a20
 0x10008fb7 func   ?sub_1024cef0@CBlock64_t@@QAEPAU1@PBU1@@Z CBlock64_t::sub_1024cef0
 0x10008fd5 func   ?sub_1030f680@Helper1030f680@@QAEPAU1@PBDHH@Z Helper1030f680::sub_1030f680
