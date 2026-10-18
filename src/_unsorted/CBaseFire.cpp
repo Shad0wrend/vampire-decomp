@@ -34,3 +34,15 @@ void CBaseFire::sub_10056fd0(int a, int b, int c)
 	m_field458 = c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10057010 size=0x24
+#include "CBaseFire.h"
+
+void CBaseFire::vfunc243(int on)
+{
+	if (on)
+		m_flags45c |= 1;
+	else
+		m_flags45c &= ~1;
+}
+// END FUNCTION
