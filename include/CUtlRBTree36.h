@@ -40,6 +40,7 @@ public:
 	void sub_10004e26(unsigned short i);	// RotateRight
 	void sub_10013836(unsigned short i);	// RotateLeft
 
+	Links_t &LinksW(unsigned short i) { return m_pElements[i].m_Links; }
 	unsigned short Parent(unsigned short i) const { return sub_10009b51(i).m_Parent; }
 	bool IsLeftChildInl(unsigned short i) const { return sub_10009b51(Parent(i)).m_Left == i; }
 	bool IsRightChildInl(unsigned short i) const { return sub_10009b51(Parent(i)).m_Right == i; }
