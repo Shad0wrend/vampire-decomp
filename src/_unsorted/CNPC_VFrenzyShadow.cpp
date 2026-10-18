@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10376b70 size=0x1a
+#include "CNPC_VFrenzyShadow.h"
+struct S10924edc { virtual void a(); virtual void b(); };
+extern S10924edc *g_10924edc;
+char CNPC_VFrenzyShadow::sub_10376b70(int unused)
+{
+	g_10924edc->b();
+	return m_b6078 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376bd0 size=0xe
 struct CUnknown10924edc
 {
