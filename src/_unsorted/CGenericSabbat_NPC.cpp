@@ -69,3 +69,13 @@ void CGenericSabbat_NPC::vfunc104()
 	CAI_BaseNPC::vfunc104();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1035c010 size=0x1a
+#include "CGenericSabbat_NPC.h"
+
+void CGenericSabbat_NPC::vfunc144(int a)
+{
+	sub_10090890(0);
+	CAI_BaseNPC::vfunc144(a);
+}
+// END FUNCTION
