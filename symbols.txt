@@ -1767,6 +1767,7 @@
 0x1000ff7e func   _item_p_research_mg_security item_p_research_mg_security
 0x1000ffab func   ?vfunc5@CPointTeleport@@QAEPAV1@I@Z CPointTeleport::vfunc5
 0x1000ffba func   ?vfunc412@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc412
+0x1000ffce func   ?vfunc5@CItemGIdolCrane@@QAEPAV1@I@Z CItemGIdolCrane::vfunc5
 0x1000ffd3 func   ?sub_100b1750@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100b1750
 0x1000ffdd func   _item_container_lock item_container_lock
 0x1000ffe2 func   ?sub_100f9790@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100f9790
