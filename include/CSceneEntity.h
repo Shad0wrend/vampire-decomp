@@ -141,7 +141,7 @@ public:
 	virtual void vfunc235(); virtual void vfunc236(); virtual void vfunc237(); virtual void vfunc238(); virtual void vfunc239();
 	virtual void vfunc240(); virtual void vfunc241(); virtual void vfunc242(); virtual void vfunc243(); virtual void vfunc244();
 	virtual void vfunc245(); virtual void vfunc246(); virtual void vfunc247();
-	virtual void vfunc248(int a, int b, int c);
-	virtual void vfunc249(int a, int b, int c);
-	virtual void vfunc250(int a, int b, int c);
+	virtual void vfunc248(float a, int b, int c);
+	virtual void vfunc249(float a, int b, int c);
+	virtual void vfunc250(float a, int b, int c);
 };
