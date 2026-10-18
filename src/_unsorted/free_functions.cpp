@@ -1667,6 +1667,16 @@ bool CUtlRBTree16::sub_10047840(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10049d20 size=0x58
+#include "CUtlRBTreeNode36.h"
+
+const RBTreeNode36Links &CUtlRBTreeNode36::sub_10049d20(unsigned short i) const
+{
+	static RBTreeNode36Links s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+	return (i != InvalidIndex()) ? m_pElements[i].m_Links : s_Sentinel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10049da0 size=0x76
 struct Elem { char data[0x38]; };
 struct Mem {
