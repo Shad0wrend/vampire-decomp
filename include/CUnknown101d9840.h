@@ -6,5 +6,5 @@ class CUnknown101d9840
 public:
 	int m_count;
 
-	bool sub_101d9840(int index);	// index is within 0..m_count-1
+	char sub_101d9840(int index);	// index is within 0..m_count-1
 };
