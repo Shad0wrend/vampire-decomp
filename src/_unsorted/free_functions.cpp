@@ -2037,6 +2037,17 @@ int sub_10065250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065430 size=0x15
+#include "CTEImpact.h"
+
+extern CTEImpact g_106c44c8;
+
+void sub_10065430(int a, int b)
+{
+	g_106c44c8.vfunc4(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cc20 size=0x79
 int sub_10431c2f(char *, const char *, ...);
 void sub_10203dd0(char *);

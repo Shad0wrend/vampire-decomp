@@ -1584,6 +1584,7 @@
 0x10013d77 func   ?vfunc619@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::vfunc619
 0x10013d86 func   ?sub_100abbf0@CBaseEntity@@QAEXHH@Z CBaseEntity::sub_100abbf0
 0x10013db3 func   ?sub_102c6bd0@@YIXPAH@Z sub_102c6bd0
+0x10013dd1 func   ?sub_10065430@@YAXHH@Z sub_10065430
 0x10013de0 func   ?sub_102cef30@UtlMem9@@QAEXH@Z UtlMem9::sub_102cef30
 0x10013e17 func   ?sub_10192a30@@YAPAHXZ sub_10192a30
 0x10013e6c func   ?sub_1022eb60@@YAXPAUTStat@@PBD@Z sub_1022eb60
