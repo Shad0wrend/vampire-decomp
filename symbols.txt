@@ -1526,6 +1526,7 @@
 0x1000d34b func   ?sub_1009b5a0@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b5a0
 0x1000d364 func   ?sub_102db630@@YAXD@Z sub_102db630
 0x1000d396 func   ??0CHL2_Player@@QAE@XZ CHL2_Player::CHL2_Player
+0x1000d3a5 func   ?vfunc492@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc492
 0x1000d3b4 func   _item_g_edane_report item_g_edane_report
 0x1000d3c3 func   ?vfunc2@CTEDynamicLight@@UAEPAV1@I@Z CTEDynamicLight::vfunc2
 0x1000d3cd func   ?sub_10379e80@@YIXPAUE@@HH@Z sub_10379e80
