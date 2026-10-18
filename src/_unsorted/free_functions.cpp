@@ -1952,6 +1952,13 @@ const char *CUnknown10050860::sub_10050860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10053df0 size=0x13
+bool sub_10053df0(const unsigned int *a, const unsigned int *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10055520 size=0x4f
 #include "CUtlRBTree24.h"
 
