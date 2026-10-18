@@ -575,6 +575,7 @@
 0x1000642e func   ?vfunc9@CCollisionEvent@@QAEXPAX0@Z CCollisionEvent::vfunc9
 0x10006438 func   ?sub_102a9ea0@CUnknown102a9ea0@@QAEHH@Z CUnknown102a9ea0::sub_102a9ea0
 0x1000646f func   ?sub_10185a30@CUnknown10185a30@@QAEXH@Z CUnknown10185a30::sub_10185a30
+0x10006474 func   ?vfunc5@COccultHealRate@@QAEPAV1@I@Z COccultHealRate::vfunc5
 0x1000647e func   ?vfunc376@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::vfunc376
 0x1000648d func   ??1SendProp@@QAE@XZ SendProp::~SendProp
 0x100064a1 func   ?sub_1042fdb0@@YAXXZ sub_1042fdb0
