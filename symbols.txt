@@ -1621,6 +1621,7 @@
 0x100108c0 func   _point_teleport point_teleport
 0x100108cf func   _item_g_sewerbook_1 item_g_sewerbook_1
 0x100108fc func   ?sub_101a59f0@CUnknown101a59f0@@QAEXH@Z CUnknown101a59f0::sub_101a59f0
+0x1001094c func   ?vfunc0@CGameMovement@@UAEPAV1@I@Z CGameMovement::vfunc0
 0x10010979 func   ?sub_1012cf30@@YGXH@Z sub_1012cf30
 0x100109ba func   _prop_switch prop_switch
 0x100109c9 func   _item_g_garys_photo item_g_garys_photo
