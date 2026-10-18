@@ -1850,6 +1850,7 @@
 0x1000fdcb func   ?vfunc5@CItemGHannahsApptBook@@QAEPAV1@I@Z CItemGHannahsApptBook::vfunc5
 0x1000fe1b func   ?sub_10348b00@@YIHPADHH@Z sub_10348b00
 0x1000fe2f func   ?vfunc7@ConVar@@UAEXPBD@Z ConVar::vfunc7
+0x1000fe57 func   ?vfunc37@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::vfunc37
 0x1000fe93 func   ?vfunc546@CNPC_VMingXiaoTentacle@@QAEHH@Z CNPC_VMingXiaoTentacle::vfunc546
 0x1000feac func   ?vfunc5@CPlayerResource@@QAEPAV1@I@Z CPlayerResource::vfunc5
 0x1000febb func   _item_w_occultblade item_w_occultblade
