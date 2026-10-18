@@ -20862,6 +20862,21 @@ bool CUnknown10427700::sub_10427700(const char *name, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428160 size=0x6e
+int sub_10008ef9(int, int, char *, char *, int, int, int, int);
+int sub_1000e66f(int, char *, char *);
+
+int sub_10428160(int a, int b, int c, int d, int e)
+{
+	char x[0x2000];
+	char y[0x2000];
+	if (a == 0)
+		return 0;
+	int r = sub_10008ef9(a, b, x, y, 0, c, d, e);
+	return sub_1000e66f(r, x, y);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428eb0 size=0xd
 int sub_10428eb0(char *p)
 {

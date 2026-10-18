@@ -742,6 +742,7 @@
 0x1000911a func   ?sub_10256200@@YIEPAE@Z sub_10256200
 0x10009174 func   ?sub_102a99c0@CUnknown102a99c0@@QAEXD@Z CUnknown102a99c0::sub_102a99c0
 0x100091ab func   _logic_timer logic_timer
+0x100091b5 func   ?sub_10428160@@YAHHHHHH@Z sub_10428160
 0x100091dd func   ?sub_10335f60@@YI_NPADHHH@Z sub_10335f60
 0x10009228 func   ?sub_101eab20@@YAXH@Z sub_101eab20
 0x100092be func   ?sub_10336920@Ent@@QAE_NXZ Ent::sub_10336920
