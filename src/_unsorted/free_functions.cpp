@@ -14084,6 +14084,17 @@ void sub_102c8ca0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c9d20 size=0x15
+int *__fastcall sub_102c9d20(int *p)
+{
+	p[0] = 0;
+	p[1] = -1;
+	p[7] = -1;
+	p[8] = -1;
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ca6c0 size=0x79
 struct EntInfo { void *ent; unsigned int serial; int pad; };
 struct EntList {
