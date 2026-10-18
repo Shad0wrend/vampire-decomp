@@ -33,6 +33,15 @@ SSave *SSave::sub_1019f980(unsigned char flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fa80 size=0x14
+#include "CSave.h"
+
+bool CSave::vfunc10(const void *pData, int nBytes)
+{
+	return sub_1000643d(pData, nBytes * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fc20 size=0x1a
 #include "CSave.h"
 

@@ -377,6 +377,7 @@
 0x10004322 func   ?vfunc490@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc490
 0x10004327 func   ?sub_101f5d60@CUnknown101f5d60@@QAEPBDXZ CUnknown101f5d60::sub_101f5d60
 0x1000432c func   ?sub_1010f4e0@@YIXPAPAX@Z sub_1010f4e0
+0x10004331 func   ?vfunc10@CSave@@UAE_NPBXH@Z CSave::vfunc10
 0x1000433b func   _info_node_werewolf info_node_werewolf
 0x10004377 func   ?sub_103c76b0@CUnknown103c76b0@@QAEXXZ CUnknown103c76b0::sub_103c76b0
 0x10004381 func   ?vfunc546@CNPC_VBach@@QAEHH@Z CNPC_VBach::vfunc546
