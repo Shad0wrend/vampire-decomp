@@ -3,12 +3,23 @@
 // from 440 on are the ones decompiled code uses.
 #pragma once
 
+#include "CUnknown1012cf10.h"
+
 #define CHL2_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define CHL2_V100(p) CHL2_V10(p##0) CHL2_V10(p##1) CHL2_V10(p##2) CHL2_V10(p##3) CHL2_V10(p##4) CHL2_V10(p##5) CHL2_V10(p##6) CHL2_V10(p##7) CHL2_V10(p##8) CHL2_V10(p##9)
 
-class CHL2_Player
+// Stand-in for the real CBasePlayer base (not modelled here, see CBasePlayer.h): an empty
+// base whose constructor is the CBasePlayer constructor, so CHL2_Player's constructor calls it first.
+struct CHL2_PlayerBase
+{
+	CHL2_PlayerBase();
+};
+
+class CHL2_Player : public CHL2_PlayerBase
 {
 public:
+	CHL2_Player();
+
 	CHL2_V100(pa) CHL2_V100(pb) CHL2_V100(pc) CHL2_V100(pd)	// slots 0..399
 	CHL2_V10(pe0) CHL2_V10(pe1) CHL2_V10(pe2) CHL2_V10(pe3)	// slots 400..439
 	virtual void vfunc440(); virtual void vfunc441(); virtual void vfunc442(); virtual void vfunc443(); virtual void vfunc444();
@@ -27,7 +38,10 @@ public:
 	virtual float vfunc480();
 	virtual float vfunc481();
 
-	char m_pad0004[0x2528];	// 0x0004 .. 0x252B
+	char m_pad0004[0x2460];	// 0x0004 .. 0x2463
+	CUnknown1012cf10 m_u2464;
+	char m_pad2468[0xC0];	// 0x2468 .. 0x2527
+	int m_n2528;
 	int m_n252c;
 	float m_f2530;
 };
