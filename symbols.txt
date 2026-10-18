@@ -563,6 +563,7 @@
 0x10007108 func   ?sub_102d00a0@CUnknown102d00a0@@QAEXI@Z CUnknown102d00a0::sub_102d00a0
 0x1000710d func   ?vfunc2@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc2
 0x10007130 func   _item_p_research_lg_firearms item_p_research_lg_firearms
+0x1000714e func   ?sub_10377160@@YADXZ sub_10377160
 0x1000715d func   ?sub_100dec20@CUnknown100dec20@@QAEXH@Z CUnknown100dec20::sub_100dec20
 0x10007162 func   ?sub_1009b030@CBaseEntity@@QAEPAMPAM@Z CBaseEntity::sub_1009b030
 0x10007194 func   ?sub_1018e9d0@@YAXHH@Z sub_1018e9d0
