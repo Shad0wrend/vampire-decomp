@@ -2357,6 +2357,28 @@ void S10072d60::sub_10072d60(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073260 size=0x19
+struct S10073260 {
+	char m_pad[0x94];
+	char m_name[64];
+	// TARGET: S10073260::sub_10073260
+	void sub_10073260(const char *src);
+};
+
+void S10073260::sub_10073260(const char *src)
+{
+	const char *p = src;
+	char *d = m_name;
+	char c;
+	do {
+		c = *p;
+		*d = c;
+		p++;
+		d++;
+	} while (c != 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100732b0 size=0xd
 void CUnknown100732b0::sub_100732b0(char value)
 {
