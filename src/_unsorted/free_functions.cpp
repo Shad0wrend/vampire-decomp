@@ -8566,6 +8566,24 @@ struct CUnknown101afba0 { char pad[0x100]; char m_Flag; void sub_101afba0(); };
 void CUnknown101afba0::sub_101afba0() { m_Flag = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101b2200 size=0x37
+struct NameEntry { int m_key; const char *m_pName; };
+extern NameEntry g_10598c78[7];
+extern char g_1072c058[];
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+const char *sub_101b2200(int key)
+{
+	NameEntry *p = g_10598c78;
+	do {
+		if (p->m_key == key)
+			return p->m_pName;
+		p++;
+	} while ((int)p < (int)(g_10598c78 + 7));
+	g_109f388c(g_1072c058, 32, "%i", key);
+	return g_1072c058;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b24d0 size=0x7b
 struct ChanEnt { int value; const char *name; };
 extern ChanEnt g_10598c78[7];
