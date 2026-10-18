@@ -6654,6 +6654,26 @@ void __fastcall sub_10109da0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109e40 size=0x31
+struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
+
+struct S10109e40 {
+	void sub_100121f2(float f);
+	// TARGET: S10109e40::sub_10109e40
+	void sub_10109e40(inputdata_t &in);
+};
+
+void S10109e40::sub_10109e40(inputdata_t &in)
+{
+	float f;
+	if (in.m_fieldType == 1)
+		f = in.m_fl;
+	else
+		f = 0.0f;
+	sub_100121f2(f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010cbc0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);

@@ -1757,6 +1757,7 @@
 0x10012bf2 func   ?sub_10091c80@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10091c80
 0x10012c2e func   ?sub_102c6740@CUnknown102c6740@@QAEPAUCUnknown102c6740_Elem@@H@Z CUnknown102c6740::sub_102c6740
 0x10012c65 func   ?sub_1003c1c0@@YIXPAH@Z sub_1003c1c0
+0x10012c7e func   ?sub_10109e40@S10109e40@@QAEXAAUinputdata_t@@@Z S10109e40::sub_10109e40
 0x10012cb5 func   ?sub_100bc560@CUnknown100bc560@@QAEXXZ CUnknown100bc560::sub_100bc560
 0x10012cbf func   ?sub_100f0300@@YIXPAD@Z sub_100f0300
 0x10012d00 func   ?sub_103a5190@@YADXZ sub_103a5190
