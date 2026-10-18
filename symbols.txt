@@ -351,6 +351,7 @@
 0x100046fb func   ?sub_1018c4d0@CUnknown1018c4d0@@QAEXD@Z CUnknown1018c4d0::sub_1018c4d0
 0x1000470a func   ?sub_1016b440@@YAXXZ sub_1016b440
 0x1000474b func   ?sub_1042fbf0@@YAII@Z sub_1042fbf0
+0x10004750 func   ?sub_10430130@@YAII@Z sub_10430130
 0x1000476e func   ?sub_10058d70@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::sub_10058d70
 0x10004773 func   _point_target point_target
 0x10004782 func   ?vfunc71@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc71
