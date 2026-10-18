@@ -36,7 +36,7 @@ public:
 	virtual void vfunc89(); virtual void vfunc90(); virtual void vfunc91(); virtual void vfunc92(); virtual void vfunc93();
 	virtual void vfunc94(); virtual void vfunc95(); virtual void vfunc96(); virtual void vfunc97(); virtual void vfunc98();
 	virtual bool vfunc99(int a, int b, int c); virtual void vfunc100(); virtual void vfunc101(); virtual void vfunc102(); virtual void vfunc103();
-	virtual void vfunc104(); virtual void vfunc105(); virtual void vfunc106(); virtual void vfunc107(); virtual void vfunc108();
+	virtual void vfunc104(); virtual void vfunc105(); virtual void vfunc106(const char *classname); virtual void vfunc107(); virtual void vfunc108();
 	virtual void vfunc109(); virtual void vfunc110(); virtual void vfunc111(); virtual void vfunc112(); virtual void vfunc113();
 	virtual void vfunc114(); virtual void vfunc115();
 	virtual int vfunc116();
