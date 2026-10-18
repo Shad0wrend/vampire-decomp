@@ -1,0 +1,25 @@
+// CWeaponMelee / CWeaponMelee_TzimisceMelee: melee weapons (bases CBaseCombatWeapon... not modelled).
+// The vtable slots are *not* modelled here; the virtual only gives the classes a vptr.
+#pragma once
+
+class CWeaponMelee
+{
+public:
+	CWeaponMelee();
+	virtual void vfunc0();
+	char m_pad0004[0x8b8 - 4];
+};
+
+class CWeaponMelee_TzimisceMelee : public CWeaponMelee
+{
+public:
+	CWeaponMelee_TzimisceMelee();
+	virtual void vfunc0();
+
+	int m_n08b8;
+	int m_n08bc;
+	float m_f08c0;
+	float m_f08c4;
+	char m_pad08c8[0x910 - 0x8c8];
+	int m_n0910;
+};
