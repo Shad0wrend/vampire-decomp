@@ -213,6 +213,7 @@
 0x10003657 func   _trigger_wind trigger_wind
 0x10003698 func   ?sub_100903e0@CBaseAnimating@@QAEDXZ CBaseAnimating::sub_100903e0
 0x1000369d func   ?sub_1003c9f0@CDataObjectAccessSystem@@QAEXHPAX@Z CDataObjectAccessSystem::sub_1003c9f0
+0x100036a7 func   ?sub_1006cd90@CStatDefaultList@@QAEPAUStatDefault@@XZ CStatDefaultList::sub_1006cd90
 0x100036ac func   _trigger_push trigger_push
 0x100036d9 func   _trigger_look trigger_look
 0x1000371a func   ?sub_1030b2f0@CUnknown1030b2f0@@QAEXH@Z CUnknown1030b2f0::sub_1030b2f0
