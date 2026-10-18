@@ -55,7 +55,7 @@ public:
 	VT_SLOTS10(w10)
 	VT_SLOTS10(w11)
 	VT_SLOTS10(w12)
-	virtual void w130(); virtual void w131();
+	virtual void vfunc621(); virtual void w131();
 	virtual void vfunc623();
 
 	char m_pad0004[0x2dc];
@@ -66,4 +66,5 @@ public:
 	int m_state;
 
 	void *sub_103bf580(void *pDefault);
+	void sub_103b9f90(int a, float b);
 };
