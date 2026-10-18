@@ -12,4 +12,5 @@ public:
 	virtual CFireSmoke *vfunc5(unsigned int flags);	// scalar deleting destructor
 
 	void sub_1000eff7();	// destructor body
+	void sub_10057570();	// slot 104 (Precache): precaches the fire sprite through the engine interface
 };
