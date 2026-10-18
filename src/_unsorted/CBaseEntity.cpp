@@ -137,6 +137,20 @@ char * __fastcall sub_1009ad70(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009b030 size=0x1e
+#include "CBaseEntity.h"
+
+struct V3 {
+	float x, y, z;
+};
+
+float *CBaseEntity::sub_1009b030(float *out)
+{
+	*(V3 *)out = *(V3 *)((char *)this + 0x50);
+	return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009b2c0 size=0x83
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
