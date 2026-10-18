@@ -4504,6 +4504,18 @@ void CUnknown100ba120::sub_100ba120(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc0f0 size=0x23
+#include "CUnknown100bc0f0.h"
+
+void CUnknown100bc0f0::sub_100bc0f0(CInputData100bc0f0 *data)
+{
+	if (data->m_type == 1)
+		m_unk4c8 = data->m_value;
+	else
+		m_unk4c8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc380 size=0xc
 extern void (*g_106d2a10)();
 void sub_100bc380()
