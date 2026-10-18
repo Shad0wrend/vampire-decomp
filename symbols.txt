@@ -1331,6 +1331,7 @@
 0x1001064f func   ?sub_100df7b0@@YA_NXZ sub_100df7b0
 0x100106ae func   ?sub_101ed9e0@CUnknown101ed9e0@@QAEPAV1@H@Z CUnknown101ed9e0::sub_101ed9e0
 0x100107b7 func   _info_node_crosswalk info_node_crosswalk
+0x100107df func   ?sub_100bd540@bf_write@@QAEXI@Z bf_write::sub_100bd540
 0x10010811 func   ?sub_10222da0@CUtlMemory24@@QAEXH@Z CUtlMemory24::sub_10222da0
 0x10010834 func   ?vfunc475@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc475
 0x10010839 func   ?sub_10349a00@@YIXPAH@Z sub_10349a00
