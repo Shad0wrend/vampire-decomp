@@ -948,6 +948,42 @@ UtlHash8 *UtlHash8::sub_10041c80(int nBuckets, int growSize, int initSize, bool 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10042200 size=0xb0
+#include "UtlVec8.h"
+
+extern void *(__cdecl *g_109f3634)(unsigned int);
+extern void *(__cdecl *g_109f3638)(void *, unsigned int);
+
+inline void UtlVec8::GrowVector(int num)
+{
+	if (m_Size + num > m_allocationCount && m_growSize != -1) {
+		if (m_allocationCount < m_Size + num) {
+			do {
+				m_allocationCount = m_allocationCount ? (m_growSize ? m_allocationCount + m_growSize : m_allocationCount + m_allocationCount) : 4;
+			} while (m_allocationCount < m_Size + num);
+		}
+		if (m_pMemory)
+			m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount * 8);
+		else
+			m_pMemory = (char *)g_109f3634(m_allocationCount * 8);
+	}
+	m_Size += num;
+	m_pElements = (UtlVec8Elem *)m_pMemory;
+}
+
+int UtlVec8::sub_10042200(int elem, const UtlVec8Elem *src)
+{
+	GrowVector(1);
+	int toMove = m_Size - elem - 1;
+	if (toMove > 0)
+		memmove((UtlVec8Elem *)m_pMemory + elem + 1, (UtlVec8Elem *)m_pMemory + elem, toMove * 8);
+	UtlVec8Elem *dst = (UtlVec8Elem *)m_pMemory + elem;
+	if (dst)
+		*dst = *src;
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042c10 size=0xba
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
