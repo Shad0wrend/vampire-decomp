@@ -16741,6 +16741,26 @@ char sub_1036ec40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036f440 size=0x33
+void sub_1000c9b9();
+void sub_10001889();
+extern int g_1062fe60;
+extern char g_1062fe5c;
+extern int g_10936b68;
+
+char sub_1036f440()
+{
+    sub_1000c9b9();
+    if (g_1062fe60 != g_10936b68) {
+        sub_10001889();
+        g_1062fe5c = 1;
+        g_1062fe60 = g_10936b68;
+        return 1;
+    }
+    return g_1062fe5c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10373420 size=0x8
 void __fastcall sub_10373420(int *p) { p[3] = 0; }
 // END FUNCTION
