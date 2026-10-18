@@ -758,6 +758,7 @@
 0x10007be9 func   _func_areaportalwindow func_areaportalwindow
 0x10007bf8 func   ?vfunc2@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc2
 0x10007c07 func   _item_w_crossbow item_w_crossbow
+0x10007c20 func   ?vfunc5@CItemGWatchFancy@@QAEPAV1@I@Z CItemGWatchFancy::vfunc5
 0x10007c2f func   _item_w_baseball_bat item_w_baseball_bat
 0x10007c34 func   ?sub_1005a330@@YAXHHPBH0@Z sub_1005a330
 0x10007c4d func   ?sub_1006ed20@CUnknown1006ed20@@QAEXH@Z CUnknown1006ed20::sub_1006ed20
