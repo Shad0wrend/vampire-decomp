@@ -17338,6 +17338,26 @@ char sub_1039b180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039f6f0 size=0x33
+void sub_100053cb();
+void sub_10003f30();
+extern int g_1064a584;
+extern char g_1064a580;
+extern int g_10936b68;
+
+char sub_1039f6f0()
+{
+    sub_100053cb();
+    if (g_1064a584 != g_10936b68) {
+        sub_10003f30();
+        g_1064a580 = 1;
+        g_1064a584 = g_10936b68;
+        return 1;
+    }
+    return g_1064a580;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1320 size=0x6a
 #include "CUnknown103a1320.h"
 

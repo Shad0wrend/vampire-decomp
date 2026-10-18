@@ -564,6 +564,7 @@
 0x10007036 func   _item_g_stake item_g_stake
 0x1000707c func   ?vfunc5@CBaseButton@@UAEPAV1@I@Z CBaseButton::vfunc5
 0x1000709a func   ?sub_1007e050@S1007e050@@QAEHH@Z S1007e050::sub_1007e050
+0x1000709f func   ?sub_1039f6f0@@YADXZ sub_1039f6f0
 0x100070d6 func   _raggib raggib
 0x100070db func   ?sub_100ce4e0@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce4e0
 0x100070fe func   ?sub_10388ed0@@YADXZ sub_10388ed0
