@@ -1930,6 +1930,7 @@
 0x10011aae func   ?vfunc316@CWeaponGravityGun@@UAEDH@Z CWeaponGravityGun::vfunc316
 0x10011ac2 func   ?vfunc5@CWeaponMelee_TireIron@@QAEPAV1@I@Z CWeaponMelee_TireIron::vfunc5
 0x10011ad1 func   ?vfunc5@CDynamicProp@@UAEPAV1@I@Z CDynamicProp::vfunc5
+0x10011aea func   ?vfunc5@CItemGDriversLicenseGimble@@QAEPAV1@I@Z CItemGDriversLicenseGimble::vfunc5
 0x10011afe func   ?sub_1021e270@@YAXPAHPBH@Z sub_1021e270
 0x10011b08 func   ?sub_10319f10@CUnknown10319f10@@QAE_NXZ CUnknown10319f10::sub_10319f10
 0x10011b12 func   ?vfunc619@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc619
