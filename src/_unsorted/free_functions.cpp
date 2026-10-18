@@ -1455,6 +1455,25 @@ S10046310 *S10046310::sub_10046310(int c, int count, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10046930 size=0x109
+#include "CUtlRBTree36.h"
+
+unsigned short CUtlRBTree36::sub_10046930(const void *search) const
+{
+	unsigned short i = m_Root;
+	while (i != InvalidIndex()) {
+		if (m_LessFunc(search, m_pElements[i].m_Data)) {
+			i = Links(i).m_Left;
+		} else if (m_LessFunc(m_pElements[i].m_Data, search)) {
+			i = Links(i).m_Right;
+		} else {
+			break;
+		}
+	}
+	return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10046b10 size=0x13
 bool sub_10046b10(const unsigned int *a, const unsigned int *b)
 {
