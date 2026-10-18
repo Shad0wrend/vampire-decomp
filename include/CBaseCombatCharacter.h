@@ -20,6 +20,7 @@ public:
 	void sub_1033ca60();	// "CBaseCombatCharacter::ClearMiscFlags": stores 0 at +0xfe4
 	bool sub_10106f90(int expression);	// "CBaseCombatCharacter::IsValidExpression": forwards to the global expression table
 	void sub_101073c0(int expression);	// "CBaseCombatCharacter::GetExpress...": forwards to the global expression table
+	void sub_10014eb6(int a, int b);	// "CBaseCombatCharacter::GetCameraViewpointPositionBase"-like worker called by slot 50
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc295(int a);
@@ -34,6 +35,7 @@ public:
 	void vfunc387();
 	int vfunc393();
 	void vfunc403();
+	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
 
 	char m_pad03e0[0x13a0 - 0x3e0];
 	int m_field13a0;
