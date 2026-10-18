@@ -22,4 +22,5 @@ public:
 	char sub_103a9340(CNPC_VSabbatLeaderHint *pHint);	// "FValidateHintType": hint type in [0x3e80, 0x3e85]
 	void vfunc619(int arg);	// slot 619, not modelled as virtual yet
 	void sub_1000c27a(int arg);
+	int sub_103a6ef0();	// "Classify" (slot 138): scope trace only, returns 0x10
 };
