@@ -1742,6 +1742,7 @@
 0x10015735 func   ?vfunc1@CGlobalEntityList@@UAEXHH@Z CGlobalEntityList::vfunc1
 0x1001573a func   ?sub_102237e0@CUnknown102237e0@@QAEXH@Z CUnknown102237e0::sub_102237e0
 0x10015758 func   ?sub_10184360@@YIXPAH@Z sub_10184360
+0x10015771 func   ??0CFunc_LOD@@QAE@XZ CFunc_LOD::CFunc_LOD
 0x10015780 func   ?vfunc359@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc359
 0x100157c6 func   _item_container_animated item_container_animated
 0x100157f3 func   _item_w_deserteagle item_w_deserteagle
