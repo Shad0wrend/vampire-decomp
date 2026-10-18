@@ -12673,6 +12673,15 @@ CBlock64_t *CBlock64_t::sub_1024cef0(const CBlock64_t *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024d2c0 size=0x11
+void sub_1000e1b5(void *self, int a);
+
+void __fastcall sub_1024d2c0(void *self, int unusedEdx, int a)
+{
+	sub_1000e1b5(self, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024e030 size=0xc4
 #include <math.h>
 struct mat34_1024e030 { float m[3][4]; float *operator[](int i) { return m[i]; } const float *operator[](int i) const { return m[i]; } };
