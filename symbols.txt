@@ -1811,6 +1811,7 @@
 0x1000fb69 func   ?sub_10109da0@@YIXPADHH@Z sub_10109da0
 0x1000fbb4 func   _point_anglesensor point_anglesensor
 0x1000fbcd func   _move_rope move_rope
+0x1000fbff func   ?vfunc267@CBaseViewModel@@QAEPAVCBaseEntity@@XZ CBaseViewModel::vfunc267
 0x1000fc1d func   ?vfunc2@CTEBreakModel@@UAEPAV1@I@Z CTEBreakModel::vfunc2
 0x1000fc27 func   ?sub_100737b0@CUnknown100737b0@@QAEXH@Z CUnknown100737b0::sub_100737b0
 0x1000fc3b func   ?vfunc5@COccultThaumDamage@@QAEPAV1@I@Z COccultThaumDamage::vfunc5
