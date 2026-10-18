@@ -8952,6 +8952,15 @@ void *sub_1019ba30(void *self, char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019bb70 size=0x19
+extern int g_1058f620[];
+extern void *(__cdecl *g_109f3724)(void *, void *, char *);
+void *sub_1019bb70(void *self, char *name)
+{
+	return g_109f3724(g_1058f620, self, name);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019bde0 size=0x15
 int sub_1019bde0(char c)
 {
