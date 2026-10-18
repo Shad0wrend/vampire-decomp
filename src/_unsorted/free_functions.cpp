@@ -14948,6 +14948,15 @@ void CUnknown102ee120::sub_102f2fe0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f3770 size=0x1e
+int sub_102f3770(const float *a, const float *b)
+{
+    if (*a > *b)
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f48b0 size=0x67
 extern char g_1061052c[];
 extern void (*g_109f3630)(const char* fmt, ...);
