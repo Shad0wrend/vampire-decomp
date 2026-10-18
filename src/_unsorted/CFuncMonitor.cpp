@@ -22,3 +22,18 @@ bool CFuncMonitor::vfunc32(void *pEntity)
     return HGet(&m_hCamera) == 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10115af0 size=0x1e
+#include "CFuncMonitor.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CFuncMonitor::vfunc5
+CFuncMonitor *CFuncMonitor::vfunc5(unsigned int flags)
+{
+	sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
