@@ -1714,6 +1714,7 @@
 0x1001196e func   _npc_VFrenzyShadow npc_VFrenzyShadow
 0x10011973 func   ?sub_102ecc20@@YIHPAD@Z sub_102ecc20
 0x10011991 func   ?sub_10183910@StatOwner2@@QAEPAUStatDefault2@@H@Z StatOwner2::sub_10183910
+0x10011a18 func   ?vfunc5@CEnvFloatingCamera@@QAEPAV1@I@Z CEnvFloatingCamera::vfunc5
 0x10011a3b func   _entityflame entityflame
 0x10011a54 func   ?sub_100b37a0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b37a0
 0x10011a81 func   _item_k_tawni_apartment_key item_k_tawni_apartment_key
