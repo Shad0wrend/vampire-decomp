@@ -2575,6 +2575,38 @@ void CUnknown1006ed20::sub_1006ed20(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071ae0 size=0x8c
+#include "CUtlVector4.h"
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUtlVector4::sub_10071ae0(int num)
+{
+    if (m_size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 8;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (int *)g_109f3638(m_pMemory, m_allocationCount << 2);
+        else
+            m_pMemory = (int *)g_109f3634(m_allocationCount << 2);
+    }
+    m_size += num;
+    m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072d60 size=0x16
 struct S10072d60 {
 	char m_pad[0x14];
