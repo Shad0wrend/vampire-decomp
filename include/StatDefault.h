@@ -6,4 +6,5 @@ struct StatDefault
 	int a[10];
 	StatDefault(int);
 	~StatDefault();
+	void sub_10015528(int value);
 };
