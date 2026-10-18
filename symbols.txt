@@ -963,6 +963,7 @@
 0x10009ef8 func   _prop_hacking prop_hacking
 0x10009f02 func   ?vfunc370@CBaseCombatWeapon@@UAEXPAHPAV1@@Z CBaseCombatWeapon::vfunc370
 0x10009f39 func   _prop_haunted prop_haunted
+0x10009f48 func   ?vfunc5@CPropSign@@UAEPAV1@I@Z CPropSign::vfunc5
 0x10009fc5 func   ?sub_100aa7b0@@YAXPAX@Z sub_100aa7b0
 0x10009fca func   ?sub_102ee5e0@CUnknown102ee120@@QAEPAUCUnknown1030bc20_Record@@XZ CUnknown102ee120::sub_102ee5e0
 0x10009fd9 func   ?vfunc327@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc327
