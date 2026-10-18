@@ -65,3 +65,17 @@ bool CBatSwarm::sub_100ba0c0(void *pEntity)
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100ba0f0 size=0x1c
+#include "CBatSwarm.h"
+
+struct S100ba0f0 { char pad[0xa8]; int m_field; };
+
+bool CBatSwarm::vfunc69(void *pEntity)
+{
+	S100ba0f0 *p = (S100ba0f0 *)pEntity;
+	if (p && p->m_field)
+		return true;
+	return false;
+}
+// END FUNCTION
