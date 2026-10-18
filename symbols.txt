@@ -1093,6 +1093,7 @@
 0x1000ae61 func   ?sub_1020b020@CUnknown1020b020@@QAEHH@Z CUnknown1020b020::sub_1020b020
 0x1000ae75 func   ?sub_10032c60@CUtlVector32@@QAEXH@Z CUtlVector32::sub_10032c60
 0x1000aee3 func   _item_k_hitman_ji_key item_k_hitman_ji_key
+0x1000aef2 func   ?vfunc5@CNPC_VTest@@QAEPAV1@I@Z CNPC_VTest::vfunc5
 0x1000af1f func   _point_explosion point_explosion
 0x1000af24 func   _env_steamjet env_steamjet
 0x1000af2e func   ?vfunc5@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc5
