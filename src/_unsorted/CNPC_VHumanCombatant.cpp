@@ -27,3 +27,12 @@ int CNPC_VHumanCombatant::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093b47c.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x10387110 size=0x13
+#include "CNPC_VHumanCombatant.h"
+void CNPC_VHumanCombatant::vfunc103()
+{
+	sub_10384690();
+	sub_10012855(0x40);
+}
+// END FUNCTION
