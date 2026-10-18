@@ -14972,6 +14972,17 @@ __declspec(naked) void CUnknown102ee120::sub_102ee250(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee270 size=0x13
+#include "CUnknown102ee270.h"
+
+char CUnknown102ee270::sub_102ee270()
+{
+	sub_102f28a0();
+	vfunc7();
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee4f0 size=0x8
 struct CInner100016b3 { void sub_100016b3(); };
 struct CUnknown102ee4f0 { char pad[0x30]; CInner100016b3 *m_pInner; void sub_102ee4f0(); };

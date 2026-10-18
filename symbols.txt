@@ -83,6 +83,7 @@
 0x10001cda func   ?sub_101dba50@@YAPBDH@Z sub_101dba50
 0x10001d43 func   _npc_VZombie npc_VZombie
 0x10001d6b func   ?vfunc335@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc335
+0x10001d98 func   ?sub_102ee270@CUnknown102ee270@@QAEDXZ CUnknown102ee270::sub_102ee270
 0x10001db1 func   ?sub_10265800@@YAEXZ sub_10265800
 0x10001dc0 func   _npc_TestBaseHumanoid npc_TestBaseHumanoid
 0x10001dd9 func   ?sub_1007e5a0@CUnknown1007e5a0@@QAEXM@Z CUnknown1007e5a0::sub_1007e5a0
