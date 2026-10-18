@@ -1,12 +1,6 @@
 // CUnknown101d5bd0: vector of pointers to named entries (count at +4, data at +8); real name not yet known.
 #pragma once
 
-struct CUnknown101d5bd0Pad
-{
-	int m_unk0;
-	int m_unk4;
-};
-
 struct CUnknown101d5bd0Name
 {
 	const char *m_p;
@@ -14,9 +8,11 @@ struct CUnknown101d5bd0Name
 
 inline const char *CUnknown101d5bd0Get(const CUnknown101d5bd0Name &n) { return n.m_p; }
 
-struct CUnknown101d5bd0Entry : public CUnknown101d5bd0Pad, public CUnknown101d5bd0Name
+struct CUnknown101d5bd0Entry
 {
-	const char *GetName() const { return CUnknown101d5bd0Get(*this); }
+	int m_unk0;
+	int m_unk4;
+	CUnknown101d5bd0Name m_name;	// 0x0008
 };
 
 class CUnknown101d5bd0
