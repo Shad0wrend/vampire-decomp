@@ -11,4 +11,5 @@ public:
 
 	void sub_10055ec0(int num);
 	void sub_1002cbd0();	// "CUtlMemory::Purge": frees the allocation unless the grow size is -1 (external memory)
+	UtlMem *sub_10032ab0(int growSize, int allocationCount);	// constructor for 8-byte elements
 };
