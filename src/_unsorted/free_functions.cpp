@@ -837,6 +837,13 @@ void CBaseEntity::sub_1003eb50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10041b40 size=0x16
+bool sub_10041b40(int *a, int *b)
+{
+	return *a == *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042d00 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
