@@ -1533,6 +1533,7 @@
 0x10011a54 func   ?sub_100b37a0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b37a0
 0x10011a81 func   _item_k_tawni_apartment_key item_k_tawni_apartment_key
 0x10011a9a func   ?sub_100f8e20@@YAXPAUSEntV116@@@Z sub_100f8e20
+0x10011aae func   ?vfunc316@CWeaponGravityGun@@UAEDH@Z CWeaponGravityGun::vfunc316
 0x10011ad1 func   ?vfunc5@CDynamicProp@@UAEPAV1@I@Z CDynamicProp::vfunc5
 0x10011b08 func   ?sub_10319f10@CUnknown10319f10@@QAE_NXZ CUnknown10319f10::sub_10319f10
 0x10011b12 func   ?vfunc619@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc619
