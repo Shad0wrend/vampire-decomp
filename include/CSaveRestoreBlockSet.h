@@ -2,6 +2,10 @@
 // Only the members that decompiled code needs are declared.
 #pragma once
 
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern void *(__cdecl *g_109f3634)(unsigned int);
+extern void *(__cdecl *g_109f3638)(void *, unsigned int);
+
 class CSaveRestoreBlockSet
 {
 public:
@@ -18,4 +22,41 @@ public:
 
 	void vfunc2(void *pSave);
 	void vfunc9(void *pHandler);	// AddHandler: CUtlVector::AddToTail
+
+	// Inlined CUtlVector<void *> pieces.
+	void GrowMemory(int num)
+	{
+		if (m_nGrowSize == -1)
+			return;
+		int requested = m_nAllocCount + num;
+		if (m_nAllocCount < requested) {
+			int count = m_nAllocCount;
+			do {
+				if (count == 0)
+					count = 8;
+				else if (m_nGrowSize == 0)
+					count += count;
+				else
+					count += m_nGrowSize;
+			} while (count < requested);
+			m_nAllocCount = count;
+		}
+		if (m_pHandlers)
+			m_pHandlers = (void **)g_109f3638(m_pHandlers, m_nAllocCount * 4);
+		else
+			m_pHandlers = (void **)g_109f3634(m_nAllocCount * 4);
+	}
+	void GrowVector()
+	{
+		if (m_nHandlers + 1 > m_nAllocCount)
+			GrowMemory(m_nHandlers + 1 - m_nAllocCount);
+		m_pHandlerElements = m_pHandlers;
+		m_nHandlers++;
+	}
+	void ShiftElementsRight(int elem)
+	{
+		int toMove = m_nHandlers - elem - 1;
+		if (toMove > 0)
+			memmove(&m_pHandlers[elem + 1], &m_pHandlers[elem], toMove * 4);
+	}
 };
