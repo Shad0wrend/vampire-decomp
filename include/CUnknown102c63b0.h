@@ -3,12 +3,18 @@
 
 struct CUnknown102c63b0Entry
 {
-	int m_unk0;
-	void *m_pEntity;	// 0x0004
-	unsigned int m_serial;	// 0x0008
+	void *m_pEntity;	// 0x0000
+	unsigned int m_serial;	// 0x0004
+	int m_unk8;
 };
 
-extern CUnknown102c63b0Entry *g_10566458;
+struct CUnknown102c63b0List
+{
+	int m_unk0;
+	CUnknown102c63b0Entry m_entries[1];	// 0x0004
+};
+
+extern CUnknown102c63b0List *g_10566458;
 
 class CUnknown102c63b0
 {
@@ -18,7 +24,7 @@ public:
 	void *Get() const
 	{
 		if (m_handle != 0xffffffff) {
-			CUnknown102c63b0Entry *e = &g_10566458[m_handle & 0x1fff];
+			CUnknown102c63b0Entry *e = &g_10566458->m_entries[m_handle & 0x1fff];
 			if (e->m_serial == (m_handle >> 13))
 				return e->m_pEntity;
 		}
