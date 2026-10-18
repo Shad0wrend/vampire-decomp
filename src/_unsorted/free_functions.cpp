@@ -10228,6 +10228,37 @@ extern "C" GP *trigger_environmental_audio()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cbcf0 size=0x69
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_1000d5ee(GP *);
+void __fastcall sub_10002ddd(void *);
+extern int vt_10482a8c;
+extern char g_1059ffbc[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: trigger_small_hull
+extern "C" GP *trigger_small_hull()
+{
+	GP *p = (GP *)sub_1000db89(0x598);
+	if (p) {
+		sub_1000d5ee(p);
+		*((int *)p + 0x159) = -1;
+		sub_10002ddd((char *)p + 0x568);
+		sub_10002ddd((char *)p + 0x580);
+		*(int **)p = &vt_10482a8c;
+	} else {
+		p = 0;
+	}
+	p->name(g_1059ffbc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cc790 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc790(void **p) { ((Fn *)*p)[247](p); }
