@@ -4,6 +4,8 @@
 
 #include "CBaseEntity.h"
 
+struct inputdata_t;
+
 class CBaseCombatCharacter : public CBaseEntity
 {
 public:
@@ -21,6 +23,8 @@ public:
 	bool sub_10106f90(int expression);	// "CBaseCombatCharacter::IsValidExpression": forwards to the global expression table
 	void sub_101073c0(int expression);	// "CBaseCombatCharacter::GetExpress...": forwards to the global expression table
 	void sub_10014eb6(int a, int b);	// "CBaseCombatCharacter::GetCameraViewpointPositionBase"-like worker called by slot 50
+	void sub_10332570(inputdata_t *data);	// "CBaseCombatCharacter::InputSetHeadAsCameraTarget": scope trace, then sub_103322e0(1, 0)
+	void sub_103322e0(int a, int b);
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc295(int a);
