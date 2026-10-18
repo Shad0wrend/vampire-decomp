@@ -814,6 +814,7 @@
 0x1000a19b func   _ai_goal_standoff ai_goal_standoff
 0x1000a1a5 func   _prop_dynamic prop_dynamic
 0x1000a1d7 func   ?sub_100740f0@CUnknown100740f0@@QAEXD@Z CUnknown100740f0::sub_100740f0
+0x1000a1e6 func   ?sub_102a97a0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97a0
 0x1000a290 func   ?vfunc2@CTEBeamRingPoint@@UAEPAV1@I@Z CTEBeamRingPoint::vfunc2
 0x1000a2c2 func   ?sub_101f3070@@YIXPAD@Z sub_101f3070
 0x1000a303 func   ?sub_100b7bc0@@YIXPAHH0@Z sub_100b7bc0
