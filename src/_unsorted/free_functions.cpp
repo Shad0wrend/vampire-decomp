@@ -8244,6 +8244,15 @@ int CUnknown10182810::sub_10182810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182d70 size=0x11
+void sub_10004007(void *self, int a);
+
+void __fastcall sub_10182d70(void *self, int unusedEdx, int a)
+{
+	sub_10004007(self, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10183100 size=0xd
 #include "CUnknown10183100.h"
 
