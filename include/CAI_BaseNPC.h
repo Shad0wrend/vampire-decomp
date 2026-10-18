@@ -5,6 +5,7 @@
 #pragma once
 
 class CBaseEntity;
+class CAI_Motor;
 
 #define CAI_NPC_V(n) virtual void vfunc##n();
 #define CAI_NPC_V10(p) CAI_NPC_V(p##0) CAI_NPC_V(p##1) CAI_NPC_V(p##2) CAI_NPC_V(p##3) CAI_NPC_V(p##4) CAI_NPC_V(p##5) CAI_NPC_V(p##6) CAI_NPC_V(p##7) CAI_NPC_V(p##8) CAI_NPC_V(p##9)
@@ -30,7 +31,9 @@ public:
 	virtual void vfunc416(char value);
 	CAI_NPC_V(417) CAI_NPC_V(418) CAI_NPC_V(419) CAI_NPC_V(420) CAI_NPC_V(421) CAI_NPC_V(422)
 	virtual unsigned int vfunc423();
-	CAI_NPC_V(424) CAI_NPC_V(425) CAI_NPC_V(426) CAI_NPC_V(427) CAI_NPC_V(428) CAI_NPC_V(429)
+	CAI_NPC_V(424) CAI_NPC_V(425) CAI_NPC_V(426)
+	virtual CAI_Motor *vfunc427();	// creates the NPC's motor (operator new, then CAI_Motor::sub_102e0900(this))
+	CAI_NPC_V(428) CAI_NPC_V(429)
 	CAI_NPC_V10(43) CAI_NPC_V10(44) CAI_NPC_V10(45) CAI_NPC_V10(46) CAI_NPC_V10(47)
 	CAI_NPC_V(480) CAI_NPC_V(481) CAI_NPC_V(482)
 	virtual void vfunc483(int unused);
