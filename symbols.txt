@@ -1327,6 +1327,7 @@
 0x10010d93 func   ?sub_101fd110@CVStatAction_t@@QAEXHHHH@Z CVStatAction_t::sub_101fd110
 0x10010dd9 func   _item_p_occult_frenzy item_p_occult_frenzy
 0x10010e0b func   _npc_bullseye npc_bullseye
+0x10010e42 func   ?sub_10072d60@S10072d60@@QAEXPBD@Z S10072d60::sub_10072d60
 0x10010f14 func   _beam beam
 0x10010f41 func   ?sub_1013dbb0@@YIXPAUPool@@@Z sub_1013dbb0
 0x10010f46 func   ?sub_101fb200@CVDmg_t@@QAEHHH@Z CVDmg_t::sub_101fb200
