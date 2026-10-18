@@ -2443,6 +2443,7 @@
 0x10015aa0 func   ?vfunc5@CAreaPortal@@UAEPAV1@I@Z CAreaPortal::vfunc5
 0x10015ae6 func   ?vfunc5@CLagCompensationManager@@UAEXXZ CLagCompensationManager::vfunc5
 0x10015af5 func   ?vfunc5@CDecal@@QAEPAV1@I@Z CDecal::vfunc5
+0x10015aff func   ?vfunc546@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc546
 0x10015b54 func   ?sub_102c68e0@CUnknown102c68e0@@QAEPAHH@Z CUnknown102c68e0::sub_102c68e0
 0x10015b81 func   ?vfunc488@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc488
 0x10015bd6 func   ?vfunc2@CTEBSPDecal@@UAEPAV1@I@Z CTEBSPDecal::vfunc2

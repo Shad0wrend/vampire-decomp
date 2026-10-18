@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10360610 size=0x1d
+#include "CNPC_VAsianVampire.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093a578;
+extern B g_10936c74;
+int CNPC_VAsianVampire::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093a578.sub_10012300(x));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10360c50 size=0x6d
 #include "CNPC_VAsianVampire.h"
 struct ScopeTraceEntry { const char *m_pFunction; const char *m_pEntity; const char *m_pExtra; };
