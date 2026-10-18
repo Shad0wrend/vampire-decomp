@@ -8815,6 +8815,76 @@ void CUnknown101a59f0::sub_101a59f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a5e10 size=0x368
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10593628[2];
+void sub_1000556f();
+void sub_1000d6c0();
+void sub_10001794();
+void sub_10006181();
+
+int *sub_101a5e10()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_iszPreIdle", {0x5f44, 0}, 1, 6, "m_iszIdle" },
+        { 2, "m_iszPlay", {0x5f48, 0}, 1, 6, "m_iszPlay" },
+        { 2, "m_iszPostIdle", {0x5f4c, 0}, 1, 6, "m_iszPostIdle" },
+        { 2, "m_iszCustomMove", {0x5f50, 0}, 1, 6, "m_iszCustomMove" },
+        { 2, "m_iszEntity", {0x5f54, 0}, 1, 6, "m_iszEntity" },
+        { 2, "m_iszNextScript", {0x5f58, 0}, 1, 6, "m_iszNextScript" },
+        { 2, "m_iszLinkedSequence", {0x5f5c, 0}, 1, 6, "m_iszLinkedSequence" },
+        { 4, "m_fMoveTo", {0x5f60, 0}, 1, 6, "m_fMoveTo" },
+        { 4, "m_iFinishSchedule", {0x5f64, 0}, 1, 6, "m_iFinishSchedule" },
+        { 1, "m_flRadius", {0x5f68, 0}, 1, 6, "m_flRadius" },
+        { 1, "m_flRepeat", {0x5f6c, 0}, 1, 6, "m_flRepeat" },
+        { 4, "m_iDelay", {0x5f70, 0}, 1, 2 },
+        { 15, "m_startTime", {0x5f74, 0}, 1, 2 },
+        { 4, "m_saved_movetype", {0x5f78, 0}, 1, 2 },
+        { 4, "m_saved_movecollide", {0x5f7c, 0}, 1, 2 },
+        { 4, "m_saved_solid", {0x5f80, 0}, 1, 2 },
+        { 4, "m_saved_solidflags", {0x5f84, 0}, 1, 2 },
+        { 4, "m_saved_effects", {0x5f88, 0}, 1, 2 },
+        { 4, "m_saved_troika_flags", {0x5f8c, 0}, 1, 2 },
+        { 5, "m_interruptable", {0x5f90, 0}, 1, 2 },
+        { 5, "m_sequenceStarted", {0x5f91, 0}, 1, 2 },
+        { 12, "m_hNextCine", {0x5f94, 0}, 1, 2 },
+        { 0, "CCineNPCCineThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000556f },
+        { 0, "InputMoveToPosition", {0, 0}, 1, 8, "MoveToPosition", 0, (void *)sub_1000d6c0 },
+        { 0, "InputBeginSequence", {0, 0}, 1, 8, "BeginSequence", 0, (void *)sub_10001794 },
+        { 0, "InputCancelSequence", {0, 0}, 1, 8, "CancelSequence", 0, (void *)sub_10006181 },
+        { 10, "m_OnBeginSequence", {0x5f9c, 0}, 1, 0x16, "OnBeginSequence", g_1055dc70 },
+        { 10, "m_OnEndSequence", {0x5fb4, 0}, 1, 0x16, "OnEndSequence", g_1055dc70 },
+        { 10, "m_OnScriptEvent[0]", {0x5fcc, 0}, 1, 0x16, "OnScriptEvent01", g_1055dc70 },
+        { 10, "m_OnScriptEvent[1]", {0x5fe4, 0}, 1, 0x16, "OnScriptEvent02", g_1055dc70 },
+        { 10, "m_OnScriptEvent[2]", {0x5ffc, 0}, 1, 0x16, "OnScriptEvent03", g_1055dc70 },
+        { 10, "m_OnScriptEvent[3]", {0x6014, 0}, 1, 0x16, "OnScriptEvent04", g_1055dc70 },
+        { 10, "m_OnScriptEvent[4]", {0x602c, 0}, 1, 0x16, "OnScriptEvent05", g_1055dc70 },
+        { 10, "m_OnScriptEvent[5]", {0x6044, 0}, 1, 0x16, "OnScriptEvent06", g_1055dc70 },
+        { 10, "m_OnScriptEvent[6]", {0x605c, 0}, 1, 0x16, "OnScriptEvent07", g_1055dc70 },
+        { 10, "m_OnScriptEvent[7]", {0x6074, 0}, 1, 0x16, "OnScriptEvent08", g_1055dc70 },
+    };
+    g_10593628[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10593628[0] = (int)&dataDesc[1];
+    return g_10593628;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8fe0 size=0x53
 void *sub_1000db89(int);
 struct GP;
