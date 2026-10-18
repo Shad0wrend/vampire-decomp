@@ -440,6 +440,18 @@ void __fastcall sub_10032b00(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032bb0 size=0x49
+#include "CUtlVector88.h"
+void *sub_10430fa0(void *, const void *, unsigned int);
+
+void CUtlVector88::sub_10032bb0(int elem, int num)
+{
+    int numToMove = m_size - elem - num;
+    if (numToMove > 0 && num > 0)
+        sub_10430fa0(m_pMemory + (elem + num) * 88, m_pMemory + elem * 88, numToMove * 88);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032fb0 size=0x6a
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);

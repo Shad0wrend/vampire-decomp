@@ -417,6 +417,7 @@
 0x100064f1 func   ?sub_1009a030@@YAXPAUTEnt@@HPAH@Z sub_1009a030
 0x10006505 func   _item_g_larry_briefcase item_g_larry_briefcase
 0x10006546 func   _npc_VGangrel npc_VGangrel
+0x1000655a func   ?sub_10032bb0@CUtlVector88@@QAEXHH@Z CUtlVector88::sub_10032bb0
 0x1000656e func   ?sub_101f74e0@@YI_NPAH@Z sub_101f74e0
 0x10006596 func   _func_breakable_surf func_breakable_surf
 0x100065aa func   ?sub_101e9880@CUnknown101e9880@@QAEPAV1@XZ CUnknown101e9880::sub_101e9880
