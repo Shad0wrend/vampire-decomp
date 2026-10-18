@@ -7767,6 +7767,20 @@ int sub_1013a600(float f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a6a0 size=0x31
+extern int g_10711de0[];
+
+int sub_1013a6a0(float f)
+{
+    int i = (int)(f * 1023.0f);
+    if (i < 0)
+        i = 0;
+    else if (i > 0x3ff)
+        i = 0x3ff;
+    return g_10711de0[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d900 size=0x72
 extern int g_10579690[4][2][3];
 bool sub_1013d900(int a, int b, int c, int *out)
