@@ -48,6 +48,7 @@ public:
 	// Slots whose callers call them directly, so far only declared as plain members.
 	bool vfunc158();
 	void vfunc168();
+	void vfunc180();
 	void vfunc194();
 	void vfunc195();
 	float *vfunc214();	// "CBaseEntity::GetSize": returns &field at +0x38c
