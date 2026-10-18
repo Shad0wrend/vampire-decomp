@@ -8818,6 +8818,23 @@ struct CUnknown101afba0 { char pad[0x100]; char m_Flag; void sub_101afba0(); };
 void CUnknown101afba0::sub_101afba0() { m_Flag = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101b2170 size=0x46
+struct Entry { float value; const char *text; };
+extern Entry g_10598cb0[1];
+extern char g_1072bf70[];
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+
+const char *sub_101b2170(float value)
+{
+	for (int p = (int)g_10598cb0; p < (int)(g_10598cb0 + 1); p += sizeof(Entry)) {
+		if (((Entry *)p)->value == value)
+			return ((Entry *)p)->text;
+	}
+	g_109f388c(g_1072bf70, 0x20, "%.3f", (double)value);
+	return g_1072bf70;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2200 size=0x37
 struct NameEntry { int m_key; const char *m_pName; };
 extern NameEntry g_10598c78[7];
