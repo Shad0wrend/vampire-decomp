@@ -15,6 +15,7 @@ struct CUnknown101d5bd0Name
 
 struct CUnknown101d5bd0Entry : public CUnknown101d5bd0Pad, public CUnknown101d5bd0Name
 {
+	const char *GetName() const { return Get(); }
 };
 
 class CUnknown101d5bd0
