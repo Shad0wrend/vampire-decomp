@@ -17105,6 +17105,26 @@ char sub_10384150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10386bd0 size=0x33
+void sub_100053cb();
+void sub_10002234();
+extern int g_1063f8bc;
+extern char g_1063f8b8;
+extern int g_10936b68;
+
+char sub_10386bd0()
+{
+    sub_100053cb();
+    if (g_1063f8bc != g_10936b68) {
+        sub_10002234();
+        g_1063f8b8 = 1;
+        g_1063f8bc = g_10936b68;
+        return 1;
+    }
+    return g_1063f8b8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038f290 size=0x1e
 #include "CNPC_VManBat.h"
 bool CNPC_VManBat::sub_1038f290()
