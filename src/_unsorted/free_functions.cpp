@@ -15031,6 +15031,13 @@ CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102ce100 size=0x13
+bool sub_102ce100(const unsigned int *a, const unsigned int *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ce9f0 size=0x11
 void sub_102ce9f0(int *dst, const int *src)
 {
