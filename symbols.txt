@@ -1250,6 +1250,7 @@
 0x1000bd7a func   ?sub_100766f0@CUnknown100766f0@@QAEXH@Z CUnknown100766f0::sub_100766f0
 0x1000bda2 func   ?vfunc71@CItemContainer@@QAEXXZ CItemContainer::vfunc71
 0x1000bdac func   ?sub_100adfd0@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100adfd0
+0x1000bdc5 func   ?vfunc5@CItemGEDaneReport@@QAEPAV1@I@Z CItemGEDaneReport::vfunc5
 0x1000bdfc func   _func_keyframed_mover func_keyframed_mover
 0x1000be06 func   ?sub_1027dc80@@YG_NPAUFObj@@PAUIObj@@MPAH@Z sub_1027dc80
 0x1000be1a func   _vampire_skill vampire_skill
