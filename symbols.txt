@@ -1070,6 +1070,7 @@
 0x1000caea func   ?sub_102c6e90@@YIXPAV?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@@Z sub_102c6e90
 0x1000cb26 func   ?sub_10033160@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10033160
 0x1000cb53 func   ?vfunc119@CAI_Hint@@UAEXXZ CAI_Hint::vfunc119
+0x1000cb5d func   ?vfunc427@CAI_BaseNPC@@UAEPAVCAI_Motor@@XZ CAI_BaseNPC::vfunc427
 0x1000cb94 func   ?vfunc180@CBaseEntity@@QAEXXZ CBaseEntity::vfunc180
 0x1000cbd0 func   _env_firesource env_firesource
 0x1000cbda func   ?sub_10046b10@@YA_NPBI0@Z sub_10046b10

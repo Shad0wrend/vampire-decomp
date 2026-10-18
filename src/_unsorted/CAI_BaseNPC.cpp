@@ -159,6 +159,17 @@ bool CAI_BaseNPC::vfunc510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027cec0 size=0x1f
+#include "CAI_Motor.h"
+CAI_Motor *CAI_BaseNPC::vfunc427()
+{
+	CAI_Motor *p = (CAI_Motor *)operator new(0x6c);
+	if (p)
+		return p->sub_102e0900((int)this);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d9f0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
