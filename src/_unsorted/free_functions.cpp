@@ -14824,6 +14824,13 @@ const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c62f0 size=0x24
+unsigned int __stdcall sub_102c62f0(unsigned int x)
+{
+	return (((x & 0x68d8635) ^ 0xae8746f) + 0xffa91d8 & 0x197279ca) ^ x ^ 0xa641cacd;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c63b0 size=0x47
 #include "CUnknown102c63b0.h"
 bool CUnknown102c63b0::sub_102c63b0(void *pEntity) const
