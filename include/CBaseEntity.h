@@ -9,7 +9,7 @@ public:
 	// The head of the (269 slot) virtual table; declare further slots as code needs them,
 	// keeping the slot numbers right.
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual unsigned int *vfunc1();	// "GetRefEHandle": pointer to the entity's handle
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
@@ -68,6 +68,7 @@ public:
 	void sub_1009b5a0(const char *msg);	// "CBaseEntity::TraceMessageBare" (slot 19): identical to sub_1009b500
 	void sub_1009b7d0(int a, char *text, char value);	// "CBaseEntity::DumpCharArrayBase"-like: one dumped byte
 	void sub_1009c4c0(int a, const char *fmt, const char *array, int count);	// "CBaseEntity::DumpCharArray": scope trace, then one sub_1009b7d0 per byte
+	void sub_1009ee80(CBaseEntity *pEnt);	// "CBaseEntity::SetAimEnt": stores pEnt's handle at +0x37c (-1 for null)
 	const char *sub_1009f200();	// "CBaseEntity::GetClassname": the string at +0x11c, or "" when it is null
 	void sub_1009fa60();
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
