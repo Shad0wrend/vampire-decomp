@@ -1508,6 +1508,7 @@
 0x1000eb7e func   _env_beam env_beam
 0x1000eb88 func   ?sub_10047840@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10047840
 0x1000eb97 func   _npc_VHumanCombatant npc_VHumanCombatant
+0x1000eb9c func   ?vfunc5@CNPC_VCamera@@QAEPAV1@I@Z CNPC_VCamera::vfunc5
 0x1000eba1 func   ?sub_1020f2e0@@YIXPADHH@Z sub_1020f2e0
 0x1000ebab func   ?sub_10136450@@YIXPADHH@Z sub_10136450
 0x1000ebc4 func   ?sub_100b49b0@CMem16c_t@@QAEXH@Z CMem16c_t::sub_100b49b0
