@@ -6,12 +6,15 @@ struct CUnknown102dd500Data
 	int m_unk;
 };
 
-class CUnknown102dd500
+class CUnknown102dd500Head
 {
 public:
 	int m_unk0;
 	int m_nIndex;
-	CUnknown102dd500Data m_data;
+};
 
+class CUnknown102dd500 : public CUnknown102dd500Head, public CUnknown102dd500Data
+{
+public:
 	const char *sub_102dd500();	// the name for index m_nIndex (the empty string when unset)
 };
