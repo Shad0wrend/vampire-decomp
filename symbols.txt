@@ -942,6 +942,7 @@
 0x1000c04f func   ?sub_100aac30@@YIHPAD@Z sub_100aac30
 0x1000c072 func   _item_g_mercurio_journal item_g_mercurio_journal
 0x1000c09a func   ?vfunc214@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc214
+0x1000c0b8 func   ?vfunc0@CChoreoEventCallback@@UAEXMHH@Z CChoreoEventCallback::vfunc0
 0x1000c0d6 func   ?sub_103cab50@@YIHPAD@Z sub_103cab50
 0x1000c126 func   _info_node_cover_low info_node_cover_low
 0x1000c12b func   _weapon_physcannon weapon_physcannon
