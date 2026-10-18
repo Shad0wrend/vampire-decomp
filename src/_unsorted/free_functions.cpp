@@ -3311,6 +3311,15 @@ void sub_10088a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088b30 size=0x10
+extern bool g_10924fbc;
+
+void sub_10088b30()
+{
+	g_10924fbc = !g_10924fbc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b490 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
