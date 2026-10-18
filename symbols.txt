@@ -1064,6 +1064,7 @@
 0x1000a290 func   ?vfunc2@CTEBeamRingPoint@@UAEPAV1@I@Z CTEBeamRingPoint::vfunc2
 0x1000a2c2 func   ?sub_101f3070@@YIXPAD@Z sub_101f3070
 0x1000a303 func   ?sub_100b7bc0@@YIXPAHH0@Z sub_100b7bc0
+0x1000a308 func   ?vfunc5@CItemGWirelessCamera1@@QAEPAV1@I@Z CItemGWirelessCamera1::vfunc5
 0x1000a335 func   ?sub_10429240@@YAPBDH@Z sub_10429240
 0x1000a358 func   ?sub_10381be0@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_10381be0
 0x1000a380 func   ?sub_100fa6b0@CUnknown10081e70@@QAEXH@Z CUnknown10081e70::sub_100fa6b0
