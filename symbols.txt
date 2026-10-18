@@ -830,6 +830,7 @@
 0x1000a3b7 func   ?sub_100fdd50@UtlMem7@@QAEXH@Z UtlMem7::sub_100fdd50
 0x1000a3c6 func   ?sub_101eab00@@YAXH@Z sub_101eab00
 0x1000a402 func   ?sub_100aacd0@@YIHPAD@Z sub_100aacd0
+0x1000a40c func   ?sub_101fb180@@YAXH@Z sub_101fb180
 0x1000a457 func   _func_rotating func_rotating
 0x1000a466 func   ?sub_1013eb90@@YG_NPAVCBaseEntity@@I@Z sub_1013eb90
 0x1000a4bb func   ?sub_10231ed0@CUnknown10231ed0@@QAEIXZ CUnknown10231ed0::sub_10231ed0
