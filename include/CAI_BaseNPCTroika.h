@@ -32,6 +32,7 @@ public:
 	void vfunc506();
 	void vfunc616();	// slot 616: base call with 0x30, then stamps curtime + 15 at +0x65bc
 
+	void sub_102950c0();	// plays the "Alarmed_Loop" sound
 	char sub_102a9ec0(int index);
 	const char *sub_102c3690(int task);
 	const char *sub_102c36b0(int schedule);
