@@ -46,6 +46,15 @@ int CMultiplayRules::vfunc43(int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101420f0 size=0x29
+#include "CBaseEntity.h"
+Vector CMultiplayRules::vfunc51(CBaseEntity *pEnt)
+{
+	typedef Vector *(__fastcall *Fn)(CBaseEntity *);
+	return *((Fn)(*(void ***)pEnt)[220])(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142280 size=0x8
 // TARGET: CMultiplayRules::vfunc61
 int CMultiplayRules::vfunc61(int index)
