@@ -468,6 +468,38 @@ void CUtlVector88::sub_10032bb0(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032c60 size=0x8c
+#include "CUtlVector32.h"
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUtlVector32::sub_10032c60(int num)
+{
+    if (m_size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 1;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount << 5);
+        else
+            m_pMemory = (char *)g_109f3634(m_allocationCount << 5);
+    }
+    m_size += num;
+    m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032fb0 size=0x6a
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
