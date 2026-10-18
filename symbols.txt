@@ -1355,6 +1355,7 @@
 0x1000c7cf func   _instanced_scripted_scene instanced_scripted_scene
 0x1000c801 func   ?vfunc2@CTEFootprintDecal@@UAEPAV1@I@Z CTEFootprintDecal::vfunc2
 0x1000c81f func   _item_k_tatoo_parlor_key item_k_tatoo_parlor_key
+0x1000c82e func   ?vfunc546@CNPC_VChangBrosClaw@@QAEHH@Z CNPC_VChangBrosClaw::vfunc546
 0x1000c833 func   _item_w_chang_energy_ball item_w_chang_energy_ball
 0x1000c897 func   ?sub_10270290@CUnknown10270290@@QAEXH@Z CUnknown10270290::sub_10270290
 0x1000c8c9 func   ?sub_10058220@CUnknown10058220@@QAEXH@Z CUnknown10058220::sub_10058220
