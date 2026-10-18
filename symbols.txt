@@ -223,6 +223,7 @@
 0x10003161 func   ?sub_10325fa0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10325fa0
 0x10003175 func   ?sub_10091740@CBaseAnimating@@QAEMXZ CBaseAnimating::sub_10091740
 0x10003193 func   ??0CDebugSaveRestoreOps@@QAE@XZ CDebugSaveRestoreOps::CDebugSaveRestoreOps
+0x100031b1 func   ?vfunc2@CTEDust@@QAEPAV1@I@Z CTEDust::vfunc2
 0x100031b6 func   ?sub_1033ca60@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033ca60
 0x100031ca func   _trigger_hurt trigger_hurt
 0x100031f2 func   _func_dustcloud func_dustcloud
