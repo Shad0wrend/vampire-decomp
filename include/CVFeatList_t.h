@@ -10,7 +10,7 @@ struct CVFeatList_t_Record
 class CVFeatList_t
 {
 public:
-	virtual void vfunc0();
+	virtual float vfunc0(int index);	// the integer at +0x160 + index * 0x18, as a float
 	virtual void vfunc1();
 	virtual float vfunc2(int index);
 	virtual void vfunc3();
