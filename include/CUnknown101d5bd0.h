@@ -12,11 +12,11 @@ struct CUnknown101d5bd0Name
 	const char *m_p;
 };
 
-inline const char *CUnknown101d5bd0Get(const CUnknown101d5bd0Name *n) { return n->m_p; }
+inline const char *CUnknown101d5bd0Get(const CUnknown101d5bd0Name &n) { return n.m_p; }
 
 struct CUnknown101d5bd0Entry : public CUnknown101d5bd0Pad, public CUnknown101d5bd0Name
 {
-	const char *GetName() const { return CUnknown101d5bd0Get(this); }
+	const char *GetName() const { return CUnknown101d5bd0Get(*this); }
 };
 
 class CUnknown101d5bd0
