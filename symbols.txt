@@ -1197,6 +1197,7 @@
 0x1000d517 func   ?vfunc5@CLogicalEntity@@UAEPAV1@I@Z CLogicalEntity::vfunc5
 0x1000d526 func   _ai_changetarget ai_changetarget
 0x1000d56c func   ?vfunc8@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc8
+0x1000d594 func   ?sub_103c8e20@@YADXZ sub_103c8e20
 0x1000d599 func   _npc_VGuard1 npc_VGuard1
 0x1000d5b2 func   ?sub_103b1d10@@YADXZ sub_103b1d10
 0x1000d5bc func   _physics_prop physics_prop
