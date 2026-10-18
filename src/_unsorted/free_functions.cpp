@@ -2426,6 +2426,28 @@ void UtlMem5::sub_100732f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100734f0 size=0x16
+struct S100734f0 {
+	char m_pad[0x4];
+	char m_name[64];
+	// TARGET: S100734f0::sub_100734f0
+	void sub_100734f0(const char *src);
+};
+
+void S100734f0::sub_100734f0(const char *src)
+{
+	const char *p = src;
+	char *d = m_name;
+	char c;
+	do {
+		c = *p;
+		*d = c;
+		p++;
+		d++;
+	} while (c != 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100737b0 size=0x9
 struct CUnknown100737b0 { int m_val; void sub_100737b0(int v); };
 void CUnknown100737b0::sub_100737b0(int v) { m_val = v; }
