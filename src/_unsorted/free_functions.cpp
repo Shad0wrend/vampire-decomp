@@ -5453,6 +5453,18 @@ void S100fb850::sub_100fb850(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fbc20 size=0x19
+#include "CBaseEntity.h"
+
+typedef void (__fastcall *PFN_SLOT)(CBaseEntity *pThis);
+
+void CBaseEntity::sub_100fbc20()
+{
+	((PFN_SLOT)(*(void ***)this)[242])(this);
+	sub_100fbbb0(2.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbef0 size=0x49
 void *sub_1000db89(int);
 struct GP;

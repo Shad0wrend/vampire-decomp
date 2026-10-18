@@ -1245,6 +1245,7 @@
 0x1000f7f9 func   ?sub_103d0780@@YIHPAD@Z sub_103d0780
 0x1000f867 func   ?sub_1012ee70@InterfaceReg@@QAEPAV1@PAXPBD@Z InterfaceReg::sub_1012ee70
 0x1000f88a func   _playerevents playerevents
+0x1000f88f func   ?sub_100fbc20@CBaseEntity@@QAEXXZ CBaseEntity::sub_100fbc20
 0x1000f8b2 func   ?sub_1024c050@@YIXPAUMem4@@HH@Z sub_1024c050
 0x1000f92f func   ?sub_1012d0a0@@YAPAHXZ sub_1012d0a0
 0x1000f95c func   ?sub_101eddb0@@YAXH@Z sub_101eddb0
