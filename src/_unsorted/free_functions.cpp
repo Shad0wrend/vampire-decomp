@@ -16615,6 +16615,19 @@ void __fastcall sub_10349ea0(int *p) { p[3] = 0; }
 void __fastcall sub_1034a010(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1034a170 size=0x18
+struct CBlock4k
+{
+	int m_data[0x13];
+};
+
+void sub_1034a170(CBlock4k *dst, const CBlock4k *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034a1a0 size=0x67
 struct Mem16 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
