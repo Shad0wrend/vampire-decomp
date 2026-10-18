@@ -7,4 +7,7 @@ class CGenericSabbat_NPC : public CAI_BaseNPC
 {
 public:
 	virtual void vfunc104();	// Precache
+	virtual void vfunc144(int a);	// slot 144 override: sub_10090890(0), then the base implementation
+
+	void sub_10090890(float time);	// "CBaseAnimating::...MarkEffectStart"-like worker (scope trace, stores curtime + time at +0x5a4), called directly
 };
