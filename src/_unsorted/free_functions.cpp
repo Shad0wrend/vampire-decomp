@@ -12481,6 +12481,26 @@ void __fastcall sub_10227b20(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022b480 size=0x31
+struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
+
+struct S1022b480 {
+	void sub_1000e9d0(float f);
+	// TARGET: S1022b480::sub_1022b480
+	void sub_1022b480(inputdata_t &in);
+};
+
+void S1022b480::sub_1022b480(inputdata_t &in)
+{
+	float f;
+	if (in.m_fieldType == 1)
+		f = in.m_fl;
+	else
+		f = 0.0f;
+	sub_1000e9d0(f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022d1e0 size=0x18
 struct CBlock4k
 {
