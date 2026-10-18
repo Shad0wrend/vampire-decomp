@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1006d910 size=0x21
+#include "CBaseCineCam.h"
+
+struct V3 {
+	float x, y, z;
+};
+
+float *CBaseCineCam::vfunc193(float *out)
+{
+	*(V3 *)out = *(V3 *)((char *)this + 0x5ec);
+	return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006d950 size=0x36
 #include "CBaseCineCam.h"
 
