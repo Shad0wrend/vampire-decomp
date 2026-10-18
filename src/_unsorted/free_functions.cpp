@@ -16634,6 +16634,26 @@ void __fastcall sub_103661d0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10366d60 size=0x33
+void sub_10007897();
+void sub_10011d4c();
+extern int g_1062ef04;
+extern char g_1062ef00;
+extern int g_10936b68;
+
+char sub_10366d60()
+{
+    sub_10007897();
+    if (g_1062ef04 != g_10936b68) {
+        sub_10011d4c();
+        g_1062ef00 = 1;
+        g_1062ef04 = g_10936b68;
+        return 1;
+    }
+    return g_1062ef00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036c7f0 size=0xd
 void CUnknown1036c7f0::sub_1036c7f0(int value)
 {
