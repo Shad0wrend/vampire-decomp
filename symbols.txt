@@ -229,6 +229,7 @@
 0x10003058 func   _item_k_museum_storeroom_key item_k_museum_storeroom_key
 0x1000306c func   ?sub_1017cf90@@YIPAXPAUHolder@@@Z sub_1017cf90
 0x10003076 func   _info_node_sabbat_arch info_node_sabbat_arch
+0x1000308a func   ?vfunc5@CResearchBook_LG_FIREARMS@@QAEPAV1@I@Z CResearchBook_LG_FIREARMS::vfunc5
 0x1000308f func   ?sub_101fdf40@TInfo@@QAE_NXZ TInfo::sub_101fdf40
 0x10003099 func   ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z sub_100aa680
 0x100030b2 func   ?vfunc67@CGameRules@@UAEPBDH@Z CGameRules::vfunc67
