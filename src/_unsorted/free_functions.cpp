@@ -6804,6 +6804,25 @@ struct CUnknown101151a0 { char p[0x204]; unsigned int a; unsigned int sub_101151
 unsigned int CUnknown101151a0::sub_101151a0() { return a & 1; }
 // END FUNCTION
 
+// FUNCTION: 0x101153a0 size=0x3a
+#include "inputdata_t.h"
+extern char g_106b8540[];
+struct S {
+	void sub_1000457a(const char *s);
+	void sub_101153a0(inputdata_t *data);
+};
+static inline const char *String(variant_t *v)
+{
+	if (v->fieldType == 2)
+		return v->iszValue ? v->iszValue : g_106b8540;
+	return v->sub_10008805();
+}
+void S::sub_101153a0(inputdata_t *data)
+{
+	sub_1000457a(String(&data->value));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101172c0 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
