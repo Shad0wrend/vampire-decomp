@@ -14,6 +14,7 @@
 #include "CBaseVampireSkillEntity.h"
 #include "CBloodSplat.h"
 #include "CCineNPC.h"
+#include "CDynamicProp.h"
 #include "CCollisionProperty.h"
 #include "CCopyRecipientFilter.h"
 #include "CDirtySpatialPartitionEntityList.h"
