@@ -33,4 +33,10 @@ public:
 	}
 
 	unsigned short sub_10046930(const void *search) const;	// "CUtlRBTree::Find"
+	void sub_100498c0(unsigned short i, unsigned short parent, bool isLeft);	// "CUtlRBTree::LinkToParent" (with InsertRebalance inlined)
+
+	const Links_t &sub_10009b51(unsigned short i) const;	// out-of-line Links()
+	bool sub_10009999(unsigned short i) const;	// IsLeftChild
+	void sub_10004e26(unsigned short i);	// RotateRight
+	void sub_10013836(unsigned short i);	// RotateLeft
 };
