@@ -17,7 +17,6 @@ public:
 
 	char m_pad0004[0x730 - 4];
 	CCineNPCSlot m_slotA;	// 0x730
-	char m_pad0748[0x748 - 0x748];
 	CCineNPCSlot m_slotB;	// 0x748
 	char m_pad0760[0x77c - 0x760];
 	CCineNPCSlot m_slotC;	// 0x77c
