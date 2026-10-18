@@ -42,7 +42,7 @@ public:
 	virtual int vfunc116();
 	virtual void vfunc117(); virtual void vfunc118(); virtual void vfunc119();
 	virtual void vfunc120(); virtual void vfunc121(); virtual void vfunc122(); virtual void vfunc123(); virtual void vfunc124();
-	virtual void vfunc125(); virtual int vfunc126(int a); virtual void vfunc127(); virtual void vfunc128(); virtual void vfunc129();
+	virtual void vfunc125(); virtual void vfunc126(); virtual void vfunc127(); virtual void vfunc128(); virtual void vfunc129();
 	virtual void vfunc130(int a); virtual void vfunc131(); virtual void vfunc132(); virtual void vfunc133();
 
 	// Slots whose callers call them directly, so far only declared as plain members.
@@ -84,6 +84,7 @@ public:
 	char sub_100aa840();	// "CBaseEntity::IsTransparent": (field at +0x16c) != 0
 	void sub_100b12e0(char value);	// "CBaseEntity::SetSentLastFrame": stores the byte at +0x380 (slot 7 override)
 	void sub_100b1750(int index);	// "CBaseEntity::SetModelIndex": stores the dword at +0x1a4 (slot 10 override)
+	void sub_100b3640(unsigned int flags);	// "CBaseEntity::RemoveFlag": scope trace, clears the bits in the flags at +0x434
 	int sub_100b3700();	// "CBaseEntity::GetFlags": returns the field at +0x434
 	void sub_100b37a0();	// "CBaseEntity::ClearFlags": stores 0 at +0x434
 	void sub_100b3a60();	// "CBaseEntity::ClearFlags2": stores 0 at +0x438
