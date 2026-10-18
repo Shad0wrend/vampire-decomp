@@ -1639,6 +1639,7 @@
 0x100114d2 func   ?vfunc337@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc337
 0x10011504 func   ?vfunc5@CAnchorList@@UAEXXZ CAnchorList::vfunc5
 0x10011509 func   ?sub_1042fb50@@YAII@Z sub_1042fb50
+0x1001150e func   ?sub_10430080@@YAII@Z sub_10430080
 0x1001151d func   _intersting_place intersting_place
 0x10011527 func   ?sub_102f2fe0@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102f2fe0
 0x1001155e func   ?vfunc0@CFlexAnimationTrack@@UAEPAV1@I@Z CFlexAnimationTrack::vfunc0
