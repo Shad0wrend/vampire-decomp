@@ -5,6 +5,8 @@
 // add the padding slots before using a virtual call through this class.
 #pragma once
 
+class CBaseEntity;
+
 class CBasePlayer
 {
 public:
@@ -23,4 +25,5 @@ public:
 	float m_f22B0;
 
 	void sub_10177120();
+	CBaseEntity *sub_1015dc60();	// slot 167 override: resolves the entity handle at +0x1c60 (null when stale)
 };
