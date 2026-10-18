@@ -36,3 +36,12 @@ int CNPC_VCamera::sub_10368f20()
 	return 0x156;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10368f40 size=0x10
+#include "CNPC_VCamera.h"
+int CNPC_VCamera::vfunc438()
+{
+	m_n1b2c = 9;
+	return 0x156;
+}
+// END FUNCTION
