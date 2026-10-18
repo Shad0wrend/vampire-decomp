@@ -26,7 +26,8 @@ public:
 	const Links_t &Links(unsigned short i) const
 	{
 		static Links_t s_Sentinel = { 0xffff, 0xffff, 0xffff, 1 };
-		return i != 0xffff ? m_pElements[i] : s_Sentinel;
+		const Links_t &node = m_pElements[i];
+		return i != 0xffff ? node : s_Sentinel;
 	}
 
 	unsigned short sub_10046930(const void *search) const;	// "CUtlRBTree::Find"
