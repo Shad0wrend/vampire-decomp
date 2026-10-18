@@ -1555,6 +1555,7 @@
 0x1000fe1b func   ?sub_10348b00@@YIHPADHH@Z sub_10348b00
 0x1000fe2f func   ?vfunc7@ConVar@@UAEXPBD@Z ConVar::vfunc7
 0x1000febb func   _item_w_occultblade item_w_occultblade
+0x1000ff01 func   ?vfunc5@CFuncAreaPortalWindow@@QAEPAV1@I@Z CFuncAreaPortalWindow::vfunc5
 0x1000ff1f func   ?sub_101c4460@@YAXPAHPBH@Z sub_101c4460
 0x1000ff51 func   ?sub_100eb280@UtlMem2@@QAEXH@Z UtlMem2::sub_100eb280
 0x1000ff56 func   ?sub_1034a1a0@@YIXPAUMem16@@HH@Z sub_1034a1a0
