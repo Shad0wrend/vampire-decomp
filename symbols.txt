@@ -1280,6 +1280,7 @@
 0x1000c2f2 func   ?sub_103167f0@HandleList@@QAE_NPAX@Z HandleList::sub_103167f0
 0x1000c301 func   ?vfunc2@CTEBeamRing@@UAEPAV1@I@Z CTEBeamRing::vfunc2
 0x1000c32e func   ?vfunc226@CPhysicsProp@@QAEXH@Z CPhysicsProp::vfunc226
+0x1000c347 func   ?vfunc5@COccultExperience@@QAEPAV1@I@Z COccultExperience::vfunc5
 0x1000c351 func   ?sub_102f9900@@YAXXZ sub_102f9900
 0x1000c356 func   ?sub_100b5ce0@CBaseFlex@@QAEXXZ CBaseFlex::sub_100b5ce0
 0x1000c360 func   ?vfunc5@CWeaponMelee_OccultBlade@@QAEPAV1@I@Z CWeaponMelee_OccultBlade::vfunc5
