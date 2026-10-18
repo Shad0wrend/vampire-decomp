@@ -9238,6 +9238,15 @@ void CMem4e_t::sub_101c4490(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4660 size=0x17
+extern char *(__cdecl *g_109f3890)(char *, const char *, int);
+
+void __fastcall sub_101c4660(char *dest, int unusedEdx, const char *src)
+{
+	g_109f3890(dest, src, 0x104);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4790 size=0xa
 struct CUnknown101c4790 { CUnknown101c4790 *a; CUnknown101c4790 *b; CUnknown101c4790* sub_101c4790(int x); };
 // TARGET: CUnknown101c4790::sub_101c4790
