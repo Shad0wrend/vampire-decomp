@@ -182,6 +182,21 @@ bool CAI_BaseNPC::vfunc510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027c7f0 size=0x1e
+#include "CAI_BaseNPC.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CAI_BaseNPC::vfunc5
+CAI_BaseNPC *CAI_BaseNPC::vfunc5(unsigned int flags)
+{
+	sub_1000c9cd();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027cec0 size=0x1f
 #include "CAI_Motor.h"
 CAI_Motor *CAI_BaseNPC::vfunc427()
