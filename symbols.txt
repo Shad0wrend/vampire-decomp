@@ -1971,6 +1971,7 @@
 0x10013778 func   ??0StatDefault2@@QAE@H@Z StatDefault2::StatDefault2
 0x1001379b func   _info_teleport_destination info_teleport_destination
 0x100137e1 func   ?vfunc103@CSkyCamera@@UAEXXZ CSkyCamera::vfunc103
+0x100137eb func   ?vfunc5@CItemContainer@@QAEPAV1@I@Z CItemContainer::vfunc5
 0x100137fa func   ?vfunc104@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc104
 0x10013804 func   ?sub_100c0c60@CUnknown100c0c60@@QAEXM@Z CUnknown100c0c60::sub_100c0c60
 0x10013840 func   ?sub_1004d100@CPhysicsSpring@@QAEXXZ CPhysicsSpring::sub_1004d100
