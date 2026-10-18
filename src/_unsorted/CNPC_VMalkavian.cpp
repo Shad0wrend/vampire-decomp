@@ -15,3 +15,15 @@ CNPC_VMalkavian *CNPC_VMalkavian::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10389700 size=0x1d
+#include "CNPC_VMalkavian.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093b6fc;
+extern B g_10936c74;
+int CNPC_VMalkavian::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093b6fc.sub_10012300(x));
+}
+// END FUNCTION
