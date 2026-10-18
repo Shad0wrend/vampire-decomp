@@ -9821,6 +9821,55 @@ extern "C" GP *aiscripted_schedule()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9bd0 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10593d94[2];
+void sub_1000880a();
+void sub_10003297();
+void sub_1000fce0();
+
+int *sub_101a9bd0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_iszSentence", {0x450, 0}, 1, 6, "sentence" },
+        { 2, "m_iszEntity", {0x454, 0}, 1, 6, "entity" },
+        { 1, "m_flRadius", {0x458, 0}, 1, 6, "radius" },
+        { 1, "m_flDelay", {0x45c, 0}, 1, 6, "delay" },
+        { 1, "m_flRepeat", {0x460, 0}, 1, 6, "refire" },
+        { 2, "m_iszListener", {0x474, 0}, 1, 6, "listener" },
+        { 4, "m_TempAttenuation", {0x468, 0}, 1, 4, "attenuation" },
+        { 4, "m_iSoundLevel", {0x464, 0}, 1, 2 },
+        { 1, "m_flVolume", {0x46c, 0}, 1, 2 },
+        { 5, "m_active", {0x470, 0}, 1, 2 },
+        { 0xc, "m_pActivator", {0x478, 0}, 1, 2 },
+        { 0, "CScriptedSentenceFindThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000880a },
+        { 0, "CScriptedSentenceDelayThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10003297 },
+        { 0, "InputBeginSentence", {0, 0}, 1, 8, "BeginSentence", 0, (void *)sub_1000fce0 },
+        { 10, "m_OnBeginSentence", {0x47c, 0}, 1, 0x16, "OnBeginSentence", g_1055dc70 },
+        { 10, "m_OnEndSentence", {0x494, 0}, 1, 0x16, "OnEndSentence", g_1055dc70 },
+    };
+    g_10593d94[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10593d94[0] = (int)&dataDesc[1];
+    return g_10593d94;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa550 size=0x53
 void *sub_1000db89(int);
 struct GP;
