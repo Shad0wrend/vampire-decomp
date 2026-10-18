@@ -16607,6 +16607,26 @@ bool CNPC_VAsianVampire::sub_10362670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10362d40 size=0x33
+void sub_10007897();
+void sub_10013b5b();
+extern int g_1062d224;
+extern char g_1062d220;
+extern int g_10936b68;
+
+char sub_10362d40()
+{
+    sub_10007897();
+    if (g_1062d224 != g_10936b68) {
+        sub_10013b5b();
+        g_1062d220 = 1;
+        g_1062d224 = g_10936b68;
+        return 1;
+    }
+    return g_1062d220;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103661d0 size=0xa
 void __fastcall sub_103661d0(char *self, int, int)
 {
