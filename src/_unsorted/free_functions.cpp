@@ -7453,6 +7453,14 @@ struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 void CUnknown10146790::sub_10146790() { c = 0; b = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10147d50 size=0x1b
+#include "CUnknown10147d10.h"
+void CUnknown10147d10::sub_10147d50(CPair10147d50 *p)
+{
+	m_sub454.sub_100cd660(p->m_a, p->m_b, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148300 size=0x49
 void *sub_1000db89(int);
 struct GP;
