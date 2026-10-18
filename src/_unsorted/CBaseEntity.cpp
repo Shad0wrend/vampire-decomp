@@ -170,6 +170,25 @@ void CBaseEntity::sub_1009b2c0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009b380 size=0x83
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::vfunc17(int a, int b)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::TraceMessage";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_1009b1d0(a, b);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009b500 size=0x7e
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
