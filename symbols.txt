@@ -2027,6 +2027,7 @@
 0x100139df func   ?sub_10077890@CUnknown10077890@@QAEXH@Z CUnknown10077890::sub_10077890
 0x100139f8 func   ?sub_100c8990@CBaseButton@@QAE_NH@Z CBaseButton::sub_100c8990
 0x10013a0c func   ?sub_101a1400@SRestore@@QAEPAU1@E@Z SRestore::sub_101a1400
+0x10013a52 func   ?vfunc0@CAI_LocalNavigator@@QAEPAV1@I@Z CAI_LocalNavigator::vfunc0
 0x10013a5c func   ?vfunc16@CRestore@@QAEDXZ CRestore::vfunc16
 0x10013a6b func   _item_g_giovanni_invitation_maria item_g_giovanni_invitation_maria
 0x10013a89 func   ?sub_101dbb00@@YAPBDH@Z sub_101dbb00
