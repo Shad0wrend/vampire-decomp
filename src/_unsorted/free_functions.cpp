@@ -7419,6 +7419,18 @@ bool __stdcall sub_1013eb90(CBaseEntity *ent, unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013fcb0 size=0x42
+#include "CUtlVector96.h"
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+void CUtlVector96::sub_1013fcb0(int elem, int num)
+{
+    int numToMove = m_size - elem - num;
+    if (numToMove > 0 && num > 0)
+        memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(UtlElem96));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fd20 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
