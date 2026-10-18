@@ -5402,6 +5402,19 @@ unsigned int __stdcall sub_100eb060(unsigned int x)
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100eb250 size=0x18
+struct CBlock4k
+{
+	int m_data[0x401];
+};
+
+void sub_100eb250(CBlock4k *dst, const CBlock4k *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb280 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);

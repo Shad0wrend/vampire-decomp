@@ -1466,6 +1466,7 @@
 0x100116a8 func   ?sub_1011d6a0@S1011d6a0@@QAEXH@Z S1011d6a0::sub_1011d6a0
 0x1001173e func   ?sub_1007fce0@UtlMem6@@QAEXH@Z UtlMem6::sub_1007fce0
 0x100117ac func   ?sub_1020b000@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z CBaseVampireSkillEntity::sub_1020b000
+0x100117cf func   ?sub_100eb250@@YAXPAUCBlock4k@@PBU1@@Z sub_100eb250
 0x10011829 func   _item_g_jumbles_flyer item_g_jumbles_flyer
 0x10011833 func   ?vfunc14@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHHHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc14
 0x10011865 func   _path_corner path_corner
