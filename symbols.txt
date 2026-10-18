@@ -1141,6 +1141,7 @@
 0x1000eb65 func   ?sub_102a9dc0@Obj@@QAEPAU1@HPAUVec3@@HHHHHH@Z Obj::sub_102a9dc0
 0x1000eb6a func   _env_fire env_fire
 0x1000eb7e func   _env_beam env_beam
+0x1000eb88 func   ?sub_10047840@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10047840
 0x1000eb97 func   _npc_VHumanCombatant npc_VHumanCombatant
 0x1000eba1 func   ?sub_1020f2e0@@YIXPADHH@Z sub_1020f2e0
 0x1000ebab func   ?sub_10136450@@YIXPADHH@Z sub_10136450

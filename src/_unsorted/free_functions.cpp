@@ -1530,6 +1530,15 @@ void sub_10047160(E8 *dst, const E8 *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10047840 size=0xb9
+#include "CUtlRBTree16.h"
+
+bool CUtlRBTree16::sub_10047840(unsigned short i) const
+{
+	return Links(Parent(i)).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10049da0 size=0x76
 struct Elem { char data[0x38]; };
 struct Mem {
