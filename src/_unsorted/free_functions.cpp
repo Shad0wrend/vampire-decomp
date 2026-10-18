@@ -2400,6 +2400,25 @@ void __fastcall sub_10078c30(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078d60 size=0x4c
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct E88 { char data[0x88]; };
+
+struct CUtlVector136 {
+	E88 *m_pMemory; int m_allocationCount; int m_growSize; int m_size;
+	// TARGET: CUtlVector136::sub_10078d60
+	void sub_10078d60(int elem, int num);
+};
+
+void CUtlVector136::sub_10078d60(int elem, int num)
+{
+	int toMove = m_size - elem - num;
+	if (toMove > 0 && num > 0)
+		memmove(&m_pMemory[elem + num], &m_pMemory[elem], toMove * sizeof(E88));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078fd0 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
