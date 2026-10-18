@@ -1179,6 +1179,7 @@
 0x1000d418 func   _trigger_discipline_context trigger_discipline_context
 0x1000d445 func   _item_w_avamp_blade item_w_avamp_blade
 0x1000d468 func   ?vfunc84@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc84
+0x1000d46d func   ?sub_103a5da0@@YADXZ sub_103a5da0
 0x1000d490 func   ?vfunc9@CAI_Navigator@@UAEXHM@Z CAI_Navigator::vfunc9
 0x1000d49f func   ?sub_10288540@CUnknown10288540@@QAEPAU1@XZ CUnknown10288540::sub_10288540
 0x1000d4d6 func   ?sub_101c9cf0@@YAPAHXZ sub_101c9cf0
