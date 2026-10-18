@@ -8234,6 +8234,13 @@ StatDefault2 *StatOwner2::sub_10183910(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10184220 size=0x24
+unsigned int __stdcall sub_10184220(unsigned int x)
+{
+	return (((x & 0x8a66e35) ^ 0x85f3db1) + 0x8b10412 & 0x175991ca) ^ x ^ 0x783682a9;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184360 size=0x8
 void __fastcall sub_10184360(int *p)
 {

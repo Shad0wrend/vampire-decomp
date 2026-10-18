@@ -754,6 +754,7 @@
 0x10008940 func   ?vfunc5@CPhysImpact@@UAEPAV1@I@Z CPhysImpact::vfunc5
 0x1000896d func   ?vfunc483@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc483
 0x10008977 func   ?sub_103245a0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_103245a0
+0x10008986 func   ?sub_10184220@@YGII@Z sub_10184220
 0x100089f4 func   _func_breakable func_breakable
 0x10008a80 func   ?vfunc242@CEnvParticle@@QAEXXZ CEnvParticle::vfunc242
 0x10008a85 func   _item_g_eyes item_g_eyes
