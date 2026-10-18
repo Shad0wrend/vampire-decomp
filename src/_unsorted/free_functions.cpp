@@ -3195,6 +3195,35 @@ void CBaseAnimating::sub_1008d0f0(float scalar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008d520 size=0x99
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+void CBaseAnimating::sub_1008d520(inputdata_t *inputdata)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseAnimating::InputFadeToSkin";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	sub_1008d6d0((inputdata->value.fieldType == 4) ? inputdata->value.iValue : 0);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100903e0 size=0x82
 #include "CBaseAnimating.h"
 
