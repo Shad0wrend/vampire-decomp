@@ -1868,6 +1868,7 @@
 0x10010d5c func   ??0CEnvLaser@@QAE@XZ CEnvLaser::CEnvLaser
 0x10010d7f func   ?sub_101db7e0@S101db7e0@@QAEXXZ S101db7e0::sub_101db7e0
 0x10010d93 func   ?sub_101fd110@CVStatAction_t@@QAEXHHHH@Z CVStatAction_t::sub_101fd110
+0x10010dbb func   ?vfunc5@CItemKSarcophagusKey@@QAEPAV1@I@Z CItemKSarcophagusKey::vfunc5
 0x10010dd9 func   _item_p_occult_frenzy item_p_occult_frenzy
 0x10010e0b func   _npc_bullseye npc_bullseye
 0x10010e42 func   ?sub_10072d60@S10072d60@@QAEXPBD@Z S10072d60::sub_10072d60
