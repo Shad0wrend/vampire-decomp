@@ -15610,6 +15610,32 @@ extern "C" GP *bodyque()
 void __fastcall sub_10359ba0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10359c50 size=0x75
+#include "CUnknown10359c50.h"
+extern CUnknown10359c50 g_1093a1a8;
+extern CUnknown10359c50 g_1093a1c0;
+extern CUnknown10359c50 g_1093a1d8;
+extern CUnknown10359c50 g_1093a234;
+extern char g_109203cc[];
+extern char g_109203d4[];
+extern char g_109203dc[];
+extern char g_10936c74[];
+extern char g_10920484[];
+extern char g_10924248[];
+extern char g_10924260[];
+extern char g_10924278[];
+extern const char *g_10629a40;
+void sub_10359c50()
+{
+	if (g_1093a1a8.sub_1001153b(g_109203cc, g_10924248)) {
+		if (g_1093a1c0.sub_1001153b(g_109203d4, g_10924260))
+			g_1093a1d8.sub_1001153b(g_109203dc, g_10924278);
+	}
+	g_1093a234.sub_1001153b(g_10936c74, g_10920484);
+	g_1093a1a8.sub_1000a948("SCHED_GENERIC_NPC_WALK", 0x45, "schedule", g_10629a40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b1c0 size=0x8
 struct CUnknown1035b1c0 { int sub_1035b1c0(int, int, int, int); };
 int CUnknown1035b1c0::sub_1035b1c0(int, int, int, int) { return 1; }
