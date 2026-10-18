@@ -55,6 +55,17 @@ void CBaseDoor::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100efab0 size=0x13
+#include "CBaseDoor.h"
+#include "CBaseEntitySlots.h"
+
+void CBaseDoor::vfunc104()
+{
+	((CBaseEntitySlots *)this)->slot71();
+	sub_100eecf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0ef0 size=0xe
 void CBaseDoor::vfunc246(int a, int* b, int c)
 {
