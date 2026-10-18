@@ -13246,6 +13246,22 @@ void __fastcall sub_102a0eb0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a13d0 size=0x3f
+struct T { char pad[0x5dc]; int kind; };
+struct N { char pad[0x5ddc]; T *t; char pad2[0x63fd - 0x5de0]; char flag; };
+int __fastcall sub_102a13d0(N *n)
+{
+	if (n->t) {
+		switch (n->t->kind) {
+		case 100: return 0x1110;
+		case 101: return 0x110c;
+		case 0x27d8: return n->flag ? 0x111d : 0x111e;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a95e0 size=0xa
 struct CUnknown102a95e0 { int a[1]; int *sub_102a95e0(int i); };
 // TARGET: CUnknown102a95e0::sub_102a95e0
