@@ -18309,6 +18309,52 @@ struct CUnknown1034b560 { void sub_10001375(); void sub_1034b560(int); };
 void CUnknown1034b560::sub_1034b560(int) { sub_10001375(); }
 // END FUNCTION
 
+// FUNCTION: 0x1034d490 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_106257e8[2];
+void sub_1000eae3();
+void sub_10012ef9();
+void sub_100112cf();
+
+int *sub_1034d490()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 0xe, "m_vLastPosition", {0x5f44, 0}, 1, 2 },
+        { 4, "m_iDisabled", {0x5f50, 0}, 1, 6, "StartDisabled" },
+        { 2, "m_iszEntity", {0x5f54, 0}, 1, 6, "m_iszEntity" },
+        { 1, "m_flRadius", {0x5f58, 0}, 1, 6, "m_flRadius" },
+        { 4, "m_nMoveSpeed", {0x5f5c, 0}, 1, 6, "MoveSpeed" },
+        { 1, "m_flPauseDuration", {0x5f60, 0}, 1, 6, "PauseDuration" },
+        { 0xf, "m_flPauseDoneTime", {0x5f64, 0}, 1, 2 },
+        { 1, "m_flEffectDuration", {0x5f68, 0}, 1, 6, "EffectDuration" },
+        { 0, "CScriptedTargetScriptThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000eae3 },
+        { 0, "InputEnable", {0, 0}, 1, 8, "Enable", 0, (void *)sub_10012ef9 },
+        { 0, "InputDisable", {0, 0}, 1, 8, "Disable", 0, (void *)sub_100112cf },
+        { 10, "m_AtTarget", {0x5f6c, 0}, 1, 0x16, "AtTarget", g_1055dc70 },
+        { 10, "m_LeaveTarget", {0x5f84, 0}, 1, 0x16, "LeaveTarget", g_1055dc70 },
+    };
+    g_106257e8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_106257e8[0] = (int)&dataDesc[1];
+    return g_106257e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d590 size=0x8
 struct CUnknown1034d590 { void sub_1000a1b4(); void sub_1034d590(int); };
 void CUnknown1034d590::sub_1034d590(int) { sub_1000a1b4(); }
