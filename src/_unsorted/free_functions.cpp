@@ -8500,6 +8500,14 @@ extern "C" GP *prop_largehull_ignore()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10194750 size=0x11
+void sub_10194750(int *dst, const int *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194da0 size=0x74
 #include "CUnknown10194da0.h"
 
