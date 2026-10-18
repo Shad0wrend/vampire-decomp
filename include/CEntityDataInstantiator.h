@@ -25,6 +25,9 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3(unsigned int key);
 
+	unsigned int HashFind(EntityDataKey_t *pKey);
+	void HashRemove(unsigned int handle);
+
 	EntityDataBucket_t *m_pBuckets;
 	int m_pad8;
 	int m_padC;
