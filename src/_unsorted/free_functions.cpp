@@ -17953,6 +17953,13 @@ int CNPC_VHengeyokai::sub_10382b30(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10383e50 size=0x24
+unsigned int __stdcall sub_10383e50(unsigned int x)
+{
+	return (((x & 0x3f3c1135) ^ 0x415a33ef) + 0x4ba5398d & 0xc0c3eeca) ^ x ^ 0x151a77f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384150 size=0x33
 void sub_10014d7b();
 void sub_10011559();
