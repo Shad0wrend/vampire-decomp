@@ -17623,6 +17623,35 @@ extern "C" GP *npc_VMercurio()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a4b30 size=0x53
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_100037f6(GP *);
+extern int vt_104c2554;
+extern int vt_104c2524;
+extern char g_1064bfbc[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: npc_VProneDialog
+extern "C" GP *npc_VProneDialog()
+{
+	GP *p = (GP *)sub_1000db89(0x6664);
+	if (p) {
+		sub_100037f6(p);
+		*(int **)p = &vt_104c2554;
+		*(int **)((char *)p + 0x19b0) = &vt_104c2524;
+	} else {
+		p = 0;
+	}
+	p->name(g_1064bfbc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5190 size=0x33
 void sub_1000ef84();
 void sub_1001492a();
