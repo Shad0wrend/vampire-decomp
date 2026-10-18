@@ -1053,6 +1053,7 @@
 0x1000b09b func   ?sub_102c63b0@CUnknown102c63b0@@QBE_NPAX@Z CUnknown102c63b0::sub_102c63b0
 0x1000b0aa func   _npc_VBrujah npc_VBrujah
 0x1000b0ff func   ?vfunc585@CCineNPC@@UAE_NXZ CCineNPC::vfunc585
+0x1000b104 func   ?vfunc14@CMoveHelperServer@@UAEPAV1@I@Z CMoveHelperServer::vfunc14
 0x1000b140 func   _camera_animated camera_animated
 0x1000b181 func   ?sub_1011d8e0@@YAXPBD0ZZ sub_1011d8e0
 0x1000b22b func   ?vfunc134@CBloodSplat@@QAEXXZ CBloodSplat::vfunc134
