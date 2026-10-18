@@ -10343,6 +10343,20 @@ void CUnknown101f0d40::sub_101f0d40(int* dest)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0e50 size=0x13
+#include "CUnknown101f0e50.h"
+
+CUnknown101f0e50 *CUnknown101f0e50::sub_101f0e50()
+{
+	m_f00 = 0;
+	m_f04 = 0;
+	m_f08 = 0;
+	m_f14 = 0;
+	m_f18 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1050 size=0x6b
 #include "CUnknown101f1050.h"
 
