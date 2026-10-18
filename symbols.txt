@@ -327,6 +327,7 @@
 0x10003f71 func   ?sub_102477a0@CUnknown102477a0@@QAEXXZ CUnknown102477a0::sub_102477a0
 0x10003f85 func   ?sub_1002e0a0@@YAGPAUIPhysObj@@G@Z sub_1002e0a0
 0x10003f94 func   _logic_case_toggle logic_case_toggle
+0x10003f9e func   ?vfunc5@CResearchBook_HG_DODGE@@QAEPAV1@I@Z CResearchBook_HG_DODGE::vfunc5
 0x10003fdf func   ?vfunc5@CPhysicsAnimlink@@QAEPAV1@I@Z CPhysicsAnimlink::vfunc5
 0x10003ff3 func   ?sub_1025c670@@YA_NPAG0@Z sub_1025c670
 0x10004002 func   ?sub_101e83d0@CUnknown101e83d0@@QAEXPAHPAXH@Z CUnknown101e83d0::sub_101e83d0
