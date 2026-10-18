@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10027890 size=0x31
+struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
+
+struct S10027890 {
+	void sub_1000d8a5(float f);
+	// TARGET: S10027890::sub_10027890
+	void sub_10027890(inputdata_t &in);
+};
+
+void S10027890::sub_10027890(inputdata_t &in)
+{
+	float f;
+	if (in.m_fieldType == 1)
+		f = in.m_fl;
+	else
+		f = 0.0f;
+	sub_1000d8a5(f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027bb0 size=0x49
 void *sub_1000db89(int);
 struct GP;
