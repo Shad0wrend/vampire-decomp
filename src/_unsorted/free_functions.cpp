@@ -6978,6 +6978,61 @@ bool CUnknown10108e00::sub_10108e00(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109840 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1056cd58[2];
+void sub_1000d33c();
+void sub_10013e0d();
+void sub_10004368();
+void sub_10014f60();
+void sub_10012c7e();
+void sub_1000fb69();
+void sub_1000f2c7();
+
+int *sub_10109840()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_flFuel", {0x45c, 0}, 1, 2 },
+        { 15, "m_flDamageTime", {0x460, 0}, 1, 2 },
+        { 1, "m_flMaxHeat", {0x478, 0}, 1, 2 },
+        { 0, "CFireBurnThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000d33c },
+        { 0, "CFireGoOutThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10013e0d },
+        { 1, "m_flFireSize", {0x468, 0}, 1, 6, "firesize" },
+        { 1, "m_flAttackTime", {0x480, 0}, 1, 6, "fireattack" },
+        { 4, "m_nFireType", {0x458, 0}, 1, 6, "firetype" },
+        { 1, "m_flHeatLevel", {0x46c, 0}, 1, 6, "ignitionpoint" },
+        { 1, "m_flDamageScale", {0x474, 0}, 1, 6, "damagescale" },
+        { 4, "m_nCharDamage", {0x488, 0}, 1, 6, "char_damage" },
+        { 0, "InputStartFire", {0, 0}, 1, 8, "StartFire", 0, (void *)sub_10004368 },
+        { 1, "InputExtinguish", {0, 0}, 1, 8, "Extinguish", 0, (void *)sub_10014f60 },
+        { 1, "InputExtinguishTemporary", {0, 0}, 1, 8, "ExtinguishTemporary", 0, (void *)sub_10012c7e },
+        { 0, "InputEnable", {0, 0}, 1, 8, "Enable", 0, (void *)sub_1000fb69 },
+        { 0, "InputDisable", {0, 0}, 1, 8, "Disable", 0, (void *)sub_1000f2c7 },
+        { 10, "m_OnIgnited", {0x494, 0}, 1, 0x16, "OnIgnited", g_1055dc70 },
+        { 10, "m_OnExtinguished", {0x4ac, 0}, 1, 0x16, "OnExtinguished", g_1055dc70 },
+    };
+    g_1056cd58[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1056cd58[0] = (int)&dataDesc[1];
+    return g_1056cd58;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109da0 size=0xa
 void __fastcall sub_10109da0(char *self, int, int)
 {

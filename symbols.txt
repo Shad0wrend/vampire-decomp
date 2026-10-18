@@ -966,6 +966,7 @@
 0x10008dd7 func   ?vfunc5@CItemContainerOneItemFiltered@@QAEPAV1@I@Z CItemContainerOneItemFiltered::vfunc5
 0x10008e0e func   ?sub_10258500@@YAPBDH@Z sub_10258500
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
+0x10008e72 func   ?sub_10109840@@YAPAHXZ sub_10109840
 0x10008e8b func   ?vfunc1@PyServerSystem@@UAEXXZ PyServerSystem::vfunc1
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point
 0x10008ebd func   ?vfunc274@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc274
