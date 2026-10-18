@@ -37,4 +37,6 @@ public:
 	virtual void vfunc265(); virtual void vfunc266(); virtual void vfunc267(); virtual void vfunc268(); virtual void vfunc269();
 	virtual void vfunc270(int a, int b);
 	virtual void vfunc271(int a, int b);
+	CRagdollProp *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10014317();	// as in CPhysForce (transplant)
 };

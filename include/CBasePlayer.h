@@ -27,4 +27,7 @@ public:
 	void sub_10177120();
 	CBaseEntity *sub_1015dc60();	// slot 167 override: resolves the entity handle at +0x1c60 (null when stale)
 	bool sub_10168e10();	// slot 361 override: true when the entity handle at +0xfe8 does not resolve
+	CBasePlayer *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_100017d5();	// as in CPhysForce (transplant)
+	float *vfunc367(float *out);	// as in CBaseEntity (transplant)
 };

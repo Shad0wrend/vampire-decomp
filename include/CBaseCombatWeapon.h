@@ -15,7 +15,7 @@ class CBaseCombatWeapon
 public:
 	// slots 0..9
 	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
-	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	virtual CBaseCombatWeapon *vfunc5(unsigned int flags); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	// slots 10..279
 	CBCW_V10(1) CBCW_V10(2) CBCW_V10(3) CBCW_V10(4) CBCW_V10(5) CBCW_V10(6) CBCW_V10(7) CBCW_V10(8) CBCW_V10(9)
 	CBCW_V10(10) CBCW_V10(11) CBCW_V10(12) CBCW_V10(13) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16) CBCW_V10(17) CBCW_V10(18) CBCW_V10(19)
@@ -55,4 +55,5 @@ public:
 	unsigned int m_hOwner; // 0x88c
 	char m_pad890[4];
 	float m_f894;
+	void sub_10013a57();	// as in CPhysForce (transplant)
 };

@@ -10,7 +10,7 @@ struct ISaveRestoreOps;
 class CAI_Motor
 {
 public:
-	virtual void vfunc0();
+	virtual CAI_Motor *vfunc0(unsigned int flags);
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
@@ -66,6 +66,7 @@ public:
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
 	static int *sub_102e0860();
 	static ISaveRestoreOps *GetFacingQueueOps();
+	void sub_10014b32();	// as in CDataObjectAccessSystem (transplant)
 };
 
 inline ISaveRestoreOps *CAI_Motor::GetFacingQueueOps()

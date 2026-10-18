@@ -10,4 +10,5 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual CBaseCineCam *vfunc5(unsigned int flags);	// scalar deleting destructor
+	float *vfunc193(float *out);	// as in CBaseEntity (transplant)
 };

@@ -21,10 +21,11 @@ public:
 	virtual void vfunc11();
 	virtual void vfunc12();
 	virtual void vfunc13();
-	virtual void vfunc14();
+	virtual CMoveHelperServer *vfunc14(unsigned int flags);
 	virtual void vfunc15();
 	virtual void vfunc16();
 
 	char m_pad04[0x10];
 	int m_nTouchCount;
+	void sub_1000185c();	// as in CDataObjectAccessSystem (transplant)
 };

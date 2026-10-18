@@ -9,4 +9,5 @@ public:
 	int m_unk670;
 
 	void vfunc274();
+	CPropDoorknobElectronic *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
 };

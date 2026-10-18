@@ -16,4 +16,5 @@ public:
 	int m_c[3];	// 0x000c
 	char m_pad0018[12];
 	int m_24[7];	// 0x0024
+	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 };

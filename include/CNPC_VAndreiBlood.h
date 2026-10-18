@@ -39,4 +39,7 @@ public:
 	void vfunc433();	// slot 433, not modelled as virtual yet
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433, called directly
 	void sub_10015839(int a);	// slot 616 implementation shared with CAI_BaseNPCTroika
+	CNPC_VAndreiBlood *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10004110();	// as in CPhysForce (transplant)
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };

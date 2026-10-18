@@ -1,0 +1,10 @@
+// CGravityPellet: declared by pcdecomp transplant for 0x10148720 from CPhysForce (0x10027690);
+// only what matched code needs, as plain members.
+#pragma once
+
+class CGravityPellet
+{
+public:
+	CGravityPellet *vfunc5(unsigned int flags);
+	void sub_10004e1c();
+};

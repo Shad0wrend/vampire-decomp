@@ -1,0 +1,10 @@
+// COccultThaumDamage: declared by pcdecomp transplant for 0x1040a030 from CPhysForce (0x10027690);
+// only what matched code needs, as plain members.
+#pragma once
+
+class COccultThaumDamage
+{
+public:
+	COccultThaumDamage *vfunc5(unsigned int flags);
+	void sub_10013a57();
+};

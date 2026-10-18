@@ -15,11 +15,11 @@ public:
 	virtual void vfunc7(int a, int b, int count);	// forwards to sub_101a05b0 with the count doubled (shorts to bytes)
 	virtual void vfunc8();
 	virtual void vfunc9();
-	virtual void vfunc10();
+	virtual bool vfunc10(const void *pData, int nBytes);
 	virtual void vfunc11();
 	virtual void vfunc12();
 	virtual void vfunc13();
-	virtual void vfunc14();
+	virtual bool vfunc14(const void *pData, int nBytes);
 	virtual void vfunc15();
 	virtual void vfunc16();
 	virtual void vfunc17();
@@ -51,4 +51,5 @@ public:
 
 	int sub_101a08f0(void *pEntity);	// index of the entity in the table, or -1
 	void sub_101a05b0(int a, int bytes, int b);
+	bool sub_1000643d(const void *pData, int nBits);	// as in CUnknown100bde40 (transplant)
 };

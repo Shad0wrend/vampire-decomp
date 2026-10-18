@@ -9,4 +9,5 @@ class CPhysicsProp : public CBaseEntity
 public:
 	virtual bool vfunc32(int a);	// slot 32 override
 	void vfunc226(int a);	// slot 226 override: base implementation, then sets the byte at +0x1b1
+	CPhysicsProp *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
 };

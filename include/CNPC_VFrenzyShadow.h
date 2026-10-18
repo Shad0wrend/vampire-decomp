@@ -14,4 +14,7 @@ public:
 
 	char m_pad0004[0x6078 - 4];
 	char m_b6078;
+	CNPC_VFrenzyShadow *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_100123af();	// as in CPhysForce (transplant)
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };

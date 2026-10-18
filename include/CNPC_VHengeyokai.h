@@ -42,4 +42,5 @@ public:
 	int sub_10382b30(int key);
 	bool sub_10382aa0(int key);
 	char sub_1029b180(void *pOther);	// CAI_BaseNPCTroika::vfunc69
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };

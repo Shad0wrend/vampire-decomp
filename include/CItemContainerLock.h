@@ -10,4 +10,5 @@ public:
 
 	void vfunc275();
 	void vfunc103();	// base vfunc103, then sets bit 0x40 in the flags at +0x19c
+	CItemContainerLock *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
 };

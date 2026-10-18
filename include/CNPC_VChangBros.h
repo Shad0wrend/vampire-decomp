@@ -10,4 +10,5 @@ public:
 	int vfunc440(int schedule);
 	void vfunc619(int arg);
 	void sub_1000c27a(int arg);
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };

@@ -15,4 +15,6 @@ public:
 	virtual void vfunc106(const char* name);
 
 	void sub_1000d26f();
+	CItemGWarrLedger1 *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10013a57();	// as in CPhysForce (transplant)
 };

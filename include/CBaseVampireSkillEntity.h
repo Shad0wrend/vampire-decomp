@@ -15,4 +15,5 @@ public:
 	void vfunc272();
 	void vfunc103();
 	void sub_10012eef();	// CBreakableProp::vfunc103 (non-virtual base call)
+	CBaseVampireSkillEntity *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
 };

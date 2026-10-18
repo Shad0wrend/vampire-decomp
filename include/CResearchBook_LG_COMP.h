@@ -1,0 +1,10 @@
+// CResearchBook_LG_COMP: declared by pcdecomp transplant for 0x10409c10 from CPhysForce (0x10027690);
+// only what matched code needs, as plain members.
+#pragma once
+
+class CResearchBook_LG_COMP
+{
+public:
+	CResearchBook_LG_COMP *vfunc5(unsigned int flags);
+	void sub_10013a57();
+};

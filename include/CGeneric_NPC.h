@@ -7,4 +7,5 @@ class CGeneric_NPC : public CAI_BaseNPCTroika
 {
 public:
 	virtual float vfunc516();	// float constant picked by the state at +0xfec (0x13, 0x3b..0x3c, other)
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };

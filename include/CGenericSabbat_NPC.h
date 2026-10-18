@@ -10,4 +10,6 @@ public:
 	virtual void vfunc144(int a);	// slot 144 override: sub_10090890(0), then the base implementation
 
 	void sub_10090890(float time);	// "CBaseAnimating::...MarkEffectStart"-like worker (scope trace, stores curtime + time at +0x5a4), called directly
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	float vfunc516();	// as in CGeneric_NPC (transplant)
 };

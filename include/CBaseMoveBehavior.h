@@ -11,4 +11,6 @@ public:
 
 	char m_pad0004b[0x4b4 - sizeof(CBaseEntity)];
 	int m_unk4b4;
+	CBaseMoveBehavior *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
+	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 };

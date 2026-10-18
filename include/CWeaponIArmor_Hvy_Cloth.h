@@ -10,7 +10,7 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
-	virtual void vfunc5();
+	virtual CWeaponIArmor_Hvy_Cloth *vfunc5(unsigned int flags);
 	virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual void vfunc14();
 	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
@@ -35,4 +35,5 @@ public:
 	virtual void vfunc106(const char* name);
 
 	void sub_10001a3c();
+	void sub_10013a57();	// as in CPhysForce (transplant)
 };

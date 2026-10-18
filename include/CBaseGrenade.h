@@ -65,4 +65,6 @@ public:
 	virtual void vfunc400(); virtual void vfunc401(); virtual void vfunc402(); virtual void vfunc403(); virtual void vfunc404();
 	virtual void vfunc405(); virtual void vfunc406(); virtual void vfunc407(); virtual void vfunc408(); virtual void vfunc409();
 	virtual void vfunc410(); virtual void vfunc411(); virtual void vfunc412(int value);
+	CBaseGrenade *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_1000a67d();	// as in CPhysForce (transplant)
 };

@@ -9,4 +9,6 @@ public:
 	int m_unk1ec;
 
 	void vfunc305();
+	CBaseMoneyObject *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10013a57();	// as in CPhysForce (transplant)
 };

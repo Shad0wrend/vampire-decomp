@@ -10,4 +10,6 @@ public:
 	virtual void vfunc266();
 	char pad_04[0x918 - 4];
 	bool m_bFlag918;
+	CWeaponThrown_Grenade_Frag *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10013a57();	// as in CPhysForce (transplant)
 };

@@ -11,4 +11,6 @@ public:
 	char m_pad03e0[0x848 - 0x3e0];
 	float m_vec848[3];
 	int m_toggle854;
+	CBaseFlex *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_100152ad();	// as in CPhysForce (transplant)
 };

@@ -10,4 +10,6 @@ public:
 	void sub_100054bb(int arg);
 	void vfunc619(int arg);
 	void sub_1000c27a(int arg);
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	CNPC_VSheriffMan *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
 };

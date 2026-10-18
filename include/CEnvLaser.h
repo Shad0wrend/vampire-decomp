@@ -16,4 +16,6 @@ public:
 	CEnvLaser();	// 0x10101480
 
 	virtual void vfunc0();
+	CEnvLaser *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
+	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 };

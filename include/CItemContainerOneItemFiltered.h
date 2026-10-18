@@ -11,4 +11,6 @@ public:
 
 	void sub_10209350();	// CItemContainer::vfunc103
 	void sub_100b3b00();	// CBaseEntity::sub_100b3b00
+	CItemContainerOneItemFiltered *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10005718();	// as in CPhysForce (transplant)
 };

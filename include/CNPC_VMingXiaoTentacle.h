@@ -8,4 +8,7 @@ class CNPC_VMingXiaoTentacle
 {
 public:
 	virtual int vfunc437();
+	CNPC_VMingXiaoTentacle *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_100123af();	// as in CPhysForce (transplant)
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };

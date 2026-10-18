@@ -17,4 +17,8 @@ public:
 	int m_n5cc4;
 
 	int sub_10368f20();
+	CNPC_VCamera *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_100123af();	// as in CPhysForce (transplant)
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	int vfunc438();	// as in CNPC_VCamera (transplant)
 };

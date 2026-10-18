@@ -62,4 +62,6 @@ public:
 	char m_pad13a4[0x13bc - 0x13a4];
 	int m_nStatLists;
 	CVStatList_t **m_pStatLists;
+	CBaseCombatCharacter *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_100078c4();	// as in CPhysForce (transplant)
 };

@@ -11,10 +11,10 @@ class CVFeatList_t
 {
 public:
 	virtual float vfunc0(int index);	// the integer at +0x160 + index * 0x18, as a float
-	virtual void vfunc1();
+	virtual float vfunc1(int index);
 	virtual float vfunc2(int index);
-	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual float vfunc3(int index);
+	virtual float vfunc4(int index);
 	virtual void vfunc5();
 
 	char m_pad0004[0x164];

@@ -17,6 +17,8 @@ public:
 
 	void sub_103ea5b0(CWeaponMeleeEvent *pEvent, int b);	// slot 370
 	void sub_103ea7e0(int kind, int a, int b, int c);
+	CWeaponMelee *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10013a57();	// as in CPhysForce (transplant)
 };
 
 class CWeaponMelee_TzimisceMelee : public CWeaponMelee
@@ -31,4 +33,6 @@ public:
 	float m_f08c4;
 	char m_pad08c8[0x910 - 0x8c8];
 	int m_n0910;
+	CWeaponMelee_TzimisceMelee *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10013a57();	// as in CPhysForce (transplant)
 };

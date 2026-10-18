@@ -6,4 +6,5 @@ class CBaseTerminal
 public:
 	void vfunc71();
 	char sub_102180c0(int a);	// slot 32
+	CBaseTerminal *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
 };

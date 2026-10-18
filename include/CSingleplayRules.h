@@ -14,4 +14,5 @@ public:
 	virtual int vfunc61(int index);
 	virtual int vfunc62(int index);
 	virtual const char *vfunc63(int index);
+	Vector vfunc51(CBaseEntity *pEnt);	// as in CMultiplayRules (transplant)
 };

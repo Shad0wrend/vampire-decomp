@@ -12,7 +12,7 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
-	virtual void vfunc5();
+	virtual CSceneEntity *vfunc5(unsigned int flags);
 	virtual void vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();
@@ -144,4 +144,5 @@ public:
 	virtual void vfunc248(float a, int b, int c);
 	virtual void vfunc249(float a, int b, int c);
 	virtual void vfunc250(float a, int b, int c);
+	void sub_1000b1ef();	// as in CPhysForce (transplant)
 };

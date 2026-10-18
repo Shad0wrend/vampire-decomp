@@ -7,4 +7,6 @@ class CWorld : public CBaseEntity
 {
 public:
 	virtual void vfunc130(int a);
+	CWorld *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_1000fe98();	// as in CPhysForce (transplant)
 };

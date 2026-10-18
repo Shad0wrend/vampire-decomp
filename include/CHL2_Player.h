@@ -52,4 +52,6 @@ public:
 	int m_n2528;
 	int m_n252c;
 	float m_f2530;
+	CHL2_Player *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_100140f1();	// as in CPhysForce (transplant)
 };

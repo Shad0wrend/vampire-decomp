@@ -25,9 +25,10 @@ public:
 	virtual void vfunc5();
 	virtual void vfunc6();
 	virtual void vfunc7();
-	virtual void vfunc8();
+	virtual CAutoGameSystem *vfunc8(unsigned int flags);
 
 	char m_04[4];
+	void sub_1000cfbd();	// as in CDataObjectAccessSystem (transplant)
 };
 
 class CDirtySpatialPartitionEntityList : public CAutoGameSystem, public IPartitionQueryCallback

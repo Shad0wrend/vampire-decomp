@@ -15,4 +15,6 @@ public:
 
 	// Slot 32, called directly so far; declared as a plain member.
 	bool vfunc32(void *pEntity);	// true if pEntity is the camera or no camera is set
+	CFuncMonitor *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
+	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 };

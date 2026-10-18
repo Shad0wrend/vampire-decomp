@@ -4,7 +4,7 @@
 class ConVar
 {
 public:
-	virtual void vfunc0();
+	virtual ConVar *vfunc0(unsigned int flags);
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
@@ -21,4 +21,5 @@ public:
 	char m_pad0004[0x24];	// 0x0004 .. 0x0027
 	float m_fValue;
 	int m_nValue;
+	void sub_100108bb();	// as in CDataObjectAccessSystem (transplant)
 };

@@ -7,4 +7,5 @@ class CNPC_VTzimisceRunner
 {
 public:
 	virtual bool vfunc599(void *pEntity);
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };

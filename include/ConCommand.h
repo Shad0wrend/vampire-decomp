@@ -4,7 +4,7 @@
 class ConCommand
 {
 public:
-	virtual void vfunc0();
+	virtual ConCommand *vfunc0(unsigned int flags);
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
@@ -15,4 +15,5 @@ public:
 
 	char m_pad0004[0x18];	// 0x0004 .. 0x001B
 	void (*m_pfnCallback)();
+	void sub_100104f6();	// as in CDataObjectAccessSystem (transplant)
 };

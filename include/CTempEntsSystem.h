@@ -15,4 +15,17 @@ public:
 	void vfunc13(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h);	// slot 13
 	void sub_10058d70(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g);	// slot 17
 	void vfunc24(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f);	// slot 24
+	void vfunc12(CUnknown1019d130 *filter, int a, int b, int c);	// as in CTempEntsSystem (transplant)
+	void vfunc22(CUnknown1019d130 *filter, int a, int b, int c);	// as in CTempEntsSystem (transplant)
+	void vfunc30(CUnknown1019d130 *filter, int a, int b, int c);	// as in CTempEntsSystem (transplant)
+	void vfunc33(CUnknown1019d130 *filter, int a, int b, int c);	// as in CTempEntsSystem (transplant)
+	void vfunc38(CUnknown1019d130 *filter, int a, int b, int c);	// as in CTempEntsSystem (transplant)
+	void vfunc41(CUnknown1019d130 *filter, int a, int b, int c);	// as in CTempEntsSystem (transplant)
+	void vfunc18(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g);	// as in CTempEntsSystem (transplant)
+	void vfunc19(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g);	// as in CTempEntsSystem (transplant)
+	void vfunc37(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g);	// as in CTempEntsSystem (transplant)
+	void vfunc14(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h);	// as in CTempEntsSystem (transplant)
+	void vfunc36(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h);	// as in CTempEntsSystem (transplant)
+	void vfunc27(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f);	// as in CTempEntsSystem (transplant)
+	void vfunc40(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f);	// as in CTempEntsSystem (transplant)
 };

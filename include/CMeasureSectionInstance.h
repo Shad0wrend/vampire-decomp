@@ -5,9 +5,10 @@ struct CMeasureTsc {
 };
 class CMeasureSectionInstance {
 public:
-    virtual void vfunc0();
+    virtual CMeasureSectionInstance *vfunc0(unsigned int flags);
     int m_pad;
     CMeasureTsc m_tsc;
     int m_section;
     CMeasureSectionInstance(int section);
+    void sub_10001d16();	// as in CDataObjectAccessSystem (transplant)
 };

@@ -1,0 +1,10 @@
+// CWeaponMelee_AVampBlade: declared by pcdecomp transplant for 0x103ecf60 from CPhysForce (0x10027690);
+// only what matched code needs, as plain members.
+#pragma once
+
+class CWeaponMelee_AVampBlade
+{
+public:
+	CWeaponMelee_AVampBlade *vfunc5(unsigned int flags);
+	void sub_10013a57();
+};

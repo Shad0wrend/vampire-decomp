@@ -5,7 +5,7 @@
 class CEffectsServer
 {
 public:
-	virtual void vfunc0();
+	virtual CEffectsServer *vfunc0(unsigned int flags);
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
@@ -16,4 +16,5 @@ public:
 	virtual void vfunc8();
 	virtual float vfunc9();
 	virtual void vfunc10();
+	void sub_1000168b();	// as in CDataObjectAccessSystem (transplant)
 };

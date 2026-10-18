@@ -27,4 +27,6 @@ public:
 	char m_pad103d[0x1044 - 0x103d];
 	float m_f1044;
 	float m_f1048;
+	CRagdollPropSpecial *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10014317();	// as in CPhysForce (transplant)
 };

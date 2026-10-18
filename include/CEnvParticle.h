@@ -9,4 +9,6 @@ public:
 	int m_unk484;
 
 	void vfunc242();
+	CEnvParticle *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10011ac7();	// as in CPhysForce (transplant)
 };

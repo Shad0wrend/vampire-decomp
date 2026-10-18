@@ -17,4 +17,6 @@ public:
 	CDW_PAD1(d20) CDW_PAD1(d21) CDW_PAD1(d22) CDW_PAD1(d23) CDW_PAD1(d24) CDW_PAD1(d25)
 	virtual void vfunc326();
 	virtual void vfunc327();
+	CDisciplineWeapon *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10013a57();	// as in CPhysForce (transplant)
 };

@@ -1,0 +1,10 @@
+// CItemGDriversLicenseGimble: declared by pcdecomp transplant for 0x1040a480 from CPhysForce (0x10027690);
+// only what matched code needs, as plain members.
+#pragma once
+
+class CItemGDriversLicenseGimble
+{
+public:
+	CItemGDriversLicenseGimble *vfunc5(unsigned int flags);
+	void sub_10013a57();
+};

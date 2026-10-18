@@ -39,4 +39,6 @@ public:
 	virtual void vfunc255(); virtual void vfunc256(); virtual void vfunc257(); virtual void vfunc258(); virtual void vfunc259();
 	virtual void vfunc260(); virtual void vfunc261(); virtual void vfunc262(); virtual void vfunc263(); virtual void vfunc264();
 	virtual bool vfunc265();
+	CVampireProjectile *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_100085d5();	// as in CPhysForce (transplant)
 };

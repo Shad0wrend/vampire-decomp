@@ -12,7 +12,7 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
-	virtual void vfunc5();
+	virtual CAI_Hint *vfunc5(unsigned int flags);
 	virtual void vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();
@@ -127,4 +127,5 @@ public:
 	virtual void vfunc117();
 	virtual void vfunc118();
 	virtual void vfunc119();
+	void sub_10005e98();	// as in CPhysForce (transplant)
 };

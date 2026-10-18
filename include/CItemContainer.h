@@ -14,4 +14,6 @@ public:
 
 	void *sub_10209a20();	// returns the lock entity (dynamic_cast<CItemContainerLock *>) or NULL
 	void vfunc71();
+	CItemContainer *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	void sub_10005718();	// as in CPhysForce (transplant)
 };

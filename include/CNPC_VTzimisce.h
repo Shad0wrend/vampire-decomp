@@ -67,4 +67,7 @@ public:
 
 	void *sub_103bf580(void *pDefault);
 	void sub_103b9f90(int a, float b);
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	char vfunc69(void *pOther);	// as in CNPC_VHengeyokai (transplant)
+	char sub_1029b180(void *pOther);	// as in CNPC_VHengeyokai (transplant)
 };

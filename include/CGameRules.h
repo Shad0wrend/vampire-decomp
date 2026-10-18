@@ -11,7 +11,7 @@ class CBaseEntity;
 class CGameRules
 {
 public:
-	virtual void vfunc0();
+	virtual CGameRules *vfunc0(unsigned int flags);
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
@@ -92,4 +92,5 @@ public:
 	virtual void vfunc78();
 	virtual void vfunc79();
 	virtual void vfunc80();
+	void sub_1000d189();	// as in CDataObjectAccessSystem (transplant)
 };

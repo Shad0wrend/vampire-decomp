@@ -13,5 +13,6 @@ public:
 	virtual void vfunc5();
 	virtual void vfunc6();
 	virtual void vfunc7();
-	virtual void vfunc8();
+	virtual PyServerSystem *vfunc8(unsigned int flags);
+	void sub_1000cfbd();	// as in CDataObjectAccessSystem (transplant)
 };

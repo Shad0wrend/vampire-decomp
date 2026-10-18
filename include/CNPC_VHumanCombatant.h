@@ -1,0 +1,14 @@
+// CNPC_VHumanCombatant: declared by pcdecomp transplant for 0x10386b20 from CPhysForce (0x10027690);
+// only what matched code needs, as plain members.
+#pragma once
+
+class CNPC_VHumanCombatant
+{
+public:
+	CNPC_VHumanCombatant *vfunc5(unsigned int flags);
+	void sub_100123af();
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	void vfunc103();	// as in CNPC_VAndreiBlood (transplant)
+	void sub_10384690();	// as in CNPC_VAndreiBlood (transplant)
+	void sub_10012855(int a);	// as in CNPC_VAndreiBlood (transplant)
+};

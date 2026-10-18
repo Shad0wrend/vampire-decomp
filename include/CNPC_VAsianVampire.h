@@ -22,4 +22,5 @@ public:
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
 	int sub_10011225();	// CNPC_VHuman::vfunc461, called directly
+	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };

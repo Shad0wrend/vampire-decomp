@@ -18,8 +18,9 @@ public:
 	virtual void vfunc11();
 	virtual void vfunc12();
 	virtual void vfunc13();
-	virtual void vfunc14();
+	virtual CServerNetworkProperty *vfunc14(unsigned int flags);
 	void *m_pOuter;
 	char m_pad8[8];
 	char m_unk10[4];
+	void sub_10004246();	// as in CDataObjectAccessSystem (transplant)
 };
