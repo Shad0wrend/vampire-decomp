@@ -1335,6 +1335,7 @@
 0x10011428 func   ?vfunc2@CTEWorldDecal@@UAEPAV1@I@Z CTEWorldDecal::vfunc2
 0x100114aa func   ?sub_102e7e40@@YIXPAUCOwner@@@Z sub_102e7e40
 0x100114d2 func   ?vfunc337@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc337
+0x10011504 func   ?vfunc5@CAnchorList@@UAEXXZ CAnchorList::vfunc5
 0x1001151d func   _intersting_place intersting_place
 0x10011527 func   ?sub_102f2fe0@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102f2fe0
 0x1001155e func   ?vfunc0@CFlexAnimationTrack@@UAEPAV1@I@Z CFlexAnimationTrack::vfunc0
