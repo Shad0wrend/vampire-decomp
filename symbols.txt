@@ -1231,6 +1231,7 @@
 0x1000c3b5 func   ?sub_101f9670@CUnknown101f9670@@QAEPAV1@XZ CUnknown101f9670::sub_101f9670
 0x1000c3bf func   ?sub_1021e100@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_1021e100
 0x1000c400 func   ?vfunc5@CWeaponRanged_Smg_Mac10@@QAEPAV1@I@Z CWeaponRanged_Smg_Mac10::vfunc5
+0x1000c432 func   ?vfunc5@CNPC_Crow@@QAEPAV1@I@Z CNPC_Crow::vfunc5
 0x1000c482 func   ?sub_1042ff00@@YAXXZ sub_1042ff00
 0x1000c4be func   _npc_payphone npc_payphone
 0x1000c568 func   ?sub_103eee60@CUnknown103eee60@@QAEXXZ CUnknown103eee60::sub_103eee60
