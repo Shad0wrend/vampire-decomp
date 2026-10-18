@@ -2091,6 +2091,7 @@
 0x10014849 func   ?sub_101d9840@CUnknown101d9840@@QAEDH@Z CUnknown101d9840::sub_101d9840
 0x1001488f func   ?sub_100a8bf0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a8bf0
 0x100148a8 func   _npc_VPlayerController npc_VPlayerController
+0x100148fd func   ?vfunc5@CWeaponRanged_Pistol_Thirtyeight@@QAEPAV1@I@Z CWeaponRanged_Pistol_Thirtyeight::vfunc5
 0x10014911 func   _info_node_bach_run_1 info_node_bach_run_1
 0x1001491b func   _info_node_bach_run_2 info_node_bach_run_2
 0x10014948 func   ?sub_100deb10@@YIXPADHD@Z sub_100deb10
