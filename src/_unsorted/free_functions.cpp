@@ -17486,6 +17486,29 @@ int __fastcall sub_10341120(char *self)
 void __fastcall sub_10349a00(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10349a20 size=0x40
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int size);
+struct UtlVec8 {
+	char *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	char *m_pElements;
+	UtlVec8 *sub_10349a20(int growSize, int allocationCount);
+};
+UtlVec8 *UtlVec8::sub_10349a20(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount)
+		m_pMemory = (char *)Plat_Alloc(allocationCount * 4);
+	m_size = 0;
+	m_pElements = m_pMemory;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349ea0 size=0x8
 void __fastcall sub_10349ea0(int *p) { p[3] = 0; }
 // END FUNCTION
