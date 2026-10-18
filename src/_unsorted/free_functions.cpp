@@ -5268,6 +5268,14 @@ void __fastcall sub_100deb10(char *self, int, char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100deb50 size=0x11
+void sub_100deb50(int *dst, const int *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dec20 size=0x6a
 #include "CUnknown100dec20.h"
 
