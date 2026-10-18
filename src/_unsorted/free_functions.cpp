@@ -1798,6 +1798,32 @@ S100464f0 *S100464f0::sub_100464f0(int c, int count, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100466d0 size=0x51
+extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
+
+struct S100466d0 {
+	int m_a; void *m_pMemory; int m_count; int m_c;
+	unsigned short m_h0, m_h1, m_h2, m_h3;
+	// TARGET: S100466d0::sub_100466d0
+	S100466d0 *sub_100466d0(int c, int count, int a);
+};
+
+S100466d0 *S100466d0::sub_100466d0(int c, int count, int a)
+{
+	m_a = a;
+	m_pMemory = 0;
+	m_count = count;
+	m_c = c;
+	if (count)
+		m_pMemory = Plat_Alloc(count << 4);
+	m_h1 = 0;
+	m_h0 = 0xffff;
+	m_h2 = 0xffff;
+	m_h3 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10046930 size=0x109
 #include "CUtlRBTree36.h"
 
