@@ -7,6 +7,7 @@
 class CRagdollPropSpecial : public CBaseEntity
 {
 public:
+	virtual void vfunc113();
 	virtual void vfunc134();
 	virtual void vfunc135(); virtual void vfunc136(); virtual void vfunc137(); virtual void vfunc138(); virtual void vfunc139();
 	virtual void vfunc140(); virtual void vfunc141(); virtual void vfunc142(); virtual void vfunc143(); virtual void vfunc144();
@@ -20,4 +21,10 @@ public:
 	virtual void vfunc180(); virtual void vfunc181(); virtual void vfunc182(); virtual void vfunc183(); virtual void vfunc184();
 	virtual void vfunc185(); virtual void vfunc186(); virtual void vfunc187(); virtual void vfunc188(); virtual void vfunc189();
 	virtual void vfunc190(); virtual void vfunc191(int value);
+
+	char m_pad03e0[0x103c - 0x3e0];
+	char m_b103c;
+	char m_pad103d[0x1044 - 0x103d];
+	float m_f1044;
+	float m_f1048;
 };
