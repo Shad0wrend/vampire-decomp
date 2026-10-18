@@ -2552,6 +2552,28 @@ struct CUnknown10074a90 { int p[4]; int a; void sub_10074a90(int v); };
 void CUnknown10074a90::sub_10074a90(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10075bd0 size=0x16
+struct S10075bd0 {
+	char m_pad[0x4];
+	char m_name[64];
+	// TARGET: S10075bd0::sub_10075bd0
+	void sub_10075bd0(const char *src);
+};
+
+void S10075bd0::sub_10075bd0(const char *src)
+{
+	const char *p = src;
+	char *d = m_name;
+	char c;
+	do {
+		c = *p;
+		*d = c;
+		p++;
+		d++;
+	} while (c != 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075ce0 size=0xd
 #include "CUnknown10077730.h"
 
