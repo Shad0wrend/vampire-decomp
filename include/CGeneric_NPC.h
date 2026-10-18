@@ -6,5 +6,5 @@
 class CGeneric_NPC : public CAI_BaseNPCTroika
 {
 public:
-	float vfunc516();	// slot 516: float constant picked by the state at +0xfec (0x13, 0x3b..0x3c, other)
+	virtual float vfunc516();	// float constant picked by the state at +0xfec (0x13, 0x3b..0x3c, other)
 };
