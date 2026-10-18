@@ -1,13 +1,10 @@
-// SendProp: engine send-table property (0x54 bytes). Only the size and the destructor are modelled.
+// SendProp: the engine's networked-property description (0x54 bytes, vtable + 0x50 bytes of data).
 #pragma once
-
-class SendTable;
 
 class SendProp
 {
 public:
-	char m_data[0x54];
+	virtual ~SendProp();
 
-	SendProp(const SendProp &);
-	~SendProp();	// 0x1000648d (stub for 0x102471b0)
+	char m_data[0x50];
 };
