@@ -12,6 +12,18 @@ char CNPC_VFrenzyShadow::sub_10376b70(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10376ba0 size=0x17
+#include "CNPC_VFrenzyShadow.h"
+struct S10924edc { virtual void a(); virtual void b(); };
+extern S10924edc *g_10924edc;
+bool CNPC_VFrenzyShadow::sub_10376ba0(int unused)
+{
+	m_b6078 = 1;
+	g_10924edc->b();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376bd0 size=0xe
 struct CUnknown10924edc
 {
