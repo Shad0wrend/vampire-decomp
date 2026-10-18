@@ -512,6 +512,36 @@ void UtlVec32::sub_10032d20(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032db0 size=0x8f
+#include "CUtlVector20.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+void CUtlVector20::sub_10032db0(int num)
+{
+	if (num + m_size > m_allocationCount && m_growSize != -1) {
+		int newSize = m_allocationCount + (num + m_size - m_allocationCount);
+		while (m_allocationCount < newSize) {
+			if (m_allocationCount != 0) {
+				if (m_growSize != 0)
+					m_allocationCount += m_growSize;
+				else
+					m_allocationCount += m_allocationCount;
+			} else {
+				m_allocationCount = 2;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (char *)Plat_Realloc(m_pMemory, m_allocationCount * 20);
+		else
+			m_pMemory = (char *)Plat_Alloc(m_allocationCount * 20);
+	}
+	m_size += num;
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032f00 size=0x34
 #include "UtlVec8.h"
 void UtlVec8::sub_10032f00(int elem, int num)
