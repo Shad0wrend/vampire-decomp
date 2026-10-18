@@ -11701,6 +11701,14 @@ void __fastcall sub_1021e160(int *p) { p[3] = 0; }
 void __fastcall sub_1021e1c0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1021e270 size=0x11
+void sub_1021e270(int *dst, const int *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e350 size=0x6d
 struct Elem { char data[0x2b4]; };
 struct Vec { Elem *m_pMemory; int pad[2]; int m_Size; };
