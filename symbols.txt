@@ -309,6 +309,7 @@
 0x10003a3a func   ?sub_1021e1c0@@YIXPAH@Z sub_1021e1c0
 0x10003a80 func   _soundent soundent
 0x10003abc func   _env_shooter env_shooter
+0x10003b1b func   ?vfunc546@CNPC_VPlaceholder@@QAEHH@Z CNPC_VPlaceholder::vfunc546
 0x10003b4d func   ?sub_100ba0c0@CBatSwarm@@QAE_NPAX@Z CBatSwarm::sub_100ba0c0
 0x10003b57 func   ?sub_10376b70@CNPC_VFrenzyShadow@@QAEDH@Z CNPC_VFrenzyShadow::sub_10376b70
 0x10003b84 func   ?sub_10223030@@YAPAHXZ sub_10223030
