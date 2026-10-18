@@ -911,6 +911,43 @@ bool sub_10041b40(int *a, int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10042c10 size=0xba
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct E8 { int a, b; };
+
+struct CMem8c_t {
+	E8 *m_pMemory; int m_nAllocationCount; int m_nGrowSize; int m_Size; E8 *m_pElements;
+	void sub_10042d00(int num);
+	// TARGET: CMem8c_t::sub_10042c10
+	int sub_10042c10(int elem, int num, const E8 *src);
+};
+
+int CMem8c_t::sub_10042c10(int elem, int num, const E8 *src)
+{
+	if (num == 0)
+		return elem;
+	if (m_Size + num > m_nAllocationCount)
+		sub_10042d00(m_Size - m_nAllocationCount + num);
+	m_Size += num;
+	m_pElements = m_pMemory;
+	int toMove = m_Size - elem - num;
+	if (toMove > 0) {
+		if (num > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], toMove * 8);
+	}
+	for (int i = 0; i < num; i++) {
+		E8 *p = &m_pMemory[elem + i];
+		if (p) { p->a = 0; p->b = 0; }
+	}
+	if (src) {
+		for (int i = 0; i < num; i++)
+			m_pMemory[elem + i] = src[i];
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042d00 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
