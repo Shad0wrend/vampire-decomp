@@ -13,6 +13,7 @@ public:
 
 	void vfunc488();	// slot 488: plays the "Death" sound
 	void vfunc489();	// slot 489: plays the "Target_Suspect" sound
+	void vfunc492();	// slot 492: plays the "Fear_Start" sound
 	void vfunc497();
 	void vfunc616();	// slot 616: base call with 0x30, then stamps curtime + 15 at +0x65bc
 
