@@ -16805,6 +16805,26 @@ char sub_10370a20()
 void __fastcall sub_10373420(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10373620 size=0x33
+void sub_10001564();
+void sub_1000176c();
+extern int g_106368ac;
+extern char g_106368a8;
+extern int g_10936b68;
+
+char sub_10373620()
+{
+    sub_10001564();
+    if (g_106368ac != g_10936b68) {
+        sub_1000176c();
+        g_106368a8 = 1;
+        g_106368ac = g_10936b68;
+        return 1;
+    }
+    return g_106368a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377970 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
