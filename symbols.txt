@@ -553,6 +553,7 @@
 0x10007a86 func   _item_w_glock_17c item_w_glock_17c
 0x10007a9f func   ?sub_102e0900@CAI_Motor@@QAEPAV1@H@Z CAI_Motor::sub_102e0900
 0x10007acc func   ?sub_102e27b0@@YIMPAD@Z sub_102e27b0
+0x10007ad6 func   ?vfunc119@CBaseEntity@@UAEXXZ CBaseEntity::vfunc119
 0x10007b0d func   ?sub_102f9990@@YAXXZ sub_102f9990
 0x10007b21 func   ?sub_100b17f0@@YIHPAD@Z sub_100b17f0
 0x10007b26 func   ?vfunc35@CPropRadio@@QAEHH@Z CPropRadio::vfunc35
