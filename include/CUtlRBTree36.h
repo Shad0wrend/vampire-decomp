@@ -10,6 +10,13 @@ public:
 		unsigned short m_Right;
 		unsigned short m_Parent;
 		unsigned short m_Tag;
+		Links_t()
+		{
+			m_Tag = 1;
+			m_Left = 0xffff;
+			m_Right = 0xffff;
+			m_Parent = 0xffff;
+		}
 	};
 	struct Node_t : Links_t
 	{
@@ -25,7 +32,7 @@ public:
 
 	const Links_t &Links(unsigned short i) const
 	{
-		static Links_t s_Sentinel = { 0xffff, 0xffff, 0xffff, 1 };
+		static Links_t s_Sentinel;
 		const Links_t &node = m_pElements[i];
 		return i != 0xffff ? node : s_Sentinel;
 	}
