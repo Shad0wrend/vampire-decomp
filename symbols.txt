@@ -1290,6 +1290,7 @@
 0x1000ee8f func   _item_k_oceanhouse_upstairs_key item_k_oceanhouse_upstairs_key
 0x1000eed0 func   ?sub_1007dfc0@CUnknown1007dfc0@@QAEXH@Z CUnknown1007dfc0::sub_1007dfc0
 0x1000eee4 func   ?vfunc304@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc304
+0x1000eef8 func   ?sub_101d56f0@Loader@@QAE_NPBD@Z Loader::sub_101d56f0
 0x1000ef25 func   ?vfunc309@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc309
 0x1000ef4d func   ?sub_102e7e20@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e7e20
 0x1000ef52 func   ?sub_10074a30@CUnknown10074a30@@QAEXD@Z CUnknown10074a30::sub_10074a30
