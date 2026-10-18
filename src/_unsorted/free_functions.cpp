@@ -15568,6 +15568,31 @@ void CUnknown10330ce0::sub_10330ce0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10332570 size=0x7a
+#include "CBaseCombatCharacter.h"
+struct SScope { const char *a; const char *b; const char *c; };
+extern "C" __declspec(dllimport) SScope g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern char g_106b8540[];
+void CBaseCombatCharacter::sub_10332570(inputdata_t *data)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	} else {
+		name = "NULL ENTITY";
+	}
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].a = "CBaseCombatCharacter::InputSetHeadAsCameraTarget";
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].b = name;
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].c = g_106b8540;
+	g_ScopeTraceStackDepth++;
+	sub_103322e0(1, 0);
+	g_ScopeTraceStackDepth--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103326b0 size=0xf9
 struct ScopeEntry { const char *name; const char *ent; const char *extra; };
 extern int *g_109f3680;
