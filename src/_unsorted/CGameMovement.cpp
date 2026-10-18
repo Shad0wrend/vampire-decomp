@@ -35,3 +35,14 @@ float *CGameMovement::vfunc3(char flag, int unused)
 	return (float *)((char *)this + 0x20);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1011e390 size=0x11
+#include "CGameMovement.h"
+
+float *CGameMovement::vfunc4(char flag, int unused)
+{
+	if (flag)
+		return (float *)((char *)this + 0x68);
+	return (float *)((char *)this + 0x5c);
+}
+// END FUNCTION

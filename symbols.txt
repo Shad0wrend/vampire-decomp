@@ -2083,6 +2083,7 @@
 0x10011bf8 func   ?vfunc5@CItemGHorrorTape_1@@QAEPAV1@I@Z CItemGHorrorTape_1::vfunc5
 0x10011c2a func   ?vfunc5@CGameText@@QAEPAV1@I@Z CGameText::vfunc5
 0x10011c43 func   ?vfunc5@CFuncRotating@@QAEPAV1@I@Z CFuncRotating::vfunc5
+0x10011c52 func   ?vfunc4@CGameMovement@@QAEPAMDH@Z CGameMovement::vfunc4
 0x10011cd4 func   ?sub_10078bd0@@YIXPAH@Z sub_10078bd0
 0x10011ce3 func   _item_w_mingxiao_tentacle item_w_mingxiao_tentacle
 0x10011ce8 func   ?sub_1013e7e0@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e7e0
