@@ -1806,6 +1806,7 @@
 0x100104ec func   ?vfunc5@CWeaponMelee_Sheriff_Sword@@QAEPAV1@I@Z CWeaponMelee_Sheriff_Sword::vfunc5
 0x10010519 func   ?sub_1013fd20@CUtlMemory96@@QAEXH@Z CUtlMemory96::sub_1013fd20
 0x10010532 func   _trigger_teleport trigger_teleport
+0x1001059b func   ?vfunc5@CItemGJunkyardBusinesscard@@QAEPAV1@I@Z CItemGJunkyardBusinesscard::vfunc5
 0x100105aa func   ?vfunc5@CItemGBrotherhoodFlyer@@QAEPAV1@I@Z CItemGBrotherhoodFlyer::vfunc5
 0x100105e1 func   ?sub_1002dfe0@@YAHHH@Z sub_1002dfe0
 0x100105eb func   _func_pushable func_pushable
