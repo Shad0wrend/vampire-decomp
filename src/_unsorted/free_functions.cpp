@@ -9622,6 +9622,16 @@ void sub_101eab60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eb7f0 size=0x17
+#include "CUnknown101eb7f0.h"
+extern void (__cdecl *g_1073a38c)(CUnknown101eb7f0 *, int);
+void CUnknown101eb7f0::sub_101eb7f0(int arg)
+{
+	if (g_1073a38c)
+		g_1073a38c(this, arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ed170 size=0x7b
 #include "CUnknown101ed170.h"
 

@@ -1522,6 +1522,7 @@
 0x10012a2b func   ?sub_1007ee20@@YIXPAH@Z sub_1007ee20
 0x10012a3f func   _func_movelinear func_movelinear
 0x10012a44 func   _info_node_werewolf_hint info_node_werewolf_hint
+0x10012a4e func   ?sub_101eb7f0@CUnknown101eb7f0@@QAEXH@Z CUnknown101eb7f0::sub_101eb7f0
 0x10012a53 func   _params_explosion params_explosion
 0x10012a8f func   ?sub_10078fd0@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_10078fd0
 0x10012ab7 func   ?sub_101f9650@@YAXH@Z sub_101f9650
