@@ -17833,6 +17833,26 @@ int *sub_103c50c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c51c0 size=0x33
+void sub_10007897();
+void sub_10015c35();
+extern int g_1065e6c8;
+extern char g_1065e6c4;
+extern int g_10936b68;
+
+char sub_103c51c0()
+{
+    sub_10007897();
+    if (g_1065e6c8 != g_10936b68) {
+        sub_10015c35();
+        g_1065e6c4 = 1;
+        g_1065e6c8 = g_10936b68;
+        return 1;
+    }
+    return g_1065e6c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c6df0 size=0x69
 #include "CNPC_VVampireBoss.h"
 
