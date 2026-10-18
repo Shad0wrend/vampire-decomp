@@ -585,6 +585,7 @@
 0x100065aa func   ?sub_101e9880@CUnknown101e9880@@QAEPAV1@XZ CUnknown101e9880::sub_101e9880
 0x100065be func   ?sub_1042d9a0@CUnknown1042d9a0@@QAEGXZ CUnknown1042d9a0::sub_1042d9a0
 0x100065d2 func   ?vfunc126@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc126
+0x100065d7 func   ?vfunc5@CItemMMoneyClip@@QAEPAV1@I@Z CItemMMoneyClip::vfunc5
 0x10006636 func   ?sub_1024a2b0@@YA_NPAG0@Z sub_1024a2b0
 0x1000665e func   ?sub_100eb130@@YIXPAH@Z sub_100eb130
 0x10006681 func   ?sub_10430020@@YAII@Z sub_10430020
