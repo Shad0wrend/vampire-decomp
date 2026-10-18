@@ -1818,6 +1818,7 @@
 0x10013ebc func   _item_k_museum_basement_key item_k_museum_basement_key
 0x10013f25 func   ?sub_101c1b40@CUnknown101c1b40@@QAEXH@Z CUnknown101c1b40::sub_101c1b40
 0x10013f39 func   ?sub_10377c20@@YADXZ sub_10377c20
+0x10013f66 func   ?sub_103b5bc0@@YADXZ sub_103b5bc0
 0x10014006 func   _item_w_crossbow_flaming item_w_crossbow_flaming
 0x10014010 func   _npc_VSheriffSwarm npc_VSheriffSwarm
 0x1001402e func   ?sub_102ee1c0@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102ee1c0
