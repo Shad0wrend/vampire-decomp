@@ -396,6 +396,7 @@
 0x100047c3 func   _item_w_tzimisce2_head item_w_tzimisce2_head
 0x1000482c func   _item_w_tzimisce2_claw item_w_tzimisce2_claw
 0x10004854 func   ?vfunc5@CItemContainerAnimated@@QAEPAV1@I@Z CItemContainerAnimated::vfunc5
+0x1000488b func   ?vfunc5@CBaseMoneyObject@@QAEPAV1@I@Z CBaseMoneyObject::vfunc5
 0x10004890 func   ?vfunc5@CWeaponMelee_Claws@@QAEPAV1@I@Z CWeaponMelee_Claws::vfunc5
 0x100048e0 func   ?sub_10183100@CUnknown10183100@@QAEXH@Z CUnknown10183100::sub_10183100
 0x10004903 func   _vdisciplineprojectile vdisciplineprojectile
