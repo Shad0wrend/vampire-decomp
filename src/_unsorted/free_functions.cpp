@@ -1666,6 +1666,13 @@ bool sub_10046b10(const unsigned int *a, const unsigned int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10046b40 size=0x13
+bool sub_10046b40(const unsigned int *a, const unsigned int *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10047160 size=0x17
 struct E8 { int a, b; };
 

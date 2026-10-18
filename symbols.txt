@@ -1895,6 +1895,7 @@
 0x1001407e func   _item_g_drugs_pill_bottle item_g_drugs_pill_bottle
 0x10014123 func   ?vfunc0@CAI_CsActList@@UAEXPAUCsActSaveIface@@@Z CAI_CsActList::vfunc0
 0x10014187 func   _logic_npc_condition logic_npc_condition
+0x100141aa func   ?sub_10046b40@@YA_NPBI0@Z sub_10046b40
 0x100141fa func   ?vfunc9@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc9
 0x10014259 func   ?vfunc130@CWorld@@UAEXH@Z CWorld::vfunc130
 0x10014268 func   _logic_multicompare logic_multicompare
