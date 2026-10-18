@@ -15939,6 +15939,36 @@ void CBaseCombatCharacter::sub_10339560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10339b50 size=0x81
+#include "CBaseCombatCharacter.h"
+
+struct StatRecord {
+	char pad[0x93];
+	char flag93;
+};
+struct StatDB {
+	StatRecord *sub_10207c40(CBaseEntity *pEnt);
+};
+extern StatDB g_1074f028;
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+char CBaseCombatCharacter::sub_10339b50()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::IsBlueBlood";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	char result = g_1074f028.sub_10207c40(this)->flag93;
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033c9c0 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
