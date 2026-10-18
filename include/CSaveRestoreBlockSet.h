@@ -32,12 +32,13 @@ public:
 		if (m_nAllocCount < requested) {
 			int count = m_nAllocCount;
 			do {
-				if (count == 0)
+				if (count) {
+					if (m_nGrowSize)
+						count += m_nGrowSize;
+					else
+						count += count;
+				} else
 					count = 8;
-				else if (m_nGrowSize == 0)
-					count += count;
-				else
-					count += m_nGrowSize;
 			} while (count < requested);
 			m_nAllocCount = count;
 		}
