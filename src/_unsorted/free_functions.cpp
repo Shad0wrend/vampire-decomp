@@ -7364,6 +7364,16 @@ void __fastcall sub_1012d480(S *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d4b0 size=0x14
+void __stdcall sub_100125f8(int);
+struct S { char pad[0x468]; int a; char pad2[0x14]; int b; };
+void __fastcall sub_1012d4b0(S *p)
+{
+    p->b = p->a;
+    sub_100125f8(0x40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e6a0 size=0xd
 void CUnknown1012e6a0::sub_1012e6a0(int unused)
 {

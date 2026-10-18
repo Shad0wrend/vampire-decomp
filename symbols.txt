@@ -1981,6 +1981,7 @@
 0x100149b6 func   ?sub_102c7390@CUnknown102c7390@@QAEXD@Z CUnknown102c7390::sub_102c7390
 0x100149cf func   _phys_spring phys_spring
 0x10014a06 func   _info_node_tzimisce_claw_left info_node_tzimisce_claw_left
+0x10014a65 func   ?sub_1012d4b0@@YIXPAUS@@@Z sub_1012d4b0
 0x10014a6f func   ?sub_10325940@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325940
 0x10014a79 func   ?sub_103d1ca0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d1ca0
 0x10014a92 func   _info_node_hint info_node_hint
