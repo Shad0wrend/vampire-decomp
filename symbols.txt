@@ -1019,6 +1019,7 @@
 0x1000c8dd func   _item_p_occult_regen item_p_occult_regen
 0x1000c91e func   _item_p_occult_dodge item_p_occult_dodge
 0x1000c95f func   ?sub_102a0eb0@@YIXPAD@Z sub_102a0eb0
+0x1000c99b func   ?vfunc223@CFuncRotating@@QAE_NXZ CFuncRotating::vfunc223
 0x1000c9a0 func   _info_node_kick_at info_node_kick_at
 0x1000c9af func   ?vfunc71@CBaseDoor@@QAEXXZ CBaseDoor::vfunc71
 0x1000ca31 func   ?sub_101c1ba0@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1ba0
