@@ -5,12 +5,12 @@
 class CNPC_VCamera
 {
 public:
-	char pad0[0x1b38];
+	virtual int vfunc461();
+
+	char pad0004[0x1b38 - 4];
 	int m_n1b38;
 	const char *m_p1b3c;
 	int m_n1b40;
 	char pad1b44[0x5cc4 - 0x1b44];
 	int m_n5cc4;
-
-	virtual int vfunc461();
 };
