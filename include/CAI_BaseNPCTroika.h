@@ -13,8 +13,23 @@ public:
 
 	void vfunc488();	// slot 488: plays the "Death" sound
 	void vfunc489();	// slot 489: plays the "Target_Suspect" sound
+	void vfunc490();	// slots 490-506: sound-playing members of the same shape
+	void vfunc491();
 	void vfunc492();	// slot 492: plays the "Fear_Start" sound
+	void vfunc493();
+	void vfunc494();
+	void vfunc495();	// slot 495: plays the "Surprised" sound
+	void vfunc496();
 	void vfunc497();
+	void vfunc498();
+	void vfunc499();
+	void vfunc500();
+	void vfunc501();
+	void vfunc502();
+	void vfunc503();
+	void vfunc504();
+	void vfunc505();
+	void vfunc506();
 	void vfunc616();	// slot 616: base call with 0x30, then stamps curtime + 15 at +0x65bc
 
 	char sub_102a9ec0(int index);
