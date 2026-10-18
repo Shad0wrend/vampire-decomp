@@ -12932,6 +12932,43 @@ int *sub_10210fe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211970 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105ab83c[2];
+void sub_1000d710();
+
+int *sub_10211970()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_UseIcon", {0x768, 0}, 1, 6, "use_icon" },
+        { 5, "m_bPause", {0x76c, 0}, 1, 6, "pause" },
+        { 2, "m_sDefFile", {0x730, 0}, 1, 6, "definition_file" },
+        { 2, "InputChangeFile", {0, 0}, 1, 8, "ChangeFile", 0, (void *)sub_1000d710 },
+        { 10, "m_OnSignReadBegin", {0x734, 0}, 1, 0x16, "OnReadBegin", g_1055dc70 },
+        { 10, "m_OnSignReadEnd", {0x74c, 0}, 1, 0x16, "OnReadEnd", g_1055dc70 },
+    };
+    g_105ab83c[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105ab83c[0] = (int)&dataDesc[1];
+    return g_105ab83c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102158f0 size=0xa
 void __fastcall sub_102158f0(char *self, int, int)
 {
