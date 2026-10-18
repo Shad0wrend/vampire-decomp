@@ -2,11 +2,6 @@
 #pragma once
 #include "CBaseEntity.h"
 
-struct CPointAngleSensorTarget
-{
-	void sub_101cf2f0(int mode);	// reached through the stub 0x10015311
-};
-
 class CPointAngleSensor : public CBaseEntity
 {
 public:
