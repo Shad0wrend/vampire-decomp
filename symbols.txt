@@ -1346,6 +1346,7 @@
 0x10010ce9 func   _env_soundscape env_soundscape
 0x10010cf3 func   ?sub_101d9210@CUnknown101d9210@@QAEXXZ CUnknown101d9210::sub_101d9210
 0x10010d4d func   ?sub_101b72e0@CMem8_t@@QAEXH@Z CMem8_t::sub_101b72e0
+0x10010d5c func   ??0CEnvLaser@@QAE@XZ CEnvLaser::CEnvLaser
 0x10010d7f func   ?sub_101db7e0@S101db7e0@@QAEXXZ S101db7e0::sub_101db7e0
 0x10010d93 func   ?sub_101fd110@CVStatAction_t@@QAEXHHHH@Z CVStatAction_t::sub_101fd110
 0x10010dd9 func   _item_p_occult_frenzy item_p_occult_frenzy
