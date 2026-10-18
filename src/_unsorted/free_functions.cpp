@@ -7134,6 +7134,58 @@ void CMem8f_t::sub_1010cbc0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010d4b0 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1056e590[2];
+void sub_1000a3a8();
+void sub_10015014();
+void sub_1000e142();
+void sub_1000a9ca();
+void sub_1000c00e();
+void sub_10011081();
+void sub_1000432c();
+
+int *sub_1010d4b0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_angle", {0x450, 0}, 1, 2 },
+        { 4, "m_Material", {0x454, 0}, 1, 2 },
+        { 12, "m_hBreaker", {0x458, 0}, 1, 2 },
+        { 2, "m_iszGibModel", {0x460, 0}, 1, 2 },
+        { 1, "m_flPressureDelay", {0x464, 0}, 1, 6, "PressureDelay" },
+        { 2, "m_iszExplosionParamEnt", {0x468, 0}, 1, 6, "explosion_params" },
+        { 0, "InputBreak", {0, 0}, 1, 8, "Break", 0, (void *)sub_1000a3a8 },
+        { 4, "InputSetHealth", {0, 0}, 1, 8, "SetHealth", 0, (void *)sub_10015014 },
+        { 4, "InputAddHealth", {0, 0}, 1, 8, "AddHealth", 0, (void *)sub_1000e142 },
+        { 4, "InputRemoveHealth", {0, 0}, 1, 8, "RemoveHealth", 0, (void *)sub_1000a9ca },
+        { 4, "InputSetDamageable", {0, 0}, 1, 8, "SetDamageable", 0, (void *)sub_1000c00e },
+        { 0, "CBreakableBreakTouch", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10011081 },
+        { 0, "CBreakableDie", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000432c },
+        { 10, "m_OnBreak", {0x46c, 0}, 1, 0x16, "OnBreak", g_1055dc70 },
+        { 10, "m_OnHealthChanged", {0x484, 0}, 1, 0x16, "OnHealthChanged", g_1055dc70 },
+    };
+    g_1056e590[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1056e590[0] = (int)&dataDesc[1];
+    return g_1056e590;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f4e0 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1010f4e0(void **p) { ((Fn *)*p)[241](p); }

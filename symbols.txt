@@ -535,6 +535,7 @@
 0x100057db func   ?sub_10183880@StatOwner@@QAEPAVCVStatList_t@@H@Z StatOwner::sub_10183880
 0x100057e0 func   _prop_button prop_button
 0x100057e5 func   _inspection_brush inspection_brush
+0x100057f4 func   ?sub_1010d4b0@@YAPAHXZ sub_1010d4b0
 0x10005808 func   ?vfunc5@CNPC_VGangrel@@QAEPAV1@I@Z CNPC_VGangrel::vfunc5
 0x1000580d func   ?sub_102567b0@@YAPAHXZ sub_102567b0
 0x10005876 func   ?sub_102e8250@@YIXPAM@Z sub_102e8250
