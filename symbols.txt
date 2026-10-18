@@ -467,6 +467,7 @@
 0x10005d21 func   ?vfunc63@CSingleplayRules@@UAEPBDH@Z CSingleplayRules::vfunc63
 0x10005d85 func   ?sub_10250910@@YIXPAUMem8@@HH@Z sub_10250910
 0x10005d9e func   ?sub_10083960@CUnknown10083960@@QAEXH@Z CUnknown10083960::sub_10083960
+0x10005dc1 func   ?sub_10264300@@YAXPAUCBlock4k@@PBU1@@Z sub_10264300
 0x10005dfd func   _prop_sign prop_sign
 0x10005e20 func   ?vfunc440@CNPC_VHuman@@QAEHH@Z CNPC_VHuman::vfunc440
 0x10005e89 func   ?sub_10136490@@YIXPADHH@Z sub_10136490

@@ -13629,6 +13629,19 @@ struct CUnknown10260980 { int p; int a; CUnknown10260980* sub_10260980(); };
 CUnknown10260980* CUnknown10260980::sub_10260980() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10264300 size=0x18
+struct CBlock4k
+{
+	int m_data[0xe];
+};
+
+void sub_10264300(CBlock4k *dst, const CBlock4k *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10264370 size=0x76
 struct Elem38 { char d[0x38]; };
 extern void *(*g_109f3638)(void *, int);
