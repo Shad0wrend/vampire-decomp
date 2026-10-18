@@ -25,5 +25,6 @@ public:
 	virtual void vfunc90(); virtual void vfunc91(); virtual void vfunc92(); virtual void vfunc93(); virtual void vfunc94();
 	virtual void vfunc95(); virtual void vfunc96(); virtual void vfunc97(); virtual void vfunc98(); virtual void vfunc99();
 	virtual void vfunc100(); virtual void vfunc101(); virtual void vfunc102();
-	virtual void PlaybackTempEntity(void *pFilter, float delay, const void *pSender, void *pSendTable, int classID);	// slot 103
+	// slot 103: (recipient filter, delay as a raw float dword, sender, send table, class id)
+	virtual void PlaybackTempEntity(int pFilter, int delayBits, const void *pSender, void *pSendTable, int classID);
 };
