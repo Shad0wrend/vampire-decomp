@@ -256,6 +256,18 @@ void UtlMem::sub_1002cbd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002cc10 size=0x3e
+#include "CUtlVector20.h"
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+void CUtlVector20::sub_1002cc10(int elem, int num)
+{
+	int numToMove = m_size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(m_pMemory + (elem + num) * 20, m_pMemory + elem * 20, numToMove * 20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002cc60 size=0xa
 struct CUnknown1002cc60 { int p[3]; int a; CUnknown1002cc60* sub_1002cc60(); };
 // TARGET: CUnknown1002cc60::sub_1002cc60

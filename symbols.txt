@@ -1173,6 +1173,7 @@
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
 0x1000f326 func   ?sub_101cfd80@@YA?AUTVec@@XZ sub_101cfd80
 0x1000f34e func   ?vfunc2@CTEBaseBeam@@UAEPAV1@I@Z CTEBaseBeam::vfunc2
+0x1000f353 func   ?sub_1002cc10@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_1002cc10
 0x1000f39e func   ?vfunc329@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc329
 0x1000f3c1 func   ?vfunc2@CTEBeamEntPoint@@UAEPAV1@I@Z CTEBeamEntPoint::vfunc2
 0x1000f3cb func   ?sub_1007e580@@YIXPAH@Z sub_1007e580
