@@ -478,6 +478,7 @@
 0x100052a9 func   _item_g_cash_box item_g_cash_box
 0x100052e0 func   ??0CGrabController@@QAE@XZ CGrabController::CGrabController
 0x100052ef func   ?sub_10227210@CUnknown10227210@@QAEXH@Z CUnknown10227210::sub_10227210
+0x10005308 func   ?vfunc5@CLogicSquadCondition@@QAEPAV1@I@Z CLogicSquadCondition::vfunc5
 0x10005317 func   _prop_radio prop_radio
 0x1000532b func   _prop_mover prop_mover
 0x10005330 func   ?vfunc158@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc158
