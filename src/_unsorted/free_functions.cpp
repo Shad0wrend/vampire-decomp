@@ -19408,6 +19408,29 @@ void CNPC_VWerewolf::sub_103d1ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dbeb0 size=0x40
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int size);
+struct UtlVec8 {
+	char *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	char *m_pElements;
+	UtlVec8 *sub_103dbeb0(int growSize, int allocationCount);
+};
+UtlVec8 *UtlVec8::sub_103dbeb0(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount)
+		m_pMemory = (char *)Plat_Alloc(allocationCount * 8);
+	m_size = 0;
+	m_pElements = m_pMemory;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc260 size=0x8
 void __fastcall sub_103dc260(int *p)
 {
