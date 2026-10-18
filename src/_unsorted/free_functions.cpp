@@ -5662,6 +5662,17 @@ extern "C" GP *func_door_rotating()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4140 size=0x3e
+extern "C" __declspec(dllimport) int Q_snprintf(char *buf, int size, const char *fmt, ...);
+void __cdecl sub_100f4490(char *cmd, int a);
+void sub_100f4140(const char *name, int id, int a)
+{
+	char buf[260];
+	Q_snprintf(buf, sizeof(buf), "session_begin %s %d", name, id);
+	sub_100f4490(buf, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5600 size=0xd
 #include "CUnknown100f5600.h"
 
