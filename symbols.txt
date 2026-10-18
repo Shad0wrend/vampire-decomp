@@ -847,6 +847,7 @@
 0x100084bd func   ?vfunc619@CNPC_VAndreiBlood@@QAEXH@Z CNPC_VAndreiBlood::vfunc619
 0x10008530 func   ?vfunc5@CWeaponMelee_Sledgehammer@@QAEPAV1@I@Z CWeaponMelee_Sledgehammer::vfunc5
 0x10008535 func   ?sub_10042c10@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10042c10
+0x1000853a func   ?vfunc8@IGameSystem@@QAEPAV1@I@Z IGameSystem::vfunc8
 0x10008558 func   _npc_VHumanCombatPatrol npc_VHumanCombatPatrol
 0x100085ad func   _game_sign game_sign
 0x100085e4 func   ?vfunc481@CHL2_Player@@UAEMXZ CHL2_Player::vfunc481
