@@ -17318,6 +17318,26 @@ void CUnknown1039aaf0::sub_1039aaf0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039b180 size=0x33
+void sub_10014d7b();
+void sub_10010451();
+extern int g_106477d4;
+extern char g_106477d0;
+extern int g_10936b68;
+
+char sub_1039b180()
+{
+    sub_10014d7b();
+    if (g_106477d4 != g_10936b68) {
+        sub_10010451();
+        g_106477d0 = 1;
+        g_106477d4 = g_10936b68;
+        return 1;
+    }
+    return g_106477d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1320 size=0x6a
 #include "CUnknown103a1320.h"
 
