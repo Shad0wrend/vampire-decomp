@@ -11,26 +11,33 @@ struct CNPC_VHengeyokaiTimer
 	float m_time;
 };
 
+// CUtlVector<CNPC_VHengeyokaiTimer> embedded at +0x66a4.
+struct CNPC_VHengeyokaiTimerVec
+{
+	CNPC_VHengeyokaiTimer *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	CNPC_VHengeyokaiTimer *m_pElements;
+
+	CNPC_VHengeyokaiTimer &Element(int i) { return m_pMemory[i]; }
+	void FastRemove(int elem)
+	{
+		if (m_size > 0) {
+			memmove(&Element(elem), &Element(m_size - 1), sizeof(CNPC_VHengeyokaiTimer));
+			m_size--;
+		}
+	}
+};
+
 class CNPC_VHengeyokai
 {
 public:
 	virtual void vfunc601(int unused);
 
 	char m_pad0004[0x66a4 - 4];
-	CNPC_VHengeyokaiTimer *m_pTimers;	// 0x66a4
-	char m_pad66a8[0x66b0 - 0x66a8];
-	int m_nTimers;	// 0x66b0
+	CNPC_VHengeyokaiTimerVec m_Timers;	// 0x66a4
 
 	int sub_10382b30(int key);
 	bool sub_10382aa0(int key);
-
-	// Inlined CUtlVector pieces.
-	CNPC_VHengeyokaiTimer &Element(int i) { return m_pTimers[i]; }
-	void FastRemove(int elem)
-	{
-		if (m_nTimers > 0) {
-			memmove(&Element(elem), &Element(m_nTimers - 1), sizeof(CNPC_VHengeyokaiTimer));
-			m_nTimers--;
-		}
-	}
 };
