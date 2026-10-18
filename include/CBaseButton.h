@@ -42,7 +42,7 @@ public:
 	virtual void vfunc32();
 	virtual void vfunc33();
 	virtual void vfunc34();
-	virtual void vfunc35();
+	virtual int vfunc35(int a);
 	virtual void vfunc36();
 	virtual void vfunc37();
 	virtual void vfunc38();
@@ -82,4 +82,5 @@ public:
 	virtual void vfunc104();
 
 	void sub_1000cb8a();	// destructor body (the CBaseToggle/CBaseEntity part)
+	bool sub_100c8990(int a);	// slot 34: vfunc35(a) != 0
 };
