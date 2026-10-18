@@ -12069,6 +12069,15 @@ void CUnknown10249450::sub_10249450(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102496a0 size=0x11
+#include "CUnknown102496a0.h"
+CUnknown102496a0 *CUnknown102496a0::sub_102496a0()
+{
+	sub_10013403(0.033333335f);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249960 size=0xb
 unsigned int __fastcall sub_10249960(char **self)
 {
