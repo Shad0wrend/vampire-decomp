@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103a6ef0 size=0x5e
+#include "CNPC_VSabbatLeader.h"
+struct SScope { const char *a; const char *b; const char *c; };
+extern "C" __declspec(dllimport) SScope g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern char g_106b8540[];
+int CNPC_VSabbatLeader::sub_103a6ef0()
+{
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].a = "CNPC_VSabbatLeader::Classify";
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].b = g_106b8540;
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].c = g_106b8540;
+	g_ScopeTraceStackDepth++;
+	g_ScopeTraceStackDepth--;
+	return 0x10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a6f70 size=0x69
 struct TScope {
 	const char *name;
