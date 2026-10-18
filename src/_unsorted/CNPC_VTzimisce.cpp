@@ -92,3 +92,14 @@ void *CNPC_VTzimisce::sub_103bf580(void *pDefault)
     return pDefault;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103bfa00 size=0x18
+#include "CNPC_VTzimisce.h"
+
+char CNPC_VTzimisce::vfunc69(void *pOther)
+{
+	if (*((unsigned char *)pOther + 0x4c) & 0x16)
+		return 1;
+	return sub_1029b180(pOther);
+}
+// END FUNCTION
