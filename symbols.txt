@@ -885,6 +885,7 @@
 0x10008bfc func   ?sub_102e12c0@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e12c0
 0x10008c1f func   _item_g_eldervitaepack item_g_eldervitaepack
 0x10008c42 func   _info_target info_target
+0x10008c74 func   ?vfunc5@CItemGGhostPendant@@QAEPAV1@I@Z CItemGGhostPendant::vfunc5
 0x10008c88 func   ?sub_100bde40@CUnknown100bde40@@QAE_NPBXH@Z CUnknown100bde40::sub_100bde40
 0x10008cd8 func   ?sub_100de610@@YGXH@Z sub_100de610
 0x10008d14 func   _info_landmark info_landmark
