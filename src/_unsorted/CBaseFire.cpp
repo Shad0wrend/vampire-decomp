@@ -23,3 +23,14 @@ void CBaseFire::sub_10056fa0(int a, int b)
 	m_field458 = b;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10056fd0 size=0x21
+#include "CBaseFire.h"
+
+void CBaseFire::sub_10056fd0(int a, int b, int c)
+{
+	m_field450 = a;
+	m_field454 = b;
+	m_field458 = c;
+}
+// END FUNCTION
