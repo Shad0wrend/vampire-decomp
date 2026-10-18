@@ -1729,6 +1729,7 @@
 0x100155be func   _prop_ragdoll prop_ragdoll
 0x100155d2 func   ?sub_10185180@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_10185180
 0x100155e6 func   ?vfunc25@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc25
+0x1001560e func   ?sub_10066e20@@YAHXZ sub_10066e20
 0x100156bd func   ?sub_10130100@@YAXH@Z sub_10130100
 0x100156cc func   ?sub_102b5dc0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102b5dc0
 0x100156f4 func   ?vfunc2@CTETParticleAttached@@UAEPAV1@I@Z CTETParticleAttached::vfunc2

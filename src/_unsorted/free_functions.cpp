@@ -2171,6 +2171,38 @@ void sub_10065430(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066e20 size=0x98
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropVector
+void sub_10009539();
+void sub_10003012();
+
+extern SendTable g_106c4fc4;
+extern SendTable *g_1059cb88;
+
+// TARGET: sub_10066e20
+int sub_10066e20()
+{
+	static const char *pTableName = "DT_TEShowLine";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1059cb88, (void *)sub_10009539),
+		sub_1000c14e("m_vecEnd", 0x18, 0xc, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+	};
+	g_106c4fc4.sub_1000e8fe(props + 1, 2, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cc20 size=0x79
 int sub_10431c2f(char *, const char *, ...);
 void sub_10203dd0(char *);
