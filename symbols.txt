@@ -1676,6 +1676,7 @@
 0x1000faab func   ?sub_103a6f70@TLeader@@QAEXHH@Z TLeader::sub_103a6f70
 0x1000fae7 func   ?sub_1008d0f0@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_1008d0f0
 0x1000fb1e func   _trigger_transition trigger_transition
+0x1000fb3c func   ?vfunc5@CVampireProjectile_MingXiaoSpit@@QAEPAV1@I@Z CVampireProjectile_MingXiaoSpit::vfunc5
 0x1000fb64 func   ?vfunc5@CNPC_VBach@@QAEPAV1@I@Z CNPC_VBach::vfunc5
 0x1000fb69 func   ?sub_10109da0@@YIXPADHH@Z sub_10109da0
 0x1000fbb4 func   _point_anglesensor point_anglesensor
