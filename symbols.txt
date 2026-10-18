@@ -1791,6 +1791,7 @@
 0x100120df func   ?vfunc32@CPhysicsProp@@UAE_NH@Z CPhysicsProp::vfunc32
 0x10012125 func   ?sub_10088a80@@YAXXZ sub_10088a80
 0x1001212f func   ?sub_10076ad0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10076ad0
+0x10012170 func   ?vfunc5@CPhysicsCannister@@QAEPAV1@I@Z CPhysicsCannister::vfunc5
 0x1001218e func   ?sub_101c2ad0@CUnknown101c2a90@@QAEXD@Z CUnknown101c2a90::sub_101c2ad0
 0x100121a7 func   ?sub_10203dd0@@YAXXZ sub_10203dd0
 0x100121ca func   ?sub_1015eec0@CUnknown1015ef20@@QAE_NXZ CUnknown1015ef20::sub_1015eec0
