@@ -8916,6 +8916,79 @@ void S101c0240::sub_101c0240(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0cc0 size=0x103
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1059b6f0[2];
+void sub_10007ca7();
+void sub_10013f25();
+void sub_1000ca31();
+void sub_1000b6fe();
+void sub_10014e52();
+
+int *sub_101c0cc0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_toggle_state", {0x4f8, 0}, 1, 2 },
+        { 1, "m_flMoveDistance", {0x4fc, 0}, 1, 2 },
+        { 1, "m_flWait", {0x500, 0}, 1, 6, "wait" },
+        { 1, "m_flLip", {0x504, 0}, 1, 6, "lip" },
+        { 14, "m_vecPosition1", {0x508, 0}, 1, 2 },
+        { 14, "m_vecPosition2", {0x514, 0}, 1, 2 },
+        { 3, "m_vecAngle1", {0x520, 0}, 1, 2 },
+        { 3, "m_vecAngle2", {0x52c, 0}, 1, 2 },
+        { 1, "m_flHeight", {0x538, 0}, 1, 6, "height" },
+        { 12, "m_hActivator", {0x53c, 0}, 1, 2 },
+        { 14, "m_vecFinalDest", {0x540, 0}, 1, 2 },
+        { 3, "m_vecFinalAngle", {0x54c, 0}, 1, 2 },
+        { 4, "m_movementType", {0x558, 0}, 1, 2 },
+        { 3, "MoverData.vecMovePos1", {0x450, 0}, 1, 2 },
+        { 3, "MoverData.vecMovePos2", {0x45c, 0}, 1, 6, "move_dest" },
+        { 3, "MoverData.angMoveAngle1", {0x468, 0}, 1, 2 },
+        { 3, "MoverData.angMoveAngle2", {0x474, 0}, 1, 2 },
+        { 1, "MoverData.flMoveSpeed", {0x480, 0}, 1, 6, "move_speed" },
+        { 4, "MoverData.Rot", {0x484, 0}, 1, 2 },
+        { 4, "MoverData.Axis", {0x488, 0}, 1, 6, "rot_axis" },
+        { 1, "MoverData.flRotSpeed", {0x490, 0}, 1, 6, "rot_speed" },
+        { 1, "MoverData.flRotDist", {0x48c, 0}, 1, 6, "rot_dist" },
+        { 4, "MoverData.TargetPos", {0x494, 0}, 1, 2 },
+        { 4, "MoverData.CurrPos", {0x498, 0}, 1, 2 },
+        { 4, "MoverData.UseType", {0x49c, 0}, 1, 2 },
+        { 4, "m_MoverMoveType", {0x4a0, 0}, 1, 6, "use_pref" },
+        { 1, "m_flMoveReboundDuration", {0x4d4, 0}, 1, 2 },
+        { 1, "m_flMoveReboundAmount", {0x4d8, 0}, 1, 2 },
+        { 1, "m_flMoveReboundStartTime", {0x4dc, 0}, 1, 2 },
+        { 3, "m_flMoveReboundVelocity", {0x4e0, 0}, 1, 2 },
+        { 3, "m_flMoveReboundAngVelocity", {0x4ec, 0}, 1, 2 },
+        { 0, "InputMoveToDest", {0, 0}, 1, 8, "MoveToDest", 0, (void *)sub_10007ca7 },
+        { 0, "InputMoveToHome", {0, 0}, 1, 8, "MoveToHome", 0, (void *)sub_10013f25 },
+        { 0, "InputRotateToDest", {0, 0}, 1, 8, "RotateToDest", 0, (void *)sub_1000ca31 },
+        { 0, "InputRotateToHome", {0, 0}, 1, 8, "RotateToHome", 0, (void *)sub_1000b6fe },
+        { 10, "m_OnLinearMoveDone", {0x4a4, 0}, 1, 0x16, "OnLinearMoveDone", g_1055dc70 },
+        { 10, "m_OnAngularMoveDone", {0x4bc, 0}, 1, 0x16, "OnAngularMoveDone", g_1055dc70 },
+        { 0, "CBaseToggleMoverUse", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10014e52 },
+    };
+    g_1059b6f0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1059b6f0[0] = (int)&dataDesc[1];
+    return g_1059b6f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1b40 size=0xd
 void CUnknown101c1b40::sub_101c1b40(int mode)
 {
