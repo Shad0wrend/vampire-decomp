@@ -14392,6 +14392,45 @@ bool __fastcall sub_102a1590(N *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a15c0 size=0x16
+struct Obj {
+	char pad[0x5dc];
+	int type;
+};
+struct N {
+	char pad[0x5ddc];
+	Obj *pObj;
+	char pad2[0x63fd - 0x5ddc - 4];
+	char flag;
+	void sub_10289ee0(int id);
+};
+
+int __fastcall sub_102a1470(N *p)
+{
+	if (p->pObj) {
+		int t = p->pObj->type;
+		if (t == 100)
+			return 0x1110;
+		if (t == 0x65)
+			return 0x110c;
+		if (t == 0x27d8)
+			return 0x111e - (p->flag != 0);
+	}
+	return -1;
+}
+
+// TARGET: sub_102a15c0
+bool __fastcall sub_102a15c0(N *p)
+{
+	int id = sub_102a1470(p);
+	if (id != -1) {
+		p->sub_10289ee0(id);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a95e0 size=0xa
 struct CUnknown102a95e0 { int a[1]; int *sub_102a95e0(int i); };
 // TARGET: CUnknown102a95e0::sub_102a95e0
