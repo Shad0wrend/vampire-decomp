@@ -3,7 +3,7 @@
 // CUtlVector destructor chain.
 #pragma once
 
-extern void (__cdecl * const g_109f3624)(void *);
+extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
 
 struct IRecipientFilter
 {
