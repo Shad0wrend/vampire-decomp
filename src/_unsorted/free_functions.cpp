@@ -3534,6 +3534,32 @@ void CBaseEntity::sub_1009b440(const char *msg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c4c0 size=0xe4
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+void CBaseEntity::sub_1009c4c0(int a, const char *fmt, const char *array, int count)
+{
+    char buf[256];
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::DumpCharArray";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int len = sprintf(buf, fmt);
+    char *p = buf + len;
+    for (int i = 0; i < count; i++) {
+        sprintf(p, "%d", i);
+        sub_1009b7d0(a, buf, array[i]);
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f200 size=0x85
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
