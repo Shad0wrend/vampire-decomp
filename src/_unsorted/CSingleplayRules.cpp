@@ -38,6 +38,15 @@ extern float g_104454c4;
 float CSingleplayRules::vfunc50(int a) { return g_104454c4; }
 // END FUNCTION
 
+// FUNCTION: 0x101abfc0 size=0x29
+#include "CBaseEntity.h"
+Vector CSingleplayRules::vfunc51(CBaseEntity *pEnt)
+{
+	typedef Vector *(__fastcall *Fn)(CBaseEntity *);
+	return *((Fn)(*(void ***)pEnt)[220])(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac000 size=0x8
 // TARGET: CSingleplayRules::vfunc48
 int CSingleplayRules::vfunc48(int index)
