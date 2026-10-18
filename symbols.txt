@@ -639,6 +639,7 @@
 0x100076d5 func   ?sub_10075ce0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10075ce0
 0x100076f8 func   ?sub_101b6a30@@YIXPAH@Z sub_101b6a30
 0x10007752 func   ?sub_10245f50@SConVar@@QAEXH@Z SConVar::sub_10245f50
+0x1000775c func   ?sub_104281f0@@YAHHHHHH@Z sub_104281f0
 0x100077ed func   ?sub_10079060@CUnknown10079060@@QAEXH@Z CUnknown10079060::sub_10079060
 0x100077f2 func   ?vfunc2@CAI_CsActList@@UAEXD@Z CAI_CsActList::vfunc2
 0x1000780b func   ?sub_101e1870@@YGII@Z sub_101e1870
