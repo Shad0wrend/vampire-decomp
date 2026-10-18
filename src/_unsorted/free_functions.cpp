@@ -5391,6 +5391,13 @@ int sub_100e77f0(const int *a, const int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eb060 size=0x24
+unsigned int __stdcall sub_100eb060(unsigned int x)
+{
+	return (((x & 0x98b2235) ^ 0xc8874af3) + 0x4e242ee1 & 0xf674ddca) ^ x ^ 0x10ade2d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb130 size=0x8
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION

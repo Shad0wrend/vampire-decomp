@@ -477,6 +477,7 @@
 0x1000689d func   ?sub_10209a20@CItemContainer@@QAEPAXXZ CItemContainer::sub_10209a20
 0x1000693d func   ?sub_102ee600@CUnknown102ee600@@QAEHXZ CUnknown102ee600::sub_102ee600
 0x10006965 func   ?vfunc2@CTEBeamLaser@@UAEPAV1@I@Z CTEBeamLaser::vfunc2
+0x1000696f func   ?sub_100eb060@@YGII@Z sub_100eb060
 0x1000697e func   _npc_VTzimisceRunner npc_VTzimisceRunner
 0x100069a6 func   ?sub_10146790@CUnknown10146790@@QAEXXZ CUnknown10146790::sub_10146790
 0x10006a7d func   _func_lod func_lod
