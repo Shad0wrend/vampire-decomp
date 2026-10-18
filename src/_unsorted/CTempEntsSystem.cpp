@@ -273,6 +273,23 @@ void CTempEntsSystem::vfunc38(CUnknown1019d130 *filter, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10059b40 size=0x6e
+#include "CTempEntsSystem.h"
+
+void sub_1000db6b(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f);
+
+void CTempEntsSystem::vfunc40(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f)
+{
+	if (m_nSuppressCount <= 0 && m_pSuppressHost) {
+		if (!filter->sub_1000aa60())
+			filter->sub_1019d130((m_nSuppressCount > 0) ? 0 : m_pSuppressHost);
+		if (!filter->vfunc2())
+			return;
+	}
+	sub_1000db6b(filter, a, b, c, d, e, f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10059bd0 size=0x5f
 #include "CTempEntsSystem.h"
 
