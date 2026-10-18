@@ -1426,6 +1426,7 @@
 0x1000ecc8 func   _npc_VPedestrian npc_VPedestrian
 0x1000ed0e func   ?vfunc5@CPhysPulley@@UAEPAV1@I@Z CPhysPulley::vfunc5
 0x1000ed13 func   ?vfunc431@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc431
+0x1000ed1d func   ?sub_10073220@S10073220@@QAEHH@Z S10073220::sub_10073220
 0x1000ed3b func   ?vfunc5@CSteamJet@@UAEPAV1@I@Z CSteamJet::vfunc5
 0x1000ed68 func   ?sub_10045110@CUnknown10045110@@QAEXH@Z CUnknown10045110::sub_10045110
 0x1000ed9a func   ?sub_102dd450@CUnknown102dd450@@QAE_NXZ CUnknown102dd450::sub_102dd450

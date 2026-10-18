@@ -2545,6 +2545,24 @@ void S10072d60::sub_10072d60(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073220 size=0x2a
+struct S10073220 {
+	char m_pad[0x164];
+	int *m_pMemory; int m_allocationCount; int m_growSize; int m_size;
+	// TARGET: S10073220::sub_10073220
+	int sub_10073220(int value);
+};
+
+int S10073220::sub_10073220(int value)
+{
+	for (int i = 0; i < m_size; i++) {
+		if (value == m_pMemory[i])
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073260 size=0x19
 struct S10073260 {
 	char m_pad[0x94];
