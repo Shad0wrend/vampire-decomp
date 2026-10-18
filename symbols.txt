@@ -1138,6 +1138,7 @@
 0x1000b6f4 func   ?vfunc305@CBaseMoneyObject@@QAEXXZ CBaseMoneyObject::vfunc305
 0x1000b6fe func   ?sub_101c1b80@CUnknown101c1b40@@QAEXH@Z CUnknown101c1b40::sub_101c1b80
 0x1000b717 func   _item_w_sheriff_sword item_w_sheriff_sword
+0x1000b71c func   ?vfunc5@CNPC_VBrujah@@QAEPAV1@I@Z CNPC_VBrujah::vfunc5
 0x1000b721 func   ?sub_102fc540@@YAXHHPBDZZ sub_102fc540
 0x1000b726 func   _npc_VTremere npc_VTremere
 0x1000b73a func   ?vfunc5@CMomentaryRotButton@@UAEPAV1@I@Z CMomentaryRotButton::vfunc5
