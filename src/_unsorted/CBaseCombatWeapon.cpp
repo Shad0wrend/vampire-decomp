@@ -89,6 +89,23 @@ void CBaseCombatWeapon::vfunc359()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102526c0 size=0x1d
+#include "CBaseCombatWeapon.h"
+
+struct CGlobalVarsStub {
+	char pad[0xc];
+	float curtime;
+};
+extern CGlobalVarsStub *g_1070b228;
+
+bool CBaseCombatWeapon::vfunc309()
+{
+	if (g_1070b228->curtime > m_f894)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252e80 size=0xb
 void sub_1000c6f8();
 
