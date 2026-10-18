@@ -1739,6 +1739,16 @@ const char *CUnknown10050860::sub_10050860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10055520 size=0x4f
+#include "CUtlRBTree24.h"
+
+const CUtlRBTree24::Links_t &CUtlRBTree24::sub_10055520(int i) const
+{
+	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+	return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10055ec0 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
