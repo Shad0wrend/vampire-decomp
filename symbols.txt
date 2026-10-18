@@ -885,6 +885,7 @@
 0x10009df4 func   ?sub_102f7970@CUnknown102f7970@@QAEXXZ CUnknown102f7970::sub_102f7970
 0x10009e21 func   ?sub_1042c4a0@@YAXXZ sub_1042c4a0
 0x10009e30 func   ?sub_1003e250@@YAPAUtrace21@@PAU1@@Z sub_1003e250
+0x10009e58 func   ?sub_103908c0@@YGII@Z sub_103908c0
 0x10009e85 func   ?vfunc480@CHL2_Player@@UAEMXZ CHL2_Player::vfunc480
 0x10009ea8 func   ?sub_1027da90@@YI_NPADHH@Z sub_1027da90
 0x10009eb7 func   _prop_padlock prop_padlock

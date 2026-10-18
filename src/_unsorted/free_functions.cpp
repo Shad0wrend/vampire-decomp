@@ -18121,6 +18121,13 @@ unsigned char __fastcall sub_1038f640(char *self)
 void __fastcall sub_10390040(char *p) { p[0x66b8] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x103908c0 size=0x24
+unsigned int __stdcall sub_103908c0(unsigned int x)
+{
+	return (((x & 0x710935) ^ 0x34871d) + 0x4094ab & 0x18ef6ca) ^ x ^ 0x412a96ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103912e0 size=0x33
 void sub_10014d7b();
 void sub_10013386();
