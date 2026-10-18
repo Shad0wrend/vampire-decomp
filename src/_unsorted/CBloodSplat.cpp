@@ -121,3 +121,18 @@ void CBloodSplat::vfunc134()
 	sub_10014614(this);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10184450 size=0x1e
+#include "CBloodSplat.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CBloodSplat::vfunc5
+CBloodSplat *CBloodSplat::vfunc5(unsigned int flags)
+{
+	sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
