@@ -927,6 +927,7 @@
 0x10009b51 func   ?sub_10049d20@CUtlRBTreeNode36@@QBEABURBTreeNode36Links@@G@Z CUtlRBTreeNode36::sub_10049d20
 0x10009b79 func   ?sub_103404f0@@YI_NPADHH@Z sub_103404f0
 0x10009b97 func   _npc_VToreador npc_VToreador
+0x10009b9c func   ?vfunc5@CPropLargeHullIgnore@@QAEPAV1@I@Z CPropLargeHullIgnore::vfunc5
 0x10009be7 func   ?sub_1039aaf0@CUnknown1039aaf0@@QAEXD@Z CUnknown1039aaf0::sub_1039aaf0
 0x10009c19 func   ?sub_10373420@@YIXPAH@Z sub_10373420
 0x10009c37 func   ?sub_10202760@@YAHH@Z sub_10202760
