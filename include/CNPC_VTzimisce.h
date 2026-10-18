@@ -18,6 +18,17 @@ public:
 	virtual void *vfunc220();
 };
 
+// A console-variable-like global: slot 1 says "unset", otherwise the ints at +0x28 / +0x2c hold the value.
+class CNPC_VTzimisceConVar
+{
+public:
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad0004[0x24];
+	int m_n28;
+	int m_n2c;
+};
+
 class CNPC_VTzimisce
 {
 public:
@@ -31,8 +42,19 @@ public:
 	virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163();
 	virtual void s164(); virtual void s165(); virtual void s166();
 	virtual CNPC_VTzimisceHelper *vfunc167();
+	VT_SLOTS100(t0)
+	VT_SLOTS100(t1)
+	VT_SLOTS100(t2)
+	VT_SLOTS10(t30)
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3();
+	virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7();
+	virtual bool vfunc486();
+	virtual void v487(); virtual void v488(); virtual void v489();
+	virtual void vfunc490();
 
-	char m_pad0004[0x666c];
+	char m_pad0004[0x2dc];
+	int m_n02e0;
+	char m_pad02e4[0x666c - 0x2e0];
 	unsigned int m_hTarget;
 	char m_posBuf[0x18];
 	int m_state;
