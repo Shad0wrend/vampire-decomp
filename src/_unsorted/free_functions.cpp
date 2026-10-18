@@ -7915,6 +7915,41 @@ int *sub_10134f10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101351b0 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10577394[2];
+void sub_10009129();
+
+int *sub_101351b0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_sPythonScript", {0x450, 0}, 1, 6, "python_script" },
+        { 0, "InputTest", {0, 0}, 1, 8, "Test", 0, (void *)sub_10009129 },
+        { 10, "m_OnTrue", {0x454, 0}, 1, 0x16, "OnTrue", g_1055dc70 },
+        { 10, "m_OnFalse", {0x46c, 0}, 1, 0x16, "OnFalse", g_1055dc70 },
+    };
+    g_10577394[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10577394[0] = (int)&dataDesc[1];
+    return g_10577394;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136330 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
