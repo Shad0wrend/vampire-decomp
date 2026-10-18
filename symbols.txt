@@ -1506,6 +1506,7 @@
 0x100124c7 func   _item_g_badlucktalisman item_g_badlucktalisman
 0x100124ea func   ?sub_103be090@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be090
 0x10012517 func   ?sub_10046930@CUtlRBTree36@@QBEGPBX@Z CUtlRBTree36::sub_10046930
+0x10012526 func   ?sub_1013a030@@YAXPAUV3@@0@Z sub_1013a030
 0x1001252b func   _info_node_chang_ledge info_node_chang_ledge
 0x1001258f func   ?sub_10377970@@YAPAHXZ sub_10377970
 0x10012594 func   ?sub_102e2770@CUnknown102e2770@@QAEXHM@Z CUnknown102e2770::sub_102e2770

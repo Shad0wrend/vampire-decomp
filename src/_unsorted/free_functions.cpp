@@ -6945,6 +6945,18 @@ void __fastcall sub_10136490(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a030 size=0x23
+struct V3 {
+	float x, y, z;
+};
+
+void sub_1013a030(V3 *mins, V3 *maxs)
+{
+	mins->x = mins->y = mins->z = 99999.0f;
+	maxs->x = maxs->y = maxs->z = -99999.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d900 size=0x72
 extern int g_10579690[4][2][3];
 bool sub_1013d900(int a, int b, int c, int *out)
