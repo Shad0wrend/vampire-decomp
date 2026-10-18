@@ -8,11 +8,19 @@
 #define CHL2_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define CHL2_V100(p) CHL2_V10(p##0) CHL2_V10(p##1) CHL2_V10(p##2) CHL2_V10(p##3) CHL2_V10(p##4) CHL2_V10(p##5) CHL2_V10(p##6) CHL2_V10(p##7) CHL2_V10(p##8) CHL2_V10(p##9)
 
-// Stand-in for the real CBasePlayer base (not modelled here, see CBasePlayer.h): an empty
-// base whose constructor is the CBasePlayer constructor, so CHL2_Player's constructor calls it first.
+// Stand-in for the real CBasePlayer base (not modelled here, see CBasePlayer.h): a base whose
+// constructor is the CBasePlayer constructor, so CHL2_Player's constructor calls it first.
+// It owns the vptr at +0 (slot 0 is declared here, CHL2_Player overrides it).
 struct CHL2_PlayerBase
 {
 	CHL2_PlayerBase();
+	virtual void pa00();
+};
+
+// The member at +0x2464, constructed by CUnknown1012cf10::sub_1012cf10.
+struct CHL2_PlayerMember2464 : public CUnknown1012cf10
+{
+	CHL2_PlayerMember2464() { sub_1012cf10(); }
 };
 
 class CHL2_Player : public CHL2_PlayerBase
@@ -39,7 +47,7 @@ public:
 	virtual float vfunc481();
 
 	char m_pad0004[0x2460];	// 0x0004 .. 0x2463
-	CUnknown1012cf10 m_u2464;
+	CHL2_PlayerMember2464 m_u2464;
 	char m_pad2468[0xC0];	// 0x2468 .. 0x2527
 	int m_n2528;
 	int m_n252c;
