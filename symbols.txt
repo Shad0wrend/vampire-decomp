@@ -441,6 +441,7 @@
 0x100058a3 func   ?sub_101d5660@S101d5660@@QAEXXZ S101d5660::sub_101d5660
 0x100058b2 func   ?vfunc75@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc75
 0x100058e9 func   ?vfunc5@CPointEntity@@UAEPAV1@I@Z CPointEntity::vfunc5
+0x10005902 func   ?sub_102c33a0@S@@QAEXPAUinputdata_t@@@Z S::sub_102c33a0
 0x10005916 func   ?sub_101c2a10@CUnknown101c2a10@@QAEXH@Z CUnknown101c2a10::sub_101c2a10
 0x10005939 func   ?sub_100ae320@@YAXXZ sub_100ae320
 0x10005984 func   _item_k_clinic_maintenance_key item_k_clinic_maintenance_key
