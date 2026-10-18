@@ -1,0 +1,10 @@
+// Vector: three floats.
+#pragma once
+
+class Vector
+{
+public:
+	float x, y, z;
+
+	Vector &sub_1003e4b0(const Vector &v);	// operator=
+};
