@@ -305,6 +305,7 @@
 0x1000373d func   _item_w_unarmed item_w_unarmed
 0x100037ce func   ?sub_10222e30@@YIXPAUMem@@HH@Z sub_10222e30
 0x10003800 func   ?vfunc5@CBeam@@QAEPAV1@I@Z CBeam::vfunc5
+0x10003850 func   ?vfunc500@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc500
 0x10003891 func   ?vfunc5@CNPC_VTremere@@QAEPAV1@I@Z CNPC_VTremere::vfunc5
 0x100038b9 func   ?sub_100eb3b0@@YIXPAH@Z sub_100eb3b0
 0x100038be func   ?sub_1006cff0@StatOwner@@QAEPAUStatDefault@@H@Z StatOwner::sub_1006cff0
