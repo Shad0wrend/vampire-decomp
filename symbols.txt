@@ -1754,6 +1754,7 @@
 0x1000fd03 func   ?sub_101c4790@CUnknown101c4790@@QAEPAU1@H@Z CUnknown101c4790::sub_101c4790
 0x1000fd0d func   ?sub_102c6590@CUnknown102c6590@@QAEPAHH@Z CUnknown102c6590::sub_102c6590
 0x1000fd71 func   ?sub_1042d700@@YIIPAI@Z sub_1042d700
+0x1000fdcb func   ?vfunc5@CItemGHannahsApptBook@@QAEPAV1@I@Z CItemGHannahsApptBook::vfunc5
 0x1000fe1b func   ?sub_10348b00@@YIHPADHH@Z sub_10348b00
 0x1000fe2f func   ?vfunc7@ConVar@@UAEXPBD@Z ConVar::vfunc7
 0x1000feac func   ?vfunc5@CPlayerResource@@QAEPAV1@I@Z CPlayerResource::vfunc5
