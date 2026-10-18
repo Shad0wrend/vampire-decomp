@@ -480,6 +480,7 @@
 0x10005dc1 func   ?sub_10264300@@YAXPAUCBlock4k@@PBU1@@Z sub_10264300
 0x10005dfd func   _prop_sign prop_sign
 0x10005e20 func   ?vfunc440@CNPC_VHuman@@QAEHH@Z CNPC_VHuman::vfunc440
+0x10005e39 func   ?sub_1035bee0@S@@QAEXH@Z S::sub_1035bee0
 0x10005e89 func   ?sub_10136490@@YIXPADHH@Z sub_10136490
 0x10005e9d func   ?sub_100d1cc0@SFilter@@QAEPAU1@E@Z SFilter::sub_100d1cc0
 0x10005ea2 func   ?sub_1012cf90@@YGXH@Z sub_1012cf90
