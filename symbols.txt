@@ -1655,6 +1655,7 @@
 0x1000e296 func   _func_physbox func_physbox
 0x1000e2b9 func   ?sub_10382b30@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::sub_10382b30
 0x1000e2e6 func   ?vfunc5@CItemMWallet@@QAEPAV1@I@Z CItemMWallet::vfunc5
+0x1000e327 func   ?vfunc504@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc504
 0x1000e345 func   _env_steam env_steam
 0x1000e34f func   _env_shake env_shake
 0x1000e381 func   ?sub_102477c0@CUnknown102477c0@@QAEXXZ CUnknown102477c0::sub_102477c0
