@@ -7801,6 +7801,17 @@ float CUnknown101800e0::sub_101800e0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180220 size=0x11
+struct P { void sub_1015ef60(); };
+P *sub_10008d8c();
+void sub_10180220()
+{
+	P *p = sub_10008d8c();
+	if (p)
+		p->sub_1015ef60();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181600 size=0xb
 void __fastcall sub_10181600(char *self)
 {
