@@ -8,6 +8,7 @@ class CAI_BaseNPCTroika : public CAI_BaseNPC
 public:
 	virtual void vfunc416(char value);
 
+	void vfunc488();	// slot 488: plays the "Death" sound
 	void vfunc497();
 	void vfunc616();	// slot 616: base call with 0x30, then stamps curtime + 15 at +0x65bc
 
