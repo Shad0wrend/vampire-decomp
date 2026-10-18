@@ -1321,6 +1321,7 @@
 0x1000bc6c func   ?vfunc5@CNPC_VPlayerController@@QAEPAV1@I@Z CNPC_VPlayerController::vfunc5
 0x1000bcdf func   _auspex_aura auspex_aura
 0x1000bd34 func   ?vfunc5@CResearchBook_HG_MELEE@@QAEPAV1@I@Z CResearchBook_HG_MELEE::vfunc5
+0x1000bd39 func   ?vfunc1@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc1
 0x1000bd48 func   ?sub_10390040@@YIXPAD@Z sub_10390040
 0x1000bd7a func   ?sub_100766f0@CUnknown100766f0@@QAEXH@Z CUnknown100766f0::sub_100766f0
 0x1000bda2 func   ?vfunc71@CItemContainer@@QAEXXZ CItemContainer::vfunc71
