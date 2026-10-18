@@ -178,6 +178,7 @@
 0x100027e8 func   ?sub_1018c6e0@@YAXPAUSHandleHolder@@@Z sub_1018c6e0
 0x100027f7 func   _light_dynamic light_dynamic
 0x100027fc func   ?sub_102464b0@@YAXHHPAH@Z sub_102464b0
+0x10002847 func   ?vfunc546@CNPC_VHumanCombatant@@QAEHH@Z CNPC_VHumanCombatant::vfunc546
 0x1000288d func   ?vfunc5@CNPC_VHunter@@QAEPAV1@I@Z CNPC_VHunter::vfunc5
 0x100028a1 func   ?sub_10334600@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_10334600
 0x100028a6 func   ?sub_102a9e60@@YIMPAUCSlots@@@Z sub_102a9e60
