@@ -3,9 +3,12 @@
 
 struct variant_t
 {
-	float flValue;
+	union {
+		float flValue;
+		int iValue;
+	};
 	char m_pad04[12];
-	int fieldType;	// 1 == FIELD_FLOAT
+	int fieldType;	// 1 == FIELD_FLOAT, 4 == FIELD_INTEGER
 
 	float Float() const;	// the float value, or the file-scope zero when the variant is not a float
 };
