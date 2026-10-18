@@ -14882,6 +14882,86 @@ unsigned char __fastcall sub_10256200(unsigned char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102567b0 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105c5bc4[2];
+void sub_10010e10();
+void sub_1000c6f8();
+void sub_1000d9a4();
+void sub_1000317a();
+void sub_100155eb();
+void sub_10003ca1();
+void sub_1000f501();
+
+int *sub_102567b0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_flNextAttack", {0x730, 0}, 2, 2 },
+        { 4, "m_iUniqueId", {0x738, 0}, 1, 2 },
+        { 4, "m_iInvenPos", {0x73c, 0}, 1, 2 },
+        { 4, "m_iImpactID", {0x740, 0}, 1, 2 },
+        { 4, "m_iAmmoTypes", {0x744, 0}, 2, 2 },
+        { 4, "m_iMagazineCurAmts", {0x74c, 0}, 2, 2 },
+        { 4, "m_iItemWearLocs", {0x778, 0}, 1, 2 },
+        { 4, "m_iItemCurActivateMode", {0x848, 0}, 1, 2 },
+        { 4, "m_iItemActivationModes", {0x84c, 0}, 2, 2 },
+        { 4, "m_iTakeOutActivity", {0x854, 0}, 1, 2 },
+        { 4, "m_iTriggeredPowers", {0x858, 0}, 1, 2 },
+        { 4, "iAmmoIndexes", {0x85c, 0}, 2, 2 },
+        { 4, "m_iCostToBuy", {0x864, 0}, 1, 2 },
+        { 4, "m_iCostToSell", {0x868, 0}, 1, 2 },
+        { 4, "m_iAtkMode", {0x86c, 0}, 1, 2 },
+        { 12, "m_hOwner", {0x88c, 0}, 1, 2 },
+        { 4, "m_nViewModelIndex", {0x890, 0}, 1, 2 },
+        { 15, "m_flTimeWeaponIdle", {0x894, 0}, 1, 2 },
+        { 5, "m_bInReload", {0x898, 0}, 1, 2 },
+        { 5, "m_bInterruptReload", {0x899, 0}, 1, 2 },
+        { 5, "m_bIsJammed", {0x89a, 0}, 1, 2 },
+        { 5, "m_bFireOnEmpty", {0x89b, 0}, 1, 2 },
+        { 1, "m_fFireDuration", {0x8ac, 0}, 1, 2 },
+        { 4, "m_iState", {0x8b0, 0}, 1, 2 },
+        { 5, "m_bFiresUnderwater", {0x8b4, 0}, 1, 2 },
+        { 1, "m_fMinRange1", {0x8b8, 0}, 1, 2 },
+        { 1, "m_fMinRange2", {0x8bc, 0}, 1, 2 },
+        { 1, "m_fMaxRange1", {0x8c0, 0}, 1, 2 },
+        { 1, "m_fMaxRange2", {0x8c4, 0}, 1, 2 },
+        { 5, "m_bReloadsSingly", {0x8c8, 0}, 1, 2 },
+        { 4, "m_iSubType", {0x8cc, 0}, 1, 2 },
+        { 4, "m_iItemCount", {0x8d0, 0}, 1, 2 },
+        { 4, "m_iCashAmount", {0x8d4, 0}, 1, 2 },
+        { 5, "m_bBeingRead", {0x8d8, 0}, 1, 2 },
+        { 0, "CBaseCombatWeaponSUB_Drop", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10010e10 },
+        { 0, "CBaseCombatWeaponDefaultTouch", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000c6f8 },
+        { 0, "CBaseCombatWeaponFallThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000d9a4 },
+        { 0, "CBaseCombatWeaponMaterialize", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000317a },
+        { 0, "CBaseCombatWeaponAttemptToMaterialize", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100155eb },
+        { 0, "CBaseCombatWeaponDestroyItem", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10003ca1 },
+        { 0, "CBaseCombatWeaponSetPickupTouch", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000f501 },
+        { 10, "m_OnPlayerPickup", {0x8e0, 0}, 1, 0x16, "OnPlayerPickup", g_1055dc70 },
+        { 10, "m_OnNPCPickup", {0x8f8, 0}, 1, 0x16, "OnNPCPickup", g_1055dc70 },
+    };
+    g_105c5bc4[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105c5bc4[0] = (int)&dataDesc[1];
+    return g_105c5bc4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258500 size=0xc
 extern const char *g_105c6388[];
 const char *sub_10258500(int index)
