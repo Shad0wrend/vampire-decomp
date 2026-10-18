@@ -22858,6 +22858,14 @@ void sub_10430440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104304c0 size=0x1f
+#pragma optimize("", off)
+unsigned int sub_104304c0(unsigned int x)
+{
+	return (x ^ 7) ^ (((x ^ 7) & 0x71f99735) & 0x8e0668ca);
+}
+// END FUNCTION
+
 // FUNCTION: 0x104304f0 size=0x22
 extern int g_106b0544;
 extern int g_106b05cc;

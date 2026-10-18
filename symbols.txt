@@ -782,6 +782,7 @@
 0x10008fd5 func   ?sub_1030f680@Helper1030f680@@QAEPAU1@PBDHH@Z Helper1030f680::sub_1030f680
 0x1000904d func   _light_environment light_environment
 0x1000905c func   ?sub_101c0cc0@@YAPAHXZ sub_101c0cc0
+0x1000907f func   ?sub_104304c0@@YAII@Z sub_104304c0
 0x100090a2 func   ?sub_103dc490@S103dc490@@QAEXH@Z S103dc490::sub_103dc490
 0x100090cf func   _logic_relay logic_relay
 0x100090fc func   ??0CConstraintAnchorBase@@QAE@H@Z CConstraintAnchorBase::CConstraintAnchorBase
