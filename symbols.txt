@@ -1529,6 +1529,7 @@
 0x1000ed68 func   ?sub_10045110@CUnknown10045110@@QAEXH@Z CUnknown10045110::sub_10045110
 0x1000ed9a func   ?sub_102dd450@CUnknown102dd450@@QAE_NXZ CUnknown102dd450::sub_102dd450
 0x1000eda4 func   ?sub_100b3a60@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3a60
+0x1000edc2 func   ?vfunc5@CNPC_VBatSwarm@@QAEPAV1@I@Z CNPC_VBatSwarm::vfunc5
 0x1000ee26 func   ?vfunc2@CTEKillPlayerAttachments@@UAEPAV1@I@Z CTEKillPlayerAttachments::vfunc2
 0x1000ee8f func   _item_k_oceanhouse_upstairs_key item_k_oceanhouse_upstairs_key
 0x1000eed0 func   ?sub_1007dfc0@CUnknown1007dfc0@@QAEXH@Z CUnknown1007dfc0::sub_1007dfc0
