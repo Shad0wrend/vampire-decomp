@@ -526,6 +526,7 @@
 0x10006389 func   ?sub_10387800@@YADXZ sub_10387800
 0x1000638e func   ?sub_1022d1e0@@YAXPAUCBlock4k@@PBU1@@Z sub_1022d1e0
 0x1000639d func   ?sub_104302f0@@YAXXZ sub_104302f0
+0x100063a7 func   ?vfunc5@CPathKeyFrame@@QAEPAV1@I@Z CPathKeyFrame::vfunc5
 0x1000642e func   ?vfunc9@CCollisionEvent@@QAEXPAX0@Z CCollisionEvent::vfunc9
 0x10006438 func   ?sub_102a9ea0@CUnknown102a9ea0@@QAEHH@Z CUnknown102a9ea0::sub_102a9ea0
 0x1000646f func   ?sub_10185a30@CUnknown10185a30@@QAEXH@Z CUnknown10185a30::sub_10185a30
