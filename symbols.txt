@@ -727,6 +727,7 @@
 0x10007f18 func   ??0CUnknown102029c0@@QAE@H@Z CUnknown102029c0::CUnknown102029c0
 0x10007f1d func   ?sub_1037bb20@@YI_NPAD@Z sub_1037bb20
 0x10007f22 func   ?sub_101800e0@CUnknown101800e0@@QAEMH@Z CUnknown101800e0::sub_101800e0
+0x10007fa4 func   ?vfunc5@CSoundEnt@@QAEPAV1@I@Z CSoundEnt::vfunc5
 0x10007ffe func   _item_k_clinic_stairs_key item_k_clinic_stairs_key
 0x10008012 func   ?sub_10388150@@YADXZ sub_10388150
 0x10008030 func   _info_node_sabbat_nojump info_node_sabbat_nojump
