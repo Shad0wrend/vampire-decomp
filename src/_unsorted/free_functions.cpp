@@ -13655,6 +13655,16 @@ void sub_10237c30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10238380 size=0x12
+extern int g_1088aee4;
+void __stdcall sub_102383b0(int a);
+void sub_10238380()
+{
+	g_1088aee4 = 1;
+	sub_102383b0(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ee30 size=0xcb
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(int);
