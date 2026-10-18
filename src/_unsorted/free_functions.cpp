@@ -18099,6 +18099,26 @@ void CUtlMemory12::sub_103dc520(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc8a0 size=0x33
+void sub_10007897();
+void sub_10007af9();
+extern int g_10663bd8;
+extern char g_10663bd4;
+extern int g_10936b68;
+
+char sub_103dc8a0()
+{
+    sub_10007897();
+    if (g_10663bd8 != g_10936b68) {
+        sub_10007af9();
+        g_10663bd4 = 1;
+        g_10663bd8 = g_10936b68;
+        return 1;
+    }
+    return g_10663bd4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1680 size=0x20
 #include "CUnknown103e1680.h"
 extern CUnknown103e1680 *g_10940644;
