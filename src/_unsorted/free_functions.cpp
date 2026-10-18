@@ -16440,6 +16440,26 @@ void sub_10359c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10359de0 size=0x33
+void sub_10014d7b();
+void sub_10012fd0();
+extern int g_10629a3c;
+extern char g_10629a38;
+extern int g_10936b68;
+
+char sub_10359de0()
+{
+    sub_10014d7b();
+    if (g_10629a3c != g_10936b68) {
+        sub_10012fd0();
+        g_10629a38 = 1;
+        g_10629a3c = g_10936b68;
+        return 1;
+    }
+    return g_10629a38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a870 size=0x12
 #define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
 #define V100(n) V10(n##a) V10(n##b) V10(n##c) V10(n##d) V10(n##e) V10(n##f) V10(n##g) V10(n##h) V10(n##i) V10(n##j)
