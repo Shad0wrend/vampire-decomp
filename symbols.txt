@@ -1407,6 +1407,7 @@
 0x1000ea11 func   ?sub_1009f200@CBaseEntity@@QAEPBDXZ CBaseEntity::sub_1009f200
 0x1000ea98 func   ?sub_1024d2c0@@YIXPAXHH@Z sub_1024d2c0
 0x1000eade func   _logic_branch logic_branch
+0x1000eaf2 func   ?vfunc5@CBatSwarm@@QAEPAV1@I@Z CBatSwarm::vfunc5
 0x1000eaf7 func   ?vfunc104@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc104
 0x1000eb56 func   _env_wind env_wind
 0x1000eb5b func   _env_fade env_fade
