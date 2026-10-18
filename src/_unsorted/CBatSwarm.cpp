@@ -16,6 +16,24 @@ CBatSwarm *CBatSwarm::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b8b10 size=0x26
+#include "CBatSwarm.h"
+#include "CBaseEntity.h"
+#include "IVEngineServerFull.h"
+
+extern IVEngineServerFull *g_1070b22c;
+extern char g_106b8540[];
+
+void CBatSwarm::vfunc104()
+{
+	int unused;
+	const char *name = *((CBaseEntity *)this)->vfunc9(&unused);
+	if (!name)
+		name = g_106b8540;
+	g_1070b22c->PrecacheModel(name, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b9ee0 size=0x75
 #include "CBatSwarm.h"
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
