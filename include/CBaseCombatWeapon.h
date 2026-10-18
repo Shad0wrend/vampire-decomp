@@ -5,6 +5,7 @@
 #pragma once
 
 struct CWeaponHolder_t;
+struct CWeaponOwner;
 
 #define CBCW_V(n) virtual void vfunc##n();
 #define CBCW_V10(p) CBCW_V(p##0) CBCW_V(p##1) CBCW_V(p##2) CBCW_V(p##3) CBCW_V(p##4) CBCW_V(p##5) CBCW_V(p##6) CBCW_V(p##7) CBCW_V(p##8) CBCW_V(p##9)
@@ -27,7 +28,7 @@ public:
 	virtual void vfunc297(int value);
 	CBCW_V(298) CBCW_V(299) CBCW_V(300) CBCW_V(301) CBCW_V(302)
 	virtual bool vfunc303();
-	virtual char vfunc304();
+	virtual char vfunc304();	// true when the field at +0x2444 of the owner (sub_102517b0) is set
 	CBCW_V(305)
 	virtual void vfunc306(int value);
 	virtual void vfunc307(int value);
@@ -42,6 +43,7 @@ public:
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other);
 	virtual void vfunc371();
 	void sub_102507b0();
+	CWeaponOwner *sub_102517b0();	// the weapon's owner (player) object
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
