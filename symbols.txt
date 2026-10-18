@@ -76,6 +76,7 @@
 0x10001974 func   ?sub_1036c7f0@CUnknown1036c7f0@@QAEXH@Z CUnknown1036c7f0::sub_1036c7f0
 0x1000199c func   _info_constraint_anchor info_constraint_anchor
 0x100019a1 func   _npc_VNewscaster npc_VNewscaster
+0x100019c9 func   ?vfunc5@CPropDoorknobElectronic@@QAEPAV1@I@Z CPropDoorknobElectronic::vfunc5
 0x100019d8 func   ?sub_100ddf40@CUnknown100ddf40@@QAEPAHH@Z CUnknown100ddf40::sub_100ddf40
 0x100019f6 func   ?vfunc5@CBaseAnimating@@QAEPAV1@I@Z CBaseAnimating::vfunc5
 0x10001a32 func   ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ CBaseVampireSkillEntity::vfunc272
