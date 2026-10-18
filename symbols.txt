@@ -1813,6 +1813,7 @@
 0x10014cf4 func   ?sub_102382f0@@YAXXZ sub_102382f0
 0x10014d17 func   ?sub_102a97d0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97d0
 0x10014d26 func   _item_p_gargoyle_talisman item_p_gargoyle_talisman
+0x10014d2b func   ?sub_1035a870@S@@QAEXH@Z S::sub_1035a870
 0x10014d35 func   _item_a_hvy_cloth item_a_hvy_cloth
 0x10014d49 func   ?sub_100fa600@S100fa600@@QAEXH@Z S100fa600::sub_100fa600
 0x10014d5d func   ?sub_102158f0@@YIXPADHH@Z sub_102158f0

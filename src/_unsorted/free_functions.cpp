@@ -16129,6 +16129,23 @@ void sub_10359c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035a870 size=0x12
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+#define V100(n) V10(n##a) V10(n##b) V10(n##c) V10(n##d) V10(n##e) V10(n##f) V10(n##g) V10(n##h) V10(n##i) V10(n##j)
+struct S {
+	V100(a) V100(b) V100(c) V100(d)
+	V10(e) V10(f) V10(g) V10(h) V10(i) V10(j) V10(k) V10(l) V10(m)
+	virtual void z0(); virtual void z1(); virtual void z2(); virtual void z3(); virtual void z4();
+	virtual void target();
+	void sub_1035a870(int mode);
+};
+void S::sub_1035a870(int mode)
+{
+	if (mode == 3)
+		target();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b1c0 size=0x8
 struct CUnknown1035b1c0 { int sub_1035b1c0(int, int, int, int); };
 int CUnknown1035b1c0::sub_1035b1c0(int, int, int, int) { return 1; }
