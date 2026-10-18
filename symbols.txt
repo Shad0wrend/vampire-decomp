@@ -1416,6 +1416,7 @@
 0x100113ce func   _trigger_electric_bugaloo trigger_electric_bugaloo
 0x100113d3 func   _npc_VChangBrosBlade npc_VChangBrosBlade
 0x100113ec func   ?sub_1012f190@@YAHH@Z sub_1012f190
+0x10011414 func   ?sub_1012d720@CHudTimer@@QAEXXZ CHudTimer::sub_1012d720
 0x10011428 func   ?vfunc2@CTEWorldDecal@@UAEPAV1@I@Z CTEWorldDecal::vfunc2
 0x100114aa func   ?sub_102e7e40@@YIXPAUCOwner@@@Z sub_102e7e40
 0x100114d2 func   ?vfunc337@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc337
