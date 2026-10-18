@@ -99,3 +99,4 @@
 #include "ConCommand.h"
 #include "CPhysicsHook.h"
 #include "CMeasureSectionInstance.h"
+#include "CEntityDataInstantiator.h"
