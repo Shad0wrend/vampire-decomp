@@ -17712,6 +17712,35 @@ char sub_103abc90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad710 size=0x53
+void *sub_1000db89(int);
+struct GP;
+void __fastcall sub_1000104b(GP *);
+extern int vt_104c558c;
+extern int vt_104c555c;
+extern char g_10650390[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+};
+// TARGET: npc_VRat
+extern "C" GP *npc_VRat()
+{
+	GP *p = (GP *)sub_1000db89(0x66a0);
+	if (p) {
+		sub_1000104b(p);
+		*(int **)p = &vt_104c558c;
+		*(int **)((char *)p + 0x19b0) = &vt_104c555c;
+	} else {
+		p = 0;
+	}
+	p->name(g_10650390);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103adb00 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
