@@ -144,6 +144,7 @@
 0x100028ab func   ?vfunc2@CTEBubbles@@UAEPAV1@I@Z CTEBubbles::vfunc2
 0x100028ce func   _item_g_garys_cd item_g_garys_cd
 0x100028d8 func   ?vfunc339@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc339
+0x10002919 func   ?sub_101cb130@@YAPAHXZ sub_101cb130
 0x10002969 func   ?vfunc103@CPhysConstraintSystem@@QAEXXZ CPhysConstraintSystem::vfunc103
 0x10002982 func   ?sub_10319fe0@CUnknown10319fe0@@QAEXH@Z CUnknown10319fe0::sub_10319fe0
 0x100029a0 func   _hud_counter hud_counter

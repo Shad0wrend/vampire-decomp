@@ -9067,6 +9067,46 @@ int *sub_101c9cf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cb130 size=0xa1
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1059e5f0[2];
+void sub_10014308();
+void sub_1000b965();
+void sub_1000d422();
+
+int *sub_101cb130()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_flMagnitude", {0x5b0, 0}, 1, 6, "Magnitude" },
+        { 1, "m_flNoise", {0x5b4, 0}, 1, 6, "Noise" },
+        { 1, "m_flViewkick", {0x5b8, 0}, 1, 6, "Viewkick" },
+        { 0, "InputImpact", {0, 0}, 1, 8, "Impact", 0, (void *)sub_1000b965 },
+        { 1, "InputSetMagnitude", {0, 0}, 1, 8, "SetMagnitude", 0, (void *)sub_1000d422 },
+        { 10, "m_pOutputForce", {0x5bc, 0}, 1, 0x16, "ImpactForce", g_1055dc70 },
+        { 0, "CTriggerImpactDisable", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10014308 },
+    };
+    g_1059e5f0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1059e5f0[0] = (int)&dataDesc[1];
+    return g_1059e5f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cb6b0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
