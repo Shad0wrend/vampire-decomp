@@ -988,6 +988,7 @@
 0x10009c9b func   ?sub_102696f0@@YIXPAD@Z sub_102696f0
 0x10009cb4 func   ?vfunc5@CWeaponRanged_Rifle_Crossbow@@QAEPAV1@I@Z CWeaponRanged_Rifle_Crossbow::vfunc5
 0x10009cdc func   _phys_slideconstraint phys_slideconstraint
+0x10009ceb func   ?vfunc5@CWeaponMelee_SabbatLeaderAttack@@QAEPAV1@I@Z CWeaponMelee_SabbatLeaderAttack::vfunc5
 0x10009d45 func   ?sub_10375390@@YADXZ sub_10375390
 0x10009d6d func   ?vfunc133@CBaseEntity@@UAEXXZ CBaseEntity::vfunc133
 0x10009d72 func   ?vfunc5@CPropClockHand@@QAEPAV1@I@Z CPropClockHand::vfunc5
