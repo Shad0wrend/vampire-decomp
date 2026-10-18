@@ -4,6 +4,10 @@
 // vtable.
 #pragma once
 
+#include "Vector.h"
+
+class CBaseEntity;
+
 class CGameRules
 {
 public:
@@ -58,7 +62,7 @@ public:
 	virtual int vfunc48(int index);
 	virtual float vfunc49(int a);
 	virtual float vfunc50(int a);
-	virtual void vfunc51();
+	virtual Vector vfunc51(CBaseEntity *pEnt);	// returns a copy of the entity's origin
 	virtual void vfunc52();
 	virtual void vfunc53();
 	virtual void vfunc54();
