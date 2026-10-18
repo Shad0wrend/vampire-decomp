@@ -71,5 +71,6 @@ public:
 	virtual void vfunc6();
 	virtual void vfunc7();
 
+	int m_pad0004;
 	CRecipientVec m_Recipients;	// 0x0008
 };
