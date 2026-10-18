@@ -4,7 +4,7 @@
 class IRecipientFilter
 {
 public:
-	virtual ~IRecipientFilter();	// slot 0, scalar deleting destructor
+	virtual ~IRecipientFilter() {}	// slot 0, scalar deleting destructor
 	virtual void vfunc1() = 0;
 	virtual void vfunc2() = 0;
 	virtual void vfunc3() = 0;
