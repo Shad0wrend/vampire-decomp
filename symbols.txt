@@ -528,6 +528,7 @@
 0x10006ed3 func   ?sub_1012f850@@YAMM@Z sub_1012f850
 0x10006f28 func   ?sub_100b7c60@CUnknown100b7c60@@QAEXH@Z CUnknown100b7c60::sub_100b7c60
 0x10006f2d func   _item_w_baton item_w_baton
+0x10006f32 func   ?vfunc144@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc144
 0x10006f37 func   _item_w_fists item_w_fists
 0x10006f46 func   _item_w_knife item_w_knife
 0x10006f4b func   _item_w_claws item_w_claws
