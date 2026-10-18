@@ -34,10 +34,12 @@ class CNPC_VHengeyokai
 {
 public:
 	virtual void vfunc601(int unused);
+	virtual char vfunc69(void *pOther);	// true when the other object has one of the flags 0x16 at +0x4c, else the Troika base's answer
 
 	char m_pad0004[0x66a4 - 4];
 	CNPC_VHengeyokaiTimerVec m_Timers;	// 0x66a4
 
 	int sub_10382b30(int key);
 	bool sub_10382aa0(int key);
+	char sub_1029b180(void *pOther);	// CAI_BaseNPCTroika::vfunc69
 };
