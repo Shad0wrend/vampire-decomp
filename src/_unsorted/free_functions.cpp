@@ -16477,6 +16477,26 @@ void S::sub_1035a870(int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035ac30 size=0x33
+void sub_1000b15e();
+void sub_1000345e();
+extern int g_10629da4;
+extern char g_10629da0;
+extern int g_10936b68;
+
+char sub_1035ac30()
+{
+    sub_1000b15e();
+    if (g_10629da4 != g_10936b68) {
+        sub_1000345e();
+        g_10629da0 = 1;
+        g_10629da4 = g_10936b68;
+        return 1;
+    }
+    return g_10629da0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b1c0 size=0x8
 struct CUnknown1035b1c0 { int sub_1035b1c0(int, int, int, int); };
 int CUnknown1035b1c0::sub_1035b1c0(int, int, int, int) { return 1; }
