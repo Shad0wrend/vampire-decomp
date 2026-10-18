@@ -42,16 +42,12 @@ struct CRecipientVec
 	void *m_pElements;
 
 	void sub_10013e12();	// element destruct
-	void RemoveAll()
+	void Purge()
 	{
 		for (int i = m_Size; --i >= 0; )
 			sub_10013e12();
-		m_Size = 0;
-	}
-	void Purge()
-	{
-		RemoveAll();
 		void (__cdecl *pfnFree)(void *) = g_109f3624;
+		m_Size = 0;
 		m_Memory.Purge(pfnFree);
 		m_pElements = m_Memory.m_pMemory;
 		m_Memory.Purge(pfnFree);
