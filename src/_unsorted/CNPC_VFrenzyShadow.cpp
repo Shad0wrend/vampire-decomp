@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10375440 size=0x1d
+#include "CNPC_VFrenzyShadow.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093ae28;
+extern B g_10936c74;
+int CNPC_VFrenzyShadow::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093ae28.sub_10012300(x));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376b70 size=0x1a
 #include "CNPC_VFrenzyShadow.h"
 struct S10924edc { virtual void a(); virtual void b(); };

@@ -1021,6 +1021,7 @@
 0x10009a61 func   _hud_timer hud_timer
 0x10009a75 func   ?sub_102a15c0@@YI_NPAUN@@@Z sub_102a15c0
 0x10009a7f func   ?sub_1004e910@CPhysBox@@QAEXH@Z CPhysBox::sub_1004e910
+0x10009a8e func   ?vfunc546@CNPC_VFrenzyShadow@@QAEHH@Z CNPC_VFrenzyShadow::vfunc546
 0x10009ab6 func   ?sub_10185790@@YIXPAH@Z sub_10185790
 0x10009ae8 func   ?sub_10027570@CBaseEntity@@QAEHXZ CBaseEntity::sub_10027570
 0x10009aed func   _env_swarm_bats env_swarm_bats
