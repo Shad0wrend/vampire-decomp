@@ -658,6 +658,7 @@
 0x100078a6 func   _vgui_screen vgui_screen
 0x10007900 func   ?sub_102885d0@@YIXPAX@Z sub_102885d0
 0x10007914 func   ?sub_1007b9b0@S1007b9b0@@QAEXPBD@Z S1007b9b0::sub_1007b9b0
+0x10007923 func   ?vfunc8@CEntityListSystem@@QAEPAV1@I@Z CEntityListSystem::vfunc8
 0x10007969 func   ?vfunc103@CItemContainerOneItemFiltered@@UAEXXZ CItemContainerOneItemFiltered::vfunc103
 0x100079a5 func   _item_w_colt_anaconda item_w_colt_anaconda
 0x100079c8 func   ?vfunc48@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc48
