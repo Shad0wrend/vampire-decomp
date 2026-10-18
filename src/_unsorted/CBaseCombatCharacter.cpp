@@ -244,6 +244,30 @@ int __fastcall sub_103315e0(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10332010 size=0x80
+#include "CBaseCombatCharacter.h"
+struct ScopeTraceEntry { const char *m_pFunction; const char *m_pEntity; const char *m_pExtra; };
+extern int *g_109f3680;
+extern ScopeTraceEntry *g_109f3620;
+void CBaseCombatCharacter::vfunc50(int a)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = "";
+	} else {
+		name = "NULL ENTITY";
+	}
+	g_109f3620[*g_109f3680].m_pFunction = "CBaseCombatCharacter::GetCameraViewpointPosition";
+	g_109f3620[*g_109f3680].m_pEntity = name;
+	g_109f3620[*g_109f3680].m_pExtra = "";
+	++*g_109f3680;
+	sub_10014eb6(a, 0);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103321a0 size=0x78
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
