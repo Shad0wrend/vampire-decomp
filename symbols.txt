@@ -1535,6 +1535,7 @@
 0x1000e3cc func   ?vfunc5@CResearchBook_HG_COMP@@QAEPAV1@I@Z CResearchBook_HG_COMP::vfunc5
 0x1000e3db func   _simple_physics_brush simple_physics_brush
 0x1000e3ea func   ?sub_103dc260@@YIXPAH@Z sub_103dc260
+0x1000e3f4 func   ?vfunc5@CItemGBailbondReceipt@@QAEPAV1@I@Z CItemGBailbondReceipt::vfunc5
 0x1000e421 func   ?sub_1002cc60@CUnknown1002cc60@@QAEPAU1@XZ CUnknown1002cc60::sub_1002cc60
 0x1000e426 func   _path_corner_crash path_corner_crash
 0x1000e430 func   ?vfunc303@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc303
