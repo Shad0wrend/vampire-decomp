@@ -8593,6 +8593,15 @@ void *sub_1019ba30(void *self, char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019bde0 size=0x15
+int sub_1019bde0(char c)
+{
+	if (c != '\r' && c != '\n')
+		return 0;
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019be80 size=0x67
 struct PyObj;
 struct PyType { char pad[0x18]; void (*dealloc)(PyObj*); };
