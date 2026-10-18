@@ -22605,6 +22605,14 @@ unsigned int sub_1042fd40(unsigned int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042fd80 size=0x1f
+#pragma optimize("", off)
+unsigned int sub_1042fd80(unsigned int x)
+{
+	return (x ^ 2) ^ (((x ^ 2) & 0x71f99735) & 0x8e0668ca);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042fdb0 size=0x22
 extern int g_106af994;
 extern int g_106afa1c;
