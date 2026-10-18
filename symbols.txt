@@ -2193,6 +2193,7 @@
 0x10014628 func   ?vfunc119@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc119
 0x1001464b func   ?sub_10324500@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10324500
 0x10014650 func   ?vfunc2@CTEPlayerDecal@@UAEPAV1@I@Z CTEPlayerDecal::vfunc2
+0x10014678 func   ?vfunc5@COccultRegen@@QAEPAV1@I@Z COccultRegen::vfunc5
 0x10014682 func   ?vfunc5@CEnvWind@@QAEPAV1@I@Z CEnvWind::vfunc5
 0x10014696 func   ?sub_10041be0@@YA_NPAH0@Z sub_10041be0
 0x1001469b func   ?vfunc275@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc275
