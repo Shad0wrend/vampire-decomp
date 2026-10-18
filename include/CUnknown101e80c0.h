@@ -18,5 +18,5 @@ public:
 	char m_pad0000[0x1c];
 	CUnknown101e80c0Inner *m_pInner;	// 0x1c
 
-	void sub_101e80c0(int *pResult, int a, int unused, int limit);	// *pResult = 3 when the worker's value for a is at least limit, else 1
+	int *sub_101e80c0(int *pResult, int a, int unused, int limit);	// *pResult = 3 when the worker's value for a is at least limit, else 1; returns pResult
 };
