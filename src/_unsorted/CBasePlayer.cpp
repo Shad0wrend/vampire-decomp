@@ -29,6 +29,21 @@ CBaseEntity *CBasePlayer::sub_1015dc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ded0 size=0x1e
+#include "CBasePlayer.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CBasePlayer::vfunc5
+CBasePlayer *CBasePlayer::vfunc5(unsigned int flags)
+{
+	sub_100017d5();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ee80 size=0x8
 #include "CBasePlayer.h"
 

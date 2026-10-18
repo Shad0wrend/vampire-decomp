@@ -2011,6 +2011,7 @@
 0x10014416 func   _prop_dynamic_ornament prop_dynamic_ornament
 0x1001443e func   _item_w_chang_blade item_w_chang_blade
 0x10014448 func   _env_dustpuff env_dustpuff
+0x100144bb func   ?vfunc5@CBasePlayer@@QAEPAV1@I@Z CBasePlayer::vfunc5
 0x100144c5 func   _item_p_occult_hacking item_p_occult_hacking
 0x100144cf func   _item_w_chang_ghost item_w_chang_ghost
 0x100144de func   ?vfunc243@CBaseTrigger@@QAEXI@Z CBaseTrigger::vfunc243
