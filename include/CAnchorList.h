@@ -1,11 +1,12 @@
 // class CAnchorList (RTTI .?AVCAnchorList@@), primary vtable 0x10446760 with 9 slots.
-// Bases per RTTI: CAutoGameSystem / CBaseGameSystem / IGameSystem at +0x0. Modelled standalone: the
-// game-system base destructor is the member sub_1000cfbd. Slot 8 is the scalar deleting destructor.
+// Bases per RTTI: CAutoGameSystem / CBaseGameSystem / IGameSystem at +0x0. The game-system side is
+// modelled by CBaseGameSystem (nine slots, slot 8 the virtual destructor, 8 bytes); the utl-vector-like
+// member (memory pointer, allocation count, grow size, size, element pointer) follows at +0x8.
 #pragma once
 
 extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
 
-class CAnchorList
+class CBaseGameSystem
 {
 public:
 	virtual void vfunc0();
@@ -16,14 +17,43 @@ public:
 	virtual void vfunc5();
 	virtual void vfunc6();
 	virtual void vfunc7();
-	virtual ~CAnchorList();
-
-	void sub_1000cfbd();
+	virtual ~CBaseGameSystem();
 
 	char m_04[4];
+};
+
+class CAnchorListVec
+{
+public:
+	~CAnchorListVec()
+	{
+		m_Size = 0;
+		if (m_growSize != -1) {
+			if (m_pMemory) {
+				g_109f3624(m_pMemory);
+				m_pMemory = 0;
+			}
+			m_allocationCount = 0;
+		}
+		m_pElements = m_pMemory;
+		if (m_growSize != -1) {
+			if (m_pMemory) {
+				g_109f3624(m_pMemory);
+				m_pMemory = 0;
+			}
+			m_allocationCount = 0;
+		}
+	}
+
 	int *m_pMemory;		// 0x08
 	int m_allocationCount;	// 0x0c
 	int m_growSize;		// 0x10
 	int m_Size;		// 0x14
 	int *m_pElements;	// 0x18
+};
+
+class CAnchorList : public CBaseGameSystem, public CAnchorListVec
+{
+public:
+	virtual void vfunc5();
 };
