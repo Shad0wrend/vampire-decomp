@@ -42,7 +42,7 @@ public:
 	virtual int vfunc116();
 	virtual void vfunc117(); virtual void vfunc118(); virtual void vfunc119();
 	virtual void vfunc120(); virtual void vfunc121(); virtual void vfunc122(); virtual void vfunc123(); virtual void vfunc124();
-	virtual void vfunc125(); virtual int vfunc126(int a); virtual void vfunc127(); virtual void vfunc128(); virtual void vfunc129();
+	virtual void vfunc125(); virtual int vfunc126(int a); virtual int vfunc127(int a); virtual void vfunc128(); virtual void vfunc129();
 	virtual void vfunc130(int a); virtual void vfunc131(); virtual void vfunc132(); virtual void vfunc133();
 
 	// Slots whose callers call them directly, so far only declared as plain members.
@@ -55,7 +55,6 @@ public:
 	float *vfunc214();	// "CBaseEntity::GetSize": returns &field at +0x38c
 	float *vfunc220();	// "CBaseEntity::GetOrigin": returns &field at +0x41c
 	float *vfunc221();	// "CBaseEntity::GetAngles": returns &field at +0x428
-	void vfunc226(int a);
 	void vfunc228(int a, int b);
 	void vfunc238(int a, int b, int c, int d);
 
