@@ -32,3 +32,13 @@ SRestore *SRestore::sub_101a1400(unsigned char flag)
     return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a1ed0 size=0x18
+#include "CRestore.h"
+char CRestore::vfunc16()
+{
+	char c = 0;
+	sub_101a1f90(&c, 1);
+	return c;
+}
+// END FUNCTION
