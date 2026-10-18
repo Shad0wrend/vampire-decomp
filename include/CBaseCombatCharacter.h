@@ -36,6 +36,7 @@ public:
 	int vfunc393();
 	void vfunc403();
 	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
+	void vfunc119();	// "CBaseCombatCharacter::Kill": scope trace (entity name), then CBaseEntity::vfunc119
 
 	char m_pad03e0[0x13a0 - 0x3e0];
 	int m_field13a0;
