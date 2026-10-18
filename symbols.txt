@@ -1214,6 +1214,7 @@
 0x1000c09a func   ?vfunc214@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc214
 0x1000c0b8 func   ?vfunc0@CChoreoEventCallback@@UAEXMHH@Z CChoreoEventCallback::vfunc0
 0x1000c0d6 func   ?sub_103cab50@@YIHPAD@Z sub_103cab50
+0x1000c103 func   ?vfunc5@CNPC_VMingXiaoTentacle@@QAEPAV1@I@Z CNPC_VMingXiaoTentacle::vfunc5
 0x1000c126 func   _info_node_cover_low info_node_cover_low
 0x1000c12b func   _weapon_physcannon weapon_physcannon
 0x1000c18a func   ?vfunc359@CNPC_VGargoyle@@UAEHH@Z CNPC_VGargoyle::vfunc359
