@@ -3136,6 +3136,26 @@ int __fastcall sub_10096600(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097b00 size=0x36
+extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
+
+struct CUtlMemory60 {
+	void *m_pMemory; int m_allocationCount; int m_growSize;
+	// TARGET: CUtlMemory60::sub_10097b00
+	CUtlMemory60 *sub_10097b00(int growSize, int allocationCount);
+};
+
+CUtlMemory60 *CUtlMemory60::sub_10097b00(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount)
+		m_pMemory = Plat_Alloc(allocationCount * 0x3c);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098810 size=0xb
 CUnknown10098810 *CUnknown10098810::sub_10098810()
 {
