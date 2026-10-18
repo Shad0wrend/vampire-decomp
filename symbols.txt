@@ -510,6 +510,7 @@
 0x100065be func   ?sub_1042d9a0@CUnknown1042d9a0@@QAEGXZ CUnknown1042d9a0::sub_1042d9a0
 0x100065d2 func   ?vfunc126@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc126
 0x1000665e func   ?sub_100eb130@@YIXPAH@Z sub_100eb130
+0x10006681 func   ?sub_10430020@@YAII@Z sub_10430020
 0x100066b8 func   ?vfunc552@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc552
 0x100066c7 func   ?sub_102180a0@@YIXPADHH@Z sub_102180a0
 0x100066ef func   ?sub_1016b460@CUnknown1016b460@@QAEXHHH@Z CUnknown1016b460::sub_1016b460
