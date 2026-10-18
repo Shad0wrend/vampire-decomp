@@ -243,6 +243,7 @@
 0x10003bc0 func   ?sub_103a7760@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::sub_103a7760
 0x10003bc5 func   _vampireprojectile vampireprojectile
 0x10003be8 func   ?sub_10203e30@@YAXH@Z sub_10203e30
+0x10003c29 func   ?vfunc420@CNPC_VTzimisceHeadClaw@@UAEXXZ CNPC_VTzimisceHeadClaw::vfunc420
 0x10003c65 func   ?sub_1023f060@@YAXPAI@Z sub_1023f060
 0x10003c83 func   _item_k_edane_key item_k_edane_key
 0x10003cb0 func   ?vfunc2@CTETParticleHUD@@UAEPAV1@I@Z CTETParticleHUD::vfunc2
