@@ -23901,6 +23901,14 @@ void sub_10430440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10430470 size=0x36
+#pragma optimize("", off)
+unsigned int sub_10430470(unsigned int a)
+{
+	return (a ^ 0xde0eb870) ^ (((((a ^ 0xde0eb870) & 0x65733e35) ^ 0xe88852f8) + 0x2cd78200 ^ 0xb69a9b0d) & 0x9a8cc1ca);
+}
+// END FUNCTION
+
 // FUNCTION: 0x104304c0 size=0x1f
 #pragma optimize("", off)
 unsigned int sub_104304c0(unsigned int x)
