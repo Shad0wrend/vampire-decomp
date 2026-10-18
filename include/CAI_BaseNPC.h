@@ -6,6 +6,7 @@
 
 class CBaseEntity;
 class CAI_Motor;
+class Vector;
 
 #define CAI_NPC_V(n) virtual void vfunc##n();
 #define CAI_NPC_V10(p) CAI_NPC_V(p##0) CAI_NPC_V(p##1) CAI_NPC_V(p##2) CAI_NPC_V(p##3) CAI_NPC_V(p##4) CAI_NPC_V(p##5) CAI_NPC_V(p##6) CAI_NPC_V(p##7) CAI_NPC_V(p##8) CAI_NPC_V(p##9)
@@ -48,7 +49,7 @@ public:
 	CAI_NPC_V(511) CAI_NPC_V(512) CAI_NPC_V(513) CAI_NPC_V(514) CAI_NPC_V(515)
 	virtual float vfunc516();
 	CAI_NPC_V(517) CAI_NPC_V(518)
-	virtual void vfunc519(int a, int b, int c, int d);	// when the debug convar is set, forwards to slot 14 of the object at +0x5d44
+	virtual void vfunc519(int a, Vector v);	// when the debug convar is set, forwards to slot 14 of the object at +0x5d44
 	virtual float vfunc520(int a);	// forwards a to slot 15 of the object pointed to at +0x5d44 and returns its float result
 	CAI_NPC_V(521) CAI_NPC_V(522) CAI_NPC_V(523) CAI_NPC_V(524) CAI_NPC_V(525) CAI_NPC_V(526) CAI_NPC_V(527) CAI_NPC_V(528) CAI_NPC_V(529)
 	CAI_NPC_V10(53) CAI_NPC_V10(54)
