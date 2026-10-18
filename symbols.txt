@@ -1873,6 +1873,7 @@
 0x100152e9 func   ?sub_1009b440@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b440
 0x10015325 func   ?sub_1010cbc0@CMem8f_t@@QAEXH@Z CMem8f_t::sub_1010cbc0
 0x10015334 func   ??0CBaseTempEntityHead@@QAE@PBD@Z CBaseTempEntityHead::CBaseTempEntityHead
+0x10015339 func   ?sub_10359190@@YADXZ sub_10359190
 0x10015370 func   ?vfunc51@CMultiplayRules@@UAE?AVVector@@PAVCBaseEntity@@@Z CMultiplayRules::vfunc51
 0x1001538e func   ?sub_10079910@@YIXPAUObj@@HH@Z sub_10079910
 0x10015393 func   _item_w_sabbatleader_attack item_w_sabbatleader_attack

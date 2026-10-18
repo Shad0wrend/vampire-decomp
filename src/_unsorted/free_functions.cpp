@@ -16390,6 +16390,26 @@ extern "C" GP *bodyque()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10359190 size=0x33
+void sub_1000b15e();
+void sub_1000215d();
+extern int g_10628a4c;
+extern char g_10628a48;
+extern int g_10936b68;
+
+char sub_10359190()
+{
+    sub_1000b15e();
+    if (g_10628a4c != g_10936b68) {
+        sub_1000215d();
+        g_10628a48 = 1;
+        g_10628a4c = g_10936b68;
+        return 1;
+    }
+    return g_10628a48;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10359ba0 size=0x8
 void __fastcall sub_10359ba0(int *p) { p[3] = 0; }
 // END FUNCTION
