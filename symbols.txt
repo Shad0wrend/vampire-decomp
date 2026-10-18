@@ -395,6 +395,7 @@
 0x10005984 func   _item_k_clinic_maintenance_key item_k_clinic_maintenance_key
 0x100059cf func   ?sub_10026c70@CBaseEntity@@QAEXXZ CBaseEntity::sub_10026c70
 0x100059fc func   ?sub_102a9750@CUnknown102a9750@@QAEXH@Z CUnknown102a9750::sub_102a9750
+0x10005a0b func   ?vfunc433@CNPC_VAndreiBlood@@QAEXXZ CNPC_VAndreiBlood::vfunc433
 0x10005ab0 func   ?sub_10206300@@YIPAHPAHHH@Z sub_10206300
 0x10005add func   ?sub_103e1680@@YAMXZ sub_103e1680
 0x10005ae7 func   ??0CWeaponMelee_TzimisceMelee@@QAE@XZ CWeaponMelee_TzimisceMelee::CWeaponMelee_TzimisceMelee

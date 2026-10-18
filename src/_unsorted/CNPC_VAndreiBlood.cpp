@@ -49,6 +49,15 @@ int CNPC_VAndreiBlood::vfunc127(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035d180 size=0x13
+#include "CNPC_VAndreiBlood.h"
+void CNPC_VAndreiBlood::vfunc433()
+{
+	sub_102b27f0();
+	sub_10015839(0x79);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035dba0 size=0x64
 #include "CNPC_VAndreiBlood.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
