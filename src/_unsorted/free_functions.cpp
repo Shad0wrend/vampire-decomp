@@ -7822,6 +7822,44 @@ int CUnknown101346e0::sub_101346e0(int steps)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134f10 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10577244[2];
+void sub_100130c0();
+void sub_1000fe48();
+
+int *sub_10134f10()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bInValue", {0x450, 0}, 1, 6, "InitialValue" },
+        { 5, "m_bInValue", {0x450, 0}, 1, 0xe, "SetValue" },
+        { 5, "InputSetValueTest", {0, 0}, 1, 8, "SetValueTest", 0, (void *)sub_100130c0 },
+        { 0, "InputTest", {0, 0}, 1, 8, "Test", 0, (void *)sub_1000fe48 },
+        { 10, "m_OnTrue", {0x454, 0}, 1, 0x16, "OnTrue", g_1055dc70 },
+        { 10, "m_OnFalse", {0x46c, 0}, 1, 0x16, "OnFalse", g_1055dc70 },
+    };
+    g_10577244[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10577244[0] = (int)&dataDesc[1];
+    return g_10577244;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136330 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
