@@ -45,3 +45,31 @@ void CBasePlayer::vfunc408()
 	m_b19F6 = false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10168e10 size=0x32
+#include "CBasePlayer.h"
+
+struct EntInfo {
+	CBaseEntity *m_pEntity;
+	unsigned int m_serial;
+	int m_pad;
+};
+
+struct EntList {
+	int m_hdr;
+	EntInfo m_entries[1];
+};
+
+extern EntList *g_10566458;
+
+bool CBasePlayer::sub_10168e10()
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0xfe8);
+	if (h != 0xffffffff) {
+		EntInfo *info = &g_10566458->m_entries[h & 0x1fff];
+		if (info->m_serial == (h >> 13) && info->m_pEntity)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
