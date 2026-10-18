@@ -10,6 +10,7 @@
 #include "CBaseDoor.h"
 #include "CBaseFire.h"
 #include "CCameraAnimated.h"
+#include "CFireSmoke.h"
 #include "CHL2_Player.h"
 #include "CKeepUpright.h"
 #include "CNPC_VMingXiaoTentacle.h"
