@@ -22,3 +22,26 @@ bool S100a2110::sub_100a2110(SVec **pp)
     return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100a21a0 size=0x58
+#include "CThinkContextsSaveDataOps.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+void CThinkContextsSaveDataOps::vfunc3(void *pField)
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "CThinkContextsSaveDataOps::MakeEmpty";
+	g_109f3620[*g_109f3680].m_pszName = "";
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	(*g_109f3680)--;
+}
+// END FUNCTION
