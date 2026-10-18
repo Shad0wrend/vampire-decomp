@@ -1455,6 +1455,13 @@ S10046310 *S10046310::sub_10046310(int c, int count, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10046b10 size=0x13
+bool sub_10046b10(const unsigned int *a, const unsigned int *b)
+{
+	return *a < *b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10049da0 size=0x76
 struct Elem { char data[0x38]; };
 struct Mem {
