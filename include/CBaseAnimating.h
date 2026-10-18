@@ -15,6 +15,10 @@ public:
 	char sub_100903e0();	// "CBaseAnimating::IsRagdoll": (field at +0x168) == 0x17
 	void sub_10096490(int set);	// "CBaseAnimating::SetHitboxSet": stores the argument at +0x680
 
+	int sub_10092550(int a);	// "CBaseAnimating::LookupBone"
+	void sub_100926e0(int bone, int b, int c);	// "CBaseAnimating::GetBonePosition0"
+	void sub_10092610(int a, int b, int c);	// "CBaseAnimating::GetBonePosition01": LookupBone(a), then GetBonePosition0(bone, b, c)
+
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
 };
