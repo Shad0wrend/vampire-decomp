@@ -2596,6 +2596,28 @@ void S10075c20::sub_10075c20(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075c70 size=0x19
+struct S10075c70 {
+	char m_pad[0x104];
+	char m_name[64];
+	// TARGET: S10075c70::sub_10075c70
+	void sub_10075c70(const char *src);
+};
+
+void S10075c70::sub_10075c70(const char *src)
+{
+	const char *p = src;
+	char *d = m_name;
+	char c;
+	do {
+		c = *p;
+		*d = c;
+		p++;
+		d++;
+	} while (c != 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075ce0 size=0xd
 #include "CUnknown10077730.h"
 
