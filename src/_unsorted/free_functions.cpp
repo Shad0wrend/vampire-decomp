@@ -13795,6 +13795,29 @@ int *CUnknown102c6590::sub_102c6590(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c66f0 size=0x40
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int size);
+struct UtlVec8 {
+	char *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	char *m_pElements;
+	UtlVec8 *sub_102c66f0(int growSize, int allocationCount);
+};
+UtlVec8 *UtlVec8::sub_102c66f0(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount)
+		m_pMemory = (char *)Plat_Alloc(allocationCount * 8);
+	m_size = 0;
+	m_pElements = m_pMemory;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6740 size=0xc
 CUnknown102c6740_Elem *CUnknown102c6740::sub_102c6740(int index)
 {
