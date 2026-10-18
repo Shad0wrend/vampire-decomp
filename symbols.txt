@@ -427,6 +427,7 @@
 0x100049f8 func   ?sub_102f48b0@NodeGraph@@QAE_NHH@Z NodeGraph::sub_102f48b0
 0x10004a5c func   ?sub_1038f290@CNPC_VManBat@@QAE_NXZ CNPC_VManBat::sub_1038f290
 0x10004aac func   _player_pickup player_pickup
+0x10004abb func   ?vfunc5@CBreakable@@QAEPAV1@I@Z CBreakable::vfunc5
 0x10004ac0 func   _item_g_guy_magazine item_g_guy_magazine
 0x10004b01 func   ?vfunc546@CNPC_Crow@@QAEHH@Z CNPC_Crow::vfunc546
 0x10004b1a func   ?vfunc127@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc127
