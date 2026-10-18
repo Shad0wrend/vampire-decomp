@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1035b4f0 size=0x1d
+#include "CGenericSabbat_NPC.h"
+struct A { int sub_10012300(int); };
+struct B { int sub_1000aed4(int); };
+extern A g_1093a350;
+extern B g_10936c74;
+int CGenericSabbat_NPC::vfunc546(int x)
+{
+    return g_10936c74.sub_1000aed4(g_1093a350.sub_10012300(x));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b5d0 size=0xe9
 #include "CGenericSabbat_NPC.h"
 
