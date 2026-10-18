@@ -9465,6 +9465,14 @@ struct CUnknown101c2b10 { char p[0x4a]; char a; void sub_101c2b10(char v); };
 void CUnknown101c2b10::sub_101c2b10(char v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101c4460 size=0x11
+void sub_101c4460(int *dst, const int *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4490 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
