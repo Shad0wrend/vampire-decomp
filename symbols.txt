@@ -2036,6 +2036,7 @@
 0x10014f3d func   ?sub_101bc000@@YIXPAH@Z sub_101bc000
 0x10014f56 func   ?vfunc305@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc305
 0x10014f88 func   ?sub_100c89e0@@YIXPADHH@Z sub_100c89e0
+0x10014fba func   ?vfunc5@CEnvParticle@@QAEPAV1@I@Z CEnvParticle::vfunc5
 0x10015019 func   ?sub_10366d60@@YADXZ sub_10366d60
 0x1001505f func   ?sub_10237c30@@YAXXZ sub_10237c30
 0x10015078 func   ?sub_10221be0@QuestJournal@@QAEDH@Z QuestJournal::sub_10221be0
