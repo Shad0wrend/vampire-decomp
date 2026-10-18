@@ -12968,6 +12968,26 @@ void CUnknown102b5dc0::sub_102b5dc0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b97a0 size=0x33
+void sub_1000b15e();
+void sub_10002914();
+extern int g_105d105c;
+extern char g_105d1058;
+extern int g_10936b68;
+
+char sub_102b97a0()
+{
+    sub_1000b15e();
+    if (g_105d105c != g_10936b68) {
+        sub_10002914();
+        g_105d1058 = 1;
+        g_105d105c = g_10936b68;
+        return 1;
+    }
+    return g_105d1058;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c1170 size=0x85
 #include "CAI_BaseNPCTroika.h"
 
