@@ -12,9 +12,11 @@ class CWeaponMelee
 public:
 	CWeaponMelee();
 	virtual void vfunc0();
+	virtual void vfunc367(int a, int b, int c);	// forwards to sub_103ea7e0 with the constant 0x4b
 	char m_pad0004[0x8b8 - 4];
 
 	void sub_103ea5b0(CWeaponMeleeEvent *pEvent, int b);	// slot 370
+	void sub_103ea7e0(int kind, int a, int b, int c);
 };
 
 class CWeaponMelee_TzimisceMelee : public CWeaponMelee
