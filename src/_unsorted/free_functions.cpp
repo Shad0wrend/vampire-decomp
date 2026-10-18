@@ -3323,6 +3323,18 @@ void __fastcall sub_1007ee20(int *p)
 void __fastcall sub_1007ee40(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1007f3d0 size=0x17
+struct E8 { int a, b; };
+
+void sub_1007f3d0(E8 *dst, const E8 *src)
+{
+	if (dst) {
+		dst->a = src->a;
+		dst->b = src->b;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f510 size=0x11
 void sub_1007f510(int *dst, const int *src)
 {
