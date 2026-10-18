@@ -36,3 +36,17 @@ void CBatSwarm::vfunc141(int *pRef, int unused, void *pInfo)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x100ba0c0 size=0x1c
+#include "CBatSwarm.h"
+
+struct S100ba0c0 { char pad[0xa8]; int m_field; };
+
+bool CBatSwarm::sub_100ba0c0(void *pEntity)
+{
+	S100ba0c0 *p = (S100ba0c0 *)pEntity;
+	if (p && p->m_field)
+		return true;
+	return false;
+}
+// END FUNCTION
