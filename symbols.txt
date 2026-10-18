@@ -193,6 +193,7 @@
 0x10002acc func   ?vfunc404@CNPC_VNewscaster@@UAEHH@Z CNPC_VNewscaster::vfunc404
 0x10002ae5 func   _prop_ragdoll_attached prop_ragdoll_attached
 0x10002af4 func   _item_g_edane_print_report item_g_edane_print_report
+0x10002b30 func   ?vfunc5@CElderVitaePack@@QAEPAV1@I@Z CElderVitaePack::vfunc5
 0x10002b49 func   ?sub_101f4570@TSeg@@QAEXHPAH0@Z TSeg::sub_101f4570
 0x10002b94 func   ?sub_1004e1c0@CPhysBox@@QAE_NH@Z CPhysBox::sub_1004e1c0
 0x10002b9e func   _env_particle_hud env_particle_hud
