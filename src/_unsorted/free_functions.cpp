@@ -3560,6 +3560,28 @@ void CBaseEntity::sub_1009c4c0(int a, const char *fmt, const char *array, int co
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009ee80 size=0x9f
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_1009ee80(CBaseEntity *pEnt)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::SetAimEnt";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (pEnt)
+        *(unsigned int *)((char *)this + 0x37c) = *pEnt->vfunc1();
+    else
+        *(unsigned int *)((char *)this + 0x37c) = 0xffffffff;
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f200 size=0x85
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
