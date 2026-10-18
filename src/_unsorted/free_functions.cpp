@@ -16562,6 +16562,26 @@ char sub_1035ed00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10360560 size=0x33
+void sub_1000831e();
+void sub_100136a1();
+extern int g_1062c5e8;
+extern char g_1062c5e4;
+extern int g_10936b68;
+
+char sub_10360560()
+{
+    sub_1000831e();
+    if (g_1062c5e8 != g_10936b68) {
+        sub_100136a1();
+        g_1062c5e4 = 1;
+        g_1062c5e8 = g_10936b68;
+        return 1;
+    }
+    return g_1062c5e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10362670 size=0x81
 #include "CNPC_VAsianVampire.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
