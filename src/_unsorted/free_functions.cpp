@@ -1968,6 +1968,18 @@ void UtlMem::sub_10055ec0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056a60 size=0x14
+#include "CUnknown10056a00.h"
+
+void CUnknown10056a00::sub_10056a60()
+{
+	if (m_bFlag453)
+		sub_10056a30();
+	else
+		sub_10056a00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057660 size=0xc
 CUnknown10057680 *CUnknown10057680::sub_10057660()
 {

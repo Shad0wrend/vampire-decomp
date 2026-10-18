@@ -970,6 +970,7 @@
 0x1000c5b8 func   ?sub_10107550@Mem400@@QAEXH@Z Mem400::sub_10107550
 0x1000c630 func   _item_g_drugs_morphine_bottle item_g_drugs_morphine_bottle
 0x1000c644 func   _info_node_patrol_point info_node_patrol_point
+0x1000c6a3 func   ?sub_10056a60@CUnknown10056a00@@QAEXXZ CUnknown10056a00::sub_10056a60
 0x1000c702 func   _item_g_garys_film item_g_garys_film
 0x1000c761 func   ?sub_102a9c80@Obj@@QAEPAU1@HHHHH@Z Obj::sub_102a9c80
 0x1000c784 func   ?vfunc61@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc61
