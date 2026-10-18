@@ -14344,6 +14344,14 @@ CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102ce9f0 size=0x11
+void sub_102ce9f0(int *dst, const int *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cef30 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
