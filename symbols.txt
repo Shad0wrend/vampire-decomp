@@ -1381,6 +1381,7 @@
 0x1000d599 func   _npc_VGuard1 npc_VGuard1
 0x1000d5b2 func   ?sub_103b1d10@@YADXZ sub_103b1d10
 0x1000d5bc func   _physics_prop physics_prop
+0x1000d5d0 func   ?vfunc5@CNPC_VRat@@QAEPAV1@I@Z CNPC_VRat::vfunc5
 0x1000d63e func   ?vfunc103@CPhysConstraint@@UAEXXZ CPhysConstraint::vfunc103
 0x1000d666 func   _item_g_astrolite item_g_astrolite
 0x1000d670 func   ?vfunc5@CNPC_VCop@@QAEPAV1@I@Z CNPC_VCop::vfunc5
