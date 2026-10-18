@@ -18,6 +18,32 @@ void CNPC_VAsianVampire::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10361490 size=0x72
+#include "CNPC_VAsianVampire.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+struct CGlobalVarsStub {
+	char pad[0xc];
+	float curtime;
+};
+extern CGlobalVarsStub *g_1070b228;
+extern float g_104a9304;
+
+void CNPC_VAsianVampire::vfunc431()
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VAsianVampire::NPCThink";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_100052d6();
+	m_flNextThink = g_104a9304 + g_1070b228->curtime;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10361530 size=0x64
 #include "CNPC_VAsianVampire.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
