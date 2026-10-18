@@ -60,6 +60,8 @@ public:
 	void sub_10026c70();	// "CBaseEntity::Think": calls the think function pointer at +0x118
 	int sub_10027570();	// "CBaseEntity::GetSolid": forwards to slot 11 of the collision object at +0x270
 	void sub_1003eb50();
+	void sub_1009b1d0(int a, int b);	// "CBaseEntity::TraceMessageBase"
+	void sub_1009b2c0(int a, int b);	// "CBaseEntity::TraceMessage" (slot 18): scope trace, then sub_1009b1d0(a, b)
 	void sub_1009b440(const char *msg);	// "CBaseEntity::TraceMessageBareBase": DevMsg(msg) when msg is set
 	void sub_1009b500(const char *msg);	// "CBaseEntity::TraceMessageBare" (slot 20): forwards to sub_1009b440
 	void sub_1009b5a0(const char *msg);	// "CBaseEntity::TraceMessageBare" (slot 19): identical to sub_1009b500
