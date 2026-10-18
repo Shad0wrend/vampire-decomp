@@ -6169,6 +6169,34 @@ int *sub_10102410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102aa0 size=0x55
+void *sub_1000db89(int);
+extern int vt_10459f58;
+extern int vt_10459acc;
+extern char g_1056a3cc[];
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+	void sub_100090fc(int a);
+};
+// TARGET: env_shake
+extern "C" GP *env_shake()
+{
+	GP *p = (GP *)sub_1000db89(0x48c);
+	if (p) {
+		p->sub_100090fc(0);
+		*(int **)((char *)p + 0x47c) = &vt_10459f58;
+		*(int **)p = &vt_10459acc;
+	} else {
+		p = 0;
+	}
+	p->name(g_1056a3cc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101030e0 size=0xd
 void CUnknown101030e0::sub_101030e0(int mode)
 {
