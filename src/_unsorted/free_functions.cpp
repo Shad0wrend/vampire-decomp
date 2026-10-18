@@ -418,6 +418,21 @@ void __fastcall sub_10032a40(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032a60 size=0x33
+#include "CUtlMemory20.h"
+extern void *(*g_109f3634)(int);
+
+CUtlMemory20 *CUtlMemory20::sub_10032a60(int growSize, int allocationCount)
+{
+    m_pMemory = 0;
+    m_allocationCount = allocationCount;
+    m_growSize = growSize;
+    if (allocationCount)
+        m_pMemory = (char *)g_109f3634(allocationCount * 20);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032b00 size=0x8
 void __fastcall sub_10032b00(int *p)
 {

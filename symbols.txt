@@ -497,6 +497,7 @@
 0x100073d3 func   ?sub_102ca760@@YIXPAD@Z sub_102ca760
 0x100073f6 func   _momentary_door momentary_door
 0x10007414 func   _phys_pulleyconstraint phys_pulleyconstraint
+0x10007450 func   ?sub_10032a60@CUtlMemory20@@QAEPAV1@HH@Z CUtlMemory20::sub_10032a60
 0x1000745f func   _item_k_sarcophagus_key item_k_sarcophagus_key
 0x100074c3 func   _activity_copy_prop activity_copy_prop
 0x100074f0 func   ?vfunc6@ConCommand@@UAEXXZ ConCommand::vfunc6
