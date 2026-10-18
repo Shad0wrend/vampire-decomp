@@ -8,6 +8,7 @@
 #include "CAnchorList.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseDoor.h"
+#include "CBaseFire.h"
 #include "CCameraAnimated.h"
 #include "CHL2_Player.h"
 #include "CKeepUpright.h"
