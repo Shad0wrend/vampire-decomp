@@ -10014,6 +10014,17 @@ void CUnknown101d9210::sub_101d9210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d9840 size=0x16
+#include "CUnknown101d9840.h"
+
+char CUnknown101d9840::sub_101d9840(int index)
+{
+	if (index >= 0 && index < m_count)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101da960 size=0xe
 #include "CUnknown101da960.h"
 extern const char *g_105a1bdc[];
