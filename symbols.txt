@@ -117,6 +117,7 @@
 0x1000204f func   ?sub_10227b20@@YIXPAUMem4@@HH@Z sub_10227b20
 0x1000209a func   ?sub_100437e0@CUnknown100437e0@@QAEXH@Z CUnknown100437e0::sub_100437e0
 0x100020d6 func   ?vfunc2@CTESpriteSpray@@UAEPAV1@I@Z CTESpriteSpray::vfunc2
+0x10002112 func   ?vfunc5@CHL2_Player@@QAEPAV1@I@Z CHL2_Player::vfunc5
 0x1000211c func   _sheriff_teleport_bats sheriff_teleport_bats
 0x1000212b func   _item_k_shrekhub_three_key item_k_shrekhub_three_key
 0x10002153 func   _item_g_car_stereo item_g_car_stereo

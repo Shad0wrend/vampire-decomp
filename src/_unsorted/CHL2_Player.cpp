@@ -36,6 +36,21 @@ float CHL2_Player::vfunc481()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f4b0 size=0x1e
+#include "CHL2_Player.h"
+
+void sub_100aa7b0(void *p);
+
+// TARGET: CHL2_Player::vfunc5
+CHL2_Player *CHL2_Player::vfunc5(unsigned int flags)
+{
+	sub_100140f1();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103528d0 size=0x70
 #include "CHL2_Player.h"
 struct Globals { char pad[0x10]; float frametime; };
