@@ -51,6 +51,12 @@ public:
 	virtual bool vfunc486();
 	virtual void v487(); virtual void v488(); virtual void v489();
 	virtual void vfunc490();
+	VT_SLOTS100(w0)
+	VT_SLOTS10(w10)
+	VT_SLOTS10(w11)
+	VT_SLOTS10(w12)
+	virtual void w130(); virtual void w131();
+	virtual void vfunc623();
 
 	char m_pad0004[0x2dc];
 	int m_n02e0;
