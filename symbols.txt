@@ -1732,6 +1732,7 @@
 0x100110e5 func   ?sub_10430370@@YAII@Z sub_10430370
 0x100110f9 func   ?sub_10075bd0@S10075bd0@@QAEXPBD@Z S10075bd0::sub_10075bd0
 0x100110fe func   ?sub_101ac2f0@CAmbientGeneric@@QAEIXZ CAmbientGeneric::sub_101ac2f0
+0x1001110d func   ?vfunc5@CWorldEvents@@QAEPAV1@I@Z CWorldEvents::vfunc5
 0x1001113f func   ?vfunc306@CBaseCombatWeapon@@UAEXH@Z CBaseCombatWeapon::vfunc306
 0x10011176 func   ?sub_1027d9f0@@YI_NPADHHH@Z sub_1027d9f0
 0x100111a3 func   ?sub_10238380@@YAXXZ sub_10238380
