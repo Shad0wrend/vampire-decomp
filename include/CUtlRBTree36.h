@@ -44,6 +44,8 @@ public:
 
 	Links_t &LinksW(unsigned short i) { return m_pElements[i].m_Links; }
 	unsigned short Parent(unsigned short i) const { return sub_10009b51(i).m_Parent; }
+	unsigned short ParentInl(unsigned short i) const { return Links(i).m_Parent; }
 	bool IsLeftChildInl(unsigned short i) const { return sub_10009b51(Parent(i)).m_Left == i; }
 	bool IsRightChildInl(unsigned short i) const { return sub_10009b51(Parent(i)).m_Right == i; }
+	bool IsLeftChildMix(unsigned short i) const { return Links(Parent(i)).m_Left == i; }
 };
