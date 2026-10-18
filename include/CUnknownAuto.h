@@ -5,6 +5,7 @@
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_InterestingPlaceConverstation.h"
 #include "CAI_Navigator.h"
+#include "CAnchorList.h"
 #include "CBaseCombatCharacter.h"
 #include "CBaseDoor.h"
 #include "CCameraAnimated.h"
