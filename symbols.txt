@@ -2438,6 +2438,7 @@
 0x100152c1 func   _prop_physics prop_physics
 0x100152e9 func   ?sub_1009b440@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b440
 0x100152f3 func   ?sub_10027890@S10027890@@QAEXAAUinputdata_t@@@Z S10027890::sub_10027890
+0x100152fd func   ?vfunc5@CBreakableSurface@@QAEPAV1@I@Z CBreakableSurface::vfunc5
 0x10015325 func   ?sub_1010cbc0@CMem8f_t@@QAEXH@Z CMem8f_t::sub_1010cbc0
 0x10015334 func   ??0CBaseTempEntityHead@@QAE@PBD@Z CBaseTempEntityHead::CBaseTempEntityHead
 0x10015339 func   ?sub_10359190@@YADXZ sub_10359190
