@@ -13,6 +13,32 @@ int CNPC_VSheriffMan::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ae4f0 size=0x36
+#include "CNPC_VSheriffMan.h"
+
+struct CUnknownMember10015708
+{
+	void sub_10015708();	// member destructor
+};
+
+struct CBaseEntityDtor
+{
+	void sub_1028d610();	// CBaseEntity destructor body
+};
+
+void sub_100aa7b0(void *p);
+
+CNPC_VSheriffMan *CNPC_VSheriffMan::vfunc5(unsigned int flags)
+{
+	((CUnknownMember10015708 *)((char *)this + 0x66b8))->sub_10015708();
+	((CUnknownMember10015708 *)((char *)this + 0x6664))->sub_10015708();
+	((CBaseEntityDtor *)this)->sub_1028d610();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b0290 size=0x64
 #include "CNPC_VSheriffMan.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
