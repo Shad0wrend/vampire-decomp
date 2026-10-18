@@ -1583,6 +1583,7 @@
 0x100103f7 func   ?sub_100ecc60@EntryTable@@QAEHHH@Z EntryTable::sub_100ecc60
 0x10010492 func   ?sub_101251e0@@YIXPAD@Z sub_101251e0
 0x100104b0 func   ?sub_1019d130@CUnknown1019d130@@QAEXPAVCBaseEntity@@@Z CUnknown1019d130::sub_1019d130
+0x100104c4 func   ?vfunc5@CParamsParticle@@QAEPAV1@I@Z CParamsParticle::vfunc5
 0x100104c9 func   _item_k_fu_office_key item_k_fu_office_key
 0x10010519 func   ?sub_1013fd20@CUtlMemory96@@QAEXH@Z CUtlMemory96::sub_1013fd20
 0x10010532 func   _trigger_teleport trigger_teleport
