@@ -36,4 +36,7 @@ public:
 	void sub_1000c27a(int arg);
 	int vfunc127(int arg);	// slot 127, not modelled as virtual yet
 	int sub_1000b28f(int arg);
+	void vfunc433();	// slot 433, not modelled as virtual yet
+	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433, called directly
+	void sub_10015839(int a);	// slot 616 implementation shared with CAI_BaseNPCTroika
 };
