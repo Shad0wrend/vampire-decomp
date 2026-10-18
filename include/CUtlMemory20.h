@@ -9,4 +9,5 @@ public:
 	int m_growSize;
 
 	CUtlMemory20 *sub_10032a60(int growSize, int allocationCount);	// constructor: allocates allocationCount * 20 bytes
+	void sub_100436c0(int num);	// "CUtlMemory::Grow": grows the allocation by num elements
 };
