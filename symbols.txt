@@ -1483,6 +1483,7 @@
 0x1000f47f func   ?sub_100dc300@Rec64@@QAEXH@Z Rec64::sub_100dc300
 0x1000f4c5 func   ?sub_101e4a90@CUnknown101e4a90@@QAEXXZ CUnknown101e4a90::sub_101e4a90
 0x1000f4ca func   ?vfunc62@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc62
+0x1000f4de func   ?sub_103c0860@@YIXPAUE@@HH@Z sub_103c0860
 0x1000f4e8 func   ?sub_1027fc40@CUnknown1027fc40@@QAEXXZ CUnknown1027fc40::sub_1027fc40
 0x1000f4ed func   ?vfunc191@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc191
 0x1000f501 func   ?sub_10258870@CUnknown10258870@@QAEXXZ CUnknown10258870::sub_10258870

@@ -19287,6 +19287,25 @@ bool CUnknown10381be0::sub_103be130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c0860 size=0x4a
+struct V3 { float x, y, z; };
+#define D(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+struct E {
+	D(a) D(b) D(c) D(d) D(e) D(f)
+	virtual void g0(); virtual void g1();
+	virtual void set(V3 *v);
+};
+typedef V3 *(__fastcall *PGetV)(E *);
+typedef float (__fastcall *PGetF)(E *);
+void __fastcall sub_103c0860(E *e, int, int)
+{
+	void **vt = *(void ***)e;
+	V3 v = *((PGetV)vt[220])(e);
+	v.z = ((PGetF)(*(void ***)e)[522])(e) + v.z;
+	e->set(&v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c0be0 size=0x33
 void sub_10014d7b();
 void sub_1000b3bb();
