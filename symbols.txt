@@ -1801,6 +1801,7 @@
 0x100127d8 func   ?sub_102507b0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_102507b0
 0x100127e2 func   ?vfunc35@CPushable@@UAEHH@Z CPushable::vfunc35
 0x10012805 func   ?sub_1030b7c0@CUnknown1030bc20@@QAEPAUCUnknown1030bc20_Record@@XZ CUnknown1030bc20::sub_1030b7c0
+0x1001285a func   ?vfunc5@CEnvLaser@@QAEPAV1@I@Z CEnvLaser::vfunc5
 0x10012864 func   _item_k_murietta_key item_k_murietta_key
 0x10012887 func   ?sub_100b39c0@@YIHPAD@Z sub_100b39c0
 0x10012936 func   ?vfunc461@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc461
