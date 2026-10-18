@@ -2894,6 +2894,14 @@ void __fastcall sub_1007ee20(int *p)
 void __fastcall sub_1007ee40(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1007f510 size=0x11
+void sub_1007f510(int *dst, const int *src)
+{
+	if (dst)
+		*dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f580 size=0x67
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
