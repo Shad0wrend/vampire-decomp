@@ -10,4 +10,5 @@ public:
 	int m_nSuppressCount;			// 0x0010
 
 	void sub_100584a0(CUnknown1019d130 *filter, int a, int b, int c);	// slot 5
+	void sub_10058d70(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g);	// slot 17
 };
