@@ -1140,6 +1140,7 @@
 0x1000b843 func   ?sub_100a8220@CUnknown100a8220@@QAEIXZ CUnknown100a8220::sub_100a8220
 0x1000b87f func   _prop_model_state prop_model_state
 0x1000b89d func   ?vfunc5@CPhysicsSpring@@UAEPAV1@I@Z CPhysicsSpring::vfunc5
+0x1000b8bb func   ?vfunc0@ConCommandBase@@QAEPAV1@I@Z ConCommandBase::vfunc0
 0x1000b8e8 func   ?sub_1012cf70@CUnknown1012cf70@@QAEXH@Z CUnknown1012cf70::sub_1012cf70
 0x1000b8f7 func   ?sub_10077730@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10077730
 0x1000b901 func   ?sub_10098810@CUnknown10098810@@QAEPAV1@XZ CUnknown10098810::sub_10098810
