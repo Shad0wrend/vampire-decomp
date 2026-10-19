@@ -15,6 +15,9 @@ public:
 	int m_allocationCount;	// 0x04
 	int m_growSize;	// 0x08
 	int m_Size;	// 0x0c
+	CExperienceAward *m_pElements;	// 0x10
+	char m_flag14;	// 0x14
 
 	CExperienceAward *sub_10222670(int index);	// "ExperienceTable::GetAward": scope trace, record `index` or a warning and the static dummy record
+	void sub_102223f0();	// "ExperienceTable::PurgeExperience": scope trace, frees the two strings of every record and purges the memory
 };
