@@ -11,6 +11,14 @@ struct CBaseEntityColor32	// four bytes passed by value to the Dump helpers
 	unsigned char r, g, b, a;
 };
 
+struct CBaseEntityThinkContext	// 16 byte element of the think context vector at +0x1b8
+{
+	const char *m_pszContext;
+	int m_a;
+	int m_b;
+	int m_c;
+};
+
 class CBaseEntity
 {
 public:
@@ -143,6 +151,7 @@ public:
 	void sub_100aaa40(int group);	// "CBaseEntity::SetCollisionGroup": scope trace (entity name), on change stores group at +0x368 and calls slot 25 of the object at +0x36c
 	void sub_100aaf30();	// "CBaseEntity::PostSpawn": scope trace (entity name), then slot 11(name or ""), slot 13(classname or ""), and slot 77 when the byte at +0xe0 is set
 	void sub_100abbf0(int a, int b);
+	int sub_100ac250(const char *context);	// "CBaseEntity::GetIndexForContext": scope trace (entity name), index of the first think context whose name matches (32 chars), or -1
 	void sub_100ac920(inputdata_t *pInput);	// "CBaseEntity::InputColor": scope trace (entity name), stores the three low bytes of the input's color32 at +0x1a0..0x1a2
 	void sub_100ac9f0(inputdata_t *pInput);	// "CBaseEntity::InputUse": scope trace, then slot 173 (activator, caller, 3, 0)
 	void sub_100acef0(int a);	// "CBaseEntity::InputKill": calls vfunc119
@@ -180,7 +189,12 @@ public:
 	void (CBaseEntity::*m_pfn0114)();
 	void (CBaseEntity::*m_pfnThink)();
 	const char *m_classname11c;
-	char m_pad0120[0xe0];
+	char m_pad0120[0x98];
+	CBaseEntityThinkContext *m_pThinkContexts;	// 0x01b8
+	int m_nThinkContextsAlloc;	// 0x01bc
+	int m_pad01c0;
+	int m_nThinkContexts;	// 0x01c4
+	char m_pad01c8[0x200 - 0x1c8];
 	int m_field200;
 	char m_pad0204[0x64];
 	unsigned int m_flags268;
