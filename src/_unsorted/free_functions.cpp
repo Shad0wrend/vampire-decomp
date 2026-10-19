@@ -25662,6 +25662,28 @@ void CBaseCombatCharacter::sub_10346760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103483c0 size=0x9c
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_103483c0(int a, int b, int c)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::BeginMeltEffect";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    *(int *)((char *)this + 0x19a8) = b;
+    *(int *)((char *)this + 0x168) = 0x20;
+    *(int *)((char *)this + 0x19ac) = c;
+    ((CBaseAnimating *)this)->sub_10090890(*(float *)&a);
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349590 size=0x8a
 #include "CUnknown10349590.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
