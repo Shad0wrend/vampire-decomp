@@ -500,6 +500,7 @@
 0x10004539 func   _physics_prop_ragdoll physics_prop_ragdoll
 0x1000453e func   _item_g_giovanni_invitation_victor item_g_giovanni_invitation_victor
 0x10004548 func   ?vfunc2@CTEBloodStream@@UAEPAV1@I@Z CTEBloodStream::vfunc2
+0x10004552 func   ?vfunc516@CAI_BaseHumanoid@@QAEMXZ CAI_BaseHumanoid::vfunc516
 0x100045a2 func   _npc_VScurrying npc_VScurrying
 0x100045b1 func   _scripted_scene scripted_scene
 0x100045ca func   ?sub_10202c40@S4@@QAEPAU1@XZ S4::sub_10202c40
