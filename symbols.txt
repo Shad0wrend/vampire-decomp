@@ -2802,6 +2802,7 @@
 0x1001404c func   ?vfunc5@CFilterName@@QAEPAV1@I@Z CFilterName::vfunc5
 0x1001407e func   _item_g_drugs_pill_bottle item_g_drugs_pill_bottle
 0x100140ab func   ?vfunc546@CNPC_VWerewolf@@QAEHH@Z CNPC_VWerewolf::vfunc546
+0x1001410a func   ?vfunc6@CBaseEntity@@UAEX_N@Z CBaseEntity::vfunc6
 0x10014123 func   ?vfunc0@CAI_CsActList@@UAEXPAUCsActSaveIface@@@Z CAI_CsActList::vfunc0
 0x10014137 func   ?sub_101e01e0@CUnknown101e01e0@@QAEPAUS101df260@@XZ CUnknown101e01e0::sub_101e01e0
 0x10014187 func   _logic_npc_condition logic_npc_condition

@@ -889,6 +889,40 @@ int __fastcall sub_100ad850(CBaseEntity *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b11d0 size=0xc1
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+void sub_100f8e20(CBaseEntity *pEnt);
+
+void CBaseEntity::vfunc6(bool check)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::SetCheckUntouch";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (check) {
+		++*(int *)((char *)this + 0x1ac);
+		if (!(*((unsigned char *)this + 0x26b) & 1)) {
+			m_flags268 |= 0x1000000;
+			sub_100f8e20(this);
+		}
+	} else {
+		m_flags268 &= 0xfeffffff;
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b12e0 size=0x7e
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
