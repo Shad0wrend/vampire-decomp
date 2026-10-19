@@ -29919,6 +29919,40 @@ void CBaseCombatCharacter::sub_1033d8a0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033df80 size=0xdb
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_1033df80()
+{
+	const char *ent;
+	if (this)
+		ent = m_name26c ? m_name26c : g_106b8540;
+	else
+		ent = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::ApplyDisciplineSpawnFlags";
+	g_109f3620[*g_109f3680].b = ent;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	unsigned int spawnFlags = *(unsigned int *)((char *)this + 0x204);
+	if ((unsigned char)(spawnFlags >> 5) & 1)
+		*(unsigned int *)((char *)this + 0xeac) |= 1;
+	if ((unsigned char)(spawnFlags >> 6) & 1)
+		*(unsigned int *)((char *)this + 0xeac) |= 2;
+	if ((unsigned char)(spawnFlags >> 12) & 1)
+		*(unsigned int *)((char *)this + 0xeac) |= 4;
+	if ((unsigned char)(spawnFlags >> 13) & 1)
+		*(unsigned int *)((char *)this + 0xeac) |= 8;
+	if ((unsigned char)(spawnFlags >> 14) & 1)
+		*(unsigned int *)((char *)this + 0xeac) |= 0x10;
+	if ((unsigned char)(spawnFlags >> 15) & 1)
+		*(unsigned int *)((char *)this + 0xeac) |= 0x20;
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033e2b0 size=0x87
 #include "CBaseCombatCharacter.h"
 
