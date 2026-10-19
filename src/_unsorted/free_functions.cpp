@@ -16890,6 +16890,29 @@ void sub_101eab60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eac50 size=0xa3
+#include "CUnknown101eac50.h"
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" char *strcat(char *, const char *);
+extern char g_106b8540[];
+void sub_10203dd0(const char *);
+
+void CUnknown101eac50::sub_101eac50()
+{
+    char buf[128];
+    sprintf(buf, "(%d): %s\n", m_index, m_name ? m_name : g_106b8540);
+    sub_10203dd0(buf);
+    buf[0] = 0;
+    if (m_flags & 1) {
+        strcat(buf, "\tIsDisplayed");
+        if (buf[0]) {
+            strcat(buf, "\n");
+            sub_10203dd0(buf);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eb7f0 size=0x17
 #include "CUnknown101eb7f0.h"
 extern void (__cdecl *g_1073a38c)(CUnknown101eb7f0 *, int);
