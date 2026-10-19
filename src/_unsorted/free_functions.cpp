@@ -6144,6 +6144,38 @@ void sub_100aa7b0(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aaa40 size=0x97
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define V4(x) virtual void x##a(); virtual void x##b(); virtual void x##c(); virtual void x##d();
+#define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
+
+struct PhysShadow {
+	V16(a) V4(b) V4(c)
+	virtual void s24();
+	virtual void v25();
+};
+
+void CBaseEntity::sub_100aaa40(int group)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::SetCollisionGroup";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (m_field368 != group) {
+		m_field368 = group;
+		PhysShadow *obj = *(PhysShadow **)((char *)this + 0x36c);
+		if (obj)
+			obj->v25();
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100abbf0 size=0x71
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
