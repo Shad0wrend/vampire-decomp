@@ -6859,6 +6859,41 @@ bool CBaseEntity::sub_100a5ad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6490 size=0xc3
+extern int *g_109f3680;
+extern const char **g_109f3620;
+extern const char g_105387dc[];
+extern const char g_106b8540[];
+extern const char g_10556528[];
+extern const char g_105564fc[];
+extern void (*g_109f362c)(const char *, ...);
+
+// TARGET: CBaseEntity::sub_100a6490
+void CBaseEntity::sub_100a6490(int pObject)
+{
+    const char *name;
+    if (this) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else {
+        name = g_105387dc;
+    }
+    g_109f3620[*g_109f3680 * 3] = g_10556528;
+    g_109f3620[*g_109f3680 * 3 + 1] = name;
+    g_109f3620[*g_109f3680 * 3 + 2] = g_106b8540;
+    ++*g_109f3680;
+    if (m_obj36c && pObject) {
+        const char *cls = m_classname11c;
+        if (!cls)
+            cls = g_106b8540;
+        g_109f362c(g_105564fc, cls);
+    }
+    m_obj36c = pObject;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6bb0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
