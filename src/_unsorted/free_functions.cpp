@@ -30757,6 +30757,70 @@ int CUnknown10344c80::sub_10344c80(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10345980 size=0xe3
+struct SEntityEntry
+{
+    int m_pad;
+    void *m_pEnt;
+    unsigned int m_serial;
+};
+
+struct SMeleeRecord
+{
+    unsigned int m_hEnt;
+    int m_data[3];
+};
+
+extern int *g_109f3680;
+extern const char **g_109f3620;
+extern const char g_105387dc[];
+extern const char g_106b8540[];
+extern const char g_10623b68[];
+extern SEntityEntry *g_10566458;
+
+static inline void *GetEnt(unsigned int h)
+{
+    if (h == 0xffffffff)
+        return 0;
+    void **q = &g_10566458[h & 0x1fff].m_pEnt;
+    if ((unsigned int)q[1] == (h >> 13))
+        return q[0];
+    return 0;
+}
+
+// TARGET: CBaseCombatCharacter::sub_10345980
+char *CBaseCombatCharacter::sub_10345980(CBaseEntity *pEnt)
+{
+    const char *name;
+    if (this) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else {
+        name = g_105387dc;
+    }
+    g_109f3620[*g_109f3680 * 3] = g_10623b68;
+    g_109f3620[*g_109f3680 * 3 + 1] = name;
+    g_109f3620[*g_109f3680 * 3 + 2] = g_106b8540;
+    ++*g_109f3680;
+    int i = 0;
+    if (0 < *(int *)((char *)this + 0xa94)) {
+        SMeleeRecord *recs = *(SMeleeRecord **)((char *)this + 0xa88);
+        SMeleeRecord *p = recs;
+        do {
+            if (GetEnt(p->m_hEnt) == pEnt) {
+                --*g_109f3680;
+                return (char *)&recs[i];
+            }
+            i++;
+            p++;
+        } while (i < *(int *)((char *)this + 0xa94));
+    }
+    --*g_109f3680;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10346760 size=0x94
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
