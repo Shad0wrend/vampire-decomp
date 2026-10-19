@@ -23690,6 +23690,47 @@ bool CBaseCombatCharacter::sub_10341aa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10342740 size=0x8d
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+// stand-in for the first 342 slots of an entity's virtual table
+struct Slots342 {
+	D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6) D10(a7) D10(a8) D10(a9)
+	D10(b0) D10(b1) D10(b2) D10(b3) D10(b4) D10(b5) D10(b6) D10(b7) D10(b8) D10(b9)
+	D10(c0) D10(c1) D10(c2) D10(c3) D10(c4) D10(c5) D10(c6) D10(c7) D10(c8) D10(c9)
+	D10(d0) D10(d1) D10(d2) D10(d3)
+	virtual void e340(); virtual void e341();
+	virtual bool vfunc342(void *a);
+};
+struct HasFilter {
+	char pad[0x9c];
+	Slots342 *m_pFilter;
+};
+
+bool sub_10342740(void *a, HasFilter *b)
+{
+	g_109f3620[*g_109f3680].a = "FeedVictimFilter";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (!b->m_pFilter) {
+		(*g_109f3680)--;
+		return false;
+	}
+	if (!b->m_pFilter->vfunc342(a)) {
+		(*g_109f3680)--;
+		return false;
+	}
+	(*g_109f3680)--;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349590 size=0x8a
 #include "CUnknown10349590.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
