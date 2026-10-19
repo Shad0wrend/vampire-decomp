@@ -16674,6 +16674,41 @@ bool TInfo::sub_101fdf40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fead0 size=0x93
+#include "CVStatInfo_t.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+
+struct StatMgr {
+	virtual void v0();
+	virtual bool v1();
+	char m_pad04[0x28];
+	int m_field2c;
+};
+extern StatMgr *g_1074e6b4;
+
+bool CVStatInfo_t::sub_101fead0()
+{
+	g_109f3620[*g_109f3680].fn = "CVStatInfo_t::IsPassive";
+	g_109f3620[*g_109f3680].name = "";
+	g_109f3620[*g_109f3680].extra = "";
+	(*g_109f3680)++;
+	if (!g_1074e6b4->v1() && g_1074e6b4->m_field2c) {
+		bool r = (m_flags >> 2) & 1;
+		(*g_109f3680)--;
+		return r;
+	}
+	(*g_109f3680)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fed00 size=0x6d
 struct TraceEnt { const char *a; void *b; void *c; };
 extern int *g_109f3680;
