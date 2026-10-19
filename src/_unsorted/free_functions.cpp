@@ -26325,6 +26325,46 @@ void CNPC_VChangBros::sub_1036c810(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036d100 size=0x9c
+#include "CNPC_VChangBros.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+
+struct ListNode_t {
+	char m_pad0000[0x5d8];
+	ListNode_t *m_pNext;	// 0x5d8
+	int m_type;	// 0x5dc
+};
+extern ListNode_t *g_10925450;
+
+void *CNPC_VChangBros::sub_1036d100()
+{
+	g_109f3620[*g_109f3680].fn = "CNPC_VChangBros::SelectUnitedNode";
+	g_109f3620[*g_109f3680].name = "";
+	g_109f3620[*g_109f3680].extra = "";
+	(*g_109f3680)++;
+	int n = 0;
+	for (ListNode_t *p = g_10925450; p; p = p->m_pNext) {
+		if (p->m_type == 18000) {
+			int mode = *(int *)((char *)this + 0x66b8);
+			if (mode == 0 || (mode == 1 && n > 0)) {
+				(*g_109f3680)--;
+				return p;
+			}
+			n++;
+		}
+	}
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036ec40 size=0x33
 void sub_1000c9b9();
 void sub_100055fb();
