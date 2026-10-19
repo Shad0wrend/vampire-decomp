@@ -4097,6 +4097,41 @@ StatDefault *StatOwner::sub_1006cff0(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006d9d0 size=0xfb
+struct EntInfo { void *pEnt; unsigned int serial; int pad; };
+struct EntTable { int pad; EntInfo info[1]; };
+extern EntTable *g_10566458;
+
+static inline void *GetEnt(unsigned int h)
+{
+	if (h == -1)
+		return 0;
+	EntInfo *p = &g_10566458->info[h & 0x1fff];
+	if (p->serial == (h >> 13))
+		return p->pEnt;
+	return 0;
+}
+
+struct CHandleBase {
+	unsigned int m_Index;
+	bool IsValid() const { return m_Index != -1; }
+};
+
+bool CBaseCineCam::sub_1006d9d0()
+{
+	int flags = ((CBaseEntity *)this)->sub_100b3700();
+	if (flags == -1)
+		return false;
+	if ((flags & 1) && !GetEnt(m_hShot610[0]))
+		return false;
+	if ((flags & 2) && !GetEnt(m_hShot610[1]))
+		return false;
+	if ((flags & 4) && !GetEnt(m_hShot610[2]))
+		return false;
+	return (flags & 8) && !GetEnt(m_hShot610[3]) ? false : ((CHandleBase *)&m_hShot630)->IsValid();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006e890 size=0xe
 bool CUnknown1006e890::sub_1006e890()
 {
