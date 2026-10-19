@@ -24513,6 +24513,46 @@ void CAI_BaseNPC::sub_1028ae60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e360 size=0xd7
+#include "CAI_BaseNPCTroika.h"
+struct EntInfo { CBaseEntity *ent; int serial; int pad; };
+struct Globals { char pad[0xc]; float curtime; };
+extern char *g_10566458;
+extern Globals *g_1070b228;
+extern const float g_1044f02c;
+typedef float *(__fastcall *GetAbsOriginFn)(CBaseEntity *);
+
+static inline CBaseEntity *GetEnt(unsigned int h)
+{
+    if (h != 0xffffffff) {
+        EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+        if (e->serial == (h >> 13))
+            return e->ent;
+    }
+    return 0;
+}
+
+bool CAI_BaseNPCTroika::sub_1028e360()
+{
+    if (GetEnt(m_h6088)) {
+        if (m_f6084 == -1.0f) {
+            float now = g_1070b228->curtime;
+            m_f6084 = now + g_1044f02c;
+        } else if (g_1070b228->curtime >= m_f6084) {
+            *(volatile unsigned int *)&m_h6088 = 0xffffffff;
+            CBaseEntity *pEnt = GetEnt(*(volatile unsigned int *)&m_h608c);
+            float *v = ((GetAbsOriginFn)(*(void ***)pEnt)[217])(pEnt);
+            m_v6090[0] = v[0];
+            m_v6090[1] = v[1];
+            m_v6090[2] = v[2];
+            return true;
+        }
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028eb30 size=0x66
 struct Vec3 { int x, y, z; };
 struct HandleObj {
