@@ -654,6 +654,30 @@ bool __fastcall sub_103404f0(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103408e0 size=0x89
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+const char *CBaseCombatCharacter::vfunc244()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::GetSkeletonModelName";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (sub_10336920()) {
+		(*g_109f3680)--;
+		return "models/character/npc/common/skeleton/skeleton_male.mdl";
+	}
+	(*g_109f3680)--;
+	return "models/character/npc/common/skeleton/skeleton_female.mdl";
+}
+// END FUNCTION
+
 // FUNCTION: 0x103415f0 size=0x6f
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
