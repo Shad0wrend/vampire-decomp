@@ -5979,6 +5979,65 @@ int CBaseAnimating::sub_10096760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100976e0 size=0xca
+#include "CBaseAnimating.h"
+
+extern int *g_109f3680;
+extern const char **g_109f3620;
+extern const char g_105387dc[];
+extern const char g_106b8540[];
+extern const char g_105505f8[];
+
+#define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+    virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct SVec3
+{
+    int x, y, z;
+    SVec3 &operator=(const SVec3 &o)
+    {
+        x = o.x;
+        y = o.y;
+        z = o.z;
+        return *this;
+    }
+};
+
+struct SEntitySlots
+{
+    SLOTS10(a0) SLOTS10(a1) SLOTS10(a2) SLOTS10(a3) SLOTS10(a4) SLOTS10(a5) SLOTS10(a6) SLOTS10(a7) SLOTS10(a8) SLOTS10(a9)
+    SLOTS10(b0) SLOTS10(b1) SLOTS10(b2) SLOTS10(b3) SLOTS10(b4) SLOTS10(b5) SLOTS10(b6) SLOTS10(b7) SLOTS10(b8) SLOTS10(b9)
+    SLOTS10(c0)
+    virtual void c10(); virtual void c11(); virtual void c12(); virtual void c13(); virtual void c14(); virtual void c15(); virtual void c16();
+    virtual SVec3 *GetAbsOrigin();
+    virtual void c18();
+    virtual SVec3 *GetAbsAngles();
+};
+
+#define ANIM_FIELD(type, off) (*(type *)((char *)this + (off)))
+
+// TARGET: CBaseAnimating::sub_100976e0
+void CBaseAnimating::sub_100976e0()
+{
+    const char *name;
+    if (this) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else {
+        name = g_105387dc;
+    }
+    g_109f3620[*g_109f3680 * 3] = g_105505f8;
+    g_109f3620[*g_109f3680 * 3 + 1] = name;
+    g_109f3620[*g_109f3680 * 3 + 2] = g_106b8540;
+    ++*g_109f3680;
+    ANIM_FIELD(unsigned int, 0x19c) |= 0x800;
+    ANIM_FIELD(SVec3, 0x714) = *((SEntitySlots *)this)->GetAbsOrigin();
+    ANIM_FIELD(SVec3, 0x720) = *((SEntitySlots *)this)->GetAbsAngles();
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100977f0 size=0x91
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
