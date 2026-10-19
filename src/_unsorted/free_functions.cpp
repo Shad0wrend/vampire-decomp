@@ -5306,6 +5306,36 @@ char CBaseAnimating::sub_100903e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100904a0 size=0xad
+#include "CBaseAnimating.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseAnimating::sub_100904a0()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::ClearAllClientRagdolling";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int *p = (int *)((char *)this + 0x584);
+	int n = 4;
+	do {
+		p[-4] = -2;
+		p[0] = 0;
+		p[4] = 0;
+		p++;
+		n--;
+	} while (n != 0);
+	if (*(int *)((char *)this + 0x168) == 0x17)
+		*(int *)((char *)this + 0x168) = 0;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10090890 size=0x86
 #include "CBaseAnimating.h"
 
