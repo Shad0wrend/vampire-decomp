@@ -39,6 +39,7 @@ public:
 	const char *sub_102c3690(int task);
 	const char *sub_102c36b0(int schedule);
 	char sub_102c1170();	// true when one of two flag bytes (+0x64c0, +0x64ec) is set or one of two entity handles (+0xfe8, +0x6554) is valid
+	char sub_102c0aa0();	// true when the entity of the handle at +0x6554 has its byte at +0x498 set, or the time at +0x64cc lies in the future
 	void sub_10015839(int a);	// base-class slot 616 implementation, called directly
 	void sub_10011dc4();	// base-class slot 516 implementation, called directly
 	void sub_102a97a0(unsigned int flags);	// ORs flags into the dword at +0x14b8
@@ -47,6 +48,10 @@ public:
 
 	char m_pad0004[0x63d4];
 	char m_b63d8;
-	char m_pad63d9[0x65bc - 0x63d9];
+	char m_pad63d9[0x64cc - 0x63d9];
+	float m_f64cc;
+	char m_pad64d0[0x6554 - 0x64d0];
+	unsigned int m_h6554;
+	char m_pad6558[0x65bc - 0x6558];
 	float m_f65bc;
 };
