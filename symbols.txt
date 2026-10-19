@@ -2275,6 +2275,7 @@
 0x100106ae func   ?sub_101ed9e0@CUnknown101ed9e0@@QAEPAV1@H@Z CUnknown101ed9e0::sub_101ed9e0
 0x100106d1 func   ??0CAI_Navigator@@QAE@H@Z CAI_Navigator::CAI_Navigator
 0x1001072b func   ?vfunc4@CTEBloodSprite@@QAEXHH@Z CTEBloodSprite::vfunc4
+0x10010758 func   ?sub_101dddb0@CUnknown101dddb0@@QAEXXZ CUnknown101dddb0::sub_101dddb0
 0x1001075d func   ?vfunc6@CEQ_SaveRestoreBlockHandler@@UAEXPAVIRestoreRead@@@Z CEQ_SaveRestoreBlockHandler::vfunc6
 0x100107b7 func   _info_node_crosswalk info_node_crosswalk
 0x100107df func   ?sub_100bd540@bf_write@@QAEXI@Z bf_write::sub_100bd540

@@ -18020,6 +18020,30 @@ void Range::sub_101ddb40(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dddb0 size=0xc7
+#include "CUnknown101dddb0.h"
+extern "C" __declspec(dllimport) int Q_snprintf(char *dest, int maxLen, const char *fmt, ...);
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+const char *sub_101dba50(int index);
+const char *sub_101dbb00(int index);
+extern char g_106b8540[];
+
+void CUnknown101dddb0::sub_101dddb0()
+{
+    char buf[512];
+    if (m_pszFX) {
+        Q_snprintf(buf, 512, "Trigger_Casting:\n");
+        Msg("%s", buf);
+        Q_snprintf(buf, 512, "   DisciplineFX: %s\n", m_pszFX ? m_pszFX : g_106b8540);
+        Msg("%s", buf);
+        Q_snprintf(buf, 512, "   Source: %s\n", sub_101dba50(m_nSource));
+        Msg("%s", buf);
+        Q_snprintf(buf, 512, "   Affects: %s\n", sub_101dbb00(m_nAffects));
+        Msg("%s", buf);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0040 size=0xd
 CUnknown101e0040* CUnknown101e0040::sub_101e0040()
 {
