@@ -26328,6 +26328,35 @@ void CUnknown1030fe50::sub_1030fe50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103109a0 size=0xb7
+#include "CUtlVector4.h"
+#include "UtlMem.h"
+
+int CUtlVector4::sub_103109a0(int elem, int num, const int *pToInsert)
+{
+	if (num == 0)
+		return elem;
+	if (m_size + num > m_allocationCount)
+		((UtlMem *)this)->sub_10055ec0(m_size + num - m_allocationCount);
+	int oldSize = m_size;
+	m_size += num;
+	m_pElements = m_pMemory;
+	int numToMove = m_size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(m_pMemory + elem + num, m_pMemory + elem, numToMove * 4);
+	for (int i = 0; i < num; i++) {
+		int *p = m_pMemory + elem + i;
+		if (p)
+			*p = -1;
+	}
+	if (pToInsert) {
+		for (int i = 0; i < num; i++)
+			m_pMemory[elem + i] = pToInsert[i];
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312320 size=0x8
 struct CSub10002397 { void sub_10002397(); };
 struct CUnknown10312320 { char pad[0x30]; CSub10002397 m_Sub; void sub_10312320(); };
