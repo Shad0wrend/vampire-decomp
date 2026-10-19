@@ -1019,6 +1019,7 @@
 0x10008346 func   ?sub_10264370@Mem38@@QAEXH@Z Mem38::sub_10264370
 0x10008382 func   ?vfunc103@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc103
 0x100083a0 func   ?sub_10041b40@@YA_NPAH0@Z sub_10041b40
+0x100083b9 func   ?sub_100a5ad0@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100a5ad0
 0x100083dc func   ?sub_100eb400@@YIXPAH@Z sub_100eb400
 0x1000841d func   ?sub_10348a60@@YI_NPAVCBaseEntity@@@Z sub_10348a60
 0x10008445 func   ?sub_1024afe0@@YAHXZ sub_1024afe0

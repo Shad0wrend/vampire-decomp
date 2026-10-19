@@ -6050,6 +6050,43 @@ void CBaseEntity::sub_100a53d0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5ad0 size=0xa1
+#include "CBaseEntity.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct Slot225Caller
+{
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8) SL10(a9)
+	SL10(b0) SL10(b1) SL10(b2) SL10(b3) SL10(b4) SL10(b5) SL10(b6) SL10(b7) SL10(b8) SL10(b9)
+	SL10(c0) SL10(c1)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+	virtual void vfunc225();
+};
+
+bool CBaseEntity::sub_100a5ad0()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::VPhysicsInitSetup";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (!*(int *)((char *)this + 0x2e0)) {
+		(*g_109f3680)--;
+		return false;
+	}
+	((Slot225Caller *)this)->vfunc225();
+	sub_100b3b00();
+	(*g_109f3680)--;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6bb0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
