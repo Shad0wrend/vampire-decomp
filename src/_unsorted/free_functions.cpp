@@ -18361,6 +18361,16 @@ void __fastcall sub_102e9e50(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102eb7f0 size=0xbd
+#include "CUtlRBTree12.h"
+
+bool CUtlRBTree12::sub_102eb7f0(unsigned short i) const
+{
+	unsigned short parent = Links(i).m_Parent;
+	return Links(parent).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ec320 size=0x6a
 #include "CUnknown102ec320.h"
 
