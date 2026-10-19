@@ -8638,6 +8638,49 @@ int CBaseEntity::sub_100b1a00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b3350 size=0xf9
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern const float g_10447ee0;
+struct PhysObj {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual int GetObjectHandle();
+};
+struct PhysEnv {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void Query(int obj, float *a, float *b, float *c, float *d);
+};
+extern PhysEnv *g_10723944;
+
+bool CBaseEntity::sub_100b3350()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::IsFloating";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (!((unsigned char)(m_flags268 >> 19) & 1)) {
+		(*g_109f3680)--;
+		return false;
+	}
+	if (!m_obj36c) {
+		(*g_109f3680)--;
+		return false;
+	}
+	float v[4];
+	int h = ((PhysObj *)m_obj36c)->GetObjectHandle();
+	g_10723944->Query(h, &v[0], &v[3], &v[2], &v[1]);
+	bool r = v[0] < g_10447ee0;
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3580 size=0x86
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
