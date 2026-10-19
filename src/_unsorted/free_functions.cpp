@@ -6961,6 +6961,58 @@ const char *CBaseEntity::sub_1009f200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f3c0 size=0xdf
+extern int *g_109f3680;
+extern const char **g_109f3620;
+extern const char g_105387dc[];
+extern const char g_106b8540[];
+extern const char g_105556d4[];
+extern void (*g_109f3890)(char *, const char *, int);
+
+struct SGlobalVars
+{
+    char m_pad[0xc];
+    float m_curtime;
+};
+extern SGlobalVars *g_1070b228;
+
+extern "C" unsigned int strlen(const char *);
+
+struct STimedOverlay
+{
+    char *m_msg;
+    int m_endTime;
+    int m_startTime;
+    STimedOverlay *m_next;
+};
+
+// TARGET: CBaseEntity::sub_1009f3c0
+void CBaseEntity::sub_1009f3c0(const char *msg, int duration)
+{
+    const char *name;
+    if (this) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else {
+        name = g_105387dc;
+    }
+    g_109f3620[*g_109f3680 * 3] = g_105556d4;
+    g_109f3620[*g_109f3680 * 3 + 1] = name;
+    g_109f3620[*g_109f3680 * 3 + 2] = g_106b8540;
+    ++*g_109f3680;
+    STimedOverlay *p = new STimedOverlay;
+    int len = strlen(msg);
+    p->m_msg = new char[len + 1];
+    g_109f3890(p->m_msg, msg, len + 1);
+    p->m_endTime = (int)(duration + g_1070b228->m_curtime);
+    p->m_startTime = (int)g_1070b228->m_curtime;
+    p->m_next = (STimedOverlay *)m_pTimedOverlays;
+    m_pTimedOverlays = p;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fa60 size=0x6f
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
