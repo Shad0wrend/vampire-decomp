@@ -9493,6 +9493,35 @@ int sub_100e77f0(const int *a, const int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7f70 size=0xb4
+extern "C" {
+void *memset(void *, int, unsigned int);
+unsigned int strlen(const char *);
+char *strstr(const char *, const char *);
+#pragma intrinsic(memset, strlen)
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+__declspec(dllimport) char *Q_strncat(char *dest, const char *src, int maxLen, int count);
+}
+extern char g_106e9558[0x1000];
+
+bool sub_100e7f70(char *str, int maxLen, const char *find, const char *replace)
+{
+    memset(g_106e9558, 0, 0x1000);
+    int findLen = strlen(find);
+    int replaceLen = strlen(replace);
+    char *p = strstr(str, find);
+    if (p) {
+        *p = 0;
+        Q_strncpy(g_106e9558, str, 0x1000);
+        Q_strncat(g_106e9558, replace, 0x1000, replaceLen);
+        Q_strncat(g_106e9558, p + findLen, 0x1000, strlen(p + findLen));
+        Q_strncpy(str, g_106e9558, maxLen);
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ea1e0 size=0xb1
 #include "CUnknown100ea1e0.h"
 extern "C" unsigned int strlen(const char *);
