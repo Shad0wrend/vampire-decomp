@@ -10310,6 +10310,54 @@ extern "C" GP *gravity_pellet()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014ca10 size=0x86
+#include "CUnknown1014ca10.h"
+
+struct SEntInfo { void *pEnt; unsigned int serial; };
+struct SEntSlot { int pad; SEntInfo e; };
+extern SEntSlot *g_10566458;
+
+struct SColorEntity
+{
+	char pad0[0x1a0];
+	unsigned char r, g, b, a;	// 0x1a0
+	char pad1a4[0x734 - 0x1a4];
+	char m_bHidden;	// 0x734
+};
+
+struct SRecord
+{
+	int f0, f4, f8;
+	unsigned int hEntity;
+	int f10;
+};
+
+inline SColorEntity *LookupEntity(const unsigned int &h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	SEntInfo *e = &g_10566458[h & 0x1fff].e;
+	if (e->serial == (h >> 13))
+		return (SColorEntity *)e->pEnt;
+	return 0;
+}
+
+void CUnknown1014ca10::sub_1014ca10(unsigned char r, unsigned char g, unsigned char b)
+{
+	struct { unsigned char r, g, b, a; } c;
+	c.r = r;
+	c.g = g;
+	c.b = b;
+	c.a = 255;
+	SRecord *rec = (SRecord *)(pad0 + 0x9d0);
+	for (int i = 0; i < m_nRecords; i++) {
+		SColorEntity *e = LookupEntity(rec[i].hEntity);
+		if (e && !e->m_bHidden)
+			*(int *)&e->r = *(int *)&c;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156d30 size=0x8
 void __fastcall sub_10156d30(char *p) { p[0x105c] = 1; }
 // END FUNCTION
