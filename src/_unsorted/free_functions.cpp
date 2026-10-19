@@ -24249,6 +24249,40 @@ CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102cd3b0 size=0xb9
+#include "CAI_GoalEntity.h"
+
+struct HandleEntry { CAI_BaseNPC *ent; unsigned int serial; int pad; };
+struct HandleList { int pad; HandleEntry e[1]; };
+extern HandleList *g_10566458;
+
+struct AIHandle
+{
+	unsigned int m_Index;
+	CAI_BaseNPC *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			HandleEntry *e = &g_10566458->e[m_Index & 0x1fff];
+			if (e->serial == (m_Index >> 13))
+				return e->ent;
+		}
+		return 0;
+	}
+};
+
+void CAI_GoalEntity::sub_102cd3b0()
+{
+	for (int i = m_nActors - 1; i >= 0; i--) {
+		if (((AIHandle *)&m_pActors[i])->Get() == 0 || ((AIHandle *)&m_pActors[i])->Get()->vfunc464() == 7) {
+			if (m_nActors > 0) {
+				memmove(&m_pActors[i], &m_pActors[m_nActors - 1], sizeof(unsigned int));
+				m_nActors--;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cdd10 size=0x109
 #include "CUtlRBTree12.h"
 
