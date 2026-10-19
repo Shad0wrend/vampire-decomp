@@ -1058,6 +1058,43 @@ UtlHash8 *UtlHash8::sub_10041de0(int nBuckets, int growSize, int initSize, bool 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10041f40 size=0x80
+#include "UtlHash8.h"
+#include "CUtlVector20.h"
+
+struct E8;
+struct CMem8c_t
+{
+	char *m_p;
+	int m_alloc;
+	int m_grow;
+	int m_size;
+	int m_pad;
+	int sub_10043230(int elem, int num, const E8 *pToCopy);
+};
+
+UtlHash8 *UtlHash8::sub_10041f40(int nBuckets, int growSize, int initSize, bool (__cdecl *pCompare)(void *, void *), unsigned int (__cdecl *pKey)(void *))
+{
+	m_pBuckets = 0;
+	m_pad4 = 0;
+	m_pad8 = 0;
+	m_pad10 = 0;
+	m_pCompare = pCompare;
+	m_pKey = pKey;
+	m_bucketCount = 0;
+	((CUtlVector20 *)this)->sub_100430a0(0, nBuckets, 0);
+	for (int i = 0; i < nBuckets; i++) {
+		CMem8c_t *b = (CMem8c_t *)m_pBuckets + i;
+		b->m_size = 0;
+		b->sub_10043230(0, initSize, 0);
+		m_pBuckets[i].m_growSize = growSize;
+	}
+	m_bPowerOfTwo = (nBuckets & (nBuckets - 1)) == 0;
+	m_ModMask = m_bPowerOfTwo ? nBuckets - 1 : 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042200 size=0xb0
 #include "UtlVec8.h"
 
