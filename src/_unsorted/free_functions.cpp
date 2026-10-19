@@ -24030,6 +24030,32 @@ void CUnknown1036c7f0::sub_1036c7f0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036c810 size=0x8a
+#include "CNPC_VChangBros.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *fmt, ...);
+
+void CNPC_VChangBros::sub_1036c810(int a, int b)
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "CNPC_VChangBros::PrintTask";
+	g_109f3620[*g_109f3680].m_pszName = g_106b8540;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	Msg("%s: [%s]:%s\n", a, ((CBaseEntity *)this)->sub_1009f200(), vfunc449(b));
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036ec40 size=0x33
 void sub_1000c9b9();
 void sub_100055fb();
