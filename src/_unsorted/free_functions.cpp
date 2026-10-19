@@ -6434,6 +6434,33 @@ void bf_write::sub_100bd540(unsigned int curData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bdc20 size=0xad
+#include "bf_write.h"
+
+extern unsigned int g_106d19b0[];
+
+void bf_write::sub_100bdc20(unsigned int curData)
+{
+	int bit = m_iCurBit;
+	if (bit + 8 > m_nDataBits) {
+		m_bOverflow = true;
+		m_iCurBit = m_nDataBits;
+		return;
+	}
+	int iCur = bit & 31;
+	int iDWord = bit >> 5;
+	m_pData[iDWord] &= g_106d19b0[iCur * 33];
+	m_pData[iDWord] |= curData << iCur;
+	int n = 32 - iCur;
+	if (n < 8) {
+		int iCur2 = (n + bit) & 31;
+		m_pData[iDWord + 1] &= g_106d19b0[iCur2 * 33 - n];
+		m_pData[iDWord + 1] |= (curData >> n) << iCur2;
+	}
+	m_iCurBit += 8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bde40 size=0x14
 #include "CUnknown100bde40.h"
 

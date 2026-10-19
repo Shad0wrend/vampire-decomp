@@ -1162,6 +1162,7 @@
 0x10009d86 func   ?vfunc241@CFuncPlat@@UAEEXZ CFuncPlat::vfunc241
 0x10009df4 func   ?sub_102f7970@CUnknown102f7970@@QAEXXZ CUnknown102f7970::sub_102f7970
 0x10009e0d func   ?vfunc5@CNPC_VManBat@@QAEPAV1@I@Z CNPC_VManBat::vfunc5
+0x10009e1c func   ?sub_100bdc20@bf_write@@QAEXI@Z bf_write::sub_100bdc20
 0x10009e21 func   ?sub_1042c4a0@@YAXXZ sub_1042c4a0
 0x10009e30 func   ?sub_1003e250@@YAPAUtrace21@@PAU1@@Z sub_1003e250
 0x10009e58 func   ?sub_103908c0@@YGII@Z sub_103908c0
