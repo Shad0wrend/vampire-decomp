@@ -10,8 +10,9 @@ struct CPodVec
 	int m_Size;
 	void *m_pElements;
 
-	void Purge(void (__cdecl *pfnFree)(void *))
+	void Purge()
 	{
+		void (__cdecl *pfnFree)(void *) = g_109f3624;
 		m_Size = 0;
 		m_Memory.Purge(pfnFree);
 		m_pElements = m_Memory.m_pMemory;
