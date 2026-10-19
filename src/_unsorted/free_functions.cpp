@@ -397,6 +397,37 @@ unsigned short sub_1002e0a0(IPhysObj *obj, unsigned short flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030720 size=0x9b
+#include "CCollisionEvent.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+
+CFrictionEntry_t *CCollisionEvent::sub_10030720(int key)
+{
+	g_109f3620[*g_109f3680].fn = "CCollisionEvent::FindFriction";
+	g_109f3620[*g_109f3680].name = "";
+	g_109f3620[*g_109f3680].extra = "";
+	(*g_109f3680)++;
+	CFrictionEntry_t *pFree = 0;
+	for (unsigned int i = 0; i < 8; i++) {
+		if (!m_friction[i].m_key && !pFree)
+			pFree = &m_friction[i];
+		if (m_friction[i].m_key == key) {
+			(*g_109f3680)--;
+			return &m_friction[i];
+		}
+	}
+	(*g_109f3680)--;
+	return pFree;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031270 size=0x92
 #include "CCollisionEvent.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
