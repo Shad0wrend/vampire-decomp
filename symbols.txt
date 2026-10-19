@@ -2204,6 +2204,7 @@
 0x1001031b func   ?sub_100e7480@@YGHH@Z sub_100e7480
 0x10010334 func   ?sub_102ae8c0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102ae8c0
 0x10010339 func   ?vfunc193@CBaseCineCam@@QAEPAMPAM@Z CBaseCineCam::vfunc193
+0x10010348 func   ?sub_10037750@CPushBlockerEnum@@QAE_NPAVCBaseEntity@@@Z CPushBlockerEnum::sub_10037750
 0x1001035c func   ?sub_101d6c20@CStatList56@@QAEPAUStatItem56@@XZ CStatList56::sub_101d6c20
 0x10010384 func   ?vfunc5@CHudCounter@@QAEPAV1@I@Z CHudCounter::vfunc5
 0x10010398 func   ?sub_101afba0@CUnknown101afba0@@QAEXXZ CUnknown101afba0::sub_101afba0

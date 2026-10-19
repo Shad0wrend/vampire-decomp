@@ -1154,6 +1154,45 @@ bool CBaseEntity::sub_10037680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10037750 size=0xb4
+#include "CPushBlockerEnum.h"
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EntSlots209 {
+	D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6) D10(a7) D10(a8) D10(a9)
+	D10(b0) D10(b1) D10(b2) D10(b3) D10(b4) D10(b5) D10(b6) D10(b7) D10(b8) D10(b9)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4();
+	virtual void c5(); virtual void c6(); virtual void c7(); virtual void c8();
+	virtual CBaseEntity *f209();
+};
+
+bool CPushBlockerEnum::sub_10037750(CBaseEntity *pEnt)
+{
+    g_109f3620[*g_109f3680].a = "CPushBlockerEnum::IsStandingOnPusher";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    CBaseEntity *pGround = ((EntSlots209 *)pEnt)->f209();
+    if ((pEnt->sub_100b3700() & 1) || pGround) {
+        CPushBlockerList *pList = m_pList;
+        for (int i = pList->m_nCount - 1; i >= 0; i--) {
+            if (pList->m_pData[i].m_pEntity == pGround) {
+                (*g_109f3680)--;
+                return true;
+            }
+        }
+    }
+    (*g_109f3680)--;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c0e0 size=0xaa
 #include "CUtlVector4.h"
 
