@@ -13,6 +13,21 @@ int CNPC_VGargoyle::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378a30 size=0xf0
+#include "CNPC_VHuman.h"
+
+int CNPC_VGargoyle::vfunc440(int schedule)
+{
+    switch (schedule) {
+    case 0x5b: return 0x15d;
+    case 0xea: return 0x15e;
+    case 0xdc: return 0x15f;
+    case 0xdd: return 0x160;
+    }
+    return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc440(schedule);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379f50 size=0xe
 struct CUnk10924edc
 {
