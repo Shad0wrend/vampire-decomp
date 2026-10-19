@@ -1,6 +1,40 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102054b0 size=0xb1
+#include "CSave.h"
+#include "CTraitDependencyDataDescSaveDataOps.h"
+extern char g_106b8540[];
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+
+void CTraitDependencyDataDescSaveDataOps::vfunc0(CTraitDependencyField *pField, CSave *pSave)
+{
+    CTraitDependencyData *d = pField->m_pData;
+    pSave->vfunc10(&d->m_type, 1);
+    pSave->vfunc10(&d->m_value, 1);
+    if (*(volatile int *)&d->m_value != -1) {
+        switch (d->m_type) {
+        case 0: case 1: case 2: case 3: case 4: case 5: case 8:
+            pSave->vfunc10(&d->m_value, 1);
+            break;
+        case 6: case 7: {
+            const char *p = (const char *)d->m_value;
+            const char *s = p ? p : g_106b8540;
+            int len = strlen(s) + 1;
+            pSave->vfunc10(&len, 1);
+            pSave->vfunc20(s);
+            break;
+        }
+        default:
+            break;
+        }
+    }
+    pSave->vfunc12(&d->m_flag, 1);
+    pSave->vfunc10(&d->m_extra, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102055a0 size=0x92
 #include "CTraitDependencyDataDescSaveDataOps.h"
 
