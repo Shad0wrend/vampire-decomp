@@ -22400,6 +22400,32 @@ void S::sub_1035a870(int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035aaa0 size=0x75
+#include "CUnknown10359c50.h"
+extern CUnknown10359c50 g_1093a2c8;
+extern CUnknown10359c50 g_1093a2e0;
+extern CUnknown10359c50 g_1093a2f8;
+extern CUnknown10359c50 g_1093a314;
+extern char g_109203cc[];
+extern char g_109203d4[];
+extern char g_109203dc[];
+extern char g_10936c74[];
+extern char g_10920484[];
+extern char g_1090ff08[];
+extern char g_1090ff20[];
+extern char g_1090ff38[];
+extern const char *g_10629da8;
+void sub_1035aaa0()
+{
+	if (g_1093a2c8.sub_1001153b(g_109203cc, g_1090ff08)) {
+		if (g_1093a2e0.sub_1001153b(g_109203d4, g_1090ff20))
+			g_1093a2f8.sub_1001153b(g_109203dc, g_1090ff38);
+	}
+	g_1093a314.sub_1001153b(g_10936c74, g_10920484);
+	g_1093a2c8.sub_1000a948("SCHED_GENERIC_NPC_BATHACK_WALK", 0x45, "schedule", g_10629da8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035ac30 size=0x33
 void sub_1000b15e();
 void sub_1000345e();
