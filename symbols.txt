@@ -2180,6 +2180,7 @@
 0x10011b12 func   ?vfunc619@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc619
 0x10011b26 func   ?sub_103a1320@CUnknown103a1320@@QAEXH@Z CUnknown103a1320::sub_103a1320
 0x10011b3a func   _player_loadsaved player_loadsaved
+0x10011b44 func   ?vfunc252@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc252
 0x10011b67 func   ?sub_10046050@PQ@@QAEXABUElem@@@Z PQ::sub_10046050
 0x10011bb7 func   ?sub_1006e890@CUnknown1006e890@@QAE_NXZ CUnknown1006e890::sub_1006e890
 0x10011bc1 func   ?sub_10081e50@@YIXPAUCSlots@@HH@Z sub_10081e50
