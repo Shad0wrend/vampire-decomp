@@ -24,7 +24,7 @@ public:
 	virtual void vfunc200(); virtual void vfunc201(); virtual void vfunc202(); virtual void vfunc203(); virtual void vfunc204();
 	virtual void vfunc205(); virtual void vfunc206(); virtual void vfunc207(); virtual void vfunc208(); virtual void vfunc209();
 	virtual void vfunc210(); virtual void vfunc211(); virtual void vfunc212(); virtual void vfunc213(); virtual void vfunc214();
-	virtual void vfunc215(); virtual void vfunc216(); virtual void vfunc217(); virtual void vfunc218(); virtual void vfunc219();
+	virtual void vfunc215(); virtual void vfunc216(float *p); virtual void vfunc217(); virtual void vfunc218(); virtual void vfunc219();
 	virtual void vfunc220(); virtual void vfunc221(); virtual void vfunc222(); virtual void vfunc223(); virtual void vfunc224();
 	virtual void vfunc225(); virtual void vfunc226(); virtual void vfunc227(); virtual void vfunc228(); virtual void vfunc229();
 	virtual void vfunc230(); virtual void vfunc231(); virtual void vfunc232(); virtual void vfunc233(); virtual void vfunc234();
@@ -39,4 +39,5 @@ public:
 	virtual void vfunc271(int a, int b);
 	CRagdollProp *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10014317();	// as in CPhysForce (transplant)
+	void sub_101563b0(int index, int unused);	// stores the origin/angles of body `index` at +0x2a0 / +0x2fa (dwords); index 0 also calls slot 216 and PhysicsTouchTriggers
 };
