@@ -22,4 +22,6 @@ struct inputdata_t
 	void *pCaller;
 	variant_t value;
 	int nOutputID;
+
+	int GetInt() const { return value.iValue; }	// the raw integer value of the input
 };
