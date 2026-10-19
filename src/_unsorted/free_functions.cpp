@@ -11332,6 +11332,29 @@ void CUnknown1014ca10::sub_1014ca10(unsigned char r, unsigned char g, unsigned c
 }
 // END FUNCTION
 
+// FUNCTION: 0x101563b0 size=0x88
+struct CRagdollBody { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(float *a, float *b); };
+struct RagdollSlot { CRagdollBody *pBody; int pad[5]; };
+
+void CRagdollProp::sub_101563b0(int unused, int index)
+{
+	float a[3];
+	float b[3];
+	((RagdollSlot *)((char *)this + 0x744))[index].pBody->v37(a, b);
+	float *pa = (float *)this + 0x2a0 + index * 3;
+	pa[0] = a[0]; pa[1] = a[1]; pa[2] = a[2];
+	float *pb = (float *)this + 0x2fa + index * 3;
+	pb[0] = b[0]; pb[1] = b[1]; pb[2] = b[2];
+	if (index == 0) {
+		vfunc216((float *)this + 0x2a0);
+		sub_100a53d0(index);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156d30 size=0x8
 void __fastcall sub_10156d30(char *p) { p[0x105c] = 1; }
 // END FUNCTION
