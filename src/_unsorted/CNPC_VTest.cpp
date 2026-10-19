@@ -27,3 +27,38 @@ int CNPC_VTest::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093c8bc.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b41e0 size=0xc2
+#include "CNPC_VTest.h"
+#include "CNPC_VHuman.h"
+
+struct SoundSystemLike
+{
+	virtual void PrecacheSound(const char *name, int flag);
+};
+extern SoundSystemLike *g_1070b248;
+extern const char *g_10652188;
+extern const char *g_1065218c;
+extern const char *g_10652190;
+extern const char *g_10652194[4];
+extern const char *g_106521a4;
+extern const char *g_106521a8;
+extern const char *g_106521ac;
+extern const char *g_106521b0;
+extern const char *g_106521b4;
+
+void CNPC_VTest::vfunc104()
+{
+	g_1070b248->PrecacheSound(g_10652188, 0);
+	g_1070b248->PrecacheSound(g_1065218c, 0);
+	g_1070b248->PrecacheSound(g_10652190, 0);
+	for (unsigned int i = 0; i < 4; i++)
+		g_1070b248->PrecacheSound(g_10652194[i], 0);
+	g_1070b248->PrecacheSound(g_106521a4, 0);
+	g_1070b248->PrecacheSound(g_106521a8, 0);
+	g_1070b248->PrecacheSound(g_106521ac, 0);
+	g_1070b248->PrecacheSound(g_106521b0, 0);
+	g_1070b248->PrecacheSound(g_106521b4, 0);
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc104();
+}
+// END FUNCTION

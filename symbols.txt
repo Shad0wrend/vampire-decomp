@@ -2709,6 +2709,7 @@
 0x1001364c func   _keyframe_track keyframe_track
 0x100136b5 func   ?sub_101f0270@@YIPAHPAHHH@Z sub_101f0270
 0x100136c4 func   ?sub_1025e140@@YIXPAUMem4@@HH@Z sub_1025e140
+0x100136d3 func   ?vfunc104@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc104
 0x100136f1 func   _item_w_ithaca_m_37 item_w_ithaca_m_37
 0x10013700 func   ?sub_10323210@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10323210
 0x1001370a func   ?sub_10079320@@YAXPAUSDumpOutput@@HPBDZZ sub_10079320
