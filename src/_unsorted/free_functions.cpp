@@ -32937,6 +32937,65 @@ CHintData_WW *CHintData_WW::sub_103c9ed0(const CHintData_WW *pSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ca1a0 size=0xd3
+#include "CHintData_WW.h"
+#include "CMem4b_t.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct HintVector : CMem4b_t
+{
+	int m_size;
+	int *m_pElements;
+
+	void AddToTail(int value)
+	{
+		int elem = m_size;
+		if (m_size + 1 > m_nAllocationCount)
+			sub_103dc400(m_size + 1 - m_nAllocationCount);
+		m_pElements = m_pMemory;
+		m_size++;
+		int n = m_size - elem - 1;
+		if (n > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], n * sizeof(int));
+		int *p = &m_pMemory[elem];
+		if (p)
+			*p = value;
+	}
+};
+
+void CHintData_WW::sub_103ca1a0(int hint)
+{
+	g_109f3620[*g_109f3680].a = "CHintData_WW::AddPathableHint";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	*g_109f3680 += 1;
+	long count = m_nHints;
+	HintVector *v = (HintVector *)&m_pHints;
+	int i = 0;
+	if (0 < count) {
+		int *p = v->m_pMemory;
+		do {
+			if (*p == (int)hint) {
+				if (i != -1)
+					goto done;
+				break;
+			}
+			i++;
+			p++;
+		} while (i < (int)count);
+	}
+	v->AddToTail(hint);
+done:
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ca2c0 size=0xa0
 #include "CUnknown103ca2c0.h"
 
