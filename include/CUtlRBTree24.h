@@ -36,4 +36,5 @@ public:
 
 	const Links_t &sub_10055520(int i) const;	// "CUtlRBTree::Links"
 	int sub_10055050();	// "CUtlRBTree::NewNode": takes the first free node (or grows the node memory by one and uses the next unused one) and returns its index
+	int sub_1007f7a0();	// "CUtlRBTree::NewNode" (another instance)
 };
