@@ -21970,6 +21970,48 @@ int CUnknown10202060::sub_10202060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202270 size=0xa8
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern const char *g_1074e67c;
+extern const char *g_1074e514;
+extern const char *g_1074e0bc;
+extern const char *g_1074e61c;
+
+const char *sub_10202270(int type)
+{
+	g_109f3620[*g_109f3680].a = "vampStats_STypeToStr";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	const char *str;
+	switch (type)
+	{
+	case 0:
+		str = g_1074e67c;
+		break;
+	case 1:
+		str = g_1074e514;
+		break;
+	case 2:
+		str = g_1074e0bc;
+		break;
+	case 3:
+		str = g_1074e61c;
+		break;
+	default:
+		--*g_109f3680;
+		return "<ERROR>";
+	}
+	if (!str)
+		str = g_106b8540;
+	--*g_109f3680;
+	return str;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202350 size=0xcc
 #include "CVStatInfoList_t.h"
 
