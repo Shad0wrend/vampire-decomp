@@ -32566,6 +32566,53 @@ char sub_103912e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10397b40 size=0xe1
+#include "CNPC_VMingXiao.h"
+struct EntInfo { void *ent; int serial; int pad; };
+struct Globals { char pad[0xc]; float curtime; };
+extern char *g_10566458;
+extern Globals *g_1070b228;
+
+bool CNPC_VMingXiao::sub_10397b40(void *pTentacle)
+{
+    char *t = (char *)this;
+    if (pTentacle && !(g_1070b228->curtime < *(float *)(t + 0x66a4))) {
+        int idx = *(int *)((char *)pTentacle + 0x6660);
+        unsigned int h = *(unsigned int *)(t + 0x66a8 + idx * 4);
+        void *pEnt;
+        if (h != 0xffffffff) {
+            EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+            if (e->serial == (h >> 13))
+                pEnt = e->ent;
+            else
+                pEnt = 0;
+        } else
+            pEnt = 0;
+        if (pEnt == pTentacle) {
+            if (*(char *)(t + 0x6684 + idx) == 1)
+                return true;
+            int count = 0;
+            for (int i = 0; i < 6; i++) {
+                unsigned int h2 = *(unsigned int *)(t + 0x668c + i * 4);
+                bool valid = false;
+                if (h2 != 0xffffffff) {
+                    EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h2 & 0x1fff);
+                    if (e->serial == (h2 >> 13) && e->ent)
+                        valid = true;
+                }
+                if (valid || *(char *)(t + 0x6684 + i) == 1)
+                    count++;
+            }
+            if (count < 1) {
+                *(char *)(t + 0x6684 + idx) = 1;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398d90 size=0xd
 void CUnknown10398d90::sub_10398d90(int value)
 {
