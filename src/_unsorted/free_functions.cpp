@@ -12118,6 +12118,48 @@ void S101e0310::sub_101e0310()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0c30 size=0xee
+#include "CUnknown101e0c30.h"
+
+struct S101e0520 {
+	S101e0520 *sub_101e0520(int);
+	int m_data[58];
+};
+
+S101e0520 *CUnknown101e0c30::sub_101e0c30()
+{
+	if (m_allocCount == m_count) {
+		m_allocCount++;
+		if (m_pItems) {
+			S101e0520 **p = new S101e0520 *[m_allocCount];
+			int i = 0;
+			if (m_count > 0) {
+				do {
+					p[i] = m_pItems[i];
+					i++;
+				} while (i < m_count);
+			}
+			for (; i < m_allocCount; i++)
+				p[i] = 0;
+			delete m_pItems;
+			m_pItems = p;
+		} else {
+			m_pItems = new S101e0520 *[m_allocCount];
+			for (int i = 0; i < m_allocCount; i++)
+				m_pItems[i] = 0;
+		}
+		m_count++;
+	} else {
+		m_count++;
+	}
+	if (m_pItems[m_count - 1] == 0) {
+		S101e0520 *p = new S101e0520;
+		m_pItems[m_count - 1] = p ? p->sub_101e0520(m_count - 1) : 0;
+	}
+	return m_pItems[m_count - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1360 size=0xa8
 extern "C" char *_strlwr(char *);
 extern "C" char *strstr(const char *, const char *);
