@@ -3411,6 +3411,31 @@ bool sub_10053df0(const unsigned int *a, const unsigned int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054ad0 size=0xf0
+#include "CUtlRBTreeInsert24.h"
+
+void CUtlRBTreeInsert24::sub_10054ad0(const void *insert, int *parent, bool *leftchild)
+{
+	int cur = m_Root;
+	*parent = InvalidIndex();
+	*leftchild = false;
+	while (cur != InvalidIndex())
+	{
+		*parent = cur;
+		if (m_LessFunc(insert, m_pElements[cur].m_Data))
+		{
+			*leftchild = true;
+			cur = LinksInl(cur).m_Left;
+		}
+		else
+		{
+			*leftchild = false;
+			cur = LinksInl(cur).m_Right;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10055520 size=0x4f
 #include "CUtlRBTree24.h"
 
