@@ -5,6 +5,13 @@
 struct CFlameVec3
 {
 	float x, y, z;
+
+	void Set(const CFlameVec3 &v)	// inline element-wise copy
+	{
+		x = v.x;
+		y = v.y;
+		z = v.z;
+	}
 };
 
 struct CFlameEvent_t	// 0x3c byte record of the event list at +0x91c of the weapon
