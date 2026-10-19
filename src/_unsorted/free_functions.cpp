@@ -25850,6 +25850,38 @@ bool CBaseCombatCharacter::sub_10341aa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10341b60 size=0x9e
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_10341b60(char unconscious)
+{
+	const char *name;
+	if (this)
+	{
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	}
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::SetUnconscious";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	unsigned int *pMisc = (unsigned int *)((char *)this + 0xfe4);
+	if (unconscious)
+		*pMisc = *pMisc | 1;
+	else
+		*pMisc = *pMisc & 0xfffffffe;
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10342740 size=0x8d
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
