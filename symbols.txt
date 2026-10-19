@@ -2754,6 +2754,7 @@
 0x100134d0 func   ?sub_1042ffb0@@YAXXZ sub_1042ffb0
 0x10013502 func   ?sub_10265310@CUtlVector4@@QAEXH@Z CUtlVector4::sub_10265310
 0x10013507 func   ?vfunc5@CSprite@@QAEPAV1@I@Z CSprite::vfunc5
+0x1001351b func   ?vfunc7@CSaveRestoreBlockSet@@QAEXPAXHH@Z CSaveRestoreBlockSet::vfunc7
 0x10013525 func   ?sub_10135a20@@YAPAHXZ sub_10135a20
 0x10013534 func   ?vfunc130@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc130
 0x10013552 func   ?vfunc5@CItemGWarrLedger2@@QAEPAV1@I@Z CItemGWarrLedger2::vfunc5
