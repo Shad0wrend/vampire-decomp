@@ -25971,6 +25971,42 @@ CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102ccce0 size=0xe2
+#include "CAI_DynamicLink.h"
+struct SLink { int pad0; int src; int dest; char pad[0x58]; unsigned int flags; };
+struct SNode { char pad[0x78]; int numLinks; SLink **links; };
+struct SNet { int numNodes; SNode **nodes; };
+extern SNet *g_1093407c;
+extern int g_106c994c;
+extern void (*g_109f3630)(const char *, ...);
+
+void CAI_DynamicLink::sub_102ccce0()
+{
+    if (m_nSrcID == -1 || m_nDestID == -1) {
+        g_109f3630("ERROR: Dynamic link pointing to invalid node ID!!\n");
+        return;
+    }
+    SNode *pNode;
+    if (m_nSrcID >= 0 && m_nSrcID < g_1093407c->numNodes) {
+        pNode = g_1093407c->nodes[m_nSrcID];
+    } else {
+        g_106c994c++;
+        pNode = 0;
+    }
+    for (int i = 0; i < pNode->numLinks; i++) {
+        SLink *pLink = pNode->links[i];
+        if ((pLink->src == m_nSrcID && pLink->dest == m_nDestID) || (pLink->src == m_nDestID && pLink->dest == m_nSrcID)) {
+            if (m_nLinkState == 0)
+                pLink->flags |= 0x1000;
+            else
+                pLink->flags &= ~0x1000;
+            return;
+        }
+    }
+    g_109f3630("Error: info_node_link unable to form between nodes %d and %d\n", m_nSrcID, m_nDestID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cd3b0 size=0xb9
 #include "CAI_GoalEntity.h"
 
