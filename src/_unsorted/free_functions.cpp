@@ -18314,6 +18314,21 @@ CExperienceAward *CExperienceTable::sub_10222670(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10222ad0 size=0x6f
+#include "CExperienceTable.h"
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+extern CExperienceTable g_10750930;
+void sub_10222ad0()
+{
+	int i = 0;
+	Msg("Index %-20s %-40s Amount\n", "Title", "Description");
+	for (; i < g_10750930.m_Size; i++) {
+		CExperienceAward *a = g_10750930.sub_10222670(i);
+		Msg("%5d: %-20s %-40s %5d\n", i, a->m_a, g_10750930.sub_10222670(i)->m_b, g_10750930.sub_10222670(i)->m_c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10222da0 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
