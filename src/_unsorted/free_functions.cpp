@@ -10393,6 +10393,54 @@ void sub_10130100(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101308d0 size=0x99
+#include "CLight.h"
+
+#define V4(x) virtual void x##a(); virtual void x##b(); virtual void x##c(); virtual void x##d();
+#define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
+
+struct EngineSrv {
+	V16(a) V16(b) V16(c) V4(d) V4(e) V4(f)
+	virtual void s60();
+	virtual void s61();
+	virtual void LightStyle(int style, const char *value);
+};
+extern EngineSrv *g_1070b22c;
+
+struct GlobalVars {
+	char m_pad[0xc];
+	float curtime;
+};
+extern GlobalVars *g_1070b228;
+extern char g_106b8540[];
+
+void CLight::sub_101308d0()
+{
+	char cur = m_cCurrent;
+	char target = m_cTarget;
+	if (cur < target) {
+		cur++;
+		m_cCurrent = cur;
+	} else if (cur > target) {
+		cur--;
+		m_cCurrent = cur;
+	}
+	if (m_cCurrent == target) {
+		const char *pattern = m_pattern;
+		if (!pattern)
+			pattern = g_106b8540;
+		g_1070b22c->LightStyle(m_iStyle, pattern);
+		*(float *)((char *)this + 0x17c) = 0;
+	} else {
+		char buf[2];
+		buf[0] = m_cCurrent;
+		buf[1] = 0;
+		g_1070b22c->LightStyle(m_iStyle, buf);
+		*(float *)((char *)this + 0x17c) = m_flFadeTime + g_1070b228->curtime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130a80 size=0x49
 void *sub_1000db89(int);
 struct GP;
