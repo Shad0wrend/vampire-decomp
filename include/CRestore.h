@@ -9,7 +9,7 @@ class CRestore
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
-	virtual void vfunc2(CBaseEntity *pEnt, int map);	// reads the entity's data description block
+	virtual int vfunc2(CBaseEntity *pEnt, int map);	// reads the entity's data description block
 
 	// Searches the field table starting from the remembered position, wrapping around.
 	CRestoreField *sub_101a17c0(const char *name, CRestoreField *fields, int count, int *pStart);
