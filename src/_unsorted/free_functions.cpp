@@ -18067,6 +18067,33 @@ char QuestJournal::sub_10221ca0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10221e50 size=0x99
+#include "QuestJournal.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern void (*g_109f364c)(const char *, ...);
+
+char *QuestJournal::sub_10221e50(int index)
+{
+	g_109f3620[*g_109f3680].a = "QuestJournal::GetCompletionState";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (sub_10221ca0(index)) {
+		char *base = (char *)m_field[0];
+		(*g_109f3680)--;
+		return base + index * 0x18;
+	}
+	g_109f364c("Could not find quest completion state!\n");
+	char *base = (char *)m_field[0];
+	(*g_109f3680)--;
+	return base;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10222670 size=0x95
 #include "CExperienceTable.h"
 
