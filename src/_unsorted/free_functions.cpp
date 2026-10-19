@@ -34258,6 +34258,69 @@ float sub_103e1680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e2470 size=0xe1
+#include "CUnknown103e2470.h"
+#include "Mem1c.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct FlameElem
+{
+	float m_v[7];
+};
+
+struct FlameEntity
+{
+	char m_pad0000[0x70];
+	short m_type;	// 0x70
+};
+
+struct FlameLookupSlots
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual FlameEntity *Lookup(int handle);	// slot 5
+};
+
+struct FlameVector
+{
+	FlameElem *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_nSize;
+	FlameElem *m_pElements;
+
+	void AddToTail(const FlameElem &src)
+	{
+		int elem = m_nSize;
+		if (m_nSize + 1 > m_nAllocationCount)
+			((Mem1c *)this)->sub_103e3ec0(m_nSize + 1 - m_nAllocationCount);
+		m_pElements = m_pMemory;
+		m_nSize++;
+		int toMove = m_nSize - elem - 1;
+		if (toMove > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], toMove * sizeof(FlameElem));
+		FlameElem *p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+	}
+};
+
+extern FlameLookupSlots *g_10723944;
+
+void CUnknown103e2470::sub_103e2470(CFlameEvent_t *pEvent)
+{
+	FlameEntity *pEnt = g_10723944->Lookup(pEvent->m_hOwner);
+	if (pEnt->m_type == 0x57 || pEnt->m_type == 0x50) {
+		m_stagingOrigin.Set(pEvent->m_origin);
+		m_stagingAngles.x = pEvent->m_angles.x;
+		m_stagingAngles.y = pEvent->m_angles.y;
+		m_stagingAngles.z = pEvent->m_angles.z;
+		m_stagingScale = 3.0f;
+		((FlameVector *)&m_pMemory)->AddToTail(*(FlameElem *)&m_stagingOrigin);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3ec0 size=0x76
 struct Elem1c { char d[0x1c]; };
 extern void *(*g_109f3638)(void *, int);
