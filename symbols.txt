@@ -2558,6 +2558,7 @@
 0x100154d8 func   ?sub_1036ec40@@YADXZ sub_1036ec40
 0x100154e2 func   ?sub_100b03b0@@YAXXZ sub_100b03b0
 0x10015555 func   ?vfunc49@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc49
+0x100155af func   ?sub_1021e430@CUtlVector4@@QAEXH@Z CUtlVector4::sub_1021e430
 0x100155b4 func   ?sub_1003c3c0@@YIXPAUMem@@HH@Z sub_1003c3c0
 0x100155b9 func   _item_w_uzi item_w_uzi
 0x100155be func   _prop_ragdoll prop_ragdoll
