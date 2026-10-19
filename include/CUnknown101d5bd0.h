@@ -18,4 +18,5 @@ public:
 	int sub_101d5bd0(const char *name);
 	int sub_101d5d20(const char *name, int start);
 	int sub_101e1440(const char *name, int start);	// same as sub_101d5d20 (another instance)
+	void sub_101d6de0();	// purges the list, then loads the "LevelingTemplate" data files (vdata/system) one by one
 };
