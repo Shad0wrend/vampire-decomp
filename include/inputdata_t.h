@@ -16,6 +16,7 @@ struct variant_t
 	int Int() const { return iValue; }	// the raw integer value
 	const char *sub_10008805();	// the value converted to a string (used when it is not a string)
 	void sub_100d04b0(void *pOut);	// "variant_t::Convert"-like getter: stores the value into *pOut according to fieldType (nothing for unsupported types)
+	void sub_100d0390(int type, void *pData);	// "variant_t::Set": stores the type and copies the value out of *pData according to it (1 dword, 3 dwords for vector types 3 and 14, a byte for 5, an entity pointer for 11 which becomes its handle, a handle for 12; unsupported types clear the value and the type)
 };
 
 struct inputdata_t
