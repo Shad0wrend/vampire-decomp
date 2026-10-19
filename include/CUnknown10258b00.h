@@ -57,11 +57,11 @@ public:
 	CUnknown10258b00_A m_A[2];	// 0x2668
 	CUnknown10258b00_B m_B[3];	// 0x238e0
 	char m_pad4fe6c[4];
-	float m_f4fe70;	// 0x4fe70 .. 0x4fe80: floats cleared to 0
-	float m_f4fe74;
-	float m_f4fe78;
-	float m_f4fe7c;
-	float m_f4fe80;
+	void *m_p4fe70;	// 0x4fe70 .. 0x4fe80: pointers cleared to null
+	void *m_p4fe74;
+	void *m_p4fe78;
+	void *m_p4fe7c;
+	void *m_p4fe80;
 	int m_n4fe84;	// 0x4fe84
 };
 
