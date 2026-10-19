@@ -3001,6 +3001,39 @@ void sub_10068ab0(int a, int b, const int *mins, const int *maxs, int p5, int p6
 }
 // END FUNCTION
 
+// FUNCTION: 0x100697a0 size=0xe1
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *props, int n, const char *name);
+};
+
+extern SendTable g_106c677c;
+extern SendTable *g_1053dfa8;
+extern const char *g_1054565c;
+void sub_10003012();
+void sub_10009539();
+
+SendProp sub_10007bfd(const char *name, int offset, int size, int bits, int flags, int a, int b);
+SendProp sub_1000bf2d(const char *name, int offset, SendTable *table, void (*proxy)());
+SendProp sub_1000c14e(const char *name, int offset, int size, int bits, int flags, int a, unsigned int hi, void (*proxy)());
+
+int sub_100697a0()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, sub_10009539),
+		sub_1000c14e("m_vecOrigin", 12, 12, -1, 2, 0, 0xc7ec9090, sub_10003012),
+		sub_1000c14e("m_vecAngle", 24, 12, -1, 2, 0, 0xc7ec9090, sub_10003012),
+		sub_10007bfd("m_nParticleIndex", 36, 1, -1, 1, 0, 0),
+	};
+	g_106c677c.sub_1000e8fe(props + 1, 4, g_1054565c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cc20 size=0x79
 int sub_10431c2f(char *, const char *, ...);
 void sub_10203dd0(char *);
