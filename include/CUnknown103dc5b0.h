@@ -3,16 +3,22 @@
 // CNPC_VWerewolf vector.
 #pragma once
 
-extern void (__cdecl * const g_109f3624)(void *);	// Plat_Free
+extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
 
-struct CUtlMem103dc5b0
+class CUtlVec103dc5b0
 {
-	void *m_pMemory;
-	int m_allocationCount;
-	int m_growSize;
-
-	void Purge()
+public:
+	~CUtlVec103dc5b0()
 	{
+		m_Size = 0;
+		if (m_growSize != -1) {
+			if (m_pMemory) {
+				g_109f3624(m_pMemory);
+				m_pMemory = 0;
+			}
+			m_allocationCount = 0;
+		}
+		m_pElements = m_pMemory;
 		if (m_growSize != -1) {
 			if (m_pMemory) {
 				g_109f3624(m_pMemory);
@@ -21,22 +27,12 @@ struct CUtlMem103dc5b0
 			m_allocationCount = 0;
 		}
 	}
-	~CUtlMem103dc5b0() { Purge(); }
-};
 
-struct CUtlVec103dc5b0
-{
-	CUtlMem103dc5b0 m_Memory;
-	int m_size;
+	void *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_Size;
 	void *m_pElements;
-
-	void Purge()
-	{
-		m_size = 0;
-		m_Memory.Purge();
-		m_pElements = m_Memory.m_pMemory;
-	}
-	~CUtlVec103dc5b0() { Purge(); }
 };
 
 class CUnknown103dc5b0
