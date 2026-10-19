@@ -57,6 +57,7 @@ public:
 	void sub_1033ea90(inputdata_t *data);	// "CBaseCombatCharacter::InputFrenzyCheck": scope trace (entity name), then sub_1033eb60(integer value or 0)
 	void sub_1033f3f0(inputdata_t *data);	// "CBaseCombatCharacter::InputHungerCheck": same shape as sub_1033ea90
 	void sub_1033eb60(int value);
+	void sub_103268e0(int a, int b);	// "CBaseCombatCharacter::FInViewConeBase"-like worker of vfunc362
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc295(int a);
@@ -68,6 +69,7 @@ public:
 	void vfunc338(int a, int b, int c);
 	void vfunc339(int a, int b, int c);
 	void vfunc340(int a, int b, int c);
+	void vfunc362(int a);	// "CBaseCombatCharacter::FInViewCone": scope trace, then sub_103268e0(a, field at +0x1574)
 	int vfunc376(int a);
 	void vfunc387();
 	int vfunc393();
@@ -80,6 +82,8 @@ public:
 	char m_pad13a4[0x13bc - 0x13a4];
 	int m_nStatLists;
 	CVStatList_t **m_pStatLists;
+	char m_pad13c4[0x1574 - 0x13c4];
+	int m_field1574;
 	CBaseCombatCharacter *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100078c4();	// as in CPhysForce (transplant)
 };
