@@ -23,6 +23,8 @@ public:
 	int m_unkC;
 	unsigned short m_Root;
 	unsigned short m_NumElements;
+	unsigned short m_FirstFree;
+	unsigned short m_TotalElements;
 
 	static unsigned short InvalidIndex() { return 0xffff; }
 
