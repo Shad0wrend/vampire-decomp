@@ -13712,6 +13712,54 @@ void S101d6d50::sub_101d6d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7000 size=0x9c
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+struct VBase {
+	virtual void a0();
+	virtual void Release();
+};
+struct KVNode {
+	virtual void b0();
+	virtual void b1();
+	virtual KVNode *b2();
+	virtual KVNode *GetNextKey();
+};
+struct KVFile : virtual VBase {
+	virtual void c0();
+	virtual void c1();
+	virtual KVNode *FindKey(const char *name);
+};
+struct Handler {
+	void sub_100135de(KVNode *node, struct Loader *loader);
+};
+struct Loader {
+	bool sub_101d7000(const char *file);
+	Handler *sub_1001035c();
+};
+extern void *g_1070b238;
+KVFile *__cdecl sub_101f2e20(const char *file, void *path);
+bool Loader::sub_101d7000(const char *file)
+{
+	KVFile *kv = sub_101f2e20(file, g_1070b238);
+	if (!kv) {
+		Msg("Unable to open data file for: %s\n", file);
+		return false;
+	}
+	KVNode *node = (KVNode *)kv->FindKey("LevelingTemplate");
+	while (node) {
+		Handler *h = sub_1001035c();
+		if (!h) {
+			Msg("Unable to parse data file for: %s.  Memory allocation ERROR!\n", file);
+			return false;
+		}
+		h->sub_100135de(node, this);
+		node = node->GetNextKey();
+	}
+	kv->Release();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d7380 size=0xb0
 #include "CUnknown101d7380.h"
 extern "C" char *__cdecl _strlwr(char *);
