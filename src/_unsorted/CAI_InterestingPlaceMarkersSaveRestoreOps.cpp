@@ -1,6 +1,51 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102d9240 size=0xa6
+#include "CAI_InterestingPlaceMarkersSaveRestoreOps.h"
+#include "CSave.h"
+#include "CBaseEntity.h"
+
+struct MarkerEntry_t {
+	CBaseEntity *m_pEntity;	// 0x00
+	float m_vecA[3];	// 0x04
+	float m_vecB[3];	// 0x10
+};
+
+struct MarkerOwner_t {
+	char m_pad0000[0x580];
+	MarkerEntry_t *m_pMarkers;	// 0x580
+	int m_nAllocated;	// 0x584
+	int m_nCount;	// 0x588
+};
+
+struct EHandle_t {
+	int m_index;
+	EHandle_t() { m_index = -1; }
+	void Set(CBaseEntity *pEnt)
+	{
+		if (pEnt)
+			m_index = *pEnt->vfunc1();
+		else
+			m_index = -1;
+	}
+};
+
+void CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, CSave *pSave)
+{
+	MarkerOwner_t *pOwner = (MarkerOwner_t *)fieldInfo->pOwner;
+	pSave->vfunc10(&pOwner->m_nAllocated, 1);
+	pSave->vfunc10(&pOwner->m_nCount, 1);
+	for (int i = 0; i < pOwner->m_nCount; i++) {
+		EHandle_t handle;
+		handle.Set(pOwner->m_pMarkers[i].m_pEntity);
+		pSave->vfunc36(&handle, 1);
+		pSave->vfunc23(pOwner->m_pMarkers[i].m_vecA, 1);
+		pSave->vfunc23(pOwner->m_pMarkers[i].m_vecB, 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d9320 size=0x119
 #include "CAI_InterestingPlaceMarkersSaveRestoreOps.h"
 
