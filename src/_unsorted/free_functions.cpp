@@ -28400,6 +28400,30 @@ char sub_103c8e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ca2c0 size=0xa0
+#include "CUnknown103ca2c0.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool CUnknown103ca2c0::sub_103ca2c0(int value)
+{
+	g_109f3620[*g_109f3680].a = "CHintData_WW::IsHintPathableFromEndpoint";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (Find(value) == -1)
+	{
+		--*g_109f3680;
+		return false;
+	}
+	--*g_109f3680;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d1ca0 size=0x81
 #include "CNPC_VWerewolf.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
