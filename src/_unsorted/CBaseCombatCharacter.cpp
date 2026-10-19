@@ -654,6 +654,33 @@ bool __fastcall sub_103404f0(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10340590 size=0x8b
+#include "CBaseCombatCharacter.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+bool CBaseCombatCharacter::vfunc73(CBaseEntity *pOther)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseCombatCharacter::CausesImpactDamage";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	bool result = (pOther->sub_100b3700() & 0x20000000) == 0x20000000;
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103408e0 size=0x89
 #include "CBaseCombatCharacter.h"
 
