@@ -1449,6 +1449,7 @@
 0x1000be06 func   ?sub_1027dc80@@YG_NPAUFObj@@PAUIObj@@MPAH@Z sub_1027dc80
 0x1000be1a func   _vampire_skill vampire_skill
 0x1000be5b func   _prop_ragdoll_special prop_ragdoll_special
+0x1000be79 func   ?sub_101e1010@Loader@@QAE_NPBD@Z Loader::sub_101e1010
 0x1000be9c func   ?vfunc5@CTriggerBombSite@@QAEPAV1@I@Z CTriggerBombSite::vfunc5
 0x1000bec4 func   ?sub_10231e60@@YIIPAD@Z sub_10231e60
 0x1000bed8 func   ?sub_1008b490@@YIXPAD@Z sub_1008b490

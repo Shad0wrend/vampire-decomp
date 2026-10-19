@@ -14148,6 +14148,54 @@ S101e0520 *CUnknown101e0c30::sub_101e0c30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1010 size=0x9c
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+struct VBase {
+	virtual void a0();
+	virtual void Release();
+};
+struct KVNode {
+	virtual void b0();
+	virtual void b1();
+	virtual KVNode *b2();
+	virtual KVNode *GetNextKey();
+};
+struct KVFile : virtual VBase {
+	virtual void c0();
+	virtual void c1();
+	virtual KVNode *FindKey(const char *name);
+};
+struct Handler {
+	void sub_1000ceb9(KVNode *node, struct Loader *loader);
+};
+struct Loader {
+	bool sub_101e1010(const char *file);
+	Handler *sub_1000f51a();
+};
+extern void *g_1070b238;
+KVFile *__cdecl sub_101f2e20(const char *file, void *path);
+bool Loader::sub_101e1010(const char *file)
+{
+	KVFile *kv = sub_101f2e20(file, g_1070b238);
+	if (!kv) {
+		Msg("Unable to open data file for: %s\n", file);
+		return false;
+	}
+	KVNode *node = (KVNode *)kv->FindKey("DisciplineTgt");
+	while (node) {
+		Handler *h = sub_1000f51a();
+		if (!h) {
+			Msg("Unable to parse data file for: %s.  Memory allocation ERROR!\n", file);
+			return false;
+		}
+		h->sub_1000ceb9(node, this);
+		node = node->GetNextKey();
+	}
+	kv->Release();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1360 size=0xa8
 extern "C" char *_strlwr(char *);
 extern "C" char *strstr(const char *, const char *);
