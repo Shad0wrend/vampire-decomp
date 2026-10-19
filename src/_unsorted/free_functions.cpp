@@ -23167,6 +23167,36 @@ struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 void CUnknown10307b40::sub_10307b40(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x1030b100 size=0x98
+#include "CUtlVector280.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+void CUtlVector280::sub_1030b100(int num)
+{
+	if (num + m_size > m_allocationCount && m_growSize != -1) {
+		int newSize = m_allocationCount + (num + m_size - m_allocationCount);
+		while (m_allocationCount < newSize) {
+			if (m_allocationCount != 0) {
+				if (m_growSize != 0)
+					m_allocationCount += m_growSize;
+				else
+					m_allocationCount += m_allocationCount;
+			} else {
+				m_allocationCount = 1;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (char *)Plat_Realloc(m_pMemory, m_allocationCount * 280);
+		else
+			m_pMemory = (char *)Plat_Alloc(m_allocationCount * 280);
+	}
+	m_size += num;
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b2f0 size=0x6a
 #include "CUnknown1030b2f0.h"
 
