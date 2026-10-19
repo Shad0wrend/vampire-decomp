@@ -88,6 +88,7 @@ public:
 	void vfunc339(int a, int b, int c);
 	void vfunc340(int a, int b, int c);
 	char vfunc362(const float *pos);	// "CBaseCombatCharacter::FInViewCone": scope trace, then sub_103268e0(pos, field at +0x1574)
+	float *vfunc367(float *out);	// "CBaseCombatCharacter::BodyAngles": scope trace (entity name), copies the three floats returned by slot 219 to out and returns out
 	int vfunc376(int a);
 	void vfunc387();
 	int vfunc393();
