@@ -2347,6 +2347,7 @@
 0x100115c7 func   ?sub_1021d730@@YAPAHXZ sub_1021d730
 0x100115d6 func   _item_k_skyline_haven_key item_k_skyline_haven_key
 0x10011617 func   ?sub_10085070@@YAXPAHPBH@Z sub_10085070
+0x1001164e func   ?sub_1032e9f0@CBaseCombatCharacter@@QAEXHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1032e9f0
 0x10011676 func   ?sub_10031bd0@@YA_NPAX@Z sub_10031bd0
 0x10011699 func   ?sub_104300d0@@YAII@Z sub_104300d0
 0x1001169e func   ?vfunc546@CNPC_VToreador@@QAEHH@Z CNPC_VToreador::vfunc546
