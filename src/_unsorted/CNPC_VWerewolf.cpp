@@ -132,6 +132,27 @@ int __fastcall sub_103d0780(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d0a30 size=0x74
+#include "CNPC_VWerewolf.h"
+#include "CAI_BaseNPCTroika.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CNPC_VWerewolf::vfunc516()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CNPC_VWerewolf::MaxYawSpeed";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	((CAI_BaseNPCTroika *)this)->sub_10011dc4();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d5f60 size=0x7e
 #include "CNPC_VWerewolf.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
