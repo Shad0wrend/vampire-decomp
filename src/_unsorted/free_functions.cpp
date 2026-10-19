@@ -25736,6 +25736,51 @@ CUnknown102718e0 *CUnknown102718e0::sub_102718e0(const CUnknown102718e0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10271ff0 size=0xf7
+#include "CAI_BaseNPC.h"
+#include "CBaseAnimating.h"
+
+int CAI_BaseNPC::sub_10271ff0(int act, int *pOut)
+{
+    int i = 0;
+    act = vfunc375(act);
+    int a2 = vfunc381(act);
+    if (pOut)
+        *pOut = a2;
+    int fb = act;
+    int cur = act;
+    int nxt;
+    do {
+        i++;
+        int t = vfunc376(cur);
+        if (t != cur)
+            fb = t;
+        nxt = vfunc381(t);
+        if (nxt == cur)
+            break;
+        cur = nxt;
+    } while (i < 5);
+    if (cur == 0x18)
+        return cur;
+    CBaseAnimating *pAnim = (CBaseAnimating *)this;
+    if (pAnim->sub_1008dd30(nxt, -1) >= 0)
+        return nxt;
+    cur = fb;
+    if (cur == nxt || pAnim->sub_1008dd30(cur, -1) < 0) {
+        if (a2 != cur && pAnim->sub_1008dd30(a2, -1) >= 0)
+            return act;
+        cur = act;
+        if (cur == a2 || pAnim->sub_1008dd30(cur, -1) < 0) {
+            if (cur == 0x13) {
+                act = 9;
+                cur = *(volatile int *)&act;
+            }
+        }
+    }
+    return cur;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d990 size=0xa
 struct CUnknown1027d990Sub { int p[6]; int a; };
 struct CUnknown1027d990 { char p[0x5d34]; CUnknown1027d990Sub *m; int sub_1027d990(); };
