@@ -12,6 +12,7 @@ public:
 	void sub_1000c27a(int arg);
 	void vfunc431();	// "CNPC_VChangBros::NPCThink": scope trace around the base think, then schedules the next think
 	void vfunc461();	// "CNPC_VChangBros::SelectIdealState": scope trace, sets the ideal state (+0x1b38) to 10, then the base implementation
+	void sub_10011225();	// CNPC_VHuman::vfunc461, called directly
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };
