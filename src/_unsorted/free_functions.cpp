@@ -10878,6 +10878,47 @@ int sub_1018c9a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018cc00 size=0x108
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1058c1c8[2];
+void sub_10010e88();
+
+int *sub_1018cc00()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_nLookAtName", {0x450, 0}, 1, 6, "lookatname" },
+        { 12, "m_hTargetEntity", {0x454, 0}, 1, 2 },
+        { 12, "m_hLookAtEntity", {0x458, 0}, 1, 2 },
+        { 1, "m_flDuration", {0x45c, 0}, 1, 6, "duration" },
+        { 1, "m_flDotTolerance", {0x460, 0}, 1, 2 },
+        { 15, "m_flFacingTime", {0x464, 0}, 1, 2 },
+        { 5, "m_bFired", {0x468, 0}, 1, 2 },
+        { 10, "m_OnFacingLookat", {0x46c, 0}, 1, 0x16, "OnFacingLookat", g_1055dc70 },
+        { 10, "m_OnNotFacingLookat", {0x484, 0}, 1, 0x16, "OnNotFacingLookat", g_1055dc70 },
+        { 0, "InputTest", {0, 0}, 1, 8, "Test", 0, (void *)sub_10010e88 },
+    };
+    g_1058c1c8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1058c1c8[0] = (int)&dataDesc[1];
+    return g_1058c1c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018df00 size=0x49
 void *sub_1000db89(int);
 struct GP;
