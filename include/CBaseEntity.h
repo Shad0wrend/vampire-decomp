@@ -85,8 +85,8 @@ public:
 	void sub_1009b5a0(const char *msg);	// "CBaseEntity::TraceMessageBare" (slot 19): identical to sub_1009b500
 	void sub_1009b640(int a, int b, int c);	// "CBaseEntity::DumpString"-like worker: scope trace, then DevMsg("%-40s: %10s\n", b, c)
 	void sub_1009b700(int a, int b, const char *c);	// "CBaseEntity::DumpString": scope trace (entity name), then sub_1009b640(a, b, c or "")
-	void sub_1009b7d0(int a, char *text, char value);	// "CBaseEntity::DumpCharArrayBase"-like: one dumped byte
-	void sub_1009b980(int a, char *text, int value);	// dumped dword, worker of sub_1009c390
+	void sub_1009b7d0(int a, char *text, char value);	// "CBaseEntity::DumpChar": scope trace, sprintf("%c") into a global buffer, then sub_1009b640
+	void sub_1009b980(int a, char *text, int value);	// "CBaseEntity::DumpInt": scope trace, sprintf("%d") into a global buffer, then sub_1009b640
 	void sub_1009ba60(int a, char *text, int value);	// "CBaseEntity::DumpFloatArrayBase"-like: one dumped dword
 	void sub_1009bc30(int a, char *text, int value);	// "CBaseEntity::DumpPtr": scope trace (entity name), sprintf("0x%08X", value) into a global buffer, then sub_1009b640(a, text, buffer)
 	void sub_1009c390(int a, const char *fmt, const int *array, int count);	// "CBaseEntity::": scope trace, then one sub_1009b980 per dword
@@ -103,6 +103,7 @@ public:
 	void sub_100a0b20();	// "CBaseEntity::ClearParent": scope trace (entity name), then the call through the stub at 0x1000b636
 	void sub_100a53d0(int a);	// "CBaseEntity::PhysicsTouchTriggers": scope trace (entity name), then slot 122 of the global at 0x1070b22c (edict at +0x2e0, a)
 	bool sub_100a5ad0();	// "CBaseEntity::VPhysicsInitSetup": scope trace (entity name), false without the object at +0x2e0, else slot 225 and sub_100b3b00, true
+	void sub_100a7d00(int info, int a, int b);	// "CBaseEntity::DispatchTraceAttack": scope trace (entity name), when slot 140(info->field 0x2c) is true calls slot 141(info, a, b)
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
 	void sub_100a8c90(int a);	// "CBaseEntity::InputScriptUnhide": calls vfunc78
 	void sub_100a8d30(CBaseEntity *pEnt);	// "CBaseEntity::SetSoundOverrideEnt": stores pEnt's handle at +0x100 (-1 for null)
