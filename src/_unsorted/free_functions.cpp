@@ -5271,6 +5271,35 @@ void CBaseEntity::sub_1009c5f0(int a, const char *fmt, const int *array, int cou
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d1e0 size=0x86
+#include "CBaseEntity.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+struct SGlobalVars { char pad[0xc]; float curtime; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern SGlobalVars *g_1070b228;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+void CBaseEntity::sub_1009d1e0()
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::ForceTransmit";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	m_flForceTransmitTime = g_1070b228->curtime + 1.0f;
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ee80 size=0x9f
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
