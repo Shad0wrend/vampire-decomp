@@ -168,6 +168,7 @@
 0x1000236f func   ?sub_101cb6b0@@YAPAHXZ sub_101cb6b0
 0x1000239c func   ?sub_100353c0@CUnknown100353c0@@QAEPAV1@PBV1@@Z CUnknown100353c0::sub_100353c0
 0x100023a1 func   ?sub_1027d990@CUnknown1027d990@@QAEHXZ CUnknown1027d990::sub_1027d990
+0x100023a6 func   ?sub_1009b8a0@CBaseEntity@@QAEXHHD@Z CBaseEntity::sub_1009b8a0
 0x100023b0 func   ?vfunc1@CServerGameClients@@UAEXXZ CServerGameClients::vfunc1
 0x100023dd func   ?vfunc420@CNPC_VBaseBoss@@UAEXXZ CNPC_VBaseBoss::vfunc420
 0x100023e7 func   ?sub_10175290@CBasePlayer@@QAEHXZ CBasePlayer::sub_10175290
