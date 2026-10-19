@@ -13,6 +13,6 @@ public:
 	void sub_1002cc10(int elem, int num);	// "CUtlVector::ShiftElementsRight": memmove the tail up by num
 	void sub_10032db0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements
 	int sub_10042a80(int elem, int num, const void *pToCopy);	// "CUtlVector::InsertMultiple": inserts num elements at elem
-	int sub_100430a0(int elem, int num, const void *pToCopy);	// same as sub_10042a80 (another instance)
+	int sub_10042d90(int elem, int num, const void *pToCopy);	// same as sub_10042a80 (another instance)
 	void sub_1027f990(int num);	// same shape as sub_10032db0
 };
