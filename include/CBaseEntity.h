@@ -51,6 +51,7 @@ public:
 
 	// Slots whose callers call them directly, so far only declared as plain members.
 	bool vfunc158();
+	bool vfunc160(const char *name);	// "CBaseEntity::HasTarget": scope trace (entity name), true when name is set and equals (case-insensitively) the target string at +0x20c
 	void vfunc168();
 	void vfunc180();
 	void vfunc194();
