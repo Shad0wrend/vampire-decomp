@@ -21264,6 +21264,31 @@ void CBaseCombatCharacter::sub_10325940(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10325c10 size=0x7a
+#include "CBaseCombatCharacter.h"
+struct SScope { const char *a; const char *b; const char *c; };
+extern "C" __declspec(dllimport) SScope g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern char g_106b8540[];
+void CBaseCombatCharacter::sub_10325c10(inputdata_t *data)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	} else {
+		name = "NULL ENTITY";
+	}
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].a = "CBaseCombatCharacter::InputLookAtEntityDefault";
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].b = name;
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].c = g_106b8540;
+	g_ScopeTraceStackDepth++;
+	sub_10325cb0(0, 0);
+	g_ScopeTraceStackDepth--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10327960 size=0x7e
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
