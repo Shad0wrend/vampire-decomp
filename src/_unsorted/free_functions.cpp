@@ -10886,6 +10886,53 @@ void CUnknown100ee750::sub_100ee750(void *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee810 size=0xf7
+#include "CBaseDoor.h"
+#include "inputdata_t.h"
+
+struct CSlots { void sub_10224170(inputdata_t *pData); };
+struct EntInfo { CSlots *ent; int serial; int pad; };
+extern char *g_10566458;
+
+void CBaseDoor::sub_100ee810()
+{
+	inputdata_t data;
+	data.value.iValue = 0;
+	data.value.eVal = 0xffffffff;
+	data.value.fieldType = 0;
+	volatile unsigned int *ph1 = (volatile unsigned int *)((char *)this + 0x628);
+	unsigned int h = *ph1;
+	if (h != 0xffffffff) {
+		EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+		if (e->serial == (h >> 13) && e->ent) {
+			unsigned int h2 = *ph1;
+			CSlots *pEnt;
+			if (h2 != 0xffffffff) {
+				EntInfo *e2 = (EntInfo *)(g_10566458 + 4) + (h2 & 0x1fff);
+				pEnt = e2->serial == (h2 >> 13) ? e2->ent : 0;
+			} else
+				pEnt = 0;
+			pEnt->sub_10224170(&data);
+		}
+	}
+	volatile unsigned int *ph2 = (volatile unsigned int *)((char *)this + 0x62c);
+	h = *ph2;
+	if (h != 0xffffffff) {
+		EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+		if (e->serial == (h >> 13) && e->ent) {
+			unsigned int h2 = *ph2;
+			CSlots *pEnt;
+			if (h2 != 0xffffffff) {
+				EntInfo *e2 = (EntInfo *)(g_10566458 + 4) + (h2 & 0x1fff);
+				pEnt = e2->serial == (h2 >> 13) ? e2->ent : 0;
+			} else
+				pEnt = 0;
+			pEnt->sub_10224170(&data);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0120 size=0x3a
 #include "CUnknown100f0120.h"
 #include "CBaseEntity.h"

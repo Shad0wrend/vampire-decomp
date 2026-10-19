@@ -2767,6 +2767,7 @@
 0x10013327 func   ?vfunc5@CResearchBook_LG_COMP@@QAEPAV1@I@Z CResearchBook_LG_COMP::vfunc5
 0x10013331 func   ?vfunc599@CNPC_VTzimisceRunner@@UAE_NPAX@Z CNPC_VTzimisceRunner::vfunc599
 0x1001336d func   ?sub_1022b4d0@S1022b4d0@@QAEXAAUinputdata_t@@@Z S1022b4d0::sub_1022b4d0
+0x1001338b func   ?sub_100ee810@CBaseDoor@@QAEXXZ CBaseDoor::sub_100ee810
 0x100133b8 func   ?sub_1006e6a0@CBaseCineCam@@QAE_NHHHHH@Z CBaseCineCam::sub_1006e6a0
 0x100133d1 func   ?sub_102ce550@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102ce550
 0x1001342b func   ?sub_1008d520@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d520
