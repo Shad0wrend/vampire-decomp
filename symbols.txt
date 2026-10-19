@@ -2267,6 +2267,7 @@
 0x1001019f func   ?vfunc5@CGameSign@@QAEPAV1@I@Z CGameSign::vfunc5
 0x100101a9 func   ?sub_102a9ec0@CAI_BaseNPCTroika@@QAEDH@Z CAI_BaseNPCTroika::sub_102a9ec0
 0x100101bd func   ?vfunc5@CBaseToggle@@QAEPAV1@I@Z CBaseToggle::vfunc5
+0x100101ea func   ?sub_1032a910@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_1032a910
 0x100101f4 func   ?vfunc5@CSoundScheme@@QAEPAV1@I@Z CSoundScheme::vfunc5
 0x10010212 func   ?sub_100916a0@@YIMPAD@Z sub_100916a0
 0x10010217 func   ?vfunc233@CBaseEntity@@QAEHPAHH@Z CBaseEntity::vfunc233
