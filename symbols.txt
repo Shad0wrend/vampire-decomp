@@ -314,6 +314,7 @@
 0x100032b5 func   ?vfunc5@CItemGPishaBook@@QAEPAV1@I@Z CItemGPishaBook::vfunc5
 0x100032f6 func   ?vfunc5@CEntityFlame@@QAEPAV1@I@Z CEntityFlame::vfunc5
 0x10003305 func   ?sub_1030fe50@CUnknown1030fe50@@QAEXXZ CUnknown1030fe50::sub_1030fe50
+0x10003323 func   ?sub_101b9140@CUnknown101b9140@@QAEHHHPBUCUnknown101b9140Elem@@@Z CUnknown101b9140::sub_101b9140
 0x10003328 func   _gib gib
 0x1000332d func   _item_g_junkyard_businesscard item_g_junkyard_businesscard
 0x1000334b func   ?sub_101647a0@CBasePlayer@@QAEHH@Z CBasePlayer::sub_101647a0

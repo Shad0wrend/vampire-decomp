@@ -15718,6 +15718,40 @@ void CUnknown101b90a0::sub_101b90a0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9140 size=0xc6
+#include "CUnknown101b9140.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+int CUnknown101b9140::sub_101b9140(int elem, int num, const CUnknown101b9140Elem *pToCopy)
+{
+	if (num == 0)
+		return elem;
+	if (m_Size + num > m_nAllocationCount)
+		sub_101b72e0(m_Size - m_nAllocationCount + num);
+	m_Size += num;
+	m_pElements = (CUnknown101b9140Elem *)m_pMemory;
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&m_pElements[elem + num], &m_pElements[elem], numToMove * 8);
+	for (int i = 0; i < num; i++) {
+		CUnknown101b9140Elem *p = &((CUnknown101b9140Elem *)m_pMemory)[elem + i];
+		if (p) {
+			p->m_w = 0xffff;
+			p->m_d = 0;
+		}
+	}
+	if (pToCopy) {
+		for (int i = 0; i < num; i++) {
+			CUnknown101b9140Elem *p = &((CUnknown101b9140Elem *)m_pMemory)[elem + i];
+			p->m_w = pToCopy[i].m_w;
+			p->m_d = pToCopy[i].m_d;
+		}
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb220 size=0x6b
 struct ScopeEntry {
     const char *a;
