@@ -99,6 +99,7 @@ public:
 	int sub_100ae090(const char *name);	// "CBaseEntity::PrecacheSound": forwards to the sound system, returns its result
 	void sub_100ae150();	// "CBaseEntity::Remove": scope trace (entity name), then sub_101cd940(this)
 	char sub_100aa840();	// "CBaseEntity::IsTransparent": (field at +0x16c) != 0
+	int sub_100b1a00();	// "CBaseEntity::GetModel": scope trace (entity name), then modelinfo slot 2 of vfunc8(); returns its result
 	void sub_100b12e0(char value);	// "CBaseEntity::SetSentLastFrame": stores the byte at +0x380 (slot 7 override)
 	void sub_100b1750(int index);	// "CBaseEntity::SetModelIndex": stores the dword at +0x1a4 (slot 10 override)
 	void sub_100b3580(unsigned int flags);	// "CBaseEntity::AddFlag": scope trace, ors the bits into the flags at +0x434
