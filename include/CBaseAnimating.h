@@ -20,7 +20,7 @@ public:
 	void sub_100926e0(int bone, int b, int c);	// "CBaseAnimating::GetBonePosition0"
 	void sub_10092610(int a, int b, int c);	// "CBaseAnimating::GetBonePosition01": LookupBone(a), then GetBonePosition0(bone, b, c)
 	int sub_10092e20(int a, int b, int c);	// "CBaseAnimating::GetAttachment01": scope trace, then sub_10005d12(sub_100060aa(a, b, c))
-	void sub_100931d0(int a, int b, int c);	// "CBaseAnimating::GetAttachmentLocal01": LookupAttachment(a), then GetAttachmentLocal0(index, b, c)
+	char sub_100931d0(int a, int b, int c);	// "CBaseAnimating::GetAttachmentLocal01": LookupAttachment(a), then GetAttachmentLocal0(index, b, c); returns its flag
 	int sub_10092d50(int name);	// "CBaseAnimating::LookupAttachment" (stub 0x100060aa)
 	char sub_100932a0(int attachment, int b, int c);	// "CBaseAnimating::GetAttachmentLocal0" (stub 0x10012625), returns a success flag
 	int sub_100060aa(int a, int b, int c);
