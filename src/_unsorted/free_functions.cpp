@@ -15403,6 +15403,36 @@ void __fastcall sub_10260750(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260870 size=0x8f
+#include "CUtlVector36.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+void CUtlVector36::sub_10260870(int num)
+{
+	if (num + m_size > m_allocationCount && m_growSize != -1) {
+		int newSize = m_allocationCount + (num + m_size - m_allocationCount);
+		while (m_allocationCount < newSize) {
+			if (m_allocationCount != 0) {
+				if (m_growSize != 0)
+					m_allocationCount += m_growSize;
+				else
+					m_allocationCount += m_allocationCount;
+			} else {
+				m_allocationCount = 1;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (char *)Plat_Realloc(m_pMemory, m_allocationCount * 36);
+		else
+			m_pMemory = (char *)Plat_Alloc(m_allocationCount * 36);
+	}
+	m_size += num;
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260980 size=0xa
 struct CUnknown10260980 { int p; int a; CUnknown10260980* sub_10260980(); };
 // TARGET: CUnknown10260980::sub_10260980
