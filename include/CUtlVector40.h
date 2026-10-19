@@ -11,4 +11,5 @@ public:
 	char *m_pElements;
 
 	void sub_101a58e0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements (initial allocation 1)
+	int sub_101a56d0(int num, const void *pToCopy);	// "CUtlVector::AddMultipleToTail": InsertMultipleBefore(m_size, num, pToCopy), returns the first new index
 };
