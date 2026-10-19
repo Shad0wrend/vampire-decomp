@@ -11,12 +11,12 @@ struct StatDefault3
 	int pad_24[23];
 	int m_80;	// 0x80
 	int pad_84[2];
-	char m_8c[12];	// 0x8c..0x97, [5] == 1 by default
-	char m_98[10];	// 0x98..0xa1
+	bool m_8c[12];	// 0x8c..0x97, [5] == true by default
+	bool m_98[10];	// 0x98..0xa1
 	char pad_a2[2];
 	int m_a4;	// 0xa4
-	char m_a8;
-	char m_a9;
+	bool m_a8;
+	bool m_a9;
 	char pad_aa[2];
 	int m_ac;	// 0xac
 	int m_b0;	// 0xb0
