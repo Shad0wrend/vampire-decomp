@@ -19186,6 +19186,25 @@ CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102cdd10 size=0x109
+#include "CUtlRBTree12.h"
+
+unsigned short CUtlRBTree12::sub_102cdd10(const void *search) const
+{
+	unsigned short i = m_Root;
+	while (i != InvalidIndex()) {
+		if (m_LessFunc(search, m_pElements[i].m_Data)) {
+			i = Links(i).m_Left;
+		} else if (m_LessFunc(m_pElements[i].m_Data, search)) {
+			i = Links(i).m_Right;
+		} else {
+			break;
+		}
+	}
+	return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ce100 size=0x13
 bool sub_102ce100(const unsigned int *a, const unsigned int *b)
 {
