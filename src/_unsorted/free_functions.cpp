@@ -22521,6 +22521,47 @@ int CBaseCombatCharacter::sub_10323210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103232b0 size=0x8c
+#include "CBaseCombatCharacter.h"
+
+#define QV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define QV100(p) QV10(p##0) QV10(p##1) QV10(p##2) QV10(p##3) QV10(p##4) QV10(p##5) QV10(p##6) QV10(p##7) QV10(p##8) QV10(p##9)
+
+// The entity's vtable up to slot 344, only to make the virtual call.
+struct CEntSlots {
+	QV100(s0) QV100(s1) QV100(s2)
+	QV10(s30) QV10(s31) QV10(s32) QV10(s33)
+	virtual void s340(); virtual void s341(); virtual void s342(); virtual void s343();
+	virtual float vfunc344();
+};
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+int CBaseCombatCharacter::sub_103232b0()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseCombatCharacter::GetShakyHandsPenalty";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	int result = *(int *)((char *)this + 0xe88);
+	if (result == 0)
+		result = (int)(((CEntSlots *)this)->vfunc344() * 2.0f);
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323a70 size=0x8
 short __fastcall sub_10323a70(char *p)
 {
