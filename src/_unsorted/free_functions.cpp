@@ -13349,6 +13349,48 @@ void *sub_1019bb70(void *self, char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019bba0 size=0xa6
+struct PyTypeObj { char pad[0x18]; void (*tp_dealloc)(void *); };
+struct PyObj { int refcnt; PyTypeObj *type; };
+struct PyString { int refcnt; PyTypeObj *type; int pad[3]; char data[1]; };
+struct IRestoreSlots {
+	virtual int Tell();
+	virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual int ReadData(void *buf, int size, int n);
+};
+struct PyIRestoreObj { int refcnt; PyTypeObj *type; IRestoreSlots *irestore; int size; };
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(void *, const char *, ...);
+__declspec(dllimport) PyString *PyString_FromStringAndSize(const char *, int);
+__declspec(dllimport) void PyErr_SetString(void *, const char *);
+__declspec(dllimport) extern void *PyExc_IOError;
+}
+
+PyString *sub_1019bba0(PyIRestoreObj *self, void *args)
+{
+	int n;
+	if (!PyArg_ParseTuple(args, "i", &n))
+		return 0;
+	int remaining = self->size - self->irestore->Tell();
+	if (n < 0 || n > remaining)
+		n = remaining;
+	PyString *s = PyString_FromStringAndSize(0, n);
+	if (!s)
+		return 0;
+	if (n > 0) {
+		if (self->irestore->ReadData(s->data, n, n) != n) {
+			PyErr_SetString(PyExc_IOError, "py_obj->irestore->ReadData read short");
+			if (--s->refcnt == 0)
+				s->type->tp_dealloc(s);
+			return 0;
+		}
+	}
+	return s;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019bde0 size=0x15
 int sub_1019bde0(char c)
 {
