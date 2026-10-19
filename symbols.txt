@@ -2239,6 +2239,7 @@
 0x10010ac8 func   ?sub_10168e60@@YA_NPAXPAUEntX@@@Z sub_10168e60
 0x10010ae6 func   ?vfunc38@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc38
 0x10010b09 func   ?vfunc116@CBaseEntity@@UAEHXZ CBaseEntity::vfunc116
+0x10010b22 func   ?vfunc566@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::vfunc566
 0x10010b45 func   ?sub_10356550@@YAPAHXZ sub_10356550
 0x10010b5e func   ?vfunc0@CGameRules@@UAEPAV1@I@Z CGameRules::vfunc0
 0x10010b7c func   ?sub_10216c20@@YAPAHXZ sub_10216c20

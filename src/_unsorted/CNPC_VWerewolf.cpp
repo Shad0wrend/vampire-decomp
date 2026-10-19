@@ -177,3 +177,33 @@ void CNPC_VWerewolf::vfunc465(const char *msg)
     --*g_109f3680;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103d7ce0 size=0xa4
+#include "CNPC_VWerewolf.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct HintObj_t {
+	char m_pad0000[0x5dc];
+	int m_nHintType;
+};
+
+bool CNPC_VWerewolf::vfunc566(void *pHint)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CNPC_VWerewolf::FValidateHintType";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int type = ((HintObj_t *)pHint)->m_nHintType;
+	if (type != 0x3a9f && type >= 0x3a98 && type <= 0x3aaa) {
+		(*g_109f3680)--;
+		return true;
+	}
+	(*g_109f3680)--;
+	return false;
+}
+// END FUNCTION
