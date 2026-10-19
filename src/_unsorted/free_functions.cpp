@@ -23108,6 +23108,38 @@ void sub_10237c30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10237ce0 size=0xdd
+extern int g_10752954;
+extern int g_105bf918[21];
+extern int g_10751a54;
+
+void sub_10237ce0()
+{
+	g_10752954 = 0;
+	g_105bf918[0] = 0xb4;
+	g_105bf918[1] = 0xb6;
+	g_105bf918[2] = 0xb7;
+	g_105bf918[3] = 0xbc;
+	g_105bf918[4] = 0xdb;
+	g_105bf918[5] = 0xd8;
+	g_105bf918[6] = 0xc4;
+	g_105bf918[7] = 0xc2;
+	g_105bf918[8] = 0xe7;
+	g_105bf918[9] = 0xde;
+	g_105bf918[10] = 0xe1;
+	g_105bf918[11] = 0xdf;
+	g_105bf918[12] = 0xda;
+	g_105bf918[13] = 0xe0;
+	g_105bf918[14] = 0xdc;
+	g_105bf918[15] = 0xd9;
+	g_105bf918[16] = 0xe5;
+	g_105bf918[17] = 0xe3;
+	g_105bf918[18] = 0xe6;
+	g_105bf918[19] = 0xdd;
+	g_10751a54 = 0x14;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10238380 size=0x12
 extern int g_1088aee4;
 void __stdcall sub_102383b0(int a);
