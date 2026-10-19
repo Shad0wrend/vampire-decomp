@@ -29,7 +29,7 @@ struct CUnknown100fde30Rec
 		m_j = 0;
 		m_i = 0;
 		m_k = 0;
-		*(unsigned int *)&m_a = 0xff7fffff;
+		m_a = -3.402823466e+38f;
 	}
 };
 
