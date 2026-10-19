@@ -783,6 +783,69 @@ bool __fastcall sub_100aa9a0(CBaseEntity *self, int, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aab10 size=0xd7
+struct SEntityEntry
+{
+    int m_pad;
+    void *m_pEnt;
+    unsigned int m_serial;
+};
+
+struct SPhysObject
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+    virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+    virtual void v25();
+};
+
+extern int *g_109f3680;
+extern const char **g_109f3620;
+extern const char g_105387dc[];
+extern const char g_106b8540[];
+extern const char g_10556ce8[];
+extern SEntityEntry *g_10566458;
+
+// TARGET: CBaseEntity::vfunc202
+void CBaseEntity::vfunc202(CBaseEntity *pOwner)
+{
+    const char *name;
+    if (this) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else {
+        name = g_105387dc;
+    }
+    g_109f3620[*g_109f3680 * 3] = g_10556ce8;
+    g_109f3620[*g_109f3680 * 3 + 1] = name;
+    g_109f3620[*g_109f3680 * 3 + 2] = g_106b8540;
+    ++*g_109f3680;
+    CBaseEntity *cur;
+    unsigned int h = m_hOwner364;
+    if (h == 0xffffffff) {
+        cur = 0;
+    } else {
+        void **q = &g_10566458[h & 0x1fff].m_pEnt;
+        if ((unsigned int)q[1] == (h >> 13))
+            cur = (CBaseEntity *)q[0];
+        else
+            cur = 0;
+    }
+    if (cur != pOwner) {
+        if (pOwner)
+            m_hOwner364 = *pOwner->vfunc1();
+        else
+            m_hOwner364 = 0xffffffff;
+        if (m_obj36c)
+            ((SPhysObject *)m_obj36c)->v25();
+    }
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aac30 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
