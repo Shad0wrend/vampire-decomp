@@ -1,6 +1,35 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10053fa0 size=0x8f
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern float g_104454c4;
+
+struct CScopeGuard {
+	CScopeGuard(const char *func, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = func;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeGuard() { (*g_109f3680)--; }
+};
+
+float CBaseCombatCharacter::vfunc344()
+{
+	CScopeGuard guard("CBaseCombatCharacter::GetShakyHandsIntensity", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	if (*(int *)((char *)this + 0x1044) > -1)
+		return *(float *)((char *)this + 0x1050);
+	return g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323c20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

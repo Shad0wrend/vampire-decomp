@@ -2149,6 +2149,7 @@
 0x100109ba func   _prop_switch prop_switch
 0x100109c9 func   _item_g_garys_photo item_g_garys_photo
 0x100109e2 func   ?sub_100b4950@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100b4950
+0x100109ec func   ?vfunc344@CBaseCombatCharacter@@QAEMXZ CBaseCombatCharacter::vfunc344
 0x10010a0a func   _phys_constraint phys_constraint
 0x10010a14 func   _prop_keypad prop_keypad
 0x10010a9b func   ?sub_101bd940@@YIXPAD@Z sub_101bd940
