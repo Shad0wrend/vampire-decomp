@@ -20,6 +20,7 @@ public:
 	virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13();
 	virtual void b14(); virtual void b15(); virtual void b16(); virtual void b17();
 	virtual int vfunc252(int a, int b, int c);
+	virtual int vfunc253(int a, int b, int c);
 
 	void sub_103326b0(float amount);
 	void sub_10339560();
