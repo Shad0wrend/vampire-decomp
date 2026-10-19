@@ -1614,6 +1614,7 @@
 0x1000d22e func   ?sub_10046310@S10046310@@QAEPAU1@HHH@Z S10046310::sub_10046310
 0x1000d23d func   ?sub_1013a6a0@@YAHM@Z sub_1013a6a0
 0x1000d251 func   ?sub_1021e350@@YIXPAUVec@@HHH@Z sub_1021e350
+0x1000d256 func   ?vfunc103@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc103
 0x1000d288 func   _trigger_player_activity_level trigger_player_activity_level
 0x1000d292 func   _item_p_research_hg_dodge item_p_research_hg_dodge
 0x1000d297 func   _item_p_research_hg_melee item_p_research_hg_melee

@@ -39,6 +39,23 @@ CNPC_VSheriffMan *CNPC_VSheriffMan::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ae630 size=0x6d
+#include "CNPC_VSheriffMan.h"
+struct ScopeTraceEntry { const char *m_pFunction; const char *m_pEntity; const char *m_pExtra; };
+extern int *g_109f3680;
+extern ScopeTraceEntry *g_109f3620;
+void CNPC_VSheriffMan::vfunc103()
+{
+	g_109f3620[*g_109f3680].m_pFunction = "CNPC_VSheriffMan::Spawn";
+	g_109f3620[*g_109f3680].m_pEntity = "";
+	g_109f3620[*g_109f3680].m_pExtra = "";
+	++*g_109f3680;
+	sub_10012855(0x201000);
+	sub_10014876();
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103aeac0 size=0x68
 #include "CNPC_VSheriffMan.h"
 
