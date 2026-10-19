@@ -8878,6 +8878,53 @@ void Rec64::sub_100dc300(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ddc40 size=0xb0
+struct S24c {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void f4(int a, unsigned short b); virtual void f5(unsigned short a);
+};
+struct S22c {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual int f35(int a);
+};
+extern S24c *g_1070b24c;
+extern S22c *g_1070b22c;
+
+static inline unsigned char bit(unsigned int v, int n)
+{
+	return (unsigned char)((v >> n) & 1);
+}
+
+void CUnknown100dda50::sub_100ddc40()
+{
+	unsigned short id = m_id46;
+	if (id != 0xffff) {
+		g_1070b24c->f5(id);
+		int p = m_pOwner->m_unk2e0;
+		if (p != 0 && g_1070b22c->f35(p) != 0) {
+			bool b = (m_unk40 != 0 && !(m_flags44 & 4)) || bit(m_flags44, 3);
+			if (!b && !bit(m_pOwner->m_flags268, 18))
+				return;
+			g_1070b24c->f4(0x10, id);
+			if (b) {
+				int r = 0;
+				if (!bit(m_flags44, 2))
+					r = 1;
+				if (bit(m_flags44, 3))
+					r |= 2;
+				g_1070b24c->f4(r, id);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ddf40 size=0xc
 int *CUnknown100ddf40::sub_100ddf40(int index)
 {
