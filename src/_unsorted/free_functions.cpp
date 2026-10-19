@@ -15059,6 +15059,45 @@ extern "C" GP *npc_payphone()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab800 size=0xb9
+#include "CUnknown101ab800.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##a) V10(p##b) V10(p##c) V10(p##d) V10(p##e) V10(p##f) V10(p##g) V10(p##h) V10(p##i) V10(p##j)
+struct EngineObj {
+    V100(xa)
+    virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+    virtual int TestPvs(int a, const unsigned char *pvs);
+    V10(ya)
+    virtual void t0(); virtual void t1(); virtual void t2(); virtual void t3(); virtual void t4(); virtual void t5();
+    virtual void UpdateClusters(int a, int *pCount);
+};
+extern EngineObj *g_1070b22c;
+
+bool CUnknown101ab800::sub_101ab800(int a, const unsigned char *pvs, int unused)
+{
+    if (vfunc2() & 0x10000) {
+        vfunc3(vfunc2() & 0xfffeffff);
+        g_1070b22c->UpdateClusters(m_nValue0c, &m_nClusters);
+    }
+    if (pvs != 0 && m_nValue0c != a) {
+        if (m_nClusters < 0) {
+            if (!g_1070b22c->TestPvs(m_nValue7c, pvs))
+                return false;
+        } else {
+            int i;
+            for (i = m_nClusters - 1; i >= 0; i--) {
+                int c = m_Clusters[i];
+                if (pvs[c >> 3] & (1 << (c & 7)))
+                    break;
+            }
+            if (i < 0)
+                return false;
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac2f0 size=0xa
 unsigned int CAmbientGeneric::sub_101ac2f0()
 {
