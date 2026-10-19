@@ -19157,6 +19157,34 @@ int CUnknown101f9c70::sub_101f9c70(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fa700 size=0xc1
+#include "CVDmg_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CVDmg_t::sub_101fa700(CVDmg_t *pOther)
+{
+    g_109f3620[*g_109f3680].a = "CVDmg_t::Copy";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int *d = (int *)this;
+    int *s = (int *)pOther;
+    d[0] = s[0];
+    d[1] = s[1];
+    d[2] = s[2];
+    d[3] = s[3];
+    d[4] = s[4];
+    *(CVDmgBlock16_t *)(d + 5) = *(CVDmgBlock16_t *)(s + 5);
+    *(CVDmgBlock16_t *)(d + 9) = *(CVDmgBlock16_t *)(s + 9);
+    d[13] = s[13];
+    d[16] = s[16];
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fa8d0 size=0x6e
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
