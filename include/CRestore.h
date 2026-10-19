@@ -20,19 +20,20 @@ struct CRestoreVec
 	CRestoreVec() { m_pMemory = 0; m_allocationCount = 0; m_growSize = 0; m_size = 0; m_pElements = 0; }
 	~CRestoreVec()
 	{
+		void (*pfnFree)(void *) = g_109f3624;
 		m_size = 0;
 		if (m_growSize != -1)
 		{
 			if (m_pMemory)
 			{
-				g_109f3624(m_pMemory);
+				pfnFree(m_pMemory);
 				m_pMemory = 0;
 			}
 			m_allocationCount = 0;
 		}
 		m_pElements = m_pMemory;
 		if (m_growSize != -1 && m_pMemory)
-			g_109f3624(m_pMemory);
+			pfnFree(m_pMemory);
 	}
 	void EnsureCapacity(int num);
 };
