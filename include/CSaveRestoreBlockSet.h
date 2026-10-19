@@ -19,8 +19,11 @@ public:
 	char pad38[0x4];
 	int m_nSize;	// 0x3c
 	char *m_pEntries;	// 0x40, entries of 0x28 bytes
+	char pad44[0x8];
+	int m_nEntries;	// 0x4c, number of entries at m_pEntries
 
 	void vfunc2(void *pSave);
+	void vfunc7(void *pSave, int a, int b);	// for every handler whose block name is found in the entry table (name at +0, offset at +0x24 unless -1) seeks the save/restore stream to base + offset and forwards (pSave, a, b) to the handler's slot 7; finally seeks to base + m_nSize
 	void vfunc9(void *pHandler);	// AddHandler: CUtlVector::AddToTail
 
 	// Inlined CUtlVector<void *> pieces.
