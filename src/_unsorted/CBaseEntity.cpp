@@ -271,6 +271,29 @@ void CBaseEntity::sub_1009b5a0(const char *msg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d380 size=0xa2
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::vfunc67()
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::Unhide";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (*((char *)this + 0xf4)) {
+        *(unsigned int *)((char *)this + 0xf8) &= 0xffffffbf;
+        (*g_109f3680)--;
+        return;
+    }
+    *(unsigned int *)((char *)this + 0x19c) &= 0xffffffbf;
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f2c0 size=0x86
 #include "CBaseEntity.h"
 #include "CBaseEntitySlots.h"
