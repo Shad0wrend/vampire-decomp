@@ -14628,6 +14628,53 @@ unsigned sub_101d13a0(TEnt *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2850 size=0x99
+struct PyObject;
+struct PyTypeObject {
+	char m_pad[0x18];
+	void (*tp_dealloc)(PyObject *);
+};
+struct PyObject {
+	int ob_refcnt;
+	PyTypeObject *ob_type;
+};
+extern "C" {
+__declspec(dllimport) PyTypeObject PyInt_Type;
+__declspec(dllimport) PyObject *PyImport_AddModule(const char *name);
+__declspec(dllimport) PyObject *PyModule_GetDict(PyObject *module);
+__declspec(dllimport) PyObject *PyRun_String(const char *str, int start, PyObject *globals, PyObject *locals);
+__declspec(dllimport) void PyErr_Print();
+__declspec(dllimport) void Py_FlushConsoleOutput();
+__declspec(dllimport) long PyInt_AsLong(PyObject *obj);
+__declspec(dllimport) int Py_FlushLine();
+__declspec(dllimport) void PyErr_Clear();
+}
+
+long sub_101d2850(const char *code, int start)
+{
+	if (!code)
+		return 0;
+	long result = 0;
+	PyObject *mainModule = PyImport_AddModule("__main__");
+	if (!mainModule)
+		return 0;
+	PyObject *dict = PyModule_GetDict(mainModule);
+	PyObject *res = PyRun_String(code, start, dict, dict);
+	if (!res) {
+		PyErr_Print();
+	} else {
+		if (res->ob_type == &PyInt_Type)
+			result = PyInt_AsLong(res);
+		if (--res->ob_refcnt == 0)
+			res->ob_type->tp_dealloc(res);
+		if (Py_FlushLine())
+			PyErr_Clear();
+	}
+	Py_FlushConsoleOutput();
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2fc0 size=0x88
 #define Q10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
