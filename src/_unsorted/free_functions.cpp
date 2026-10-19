@@ -796,6 +796,34 @@ void CPhysicsPushedEntities::sub_10035f00(int *pHandles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10035fd0 size=0x96
+#include "CPhysicsPushedEntities.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct IEntityHandleTable
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void SetHandle(short index, int handle);
+};
+extern IEntityHandleTable *g_1070b24c;
+
+void CPhysicsPushedEntities::sub_10035fd0(int *pHandles)
+{
+	g_109f3620[*g_109f3680].a = "CPhysicsPushedEntities::RelinkPusherList";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	for (int i = m_rgPusher.m_Size - 1; i >= 0; i--)
+		g_1070b24c->SetHandle(*(short *)((char *)m_rgPusher.m_pMemory[i].m_pEntity + 0x2b6), pHandles[i]);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037680 size=0x93
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
