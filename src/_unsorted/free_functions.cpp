@@ -5766,6 +5766,36 @@ void CBaseEntity::sub_100abbf0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ac9f0 size=0x8b
+#include "CBaseEntity.h"
+#include "inputdata_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+// stand-in for the first 173 slots of CBaseEntity's virtual table
+struct Slots173 {
+	D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6) D10(a7) D10(a8) D10(a9)
+	D10(b0) D10(b1) D10(b2) D10(b3) D10(b4) D10(b5) D10(b6)
+	virtual void c170(); virtual void c171(); virtual void c172();
+	virtual void vfunc173(void *a, void *b, int c, int d);
+};
+
+void CBaseEntity::sub_100ac9f0(inputdata_t *pInput)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::InputUse";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	((Slots173 *)this)->vfunc173(pInput->pActivator, pInput->pCaller, 3, 0);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100acef0 size=0x7c
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
