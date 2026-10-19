@@ -7232,6 +7232,44 @@ void CBaseEntity::sub_100aaa40(int group)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aaf30 size=0xb5
+#include "CBaseEntity.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+
+void CBaseEntity::sub_100aaf30()
+{
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseEntity::PostSpawn", ent, g_106b8540);
+    const char *name = m_name26c;
+    if (!name) name = g_106b8540;
+    vfunc11(name);
+    const char *classname = *(const char **)((char *)this + 0x11c);
+    if (!classname) classname = g_106b8540;
+    vfunc13(classname);
+    if (*((char *)this + 0xe0))
+        vfunc77();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100abbf0 size=0x71
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
