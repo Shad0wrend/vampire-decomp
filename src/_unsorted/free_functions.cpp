@@ -18490,6 +18490,34 @@ QuestJournal *QuestJournal::sub_10220e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10221b10 size=0x9e
+#include "QuestJournal.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern void (*g_109f364c)(const char *fmt, ...);
+
+char *QuestJournal::sub_10221b10(int index)
+{
+	g_109f3620[*g_109f3680].a = "QuestJournal::GetQuest";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (sub_10221be0(index))
+	{
+		char *base = (char *)m_field[5];
+		--*g_109f3680;
+		return base + index * 0x68;
+	}
+	g_109f364c("Could not find quest!\n");
+	char *base = (char *)m_field[5];
+	--*g_109f3680;
+	return base;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10221be0 size=0x85
 #include "QuestJournal.h"
 
