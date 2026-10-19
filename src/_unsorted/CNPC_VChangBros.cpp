@@ -36,6 +36,27 @@ int CNPC_VChangBros::vfunc440(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036b500 size=0x68
+#include "CNPC_VChangBros.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+int CNPC_VChangBros::vfunc461()
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VChangBros::SelectIdealState";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	*(int *)((char *)this + 0x1b38) = 10;
+	int result = sub_10011225();
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036c6c0 size=0x72
 #include "CNPC_VChangBros.h"
 
