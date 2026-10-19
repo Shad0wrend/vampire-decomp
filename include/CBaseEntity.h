@@ -152,6 +152,7 @@ public:
 	void sub_100aaf30();	// "CBaseEntity::PostSpawn": scope trace (entity name), then slot 11(name or ""), slot 13(classname or ""), and slot 77 when the byte at +0xe0 is set
 	void sub_100abbf0(int a, int b);
 	int sub_100ac250(const char *context);	// "CBaseEntity::GetIndexForContext": scope trace (entity name), index of the first think context whose name matches (32 chars), or -1
+	void sub_100ac810(inputdata_t *pInput);	// "CBaseEntity::InputAlpha": scope trace (entity name), stores the input's integer value clamped to 0..255 as the byte at +0x1a3
 	void sub_100ac920(inputdata_t *pInput);	// "CBaseEntity::InputColor": scope trace (entity name), stores the three low bytes of the input's color32 at +0x1a0..0x1a2
 	void sub_100ac9f0(inputdata_t *pInput);	// "CBaseEntity::InputUse": scope trace, then slot 173 (activator, caller, 3, 0)
 	void sub_100acef0(int a);	// "CBaseEntity::InputKill": calls vfunc119
