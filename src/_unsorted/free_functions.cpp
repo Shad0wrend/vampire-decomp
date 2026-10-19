@@ -5825,6 +5825,61 @@ int CBaseAnimating::sub_1008de20(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008e630 size=0xf2
+#include "CBaseAnimating.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+struct EntInfo { CBaseEntity *ent; int serial; int pad; };
+extern char *g_10566458;
+
+void CBaseAnimating::sub_1008e630(CBaseEntity *pOther)
+{
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseAnimating::RemoveWind", ent, g_106b8540);
+    volatile unsigned int *ph = (volatile unsigned int *)((char *)this + 0x63c);
+    unsigned int h = *ph;
+    CBaseEntity *cur;
+    if (h != 0xffffffff) {
+        EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+        if (e->serial == (h >> 13))
+            cur = e->ent;
+        else
+            cur = 0;
+    } else
+        cur = 0;
+    if (cur == pOther) goto clear;
+    h = *ph;
+    if (h == 0xffffffff) goto clear;
+    {
+        EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+        if (e->serial != (h >> 13) || !e->ent) goto clear;
+    }
+    return;
+clear:
+    *ph = 0xffffffff;
+    *(int *)((char *)this + 0x648) = 0;
+    *(int *)((char *)this + 0x64c) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008f540 size=0x82
 #include "CBaseAnimating.h"
 
