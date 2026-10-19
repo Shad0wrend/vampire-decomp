@@ -39,7 +39,9 @@ public:
 	virtual void vfunc84(int flags); virtual char *vfunc85(); virtual void vfunc86(); virtual void vfunc87(); virtual void vfunc88();
 	virtual void vfunc89(); virtual void vfunc90(); virtual void vfunc91(); virtual void vfunc92();
 	virtual void vfunc93(int moveType, int moveCollide);	// "CBaseEntity::SetMoveType": scope trace (entity name), on change stores both at +0x35c/+0x360 and calls slot 25 of the object at +0x36c
-	virtual void vfunc94(); virtual void vfunc95(); virtual void vfunc96(); virtual void vfunc97(); virtual void vfunc98();
+	virtual void vfunc94(); virtual void vfunc95();
+	virtual int vfunc96();	// "CBaseEntity::GetAimEntEdict": scope trace (entity name), resolves the handle at +0x37c and returns that entity's edict at +0x2e0 (0 when it does not resolve)
+	virtual void vfunc97(); virtual void vfunc98();
 	virtual bool vfunc99(int a, int b, int c); virtual void vfunc100(); virtual void vfunc101(); virtual void vfunc102(); virtual void vfunc103();
 	virtual void vfunc104(); virtual void vfunc105(); virtual void vfunc106(const char *classname); virtual void vfunc107(); virtual void vfunc108();
 	virtual void vfunc109(); virtual void vfunc110(); virtual void vfunc111(); virtual void vfunc112(); virtual void vfunc113();
