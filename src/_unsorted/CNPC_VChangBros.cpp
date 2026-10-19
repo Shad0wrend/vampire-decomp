@@ -13,6 +13,23 @@ int CNPC_VChangBros::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036afc0 size=0x6d
+#include "CNPC_VChangBros.h"
+struct ScopeTraceEntry { const char *m_pFunction; const char *m_pEntity; const char *m_pExtra; };
+extern int *g_109f3680;
+extern ScopeTraceEntry *g_109f3620;
+void CNPC_VChangBros::vfunc103()
+{
+	g_109f3620[*g_109f3680].m_pFunction = "CNPC_VChangBros::Spawn";
+	g_109f3620[*g_109f3680].m_pEntity = "";
+	g_109f3620[*g_109f3680].m_pExtra = "";
+	++*g_109f3680;
+	sub_10012855(0x209000);
+	sub_10014876();
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036b460 size=0x7c
 #include "CNPC_VChangBros.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
