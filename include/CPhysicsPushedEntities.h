@@ -1,5 +1,6 @@
-// CPhysicsPushedEntities: bookkeeping of the entities moved by a pusher. The vector of moved-entity records
-// (0x68 bytes each) starts at +0x14 (data pointer, allocation count, grow size, then the size at +0x20).
+// CPhysicsPushedEntities: bookkeeping of the entities moved by a pusher. The vector of pusher records
+// (0x10 bytes each, entity pointer first) starts at +0 and the vector of moved-entity records (0x68 bytes each)
+// at +0x14 (data pointer, allocation count, grow size, then the size at +0x20).
 // Only what decompiled code needs.
 #pragma once
 
@@ -10,6 +11,21 @@ struct MovedEntity_t
 	CBaseEntity *m_pEntity;	// 0x00
 	float m_vecStartAbsOrigin[3];	// 0x04
 	char m_pad10[0x68 - 0x10];
+};
+
+struct PusherInfo_t
+{
+	CBaseEntity *m_pEntity;	// 0x00
+	char m_pad04[0x10 - 4];
+};
+
+struct CPusherVec
+{
+	PusherInfo_t *m_pMemory;	// 0x00
+	int m_nAllocationCount;	// 0x04
+	int m_nGrowSize;	// 0x08
+	int m_Size;	// 0x0c
+	PusherInfo_t *m_pElements;	// 0x10
 };
 
 struct CMovedVec
@@ -27,8 +43,9 @@ struct CMovedVec
 class CPhysicsPushedEntities
 {
 public:
-	char m_pad0000[0x14];
+	CPusherVec m_rgPusher;	// 0x00
 	CMovedVec m_rgMoved;	// 0x14
 
 	void sub_10036ef0();	// "CPhysicsPushedEntities::RestoreEntities": scope trace, then SetAbsOrigin(start origin) (slot 216) on every moved entity, last to first
+	void sub_10035f00(int *pHandles);	// "CPhysicsPushedEntities::UnlinkPusherList": scope trace, then a handle per pusher (last to first) from the global at 0x1070b24c, keyed by the short at entity+0x2b6
 };
