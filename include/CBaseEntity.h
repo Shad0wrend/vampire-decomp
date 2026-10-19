@@ -74,6 +74,7 @@ public:
 	bool vfunc161(const char *name);	// "CBaseEntity::HasLinkedDoor": scope trace (entity name), true when the string at +0x20c is set and equals name (case-insensitive)
 	void vfunc168();
 	void vfunc174(CBaseEntity *pOther);	// "CBaseEntity::StartTouch": scope trace (entity name), when the handle at +0x254 resolves calls slot 174(pOther) on that entity
+	void vfunc175(CBaseEntity *pOther);	// "CBaseEntity::Touch": scope trace (entity name), calls the touch function pointer at +0x1ec (when set) with pOther, then forwards pOther to slot 175 of the entity behind the handle at +0x254 (when it resolves)
 	void vfunc176(CBaseEntity *pOther);	// "CBaseEntity::EndTouch": scope trace (entity name), when the handle at +0x254 resolves calls slot 176(pOther) on that entity
 	void vfunc180();
 	void vfunc194();
@@ -201,7 +202,9 @@ public:
 	int m_nThinkContextsAlloc;	// 0x01bc
 	int m_pad01c0;
 	int m_nThinkContexts;	// 0x01c4
-	char m_pad01c8[0x1fc - 0x1c8];
+	char m_pad01c8[0x1ec - 0x1c8];
+	void (CBaseEntity::*m_pfnTouch)(CBaseEntity *pOther);	// 0x01ec
+	char m_pad01f0[0x1fc - 0x1f0];
 	int m_nTakeDamage;	// 0x01fc
 	int m_field200;
 	char m_pad0204[4];
