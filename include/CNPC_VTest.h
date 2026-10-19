@@ -8,4 +8,5 @@ public:
 	CNPC_VTest *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	void vfunc104();	// slot 104 "CNPC_VTest::Precache": precaches the test NPC sounds, then CNPC_VHuman::vfunc104
 };
