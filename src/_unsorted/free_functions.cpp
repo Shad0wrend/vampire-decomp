@@ -20414,6 +20414,26 @@ int S1033d380::sub_1033d380(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d8a0 size=0x76
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_1033d8a0(inputdata_t *data)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::InputClearActiveDisciplines";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_10147a60();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10341120 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
