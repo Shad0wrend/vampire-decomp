@@ -24,7 +24,6 @@ public:
 	char m_pad0000[0x58];
 	char m_stream1[0x8c];	// 0x58, a CUniformRandomStream
 	char m_stream2[0x8c];	// 0xe4, a CUniformRandomStream
-	char m_pad0170[0x170 - 0xe4 - 0x8c];
 	int m_field170;
 	CUnknown100fde30Rec m_rec1;	// 0x174
 	CUnknown100fde30Rec m_rec2;	// 0x198
