@@ -12551,6 +12551,48 @@ CUnknown101f0e50 *CUnknown101f0e50::sub_101f0e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0ea0 size=0xeb
+#include "CUnknown101f0ea0.h"
+
+struct S101f0b50 {
+	S101f0b50 *sub_101f0b50(int);
+	int m_data[5];
+};
+
+S101f0b50 *CUnknown101f0ea0::sub_101f0ea0()
+{
+	if (m_allocCount == m_count) {
+		m_allocCount++;
+		if (m_pItems) {
+			S101f0b50 **p = new S101f0b50 *[m_allocCount];
+			int i = 0;
+			if (m_count > 0) {
+				do {
+					p[i] = m_pItems[i];
+					i++;
+				} while (i < m_count);
+			}
+			for (; i < m_allocCount; i++)
+				p[i] = 0;
+			delete m_pItems;
+			m_pItems = p;
+		} else {
+			m_pItems = new S101f0b50 *[m_allocCount];
+			for (int i = 0; i < m_allocCount; i++)
+				m_pItems[i] = 0;
+		}
+		m_count++;
+	} else {
+		m_count++;
+	}
+	if (m_pItems[m_count - 1] == 0) {
+		S101f0b50 *p = new S101f0b50;
+		m_pItems[m_count - 1] = p ? p->sub_101f0b50(m_count - 1) : 0;
+	}
+	return m_pItems[m_count - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1050 size=0x6b
 #include "CUnknown101f1050.h"
 
