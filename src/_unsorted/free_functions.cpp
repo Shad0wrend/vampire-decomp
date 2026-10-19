@@ -23755,6 +23755,30 @@ void CBaseCombatCharacter::sub_10334600(int count, int ammoIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103346c0 size=0x94
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int CBaseCombatCharacter::sub_103346c0(int ammoIndex)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::GetAmmoCount";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (ammoIndex == -1) {
+		(*g_109f3680)--;
+		return 0;
+	}
+	int count = *(int *)((char *)this + 0x15a4 + ammoIndex * 4);
+	(*g_109f3680)--;
+	return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10336920 size=0xe7
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern TraceEnt *g_109f3620;
