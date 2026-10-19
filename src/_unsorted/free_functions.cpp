@@ -9322,6 +9322,35 @@ void __fastcall sub_101251e0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101273e0 size=0x8c
+const char *sub_101273e0(int state)
+{
+	if (state == 0)
+		return "Jump_None";
+	if (state == 2)
+		return "Jump_Hop";
+	if (state == 3)
+		return "Jump_Hop_Up";
+	if (state == 4)
+		return "Jump_Hop_Down";
+	if (state == 1)
+		return "Jump_Leap";
+	if (state == 5)
+		return "Jump_Maintain";
+	if (state == 6)
+		return "Jump_Descent";
+	if (state == 7)
+		return "Jump_Falling";
+	if (state == 8)
+		return "Jump_Landed";
+	if (state == 9)
+		return "Jump_LandedInWater";
+	if (state == 10)
+		return "Jump_LandedHard";
+	return state == 11 ? "Jump_LandedExtremelyHard" : "Invalid jump state";
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b290 size=0x49
 void *sub_1000db89(int);
 struct GP;
