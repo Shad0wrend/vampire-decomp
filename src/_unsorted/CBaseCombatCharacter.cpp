@@ -477,6 +477,27 @@ float __fastcall sub_10332240(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10334a50 size=0x86
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntitySlots.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::vfunc228(int a, int b)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::VPhysicsShadowCollision";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	((CBaseEntitySlots *)this)->slot75(a, b);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10335f60 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
