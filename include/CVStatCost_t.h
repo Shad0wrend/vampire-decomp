@@ -8,6 +8,7 @@ struct CVStatSubCost_t
 	bool sub_101fb8f0();
 	void sub_101fb830();	// "CVStatSubCost_t::Null": scope trace, resets the fields and frees the heap pointer
 	CVStatSubCost_t *sub_101fb7a0();	// "CVStatSubCost_t::CVStatSubCost_t": scope trace, clears the heap pointer, Null()
+	int sub_101fbb60(int level);	// "CVStatSubCost_t::GetCostToBuy": scope trace; type 9998: heap table entry [level], 9999: base * level + add, 10000: 10000, else the type itself
 };
 
 class CVStatCost_t
