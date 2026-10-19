@@ -1318,6 +1318,7 @@
 0x1000b3ac func   ?vfunc51@CSingleplayRules@@UAE?AVVector@@PAVCBaseEntity@@@Z CSingleplayRules::vfunc51
 0x1000b3b1 func   _item_m_money_envelope item_m_money_envelope
 0x1000b3d4 func   _npc_VVampire npc_VVampire
+0x1000b3d9 func   ?sub_101e8640@S@@QAEXPAUP@@@Z S::sub_101e8640
 0x1000b3de func   _func_door func_door
 0x1000b3f2 func   ?sub_10131a40@@YAPAHXZ sub_10131a40
 0x1000b40b func   _logic_visibility_test logic_visibility_test
