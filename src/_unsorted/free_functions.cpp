@@ -18442,6 +18442,16 @@ void CUnknown102ec320::sub_102ec320(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ec3b0 size=0xbf
+#include "CUtlRBTree12.h"
+
+bool CUtlRBTree12::sub_102ec3b0(unsigned short i) const
+{
+	unsigned short parent = Links(i).m_Parent;
+	return Links(parent).m_Right == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ecbe0 size=0xd
 bool sub_102ecbe0(int a)
 {
