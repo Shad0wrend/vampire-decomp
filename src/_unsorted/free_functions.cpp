@@ -4875,6 +4875,27 @@ void sub_100b03b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b05f0 size=0x77
+#include "IVEngineServer.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern IVEngineServer *g_1070b22c;
+int sub_101193b0();
+void sub_100d1ff0(int a, int b, unsigned int flags);
+
+void sub_100b05f0()
+{
+	g_109f3620[*g_109f3680].a = "CC_Ent_Pivot";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_100d1ff0(sub_101193b0(), g_1070b22c->vfunc84(1), 8);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b0720 size=0x7d
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
