@@ -7,7 +7,7 @@ class CDialogDependency
 public:
 	int m_pad0000;
 	int m_nType;	// 0x04, -1 = none
-	int m_nArg;	// 0x08
+	volatile int m_nArg;	// 0x08
 	char m_pad000c[0x18 - 0x0c];
 	int m_nIndent;	// 0x18
 
