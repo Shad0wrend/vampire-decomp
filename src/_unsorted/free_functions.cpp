@@ -14593,6 +14593,34 @@ TVec sub_101cfd80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0310 size=0x9a
+extern "C" double __cdecl atof(const char *);
+extern void (*g_109f3890)(char *dest, const char *src, int maxLen);
+
+void sub_101d0310(float *pVector, int count, const char *pString)
+{
+	char tempString[128];
+	char *pstr, *pfront;
+	int j;
+
+	g_109f3890(tempString, pString, sizeof(tempString));
+	pstr = pfront = tempString;
+	for (j = 0; j < count; j++) {
+		pVector[j] = (float)atof(pfront);
+		while (*pstr && *pstr <= ' ')
+			pstr++;
+		while (*pstr && *pstr > ' ')
+			pstr++;
+		if (!*pstr)
+			break;
+		pstr++;
+		pfront = pstr;
+	}
+	for (j++; j < count; j++)
+		pVector[j] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0570 size=0x86
 extern "C" int __cdecl atoi(const char *);
 extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);

@@ -1650,6 +1650,7 @@
 0x1000cde2 func   ?vfunc5@CFire@@QAEPAV1@I@Z CFire::vfunc5
 0x1000ce00 func   _item_container item_container
 0x1000ce0a func   ?vfunc5@COccultObfuscate@@QAEPAV1@I@Z COccultObfuscate::vfunc5
+0x1000ce14 func   ?sub_101d0310@@YAXPAMHPBD@Z sub_101d0310
 0x1000ce19 func   ?sub_10081e70@CUnknown10081e70@@QAEXH@Z CUnknown10081e70::sub_10081e70
 0x1000ce41 func   ?sub_101a9bd0@@YAPAHXZ sub_101a9bd0
 0x1000ce78 func   _trigger_impact trigger_impact
