@@ -849,6 +849,25 @@ void CDataObjectAccessSystem::sub_1003c9f0(int index, void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003cbc0 size=0x8f
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_1003cbc0(int type)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::AddDataObjectType";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	*(unsigned int *)((char *)this + 0x444) |= 1 << type;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003e250 size=0x6d
 struct TraceEnt { const char *a; void *b; void *c; };
 struct trace21 { int d[21]; };

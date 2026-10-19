@@ -1149,6 +1149,7 @@
 0x1000961a func   ?vfunc127@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc127
 0x1000961f func   _item_k_malcolm_office_key item_k_malcolm_office_key
 0x1000966f func   ?sub_1004add0@CMem16_t@@QAEXH@Z CMem16_t::sub_1004add0
+0x10009674 func   ?sub_1003cbc0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1003cbc0
 0x10009697 func   _test_traceline test_traceline
 0x100096ab func   _te_tester te_tester
 0x100096c4 func   ?vfunc5@CConstraintAnchor@@UAEPAV1@I@Z CConstraintAnchor::vfunc5
