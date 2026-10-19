@@ -4637,6 +4637,40 @@ void CUnknown100766f0::sub_100766f0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076990 size=0xd8
+// TARGET: sub_10076990
+const char *sub_10076990(int type)
+{
+    switch (type) {
+    case 1: return "section";
+    case 2: return "expression";
+    case 3: return "lookat";
+    case 4: return "moveto";
+    case 5: return "speak";
+    case 6: return "gesture";
+    case 8: return "face";
+    case 9: return "firetrigger";
+    case 7: return "sequence";
+    case 10: return "flexanimation";
+    case 11: return "subscene";
+    case 12: return "loop";
+    case 13: return "silence";
+    case 14: return "loud";
+    case 15: return "python";
+    case 16: return "cameramove";
+    case 17: return "camerashot";
+    case 18: return "camerarestore";
+    case 19: return "bodysound";
+    default: return "unspecified";
+    }
+}
+
+int sub_dummy_after(int a)
+{
+    return a + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076ad0 size=0xd
 #include "CUnknown10077730.h"
 
