@@ -39,7 +39,7 @@ public:
 	virtual CAI_Motor *vfunc427();	// creates the NPC's motor (operator new, then CAI_Motor::sub_102e0900(this))
 	CAI_NPC_V(428) CAI_NPC_V(429)
 	CAI_NPC_V10(43) CAI_NPC_V10(44) CAI_NPC_V10(45)
-	CAI_NPC_V(460)
+	virtual int vfunc460();	// SelectIdealState helper: the NPC's current state, 0 when unset
 	virtual int vfunc461();	// SelectIdealState
 	CAI_NPC_V(462) CAI_NPC_V(463) CAI_NPC_V(464) CAI_NPC_V(465) CAI_NPC_V(466) CAI_NPC_V(467) CAI_NPC_V(468) CAI_NPC_V(469)
 	CAI_NPC_V10(47)
@@ -65,5 +65,6 @@ public:
 
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
 	int sub_10274aa0(void *pOther);	// slot 569: picks an activity-like index (1, 6, 7 or 8) from SelectWeightedSequence results and pOther's state at +0x5dc
+	void sub_1026f4d0();	// clears the path/schedule fields, then (for NPCs flagged 0x20000) selects the fail schedule by the state of vfunc460
 	void sub_1000c9cd();	// as in CPhysForce (transplant)
 };
