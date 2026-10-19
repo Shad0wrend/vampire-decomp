@@ -40,7 +40,9 @@ public:
 	CAI_NPC_V(424) CAI_NPC_V(425) CAI_NPC_V(426)
 	virtual CAI_Motor *vfunc427();	// creates the NPC's motor (operator new, then CAI_Motor::sub_102e0900(this))
 	CAI_NPC_V(428) CAI_NPC_V(429)
-	CAI_NPC_V10(43)
+	CAI_NPC_V(430) CAI_NPC_V(431) CAI_NPC_V(432) CAI_NPC_V(433) CAI_NPC_V(434)
+	virtual void vfunc435(void *pSchedule);	// called with the new schedule by sub_10280e50
+	CAI_NPC_V(436) CAI_NPC_V(437) CAI_NPC_V(438) CAI_NPC_V(439)
 	CAI_NPC_V(440) CAI_NPC_V(441) CAI_NPC_V(442) CAI_NPC_V(443) CAI_NPC_V(444) CAI_NPC_V(445) CAI_NPC_V(446) CAI_NPC_V(447) CAI_NPC_V(448)
 	virtual int vfunc449(int a);	// returns a task/schedule id for the argument (used by PrintTask)
 	CAI_NPC_V10(45)
@@ -77,5 +79,6 @@ public:
 	int sub_1026f4d0();	// clears the path/schedule fields, then (for NPCs flagged 0x20000) selects the fail schedule by the state of vfunc460
 	void sub_1028ae60();	// releases the occupied slot (bit +0x5dac in the bitmask of the owner at +0x5da4) and resets the slot index to -1
 	bool sub_102d1350(CBaseEntity *pEnt);	// stores pEnt's handle at +0x5e0 unless a different live entity is already stored (then false)
+	void sub_10280e50(void *pSchedule);	// "CAI_BaseNPC::SetSchedule": calls slot 435(pSchedule), resets the schedule bookkeeping at +0x5bb8/+0x5c38.., stamps curtime, may start the idle state; prints "Schedule: %s" when flag 0x8000000 is set at +0x224
 	void sub_1000c9cd();	// as in CPhysForce (transplant)
 };
