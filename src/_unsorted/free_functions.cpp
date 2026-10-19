@@ -14306,6 +14306,52 @@ int CUnknown101a1f70::sub_101a1f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3380 size=0xb3
+#include "CBaseEntity.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct VEnt {
+    virtual void s0();
+    virtual unsigned int *GetHandle();
+    V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+    virtual void sa();
+    virtual void Hook103();
+    virtual void Hook104();
+    V10(k)
+    virtual void sb0(); virtual void sb1();
+    virtual int GetFlags();
+    virtual void sc0(); virtual void sc1(); virtual void sc2(); virtual void sc3(); virtual void sc4(); virtual void sc5(); virtual void sc6(); virtual void sc7(); virtual void sc8();
+    virtual int Set127(int a);
+};
+struct HandleEntry { CBaseEntity *ent; int serial; int pad; };
+struct HandleTable { int pad; HandleEntry e[1]; };
+extern HandleTable *g_10566458;
+struct EHandle {
+    unsigned int h;
+    CBaseEntity *Get() const {
+        if (h != 0xffffffff) {
+            HandleEntry *p = &g_10566458->e[h & 0x1fff];
+            if (p->serial == (int)(h >> 13))
+                return p->ent;
+        }
+        return 0;
+    }
+};
+
+bool __stdcall sub_101a3380(VEnt *ent, int arg)
+{
+    EHandle h;
+    h.h = ent ? *ent->GetHandle() : 0xffffffff;
+    ent->Set127(arg);
+    if (ent->GetFlags() & 4)
+        ent->Hook103();
+    else
+        ent->Hook104();
+    if (h.Get())
+        h.Get()->sub_1009d1e0();
+    return h.Get() != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a55a0 size=0xaa
 #include "CUtlVector4.h"
 
