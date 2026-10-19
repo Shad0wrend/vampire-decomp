@@ -18,7 +18,9 @@ public:
 	float m_flNextThink;	// +0x17c
 	char pad180[0x1b38 - 0x180];
 	int m_nIdealState;	// +0x1b38
-	char pad1b3c[0x66b8 - 0x1b3c];
+	char pad1b3c[0x628c - 0x1b3c];
+	unsigned int m_hJumpTarget;	// +0x628c, entity handle
+	char pad6290[0x66b8 - 0x6290];
 	StoredHintPos_t m_storedHints[2];	// +0x66b8: ring of the last two hint origins
 	int m_nNextStoredHint;	// +0x66d0
 	char pad66d4[4];
@@ -31,6 +33,7 @@ public:
 	void vfunc431();	// "CNPC_VAsianVampire::NPCThink": scope trace around the base think, then schedules the next think
 	int vfunc461();	// "CNPC_VAsianVampire::SelectIdealState": scope trace, sets the ideal state to 6, then the base implementation
 	void sub_10361990(CBaseEntity *pHint);	// "CNPC_VAsianVampire::AddHintToStoredJumpPositions": scope trace, stores the hint's origin (slot 217) in the two-entry ring
+	int sub_10362430();	// "CNPC_VAsianVampire::GetJumpSchedule": scope trace, 0x15b when the jump target (handle at +0x628c) resolves and lies more than a constant below this NPC (z of slot 217), else 0x15a
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x201000
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
