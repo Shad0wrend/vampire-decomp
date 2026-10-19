@@ -24897,6 +24897,40 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10334500 size=0x9d
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_10334500(int amount, int ammoIndex)
+{
+	const char *name;
+	if (this)
+	{
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	}
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::RemoveAmmo";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (amount > 0)
+	{
+		int *pAmmo = (int *)((char *)this + 0x15a4);
+		pAmmo[ammoIndex] -= amount;
+		if (pAmmo[ammoIndex] < 0)
+			pAmmo[ammoIndex] = 0;
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10334600 size=0x83
 #include "CBaseCombatCharacter.h"
 
