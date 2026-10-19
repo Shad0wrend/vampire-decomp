@@ -34,8 +34,8 @@ public:
 	char m_pad3c[0x50 - 0x3c];
 	char m_b50;
 	int m_i54;
-	float m_f58;
-	float m_f5c;
-	float m_f60;
-	float m_f64;
+	int m_i58;	// float bits
+	int m_i5c;	// float bits
+	int m_i60;	// float bits
+	int m_i64;	// float bits
 };
