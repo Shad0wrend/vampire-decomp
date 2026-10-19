@@ -16,6 +16,6 @@ public:
 	virtual void vfunc9();
 	virtual void vfunc10();
 	virtual void vfunc11();
-	virtual void vfunc12();
+	virtual void *vfunc12(void *pEdict);	// scope trace "CBaseEntity::Instance", returns the entity (edict's unknown at +0x40, slot 4) + 0x2068, or null
 	virtual void vfunc13();
 };
