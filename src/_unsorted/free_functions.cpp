@@ -24174,6 +24174,42 @@ bool CUtlRBTree12::sub_102ce550(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ce7f0 size=0xb7
+#include "CUtlVector4.h"
+
+struct UtlMem9
+{
+	void sub_102cef30(int num);
+};
+
+int CUtlVector4::sub_102ce7f0(int elem, int num, const int *pToCopy)
+{
+	if (num == 0)
+		return elem;
+	if (m_size + num > m_allocationCount)
+		((UtlMem9 *)this)->sub_102cef30(m_size + num - m_allocationCount);
+	m_size += num;
+	m_pElements = m_pMemory;
+	int toMove = m_size - elem - num;
+	if (toMove > 0 && num > 0)
+		memmove(m_pMemory + elem + num, m_pMemory + elem, toMove * 4);
+	if (num > 0) {
+		int off = elem * 4;
+		for (int i = num; i > 0; i--) {
+			int *p = (int *)((char *)m_pMemory + off);
+			if (p)
+				*p = -1;
+			off += 4;
+		}
+	}
+	if (pToCopy != 0) {
+		for (int i = 0; i < num; i++)
+			m_pMemory[elem + i] = pToCopy[i];
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ce8e0 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_109f3634)(int);
