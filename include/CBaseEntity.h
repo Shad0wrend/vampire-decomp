@@ -76,6 +76,7 @@ public:
 	void vfunc174(CBaseEntity *pOther);	// "CBaseEntity::StartTouch": scope trace (entity name), when the handle at +0x254 resolves calls slot 174(pOther) on that entity
 	void vfunc175(CBaseEntity *pOther);	// "CBaseEntity::Touch": scope trace (entity name), calls the touch function pointer at +0x1ec (when set) with pOther, then forwards pOther to slot 175 of the entity behind the handle at +0x254 (when it resolves)
 	void vfunc176(CBaseEntity *pOther);	// "CBaseEntity::EndTouch": scope trace (entity name), when the handle at +0x254 resolves calls slot 176(pOther) on that entity
+	void vfunc178(CBaseEntity *pOther);	// "CBaseEntity::Blocked": scope trace (entity name), calls the function pointer at +0x1f4 (when set) with pOther, then forwards pOther to slot 178 of the entity behind the handle at +0x254 (when it resolves)
 	void vfunc180();
 	void vfunc194();
 	void vfunc195();
@@ -204,7 +205,9 @@ public:
 	int m_nThinkContexts;	// 0x01c4
 	char m_pad01c8[0x1ec - 0x1c8];
 	void (CBaseEntity::*m_pfnTouch)(CBaseEntity *pOther);	// 0x01ec
-	char m_pad01f0[0x1fc - 0x1f0];
+	char m_pad01f0[0x1f4 - 0x1f0];
+	void (CBaseEntity::*m_pfnBlocked)(CBaseEntity *pOther);	// 0x01f4
+	char m_pad01f8[0x1fc - 0x1f8];
 	int m_nTakeDamage;	// 0x01fc
 	int m_field200;
 	char m_pad0204[4];
