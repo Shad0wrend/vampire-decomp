@@ -18,6 +18,7 @@ public:
 	int sub_102c6920(int elem, const int *src);	// same as sub_1003c0e0 (another instance)
 	int sub_101a55a0(int elem, const int *src);	// same as sub_1003c0e0 (another instance)
 	int sub_102dcd30(int elem, const int *src);	// same as sub_1003c0e0 (another instance)
+	void sub_10265310(int value);	// "CUtlVector::AddToTail": grows by one and stores value at the end
 	void sub_10071ae0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements
 	void sub_10084fb0(int num);	// same as sub_10071ae0 (another instance)
 	void sub_1007f400(int num);	// same as sub_10071ae0 (another instance)
