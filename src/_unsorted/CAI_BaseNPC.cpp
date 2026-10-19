@@ -101,6 +101,33 @@ void CAI_BaseNPC::vfunc459()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10274aa0 size=0x64
+#include "CBaseAnimating.h"
+#include "CAI_BaseNPC.h"
+
+struct SOtherState { char pad[0x5dc]; int m_nState; };
+
+int CAI_BaseNPC::sub_10274aa0(void *pOther)
+{
+	CBaseAnimating *pAnim = (CBaseAnimating *)this;
+	SOtherState *p = (SOtherState *)pOther;
+	int result = (pAnim->sub_1008dc40(6, -1) != -1) ? 6 : 1;
+	if (p) {
+		switch (p->m_nState) {
+		case 101:
+			if (pAnim->sub_1008dc40(8, -1) != -1)
+				return 8;
+			break;
+		case 100:
+			if (pAnim->sub_1008dc40(7, -1) != -1)
+				return 7;
+			break;
+		}
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278cb0 size=0x47
 struct ConVarLike {
 	virtual void vfunc0();
