@@ -2597,6 +2597,7 @@
 0x10015221 func   _npc_sabbat npc_sabbat
 0x10015226 func   ?sub_101578b0@CUnknown101578b0@@QAE_NXZ CUnknown101578b0::sub_101578b0
 0x10015280 func   ?sub_103be130@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be130
+0x1001528a func   ?sub_102c6a50@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_102c6a50
 0x100152c1 func   _prop_physics prop_physics
 0x100152e9 func   ?sub_1009b440@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b440
 0x100152f3 func   ?sub_10027890@S10027890@@QAEXAAUinputdata_t@@@Z S10027890::sub_10027890

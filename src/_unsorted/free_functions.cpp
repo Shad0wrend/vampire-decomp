@@ -17710,6 +17710,42 @@ int CUtlVector4::sub_102c6920(int elem, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6a50 size=0xb0
+#include "UtlVec8.h"
+
+extern void *(__cdecl *g_109f3634)(unsigned int);
+extern void *(__cdecl *g_109f3638)(void *, unsigned int);
+
+inline void UtlVec8::GrowVector(int num)
+{
+	if (m_Size + num > m_allocationCount && m_growSize != -1) {
+		if (m_allocationCount < m_Size + num) {
+			do {
+				m_allocationCount = m_allocationCount ? (m_growSize ? m_allocationCount + m_growSize : m_allocationCount + m_allocationCount) : 4;
+			} while (m_allocationCount < m_Size + num);
+		}
+		if (m_pMemory)
+			m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount * 8);
+		else
+			m_pMemory = (char *)g_109f3634(m_allocationCount * 8);
+	}
+	m_Size += num;
+	m_pElements = (UtlVec8Elem *)m_pMemory;
+}
+
+int UtlVec8::sub_102c6a50(int elem, const UtlVec8Elem *src)
+{
+	GrowVector(1);
+	int toMove = m_Size - elem - 1;
+	if (toMove > 0)
+		memmove((UtlVec8Elem *)m_pMemory + elem + 1, (UtlVec8Elem *)m_pMemory + elem, toMove * 8);
+	UtlVec8Elem *dst = (UtlVec8Elem *)m_pMemory + elem;
+	if (dst)
+		*dst = *src;
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6bd0 size=0x8
 void __fastcall sub_102c6bd0(int *p) { p[3] = 0; }
 // END FUNCTION
