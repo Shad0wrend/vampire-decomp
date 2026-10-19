@@ -7,6 +7,7 @@ struct CVStatSubCost_t
 
 	bool sub_101fb8f0();
 	void sub_101fb830();	// "CVStatSubCost_t::Null": scope trace, resets the fields and frees the heap pointer
+	CVStatSubCost_t *sub_101fb7a0();	// "CVStatSubCost_t::CVStatSubCost_t": scope trace, clears the heap pointer, Null()
 };
 
 class CVStatCost_t
