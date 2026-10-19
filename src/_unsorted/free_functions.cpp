@@ -16899,6 +16899,36 @@ TList *TList::sub_101fd430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fd940 size=0x97
+#include "CVStatActionList_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+// stand-in for the first 36 slots of the global object's virtual table
+struct EngineObj36 {
+	D10(a0) D10(a1) D10(a2)
+	virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33(); virtual void s34();
+	virtual int vfunc35(int edict);
+};
+extern EngineObj36 *g_1070b22c;
+extern void (*g_1074e7d0)(CVStatActionList_t *list, int value, int a, int b);
+
+void CVStatActionList_t::sub_101fd940(void *pEnt, int a, int b)
+{
+	g_109f3620[*g_109f3680].a = "CVStatActionList_t::Update";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (g_1074e7d0 && pEnt)
+		g_1074e7d0(this, g_1070b22c->vfunc35(*(int *)((char *)pEnt + 0x2e0)), a, b);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fdf40 size=0x69
 struct TScope {
 	const char *name;

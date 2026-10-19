@@ -358,6 +358,7 @@
 0x10003b1b func   ?vfunc546@CNPC_VPlaceholder@@QAEHH@Z CNPC_VPlaceholder::vfunc546
 0x10003b4d func   ?sub_100ba0c0@CBatSwarm@@QAE_NPAX@Z CBatSwarm::sub_100ba0c0
 0x10003b57 func   ?sub_10376b70@CNPC_VFrenzyShadow@@QAEDH@Z CNPC_VFrenzyShadow::sub_10376b70
+0x10003b6b func   ?sub_101fd940@CVStatActionList_t@@QAEXPAXHH@Z CVStatActionList_t::sub_101fd940
 0x10003b84 func   ?sub_10223030@@YAPAHXZ sub_10223030
 0x10003b8e func   ?sub_101bdeb0@CMem4d_t@@QAEXH@Z CMem4d_t::sub_101bdeb0
 0x10003ba2 func   ?sub_103661d0@@YIXPADHH@Z sub_103661d0
