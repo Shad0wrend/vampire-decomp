@@ -119,6 +119,40 @@ void CBaseEntity::vfunc238(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003d3d0 size=0x85
+#include "CBaseEntity.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+
+bool CBaseEntity::vfunc207()
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = "";
+	} else {
+		name = "NULL ENTITY";
+	}
+	g_109f3620[*g_109f3680].fn = "CBaseEntity::IsCurrentlyTouching";
+	g_109f3620[*g_109f3680].name = name;
+	g_109f3620[*g_109f3680].extra = "";
+	(*g_109f3680)++;
+	if (sub_1003cb00(1)) {
+		(*g_109f3680)--;
+		return true;
+	}
+	(*g_109f3680)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ad70 size=0x78
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
