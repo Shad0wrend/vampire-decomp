@@ -23150,6 +23150,77 @@ void sub_10238380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023ed10 size=0xde
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *pMem, unsigned long size);
+
+struct VecElem8
+{
+	int m_a;
+	char m_b;
+};
+
+struct VecElem8Vector
+{
+	VecElem8 *m_pMemory;	// 0x10752e88
+	int m_nAlloc;	// 0x10752e8c
+	int m_nGrow;	// 0x10752e90
+	int m_nSize;	// 0x10752e94
+	VecElem8 *m_pElements;	// 0x10752e98
+
+	void Grow(int num)
+	{
+		if (m_nGrow == -1)
+			return;
+		int nAllocationRequested = m_nAlloc + num;
+		while (m_nAlloc < nAllocationRequested) {
+			if (m_nAlloc != 0) {
+				if (m_nGrow)
+					m_nAlloc = m_nAlloc + m_nGrow;
+				else
+					m_nAlloc = m_nAlloc * 2;
+			} else {
+				m_nAlloc = 4;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (VecElem8 *)Plat_Realloc(m_pMemory, m_nAlloc * 8);
+		else
+			m_pMemory = (VecElem8 *)Plat_Alloc(m_nAlloc << 3);
+	}
+
+	void GrowVector(int num)
+	{
+		if (m_nSize + num > m_nAlloc)
+			Grow(m_nSize + num - m_nAlloc);
+	}
+
+	void InsertBefore(int elem, const VecElem8 &src)
+	{
+		GrowVector(1);
+		m_nSize++;
+		m_pElements = m_pMemory;
+		int toMove = m_nSize - elem - 1;
+		if (toMove > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], toMove * sizeof(VecElem8));
+		VecElem8 *p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+	}
+};
+
+extern VecElem8Vector g_10752e88;
+
+void sub_1023ed10(int a, char b)
+{
+	VecElem8 elem;
+	elem.m_a = a;
+	elem.m_b = b;
+	g_10752e88.InsertBefore(g_10752e88.m_nSize, elem);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ee30 size=0xcb
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(int);
