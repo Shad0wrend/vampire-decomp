@@ -12,4 +12,5 @@ public:
 
 	void sub_102641b0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements (initial allocation 1)
 	int sub_10264000(int elem, const void *pSrc);	// "CUtlVector::InsertBefore": grows by one (inlined), shifts the tail up, copies the 56 byte element from pSrc, returns elem
+	int sub_10046ba0(int elem);	// "CUtlVector::InsertBefore" (default constructed element: dword +4 = -1, then the first 13 dwords zeroed): same as sub_10264000 for another element type, returns elem
 };
