@@ -73,7 +73,7 @@ public:
 	bool vfunc158();
 	bool vfunc161(const char *name);	// "CBaseEntity::HasLinkedDoor": scope trace (entity name), true when the string at +0x20c is set and equals name (case-insensitive)
 	void vfunc168();
-	void vfunc174(CBaseEntity *pOther);	// "CBaseEntity::StartTouch": scope trace (entity name), when the entity behind the handle at +0x254 (the move parent) resolves, forwards pOther to that entity's slot 174
+	void vfunc176(CBaseEntity *pOther);	// "CBaseEntity::EndTouch": scope trace (entity name), when the handle at +0x254 resolves calls slot 176(pOther) on that entity
 	void vfunc180();
 	void vfunc194();
 	void vfunc195();
@@ -206,7 +206,9 @@ public:
 	int m_iMaxHealth;	// 0x0208
 	char m_pad020c[4];
 	int m_iHealth;	// 0x0210
-	char m_pad0214[0x268 - 0x214];
+	char m_pad0214[0x254 - 0x214];
+	unsigned int m_hTouch254;	// entity handle notified by EndTouch
+	char m_pad0258[0x268 - 0x258];
 	unsigned int m_flags268;
 	const char *m_name26c;
 	char m_pad0270[0x2e0 - 0x270];
