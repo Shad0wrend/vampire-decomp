@@ -15635,6 +15635,43 @@ void __fastcall sub_102180a0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021d730 size=0x103
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105af80c[2];
+void sub_100027cf();
+
+int *sub_1021d730()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_sPasscode", {0x880, 0}, 1, 6, "passcode" },
+        { 2, "m_sTextID", {0x884, 0}, 1, 6, "text_id" },
+        { 5, "m_bIsUnlocked", {0x8b8, 0}, 1, 2 },
+        { 10, "m_OnCorrectPassword", {0x888, 0}, 1, 0x16, "OnCorrectPassword", g_1055dc70 },
+        { 10, "m_OnIncorrectPassword", {0x8a0, 0}, 1, 0x16, "OnIncorrectPassword", g_1055dc70 },
+        { 0, "CPropKeypadKeypadInit", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100027cf },
+    };
+    g_105af80c[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105af80c[0] = (int)&dataDesc[1];
+    return g_105af80c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e100 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_1021e100(); };
 void CUtlVectorBase::sub_1021e100() { m_Size = 0; }
