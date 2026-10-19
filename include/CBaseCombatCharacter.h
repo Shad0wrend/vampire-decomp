@@ -92,7 +92,7 @@ public:
 	void sub_1032a910(int a, int b);	// "CBaseCombatCharacter::Weapon_SetActivity": scope trace (entity name), when the active weapon handle at +0x19a4 resolves calls slot 338(a, b) on that weapon
 	void sub_1033df80();	// "CBaseCombatCharacter::ApplyDisciplineSpawnFlags": scope trace (entity name), translates spawn flag bits 5, 6, 12, 13, 14, 15 (dword at +0x204) into bits 0..5 of the discipline flags at +0xeac
 	char *sub_10345980(CBaseEntity *pEnt);	// "CBaseCombatCharacter::GetMeleeDiceRolls": scope trace (entity name), finds the 16 byte record (array at +0xa88, count at +0xa94) whose leading handle resolves to pEnt; null when none
-	void sub_10182c40(const char *text, const char *sound);	// "CBaseCombatCharacter::SetWhisper"-like: copies text into a global buffer (+0x1ca4 = the buffer, or null when empty), stamps curtime - 0.5 at +0x1ca8, then moves that time forward by the sound's duration (when the dialog partner at +0xfe8 has the object at +0x98) or by 0.6, and sets bit 0 of +0x1cac
+	int sub_10345de0(CBaseEntity *pEnt);	// "CBaseCombatCharacter::GetNumAttackSuccesses": as GetMeleeDiceRolls, returns the second dword of the record (0 when none)
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc73(CBaseEntity *pOther);	// "CBaseCombatCharacter::CausesImpactDamage": scope trace, (pOther's flags at +0x434 & 0x20000000) != 0
