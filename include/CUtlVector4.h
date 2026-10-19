@@ -28,4 +28,5 @@ public:
 	void sub_102ce8e0(int num);	// same as sub_10071ae0 (another instance)
 	void sub_102d4210(int num);	// same as sub_10071ae0 (another instance)
 	void sub_102f91f0(int num);	// same as sub_10071ae0 (another instance)
+	int sub_101842a0(const unsigned int *pHandle);	// "CUtlVector<EHANDLE>::Find": index of the first element resolving to the same entity as *pHandle, or -1
 };
