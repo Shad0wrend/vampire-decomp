@@ -27551,6 +27551,31 @@ void sub_10321ec0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103221b0 size=0xc6
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+struct SGlobals { int pad[3]; float curtime; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern SGlobals *g_1070b228;
+extern void (*g_109f3630)(const char *fmt, ...);
+
+void CBaseCombatCharacter::sub_103221b0(const char *msg)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::DebugFeedTrace";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    char defaultMsg[] = "Feed Trace";
+    if (!msg)
+        msg = defaultMsg;
+    g_109f3630("%f : Feeding - %s\n", (double)g_1070b228->curtime, msg);
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10322800 size=0x86
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
