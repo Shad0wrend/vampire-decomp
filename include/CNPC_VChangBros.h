@@ -14,7 +14,8 @@ public:
 	void vfunc431();	// "CNPC_VChangBros::NPCThink": scope trace around the base think, then schedules the next think
 	int vfunc461();	// "CNPC_VChangBros::SelectIdealState": scope trace, sets the ideal state (+0x1b38) to 10, then the base implementation
 	void sub_1036c810(int a, int b);	// "CNPC_VChangBros::PrintTask": scope trace, then Msg("%s: [%s]:%s\n", a, classname, vfunc449(b))
-	void *sub_1036d100();	// "CNPC_VChangBros::SelectUnitedNod": scope trace, walks the global entity list (type 18000 at +0x5dc, next at +0x5d8) for the first, or the second when the mode at +0x66b8 is 1
+	void *sub_1036d100();	// "CNPC_VChangBros::SelectUnitedNode": scope trace, walks the global entity list (type 18000 at +0x5dc, next at +0x5d8) for the first, or the second when the mode at +0x66b8 is 1
+	bool sub_1036d270(float *pOut);	// "CNPC_VChangBros::GetTeleportPosition": scope trace, copies the vector at +0x66bc to pOut when it is recent enough (time at +0x66c8)
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x209000
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
 	int sub_10011225();	// CNPC_VHuman::vfunc461, called directly
