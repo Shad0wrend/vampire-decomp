@@ -57,6 +57,7 @@ public:
 	VT_SLOTS10(w12)
 	virtual void vfunc621(); virtual void w131();
 	virtual void vfunc623();
+	virtual void vfunc624();
 
 	char m_pad0004[0x2dc];
 	int m_n02e0;
