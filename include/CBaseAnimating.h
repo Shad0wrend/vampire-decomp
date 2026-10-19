@@ -23,7 +23,7 @@ public:
 	void sub_100978c0(int bone);	// "CBaseAnimating::TurnOffPhysicsChain": scope trace, sets bit (1 << bone) in the dword at +0x72c
 	void sub_100904a0();	// "CBaseAnimating::ClearAllClientRagdollData"-like: scope trace (entity name), resets the four 3-int arrays at +0x574 (-2), +0x584 and +0x594 (0), and +0x168 from 0x17 to 0
 	bool sub_1008be20(CBaseEntity *pOther);	// "CBaseAnimating::IsIgnoreCollisionEntity": scope trace (entity name), true when the entity behind the handle at +0x55c is pOther
-	void sub_1008cfc0(void *pEvent);	// "CBaseAnimating::DisplayAnimEvent": scope trace (entity name); when the global at 0x106ccf0c is not flagged by its slot 1 and its value (+0x2c) is set, formats "Processing anim event at %5.2f %d( %s )" (event time, event id, description from slot 241) into a 256 byte buffer and passes it to slot 18 with 9
+	void sub_1008cfc0(int unused, void *pEvent);	// "CBaseAnimating::DisplayAnimEvent": scope trace (entity name); when the global at 0x106ccf0c is not flagged by its slot 1 and its value (+0x2c) is set, formats "Processing anim event at %5.2f %d( %s )" (event time, event id, description from slot 241) into a 256 byte buffer and passes it to slot 18 with 9
 
 	int sub_10092550(int a);	// "CBaseAnimating::LookupBone"
 	void sub_100926e0(int bone, int b, int c);	// "CBaseAnimating::GetBonePosition0"
