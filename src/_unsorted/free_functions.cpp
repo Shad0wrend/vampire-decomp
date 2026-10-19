@@ -23960,6 +23960,27 @@ int S1030ca70::sub_1030ca70(const char *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030cb00 size=0x9d
+extern "C" int _strcmpi(const char *, const char *);
+extern void (*g_109f366c)(const char *fmt, ...);
+
+int __stdcall sub_1030cb00(const char *name)
+{
+	if (!_strcmpi(name, "ENEMY"))
+		return 0;
+	if (!_strcmpi(name, "ENEMY_LKP"))
+		return 2;
+	if (!_strcmpi(name, "TARGET"))
+		return 1;
+	if (!_strcmpi(name, "TARGET_LKP"))
+		return 3;
+	if (!_strcmpi(name, "SAVED_POSITION"))
+		return 4;
+	g_109f366c("Schedule has invalid goal ID '%s'\n", name);
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030d650 size=0x82
 int sub_1043e780(const char *, const char *);
 extern void (*g_109f366c)(const char *fmt, ...);
