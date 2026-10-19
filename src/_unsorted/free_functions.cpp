@@ -8220,6 +8220,29 @@ void Dialog::sub_100e09a0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e3400 size=0x98
+#include <string.h>
+#include "CUnknown100e3400.h"
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+extern "C" __declspec(dllimport) char *Q_strcat(char *, const char *);
+extern char g_106ea660[];
+
+char *CUnknown100e3400::sub_100e3400(int line, char col, const char *ext, bool isStream)
+{
+	char tmp[64];
+	if (isStream)
+		Q_snprintf(g_106ea660, 0x104, "*sound/character/%s", m_pszCharacter);
+	else
+		Q_snprintf(g_106ea660, 0x104, "sound/character/%s", m_pszCharacter);
+	g_106ea660[strlen(g_106ea660) - 4] = 0;
+	Q_snprintf(tmp, 0x40, "/line%d_col_%c.%s", line, col, ext);
+	Q_strcat(g_106ea660, tmp);
+	_strlwr(g_106ea660);
+	return g_106ea660;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7480 size=0x70
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
