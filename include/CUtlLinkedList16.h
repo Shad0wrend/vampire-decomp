@@ -1,13 +1,18 @@
-// CUtlLinkedList16: a CUtlLinkedList<T, unsigned short> whose nodes are 16 bytes (the free list "next" index is the
-// unsigned short at +2 of a node); used by CPhysObjSaveRestoreOps.
+// CUtlLinkedList16: a CUtlLinkedList<T, unsigned short> whose nodes are 16 bytes (8 bytes of links, the free list
+// "next" index is the unsigned short at +2, and 8 bytes of data); used by CPhysObjSaveRestoreOps.
 #pragma once
 
-struct CUtlLinkedList16Node
+struct CUtlLinkedList16Links
 {
 	unsigned short m_Data;
 	unsigned short m_Next;
 	unsigned short m_Previous;
 	unsigned short m_Tag;
+};
+
+struct CUtlLinkedList16Node
+{
+	CUtlLinkedList16Links m_Links;
 	char m_pad[8];
 };
 
@@ -24,10 +29,10 @@ public:
 
 	static unsigned short InvalidIndex() { return (unsigned short)~0; }
 
-	CUtlLinkedList16Node &InternalElement(unsigned short i) const
+	const CUtlLinkedList16Links &Links(unsigned short i) const
 	{
-		static CUtlLinkedList16Node s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-		return i != InvalidIndex() ? m_pMemory[i] : s_Sentinel;
+		static CUtlLinkedList16Links s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+		return i != InvalidIndex() ? m_pMemory[i].m_Links : s_Sentinel;
 	}
 
 	unsigned short sub_10047280();	// "CUtlLinkedList::Alloc": takes the first free node (growing the memory by one node when none is free and the list is full) or counts a new one; returns its index
