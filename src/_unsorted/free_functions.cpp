@@ -8668,6 +8668,33 @@ char *CUnknown100e3400::sub_100e3400(int line, char col, const char *ext, bool i
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e5690 size=0xa7
+#include "CDialog.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern "C" void *bsearch(const void *, const void *, unsigned int, unsigned int, int (__cdecl *)(const void *, const void *));
+int __cdecl sub_100e77f0(const void *, const void *);
+
+int CDialog::sub_100e5690(CDialogEntry_t *pEntry)
+{
+	g_109f3620[*g_109f3680].a = "CDialog::get";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	CDialogEntry_t *pFound = (CDialogEntry_t *)bsearch(pEntry, m_pTable->m_pEntries, m_pTable->m_nEntries, sizeof(CDialogEntry_t), sub_100e77f0);
+	if (pFound) {
+		*pEntry = *pFound;
+		(*g_109f3680)--;
+		return 1;
+	}
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7480 size=0x70
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
