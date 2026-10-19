@@ -3,6 +3,8 @@
 // add to it as more of the class is recovered.
 #pragma once
 
+class CRestore;
+
 class CBaseEntity
 {
 public:
@@ -89,6 +91,7 @@ public:
 	void sub_100a9470(char value);	// "CBaseEntity::SetOccludesSound": stores the byte at +0xfe (slot 103 override in many subclasses)
 	CBaseEntity *sub_100a9c90();	// "CBaseEntity::GetOwnerEntity" (slot 97): resolves the handle at +0x364
 	int sub_100aa080(void *pSave, int block);	// "CBaseEntity::SaveDataDescBlock": scope trace, then returns slot 2 of pSave(this, block)
+	int sub_100aa5c0(CRestore *pRestore, int map);	// "CBaseEntity::RestoreDataDescBlock": scope trace, then returns pRestore->vfunc2(this, map)
 	void sub_100abbf0(int a, int b);
 	void sub_100acef0(int a);	// "CBaseEntity::InputKill": calls vfunc119
 	int sub_100adfd0(const char *name);	// "CBaseEntity::PrecacheModel": forwards to the engine, returns its result
