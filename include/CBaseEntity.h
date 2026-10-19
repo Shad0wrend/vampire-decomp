@@ -20,7 +20,8 @@ public:
 	virtual void vfunc6(int a);
 	virtual void vfunc7();
 	virtual int vfunc8();
-	virtual const char **vfunc9(int *pOut); virtual void vfunc10(int index); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13();
+	virtual const char **vfunc9(int *pOut); virtual void vfunc10(int index); virtual void vfunc11(const char *name);	// slot 11 "CBaseEntity::DebugSetEntityName": scope trace (entity name), copies name (31 chars) to +4 and to the buffer slot 85 returns
+	virtual void vfunc12(); virtual void vfunc13();
 	virtual void vfunc14(); virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(int a, int b); virtual void vfunc18();
 	virtual void vfunc19(); virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23();
 	virtual void vfunc24(); virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28();
@@ -35,7 +36,7 @@ public:
 	virtual void vfunc69(); virtual void vfunc70(); virtual void vfunc71(); virtual void vfunc72(); virtual void vfunc73();
 	virtual void vfunc74(); virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
 	virtual void vfunc79(); virtual void vfunc80(); virtual void vfunc81(); virtual void vfunc82(); virtual void vfunc83();
-	virtual void vfunc84(int flags); virtual void vfunc85(); virtual void vfunc86(); virtual void vfunc87(); virtual void vfunc88();
+	virtual void vfunc84(int flags); virtual char *vfunc85(); virtual void vfunc86(); virtual void vfunc87(); virtual void vfunc88();
 	virtual void vfunc89(); virtual void vfunc90(); virtual void vfunc91(); virtual void vfunc92();
 	virtual void vfunc93(int moveType, int moveCollide);	// "CBaseEntity::SetMoveType": scope trace (entity name), on change stores both at +0x35c/+0x360 and calls slot 25 of the object at +0x36c
 	virtual void vfunc94(); virtual void vfunc95(); virtual void vfunc96(); virtual void vfunc97(); virtual void vfunc98();
@@ -83,7 +84,6 @@ public:
 	void sub_1003cc80(int type);	// "CBaseEntity::RemoveDataObjectType": scope trace, clears bit `type` in the mask at +0x444
 	void sub_1003daa0(CBaseEntity *pOther);	// "CBaseEntity::PhysicsTouch": scope trace (entity name), when pOther is set and neither slot 116 returns true, calls slot 175(pOther)
 	void sub_1003db80(CBaseEntity *pOther);	// "CBaseEntity::PhysicsStartTouch": as PhysicsTouch, but calls slot 174(pOther) and then slot 175(pOther)
-	void sub_100339b0(float *forward, float *right, float *up);	// "CBaseEntity::PhysicsGetAngleVectors": scope trace (entity name), per row of the matrix at +0x130 (stride 16): forward = m[0], right = -m[1], up = m[2]
 	void sub_10033aa0(float *a, float *b, float *c);	// "CBaseEntity::PhysicsGetAngleVectors": scope trace (entity name), copies the three columns at +0x130/+0x140/+0x150 (3 floats each) into a, b, c
 	void sub_1003eb50();
 	float *sub_1009b030(float *out);	// slot 16 override: copies the three floats at +0x50 to out
