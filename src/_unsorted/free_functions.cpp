@@ -28187,6 +28187,32 @@ CUnknown102fc5d0 *CUnknown102fc5d0::sub_102fc5d0(int a, int b, const float *pVec
 }
 // END FUNCTION
 
+// FUNCTION: 0x103065d0 size=0xe5
+#include "CUnknown103065d0.h"
+
+extern int g_1093414c;
+
+// TARGET: CUnknown103065d0::sub_103065d0
+void CUnknown103065d0::sub_103065d0(const CUnknown103065d0Vec *pStart, const CUnknown103065d0Vec *pEnd, int a, int b, int c, char flag)
+{
+    if (!m_pLines) {
+        m_pLines = (CUnknown103065d0Line **)new char[0xc8];
+        for (int i = 0; i < 0xc8; i += 4)
+            *(CUnknown103065d0Line **)((char *)m_pLines + i) = (CUnknown103065d0Line *)new char[0x28];
+    }
+    if (g_1093414c >= 50)
+        g_1093414c = 0;
+    m_pLines[g_1093414c]->m_start = *pStart;
+    m_pLines[g_1093414c]->m_end = *pEnd;
+    m_pLines[g_1093414c]->m_a = a;
+    m_pLines[g_1093414c]->m_b = b;
+    m_pLines[g_1093414c]->m_c = c;
+    m_pLines[g_1093414c]->m_flag = flag;
+    m_pLines[g_1093414c]->m_active = 1;
+    g_1093414c++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103079c0 size=0xa8
 extern "C" int _strcmpi(const char *, const char *);
 extern "C" char *strcat(char *, const char *);
