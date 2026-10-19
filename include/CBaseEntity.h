@@ -73,6 +73,7 @@ public:
 	void sub_1009b440(const char *msg);	// "CBaseEntity::TraceMessageBareBase": DevMsg(msg) when msg is set
 	void sub_1009b500(const char *msg);	// "CBaseEntity::TraceMessageBare" (slot 20): forwards to sub_1009b440
 	void sub_1009b5a0(const char *msg);	// "CBaseEntity::TraceMessageBare" (slot 19): identical to sub_1009b500
+	void sub_1009b640(int a, int b, int c);	// "CBaseEntity::DumpString"-like worker: scope trace, then DevMsg("%40s: %10s", b, c)
 	void sub_1009b7d0(int a, char *text, char value);	// "CBaseEntity::DumpCharArrayBase"-like: one dumped byte
 	void sub_1009b980(int a, char *text, int value);	// dumped dword, worker of sub_1009c390
 	void sub_1009ba60(int a, char *text, int value);	// "CBaseEntity::DumpFloatArrayBase"-like: one dumped dword
