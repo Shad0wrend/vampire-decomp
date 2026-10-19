@@ -6108,6 +6108,53 @@ int sub_10099d40(SEntV137 *ent, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099f20 size=0xca
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct Vec { float x, y, z; };
+
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EntA {
+	D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6) D10(a7) D10(a8)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3();
+	virtual int f94();
+};
+struct EntB : EntA {
+	D10(c0) D10(c1) D10(c2) D10(c3) D10(c4) D10(c5) D10(c6) D10(c7) D10(c8) D10(c9)
+	D10(d0) D10(d1)
+	virtual void e0(); virtual void e1();
+	virtual const Vec &f217();
+};
+
+void sub_10099f20(EntB *pEnt, int unused, float *pOut)
+{
+    g_109f3620[*g_109f3680].a = "SendProxy_EntityOrigin";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (pEnt) {
+        if (pEnt->f94() == 11 || pEnt->f94() == 12) {
+            pOut[2] = 0;
+            pOut[1] = 0;
+            pOut[0] = 0;
+            (*g_109f3680)--;
+            return;
+        }
+    }
+    float x = pEnt->f217().x;
+    pOut[0] = x;
+    float y = pEnt->f217().y;
+    pOut[1] = y;
+    float z = pEnt->f217().z;
+    pOut[2] = z;
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009a030 size=0x68
 struct TScope {
 	const char *name;
