@@ -397,6 +397,36 @@ unsigned short sub_1002e0a0(IPhysObj *obj, unsigned short flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10031270 size=0x92
+#include "CCollisionEvent.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int CCollisionEvent::sub_10031270(int inflictor)
+{
+	g_109f3620[*g_109f3680].a = "CCollisionEvent::FindDamageInflictor";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int i = *(int *)((char *)this + 0x10c) - 1;
+	if (i >= 0) {
+		int *p = (int *)(i * 0x20 + *(int *)((char *)this + 0x100));
+		do {
+			if (*p == inflictor) {
+				(*g_109f3680)--;
+				return i;
+			}
+			i--;
+			p -= 8;
+		} while (i >= 0);
+	}
+	(*g_109f3680)--;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031bd0 size=0x72
 struct Sub { void *pEnt; unsigned int serial; };
 struct EntInfo { int pad; Sub s; };
