@@ -74,6 +74,7 @@ public:
 	void sub_1009ee80(CBaseEntity *pEnt);	// "CBaseEntity::SetAimEnt": stores pEnt's handle at +0x37c (-1 for null)
 	const char *sub_1009f200();	// "CBaseEntity::GetClassname": the string at +0x11c, or "" when it is null
 	void sub_1009fa60();
+	void sub_100a0b20();	// "CBaseEntity::ClearParent": scope trace (entity name), then the call through the stub at 0x1000b636
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
 	void sub_100a8c90(int a);	// "CBaseEntity::InputScriptUnhide": calls vfunc78
 	void sub_100a9290(char value);	// "CBaseEntity::SetNPCTransparent": stores the byte at +0xfc
