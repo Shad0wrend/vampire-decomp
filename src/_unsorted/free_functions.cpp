@@ -16788,6 +16788,32 @@ void __fastcall sub_10227b20(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227c90 size=0x65
+#include "CUnknown10227c90.h"
+#include "CUnknown101f0e50.h"
+
+extern CUnknown101f0e50 g_1073a9a0;
+void operator delete(void *);
+
+void CUnknown10227c90::sub_10227c90(int value)
+{
+	if (g_1073a9a0.sub_101f18f0(value)) {
+		for (int i = 0; i < m_nCount; i++) {
+			if (m_pData[i] == value) {
+				if (i < m_nCount - 1)
+					m_pData[i] = m_pData[m_nCount - 1];
+				if (m_nCount <= 1) {
+					delete m_pData;
+					m_pData = 0;
+				}
+				m_nCount--;
+				return;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022b480 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
