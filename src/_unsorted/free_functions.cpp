@@ -14157,6 +14157,61 @@ int CUnknown10182810::sub_10182810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182c40 size=0xe6
+#include "CAI_BaseNPC.h"
+struct Globals { char pad[0xc]; float curtime; };
+extern Globals *g_1070b228;
+extern char *g_10566458;
+extern char g_10724ef0[];
+extern const double g_10449270;
+struct EntInfo { char *ent; int serial; int pad; };
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+struct SSoundSys {
+    P10(a)
+    virtual void b0(); virtual void b1();
+    virtual float GetDuration(const char *name);
+};
+extern SSoundSys *g_1070b248;
+
+void CAI_BaseNPC::sub_10182c40(const char *text, const char *sound)
+{
+    const char *s = text;
+    char *d = g_10724ef0;
+    while (*d++ = *s++)
+        ;
+    *(char **)((char *)this + 0x1ca4) = g_10724ef0[0] ? g_10724ef0 : 0;
+    float *pTime = (float *)((char *)this + 0x1ca8);
+    *pTime = g_1070b228->curtime - g_10449270;
+    float r;
+    unsigned int h = *(unsigned int *)((char *)this + 0xfe8);
+    if (h != 0xffffffff) {
+        EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+        if (e->serial == (h >> 13) && e->ent && sound && *sound) {
+            unsigned int h2 = *(volatile unsigned int *)((char *)this + 0xfe8);
+            char *pEnt;
+            if (h2 != 0xffffffff) {
+                EntInfo *e2 = (EntInfo *)(g_10566458 + 4) + (h2 & 0x1fff);
+                if (e2->serial == (h2 >> 13))
+                    pEnt = e2->ent;
+                else
+                    pEnt = 0;
+            } else
+                pEnt = 0;
+            if (*(int *)(pEnt + 0x98)) {
+                r = g_1070b248->GetDuration(sound) + *pTime;
+                goto done;
+            }
+        }
+    }
+    r = *pTime + 0.6;
+done:
+    unsigned int f = *(unsigned int *)((char *)this + 0x1cac);
+    *pTime = r;
+    f |= 1;
+    *(unsigned int *)((char *)this + 0x1cac) = f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182d70 size=0x11
 void sub_10004007(void *self, int a);
 
