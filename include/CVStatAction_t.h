@@ -10,6 +10,7 @@ public:
 	int m_nMax;	// +0xc
 
 	bool sub_101fceb0(int value);	// "CVStatAction_t::IsAffectedBy"
+	bool sub_101fcf50();	// "CVStatAction_t::AlwaysTriggers"
 	void sub_101fd110(int a, int b, int c, int d);	// "CVStatAction_t::Apply"
 	void sub_101fd1b0(int a, int b, int c);	// "CVStatAction_t::Remove"
 };
