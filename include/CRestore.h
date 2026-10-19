@@ -6,6 +6,19 @@
 struct CRestoreField;
 class CBaseEntity;
 
+// The CUtlVector<int> that CRestore starts with (memory, allocation count, grow size, size, element pointer).
+struct CRestoreVec
+{
+	int *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	int *m_pElements;
+
+	CRestoreVec() { m_pMemory = 0; m_allocationCount = 0; m_growSize = 0; m_size = 0; m_pElements = 0; }
+	void EnsureCapacity(int num);
+};
+
 class CRestore : public IRestore
 {
 public:
@@ -20,11 +33,7 @@ public:
 	void sub_101a1f90(void *pData, int size);	// reads size bytes into pData
 	char vfunc16();	// slot 16: reads one byte
 
-	int *m_pMemory;	// 0x0004: buffer of 32 dwords (a CUtlVector's memory)
-	int m_allocationCount;	// 0x0008
-	int m_growSize;	// 0x000c
-	int m_size;	// 0x0010
-	int *m_pElements;	// 0x0014
+	CRestoreVec m_vec;	// 0x0004
 	void *m_pData;	// 0x0018
 	char *m_pData2;	// 0x001c: m_pData + 0x18, or null
 	int m_field20;
