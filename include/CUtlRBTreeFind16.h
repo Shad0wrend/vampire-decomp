@@ -29,4 +29,5 @@ public:
 	const RBTreeFind16Links &Links(unsigned short i) const;	// the node's links, or a shared sentinel for InvalidIndex()
 
 	unsigned short sub_10046390(const void *search);	// Find: index of the node equal to search, or InvalidIndex()
+	unsigned short sub_10046570(const void *search);	// same as sub_10046390 (another instance)
 };
