@@ -19981,6 +19981,25 @@ char CBaseCombatCharacter::sub_10339b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033c6b0 size=0x86
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_1033c6b0(unsigned int flags)
+{
+    const char *name = this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::AddMiscFlag";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    *(unsigned int *)((char *)this + 0xfe4) |= flags;
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033c9c0 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
