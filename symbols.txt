@@ -1169,6 +1169,7 @@
 0x100095e8 func   ?vfunc38@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc38
 0x10009601 func   ?sub_1026d0c0@@YIXPAD@Z sub_1026d0c0
 0x10009606 func   ?vfunc5@CFunc_DustCloud@@QAEPAV1@I@Z CFunc_DustCloud::vfunc5
+0x10009610 func   ?vfunc4@CNavPropertyDatabase@@QAEXXZ CNavPropertyDatabase::vfunc4
 0x1000961a func   ?vfunc127@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc127
 0x1000961f func   _item_k_malcolm_office_key item_k_malcolm_office_key
 0x1000966f func   ?sub_1004add0@CMem16_t@@QAEXH@Z CMem16_t::sub_1004add0
