@@ -24,7 +24,7 @@ public:
 	virtual void vfunc14(); virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(int a, int b); virtual void vfunc18();
 	virtual void vfunc19(); virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23();
 	virtual void vfunc24(); virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28();
-	virtual void vfunc29(); virtual void vfunc30(); virtual void vfunc31(); virtual bool vfunc32(int a); virtual void vfunc33();
+	virtual void vfunc29(); virtual float vfunc30(); virtual void vfunc31(); virtual bool vfunc32(int a); virtual void vfunc33();
 	virtual void vfunc34(); virtual void vfunc35(); virtual void vfunc36(); virtual void vfunc37(); virtual void vfunc38();
 	virtual void vfunc39(); virtual void vfunc40(); virtual void vfunc41(); virtual void vfunc42(); virtual void vfunc43();
 	virtual void vfunc44(); virtual void vfunc45(); virtual void vfunc46(); virtual void vfunc47(); virtual void vfunc48();
@@ -103,6 +103,7 @@ public:
 	int sub_1009d5e0();	// "CBaseEntity::GetVSoundTableIdx": scope trace, calls slot 71 while the index at +0xbc is negative, returns it
 	int sub_1009d6a0();	// "CBaseEntity::GetVSoundGroup": scope trace, calls slot 71 while the value at +0xb4 is below -1, returns it
 	int sub_1009d760();	// "CBaseEntity::GetVSoundGroupFemale": same shape on the value at +0xb8
+	float sub_1009d850(void *pListener, float *pDist);	// "CBaseEntity::AdjustSoundDistForStealth": scope trace (entity name), when pListener is set with type 4 at +4 and the object at +0xa8 is set, subtracts slot 30() from *pDist (clamped at 0); returns *pDist
 	void sub_1009ee80(CBaseEntity *pEnt);	// "CBaseEntity::SetAimEnt": stores pEnt's handle at +0x37c (-1 for null)
 	const char *sub_1009f200();	// "CBaseEntity::GetClassname": the string at +0x11c, or "" when it is null
 	void sub_1009fa60();
