@@ -18516,6 +18516,32 @@ Ent * __stdcall sub_101cd070(Ent *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf250 size=0x74
+void sub_101cf250(float *p, int mode)
+{
+    switch (mode) {
+    case 1:
+        if (*p < 0.0f)
+            *p = 1e11f;
+        break;
+    case 2:
+        if (*(int *)p == 0xbf800000)
+            *p = 1e11f;
+        break;
+    case 3:
+        if (*p == 0.0f)
+            *p = 1e11f;
+        break;
+    case 4:
+        if (*(int *)p == 0x7f7fffff)
+            *p = 1e11f;
+        break;
+    default:
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf620 size=0xd
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 
