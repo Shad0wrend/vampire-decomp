@@ -7113,6 +7113,50 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce750 size=0x85
+struct EntInfo { void *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+extern char g_106b8540[];
+extern "C" int __cdecl strcmp(const char *, const char *);
+#pragma intrinsic(strcmp)
+
+struct CListNode_t
+{
+	char m_pad0[8];
+	const char *m_pName;
+	char m_pad0c[0xc];
+	unsigned int m_hOwner;
+};
+
+static inline void *LookupHandle(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		EntInfo *e = &g_10566458->m_entries[h & 0x1fff];
+		if (e->m_serial == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+
+struct CList_t
+{
+	bool sub_100ce750(CListNode_t *node, void *owner, const char *name);
+};
+
+bool CList_t::sub_100ce750(CListNode_t *node, void *owner, const char *name)
+{
+	if (LookupHandle(node->m_hOwner) == owner) {
+		const char *s = node->m_pName;
+		if (!s)
+			s = g_106b8540;
+		if (strcmp(s, name) == 0)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce810 size=0x65
 struct Slot_t { void *pEnt; unsigned int serial; };
 struct Entry_t { int unused; Slot_t slot; };
