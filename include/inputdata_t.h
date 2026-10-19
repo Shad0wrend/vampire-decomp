@@ -12,6 +12,7 @@ struct variant_t
 	int fieldType;	// 1 == FIELD_FLOAT, 2 == FIELD_STRING, 4 == FIELD_INTEGER
 
 	float Float() const;	// the float value, or the file-scope zero when the variant is not a float
+	int Int() const { return iValue; }	// the raw integer value
 	const char *sub_10008805();	// the value converted to a string (used when it is not a string)
 };
 
