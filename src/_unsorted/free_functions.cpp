@@ -18835,6 +18835,53 @@ bool Loader::sub_101d56f0(const char *file)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d58b0 size=0xf7
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+extern "C" int sprintf(char *buf, const char *fmt, ...);
+struct FileSystem {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21();
+	virtual const char *FindFirst(const char *pattern, int *handle);
+	virtual int FindNext(int handle);
+	virtual void v24();
+	virtual void FindClose(int handle);
+};
+struct Loader {
+	void sub_101d58b0(const char *dir);
+	bool sub_101d56f0(const char *file);
+};
+extern FileSystem *g_1070b238;
+// TARGET: Loader::sub_101d58b0
+void Loader::sub_101d58b0(const char *dir)
+{
+	char path[260];
+	int handle;
+	int count = 0;
+	if (dir) {
+		sprintf(path, "%s%s*.txt", "vdata\\system\\", dir);
+		if (g_1070b238->FindFirst(path, &handle)) {
+			do {
+				count++;
+			} while (g_1070b238->FindNext(handle));
+			g_1070b238->FindClose(handle);
+			if (count > 0) {
+				const char *name = g_1070b238->FindFirst(path, &handle);
+				do {
+					sprintf(path, "%s%s", "vdata\\system\\", name);
+					if (!sub_101d56f0(path))
+						Msg("Unable to open Character Template List data file for: %s\n", path);
+					name = (const char *)g_1070b238->FindNext(handle);
+				} while (name);
+				g_1070b238->FindClose(handle);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d5c40 size=0xa8
 extern "C" char *_strlwr(char *);
 extern "C" char *strstr(const char *, const char *);
