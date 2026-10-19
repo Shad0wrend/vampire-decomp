@@ -10,4 +10,5 @@ public:
 	int m_nA;	// 0x000c
 
 	bool sub_10349590();	// "melee_dice_roll_result::AttackHit": (float)(m_nTotal - m_nA - m_nB) > 0
+	bool sub_10349650();	// "melee_dice_roll_result::DamageWentThrough": same test
 };
