@@ -69,6 +69,7 @@ public:
 	int sub_10027570();	// "CBaseEntity::GetSolid": forwards to slot 11 of the collision object at +0x270
 	bool sub_1003cb00(int type);	// "CBaseEntity::HasDataObjectType": scope trace, tests bit `type` of the mask at +0x444
 	void sub_1003cbc0(int type);	// "CBaseEntity::AddDataObjectType": scope trace, sets bit `type` in the mask at +0x444
+	void sub_1003cc80(int type);	// "CBaseEntity::RemoveDataObjectType": scope trace, clears bit `type` in the mask at +0x444
 	void sub_1003eb50();
 	float *sub_1009b030(float *out);	// slot 16 override: copies the three floats at +0x50 to out
 	void sub_1009b1d0(int a, int b);	// "CBaseEntity::TraceMessageBase"
