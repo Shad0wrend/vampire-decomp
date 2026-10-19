@@ -2513,6 +2513,7 @@
 0x10014137 func   ?sub_101e01e0@CUnknown101e01e0@@QAEPAUS101df260@@XZ CUnknown101e01e0::sub_101e01e0
 0x10014187 func   _logic_npc_condition logic_npc_condition
 0x100141aa func   ?sub_10046b40@@YA_NPBI0@Z sub_10046b40
+0x100141cd func   ?sub_1006a7b0@@YAHXZ sub_1006a7b0
 0x100141fa func   ?vfunc9@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc9
 0x100141ff func   ?vfunc5@CAmbientGeneric@@QAEPAV1@I@Z CAmbientGeneric::vfunc5
 0x1001421d func   ?vfunc5@CPushable@@UAEPAV1@I@Z CPushable::vfunc5

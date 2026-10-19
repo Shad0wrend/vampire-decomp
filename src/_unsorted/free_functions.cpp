@@ -3034,6 +3034,39 @@ int sub_100697a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006a7b0 size=0xe1
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *props, int n, const char *name);
+};
+
+extern SendTable g_106c7118;
+extern SendTable *g_1053dfa8;
+extern const char *g_105459d4;
+void sub_10003012();
+void sub_10009539();
+
+SendProp sub_10007bfd(const char *name, int offset, int size, int bits, int flags, int a, void *proxy);
+SendProp sub_1000bf2d(const char *name, int offset, SendTable *table, void *proxy);
+SendProp sub_1000c14e(const char *name, int offset, int size, int bits, int flags, float lo, float hi, void *proxy);
+
+int sub_1006a7b0()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_1000c14e("m_vecStart", 0xc, 0xc, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+		sub_1000c14e("m_vecEnd", 0x18, 0xc, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+		sub_10007bfd("m_iFirerIndex", 0x24, 4, 10, 1, 0, 0),
+	};
+	g_106c7118.sub_1000e8fe(props + 1, 4, g_105459d4);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cc20 size=0x79
 int sub_10431c2f(char *, const char *, ...);
 void sub_10203dd0(char *);
