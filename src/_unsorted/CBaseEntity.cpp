@@ -304,6 +304,35 @@ void CBaseEntity::vfunc228(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9eb0 size=0x86
+#include "CBaseEntity.h"
+#include "CBaseEntitySlots.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+int CBaseEntity::vfunc222(int a)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::GetSoundEmissionOrigin";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	((CBaseEntitySlots *)this)->slot192((float *)a);
+	--*g_109f3680;
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa5a0 size=0xd
 void CBaseEntity::vfunc130(int a)
 {
