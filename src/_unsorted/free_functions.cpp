@@ -16958,6 +16958,27 @@ void UtlVec8::sub_101b6a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6d60 size=0xf9
+#include "CUtlRBTree232.h"
+
+void CUtlRBTree232::sub_101b6d60(const void *pInsert, int *pParent, bool *pLeftChild)
+{
+    int current = m_Root;
+    *pParent = InvalidIndex();
+    *pLeftChild = false;
+    while (current != InvalidIndex()) {
+        *pParent = current;
+        if (m_LessFunc(pInsert, ElementAt(current).m_Data)) {
+            *pLeftChild = true;
+            current = LinksInl(current).m_Left;
+        } else {
+            *pLeftChild = false;
+            current = LinksInl(current).m_Right;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b7170 size=0x95
 #include "CUtlVector130.h"
 
