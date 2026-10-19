@@ -13643,6 +13643,40 @@ void sub_101d0570(int *pVector, int count, const char *pString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2fc0 size=0x88
+#define Q10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CEntQ {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual CEntQ *vfunc4();
+	Q10(a0) Q10(a1) Q10(a2) Q10(a3) Q10(a4) Q10(a5) Q10(a6) Q10(a7) Q10(a8)
+	virtual void a90(); virtual void a91();
+	virtual CEntQ *vfunc97();
+};
+struct CEntListQ {
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual bool vfunc3(CEntQ *pEnt);
+};
+extern CEntListQ *g_1070b240;
+
+char sub_101d2fc0(CEntQ *a, CEntQ *b)
+{
+	if (b) {
+		if (a == b)
+			return 0;
+		CEntQ *pa = g_1070b240->vfunc3(a) ? 0 : a->vfunc4();
+		CEntQ *pb = g_1070b240->vfunc3(b) ? 0 : b->vfunc4();
+		if (pa && pb) {
+			if (pa->vfunc97() == pb)
+				return 0;
+			return pb->vfunc97() != pa;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d3430 size=0xa7
 #include "CTraceEntList.h"
 
