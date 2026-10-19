@@ -19,4 +19,5 @@ public:
 	void sub_101e48f0(int num);	// same as sub_10071ae0 (another instance)
 	void sub_1021e430(int num);	// same as sub_10071ae0 (another instance)
 	void sub_102ce8e0(int num);	// same as sub_10071ae0 (another instance)
+	void sub_102c6c30(int num);	// same as sub_10071ae0 (another instance)
 };
