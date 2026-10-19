@@ -4589,6 +4589,37 @@ int CBaseAnimating::sub_1008dc40(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f540 size=0x82
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+void sub_1000bd25(void *pStudioHdr);
+
+void CBaseAnimating::sub_1008f540()
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseAnimating::ResetActivityIndexes ";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	sub_1000bd25(sub_100952d0(-1));
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100903e0 size=0x82
 #include "CBaseAnimating.h"
 
