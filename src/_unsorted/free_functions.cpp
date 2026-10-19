@@ -28894,6 +28894,67 @@ struct CUnknown1034d590 { void sub_1000a1b4(); void sub_1034d590(int); };
 void CUnknown1034d590::sub_1034d590(int) { sub_1000a1b4(); }
 // END FUNCTION
 
+// FUNCTION: 0x1034e520 size=0xbb
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct EntLike
+{
+	char pad[0x494];
+	int m_n494;
+};
+struct UnknownLike
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual EntLike *GetBaseEntity();
+};
+struct EdictLike
+{
+	char pad[0x40];
+	UnknownLike *m_pUnk;
+};
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EngineLike
+{
+	SL10(a0) SL10(a1) SL10(a2)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7();
+	virtual EdictLike *PEntityOfEntIndex(int index);
+};
+extern EngineLike *g_1070b22c;
+
+struct InputLike
+{
+	char pad0[8];
+	int m_nValue;
+	char pad1[0x18 - 0xc];
+	int m_nType;
+};
+
+void __stdcall sub_1034e520(InputLike *pInput)
+{
+	EdictLike *pEdict = g_1070b22c->PEntityOfEntIndex(0);
+	g_109f3620[*g_109f3680].a = "CBaseEntity::Instance";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (!pEdict)
+		pEdict = g_1070b22c->PEntityOfEntIndex(0);
+	EntLike *pEnt;
+	if (pEdict && pEdict->m_pUnk)
+		pEnt = pEdict->m_pUnk->GetBaseEntity();
+	else
+		pEnt = 0;
+	--*g_109f3680;
+	if (pInput->m_nType == 1)
+		pEnt->m_n494 = pInput->m_nValue;
+	else
+		pEnt->m_n494 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034e700 size=0xa2
 #include "CBaseEntity.h"
 
