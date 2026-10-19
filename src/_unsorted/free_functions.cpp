@@ -26902,6 +26902,44 @@ void CUnknown102b5dc0::sub_102ae8c0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b11c0 size=0xe1
+#include "CAI_BaseNPCTroika.h"
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct NpcSlots168
+{
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8) SL10(a9)
+	SL10(b0) SL10(b1) SL10(b2) SL10(b3) SL10(b4) SL10(b5)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3();
+	virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7();
+	virtual int vfunc168();
+};
+
+int CAI_BaseNPCTroika::sub_102b11c0(int activity)
+{
+	switch (activity) {
+	case 0x87:
+	case 0x88:
+		if ((~*(unsigned int *)((char *)this + 0x14b8) & 0x1000) != 0)
+			return ((NpcSlots168 *)this)->vfunc168() ? 0x7c : 0x7d;
+		return 0x7e;
+	case 0xef:
+		return 0xf0;
+	case 0xc7:
+		return 0xc9;
+	case 0xca:
+	case 0xcb:
+	case 0xd1:
+	case 0xd2:
+		return 0xcc;
+	default:
+		return 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5dc0 size=0xd
 void CUnknown102b5dc0::sub_102b5dc0(int value)
 {
