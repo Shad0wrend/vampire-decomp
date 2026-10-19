@@ -11086,6 +11086,56 @@ bool __fastcall sub_10104ff0(Table *self, int, int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105e20 size=0xcd
+extern int *g_109f3680;
+extern const char **g_109f3620;
+extern const char g_105387dc[];
+extern const char g_106b8540[];
+extern const char g_1056ba64[];
+extern const char g_1056ba18[];
+extern void (*g_109f3630)(const char *, ...);
+
+struct SFlexPair
+{
+    float m_weight;
+    int m_index;
+};
+
+struct SExpression
+{
+    char m_pad0000[0x44];
+    SFlexPair m_pairs[0x28];
+    int m_count;	// 0x184
+};
+
+// TARGET: CBaseCombatCharacter::sub_10105e20
+void CBaseCombatCharacter::sub_10105e20(float *weights, char *pExpression)
+{
+    const char *name;
+    if (this) {
+        name = m_name26c;
+        if (!name)
+            name = g_106b8540;
+    } else {
+        name = g_105387dc;
+    }
+    g_109f3620[*g_109f3680 * 3] = g_1056ba64;
+    g_109f3620[*g_109f3680 * 3 + 1] = name;
+    g_109f3620[*g_109f3680 * 3 + 2] = g_106b8540;
+    ++*g_109f3680;
+    for (int k = 0; k < 128; k++)
+        weights[k] = 0;
+    SExpression *expr = (SExpression *)pExpression;
+    if (expr) {
+        for (int i = 0; i < expr->m_count; i++)
+            weights[expr->m_pairs[i].m_index] = expr->m_pairs[i].m_weight;
+    } else {
+        g_109f3630(g_1056ba18);
+    }
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101063a0 size=0xbf
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
