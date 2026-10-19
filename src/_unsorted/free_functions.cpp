@@ -15949,6 +15949,32 @@ int CVStatInfo_t::sub_101fed90(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fee50 size=0x86
+#include "CVStatInfo_t.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int CVStatInfo_t::sub_101fee50(int level)
+{
+	g_109f3620[*g_109f3680].a = "CVStatInfo_t::Get_Duration_Add";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (level > 5)
+		level = 5;
+	if (m_pLevels) {
+		int r = m_pLevels[level - 1].m_durationAdd;
+		--*g_109f3680;
+		return r;
+	}
+	--*g_109f3680;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202760 size=0xc
 extern int g_105a6fc8[];
 int sub_10202760(int index)
