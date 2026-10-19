@@ -7,4 +7,10 @@ class CTriggerBombSite
 public:
 	CTriggerBombSite *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+	bool vfunc32(void *pOther);	// slot 32: false when disabled (+0x55c), or when the player object at pOther+0xa8 does not point back to this entity (handle at +0x1cb8) or this entity's own handle at +0x8c resolves to another object
+
+	char m_pad0004[0x88];
+	unsigned int m_hOwner008c;	// 0x008c
+	char m_pad0090[0x55c - 0x90];
+	bool m_bDisabled;	// 0x055c
 };
