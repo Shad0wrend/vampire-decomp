@@ -18006,6 +18006,39 @@ int sub_10202780(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102027a0 size=0xa3
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern void (__cdecl *g_109f3658)(int, const char *, ...);
+
+struct ParticleAttachName_t {
+	const char *m_pName;
+	int m_nType;
+};
+extern ParticleAttachName_t g_10483bf0[25];
+
+int sub_102027a0(const char *pszType)
+{
+	g_109f3620[*g_109f3680].a = "ParseParticleAttachType";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	for (unsigned int i = 0; i < 25; i++) {
+		if (!_strcmpi(g_10483bf0[i].m_pName, pszType)) {
+			int type = g_10483bf0[i].m_nType;
+			(*g_109f3680)--;
+			return type;
+		}
+	}
+	g_109f3658(1, "Invalid particle attach type '%s'\n", pszType);
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202880 size=0x8c
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
