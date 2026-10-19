@@ -20,11 +20,11 @@ public:
 		char m_Data[8];
 	};
 
-	void *m_unk0;
+	bool (*m_LessFunc)(const void *, const void *);
 	Node_t *m_pElements;	// 0x04 (the node memory)
 	int m_nAllocationCount;	// 0x08
 	int m_nGrowSize;	// 0x0c
-	int m_unk10;
+	int m_Root;	// 0x10
 	int m_unk14;
 	int m_FirstFree;	// 0x18
 	int m_NumElements;	// 0x1c
@@ -64,4 +64,5 @@ public:
 
 	const Links_t &sub_10055520(int i) const;	// "CUtlRBTree::Links"
 	int sub_10055050();	// "CUtlRBTree::NewNode": takes the first free node (or grows the node memory by one and uses the next unused one) and returns its index
+	void sub_1007f250(const void *pInsert, int *pParent, bool *pLeftChild);	// "CUtlRBTree::FindInsertionPosition": walks down from the root with the less function, stores the last visited node in *pParent and whether the new element goes to its left in *pLeftChild
 };
