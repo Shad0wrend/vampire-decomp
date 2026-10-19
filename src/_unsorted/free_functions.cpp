@@ -18454,6 +18454,39 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8c90 size=0xc4
+extern int (*g_109f3630)(const char *, ...);
+extern const char g_105a43f0[];
+extern const char g_105a4448[];
+int sub_1043e780(const char *, const char *);
+
+// TARGET: CUnknown101e8080::sub_101e8c90
+bool CUnknown101e8080::sub_101e8c90(const char *type, int *a, int *b, int *c)
+{
+    const char *name;
+    if (type) {
+        int n = m_nFollowers;
+        for (int i = 0; i < n; i++) {
+            CFollowerInfo *p = (CFollowerInfo *)((char *)m_pFollowers + i * 0x2c);
+            if (sub_1043e780(p->m_name, type) == 0) {
+                *a = p->m_a;
+                *b = p->m_b;
+                *c = p->m_c;
+                return true;
+            }
+        }
+        name = type;
+    } else {
+        name = g_105a4448;
+    }
+    g_109f3630(g_105a43f0, name, m_pFollowers);
+    *a = m_pFollowers->m_a;
+    *b = m_pFollowers->m_b;
+    *c = m_pFollowers->m_c;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e94b0 size=0xa
 extern int g_1073a144;
 
