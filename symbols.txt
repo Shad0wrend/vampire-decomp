@@ -2769,6 +2769,7 @@
 0x10013dea func   ?sub_10221b10@QuestJournal@@QAEPADH@Z QuestJournal::sub_10221b10
 0x10013e17 func   ?sub_10192a30@@YAPAHXZ sub_10192a30
 0x10013e35 func   ??0StatDefault3@@QAE@H@Z StatDefault3::StatDefault3
+0x10013e49 func   ?vfunc392@CBaseCombatCharacter@@QAEHPAX@Z CBaseCombatCharacter::vfunc392
 0x10013e6c func   ?sub_1022eb60@@YAXPAUTStat@@PBD@Z sub_1022eb60
 0x10013ebc func   _item_k_museum_basement_key item_k_museum_basement_key
 0x10013edf func   ?sub_10194330@CUtlRBTree12@@QBEGPBX@Z CUtlRBTree12::sub_10194330
