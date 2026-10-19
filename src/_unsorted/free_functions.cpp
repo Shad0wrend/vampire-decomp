@@ -4792,6 +4792,27 @@ void sub_100ae450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ae6b0 size=0x77
+#include "IVEngineServer.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern IVEngineServer *g_1070b22c;
+int sub_101193b0();
+void sub_100d1ff0(int a, int b, unsigned int flags);
+
+void sub_100ae6b0()
+{
+	g_109f3620[*g_109f3680].a = "CC_Ent_AbsBox";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_100d1ff0(sub_101193b0(), g_1070b22c->vfunc84(1), 32);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b03b0 size=0x66
 struct ScopeEnt { const char* a; const void* b; const void* c; };
 extern ScopeEnt* g_109f3620;
