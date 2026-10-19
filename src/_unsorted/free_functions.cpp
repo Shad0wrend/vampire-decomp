@@ -5372,6 +5372,36 @@ int CBaseEntity::sub_1009d5e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d6a0 size=0x8f
+#include "CBaseEntity.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+int CBaseEntity::sub_1009d6a0()
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::GetVSoundGroup";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (m_nVSoundGroup < -1)
+		vfunc71();
+	int r = m_nVSoundGroup;
+	--*g_109f3680;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ee80 size=0x9f
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
