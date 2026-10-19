@@ -62,6 +62,7 @@ public:
 	void sub_1033f3f0(inputdata_t *data);	// "CBaseCombatCharacter::InputHungerCheck": same shape as sub_1033ea90
 	void sub_1033eb60(int value);
 	char sub_103268e0(const float *pos, int a);	// "CBaseCombatCharacter::FInViewCone" worker of vfunc362
+	void sub_1032f930(int amount);	// "CBaseCombatCharacter::IncrementStealthModifier": scope trace (entity name), adds amount to +0x1084
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc295(int a);
@@ -81,7 +82,9 @@ public:
 	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
 	void vfunc119();	// "CBaseCombatCharacter::Kill": scope trace (entity name), then CBaseEntity::vfunc119
 
-	char m_pad03e0[0x13a0 - 0x3e0];
+	char m_pad03e0[0x1084 - 0x3e0];
+	int m_nStealthModifier;	// 0x1084
+	char m_pad1088[0x13a0 - 0x1088];
 	int m_field13a0;
 	char m_pad13a4[0x13bc - 0x13a4];
 	int m_nStatLists;
