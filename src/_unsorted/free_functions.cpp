@@ -19737,6 +19737,34 @@ void __fastcall sub_1027d9b0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027e590 size=0x93
+#include "CBaseEntity.h"
+extern "C" int _vsnprintf(char *, unsigned int, const char *, char *);
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+extern void (*g_109f3630)(const char *fmt, ...);
+
+void sub_1027e590(CBaseEntity *ent, const char *fmt, ...)
+{
+	char buf[256];
+	char *args = (char *)&fmt + sizeof(fmt);
+	_vsnprintf(buf, 255, fmt, args);
+	buf[255] = 0;
+	unsigned int len = strlen(buf);
+	const char *outFmt;
+	if (len != 0 && buf[len - 1] == '\n') {
+		buf[len - 1] = 0;
+		outFmt = "%s (%s: %s)\n";
+	} else {
+		outFmt = "%s (%s: %s)";
+	}
+	const char *name = ent->m_name26c;
+	if (!name)
+		name = "<unnamed>";
+	g_109f3630(outFmt, buf, ent->sub_1000ea11(), name);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027ee90 size=0x6c
 #include "CUnknown1027ef20.h"
 
