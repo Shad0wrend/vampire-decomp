@@ -2772,6 +2772,27 @@ void sub_100602e0(int a, int b, const int *mins, const int *maxs, int p5, int p6
 }
 // END FUNCTION
 
+// FUNCTION: 0x10060ac0 size=0x76
+#include "CTEDecal.h"
+
+extern CTEDecal g_106c1f38;
+
+void sub_10060ac0(int a, int b, const int *mins, const int *maxs, int p5, int p6, int p7, char p8)
+{
+	g_106c1f38.m_mins[0] = mins[0];
+	g_106c1f38.m_mins[1] = mins[1];
+	g_106c1f38.m_mins[2] = mins[2];
+	g_106c1f38.m_maxs[0] = maxs[0];
+	g_106c1f38.m_maxs[1] = maxs[1];
+	g_106c1f38.m_maxs[2] = maxs[2];
+	g_106c1f38.m_f24 = p5;
+	g_106c1f38.m_f28 = p6;
+	g_106c1f38.m_f2c = p7;
+	g_106c1f38.m_f30 = p8;
+	g_106c1f38.sub_100606c0(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065250 size=0xe1
 #include "SendProp.h"
 
