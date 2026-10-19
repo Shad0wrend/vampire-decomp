@@ -21783,6 +21783,31 @@ void sub_1027e590(CBaseEntity *ent, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027e660 size=0xac
+extern char g_10547418[], g_105cd430[], g_105b4738[], g_105b4730[], g_105cd428[], g_105cd41c[], g_105cd414[], g_1053fd98[], g_105cd408[], g_105cd3f8[], g_105cd3ec[], g_105cd3e0[], g_105cd3d8[], g_105cd3cc[], g_105cd3b4[], g_105477a4[];
+const char *sub_1027e660(int n)
+{
+    switch (n) {
+    case 0: return g_10547418;
+    case 1: return g_105cd430;
+    case 2: return g_105b4738;
+    case 3: return g_105b4730;
+    case 4: return g_105cd428;
+    case 5: return g_105cd41c;
+    case 6: return g_105cd414;
+    case 7: return g_1053fd98;
+    case 8: return g_105cd408;
+    case 9: return g_105cd3f8;
+    case 10: return g_105cd3ec;
+    case 11: return g_105cd3e0;
+    case 12: return g_105cd3d8;
+    case 13: return g_105cd3cc;
+    case 14: return g_105cd3b4;
+    default: return g_105477a4;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027ee90 size=0x6c
 #include "CUnknown1027ef20.h"
 
