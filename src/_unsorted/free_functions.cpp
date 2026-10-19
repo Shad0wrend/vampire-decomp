@@ -23131,6 +23131,45 @@ bool CUnknown10280d10::sub_10280d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280e50 size=0xba
+#include "CAI_BaseNPC.h"
+#include "CUnknown102ee270.h"
+
+struct CUnknown1027d990
+{
+    int sub_1027d990();
+};
+struct SGlobals { int pad[3]; float curtime; };
+extern SGlobals *g_1070b228;
+extern void (*g_109f3630)(const char *fmt, ...);
+
+void CAI_BaseNPC::sub_10280e50(void *pSchedule)
+{
+    char *self = (char *)this;
+    vfunc435(pSchedule);
+    *(char *)(self + 0x5bb8) = 0;
+    float now = g_1070b228->curtime;
+    *(void **)(self + 0x5c38) = pSchedule;
+    *(int *)(self + 0x5c40) = 0;
+    *(float *)(self + 0x5c48) = now;
+    *(float *)(self + 0x5c4c) = now;
+    *(int *)(self + 0x5c44) = 0;
+    *(int *)(self + 0x5c54) = 0;
+    int *p = (int *)(self + 0x5c5c);
+    if (p) {
+        for (int i = 0; i < 6; i++)
+            p[i] = 0;
+    }
+    char *pOwner = *(char **)(self + 0x98);
+    if (((CUnknown1027d990 *)this)->sub_1027d990() != 3) {
+        if (((CUnknown1027d990 *)this)->sub_1027d990() != 1 && (!pOwner || (~*(unsigned int *)(pOwner + 0x14b8) & 8)))
+            (*(CUnknown102ee270 **)(self + 0x5d34))->sub_102ee270();
+    }
+    if (*(unsigned int *)(self + 0x224) & 0x8000000)
+        g_109f3630("Schedule: %s\n", *(int *)((char *)pSchedule + 0x40));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10288540 size=0x9
 struct CUnknown10288540 { int m_p; CUnknown10288540 *sub_10288540(); };
 CUnknown10288540 *CUnknown10288540::sub_10288540() { m_p = 0; return this; }

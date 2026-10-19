@@ -1758,6 +1758,7 @@
 0x1000d0f8 func   ?sub_101c2a90@CUnknown101c2a90@@QAEXD@Z CUnknown101c2a90::sub_101c2a90
 0x1000d0fd func   ?vfunc1@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc1
 0x1000d10c func   ?sub_102cefc0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102cefc0
+0x1000d116 func   ?sub_10280e50@CAI_BaseNPC@@QAEXPAX@Z CAI_BaseNPC::sub_10280e50
 0x1000d134 func   ?vfunc621@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc621
 0x1000d143 func   ?sub_1004ba20@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004ba20
 0x1000d148 func   ?sub_102f9300@@YAXPAHPBH@Z sub_102f9300
