@@ -657,6 +657,7 @@
 0x10005b37 func   ?vfunc5@CCorpse@@QAEPAV1@I@Z CCorpse::vfunc5
 0x10005b4b func   ?sub_100a93d0@@YI_NPAD@Z sub_100a93d0
 0x10005b82 func   ?vfunc4@CTEImpact@@UAEXHH@Z CTEImpact::vfunc4
+0x10005b8c func   ?sub_1003db80@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_1003db80
 0x10005b96 func   ?sub_100792e0@CUnknown100792c0@@QAEXH@Z CUnknown100792c0::sub_100792e0
 0x10005b9b func   ?sub_10042f20@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10042f20
 0x10005bb9 func   ?sub_101a17c0@CRestore@@QAEPAUCRestoreField@@PBDPAU2@HPAH@Z CRestore::sub_101a17c0

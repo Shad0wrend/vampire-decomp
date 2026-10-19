@@ -1357,6 +1357,49 @@ void CBaseEntity::sub_1003daa0(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003db80 size=0xb1
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EntSlots116 {
+	D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6) D10(a7) D10(a8) D10(a9)
+	D10(b0)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5();
+	virtual bool f116();
+};
+struct EntSlots175 : EntSlots116 {
+	D10(d0) D10(d1) D10(d2) D10(d3) D10(d4)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6();
+	virtual void f174(EntSlots175 *pOther);
+	virtual void f175(EntSlots175 *pOther);
+};
+
+void CBaseEntity::sub_1003db80(CBaseEntity *pOther)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::PhysicsStartTouch";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    EntSlots175 *self = (EntSlots175 *)this;
+    EntSlots175 *other = (EntSlots175 *)pOther;
+    if (other) {
+        if (!self->f116()) {
+            if (!other->f116()) {
+                self->f174(other);
+                self->f175(other);
+            }
+        }
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003e250 size=0x6d
 struct TraceEnt { const char *a; void *b; void *c; };
 struct trace21 { int d[21]; };
