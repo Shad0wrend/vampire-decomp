@@ -16,29 +16,14 @@ struct CUnknown100fde30Rec
 	unsigned short m_f, m_g, m_h;	// 0xffff
 	short m_i, m_j;
 	int m_k;
-
-	CUnknown100fde30Rec()
-	{
-		m_b = 10.0f;
-		m_c = 0;
-		m_d = 0;
-		m_e = 0;
-		m_f = 0xffff;
-		m_g = 0xffff;
-		m_h = 0xffff;
-		m_j = 0;
-		m_i = 0;
-		m_k = 0;
-		m_a = -3.402823466e+38f;
-	}
 };
 
 class CUnknown100fde30
 {
 public:
 	char m_pad0000[0x58];
-	CUniformRandomStream m_stream1;	// 0x58
-	CUniformRandomStream m_stream2;	// 0xe4
+	char m_stream1[0x8c];	// 0x58, a CUniformRandomStream
+	char m_stream2[0x8c];	// 0xe4, a CUniformRandomStream
 	char m_pad0170[0x170 - 0xe4 - 0x8c];
 	int m_field170;
 	CUnknown100fde30Rec m_rec1;	// 0x174
