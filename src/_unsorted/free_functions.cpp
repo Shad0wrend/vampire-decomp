@@ -5181,6 +5181,66 @@ void __fastcall sub_10081eb0(CSlots *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100828d0 size=0xcc
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EntSlots78 {
+	D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void b5(); virtual void b6(); virtual void b7();
+	virtual void f78();
+};
+struct EntEntry { EntSlots78 *pEnt; int serial; int pad; };
+struct EntTable { int hdr; EntEntry entries[1]; };
+extern EntTable *g_10566458;
+extern "C" __declspec(dllimport) void Plat_Free(void *p);
+
+struct EHandleRef
+{
+    unsigned int m_h;
+    bool IsValid() const
+    {
+        if (m_h == 0xffffffff)
+            return false;
+        EntEntry *e = &g_10566458->entries[m_h & 0x1fff];
+        return e->serial == (int)(m_h >> 13) && e->pEnt != 0;
+    }
+    EntSlots78 *Get() const
+    {
+        if (m_h == 0xffffffff)
+            return 0;
+        EntEntry *e = &g_10566458->entries[m_h & 0x1fff];
+        return e->serial == (int)(m_h >> 13) ? e->pEnt : 0;
+    }
+};
+
+extern EHandleRef *g_106c8a28;
+extern int g_106c8a2c;
+extern int g_106c8a30;
+extern int g_106c8a34;
+extern EHandleRef *g_106c8a38;
+extern char g_106c8a41;
+
+void sub_100828d0()
+{
+    int i = 0;
+    g_106c8a41 = 0;
+    for (i = 0; i < g_106c8a34; i++) {
+        if (g_106c8a28[i].IsValid())
+            g_106c8a28[i].Get()->f78();
+    }
+    g_106c8a34 = 0;
+    if (g_106c8a30 != -1) {
+        if (g_106c8a28) {
+            Plat_Free(g_106c8a28);
+            g_106c8a28 = 0;
+        }
+        g_106c8a2c = 0;
+    }
+    g_106c8a38 = g_106c8a28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10082e40 size=0xe
 bool CUnknown10082e40::sub_10082e40()
 {
