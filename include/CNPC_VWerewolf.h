@@ -51,6 +51,7 @@ public:
 	void sub_103d1ca0();	// "CNPC_VWerewolf::StartSearchTimer": stores the time stamp counter in a global
 	void vfunc465(const char *msg);	// slot 465, scope-traced wrapper
 	void vfunc516();	// slot 516 "CNPC_VWerewolf::MaxYawSpeed": scope trace (entity name), then the base implementation
+	bool vfunc566(void *pHint);	// "CNPC_VWerewolf::FValidateHintType": scope trace (entity name), true when the hint type at +0x5dc is in 0x3a98..0x3aaa but not 0x3a9f
 	void sub_10295a60(const char *msg);
 	CNPC_VWerewolf *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10003648();	// as in CPhysForce (transplant)
