@@ -8981,6 +8981,44 @@ extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x100dbc60 size=0xb3
+#include "CUnknown100dbc60.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+void CUnknown100dbc60::sub_100dbc60(CBaseEntity *pEnt)
+{
+	const unsigned int *src = pEnt->vfunc1();
+	int elem = m_list.m_size;
+	if (1 + m_list.m_size > m_list.m_allocationCount && m_list.m_growSize != -1) {
+		int newSize = m_list.m_allocationCount + (1 + m_list.m_size - m_list.m_allocationCount);
+		while (m_list.m_allocationCount < newSize) {
+			if (m_list.m_allocationCount != 0) {
+				if (m_list.m_growSize != 0)
+					m_list.m_allocationCount += m_list.m_growSize;
+				else
+					m_list.m_allocationCount += m_list.m_allocationCount;
+			} else {
+				m_list.m_allocationCount = 8;
+			}
+		}
+		if (m_list.m_pMemory)
+			m_list.m_pMemory = (int *)Plat_Realloc(m_list.m_pMemory, m_list.m_allocationCount * 4);
+		else
+			m_list.m_pMemory = (int *)Plat_Alloc(m_list.m_allocationCount * 4);
+	}
+	m_list.m_size += 1;
+	m_list.m_pElements = m_list.m_pMemory;
+	int numToMove = m_list.m_size - elem - 1;
+	if (numToMove > 0)
+		memmove(m_list.m_pMemory + elem + 1, m_list.m_pMemory + elem, numToMove * 4);
+	int *p = m_list.m_pMemory + elem;
+	if (p)
+		*p = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc300 size=0x76
 extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
 struct Rec64 {

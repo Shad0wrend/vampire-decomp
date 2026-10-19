@@ -1396,6 +1396,7 @@
 0x1000ab5a func   ?sub_102d8a90@CUnknown102d8a90@@QAEPAUSVec3@@XZ CUnknown102d8a90::sub_102d8a90
 0x1000ab87 func   ?sub_102e7e60@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e7e60
 0x1000ab8c func   ?sub_10090bc0@CBaseAnimating@@QAEXI@Z CBaseAnimating::sub_10090bc0
+0x1000abaa func   ?sub_100dbc60@CUnknown100dbc60@@QAEXPAVCBaseEntity@@@Z CUnknown100dbc60::sub_100dbc60
 0x1000ac3b func   ?sub_103adb00@@YAPAHXZ sub_103adb00
 0x1000ac95 func   _keyframe_rope keyframe_rope
 0x1000ac9f func   ?vfunc1@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAX@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc1
