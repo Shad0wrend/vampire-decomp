@@ -8,4 +8,5 @@ public:
 	int *m_pData;
 
 	void sub_10227c90(int value);	// if the value is a valid index (global registry check), removes it from the array (fast remove)
+	void sub_101f1be0(int value);	// if the value is a valid index (global registry check), appends it (reallocating the array by one element)
 };
