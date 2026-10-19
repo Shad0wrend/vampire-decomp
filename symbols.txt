@@ -1909,6 +1909,7 @@
 0x1000ff1f func   ?sub_101c4460@@YAXPAHPBH@Z sub_101c4460
 0x1000ff51 func   ?sub_100eb280@UtlMem2@@QAEXH@Z UtlMem2::sub_100eb280
 0x1000ff56 func   ?sub_1034a1a0@@YIXPAUMem16@@HH@Z sub_1034a1a0
+0x1000ff5b func   ?sub_101a58e0@CUtlVector40@@QAEXH@Z CUtlVector40::sub_101a58e0
 0x1000ff6f func   ?vfunc5@CBaseParticleEntity@@QAEPAV1@I@Z CBaseParticleEntity::vfunc5
 0x1000ff7e func   _item_p_research_mg_security item_p_research_mg_security
 0x1000ffab func   ?vfunc5@CPointTeleport@@QAEPAV1@I@Z CPointTeleport::vfunc5
