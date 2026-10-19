@@ -361,6 +361,39 @@ void CBaseEntity::vfunc228(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6ad0 size=0xa3
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int CBaseEntity::vfunc233(int *pList, int maxObjects)
+{
+	const char *name;
+	if (this)
+	{
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	}
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::VPhysicsGetObjectList";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	int pObj = *(int *)((char *)this + 0x36c);
+	if (pObj && maxObjects > 0)
+	{
+		*pList = pObj;
+		--*g_109f3680;
+		return 1;
+	}
+	--*g_109f3680;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9eb0 size=0x86
 #include "CBaseEntity.h"
 #include "CBaseEntitySlots.h"
