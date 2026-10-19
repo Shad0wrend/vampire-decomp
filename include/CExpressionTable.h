@@ -6,7 +6,7 @@
 class CExpressionTable
 {
 public:
-	int m_field00;
+	int m_field00;	// base address of the 400-byte expression records
 	int m_field04;
 	int m_field08;
 	int m_field0c;
@@ -16,4 +16,5 @@ public:
 	CExpressionTable();
 	bool IsValidExpression(int index);	// 0 <= index < m_field0c
 	void sub_10105090(int index);	// "CBaseCombatCharacter::GetExpress..." callee
+	int sub_101051b0(int index);	// "CExpressionTable::GetExpressionData": scope trace, address of record index (0 when out of range)
 };
