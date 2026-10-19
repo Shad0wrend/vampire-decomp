@@ -29138,6 +29138,59 @@ void CBaseCombatCharacter::sub_1032aa40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032e210 size=0xde
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct HandleEntry { void *ent; unsigned int serial; int pad; };
+struct HandleList { int pad; HandleEntry e[1]; };
+extern HandleList *g_10566458;
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct WeaponSlots
+{
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8) SL10(a9)
+	SL10(b0) SL10(b1) SL10(b2) SL10(b3) SL10(b4) SL10(b5) SL10(b6) SL10(b7) SL10(b8) SL10(b9)
+	SL10(c0) SL10(c1) SL10(c2) SL10(c3) SL10(c4) SL10(c5) SL10(c6) SL10(c7) SL10(c8) SL10(c9)
+	SL10(d0) SL10(d1) SL10(d2) SL10(d3) SL10(d4) SL10(d5)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void e9();
+	virtual void Weapon_HandleAnimEvent(void *pEvent, CBaseEntity *pOwner);	// slot 370
+};
+
+struct WeaponHandle
+{
+	unsigned int m_Index;
+	WeaponSlots *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		HandleEntry *e = &g_10566458->e[m_Index & 0x1fff];
+		return e->serial == (m_Index >> 13) ? (WeaponSlots *)e->ent : 0;
+	}
+};
+
+void CBaseCombatCharacter::sub_1032e210(void *pEvent)
+{
+	const char *ent;
+	if (this)
+		ent = m_name26c ? m_name26c : g_106b8540;
+	else
+		ent = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::Weapon_HandleAnimEvent";
+	g_109f3620[*g_109f3680].b = ent;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (((WeaponHandle *)((char *)this + 0x19a4))->Get() != 0)
+		((WeaponHandle *)((char *)this + 0x19a4))->Get()->Weapon_HandleAnimEvent(pEvent, this);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032e9f0 size=0xa8
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
