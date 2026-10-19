@@ -36,6 +36,7 @@ public:
 	void sub_10322800(unsigned int flags, int a);	// "CBaseCombatCharacter::SetOccultPowerFlag": scope trace, ors flags into the dword at +0xe38
 	void sub_1033d8a0(inputdata_t *data);	// "CBaseCombatCharacter::InputClearActiveDisciplines": scope trace (entity name), then sub_10147a60()
 	void sub_10147a60();
+	int sub_10336a50();	// "CBaseCombatCharacter::HasUsableMeleeWeapon" worker
 	bool sub_10106f90(int expression);	// "CBaseCombatCharacter::IsValidExpression": forwards to the global expression table
 	void sub_101073c0(int expression);	// "CBaseCombatCharacter::GetExpress...": forwards to the global expression table
 	void sub_10014eb6(int a, int b);	// "CBaseCombatCharacter::GetCameraViewpointPositionBase"-like worker called by slot 50
@@ -47,6 +48,7 @@ public:
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc295(int a);
+	int vfunc307();	// "CBaseCombatCharacter::HasUsableMeleeWeapon": scope trace (entity name), then sub_10336a50
 	void vfunc333(int a);
 	void vfunc335();
 	void vfunc336();
