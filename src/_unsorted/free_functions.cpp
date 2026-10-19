@@ -9100,6 +9100,66 @@ unsigned char __stdcall sub_100ce810(Ev_t *ev, void *ent, int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce8a0 size=0xbb
+struct PyObject;
+struct PyTypeObject
+{
+	char pad[0x18];
+	void (__cdecl *tp_dealloc)(PyObject *);
+};
+struct PyObject
+{
+	int ob_refcnt;
+	PyTypeObject *ob_type;
+};
+struct PyHost
+{
+	virtual void v0();
+	virtual bool v1();
+	char pad[0x2c - 4];
+	int m_f2c;
+};
+struct GlobalVars
+{
+	char pad[0xc];
+	float curtime;
+};
+
+extern PyObject *(__cdecl *g_109f3750)(const char *);
+extern PyObject *(__cdecl *g_109f3754)(PyObject *);
+extern PyObject *(__cdecl *g_109f3758)(const char *, int, PyObject *, PyObject *);
+extern void (__cdecl *g_109f375c)();
+extern void (__cdecl *g_109f3760)();
+extern int (__cdecl *g_109f3764)();
+extern void (__cdecl *g_109f3768)();
+extern void (__cdecl *g_109f3628)(const char *, ...);
+extern PyHost *g_107318bc;
+extern GlobalVars *g_1070b228;
+
+void __stdcall sub_100ce8a0(const char *code)
+{
+	if (code) {
+		PyObject *module = g_109f3750("__main__");
+		if (module) {
+			PyObject *dict = g_109f3754(module);
+			if (!g_107318bc->v1() && g_107318bc->m_f2c)
+				g_109f3628("RUNNING PYTHON AT TIME %f:\n%s\n\n", g_1070b228->curtime, code);
+			PyObject *result = g_109f3758(code, 0x100, dict, dict);
+			if (!result) {
+				g_109f375c();
+				g_109f3760();
+				return;
+			}
+			if (--result->ob_refcnt == 0)
+				result->ob_type->tp_dealloc(result);
+			if (g_109f3764())
+				g_109f3768();
+			g_109f3760();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cfd00 size=0x77
 struct SaveX {
     virtual void v0();
