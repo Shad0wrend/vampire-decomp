@@ -397,6 +397,33 @@ unsigned short sub_1002e0a0(IPhysObj *obj, unsigned short flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002e970 size=0xa0
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+struct SurfaceProps { virtual void v0(); virtual void v1(); virtual void v2(); virtual int v3(const char *name); };
+struct PhysEnv { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void *v9(int a, int b, int c, void *d, void *e, int f); };
+extern SurfaceProps *g_10723944;
+extern PhysEnv *g_10723940;
+extern char g_1070d9d0[];
+
+void *sub_1002e970(int a, int b, int c, char *obj)
+{
+    g_109f3620[*g_109f3680].a = "PhysSphereCreate";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int mat = -1;
+    if (obj[0x404])
+        mat = g_10723944->v3(obj + 0x404);
+    void *r = g_10723940->v9(b, mat, c, g_1070d9d0, obj + 0x610, 0);
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030720 size=0x9b
 #include "CCollisionEvent.h"
 
