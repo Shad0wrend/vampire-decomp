@@ -22899,6 +22899,48 @@ void CBaseCombatCharacter::sub_1033f3f0(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10340bd0 size=0x86
+#include "CBaseCombatCharacter.h"
+
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+// The object pointed to by the entity field at +0x98; only its slot 507 is used here.
+struct SPlayFloatTarget
+{
+	PV100(a0) PV100(a1) PV100(a2) PV100(a3) PV100(a4)
+	virtual void a500(); virtual void a501(); virtual void a502(); virtual void a503();
+	virtual void a504(); virtual void a505(); virtual void a506();
+	virtual void slot507();
+};
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+void CBaseCombatCharacter::sub_10340bd0(inputdata_t *data)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::InputPlayFloat";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	SPlayFloatTarget *pTarget = *(SPlayFloatTarget **)((char *)this + 0x98);
+	if (pTarget)
+		pTarget->slot507();
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10341120 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
