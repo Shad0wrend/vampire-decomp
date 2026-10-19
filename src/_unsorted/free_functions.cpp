@@ -24636,6 +24636,25 @@ bool HandleList::sub_103167f0(void *arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316ec0 size=0xa1
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" int strcmp(const char *, const char *);
+extern "C" __declspec(dllimport) void Error(const char *, ...);
+extern const char *g_106152b0[];
+
+void sub_10316ec0()
+{
+    char szFailCode[16];
+    for (int i = 10; i < 42; i += 10) {
+        sprintf(szFailCode, "FAIL_CODE_%d", i);
+        if (strcmp(g_106152b0[i], szFailCode))
+            Error("Task error strings in g_ppszTaskFailureText do not match the fail codes.  g_ppszTaskFailureText[ %d ] != \"%s\"\n", i, szFailCode);
+    }
+    if (strcmp(g_106152b0[42], "END OF LIST"))
+        Error("Task error strings in g_ppszTaskFailureText do not match the fail codes.  Last fail code != \"END OF LIST\"\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319f10 size=0xc
 bool sub_1000528b(void *);
 bool CUnknown10319f10::sub_10319f10()
