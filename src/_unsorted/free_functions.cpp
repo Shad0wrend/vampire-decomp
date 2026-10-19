@@ -6205,6 +6205,41 @@ bool __fastcall sub_100b1380(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1a00 size=0x89
+#include "CBaseEntity.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+struct SModelInfoLike
+{
+	virtual void slot0();
+	virtual void slot1();
+	virtual int slot2(int modelindex);
+};
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern SModelInfoLike *g_1070b250;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+int CBaseEntity::sub_100b1a00()
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::GetModel";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	int r = g_1070b250->slot2(vfunc8());
+	--*g_109f3680;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3580 size=0x86
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
