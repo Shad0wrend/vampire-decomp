@@ -20,8 +20,10 @@ public:
 	void sub_100926e0(int bone, int b, int c);	// "CBaseAnimating::GetBonePosition0"
 	void sub_10092610(int a, int b, int c);	// "CBaseAnimating::GetBonePosition01": LookupBone(a), then GetBonePosition0(bone, b, c)
 	int sub_10092e20(int a, int b, int c);	// "CBaseAnimating::GetAttachment01": scope trace, then sub_10005d12(sub_100060aa(a, b, c))
+	void sub_100931d0(int a, int b, int c);	// "CBaseAnimating::GetAttachmentLocal01": scope trace, then sub_10012625(sub_100060aa(a, b, c))
 	int sub_100060aa(int a, int b, int c);
 	int sub_10005d12(int a);
+	int sub_10012625(int a);
 	void sub_10093cb0(int a);	// "CBaseAnimating::GetBodygroupName": scope trace, then a studio helper on GetModelPtr(-1)
 	void sub_10090bc0(unsigned int flags);	// "CBaseAnimating::AddEffectsForNextSequence": scope trace, ors flags into the dword at +0x5b0
 	void sub_1008d520(inputdata_t *inputdata);	// "CBaseAnimating::InputFadeToSkin": scope trace, then sub_1008d6d0(skin)
