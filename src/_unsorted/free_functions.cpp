@@ -23922,6 +23922,34 @@ void CBaseCombatCharacter::sub_1032f930(int amount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032fab0 size=0x96
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+static inline int Clamp(int v, int lo, int hi)
+{
+	if (v > hi)
+		return hi;
+	if (v < lo)
+		return lo;
+	return v;
+}
+
+int CBaseCombatCharacter::sub_1032fab0()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::GetStealthModifier";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int r = Clamp(m_nStealthModifier, -10, 10);
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10330ce0 size=0xd
 #include "CUnknown10330ce0.h"
 // TARGET: CUnknown10330ce0::sub_10330ce0
