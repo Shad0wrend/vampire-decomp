@@ -43,4 +43,6 @@ public:
 	bool sub_102ec3b0(unsigned short i) const;	// same as sub_102eb7f0 (another instance)
 	unsigned short sub_10194330(const void *search) const;	// "CUtlRBTree::Find"
 	unsigned short sub_102cdd10(const void *search) const;	// "CUtlRBTree::Find" (another instance)
+	unsigned short sub_1024b9e0();	// "CUtlRBTree::NewNode": takes the free list head or grows the node memory (first allocation 3 elements)
+	unsigned short sub_10194780();	// same as sub_1024b9e0 (another instance)
 };
