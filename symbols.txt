@@ -1226,6 +1226,7 @@
 0x100095c5 func   ?sub_1033d380@S1033d380@@QAEHH@Z S1033d380::sub_1033d380
 0x100095cf func   ?sub_100433b0@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_100433b0
 0x100095d9 func   ?sub_1005a6a0@@YAXHHPBH0@Z sub_1005a6a0
+0x100095de func   ?sub_10032880@@YAXXZ sub_10032880
 0x100095e8 func   ?vfunc38@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc38
 0x10009601 func   ?sub_1026d0c0@@YIXPAD@Z sub_1026d0c0
 0x10009606 func   ?vfunc5@CFunc_DustCloud@@QAEPAV1@I@Z CFunc_DustCloud::vfunc5

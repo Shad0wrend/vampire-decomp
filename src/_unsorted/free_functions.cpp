@@ -614,6 +614,49 @@ bool sub_10031c70(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032880 size=0xc9
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern "C" double atof(const char *);
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EngineSlots {
+	D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6) D10(a7)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3();
+	virtual const char *Argv(int i);
+	virtual int Argc();
+};
+struct PhysEnv {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void SetAirDensity(float d);
+	virtual float GetAirDensity();
+};
+extern EngineSlots *g_1070b22c;
+extern PhysEnv *g_10723940;
+
+void sub_10032880()
+{
+    g_109f3620[*g_109f3680].a = "CC_AirDensity";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (g_10723940) {
+        if (g_1070b22c->Argc() < 2) {
+            Msg("air_density <value>\nCurrent air density is %.2f\n", g_10723940->GetAirDensity());
+            (*g_109f3680)--;
+            return;
+        }
+        float density = (float)atof(g_1070b22c->Argv(1));
+        g_10723940->SetAirDensity(density);
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032a20 size=0x8
 void __fastcall sub_10032a20(int *p) { p[3] = 0; }
 // END FUNCTION
