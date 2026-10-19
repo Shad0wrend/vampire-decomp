@@ -30,7 +30,11 @@ public:
 	virtual void v92(); virtual void v93();
 	virtual int v94();
 
-	char pad[0x368];
+	char pad[0x264];
+	unsigned int m_flags268;
+	char pad2[0x74];
+	int m_unk2e0;
+	char pad3[0x88];
 	int m_unk36c;
 };
 
@@ -46,7 +50,11 @@ public:
 	unsigned char m_state;
 	char pad2[0x1f];
 	CUnknown100dda50Owner *m_pOwner;
+	int m_unk40;
+	unsigned short m_flags44;
+	short m_id46;
 
 	char sub_100dda50();
 	int sub_100dda50_inner();
+	void sub_100ddc40();
 };
