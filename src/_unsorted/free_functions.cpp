@@ -19531,6 +19531,44 @@ int CVStatInfo_t::sub_101fee50(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ffb90 size=0xb8
+#include "CVStatInfoList_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern "C" int _strcmpi(const char *, const char *);
+
+struct StatName_t
+{
+    const char *m_p;
+    const char *Get() const { return m_p ? m_p : g_106b8540; }
+};
+
+int CVStatInfoList_t::sub_101ffb90(const char *name)
+{
+    int i = 0;
+    g_109f3620[*g_109f3680].a = "CVStatInfoList_t::Lookup( const char *name )";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (m_nStats > 0) {
+        int off = 0;
+        do {
+            const StatName_t *pn = (const StatName_t *)((char *)m_pStats + off + 0x18);
+            if (_strcmpi(pn->Get(), name) == 0) {
+                (*g_109f3680)--;
+                return i;
+            }
+            i++;
+            off += 0x13c;
+        } while (i < m_nStats);
+    }
+    (*g_109f3680)--;
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202060 size=0xa6
 #include "CUnknown10202060.h"
 #include "CBaseEntity.h"
