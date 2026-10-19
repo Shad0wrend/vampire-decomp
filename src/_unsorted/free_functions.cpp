@@ -424,6 +424,47 @@ void *sub_1002e970(int a, int b, int c, char *obj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002f820 size=0xa3
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct WheelObj_t
+{
+	virtual void v0();
+	virtual bool IsFlagged();
+};
+struct WheelEnt_t
+{
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3();
+	virtual int GetKind();
+	char m_pad0004[0x364];
+	int m_n368;
+};
+
+bool sub_1002f820(WheelObj_t *pObj, WheelEnt_t *pEnt)
+{
+	g_109f3620[*g_109f3680].a = "WheelCollidesWith";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (pEnt->GetKind() == 8 || pEnt->GetKind() == 7 || pObj->IsFlagged()) {
+		(*g_109f3680)--;
+		return true;
+	}
+	if (pEnt->m_n368 == 2) {
+		(*g_109f3680)--;
+		return false;
+	}
+	(*g_109f3680)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030720 size=0x9b
 #include "CCollisionEvent.h"
 
