@@ -24402,6 +24402,49 @@ void sub_1024e030(const mat34_1024e030 &matrix, ang_1024e030 &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10250560 size=0xf1
+#include "CUnknown10250830.h"
+#include "CUnknown102508f0.h"
+
+extern CUnknown10250830 g_1088ae60;
+
+void sub_10250560(int value)
+{
+	CUnknown10250830 &l = g_1088ae60;
+	unsigned short i = l.m_Head;
+	if (i == 0xffff)
+		return;
+	do
+	{
+		if (l.m_pElements[i].m_data == value)
+			goto found;
+		i = l.m_pElements[i].m_Next;
+	} while (i != 0xffff);
+	return;
+found:
+	if (i != 0xffff)
+	{
+		if (i < l.m_TotalElements && ((CUnknown10250830_Elem *)((CUnknown102508f0 *)&l)->sub_102508f0(i))->m_Previous != i)
+		{
+			CUnknown10250830_Elem *base = l.m_pElements;
+			CUnknown10250830_Elem *pOld = &base[i];
+			if (pOld->m_Previous != 0xffff)
+				base[pOld->m_Previous].m_Next = pOld->m_Next;
+			else
+				l.m_Head = pOld->m_Next;
+			if (pOld->m_Next != 0xffff)
+				base[pOld->m_Next].m_Previous = pOld->m_Previous;
+			else
+				l.m_Tail = pOld->m_Previous;
+			pOld->m_Previous = pOld->m_Next = i;
+			--l.m_ElementCount;
+		}
+		l.m_pElements[i].m_Next = l.m_FirstFree;
+		l.m_FirstFree = i;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102507b0 size=0x8
 void CBaseCombatWeapon::sub_102507b0() { vfunc361(); }
 // END FUNCTION

@@ -2687,6 +2687,7 @@
 0x10012bac func   ?sub_102cd3b0@CAI_GoalEntity@@QAEXXZ CAI_GoalEntity::sub_102cd3b0
 0x10012bd4 func   _info_node_chang_jumpbase info_node_chang_jumpbase
 0x10012bf2 func   ?sub_10091c80@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10091c80
+0x10012c15 func   ?sub_10250560@@YAXH@Z sub_10250560
 0x10012c2e func   ?sub_102c6740@CUnknown102c6740@@QAEPAUCUnknown102c6740_Elem@@H@Z CUnknown102c6740::sub_102c6740
 0x10012c38 func   ?vfunc5@CWeaponMelee@@QAEPAV1@I@Z CWeaponMelee::vfunc5
 0x10012c5b func   ?vfunc5@CItemGLillyPurse@@QAEPAV1@I@Z CItemGLillyPurse::vfunc5
