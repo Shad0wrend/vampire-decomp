@@ -80,10 +80,12 @@ public:
 	bool sub_1033b7c0();	// "CBaseCombatCharacter::InPrayer": scope trace (entity name), then the dword at +0xfec is in 0x130..0x133
 	void sub_103483c0(int a, int b, int c);	// "CBaseCombatCharacter::BeginMeltEffect": scope trace (entity name), stores b at +0x19a8, 0x20 at +0x168, c at +0x19ac, then CBaseAnimating::sub_10090890(a)
 	void sub_10348490(int a, int b, int c);	// "CBaseCombatCharacter::BeginUnmeltEffect": same as BeginMeltEffect with 0x21 at +0x168
+	char sub_10337300();	// "CBaseCombatCharacter::ChooseBestRangedWeapon": scope trace (entity name), weapon = slot 309(); when set calls slot 388(weapon, 0) and returns true
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc73(CBaseEntity *pOther);	// "CBaseCombatCharacter::CausesImpactDamage": scope trace, (pOther's flags at +0x434 & 0x20000000) != 0
 	bool vfunc295(int a);
+	void *vfunc309();	// returns the best ranged weapon (or null)
 	int vfunc307();	// "CBaseCombatCharacter::HasUsableMeleeWeapon": scope trace (entity name), then sub_10336a50
 	void vfunc333(int a);
 	float vfunc344();	// "CBaseCombatCharacter::GetShakyHandsIntensity": scope trace, the float at +0x1050 when the dword at +0x1044 is >= 0, else a constant
@@ -97,6 +99,7 @@ public:
 	QAngle vfunc367();	// "CBaseCombatCharacter::BodyAngles": scope trace (entity name), returns the three floats returned by slot 219 by value
 	int vfunc376(int a);
 	void vfunc387();
+	void vfunc388(void *weapon, int a);	// switches to the given weapon
 	int vfunc393();
 	void vfunc403();
 	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
