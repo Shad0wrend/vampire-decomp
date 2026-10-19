@@ -7353,6 +7353,38 @@ void sub_100f4140(const char *name, int id, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f52e0 size=0x9b
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropVector
+void sub_10009539();
+void sub_10006aeb();
+
+extern SendTable g_106eb3fc;
+extern SendTable *g_1055282c;
+
+// TARGET: sub_100f52e0
+int sub_100f52e0()
+{
+	static const char *pTableName = "DT_EntityFlame";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1055282c, (void *)sub_10009539),
+		sub_10006cc1("m_flSize", 0x450, 0x4, 0x10, 4, 0.0f, -121121.121121f, (void *)sub_10006aeb),
+	};
+	g_106eb3fc.sub_1000e8fe(props + 1, 2, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5600 size=0xd
 #include "CUnknown100f5600.h"
 
