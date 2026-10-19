@@ -13,5 +13,15 @@ public:
 	int m_growSize;
 	int m_size;
 
+	int Count() const { return m_size; }
+	unsigned int *Element(int i) { return &m_pMemory[i]; }
+	void FastRemove(int elem)
+	{
+		if (m_size > 0) {
+			memmove(Element(elem), Element(m_size - 1), 4);
+			m_size--;
+		}
+	}
+
 	void sub_1025ddd0(void *pEntity);	// removes the first handle that resolves to pEntity (fast remove: the last element takes its place)
 };
