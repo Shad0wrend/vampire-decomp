@@ -26,4 +26,5 @@ public:
 	void vfunc259(void *pEvent);	// "HandleAnimEvent" (slot 259 override): scope trace, events 0x802/0x803 go to slot 620, the rest to CNPC_VHuman::vfunc259
 	void sub_100076bc(void *pEvent);	// CNPC_VHuman::vfunc259, called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	void sub_103ab4a0(void *pVictim);	// "OnVictimHitByMe" (slot 24 override): scope trace, when the entity of the handle at +0x628c is pVictim decrements the counter at +0x66e0 (clamped at 0)
 };
