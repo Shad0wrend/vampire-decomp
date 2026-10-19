@@ -19,7 +19,11 @@ public:
 	bool m_b19F6;
 	char m_pad19F7[0x2E1];	// 0x19F7 .. 0x1CD7
 	unsigned int m_nCriminalLevelEnc;	// 0x1CD8, scrambled by the xor/and/add mask chain
-	char m_pad1CDC[0x3CC];	// 0x1CDC .. 0x20A7
+	char m_pad1CDC[0x128];	// 0x1CDC .. 0x1E03
+	unsigned int m_hEnt1E04;	// entity handle
+	int m_n1E08;
+	int m_n1E0C;
+	char m_pad1E10[0x298];	// 0x1E10 .. 0x20A7
 	char m_b20A8;
 	char m_pad20A9[0x1FF];	// 0x20A9 .. 0x22A7
 	float m_f22A8;
@@ -28,6 +32,7 @@ public:
 
 	void sub_10177120();
 	int sub_1017ddd0();	// the decoded value at +0x1cd8, or a convar override
+	int sub_10175290();	// slot 444: refreshes the counter at +0x1e08, else the field at +0x45c of the entity at +0x1e04
 	CBaseEntity *sub_1015dc60();	// slot 167 override: resolves the entity handle at +0x1c60 (null when stale)
 	bool sub_10168e10();	// slot 361 override: true when the entity handle at +0xfe8 does not resolve
 	CBasePlayer *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
