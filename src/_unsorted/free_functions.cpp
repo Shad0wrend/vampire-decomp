@@ -24000,6 +24000,27 @@ int __stdcall sub_1030d650(const char *phase)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030d710 size=0x9d
+extern "C" int _strcmpi(const char *, const char *);
+extern void (*g_109f366c)(const char *fmt, ...);
+
+int __stdcall sub_1030d710(const char *name)
+{
+	if (!_strcmpi(name, "NONE"))
+		return 0;
+	if (!_strcmpi(name, "PATHING"))
+		return 1;
+	if (!_strcmpi(name, "GRABBING"))
+		return 2;
+	if (!_strcmpi(name, "CARRYING"))
+		return 3;
+	if (!_strcmpi(name, "THROWING"))
+		return 4;
+	g_109f366c("Schedule has invalid Thrown Object Mode: ID '%s'\n", name);
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f660 size=0x8
 extern char g_106b8540;
 char * __stdcall sub_1030f660(int) { return &g_106b8540; }
