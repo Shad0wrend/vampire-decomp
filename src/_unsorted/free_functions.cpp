@@ -17477,6 +17477,37 @@ int * __fastcall sub_101f0270(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0740 size=0xac
+extern char g_106b8540[];
+int sub_10431c2f(char *, const char *, ...);
+int sub_1043e780(const char *, const char *);
+void sub_10203dd0(char *);
+struct Str { const char *p; const char *Get() const { return p ? p : g_106b8540; } };
+struct Item { int a; Str s; void sub_1000e796(); };
+struct Holder {
+    int a, b, c;
+    const char *name;
+    int d;
+    int count;
+    Item **items;
+};
+void __fastcall sub_101f0740(Holder *self, int, const char *filter)
+{
+    char buf[128];
+    sub_10431c2f(buf, "\n   %s:\n\n", self->name ? self->name : g_106b8540);
+    sub_10203dd0(buf);
+    if (filter == 0) {
+        for (int i = 0; i < self->count; i++)
+            self->items[i]->sub_1000e796();
+    } else {
+        for (int i = 0; i < self->count; i++) {
+            if (sub_1043e780(self->items[i]->s.Get(), filter) == 0)
+                self->items[i]->sub_1000e796();
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0d40 size=0xd
 void CUnknown101f0d40::sub_101f0d40(int* dest)
 {
