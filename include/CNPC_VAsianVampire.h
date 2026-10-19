@@ -2,6 +2,13 @@
 // until the bases are recovered. Only what decompiled code needs.
 #pragma once
 
+class CBaseEntity;
+
+struct StoredHintPos_t
+{
+	float x, y, z;
+};
+
 class CNPC_VAsianVampire
 {
 public:
@@ -9,7 +16,10 @@ public:
 	float m_flNextThink;	// +0x17c
 	char pad180[0x1b38 - 0x180];
 	int m_nIdealState;	// +0x1b38
-	char pad1b3c[0x66d8 - 0x1b3c];
+	char pad1b3c[0x66b8 - 0x1b3c];
+	StoredHintPos_t m_storedHints[2];	// +0x66b8: ring of the last two hint origins
+	int m_nNextStoredHint;	// +0x66d0
+	char pad66d4[4];
 	float m_flStationaryTime;	// +0x66d8
 
 	bool sub_10362670();	// "CNPC_VAsianVampire::StationaryFor...": curtime - m_flStationaryTime >= constant
@@ -18,6 +28,7 @@ public:
 	void vfunc103();	// "CNPC_VAsianVampire::Spawn": scope trace around the base spawn
 	void vfunc431();	// "CNPC_VAsianVampire::NPCThink": scope trace around the base think, then schedules the next think
 	int vfunc461();	// "CNPC_VAsianVampire::SelectIdealState": scope trace, sets the ideal state to 6, then the base implementation
+	void sub_10361990(CBaseEntity *pHint);	// "CNPC_VAsianVampire::AddHintToStore": scope trace, stores the hint's origin (slot 217) in the two-entry ring
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x201000
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
