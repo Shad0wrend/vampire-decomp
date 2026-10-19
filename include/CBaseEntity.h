@@ -87,6 +87,7 @@ public:
 	void sub_1009b640(int a, int b, int c);	// "CBaseEntity::DumpString"-like worker: scope trace, then DevMsg("%-40s: %10s\n", b, c)
 	void sub_1009b700(int a, int b, const char *c);	// "CBaseEntity::DumpString": scope trace (entity name), then sub_1009b640(a, b, c or "")
 	void sub_1009b7d0(int a, char *text, char value);	// "CBaseEntity::DumpChar": scope trace, sprintf("%c") into a global buffer, then sub_1009b640
+	void sub_1009b8a0(int a, int b, char value);	// "CBaseEntity::DumpBool": scope trace (entity name), then sub_1009b640(a, b, "true" or "false")
 	void sub_1009b980(int a, char *text, int value);	// "CBaseEntity::DumpInt": scope trace, sprintf("%d") into a global buffer, then sub_1009b640
 	void sub_1009ba60(int a, char *text, int value);	// "CBaseEntity::DumpFloatArrayBase"-like: one dumped dword
 	void sub_1009bc30(int a, char *text, int value);	// "CBaseEntity::DumpPtr": scope trace (entity name), sprintf("0x%08X", value) into a global buffer, then sub_1009b640(a, text, buffer)
