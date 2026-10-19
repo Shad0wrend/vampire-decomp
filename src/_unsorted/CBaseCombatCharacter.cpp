@@ -444,6 +444,35 @@ int __fastcall sub_103315e0(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10331880 size=0x97
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct ScopeGuard
+{
+	ScopeGuard(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~ScopeGuard() { (*g_109f3680)--; }
+};
+
+typedef QAngle *(__fastcall *PFN_ANGLES)(void *);
+
+QAngle CBaseCombatCharacter::vfunc367()
+{
+	ScopeGuard guard("CBaseCombatCharacter::BodyAngles", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	return *((PFN_ANGLES)(*(void ***)this)[219])(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10332010 size=0x80
 #include "CBaseCombatCharacter.h"
 struct ScopeTraceEntry { const char *m_pFunction; const char *m_pEntity; const char *m_pExtra; };
