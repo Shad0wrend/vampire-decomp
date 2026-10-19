@@ -947,6 +947,28 @@ bool CPhysicsMovedEntities::sub_10033740(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033aa0 size=0xad
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_10033aa0(float *a, float *b, float *c)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::PhysicsGetAngleVectorsTranspose";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    for (int i = 0; i < 3; i++) {
+        a[i] = *(float *)((char *)this + 0x130 + i * 4);
+        b[i] = *(float *)((char *)this + 0x140 + i * 4);
+        c[i] = *(float *)((char *)this + 0x150 + i * 4);
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100353c0 size=0x93
 #include "CUnknown100353c0.h"
 
