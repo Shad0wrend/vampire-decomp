@@ -1332,6 +1332,7 @@
 0x1000a943 func   ?vfunc5@CItemGGarysCD@@QAEPAV1@I@Z CItemGGarysCD::vfunc5
 0x1000a961 func   ?vfunc196@CBaseEntity@@QAEHH@Z CBaseEntity::vfunc196
 0x1000a975 func   ?vfunc5@CPhysHinge@@UAEPAV1@I@Z CPhysHinge::vfunc5
+0x1000a97f func   ?vfunc166@CNPC_VMingXiao@@QAEDPAX@Z CNPC_VMingXiao::vfunc166
 0x1000a984 func   ?sub_101fd1b0@CVStatAction_t@@QAEXHHH@Z CVStatAction_t::sub_101fd1b0
 0x1000a9c0 func   _camera_keyframe camera_keyframe
 0x1000a9c5 func   _item_g_idol_crane item_g_idol_crane

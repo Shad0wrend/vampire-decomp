@@ -23,3 +23,47 @@ char CNPC_VMingXiao::vfunc69(void *pOther)
 	return sub_1029b180(pOther);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10397000 size=0x98
+#include "CNPC_VMingXiao.h"
+
+#define V4(x) virtual void x##a(); virtual void x##b(); virtual void x##c(); virtual void x##d();
+#define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
+#define V64(x) V16(x##a) V16(x##b) V16(x##c) V16(x##d)
+
+struct EntSlot {
+	void *ent;
+	unsigned int serial;
+	int pad;
+};
+extern char *g_10566458;
+
+struct EntV {
+	V64(a) V64(b) V16(c) V16(d) V4(e)
+	virtual char v164();
+};
+
+static inline void *ResolveHandle(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		EntSlot *s = &((EntSlot *)(g_10566458 + 4))[h & 0x1fff];
+		if (s->serial == (h >> 13))
+			return s->ent;
+	}
+	return 0;
+}
+
+char CNPC_VMingXiao::vfunc166(void *pOther)
+{
+	unsigned int *p = (unsigned int *)((char *)this + 0x66a8);
+	for (int i = 0; i < 6; i++, p++) {
+		if (ResolveHandle(p[-7]) == pOther)
+			return 0;
+		if (ResolveHandle(p[0]) == pOther)
+			return 0;
+	}
+	if (pOther && !((EntV *)pOther)->v164())
+		return 0;
+	return 1;
+}
+// END FUNCTION
