@@ -21240,6 +21240,43 @@ QuestJournal *QuestJournal::sub_10220e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10221a00 size=0xcb
+#include "QuestJournal.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern void (*g_109f364c)(const char *fmt, ...);
+extern "C" __declspec(dllimport) int Q_strnicmp(const char *a, const char *b, int n);
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+
+struct QuestRec_t { const char *m_pName; char m_pad[0x64]; };
+
+int QuestJournal::sub_10221a00(const char *name)
+{
+    int i = 0;
+    g_109f3620[*g_109f3680].a = "QuestJournal::GetQuestIndex";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (m_field[8] > 0) {
+        do {
+            QuestRec_t *recs = (QuestRec_t *)m_field[5];
+            int len = strlen(recs[i].m_pName);
+            if (Q_strnicmp(((QuestRec_t volatile *)recs)[i].m_pName, name, len) == 0) {
+                (*g_109f3680)--;
+                return i;
+            }
+            i++;
+        } while (i < m_field[8]);
+    }
+    g_109f364c("Could not find quest: %s!\n", name);
+    (*g_109f3680)--;
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10221b10 size=0x9e
 #include "QuestJournal.h"
 
