@@ -30221,6 +30221,64 @@ void CBaseCombatCharacter::sub_10341b60(char unconscious)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10342470 size=0xdd
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+struct UseFilterHelper	// the object at +0x94 of the used entity
+{
+	SL100(a) SL100(b) SL10(c0) SL10(c1) SL10(c2) SL10(c3) SL10(c4) SL10(c5) SL10(c6) SL10(c7) SL10(c8)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+	virtual bool Filter(void *pPlayer);	// slot 295
+};
+
+struct UsedEntity
+{
+	SL10(a0) SL10(a1) SL10(a2)
+	virtual void b0(); virtual void b1();
+	virtual bool CanUse(void *pPlayer);	// slot 32
+	SL10(c0) SL10(c1) SL10(c2) SL10(c3) SL10(c4) SL10(c5) SL10(c6) SL10(c7)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3();
+	virtual unsigned int ObjectCaps();	// slot 117
+	char m_pad0004[0x90];
+	UseFilterHelper *m_pHelper;	// 0x94
+};
+
+struct UserEntity
+{
+	char m_pad0000[0xa8];
+	void *m_pPlayer;	// 0xa8
+};
+
+bool sub_10342470(UserEntity *pUser, UsedEntity *pUsed)
+{
+	g_109f3620[*g_109f3680].a = "PlayerUseFilter";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (pUsed->m_pHelper && pUsed->m_pHelper->Filter(pUser == 0 ? 0 : pUser->m_pPlayer)) {
+		--*g_109f3680;
+		return true;
+	}
+	if (pUsed->ObjectCaps() & 0x38) {
+		--*g_109f3680;
+		return true;
+	}
+	if (pUsed->CanUse(pUser == 0 ? 0 : pUser->m_pPlayer)) {
+		--*g_109f3680;
+		return true;
+	}
+	--*g_109f3680;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10342740 size=0x8d
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
