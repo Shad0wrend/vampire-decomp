@@ -2398,6 +2398,7 @@
 0x100135e3 func   ?sub_10088b30@@YAXXZ sub_10088b30
 0x100135f2 func   ?sub_103a1ef0@@YADXZ sub_103a1ef0
 0x100135f7 func   ?sub_10289cc0@CUnknown10289cc0@@QAEXXZ CUnknown10289cc0::sub_10289cc0
+0x10013638 func   ?vfunc307@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc307
 0x1001363d func   _infodecal infodecal
 0x1001364c func   _keyframe_track keyframe_track
 0x100136b5 func   ?sub_101f0270@@YIPAHPAHHH@Z sub_101f0270
