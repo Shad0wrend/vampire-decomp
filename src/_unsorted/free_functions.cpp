@@ -30736,6 +30736,60 @@ void CUtlMemory192::sub_1040b120(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040cce0 size=0x91
+#include "CUnknown1040cce0.h"
+
+struct EntSlot {
+	void *ent;
+	unsigned int serial;
+	int pad;
+};
+extern char *g_10566458;
+extern float g_104454c4;
+
+#define V4(x) virtual void x##a(); virtual void x##b(); virtual void x##c(); virtual void x##d();
+#define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
+#define V64(x) V16(x##a) V16(x##b) V16(x##c) V16(x##d)
+
+struct WObj {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void *GetOwner();
+};
+
+struct EObj {
+	V64(a) V64(b) V64(c) V16(d) V16(e) V4(f) V4(g)
+	virtual void v232();
+	virtual int GetList(void **list, int n);
+};
+
+float CUnknown1040cce0::sub_1040cce0(void *pWeapon)
+{
+	unsigned int h = m_hOwner;
+	if (h != 0xffffffff) {
+		EntSlot *s = &((EntSlot *)(g_10566458 + 4))[h & 0x1fff];
+		if (s->serial == (h >> 13)) {
+			EObj *owner = (EObj *)s->ent;
+			if (owner) {
+				if (((WObj *)pWeapon)->GetOwner() == owner) {
+					void *list[32];
+					int n = owner->GetList(list, 32);
+					for (int i = 0; i < n; i++) {
+						if (list[i] == pWeapon)
+							return m_fTable[i];
+					}
+				}
+			}
+		}
+	}
+	return g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104110d0 size=0x6d
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 #define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
