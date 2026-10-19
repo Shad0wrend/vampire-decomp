@@ -895,6 +895,7 @@
 0x1000826a func   ?sub_100295d0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295d0
 0x10008292 func   ?vfunc5@CAI_InterestingPlace@@QAEPAV1@I@Z CAI_InterestingPlace::vfunc5
 0x1000829c func   ?sub_102a9600@CUnknown102a9600@@QAEMH@Z CUnknown102a9600::sub_102a9600
+0x100082ab func   ??0StatItem56@@QAE@H@Z StatItem56::StatItem56
 0x100082ce func   ?sub_10110430@TFilterX@@QAEPAU1@E@Z TFilterX::sub_10110430
 0x100082d8 func   ?vfunc364@CBaseCombatWeapon@@UAEXHHH@Z CBaseCombatWeapon::vfunc364
 0x100082ec func   ?sub_101a5e10@@YAPAHXZ sub_101a5e10
