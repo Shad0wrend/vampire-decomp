@@ -30496,6 +30496,45 @@ bool sub_10342740(void *a, HasFilter *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10344c80 size=0xe0
+#include "CUnknown10344c80.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int CUnknown10344c80::sub_10344c80(int activity)
+{
+	const char *ent;
+	if (this)
+		ent = m_name26c ? m_name26c : g_106b8540;
+	else
+		ent = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::TranslateFlyingKnockbackActivity";
+	g_109f3620[*g_109f3680].b = ent;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	switch (activity) {
+	case 0x8b:
+		--*g_109f3680;
+		return 0x87;
+	case 0x8c:
+		--*g_109f3680;
+		return 0x88;
+	case 0x8d:
+		--*g_109f3680;
+		return 0x89;
+	case 0x8e:
+		--*g_109f3680;
+		return 0x8a;
+	default:
+		--*g_109f3680;
+		return activity;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10346760 size=0x94
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
