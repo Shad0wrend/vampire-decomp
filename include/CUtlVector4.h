@@ -16,4 +16,5 @@ public:
 	void sub_10071ae0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements
 	void sub_10084fb0(int num);	// same as sub_10071ae0 (another instance)
 	void sub_1007f400(int num);	// same as sub_10071ae0 (another instance)
+	void sub_101e48f0(int num);	// same as sub_10071ae0 (another instance)
 };
