@@ -1508,6 +1508,7 @@
 0x1000b776 func   ?sub_1009b980@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009b980
 0x1000b78f func   ??0CBeamHead@@QAE@XZ CBeamHead::CBeamHead
 0x1000b794 func   ?vfunc2@CTEImpact@@UAEPAV1@I@Z CTEImpact::vfunc2
+0x1000b7a3 func   ?vfunc11@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc11
 0x1000b7a8 func   ?vfunc168@CBaseEntity@@QAEXXZ CBaseEntity::vfunc168
 0x1000b7b7 func   ?sub_100b40f0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100b40f0
 0x1000b7df func   _info_node_chang_column info_node_chang_column

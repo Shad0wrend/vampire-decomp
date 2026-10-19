@@ -181,6 +181,29 @@ int CBaseEntity::vfunc237()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009ac80 size=0xb4
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+
+void CBaseEntity::vfunc11(const char *name)
+{
+    const char *n = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::DebugSetEntityName";
+    g_109f3620[*g_109f3680].b = n;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (name) {
+        Q_strncpy((char *)this + 4, name, 0x1f);
+        if (vfunc85())
+            Q_strncpy(vfunc85(), name, 0x1f);
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ad70 size=0x78
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
