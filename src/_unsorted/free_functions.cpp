@@ -25410,6 +25410,43 @@ SNode *sub_102d2840(int unused, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d3f50 size=0xc9
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" char *__cdecl strstr(const char *, const char *);
+extern "C" char *__cdecl _strlwr(char *);
+extern "C" void *__cdecl _alloca(unsigned int);
+#pragma intrinsic(strlen)
+extern char *(__cdecl *g_109f3890)(char *, const char *, int);	// Q_strncpy
+extern void (__cdecl *g_109f3630)(const char *, ...);	// DevMsg
+extern char g_1060a5f8[];
+extern char g_1060a5ec[];
+extern char g_1060a5e4[];
+
+int sub_102d3f50(const char *pszString)
+{
+	int len = strlen(pszString);
+	if (len <= 0)
+		return 0;
+	char *buf = (char *)_alloca(len + 1);
+	g_109f3890(buf, pszString, len + 1);
+	_strlwr(buf);
+	if (strstr("none", buf))
+		return 0;
+	int flags = 0;
+	if (strstr("visible", buf))
+		flags = 1;
+	if (strstr("nearest", buf))
+		flags |= 2;
+	if (strstr("random", buf))
+		flags |= 4;
+	if ((flags & 2) && (flags & 4)) {
+		flags &= ~4;
+		g_109f3630("HINTFLAGS:%s, inconsistent, the nearest node is never a random hint node, treating as nearest request!\n", pszString);
+	}
+	return flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d41f0 size=0x8
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION
