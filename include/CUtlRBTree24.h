@@ -31,10 +31,12 @@ public:
 
 	static int InvalidIndex() { return -1; }
 
+	Node_t &ElementAt(int i) const { return m_pElements[i]; }
+
 	const Links_t &LinksInl(int i) const
 	{
 		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+		return i != InvalidIndex() ? ElementAt(i).m_Links : s_Sentinel;
 	}
 
 	void GrowInl(int num)	// "CUtlMemory::Grow"
