@@ -9053,6 +9053,20 @@ float bf_read::sub_100be3d0(int numbits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be590 size=0xd4
+#include "bf_read.h"
+
+// TARGET: bf_read::sub_100be590
+int bf_read::sub_100be590(int numbits)
+{
+    int bits = numbits - 1;
+    int ret = ReadUBitLong(bits);
+    if (ReadOneBit())
+        ret -= (1 << bits);
+    return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100beba0 size=0xd1
 #include "bf_read.h"
 
