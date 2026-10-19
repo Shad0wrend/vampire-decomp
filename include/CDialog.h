@@ -20,5 +20,5 @@ public:
 	char m_pad0000[8];
 	CDialogTable_t *m_pTable;	// 0x08
 
-	bool sub_100e5690(CDialogEntry_t *pEntry);	// "CDialog::get": scope trace, bsearch for the entry matching *pEntry in the table; copies the found entry over *pEntry
+	int sub_100e5690(CDialogEntry_t *pEntry);	// "CDialog::get": scope trace, bsearch for the entry matching *pEntry in the table; copies the found entry over *pEntry and returns 1, else 0
 };
