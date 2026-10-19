@@ -1050,6 +1050,47 @@ void CPhysicsPushedEntities::sub_10035fd0(int *pHandles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036810 size=0xb2
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##a) V10(p##b) V10(p##c) V10(p##d) V10(p##e) V10(p##f) V10(p##g) V10(p##h) V10(p##i) V10(p##j)
+struct PhysEnt {
+    V100(x) virtual void xa(); virtual void xb();
+    virtual void Trace(PhysEnt *ent, int a, int b, int c, int d);
+    V10(ya) V10(yb) V10(yc) V10(yd) V10(ye) V10(yf) V10(yg) V10(yh)
+    virtual void yi3(); virtual void yi4(); virtual void yi5();
+    virtual void yi6(); virtual void yi7(); virtual void yi8();
+    virtual int UsesGlobalPhysics();
+};
+struct PhysGlobal {
+    V10(xa) V10(xb) V10(xc) V10(xd) V10(xe) V10(xf) V10(xg)
+    virtual void xh0(); virtual void xh1(); virtual void xh2(); virtual void xh3(); virtual void xh4(); virtual void xh5(); virtual void xh6(); virtual void xh7();
+    virtual float Trace(PhysEnt *ent, int a, int b, int c, int d);
+};
+extern PhysGlobal *g_1070ba0c;
+
+void sub_10036810(PhysEnt *ent, int a, int b, int c, int d)
+{
+    ScopeTrace trace("Physics_TraceEntity", g_106b8540, g_106b8540);
+    if (ent->UsesGlobalPhysics())
+        g_1070ba0c->Trace(ent, a, b, c, d);
+    else
+        ent->Trace(ent, a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036b10 size=0x8f
 #include "CPhysicsPushedEntities.h"
 #include "CBaseEntity.h"
