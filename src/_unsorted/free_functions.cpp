@@ -764,6 +764,38 @@ CUnknown100353c0 *CUnknown100353c0::sub_100353c0(const CUnknown100353c0 *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10035f00 size=0x95
+#include "CPhysicsPushedEntities.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+
+struct HandleSys {
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual int GetHandle(short index);
+};
+extern HandleSys *g_1070b24c;
+
+void CPhysicsPushedEntities::sub_10035f00(int *pHandles)
+{
+	g_109f3620[*g_109f3680].fn = "CPhysicsPushedEntities::UnlinkPusherList";
+	g_109f3620[*g_109f3680].name = "";
+	g_109f3620[*g_109f3680].extra = "";
+	(*g_109f3680)++;
+	for (int i = m_rgPusher.m_Size - 1; i >= 0; i--) {
+		short index = *(short *)((char *)m_rgPusher.m_pMemory[i].m_pEntity + 0x2b6);
+		pHandles[i] = g_1070b24c->GetHandle(index);
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037680 size=0x93
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
