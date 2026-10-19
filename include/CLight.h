@@ -1,5 +1,5 @@
 // CLight: declared by pcdecomp transplant for 0x10130390 from CLogicalEntity (0x1002b100);
-// only what matched code needs, as plain members.
+// only what matched code needs, as plain members (the vtable pointer is not modelled: the pad covers 0x00..0x44f).
 #pragma once
 
 class CLight
@@ -9,7 +9,7 @@ public:
 	void sub_1000cb8a();
 	void sub_101308d0();	// "CLight::FadeThink": steps the current light level at +0x458 toward the target at +0x459, sets the light style, re-arms the think (+0x17c)
 
-	char m_pad04[0x450 - 4];
+	char m_pad00[0x450];
 	int m_iStyle;	// 0x450
 	const char *m_pattern;	// 0x454
 	char m_cCurrent;	// 0x458
