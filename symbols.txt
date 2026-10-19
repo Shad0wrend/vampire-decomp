@@ -2351,6 +2351,7 @@
 0x1001205d func   ?sub_10381c80@@YIEPAD@Z sub_10381c80
 0x10012062 func   ?vfunc5@CFuncMonitor@@QAEPAV1@I@Z CFuncMonitor::vfunc5
 0x10012085 func   ?vfunc103@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc103
+0x1001208a func   ?sub_10316320@CUnknown10316320@@QAEHHHPAX@Z CUnknown10316320::sub_10316320
 0x10012099 func   ?vfunc243@CBaseFire@@QAEXH@Z CBaseFire::vfunc243
 0x100120df func   ?vfunc32@CPhysicsProp@@UAE_NH@Z CPhysicsProp::vfunc32
 0x10012102 func   ?sub_10412590@@YAXHH@Z sub_10412590

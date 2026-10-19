@@ -22851,6 +22851,54 @@ void *CUnknown10315fe0::sub_10315fe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316320 size=0x90
+#include "CUnknown10316320.h"
+
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+// stand-in for the first 367 slots of the sub-object's virtual table
+struct SubObj {
+	D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6) D10(a7) D10(a8) D10(a9)
+	D10(b0) D10(b1) D10(b2) D10(b3) D10(b4) D10(b5) D10(b6) D10(b7) D10(b8) D10(b9)
+	D10(c0) D10(c1) D10(c2) D10(c3) D10(c4) D10(c5) D10(c6) D10(c7) D10(c8) D10(c9)
+	D10(d0) D10(d1) D10(d2) D10(d3) D10(d4) D10(d5)
+	virtual void e360(); virtual void e361(); virtual void e362(); virtual void e363(); virtual void e364(); virtual void e365();
+	virtual void vfunc366(int a, int b, void *c);
+	char m_pad[0x5bb0 - 4];
+	int m_field5bb0;
+};
+struct HandleOwner {
+	char m_pad[0x94];
+	SubObj *m_pSub;
+};
+struct EntInfo { HandleOwner *p; unsigned int serial; int x; };
+struct EntList { int pad; EntInfo e[1]; };
+extern EntList *g_10566458;
+
+static inline HandleOwner *LookupHandle(unsigned int h)
+{
+	if (h != 0xFFFFFFFF) {
+		EntInfo *info = &g_10566458->e[h & 0x1fff];
+		if (info->serial == (h >> 13))
+			return info->p;
+	}
+	return 0;
+}
+
+int CUnknown10316320::sub_10316320(int a, int b, void *pExcept)
+{
+	if (m_nEntities == 0)
+		return 0;
+	for (int i = 0; i < m_nEntities; i++) {
+		HandleOwner *ent = LookupHandle(m_hEntities[i]);
+		SubObj *sub = ent->m_pSub;
+		if (sub && sub != pExcept && sub->m_field5bb0 <= 0)
+			sub->vfunc366(a, b, pExcept);
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103167f0 size=0x72
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 struct Ent {
