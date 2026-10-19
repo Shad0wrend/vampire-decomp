@@ -6578,6 +6578,30 @@ void CBaseEntity::sub_100a9470(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a98f0 size=0xa7
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int CBaseEntity::sub_100a98f0(int useType, int currentState)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::ShouldToggle";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (useType != 3 && useType != 2) {
+        if ((currentState && useType == 1) || (!currentState && useType == 0)) {
+            (*g_109f3680)--;
+            return 0;
+        }
+    }
+    (*g_109f3680)--;
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa080 size=0x86
 #include "CBaseEntity.h"
 
