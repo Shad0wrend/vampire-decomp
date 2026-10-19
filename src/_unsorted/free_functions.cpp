@@ -5458,6 +5458,69 @@ bool CBaseAnimating::sub_1008be20(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008cfc0 size=0xed
+#include "CBaseAnimating.h"
+#include <stdio.h>
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+struct AnimEventSelfSlots
+{
+	SL10(a0)
+	virtual void a1_0(); virtual void a1_1(); virtual void a1_2(); virtual void a1_3();
+	virtual void a1_4(); virtual void a1_5(); virtual void a1_6(); virtual void a1_7();
+	virtual void DevMessage(const char *pMsg, int level);	// slot 18
+	SL100(b) SL100(c) SL10(d0) SL10(d1)
+	virtual void e0(); virtual void e1();
+	virtual void DescribeEvent(char *pBuf, void *pEvent);	// slot 241
+};
+
+struct DeveloperVar
+{
+	virtual void a0();
+	virtual bool IsBitSet();	// slot 1
+	char m_pad0004[0x28];
+	int m_nValue;	// 0x2c
+};
+
+struct AnimEvent
+{
+	int m_nEvent;	// 0x00
+	char m_pad04[8];
+	float m_flTime;	// 0x0c
+};
+
+extern DeveloperVar *g_106ccf0c;
+
+void CBaseAnimating::sub_1008cfc0(int unused, void *pEvent)
+{
+	char desc[256];
+	char msg[256];
+	const char *ent;
+	if (this)
+		ent = m_name26c ? m_name26c : g_106b8540;
+	else
+		ent = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::DisplayAnimEvent";
+	g_109f3620[*g_109f3680].b = ent;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (!g_106ccf0c->IsBitSet() && g_106ccf0c->m_nValue) {
+		((AnimEventSelfSlots *)this)->DescribeEvent(desc, pEvent);
+		sprintf(msg, "Processing anim event at %5.2f %d( %s )", ((AnimEvent *)pEvent)->m_flTime, ((AnimEvent *)pEvent)->m_nEvent, desc);
+		((AnimEventSelfSlots *)this)->DevMessage(msg, 9);
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008d0f0 size=0x7e
 #include "CBaseAnimating.h"
 
