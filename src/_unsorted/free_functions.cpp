@@ -23267,6 +23267,47 @@ void CAI_BaseNPCTroika::sub_10298910(const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102989e0 size=0xb8
+#include "CAI_BaseNPCTroika.h"
+extern "C" int atoi(const char *);
+
+void CAI_BaseNPCTroika::sub_102989e0(const char *str)
+{
+    char buf[256];
+    *(unsigned int *)((char *)this + 0x62e4) = 0;
+    if (str == 0 || *str == 0) {
+        *(unsigned int *)((char *)this + 0x62e4) = 0xffffffff;
+    } else {
+        const char *s = str;
+        char c;
+        do {
+            c = *s;
+            buf[s - str] = c;
+            s++;
+        } while (c);
+        char *p = buf;
+        while (*p) {
+            while (*p == ' ')
+                p++;
+            int n = atoi(p) - 1;
+            if (n >= 0 && n <= 31)
+                *(unsigned int *)((char *)this + 0x62e4) |= 1 << n;
+            char c2 = *p;
+            if (!c2)
+                break;
+            do {
+                if (c2 == ' ')
+                    break;
+                c2 = p[1];
+                p++;
+            } while (c2);
+            if (!c2)
+                return;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029ca30 size=0xd
 extern float g_10457f54;
 float __stdcall sub_1029ca30(float x)
