@@ -67,6 +67,7 @@ public:
 	const char *sub_1000ea11();
 	void sub_10026c70();	// "CBaseEntity::Think": calls the think function pointer at +0x118
 	int sub_10027570();	// "CBaseEntity::GetSolid": forwards to slot 11 of the collision object at +0x270
+	bool sub_1003cb00(int type);	// "CBaseEntity::HasDataObjectType": scope trace, tests bit `type` of the mask at +0x444
 	void sub_1003cbc0(int type);	// "CBaseEntity::AddDataObjectType": scope trace, sets bit `type` in the mask at +0x444
 	void sub_1003eb50();
 	float *sub_1009b030(float *out);	// slot 16 override: copies the three floats at +0x50 to out
