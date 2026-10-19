@@ -1338,6 +1338,7 @@
 0x1000b6a4 func   _env_sprite env_sprite
 0x1000b6b8 func   ?sub_101fb3e0@CVDmg_t@@QAEXI@Z CVDmg_t::sub_101fb3e0
 0x1000b6bd func   ?vfunc5@CPhysConstraint@@UAEPAV1@I@Z CPhysConstraint::vfunc5
+0x1000b6c7 func   ?vfunc16@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc16
 0x1000b6cc func   ?sub_10157910@CUnknown101578b0@@QAEXH@Z CUnknown101578b0::sub_10157910
 0x1000b6d6 func   ?vfunc5@CPointCamera@@QAEPAV1@I@Z CPointCamera::vfunc5
 0x1000b6e0 func   ?sub_100bc380@@YAXXZ sub_100bc380
