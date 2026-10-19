@@ -2431,6 +2431,7 @@
 0x10012977 func   ?vfunc5@CWeaponMelee_ManBatClaw@@QAEPAV1@I@Z CWeaponMelee_ManBatClaw::vfunc5
 0x100129b8 func   ?sub_101153a0@S@@QAEXPAUinputdata_t@@@Z S::sub_101153a0
 0x100129c2 func   _npc_generic npc_generic
+0x100129d1 func   ?vfunc219@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc219
 0x100129d6 func   ?sub_103282e0@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_103282e0
 0x100129e5 func   ?vfunc24@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc24
 0x10012a2b func   ?sub_1007ee20@@YIXPAH@Z sub_1007ee20

@@ -719,6 +719,41 @@ float *CBaseEntity::vfunc221()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b3280 size=0x93
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+
+static inline bool TestBit(unsigned int value, int bit)
+{
+	return ((value >> bit) & 1) != 0;
+}
+
+float *CBaseEntity::vfunc219()
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = "";
+	} else {
+		name = "NULL ENTITY";
+	}
+	g_109f3620[*g_109f3680].fn = "CBaseEntity::GetAbsAngles";
+	g_109f3620[*g_109f3680].name = name;
+	g_109f3620[*g_109f3680].extra = "";
+	(*g_109f3680)++;
+	if (TestBit(m_flags268, 11))
+		vfunc98();
+	(*g_109f3680)--;
+	return (float *)((char *)this + 0x410);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3d10 size=0x79
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
