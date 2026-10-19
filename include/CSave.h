@@ -15,7 +15,7 @@ public:
 	virtual void vfunc7(int a, int b, int count);	// forwards to sub_101a05b0 with the count doubled (shorts to bytes)
 	virtual void vfunc8();
 	virtual void vfunc9();
-	virtual bool vfunc10(const void *pData, int nBytes);
+	virtual bool vfunc10(const void *pData, int nBytes);	// WriteInt
 	virtual void vfunc11();
 	virtual void vfunc12();
 	virtual void vfunc13();
@@ -28,7 +28,7 @@ public:
 	virtual void vfunc20();
 	virtual void vfunc21();
 	virtual void vfunc22();
-	virtual void vfunc23();
+	virtual void vfunc23(const void *pData, int count);	// WriteVector
 	virtual void vfunc24();
 	virtual void vfunc25();
 	virtual void vfunc26();
@@ -41,7 +41,7 @@ public:
 	virtual void vfunc33();
 	virtual void vfunc34();
 	virtual void vfunc35();
-	virtual void vfunc36();
+	virtual void vfunc36(const void *pData, int count);	// WriteEHandle
 	virtual void vfunc37();
 	virtual void vfunc38();
 	virtual void vfunc39();
