@@ -10776,6 +10776,43 @@ void sub_100f4140(const char *name, int id, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4490 size=0xf0
+extern "C" {
+__declspec(dllimport) void *__stdcall FindWindowA(const char *, const char *);
+__declspec(dllimport) int __stdcall SendMessageA(void *, unsigned, unsigned, void *);
+__declspec(dllimport) int __stdcall MessageBoxA(void *, const char *, const char *, unsigned);
+__declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
+unsigned strlen(const char *);
+}
+#pragma intrinsic(strlen)
+struct CopyData { int a; unsigned cb; const char *p; };
+
+int sub_100f4490(const char *cmd, bool report)
+{
+    char buf[1024];
+    void *hWnd = FindWindowA("Worldcraft_ShellMessageWnd", "Worldcraft_ShellMessageWnd");
+    if (hWnd) {
+        CopyData cd;
+        cd.p = cmd;
+        cd.cb = strlen(cmd) + 1;
+        cd.a = 0;
+        if (!SendMessageA(hWnd, 0x4a, 0, &cd)) {
+            if (report) {
+                Q_snprintf(buf, 1024, "Worldcraft did not accept the command: \n\n\"%s\"\n\n Make sure the command is valid and that Worldcraft is still running properly.", cmd);
+                MessageBoxA(0, buf, "Editor_SendCommand Error", 0);
+            }
+            return 2;
+        }
+        return 0;
+    }
+    if (report) {
+        Q_snprintf(buf, 1024, "Could not contact Worldcraft to send the command: \n\n\"%s\"\n\n Worldcraft does not appear to be running.", cmd);
+        MessageBoxA(0, buf, "Editor_SendCommand Error", 0);
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f52e0 size=0x9b
 #include "SendProp.h"
 
