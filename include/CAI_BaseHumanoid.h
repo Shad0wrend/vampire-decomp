@@ -11,4 +11,5 @@ public:
 
 	bool vfunc586();
 	float vfunc516();
+	const char *vfunc589(int type);	// returns the string registered for the given kind (1, 2, 3, 5/7 at +0x5fa8/+0x5fb0/+0x5fac/+0x5fb4), or the override string at +0x5fa4 when set (and the kind is not 7); null when unset
 };
