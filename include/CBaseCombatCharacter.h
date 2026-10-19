@@ -98,6 +98,7 @@ public:
 	void vfunc338(int a, int b, int c);
 	void vfunc339(int a, int b, int c);
 	void vfunc340(int a, int b, int c);
+	void vfunc358();	// "CBaseCombatCharacter::PrayerEnd": scope trace (entity name), clears the prayer state at +0x14a8/+0x1475/+0x1478/+0x14aa, +0x14ac = -1, +0xff0 = 0x133 and, when the object at +0xa8 is set, slot 93(3, 0)
 	char vfunc362(const float *pos);	// "CBaseCombatCharacter::FInViewCone": scope trace, then sub_103268e0(pos, field at +0x1574)
 	int vfunc365(CBaseEntity *pTarget);	// "CBaseCombatCharacter::FInAimCone": scope trace (entity name), returns slot 364(target slot 197(buf, slot 193(buf), 1, 0))
 	QAngle vfunc367();	// "CBaseCombatCharacter::BodyAngles": scope trace (entity name), returns the three floats returned by slot 219 by value
