@@ -21639,6 +21639,51 @@ void CBaseCombatCharacter::sub_10325a30(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10325b20 size=0xb8
+#include "inputdata_t.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+struct EntityFinder { void *sub_1000b4b5(int a, const char *name, void *activator, int b); };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern EntityFinder g_106eb5d8;
+
+inline const char *VariantString(variant_t *v)
+{
+	const char *s;
+	if (v->fieldType == 2) {
+		s = v->iszValue;
+		if (s == 0)
+			s = g_106b8540;
+	} else
+		s = v->sub_10008805();
+	return s;
+}
+
+void CBaseCombatCharacter::sub_10325b20(inputdata_t *data)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::InputLookAtEntityOrigin";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+
+	const char *str = VariantString(&data->value);
+	void *ent = g_106eb5d8.sub_1000b4b5(0, str, data->pActivator, 0);
+	if (ent)
+		sub_10325cb0(ent, 3);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10325c10 size=0x7a
 #include "CBaseCombatCharacter.h"
 struct SScope { const char *a; const char *b; const char *c; };
