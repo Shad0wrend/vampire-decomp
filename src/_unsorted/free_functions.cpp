@@ -9627,6 +9627,48 @@ int sub_100e77f0(const int *a, const int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7c20 size=0xbd
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+struct DialogLine {
+    int pad0;
+    char *m_p4;
+    char *m_p8;
+    int padc;
+    char *m_p10;
+    char *m_p14;
+    char *m_arr[7];
+};
+
+void __stdcall sub_100e7c20(DialogLine *line)
+{
+    ScopeTrace trace("CDialog::line_free", g_106b8540, g_106b8540);
+    if (line->m_p4)
+        delete line->m_p4;
+    if (line->m_p8)
+        delete line->m_p8;
+    if (line->m_p10)
+        delete line->m_p10;
+    if (line->m_p14)
+        delete line->m_p14;
+    for (int i = 0; i < 7; i++) {
+        if (line->m_arr[i])
+            delete line->m_arr[i];
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7f70 size=0xb4
 extern "C" {
 void *memset(void *, int, unsigned int);
