@@ -709,6 +709,7 @@
 0x10006b68 func   ?vfunc2@CTEGunshotDecal@@UAEPAV1@I@Z CTEGunshotDecal::vfunc2
 0x10006b72 func   _npc_VChangBrosClaw npc_VChangBrosClaw
 0x10006b7c func   ?sub_100cd640@CUnknown100cd640@@QAEPADXZ CUnknown100cd640::sub_100cd640
+0x10006c03 func   ?sub_100b0850@@YAXXZ sub_100b0850
 0x10006c58 func   ?vfunc1@CAI_RatPlaneSolver@@QAEPAV1@I@Z CAI_RatPlaneSolver::vfunc1
 0x10006c5d func   _filter_base filter_base
 0x10006ca8 func   ?sub_10074a90@CUnknown10074a90@@QAEXH@Z CUnknown10074a90::sub_10074a90
