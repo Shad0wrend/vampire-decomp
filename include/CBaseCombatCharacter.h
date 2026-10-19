@@ -15,7 +15,10 @@ class CBaseCombatCharacter : public CBaseEntity
 public:
 	// Placeholder slots 134..251 (the base declares slots up to 133).
 	CBCC_SLOTS10(a0) CBCC_SLOTS10(a1) CBCC_SLOTS10(a2) CBCC_SLOTS10(a3) CBCC_SLOTS10(a4)
-	CBCC_SLOTS10(a5) CBCC_SLOTS10(a6) CBCC_SLOTS10(a7) CBCC_SLOTS10(a8) CBCC_SLOTS10(a9)
+	CBCC_SLOTS10(a5) CBCC_SLOTS10(a6) CBCC_SLOTS10(a7) CBCC_SLOTS10(a8)
+	virtual void a90(); virtual void a91(); virtual void a92(); virtual void a93();
+	virtual void vfunc228(int a, int b);	// "CBaseCombatCharacter::VPhysicsShadowCollision"-like: scope trace, forwards to slot 75(a, b)
+	virtual void a95(); virtual void a96(); virtual void a97(); virtual void a98(); virtual void a99();
 	CBCC_SLOTS10(b0)
 	virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13();
 	virtual void b14(); virtual void b15(); virtual void b16(); virtual void b17();
