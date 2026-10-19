@@ -13,6 +13,8 @@ public:
 	void vfunc2(CUnknown1019d130 *filter, int a, int b, int c, int d);	// slot 2
 	void vfunc16(CUnknown1019d130 *filter, int a, int b, int c, int d);	// slot 16
 	void vfunc28(CUnknown1019d130 *filter, int a, int b, int c, int d);	// slot 28
+	void vfunc31(CUnknown1019d130 *filter, int a, int b, int c, int d);	// slot 31
+	void vfunc39(CUnknown1019d130 *filter, int a, int b, int c, int d);	// slot 39
 	void sub_100584a0(CUnknown1019d130 *filter, int a, int b, int c);	// slot 5
 	void vfunc13(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h);	// slot 13
 	void sub_10058d70(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g);	// slot 17
