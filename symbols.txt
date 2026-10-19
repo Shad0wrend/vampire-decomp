@@ -839,6 +839,7 @@
 0x10007cde func   _player player
 0x10007d24 func   ?sub_10073260@S10073260@@QAEXPBD@Z S10073260::sub_10073260
 0x10007d33 func   ?vfunc5@CNPC_VVampire@@QAEPAV1@I@Z CNPC_VVampire::vfunc5
+0x10007d3d func   ?sub_1007f690@CUtlVector12@@QAEXH@Z CUtlVector12::sub_1007f690
 0x10007d42 func   ?vfunc4@CRecipientFilter@@UAEDXZ CRecipientFilter::vfunc4
 0x10007d5b func   _item_k_gimble_key item_k_gimble_key
 0x10007d79 func   ?sub_1037a740@@YAPAHXZ sub_1037a740
