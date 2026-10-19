@@ -10411,6 +10411,42 @@ void Rec64::sub_100dc300(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dda50 size=0x6c
+#include "CUnknown100dda50.h"
+
+inline int CUnknown100dda50::sub_100dda50_inner()
+{
+    if (v11() == 6) {
+        if (m_pOwner->v94() == 7) {
+            if (m_pOwner->m_unk36c != 0)
+                return 1;
+        }
+    }
+    return 0;
+}
+
+char CUnknown100dda50::sub_100dda50()
+{
+    switch (m_state) {
+    case 0:
+        return sub_100dda50_inner();
+    case 1:
+        return 1;
+    case 2:
+        return 0;
+    case 3:
+        return 0;
+    case 4:
+        return 1;
+    case 5:
+        return 0;
+    case 6:
+        return 0;
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ddc40 size=0xb0
 struct S24c {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
