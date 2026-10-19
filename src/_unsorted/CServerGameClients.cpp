@@ -26,3 +26,31 @@ void __fastcall sub_1011d490(void *, int, int value)
 	g_1070b25c = value;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1011d5d0 size=0x96
+#include "CServerGameClients.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct IUnk { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual char *v4(); };
+struct Edict { char pad[0x40]; IUnk *m_pUnk; char m_flag; };
+
+void *CServerGameClients::vfunc12(void *pEdict)
+{
+	Edict *e = (Edict *)pEdict;
+	if (e && e->m_flag && e->m_pUnk) {
+		g_109f3620[*g_109f3680].a = "CBaseEntity::Instance";
+		g_109f3620[*g_109f3680].b = g_106b8540;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+		char *ent = e->m_pUnk ? e->m_pUnk->v4() : 0;
+		(*g_109f3680)--;
+		if (ent)
+			return ent + 0x2068;
+	}
+	return 0;
+}
+// END FUNCTION
