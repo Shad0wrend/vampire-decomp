@@ -30,4 +30,5 @@ public:
 
 	unsigned short sub_10046390(const void *search);	// Find: index of the node equal to search, or InvalidIndex()
 	unsigned short sub_10046570(const void *search);	// same as sub_10046390 (another instance)
+	unsigned short sub_10046750(const void *search);	// same as sub_10046390 (another instance)
 };
