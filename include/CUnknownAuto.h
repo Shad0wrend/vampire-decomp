@@ -23,6 +23,7 @@
 #include "CSaveRestoreBlockSet.h"
 #include "CTEBloodSprite.h"
 #include "CTEMetalSparks.h"
+#include "CTESprite.h"
 #include "CUnknown10058220.h"
 #include "CUnknown1006ccc0.h"
 #include "CUnknown1006e890.h"
