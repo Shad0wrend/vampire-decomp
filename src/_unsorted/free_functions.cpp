@@ -15916,6 +15916,16 @@ void __fastcall sub_1024c050(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024c0e0 size=0xbd
+#include "CUtlRBTree12.h"
+
+bool CUtlRBTree12::sub_1024c0e0(unsigned short i) const
+{
+	unsigned short parent = Links(i).m_Parent;
+	return Links(parent).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024cef0 size=0x67
 struct CBlock64_t {
 	int d[16];
