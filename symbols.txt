@@ -1054,6 +1054,7 @@
 0x100089d1 func   ?vfunc5@CAI_DynamicLink@@QAEPAV1@I@Z CAI_DynamicLink::vfunc5
 0x100089e5 func   ?vfunc498@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc498
 0x100089f4 func   _func_breakable func_breakable
+0x10008a49 func   ?sub_10078dd0@CUtlVector140@@QAEXH@Z CUtlVector140::sub_10078dd0
 0x10008a58 func   ?vfunc5@COccultDodge@@QAEPAV1@I@Z COccultDodge::vfunc5
 0x10008a76 func   ?vfunc5@COccultLockpicking@@QAEPAV1@I@Z COccultLockpicking::vfunc5
 0x10008a80 func   ?vfunc242@CEnvParticle@@QAEXXZ CEnvParticle::vfunc242
