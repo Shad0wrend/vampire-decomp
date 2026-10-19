@@ -2198,6 +2198,7 @@
 0x1000f8a8 func   ?vfunc5@CBaseCombatWeapon@@UAEPAV1@I@Z CBaseCombatWeapon::vfunc5
 0x1000f8ad func   ?vfunc5@CNPC_VPlaceholder@@QAEPAV1@I@Z CNPC_VPlaceholder::vfunc5
 0x1000f8b2 func   ?sub_1024c050@@YIXPAUMem4@@HH@Z sub_1024c050
+0x1000f8bc func   ?sub_100f6bb0@@YGXPAUSEntityObject@@@Z sub_100f6bb0
 0x1000f8c6 func   ?sub_103109a0@CUtlVector4@@QAEHHHPBH@Z CUtlVector4::sub_103109a0
 0x1000f907 func   ?sub_102c66f0@UtlVec8@@QAEPAU1@HH@Z UtlVec8::sub_102c66f0
 0x1000f916 func   ?vfunc5@CWeaponMelee_ChangBlade@@QAEPAV1@I@Z CWeaponMelee_ChangBlade::vfunc5

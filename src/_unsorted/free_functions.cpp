@@ -10754,6 +10754,89 @@ void CUnknown100f5600::sub_100f5600(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6bb0 size=0xed
+extern "C" void *memmove(void *, const void *, unsigned int);
+extern void *(__cdecl *g_109f3634)(unsigned int);
+extern void *(__cdecl *g_109f3638)(void *, unsigned int);
+
+struct SHandleHolder
+{
+    virtual void v0();
+    virtual unsigned int *GetRefEHandle();	// slot 1
+};
+
+struct SEntityObject
+{
+    virtual SHandleHolder *GetHandleEntity();	// slot 0
+};
+
+struct SEntityPtrVector
+{
+    void **m_pMemory;	// 0x10703668
+    int m_nAllocCount;
+    int m_nGrowSize;
+    int m_nSize;
+    void **m_pElements;
+
+    void GrowMemory(int num)
+    {
+        if (m_nGrowSize == -1)
+            return;
+        int requested = m_nAllocCount + num;
+        if (m_nAllocCount < requested) {
+            int count = m_nAllocCount;
+            do {
+                if (count) {
+                    if (m_nGrowSize)
+                        count += m_nGrowSize;
+                    else
+                        count += count;
+                } else
+                    count = 8;
+            } while (count < requested);
+            m_nAllocCount = count;
+        }
+        if (m_pMemory)
+            m_pMemory = (void **)g_109f3638(m_pMemory, m_nAllocCount * 4);
+        else
+            m_pMemory = (void **)g_109f3634(m_nAllocCount * 4);
+    }
+    void GrowVector()
+    {
+        if (m_nSize + 1 > m_nAllocCount)
+            GrowMemory(m_nSize + 1 - m_nAllocCount);
+        m_pElements = m_pMemory;
+        m_nSize++;
+    }
+    void ShiftElementsRight(int elem)
+    {
+        int toMove = m_nSize - elem - 1;
+        if (toMove > 0)
+            memmove(&m_pMemory[elem + 1], &m_pMemory[elem], toMove * 4);
+    }
+    void AddToTail(void *pEnt)
+    {
+        int elem = m_nSize;
+        GrowVector();
+        ShiftElementsRight(elem);
+        void **p = &m_pMemory[elem];
+        if (p)
+            *p = pEnt;
+    }
+};
+
+extern SEntityPtrVector g_10703668;
+
+// TARGET: sub_100f6bb0
+void __stdcall sub_100f6bb0(SEntityObject *pEnt)
+{
+    if (pEnt) {
+        if (*pEnt->GetHandleEntity()->GetRefEHandle() != 0xffffffff)
+            g_10703668.AddToTail(pEnt);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6d80 size=0x84
 #include "CUnknown100f6d80.h"
 
