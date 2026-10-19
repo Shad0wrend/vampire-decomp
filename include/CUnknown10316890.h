@@ -11,4 +11,5 @@ public:
 	int m_nEnts;	// 0x5c
 
 	void sub_10316890(int arg, Vector a, Vector b);	// calls slot 55(arg, a, b) on every handle that still resolves
+	void sub_10316ab0(int arg, Vector a, Vector b);	// same, calling slot 57
 };
