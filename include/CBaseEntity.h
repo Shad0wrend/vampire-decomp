@@ -101,6 +101,7 @@ public:
 	void sub_100a0420(const char *name);	// "CBaseEntity::SetName": scope trace, stores name at +0x26c, then slot 11(name or "")
 	void sub_100a0b20();	// "CBaseEntity::ClearParent": scope trace (entity name), then the call through the stub at 0x1000b636
 	void sub_100a53d0(int a);	// "CBaseEntity::PhysicsTouchTriggers": scope trace (entity name), then slot 122 of the global at 0x1070b22c (edict at +0x2e0, a)
+	bool sub_100a5ad0();	// "CBaseEntity::VPhysicsInitSetup": scope trace (entity name), false without the object at +0x2e0, else slot 225 and sub_100b3b00, true
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
 	void sub_100a8c90(int a);	// "CBaseEntity::InputScriptUnhide": calls vfunc78
 	void sub_100a8d30(CBaseEntity *pEnt);	// "CBaseEntity::SetSoundOverrideEnt": stores pEnt's handle at +0x100 (-1 for null)
