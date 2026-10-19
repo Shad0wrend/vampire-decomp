@@ -13780,6 +13780,46 @@ bool Loader::sub_101d7000(const char *file)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d72a0 size=0xa8
+extern "C" char *_strlwr(char *);
+extern "C" char *strstr(const char *, const char *);
+extern char g_106b8540[];
+struct Sub {
+	const char *name;
+	const char *Get() { return name ? name : g_106b8540; }
+};
+struct Entry {
+	int a, b, c, d, e;
+	Sub sub;
+};
+struct List {
+	int pad;
+	int m_count;
+	Entry **m_items;
+	int sub_101d72a0(const char *name);
+};
+static inline void Cpy(char *d, const char *s)
+{
+	while ((*d++ = *s++))
+		;
+}
+int List::sub_101d72a0(const char *name)
+{
+	char lowName[128];
+	char lowEntry[128];
+	Cpy(lowName, name);
+	_strlwr(lowName);
+	for (int i = 0; i < m_count; i++) {
+		const char *n = m_items[i]->sub.Get();
+		Cpy(lowEntry, n);
+		_strlwr(lowEntry);
+		if (strstr(lowEntry, lowName) == lowEntry)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d7380 size=0xb0
 #include "CUnknown101d7380.h"
 extern "C" char *__cdecl _strlwr(char *);
