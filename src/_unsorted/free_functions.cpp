@@ -6411,6 +6411,34 @@ void CBaseEntity::sub_1009be00(int a, int b, float x, float y, float z)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009bef0 size=0xc7
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern char g_106cec38[];
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+void CBaseEntity::sub_1009bef0(int a, int b, CBaseEntityColor32 color)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::DumpColor32";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	sprintf(g_106cec38, "[%02X %02X %02X : %02X]", color.r, color.g, color.b, color.a);
+	sub_1009b640(a, b, (int)g_106cec38);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c1e0 size=0xb2
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
