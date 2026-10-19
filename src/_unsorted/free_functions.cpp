@@ -5018,6 +5018,38 @@ CUtlMemory16 *CUtlMemory16::sub_100b4610(int growSize, int allocationCount)
 void __fastcall sub_100b47e0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100b4800 size=0x8c
+#include "CUtlVector16.h"
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUtlVector16::sub_100b4800(int num)
+{
+    if (m_size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 2;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount << 4);
+        else
+            m_pMemory = (char *)g_109f3634(m_allocationCount << 4);
+    }
+    m_size += num;
+    m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4950 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_100b4950(); };
 void CUtlVectorBase::sub_100b4950() { m_Size = 0; }
