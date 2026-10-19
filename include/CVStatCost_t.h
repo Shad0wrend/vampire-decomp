@@ -3,9 +3,10 @@
 
 struct CVStatSubCost_t
 {
-	char m_data[0x14];
+	char m_data[0x14];	// dword fields: limit (10000 when null) at +0, 1 at +4, 0 at +8 / +0xc, heap pointer at +0x10
 
 	bool sub_101fb8f0();
+	void sub_101fb830();	// "CVStatSubCost_t::Null": scope trace, resets the fields and frees the heap pointer
 };
 
 class CVStatCost_t
