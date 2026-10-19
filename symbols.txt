@@ -2880,6 +2880,7 @@
 0x1001507d func   ?vfunc5@CWeaponRanged_Rifle_M37@@QAEPAV1@I@Z CWeaponRanged_Rifle_M37::vfunc5
 0x100150af func   ?sub_10215910@CUnknown10215910@@QAEXH@Z CUnknown10215910::sub_10215910
 0x100150b9 func   ?vfunc141@CBatSwarm@@QAEXPAHHPAX@Z CBatSwarm::vfunc141
+0x10015113 func   ?sub_1036e400@CNPC_VChangBros@@QAEXXZ CNPC_VChangBros::sub_1036e400
 0x1001514a func   ?sub_100b3b00@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3b00
 0x1001514f func   ?vfunc5@CAI_TestHull@@QAEPAV1@I@Z CAI_TestHull::vfunc5
 0x1001519f func   ?vfunc249@CBaseAnimating@@QAEMXZ CBaseAnimating::vfunc249

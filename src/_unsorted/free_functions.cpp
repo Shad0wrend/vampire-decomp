@@ -28345,6 +28345,46 @@ bool CNPC_VChangBros::sub_1036d270(float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036e400 size=0xad
+#include "CNPC_VChangBros.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##a) V10(p##b) V10(p##c) V10(p##d) V10(p##e) V10(p##f) V10(p##g) V10(p##h) V10(p##i) V10(p##j)
+struct EntNode {
+    V100(x) V100(y)
+    V10(za)
+    virtual void zb0(); virtual void zb1(); virtual void zb2(); virtual void zb3(); virtual void zb4(); virtual void zb5(); virtual void zb6();
+    virtual float *GetAbsOrigin();
+    char pad[0x5d8 - 4];
+    EntNode *next;
+    int type;
+};
+extern EntNode *g_10925450;
+
+void CNPC_VChangBros::sub_1036e400()
+{
+    g_109f3620[*g_109f3680].a = "CNPC_VChangBros::StoreArenaCenter";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    for (EntNode *e = g_10925450; e; e = e->next) {
+        if (e->type == 0x4651) {
+            float *o = e->GetAbsOrigin();
+            float *dst = (float *)((char *)this + 0x66dc);
+            dst[0] = o[0];
+            dst[1] = o[1];
+            dst[2] = o[2];
+            *((char *)this + 0x66e8) = 1;
+            break;
+        }
+    }
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036ec40 size=0x33
 void sub_1000c9b9();
 void sub_100055fb();
