@@ -20,5 +20,8 @@ public:
 	unsigned short m_ElementCount;	// 0x12
 	unsigned short m_NumAlloced;	// 0x14
 
+	bool IsInList(unsigned short i) const { return i < m_NumAlloced && m_pMemory[i].m_Previous != i; }
+	CUtlLinkedList8Node &InternalElement(unsigned short i) { return m_pMemory[i]; }
+
 	void sub_1010cb00(unsigned short elem);	// "CUtlLinkedList::Unlink"
 };
