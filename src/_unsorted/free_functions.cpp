@@ -11183,6 +11183,42 @@ int *sub_10100ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101100 size=0xe5
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+    virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct SEngine
+{
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7)
+    virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3();
+    virtual const char *Cmd_Argv(int i);	// slot 84
+    virtual int Cmd_Argc();	// slot 85
+};
+
+extern SEngine *g_1070b22c;
+extern "C" double atof(const char *);
+extern "C" int atoi(const char *);
+
+// TARGET: sub_10101100
+void sub_10101100(float *pDuration, unsigned char *pColor)
+{
+    *pDuration = 2.0f;
+    if (g_1070b22c->Cmd_Argc() > 1)
+        *pDuration = (float)atof(g_1070b22c->Cmd_Argv(1));
+    pColor[0] = 0;
+    pColor[1] = 0;
+    pColor[2] = 0;
+    pColor[3] = 0xff;
+    if (g_1070b22c->Cmd_Argc() > 4) {
+        pColor[0] = atoi(g_1070b22c->Cmd_Argv(2));
+        pColor[1] = atoi(g_1070b22c->Cmd_Argv(3));
+        pColor[2] = atoi(g_1070b22c->Cmd_Argv(4));
+        if (g_1070b22c->Cmd_Argc() == 5)
+            pColor[3] = atoi(g_1070b22c->Cmd_Argv(5));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101e30 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
