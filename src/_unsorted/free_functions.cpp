@@ -27725,6 +27725,45 @@ char sub_10360560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10361990 size=0xaa
+#include "CNPC_VAsianVampire.h"
+
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+// CBaseEntity viewed as a plain list of slots up to 217 (GetAbsOrigin).
+struct SSlot217Entity
+{
+	PV100(a0) PV100(a1)
+	PV10(b0)
+	virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13();
+	virtual void b14(); virtual void b15(); virtual void b16();
+	virtual StoredHintPos_t *GetAbsOrigin();
+};
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CNPC_VAsianVampire::sub_10361990(CBaseEntity *pHint)
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VAsianVampire::AddHintToStoredJumpPositions";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (pHint)
+	{
+		m_storedHints[m_nNextStoredHint] = *((SSlot217Entity *)pHint)->GetAbsOrigin();
+		m_nNextStoredHint++;
+		if (m_nNextStoredHint >= 2)
+			m_nNextStoredHint = 0;
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10362670 size=0x81
 #include "CNPC_VAsianVampire.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
