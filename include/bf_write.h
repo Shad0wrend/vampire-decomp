@@ -1,6 +1,8 @@
 // bf_write: engine bit buffer writer.
 #pragma once
 
+extern unsigned long g_106d1990[32][33];	// bit write masks: [first bit in the dword][number of bits]
+
 class bf_write
 {
 public:
@@ -14,4 +16,6 @@ public:
 	void sub_100bd540(unsigned int curData);	// writes a full 32-bit value ("WriteUBitLong" with numbits == 32)
 	void sub_100bdc20(unsigned int curData);	// writes an 8-bit value (same shape with numbits == 8)
 	void sub_100bdd20(unsigned int curData);	// same family (another width)
+	void sub_100bc600(unsigned int curData, int numbits);	// range checked variant, called through the stub at 0x10001ef1
+	void sub_100bc860(unsigned int curData, int numbits, bool bCheckRange);	// "WriteUBitLong" (older copy): with bCheckRange forwards to sub_100bc600, else as sub_100bd450
 };
