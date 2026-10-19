@@ -22858,6 +22858,30 @@ void CBaseCombatCharacter::sub_1033d8a0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033e2b0 size=0x87
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool CBaseCombatCharacter::sub_1033e2b0()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::IsBusyWithDiscipline";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (*((unsigned char *)this + 0x14b8) & 1) {
+		(*g_109f3680)--;
+		return true;
+	}
+	(*g_109f3680)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033ea90 size=0x99
 #include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
