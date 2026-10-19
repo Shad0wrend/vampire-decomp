@@ -50,8 +50,14 @@ public:
 	void sub_1028ea60(int seed, const float *pos, void *pEnt);	// fills the record at +0x6360 (two bytes, a scrambled hash of seed at +0x6364, position at +0x6380, entity handle at +0x638c or -1)
 	void sub_10298910(const char *str);	// parses a space separated list of 1-based numbers into a bit mask stored at +0x62dc
 	void sub_102989e0(const char *str);	// same parser for the bit mask at +0x62e4; a null or empty string sets all bits (-1)
+	bool sub_1028e360();	// when the handle at +0x6088 is valid: false while the timer at +0x6084 is running (armed with curtime + const when unset), else clears the handle and copies the absolute origin of the entity of the handle at +0x608c to +0x6090; true otherwise
 
-	char m_pad0004[0x63d4];
+	char m_pad0004[0x6080];
+	float m_f6084;
+	unsigned int m_h6088;
+	unsigned int m_h608c;
+	float m_v6090[3];
+	char m_pad609c[0x63d8 - 0x609c];
 	char m_b63d8;
 	char m_pad63d9[0x64cc - 0x63d9];
 	float m_f64cc;
