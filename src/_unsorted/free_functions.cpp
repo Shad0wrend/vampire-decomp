@@ -5297,6 +5297,26 @@ void CBaseEntity::sub_100acef0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ad100 size=0x7d
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+void sub_1000b636(CBaseEntity *pEnt);
+
+void __fastcall sub_100ad100(CBaseEntity *self, int, int a)
+{
+    const char *name = self ? (self->m_name26c ? self->m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::InputClearParent";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    sub_1000b636(self);
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100adfd0 size=0x84
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
