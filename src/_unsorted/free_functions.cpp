@@ -22503,6 +22503,50 @@ void CUnknown10227c90::sub_10227c90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022a380 size=0xe1
+struct SFileSystem
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+    virtual char FileExists(const char *path, int flags);
+};
+
+struct SSoundSystem
+{
+    virtual int Precache(const char *name, int flags);
+};
+
+extern SFileSystem *g_1070b238;
+extern SSoundSystem *g_1070b248;
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+extern void (*g_109f3890)(char *, const char *, int);
+extern "C" unsigned int strlen(const char *);
+
+// TARGET: sub_1022a380
+bool sub_1022a380(char *name, bool bPrefix)
+{
+    char buf[260];
+    Q_snprintf(buf, 260, "sound/%s", name);
+    char exists = g_1070b238->FileExists(buf, 0);
+    if (!exists) {
+        *name = exists;
+        return false;
+    }
+    if (bPrefix) {
+        Q_snprintf(buf, 260, "*%s", name);
+        if (strlen(buf) > 0x40)
+            return false;
+        if (!g_1070b248->Precache(buf, 0))
+            return false;
+        g_109f3890(name, buf, 0x40);
+    } else {
+        if (!g_1070b248->Precache(name, 0))
+            return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022b480 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
