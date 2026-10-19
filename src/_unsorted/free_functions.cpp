@@ -4487,6 +4487,39 @@ void CUnknown100792c0::sub_100792e0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079320 size=0xaa
+extern "C" int printf(const char *, ...);
+extern "C" __declspec(dllimport) void __stdcall OutputDebugStringA(const char *msg);
+extern int (*g_109f387c)(char *buf, int maxLen, const char *fmt, char *args);
+extern char g_10547ad4[];
+
+struct SDumpOutput
+{
+	char pad[0xa0];
+	void (*m_pfnPrint)(const char *msg);	// 0xa0
+};
+
+void sub_10079320(SDumpOutput *pOut, int indent, const char *fmt, ...)
+{
+	char buf[0x800];
+	char *args = (char *)&fmt + sizeof(fmt);
+	g_109f387c(buf, 0x800, fmt, args);
+	for (int i = indent; i > 0; i--)
+	{
+		if (pOut->m_pfnPrint)
+			pOut->m_pfnPrint(g_10547ad4);
+		else
+			printf(g_10547ad4);
+		OutputDebugStringA(g_10547ad4);
+	}
+	if (pOut->m_pfnPrint)
+		pOut->m_pfnPrint(buf);
+	else
+		printf(buf);
+	OutputDebugStringA(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079450 size=0x6e
 struct Obj {
     int f[30];
