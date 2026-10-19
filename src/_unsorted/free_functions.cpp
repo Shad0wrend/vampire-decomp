@@ -15910,6 +15910,37 @@ void CVDmg_t::sub_101fb3e0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fb830 size=0x8b
+#include "CVStatCost_t.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CVStatSubCost_t::sub_101fb830()
+{
+	int *f = (int *)m_data;
+	g_109f3620[*g_109f3680].m_pszFunc = "CVStatSubCost_t::Null";
+	g_109f3620[*g_109f3680].m_pszName = g_106b8540;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	f[0] = 10000;
+	f[1] = 1;
+	f[2] = 0;
+	f[3] = 0;
+	delete (char *)f[4];
+	f[4] = 0;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fb8f0 size=0x6c
 struct TraceEnt { const char *a; void *b; void *c; };
 extern int *g_109f3680;
