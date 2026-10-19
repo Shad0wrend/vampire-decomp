@@ -376,6 +376,40 @@ void CBaseEntity::vfunc67()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009ebb0 size=0xbe
+#include "CBaseEntity.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern int (*g_109f388c)(char *, int, const char *, ...);
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+
+bool CBaseEntity::vfunc109(const char *key, float value)
+{
+    char buf[256];
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseEntity::KeyValue", ent, g_106b8540);
+    g_109f388c(buf, 256, "%f", (double)value);
+    return vfunc110(key, buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f2c0 size=0x86
 #include "CBaseEntity.h"
 #include "CBaseEntitySlots.h"
