@@ -24473,6 +24473,27 @@ int sub_102f3770(const float *a, const float *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f45f0 size=0xa9
+#include "CUnknown102f45f0.h"
+
+struct CGlobalVars { char pad[0xc]; float curtime; };
+extern CGlobalVars *g_1070b228;
+extern void (*g_109f3630)(const char *fmt, ...);
+
+void CUnknown102f45f0::sub_102f45f0(const CachedPos_t *pPos, int node, int field)
+{
+	if (m_cache[m_nNextCache].m_flTime == g_1070b228->curtime)
+		g_109f3630("AI NearestNode Cache is full\n");
+	m_cache[m_nNextCache].m_vecPos = *pPos;
+	m_cache[m_nNextCache].m_nNode = node;
+	m_cache[m_nNextCache].m_nField14 = field;
+	m_cache[m_nNextCache].m_flTime = g_1070b228->curtime;
+	m_nNextCache++;
+	if (m_nNextCache == 20)
+		m_nNextCache = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f48b0 size=0x67
 extern char g_1061052c[];
 extern void (*g_109f3630)(const char* fmt, ...);
