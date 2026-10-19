@@ -56,6 +56,7 @@ public:
 	float *vfunc214();	// "CBaseEntity::GetSize": returns &field at +0x38c
 	float *vfunc220();	// "CBaseEntity::GetOrigin": returns &field at +0x41c
 	float *vfunc221();	// "CBaseEntity::GetAngles": returns &field at +0x428
+	int vfunc222(int a);	// "CBaseEntity::GetSoundEmissionOrigin": scope trace, calls slot 192(a), returns a
 	void vfunc226(int a);
 	void vfunc228(int a, int b);
 	void vfunc238(int a, int b, int c, int d);
