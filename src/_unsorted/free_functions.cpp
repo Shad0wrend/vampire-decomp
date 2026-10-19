@@ -22157,6 +22157,52 @@ void sub_10204550(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204f60 size=0x94
+#include "CUnknown10204f60.h"
+
+struct Record {
+	int sub_10003a08(int a);
+};
+struct RecordTable {
+	Record *sub_1000ffb0(int index);
+};
+extern RecordTable g_1074e658;
+extern RecordTable g_1074e4f0;
+extern RecordTable g_1074e098;
+
+int CUnknown10204f60::sub_10204f60(int a)
+{
+	int index = m_nIndex;
+	if (index != -1) {
+		switch (m_nKind) {
+		case 0:
+			return g_1074e658.sub_1000ffb0(index)->sub_10003a08(a);
+		case 1:
+			return g_1074e4f0.sub_1000ffb0(index)->sub_10003a08(a);
+		case 2:
+			return g_1074e098.sub_1000ffb0(index)->sub_10003a08(a);
+		case 3:
+			return 0;
+		case 4:
+			return 0;
+		case 5:
+			return 0;
+		case 6:
+			return 0;
+		case 7:
+			return 0;
+		case 8:
+			return 0;
+		case 9:
+			return 0;
+		default:
+			return 0;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102056d0 size=0x9
 struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
