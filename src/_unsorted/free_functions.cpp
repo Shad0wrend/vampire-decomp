@@ -21255,6 +21255,27 @@ extern char g_105c5338;
 void sub_1024b070() { g_105c5338 = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1024b150 size=0xae
+extern "C" int strcmp(const char *, const char *);
+struct Pool { char pad[0x18]; char **blocks; };
+extern char *g_1088ae34;
+extern Pool *g_1088ae38;
+struct Sym {
+    unsigned short blk, off;
+    const char *Str() const {
+        if (blk == 0xffff && off == 0xffff)
+            return g_1088ae34;
+        return g_1088ae38->blocks[blk] + 8 + off;
+    }
+};
+bool sub_1024b150(const Sym *a, const Sym *b)
+{
+    const char *s1 = a->Str();
+    const char *s2 = b->Str();
+    return strcmp(s1, s2) < 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024b230 size=0x7d
 struct StrRef { unsigned short blk; unsigned short off; };
 struct StrTable { char pad[0x18]; char **blocks; };

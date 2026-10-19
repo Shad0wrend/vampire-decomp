@@ -1626,6 +1626,7 @@
 0x1000c446 func   ?sub_100aa5c0@CBaseEntity@@QAEHPAVCRestore@@H@Z CBaseEntity::sub_100aa5c0
 0x1000c46e func   ?sub_10325b20@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325b20
 0x1000c482 func   ?sub_1042ff00@@YAXXZ sub_1042ff00
+0x1000c496 func   ?sub_1024b150@@YA_NPBUSym@@0@Z sub_1024b150
 0x1000c4be func   _npc_payphone npc_payphone
 0x1000c4cd func   ?sub_102641b0@CUtlVector56@@QAEXH@Z CUtlVector56::sub_102641b0
 0x1000c504 func   ?sub_10046570@CUtlRBTreeFind16@@QAEGPBX@Z CUtlRBTreeFind16::sub_10046570
