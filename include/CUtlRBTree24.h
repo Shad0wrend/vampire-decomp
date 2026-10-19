@@ -18,22 +18,22 @@ public:
 	};
 
 	void *m_unk0;
-	Node_t *m_pElements;
-	int m_nAllocationCount;	// 0x08 (the CUtlMemory at +4: pointer, allocation count, grow size)
+	Node_t *m_pElements;	// 0x04 (the node memory)
+	int m_nAllocationCount;	// 0x08
 	int m_nGrowSize;	// 0x0c
-	int m_Root;	// 0x10
-	int m_NumElements;	// 0x14
+	int m_unk10;
+	int m_unk14;
 	int m_FirstFree;	// 0x18
-	int m_TotalElements;	// 0x1c
+	int m_NumElements;	// 0x1c
 
 	static int InvalidIndex() { return -1; }
 
-	const Links_t &Links(int i) const
+	const Links_t &LinksInl(int i) const
 	{
 		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
 		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
 	}
 
 	const Links_t &sub_10055520(int i) const;	// "CUtlRBTree::Links"
-	int sub_1007f7a0();	// "CUtlRBTree::NewNode": takes the first free node (or grows the memory by one element when the free list is empty) and returns its index
+	int sub_10055050();	// "CUtlRBTree::NewNode": takes the first free node (or grows the node memory by one and uses the next unused one) and returns its index
 };
