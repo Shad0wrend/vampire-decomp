@@ -15477,6 +15477,53 @@ int sub_101c30c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4070 size=0xb3
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EngineSlots {
+	D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6) D10(a7)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3();
+	virtual const char *Argv(int i);
+	virtual int Argc();
+};
+struct EntEntry { void *pEnt; int serial; int pad; };
+struct EntTable { int hdr; EntEntry entries[1]; };
+
+extern EngineSlots *g_1070b22c;
+extern void (*g_109f366c)(const char *fmt, ...);
+extern "C" __declspec(dllimport) int RandomInt(int lo, int hi);
+extern EntTable *g_10566458;
+extern int g_1072cda8;
+extern unsigned int *g_1072cd9c;
+extern "C" int atoi(const char *);
+
+void sub_101c4070()
+{
+    if (g_1070b22c->Argc() < 2)
+        g_109f366c("Test_RandomizeInPVS <percentage chance to change>");
+    int percentage = atoi(g_1070b22c->Argv(1));
+    for (int i = 0; i < g_1072cda8; i++) {
+        unsigned int h = g_1072cd9c[i];
+        if (h != 0xffffffff) {
+            EntEntry *e = &g_10566458->entries[h & 0x1fff];
+            if ((unsigned int)e->serial == (h >> 13)) {
+                char *pEnt = (char *)e->pEnt;
+                if (pEnt) {
+                    if (RandomInt(0, 100) < percentage) {
+                        unsigned int f = *(unsigned int *)(pEnt + 0x19c);
+                        if (f & 0x40)
+                            f &= ~0x40;
+                        else
+                            f |= 0x40;
+                        *(unsigned int *)(pEnt + 0x19c) = f;
+                    }
+                }
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4460 size=0x11
 void sub_101c4460(int *dst, const int *src)
 {
