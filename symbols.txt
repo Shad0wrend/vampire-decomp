@@ -605,6 +605,7 @@
 0x100054d9 func   ?sub_10096760@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10096760
 0x100054e3 func   ?sub_10366400@CNPC_VWerewolf@@QAE_NH@Z CNPC_VWerewolf::sub_10366400
 0x100054f2 func   ?vfunc2@CTEShowLine@@UAEPAV1@I@Z CTEShowLine::vfunc2
+0x100054f7 func   ?sub_1025d3a0@CUtlRBTreeBig@@QBE_NG@Z CUtlRBTreeBig::sub_1025d3a0
 0x1000551f func   _item_g_idol_cat item_g_idol_cat
 0x10005524 func   ?sub_101351b0@@YAPAHXZ sub_101351b0
 0x10005529 func   ?sub_102a1560@@YI_NPAUN@@@Z sub_102a1560

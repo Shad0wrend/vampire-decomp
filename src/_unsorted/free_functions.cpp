@@ -22762,6 +22762,15 @@ bool CUtlRBTreeBig::sub_1025d2b0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025d3a0 size=0xc1
+#include "CUtlRBTreeBig.h"
+
+bool CUtlRBTreeBig::sub_1025d3a0(unsigned short i) const
+{
+    return Links(Links(i).m_Parent).m_Right == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d820 size=0x9
 struct CUnknown1025d820 { int a; CUnknown1025d820* sub_1025d820(); };
 // TARGET: CUnknown1025d820::sub_1025d820
