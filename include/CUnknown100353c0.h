@@ -10,6 +10,19 @@ struct CUnknown100353c0Inner
 	char m_e;
 	char m_f;
 	char m_g[2];
+
+	CUnknown100353c0Inner &operator=(const CUnknown100353c0Inner &o)
+	{
+		m_a = o.m_a;
+		m_b = o.m_b;
+		m_c = o.m_c;
+		m_d = o.m_d;
+		m_e = o.m_e;
+		m_f = o.m_f;
+		for (unsigned int i = 0; i < 2; i++)
+			m_g[i] = o.m_g[i];
+		return *this;
+	}
 };
 
 class CUnknown100353c0
