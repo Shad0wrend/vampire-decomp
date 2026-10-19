@@ -114,6 +114,7 @@ public:
 	void sub_100b40f0(int a);
 	void sub_100fbbb0(float time);	// "CBaseEntity::SetNextThink": stores time + gpGlobals->curtime at +0x17c (0 clears it)
 	void sub_100fbc20();	// calls slot 242, then sub_100fbbb0(2.0f)
+	bool sub_103d3a40(const char *pszNameOrWildcard);	// "NameMatches" (inlined copy in NPC_VWerewolf): the entity name equals the argument, case-insensitively; a trailing '*' makes it a prefix match
 
 	char m_pad0004[0x8c];
 	float m_flForceTransmitTime;	// 0x0090
