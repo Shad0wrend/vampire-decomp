@@ -83,7 +83,6 @@ public:
 	void sub_1003cc80(int type);	// "CBaseEntity::RemoveDataObjectType": scope trace, clears bit `type` in the mask at +0x444
 	void sub_1003daa0(CBaseEntity *pOther);	// "CBaseEntity::PhysicsTouch": scope trace (entity name), when pOther is set and neither slot 116 returns true, calls slot 175(pOther)
 	void sub_1003db80(CBaseEntity *pOther);	// "CBaseEntity::PhysicsStartTouch": as PhysicsTouch, but calls slot 174(pOther) and then slot 175(pOther)
-	void sub_100339b0(float *forward, float *right, float *up);	// "CBaseEntity::PhysicsGetAngleVectors": scope trace (entity name), per row of the matrix at +0x130 (stride 16): forward = m[0], right = -m[1], up = m[2]
 	void sub_10033aa0(float *a, float *b, float *c);	// "CBaseEntity::PhysicsGetAngleVectors": scope trace (entity name), copies the three columns at +0x130/+0x140/+0x150 (3 floats each) into a, b, c
 	void sub_1003eb50();
 	float *sub_1009b030(float *out);	// slot 16 override: copies the three floats at +0x50 to out
@@ -99,6 +98,7 @@ public:
 	void sub_1009b980(int a, char *text, int value);	// "CBaseEntity::DumpInt": scope trace, sprintf("%d") into a global buffer, then sub_1009b640
 	void sub_1009ba60(int a, char *text, int value);	// "CBaseEntity::DumpFloatArrayBase"-like: one dumped dword
 	void sub_1009bc30(int a, char *text, int value);	// "CBaseEntity::DumpPtr": scope trace (entity name), sprintf("0x%08X", value) into a global buffer, then sub_1009b640(a, text, buffer)
+	void sub_1009c1e0(int a, int b, int *pSerial);	// "CBaseEntity::DumpSerialEntity": scope trace, sprintf("%05d:%0x08X") of the two dwords of pSerial (zeros when null) into a global buffer, then sub_1009b640(a, b, buffer)
 	void sub_1009c390(int a, const char *fmt, const int *array, int count);	// "CBaseEntity::": scope trace, then one sub_1009b980 per dword
 	void sub_1009c4c0(int a, const char *fmt, const char *array, int count);	// "CBaseEntity::DumpCharArray": scope trace, then one sub_1009b7d0 per byte
 	void sub_1009c5f0(int a, const char *fmt, const int *array, int count);	// "CBaseEntity::DumpFloatArray": scope trace, then one sub_1009ba60 per dword
