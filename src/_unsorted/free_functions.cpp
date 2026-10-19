@@ -12286,6 +12286,48 @@ CUnknown101e9880* CUnknown101e9880::sub_101e9880()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9950 size=0xeb
+#include "CUnknown101e9950.h"
+
+struct S101e9570 {
+	S101e9570 *sub_101e9570(int);
+	int m_data[10];
+};
+
+S101e9570 *CUnknown101e9950::sub_101e9950()
+{
+	if (m_allocCount == m_count) {
+		m_allocCount++;
+		if (m_pItems) {
+			S101e9570 **p = new S101e9570 *[m_allocCount];
+			int i = 0;
+			if (m_count > 0) {
+				do {
+					p[i] = m_pItems[i];
+					i++;
+				} while (i < m_count);
+			}
+			for (; i < m_allocCount; i++)
+				p[i] = 0;
+			delete m_pItems;
+			m_pItems = p;
+		} else {
+			m_pItems = new S101e9570 *[m_allocCount];
+			for (int i = 0; i < m_allocCount; i++)
+				m_pItems[i] = 0;
+		}
+		m_count++;
+	} else {
+		m_count++;
+	}
+	if (m_pItems[m_count - 1] == 0) {
+		S101e9570 *p = new S101e9570;
+		m_pItems[m_count - 1] = p ? p->sub_101e9570(m_count - 1) : 0;
+	}
+	return m_pItems[m_count - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9a80 size=0xac
 struct HNode { virtual void v0(); virtual void v1(); virtual HNode* Find(const char*); virtual HNode* Next(); };
 struct HStream { virtual void v0(); virtual void Close(); };
