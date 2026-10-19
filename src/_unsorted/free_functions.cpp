@@ -16554,6 +16554,38 @@ int *CUnknown102c68e0::sub_102c68e0(int index)
 void __fastcall sub_102c6bd0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102c6c30 size=0x8c
+#include "CUtlVector4.h"
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUtlVector4::sub_102c6c30(int num)
+{
+    if (m_size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 8;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (int *)g_109f3638(m_pMemory, m_allocationCount << 2);
+        else
+            m_pMemory = (int *)g_109f3634(m_allocationCount << 2);
+    }
+    m_size += num;
+    m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6d80 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
