@@ -519,6 +519,56 @@ int CBaseEntity::vfunc143(float flHealth, int bitsDamageType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a4c20 size=0xde
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct HandleEntry { void *ent; unsigned int serial; int pad; };
+struct HandleList { int pad; HandleEntry e[1]; };
+extern HandleList *g_10566458;
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+struct TouchSlots
+{
+	SL100(a) SL10(b0) SL10(b1) SL10(b2) SL10(b3) SL10(b4) SL10(b5) SL10(b6)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5();
+	virtual void EndTouch(CBaseEntity *pOther);	// slot 176
+};
+
+struct TouchHandle
+{
+	unsigned int m_Index;
+	TouchSlots *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		HandleEntry *e = &g_10566458->e[m_Index & 0x1fff];
+		return e->serial == (m_Index >> 13) ? (TouchSlots *)e->ent : 0;
+	}
+};
+
+void CBaseEntity::vfunc176(CBaseEntity *pOther)
+{
+	const char *ent;
+	if (this)
+		ent = m_name26c ? m_name26c : g_106b8540;
+	else
+		ent = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::EndTouch";
+	g_109f3620[*g_109f3680].b = ent;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (((TouchHandle *)&m_hTouch254)->Get() != 0)
+		((TouchHandle *)&m_hTouch254)->Get()->EndTouch(pOther);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a65a0 size=0x71
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;

@@ -640,6 +640,7 @@
 0x100056f5 func   ?sub_10073b20@CUnknown10073b20@@QAEXH@Z CUnknown10073b20::sub_10073b20
 0x100056ff func   ?sub_1004dcf0@@YAHXZ sub_1004dcf0
 0x1000571d func   ?sub_100b12e0@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100b12e0
+0x10005722 func   ?vfunc176@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc176
 0x1000574a func   ?sub_101f9590@@YAXH@Z sub_101f9590
 0x10005768 func   ?sub_10078b10@@YIXPAH@Z sub_10078b10
 0x1000579f func   ?sub_10099f20@@YAXPAUEntB@@HPAM@Z sub_10099f20
