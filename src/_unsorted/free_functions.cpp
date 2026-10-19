@@ -5039,6 +5039,26 @@ int CBaseAnimating::sub_10096760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100978c0 size=0x8f
+#include "CBaseAnimating.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseAnimating::sub_100978c0(int bone)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::TurnOffPhysicsChain";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	*(unsigned int *)((char *)this + 0x72c) |= 1 << bone;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097b00 size=0x36
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 
