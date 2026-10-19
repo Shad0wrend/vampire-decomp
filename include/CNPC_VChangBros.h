@@ -10,5 +10,7 @@ public:
 	int vfunc440(int schedule);
 	void vfunc619(int arg);
 	void sub_1000c27a(int arg);
+	void vfunc431();	// "CNPC_VChangBros::NPCThink": scope trace around the base think, then schedules the next think
+	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };
