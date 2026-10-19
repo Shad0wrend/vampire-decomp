@@ -22484,6 +22484,48 @@ bool CUnknown10315ec0::sub_10315ec0(CUnknown10315ec0Ent *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10315fe0 size=0x8d
+#include "CUnknown10315fe0.h"
+
+struct EntSub { void *ent; unsigned int serial; };
+struct EntInfo { int pad; EntSub s; };
+extern EntInfo *g_10566458;
+
+struct CEntLike { char m_pad[0x5bb0]; int m_nCounter; };
+
+struct CHandleLike {
+	unsigned int m_index;
+	void *Get() const
+	{
+		if (m_index == 0xffffffff)
+			return 0;
+		EntSub *s = &g_10566458[m_index & 0x1fff].s;
+		if (s->serial == (m_index >> 13))
+			return s->ent;
+		return 0;
+	}
+};
+
+class COverlay {
+public:
+	char m_pad[0x1c];
+	CHandleLike m_hEntity;
+	void *Resolve()
+	{
+		if (m_hEntity.Get() != 0) {
+			if (((CEntLike *)m_hEntity.Get())->m_nCounter > 0)
+				return 0;
+		}
+		return m_hEntity.Get();
+	}
+};
+
+void *CUnknown10315fe0::sub_10315fe0()
+{
+	return ((COverlay *)this)->Resolve();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103167f0 size=0x72
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 struct Ent {
