@@ -43,6 +43,25 @@ struct CUnknown10258b00_B	// 0xec84 bytes
 	char m_pad3c4[0xec84 - 0x3c4];
 };
 
+struct CUnknown10258b00_Tail	// the six dwords at +0x4fe70
+{
+	int m_n00;
+	int m_n04;
+	int m_n08;
+	int m_n0c;
+	int m_n10;
+	int m_n14;
+
+	void Clear()
+	{
+		m_n00 = 0;
+		m_n04 = 0;
+		m_n08 = 0;
+		m_n0c = 0;
+		m_n10 = 0;
+	}
+};
+
 class CUnknown10258b00
 {
 public:
@@ -57,12 +76,7 @@ public:
 	CUnknown10258b00_A m_A[2];	// 0x2668
 	CUnknown10258b00_B m_B[3];	// 0x238e0
 	char m_pad4fe6c[4];
-	int m_n4fe70;	// 0x4fe70 .. 0x4fe84
-	int m_n4fe74;
-	int m_n4fe78;
-	int m_n4fe7c;
-	int m_n4fe80;
-	int m_n4fe84;
+	CUnknown10258b00_Tail m_tail;	// 0x4fe70
 };
 
 void sub_10258b00(CUnknown10258b00 *p);	// resets the arrays and the fields at +0x24d0.. and +0x4fe70..
