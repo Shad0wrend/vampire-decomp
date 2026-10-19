@@ -1502,6 +1502,7 @@
 0x1000b7df func   _info_node_chang_column info_node_chang_column
 0x1000b839 func   ?sub_101d6d50@S101d6d50@@QAEXXZ S101d6d50::sub_101d6d50
 0x1000b843 func   ?sub_100a8220@CUnknown100a8220@@QAEIXZ CUnknown100a8220::sub_100a8220
+0x1000b852 func   ?sub_100ecee0@CUnknown100ecee0@@QAEPAUCTableRecord44_t@@PAUCTableNpc_t@@PAH11@Z CUnknown100ecee0::sub_100ecee0
 0x1000b87f func   _prop_model_state prop_model_state
 0x1000b898 func   ?sub_10340bd0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10340bd0
 0x1000b89d func   ?vfunc5@CPhysicsSpring@@UAEPAV1@I@Z CPhysicsSpring::vfunc5

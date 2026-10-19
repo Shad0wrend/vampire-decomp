@@ -9023,6 +9023,27 @@ void CUnknown100ecd30::sub_100ecd30(int index, int *pA, int *pB, int *pC, int *p
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ecee0 size=0xa9
+#include "CUnknown100ecee0.h"
+
+CTableRecord44_t *CUnknown100ecee0::sub_100ecee0(CTableNpc_t *pNpc, int *pOutA, int *pOutB, int *pOutC)
+{
+	int idx = pNpc->m_n64d4;
+	if (idx < 0 || idx > m_nCount)
+		idx = m_nDefault;
+	CTableRecord44_t *pRec = &m_pRecords[m_pRecordIndex[1 + idx + pNpc->m_n64e8 * 0x41]];
+	*pOutC = m_pEntries[idx].m_n118;
+	if (pNpc->m_b64c0) {
+		*pOutB = m_pEntries[idx].m_n10c;
+		*pOutA = m_pEntries[idx].m_n108;
+		return pRec;
+	}
+	*pOutB = m_pEntries[idx].m_n114;
+	*pOutA = m_pEntries[idx].m_n110;
+	return pRec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ed4d0 size=0x18
 struct CBlock4k
 {
