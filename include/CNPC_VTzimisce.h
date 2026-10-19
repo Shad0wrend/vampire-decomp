@@ -54,13 +54,11 @@ public:
 	VT_SLOTS100(w0)
 	VT_SLOTS10(w10)
 	VT_SLOTS10(w11)
-	virtual void w120(); virtual void w121(); virtual void w122(); virtual void w123();
-	virtual void w124(); virtual void w125(); virtual void w126();
-	virtual void vfunc618();
-	virtual void w128(); virtual void w129();
+	VT_SLOTS10(w12)
 	virtual void vfunc621(); virtual void w131();
 	virtual void vfunc623();
 	virtual void vfunc624();
+	virtual void vfunc625();
 
 	char m_pad0004[0x2dc];
 	int m_n02e0;
