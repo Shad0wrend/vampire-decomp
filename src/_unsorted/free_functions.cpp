@@ -16773,6 +16773,25 @@ bool sub_101b6680(unsigned short *a, unsigned short *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b68f0 size=0xf3
+#include "CUtlRBTreeFind232.h"
+
+int CUtlRBTreeFind232::sub_101b68f0(const void *search)
+{
+	int current = m_Root;
+	while (current != InvalidIndex())
+	{
+		if (m_LessFunc(search, m_pElements[current].m_Data))
+			current = LinksInl(current).m_Left;
+		else if (m_LessFunc(m_pElements[current].m_Data, search))
+			current = LinksInl(current).m_Right;
+		else
+			break;
+	}
+	return current;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6a30 size=0x8
 void __fastcall sub_101b6a30(int *p) { p[3] = 0; }
 // END FUNCTION
