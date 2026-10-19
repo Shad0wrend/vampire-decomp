@@ -101,6 +101,7 @@ public:
 	void sub_1009b980(int a, char *text, int value);	// "CBaseEntity::DumpInt": scope trace, sprintf("%d") into a global buffer, then sub_1009b640
 	void sub_1009ba60(int a, char *text, int value);	// "CBaseEntity::DumpFloatArrayBase"-like: one dumped dword
 	void sub_1009bc30(int a, char *text, int value);	// "CBaseEntity::DumpPtr": scope trace (entity name), sprintf("0x%08X", value) into a global buffer, then sub_1009b640(a, text, buffer)
+	void sub_1009be00(int a, int b, float x, float y, float z);	// "CBaseEntity::DumpVector": scope trace (entity name), sprintf("(%f %f %f)") into a global buffer, then sub_1009b640(a, b, buffer)
 	void sub_1009c1e0(int a, int b, int *pSerial);	// "CBaseEntity::DumpSerialEntity": scope trace, sprintf("%05d:%0x08X") of the two dwords of pSerial (zeros when null) into a global buffer, then sub_1009b640(a, b, buffer)
 	void sub_1009c390(int a, const char *fmt, const int *array, int count);	// "CBaseEntity::": scope trace, then one sub_1009b980 per dword
 	void sub_1009c4c0(int a, const char *fmt, const char *array, int count);	// "CBaseEntity::DumpCharArray": scope trace, then one sub_1009b7d0 per byte
