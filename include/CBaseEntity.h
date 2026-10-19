@@ -73,6 +73,7 @@ public:
 	int vfunc222(int a);	// "CBaseEntity::GetSoundEmissionOrigin": scope trace, calls slot 192(a), returns a
 	void vfunc226(int a);
 	void vfunc228(int a, int b);
+	void vfunc232(int a);	// "CBaseEntity::UpdatePhysicsShadow": scope trace (entity name), unless slot 94() returns 7 and when the object at +0x36c is set, calls its slot 46 with slot 217(slot 219(0, a))
 	int vfunc233(int *pList, int maxObjects);	// "CBaseEntity::VPhysicsGetObjectList": scope trace (entity name), stores the object at +0x36c in pList[0] and returns 1 when it is set and maxObjects > 0, else 0
 	int vfunc237();	// "CBaseEntity::PhysicsSolidMaskForEntity": scope trace (entity name), a solid mask picked by bit 13 of GetFlags() and the dword at +0xa8
 	void vfunc238(int a, int b, int c, int d);
