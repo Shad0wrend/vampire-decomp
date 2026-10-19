@@ -5973,6 +5973,25 @@ void CBaseEntity::sub_100a8d30(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8fc0 size=0x83
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_100a8fc0(char value)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::SetFakeSilence";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    *((char *)this + 0x104) = value;
+    sub_1009d1e0();
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9080 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
