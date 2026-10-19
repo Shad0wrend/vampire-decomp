@@ -26131,6 +26131,58 @@ SVec3 *CUnknown102d8a90::sub_102d8a90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d9040 size=0xcf
+#include "CUnknown102d9040.h"
+
+struct SGlobalVars
+{
+    char m_pad[0xc];
+    float m_curtime;
+};
+
+struct SVec3
+{
+    float x, y, z;
+    SVec3 &operator=(const SVec3 &o)
+    {
+        x = o.x;
+        y = o.y;
+        z = o.z;
+        return *this;
+    }
+};
+
+extern SGlobalVars *g_1070b228;
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+// TARGET: CUnknown102d9040::sub_102d9040
+void CUnknown102d9040::sub_102d9040(int a, CBaseEntity *pEnt, const float *vec, int arg4, float duration, float amount)
+{
+    int elem = m_nSize;
+    if (m_nSize + 1 > m_nAllocationCount)
+        sub_102d9170(m_nSize - m_nAllocationCount + 1);
+    m_nSize += 1;
+    m_pElements = (CUnknown102d9040Entry *)m_pMemory;
+    int numToMove = m_nSize - elem - 1;
+    if (numToMove > 0)
+        memmove((CUnknown102d9040Entry *)m_pMemory + (elem + 1), (CUnknown102d9040Entry *)m_pMemory + elem, numToMove * sizeof(CUnknown102d9040Entry));
+    CUnknown102d9150 *p = (CUnknown102d9150 *)((CUnknown102d9040Entry *)m_pMemory + elem);
+    if (p)
+        p->sub_102d9150();
+    CUnknown102d9040Entry *e = (CUnknown102d9040Entry *)m_pMemory + elem;
+    e->m_unk0 = a;
+    if (pEnt)
+        e->m_unk4 = *pEnt->vfunc1();
+    else
+        e->m_unk4 = -1;
+    *(SVec3 *)e->m_vec = *(const SVec3 *)vec;
+    e->m_unk20 = arg4;
+    e->m_flStart = g_1070b228->m_curtime;
+    e->m_flEnd = g_1070b228->m_curtime + duration;
+    e->m_flRate = amount / duration;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d9150 size=0xa
 CUnknown102d9150 *CUnknown102d9150::sub_102d9150()
 {
