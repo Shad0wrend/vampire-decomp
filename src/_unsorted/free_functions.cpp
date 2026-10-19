@@ -1181,6 +1181,55 @@ void CBaseEntity::sub_1003cc80(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003daa0 size=0xa6
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+// CBaseEntity viewed as a plain list of slots up to 175.
+struct SSlot175Entity
+{
+	PV100(a0)
+	PV10(b0)
+	virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13(); virtual void b14(); virtual void b15();
+	virtual char Slot116();
+	PV10(c0) PV10(c1) PV10(c2) PV10(c3) PV10(c4)
+	virtual void c50(); virtual void c51(); virtual void c52(); virtual void c53();
+	virtual void c54(); virtual void c55(); virtual void c56(); virtual void c57();
+	virtual void Slot175(SSlot175Entity *pOther);
+};
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_1003daa0(CBaseEntity *pOther)
+{
+	const char *name;
+	if (this)
+	{
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	}
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::PhysicsTouch";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (pOther)
+	{
+		SSlot175Entity *pThis = (SSlot175Entity *)this;
+		SSlot175Entity *pTouch = (SSlot175Entity *)pOther;
+		if (!pThis->Slot116() && !pTouch->Slot116())
+			pThis->Slot175(pTouch);
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003e250 size=0x6d
 struct TraceEnt { const char *a; void *b; void *c; };
 struct trace21 { int d[21]; };
