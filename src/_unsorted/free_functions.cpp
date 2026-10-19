@@ -330,6 +330,77 @@ void CUtlMemory20::sub_1002ccc0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002d070 size=0xfb
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct SImpactRec {
+    int m_a;
+    int m_b;
+    int m_c;
+    int m_d;
+    float m_f;
+    unsigned short m_key;
+    unsigned short m_s;
+};
+
+struct S10032fb0 {
+    SImpactRec *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    int m_Size;
+    SImpactRec *m_pElements;
+    void sub_10032fb0(int num);
+
+    SImpactRec &Element(int i) { return m_pMemory[i]; }
+    void GrowVector(int num)
+    {
+        if (m_Size + num > m_nAllocationCount)
+            sub_10032fb0(m_Size + num - m_nAllocationCount);
+        m_Size += num;
+        m_pElements = m_pMemory;
+    }
+    void ShiftElementsRight(int elem, int num)
+    {
+        int numToMove = m_Size - elem - num;
+        if (numToMove > 0)
+            memmove(&Element(elem + num), &Element(elem), numToMove * sizeof(SImpactRec));
+    }
+    int InsertBefore(int elem)
+    {
+        GrowVector(1);
+        ShiftElementsRight(elem, 1);
+        return elem;
+    }
+};
+
+void sub_1002d070(S10032fb0 *pVec, int a, int b, int c, int d, unsigned int key, unsigned short s, float f)
+{
+    for (int i = pVec->m_Size - 1; i >= 0; i--) {
+        SImpactRec &rec = pVec->Element(i);
+        if (key == rec.m_key) {
+            if (f > rec.m_f) {
+                rec.m_d = d;
+                rec.m_a = a;
+                rec.m_b = b;
+                rec.m_c = c;
+                rec.m_s = s;
+            }
+            rec.m_f += f;
+            return;
+        }
+    }
+    int idx = pVec->InsertBefore(pVec->m_Size);
+    SImpactRec &rec = pVec->Element(idx);
+    rec.m_a = a;
+    rec.m_b = b;
+    rec.m_c = c;
+    rec.m_d = d;
+    rec.m_key = (unsigned short)key;
+    rec.m_s = s;
+    rec.m_f = f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002dfe0 size=0x85
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
