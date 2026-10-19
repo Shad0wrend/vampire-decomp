@@ -366,6 +366,7 @@
 0x10003b57 func   ?sub_10376b70@CNPC_VFrenzyShadow@@QAEDH@Z CNPC_VFrenzyShadow::sub_10376b70
 0x10003b6b func   ?sub_101fd940@CVStatActionList_t@@QAEXPAXHH@Z CVStatActionList_t::sub_101fd940
 0x10003b84 func   ?sub_10223030@@YAPAHXZ sub_10223030
+0x10003b89 func   ?vfunc15@CGameRules@@UAEXXZ CGameRules::vfunc15
 0x10003b8e func   ?sub_101bdeb0@CMem4d_t@@QAEXH@Z CMem4d_t::sub_101bdeb0
 0x10003ba2 func   ?sub_103661d0@@YIXPADHH@Z sub_103661d0
 0x10003bb6 func   ?sub_10133450@@YAPAHXZ sub_10133450
