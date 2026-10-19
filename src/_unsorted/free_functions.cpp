@@ -17666,6 +17666,16 @@ void UtlMem9::sub_102cef30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cefc0 size=0xbd
+#include "CUtlRBTree12.h"
+
+bool CUtlRBTree12::sub_102cefc0(unsigned short i) const
+{
+	unsigned short parent = Links(i).m_Parent;
+	return Links(parent).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d0080 size=0xa
 void __fastcall sub_102d0080(int *self, int, int value)
 {
