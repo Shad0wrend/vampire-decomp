@@ -23265,6 +23265,28 @@ bool CUnknown10349590::sub_10349590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10349650 size=0x8a
+#include "CUnknown10349590.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool CUnknown10349590::sub_10349650()
+{
+	g_109f3620[*g_109f3680].a = "melee_dice_roll_result::DamageWentThrough";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if ((float)(m_nTotal - m_nA - m_nB) > 0.0f) {
+		(*g_109f3680)--;
+		return true;
+	}
+	(*g_109f3680)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349a00 size=0x8
 void __fastcall sub_10349a00(int *p) { p[3] = 0; }
 // END FUNCTION
