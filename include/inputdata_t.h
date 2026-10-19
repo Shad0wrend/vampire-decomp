@@ -8,12 +8,14 @@ struct variant_t
 		int iValue;
 		const char *iszValue;
 	};
-	char m_pad04[12];
+	char m_pad04[8];
+	unsigned int eVal;	// 0x0c: entity handle
 	int fieldType;	// 1 == FIELD_FLOAT, 2 == FIELD_STRING, 4 == FIELD_INTEGER
 
 	float Float() const;	// the float value, or the file-scope zero when the variant is not a float
 	int Int() const { return iValue; }	// the raw integer value
 	const char *sub_10008805();	// the value converted to a string (used when it is not a string)
+	void sub_100d04b0(void *pOut);	// "variant_t::Convert"-like getter: stores the value into *pOut according to fieldType (nothing for unsupported types)
 };
 
 struct inputdata_t
