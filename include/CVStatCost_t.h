@@ -16,4 +16,5 @@ public:
 	CVStatSubCost_t m_second;
 
 	bool sub_101fc160();	// "CVStatCost_t::IsNull"
+	void sub_101fc0d0();	// "CVStatCost_t::Null": scope trace, nulls both sub costs
 };
