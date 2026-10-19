@@ -10,4 +10,6 @@ public:
 	int vfunc440(int schedule);
 	// Slot 390 implementation (damage handling taking the damage info), called directly by the Bach override.
 	int sub_10001b45(void *info);
+	// Slot 104 (Precache) override, called directly by the NPC subclasses' Precache.
+	virtual void vfunc104();
 };
