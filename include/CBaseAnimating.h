@@ -19,6 +19,7 @@ public:
 	void sub_100977f0(int bone);	// "CBaseAnimating::TurnOnPhysicsChain": scope trace, clears bit (1 << bone) in the dword at +0x72c
 	void sub_100978c0(int bone);	// "CBaseAnimating::TurnOffPhysicsChain": scope trace, sets bit (1 << bone) in the dword at +0x72c
 	void sub_100904a0();	// "CBaseAnimating::ClearAllClientRagdollData"-like: scope trace (entity name), resets the four 3-int arrays at +0x574 (-2), +0x584 and +0x594 (0), and +0x168 from 0x17 to 0
+	bool sub_1008be20(CBaseEntity *pOther);	// "CBaseAnimating::IsIgnoreCollisionEntity": scope trace (entity name), true when the entity behind the handle at +0x55c is pOther
 
 	int sub_10092550(int a);	// "CBaseAnimating::LookupBone"
 	void sub_100926e0(int bone, int b, int c);	// "CBaseAnimating::GetBonePosition0"
