@@ -13,7 +13,7 @@ public:
 	int *m_pElements;
 
 	int sub_1003c0e0(int elem, const int *src);	// "CUtlVector::InsertBefore": grows by one, shifts the tail up, stores *src
-	int sub_10217080(int elem, const int *src);	// same as sub_1003c0e0 (another instance)
+	int sub_102c6920(int elem, const int *src);	// same as sub_1003c0e0 (another instance)
 	void sub_10071ae0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements
 	void sub_10084fb0(int num);	// same as sub_10071ae0 (another instance)
 	void sub_1007f400(int num);	// same as sub_10071ae0 (another instance)
