@@ -58,7 +58,7 @@ public:
 	virtual void w124(); virtual void w125(); virtual void w126();
 	virtual void vfunc618();
 	virtual void w128(); virtual void w129();
-	virtual void vfunc621(); virtual void w131();
+	virtual void vfunc621(); virtual void vfunc622();
 	virtual void vfunc623();
 	virtual void vfunc624();
 	virtual void vfunc625();
