@@ -6,6 +6,11 @@
 class CRestore;
 struct inputdata_t;
 
+struct CBaseEntityColor32	// four bytes passed by value to the Dump helpers
+{
+	unsigned char r, g, b, a;
+};
+
 class CBaseEntity
 {
 public:
@@ -106,6 +111,7 @@ public:
 	void sub_1009bc30(int a, char *text, int value);	// "CBaseEntity::DumpPtr": scope trace (entity name), sprintf("0x%08X", value) into a global buffer, then sub_1009b640(a, text, buffer)
 	void sub_1009bd10(int a, int b, float x, float y, float z);	// "CBaseEntity::DumpQangle": same as DumpVector with the scope name "CBaseEntity::DumpQangle"
 	void sub_1009be00(int a, int b, float x, float y, float z);	// "CBaseEntity::DumpVector": scope trace (entity name), sprintf("(%f %f %f)") into a global buffer, then sub_1009b640(a, b, buffer)
+	void sub_1009bef0(int a, int b, CBaseEntityColor32 color);	// "CBaseEntity::DumpColor32": scope trace (entity name), sprintf("[%02X %02X %02X : %02X]") of the four color bytes into a global buffer, then sub_1009b640(a, b, buffer)
 	void sub_1009c1e0(int a, int b, int *pSerial);	// "CBaseEntity::DumpSerialEntity": scope trace, sprintf("%05d:%0x08X") of the two dwords of pSerial (zeros when null) into a global buffer, then sub_1009b640(a, b, buffer)
 	void sub_1009c390(int a, const char *fmt, const int *array, int count);	// "CBaseEntity::": scope trace, then one sub_1009b980 per dword
 	void sub_1009c4c0(int a, const char *fmt, const char *array, int count);	// "CBaseEntity::DumpCharArray": scope trace, then one sub_1009b7d0 per byte
@@ -135,7 +141,7 @@ public:
 	int sub_100aa080(void *pSave, int block);	// "CBaseEntity::SaveDataDescBlock": scope trace, then returns slot 2 of pSave(this, block)
 	int sub_100aa5c0(CRestore *pRestore, int map);	// "CBaseEntity::RestoreDataDescBlock": scope trace, then returns pRestore->vfunc2(this, map)
 	void sub_100aaa40(int group);	// "CBaseEntity::SetCollisionGroup": scope trace (entity name), on change stores group at +0x368 and calls slot 25 of the object at +0x36c
-	void sub_100aaf30();	// "CBaseEntity::PostSpawn": scope trace (entity name), then slot 11(name or "")), slot 13(classname or "\"), and slot 77 when the byte at +0xe0 is set
+	void sub_100aaf30();	// "CBaseEntity::PostSpawn": scope trace (entity name), then slot 11(name or ""), slot 13(classname or ""), and slot 77 when the byte at +0xe0 is set
 	void sub_100abbf0(int a, int b);
 	void sub_100ac920(inputdata_t *pInput);	// "CBaseEntity::InputColor": scope trace (entity name), stores the three low bytes of the input's color32 at +0x1a0..0x1a2
 	void sub_100ac9f0(inputdata_t *pInput);	// "CBaseEntity::InputUse": scope trace, then slot 173 (activator, caller, 3, 0)
