@@ -18263,6 +18263,35 @@ void CVStatActionList_t::sub_101fd940(void *pEnt, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fda10 size=0xa9
+#include "CVStatActionList_t.h"
+#include "CVStatAction_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+
+void CVStatActionList_t::sub_101fda10()
+{
+    char buf[128];
+    int i = 0;
+    g_109f3620[*g_109f3680].a = "CVStatActionList_t::Debug_Display";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (m_nActions > 0) {
+        do {
+            sprintf(buf, "\t\t\t( Action %d )\t%s\n", i, m_pActions[i]->sub_1000285b());
+            DevMsg(1, buf);
+            i++;
+        } while (i < m_nActions);
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fdf40 size=0x69
 struct TScope {
 	const char *name;
