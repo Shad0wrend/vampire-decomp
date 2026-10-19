@@ -73,6 +73,7 @@ public:
 	bool vfunc158();
 	bool vfunc161(const char *name);	// "CBaseEntity::HasLinkedDoor": scope trace (entity name), true when the string at +0x20c is set and equals name (case-insensitive)
 	void vfunc168();
+	void vfunc174(CBaseEntity *pOther);	// "CBaseEntity::StartTouch": scope trace (entity name), when the entity behind the handle at +0x254 (the move parent) resolves, forwards pOther to that entity's slot 174
 	void vfunc180();
 	void vfunc194();
 	void vfunc195();
