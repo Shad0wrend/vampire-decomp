@@ -19,3 +19,29 @@ bool CNPC_VVampireBoss::vfunc525(int unused)
 	return m_bFlag6498 ? true : false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c6000 size=0x72
+#include "CNPC_VVampireBoss.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+struct CGlobalVarsStub {
+	char pad[0xc];
+	float curtime;
+};
+extern CGlobalVarsStub *g_1070b228;
+extern float g_104ce8b8;
+
+void CNPC_VVampireBoss::vfunc431()
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VVampireBoss::NPCThink";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_10002a7c();
+	m_flNextThink = g_104ce8b8 + g_1070b228->curtime;
+	(*g_109f3680)--;
+}
+// END FUNCTION
