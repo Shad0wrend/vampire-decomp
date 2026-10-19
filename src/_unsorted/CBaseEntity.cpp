@@ -738,6 +738,30 @@ void CBaseEntity::sub_100b12e0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1420 size=0xb1
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::vfunc208(CBaseEntity *pEnt)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::SetGroundEntity";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (pEnt) {
+        *(unsigned int *)((char *)this + 0x384) = *pEnt->vfunc1();
+        sub_100b3580(1);
+    } else {
+        *(unsigned int *)((char *)this + 0x384) = 0xffffffff;
+        sub_100b3640(1);
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b15f0 size=0x7e
 #include "CBaseEntity.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
