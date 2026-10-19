@@ -13,4 +13,5 @@ public:
 	bool sub_101fcf50();	// "CVStatAction_t::AlwaysTriggers"
 	void sub_101fd110(int a, int b, int c, int d);	// "CVStatAction_t::Apply"
 	void sub_101fd1b0(int a, int b, int c);	// "CVStatAction_t::Remove"
+	const char *sub_1000285b();	// stub of 0x101fd250: returns the action's description string
 };
