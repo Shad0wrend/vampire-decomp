@@ -24026,6 +24026,32 @@ char CBaseCombatCharacter::sub_10339cd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033b7c0 size=0x94
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool CBaseCombatCharacter::sub_1033b7c0()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::InPrayer";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int state = *(int *)((char *)this + 0xfec);
+	bool result;
+	if (state >= 0x130 && state <= 0x133)
+		result = true;
+	else
+		result = false;
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033c6b0 size=0x86
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
