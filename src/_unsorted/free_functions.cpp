@@ -743,6 +743,27 @@ void CMem8b_t::sub_10033160(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100353c0 size=0x93
+#include "CUnknown100353c0.h"
+
+CUnknown100353c0 *CUnknown100353c0::sub_100353c0(const CUnknown100353c0 *o)
+{
+	m_w[0] = o->m_w[0];
+	m_w[1] = o->m_w[1];
+	m_w[2] = o->m_w[2];
+	m_w[3] = o->m_w[3];
+	m_w[4] = o->m_w[4];
+	m_w[5] = o->m_w[5];
+	m_inner = o->m_inner;
+	m_x = o->m_x;
+	m_y = o->m_y;
+	m_z = o->m_z;
+	m_p = o->m_p;
+	m_q = o->m_q;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c0e0 size=0xaa
 #include "CUtlVector4.h"
 
