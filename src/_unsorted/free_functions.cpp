@@ -13521,6 +13521,35 @@ TVec sub_101cfd80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0570 size=0x86
+extern "C" int __cdecl atoi(const char *);
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+
+void sub_101d0570(int *pVector, int count, const char *pString)
+{
+	char *pstr, *pfront, tempString[128];
+	int j;
+
+	Q_strncpy(tempString, pString, sizeof(tempString));
+	pstr = pfront = tempString;
+
+	for (j = 0; j < count; j++) {
+		pVector[j] = atoi(pfront);
+
+		while (*pstr && *pstr != ' ')
+			pstr++;
+		if (!*pstr)
+			break;
+
+		pstr++;
+		pfront = pstr;
+	}
+
+	for (j++; j < count; j++)
+		pVector[j] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d3430 size=0xa7
 #include "CTraceEntList.h"
 
