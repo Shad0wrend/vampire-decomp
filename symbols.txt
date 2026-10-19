@@ -564,6 +564,7 @@
 0x10005619 func   ?vfunc5@CNPC_VHumanCombatPatrol@@QAEPAV1@I@Z CNPC_VHumanCombatPatrol::vfunc5
 0x10005623 func   ?vfunc2@CPhysicsAnimlinkEntityDeleteProxy@@QAEPAV1@I@Z CPhysicsAnimlinkEntityDeleteProxy::vfunc2
 0x1000562d func   ?vfunc5@CEnvFireSource@@QAEPAV1@I@Z CEnvFireSource::vfunc5
+0x1000568c func   ?sub_102e0090@CUnknown102e0090@@QAEHPAX@Z CUnknown102e0090::sub_102e0090
 0x100056cd func   ?vfunc5@CWeaponIArmor_Lt_Leather@@QAEPAV1@I@Z CWeaponIArmor_Lt_Leather::vfunc5
 0x100056eb func   ?sub_102d9170@CUnknown102d9170@@QAEXH@Z CUnknown102d9170::sub_102d9170
 0x100056f5 func   ?sub_10073b20@CUnknown10073b20@@QAEXH@Z CUnknown10073b20::sub_10073b20

@@ -20349,6 +20349,44 @@ void __fastcall sub_102deea0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0090 size=0x85
+#include "CUnknown102e0090.h"
+
+struct EntInfo { void *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *fmt, ...);
+
+static inline void *LookupHandle(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		EntInfo *e = &g_10566458->m_entries[h & 0x1fff];
+		if (e->m_serial == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+
+int CUnknown102e0090::sub_102e0090(void *enemy)
+{
+	int value = 0;
+	bool found = false;
+	for (CUnknown102e0090Node *n = m_pHead; n; n = n->m_pNext) {
+		void *e = LookupHandle(n->m_hEnemy);
+		if (e && enemy == e)
+			return n->m_value;
+		if (n->m_flag == 1) {
+			value = n->m_value;
+			found = true;
+		}
+	}
+	if (found)
+		return value;
+	DevWarning(2, "Asking LastNearestNode for enemy that's not in my memory!!\n");
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0900 size=0x64
 extern int vt_1049d79c[];
 extern int vt_1049d854[];
