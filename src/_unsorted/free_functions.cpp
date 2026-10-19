@@ -15791,6 +15791,15 @@ bool sub_1024a2b0(unsigned short *a, unsigned short *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024a980 size=0xb9
+#include "CUtlRBTree16.h"
+
+bool CUtlRBTree16::sub_1024a980(unsigned short i) const
+{
+	return Links(Parent(i)).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024afe0 size=0xb
 void sub_100139d5();
 extern int g_1088ae3c;
