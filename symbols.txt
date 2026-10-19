@@ -1520,6 +1520,7 @@
 0x1000ce78 func   _trigger_impact trigger_impact
 0x1000ce82 func   ?sub_10327960@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10327960
 0x1000ce87 func   ?vfunc5@CWeaponMelee_Knife@@QAEPAV1@I@Z CWeaponMelee_Knife::vfunc5
+0x1000ce8c func   ?sub_102c6920@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_102c6920
 0x1000ce91 func   ?sub_101318a0@@YGXH@Z sub_101318a0
 0x1000cec8 func   _npc_VCamera npc_VCamera
 0x1000ceff func   _npc_VProneDialog npc_VProneDialog
