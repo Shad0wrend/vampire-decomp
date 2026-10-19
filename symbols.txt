@@ -2646,6 +2646,7 @@
 0x1001320a func   ?sub_1009d760@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d760
 0x10013228 func   ?sub_10043630@@YIXPAUMem8@@HH@Z sub_10043630
 0x10013232 func   ?vfunc5@CPhysExplosion@@UAEPAV1@I@Z CPhysExplosion::vfunc5
+0x10013246 func   ?sub_1009bd10@CBaseEntity@@QAEXHHMMM@Z CBaseEntity::sub_1009bd10
 0x100132a0 func   ?vfunc238@CBaseEntity@@QAEXHHHH@Z CBaseEntity::vfunc238
 0x100132f0 func   ?sub_10056fa0@CBaseFire@@QAEXHH@Z CBaseFire::sub_10056fa0
 0x10013327 func   ?vfunc5@CResearchBook_LG_COMP@@QAEPAV1@I@Z CResearchBook_LG_COMP::vfunc5

@@ -6239,6 +6239,40 @@ void CBaseEntity::sub_1009bc30(int a, char *text, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009bd10 size=0xb4
+#include "CBaseEntity.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern char g_106cec38[];
+int sub_10431c2f(char *, const char *, ...);
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+
+void CBaseEntity::sub_1009bd10(int a, int b, float x, float y, float z)
+{
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseEntity::DumpQangle", ent, g_106b8540);
+    sub_10431c2f(g_106cec38, "(%f %f %f)", (double)x, (double)y, (double)z);
+    sub_1009b640(a, b, (int)g_106cec38);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009be00 size=0xb4
 #include "CBaseEntity.h"
 struct TraceEntry { const char *a, *b, *c; };
