@@ -23059,6 +23059,30 @@ int __fastcall sub_10341120(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10341aa0 size=0x87
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool CBaseCombatCharacter::sub_10341aa0()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::IsUnconscious";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if ((*((unsigned char *)this + 0xfe4) & 1) == 0) {
+		(*g_109f3680)--;
+		return false;
+	}
+	(*g_109f3680)--;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349a00 size=0x8
 void __fastcall sub_10349a00(int *p) { p[3] = 0; }
 // END FUNCTION
