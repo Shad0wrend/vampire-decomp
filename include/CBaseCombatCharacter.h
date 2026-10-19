@@ -76,6 +76,7 @@ public:
 	bool vfunc295(int a);
 	int vfunc307();	// "CBaseCombatCharacter::HasUsableMeleeWeapon": scope trace (entity name), then sub_10336a50
 	void vfunc333(int a);
+	float vfunc344();	// "CBaseCombatCharacter::GetShakyHandsIntensity": scope trace, the float at +0x1050 when the dword at +0x1044 is >= 0, else a constant
 	void vfunc335();
 	void vfunc336();
 	int vfunc337();
