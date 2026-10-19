@@ -12084,6 +12084,41 @@ CUnknown101db5f0* CUnknown101db5f0::sub_101db5f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db6b0 size=0xeb
+#include "CStatDefault60List.h"
+
+StatDefault60 *CStatDefault60List::sub_101db6b0()
+{
+	if (m_allocCount == m_count) {
+		m_allocCount++;
+		if (m_pItems) {
+			StatDefault60 **p = new StatDefault60 *[m_allocCount];
+			int i = 0;
+			if (m_count > 0) {
+				do {
+					p[i] = m_pItems[i];
+					i++;
+				} while (i < m_count);
+			}
+			for (; i < m_allocCount; i++)
+				p[i] = 0;
+			delete m_pItems;
+			m_pItems = p;
+		} else {
+			m_pItems = new StatDefault60 *[m_allocCount];
+			for (int i = 0; i < m_allocCount; i++)
+				m_pItems[i] = 0;
+		}
+		m_count++;
+	} else {
+		m_count++;
+	}
+	if (m_pItems[m_count - 1] == 0)
+		m_pItems[m_count - 1] = new StatDefault60(m_count - 1);
+	return m_pItems[m_count - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db7e0 size=0x66
 struct Elem101db7e0 { void sub_100123f0(); };
 struct S101db7e0 {
