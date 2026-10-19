@@ -2171,6 +2171,7 @@
 0x1000f411 func   ?sub_102dd8b0@@YAPAUPatrolPlace@@XZ sub_102dd8b0
 0x1000f416 func   ?sub_100b0280@@YAXXZ sub_100b0280
 0x1000f420 func   ?vfunc143@CBaseEntity@@QAEHMH@Z CBaseEntity::vfunc143
+0x1000f42f func   ?sub_100309a0@CCollisionEvent@@QAEMH@Z CCollisionEvent::sub_100309a0
 0x1000f45c func   ?vfunc5@CCameraAnimated@@QAEPAV1@E@Z CCameraAnimated::vfunc5
 0x1000f466 func   ?sub_1030ca70@S1030ca70@@QAEHPBD@Z S1030ca70::sub_1030ca70
 0x1000f47f func   ?sub_100dc300@Rec64@@QAEXH@Z Rec64::sub_100dc300

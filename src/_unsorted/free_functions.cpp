@@ -496,6 +496,49 @@ CFrictionEntry_t *CCollisionEvent::sub_10030720(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100309a0 size=0xf3
+#include "UtlVec8.h"
+#include "CCollisionEvent.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+struct Globals { char pad[0xc]; float curtime; };
+extern Globals *g_1070b228;
+extern float g_10449140;
+struct CMem8b_t { void *p; int alloc; int grow; void sub_10033160(int num); };
+struct CEImpl { char pad[0x128]; UtlVec8 v; };
+
+float CCollisionEvent::sub_100309a0(int key)
+{
+    ScopeTrace trace("CCollisionEvent::DeltaTimeSinceLastFluid", g_106b8540, g_106b8540);
+    CEImpl *p = (CEImpl *)this;
+    for (int i = p->v.m_Size - 1; i >= 0; --i) {
+        if (((UtlVec8Elem *)p->v.m_pMemory)[i].a == key)
+            return g_1070b228->curtime - ((float *)p->v.m_pMemory)[i * 2 + 1];
+    }
+    UtlVec8 *v = &p->v;
+    int n = v->m_Size;
+    if (n + 1 > v->m_allocationCount)
+        ((CMem8b_t *)v)->sub_10033160(n - v->m_allocationCount + 1);
+    v->m_Size++;
+    v->m_pElements = (UtlVec8Elem *)v->m_pMemory;
+    v->sub_10032f00(n, 1);
+    ((UtlVec8Elem *)v->m_pMemory)[n].a = key;
+    ((float *)v->m_pMemory)[n * 2 + 1] = g_1070b228->curtime;
+    return g_10449140;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031270 size=0x92
 #include "CCollisionEvent.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
