@@ -1,6 +1,30 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a12a0 size=0x8b
+#include "CRestore.h"
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+
+inline void CRestoreVec::EnsureCapacity(int num)
+{
+	if (m_allocationCount < num && m_growSize != -1) {
+		m_allocationCount = num;
+		if (m_pMemory)
+			m_pMemory = (int *)g_109f3638(m_pMemory, num * 4);
+		else
+			m_pMemory = (int *)g_109f3634(num * 4);
+	}
+	m_pElements = m_pMemory;
+}
+
+// TARGET: CRestore::CRestore
+CRestore::CRestore(void *pData) : m_pData(pData), m_pData2(pData ? (char *)pData + 0x18 : 0), m_field20(0), m_bField24(true)
+{
+	m_vec.EnsureCapacity(32);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1400 size=0x68
 extern "C" __declspec(dllimport) void Plat_Free(void *);
 extern int g_104626bc[];
