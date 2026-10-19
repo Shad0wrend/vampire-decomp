@@ -20,7 +20,6 @@ public:
 	int sub_102dcd30(int elem, const int *src);	// same as sub_1003c0e0 (another instance)
 	int sub_102c65d0(const int *src);	// "CUtlVector::AddToTail" (InsertBefore at the current size, inlined): returns the new index
 	void sub_10265310(int value);	// "CUtlVector::AddToTail": grows by one and stores value at the end
-	int sub_102ce7f0(int elem, int num, const int *pToCopy);	// "CUtlVector::InsertMultipleBefore" of -1 handles: inserts num elements at elem, filled with -1, then copies pToCopy over them when given
 	void sub_10071ae0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements
 	void sub_10084fb0(int num);	// same as sub_10071ae0 (another instance)
 	void sub_1007f400(int num);	// same as sub_10071ae0 (another instance)
@@ -31,4 +30,5 @@ public:
 	void sub_102d4210(int num);	// same as sub_10071ae0 (another instance)
 	void sub_102f91f0(int num);	// same as sub_10071ae0 (another instance)
 	int sub_101842a0(const unsigned int *pHandle);	// "CUtlVector<EHANDLE>::Find": index of the first element resolving to the same entity as *pHandle, or -1
+	int sub_103109a0(int elem, int num, const int *pToInsert);	// "CUtlVector<EHANDLE>::InsertMultipleBefore": grows by num, shifts the tail, fills the new slots with -1 (invalid handle) and then copies pToInsert over them; returns elem
 };
