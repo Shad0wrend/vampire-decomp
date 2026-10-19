@@ -506,6 +506,51 @@ int __fastcall sub_100aacd0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aad70 size=0xa1
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+// The object at +0x36c viewed as a plain list of slots up to 25.
+struct SSlot25Object
+{
+	PV10(a0) PV10(a1)
+	virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23(); virtual void a24();
+	virtual void Slot25();
+};
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::vfunc93(int moveType, int moveCollide)
+{
+	const char *name;
+	if (this)
+	{
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	}
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::SetMoveType";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	int *pType = (int *)((char *)this + 0x35c);
+	if (*pType != moveType)
+	{
+		*pType = moveType;
+		pType[1] = moveCollide;
+		SSlot25Object *pObj = *(SSlot25Object **)((char *)this + 0x36c);
+		if (pObj)
+			pObj->Slot25();
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100acf90 size=0x7b
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
