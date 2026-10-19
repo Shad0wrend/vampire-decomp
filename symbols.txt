@@ -1339,6 +1339,7 @@
 0x1000a178 func   ?sub_101e0040@CUnknown101e0040@@QAEPAV1@XZ CUnknown101e0040::sub_101e0040
 0x1000a19b func   _ai_goal_standoff ai_goal_standoff
 0x1000a1a5 func   _prop_dynamic prop_dynamic
+0x1000a1af func   ?vfunc5@CTESprite@@UAEXXZ CTESprite::vfunc5
 0x1000a1d7 func   ?sub_100740f0@CUnknown100740f0@@QAEXD@Z CUnknown100740f0::sub_100740f0
 0x1000a1e6 func   ?sub_102a97a0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97a0
 0x1000a20e func   ?vfunc243@CPhysBox@@QAEXH@Z CPhysBox::vfunc243
