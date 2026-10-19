@@ -30,7 +30,7 @@ public:
 	virtual void vfunc59(); virtual void vfunc60(); virtual void vfunc61(); virtual void vfunc62(); virtual void vfunc63();
 	virtual void vfunc64(); virtual void vfunc65(); virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68();
 	virtual void vfunc69(); virtual void vfunc70(); virtual void vfunc71(); virtual void vfunc72(); virtual void vfunc73();
-	virtual void vfunc74(); virtual void vfunc75(int a, int b); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
+	virtual void vfunc74(); virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
 	virtual void vfunc79(); virtual void vfunc80(); virtual void vfunc81(); virtual void vfunc82(); virtual void vfunc83();
 	virtual void vfunc84(int flags); virtual void vfunc85(); virtual void vfunc86(); virtual void vfunc87(); virtual void vfunc88();
 	virtual void vfunc89(); virtual void vfunc90(); virtual void vfunc91(); virtual void vfunc92(); virtual void vfunc93();
@@ -77,6 +77,7 @@ public:
 	void sub_1009c390(int a, const char *fmt, const int *array, int count);	// "CBaseEntity::": scope trace, then one sub_1009b980 per dword
 	void sub_1009c4c0(int a, const char *fmt, const char *array, int count);	// "CBaseEntity::DumpCharArray": scope trace, then one sub_1009b7d0 per byte
 	void sub_1009c5f0(int a, const char *fmt, const int *array, int count);	// "CBaseEntity::DumpFloatArray": scope trace, then one sub_1009ba60 per dword
+	void sub_1009d1e0();	// "CBaseEntity::ForceTransmit": scope trace, stores gpGlobals->curtime + 1.0f at +0x90
 	void sub_1009ee80(CBaseEntity *pEnt);	// "CBaseEntity::SetAimEnt": stores pEnt's handle at +0x37c (-1 for null)
 	const char *sub_1009f200();	// "CBaseEntity::GetClassname": the string at +0x11c, or "" when it is null
 	void sub_1009fa60();
@@ -108,7 +109,9 @@ public:
 	void sub_100fbbb0(float time);	// "CBaseEntity::SetNextThink": stores time + gpGlobals->curtime at +0x17c (0 clears it)
 	void sub_100fbc20();	// calls slot 242, then sub_100fbbb0(2.0f)
 
-	char m_pad0004[0x110];
+	char m_pad0004[0x8c];
+	float m_flForceTransmitTime;	// 0x0090
+	char m_pad0094[0x80];
 	void (CBaseEntity::*m_pfn0114)();
 	void (CBaseEntity::*m_pfnThink)();
 	char m_pad011c[0xe4];
