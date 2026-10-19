@@ -7141,6 +7141,34 @@ int sub_100c6590(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c81b0 size=0x8e
+#include "CUnknown100c81b0.h"
+
+void CUnknown100c81b0::sub_100c81b0(const CBitVecWords *pSource, int count, const CBoneRecord *pRecords, const CStudioBoneCount *pStudio)
+{
+	if (!pStudio || !pRecords) {
+		m_nBits = 0;
+		return;
+	}
+	m_nBits = pStudio->m_nBits;
+	int words = (m_nBits + 31) >> 5;
+	if (words != 0) {
+		unsigned int *p = m_words + words;
+		do {
+			p = p - 1;
+			words = words - 1;
+			*p = 0;
+		} while (words != 0);
+	}
+	for (; count != 0; count--, pRecords++) {
+		if (pSource->m_words[pRecords->m_nSource >> 5] & (1 << (pRecords->m_nSource & 31))) {
+			if (pRecords->m_nIndex >= 0)
+				m_words[pRecords->m_nIndex >> 5] |= 1 << (pRecords->m_nIndex & 31);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c8270 size=0xaa
 #include "CUtlVector4.h"
 
