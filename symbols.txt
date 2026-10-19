@@ -292,6 +292,7 @@
 0x100031b1 func   ?vfunc2@CTEDust@@QAEPAV1@I@Z CTEDust::vfunc2
 0x100031b6 func   ?sub_1033ca60@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033ca60
 0x100031ca func   _trigger_hurt trigger_hurt
+0x100031de func   ?sub_100a7d00@CBaseEntity@@QAEXHHH@Z CBaseEntity::sub_100a7d00
 0x100031f2 func   _func_dustcloud func_dustcloud
 0x100031fc func   ?vfunc5@CWeaponIArmor_Body_Armor@@QAEPAV1@I@Z CWeaponIArmor_Body_Armor::vfunc5
 0x10003215 func   _func_dustmotes func_dustmotes

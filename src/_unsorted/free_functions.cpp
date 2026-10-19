@@ -6128,6 +6128,38 @@ int __fastcall sub_100a6bb0(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7d00 size=0xa2
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CEntSlots {
+	S100(c0)
+	S10(d0) S10(d1) S10(d2) S10(d3)
+	virtual bool Slot140(int a);
+	virtual void Slot141(void *info, int a, int b);
+};
+struct DInfo { char pad[0x2c]; int m_field; };
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_100a7d00(int info, int a, int b)
+{
+    DInfo *p = (DInfo *)info;
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::DispatchTraceAttack";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int f = p->m_field;
+    bool r = ((CEntSlots *)this)->Slot140(f);
+    if (r)
+        ((CEntSlots *)this)->Slot141(p, a, b);
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8220 size=0xa
 unsigned int CUnknown100a8220::sub_100a8220()
 {
