@@ -28744,6 +28744,62 @@ void *S1030fc90::sub_1030fc90(unsigned *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030fd20 size=0xec
+struct EntInfo { void *ent; int serial; int pad; };
+extern char *g_10566458;
+struct SBox { unsigned int *m_pMem; int m_alloc; int m_grow; int m_nSize; };
+
+struct S1030fc90 {
+    char pad[0x5c];
+    SBox *m_pBox[3];
+    void *sub_1030fd20(unsigned int *pIter);
+};
+
+void *S1030fc90::sub_1030fd20(unsigned int *pIter)
+{
+    if (*pIter != 0xffffffff) {
+        unsigned int b = (short)*pIter;
+        if (b < 3) {
+            SBox **pp = &m_pBox[b];
+            do {
+                int i = ((short *)pIter)[1];
+                int n = (*pp)->m_nSize;
+                if (i < n) {
+                    unsigned int *pBase = (*pp)->m_pMem;
+                    char *tbl = g_10566458;
+                    unsigned int *pData = pBase + i;
+                    do {
+                        unsigned int h = *pData;
+                        if (h != 0xffffffff) {
+                            EntInfo *e = (EntInfo *)(tbl + 4) + (h & 0x1fff);
+                            if (e->serial == (h >> 13) && e->ent) {
+                                ((short *)pIter)[0] = (short)b;
+                                ((short *)pIter)[1] = (short)(i + 1);
+                                const unsigned int *ph = m_pBox[b]->m_pMem + i;
+                                if (*ph != 0xffffffff) {
+                                    char *t2 = g_10566458;
+                                    EntInfo *e2 = (EntInfo *)(t2 + 4) + (*ph & 0x1fff);
+                                    if (e2->serial == (*ph >> 13))
+                                        return e2->ent;
+                                }
+                                return 0;
+                            }
+                        }
+                        i++;
+                        pData++;
+                    } while (i < n);
+                }
+                ((short *)pIter)[1] = 0;
+                b++;
+                pp++;
+            } while (b < 3);
+        }
+        *pIter = 0xffffffff;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fe50 size=0xe
 #include "CUnknown1030fe50.h"
 // TARGET: CUnknown1030fe50::sub_1030fe50
