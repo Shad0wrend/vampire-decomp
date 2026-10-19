@@ -17580,6 +17580,58 @@ void S101d6d50::sub_101d6d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6de0 size=0xc5
+struct S101d6d50 { void sub_101d6d50(); };
+struct Loader { bool sub_101d7000(const char *path); };
+
+struct CFileFinder
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+    virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21();
+    virtual int FindFirst(const char *pattern, int *pHandle);
+    virtual int FindNext(int handle);
+    virtual void v24();
+    virtual void FindClose(int handle);
+};
+
+extern CFileFinder *g_1070b238;
+extern const char g_105a0f74[];
+extern const char g_105a0f80[];
+extern const char g_105a111c[];
+extern const char g_105a110c[];
+extern const char g_105a10cc[];
+extern void (*g_109f3628)(const char *, ...);
+extern "C" int sprintf(char *, const char *, ...);
+
+// TARGET: CUnknown101d5bd0::sub_101d6de0
+void CUnknown101d5bd0::sub_101d6de0()
+{
+    char path[260];
+    int handle;
+
+    ((S101d6d50 *)this)->sub_101d6d50();
+    int count = 0;
+    sprintf(path, g_105a0f74, g_105a0f80, g_105a111c);
+    if (g_1070b238->FindFirst(path, &handle)) {
+        do {
+            count++;
+        } while (g_1070b238->FindNext(handle));
+        g_1070b238->FindClose(handle);
+        if (count > 0) {
+            for (int i = 0; i < count; i++) {
+                sprintf(path, g_105a110c, g_105a0f80, g_105a111c, i);
+                if (!((Loader *)this)->sub_101d7000(path))
+                    g_109f3628(g_105a10cc, path);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d7000 size=0x9c
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 struct VBase {

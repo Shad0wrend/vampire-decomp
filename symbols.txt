@@ -359,6 +359,7 @@
 0x10003724 func   ?vfunc5@CItemGRingSilver@@QAEPAV1@I@Z CItemGRingSilver::vfunc5
 0x1000373d func   _item_w_unarmed item_w_unarmed
 0x100037ce func   ?sub_10222e30@@YIXPAUMem@@HH@Z sub_10222e30
+0x100037f1 func   ?sub_101d6de0@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101d6de0
 0x10003800 func   ?vfunc5@CBeam@@QAEPAV1@I@Z CBeam::vfunc5
 0x1000380a func   ?sub_102dcd30@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_102dcd30
 0x10003850 func   ?vfunc500@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc500
