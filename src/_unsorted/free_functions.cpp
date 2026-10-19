@@ -14359,6 +14359,43 @@ void *sub_10196780(PyObj *obj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196850 size=0xbc
+struct PyType;
+struct PyObject { int refcnt; PyType *type; PyObject *dict; };
+struct PyInst { int refcnt; PyType *type; int pad; PyObject *dict; };
+struct PyEnt { char pad[0x378]; void *pyObj; };
+extern PyType *g_109f36dc;
+extern PyType *g_109f37a4;
+extern PyObject **g_109f37b0;
+extern PyObject *g_1072b31c;
+extern char g_1072b378[];
+extern PyObject *(*g_109f36d8)(PyObject *, PyObject *);
+extern void (*g_109f37b4)(PyObject *, const char *);
+extern void *(*g_109f37a8)(PyObject *);
+extern void *(*g_109f37ac)(PyObject *);
+extern PyObject *(*g_109f3784)(void *, void *, void *);
+extern int (*g_109f37bc)(PyObject *, PyObject *, PyObject *);
+
+void sub_10196850(PyInst *inst)
+{
+    if (!inst)
+        return;
+    if (inst->type != g_109f36dc) {
+        g_109f37b4(*g_109f37b0, "object being disconnected from entity is not a class instance");
+        return;
+    }
+    PyObject *cobj = g_109f36d8(inst->dict, g_1072b31c);
+    if (cobj && cobj->type == g_109f37a4 && g_109f37a8(cobj) == g_1072b378) {
+        PyEnt *ent = (PyEnt *)g_109f37ac(cobj);
+        ent->pyObj = 0;
+        PyObject *n = g_109f3784(0, g_1072b378, 0);
+        g_109f37bc(inst->dict, g_1072b31c, n);
+        return;
+    }
+    g_109f37b4(*g_109f37b0, "object being disconnected from entity is not an entity");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196c50 size=0x81
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 #define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
