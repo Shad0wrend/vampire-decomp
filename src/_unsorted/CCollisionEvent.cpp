@@ -1,6 +1,47 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10030140 size=0x99
+#include "CCollisionEvent.h"
+
+#define V4(x) virtual void x##a(); virtual void x##b(); virtual void x##c(); virtual void x##d();
+#define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct PhysObj {
+	V16(a) V16(b) V4(c) V4(d)
+	virtual void v40(void *a, void *b);
+};
+
+struct PreEvent {
+	PhysObj *pObjects[2];
+	int m_rest[6];
+};
+
+void CCollisionEvent::vfunc0(void *pEventArg)
+{
+	PreEvent *pEvent = (PreEvent *)pEventArg;
+	g_109f3620[*g_109f3680].a = "CCollisionEvent::PreCollision";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	*(PreEvent *)((char *)this + 0x68) = *pEvent;
+	int i = 0;
+	char *rec = (char *)this + 0x88;
+	do {
+		if (pEvent->pObjects[i])
+			pEvent->pObjects[i]->v40(rec, rec + 0x30);
+		i++;
+		rec += 12;
+	} while (i < 2);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031810 size=0x81
 #include "CCollisionEvent.h"
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
