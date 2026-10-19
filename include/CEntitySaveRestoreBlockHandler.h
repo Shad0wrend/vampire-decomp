@@ -11,4 +11,7 @@ public:
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3(CSave *pSave);
+	virtual void vfunc4();
+	virtual void vfunc5();
+	virtual void vfunc6(void *pRestore);	// "ReadRestoreHeaders": reads the entity table ("ETABLE" records) into the save info
 };
