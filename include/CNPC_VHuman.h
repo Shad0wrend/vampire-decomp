@@ -8,5 +8,4 @@ class CNPC_VHuman : public CAI_BaseNPCTroika
 public:
 	// Slot 440 (TranslateSchedule), called directly; declared as a plain member.
 	int vfunc440(int schedule);
-	void vfunc461();	// SelectIdealState override, called directly by the subclasses' overrides
 };
