@@ -16368,6 +16368,31 @@ int sub_10202780(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202880 size=0x8c
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern const char *g_105a7000[];
+extern void (*g_109f3658)(int level, const char *fmt, ...);
+
+const char *sub_10202880(int type)
+{
+	g_109f3620[*g_109f3680].a = "GetParticleAttachTypeName";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (type >= 0 && type < 0x13) {
+		const char *name = g_105a7000[type];
+		(*g_109f3680)--;
+		return name;
+	}
+	g_109f3658(1, "Invalid particle attach type '%d'\n", type);
+	(*g_109f3680)--;
+	return "Invalid attach type";
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202c40 size=0x10
 struct S4 {
 	int a, b, c, d;
