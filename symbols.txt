@@ -1144,6 +1144,7 @@
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point
 0x10008ebd func   ?vfunc274@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc274
 0x10008f12 func   ?sub_101ffb90@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffb90
+0x10008f1c func   ?sub_101ffaa0@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffaa0
 0x10008f26 func   ?vfunc2@CTEBeamSpline@@UAEPAV1@I@Z CTEBeamSpline::vfunc2
 0x10008f67 func   _info_node_climb info_node_climb
 0x10008f71 func   ?vfunc5@CWeaponMelee_ZombieFists@@QAEPAV1@I@Z CWeaponMelee_ZombieFists::vfunc5

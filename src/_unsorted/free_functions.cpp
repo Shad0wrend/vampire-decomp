@@ -19531,6 +19531,38 @@ int CVStatInfo_t::sub_101fee50(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ffaa0 size=0xb8
+#include "CVStatInfoList_t.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct StrWrap
+{
+	const char *p;
+	const char *Get() const { return p ? p : g_106b8540; }
+};
+
+int CVStatInfoList_t::sub_101ffaa0(const char *name)
+{
+	g_109f3620[*g_109f3680].a = "CVStatInfoList_t::Lookup( char *name )";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	for (int i = 0; i < m_nStats; i++) {
+		if (_strcmpi(((StrWrap *)&m_pStats[i].m_pszName)->Get(), name) == 0) {
+			--*g_109f3680;
+			return i;
+		}
+	}
+	--*g_109f3680;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ffb90 size=0xb8
 #include "CVStatInfoList_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
