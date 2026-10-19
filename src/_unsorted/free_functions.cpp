@@ -10814,6 +10814,41 @@ bool __fastcall sub_10104ff0(Table *self, int, int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101063a0 size=0xbf
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct GlobalVars { char pad[0xc]; float curtime; };
+extern GlobalVars *g_1070b228;
+
+struct ExprRecord { char pad[8]; float m_flTime; char pad2[0x20 - 0xc]; };
+
+void CBaseCombatCharacter::sub_101063a0()
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::FadeoutExpressions";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	float now = g_1070b228->curtime;
+	int i = 0;
+	for (; i < *(int *)((char *)this + 0x10c8); i++) {
+		float *p = &(*(ExprRecord **)((char *)this + 0x10bc))[i].m_flTime;
+		if (*p > now)
+			*p = now;
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106490 size=0xbc
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
