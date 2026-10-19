@@ -339,6 +339,7 @@
 0x10003b84 func   ?sub_10223030@@YAPAHXZ sub_10223030
 0x10003b8e func   ?sub_101bdeb0@CMem4d_t@@QAEXH@Z CMem4d_t::sub_101bdeb0
 0x10003ba2 func   ?sub_103661d0@@YIXPADHH@Z sub_103661d0
+0x10003bb6 func   ?sub_10133450@@YAPAHXZ sub_10133450
 0x10003bc0 func   ?sub_103a7760@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::sub_103a7760
 0x10003bc5 func   _vampireprojectile vampireprojectile
 0x10003bd9 func   ?sub_1035b440@@YADXZ sub_1035b440

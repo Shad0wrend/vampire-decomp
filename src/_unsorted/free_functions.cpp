@@ -9387,6 +9387,53 @@ int *sub_10132db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133450 size=0x116
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105766dc[2];
+void sub_100064c9();
+void sub_10010870();
+void sub_10008d96();
+void sub_100110f4();
+void sub_100121de();
+
+int *sub_10133450()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bHitMax", {0x459, 0}, 1, 2 },
+        { 5, "m_bHitMin", {0x458, 0}, 1, 2 },
+        { 1, "m_flMin", {0x450, 0}, 1, 6, "min" },
+        { 1, "m_flMax", {0x454, 0}, 1, 6, "max" },
+        { 1, "InputAdd", {0, 0}, 1, 8, "Add", 0, (void *)sub_100064c9 },
+        { 1, "InputDivide", {0, 0}, 1, 8, "Divide", 0, (void *)sub_10010870 },
+        { 1, "InputMultiply", {0, 0}, 1, 8, "Multiply", 0, (void *)sub_10008d96 },
+        { 1, "InputSetValue", {0, 0}, 1, 8, "SetValue", 0, (void *)sub_100110f4 },
+        { 1, "InputSubtract", {0, 0}, 1, 8, "Subtract", 0, (void *)sub_100121de },
+        { 10, "m_OutValue", {0x45c, 0}, 1, 0x16, "OutValue", g_1055dc70 },
+        { 10, "m_OnHitMin", {0x474, 0}, 1, 0x16, "OnHitMin", g_1055dc70 },
+        { 10, "m_OnHitMax", {0x48c, 0}, 1, 0x16, "OnHitMax", g_1055dc70 },
+    };
+    g_105766dc[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105766dc[0] = (int)&dataDesc[1];
+    return g_105766dc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101346e0 size=0x7f
 #include "CUnknown101346e0.h"
 
