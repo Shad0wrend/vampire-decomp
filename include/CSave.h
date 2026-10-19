@@ -17,7 +17,7 @@ public:
 	virtual void vfunc9();
 	virtual bool vfunc10(const void *pData, int nBytes);	// WriteInt
 	virtual void vfunc11();
-	virtual void vfunc12();
+	virtual void vfunc12(const void *pData, int count);
 	virtual void vfunc13();
 	virtual bool vfunc14(const void *pData, int nBytes);
 	virtual void vfunc15();
@@ -25,7 +25,7 @@ public:
 	virtual void vfunc17();
 	virtual void vfunc18();
 	virtual void vfunc19();
-	virtual void vfunc20();
+	virtual void vfunc20(const char *pString);	// WriteString
 	virtual void vfunc21();
 	virtual void vfunc22();
 	virtual void vfunc23(const void *pData, int count);	// WriteVector
