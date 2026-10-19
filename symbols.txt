@@ -195,6 +195,7 @@
 0x100025e0 func   ?sub_10168e10@CBasePlayer@@QAE_NXZ CBasePlayer::sub_10168e10
 0x100025ea func   _item_k_ash_cell_key item_k_ash_cell_key
 0x10002621 func   _item_p_occult_strength item_p_occult_strength
+0x1000263f func   ?sub_1008d7c0@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::sub_1008d7c0
 0x10002658 func   _item_p_occult_passive_durations item_p_occult_passive_durations
 0x10002680 func   ?vfunc104@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc104
 0x10002685 func   ?sub_100b3c50@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3c50

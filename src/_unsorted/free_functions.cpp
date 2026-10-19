@@ -5385,6 +5385,42 @@ void CBaseAnimating::sub_1008d6d0(int skin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008d7c0 size=0xb6
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EngineSlots {
+	D10(a0)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3();
+	virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7();
+	virtual int f18(int a);
+};
+extern EngineSlots *g_1070b22c;
+int sub_10005a6f(int header, int a, int b, int c);
+
+int CBaseAnimating::sub_1008d7c0(int a, int b, int c)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::GetAnimFlags";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int header = g_1070b22c->f18(vfunc8());
+    if (!header) {
+        (*g_109f3680)--;
+        return 0;
+    }
+    int r = sub_10005a6f(header, a, b, c);
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008dc40 size=0xc0
 #include "CBaseAnimating.h"
 
