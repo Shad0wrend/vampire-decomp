@@ -17033,6 +17033,24 @@ bool CVStatSubCost_t::sub_101fb8f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fc0d0 size=0x66
+#include "CVStatCost_t.h"
+extern int *g_109f3680;
+extern int **g_109f3620;
+extern int g_106b8540;
+
+void CVStatCost_t::sub_101fc0d0()
+{
+	g_109f3620[*g_109f3680 * 3] = (int *)"CVStatCost_t::Null";
+	g_109f3620[*g_109f3680 * 3 + 1] = (int *)&g_106b8540;
+	g_109f3620[*g_109f3680 * 3 + 2] = (int *)&g_106b8540;
+	++*g_109f3680;
+	m_first.sub_101fb830();
+	m_second.sub_101fb830();
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fc160 size=0x81
 #include "CVStatCost_t.h"
 
