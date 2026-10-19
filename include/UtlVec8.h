@@ -25,6 +25,7 @@ public:
 	int sub_100423c0(int elem, const UtlVec8Elem *src);	// same as sub_10042200 (another instance)
 	int sub_100424a0(int elem, const UtlVec8Elem *src);	// same as sub_10042200 (another instance)
 	int sub_102f90e0(int elem);	// "CUtlVector::InsertBefore" without the element copy: grows by one, shifts the tail up, returns elem
+	void sub_102beb50(int a, int b);	// "CUtlVector::AddToTail" (InsertBefore at the size, inlined): stores the two ints as the new element
 	void GrowVector(int num);
 	void sub_101b6a50(int num);	// same shape as GrowVector (initial allocation 4)
 	void sub_1027fae0(int num);	// same shape as GrowVector (initial allocation 4)
