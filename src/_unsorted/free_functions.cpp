@@ -21438,6 +21438,64 @@ int CUnknown102e0090::sub_102e0090(void *enemy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0150 size=0x90
+#include "CUnknown102e0150.h"
+
+struct EntSub { void *ent; unsigned int serial; };
+struct EntInfo { int pad; EntSub s; };
+extern EntInfo *g_10566458;
+extern float g_104454c4;
+extern "C" __declspec(dllimport) void __cdecl DevWarning(int level, const char *fmt, ...);
+
+struct CHandleLike {
+	unsigned int m_index;
+	void *Get() const
+	{
+		if (m_index == 0xffffffff)
+			return 0;
+		EntSub *s = &g_10566458[m_index & 0x1fff].s;
+		if (s->serial == (m_index >> 13))
+			return s->ent;
+		return 0;
+	}
+};
+
+struct CEnemyNode {
+	char m_pad0[0x24];
+	CHandleLike m_hEnemy;
+	float m_flTime;
+	char m_pad2c[0x34 - 0x2c];
+	char m_bDefault;
+	char m_pad35[3];
+	CEnemyNode *m_pNext;
+};
+
+float CUnknown102e0150::sub_102e0150(void *pEnemy)
+{
+	if (pEnemy) {
+		CEnemyNode *pNode = (CEnemyNode *)m_pHead;
+		bool bFound = false;
+		float flDefault = g_104454c4;
+		if (pNode) {
+			do {
+				void *ent = pNode->m_hEnemy.Get();
+				if (ent && pEnemy == ent)
+					return pNode->m_flTime;
+				if (pNode->m_bDefault == 1) {
+					flDefault = pNode->m_flTime;
+					bFound = true;
+				}
+				pNode = pNode->m_pNext;
+			} while (pNode);
+			if (bFound)
+				return flDefault;
+		}
+		DevWarning(2, "Asking LastTimeSeen for enemy that's not in my memory!!\n");
+	}
+	return g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0630 size=0x85
 #include "CUnknown102e0630.h"
 
