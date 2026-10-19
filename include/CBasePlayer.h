@@ -7,6 +7,15 @@
 
 class CBaseEntity;
 
+struct CBasePlayerHandleVec	// a CUtlVector<EHANDLE>
+{
+	unsigned int *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_Size;
+	unsigned int *m_pElements;
+};
+
 class CBasePlayer
 {
 public:
@@ -29,6 +38,8 @@ public:
 	float m_f22A8;
 	float m_f22AC;
 	float m_f22B0;
+	char m_pad22B4[0x23bc - 0x22b4];	// 0x22B4 .. 0x23BB
+	CBasePlayerHandleVec m_SimulationList;	// 0x23BC (count at +0x23C8)
 
 	void sub_10177120();
 	void sub_101835e0();	// "CBasePlayer::Inventory_CreateKey": scope trace (entity name), then allocates the 5-dword inventory object at +0x245c when it is not there yet
