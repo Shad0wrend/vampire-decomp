@@ -10,4 +10,5 @@ public:
 	virtual int vfunc359(int index);
 	virtual void vfunc601(int unused);
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	int vfunc440(int schedule);	// slot 440 (TranslateSchedule) override: maps schedules 0x5b, 0xea, 0xdc, 0xdd to 0x15d..0x160, everything else goes to CNPC_VHuman::vfunc440
 };
