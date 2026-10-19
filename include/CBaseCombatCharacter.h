@@ -77,7 +77,7 @@ public:
 	bool sub_1033e2b0();	// "CBaseCombatCharacter::IsBusyWithDiscipline": scope trace (entity name), then bit 0 of the byte at +0x14b8
 	bool sub_1033b7c0();	// "CBaseCombatCharacter::InPrayer": scope trace (entity name), then the dword at +0xfec is in 0x130..0x133
 	void sub_103483c0(int a, int b, int c);	// "CBaseCombatCharacter::BeginMeltEffect": scope trace (entity name), stores b at +0x19a8, 0x20 at +0x168, c at +0x19ac, then CBaseAnimating::sub_10090890(a)
-	void sub_103418f0(inputdata_t *data);	// "CBaseCombatCharacter::InputWillTalk": scope trace (entity name), sets the byte at +0x1088 to (integer input != 0)
+	void sub_10348490(int a, int b, int c);	// "CBaseCombatCharacter::BeginUnmeltEffect": same as BeginMeltEffect with 0x21 at +0x168
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc73(CBaseEntity *pOther);	// "CBaseCombatCharacter::CausesImpactDamage": scope trace, (pOther's flags at +0x434 & 0x20000000) != 0
