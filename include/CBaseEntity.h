@@ -56,7 +56,8 @@ public:
 	virtual int vfunc96();	// "CBaseEntity::GetAimEntEdict": scope trace (entity name), resolves the handle at +0x37c and returns that entity's edict at +0x2e0 (0 when it does not resolve)
 	virtual void vfunc97(); virtual void vfunc98();
 	virtual bool vfunc99(int a, int b, int c); virtual void vfunc100(); virtual void vfunc101(); virtual void vfunc102(); virtual void vfunc103();
-	virtual void vfunc104(); virtual void vfunc105(); virtual void vfunc106(const char *classname); virtual void vfunc107(); virtual void vfunc108();
+	virtual void vfunc104(); virtual void vfunc105(); virtual void vfunc106(const char *classname); virtual void vfunc107();
+	virtual bool vfunc108(const char *key, float x, float y, float z);	// "CBaseEntity::KeyValue" (vector): scope trace (entity name), formats the three floats with "%f %f %f" into a 256 byte buffer and returns slot 110(key, buffer)
 	virtual bool vfunc109(const char *key, float value);	// "CBaseEntity::KeyValue" (float): scope trace (entity name), formats the float with "%f" into a 256 byte buffer and returns slot 110(key, buffer)
 	virtual bool vfunc110(const char *key, const char *value); virtual void vfunc111(); virtual void vfunc112(); virtual void vfunc113();
 	virtual void vfunc114(); virtual void vfunc115();
@@ -68,7 +69,6 @@ public:
 	virtual void vfunc130(int a); virtual void vfunc131(); virtual void vfunc132(); virtual void vfunc133();
 
 	// Slots whose callers call them directly, so far only declared as plain members.
-	bool vfunc143(float flHealth, int bitsDamageType);	// "CBaseEntity::TakeHealth": scope trace (entity name), when the edict at +0x2e0 is set and the take-damage mode at +0x1fc is above 1 and the health at +0x210 is below the maximum at +0x208, adds flHealth (truncated) clamped to the maximum and returns true, else false
 	bool vfunc158();
 	bool vfunc161(const char *name);	// "CBaseEntity::HasLinkedDoor": scope trace (entity name), true when the string at +0x20c is set and equals name (case-insensitive)
 	void vfunc168();
@@ -196,19 +196,12 @@ public:
 	int m_nThinkContextsAlloc;	// 0x01bc
 	int m_pad01c0;
 	int m_nThinkContexts;	// 0x01c4
-	char m_pad01c8[0x1fc - 0x1c8];
-	int m_nTakeDamage;	// 0x01fc
+	char m_pad01c8[0x200 - 0x1c8];
 	int m_field200;
-	char m_pad0204[4];
-	int m_iMaxHealth;	// 0x0208
-	char m_pad020c[4];
-	int m_iHealth;	// 0x0210
-	char m_pad0214[0x268 - 0x214];
+	char m_pad0204[0x64];
 	unsigned int m_flags268;
 	const char *m_name26c;
-	char m_pad0270[0x2e0 - 0x270];
-	int m_pEdict2e0;	// 0x02e0
-	char m_pad02e4[0x364 - 0x2e4];
+	char m_pad0270[0xf4];
 	unsigned int m_hOwner364;	// owner entity handle
 	int m_field368;
 	int m_obj36c;	// physics object (pointer)
