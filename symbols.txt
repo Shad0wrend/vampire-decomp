@@ -937,6 +937,7 @@
 0x10007590 func   ?sub_101fc160@CVStatCost_t@@QAE_NXZ CVStatCost_t::sub_101fc160
 0x100075b3 func   ?sub_1014ca10@CUnknown1014ca10@@QAEXEEE@Z CUnknown1014ca10::sub_1014ca10
 0x100075e5 func   ?sub_1008f540@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_1008f540
+0x100075ef func   ?sub_101c31f0@@YAXEPAH0GHE@Z sub_101c31f0
 0x100075fe func   ?sub_101b7df0@CUnknown101b9140@@QAEHHPBUCUnknown101b9140Elem@@@Z CUnknown101b9140::sub_101b7df0
 0x1000762b func   _item_k_lilly_key item_k_lilly_key
 0x1000763f func   ?sub_10105e20@CBaseCombatCharacter@@QAEXPAMPAD@Z CBaseCombatCharacter::sub_10105e20

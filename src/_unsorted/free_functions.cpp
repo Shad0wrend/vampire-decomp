@@ -16810,6 +16810,37 @@ int sub_101c30c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c31f0 size=0xe2
+#define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+struct SEngine {
+    P10(a) P10(b) P10(c) P10(d) P10(e) P10(f)
+    virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4(); virtual void g5(); virtual void g6();
+    virtual void MessageWriteByte(int v);
+    virtual void h68();
+    virtual void MessageWriteShort(int v);
+    virtual void i70();
+    virtual void i71();
+    virtual void MessageWriteFloat(int v);
+};
+extern SEngine *g_1070b22c;
+
+void sub_101c31f0(unsigned char type, int *v1, int *v2, unsigned short s, int f, unsigned char flags)
+{
+    g_1070b22c->MessageWriteByte(type);
+    g_1070b22c->MessageWriteFloat(v1[0]);
+    g_1070b22c->MessageWriteFloat(v1[1]);
+    g_1070b22c->MessageWriteFloat(v1[2]);
+    g_1070b22c->MessageWriteShort(s);
+    g_1070b22c->MessageWriteFloat(f);
+    g_1070b22c->MessageWriteByte(flags);
+    if (type == 1 && (flags & 1)) {
+        g_1070b22c->MessageWriteFloat(v2[0]);
+        g_1070b22c->MessageWriteFloat(v2[1]);
+        g_1070b22c->MessageWriteFloat(v2[2]);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4070 size=0xb3
 #define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
