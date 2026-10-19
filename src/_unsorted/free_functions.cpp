@@ -900,6 +900,53 @@ void CMem8b_t::sub_10033160(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033740 size=0xab
+#include "CPhysicsMovedEntities.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct Vec3_t {
+	float x, y, z;
+	Vec3_t &operator=(const Vec3_t &v)
+	{
+		x = v.x;
+		y = v.y;
+		z = v.z;
+		return *this;
+	}
+};
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct Slot220Caller
+{
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8) SL10(a9)
+	SL10(b0) SL10(b1) SL10(b2) SL10(b3) SL10(b4) SL10(b5) SL10(b6) SL10(b7) SL10(b8) SL10(b9)
+	SL10(c0) SL10(c1)
+	virtual Vec3_t *vfunc220();
+};
+
+bool CPhysicsMovedEntities::sub_10033740(CBaseEntity *pEntity)
+{
+	g_109f3620[*g_109f3680].a = "CPhysicsMovedEntities::AddEntity";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (m_nCount >= 512) {
+		(*g_109f3680)--;
+		return false;
+	}
+	m_Records[m_nCount].m_pEntity = pEntity;
+	*(Vec3_t *)m_Records[m_nCount].m_vecOrigin = *((Slot220Caller *)pEntity)->vfunc220();
+	m_nCount++;
+	(*g_109f3680)--;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100353c0 size=0x93
 #include "CUnknown100353c0.h"
 
