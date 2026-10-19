@@ -20557,6 +20557,57 @@ int CUnknown10202060::sub_10202060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202350 size=0xcc
+#include "CVStatInfoList_t.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern CVStatInfoList_t g_1074e658;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e098;
+extern CVStatInfoList_t g_1074e5f8;
+
+struct StrWrap
+{
+	const char *p;
+	const char *Get() const { return p ? p : g_106b8540; }
+};
+
+const char *sub_10202350(int type, int idx)
+{
+	g_109f3620[*g_109f3680].a = "vampStats_IdxToStr";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	const char *s;
+	if (type == -1)
+		goto error;
+	switch (type) {
+	case 0:
+		s = ((StrWrap *)((char *)g_1074e658.sub_10200370(idx) + 0x14))->Get();
+		break;
+	case 1:
+		s = ((StrWrap *)((char *)g_1074e4f0.sub_10200370(idx) + 0x14))->Get();
+		break;
+	case 2:
+		s = ((StrWrap *)((char *)g_1074e098.sub_10200370(idx) + 0x14))->Get();
+		break;
+	case 3:
+		s = ((StrWrap *)((char *)g_1074e5f8.sub_10200370(idx) + 0x14))->Get();
+		break;
+	default:
+		goto error;
+	}
+	--*g_109f3680;
+	return s;
+error:
+	--*g_109f3680;
+	return "<ERROR>";
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202760 size=0xc
 extern int g_105a6fc8[];
 int sub_10202760(int index)
