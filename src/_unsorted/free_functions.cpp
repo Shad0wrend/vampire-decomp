@@ -30462,6 +30462,60 @@ void CBaseCombatCharacter::sub_1032e210(void *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032e8b0 size=0xf7
+#include "CBaseCombatCharacter.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+struct EntInfo { void *ent; int serial; int pad; };
+struct WeaponEnt { char pad[0x73c]; int m_state; };
+struct WeaponSlots { char pad[0x1624]; unsigned int m_hWeapon[1]; };
+extern char *g_10566458;
+
+void *CBaseCombatCharacter::sub_1032e8b0(int index)
+{
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseCombatCharacter::GetWeapon", ent, g_106b8540);
+    WeaponSlots *s = (WeaponSlots *)this;
+    unsigned int h = s->m_hWeapon[index];
+    if (h != 0xffffffff) {
+        EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+        if (e->serial == (h >> 13) && e->ent) {
+            unsigned int h2 = *(volatile unsigned int *)&s->m_hWeapon[index];
+            WeaponEnt *pWeapon;
+            if (h2 != 0xffffffff) {
+                EntInfo *e2 = (EntInfo *)(g_10566458 + 4) + (h2 & 0x1fff);
+                if (e2->serial == (h2 >> 13))
+                    pWeapon = (WeaponEnt *)e2->ent;
+                else
+                    pWeapon = 0;
+            } else
+                pWeapon = 0;
+            if (pWeapon->m_state != 0xff)
+                return pWeapon;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032e9f0 size=0xa8
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
