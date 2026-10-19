@@ -16483,6 +16483,29 @@ void CUnknown101eb7f0::sub_101eb7f0(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ec6f0 size=0x9c
+#include "CUnknown101ec6f0.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+void sub_10203dd0(char *text);
+extern char g_106b8540[];
+
+void CUnknown101ec6f0::sub_101ec6f0()
+{
+	char buf[128];
+	sprintf(buf, "(%d): %s\n", m_index, m_name ? m_name : g_106b8540);
+	sub_10203dd0(buf);
+	sprintf(buf, "\t\tMoney: %d\n", m_money);
+	sub_10203dd0(buf);
+	for (int i = 0; i < m_itemCount; i++)
+	{
+		const char **p = &m_items[i];
+		sprintf(buf, "\t\t(%d): %s\n", i, *p ? *p : g_106b8540);
+		sub_10203dd0(buf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ed170 size=0x7b
 #include "CUnknown101ed170.h"
 
