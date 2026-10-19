@@ -415,6 +415,7 @@
 0x10003e95 func   ?sub_102d4210@CUtlVector4@@QAEXH@Z CUtlVector4::sub_102d4210
 0x10003eb8 func   ?sub_100e3400@CUnknown100e3400@@QAEPADHDPBD_N@Z CUnknown100e3400::sub_100e3400
 0x10003ec2 func   ?vfunc5@CGeneric_NPC_bathack@@QAEPAV1@I@Z CGeneric_NPC_bathack::vfunc5
+0x10003efe func   ?sub_10259120@@YA_NPAUSKeyValues@@PADPBD@Z sub_10259120
 0x10003f44 func   ?sub_10246430@@YAXHPAH0@Z sub_10246430
 0x10003f4e func   ?vfunc1@CBreakParser@@UAEXPAX@Z CBreakParser::vfunc1
 0x10003f58 func   ?sub_10196ea0@@YAPAUSPyObj@@PAX0@Z sub_10196ea0
