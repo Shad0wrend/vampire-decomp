@@ -17721,6 +17721,36 @@ char QuestJournal::sub_10221ca0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10222670 size=0x95
+#include "CExperienceTable.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern void (*g_109f364c)(const char *, ...);
+extern CExperienceAward g_1074f924;
+
+CExperienceAward *CExperienceTable::sub_10222670(int index)
+{
+	g_109f3620[*g_109f3680].fn = "ExperienceTable::GetAward";
+	g_109f3620[*g_109f3680].name = "";
+	g_109f3620[*g_109f3680].extra = "";
+	(*g_109f3680)++;
+	if (index >= 0 && index < m_Size) {
+		CExperienceAward *base = m_pMemory;
+		(*g_109f3680)--;
+		return &base[index];
+	}
+	g_109f364c("Invalid index for experience table: %d\n", index);
+	(*g_109f3680)--;
+	return &g_1074f924;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10222da0 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
