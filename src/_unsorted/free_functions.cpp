@@ -4940,6 +4940,28 @@ int CBaseAnimating::sub_100945e0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100963d0 size=0x8e
+#include "CBaseAnimating.h"
+#include "CUnknown1070b22c.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern CUnknown1070b22c *g_1070b22c;
+
+void CBaseAnimating::sub_100963d0()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::ResetClientsideFrame";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	*(int *)((char *)this + 0x710) = g_1070b22c->vfunc120();
+	*((char *)this + 0x1b1) = 1;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096490 size=0x7e
 #include "CBaseAnimating.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
