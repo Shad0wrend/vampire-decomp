@@ -90,6 +90,7 @@ public:
 	void sub_1032aa40();	// "CBaseCombatCharacter::Weapon_FrameUpdate": scope trace (entity name), when the active weapon handle at +0x19a4 resolves calls slot 369(this) on that weapon
 	void sub_1032e210(void *pEvent);	// "CBaseCombatCharacter::Weapon_HandleAnimEvent": scope trace (entity name), when the active weapon handle at +0x19a4 resolves calls slot 370(pEvent, this) on that weapon
 	void sub_1033df80();	// "CBaseCombatCharacter::ApplyDisciplineSpawnFlags": scope trace (entity name), translates spawn flag bits 5, 6, 12, 13, 14, 15 (dword at +0x204) into bits 0..5 of the discipline flags at +0xeac
+	char *sub_10345980(CBaseEntity *pEnt);	// "CBaseCombatCharacter::GetMeleeDiceRolls": scope trace (entity name), finds the 16 byte record (array at +0xa88, count at +0xa94) whose leading handle resolves to pEnt; null when none
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc73(CBaseEntity *pOther);	// "CBaseCombatCharacter::CausesImpactDamage": scope trace, (pOther's flags at +0x434 & 0x20000000) != 0
