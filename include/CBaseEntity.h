@@ -1,6 +1,8 @@
 // CBaseEntity: base of every server-side entity.
 // Only the members and methods that decompiled code needs are declared here;
 // add to it as more of the class is recovered.
+// New method declarations can go into CBaseEntity_ext.h (included at the end of the class body) so that
+// workers do not overwrite each other's edits of this large file.
 #pragma once
 
 class CRestore;
@@ -189,6 +191,8 @@ public:
 	void sub_100fbc20();	// calls slot 242, then sub_100fbbb0(2.0f)
 	bool sub_103d3a40(const char *pszNameOrWildcard);	// "NameMatches" (inlined copy in NPC_VWerewolf): the entity name equals the argument, case-insensitively; a trailing '*' makes it a prefix match
 
+#include "CBaseEntity_ext.h"
+
 	char m_pad0004[0x8c];
 	float m_flForceTransmitTime;	// 0x0090
 	char m_pad0094[0xb4 - 0x94];
@@ -215,7 +219,9 @@ public:
 	int m_iMaxHealth;	// 0x0208
 	char m_pad020c[4];
 	int m_iHealth;	// 0x0210
-	char m_pad0214[0x220 - 0x214];
+	char m_pad0214[4];
+	unsigned int m_hUseFilter;	// 0x0218: entity handle of the use filter
+	char m_pad021c[4];
 	unsigned int m_hDamageFilter;	// 0x0220: entity handle of the damage filter
 	char m_pad0224[0x228 - 0x224];
 	void *m_pTimedOverlays;	// 0x0228
