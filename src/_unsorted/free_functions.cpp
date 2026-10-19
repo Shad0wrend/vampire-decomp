@@ -9408,6 +9408,35 @@ const char *sub_101273e0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101282b0 size=0x8d
+#include "CGameMovement.h"
+
+struct CTuningLike {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12();
+	virtual float vfunc13(int index);
+};
+extern CTuningLike *g_1071a278;
+
+struct CPlayerLike { char m_pad[0xc0]; int m_nState; };
+struct CMoveLike { char m_pad[0x1edd]; char m_bFlag; };
+
+float CGameMovement::sub_101282b0()
+{
+	volatile float result = 0.0f;
+	if (((CPlayerLike *)m_pPlayer)->m_nState == 10)
+		return g_1071a278->vfunc13(0x32) * 0.8;
+	if (((CPlayerLike *)m_pPlayer)->m_nState == 11)
+		return g_1071a278->vfunc13(0x32) * 0.8;
+	if (((CPlayerLike *)m_pPlayer)->m_nState == 8 && ((CMoveLike *)m_pMove)->m_bFlag)
+		return g_1071a278->vfunc13(0x31) * 0.8;
+	if (((CPlayerLike *)m_pPlayer)->m_nState == 8)
+		return g_1071a278->vfunc13(0x30) * 0.8;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b290 size=0x49
 void *sub_1000db89(int);
 struct GP;
