@@ -57,6 +57,41 @@ void TLeader::sub_103a6f70(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a7000 size=0x86
+#include "CNPC_VSabbatLeader.h"
+
+#define SV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct SSabbatSlots
+{
+	SV100(a0) SV100(a1) SV100(a2) SV100(a3) SV100(a4) SV100(a5)
+	SV10(a60) SV10(a61)
+	virtual void slot620();
+};
+
+struct SAnimEvent { int event; };
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CNPC_VSabbatLeader::vfunc259(void *pEvent)
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VSabbatLeader::HandleAnimEvent";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	int ev = ((SAnimEvent *)pEvent)->event;
+	if (ev >= 0x802 && ev <= 0x803)
+		((SSabbatSlots *)this)->slot620();
+	else
+		sub_100076bc(pEvent);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a7390 size=0x85
 #include "CNPC_VSabbatLeader.h"
 
