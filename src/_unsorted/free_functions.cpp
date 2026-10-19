@@ -25336,6 +25336,30 @@ void CNPC_VWerewolf::sub_103d1ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d3a40 size=0x87
+#include "CBaseEntity.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+extern "C" unsigned int __cdecl strlen(const char *);
+extern char g_106b8540[];
+
+bool CBaseEntity::sub_103d3a40(const char *pszNameOrWildcard)
+{
+	if ((m_name26c ? m_name26c : g_106b8540) == pszNameOrWildcard)
+		return true;
+	unsigned int len = strlen(pszNameOrWildcard);
+	if (len == 0)
+		return *(const char *volatile *)&m_name26c == 0;
+	if (pszNameOrWildcard[len - 1] != '*') {
+		const char *name = *(const char *volatile *)&m_name26c;
+		return _strcmpi(name ? name : g_106b8540, pszNameOrWildcard) == 0;
+	}
+	const char *name = *(const char *volatile *)&m_name26c;
+	return _strnicmp(name ? name : g_106b8540, pszNameOrWildcard, len - 1) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dbeb0 size=0x40
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int size);
 struct UtlVec8 {
