@@ -13211,6 +13211,43 @@ void CUnknown10183100::sub_10183100(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101835e0 size=0xb5
+#include "CBasePlayer.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+struct Inventory {
+    int a, b, c, d, e;
+    Inventory() : a(0), b(0), c(0), d(0), e(0) {}
+};
+
+void CBasePlayer::sub_101835e0()
+{
+    const char *ent;
+    if (this != 0) {
+        ent = *(const char **)((char *)this + 0x26c);
+        if (ent == 0) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBasePlayer::Inventory_CreateKeyRingBackup", ent, g_106b8540);
+    Inventory **pInv = (Inventory **)((char *)this + 0x245c);
+    if (*pInv == 0)
+        *pInv = new Inventory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10183880 size=0x67
 #include "CVStatList_t.h"
 struct StatInfoRef { char pad[0x10]; int id; };
