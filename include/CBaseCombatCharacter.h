@@ -82,6 +82,7 @@ public:
 	void sub_103483c0(int a, int b, int c);	// "CBaseCombatCharacter::BeginMeltEffect": scope trace (entity name), stores b at +0x19a8, 0x20 at +0x168, c at +0x19ac, then CBaseAnimating::sub_10090890(a)
 	void sub_10348490(int a, int b, int c);	// "CBaseCombatCharacter::BeginUnmeltEffect": same as BeginMeltEffect with 0x21 at +0x168
 	char sub_10337300();	// "CBaseCombatCharacter::ChooseBestRangedWeapon": scope trace (entity name), weapon = slot 309(); when set calls slot 388(weapon, 0) and returns true
+	char sub_10334860(void *pCurrent);	// "CBaseCombatCharacter::SwitchToNextBestWeapon": scope trace (entity name), next = slot 20 of the global at 0x1070ba0c(this, pCurrent); when it is set and differs from pCurrent returns slot 388(next, 0), else false
 	void sub_1032e9f0(int index, CBaseEntity *pWeapon);	// "CBaseCombatCharacter::SetWeapon": scope trace (entity name), stores the weapon's handle in the array at +0x1624 (-1 for null)
 
 	// Slots called directly so far; declared as plain members.
