@@ -30,7 +30,7 @@ public:
 	virtual void vfunc59(); virtual void vfunc60(); virtual void vfunc61(); virtual void vfunc62(); virtual void vfunc63();
 	virtual void vfunc64(); virtual void vfunc65(); virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68();
 	virtual void vfunc69(); virtual void vfunc70(); virtual void vfunc71(); virtual void vfunc72(); virtual void vfunc73();
-	virtual void vfunc74(); virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
+	virtual void vfunc74(); virtual void vfunc75(int a, int b); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
 	virtual void vfunc79(); virtual void vfunc80(); virtual void vfunc81(); virtual void vfunc82(); virtual void vfunc83();
 	virtual void vfunc84(int flags); virtual void vfunc85(); virtual void vfunc86(); virtual void vfunc87(); virtual void vfunc88();
 	virtual void vfunc89(); virtual void vfunc90(); virtual void vfunc91(); virtual void vfunc92(); virtual void vfunc93();
