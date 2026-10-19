@@ -489,6 +489,36 @@ void CBaseEntity::vfunc125()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0d20 size=0xd7
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int CBaseEntity::vfunc143(float flHealth, int bitsDamageType)
+{
+	const char *ent;
+	if (this)
+		ent = m_name26c ? m_name26c : g_106b8540;
+	else
+		ent = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::TakeHealth";
+	g_109f3620[*g_109f3680].b = ent;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (m_pEdict2e0 && m_nTakeDamage >= 2 && m_iHealth < m_iMaxHealth) {
+		int maxHealth = m_iMaxHealth;
+		m_iHealth = (int)(m_iHealth + flHealth);
+		if (m_iHealth > maxHealth)
+			m_iHealth = maxHealth;
+		--*g_109f3680;
+		return 1;
+	}
+	--*g_109f3680;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a65a0 size=0x71
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
