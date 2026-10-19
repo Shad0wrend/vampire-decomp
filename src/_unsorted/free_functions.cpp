@@ -5047,6 +5047,27 @@ void __fastcall sub_1007ee20(int *p)
 void __fastcall sub_1007ee40(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1007f250 size=0xf0
+#include "CUtlRBTree24.h"
+
+void CUtlRBTree24::sub_1007f250(const void *pInsert, int *pParent, bool *pLeftChild)
+{
+    int current = m_Root;
+    *pParent = InvalidIndex();
+    *pLeftChild = false;
+    while (current != InvalidIndex()) {
+        *pParent = current;
+        if (m_LessFunc(pInsert, ElementAt(current).m_Data)) {
+            *pLeftChild = true;
+            current = LinksInl(current).m_Left;
+        } else {
+            *pLeftChild = false;
+            current = LinksInl(current).m_Right;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f3d0 size=0x17
 struct E8 { int a, b; };
 
