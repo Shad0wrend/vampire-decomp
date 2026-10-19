@@ -19573,6 +19573,25 @@ void sub_10321ec0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10322800 size=0x86
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_10322800(unsigned int flags, int a)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::SetOccultPowerFlag";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    *(unsigned int *)((char *)this + 0xe38) |= flags;
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323210 size=0x79
 #include "CBaseCombatCharacter.h"
 
