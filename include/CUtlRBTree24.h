@@ -1,6 +1,9 @@
 // CUtlRBTree24: Source's CUtlRBTree with 24-byte nodes (int-indexed, 16-byte links, 8-byte element).
 #pragma once
 
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+
 class CUtlRBTree24
 {
 public:
@@ -34,7 +37,29 @@ public:
 		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
 	}
 
+	void GrowInl(int num)	// "CUtlMemory::Grow"
+	{
+		if (m_nGrowSize == -1)
+			return;
+		int nAllocationRequested = m_nAllocationCount + num;
+		while (m_nAllocationCount < nAllocationRequested)
+		{
+			if (m_nAllocationCount != 0)
+			{
+				if (m_nGrowSize)
+					m_nAllocationCount += m_nGrowSize;
+				else
+					m_nAllocationCount += m_nAllocationCount;
+			}
+			else
+				m_nAllocationCount = (31 + sizeof(Node_t)) / sizeof(Node_t);
+		}
+		if (m_pElements)
+			m_pElements = (Node_t *)g_109f3638(m_pElements, m_nAllocationCount * sizeof(Node_t));
+		else
+			m_pElements = (Node_t *)g_109f3634(m_nAllocationCount * sizeof(Node_t));
+	}
+
 	const Links_t &sub_10055520(int i) const;	// "CUtlRBTree::Links"
 	int sub_10055050();	// "CUtlRBTree::NewNode": takes the first free node (or grows the node memory by one and uses the next unused one) and returns its index
-	int sub_1007f7a0();	// "CUtlRBTree::NewNode" (another instance)
 };
