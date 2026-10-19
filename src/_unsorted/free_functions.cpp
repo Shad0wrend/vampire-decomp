@@ -9221,6 +9221,41 @@ int sub_100e77f0(const int *a, const int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ea1e0 size=0xb1
+#include "CUnknown100ea1e0.h"
+extern "C" unsigned int strlen(const char *);
+
+void CUnknown100ea1e0::sub_100ea1e0(char flag, char *pOut1, char *pOut2)
+{
+    if (pOut1) {
+        if (strlen(m_str1) != 0) {
+            if (flag) {
+                switch (m_mode) {
+                case 1:
+                    if (m_value == 2)
+                        *pOut1 = sub_1000f2cc(m_str1, 0x102);
+                    break;
+                case 2:
+                case 3:
+                    *pOut1 = sub_1000f2cc(m_str1, 0x102);
+                    break;
+                }
+            } else {
+                *pOut1 = sub_1000f2cc(m_str1, 0x100);
+            }
+        } else {
+            *pOut1 = 0;
+        }
+    }
+    if (pOut2) {
+        if (strlen(m_str2) != 0)
+            *pOut2 = sub_1000f2cc(m_str2, 0x100);
+        else
+            *pOut2 = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb060 size=0x24
 unsigned int __stdcall sub_100eb060(unsigned int x)
 {
