@@ -14993,6 +14993,39 @@ void CUnknown10227c90::sub_101f1be0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1c70 size=0x65
+#include "CUnknown101f1c70.h"
+#include "CUnknown101f0e50.h"
+
+extern CUnknown101f0e50 g_1073a9a0;
+
+void CUnknown101f1c70::sub_101f1c70(int value)
+{
+	if (g_1073a9a0.sub_101f18f0(value)) {
+		int n = m_count;
+		int i = 0;
+		if (0 < n) {
+			int *p = m_pData;
+			int *q = p;
+			do {
+				if (*q == value) {
+					if (i < n - 1)
+						p[i] = p[n - 1];
+					if (m_count <= 1) {
+						delete (void *)m_pData;
+						m_pData = 0;
+					}
+					m_count--;
+					return;
+				}
+				i++;
+				q++;
+			} while (i < n);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2500 size=0x9
 struct CUnknown101f2500 { int a; char sub_101f2500(); };
 // TARGET: CUnknown101f2500::sub_101f2500
