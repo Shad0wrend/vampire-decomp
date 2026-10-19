@@ -806,6 +806,7 @@
 0x100077ed func   ?sub_10079060@CUnknown10079060@@QAEXH@Z CUnknown10079060::sub_10079060
 0x100077f2 func   ?vfunc2@CAI_CsActList@@UAEXD@Z CAI_CsActList::vfunc2
 0x1000780b func   ?sub_101e1870@@YGII@Z sub_101e1870
+0x1000781f func   ?sub_10314000@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10314000
 0x10007824 func   _item_p_occult_dexterity item_p_occult_dexterity
 0x1000785b func   ?sub_1025d820@CUnknown1025d820@@QAEPAU1@XZ CUnknown1025d820::sub_1025d820
 0x10007860 func   ?sub_10428280@@YAHHHHHH@Z sub_10428280

@@ -19049,6 +19049,15 @@ void __fastcall sub_10313f70(Mem16 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10314000 size=0xb9
+#include "CUtlRBTree16.h"
+
+bool CUtlRBTree16::sub_10314000(unsigned short i) const
+{
+	return Links(Parent(i)).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103159d0 size=0x6d
 struct Squad;
 struct Ent {
