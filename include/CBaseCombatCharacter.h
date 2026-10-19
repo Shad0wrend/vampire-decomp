@@ -105,6 +105,7 @@ public:
 	int vfunc376(int a);
 	void vfunc387();
 	void vfunc388(void *weapon, int a);	// switches to the given weapon
+	int vfunc392(void *pInfo);	// "CBaseCombatCharacter::OnTakeDamage_Dead": scope trace (entity name), unless the life state at +0x1fc is 1 lowers the health at +0x210 by the info's damage (a CVDmg_t at info+0 when set, else the float at info+0x30); returns 1
 	int vfunc393();
 	void vfunc403();
 	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
