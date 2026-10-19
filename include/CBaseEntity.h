@@ -84,6 +84,7 @@ public:
 	void sub_1009d1e0();	// "CBaseEntity::ForceTransmit": scope trace, stores gpGlobals->curtime + 1.0f at +0x90
 	int sub_1009d5e0();	// "CBaseEntity::GetVSoundTableIdx": scope trace, calls slot 71 while the index at +0xbc is negative, returns it
 	int sub_1009d6a0();	// "CBaseEntity::GetVSoundGroup": scope trace, calls slot 71 while the value at +0xb4 is below -1, returns it
+	int sub_1009d760();	// "CBaseEntity::GetVSoundGroupFemale": same shape on the value at +0xb8
 	void sub_1009ee80(CBaseEntity *pEnt);	// "CBaseEntity::SetAimEnt": stores pEnt's handle at +0x37c (-1 for null)
 	const char *sub_1009f200();	// "CBaseEntity::GetClassname": the string at +0x11c, or "" when it is null
 	void sub_1009fa60();
@@ -127,7 +128,7 @@ public:
 	float m_flForceTransmitTime;	// 0x0090
 	char m_pad0094[0xb4 - 0x94];
 	int m_nVSoundGroup;	// 0x00b4
-	char m_pad00b8[0xbc - 0xb8];
+	int m_nVSoundGroupFemale;	// 0x00b8
 	int m_nVSoundTableIdx;	// 0x00bc
 	char m_pad00c0[0x114 - 0xc0];
 	void (CBaseEntity::*m_pfn0114)();
