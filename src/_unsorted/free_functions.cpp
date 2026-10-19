@@ -6290,6 +6290,44 @@ int CBaseEntity::sub_1009d760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d850 size=0xb1
+#include "CBaseEntity.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+struct Listener { int a; int type; };
+
+float CBaseEntity::sub_1009d850(void *pListener, float *pDist)
+{
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseEntity::AdjustSoundDistForStealth", ent, g_106b8540);
+    Listener *l = (Listener *)pListener;
+    if (l && l->type == 4 && *(int *)((char *)this + 0xa8)) {
+        *pDist = *pDist - vfunc30();
+        if (*pDist < 0.0f)
+            *pDist = 0.0f;
+    }
+    return *pDist;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ee80 size=0x9f
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
