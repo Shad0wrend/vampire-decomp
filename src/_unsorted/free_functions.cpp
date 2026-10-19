@@ -10005,6 +10005,16 @@ void CUnknown10194da0::sub_10194da0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10194e40 size=0xbd
+#include "CUtlRBTree12.h"
+
+bool CUtlRBTree12::sub_10194e40(unsigned short i) const
+{
+	unsigned short parent = Links(i).m_Parent;
+	return Links(parent).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196c50 size=0x81
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 #define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
