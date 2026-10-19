@@ -7,7 +7,7 @@ class CUnknown1014ca10
 {
 public:
 	char pad0[0x9d0];
-	char m_records[0x14 * 0x20];	// 0x09d0
+	char m_records[0x140];	// 0x09d0
 	int m_nUnfilteredCount;	// 0x0b10
 	int m_nRecords;	// 0x0b14
 
