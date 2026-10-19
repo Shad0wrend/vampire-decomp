@@ -24902,6 +24902,45 @@ void sub_1024e030(const mat34_1024e030 &matrix, ang_1024e030 &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10250400 size=0x104
+#include "CUnknown10250830.h"
+extern CUnknown10250830 g_1088ae60;
+extern void (*g_109f366c)(const char *);
+struct SGrow { void sub_10250910(int num); };
+
+void sub_10250400(void *src)
+{
+    unsigned short elem;
+    if (g_1088ae60.m_FirstFree == 0xffff) {
+        if (g_1088ae60.m_TotalElements == g_1088ae60.m_allocationCount)
+            ((SGrow *)&g_1088ae60)->sub_10250910(1);
+        elem = g_1088ae60.m_TotalElements++;
+        if (elem == 0xffff)
+            g_109f366c("CUtlLinkedList overflow!\n");
+    } else {
+        elem = g_1088ae60.m_FirstFree;
+        g_1088ae60.m_FirstFree = g_1088ae60.m_pElements[g_1088ae60.m_FirstFree].m_Next;
+    }
+    g_1088ae60.m_pElements[elem].m_Previous = elem;
+    g_1088ae60.m_pElements[elem].m_Next = elem;
+    g_1088ae60.m_pDbgElements = g_1088ae60.m_pElements;
+    g_1088ae60.sub_10250830(elem);
+    CUnknown10250830_Elem *pE = &g_1088ae60.m_pElements[elem];
+    pE->m_Next = 0xffff;
+    pE->m_Previous = g_1088ae60.m_Tail;
+    g_1088ae60.m_Tail = elem;
+    unsigned short prev = pE->m_Previous;
+    if (prev == 0xffff)
+        g_1088ae60.m_Head = elem;
+    else
+        g_1088ae60.m_pElements[prev].m_Next = elem;
+    g_1088ae60.m_ElementCount++;
+    CUnknown10250830_Elem *pe = &g_1088ae60.m_pElements[elem];
+    if (pe)
+        pe->m_data = (int)src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10250560 size=0xf1
 #include "CUnknown10250830.h"
 #include "CUnknown102508f0.h"
