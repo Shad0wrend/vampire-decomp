@@ -63,6 +63,27 @@ void CNPC_VWerewolf::vfunc421()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cb200 size=0x74
+#include "CNPC_VWerewolf.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+void __fastcall sub_1028e310(CNPC_VWerewolf *);
+
+void CNPC_VWerewolf::vfunc113()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CNPC_VWerewolf::Activate";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_1028e310(this);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cb7f0 size=0xb
 struct W {
 	char pad[0x6078];
