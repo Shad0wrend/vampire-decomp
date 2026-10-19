@@ -2050,6 +2050,15 @@ void CMem16b_t::sub_1004b990(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ba20 size=0xbb
+#include "CUtlRBTree16.h"
+
+bool CUtlRBTree16::sub_1004ba20(unsigned short i) const
+{
+	return Links(Parent(i)).m_Right == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004c4c0 size=0xbd
 #include "CUtlRBTree36.h"
 
