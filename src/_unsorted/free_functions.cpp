@@ -22451,6 +22451,32 @@ struct CUnknown1035b1c0 { int sub_1035b1c0(int, int, int, int); };
 int CUnknown1035b1c0::sub_1035b1c0(int, int, int, int) { return 1; }
 // END FUNCTION
 
+// FUNCTION: 0x1035b2b0 size=0x75
+#include "CUnknown10359c50.h"
+extern CUnknown10359c50 g_1093a3b0;
+extern CUnknown10359c50 g_1093a3c8;
+extern CUnknown10359c50 g_1093a3e0;
+extern CUnknown10359c50 g_1093a350;
+extern char g_109203cc[];
+extern char g_109203d4[];
+extern char g_109203dc[];
+extern char g_10936c74[];
+extern char g_10920484[];
+extern char g_1090ff08[];
+extern char g_1090ff20[];
+extern char g_1090ff38[];
+extern const char *g_1062a02c;
+void sub_1035b2b0()
+{
+	if (g_1093a3b0.sub_1001153b(g_109203cc, g_1090ff08)) {
+		if (g_1093a3c8.sub_1001153b(g_109203d4, g_1090ff20))
+			g_1093a3e0.sub_1001153b(g_109203dc, g_1090ff38);
+	}
+	g_1093a350.sub_1001153b(g_10936c74, g_10920484);
+	g_1093a3b0.sub_1000a948("SCHED_GENERIC_NPC_WALK", 0x45, "schedule", g_1062a02c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b440 size=0x33
 void sub_1000b15e();
 void sub_10004f1b();
