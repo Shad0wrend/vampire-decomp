@@ -4723,6 +4723,34 @@ char CBaseAnimating::sub_100903e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10090890 size=0x86
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+struct CGlobalVarsLike { int m_pad[3]; float m_curtime; };
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern CGlobalVarsLike *g_1070b228;
+extern char g_106b8540[];
+
+void CBaseAnimating::sub_10090890(float delay)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseAnimating :: MarkEffectStartTime";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	*(float *)((char *)this + 0x5a4) = delay + g_1070b228->m_curtime;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10090b20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
