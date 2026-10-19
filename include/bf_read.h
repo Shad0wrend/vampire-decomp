@@ -44,6 +44,20 @@ public:
 		return ret;
 	}
 
+	int ReadOneBit()
+	{
+		if ((m_iCurBit + 1) > m_nDataBits)
+			m_bOverflow = true;
+		if (!m_bOverflow)
+		{
+			int value = ((unsigned char *)m_pData)[m_iCurBit >> 3] & (1 << (m_iCurBit & 7));
+			++m_iCurBit;
+			return value != 0;
+		}
+		return 0;
+	}
+
 	float sub_100be3d0(int numbits);	// "ReadBitAngle": ReadUBitLong(numbits) scaled to 360 degrees
 	float sub_100beba0();	// "ReadBitNormal": sign bit, then 11 fractional bits scaled by 1/2047
+	int sub_100be590(int numbits);	// "ReadSBitLong": ReadUBitLong(numbits - 1), minus 1 << (numbits - 1) when the sign bit is set
 };
