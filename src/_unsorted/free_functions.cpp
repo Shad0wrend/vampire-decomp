@@ -29834,6 +29834,55 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10332fc0 size=0xe7
+#include "CUnknown10332fc0.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct HandleEntry { void *ent; unsigned int serial; int pad; };
+struct HandleList { int pad; HandleEntry e[1]; };
+extern HandleList *g_10566458;
+
+struct SpeakerHandle
+{
+	unsigned int m_Index;
+	void *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			HandleEntry *e = &g_10566458->e[m_Index & 0x1fff];
+			if (e->serial == (m_Index >> 13))
+				return e->ent;
+		}
+		return 0;
+	}
+};
+
+int CUnknown10332fc0::sub_10332fc0(void *pSpeaker)
+{
+	const char *ent;
+	if (this)
+		ent = m_name26c ? m_name26c : g_106b8540;
+	else
+		ent = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::GetDialogReactionModifier";
+	g_109f3620[*g_109f3680].b = ent;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	for (int i = 0; i < m_nRecords; i++) {
+		if (pSpeaker == ((SpeakerHandle *)m_pRecords[i])->Get()) {
+			int value = m_pRecords[i]->m_nModifier;
+			--*g_109f3680;
+			return value;
+		}
+	}
+	--*g_109f3680;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10334500 size=0x9d
 #include "CBaseCombatCharacter.h"
 
