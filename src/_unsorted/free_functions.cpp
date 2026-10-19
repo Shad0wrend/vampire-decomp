@@ -20299,6 +20299,33 @@ char QuestJournal::sub_10221ca0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10221d60 size=0xb4
+#include "QuestJournal.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern void (*g_109f364c)(const char *fmt, ...);
+
+char *QuestJournal::sub_10221d60(int quest, int index)
+{
+    g_109f3620[*g_109f3680].a = "QuestJournal::GetCompletionStateForQuest";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (sub_10221be0(quest) && index >= 0 && index < 20) {
+        int state = ((int *)m_field[5])[index + quest * 0x1a + 5];
+        char *r = sub_10221e50(state);
+        (*g_109f3680)--;
+        return r;
+    }
+    g_109f364c("Could not find quest!\n");
+    char *r = (char *)m_field[0];
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10221e50 size=0x99
 #include "QuestJournal.h"
 
