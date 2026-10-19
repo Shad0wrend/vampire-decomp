@@ -19058,6 +19058,15 @@ bool CUtlRBTree16::sub_10314000(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10314b30 size=0xb9
+#include "CUtlRBTree16.h"
+
+bool CUtlRBTree16::sub_10314b30(unsigned short i) const
+{
+	return Links(Parent(i)).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103159d0 size=0x6d
 struct Squad;
 struct Ent {
