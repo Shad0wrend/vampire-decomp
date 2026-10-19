@@ -8,6 +8,7 @@ public:
 	char m_flag28;
 
 	QuestJournal *sub_10220e10();	// the constructor (QuestJournal::QuestJournal); returns this
+	int sub_10221a00(const char *name);	// "QuestJournal::GetQuestIndex": scope trace, index of the quest record (0x68 bytes each, name pointer first) whose name is a case-insensitive prefix match of the argument's length, or a warning and -1
 	char *sub_10221b10(int index);	// "QuestJournal::GetQuest": scope trace, record `index` (0x68 bytes each) of the array whose base is m_field[5], or a warning and the base when the index is invalid
 	char sub_10221be0(int index);	// "QuestJournal::IsQuestIndexValid": 0 <= index < m_field[8]
 	char sub_10221ca0(int index);	// "QuestJournal::IsCompletionIndexValid": 0 <= index < m_field[3]
