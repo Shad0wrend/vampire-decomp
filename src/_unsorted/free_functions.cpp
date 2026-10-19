@@ -13909,6 +13909,75 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170eb0 size=0xec
+#include "CUnknown10170eb0.h"
+
+struct HandleEntry { void *ent; unsigned int serial; int pad; };
+struct HandleList { int pad; HandleEntry e[1]; };
+extern HandleList *g_10566458;
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+struct FirstEntitySlots
+{
+	SL100(a) SL100(b) SL100(c) SL10(d0)
+	virtual void e0(); virtual void e1(); virtual void e2();
+	virtual bool Check();	// slot 313
+};
+
+struct SelfSlots
+{
+	SL100(a) SL100(b) SL100(c) SL100(d) SL10(e0) SL10(e1) SL10(e2) SL10(e3) SL10(e4)
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5(); virtual void f6();
+	virtual void Notify(const char *pName, int a);	// slot 457
+};
+
+struct SecondEntity
+{
+	char m_pad0000[0x11c];
+	const char *m_classname;	// 0x11c
+
+	const char *GetClassname() const { return m_classname ? m_classname : ""; }
+};
+
+struct EntHandleFirst
+{
+	unsigned int m_Index;
+	FirstEntitySlots *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		HandleEntry *e = &g_10566458->e[m_Index & 0x1fff];
+		return e->serial == (m_Index >> 13) ? (FirstEntitySlots *)e->ent : 0;
+	}
+};
+
+struct EntHandleSecond
+{
+	unsigned int m_Index;
+	SecondEntity *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		HandleEntry *e = &g_10566458->e[m_Index & 0x1fff];
+		return e->serial == (m_Index >> 13) ? (SecondEntity *)e->ent : 0;
+	}
+};
+
+void CUnknown10170eb0::sub_10170eb0()
+{
+	if (((EntHandleSecond *)&m_hSecond)->Get() != 0) {
+		if (((EntHandleFirst *)&m_hFirst)->Get() != 0) {
+			if (!((EntHandleFirst *)&m_hFirst)->Get()->Check())
+				return;
+		}
+		((SelfSlots *)this)->Notify(((EntHandleSecond *)&m_hSecond)->Get()->GetClassname(), 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101719d0 size=0x94
 #define V4(x) virtual void x##a(); virtual void x##b(); virtual void x##c(); virtual void x##d();
 #define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
