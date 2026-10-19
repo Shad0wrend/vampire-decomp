@@ -3953,6 +3953,42 @@ void CUtlVector4::sub_10071ae0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071cd0 size=0xe1
+extern char *(*g_109f3890)(char *, const char *, int);
+extern char g_10547308[];
+extern char g_10547304[];
+char *sub_10431510(const char *, const char *);
+double sub_1043136f(const char *);
+
+void sub_10071cd0(float *out, const char *str)
+{
+    float x = 0.0f;
+    float y = 0.0f;
+    float z = 0.0f;
+    char buf[48];
+    char *(*pfnCopy)(char *, const char *, int) = g_109f3890;
+    pfnCopy(buf, str, 48);
+    char *p = sub_10431510(buf, g_10547308);
+    if (p) {
+        pfnCopy(buf, p + 1, 48);
+        x = (float)sub_1043136f(buf);
+    }
+    p = sub_10431510(buf, g_10547304);
+    if (p) {
+        pfnCopy(buf, p + 1, 48);
+        y = (float)sub_1043136f(buf);
+    }
+    p = sub_10431510(buf, g_10547304);
+    if (p) {
+        pfnCopy(buf, p + 1, 48);
+        z = (float)sub_1043136f(buf);
+    }
+    out[0] = x;
+    out[1] = y;
+    out[2] = z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072d60 size=0x16
 struct S10072d60 {
 	char m_pad[0x14];
