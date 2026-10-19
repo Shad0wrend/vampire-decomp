@@ -20156,6 +20156,56 @@ extern "C" GP *aitesthull()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d8a90 size=0x85
+#include "CUnknown102d8a90.h"
+
+#define EV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define EV100(p) EV10(p##0) EV10(p##1) EV10(p##2) EV10(p##3) EV10(p##4) EV10(p##5) EV10(p##6) EV10(p##7) EV10(p##8) EV10(p##9)
+
+struct SEntityLike
+{
+	EV100(a0)
+	EV10(a10)
+	EV10(a11)
+	EV10(a12)
+	EV10(a13)
+	EV10(a14)
+	EV10(a15)
+	EV10(a16)
+	EV10(a17)
+	EV10(a18)
+	virtual void a190(); virtual void a191(); virtual void a192();
+	virtual SVec3 *vfunc193(SVec3 *out);
+};
+
+struct SEntInfo { SEntityLike *pEnt; unsigned int serial; };
+struct SEntSlot { int pad; SEntInfo e; };
+extern SEntSlot *g_10566458;
+
+inline SEntityLike *LookupEntity(const unsigned int &h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	SEntInfo *e = &g_10566458[h & 0x1fff].e;
+	if (e->serial == (h >> 13))
+		return e->pEnt;
+	return 0;
+}
+
+SVec3 *CUnknown102d8a90::sub_102d8a90()
+{
+	if (m_nFlag == 0 && LookupEntity(m_hEntity)) {
+		SVec3 tmp;
+		SVec3 *p = LookupEntity(m_hEntity)->vfunc193(&tmp);
+		m_vCached.x = p->x;
+		m_vCached.y = p->y;
+		m_vCached.z = p->z;
+	}
+	return &m_vCached;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d9150 size=0xa
 CUnknown102d9150 *CUnknown102d9150::sub_102d9150()
 {
