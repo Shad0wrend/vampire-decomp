@@ -15436,6 +15436,37 @@ CUnknown101b45b0 *CUnknown101b45b0::sub_101b45b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4900 size=0xbf
+extern "C" __declspec(dllimport) int Q_strcasecmp(const char *, const char *);
+__declspec(dllimport) void DevMsg(const char *, ...);
+extern const float g_104454c4;
+extern const float g_10452dc4;
+extern const float g_10462914;
+extern const float g_1044f02c;
+extern const float g_1047b3d0;
+extern const float g_1047049c;
+
+float __stdcall sub_101b4900(const char *name)
+{
+    if (name) {
+        if (Q_strcasecmp(name, "ATTN_NONE") == 0)
+            return g_104454c4;
+        if (Q_strcasecmp(name, "ATTN_NORM") != 0) {
+            if (Q_strcasecmp(name, "ATTN_IDLE") == 0)
+                return g_10452dc4;
+            if (Q_strcasecmp(name, "ATTN_STATIC") == 0)
+                return g_10462914;
+            if (Q_strcasecmp(name, "ATTN_RICOCHET") == 0)
+                return g_1044f02c;
+            if (Q_strcasecmp(name, "ATTN_GUNFIRE") == 0)
+                return g_1047b3d0;
+            DevMsg("CSoundEmitterSystem:  Unknown attenuation key %s\n", name);
+        }
+    }
+    return g_1047049c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6250 size=0x9e
 #include "CUnknown101b6250.h"
 
