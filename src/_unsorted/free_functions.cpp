@@ -9011,6 +9011,29 @@ float bf_read::sub_100be3d0(int numbits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100beba0 size=0xd1
+#include "bf_read.h"
+
+float bf_read::sub_100beba0()
+{
+	int signbit;
+	if (m_iCurBit + 1 > m_nDataBits)
+		m_bOverflow = true;
+	if (!m_bOverflow) {
+		int value = ((unsigned char *)m_pData)[m_iCurBit >> 3] & (1 << (m_iCurBit & 7));
+		++m_iCurBit;
+		signbit = value != 0;
+	} else {
+		signbit = 0;
+	}
+	unsigned int fractVal = ReadUBitLong(11);
+	float value = fractVal * (1.0 / 2047.0);
+	if (signbit)
+		value = -value;
+	return value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0c60 size=0xd
 void CUnknown100c0c60::sub_100c0c60(float value)
 {
