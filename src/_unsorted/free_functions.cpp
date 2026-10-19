@@ -10430,6 +10430,48 @@ void S10109e40::sub_10109e40(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010be40 size=0xaf
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1056d1ac[2];
+void sub_1001207b();
+void sub_1000f038();
+
+int *sub_1010be40()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_radius", {0x454, 0}, 1, 6, "fireradius" },
+        { 1, "m_targetLevel", {0x458, 0}, 1, 6, "heatlevel" },
+        { 1, "m_targetTime", {0x45c, 0}, 1, 6, "heattime" },
+        { 5, "m_bEnabled", {0x450, 0}, 1, 2 },
+        { 5, "m_bHeatAtLevel", {0x451, 0}, 1, 2 },
+        { 1, "m_levelTime", {0x460, 0}, 1, 2 },
+        { 0, "InputEnable", {0, 0}, 1, 8, "Enable", 0, (void *)sub_1001207b },
+        { 0, "InputDisable", {0, 0}, 1, 8, "Disable", 0, (void *)sub_1000f038 },
+        { 10, "m_OnHeatLevelStart", {0x464, 0}, 1, 0x16, "OnHeatLevelStart", g_1055dc70 },
+        { 10, "m_OnHeatLevelEnd", {0x47c, 0}, 1, 0x16, "OnHeatLevelEnd", g_1055dc70 },
+    };
+    g_1056d1ac[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1056d1ac[0] = (int)&dataDesc[1];
+    return g_1056d1ac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010cbc0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
