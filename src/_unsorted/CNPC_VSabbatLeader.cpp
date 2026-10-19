@@ -210,3 +210,38 @@ int CNPC_VSabbatLeader::sub_103aa480(int arg)
 	return r;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103ab4a0 size=0xa9
+#include "CNPC_VSabbatLeader.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+struct EntSlot { void *pEnt; unsigned int serial; };
+struct EntListEntry { int pad; EntSlot s; };
+extern EntListEntry *g_10566458;
+
+inline void *HGet(unsigned int h)
+{
+    if (h != 0xffffffff) {
+        EntSlot *p = &g_10566458[h & 0x1fff].s;
+        if (p->serial == (h >> 13))
+            return p->pEnt;
+    }
+    return 0;
+}
+
+void CNPC_VSabbatLeader::sub_103ab4a0(void *pVictim)
+{
+    g_109f3620[*g_109f3680].a = "CNPC_VSabbatLeader::OnVictimHitByMe";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (HGet(*(unsigned int *)((char *)this + 0x628c)) == pVictim) {
+        int *pCount = (int *)((char *)this + 0x66e0);
+        if (--*pCount < 0)
+            *pCount = 0;
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
