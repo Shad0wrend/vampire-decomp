@@ -12750,6 +12750,48 @@ bool CUnknown101f6c30::sub_101f6c30()
 bool __fastcall sub_101f74e0(int *p) { bool r = p[3] != -1; return r; }
 // END FUNCTION
 
+// FUNCTION: 0x101f7960 size=0xeb
+#include "CUnknown101f7960.h"
+
+struct S101f7310 {
+	S101f7310 *sub_101f7310(int);
+	int m_data[6];
+};
+
+S101f7310 *CUnknown101f7960::sub_101f7960()
+{
+	if (m_allocCount == m_count) {
+		m_allocCount++;
+		if (m_pItems) {
+			S101f7310 **p = new S101f7310 *[m_allocCount];
+			int i = 0;
+			if (m_count > 0) {
+				do {
+					p[i] = m_pItems[i];
+					i++;
+				} while (i < m_count);
+			}
+			for (; i < m_allocCount; i++)
+				p[i] = 0;
+			delete m_pItems;
+			m_pItems = p;
+		} else {
+			m_pItems = new S101f7310 *[m_allocCount];
+			for (int i = 0; i < m_allocCount; i++)
+				m_pItems[i] = 0;
+		}
+		m_count++;
+	} else {
+		m_count++;
+	}
+	if (m_pItems[m_count - 1] == 0) {
+		S101f7310 *p = new S101f7310;
+		m_pItems[m_count - 1] = p ? p->sub_101f7310(m_count - 1) : 0;
+	}
+	return m_pItems[m_count - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f7b20 size=0x6b
 #include "CUnknown101f7b20.h"
 
