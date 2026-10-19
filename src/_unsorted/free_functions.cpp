@@ -15662,6 +15662,38 @@ const char * __stdcall sub_1027f1e0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027fae0 size=0x8c
+#include "UtlVec8.h"
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void UtlVec8::sub_1027fae0(int num)
+{
+    if (m_Size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_Size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 4;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount << 3);
+        else
+            m_pMemory = (char *)g_109f3634(m_allocationCount << 3);
+    }
+    m_Size += num;
+    m_pElements = (UtlVec8Elem *)m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027fbf0 size=0x9
 struct CUnknown1027fbf0 { int a; CUnknown1027fbf0* sub_1027fbf0(); };
 // TARGET: CUnknown1027fbf0::sub_1027fbf0
