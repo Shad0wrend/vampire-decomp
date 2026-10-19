@@ -842,6 +842,7 @@
 0x1000762b func   _item_k_lilly_key item_k_lilly_key
 0x1000765d func   _npc_maker npc_maker
 0x10007671 func   ?sub_10081eb0@@YIXPAUCSlots@@HH@Z sub_10081eb0
+0x10007680 func   ?sub_10092e20@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::sub_10092e20
 0x100076b2 func   ?vfunc104@CBaseDoor@@QAEXXZ CBaseDoor::vfunc104
 0x100076d5 func   ?sub_10075ce0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10075ce0
 0x100076e9 func   ?vfunc5@CNPC_VMoleman@@QAEPAV1@I@Z CNPC_VMoleman::vfunc5
