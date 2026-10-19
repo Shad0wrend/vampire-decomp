@@ -31,6 +31,7 @@ public:
 	float m_f22B0;
 
 	void sub_10177120();
+	void sub_101835e0();	// "CBasePlayer::Inventory_CreateKey": scope trace (entity name), then allocates the 5-dword inventory object at +0x245c when it is not there yet
 	int sub_1017ddd0();	// the decoded value at +0x1cd8, or a convar override
 	int sub_10175290();	// slot 444: refreshes the counter at +0x1e08, else the field at +0x45c of the entity at +0x1e04
 	CBaseEntity *sub_1015dc60();	// slot 167 override: resolves the entity handle at +0x1c60 (null when stale)
