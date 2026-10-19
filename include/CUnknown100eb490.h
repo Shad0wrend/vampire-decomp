@@ -12,13 +12,13 @@ struct CUnknownIntVec
 	int m_size;
 	int *m_pElements;
 
-	void PurgeMemory()
+	void PurgeMemory(void (*pfnFree)(void *))
 	{
 		if (m_growSize != -1)
 		{
 			if (m_pMemory)
 			{
-				g_109f3624(m_pMemory);
+				pfnFree(m_pMemory);
 				m_pMemory = 0;
 			}
 			m_allocationCount = 0;
@@ -26,10 +26,11 @@ struct CUnknownIntVec
 	}
 	void PurgeAndDestruct()
 	{
+		void (*pfnFree)(void *) = g_109f3624;
 		m_size = 0;
-		PurgeMemory();
+		PurgeMemory(pfnFree);
 		m_pElements = m_pMemory;
-		PurgeMemory();
+		PurgeMemory(pfnFree);
 	}
 };
 
