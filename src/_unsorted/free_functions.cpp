@@ -24130,6 +24130,39 @@ void sub_102fc540(int a, int b, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fc5d0 size=0xa2
+#include "CUnknown102fc5d0.h"
+
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+CUnknown102fc5d0 *CUnknown102fc5d0::sub_102fc5d0(int a, int b, const float *pVec, int c)
+{
+	m_list.m_pMemory = 0;
+	m_list.m_allocationCount = 4;
+	m_list.m_growSize = 0;
+	m_list.m_pMemory = (int *)g_109f3634(0x10);
+	m_list.m_size = 0;
+	m_list.m_pElements = m_list.m_pMemory;
+	m_field00 = 0;
+	m_vecX = pVec[0];
+	m_vecY = pVec[1];
+	m_vecZ = pVec[2];
+	m_field04 = b;
+	m_field98 = a;
+	memset(m_pad14, 0, sizeof(m_pad14));
+	m_field70 = 2;
+	m_field6c = c;
+	m_field74 = 0;
+	m_field78 = 0;
+	m_fieldA4 = 0;
+	m_fieldA0 = 0;
+	m_field9c = 0;
+	m_field90 = 0;
+	m_field94 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307b40 size=0x9
 struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 // TARGET: CUnknown10307b40::sub_10307b40
