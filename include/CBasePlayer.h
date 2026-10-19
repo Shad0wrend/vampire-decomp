@@ -33,4 +33,5 @@ public:
 	CBasePlayer *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100017d5();	// as in CPhysForce (transplant)
 	float *vfunc367(float *out);	// as in CBaseEntity (transplant)
+	int sub_101647a0(int act);	// NPC_TranslateActivity: scope-traced, 0x16 -> 9, 0x17 -> 0x13
 };
