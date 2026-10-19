@@ -8188,6 +8188,28 @@ bool CBaseCombatCharacter::sub_10106f90(int expression)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107050 size=0x9f
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_10107050(CBaseEntity *pEnt)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::SetDialogPartner";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (pEnt)
+        *(unsigned int *)((char *)this + 0xfe8) = *pEnt->vfunc1();
+    else
+        *(unsigned int *)((char *)this + 0xfe8) = 0xffffffff;
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101074c0 size=0x67
 struct Mem32 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
