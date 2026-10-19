@@ -11,4 +11,6 @@ public:
 	bool m_bOverflow;		// 0x10
 
 	void sub_100bd540(unsigned int curData);	// writes a full 32-bit value ("WriteUBitLong" with numbits == 32)
+	void sub_100bdc20(unsigned int curData);	// writes an 8-bit value (same shape with numbits == 8)
+	void sub_100bdd20(unsigned int curData);	// same family (another width)
 };
