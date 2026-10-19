@@ -2805,6 +2805,43 @@ void S10072d60::sub_10072d60(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10072f10 size=0xce
+#include "CUnknown10072f10.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+void CUnknown10072f10::sub_10072f10(int value)
+{
+	int elem = m_size;
+	if (1 + m_size > m_allocationCount && m_growSize != -1) {
+		int newSize = m_allocationCount + (1 + m_size - m_allocationCount);
+		while (m_allocationCount < newSize) {
+			if (m_allocationCount != 0) {
+				if (m_growSize != 0)
+					m_allocationCount += m_growSize;
+				else
+					m_allocationCount += m_allocationCount;
+			} else {
+				m_allocationCount = 8;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (int *)Plat_Realloc(m_pMemory, m_allocationCount * 4);
+		else
+			m_pMemory = (int *)Plat_Alloc(m_allocationCount * 4);
+	}
+	m_size += 1;
+	m_pElements = m_pMemory;
+	int numToMove = m_size - elem - 1;
+	if (numToMove > 0)
+		memmove(m_pMemory + elem + 1, m_pMemory + elem, numToMove * 4);
+	int *p = m_pMemory + elem;
+	if (p)
+		*p = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073220 size=0x2a
 struct S10073220 {
 	char m_pad[0x164];
