@@ -26648,6 +26648,44 @@ int CBaseCombatCharacter::sub_103346c0(int ammoIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10334860 size=0xaf
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CBCCSlots2 {
+	S100(c0) S100(c1) S100(c2)
+	S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5) S10(d6) S10(d7)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7();
+	virtual char Slot388(void *weapon, int a);
+};
+struct GlobalSlots20 {
+	S10(a0) S10(a1)
+	virtual void *Slot20(void *pOwner, void *pCurrent);
+};
+extern GlobalSlots20 *g_1070ba0c;
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+char CBaseCombatCharacter::sub_10334860(void *pCurrent)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::SwitchToNextBestWeapon";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    void *next = g_1070ba0c->Slot20(this, pCurrent);
+    if (next && next != pCurrent) {
+        char r = ((CBCCSlots2 *)this)->Slot388(next, 0);
+        (*g_109f3680)--;
+        return r;
+    }
+    (*g_109f3680)--;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10336920 size=0xe7
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern TraceEnt *g_109f3620;
