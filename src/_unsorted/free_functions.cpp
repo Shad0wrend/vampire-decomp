@@ -19311,6 +19311,45 @@ void CUnknown10289cc0::sub_10289cc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028ae60 size=0x8c
+#include "CAI_BaseNPC.h"
+
+__declspec(dllimport) void __cdecl DevMsg(const char *fmt, ...);
+
+struct CSlotOwner {
+	char m_pad[0x6c];
+	unsigned int *m_pBits;
+};
+
+class CSlotHolder {
+public:
+	char m_pad0[0x5bb0];
+	int m_nDisabled;
+	char m_pad1[0x5da4 - 0x5bb4];
+	CSlotOwner *m_pOwner;
+	char m_pad2[4];
+	int m_nSlot;
+
+	CSlotOwner *GetOwner() { return m_nDisabled <= 0 ? m_pOwner : 0; }
+
+	void Vacate()
+	{
+		if (m_nSlot != -1 && m_nDisabled <= 0 && m_pOwner) {
+			if (!(m_pOwner->m_pBits[m_nSlot >> 5] & (1 << (m_nSlot & 0x1f))))
+				DevMsg("ERROR! Vacating an empty slot!\n");
+			CSlotOwner *pOwner = GetOwner();
+			pOwner->m_pBits[m_nSlot >> 5] &= ~(1 << (m_nSlot & 0x1f));
+			m_nSlot = -1;
+		}
+	}
+};
+
+void CAI_BaseNPC::sub_1028ae60()
+{
+	((CSlotHolder *)this)->Vacate();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028eb30 size=0x66
 struct Vec3 { int x, y, z; };
 struct HandleObj {
