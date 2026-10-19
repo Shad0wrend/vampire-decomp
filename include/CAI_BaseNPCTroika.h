@@ -45,6 +45,7 @@ public:
 	void sub_102a97a0(unsigned int flags);	// ORs flags into the dword at +0x14b8
 	void sub_102a97d0(unsigned int flags);	// clears flags in the dword at +0x14b8
 	void sub_102c2a30(inputdata_t *data);	// input handler: stores the input's byte (0 unless its type is 5) at +0x63d8
+	bool sub_102d1540(void *pOther);	// slot 527 helper: true when pOther is the entity of the handle at +0x5e0, or that handle is stale and its timer (+0x5ec) has run out
 
 	char m_pad0004[0x63d4];
 	char m_b63d8;
