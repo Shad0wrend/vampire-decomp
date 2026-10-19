@@ -10,5 +10,15 @@ public:
 	char pad38[8];
 	int m_nItems;	// 0x40
 
-	bool sub_103ca2c0(int value);	// "CHintData_WW::IsHintPathableFrom": scope trace, true when the list holds value
+	int Find(int value)
+	{
+		for (int i = 0; i < m_nItems; i++)
+		{
+			if (m_pItems[i] == value)
+				return i;
+		}
+		return -1;
+	}
+
+	bool sub_103ca2c0(int value);	// "CHintData_WW::IsHintPathableFromEndpoint": scope trace, true when the list holds value
 };
