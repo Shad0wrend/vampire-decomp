@@ -282,6 +282,7 @@
 0x100033e6 func   ?vfunc5@CCameraKeyFrame@@QAEPAV1@I@Z CCameraKeyFrame::vfunc5
 0x10003409 func   ?sub_100330d0@@YIXPAUMem@@HH@Z sub_100330d0
 0x10003427 func   _monster_generic monster_generic
+0x1000342c func   ?sub_100c8270@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_100c8270
 0x10003436 func   ?vfunc5@CWeaponMelee_GargoyleFist@@QAEPAV1@I@Z CWeaponMelee_GargoyleFist::vfunc5
 0x10003440 func   ?sub_102056d0@CUnknown102056d0@@QAEPAU1@XZ CUnknown102056d0::sub_102056d0
 0x10003463 func   ?sub_100b6510@@YAXPBDPAD@Z sub_100b6510
