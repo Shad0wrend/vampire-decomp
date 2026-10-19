@@ -1,8 +1,9 @@
-// CUnknown103dc5b0: an object (virtual destructor, scalar deleting destructor at 0x103dc5b0) that owns two
-// CUtlVector members at +0x20 and +0x34. Used with 0x48 byte elements in a CNPC_VWerewolf vector.
+// CUnknown103dc5b0: an object that owns two CUtlVector members at +0x20 and +0x34; 0x103dc5b0 is its
+// destroy-and-maybe-delete function (bit 0 of the argument deletes). Used with 0x48 byte elements in a
+// CNPC_VWerewolf vector.
 #pragma once
 
-extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
+extern void (__cdecl * const g_109f3624)(void *);	// Plat_Free
 
 struct CUtlMem103dc5b0
 {
@@ -41,9 +42,9 @@ struct CUtlVec103dc5b0
 class CUnknown103dc5b0
 {
 public:
-	virtual ~CUnknown103dc5b0();
-
-	char m_pad0004[0x1c];
+	char m_pad0000[0x20];
 	CUtlVec103dc5b0 m_First;	// 0x20
 	CUtlVec103dc5b0 m_Second;	// 0x34
+
+	CUnknown103dc5b0 *sub_103dc5b0(unsigned char flags);	// destroys the vectors, deletes the object when bit 0 of flags is set
 };
