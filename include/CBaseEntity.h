@@ -52,6 +52,7 @@ public:
 	void vfunc194();
 	void vfunc195();
 	int vfunc196(int a);	// slot 196: forwards its argument to slot 193 and returns it
+	int vfunc197(int a, int b, int c, int d);	// "CBaseEntity::BodyTarget": scope trace, calls slot 192(a), returns a
 	float *vfunc214();	// "CBaseEntity::GetSize": returns &field at +0x38c
 	float *vfunc220();	// "CBaseEntity::GetOrigin": returns &field at +0x41c
 	float *vfunc221();	// "CBaseEntity::GetAngles": returns &field at +0x428
