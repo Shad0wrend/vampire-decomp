@@ -14199,6 +14199,38 @@ void S1022b4d0::sub_1022b4d0(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022d0d0 size=0x8f
+#include "CUtlVector72.h"
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUtlVector72::sub_1022d0d0(int num)
+{
+    if (m_size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 1;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount * 72);
+        else
+            m_pMemory = (char *)g_109f3634(m_allocationCount * 72);
+    }
+    m_size += num;
+    m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022d1e0 size=0x18
 struct CBlock4k
 {
