@@ -35254,6 +35254,48 @@ void CNPC_VWerewolf::sub_103d1ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d3220 size=0xf6
+#include "CNPC_VWerewolf.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+
+int CNPC_VWerewolf::sub_103d3220(void *pHint)
+{
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CNPC_VWerewolf::GetHintTeleportPriority", ent, g_106b8540);
+    int type = *(int *)((char *)pHint + 0x5dc);
+    if (type == 0x3a99)
+        return 2;
+    if (type == 0x3a9a)
+        return 3;
+    if (type == 0x3a9b)
+        return 3;
+    if (type == 0x3a98)
+        return 1;
+    if (type == 0x3a9f)
+        return 4;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d3a40 size=0x87
 #include "CBaseEntity.h"
 
