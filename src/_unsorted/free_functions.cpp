@@ -22303,6 +22303,33 @@ int CBaseCombatCharacter::sub_103282e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032f930 size=0x86
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+void CBaseCombatCharacter::sub_1032f930(int amount)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::IncrementStealthModifier";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	m_nStealthModifier += amount;
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10330ce0 size=0xd
 #include "CUnknown10330ce0.h"
 // TARGET: CUnknown10330ce0::sub_10330ce0
