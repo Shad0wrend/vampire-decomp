@@ -33020,6 +33020,60 @@ bool CUnknown103ca2c0::sub_103ca2c0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ca390 size=0xd3
+#include "CHintData_WW.h"
+#include "CMem4b_t.h"
+
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+extern int *g_109f3680;
+extern const char **g_109f3620;
+extern const char g_106b8540[];
+extern const char g_10661884[];
+
+struct SIntVector : public CMem4b_t
+{
+    int m_Size;	// 0x0c
+    int *m_pElements;	// 0x10
+
+    void AddToTail(int v)
+    {
+        int elem = m_Size;
+        if (m_Size + 1 > m_nAllocationCount)
+            sub_103dc400(m_Size - m_nAllocationCount + 1);
+        m_Size += 1;
+        m_pElements = m_pMemory;
+        int numToMove = m_Size - elem - 1;
+        if (numToMove > 0)
+            memmove(m_pMemory + (elem + 1), m_pMemory + elem, numToMove * 4);
+        int *p = m_pMemory + elem;
+        if (p)
+            *p = v;
+    }
+};
+
+// TARGET: CHintData_WW::sub_103ca390
+void CHintData_WW::sub_103ca390(int hint)
+{
+    g_109f3620[*g_109f3680 * 3] = g_10661884;
+    g_109f3620[*g_109f3680 * 3 + 1] = g_106b8540;
+    g_109f3620[*g_109f3680 * 3 + 2] = g_106b8540;
+    ++*g_109f3680;
+    int count = m_tail[4];
+    SIntVector *v = (SIntVector *)&m_tail[1];
+    int found = -1;
+    for (int i = 0; i < count; i++) {
+        if (v->m_pMemory[i] == hint) {
+            found = i;
+            break;
+        }
+    }
+    if (found == -1)
+        v->AddToTail(hint);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d1ca0 size=0x81
 #include "CNPC_VWerewolf.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
