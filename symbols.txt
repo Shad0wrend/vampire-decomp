@@ -103,6 +103,7 @@
 0x10001aa0 func   ?vfunc291@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc291
 0x10001ab9 func   ?sub_10368f20@CNPC_VCamera@@QAEHXZ CNPC_VCamera::sub_10368f20
 0x10001acd func   ?sub_103b29a0@@YADXZ sub_103b29a0
+0x10001ad2 func   ?sub_1025d2b0@CUtlRBTreeBig@@QBE_NG@Z CUtlRBTreeBig::sub_1025d2b0
 0x10001b2c func   ?vfunc448@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::vfunc448
 0x10001b31 func   ?vfunc127@CPointAngleSensor@@UAEHH@Z CPointAngleSensor::vfunc127
 0x10001b40 func   ?sub_103321a0@@YIMPAD@Z sub_103321a0
