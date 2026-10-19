@@ -36,7 +36,7 @@ public:
 	int sub_10175290();	// slot 444: refreshes the counter at +0x1e08, else the field at +0x45c of the entity at +0x1e04
 	CBaseEntity *sub_1015dc60();	// slot 167 override: resolves the entity handle at +0x1c60 (null when stale)
 	bool sub_10168e10();	// slot 361 override: true when the entity handle at +0xfe8 does not resolve
-	int sub_1015ff40();	// slot 411: 1 when the byte at +0x1edc is set, or the float at +0x19b0 (stamped with curtime while slot 158 of the entity at +0x1c58 is true) is positive and less than 5 seconds old, else 0
+	bool sub_1015ff40();	// slot 411: true when the byte at +0x1edc is set, or the float at +0x19b0 (stamped with curtime while slot 158 of the entity at +0x1c58 is true) is positive and less than 5 seconds old
 	CBasePlayer *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100017d5();	// as in CPhysForce (transplant)
 	float *vfunc367(float *out);	// as in CBaseEntity (transplant)
