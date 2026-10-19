@@ -20977,6 +20977,56 @@ void __stdcall sub_102d00e0(S102d4390 *vec, const float *v, float w)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d1220 size=0x90
+#include "CUnknown102d1220.h"
+
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+extern char g_106b8540[];
+
+class COverlay {
+public:
+	char m_pad0[0x26c];
+	const char *volatile m_pszName;
+	char m_pad270[0x5dc - 0x270];
+	int m_nKey;
+
+	const char *GetName()
+	{
+		const char *p = m_pszName;
+		return p ? p : g_106b8540;
+	}
+
+	bool NamesMatch(const char *pszName)
+	{
+		if (GetName() == pszName)
+			return true;
+		int diff;
+		unsigned int len = strlen(pszName);
+		if (len == 0)
+			diff = (int)m_pszName;
+		else if (pszName[len - 1] != '*')
+			diff = _strcmpi(GetName(), pszName);
+		else
+			diff = _strnicmp(GetName(), pszName, len - 1);
+		return diff == 0;
+	}
+
+	bool Check(int key, const char *pszName)
+	{
+		if (key == m_nKey && NamesMatch(pszName))
+			return true;
+		return false;
+	}
+};
+
+bool CUnknown102d1220::sub_102d1220(int key, const char *pszName)
+{
+	return ((COverlay *)this)->Check(key, pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1540 size=0x8b
 #include "CAI_BaseNPCTroika.h"
 
