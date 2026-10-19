@@ -21859,6 +21859,36 @@ void CBaseCombatCharacter::sub_1033d8a0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033ea90 size=0x99
+#include "CBaseCombatCharacter.h"
+#include "inputdata_t.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+void CBaseCombatCharacter::sub_1033ea90(inputdata_t *inputdata)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseCombatCharacter::InputFrenzyCheck";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	sub_1033eb60((inputdata->value.fieldType == 4) ? inputdata->value.iValue : 0);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10341120 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
