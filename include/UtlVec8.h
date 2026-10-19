@@ -20,6 +20,7 @@ public:
 
 	void sub_10032f00(int elem, int num);	// ShiftElementsRight
 	int sub_10042200(int elem, const UtlVec8Elem *src);	// "CUtlVector::InsertBefore": grows by one, shifts the tail up, stores *src
+	int sub_102c6a50(int elem, const UtlVec8Elem *src);	// same as sub_10042200 (another instance)
 	void GrowVector(int num);
 	void sub_101b6a50(int num);	// same shape as GrowVector (initial allocation 4)
 	void sub_1027fae0(int num);	// same shape as GrowVector (initial allocation 4)
