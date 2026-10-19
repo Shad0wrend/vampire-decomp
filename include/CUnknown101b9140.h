@@ -16,4 +16,5 @@ public:
 	CUnknown101b9140Elem *m_pElements;	// 0x10
 
 	int sub_101b9140(int elem, int num, const CUnknown101b9140Elem *pToCopy);	// "CUtlVector::InsertMultipleBefore": grows by num, shifts the tail up, default-constructs num elements, then copies pToCopy over them when set; returns elem
+	int sub_101b7df0(int num, const CUnknown101b9140Elem *pToCopy);	// "CUtlVector::AddMultipleToTail" (InsertMultipleBefore at the size, inlined); returns the old size
 };
