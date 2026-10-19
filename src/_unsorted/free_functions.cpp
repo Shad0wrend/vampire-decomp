@@ -24666,6 +24666,50 @@ void sub_102464b0(int a, int b, int *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247450 size=0x98
+extern "C" __declspec(dllimport) int RandomInt(int, int);
+extern char g_105c4f00[];
+
+char *sub_10247450(int which)
+{
+	int base;
+	int count;
+	switch (which) {
+	case 1:
+		base = 4;
+		goto two;
+	case 2:
+		base = 2;
+		goto two;
+	case 3:
+		count = base = 1;
+		break;
+	case 4:
+		base = 6;
+		count = 3;
+		break;
+	case 5:
+		base = 9;
+		count = 3;
+		break;
+	case 6:
+		base = 12;
+		count = 3;
+		break;
+	case 7:
+		base = 15;
+		count = 3;
+		break;
+	default:
+		base = 0;
+two:
+		count = 2;
+		break;
+	}
+	return g_105c4f00 + (RandomInt(0, count - 1) + base) * 0x24;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102477a0 size=0x9
 struct CUnknown102477a0 { int a; int b; int c; int d; void sub_102477a0(); };
 // TARGET: CUnknown102477a0::sub_102477a0
