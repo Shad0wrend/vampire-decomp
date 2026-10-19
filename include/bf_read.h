@@ -15,33 +15,31 @@ public:
 
 	unsigned int ReadUBitLong(int numbits)
 	{
-		unsigned int ret;
-		int iEnd = m_iCurBit + numbits;
-		if (iEnd > m_nDataBits)
+		if ((m_iCurBit + numbits) > m_nDataBits)
 		{
 			m_iCurBit = m_nDataBits;
 			m_bOverflow = true;
-			ret = 0;
+			return 0;
+		}
+
+		int idword1 = m_iCurBit >> 5;
+		unsigned int dword1 = m_pData[idword1];
+		dword1 >>= (m_iCurBit & 31);
+
+		m_iCurBit += numbits;
+		unsigned int ret = dword1;
+
+		if ((m_iCurBit - 1) >> 5 == idword1)
+		{
+			if (numbits != 32)
+				ret &= g_106d1910[numbits];
 		}
 		else
 		{
-			int idx = m_iCurBit >> 5;
-			unsigned int startbit = m_iCurBit & 31;
-			unsigned int dw1 = m_pData[idx];
-			m_iCurBit = iEnd;
-			dw1 >>= startbit;
-			ret = dw1;
-			if (((iEnd - 1) >> 5) == idx)
-			{
-				if (numbits != 32)
-					ret = dw1 & g_106d1910[numbits];
-			}
-			else
-			{
-				unsigned int extra = iEnd & 31;
-				unsigned int dw2 = m_pData[idx + 1] & g_106d1910[extra];
-				ret = (dw2 << (numbits - extra)) | dw1;
-			}
+			int nExtraBits = m_iCurBit & 31;
+			unsigned int dword2 = m_pData[idword1 + 1];
+			dword2 &= g_106d1910[nExtraBits];
+			ret |= (dword2 << (numbits - nExtraBits));
 		}
 		return ret;
 	}
