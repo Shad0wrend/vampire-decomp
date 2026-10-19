@@ -12893,6 +12893,39 @@ bool sub_10195940(DMEntity *pEnt, const char *name, typedescription_t **pDesc, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196780 size=0xa0
+struct PyObj { int refcnt; void *type; int pad; void *dict; };
+extern "C" {
+__declspec(dllimport) extern char _Py_NoneStruct[];
+__declspec(dllimport) extern char PyInstance_Type[];
+__declspec(dllimport) extern char PyCObject_Type[];
+__declspec(dllimport) extern void *PyExc_TypeError;
+__declspec(dllimport) PyObj *PyDict_GetItem(void *, void *);
+__declspec(dllimport) void PyErr_SetString(void *, const char *);
+__declspec(dllimport) void *PyCObject_GetDesc(void *);
+__declspec(dllimport) void *PyCObject_AsVoidPtr(void *);
+}
+extern void *g_1072b31c;
+extern char g_1072b378[];
+
+void *sub_10196780(PyObj *obj)
+{
+    if (obj && (char *)obj != _Py_NoneStruct) {
+        if (obj->type != PyInstance_Type) {
+            PyErr_SetString(PyExc_TypeError, "object used as entity is not a class instance");
+            return 0;
+        }
+        PyObj *cobj = PyDict_GetItem(obj->dict, g_1072b31c);
+        if (cobj && cobj->type == PyCObject_Type) {
+            if (PyCObject_GetDesc(cobj) == g_1072b378)
+                return PyCObject_AsVoidPtr(cobj);
+        }
+        PyErr_SetString(PyExc_TypeError, "object is not an entity");
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196c50 size=0x81
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 #define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)

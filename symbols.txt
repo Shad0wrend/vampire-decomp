@@ -2284,6 +2284,7 @@
 0x1001122f func   ?sub_102457d0@CUnknown102457d0@@QAEXH@Z CUnknown102457d0::sub_102457d0
 0x1001123e func   ?sub_100fdcc0@@YIXPADHH@Z sub_100fdcc0
 0x10011243 func   ?sub_100ae090@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100ae090
+0x1001127a func   ?sub_10196780@@YAPAXPAUPyObj@@@Z sub_10196780
 0x10011293 func   ?vfunc546@CNPC_VVentrue@@QAEHH@Z CNPC_VVentrue::vfunc546
 0x1001129d func   ?sub_1012f640@@YA?AUSFloatPair@@PBD@Z sub_1012f640
 0x100112cf func   ?sub_1034d590@CUnknown1034d590@@QAEXH@Z CUnknown1034d590::sub_1034d590
