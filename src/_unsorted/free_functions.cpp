@@ -7397,6 +7397,58 @@ int __fastcall sub_100a6bb0(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7bd0 size=0xef
+#include "CBaseEntity.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+struct EntInfo { CBaseEntity *ent; int serial; int pad; };
+extern char *g_10566458;
+typedef bool (__fastcall *SlotFn)(CBaseEntity *, void **, CBaseEntity *);
+
+bool CBaseEntity::sub_100a7bd0(CBaseEntity *pActivator)
+{
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseEntity::PassesuseFilter", ent, g_106b8540);
+    unsigned int h = m_hUseFilter;
+    if (h != 0xffffffff) {
+        EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+        if (e->serial == (h >> 13) && e->ent) {
+            unsigned int h2 = *(volatile unsigned int *)&m_hUseFilter;
+            CBaseEntity *pFilter;
+            if (h2 != 0xffffffff) {
+                EntInfo *e2 = (EntInfo *)(g_10566458 + 4) + (h2 & 0x1fff);
+                if (e2->serial == (h2 >> 13))
+                    pFilter = e2->ent;
+                else
+                    pFilter = 0;
+            } else
+                pFilter = 0;
+            void **vt = *(void ***)pFilter;
+            return ((SlotFn)vt[241])(pFilter, vt, pActivator);
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a7d00 size=0xa2
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
