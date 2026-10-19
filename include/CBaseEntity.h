@@ -86,6 +86,7 @@ public:
 	char sub_100aa840();	// "CBaseEntity::IsTransparent": (field at +0x16c) != 0
 	void sub_100b12e0(char value);	// "CBaseEntity::SetSentLastFrame": stores the byte at +0x380 (slot 7 override)
 	void sub_100b1750(int index);	// "CBaseEntity::SetModelIndex": stores the dword at +0x1a4 (slot 10 override)
+	void sub_100b3580(unsigned int flags);	// "CBaseEntity::AddFlag": scope trace, ors the bits into the flags at +0x434
 	void sub_100b3640(unsigned int flags);	// "CBaseEntity::RemoveFlag": scope trace, clears the bits in the flags at +0x434
 	int sub_100b3700();	// "CBaseEntity::GetFlags": returns the field at +0x434
 	void sub_100b37a0();	// "CBaseEntity::ClearFlags": stores 0 at +0x434
