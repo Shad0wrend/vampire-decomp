@@ -16980,6 +16980,30 @@ void CVDmg_t::sub_101fb3e0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fb7a0 size=0x6d
+#include "CVStatCost_t.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+
+CVStatSubCost_t *CVStatSubCost_t::sub_101fb7a0()
+{
+	g_109f3620[*g_109f3680].fn = "CVStatSubCost_t::CVStatSubCost_t";
+	g_109f3620[*g_109f3680].name = "";
+	g_109f3620[*g_109f3680].extra = "";
+	(*g_109f3680)++;
+	*(int *)&m_data[0x10] = 0;
+	sub_101fb830();
+	(*g_109f3680)--;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fb830 size=0x8b
 #include "CVStatCost_t.h"
 
