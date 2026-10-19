@@ -122,6 +122,7 @@ public:
 	void sub_100a0b20();	// "CBaseEntity::ClearParent": scope trace (entity name), then the call through the stub at 0x1000b636
 	void sub_100a53d0(int a);	// "CBaseEntity::PhysicsTouchTriggers": scope trace (entity name), then slot 122 of the global at 0x1070b22c (edict at +0x2e0, a)
 	bool sub_100a5ad0();	// "CBaseEntity::VPhysicsInitSetup": scope trace (entity name), false without the object at +0x2e0, else slot 225 and sub_100b3b00, true
+	void sub_100a6490(int pObject);	// "CBaseEntity::VPhysicsSetObject": scope trace (entity name), warns "Overwriting physics object for ..." when replacing an existing object at +0x36c with a non-null one, stores pObject at +0x36c
 	void sub_100a7d00(int info, int a, int b);	// "CBaseEntity::DispatchTraceAttack": scope trace (entity name), when slot 140(info->field 0x2c) is true calls slot 141(info, a, b)
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
 	void sub_100a8c90(int a);	// "CBaseEntity::InputScriptUnhide": calls vfunc78
@@ -134,7 +135,7 @@ public:
 	int sub_100aa080(void *pSave, int block);	// "CBaseEntity::SaveDataDescBlock": scope trace, then returns slot 2 of pSave(this, block)
 	int sub_100aa5c0(CRestore *pRestore, int map);	// "CBaseEntity::RestoreDataDescBlock": scope trace, then returns pRestore->vfunc2(this, map)
 	void sub_100aaa40(int group);	// "CBaseEntity::SetCollisionGroup": scope trace (entity name), on change stores group at +0x368 and calls slot 25 of the object at +0x36c
-	void sub_100aaf30();	// "CBaseEntity::PostSpawn": scope trace (entity name), then slot 11(name or "")), slot 13(classname or ""), and slot 77 when the byte at +0xe0 is set
+	void sub_100aaf30();	// "CBaseEntity::PostSpawn": scope trace (entity name), then slot 11(name or "")), slot 13(classname or "\"), and slot 77 when the byte at +0xe0 is set
 	void sub_100abbf0(int a, int b);
 	void sub_100ac920(inputdata_t *pInput);	// "CBaseEntity::InputColor": scope trace (entity name), stores the three low bytes of the input's color32 at +0x1a0..0x1a2
 	void sub_100ac9f0(inputdata_t *pInput);	// "CBaseEntity::InputUse": scope trace, then slot 173 (activator, caller, 3, 0)
@@ -172,7 +173,8 @@ public:
 	char m_pad00c0[0x114 - 0xc0];
 	void (CBaseEntity::*m_pfn0114)();
 	void (CBaseEntity::*m_pfnThink)();
-	char m_pad011c[0xe4];
+	const char *m_classname11c;
+	char m_pad0120[0xe0];
 	int m_field200;
 	char m_pad0204[0x64];
 	unsigned int m_flags268;
@@ -180,7 +182,8 @@ public:
 	char m_pad0270[0xf4];
 	unsigned int m_hOwner364;	// owner entity handle
 	int m_field368;
-	char m_pad036c[0x68];
+	int m_obj36c;	// physics object (pointer)
+	char m_pad0370[0x64];
 	float m_vel3d4[3];
 	void vfunc212(int set);	// as in CBaseAnimating (transplant)
 };
