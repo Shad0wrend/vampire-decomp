@@ -32223,6 +32223,85 @@ void __fastcall sub_103661d0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103662d0 size=0xeb
+#include "CUnknown103662d0.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *pMem, unsigned long size);
+
+struct CGlobalVars
+{
+	char m_pad0000[0xc];
+	float curtime;	// 0x0c
+};
+extern CGlobalVars *g_1070b228;
+
+struct TimedElem
+{
+	int m_id;
+	float m_time;
+};
+
+struct TimedVector
+{
+	TimedElem *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_nSize;
+	TimedElem *m_pElements;
+
+	void Grow(int num)
+	{
+		if (m_nGrow == -1)
+			return;
+		int nAllocationRequested = m_nAlloc + num;
+		while (m_nAlloc < nAllocationRequested) {
+			if (m_nAlloc != 0) {
+				if (m_nGrow)
+					m_nAlloc = m_nAlloc + m_nGrow;
+				else
+					m_nAlloc = m_nAlloc * 2;
+			} else {
+				m_nAlloc = 4;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (TimedElem *)Plat_Realloc(m_pMemory, m_nAlloc * 8);
+		else
+			m_pMemory = (TimedElem *)Plat_Alloc(m_nAlloc << 3);
+	}
+
+	void GrowVector(int num)
+	{
+		if (m_nSize + num > m_nAlloc)
+			Grow(m_nSize + num - m_nAlloc);
+	}
+
+	void InsertBefore(int elem, const TimedElem &src)
+	{
+		GrowVector(1);
+		m_nSize++;
+		m_pElements = m_pMemory;
+		int toMove = m_nSize - elem - 1;
+		if (toMove > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], toMove * sizeof(TimedElem));
+		TimedElem *p = &m_pMemory[elem];
+		if (p) {
+			p->m_id = src.m_id;
+			p->m_time = src.m_time;
+		}
+	}
+};
+
+void CUnknown103662d0::sub_103662d0(int id, float delay)
+{
+	TimedElem e = { id, delay + g_1070b228->curtime };
+	TimedVector *v = (TimedVector *)&m_pTimedMemory;
+	v->InsertBefore(v->m_nSize, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10366400 size=0x69
 #include "CNPC_VWerewolf.h"
 struct CUnknownGlobals1070b228 { int m_pad[3]; float m_curtime; };
