@@ -24021,6 +24021,40 @@ int __stdcall sub_1030d710(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030f480 size=0x9d
+#include "CUnknown1030f480.h"
+
+struct CDevConVar
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char pad4[0x28];
+	int m_nValue;	// 0x2c
+};
+extern CDevConVar *g_10936ba4;
+extern void (*g_109f3630)(const char *fmt, ...);
+
+void CUnknown1030f480::sub_1030f480()
+{
+	if (!g_10936ba4->vfunc1() && g_10936ba4->m_nValue)
+	{
+		void (*DevMsg)(const char *fmt, ...) = g_109f3630;
+		DevMsg("// ********************************************************************\n");
+		DevMsg("// ********************************************************************\n");
+		DevMsg("// *** Dumping schedule list\n");
+		DevMsg("// **\n");
+		DevMsg("// *\n");
+		for (ScheduleNode_t *p = m_pHead; p; p = p->m_pNext)
+			DevMsg("      %5d - %30s %d\n", p->m_id, p->m_field40, p->m_field24);
+		DevMsg("// *\n");
+		DevMsg("// **\n");
+		DevMsg("// *** Dumping schedule list\n");
+		DevMsg("// ********************************************************************\n");
+		DevMsg("// ********************************************************************\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f660 size=0x8
 extern char g_106b8540;
 char * __stdcall sub_1030f660(int) { return &g_106b8540; }
