@@ -21268,6 +21268,47 @@ bool CUnknown102d1220::sub_102d1220(int key, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d1350 size=0x94
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+
+struct EntInfo { CBaseEntity *p; unsigned int serial; int x; };
+struct EntList { int pad; EntInfo e[1]; };
+extern EntList *g_10566458;
+
+static inline CBaseEntity *HandleGet(unsigned int h)
+{
+	if (h != 0xFFFFFFFF) {
+		EntInfo *info = &g_10566458->e[h & 0x1fff];
+		if (info->serial == (h >> 13))
+			return info->p;
+	}
+	return 0;
+}
+
+static inline bool HandleIsValid(unsigned int h)
+{
+	if (h != 0xFFFFFFFF) {
+		EntInfo *info = &g_10566458->e[h & 0x1fff];
+		if (info->serial == (h >> 13) && info->p)
+			return true;
+	}
+	return false;
+}
+
+bool CAI_BaseNPC::sub_102d1350(CBaseEntity *pEnt)
+{
+	volatile unsigned int *ph = (volatile unsigned int *)((char *)this + 0x5e0);
+	if (HandleGet(*ph) != pEnt && HandleIsValid(*ph))
+		return false;
+	if (pEnt)
+		*ph = *pEnt->vfunc1();
+	else
+		*ph = 0xFFFFFFFF;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1540 size=0x8b
 #include "CAI_BaseNPCTroika.h"
 
