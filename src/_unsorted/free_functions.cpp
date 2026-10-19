@@ -30961,6 +30961,45 @@ bool CBaseEntity::sub_103d3a40(const char *pszNameOrWildcard)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d7620 size=0xb6
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+struct HintData { int a; int key; char rest[0x40]; };
+
+void *CNPC_VWerewolf::sub_103d7620(int key)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CNPC_VWerewolf::GetDataForHint";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	int count = *(int *)((char *)this + 0x6720);
+	int i = 0;
+	if (count > 0) {
+		HintData *data = *(HintData **)((char *)this + 0x6714);
+		do {
+			if (data[i].key == key) {
+				--*g_109f3680;
+				return &data[i];
+			}
+			i++;
+		} while (i < count);
+	}
+	--*g_109f3680;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dae50 size=0x8d
 #include "CUnknown103dae50.h"
 #include "CBaseEntity.h"
