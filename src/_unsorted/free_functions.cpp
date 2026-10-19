@@ -556,6 +556,64 @@ bool sub_10031bd0(void *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10031c70 size=0xa8
+#include "CBaseEntity.h"
+
+struct EntInfo {
+	CBaseEntity *m_pEntity;
+	int m_serial;
+	int m_unused;
+};
+extern char *g_10566458;
+
+struct Globals_t {
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern Globals_t *g_1070b228;
+extern void (__cdecl *g_109f3630)(const char *, ...);
+extern float g_104454c0;
+
+struct SoundTracker_t {
+	unsigned int m_hEntity;
+	float m_flExpire;
+
+	void Set(CBaseEntity *pEnt)
+	{
+		if (pEnt)
+			m_hEntity = *pEnt->vfunc1();
+		else
+			m_hEntity = 0xffffffff;
+	}
+};
+extern SoundTracker_t g_106b8698[8];
+
+bool sub_10031c70(CBaseEntity *pEnt)
+{
+	int i = 0;
+	do {
+		unsigned int h = g_106b8698[i].m_hEntity;
+		if (h == 0xffffffff)
+			break;
+		EntInfo *e = &((EntInfo *)(g_10566458 + 4))[h & 0x1fff];
+		if (e->m_serial != (int)(h >> 13) || !e->m_pEntity)
+			break;
+		if (g_1070b228->curtime >= g_106b8698[i].m_flExpire)
+			break;
+		i++;
+		if (i >= 8) {
+			g_109f3630("WARNING: Ran out of sound trackers.  This is okay if it doesn't happen much.\n");
+			return false;
+		}
+	} while (true);
+	g_106b8698[i].Set(pEnt);
+	float t = g_1070b228->curtime;
+	t += g_104454c0;
+	g_106b8698[i].m_flExpire = t;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032a20 size=0x8
 void __fastcall sub_10032a20(int *p) { p[3] = 0; }
 // END FUNCTION

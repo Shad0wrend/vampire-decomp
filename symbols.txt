@@ -2255,6 +2255,7 @@
 0x10010c26 func   _multisource multisource
 0x10010c2b func   ?sub_100f0320@@YIXPAD@Z sub_100f0320
 0x10010c4e func   ?sub_10204550@@YAXH@Z sub_10204550
+0x10010c62 func   ?sub_10031c70@@YA_NPAVCBaseEntity@@@Z sub_10031c70
 0x10010c7b func   ?vfunc5@CItemGGuyMagazine@@QAEPAV1@I@Z CItemGGuyMagazine::vfunc5
 0x10010cc6 func   ?sub_1027f990@CUtlVector20@@QAEXH@Z CUtlVector20::sub_1027f990
 0x10010ce9 func   _env_soundscape env_soundscape
