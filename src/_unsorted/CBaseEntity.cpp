@@ -445,6 +445,39 @@ int CBaseEntity::vfunc233(int *pList, int maxObjects)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9ba0 size=0xb4
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+struct EntEntry { void *pEnt; int serial; int pad; };
+struct EntTable { int hdr; EntEntry entries[1]; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern EntTable *g_10566458;
+
+int CBaseEntity::vfunc96()
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::GetAimEntEdict";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    unsigned int h = *(unsigned int *)((char *)this + 0x37c);
+    if (h != 0xffffffff) {
+        EntEntry *e = &g_10566458->entries[h & 0x1fff];
+        if ((unsigned int)e->serial == (h >> 13)) {
+            char *pEnt = (char *)e->pEnt;
+            if (pEnt) {
+                int edict = *(int *)(pEnt + 0x2e0);
+                (*g_109f3680)--;
+                return edict;
+            }
+        }
+    }
+    (*g_109f3680)--;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9eb0 size=0x86
 #include "CBaseEntity.h"
 #include "CBaseEntitySlots.h"
