@@ -17575,6 +17575,36 @@ void __fastcall sub_102e2840(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2b60 size=0x8f
+#include "CUtlVector36.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+void CUtlVector36::sub_102e2b60(int num)
+{
+	if (num + m_size > m_allocationCount && m_growSize != -1) {
+		int newSize = m_allocationCount + (num + m_size - m_allocationCount);
+		while (m_allocationCount < newSize) {
+			if (m_allocationCount != 0) {
+				if (m_growSize != 0)
+					m_allocationCount += m_growSize;
+				else
+					m_allocationCount += m_allocationCount;
+			} else {
+				m_allocationCount = 1;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (char *)Plat_Realloc(m_pMemory, m_allocationCount * 36);
+		else
+			m_pMemory = (char *)Plat_Alloc(m_allocationCount * 36);
+	}
+	m_size += num;
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e7e00 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
