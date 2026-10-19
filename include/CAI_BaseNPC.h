@@ -43,7 +43,9 @@ public:
 	CAI_NPC_V(430) CAI_NPC_V(431) CAI_NPC_V(432) CAI_NPC_V(433) CAI_NPC_V(434)
 	virtual void vfunc435(void *pSchedule);	// called with the new schedule by sub_10280e50
 	CAI_NPC_V(436) CAI_NPC_V(437) CAI_NPC_V(438) CAI_NPC_V(439)
-	CAI_NPC_V(440) CAI_NPC_V(441) CAI_NPC_V(442) CAI_NPC_V(443) CAI_NPC_V(444) CAI_NPC_V(445) CAI_NPC_V(446) CAI_NPC_V(447) CAI_NPC_V(448)
+	CAI_NPC_V(440) CAI_NPC_V(441) CAI_NPC_V(442) CAI_NPC_V(443) CAI_NPC_V(444) CAI_NPC_V(445) CAI_NPC_V(446)
+	virtual int vfunc447(int a);	// classification of a (the dword at +0x1c of the object at +0x5c38); 0x12f is the special case of vfunc509
+	CAI_NPC_V(448)
 	virtual int vfunc449(int a);	// returns a task/schedule id for the argument (used by PrintTask)
 	CAI_NPC_V10(45)
 	virtual int vfunc460();	// SelectIdealState helper: the NPC's current state, 0 when unset
@@ -59,7 +61,9 @@ public:
 	virtual void vfunc483(int unused);
 	// slots 484..567
 	CAI_NPC_V(484) CAI_NPC_V(485) CAI_NPC_V(486) CAI_NPC_V(487) CAI_NPC_V(488) CAI_NPC_V(489)
-	CAI_NPC_V10(49) CAI_NPC_V10(50)
+	CAI_NPC_V10(49)
+	CAI_NPC_V(500) CAI_NPC_V(501) CAI_NPC_V(502) CAI_NPC_V(503) CAI_NPC_V(504) CAI_NPC_V(505) CAI_NPC_V(506) CAI_NPC_V(507) CAI_NPC_V(508)
+	virtual bool vfunc509();	// true when the NPC may start the idle/engine request (state 1 or 3, flag bits clear, no live dialog partner, not busy)
 	virtual bool vfunc510();
 	CAI_NPC_V(511) CAI_NPC_V(512) CAI_NPC_V(513) CAI_NPC_V(514) CAI_NPC_V(515)
 	virtual float vfunc516();
