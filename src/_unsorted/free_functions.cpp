@@ -24715,6 +24715,36 @@ CUnknown102fc5d0 *CUnknown102fc5d0::sub_102fc5d0(int a, int b, const float *pVec
 }
 // END FUNCTION
 
+// FUNCTION: 0x103079c0 size=0xa8
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" char *strcat(char *, const char *);
+extern void (*g_109f366c)(const char *fmt, ...);
+
+struct PathTypeInfo_t
+{
+	int m_type;
+	const char *m_name;
+	int m_pad[3];
+};
+extern PathTypeInfo_t g_1049df20[4];
+
+int sub_103079c0(const char *name)
+{
+	int i;
+	for (i = 0; i < 4; i++)
+	{
+		if (!_strcmpi(name, g_1049df20[i].m_name))
+			return g_1049df20[i].m_type;
+	}
+	char valid[256];
+	valid[0] = 0;
+	for (i = 0; i < 4; i++)
+		strcat(valid, g_1049df20[i].m_name);
+	g_109f366c("Invalid Path Type String.\nValid types are '%s'", valid);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307b40 size=0x9
 struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 // TARGET: CUnknown10307b40::sub_10307b40
