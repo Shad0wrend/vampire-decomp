@@ -18,6 +18,7 @@ public:
 	char sub_100903e0();	// "CBaseAnimating::IsRagdoll": (field at +0x168) == 0x17
 	void sub_10096490(int set);	// "CBaseAnimating::SetHitboxSet": stores the argument at +0x680
 	void sub_100963d0();	// "CBaseAnimating::ResetClientsideFrame": scope trace, stores a global-object value at +0x710 and 1 at +0x1b1
+	void sub_100976e0();	// "CBaseAnimating::BlendTransformWithNextSequenceChange": scope trace (entity name), sets bit 11 of +0x19c and saves slot 217() to +0x714 and slot 219() to +0x720 (three floats each)
 	void sub_100977f0(int bone);	// "CBaseAnimating::TurnOnPhysicsChain": scope trace, clears bit (1 << bone) in the dword at +0x72c
 	void sub_100978c0(int bone);	// "CBaseAnimating::TurnOffPhysicsChain": scope trace, sets bit (1 << bone) in the dword at +0x72c
 	void sub_100904a0();	// "CBaseAnimating::ClearAllClientRagdollData"-like: scope trace (entity name), resets the four 3-int arrays at +0x574 (-2), +0x584 and +0x594 (0), and +0x168 from 0x17 to 0
