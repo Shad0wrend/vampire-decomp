@@ -36,4 +36,5 @@ public:
 
 	bool sub_10047840(unsigned short i) const;	// "CUtlRBTree::IsLeftChild"
 	bool sub_1004ae60(unsigned short i) const;	// same as sub_10047840 (another instance)
+	bool sub_10314000(unsigned short i) const;	// same as sub_10047840 (another instance)
 };
