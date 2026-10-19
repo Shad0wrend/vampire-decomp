@@ -7666,6 +7666,48 @@ int CBaseEntity::sub_100ac250(const char *context)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ac810 size=0xd0
+#include "inputdata_t.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+static inline int VInt(const variant_t &v)
+{
+	if (v.fieldType == 4)
+		return v.iValue;
+	return 0;
+}
+
+// TARGET: CBaseEntity::sub_100ac810
+void CBaseEntity::sub_100ac810(inputdata_t *pInput)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::InputAlpha";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	int n;
+	if (VInt(pInput->value) > 255)
+		n = 255;
+	else if (VInt(pInput->value) >= 0)
+		n = VInt(pInput->value);
+	else
+		n = 0;
+	*((char *)this + 0x1a3) = n;
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac920 size=0x95
 #include "inputdata_t.h"
 
