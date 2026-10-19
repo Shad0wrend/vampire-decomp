@@ -7630,6 +7630,42 @@ void CBaseEntity::sub_100abbf0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ac250 size=0xcd
+#include <string.h>
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+
+// TARGET: CBaseEntity::sub_100ac250
+int CBaseEntity::sub_100ac250(const char *context)
+{
+	const char *ent;
+	if (this)
+		ent = m_name26c ? m_name26c : "";
+	else
+		ent = "NULL ENTITY";
+	int i = 0;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::GetIndexForContext";
+	g_109f3620[*g_109f3680].b = ent;
+	g_109f3620[*g_109f3680].c = "";
+	(*g_109f3680)++;
+	if (m_nThinkContexts > 0) {
+		int off = 0;
+		do {
+			const char *s = *(const char **)(off + (int)m_pThinkContexts);
+			if (!strncmp(s, context, 32)) {
+				(*g_109f3680)--;
+				return i;
+			}
+			i++;
+			off += 16;
+		} while (i < m_nThinkContexts);
+	}
+	(*g_109f3680)--;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac920 size=0x95
 #include "inputdata_t.h"
 
