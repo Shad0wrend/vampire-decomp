@@ -6,8 +6,16 @@ class CBaseEntity;
 class CStealthKillRules
 {
 public:
-	char pad0[0xb0];
-	float m_flRange;
+	int m_aTable0[20];	// 0x00
+	int m_aTable1[20];	// 0x50
+	int m_n0a0;	// 0xa0
+	int m_n0a4;	// 0xa4
+	int m_n0a8;	// 0xa8
+	float m_f0ac;	// 0xac
+	float m_flRange;	// 0xb0
+	int m_aTable2[32];	// 0xb4
+	int m_aTable3[32];	// 0x134
 
 	float sub_101be1d0(CBaseEntity *pEntity);
+	void sub_101be0e0();	// "CStealthKillRules::FlushTable": scope trace, clears the four tables and sets the defaults (1, 10, 0, 3.0f, range 70.0f)
 };
