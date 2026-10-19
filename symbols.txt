@@ -282,6 +282,7 @@
 0x100031f2 func   _func_dustcloud func_dustcloud
 0x100031fc func   ?vfunc5@CWeaponIArmor_Body_Armor@@QAEPAV1@I@Z CWeaponIArmor_Body_Armor::vfunc5
 0x10003215 func   _func_dustmotes func_dustmotes
+0x10003229 func   ?sub_100a0420@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_100a0420
 0x10003292 func   ?vfunc220@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc220
 0x100032b5 func   ?vfunc5@CItemGPishaBook@@QAEPAV1@I@Z CItemGPishaBook::vfunc5
 0x100032f6 func   ?vfunc5@CEntityFlame@@QAEPAV1@I@Z CEntityFlame::vfunc5

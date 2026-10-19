@@ -5392,6 +5392,33 @@ void CBaseEntity::sub_1009fa60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0420 size=0x8d
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+// stand-in for the first 12 slots of CBaseEntity's virtual table
+struct Slots12 {
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+	virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10();
+	virtual void vfunc11(const char *name);
+};
+
+void CBaseEntity::sub_100a0420(const char *name)
+{
+	const char *self = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::SetName";
+	g_109f3620[*g_109f3680].b = self;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	m_name26c = name;
+	((Slots12 *)this)->vfunc11(name ? name : g_106b8540);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a0b20 size=0x7b
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
