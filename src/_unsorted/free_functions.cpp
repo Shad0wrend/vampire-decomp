@@ -17121,6 +17121,70 @@ char sub_101d2fc0(CEntQ *a, CEntQ *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d3080 size=0xc2
+class CBaseEntity;
+char __fastcall sub_100a9330(CBaseEntity *pEnt);
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EntSlots
+{
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8)
+	virtual bool s90();
+	virtual void s91();
+	virtual int s92();
+	virtual void s93();
+	virtual int s94();
+	SL10(b0) SL10(b1) SL10(b2) SL10(b3) SL10(b4) SL10(b5) SL10(b6) SL10(b7) SL10(b8) SL10(b9) SL10(b10)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5();
+	virtual int s211();
+};
+struct HandleEntLike
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual EntSlots *GetBaseEntity();
+};
+struct CollisionInterfaceLike
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual bool IsStaticProp(HandleEntLike *pEnt);
+};
+struct ModelInfoLike
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual int GetModelType(int model);
+};
+extern CollisionInterfaceLike *g_1070b240;
+extern ModelInfoLike *g_1070b250;
+
+bool sub_101d3080(HandleEntLike *pHandleEntity, int contentsMask)
+{
+	if (!g_1070b240->IsStaticProp(pHandleEntity)) {
+		EntSlots *pEnt = pHandleEntity->GetBaseEntity();
+		if (pEnt) {
+			if (pEnt->s211() & 0x20)
+				return false;
+			int solid = pEnt->s92();
+			int model = ((CBaseEntity *)pEnt)->sub_100b1a00();
+			int type = g_1070b250->GetModelType(model);
+			if ((type != 1 || (solid != 1 && solid != 6)) && !(contentsMask & 0x2000000)) {
+				if (!sub_100a9330((CBaseEntity *)pEnt))
+					return false;
+			}
+			if (!(contentsMask & 2)) {
+				if (pEnt->s90())
+					return false;
+			}
+			if (!(contentsMask & 0x4000)) {
+				if (pEnt->s94() == 8)
+					return false;
+			}
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d3430 size=0xa7
 #include "CTraceEntList.h"
 
