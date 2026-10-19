@@ -20,7 +20,7 @@ public:
 	virtual void slot60(); virtual void slot61(); virtual void slot62(); virtual void slot63(); virtual void slot64();
 	virtual void slot65(); virtual void slot66(); virtual void slot67(); virtual void slot68(); virtual void slot69();
 	virtual void slot70(); virtual void slot71(); virtual void slot72(); virtual void slot73(); virtual void slot74();
-	virtual void slot75(); virtual void slot76(); virtual void slot77(); virtual void slot78(); virtual void slot79();
+	virtual void slot75(int a, int b); virtual void slot76(); virtual void slot77(); virtual void slot78(); virtual void slot79();
 	virtual void slot80(); virtual void slot81(); virtual void slot82(); virtual void slot83(); virtual void slot84();
 	virtual void slot85(); virtual void slot86(); virtual void slot87(); virtual void slot88(); virtual void slot89();
 	virtual void slot90(); virtual void slot91(); virtual void slot92(); virtual void slot93(); virtual void slot94();
