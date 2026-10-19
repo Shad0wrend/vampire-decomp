@@ -11849,6 +11849,41 @@ S101d61e0 *CUnknown101d6750::sub_101d6750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6c20 size=0xeb
+#include "CStatList56.h"
+
+StatItem56 *CStatList56::sub_101d6c20()
+{
+	if (m_allocCount == m_count) {
+		m_allocCount++;
+		if (m_pItems) {
+			StatItem56 **p = new StatItem56 *[m_allocCount];
+			int i = 0;
+			if (m_count > 0) {
+				do {
+					p[i] = m_pItems[i];
+					i++;
+				} while (i < m_count);
+			}
+			for (; i < m_allocCount; i++)
+				p[i] = 0;
+			delete m_pItems;
+			m_pItems = p;
+		} else {
+			m_pItems = new StatItem56 *[m_allocCount];
+			for (int i = 0; i < m_allocCount; i++)
+				m_pItems[i] = 0;
+		}
+		m_count++;
+	} else {
+		m_count++;
+	}
+	if (m_pItems[m_count - 1] == 0)
+		m_pItems[m_count - 1] = new StatItem56(m_count - 1);
+	return m_pItems[m_count - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6d50 size=0x66
 struct Elem101d6d50 { void sub_1000f9b1(); };
 struct S101d6d50 {
