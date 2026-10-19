@@ -108,6 +108,7 @@ public:
 	void sub_100b3900(unsigned int flags);	// "CBaseEntity::RemoveFlag2": scope trace, clears the bits in the flags at +0x438
 	void sub_100b3a60();	// "CBaseEntity::ClearFlags2": stores 0 at +0x438
 	void sub_100b3b90(unsigned int flags);	// "CBaseEntity::ToggleFlag": scope trace, xors the bits into the flags at +0x434
+	void sub_100b3c50(unsigned int flags);	// "CBaseEntity::ToggleFlag2": scope trace, xors the bits into the flags at +0x438
 	void sub_100b3b00();
 	int sub_100b3d10();	// "CBaseEntity::GetEdict" scope; returns the field at +0x2e0
 	void sub_100b40f0(int a);
