@@ -8363,6 +8363,46 @@ void sub_100d30a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6560 size=0xa3
+#include "CStatDefault3List.h"
+#include "CUnknown101d5bd0.h"
+
+extern "C" char *strstr(const char *, const char *);
+extern "C" unsigned int strlen(const char *);
+extern char g_106b8540[];
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+
+struct List {
+	int sub_101d5c40(const char *name);
+};
+extern List g_10738d10;
+
+struct NameHolder {
+	const char *name;
+	const char *Get() { return name ? name : g_106b8540; }
+};
+
+int sub_100d6560(const char *pszIn, char *pszOut)
+{
+	if (strstr(pszIn, "vclan ")) {
+		const char *pszName = pszIn + strlen("vclan ");
+		int count = 0;
+		int idx = g_10738d10.sub_101d5c40(pszName);
+		while (idx != -1) {
+			StatDefault3 *pItem = ((CStatDefault3List *)&g_10738d10)->sub_101d5e80(idx);
+			g_109f388c(pszOut, 64, "%s%s", "vclan ", ((NameHolder *)((char *)pItem + 8))->Get());
+			count++;
+			pszOut += 64;
+			if (count >= 192)
+				break;
+			idx = ((CUnknown101d5bd0 *)&g_10738d10)->sub_101d5d20(pszName, idx);
+		}
+		return count;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6820 size=0x51
 #define V(n) virtual void v##n();
 #define V10(n) V(n##0) V(n##1) V(n##2) V(n##3) V(n##4) V(n##5) V(n##6) V(n##7) V(n##8) V(n##9)
