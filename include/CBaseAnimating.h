@@ -18,6 +18,7 @@ public:
 	void sub_100963d0();	// "CBaseAnimating::ResetClientsideFrame": scope trace, stores a global-object value at +0x710 and 1 at +0x1b1
 	void sub_100977f0(int bone);	// "CBaseAnimating::TurnOnPhysicsChain": scope trace, clears bit (1 << bone) in the dword at +0x72c
 	void sub_100978c0(int bone);	// "CBaseAnimating::TurnOffPhysicsChain": scope trace, sets bit (1 << bone) in the dword at +0x72c
+	void sub_100904a0();	// "CBaseAnimating::ClearAllClientRagdollData"-like: scope trace (entity name), resets the four 3-int arrays at +0x574 (-2), +0x584 and +0x594 (0), and +0x168 from 0x17 to 0
 
 	int sub_10092550(int a);	// "CBaseAnimating::LookupBone"
 	void sub_100926e0(int bone, int b, int c);	// "CBaseAnimating::GetBonePosition0"
@@ -32,7 +33,6 @@ public:
 	void sub_10090bc0(unsigned int flags);	// "CBaseAnimating::AddEffectsForNextSequence": scope trace, ors flags into the dword at +0x5b0
 	void sub_10090890(float delay);	// "CBaseAnimating :: MarkEffectStartTime": scope trace, stores delay + curtime at +0x5a4
 	void sub_1008d520(inputdata_t *inputdata);	// "CBaseAnimating::InputFadeToSkin": scope trace, then sub_1008d6d0(skin)
-	void sub_1008d5f0(float time);	// "CBaseAnimating::SetSkinFadeTime": scope trace (entity name), stores max(time, 0) at +0x678
 	void sub_1008d6d0(int skin);	// "CBaseAnimating::SetSkin"-like, called by InputFadeToSkin
 	int sub_1008dac0(int a, char *bufB, char *bufA, int b);	// "CBaseAnimating::SelectWeightedSequence" worker (fills two 0x2000-byte buffers)
 	int sub_1008dc40(int a, int b);	// "CBaseAnimating::SelectWeightedSequence": scope trace, worker, then a sort-like helper
