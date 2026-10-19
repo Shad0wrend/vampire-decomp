@@ -7967,6 +7967,52 @@ void CUnknown100ba120::sub_100ba120(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba1b0 size=0xac
+#include "CBaseEntity.h"
+
+extern "C" int _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+extern char g_1055afd4[];
+extern char g_10559c18[];
+extern char g_1055afe4[];
+
+struct HandleEntry_t
+{
+	CBaseEntity *m_pEntity;
+	unsigned int m_serial;
+};
+
+struct EntListInfo_t
+{
+	int m_pad0;
+	HandleEntry_t m_entry;
+};
+extern EntListInfo_t *g_10566458;
+
+static inline const char *Classname(CBaseEntity *pEnt)
+{
+	const char *p = *(const char **)((char *)pEnt + 0x11c);
+	return p ? p : g_106b8540;
+}
+
+bool sub_100ba1b0(CBaseEntity *pEnt)
+{
+	unsigned int hParent = *(unsigned int *)((char *)pEnt + 0x25c);
+	if (hParent != 0xffffffff)
+	{
+		HandleEntry_t *pEntry = &g_10566458[hParent & 0x1fff].m_entry;
+		if (pEntry->m_serial == (hParent >> 13) && pEntry->m_pEntity != 0)
+			return false;
+	}
+	if (pEnt->vfunc8())
+	{
+		if (_strcmpi(Classname(pEnt), g_1055afd4) && _strcmpi(Classname(pEnt), g_10559c18) && _strcmpi(Classname(pEnt), g_1055afe4))
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc0f0 size=0x23
 #include "CUnknown100bc0f0.h"
 
