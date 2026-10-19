@@ -20506,6 +20506,52 @@ void __stdcall sub_102d00e0(S102d4390 *vec, const float *v, float w)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d1540 size=0x8b
+#include "CAI_BaseNPCTroika.h"
+
+struct EntSub { void *ent; unsigned int serial; };
+struct EntInfo { int pad; EntSub s; };
+extern EntInfo *g_10566458;
+struct CGlobalVarsLike { int m_pad[3]; float m_curtime; };
+extern CGlobalVarsLike *g_1070b228;
+
+struct CHandleLike {
+	unsigned int m_index;
+	void *Get() const
+	{
+		if (m_index == 0xffffffff)
+			return 0;
+		EntSub *s = &g_10566458[m_index & 0x1fff].s;
+		if (s->serial == (m_index >> 13))
+			return s->ent;
+		return 0;
+	}
+};
+
+class CTimerHolder {
+public:
+	char m_pad[0x5e0];
+	CHandleLike m_hTarget;
+	char m_pad2[8];
+	float m_flTime;
+	bool Check(void *pOther)
+	{
+		if (m_hTarget.Get() != pOther) {
+			if (g_1070b228->m_curtime < m_flTime)
+				return false;
+			if (m_hTarget.Get() != 0)
+				return false;
+		}
+		return true;
+	}
+};
+
+bool CAI_BaseNPCTroika::sub_102d1540(void *pOther)
+{
+	return ((CTimerHolder *)this)->Check(pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d2840 size=0x82
 extern "C" int strcmp(const char *, const char *);
 extern char g_106b8540[];
