@@ -23029,6 +23029,45 @@ bool CUnknown102ee120_x::sub_102f1690(HelperParams102f1690 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f2d10 size=0x9a
+void sub_102f2d10(float *color, int mode, unsigned int flags)
+{
+	if (flags & 0x20) {
+		color[0] = 255.0f;
+		color[1] = 255.0f;
+		color[2] = 255.0f;
+		return;
+	}
+	if (mode == 1) {
+		color[0] = 255.0f;
+		color[1] = 0.0f;
+		color[2] = 0.0f;
+		return;
+	}
+	if (flags & 8) {
+		color[0] = 200.0f;
+		color[1] = 0.0f;
+		color[2] = 255.0f;
+		return;
+	}
+	if (flags & 1) {
+		color[1] = 200.0f;
+		color[2] = 255.0f;
+		color[0] = 0.0f;
+		return;
+	}
+	if (flags & 4) {
+		color[2] = 255.0f;
+		color[0] = 0.0f;
+		color[1] = 0.0f;
+		return;
+	}
+	color[1] = 255.0f;
+	color[2] = 150.0f;
+	color[0] = 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f2de0 size=0x8c
 void sub_102f2de0(float *c, int type)
 {
