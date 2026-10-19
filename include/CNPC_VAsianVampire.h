@@ -7,6 +7,8 @@ class CBaseEntity;
 struct StoredHintPos_t
 {
 	float x, y, z;
+
+	StoredHintPos_t &operator=(const StoredHintPos_t &v) { x = v.x; y = v.y; z = v.z; return *this; }
 };
 
 class CNPC_VAsianVampire
@@ -28,7 +30,7 @@ public:
 	void vfunc103();	// "CNPC_VAsianVampire::Spawn": scope trace around the base spawn
 	void vfunc431();	// "CNPC_VAsianVampire::NPCThink": scope trace around the base think, then schedules the next think
 	int vfunc461();	// "CNPC_VAsianVampire::SelectIdealState": scope trace, sets the ideal state to 6, then the base implementation
-	void sub_10361990(CBaseEntity *pHint);	// "CNPC_VAsianVampire::AddHintToStore": scope trace, stores the hint's origin (slot 217) in the two-entry ring
+	void sub_10361990(CBaseEntity *pHint);	// "CNPC_VAsianVampire::AddHintToStoredJumpPositions": scope trace, stores the hint's origin (slot 217) in the two-entry ring
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x201000
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
