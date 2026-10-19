@@ -17,7 +17,7 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual void vfunc5();
-	virtual void vfunc6(int a);
+	virtual void vfunc6(bool check);	// "CBaseEntity::SetCheckUntouch": scope trace (entity name); when check is set increments the dword at +0x1ac and, unless bit 0 of the byte at +0x26b is set, sets bit 24 of +0x268 and calls sub_100f8e20(this); else clears bit 24 of +0x268
 	virtual void vfunc7();
 	virtual int vfunc8();
 	virtual const char **vfunc9(int *pOut); virtual void vfunc10(int index); virtual void vfunc11(const char *name);	// slot 11 "CBaseEntity::DebugSetEntityName": scope trace (entity name), copies name (31 chars) to +4 and to the buffer slot 85 returns
@@ -134,7 +134,7 @@ public:
 	int sub_100aa080(void *pSave, int block);	// "CBaseEntity::SaveDataDescBlock": scope trace, then returns slot 2 of pSave(this, block)
 	int sub_100aa5c0(CRestore *pRestore, int map);	// "CBaseEntity::RestoreDataDescBlock": scope trace, then returns pRestore->vfunc2(this, map)
 	void sub_100aaa40(int group);	// "CBaseEntity::SetCollisionGroup": scope trace (entity name), on change stores group at +0x368 and calls slot 25 of the object at +0x36c
-	void sub_100aaf30();	// "CBaseEntity::PostSpawn": scope trace (entity name), then slot 11(name or ""), slot 13(classname or ""), and slot 77 when the byte at +0xe0 is set
+	void sub_100aaf30();	// "CBaseEntity::PostSpawn": scope trace (entity name), then slot 11(name or "")), slot 13(classname or ""), and slot 77 when the byte at +0xe0 is set
 	void sub_100abbf0(int a, int b);
 	void sub_100ac920(inputdata_t *pInput);	// "CBaseEntity::InputColor": scope trace (entity name), stores the three low bytes of the input's color32 at +0x1a0..0x1a2
 	void sub_100ac9f0(inputdata_t *pInput);	// "CBaseEntity::InputUse": scope trace, then slot 173 (activator, caller, 3, 0)
