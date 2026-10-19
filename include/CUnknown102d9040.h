@@ -1,0 +1,25 @@
+// CUnknown102d9040: CUtlVector-like list of 0x24-byte timed-entry records (size at +0xc, element pointer at +0x10); real name not yet known.
+#pragma once
+
+#include "CUnknown102d9150.h"
+#include "CUnknown102d9170.h"
+
+class CBaseEntity;
+
+struct CUnknown102d9040Entry : public CUnknown102d9150
+{
+	float m_vec[3];	// 0x08
+	float m_flStart;	// 0x14
+	float m_flEnd;	// 0x18
+	float m_flRate;	// 0x1c
+	int m_unk20;
+};
+
+class CUnknown102d9040 : public CUnknown102d9170
+{
+public:
+	int m_nSize;	// 0x0c
+	CUnknown102d9040Entry *m_pElements;	// 0x10
+
+	void sub_102d9040(int a, CBaseEntity *pEnt, const float *vec, int arg4, float duration, float amount);	// appends a record: id, the entity's handle (-1 for none), a vector, the start time (curtime), the end time (curtime + duration) and amount / duration
+};
