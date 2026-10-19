@@ -26631,6 +26631,58 @@ void __stdcall sub_1034e700(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034e7e0 size=0xa2
+#include "CBaseEntity.h"
+
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct SEdictUnknown
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
+	virtual CBaseEntity *GetBaseEntity();	// slot 4
+};
+
+struct SEdict
+{
+	char pad[0x40];
+	SEdictUnknown *m_pUnknown;	// 0x40
+};
+
+// The engine interface viewed as a plain list of slots up to 38.
+struct SEngine
+{
+	PV10(a0) PV10(a1) PV10(a2)
+	virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33();
+	virtual void a34(); virtual void a35(); virtual void a36(); virtual void a37();
+	virtual SEdict *PEntityOfEntIndex(int index);	// slot 38
+};
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern SEngine *g_1070b22c;
+
+static inline CBaseEntity *Instance(SEdict *pEdict)
+{
+	g_109f3620[*g_109f3680].a = "CBaseEntity::Instance";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (!pEdict)
+		pEdict = g_1070b22c->PEntityOfEntIndex(0);
+	CBaseEntity *pEnt = (pEdict && pEdict->m_pUnknown) ? pEdict->m_pUnknown->GetBaseEntity() : 0;
+	--*g_109f3680;
+	return pEnt;
+}
+
+void __stdcall sub_1034e7e0(int unused)
+{
+	*((char *)Instance(g_1070b22c->PEntityOfEntIndex(0)) + 0x47c) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10355d70 size=0x49
 void *sub_1000db89(int);
 struct GP;

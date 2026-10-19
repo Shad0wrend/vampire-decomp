@@ -2100,6 +2100,7 @@
 0x1000fb3c func   ?vfunc5@CVampireProjectile_MingXiaoSpit@@QAEPAV1@I@Z CVampireProjectile_MingXiaoSpit::vfunc5
 0x1000fb64 func   ?vfunc5@CNPC_VBach@@QAEPAV1@I@Z CNPC_VBach::vfunc5
 0x1000fb69 func   ?sub_10109da0@@YIXPADHH@Z sub_10109da0
+0x1000fb8c func   ?sub_1034e7e0@@YGXH@Z sub_1034e7e0
 0x1000fbb4 func   _point_anglesensor point_anglesensor
 0x1000fbcd func   _move_rope move_rope
 0x1000fbff func   ?vfunc267@CBaseViewModel@@QAEPAVCBaseEntity@@XZ CBaseViewModel::vfunc267
