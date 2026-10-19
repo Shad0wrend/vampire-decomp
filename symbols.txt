@@ -1269,6 +1269,7 @@
 0x10009714 func   ?vfunc3@CThinkContextsSaveDataOps@@UAEXPAX@Z CThinkContextsSaveDataOps::vfunc3
 0x10009728 func   ?sub_101172c0@S101172c0@@QAEXAAUinputdata_t@@@Z S101172c0::sub_101172c0
 0x10009732 func   ?sub_10330ce0@CUnknown10330ce0@@QAEXD@Z CUnknown10330ce0::sub_10330ce0
+0x10009737 func   ?sub_10046ba0@CUtlVector56@@QAEHH@Z CUtlVector56::sub_10046ba0
 0x1000973c func   ?sub_100eb420@CUnknown100eb420@@QAE_NXZ CUnknown100eb420::sub_100eb420
 0x10009778 func   _mover_keyframe mover_keyframe
 0x10009787 func   ?vfunc601@CNPC_VHengeyokai@@UAEXH@Z CNPC_VHengeyokai::vfunc601
