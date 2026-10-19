@@ -15662,6 +15662,38 @@ const char * __stdcall sub_1027f1e0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027f990 size=0x8f
+#include "CUtlVector20.h"
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUtlVector20::sub_1027f990(int num)
+{
+    if (m_size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 2;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount * 20);
+        else
+            m_pMemory = (char *)g_109f3634(m_allocationCount * 20);
+    }
+    m_size += num;
+    m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027fae0 size=0x8c
 #include "UtlVec8.h"
 extern void *(*g_109f3634)(int);
