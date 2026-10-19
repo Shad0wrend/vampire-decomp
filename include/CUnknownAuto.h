@@ -11,6 +11,7 @@
 #include "CBaseFire.h"
 #include "CBaseTempEntity.h"
 #include "CCameraAnimated.h"
+#include "CExperienceTable.h"
 #include "CFireSmoke.h"
 #include "CHL2_Player.h"
 #include "CKeepUpright.h"
