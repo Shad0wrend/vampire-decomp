@@ -19024,6 +19024,31 @@ int * __fastcall sub_101f0270(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0330 size=0xca
+#include "CUnknown101f0330.h"
+
+extern "C" char *__cdecl strcat(char *, const char *);
+extern "C" char *__cdecl strcpy(char *, const char *);
+extern "C" char *__cdecl strncat(char *, const char *, unsigned int);
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+#pragma intrinsic(strcat, strcpy)
+extern char *(__cdecl *g_109f3890)(char *, const char *, int);	// Q_strncpy
+void sub_10203dd0(const char *msg);
+
+void CUnknown101f0330::sub_101f0330()
+{
+	char buf[256];
+	g_109f3890(buf, m_pszText ? m_pszText : "", 254);
+	strcat(buf, "\n");
+	sub_10203dd0(buf);
+	sprintf(buf, "\t-%s\n\n", m_pszName ? m_pszName : "");
+	strcpy(buf, "\t-");
+	strncat(buf, m_pszName ? m_pszName : "", 250);
+	strcat(buf, "\n\n");
+	sub_10203dd0(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0740 size=0xac
 extern char g_106b8540[];
 int sub_10431c2f(char *, const char *, ...);
