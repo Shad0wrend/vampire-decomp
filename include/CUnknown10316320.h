@@ -8,5 +8,5 @@ public:
 	unsigned int m_hEntities[16];	// 0x001c
 	int m_nEntities;	// 0x005c
 
-	bool sub_10316320(int a, int b, void *pExcept);	// tells every listed entity's sub-object (except pExcept) via its slot 366
+	int sub_10316320(int a, int b, void *pExcept);	// tells every listed entity's sub-object (except pExcept) via its slot 366; returns 1 when the list is not empty
 };
