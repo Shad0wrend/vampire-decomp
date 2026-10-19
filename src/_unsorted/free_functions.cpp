@@ -11241,6 +11241,60 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101719d0 size=0x94
+#define V4(x) virtual void x##a(); virtual void x##b(); virtual void x##c(); virtual void x##d();
+#define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
+#define V64(x) V16(x##a) V16(x##b) V16(x##c) V16(x##d)
+
+struct Vec3 {
+	float x, y, z;
+};
+
+struct EntV {
+	V16(a) V16(b) V16(c) V4(d) V4(e) V4(f)
+	virtual void s60();
+	virtual void s61();
+	virtual void v62(const Vec3 *pos);
+	virtual void s63();
+	virtual void v64(const float *angles);
+	V64(g) V16(h) V16(i) V16(j) V4(k) V4(l) V4(m)
+	virtual void s189();
+	virtual void s190();
+	virtual void s191();
+	virtual float *v192(float *out);
+	V4(n) V4(o)
+	virtual void s201();
+	virtual void v202(EntV *ent);
+	V16(p)
+	virtual void s219();
+	virtual void s220();
+	virtual float *v221();
+};
+
+struct GlobalVars {
+	char m_pad[0xc];
+	float curtime;
+};
+extern GlobalVars *g_1070b228;
+
+void CBloodSplat::sub_101719d0(CBaseEntity *pPlayer)
+{
+	EntV *player = (EntV *)pPlayer;
+	EntV *self = (EntV *)this;
+	float tmp[3];
+	Vec3 *p = (Vec3 *)player->v192(tmp);
+	Vec3 pos;
+	pos.x = p->x;
+	pos.y = p->y;
+	pos.z = p->z + 32.0f;
+	Vec3 copy = pos;
+	self->v62(&copy);
+	self->v64(player->v221());
+	self->v202(player);
+	*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10175180 size=0x74
 #define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define HUN(p) TEN(p##0) TEN(p##1) TEN(p##2) TEN(p##3) TEN(p##4) TEN(p##5) TEN(p##6) TEN(p##7) TEN(p##8) TEN(p##9)
