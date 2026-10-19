@@ -67,6 +67,7 @@ public:
 	int vfunc222(int a);	// "CBaseEntity::GetSoundEmissionOrigin": scope trace, calls slot 192(a), returns a
 	void vfunc226(int a);
 	void vfunc228(int a, int b);
+	int vfunc233(int *pList, int maxObjects);	// "CBaseEntity::VPhysicsGetObjectList": scope trace (entity name), stores the object at +0x36c in pList[0] and returns 1 when it is set and maxObjects > 0, else 0
 	void vfunc238(int a, int b, int c, int d);
 
 	const char *sub_1000ea11();
