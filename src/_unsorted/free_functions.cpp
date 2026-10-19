@@ -15919,6 +15919,32 @@ bool CVStatAction_t::sub_101fceb0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fcf50 size=0x89
+#include "CVStatAction_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool CVStatAction_t::sub_101fcf50()
+{
+	g_109f3620[*g_109f3680].a = "CVStatAction_t::AlwaysTriggers";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (m_pad0004 == 4) {
+		(*g_109f3680)--;
+		return false;
+	}
+	if (m_pad0004 != 3 && (*(char *)this & 1)) {
+		(*g_109f3680)--;
+		return false;
+	}
+	(*g_109f3680)--;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fd110 size=0x7d
 #include "CVStatAction_t.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
