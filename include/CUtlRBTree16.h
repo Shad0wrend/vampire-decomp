@@ -35,4 +35,5 @@ public:
 	unsigned short Parent(unsigned short i) const { return Links(i).m_Parent; }
 
 	bool sub_10047840(unsigned short i) const;	// "CUtlRBTree::IsLeftChild"
+	bool sub_1004a2a0(unsigned short i) const;	// "CUtlRBTree::IsLeftChild" (another instance)
 };
