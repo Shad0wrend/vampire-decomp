@@ -622,6 +622,29 @@ int __fastcall sub_100b17f0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1890 size=0x92
+#include "CBaseEntity.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::vfunc213(const float *size)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::SetSize";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	float *dst = (float *)((char *)this + 0x38c);
+	dst[0] = size[0];
+	dst[1] = size[1];
+	dst[2] = size[2];
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b1960 size=0x7b
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
