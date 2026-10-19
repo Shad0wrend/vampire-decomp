@@ -3988,6 +3988,40 @@ void __fastcall sub_10078c30(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078c90 size=0x97
+#include "CUtlVector136.h"
+
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUtlVector136::sub_10078c90(int num)
+{
+	if (num + m_size > m_allocationCount && -1 != m_growSize) {
+		int need = num + (int)m_size;
+		int alloc = m_allocationCount;
+		if ((int)alloc < need) {
+			do {
+				if (alloc) {
+					if (m_growSize)
+						alloc += m_growSize;
+					else
+						alloc += alloc;
+				} else {
+					alloc = 1;
+				}
+			} while ((int)alloc < need);
+			m_allocationCount = alloc;
+		}
+		if (m_pMemory)
+			m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount * 0x88);
+		else
+			m_pMemory = (char *)g_109f3634(m_allocationCount * 0x88);
+	}
+	m_size += num;
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078d60 size=0x4c
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
