@@ -17,6 +17,7 @@ public:
 
 	void sub_103d1ca0();	// "CNPC_VWerewolf::StartSearchTimer": stores the time stamp counter in a global
 	void vfunc465(const char *msg);	// slot 465, scope-traced wrapper
+	void vfunc516();	// slot 516, scope-traced wrapper around the base implementation
 	void sub_10295a60(const char *msg);
 	CNPC_VWerewolf *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10003648();	// as in CPhysForce (transplant)
