@@ -12877,6 +12877,39 @@ void sub_10199e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b3d0 size=0x9c
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" __declspec(dllimport) int *PyInt_FromLong(long);
+extern "C" __declspec(dllimport) int *Py_FindMethod(void *, void *, const char *);
+extern "C" __declspec(dllimport) void PyErr_Clear(void);
+extern "C" __declspec(dllimport) int *PyDict_GetItemString(void *, const char *);
+extern char g_1058f5d0[];
+extern int *g_1072b374;
+extern void *g_1072b370;
+
+int *sub_1019b3d0(int *self, const char *name)
+{
+    if (!_strcmpi(name, "InitMode"))
+        return PyInt_FromLong(self[2]);
+    if (!_strcmpi(name, "morgue")) {
+        (*g_1072b374)++;
+        return g_1072b374;
+    }
+    int *r = Py_FindMethod(g_1058f5d0, self, name);
+    if (!r) {
+        PyErr_Clear();
+        r = PyDict_GetItemString(g_1072b370, name);
+        if (r) {
+            (*r)++;
+            return r;
+        }
+        PyErr_Clear();
+        r = PyInt_FromLong(0);
+    }
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019b7e0 size=0x10
 extern void *g_1072b370;
 extern void *(__cdecl *g_109f3738)(void *);
