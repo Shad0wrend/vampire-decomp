@@ -2365,6 +2365,7 @@
 0x10012882 func   ?sub_101854b0@CUtlVector72@@QAEXH@Z CUtlVector72::sub_101854b0
 0x10012887 func   ?sub_100b39c0@@YIHPAD@Z sub_100b39c0
 0x100128f0 func   ?vfunc5@CNPC_VMalkavian@@QAEPAV1@I@Z CNPC_VMalkavian::vfunc5
+0x100128fa func   ?sub_101f1be0@CUnknown10227c90@@QAEXH@Z CUnknown10227c90::sub_101f1be0
 0x10012904 func   ?vfunc5@CWeaponRanged_Tzimisce2Head@@QAEPAV1@I@Z CWeaponRanged_Tzimisce2Head::vfunc5
 0x10012918 func   ?vfunc546@CGenericSabbat_NPC@@QAEHH@Z CGenericSabbat_NPC::vfunc546
 0x10012936 func   ?vfunc461@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc461
