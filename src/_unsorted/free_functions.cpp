@@ -22346,6 +22346,22 @@ void __fastcall sub_103661d0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10366400 size=0x69
+#include "CNPC_VWerewolf.h"
+struct CUnknownGlobals1070b228 { int m_pad[3]; float m_curtime; };
+extern CUnknownGlobals1070b228 *g_1070b228;
+bool CNPC_VWerewolf::sub_10366400(int key)
+{
+	int idx = sub_10366490(key);
+	if (idx != -1) {
+		if (g_1070b228->m_curtime < m_Timers.Element(idx).m_time)
+			return true;
+		m_Timers.FastRemove(idx);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10366d60 size=0x33
 void sub_10007897();
 void sub_10011d4c();
