@@ -57,12 +57,12 @@ public:
 	CUnknown10258b00_A m_A[2];	// 0x2668
 	CUnknown10258b00_B m_B[3];	// 0x238e0
 	char m_pad4fe6c[4];
-	int m_n4fe70;	// 0x4fe70 .. 0x4fe84
-	int m_n4fe74;
-	int m_n4fe78;
-	int m_n4fe7c;
-	int m_n4fe80;
-	int m_n4fe84;
+	float m_f4fe70;	// 0x4fe70 .. 0x4fe80: floats cleared to 0
+	float m_f4fe74;
+	float m_f4fe78;
+	float m_f4fe7c;
+	float m_f4fe80;
+	int m_n4fe84;	// 0x4fe84
 };
 
 void sub_10258b00(CUnknown10258b00 *p);	// resets the arrays and the fields at +0x24d0.. and +0x4fe70..
