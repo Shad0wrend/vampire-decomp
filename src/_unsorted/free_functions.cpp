@@ -24384,6 +24384,56 @@ void __fastcall sub_10250910(Mem8 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102522e0 size=0xee
+#include "CUnknown102522e0.h"
+
+struct HandleEntry { void *ent; unsigned int serial; int pad; };
+struct HandleList { int pad; HandleEntry e[1]; };
+extern HandleList *g_10566458;
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct SOwner
+{
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6();
+	virtual SOwner *vfunc97();
+	char m_pad[0x98 - 4];
+	int m_f98;	// 0x98
+	char m_pad2[0xa8 - 0x9c];
+	int m_fa8;	// 0xa8
+};
+
+struct SOwnerHandle
+{
+	unsigned int m_Index;
+	SOwner *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		HandleEntry *e = &g_10566458->e[m_Index & 0x1fff];
+		return e->serial == (m_Index >> 13) ? (SOwner *)e->ent : 0;
+	}
+};
+
+// TARGET: CUnknown102522e0::sub_102522e0
+int CUnknown102522e0::sub_102522e0()
+{
+	if (((SOwnerHandle *)&m_hOwner)->Get() != 0) {
+		int v = ((SOwnerHandle *)&m_hOwner)->Get()->m_fa8;
+		if (v)
+			return v;
+		if (((SOwnerHandle *)&m_hOwner)->Get()->m_f98) {
+			SOwner *p = ((SOwnerHandle *)&m_hOwner)->Get()->vfunc97();
+			if (p)
+				return p->m_fa8;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252450 size=0xe
 float CUnknown10252450::sub_10252450(int index)
 {
