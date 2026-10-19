@@ -18946,6 +18946,38 @@ void CUtlVector16::sub_10349d50(int num)
 void __fastcall sub_10349ea0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10349ec0 size=0x8c
+#include "CUtlVector16.h"
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+void CUtlVector16::sub_10349ec0(int num)
+{
+    if (m_size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 2;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount << 4);
+        else
+            m_pMemory = (char *)g_109f3634(m_allocationCount << 4);
+    }
+    m_size += num;
+    m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034a010 size=0x8
 void __fastcall sub_1034a010(int *p) { p[3] = 0; }
 // END FUNCTION
