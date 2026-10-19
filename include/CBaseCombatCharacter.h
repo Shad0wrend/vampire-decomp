@@ -99,7 +99,7 @@ public:
 	void vfunc339(int a, int b, int c);
 	void vfunc340(int a, int b, int c);
 	char vfunc362(const float *pos);	// "CBaseCombatCharacter::FInViewCone": scope trace, then sub_103268e0(pos, field at +0x1574)
-	void vfunc365(CBaseEntity *pTarget);	// "CBaseCombatCharacter::FInAimCone": scope trace (entity name), slot 364(target slot 197(buf, slot 193(buf, 1, 0)))
+	int vfunc365(CBaseEntity *pTarget);	// "CBaseCombatCharacter::FInAimCone": scope trace (entity name), returns slot 364(target slot 197(buf, slot 193(buf), 1, 0))
 	QAngle vfunc367();	// "CBaseCombatCharacter::BodyAngles": scope trace (entity name), returns the three floats returned by slot 219 by value
 	int vfunc376(int a);
 	void vfunc387();
