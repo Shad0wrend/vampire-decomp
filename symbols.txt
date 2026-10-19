@@ -168,6 +168,7 @@
 0x100023a1 func   ?sub_1027d990@CUnknown1027d990@@QAEHXZ CUnknown1027d990::sub_1027d990
 0x100023b0 func   ?vfunc1@CServerGameClients@@UAEXXZ CServerGameClients::vfunc1
 0x100023dd func   ?vfunc420@CNPC_VBaseBoss@@UAEXXZ CNPC_VBaseBoss::vfunc420
+0x100023e7 func   ?sub_10175290@CBasePlayer@@QAEHXZ CBasePlayer::sub_10175290
 0x1000240a func   _item_k_carson_apartment_key item_k_carson_apartment_key
 0x10002423 func   _prop_slashable prop_slashable
 0x10002455 func   ?sub_102a9690@CUnknown102a9690@@QAEXH@Z CUnknown102a9690::sub_102a9690

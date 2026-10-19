@@ -11791,6 +11791,48 @@ bool __fastcall sub_10175180(Holder *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175290 size=0x9c
+#include "CBasePlayer.h"
+#include "CUnknown1070b22c.h"
+
+struct EntBase {
+	char m_pad0000[0x45c];
+	int m_n45c;
+};
+struct EntInfo {
+	EntBase *m_pEntity;
+	int m_serial;
+	int m_unused;
+};
+extern CUnknown1070b22c *g_1070b22c;
+extern char *g_10566458;
+
+static inline EntBase *GetEnt(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		EntInfo *e = &((EntInfo *)(g_10566458 + 4))[h & 0x1fff];
+		if (e->m_serial == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+
+int CBasePlayer::sub_10175290()
+{
+	int now = g_1070b22c->vfunc120();
+	if (m_n1E0C + 5 < now)
+		m_n1E08 = -1;
+	if (m_n1E08 > 0)
+		return m_n1E08;
+	volatile unsigned int *ph = &m_hEnt1E04;
+	EntBase *e = GetEnt(*ph);
+	if (!e)
+		return 0;
+	e = GetEnt(*ph);
+	return !e ? 0 : e->m_n45c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017cf90 size=0x6f
 struct EntInfo { void *ent; unsigned int serial; int pad; };
 struct EntList {
