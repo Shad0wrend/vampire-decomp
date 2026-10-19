@@ -101,6 +101,7 @@ public:
 	void sub_100a8bf0(int a);	// "CBaseEntity::InputScriptHide": calls vfunc77
 	void sub_100a8c90(int a);	// "CBaseEntity::InputScriptUnhide": calls vfunc78
 	void sub_100a8d30(CBaseEntity *pEnt);	// "CBaseEntity::SetSoundOverrideEnt": stores pEnt's handle at +0x100 (-1 for null)
+	void sub_100a8fc0(char value);	// "CBaseEntity::SetFakeSilence": scope trace (entity name), stores the byte at +0x104, then sub_1009d1e0()
 	void sub_100a9290(char value);	// "CBaseEntity::SetNPCTransparent": stores the byte at +0xfc
 	void sub_100a9470(char value);	// "CBaseEntity::SetOccludesSound": stores the byte at +0xfe (slot 103 override in many subclasses)
 	CBaseEntity *sub_100a9c90();	// "CBaseEntity::GetOwnerEntity" (slot 97): resolves the handle at +0x364
