@@ -18,4 +18,5 @@ public:
 	void sub_100bdd20(unsigned int curData);	// same family (another width)
 	void sub_100bc600(unsigned int curData, int numbits);	// range checked variant, called through the stub at 0x10001ef1
 	void sub_100bc860(unsigned int curData, int numbits, bool bCheckRange);	// "WriteUBitLong" (older copy): with bCheckRange forwards to sub_100bc600, else as sub_100bd450
+	void sub_100bd090(int numbits, float fAngle);	// "WriteBitAngle"-like (arguments swapped): writes (int)((1 << numbits) * fAngle) / 360 masked to numbits bits
 };
