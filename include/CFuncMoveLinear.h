@@ -27,6 +27,10 @@ public:
 	virtual void vfunc95(); virtual void vfunc96(); virtual void vfunc97(); virtual void vfunc98(); virtual void vfunc99();
 	virtual void vfunc100(); virtual void vfunc101(); virtual void vfunc102(); virtual void vfunc103(); virtual void vfunc104();
 
+	// Slot 223, declared as a plain member.
+	bool vfunc223();	// "CBaseEntity::IsSolidFlagSet" (slot 223): scope trace, reports when bit 2 of the byte at +0x2b4 is clear, returns true
+	void sub_100a6150(int a, int b, int c);	// reports a message
+
 	char m_pad[0x55c - 4];
 	const char *m_str55c;
 	const char *m_str560;
