@@ -24256,6 +24256,49 @@ struct CUnknown10260980 { int p; int a; CUnknown10260980* sub_10260980(); };
 CUnknown10260980* CUnknown10260980::sub_10260980() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10264000 size=0xe4
+#include "CUtlVector56.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *pMem, unsigned long size);
+
+struct Elem56
+{
+	int m_d[14];
+};
+
+int CUtlVector56::sub_10264000(int elem, const void *pSrc)
+{
+	if (m_size + 1 > m_allocationCount && m_growSize != -1) {
+		int nAllocationRequested = m_size + 1;
+		while (m_allocationCount < nAllocationRequested) {
+			if (m_allocationCount != 0) {
+				if (m_growSize)
+					m_allocationCount = m_allocationCount + m_growSize;
+				else
+					m_allocationCount = m_allocationCount * 2;
+			} else {
+				m_allocationCount = 1;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (char *)Plat_Realloc(m_pMemory, m_allocationCount * sizeof(Elem56));
+		else
+			m_pMemory = (char *)Plat_Alloc(m_allocationCount * sizeof(Elem56));
+	}
+	m_size++;
+	m_pElements = m_pMemory;
+	int toMove = m_size - elem - 1;
+	if (toMove > 0)
+		memmove((Elem56 *)m_pMemory + elem + 1, (Elem56 *)m_pMemory + elem, toMove * sizeof(Elem56));
+	Elem56 *p = (Elem56 *)m_pMemory + elem;
+	if (p)
+		*p = *(const Elem56 *)pSrc;
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102641b0 size=0x9b
 #include "CUtlVector56.h"
 extern void *(*g_109f3634)(int);
