@@ -136,6 +136,7 @@ public:
 	float sub_1009d850(void *pListener, float *pDist);	// "CBaseEntity::AdjustSoundDistForStealth": scope trace (entity name), when pListener is set with type 4 at +4 and the object at +0xa8 is set, subtracts slot 30() from *pDist (clamped at 0); returns *pDist
 	void sub_1009ee80(CBaseEntity *pEnt);	// "CBaseEntity::SetAimEnt": stores pEnt's handle at +0x37c (-1 for null)
 	const char *sub_1009f200();	// "CBaseEntity::GetClassname": the string at +0x11c, or "" when it is null
+	void sub_1009f3c0(const char *msg, int duration);	// "CBaseEntity::AddTimedOverlay": scope trace (entity name), pushes a 16 byte record (copy of msg, curtime + duration, curtime, old head) on the list at +0x228
 	void sub_1009fa60();
 	void sub_100a0420(const char *name);	// "CBaseEntity::SetName": scope trace, stores name at +0x26c, then slot 11(name or "")
 	void sub_100a0b20();	// "CBaseEntity::ClearParent": scope trace (entity name), then the call through the stub at 0x1000b636
@@ -207,7 +208,9 @@ public:
 	int m_iMaxHealth;	// 0x0208
 	char m_pad020c[4];
 	int m_iHealth;	// 0x0210
-	char m_pad0214[0x254 - 0x214];
+	char m_pad0214[0x228 - 0x214];
+	void *m_pTimedOverlays;	// 0x0228
+	char m_pad022c[0x254 - 0x22c];
 	unsigned int m_hTouch254;	// entity handle notified by StartTouch / EndTouch
 	char m_pad0258[0x268 - 0x258];
 	unsigned int m_flags268;
