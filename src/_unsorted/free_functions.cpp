@@ -5679,6 +5679,39 @@ void CBaseEntity::sub_100a0b20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a53d0 size=0x92
+#include "CUnknown1070b22c.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern CUnknown1070b22c *g_1070b22c;
+
+void CBaseEntity::sub_100a53d0(int a)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = "";
+	} else {
+		name = "NULL ENTITY";
+	}
+	g_109f3620[*g_109f3680].fn = "CBaseEntity::PhysicsTouchTriggers";
+	g_109f3620[*g_109f3680].name = name;
+	g_109f3620[*g_109f3680].extra = "";
+	(*g_109f3680)++;
+	int edict = *(int *)((char *)this + 0x2e0);
+	if (edict)
+		g_1070b22c->vfunc122(edict, a);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6bb0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
