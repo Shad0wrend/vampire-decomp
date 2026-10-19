@@ -12,6 +12,6 @@ public:
 
 	char m_pad0004[0x208];
 	float m_flSlack;	// 0x20c
-	bool m_bChanged;	// 0x210
+	char m_bChanged;	// 0x210
 	int m_nType;	// 0x214
 };
