@@ -7,4 +7,5 @@ class CStripWeapons
 public:
 	CStripWeapons *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+	void vfunc173(void *pActivator, void *pCaller, int useType, float value);	// slot 173 "CStripWeapons::Use": removes all items from the activating player (or the local player when the activator is no player and the rules are not deathmatch); `this` is not used
 };
