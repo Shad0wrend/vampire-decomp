@@ -4,6 +4,33 @@
 // virtual call through this class.
 #pragma once
 
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct CNPC_VWerewolfTimer
+{
+	int m_key;
+	float m_time;
+};
+
+// CUtlVector<CNPC_VWerewolfTimer> embedded at +0x665c.
+struct CNPC_VWerewolfTimerVec
+{
+	CNPC_VWerewolfTimer *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	CNPC_VWerewolfTimer *m_pElements;
+
+	CNPC_VWerewolfTimer &Element(int i) { return m_pMemory[i]; }
+	void FastRemove(int elem)
+	{
+		if (m_size > 0) {
+			memmove(&Element(elem), &Element(m_size - 1), sizeof(CNPC_VWerewolfTimer));
+			m_size--;
+		}
+	}
+};
+
 class CNPC_VWerewolf
 {
 public:
@@ -11,6 +38,11 @@ public:
 
 	char pad04[0x268];
 	const char *m_name26c;
+	char pad270[0x665c - 0x270];
+	CNPC_VWerewolfTimerVec m_Timers;	// 0x665c
+
+	int sub_10366490(int key);
+	bool sub_10366400(int key);
 
 	// Slot 421, called directly so far; declared as a plain member.
 	void vfunc421();
