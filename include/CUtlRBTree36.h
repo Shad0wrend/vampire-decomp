@@ -19,10 +19,12 @@ public:
 
 	bool (*m_LessFunc)(const void *, const void *);
 	Node_t *m_pElements;
-	int m_unk8;
-	int m_unkC;
+	int m_unk8;	// allocation count of the node memory
+	int m_unkC;	// grow size of the node memory (-1 = external)
 	unsigned short m_Root;
 	unsigned short m_NumElements;
+	unsigned short m_FirstFree;	// 0x14
+	unsigned short m_TotalElements;	// 0x16
 
 	static unsigned short InvalidIndex() { return 0xffff; }
 
@@ -36,6 +38,7 @@ public:
 	void sub_100498c0(unsigned short i, unsigned short parent, bool isLeft);	// "CUtlRBTree::LinkToParent" (with InsertRebalance inlined)
 	bool sub_1004c4c0(unsigned short i) const;	// "CUtlRBTree::IsLeftChild"
 	void sub_1004c5b0(unsigned short elem);	// "CUtlRBTree::RotateLeft"
+	unsigned short sub_10049780();	// "CUtlRBTree::NewNode": takes the first free node (or grows the node memory by one and uses the next unused one) and returns its index
 
 	const Links_t &sub_10009b51(unsigned short i) const;	// out-of-line Links()
 	bool sub_10009999(unsigned short i) const;	// IsLeftChild
