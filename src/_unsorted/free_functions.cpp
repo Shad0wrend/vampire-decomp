@@ -8033,6 +8033,24 @@ int EntryTable::sub_100ecc60(int idx, int slot)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ecd30 size=0x8f
+#include "CUnknown100ecd30.h"
+
+void CUnknown100ecd30::sub_100ecd30(int index, int *pA, int *pB, int *pC, int *pD)
+{
+	if (index < 0 || index > m_nLast)
+		index = m_nDefault;
+	if (pA)
+		*pA = m_pRecords[index].m_n234;
+	if (pB)
+		*pB = m_pRecords[index].m_n238;
+	if (pC)
+		*pC = m_pRecords[index].m_n250;
+	if (pD)
+		*pD = m_pRecords[index].m_n254;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ed4d0 size=0x18
 struct CBlock4k
 {
