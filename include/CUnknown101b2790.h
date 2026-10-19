@@ -2,21 +2,18 @@
 // sub_101b2790 walks the chain from the head until the node's first dword is -1.
 #pragma once
 
-struct CListNode232_t
+struct CListNodeHeader_t
 {
 	int m_next;	// 0x00
 	int m_b;	// 0x04
 	int m_c;	// 0x08
 	int m_d;	// 0x0c
-	char m_pad0010[0xe8 - 0x10];
+};
 
-	CListNode232_t()
-	{
-		m_next = -1;
-		m_b = -1;
-		m_c = -1;
-		m_d = 1;
-	}
+struct CListNode232_t
+{
+	CListNodeHeader_t m_header;
+	char m_pad0010[0xe8 - 0x10];
 };
 
 class CUnknown101b2790
