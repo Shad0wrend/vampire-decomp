@@ -9742,6 +9742,42 @@ struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 void CUnknown10146790::sub_10146790() { c = 0; b = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10147c10 size=0xa6
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1057b410[2];
+void sub_100059f2();
+void sub_1000a56f();
+
+int *sub_10147c10()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_flWait", {0x450, 0}, 1, 6, "wait" },
+        { 2, "InputSetNextPathCorner", {0, 0}, 1, 8, "SetNextPathCorner", 0, (void *)sub_100059f2 },
+        { 10, "m_OnPass", {0x454, 0}, 1, 0x16, "OnPass", g_1055dc70 },
+        { 0, "InputPass", {0, 0}, 1, 8, "InPass", 0, (void *)sub_1000a56f },
+    };
+    g_1057b410[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1057b410[0] = (int)&dataDesc[1];
+    return g_1057b410;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147d50 size=0x1b
 #include "CUnknown10147d10.h"
 void CUnknown10147d10::sub_10147d50(CPair10147d50 *p)
