@@ -10,4 +10,9 @@ public:
 	void sub_100102f3();	// as in CDataObjectAccessSystem (transplant)
 	float *vfunc3(char flag, int unused);	// as in CGameMovement (transplant)
 	float *vfunc4(char flag, int unused);	// as in CGameMovement (transplant)
+
+	void *m_pPlayer;	// 0x04
+	void *m_pMove;	// 0x08
+
+	float sub_101282b0();	// movement speed scale: 0.8 * a tuning value chosen by the player's state at +0xc0 (0 for other states)
 };
