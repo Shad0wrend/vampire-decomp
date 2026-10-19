@@ -7742,6 +7742,18 @@ void CUnknown100be040::sub_100be040(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be3d0 size=0xa1
+#include "bf_read.h"
+
+float bf_read::sub_100be3d0(int numbits)
+{
+	float shift = (float)(1 << numbits);
+	int i = ReadUBitLong(numbits);
+	float fReturn = (float)i * (360.0 / shift);
+	return fReturn;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0c60 size=0xd
 void CUnknown100c0c60::sub_100c0c60(float value)
 {
