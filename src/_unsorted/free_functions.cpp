@@ -27985,6 +27985,45 @@ void *CNPC_VChangBros::sub_1036d100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036d270 size=0xaa
+#include "CNPC_VChangBros.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+struct Globals_t {
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern Globals_t *g_1070b228;
+extern float g_104ada04;
+
+struct TeleportState_t {
+	char m_pad0000[0x66bc];
+	float m_vecPos[3];	// 0x66bc
+	float m_flTime;	// 0x66c8
+};
+
+bool CNPC_VChangBros::sub_1036d270(float *pOut)
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VChangBros::GetTeleportPosition";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	TeleportState_t *p = (TeleportState_t *)this;
+	if (g_1070b228->curtime - p->m_flTime > g_104ada04) {
+		(*g_109f3680)--;
+		return false;
+	}
+	pOut[0] = p->m_vecPos[0];
+	pOut[1] = p->m_vecPos[1];
+	pOut[2] = p->m_vecPos[2];
+	(*g_109f3680)--;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036ec40 size=0x33
 void sub_1000c9b9();
 void sub_100055fb();

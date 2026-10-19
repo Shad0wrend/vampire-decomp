@@ -363,6 +363,7 @@
 0x10003a26 func   ?sub_10104630@@YGXH@Z sub_10104630
 0x10003a35 func   ?sub_103684a0@@YADXZ sub_103684a0
 0x10003a3a func   ?sub_1021e1c0@@YIXPAH@Z sub_1021e1c0
+0x10003a3f func   ?sub_1036d270@CNPC_VChangBros@@QAE_NPAM@Z CNPC_VChangBros::sub_1036d270
 0x10003a44 func   ?sub_10314b30@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10314b30
 0x10003a80 func   _soundent soundent
 0x10003aad func   ?sub_102d1350@CAI_BaseNPC@@QAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::sub_102d1350
