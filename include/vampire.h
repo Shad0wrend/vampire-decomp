@@ -8,6 +8,7 @@
 #include "CAmbientGeneric.h"
 #include "CAreaPortal.h"
 #include "CBaseButton.h"
+#include "CBaseCineCam.h"
 #include "CBaseCombatWeapon.h"
 #include "CBaseGrenade.h"
 #include "CBasePlayer.h"
