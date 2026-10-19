@@ -1326,6 +1326,7 @@
 0x10009c05 func   ?vfunc5@CItemGSewerBook1@@QAEPAV1@I@Z CItemGSewerBook1::vfunc5
 0x10009c19 func   ?sub_10373420@@YIXPAH@Z sub_10373420
 0x10009c37 func   ?sub_10202760@@YAHH@Z sub_10202760
+0x10009c4b func   ?sub_101953d0@@YAPAHPAUPyObj@@PAX@Z sub_101953d0
 0x10009c5a func   ?vfunc5@CEnvBeam@@QAEPAV1@I@Z CEnvBeam::vfunc5
 0x10009c69 func   ?sub_10065250@@YAHXZ sub_10065250
 0x10009c9b func   ?sub_102696f0@@YIXPAD@Z sub_102696f0

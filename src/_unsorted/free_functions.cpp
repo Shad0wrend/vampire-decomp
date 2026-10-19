@@ -15637,6 +15637,46 @@ bool CUtlRBTree12::sub_10194e40(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101953d0 size=0xf5
+struct PyObj { int refcnt; void *type; int pad; void *dict; };
+struct PyEnt { char pad[0x378]; PyObj *pyEntity; };
+extern int (__cdecl *g_109f37a0)(void *args, const char *fmt, ...);
+extern void *g_109f37a4;
+extern void *(__cdecl *g_109f37a8)(void *);
+extern PyEnt *(__cdecl *g_109f37ac)(void *);
+extern void **g_109f37b0;
+extern void (__cdecl *g_109f37b4)(void *, const char *);
+extern int (__cdecl *g_109f37bc)(void *, void *, void *);
+extern int *g_109f3748;
+extern void *g_1072b31c;
+extern char g_1072b378[];
+
+int *sub_101953d0(PyObj *self, void *args)
+{
+    PyObj *obj = 0;
+    if (g_109f37a0(args, "OO", &self, &obj)
+        && obj->type == g_109f37a4
+        && g_109f37a8(obj) == g_1072b378) {
+        PyEnt *ent = g_109f37ac(obj);
+        if (!ent) {
+            g_109f37b4(*g_109f37b0, "creating a python entity for a deleted game entity");
+            return 0;
+        }
+        if (!ent->pyEntity || ent->pyEntity == self) {
+            ent->pyEntity = self;
+            self->refcnt++;
+            g_109f37bc(self->dict, g_1072b31c, obj);
+            ++*g_109f3748;
+            return g_109f3748;
+        }
+        g_109f37b4(*g_109f37b0, "game entity already has a python entity");
+        return 0;
+    }
+    g_109f37b4(*g_109f37b0, "Entity.__init__ must be called with a single cobject entptr");
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10195940 size=0x9e
 #include <string.h>
 
