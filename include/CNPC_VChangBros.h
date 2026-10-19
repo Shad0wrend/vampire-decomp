@@ -10,8 +10,11 @@ public:
 	int vfunc440(int schedule);
 	void vfunc619(int arg);
 	void sub_1000c27a(int arg);
+	void vfunc103();	// "CNPC_VChangBros::Spawn": scope trace around the base spawn
 	void vfunc431();	// "CNPC_VChangBros::NPCThink": scope trace around the base think, then schedules the next think
 	int vfunc461();	// "CNPC_VChangBros::SelectIdealState": scope trace, sets the ideal state (+0x1b38) to 10, then the base implementation
+	void sub_10012855(int flags);	// sets the solid flags, called with 0x209000
+	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
 	int sub_10011225();	// CNPC_VHuman::vfunc461, called directly
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
