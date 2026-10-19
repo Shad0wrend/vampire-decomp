@@ -20,12 +20,14 @@ public:
 	virtual void vfunc228(int a, int b);	// "CBaseCombatCharacter::VPhysicsShadowCollision"-like: scope trace, forwards to slot 75(a, b)
 	virtual void a95(); virtual void a96(); virtual void a97(); virtual void a98(); virtual void a99();
 	CBCC_SLOTS10(b0)
-	virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13();
+	virtual const char *vfunc244();	// "CBaseCombatCharacter::GetSkeletonModelName": scope trace, male or female skeleton model path (IsMale)
+	virtual void b11(); virtual void b12(); virtual void b13();
 	virtual void b14(); virtual void b15(); virtual void b16(); virtual void b17();
 	virtual int vfunc252(int a, int b, int c);
 	virtual int vfunc253(int a, int b, int c);
 	virtual int vfunc254(int a, int b, int c);
 
+	bool sub_10336920();	// "CBaseCombatCharacter::IsMale" (matched under the provisional class name Ent)
 	void sub_103326b0(float amount);
 	void sub_10339560();
 	int sub_10337a60();	// "CBaseCombatCharacter::GetVHistor..." getter
