@@ -11,4 +11,5 @@ public:
 	char *m_pElements;
 
 	void sub_102641b0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements (initial allocation 1)
+	int sub_10264000(int elem, const void *pSrc);	// "CUtlVector::InsertBefore": grows by one (inlined), shifts the tail up, copies the 56 byte element from pSrc, returns elem
 };
