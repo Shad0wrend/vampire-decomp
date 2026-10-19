@@ -1,0 +1,35 @@
+// CSoundEmitterSystemBase: sound emitter system (3 virtual slots; only the layout the constructor sets up is declared).
+#pragma once
+#include "CUnknown1024b2d0.h"
+
+class CSoundEmitterSystemBase
+{
+public:
+	void *m_vtbl;	// 0x00
+	void *m_pfn04;
+	int m_i08;
+	int m_i0c;
+	int m_i10;
+	int m_i14;
+	int m_i18;
+	int m_i1c;
+	int m_i20;
+	CUnknown1024b2d0 m_list24;	// 0x24
+	void *m_pfn50;
+	int m_i54;
+	int m_i58;
+	int m_i5c;
+	int m_i60;
+	int m_i64;
+	int m_i68;
+	int m_i6c;
+	CUnknown1024b2d0 m_list70;	// 0x70
+	int m_i9c;
+	int m_ia0;
+	int m_ia4;
+	int m_ia8;
+	int m_iac;
+	CUnknown1024b2d0 m_listb0;	// 0xb0
+
+	CSoundEmitterSystemBase *sub_101b26c0();
+};
