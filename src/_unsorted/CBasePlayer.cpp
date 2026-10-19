@@ -61,6 +61,48 @@ void CBasePlayer::vfunc408()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ff40 size=0xc3
+struct HandleEntry { void *ent; unsigned int serial; int pad; };
+struct HandleList { int pad; HandleEntry e[1]; };
+extern HandleList *g_10566458;
+struct GlobalVars { char pad[0xc]; float curtime; };
+extern GlobalVars *g_1070b228;
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct VehicleSlots
+{
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8) SL10(a9)
+	SL10(b0) SL10(b1) SL10(b2) SL10(b3) SL10(b4)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7();
+	virtual bool s158();
+};
+struct VehicleHandle
+{
+	unsigned int m_Index;
+	VehicleSlots *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			HandleEntry *e = &g_10566458->e[m_Index & 0x1fff];
+			if (e->serial == (m_Index >> 13))
+				return (VehicleSlots *)e->ent;
+		}
+		return 0;
+	}
+};
+
+bool CBasePlayer::sub_1015ff40()
+{
+	if (*((char *)this + 0x1edc))
+		return true;
+	if (((VehicleHandle *)((char *)this + 0x1c58))->Get() != 0) {
+		if (((VehicleHandle *)((char *)this + 0x1c58))->Get()->s158())
+			*(float *)((char *)this + 0x19b0) = g_1070b228->curtime;
+	}
+	return *(float *)((char *)this + 0x19b0) > 0.0f && *(float *)((char *)this + 0x19b0) + 5.0f > g_1070b228->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101647a0 size=0x9b
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
