@@ -82,6 +82,7 @@ public:
 	void sub_1009c4c0(int a, const char *fmt, const char *array, int count);	// "CBaseEntity::DumpCharArray": scope trace, then one sub_1009b7d0 per byte
 	void sub_1009c5f0(int a, const char *fmt, const int *array, int count);	// "CBaseEntity::DumpFloatArray": scope trace, then one sub_1009ba60 per dword
 	void sub_1009d1e0();	// "CBaseEntity::ForceTransmit": scope trace, stores gpGlobals->curtime + 1.0f at +0x90
+	int sub_1009d5e0();	// "CBaseEntity::GetVSoundTableIdx": scope trace, calls slot 71 while the index at +0xbc is negative, returns it
 	void sub_1009ee80(CBaseEntity *pEnt);	// "CBaseEntity::SetAimEnt": stores pEnt's handle at +0x37c (-1 for null)
 	const char *sub_1009f200();	// "CBaseEntity::GetClassname": the string at +0x11c, or "" when it is null
 	void sub_1009fa60();
@@ -123,7 +124,9 @@ public:
 
 	char m_pad0004[0x8c];
 	float m_flForceTransmitTime;	// 0x0090
-	char m_pad0094[0x80];
+	char m_pad0094[0xbc - 0x94];
+	int m_nVSoundTableIdx;	// 0x00bc
+	char m_pad00c0[0x114 - 0xc0];
 	void (CBaseEntity::*m_pfn0114)();
 	void (CBaseEntity::*m_pfnThink)();
 	char m_pad011c[0xe4];
