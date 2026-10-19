@@ -20,6 +20,8 @@ public:
 	unsigned short m_FirstFree;	// +0x10
 	unsigned short m_ElementCount;	// +0x12
 	unsigned short m_TotalElements;	// +0x14
+	unsigned short m_pad16;
+	CUnknown10250830_Elem *m_pDbgElements;	// +0x18: debugger copy of m_pElements
 
 	void sub_10250830(unsigned short elem);	// "CUtlLinkedList::Unlink"
 };
