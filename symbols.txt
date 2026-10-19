@@ -2781,6 +2781,7 @@
 0x1001538e func   ?sub_10079910@@YIXPAUObj@@HH@Z sub_10079910
 0x10015393 func   _item_w_sabbatleader_attack item_w_sabbatleader_attack
 0x100153a7 func   ?sub_1033c6b0@CBaseCombatCharacter@@QAEXI@Z CBaseCombatCharacter::sub_1033c6b0
+0x100153b6 func   ?vfunc1@CTraitDependencyDataDescSaveDataOps@@UAEXPAUCTraitDependencyField@@PAX@Z CTraitDependencyDataDescSaveDataOps::vfunc1
 0x100153de func   ?vfunc5@CFuncBrush@@QAEPAV1@I@Z CFuncBrush::vfunc5
 0x100153e8 func   ?vfunc4@CSave@@UAEXXZ CSave::vfunc4
 0x10015406 func   _trigger_autosave trigger_autosave
