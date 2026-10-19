@@ -13352,6 +13352,34 @@ void S101d6d50::sub_101d6d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7380 size=0xb0
+#include "CUnknown101d7380.h"
+extern "C" char *__cdecl _strlwr(char *);
+extern "C" char *__cdecl strstr(const char *, const char *);
+extern char g_106b8540[];
+static inline void StrCopy(char *dst, const char *src)
+{
+	while ((*dst++ = *src++))
+		;
+}
+int CUnknown101d7380::sub_101d7380(const char *name, int start)
+{
+	char needle[128];
+	char hay[128];
+	StrCopy(needle, name);
+	_strlwr(needle);
+	for (int i = start + 1; i < m_count; i++) {
+		const char *const *pp = &m_pData[i]->m_p;
+		const char *s = *pp ? *pp : g_106b8540;
+		StrCopy(hay, s);
+		_strlwr(hay);
+		if (strstr(hay, needle) == hay)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8890 size=0xa
 extern int g_1073938c;
 // TARGET: sub_101d8890
