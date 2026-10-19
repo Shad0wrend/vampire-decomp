@@ -29140,6 +29140,70 @@ char sub_10375390()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10376c10 size=0xb3
+#include "CNPC_VFrenzyShadow.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##a) V10(p##b) V10(p##c) V10(p##d) V10(p##e) V10(p##f) V10(p##g) V10(p##h) V10(p##i) V10(p##j)
+struct ShadowObj {
+    V100(xa) V100(xb) V10(xc)
+    virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+    virtual void *GetPoint(void *arg);
+    V100(ya) V10(yb) V10(yc) V10(yd) V10(ye) V10(yf) V10(yg) V10(yh) V10(yi)
+    virtual void t1(); virtual void t2(); virtual void t3(); virtual void t4(); virtual void t5(); virtual void t6();
+    virtual int Query(int arg);
+};
+struct ShadowTarget { char pad[0xa8]; int value; };
+struct HandleEntry { ShadowTarget *ent; int serial; int pad; };
+struct HandleTable { int pad; HandleEntry e[1]; };
+extern HandleTable *g_10566458;
+struct TargetHandle {
+    unsigned int h;
+    ShadowTarget *Get() const {
+        if (h == 0xffffffff)
+            return 0;
+        HandleEntry *p = &g_10566458->e[h & 0x1fff];
+        if (p->serial != (int)(h >> 13))
+            return 0;
+        return p->ent;
+    }
+};
+struct ShadowNpc {
+    V100(xa) V100(xb) V100(xc) V100(xd) V100(xe) V10(xf) V10(xg) V10(xh) V10(xi)
+    virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+    virtual void Notify(ShadowObj *obj, void *point);
+    char pad[0x60ac - 4];
+    TargetHandle m_target;
+    char pad2[0x6664 - 0x60b0];
+    int m_count;
+};
+struct ShadowElem { char pad[0x9c]; ShadowObj *obj; };
+extern int g_1093ae9c;
+extern ShadowElem *g_1093ada8[];
+extern char g_1070d1b0[];
+
+void CNPC_VFrenzyShadow::sub_10376c10()
+{
+    ((ShadowNpc *)this)->m_count = 0;
+    ShadowTarget *target = ((ShadowNpc *)this)->m_target.Get();
+    int value;
+    if (target == 0)
+        value = 0;
+    else
+        value = target->value;
+    for (int i = 0; i < g_1093ae9c; i++) {
+        ShadowObj *obj;
+        if (!g_1093ada8[i]) {
+            obj = 0;
+        } else {
+            obj = g_1093ada8[i]->obj;
+            if (obj && obj->Query(value) == 1)
+                ((ShadowNpc *)this)->m_count++;
+        }
+        ((ShadowNpc *)this)->Notify(obj, obj->GetPoint(g_1070d1b0));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377160 size=0x33
 void sub_10007897();
 void sub_100130d9();
