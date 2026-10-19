@@ -23,5 +23,7 @@ public:
 	void vfunc619(int arg);	// slot 619, not modelled as virtual yet
 	void sub_1000c27a(int arg);
 	int sub_103a6ef0();	// "Classify" (slot 138): scope trace only, returns 0x10
+	void vfunc259(void *pEvent);	// "HandleAnimEvent" (slot 259 override): scope trace, events 0x802/0x803 go to slot 620, the rest to CNPC_VHuman::vfunc259
+	void sub_100076bc(void *pEvent);	// CNPC_VHuman::vfunc259, called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 };
