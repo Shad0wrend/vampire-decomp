@@ -16218,6 +16218,54 @@ int *sub_10223030()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102231c0 size=0x116
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105b1a6c[2];
+void sub_10014605();
+void sub_1001573a();
+void sub_10005be1();
+void sub_10011b85();
+void sub_10011135();
+
+int *sub_102231c0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 12, "m_hDestination", {0x568, 0}, 1, 2 },
+        { 12, "m_hLastKeyframe", {0x56c, 0}, 1, 2 },
+        { 5, "m_bInitialized", {0x564, 0}, 1, 2 },
+        { 2, "m_iszStartKey", {0x55c, 0}, 1, 6, "start_key" },
+        { 4, "m_iDirection", {0x560, 0}, 1, 6, "direction" },
+        { 0, "InputMoveForwards", {0, 0}, 1, 8, "MoveForwards", 0, (void *)sub_10014605 },
+        { 0, "InputMoveBackwards", {0, 0}, 1, 8, "MoveBackwards", 0, (void *)sub_1001573a },
+        { 0, "InputStopMoving", {0, 0}, 1, 8, "StopMoving", 0, (void *)sub_10005be1 },
+        { 1, "InputSetSpeed", {0, 0}, 1, 8, "SetSpeed", 0, (void *)sub_10011b85 },
+        { 2, "InputSnapToKeyframe", {0, 0}, 1, 8, "SnapToKeyframe", 0, (void *)sub_10011135 },
+        { 10, "m_OnReachedKeyframe", {0x5a0, 0}, 1, 0x16, "OnReachedKeyframe", g_1055dc70 },
+        { 10, "m_OnReachedEnd", {0x5d0, 0}, 1, 0x16, "OnReachedEnd", g_1055dc70 },
+        { 10, "m_OnReachedBeginning", {0x5e8, 0}, 1, 0x16, "OnReachedBeginning", g_1055dc70 },
+    };
+    g_105b1a6c[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105b1a6c[0] = (int)&dataDesc[1];
+    return g_105b1a6c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102237c0 size=0xd
 void CUnknown102237c0::sub_102237c0(int value)
 {
