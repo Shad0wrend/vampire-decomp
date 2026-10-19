@@ -13752,6 +13752,34 @@ int List::sub_101e1360(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1440 size=0xb0
+#include "CUnknown101d5bd0.h"
+extern "C" char *__cdecl _strlwr(char *);
+extern "C" char *__cdecl strstr(const char *, const char *);
+extern char g_106b8540[];
+static inline void StrCopy(char *dst, const char *src)
+{
+	while ((*dst++ = *src++))
+		;
+}
+int CUnknown101d5bd0::sub_101e1440(const char *name, int start)
+{
+	char needle[128];
+	char hay[128];
+	StrCopy(needle, name);
+	_strlwr(needle);
+	for (int i = start + 1; i < m_count; i++) {
+		const char *const *pp = &m_pData[i]->m_p;
+		const char *s = *pp ? *pp : g_106b8540;
+		StrCopy(hay, s);
+		_strlwr(hay);
+		if (strstr(hay, needle) == hay)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1850 size=0xc
 unsigned int __stdcall sub_101e1850(unsigned int value)
 {
