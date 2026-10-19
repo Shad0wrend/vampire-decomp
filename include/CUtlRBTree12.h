@@ -39,4 +39,5 @@ public:
 	bool sub_1024c0e0(unsigned short i) const;	// same as sub_102eb7f0 (another instance)
 	bool sub_102ce550(unsigned short i) const;	// same as sub_102eb7f0 (another instance)
 	bool sub_102ec3b0(unsigned short i) const;	// same as sub_102eb7f0 (another instance)
+	unsigned short sub_10194330(const void *search) const;	// "CUtlRBTree::Find"
 };
