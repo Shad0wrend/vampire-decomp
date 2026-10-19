@@ -2848,6 +2848,27 @@ int sub_10066e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068ab0 size=0x76
+#include "CTESpriteSpray.h"
+
+extern CTESpriteSpray g_106c5da8;
+
+void sub_10068ab0(int a, int b, const int *mins, const int *maxs, int p5, int p6, int p7, int p8)
+{
+	g_106c5da8.m_mins[0] = mins[0];
+	g_106c5da8.m_mins[1] = mins[1];
+	g_106c5da8.m_mins[2] = mins[2];
+	g_106c5da8.m_maxs[0] = maxs[0];
+	g_106c5da8.m_maxs[1] = maxs[1];
+	g_106c5da8.m_maxs[2] = maxs[2];
+	g_106c5da8.m_f24 = p5;
+	g_106c5da8.m_f28 = p6;
+	g_106c5da8.m_f2c = p7;
+	g_106c5da8.m_f30 = p8;
+	g_106c5da8.sub_100686b0(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cc20 size=0x79
 int sub_10431c2f(char *, const char *, ...);
 void sub_10203dd0(char *);
