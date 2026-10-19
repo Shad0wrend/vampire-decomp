@@ -83,6 +83,7 @@ public:
 	void sub_100acef0(int a);	// "CBaseEntity::InputKill": calls vfunc119
 	int sub_100adfd0(const char *name);	// "CBaseEntity::PrecacheModel": forwards to the engine, returns its result
 	int sub_100ae090(const char *name);	// "CBaseEntity::PrecacheSound": forwards to the sound system, returns its result
+	void sub_100ae150();	// "CBaseEntity::Remove": scope trace (entity name), then sub_101cd940(this)
 	char sub_100aa840();	// "CBaseEntity::IsTransparent": (field at +0x16c) != 0
 	void sub_100b12e0(char value);	// "CBaseEntity::SetSentLastFrame": stores the byte at +0x380 (slot 7 override)
 	void sub_100b1750(int index);	// "CBaseEntity::SetModelIndex": stores the dword at +0x1a4 (slot 10 override)
