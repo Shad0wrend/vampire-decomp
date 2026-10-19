@@ -13128,6 +13128,62 @@ void CUnknown1018c4d0::sub_1018c4d0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c600 size=0xad
+#include "CUtlVector4.h"
+
+struct EntInfo {
+	void *m_pEntity;
+	int m_serial;
+	int m_unused;
+};
+extern char *g_10566458;
+extern CUtlVector4 g_1072ada4;
+
+struct Flagged_t {
+	char m_pad0000[0x458];
+	char m_bFlag;
+};
+
+static inline Flagged_t *ResolveHandle(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		EntInfo *e = &((EntInfo *)(g_10566458 + 4))[h & 0x1fff];
+		return e->m_serial == (int)(h >> 13) ? (Flagged_t *)e->m_pEntity : 0;
+	}
+	return 0;
+}
+
+static inline bool IsLive(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		EntInfo *e = &((EntInfo *)(g_10566458 + 4))[h & 0x1fff];
+		if (e->m_serial == (int)(h >> 13) && e->m_pEntity)
+			return true;
+	}
+	return false;
+}
+
+void sub_1018c600()
+{
+	int i = 0;
+	if (g_1072ada4.m_size > 0) {
+		do {
+			int *pMem = g_1072ada4.m_pMemory;
+			volatile unsigned int *p = (volatile unsigned int *)&pMem[i];
+			if (!IsLive(*p)) {
+				int toMove = g_1072ada4.m_size - i - 1;
+				if (toMove > 0)
+					memmove((void *)p, &pMem[i + 1], toMove * 4);
+				g_1072ada4.m_size--;
+			} else {
+				ResolveHandle(*p)->m_bFlag = 0;
+				i++;
+			}
+		} while (i < g_1072ada4.m_size);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c6e0 size=0x82
 #include "UtlMem.h"
 
