@@ -26,9 +26,8 @@ struct RecVec1030a6e0
 	int m_Size;
 	Rec1030a6e0 *m_pElements;
 
-	void AddRec(Vec3_1030a6e0 v, int a, int b, unsigned int h)
+	void InsertRec(int elem, Vec3_1030a6e0 v, int a, int b, unsigned int h)
 	{
-		int elem = m_Size;
 		if (elem + 1 > m_Memory.m_nAllocationCount)
 			m_Memory.sub_1030b2f0(elem + 1 - m_Memory.m_nAllocationCount);
 		m_Size++;
@@ -45,6 +44,10 @@ struct RecVec1030a6e0
 			p->b = b;
 			p->hEnt = h;
 		}
+	}
+	void AddRec(Vec3_1030a6e0 v, int a, int b, unsigned int h)
+	{
+		InsertRec(m_Size, v, a, b, h);
 	}
 };
 
