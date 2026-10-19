@@ -674,6 +674,59 @@ void CBaseEntity::vfunc176(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a4d40 size=0xed
+#include "CBaseEntity.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+struct EntInfo { CBaseEntity *ent; int serial; int pad; };
+extern char *g_10566458;
+typedef void (__fastcall *SlotFn)(CBaseEntity *, void **, CBaseEntity *);
+
+void CBaseEntity::vfunc178(CBaseEntity *pOther)
+{
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseEntity::Blocked", ent, g_106b8540);
+    if (m_pfnBlocked)
+        (this->*m_pfnBlocked)(pOther);
+    unsigned int h = m_hTouch254;
+    if (h != 0xffffffff) {
+        EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+        if (e->serial == (h >> 13) && e->ent) {
+            unsigned int h2 = *(volatile unsigned int *)&m_hTouch254;
+            CBaseEntity *pTouch;
+            if (h2 != 0xffffffff) {
+                EntInfo *e2 = (EntInfo *)(g_10566458 + 4) + (h2 & 0x1fff);
+                if (e2->serial == (h2 >> 13))
+                    pTouch = e2->ent;
+                else
+                    pTouch = 0;
+            } else
+                pTouch = 0;
+            void **vt = *(void ***)pTouch;
+            ((SlotFn)vt[178])(pTouch, vt, pOther);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a65a0 size=0x71
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
