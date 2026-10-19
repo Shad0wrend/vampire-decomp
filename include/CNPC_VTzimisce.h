@@ -62,7 +62,7 @@ public:
 	virtual void vfunc623();
 	virtual void vfunc624();
 	virtual void vfunc625();
-	virtual void w132();
+	virtual void vfunc626();
 	virtual void vfunc627();
 
 	char m_pad0004[0x2dc];
