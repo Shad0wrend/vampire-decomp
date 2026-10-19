@@ -18812,6 +18812,28 @@ void sub_1024e030(const mat34_1024e030 &matrix, ang_1024e030 &angles)
 void CBaseCombatWeapon::sub_102507b0() { vfunc361(); }
 // END FUNCTION
 
+// FUNCTION: 0x10250830 size=0x8d
+#include "CUnknown10250830.h"
+
+void CUnknown10250830::sub_10250830(unsigned short elem)
+{
+	if (elem < m_TotalElements && m_pElements[elem].m_Previous != elem) {
+		CUnknown10250830_Elem *pList = m_pElements;
+		CUnknown10250830_Elem *pElem = &pList[elem];
+		if (pElem->m_Previous != 0xffff)
+			pList[pElem->m_Previous].m_Next = pElem->m_Next;
+		else
+			m_Head = pElem->m_Next;
+		if (pElem->m_Next != 0xffff)
+			pList[pElem->m_Next].m_Previous = pElem->m_Previous;
+		else
+			m_Tail = pElem->m_Previous;
+		pElem->m_Previous = pElem->m_Next = elem;
+		--m_ElementCount;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102508f0 size=0xc
 CUnknown102508f0_Elem *CUnknown102508f0::sub_102508f0(int index)
 {
