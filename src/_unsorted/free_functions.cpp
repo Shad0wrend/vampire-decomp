@@ -27790,6 +27790,44 @@ bool HandleList::sub_103167f0(void *arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316890 size=0xcb
+#include "CUnknown10316890.h"
+
+struct HandleEntry { void *ent; unsigned int serial; int pad; };
+struct HandleList { int pad; HandleEntry e[1]; };
+extern HandleList *g_10566458;
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct ListenerSlots
+{
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void s55(int arg, Vector a, Vector b);
+};
+struct ListenerHandle
+{
+	unsigned int m_Index;
+	ListenerSlots *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			HandleEntry *e = &g_10566458->e[m_Index & 0x1fff];
+			if (e->serial == (m_Index >> 13))
+				return (ListenerSlots *)e->ent;
+		}
+		return 0;
+	}
+};
+
+void CUnknown10316890::sub_10316890(int arg, Vector a, Vector b)
+{
+	for (int i = 0; i < m_nEnts; i++) {
+		if (((ListenerHandle *)&m_hEnts[i])->Get() != 0)
+			((ListenerHandle *)&m_hEnts[i])->Get()->s55(arg, a, b);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316ec0 size=0xa1
 extern "C" int sprintf(char *, const char *, ...);
 extern "C" int strcmp(const char *, const char *);
