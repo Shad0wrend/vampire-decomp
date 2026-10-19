@@ -41,4 +41,5 @@ public:
 	void sub_100017d5();	// as in CPhysForce (transplant)
 	float *vfunc367(float *out);	// as in CBaseEntity (transplant)
 	int sub_101647a0(int act);	// NPC_TranslateActivity: scope-traced, 0x16 -> 9, 0x17 -> 0x13
+	void sub_1017c1d0(CBaseEntity *pEnt);	// "CBasePlayer::RemoveFromPlayerSimulationList": removes the entity from the handle vector at +0x23bc (count at +0x23c8) by shifting the tail down
 };
