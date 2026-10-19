@@ -21811,6 +21811,39 @@ bool CUnknown102ee120_x::sub_102f1690(HelperParams102f1690 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f2de0 size=0x8c
+void sub_102f2de0(float *c, int type)
+{
+	switch (type) {
+	case 1:
+		c[0] = 255.0f;
+		c[2] = 90.0f;
+		c[1] = 90.0f;
+		break;
+	case 0:
+		c[0] = 0.0f;
+		c[2] = 255.0f;
+		c[1] = 255.0f;
+		break;
+	case 3:
+		c[0] = 90.0f;
+		c[2] = 255.0f;
+		c[1] = 255.0f;
+		break;
+	case 2:
+		c[0] = 90.0f;
+		c[2] = 255.0f;
+		c[1] = 90.0f;
+		break;
+	default:
+		c[0] = 255.0f;
+		c[2] = 0.0f;
+		c[1] = 0.0f;
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f2fe0 size=0xd
 void CUnknown102ee120::sub_102f2fe0(int value)
 {
