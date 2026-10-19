@@ -23670,6 +23670,90 @@ void sub_10238380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023cde0 size=0xed
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+    virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct SServerUnknown
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual struct SWorldEntity *GetBaseEntity();	// slot 4
+};
+
+struct SEdict
+{
+    char m_pad[0x40];
+    SServerUnknown *m_pUnk;	// 0x40
+};
+
+struct SEngine
+{
+    V10(a0) V10(a1) V10(a2)
+    virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7();
+    virtual SEdict *PEntityOfEntIndex(int index);	// slot 38
+};
+
+struct SWorldEntity
+{
+    char m_pad[0x47c];
+    char m_b0;	// 0x47c
+    char m_b1;	// 0x47d
+    char m_pad2[2];
+    int m_v[7];	// 0x480
+};
+
+struct SWorldInfo
+{
+    char m_b0;
+    char m_b1;
+    char m_pad[2];
+    int m_v[7];
+};
+
+extern SEngine *g_1070b22c;
+extern int *g_109f3680;
+extern const char **g_109f3620;
+extern const char g_106b8540[];
+extern const char g_10543c6c[];
+
+static inline SWorldEntity *FindBaseEntity(SEdict *pEdict)
+{
+    if (!pEdict)
+        pEdict = g_1070b22c->PEntityOfEntIndex(0);
+    if (pEdict) {
+        if (pEdict->m_pUnk)
+            return pEdict->m_pUnk->GetBaseEntity();
+    }
+    return 0;
+}
+
+static inline SWorldEntity *Instance(SEdict *pEdict)
+{
+    g_109f3620[*g_109f3680 * 3] = g_10543c6c;
+    g_109f3620[*g_109f3680 * 3 + 1] = g_106b8540;
+    g_109f3620[*g_109f3680 * 3 + 2] = g_106b8540;
+    ++*g_109f3680;
+    SWorldEntity *ret = FindBaseEntity(pEdict);
+    --*g_109f3680;
+    return ret;
+}
+
+// TARGET: sub_1023cde0
+void sub_1023cde0(SWorldInfo *pOut)
+{
+    SWorldEntity *pWorld = Instance(g_1070b22c->PEntityOfEntIndex(0));
+    pOut->m_b0 = pWorld->m_b0;
+    pOut->m_b1 = pWorld->m_b1;
+    pOut->m_v[0] = pWorld->m_v[0];
+    pOut->m_v[1] = pWorld->m_v[1];
+    pOut->m_v[2] = pWorld->m_v[2];
+    pOut->m_v[3] = pWorld->m_v[3];
+    pOut->m_v[4] = pWorld->m_v[4];
+    pOut->m_v[5] = pWorld->m_v[5];
+    pOut->m_v[6] = pWorld->m_v[6];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ed10 size=0xde
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
