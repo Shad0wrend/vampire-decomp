@@ -764,6 +764,26 @@ CUnknown100353c0 *CUnknown100353c0::sub_100353c0(const CUnknown100353c0 *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10037680 size=0x93
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool CBaseEntity::sub_10037680()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::IsSolid";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	bool r = *(int *)((char *)this + 0x2b0) != 0 && (*((char *)this + 0x2b4) & 4) == 0;
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c0e0 size=0xaa
 #include "CUtlVector4.h"
 
