@@ -26825,6 +26825,48 @@ void CMem4_t::sub_102f9330(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f95d0 size=0xc9
+#include "CUnknown102f95d0.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern void *(*g_109f3634)(unsigned int);	// Plat_Alloc
+extern void *(*g_109f3638)(void *, unsigned int);	// Plat_Realloc
+
+void CUnknown102f95d0::sub_102f95d0(int value)
+{
+	int elem = m_size;
+	if (m_size + 1 > m_allocationCount) {
+		if (m_growSize != -1) {
+			int num = m_size + 1 - m_allocationCount;
+			int nAllocationRequested = m_allocationCount + num;
+			while (m_allocationCount < nAllocationRequested) {
+				if (m_allocationCount != 0) {
+					if (m_growSize != 0)
+						m_allocationCount += m_growSize;
+					else
+						m_allocationCount += m_allocationCount;
+				} else {
+					m_allocationCount = 8;
+				}
+			}
+			if (m_pMemory)
+				m_pMemory = (int *)g_109f3638(m_pMemory, m_allocationCount * 4);
+			else
+				m_pMemory = (int *)g_109f3634(m_allocationCount * 4);
+		}
+	}
+	m_pElements = m_pMemory;
+	m_size++;
+	int toMove = m_size - elem - 1;
+	if (toMove > 0)
+		memmove(&m_pMemory[elem + 1], &m_pMemory[elem], toMove * 4);
+	int *p = &m_pMemory[elem];
+	if (p)
+		*p = value;
+	m_nAdded++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9900 size=0xd
 extern int g_10610be8;
 extern char g_1093412c;
