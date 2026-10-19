@@ -10909,6 +10909,16 @@ void S101c0240::sub_101c0240(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c02d0 size=0xbd
+#include "CUtlRBTree12.h"
+
+bool CUtlRBTree12::sub_101c02d0(unsigned short i) const
+{
+	unsigned short parent = Links(i).m_Parent;
+	return Links(parent).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0cc0 size=0x103
 struct ISaveRestoreOps;
 struct datamap_t;
