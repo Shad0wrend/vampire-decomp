@@ -8382,6 +8382,38 @@ extern "C" GP *func_dustcloud()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114820 size=0x9b
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropFloat
+void sub_10009539();
+void sub_10006aeb();
+
+extern SendTable g_1070a7f0;
+extern SendTable *g_1055282c;
+extern const char *g_105702e4;
+
+// TARGET: sub_10114820
+int sub_10114820()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1055282c, (void *)sub_10009539),
+		sub_10006cc1("m_fDisappearDist", 0x450, 4, 0, 4, 0.0f, -121121.121121f, (void *)sub_10006aeb),
+	};
+	g_1070a7f0.sub_1000e8fe(props + 1, 2, g_105702e4);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101151a0 size=0xa
 struct CUnknown101151a0 { char p[0x204]; unsigned int a; unsigned int sub_101151a0(); };
 // TARGET: CUnknown101151a0::sub_101151a0
