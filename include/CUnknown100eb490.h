@@ -24,9 +24,8 @@ struct CUnknownIntVec
 			m_allocationCount = 0;
 		}
 	}
-	void PurgeAndDestruct()
+	void PurgeAndDestruct(void (*pfnFree)(void *))
 	{
-		void (*pfnFree)(void *) = g_109f3624;
 		m_size = 0;
 		PurgeMemory(pfnFree);
 		m_pElements = m_pMemory;
