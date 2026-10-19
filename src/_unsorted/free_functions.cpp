@@ -5613,6 +5613,40 @@ void CBaseEntity::sub_100a9470(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa080 size=0x86
+#include "CBaseEntity.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+struct ISaveBlockLike
+{
+	virtual void slot0();
+	virtual void slot1();
+	virtual int slot2(CBaseEntity *pEnt, int block);
+};
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+int CBaseEntity::sub_100aa080(void *pSave, int block)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::SaveDataDescBlock";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	int r = ((ISaveBlockLike *)pSave)->slot2(this, block);
+	--*g_109f3680;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa720 size=0x6a
 struct TScope {
 	const char *name;

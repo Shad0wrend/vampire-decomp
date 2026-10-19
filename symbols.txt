@@ -1699,6 +1699,7 @@
 0x1000d855 func   ?vfunc5@CItemGWirelessCamera4@@QAEPAV1@I@Z CItemGWirelessCamera4::vfunc5
 0x1000d864 func   ?vfunc459@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc459
 0x1000d882 func   ?vfunc387@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc387
+0x1000d887 func   ?sub_100aa080@CBaseEntity@@QAEHPAXH@Z CBaseEntity::sub_100aa080
 0x1000d909 func   _item_p_research_hg_computers item_p_research_hg_computers
 0x1000d95e func   ?sub_10307b40@CUnknown10307b40@@QAEXH@Z CUnknown10307b40::sub_10307b40
 0x1000d968 func   _item_g_lilly_purse item_g_lilly_purse
