@@ -32735,6 +32735,47 @@ void *CNPC_VWerewolf::sub_103d7620(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d99a0 size=0xcd
+#include "inputdata_t.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+static inline int VInt(const variant_t &v)
+{
+	if (v.fieldType == 4)
+		return v.iValue;
+	return 0;
+}
+
+void CNPC_VWerewolf::sub_103d99a0(inputdata_t *pInput)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CNPC_VWerewolf::InputToggleDoorState";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	int n;
+	if (VInt(pInput->value) > 3)
+		n = 3;
+	else if (VInt(pInput->value) >= 0)
+		n = VInt(pInput->value);
+	else
+		n = 0;
+	*(int *)((char *)this + 0x6680) = n;
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dae50 size=0x8d
 #include "CUnknown103dae50.h"
 #include "CBaseEntity.h"
