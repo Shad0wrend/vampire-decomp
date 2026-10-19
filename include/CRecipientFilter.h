@@ -20,4 +20,6 @@ public:
 	int m_size;			// 0x0014
 	void *m_pElements;	// 0x0018
 	int m_1c;
+
+	bool sub_101bd010(void *pPlayer);	// "CRecipientFilter::AddRecipient": the player's client index (engine slot 35 of the edict at +0x2e0) is appended unless negative or already present
 };
