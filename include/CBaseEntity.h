@@ -56,6 +56,7 @@ public:
 	void vfunc195();
 	int vfunc196(int a);	// slot 196: forwards its argument to slot 193 and returns it
 	int vfunc197(int a, int b, int c, int d);	// "CBaseEntity::BodyTarget": scope trace, calls slot 192(a), returns a
+	bool vfunc207();	// "CBaseEntity::IsCurrentlyTouching": scope trace (entity name), returns HasDataObjectType(1)
 	void vfunc213(const float *size);	// "CBaseEntity::SetSize": scope trace, copies the three floats to +0x38c
 	float *vfunc214();	// "CBaseEntity::GetSize": returns &field at +0x38c
 	float *vfunc217();	// "CBaseEntity::GetAbsOrigin": scope trace (entity name), calls slot 98 when bit 11 of +0x268 is set, returns &field at +0x404
