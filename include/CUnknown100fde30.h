@@ -16,6 +16,21 @@ struct CUnknown100fde30Rec
 	unsigned short m_f, m_g, m_h;	// 0xffff
 	short m_i, m_j;
 	int m_k;
+
+	CUnknown100fde30Rec()
+	{
+		m_b = 10.0f;
+		m_c = 0;
+		m_d = 0;
+		m_e = 0;
+		m_f = 0xffff;
+		m_g = 0xffff;
+		m_h = 0xffff;
+		m_j = 0;
+		m_i = 0;
+		m_k = 0;
+		m_a = -3.402823466e+38f;
+	}
 };
 
 class CUnknown100fde30
