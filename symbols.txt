@@ -1992,6 +1992,7 @@
 0x100103b1 func   _funCBaseFlex funCBaseFlex
 0x100103d9 func   ?sub_101eaac0@@YAXH@Z sub_101eaac0
 0x100103e3 func   ?sub_100f4140@@YAXPBDHH@Z sub_100f4140
+0x100103ed func   ?sub_100424a0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_100424a0
 0x100103f7 func   ?sub_100ecc60@EntryTable@@QAEHHH@Z EntryTable::sub_100ecc60
 0x10010492 func   ?sub_101251e0@@YIXPAD@Z sub_101251e0
 0x100104b0 func   ?sub_1019d130@CUnknown1019d130@@QAEXPAVCBaseEntity@@@Z CUnknown1019d130::sub_1019d130
