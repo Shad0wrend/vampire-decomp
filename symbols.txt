@@ -1037,6 +1037,7 @@
 0x100093d1 func   _npc_VYukie npc_VYukie
 0x100093e5 func   ?sub_10194da0@CUnknown10194da0@@QAEXH@Z CUnknown10194da0::sub_10194da0
 0x10009403 func   _func_illusionary func_illusionary
+0x1000941c func   ?sub_100ae580@@YAXXZ sub_100ae580
 0x1000942b func   _debug_entity debug_entity
 0x10009435 func   ?sub_1009a0c0@@YAXPAUTEnt@@HPAH@Z sub_1009a0c0
 0x10009467 func   ?sub_100b1380@@YI_NPAD@Z sub_100b1380
