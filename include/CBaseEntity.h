@@ -112,6 +112,7 @@ public:
 	int sub_100ae090(const char *name);	// "CBaseEntity::PrecacheSound": forwards to the sound system, returns its result
 	void sub_100ae150();	// "CBaseEntity::Remove": scope trace (entity name), then sub_101cd940(this)
 	char sub_100aa840();	// "CBaseEntity::IsTransparent": (field at +0x16c) != 0
+	const char *sub_100ab4f0();	// "CBaseEntity::GetDebugName": scope trace, returns the name at +0x26c, else the classname at +0x11c, else ""
 	int sub_100b1a00();	// "CBaseEntity::GetModel": scope trace (entity name), then modelinfo slot 2 of vfunc8(); returns its result
 	void sub_100b12e0(char value);	// "CBaseEntity::SetSentLastFrame": stores the byte at +0x380 (slot 7 override)
 	void sub_100b1750(int index);	// "CBaseEntity::SetModelIndex": stores the dword at +0x1a4 (slot 10 override)
