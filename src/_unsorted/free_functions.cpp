@@ -10928,6 +10928,40 @@ bool sub_1013d900(int a, int b, int c, int *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d9a0 size=0x91
+#include <string.h>
+
+char *sub_1013d9a0(const char *buf, int end, int *pos, char *out, int outSize)
+{
+	int start = *pos;
+	if (buf != 0 && out != 0 && start < end) {
+		int i = start;
+		int stop = end;
+		if (end - start > outSize - 1)
+			stop = start + outSize - 1;
+		int found = 0;
+		if (start < stop) {
+			do {
+				if (found)
+					break;
+				if (buf[i] == '\n')
+					found = 1;
+				i++;
+			} while (i < stop);
+			if (i != start) {
+				int len = i - start;
+				memcpy(out, buf + start, len);
+				if (len < outSize)
+					out[len] = 0;
+				*pos = i;
+				return out;
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013da70 size=0xa
 extern int g_1071a240;
 void sub_1013da70(int value)
