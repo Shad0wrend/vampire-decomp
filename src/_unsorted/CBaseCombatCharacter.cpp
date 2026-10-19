@@ -64,6 +64,52 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10325440 size=0xff
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+int CBaseCombatCharacter::vfunc253(int a, int b, int c)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::SelectHeaviestSequenceForStat";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+
+	int r = -1;
+	if (b >= 0 && b < 4) {
+		CVStatList_t *p;
+		for (int i = 0; i < m_nStatLists; i++) {
+			if (m_pStatLists[i]->m_field10 == b) {
+				p = m_pStatLists[i];
+				goto found;
+			}
+		}
+		{
+			static CVStatList_t def(-1);
+			p = &def;
+		}
+found:
+		r = p->sub_10010609(c);
+	}
+	int ret = ((CBaseAnimating *)this)->sub_1008dd30(a, r);
+	--*g_109f3680;
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10325580 size=0x71
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
