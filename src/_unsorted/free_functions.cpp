@@ -15567,6 +15567,34 @@ void __fastcall sub_101bdf90(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be0e0 size=0xb9
+#include "CStealthKillRules.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+void CStealthKillRules::sub_101be0e0()
+{
+	g_109f3620[*g_109f3680].a = "CStealthKillRules::FlushTable";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	memset(m_aTable0, 0, sizeof(m_aTable0));
+	memset(m_aTable1, 0, sizeof(m_aTable1));
+	memset(m_aTable2, 0, sizeof(m_aTable2));
+	memset(m_aTable3, 0, sizeof(m_aTable3));
+	m_n0a0 = 1;
+	m_n0a4 = 10;
+	m_n0a8 = 0;
+	m_f0ac = 3.0f;
+	m_flRange = 70.0f;
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be1d0 size=0x9
 float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
 {
