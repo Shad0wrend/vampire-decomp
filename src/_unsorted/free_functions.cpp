@@ -5602,6 +5602,36 @@ void CBaseEntity::sub_1009b640(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009b700 size=0x91
+#include "CBaseEntity.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_1009b700(int a, int b, const char *c)
+{
+	const char *name;
+	if (this)
+	{
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	}
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::DumpStringt";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (!c)
+		c = g_106b8540;
+	sub_1009b640(a, b, (int)c);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c390 size=0xe5
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
