@@ -32,7 +32,15 @@ public:
 	CAI_NPC_V(290) CAI_NPC_V(291) CAI_NPC_V(292)
 	virtual int vfunc293();
 	CAI_NPC_V(294) CAI_NPC_V(295) CAI_NPC_V(296) CAI_NPC_V(297) CAI_NPC_V(298) CAI_NPC_V(299)
-	CAI_NPC_V10(30) CAI_NPC_V10(31) CAI_NPC_V10(32) CAI_NPC_V10(33) CAI_NPC_V10(34) CAI_NPC_V10(35) CAI_NPC_V10(36) CAI_NPC_V10(37) CAI_NPC_V10(38) CAI_NPC_V10(39)
+	CAI_NPC_V10(30) CAI_NPC_V10(31) CAI_NPC_V10(32) CAI_NPC_V10(33) CAI_NPC_V10(34) CAI_NPC_V10(35) CAI_NPC_V10(36)
+	CAI_NPC_V(370) CAI_NPC_V(371) CAI_NPC_V(372) CAI_NPC_V(373) CAI_NPC_V(374)
+	virtual int vfunc375(int act);	// TranslateActivity step 1: the activity the NPC wants for act
+	virtual int vfunc376(int act);	// the next activity of the fallback chain
+	CAI_NPC_V(377) CAI_NPC_V(378) CAI_NPC_V(379)
+	CAI_NPC_V(380)
+	virtual int vfunc381(int act);	// resolves an activity to the sequence/activity the model really has
+	CAI_NPC_V(382) CAI_NPC_V(383) CAI_NPC_V(384) CAI_NPC_V(385) CAI_NPC_V(386) CAI_NPC_V(387) CAI_NPC_V(388) CAI_NPC_V(389)
+	CAI_NPC_V10(39)
 	CAI_NPC_V(400) CAI_NPC_V(401) CAI_NPC_V(402) CAI_NPC_V(403)
 	virtual int vfunc404(CBaseEntity *pEnt);	// classification of pEnt (vfunc468 treats 1 and 2 as true)
 	CAI_NPC_V(405) CAI_NPC_V(406) CAI_NPC_V(407) CAI_NPC_V(408) CAI_NPC_V(409)
@@ -88,6 +96,7 @@ public:
 	int sub_1026f4d0();	// clears the path/schedule fields, then (for NPCs flagged 0x20000) selects the fail schedule by the state of vfunc460
 	void sub_1028ae60();	// releases the occupied slot (bit +0x5dac in the bitmask of the owner at +0x5da4) and resets the slot index to -1
 	bool sub_1028ad20(int slotIDStart, int slotIDEnd);	// "CAI_BaseNPC::OccupyStrategySlotRange": true when the NPC has no owner (squad) or another class than the leader; else keeps/gets a free slot of the range in the owner's bitmask (at +0x6c), false when none is free
+	int sub_10271ff0(int act, int *pOut);	// "CAI_BaseNPC::TranslateActivity": walks the activity fallback chain (slots 375/376/381, at most 5 steps) and returns the first activity the model has a sequence for
 	bool sub_102d1350(CBaseEntity *pEnt);	// stores pEnt's handle at +0x5e0 unless a different live entity is already stored (then false)
 	void sub_10280e50(void *pSchedule);	// "CAI_BaseNPC::SetSchedule": calls slot 435(pSchedule), resets the schedule bookkeeping at +0x5bb8/+0x5c38.., stamps curtime, may start the idle state; prints "Schedule: %s" when flag 0x8000000 is set at +0x224
 	void sub_10182c40(const char *text, const char *sound);	// copies text into a global buffer (+0x1ca4 = the buffer, or null when empty), stamps curtime - 0.5 at +0x1ca8, then moves that time forward by the sound's duration (when the dialog partner at +0xfe8 has the object at +0x98) or by 0.6, and sets bit 0 of +0x1cac
