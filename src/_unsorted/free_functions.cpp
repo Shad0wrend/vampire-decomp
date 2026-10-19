@@ -824,6 +824,49 @@ void CPhysicsPushedEntities::sub_10035fd0(int *pHandles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036b10 size=0x8f
+#include "CPhysicsPushedEntities.h"
+#include "CBaseEntity.h"
+
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+// CBaseEntity viewed as a plain list of slots up to 232.
+struct SSlot232Entity
+{
+	PV100(a0) PV100(a1)
+	PV10(a20)
+	virtual void a210(); virtual void a211(); virtual void a212(); virtual void a213();
+	virtual void a214(); virtual void a215(); virtual void a216(); virtual void a217();
+	virtual void a218(); virtual void a219(); virtual void a220(); virtual void a221();
+	virtual void a222(); virtual void a223(); virtual void a224(); virtual void a225();
+	virtual void a226(); virtual void a227(); virtual void a228(); virtual void a229();
+	virtual void a230(); virtual void a231();
+	virtual void Slot232(int a);
+};
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CPhysicsPushedEntities::sub_10036b10()
+{
+	g_109f3620[*g_109f3680].a = "CPhysicsPushedEntities::FinishPushers";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	for (int i = m_rgPusher.m_Size; --i >= 0; )
+	{
+		PusherInfo_t *p = m_rgPusher.m_pMemory + i;
+		p->m_pEntity->sub_100a53d0((int)p + 4);
+		((SSlot232Entity *)p->m_pEntity)->Slot232(0);
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037680 size=0x93
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
