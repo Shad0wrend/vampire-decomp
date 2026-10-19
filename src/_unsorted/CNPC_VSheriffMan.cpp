@@ -39,6 +39,32 @@ CNPC_VSheriffMan *CNPC_VSheriffMan::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103af830 size=0x72
+#include "CNPC_VSheriffMan.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+struct CGlobalVarsStub {
+	char pad[0xc];
+	float curtime;
+};
+extern CGlobalVarsStub *g_1070b228;
+extern float g_104c6120;
+
+void CNPC_VSheriffMan::vfunc431()
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VSheriffMan::NPCThink";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_100052d6();
+	*(float *)((char *)this + 0x17c) = g_104c6120 + g_1070b228->curtime;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b0290 size=0x64
 #include "CNPC_VSheriffMan.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
