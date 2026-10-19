@@ -5243,6 +5243,31 @@ void CBaseAnimating::sub_1008d520(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008d6d0 size=0xb2
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern void (*g_109f3630)(const char *fmt, ...);
+
+void CBaseAnimating::sub_1008d6d0(int skin)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::FadeToSkin";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int *pCur = (int *)((char *)this + 0x670);
+    if (*pCur != skin) {
+        g_109f3630("Fading to skin %d over %.2f\n", skin, (double)*(float *)((char *)this + 0x678));
+        *(int *)((char *)this + 0x674) = *pCur;
+        *pCur = skin;
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008dc40 size=0xc0
 #include "CBaseAnimating.h"
 
