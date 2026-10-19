@@ -10602,6 +10602,39 @@ void sub_1018c6e0(SHandleHolder *holder)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c9a0 size=0xea
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *props, int n, const char *name);
+};
+
+extern SendTable g_1072adc0;
+extern SendTable *g_1055282c;
+extern const char *g_1058bf60;
+void sub_10006aeb();
+void sub_10009539();
+
+SendProp sub_10007bfd(const char *name, int offset, int size, int bits, int flags, int a, int b);
+SendProp sub_1000bf2d(const char *name, int offset, SendTable *table, void (*proxy)());
+SendProp sub_10006cc1(const char *name, int offset, int size, int bits, int flags, int a, unsigned int hi, void (*proxy)());
+
+int sub_1018c9a0()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1055282c, sub_10009539),
+		sub_10006cc1("m_FOV", 0x450, 4, 0, 4, 0, 0xc7ec9090, sub_10006aeb),
+		sub_10006cc1("m_Resolution", 0x454, 4, 0, 4, 0, 0xc7ec9090, sub_10006aeb),
+		sub_10007bfd("m_bActive", 0x458, 1, 1, 1, 0, 0),
+	};
+	g_1072adc0.sub_1000e8fe(props + 1, 4, g_1058bf60);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018df00 size=0x49
 void *sub_1000db89(int);
 struct GP;
