@@ -30844,6 +30844,42 @@ char sub_103c8e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c9ed0 size=0xb5
+#include "CHintData_WW.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+CHintData_WW *CHintData_WW::sub_103c9ed0(const CHintData_WW *pSrc)
+{
+    m_nId = -1;
+    m_pHints = 0;
+    m_nAlloc = 0;
+    m_nGrow = 0;
+    m_nHints = 0;
+    m_tail[0] = 0;
+    m_tail[1] = 0;
+    m_tail[2] = 0;
+    m_tail[3] = 0;
+    m_tail[4] = 0;
+    m_tail[5] = 0;
+    g_109f3620[*g_109f3680].a = "CHintData_WW::CHintData_WW";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    m_copy[0] = pSrc->m_copy[0];
+    m_copy[1] = pSrc->m_copy[1];
+    m_copy[2] = pSrc->m_copy[2];
+    m_copy[3] = pSrc->m_copy[3];
+    m_copy[4] = pSrc->m_copy[4];
+    m_copy[5] = pSrc->m_copy[5];
+    m_copy[6] = pSrc->m_copy[6];
+    (*g_109f3680)--;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ca2c0 size=0xa0
 #include "CUnknown103ca2c0.h"
 
