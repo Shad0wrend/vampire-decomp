@@ -2,11 +2,14 @@
 // real name not yet known.
 #pragma once
 
-#include "Vector.h"
+struct CachedPos_t
+{
+	float x, y, z;
+};
 
 struct NearestNodeCache_t
 {
-	Vector m_vecPos;	// 0x00
+	CachedPos_t m_vecPos;	// 0x00
 	float m_flTime;	// 0x0c
 	int m_nNode;	// 0x10
 	int m_nField14;	// 0x14
@@ -19,5 +22,5 @@ public:
 	NearestNodeCache_t m_cache[20];	// 0x08
 	int m_nNextCache;	// 0x1e8
 
-	void sub_102f45f0(const Vector *pPos, int node, int field);	// "AI NearestNode Cache is full" check, then stores the lookup in the ring
+	void sub_102f45f0(const CachedPos_t *pPos, int node, int field);	// "AI NearestNode Cache is full" check, then stores the lookup in the ring
 };
