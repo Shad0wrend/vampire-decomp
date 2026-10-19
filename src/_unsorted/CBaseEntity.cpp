@@ -783,6 +783,58 @@ int CBaseEntity::vfunc233(int *pList, int maxObjects)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a7aa0 size=0xef
+#include "CBaseEntity.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+struct EntInfo { CBaseEntity *ent; int serial; int pad; };
+extern char *g_10566458;
+typedef bool (__fastcall *SlotFn)(CBaseEntity *, void **, CBaseEntity *);
+
+bool CBaseEntity::vfunc140(CBaseEntity *pAttacker)
+{
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseEntity::PassesDamageFilter", ent, g_106b8540);
+    unsigned int h = m_hDamageFilter;
+    if (h != 0xffffffff) {
+        EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+        if (e->serial == (h >> 13) && e->ent) {
+            unsigned int h2 = *(volatile unsigned int *)&m_hDamageFilter;
+            CBaseEntity *pFilter;
+            if (h2 != 0xffffffff) {
+                EntInfo *e2 = (EntInfo *)(g_10566458 + 4) + (h2 & 0x1fff);
+                if (e2->serial == (h2 >> 13))
+                    pFilter = e2->ent;
+                else
+                    pFilter = 0;
+            } else
+                pFilter = 0;
+            void **vt = *(void ***)pFilter;
+            return ((SlotFn)vt[241])(pFilter, vt, pAttacker);
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9ba0 size=0xb4
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 struct EntEntry { void *pEnt; int serial; int pad; };
