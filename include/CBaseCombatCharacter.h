@@ -58,6 +58,7 @@ public:
 	int sub_10336a50();	// "CBaseCombatCharacter::HasUsableMeleeWeapon" worker
 	bool sub_10106f90(int expression);	// "CBaseCombatCharacter::IsValidExpression": forwards to the global expression table
 	void sub_101073c0(int expression);	// "CBaseCombatCharacter::GetExpress...": forwards to the global expression table
+	void sub_101063a0();	// "CBaseCombatCharacter::FadeoutExpressions": scope trace (entity name), clamps the float at +8 of each 0x20-byte expression record (array at +0x10bc, count at +0x10c8) to gpGlobals->curtime
 	void sub_10014eb6(int a, int b);	// "CBaseCombatCharacter::GetCameraViewpointPositionBase"-like worker called by slot 50
 	void sub_10332570(inputdata_t *data);	// "CBaseCombatCharacter::InputSetHeadAsCameraTarget": scope trace, then sub_103322e0(1, 0)
 	void sub_10332610(inputdata_t *data);	// "CBaseCombatCharacter::InputSetBodyAsCameraTarget": scope trace, then sub_103322e0(0, 0)
