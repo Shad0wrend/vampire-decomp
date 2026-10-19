@@ -5104,6 +5104,47 @@ void __fastcall sub_1008b490(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008be20 size=0xae
+#include "CBaseAnimating.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct HandleEntry { void *ent; int serial; int pad; };
+struct HandleTable { int pad; HandleEntry e[1]; };
+extern HandleTable *g_10566458;
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+
+bool CBaseAnimating::sub_1008be20(CBaseEntity *pOther)
+{
+    const char *name;
+    if (this) {
+        name = m_name26c;
+        if (!name) name = g_106b8540;
+    } else {
+        name = g_105387dc;
+    }
+    ScopeTrace trace("CBaseAnimating::IsIgnoreCollisionEntity", name, g_106b8540);
+    unsigned int h = *(unsigned int *)((char *)this + 0x55c);
+    void *ent;
+    HandleEntry *p;
+    if (h != 0xffffffff && (p = &g_10566458->e[h & 0x1fff], p->serial == (int)(h >> 13)))
+        ent = p->ent;
+    else
+        ent = 0;
+    return ent == pOther;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008d0f0 size=0x7e
 #include "CBaseAnimating.h"
 
