@@ -29,7 +29,9 @@ public:
 	virtual int vfunc293();
 	CAI_NPC_V(294) CAI_NPC_V(295) CAI_NPC_V(296) CAI_NPC_V(297) CAI_NPC_V(298) CAI_NPC_V(299)
 	CAI_NPC_V10(30) CAI_NPC_V10(31) CAI_NPC_V10(32) CAI_NPC_V10(33) CAI_NPC_V10(34) CAI_NPC_V10(35) CAI_NPC_V10(36) CAI_NPC_V10(37) CAI_NPC_V10(38) CAI_NPC_V10(39)
-	CAI_NPC_V10(40)
+	CAI_NPC_V(400) CAI_NPC_V(401) CAI_NPC_V(402) CAI_NPC_V(403)
+	virtual int vfunc404(CBaseEntity *pEnt);	// classification of pEnt (vfunc468 treats 1 and 2 as true)
+	CAI_NPC_V(405) CAI_NPC_V(406) CAI_NPC_V(407) CAI_NPC_V(408) CAI_NPC_V(409)
 	// slots 410..482
 	CAI_NPC_V(410) CAI_NPC_V(411) CAI_NPC_V(412) CAI_NPC_V(413) CAI_NPC_V(414) CAI_NPC_V(415)
 	virtual void vfunc416(char value);
@@ -44,7 +46,9 @@ public:
 	CAI_NPC_V10(45)
 	virtual int vfunc460();	// SelectIdealState helper: the NPC's current state, 0 when unset
 	virtual int vfunc461();	// SelectIdealState
-	CAI_NPC_V(462) CAI_NPC_V(463) CAI_NPC_V(464) CAI_NPC_V(465) CAI_NPC_V(466) CAI_NPC_V(467) CAI_NPC_V(468) CAI_NPC_V(469)
+	CAI_NPC_V(462) CAI_NPC_V(463) CAI_NPC_V(464) CAI_NPC_V(465) CAI_NPC_V(466) CAI_NPC_V(467)
+	virtual bool vfunc468(CBaseEntity *pEnt);	// Troika override: false when pEnt is the NPC's own target or is ignored, true when it has the field at +0xa8 or vfunc404 gives 1 or 2
+	CAI_NPC_V(469)
 	CAI_NPC_V10(47)
 	CAI_NPC_V(480) CAI_NPC_V(481) CAI_NPC_V(482)
 	virtual void vfunc483(int unused);
