@@ -26078,6 +26078,32 @@ bool CBaseEntity::sub_103d3a40(const char *pszNameOrWildcard)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103daf10 size=0x8d
+#include "CTriggerWWZone.h"
+
+struct SEntInfo { CBaseEntity *pEnt; unsigned int serial; };
+struct SEntSlot { int pad; SEntInfo e; };
+extern SEntSlot *g_10566458;
+
+inline CBaseEntity *LookupEntity(const unsigned int &h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	SEntInfo *e = &g_10566458[h & 0x1fff].e;
+	if (e->serial == (h >> 13))
+		return e->pEnt;
+	return 0;
+}
+
+void CTriggerWWZone::sub_103daf10()
+{
+	for (int i = 0; i < m_nHandles; i++) {
+		if (LookupEntity(m_pHandles[i]))
+			LookupEntity(m_pHandles[i])->vfunc77();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dbeb0 size=0x40
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int size);
 struct UtlVec8 {
