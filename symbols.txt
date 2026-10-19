@@ -19,6 +19,7 @@
 0x100012b7 func   ?sub_101f2500@CUnknown101f2500@@QAEDXZ CUnknown101f2500::sub_101f2500
 0x100012d5 func   ?sub_101b90a0@CUnknown101b90a0@@QAEXH@Z CUnknown101b90a0::sub_101b90a0
 0x1000130c func   ?vfunc600@CNPC_VWerewolf@@UAE_NH@Z CNPC_VWerewolf::vfunc600
+0x10001311 func   ?sub_10348490@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::sub_10348490
 0x10001343 func   ?sub_1024e030@@YAXABUmat34_1024e030@@AAUang_1024e030@@@Z sub_1024e030
 0x1000134d func   ?sub_101d2850@@YAJPBDH@Z sub_101d2850
 0x10001384 func   ?sub_103dc400@CMem4b_t@@QAEXH@Z CMem4b_t::sub_103dc400
