@@ -26100,6 +26100,35 @@ bool CBaseEntity::sub_103d3a40(const char *pszNameOrWildcard)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dae50 size=0x8d
+#include "CUnknown103dae50.h"
+#include "CBaseEntity.h"
+
+struct EntSub { void *ent; unsigned int serial; };
+struct EntInfo { int pad; EntSub s; };
+extern EntInfo *g_10566458;
+
+static inline void *HandleToEnt(const volatile unsigned int *pHandle)
+{
+	unsigned int h = *pHandle;
+	if (h == 0xffffffff)
+		return 0;
+	EntSub *s = &g_10566458[h & 0x1fff].s;
+	if (s->serial == (h >> 13))
+		return s->ent;
+	return 0;
+}
+
+void CUnknown103dae50::sub_103dae50()
+{
+	for (int i = 0; i < m_nHandles; i++) {
+		unsigned int *pHandle = &m_pHandles[i];
+		if (HandleToEnt(pHandle) != 0)
+			((CBaseEntity *)HandleToEnt(pHandle))->vfunc78();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103daf10 size=0x8d
 #include "CTriggerWWZone.h"
 
