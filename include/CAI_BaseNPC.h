@@ -38,7 +38,10 @@ public:
 	CAI_NPC_V(424) CAI_NPC_V(425) CAI_NPC_V(426)
 	virtual CAI_Motor *vfunc427();	// creates the NPC's motor (operator new, then CAI_Motor::sub_102e0900(this))
 	CAI_NPC_V(428) CAI_NPC_V(429)
-	CAI_NPC_V10(43) CAI_NPC_V10(44) CAI_NPC_V10(45)
+	CAI_NPC_V10(43)
+	CAI_NPC_V(440) CAI_NPC_V(441) CAI_NPC_V(442) CAI_NPC_V(443) CAI_NPC_V(444) CAI_NPC_V(445) CAI_NPC_V(446) CAI_NPC_V(447) CAI_NPC_V(448)
+	virtual int vfunc449(int a);	// returns a task/schedule id for the argument (used by PrintTask)
+	CAI_NPC_V10(45)
 	virtual int vfunc460();	// SelectIdealState helper: the NPC's current state, 0 when unset
 	virtual int vfunc461();	// SelectIdealState
 	CAI_NPC_V(462) CAI_NPC_V(463) CAI_NPC_V(464) CAI_NPC_V(465) CAI_NPC_V(466) CAI_NPC_V(467) CAI_NPC_V(468) CAI_NPC_V(469)
