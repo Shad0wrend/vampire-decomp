@@ -31340,6 +31340,43 @@ void sub_1042c4a0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c4e0 size=0x94
+struct AutoSys {
+	virtual bool Init();
+	AutoSys *m_pNext;
+};
+extern AutoSys *g_109eed68;
+extern AutoSys **g_109eed50;
+extern int g_109eed5c;
+extern "C" __declspec(dllimport) void __cdecl DevWarning(int level, const char *fmt, ...);
+void sub_1042c310(AutoSys *sys);
+
+static inline int FindSystem(AutoSys *sys)
+{
+	for (int i = 0; i < g_109eed5c; i++) {
+		if (g_109eed50[i] == sys)
+			return i;
+	}
+	return -1;
+}
+
+bool sub_1042c4e0()
+{
+	for (AutoSys *p = g_109eed68; p; p = p->m_pNext) {
+		if (FindSystem(p) == -1)
+			sub_1042c310(p);
+		else
+			DevWarning(1, "AutoGameSystem already added to game system list!!!\n");
+	}
+	g_109eed68 = 0;
+	for (int i = 0; i < g_109eed5c; i++) {
+		if (!g_109eed50[i]->Init())
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d650 size=0x9
 struct CUnknown1042d650 { int a; CUnknown1042d650* sub_1042d650(); };
 // TARGET: CUnknown1042d650::sub_1042d650
