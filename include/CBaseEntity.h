@@ -78,6 +78,7 @@ public:
 	void vfunc195();
 	int vfunc196(int a);	// slot 196: forwards its argument to slot 193 and returns it
 	int vfunc197(int a, int b, int c, int d);	// "CBaseEntity::BodyTarget": scope trace, calls slot 192(a), returns a
+	void vfunc202(CBaseEntity *pOwner);	// "CBaseEntity::SetOwnerEntity": scope trace (entity name), when the owner behind the handle at +0x364 differs from pOwner stores pOwner's handle (-1 for null) and calls slot 25 of the object at +0x36c (when set)
 	bool vfunc207();	// "CBaseEntity::IsCurrentlyTouching": scope trace (entity name), returns HasDataObjectType(1)
 	void vfunc208(CBaseEntity *pEnt);	// "CBaseEntity::SetGroundEntity": scope trace (entity name), stores pEnt's handle at +0x384 (-1 for null), then AddFlag(1) / RemoveFlag(1)
 	void vfunc213(const float *size);	// "CBaseEntity::SetSize": scope trace, copies the three floats to +0x38c
