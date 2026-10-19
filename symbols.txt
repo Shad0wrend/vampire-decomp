@@ -1058,6 +1058,7 @@
 0x10008800 func   ?vfunc134@CVampireProjectile@@UAEXXZ CVampireProjectile::vfunc134
 0x1000880f func   ?vfunc601@CNPC_VFrenzyShadow@@UAEXH@Z CNPC_VFrenzyShadow::vfunc601
 0x10008832 func   ?sub_102eeba0@CUnknown102eeba0@@QAEXH@Z CUnknown102eeba0::sub_102eeba0
+0x10008837 func   ?sub_103c6a90@CNPC_VVampireBoss@@QAEHPAHHHH@Z CNPC_VVampireBoss::sub_103c6a90
 0x1000884b func   ?sub_10313f70@@YIXPAUMem16@@HH@Z sub_10313f70
 0x10008850 func   ?sub_101daf60@CUnknown101daf60@@QAE_NXZ CUnknown101daf60::sub_101daf60
 0x1000885a func   _gravity_pellet gravity_pellet

@@ -28842,6 +28842,40 @@ char sub_103c51c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6a90 size=0xa5
+#include "CNPC_VVampireBoss.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct RandomStream_t {
+	virtual void v0();
+	virtual void v1();
+	virtual int RandomInt(int lo, int hi);
+};
+extern RandomStream_t *g_1070b244;
+
+int CNPC_VVampireBoss::sub_103c6a90(int *pBalance, int limit, int a, int b)
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VVampireBoss::SelectRandomBalancedSchedule";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int coin = g_1070b244->RandomInt(0, 1);
+	int cur = *pBalance;
+	if (cur >= -limit && (cur > limit || coin != 0)) {
+		*pBalance = cur - 1;
+		(*g_109f3680)--;
+		return a;
+	}
+	*pBalance = cur + 1;
+	(*g_109f3680)--;
+	return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c6df0 size=0x69
 #include "CNPC_VVampireBoss.h"
 
