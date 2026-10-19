@@ -58,6 +58,7 @@ public:
 	int vfunc197(int a, int b, int c, int d);	// "CBaseEntity::BodyTarget": scope trace, calls slot 192(a), returns a
 	void vfunc213(const float *size);	// "CBaseEntity::SetSize": scope trace, copies the three floats to +0x38c
 	float *vfunc214();	// "CBaseEntity::GetSize": returns &field at +0x38c
+	float *vfunc217();	// "CBaseEntity::GetAbsOrigin": scope trace (entity name), calls slot 98 when bit 11 of +0x268 is set, returns &field at +0x404
 	float *vfunc219();	// "CBaseEntity::GetAbsAngles": scope trace (entity name), calls slot 98 when bit 11 of +0x268 is set, returns &field at +0x410
 	float *vfunc220();	// "CBaseEntity::GetOrigin": returns &field at +0x41c
 	float *vfunc221();	// "CBaseEntity::GetAngles": returns &field at +0x428
