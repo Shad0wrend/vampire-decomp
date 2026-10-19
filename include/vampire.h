@@ -101,3 +101,4 @@
 #include "CPhysicsHook.h"
 #include "CMeasureSectionInstance.h"
 #include "CEntityDataInstantiator.h"
+#include "CUnknown100dda50.h"
