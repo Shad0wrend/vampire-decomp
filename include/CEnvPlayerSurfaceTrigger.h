@@ -7,4 +7,5 @@ class CEnvPlayerSurfaceTrigger
 public:
 	CEnvPlayerSurfaceTrigger *vfunc5(unsigned int flags);
 	void sub_100108ed();
+	void vfunc130(int a);	// slot 130: base implementation, then appends this entity's handle to a global handle list
 };
