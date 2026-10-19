@@ -31,9 +31,7 @@ public:
 	virtual int v94();
 
 	char pad[0x264];
-	unsigned int m_flagsLo268 : 18;
-	unsigned int m_flag268_18 : 1;
-	unsigned int m_flagsHi268 : 13;
+	unsigned int m_flags268;
 	char pad2[0x74];
 	int m_unk2e0;
 	char pad3[0x88];
@@ -53,11 +51,7 @@ public:
 	char pad2[0x1f];
 	CUnknown100dda50Owner *m_pOwner;
 	int m_unk40;
-	unsigned short m_flag44_0 : 1;
-	unsigned short m_flag44_1 : 1;
-	unsigned short m_flag44_2 : 1;
-	unsigned short m_flag44_3 : 1;
-	unsigned short m_flag44_rest : 12;
+	unsigned short m_flags44;
 	short m_id46;
 
 	char sub_100dda50();
