@@ -69,6 +69,7 @@ public:
 	virtual void vfunc130(int a); virtual void vfunc131(); virtual void vfunc132(); virtual void vfunc133();
 
 	// Slots whose callers call them directly, so far only declared as plain members.
+	bool vfunc140(CBaseEntity *pAttacker);	// "CBaseEntity::PassesDamageFilter": scope trace (entity name), true without a damage filter, else slot 241(pAttacker) of the entity behind the handle at +0x220
 	int vfunc143(float flHealth, int bitsDamageType);	// "CBaseEntity::TakeHealth": scope trace (entity name), when the edict at +0x2e0 is set and the take-damage mode at +0x1fc is above 1 and the health at +0x210 is below the maximum at +0x208, adds flHealth (truncated) clamped to the maximum and returns 1, else 0
 	bool vfunc158();
 	bool vfunc161(const char *name);	// "CBaseEntity::HasLinkedDoor": scope trace (entity name), true when the string at +0x20c is set and equals name (case-insensitive)
@@ -214,7 +215,9 @@ public:
 	int m_iMaxHealth;	// 0x0208
 	char m_pad020c[4];
 	int m_iHealth;	// 0x0210
-	char m_pad0214[0x228 - 0x214];
+	char m_pad0214[0x220 - 0x214];
+	unsigned int m_hDamageFilter;	// 0x0220: entity handle of the damage filter
+	char m_pad0224[0x228 - 0x224];
 	void *m_pTimedOverlays;	// 0x0228
 	char m_pad022c[0x254 - 0x22c];
 	unsigned int m_hTouch254;	// entity handle notified by StartTouch / EndTouch
