@@ -572,6 +572,51 @@ int CBaseEntity::vfunc222(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9f70 size=0xcc
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SaveSlots
+{
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7)
+	virtual void b0(); virtual void b1();
+	virtual int s82();
+};
+
+int CBaseEntity::vfunc126(int pSave)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::Save";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	float *pNextThink = (float *)((char *)this + 0x17c);
+	float *pOut = (float *)((char *)this + 0x180);
+	if (*pNextThink <= 0.0f) {
+		*pOut = *pNextThink;
+	} else {
+		if (*(int *)pNextThink == 0x7f7fffff)
+			*pOut = 3.4028235e38f;
+		else
+			*pOut = 1.0f;
+	}
+	int r = sub_100aa080((void *)pSave, ((SaveSlots *)this)->s82());
+	--*g_109f3680;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa5a0 size=0xd
 void CBaseEntity::vfunc130(int a)
 {
