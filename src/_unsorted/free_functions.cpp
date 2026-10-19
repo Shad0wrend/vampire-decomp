@@ -4824,6 +4824,26 @@ int CBaseAnimating::sub_10092e20(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100931d0 size=0x94
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+char CBaseAnimating::sub_100931d0(int a, int b, int c)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::GetAttachmentLocal01";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	char result = sub_100932a0(sub_10092d50(a), b, c);
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093ef0 size=0x83
 #include "CBaseAnimating.h"
 
