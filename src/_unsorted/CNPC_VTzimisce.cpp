@@ -63,6 +63,22 @@ void CNPC_VTzimisce::vfunc623()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9be0 size=0x84
+#include "CNPC_VTzimisce.h"
+extern CNPC_VTzimisceConVar *g_1093cf94;
+extern CNPC_VTzimisceConVar *g_1093cfdc;
+extern CNPC_VTzimisceConVar *g_1093cebc;
+void sub_10002414(int, const char *, float, int, int, int);
+
+void CNPC_VTzimisce::vfunc624()
+{
+	int a = g_1093cf94->vfunc1() ? 0 : g_1093cf94->m_n2c;
+	int b = g_1093cfdc->vfunc1() ? 0 : g_1093cfdc->m_n2c;
+	float c = g_1093cebc->vfunc1() ? 0 : g_1093cebc->m_f28;
+	sub_10002414(m_n02e0, "SPI_LAND_HARD", c, b, 0, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bf580 size=0x70
 #include "CNPC_VTzimisce.h"
 
