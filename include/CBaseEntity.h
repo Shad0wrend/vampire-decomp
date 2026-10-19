@@ -113,7 +113,7 @@ public:
 	void sub_100a8fc0(char value);	// "CBaseEntity::SetFakeSilence": scope trace (entity name), stores the byte at +0x104, then sub_1009d1e0()
 	void sub_100a9290(char value);	// "CBaseEntity::SetNPCTransparent": stores the byte at +0xfc
 	void sub_100a9470(char value);	// "CBaseEntity::SetOccludesSound": stores the byte at +0xfe (slot 103 override in many subclasses)
-	bool sub_100a98f0(int useType, int currentState);	// "CBaseEntity::ShouldToggle": scope trace (entity name), false when the use type would not change the state (on while on, off while off)
+	int sub_100a98f0(int useType, int currentState);	// "CBaseEntity::ShouldToggle": scope trace (entity name), 0 when the use type would not change the state (on while on, off while off), else 1
 	CBaseEntity *sub_100a9c90();	// "CBaseEntity::GetOwnerEntity" (slot 97): resolves the handle at +0x364
 	int sub_100aa080(void *pSave, int block);	// "CBaseEntity::SaveDataDescBlock": scope trace, then returns slot 2 of pSave(this, block)
 	int sub_100aa5c0(CRestore *pRestore, int map);	// "CBaseEntity::RestoreDataDescBlock": scope trace, then returns pRestore->vfunc2(this, map)
