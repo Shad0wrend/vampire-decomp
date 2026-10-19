@@ -4816,6 +4816,38 @@ int __fastcall sub_10096600(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096760 size=0x83
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+int sub_10003a99(void *pStudioHdr);
+
+int CBaseAnimating::sub_10096760()
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseAnimating::GetHitboxSetCount";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	int result = sub_10003a99(sub_100952d0(-1));
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097b00 size=0x36
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 
