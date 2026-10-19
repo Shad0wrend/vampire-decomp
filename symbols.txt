@@ -1481,6 +1481,7 @@
 0x1000b73a func   ?vfunc5@CMomentaryRotButton@@UAEPAV1@I@Z CMomentaryRotButton::vfunc5
 0x1000b749 func   _npc_VMingXiao npc_VMingXiao
 0x1000b762 func   _item_g_watch_normal item_g_watch_normal
+0x1000b776 func   ?sub_1009b980@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009b980
 0x1000b78f func   ??0CBeamHead@@QAE@XZ CBeamHead::CBeamHead
 0x1000b794 func   ?vfunc2@CTEImpact@@UAEPAV1@I@Z CTEImpact::vfunc2
 0x1000b7a8 func   ?vfunc168@CBaseEntity@@QAEXXZ CBaseEntity::vfunc168
