@@ -5255,6 +5255,43 @@ void CBaseAnimating::sub_1008d0f0(float scalar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008d230 size=0xb4
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseAnimating::sub_1008d0f0(float scalar)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::SetGroundSpeedScalar";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    *(float *)((char *)this + 0x564) = scalar;
+    (*g_109f3680)--;
+}
+
+// TARGET: CBaseAnimating::sub_1008d230
+void CBaseAnimating::sub_1008d230(float rate)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::SetPlaybackAndSpeedScalar";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (rate < 0.0f) {
+        sub_1008d0f0(1.0f);
+        *(float *)((char *)this + 0x6f4) = 1.0f;
+    } else {
+        sub_1008d0f0(rate);
+        *(float *)((char *)this + 0x6f4) = rate;
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008d520 size=0x99
 #include "CBaseAnimating.h"
 
