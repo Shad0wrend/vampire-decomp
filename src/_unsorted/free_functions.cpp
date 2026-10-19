@@ -11039,6 +11039,25 @@ extern "C" GP *prop_largehull_ignore()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10194330 size=0x109
+#include "CUtlRBTree12.h"
+
+unsigned short CUtlRBTree12::sub_10194330(const void *search) const
+{
+	unsigned short i = m_Root;
+	while (i != InvalidIndex()) {
+		if (m_LessFunc(search, m_pElements[i].m_Data)) {
+			i = Links(i).m_Left;
+		} else if (m_LessFunc(m_pElements[i].m_Data, search)) {
+			i = Links(i).m_Right;
+		} else {
+			break;
+		}
+	}
+	return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194750 size=0x11
 void sub_10194750(int *dst, const int *src)
 {

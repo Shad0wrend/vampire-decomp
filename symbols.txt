@@ -2512,6 +2512,7 @@
 0x10013e35 func   ??0StatDefault3@@QAE@H@Z StatDefault3::StatDefault3
 0x10013e6c func   ?sub_1022eb60@@YAXPAUTStat@@PBD@Z sub_1022eb60
 0x10013ebc func   _item_k_museum_basement_key item_k_museum_basement_key
+0x10013edf func   ?sub_10194330@CUtlRBTree12@@QBEGPBX@Z CUtlRBTree12::sub_10194330
 0x10013f0c func   ?sub_102a1590@@YI_NPAUN@@@Z sub_102a1590
 0x10013f16 func   ?vfunc5@CBlueBloodPack@@QAEPAV1@I@Z CBlueBloodPack::vfunc5
 0x10013f25 func   ?sub_101c1b40@CUnknown101c1b40@@QAEXH@Z CUnknown101c1b40::sub_101c1b40
