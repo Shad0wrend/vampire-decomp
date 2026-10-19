@@ -1997,6 +1997,15 @@ void CMem16_t::sub_1004add0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ae60 size=0xb9
+#include "CUtlRBTree16.h"
+
+bool CUtlRBTree16::sub_1004ae60(unsigned short i) const
+{
+	return Links(Parent(i)).m_Left == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004b990 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
