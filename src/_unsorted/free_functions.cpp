@@ -11287,6 +11287,59 @@ void CUnknown10185a30::sub_10185a30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101878d0 size=0x8c
+struct SServerUnknown
+{
+	virtual void slot0(); virtual void slot1(); virtual void slot2(); virtual void slot3();
+	virtual void *GetBaseEntity();
+};
+
+struct SEdict
+{
+	char pad0[0x40];
+	SServerUnknown *m_pUnk;	// 0x40
+};
+
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+// The engine's server interface; only PEntityOfEntIndex (slot 38) is used here.
+struct SEngineServer
+{
+	PV10(a0) PV10(a1) PV10(a2)
+	virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33();
+	virtual void a34(); virtual void a35(); virtual void a36(); virtual void a37();
+	virtual SEdict *PEntityOfEntIndex(int index);
+};
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern SEngineServer *g_1070b22c;
+extern char g_106b8540[];
+
+inline void *GetContainingEntity(SEdict *pent)
+{
+	if (pent && pent->m_pUnk)
+		return pent->m_pUnk->GetBaseEntity();
+	return 0;
+}
+
+// "CBaseEntity::Instance": the entity of an edict (edict 0 when none is given).
+void *sub_101878d0(SEdict *pent)
+{
+	g_109f3620[*g_109f3680].a = "CBaseEntity::Instance";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (!pent)
+		pent = g_1070b22c->PEntityOfEntIndex(0);
+	void *r = GetContainingEntity(pent);
+	--*g_109f3680;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189510 size=0x77
 struct Elem784 { char d[0x784]; };
 extern void *(*g_109f3638)(void *, int);
