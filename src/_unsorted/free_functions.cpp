@@ -21096,6 +21096,38 @@ char *QuestJournal::sub_10221e50(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102223f0 size=0xc3
+extern int *g_109f3680;
+extern const char **g_109f3620;
+extern const char g_106b8540[];
+extern const char g_105b15e4[];
+extern void (*g_109f3624)(void *);
+
+// TARGET: CExperienceTable::sub_102223f0
+void CExperienceTable::sub_102223f0()
+{
+    g_109f3620[*g_109f3680 * 3] = g_105b15e4;
+    g_109f3620[*g_109f3680 * 3 + 1] = g_106b8540;
+    g_109f3620[*g_109f3680 * 3 + 2] = g_106b8540;
+    ++*g_109f3680;
+    m_flag14 = 0;
+    for (int i = 0; i < m_Size; i++) {
+        delete (void *)m_pMemory[i].m_a;
+        delete (void *)m_pMemory[i].m_b;
+    }
+    m_Size = 0;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            g_109f3624(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+    m_pElements = m_pMemory;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10222670 size=0x95
 #include "CExperienceTable.h"
 
