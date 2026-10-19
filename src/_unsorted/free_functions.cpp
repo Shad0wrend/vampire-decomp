@@ -25344,6 +25344,46 @@ void *CUnknown10315fe0::sub_10315fe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103160c0 size=0xaa
+#include "CUnknown103160c0.h"
+
+struct EntInfo {
+	CBaseEntity *m_pEntity;
+	int m_serial;
+	int m_unused;
+};
+extern char *g_10566458;
+
+struct GroupMember_t {
+	char m_pad0000[0x5bb0];
+	int m_n5bb0;
+};
+
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		EntInfo *e = &((EntInfo *)(g_10566458 + 4))[h & 0x1fff];
+		if (e->m_serial == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+
+CBaseEntity *CUnknown103160c0::sub_103160c0(int index)
+{
+	if (index >= 0 && index < m_nMembers) {
+		volatile unsigned int *pLeaderHandle = &m_hMembers[0];
+		if (ResolveHandle(*pLeaderHandle)) {
+			GroupMember_t *pLeader = (GroupMember_t *)ResolveHandle(*pLeaderHandle);
+			if (pLeader->m_n5bb0 > 0)
+				return 0;
+		}
+		return ResolveHandle(m_hMembers[index]);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316320 size=0x90
 #include "CUnknown10316320.h"
 
