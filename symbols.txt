@@ -294,6 +294,7 @@
 0x10003305 func   ?sub_1030fe50@CUnknown1030fe50@@QAEXXZ CUnknown1030fe50::sub_1030fe50
 0x10003328 func   _gib gib
 0x1000332d func   _item_g_junkyard_businesscard item_g_junkyard_businesscard
+0x1000334b func   ?sub_101647a0@CBasePlayer@@QAEHH@Z CBasePlayer::sub_101647a0
 0x1000336e func   ?sub_1015ef60@@YIXPAD@Z sub_1015ef60
 0x100033cd func   ?vfunc416@CAI_BaseNPCTroika@@UAEXD@Z CAI_BaseNPCTroika::vfunc416
 0x100033d2 func   ?sub_10325f00@@YI_NPAVCBaseEntity@@@Z sub_10325f00

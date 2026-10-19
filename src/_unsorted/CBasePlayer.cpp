@@ -61,6 +61,45 @@ void CBasePlayer::vfunc408()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101647a0 size=0x9b
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = g_106b8540;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+
+int CBasePlayer::sub_101647a0(int act)
+{
+    const char *name;
+    if (this) {
+        name = *(const char **)((char *)this + 0x26c);
+        if (!name)
+            name = g_106b8540;
+    } else
+        name = g_105387dc;
+    ScopeTrace t("CBasePlayer::NPC_TranslateActivity", name);
+    switch (act) {
+    case 0x16:
+        act = 9;
+        break;
+    case 0x17:
+        act = 0x13;
+        break;
+    }
+    return act;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168e10 size=0x32
 #include "CBasePlayer.h"
 
