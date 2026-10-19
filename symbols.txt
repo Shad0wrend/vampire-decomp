@@ -1124,6 +1124,7 @@
 0x1000938b func   ?sub_101f6c30@CUnknown101f6c30@@QAE_NXZ CUnknown101f6c30::sub_101f6c30
 0x1000939a func   _security_camera security_camera
 0x1000939f func   _npc_VHuman npc_VHuman
+0x100093a9 func   ?vfunc217@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc217
 0x100093cc func   _filter_activator_class filter_activator_class
 0x100093d1 func   _npc_VYukie npc_VYukie
 0x100093e5 func   ?sub_10194da0@CUnknown10194da0@@QAEXH@Z CUnknown10194da0::sub_10194da0
