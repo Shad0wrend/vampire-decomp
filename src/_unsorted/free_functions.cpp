@@ -17596,6 +17596,16 @@ bool sub_102ce100(const unsigned int *a, const unsigned int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ce550 size=0xbf
+#include "CUtlRBTree12.h"
+
+bool CUtlRBTree12::sub_102ce550(unsigned short i) const
+{
+	unsigned short parent = Links(i).m_Parent;
+	return Links(parent).m_Right == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ce8e0 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_109f3634)(int);
