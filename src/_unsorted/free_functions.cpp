@@ -12429,6 +12429,49 @@ extern "C" GP *trigger_changelevel()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c72f0 size=0xa6
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1059dc88[2];
+void sub_1000da12();
+void sub_10007a54();
+void sub_1000b7cb();
+void sub_1001355c();
+
+int *sub_101c72f0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 7, "m_szMapName", {0x598, 0}, 0x20, 2 },
+        { 7, "m_szLandmarkName", {0x5b8, 0}, 0x20, 2 },
+        { 2, "m_sTip_BkgImage", {0x5dc, 0}, 1, 6, "Tip_BkgImage" },
+        { 4, "m_iTip_Size", {0x5e0, 0}, 1, 6, "Tip_Size" },
+        { 0, "CChangeLevelUseChangeLevel", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000da12 },
+        { 0, "CChangeLevelExecuteChangeLevel", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10007a54 },
+        { 0, "CChangeLevelTouchChangeLevel", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000b7cb },
+        { 10, "m_OnChangeLevel", {0x5e4, 0}, 1, 0x16, "OnChangeLevel", g_1055dc70 },
+        { 0, "InputChangeNow", {0, 0}, 1, 8, "ChangeNow", 0, (void *)sub_1001355c },
+    };
+    g_1059dc88[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1059dc88[0] = (int)&dataDesc[1];
+    return g_1059dc88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9740 size=0x69
 void *sub_1000db89(int);
 struct GP;
