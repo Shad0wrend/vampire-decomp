@@ -83,6 +83,7 @@ public:
 	void sub_1003cc80(int type);	// "CBaseEntity::RemoveDataObjectType": scope trace, clears bit `type` in the mask at +0x444
 	void sub_1003daa0(CBaseEntity *pOther);	// "CBaseEntity::PhysicsTouch": scope trace (entity name), when pOther is set and neither slot 116 returns true, calls slot 175(pOther)
 	void sub_1003db80(CBaseEntity *pOther);	// "CBaseEntity::PhysicsStartTouch": as PhysicsTouch, but calls slot 174(pOther) and then slot 175(pOther)
+	void sub_100339b0(float *forward, float *right, float *up);	// "CBaseEntity::PhysicsGetAngleVectors": scope trace (entity name), per row of the matrix at +0x130 (stride 16): forward = m[0], right = -m[1], up = m[2]
 	void sub_10033aa0(float *a, float *b, float *c);	// "CBaseEntity::PhysicsGetAngleVectors": scope trace (entity name), copies the three columns at +0x130/+0x140/+0x150 (3 floats each) into a, b, c
 	void sub_1003eb50();
 	float *sub_1009b030(float *out);	// slot 16 override: copies the three floats at +0x50 to out
