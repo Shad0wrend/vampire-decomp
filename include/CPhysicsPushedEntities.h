@@ -46,6 +46,7 @@ public:
 	CPusherVec m_rgPusher;	// 0x00
 	CMovedVec m_rgMoved;	// 0x14
 
+	CPhysicsPushedEntities();	// scope trace; both vectors preallocated (8 pusher records, 32 moved records)
 	void sub_10036ef0();	// "CPhysicsPushedEntities::RestoreEntities": scope trace, then SetAbsOrigin(start origin) (slot 216) on every moved entity, last to first
 	void sub_10035f00(int *pHandles);	// "CPhysicsPushedEntities::UnlinkPusherList": scope trace, then a handle per pusher (last to first) from the global at 0x1070b24c, keyed by the short at entity+0x2b6
 	void sub_10035fd0(int *pHandles);	// "CPhysicsPushedEntities::RelinkPusherList": same walk as UnlinkPusherList, other slot (9) of the global at 0x1070b24c
