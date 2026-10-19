@@ -13551,6 +13551,36 @@ int CUtlVector4::sub_101a55a0(int elem, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a56d0 size=0xa4
+#include "CUtlVector40.h"
+#include "CUnknown101a59f0.h"
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+struct E40 { int d[10]; };
+
+int CUtlVector40::sub_101a56d0(int num, const void *pToCopy)
+{
+	int elem = m_size;
+	if (num != 0) {
+		if (m_size + num > m_allocationCount)
+			((CUnknown101a59f0 *)this)->sub_101a59f0(m_size - m_allocationCount + num);
+		m_size += num;
+		m_pElements = m_pMemory;
+		int toMove = m_size - elem - num;
+		if (toMove > 0 && num > 0)
+			memmove(m_pMemory + (elem + num) * 40, m_pMemory + elem * 40, toMove * 40);
+		if (pToCopy != 0 && num > 0) {
+			int off = elem * 40;
+			for (int i = num; i > 0; i--) {
+				*(E40 *)(m_pMemory + off) = *(const E40 *)pToCopy;
+				pToCopy = (const E40 *)pToCopy + 1;
+				off += 40;
+			}
+		}
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a58e0 size=0x8f
 #include "CUtlVector40.h"
 
