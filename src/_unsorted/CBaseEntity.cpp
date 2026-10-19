@@ -153,6 +153,34 @@ bool CBaseEntity::vfunc207()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003e7a0 size=0xa9
+#include "CBaseEntity.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int CBaseEntity::vfunc237()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::PhysicsSolidMaskForEntity";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (sub_100b3700() & 0x2000) {
+		(*g_109f3680)--;
+		return 0x202400b;
+	}
+	if (*(int *)((char *)this + 0xa8)) {
+		(*g_109f3680)--;
+		return 0x201400b;
+	}
+	(*g_109f3680)--;
+	return 0x200400b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ad70 size=0x78
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
