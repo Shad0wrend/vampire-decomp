@@ -101,6 +101,53 @@ void CAI_BaseNPC::vfunc459()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026e3e0 size=0xc4
+#include "CAI_BaseNPC.h"
+
+void CAI_BaseNPC::vfunc463(int a, int type)
+{
+    int *pField = (int *)((char *)this + 0x5b64);
+    switch (type) {
+    case 1:
+        *pField = 0x31;
+        break;
+    case 2:
+        *pField = 0x8f;
+        break;
+    case 3:
+        *pField = 0x39;
+        break;
+    case 4:
+        *pField = 8;
+        break;
+    case 8:
+        *pField = 0x85;
+        break;
+    case 5:
+    case 6:
+    case 12:
+        *pField = 0;
+        break;
+    case 7:
+    case 9:
+    case 10:
+    case 13:
+        *pField = 4;
+        break;
+    case 11:
+    case 14:
+        *pField = 0x7f;
+        break;
+    case 0:
+        *pField = 0x30;
+        break;
+    default:
+        *pField = 0x30;
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10274aa0 size=0x64
 #include "CBaseAnimating.h"
 #include "CAI_BaseNPC.h"
