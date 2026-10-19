@@ -26687,6 +26687,38 @@ void CBaseCombatCharacter::sub_1033ca60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033ce10 size=0xaa
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool CBaseCombatCharacter::sub_1033ce10(unsigned int low, unsigned int high)
+{
+	const char *name;
+	if (this)
+	{
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	}
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::HasDisciplineEffects";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	unsigned int *pEffects = (unsigned int *)((char *)this + 0xeb0);
+	if ((low & pEffects[0]) == 0 && (pEffects[1] & high & 0x7fffffff) == 0)
+	{
+		--*g_109f3680;
+		return false;
+	}
+	--*g_109f3680;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d380 size=0x69
 struct SInner { char *ent; unsigned serial; };
 struct SEnt { int pad; SInner in; };
