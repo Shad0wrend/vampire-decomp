@@ -14,6 +14,7 @@ public:
 
 	bool sub_103ca0d0(int hint);	// "CHintData_WW::IsHintPathable": scope trace, true when `hint` is found in the vector
 	void sub_103ca1a0(int hint);	// "CHintData_WW::AddPathableHint": scope trace, appends `hint` to the vector unless it is already in it
+	void sub_103ca390(int hint);	// "CHintData_WW::AddEndpointPathableHint": same as AddPathableHint for the second vector (at +0x34)
 	CHintData_WW *sub_103c9ed0(const CHintData_WW *pSrc);	// "CHintData_WW::CHintData_WW" (copy constructor): id -1, vector zeroed, scope trace, then copies the seven dwords at +4..+0x1c; returns this
 	void sub_103c9fc0();	// "CHintData_WW::Init": scope trace, zeroes the seven dwords at +4..+0x1c, purges both vectors and sets the id to -1
 };
