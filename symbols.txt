@@ -740,6 +740,7 @@
 0x10006ca8 func   ?sub_10074a90@CUnknown10074a90@@QAEXH@Z CUnknown10074a90::sub_10074a90
 0x10006cad func   _npc_VChangBros npc_VChangBros
 0x10006cb2 func   ?vfunc5@CEnvPlayerSurfaceTrigger@@QAEPAV1@I@Z CEnvPlayerSurfaceTrigger::vfunc5
+0x10006cb7 func   ?sub_103bf330@CUnknown103bf330@@QAE_NH@Z CUnknown103bf330::sub_103bf330
 0x10006cc6 func   ?sub_102d4320@@YAXPAHPBH@Z sub_102d4320
 0x10006d16 func   ?sub_103dc520@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_103dc520
 0x10006d39 func   _npc_VMalkavian npc_VMalkavian

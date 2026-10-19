@@ -23628,6 +23628,22 @@ bool CUnknown10381be0::sub_103be130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bf330 size=0x69
+#include "CUnknown103bf330.h"
+struct CUnknownGlobals1070b228 { int m_pad[3]; float m_curtime; };
+extern CUnknownGlobals1070b228 *g_1070b228;
+bool CUnknown103bf330::sub_103bf330(int key)
+{
+	int idx = sub_103bf3c0(key);
+	if (idx != -1) {
+		if (g_1070b228->m_curtime < m_Timers.Element(idx).m_time)
+			return true;
+		m_Timers.FastRemove(idx);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c0860 size=0x4a
 struct V3 { float x, y, z; };
 #define D(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
