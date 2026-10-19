@@ -2226,6 +2226,7 @@
 0x10012846 func   ?vfunc516@CGeneric_NPC_bathack@@QAEMXZ CGeneric_NPC_bathack::vfunc516
 0x1001285a func   ?vfunc5@CEnvLaser@@QAEPAV1@I@Z CEnvLaser::vfunc5
 0x10012864 func   _item_k_murietta_key item_k_murietta_key
+0x10012882 func   ?sub_101854b0@CUtlVector72@@QAEXH@Z CUtlVector72::sub_101854b0
 0x10012887 func   ?sub_100b39c0@@YIHPAD@Z sub_100b39c0
 0x100128f0 func   ?vfunc5@CNPC_VMalkavian@@QAEPAV1@I@Z CNPC_VMalkavian::vfunc5
 0x10012904 func   ?vfunc5@CWeaponRanged_Tzimisce2Head@@QAEPAV1@I@Z CWeaponRanged_Tzimisce2Head::vfunc5

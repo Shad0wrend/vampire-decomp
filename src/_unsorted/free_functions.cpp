@@ -9157,6 +9157,36 @@ struct CUtlVectorBase { int a, b, c, m_Size; void sub_10185490(); };
 void CUtlVectorBase::sub_10185490() { m_Size = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101854b0 size=0x8f
+#include "CUtlVector72.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+void CUtlVector72::sub_101854b0(int num)
+{
+	if (num + m_size > m_allocationCount && m_growSize != -1) {
+		int newSize = m_allocationCount + (num + m_size - m_allocationCount);
+		while (m_allocationCount < newSize) {
+			if (m_allocationCount != 0) {
+				if (m_growSize != 0)
+					m_allocationCount += m_growSize;
+				else
+					m_allocationCount += m_allocationCount;
+			} else {
+				m_allocationCount = 1;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (char *)Plat_Realloc(m_pMemory, m_allocationCount * 72);
+		else
+			m_pMemory = (char *)Plat_Alloc(m_allocationCount * 72);
+	}
+	m_size += num;
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10185600 size=0x8
 void __fastcall sub_10185600(int *p) { p[3] = 0; }
 // END FUNCTION
