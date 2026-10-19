@@ -1,6 +1,7 @@
 // class CAI_Navigator (RTTI .?AVCAI_Navigator@@): AI component; the bases are not modelled and only
 // the first 21 vtable slots are declared (slots past 20 not yet seen).
 // vfunc9/vfunc10 take (int, 4-byte value); the exact type of the second argument is unknown.
+// Bases: CAI_Component at +0 (vptr, owner at +4) and CAI_DefMovementSink at +0x10 (its vptr is the field m_vptr10 here).
 #pragma once
 
 class CAI_Navigator
@@ -14,4 +15,27 @@ public:
 	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20();
 	void sub_10011c98();	// as in CDataObjectAccessSystem (transplant)
+	CAI_Navigator *sub_102eca50(int pOuter);	// constructor: stores the owner, both vtables, allocates the 0x84 byte object at +0x30
+
+	int m_pOuter;	// 0x04
+	int m_i08;
+	int m_i0c;
+	void *m_vptr10;	// 0x10: CAI_DefMovementSink vtable pointer
+	int m_i14;
+	int m_i18;
+	char m_b1c;
+	int m_i20;
+	int m_i24;
+	int m_i28;
+	int m_i2c;
+	void *m_p30;
+	char m_b34;
+	int m_i38;
+	char m_pad3c[0x50 - 0x3c];
+	char m_b50;
+	int m_i54;
+	float m_f58;
+	float m_f5c;
+	float m_f60;
+	float m_f64;
 };
