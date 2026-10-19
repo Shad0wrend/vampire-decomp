@@ -30455,6 +30455,38 @@ bool sub_10342470(UserEntity *pUser, UsedEntity *pUsed)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10342590 size=0xe0
+#include "CBaseEntity.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+
+bool sub_10342590(CBaseEntity *pEnt, CBaseEntity *pPlayer)
+{
+    ScopeTrace trace("PlayerUseIconFilter", g_106b8540, g_106b8540);
+    if (pPlayer->vfunc32(!pEnt ? 0 : *(int *)((char *)pEnt + 0xa8)))
+        return true;
+    if (pPlayer->vfunc35(!pEnt ? 0 : *(int *)((char *)pEnt + 0xa8)) > 0)
+        return true;
+    int obj = (int)pEnt;
+    if (pEnt)
+        obj = *(int *)((char *)pEnt + 0xa8);
+    if (pPlayer->vfunc34(obj) > 0)
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10342740 size=0x8d
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
