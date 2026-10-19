@@ -22674,6 +22674,49 @@ void __fastcall sub_102f8ef0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f90e0 size=0x95
+#include "UtlVec8.h"
+
+extern void *(*g_109f3634)(int);
+extern void *(*g_109f3638)(void *, int);
+
+static inline void GrowVec(UtlVec8 *v, int num)
+{
+	if (num + v->m_Size > v->m_allocationCount && v->m_growSize != -1) {
+		int need = num + v->m_Size;
+		int alloc = v->m_allocationCount;
+		if (alloc < need) {
+			do {
+				if (alloc) {
+					if (v->m_growSize)
+						alloc += v->m_growSize;
+					else
+						alloc += alloc;
+				} else {
+					alloc = 4;
+				}
+			} while (alloc < need);
+			v->m_allocationCount = alloc;
+		}
+		if (v->m_pMemory)
+			v->m_pMemory = (char *)g_109f3638(v->m_pMemory, v->m_allocationCount << 3);
+		else
+			v->m_pMemory = (char *)g_109f3634(v->m_allocationCount << 3);
+	}
+}
+
+int UtlVec8::sub_102f90e0(int elem)
+{
+	GrowVec(this, 1);
+	m_Size++;
+	m_pElements = (UtlVec8Elem *)m_pMemory;
+	int nToMove = m_Size - elem - 1;
+	if (nToMove > 0)
+		memmove(&m_pElements[elem + 1], &m_pElements[elem], nToMove << 3);
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f91f0 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_109f3634)(int);
