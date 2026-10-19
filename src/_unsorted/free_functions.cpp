@@ -1917,6 +1917,15 @@ bool CUtlRBTree16::sub_10047840(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x100483f0 size=0xbb
+#include "CUtlRBTree16.h"
+
+bool CUtlRBTree16::sub_100483f0(unsigned short i) const
+{
+	return Links(Parent(i)).m_Right == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10049d20 size=0x58
 #include "CUtlRBTreeNode36.h"
 
