@@ -16,6 +16,7 @@ public:
 	void sub_1036c810(int a, int b);	// "CNPC_VChangBros::PrintTask": scope trace, then Msg("%s: [%s]:%s\n", a, classname, vfunc449(b))
 	void *sub_1036d100();	// "CNPC_VChangBros::SelectUnitedNode": scope trace, walks the global entity list (type 18000 at +0x5dc, next at +0x5d8) for the first, or the second when the mode at +0x66b8 is 1
 	bool sub_1036d270(float *pOut);	// "CNPC_VChangBros::GetTeleportPosition": scope trace, copies the vector at +0x66bc to pOut when it is recent enough (time at +0x66c8)
+	void sub_1036e400();	// "CNPC_VChangBros::StoreArenaCenter": scope trace, stores the origin of the first type 0x4651 entity at +0x66dc and sets the flag at +0x66e8
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x209000
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
 	int sub_10011225();	// CNPC_VHuman::vfunc461, called directly
