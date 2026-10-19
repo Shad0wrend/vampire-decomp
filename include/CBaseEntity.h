@@ -102,6 +102,7 @@ public:
 	void sub_1009b8a0(int a, int b, char value);	// "CBaseEntity::DumpBool": scope trace (entity name), then sub_1009b640(a, b, "true" or "false")
 	void sub_1009b980(int a, char *text, int value);	// "CBaseEntity::DumpInt": scope trace, sprintf("%d") into a global buffer, then sub_1009b640
 	void sub_1009ba60(int a, char *text, int value);	// "CBaseEntity::DumpFloatArrayBase"-like: one dumped dword
+	void sub_1009bb40(int a, int b, unsigned int bits);	// "CBaseEntity::DumpBits32": scope trace (entity name), writes 'X' / '-' per bit (0..31) of bits into a global 33 byte buffer, then sub_1009b640(a, b, buffer)
 	void sub_1009bc30(int a, char *text, int value);	// "CBaseEntity::DumpPtr": scope trace (entity name), sprintf("0x%08X", value) into a global buffer, then sub_1009b640(a, text, buffer)
 	void sub_1009bd10(int a, int b, float x, float y, float z);	// "CBaseEntity::DumpQangle": same as DumpVector with the scope name "CBaseEntity::DumpQangle"
 	void sub_1009be00(int a, int b, float x, float y, float z);	// "CBaseEntity::DumpVector": scope trace (entity name), sprintf("(%f %f %f)") into a global buffer, then sub_1009b640(a, b, buffer)
