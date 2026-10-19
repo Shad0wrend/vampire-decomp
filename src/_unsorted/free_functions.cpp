@@ -10001,6 +10001,41 @@ int __stdcall sub_100e7480(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e76d0 size=0xd1
+#include <string.h>
+#include <stdlib.h>
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+__declspec(dllimport) void DevWarning(const char *fmt, ...);
+
+void *__stdcall sub_100e76d0(void *pOld, int oldSize, int newSize)
+{
+	g_109f3620[*g_109f3680].a = "CDialog::drealloc";
+	g_109f3620[*g_109f3680].b = "";
+	g_109f3620[*g_109f3680].c = "";
+	(*g_109f3680)++;
+	if (oldSize < 0 || newSize < 0) {
+		DevWarning("CDialog::drealloc size error!\n");
+	} else {
+		void *pNew = operator new(newSize);
+		if (!pNew) {
+			DevWarning("CDialog::drealloc allocation error!\n");
+		} else {
+			if (pOld && oldSize) {
+				memcpy(pNew, pOld, oldSize);
+				operator delete(pOld);
+			}
+			(*g_109f3680)--;
+			return pNew;
+		}
+	}
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e77f0 size=0x7d
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
