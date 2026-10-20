@@ -32,7 +32,11 @@ public:
 	CAI_NPC_V(290) CAI_NPC_V(291) CAI_NPC_V(292)
 	virtual int vfunc293();
 	CAI_NPC_V(294) CAI_NPC_V(295) CAI_NPC_V(296) CAI_NPC_V(297) CAI_NPC_V(298) CAI_NPC_V(299)
-	CAI_NPC_V10(30) CAI_NPC_V10(31) CAI_NPC_V10(32) CAI_NPC_V10(33) CAI_NPC_V10(34) CAI_NPC_V10(35) CAI_NPC_V10(36)
+	CAI_NPC_V10(30)
+	CAI_NPC_V(310)
+	virtual void vfunc311(int a, int b, int c);	// when c >= 0: stores the activity-like triple a (+0xfec/+0xff0, slot 465(a) first when it changes), b (+0x5cd0/+0x5cd4/+0xff4) and c (+0x5ccc, sub_10260a50(c)), then clears +0x6f8 and +0x170
+	CAI_NPC_V(312) CAI_NPC_V(313) CAI_NPC_V(314) CAI_NPC_V(315) CAI_NPC_V(316) CAI_NPC_V(317) CAI_NPC_V(318) CAI_NPC_V(319)
+	CAI_NPC_V10(32) CAI_NPC_V10(33) CAI_NPC_V10(34) CAI_NPC_V10(35) CAI_NPC_V10(36)
 	CAI_NPC_V(370) CAI_NPC_V(371) CAI_NPC_V(372) CAI_NPC_V(373) CAI_NPC_V(374)
 	virtual int vfunc375(int act);	// TranslateActivity step 1: the activity the NPC wants for act
 	virtual int vfunc376(int act);	// the next activity of the fallback chain
@@ -48,7 +52,7 @@ public:
 	CAI_NPC_V(410) CAI_NPC_V(411) CAI_NPC_V(412) CAI_NPC_V(413) CAI_NPC_V(414) CAI_NPC_V(415)
 	virtual void vfunc416(char value);
 	CAI_NPC_V(417)
-	virtual float vfunc418(float a);	// float lookup keyed by magic values (-1000008..-1000005 in the Troika override), else the base value
+	virtual float vfunc418(float a);	// float lookup keyed by magic values (-1000005..-1000008 in the Troika override), else the base value
 	CAI_NPC_V(419) CAI_NPC_V(420) CAI_NPC_V(421) CAI_NPC_V(422)
 	virtual unsigned int vfunc423();
 	CAI_NPC_V(424) CAI_NPC_V(425) CAI_NPC_V(426)
@@ -67,7 +71,8 @@ public:
 	CAI_NPC_V(462)
 	virtual void vfunc463(int a, int type);	// "CAI_BaseNPC::SetIdealActivityForType": stores a value picked by `type` (0..14) at +0x5b64
 	virtual int vfunc464();	// GetState: the NPC state (7 is dead; used by CAI_GoalEntity::PruneActors)
-	CAI_NPC_V(465) CAI_NPC_V(466) CAI_NPC_V(467)
+	virtual void vfunc465(int a);	// called by vfunc311 when the value at +0xfec changes
+	CAI_NPC_V(466) CAI_NPC_V(467)
 	virtual bool vfunc468(CBaseEntity *pEnt);	// Troika override: false when pEnt is the NPC's own target or is ignored, true when it has the field at +0xa8 or vfunc404 gives 1 or 2
 	CAI_NPC_V(469)
 	CAI_NPC_V10(47)
@@ -96,6 +101,7 @@ public:
 
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
 	void sub_10269b50(int condition);	// "CAI_BaseNPC::SetCondition"-like (called through the stub at 0x10015839)
+	void sub_10260a50(int c);	// called through the stub at 0x1000d0b2 by vfunc311 with its third argument
 	void sub_10273e80(char flag);	// sets the state at +0x5c44 to 4 unless flag is clear and a check (0x5c) passes (called with 0 by animation event handlers)
 	void sub_10274080(CBaseEntity *pEnt);	// enemy memory update: finds pEnt's record in the 20-byte record vector at +0x5d48 (handle, time, position) and refreshes its time, or appends a new record; then stores pEnt's absolute origin in it
 	int sub_10274aa0(void *pOther);	// slot 569: picks an activity-like index (1, 6, 7 or 8) from SelectWeightedSequence results and pOther's state at +0x5dc
