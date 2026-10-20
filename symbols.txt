@@ -4222,6 +4222,7 @@
 0x1002fc30 func   ?sub_1002fc30@@YAXPAVCBaseEntity@@M@Z sub_1002fc30
 0x10036810 func   ?sub_10036810@@YAXPAUPhysEnt@@HHHH@Z sub_10036810
 0x1009ab70 func   ?sub_1009ab70@@YAPAXPAVCBaseEntity@@PAXPAI@Z sub_1009ab70
+0x100a5d80 func   ?sub_100a5d80@@YAHPAVCBaseEntity@@HHHH@Z sub_100a5d80
 0x100c1870 func   ?sub_100c1870@@YAPADPAUSStudioHdr@@HPAPAU1@HPAH@Z sub_100c1870
 0x100d2c30 func   ?sub_100d2c30@@YAHPBDPAD@Z sub_100d2c30
 0x100d6560 func   ?sub_100d6560@@YAHPBDPAD@Z sub_100d6560

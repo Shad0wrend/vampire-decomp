@@ -11538,6 +11538,31 @@ bool CBaseEntity::sub_100a5ad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5d80 size=0xe0
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_1070d9d0[3];
+int sub_1002dfe0(int a, int b);
+int sub_10428eb0(char *pHeader);
+int sub_1002e7e0(CBaseEntity *pEntity, int pObject, int a, int *pOffset, char *pszSurface, int b, int c);
+
+int sub_100a5d80(CBaseEntity *pEntity, int a2, int a3, int a4, int a5)
+{
+	ScopeTrace trace("PhysModelCreateBox", g_106b8540);
+	int modelIndex = pEntity->vfunc8();
+	char *pszSurface = "flesh";
+	if (modelIndex && g_1070b22c->vfunc21(modelIndex) == 3)
+		pszSurface = (char *)sub_10428eb0((char *)g_1070b22c->vfunc18(modelIndex));
+	int pObject = sub_1002dfe0(a2, a3);
+	if (!pObject)
+		return 0;
+	return sub_1002e7e0(pEntity, pObject, a4, g_1070d9d0, pszSurface, a5, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6490 size=0xc3
 extern int *g_109f3680;
 extern const char **g_109f3620;
