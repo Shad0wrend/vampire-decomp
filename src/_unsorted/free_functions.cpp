@@ -45549,6 +45549,25 @@ int sub_104079a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10407a70 size=0x43
+#include "CItemGKeyring.h"
+void *sub_100aa720(int size);
+extern char g_105869a4[];
+
+// TARGET: item_g_keyring
+extern "C" CBaseEntity *item_g_keyring()
+{
+	void *mem = sub_100aa720(0x928);
+	CItemGKeyring *p;
+	if (mem)
+		p = ((CItemGKeyring *)mem)->sub_10407b30();
+	else
+		p = 0;
+	p->vfunc106(g_105869a4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104085f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
