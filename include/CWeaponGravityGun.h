@@ -8,6 +8,7 @@ class CWeaponGravityGun : public CBaseCombatWeapon
 public:
 	virtual char vfunc316(int a);	// sub_1014d110, then the base implementation; returns true
 	virtual void *vfunc285();	// the entity of the held-object handle at +0x918 when it resolves, else sub_1014a1b0()
+	virtual void vfunc319();	// picks one of slots 321 / 325 / 326 / 327 from the owner's player object flags (+0x208c, +0x2088)
 
 	void sub_1014d110();
 	void *sub_1014a1b0();
