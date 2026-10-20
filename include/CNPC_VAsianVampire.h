@@ -48,4 +48,6 @@ public:
 	void sub_1000b28f(void *pRestore);	// CNPC_VVampireBoss::vfunc127, called directly
 	void vfunc448(int code);	// "CNPC_VAsianVampire::TaskFail": scope trace, remembers a failure code in 12..15, then the base implementation
 	void sub_100054bb(int code);	// CAI_BaseNPCTroika::vfunc448, called directly
+	int vfunc440(int schedule);	// slot 440 "CNPC_VAsianVampire::TranslateSchedule": scope trace, schedules 0xe5 / 0xe6 become GetJumpSchedule(), everything else goes to CNPC_VHuman::vfunc440
+	int sub_10005e20(int schedule);	// CNPC_VHuman::vfunc440, called directly
 };
