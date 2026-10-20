@@ -3087,6 +3087,7 @@
 0x1001251c func   ?sub_103b3c10@@YADXZ sub_103b3c10
 0x10012526 func   ?sub_1013a030@@YAXPAUV3@@0@Z sub_1013a030
 0x1001252b func   _info_node_chang_ledge info_node_chang_ledge
+0x10012544 func   ?sub_100307f0@CCollisionEvent@@QAEXPAUCFrictionEntry_t@@@Z CCollisionEvent::sub_100307f0
 0x10012567 func   ?vfunc144@CGenericSabbat_NPC@@UAEXH@Z CGenericSabbat_NPC::vfunc144
 0x1001258f func   ?sub_10377970@@YAPAHXZ sub_10377970
 0x10012594 func   ?sub_102e2770@CUnknown102e2770@@QAEXHM@Z CUnknown102e2770::sub_102e2770

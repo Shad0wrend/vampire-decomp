@@ -648,6 +648,31 @@ CFrictionEntry_t *CCollisionEvent::sub_10030720(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100307f0 size=0x77
+#include "CCollisionEvent.h"
+extern char g_106b8540[];
+struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeTraceEntry *g_109f3620;
+struct IPhysicsFrictionLike {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+    virtual void DestroySnapshot(int pSnapshot);
+};
+IPhysicsFrictionLike *sub_101bdb50();
+void CCollisionEvent::sub_100307f0(CFrictionEntry_t *pEntry)
+{
+    g_109f3620[*g_109f3680].a = "CCollisionEvent::ShutdownFriction";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    sub_101bdb50()->DestroySnapshot(pEntry->m_value);
+    pEntry->m_value = 0;
+    pEntry->m_key = 0;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100309a0 size=0xf3
 #include "UtlVec8.h"
 #include "CCollisionEvent.h"
