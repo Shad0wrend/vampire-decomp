@@ -41553,6 +41553,43 @@ CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102cc900 size=0xbc
+#include "CAI_DynamicLink.h"
+#include "CAI_Network.h"
+
+extern CAI_NetworkOwner *g_10934088;
+extern CAI_DynamicLink *g_1092541c;
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+static __forceinline CAI_Network *Net()
+{
+	return g_10934088->m_pNetwork;
+}
+
+void sub_102cc900()
+{
+	if (Net()->m_nNumNodes == 0) {
+		DevMsg("ERROR: Trying initialize links with no WC ID table!\n");
+		return;
+	}
+	for (CAI_DynamicLink *pLink = g_1092541c; pLink; pLink = pLink->m_pNext) {
+		int src = Net()->sub_102f6d10(pLink->m_nSrcID);
+		if (src == -1) {
+			DevMsg("ERROR: Dynamic link WC node %d not found\n", pLink->m_nSrcID);
+			src = 0;
+		}
+		int dest = Net()->sub_102f6d10(pLink->m_nDestID);
+		if (dest == -1) {
+			DevMsg("ERROR: Dynamic link WC node %d not found\n", pLink->m_nDestID);
+			dest = 0;
+		}
+		pLink->m_nSrcID = src;
+		pLink->m_nDestID = dest;
+		pLink->sub_102ccce0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ccce0 size=0xe2
 #include "CAI_DynamicLink.h"
 struct SLink { int pad0; int src; int dest; char pad[0x58]; unsigned int flags; };

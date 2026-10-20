@@ -638,6 +638,7 @@
 0x10004426 func   _item_k_chinese_theatre_key item_k_chinese_theatre_key
 0x10004430 func   _item_p_research_mg_melee item_p_research_mg_melee
 0x10004449 func   ?sub_101878d0@@YAPAXPAUSEdict@@@Z sub_101878d0
+0x10004453 func   ?sub_102cc900@@YAXXZ sub_102cc900
 0x10004458 func   ?sub_101fa8d0@@YIXPAUCVDmg_t@@HHHH@Z sub_101fa8d0
 0x10004471 func   ?sub_10093a40@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10093a40
 0x100044ad func   ?sub_101f3060@@YIXPAD@Z sub_101f3060
