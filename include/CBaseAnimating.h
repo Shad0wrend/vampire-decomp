@@ -59,6 +59,7 @@ public:
 	bool sub_10097200(const char *name, int *pSet, int *pHitbox);	// "CBaseAnimating::LookupHitbox": scope trace, stores -1 in both outputs, walks the hitbox sets of GetModelPtr(-1) (count at +0x100, table at +0x104, 0xc bytes each) with an empty inner loop; always false
 	bool sub_10090e30(int sequence);	// "CBaseAnimating::IsValidSequence": scope trace (entity name), sub_1008d990(sequence) != 0
 	int sub_1008d990(int sequence);	// worker of IsValidSequence (stub 0x1000b4f6)
+	int sub_10092270(const char *name);	// "CBaseAnimating::LookupPoseParameter" (stub 0x10009ac5): scope trace (entity name), index of the first of 0x18 pose parameters of GetModelPtr(-1) whose name matches (case-insensitive), else -1
 
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
@@ -68,4 +69,5 @@ public:
 	bool vfunc68(CBaseEntity *pOther);	// slot 68 "CBaseAnimating::ShouldIgnoreCollision": scope trace (entity name), returns the result of sub_10158b90(this, pOther); declared as a plain member
 	CBaseAnimating *vfunc5(unsigned int flags);	// as in CSimplePhysicsProp (transplant)
 	void sub_10004c3c();	// as in CSimplePhysicsProp (transplant)
+	void sub_10091f10(const char *name, float value);	// slot 261 "CBaseAnimating::SetPoseParameter01": scope trace (entity name), then slot 260(LookupPoseParameter(name), value)
 };
