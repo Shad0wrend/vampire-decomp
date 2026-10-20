@@ -32644,6 +32644,25 @@ void CUnknown102d9170::sub_102d9170(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d9490 size=0x43
+#include "CAI_InterestingPlace.h"
+void *sub_100aa720(int size);
+extern char g_1060ce40[];
+
+// TARGET: intersting_place
+extern "C" CBaseEntity *intersting_place()
+{
+	void *mem = sub_100aa720(0x60c);
+	CAI_InterestingPlace *p;
+	if (mem)
+		p = ((CAI_InterestingPlace *)mem)->sub_102d99d0();
+	else
+		p = 0;
+	p->vfunc106(g_1060ce40);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db420 size=0xa
 void CUnknown102db420::sub_102db420(int unused)
 {
