@@ -1,6 +1,8 @@
 // CCollisionEvent: physics collision event handler (vtable slots not modelled except slot 0; plain members for direct callers).
 #pragma once
 
+class CBaseEntity;
+
 struct CFrictionEntry_t
 {
 	int m_value;
@@ -20,6 +22,7 @@ public:
 	int sub_10031270(int inflictor);	// "CCollisionEvent::FindDamageInflictor": index of the last 32-byte record (array at +0x100, count at +0x10c) starting with inflictor, or -1
 	CFrictionEntry_t *sub_10030720(int key);	// "CCollisionEvent::FindFriction": scope trace, the entry of the 8 at +0x8 with this key, else the first free one, else null
 	float sub_100309a0(int key);	// "CCollisionEvent::DeltaTimeSinceLast": scope trace, searches the (key, time) records of the vector at +0x128 from the back; found: curtime minus the stored time; else appends (key, curtime) and returns 0
+	void sub_1002f900(CBaseEntity *pA, CBaseEntity *pB);	// "CCollisionEvent::FindOrAddPenetrationTime": scope trace, searches the 20 byte records (vector at +0x114, count at +0x120) from the back for the pair of entity handles, appending (handles, curtime, 0) when absent; then stores curtime in the record's +0xc
 
 	char m_pad0004[4];
 	CFrictionEntry_t m_friction[8];	// 0x0008
