@@ -8,6 +8,7 @@ struct CUnknown10217f50Quad	// the four dwords at +0x82c
 {
 	int m_n0, m_n1, m_n2, m_n3;
 	void Clear() { m_n0 = 0; m_n1 = 0; m_n2 = 0; m_n3 = 0; }
+	void ClearLoop() { for (int i = 0; i < 4; i++) (&m_n0)[i] = 0; }
 };
 
 class CUnknown10217f50 : public CEntityVSlots
