@@ -23242,6 +23242,25 @@ void CUnknown10215910::sub_10215910(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10215bd0 size=0x43
+#include "CPropModelState.h"
+void *sub_100aa720(int size);
+extern char g_105aeea4[];
+
+// TARGET: prop_model_state
+extern "C" CBaseEntity *prop_model_state()
+{
+	void *mem = sub_100aa720(0x850);
+	CPropModelState *p;
+	if (mem)
+		p = ((CPropModelState *)mem)->sub_10216360();
+	else
+		p = 0;
+	p->vfunc106(g_105aeea4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216830 size=0xa
 void __fastcall sub_10216830(char *self, int, int)
 {
