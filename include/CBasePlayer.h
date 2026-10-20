@@ -89,4 +89,6 @@ public:
 	void vfunc149(int a, int b);	// forwards (a, b) to slot 148 of every other connected player the game rules (slot 64) relate to this one with the value 1
 	void sub_100ac4e0(void *pFunc, int a, int b);	// sets a think function and delay (called through the stub at 0x10007fe5)
 	void sub_1032bdf0();	// CBaseCombatCharacter::vfunc403, called directly
+	void sub_1017ec40();	// per-frame timer: when curtime reached the float at +0x1cf8, either postpones it by a constant (flag byte 0x106c8a41) or resets it to FLT_MAX and, when the entity handle at +0x1d00 resolves, calls sub_1017ee80(dword at +0x1cfc, the dword at +0x98 of that entity, &+0x1d04)
+	void sub_1017ee80(int a, int b, void *pData);	// called through the stub at 0x10006055
 };
