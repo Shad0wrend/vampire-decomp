@@ -15,7 +15,7 @@ public:
 	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
 	EVS10(10)
 	EVS(110) EVS(111) EVS(112) EVS(113) EVS(114) EVS(115) EVS(116) EVS(117)
-	virtual void slot118(CEntityVSlots *pActivator, CEntityVSlots *pCaller, int a, CVariantCopy value, int outputID);	// input / event notification worker
+	virtual void slot118(const char *pszInput, CEntityVSlots *pActivator, CEntityVSlots *pCaller, CVariantCopy value, int outputID);	// "AcceptInput"
 	EVS(119)
 	EVS10(12) EVS10(13) EVS10(14)
 	EVS(150) EVS(151) EVS(152) EVS(153) EVS(154) EVS(155) EVS(156) EVS(157)
