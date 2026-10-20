@@ -20,3 +20,4 @@
 	char sub_10146a80();	// whether the stat list with id 3 (default list when absent) has a positive value for stat 8 and the flag byte at +0x14dc is set
 	void sub_10106b30(const char *pszName, char *pDest, int size);	// "CBaseCombatCharacter::GetExpressionOverrideFile": scope trace (entity name), with the model's studio header (GetModelPtr(-1)) formats "expressions/%s_%s.vfe" (name of header+0xc, pszName) into pDest
 	void sub_1015f510(inputdata_t *data);	// "CBaseCombatCharacter::InputHolster": scope trace (entity name), makes sure the unarmed weapon "item_w_unarmed" is owned (slot 459 otherwise), then equips it through slot 457; DevMsg warning when still missing
+	void sub_103327f0(float amount);	// "CBaseCombatCharacter::EndSlowEntity": scope trace (entity name), lowers the float at +0x10a8 by amount, then SubBase(0x1a, (int)amount) on the first stat list with a zero field at +0x10 (default list when none)
