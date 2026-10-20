@@ -4566,6 +4566,27 @@ int sub_1006a7b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006aeb0 size=0x6c
+#include "CTEUserTracer.h"
+
+extern CTEUserTracer g_106c71b8;
+
+// TARGET: sub_1006aeb0
+void sub_1006aeb0(int pFilter, int delayBits, const float *pOrigin, const float *pEnd, int a, int b, char c)
+{
+    g_106c71b8.m_vOrigin[0] = pOrigin[0];
+    g_106c71b8.m_vOrigin[1] = pOrigin[1];
+    g_106c71b8.m_vOrigin[2] = pOrigin[2];
+    g_106c71b8.m_vEnd[0] = pEnd[0];
+    g_106c71b8.m_vEnd[1] = pEnd[1];
+    g_106c71b8.m_vEnd[2] = pEnd[2];
+    g_106c71b8.m_nField24 = a;
+    g_106c71b8.m_bField28 = c;
+    g_106c71b8.m_nField2c = b;
+    g_106c71b8.sub_1006aad0(pFilter, delayBits);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cc20 size=0x79
 int sub_10431c2f(char *, const char *, ...);
 void sub_10203dd0(char *);
