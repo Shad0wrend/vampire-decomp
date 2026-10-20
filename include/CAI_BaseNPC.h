@@ -32,7 +32,9 @@ public:
 	CAI_NPC_V(190) CAI_NPC_V(191)
 	virtual Vector vfunc192();	// returns a vector by value (hidden result pointer)
 	CAI_NPC_V(193) CAI_NPC_V(194) CAI_NPC_V(195) CAI_NPC_V(196) CAI_NPC_V(197) CAI_NPC_V(198) CAI_NPC_V(199)
-	CAI_NPC_V10(20)
+	CAI_NPC_V(200) CAI_NPC_V(201) CAI_NPC_V(202) CAI_NPC_V(203) CAI_NPC_V(204) CAI_NPC_V(205) CAI_NPC_V(206) CAI_NPC_V(207)
+	virtual void vfunc208(int a);	// takes one argument (0 from AI_BaseNPC_Schedule's failure path)
+	CAI_NPC_V(209)
 	CAI_NPC_V(210) CAI_NPC_V(211) CAI_NPC_V(212) CAI_NPC_V(213) CAI_NPC_V(214) CAI_NPC_V(215) CAI_NPC_V(216)
 	virtual float *vfunc217();	// "CBaseEntity::GetAbsOrigin"
 	CAI_NPC_V(218) CAI_NPC_V(219)
@@ -72,7 +74,9 @@ public:
 	CAI_NPC_V(428) CAI_NPC_V(429)
 	CAI_NPC_V(430) CAI_NPC_V(431) CAI_NPC_V(432) CAI_NPC_V(433) CAI_NPC_V(434)
 	virtual void vfunc435(void *pSchedule);	// called with the new schedule by sub_10280e50
-	CAI_NPC_V(436) CAI_NPC_V(437) CAI_NPC_V(438) CAI_NPC_V(439)
+	CAI_NPC_V(436)
+	virtual int vfunc437();	// "SelectFailSchedule"-like (AI_BaseNPC_Schedule.cpp): returns a schedule id picked from the failure conditions
+	CAI_NPC_V(438) CAI_NPC_V(439)
 	CAI_NPC_V(440) CAI_NPC_V(441) CAI_NPC_V(442) CAI_NPC_V(443) CAI_NPC_V(444) CAI_NPC_V(445) CAI_NPC_V(446)
 	virtual int vfunc447(int a);	// classification of a (the dword at +0x1c of the object at +0x5c38); 0x12f is the special case of vfunc509
 	CAI_NPC_V(448)
