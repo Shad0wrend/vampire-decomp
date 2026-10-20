@@ -3391,6 +3391,7 @@
 0x10013246 func   ?sub_1009bd10@CBaseEntity@@QAEXHHMMM@Z CBaseEntity::sub_1009bd10
 0x10013282 func   ?sub_10090e30@CBaseAnimating@@QAE_NH@Z CBaseAnimating::sub_10090e30
 0x100132a0 func   ?vfunc238@CBaseEntity@@QAEXHHHH@Z CBaseEntity::vfunc238
+0x100132c8 func   ?vfunc468@CBasePlayer@@UAEXXZ CBasePlayer::vfunc468
 0x100132cd func   ?sub_102342d0@@YAHXZ sub_102342d0
 0x100132f0 func   ?sub_10056fa0@CBaseFire@@QAEXHH@Z CBaseFire::sub_10056fa0
 0x10013327 func   ?vfunc5@CResearchBook_LG_COMP@@QAEPAV1@I@Z CResearchBook_LG_COMP::vfunc5

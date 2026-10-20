@@ -246,3 +246,20 @@ float *CBasePlayer::vfunc367(float *out)
 	return out;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1017be50 size=0x8f
+int sub_1002dfe0(int a, int b);
+
+// TARGET: CBasePlayer::vfunc468
+void CBasePlayer::vfunc468()
+{
+    se03();
+    int w = m_sub270.vfunc1();
+    int h = m_sub270.vfunc2();
+    int stand = sub_1002dfe0(w, h);
+    float maxs[3] = { 16.0f, 16.0f, 36.0f };
+    float mins[3] = { -16.0f, -16.0f, 0.0f };
+    int crouch = sub_1002dfe0((int)mins, (int)maxs);
+    sub_1017b6f0(stand, "player_stand", crouch, "player_crouch");
+}
+// END FUNCTION
