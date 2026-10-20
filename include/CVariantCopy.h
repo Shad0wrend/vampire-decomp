@@ -12,4 +12,5 @@ struct CVariantCopy
 
 	CVariantCopy() { m_value = 0; m_hEntity = 0xffffffff; m_fieldType = 0; }
 	CVariantCopy(const CVariantCopy &other);
+	void sub_1000b320(int fieldType, void *pData);	// "variant_t::Set": stores the value of the given field type read from pData
 };
