@@ -19,4 +19,5 @@ public:
 	CUnknown101d7380Entry **m_pData;	// 0x0008
 
 	int sub_101d7380(const char *name, int start);
+	bool sub_101d70d0(const char *name, int *pIndex);	// opens the data file `name`, walks its "LevelingTemplate" nodes against the entries from *pIndex
 };
