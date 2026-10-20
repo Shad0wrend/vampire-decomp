@@ -1,6 +1,72 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1022bf10 size=0x161
+#include "CPropRadio.h"
+#include "CUnknown1073dc00.h"
+#include "ScopeTrace.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+extern CUnknown1073dc00 g_1073dc00;
+extern int g_10750fec;
+extern int g_10750ff0;
+
+struct NameStr
+{
+	const char *m_psz;
+	const char *Get() const { return m_psz ? m_psz : g_106b8540; }
+};
+
+struct SoundEntry
+{
+	int m_nValue;
+	NameStr m_name;
+};
+
+struct SoundTable
+{
+	char m_pad0000[0x14];
+	int m_nEntries;
+	SoundEntry **m_pEntries;
+
+	int FindEntry(const char *pszName)
+	{
+		for (int i = 0; i < m_nEntries; i++)
+		{
+			if (_strcmpi(m_pEntries[i]->m_name.Get(), pszName) == 0)
+				return m_pEntries[i]->m_nValue;
+		}
+		return -1;
+	}
+};
+
+struct CPropRadioFields
+{
+	char m_pad0000[0xb4];
+	int m_nSoundSet;
+	char m_pad00b8[4];
+	int m_n0bc;
+	NameStr m_sound;
+	char m_pad00c4[0x26c - 0xc4];
+	const char *m_pszName;
+};
+
+// TARGET: CPropRadio::vfunc71
+void CPropRadio::vfunc71()
+{
+	CPropRadioFields *f = (CPropRadioFields *)this;
+	ScopeTrace trace("CPropRadio::PrecacheSoundTable",
+		this ? (f->m_pszName ? f->m_pszName : g_106b8540) : g_105387dc);
+	f->m_n0bc = 0;
+	f->m_nSoundSet = g_1073dc00.sub_101f55a0(this, f->m_sound.Get(), 0);
+
+	SoundTable *t = (SoundTable *)&g_1073dc00;
+	g_10750fec = t->FindEntry("on");
+	g_10750ff0 = t->FindEntry("off");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022c0e0 size=0x7b
 #include "CPropRadio.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
