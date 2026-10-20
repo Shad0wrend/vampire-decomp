@@ -3253,6 +3253,7 @@
 0x10013e49 func   ?vfunc392@CBaseCombatCharacter@@QAEHPAX@Z CBaseCombatCharacter::vfunc392
 0x10013e6c func   ?sub_1022eb60@@YAXPAUTStat@@PBD@Z sub_1022eb60
 0x10013e7b func   ?sub_103fd440@@YAHXZ sub_103fd440
+0x10013e99 func   ?vfunc308@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::vfunc308
 0x10013ebc func   _item_k_museum_basement_key item_k_museum_basement_key
 0x10013edf func   ?sub_10194330@CUtlRBTree12@@QBEGPBX@Z CUtlRBTree12::sub_10194330
 0x10013f0c func   ?sub_102a1590@@YI_NPAUN@@@Z sub_102a1590

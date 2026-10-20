@@ -777,6 +777,90 @@ int CBaseCombatCharacter::vfunc307()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10336d70 size=0x142
+#include "CBaseCombatCharacter.h"
+
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern int g_10619eb4[];
+extern int g_10619d28[];
+extern int g_10937cd0[];
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CccVt
+{
+	S100(a) S100(b)
+	S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5) S10(c6) S10(c7) S10(c8)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3();
+	virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7();
+	virtual int GroupSize(int group);
+};
+
+struct Weapon
+{
+	S100(a) S100(b) S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5) S10(c6) S10(c7)
+	virtual char IsEquippable(int a);
+	S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5) S10(d6)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8();
+	virtual unsigned int GetFlags();
+	char pad[0x744 - 4];
+	int m_ammoType;
+};
+
+// TARGET: CBaseCombatCharacter::vfunc308
+bool CBaseCombatCharacter::vfunc308()
+{
+	const char *name;
+	if (this)
+	{
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	}
+	else
+		name = g_105387dc;
+	int *p = g_10619eb4;
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::HasUsableRangedWeapon";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	for (; *p != -1; p++)
+	{
+		int group = g_10619d28[*p];
+		if (group >= 0)
+		{
+			int start = g_10937cd0[*p];
+			int end = start + ((CccVt *)this)->GroupSize(group);
+			for (int i = start; i < end; i++)
+			{
+				if (sub_1032e8b0(i))
+				{
+					Weapon *w = (Weapon *)sub_1032e8b0(i);
+					if (w->GetFlags() & 0x6000)
+					{
+						if (((Weapon *)sub_1032e8b0(i))->IsEquippable(0)
+							|| ((int *)this)[0x15a4 / 4 + ((Weapon *)sub_1032e8b0(i))->m_ammoType] > 0)
+						{
+							--*g_109f3680;
+							return true;
+						}
+					}
+				}
+			}
+		}
+	}
+	--*g_109f3680;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033cb90 size=0x74
 #include "CBaseCombatCharacter.h"
 
