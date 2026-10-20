@@ -43456,6 +43456,32 @@ int CBaseCombatCharacter::sub_103232b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103239a0 size=0x99
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+struct NameTable { short sub_1000a72c(const char *name); };
+extern NameTable g_10751140;
+short __fastcall sub_10323a70(char *p);
+
+short CBaseCombatCharacter::sub_103239a0(const char *pszName)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::AddToTeam";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (*pszName == '!')
+        pszName++;
+    *(short *)((char *)this + 0x10b0) = g_10751140.sub_1000a72c(pszName);
+    short r = sub_10323a70((char *)this);
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323a70 size=0x8
 short __fastcall sub_10323a70(char *p)
 {
