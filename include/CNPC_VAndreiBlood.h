@@ -44,4 +44,5 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void vfunc420();	// "CNPC_VAndreiBlood::NPCInit": scope trace, the CNPC_VVampireBoss version, then copies the global vector at 0x1070d1b0 to +0x66c0
 	void sub_103c5840();	// CNPC_VVampireBoss::vfunc420, called directly
+	void sub_1035e5f0();	// "CNPC_VAndreiBlood::FacePlayerAdvance": scope trace (no entity name), when the entity behind the handle at +0x628c resolves, hands slot 217 of it (with the global at 0x104a6f80) to the object at +0x5d44 (sub_102e20b0, stub 0x10007248)
 };
