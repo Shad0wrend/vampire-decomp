@@ -56196,6 +56196,40 @@ void CNPC_VNewscaster::sub_103a0d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a0eb0 size=0xfc
+#include "CUnknown103a0eb0.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+void sub_101434b0(int nEntity, int nLine, const char *pszText, int nDuration, int r, int g, int b, int a);
+
+int CUnknown103a0eb0::sub_103a0eb0(int nLine, CUnknown103a0eb0Info *pInfo, char bHighlight)
+{
+	int r, g, b, a;
+	if (bHighlight) {
+		r = 0xff;
+		g = 0xc8;
+		b = 0xc8;
+		a = 0xfa;
+	} else {
+		r = 0x96;
+		g = 0x96;
+		b = 0x96;
+		a = 0x96;
+	}
+	int nEntry = pInfo->m_nEntry;
+	int nEntity = g_1070b22c->vfunc35(GetEdict());
+	sub_101434b0(nEntity, nLine, pInfo->m_pszHeader, 0, r, g, b, a);
+	nLine++;
+	nEntity = g_1070b22c->vfunc35(GetEdict());
+	sub_101434b0(nEntity, nLine, pInfo->m_Entries[nEntry].m_pszSecond, 0, r, g, b, a);
+	nLine++;
+	nEntity = g_1070b22c->vfunc35(GetEdict());
+	sub_101434b0(nEntity, nLine, pInfo->m_Entries[nEntry].m_pszFirst, 0, r, g, b, a);
+	return nLine + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1320 size=0x6a
 #include "CUnknown103a1320.h"
 
