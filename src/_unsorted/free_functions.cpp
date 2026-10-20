@@ -10583,6 +10583,36 @@ void __fastcall sub_100ad100(CBaseEntity *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100adf10 size=0x8a
+#include "CBaseEntity.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+void sub_101cf390(CBaseEntity *pEnt, const float *mins, const float *maxs);
+
+void CBaseEntity::sub_100adf10(const float *mins, const float *maxs)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseEntity::SetSize";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	sub_101cf390(this, mins, maxs);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100adfd0 size=0x84
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;

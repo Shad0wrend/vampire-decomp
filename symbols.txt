@@ -3037,6 +3037,7 @@
 0x100115c2 func   ?vfunc546@CNPC_VGargoyle@@QAEHH@Z CNPC_VGargoyle::vfunc546
 0x100115c7 func   ?sub_1021d730@@YAPAHXZ sub_1021d730
 0x100115d6 func   _item_k_skyline_haven_key item_k_skyline_haven_key
+0x100115e0 func   ?sub_100adf10@CBaseEntity@@QAEXPBM0@Z CBaseEntity::sub_100adf10
 0x10011617 func   ?sub_10085070@@YAXPAHPBH@Z sub_10085070
 0x1001164e func   ?sub_1032e9f0@CBaseCombatCharacter@@QAEXHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1032e9f0
 0x10011653 func   ?sub_10222210@CExperienceTable@@QAEXXZ CExperienceTable::sub_10222210
