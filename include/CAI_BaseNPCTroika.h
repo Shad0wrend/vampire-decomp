@@ -74,6 +74,7 @@ public:
 	bool sub_1029b180(void *pOther);	// slot 69 override: true when pOther is flagged (fields +0x94/+0xa8/+0xa0, the entity at +0x98 with flag 0x20000, bits of +0x4c), is the entity of the handle at +0x643c, else CBaseAnimating::sub_1008be20(pOther)
 	bool vfunc68(void *pOther);	// slot 68 override: like sub_1029b180, plus the checks for the entity at +0x5ddc (id 0x283c/0x283d with bits 0x14 of +0x4c), bit 1 of +0x4c and the entity of the handle at +0x1538
 	bool sub_10269d30(int condition);	// "HasConditionAndNotIgnored": false without a target (+0x5c38), else the condition (ids below 1000000000 translated through slot 580) has its bit set in both bit arrays (+0x5c5c and +0x5c74)
+	bool sub_10269df0(int condition);	// like sub_10269d30 but true when the bit is clear in the array at +0x5c5c and set in the one at +0x5c8c
 	int sub_102b8c40();	// when state 0x4c or 0x4d is set: clears the byte at +0x5b80, copies the three dwords at +0x5b9c to +0x5dd0, stamps the source file name and line 0x5f8b at +0x1b30 / +0x1b34 and returns 0x8a, else 0
 	int sub_10295590(int activity);	// slot 375 base implementation (NPC_TranslateActivity), called directly
 	void sub_1028e8b0(CBaseEntity *pEnt, int a);	// runs sub_1028e940(a) when pEnt is null-safe related to this NPC: this NPC has no slot 167 value, or pEnt is that value, or the object at pEnt+0x98 has the same slot 167 value
