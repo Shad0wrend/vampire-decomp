@@ -3833,6 +3833,7 @@
 0x1001421d func   ?vfunc5@CPushable@@UAEPAV1@I@Z CPushable::vfunc5
 0x1001422c func   ?vfunc5@CItemGLillyPhoto@@QAEPAV1@I@Z CItemGLillyPhoto::vfunc5
 0x10014259 func   ?vfunc130@CWorld@@UAEXH@Z CWorld::vfunc130
+0x10014263 func   ?vfunc319@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc319
 0x10014268 func   _logic_multicompare logic_multicompare
 0x10014272 func   ?vfunc113@CKeepUpright@@UAEXXZ CKeepUpright::vfunc113
 0x1001427c func   ?sub_1012ca50@@YA_NPAUEnt@@0@Z sub_1012ca50
