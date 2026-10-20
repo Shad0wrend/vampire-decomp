@@ -45,3 +45,32 @@ int __fastcall sub_1022c180(char *self, int, int a)
     return 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1022c680 size=0x96
+#include "CPropRadio.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+// TARGET: CPropRadio::vfunc173
+void CPropRadio::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value)
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (name == 0)
+            name = g_106b8540;
+    } else
+        name = "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CPropRadio::Use";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (*((char *)this + 0x734))
+        sub_1022c750(0);
+    else
+        sub_1022c750(1);
+    --*g_109f3680;
+}
+// END FUNCTION

@@ -993,6 +993,7 @@
 0x100065f0 func   ?sub_10403500@@YAHXZ sub_10403500
 0x1000662c func   ?sub_10406810@@YAHXZ sub_10406810
 0x10006636 func   ?sub_1024a2b0@@YA_NPAG0@Z sub_1024a2b0
+0x10006640 func   ?vfunc173@CPropRadio@@QAEXPAVCBaseEntity@@0HH@Z CPropRadio::vfunc173
 0x1000665e func   ?sub_100eb130@@YIXPAH@Z sub_100eb130
 0x10006672 func   ?sub_102cd310@CUnk102cd310@@QAEXXZ CUnk102cd310::sub_102cd310
 0x10006681 func   ?sub_10430020@@YAII@Z sub_10430020
