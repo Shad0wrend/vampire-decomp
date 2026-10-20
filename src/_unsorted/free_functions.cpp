@@ -16630,6 +16630,26 @@ void CUnknown101578b0::sub_10157910(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157ca0 size=0x6a
+#include "CRagdollPropSpecial.h"
+struct GlobalsL { char pad[0xc]; float curtime; };
+extern GlobalsL *g_1070b228;
+
+void CRagdollPropSpecial::sub_10157ca0(CBaseEntity *pOwner)
+{
+    if (*(unsigned char *)((char *)this + 0x204) & 0x10) {
+        if (pOwner)
+            *(unsigned int *)((char *)this + 0x1050) = *pOwner->vfunc1();
+        else
+            *(unsigned int *)((char *)this + 0x1050) = 0xffffffff;
+        sub_100ac4e0(&CRagdollPropSpecial::sub_10015424, 0, 0);
+        *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.001;
+        *(int *)((char *)this + 0x1fc) = 0;
+        *(int *)((char *)this + 0x200) = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158570 size=0x6a
 #include <malloc.h>
 
