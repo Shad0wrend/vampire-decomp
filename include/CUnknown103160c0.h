@@ -12,4 +12,5 @@ public:
 	int m_nMembers;	// 0x5c
 
 	CBaseEntity *sub_103160c0(int index);
+	int sub_103160a0();	// member count (called through the stub at 0x10013426)
 };
