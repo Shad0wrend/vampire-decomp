@@ -24143,6 +24143,22 @@ void UtlMem::sub_1021e180()
 void __fastcall sub_1021e1c0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x1021e230 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_1021e230()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e270 size=0x11
 void sub_1021e270(int *dst, const int *src)
 {
