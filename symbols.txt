@@ -2003,6 +2003,7 @@
 0x1000b5d7 func   ?sub_101c2a70@CUnknown101c2a90@@QAEMXZ CUnknown101c2a90::sub_101c2a70
 0x1000b5f0 func   ?vfunc4@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc4
 0x1000b5f5 func   _item_g_idol_dragon item_g_idol_dragon
+0x1000b5ff func   ?sub_1005be30@@YAXHHHHHHHHHHHHHHHHHH@Z sub_1005be30
 0x1000b627 func   _func_wall func_wall
 0x1000b672 func   ?sub_1033c9c0@@YIHPAD@Z sub_1033c9c0
 0x1000b67c func   ?sub_1020e060@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e060

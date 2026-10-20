@@ -4854,6 +4854,33 @@ void sub_1005a6a0(int a, int b, const int *pos, const int *dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005be30 size=0xb0
+#include "CTEBeamLaser.h"
+
+extern CTEBeamLaser g_106bf890;
+
+void sub_1005be30(int pFilter, int delay, int nStartEntity, int nEndEntity, int nModelIndex, int nHaloIndex, int nStartFrame, int nFrameRate, int life, int width, int endWidth, int fadeLength, int amplitude, int r, int g, int b, int a, int speed)
+{
+	g_106bf890.m_n44 = nStartEntity;
+	g_106bf890.m_n48 = nEndEntity;
+	g_106bf890.m_n0c = nModelIndex;
+	g_106bf890.m_n10 = nHaloIndex;
+	g_106bf890.m_n14 = nStartFrame;
+	g_106bf890.m_n18 = nFrameRate;
+	g_106bf890.m_n1c = life;
+	g_106bf890.m_f20 = (float)width;
+	g_106bf890.m_f24 = (float)endWidth;
+	g_106bf890.m_n28 = fadeLength;
+	g_106bf890.m_n40 = speed;
+	g_106bf890.m_f2c = (float)amplitude;
+	g_106bf890.m_n30 = r;
+	g_106bf890.m_n34 = g;
+	g_106bf890.m_n38 = b;
+	g_106bf890.m_n3c = a;
+	g_106bf890.vfunc4(pFilter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005cae0 size=0xad
 #include "CTEBeamRing.h"
 extern CTEBeamRing g_106bfd20;
