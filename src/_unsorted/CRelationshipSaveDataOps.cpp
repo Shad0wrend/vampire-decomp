@@ -27,3 +27,26 @@ bool TOps::sub_10349400(int **p)
 	return r;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10349490 size=0x58
+#include "CRelationshipSaveDataOps.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+void CRelationshipSaveDataOps::vfunc3(void *pField)
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "CRelationshipSaveDataOps::MakeEmpty";
+	g_109f3620[*g_109f3680].m_pszName = "";
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	(*g_109f3680)--;
+}
+// END FUNCTION
