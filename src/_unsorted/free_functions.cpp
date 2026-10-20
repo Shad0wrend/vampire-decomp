@@ -17177,6 +17177,25 @@ extern int g_1058d1ac;
 void sub_1018e9d0(int a, int b) { g_1058d1ac = b; }
 // END FUNCTION
 
+// FUNCTION: 0x1018ef30 size=0x43
+#include "CActivityCopyProp.h"
+void *sub_100aa720(int size);
+extern char g_1058ed74[];
+
+// TARGET: activity_copy_prop
+extern "C" CBaseEntity *activity_copy_prop()
+{
+	void *mem = sub_100aa720(0x748);
+	CActivityCopyProp *p;
+	if (mem)
+		p = ((CActivityCopyProp *)mem)->sub_1018e1c0();
+	else
+		p = 0;
+	p->vfunc106(g_1058ed74);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f700 size=0xd
 void CUnknown1018f700::sub_1018f700(char value)
 {
