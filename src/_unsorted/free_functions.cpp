@@ -44638,6 +44638,29 @@ void CNPC_VChangBros::sub_1036e400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036e820 size=0x80
+#include "CNPC_VChangBros.h"
+struct ScopeEnt { const char *name; const char *file; const char *file2; };
+extern ScopeEnt *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+bool CNPC_VChangBros::sub_1036e820()
+{
+    g_109f3620[*g_109f3680].name = "CNPC_VChangBros::ReadyForUnited";
+    g_109f3620[*g_109f3680].file = g_106b8540;
+    g_109f3620[*g_109f3680].file2 = g_106b8540;
+    ++*g_109f3680;
+    int *pSchedule = sub_1028a150();
+    if (pSchedule && (*pSchedule == 0x15a || *pSchedule == 0x15b)) {
+        --*g_109f3680;
+        return true;
+    }
+    --*g_109f3680;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036ec40 size=0x33
 void sub_1000c9b9();
 void sub_100055fb();
