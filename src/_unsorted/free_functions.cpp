@@ -32124,6 +32124,37 @@ struct CUnknown1025d820 { int a; CUnknown1025d820* sub_1025d820(); };
 CUnknown1025d820* CUnknown1025d820::sub_1025d820() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x1025d940 size=0x6f
+struct S1025 {
+	void sub_1000ce69();
+};
+extern S1025 *g_1090fbec;
+extern S1025 *g_1090fbf0;
+extern S1025 *g_1090fbf4;
+
+void sub_1025d940()
+{
+	S1025 *p = g_1090fbec;
+	if (p) {
+		p->sub_1000ce69();
+		operator delete(p);
+	}
+	p = g_1090fbf0;
+	if (p) {
+		p->sub_1000ce69();
+		operator delete(p);
+	}
+	p = g_1090fbf4;
+	if (p) {
+		p->sub_1000ce69();
+		operator delete(p);
+	}
+	g_1090fbec = 0;
+	g_1090fbf0 = 0;
+	g_1090fbf4 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025db50 size=0xb
 char __fastcall sub_1025db50(int *self)
 {
