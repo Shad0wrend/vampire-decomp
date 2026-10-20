@@ -1641,6 +1641,7 @@
 0x1000a80d func   _env_fog_controller env_fog_controller
 0x1000a821 func   ?vfunc408@CBasePlayer@@UAEXXZ CBasePlayer::vfunc408
 0x1000a830 func   ?sub_101f9690@CUnknown101f9670@@QAEXXZ CUnknown101f9670::sub_101f9690
+0x1000a83f func   ?sub_1009ef50@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1009ef50
 0x1000a844 func   ?sub_10400cb0@@YAHXZ sub_10400cb0
 0x1000a853 func   ?sub_102cc7e0@@YIXPAH@Z sub_102cc7e0
 0x1000a867 func   ?sub_102886f0@CUnknown102886f0@@QAEXH@Z CUnknown102886f0::sub_102886f0

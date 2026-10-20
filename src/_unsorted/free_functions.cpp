@@ -8220,6 +8220,66 @@ void CBaseEntity::sub_1009ee80(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009ef50 size=0x165
+#include "CBaseEntity.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+#define SL5(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4();
+#define SL10(p) SL5(p##a) SL5(p##b)
+struct NetL {
+    virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
+    virtual CBaseEntity *v4();
+};
+struct EdictL {
+    char pad[0x40];
+    NetL *m_pNet;
+};
+struct EngineL {
+    SL10(e0) SL10(e1) SL10(e2) SL5(e3) virtual void e35(); virtual void e36(); virtual void e37();
+    virtual EdictL *v38(int index);
+};
+extern EngineL *g_1070b22c;
+
+inline CBaseEntity *InstanceOf(EdictL *e)
+{
+    ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+    if (!e)
+        e = g_1070b22c->v38(0);
+    return (e && e->m_pNet) ? e->m_pNet->v4() : 0;
+}
+
+inline CBaseEntity *InstanceOf(int index)
+{
+    ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+    return InstanceOf(g_1070b22c->v38(index));
+}
+
+void CBaseEntity::sub_1009ef50(int index)
+{
+    const char *ent;
+    if (this) {
+        ent = m_name26c;
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseEntity::SetAimEntByIndex", ent, g_106b8540);
+    sub_1009ee80(InstanceOf(index));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f200 size=0x85
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
