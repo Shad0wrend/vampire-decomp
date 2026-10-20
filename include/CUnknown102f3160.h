@@ -3,25 +3,37 @@
 
 extern void (*g_109f3624)(void *);	// Plat_Free
 
-struct CPurgeVec
+struct CPurgeMemory
 {
 	int *m_pMemory;
 	int m_allocationCount;
 	int m_growSize;
-	int m_size;
-	int *m_pElements;
 
-	void Purge(void (*pfnFree)(void *))
+	void Purge()
 	{
 		if (m_growSize != -1)
 		{
 			if (m_pMemory)
 			{
-				pfnFree(m_pMemory);
+				g_109f3624(m_pMemory);
 				m_pMemory = 0;
 			}
 			m_allocationCount = 0;
 		}
+	}
+};
+
+struct CPurgeVec
+{
+	CPurgeMemory m_Memory;
+	int m_size;
+	int *m_pElements;
+
+	void PurgeAll()
+	{
+		m_size = 0;
+		m_Memory.Purge();
+		m_pElements = m_Memory.m_pMemory;
 	}
 };
 
