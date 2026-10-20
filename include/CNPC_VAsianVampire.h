@@ -50,4 +50,6 @@ public:
 	void sub_100054bb(int code);	// CAI_BaseNPCTroika::vfunc448, called directly
 	int vfunc440(int schedule);	// slot 440 "CNPC_VAsianVampire::TranslateSchedule": scope trace, schedules 0xe5 / 0xe6 become GetJumpSchedule(), everything else goes to CNPC_VHuman::vfunc440
 	int sub_10005e20(int schedule);	// CNPC_VHuman::vfunc440, called directly
+	void vfunc420();	// slot 420 "CNPC_VAsianVampire::NPCInit": scope trace, the CNPC_VVampireBoss init, stores the current origin (slot 217) in both stored hint positions and in the stationary position (+0x66dc), clears the ring index (+0x66d0), +0x5ddc and the flag byte +0x66d4, stamps the tick at +0x66d8, sets the byte +0x66e8 and the float at +0x64b8
+	void sub_10013e85();	// CNPC_VVampireBoss::vfunc420, called directly
 };
