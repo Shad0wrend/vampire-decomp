@@ -47660,6 +47660,37 @@ int CBaseCombatCharacter::sub_10337a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10337e40 size=0xbe
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+char CBaseCombatCharacter::sub_10337e40()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::IsKine";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (vfunc70()) {
+		(*g_109f3680)--;
+		return 0;
+	}
+	if (sub_10337f30()) {
+		(*g_109f3680)--;
+		return 0;
+	}
+	if (*(int *)((char *)this + 0xac)) {
+		(*g_109f3680)--;
+		return 0;
+	}
+	(*g_109f3680)--;
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10337f30 size=0x86
 #include "CStatDefault3List.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
