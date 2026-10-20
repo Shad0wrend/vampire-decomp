@@ -39964,6 +39964,25 @@ void CUnknown103a1320::sub_103a1320(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a13f0 size=0x43
+#include "CNPC_VNosferatu.h"
+void *sub_100aa720(int size);
+extern char g_1064ad1c[];
+
+// TARGET: npc_VNosferatu
+extern "C" CBaseEntity *npc_VNosferatu()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VNosferatu *p;
+	if (mem)
+		p = ((CNPC_VNosferatu *)mem)->sub_103a1460();
+	else
+		p = 0;
+	p->vfunc106(g_1064ad1c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1590 size=0x33
 void sub_10007897();
 void sub_10010131();
