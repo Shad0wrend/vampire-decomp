@@ -11,6 +11,7 @@ public:
 	void vfunc619(int arg);
 	void sub_1000c27a(int arg);
 	void vfunc103();	// "CNPC_VChangBros::Spawn": scope trace around the base spawn
+	virtual void vfunc104();	// "CNPC_VChangBros::Precache": scope trace (no entity name), base precache, 7 particle emitters, 4 weapon items
 	void vfunc431();	// "CNPC_VChangBros::NPCThink": scope trace around the base think, then schedules the next think
 	int vfunc461();	// "CNPC_VChangBros::SelectIdealState": scope trace, sets the ideal state (+0x1b38) to 10, then the base implementation
 	void vfunc448(int code);	// "CNPC_VChangBros::TaskFail": scope trace, a failure code in 12..15 stores 0x15d at +0x5c54, then the base implementation
