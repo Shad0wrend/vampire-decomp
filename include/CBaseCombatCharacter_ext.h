@@ -37,3 +37,4 @@
 	void sub_1033d640(inputdata_t *data);	// "CBaseCombatCharacter::InputHumanityAdd": scope trace (entity name), then the free function sub_1022dc30(this, integer value or 0)
 	void vfunc305();	// slot 305 "CBaseCombatCharacter::RemoveBaseFightingItems": scope trace (entity name), when bit 4 of the misc flags (sub_1033c9c0) is set gives the "item_w_fists" weapon (sub_100118d8) and removes the flag
 	void sub_10324430(int activity);	// slot 310 "CBaseCombatCharacter::SetActivity": scope trace (entity name), when the activity differs from the one at +0xfec notifies the global at 0x1073dd58 (sub_101f6010(this, new, old)), then stores it at +0xfec
+	int sub_10334790(const char *pszAmmoName);	// "CBaseCombatCharacter::GetAmmoCount" (by name): scope trace (entity name), GetAmmoCount(ammo definitions' index of the name)
