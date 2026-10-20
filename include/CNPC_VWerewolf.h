@@ -44,6 +44,12 @@ struct CNPC_VWerewolfHelper5d34
 	int sub_10004e58(const CNPC_VWerewolfVec3 *pA, const CNPC_VWerewolfVec3 *pB);
 };
 
+// The hint object at +0x66b0 (class not known yet).
+struct CNPC_VWerewolfHint66b0
+{
+	void sub_102d1420(float delay);	// stub 0x10013d68: clears the dword at +0x5e0 to -1 and stores delay + curtime at +0x5ec
+};
+
 class CNPC_VWerewolf
 {
 public:
@@ -55,6 +61,8 @@ public:
 	CNPC_VWerewolfHelper5d34 *m_pHelper5d34;	// 0x5d34
 	char pad5d38[0x665c - 0x5d38];
 	CNPC_VWerewolfTimerVec m_Timers;	// 0x665c
+	char pad6670[0x66b0 - 0x6670];
+	CNPC_VWerewolfHint66b0 *m_pHint66b0;	// 0x66b0
 
 	int sub_10366490(int key);
 	bool sub_10366400(int key);
@@ -78,4 +86,5 @@ public:
 	void sub_10003648();	// as in CPhysForce (transplant)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	int sub_103d0db0(CNPC_VWerewolfVec3 a, CNPC_VWerewolfVec3 b);	// scope trace (entity name) "CNPC_VWerewolf::HasPath", forwards both vectors to the helper object at +0x5d34 and returns its result
+	void sub_103d4760();	// "CNPC_VWerewolf::ClearTeleportHint": scope trace (entity name), when the hint object at +0x66b0 is set calls its sub_102d1420(0), then clears the pointer
 };
