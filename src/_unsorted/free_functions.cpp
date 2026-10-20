@@ -46861,6 +46861,66 @@ short __fastcall sub_10323a70(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10324080 size=0xc1
+#include "CBaseCombatCharacter.h"
+extern char g_106b8540[];
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+
+struct CLootRecord	// entry of the global loot list (id at +0x1c, name at +0xc)
+{
+    int m_pad00[3];
+    const char *m_pszName;	// 0x0c
+    int m_pad10[3];
+    int m_nId;	// 0x1c
+    int m_pad20[3];
+
+    CLootRecord *sub_10206400(int id);	// constructor (stub 0x1000aa9c)
+};
+void __cdecl sub_10014574();	// the destroy stub the game hands to atexit
+
+extern int g_1074f018;
+extern CLootRecord **g_1074f01c;
+extern unsigned char g_109f07b1;	// guard byte of the static default record
+extern CLootRecord g_109f07e0;	// the static default record
+
+void __fastcall sub_10324080(CBaseCombatCharacter *self)
+{
+    int i = 0;
+    if (g_1074f018 <= 0) {
+        *(int *)((char *)self + 0xe30) = -1;
+        return;
+    }
+    do {
+        const char *pszMine = self->m_name26c ? self->m_name26c : g_106b8540;
+        CLootRecord *pRec;
+        int j = 0;
+        if (g_1074f018 > 0) {
+            do {
+                if (g_1074f01c[j]->m_nId == i) {
+                    pRec = g_1074f01c[j];
+                    goto found;
+                }
+                j++;
+            } while (j < g_1074f018);
+        }
+        if (!(g_109f07b1 & 1)) {
+            g_109f07b1 |= 1;
+            g_109f07e0.sub_10206400(-1);
+            atexit(sub_10014574);
+        }
+        pRec = &g_109f07e0;
+found:
+        if (_strcmpi(pRec->m_pszName ? pRec->m_pszName : g_106b8540, pszMine) == 0) {
+            *(int *)((char *)self + 0xe30) = i;
+            return;
+        }
+        i++;
+    } while (i < g_1074f018);
+    *(int *)((char *)self + 0xe30) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10324500 size=0x7e
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
