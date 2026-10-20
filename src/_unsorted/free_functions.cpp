@@ -43652,6 +43652,77 @@ void __fastcall sub_102696f0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026a0f0 size=0x143
+#include "CAI_BaseNPC.h"
+#include "ScopeTrace.h"
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+struct CNpcCondBits	// six dwords
+{
+	int m_d[6];
+
+	CNpcCondBits()
+	{
+		for (int i = 0; i < 6; i++)
+			m_d[i] = 0;
+	}
+};
+
+struct CNpcCondSource	// the record the interrupt conditions are cached from
+{
+	CNpcCondBits m_bitsA;	// 0x00
+	int m_pad18[4];
+	CNpcCondBits m_bitsC;	// 0x28
+};
+
+struct CNpcGlobals
+{
+	char m_pad[0xc];
+	float m_flCurTime;
+};
+
+extern CNpcGlobals *g_1070b228;
+
+struct CAI_BaseNPCUnit : CAI_BaseNPC
+{
+	void sub_1026a0f0();
+	void sub_10269eb0(int condition);	// stub 0x100123f5
+};
+
+// TARGET: CAI_BaseNPCUnit::sub_1026a0f0
+void CAI_BaseNPCUnit::sub_1026a0f0()
+{
+	char *pThis = (char *)this;
+	ScopeTrace trace("CAI_BaseNPC::CacheInterruptConditions", this ? (*(const char **)(pThis + 0x26c) ? *(const char **)(pThis + 0x26c) : g_106b8540) : g_105387dc);
+	CNpcCondSource *pSource = *(CNpcCondSource **)(pThis + 0x5c38);
+	*(float *)(pThis + 0x1b24) = g_1070b228->m_flCurTime;
+	if (!pSource)
+	{
+		new ((CNpcCondBits *)(pThis + 0x5c74)) CNpcCondBits;
+		new ((CNpcCondBits *)(pThis + 0x5c8c)) CNpcCondBits;
+		return;
+	}
+	CNpcCondBits *pA = (CNpcCondBits *)(pThis + 0x5c74);
+	CNpcCondBits *pB = (CNpcCondBits *)(pThis + 0x5c8c);
+	pA->m_d[0] = pSource->m_bitsC.m_d[0];
+	pA->m_d[1] = pSource->m_bitsC.m_d[1];
+	pA->m_d[2] = pSource->m_bitsC.m_d[2];
+	pA->m_d[3] = pSource->m_bitsC.m_d[3];
+	pA->m_d[4] = pSource->m_bitsC.m_d[4];
+	pA->m_d[5] = pSource->m_bitsC.m_d[5];
+	pB->m_d[0] = pSource->m_bitsA.m_d[0];
+	pB->m_d[1] = pSource->m_bitsA.m_d[1];
+	pB->m_d[2] = pSource->m_bitsA.m_d[2];
+	pB->m_d[3] = pSource->m_bitsA.m_d[3];
+	pB->m_d[4] = pSource->m_bitsA.m_d[4];
+	pB->m_d[5] = pSource->m_bitsA.m_d[5];
+	vfunc453();
+	vfunc411();
+	sub_10269eb0(0x75);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026d0c0 size=0x43
 struct Helper { void sub_1000a8a8(void*); };
 // TARGET: sub_1026d0c0
