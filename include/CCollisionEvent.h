@@ -27,6 +27,7 @@ public:
 	void sub_1002f900(CBaseEntity *pA, CBaseEntity *pB);	// "CCollisionEvent::FindOrAddPenetrateEvent": scope trace, searches the 20 byte records of m_penetrateEvents from the back for the pair of entity handles, appending (handles, curtime, 0) when absent; then stores curtime in the record's +0xc
 	void sub_10031520();	// "CCollisionEvent::LevelShutdown": scope trace, releases every used friction entry
 	void sub_10012544(CFrictionEntry_t *pEntry);	// releases a friction entry (stub of 0x100307f0)
+	void sub_100307f0(CFrictionEntry_t *pEntry);	// "CCollisionEvent::ShutdownFriction": scope trace, destroys the friction snapshot (slot 9 of the physics interface at 0x1072c474) and clears the entry's value and key
 
 	char m_pad0004[4];
 	CFrictionEntry_t m_friction[8];	// 0x0008
