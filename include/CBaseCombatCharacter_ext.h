@@ -23,4 +23,4 @@
 	void sub_103327f0(float amount);	// "CBaseCombatCharacter::EndSlowEntity": scope trace (entity name), lowers the float at +0x10a8 by amount, then SubBase(0x1a, (int)amount) on the first stat list with a zero field at +0x10 (default list when none)
 	void sub_10332aa0(int classId, int disposition, int priority);	// "CBaseCombatCharacter::AddClassRelationship": scope trace (entity name), finds the relationship record (0x14 bytes, pointer table at +0x1598, used count +0x15a0, capacity +0x159c) with this class (+4) and updates disposition (+8) and priority (+0xc), else expands the table when full and appends a new record (handle -1, class, disposition, priority, 0)
 	bool sub_101671a0();	// true when sub_10146a80() holds; or when the entity behind the handle at +0x1538 resolves, the dword at +0x153c is not -1 and the dword at +0x1540 is 3; or when bit 1 of GetFlags() is set and sub_101672d0() is false
-	char sub_101672d0();
+	bool sub_101672d0();
