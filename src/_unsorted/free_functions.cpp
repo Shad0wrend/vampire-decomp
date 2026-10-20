@@ -1001,6 +1001,27 @@ bool sub_10031c70(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032660 size=0x8f
+#include "CCollisionEvent.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern CCollisionEvent g_106b86d8;
+
+void sub_10032660(void *a1, void *a2, int *p, int sel)
+{
+    g_109f3620[*g_109f3680].a = "PhysCallbackDamage";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    int idx = (sel == 0);
+    int *q = p + idx * 3;
+    g_106b86d8.sub_10031070((int)a1, a2, p[idx], 1, q + 8, q + 20);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032880 size=0xc9
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
