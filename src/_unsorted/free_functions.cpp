@@ -32601,6 +32601,47 @@ void CBitfieldSet::sub_101da9b0(unsigned int bit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101daa10 size=0x89
+#include "CUnknown101daec0.h"
+#include "CStatDefault3List.h"
+#include "CUnknown101da960.h"
+extern CStatDefault3List g_10738d10;
+extern const char *g_105a1bdc[];
+struct CListX { int sub_101d5bd0(const char *pszName); };
+namespace block_101da960 {
+    struct CUnknown101da960Unit : CUnknown101da960 { const char *sub_101da960(int index); };
+    const char *CUnknown101da960Unit::sub_101da960(int index) { return g_105a1bdc[index]; }
+}
+using namespace block_101da960;
+struct CAffectsUnit {
+    unsigned int m_bits;	// 0x00
+    int m_n04;
+    int m_n08;
+    void sub_101da9b0(int index);
+    char sub_101daa10(IKVNodeView *pKV);
+};
+
+// TARGET: CAffectsUnit::sub_101daa10
+char CAffectsUnit::sub_101daa10(IKVNodeView *pKV)
+{
+    if (pKV) {
+        IKVNodeView *p = pKV->vfunc2("Affects_Filters");
+        if (p) {
+            for (int i = 0; i < 15; i++) {
+                if (p->vfunc12(((CUnknown101da960Unit *)this)->sub_101da960(i), 0))
+                    sub_101da9b0(i);
+            }
+            const char *s = p->vfunc13("CharTemplate", g_106b8540);
+            if (*s)
+                m_n04 = ((CListX *)&g_10738d10)->sub_101d5bd0(s);
+            m_n08 = p->vfunc10("DisciplineStrata", m_n08);
+        }
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dadd0 size=0x80
 #include "CUnknown101da960.h"
 
