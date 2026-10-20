@@ -18,4 +18,5 @@ public:
 	void vfunc463(int a, int type);	// slot 463 "SetIdealActivityForType"-like: types 1 / 2 / 3 / 0xb tell the active weapon (slot 66 / 67) before the base implementation
 	void sub_10011234(int a, int type);	// CNPC_VHuman::vfunc463 (stub 0x10011234), called directly
 	CNPC_VHumanCombatantWeapon *sub_1032e7b0();	// the active weapon (stub 0x10007e19), 0 when none
+	int vfunc438();	// slot 438 (select schedule), called directly as the base implementation (stub 0x1000b10e) by CNPC_VGhoulCroucher::vfunc438
 };
