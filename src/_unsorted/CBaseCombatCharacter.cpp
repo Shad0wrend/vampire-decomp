@@ -1731,6 +1731,34 @@ bool CBaseCombatCharacter::vfunc73(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103407b0 size=0xec
+#include "CBaseCombatCharacter.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+
+struct CGlobalVars1070b228
+{
+	int m_pad0;
+	int m_n4;
+	int m_pad8;
+	float m_curtime;
+};
+
+extern CGlobalVars1070b228 *g_1070b228;
+extern CUnknown1070b22c *g_1070b22c;
+
+char CBaseCombatCharacter::vfunc86(int a, int b, int c, int d, int e)
+{
+	ScopeTrace t("CBaseCombatCharacter::ShouldTransmit", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (m_flForceTransmitTime > g_1070b228->m_curtime)
+		return 1;
+	int idx = g_1070b22c->vfunc35(b) - 1;
+	if (*((char *)this + 0x14e4 + idx))
+		return 1;
+	return sub_100ab020(a, b, c, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103408e0 size=0x89
 #include "CBaseCombatCharacter.h"
 
