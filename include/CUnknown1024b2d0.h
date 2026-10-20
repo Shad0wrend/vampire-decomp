@@ -1,6 +1,11 @@
 // CUnknown1024b2d0: array-like object (callback at +0, 12-byte element buffer at +4); real name not yet known.
 #pragma once
 
+struct CUnknown1024b2d0Id	// a 16 bit string id passed by value (like CUtlSymbol)
+{
+	unsigned short m_id;
+};
+
 class CUnknown1024b2d0
 {
 public:
@@ -20,5 +25,5 @@ public:
 
 	CUnknown1024b2d0 *sub_1024b2d0(int arg, int count, char flag);
 	void sub_1024b880();	// removes all elements (stub 0x10010785)
-	const char *sub_1024b830(unsigned short id);	// the string of the 12 byte element id (empty string for 0xffff); called through the stub at 0x10002202
+	const char *sub_1024b830(CUnknown1024b2d0Id id);	// the string of the 12 byte element id (empty string for 0xffff); called through the stub at 0x10002202
 };
