@@ -36,6 +36,33 @@ void CBaseFlex::sub_100b5ce0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5d80 size=0xa7
+#include "CBaseFlex.h"
+#include <string.h>
+
+void CBaseFlex::vfunc285(int nKey)
+{
+	if (!nKey) {
+		m_nItems = 0;
+		return;
+	}
+	for (int i = 0; i < m_nItems; i++) {
+		CBaseFlexItem *pItem = &m_pItems[i];
+		if (pItem->m_n04 == nKey) {
+			pItem->m_pObject->sub_100029c8();
+			pItem->m_pObject = 0;
+			pItem->m_n04 = 0;
+			pItem->m_b08 = 0;
+			int nMove = m_nItems - i - 1;
+			if (nMove > 0)
+				memmove(&m_pItems[i], &m_pItems[i + 1], nMove * sizeof(CBaseFlexItem));
+			m_nItems--;
+			i--;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6180 size=0x94
 #include "CBaseFlex.h"
 
