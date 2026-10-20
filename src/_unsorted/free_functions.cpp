@@ -37688,6 +37688,40 @@ void CUnknown102f7970::sub_102f7970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f7c00 size=0x72
+struct CUnk102f7c00State {
+    char pad[8];
+    unsigned int m_flags;
+    void sub_10014a8d();
+};
+struct CUnk102f7c00Owner {
+    char pad[0x454];
+    CUnk102f7c00State *m_pState;
+};
+extern CUnk102f7c00Owner *g_10934088;
+
+unsigned int sub_102f7c00(int unused, unsigned int mask, char cycle)
+{
+    CUnk102f7c00State *s = g_10934088->m_pState;
+    if ((mask & 1) && cycle) {
+        if (s->m_flags & 2) {
+            s->m_flags &= 0xfffffffc;
+        } else if (s->m_flags & 1) {
+            s->m_flags |= 2;
+        } else {
+            s->m_flags |= 1;
+            s->sub_10014a8d();
+        }
+        return s->m_flags & mask;
+    }
+    if (s->m_flags & mask)
+        s->m_flags &= ~mask;
+    else
+        s->m_flags |= mask;
+    return s->m_flags & mask;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f8ef0 size=0x8
 void __fastcall sub_102f8ef0(int *p)
 {
