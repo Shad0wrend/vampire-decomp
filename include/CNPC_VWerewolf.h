@@ -106,4 +106,5 @@ public:
 	void sub_103cc9b0();	// slot 304 "CNPC_VWerewolf::GiveBaseFightingItems": scope trace (entity name), when the character does not own "item_w_werewolf_attacks" gives it (sub_1021fe50(this, name, 0)) and sets misc flag bit 4
 	CNPC_VWerewolfVec3 sub_103d9c90();	// returns the cached vector (+0x6674), recomputed through sub_102c3b50 from the target entity (slot 167) when the engine tick (global 0x1070b22c, slot 120) changed
 	void sub_102c3b50(CBaseEntity *pTarget, CNPC_VWerewolfVec3 v, CNPC_VWerewolfVec3 *pCache, int *pLocal);	// called through the stub at 0x100041d3
+	bool sub_103d8550(void *pHint);	// "CNPC_VWerewolf::IsValidBreakHint": scope trace (entity name), false for no hint or a hint that sub_102d14c0 rejects, else true when the hint type at +0x5dc is 0x3aa3
 };
