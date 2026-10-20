@@ -33,6 +33,9 @@ public:
 
 	void vfunc47();	// slot 47: stores the engine time (slot 119 of the global at 0x1070b22c) at +0x4d4, the entity's handle at +0x4d8 and 1 at +0x4dc, sets up the member at +0x480, then SetNextThink(engine time) and ThinkSet(0x10014d58)
 
+	char sub_100cc430(float *a, float *b, float *c, float *d, float *e, float *f, int g, int h);	// worker run on the two timers (stub 0x100157b2); true when it changed something
+	void sub_100cc360();	// runs the worker on the timer at +0x4d4 (arguments +0x4d4, +0x4d8, +0x4dc, +0x4e0, +0x4f0, +0x4ec, 0, 0) and on the one at +0x4bc (+0x4bc, +0x4c0, +0x4c4, +0x4c8, a zeroed local twice, 1, 0); when either returns true SetNextThink(engine time)
+
 	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
 	void sub_100ac610(float time, const char *szContext);	// CBaseEntity::SetNextThink (stub 0x1000326f)
 
