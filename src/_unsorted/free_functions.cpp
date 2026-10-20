@@ -55948,6 +55948,35 @@ void CNPC_VWerewolf::sub_103d6280(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d6650 size=0xd3
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+
+extern CNPC_VWerewolfVec3 g_1070d1b0;
+
+#define SL1(n) virtual void s##n();
+#define SL10(p) SL1(p##0) SL1(p##1) SL1(p##2) SL1(p##3) SL1(p##4) SL1(p##5) SL1(p##6) SL1(p##7) SL1(p##8) SL1(p##9)
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+class CHintEntitySlots217
+{
+public:
+	SL100(0) SL100(1) SL10(20)
+	SL1(210) SL1(211) SL1(212) SL1(213) SL1(214) SL1(215) SL1(216)
+	virtual CNPC_VWerewolfVec3 *slot217();
+};
+
+// TARGET: CNPC_VWerewolf::sub_103d6650
+CNPC_VWerewolfVec3 CNPC_VWerewolf::sub_103d6650(void *pHint)
+{
+	ScopeTrace trace("CNPC_VWerewolf::GetHintEndpoint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!pHint)
+		return g_1070d1b0;
+	CHintEntitySlots217 *pEnt = (CHintEntitySlots217 *)sub_103d6390(pHint);
+	return *pEnt->slot217();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d7620 size=0xb6
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
