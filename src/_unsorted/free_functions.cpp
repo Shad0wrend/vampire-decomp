@@ -54417,6 +54417,25 @@ char CBaseCombatCharacter::sub_10337300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103377a0 size=0x87
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CStatDefault3List.h"
+extern CStatDefault3List g_10738d10;
+struct SD3X { int sub_101d4d80(); };
+struct CBCCUnit : CBaseCombatCharacter {
+    int sub_10337860();
+    int sub_103377a0();
+};
+
+// TARGET: CBCCUnit::sub_103377a0
+int CBCCUnit::sub_103377a0()
+{
+    ScopeTrace trace("CBaseCombatCharacter::Clan", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    return ((SD3X *)g_10738d10.sub_101d5e80(sub_10337860()))->sub_101d4d80();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10337860 size=0xde
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
