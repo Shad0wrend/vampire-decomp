@@ -6,7 +6,7 @@ class CTraceFilterNav
 public:
 	CTraceFilterNav *sub_102e30d0(int a, int b);	// constructor body: base constructor, vtable, the two fields; returns this
 
-	int m_08;
+	int m_pad0000[3];	// 0x00: vtable pointer and the base's fields
 	int m_0c;	// 0x0c: second constructor argument
 	int m_10;	// 0x10: first constructor argument
 };
