@@ -8010,6 +8010,55 @@ int CBaseAnimating::sub_10096760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097110 size=0xb2
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+struct PhysBone_t
+{
+	char pad[0x94];
+	int m_nValue;
+	char pad2[0xa0 - 0x98];
+};
+
+struct StudioHdr_t
+{
+	char pad[0xf0];
+	int m_nCount;
+	PhysBone_t *m_pBones;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+int CBaseAnimating::sub_10097110(int index)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseAnimating::GetPhysicsBone";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	StudioHdr_t *hdr = (StudioHdr_t *)sub_100952d0(-1);
+	if (hdr && index >= 0 && index < hdr->m_nCount) {
+		int r = *(int *)((char *)hdr + (int)hdr->m_pBones + index * 0xa0 + 0x94);
+		(*g_109f3680)--;
+		return r;
+	}
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100976e0 size=0xca
 #include "CBaseAnimating.h"
 
