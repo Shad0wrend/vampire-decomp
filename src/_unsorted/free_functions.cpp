@@ -40237,6 +40237,87 @@ void sub_102464b0(int a, int b, int *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247280 size=0x10b
+void sub_102473e0();
+extern char g_10753641;
+extern char g_10753440[];
+extern char g_10753540[];
+
+char *sub_10247280(char *data, char *token, char *quoted)
+{
+    int c;
+    int len;
+    char *brk;
+    if (quoted)
+        *quoted = 0;
+    if (!data)
+        return 0;
+    sub_102473e0();
+    brk = g_10753440;
+    if (!g_10753641)
+        brk = g_10753540;
+    len = 0;
+    token[0] = 0;
+skip:
+    c = *data;
+    while (c <= 32) {
+        if (c == 0)
+            return 0;
+        c = *++data;
+    }
+    if (c == '/') {
+        if (data[1] == '/') {
+            while (*data && *data != '\n')
+                data++;
+        } else if (data[1] == '*') {
+            data += 2;
+            while (*data) {
+                if (*data == '*' && data[1] == '/') {
+                    data += 2;
+                    break;
+                }
+                data++;
+            }
+        } else
+            goto single;
+        goto skip;
+    }
+    if (c == '"') {
+        if (quoted)
+            *quoted = 1;
+        data++;
+        for (;;) {
+            c = *data++;
+            if (c == '\\') {
+                if (*data == '"') {
+                    c = '"';
+                    data++;
+                }
+            } else if (c == '"' || c == 0)
+                break;
+            token[len++] = c;
+        }
+        token[len] = 0;
+        return data;
+    }
+single:
+    if (brk[c]) {
+        token[0] = c;
+        token[1] = 0;
+        return data + 1;
+    }
+    do {
+        data++;
+        token[len++] = c;
+        c = *data;
+        if (brk[c])
+            break;
+    } while (c > 32);
+    token[len] = 0;
+    return data;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247450 size=0x98
 extern "C" __declspec(dllimport) int RandomInt(int, int);
 extern char g_105c4f00[];
