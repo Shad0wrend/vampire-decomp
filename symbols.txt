@@ -3324,6 +3324,7 @@
 0x1001286e func   ?sub_103cca80@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cca80
 0x10012882 func   ?sub_101854b0@CUtlVector72@@QAEXH@Z CUtlVector72::sub_101854b0
 0x10012887 func   ?sub_100b39c0@@YIHPAD@Z sub_100b39c0
+0x100128aa func   ?sub_1033d700@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d700
 0x100128cd func   ?sub_1009d6a0@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d6a0
 0x100128f0 func   ?vfunc5@CNPC_VMalkavian@@QAEPAV1@I@Z CNPC_VMalkavian::vfunc5
 0x100128fa func   ?sub_101f1be0@CUnknown10227c90@@QAEXH@Z CUnknown10227c90::sub_101f1be0

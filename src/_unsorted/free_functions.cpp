@@ -45578,6 +45578,34 @@ void CBaseCombatCharacter::sub_1033d640(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d700 size=0x9a
+#include "inputdata_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+// TARGET: CBaseCombatCharacter::sub_1033d700
+void CBaseCombatCharacter::sub_1033d700(inputdata_t *data)
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (name == 0)
+            name = g_106b8540;
+    } else
+        name = "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::InputBloodloss";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    int n = (data->value.fieldType == 4) ? data->value.iValue : 0;
+    for (int i = 0; i < n; i++)
+        sub_10338df0(1);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d7d0 size=0x98
 #include "CUnknown1033d7d0.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
