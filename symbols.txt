@@ -1388,6 +1388,7 @@
 0x10007c57 func   ?vfunc144@CBreakableProp@@QAEXPAX@Z CBreakableProp::vfunc144
 0x10007c5c func   _light_glspot light_glspot
 0x10007c84 func   ?vfunc5@CSimplePhysicsBrush@@UAEPAV1@I@Z CSimplePhysicsBrush::vfunc5
+0x10007c89 func   ?sub_102df210@@YG_NPAPAH@Z sub_102df210
 0x10007c8e func   ?vfunc600@CNPC_VTzimisceRunner@@QAE_NPAX@Z CNPC_VTzimisceRunner::vfunc600
 0x10007ca7 func   ?sub_101c1b60@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1b60
 0x10007cde func   _player player
