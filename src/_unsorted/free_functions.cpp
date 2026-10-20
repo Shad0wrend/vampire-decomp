@@ -40494,6 +40494,25 @@ char sub_103b30c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b3a70 size=0x43
+#include "CNPC_VTest.h"
+void *sub_100aa720(int size);
+extern char g_106523fc[];
+
+// TARGET: npc_VTest
+extern "C" CBaseEntity *npc_VTest()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VTest *p;
+	if (mem)
+		p = ((CNPC_VTest *)mem)->sub_103b3ae0();
+	else
+		p = 0;
+	p->vfunc106(g_106523fc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3c10 size=0x33
 void sub_10007897();
 void sub_10013cf0();
