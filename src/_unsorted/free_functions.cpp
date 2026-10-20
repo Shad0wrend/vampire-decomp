@@ -15955,6 +15955,22 @@ void CUtlVector52::sub_10185310(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10185450 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_10185450()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10185490 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_10185490(); };
 void CUtlVectorBase::sub_10185490() { m_Size = 0; }

@@ -2650,6 +2650,7 @@
 0x1001144b func   ?vfunc5@CStripWeapons@@QAEPAV1@I@Z CStripWeapons::vfunc5
 0x10011450 func   ?sub_100602e0@@YAXHHPBH0HHHH@Z sub_100602e0
 0x100114aa func   ?sub_102e7e40@@YIXPAUCOwner@@@Z sub_102e7e40
+0x100114b9 func   ?sub_10185450@UtlMem@@QAEXXZ UtlMem::sub_10185450
 0x100114d2 func   ?vfunc337@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc337
 0x100114dc func   ?vfunc5@CEnvLight@@QAEPAV1@I@Z CEnvLight::vfunc5
 0x100114e6 func   ?sub_100ae450@@YAXXZ sub_100ae450
