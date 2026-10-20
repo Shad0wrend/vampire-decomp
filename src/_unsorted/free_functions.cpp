@@ -56744,6 +56744,43 @@ void CNPC_VVampireBoss::sub_103c6f40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c7010 size=0xf1
+#include "CNPC_VVampireBoss.h"
+#include "ScopeTrace.h"
+
+#define S(n) virtual void n();
+#define S10(p) S(p##0) S(p##1) S(p##2) S(p##3) S(p##4) S(p##5) S(p##6) S(p##7) S(p##8) S(p##9)
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct EmitterSlots
+{
+	S100(a) S100(b) S10(c0) S10(c1) S10(c2) S10(c3)
+	S(d0) S(d1) S(d2)
+	virtual void slot243(void *pOwner, int mode, const char *attachment);
+};
+
+extern char g_1070d1b0[];
+extern char g_1070d9d0[];
+EmitterSlots *sub_100fbc90(const char *pszName, char *a, char *b, float f);
+
+CBaseEntity *CNPC_VVampireBoss::sub_103c7010(int index, const char *attachment)
+{
+	ScopeTrace t("CNPC_VVampireBoss::SpawnBodyEmitter", g_106b8540);
+	if (attachment == 0)
+		return 0;
+	if (m_pBodyEmitterNames[index] == 0)
+		return 0;
+	EmitterSlots *pEmitter = sub_100fbc90(m_pBodyEmitterNames[index], g_1070d1b0, g_1070d9d0, -1.0f);
+	if (pEmitter) {
+		if (index == 3)
+			pEmitter->slot243(this, 1, attachment);
+		else
+			pEmitter->slot243(this, 2, attachment);
+	}
+	return (CBaseEntity *)pEmitter;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c7150 size=0xaa
 #include "CNPC_VVampireBoss.h"
 #include "CGlobalEntityList.h"
