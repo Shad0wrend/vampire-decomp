@@ -172,6 +172,7 @@
 0x10001d43 func   _npc_VZombie npc_VZombie
 0x10001d61 func   ?sub_10201980@CVStatList_t@@QAEHXZ CVStatList_t::sub_10201980
 0x10001d6b func   ?vfunc335@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc335
+0x10001d70 func   ?sub_1039e800@CTentacleUnit@@QAEXH@Z CTentacleUnit::sub_1039e800
 0x10001d7f func   ?sub_1007f540@UtlMem@@QAEXXZ UtlMem::sub_1007f540
 0x10001d98 func   ?sub_102ee270@CUnknown102ee270@@QAEDXZ CUnknown102ee270::sub_102ee270
 0x10001d9d func   ?sub_103f4bf0@@YAHXZ sub_103f4bf0

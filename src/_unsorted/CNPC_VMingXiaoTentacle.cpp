@@ -36,3 +36,25 @@ int CNPC_VMingXiaoTentacle::vfunc437()
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1039e800 size=0x1d
+#include "CNPC_VMingXiaoTentacle.h"
+
+struct CBasePlayerCall
+{
+    void *sub_1039ede0();
+    void sub_10001a78(CNPC_VMingXiaoTentacle *pSelf, int arg);
+};
+
+struct CTentacleUnit : CNPC_VMingXiaoTentacle
+{
+    void sub_1039e800(int arg);
+};
+
+void CTentacleUnit::sub_1039e800(int arg)
+{
+    void *pPlayer = ((CBasePlayerCall *)this)->sub_1039ede0();
+    if (pPlayer)
+        ((CBasePlayerCall *)pPlayer)->sub_10001a78(this, arg);
+}
+// END FUNCTION
