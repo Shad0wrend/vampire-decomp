@@ -122,6 +122,51 @@ int CNPC_VSabbatLeader::sub_103a7390(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a7450 size=0x113
+#include "CNPC_VSabbatLeader.h"
+#include "CAI_BaseNPC.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+extern char g_1064ec58[];
+
+int CNPC_VSabbatLeader::vfunc461()
+{
+    ScopeTrace trace(g_1064ec58, g_106b8540);
+    CAI_BaseNPC *pNPC = (CAI_BaseNPC *)this;
+    CGlobalEntityList_Slot *pSlot;
+    unsigned int h;
+    m_n1b38 = 0x1f;
+    if (m_b66b8) {
+        if (m_nState5cc0 != 2) {
+            if (pNPC->vfunc167() != 0)
+                goto set2;
+            h = m_hPlayer;
+            if (h != 0xffffffff) {
+                pSlot = &g_10566458->m_Slots[h & 0x1fff];
+                if (pSlot->m_Serial == (h >> 13) && pSlot->m_pEntity != 0) {
+                    pNPC->sub_10279a50((int)pSlot->m_pEntity);
+set2:
+                    m_nState5cc4 = 2;
+                    goto done;
+                }
+            }
+        } else {
+            h = m_hPlayer;
+            if (h != 0xffffffff) {
+                pSlot = &g_10566458->m_Slots[h & 0x1fff];
+                if (pSlot->m_Serial == (h >> 13) && pSlot->m_pEntity != 0)
+                    goto done;
+            }
+        }
+    }
+    m_nState5cc4 = 1;
+done:
+    return m_nState5cc4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a76d0 size=0x6f
 #include "CNPC_VSabbatLeader.h"
 
