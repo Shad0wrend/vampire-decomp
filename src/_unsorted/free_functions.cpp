@@ -38822,6 +38822,25 @@ char sub_1036fc00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103704f0 size=0x43
+#include "CNPC_VCop.h"
+void *sub_100aa720(int size);
+extern char g_10631cc4[];
+
+// TARGET: npc_VCop
+extern "C" CBaseEntity *npc_VCop()
+{
+	void *mem = sub_100aa720(0x6674);
+	CNPC_VCop *p;
+	if (mem)
+		p = ((CNPC_VCop *)mem)->sub_103708e0();
+	else
+		p = 0;
+	p->vfunc106(g_10631cc4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10370a20 size=0x33
 void sub_1000ef84();
 void sub_1000621c();
