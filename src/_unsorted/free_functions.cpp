@@ -46760,6 +46760,25 @@ const char *sub_10429240(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10429650 size=0x43
+#include "CBaseGrenade.h"
+void *sub_100aa720(int size);
+extern char g_106ad2c8[];
+
+// TARGET: grenade
+extern "C" CBaseEntity *grenade()
+{
+	void *mem = sub_100aa720(0x19c8);
+	CBaseGrenade *p;
+	if (mem)
+		p = ((CBaseGrenade *)mem)->sub_1042b2b0();
+	else
+		p = 0;
+	p->vfunc106(g_106ad2c8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b470 size=0x72
 #include "SendProp.h"
 
