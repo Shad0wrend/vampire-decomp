@@ -232,6 +232,29 @@ int CNPC_VSabbatLeader::sub_103aa480(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ab270 size=0x79
+#include "CNPC_VSabbatLeader.h"
+struct ScopeEnt { const char *name; const char *file; const char *file2; };
+extern ScopeEnt *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+struct CUnk10739a4c { void sub_101e3ff0(CNPC_VSabbatLeader *pNPC); };
+extern CUnk10739a4c g_10739a4c;
+
+void CNPC_VSabbatLeader::vfunc313()
+{
+    g_109f3620[*g_109f3680].name = "CNPC_VSabbatLeader::UpdatePresenceEffect";
+    g_109f3620[*g_109f3680].file = g_106b8540;
+    g_109f3620[*g_109f3680].file2 = g_106b8540;
+    ++*g_109f3680;
+    g_10739a4c.sub_101e3ff0(this);
+    m_nPresence0 = 0;
+    m_nPresence2 = 0;
+    m_nPresence1 = 0;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ab400 size=0x78
 #include "CNPC_VSabbatLeader.h"
 extern char g_106b8540[];
