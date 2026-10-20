@@ -30,4 +30,6 @@ public:
 	char m_unk4c;
 	char pad004d[3];
 	float m_savedUnk50;
+
+	CAI_StandoffBehavior *sub_102c7100();	// constructor body (base constructors inlined)
 };
