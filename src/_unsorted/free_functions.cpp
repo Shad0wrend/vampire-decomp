@@ -16193,6 +16193,25 @@ int *sub_101931c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101938d0 size=0x43
+#include "CPropDestructable.h"
+void *sub_100aa720(int size);
+extern char g_1058f3c8[];
+
+// TARGET: prop_destructable
+extern "C" CBaseEntity *prop_destructable()
+{
+	void *mem = sub_100aa720(0x88c);
+	CPropDestructable *p;
+	if (mem)
+		p = ((CPropDestructable *)mem)->sub_10193940();
+	else
+		p = 0;
+	p->vfunc106(g_1058f3c8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194270 size=0x49
 void *sub_1000db89(int);
 struct GP;
