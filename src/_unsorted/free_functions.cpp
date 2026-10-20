@@ -35862,6 +35862,34 @@ void CAI_BaseNPC::sub_1026e340(int newState)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026e4f0 size=0x92
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct SensingTarget { void sub_10310710(); };
+
+void CAI_BaseNPC::sub_1026e4f0()
+{
+	const char *name;
+	if (this) {
+		name = *(const char **)((char *)this + 0x26c);
+		if (!name)
+			name = g_106b8540;
+	} else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CAI_BaseNPC::PerformSensing";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (*(int *)((char *)this + 0x5bb4) <= 0)
+		(*(SensingTarget **)((char *)this + 0x5cdc))->sub_10310710();
+	vfunc459();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10270290 size=0xd
 void CUnknown10270290::sub_10270290(int value)
 {
