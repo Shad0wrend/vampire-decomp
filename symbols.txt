@@ -2363,6 +2363,7 @@
 0x1000edc2 func   ?vfunc5@CNPC_VBatSwarm@@QAEPAV1@I@Z CNPC_VBatSwarm::vfunc5
 0x1000edc7 func   ?sub_100f4260@@YAXHHMMMH@Z sub_100f4260
 0x1000ee26 func   ?vfunc2@CTEKillPlayerAttachments@@UAEPAV1@I@Z CTEKillPlayerAttachments::vfunc2
+0x1000ee6c func   ?sub_101b7370@CUnknown101b7370@@QAEXH@Z CUnknown101b7370::sub_101b7370
 0x1000ee76 func   ?vfunc3@CRelationshipSaveDataOps@@QAEXPAX@Z CRelationshipSaveDataOps::vfunc3
 0x1000ee7b func   ?vfunc5@CItemGIdolElephant@@QAEPAV1@I@Z CItemGIdolElephant::vfunc5
 0x1000ee8f func   _item_k_oceanhouse_upstairs_key item_k_oceanhouse_upstairs_key
