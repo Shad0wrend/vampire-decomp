@@ -10765,6 +10765,41 @@ void CBeam::sub_100bb870(int a, const float *pPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb900 size=0x6b
+#include "CBeam.h"
+
+#define S1(p, n) virtual void p##n();
+#define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
+struct Slots62 {
+    S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5)
+    S1(b, 0) S1(b, 1)
+    virtual void f62(int a);
+};
+
+struct VecF {
+    float x, y, z;
+    VecF &operator=(const VecF &o)
+    {
+        x = o.x;
+        y = o.y;
+        z = o.z;
+        return *this;
+    }
+};
+
+// TARGET: CBeam::sub_100bb900
+void CBeam::sub_100bb900(int a, const float *pPos)
+{
+    m_nNumBeamEnts = 2;
+    m_nBeamType = (m_nBeamType & 0xff0) | 3;
+    ((Slots62 *)this)->f62(a);
+    *(VecF *)m_vecEndPos = *(const VecF *)pPos;
+    m_nAttach[1] = 0;
+    m_nAttach[m_nNumBeamEnts] = 0;
+    sub_100bbbf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc0f0 size=0x23
 #include "CUnknown100bc0f0.h"
 
