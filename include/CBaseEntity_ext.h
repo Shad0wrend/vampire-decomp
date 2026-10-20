@@ -24,3 +24,4 @@
 	void sub_100acd40(inputdata_t *pInput);	// "CBaseEntity::InputDispatchEffect": scope trace (entity name), converts the input's value to a string (variant_t::sub_10008805) unless it already is one
 	void sub_1009edc0(const float *mins, const float *maxs);	// "CBaseEntity::SetCollisionBounds": scope trace (entity name), then the collision property at +0x270 SetCollisionBounds(mins, maxs)
 	void sub_100adf10(const float *mins, const float *maxs);	// "CBaseEntity::SetSize": scope trace (entity name), then sub_101cf390(this, mins, maxs)
+	void sub_100b5340(unsigned int addFlags, unsigned int propagateFlags);	// ors addFlags into +0x268, then walks the handle chain starting at +0x260 (next link at +0x264 of each entity) calling this function(addFlags | propagateFlags, 0) on each
