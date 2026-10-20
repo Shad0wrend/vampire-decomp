@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CPhysicsAnimlink
+class CPhysicsAnimlink : public CBaseEntity
 {
 public:
 	CPhysicsAnimlink *vfunc5(unsigned int flags);
 	void sub_1000144c();
+	CPhysicsAnimlink *sub_1014eef0();	// as in CKeepUpright (transplant)
 };

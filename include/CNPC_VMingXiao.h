@@ -2,7 +2,7 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CNPC_VMingXiao
+class CNPC_VMingXiao : public CBaseEntity
 {
 public:
 	int vfunc546(int arg);
@@ -11,4 +11,5 @@ public:
 	char sub_1029b180(void *pOther);	// as in CNPC_VHengeyokai (transplant)
 	char vfunc166(void *pOther);	// slot 166: false when pOther is one of the two handle arrays at +0x668c / +0x66a8 (six entries each), else true unless pOther's slot 164 says no
 	bool sub_10397b40(void *pTentacle);	// claims a tentacle slot: false unless the tentacle (its index at +0x6660) is the entity of the handle at +0x66a8[index] and the time at +0x66a4 has passed; true when its flag byte (+0x6684[index]) is already set, else sets it provided none of the six slots (handles at +0x668c, flags at +0x6684) is in use
+	CNPC_VMingXiao *sub_10390ee0();	// as in CKeepUpright (transplant)
 };

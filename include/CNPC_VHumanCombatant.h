@@ -2,7 +2,7 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CNPC_VHumanCombatant
+class CNPC_VHumanCombatant : public CBaseEntity
 {
 public:
 	CNPC_VHumanCombatant *vfunc5(unsigned int flags);
@@ -11,4 +11,5 @@ public:
 	void vfunc103();	// as in CNPC_VAndreiBlood (transplant)
 	void sub_10384690();	// as in CNPC_VAndreiBlood (transplant)
 	void sub_10012855(int a);	// as in CNPC_VAndreiBlood (transplant)
+	CNPC_VHumanCombatant *sub_10386aa0();	// as in CKeepUpright (transplant)
 };

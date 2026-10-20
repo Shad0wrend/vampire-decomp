@@ -2,8 +2,9 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CPropDoorknob
+class CPropDoorknob : public CBaseEntity
 {
 public:
 	CPropDoorknob *vfunc5(unsigned int flags);
+	CPropDoorknob *sub_102258a0();	// as in CKeepUpright (transplant)
 };

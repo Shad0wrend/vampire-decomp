@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CPropMover
+class CPropMover : public CBaseEntity
 {
 public:
 	CPropMover *vfunc5(unsigned int flags);
 	void sub_10004c3c();
+	CPropMover *sub_10192870();	// as in CKeepUpright (transplant)
 };

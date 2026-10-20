@@ -2,8 +2,9 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CFire
+class CFire : public CBaseEntity
 {
 public:
 	CFire *vfunc5(unsigned int flags);
+	CFire *sub_10109990();	// as in CKeepUpright (transplant)
 };

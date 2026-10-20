@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CWeaponRanged_Rifle_Remington
+class CWeaponRanged_Rifle_Remington : public CBaseEntity
 {
 public:
 	CWeaponRanged_Rifle_Remington *vfunc5(unsigned int flags);
 	void sub_10013a57();
+	CWeaponRanged_Rifle_Remington *sub_10236070();	// as in CKeepUpright (transplant)
 };

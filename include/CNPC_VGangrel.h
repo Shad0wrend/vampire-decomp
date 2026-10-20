@@ -2,10 +2,11 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CNPC_VGangrel
+class CNPC_VGangrel : public CBaseEntity
 {
 public:
 	CNPC_VGangrel *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	CNPC_VGangrel *sub_10377030();	// as in CKeepUpright (transplant)
 };

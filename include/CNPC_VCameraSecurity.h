@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CNPC_VCameraSecurity
+class CNPC_VCameraSecurity : public CBaseEntity
 {
 public:
 	CNPC_VCameraSecurity *vfunc5(unsigned int flags);
 	void sub_100123af();
+	CNPC_VCameraSecurity *sub_10369df0();	// as in CKeepUpright (transplant)
 };

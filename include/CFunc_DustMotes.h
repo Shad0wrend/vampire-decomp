@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CFunc_DustMotes
+class CFunc_DustMotes : public CBaseEntity
 {
 public:
 	CFunc_DustMotes *vfunc5(unsigned int flags);
 	void sub_10004fca();
+	CFunc_DustMotes *sub_10113c30();	// as in CKeepUpright (transplant)
 };

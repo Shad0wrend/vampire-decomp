@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CSoundScheme
+class CSoundScheme : public CBaseEntity
 {
 public:
 	CSoundScheme *vfunc5(unsigned int flags);
 	void sub_1000bccb();
+	CSoundScheme *sub_1022a0f0();	// as in CKeepUpright (transplant)
 };

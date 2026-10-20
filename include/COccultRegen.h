@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class COccultRegen
+class COccultRegen : public CBaseEntity
 {
 public:
 	COccultRegen *vfunc5(unsigned int flags);
 	void sub_10013a57();
+	COccultRegen *sub_103f90f0();	// as in CKeepUpright (transplant)
 };

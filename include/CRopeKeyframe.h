@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CRopeKeyframe
+class CRopeKeyframe : public CBaseEntity
 {
 public:
 	CRopeKeyframe *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+	CRopeKeyframe *sub_1019dc80();	// as in CKeepUpright (transplant)
 };

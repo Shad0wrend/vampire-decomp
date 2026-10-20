@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CAI_InterestingPlace
+class CAI_InterestingPlace : public CBaseEntity
 {
 public:
 	CAI_InterestingPlace *vfunc5(unsigned int flags);
 	void sub_1000a25e();
+	CAI_InterestingPlace *sub_102d99d0();	// as in CKeepUpright (transplant)
 };

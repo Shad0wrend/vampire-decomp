@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CDisciplineProjectile
+class CDisciplineProjectile : public CBaseEntity
 {
 public:
 	CDisciplineProjectile *vfunc5(unsigned int flags);
 	void sub_1000d800();
+	CDisciplineProjectile *sub_101d9e20();	// as in CKeepUpright (transplant)
 };

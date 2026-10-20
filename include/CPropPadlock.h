@@ -2,8 +2,9 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CPropPadlock
+class CPropPadlock : public CBaseEntity
 {
 public:
 	CPropPadlock *vfunc5(unsigned int flags);
+	CPropPadlock *sub_10225c70();	// as in CKeepUpright (transplant)
 };

@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CPropClockHand
+class CPropClockHand : public CBaseEntity
 {
 public:
 	CPropClockHand *vfunc5(unsigned int flags);
 	void sub_10004c3c();
+	CPropClockHand *sub_1012d950();	// as in CKeepUpright (transplant)
 };

@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CSun
+class CSun : public CBaseEntity
 {
 public:
 	CSun *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+	CSun *sub_101c24b0();	// as in CKeepUpright (transplant)
 };

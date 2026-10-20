@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CItemContainerAnimated
+class CItemContainerAnimated : public CBaseEntity
 {
 public:
 	CItemContainerAnimated *vfunc5(unsigned int flags);
 	void sub_10005718();
+	CItemContainerAnimated *sub_10209d40();	// as in CKeepUpright (transplant)
 };

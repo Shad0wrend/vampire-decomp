@@ -2,8 +2,9 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CNPC_VZombie
+class CNPC_VZombie : public CBaseEntity
 {
 public:
 	int vfunc546(int arg);
+	CNPC_VZombie *sub_103de220();	// as in CKeepUpright (transplant)
 };

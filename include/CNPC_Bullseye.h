@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CNPC_Bullseye
+class CNPC_Bullseye : public CBaseEntity
 {
 public:
 	CNPC_Bullseye *vfunc5(unsigned int flags);
 	void sub_10006c26();
+	CNPC_Bullseye *sub_103566a0();	// as in CKeepUpright (transplant)
 };

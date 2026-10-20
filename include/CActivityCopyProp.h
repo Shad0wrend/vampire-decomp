@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CActivityCopyProp
+class CActivityCopyProp : public CBaseEntity
 {
 public:
 	CActivityCopyProp *vfunc5(unsigned int flags);
 	void sub_10004c3c();
+	CActivityCopyProp *sub_1018e1c0();	// as in CKeepUpright (transplant)
 };

@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CWeaponMelee_MingXiaoTentacle
+class CWeaponMelee_MingXiaoTentacle : public CBaseEntity
 {
 public:
 	CWeaponMelee_MingXiaoTentacle *vfunc5(unsigned int flags);
 	void sub_10013a57();
+	CWeaponMelee_MingXiaoTentacle *sub_103ec870();	// as in CKeepUpright (transplant)
 };

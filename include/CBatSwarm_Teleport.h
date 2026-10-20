@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CBatSwarm_Teleport
+class CBatSwarm_Teleport : public CBaseEntity
 {
 public:
 	CBatSwarm_Teleport *vfunc5(unsigned int flags);
 	void sub_10004c3c();
+	CBatSwarm_Teleport *sub_103b1ad0();	// as in CKeepUpright (transplant)
 };

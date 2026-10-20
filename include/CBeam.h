@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CBeam
+class CBeam : public CBaseEntity
 {
 public:
 	CBeam *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+	CBeam *sub_100bac50();	// as in CKeepUpright (transplant)
 };
