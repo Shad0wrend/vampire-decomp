@@ -29493,6 +29493,22 @@ int UtlVec8::sub_102c6a50(int elem, const UtlVec8Elem *src)
 void __fastcall sub_102c6bd0(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102c6bf0 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_102c6bf0()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6c30 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_109f3634)(int);
