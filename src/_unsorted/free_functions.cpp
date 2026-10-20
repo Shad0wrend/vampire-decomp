@@ -36440,6 +36440,35 @@ char CBaseCombatCharacter::sub_10334860(void *pCurrent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103360a0 size=0xa0
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_1062128c[];
+extern char g_106b8540[];
+extern char g_105387dc[];
+bool CBaseCombatCharacter::sub_103360a0()
+{
+    const char *name;
+    if (this)
+        name = m_name26c ? m_name26c : g_106b8540;
+    else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_1062128c;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    for (int i = 0; i < 0xe0; i++) {
+        if (sub_1032e8b0(i)) {
+            --*g_109f3680;
+            return false;
+        }
+    }
+    --*g_109f3680;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10336920 size=0xe7
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern TraceEnt *g_109f3620;
