@@ -5269,6 +5269,39 @@ void sub_10061e80(void *pFilter, int delay, const float *pOrigin, int a, int b, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10063880 size=0xea
+#include "CTEShatterSurface.h"
+
+extern CTEShatterSurface g_106c3870;
+
+void sub_10063880(int a, int b, const float *p3, const float *p4, const float *p5, const float *p6, float f7, float f8, float f9, int p10, unsigned char c0, unsigned char c1, unsigned char c2, unsigned char c3, unsigned char c4, unsigned char c5)
+{
+	g_106c3870.m_f0c[0] = p3[0];
+	g_106c3870.m_f0c[1] = p3[1];
+	g_106c3870.m_f0c[2] = p3[2];
+	g_106c3870.m_f0c[3] = p4[0];
+	g_106c3870.m_f0c[4] = p4[1];
+	g_106c3870.m_f0c[5] = p4[2];
+	g_106c3870.m_f0c[6] = p5[0];
+	g_106c3870.m_f0c[7] = p5[1];
+	g_106c3870.m_f0c[8] = p5[2];
+	g_106c3870.m_f0c[9] = p6[0];
+	g_106c3870.m_f0c[10] = p6[1];
+	g_106c3870.m_f0c[11] = p6[2];
+	g_106c3870.m_f3c = f7;
+	g_106c3870.m_f40 = f8;
+	g_106c3870.m_f44 = f9;
+	g_106c3870.m_pad48 = p10;
+	g_106c3870.m_rgba[0] = c0;
+	g_106c3870.m_rgba[1] = c1;
+	g_106c3870.m_rgba[2] = c2;
+	g_106c3870.m_rgba[3] = c3;
+	g_106c3870.m_rgba[4] = c4;
+	g_106c3870.m_rgba[5] = c5;
+	g_106c3870.sub_10063340(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064ca0 size=0x72
 #include "SendProp.h"
 
