@@ -192,3 +192,29 @@ float CBaseAnimating::vfunc249()
     return r;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10091f10 size=0x93
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+void CBaseAnimating::sub_10091f10(const char *name, float value)
+{
+	CScopeTrace trace("CBaseAnimating::SetPoseParameter01", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	((CEntityVSlots *)this)->slot260(sub_10092270(name), value);
+}
+// END FUNCTION

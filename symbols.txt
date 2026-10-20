@@ -1632,6 +1632,7 @@
 0x10009b79 func   ?sub_103404f0@@YI_NPADHH@Z sub_103404f0
 0x10009b97 func   _npc_VToreador npc_VToreador
 0x10009b9c func   ?vfunc5@CPropLargeHullIgnore@@QAEPAV1@I@Z CPropLargeHullIgnore::vfunc5
+0x10009bab func   ?sub_10091f10@CBaseAnimating@@QAEXPBDM@Z CBaseAnimating::sub_10091f10
 0x10009bb0 func   ?sub_1032e210@CBaseCombatCharacter@@QAEXPAX@Z CBaseCombatCharacter::sub_1032e210
 0x10009bdd func   ?sub_10036e50@CPhysicsPushedEntities@@QAEPAVCBaseEntity@@XZ CPhysicsPushedEntities::sub_10036e50
 0x10009be7 func   ?sub_1039aaf0@CUnknown1039aaf0@@QAEXD@Z CUnknown1039aaf0::sub_1039aaf0
