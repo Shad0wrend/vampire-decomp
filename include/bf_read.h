@@ -1,5 +1,5 @@
 // bf_read: engine bit buffer reader (data pointer at +0, size in bytes at +4, size in bits at +8, current bit at +0xc,
-// overflow flag at +0x10).
+// overflow flag at +0x10, debug name at +0x14).
 #pragma once
 
 extern unsigned long g_106d1910[];
@@ -12,6 +12,7 @@ public:
 	int m_nDataBits;	// 0x08
 	int m_iCurBit;	// 0x0c
 	bool m_bOverflow;	// 0x10
+	const char *m_pDebugName;	// 0x14
 
 	unsigned int ReadUBitLong(int numbits)
 	{
