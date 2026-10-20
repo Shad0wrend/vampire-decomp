@@ -19,10 +19,9 @@ struct CUnknown102dc2c0Handle
 
 	CUnknown102dc2c0Ent *Get()
 	{
-		unsigned int h = m_Index;
-		if (h != 0xffffffff) {
-			CUnknown102dc2c0EntInfo *info = (CUnknown102dc2c0EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
-			return info->serial == (h >> 13) ? info->ent : 0;
+		if (m_Index != 0xffffffff) {
+			CUnknown102dc2c0EntInfo *info = (CUnknown102dc2c0EntInfo *)(g_10566458 + 4) + (m_Index & 0x1fff);
+			return info->serial == (m_Index >> 13) ? info->ent : 0;
 		}
 		return 0;
 	}
