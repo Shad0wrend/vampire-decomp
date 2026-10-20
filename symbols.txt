@@ -2805,6 +2805,7 @@
 0x1000f12d func   _item_w_sledgehammer item_w_sledgehammer
 0x1000f132 func   ?vfunc370@CWeaponRanged@@QAEXPAHPAX@Z CWeaponRanged::vfunc370
 0x1000f14b func   ?sub_101d3430@CTraceEntList@@QAEXH@Z CTraceEntList::sub_101d3430
+0x1000f173 func   ?vfunc103@CInfoIntermission@@UAEXXZ CInfoIntermission::vfunc103
 0x1000f178 func   ??0CHL2_PlayerBase@@QAE@XZ CHL2_PlayerBase::CHL2_PlayerBase
 0x1000f17d func   _item_g_vv_photo item_g_vv_photo
 0x1000f182 func   _info_player_deathmatch info_player_deathmatch
