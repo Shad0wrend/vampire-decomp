@@ -32808,6 +32808,44 @@ char CAI_BaseNPCTroika::sub_102c1170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c24a0 size=0x17e
+#include "CGlobalEntityList.h"
+#include "inputdata_t.h"
+
+#define S1(p, n) virtual void p##n();
+#define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
+struct SlotsAll {
+    S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+    S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8) S10(b9)
+    S10(c0)
+    S1(v, 0) S1(v, 1) S1(v, 2) S1(v, 3) S1(v, 4) S1(v, 5)
+    virtual void f216(float *v);
+    virtual float *f217();
+    virtual void f218(float *v);
+    virtual float *f219();
+    S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5) S10(d6) S10(d7) S10(d8) S10(d9)
+    S10(e0) S10(e1) S10(e2) S10(e3) S10(e4) S10(e5) S10(e6) S10(e7) S10(e8) S10(e9)
+    S10(f0) S10(f1) S10(f2) S10(f3) S10(f4) S10(f5) S10(f6) S10(f7) S10(f8) S10(f9)
+    S10(g0) S10(g1) S10(g2) S10(g3) S10(g4) S10(g5) S10(g6) S10(g7) S10(g8)
+    S1(w, 0) S1(w, 1) S1(w, 2) S1(w, 3)
+    virtual void f614();
+};
+
+extern CGlobalEntityList *g_10566458;
+
+// TARGET: CAI_BaseNPCTroika::sub_102c24a0
+void CAI_BaseNPCTroika::sub_102c24a0(inputdata_t *pData)
+{
+    if (!pData->value.Entity(&g_10566458))
+        return;
+    ((SlotsAll *)this)->f216(((SlotsAll *)pData->value.Entity(&g_10566458))->f217());
+    ((SlotsAll *)this)->f218(((SlotsAll *)pData->value.Entity(&g_10566458))->f219());
+    ((CBaseEntity *)this)->sub_100b3b00();
+    ((SlotsAll *)this)->f614();
+    ((CBaseEntity *)this)->sub_1009d1e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c2a30 size=0x21
 #include "CAI_BaseNPCTroika.h"
 #include "inputdata_t.h"
