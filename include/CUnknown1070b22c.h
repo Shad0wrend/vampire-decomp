@@ -1,8 +1,8 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 17, 35, 38, 82, 84, 85, 105 and 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 17, 35, 38, 59, 82, 84, 85, 105 and 119 to 122 are known.
 // Slot 119 takes a flag and returns a time value in ST0; slot 120 returns a dword in EAX.
 // Slots 84 / 85 are the engine's command argument accessors (Cmd_Argv(index) / Cmd_Argc()).
 // Slot 82 registers a user message by name and size and returns its id.
-// Slot 35 is IndexOfEdict(edict), slot 38 is PEntityOfEntIndex(index).
+// Slot 35 is IndexOfEdict(edict), slot 38 is PEntityOfEntIndex(index), slot 59 is the server command executor (ServerCommand).
 #pragma once
 
 #define U22C_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -25,7 +25,10 @@ public:
 	virtual CUnknown1070b22c_Edict *vfunc38(int index);
 	virtual void a39();
 	U22C_SLOTS10(a4)
-	U22C_SLOTS10(a5) U22C_SLOTS10(a6) U22C_SLOTS10(a7)
+	virtual void a50(); virtual void a51(); virtual void a52(); virtual void a53(); virtual void a54();
+	virtual void a55(); virtual void a56(); virtual void a57(); virtual void a58();
+	virtual void vfunc59(const char *pszCommand);
+	U22C_SLOTS10(a6) U22C_SLOTS10(a7)
 	virtual void a80(); virtual void a81();
 	virtual int vfunc82(const char *pszName, int size);
 	virtual void a83();
