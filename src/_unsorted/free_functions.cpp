@@ -18821,6 +18821,78 @@ int *sub_10197510(int self, int args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10197b00 size=0x178
+#define S1(p, n) virtual void p##n();
+#define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
+struct Slots297 {
+    S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+    S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8) S10(b9)
+    S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5) S10(c6) S10(c7) S10(c8)
+    S1(d, 0) S1(d, 1) S1(d, 2) S1(d, 3) S1(d, 4) S1(d, 5) S1(d, 6)
+    virtual void f297(void *pOther, int a, char *b);
+};
+
+struct PyObj {
+    int ob_refcnt;
+};
+
+struct PyEnt {
+    char m_pad0000[0x94];
+    Slots297 *m_pNpc;
+    char m_pad0098[0xa8 - 0x98];
+    int m_nField;
+};
+
+extern "C" __declspec(dllimport) int PyArg_ParseTuple(void *, const char *, ...);
+extern "C" __declspec(dllimport) void PyErr_SetString(void *, const char *);
+extern "C" __declspec(dllimport) void *PyErr_Occurred();
+extern "C" __declspec(dllimport) void *PyExc_AttributeError;
+extern "C" __declspec(dllimport) PyObj _Py_NoneStruct;
+PyEnt *sub_10196780(void *);
+
+// TARGET: sub_10197b00
+PyObj *sub_10197b00(void *self, void *args)
+{
+    void *pyEnt = 0;
+    void *pyOther = 0;
+    long n;
+    char *s = 0; n = 0;
+    if (!PyArg_ParseTuple(args, "OOis", &pyEnt, &pyOther, &n, &s)) {
+        s = 0;
+        if (!PyArg_ParseTuple(args, "OOi", &pyEnt, &pyOther, &n)) {
+            PyErr_SetString(PyExc_AttributeError, "bad args to React()");
+            return 0;
+        }
+    }
+    PyEnt *ent = sub_10196780(pyEnt);
+    if (!ent) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "game entity has been deleted");
+        return 0;
+    }
+    Slots297 *npc = ent->m_pNpc;
+    if (!npc) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "you should probably only be setting the reactions of NPCs");
+        return 0;
+    }
+    PyEnt *other = sub_10196780(pyOther);
+    if (!other) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "missing entity to react to");
+        return 0;
+    }
+    if (!other->m_nField) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "you should probably only be setting an NPC's reaction to PCs");
+        return 0;
+    }
+    npc->f297(other, n, s);
+    _Py_NoneStruct.ob_refcnt++;
+    return &_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199990 size=0xad
 extern int (*g_109f37a0)(int, const char *, ...);
 extern int (*g_109f377c)();
