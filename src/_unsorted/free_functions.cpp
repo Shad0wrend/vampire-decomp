@@ -29938,6 +29938,22 @@ UtlMem *UtlMem::sub_102c6b30(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6b80 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_109f3634)(int);
+
+UtlMem *UtlMem::sub_102c6b80(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_109f3634(allocationCount * 4);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6bd0 size=0x8
 void __fastcall sub_102c6bd0(int *p) { p[3] = 0; }
 // END FUNCTION
