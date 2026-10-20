@@ -1009,6 +1009,7 @@
 0x10007527 func   ?sub_101282b0@CGameMovement@@QAEMXZ CGameMovement::sub_101282b0
 0x10007536 func   ?sub_103e88b0@@YAHXZ sub_103e88b0
 0x10007554 func   ?sub_101fed90@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101fed90
+0x10007559 func   ?sub_100428c0@UtlMem@@QAEXXZ UtlMem::sub_100428c0
 0x10007572 func   ?sub_100509b0@SFilter@@QAEPAU1@E@Z SFilter::sub_100509b0
 0x10007577 func   ?sub_102eb7f0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102eb7f0
 0x10007590 func   ?sub_101fc160@CVStatCost_t@@QAE_NXZ CVStatCost_t::sub_101fc160
