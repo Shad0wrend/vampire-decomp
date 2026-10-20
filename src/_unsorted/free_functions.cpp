@@ -21263,6 +21263,37 @@ void *Helper::sub_10177ab0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017bf10 size=0x10d
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+extern char g_1070d9d0[];
+
+void CBasePlayer::sub_1017bf10(int mode)
+{
+	m_nPartMode = mode;
+	switch (mode) {
+	case 0:
+		m_pPart2104->vfunc35(vfunc217(g_1070d9d0, 0));
+		m_pPart2108->vfunc21(0);
+		m_pPart2104->vfunc21(1);
+		m_pPartOwner->vfunc5(m_pPart2104);
+		((CBaseEntity *)this)->sub_100a68f0((int)m_pPart2104);
+		break;
+	case 1:
+		m_pPart2108->vfunc35(vfunc217(g_1070d9d0, 0));
+		m_pPart2104->vfunc21(0);
+		m_pPart2108->vfunc21(1);
+		m_pPartOwner->vfunc5(m_pPart2108);
+		((CBaseEntity *)this)->sub_100a68f0((int)m_pPart2108);
+		break;
+	case 2:
+		m_pPart2108->vfunc21(0);
+		m_pPart2104->vfunc21(0);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c830 size=0x9a
 #include "QuestJournal.h"
 #include <string.h>
