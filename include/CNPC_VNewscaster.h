@@ -5,6 +5,7 @@
 #pragma once
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
 
 struct CNewscasterEntry	// 0x28 bytes: a heap string and four heap string pairs
 {
@@ -29,6 +30,25 @@ struct CNewscasterList	// a CUtlVector<CNewscasterEntry>
 		n = m_size - 1;
 		m_size = n;
 	}
+
+	void PurgeMemory()	// CUtlMemory::Purge: frees an owned allocation
+	{
+		if (m_growSize != -1) {
+			if (m_pMemory) {
+				Plat_Free(m_pMemory);
+				m_pMemory = 0;
+			}
+			m_allocationCount = 0;
+		}
+	}
+
+	void Destruct()	// ~CUtlVector: Purge (remove all, purge the memory, reset the debug pointer), then ~CUtlMemory
+	{
+		m_size = 0;
+		PurgeMemory();
+		m_pElements = m_pMemory;
+		PurgeMemory();
+	}
 };
 
 struct CNewscasterSub5cdc
@@ -45,6 +65,8 @@ public:
 	void sub_103a0d50();	// frees and removes every entry of both lists, then clears the byte at +0x6690
 	void sub_103a0420();	// slot 420 "CNPC_VNewscaster::...Reset": base slot 420 (sub_1000c531), then resets the counters at +0x6338..+0x6368 (999999 limits, scrambled value of sub_10009408(0) at +0x6364) and clears the flags
 	void sub_1000c531();	// CAI_BaseNPCTroika::vfunc420, called directly
+	CNPC_VNewscaster *vfunc5(unsigned int flags);	// scalar deleting destructor: destructs both lists (B, then A), the base (sub_1028d610), and frees the object when bit 0 of flags is set
+	void sub_1028d610();	// base class destructor body (stub 0x100123af)
 
 	char m_pad0004[0x1480 - 4];
 	char m_bFlag1480;
