@@ -23,4 +23,5 @@ public:
 	int sub_10201980();	// "CVStatList_t::GetHighestValueIndex": scope trace, index of the first stat with the highest sub_10010609 value, -1 when empty
 	char sub_10201540();	// recomputes every stat value (stored in the array behind m_field08), true when one changed (stub 0x1000a1a0)
 	char sub_10200d60(int value);	// "CVStatList_t::SetValue"-like worker taking one stack argument (stub 0x10005cbd), called by the VStatGet wrapper; returns a flag byte
+	void sub_102008e0(int stat, int value);	// stat setter taking (stat, value) (stub 0x10011e46)
 };
