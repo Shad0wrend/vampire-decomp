@@ -7567,6 +7567,32 @@ int CBaseAnimating::sub_10092c90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10092d50 size=0x9b
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+int sub_10004958(void *header, int name);
+
+int CBaseAnimating::sub_10092d50(int name)
+{
+	const char *n = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::LookupAttachment";
+	g_109f3620[*g_109f3680].b = n;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	void *hdr = sub_100952d0(-1);
+	if (!hdr) {
+		(*g_109f3680)--;
+		return 0;
+	}
+	int result = sub_10004958(hdr, name) + 1;
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10092e20 size=0x94
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
