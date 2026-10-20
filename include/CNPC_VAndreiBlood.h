@@ -7,6 +7,7 @@ class CNPC_VAndreiBlood : public CNPC_VHuman
 {
 public:
 	virtual void vfunc104();
+	void vfunc431();	// slot 431 "CNPC_VAndreiBlood::NPCThink": scope trace, the CNPC_VVampireBoss version (0x100052d6), trace depth back
 	void vfunc619(int arg);	// slot 619, not modelled as virtual yet
 	void sub_1000c27a(int arg);
 	int vfunc127(int arg);	// slot 127 (overrides CBaseEntity's)
