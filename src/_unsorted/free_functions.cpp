@@ -13689,6 +13689,25 @@ extern "C" GP *window_pane()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113b30 size=0x43
+#include "CFunc_DustMotes.h"
+void *sub_100aa720(int size);
+extern char g_10570070[];
+
+// TARGET: func_dustmotes
+extern "C" CBaseEntity *func_dustmotes()
+{
+	void *mem = sub_100aa720(0x478);
+	CFunc_DustMotes *p;
+	if (mem)
+		p = ((CFunc_DustMotes *)mem)->sub_10113c30();
+	else
+		p = 0;
+	p->vfunc106(g_10570070);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113ba0 size=0x49
 void *sub_1000db89(int);
 struct GP;
