@@ -26,3 +26,35 @@ CBreakableProp *CBreakableProp::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1018f340 size=0x73
+#include "CBreakableProp.h"
+
+#define SV(n) virtual void v##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+
+struct SlotProp {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21) SV10(22) SV10(23) SV10(24) SV10(25)
+	SV(260) SV(261) SV(262) SV(263) SV(264)
+	virtual void v265();
+};
+
+extern int g_1070ba38;
+
+void CBreakableProp::vfunc103()
+{
+	sub_10011793();
+	((SlotProp *)this)->v265();
+	if (*(int *)((char *)this + 0x210) == 0)
+		*(int *)((char *)this + 0x1fc) = 1;
+	else
+		*(int *)((char *)this + 0x1fc) = 2;
+	*(int *)((char *)this + 0x760) = g_1070ba38;
+	if (*(float *)((char *)this + 0xdc) == 0.0f)
+		*(float *)((char *)this + 0xdc) = 0.1f;
+	((CBaseEntity *)this)->sub_100b3580(0x20000000);
+	*(int *)((char *)this + 0x774) = 0;
+}
+// END FUNCTION

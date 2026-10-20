@@ -3171,6 +3171,7 @@
 0x10012e8b func   ?sub_102ec320@CUnknown102ec320@@QAEXH@Z CUnknown102ec320::sub_102ec320
 0x10012ea4 func   ?sub_1023ee30@@YAXH@Z sub_1023ee30
 0x10012eb3 func   _item_k_hannahs_safe_key item_k_hannahs_safe_key
+0x10012eef func   ?vfunc103@CBreakableProp@@QAEXXZ CBreakableProp::vfunc103
 0x10012f08 func   _item_g_oh_diary item_g_oh_diary
 0x10012f17 func   ?sub_103f04f0@CUnknown103f04f0@@QAEPAV1@ABV1@@Z CUnknown103f04f0::sub_103f04f0
 0x10012f1c func   ?sub_1004dee0@@YAPAHXZ sub_1004dee0
