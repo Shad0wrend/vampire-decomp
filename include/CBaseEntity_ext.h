@@ -5,3 +5,4 @@
 	void sub_1009c2d0(int a, char *text, int value);	// "CBaseEntity::DumpActivity": scope trace (entity name), then sub_1009b980(a, text, value)
 	void sub_1009c110(int a, int b, CBaseEntity *pEnt);	// "CBaseEntity::DumpEntity": scope trace (entity name), then sub_1009b700(a, b, name of pEnt or null)
 	void sub_100a9120(inputdata_t *pInput);	// "CBaseEntity::InputSetFakeSilence": scope trace (entity name), sub_100a8fc0(1) when the input is an integer that is non-zero, else sub_100a8fc0(0)
+	float sub_100ac720(const char *context);	// "CBaseEntity::GetLastThink": scope trace (entity name), the last think time (float at +0xc of the think context record named context, or the float at +0x178 for the default context)
