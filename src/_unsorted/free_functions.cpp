@@ -16514,6 +16514,45 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016e650 size=0x16d
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_10726030;
+extern int g_10726048;
+extern int g_1072604c;
+extern int g_10726014;
+extern int g_10726018;
+extern int g_1072601c;
+extern int g_10726034;
+extern int g_10726038;
+extern int g_1072603c;
+extern int g_10726040;
+extern int g_10726050;
+extern int g_1072600c;
+extern int g_10726010;
+extern int g_1072609c;
+
+// TARGET: sub_1016e650
+void sub_1016e650()
+{
+    g_10726030 = g_1070b22c->vfunc82("HudText", -1);
+    g_10726048 = g_1070b22c->vfunc82("SayText", -1);
+    g_1072604c = g_1070b22c->vfunc82("TextMsg", -1);
+    g_10726014 = g_1070b22c->vfunc82("ResetHUD", 1);
+    g_10726018 = g_1070b22c->vfunc82("InitHUD", 0);
+    g_1072601c = g_1070b22c->vfunc82("GameTitle", 1);
+    g_10726034 = g_1070b22c->vfunc82("DeathMsg", -1);
+    g_10726038 = g_1070b22c->vfunc82("GameMode", 1);
+    g_1072603c = g_1070b22c->vfunc82("MOTD", -1);
+    g_10726040 = g_1070b22c->vfunc82("ItemPickup", -1);
+    g_10726050 = g_1070b22c->vfunc82("ShowMenu", -1);
+    g_1072600c = g_1070b22c->vfunc82("ScreenShake", -1);
+    g_10726010 = g_1070b22c->vfunc82("ScreenFade", 10);
+    g_1072609c = g_1070b22c->vfunc82("TeamChange", 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170eb0 size=0xec
 #include "CUnknown10170eb0.h"
 
