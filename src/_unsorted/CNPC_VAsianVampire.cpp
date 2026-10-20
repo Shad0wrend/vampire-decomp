@@ -100,3 +100,23 @@ void CNPC_VAsianVampire::vfunc619(int arg)
 	(*g_109f3680)--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10362390 size=0x75
+#include "CNPC_VAsianVampire.h"
+struct ScopeEnt { const char *name; const char *file; const char *file2; };
+extern ScopeEnt *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CNPC_VAsianVampire::vfunc448(int code)
+{
+    g_109f3620[*g_109f3680].name = "CNPC_VAsianVampire::TaskFail";
+    g_109f3620[*g_109f3680].file = g_106b8540;
+    g_109f3620[*g_109f3680].file2 = g_106b8540;
+    ++*g_109f3680;
+    if (code >= 12 && code <= 15)
+        m_bTaskFailedJump = 1;
+    sub_100054bb(code);
+    --*g_109f3680;
+}
+// END FUNCTION

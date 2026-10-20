@@ -7,6 +7,7 @@
 0x10001082 func   _trigger_brush trigger_brush
 0x100010a0 func   ?vfunc5@CBloodSplat@@QAEPAV1@I@Z CBloodSplat::vfunc5
 0x100010e1 func   ?sub_103d99a0@CNPC_VWerewolf@@QAEXPAUinputdata_t@@@Z CNPC_VWerewolf::sub_103d99a0
+0x1000110e func   ?vfunc448@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc448
 0x10001122 func   ?sub_100945e0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_100945e0
 0x10001127 func   ?vfunc370@CWeaponMelee_MingXiaoMelee@@QAEXPAUCWeaponMeleeEvent@@H@Z CWeaponMelee_MingXiaoMelee::vfunc370
 0x1000114a func   ?vfunc194@CBaseEntity@@QAEXXZ CBaseEntity::vfunc194
