@@ -1976,6 +1976,7 @@
 0x1000b21c func   ?sub_10232cb0@@YA_NXZ sub_10232cb0
 0x1000b22b func   ?vfunc134@CBloodSplat@@QAEXXZ CBloodSplat::vfunc134
 0x1000b24e func   ?sub_10136470@@YIXPADHH@Z sub_10136470
+0x1000b258 func   ?vfunc3@CSave@@UAEXHHHHH@Z CSave::vfunc3
 0x1000b280 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UASSIGNED_QUEST@@V?$CUtlMemory@UASSIGNED_QUEST@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_QUEST> >,9>::vfunc3
 0x1000b28f func   ?vfunc127@CNPC_VVampireBoss@@QAEHH@Z CNPC_VVampireBoss::vfunc127
 0x1000b2bc func   ?vfunc113@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc113
