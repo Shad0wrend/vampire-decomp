@@ -10,7 +10,7 @@ class CGlobalEntityList_Ent	// the object an entity slot points to
 {
 public:
 	virtual void v0();
-	virtual void v1();
+	virtual unsigned int *v1();	// the entity's handle
 	virtual void v2();
 	virtual void v3();
 	virtual CBaseEntity *vfunc4();
@@ -47,4 +47,5 @@ public:
 	CBaseEntity *sub_100f7060(CBaseEntity *pCurrent);	// "CGlobalEntityList::NextEnt": the first entity's slot-4 result when pCurrent is null, else the first non-null slot-4 result after pCurrent in the list
 	CBaseEntity *sub_100f7770(CBaseEntity *pStart, const char *szName, CBaseEntity *pSearching, CBaseEntity *pActivator);	// "CGlobalEntityList::FindEntityByName" (called through the stub at 0x1000b4b5)
 	CBaseEntity *sub_100f7380(CBaseEntity *pStart, const char *pszClassname);	// "CGlobalEntityList::FindEntityByClassname": the first entity after pStart (the first one when null) whose classname matches
+	CGlobalEntityList_Ent *sub_100f7b20(const char *pszClass, const char *pszName, int pStart, void *pSearching, int pActivator);	// a name search variant (stub 0x10009b8d); the entity found, or 0
 };
