@@ -30,7 +30,8 @@ class CCollisionEvent
 public:
 	virtual void vfunc0(void *pEvent);	// "CCollisionEvent::PreCollision": scope trace, copies the 32 byte event to +0x68, then slot 40 of both objects fills the records at +0x88 / +0x94 (second argument 0x30 further)
 
-	// Slots 6, 8 and 9, declared as plain members.
+	// Slots 4, 6, 8 and 9, declared as plain members.
+	void vfunc4(void *pObject1, void *pObject2, void *pData);	// "CCollisionEvent::EndTouch": scope trace, with both entities (slot 6 of the objects) set and the collision data queried (slots 1 / 0), the end touch is dispatched at once (sub_10030cb0) unless the byte at +0x13c is set, which goes to sub_10030f30 (queued) instead
 	void vfunc6(void *pObject, void *pFluid);	// "CCollisionEvent::FluidEndTouch": scope trace, the entity of the object (slot 6) loses bit 19 of its flags at +0x268 and, when the time since its last fluid touch (DeltaTimeSinceLast) reaches a minimum, sub_10151150(pFluid, pObject, entity)
 	void vfunc8(void *pObject1, void *pObject2);	// "CCollisionEvent::ObjectEnterTrigger"
 	void vfunc9(void *pObject1, void *pObject2);	// "CCollisionEvent::ObjectLeaveTrigger"
@@ -47,6 +48,7 @@ public:
 	void sub_10030d50();	// "CCollisionEvent::UpdateTouchEvents": scope trace, dispatches every queued touch record (0x24 bytes each, array at +0xd8, count at +0xe4): sub_10030ba0 for a start touch (record +8 is zero), else the end-touch dispatcher sub_10030cb0; then empties the queue
 	void sub_10030ba0(void *a, void *b, void *pData1, void *pData2);	// "CCollisionEvent::DispatchStartTouch" (called through the stub at 0x10009485)
 	void sub_10030cb0(void *a, void *b);	// "CCollisionEvent::DispatchEndTouch" (called through the stub at 0x1000f0bf)
+	void sub_10030f30(void *a, void *b, int c, void *pData1, void *pData2);	// "CCollisionEvent::AddTouchEvent"-like (called through the stub at 0x1000a0a1)
 	void sub_10030e40();	// "CCollisionEvent::UpdateDamageEvents": scope trace, hands every queued damage event (0x58 byte records, array at +0xec, count at +0xf8) to its entity (copy of the damage info), then empties the queue
 
 	char m_pad0004[4];
