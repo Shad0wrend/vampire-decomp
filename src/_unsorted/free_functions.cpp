@@ -22024,6 +22024,18 @@ void CUtlMemory96::sub_1013fd20(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140bd0 size=0x11
+struct CScaleFields10140bd0 {
+    char pad0[0x49c];
+    float field49c;
+    float sub_10140bd0(float a, float b);
+};
+float CScaleFields10140bd0::sub_10140bd0(float a, float b)
+{
+    return a * field49c * b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141b10 size=0x72
 #include "IScorer.h"
 
