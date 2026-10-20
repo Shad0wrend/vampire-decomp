@@ -31254,6 +31254,22 @@ int CUtlVector4::sub_102dcd30(int elem, const int *src)
 void __fastcall sub_102dce10(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102dce80 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_102dce80()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dcec0 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
