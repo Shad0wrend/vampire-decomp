@@ -9,7 +9,7 @@ public:
 	void vfunc71();
 	void vfunc104();	// slot 104: calls slot 71, then sub_100eecf0
 	void vfunc246(int a, int* b, int c);
-	void sub_100eecf0();
+	char sub_100eecf0();	// true (and the flag byte at +0x624 set) when one of the two event lists at +0x5dc / +0x60c has an entry named "ChangeNow"
 	void sub_100ee810();	// scope-less: for each of the two entity handles at +0x628 and +0x62c that resolve, calls sub_10224170 on the entity with a zeroed inputdata_t (value -1 handle), and for the second also again when it still resolves
 	CBaseDoor *sub_100ee2b0();	// as in CKeepUpright (transplant)
 	int sub_100f12a0(CBaseDoor **ppDoors, int maxDoors);	// the other doors that share this door's name (a door pair), up to maxDoors
