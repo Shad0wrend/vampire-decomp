@@ -16435,6 +16435,15 @@ void CUnknown100dbd70::sub_100dbd70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc120 size=0x10
+void sub_100dc120(int *p, int unused, int *out)
+{
+    typedef int (__fastcall *VFunc)(void *);
+    int r = ((VFunc)(*(int **)p)[11])(p);
+    *out = r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc300 size=0x76
 extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
 struct Rec64 {
