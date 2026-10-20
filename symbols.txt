@@ -3144,6 +3144,7 @@
 0x10010c62 func   ?sub_10031c70@@YA_NPAVCBaseEntity@@@Z sub_10031c70
 0x10010c7b func   ?vfunc5@CItemGGuyMagazine@@QAEPAV1@I@Z CItemGGuyMagazine::vfunc5
 0x10010cad func   ?vfunc104@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc104
+0x10010cb2 func   ?vfunc444@CNPC_VGhoulCroucher@@QAEXPAX@Z CNPC_VGhoulCroucher::vfunc444
 0x10010cc6 func   ?sub_1027f990@CUtlVector20@@QAEXH@Z CUtlVector20::sub_1027f990
 0x10010ce9 func   _env_soundscape env_soundscape
 0x10010cf3 func   ?sub_101d9210@CUnknown101d9210@@QAEXXZ CUnknown101d9210::sub_101d9210

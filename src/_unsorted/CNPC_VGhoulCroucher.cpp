@@ -39,6 +39,41 @@ CNPC_VGhoulCroucher *CNPC_VGhoulCroucher::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b9f0 size=0xc6
+#include "CNPC_VGhoulCroucher.h"
+#include "CEntityVSlots.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CNPC_VGhoulCroucher::vfunc444(void *pTask)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CNPC_VGhoulCroucher::RunTask";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	switch (*(int *)pTask) {
+	case 0x14a:
+		if (((CEntityVSlots *)this)->slot251())
+			sub_10273e80(0);
+		break;
+	case 0x14b:
+		if (((CEntityVSlots *)this)->slot251()) {
+			*((char *)this + 0x6667) = 1;
+			sub_10273e80(0);
+		}
+		break;
+	default:
+		sub_100080da(pTask);
+		(*g_109f3680)--;
+		return;
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037bbc0 size=0x9a
 #include "CNPC_VGhoulCroucher.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
