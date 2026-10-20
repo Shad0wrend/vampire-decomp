@@ -1409,6 +1409,7 @@
 0x10008896 func   ?sub_100b4970@UtlMem@@QAEXXZ UtlMem::sub_100b4970
 0x1000889b func   ?sub_10093ef0@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10093ef0
 0x100088be func   ?sub_10196850@@YAXPAUPyInst@@@Z sub_10196850
+0x100088c3 func   ?sub_103aa510@CNPC_VSabbatLeader@@QAEHXZ CNPC_VSabbatLeader::sub_103aa510
 0x100088c8 func   ?sub_10092c90@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10092c90
 0x100088e1 func   ?vfunc38@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc38
 0x100088f0 func   ?sub_100bc3a0@@YAXH@Z sub_100bc3a0

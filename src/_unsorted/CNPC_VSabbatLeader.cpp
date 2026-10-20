@@ -232,6 +232,39 @@ int CNPC_VSabbatLeader::sub_103aa480(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103aa510 size=0x96
+#include "CNPC_VSabbatLeader.h"
+#include "CEntityVSlots.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = name;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+int CNPC_VSabbatLeader::sub_103aa510()
+{
+	CScopeTrace trace("CNPC_VSabbatLeader::PreSelectSchedule", g_106b8540);
+	m_n1b2c = 0x1f;
+	if (m_nState5cc0 == 2) {
+		if (!((CEntityVSlots *)this)->slot167()) {
+			m_nState5cc0 = 1;
+			m_nState5cc4 = 1;
+		}
+	}
+	return sub_102ae920();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ab270 size=0x79
 #include "CNPC_VSabbatLeader.h"
 struct ScopeEnt { const char *name; const char *file; const char *file2; };
