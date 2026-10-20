@@ -2426,6 +2426,7 @@
 0x1000fc27 func   ?sub_100737b0@CUnknown100737b0@@QAEXH@Z CUnknown100737b0::sub_100737b0
 0x1000fc3b func   ?vfunc5@COccultThaumDamage@@QAEPAV1@I@Z COccultThaumDamage::vfunc5
 0x1000fc5e func   ?vfunc109@CBaseEntity@@UAE_NPBDM@Z CBaseEntity::vfunc109
+0x1000fca4 func   ?sub_102f91b0@UtlMem@@QAEXXZ UtlMem::sub_102f91b0
 0x1000fcae func   ?vfunc5@CRopeKeyframe@@QAEPAV1@I@Z CRopeKeyframe::vfunc5
 0x1000fcb8 func   ?sub_101e80a0@@YGHH@Z sub_101e80a0
 0x1000fcea func   ?sub_10260750@@YIXPAD@Z sub_10260750
