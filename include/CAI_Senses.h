@@ -3,7 +3,7 @@
 #include "CAI_Component.h"
 #include "UtlMem.h"
 
-extern void (*g_109f3624)(void *);	// the game's Plat_Free
+extern void (* const g_109f3624)(void *);	// the game's Plat_Free
 
 struct CAI_SensesVec	// a CUtlVector<int>: memory (pointer, allocation count, grow size), size, element pointer
 {
