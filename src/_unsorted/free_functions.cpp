@@ -9901,6 +9901,22 @@ int CBaseAnimating::sub_10092270(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10092380 size=0xa4
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+extern char g_1054fa00[];
+
+bool CBaseAnimating::sub_10092380(int sequence, const char *name)
+{
+	ScopeTrace trace(g_1054fa00, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int index = sub_10092270(name);
+	if (index == -1)
+		return false;
+	return sub_10092460(sequence, index);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10092460 size=0xbb
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
