@@ -38919,6 +38919,35 @@ CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f15b0 size=0x72
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_109430d4;
+extern SendTable *g_105a4c50;
+
+// TARGET: sub_103f15b0
+int sub_103f15b0()
+{
+	static const char *pTableName = "DT_VampireProjectile_MingXiaoSpit";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_105a4c50, (void *)sub_10009539),
+	};
+	g_109430d4.sub_1000e8fe(props + 1, 1, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f3200 size=0x49
 #include "CWeaponIArmor_Hvy_Cloth.h"
 extern void* vt_104e45bc;
