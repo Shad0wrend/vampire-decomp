@@ -8226,6 +8226,38 @@ void CBaseAnimating::sub_1008f540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f6c0 size=0xb4
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_105387dc[];
+extern char g_106b8540[];
+extern char g_1054f094[];
+int __cdecl sub_10428360(void *pStudioHdr, int activity);
+
+int CBaseAnimating::sub_1008f6c0(int activity)
+{
+	const char *name = this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc;
+	g_109f3620[*g_109f3680].a = g_1054f094;
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	for (int i = -1; i < 2; i++) {
+		void *pStudioHdr = sub_100952d0(i);
+		if (pStudioHdr) {
+			int r = sub_10428360(pStudioHdr, activity);
+			if (r >= 0) {
+				--*g_109f3680;
+				return r;
+			}
+		}
+	}
+	--*g_109f3680;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008fe80 size=0x9d
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
