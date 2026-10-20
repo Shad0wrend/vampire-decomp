@@ -46,6 +46,15 @@ public:
 	virtual int vfunc2(CBaseEntity *pEnt, int map);	// reads the entity's data description block
 	virtual void vfunc3(int a, int b, int c, int d, int e);	// stub 0x10004b65 for 0x101a1b70
 
+	// Slots 4..28 (slot 7 and slot 16 are the plain members below).
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
+	virtual int vfunc15(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadInt": reads up to count ints into pValues, returns the number read
+	virtual void s16();
+	virtual void s17(); virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21(); virtual void s22();
+	virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27();
+	virtual int vfunc28(CBaseEntity **pValues, int count, int nBytesAvailable);	// "CRestore::ReadEntityPtr": reads entity indexes (slot 15) and maps each to the entity (sub_101a2390), zero-filling the rest
+
 	CRestore(void *pData);	// 0x101a12a0
 
 	// Searches the field table starting from the remembered position, wrapping around.
@@ -53,6 +62,7 @@ public:
 	void sub_101a1990(unsigned short *pValue);	// slot 7: calls slot 9(pValue), then appends slot 0() + *pValue to the vector at +4
 	void sub_101a1f90(void *pData, int size);	// reads size bytes into pData
 	char vfunc16();	// slot 16: reads one byte
+	CBaseEntity *sub_101a2390(int index);	// the entity of the given save index (stub 0x10014a3d)
 
 	CRestoreVec m_vec;	// 0x0004
 	void *m_pData;	// 0x0018
