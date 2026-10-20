@@ -56858,6 +56858,33 @@ void CNPC_VWerewolf::sub_103d6280(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d6520 size=0xe8
+#include "CNPC_VWerewolf.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+extern char g_10662e70[];
+extern int g_10538764;
+extern int g_1060a514;
+extern CGlobalEntityList g_106eb5d8;
+void *__RTDynamicCast(void *, long, void *, void *, int);
+struct HintLike { char pad[0x468]; const char *m_pTarget; };
+void *CNPC_VWerewolf::sub_103d6520(void *pHint)
+{
+    ScopeTrace t(g_10662e70, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    HintLike *pCur = (HintLike *)pHint;
+    if (((HintLike *)pHint)->m_pTarget)
+        pCur = (HintLike *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, ((HintLike *)pHint)->m_pTarget, 0, 0), 0, &g_10538764, &g_1060a514, 0);
+    if (!pCur)
+        pCur = (HintLike *)pHint;
+    HintLike *pNext = pCur;
+    if (pCur->m_pTarget)
+        pNext = (HintLike *)g_106eb5d8.sub_100f7770(0, pCur->m_pTarget, 0, 0);
+    if (!pNext)
+        return pCur;
+    return pNext;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d6650 size=0xd3
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
