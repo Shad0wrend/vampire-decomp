@@ -304,6 +304,7 @@
 0x10002874 func   ?sub_100a8fc0@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a8fc0
 0x10002888 func   ??0CDialogDependency@@QAE@XZ CDialogDependency::CDialogDependency
 0x1000288d func   ?vfunc5@CNPC_VHunter@@QAEPAV1@I@Z CNPC_VHunter::vfunc5
+0x1000289c func   ?sub_10334b10@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10334b10
 0x100028a1 func   ?sub_10334600@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_10334600
 0x100028a6 func   ?sub_102a9e60@@YIMPAUCSlots@@@Z sub_102a9e60
 0x100028ab func   ?vfunc2@CTEBubbles@@UAEPAV1@I@Z CTEBubbles::vfunc2

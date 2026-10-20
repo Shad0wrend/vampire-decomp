@@ -48643,6 +48643,30 @@ char CBaseCombatCharacter::sub_10334860(void *pCurrent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10334b10 size=0xc8
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+void sub_101cd940(void *pEntity);
+
+// TARGET: CBaseCombatCharacter::sub_10334b10
+void CBaseCombatCharacter::sub_10334b10()
+{
+	ScopeTrace trace("CBaseCombatCharacter::Inventory_Destroy", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	for (int i = 0; i < 0xe0; i++)
+	{
+		if (sub_1032e8b0(i))
+		{
+			sub_101cd940(sub_1032e8b0(i));
+			*(int *)((char *)sub_1032e8b0(i) + 0x73c) = 0xff;
+			sub_1032e9f0(i, 0);
+		}
+	}
+	*(int *)((char *)this + 0x19a4) = -1;
+	*(int *)((char *)this + 0x10dc) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10335950 size=0xd5
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
