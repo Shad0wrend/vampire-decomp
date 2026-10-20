@@ -5441,6 +5441,49 @@ void sub_10068ab0(int a, int b, const int *mins, const int *maxs, int p5, int p6
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069310 size=0xd6
+#include "CTETextMessage.h"
+
+struct TextMessageParams
+{
+	int f00, f04, f08;
+	unsigned char b0c, b0d, b0e, b0f, b10, b11, b12, b13;
+	int f14, f18, f1c, f20, f24;
+};
+
+struct TextMessageData
+{
+	int v[16];
+	char text[128];
+};
+
+extern TextMessageData g_106c5e8c;
+extern CTETextMessage g_106c5e80;
+extern char *(__cdecl *g_109f3890)(char *, const char *, int);
+
+void sub_10069310(int a, int b, TextMessageParams *p, const char *text)
+{
+	g_106c5e8c.v[0] = p->f24 & 0xff;
+	g_106c5e8c.v[1] = p->f00;
+	g_106c5e8c.v[2] = p->f04;
+	g_106c5e8c.v[3] = p->f08;
+	g_106c5e8c.v[4] = p->b0c;
+	g_106c5e8c.v[5] = p->b0d;
+	g_106c5e8c.v[6] = p->b0e;
+	g_106c5e8c.v[7] = p->b0f;
+	g_106c5e8c.v[8] = p->b10;
+	g_106c5e8c.v[9] = p->b11;
+	g_106c5e8c.v[10] = p->b12;
+	g_106c5e8c.v[11] = p->b13;
+	g_106c5e8c.v[12] = p->f14;
+	g_106c5e8c.v[13] = p->f18;
+	g_106c5e8c.v[14] = p->f1c;
+	g_106c5e8c.v[15] = p->f20;
+	g_109f3890(g_106c5e8c.text, text, 0x80);
+	g_106c5e80.sub_10068d50(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100697a0 size=0xe1
 #include "SendProp.h"
 
