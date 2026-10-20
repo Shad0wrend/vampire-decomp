@@ -33745,6 +33745,26 @@ void TSeg::sub_101f4570(int target, int *outIndex, int *outOffset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f4c80 size=0x13
+struct CUnknown101f4c80 {
+    int m_n0;
+    int m_n4;
+    int m_n8;
+    int m_nC;
+    int m_n10;
+    CUnknown101f4c80 *sub_101f4c80(int n);
+};
+
+// TARGET: sub_101f4c80
+CUnknown101f4c80 *CUnknown101f4c80::sub_101f4c80(int n)
+{
+    m_n0 = n;
+    m_nC = 0;
+    m_n10 = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4eb0 size=0x80
 extern void (*g_109f3650)(int, const char *);
 extern char g_106b8540[];
