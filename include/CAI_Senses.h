@@ -30,9 +30,10 @@ class CAI_Senses : public CAI_Component
 public:
 	virtual ~CAI_Senses()	// slot 0: scalar deleting destructor at 0x1027cde0
 	{
-		m_vec48.Destroy(g_109f3624);
-		m_vec34.Destroy(g_109f3624);
-		m_vec20.Destroy(g_109f3624);
+		void (__cdecl *pFree)(void *) = g_109f3624;
+		m_vec48.Destroy(pFree);
+		m_vec34.Destroy(pFree);
+		m_vec20.Destroy(pFree);
 	}
 
 	char pad08[0x20 - 0x08];
