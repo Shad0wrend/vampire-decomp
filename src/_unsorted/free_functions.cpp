@@ -23592,6 +23592,35 @@ int *sub_101a5e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a77a0 size=0xa2
+#include "CCineNPC.h"
+extern void (__cdecl *g_109f364c)(const char *fmt, ...);
+extern char g_10594b18[];
+struct SNamed { const char *sub_100ab4f0(); };
+
+void CCineNPC::sub_101a77a0(void *pNpc)
+{
+    void (__cdecl *DevWarning)(const char *fmt, ...) = g_109f364c;
+    *((char *)pNpc + 0x5d78) = 1;
+    DevWarning("********************************\n");
+    DevWarning("********************************\n");
+    DevWarning("**\n");
+    DevWarning(g_10594b18);
+    DevWarning("Attempting to play a scripted sequence (%s) on an NPC (%s) that is ScriptHidden.  Satan will eat your babies if you continue to do this.\n", ((SNamed *)this)->sub_100ab4f0(), ((SNamed *)pNpc)->sub_100ab4f0());
+    DevWarning("Performing voodoo flag magic.\n");
+    DevWarning("This is so asking to break.\n");
+    DevWarning("Look for weird things to happen if you do this.\n");
+    DevWarning("And tell me all about them.\n");
+    DevWarning("ALL about them.\n");
+    DevWarning("Like story time.\n");
+    DevWarning("I like story time.\n");
+    DevWarning(g_10594b18);
+    DevWarning("**\n");
+    DevWarning("********************************\n");
+    DevWarning("********************************\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8fe0 size=0x53
 void *sub_1000db89(int);
 struct GP;
