@@ -29,7 +29,7 @@ public:
 	CAI_NPC_V10(17) CAI_NPC_V10(18) CAI_NPC_V10(19)
 	CAI_NPC_V10(20) CAI_NPC_V10(21)
 	CAI_NPC_V(220)
-	virtual float *vfunc221(float *pOut, ...);	// fills pOut (three floats) and returns it; the caller cleans the stack (called with two more zero arguments)
+	virtual float *vfunc221();	// "CBaseEntity::GetAngles": the pointer to the three angle floats at +0x428
 	CAI_NPC_V(222) CAI_NPC_V(223) CAI_NPC_V(224) CAI_NPC_V(225) CAI_NPC_V(226) CAI_NPC_V(227) CAI_NPC_V(228) CAI_NPC_V(229)
 	CAI_NPC_V10(23) CAI_NPC_V10(24) CAI_NPC_V10(25) CAI_NPC_V10(26) CAI_NPC_V10(27) CAI_NPC_V10(28)
 	// slots 290..409
@@ -129,7 +129,7 @@ public:
 	void sub_10182c40(const char *text, const char *sound);	// copies text into a global buffer (+0x1ca4 = the buffer, or null when empty), stamps curtime - 0.5 at +0x1ca8, then moves that time forward by the sound's duration (when the dialog partner at +0xfe8 has the object at +0x98) or by 0.6, and sets bit 0 of +0x1cac
 	void sub_1026e4f0();	// "CAI_BaseNPC::PerformSensing": scope trace (entity name), when the count at +0x5bb4 is not positive calls sub_10310710 on the object at +0x5cdc, then slot 459
 	bool sub_1027d0a0();	// SelectIdealState helper: with the take-damage mode (+0x200) at 1 stamps the source file/line (+0x1b3c / +0x1b40) and sets the state (+0x5cc4) to 7 and returns false; else cancels the scripted sequence entity of the handle at +0x5d74 (CCineNPC::sub_101a8c30) and returns true
-	int sub_10265970();	// picks a hurt/idle activity (0x49 default, 0x66 / 0x68..0x6c by the value at +0x1594) that the model has a sequence for (CBaseAnimating::SelectWeightedSequence), else 0x49
+	int sub_10265970();	// picks a hurt/idle activity (0x49 default, 0x66 / 0x68..0x6c by the value at +0x1594) that the model has a sequence for (CBaseAnimating::SelectWeightedSequence), else 0x49; first computes AngleVectors of GetAngles() (unused)
 	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence, called directly
 	void sub_1000c9cd();	// as in CPhysForce (transplant)
 	void sub_10156580(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
