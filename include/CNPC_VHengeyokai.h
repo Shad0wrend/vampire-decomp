@@ -43,4 +43,6 @@ public:
 	bool sub_10382aa0(int key);
 	char sub_1029b180(void *pOther);	// CAI_BaseNPCTroika::vfunc69
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	void vfunc104();	// Precache: base, the stock model/sound names, the model, the freeze emitter and the fist weapon
+	void sub_100013f7();	// CNPC_VHuman::vfunc104 (jump stub)
 };
