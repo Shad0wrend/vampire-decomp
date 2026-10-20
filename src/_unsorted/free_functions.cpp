@@ -3823,6 +3823,68 @@ void CUtlMemory20::sub_10043870(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10044db0 size=0x14b
+#include "CUtlMap16.h"
+
+extern void *g_109f0b6c;
+
+struct CUtlRBTree16Unit : CUtlRBTree16Ctx
+{
+	const Links_t &sub_10048960(unsigned short i) const;	// Links(i), out of line (stub 0x1000b2d5)
+	void sub_100484e0(unsigned short newNode, unsigned short parent, bool leftchild);	// LinkToParent (stub 0x100076e4)
+};
+
+struct CMem16_t
+{
+	void sub_1004add0(int grow);	// stub 0x1000966f
+};
+
+struct CMapPair
+{
+	unsigned int m_key;
+	unsigned int m_elem;
+};
+
+void CUtlMap16::sub_10044db0(unsigned int key, unsigned int elem)
+{
+	CUtlRBTree16Unit *tree = (CUtlRBTree16Unit *)&m_Tree;
+	const CUtlRBTree16At<0x106bdb44> *links = (const CUtlRBTree16At<0x106bdb44> *)tree;
+	CMapPair insert;
+	insert.m_key = key;
+	insert.m_elem = elem;
+	if (tree->m_pLessContext)
+		g_109f0b6c = tree->m_pLessContext;
+	unsigned short parent = 0xffff;
+	bool leftchild = false;
+	unsigned short current = tree->m_Root;
+	while (current != 0xffff) {
+		parent = current;
+		if (tree->m_LessFunc(&insert, tree->m_pElements[current].m_Data)) {
+			leftchild = true;
+			current = tree->sub_10048960(current).m_Left;
+		} else {
+			leftchild = false;
+			current = links->Links(current).m_Right;
+		}
+	}
+	unsigned short newNode = tree->m_FirstFree;
+	if (newNode == 0xffff) {
+		if (tree->m_unk8 == tree->m_TotalElements)
+			((CMem16_t *)&tree->m_pElements)->sub_1004add0(1);
+		newNode = tree->m_TotalElements++;
+	} else {
+		tree->m_FirstFree = tree->sub_10048960(newNode).m_Right;
+	}
+	tree->sub_100484e0(newNode, parent, leftchild);
+	tree->m_NumElements++;
+	CMapPair *pElement = (CMapPair *)tree->m_pElements[newNode].m_Data;
+	if (pElement) {
+		pElement->m_key = insert.m_key;
+		pElement->m_elem = insert.m_elem;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045110 size=0x1c9
 struct Node8 { int key; int val; };
 struct Links_t { unsigned short left, right, parent, tag; };
