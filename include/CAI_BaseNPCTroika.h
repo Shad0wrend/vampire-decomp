@@ -25,7 +25,8 @@ public:
 	virtual bool vfunc468(CBaseEntity *pEnt);	// see CAI_BaseNPC
 
 	// Slots 569..580 (past the end of the base class's declared slots).
-	virtual void vfunc569(); virtual int vfunc570(CBaseEntity *pHint); virtual void vfunc571(); virtual void vfunc572(); virtual void vfunc573();	// slot 570: picks an activity for the hint's type at +0x5dc (100 / 101), 0x55 when none
+	virtual int vfunc569(CBaseEntity *pHint);	// slot 569: 8 while bit 9 of +0x14b8 is set, else the activity for the hint's type at +0x5dc (100 -> 0x1111, 101 -> 0x110d, 0x27d8 -> 0x1118) when sub_10295460(activity, 0) accepts it, else CAI_BaseNPC::sub_10274aa0(pHint)
+	virtual int vfunc570(CBaseEntity *pHint); virtual void vfunc571(); virtual void vfunc572(); virtual void vfunc573();	// slot 570: picks an activity for the hint's type at +0x5dc (100 / 101), 0x55 when none
 	virtual void vfunc574(); virtual void vfunc575(); virtual void vfunc576(); virtual void vfunc577(); virtual void vfunc578();
 	virtual void vfunc579();
 	virtual CAI_CondOwner *vfunc580();	// the object that translates condition ids (sub-object at +0x30)
