@@ -38454,6 +38454,25 @@ bool CNPC_VWerewolf::sub_10366400(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10366bc0 size=0x43
+#include "CNPC_VBatSwarm.h"
+void *sub_100aa720(int size);
+extern char g_1062ef80[];
+
+// TARGET: npc_VBatSwarm
+extern "C" CBaseEntity *npc_VBatSwarm()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VBatSwarm *p;
+	if (mem)
+		p = ((CNPC_VBatSwarm *)mem)->sub_10366c30();
+	else
+		p = 0;
+	p->vfunc106(g_1062ef80);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10366d60 size=0x33
 void sub_10007897();
 void sub_10011d4c();
