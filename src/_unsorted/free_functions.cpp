@@ -24716,6 +24716,63 @@ int CVDmg_t::sub_101faa70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fab10 size=0x17c
+struct ScopeTraceEntry {
+    const char *m_pszName;
+    const char *m_pszEntity;
+    const char *m_pszExtra;
+};
+extern "C" __declspec(dllimport) ScopeTraceEntry g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern const char g_106b8540[];
+
+struct ScopeTrace {
+    ScopeTrace(const char *name, const char *entity)
+    {
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszName = name;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszEntity = entity;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszExtra = g_106b8540;
+        g_ScopeTraceStackDepth++;
+    }
+    ~ScopeTrace() { g_ScopeTraceStackDepth--; }
+};
+
+extern "C" char *__cdecl strstr(const char *, const char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+
+// TARGET: sub_101fab10
+unsigned int sub_101fab10(const char *pszFlags)
+{
+    ScopeTrace trace("CVDmg_t::StrToDMGFlags", g_106b8540);
+    if (!pszFlags || !strlen(pszFlags))
+        return 0;
+    unsigned int flags = 0;
+    strstr(pszFlags, "DMG_GENERIC");
+    if (strstr(pszFlags, "DMG_CLUB"))
+        flags = 0x80;
+    if (strstr(pszFlags, "DMG_SLASH"))
+        flags |= 4;
+    if (strstr(pszFlags, "DMG_BULLET"))
+        flags |= 2;
+    if (strstr(pszFlags, "DMG_BUCKSHOT"))
+        flags |= 0x4000000;
+    if (strstr(pszFlags, "DMG_BLAST"))
+        flags |= 0x40;
+    if (strstr(pszFlags, "DMG_CLAWBITE"))
+        flags |= 0x10000000;
+    if (strstr(pszFlags, "DMG_BURN"))
+        flags |= 8;
+    if (strstr(pszFlags, "DMG_FAITH"))
+        flags |= 0x80000000;
+    if (strstr(pszFlags, "DMG_SUNLIGHT"))
+        flags |= 0x40000000;
+    if (strstr(pszFlags, "DMG_SUPERCLAWBITE"))
+        flags |= 0x8000000;
+    return flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fb180 size=0x5f
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
