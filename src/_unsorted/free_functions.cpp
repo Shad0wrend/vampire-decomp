@@ -21260,6 +21260,36 @@ void CUnknown10170eb0::sub_10170eb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101712d0 size=0xbb
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+
+extern float g_1070d1b0[3];
+
+// TARGET: CBasePlayer::sub_101712d0
+void CBasePlayer::sub_101712d0(CBasePlayerVehicle *pVehicle, int role)
+{
+	if (pVehicle->vfunc2(role) != 0)
+		return;
+	CBaseEntity *pVehicleEnt = pVehicle->vfunc1();
+	m_pVehicle = pVehicle;
+	if (pVehicleEnt)
+		m_hVehicle = *pVehicleEnt->vfunc1();
+	else
+		m_hVehicle = 0xffffffff;
+	m_b20F4 = 1;
+	m_flags1E74 |= 1;
+	if (!pVehicle->vfunc5(role))
+		sb01();
+	((CBaseEntity *)this)->sub_100b2e30(g_1070d1b0);
+	((CBaseEntity *)this)->vfunc93(9, 0);
+	((CBaseEntity *)this)->sub_100aaa40(8);
+	((CBaseEntity *)this)->sub_100b3b00();
+	pVehicle->vfunc4(role, this);
+	sk0f();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101713c0 size=0xab
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
