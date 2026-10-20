@@ -2888,6 +2888,7 @@
 0x1001276a func   ?vfunc5@CBaseFilter@@QAEPAV1@I@Z CBaseFilter::vfunc5
 0x10012779 func   ?vfunc5@CItemKeyGeneric@@QAEPAV1@I@Z CItemKeyGeneric::vfunc5
 0x10012783 func   ?sub_101fb340@CVDmg_t@@QAE_NH@Z CVDmg_t::sub_101fb340
+0x10012797 func   ?sub_10161ed0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10161ed0
 0x100127c4 func   ?sub_100295f0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295f0
 0x100127d8 func   ?sub_102507b0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_102507b0
 0x100127e2 func   ?vfunc35@CPushable@@UAEHH@Z CPushable::vfunc35
