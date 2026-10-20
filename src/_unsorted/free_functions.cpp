@@ -15070,6 +15070,22 @@ bool CUnknown100bf030::sub_100bf030(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c08d0 size=0x13
+struct CFloatPair3f4 {
+    char pad_0000[0x3f4];
+    float m_f3f4;
+    float m_f3f8;
+    float m_f3fc;
+    void sub_100c08d0();
+};
+
+// TARGET: sub_100c08d0
+void CFloatPair3f4::sub_100c08d0()
+{
+    m_f3fc = m_f3f4 + 10.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0c60 size=0xd
 void CUnknown100c0c60::sub_100c0c60(float value)
 {
