@@ -18594,6 +18594,30 @@ const char *CExpressionTable::sub_10105090(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105270 size=0xe6
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CExpressionTable.h"
+
+extern void (__cdecl *g_109f3888)(const char *pszSrc, char *pszDest, int nSize);
+extern void (__cdecl *g_109f3860)(char *psz, int nLen);
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+
+int CExpressionTable::sub_10105270(int a, int b)
+{
+	ScopeTrace trace("CExpressionTable::GetExpressionID", g_106b8540);
+	int nEntity = ((CBaseEntity *)b)->vfunc8();
+	char szName[64];
+	g_109f3888((const char *)a, szName, 64);
+	g_109f3860(szName, strlen(szName));
+	CUnknown1024b2d0Id id = m_list.sub_1024b400(szName);
+	if (id.m_id == 0xffff)
+		return -1;
+	return (id.m_id << 16) | (nEntity & 0xffff);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105870 size=0xa6
 #include "CExpressionTable.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
