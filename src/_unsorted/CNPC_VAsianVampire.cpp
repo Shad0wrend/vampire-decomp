@@ -55,6 +55,39 @@ void CNPC_VAsianVampire::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10360ce0 size=0xea
+#include "CNPC_VAsianVampire.h"
+#include "ScopeTrace.h"
+#define AV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define AV100(p) AV(p##0) AV(p##1) AV(p##2) AV(p##3) AV(p##4) AV(p##5) AV(p##6) AV(p##7) AV(p##8) AV(p##9)
+struct OriginSlots
+{
+    AV100(a0) AV100(a1) AV(a20)
+    virtual void b210(); virtual void b211(); virtual void b212(); virtual void b213(); virtual void b214(); virtual void b215(); virtual void b216();
+    virtual StoredHintPos_t *vfunc217();
+};
+struct S1070b228 { char pad[0xc]; float m_curtime; };
+extern S1070b228 *g_1070b228;
+extern char g_1062cc6c[];
+extern float g_104a9300;
+void CNPC_VAsianVampire::vfunc420()
+{
+    ScopeTrace t(g_1062cc6c, g_106b8540);
+    sub_10013e85();
+    for (int i = 0; i < 2; i++)
+        m_storedHints[i] = *((OriginSlots *)this)->vfunc217();
+    m_nNextStoredHint = 0;
+    *(int *)((char *)this + 0x5ddc) = 0;
+    m_bTaskFailedJump = 0;
+    m_flStationaryTime = g_1070b228->m_curtime;
+    *(StoredHintPos_t *)((char *)this + 0x66dc) = *((OriginSlots *)this)->vfunc217();
+    *((char *)this + 0x66e8) = 1;
+    float flTime = g_104a9300;
+    m_flRestoredTime = flTime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10361490 size=0x72
 #include "CNPC_VAsianVampire.h"
 

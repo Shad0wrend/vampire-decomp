@@ -1902,6 +1902,7 @@
 0x1000a52e func   ?sub_1027ee90@@YAXXZ sub_1027ee90
 0x1000a53d func   ?sub_10030d50@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030d50
 0x1000a551 func   ?sub_102017b0@CVStatList_t@@QAE_NHH@Z CVStatList_t::sub_102017b0
+0x1000a565 func   ?vfunc420@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc420
 0x1000a56f func   ?sub_10147d50@CUnknown10147d10@@QAEXPAUCPair10147d50@@@Z CUnknown10147d10::sub_10147d50
 0x1000a5ab func   ?sub_100d6820@@YAXXZ sub_100d6820
 0x1000a5ce func   ?vfunc103@CGravityPellet@@QAEXXZ CGravityPellet::vfunc103
