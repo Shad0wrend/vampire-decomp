@@ -61388,6 +61388,44 @@ CNPC_VWerewolfVec3 CNPC_VWerewolf::sub_103d6650(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d7420 size=0x189
+#include "CNPC_VWerewolf.h"
+#include "CHintData_WW.h"
+#include "ScopeTrace.h"
+
+extern CBaseEntity *g_10925450;
+extern char g_10663030[];
+
+#define D(x) virtual void x();
+#define T(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+struct HintSlots217
+{
+	T(a0) T(a1) T(a2) T(a3) T(a4) T(a5) T(a6) T(a7) T(a8) T(a9)
+	T(b0) T(b1) T(b2) T(b3) T(b4) T(b5) T(b6) T(b7) T(b8) T(b9)
+	T(c0) D(d0) D(d1) D(d2) D(d3) D(d4) D(d5) D(d6)
+	virtual CNPC_VWerewolfVec3 *slot217();
+};
+
+void CNPC_VWerewolf::sub_103d7420(CHintData_WW *pData)
+{
+	ScopeTrace trace(g_10663030, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	for (CBaseEntity *pHint = g_10925450; pHint; pHint = *(CBaseEntity **)((char *)pHint + 0x5d8)) {
+		if (pHint != (CBaseEntity *)pData->m_copy[0]) {
+			if (sub_103d6390(pHint) != sub_103d6390((void *)pData->m_copy[0])) {
+				CNPC_VWerewolfVec3 a = *(CNPC_VWerewolfVec3 *)&pData->m_copy[1];
+				if ((char)sub_103d0db0(a, *((HintSlots217 *)pHint)->slot217()))
+					pData->sub_103ca1a0((int)pHint);
+				CNPC_VWerewolfVec3 b = *(CNPC_VWerewolfVec3 *)&pData->m_copy[4];
+				if ((char)sub_103d0db0(b, *((HintSlots217 *)pHint)->slot217()))
+					pData->sub_103ca390((int)pHint);
+			} else {
+				pData->sub_103ca1a0((int)pHint);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d7620 size=0xb6
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
