@@ -10421,6 +10421,38 @@ void CBaseEntity::sub_100ac9f0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100acd40 size=0x85
+#include "CBaseEntity.h"
+#include "inputdata_t.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+void CBaseEntity::sub_100acd40(inputdata_t *pInput)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseEntity::InputDispatchEffect";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	variant_t *pValue = &pInput->value;
+	if (pValue->fieldType != 2)
+		pValue->sub_10008805();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100acef0 size=0x7c
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;

@@ -1501,6 +1501,7 @@
 0x100092be func   ?sub_10336920@Ent@@QAE_NXZ Ent::sub_10336920
 0x100092d7 func   ?sub_10057850@SaveList@@QAEHPAUIVisitor@@@Z SaveList::sub_10057850
 0x100092fa func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc3
+0x1000933b func   ?sub_100acd40@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100acd40
 0x10009381 func   _camera_track camera_track
 0x1000938b func   ?sub_101f6c30@CUnknown101f6c30@@QAE_NXZ CUnknown101f6c30::sub_101f6c30
 0x1000939a func   _security_camera security_camera
