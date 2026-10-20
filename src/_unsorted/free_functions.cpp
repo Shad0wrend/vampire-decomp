@@ -49058,6 +49058,47 @@ char sub_1035c3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035e5f0 size=0xa5
+#include "CNPC_VAndreiBlood.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+struct SEntInfo { void *pEnt; unsigned serial; int pad; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char *g_10566458;
+extern int g_104a6f80;
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SEntVt {
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8) SL10(a9)
+	SL10(b0) SL10(b1) SL10(b2) SL10(b3) SL10(b4) SL10(b5) SL10(b6) SL10(b7) SL10(b8) SL10(b9)
+	SL10(c0)
+	virtual void c10(); virtual void c11(); virtual void c12(); virtual void c13(); virtual void c14();
+	virtual void c15(); virtual void c16();
+	virtual int vfunc217(int a);
+};
+struct SMotor { void sub_102e20b0(int pos); };
+
+void CNPC_VAndreiBlood::sub_1035e5f0()
+{
+    g_109f3620[*g_109f3680].a = "CNPC_VAndreiBlood::FacePlayerAdvance";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    unsigned int h = *(unsigned int *)((char *)this + 0x628c);
+    if (h != 0xffffffff) {
+        SEntInfo *e = (SEntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+        if (e->serial == (h >> 13) && e->pEnt) {
+            SEntVt *pEnt = (SEntVt *)e->pEnt;
+            SMotor *pMotor = *(SMotor **)((char *)this + 0x5d44);
+            pMotor->sub_102e20b0(pEnt->vfunc217(g_104a6f80));
+        }
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035eaa0 size=0x43
 #include "CNPC_VAnimal.h"
 void *sub_100aa720(int size);
