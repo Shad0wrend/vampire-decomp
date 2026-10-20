@@ -19,6 +19,23 @@ void CMultiplayRules::vfunc75()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101410f0 size=0x24
+#include "CMultiplayRules.h"
+
+extern int vt_1046b934[];
+
+// TARGET: CMultiplayRules::vfunc0
+CGameRules *CMultiplayRules::vfunc0(unsigned int flags)
+{
+    *(int **)this = vt_1046b934;
+    this->sub_1000d189();
+    if (flags & 1) {
+        delete this;
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141940 size=0x9
 extern float g_104454c0;
 float CMultiplayRules::vfunc30(int a) { return g_104454c0; }
