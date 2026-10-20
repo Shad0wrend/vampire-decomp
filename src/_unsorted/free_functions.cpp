@@ -36925,6 +36925,46 @@ TObj *TObj::sub_1030bec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030c600 size=0x190
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" __declspec(dllimport) void __cdecl Error(const char *, ...);
+
+// TARGET: sub_1030c600
+int __stdcall sub_1030c600(const char *name)
+{
+	if (_strcmpi(name, "NONE") == 0)
+		return 0;
+	if (_strcmpi(name, "IDLE") == 0)
+		return 1;
+	if (_strcmpi(name, "COMBAT") == 0)
+		return 2;
+	if (_strcmpi(name, "PRONE") == 0)
+		return 6;
+	if (_strcmpi(name, "ALERT") == 0)
+		return 3;
+	if (_strcmpi(name, "SCRIPT") == 0)
+		return 4;
+	if (_strcmpi(name, "PLAYDEAD") == 0)
+		return 5;
+	if (_strcmpi(name, "DEAD") == 0)
+		return 7;
+	if (_strcmpi(name, "FLEEING") == 0)
+		return 8;
+	if (_strcmpi(name, "RETREATING") == 0)
+		return 9;
+	if (_strcmpi(name, "COWERING") == 0)
+		return 10;
+	if (_strcmpi(name, "HUNTING") == 0)
+		return 11;
+	if (_strcmpi(name, "OBLIVIOUS") == 0)
+		return 13;
+	if (_strcmpi(name, "CRIMINAL_SUSPICION") == 0)
+		return 14;
+	Error("Schedule has invalid state ID '%s'\n", name);
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030ca70 size=0x67
 extern "C" int _strcmpi(const char *, const char *);
 extern void (*g_109f366c)(const char *, ...);
