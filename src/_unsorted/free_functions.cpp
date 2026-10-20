@@ -35568,6 +35568,42 @@ void CAI_BaseNPCTroika::sub_10295240()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10297430 size=0x82
+#include "CAI_BaseNPCTroika.h"
+
+struct HandleEntry_t
+{
+	CBaseEntity *m_pEnt;
+	unsigned int m_nSerial;
+	int pad;
+};
+struct HandleTable_t
+{
+	int pad;
+	HandleEntry_t m_Entries[1];
+};
+extern HandleTable_t *g_10566458;
+
+static inline CBaseEntity *HandleGet(const unsigned int &h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	HandleEntry_t *e = &g_10566458->m_Entries[h & 0x1fff];
+	if (e->m_nSerial == (h >> 13))
+		return e->m_pEnt;
+	return 0;
+}
+
+bool CAI_BaseNPCTroika::sub_10297430(CAI_BaseNPCTroika *pOther)
+{
+	if (!HandleGet(m_h6448))
+		return false;
+	CBaseEntity *pEnt = HandleGet(m_h6448);
+	bool bResult = sub_10296c40(pOther, pEnt, *(int *)((char *)pOther + 0x458), 0.731f) != 0;
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10298910 size=0x9f
 extern "C" int atoi(const char *);
 

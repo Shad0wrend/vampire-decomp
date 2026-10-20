@@ -1755,6 +1755,7 @@
 0x1000a8da func   ?sub_1009be00@CBaseEntity@@QAEXHHMMM@Z CBaseEntity::sub_1009be00
 0x1000a902 func   ?sub_10403a60@@YAHXZ sub_10403a60
 0x1000a907 func   ?sub_100b0720@@YAXXZ sub_100b0720
+0x1000a92a func   ?sub_10297430@CAI_BaseNPCTroika@@QAE_NPAV1@@Z CAI_BaseNPCTroika::sub_10297430
 0x1000a943 func   ?vfunc5@CItemGGarysCD@@QAEPAV1@I@Z CItemGGarysCD::vfunc5
 0x1000a957 func   ?sub_102c6780@UtlVec8@@QAEHPBUUtlVec8Elem@@@Z UtlVec8::sub_102c6780
 0x1000a961 func   ?vfunc196@CBaseEntity@@QAEHH@Z CBaseEntity::vfunc196
