@@ -53,3 +53,8 @@ struct StepSimulationData	// 0x6c bytes of per-entity step simulation data (zero
 {
 	int m_data[27];
 };
+
+struct ModelWidthScale	// 16 bytes of per-entity model width scale data (zeroed on creation)
+{
+	int m_data[4];
+};
