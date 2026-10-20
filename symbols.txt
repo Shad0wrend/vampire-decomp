@@ -3586,6 +3586,7 @@
 0x1001586b func   ?sub_10349ea0@@YIXPAH@Z sub_10349ea0
 0x10015884 func   ?sub_1011be00@@YIXPAXHH@Z sub_1011be00
 0x100158a2 func   ?sub_101cf9b0@@YA_NH@Z sub_101cf9b0
+0x100158bb func   ?sub_102ca630@CUnknown102ca630@@QAEXPAVCBaseEntity@@@Z CUnknown102ca630::sub_102ca630
 0x100158ca func   ?sub_102f90e0@UtlVec8@@QAEHH@Z UtlVec8::sub_102f90e0
 0x100158cf func   ?sub_102f65b0@@YAXXZ sub_102f65b0
 0x100158e8 func   ?vfunc208@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc208

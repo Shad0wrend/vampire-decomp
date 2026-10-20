@@ -34124,6 +34124,26 @@ int *__fastcall sub_102c9d20(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ca630 size=0x6b
+#include "CUnknown102ca630.h"
+
+void CUnknown102ca630::sub_102ca630(CBaseEntity *pEnt)
+{
+    if (pEnt) {
+        CUnknown102ca630Rec *p = m_recs;
+        CUnknown102ca630Rec *end = p + m_nRecs;
+        while (p < end) {
+            if (pEnt == p->Entity()) {
+                sub_102ca460(p);
+                end--;
+            } else {
+                p++;
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ca6c0 size=0x79
 struct EntInfo { void *ent; unsigned int serial; int pad; };
 struct EntList {
