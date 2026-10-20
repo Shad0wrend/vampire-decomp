@@ -29393,6 +29393,25 @@ int sub_102d6210(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d6250 size=0x43
+#include "CNodeEnt.h"
+void *sub_100aa720(int size);
+extern char g_1060ad3c[];
+
+// TARGET: info_hint
+extern "C" CBaseEntity *info_hint()
+{
+	void *mem = sub_100aa720(0x46c);
+	CNodeEnt *p;
+	if (mem)
+		p = ((CNodeEnt *)mem)->sub_102d7cd0();
+	else
+		p = 0;
+	p->vfunc106(g_1060ad3c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d7210 size=0x53
 void *sub_1000db89(int);
 struct GP;
