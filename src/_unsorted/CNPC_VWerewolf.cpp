@@ -400,3 +400,30 @@ char CNPC_VWerewolf::vfunc69(void *pOther)
 	return result;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103da230 size=0x11b
+#include "CNPC_VWerewolf.h"
+#include "CWerewolfSlots.h"
+#include "ScopeTrace.h"
+
+struct CGlobal1093d694
+{
+	virtual void slot0();
+	virtual char slot1();
+	char m_pad[0x28];
+	int m_n2c;
+};
+extern CGlobal1093d694 *g_1093d694;
+
+// TARGET: CNPC_VWerewolf::vfunc617
+bool CNPC_VWerewolf::vfunc617(CNPC_VWerewolfVec3 a, int b, int c, CNPC_VWerewolfVec3 d)
+{
+	ScopeTrace trace("CNPC_VWerewolf::EnemyCouldSeeHull", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!g_1093d694->slot1() && g_1093d694->m_n2c)
+		return false;
+	CWerewolfSlots *pSlots = (CWerewolfSlots *)this;
+	if (pSlots->slot167() && !pSlots->slot167()->slot158())
+		return false;
+	return sub_10366510(a, b, c, d);
+}
+// END FUNCTION

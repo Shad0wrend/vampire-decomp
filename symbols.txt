@@ -4105,6 +4105,7 @@
 0x100149cf func   _phys_spring phys_spring
 0x10014a06 func   _info_node_tzimisce_claw_left info_node_tzimisce_claw_left
 0x10014a0b func   ?vfunc0@CVTraitEffectGroup_t@@QAEPAV1@I@Z CVTraitEffectGroup_t::vfunc0
+0x10014a2e func   ?vfunc617@CNPC_VWerewolf@@QAE_NUCNPC_VWerewolfVec3@@HH0@Z CNPC_VWerewolf::vfunc617
 0x10014a5b func   ?sub_101f1a30@CUnknown101f1a30@@QAEHPBD@Z CUnknown101f1a30::sub_101f1a30
 0x10014a65 func   ?sub_1012d4b0@@YIXPAUS@@@Z sub_1012d4b0
 0x10014a6f func   ?sub_10325940@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325940
