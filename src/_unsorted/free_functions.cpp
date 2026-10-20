@@ -33561,6 +33561,43 @@ void UtlMem::sub_102def00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dfd90 size=0xfa
+#include "CUnknown102dfd90.h"
+
+extern char *g_10566458;
+extern void (__cdecl *g_109f3630)(const char *, ...);
+
+struct SHandleEntry { CBaseEntity *pEnt; unsigned int serial; };
+
+void CUnknown102dfd90::sub_102dfd90(CBaseEntity *pEnt)
+{
+    CUnknown102dfd90_Node *node;
+    for (node = m_pHead; node; node = node->m_pNext) {
+        unsigned int h = node->m_hEnt;
+        if (h != 0xffffffff) {
+            SHandleEntry *e = (SHandleEntry *)(g_10566458 + 4 + (h & 0x1fff) * 12);
+            if (e->serial == (h >> 13) && e->pEnt && pEnt == e->pEnt)
+                break;
+        }
+    }
+    if (!node) {
+        g_109f3630("Asking MarkAsEluded for enemy that's not in my memory!!\n");
+        return;
+    }
+    if (m_bUseListener) {
+        if (m_pListener) {
+            m_pListener->sub_10316ab0((int)pEnt, node->m_posA, node->m_posB);
+            node->m_bMarked = 1;
+            return;
+        }
+    } else {
+        if (m_pTarget)
+            m_pTarget->vfunc57(pEnt, node->m_posA, node->m_posB);
+    }
+    node->m_bMarked = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0090 size=0x85
 #include "CUnknown102e0090.h"
 
