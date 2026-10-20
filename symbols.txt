@@ -1067,6 +1067,7 @@
 0x10006a05 func   ?sub_10067b70@@YAXPAVCUnknown1019d130@@MPBVVector@@HH1@Z sub_10067b70
 0x10006a19 func   ?vfunc32@CPhysicsPropContested@@UAE_NH@Z CPhysicsPropContested::vfunc32
 0x10006a4b func   ?sub_1008de20@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008de20
+0x10006a78 func   ?sub_102729d0@CAI_BaseNPC@@QAEPAVCBaseEntity@@XZ CAI_BaseNPC::sub_102729d0
 0x10006a7d func   _func_lod func_lod
 0x10006a82 func   ?sub_100fdce0@CUnknown100fdce0@@QAEXH@Z CUnknown100fdce0::sub_100fdce0
 0x10006aa0 func   ?sub_10203190@StatOwner2@@QAEPAVCUnknown102029c0@@H@Z StatOwner2::sub_10203190

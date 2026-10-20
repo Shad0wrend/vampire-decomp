@@ -38259,6 +38259,60 @@ int CAI_BaseNPC::sub_10271ff0(int act, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102729d0 size=0xad
+#include "CAI_BaseNPC.h"
+#include "CGlobalEntityList.h"
+
+#define SO_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SO_V100(p) SO_V10(p##0) SO_V10(p##1) SO_V10(p##2) SO_V10(p##3) SO_V10(p##4) SO_V10(p##5) SO_V10(p##6) SO_V10(p##7) SO_V10(p##8) SO_V10(p##9)
+
+// the vtable of the object at +0x98 up to slot 585, then slot 586
+struct CFocusSourceSlots
+{
+	SO_V100(a0) SO_V100(a1) SO_V100(a2) SO_V100(a3) SO_V100(a4)
+	SO_V10(b0) SO_V10(b1) SO_V10(b2) SO_V10(b3) SO_V10(b4) SO_V10(b5) SO_V10(b6) SO_V10(b7)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5();
+	virtual unsigned int *GetFocusHandle(void *pOut);	// slot 586
+};
+
+struct CFocusKind
+{
+	int sub_102ee620();	// the kind (stub 0x100037e2)
+};
+
+struct SHandleSlot
+{
+	CBaseEntity *m_pEntity;
+	int m_Serial;
+};
+
+extern CGlobalEntityList *g_10566458;
+
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	SHandleSlot *s = (SHandleSlot *)&g_10566458->m_Slots[h & 0x1fff].m_pEntity;
+	if (s->m_Serial == (int)(h >> 13))
+		return s->m_pEntity;
+	return 0;
+}
+
+CBaseEntity *CAI_BaseNPC::sub_102729d0()
+{
+	if ((*(CFocusKind **)((char *)this + 0x5d34))->sub_102ee620() == 2)
+		return ResolveHandle(*(unsigned int *)((char *)this + 0x5ce0));
+	if ((*(CFocusKind **)((char *)this + 0x5d34))->sub_102ee620() == 1)
+		return ResolveHandle(*(unsigned int *)((char *)this + 0x5ce4));
+	if ((*(CFocusKind **)((char *)this + 0x5d34))->sub_102ee620() == 7) {
+		void *pOut;
+		return ResolveHandle(*(*(CFocusSourceSlots **)((char *)this + 0x98))->GetFocusHandle(&pOut));
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279b70 size=0x2a
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
