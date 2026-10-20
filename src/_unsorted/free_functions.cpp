@@ -25480,6 +25480,60 @@ int sub_10199990(int self, int args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10199ce0 size=0xf6
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+struct PyObject { int ob_refcnt; };
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObject *args, const char *fmt, ...);
+__declspec(dllimport) PyObject *PyErr_Occurred();
+__declspec(dllimport) void PyErr_SetString(PyObject *exc, const char *msg);
+__declspec(dllimport) PyObject *PyInt_FromLong(long v);
+__declspec(dllimport) extern PyObject *PyExc_AttributeError;
+}
+extern char g_10590dfc[];
+extern char g_10591898[];
+extern char g_10591818[];
+extern void (*g_109f3630)(const char *fmt, ...);
+CBaseEntity *sub_10196780(int h);
+PyObject *sub_10199ce0(PyObject *self, PyObject *args)
+{
+    int h = 0;
+    if (!PyArg_ParseTuple(args, g_10590dfc, &h)) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, g_10591898);
+        return 0;
+    }
+    CBaseEntity *pEnt = sub_10196780(h);
+    CBaseCombatCharacter *pChar;
+    if (pEnt == 0)
+        pChar = 0;
+    else
+        pChar = *(CBaseCombatCharacter **)((char *)pEnt + 0x9c);
+    if (*(int *)((char *)pChar + 0xa8) == 0)
+        g_109f3630(g_10591818);
+    int i = 0;
+    CVStatList_t *pList;
+    if (0 < pChar->m_nStatLists) {
+        CVStatList_t **pp = pChar->m_pStatLists;
+        do {
+            if ((*pp)->m_field10 == 0) {
+                pList = pChar->m_pStatLists[i];
+                goto found;
+            }
+            i++;
+            pp++;
+        } while (i < pChar->m_nStatLists);
+    }
+    {
+        static CVStatList_t s_default(-1);
+        pList = &s_default;
+    }
+found:
+    return PyInt_FromLong(pList->sub_10010609(0x1c));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199e20 size=0x65
 struct PyObj;
 struct PyType { char pad[0x18]; void (*dealloc)(PyObj*); };
