@@ -317,3 +317,11 @@ next:
     return n;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a2a80 size=0x11
+void __fastcall sub_101a2a80(int *p, int dummy, int a)
+{
+    typedef void (__fastcall *VFunc)(void *, void *, int, int, int);
+    ((VFunc)(*(int **)p)[25])(p, (void *)a, a, 1, 0xc);
+}
+// END FUNCTION
