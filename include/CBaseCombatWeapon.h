@@ -7,6 +7,13 @@
 struct CWeaponHolder_t;
 struct CWeaponOwner;
 
+struct CWeaponActivityRecord	// 12 byte entry of a weapon's activity translation table
+{
+	int m_baseAct;
+	int m_weaponAct;
+	char m_required;
+};
+
 #define CBCW_V(n) virtual void vfunc##n();
 #define CBCW_V10(p) CBCW_V(p##0) CBCW_V(p##1) CBCW_V(p##2) CBCW_V(p##3) CBCW_V(p##4) CBCW_V(p##5) CBCW_V(p##6) CBCW_V(p##7) CBCW_V(p##8) CBCW_V(p##9)
 
@@ -56,8 +63,10 @@ public:
 	virtual int vfunc343();
 	virtual int vfunc344();	// the owner object (sub_102517b0) + 0x2408
 	CBCW_V(345) CBCW_V(346) CBCW_V(347) CBCW_V(348) CBCW_V(349)
-	CBCW_V10(35) virtual unsigned int vfunc360();	// the weapon's type flags (bits 13 and 14 mark ranged weapons) CBCW_V(361) CBCW_V(362) CBCW_V(363)
-	CBCW_V(361) CBCW_V(362) CBCW_V(363)
+	CBCW_V10(35) virtual unsigned int vfunc360();	// the weapon's type flags (bits 13 and 14 mark ranged weapons)
+	CBCW_V(361)
+	virtual CWeaponActivityRecord *vfunc362();	// the weapon's activity translation table
+	virtual int vfunc363();	// the number of records of that table
 	virtual void vfunc364(int a, int b, int c);
 	CBCW_V(365) CBCW_V(366) CBCW_V(367) CBCW_V(368) CBCW_V(369)
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other);
@@ -66,6 +75,7 @@ public:
 	CWeaponOwner *sub_102517b0();	// the weapon's owner (player) object
 	CWeaponOwner *sub_10252290();	// resolves the owner handle at +0x88c (0 when stale)
 	void *sub_102521f0();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale)
+	void sub_1024edc0();	// prints the weapon's activity translation table (base activity, weapon activity, required) with Msg
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
