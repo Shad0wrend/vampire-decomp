@@ -31685,6 +31685,36 @@ extern "C" CBaseEntity *prop_radio()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022c860 size=0x85
+#include "CPropRadio.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+void CPropRadio::sub_1022c860(inputdata_t *pInput)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CPropRadio::InputActivate";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	if (!*((char *)this + 0x734))
+		sub_1022c750(1);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022c920 size=0x85
 #include "CPropRadio.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
