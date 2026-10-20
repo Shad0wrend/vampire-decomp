@@ -29541,6 +29541,22 @@ void CUtlVector4::sub_102c6c30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6d40 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_102c6d40()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6d80 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
