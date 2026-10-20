@@ -109,6 +109,8 @@ public:
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
 	void sub_10269b50(int condition);	// "CAI_BaseNPC::SetCondition"-like (called through the stub at 0x10015839)
 	void sub_10269bd0(int *pConditions, int nConditions);	// "CAI_BaseNPC::ClearConditions": clears the condition bits (array at +0x5c5c) of each id, translating ids below 1000000000 first through slot 580
+	void sub_1026e340(int newState);	// "CAI_BaseNPC::SetState": stores the state at +0x5cc0/+0x5cc4 (curtime at +0x5cc8 on a change), strips the weapon of an NPC in state 1 that slot 167 flags, then calls slot 463(old, new)
+	void sub_10279a50(int a);	// called through the stub at 0x1000b974 by SetState with 0
 	void sub_10260a50(int c);	// called through the stub at 0x1000d0b2 by vfunc311 with its third argument
 	void sub_10273e80(char flag);	// sets the state at +0x5c44 to 4 unless flag is clear and a check (0x5c) passes (called with 0 by animation event handlers)
 	void sub_10274080(CBaseEntity *pEnt);	// enemy memory update: finds pEnt's record in the 20-byte record vector at +0x5d48 (handle, time, position) and refreshes its time, or appends a new record; then stores pEnt's absolute origin in it
