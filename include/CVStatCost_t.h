@@ -10,6 +10,7 @@ struct CVStatSubCost_t
 	CVStatSubCost_t *sub_101fb7a0();	// "CVStatSubCost_t::CVStatSubCost_t": scope trace, clears the heap pointer, Null()
 	int sub_101fbb60(int level);	// "CVStatSubCost_t::GetCostToBuy": scope trace; type 9998: heap table entry [level], 9999: base * level + add, 10000: 10000, else the type itself
 	int sub_101fbc40(int level, bool bForce);	// "CVStatSubCost_t::GetCostToSell": scope trace; 0 when !bForce and level <= 1; type 9998: heap table entry [level - 1], 9999: base * (level - 1) + add, 10000: 0, else the type itself
+	void sub_101fb980(const char *str);	// "CVStatSubCost_t::Parse": scope trace; "Current_Rating..." gives type 9999 and the first number after it (+4), "Table: a, b, c" type 9998 with a heap array of the numbers (count at +0xc, array at +0x10), else the plain number is the type
 };
 
 class CVStatCost_t
