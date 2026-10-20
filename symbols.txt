@@ -917,6 +917,7 @@
 0x10006b7c func   ?sub_100cd640@CUnknown100cd640@@QAEPADXZ CUnknown100cd640::sub_100cd640
 0x10006b95 func   ?sub_100422e0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_100422e0
 0x10006b9f func   ?sub_103f7630@@YAHXZ sub_103f7630
+0x10006bd6 func   ?sub_102d4350@UtlMem@@QAEXXZ UtlMem::sub_102d4350
 0x10006bdb func   ?sub_10202060@CUnknown10202060@@QAEHXZ CUnknown10202060::sub_10202060
 0x10006be0 func   ?sub_103fe9c0@@YAHXZ sub_103fe9c0
 0x10006c03 func   ?sub_100b0850@@YAXXZ sub_100b0850

@@ -30252,6 +30252,22 @@ void sub_102d4320(int *dst, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d4350 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_102d4350()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d4390 size=0x67
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
