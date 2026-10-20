@@ -354,6 +354,7 @@
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
 0x10002fdb func   ?sub_1009ad70@@YIPADPAD@Z sub_1009ad70
 0x10002ff4 func   ?sub_101fee50@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101fee50
+0x10002ff9 func   ?vfunc4@CTEBloodStream@@QAEXHH@Z CTEBloodStream::vfunc4
 0x10003017 func   _ai_changehintgroup ai_changehintgroup
 0x10003026 func   ?vfunc5@CEnvParticleHUD@@QAEPAV1@I@Z CEnvParticleHUD::vfunc5
 0x10003030 func   ?sub_10076af0@CUnknown10076af0@@QAEXD@Z CUnknown10076af0::sub_10076af0
