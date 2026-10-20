@@ -32,4 +32,5 @@ public:
 	CUnknown1024b2d0 m_listb0;	// 0xb0
 
 	CSoundEmitterSystemBase *sub_101b26c0();
+	CSoundEmitterSystemBase *sub_101b0200(unsigned char flags);	// slot 0, scalar deleting destructor: purges the lists at +0xb0, +0x70, +0x24 and the memory blocks at +0x9c, +0x54, +0x8; deletes this when bit 0 of flags is set
 };
