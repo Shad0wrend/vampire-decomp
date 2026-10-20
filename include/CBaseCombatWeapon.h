@@ -18,8 +18,15 @@ public:
 	virtual CBaseCombatWeapon *vfunc5(unsigned int flags); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	// slots 10..279
 	CBCW_V10(1) CBCW_V10(2) CBCW_V10(3) CBCW_V10(4) CBCW_V10(5) CBCW_V10(6) CBCW_V10(7) CBCW_V10(8) CBCW_V10(9)
-	CBCW_V10(10) CBCW_V10(11) CBCW_V10(12) CBCW_V10(13) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16) CBCW_V10(17) CBCW_V10(18) CBCW_V10(19)
-	CBCW_V10(20) CBCW_V10(21) CBCW_V10(22) CBCW_V10(23) CBCW_V10(24) CBCW_V10(25) CBCW_V10(26) CBCW_V10(27)
+	CBCW_V(100) CBCW_V(101) CBCW_V(102) CBCW_V(103) CBCW_V(104)
+	virtual void vfunc105(const char *pszName);
+	CBCW_V(106) CBCW_V(107) CBCW_V(108) CBCW_V(109)
+	CBCW_V10(11) CBCW_V10(12) CBCW_V10(13) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16) CBCW_V10(17) CBCW_V10(18) CBCW_V10(19)
+	CBCW_V10(20) CBCW_V10(21) CBCW_V10(22) CBCW_V10(23) CBCW_V10(24) CBCW_V10(25) CBCW_V10(26)
+	CBCW_V(270) CBCW_V(271)
+	virtual char *vfunc272();
+	virtual char *vfunc273();
+	CBCW_V(274) CBCW_V(275) CBCW_V(276) CBCW_V(277) CBCW_V(278) CBCW_V(279)
 	// slots 280..371
 	virtual bool vfunc280(int a);	// asked by CBaseCombatCharacter::GetBestRangedWeapon with 0
 	CBCW_V(281) CBCW_V(282) CBCW_V(283)
@@ -36,14 +43,20 @@ public:
 	virtual void vfunc307(int value);
 	CBCW_V(308)
 	virtual bool vfunc309();	// true when gpGlobals->curtime is past the time at +0x894
-	CBCW_V(310) CBCW_V(311) CBCW_V(312) CBCW_V(313) CBCW_V(314) CBCW_V(315)
+	CBCW_V(310) CBCW_V(311) CBCW_V(312) CBCW_V(313) CBCW_V(314)
+	virtual bool vfunc315();
 	virtual char vfunc316(int a);
 	CBCW_V(317) CBCW_V(318) CBCW_V(319)
 	CBCW_V10(32) CBCW_V(330) CBCW_V(331) CBCW_V(332) CBCW_V(333) CBCW_V(334) CBCW_V(335) CBCW_V(336)
 	virtual float vfunc337(int a, int b);
 	virtual void vfunc338(int a, int b);	// "CBaseCombatWeapon::Weapon_SetActivity"-like: called by CBaseCombatCharacter::Weapon_SetActivity with its two arguments
 	CBCW_V(339)
-	CBCW_V10(34) CBCW_V10(35) virtual unsigned int vfunc360();	// the weapon's type flags (bits 13 and 14 mark ranged weapons) CBCW_V(361) CBCW_V(362) CBCW_V(363)
+	CBCW_V(340) CBCW_V(341)
+	virtual int vfunc342(int a);	// the owner object (sub_102517b0) + 0x2188
+	virtual int vfunc343();
+	virtual int vfunc344();	// the owner object (sub_102517b0) + 0x2408
+	CBCW_V(345) CBCW_V(346) CBCW_V(347) CBCW_V(348) CBCW_V(349)
+	CBCW_V10(35) virtual unsigned int vfunc360();	// the weapon's type flags (bits 13 and 14 mark ranged weapons) CBCW_V(361) CBCW_V(362) CBCW_V(363)
 	CBCW_V(361) CBCW_V(362) CBCW_V(363)
 	virtual void vfunc364(int a, int b, int c);
 	CBCW_V(365) CBCW_V(366) CBCW_V(367) CBCW_V(368) CBCW_V(369)
