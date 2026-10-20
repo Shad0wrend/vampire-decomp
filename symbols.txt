@@ -3335,6 +3335,7 @@
 0x100141b4 func   ?sub_103134b0@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_103134b0
 0x100141c8 func   ??_GCReliableSingleUserRecipientFilter@@UAEPAXI@Z ??_GCReliableSingleUserRecipientFilter@@UAEPAXI@Z
 0x100141cd func   ?sub_1006a7b0@@YAHXZ sub_1006a7b0
+0x100141e6 func   ?vfunc241@CAI_GoalEntity@@QAEXH@Z CAI_GoalEntity::vfunc241
 0x100141fa func   ?vfunc9@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc9
 0x100141ff func   ?vfunc5@CAmbientGeneric@@QAEPAV1@I@Z CAmbientGeneric::vfunc5
 0x1001421d func   ?vfunc5@CPushable@@UAEPAV1@I@Z CPushable::vfunc5
