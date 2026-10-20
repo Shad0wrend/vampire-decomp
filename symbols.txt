@@ -4114,6 +4114,7 @@
 0x10015d5c func   ?sub_1042fd80@@YAII@Z sub_1042fd80
 0x10015d89 func   ?vfunc5@CNPC_VWerewolf@@QAEPAV1@I@Z CNPC_VWerewolf::vfunc5
 0x10015d93 func   ?vfunc337@CBaseCombatWeapon@@UAEMHH@Z CBaseCombatWeapon::vfunc337
+0x10015dac func   ?vfunc3@CAI_Motor@@UAEXXZ CAI_Motor::vfunc3
 0x10015dc5 func   ?sub_10222ec0@S10222ec0@@QAEXH@Z S10222ec0::sub_10222ec0
 0x10015dd9 func   ?sub_10323c20@@YIHPADHH@Z sub_10323c20
 0x10015de3 func   ?sub_101bd650@@YGXPAUS@@H@Z sub_101bd650
