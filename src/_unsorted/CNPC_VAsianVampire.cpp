@@ -13,6 +13,31 @@ int CNPC_VAsianVampire::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10360bc0 size=0x6a
+#include "CNPC_VAsianVampire.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+void sub_101d0ec0(const char *name);
+
+void CNPC_VAsianVampire::sub_10360bc0()
+{
+    ScopeTrace trace("CNPC_VAsianVampire::Precache", g_106b8540, g_106b8540);
+    sub_10384670();
+    sub_101d0ec0("item_w_avamp_blade");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10360c50 size=0x6d
 #include "CNPC_VAsianVampire.h"
 struct ScopeTraceEntry { const char *m_pFunction; const char *m_pEntity; const char *m_pExtra; };
