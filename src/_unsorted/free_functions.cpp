@@ -41159,6 +41159,31 @@ char sub_1039f6f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a0d50 size=0x10e
+#include "CNPC_VNewscaster.h"
+
+void CNPC_VNewscaster::sub_103a0d50()
+{
+    while (m_listA.m_size != 0) {
+        delete (char *)m_listA.m_pMemory[0].m_pName;
+        for (int i = 0; i < 4; i++) {
+            delete (char *)m_listA.m_pMemory->m_pPair[i][0];
+            delete (char *)m_listA.m_pMemory->m_pPair[i][1];
+        }
+        m_listA.RemoveFirst();
+    }
+    while (m_listB.m_size != 0) {
+        delete (char *)m_listB.m_pMemory[0].m_pName;
+        for (int j = 0; j < 4; j++) {
+            delete (char *)m_listB.m_pMemory->m_pPair[j][0];
+            delete (char *)m_listB.m_pMemory->m_pPair[j][1];
+        }
+        m_listB.RemoveFirst();
+    }
+    m_bFlag6690 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1320 size=0x6a
 #include "CUnknown103a1320.h"
 
