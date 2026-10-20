@@ -50746,6 +50746,41 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10338cb0 size=0xf1
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+void __cdecl sub_10012a8a();	// the game's destructor stub of the shared default stat list
+extern unsigned char g_109f0b2a;	// its guard byte
+extern CVStatList_t g_109f0b40;	// the shared default stat list
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+// The game's inlined GetActiveStatList with its function-local static spelled out.
+static inline CVStatList_t *ActiveStatList(CBaseCombatCharacter *pChar)
+{
+	for (int i = 0; i < pChar->m_nStatLists; i++) {
+		if (pChar->m_pStatLists[i]->m_field10 == 0)
+			return pChar->m_pStatLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		new (&g_109f0b40) CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+
+char CBaseCombatCharacter::sub_10338cb0()
+{
+	ScopeTrace trace("CBaseCombatCharacter::IncBloodPool", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char bResult = ActiveStatList(this)->sub_10200d60(0xc);
+	vfunc111();
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103394a0 size=0x8d
 #include "CBaseCombatCharacter.h"
 
