@@ -40061,6 +40061,25 @@ char sub_103a1ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a3a20 size=0x43
+#include "CNPC_VPlaceholder.h"
+void *sub_100aa720(int size);
+extern char g_105861c8[];
+
+// TARGET: npc_VPlaceholder
+extern "C" CBaseEntity *npc_VPlaceholder()
+{
+	void *mem = sub_100aa720(0x6660);
+	CNPC_VPlaceholder *p;
+	if (mem)
+		p = ((CNPC_VPlaceholder *)mem)->sub_103a40c0();
+	else
+		p = 0;
+	p->vfunc106(g_105861c8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a3ba0 size=0x33
 void sub_10014d7b();
 void sub_10003f26();
