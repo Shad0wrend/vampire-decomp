@@ -12,6 +12,7 @@ public:
 	int m_unk78c;
 
 	int sub_1020b000(CBaseEntity *pPlayer);
+	void vfunc269(int a);	// bumps the count at +0x78c, forwards a to the helper at +0x7c4 (stub 0x10010794) with this, then reports a "botched" message through the global when the entity at 0x1074f04c fails slot 1 and has a non-zero field at +0x2c
 	void vfunc272();
 	void vfunc103();
 	void sub_10012eef();	// CBreakableProp::vfunc103 (non-virtual base call)
