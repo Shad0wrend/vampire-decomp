@@ -30020,6 +30020,25 @@ extern "C" CBaseEntity *info_node_chang_column()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d70c0 size=0x43
+#include "CNodeEnt.h"
+void *sub_100aa720(int size);
+extern char g_1060b080[];
+
+// TARGET: info_node_chang_teleport
+extern "C" CBaseEntity *info_node_chang_teleport()
+{
+	void *mem = sub_100aa720(0x46c);
+	CNodeEnt *p;
+	if (mem)
+		p = ((CNodeEnt *)mem)->sub_102d7cd0();
+	else
+		p = 0;
+	p->vfunc106(g_1060b080);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d7210 size=0x53
 void *sub_1000db89(int);
 struct GP;
