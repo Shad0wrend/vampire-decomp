@@ -2307,6 +2307,7 @@
 0x1000e296 func   _func_physbox func_physbox
 0x1000e2af func   ?sub_1015ff40@CBasePlayer@@QAE_NXZ CBasePlayer::sub_1015ff40
 0x1000e2b9 func   ?sub_10382b30@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::sub_10382b30
+0x1000e2be func   ?vfunc418@CAI_BaseNPC@@UAEMM@Z CAI_BaseNPC::vfunc418
 0x1000e2e1 func   ?sub_101d58b0@Loader@@QAEXPBD@Z Loader::sub_101d58b0
 0x1000e2e6 func   ?vfunc5@CItemMWallet@@QAEPAV1@I@Z CItemMWallet::vfunc5
 0x1000e2ff func   ?sub_100427c0@UtlMem@@QAEXXZ UtlMem::sub_100427c0
