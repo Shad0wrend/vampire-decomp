@@ -48270,6 +48270,37 @@ void CBaseCombatCharacter::sub_10340bd0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10340c90 size=0xaa
+#include "CBaseCombatCharacter.h"
+#include "inputdata_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_105387dc[];
+extern char g_106b8540[];
+extern char g_106234a8[];
+
+struct VT {
+	union { float flValue; int iValue; };
+	char m_pad04[8];
+	unsigned int eVal;
+	int fieldType;
+};
+
+void CBaseCombatCharacter::sub_10340c90(inputdata_t *pInput)
+{
+	const char *name = this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc;
+	g_109f3620[*g_109f3680].a = g_106234a8;
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	volatile VT *pValue = (volatile VT *)&pInput->value;
+	if (pValue->fieldType == 4 && pValue->iValue != 0)
+		sub_10340e50(pValue->fieldType == 4 ? pValue->iValue : 0);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10341030 size=0xb6
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

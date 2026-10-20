@@ -2002,6 +2002,7 @@
 0x1000b488 func   _env_global env_global
 0x1000b48d func   ?sub_100946b0@CBaseAnimating@@QAEPBDH@Z CBaseAnimating::sub_100946b0
 0x1000b4a1 func   ?sub_103c50c0@@YAPAHXZ sub_103c50c0
+0x1000b4a6 func   ?sub_10340c90@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10340c90
 0x1000b4ab func   ?sub_1042ff80@@YAII@Z sub_1042ff80
 0x1000b4ba func   ?vfunc50@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc50
 0x1000b4e7 func   ?vfunc440@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc440
