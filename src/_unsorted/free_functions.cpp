@@ -27654,6 +27654,56 @@ bool CVStatCost_t::sub_101fc160()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fc220 size=0xeb
+#include "CVStatCost_t.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+#define KV_SLOTS(p) virtual void p##0(); virtual void p##1();
+
+struct CVStatKV
+{
+	virtual void v0();
+	virtual void v1();
+	virtual CVStatKV *FindKey(const char *name);	// slot 2
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12();
+	virtual const char *GetString(const char *name, const char *def);	// slot 13
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+bool CVStatCost_t::sub_101fc220(CVStatKV *pKV)
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "CVStatCost_t::Load";
+	g_109f3620[*g_109f3680].m_pszName = g_106b8540;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	if (pKV) {
+		CVStatKV *pCosts = pKV->FindKey("Costs");
+		if (pCosts) {
+			m_first.sub_101fb980(pCosts->GetString("New", g_106b8540));
+			m_second.sub_101fb980(pCosts->GetString("Raise", g_106b8540));
+			if (m_first.sub_101fb8f0())
+				m_first = m_second;
+			else if (m_second.sub_101fb8f0())
+				m_second = m_first;
+			(*g_109f3680)--;
+			return true;
+		}
+	}
+	(*g_109f3680)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fc350 size=0x85
 #include "CVStatCost_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
