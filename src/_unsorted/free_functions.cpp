@@ -38313,6 +38313,25 @@ bool CNPC_VAsianVampire::sub_10362670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10362ba0 size=0x43
+#include "CNPC_VBach.h"
+void *sub_100aa720(int size);
+extern char g_1062d9e8[];
+
+// TARGET: npc_VBach
+extern "C" CBaseEntity *npc_VBach()
+{
+	void *mem = sub_100aa720(0x66ac);
+	CNPC_VBach *p;
+	if (mem)
+		p = ((CNPC_VBach *)mem)->sub_10362c10();
+	else
+		p = 0;
+	p->vfunc106(g_1062d9e8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10362d40 size=0x33
 void sub_10007897();
 void sub_10013b5b();
