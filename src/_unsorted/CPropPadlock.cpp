@@ -31,3 +31,33 @@ CPropPadlock *CPropPadlock::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102260f0 size=0x7b
+#include "CBaseEntity.h"
+#include "CPropPadlock.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown100ee750.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CPadlockHandle {
+    unsigned int m_h;
+    CUnknown100ee750 *Get() const
+    {
+        if (m_h != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_h & 0x1fff];
+            if (s->m_Serial == (int)(m_h >> 13))
+                return (CUnknown100ee750 *)s->m_pEntity;
+        }
+        return 0;
+    }
+};
+
+void CPropPadlock::vfunc266(int a)
+{
+    if (((CPadlockHandle *)((char *)this + 0x80c))->Get())
+        ((CPadlockHandle *)((char *)this + 0x80c))->Get()->sub_100ee750(this);
+    sub_100a0b20();
+    sub_1018fb90(a);
+}
+// END FUNCTION

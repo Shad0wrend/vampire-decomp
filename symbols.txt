@@ -1591,6 +1591,7 @@
 0x10009d72 func   ?vfunc5@CPropClockHand@@QAEPAV1@I@Z CPropClockHand::vfunc5
 0x10009d86 func   ?vfunc241@CFuncPlat@@UAEEXZ CFuncPlat::vfunc241
 0x10009df4 func   ?sub_102f7970@CUnknown102f7970@@QAEXXZ CUnknown102f7970::sub_102f7970
+0x10009df9 func   ?vfunc266@CPropPadlock@@QAEXH@Z CPropPadlock::vfunc266
 0x10009e08 func   ?sub_103f8530@@YAHXZ sub_103f8530
 0x10009e0d func   ?vfunc5@CNPC_VManBat@@QAEPAV1@I@Z CNPC_VManBat::vfunc5
 0x10009e1c func   ?sub_100bdc20@bf_write@@QAEXI@Z bf_write::sub_100bdc20
