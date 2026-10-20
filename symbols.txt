@@ -1694,6 +1694,7 @@
 0x1000ad6c func   _npc_VTaxiDriver npc_VTaxiDriver
 0x1000ad8a func   ?sub_100ad100@@YIXPAVCBaseEntity@@HH@Z sub_100ad100
 0x1000ada3 func   ?sub_102e2630@CUnknown102e2630@@QAEHH@Z CUnknown102e2630::sub_102e2630
+0x1000adc1 func   ?sub_101fb980@CVStatSubCost_t@@QAEXPBD@Z CVStatSubCost_t::sub_101fb980
 0x1000add5 func   ?vfunc32@CFuncMonitor@@QAE_NPAX@Z CFuncMonitor::vfunc32
 0x1000adda func   _logic_proximity logic_proximity
 0x1000adf3 func   ?vfunc375@CNPC_VWolfMorph@@UAEHH@Z CNPC_VWolfMorph::vfunc375

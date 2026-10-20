@@ -24960,6 +24960,80 @@ bool CVStatSubCost_t::sub_101fb8f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fb980 size=0x17e
+#include "CVStatCost_t.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+extern "C" char *strstr(const char *, const char *);
+extern "C" char *strchr(const char *, int);
+extern "C" int isdigit(int);
+extern "C" int atoi(const char *);
+void *__cdecl operator new(unsigned int);
+
+struct SubCostView {
+    int m_type;
+    int m_value;
+    int m_pad8;
+    int m_nCount;
+    int *m_pTable;
+};
+
+void CVStatSubCost_t::sub_101fb980(const char *str)
+{
+    ScopeTrace trace("CVStatSubCost_t::Parse", g_106b8540, g_106b8540);
+    SubCostView *self = (SubCostView *)this;
+    if (*str) {
+        char *p = strstr(str, "Current_Rating");
+        if (p) {
+            p += 14;
+            int d = isdigit(*p);
+            while (d == 0) {
+                p++;
+                if (*p == 0)
+                    break;
+                d = isdigit(*p);
+            }
+            self->m_type = 9999;
+            self->m_value = atoi(p);
+            return;
+        }
+        p = strstr(str, "Table:");
+        if (p) {
+            char *q = p + 7;
+            self->m_type = 0x270e;
+            self->m_nCount = 1;
+            for (char *c = strchr(q, ','); c; c = strchr(c + 1, ','))
+                self->m_nCount++;
+            self->m_pTable = (int *)operator new(self->m_nCount << 2);
+            int i = 0;
+            if (self->m_nCount > 0) {
+                do {
+                    while (*q == ' ')
+                        q++;
+                    self->m_pTable[i] = atoi(q);
+                    q = strchr(q, ',') + 1;
+                    i++;
+                } while (i < self->m_nCount);
+                return;
+            }
+        } else {
+            self->m_type = atoi(str);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fbb60 size=0xa3
 #include "CVStatCost_t.h"
 
