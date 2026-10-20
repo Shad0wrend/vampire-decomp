@@ -3016,6 +3016,7 @@
 0x1000f57e func   ?sub_10258af0@CUnknown10258af0@@QAEXXZ CUnknown10258af0::sub_10258af0
 0x1000f588 func   ?sub_1003c450@@YIXPAPAX@Z sub_1003c450
 0x1000f58d func   ?sub_100f9860@UtlVec8@@QAEXHH@Z UtlVec8::sub_100f9860
+0x1000f592 func   ?sub_103e1930@@YG_NPAHH@Z sub_103e1930
 0x1000f5a6 func   ?sub_10057ac0@@YAXPAX@Z sub_10057ac0
 0x1000f5ab func   ?sub_100aa9a0@@YI_NPAVCBaseEntity@@HHHH@Z sub_100aa9a0
 0x1000f5e2 func   ?sub_10249960@@YIIPAPAD@Z sub_10249960
