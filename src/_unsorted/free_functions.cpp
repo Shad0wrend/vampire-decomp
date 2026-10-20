@@ -12074,6 +12074,35 @@ void sub_100d30a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5be0 size=0x77
+#include "IVEngineServer.h"
+#include "CEntityVSlots.h"
+extern "C" int __cdecl atoi(const char *);
+extern IVEngineServer *g_1070b22c;
+extern char g_106b8540[];
+struct S100d5be0Player { char m_pad[0xa8]; CBaseCombatCharacter *m_pChar; };
+struct S100d5be0Weapon { char m_pad[0x11c]; const char *m_pszClassname; };
+S100d5be0Player *sub_101193b0();
+static inline const char *StringOrEmpty(const char *const *ppString)
+{
+    return *ppString ? *ppString : g_106b8540;
+}
+void sub_100d5be0()
+{
+    S100d5be0Player *pPlayer = sub_101193b0();
+    if (pPlayer) {
+        CBaseCombatCharacter *pChar = pPlayer->m_pChar;
+        if (pChar && g_1070b22c->vfunc85() == 2) {
+            int index = atoi((const char *)g_1070b22c->vfunc84(1));
+            if (pChar->sub_1032e8b0(index)) {
+                S100d5be0Weapon *pWeapon = (S100d5be0Weapon *)pChar->sub_1032e8b0(index);
+                ((CEntityVSlots *)pChar)->slot457(StringOrEmpty(&pWeapon->m_pszClassname), 0);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5d10 size=0x6b
 #include "CBaseCombatCharacter.h"
 #include "CUnknown1070b22c.h"

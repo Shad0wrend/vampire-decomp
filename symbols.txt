@@ -3348,6 +3348,7 @@
 0x10013c87 func   ?sub_10245790@CUnknown10245790@@QAEXI@Z CUnknown10245790::sub_10245790
 0x10013c96 func   ?sub_1007a270@S1007a270@@QAEHH@Z S1007a270::sub_1007a270
 0x10013ca0 func   ?sub_102becb0@CUnknown102becb0@@QAEXXZ CUnknown102becb0::sub_102becb0
+0x10013cd7 func   ?sub_100d5be0@@YAXXZ sub_100d5be0
 0x10013cff func   ?sub_1019f980@SSave@@QAEPAU1@E@Z SSave::sub_1019f980
 0x10013d18 func   ?sub_100b04d0@@YAXXZ sub_100b04d0
 0x10013d1d func   ?vfunc4@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc4
