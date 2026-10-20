@@ -27188,6 +27188,67 @@ void CUnknown10227c90::sub_10227c90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10229550 size=0x11c
+#include "CUnknown10229550.h"
+
+inline void *operator new(unsigned int, void *p) { return p; }
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+extern void *(*g_109f3634)(unsigned int);
+extern void *(*g_109f3638)(void *, unsigned int);
+
+struct ItemMem_t
+{
+    CUnknown10229550Item *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+
+    void Grow(int num)
+    {
+        if (m_nGrowSize == -1)
+            return;
+        int nAllocationRequested = m_nAllocationCount + num;
+        int nNewAllocationCount = m_nAllocationCount;
+        if (nNewAllocationCount < nAllocationRequested) {
+            do {
+                if (nNewAllocationCount != 0) {
+                    if (m_nGrowSize != 0)
+                        nNewAllocationCount += m_nGrowSize;
+                    else
+                        nNewAllocationCount += nNewAllocationCount;
+                } else {
+                    nNewAllocationCount = 1;
+                }
+            } while (nNewAllocationCount < nAllocationRequested);
+            m_nAllocationCount = nNewAllocationCount;
+        }
+        if (m_pMemory)
+            m_pMemory = (CUnknown10229550Item *)g_109f3638(m_pMemory, m_nAllocationCount * 0x58);
+        else
+            m_pMemory = (CUnknown10229550Item *)g_109f3634(m_nAllocationCount * 0x58);
+    }
+};
+
+void CUnknown10229550::sub_10229550(CUnknown10229550Item *pItem, float flScale)
+{
+    if (pItem->m_bActive) {
+        pItem->m_n40 = 0;
+        pItem->m_f4c = pItem->m_f48 / flScale;
+        ItemMem_t *pMem = (ItemMem_t *)&m_pMemory;
+        int elem = m_nSize;
+        if (m_nSize + 1 > pMem->m_nAllocationCount)
+            pMem->Grow(m_nSize + 1 - pMem->m_nAllocationCount);
+        m_nSize++;
+        m_pElements = m_pMemory;
+        int numToMove = m_nSize - elem - 1;
+        if (numToMove > 0)
+            memmove(m_pMemory + (elem + 1), m_pMemory + elem, numToMove * 0x58);
+        new (m_pMemory + elem) CUnknown10229550Item(*pItem);
+        memset(pItem, 0, sizeof(CUnknown10229550Item));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10229ff0 size=0x43
 #include "CSoundScheme.h"
 void *sub_100aa720(int size);

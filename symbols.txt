@@ -3029,6 +3029,7 @@
 0x10012ada func   ?sub_10090b20@@YIXPAD@Z sub_10090b20
 0x10012ae4 func   ?sub_102f3770@@YAHPBM0@Z sub_102f3770
 0x10012ae9 func   _info_node_kick_over info_node_kick_over
+0x10012aee func   ?sub_10229550@CUnknown10229550@@QAEXPAUCUnknown10229550Item@@M@Z CUnknown10229550::sub_10229550
 0x10012afd func   _func_door_rotating func_door_rotating
 0x10012b02 func   _item_k_malkavian_refrigerator_key item_k_malkavian_refrigerator_key
 0x10012b34 func   ?sub_101d2fc0@@YADPAUCEntQ@@0@Z sub_101d2fc0
