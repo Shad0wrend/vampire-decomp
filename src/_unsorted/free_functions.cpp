@@ -26100,6 +26100,34 @@ void TSeg::sub_101f4570(int target, int *outIndex, int *outOffset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f4eb0 size=0x80
+extern void (*g_109f3650)(int, const char *);
+extern char g_106b8540[];
+extern "C" int sprintf(char *, const char *, ...);
+const char *sub_100077cf(int);
+
+struct CDumpThing {
+    int m_id;
+    int pad4;
+    const char *m_name;
+    int m_count;
+    int *m_items;
+    void sub_101f4eb0();
+};
+
+void CDumpThing::sub_101f4eb0()
+{
+    char buf[128];
+    sprintf(buf, "[%d]: %s\n", m_id, m_name ? m_name : g_106b8540);
+    void (*pfn)(int, const char *) = g_109f3650;
+    pfn(0, buf);
+    for (int i = 0; i < m_count; i++) {
+        sprintf(buf, "\t\t   (%d): %s\n", i, sub_100077cf(m_items[i]));
+        pfn(0, buf);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4f50 size=0x1d
 struct S9 {
 	int a, b, c, d, e, f, g, h, i;
