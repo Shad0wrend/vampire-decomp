@@ -79,6 +79,7 @@ public:
 	float sub_10091080(int sequence);	// sequence duration (stub 0x10009813), returns a float
 	float sub_10092190(int iParameter);	// "CBaseAnimating::GetPoseParameter02": scope trace (entity name), the studio helper's value for (GetModelPtr(-1), iParameter, the float at +0x690 + iParameter*4), the file-scope zero for a negative index or no header
 	float sub_10094dc0(float flCycle);	// "CBaseAnimating::GetMovementFrame...": scope trace (entity name), without a studio header the file-scope zero, else the studio helper's value for (GetModelPtr(-1), the sequence at +0x6f0, the pose parameters at +0x690, flCycle)
+	int sub_1008f6c0(int activity);	// "CBaseAnimating::LookupActivity": scope trace (entity name), the first non-negative result of the studio helper sub_10428360(GetModelPtr(i), activity) for i = -1, 0, 1; else -1
 
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
