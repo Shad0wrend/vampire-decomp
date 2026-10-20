@@ -30679,6 +30679,38 @@ void __stdcall sub_101e8410(int *p, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8480 size=0xdf
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101e8480.h"
+
+inline void *operator new(unsigned int, void *p) { return p; }
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+void __cdecl sub_10012a8a();
+extern unsigned char g_109f0b2a;
+extern CVStatList_t g_109f0b40;
+
+inline CVStatList_t *GetActiveList(CBaseCombatCharacter *pChar)
+{
+	for (int i = 0; i < pChar->m_nStatLists; i++) {
+		if (pChar->m_pStatLists[i]->m_field10 == 0)
+			return pChar->m_pStatLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		new (&g_109f0b40) CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+
+void CUnknown101e8480::sub_101e8480(CBaseCombatCharacter *pChar)
+{
+	int a = GetActiveList(pChar)->sub_10010609(1) - 1;
+	a += GetActiveList(pChar)->sub_10010609(0x18);
+	vfunc0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e85a0 size=0x78
 #include "CVStatList_t.h"
 struct P {
