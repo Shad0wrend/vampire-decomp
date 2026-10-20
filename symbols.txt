@@ -3613,6 +3613,7 @@
 0x1001494d func   ?sub_10094790@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10094790
 0x10014966 func   _item_a_lt_cloth item_a_lt_cloth
 0x100149a2 func   _logic_auto logic_auto
+0x100149a7 func   ?vfunc0@CTraceFilterSimple@@UAE_NPAXH@Z CTraceFilterSimple::vfunc0
 0x100149b6 func   ?sub_102c7390@CUnknown102c7390@@QAEXD@Z CUnknown102c7390::sub_102c7390
 0x100149bb func   ?sub_10256920@@YAPAUEntL@@HPAU1@PAI@Z sub_10256920
 0x100149c5 func   ?vfunc5@CBaseCombatCharacter@@QAEPAV1@I@Z CBaseCombatCharacter::vfunc5
