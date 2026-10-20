@@ -50920,6 +50920,49 @@ char sub_103912e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395650 size=0xa8
+#include "CBaseEntity.h"
+#include "CNPC_VMingXiao.h"
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+struct SWeaponVt {
+	SL100(a) SL100(b) SL100(c)
+	SL10(d0) SL10(d1) SL10(d2) SL10(d3) SL10(d4) SL10(d5)
+	virtual unsigned int vfunc360();
+};
+
+inline int StateToCode(int state)
+{
+    switch (state) {
+    case 1:
+        return -2;
+    case 4:
+        return 1;
+    case 5:
+        return 0;
+    case 8:
+        return 3;
+    case 9:
+        return 2;
+    case 6:
+        return 5;
+    case 7:
+        return 4;
+    default:
+        return -1;
+    }
+}
+
+int CNPC_VMingXiao::sub_10395650(int a, void *pWeapon)
+{
+    if (pWeapon && (((SWeaponVt *)pWeapon)->vfunc360() & 0x18000))
+        return sub_103952b0(a);
+    return StateToCode(*(int *)((char *)this + 0x1594));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10397b40 size=0xe1
 #include "CNPC_VMingXiao.h"
 struct EntInfo { void *ent; int serial; int pad; };
