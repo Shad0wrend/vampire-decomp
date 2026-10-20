@@ -33,12 +33,6 @@ public:
 
 	Node_t &ElementAt(int i) const { return m_pElements[i]; }
 
-	const Links_t &LinksInl(int i) const
-	{
-		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-		return i != InvalidIndex() ? ElementAt(i).m_Links : s_Sentinel;
-	}
-
 	void GrowInl(int num)	// "CUtlMemory::Grow"
 	{
 		if (m_nGrowSize == -1)
@@ -65,4 +59,20 @@ public:
 	const Links_t &sub_10055520(int i) const;	// "CUtlRBTree::Links"
 	int sub_10055050();	// "CUtlRBTree::NewNode": takes the first free node (or grows the node memory by one and uses the next unused one) and returns its index
 	void sub_1007f250(const void *pInsert, int *pParent, bool *pLeftChild);	// "CUtlRBTree::FindInsertionPosition": walks down from the root with the less function, stores the last visited node in *pParent and whether the new element goes to its left in *pLeftChild
+};
+
+// The game has one CUtlRBTree<T, I> per element type T; CUtlRBTree24 stands for every instance with 24-byte nodes.
+// Each instance keeps its own sentinel node in a function-local static of Links() (with its own guard), so a function
+// of one instance reads its links through CUtlRBTree24At<the address the game keeps that instance's sentinel at>, the
+// static the judge places for it (one game variable, one static: link audit E):
+//	const CUtlRBTree24At<0x...> *tree = (const CUtlRBTree24At<0x...> *)this;	... tree->Links(i) ...
+template <unsigned long Sentinel>
+class CUtlRBTree24At : public CUtlRBTree24
+{
+public:
+	const Links_t &Links(int i) const
+	{
+		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+	}
 };

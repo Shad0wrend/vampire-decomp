@@ -1,6 +1,8 @@
 // CUtlRBTreeFind16: a CUtlRBTree with 16-byte nodes (8 bytes of links, 8 bytes of data) and 16-bit indices.
 #pragma once
 
+#include "CUtlRBTree16.h"	// CUtlRBTree16At: the links of each instance
+
 struct RBTreeFind16Links
 {
 	unsigned short m_Left;
@@ -25,8 +27,6 @@ public:
 	unsigned short m_Root;
 
 	static unsigned short InvalidIndex() { return (unsigned short)~0; }
-
-	const RBTreeFind16Links &Links(unsigned short i) const;	// the node's links, or a shared sentinel for InvalidIndex()
 
 	unsigned short sub_10046390(const void *search);	// Find: index of the node equal to search, or InvalidIndex()
 	unsigned short sub_10046570(const void *search);	// same as sub_10046390 (another instance)

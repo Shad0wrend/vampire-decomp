@@ -28,12 +28,6 @@ public:
 
 	static unsigned short InvalidIndex() { return 0xffff; }
 
-	const Links_t &Links(unsigned short i) const
-	{
-		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
-	}
-
 	bool sub_102eb7f0(unsigned short i) const;	// "CUtlRBTree::IsLeftChild"
 	bool sub_10194e40(unsigned short i) const;	// same as sub_102eb7f0 (another instance)
 	bool sub_101c02d0(unsigned short i) const;	// same as sub_102eb7f0 (another instance)
@@ -49,4 +43,20 @@ public:
 	void sub_102ce640(const void *insert, unsigned short &parent, bool &leftchild);	// "CUtlRBTree::FindInsertionPoint" (another instance)
 	void sub_1024b400(unsigned short *pOut, int pTable);	// searches for the element whose less-function key is {0xffff, 0xffff}: stores the table and this tree in two globals for the less function, writes the found index (or 0xffff) to *pOut; 0xffff when pTable is zero
 	int sub_101bf6a0(int key);	// "CUtlMap::Find"-like: Find(key) inlined, then the 4 byte element of a valid node, or 0
+};
+
+// The game has one CUtlRBTree<T, I> per element type T; CUtlRBTree12 stands for every instance with 12-byte nodes.
+// Each instance keeps its own sentinel node in a function-local static of Links() (with its own guard), so a function
+// of one instance reads its links through CUtlRBTree12At<the address the game keeps that instance's sentinel at>, the
+// static the judge places for it (one game variable, one static: link audit E):
+//	const CUtlRBTree12At<0x...> *tree = (const CUtlRBTree12At<0x...> *)this;	... tree->Links(i) ...
+template <unsigned long Sentinel>
+class CUtlRBTree12At : public CUtlRBTree12
+{
+public:
+	const Links_t &Links(unsigned short i) const
+	{
+		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+	}
 };

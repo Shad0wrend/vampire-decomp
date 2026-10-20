@@ -28,12 +28,6 @@ public:
 
 	static unsigned short InvalidIndex() { return 0xffff; }
 
-	const Links_t &Links(unsigned short i) const
-	{
-		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
-	}
-
 	unsigned short sub_10046930(const void *search) const;	// "CUtlRBTree::Find"
 	unsigned short sub_10045de0(const int *pKey);	// "CUtlRBTree::Find" for a key whose first dword is copied into a 28-byte stack key; also publishes the dword at +0x18 (when set) in the global at 0x109f0b74 first
 	void sub_100498c0(unsigned short i, unsigned short parent, bool isLeft);	// "CUtlRBTree::LinkToParent" (with InsertRebalance inlined)
@@ -48,8 +42,22 @@ public:
 
 	Links_t &LinksW(unsigned short i) { return m_pElements[i].m_Links; }
 	unsigned short Parent(unsigned short i) const { return sub_10009b51(i).m_Parent; }
-	unsigned short ParentInl(unsigned short i) const { return Links(i).m_Parent; }
 	bool IsLeftChildInl(unsigned short i) const { return sub_10009b51(Parent(i)).m_Left == i; }
 	bool IsRightChildInl(unsigned short i) const { return sub_10009b51(Parent(i)).m_Right == i; }
-	bool IsLeftChildMix(unsigned short i) const { return Links(Parent(i)).m_Left == i; }
+};
+
+// The game has one CUtlRBTree<T, I> per element type T; CUtlRBTree36 stands for every instance with 36-byte nodes.
+// Each instance keeps its own sentinel node in a function-local static of Links() (with its own guard), so a function
+// of one instance reads its links through CUtlRBTree36At<the address the game keeps that instance's sentinel at>, the
+// static the judge places for it (one game variable, one static: link audit E):
+//	const CUtlRBTree36At<0x...> *tree = (const CUtlRBTree36At<0x...> *)this;	... tree->Links(i) ...
+template <unsigned long Sentinel>
+class CUtlRBTree36At : public CUtlRBTree36
+{
+public:
+	const Links_t &Links(unsigned short i) const
+	{
+		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+	}
 };

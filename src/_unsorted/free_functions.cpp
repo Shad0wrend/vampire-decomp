@@ -3646,6 +3646,7 @@ extern int g_109f0b74;
 struct Key28 { int a; char pad[24]; };
 unsigned short CUtlRBTree36::sub_10045de0(const int *pKey)
 {
+    const CUtlRBTree36At<0x106bdb5c> *tree = (const CUtlRBTree36At<0x106bdb5c> *)this;
     Key28 key;
     key.a = *pKey;
     int ctx = *(int *)((char *)this + 0x18);
@@ -3654,9 +3655,9 @@ unsigned short CUtlRBTree36::sub_10045de0(const int *pKey)
     unsigned short current = m_Root;
     while (current != InvalidIndex()) {
         if (m_LessFunc(&key, m_pElements[current].m_Data))
-            current = Links(current).m_Left;
+            current = tree->Links(current).m_Left;
         else if (m_LessFunc(m_pElements[current].m_Data, &key))
-            current = Links(current).m_Right;
+            current = tree->Links(current).m_Right;
         else
             break;
     }
@@ -3769,20 +3770,15 @@ S10046310 *S10046310::sub_10046310(int c, int count, int a)
 // FUNCTION: 0x10046390 size=0x108
 #include "CUtlRBTreeFind16.h"
 
-inline const RBTreeFind16Links &CUtlRBTreeFind16::Links(unsigned short i) const
-{
-	static RBTreeFind16Links s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-	return (i != InvalidIndex()) ? m_pElements[i].m_Links : s_Sentinel;
-}
-
 unsigned short CUtlRBTreeFind16::sub_10046390(const void *search)
 {
+	const CUtlRBTree16At<0x106bdb38> *tree = (const CUtlRBTree16At<0x106bdb38> *)this;
 	unsigned short current = m_Root;
 	while (current != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[current].m_Data))
-			current = Links(current).m_Left;
+			current = tree->Links(current).m_Left;
 		else if (m_LessFunc(m_pElements[current].m_Data, search))
-			current = Links(current).m_Right;
+			current = tree->Links(current).m_Right;
 		else
 			break;
 	}
@@ -3819,20 +3815,15 @@ S100464f0 *S100464f0::sub_100464f0(int c, int count, int a)
 // FUNCTION: 0x10046570 size=0x108
 #include "CUtlRBTreeFind16.h"
 
-inline const RBTreeFind16Links &CUtlRBTreeFind16::Links(unsigned short i) const
-{
-	static RBTreeFind16Links s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-	return (i != InvalidIndex()) ? m_pElements[i].m_Links : s_Sentinel;
-}
-
 unsigned short CUtlRBTreeFind16::sub_10046570(const void *search)
 {
+	const CUtlRBTree16At<0x106bdb44> *tree = (const CUtlRBTree16At<0x106bdb44> *)this;
 	unsigned short current = m_Root;
 	while (current != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[current].m_Data))
-			current = Links(current).m_Left;
+			current = tree->Links(current).m_Left;
 		else if (m_LessFunc(m_pElements[current].m_Data, search))
-			current = Links(current).m_Right;
+			current = tree->Links(current).m_Right;
 		else
 			break;
 	}
@@ -3869,20 +3860,15 @@ S100466d0 *S100466d0::sub_100466d0(int c, int count, int a)
 // FUNCTION: 0x10046750 size=0x108
 #include "CUtlRBTreeFind16.h"
 
-inline const RBTreeFind16Links &CUtlRBTreeFind16::Links(unsigned short i) const
-{
-	static RBTreeFind16Links s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-	return (i != InvalidIndex()) ? m_pElements[i].m_Links : s_Sentinel;
-}
-
 unsigned short CUtlRBTreeFind16::sub_10046750(const void *search)
 {
+	const CUtlRBTree16At<0x106bdb50> *tree = (const CUtlRBTree16At<0x106bdb50> *)this;
 	unsigned short current = m_Root;
 	while (current != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[current].m_Data))
-			current = Links(current).m_Left;
+			current = tree->Links(current).m_Left;
 		else if (m_LessFunc(m_pElements[current].m_Data, search))
-			current = Links(current).m_Right;
+			current = tree->Links(current).m_Right;
 		else
 			break;
 	}
@@ -3895,12 +3881,13 @@ unsigned short CUtlRBTreeFind16::sub_10046750(const void *search)
 
 unsigned short CUtlRBTree36::sub_10046930(const void *search) const
 {
+	const CUtlRBTree36At<0x106bdb5c> *tree = (const CUtlRBTree36At<0x106bdb5c> *)this;
 	unsigned short i = m_Root;
 	while (i != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[i].m_Data)) {
-			i = Links(i).m_Left;
+			i = tree->Links(i).m_Left;
 		} else if (m_LessFunc(m_pElements[i].m_Data, search)) {
-			i = Links(i).m_Right;
+			i = tree->Links(i).m_Right;
 		} else {
 			break;
 		}
@@ -4014,7 +4001,8 @@ void sub_10047160(E8 *dst, const E8 *src)
 
 bool CUtlRBTree16::sub_10047840(unsigned short i) const
 {
-	return Links(Parent(i)).m_Left == i;
+	const CUtlRBTree16At<0x106bdb38> *tree = (const CUtlRBTree16At<0x106bdb38> *)this;
+	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
 
@@ -4023,7 +4011,8 @@ bool CUtlRBTree16::sub_10047840(unsigned short i) const
 
 bool CUtlRBTree16::sub_100483f0(unsigned short i) const
 {
-	return Links(Parent(i)).m_Right == i;
+	const CUtlRBTree16At<0x106bdb38> *tree = (const CUtlRBTree16At<0x106bdb38> *)this;
+	return tree->Links(tree->Parent(i)).m_Right == i;
 }
 // END FUNCTION
 
@@ -4032,8 +4021,7 @@ bool CUtlRBTree16::sub_100483f0(unsigned short i) const
 
 const RBTreeNode36Links &CUtlRBTreeNode36::sub_10049d20(unsigned short i) const
 {
-	static RBTreeNode36Links s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-	return (i != InvalidIndex()) ? m_pElements[i].m_Links : s_Sentinel;
+	return (const RBTreeNode36Links &)((const CUtlRBTree36At<0x106bdb5c> *)this)->Links(i);
 }
 // END FUNCTION
 
@@ -4077,7 +4065,8 @@ void __fastcall sub_10049da0(Mem *self, int, int num)
 
 bool CUtlRBTree16::sub_1004a2a0(unsigned short i) const
 {
-	return Links(Parent(i)).m_Left == i;
+	const CUtlRBTree16At<0x106bdb44> *tree = (const CUtlRBTree16At<0x106bdb44> *)this;
+	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
 
@@ -4121,7 +4110,8 @@ void CMem16_t::sub_1004add0(int num)
 
 bool CUtlRBTree16::sub_1004ae60(unsigned short i) const
 {
-	return Links(Parent(i)).m_Left == i;
+	const CUtlRBTree16At<0x106bdb50> *tree = (const CUtlRBTree16At<0x106bdb50> *)this;
+	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
 
@@ -4165,7 +4155,8 @@ void CMem16b_t::sub_1004b990(int num)
 
 bool CUtlRBTree16::sub_1004ba20(unsigned short i) const
 {
-	return Links(Parent(i)).m_Right == i;
+	const CUtlRBTree16At<0x106bdb44> *tree = (const CUtlRBTree16At<0x106bdb44> *)this;
+	return tree->Links(tree->Parent(i)).m_Right == i;
 }
 // END FUNCTION
 
@@ -4174,7 +4165,8 @@ bool CUtlRBTree16::sub_1004ba20(unsigned short i) const
 
 bool CUtlRBTree16::sub_1004bf70(unsigned short i) const
 {
-	return Links(Parent(i)).m_Right == i;
+	const CUtlRBTree16At<0x106bdb50> *tree = (const CUtlRBTree16At<0x106bdb50> *)this;
+	return tree->Links(tree->Parent(i)).m_Right == i;
 }
 // END FUNCTION
 
@@ -4183,8 +4175,9 @@ bool CUtlRBTree16::sub_1004bf70(unsigned short i) const
 
 bool CUtlRBTree36::sub_1004c4c0(unsigned short i) const
 {
-	unsigned short parent = Links(i).m_Parent;
-	return Links(parent).m_Left == i;
+	const CUtlRBTree36At<0x106bdb5c> *tree = (const CUtlRBTree36At<0x106bdb5c> *)this;
+	unsigned short parent = tree->Links(i).m_Parent;
+	return tree->Links(parent).m_Left == i;
 }
 // END FUNCTION
 
@@ -4600,6 +4593,7 @@ void sub_10054400()
 
 void CUtlRBTreeInsert24::sub_10054ad0(const void *insert, int *parent, bool *leftchild)
 {
+	const CUtlRBTree24At<0x106bddc4> *tree = (const CUtlRBTree24At<0x106bddc4> *)this;
 	int cur = m_Root;
 	*parent = InvalidIndex();
 	*leftchild = false;
@@ -4609,12 +4603,12 @@ void CUtlRBTreeInsert24::sub_10054ad0(const void *insert, int *parent, bool *lef
 		if (m_LessFunc(insert, m_pElements[cur].m_Data))
 		{
 			*leftchild = true;
-			cur = LinksInl(cur).m_Left;
+			cur = tree->Links(cur).m_Left;
 		}
 		else
 		{
 			*leftchild = false;
-			cur = LinksInl(cur).m_Right;
+			cur = tree->Links(cur).m_Right;
 		}
 	}
 }
@@ -4635,8 +4629,7 @@ void UtlVec8::sub_10055000(int elem, int num)
 
 const CUtlRBTree24::Links_t &CUtlRBTree24::sub_10055520(int i) const
 {
-	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-	return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+	return ((const CUtlRBTree24At<0x106bddc4> *)this)->Links(i);
 }
 // END FUNCTION
 
@@ -7645,6 +7638,7 @@ void __fastcall sub_1007ee40(int *p) { p[3] = 0; }
 
 void CUtlRBTree24::sub_1007f250(const void *pInsert, int *pParent, bool *pLeftChild)
 {
+    const CUtlRBTree24At<0x106c85b4> *tree = (const CUtlRBTree24At<0x106c85b4> *)this;
     int current = m_Root;
     *pParent = InvalidIndex();
     *pLeftChild = false;
@@ -7652,10 +7646,10 @@ void CUtlRBTree24::sub_1007f250(const void *pInsert, int *pParent, bool *pLeftCh
         *pParent = current;
         if (m_LessFunc(pInsert, ElementAt(current).m_Data)) {
             *pLeftChild = true;
-            current = LinksInl(current).m_Left;
+            current = tree->Links(current).m_Left;
         } else {
             *pLeftChild = false;
-            current = LinksInl(current).m_Right;
+            current = tree->Links(current).m_Right;
         }
     }
 }
@@ -24218,12 +24212,13 @@ extern "C" GP *prop_largehull_ignore()
 
 unsigned short CUtlRBTree12::sub_10194330(const void *search) const
 {
+	const CUtlRBTree12At<0x1072b2a4> *tree = (const CUtlRBTree12At<0x1072b2a4> *)this;
 	unsigned short i = m_Root;
 	while (i != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[i].m_Data)) {
-			i = Links(i).m_Left;
+			i = tree->Links(i).m_Left;
 		} else if (m_LessFunc(m_pElements[i].m_Data, search)) {
-			i = Links(i).m_Right;
+			i = tree->Links(i).m_Right;
 		} else {
 			break;
 		}
@@ -24237,6 +24232,7 @@ unsigned short CUtlRBTree12::sub_10194330(const void *search) const
 
 void CUtlRBTree12::sub_101945f0(const void *insert, unsigned short &parent, bool &leftchild)
 {
+    const CUtlRBTree12At<0x1072b2a4> *tree = (const CUtlRBTree12At<0x1072b2a4> *)this;
     unsigned short current = m_Root;
     parent = InvalidIndex();
     leftchild = false;
@@ -24244,10 +24240,10 @@ void CUtlRBTree12::sub_101945f0(const void *insert, unsigned short &parent, bool
         parent = current;
         if (m_LessFunc(insert, m_pElements[current].m_Data)) {
             leftchild = true;
-            current = Links(current).m_Left;
+            current = tree->Links(current).m_Left;
         } else {
             leftchild = false;
-            current = Links(current).m_Right;
+            current = tree->Links(current).m_Right;
         }
     }
 }
@@ -24297,8 +24293,9 @@ void CUnknown10194da0::sub_10194da0(int num)
 
 bool CUtlRBTree12::sub_10194e40(unsigned short i) const
 {
-	unsigned short parent = Links(i).m_Parent;
-	return Links(parent).m_Left == i;
+	const CUtlRBTree12At<0x1072b2a4> *tree = (const CUtlRBTree12At<0x1072b2a4> *)this;
+	unsigned short parent = tree->Links(i).m_Parent;
+	return tree->Links(parent).m_Left == i;
 }
 // END FUNCTION
 
@@ -26661,13 +26658,14 @@ bool sub_101b6680(unsigned short *a, unsigned short *b)
 
 int CUtlRBTreeFind232::sub_101b68f0(const void *search)
 {
+	const CUtlRBTree232At<0x1072c414> *tree = (const CUtlRBTree232At<0x1072c414> *)this;
 	int current = m_Root;
 	while (current != InvalidIndex())
 	{
 		if (m_LessFunc(search, m_pElements[current].m_Data))
-			current = LinksInl(current).m_Left;
+			current = tree->Links(current).m_Left;
 		else if (m_LessFunc(m_pElements[current].m_Data, search))
-			current = LinksInl(current).m_Right;
+			current = tree->Links(current).m_Right;
 		else
 			break;
 	}
@@ -26742,6 +26740,7 @@ void UtlMem::sub_101b6b90()
 
 void CUtlRBTree232::sub_101b6d60(const void *pInsert, int *pParent, bool *pLeftChild)
 {
+    const CUtlRBTree232At<0x1072c414> *tree = (const CUtlRBTree232At<0x1072c414> *)this;
     int current = m_Root;
     *pParent = InvalidIndex();
     *pLeftChild = false;
@@ -26749,10 +26748,10 @@ void CUtlRBTree232::sub_101b6d60(const void *pInsert, int *pParent, bool *pLeftC
         *pParent = current;
         if (m_LessFunc(pInsert, ElementAt(current).m_Data)) {
             *pLeftChild = true;
-            current = LinksInl(current).m_Left;
+            current = tree->Links(current).m_Left;
         } else {
             *pLeftChild = false;
-            current = LinksInl(current).m_Right;
+            current = tree->Links(current).m_Right;
         }
     }
 }
@@ -27229,17 +27228,18 @@ float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
 // TARGET: CUtlRBTree12::sub_101bf6a0
 int CUtlRBTree12::sub_101bf6a0(int key)
 {
+	const CUtlRBTree12At<0x1072c7dc> *tree = (const CUtlRBTree12At<0x1072c7dc> *)this;
 	unsigned short cur = m_Root;
 	while (cur != InvalidIndex())
 	{
 		if (m_LessFunc(&key, m_pElements[cur].m_Data))
-			cur = Links(cur).m_Left;
+			cur = tree->Links(cur).m_Left;
 		else if (m_LessFunc(m_pElements[cur].m_Data, &key))
-			cur = Links(cur).m_Right;
+			cur = tree->Links(cur).m_Right;
 		else
 			break;
 	}
-	if (Links(cur).m_Left != cur)
+	if (tree->Links(cur).m_Left != cur)
 		return *(int *)m_pElements[cur].m_Data;
 	return 0;
 }
@@ -27285,8 +27285,9 @@ void S101c0240::sub_101c0240(int num)
 
 bool CUtlRBTree12::sub_101c02d0(unsigned short i) const
 {
-	unsigned short parent = Links(i).m_Parent;
-	return Links(parent).m_Left == i;
+	const CUtlRBTree12At<0x1072c7dc> *tree = (const CUtlRBTree12At<0x1072c7dc> *)this;
+	unsigned short parent = tree->Links(i).m_Parent;
+	return tree->Links(parent).m_Left == i;
 }
 // END FUNCTION
 
@@ -39072,6 +39073,7 @@ struct Mem16 {
 };
 unsigned short CUtlRBTree16::sub_1024a310()
 {
+    const CUtlRBTree16At<0x1088ae24> *tree = (const CUtlRBTree16At<0x1088ae24> *)this;
     unsigned short elem;
     if (m_FirstFree == InvalidIndex()) {
         if (m_unk8 == m_TotalElements)
@@ -39079,7 +39081,7 @@ unsigned short CUtlRBTree16::sub_1024a310()
         elem = m_TotalElements++;
     } else {
         elem = m_FirstFree;
-        m_FirstFree = Links(m_FirstFree).m_Right;
+        m_FirstFree = tree->Links(m_FirstFree).m_Right;
     }
     unsigned short *p = (unsigned short *)&m_pElements[elem].m_Data;
     if (p)
@@ -39093,7 +39095,8 @@ unsigned short CUtlRBTree16::sub_1024a310()
 
 bool CUtlRBTree16::sub_1024a980(unsigned short i) const
 {
-	return Links(Parent(i)).m_Left == i;
+	const CUtlRBTree16At<0x1088ae24> *tree = (const CUtlRBTree16At<0x1088ae24> *)this;
+	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
 
@@ -39271,8 +39274,9 @@ void __fastcall sub_1024c050(Mem4 *self, int, int num)
 
 bool CUtlRBTree12::sub_1024c0e0(unsigned short i) const
 {
-	unsigned short parent = Links(i).m_Parent;
-	return Links(parent).m_Left == i;
+	const CUtlRBTree12At<0x1088ae44> *tree = (const CUtlRBTree12At<0x1088ae44> *)this;
+	unsigned short parent = tree->Links(i).m_Parent;
+	return tree->Links(parent).m_Left == i;
 }
 // END FUNCTION
 
@@ -43188,12 +43192,13 @@ void CAI_GoalEntity::sub_102cd3b0()
 
 unsigned short CUtlRBTree12::sub_102cdd10(const void *search) const
 {
+	const CUtlRBTree12At<0x10925430> *tree = (const CUtlRBTree12At<0x10925430> *)this;
 	unsigned short i = m_Root;
 	while (i != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[i].m_Data)) {
-			i = Links(i).m_Left;
+			i = tree->Links(i).m_Left;
 		} else if (m_LessFunc(m_pElements[i].m_Data, search)) {
-			i = Links(i).m_Right;
+			i = tree->Links(i).m_Right;
 		} else {
 			break;
 		}
@@ -43214,8 +43219,9 @@ bool sub_102ce100(const unsigned int *a, const unsigned int *b)
 
 bool CUtlRBTree12::sub_102ce550(unsigned short i) const
 {
-	unsigned short parent = Links(i).m_Parent;
-	return Links(parent).m_Right == i;
+	const CUtlRBTree12At<0x10925430> *tree = (const CUtlRBTree12At<0x10925430> *)this;
+	unsigned short parent = tree->Links(i).m_Parent;
+	return tree->Links(parent).m_Right == i;
 }
 // END FUNCTION
 
@@ -43224,6 +43230,7 @@ bool CUtlRBTree12::sub_102ce550(unsigned short i) const
 
 void CUtlRBTree12::sub_102ce640(const void *insert, unsigned short &parent, bool &leftchild)
 {
+    const CUtlRBTree12At<0x10925430> *tree = (const CUtlRBTree12At<0x10925430> *)this;
     unsigned short current = m_Root;
     parent = InvalidIndex();
     leftchild = false;
@@ -43231,10 +43238,10 @@ void CUtlRBTree12::sub_102ce640(const void *insert, unsigned short &parent, bool
         parent = current;
         if (m_LessFunc(insert, m_pElements[current].m_Data)) {
             leftchild = true;
-            current = Links(current).m_Left;
+            current = tree->Links(current).m_Left;
         } else {
             leftchild = false;
-            current = Links(current).m_Right;
+            current = tree->Links(current).m_Right;
         }
     }
 }
@@ -43371,8 +43378,9 @@ void UtlMem9::sub_102cef30(int num)
 
 bool CUtlRBTree12::sub_102cefc0(unsigned short i) const
 {
-	unsigned short parent = Links(i).m_Parent;
-	return Links(parent).m_Left == i;
+	const CUtlRBTree12At<0x10925430> *tree = (const CUtlRBTree12At<0x10925430> *)this;
+	unsigned short parent = tree->Links(i).m_Parent;
+	return tree->Links(parent).m_Left == i;
 }
 // END FUNCTION
 
@@ -45735,12 +45743,13 @@ extern CUtlRBTree12 g_10934014;
 bool sub_102eb170(int key)
 {
     CUtlRBTree12 &t = g_10934014;
+    const CUtlRBTree12At<0x10934040> *tree = (const CUtlRBTree12At<0x10934040> *)&t;
     unsigned short current = t.m_Root;
     while (current != CUtlRBTree12::InvalidIndex()) {
         if (t.m_LessFunc(&key, t.m_pElements[current].m_Data))
-            current = t.Links(current).m_Left;
+            current = tree->Links(current).m_Left;
         else if (t.m_LessFunc(t.m_pElements[current].m_Data, &key))
-            current = t.Links(current).m_Right;
+            current = tree->Links(current).m_Right;
         else {
             if (current == CUtlRBTree12::InvalidIndex())
                 break;
@@ -45756,8 +45765,9 @@ bool sub_102eb170(int key)
 
 bool CUtlRBTree12::sub_102eb7f0(unsigned short i) const
 {
-	unsigned short parent = Links(i).m_Parent;
-	return Links(parent).m_Left == i;
+	const CUtlRBTree12At<0x10934040> *tree = (const CUtlRBTree12At<0x10934040> *)this;
+	unsigned short parent = tree->Links(i).m_Parent;
+	return tree->Links(parent).m_Left == i;
 }
 // END FUNCTION
 
@@ -45797,8 +45807,9 @@ void CUnknown102ec320::sub_102ec320(int num)
 
 bool CUtlRBTree12::sub_102ec3b0(unsigned short i) const
 {
-	unsigned short parent = Links(i).m_Parent;
-	return Links(parent).m_Right == i;
+	const CUtlRBTree12At<0x10934040> *tree = (const CUtlRBTree12At<0x10934040> *)this;
+	unsigned short parent = tree->Links(i).m_Parent;
+	return tree->Links(parent).m_Right == i;
 }
 // END FUNCTION
 
@@ -47519,6 +47530,7 @@ struct Mem16 {
 };
 unsigned short CUtlRBTree16::sub_103134b0()
 {
+    const CUtlRBTree16At<0x10936c54> *tree = (const CUtlRBTree16At<0x10936c54> *)this;
     unsigned short elem;
     if (m_FirstFree == InvalidIndex()) {
         if (m_unk8 == m_TotalElements)
@@ -47526,7 +47538,7 @@ unsigned short CUtlRBTree16::sub_103134b0()
         elem = m_TotalElements++;
     } else {
         elem = m_FirstFree;
-        m_FirstFree = Links(m_FirstFree).m_Right;
+        m_FirstFree = tree->Links(m_FirstFree).m_Right;
     }
     char *p = (char *)&m_pElements[elem].m_Data;
     if (p)
@@ -47572,7 +47584,8 @@ void __fastcall sub_10313f70(Mem16 *self, int, int num)
 
 bool CUtlRBTree16::sub_10314000(unsigned short i) const
 {
-	return Links(Parent(i)).m_Left == i;
+	const CUtlRBTree16At<0x10936c54> *tree = (const CUtlRBTree16At<0x10936c54> *)this;
+	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
 
@@ -47581,7 +47594,8 @@ bool CUtlRBTree16::sub_10314000(unsigned short i) const
 
 bool CUtlRBTree16::sub_10314b30(unsigned short i) const
 {
-	return Links(Parent(i)).m_Left == i;
+	const CUtlRBTree16At<0x10936c48> *tree = (const CUtlRBTree16At<0x10936c48> *)this;
+	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
 
@@ -47590,7 +47604,8 @@ bool CUtlRBTree16::sub_10314b30(unsigned short i) const
 
 bool CUtlRBTree16::sub_10315080(unsigned short i) const
 {
-	return Links(Parent(i)).m_Right == i;
+	const CUtlRBTree16At<0x10936c54> *tree = (const CUtlRBTree16At<0x10936c54> *)this;
+	return tree->Links(tree->Parent(i)).m_Right == i;
 }
 // END FUNCTION
 

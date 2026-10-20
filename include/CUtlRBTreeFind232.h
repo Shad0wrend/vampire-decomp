@@ -1,6 +1,8 @@
 // CUtlRBTreeFind232: a CUtlRBTree with 232-byte nodes (int indices, 16-byte links, 216-byte element) and a less function.
 #pragma once
 
+#include "CUtlRBTree232.h"	// CUtlRBTree232At: the links of each instance
+
 class CUtlRBTreeFind232
 {
 public:
@@ -24,12 +26,6 @@ public:
 	int m_Root;
 
 	static int InvalidIndex() { return -1; }
-
-	const Links_t &LinksInl(int i) const
-	{
-		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
-	}
 
 	int sub_101b68f0(const void *search);	// "CUtlRBTree::Find"
 };

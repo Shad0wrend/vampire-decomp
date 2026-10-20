@@ -28,14 +28,6 @@ public:
 
 	static unsigned short InvalidIndex() { return 0xffff; }
 
-	const Links_t &Links(unsigned short i) const
-	{
-		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
-	}
-
-	unsigned short Parent(unsigned short i) const { return Links(i).m_Parent; }
-
 	bool sub_10047840(unsigned short i) const;	// "CUtlRBTree::IsLeftChild"
 	bool sub_1004a2a0(unsigned short i) const;	// same as sub_10047840 (another instance)
 	bool sub_1004ae60(unsigned short i) const;	// same as sub_10047840 (another instance)
@@ -48,4 +40,22 @@ public:
 	bool sub_10315080(unsigned short i) const;	// same as sub_100483f0 (another instance)
 	unsigned short sub_1024a310();	// "CUtlRBTree::NewNode": takes the free list head or grows the node memory (first allocation 2 elements)
 	unsigned short sub_103134b0();	// same as sub_1024a310 (another instance)
+};
+
+// The game has one CUtlRBTree<T, I> per element type T; CUtlRBTree16 stands for every instance with 16-byte nodes.
+// Each instance keeps its own sentinel node in a function-local static of Links() (with its own guard), so a function
+// of one instance reads its links through CUtlRBTree16At<the address the game keeps that instance's sentinel at>, the
+// static the judge places for it (one game variable, one static: link audit E):
+//	const CUtlRBTree16At<0x...> *tree = (const CUtlRBTree16At<0x...> *)this;	... tree->Links(i) ...
+template <unsigned long Sentinel>
+class CUtlRBTree16At : public CUtlRBTree16
+{
+public:
+	const Links_t &Links(unsigned short i) const
+	{
+		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+	}
+
+	unsigned short Parent(unsigned short i) const { return Links(i).m_Parent; }
 };

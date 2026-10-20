@@ -1,6 +1,8 @@
 // CUtlRBTreeNode36: a CUtlRBTree with 36-byte nodes (8 bytes of links, then data) and 16-bit indices.
 #pragma once
 
+#include "CUtlRBTree36.h"	// CUtlRBTree36At: the links of each instance
+
 struct RBTreeNode36Links
 {
 	unsigned short m_Left;

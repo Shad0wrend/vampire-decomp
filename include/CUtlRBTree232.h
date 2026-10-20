@@ -30,11 +30,21 @@ public:
 
 	Node_t &ElementAt(int i) const { return m_pElements[i]; }
 
-	const Links_t &LinksInl(int i) const
+	void sub_101b6d60(const void *pInsert, int *pParent, bool *pLeftChild);	// "CUtlRBTree::FindInsertionPosition": walks down from the root with the less function, stores the last visited node in *pParent and whether the new element goes to its left in *pLeftChild
+};
+
+// The game has one CUtlRBTree<T, I> per element type T; CUtlRBTree232 stands for every instance with 232-byte nodes.
+// Each instance keeps its own sentinel node in a function-local static of Links() (with its own guard), so a function
+// of one instance reads its links through CUtlRBTree232At<the address the game keeps that instance's sentinel at>, the
+// static the judge places for it (one game variable, one static: link audit E):
+//	const CUtlRBTree232At<0x...> *tree = (const CUtlRBTree232At<0x...> *)this;	... tree->Links(i) ...
+template <unsigned long Sentinel>
+class CUtlRBTree232At : public CUtlRBTree232
+{
+public:
+	const Links_t &Links(int i) const
 	{
 		static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-		return i != InvalidIndex() ? ElementAt(i).m_Links : s_Sentinel;
+		return i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
 	}
-
-	void sub_101b6d60(const void *pInsert, int *pParent, bool *pLeftChild);	// "CUtlRBTree::FindInsertionPosition": walks down from the root with the less function, stores the last visited node in *pParent and whether the new element goes to its left in *pLeftChild
 };
