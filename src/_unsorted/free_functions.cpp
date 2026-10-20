@@ -19463,6 +19463,34 @@ void CBasePlayer::sub_1017e5f0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017ec40 size=0x89
+#include "CBasePlayer.h"
+
+struct GlobalVarsT { char pad[0xc]; float curtime; };
+extern GlobalVarsT *g_1070b228;
+extern char g_106c8a41;
+struct EntInfo { void *ent; int serial; int pad; };
+extern char *g_10566458;
+
+void CBasePlayer::sub_1017ec40()
+{
+	float *pNext = (float *)((char *)this + 0x1cf8);
+	if (g_1070b228->curtime >= *pNext) {
+		if (g_106c8a41) {
+			*pNext = *pNext + 5.0f;
+			return;
+		}
+		*pNext = 3.4028235e38f;
+		unsigned int h = *(unsigned int *)((char *)this + 0x1d00);
+		if (h != 0xffffffff) {
+			EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+			if (e->serial == (int)(h >> 13) && e->ent)
+				sub_1017ee80(*(int *)((char *)this + 0x1cfc), *(int *)((char *)e->ent + 0x98), (char *)this + 0x1d04);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101800e0 size=0xe
 #include "CUnknown101800e0.h"
 // TARGET: CUnknown101800e0::sub_101800e0

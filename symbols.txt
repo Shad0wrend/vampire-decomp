@@ -2464,6 +2464,7 @@
 0x1000e430 func   ?vfunc303@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc303
 0x1000e45d func   ?sub_10398d90@CUnknown10398d90@@QAEXH@Z CUnknown10398d90::sub_10398d90
 0x1000e48a func   ?vfunc5@CWeaponMelee_Katana@@QAEPAV1@I@Z CWeaponMelee_Katana::vfunc5
+0x1000e48f func   ?sub_1017ec40@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017ec40
 0x1000e4ad func   ?vfunc5@CWeaponMelee_Claws_Protean5@@QAEPAV1@I@Z CWeaponMelee_Claws_Protean5::vfunc5
 0x1000e4b7 func   ?vfunc6@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXXZ CAI_Behavior<CAI_BaseNPC,100000>::vfunc6
 0x1000e4f3 func   ?vfunc5@CPhysicsProp@@QAEPAV1@I@Z CPhysicsProp::vfunc5
