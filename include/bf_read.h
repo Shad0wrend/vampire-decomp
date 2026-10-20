@@ -61,4 +61,6 @@ public:
 	float sub_100beba0();	// "ReadBitNormal": sign bit, then 11 fractional bits scaled by 1/2047
 	int sub_100be590(int numbits);	// "ReadSBitLong": ReadUBitLong(numbits - 1), minus 1 << (numbits - 1) when the sign bit is set
 	unsigned int sub_100be6b0(int numbits, bool bSigned);	// "ReadBitLong": ReadSBitLong(numbits) when bSigned, else ReadUBitLong(numbits)
+	void sub_100bdee0();	// default constructor body (called through the stub at 0x1000a0ec)
+	unsigned int sub_100be4b0(int numbits);	// "PeekUBitLong": reads numbits bits one at a time from a saved copy of the reader, restores the reader, returns the value
 };
