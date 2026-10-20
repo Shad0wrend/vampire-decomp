@@ -28211,6 +28211,22 @@ void CUtlVector20::sub_1027f990(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027faa0 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_1027faa0()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027fae0 size=0x8c
 #include "UtlVec8.h"
 extern void *(*g_109f3634)(int);
