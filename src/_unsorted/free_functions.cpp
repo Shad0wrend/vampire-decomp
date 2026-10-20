@@ -13448,6 +13448,37 @@ void CBaseEntity::sub_100b3c50(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b3ee0 size=0xe4
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+extern char g_10558fac[];
+extern CGlobalEntityList *g_10566458;
+static inline CGlobalEntityList_Ent *Resolve(unsigned int h)
+{
+    if (h != -1) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        if (s->m_Serial == (h >> 13))
+            return s->m_pEntity;
+    }
+    return 0;
+}
+void CBaseEntity::sub_100b3ee0()
+{
+    ScopeTrace t(g_10558fac, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    unsigned int *pHandle = (unsigned int *)((char *)this + 0x440);
+    unsigned int h = *pHandle;
+    if (h != -1) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        if (s->m_Serial == (h >> 13) && s->m_pEntity)
+            ((CBasePlayer *)Resolve(*(volatile unsigned int *)pHandle))->sub_1017c1d0(this);
+    }
+    *pHandle = 0xffffffff;
+    *((char *)this + 0x43c) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b40f0 size=0x71
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

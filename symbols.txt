@@ -109,6 +109,7 @@
 0x10001852 func   ?sub_10340180@@YAXXZ sub_10340180
 0x10001857 func   ??_GCAI_Senses@@UAEPAXI@Z ??_GCAI_Senses@@UAEPAXI@Z
 0x10001861 func   _item_p_research_lg_dodge item_p_research_lg_dodge
+0x10001870 func   ?sub_100b3ee0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3ee0
 0x10001898 func   ?sub_100ba120@CUnknown100ba120@@QAEXD@Z CUnknown100ba120::sub_100ba120
 0x1000189d func   ?vfunc5@CScriptedSentence@@QAEPAV1@I@Z CScriptedSentence::vfunc5
 0x100018b1 func   ??_GCRelieableBroadcastRecipientFilter@@UAEPAXI@Z ??_GCRelieableBroadcastRecipientFilter@@UAEPAXI@Z
