@@ -18479,6 +18479,22 @@ void CUtlRBTree232::sub_101b6d60(const void *pInsert, int *pParent, bool *pLeftC
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b7120 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_109f3634)(int);
+
+UtlMem *UtlMem::sub_101b7120(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_109f3634(allocationCount * 8);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b7170 size=0x95
 #include "CUtlVector130.h"
 
