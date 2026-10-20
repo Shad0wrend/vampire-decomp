@@ -1148,6 +1148,7 @@
 0x10006e2e func   ?sub_103fa9d0@@YAHXZ sub_103fa9d0
 0x10006e5b func   _item_g_pisha_book item_g_pisha_book
 0x10006e79 func   ?sub_101851a0@CUtlVector64@@QAEXH@Z CUtlVector64::sub_101851a0
+0x10006e88 func   ?vfunc141@CNPC_VZombie@@QAEXPAUCUnknown101c2a50@@HPAD@Z CNPC_VZombie::vfunc141
 0x10006e8d func   ?sub_10185600@@YIXPAH@Z sub_10185600
 0x10006ed3 func   ?sub_1012f850@@YAMM@Z sub_1012f850
 0x10006ed8 func   ?vfunc5@CAI_ChangeHintGroup@@QAEPAV1@I@Z CAI_ChangeHintGroup::vfunc5
