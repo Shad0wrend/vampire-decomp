@@ -26,7 +26,8 @@ public:
 	virtual void slot90(); virtual void slot91(); virtual void slot92(); virtual void slot93(); virtual void slot94();
 	virtual void slot95(); virtual void slot96(); virtual void slot97(); virtual void slot98(); virtual void slot99();
 	virtual void slot100(); virtual void slot101(); virtual void slot102(); virtual void slot103(); virtual void slot104();
-	virtual void slot105(); virtual void slot106(); virtual void slot107(); virtual void slot108(); virtual void slot109();
+	virtual void slot105(const char *pszModel);	// sets the model by name (the Ghoul croucher's spawn)
+	virtual void slot106(); virtual void slot107(); virtual void slot108(); virtual void slot109();
 	virtual void slot110(); virtual void slot111(); virtual void slot112(); virtual void slot113(); virtual void slot114();
 	virtual void slot115(); virtual void slot116(); virtual void slot117(); virtual void slot118(); virtual void slot119();
 	virtual void slot120(); virtual void slot121(); virtual void slot122(); virtual void slot123(); virtual void slot124();
