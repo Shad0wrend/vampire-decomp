@@ -21,6 +21,61 @@ void S10027890::sub_10027890(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027a70 size=0xb5
+#include "CBaseEntity.h"
+
+struct EngX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(int a);
+};
+struct PhysX { virtual void v0(); virtual void v1(); virtual void v2(); };
+struct EntInfo { CBaseEntity *ent; int serial; int pad; };
+extern EngX *g_10723940;
+extern char *g_10566458;
+
+struct CUnknown10027a70 : CBaseEntity {
+	void sub_10027a70();
+	void sub_100ac610(float t, const char *ctx);
+};
+
+void CUnknown10027a70::sub_10027a70()
+{
+	int h450 = *(int *)((char *)this + 0x450);
+	if (h450) {
+		g_10723940->v40(h450);
+		*(int *)((char *)this + 0x450) = 0;
+		sub_100ac4e0(0, 0, 0);
+		sub_100ac610(-1.0f, 0);
+		unsigned int h = *(unsigned int *)((char *)this + 0x460);
+		if (h != 0xffffffff) {
+			EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+			if (e->serial == (h >> 13) && e->ent) {
+				unsigned int h2 = *(volatile unsigned int *)((char *)this + 0x460);
+				CBaseEntity *p;
+				if (h2 != 0xffffffff) {
+					EntInfo *e2 = (EntInfo *)(g_10566458 + 4) + (h2 & 0x1fff);
+					if (e2->serial == (h2 >> 13))
+						p = e2->ent;
+					else
+						p = 0;
+				} else
+					p = 0;
+				PhysX *obj = *(PhysX **)((char *)p + 0x36c);
+				if (obj)
+					obj->v2();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027bb0 size=0x49
 void *sub_1000db89(int);
 struct GP;
