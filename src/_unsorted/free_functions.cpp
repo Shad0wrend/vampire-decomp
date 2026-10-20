@@ -33798,6 +33798,22 @@ struct CUnknown10312320 { char pad[0x30]; CSub10002397 m_Sub; void sub_10312320(
 void CUnknown10312320::sub_10312320() { m_Sub.sub_10002397(); }
 // END FUNCTION
 
+// FUNCTION: 0x10312f70 size=0x30
+#include "CUtlMemory16.h"
+
+extern void *(__cdecl *g_109f3634)(unsigned int);
+
+CUtlMemory16 *CUtlMemory16::sub_10312f70(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount)
+		m_pMemory = (char *)g_109f3634(allocationCount * 16);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10313f70 size=0x67
 struct Mem16 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);

@@ -755,6 +755,7 @@
 0x10005add func   ?sub_103e1680@@YAMXZ sub_103e1680
 0x10005ae7 func   ??0CWeaponMelee_TzimisceMelee@@QAE@XZ CWeaponMelee_TzimisceMelee::CWeaponMelee_TzimisceMelee
 0x10005af1 func   ?sub_10389650@@YADXZ sub_10389650
+0x10005b0f func   ?sub_10312f70@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_10312f70
 0x10005b14 func   ?vfunc440@CNPC_VGargoyle@@QAEHH@Z CNPC_VGargoyle::vfunc440
 0x10005b23 func   ?sub_101f2ae0@@YGXPAX@Z sub_101f2ae0
 0x10005b32 func   _dynamic_prop dynamic_prop
