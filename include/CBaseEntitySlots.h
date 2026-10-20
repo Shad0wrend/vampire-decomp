@@ -5,7 +5,7 @@
 class CBaseEntitySlots
 {
 public:
-	virtual void slot0(); virtual void slot1(); virtual void slot2(); virtual void slot3(); virtual void slot4();
+	virtual void slot0(); virtual int *slot1(); virtual void slot2(); virtual void slot3(); virtual void slot4();
 	virtual void slot5(); virtual void slot6(); virtual void slot7(); virtual void slot8(); virtual void slot9();
 	virtual void slot10(); virtual void slot11(); virtual void slot12(); virtual void slot13(); virtual void slot14();
 	virtual void slot15(); virtual void slot16(); virtual void slot17(); virtual void slot18(); virtual void slot19();
@@ -32,7 +32,7 @@ public:
 	virtual void slot120(); virtual void slot121(); virtual void slot122(); virtual void slot123(); virtual void slot124();
 	virtual void slot125(); virtual void slot126(); virtual void slot127(); virtual void slot128(); virtual void slot129();
 	virtual void slot130(); virtual void slot131(); virtual void slot132(); virtual void slot133(); virtual void slot134();
-	virtual void slot135(); virtual void slot136(); virtual void slot137(); virtual void slot138(); virtual void slot139();
+	virtual void slot135(); virtual void slot136(); virtual void *slot137(); virtual void slot138(); virtual void slot139();
 	virtual void slot140(); virtual void slot141(); virtual void slot142(); virtual void slot143(); virtual void slot144();
 	virtual void slot145(); virtual void slot146(); virtual void slot147(); virtual void slot148(); virtual void slot149();
 	virtual void slot150(); virtual void slot151(); virtual void slot152(); virtual void slot153(); virtual void slot154();
