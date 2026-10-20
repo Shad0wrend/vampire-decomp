@@ -338,6 +338,7 @@
 0x100031de func   ?sub_100a7d00@CBaseEntity@@QAEXHHH@Z CBaseEntity::sub_100a7d00
 0x100031f2 func   _func_dustcloud func_dustcloud
 0x100031fc func   ?vfunc5@CWeaponIArmor_Body_Armor@@QAEPAV1@I@Z CWeaponIArmor_Body_Armor::vfunc5
+0x10003206 func   ?sub_1021e180@UtlMem@@QAEXXZ UtlMem::sub_1021e180
 0x10003215 func   _func_dustmotes func_dustmotes
 0x10003229 func   ?sub_100a0420@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_100a0420
 0x10003256 func   ?sub_103fa3d0@@YAHXZ sub_103fa3d0
