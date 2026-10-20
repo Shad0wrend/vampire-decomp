@@ -23,12 +23,27 @@ public:
 	void sub_102c1ce0();	// CAI_BaseNPCTroika::vfunc77 (stub 0x10006d11), called directly
 	virtual void vfunc78();	// slot 78 "CNPC_VGhoulCroucher::ScriptUnhide": scope trace (entity name), the Troika version, then slot 78 of the entity behind the handle at +0x6670 (when it is live)
 	void sub_102c1ec0();	// CAI_BaseNPCTroika::vfunc78 (stub 0x10009ecb), called directly
+	void vfunc103();	// slot 103 "Spawn": solid flags, picks the Malk mansion model by the bytes at +0x6664 / +0x6665, then the CNPC_VHumanCombatant spawn
+	void sub_10012855(int flags);	// sets the solid flags, called with 0x4000000, 0x200000 and 0x8000
+	void sub_1000bc08();	// CNPC_VHumanCombatant::vfunc103 (stub 0x1000bc08), called directly
 
-	char m_pad03e0[0x1b30 - 0x3e0];
+	char m_pad03e0[0x10e4 - 0x3e0];
+	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
+	char m_pad10e8[0x1a98 - 0x10e8];
+	int m_n1a98;	// +0x1a98
+	char m_pad1a9c[0x1b30 - 0x1a9c];
 	const char *m_pszFile1b30;	// +0x1b30: source file of the last schedule selection
 	int m_nLine1b34;	// +0x1b34: its line
-	char m_pad1b38[0x6667 - 0x1b38];
+	char m_pad1b38[0x5dec - 0x1b38];
+	int m_n5dec;	// +0x5dec
+	char m_pad5df0[0x6348 - 0x5df0];
+	int m_n6348[5];	// +0x6348: five distances, 999999 at spawn
+	char m_pad635c[0x6664 - 0x635c];
+	char m_b6664;	// +0x6664: stalker variant
+	char m_b6665;	// +0x6665: burning variant
+	char m_b6666;	// +0x6666
 	char m_b6667;	// +0x6667
-	char m_pad6668[0x6670 - 0x6668];
+	int m_n6668;	// +0x6668: random 0..3
+	char m_pad666c[0x6670 - 0x666c];
 	unsigned int m_h6670;	// +0x6670: entity handle
 };
