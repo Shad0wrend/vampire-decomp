@@ -5,8 +5,11 @@ class CGameMovement
 {
 public:
 	virtual CGameMovement *vfunc0(unsigned int flags);
-	virtual void vfunc1();
+	virtual void vfunc1(void *pMove, void *pPlayer);	// slot 1 "ProcessMovement": stores the arguments at +8 / +4, picks the frame time from the global at 0x109ef04c, runs slot 5 and sub_1011f6e0, and restores the global time step (+0x10 of 0x1070b228)
 	virtual float *vfunc2(char flag, int unused);	// returns the sub-object at +0x2c when flag is set, else the one at +0x14
+	virtual void slot3();
+	virtual void slot4();
+	virtual void vfunc5();
 	void sub_100102f3();	// as in CDataObjectAccessSystem (transplant)
 	float *vfunc3(char flag, int unused);	// as in CGameMovement (transplant)
 	float *vfunc4(char flag, int unused);	// as in CGameMovement (transplant)
@@ -17,4 +20,5 @@ public:
 
 	float sub_101282b0();	// movement speed scale: 0.8 * a tuning value chosen by the player's state at +0xc0 (0 for other states)
 	void sub_10122590();	// plays a random "surfaces/wade/step*.wav" footstep sound at the player's origin (+0x70) with a clamped volume
+	void sub_1011f6e0();	// copies the player's +0x24 to +0x28 and the move data's +0x3e0 / +0x3e4 to the player's +0xc8 / +0xcc
 };
