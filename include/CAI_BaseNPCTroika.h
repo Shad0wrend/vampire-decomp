@@ -30,6 +30,10 @@ public:
 	virtual void vfunc574(); virtual void vfunc575(); virtual void vfunc576(); virtual void vfunc577(); virtual void vfunc578();
 	virtual void vfunc579();
 	virtual CAI_CondOwner *vfunc580();	// the object that translates condition ids (sub-object at +0x30)
+	virtual void vfunc581(); virtual void vfunc582();
+	virtual void vfunc583();	// asked after another NPC accepted the value of slot 585
+	virtual void vfunc584();
+	virtual int vfunc585(int a);	// the value offered to another NPC's slot 482
 
 	void vfunc488();	// slot 488: plays the "Death" sound
 	void vfunc489();	// slot 489: plays the "Target_Suspect" sound
@@ -96,6 +100,7 @@ public:
 	char sub_1028a190();	// "IsInterruptible"-like: false while the state is 4 and the scripted entity of the handle at +0x5d74 is not playing (CCineNPC::sub_101a8930), or the byte at +0x5bc4 / bit 12 of the dword at +0x14bc is set; else slot 158
 	void sub_102c41d0(int a, const Vector *pFrom, const Vector *pTo, int c);	// resolves the defaults (this NPC's slot 217 origin, the global vector at 0x1070d9d0), then hands them with the slot 192 vector to the worker behind the stub at 0x10001a8c
 	int sub_102a0ed0(int a, int b, int c, int d);	// "CAI_BaseNPCTroika::CanStandAt" worker (unmatched, score 11): scope trace (entity name), sets the byte at +0x63da around the call sub_102e7270(a, b, c, d, 0, 0) of the object at +0x5d40 and returns its result
+	void sub_101a72b0(int unused);	// when the NPC behind the handle at +0x5ce4 (its object at +0x94) is in state 0 or 2 and accepts slot 585(1) on its slot 482, runs slot 583; with no such NPC runs the think setter (stub 0x1000556f) and stamps the next think; always stamps curtime + 1000000 at +0x5f74
 
 	char m_pad0004[0x14bc - 4];
 	unsigned int m_flags14bc;
