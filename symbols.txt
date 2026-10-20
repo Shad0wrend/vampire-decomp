@@ -2639,6 +2639,7 @@
 0x10010d9d func   ?sub_101a56d0@CUtlVector40@@QAEHHPBX@Z CUtlVector40::sub_101a56d0
 0x10010dbb func   ?vfunc5@CItemKSarcophagusKey@@QAEPAV1@I@Z CItemKSarcophagusKey::vfunc5
 0x10010dd9 func   _item_p_occult_frenzy item_p_occult_frenzy
+0x10010e06 func   ?sub_1027fa50@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_1027fa50
 0x10010e0b func   _npc_bullseye npc_bullseye
 0x10010e33 func   ?sub_1036c810@CNPC_VChangBros@@QAEXHH@Z CNPC_VChangBros::sub_1036c810
 0x10010e3d func   ?sub_100ae7e0@@YAXXZ sub_100ae7e0
