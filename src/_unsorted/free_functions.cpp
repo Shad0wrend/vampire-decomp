@@ -64030,6 +64030,29 @@ extern "C" CBaseEntity *item_w_mingxiao_tentacle()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ed920 size=0x68
+struct CGlobalVarsX { char pad[0xc]; float curtime; };
+extern CGlobalVarsX *g_1070b228;
+struct OwnerX { char pad[0xa8]; void *p; };
+void sub_1000d5f3();
+struct CWeaponUnit : CBaseCombatWeapon {
+    int sub_100ac4e0(int func, int thinkTime, const char *ctx);
+    void sub_103ed920();
+};
+
+// TARGET: CWeaponUnit::sub_103ed920
+void CWeaponUnit::sub_103ed920()
+{
+    OwnerX *o = (OwnerX *)sub_102521f0();
+    if (o && o->p) {
+        vfunc333(1, 1, 0, 0, 0, 0);
+        vfunc307(vfunc328());
+        sub_100ac4e0((int)sub_1000d5f3, 0, 0);
+        *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.2f;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee100 size=0x72
 #include "SendProp.h"
 
