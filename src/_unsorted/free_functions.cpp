@@ -39894,6 +39894,25 @@ CBaseEntity *CBasePlayer::sub_1039ede0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039f550 size=0x43
+#include "CNPC_VMoleman.h"
+void *sub_100aa720(int size);
+extern char g_1064a5f8[];
+
+// TARGET: npc_VMoleman
+extern "C" CBaseEntity *npc_VMoleman()
+{
+	void *mem = sub_100aa720(0x6664);
+	CNPC_VMoleman *p;
+	if (mem)
+		p = ((CNPC_VMoleman *)mem)->sub_1039f5c0();
+	else
+		p = 0;
+	p->vfunc106(g_1064a5f8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039f6f0 size=0x33
 void sub_100053cb();
 void sub_10003f30();
