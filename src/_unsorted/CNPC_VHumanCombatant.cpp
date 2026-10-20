@@ -36,3 +36,22 @@ void CNPC_VHumanCombatant::vfunc103()
 	sub_10012855(0x40);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10387140 size=0x27
+#include "CNPC_VHumanCombatant.h"
+
+struct CAI_BaseNPCTroikaPlaceholder {
+    void sub_1000c531();
+};
+
+// TARGET: CNPC_VHumanCombatant::vfunc420
+void CNPC_VHumanCombatant::vfunc420()
+{
+    ((CAI_BaseNPCTroikaPlaceholder *)this)->sub_1000c531();
+    if (sub_1032e7b0() != 0) {
+        CNPC_VHumanCombatantWeapon *w = sub_1032e7b0();
+        void **vt = *(void ***)w;
+        ((void (__fastcall *)(void *))vt[0x108 / 4])(w);
+    }
+}
+// END FUNCTION
