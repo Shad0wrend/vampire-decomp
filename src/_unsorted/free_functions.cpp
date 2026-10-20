@@ -7080,6 +7080,18 @@ void CUnknown100779b0::sub_100779b0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077ac0 size=0x11
+struct CTableFields10077ac0 {
+    char pad0[0x2f0];
+    unsigned int table[1];
+    unsigned int sub_10077ac0(int i);
+};
+unsigned int CTableFields10077ac0::sub_10077ac0(int i)
+{
+    return *(unsigned int *)((char *)this + 0x2f0 + i * 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077b30 size=0x72
 #include "CUnknown10077b30.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
