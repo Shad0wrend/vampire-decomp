@@ -2668,6 +2668,7 @@
 0x100125ee func   ?vfunc2@CTEFogRipple@@UAEPAV1@I@Z CTEFogRipple::vfunc2
 0x100125f3 func   ?vfunc5@CWeaponMelee_WerewolfAttacks@@QAEPAV1@I@Z CWeaponMelee_WerewolfAttacks::vfunc5
 0x1001263e func   ?vfunc5@CItemGDrugsPerscriptionBottle@@QAEPAV1@I@Z CItemGDrugsPerscriptionBottle::vfunc5
+0x10012698 func   ?sub_10190440@@YAHXZ sub_10190440
 0x100126a2 func   ?sub_10427700@CUnknown10427700@@QAE_NPBDHH@Z CUnknown10427700::sub_10427700
 0x100126e3 func   ?sub_1002ab80@TFilterX@@QAEPAU1@E@Z TFilterX::sub_1002ab80
 0x10012729 func   ?sub_1022d410@@YIXPAUMem256@@HH@Z sub_1022d410
