@@ -2657,6 +2657,7 @@
 0x10010519 func   ?sub_1013fd20@CUtlMemory96@@QAEXH@Z CUtlMemory96::sub_1013fd20
 0x10010532 func   _trigger_teleport trigger_teleport
 0x1001057d func   ?sub_102ccce0@CAI_DynamicLink@@QAEXXZ CAI_DynamicLink::sub_102ccce0
+0x1001058c func   ?sub_102168a0@CPropModelState@@QAEXPAUinputdata_t@@@Z CPropModelState::sub_102168a0
 0x1001059b func   ?vfunc5@CItemGJunkyardBusinesscard@@QAEPAV1@I@Z CItemGJunkyardBusinesscard::vfunc5
 0x100105aa func   ?vfunc5@CItemGBrotherhoodFlyer@@QAEPAV1@I@Z CItemGBrotherhoodFlyer::vfunc5
 0x100105d2 func   ?vfunc501@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc501

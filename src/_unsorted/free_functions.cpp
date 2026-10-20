@@ -26862,6 +26862,26 @@ void __fastcall sub_10216850(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102168a0 size=0x64
+#include "CPropModelState.h"
+#include "inputdata_t.h"
+
+#define CLAMP_IDX(v, lo, hi) ((v) > (hi) ? (hi) : ((v) < (lo) ? (lo) : (v)))
+
+struct VarL {
+    int m_iValue;
+    char m_pad[0xc];
+    volatile int m_fieldType;
+    int Int() { return m_fieldType == 4 ? m_iValue : 0; }
+};
+
+void CPropModelState::sub_102168a0(inputdata_t *pData)
+{
+    VarL &v = *(VarL *)&pData->value;
+    sub_10216aa0(CLAMP_IDX(v.Int() - 1, 0, m_nStates - 1), pData->pActivator);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216c20 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
