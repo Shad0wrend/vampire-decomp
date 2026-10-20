@@ -48434,6 +48434,45 @@ bool CNPC_VChangBros::sub_1036e820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036e8c0 size=0x9c
+#include "CBaseEntity.h"
+#include "CNPC_VChangBros.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+struct SEntInfo { void *pEnt; unsigned serial; int pad; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char *g_10566458;
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SEntVt {
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8) SL10(a9)
+	SL10(b0) SL10(b1) SL10(b2) SL10(b3) SL10(b4) SL10(b5) SL10(b6) SL10(b7) SL10(b8) SL10(b9)
+	SL10(c0) SL10(c1) SL10(c2) SL10(c3)
+	virtual void c40(); virtual void c41();
+	virtual void vfunc242();
+};
+
+void CNPC_VChangBros::sub_1036e8c0()
+{
+    g_109f3620[*g_109f3680].a = "CNPC_VChangBros::KillCenterEmitter";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    unsigned h = *(unsigned *)((char *)this + 0x66f4);
+    if (h != 0xffffffff) {
+        SEntInfo *e = (SEntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+        if (e->serial == (h >> 13) && e->pEnt) {
+            SEntVt *p = (SEntVt *)e->pEnt;
+            p->vfunc242();
+            ((CBaseEntity *)p)->sub_100fbbb0(0.1f);
+        }
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036ec40 size=0x33
 void sub_1000c9b9();
 void sub_100055fb();

@@ -858,6 +858,7 @@
 0x10005a33 func   ?sub_103f30f0@@YAHXZ sub_103f30f0
 0x10005a3d func   ?vfunc5@CLogicNPCCondition@@QAEPAV1@I@Z CLogicNPCCondition::vfunc5
 0x10005a4c func   ?vfunc11@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc11
+0x10005a79 func   ?sub_1036e8c0@CNPC_VChangBros@@QAEXXZ CNPC_VChangBros::sub_1036e8c0
 0x10005a83 func   ?vfunc5@CBaseProp@@QAEPAV1@I@Z CBaseProp::vfunc5
 0x10005a97 func   ?sub_100b4910@UtlMem@@QAEXXZ UtlMem::sub_100b4910
 0x10005a9c func   ?sub_1032ead0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1032ead0
