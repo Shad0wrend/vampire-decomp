@@ -57,4 +57,6 @@ public:
 	CBaseEntity *sub_10036e50();	// "CPhysicsPushedEntities::RegisterBlockage": scope trace, lets the blocked entity record the impact with its blocker (PhysicsImpact) and returns the blocked entity
 	bool sub_10036270(MovedEntity_t *pMoved, const float *pMove, int a);	// per-entity push check (called through the stub at 0x100046bf); true when the entity could be moved
 	bool sub_10036a20(const float *pMove);	// "CPhysicsPushedEntities::SpeculativelyCheckPush": scope trace, clears the blocking index, then checks every moved entity last to first; false (and the blocking index set) at the first one that is blocked
+	void sub_10036d40(char bFlag, int a);	// scope trace "CPhysicsPushedEntities::FinishPush" (the string names the per-push variant): sub_10036b10(), then on every moved entity, last to first: PhysicsTouchTriggers(&start origin), slot 232(0), PhysicsImpact(blocker, trace) when it has a blocker and, when bFlag is set, sub_10036bd0(entity, a)
+	void sub_10036bd0(CBaseEntity *pEnt, int a);	// called through the stub at 0x10004be7
 };
