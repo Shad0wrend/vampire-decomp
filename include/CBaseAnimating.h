@@ -8,6 +8,7 @@ class CBaseAnimating : public CBaseEntity
 {
 public:
 	void *sub_100952d0(int a);	// GetModelPtr-like, returns the studio header
+	int sub_1008ed50(int sequence, int *pLocalSequence);	// "CBaseAnimating::LookupExtraAnimationModelIndexForSequence": scope trace (entity name), over the models -1, 0, 1 finds the one whose sequence range [sum of the earlier models' counts, + its count) holds sequence; stores the sequence relative to that model in *pLocalSequence and returns the model index; DevWarning and (0, -1) when none
 	int sub_10094520();	// "CBaseAnimating::GetNumFlexControllers": scope trace (entity name), returns the dword at +0x160 of the studio header, 0 when missing
 	int sub_10093be0(int a);	// "CBaseAnimating::GetBodygroup": scope trace (entity name), then a studio helper on (GetModelPtr(-1), dword at +0x67c, a)
 	void sub_10093b10(int group, int value);	// "CBaseAnimating::SetBodygroup": scope trace (entity name), then the studio helper sub_10428c60(GetModelPtr(-1), &dword at +0x67c, group, value)
