@@ -1600,6 +1600,7 @@
 0x100099a8 func   ?sub_10430280@@YAII@Z sub_10430280
 0x100099d0 func   _item_g_pisha_fetish item_g_pisha_fetish
 0x10009a16 func   ?sub_10248850@CUnknown10248850@@QAEXH@Z CUnknown10248850::sub_10248850
+0x10009a20 func   ?vfunc106@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc106
 0x10009a34 func   ?sub_10182810@CUnknown10182810@@QAEHXZ CUnknown10182810::sub_10182810
 0x10009a39 func   ?sub_10032c20@UtlMem@@QAEXXZ UtlMem::sub_10032c20
 0x10009a61 func   _hud_timer hud_timer
