@@ -31,7 +31,7 @@ public:
 	virtual void vfunc17();
 	virtual void vfunc18();
 	virtual void vfunc19();
-	virtual void vfunc20();
+	virtual CBaseEntity *vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurrentWeapon);	// "GetNextBestWeapon"
 	virtual void vfunc21();
 	virtual void vfunc22();
 	virtual void vfunc23();
