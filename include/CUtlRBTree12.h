@@ -48,4 +48,5 @@ public:
 	void sub_101945f0(const void *insert, unsigned short &parent, bool &leftchild);	// "CUtlRBTree::FindInsertionPoint": walks down from the root with the less function, remembering the last node and the side
 	void sub_102ce640(const void *insert, unsigned short &parent, bool &leftchild);	// "CUtlRBTree::FindInsertionPoint" (another instance)
 	void sub_1024b400(unsigned short *pOut, int pTable);	// searches for the element whose less-function key is {0xffff, 0xffff}: stores the table and this tree in two globals for the less function, writes the found index (or 0xffff) to *pOut; 0xffff when pTable is zero
+	int sub_101bf6a0(int key);	// "CUtlMap::Find"-like: Find(key) inlined, then the 4 byte element of a valid node, or 0
 };
