@@ -39713,6 +39713,60 @@ parse:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102482f0 size=0xf6
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+
+class IFileSys
+{
+public:
+	virtual int vfunc0(const char *pszName, const char *pszMode, int nPath);	// opens a file, 0 when it is missing
+	virtual void vfunc1(int hFile);	// closes it
+	virtual int vfunc2(void *pBuffer, int nBytes, int hFile);	// reads from it
+	virtual void vfunc3(); virtual void vfunc4(); virtual void vfunc5();
+	virtual int vfunc6(int hFile);	// the size of the file
+};
+
+void sub_1023f040(int *pCRC);	// CRC32 init
+void sub_1023f060(unsigned int *pCRC);	// CRC32 final
+void sub_1023f0c0(unsigned int *pCRC, const char *pBuffer, int nLength);	// CRC32 process (stub 0x100143b7)
+
+extern int g_10856fa8;	// the number of cached files (the cache memory ends right before it)
+extern unsigned int g_10753768[];	// their name hashes
+extern char *g_107547a8[];	// their contents
+extern int g_105c530c;	// bytes left in the cache memory
+extern char g_105596cc[];	// the file open mode
+
+char *sub_102482f0(const char *pszName, IFileSys *pFileSys)
+{
+	unsigned int nHash;
+	sub_1023f040((int *)&nHash);
+	sub_1023f0c0(&nHash, pszName, strlen(pszName));
+	sub_1023f060(&nHash);
+	for (int i = 0; i < g_10856fa8; i++) {
+		if (nHash == g_10753768[i])
+			return g_107547a8[i];
+	}
+	int hFile = pFileSys->vfunc0(pszName, g_105596cc, 0);
+	if (hFile) {
+		int nSize = pFileSys->vfunc6(hFile) + 1;
+		if (nSize < g_105c530c) {
+			char *pDest = (char *)&g_10856fa8 - g_105c530c;
+			pFileSys->vfunc2(pDest, nSize - 1, hFile);
+			pFileSys->vfunc1(hFile);
+			pDest[nSize - 1] = 0;
+			g_10753768[g_10856fa8] = nHash;
+			g_107547a8[g_10856fa8] = pDest;
+			g_105c530c -= nSize;
+			g_10856fa8++;
+			return pDest;
+		}
+		pFileSys->vfunc1(hFile);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248850 size=0xa
 void CUnknown10248850::sub_10248850(int value)
 {
