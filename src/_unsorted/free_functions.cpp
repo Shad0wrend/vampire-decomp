@@ -11766,6 +11766,38 @@ void CUnknown100dbc60::sub_100dbc60(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dbd70 size=0x65
+#include "CUnknown100dbd70.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+struct EntSub270
+{
+	void sub_100ddd90();
+};
+
+// TARGET: CUnknown100dbd70::sub_100dbd70
+void CUnknown100dbd70::sub_100dbd70()
+{
+	for (int i = m_size - 1; i >= 0; i--)
+	{
+		unsigned int h = *(unsigned int *)m_Memory.sub_100ddf40(i);
+		if (h != 0xffffffff)
+		{
+			CGlobalEntityList_Slot *slot = &g_106eb5d8.m_Slots[h & 0x1fff];
+			if (slot->m_Serial == (int)(h >> 13) && slot->m_pEntity)
+			{
+				char *pEnt = (char *)slot->m_pEntity->vfunc4();
+				if (pEnt)
+					((EntSub270 *)(pEnt + 0x270))->sub_100ddd90();
+			}
+		}
+	}
+	m_size = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc300 size=0x76
 extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
 struct Rec64 {
