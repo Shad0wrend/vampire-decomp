@@ -39,4 +39,6 @@ public:
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
 	int sub_10011225();	// CNPC_VHuman::vfunc461, called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	void sub_10384670();	// CNPC_VHuman::vfunc104 (Precache), called directly
+	void sub_10360bc0();	// slot 104 "CNPC_VAsianVampire::Precache": scope trace around the base Precache and a precache of "item_w_avamp_blade"
 };
