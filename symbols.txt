@@ -2974,6 +2974,7 @@
 0x10011d1f func   ?sub_1030fc90@S1030fc90@@QAEPAXPAI@Z S1030fc90::sub_1030fc90
 0x10011d29 func   ?sub_100c6590@@YAHH@Z sub_100c6590
 0x10011d33 func   _prop_doorknob prop_doorknob
+0x10011d5b func   ?sub_100f12a0@CBaseDoor@@QAEHPAPAV1@H@Z CBaseDoor::sub_100f12a0
 0x10011d65 func   ?vfunc5@CItemGWatchNormal@@QAEPAV1@I@Z CItemGWatchNormal::vfunc5
 0x10011d83 func   ?sub_101d6750@CUnknown101d6750@@QAEPAUS101d61e0@@XZ CUnknown101d6750::sub_101d6750
 0x10011d8d func   ?vfunc114@CBaseEntity@@UAEXXZ CBaseEntity::vfunc114

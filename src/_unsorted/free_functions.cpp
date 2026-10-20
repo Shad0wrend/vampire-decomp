@@ -13243,6 +13243,34 @@ void __fastcall sub_100f0f30(CSlots *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f12a0 size=0x72
+#include "CBaseDoor.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];
+extern char g_105652c8[];
+
+int CBaseDoor::sub_100f12a0(CBaseDoor **ppDoors, int maxDoors)
+{
+	int count = 0;
+	CBaseEntity *pEnt = 0;
+	if (m_name26c) {
+		for (;;) {
+			pEnt = g_106eb5d8.sub_100f7770(pEnt, m_name26c ? m_name26c : "", 0, 0);
+			if (pEnt == this)
+				continue;
+			if (!pEnt)
+				break;
+			CBaseDoor *pDoor = (CBaseDoor *)__RTDynamicCast(pEnt, 0, g_10538764, g_105652c8, 0);
+			if (pDoor && count < maxDoors)
+				ppDoors[count++] = pDoor;
+		}
+	}
+	return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f1900 size=0x49
 void *sub_1000db89(int);
 struct GP;
