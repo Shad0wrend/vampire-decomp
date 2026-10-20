@@ -13488,6 +13488,17 @@ void sub_1011a580(SHandleHolder *holder)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011d2e0 size=0x19
+#include "Vector.h"
+Vector &Vector::sub_1011d2e0(const Vector &v)
+{
+	x = v.x;
+	y = v.y;
+	z = v.z;
+	return *this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d6a0 size=0x6a
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
