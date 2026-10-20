@@ -13362,6 +13362,25 @@ void sub_10003a94();
 void __stdcall sub_1012cf90(int) { sub_10003a94(); }
 // END FUNCTION
 
+// FUNCTION: 0x1012cfd0 size=0x43
+#include "CHudTimer.h"
+void *sub_100aa720(int size);
+extern char g_10574160[];
+
+// TARGET: hud_timer
+extern "C" CBaseEntity *hud_timer()
+{
+	void *mem = sub_100aa720(0x48c);
+	CHudTimer *p;
+	if (mem)
+		p = ((CHudTimer *)mem)->sub_1012d3d0();
+	else
+		p = 0;
+	p->vfunc106(g_10574160);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d0a0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
