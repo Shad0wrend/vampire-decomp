@@ -14,7 +14,8 @@ struct CUnknown102c63b0List
 	CUnknown102c63b0Entry m_entries[1];	// 0x0004
 };
 
-extern CUnknown102c63b0List *g_10566458;
+class CGlobalEntityList;
+extern CGlobalEntityList *g_10566458;	// the global entity list (CGlobalEntityList.h); its entity slots (12 bytes: entity, serial, list index) start at +4
 
 class CUnknown102c63b0
 {
@@ -24,7 +25,7 @@ public:
 	void *Get() const
 	{
 		if (m_handle != 0xffffffff) {
-			CUnknown102c63b0Entry *e = &g_10566458->m_entries[m_handle & 0x1fff];
+			CUnknown102c63b0Entry *e = &((CUnknown102c63b0List *)g_10566458)->m_entries[m_handle & 0x1fff];
 			if (e->m_serial == (m_handle >> 13))
 				return e->m_pEntity;
 		}

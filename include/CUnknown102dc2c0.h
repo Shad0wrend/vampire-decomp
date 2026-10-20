@@ -2,7 +2,8 @@
 // real name not yet known.
 #pragma once
 
-extern char *g_10566458;	// the global entity table (entries of 12 bytes: entity, serial, pad, starting at +4)
+class CGlobalEntityList;
+extern CGlobalEntityList *g_10566458;	// the global entity list (CGlobalEntityList.h); its entity slots (12 bytes: entity, serial, list index) start at +4
 
 class CUnknown102dc2c0Ent;
 
@@ -20,7 +21,7 @@ struct CUnknown102dc2c0Handle
 	CUnknown102dc2c0Ent *Get()
 	{
 		if (m_Index != 0xffffffff) {
-			CUnknown102dc2c0EntInfo *info = (CUnknown102dc2c0EntInfo *)(g_10566458 + 4) + (m_Index & 0x1fff);
+			CUnknown102dc2c0EntInfo *info = (CUnknown102dc2c0EntInfo *)((char *)g_10566458 + 4) + (m_Index & 0x1fff);
 			return info->serial == (m_Index >> 13) ? info->ent : 0;
 		}
 		return 0;
