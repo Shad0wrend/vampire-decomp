@@ -22,6 +22,7 @@
 0x100011f9 func   ?sub_1034f9e0@CUnk1034f9e0@@QAEXXZ CUnk1034f9e0::sub_1034f9e0
 0x1000121c func   ?vfunc17@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc17
 0x10001226 func   ?vfunc113@CBaseEntity@@UAEXXZ CBaseEntity::vfunc113
+0x10001267 func   ?vfunc134@CPhysMotor@@UAEXXZ CPhysMotor::vfunc134
 0x1000127b func   ?sub_100c8a00@@YIXPADHH@Z sub_100c8a00
 0x10001285 func   _npc_VVentrue npc_VVentrue
 0x10001299 func   ?sub_103f8830@@YAHXZ sub_103f8830
