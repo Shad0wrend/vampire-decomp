@@ -15331,6 +15331,35 @@ void CDialogDependency::sub_100e8ef0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e9ff0 size=0xac
+#include "CDialogDependency.h"
+#include <string.h>
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+int sub_100ea2d0(const char *pszExpr, int a, int b, int c, int d);
+
+bool CDialogDependency::sub_100e9ff0(int a, int b)
+{
+	g_109f3620[*g_109f3680].a = "CDialogDependency::TestPython";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	const char *pszExpr = (const char *)m_a1c;
+	if (strlen(pszExpr) != 0) {
+		bool bResult = sub_100ea2d0(pszExpr, a, b, 0x102, 0) != 0;
+		(*g_109f3680)--;
+		return bResult;
+	}
+	DevMsg("Error in CDialogDependency::TestPython");
+	(*g_109f3680)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ea1e0 size=0xb1
 #include "CUnknown100ea1e0.h"
 extern "C" unsigned int strlen(const char *);
