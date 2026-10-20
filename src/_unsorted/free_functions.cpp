@@ -4191,6 +4191,40 @@ int SaveList::sub_10057850(IVisitor *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057a30 size=0x70
+#include "CSave.h"
+struct IVisitor;
+struct SaveList { int sub_10057850(IVisitor *); };
+extern SaveList g_106be530;
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+struct SaveBuf {
+    char *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    char *m_pElements;
+};
+void sub_10057a30(void *pBuffer)
+{
+    char buf[0x20];
+    CSave *pSave = (CSave *)buf;
+    pSave->sub_1019f870(pBuffer);
+    g_106be530.sub_10057850((IVisitor *)pSave);
+    SaveBuf *v = (SaveBuf *)(buf + 4);
+    v->m_size = 0;
+    if (v->m_growSize != -1) {
+        if (v->m_pMemory) {
+            Plat_Free(v->m_pMemory);
+            v->m_pMemory = 0;
+        }
+        v->m_allocationCount = 0;
+    }
+    v->m_pElements = v->m_pMemory;
+    if (v->m_growSize != -1 && v->m_pMemory)
+        Plat_Free(v->m_pMemory);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057ac0 size=0x70
 #include "CRestore.h"
 
