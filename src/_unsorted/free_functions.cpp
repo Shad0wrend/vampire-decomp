@@ -43564,6 +43564,25 @@ int sub_103ec6f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ec800 size=0x43
+#include "CWeaponMelee_MingXiaoTentacle.h"
+void *sub_100aa720(int size);
+extern char g_10646dac[];
+
+// TARGET: item_w_mingxiao_tentacle
+extern "C" CBaseEntity *item_w_mingxiao_tentacle()
+{
+	void *mem = sub_100aa720(0x914);
+	CWeaponMelee_MingXiaoTentacle *p;
+	if (mem)
+		p = ((CWeaponMelee_MingXiaoTentacle *)mem)->sub_103ec870();
+	else
+		p = 0;
+	p->vfunc106(g_10646dac);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee100 size=0x72
 #include "SendProp.h"
 
