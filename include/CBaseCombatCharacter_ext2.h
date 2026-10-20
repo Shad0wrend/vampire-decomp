@@ -4,6 +4,7 @@
 	void sub_10334b10();	// "CBaseCombatCharacter::Inventory_Destroy": scope trace (entity name), for each weapon slot 0..0xdf that holds a weapon: sub_101cd940(weapon), weapon+0x73c = 0xff, SetWeapon(i, null); then the active weapon handle (+0x19a4) and +0x10dc become -1
 	void sub_101072b0(int event);	// "CBaseCombatCharacter::AddExpression...": scope trace (entity name), when slot 347(event, name buffer, four floats) succeeds hands the name and floats to sub_101067e0 (stub 0x10005e8e)
 	void sub_101067e0(const char *pszName, float a, float b, float c, int d, float e);	// worker of sub_101072b0 (stub 0x10005e8e)
+	void vfunc306(CBaseCombatCharacter *pTarget, char bUseEyes);	// slot 306 "CBaseCombatCharacter::LookAtEntity": scope trace (entity name), asks pTarget for its eye position (slot 192) or center (slot 193) and this for its center, then, with an AI object at +0x94, resets its look state (sub_102e0b40 on the object at +0x5d44) and hands it pTarget's slot 220 position with -1.0f (sub_102e20b0, stub 0x10007248)
 
 	// The inlined stat-list lookup: the first stat list with a zero field at +0x10, else the shared default list
 	// (function-local static at 0x109f0b40, guard byte 0x109f0b2a).
