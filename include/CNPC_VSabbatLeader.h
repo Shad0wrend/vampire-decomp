@@ -64,4 +64,6 @@ public:
 	float sub_103c6570(CNPC_VSabbatLeaderHint *pHint, const float *pOrigin);	// distance-like measure between a hint and a position (stub 0x100119d2), returned in ST0
 	int vfunc461();	// "SelectIdealState" (slot 461 override): scope trace, +0x1b38 = 0x1f, keeps / sets the state at +0x5cc4: 2 while the byte at +0x66b8 is set and (state 2 with the player entity live) or slot 167 reports a squad (the player entity then gets sub_10279a50), else 1; returns it
 	bool sub_103aabc0();	// "CNPC_VSabbatLeader::PlayerDamaged...": scope trace, true when the player entity (handle at +0x628c) is live and its stat 0xf (first non-pending list) is at least a constant above the value recorded at +0x66cc
+	void vfunc432(int arg);	// slot 432 override (the RunAI-like tick): scope trace, CNPC_VHuman::vfunc432(arg), then UpdateBloodSplash
+	void sub_1000698d(int arg);	// CNPC_VHuman::vfunc432, called directly
 };
