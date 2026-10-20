@@ -3199,6 +3199,7 @@
 0x100103e3 func   ?sub_100f4140@@YAXPBDHH@Z sub_100f4140
 0x100103ed func   ?sub_100424a0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_100424a0
 0x100103f7 func   ?sub_100ecc60@EntryTable@@QAEHHH@Z EntryTable::sub_100ecc60
+0x1001040b func   ?vfunc277@CAI_BaseHumanoid@@QAEXPBM@Z CAI_BaseHumanoid::vfunc277
 0x10010415 func   ?vfunc51@CBaseCombatCharacter@@QAEXHPAM@Z CBaseCombatCharacter::vfunc51
 0x1001043d func   ?sub_1036d100@CNPC_VChangBros@@QAEPAXXZ CNPC_VChangBros::sub_1036d100
 0x1001044c func   ?vfunc93@CBaseEntity@@UAEXHH@Z CBaseEntity::vfunc93

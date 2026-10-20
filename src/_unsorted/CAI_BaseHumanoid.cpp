@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1025e780 size=0x13
+#include "CBaseFlex.h"
+
+// TARGET: CAI_BaseHumanoid::vfunc277
+void CAI_BaseHumanoid::vfunc277(const float *v)
+{
+    unsigned int *flags = (unsigned int *)((char *)this + 0x5f4c);
+    *flags = *flags & 0xfffffffe;
+    ((CBaseFlex *)this)->sub_100b5b00(v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025f1a0 size=0xe
 bool CAI_BaseHumanoid::vfunc586()
 {
