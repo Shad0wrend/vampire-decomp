@@ -49,3 +49,5 @@
 	void sub_10147960(int level, int arg);	// obfuscate level setter: when level > 0 and the level at +0x14d4 is 0 sets +0x16c = 2 and plays "D_ObfuscateIn_Emitter"; when level == 0 and the level was positive sets +0x16c = 0 and plays "D_ObfuscateOut_Emitter"; stores level at +0x14d4
 	void vfunc304();	// slot 304 "CBaseCombatCharacter::GiveBaseFightingItems": scope trace (entity name), when the weapon "item_w_fists" is not owned (sub_10335950) gives it (free function sub_10011fdb) and ORs misc flag 0x10
 	int sub_10345f10();	// "CBaseCombatCharacter::GetBlockRe...": scope trace (entity name), the edict index (+0x2e0) of the entity behind sub_1008d990(the handle at +0x6f0) when it is not negative, else 0x1153
+	void *sub_1032e7b0();	// "CBaseCombatCharacter::GetActiveWeapon": scope trace (entity name), the entity behind the handle at +0x19a4 when it resolves, else null (stub 0x10007e19)
+	bool sub_10345d00();	// "CBaseCombatCharacter::IsHoldingMeleeWeapon": scope trace (entity name), true when the active weapon exists and its flags (weapon slot 360) have bit 15 or 16 set
