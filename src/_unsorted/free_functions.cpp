@@ -37110,6 +37110,55 @@ call:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10336b90 size=0xfa
+#include "CBaseCombatWeapon.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106214cc[];
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern int g_10619eb4[];
+extern int g_10619d28[];
+extern int g_10937cd0[];
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+#define V64(a) V16(a##a) V16(a##b) V16(a##c) V16(a##d)
+struct E298 {
+    V64(p) V64(q) V64(r) V64(s) V16(u) V16(v) V4(x) V4(y)
+    virtual void m0(); virtual void m1();
+    virtual int f(int type);
+};
+bool CBaseCombatCharacter::sub_10336b90()
+{
+    const char *name;
+    if (this)
+        name = m_name26c ? m_name26c : g_106b8540;
+    else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_106214cc;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    int *p = g_10619eb4;
+    for (int v = *p; v != -1; v = p[1], p++) {
+        int type = g_10619d28[*p];
+        if (type >= 0) {
+            int i = g_10937cd0[*p];
+            int end = ((E298 *)this)->f(type) + i;
+            for (; i < end; i++) {
+                if (sub_1032e8b0(i) && (((CBaseCombatWeapon *)sub_1032e8b0(i))->vfunc360() & 0x6000)) {
+                    --*g_109f3680;
+                    return true;
+                }
+            }
+        }
+    }
+    --*g_109f3680;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10336f20 size=0x103
 #include "CBCCSlotViews.h"
 
