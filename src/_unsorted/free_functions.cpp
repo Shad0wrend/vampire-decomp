@@ -4915,6 +4915,33 @@ void sub_10067b70(CUnknown1019d130 *filter, float delay, const Vector *pos, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068380 size=0x8b
+struct SpriteTE { void sub_1000b52d(int a, int b); };
+extern SpriteTE g_106c59e4;
+extern int g_106c59f0, g_106c59f4, g_106c59f8, g_106c59fc, g_106c5a00, g_106c5a04, g_106c5a08;
+extern int g_106c5a0c, g_106c5a10, g_106c5a14;
+extern char g_106c5a18;
+extern int g_1070d1b0[3];
+
+void sub_10068380(int a, int b, int *pos, int c, int d, int e, int f, int *dir, char g)
+{
+	if (!dir)
+		dir = g_1070d1b0;
+	g_106c59f0 = pos[0];
+	g_106c59f4 = pos[1];
+	g_106c59f8 = pos[2];
+	g_106c59fc = c;
+	g_106c5a00 = d;
+	g_106c5a04 = e;
+	g_106c5a08 = f;
+	g_106c5a0c = dir[0];
+	g_106c5a10 = dir[1];
+	g_106c5a14 = dir[2];
+	g_106c5a18 = g;
+	g_106c59e4.sub_1000b52d(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068ab0 size=0x76
 #include "CTESpriteSpray.h"
 

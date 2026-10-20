@@ -3183,6 +3183,7 @@
 0x100121ca func   ?sub_1015eec0@CUnknown1015ef20@@QAE_NXZ CUnknown1015ef20::sub_1015eec0
 0x100121cf func   ?sub_102652d0@CUnknown102652d0@@QAEHXZ CUnknown102652d0::sub_102652d0
 0x100121e3 func   _npc_VMoleman npc_VMoleman
+0x1001220b func   ?sub_10068380@@YAXHHPAHHHHH0D@Z sub_10068380
 0x10012215 func   ?sub_101308d0@CLight@@QAEXXZ CLight::sub_101308d0
 0x1001221a func   ?sub_1015ef20@CUnknown1015ef20@@QAE_NXZ CUnknown1015ef20::sub_1015ef20
 0x10012229 func   ?vfunc14@CServerGameDLL@@UAEXPAXHHHHH@Z CServerGameDLL::vfunc14
