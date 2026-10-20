@@ -1,6 +1,39 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1034c020 size=0x105
+#include "CNPCMaker_Fleshpile.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+struct CGlobalVarsX { char pad[0xc]; float curtime; };
+extern CGlobalVarsX *g_1070b228;
+void sub_10010dd4();
+void sub_1000572c();
+
+void CNPCMaker_Fleshpile::vfunc103()
+{
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+	*(int *)((char *)this + 0x66b0) = 0;
+	vfunc104();
+	if (*((char *)this + 0x66c3))
+		*((char *)this + 0x66c2) = 1;
+	if (!*((char *)this + 0x66c0)) {
+		sub_100ac4e0((int)sub_10010dd4, 0, 0);
+		*(float *)((char *)this + 0x17c) = *(float *)((char *)this + 0x6664) + g_1070b228->curtime;
+		sub_100b3b00();
+		*(int *)((char *)this + 0x66b8) = 0;
+	} else {
+		sub_100ac4e0((int)sub_1000572c, 0, 0);
+		sub_100b3b00();
+		*(int *)((char *)this + 0x66b8) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034c8e0 size=0x7a
 #include "CNPCMaker_Fleshpile.h"
 
