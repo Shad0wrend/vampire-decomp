@@ -3495,6 +3495,7 @@
 0x10011f0e func   _npc_VVampireBoss npc_VVampireBoss
 0x10011f1d func   ?sub_101f9550@@YAXH@Z sub_101f9550
 0x10011f27 func   ?sub_1015ef00@CUnknown1015ef00@@QAEXXZ CUnknown1015ef00::sub_1015ef00
+0x10011f40 func   ?vfunc440@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::vfunc440
 0x10011f4f func   ?sub_101fb2c0@@YAXH@Z sub_101fb2c0
 0x10011f68 func   ?sub_1015ef40@@YIXPAD@Z sub_1015ef40
 0x10011f72 func   ?sub_10075aa0@CUnknown10075aa0@@QAEXH@Z CUnknown10075aa0::sub_10075aa0

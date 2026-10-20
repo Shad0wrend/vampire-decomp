@@ -47,6 +47,29 @@ void CNPC_VHengeyokai::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037ffa0 size=0x110
+#include "CNPC_VHengeyokai.h"
+
+// TARGET: CNPC_VHengeyokai::vfunc440
+int CNPC_VHengeyokai::vfunc440(int task)
+{
+	if (task != 0x16e && m_n670 == 1)
+		sub_10383130();
+	switch (task)
+	{
+	case 0x5b:
+		return 0x15a;
+	case 0xea:
+		return 0x15b;
+	case 0xdc:
+		return 0x15c;
+	case 0xdd:
+		return 0x15d;
+	}
+	return sub_103851c0(task);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103801d0 size=0x9a
 #include "CNPC_VHengeyokai.h"
 extern "C" unsigned int __cdecl strlen(const char *);
