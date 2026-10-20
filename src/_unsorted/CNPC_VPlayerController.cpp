@@ -16,6 +16,39 @@ CNPC_VPlayerController *CNPC_VPlayerController::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a48b0 size=0x74
+#include "CNPC_VPlayerController.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+struct S103a48b0Owner {
+    char m_pad[0x1480];
+    char m_b1480;
+    char sub_100b5190();
+};
+struct S103a48b0Ent {
+    char m_pad[0x9c];
+    S103a48b0Owner *m_pOwner;
+};
+int CNPC_VPlayerController::vfunc404(void *pEnt)
+{
+    if (!pEnt)
+        return 0;
+    unsigned int h = *(unsigned int *)((char *)this + 0x60ac);
+    void *pTarget;
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        pTarget = s->m_Serial == (int)(h >> 13) ? (void *)s->m_pEntity : 0;
+    } else
+        pTarget = 0;
+    if (pEnt == pTarget)
+        return 3;
+    S103a48b0Owner *pOwner = ((S103a48b0Ent *)pEnt)->m_pOwner;
+    if (pOwner && pOwner->m_b1480 && !pOwner->sub_100b5190())
+        return 1;
+    return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a49c0 size=0x71
 #include "CNPC_VPlayerController.h"
 

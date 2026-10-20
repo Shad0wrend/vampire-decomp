@@ -1277,6 +1277,7 @@
 0x100083b9 func   ?sub_100a5ad0@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100a5ad0
 0x100083dc func   ?sub_100eb400@@YIXPAH@Z sub_100eb400
 0x1000840e func   ?sub_103f3d70@@YAHXZ sub_103f3d70
+0x10008413 func   ?vfunc404@CNPC_VPlayerController@@QAEHPAX@Z CNPC_VPlayerController::vfunc404
 0x1000841d func   ?sub_10348a60@@YI_NPAVCBaseEntity@@@Z sub_10348a60
 0x10008445 func   ?sub_1024afe0@@YAHXZ sub_1024afe0
 0x1000844f func   ?sub_101bd0f0@SFilter@@QAEPAU1@E@Z SFilter::sub_101bd0f0
