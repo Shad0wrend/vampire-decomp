@@ -56,6 +56,7 @@ public:
 	void vfunc506();
 	void vfunc616();	// slot 616: base call with 0x30, then stamps curtime + 15 at +0x65bc
 
+	char vfunc590();	// slot 590: true when the NPC may act and its state (+0xfec) is one of a fixed set (1, 9, 0x13, 0x30, 0x4b, 0x4d, 0x51, 0x73..0x8a, 0xcb5, 0xd25, 0x1121, 0x1157..0x1158)
 	void sub_102950c0();	// plays the "Alarmed_Loop" sound
 	void sub_10295180();	// plays the "Animal_Kened" sound
 	void sub_10295240();	// plays the "Warning_Loop" sound
