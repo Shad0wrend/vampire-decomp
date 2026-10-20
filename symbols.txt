@@ -1975,6 +1975,7 @@
 0x1000c702 func   _item_g_garys_film item_g_garys_film
 0x1000c707 func   ?vfunc5@CWeaponUnarmed@@QAEPAV1@I@Z CWeaponUnarmed::vfunc5
 0x1000c74d func   ?sub_101063a0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_101063a0
+0x1000c75c func   ?sub_102228f0@CExperienceTable@@QAE_NPADPAUCExperienceAward@@@Z CExperienceTable::sub_102228f0
 0x1000c761 func   ?sub_102a9c80@Obj@@QAEPAU1@HHHHH@Z Obj::sub_102a9c80
 0x1000c784 func   ?vfunc61@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc61
 0x1000c793 func   ?sub_10043540@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10043540

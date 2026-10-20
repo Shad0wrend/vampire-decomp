@@ -27512,6 +27512,60 @@ CExperienceAward *CExperienceTable::sub_10222670(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102228f0 size=0x173
+#include "CExperienceTable.h"
+
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_106b8540[];
+extern char g_1056392c[];
+extern "C" __declspec(dllimport) void __cdecl Q_trimspace(const char *, char *, int);
+extern "C" char *__cdecl strstr(const char *, const char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" int __cdecl atoi(const char *);
+#pragma intrinsic(strlen)
+void *operator new(unsigned int);
+
+// TARGET: CExperienceTable::sub_102228f0
+bool CExperienceTable::sub_102228f0(char *line, CExperienceAward *out)
+{
+	g_109f3620[*g_109f3680].a = "ExperienceTable::ParseLine";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (line && strlen(line) != 0)
+	{
+		char *p = strstr(line, g_1056392c);
+		if (p)
+		{
+			char *desc = p + 1;
+			*p = 0;
+			p = strstr(desc, g_1056392c);
+			if (p)
+			{
+				char *num = p + 1;
+				*p = 0;
+				if (desc && num && strlen(line) != 0 && strlen(desc) != 0 && strlen(num) != 0)
+				{
+					char *a = (char *)operator new(strlen(line) + 1);
+					out->m_a = (int)a;
+					Q_trimspace(line, a, strlen(line) + 1);
+					char *b = (char *)operator new(strlen(desc) + 1);
+					out->m_b = (int)b;
+					Q_trimspace(desc, b, strlen(desc) + 1);
+					out->m_c = atoi(num);
+					--*g_109f3680;
+					return true;
+				}
+			}
+		}
+	}
+	--*g_109f3680;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10222ad0 size=0x6f
 #include "CExperienceTable.h"
 extern "C" __declspec(dllimport) void Msg(const char *, ...);
