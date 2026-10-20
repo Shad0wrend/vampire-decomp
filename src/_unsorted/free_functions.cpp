@@ -58294,6 +58294,33 @@ void CNPC_VChangBros::sub_1036c810(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036cab0 size=0xd9
+#include "CNPC_VChangBros.h"
+#include "ScopeTrace.h"
+struct CGlobalVarsX { char pad[0xc]; float curtime; };
+extern CGlobalVarsX *g_1070b228;
+struct CChangBrosUnit : CNPC_VChangBros {
+    float sub_103c6a20();
+    bool sub_1036cab0();
+};
+
+// TARGET: CChangBrosUnit::sub_1036cab0
+bool CChangBrosUnit::sub_1036cab0()
+{
+    ScopeTrace trace("CNPC_VChangBros::CheckForTeleport", g_106b8540);
+    if (*(int *)((char *)this + 0x66b8) != 1) {
+        if (sub_103c6a20() >= 0.1f)
+            return true;
+        if (sub_1036e2f0() && *(int *)((char *)this + 0x66b8) == 0) {
+            float t = g_1070b228->curtime - *(float *)((char *)this + 0x66d0);
+            if (sub_1036dc60() <= t)
+                return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036d100 size=0x9c
 #include "CNPC_VChangBros.h"
 
