@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1011aec0 size=0x85
+#include "CServerGameDLL.h"
+#include "CSave.h"
+#include "CRestore.h"
+
+struct CSaveLocal
+{
+	CSave save;
+	CSaveLocal(void *pData) : save(pData) {}
+	~CSaveLocal() { ((CRestoreVec *)&save.m_pSections)->~CRestoreVec(); }
+};
+
+// TARGET: CServerGameDLL::vfunc13
+void CServerGameDLL::vfunc13(void *pData, int a, int b, int c, int d, int e)
+{
+	CSaveLocal local(pData);
+	local.save.CSave::vfunc3(a, b, c, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011af80 size=0x85
 #include "CServerGameDLL.h"
 #include "CRestore.h"

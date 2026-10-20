@@ -2416,6 +2416,7 @@
 0x1000d4fe func   ?vfunc586@CAI_BaseHumanoid@@QAE_NXZ CAI_BaseHumanoid::vfunc586
 0x1000d517 func   ?vfunc5@CLogicalEntity@@UAEPAV1@I@Z CLogicalEntity::vfunc5
 0x1000d526 func   _ai_changetarget ai_changetarget
+0x1000d553 func   ?vfunc13@CServerGameDLL@@UAEXPAXHHHHH@Z CServerGameDLL::vfunc13
 0x1000d558 func   ?sub_10075c70@S10075c70@@QAEXPBD@Z S10075c70::sub_10075c70
 0x1000d567 func   ?vfunc5@CNPC_VNosferatu@@QAEPAV1@I@Z CNPC_VNosferatu::vfunc5
 0x1000d56c func   ?vfunc8@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc8
