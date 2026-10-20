@@ -33151,6 +33151,48 @@ PatrolPlace* sub_102dd8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ddb30 size=0xa0
+#include "CAI_LocalNavigator.h"
+
+extern void *vt_1049d76c[];
+extern void *vt_1049d740[];
+extern void *vt_1049a0f8[];
+
+void CAI_LocalNavigator::sub_102ddb30()
+{
+    CAI_LocalNavigatorData *p = m_pData;
+    *(void ***)this = vt_1049d76c;
+    *(void ***)((char *)this + 0x10) = vt_1049d740;
+    if (p) {
+        CAI_LocalNavigatorVec *v = &p->m_vecB;
+        sub_102deea0((int *)v);
+        v->sub_102deec0();
+        void (*freeFn)(void *) = g_109f3624;
+        v->m_pElements = v->m_pMemory;
+        if (v->m_growSize != -1) {
+            if (v->m_pMemory) {
+                freeFn(v->m_pMemory);
+                v->m_pMemory = 0;
+            }
+            v->m_allocationCount = 0;
+        }
+        v = &p->m_vecA;
+        v->m_size = 0;
+        v->sub_102def00();
+        v->m_pElements = v->m_pMemory;
+        if (v->m_growSize != -1) {
+            if (v->m_pMemory) {
+                freeFn(v->m_pMemory);
+                v->m_pMemory = 0;
+            }
+            v->m_allocationCount = 0;
+        }
+        delete p;
+    }
+    *(void ***)this = vt_1049a0f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102deea0 size=0x8
 void __fastcall sub_102deea0(int *p)
 {
