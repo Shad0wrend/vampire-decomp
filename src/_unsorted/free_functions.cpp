@@ -39221,6 +39221,22 @@ UtlVec8 *UtlVec8::sub_103dbf00(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc220 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_103dc220()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc260 size=0x8
 void __fastcall sub_103dc260(int *p)
 {

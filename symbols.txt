@@ -445,6 +445,7 @@
 0x10003c10 func   ?sub_10078b90@UtlMem@@QAEXXZ UtlMem::sub_10078b90
 0x10003c29 func   ?vfunc420@CNPC_VTzimisceHeadClaw@@UAEXXZ CNPC_VTzimisceHeadClaw::vfunc420
 0x10003c2e func   ?sub_101fda10@CVStatActionList_t@@QAEXXZ CVStatActionList_t::sub_101fda10
+0x10003c42 func   ?sub_103dc220@UtlMem@@QAEXXZ UtlMem::sub_103dc220
 0x10003c65 func   ?sub_1023f060@@YAXPAI@Z sub_1023f060
 0x10003c74 func   ?vfunc5@CWeaponThrown_Grenade_Frag@@QAEPAV1@I@Z CWeaponThrown_Grenade_Frag::vfunc5
 0x10003c83 func   _item_k_edane_key item_k_edane_key
