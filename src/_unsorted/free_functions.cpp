@@ -44225,6 +44225,41 @@ char sub_1037e9b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10380470 size=0x76
+#include "CGlobalEntityList.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct CUnk10380470 {
+	V100(a) V100(b)
+	V10(c0) V10(c1)
+	virtual const char *vfunc220();
+	char pad[0x6664 - 4];
+	unsigned int m_hFish;
+	bool sub_10380470();
+};
+extern CGlobalEntityList g_106eb5d8;
+extern CGlobalEntityList *g_10566458;
+
+// TARGET: CUnk10380470::sub_10380470
+bool CUnk10380470::sub_10380470()
+{
+    CGlobalEntityList_Ent *pEnt = g_106eb5d8.sub_100f7b20("fish", vfunc220(), 0, this, 0);
+    if (pEnt)
+        m_hFish = *pEnt->v1();
+    else
+        m_hFish = 0xffffffff;
+    unsigned int h = m_hFish;
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        if (s->m_Serial == (int)(h >> 13) && s->m_pEntity)
+            return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103816e0 size=0x4a
 struct V3 { float x, y, z; };
 #define D(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
