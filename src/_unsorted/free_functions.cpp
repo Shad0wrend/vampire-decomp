@@ -14277,6 +14277,25 @@ void __fastcall sub_1012d4b0(S *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d8e0 size=0x43
+#include "CPropClockHand.h"
+void *sub_100aa720(int size);
+extern char g_10574188[];
+
+// TARGET: prop_clockhand
+extern "C" CBaseEntity *prop_clockhand()
+{
+	void *mem = sub_100aa720(0x768);
+	CPropClockHand *p;
+	if (mem)
+		p = ((CPropClockHand *)mem)->sub_1012d950();
+	else
+		p = 0;
+	p->vfunc106(g_10574188);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e6a0 size=0xd
 void CUnknown1012e6a0::sub_1012e6a0(int unused)
 {
