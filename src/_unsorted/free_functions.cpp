@@ -37142,6 +37142,26 @@ char CVStatList_t::sub_102008b0(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102008e0 size=0x9f
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CVStatActionList_t.h"
+#include "CUnknown10202060.h"
+#include "ScopeTrace.h"
+
+// TARGET: CVStatList_t::sub_102008e0
+void CVStatList_t::sub_102008e0(int stat, int value)
+{
+    ScopeTrace trace("CVStatList_t::SetBase", g_106b8540);
+    if (sub_102008b0(stat)) {
+        int *pv = &(**(int ***)&m_field08)[stat];
+        int old;
+        ((CVStatActionList_t *)((char *)((CVStatInfoList_t *)m_field0c)->sub_10200370(stat) + 0x10c))->sub_101fd940(
+            (void *)((CUnknown10202060 *)m_pad0000)->sub_10202060(), (old = *pv, *pv = value, old), value);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10200be0 size=0x88
 #include "CVStatList_t.h"
 #include "ScopeTrace.h"
