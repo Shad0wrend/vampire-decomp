@@ -3337,6 +3337,7 @@
 0x10015d0c func   ?vfunc461@CNPC_VSheriffMan@@QAEHXZ CNPC_VSheriffMan::vfunc461
 0x10015d1b func   ?sub_1042fce0@@YAII@Z sub_1042fce0
 0x10015d20 func   ?vfunc5@CGenericNPC@@QAEPAV1@I@Z CGenericNPC::vfunc5
+0x10015d2f func   ?sub_104072d0@@YAHXZ sub_104072d0
 0x10015d39 func   ?sub_101c30c0@@YAHXZ sub_101c30c0
 0x10015d5c func   ?sub_1042fd80@@YAII@Z sub_1042fd80
 0x10015d89 func   ?vfunc5@CNPC_VWerewolf@@QAEPAV1@I@Z CNPC_VWerewolf::vfunc5
