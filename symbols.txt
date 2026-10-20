@@ -581,6 +581,7 @@
 0x1000487c func   ?vfunc627@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc627
 0x1000488b func   ?vfunc5@CBaseMoneyObject@@QAEPAV1@I@Z CBaseMoneyObject::vfunc5
 0x10004890 func   ?vfunc5@CWeaponMelee_Claws@@QAEPAV1@I@Z CWeaponMelee_Claws::vfunc5
+0x10004895 func   ?sub_1017cb80@CUnknown1017cb80@@QAEHPBD@Z CUnknown1017cb80::sub_1017cb80
 0x100048ae func   ?sub_1040cce0@CUnknown1040cce0@@QAEMPAX@Z CUnknown1040cce0::sub_1040cce0
 0x100048db func   ?sub_1009bb40@CBaseEntity@@QAEXHHI@Z CBaseEntity::sub_1009bb40
 0x100048e0 func   ?sub_10183100@CUnknown10183100@@QAEXH@Z CUnknown10183100::sub_10183100

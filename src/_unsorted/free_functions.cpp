@@ -16041,6 +16041,26 @@ void CAI_BaseNPC::sub_10175360(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017cb80 size=0x7b
+#include "CUnknown1017cb80.h"
+#include "QuestJournal.h"
+
+extern int (*g_109f3870)(const void *, const char *, int);
+extern QuestJournal g_1074f8f8;
+extern "C" unsigned int __cdecl strlen(const char *);
+
+int CUnknown1017cb80::sub_1017cb80(const char *name)
+{
+    int len = strlen(name);
+    for (int i = 0; i < m_nRecs; i++) {
+        CUnknown1017cb80_Rec *r = (CUnknown1017cb80_Rec *)((char *)m_pRecs + i * 0x40);
+        if (g_109f3870(r, name, len) == 0)
+            return *(int *)g_1074f8f8.sub_10221d60(r->m_quest, r->m_index);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017cf90 size=0x6f
 struct EntInfo { void *ent; unsigned int serial; int pad; };
 struct EntList {
