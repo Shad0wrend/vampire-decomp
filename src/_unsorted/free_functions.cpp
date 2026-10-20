@@ -31685,6 +31685,26 @@ extern "C" CBaseEntity *prop_radio()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022c920 size=0x85
+#include "CPropRadio.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CPropRadio::sub_1022c920(inputdata_t *pInput)
+{
+	const char *n = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CPropRadio::InputDeactivate";
+	g_109f3620[*g_109f3680].b = n;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (*((char *)this + 0x734))
+		sub_1022c750(0);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022cf90 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);

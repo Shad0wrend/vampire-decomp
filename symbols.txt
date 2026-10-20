@@ -2461,6 +2461,7 @@
 0x1000e56b func   ?sub_102ce100@@YA_NPBI0@Z sub_102ce100
 0x1000e570 func   _env_laser env_laser
 0x1000e57a func   ?sub_1036f440@@YADXZ sub_1036f440
+0x1000e57f func   ?sub_1022c920@CPropRadio@@QAEXPAUinputdata_t@@@Z CPropRadio::sub_1022c920
 0x1000e584 func   ?vfunc0@CEdtEntitiesEnum@@UAEHPAX@Z CEdtEntitiesEnum::vfunc0
 0x1000e58e func   ?sub_10224170@@YIXPAUCSlots@@HH@Z sub_10224170
 0x1000e593 func   ?sub_1028e8b0@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@H@Z CAI_BaseNPCTroika::sub_1028e8b0
