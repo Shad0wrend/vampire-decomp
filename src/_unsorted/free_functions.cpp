@@ -27704,6 +27704,35 @@ TList *TList::sub_101fd430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fd540 size=0xbb
+#include "CVStatActionList_t.h"
+#include "CVStatAction_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CVStatActionList_t::sub_101fd540()
+{
+	g_109f3620[*g_109f3680].a = "CVStatActionList_t::Clean";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (m_pActions) {
+		for (int i = 0; i < m_nActions; i++) {
+			if (m_pActions[i])
+				delete m_pActions[i];
+			m_pActions[i] = 0;
+		}
+		delete m_pActions;
+		m_pActions = 0;
+	}
+	m_nActions = 0;
+	m_pad0000 = 0;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fd8c0 size=0x5f
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;

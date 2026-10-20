@@ -611,6 +611,7 @@
 0x100045b1 func   _scripted_scene scripted_scene
 0x100045ca func   ?sub_10202c40@S4@@QAEPAU1@XZ S4::sub_10202c40
 0x100045e8 func   ?sub_102a13d0@@YIHPAUN@@@Z sub_102a13d0
+0x100045f7 func   ?sub_101fd540@CVStatActionList_t@@QAEXXZ CVStatActionList_t::sub_101fd540
 0x100045fc func   ?sub_103dbeb0@UtlVec8@@QAEPAU1@HH@Z UtlVec8::sub_103dbeb0
 0x10004601 func   ?sub_102ce9f0@@YAXPAHPBH@Z sub_102ce9f0
 0x1000463d func   ?sub_1042c0c0@THL@@QAE_NHH@Z THL::sub_1042c0c0
