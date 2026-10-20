@@ -444,6 +444,7 @@
 0x10003f85 func   ?sub_1002e0a0@@YAGPAUIPhysObj@@G@Z sub_1002e0a0
 0x10003f94 func   _logic_case_toggle logic_case_toggle
 0x10003f9e func   ?vfunc5@CResearchBook_HG_DODGE@@QAEPAV1@I@Z CResearchBook_HG_DODGE::vfunc5
+0x10003fbc func   ?sub_103e61c0@@YAHXZ sub_103e61c0
 0x10003fdf func   ?vfunc5@CPhysicsAnimlink@@QAEPAV1@I@Z CPhysicsAnimlink::vfunc5
 0x10003fe9 func   ?sub_1012f030@@YAPAXPBD@Z sub_1012f030
 0x10003ff3 func   ?sub_1025c670@@YA_NPAG0@Z sub_1025c670
