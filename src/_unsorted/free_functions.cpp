@@ -160,6 +160,58 @@ extern "C" CConstraintAnchor *info_constraint_anchor()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b360 size=0x84
+struct IObj_t
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual int vfunc6();
+};
+struct IGlobalObj_t
+{
+	virtual void vfunc0(void *pEnt, int a);
+};
+struct S1002b360
+{
+	char pad0[0x454];
+	const char *m_pName454;
+	const char *m_pName458;
+};
+struct SInfo1002b360
+{
+	IObj_t *m_p0;
+	IObj_t *m_p1;
+};
+
+extern IObj_t *g_10723938;
+extern IGlobalObj_t *g_1056645c;
+void sub_1002b1e0(const char *pszName, SInfo1002b360 *pInfo, int index);
+
+// TARGET: sub_1002b360
+void __fastcall sub_1002b360(S1002b360 *self, int unused, SInfo1002b360 *pInfo)
+{
+	sub_1002b1e0(self->m_pName454, pInfo, 0);
+	sub_1002b1e0(self->m_pName458, pInfo, 1);
+	IObj_t *p0 = pInfo->m_p0;
+	IObj_t *p1 = pInfo->m_p1;
+	if (!p0) {
+		if (p1)
+			pInfo->m_p0 = g_10723938;
+		return;
+	}
+	if (!p1) {
+		pInfo->m_p1 = p0;
+		pInfo->m_p0 = g_10723938;
+		return;
+	}
+	if (pInfo->m_p0) {
+		int v0 = pInfo->m_p0->vfunc6();
+		g_1056645c->vfunc0(self, v0);
+		int v1 = pInfo->m_p1->vfunc6();
+		g_1056645c->vfunc0(self, v1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b790 size=0x49
 void *sub_1000db89(int);
 struct GP;
