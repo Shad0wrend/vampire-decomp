@@ -14368,6 +14368,35 @@ void __fastcall sub_100b7130(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7a40 size=0x12
+struct CVirtSlots14 {
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual void vfunc5();
+    virtual void vfunc6();
+    virtual void vfunc7();
+    virtual void vfunc8();
+    virtual void vfunc9();
+    virtual void vfunc10();
+    virtual void vfunc11();
+    virtual void vfunc12();
+    virtual void vfunc13();
+    virtual void vfunc14(int flag);
+};
+
+// TARGET: sub_100b7a40
+void __fastcall sub_100b7a40(int *self)
+{
+    int *p = (int *)((int)self - 4);
+    if (p != 0) {
+        ((CVirtSlots14 *)(p + 1))->vfunc14(1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7c60 size=0xa
 void CUnknown100b7c60::sub_100b7c60(int value)
 {
