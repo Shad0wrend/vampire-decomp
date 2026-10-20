@@ -11810,6 +11810,25 @@ void Rec64::sub_100dc300(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd990 size=0x65
+#include "CUnknown100dd990.h"
+
+// TARGET: CUnknown100dd990::sub_100dd990
+void CUnknown100dd990::sub_100dd990(int type, const CUnknown100dd990Vec *pA, const CUnknown100dd990Vec *pB)
+{
+	m_type = (char)type;
+	if (type != 3)
+	{
+		sub_100dda20();
+		return;
+	}
+	m_v24 = *pA;
+	m_v30 = *pB;
+	m_v4c = *pA;
+	m_v58 = *pB;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dda50 size=0x6c
 #include "CUnknown100dda50.h"
 
