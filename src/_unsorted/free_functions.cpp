@@ -13030,6 +13030,58 @@ int sub_100c6590(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c73b0 size=0x9f
+struct SPoseHdr;
+
+struct SIncModelSource
+{
+	virtual void v0();
+	virtual SPoseHdr *GetHeader(SPoseHdr *pHdr, int a);
+};
+
+struct SIncludeModel
+{
+	int m_unk0;
+	SIncModelSource *m_pSource;	// 0x04
+	char m_pad08[0x14 - 0x08];
+	short m_poseIndex[0x18];	// 0x14
+	char m_pad44[0x74 - 0x44];
+};
+
+struct SPoseHdr
+{
+	char m_pad0000[0x180];
+	int m_numPoseParams;	// 0x180
+	int m_poseOffset;	// 0x184
+	char m_pad0188[0x194 - 0x188];
+	int m_numIncludes;	// 0x194
+	int m_includeOffset;	// 0x198
+};
+
+SPoseHdr *sub_1000f925(SPoseHdr *pHdr, int index);
+
+SPoseHdr *sub_100c73b0(SPoseHdr *pHdr, int index)
+{
+	int i = 0;
+	if (pHdr && index >= 0 && index < 0x18) {
+		if (index < pHdr->m_numPoseParams)
+			return (SPoseHdr *)((char *)pHdr + pHdr->m_poseOffset + index * 0x14);
+		for (i = 0; i < pHdr->m_numIncludes; i++) {
+			SIncludeModel *pInc = (SIncludeModel *)((char *)pHdr + pHdr->m_includeOffset + i * 0x74);
+			if (pInc->m_poseIndex[index] >= 0 && pInc->m_pSource) {
+				SPoseHdr *pIncHdr = pInc->m_pSource->GetHeader(pHdr, i);
+				if (pIncHdr) {
+					SPoseHdr *p = sub_1000f925(pIncHdr, pInc->m_poseIndex[index]);
+					if (p)
+						return p;
+				}
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c81b0 size=0x8e
 #include "CUnknown100c81b0.h"
 
