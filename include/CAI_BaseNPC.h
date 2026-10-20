@@ -128,6 +128,8 @@ public:
 	virtual int vfunc567(int unused);
 	virtual float vfunc568(int a);
 
+	int vfunc440(int schedule);	// slot 440 "TranslateSchedule" base implementation (declared as a plain member like the subclasses' overrides): schedule 0x2e (a failed scripted sequence) becomes 0x2f..0x33 by the move type at +0x5f60 of the scripted sequence entity (handle at +0x5d74), after a DevWarning when that entity is gone; unchanged otherwise
+	void sub_1027d170();	// stub 0x100119b9: run by vfunc440 when the scripted sequence entity is gone, before schedule 1 is asked for
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
 	void sub_10269b50(int condition);	// "CAI_BaseNPC::SetCondition"-like (called through the stub at 0x10015839)
 	bool sub_10269aa0(int condition);	// "CAI_BaseNPC::HasCondition" (stub 0x10014df8): translates ids below 1000000000 first, then tests the condition bit in the array at +0x5c5c
