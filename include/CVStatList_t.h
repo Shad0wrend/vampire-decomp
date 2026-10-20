@@ -13,6 +13,6 @@ public:
 	CVStatList_t(int a);
 	~CVStatList_t();
 	int sub_10010609(int a);
-	void sub_10200fc0(int stat, int amount);	// "CVStatList_t::AddBase" (called through the stub at 0x1000e66a)
-	void sub_10201100(int stat, int amount);	// "CVStatList_t::SubBase": scope trace, AddBase(stat, -amount)
+	int sub_10200fc0(int stat, int amount);	// "CVStatList_t::AddBase" (called through the stub at 0x1000e66a)
+	int sub_10201100(int stat, int amount);	// "CVStatList_t::SubBase": scope trace, returns AddBase(stat, -amount)
 };
