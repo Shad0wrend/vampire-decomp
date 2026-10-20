@@ -23,6 +23,7 @@ struct CUnknown1017fd60Vec
 
 	void sub_10185910(int num);	// CUtlMemory::Grow
 
+	CUnknown1017fd60Rec &Element(int i) { return m_pMemory[i]; }
 	void GrowVector(int num)
 	{
 		if (m_size + num > m_allocationCount)
@@ -36,6 +37,16 @@ struct CUnknown1017fd60Vec
 		if (numToMove > 0 && num > 0)
 			memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(CUnknown1017fd60Rec));
 	}
+	int InsertBefore(int elem, const CUnknown1017fd60Rec &src)
+	{
+		GrowVector(1);
+		ShiftElementsRight(elem, 1);
+		CUnknown1017fd60Rec *dst = &Element(elem);
+		if (dst)
+			*dst = src;
+		return elem;
+	}
+	int AddToTail(const CUnknown1017fd60Rec &src) { return InsertBefore(m_size, src); }
 };
 
 class CBaseEntity;
