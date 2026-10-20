@@ -64481,6 +64481,32 @@ unsigned int __fastcall sub_1042d720(unsigned int *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042d890 size=0xc1
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+extern "C" char *__cdecl _strlwr(char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+void sub_1023f040(unsigned long *pCRC);
+void sub_1023f060(unsigned long *pCRC);
+void sub_100143b7(unsigned long *pCRC, const void *pBuffer, int len);
+
+unsigned long sub_1042d890(const char *pszA, const char *pszB, int nValue)
+{
+	unsigned long crc;
+	char szBuf[512];
+	sub_1023f040(&crc);
+	Q_strncpy(szBuf, pszA, 512);
+	_strlwr(szBuf);
+	sub_100143b7(&crc, szBuf, strlen(szBuf));
+	Q_strncpy(szBuf, pszB, 512);
+	_strlwr(szBuf);
+	sub_100143b7(&crc, szBuf, strlen(szBuf));
+	sub_100143b7(&crc, &nValue, 4);
+	sub_1023f060(&crc);
+	return crc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d9a0 size=0xa
 unsigned short CUnknown1042d9a0::sub_1042d9a0()
 {
