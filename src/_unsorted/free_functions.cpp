@@ -37453,6 +37453,57 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10332930 size=0x11d
+extern int *g_109f3680;
+extern int *g_109f3620;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void __cdecl Warning(const char *, ...);
+
+struct SRelView {
+    char pad[0x1598];
+    int *m_pTable;
+    int m_nCapacity;
+    int m_nUsed;
+};
+
+bool CBaseCombatCharacter::sub_10332930()
+{
+    SRelView *v = (SRelView *)this;
+    int *pNew;
+    int i;
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680 * 3] = (int)"CBaseCombatCharacter::ExpandRelationshipTable";
+    g_109f3620[*g_109f3680 * 3 + 1] = (int)name;
+    g_109f3620[*g_109f3680 * 3 + 2] = (int)g_106b8540;
+    ++*g_109f3680;
+    v->m_nCapacity += 5;
+    pNew = new int[v->m_nCapacity];
+    if (!pNew) {
+        Warning("CBCC->ExpandRelationshipTable:  Not enough memory to create %i relationships\n", v->m_nCapacity);
+        --*g_109f3680;
+        return false;
+    }
+    i = 0;
+    if (v->m_nUsed > 0) {
+        do {
+            i++;
+            pNew[i - 1] = v->m_pTable[i - 1];
+        } while (i < v->m_nUsed);
+    }
+    i = v->m_nUsed;
+    if (i < v->m_nCapacity) {
+        do {
+            pNew[i] = 0;
+            i++;
+        } while (i < v->m_nCapacity);
+    }
+    delete v->m_pTable;
+    v->m_pTable = pNew;
+    --*g_109f3680;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10332fc0 size=0xe7
 #include "CUnknown10332fc0.h"
 

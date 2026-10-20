@@ -738,6 +738,7 @@
 0x10005768 func   ?sub_10078b10@@YIXPAH@Z sub_10078b10
 0x1000579f func   ?sub_10099f20@@YAXPAUEntB@@HPAM@Z sub_10099f20
 0x100057b3 func   ?sub_1018cc00@@YAPAHXZ sub_1018cc00
+0x100057c7 func   ?sub_10332930@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10332930
 0x100057d1 func   ?vfunc6@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc6
 0x100057db func   ?sub_10183880@StatOwner@@QAEPAVCVStatList_t@@H@Z StatOwner::sub_10183880
 0x100057e0 func   _prop_button prop_button
