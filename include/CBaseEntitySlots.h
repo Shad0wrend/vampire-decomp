@@ -24,7 +24,8 @@ public:
 	virtual void slot80(); virtual void slot81(); virtual void slot82(); virtual void slot83(); virtual void slot84();
 	virtual void slot85(); virtual void slot86(); virtual void slot87(); virtual void slot88(); virtual void slot89();
 	virtual void slot90(); virtual void slot91(); virtual void slot92(); virtual void slot93(); virtual void slot94();
-	virtual void slot95(); virtual void slot96(); virtual void slot97(); virtual void slot98(); virtual void slot99();
+	virtual int slot95();	// asked by the collision-ignore test of CBaseCombatCharacter (a result of 1 means "ignore")
+	virtual void slot96(); virtual void slot97(); virtual void slot98(); virtual void slot99();
 	virtual void slot100(); virtual void slot101(); virtual void slot102(); virtual void slot103(); virtual void slot104();
 	virtual void slot105(const char *pszModel);	// sets the model by name (the Ghoul croucher's spawn)
 	virtual void slot106(); virtual void slot107(); virtual void slot108(); virtual void slot109();
