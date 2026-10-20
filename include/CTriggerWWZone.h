@@ -15,4 +15,5 @@ public:
 	int m_nHandles;	// 0x5a4
 
 	void sub_103daf10();	// calls slot 77 on every valid entity of the handle list
+	virtual void vfunc119();	// "CTriggerWWZone::Kill": scope trace (entity name), disables the trigger (CBaseTrigger::sub_101c4dd0), sets the think function to the stub at 0x10015b68 and the next think to curtime + 1.0f
 };
