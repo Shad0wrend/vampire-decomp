@@ -2389,6 +2389,7 @@
 0x1000c59a func   ?sub_1004ae60@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004ae60
 0x1000c5b3 func   ?sub_1021e320@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e320
 0x1000c5b8 func   ?sub_10107550@Mem400@@QAEXH@Z Mem400::sub_10107550
+0x1000c603 func   ?sub_101681a0@@YI_NPAUHolder@@@Z sub_101681a0
 0x1000c60d func   ?vfunc390@CNPC_VGargoyle@@QAEHPAX@Z CNPC_VGargoyle::vfunc390
 0x1000c630 func   _item_g_drugs_morphine_bottle item_g_drugs_morphine_bottle
 0x1000c63a func   ?sub_101e0f00@CUnknown101e0f00@@QAEXXZ CUnknown101e0f00::sub_101e0f00

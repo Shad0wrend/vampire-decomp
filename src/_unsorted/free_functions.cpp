@@ -23228,6 +23228,81 @@ bool CBaseCombatCharacter::sub_101671a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101681a0 size=0x125
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+// The player fields this function reads (CBasePlayer.h still has them as padding).
+struct Holder
+{
+    char m_pad0000[0xfe8];
+    unsigned int m_hEnt0FE8;
+    char m_pad0FEC[0x1040 - 0xfec];
+    unsigned int m_hEnt1040;
+    char m_pad1044[0x19c0 - 0x1044];
+    unsigned int m_hEnt19C0;
+    char m_pad19C4[0x19cc - 0x19c4];
+    unsigned int m_hEnt19CC;
+    char m_pad19D0[0x1eb8 - 0x19d0];
+    int m_nUseEdictIndex;
+};
+
+struct PlayerState	// the object of the free function at 0x1000aa0b
+{
+    char m_pad0000[0x49c];
+    int m_n049C;
+    char m_pad04A0[0x4ac - 0x4a0];
+    int m_n04AC;
+};
+
+bool __fastcall sub_10175180(Holder *p);
+PlayerState *sub_1000aa0b();
+
+bool __fastcall sub_101681a0(Holder *p)
+{
+    CGlobalEntityList_Slot *pSlot;
+    unsigned int h;
+    if (sub_10175180(p))
+        return false;
+    if (((CBasePlayer *)p)->sub_101618a0())
+        return true;
+    h = p->m_hEnt0FE8;
+    if (h != 0xffffffff) {
+        pSlot = &g_10566458->m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (h >> 13) && pSlot->m_pEntity != 0)
+            return true;
+    }
+    h = p->m_hEnt1040;
+    if (h != 0xffffffff) {
+        pSlot = &g_10566458->m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (h >> 13) && pSlot->m_pEntity != 0)
+            return true;
+    }
+    if (p->m_nUseEdictIndex)
+        return true;
+    h = p->m_hEnt19C0;
+    if (h != 0xffffffff) {
+        pSlot = &g_10566458->m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (h >> 13) && pSlot->m_pEntity != 0)
+            return true;
+    }
+    h = p->m_hEnt19CC;
+    if (h != 0xffffffff) {
+        pSlot = &g_10566458->m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (h >> 13) && pSlot->m_pEntity != 0)
+            return true;
+    }
+    if (((CBasePlayer *)p)->sub_1000306c())
+        return true;
+    PlayerState *pState = sub_1000aa0b();
+    if (pState && (pState->m_n049C == 2 || pState->m_n04AC != 0))
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168e60 size=0x72
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 struct EntX {
