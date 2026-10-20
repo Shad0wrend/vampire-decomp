@@ -12,7 +12,7 @@ class COrnamentProp : public CBaseEntity
 {
 public:
 	// Placeholder slots 134..201 (the base declares slots up to 133).
-	COP_SLOTS10(a13) COP_SLOTS10(a14) COP_SLOTS10(a15) COP_SLOTS10(a16) COP_SLOTS10(a17) COP_SLOTS10(a18) COP_SLOTS10(a19)
+	COP_SLOTS10(a13) COP_SLOTS10(a14) COP_SLOTS10(a15) COP_SLOTS10(a16) COP_SLOTS10(a17) COP_SLOTS10(a18)
 	virtual void b00(); virtual void b01(); virtual void b02(); virtual void b03(); virtual void b04();
 	virtual void b05(); virtual void b06(); virtual void b07();
 	virtual void vfunc202(CBaseEntity *pOwner);	// SetOwnerEntity
