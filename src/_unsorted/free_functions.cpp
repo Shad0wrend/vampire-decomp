@@ -16041,6 +16041,41 @@ void CAI_BaseNPC::sub_10175360(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177ab0 size=0x74
+#include "CBaseCombatCharacter.h"
+extern "C" int _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+struct NameObj2 {
+    virtual void v0(); virtual void v1(); virtual void v2();
+    virtual NameObj2 *v3(); virtual void v4(); virtual const char *v5();
+};
+struct WHolder { char pad[0x40]; NameObj2 *m_p; };
+struct WeaponX { char pad[0x2e0]; WHolder *m_pHolder; };
+struct Helper : CBaseCombatCharacter {
+    void *sub_10177ab0(const char *name);
+};
+
+void *Helper::sub_10177ab0(const char *name)
+{
+    int i = 0;
+    do {
+        if (sub_1032e8b0(i)) {
+            sub_1032e8b0(i);
+            WHolder *h = ((WeaponX *)sub_1032e8b0(i))->m_pHolder;
+            const char *s;
+            if (!h->m_p)
+                s = g_106b8540;
+            else
+                s = h->m_p->v3()->v5();
+            if (!_strcmpi(name, s))
+                return sub_1032e8b0(i);
+        }
+        i++;
+    } while (i < 0xe0);
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017cb80 size=0x7b
 #include "CUnknown1017cb80.h"
 #include "QuestJournal.h"
