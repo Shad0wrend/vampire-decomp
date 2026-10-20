@@ -48761,6 +48761,37 @@ extern "C" CBaseEntity *grenade()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b110 size=0x38
+#include "CAI_BaseNPCTroika.h"
+
+struct EntObj {
+	char pad[0x9c];
+	int field9c;
+};
+struct EntSlot {
+	EntObj *ent;
+	int serial;
+	int pad;
+};
+extern char *g_10566458;
+
+static inline EntObj *ResolveHandle(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		EntSlot *slot = (EntSlot *)(g_10566458 + 4) + (h & 0x1fff);
+		if (slot->serial == (int)(h >> 13))
+			return slot->ent;
+	}
+	return 0;
+}
+
+int CAI_BaseNPCTroika::sub_1042b110()
+{
+	EntObj *ent = ResolveHandle(*(unsigned int *)(m_pad0004 + 0x19b0 - 4));
+	return ent == 0 ? 0 : ent->field9c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b470 size=0x72
 #include "SendProp.h"
 

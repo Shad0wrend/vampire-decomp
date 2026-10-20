@@ -1113,6 +1113,7 @@
 0x10007b6c func   ?sub_10315080@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10315080
 0x10007b71 func   _func_brush func_brush
 0x10007be9 func   _func_areaportalwindow func_areaportalwindow
+0x10007bee func   ?sub_1042b110@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_1042b110
 0x10007bf8 func   ?vfunc2@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc2
 0x10007c07 func   _item_w_crossbow item_w_crossbow
 0x10007c20 func   ?vfunc5@CItemGWatchFancy@@QAEPAV1@I@Z CItemGWatchFancy::vfunc5
