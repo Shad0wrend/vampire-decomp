@@ -55,6 +55,7 @@ public:
 	virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27();
 	virtual int vfunc28(CBaseEntity **pValues, int count, int nBytesAvailable);	// "CRestore::ReadEntityPtr": reads entity indexes (slot 15) and maps each to the entity (sub_101a2390), zero-filling the rest
 	virtual int vfunc29(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadEdictPtr": like slot 28 but stores the edict (+0x2e0) of each entity (0 when it does not resolve); reads through slot 15 into a 256 dword buffer, zero-filling up to the third argument
+	virtual int vfunc30(unsigned int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadEHandle": like slot 29 but stores the entity handle (slot 1 of the entity, -1 when it does not resolve); zero-fills up to the third argument
 
 	CRestore(void *pData);	// 0x101a12a0
 
