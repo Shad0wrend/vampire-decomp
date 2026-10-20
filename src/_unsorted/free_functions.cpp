@@ -33541,6 +33541,18 @@ struct CUnknown101f2500 { int a; char sub_101f2500(); };
 char CUnknown101f2500::sub_101f2500() { int v = ((int *)this)[-5]; return v != 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101f25a0 size=0x12
+// TARGET: sub_101f25a0
+int __fastcall sub_101f25a0(char *self)
+{
+    int *p = *(int **)(self - 0x14);
+    if (p == 0) {
+        return 0;
+    }
+    return *(int *)(*p + 8) + (int)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2ae0 size=0xe
 void sub_101f3030(void* p);
 
