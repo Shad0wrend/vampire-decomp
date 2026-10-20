@@ -41,3 +41,5 @@
 	void vfunc345(const char *pszName, int a, int b);	// slot 345 "CBaseCombatCharacter::SetPoseParameter...": scope trace (entity name), then slot 346(LookupPoseParameter(pszName), a, b)
 	int sub_10092270(const char *pszName);	// CBaseAnimating::LookupPoseParameter, called directly (stub 0x10009ac5)
 	bool sub_1033f1a0(int value);	// "CBaseCombatCharacter::FrenzyComparison": scope trace (entity name), sub_1033eb60(value), then whether the dword at +0x146c is non-zero
+	void sub_103239a0(const char *pszName);	// "CBaseCombatCharacter::AddToTeam"-like: scope trace (entity name), looks the name up (skipping a leading '!') in the global at 0x10751140 and stores the short result at +0x10b0, then sub_10323a70()
+	void sub_10323a70();
