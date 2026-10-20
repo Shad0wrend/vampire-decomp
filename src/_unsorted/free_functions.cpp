@@ -20537,6 +20537,25 @@ void CGameMovement::sub_10122590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101251b0 size=0x12
+struct CHolderInner3e0 {
+    char pad_0000[0x3e0];
+    int m_n3e0;
+};
+
+struct CHolderOuter8 {
+    char pad_0000[8];
+    CHolderInner3e0 *m_pInner;
+    bool sub_101251b0();
+};
+
+// TARGET: sub_101251b0
+bool CHolderOuter8::sub_101251b0()
+{
+    return m_pInner->m_n3e0 > 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101251e0 size=0xb
 void __fastcall sub_101251e0(char *self)
 {

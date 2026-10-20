@@ -1151,6 +1151,7 @@
 0x100069ce func   ?vfunc5@CNPC_VWolfMorph@@QAEPAV1@I@Z CNPC_VWolfMorph::vfunc5
 0x10006a05 func   ?sub_10067b70@@YAXPAVCUnknown1019d130@@MPBVVector@@HH1@Z sub_10067b70
 0x10006a19 func   ?vfunc32@CPhysicsPropContested@@UAE_NH@Z CPhysicsPropContested::vfunc32
+0x10006a46 func   ?sub_101251b0@CHolderOuter8@@QAE_NXZ CHolderOuter8::sub_101251b0
 0x10006a4b func   ?sub_1008de20@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008de20
 0x10006a78 func   ?sub_102729d0@CAI_BaseNPC@@QAEPAVCBaseEntity@@XZ CAI_BaseNPC::sub_102729d0
 0x10006a7d func   _func_lod func_lod
