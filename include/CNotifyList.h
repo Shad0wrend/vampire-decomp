@@ -11,7 +11,7 @@ class CNotifyList
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
-	virtual void vfunc2(CBaseEntity *pEntity, int a);	// "ReportNamedEvent"-like: for every pair registered for pEntity (only when bit 6 of its flags at +0x268 is set) hands the event to the listener's slot 118
+	virtual void vfunc2(CBaseEntity *pEntity, const char *pszEvent);	// "ReportNamedEvent": for every pair registered for pEntity (only when bit 6 of its flags at +0x268 is set) calls the listener's AcceptInput(pszEvent, pEntity, pEntity, an empty variant, 0)
 	virtual void vfunc3();
 	virtual void vfunc4();
 
