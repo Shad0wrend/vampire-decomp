@@ -25891,6 +25891,35 @@ extern int g_1073938c;
 void sub_101d8890(int v) { g_1073938c = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101d90c0 size=0x92
+#include "CUnknown101d90c0.h"
+extern char g_106b8540[];
+int *sub_10203ed0(int *pOut, const char *str);
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+// TARGET: CUnknown101d90c0::sub_101d90c0
+bool CUnknown101d90c0::sub_101d90c0(CUnknown101d90c0_Section *pSection)
+{
+    if (pSection) {
+        char buf[0x20];
+        int tmp;
+        const char *name = m_pszName;
+        if (name == 0)
+            name = g_106b8540;
+        CUnknown101d90c0_Section *sec = pSection->vfunc2(name);
+        if (sec) {
+            m_nName = *sub_10203ed0(&tmp, sec->vfunc13("Name", g_106b8540));
+            for (int i = 0; i < 100; i++) {
+                sprintf(buf, "%d", i);
+                m_values[i] = sec->vfunc10(buf, 1);
+            }
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9210 size=0x7f
 #include "CUnknown101d9210.h"
 
