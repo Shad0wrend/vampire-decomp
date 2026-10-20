@@ -37,6 +37,35 @@ void CNPC_VMingXiao::vfunc448(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103951d0 size=0x7c
+#include "CBaseEntity.h"
+#include "CNPC_VMingXiao.h"
+
+const char *CNPC_VMingXiao::vfunc408(int index)
+{
+	switch (index) {
+	case 0x77:
+		return "xfr";
+	case 0x78:
+		return "xfl";
+	case 0x79:
+		return "xmr";
+	case 0x7a:
+		return "xml";
+	case 0x7b:
+		return "xbr";
+	case 0x7c:
+		return "xbl";
+	case 0x7d:
+		return "xsp";
+	case 0x7e:
+		return "xmh";
+	default:
+		return sub_10011590(index);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10396fd0 size=0x18
 #include "CNPC_VMingXiao.h"
 
