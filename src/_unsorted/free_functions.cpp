@@ -7387,6 +7387,44 @@ void sub_10088b30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088fc0 size=0xa3
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];
+extern char g_1054abdc[];
+
+struct SNPC {
+    char m_pad[0x224];
+    unsigned int m_flags;
+    void SetFlag(unsigned int f) { m_flags |= f; }
+    void ClearFlag(unsigned int f) { m_flags &= ~f; }
+    int HasFlag(unsigned int f) { return m_flags & f; }
+};
+
+inline SNPC *NextNPC(SNPC *pStart)
+{
+    CBaseEntity *pEnt = g_106eb5d8.sub_100f7060((CBaseEntity *)pStart);
+    while (pEnt) {
+        SNPC *pNPC = (SNPC *)__RTDynamicCast(pEnt, 0, g_10538764, g_1054abdc, 0);
+        if (pNPC)
+            return pNPC;
+        pEnt = g_106eb5d8.sub_100f7060(pEnt);
+    }
+    return 0;
+}
+
+void sub_10088fc0()
+{
+    for (SNPC *pNPC = NextNPC(0); pNPC; pNPC = NextNPC(pNPC)) {
+        if (!pNPC->HasFlag(0x1000))
+            pNPC->SetFlag(0x4000000);
+        else
+            pNPC->ClearFlag(0x4000000);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b490 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
