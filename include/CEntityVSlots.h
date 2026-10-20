@@ -1,5 +1,5 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 118, 158, 161, 167, 173,
-// 212, 220 / 221 (the absolute origin / angles getters), 243, 244, 260, 274, 346, 360 and 457 of an entity class that does not model its vtable.
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 62, 64, 118, 158, 161, 167, 173,
+// 202, 212, 220 / 221 (the absolute origin / angles getters), 243, 244, 260, 274, 346, 360 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -12,7 +12,13 @@ class CEntityVSlots
 {
 public:
 	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
-	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5)
+	EVS(60) EVS(61)
+	virtual void slot62(const float *pOrigin);	// "SetAbsOrigin"-like
+	EVS(63)
+	virtual void slot64(const float *pAngles);	// "SetAbsAngles"-like
+	EVS(65) EVS(66) EVS(67) EVS(68) EVS(69)
+	EVS10(7) EVS10(8) EVS10(9)
 	EVS10(10)
 	EVS(110) EVS(111) EVS(112) EVS(113) EVS(114) EVS(115) EVS(116) EVS(117)
 	virtual void slot118(const char *pszInput, CEntityVSlots *pActivator, CEntityVSlots *pCaller, CVariantCopy value, int outputID);	// "AcceptInput"
@@ -29,7 +35,9 @@ public:
 	virtual void slot173(CEntityVSlots *pActivator, CEntityVSlots *pCaller, int useType, int value);	// "Use"
 	EVS(174) EVS(175) EVS(176) EVS(177) EVS(178) EVS(179)
 	EVS10(18) EVS10(19)
-	EVS10(20)
+	EVS(200) EVS(201)
+	virtual void slot202(CEntityVSlots *pOwner);	// "SetOwnerEntity"
+	EVS(203) EVS(204) EVS(205) EVS(206) EVS(207) EVS(208) EVS(209)
 	EVS(210) EVS(211)
 	virtual void slot212(int set);
 	EVS(213) EVS(214) EVS(215) EVS(216) EVS(217) EVS(218) EVS(219)
