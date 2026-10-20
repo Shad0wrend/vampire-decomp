@@ -3645,6 +3645,7 @@
 0x10014362 func   ?sub_101ab800@CUnknown101ab800@@QAE_NHPBEH@Z CUnknown101ab800::sub_101ab800
 0x10014385 func   ?vfunc5@CWeaponIThrown@@QAEPAV1@I@Z CWeaponIThrown::vfunc5
 0x1001438a func   _item_w_fireaxe item_w_fireaxe
+0x1001439e func   ?sub_1008d450@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d450
 0x100143ad func   _func_button func_button
 0x10014402 func   _env_particle env_particle
 0x1001440c func   ?sub_10055ec0@UtlMem@@QAEXH@Z UtlMem::sub_10055ec0
