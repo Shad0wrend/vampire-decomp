@@ -13,6 +13,24 @@ int CNPC_VTzimisce::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b92a0 size=0x8f
+#include "CNPC_VTzimisce.h"
+extern CNPC_VTzimisceConVar *g_1093cf94;
+extern CNPC_VTzimisceConVar *g_1093cfdc;
+extern CNPC_VTzimisceConVar *g_1093cebc;
+void sub_101aeb60(int, const char *, float, int, int, int);
+
+// TARGET: CNPC_VTzimisce::vfunc488
+void CNPC_VTzimisce::vfunc488()
+{
+    int a = g_1093cf94->vfunc1() ? 0 : g_1093cf94->m_n2c;
+    int b = g_1093cfdc->vfunc1() ? 0 : g_1093cfdc->m_n2c;
+    float c = g_1093cebc->vfunc1() ? 0.0f : g_1093cebc->m_f28;
+    sub_101aeb60(m_n02e0, "SPI_DIES", c, b, 0, a);
+    v487();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b9380 size=0x8f
 #include "CNPC_VTzimisce.h"
 extern CNPC_VTzimisceConVar *g_1093cf94;
