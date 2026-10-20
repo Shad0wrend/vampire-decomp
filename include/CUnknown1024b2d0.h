@@ -20,4 +20,5 @@ public:
 
 	CUnknown1024b2d0 *sub_1024b2d0(int arg, int count, char flag);
 	void sub_1024b880();	// removes all elements (stub 0x10010785)
+	const char *sub_1024b830(unsigned short id);	// the string of the 12 byte element id (empty string for 0xffff); called through the stub at 0x10002202
 };
