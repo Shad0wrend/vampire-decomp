@@ -4178,6 +4178,7 @@
 0x10432f1a func   __tzset _tzset
 0x10433178 func   __isindst _isindst
 0x10433464 func   __strlwr _strlwr
+0x10433464 func   _strlwr strlwr
 0x10433510 func   _strncat strncat
 0x10433640 func   _strrchr strrchr
 0x10433667 func   __toupper _toupper
