@@ -20275,6 +20275,28 @@ float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf6a0 size=0x15b
+#include "CUtlRBTree12.h"
+
+// TARGET: CUtlRBTree12::sub_101bf6a0
+int CUtlRBTree12::sub_101bf6a0(int key)
+{
+	unsigned short cur = m_Root;
+	while (cur != InvalidIndex())
+	{
+		if (m_LessFunc(&key, m_pElements[cur].m_Data))
+			cur = Links(cur).m_Left;
+		else if (m_LessFunc(m_pElements[cur].m_Data, &key))
+			cur = Links(cur).m_Right;
+		else
+			break;
+	}
+	if (Links(cur).m_Left != cur)
+		return *(int *)m_pElements[cur].m_Data;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0240 size=0x6a
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
