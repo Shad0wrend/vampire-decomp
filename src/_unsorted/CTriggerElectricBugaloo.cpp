@@ -50,3 +50,38 @@ bool CTriggerElectricBugaloo::vfunc32(void *pOther)
 	return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102316d0 size=0x85
+#include "CTriggerElectricBugaloo.h"
+
+struct EntInfo { void *ent; int serial; int pad; };
+extern char *g_10566458;
+
+void CTriggerElectricBugaloo::vfunc175(void *pOther)
+{
+	sub_100a4af0(pOther);
+	unsigned int h = m_hOwner008c;
+	void *cur;
+	if (h != 0xffffffff) {
+		EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+		if (e->serial == (int)(h >> 13))
+			cur = e->ent;
+		else
+			cur = 0;
+	} else
+		cur = 0;
+	if (cur == pOther) {
+		unsigned int h2 = *(volatile unsigned int *)&m_hOwner008c;
+		void *ent2;
+		if (h2 != 0xffffffff) {
+			EntInfo *e2 = (EntInfo *)(g_10566458 + 4) + (h2 & 0x1fff);
+			if (e2->serial == (int)(h2 >> 13))
+				ent2 = e2->ent;
+			else
+				ent2 = 0;
+		} else
+			ent2 = 0;
+		sub_10231790(ent2);
+	}
+}
+// END FUNCTION
