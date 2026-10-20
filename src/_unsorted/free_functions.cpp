@@ -5255,6 +5255,44 @@ void sub_1006aeb0(int pFilter, int delayBits, const float *pOrigin, const float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c0a0 size=0xa1
+#include "CUnknown1006bea0.h"
+
+void CUnknown1006bea0::sub_1006c0a0(char *pString)
+{
+	if (m_flags) {
+		*pString = 0;
+		return;
+	}
+	if (!(m_flags15 & 1)) {
+		int nAvail = m_size - m_pos;
+		int i = 0;
+		while (i < nAvail) {
+			int c = m_pData[m_pos + i];
+			pString[i] = c;
+			i++;
+			if (!c)
+				goto done;
+		}
+		pString[i] = 0;
+		m_flags |= 2;
+done:
+		m_pos += i;
+		return;
+	}
+	sub_1006bf40();
+	int size = m_size;
+	while (m_pos < size) {
+		char c = m_pData[m_pos];
+		if (c == '\n' || c == 0)
+			break;
+		*pString++ = c;
+		m_pos++;
+	}
+	*pString = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cc20 size=0x79
 int sub_10431c2f(char *, const char *, ...);
 void sub_10203dd0(char *);
