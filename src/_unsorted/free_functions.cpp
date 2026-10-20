@@ -35270,6 +35270,29 @@ const char *CUnknown101f4370::sub_101f4950(int index, int number)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f4b20 size=0x104
+#include <stdio.h>
+#include "CUnknown101f4b20.h"
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *pszFormat, ...);
+struct CFolderDumpX { void sub_101f3e50(); };
+
+// TARGET: CUnknown101f4b20::sub_101f4b20
+void CUnknown101f4b20::sub_101f4b20()
+{
+    char buf[128];
+    sprintf(buf, "\n[Sound Tree]:\n");
+    DevMsg(0, buf);
+    sprintf(buf, "-Ranges-:\n");
+    DevMsg(0, buf);
+    int n = m_pTable->m_nRecords;
+    for (int i = 0; i < n; i++) {
+        sprintf(buf, "\t\t   (%d)[%s]: %d\n", i, m_pTable->Find(i)->m_folder.Get(), m_pValues[i]);
+        DevMsg(0, buf);
+    }
+    ((CFolderDumpX *)((char *)this + 0x10))->sub_101f3e50();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4c80 size=0x13
 struct CUnknown101f4c80 {
     int m_n0;
