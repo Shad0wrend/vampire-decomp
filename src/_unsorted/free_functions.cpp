@@ -25609,6 +25609,65 @@ PyObj *sub_10197e50(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10199100 size=0xfc
+struct PyObject;
+extern "C" __declspec(dllimport) int PyArg_ParseTuple(PyObject *, const char *, ...);
+extern "C" __declspec(dllimport) PyObject *PyErr_Occurred(void);
+extern "C" __declspec(dllimport) void PyErr_SetString(PyObject *, const char *);
+extern "C" __declspec(dllimport) PyObject *PyExc_AttributeError;
+struct PyNoneType { int ob_refcnt; };
+extern "C" __declspec(dllimport) PyNoneType _Py_NoneStruct;
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+#define S(n) virtual void n();
+#define S10(p) S(p##0) S(p##1) S(p##2) S(p##3) S(p##4) S(p##5) S(p##6) S(p##7) S(p##8) S(p##9)
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct PyPlayer
+{
+	S100(a) S100(b) S100(c) S100(d) S10(e0) S10(e1) S10(e2) S10(e3) S10(e4)
+	S(g0) S(g1) S(g2) S(g3) S(g4) S(g5) S(g6) S(g7) S(g8)
+	virtual int slot459(const char *pszItem, int a);
+	const char *sub_100ab4f0();
+};
+
+struct PyEntity
+{
+	char m_pad[0xa8];
+	PyPlayer *m_pPlayer;
+};
+
+PyEntity *sub_10196780(PyObject *pObj);
+
+PyObject *sub_10199100(PyObject *self, PyObject *args)
+{
+	char *pszItem = 0;
+	PyObject *pObj = 0;
+	if (!PyArg_ParseTuple(args, "Os", &pObj, &pszItem)) {
+		if (PyErr_Occurred())
+			return 0;
+		PyErr_SetString(PyExc_AttributeError, "bad args to GiveItem()");
+		return 0;
+	}
+	PyEntity *pEnt = sub_10196780(pObj);
+	PyPlayer *pPlayer = pEnt == 0 ? 0 : pEnt->m_pPlayer;
+	if (!pszItem) {
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_AttributeError, "invalid item name");
+		return 0;
+	}
+	if (!pPlayer) {
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_AttributeError, "invalid player");
+		return 0;
+	}
+	if (!pPlayer->slot459(pszItem, 0))
+		DevMsg("Could not give item %s to player: %s\n", pszItem, pPlayer->sub_100ab4f0());
+	_Py_NoneStruct.ob_refcnt++;
+	return (PyObject *)&_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199990 size=0xad
 extern int (*g_109f37a0)(int, const char *, ...);
 extern int (*g_109f377c)();
