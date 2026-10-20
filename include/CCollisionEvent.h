@@ -31,9 +31,16 @@ public:
 	void sub_10012544(CFrictionEntry_t *pEntry);	// releases a friction entry (stub of 0x100307f0)
 	void sub_100307f0(CFrictionEntry_t *pEntry);	// "CCollisionEvent::ShutdownFriction": scope trace, destroys the friction snapshot (slot 9 of the physics interface at 0x1072c474) and clears the entry's value and key
 	void sub_10031070(int a, void *pData, int pObject, char bFlag, void *pExtra1, void *pExtra2);	// "CCollisionEvent::AddDamageEvent" (stub 0x1000495d): scope trace, appends a 0x58 byte record
+	void sub_10030d50();	// "CCollisionEvent::UpdateTouchEvents": scope trace, dispatches every queued touch record (0x24 bytes each, array at +0xd8, count at +0xe4): sub_10030ba0 for a start touch (record +8 is zero), else the end-touch dispatcher sub_10030cb0; then empties the queue
+	void sub_10030ba0(void *a, void *b, void *pData1, void *pData2);	// "CCollisionEvent::DispatchStartTouch" (called through the stub at 0x10009485)
+	void sub_10030cb0(void *a, void *b);	// "CCollisionEvent::DispatchEndTouch" (called through the stub at 0x1000f0bf)
 
 	char m_pad0004[4];
 	CFrictionEntry_t m_friction[8];	// 0x0008
-	char m_pad0068[0x114 - 0x68];
+	char m_pad0068[0xd8 - 0x68];
+	char *m_pTouchEvents;	// 0x00d8: queued touch records of 0x24 bytes
+	char m_pad00dc[0xe4 - 0xdc];
+	int m_nTouchEvents;	// 0x00e4
+	char m_pad00e8[0x114 - 0xe8];
 	CUtlVector20 m_penetrateEvents;	// 0x0114 (size at +0x120)
 };
