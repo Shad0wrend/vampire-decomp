@@ -2,6 +2,8 @@
 // overflow flag at +0x10, debug name at +0x14).
 #pragma once
 
+#include "Vector.h"
+
 extern unsigned long g_106d1910[];
 
 class bf_read
@@ -64,4 +66,6 @@ public:
 	unsigned int sub_100be6b0(int numbits, bool bSigned);	// "ReadBitLong": ReadSBitLong(numbits) when bSigned, else ReadUBitLong(numbits)
 	void sub_100bdee0();	// default constructor body (called through the stub at 0x1000a0ec)
 	unsigned int sub_100be4b0(int numbits);	// "PeekUBitLong": reads numbits bits one at a time from a saved copy of the reader, restores the reader, returns the value
+	float sub_100be770();	// "ReadBitCoord" (stub 0x10006d1b): the float in ST0
+	void sub_100bea10(Vector &fa);	// "ReadBitVec3Coord": clears fa, reads the three presence flags, then ReadBitCoord for each component whose flag is set
 };
