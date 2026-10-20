@@ -3434,6 +3434,22 @@ int CUtlVector56::sub_10046ba0(int elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10046cd0 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_10046cd0()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10047160 size=0x17
 struct E8 { int a, b; };
 
