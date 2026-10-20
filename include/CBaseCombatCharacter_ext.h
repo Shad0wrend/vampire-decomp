@@ -27,6 +27,7 @@
 	char sub_10337e40();	// "CBaseCombatCharacter::IsKine...": scope trace (entity name), false when slot 70 is true or IsKindred (sub_10337f30) is true or the object at +0xac is set, else true
 	char sub_103380d0();	// "CBaseCombatCharacter::IsBossMonster": scope trace (entity name), the byte at +0x90 of the default-stat item selected by sub_10337860()
 	void vfunc341(int discipline, int unused);	// slot 341 "CBaseCombatCharacter::RemoveDisciplineEffects": scope trace (entity name), then the global discipline manager at 0x10739a4c RemoveEffect(this, discipline, 0); takes a second, unused stack argument
+	char vfunc342(int unused);	// slot 342 "CBaseCombatCharacter::CanBeFedUp"-named trace: scope trace (entity name), true when sub_10339a90(), bit 27 of the dword at +0x14bc is clear, the handle at +0x1538 does not resolve or the dword at +0x153c is -1, slot 158 is true and the character is not unconscious; takes one unused stack argument
 	virtual void vfunc106(const char *szClassname);	// "CBaseCombatCharacter::PostConstructor": scope trace (entity name), CBaseEntity::vfunc106(szClassname), then slot 111
 	void vfunc349(inputdata_t *pInput);	// slot 349 "CBaseCombatCharacter::InputBarterBegin": scope trace (entity name), when the activator of the input is set calls sub_103411c0(the dword at +0x9c of it, 0)
 	void sub_103411c0(int a, int b);	// called through the stub at 0x10007e73
