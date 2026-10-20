@@ -10,4 +10,5 @@ public:
 
 	void sub_100142b8();	// destructor body
 	void vfunc5();	// as in CFireSmoke (transplant)
+	CTEFizz *sub_10061f70(int a);	// constructor body: base constructor (0x10015334), vtable, fields; returns this
 };
