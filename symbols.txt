@@ -351,6 +351,7 @@
 0x10003099 func   ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z sub_100aa680
 0x100030b2 func   ?vfunc67@CGameRules@@UAEPBDH@Z CGameRules::vfunc67
 0x100030d0 func   ?sub_10403d10@@YAHXZ sub_10403d10
+0x100030df func   ?vfunc404@CNPC_VHunter@@QAEHPAVCBaseEntity@@@Z CNPC_VHunter::vfunc404
 0x100030e4 func   ?sub_103360a0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_103360a0
 0x100030f3 func   _game_ui game_ui
 0x100030f8 func   ?sub_10182c40@CAI_BaseNPC@@QAEXPBD0@Z CAI_BaseNPC::sub_10182c40
