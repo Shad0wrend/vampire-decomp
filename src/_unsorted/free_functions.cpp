@@ -11467,6 +11467,22 @@ unsigned int __stdcall sub_100eb060(unsigned int x)
 void __fastcall sub_100eb130(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100eb1a0 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_100eb1a0()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb250 size=0x18
 struct CBlock4k
 {
