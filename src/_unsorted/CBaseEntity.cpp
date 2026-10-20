@@ -895,6 +895,52 @@ bool CBaseEntity::vfunc140(CBaseEntity *pAttacker)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9800 size=0xc0
+#include "CBaseEntity.h"
+#include "CBCCSlotViews.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+class CViewableSlotView	// slot 94 of the entity
+{
+public:
+	VIEW_SLOT10(0) VIEW_SLOT10(1) VIEW_SLOT10(2) VIEW_SLOT10(3) VIEW_SLOT10(4) VIEW_SLOT10(5) VIEW_SLOT10(6) VIEW_SLOT10(7) VIEW_SLOT10(8)
+	VIEW_SLOT(90) VIEW_SLOT(91) VIEW_SLOT(92) VIEW_SLOT(93)
+	virtual int vfunc94();
+};
+
+struct CViewableHelper	// the "is this entity rendered" helper (stub 0x100117d9 for 0x100b5110)
+{
+	char sub_100b5110();
+};
+
+char __fastcall sub_100a9800(CBaseEntity *self)
+{
+	const char *name = self ? (self->m_name26c ? self->m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::IsViewable";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if ((*(unsigned char *)((char *)self + 0x19c) & 0x40) == 0) {
+		if (((CViewableHelper *)self)->sub_100b5110()) {
+			if (((CViewableSlotView *)self)->vfunc94()) {
+				(*g_109f3680)--;
+				return 1;
+			}
+		} else {
+			if (self->vfunc8()) {
+				(*g_109f3680)--;
+				return 1;
+			}
+		}
+	}
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9ba0 size=0xb4
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 struct EntEntry { void *pEnt; int serial; int pad; };
