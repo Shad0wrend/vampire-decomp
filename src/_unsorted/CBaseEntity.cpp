@@ -1400,6 +1400,50 @@ void CBaseEntity::sub_100ab450(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100acab0 size=0x111
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "CVariantCopy.h"
+
+extern "C" int _strcmpi(const char *, const char *);
+extern char g_1055726c[];
+
+struct TypeDescView
+{
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    int pad[5];
+};
+
+struct DataMapView
+{
+    TypeDescView *dataDesc;
+    int dataNumFields;
+    const char *dataClassName;
+    DataMapView *baseMap;
+};
+
+bool CBaseEntity::vfunc121(const char *szKeyName, CVariantCopy *pVariant)
+{
+    ScopeTrace trace(g_1055726c, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    if (szKeyName) {
+        for (DataMapView *dmap = (DataMapView *)vfunc82(); dmap; dmap = dmap->baseMap) {
+            for (int i = 0; i < dmap->dataNumFields; i++) {
+                if ((dmap->dataDesc[i].flags & 0x14) && _strcmpi(dmap->dataDesc[i].externalName, szKeyName) == 0) {
+                    pVariant->sub_1000b320(dmap->dataDesc[i].fieldType, (char *)this + dmap->dataDesc[i].fieldOffset[0]);
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ace00 size=0xb1
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

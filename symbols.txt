@@ -2003,6 +2003,7 @@
 0x1000ab19 func   ?sub_10077db0@CUnknown10077db0@@QAEXHPBD@Z CUnknown10077db0::sub_10077db0
 0x1000ab28 func   ?sub_10060ac0@@YAXHHPBH0HHHD@Z sub_10060ac0
 0x1000ab41 func   _ai_hint ai_hint
+0x1000ab50 func   ?vfunc121@CBaseEntity@@UAE_NPBDPAUCVariantCopy@@@Z CBaseEntity::vfunc121
 0x1000ab55 func   ?sub_101eddd0@@YAXH@Z sub_101eddd0
 0x1000ab5a func   ?sub_102d8a90@CUnknown102d8a90@@QAEPAUSVec3@@XZ CUnknown102d8a90::sub_102d8a90
 0x1000ab69 func   ?vfunc243@CAuspexAura@@QAEXPAVCBaseEntity@@HH@Z CAuspexAura::vfunc243
