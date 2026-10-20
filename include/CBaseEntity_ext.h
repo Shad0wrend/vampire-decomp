@@ -13,3 +13,4 @@
 	void sub_1009ef50(int index);	// "CBaseEntity::SetAimEntByIndex": scope trace (entity name), SetAimEnt(CBaseEntity::Instance(index)) with both nested Instance scope traces
 	void *sub_1003cf50(int type);	// "CBaseEntity::CreateDataObject": scope trace (entity name), AddDataObjectType(type), then the inlined CDataObjectAccessSystem::CreateDataObject / IsValidType (scope traces): slot 2(this) of the data object type table entry at 0x106bd938[type] for a type in 0..31 that has one, else null
 	void *sub_1003cd50(int type);	// "CBaseEntity::GetDataObject": scope trace (entity name), null unless HasDataObjectType(type), then the inlined CDataObjectAccessSystem::GetDataObject / IsValidType (scope traces): slot 1(this) of the table entry at 0x106bd938[type] for a type in 0..31 that has one, else null
+	bool sub_1009e430(const char *szKeyName, const char *szValue);	// CBaseEntity::KeyValue (slot 110) as a direct call from the CDecal override
