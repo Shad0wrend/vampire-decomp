@@ -3353,6 +3353,7 @@
 0x100145ce func   _info_node_tzimisce_claw_right info_node_tzimisce_claw_right
 0x100145dd func   ?vfunc5@CItemGMilligansBuisnesscard@@QAEPAV1@I@Z CItemGMilligansBuisnesscard::vfunc5
 0x10014605 func   ?sub_102237c0@CUnknown102237c0@@QAEXH@Z CUnknown102237c0::sub_102237c0
+0x10014619 func   ?sub_10215960@CPropButton@@QAEXPAUinputdata_t@@@Z CPropButton::sub_10215960
 0x1001461e func   ?sub_1012c9c0@@YAPAUTEnt@@PAU1@@Z sub_1012c9c0
 0x10014628 func   ?vfunc119@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc119
 0x1001464b func   ?sub_10324500@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10324500

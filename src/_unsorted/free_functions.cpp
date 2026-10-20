@@ -26774,6 +26774,27 @@ void CUnknown10215910::sub_10215910(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10215960 size=0x64
+#include "CPropButton.h"
+#include "inputdata_t.h"
+
+// the input's integer value (0 unless the variant holds an integer)
+__forceinline int VariantAsInt(variant_t *pValue)
+{
+    if (pValue->fieldType == 4)
+        return pValue->iValue;
+    return 0;
+}
+
+#define CLAMP(x, lo, hi) ((x) > (hi) ? (hi) : ((x) < (lo) ? (lo) : (x)))
+
+// TARGET: CPropButton::sub_10215960
+void CPropButton::sub_10215960(inputdata_t *pData)
+{
+    sub_10215ad0(CLAMP(VariantAsInt(&pData->value) - 1, 0, m_nPositions - 1), pData->pActivator);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10215bd0 size=0x43
 #include "CPropModelState.h"
 void *sub_100aa720(int size);
