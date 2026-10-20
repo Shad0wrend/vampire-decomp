@@ -12181,6 +12181,25 @@ int sub_100f52e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f53e0 size=0x43
+#include "CEntityFlame.h"
+void *sub_100aa720(int size);
+extern char g_105660a0[];
+
+// TARGET: entityflame
+extern "C" CBaseEntity *entityflame()
+{
+	void *mem = sub_100aa720(0x458);
+	CEntityFlame *p;
+	if (mem)
+		p = ((CEntityFlame *)mem)->sub_100f5450();
+	else
+		p = 0;
+	p->vfunc106(g_105660a0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5600 size=0xd
 #include "CUnknown100f5600.h"
 
