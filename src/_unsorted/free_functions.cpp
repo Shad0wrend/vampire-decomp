@@ -8673,6 +8673,52 @@ int CBaseAnimating::sub_1008d7c0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008d990 size=0xf0
+#include "ScopeTrace.h"
+#include "CBaseAnimating.h"
+
+struct StudioIncludeModel	// 0x74 bytes
+{
+	char m_pad00[8];
+	int m_nBase;	// 0x08
+	int m_nCount;	// 0x0c
+	char m_pad10[0x74 - 0x10];
+};
+
+struct StudioHdr
+{
+	char m_pad0000[0x110];
+	int m_nLocalSeq;	// 0x110
+	char m_pad0114[0x194 - 0x114];
+	int m_nIncludeModels;	// 0x194
+	int m_nIncludeIndex;	// 0x198
+
+	StudioIncludeModel *IncludeModel(int i) { return (StudioIncludeModel *)((char *)this + m_nIncludeIndex) + i; }
+};
+
+int sub_100c7480(StudioHdr *pHdr, int sequence);
+
+int CBaseAnimating::sub_1008d990(int sequence)
+{
+	ScopeTrace trace("CBaseAnimating::GetSeqDesc", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	for (int i = -1; i < 2; i++) {
+		StudioHdr *pHdr = (StudioHdr *)sub_100952d0(i);
+		if (pHdr) {
+			int pDesc = sub_100c7480(pHdr, sequence);
+			if (pDesc)
+				return pDesc;
+			int nSkip;
+			if (pHdr->m_nIncludeModels)
+				nSkip = pHdr->IncludeModel(pHdr->m_nIncludeModels - 1)->m_nBase + pHdr->IncludeModel(pHdr->m_nIncludeModels - 1)->m_nCount;
+			else
+				nSkip = pHdr->m_nLocalSeq;
+			sequence -= nSkip;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008dc40 size=0xc0
 #include "CBaseAnimating.h"
 

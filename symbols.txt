@@ -2090,6 +2090,7 @@
 0x1000b4ba func   ?vfunc50@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc50
 0x1000b4e7 func   ?vfunc440@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc440
 0x1000b4ec func   ?sub_1025b5b0@@YAHXZ sub_1025b5b0
+0x1000b4f6 func   ?sub_1008d990@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_1008d990
 0x1000b4fb func   ?vfunc5@CItemGBertramsCD@@QAEPAV1@I@Z CItemGBertramsCD::vfunc5
 0x1000b532 func   ?sub_1004b990@CMem16b_t@@QAEXH@Z CMem16b_t::sub_1004b990
 0x1000b546 func   ??0StatDefault60@@QAE@H@Z StatDefault60::StatDefault60
