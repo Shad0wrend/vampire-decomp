@@ -823,6 +823,28 @@ float CAI_BaseNPCTroika::vfunc418(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c1c10 size=0x96
+#include "CAI_BaseNPCTroika.h"
+extern char *(__cdecl *g_109f3890)(char *, const char *, int);
+
+// TARGET: CAI_BaseNPCTroika::vfunc347
+bool CAI_BaseNPCTroika::vfunc347(int event, char *pszName, float *pA, float *pB, float *pC, float *pD)
+{
+    if (event == 1) {
+        g_109f3890(pszName, "Knockback", 0x40);
+        *pA = 1.0f;
+        *pB = 0.25f;
+        *pC = 0.8f;
+        *pD = 0.5f;
+        int seq = sub_1008dd30(*(int *)((char *)this + 0x6068), -1);
+        if (seq >= 0)
+            *pC += sub_10091080(seq);
+        return true;
+    }
+    return sub_10107120(event, pszName, pA, pB, pC, pD);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c5470 size=0x38
 #include "CAI_BaseNPCTroika.h"
 

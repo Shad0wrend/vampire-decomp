@@ -3150,6 +3150,7 @@
 0x10011bd0 func   ?sub_100b79c0@@YIPADPAD@Z sub_100b79c0
 0x10011bf8 func   ?vfunc5@CItemGHorrorTape_1@@QAEPAV1@I@Z CItemGHorrorTape_1::vfunc5
 0x10011c07 func   ?sub_101eac50@CUnknown101eac50@@QAEXXZ CUnknown101eac50::sub_101eac50
+0x10011c1b func   ?vfunc347@CAI_BaseNPCTroika@@QAE_NHPADPAM111@Z CAI_BaseNPCTroika::vfunc347
 0x10011c2a func   ?vfunc5@CGameText@@QAEPAV1@I@Z CGameText::vfunc5
 0x10011c43 func   ?vfunc5@CFuncRotating@@QAEPAV1@I@Z CFuncRotating::vfunc5
 0x10011c52 func   ?vfunc4@CGameMovement@@QAEPAMDH@Z CGameMovement::vfunc4
