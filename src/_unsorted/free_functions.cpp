@@ -48270,6 +48270,48 @@ void CBaseCombatCharacter::sub_10340bd0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10341030 size=0xb6
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_105387dc[];
+extern char g_106b8540[];
+extern char g_1062352c[];
+void __cdecl sub_101cebc0(void *pObj, int a, int amount);
+
+struct ScopeTraceGuard {
+	ScopeTraceGuard(const char *a, const char *b, const char *c)
+	{
+		g_109f3620[*g_109f3680].a = a;
+		g_109f3620[*g_109f3680].b = b;
+		g_109f3620[*g_109f3680].c = c;
+		++*g_109f3680;
+	}
+	~ScopeTraceGuard() { --*g_109f3680; }
+};
+
+struct MoneyHolder {
+	char pad0[0xa8];
+	void *m_pObj;
+	char pad1[0x13d8 - 0xac];
+	int m_nMoney;
+};
+
+void CBaseCombatCharacter::sub_10341030(int amount)
+{
+	const char *name = this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc;
+	ScopeTraceGuard trace(g_1062352c, name, g_106b8540);
+	MoneyHolder *p = (MoneyHolder *)this;
+	p->m_nMoney -= amount;
+	if (p->m_nMoney < 0)
+		p->m_nMoney = 0;
+	void *pObj = p->m_pObj;
+	if (pObj && amount && *(int *)((char *)pObj + 0x1eb8) == 0)
+		sub_101cebc0(pObj, 0xb, amount);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10341120 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
