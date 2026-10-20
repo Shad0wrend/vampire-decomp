@@ -1282,6 +1282,7 @@
 0x100085bc func   ?sub_102f45f0@CUnknown102f45f0@@QAEXPBUCachedPos_t@@HH@Z CUnknown102f45f0::sub_102f45f0
 0x100085e4 func   ?vfunc481@CHL2_Player@@UAEMXZ CHL2_Player::vfunc481
 0x100085f3 func   ?sub_1028eb30@Holder@@QAEXHPAUVec3@@PAUHandleObj@@D@Z Holder::sub_1028eb30
+0x1000860c func   ?vfunc448@CNPC_VMingXiao@@QAEXH@Z CNPC_VMingXiao::vfunc448
 0x10008620 func   ?sub_1029ca30@@YGMM@Z sub_1029ca30
 0x10008634 func   ?vfunc5@CNPC_VYukie@@QAEPAV1@I@Z CNPC_VYukie::vfunc5
 0x1000864d func   ?sub_10211970@@YAPAHXZ sub_10211970

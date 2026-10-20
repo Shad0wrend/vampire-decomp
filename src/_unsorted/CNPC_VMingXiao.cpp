@@ -13,6 +13,30 @@ int CNPC_VMingXiao::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10394090 size=0x6c
+#include "CNPC_VMingXiao.h"
+struct CUnknown102e0a60 { void sub_102e0a60(int); };
+void CNPC_VMingXiao::vfunc448(int a)
+{
+    switch (*(int *)((char *)this + 0x673c)) {
+    case 3:
+    case 4:
+        (*(CUnknown102e0a60 **)((char *)this + 0x5d44))->sub_102e0a60(0x43340000);
+        break;
+    case 0:
+    case 1:
+    case 2:
+        goto other;
+    default:
+    other:
+        ((CUnknown10398d90 *)this)->sub_10398d90(0);
+        *(int *)((char *)this + 0x6718) = -1;
+        break;
+    }
+    sub_1029adb0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10396fd0 size=0x18
 #include "CNPC_VMingXiao.h"
 
