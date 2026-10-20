@@ -11,4 +11,5 @@ public:
 	int m_Aggressiveness;	// 0x484
 
 	void vfunc241(int a);	// slot 241 override: clamps the aggressiveness (valid 0..4, or 5) with a DevMsg, then CAI_GoalEntity::vfunc241(a)
+	void vfunc243(int a);	// slot 243 override: the same aggressiveness check, then CAI_GoalEntity::sub_102cdb70(a)
 };
