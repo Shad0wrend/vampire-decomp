@@ -5,16 +5,8 @@
 
 extern "C" int __cdecl atexit(void (__cdecl *)(void));
 void __cdecl sub_100031f7();	// the game's destructor stub of the static invalid handle in variant_t::Entity()
-
-struct variant_t_EHandle	// an entity handle; its constructor registers the destructor stub like the game's guarded static
-{
-	unsigned int m_Index;
-	variant_t_EHandle()
-	{
-		m_Index = 0xffffffff;
-		atexit(sub_100031f7);
-	}
-};
+extern unsigned char g_109f0afc;	// guard byte of that static
+extern unsigned int g_109f0b08;	// that static (an invalid entity handle)
 
 struct variant_t
 {
@@ -34,14 +26,19 @@ struct variant_t
 	void sub_100d0390(int type, void *pData);	// "variant_t::Set": stores the type and copies the value out of *pData according to it (1 dword, 3 dwords for vector types 3 and 14, a byte for 5, an entity pointer for 11 which becomes its handle, a handle for 12; unsupported types clear the value and the type)
 
 	// The entity of an EHANDLE variant (0 for other types or a stale handle); ppList is the address of the global
-	// entity list pointer. Other variants go through a function-local static invalid handle, like the game's inline copy.
+	// entity list pointer. Other variants go through the guarded static invalid handle of the game's inline copy
+	// (spelled out by hand: the guard, the handle and its atexit stub are the game's globals).
 	CGlobalEntityList_Ent *Entity(CGlobalEntityList **ppList)
 	{
 		unsigned int h;
 		if (fieldType != 12) {
-			static variant_t_EHandle s_hInvalid;
-			s_hInvalid.m_Index = 0xffffffff;
-			h = s_hInvalid.m_Index;
+			if (!(g_109f0afc & 1)) {
+				g_109f0afc |= 1;
+				g_109f0b08 = 0xffffffff;
+				atexit(sub_100031f7);
+			}
+			g_109f0b08 = 0xffffffff;
+			h = g_109f0b08;
 		} else {
 			h = eVal;
 		}
