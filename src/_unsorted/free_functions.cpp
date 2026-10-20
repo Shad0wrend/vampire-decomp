@@ -1793,6 +1793,36 @@ void CPhysicsPushedEntities::sub_10036b10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036d40 size=0xd0
+#include "CPhysicsPushedEntities.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CPhysicsPushedEntities::sub_10036d40(char bFlag, int a)
+{
+	g_109f3620[*g_109f3680].a = "CPhysicsPushedEntities::FinishPush";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_10036b10();
+	for (int i = m_rgMoved.m_Size - 1; i >= 0; i--) {
+		MovedEntity_t *pMoved = &m_rgMoved[i];
+		CBaseEntity *pEnt = pMoved->m_pEntity;
+		pMoved->m_pEntity->sub_100a53d0((int)pMoved->m_vecStartAbsOrigin);
+		((CEntityVSlots *)pMoved->m_pEntity)->slot232(0);
+		if (pMoved->m_pBlocker)
+			pEnt->sub_1003e6c0(pMoved->m_pBlocker, pMoved->m_pad10);
+		if (bFlag)
+			sub_10036bd0(pEnt, a);
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036e50 size=0x7e
 #include "CPhysicsPushedEntities.h"
 extern char g_106b8540[];

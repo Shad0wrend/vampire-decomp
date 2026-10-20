@@ -1160,6 +1160,7 @@
 0x10006e79 func   ?sub_101851a0@CUtlVector64@@QAEXH@Z CUtlVector64::sub_101851a0
 0x10006e88 func   ?vfunc141@CNPC_VZombie@@QAEXPAUCUnknown101c2a50@@HPAD@Z CNPC_VZombie::vfunc141
 0x10006e8d func   ?sub_10185600@@YIXPAH@Z sub_10185600
+0x10006ec9 func   ?sub_10036d40@CPhysicsPushedEntities@@QAEXDH@Z CPhysicsPushedEntities::sub_10036d40
 0x10006ed3 func   ?sub_1012f850@@YAMM@Z sub_1012f850
 0x10006ed8 func   ?vfunc5@CAI_ChangeHintGroup@@QAEPAV1@I@Z CAI_ChangeHintGroup::vfunc5
 0x10006edd func   ?sub_103ca1a0@CHintData_WW@@QAEXH@Z CHintData_WW::sub_103ca1a0
