@@ -810,6 +810,43 @@ void CBaseEntity::vfunc228(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6800 size=0xc0
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct SurfaceData
+{
+	char m_pad0000[0x70];
+	short m_nMaterial;	// 0x70
+};
+
+class IPhysicsSurfaceProps
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual SurfaceData *GetSurfaceData(int surfaceProps);	// slot 5
+};
+extern IPhysicsSurfaceProps *g_10723944;
+void sub_100093fe(CBaseEntity *pEnt, void *pObject, float energy, int surfaceProps);
+
+void CBaseEntity::vfunc231(void *pObject, float energy, int surfaceProps, int surfacePropsHit)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::VPhysicsFriction";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	SurfaceData *pHit = g_10723944->GetSurfaceData(surfacePropsHit);
+	SurfaceData *pSurf = g_10723944->GetSurfaceData(surfaceProps);
+	if (pHit->m_nMaterial != 0x58 && pSurf->m_nMaterial != 0x58)
+		sub_100093fe(this, pObject, energy, surfaceProps);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6ad0 size=0xa3
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

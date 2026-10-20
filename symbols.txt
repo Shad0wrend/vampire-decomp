@@ -2292,6 +2292,7 @@
 0x1000c8ec func   ?sub_103079c0@@YAHPBD@Z sub_103079c0
 0x1000c90f func   ?sub_10316890@CUnknown10316890@@QAEXHVVector@@0@Z CUnknown10316890::sub_10316890
 0x1000c91e func   _item_p_occult_dodge item_p_occult_dodge
+0x1000c932 func   ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z CBaseEntity::vfunc231
 0x1000c946 func   ?sub_10032e70@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_10032e70
 0x1000c94b func   ?sub_10349a20@UtlVec8@@QAEPAU1@HH@Z UtlVec8::sub_10349a20
 0x1000c95f func   ?sub_102a0eb0@@YIXPAD@Z sub_102a0eb0
