@@ -10,4 +10,15 @@ public:
 
 	void sub_1000f53d();	// destructor body
 	void vfunc5();	// as in CFireSmoke (transplant)
+	void vfunc4(void *pFilter, int delay);	// slot 4 "Create": sends the effect to the recipients of the filter (called directly by the TE_BreakModel wrapper)
+
+	char m_pad0004[8];
+	float m_vecOrigin[3];	// 0x0c
+	float m_angRotation[3];	// 0x18
+	float m_vecSize[3];	// 0x24
+	int m_nField30;	// 0x30
+	int m_nField34;	// 0x34
+	int m_nField38;	// 0x38
+	int m_nField3c;	// 0x3c
+	int m_nField40;	// 0x40
 };
