@@ -14594,6 +14594,34 @@ bool sub_100e7f70(char *str, int maxLen, const char *find, const char *replace)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e8ef0 size=0x9b
+#include "CDialogDependency.h"
+#include "CVDmg_t.h"
+#include <string.h>
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+// TARGET: CDialogDependency::sub_100e8ef0
+void CDialogDependency::sub_100e8ef0(int a)
+{
+    g_109f3620[*g_109f3680].a = "CDialogDependency::Init";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    ((CVDmgBlock16_t *)&m_nType)->sub_10204270();
+    memset(m_a1c, 0, sizeof(m_a1c));
+    memset(m_a11c, 0, sizeof(m_a11c));
+    m_nIndent = 0;
+    m_n21c = 0;
+    m_n220 = 0;
+    m_n224 = -1;
+    m_pad0000 = a;
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ea1e0 size=0xb1
 #include "CUnknown100ea1e0.h"
 extern "C" unsigned int strlen(const char *);
