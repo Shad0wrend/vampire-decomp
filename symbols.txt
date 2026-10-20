@@ -2136,6 +2136,7 @@
 0x1000e2b9 func   ?sub_10382b30@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::sub_10382b30
 0x1000e2e1 func   ?sub_101d58b0@Loader@@QAEXPBD@Z Loader::sub_101d58b0
 0x1000e2e6 func   ?vfunc5@CItemMWallet@@QAEPAV1@I@Z CItemMWallet::vfunc5
+0x1000e2ff func   ?sub_100427c0@UtlMem@@QAEXXZ UtlMem::sub_100427c0
 0x1000e327 func   ?vfunc504@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc504
 0x1000e345 func   _env_steam env_steam
 0x1000e34f func   _env_shake env_shake
