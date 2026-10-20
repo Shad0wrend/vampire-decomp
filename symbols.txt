@@ -3128,6 +3128,7 @@
 0x1001442a func   ?sub_10401210@@YAHXZ sub_10401210
 0x1001443e func   _item_w_chang_blade item_w_chang_blade
 0x10014448 func   _env_dustpuff env_dustpuff
+0x100144ac func   ?sub_1007f650@UtlMem@@QAEXXZ UtlMem::sub_1007f650
 0x100144bb func   ?vfunc5@CBasePlayer@@QAEPAV1@I@Z CBasePlayer::vfunc5
 0x100144c5 func   _item_p_occult_hacking item_p_occult_hacking
 0x100144cf func   _item_w_chang_ghost item_w_chang_ghost
