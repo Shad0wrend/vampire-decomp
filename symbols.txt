@@ -2434,6 +2434,7 @@
 0x1000e9fd func   ?sub_102e2710@@YIXPAUCOwner@@@Z sub_102e2710
 0x1000ea11 func   ?sub_1009f200@CBaseEntity@@QAEPBDXZ CBaseEntity::sub_1009f200
 0x1000ea16 func   ?sub_10264000@CUtlVector56@@QAEHHPBX@Z CUtlVector56::sub_10264000
+0x1000ea84 func   ?vfunc295@CPayphone@@QAE_NPAX@Z CPayphone::vfunc295
 0x1000ea93 func   ?vfunc223@CPhysBox@@QAE_NXZ CPhysBox::vfunc223
 0x1000ea98 func   ?sub_1024d2c0@@YIXPAXHH@Z sub_1024d2c0
 0x1000eaa2 func   ?sub_103fd190@@YAHXZ sub_103fd190
