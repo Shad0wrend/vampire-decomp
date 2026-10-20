@@ -30385,6 +30385,16 @@ void CUtlVector4::sub_102d4210(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d42d0 size=0x34
+#include "UtlVec8.h"
+void UtlVec8::sub_102d42d0(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&m_pMemory[(elem + num) * 4], &m_pMemory[elem * 4], numToMove * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d4320 size=0x11
 void sub_102d4320(int *dst, const int *src)
 {
