@@ -2258,6 +2258,7 @@
 0x1000dd4b func   ?sub_100b5b00@CBaseFlex@@QAEXPBM@Z CBaseFlex::sub_100b5b00
 0x1000dd5f func   ?sub_1019c950@@YAXPAH@Z sub_1019c950
 0x1000dd69 func   ?sub_10359de0@@YADXZ sub_10359de0
+0x1000ddaf func   ?vfunc366@CNPC_VSabbatLeader@@QAEHHHH@Z CNPC_VSabbatLeader::vfunc366
 0x1000dddc func   ?sub_102f1690@CUnknown102ee120_x@@QAE_NPAUHelperParams102f1690@@@Z CUnknown102ee120_x::sub_102f1690
 0x1000ddeb func   _info_node_cover_corner info_node_cover_corner
 0x1000ddf0 func   ?sub_10227320@S@@QAEXPAUinputdata_t@@@Z S::sub_10227320

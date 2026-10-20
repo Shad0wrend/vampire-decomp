@@ -122,6 +122,27 @@ int CNPC_VSabbatLeader::sub_103a7390(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a76d0 size=0x6f
+#include "CNPC_VSabbatLeader.h"
+
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_106b8540[];
+
+// TARGET: CNPC_VSabbatLeader::vfunc366
+int CNPC_VSabbatLeader::vfunc366(int a, int b, int c)
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VSabbatLeader::HandleInteraction";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	int r = sub_10001b27(a, b, c);
+	--*g_109f3680;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a7760 size=0x64
 #include "CNPC_VSabbatLeader.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
