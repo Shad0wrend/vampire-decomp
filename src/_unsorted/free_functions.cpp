@@ -7805,6 +7805,34 @@ CUtlMemory60 *CUtlMemory60::sub_10097b00(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097bd0 size=0x7e
+#include "CBaseTransmitProxy.h"
+struct S_sub { void sub_1000fe7f(int); };
+extern CGlobalEntityList *g_10566458;
+extern int vt_10450004[];
+
+static inline char *GetEnt(CBaseTransmitProxy *t)
+{
+    unsigned h = t->m_hEnt;
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *e = &g_10566458->m_Slots[h & 0x1fff];
+        if (e->m_Serial == (h >> 13))
+            return (char *)e->m_pEntity;
+    }
+    return 0;
+}
+
+void CBaseTransmitProxy::sub_10097bd0()
+{
+    m_vptr = vt_10450004;
+    if (GetEnt(this)) {
+        m_sUnk = -1;
+        char *p = GetEnt(this);
+        ((S_sub *)(p + 0x2d4))->sub_1000fe7f(0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098810 size=0xb
 CUnknown10098810 *CUnknown10098810::sub_10098810()
 {
