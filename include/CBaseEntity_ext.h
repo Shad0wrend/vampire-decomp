@@ -34,3 +34,4 @@
 	void vfunc144(void *pInfo);	// "CBaseEntity::Event_Killed": scope trace (entity name), take-damage mode (+0x1fc) = 0, +0x200 = 2, then sub_101cd940(this); takes one stack argument (the damage info), unused
 	void sub_100a8ef0();	// "CBaseEntity::ResetScriptedSoundOverride": scope trace (entity name), when the dword at +0x108 is set asks the global at 0x106eb5d8 (sub_100f7770(0, dword, this, 0)) for the entity, then SetSoundOverrideEnt(entity or null)
 	void sub_1009d980(char bAddAsDefault);	// "CBaseEntity::CBaseEntity" body (entity base constructor, stub 0x100090fc): called directly by the derived constructors before they store their vftable
+	void sub_100b2e30(const float *pVec);	// worker taking a vector (called through the stub at 0x10013728), e.g. SetAbsVelocity-like
