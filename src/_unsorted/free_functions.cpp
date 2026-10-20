@@ -31721,6 +31721,49 @@ struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x101e3cf0 size=0x59
+struct CUnknown101e3cfEnt {
+    char m_pad0000[0x31];
+    char m_b31;
+};
+
+struct CUnknown101e3cfObj {
+    char m_pad0000[0xeb4];
+    int m_eb4;
+};
+
+struct CUnknown101e3cf0 {
+    char m_pad0000[8];
+    char *m_pArr;
+    char m_pad0c[0x18 - 0xc];
+    char m_b18;
+    int sub_101e1870(int a, int b);
+    void sub_101e3cf0(CUnknown101e3cfObj *obj);
+};
+
+void __stdcall sub_10003945(CUnknown101e3cfObj *obj, int r);
+
+// TARGET: sub_101e3cf0
+void CUnknown101e3cf0::sub_101e3cf0(CUnknown101e3cfObj *obj)
+{
+    if (m_b18 != 0 && obj->m_eb4 != 0) {
+        int mask = 1;
+        int off = 0;
+        do {
+            if ((obj->m_eb4 & mask) != 0) {
+                CUnknown101e3cfEnt *ent = *(CUnknown101e3cfEnt **)(m_pArr + off);
+                if (ent->m_b31 != 0) {
+                    int r = sub_101e1870(mask, 1);
+                    sub_10003945(obj, r);
+                }
+            }
+            off += 4;
+            mask += mask;
+        } while (off < 0x78);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e48b0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
