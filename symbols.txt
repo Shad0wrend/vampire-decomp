@@ -3005,6 +3005,7 @@
 0x1001373c func   ?sub_100b97e0@Obj@@QAEXPBUVec3@@MM@Z Obj::sub_100b97e0
 0x1001375a func   ?vfunc546@CNPC_VTzimisceHeadClaw@@QAEHH@Z CNPC_VTzimisceHeadClaw::vfunc546
 0x1001376e func   _item_k_oceanhouse_basement_key item_k_oceanhouse_basement_key
+0x10013773 func   ?sub_10185100@UtlMem@@QAEXXZ UtlMem::sub_10185100
 0x10013778 func   ??0StatDefault2@@QAE@H@Z StatDefault2::StatDefault2
 0x1001379b func   _info_teleport_destination info_teleport_destination
 0x100137e1 func   ?vfunc103@CSkyCamera@@UAEXXZ CSkyCamera::vfunc103
