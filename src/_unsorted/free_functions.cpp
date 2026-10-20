@@ -7721,6 +7721,32 @@ int S1007a270::sub_1007a270(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a2c0 size=0x1f
+#include "CUnknown1007a2c0.h"
+
+namespace block_1007a2a0 {
+    struct CUnknown1007a2c0Unit : CUnknown1007a2c0 {
+        int sub_1007a2a0();
+    };
+    int CUnknown1007a2c0Unit::sub_1007a2a0()
+    {
+        return m_nCount;
+    }
+}
+
+// TARGET: sub_1007a2c0
+void *CUnknown1007a2c0::sub_1007a2c0(int index)
+{
+    if (index >= 0) {
+        int count = ((block_1007a2a0::CUnknown1007a2c0Unit *)this)->sub_1007a2a0();
+        if (index < count) {
+            return (void *)m_pItems[index];
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b9b0 size=0x19
 struct S1007b9b0 {
 	char m_pad[0xac];

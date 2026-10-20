@@ -3366,6 +3366,7 @@
 0x100117a2 func   ?vfunc626@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc626
 0x100117ac func   ?sub_1020b000@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z CBaseVampireSkillEntity::sub_1020b000
 0x100117cf func   ?sub_100eb250@@YAXPAUCBlock4k@@PBU1@@Z sub_100eb250
+0x100117e3 func   ?sub_1007a2c0@CUnknown1007a2c0@@QAEPAXH@Z CUnknown1007a2c0::sub_1007a2c0
 0x100117f7 func   ?vfunc5@CItemGWarrLedger1@@QAEPAV1@I@Z CItemGWarrLedger1::vfunc5
 0x10011824 func   ?sub_101e8f20@CUnknown101e8f20@@QAEHPAVCBaseCombatCharacter@@@Z CUnknown101e8f20::sub_101e8f20
 0x10011829 func   _item_g_jumbles_flyer item_g_jumbles_flyer
