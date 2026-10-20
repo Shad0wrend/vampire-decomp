@@ -693,6 +693,7 @@
 0x10005209 func   ?sub_103f3770@@YAHXZ sub_103f3770
 0x10005213 func   ?sub_101d4f20@CUnknown101d4f20@@QAEXPAUCUnknown101d4f20_Value@@@Z CUnknown101d4f20::sub_101d4f20
 0x10005245 func   ?sub_10221ca0@QuestJournal@@QAEDH@Z QuestJournal::sub_10221ca0
+0x1000524f func   ?vfunc245@CNPC_VPlayerController@@QAEXHHHHH@Z CNPC_VPlayerController::vfunc245
 0x10005254 func   ?sub_1033df80@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033df80
 0x10005263 func   ?sub_1024b370@CUnknown1024b370@@QAEXXZ CUnknown1024b370::sub_1024b370
 0x10005295 func   ?vfunc5@CSimplePhysicsProp@@UAEPAV1@I@Z CSimplePhysicsProp::vfunc5
