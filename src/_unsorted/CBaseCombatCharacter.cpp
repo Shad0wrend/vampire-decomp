@@ -100,6 +100,39 @@ int __fastcall sub_10323c20(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10324430 size=0x98
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CActivityNotifier {
+	void sub_101f6010(CBaseCombatCharacter *pChar, int newAct, int oldAct);
+};
+extern CActivityNotifier g_1073dd58;
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+void CBaseCombatCharacter::sub_10324430(int activity)
+{
+	CScopeTrace trace("CBaseCombatCharacter::SetActivity", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	int *pAct = (int *)((char *)this + 0xfec);
+	if (activity != *pAct)
+		g_1073dd58.sub_101f6010(this, activity, *pAct);
+	*pAct = activity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103251c0 size=0xff
 #include "CBaseAnimating.h"
 
