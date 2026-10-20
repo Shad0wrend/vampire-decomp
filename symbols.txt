@@ -172,6 +172,7 @@
 0x10001ce4 func   ?sub_1023cde0@@YAXPAUSWorldInfo@@@Z sub_1023cde0
 0x10001d02 func   ?sub_102c65d0@CUtlVector4@@QAEHPBH@Z CUtlVector4::sub_102c65d0
 0x10001d16 func   ??1CMeasureSectionInstance@@QAE@XZ CMeasureSectionInstance::~CMeasureSectionInstance
+0x10001d2a func   ?sub_101916f0@CHolderPtr36c@@QAEXH@Z CHolderPtr36c::sub_101916f0
 0x10001d43 func   _npc_VZombie npc_VZombie
 0x10001d61 func   ?sub_10201980@CVStatList_t@@QAEHXZ CVStatList_t::sub_10201980
 0x10001d6b func   ?vfunc335@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc335

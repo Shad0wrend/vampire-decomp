@@ -25248,6 +25248,28 @@ int sub_10190d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101916f0 size=0x12
+struct CVirtSlots2 {
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2();
+};
+
+struct CHolderPtr36c {
+    char pad_0000[0x36c];
+    CVirtSlots2 *m_p36c;
+    void sub_101916f0(int unused);
+};
+
+// TARGET: sub_101916f0
+void CHolderPtr36c::sub_101916f0(int unused)
+{
+    if (m_p36c != 0) {
+        m_p36c->vfunc2();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192800 size=0x43
 #include "CPropMover.h"
 void *sub_100aa720(int size);
