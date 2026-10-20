@@ -21861,6 +21861,34 @@ bool __stdcall sub_1019e740(EntVt *pEnt, int attachment, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0830 size=0x89
+#include "CSave.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct SaveEntSlots { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void *slot4(); };
+struct CSaveEdict { char m_pad[0x40]; SaveEntSlots *m_pUnk; };
+
+int CSave::sub_101a0830(CSaveEdict *pEdict)
+{
+	if (!pEdict)
+		return -1;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::Instance";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	void *ent;
+	if (pEdict->m_pUnk)
+		ent = pEdict->m_pUnk->slot4();
+	else
+		ent = 0;
+	(*g_109f3680)--;
+	return sub_101a08f0(ent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1140 size=0x110
 #include "CSave.h"
 
