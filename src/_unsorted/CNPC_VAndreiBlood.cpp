@@ -7,7 +7,7 @@
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VAndreiBlood::vfunc5
-CNPC_VAndreiBlood *CNPC_VAndreiBlood::vfunc5(unsigned int flags)
+CAI_BaseNPC *CNPC_VAndreiBlood::vfunc5(unsigned int flags)
 {
 	sub_10004110();
 	if (flags & 1)
