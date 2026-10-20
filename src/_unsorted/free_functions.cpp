@@ -26937,6 +26937,31 @@ S4 *S4::sub_10202c40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202c80 size=0x6d
+#include "CUnknown10202c80.h"
+
+extern "C++" void __cdecl operator delete(void *);
+
+void CUnknown10202c80::sub_10202c80()
+{
+    if (m_pData) {
+        for (int i = 0; i < m_count; i++) {
+            CUnknown102029c0 *p = m_pData[i];
+            if (p) {
+                p->~CUnknown102029c0();
+                operator delete(p);
+            }
+            m_pData[i] = 0;
+        }
+        operator delete(m_pData);
+        m_pData = 0;
+    }
+    m_count = 0;
+    m_unk4 = 0;
+    m_unk0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203190 size=0x66
 #include "CUnknown102029c0.h"
 struct StatOwner2 {
