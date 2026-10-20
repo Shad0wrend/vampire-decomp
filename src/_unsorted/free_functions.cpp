@@ -34819,6 +34819,30 @@ struct CUnknown1025d820 { int a; CUnknown1025d820* sub_1025d820(); };
 CUnknown1025d820* CUnknown1025d820::sub_1025d820() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x1025d880 size=0x87
+struct S1025d9d0
+{
+	char m_data[0x28];
+	S1025d9d0 *sub_1025d9d0(int a, const char *pszName);	// constructor body (stub 0x10007563)
+};
+
+extern S1025d9d0 *g_1090fbec;
+extern S1025d9d0 *g_1090fbf0;
+extern S1025d9d0 *g_1090fbf4;
+
+void *__cdecl operator new(unsigned int);
+
+void sub_1025d880()
+{
+	S1025d9d0 *p = (S1025d9d0 *)operator new(0x28);
+	g_1090fbec = p ? p->sub_1025d9d0(2, "Normal") : 0;
+	p = (S1025d9d0 *)operator new(0x28);
+	g_1090fbf0 = p ? p->sub_1025d9d0(2, "Player") : 0;
+	p = (S1025d9d0 *)operator new(0x28);
+	g_1090fbf4 = p ? p->sub_1025d9d0(2, "Boss") : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d940 size=0x6f
 struct S1025 {
 	void sub_1000ce69();
