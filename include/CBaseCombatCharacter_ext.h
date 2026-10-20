@@ -53,5 +53,5 @@
 	bool sub_10345d00();	// "CBaseCombatCharacter::IsHoldingMeleeWeapon": scope trace (entity name), true when the active weapon exists and its flags (weapon slot 360) have bit 15 or 16 set
 	virtual void vfunc111();	// slot 111 "CBaseCombatCharacter::MemberSync...": scope trace (entity name), updates the stat list manager at +0x13a8 with the edict index (engine slot 35 of the edict at +0x2e0), then stores IsMale() (zero-extended) at +0x13cc
 	void sub_103419c0(inputdata_t *data);	// "CBaseCombatCharacter::InputChang...": scope trace (entity name), then calls sub_1000b6a9(this, +-1) |integer value| times (sign of the value) when the input's type is 4
-	void sub_10340c90(inputdata_t *data);	// "CBaseCombatCharacter::InputMoneyAdd": scope trace (entity name), when the input holds a non-zero integer (type 4) calls sub_10340e50(that integer)
-	void sub_10340e50(int amount);	// the money adder behind InputMoneyAdd
+	void sub_10340d70(inputdata_t *data);	// "CBaseCombatCharacter::InputMoney...": scope trace (entity name), when the input's type is 4 and its integer is non-zero calls sub_10341030(integer)
+	void sub_10341030(int amount);	// called through the stub at 0x1000a3d0
