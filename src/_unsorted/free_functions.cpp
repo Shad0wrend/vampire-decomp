@@ -7891,6 +7891,37 @@ void CBaseEntity::sub_1009c5f0(int a, const char *fmt, const int *array, int cou
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c720 size=0xe9
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_105550d4[];
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern char g_105461f0[];
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+void CBaseEntity::sub_1009c720(int a, const char *fmt, const CBaseEntityColor32 *array, int count)
+{
+    char buf[256];
+    const char *name;
+    if (this)
+        name = m_name26c ? m_name26c : g_106b8540;
+    else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_105550d4;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    int len = sprintf(buf, fmt);
+    char *p = buf + len;
+    for (int i = 0; i < count; i++, array++) {
+        sprintf(p, g_105461f0, i);
+        sub_1009bef0(a, (int)buf, *array);
+    }
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009d1e0 size=0x86
 #include "CBaseEntity.h"
 
