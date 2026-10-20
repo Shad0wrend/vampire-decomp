@@ -17923,6 +17923,36 @@ int CUnknown1017cb80::sub_1017cb80(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017cef0 size=0x79
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+void sub_10014614(CBaseEntity *pEnt);
+
+inline bool BitSet(unsigned int v, int n)
+{
+	return ((v >> n) & 1) != 0;
+}
+
+void CBasePlayer::sub_1017cef0(CBaseEntity *pEnt)
+{
+	CBaseEntity *pOld = sub_1000306c();
+	if (pEnt) {
+		int edict = pEnt->m_pEdict2e0;
+		int index = g_1070b22c->vfunc35(edict);
+		*(int *)((char *)this + 0x1ec4) = index;
+		*(unsigned int *)((char *)this + 0x19b4) = *pEnt->vfunc1();
+	} else {
+		*(int *)((char *)this + 0x1ec4) = 0;
+		*(unsigned int *)((char *)this + 0x19b4) = 0xffffffff;
+	}
+	if (pOld != pEnt && pOld && BitSet(*(unsigned int *)((char *)pOld + 0x204), 2))
+		sub_10014614(pOld);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017cf90 size=0x6f
 struct EntInfo { void *ent; unsigned int serial; int pad; };
 struct EntList {
