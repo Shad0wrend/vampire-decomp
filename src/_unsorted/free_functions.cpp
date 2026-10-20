@@ -9666,6 +9666,35 @@ void *CBaseAnimating::sub_100952d0(int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100955c0 size=0xd6
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+#define AV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define AV100(p) AV(p##0) AV(p##1) AV(p##2) AV(p##3) AV(p##4) AV(p##5) AV(p##6) AV(p##7) AV(p##8) AV(p##9)
+struct AnimSlots
+{
+    AV100(a0) AV100(a1) AV(a20)
+    virtual void b210(); virtual void b211(); virtual void b212(); virtual void b213(); virtual void b214(); virtual void b215(); virtual void b216();
+    virtual float *vfunc217();
+    virtual void b218();
+    virtual float *vfunc219();
+    AV(c22) AV(c23) AV(c24)
+    virtual void d250(); virtual void d251(); virtual void d252(); virtual void d253(); virtual void d254(); virtual void d255(); virtual void d256();
+    virtual void vfunc257(void *p, int n);
+};
+extern char g_10550124[];
+int sub_100c47d0(void *pHdr, int a, int b, float *pAngles, float *pOrigin, int n, void *pBuf);
+int CBaseAnimating::sub_100955c0()
+{
+    char buf[0x41a0];
+    ScopeTrace t(g_10550124, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    void *pHdr = sub_100952d0(-1);
+    ((AnimSlots *)this)->vfunc257(buf, 12);
+    return sub_100c47d0(pHdr, *(int *)((char *)this + 0x6f0), *(int *)((char *)this + 0x174), ((AnimSlots *)this)->vfunc219(), ((AnimSlots *)this)->vfunc217(), 12, buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095be0 size=0xa0
 #include "CBaseAnimating.h"
 
