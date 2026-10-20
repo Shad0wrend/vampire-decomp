@@ -775,6 +775,33 @@ void CAI_BaseNPCTroika::vfunc506()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10297560 size=0xa1
+#include "CAI_BaseNPCTroika.h"
+
+int CAI_BaseNPCTroika::vfunc569(CBaseEntity *pHint)
+{
+    if ((*(unsigned int *)((char *)this + 0x14b8) & 0x200) == 0x200)
+        return 8;
+    if (pHint) {
+        switch (*(int *)((char *)pHint + 0x5dc)) {
+        case 100:
+            if (sub_10295460(0x1111, 0) != -1)
+                return 0x1111;
+            break;
+        case 101:
+            if (sub_10295460(0x110d, 0) != -1)
+                return 0x110d;
+            break;
+        case 0x27d8:
+            if (sub_10295460(0x1118, 0) != -1)
+                return 0x1118;
+            break;
+        }
+    }
+    return sub_10274aa0(pHint);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029b180 size=0xce
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseAnimating.h"
