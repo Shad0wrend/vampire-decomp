@@ -2073,6 +2073,7 @@
 0x1000b532 func   ?sub_1004b990@CMem16b_t@@QAEXH@Z CMem16b_t::sub_1004b990
 0x1000b546 func   ??0StatDefault60@@QAE@H@Z StatDefault60::StatDefault60
 0x1000b555 func   _item_k_oceanhouse_sewer_key item_k_oceanhouse_sewer_key
+0x1000b55a func   ?sub_101e9170@CUnknown101e9170@@QAEHPAUCUnknown101e9170Char@@HH@Z CUnknown101e9170::sub_101e9170
 0x1000b55f func   ?sub_101da960@CUnknown101da960@@QAEPBDH@Z CUnknown101da960::sub_101da960
 0x1000b5d7 func   ?sub_101c2a70@CUnknown101c2a90@@QAEMXZ CUnknown101c2a90::sub_101c2a70
 0x1000b5f0 func   ?vfunc4@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc4

@@ -30796,6 +30796,45 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9170 size=0xd9
+#include "CVStatList_t.h"
+#include "CUnknown101e9170.h"
+
+int CUnknown101e9170::sub_101e9170(CUnknown101e9170Char *pChar, int a, int b)
+{
+	CVStatList_t *pList;
+	for (int i = 0; i < pChar->m_nStatLists; i++) {
+		if (pChar->m_ppStatLists[i]->m_field10 == 0) {
+			pList = pChar->m_ppStatLists[i];
+			goto found;
+		}
+	}
+	{
+		static CVStatList_t s_default(-1);
+		pList = &s_default;
+	}
+found:
+	int n;
+	switch (pList->sub_10010609(0x20)) {
+	case 0:
+		n = m_nCost * b / 100;
+		break;
+	case 1:
+		n = (b - a) * m_nCost / 100;
+		break;
+	case 2:
+		n = m_nCost * a / 100;
+		break;
+	default:
+		n = 0;
+		break;
+	}
+	if (n < 1)
+		return 1;
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e94b0 size=0xa
 extern int g_1073a144;
 
