@@ -743,6 +743,7 @@
 0x10005f4c func   _info_node_shoot_at info_node_shoot_at
 0x10005f65 func   ?vfunc8@CAI_SystemHook@@QAEPAV1@I@Z CAI_SystemHook::vfunc8
 0x10005f6f func   ?sub_100ce750@CList_t@@QAE_NPAUCListNode_t@@PAXPBD@Z CList_t::sub_100ce750
+0x10005f83 func   ?sub_103eb700@@YAHXZ sub_103eb700
 0x10005f8d func   ?vfunc5@CDisciplineParticle@@UAEPAV1@I@Z CDisciplineParticle::vfunc5
 0x10005f97 func   ?vfunc510@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc510
 0x10005fa6 func   ?vfunc8@CAutoGameSystem@@UAEPAV1@I@Z CAutoGameSystem::vfunc8
