@@ -33598,6 +33598,22 @@ bool CUnknown101f6c30::sub_101f6c30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f7380 size=0x11
+extern int vt_10483be8[];
+
+struct CVTraitFields101f7380 {
+    void *vptr;
+    char pad0[0x10];
+    void *ptr14;
+    void sub_101f7380();
+};
+void CVTraitFields101f7380::sub_101f7380()
+{
+    vptr = vt_10483be8;
+    ::operator delete(ptr14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f74e0 size=0x8
 bool __fastcall sub_101f74e0(int *p) { bool r = p[3] != -1; return r; }
 // END FUNCTION

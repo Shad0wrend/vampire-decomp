@@ -1920,6 +1920,7 @@
 0x1000a335 func   ?sub_10429240@@YAPBDH@Z sub_10429240
 0x1000a358 func   ?sub_10381be0@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_10381be0
 0x1000a380 func   ?sub_100fa6b0@CUnknown10081e70@@QAEXH@Z CUnknown10081e70::sub_100fa6b0
+0x1000a38f func   ?sub_101f7380@CVTraitFields101f7380@@QAEXXZ CVTraitFields101f7380::sub_101f7380
 0x1000a394 func   _simple_physics_prop simple_physics_prop
 0x1000a399 func   ?sub_10246490@@YAXHPAH0@Z sub_10246490
 0x1000a3b7 func   ?sub_100fdd50@UtlMem7@@QAEXH@Z UtlMem7::sub_100fdd50
