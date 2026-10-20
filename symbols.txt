@@ -3685,6 +3685,7 @@
 0x10013089 func   _item_g_wireless_camera_4 item_g_wireless_camera_4
 0x100130b1 func   _npc_VAndreiBlood npc_VAndreiBlood
 0x100130ca func   ?sub_102db420@CUnknown102db420@@QAEXH@Z CUnknown102db420::sub_102db420
+0x100130de func   ?sub_101d59f0@CClanDocLoader@@QAEXXZ CClanDocLoader::sub_101d59f0
 0x100130e3 func   ?sub_103e8210@@YAHXZ sub_103e8210
 0x100130e8 func   ?vfunc5@CNPC_VVentrue@@QAEPAV1@I@Z CNPC_VVentrue::vfunc5
 0x100130ed func   ?sub_10078bf0@UtlMem@@QAEXXZ UtlMem::sub_10078bf0

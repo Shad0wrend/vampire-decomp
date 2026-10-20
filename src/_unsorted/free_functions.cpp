@@ -29787,6 +29787,25 @@ void Loader::sub_101d58b0(const char *dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d59f0 size=0x22
+extern char g_105a0fa0[];
+extern char g_105a0f90[];
+
+struct CClanDocLoader
+{
+    void sub_101d5660();
+    void sub_101d58b0(const char *pszName);
+    void sub_101d59f0();
+};
+
+void CClanDocLoader::sub_101d59f0()
+{
+    sub_101d5660();
+    sub_101d58b0(g_105a0fa0);
+    sub_101d58b0(g_105a0f90);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d5c40 size=0xa8
 extern "C" char *_strlwr(char *);
 extern "C" char *strstr(const char *, const char *);
