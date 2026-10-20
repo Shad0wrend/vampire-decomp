@@ -28,4 +28,5 @@ public:
 	void sub_100054bb(int code);	// CAI_BaseNPCTroika::vfunc448, called directly
 	int *sub_1028a150();	// the NPC's current schedule record (first dword is the schedule id), 0 when none
 	void sub_1036e8c0();	// "CNPC_VChangBros::KillCenterEmitter": scope trace (no entity name), when the entity behind the handle at +0x66f4 resolves calls its slot 242 and SetNextThink(0.1f)
+	int vfunc127(int a);	// "CNPC_VChangBros::Restore": scope trace (no entity name), the CNPC_VVampireBoss restore, then the float at +0x64b8 = 2.3f and the body emitter names 0 and 1 "chang_powerup_emitter", 2 "chang_spine_emitter"; returns the base result
 };
