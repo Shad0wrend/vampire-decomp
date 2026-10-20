@@ -27038,6 +27038,25 @@ int sub_10235ea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10235fb0 size=0x43
+#include "CWeaponRanged_Rifle_Remington.h"
+void *sub_100aa720(int size);
+extern char g_105c1bbc[];
+
+// TARGET: item_w_remington_m_700
+extern "C" CBaseEntity *item_w_remington_m_700()
+{
+	void *mem = sub_100aa720(0x948);
+	CWeaponRanged_Rifle_Remington *p;
+	if (mem)
+		p = ((CWeaponRanged_Rifle_Remington *)mem)->sub_10236070();
+	else
+		p = 0;
+	p->vfunc106(g_105c1bbc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10236400 size=0x72
 #include "SendProp.h"
 
