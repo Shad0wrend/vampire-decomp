@@ -8016,6 +8016,33 @@ char CBaseAnimating::sub_100931d0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093b10 size=0x98
+#include "CBaseAnimating.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+void sub_1000c0c7(void *pStudioHdr, int *pBody, int group, int value);
+
+void CBaseAnimating::sub_10093b10(int group, int value)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	} else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::SetBodygroup";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_1000c0c7(sub_100952d0(-1), (int *)((char *)this + 0x67c), group, value);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093be0 size=0x94
 #include "CBaseAnimating.h"
 
