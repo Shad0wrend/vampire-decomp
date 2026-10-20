@@ -14560,6 +14560,25 @@ void CUnknown1014ca10::sub_1014ca10(unsigned char r, unsigned char g, unsigned c
 }
 // END FUNCTION
 
+// FUNCTION: 0x101521b0 size=0x43
+#include "CRagdollProp.h"
+void *sub_100aa720(int size);
+extern char g_1057f178[];
+
+// TARGET: physics_prop_ragdoll
+extern "C" CBaseEntity *physics_prop_ragdoll()
+{
+	void *mem = sub_100aa720(0x103c);
+	CRagdollProp *p;
+	if (mem)
+		p = ((CRagdollProp *)mem)->sub_101550d0();
+	else
+		p = 0;
+	p->vfunc106(g_1057f178);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101563b0 size=0x88
 struct CRagdollBody { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
 	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
