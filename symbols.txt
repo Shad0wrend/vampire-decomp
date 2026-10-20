@@ -836,6 +836,7 @@
 0x100065c3 func   ?sub_103f15b0@@YAHXZ sub_103f15b0
 0x100065d2 func   ?vfunc126@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc126
 0x100065d7 func   ?vfunc5@CItemMMoneyClip@@QAEPAV1@I@Z CItemMMoneyClip::vfunc5
+0x100065f0 func   ?sub_10403500@@YAHXZ sub_10403500
 0x10006636 func   ?sub_1024a2b0@@YA_NPAG0@Z sub_1024a2b0
 0x1000665e func   ?sub_100eb130@@YIXPAH@Z sub_100eb130
 0x10006681 func   ?sub_10430020@@YAII@Z sub_10430020
