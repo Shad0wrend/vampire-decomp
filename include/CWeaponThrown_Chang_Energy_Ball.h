@@ -7,4 +7,5 @@ class CWeaponThrown_Chang_Energy_Ball
 public:
 	CWeaponThrown_Chang_Energy_Ball *vfunc5(unsigned int flags);
 	void sub_10013a57();
+	void vfunc104();	// "...::Precache": precaches the grenade particle systems, the tic sound and the relief models, then CBaseCombatWeapon::Precache
 };
