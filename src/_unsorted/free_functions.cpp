@@ -34727,6 +34727,26 @@ void TSeg::sub_101f4570(int target, int *outIndex, int *outOffset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f4950 size=0x168
+#include "CUnknown101f4c80.h"
+#include "CUnknown101f4370.h"
+extern "C" int sprintf(char *, const char *, ...);
+extern char g_1074aff8[];
+
+// TARGET: CUnknown101f4370::sub_101f4950
+const char *CUnknown101f4370::sub_101f4950(int index, int number)
+{
+	if (m_pKinds[index] == 1) {
+		CUnknown101f4c80 *rec = ((CUnknown101f4c80Table *)m_pNames)->Find(index);
+		sprintf(g_1074aff8, "%s\\%s\\%s.wav", ((CUnknown101f4c80Table *)m_pNames)->m_directory.Get(), m_name.Get(), rec->m_folder.Get());
+	} else {
+		CUnknown101f4c80 *rec = ((CUnknown101f4c80Table *)m_pNames)->Find(index);
+		sprintf(g_1074aff8, "%s\\%s\\%s_%d.wav", ((CUnknown101f4c80Table *)m_pNames)->m_directory.Get(), m_name.Get(), rec->m_folder.Get(), number);
+	}
+	return g_1074aff8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4c80 size=0x13
 struct CUnknown101f4c80 {
     int m_n0;
