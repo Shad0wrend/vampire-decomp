@@ -1483,6 +1483,7 @@
 0x10008986 func   ?sub_10184220@@YGII@Z sub_10184220
 0x10008990 func   ?vfunc5@CPropDoorknob@@QAEPAV1@I@Z CPropDoorknob::vfunc5
 0x1000899a func   ?sub_10146d50@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10146d50
+0x100089c2 func   ?sub_10201e70@CVStatListManager_t@@QAEXHH@Z CVStatListManager_t::sub_10201e70
 0x100089d1 func   ?vfunc5@CAI_DynamicLink@@QAEPAV1@I@Z CAI_DynamicLink::vfunc5
 0x100089db func   ?sub_103fb2d0@@YAHXZ sub_103fb2d0
 0x100089e5 func   ?vfunc498@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc498
