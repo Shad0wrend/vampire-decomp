@@ -13,6 +13,29 @@ int CNPC_VVampireBoss::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c5910 size=0x8c
+#include "CNPC_VVampireBoss.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+int CNPC_VVampireBoss::vfunc127(int a)
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VVampireBoss::Restore";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int r = sub_1000527c(a);
+	m_pMonsterModelName = 0;
+	sub_103c6eb0();
+	m_pDefaultNPCName = "npc_VVampireBoss";
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c5fe0 size=0xe
 bool CNPC_VVampireBoss::vfunc525(int unused)
 {
