@@ -29489,6 +29489,43 @@ StatDefault3 *CStatDefault3List::sub_101d5e80(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d62d0 size=0xec
+#include "CUnknown101d62d0.h"
+
+CUnknown101d62d0Record *CUnknown101d62d0::sub_101d62d0()
+{
+	if (m_nAllocated == m_nCount) {
+		m_nAllocated++;
+		if (m_ppRecords) {
+			CUnknown101d62d0Record **p = new CUnknown101d62d0Record *[m_nAllocated];
+			int i = 0;
+			if (m_nCount > 0) {
+				do {
+					p[i] = m_ppRecords[i];
+					i++;
+				} while (i < m_nCount);
+			}
+			for (; i < m_nAllocated; i++)
+				p[i] = 0;
+			delete m_ppRecords;
+			m_ppRecords = p;
+		} else {
+			m_ppRecords = new CUnknown101d62d0Record *[m_nAllocated];
+			for (int i = 0; i < m_nAllocated; i++)
+				m_ppRecords[i] = 0;
+		}
+		m_nCount++;
+	} else {
+		m_nCount++;
+	}
+	if (m_ppRecords[m_nCount - 1] == 0) {
+		CUnknown101d62d0Record *p = new CUnknown101d62d0Record;
+		m_ppRecords[m_nCount - 1] = p ? p->sub_101d6070() : 0;
+	}
+	return m_ppRecords[m_nCount - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6750 size=0xf1
 #include "CUnknown101d6750.h"
 
