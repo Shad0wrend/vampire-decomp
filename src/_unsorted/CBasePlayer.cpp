@@ -170,6 +170,49 @@ bool CBasePlayer::sub_10168e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016aa50 size=0x7a
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "IVEngineServer.h"
+
+#define SV(n) virtual void v##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+
+struct SPlayerSlots {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13)
+	SV(140) SV(141) SV(142) SV(143) SV(144) SV(145) SV(146) SV(147)
+	virtual void v148(int a, int b);
+};
+
+struct SRules {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5)
+	SV(60) SV(61) SV(62) SV(63)
+	virtual int v64(CBasePlayer *pPlayer, SPlayerSlots *pOther);
+};
+
+struct SGlobals {
+	char pad[0x14];
+	int m_maxClients;
+};
+
+extern IVEngineServer *g_1070b22c;
+extern SGlobals *g_1070b228;
+extern SRules *g_1070ba0c;
+SPlayerSlots *sub_1000ac8b(int index);
+
+void CBasePlayer::vfunc149(int a, int b)
+{
+	int edict = m_n02E0;
+	int me = g_1070b22c->vfunc35(edict);
+	for (int i = 1; i <= g_1070b228->m_maxClients; i++) {
+		SPlayerSlots *pOther = sub_1000ac8b(i);
+		if (pOther && i != me && g_1070ba0c->v64(this, pOther) == 1)
+			pOther->v148(a, b);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174e20 size=0x21
 #include "CBasePlayer.h"
 
