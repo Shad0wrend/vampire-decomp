@@ -245,3 +245,31 @@ void CBaseAnimating::sub_10091f10(const char *name, float value)
 	((CEntityVSlots *)this)->slot260(sub_10092270(name), value);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10091fe0 size=0xb3
+#include "CBaseAnimating.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+float sub_100c43e0(void *pStudioHdr, int iParameter, float flValue, float *pOut);
+
+// CBaseAnimating::SetPoseParameter (slot 260) as a fastcall function: ecx = this, edx unused
+float __fastcall sub_10091fe0(CBaseAnimating *self, int unused, int iParameter, float flValue)
+{
+	const char *name = self ? (self->m_name26c ? self->m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::SetPoseParameter02";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	void *pStudioHdr = self->sub_100952d0(-1);
+	if (pStudioHdr && iParameter >= 0) {
+		float r = sub_100c43e0(pStudioHdr, iParameter, flValue, (float *)((char *)self + 0x690) + iParameter);
+		(*g_109f3680)--;
+		return r;
+	}
+	(*g_109f3680)--;
+	return flValue;
+}
+// END FUNCTION
