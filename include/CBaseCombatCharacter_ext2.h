@@ -17,3 +17,7 @@
 		static CVStatList_t s_default(-1);
 		return &s_default;
 	}
+
+	// Slot 86 "CBaseCombatCharacter::ShouldTransmit"-like (declared as a plain member; CBaseEntity::vfunc86 is the same slot).
+	char vfunc86(int a, int b, int c, int d, int e);	// scope trace (entity name), true while the force-transmit time at +0x90 is still ahead of curtime or the flag byte at +0x14e3 + (engine slot 35 index of b) is set, else CBaseEntity::sub_100ab020(a, b, c, d, e)
+	char sub_100ab020(int a, int b, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly
