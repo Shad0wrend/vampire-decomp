@@ -3365,6 +3365,7 @@
 0x100151e5 func   ?sub_10250830@CUnknown10250830@@QAEXG@Z CUnknown10250830::sub_10250830
 0x100151ea func   ?vfunc32@CPropKeypad@@QAEDH@Z CPropKeypad::vfunc32
 0x100151f9 func   ?sub_1032fab0@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_1032fab0
+0x10015203 func   ?sub_102a9830@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a9830
 0x10015221 func   _npc_sabbat npc_sabbat
 0x10015226 func   ?sub_101578b0@CUnknown101578b0@@QAE_NXZ CUnknown101578b0::sub_101578b0
 0x10015280 func   ?sub_103be130@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be130
