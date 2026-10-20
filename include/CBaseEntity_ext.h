@@ -29,3 +29,4 @@
 	void sub_100ac4e0(int a, int b, int c);	// called through the stub at 0x10007fe5
 	void sub_1003d130(int type);	// "CBaseEntity::DestroyDataObject" (stub 0x10009935)
 	void sub_1003d300();	// "CBaseEntity::DestroyAllDataObjects": scope trace (entity name), DestroyDataObject(i) for each data object type i in 0..3 that HasDataObjectType
+	void vfunc144(void *pInfo);	// "CBaseEntity::Event_Killed": scope trace (entity name), take-damage mode (+0x1fc) = 0, +0x200 = 2, then sub_101cd940(this); takes one stack argument (the damage info), unused
