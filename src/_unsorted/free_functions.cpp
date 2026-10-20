@@ -30881,6 +30881,31 @@ int CVStatCost_t::sub_101fc410(int level, bool bFirst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fc5b0 size=0xb3
+#include "CVStatCost_t.h"
+#include <stdio.h>
+#include <string.h>
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_1074e0f8[];
+
+const char *CVStatCost_t::sub_101fc5b0()
+{
+	g_109f3620[*g_109f3680].a = "CVStatCost_t::ToStr";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sprintf(g_1074e0f8, "%s: '%s'", "New", m_first.sub_101fbd30());
+	int nLen = strlen(g_1074e0f8);
+	sprintf(g_1074e0f8 + nLen, ", %s: '%s'", "Raise", m_second.sub_101fbd30());
+	(*g_109f3680)--;
+	return g_1074e0f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fc6a0 size=0x85
 #include "CVStatCost_t.h"
 

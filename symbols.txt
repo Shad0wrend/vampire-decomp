@@ -4059,6 +4059,7 @@
 0x10015ce4 func   ?vfunc153@CBaseMoveBehavior@@UAE_NXZ CBaseMoveBehavior::vfunc153
 0x10015ce9 func   ?vfunc5@CItemGDrugsDrugBox@@QAEPAV1@I@Z CItemGDrugsDrugBox::vfunc5
 0x10015cf3 func   ?sub_10206980@NameSet@@QAEXPBD@Z NameSet::sub_10206980
+0x10015d07 func   ?sub_101fc5b0@CVStatCost_t@@QAEPBDXZ CVStatCost_t::sub_101fc5b0
 0x10015d0c func   ?vfunc461@CNPC_VSheriffMan@@QAEHXZ CNPC_VSheriffMan::vfunc461
 0x10015d1b func   ?sub_1042fce0@@YAII@Z sub_1042fce0
 0x10015d20 func   ?vfunc5@CGenericNPC@@QAEPAV1@I@Z CGenericNPC::vfunc5
