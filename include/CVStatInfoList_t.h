@@ -20,5 +20,6 @@ public:
 	int sub_101ffc80(const char *name);	// "CVStatInfoList_t::LookupPartial": scope trace, index of the first stat whose lowercased name starts with the lowercased argument, -1 when none
 	int sub_101ffdf0(const char *name);	// "CVStatInfoList_t::LookupPartial" (second variant): scope trace, same prefix lookup with 128 byte lower-cased copies
 	int sub_101fff60(const char *name, int startIdx);	// "CVStatInfoList_t::LookupNextPart": scope trace, like LookupPartial but starting after startIdx
+	int sub_102000e0(const char *name, int startIdx);	// "CVStatInfoList_t::LookupNextPart" (another instance)
 	CVStatInfo_t *sub_10200370(int idx);	// element accessor: the record at idx, or a shared default record when idx is out of range
 };
