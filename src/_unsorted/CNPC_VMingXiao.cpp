@@ -37,6 +37,29 @@ void CNPC_VMingXiao::vfunc448(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10394690 size=0xe0
+#include "CNPC_VMingXiao.h"
+int CNPC_VMingXiao::vfunc376(int act)
+{
+    switch (act) {
+    case 0x3d:
+        return 0x3b;
+    case 0x3e:
+        return 0x3c;
+    case 0x9f:
+        return 0x9d;
+    case 0xa0:
+        return 0x9e;
+    case 0xa3:
+        return 0xa1;
+    case 0xa4:
+        return 0xa2;
+    default:
+        return sub_1000fb14(act);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103951d0 size=0x7c
 #include "CBaseEntity.h"
 #include "CNPC_VMingXiao.h"

@@ -714,6 +714,7 @@
 0x100048e5 func   ?sub_10200ca0@CVStatList_t@@QAEHH@Z CVStatList_t::sub_10200ca0
 0x10004903 func   _vdisciplineprojectile vdisciplineprojectile
 0x10004917 func   ?vfunc28@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc28
+0x10004926 func   ?vfunc376@CNPC_VMingXiao@@QAEHH@Z CNPC_VMingXiao::vfunc376
 0x1000493a func   ?vfunc2@CTEInspectionFX@@UAEPAV1@I@Z CTEInspectionFX::vfunc2
 0x1000496c func   ?sub_1030be50@CBaseCineCam@@QAEPAMPAM@Z CBaseCineCam::sub_1030be50
 0x10004980 func   ?vfunc5@CWeaponMelee_Tzimisce2Claw@@QAEPAV1@I@Z CWeaponMelee_Tzimisce2Claw::vfunc5
