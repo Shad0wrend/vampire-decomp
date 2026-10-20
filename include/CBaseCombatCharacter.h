@@ -129,6 +129,7 @@ public:
 	int vfunc393();
 	void vfunc403();
 	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
+	void vfunc51(int unused, float *pOut);	// "CBaseCombatCharacter::GetCameraTargetPosition": scope trace (entity name), with the flag byte at +0x10d4 set sub_10014eb6(pOut, 0), else copies the vector slot 192 returns into pOut
 	void vfunc119();	// "CBaseCombatCharacter::Kill": scope trace (entity name), then CBaseEntity::vfunc119
 	bool vfunc326(int unused1, int unused2);	// slot 326: false when the character's default stat item has the byte at +0x9e set or the first stat list with a zero field at +0x10 (default list when none) is IsEqual(0xf, 0x11); else slot 158 as a bool
 	Vector vfunc369();	// "CBaseCombatCharacter::BodyDirection3D": scope trace (entity name), AngleVectors of slot 367 (BodyAngles) into a local forward vector, returned by value
@@ -138,7 +139,9 @@ public:
 
 	char m_pad03e0[0x1084 - 0x3e0];
 	int m_nStealthModifier;	// 0x1084
-	char m_pad1088[0x13a0 - 0x1088];
+	char m_pad1088[0x10d4 - 0x1088];
+	char m_b10d4;	// camera target flag
+	char m_pad10d5[0x13a0 - 0x10d5];
 	int m_field13a0;
 	char m_pad13a4[0x13bc - 0x13a4];
 	int m_nStatLists;
