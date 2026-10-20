@@ -33,3 +33,6 @@
 	int vfunc348();	// slot 348 "CBaseCombatCharacter::HealthToPercent": scope trace (entity name), (a - b) * max health (+0x208) / a with a = stat 0x11 and b = stat 0xf of the active stat list (a - b) / a
 	void sub_103352b0(struct inputdata_t &data);	// "CBaseCombatCharacter::InputInven...": scope trace (entity name), calls sub_10335470 with the entity of the EHANDLE variant (0 stale), nothing when there is none
 	void sub_10335470(void *pEnt);	// worker of sub_103352b0 (stub 0x10013601)
+	void sub_10341370(CBaseCombatCharacter *pPartner, int unused);	// "CBaseCombatCharacter::BarterEnd" (stub 0x1000e020): scope trace (entity name), with a partner: when this has the object at +0xa8 sub_10013070() and sub_10010e60(this), else sub_10013070() on the partner when it has one
+	void sub_10013070();	// CBasePlayer::sub_1017c6d0 (stub 0x10013070), called on a character with the object at +0xa8
+	void sub_10010e60(CBaseEntity *pEnt);	// CBaseEntity::vfunc42 (stub 0x10010e60), called directly with an entity
