@@ -2397,6 +2397,7 @@
 0x1000ca36 func   ?vfunc5@CFogController@@QAEPAV1@I@Z CFogController::vfunc5
 0x1000ca81 func   ?sub_101f9c70@CUnknown101f9c70@@QAEHHHH@Z CUnknown101f9c70::sub_101f9c70
 0x1000ca8b func   _npc_VNosferatu npc_VNosferatu
+0x1000ca9a func   ?sub_101b1880@@YAXHHPBD@Z sub_101b1880
 0x1000caae func   ?sub_1033e2b0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_1033e2b0
 0x1000cab3 func   _events_player events_player
 0x1000cadb func   ?vfunc5@CItemGCashBox@@QAEPAV1@I@Z CItemGCashBox::vfunc5

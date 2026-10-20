@@ -27174,6 +27174,42 @@ void sub_101b1040(int entIndex, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1880 size=0x10b
+struct SndInfo {
+    int a;
+    float b;
+    int c, d, e, f;
+    char g;
+    int h;
+    char name[128];
+};
+struct IA { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(int, int, const char *); };
+struct CSndMgr { void **vt; bool sub_10005830(const char *, SndInfo *); };
+extern IA *g_1070b248;
+extern CSndMgr g_1072be18;
+extern char *(*g_109f384c)(const char *, const char *);
+extern char g_10598a30[], g_10548ed4[], g_10598a38[], g_105989c8[];
+
+void sub_101b1880(int a, int b, const char *name)
+{
+    if (name) {
+        char *(*f)(const char *, const char *) = g_109f384c;
+        if (f(name, g_10598a30) || f(name, g_10548ed4) || *name == '!') {
+            g_1070b248->v7(a, b, name);
+            ((void (__cdecl *)(void *, const char *, ...))g_1072be18.vt[3])(&g_1072be18, g_10598a38, name, a);
+            return;
+        }
+    }
+    SndInfo si;
+    si.a = 0; si.b = 1.0f; si.c = 100; si.d = 100; si.e = 100; si.f = 0x4b;
+    si.name[0] = 0; si.g = 0; si.h = 0;
+    if (g_1072be18.sub_10005830(name, &si) && si.name[0]) {
+        g_1070b248->v7(a, si.a, si.name);
+        ((void (__cdecl *)(void *, const char *, ...))g_1072be18.vt[3])(&g_1072be18, g_105989c8, name, si.name, a);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2070 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
