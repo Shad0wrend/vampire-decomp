@@ -43203,6 +43203,35 @@ extern "C" CItemGWarrLedger1* item_g_warr_clipboard()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10404520 size=0x72
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_109448c4;
+extern SendTable *g_105c5bc0;
+
+// TARGET: sub_10404520
+int sub_10404520()
+{
+	static const char *pTableName = "DT_ItemGWarrLedger1";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_105c5bc0, (void *)sub_10009539),
+	};
+	g_109448c4.sub_1000e8fe(props + 1, 1, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104045f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
