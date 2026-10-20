@@ -1,7 +1,7 @@
 // CBasePlayer: the player entity.
 // Barely recovered yet: only the members decompiled code needs are named, the
 // rest is padding that keeps their offsets. The vtable is modelled as placeholder
-// slots up to slot 448 (the ones the code calls are typed).
+// slots up to slot 468 (the ones the code calls are typed).
 #pragma once
 
 class CBaseEntity;
@@ -14,6 +14,13 @@ struct CBasePlayerHandleVec	// a CUtlVector<EHANDLE>
 	int m_growSize;
 	int m_Size;
 	unsigned int *m_pElements;
+};
+
+struct CBasePlayerSub270	// small polymorphic object embedded at +0x270
+{
+	virtual void v0();
+	virtual int vfunc1();
+	virtual int vfunc2();
 };
 
 #define CBP_V1(p) virtual void p();
@@ -40,8 +47,13 @@ public:
 	// slots 409..447
 	CBP_V10(si0) CBP_V10(si1) CBP_V10(si2) CBP_V1(sj0) CBP_V1(sj1) CBP_V1(sj2) CBP_V1(sj3) CBP_V1(sj4) CBP_V1(sj5) CBP_V1(sj6) CBP_V1(sj7) CBP_V1(sj8)
 	virtual void vfunc448();
+	// slots 449..467
+	CBP_V10(sk0) CBP_V1(sl0) CBP_V1(sl1) CBP_V1(sl2) CBP_V1(sl3) CBP_V1(sl4) CBP_V1(sl5) CBP_V1(sl6) CBP_V1(sl7) CBP_V1(sl8)
+	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
 
-	char m_pad0004[0x2DC];	// 0x0004 .. 0x02DF
+	char m_pad0004[0x26c];	// 0x0004 .. 0x026F
+	CBasePlayerSub270 m_sub270;	// 0x0270
+	char m_pad0274[0x6c];	// 0x0274 .. 0x02DF
 	int m_n02E0;
 	char m_pad02E4[0x1712];	// 0x02E4 .. 0x19F5
 	bool m_b19F6;
@@ -93,4 +105,5 @@ public:
 	void sub_1017ee80(int a, int b, void *pData);	// called through the stub at 0x10006055
 	void sub_1016bd50();	// resets the model related state: sub_101618e0(1, 1), -1 at +0x1ebc, 0 at +0x168 / +0x16c / +0x1edc, curtime at +0x1c68, then makes sure the model name buffer at +0x23d4 matches the model (slot 105 otherwise)
 	void sub_101618e0(int a, int b);	// worker (stub 0x10012503)
+	void sub_1017b6f0(int a, const char *pszName, int b, const char *pszName2);	// registers a hull pair (called through the stub at 0x100105c8)
 };
