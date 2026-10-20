@@ -23190,6 +23190,25 @@ int *sub_10211970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10212fd0 size=0x43
+#include "CPropHaunted.h"
+void *sub_100aa720(int size);
+extern char g_105ae994[];
+
+// TARGET: prop_haunted
+extern "C" CBaseEntity *prop_haunted()
+{
+	void *mem = sub_100aa720(0x81c);
+	CPropHaunted *p;
+	if (mem)
+		p = ((CPropHaunted *)mem)->sub_102139f0();
+	else
+		p = 0;
+	p->vfunc106(g_105ae994);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102158f0 size=0xa
 void __fastcall sub_102158f0(char *self, int, int)
 {
