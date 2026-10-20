@@ -655,6 +655,7 @@
 0x10004f8e func   ?sub_101c4660@@YIXPADHPBD@Z sub_101c4660
 0x10004f93 func   ?sub_10201ca0@CUnknown10201ca0@@QAEXHH@Z CUnknown10201ca0::sub_10201ca0
 0x10004fa7 func   ?sub_10059fe0@CTEMetalSparks@@QAEXHH@Z CTEMetalSparks::sub_10059fe0
+0x10004fc5 func   ?sub_102f67a0@@YA_NPBD@Z sub_102f67a0
 0x10004fde func   ?sub_1007f510@@YAXPAHPBH@Z sub_1007f510
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
 0x10004fe8 func   ?vfunc5@CWeaponMelee_Tzimisce3Claw@@QAEPAV1@I@Z CWeaponMelee_Tzimisce3Claw::vfunc5

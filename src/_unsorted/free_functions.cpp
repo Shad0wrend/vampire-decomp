@@ -35840,6 +35840,62 @@ void sub_102f65b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f67a0 size=0x171
+extern "C" char *strcat(char *, const char *);
+#pragma intrinsic(strcat)
+extern void (__cdecl *g_109f3890)(char *, const char *, int);
+extern void (__cdecl *g_109f3650)(int, const char *, ...);
+extern void (__cdecl *g_109f3630)(const char *, ...);
+#define SL5(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4();
+#define SL10(p) SL5(p##a) SL5(p##b)
+#define SL50(p) SL10(p##a) SL10(p##b) SL10(p##c) SL10(p##d) SL10(p##e)
+struct EngineL {
+    SL50(e0) SL10(e1) SL10(e2) SL10(e3) SL10(e4) virtual void e5(); virtual void e6();
+    virtual int v92(const char *a, const char *b, int *pCompare);
+};
+struct GameL {
+    virtual char v0();
+    virtual char v1();
+    char pad[0x28];
+    int m_f2c;
+};
+struct HookL {
+    SL5(h0) virtual void h5(); virtual void h6(); virtual void h7(); virtual void h8();
+    virtual char v9(const char *a, int b);
+};
+extern EngineL *g_1070b22c;
+extern GameL *g_10934094;
+extern HookL *g_1070b238;
+
+bool sub_102f67a0(const char *mapname)
+{
+    char bsp[260];
+    char ain[260];
+    int cmp;
+    void (__cdecl *copy)(char *, const char *, int) = g_109f3890;
+    copy(bsp, "maps/", 260);
+    strcat(bsp, mapname);
+    strcat(bsp, ".bsp");
+    copy(ain, "maps/graphs/", 260);
+    strcat(ain, mapname);
+    strcat(ain, ".ain");
+    if (g_1070b22c->v92(bsp, ain, &cmp)) {
+        if (cmp > 0) {
+            if (g_10934094->v1() || g_10934094->m_f2c == 0) {
+                g_109f3650(2, ".AIN File will be updated\n\n");
+                return false;
+            }
+            if (g_1070b238->v9(ain, 0)) {
+                g_109f3650(2, ".AIN File will *NOT* be updated. User Override.\n\n");
+                g_109f3630("\n*****Node Graph Rebuild OVERRIDDEN by user*****\n\n");
+            }
+        }
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f7970 size=0x79
 #include "CUnknown102f7970.h"
 
