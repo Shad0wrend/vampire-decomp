@@ -121,7 +121,11 @@ public:
 	int m_n1E0C;
 	char m_pad1E10[0x64];	// 0x1E10 .. 0x1E73
 	unsigned int m_flags1E74;
-	char m_pad1E78[0x230];	// 0x1E78 .. 0x20A7
+	char m_pad1E78[0x40];	// 0x1E78 .. 0x1EB7
+	int m_nUseEdictIndex1EB8;	// engine index of the entity to notify (0 = none)
+	char m_pad1EBC[4];	// 0x1EBC .. 0x1EBF
+	char m_bNotifyUse1EC0;
+	char m_pad1EC1[0x20a8 - 0x1ec1];	// 0x1EC1 .. 0x20A7
 	char m_b20A8;
 	char m_pad20A9[0x4b];	// 0x20A9 .. 0x20F3
 	char m_b20F4;	// vehicle active flag
@@ -181,4 +185,5 @@ public:
 	int sub_103346c0(int ammoIndex);	// CBaseCombatCharacter::GetAmmoCount (stub 0x1000ff97), called directly
 	void sub_1017bf10(int mode);	// switches the active view part: mode 0 / 1 swap the parts at +0x2104 / +0x2108 (name from slot 217, show / hide through their slots 35 / 21, handed to the part owner at +0x2100 and VPhysicsSwapObject), mode 2 hides both
 	int sub_1015fd50();	// worker called by slot 316 (stub 0x10012d69)
+	void sub_1017c6d0();	// notifies the entity of the engine index at +0x1eb8 (when flagged by the byte at +0x1ec0): clears the flag, slot 118 (AcceptInput) with a variant of type 5; always clears the index
 };
