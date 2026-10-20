@@ -19,12 +19,16 @@ public:
 	int m_nState;	// +0xfec
 	char padff0[0x1b2c - 0xff0];
 	int m_n1b2c;	// +0x1b2c
-	char pad1b30[0x5cc0 - 0x1b30];
+	char pad1b30[0x1b38 - 0x1b30];
+	int m_n1b38;	// +0x1b38: set to 0x1f by SelectIdealState
+	char pad1b3c[0x5cc0 - 0x1b3c];
 	int m_nState5cc0;	// +0x5cc0
 	int m_nState5cc4;	// +0x5cc4
 	char pad5cc8[0x628c - 0x5cc8];
 	unsigned int m_hPlayer;	// +0x628c: entity handle of the tracked player
-	char pad6290[0x66c0 - 0x6290];
+	char pad6290[0x66b8 - 0x6290];
+	char m_b66b8;	// +0x66b8
+	char pad66b9[0x66c0 - 0x66b9];
 	int m_nFailureType;
 	int m_n66c4;	// +0x66c4: last health seen by UpdateBloodSplash
 	float m_f66c8;	// +0x66c8: time of last splash
@@ -58,4 +62,5 @@ public:
 	void sub_103aaa80();	// "CNPC_VSabbatLeader::RecordPlayerHealth": scope trace, with the player entity (handle at +0x628c) live stores stat 0xf of its first non-pending stat list (default list when none) at +0x66cc
 	bool sub_103a9e70();	// "CNPC_VSabbatLeader::PlayerInNoJumpZone": scope trace, true when for a no-jump hint (type 0x3e84, global list at 0x10925450 via +0x5d8) both the player's and this NPC's origin are within 100.0f (sub_103c6570)
 	float sub_103c6570(CNPC_VSabbatLeaderHint *pHint, const float *pOrigin);	// distance-like measure between a hint and a position (stub 0x100119d2), returned in ST0
+	int vfunc461();	// "SelectIdealState" (slot 461 override): scope trace, +0x1b38 = 0x1f, keeps / sets the state at +0x5cc4: 2 while the byte at +0x66b8 is set and (state 2 with the player entity live) or slot 167 reports a squad (the player entity then gets sub_10279a50), else 1; returns it
 };
