@@ -139,4 +139,5 @@ public:
 	CNPC_VWerewolfVec3 sub_103d6650(void *pHint);	// "CNPC_VWerewolf::GetHintEndpoint": scope trace (entity name), the zero vector for no hint, else the absolute origin (slot 217) of the hint's entity
 	CBaseEntity *sub_103d6390(void *pHint);	// the entity of a hint (stub 0x10008094)
 	void *sub_103d0ad0();	// "CNPC_VWerewolf::GetNearestNode"-like: the nearest AI node, cached in +0x66fc for the time stamp at +0x66f8; recomputed through the helper's node net (stub 0x1000827e) from the origin (slot 220)
+	void *sub_103d6520(void *pHint);	// "CNPC_VWerewolf::FindHintEndEntity": scope trace (entity name), follows the hint chain: the hint's target name (+0x468) is looked up (dynamic_cast to CAI_Hint) and, when that has a target name too, its entity is returned, else the hint itself
 };
