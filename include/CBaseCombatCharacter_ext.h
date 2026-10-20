@@ -42,3 +42,4 @@
 	int sub_10092270(const char *pszName);	// CBaseAnimating::LookupPoseParameter, called directly (stub 0x10009ac5)
 	bool sub_1033f1a0(int value);	// "CBaseCombatCharacter::FrenzyComparison": scope trace (entity name), sub_1033eb60(value), then whether the dword at +0x146c is non-zero
 	short sub_103239a0(const char *pszName);	// "CBaseCombatCharacter::AddToTeam": scope trace (entity name), looks the name up (skipping a leading '!') in the global at 0x10751140, stores the short result at +0x10b0 and returns it (via the free getter sub_10323a70)
+	char sub_10146d50();	// like sub_10146a80: needs the object at +0xa8; stat list with id 3 (default list when absent), its value for stat 8 must be 0..4, result: (table 0x1046bae8[value] & the dword at +0x14d8) == 0
