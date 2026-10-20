@@ -29792,6 +29792,25 @@ extern "C" CBaseEntity *info_node_sabbat_top()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d6b80 size=0x43
+#include "CNodeEnt.h"
+void *sub_100aa720(int size);
+extern char g_1060af1c[];
+
+// TARGET: info_node_sabbat_arch
+extern "C" CBaseEntity *info_node_sabbat_arch()
+{
+	void *mem = sub_100aa720(0x46c);
+	CNodeEnt *p;
+	if (mem)
+		p = ((CNodeEnt *)mem)->sub_102d7cd0();
+	else
+		p = 0;
+	p->vfunc106(g_1060af1c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d7210 size=0x53
 void *sub_1000db89(int);
 struct GP;
