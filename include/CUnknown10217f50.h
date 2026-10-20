@@ -14,10 +14,14 @@ struct CUnknown10217f50Quad	// the four dwords at +0x82c
 class CUnknown10217f50 : public CEntityVSlots
 {
 public:
-	char m_pad0004[0x82c - 4];
+	char m_pad0004[0x810 - 4];
+	int m_nLineWidth;	// 0x810: width of a screen line in characters
+	char m_pad0814[0x82c - 0x814];
 	CUnknown10217f50Quad m_quad;	// 0x82c: cleared at the end of the request
 	char m_b083c;	// 0x83c
 
 	void sub_10218820(int a, int b);	// called with (2, 0) (stub 0x1000c77f)
 	void sub_10217f50(char value, const char *pszCommand);	// stores value at +0x83c after sub_10218820(2, 0), then picks slot 275 / 276 / 277 from the command ("quit" prefix, or the current screen name from slot 274), and clears the four dwords at +0x82c
+	void sub_10217ac0(const char *pszText);	// prints a string to the screen (stub 0x10013f98)
+	void sub_1021b330(const char *pszText, int column);	// prints a boxed line: '|' borders over a width-3 blank line (40 byte buffer), the text copied in at `column` (at most 0x28 - column characters), followed by a newline
 };
