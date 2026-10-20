@@ -11961,6 +11961,43 @@ int CBaseEntity::sub_100ac250(const char *context)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ac610 size=0xc6
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CThinkView	// the think context table of the entity
+{
+	int sub_100ac360(const char *szContext);	// RegisterThinkContext (called through the stub at 0x10003823)
+};
+
+void __fastcall sub_100ac610(CBaseEntity *self, int, float thinkTime, const char *szContext)
+{
+	const char *name = self ? (self->m_name26c ? self->m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::SetNextThink";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int iIndex;
+	if (szContext == 0) {
+		iIndex = *(int *)((char *)self + 0x1cc);
+		if (iIndex == -1) {
+			*(float *)((char *)self + 0x17c) = thinkTime;
+			(*g_109f3680)--;
+			return;
+		}
+	} else {
+		iIndex = self->sub_100ac250(szContext);
+		if (iIndex == -1)
+			iIndex = ((CThinkView *)self)->sub_100ac360(szContext);
+	}
+	*(float *)(*(int *)((char *)self + 0x1b8) + 8 + iIndex * 0x10) = thinkTime;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac720 size=0xb1
 struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
 extern ScopeEntry_t *g_109f3620;

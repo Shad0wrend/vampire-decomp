@@ -415,6 +415,7 @@
 0x10003215 func   _func_dustmotes func_dustmotes
 0x10003229 func   ?sub_100a0420@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_100a0420
 0x10003256 func   ?sub_103fa3d0@@YAHXZ sub_103fa3d0
+0x1000326f func   ?sub_100ac610@@YIXPAVCBaseEntity@@HMPBD@Z sub_100ac610
 0x10003292 func   ?vfunc220@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc220
 0x100032b5 func   ?vfunc5@CItemGPishaBook@@QAEPAV1@I@Z CItemGPishaBook::vfunc5
 0x100032dd func   ?sub_10071840@CUnk10071840@@QAEXXZ CUnk10071840::sub_10071840
