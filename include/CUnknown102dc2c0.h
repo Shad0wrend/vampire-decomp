@@ -12,5 +12,6 @@ public:
 	char m_pad051c[8];
 	int m_nHandles;	// 0x524
 
+	unsigned int &Handle(int i) { return m_pHandles[i]; }
 	void sub_102dc2c0();	// calls sub_102db440 on the entity of every handle with a 32 byte scratch buffer, then sets the flag
 };
