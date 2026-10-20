@@ -20,6 +20,7 @@ public:
 	void sub_1000c9cd();	// base-class destructor body
 	char sub_101a8930();	// stub 0x1000c6da: true when the byte at +0x5f90 is set and the entity of the handle at +0x5ce4 resolves and answers slot 158 with true
 	void sub_101a8c30();	// "CancelScript"-like (stub 0x1000f187): DevMsg "Cancelling script: %s" (the name at +0x5f48), then cancels the scripted sequence entities of this entity's name
+	void sub_101a77a0(void *pNpc);	// warns (DevWarning) that a scripted sequence (this) was asked to play on a ScriptHidden NPC (pNpc), after setting the byte at +0x5d78 of pNpc
 
 	char m_pad0004[0x5f9c - 4];
 	CCineNPCSlot m_slotA;	// 0x5f9c
