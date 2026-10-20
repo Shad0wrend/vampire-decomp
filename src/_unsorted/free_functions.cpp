@@ -43621,6 +43621,50 @@ void CUnknown10289cc0::sub_10289cc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10289fe0 size=0x11b
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+
+struct ActionEntity { char m_pad[0x5f50]; const char *m_pszName; };
+struct AnimView {
+    int sub_1008f6c0(const char *name);
+    int sub_1008f7b0(const char *name);
+};
+
+static inline ActionEntity *ResolveAction(unsigned int h)
+{
+    CGlobalEntityList_Slot *s;
+    ActionEntity *result;
+    if (h != 0xffffffff && (s = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13))
+        result = (ActionEntity *)s->m_pEntity;
+    else
+        result = 0;
+    return result;
+}
+
+#define SCRIPT_HANDLE (*(volatile unsigned int *)((char *)this + 0x5d74))
+
+int CAI_BaseNPC::sub_10289fe0()
+{
+    int result = 9;
+    if (ResolveAction(SCRIPT_HANDLE) != 0) {
+        if (ResolveAction(SCRIPT_HANDLE)->m_pszName != 0) {
+            const char *name = ResolveAction(SCRIPT_HANDLE)->m_pszName;
+            if (!name)
+                name = "";
+            result = ((AnimView *)this)->sub_1008f6c0(name);
+            if (result == -1) {
+                const char *name2 = ResolveAction(SCRIPT_HANDLE)->m_pszName;
+                if (!name2)
+                    name2 = "";
+                result = (((AnimView *)this)->sub_1008f7b0(name2) + 1 ? 0xf : 0) + 9;
+            }
+        }
+    }
+    return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028a190 size=0x97
 #include "CAI_BaseNPCTroika.h"
 #include "CCineNPC.h"
