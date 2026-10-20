@@ -40999,6 +40999,25 @@ struct CUnknown103c76b0 {
 void CUnknown103c76b0::sub_103c76b0() { slot617(); }
 // END FUNCTION
 
+// FUNCTION: 0x103c7700 size=0x43
+#include "CNPC_VVentrue.h"
+void *sub_100aa720(int size);
+extern char g_1065f140[];
+
+// TARGET: npc_VVentrue
+extern "C" CBaseEntity *npc_VVentrue()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VVentrue *p;
+	if (mem)
+		p = ((CNPC_VVentrue *)mem)->sub_103c7770();
+	else
+		p = 0;
+	p->vfunc106(g_1065f140);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c78a0 size=0x33
 void sub_10007897();
 void sub_10005f2e();
