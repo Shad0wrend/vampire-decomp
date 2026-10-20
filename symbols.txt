@@ -435,6 +435,7 @@
 0x1000345e func   ?sub_1035aaa0@@YAXXZ sub_1035aaa0
 0x10003463 func   ?sub_100b6510@@YAXPBDPAD@Z sub_100b6510
 0x10003472 func   ?sub_10090890@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_10090890
+0x10003490 func   ?sub_10079e60@@YIPAVCUnknown10075aa0@@PAUSceneEventVec@@@Z sub_10079e60
 0x100034ae func   ?vfunc499@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc499
 0x100034b3 func   ?sub_103dae50@CUnknown103dae50@@QAEXXZ CUnknown103dae50::sub_103dae50
 0x100034db func   ?sub_10081e90@@YIXPAUCSlots@@HH@Z sub_10081e90

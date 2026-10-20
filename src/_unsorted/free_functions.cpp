@@ -6949,6 +6949,67 @@ void CUnknown10079b70::sub_10079b70(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079e60 size=0xc0
+#include "CUnknown10075aa0.h"
+extern "C" {
+__declspec(dllimport) void* Plat_Alloc(int size);
+__declspec(dllimport) void* Plat_Realloc(void* p, int size);
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+}
+
+struct SceneEventVec {
+	CUnknown10075aa0 **m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	CUnknown10075aa0 **m_pElements;
+
+	void Grow(int num)
+	{
+		if (m_nGrowSize == -1)
+			return;
+		int req = m_nAllocationCount + num;
+		while (m_nAllocationCount < req) {
+			if (m_nAllocationCount != 0) {
+				if (m_nGrowSize != 0)
+					m_nAllocationCount += m_nGrowSize;
+				else
+					m_nAllocationCount += m_nAllocationCount;
+			} else {
+				m_nAllocationCount = 8;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (CUnknown10075aa0 **)Plat_Realloc(m_pMemory, m_nAllocationCount * 4);
+		else
+			m_pMemory = (CUnknown10075aa0 **)Plat_Alloc(m_nAllocationCount * 4);
+	}
+
+	void GrowVector()
+	{
+		if (m_Size + 1 > m_nAllocationCount)
+			Grow(m_Size + 1 - m_nAllocationCount);
+		m_pElements = m_pMemory;
+		m_Size++;
+	}
+};
+
+CUnknown10075aa0 * __fastcall sub_10079e60(SceneEventVec *v)
+{
+	CUnknown10075aa0 *mem = new CUnknown10075aa0;
+	CUnknown10075aa0 *pEvent = mem ? mem->sub_10075040((int)v) : 0;
+	int elem = v->m_Size;
+	v->GrowVector();
+	int n = v->m_Size - elem - 1;
+	if (n > 0)
+		memmove(&v->m_pMemory[elem + 1], &v->m_pMemory[elem], n * 4);
+	CUnknown10075aa0 **slot = &v->m_pMemory[elem];
+	if (slot)
+		*slot = pEvent;
+	return pEvent;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a270 size=0x1a
 struct S1007a270 {
 	int *m_pMemory; int m_allocationCount; int m_growSize; int m_size;
