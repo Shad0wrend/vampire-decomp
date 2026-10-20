@@ -44343,6 +44343,37 @@ void CUnknown10330ce0::sub_10330ce0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103323d0 size=0x9b
+#include "CUnknown103323d0.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+void CUnknown103323d0::sub_103323d0(inputdata_t *pInput)
+{
+	CScopeTrace trace("CBaseCombatCharacter::InputFadeHeadAsCameraTarget", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	inputdata_t *pIn = pInput;
+	volatile int *pSlot = (volatile int *)&pInput;
+	if (pIn->value.fieldType == 1)
+		*pSlot = pIn->value.iValue;
+	else
+		*pSlot = 0;
+	sub_103322e0(1, *pSlot);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10332570 size=0x7a
 #include "CBaseCombatCharacter.h"
 struct SScope { const char *a; const char *b; const char *c; };
