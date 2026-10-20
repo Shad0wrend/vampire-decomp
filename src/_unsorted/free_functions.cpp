@@ -27644,6 +27644,37 @@ int CUnknown101d5bd0::sub_101e1440(const char *name, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1650 size=0xa0
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101e1650.h"
+
+int CUnknown101e1650::sub_101e1650(CBaseCombatCharacter *pChar, int stat)
+{
+    int nFlagged = 0;
+    for (int i = 0; i < m_count; i++) {
+        if (m_pData[i]->m_nStat == stat && m_pData[i]->m_bFlag)
+            nFlagged++;
+    }
+    CVStatList_t *list;
+    int j;
+    for (j = 0; j < pChar->m_nStatLists; j++) {
+        if (pChar->m_pStatLists[j]->m_field10 == 2) {
+            list = pChar->m_pStatLists[j];
+            goto found;
+        }
+    }
+    {
+        static CVStatList_t def(-1);
+        list = &def;
+    }
+found:
+    int v = list->sub_10010609(stat);
+    if (v >= nFlagged)
+        v = nFlagged;
+    return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1850 size=0xc
 unsigned int __stdcall sub_101e1850(unsigned int value)
 {
