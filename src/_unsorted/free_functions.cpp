@@ -40153,6 +40153,35 @@ extern "C" CItemGWarrLedger1* item_p_research_lg_firearms()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f97d0 size=0x72
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_10948848;
+extern SendTable *g_105c5bc0;
+
+// TARGET: sub_103f97d0
+int sub_103f97d0()
+{
+	static const char *pTableName = "DT_OccultHacking";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_105c5bc0, (void *)sub_10009539),
+	};
+	g_10948848.sub_1000e8fe(props + 1, 1, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f98a0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
