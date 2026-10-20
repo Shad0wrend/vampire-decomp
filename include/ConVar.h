@@ -16,19 +16,25 @@ public:
 	virtual void vfunc9();
 	virtual bool vfunc10(float *value);
 	virtual void vfunc11(const char *value);	// "ConVar::ChangeStringValue": copies the old string to the stack when a change callback is set, stores the new string, calls the callback with the old one
-	virtual void vfunc12();
+	virtual void vfunc12(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax, void (*pCallback)(ConVar *, const char *));	// "ConVar::Create": stores the default string (an empty one when null), a heap copy of it, its length, the parsed float / int value and the limits, then ConCommandBase::Create(name, help, flags)
 
 	ConVar *m_pParent;	// 0x0004
 	char m_pad0008[0x10];	// 0x0008 .. 0x0017
 	unsigned int m_nFlags;	// 0x0018
-	char m_pad001c[4];	// 0x001c
+	const char *m_pszDefaultValue;	// 0x001c
 	char *m_pszString;	// 0x0020
 	int m_nStringLength;	// 0x0024
 	float m_fValue;
 	int m_nValue;
-	char m_pad0030[0x40 - 0x30];	// 0x0030 .. 0x003f
+	bool m_bHasMin;	// 0x0030
+	char m_pad0031[3];
+	float m_fMinVal;	// 0x0034
+	bool m_bHasMax;	// 0x0038
+	char m_pad0039[3];
+	float m_fMaxVal;	// 0x003c
 	void (*m_fnChangeCallback)(ConVar *pVar, const char *pOldString);	// 0x0040
 	void sub_100108bb();	// as in CDataObjectAccessSystem (transplant)
+	void sub_102455c0(const char *pName, const char *pHelpString, int flags);	// ConCommandBase::Create, called directly (stub 0x1000de4f)
 
 	int GetInt() { return m_pParent->vfunc1() ? 0 : m_pParent->m_nValue; }
 	bool GetBool() { return GetInt() != 0; }
