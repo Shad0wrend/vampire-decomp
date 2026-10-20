@@ -5074,6 +5074,36 @@ void sub_100611b0(int a, int b, int *pOrigin, int p4, int p5, int p6, int p7, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10061e80 size=0xb7
+#include "CTEExplosion.h"
+
+extern CTEExplosion g_106c26b8;
+
+void sub_10061e80(void *pFilter, int delay, const float *pOrigin, int a, int b, int c, int d, int e, int f, const float *pNormal, char g)
+{
+	g_106c26b8.m_vecOrigin[0] = pOrigin[0];
+	g_106c26b8.m_vecOrigin[1] = pOrigin[1];
+	g_106c26b8.m_vecOrigin[2] = pOrigin[2];
+	g_106c26b8.m_nField18 = a;
+	g_106c26b8.m_nField1c = b;
+	g_106c26b8.m_nField20 = c;
+	g_106c26b8.m_nField24 = d;
+	g_106c26b8.m_nField38 = e;
+	g_106c26b8.m_nField3c = f;
+	if (pNormal) {
+		g_106c26b8.m_vecNormal[0] = pNormal[0];
+		g_106c26b8.m_vecNormal[1] = pNormal[1];
+		g_106c26b8.m_vecNormal[2] = pNormal[2];
+	} else {
+		g_106c26b8.m_vecNormal[0] = 0.0f;
+		g_106c26b8.m_vecNormal[1] = 0.0f;
+		g_106c26b8.m_vecNormal[2] = 1.0f;
+	}
+	g_106c26b8.m_bField34 = g;
+	g_106c26b8.vfunc4(pFilter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064ca0 size=0x72
 #include "SendProp.h"
 
