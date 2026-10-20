@@ -36,6 +36,20 @@ struct CBasePlayerVehicle	// the vehicle object at +0x20fc; only slot 10 is type
 	virtual void vfunc10(CBasePlayer *pPlayer);
 };
 
+struct CBasePlayerPart	// a view object (pointer at +0x2104 / +0x2108); slots 21 and 35 are typed
+{
+	CBP_V10(qa) CBP_V10(qb) CBP_V1(qc)
+	virtual void vfunc21(int a);
+	CBP_V10(qd) CBP_V1(qe0) CBP_V1(qe1) CBP_V1(qe2)
+	virtual void vfunc35(int a);
+};
+
+struct CBasePlayerPartOwner	// the object at +0x2100; only slot 5 is typed
+{
+	CBP_V1(pa0) CBP_V1(pa1) CBP_V1(pa2) CBP_V1(pa3) CBP_V1(pa4)
+	virtual void vfunc5(CBasePlayerPart *pPart);
+};
+
 class CBasePlayer
 {
 public:
@@ -43,7 +57,9 @@ public:
 	CBP_V10(sa0) CBP_V10(sa1) CBP_V10(sa2) CBP_V10(sa3) CBP_V10(sa4) CBP_V10(sa5) CBP_V1(sa6) CBP_V1(sa7) CBP_V1(sa8) CBP_V1(sa9)
 	virtual void vfunc64(float *pVec);
 	// slots 65..220
-	CBP_V100(sb) CBP_V10(sc0) CBP_V10(sc1) CBP_V10(sc2) CBP_V10(sc3) CBP_V10(sc4) CBP_V1(sd0) CBP_V1(sd1) CBP_V1(sd2) CBP_V1(sd3) CBP_V1(sd4) CBP_V1(sd5)
+	CBP_V100(sb) CBP_V10(sc0) CBP_V10(sc1) CBP_V10(sc2) CBP_V10(sc3) CBP_V10(sc4) CBP_V1(sd0) CBP_V1(sd1)
+	virtual int vfunc217(const void *pName, int a);
+	CBP_V1(sd3) CBP_V1(sd4) CBP_V1(sd5)
 	virtual float *vfunc221();
 	// slots 222..402
 	CBP_V100(se) CBP_V10(sf0) CBP_V10(sf1) CBP_V10(sf2) CBP_V10(sf3) CBP_V10(sf4) CBP_V10(sf5) CBP_V10(sf6) CBP_V10(sf7) CBP_V1(sg0)
@@ -86,7 +102,11 @@ public:
 	char m_b20A8;
 	char m_pad20A9[0x53];	// 0x20A9 .. 0x20FB
 	CBasePlayerVehicle *m_pVehicle;	// 0x20FC
-	char m_pad2100[0x1a8];	// 0x2100 .. 0x22A7
+	CBasePlayerPartOwner *m_pPartOwner;	// 0x2100
+	CBasePlayerPart *m_pPart2104;	// 0x2104
+	CBasePlayerPart *m_pPart2108;	// 0x2108
+	int m_nPartMode;	// 0x210C
+	char m_pad2110[0x198];	// 0x2110 .. 0x22A7
 	float m_f22A8;
 	float m_f22AC;
 	float m_f22B0;
@@ -130,4 +150,5 @@ public:
 	void sub_1017c830();	// matches the player's saved quest records (0x40 bytes each at the pointer +0x1d68, count +0x1d74) with the global quest journal by name: after resetting the journal's records (sub_10221270), copies the record's dwords at +0x34 / +0x38 into the matching quest (+0x10 / +0xc) and stores the quest index at +0x30
 	void sub_101713c0();	// leaves the vehicle at +0x20fc (called by vfunc452): asks the vehicle for the driver slot and exit position, teleports the player there through the virtual slots, clears the flag bit 0 at +0x1e74 and the vehicle fields at +0x20f4 / +0x20f8 / +0x20fc
 	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
+	void sub_1017bf10(int mode);	// switches the active view part: mode 0 / 1 swap the parts at +0x2104 / +0x2108 (name from slot 217, show / hide through their slots 35 / 21, handed to the part owner at +0x2100 and VPhysicsSwapObject), mode 2 hides both
 };
