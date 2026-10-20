@@ -4165,6 +4165,7 @@
 0x1001491b func   _info_node_bach_run_2 info_node_bach_run_2
 0x1001492f func   ?sub_101d90c0@CUnknown101d90c0@@QAE_NPAVCUnknown101d90c0_Section@@@Z CUnknown101d90c0::sub_101d90c0
 0x1001493e func   ?sub_102a14c0@@YIHPAUN@@@Z sub_102a14c0
+0x10014943 func   ?sub_100d7e00@@YAXXZ sub_100d7e00
 0x10014948 func   ?sub_100deb10@@YIXPADHD@Z sub_100deb10
 0x1001494d func   ?sub_10094790@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10094790
 0x10014966 func   _item_a_lt_cloth item_a_lt_cloth
