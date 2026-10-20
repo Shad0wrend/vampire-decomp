@@ -19,7 +19,7 @@ CWeaponMelee_TzimisceMelee::CWeaponMelee_TzimisceMelee()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_TzimisceMelee::vfunc5
-CWeaponMelee_TzimisceMelee *CWeaponMelee_TzimisceMelee::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponMelee_TzimisceMelee::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

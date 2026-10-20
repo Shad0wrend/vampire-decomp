@@ -68,7 +68,9 @@ public:
 	virtual CWeaponActivityRecord *vfunc362();	// the weapon's activity translation table
 	virtual int vfunc363();	// the number of records of that table
 	virtual void vfunc364(int a, int b, int c);
-	CBCW_V(365) CBCW_V(366) CBCW_V(367) CBCW_V(368) CBCW_V(369)
+	CBCW_V(365) CBCW_V(366)
+	virtual void vfunc367(int a, int b, int c);	// CWeaponMelee: forwards to sub_103ea7e0 with the constant 0x4b
+	CBCW_V(368) CBCW_V(369)
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other);
 	virtual void vfunc371();
 	void sub_102507b0();

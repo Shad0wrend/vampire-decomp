@@ -8,6 +8,5 @@ class CWeaponMelee_MingXiaoMelee : public CWeaponMelee
 {
 public:
 	void vfunc370(CWeaponMeleeEvent *pEvent, int b);	// slot 370: ignores event type 0xbbb, else the base handler
-	CWeaponMelee_MingXiaoMelee *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
-	void sub_10013a57();	// as in CPhysForce (transplant)
+	CBaseCombatWeapon *vfunc5(unsigned int flags);	// as in CPhysForce (transplant); VC6 has no covariant returns
 };

@@ -7,7 +7,7 @@
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee::vfunc5
-CWeaponMelee *CWeaponMelee::vfunc5(unsigned int flags)
+CBaseCombatWeapon *CWeaponMelee::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

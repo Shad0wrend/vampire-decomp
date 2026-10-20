@@ -1,25 +1,7 @@
-// CWeaponMelee / CWeaponMelee_TzimisceMelee: melee weapons (bases CBaseCombatWeapon... not modelled).
-// The vtable slots are *not* modelled here; the virtual only gives the classes a vptr.
+// CWeaponMelee_TzimisceMelee: the Tzimisce melee weapon (base CWeaponMelee, CWeaponMelee.h).
 #pragma once
 
-struct CWeaponMeleeEvent
-{
-	int m_type;
-};
-
-class CWeaponMelee
-{
-public:
-	CWeaponMelee();
-	virtual void vfunc0();
-	virtual void vfunc367(int a, int b, int c);	// forwards to sub_103ea7e0 with the constant 0x4b
-	char m_pad0004[0x8b8 - 4];
-
-	void sub_103ea5b0(CWeaponMeleeEvent *pEvent, int b);	// slot 370
-	void sub_103ea7e0(int kind, int a, int b, int c);
-	CWeaponMelee *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
-	void sub_10013a57();	// as in CPhysForce (transplant)
-};
+#include "CWeaponMelee.h"
 
 class CWeaponMelee_TzimisceMelee : public CWeaponMelee
 {
@@ -33,6 +15,5 @@ public:
 	float m_f08c4;
 	char m_pad08c8[0x910 - 0x8c8];
 	int m_n0910;
-	CWeaponMelee_TzimisceMelee *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
-	void sub_10013a57();	// as in CPhysForce (transplant)
+	CBaseCombatWeapon *vfunc5(unsigned int flags);	// as in CPhysForce (transplant); VC6 has no covariant returns
 };
