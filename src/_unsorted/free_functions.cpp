@@ -8742,6 +8742,23 @@ int CBaseAnimating::sub_10092270(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10092460 size=0xbb
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+// TARGET: CBaseAnimating::sub_10092460
+bool CBaseAnimating::sub_10092460(int sequence, int node)
+{
+	ScopeTrace trace("CBaseAnimating::HasPoseParameter02", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char *pDesc = (char *)sub_1008d990(sequence);
+	if (!pDesc)
+		return false;
+	if (*(int *)(pDesc + 0x244) != node && *(int *)(pDesc + 0x248) != node)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10092610 size=0x93
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

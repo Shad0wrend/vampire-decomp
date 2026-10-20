@@ -1223,6 +1223,7 @@
 0x1000743c func   ?sub_1018ee60@@YAXPAVCBaseEntity@@H@Z sub_1018ee60
 0x10007450 func   ?sub_10032a60@CUtlMemory20@@QAEPAV1@HH@Z CUtlMemory20::sub_10032a60
 0x1000745f func   _item_k_sarcophagus_key item_k_sarcophagus_key
+0x1000746e func   ?sub_10092460@CBaseAnimating@@QAE_NHH@Z CBaseAnimating::sub_10092460
 0x100074c3 func   _activity_copy_prop activity_copy_prop
 0x100074d2 func   ?sub_1033ce10@CBaseCombatCharacter@@QAE_NII@Z CBaseCombatCharacter::sub_1033ce10
 0x100074f0 func   ?vfunc6@ConCommand@@UAEXXZ ConCommand::vfunc6
