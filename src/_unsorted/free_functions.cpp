@@ -16308,6 +16308,45 @@ bool CDialogDependency::sub_100e9ff0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ea0d0 size=0xd0
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+extern char g_10562f58[];
+extern char g_10562f54[];
+extern "C" __declspec(dllimport) char *Q_stristr(const char *s, const char *sub);
+void sub_10011464(char *s, void *a, void *b, int c, char *pOk);
+struct HandlePair { unsigned int h[2]; };
+struct HandlePairHolder { HandlePair *m_p; };
+static inline void *Resolve(unsigned int h)
+{
+    if (h != -1) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        if (s->m_Serial == (h >> 13))
+            return s->m_pEntity;
+    }
+    return 0;
+}
+bool __fastcall sub_100ea0d0(HandlePairHolder *pThis, int unused, char *pszStr, int param)
+{
+    char *s = pszStr;
+    for (;;) {
+        char *p = Q_stristr(s, g_10562f58);
+        if (!p)
+            p = Q_stristr(s, g_10562f54);
+        if (p)
+            *p = 0;
+        void *e0 = Resolve(pThis->m_p->h[0]);
+        void *e1 = Resolve(pThis->m_p->h[1]);
+        sub_10011464(s, e1, e0, param, (char *)&pszStr);
+        if ((char)(int)pszStr)
+            return true;
+        if (!p)
+            return false;
+        s = p + 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ea1e0 size=0xb1
 #include "CUnknown100ea1e0.h"
 extern "C" unsigned int strlen(const char *);
