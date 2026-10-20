@@ -21816,6 +21816,24 @@ bool CVStatAction_t::sub_101fcf50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fd010 size=0x5f
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern int g_1074e7c8;
+
+void sub_101fd010(int callback)
+{
+	g_109f3620[*g_109f3680].a = "SetStatActionApplyCallback";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	g_1074e7c8 = callback;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fd110 size=0x7d
 #include "CVStatAction_t.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
