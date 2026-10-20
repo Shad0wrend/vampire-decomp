@@ -50,3 +50,43 @@ bool CLight::vfunc110(const char *szKeyName, const char *szValue)
 	return sub_1000fc86(szKeyName, szValue);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10130460 size=0xd4
+#include "CLight.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern float g_10453b74;
+extern char g_10540a3c[];
+extern char g_105758c4[];
+void sub_101cd970(CLight *);
+
+inline const char *Str(const char **pp)
+{
+	return *pp ? *pp : g_106b8540;
+}
+
+void CLight::vfunc103()
+{
+	if (*(int *)((char *)this + 0x26c) == 0) {
+		sub_101cd970(this);
+		return;
+	}
+	m_flFadeTime = m_flFadeTime > g_10453b74 ? m_flFadeTime : g_10453b74;
+	int style = m_iStyle;
+	if (style >= 32) {
+		if (*((unsigned char *)this + 0x204) & 1) {
+			g_1070b22c->vfunc62(style, g_10540a3c);
+			m_pattern = *g_10540a3c ? g_10540a3c : 0;
+			return;
+		}
+		if (m_pattern) {
+			g_1070b22c->vfunc62(style, Str(&m_pattern));
+		} else {
+			g_1070b22c->vfunc62(style, g_105758c4);
+			m_pattern = *g_105758c4 ? g_105758c4 : 0;
+		}
+	}
+}
+// END FUNCTION
