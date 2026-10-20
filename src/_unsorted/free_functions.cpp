@@ -17838,6 +17838,27 @@ unsigned short CUtlRBTree12::sub_10194330(const void *search) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101945f0 size=0x10e
+#include "CUtlRBTree12.h"
+
+void CUtlRBTree12::sub_101945f0(const void *insert, unsigned short &parent, bool &leftchild)
+{
+    unsigned short current = m_Root;
+    parent = InvalidIndex();
+    leftchild = false;
+    while (current != InvalidIndex()) {
+        parent = current;
+        if (m_LessFunc(insert, m_pElements[current].m_Data)) {
+            leftchild = true;
+            current = Links(current).m_Left;
+        } else {
+            leftchild = false;
+            current = Links(current).m_Right;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194750 size=0x11
 void sub_10194750(int *dst, const int *src)
 {

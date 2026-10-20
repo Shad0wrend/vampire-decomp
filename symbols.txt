@@ -2231,6 +2231,7 @@
 0x1000e11f func   ?vfunc89@CBaseEntity@@UAEXXZ CBaseEntity::vfunc89
 0x1000e124 func   ?sub_101e0310@S101e0310@@QAEXXZ S101e0310::sub_101e0310
 0x1000e147 func   ?sub_101d4f40@CUnknown101d4f20@@QAEXPAUCUnknown101d4f20_Value@@@Z CUnknown101d4f20::sub_101d4f40
+0x1000e160 func   ?sub_101945f0@CUtlRBTree12@@QAEXPBXAAGAA_N@Z CUtlRBTree12::sub_101945f0
 0x1000e17e func   ?vfunc126@CPointAngleSensor@@UAEHH@Z CPointAngleSensor::vfunc126
 0x1000e188 func   ?sub_10042900@UtlMem@@QAEXXZ UtlMem::sub_10042900
 0x1000e18d func   ?sub_101e9950@CUnknown101e9950@@QAEPAUS101e9570@@XZ CUnknown101e9950::sub_101e9950
