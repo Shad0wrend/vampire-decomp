@@ -684,6 +684,7 @@
 0x10004b1a func   ?vfunc127@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc127
 0x10004b65 func   ?vfunc3@CRestore@@UAEXHHHHH@Z CRestore::vfunc3
 0x10004b6a func   ?sub_1009b500@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b500
+0x10004b7e func   ??0CVDmgBlock16_t@@QAE@XZ CVDmgBlock16_t::CVDmgBlock16_t
 0x10004b9c func   ?sub_10134f10@@YAPAHXZ sub_10134f10
 0x10004ba1 func   ?vfunc546@CGeneric_NPC_bathack@@QAEHH@Z CGeneric_NPC_bathack::vfunc546
 0x10004ba6 func   ??_GCWeaponList@@UAEPAXI@Z ??_GCWeaponList@@UAEPAXI@Z
