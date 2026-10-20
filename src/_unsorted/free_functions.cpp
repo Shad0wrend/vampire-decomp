@@ -53883,6 +53883,23 @@ void CBaseCombatCharacter::sub_10334b10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103352b0 size=0x15e
+#include "inputdata_t.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+
+// TARGET: CBaseCombatCharacter::sub_103352b0
+void CBaseCombatCharacter::sub_103352b0(inputdata_t &data)
+{
+	ScopeTrace t("CBaseCombatCharacter::InputInventory_Remove", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!data.value.Entity(&g_10566458))
+		return;
+	sub_10335470(data.value.Entity(&g_10566458));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10335950 size=0xd5
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
