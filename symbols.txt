@@ -307,6 +307,7 @@
 0x10002b9e func   _env_particle_hud env_particle_hud
 0x10002bc1 func   ?sub_103fe710@@YAHXZ sub_103fe710
 0x10002bc6 func   ?sub_101eaae0@@YAXH@Z sub_101eaae0
+0x10002bd0 func   ?sub_101daec0@CUnknown101daec0@@QAEDPAVIKVNodeView@@PBD@Z CUnknown101daec0::sub_101daec0
 0x10002bd5 func   ?sub_10114820@@YAHXZ sub_10114820
 0x10002bda func   ?vfunc253@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc253
 0x10002be9 func   ?vfunc333@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::vfunc333

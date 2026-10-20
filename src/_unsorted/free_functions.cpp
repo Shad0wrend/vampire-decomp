@@ -23716,6 +23716,25 @@ S6 *S6::sub_101dae70(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101daec0 size=0x73
+#include "CUnknown101daec0.h"
+#include "CUnknown101e0940.h"
+extern CUnknown101e0940 *g_10739a74;
+char CUnknown101daec0::sub_101daec0(IKVNodeView *pKV, const char *pszName)
+{
+    if (pKV) {
+        IKVNodeView *pNode = pszName ? pKV->vfunc2(pszName) : pKV;
+        if (pNode) {
+            m_nHitTable = g_10739a74->sub_101e0940(pNode->vfunc13("HitTable", g_106b8540));
+            m_nChance = pNode->vfunc10("Chance", 100);
+            m_nCount = pNode->vfunc10("Count", 0);
+        }
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101daf60 size=0x9
 bool CUnknown101daf60::sub_101daf60()
 {
