@@ -33,4 +33,5 @@ public:
 
 	CSoundEmitterSystemBase *sub_101b26c0();
 	CSoundEmitterSystemBase *sub_101b0200(unsigned char flags);	// slot 0, scalar deleting destructor: purges the lists at +0xb0, +0x70, +0x24 and the memory blocks at +0x9c, +0x54, +0x8; deletes this when bit 0 of flags is set
+	void sub_101b3770(void *pTable, const char *pszName, int value);	// interns pszName in the string table at +0xb0 and appends the 8 byte record (16 bit symbol, value) to the vector (memory at +0x20, size at +0x2c) of pTable
 };
