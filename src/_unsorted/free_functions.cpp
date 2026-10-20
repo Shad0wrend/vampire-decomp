@@ -33566,6 +33566,35 @@ void __fastcall sub_10232520(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10232cb0 size=0x9d
+#include "CUnknown1070b22c.h"
+struct SMapEdit { char pad[0x24]; const char *m_pszName; int m_nVersion; };
+extern SMapEdit *g_1070b228;
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_106b8540[];
+extern void (__cdecl *g_109f3628)(const char *fmt);
+int sub_100f4190(const char *pszName, int version, int a);
+void sub_101ce440(int a, const char *pszMsg, int b, int c, int d, int e);
+
+bool sub_10232cb0()
+{
+    const char *name = g_1070b228->m_pszName ? g_1070b228->m_pszName : g_106b8540;
+    int r = sub_100f4190(name, g_1070b228->m_nVersion, 0);
+    if (r == 0)
+        return true;
+    if (r == 1) {
+        g_109f3628("\nAborting map_edit\nWorldcraft not running...\n\n");
+        sub_101ce440(4, "Worldcraft not running...", 0, 0, 0, 0);
+        g_1070b22c->vfunc59("disconnect\n");
+        return false;
+    }
+    g_109f3628("\nAborting map_edit\nWC/Engine map versions different...\n\n");
+    sub_101ce440(4, "WC/Engine map versions different...", 0, 0, 0, 0);
+    g_1070b22c->vfunc59("disconnect\n");
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102342d0 size=0x72
 #include "SendProp.h"
 

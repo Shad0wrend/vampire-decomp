@@ -1922,6 +1922,7 @@
 0x1000b186 func   ?sub_100b3350@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100b3350
 0x1000b1f9 func   ?vfunc212@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc212
 0x1000b212 func   ?sub_10341aa0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10341aa0
+0x1000b21c func   ?sub_10232cb0@@YA_NXZ sub_10232cb0
 0x1000b22b func   ?vfunc134@CBloodSplat@@QAEXXZ CBloodSplat::vfunc134
 0x1000b24e func   ?sub_10136470@@YIXPADHH@Z sub_10136470
 0x1000b280 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UASSIGNED_QUEST@@V?$CUtlMemory@UASSIGNED_QUEST@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_QUEST> >,9>::vfunc3
