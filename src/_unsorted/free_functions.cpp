@@ -13365,6 +13365,26 @@ float bf_read::sub_100be3d0(int numbits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be4b0 size=0xaf
+#include "bf_read.h"
+
+unsigned int bf_read::sub_100be4b0(int numbits)
+{
+	bf_read savebf;
+	savebf.sub_100bdee0();
+	savebf = *this;
+
+	unsigned int r = 0;
+	for (int i = 0; i < numbits; i++) {
+		if (ReadOneBit())
+			r |= 1u << i;
+	}
+
+	*this = savebf;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be590 size=0xd4
 #include "bf_read.h"
 
