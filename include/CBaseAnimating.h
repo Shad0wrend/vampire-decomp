@@ -57,6 +57,8 @@ public:
 	int sub_10096b50(int index);	// "CBaseAnimating::GetHitboxBone": scope trace (entity name), the first dword of the 0x20 byte hitbox [index] of the hitbox set at +0x680 (set table at header + dword at +0x104, 0xc byte sets: count at +4, offset at +8); 0 when out of range or no header
 	int sub_10097000(int bone);	// "CBaseAnimating::GetBoneHitbox": scope trace (entity name), index of the first hitbox of the hitbox set at +0x680 whose first dword equals bone; 0 when not found or no header
 	bool sub_10097200(const char *name, int *pSet, int *pHitbox);	// "CBaseAnimating::LookupHitbox": scope trace, stores -1 in both outputs, walks the hitbox sets of GetModelPtr(-1) (count at +0x100, table at +0x104, 0xc bytes each) with an empty inner loop; always false
+	bool sub_10090e30(int sequence);	// "CBaseAnimating::IsValidSequence": scope trace (entity name), sub_1008d990(sequence) != 0
+	int sub_1008d990(int sequence);	// worker of IsValidSequence (stub 0x1000b4f6)
 
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
