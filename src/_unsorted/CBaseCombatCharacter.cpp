@@ -628,6 +628,75 @@ void CBaseCombatCharacter::vfunc384(CBaseEntity *pAmmoWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032d9b0 size=0x14e
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+#define SL5(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4();
+#define SL10(p) SL5(p##a) SL5(p##b)
+#define SL50(p) SL10(p##a) SL10(p##b) SL10(p##c) SL10(p##d) SL10(p##e)
+struct WepRec { int key; int ref; char flag; };
+struct WepL {
+    SL50(w0) SL50(w1) SL50(w2) SL50(w3) SL50(w4) SL50(w5) SL50(w6) SL10(w7)
+    virtual void x0(); virtual void x1();
+    virtual WepRec *v362();
+    virtual int v363();
+};
+struct CharL {
+    SL50(c0) SL50(c1) SL50(c2) SL50(c3) SL50(c4) SL50(c5) SL50(c6) SL10(c7) SL10(c8)
+    SL5(c9)
+    virtual void y0();
+    virtual int v376(int a);
+};
+
+bool CBaseCombatCharacter::sub_1032d9b0(void *pWeapon)
+{
+    const char *ent;
+    if (this) {
+        ent = *(const char **)((char *)this + 0x26c);
+        if (!ent) ent = g_106b8540;
+    } else {
+        ent = g_105387dc;
+    }
+    ScopeTrace trace("CBaseCombatCharacter::Weapon_CanUse", ent, g_106b8540);
+    WepL *w = (WepL *)pWeapon;
+    CharL *self = (CharL *)this;
+    WepRec *recs = w->v362();
+    int count = w->v363();
+    for (int i = 0; i < count; i++) {
+        if (recs[i].flag) {
+            int a = self->v376(recs[i].ref);
+            if (((CBaseAnimating *)this)->sub_1008dd30(a, -1) < 0) {
+                int j;
+                for (j = 0; j < count; j++) {
+                    if (recs[i].key == recs[j].key && i != j) {
+                        int b = self->v376(recs[j].ref);
+                        if (((CBaseAnimating *)this)->sub_1008dd30(b, -1) >= 0)
+                            break;
+                    }
+                }
+                if (j == count)
+                    return false;
+            }
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032ebc0 size=0x9d
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
