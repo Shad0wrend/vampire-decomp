@@ -49733,6 +49733,33 @@ bool CBaseEntity::sub_103d3a40(const char *pszNameOrWildcard)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d4760 size=0x8e
+#include "CNPC_VWerewolf.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+void CNPC_VWerewolf::sub_103d4760()
+{
+	CScopeTrace trace("CNPC_VWerewolf::ClearTeleportHint", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	if (m_pHint66b0)
+		m_pHint66b0->sub_102d1420(0);
+	m_pHint66b0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d7620 size=0xb6
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
