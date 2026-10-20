@@ -1189,6 +1189,23 @@ void CBaseEntity::vfunc93(int moveType, int moveCollide)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ab450 size=0x79
+extern char g_106b8540[];
+struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeTraceEntry *g_109f3620;
+void __cdecl sub_101cd110(int a, int b, int c, int d, int e);
+void CBaseEntity::sub_100ab450(int a, int b, int c, int d, int e)
+{
+    g_109f3620[*g_109f3680].a = "Physics_TraceEntity";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    sub_101cd110(a, b, c, d, e);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ace00 size=0xb1
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

@@ -2628,6 +2628,7 @@
 0x1000fa7e func   ?sub_102ee590@A@@QAEXPAH@Z A::sub_102ee590
 0x1000fa83 func   ?sub_102c6f70@@YIXPAUBehaviorStub@@@Z sub_102c6f70
 0x1000faab func   ?sub_103a6f70@TLeader@@QAEXHH@Z TLeader::sub_103a6f70
+0x1000face func   ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z CBaseEntity::sub_100ab450
 0x1000fae7 func   ?sub_1008d0f0@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_1008d0f0
 0x1000fb1e func   _trigger_transition trigger_transition
 0x1000fb3c func   ?vfunc5@CVampireProjectile_MingXiaoSpit@@QAEPAV1@I@Z CVampireProjectile_MingXiaoSpit::vfunc5
