@@ -495,6 +495,30 @@ void *sub_1002e970(int a, int b, int c, char *obj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002ee60 size=0x66
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_106b8540[];
+
+struct PhysShadowSystem
+{
+	void sub_100d13d0(void *pEnt);
+};
+extern PhysShadowSystem *g_106b89bc;
+
+// TARGET: sub_1002ee60
+void sub_1002ee60(void *pEnt)
+{
+	g_109f3620[*g_109f3680].a = "PhysRemoveShadow";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	g_106b89bc->sub_100d13d0(pEnt);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002f820 size=0xa3
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
