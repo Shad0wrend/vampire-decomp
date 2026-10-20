@@ -16636,6 +16636,72 @@ void sub_100055b5();
 void __stdcall sub_100de610(int) { sub_100055b5(); }
 // END FUNCTION
 
+// FUNCTION: 0x100de930 size=0x10e
+#include "CUnknown100de930.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+
+struct List100de930 : CUtlLinkedList12 {
+    int Find(void *p)
+    {
+        for (int i = m_Head; i != -1; i = m_pMemory[i].m_Next) {
+            if (m_pMemory[i].m_pData == p)
+                return i;
+        }
+        return -1;
+    }
+    void Unlink(int i)
+    {
+        CUtlLinkedList12Node *nodes = m_pMemory;
+        CUtlLinkedList12Node &links = nodes[i];
+        if (links.m_Previous != -1)
+            nodes[links.m_Previous].m_Next = links.m_Next;
+        else
+            m_Head = links.m_Next;
+        if (links.m_Next != -1)
+            nodes[links.m_Next].m_Previous = links.m_Previous;
+        else
+            m_Tail = links.m_Previous;
+        links.m_Next = i;
+        links.m_Previous = i;
+        m_ElementCount--;
+    }
+    void Remove(int i)
+    {
+        if (sub_100decb0(i))
+            Unlink(i);
+        m_pMemory[i].m_Next = m_FirstFree;
+        m_FirstFree = i;
+    }
+    void FindAndRemove(void *p)
+    {
+        int i = Find(p);
+        if (i != -1)
+            Remove(i);
+    }
+};
+
+static inline CGlobalEntityList_Ent *Resolve100de930(unsigned int h)
+{
+    CGlobalEntityList_Slot *s;
+    CGlobalEntityList_Ent *result;
+    if (h != 0xffffffff && (s = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13))
+        result = s->m_pEntity;
+    else
+        result = 0;
+    return result;
+}
+
+void CUnknown100de930::sub_100de930()
+{
+    if (Resolve100de930(*(volatile unsigned int *)&m_hOwner) != 0) {
+        CUnknown100de930Owner *owner = (CUnknown100de930Owner *)Resolve100de930(*(volatile unsigned int *)&m_hOwner);
+        ((List100de930 *)&owner->m_List)->FindAndRemove(this);
+        m_hOwner = 0xffffffff;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dea90 size=0x9
 void CUnknown100dea90::sub_100dea90(int value)
 {

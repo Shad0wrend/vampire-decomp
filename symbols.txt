@@ -4177,6 +4177,7 @@
 0x10015415 func   ?sub_10092190@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10092190
 0x10015433 func   ?vfunc4@CTEBeamRing@@UAEXHH@Z CTEBeamRing::vfunc4
 0x1001543d func   ?vfunc5@CRevertSaved@@QAEPAV1@I@Z CRevertSaved::vfunc5
+0x1001544c func   ?sub_100de930@CUnknown100de930@@QAEXXZ CUnknown100de930::sub_100de930
 0x10015465 func   ?vfunc546@CNPC_VTzimisceRunner@@QAEHH@Z CNPC_VTzimisceRunner::vfunc546
 0x1001546a func   ?sub_10105090@CExpressionTable@@QAEPBDH@Z CExpressionTable::sub_10105090
 0x10015474 func   ?sub_10156580@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10156580
