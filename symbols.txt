@@ -3204,6 +3204,7 @@
 0x10010929 func   ?sub_103e8570@@YAHXZ sub_103e8570
 0x1001092e func   ?sub_101b20b0@UtlMem@@QAEXXZ UtlMem::sub_101b20b0
 0x1001094c func   ?vfunc0@CGameMovement@@UAEPAV1@I@Z CGameMovement::vfunc0
+0x10010951 func   ?sub_102e30d0@CTraceFilterNav@@QAEPAV1@HH@Z CTraceFilterNav::sub_102e30d0
 0x1001096f func   ?sub_103e5380@@YAHXZ sub_103e5380
 0x10010974 func   ?sub_103e5020@@YAHXZ sub_103e5020
 0x10010979 func   ?sub_1012cf30@@YGXH@Z sub_1012cf30

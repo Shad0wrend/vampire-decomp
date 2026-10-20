@@ -46866,6 +46866,26 @@ void CUtlVector36::sub_102e2b60(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e30d0 size=0x28
+#include "CTraceFilterNav.h"
+
+extern int vt_1049d8c0[];
+
+struct CTraceFilterSimplePlaceholder {
+    void sub_1000bd7f(int a, int b);
+};
+
+// TARGET: CTraceFilterNav::sub_102e30d0
+CTraceFilterNav *CTraceFilterNav::sub_102e30d0(int a, int b)
+{
+    ((CTraceFilterSimplePlaceholder *)this)->sub_1000bd7f(a, b);
+    m_0c = b;
+    *(int **)this = vt_1049d8c0;
+    m_10 = a;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e7e00 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
