@@ -39,4 +39,5 @@ public:
 	float m_savedUnk50;
 
 	CAI_StandoffBehavior *sub_102c7100();	// constructor body (base constructors inlined)
+	int sub_102c6f70(int a);	// tail call: slot 2 of the object at +0x14 (a base behaviour's default, stub 0x1000fa83)
 };
