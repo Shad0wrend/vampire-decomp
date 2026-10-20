@@ -11,6 +11,7 @@ public:
 	virtual CTEShatterSurface *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	void sub_100021d0();	// destructor body
+	void sub_10063340(int a, int b);	// slot 4 (stub 0x10010ee7): sends the message; called directly on the global instance at 0x106c3870 with the recipient filter and a second argument
 
 	char m_pad0004[8];
 	float m_f0c[12];	// 0x000c .. 0x003b, zeroed
