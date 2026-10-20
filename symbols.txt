@@ -647,6 +647,7 @@
 0x100048d6 func   ?sub_101fc220@CVStatCost_t@@QAE_NPAUCVStatKV@@@Z CVStatCost_t::sub_101fc220
 0x100048db func   ?sub_1009bb40@CBaseEntity@@QAEXHHI@Z CBaseEntity::sub_1009bb40
 0x100048e0 func   ?sub_10183100@CUnknown10183100@@QAEXH@Z CUnknown10183100::sub_10183100
+0x100048e5 func   ?sub_10200ca0@CVStatList_t@@QAEHH@Z CVStatList_t::sub_10200ca0
 0x10004903 func   _vdisciplineprojectile vdisciplineprojectile
 0x10004917 func   ?vfunc28@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc28
 0x1000493a func   ?vfunc2@CTEInspectionFX@@UAEPAV1@I@Z CTEInspectionFX::vfunc2
