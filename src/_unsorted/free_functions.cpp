@@ -40246,6 +40246,25 @@ char sub_103a5da0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103aba00 size=0x43
+#include "CNPC_VScurrying.h"
+void *sub_100aa720(int size);
+extern char g_1064f720[];
+
+// TARGET: npc_VScurrying
+extern "C" CBaseEntity *npc_VScurrying()
+{
+	void *mem = sub_100aa720(0x66a0);
+	CNPC_VScurrying *p;
+	if (mem)
+		p = ((CNPC_VScurrying *)mem)->sub_103abb00();
+	else
+		p = 0;
+	p->vfunc106(g_1064f720);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103abc90 size=0x33
 void sub_10001564();
 void sub_10003792();
