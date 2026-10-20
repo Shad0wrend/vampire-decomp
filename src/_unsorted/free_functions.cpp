@@ -41722,6 +41722,25 @@ char sub_103dc8a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dcf90 size=0x43
+#include "CNPC_VYukie.h"
+void *sub_100aa720(int size);
+extern char g_10663f18[];
+
+// TARGET: npc_VYukie
+extern "C" CBaseEntity *npc_VYukie()
+{
+	void *mem = sub_100aa720(0x666c);
+	CNPC_VYukie *p;
+	if (mem)
+		p = ((CNPC_VYukie *)mem)->sub_103dd000();
+	else
+		p = 0;
+	p->vfunc106(g_10663f18);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd140 size=0x33
 void sub_1000ef84();
 void sub_1000fa9c();
