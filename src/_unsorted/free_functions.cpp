@@ -64299,6 +64299,63 @@ int sub_10428280(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104284c0 size=0xc2
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct IncludeModelProvider
+{
+	virtual void v0();
+	virtual struct StudioHdr *vfunc1(StudioHdr *pHdr, int index);
+};
+
+struct SeqDesc
+{
+	int m_nLabelIndex;
+	char m_pad0004[0x2fc - 4];
+};
+
+struct IncludeModel
+{
+	int m_pad0000;
+	IncludeModelProvider *m_pProvider;	// 0x04
+	int m_nBaseSequence;	// 0x08
+	char m_pad000c[0x74 - 0xc];
+};
+
+struct StudioHdr
+{
+	char m_pad0000[0x110];
+	int numseq;	// 0x110
+	int seqindex;	// 0x114
+	char m_pad0118[0x194 - 0x118];
+	int numincludemodels;	// 0x194
+	int includemodelindex;	// 0x198
+};
+
+int sub_104284c0(StudioHdr *pHdr, const char *pszLabel)
+{
+	if (!pHdr)
+		return -1;
+	for (int i = 0; i < pHdr->numseq; i++) {
+		int idx = i;
+		if (idx < 0)
+			idx = 0;
+		SeqDesc *pSeq = (SeqDesc *)((char *)pHdr + (pHdr->seqindex + idx * sizeof(SeqDesc)));
+		if (_strcmpi((const char *)pSeq + pSeq->m_nLabelIndex, pszLabel) == 0)
+			return i;
+	}
+	for (int j = 0; j < pHdr->numincludemodels; j++) {
+		IncludeModel *pInc = (IncludeModel *)((char *)pHdr + (pHdr->includemodelindex + j * sizeof(IncludeModel)));
+		if (pInc->m_pProvider) {
+			int r = sub_104284c0(pInc->m_pProvider->vfunc1(pHdr, j), pszLabel);
+			if (r >= 0)
+				return pInc->m_nBaseSequence + r;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428eb0 size=0xd
 int sub_10428eb0(char *p)
 {
