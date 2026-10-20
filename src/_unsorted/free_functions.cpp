@@ -16864,6 +16864,56 @@ void CUnknown10081e70::sub_100fa6b0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fafa0 size=0x11d
+#include "CBaseAnimating.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_10538764;
+extern int g_1053dd10;
+extern "C" int _strcmpi(const char *, const char *);
+
+int sub_100fafa0(CBaseEntity *pEnt, int type, const char *name)
+{
+	int i = 0;
+	int result = 0;
+	if (type == 1 || type == 3)
+	{
+		result = -1;
+	}
+	else if (type == 6 || type == 0x11)
+	{
+		CBaseAnimating *pAnim = (CBaseAnimating *)__RTDynamicCast(pEnt, 0, &g_10538764, &g_1053dd10, 0);
+		if (pAnim)
+			result = pAnim->sub_10092d50((int)name);
+	}
+	else if (type > i)
+	{
+		if (g_1070b22c->vfunc21(pEnt->vfunc8()) == 3)
+		{
+			int hdr = (int)g_1070b22c->vfunc18(pEnt->vfunc8());
+			if (hdr && *(int *)(hdr + 0xf0) > i)
+			{
+				int offset = 0;
+				do
+				{
+					int *p = (int *)(offset + hdr + *(int *)(hdr + 0xf4));
+					char *str = (char *)(*p + (int)p);
+					if (!_strcmpi(str, name))
+					{
+						result = i;
+						break;
+					}
+					i++;
+					offset += 0xa0;
+				} while (i < *(int *)(hdr + 0xf0));
+			}
+		}
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fb850 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
