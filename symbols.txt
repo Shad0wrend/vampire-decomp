@@ -3891,6 +3891,7 @@
 0x1001342b func   ?sub_1008d520@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d520
 0x10013430 func   ?vfunc5@CInstancedSceneEntity@@QAEPAV1@I@Z CInstancedSceneEntity::vfunc5
 0x10013449 func   ?sub_104304f0@@YAXXZ sub_104304f0
+0x10013458 func   ?vfunc242@CEnvShooter@@QAEPAVCBaseEntity@@VVector@@0@Z CEnvShooter::vfunc242
 0x1001345d func   ?sub_100b1130@@YIHPAVCBaseEntity@@@Z sub_100b1130
 0x1001348f func   ?sub_1033d640@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d640
 0x10013499 func   ?sub_1042fc60@@YAXXZ sub_1042fc60
