@@ -45,6 +45,53 @@ bool sub_10141320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101413e0 size=0x114
+#include "CMultiplayRules.h"
+#include "CBaseCombatCharacter.h"
+
+#define D(x) virtual void x();
+#define T(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+
+struct CWeaponSlots
+{
+	H(a0) H(b0) H(c0)
+	D(d0) D(d1) D(d2) D(d3) D(d4) D(d5) D(d6) D(d7) D(d8) D(d9) D(d10) D(d11)
+	virtual bool slot312();
+	virtual bool slot313();
+	T(e0) T(e1) T(e2) D(e30)
+	virtual int slot345();
+};
+
+CBaseEntity *CMultiplayRules::vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurrentWeapon)
+{
+	CBaseCombatCharacter *pOwner = (CBaseCombatCharacter *)pPlayer;
+	int iCurrentWeight = -1;
+	int iBestWeight = -1;
+	CBaseEntity *pBest = 0;
+	if (pCurrentWeapon) {
+		if (!((CWeaponSlots *)pCurrentWeapon)->slot313())
+			return 0;
+		iCurrentWeight = ((CWeaponSlots *)pCurrentWeapon)->slot345();
+	}
+	for (int i = 0; i < 0xe0; i++) {
+		CWeaponSlots *pCheck = (CWeaponSlots *)pOwner->sub_1032e8b0(i);
+		if (!pCheck)
+			continue;
+		if (pCheck->slot345() > -1 && pCheck->slot345() == iCurrentWeight && (CBaseEntity *)pCheck != pCurrentWeapon) {
+			if (pCheck->slot312() && pOwner->sub_1032db60((CBaseEntity *)pCheck) && pOwner->sub_10335a70((CBaseEntity *)pCheck))
+				return (CBaseEntity *)pCheck;
+		} else if (pCheck->slot345() > iBestWeight && (CBaseEntity *)pCheck != pCurrentWeapon) {
+			if (pCheck->slot312() && pOwner->sub_10335a70((CBaseEntity *)pCheck)) {
+				iBestWeight = pCheck->slot345();
+				pBest = (CBaseEntity *)pCheck;
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141940 size=0x9
 extern float g_104454c0;
 float CMultiplayRules::vfunc30(int a) { return g_104454c0; }

@@ -3122,6 +3122,7 @@
 0x1000f6d2 func   ?vfunc5@CItemGWerewolfBlood@@QAEPAV1@I@Z CItemGWerewolfBlood::vfunc5
 0x1000f6fa func   ?sub_100cdba0@CUnknown100cdba0@@QAEXUCUnknown100cdba0Data@@H@Z CUnknown100cdba0::sub_100cdba0
 0x1000f763 func   ?vfunc5@CBaseViewModel@@QAEPAV1@I@Z CBaseViewModel::vfunc5
+0x1000f768 func   ?vfunc20@CMultiplayRules@@UAEPAVCBaseEntity@@PAV2@0@Z CMultiplayRules::vfunc20
 0x1000f77c func   ?vfunc5@CItemMMoneyEnvelope@@QAEPAV1@I@Z CItemMMoneyEnvelope::vfunc5
 0x1000f79f func   ?sub_103f5ff0@@YAHXZ sub_103f5ff0
 0x1000f7b3 func   ?vfunc34@CPropSign@@UAE_NH@Z CPropSign::vfunc34
