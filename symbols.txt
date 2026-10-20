@@ -2419,6 +2419,7 @@
 0x1000d2e2 func   ?sub_10160680@CUnknown10160680@@QAEMXZ CUnknown10160680::sub_10160680
 0x1000d2f6 func   ?vfunc8@CDataObjectAccessSystem@@UAEPAV1@I@Z CDataObjectAccessSystem::vfunc8
 0x1000d2fb func   ?sub_10260980@CUnknown10260980@@QAEPAU1@XZ CUnknown10260980::sub_10260980
+0x1000d30a func   ?sub_103d8550@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::sub_103d8550
 0x1000d30f func   _camera_cinematic camera_cinematic
 0x1000d314 func   ?sub_101fed00@CVStatInfo_t@@QAE_NXZ CVStatInfo_t::sub_101fed00
 0x1000d31e func   _info_node_air info_node_air

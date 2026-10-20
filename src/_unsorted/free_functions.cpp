@@ -54917,6 +54917,42 @@ void *CNPC_VWerewolf::sub_103d7620(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d8550 size=0xc1
+#include "CNPC_VWerewolf.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CBreakHintView	// the hint object (stub 0x1000cc39 for 0x102d14c0)
+{
+    char sub_102d14c0();
+};
+
+bool CNPC_VWerewolf::sub_103d8550(void *pHint)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CNPC_VWerewolf::IsValidBreakHint";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (!pHint) {
+        (*g_109f3680)--;
+        return false;
+    }
+    if (((CBreakHintView *)pHint)->sub_102d14c0()) {
+        (*g_109f3680)--;
+        return false;
+    }
+    if (*(int *)((char *)pHint + 0x5dc) != 0x3aa3) {
+        (*g_109f3680)--;
+        return false;
+    }
+    (*g_109f3680)--;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d99a0 size=0xcd
 #include "inputdata_t.h"
 
