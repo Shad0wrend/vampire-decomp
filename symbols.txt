@@ -155,6 +155,7 @@
 0x10001e6f func   ?vfunc5@CRagdollPropSpecial@@QAEPAV1@I@Z CRagdollPropSpecial::vfunc5
 0x10001ea6 func   _item_p_occult_presence item_p_occult_presence
 0x10001eb0 func   _math_remap math_remap
+0x10001ec9 func   ?sub_101fc410@CVStatCost_t@@QAEHH_N@Z CVStatCost_t::sub_101fc410
 0x10001ece func   ?sub_103de420@@YADXZ sub_103de420
 0x10001ef6 func   ?sub_10250400@@YAXPAX@Z sub_10250400
 0x10001efb func   ?vfunc2@CTEDecal@@UAEPAV1@I@Z CTEDecal::vfunc2

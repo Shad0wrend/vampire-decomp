@@ -23742,6 +23742,30 @@ int CVStatCost_t::sub_101fc350(int level, bool bFirst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fc410 size=0x89
+#include "CVStatCost_t.h"
+
+extern int *g_109f3680;
+extern int *g_109f3620;
+extern char g_106b8540[];
+
+int CVStatCost_t::sub_101fc410(int level, bool bFirst)
+{
+    g_109f3620[*g_109f3680 * 3] = (int)"CVStatCost_t::GetCostToSell";
+    g_109f3620[*g_109f3680 * 3 + 1] = (int)g_106b8540;
+    g_109f3620[*g_109f3680 * 3 + 2] = (int)g_106b8540;
+    ++*g_109f3680;
+    if (bFirst) {
+        int r = m_first.sub_101fbc40(level, true);
+        --*g_109f3680;
+        return r;
+    }
+    int r = m_second.sub_101fbc40(level, false);
+    --*g_109f3680;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fc8d0 size=0x5f
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
