@@ -1310,6 +1310,7 @@
 0x10008dcd func   ?sub_101e8410@@YGXPAHHH@Z sub_101e8410
 0x10008dd2 func   ?sub_1034a170@@YAXPAUCBlock4k@@PBU1@@Z sub_1034a170
 0x10008dd7 func   ?vfunc5@CItemContainerOneItemFiltered@@QAEPAV1@I@Z CItemContainerOneItemFiltered::vfunc5
+0x10008deb func   ?sub_102d41a0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102d41a0
 0x10008e09 func   ?sub_10202880@@YAPBDH@Z sub_10202880
 0x10008e0e func   ?sub_10258500@@YAPBDH@Z sub_10258500
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
