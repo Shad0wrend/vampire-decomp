@@ -12080,6 +12080,59 @@ void sub_100d6820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dac20 size=0x74
+#include "CGlobalEntityList.h"
+
+#define SV(n) virtual void v##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+
+struct SEngine {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7)
+	SV(80) SV(81) SV(82)
+	virtual int v83();
+};
+
+struct STerminal {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21) SV10(22) SV10(23) SV10(24) SV10(25) SV10(26)
+	SV(270) SV(271) SV(272)
+	virtual void v273(void *pPlayer, int a);
+};
+
+struct SPlayer {
+	char pad[0x1040];
+	unsigned int m_hTerminal;
+};
+
+extern CGlobalEntityList *g_10566458;
+extern SEngine *g_1070b22c;
+extern char g_10538764[];
+extern char g_105606d4[];
+SPlayer *sub_10008d8c();
+
+void sub_100dac20()
+{
+	SPlayer *pPlayer = sub_10008d8c();
+	if (pPlayer) {
+		unsigned int h = pPlayer->m_hTerminal;
+		if (h != 0xffffffff) {
+			CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+			if (s->m_Serial == (int)(h >> 13)) {
+				void *pEnt = s->m_pEntity;
+				if (pEnt) {
+					STerminal *pTerm = (STerminal *)__RTDynamicCast(pEnt, 0, g_10538764, g_105606d4, 0);
+					if (pTerm) {
+						int a = g_1070b22c->v83();
+						pTerm->v273(pPlayer, a);
+					}
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db3f0 size=0x8
 extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
