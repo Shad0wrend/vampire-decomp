@@ -15,3 +15,13 @@ CAI_ExpressiveNPC *CAI_ExpressiveNPC::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10312d40 size=0x90
+#include "CAI_ExpressiveNPC.h"
+#include "CAI_Expresser.h"
+
+CAI_Expresser *CAI_ExpressiveNPC::vfunc583()
+{
+	return new CAI_Expresser;
+}
+// END FUNCTION
