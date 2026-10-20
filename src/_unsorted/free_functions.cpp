@@ -37897,6 +37897,48 @@ void sub_10238380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102399b0 size=0xd4
+#include "IVEngineServer.h"
+#define KV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define KV100(p) KV(p##0) KV(p##1) KV(p##2) KV(p##3) KV(p##4) KV(p##5) KV(p##6) KV(p##7) KV(p##8) KV(p##9)
+struct ViewKickTarget
+{
+    KV100(a0) KV(a10) KV(a11) KV(a12) KV(a13) KV(a14) KV(a15)
+    virtual void a160(); virtual void a161(); virtual void a162(); virtual void a163(); virtual void a164();
+    virtual void a165(); virtual void a166(); virtual void a167(); virtual void a168();
+    virtual void vfunc169(float *pKick);
+};
+extern IVEngineServer *g_1070b22c;
+extern "C" double __cdecl atof(const char *);
+extern void (*g_109f3628)(const char *fmt, ...);
+extern char g_105c20f4[];
+ViewKickTarget *sub_10008d8c();
+void sub_102399b0()
+{
+    ViewKickTarget *pTarget = sub_10008d8c();
+    if (pTarget) {
+        float kick[3];
+        kick[0] = -2.0f;
+        kick[1] = -0.5f;
+        kick[2] = 0.0f;
+        switch (g_1070b22c->vfunc85()) {
+        case 4:
+            kick[2] = (float)atof((const char *)g_1070b22c->vfunc84(3));
+        case 3:
+            kick[1] = (float)atof((const char *)g_1070b22c->vfunc84(2));
+        case 2:
+            kick[0] = (float)atof((const char *)g_1070b22c->vfunc84(1));
+        case 1:
+            pTarget->vfunc169(kick);
+            return;
+        default:
+            g_109f3628(g_105c20f4);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ae40 size=0x43
 #include "CWorld.h"
 void *sub_100aa720(int size);

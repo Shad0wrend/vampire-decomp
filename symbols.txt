@@ -4212,6 +4212,7 @@
 0x101b2170 func   ?sub_101b2170@@YAPBDM@Z sub_101b2170
 0x101b2200 func   ?sub_101b2200@@YAPBDH@Z sub_101b2200
 0x101b24d0 func   ?sub_101b24d0@@YAHPBD@Z sub_101b24d0
+0x102399b0 func   ?sub_102399b0@@YAXXZ sub_102399b0
 0x1025b630 func   ?sub_1025b630@@YAXPBDPAI0@Z sub_1025b630
 0x102f2d10 func   ?sub_102f2d10@@YAXPAMHI@Z sub_102f2d10
 0x102f2de0 func   ?sub_102f2de0@@YAXPAMH@Z sub_102f2de0
