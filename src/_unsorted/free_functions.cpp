@@ -23720,6 +23720,57 @@ PyObj *sub_101975d0(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101976b0 size=0xb7
+#include "CBaseEntitySlots.h"
+#include "Vector.h"
+
+struct PyObj { int ob_refcnt; };
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObj *args, const char *format, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred();
+__declspec(dllimport) void PyErr_SetString(PyObj *exc, const char *msg);
+__declspec(dllimport) extern PyObj *PyExc_StandardError;
+__declspec(dllimport) extern PyObj _Py_NoneStruct;
+}
+void *sub_10196780(PyObj *pEntity);
+Vector *sub_101960f0(Vector *pOut, PyObj *pTuple);
+
+class EntitySlots218 : public CBaseEntitySlots
+{
+public:
+	virtual void s194(); virtual void s195(); virtual void s196(); virtual void s197(); virtual void s198(); virtual void s199();
+	virtual void s200(); virtual void s201(); virtual void s202(); virtual void s203(); virtual void s204(); virtual void s205();
+	virtual void s206(); virtual void s207(); virtual void s208(); virtual void s209(); virtual void s210(); virtual void s211();
+	virtual void s212(); virtual void s213(); virtual void s214(); virtual void s215(); virtual void s216(); virtual void s217();
+	virtual void slot218(const Vector *pAngles);
+};
+
+PyObj *sub_101976b0(PyObj *self, PyObj *args)
+{
+	PyObj *pEntity = 0;
+	PyObj *pAngles = 0;
+	if (!PyArg_ParseTuple(args, "OO", &pEntity, &pAngles))
+	{
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_StandardError, "bad args to SetAngles()");
+		return 0;
+	}
+	EntitySlots218 *pEnt = (EntitySlots218 *)sub_10196780(pEntity);
+	if (pEnt)
+	{
+		Vector buf;
+		Vector *p = sub_101960f0(&buf, pAngles);
+		Vector ang;
+		ang.x = p->x;
+		ang.y = p->y;
+		ang.z = p->z;
+		pEnt->slot218(&ang);
+	}
+	_Py_NoneStruct.ob_refcnt++;
+	return &_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197b00 size=0x178
 #define S1(p, n) virtual void p##n();
 #define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
