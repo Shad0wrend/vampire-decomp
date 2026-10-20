@@ -7548,6 +7548,32 @@ int CBaseAnimating::sub_10093ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094370 size=0x7f
+struct ScopeEnt { const char *a; const char *b; const char *c; };
+extern ScopeEnt *g_109f3620;
+extern int *g_109f3680;
+int sub_1000155a(int);
+
+struct CFakeEnt { char pad[0x26c]; const char *m_name; int sub_10094370(int a); };
+
+int CFakeEnt::sub_10094370(int a)
+{
+    const char *n;
+    if (this) {
+        n = m_name;
+        if (!n) n = "";
+    } else
+        n = "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::RegisterPrivateActivity";
+    g_109f3620[*g_109f3680].b = n;
+    g_109f3620[*g_109f3680].c = "";
+    ++*g_109f3680;
+    int r = sub_1000155a(a);
+    --*g_109f3680;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100945e0 size=0x9f
 #include "CBaseAnimating.h"
 
