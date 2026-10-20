@@ -60,6 +60,7 @@ public:
 	void sub_1008d520(inputdata_t *inputdata);	// "CBaseAnimating::InputFadeToSkin": scope trace, then sub_1008d6d0(skin)
 	void sub_1008d6d0(int skin);	// "CBaseAnimating::SetSkin"-like, called by InputFadeToSkin
 	void sub_1008d450(inputdata_t *inputdata);	// "CBaseAnimating::InputSetSkinFadeTime": scope trace (entity name), then sub_1008d5f0(the input's float, 0 when it is not a float)
+	void sub_1008d320(inputdata_t *inputdata);	// "CBaseAnimating::InputSetBodygroup": scope trace (entity name), the input as a string (converted when it is not one) is trimmed into a 64 byte buffer; the group is atoi of it, the value atoi of the text after the first space (0 without one); then SetBodygroup(group, value)
 	void sub_1008d5f0(float time);	// "CBaseAnimating::SetSkinFadeTime"-like, called through the stub at 0x100151bd
 	int sub_1008dac0(int a, char *bufB, char *bufA, int b);	// "CBaseAnimating::SelectWeightedSequence" worker (fills two 0x2000-byte buffers)
 	int sub_1008dc40(int a, int b);	// "CBaseAnimating::SelectWeightedSequence": scope trace, worker, then a sort-like helper
