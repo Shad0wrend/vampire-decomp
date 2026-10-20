@@ -84,13 +84,20 @@ public:
 	CAI_NPC_V(500) CAI_NPC_V(501) CAI_NPC_V(502) CAI_NPC_V(503) CAI_NPC_V(504) CAI_NPC_V(505) CAI_NPC_V(506) CAI_NPC_V(507) CAI_NPC_V(508)
 	virtual bool vfunc509();	// true when the NPC may start the idle/engine request (state 1 or 3, flag bits clear, no live dialog partner, not busy)
 	virtual bool vfunc510();
-	CAI_NPC_V(511) CAI_NPC_V(512) CAI_NPC_V(513) CAI_NPC_V(514) CAI_NPC_V(515)
+	CAI_NPC_V(511) CAI_NPC_V(512)
+	virtual unsigned int vfunc513();	// the NPC's class flags (bit 26 marks the NPCs that must be in a squad)
+	CAI_NPC_V(514) CAI_NPC_V(515)
 	virtual float vfunc516();
 	CAI_NPC_V(517) CAI_NPC_V(518)
 	virtual void vfunc519(int a, float b, float c, float d);	// when the debug convar is set, forwards to slot 14 of the object at +0x5d44
 	virtual float vfunc520(int a);	// forwards a to slot 15 of the object pointed to at +0x5d44 and returns its float result
 	CAI_NPC_V(521) CAI_NPC_V(522) CAI_NPC_V(523) CAI_NPC_V(524) CAI_NPC_V(525) CAI_NPC_V(526) CAI_NPC_V(527) CAI_NPC_V(528) CAI_NPC_V(529)
-	CAI_NPC_V10(53) CAI_NPC_V10(54)
+	CAI_NPC_V10(53)
+	CAI_NPC_V(540) CAI_NPC_V(541)
+	virtual void vfunc542();
+	CAI_NPC_V(543) CAI_NPC_V(544)
+	virtual bool vfunc545();	// finds the squad (+0x5da4) from the name at +0x5da8 when the class flags ask for one; true when it has one
+	CAI_NPC_V(546) CAI_NPC_V(547) CAI_NPC_V(548) CAI_NPC_V(549)
 	CAI_NPC_V(550) CAI_NPC_V(551)
 	virtual unsigned int vfunc552();
 	CAI_NPC_V(553) CAI_NPC_V(554) CAI_NPC_V(555) CAI_NPC_V(556) CAI_NPC_V(557) CAI_NPC_V(558) CAI_NPC_V(559)
