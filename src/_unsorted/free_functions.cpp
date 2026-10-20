@@ -8043,6 +8043,34 @@ int CBaseAnimating::sub_10096760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096b50 size=0xbf
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int CBaseAnimating::sub_10096b50(int index)
+{
+	const char *n = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::GetHitboxBone";
+	g_109f3620[*g_109f3680].b = n;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	char *hdr = (char *)sub_100952d0(-1);
+	if (hdr) {
+		char *set = hdr + *(int *)(hdr + 0x104) + *(int *)((char *)this + 0x680) * 0xc;
+		if (set && index < *(int *)(set + 4)) {
+			int r = *(int *)(set + *(int *)(set + 8) + index * 0x20);
+			(*g_109f3680)--;
+			return r;
+		}
+	}
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097110 size=0xb2
 #include "CBaseAnimating.h"
 
