@@ -6168,6 +6168,35 @@ CUnknown10073ae0 *CUnknown10077b30::sub_10077b30(int index, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077db0 size=0x9f
+#include "CUnknown10077db0.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+void CUnknown10077db0::sub_10077db0(int list, const char *name)
+{
+	int i = 0;
+	int *pCount = &m_lists[list].m_nRecords;
+	if (*pCount <= 0)
+		return;
+	int off = 0;
+	CUnknown10077db0List *pList = &m_lists[list];
+	do {
+		if (pList->m_pRecords && 0) {}
+		CUnknown10073ae0 *p = (CUnknown10073ae0 *)((char *)pList->m_pRecords + off);
+		if (p && !_strcmpi(p->sub_10073ae0(), name)) {
+			int nMove = pList->m_nRecords - i - 1;
+			if (nMove > 0)
+				memmove(&pList->m_pRecords[i], &pList->m_pRecords[i + 1], nMove * sizeof(CUnknown10073ae0));
+			pList->m_nRecords--;
+			return;
+		}
+		i++;
+		off += 0x88;
+	} while (i < *pCount);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100784b0 size=0xd
 void CUnknown10077730::sub_100784b0(float value)
 {

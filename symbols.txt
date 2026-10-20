@@ -1852,6 +1852,7 @@
 0x1000aad3 func   ?sub_103c29b0@@YADXZ sub_103c29b0
 0x1000aaf6 func   ?sub_103eeec0@@YAXXZ sub_103eeec0
 0x1000ab0a func   ??0CWeaponRanged@@QAE@XZ CWeaponRanged::CWeaponRanged
+0x1000ab19 func   ?sub_10077db0@CUnknown10077db0@@QAEXHPBD@Z CUnknown10077db0::sub_10077db0
 0x1000ab28 func   ?sub_10060ac0@@YAXHHPBH0HHHD@Z sub_10060ac0
 0x1000ab41 func   _ai_hint ai_hint
 0x1000ab55 func   ?sub_101eddd0@@YAXH@Z sub_101eddd0
