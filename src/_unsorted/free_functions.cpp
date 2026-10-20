@@ -31459,6 +31459,39 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8820 size=0xf7
+#include "CBaseCombatCharacter.h"
+#include "CUnknown10739d08.h"
+
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+void __cdecl sub_10012a8a();	// the game's destructor stub of the shared default stat list
+extern unsigned char g_109f0b2a;	// its guard byte
+extern CVStatList_t g_109f0b40;	// the shared default stat list
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+// The game's inlined GetActiveStatList with its function-local static spelled out.
+static inline CVStatList_t *ActiveStatList(CBaseCombatCharacter *pChar)
+{
+	for (int i = 0; i < pChar->m_nStatLists; i++) {
+		if (pChar->m_pStatLists[i]->m_field10 == 0)
+			return pChar->m_pStatLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		new (&g_109f0b40) CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+
+float CUnknown10739d08::sub_101e8820(CBaseCombatCharacter *pChar)
+{
+	int nDivisor = (int)vfunc5(ActiveStatList(pChar)->sub_10010609(1) - 1);
+	return (float)(ActiveStatList(pChar)->sub_10010609(0x1a) / nDivisor);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8c90 size=0xc4
 extern int (*g_109f3630)(const char *, ...);
 extern const char g_105a43f0[];

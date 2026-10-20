@@ -756,6 +756,7 @@
 0x10004c41 func   ?sub_102cc520@CUnknown102cc520@@QAEPAV1@XZ CUnknown102cc520::sub_102cc520
 0x10004c5f func   ?sub_100c83a0@CMem4c_t@@QAEXH@Z CMem4c_t::sub_100c83a0
 0x10004c7d func   ?vfunc246@CBaseDoor@@QAEXHPAHH@Z CBaseDoor::vfunc246
+0x10004c91 func   ?sub_101e8820@CUnknown10739d08@@QAEMPAVCBaseCombatCharacter@@@Z CUnknown10739d08::sub_101e8820
 0x10004ca0 func   ?vfunc546@CNPC_VBrujah@@QAEHH@Z CNPC_VBrujah::vfunc546
 0x10004caf func   ?vfunc5@CItemGGarysTape@@QAEPAV1@I@Z CItemGGarysTape::vfunc5
 0x10004cb4 func   ?sub_10332570@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10332570
