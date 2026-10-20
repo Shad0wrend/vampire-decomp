@@ -158,4 +158,6 @@ public:
 	int vfunc440(int schedule);	// slot 440 "CNPC_VWerewolf::TranslateSchedule": scope trace (entity name), schedules 0x43 / 0xb7 / 0xf0 become 0x15c / 0x157 / 0xb1 (recording the source file and line in the fields at +0x1b30 / +0x1b34), everything else goes to CAI_BaseNPCTroika::vfunc440
 	int sub_102b12f0(int schedule);	// CAI_BaseNPCTroika::vfunc440 (stub 0x10001997), called directly
 	void vfunc435(int arg);	// slot 435 "CNPC_VWerewolf::OnScheduleChange": scope trace (entity name), the base implementation, then drops the oldest entry of the history at +0x668c once it holds more than 50 and appends arg
+	bool vfunc617(CNPC_VWerewolfVec3 a, int b, int c, CNPC_VWerewolfVec3 d);	// slot 617 "CNPC_VWerewolf::EnemyCouldSeeHull...": scope trace (entity name); false while the global at 0x1093d694 answers slot 1 false with its field +0x2c set, or when the target (slot 167) answers slot 158 false; else CNPC_VBaseBoss::vfunc617
+	bool sub_10366510(CNPC_VWerewolfVec3 a, int b, int c, CNPC_VWerewolfVec3 d);	// CNPC_VBaseBoss::vfunc617 (stub 0x10007cd4), called directly
 };
