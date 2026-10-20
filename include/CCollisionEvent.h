@@ -29,6 +29,7 @@ public:
 	void sub_10030ae0();	// "CCollisionEvent::UpdateFrictionSounds": scope trace, shuts down every friction entry that is set and older than curtime - 0.1
 	void sub_10012544(CFrictionEntry_t *pEntry);	// releases a friction entry (stub of 0x100307f0)
 	void sub_100307f0(CFrictionEntry_t *pEntry);	// "CCollisionEvent::ShutdownFriction": scope trace, destroys the friction snapshot (slot 9 of the physics interface at 0x1072c474) and clears the entry's value and key
+	void sub_10031070(int a, void *pData, int pObject, char bFlag, void *pExtra1, void *pExtra2);	// "CCollisionEvent::AddDamageEvent" (stub 0x1000495d): scope trace, appends a 0x58 byte record
 
 	char m_pad0004[4];
 	CFrictionEntry_t m_friction[8];	// 0x0008
