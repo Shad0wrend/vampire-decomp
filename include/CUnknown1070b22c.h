@@ -1,8 +1,9 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 13, 17, 18, 20, 21, 35, 38, 49, 59, 62, 82, 84, 85, 105 and 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 13, 17, 18, 20, 21, 35, 38, 47, 49, 59, 62, 82, 84, 85, 105 and 119 to 122 are known.
 // Slot 13 takes a resource name and a preload flag (precaches a sound / resource).
 // Slot 17 is PrecacheModel(name, preload) and returns the model index.
 // Slot 18 returns the studio header of a model index (0 when there is none), slot 21 the type of a model index (3 = studio).
 // Slot 20 returns the model index of a model name.
+// Slot 47 is SaveAllocMemory(num, size): allocates num * size bytes of save memory.
 // Slot 49 is EmitAmbientSound(entindex, pos, sample, volume, soundlevel, flags, pitch).
 // Slot 62 is LightStyle(style, pattern).
 // Slot 119 takes a flag and returns a time value in ST0; slot 120 returns a dword in EAX.
@@ -32,7 +33,7 @@ public:
 	virtual CUnknown1070b22c_Edict *vfunc38(int index);
 	virtual void a39();
 	virtual void a40(); virtual void a41(); virtual void a42(); virtual void a43(); virtual void a44();
-	virtual void a45(); virtual void a46(); virtual void a47(); virtual void a48();
+	virtual void a45(); virtual void a46(); virtual void *vfunc47(int num, int size); virtual void a48();
 	virtual void vfunc49(int entindex, int pos, const char *pszSample, int volume, int soundlevel, int flags, int pitch);
 	virtual void a50(); virtual void a51(); virtual void a52(); virtual void a53(); virtual void a54();
 	virtual void a55(); virtual void a56(); virtual void a57(); virtual void a58();
