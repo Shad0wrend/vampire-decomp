@@ -34147,6 +34147,34 @@ void CUnknown101eac50::sub_101eac50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eb1d0 size=0x148
+#include "CUnknown101eb1d0.h"
+#include "CEntryY.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+#pragma intrinsic(strcat)
+extern "C" char *strcat(char *, const char *);
+extern char g_106b8540[];
+extern const char *g_1073a2d4;
+void sub_10203dd0(const char *text);
+
+// TARGET: CUnknown101eb1d0::sub_101eb1d0
+void CUnknown101eb1d0::sub_101eb1d0()
+{
+	char buf[128];
+	sprintf(buf, "(%d): %s\n", m_nId, m_pszName ? m_pszName : g_106b8540);
+	sub_10203dd0(buf);
+	CEntryY *e = FindEntryY(m_nKey);
+	sprintf(buf, "\t\t%s [ %s ]", g_1073a2d4 ? g_1073a2d4 : g_106b8540, e->m_name ? e->m_name : g_106b8540);
+	if (m_nFlags & 1)
+		strcat(buf, "\tIsWielded");
+	if (m_nFlags & 2)
+		strcat(buf, "\tIsWorn");
+	strcat(buf, "\n");
+	sub_10203dd0(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eb7f0 size=0x17
 #include "CUnknown101eb7f0.h"
 extern void (__cdecl *g_1073a38c)(CUnknown101eb7f0 *, int);

@@ -4164,6 +4164,7 @@
 0x100149bb func   ?sub_10256920@@YAPAUEntL@@HPAU1@PAI@Z sub_10256920
 0x100149c5 func   ?vfunc5@CBaseCombatCharacter@@QAEPAV1@I@Z CBaseCombatCharacter::vfunc5
 0x100149cf func   _phys_spring phys_spring
+0x100149fc func   ?sub_101eb1d0@CUnknown101eb1d0@@QAEXXZ CUnknown101eb1d0::sub_101eb1d0
 0x10014a06 func   _info_node_tzimisce_claw_left info_node_tzimisce_claw_left
 0x10014a0b func   ?vfunc0@CVTraitEffectGroup_t@@QAEPAV1@I@Z CVTraitEffectGroup_t::vfunc0
 0x10014a2e func   ?vfunc617@CNPC_VWerewolf@@QAE_NUCNPC_VWerewolfVec3@@HH0@Z CNPC_VWerewolf::vfunc617
