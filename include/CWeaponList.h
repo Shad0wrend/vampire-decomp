@@ -20,5 +20,27 @@ public:
 	unsigned short m_pad1e;
 	char *m_pFirst;		// +0x20
 
-	~CWeaponList();	// slot 8 (scalar deleting destructor): empties and releases the linked list
+	// slot 8 (scalar deleting destructor): empties the linked list and releases its memory
+	~CWeaponList()
+	{
+		if (m_nCount != 0) {
+			int j = 0xffff;
+			for (int i = m_nCount - 1; i >= 0; i--) {
+				*(unsigned short *)(m_pNodes + (i & 0xffff) * 8 + 6) = (unsigned short)j;
+				*(unsigned short *)(m_pNodes + (i & 0xffff) * 8 + 4) = (unsigned short)i;
+				j = i;
+			}
+			m_w18 = 0;
+			m_w14 = 0xffff;
+			m_w16 = 0xffff;
+			m_w1a = 0;
+		}
+		if (m_nGrow != -1) {
+			if (m_pNodes) {
+				g_109f3624(m_pNodes);
+				m_pNodes = 0;
+			}
+			m_nAlloc = 0;
+		}
+	}
 };
