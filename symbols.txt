@@ -466,6 +466,7 @@
 0x1000371a func   ?sub_1030b2f0@CUnknown1030b2f0@@QAEXH@Z CUnknown1030b2f0::sub_1030b2f0
 0x10003724 func   ?vfunc5@CItemGRingSilver@@QAEPAV1@I@Z CItemGRingSilver::vfunc5
 0x1000373d func   _item_w_unarmed item_w_unarmed
+0x100037a6 func   ?sub_10105870@CExpressionTable@@QAEHHH@Z CExpressionTable::sub_10105870
 0x100037ce func   ?sub_10222e30@@YIXPAUMem@@HH@Z sub_10222e30
 0x100037f1 func   ?sub_101d6de0@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101d6de0
 0x10003800 func   ?vfunc5@CBeam@@QAEPAV1@I@Z CBeam::vfunc5

@@ -16918,6 +16918,39 @@ const char *CExpressionTable::sub_10105090(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105870 size=0xa6
+#include "CExpressionTable.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int CExpressionTable::sub_10105870(int a, int b)
+{
+    g_109f3620[*g_109f3680].a = "CExpressionTable::LookupExpression";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int key = sub_10105270(a, b);
+    if (key != -1) {
+        int i = 0;
+        if (0 < m_field0c) {
+            int *p = (int *)(m_field00 + 0x188);
+            do {
+                if (*p == key) {
+                    (*g_109f3680)--;
+                    return i;
+                }
+                i++;
+                p += 100;
+            } while (i < m_field0c);
+        }
+    }
+    (*g_109f3680)--;
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105e20 size=0xcd
 extern int *g_109f3680;
 extern const char **g_109f3620;
