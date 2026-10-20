@@ -359,6 +359,7 @@
 0x10002ea5 func   ?sub_1013fcb0@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1013fcb0
 0x10002ec8 func   ?sub_10071ba0@UtlVec8@@QAEXHH@Z UtlVec8::sub_10071ba0
 0x10002ef5 func   ?sub_101c67e0@@YAPAHXZ sub_101c67e0
+0x10002f04 func   ?sub_10086e50@@YAXXZ sub_10086e50
 0x10002f18 func   ?sub_10342470@@YA_NPAUUserEntity@@PAUUsedEntity@@@Z sub_10342470
 0x10002f22 func   ?vfunc0@CAI_RatLocalNavigator@@QAEPAV1@I@Z CAI_RatLocalNavigator::vfunc0
 0x10002f31 func   ?sub_101bc750@CUnknown101bc750@@QAEXH@Z CUnknown101bc750::sub_101bc750

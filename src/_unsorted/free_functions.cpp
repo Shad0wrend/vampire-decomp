@@ -7229,6 +7229,34 @@ void sub_10085bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086e50 size=0x9b
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];
+extern char g_1054abdc[];
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+
+static inline char *NextNPC(void *pPrev)
+{
+    for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060((CBaseEntity *)pPrev); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt)) {
+        char *pNPC = (char *)__RTDynamicCast(pEnt, 0, g_10538764, g_1054abdc, 0);
+        if (pNPC)
+            return pNPC;
+    }
+    return 0;
+}
+
+// TARGET: sub_10086e50
+void sub_10086e50()
+{
+    for (char *pNPC = NextNPC(0); pNPC; pNPC = NextNPC(pNPC)) {
+        unsigned int *pFlags = (unsigned int *)(pNPC + 0x224);
+        if (!(*pFlags & 0x1000))
+            *pFlags |= 0x10000;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088a80 size=0x10
 extern bool g_10924fbb;
 
