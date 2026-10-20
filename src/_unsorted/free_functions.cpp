@@ -13586,6 +13586,25 @@ void CMem8f_t::sub_1010cbc0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010cc50 size=0x43
+#include "CFuncAreaPortalWindow.h"
+void *sub_100aa720(int size);
+extern char g_1056e3e0[];
+
+// TARGET: func_areaportalwindow
+extern "C" CBaseEntity *func_areaportalwindow()
+{
+	void *mem = sub_100aa720(0x46c);
+	CFuncAreaPortalWindow *p;
+	if (mem)
+		p = ((CFuncAreaPortalWindow *)mem)->sub_1010d050();
+	else
+		p = 0;
+	p->vfunc106(g_1056e3e0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010d4b0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
