@@ -1991,6 +1991,7 @@
 0x1000b050 func   ?sub_10182d70@@YIXPAXHH@Z sub_10182d70
 0x1000b05f func   ?sub_101f95d0@@YAXH@Z sub_101f95d0
 0x1000b069 func   ?sub_101852f0@@YIXPAH@Z sub_101852f0
+0x1000b06e func   ?vfunc103@CFuncIllusionary@@UAEXXZ CFuncIllusionary::vfunc103
 0x1000b082 func   ?vfunc393@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc393
 0x1000b087 func   ?sub_101fcf50@CVStatAction_t@@QAE_NXZ CVStatAction_t::sub_101fcf50
 0x1000b09b func   ?sub_102c63b0@CUnknown102c63b0@@QBE_NPAX@Z CUnknown102c63b0::sub_102c63b0
