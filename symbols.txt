@@ -2051,6 +2051,7 @@
 0x1000c6a3 func   ?sub_10056a60@CUnknown10056a00@@QAEXXZ CUnknown10056a00::sub_10056a60
 0x1000c6c6 func   ?vfunc104@CBatSwarm@@UAEXXZ CBatSwarm::vfunc104
 0x1000c6df func   ?sub_103f6d30@@YAHXZ sub_103f6d30
+0x1000c6e9 func   ?vfunc269@CDisciplineProjectile@@QAEXXZ CDisciplineProjectile::vfunc269
 0x1000c702 func   _item_g_garys_film item_g_garys_film
 0x1000c707 func   ?vfunc5@CWeaponUnarmed@@QAEPAV1@I@Z CWeaponUnarmed::vfunc5
 0x1000c74d func   ?sub_101063a0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_101063a0
