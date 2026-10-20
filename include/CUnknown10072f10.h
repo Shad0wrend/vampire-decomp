@@ -3,6 +3,16 @@
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
+class UtlMem5
+{
+public:
+	int *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+
+	void sub_100732f0(int num);	// "CUtlMemory::Grow"
+};
+
 class CUnknown10072f10
 {
 public:
@@ -14,4 +24,5 @@ public:
 	int *m_pElements;	// 0x174
 
 	void sub_10072f10(int value);	// "CUtlVector::AddToTail": grows by one and stores value at the end
+	void sub_10073090(int i, int j);	// swaps elements i and j (both non-null) via inlined Remove + InsertBefore
 };
