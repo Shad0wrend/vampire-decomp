@@ -119,3 +119,23 @@ void CNPC_VChangBros::vfunc619(int arg)
 	(*g_109f3680)--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1036d1d0 size=0x78
+#include "CNPC_VChangBros.h"
+struct ScopeEnt { const char *name; const char *file; const char *file2; };
+extern ScopeEnt *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CNPC_VChangBros::vfunc448(int code)
+{
+    g_109f3620[*g_109f3680].name = "CNPC_VChangBros::TaskFail";
+    g_109f3620[*g_109f3680].file = g_106b8540;
+    g_109f3620[*g_109f3680].file2 = g_106b8540;
+    ++*g_109f3680;
+    if (code >= 12 && code <= 15)
+        *(int *)((char *)this + 0x5c54) = 0x15d;
+    sub_100054bb(code);
+    --*g_109f3680;
+}
+// END FUNCTION
