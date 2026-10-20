@@ -1393,6 +1393,7 @@
 0x1000874c func   ?vfunc103@CEnvSpark@@UAEXXZ CEnvSpark::vfunc103
 0x10008751 func   _item_container_one_item_filtered item_container_one_item_filtered
 0x10008788 func   _item_g_drugs_perscription_bottle item_g_drugs_perscription_bottle
+0x1000878d func   ?sub_103d45c0@CNPC_VWerewolf@@QAEXPAUCNPC_VWerewolfHint66b0@@@Z CNPC_VWerewolf::sub_103d45c0
 0x10008792 func   ??_GCPASAttenuationFilter@@UAEPAXI@Z ??_GCPASAttenuationFilter@@UAEPAXI@Z
 0x1000879c func   ?sub_10337a60@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10337a60
 0x100087a1 func   ?sub_101a5680@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_101a5680

@@ -50385,6 +50385,33 @@ bool CBaseEntity::sub_103d3a40(const char *pszNameOrWildcard)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d45c0 size=0x97
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CNPC_VWerewolf::sub_103d45c0(CNPC_VWerewolfHint66b0 *pHint)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	} else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CNPC_VWerewolf::SetTeleportHint";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (m_pHint66b0)
+		sub_103d4760();
+	m_b66c8 = 0;
+	m_pHint66b0 = pHint;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d4760 size=0x8e
 #include "CNPC_VWerewolf.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
