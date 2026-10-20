@@ -17011,6 +17011,23 @@ int sub_100e77f0(const int *a, const int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7890 size=0x104
+#include "ScopeTrace.h"
+#include "CDialog.h"
+
+void CDialog::sub_100e7890(CDialogEntry_t *pDest, const CDialogEntry_t *pSource)
+{
+	ScopeTrace trace("CDialog::line_dup", g_106b8540);
+	*pDest = *pSource;
+	pDest->m_data[1] = sub_100e79f0(pSource->m_data[1], pSource->m_data[0], pSource->m_data[3]);
+	pDest->m_data[2] = sub_100e79f0(pSource->m_data[2], pSource->m_data[0], pSource->m_data[3]);
+	pDest->m_data[4] = sub_100e79f0(pSource->m_data[4], -1, pSource->m_data[3]);
+	pDest->m_data[5] = sub_100e79f0(pSource->m_data[5], -1, pSource->m_data[3]);
+	for (int i = 0; i < 7; i++)
+		pDest->m_data[6 + i] = sub_100e79f0(pSource->m_data[6 + i], pSource->m_data[0], pSource->m_data[3]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7c20 size=0xbd
 struct TraceEntry { const char *a, *b, *c; };
 extern int *g_109f3680;
