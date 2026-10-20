@@ -21507,6 +21507,46 @@ void sub_1018ec20(CBaseEntity *pTarget, float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018ee60 size=0x9c
+#include "CActivityCopyProp.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern CGlobalEntityList *g_10566458;
+extern char g_1058ed74[];
+extern char g_10538764[];
+extern char g_1058ed4c[];
+
+struct HandleSlot { CBaseEntity *m_pEntity; int m_Serial; };
+
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	HandleSlot *s = (HandleSlot *)&g_10566458->m_Slots[h & 0x1fff].m_pEntity;
+	if (s->m_Serial == (int)(h >> 13))
+		return s->m_pEntity;
+	return 0;
+}
+
+void sub_1018ee60(CBaseEntity *pOwner, int activity)
+{
+	volatile int *pActivity = &activity;
+	CBaseEntity *pEnt = 0;
+	do {
+		pEnt = g_106eb5d8.sub_100f7380(pEnt, g_1058ed74);
+		CActivityCopyProp *pProp = (CActivityCopyProp *)__RTDynamicCast(pEnt, 0, g_10538764, g_1058ed4c, 0);
+		if (pProp) {
+			if (ResolveHandle(pProp->m_hTarget) == pOwner && *(int *)((char *)pProp + 0x16c) == 0) {
+				pProp->m_bActive = 1;
+				pProp->m_nActivity = *pActivity;
+				*(unsigned char *)((char *)pProp + 0x1a3) = 0xff;
+				*(int *)((char *)pProp + 0x16c) = 2;
+			}
+		}
+	} while (pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018ef30 size=0x43
 #include "CActivityCopyProp.h"
 void *sub_100aa720(int size);

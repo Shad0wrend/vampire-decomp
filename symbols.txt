@@ -1180,6 +1180,7 @@
 0x10007414 func   _phys_pulleyconstraint phys_pulleyconstraint
 0x10007428 func   ?vfunc110@CBaseToggle@@QAE_NPBD0@Z CBaseToggle::vfunc110
 0x1000742d func   ?sub_10041f40@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_10041f40
+0x1000743c func   ?sub_1018ee60@@YAXPAVCBaseEntity@@H@Z sub_1018ee60
 0x10007450 func   ?sub_10032a60@CUtlMemory20@@QAEPAV1@HH@Z CUtlMemory20::sub_10032a60
 0x1000745f func   _item_k_sarcophagus_key item_k_sarcophagus_key
 0x100074c3 func   _activity_copy_prop activity_copy_prop
