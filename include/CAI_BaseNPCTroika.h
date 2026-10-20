@@ -25,7 +25,7 @@ public:
 	virtual bool vfunc468(CBaseEntity *pEnt);	// see CAI_BaseNPC
 	virtual int vfunc359(CBaseEntity *pEnt);	// slot 359 "GetCombatState"-like: -1 when unselectable (sub_100a52a0) or state +0x5cc0 is 7, 4 while the count at +0x146c is positive, 3 with bit 19 of +0x14bc, then by state +0x5cc0: 2/0xb -> 1, 3/0xe -> 7, 5/6/8/9/0xa/0xd -> 0, else 2 when pEnt answers slot 404 with 1, else 5
 
-	// Slots 569..580 (past the end of the base class's declared slots).
+	// Slots 569..601 (past the end of the base class's declared slots).
 	virtual int vfunc569(CBaseEntity *pHint);	// slot 569: 8 while bit 9 of +0x14b8 is set, else the activity for the hint's type at +0x5dc (100 -> 0x1111, 101 -> 0x110d, 0x27d8 -> 0x1118) when sub_10295460(activity, 0) accepts it, else CAI_BaseNPC::sub_10274aa0(pHint)
 	virtual int vfunc570(CBaseEntity *pHint); virtual void vfunc571(); virtual void vfunc572(); virtual void vfunc573();	// slot 570: picks an activity for the hint's type at +0x5dc (100 / 101), 0x55 when none
 	virtual void vfunc574(); virtual void vfunc575(); virtual void vfunc576(); virtual void vfunc577(); virtual void vfunc578();
@@ -35,6 +35,13 @@ public:
 	virtual void vfunc583();	// asked after another NPC accepted the value of slot 585
 	virtual void vfunc584();
 	virtual int vfunc585(int a);	// the value offered to another NPC's slot 482
+	virtual void vfunc586();
+	virtual char vfunc587(int unused);	// slot 587: true when the NPC may be interrupted: not busy with sub_10337f30, no value at +0x128, no count at +0x5bb4, bit 4 of +0x5b84 clear, not busy with discipline, and either the count at +0x6354 or the one at +0x6358 is at most 2
+	virtual void vfunc588(); virtual void vfunc589();
+	virtual char vfunc590();	// slot 590: true when the NPC may act and its state (+0xfec) is one of a fixed set (1, 9, 0x13, 0x30, 0x4b, 0x4d, 0x51, 0x73..0x8a, 0xcb5, 0xd25, 0x1121, 0x1157..0x1158)
+	virtual void vfunc591(); virtual void vfunc592(); virtual void vfunc593(); virtual void vfunc594(); virtual void vfunc595();
+	virtual void vfunc596(); virtual void vfunc597(); virtual void vfunc598(); virtual void vfunc599(); virtual void vfunc600();
+	virtual void vfunc601(int a);	// slot 601: takes one argument
 
 	void vfunc488();	// slot 488: plays the "Death" sound
 	void vfunc489();	// slot 489: plays the "Target_Suspect" sound
@@ -57,7 +64,6 @@ public:
 	void vfunc506();
 	void vfunc616();	// slot 616: base call with 0x30, then stamps curtime + 15 at +0x65bc
 
-	char vfunc590();	// slot 590: true when the NPC may act and its state (+0xfec) is one of a fixed set (1, 9, 0x13, 0x30, 0x4b, 0x4d, 0x51, 0x73..0x8a, 0xcb5, 0xd25, 0x1121, 0x1157..0x1158)
 	void sub_102950c0();	// plays the "Alarmed_Loop" sound
 	void sub_10295180();	// plays the "Animal_Kened" sound
 	void sub_10295240();	// plays the "Warning_Loop" sound
@@ -87,7 +93,6 @@ public:
 	int sub_10295590(int activity);	// slot 375 base implementation (NPC_TranslateActivity), called directly
 	void sub_1028e8b0(CBaseEntity *pEnt, int a);	// runs sub_1028e940(a) when pEnt is null-safe related to this NPC: this NPC has no slot 167 value, or pEnt is that value, or the object at pEnt+0x98 has the same slot 167 value
 	void sub_1028e940(int a);
-	char vfunc587(int unused);	// slot 587: true when the NPC may be interrupted: not busy with sub_10337f30, no value at +0x128, no count at +0x5bb4, bit 4 of +0x5b84 clear, not busy with discipline, and either the count at +0x6354 or the one at +0x6358 is at most 2
 	char sub_10337f30();	// CBaseCombatCharacter member (the stub at 0x10006b04), called directly
 	char sub_1033e2b0();	// CBaseCombatCharacter::IsBusyWithDiscipline (the stub at 0x1000caae), called directly
 	char sub_10281430();	// true when the NPC may skip its pending request: not dead / mid-switch (state +0x5cc4 is not 7, nor 4 with +0x5cc0 not 4), and either the one-shot byte at +0x1b28 was set (cleared here), condition 0x5d is not set, bit 29 of +0x5c7c is set with a target at +0x5c38, or state +0x5cc0 is 2 without a slot 167 value
@@ -103,6 +108,7 @@ public:
 	void sub_102c41d0(int a, const Vector *pFrom, const Vector *pTo, int c);	// resolves the defaults (this NPC's slot 217 origin, the global vector at 0x1070d9d0), then hands them with the slot 192 vector to the worker behind the stub at 0x10001a8c
 	int sub_102a0ed0(int a, int b, int c, int d);	// "CAI_BaseNPCTroika::CanStandAt" worker (unmatched, score 11): scope trace (entity name), sets the byte at +0x63da around the call sub_102e7270(a, b, c, d, 0, 0) of the object at +0x5d40 and returns its result
 	void sub_101a72b0(int unused);	// when the NPC behind the handle at +0x5ce4 (its object at +0x94) is in state 0 or 2 and accepts slot 585(1) on its slot 482, runs slot 583; with no such NPC runs the think setter (stub 0x1000556f) and stamps the next think; always stamps curtime + 1000000 at +0x5f74
+	int sub_102b6fe0(int a);	// scope-less schedule selection: with condition 0x48 (or else 0x3a) set, schedule 0xe9 (after slot 601(a) when the byte at +0x6078 is set) while slot 308 holds, else 0xcd (0xce); records the source file / line at +0x1b30 / +0x1b34; 0 without either condition
 
 	char m_pad0004[0x14bc - 4];
 	unsigned int m_flags14bc;
