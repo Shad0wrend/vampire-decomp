@@ -9349,6 +9349,36 @@ float CBaseEntity::sub_1009d850(void *pListener, float *pDist)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009edc0 size=0x89
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+void CBaseEntity::sub_1009edc0(const float *mins, const float *maxs)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseEntity::SetCollisionBounds";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	((CCollisionProperty *)((char *)this + 0x270))->sub_100dc770(mins, maxs);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ee80 size=0x9f
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
