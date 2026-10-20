@@ -6,6 +6,14 @@
 
 struct S6;
 
+struct CUnknown101db210Sub	// the object at +0x38; its count at +4 says whether the sub-table has entries
+{
+	int m_n00;
+	int m_nCount;
+
+	int sub_101db870(int a, int b);	// the sub-table pick (stub 0x1000483b), -1 when nothing is picked
+};
+
 class CUnknown101db210
 {
 public:
@@ -16,8 +24,10 @@ public:
 	int m_allocCount;	// 0x002c
 	int m_count;	// 0x0030
 	S6 **m_pItems;	// 0x0034
+	CUnknown101db210Sub *m_pSub;	// 0x0038
 
 	CUnknown101da960 *Filter() { return (CUnknown101da960 *)m_filter; }
 	S6 *sub_101db210();	// grows by one slot and returns the (lazily created) item
 	void sub_101db560();	// "Affects_Table" Debug_Display: prints the id, the filter, the first entry and every item
+	int sub_101db430(int a, int b);	// picks the value of an item by a 0..100 roll over the item weights (honouring the per-stamp count limits), else the sub-table's pick, else the first item's value (or the default of the embedded entry at +0x18)
 };
