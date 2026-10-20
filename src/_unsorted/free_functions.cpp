@@ -36298,6 +36298,19 @@ bool CUnknown10349590::sub_10349650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103499d0 size=0x1e
+#include "CDataObjectAccessSystem.h"
+
+// TARGET: CDataObjectAccessSystem::sub_103499d0
+CDataObjectAccessSystem *CDataObjectAccessSystem::sub_103499d0(unsigned int flags)
+{
+	sub_1000ebbf();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349a00 size=0x8
 void __fastcall sub_10349a00(int *p) { p[3] = 0; }
 // END FUNCTION
