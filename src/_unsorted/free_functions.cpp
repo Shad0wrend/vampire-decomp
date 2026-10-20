@@ -46722,6 +46722,34 @@ bool CNPC_VChangBros::sub_1036d270(float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036dc60 size=0x8a
+#include "CNPC_VChangBros.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct CChangBrosHelper5da4 { int sub_10013426(); };
+
+float CNPC_VChangBros::sub_1036dc60()
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VChangBros::GetFacingTimeToTeleport";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (*(int *)((char *)this + 0x5bb0) <= 0) {
+		CChangBrosHelper5da4 *p = *(CChangBrosHelper5da4 **)((char *)this + 0x5da4);
+		if (p && p->sub_10013426() >= 2) {
+			(*g_109f3680)--;
+			return 21.0f;
+		}
+	}
+	(*g_109f3680)--;
+	return 7.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036e400 size=0xad
 #include "CNPC_VChangBros.h"
 struct TraceEntry { const char *a, *b, *c; };
