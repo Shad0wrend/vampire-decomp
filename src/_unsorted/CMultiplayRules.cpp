@@ -55,6 +55,25 @@ Vector CMultiplayRules::vfunc51(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142160 size=0x7a
+#include "CMultiplayRules.h"
+#include "ConVar.h"
+#include "CEntityVSlots.h"
+extern ConVar *g_1070adec;
+char CMultiplayRules::vfunc47(CBaseEntity *pPlayer, CBaseEntity *pItem)
+{
+    if (!g_1070adec->vfunc1() && g_1070adec->m_nValue > 0) {
+        if (((CEntityVSlots *)pItem)->slot346() & 8)
+            return CGameRules::vfunc47(pPlayer, pItem);
+        for (int i = 0; i < 0xe0; i++) {
+            if (((CBaseCombatCharacter *)pPlayer)->sub_1032e8b0(i) == pItem)
+                return 0;
+        }
+    }
+    return CGameRules::vfunc47(pPlayer, pItem);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142280 size=0x8
 // TARGET: CMultiplayRules::vfunc61
 int CMultiplayRules::vfunc61(int index)

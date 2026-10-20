@@ -695,6 +695,7 @@
 0x10005074 func   ?vfunc5@CSun@@QAEPAV1@I@Z CSun::vfunc5
 0x10005088 func   ?sub_103ca390@CHintData_WW@@QAEXH@Z CHintData_WW::sub_103ca390
 0x1000508d func   ?sub_10430410@@YAII@Z sub_10430410
+0x100050b5 func   ?vfunc47@CMultiplayRules@@UAEDPAVCBaseEntity@@0@Z CMultiplayRules::vfunc47
 0x100050c4 func   ?sub_101cfe10@@YAXPAXHH@Z sub_101cfe10
 0x100050e2 func   _item_p_research_mg_brawl item_p_research_mg_brawl
 0x1000510f func   ?vfunc5@CWeaponHolyLight@@QAEPAV1@I@Z CWeaponHolyLight::vfunc5
