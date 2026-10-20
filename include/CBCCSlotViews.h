@@ -1,4 +1,4 @@
-// CBCCSlotViews: vtable views for calling slots of a combat character / weapon entity that the class headers do not model
+// CBCCSlotViews: vtable views for calling slots of a combat character / weapon / entity that the class headers do not model
 // as virtuals. Cast the object to the view and call the slot; the placeholders keep the slot numbers right.
 #pragma once
 
@@ -21,4 +21,13 @@ public:
 	VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2)
 	VIEW_SLOT10(30) VIEW_SLOT10(31) VIEW_SLOT10(32) VIEW_SLOT10(33) VIEW_SLOT10(34) VIEW_SLOT10(35)
 	virtual unsigned int vfunc360();
+};
+
+class CEntityOriginSlotView	// slot 217: CBaseEntity::GetAbsOrigin (pointer to three floats)
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1)
+	VIEW_SLOT10(20)
+	VIEW_SLOT(210) VIEW_SLOT(211) VIEW_SLOT(212) VIEW_SLOT(213) VIEW_SLOT(214) VIEW_SLOT(215) VIEW_SLOT(216)
+	virtual float *vfunc217();
 };
