@@ -26,3 +26,23 @@ CBaseToggle *CBaseToggle::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c1480 size=0x72
+#include "CBaseToggle.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" double __cdecl atof(const char *);
+
+bool CBaseToggle::vfunc110(const char *szKeyName, const char *szValue)
+{
+	if (!_strcmpi(szKeyName, "lip")) {
+		*(float *)((char *)this + 0x504) = (float)atof(szValue);
+		return true;
+	}
+	if (!_strcmpi(szKeyName, "distance")) {
+		*(float *)((char *)this + 0x4fc) = (float)atof(szValue);
+		return true;
+	}
+	return sub_1000fc86(szKeyName, szValue);
+}
+// END FUNCTION
