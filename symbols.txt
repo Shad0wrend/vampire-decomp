@@ -2807,6 +2807,7 @@
 0x1000f63c func   ?vfunc5@CAISound@@QAEPAV1@I@Z CAISound::vfunc5
 0x1000f641 func   ?vfunc2@CTEShatterSurface@@UAEPAV1@I@Z CTEShatterSurface::vfunc2
 0x1000f655 func   ?sub_103169a0@CUnknown10316890@@QAEXHVVector@@0H@Z CUnknown10316890::sub_103169a0
+0x1000f673 func   ?sub_103c7150@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c7150
 0x1000f682 func   ?vfunc63@CMultiplayRules@@UAEPBDH@Z CMultiplayRules::vfunc63
 0x1000f6af func   ?vfunc61@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc61
 0x1000f6c8 func   _npc_VWolfMorph npc_VWolfMorph

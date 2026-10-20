@@ -52506,6 +52506,49 @@ void CNPC_VVampireBoss::sub_103c6eb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c7150 size=0xaa
+#include "CNPC_VVampireBoss.h"
+#include "CGlobalEntityList.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern char g_1065ef08[];
+extern CGlobalEntityList *g_10566458;
+
+#define V10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+struct EmitterEnt {
+	V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+	V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V10(b7) V10(b8) V10(b9)
+	V10(c0) V10(c1) V10(c2) V10(c3)
+	virtual void d0(); virtual void d1();
+	virtual void Kill();
+	void sub_1000fb23(float f);
+};
+
+void CNPC_VVampireBoss::sub_103c7150()
+{
+	g_109f3620[*g_109f3680].a = g_1065ef08;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	for (int i = 0; i < 4; i++) {
+		unsigned int h = m_hParticleEmitters[i];
+		if (h != 0xffffffff) {
+			CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+			if (s->m_Serial == (int)(h >> 13)) {
+				EmitterEnt *e = (EmitterEnt *)s->m_pEntity;
+				if (e) {
+					e->Kill();
+					e->sub_1000fb23(0.1f);
+				}
+			}
+		}
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c76b0 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
