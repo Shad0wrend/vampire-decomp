@@ -78,4 +78,6 @@ public:
 	char vfunc69(void *pOther);	// as in CNPC_VHengeyokai (transplant)
 	char sub_1029b180(void *pOther);	// as in CNPC_VHengeyokai (transplant)
 	int sub_103bde40(int activity);	// slot 375 (NPC_TranslateActivity): while the 10381be0 check passes, activity 1 / 9 / 0x13 map to 0xfd / 0xff (0xfc / 0xfe when the byte at +0x6688 is set); everything else goes to the base implementation
+	CNPC_VTzimisce *vfunc5(unsigned int flags);	// scalar deleting destructor: destructs the vectors at +0x6690 and +0x665c, the base (sub_1028d610), and frees the object when bit 0 of flags is set
+	void sub_1028d610();	// base class destructor body (stub 0x100123af)
 };
