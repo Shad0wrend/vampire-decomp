@@ -60,4 +60,5 @@ public:
 	float sub_100be3d0(int numbits);	// "ReadBitAngle": ReadUBitLong(numbits) scaled to 360 degrees
 	float sub_100beba0();	// "ReadBitNormal": sign bit, then 11 fractional bits scaled by 1/2047
 	int sub_100be590(int numbits);	// "ReadSBitLong": ReadUBitLong(numbits - 1), minus 1 << (numbits - 1) when the sign bit is set
+	unsigned int sub_100be6b0(int numbits, bool bSigned);	// "ReadBitLong": ReadSBitLong(numbits) when bSigned, else ReadUBitLong(numbits)
 };
