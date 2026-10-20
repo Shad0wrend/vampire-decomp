@@ -22,10 +22,11 @@ public:
 };
 
 // RTTI .?AV?$CRopePhysics@$09@@, at +8 of CPositionInterpolator_Rope
-class CRopePhysics10 : public CRopeSimBase
+template<int N>
+class CRopePhysics : public CRopeSimBase
 {
 public:
-	CRopePhysics10() : CRopeSimBase(m_nodes, 10, m_springs) {}
+	CRopePhysics() : CRopeSimBase(m_nodes, N, m_springs) {}
 	virtual void vfunc1();
 	char m_nodes[0x168];	// 0x38
 	char m_springs[0x48];	// 0x1a0
@@ -47,7 +48,7 @@ public:
 	char m_bChanged;	// 0x210
 };
 
-class CPositionInterpolator_Rope : public IPositionInterpolator, public CRopePhysics10, public CRopeDelegate
+class CPositionInterpolator_Rope : public IPositionInterpolator, public CRopePhysics<10>, public CRopeDelegate
 {
 public:
 	CPositionInterpolator_Rope();
