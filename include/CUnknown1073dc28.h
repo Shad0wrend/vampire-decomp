@@ -2,8 +2,6 @@
 // name at +4; count at +0x14, pointer array at +0x18) that also plays a sound for an entity by id.
 #pragma once
 
-#include <string.h>
-
 class CBaseEntity;
 
 struct CUnknown1073dc28Record
