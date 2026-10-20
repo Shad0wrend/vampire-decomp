@@ -4659,6 +4659,31 @@ void sub_1005a6a0(int a, int b, const int *pos, const int *dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005d830 size=0x8f
+#include "CTEBeamSpline.h"
+extern CTEBeamSpline g_106c0358;
+
+void sub_1005d830(void *pFilter, float delay, int nPoints, Vector *pPoints)
+{
+	int i;
+	g_106c0358.m_nPoints = nPoints;
+	for (i = 0; i < nPoints; i++) {
+		Vector &d = g_106c0358.m_vecPoints[i];
+		const Vector &s = pPoints[i];
+		d.x = s.x;
+		d.y = s.y;
+		d.z = s.z;
+	}
+	for (; i < 16; i++) {
+		Vector &d = g_106c0358.m_vecPoints[i];
+		d.x = 0;
+		d.y = 0;
+		d.z = 0;
+	}
+	g_106c0358.sub_1005d4d0(pFilter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005e5c0 size=0x80
 #include "CTEBloodStream.h"
 extern CTEBloodStream g_106c0cc4;
