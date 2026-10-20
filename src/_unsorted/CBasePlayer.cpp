@@ -233,6 +233,30 @@ void CBasePlayer::vfunc149(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10173ed0 size=0x87
+#include "CBasePlayer.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl atoi(const char *);
+
+bool CBasePlayer::vfunc452(const char *pszKey)
+{
+	if (_strcmpi(pszKey, "vehicleRole") == 0 && g_1070b22c->vfunc85() == 2) {
+		if (m_b20F4) {
+			int role = atoi(g_1070b22c->vfunc84(1));
+			CBasePlayerVehicle *pVehicle = m_pVehicle;
+			if (pVehicle && pVehicle->vfunc2(role) == 0) {
+				sub_101713c0();
+				sub_101712d0(pVehicle, role);
+			}
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174ce0 size=0xb3
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
