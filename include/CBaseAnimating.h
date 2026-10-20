@@ -63,6 +63,7 @@ public:
 	int vfunc252(int a, int b, int c);	// "CBaseAnimating::SelectWeightedSequenceForStat": scope trace, then sub_1008dc40(a, -1)
 	int vfunc253(int a, int b, int c);	// "CBaseAnimating::SelectHeaviestSequenceForStat": scope trace, then sub_1008dd30(a, -1)
 	int vfunc254(int a, int b, int c);	// "CBaseAnimating::SelectSameSequenceForStat": scope trace, then sub_1008de20(a, -1)
+	bool vfunc68(CBaseEntity *pOther);	// slot 68 "CBaseAnimating::ShouldIgnoreCollision": scope trace (entity name), returns the result of sub_10158b90(this, pOther); declared as a plain member
 	CBaseAnimating *vfunc5(unsigned int flags);	// as in CSimplePhysicsProp (transplant)
 	void sub_10004c3c();	// as in CSimplePhysicsProp (transplant)
 };
