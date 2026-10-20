@@ -11,6 +11,8 @@ public:
 
 	virtual void vfunc104();
 
+	bool sub_103e3490(CBaseEntity *pEnt);	// true when pEnt is a valid target (flagged 0x20002080, not unselectable, byte +0x19c bit 6 clear) that is not already in the burning list (8 byte records {handle, time} at +0x1554, count at +0x1560)
+
 	char m_pad0004[0x91c - 4];
 	int m_aBuf[0x2ee];	// 0x91c, zeroed by the constructor
 	char m_pad14d4[0x1510 - 0x14d4];
