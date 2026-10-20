@@ -42,6 +42,7 @@ public:
 	void sub_1008e630(CBaseEntity *pOther);	// "CBaseAnimating::RemoveWind": scope trace (entity name); clears the handle at +0x63c and the two dwords at +0x648/+0x64c unless the handle resolves to a live entity different from pOther
 	void sub_10097310(CBaseAnimating *pOther);	// "CBaseAnimating::CopyAnimationDataFrom": scope trace (entity name), copies the model name (slot 212(*pOther->slot 9())) and model index (slot 10(pOther->slot 8())) and nine dwords of animation state (bit 4 added to the flags at +0x19c)
 	int sub_100955c0();	// "CBaseAnimating::FlushBoneCache"-named trace: scope trace (entity name), with a 0x41a0 byte stack buffer: slot 257(buffer, 12), then returns the studio worker sub_100c47d0(GetModelPtr(-1), the dword at +0x6f0, the dword at +0x174, slot 219(), slot 217(), 12, buffer)
+	bool sub_10093fb0(int sequence, float *pMins, float *pMaxs);	// "CBaseAnimating::ExtractBbox": scope trace (entity name), copies the two vectors at +0x1c / +0x28 of the sequence description sub_1008d990 finds into pMins / pMaxs and returns true; without a description zeroes both and returns false
 
 	int sub_10092550(int a);	// "CBaseAnimating::LookupBone"
 	void sub_100926e0(int bone, int b, int c);	// "CBaseAnimating::GetBonePosition0"
