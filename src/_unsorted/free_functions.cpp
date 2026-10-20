@@ -18679,6 +18679,24 @@ bool CUnknown101ab800::sub_101ab800(int a, const unsigned char *pvs, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab8f0 size=0x96
+#include "CUnknown101ab800.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+bool CUnknown101ab800::sub_101ab8f0(int a, const unsigned char *pvs, int unused, int pos)
+{
+    if (vfunc2() & 0x10000) {
+        vfunc3(vfunc2() & ~0x10000);
+        g_1070b22c->vfunc121(m_nValue0c, &m_nClusters);
+    }
+    if (!g_1070b22c->vfunc105(pos, m_nValue80)) {
+        if (!m_nValue84 || !g_1070b22c->vfunc105(pos, m_nValue84))
+            return false;
+    }
+    return sub_101ab800(a, pvs, unused);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac2f0 size=0xa
 unsigned int CAmbientGeneric::sub_101ac2f0()
 {
