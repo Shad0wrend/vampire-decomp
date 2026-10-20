@@ -3839,6 +3839,7 @@
 0x10014f51 func   ?sub_101b2570@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_101b2570
 0x10014f56 func   ?vfunc305@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc305
 0x10014f88 func   ?sub_100c89e0@@YIXPADHH@Z sub_100c89e0
+0x10014f92 func   ?vfunc432@CNPC_VAnimal@@UAEXH@Z CNPC_VAnimal::vfunc432
 0x10014fba func   ?vfunc5@CEnvParticle@@QAEPAV1@I@Z CEnvParticle::vfunc5
 0x10014ff6 func   ?sub_10298910@CAI_BaseNPCTroika@@QAEXPBD@Z CAI_BaseNPCTroika::sub_10298910
 0x10015019 func   ?sub_10366d60@@YADXZ sub_10366d60
