@@ -64,6 +64,8 @@ public:
 	CNPC_VWerewolfTimerVec m_Timers;	// 0x665c
 	char pad6670[0x66b0 - 0x6670];
 	CNPC_VWerewolfHint66b0 *m_pHint66b0;	// 0x66b0
+	char pad66b4[0x66c8 - 0x66b4];
+	char m_b66c8;	// 0x66c8
 
 	int sub_10366490(int key);
 	bool sub_10366400(int key);
@@ -93,4 +95,5 @@ public:
 	void sub_103cca80();	// slot 305 "CNPC_VWerewolf::RemoveBaseFightingItems": scope trace (entity name), when bit 4 of the misc flags is set removes the "item_w_werewolf_attacks" weapon (sub_1021fee0(this, name)) and clears that bit
 	void vfunc141(CUnknown101c2a50 *pInfo, int b, int c);	// slot 141 "CNPC_VWerewolf::TraceAttack": scope trace (entity name), clears the dword at +0x44 of pInfo, then the base implementation
 	void sub_10015b13(CUnknown101c2a50 *pInfo, int b, int c);	// CAI_BaseNPC::vfunc141 (stub 0x10015b13), called directly
+	void sub_103d45c0(CNPC_VWerewolfHint66b0 *pHint);	// "CNPC_VWerewolf::SetTeleportHint": scope trace (entity name), clears the current hint (sub_103d4760) when set, resets the byte at +0x66c8, stores pHint at +0x66b0
 };
