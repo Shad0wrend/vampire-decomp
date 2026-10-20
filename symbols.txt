@@ -3010,6 +3010,7 @@
 0x1001338b func   ?sub_100ee810@CBaseDoor@@QAEXXZ CBaseDoor::sub_100ee810
 0x100133b8 func   ?sub_1006e6a0@CBaseCineCam@@QAE_NHHHHH@Z CBaseCineCam::sub_1006e6a0
 0x100133d1 func   ?sub_102ce550@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102ce550
+0x100133e0 func   ?sub_101e49b0@UtlVec8@@QAEXHH@Z UtlVec8::sub_101e49b0
 0x1001340d func   ?sub_102345e0@@YAHXZ sub_102345e0
 0x1001342b func   ?sub_1008d520@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d520
 0x10013430 func   ?vfunc5@CInstancedSceneEntity@@QAEPAV1@I@Z CInstancedSceneEntity::vfunc5
