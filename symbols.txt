@@ -203,6 +203,7 @@
 0x10002423 func   _prop_slashable prop_slashable
 0x1000244b func   ?sub_104014c0@@YAHXZ sub_104014c0
 0x10002455 func   ?sub_102a9690@CUnknown102a9690@@QAEXH@Z CUnknown102a9690::sub_102a9690
+0x1000246e func   ?sub_101b2070@UtlMem@@QAEXXZ UtlMem::sub_101b2070
 0x1000248c func   _env_message env_message
 0x1000249b func   ?vfunc5@CInspectionNode@@QAEPAV1@I@Z CInspectionNode::vfunc5
 0x100024a5 func   ?sub_100cfd00@Queue@@QAEHPAUSaveX@@@Z Queue::sub_100cfd00

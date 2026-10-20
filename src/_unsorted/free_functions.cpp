@@ -17872,6 +17872,22 @@ struct CUnknown101afba0 { char pad[0x100]; char m_Flag; void sub_101afba0(); };
 void CUnknown101afba0::sub_101afba0() { m_Flag = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101b2070 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_101b2070()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2170 size=0x46
 struct Entry { float value; const char *text; };
 extern Entry g_10598cb0[1];
