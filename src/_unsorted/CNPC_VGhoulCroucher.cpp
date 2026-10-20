@@ -128,6 +128,33 @@ int CNPC_VGhoulCroucher::vfunc390(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037c1c0 size=0xe8
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CNPC_VGhoulCroucher.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+
+inline CGlobalEntityList_Ent *LookupEntity(const unsigned int &h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+	if (s->m_Serial == (int)(h >> 13))
+		return s->m_pEntity;
+	return 0;
+}
+
+void CNPC_VGhoulCroucher::vfunc77()
+{
+	ScopeTrace t("CNPC_VGhoulCroucher::ScriptHide", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_102c1ce0();
+	if (LookupEntity(m_h6670))
+		((CBaseEntity *)LookupEntity(m_h6670))->vfunc77();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c2f0 size=0xe8
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
