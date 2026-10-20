@@ -52255,6 +52255,35 @@ int CBaseCombatCharacter::sub_103282e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10328af0 size=0x139
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CBaseCombatCharacter::sub_10328af0
+int CBaseCombatCharacter::sub_10328af0(CBaseCombatCharacter *pOther, int a, int b)
+{
+	ScopeTrace trace("CBaseCombatCharacter::CheckAndTranslateGrapplePosition", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int type = sub_10328c80(a);
+	int pos;
+	for (a = 0; a < 2; a++) {
+		pos = (a + b) % 2;
+		int act = pOther->sub_10328380(type, 1, this, pos);
+		act = ((CEntityVSlots *)this)->slot381(act);
+		if (((CBaseAnimating *)pOther)->sub_1008dd30(act, -1) >= 0) {
+			act = sub_10328380(type, 0, pOther, pos);
+			act = ((CEntityVSlots *)this)->slot381(act);
+			if (((CBaseAnimating *)this)->sub_1008dd30(act, -1) >= 0)
+				break;
+		}
+	}
+	if (a >= 2)
+		return -1;
+	return pos;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10328c80 size=0x118
 extern int *g_109f3680;
 extern int *g_109f3620;
