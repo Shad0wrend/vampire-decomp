@@ -26,6 +26,7 @@
 	char sub_10337f30();	// "CBaseCombatCharacter::IsKindred": scope trace (entity name), the byte at +0x8c of the default-stat item selected by sub_10337860()
 	char sub_10337e40();	// "CBaseCombatCharacter::IsKine...": scope trace (entity name), false when slot 70 is true or IsKindred (sub_10337f30) is true or the object at +0xac is set, else true
 	char sub_103380d0();	// "CBaseCombatCharacter::IsBossMonster": scope trace (entity name), the byte at +0x90 of the default-stat item selected by sub_10337860()
+	bool sub_10330220();	// no scope trace: when IsKindred (sub_10337f30) the value of stat 0x19 of the first stat list with a zero field at +0x10 (default list when none) is positive, else HasMiscFlag(0x20000)
 	void vfunc341(int discipline, int unused);	// slot 341 "CBaseCombatCharacter::RemoveDisciplineEffects": scope trace (entity name), then the global discipline manager at 0x10739a4c RemoveEffect(this, discipline, 0); takes a second, unused stack argument
 	char vfunc342(int unused);	// slot 342 "CBaseCombatCharacter::CanBeFedUp"-named trace: scope trace (entity name), true when sub_10339a90(), bit 27 of the dword at +0x14bc is clear, the handle at +0x1538 does not resolve or the dword at +0x153c is -1, slot 158 is true and the character is not unconscious; takes one unused stack argument
 	virtual void vfunc106(const char *szClassname);	// "CBaseCombatCharacter::PostConstructor": scope trace (entity name), CBaseEntity::vfunc106(szClassname), then slot 111
