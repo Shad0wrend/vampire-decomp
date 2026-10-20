@@ -1702,6 +1702,7 @@
 0x1000905c func   ?sub_101c0cc0@@YAPAHXZ sub_101c0cc0
 0x1000907f func   ?sub_104304c0@@YAII@Z sub_104304c0
 0x100090a2 func   ?sub_103dc490@S103dc490@@QAEXH@Z S103dc490::sub_103dc490
+0x100090ac func   ??0CEntryY@@QAE@H@Z CEntryY::CEntryY
 0x100090cf func   _logic_relay logic_relay
 0x100090d4 func   ?vfunc5@CWeaponMelee_FireAxe@@QAEPAV1@I@Z CWeaponMelee_FireAxe::vfunc5
 0x100090d9 func   ?sub_10256250@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10256250
