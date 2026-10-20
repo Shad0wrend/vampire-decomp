@@ -1261,6 +1261,7 @@
 0x1000702c func   ?sub_1030d650@@YGHPBD@Z sub_1030d650
 0x10007036 func   _item_g_stake item_g_stake
 0x1000707c func   ?vfunc5@CBaseButton@@UAEPAV1@I@Z CBaseButton::vfunc5
+0x10007086 func   ?sub_101ebff0@CKeyHolder@@QAEXXZ CKeyHolder::sub_101ebff0
 0x10007095 func   ?vfunc5@CItemGVampyrApocrypha@@QAEPAV1@I@Z CItemGVampyrApocrypha::vfunc5
 0x1000709a func   ?sub_1007e050@S1007e050@@QAEHH@Z S1007e050::sub_1007e050
 0x1000709f func   ?sub_1039f6f0@@YADXZ sub_1039f6f0

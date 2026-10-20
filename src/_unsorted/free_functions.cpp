@@ -34240,6 +34240,33 @@ const char *CKeyHolder::sub_101ebf30(int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ebff0 size=0x13d
+#include "CKeyHolder.h"
+#include "CEntryX.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern char g_106b8540[];
+void sub_10203dd0(const char *text);
+
+// TARGET: CKeyHolder::sub_101ebff0
+void CKeyHolder::sub_101ebff0()
+{
+	char buf[128];
+	sprintf(buf, "%s:\n", m_pszName ? m_pszName : g_106b8540);
+	sub_10203dd0(buf);
+	for (int i = 0; i < 3; i++) {
+		if (i < 2) {
+			CEntryX *e = FindEntry(m_nKeys[i]);
+			sprintf(buf, "\t\t(%d):\t\t%s\n", i + 1, e->m_name ? e->m_name : g_106b8540);
+		} else {
+			CEntryX *e = FindEntry(m_nKeys[i]);
+			sprintf(buf, "\t\t(%d+):\t\t%s\n", i + 1, e->m_name ? e->m_name : g_106b8540);
+		}
+		sub_10203dd0(buf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ec690 size=0x17
 #include "CUnknown101ec690.h"
 extern void (__cdecl *g_1073a3a0)(CUnknown101ec690 *, int);
