@@ -37,16 +37,22 @@ struct CUnknown1017fd60Vec
 		if (numToMove > 0 && num > 0)
 			memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(CUnknown1017fd60Rec));
 	}
-	int InsertBefore(int elem, const CUnknown1017fd60Rec &src)
+	// AddToTail: InsertBefore(m_size) with the record built in place from its four fields
+	int AddToTail(float time, unsigned int handle, int index, int value)
 	{
+		int elem = m_size;
 		GrowVector(1);
 		ShiftElementsRight(elem, 1);
 		CUnknown1017fd60Rec *dst = &Element(elem);
 		if (dst)
-			*dst = src;
+		{
+			dst->m_time = time;
+			dst->m_handle = handle;
+			dst->m_index = index;
+			dst->m_value = value;
+		}
 		return elem;
 	}
-	int AddToTail(const CUnknown1017fd60Rec &src) { return InsertBefore(m_size, src); }
 };
 
 class CBaseEntity;
