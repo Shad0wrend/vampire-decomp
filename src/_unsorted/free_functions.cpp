@@ -7211,6 +7211,57 @@ CSceneElem9c * __fastcall sub_10079f50(CSceneElemVecOwner *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a060 size=0xc3
+#include "CUnknown1007a060.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern void *(__cdecl *g_109f3634)(unsigned int);
+extern void *(__cdecl *g_109f3638)(void *, unsigned int);
+
+static inline void GrowMemory(CUnknown1007a060 *v, int num)
+{
+	if (v->m_growSize == -1)
+		return;
+	int nAllocationRequested = v->m_allocationCount + num;
+	while (v->m_allocationCount < nAllocationRequested)
+	{
+		if (v->m_allocationCount != 0)
+		{
+			if (v->m_growSize != 0)
+				v->m_allocationCount += v->m_growSize;
+			else
+				v->m_allocationCount += v->m_allocationCount;
+		}
+		else
+		{
+			v->m_allocationCount = 8;
+		}
+	}
+	if (v->m_pMemory)
+		v->m_pMemory = (CUnknown1007a060Elem **)g_109f3638(v->m_pMemory, v->m_allocationCount * 4);
+	else
+		v->m_pMemory = (CUnknown1007a060Elem **)g_109f3634(v->m_allocationCount * 4);
+}
+
+// TARGET: CUnknown1007a060::sub_1007a060
+CUnknown1007a060Elem *CUnknown1007a060::sub_1007a060()
+{
+	CUnknown1007a060Elem *pNew = new CUnknown1007a060Elem;
+	int elem = m_size;
+	if (m_size + 1 > m_allocationCount)
+		GrowMemory(this, m_size + 1 - m_allocationCount);
+	m_size++;
+	m_pElements = m_pMemory;
+	int count = m_size - elem - 1;
+	if (count > 0)
+		memmove(&m_pMemory[elem + 1], &m_pMemory[elem], count * 4);
+	CUnknown1007a060Elem **pSlot = &m_pMemory[elem];
+	if (pSlot)
+		*pSlot = pNew;
+	return pNew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a270 size=0x1a
 struct S1007a270 {
 	int *m_pMemory; int m_allocationCount; int m_growSize; int m_size;

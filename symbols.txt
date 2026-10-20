@@ -2613,6 +2613,7 @@
 0x1000e1dd func   ?sub_10202270@@YAPBDH@Z sub_10202270
 0x1000e214 func   _func_platrot func_platrot
 0x1000e219 func   ??0StatDefault@@QAE@H@Z StatDefault::StatDefault
+0x1000e228 func   ?sub_1007a060@CUnknown1007a060@@QAEPAVCUnknown1007a060Elem@@XZ CUnknown1007a060::sub_1007a060
 0x1000e237 func   _npc_VMercurio npc_VMercurio
 0x1000e24b func   ?sub_100be040@CUnknown100be040@@QAEXH@Z CUnknown100be040::sub_100be040
 0x1000e250 func   _item_g_vampyr_apocrypha item_g_vampyr_apocrypha
