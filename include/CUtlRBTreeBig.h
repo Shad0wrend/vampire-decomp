@@ -34,4 +34,5 @@ public:
 
 	bool sub_1025d2b0(unsigned short i) const;	// "CUtlRBTree::IsLeftChild"
 	bool sub_1025d3a0(unsigned short i) const;	// "CUtlRBTree::IsRightChild"
+	unsigned short sub_1025c6a0(const void *search);	// "CUtlRBTree::Find": index of the node equal to search, or InvalidIndex()
 };
