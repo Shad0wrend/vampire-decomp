@@ -3340,6 +3340,7 @@
 0x100156bd func   ?sub_10130100@@YAXH@Z sub_10130100
 0x100156cc func   ?sub_102b5dc0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102b5dc0
 0x100156db func   ?vfunc96@CBaseEntity@@UAEHXZ CBaseEntity::vfunc96
+0x100156e5 func   ?sub_103dc3c0@UtlMem@@QAEXXZ UtlMem::sub_103dc3c0
 0x100156f4 func   ?vfunc2@CTETParticleAttached@@UAEPAV1@I@Z CTETParticleAttached::vfunc2
 0x100156f9 func   ?vfunc5@CWeaponMelee_Fists@@QAEPAV1@I@Z CWeaponMelee_Fists::vfunc5
 0x10015703 func   ?vfunc104@CBaseButton@@UAEXXZ CBaseButton::vfunc104
