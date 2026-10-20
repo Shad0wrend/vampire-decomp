@@ -27002,6 +27002,30 @@ const char *CUnknown101f5d60::sub_101f5d60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f5d80 size=0x77
+#include "CUnknown101f5d80.h"
+#include "CDumpThing.h"
+#include "CUnknown101f4b20.h"
+#include <stdio.h>
+
+extern void (__cdecl *g_109f3650)(int level, const char *msg);
+extern char g_106b8540[];
+
+void CUnknown101f5d80::sub_101f5d80()
+{
+	char buf[128];
+	const char *name = m_pszName;
+	if (!name)
+		name = g_106b8540;
+	sprintf(buf, "\n   %s:\n\n", name);
+	g_109f3650(0, buf);
+	for (int i = 0; i < m_numThings; i++)
+		m_pThings[i]->sub_101f4eb0();
+	for (int j = 0; j < m_numOthers; j++)
+		m_pOthers[j]->sub_101f4b20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5f00 size=0xc2
 #include "CUnknown101f5f00.h"
 
