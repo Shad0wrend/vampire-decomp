@@ -101,6 +101,50 @@ void CAI_BaseNPC::vfunc459()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026db30 size=0x9e
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+#define WL_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define WL_V100(p) WL_V10(p##0) WL_V10(p##1) WL_V10(p##2) WL_V10(p##3) WL_V10(p##4) WL_V10(p##5) WL_V10(p##6) WL_V10(p##7) WL_V10(p##8) WL_V10(p##9)
+
+struct CWeaponLike
+{
+	WL_V100(a0) WL_V100(a1) WL_V100(a2)
+	WL_V10(a30) WL_V10(a31) WL_V10(a32) WL_V10(a33) WL_V10(a34) WL_V10(a35)
+	virtual unsigned int GetWeaponFlags();	// slot 360
+};
+
+CWeaponLike * __fastcall sub_1032e7b0(CAI_BaseNPC *self);
+
+unsigned int CAI_BaseNPC::vfunc513()
+{
+	const char *name;
+	if (this)
+		name = *(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540;
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CAI_BaseNPC::CapabilitiesGet";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	unsigned int flags = *(unsigned int *)((char *)this + 0x5cec);
+	if (sub_1032e7b0(this))
+		flags |= sub_1032e7b0(this)->GetWeaponFlags();
+	(*g_109f3680)--;
+	return flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026dc80 size=0x66
 #include "CAI_BaseNPC.h"
 
