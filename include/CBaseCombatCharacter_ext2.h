@@ -1,1 +1,2 @@
 	void vfunc356();	// slot 356 "CBaseCombatCharacter::PrayerBegin": scope trace (entity name), float 2.0f at +0x1494, curtime + 2.0f at +0x1490, +0xff0 = 0x131, sub_100b2e30(zero vector), and slot 93(0, 0) when the object at +0xa8 is set
+	void *sub_1032e120(const char *pszName);	// "CBaseCombatCharacter::Weapon_Create": scope trace (entity name), null for "Nothing" (case-insensitive), else sub_100a99d0(pszName, slot 220(slot 221(this)))
