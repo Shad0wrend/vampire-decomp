@@ -13441,6 +13441,36 @@ void CDialog::sub_100e5c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7230 size=0xaf
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern int g_106e88f0[0x200];
+extern int g_106e9100;
+extern int g_106e87b0;
+struct CUnknown1070b238 { virtual int vfunc0(const char *name, int mode, int c); };
+extern CUnknown1070b238 *g_1070b238;
+void sub_100dfaf0(int level, const char *fmt, ...);
+
+int __stdcall sub_100e7230(const char *name, int mode)
+{
+	g_109f3620[*g_109f3680].a = "CDialog::dopen";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	g_106e9100 = 0;
+	g_106e87b0 = 0;
+	for (int i = 0; i < 0x200; i++)
+		g_106e88f0[i] = 0;
+	int r = g_1070b238->vfunc0(name, mode, 0);
+	if (r == 0)
+		sub_100dfaf0(0xb, "Could not open dialog file %s\n", name);
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7480 size=0x70
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
