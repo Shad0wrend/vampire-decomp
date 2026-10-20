@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 118, 158, 161, 173,
-// 212, 220 / 221 (the absolute origin / angles getters), 243, 244, 346, 360 and 457 of an entity class that does not model its vtable.
+// 212, 220 / 221 (the absolute origin / angles getters), 243, 244, 260, 346, 360 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -39,7 +39,10 @@ public:
 	virtual void slot243(int a, int b);	// door: starts the open / close movement
 	virtual void slot244(int a);	// door: starts the toggle movement
 	EVS(245) EVS(246) EVS(247) EVS(248) EVS(249)
-	EVS10(25) EVS10(26) EVS10(27) EVS10(28) EVS10(29)
+	EVS10(25)
+	virtual void slot260(int index, float value);	// "SetPoseParameter" by index
+	EVS(261) EVS(262) EVS(263) EVS(264) EVS(265) EVS(266) EVS(267) EVS(268) EVS(269)
+	EVS10(27) EVS10(28) EVS10(29)
 	EVS10(30) EVS10(31) EVS10(32) EVS10(33)
 	EVS(340) EVS(341) EVS(342) EVS(343) EVS(344) EVS(345)
 	virtual unsigned char slot346();	// weapon: a flag byte (bit 3 = may be held twice)
