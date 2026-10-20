@@ -9,6 +9,15 @@ struct CUnknown1024b370Mem
 	int m_growSize;	// -1: external memory
 };
 
+// A 16 bit symbol handle returned through a hidden pointer (the type has a copy constructor).
+struct CUnknown1024b370Symbol
+{
+	unsigned short m_Id;
+
+	CUnknown1024b370Symbol() {}
+	CUnknown1024b370Symbol(const CUnknown1024b370Symbol &o) : m_Id(o.m_Id) {}
+};
+
 class CUnknown1024b370
 {
 public:
@@ -21,5 +30,5 @@ public:
 
 	void sub_1024b880();	// base reset, called first
 	void sub_1024b370();	// resets: base reset, clears +0x24, purges m_mem1, caches its pointer at +0x28, purges it again and m_mem0
-	void sub_1024b5e0(short *pSymbol, const char *pString);	// string table lookup/insert: stores the 16 bit symbol of pString (0xffff for null) through pSymbol
+	CUnknown1024b370Symbol sub_1024b5e0(const char *pString);	// string table lookup/insert: the 16 bit symbol of pString (0xffff for null)
 };
