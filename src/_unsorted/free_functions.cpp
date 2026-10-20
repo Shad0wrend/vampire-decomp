@@ -32847,6 +32847,32 @@ bool CUnknown101f0e50::sub_101f18f0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1a30 size=0x41
+extern "C" int _strcmpi(const char *a, const char *b);
+
+struct CUnknown101f1a30 {
+    char m_pad0000[0x14];
+    int m_nCount;
+    const char *sub_10008139(int index);
+    int sub_101f1a30(const char *name);
+};
+
+// TARGET: sub_101f1a30
+int CUnknown101f1a30::sub_101f1a30(const char *name)
+{
+    int i = 0;
+    if (m_nCount > 0) {
+        do {
+            if (_strcmpi(sub_10008139(i), name) == 0) {
+                return i;
+            }
+            i++;
+        } while (i < m_nCount);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1be0 size=0x6c
 #include "CUnknown10227c90.h"
 #include "CUnknown101f0e50.h"
