@@ -16949,6 +16949,25 @@ void sub_10189660(CBaseEntity *ent, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c1b0 size=0x43
+#include "CPointCamera.h"
+void *sub_100aa720(int size);
+extern char g_1058c070[];
+
+// TARGET: point_camera
+extern "C" CBaseEntity *point_camera()
+{
+	void *mem = sub_100aa720(0x468);
+	CPointCamera *p;
+	if (mem)
+		p = ((CPointCamera *)mem)->sub_1018c220();
+	else
+		p = 0;
+	p->vfunc106(g_1058c070);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c4d0 size=0xd
 void CUnknown1018c4d0::sub_1018c4d0(char value)
 {
