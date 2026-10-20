@@ -58,7 +58,9 @@ public:
 	// Slots 4..28 (slot 7 and slot 16 are the plain members below).
 	virtual void vfunc4(void *pBaseData, typedescription_t *pFields, int fieldCount);	// "CRestore::EmptyFields": clears every readable field (custom ops Empty, embedded tables recursively, else zero fill)
 	virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
-	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
+	virtual void s10(); virtual void s11();
+	virtual unsigned int vfunc12(int a, int b, int c);	// slot 12: halves the count min(2*b, c) (when c is set) after 0x1000fe9d(a, n) and, when short of c, 0x1000910b(c - n)
+	virtual void s13(); virtual void s14();
 	virtual int vfunc15(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadInt": reads up to count ints into pValues, returns the number read
 	virtual void s16();
 	virtual void s17(); virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21(); virtual void s22();
