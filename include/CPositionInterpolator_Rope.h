@@ -21,7 +21,7 @@ public:
 	char m_pad0004[0x34];
 };
 
-// RTTI .?AV?$CRopePhysics@$09@@, at +8 of CPositionInterpolator_Rope
+// RTTI .?AV?$CRopePhysics@$09@@, the member at +8 of CPositionInterpolator_Rope
 template<int N>
 class CRopePhysics : public CRopeSimBase
 {
@@ -32,26 +32,38 @@ public:
 	char m_springs[0x48];	// 0x1a0
 };
 
-// RTTI .?AVCRopeDelegate@@, at +0x1f0 of CPositionInterpolator_Rope
+// RTTI .?AVCRopeDelegate@@, the member at +0x1f0 of CPositionInterpolator_Rope (just a vtable pointer)
 class CRopeDelegate
 {
 public:
-	CRopeDelegate() { m_flSlack = 0; m_bChanged = 0; }
+	CRopeDelegate() {}
 	virtual void vfunc0();
-	int m_vecs[2][3];	// 0x1f4: two vectors
-	int m_flSlack;	// 0x20c
-	char m_bChanged;	// 0x210
 };
 
-class CPositionInterpolator_Rope : public IPositionInterpolator, public CRopePhysics<10>, public CRopeDelegate
+class CPositionInterpolator_Rope : public IPositionInterpolator
 {
 public:
-	CPositionInterpolator_Rope();
+	CPositionInterpolator_Rope() : m_flSlack(0), m_bChanged(0)
+	{
+		m_nType = 5;
+		CRopeVec *p = m_vecs;
+		for (int i = 2; i; i--) {
+			p->x = 0x6753c21c;
+			p->y = 0x6753c21c;
+			p->z = 0x6753c21c;
+			p++;
+		}
+	}
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual char vfunc4(const char *pKey, const char *pValue);	// KeyValue: "Slack" (value - 100) and "Type" (0 -> 10, 1 -> 4, else 2); returns 1 when handled
 
+	CRopePhysics<10> m_rope;	// 0x08
+	CRopeDelegate m_delegate;	// 0x1f0
+	CRopeVec m_vecs[2];	// 0x1f4
+	int m_flSlack;	// 0x20c
+	char m_bChanged;	// 0x210
 	int m_nType;	// 0x214
 };
