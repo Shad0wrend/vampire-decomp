@@ -36196,6 +36196,53 @@ void CBaseCombatCharacter::sub_1032aa40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032d890 size=0xd5
+#include "CBaseCombatCharacter.h"
+extern "C" int _strcmpi(const char *, const char *);
+struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
+extern ScopeEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct StringRef_t
+{
+    const char *m_psz;
+    const char *Get() { return m_psz ? m_psz : g_106b8540; }
+};
+struct WeaponNamed_t
+{
+    char m_pad[0x11c];
+    StringRef_t m_classname;
+};
+
+void *CBaseCombatCharacter::sub_1032d890(const char *pszClassname, int unused)
+{
+    const char *pszName;
+    if (this) {
+        pszName = m_name26c;
+        if (!pszName)
+            pszName = g_106b8540;
+    } else {
+        pszName = "NULL ENTITY";
+    }
+    g_109f3620[*g_109f3680].m_pszName = "CBaseCombatCharacter::Weapon_OwnsThisType";
+    g_109f3620[*g_109f3680].m_pszEnt = pszName;
+    g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+    (*g_109f3680)++;
+    for (int i = 0; i < 0xe0; i++) {
+        if (sub_1032e8b0(i)) {
+            if (!_strcmpi(((WeaponNamed_t *)sub_1032e8b0(i))->m_classname.Get(), pszClassname)) {
+                void *w = sub_1032e8b0(i);
+                (*g_109f3680)--;
+                return w;
+            }
+        }
+    }
+    (*g_109f3680)--;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032e210 size=0xde
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
