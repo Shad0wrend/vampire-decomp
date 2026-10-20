@@ -32,4 +32,5 @@ public:
 	void vfunc36(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h);	// as in CTempEntsSystem (transplant)
 	void vfunc27(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f);	// as in CTempEntsSystem (transplant)
 	void vfunc40(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f);	// as in CTempEntsSystem (transplant)
+	void vfunc20(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i);	// slot 20 (CTEDynamicLight forwarder)
 };
