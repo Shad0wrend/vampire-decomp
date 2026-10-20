@@ -56,12 +56,49 @@ struct CAI_NavWaypoint
 	int m_nEntryId;	// 0x10
 };
 
+struct CAI_NavWaypointPtr	// owning pointer
+{
+	CAI_NavWaypoint *m_p;
+
+	CAI_NavWaypoint *operator->() const { return m_p; }
+	operator CAI_NavWaypoint *() const { return m_p; }
+	void sub_10319ee0();	// deletes the waypoint and clears the pointer (stub 0x10002ec3)
+};
+
+struct CAI_NavVec3
+{
+	float x, y, z;
+};
+
 struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 {
-	char m_pad00[0x24];
-	CAI_NavWaypoint *m_pWaypoint;	// 0x24
-	char m_pad28[0x44 - 0x28];
+	char m_b00;
+	char m_b01;
+	char m_pad02[2];
+	int m_i04;
+	int m_i08;
+	int m_i0c;
+	char m_b10;
+	char m_b11;
+	char m_pad12[2];
+	CAI_NavVec3 m_v14;	// 0x14
+	int m_i20;
+	CAI_NavWaypointPtr m_pWaypoint;	// 0x24
+	int m_i28;
+	int m_i2c;
+	int m_i30;
+	CAI_NavVec3 m_v34;	// 0x34
+	char m_pad40[0x44 - 0x40];
 	int m_nProvider;	// 0x44
+	char m_b48;
+	char m_pad49[3];
+	CAI_NavVec3 m_v4c;	// 0x4c
+	char m_b58;
+	char m_pad59[3];
+	int m_i5c;
+	int m_i60;
+
+	void sub_1030bb30();	// resets the route: deletes the waypoint, vectors to vec3_origin (0x1070d1b0), flags and counters to 0 (+0x2c = 1, +0x30 = -1)
 };
 
 class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
