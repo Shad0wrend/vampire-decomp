@@ -1109,6 +1109,7 @@
 0x1000654b func   ?sub_101a55a0@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_101a55a0
 0x10006550 func   ?sub_1021e230@UtlMem@@QAEXXZ UtlMem::sub_1021e230
 0x1000655a func   ?sub_10032bb0@CUtlVector88@@QAEXHH@Z CUtlVector88::sub_10032bb0
+0x1000655f func   ?vfunc608@CAI_BaseNPCTroika@@UAE_NPBD@Z CAI_BaseNPCTroika::vfunc608
 0x10006569 func   ?sub_103e7b10@@YAHXZ sub_103e7b10
 0x1000656e func   ?sub_101f74e0@@YI_NPAH@Z sub_101f74e0
 0x10006578 func   ?sub_1027fba0@UtlVec8@@QAEXHH@Z UtlVec8::sub_1027fba0

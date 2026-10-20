@@ -1112,6 +1112,44 @@ bool CAI_BaseNPCTroika::vfunc347(int event, char *pszName, float *pA, float *pB,
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c48b0 size=0x146
+#include "CAI_BaseNPCTroika.h"
+
+#pragma intrinsic(strcmp)
+extern "C" int __cdecl strcmp(const char *, const char *);
+
+extern CAI_NamedThing *g_1090fbec;
+extern CAI_NamedThing *g_1090fbf0;
+extern CAI_NamedThing *g_1090fbf4;
+
+// TARGET: CAI_BaseNPCTroika::vfunc608
+bool CAI_BaseNPCTroika::vfunc608(const char *pszName)
+{
+	CAI_NamedThing *pObj;
+	if (!pszName || !*pszName)
+		return false;
+	if (g_1090fbec && strcmp(pszName, g_1090fbec->sub_1025e120()) == 0) {
+		*(CAI_NamedThing **)((char *)this + 0x65e8) = g_1090fbec;
+		pObj = g_1090fbec;
+		goto done;
+	}
+	if (g_1090fbf0 && strcmp(pszName, g_1090fbf0->sub_1025e120()) == 0) {
+		*(CAI_NamedThing **)((char *)this + 0x65e8) = g_1090fbf0;
+		pObj = g_1090fbf0;
+		goto done;
+	}
+	if (g_1090fbf4 && strcmp(pszName, g_1090fbf4->sub_1025e120()) == 0) {
+		*(CAI_NamedThing **)((char *)this + 0x65e8) = g_1090fbf4;
+		pObj = g_1090fbf4;
+done:
+		const char *pName = pObj->sub_1025e120();
+		*(const char **)((char *)this + 0x65ec) = *pName ? pName : 0;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c5470 size=0x38
 #include "CAI_BaseNPCTroika.h"
 
