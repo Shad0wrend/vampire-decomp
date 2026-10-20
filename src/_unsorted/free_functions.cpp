@@ -11969,6 +11969,15 @@ void __fastcall sub_100f0e70(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0e90 size=0x15
+#include "CAI_BaseNPCTroika.h"
+
+void CAI_BaseNPCTroika::sub_100f0e90(unsigned int flags)
+{
+	*(unsigned int *)(m_pad0004 + 0x644 - 4) |= flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0f30 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)

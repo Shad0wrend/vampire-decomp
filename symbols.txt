@@ -1158,6 +1158,7 @@
 0x100080bc func   ?sub_103ffc90@@YAHXZ sub_103ffc90
 0x100080c1 func   ?sub_10430250@@YAXXZ sub_10430250
 0x100080cb func   ?sub_101e83f0@@YGXPAHHH@Z sub_101e83f0
+0x100080df func   ?sub_100f0e90@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_100f0e90
 0x100080ee func   ?sub_10130d10@CLogicAuto@@QAEXXZ CLogicAuto::sub_10130d10
 0x100080fd func   ?sub_104062b0@@YAHXZ sub_104062b0
 0x10008102 func   ?vfunc3@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc3
