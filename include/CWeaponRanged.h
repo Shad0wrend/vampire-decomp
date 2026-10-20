@@ -31,4 +31,11 @@ public:
 	CWR_V10(20) CWR_V10(21) CWR_V10(22) CWR_V10(23) CWR_V10(24) CWR_V10(25) CWR_V10(26) CWR_V10(27) CWR_V10(28) CWR_V10(29)
 	CWR_V10(30) CWR_V10(31) CWR_V10(32)
 	void sub_10013a57();	// as in CPhysForce (transplant)
+
+	// Slot 370 (animation events), declared as a plain member for now: the slots between 32x and 370 are not modelled.
+	void vfunc370(int *event, void *other);	// events 0xfa1 / 0xfa2 set a bodygroup from the event's string, 0xbd6..0xbe4 run sub_10238380 (when the global at 0x1088aee4 and the dword at other+0xa8 are set) or sub_10238320, the rest go to CBaseCombatWeapon::vfunc370
+	void sub_10238380();	// worker of events 0xbd6..0xbe4
+	void sub_10238320();	// worker of events 0xbd6..0xbe4 (stub 0x100049ad)
+	void sub_10093b10(int group, int value);	// CBaseAnimating::SetBodygroup, called directly (stub 0x10001bb8)
+	void sub_1024f030(int *event, void *other);	// CBaseCombatWeapon::vfunc370, called directly (stub 0x10009f02)
 };
