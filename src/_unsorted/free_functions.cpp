@@ -4191,6 +4191,21 @@ int SaveList::sub_10057850(IVisitor *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057ac0 size=0x70
+#include "CRestore.h"
+
+struct SRestoreUser {
+	void sub_10007793(CRestore *pRestore);
+};
+extern SRestoreUser g_106be530;
+
+void sub_10057ac0(void *pData)
+{
+	CRestore restore(pData);
+	g_106be530.sub_10007793(&restore);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057f70 size=0x49
 void *sub_1000db89(int);
 struct GP;
