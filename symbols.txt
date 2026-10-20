@@ -1175,6 +1175,7 @@
 0x1000833c func   _bodyque bodyque
 0x10008346 func   ?sub_10264370@Mem38@@QAEXH@Z Mem38::sub_10264370
 0x1000834b func   ?sub_100e76d0@@YGPAXPAXHH@Z sub_100e76d0
+0x10008350 func   ?sub_10264330@UtlMem@@QAEXXZ UtlMem::sub_10264330
 0x10008382 func   ?vfunc103@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc103
 0x100083a0 func   ?sub_10041b40@@YA_NPAH0@Z sub_10041b40
 0x100083b9 func   ?sub_100a5ad0@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100a5ad0
