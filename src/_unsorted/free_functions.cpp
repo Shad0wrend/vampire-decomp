@@ -40572,6 +40572,25 @@ char sub_103b5420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b5a20 size=0x43
+#include "CNPC_VTremere.h"
+void *sub_100aa720(int size);
+extern char g_10652d58[];
+
+// TARGET: npc_VTremere
+extern "C" CBaseEntity *npc_VTremere()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VTremere *p;
+	if (mem)
+		p = ((CNPC_VTremere *)mem)->sub_103b5a90();
+	else
+		p = 0;
+	p->vfunc106(g_10652d58);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b5bc0 size=0x33
 void sub_10007897();
 void sub_1000c167();
