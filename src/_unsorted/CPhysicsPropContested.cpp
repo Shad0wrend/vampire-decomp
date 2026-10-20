@@ -11,3 +11,15 @@ bool CPhysicsPropContested::vfunc32(int a)
 	return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10193100 size=0x12
+struct CContestedFields10193100 {
+    char pad0[0x7ac];
+    unsigned char field7ac;
+    int sub_10193100(int a);
+};
+int CContestedFields10193100::sub_10193100(int a)
+{
+    return (field7ac != 0 ? -5 : 0) + 5;
+}
+// END FUNCTION
