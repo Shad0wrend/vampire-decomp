@@ -7487,6 +7487,32 @@ void __fastcall sub_1008b490(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008bb70 size=0xa8
+#include "CBaseAnimating.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+void sub_10009d7c(int a, int b);
+
+void CBaseAnimating::sub_1008bb70(CBaseEntity *pOther)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::StartIgnoringCollision";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int pPhys = m_obj36c;
+	int pOtherPhys = pOther->m_obj36c;
+	if (pPhys && pOtherPhys) {
+		sub_10009d7c(pPhys, pOtherPhys);
+		*(unsigned int *)((char *)this + 0x55c) = *pOther->vfunc1();
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008bc50 size=0xa1
 #include "CBaseAnimating.h"
 
