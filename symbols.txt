@@ -2897,6 +2897,7 @@
 0x100125cb func   ?vfunc8@CNavPropertyDatabase@@QAEPAV1@I@Z CNavPropertyDatabase::vfunc8
 0x100125ee func   ?vfunc2@CTEFogRipple@@UAEPAV1@I@Z CTEFogRipple::vfunc2
 0x100125f3 func   ?vfunc5@CWeaponMelee_WerewolfAttacks@@QAEPAV1@I@Z CWeaponMelee_WerewolfAttacks::vfunc5
+0x10012607 func   ?vfunc103@CFlameCluster@@UAEXXZ CFlameCluster::vfunc103
 0x1001263e func   ?vfunc5@CItemGDrugsPerscriptionBottle@@QAEPAV1@I@Z CItemGDrugsPerscriptionBottle::vfunc5
 0x1001264d func   ?sub_103ff1d0@@YAHXZ sub_103ff1d0
 0x10012698 func   ?sub_10190440@@YAHXZ sub_10190440
