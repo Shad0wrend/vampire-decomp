@@ -26239,6 +26239,38 @@ int CVStatInfo_t::sub_101fee50(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ff270 size=0x6b
+#include "CVStatInfo_t.h"
+#include "CVStatValue_t.h"
+
+struct ScopeTraceEntry {
+    const char *m_pszName;
+    const char *m_pszEntity;
+    const char *m_pszExtra;
+};
+extern "C" __declspec(dllimport) ScopeTraceEntry g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern const char g_106b8540[];
+
+struct ScopeTrace {
+    ScopeTrace(const char *name, const char *entity)
+    {
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszName = name;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszEntity = entity;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszExtra = g_106b8540;
+        g_ScopeTraceStackDepth++;
+    }
+    ~ScopeTrace() { g_ScopeTraceStackDepth--; }
+};
+
+// TARGET: CVStatInfo_t::sub_101ff270
+int CVStatInfo_t::sub_101ff270(int arg)
+{
+    ScopeTrace trace("CVStatInfo_t::Default", g_106b8540);
+    return ((CVStatValue_t *)((char *)this + 0x9c))->sub_10205730(arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ff300 size=0xa3
 #include "CVStatInfoList_t.h"
 

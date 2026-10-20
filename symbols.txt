@@ -3528,6 +3528,7 @@
 0x100153d9 func   ?sub_10404d30@@YAHXZ sub_10404d30
 0x100153de func   ?vfunc5@CFuncBrush@@QAEPAV1@I@Z CFuncBrush::vfunc5
 0x100153e8 func   ?vfunc4@CSave@@UAEXXZ CSave::vfunc4
+0x100153ed func   ?sub_101ff270@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff270
 0x10015406 func   _trigger_autosave trigger_autosave
 0x1001540b func   ?sub_10194e40@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_10194e40
 0x1001543d func   ?vfunc5@CRevertSaved@@QAEPAV1@I@Z CRevertSaved::vfunc5
