@@ -48,3 +48,8 @@ struct groundlink_t	// 12 bytes, the first dword is an entity handle that starts
 	int m_b;
 	groundlink_t() { m_hEntity = 0xffffffff; }
 };
+
+struct StepSimulationData	// 0x6c bytes of per-entity step simulation data (zeroed on creation)
+{
+	int m_data[27];
+};
