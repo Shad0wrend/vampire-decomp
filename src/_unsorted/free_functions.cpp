@@ -11526,6 +11526,35 @@ int CBaseEntity::sub_100a98f0(int useType, int currentState)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9ab0 size=0xbc
+#include "CEntityVSlots.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern void (__cdecl *g_109f3650)(int, const char *, ...);
+CEntityVSlots *sub_10002e32(const char *pszClassName);
+
+CEntityVSlots *sub_100a9ab0(const char *pszClassName, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner)
+{
+	g_109f3620[*g_109f3680].a = "CBaseEntity::CreateNoSpawn";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	CEntityVSlots *pEnt = sub_10002e32(pszClassName);
+	if (!pEnt) {
+		g_109f3650(1, "ERROR: Bad Entity Type: %s\n", pszClassName);
+		(*g_109f3680)--;
+		return 0;
+	}
+	pEnt->slot62(pOrigin);
+	pEnt->slot64(pAngles);
+	pEnt->slot202(pOwner);
+	(*g_109f3680)--;
+	return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa080 size=0x86
 #include "CBaseEntity.h"
 
