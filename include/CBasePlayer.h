@@ -77,7 +77,10 @@ public:
 	CBP_V1(si0a) CBP_V1(si0b) CBP_V1(si0c)
 	virtual bool vfunc412();
 	CBP_V1(si0e) CBP_V1(si0f) CBP_V1(si0g) CBP_V1(si0h) CBP_V1(si0i) CBP_V1(si0j)
-	CBP_V10(si1) CBP_V10(si2) CBP_V1(sj0) CBP_V1(sj1) CBP_V1(sj2) CBP_V1(sj3) CBP_V1(sj4) CBP_V1(sj5) CBP_V1(sj6) CBP_V1(sj7) CBP_V1(sj8)
+	CBP_V10(si1) CBP_V10(si2) CBP_V1(sj0) CBP_V1(sj1)
+	virtual void vfunc441();	// slot 441: collects the player's weapons (or ammo types) the game rules (global 0x1070ba0c, slots 61 / 62) ask for into a local list, then slot 442(1)
+	virtual void vfunc442(int a);
+	CBP_V1(sj4) CBP_V1(sj5) CBP_V1(sj6) CBP_V1(sj7) CBP_V1(sj8)
 	virtual void vfunc448();
 	// slots 449..467
 	CBP_V1(sk0a)
@@ -164,5 +167,7 @@ public:
 	void sub_101713c0();	// leaves the vehicle at +0x20fc (called by vfunc452): asks the vehicle for the driver slot and exit position, teleports the player there through the virtual slots, clears the flag bit 0 at +0x1e74 and the vehicle fields at +0x20f4 / +0x20f8 / +0x20fc
 	void sub_101712d0(CBasePlayerVehicle *pVehicle, int role);	// enters the vehicle: asks it (slot 2) whether it knows the role, remembers the vehicle and its entity handle (+0x20fc / +0x20f8), sets the active flag (+0x20f4) and flag bit 0 at +0x1e74, lets the vehicle take control (slot 5, else slot 66), zeroes the velocity (sub_100b2e30), sets move type 9 / collision group 8, then notifies the vehicle (slot 4) and slot 454
 	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
+	void *sub_1032e8b0(int index);	// CBaseCombatCharacter::GetWeapon (stub 0x100100b4), called directly
+	int sub_103346c0(int ammoIndex);	// CBaseCombatCharacter::GetAmmoCount (stub 0x1000ff97), called directly
 	void sub_1017bf10(int mode);	// switches the active view part: mode 0 / 1 swap the parts at +0x2104 / +0x2108 (name from slot 217, show / hide through their slots 35 / 21, handed to the part owner at +0x2100 and VPhysicsSwapObject), mode 2 hides both
 };
