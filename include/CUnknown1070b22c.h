@@ -17,6 +17,6 @@ public:
 	virtual void b15(); virtual void b16(); virtual void b17(); virtual void b18();
 	virtual double vfunc119(int flag);
 	virtual int vfunc120();
-	virtual void vfunc121();
+	virtual void vfunc121(int a, int *b);
 	virtual void vfunc122(int edict, int a);
 };
