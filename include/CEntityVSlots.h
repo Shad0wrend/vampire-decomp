@@ -1,8 +1,9 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 158, 161, 173,
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 118, 158, 161, 173,
 // 220 / 221 (the absolute origin / angles getters), 243, 244, 346, 360 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
+#include "CVariantCopy.h"
 
 #define EVS(n) virtual void slot##n();
 #define EVS10(p) EVS(p##0) EVS(p##1) EVS(p##2) EVS(p##3) EVS(p##4) EVS(p##5) EVS(p##6) EVS(p##7) EVS(p##8) EVS(p##9)
@@ -12,7 +13,11 @@ class CEntityVSlots
 public:
 	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
 	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
-	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14)
+	EVS10(10)
+	EVS(110) EVS(111) EVS(112) EVS(113) EVS(114) EVS(115) EVS(116) EVS(117)
+	virtual void slot118(CEntityVSlots *pActivator, CEntityVSlots *pCaller, int a, CVariantCopy value, int outputID);	// input / event notification worker
+	EVS(119)
+	EVS10(12) EVS10(13) EVS10(14)
 	EVS(150) EVS(151) EVS(152) EVS(153) EVS(154) EVS(155) EVS(156) EVS(157)
 	virtual char slot158();
 	EVS(159) EVS(160)
