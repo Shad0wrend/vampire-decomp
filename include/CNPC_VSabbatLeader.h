@@ -10,7 +10,11 @@ struct CNPC_VSabbatLeaderHint
 class CNPC_VSabbatLeader
 {
 public:
-	char pad0[0xfec];
+	char pad0[0xe80];
+	int m_nPresence0;	// +0xe80: cleared by UpdatePresenceEffect
+	int m_nPresence1;	// +0xe84
+	int m_nPresence2;	// +0xe88
+	char pad0e8c[0xfec - 0xe8c];
 	int m_nState;	// +0xfec
 	char padff0[0x66c0 - 0xff0];
 	int m_nFailureType;
@@ -33,4 +37,5 @@ public:
 	int sub_10001b27(int a, int b, int c);	// CNPC_VHuman::vfunc366, called directly
 	char vfunc590();	// "OkToInterrupt" (slot 590 override): scope trace, true while the state at +0xfec is 0x1141, else the Troika base
 	char sub_1000ac22();	// CAI_BaseNPCTroika::vfunc590, called directly
+	void vfunc313();	// "CNPC_VSabbatLeader::UpdatePresenceEffect": scope trace, a call on the global object 0x10739a4c with this, then clears +0xe80 / +0xe88 / +0xe84
 };
