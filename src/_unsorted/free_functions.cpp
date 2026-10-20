@@ -35763,6 +35763,43 @@ void CPhysBox::sub_102d08e0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d0910 size=0x7c
+#include "CBaseEntity.h"
+#include <string.h>
+
+class CUnk102d0910;
+struct CUnk102d0910Sub {
+    void sub_100cd660(CUnk102d0910 *pOwner, int arg, int flags);
+};
+
+class CUnk102d0910 : public CBaseEntity {
+public:
+    char m_padBase[0x5bc - sizeof(CBaseEntity)];
+    CUnk102d0910Sub m_sub;	// 0x5bc
+    char m_pad5bc[0x5d8 - 0x5bc - sizeof(CUnk102d0910Sub)];
+    CUnk102d0910 *m_pNext;	// 0x5d8
+    char m_pad5dc[0x5f0 - 0x5dc];
+    const char *m_pszName;	// 0x5f0
+    void sub_102d0910(int arg);
+};
+extern CUnk102d0910 *g_10925450;
+
+void CUnk102d0910::sub_102d0910(int arg)
+{
+    m_sub.sub_100cd660(this, arg, 0);
+    const char *pszName = m_pszName ? m_pszName : "";
+    if (!*pszName) {
+        vfunc77();
+        return;
+    }
+    for (CUnk102d0910 *p = g_10925450; p; p = p->m_pNext) {
+        const char *pszOther = p->m_pszName ? p->m_pszName : "";
+        if (!_strcmpi(pszName, pszOther))
+            p->vfunc77();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1220 size=0x90
 #include "CUnknown102d1220.h"
 
