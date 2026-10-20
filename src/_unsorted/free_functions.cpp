@@ -38552,6 +38552,25 @@ char sub_103684a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10369d80 size=0x43
+#include "CNPC_VCameraSecurity.h"
+void *sub_100aa720(int size);
+extern char g_1062fa34[];
+
+// TARGET: npc_VCameraSecurity
+extern "C" CBaseEntity *npc_VCameraSecurity()
+{
+	void *mem = sub_100aa720(0x666c);
+	CNPC_VCameraSecurity *p;
+	if (mem)
+		p = ((CNPC_VCameraSecurity *)mem)->sub_10369df0();
+	else
+		p = 0;
+	p->vfunc106(g_1062fa34);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036a340 size=0x33
 void sub_1000831e();
 void sub_1000fad8();
