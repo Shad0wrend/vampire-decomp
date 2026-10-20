@@ -46,3 +46,5 @@
 	void sub_100b2010(const float *pIn, float *pOut);	// "CBaseEntity::ComputeAbsDirection": scope trace (entity name), with a live move parent (handle at +0x25c, slot 98 first when bit 11 of its flags +0x268 is set) rotates pIn by the parent's matrix (+0x130) into pOut, else copies pIn to pOut
 	bool sub_10035a70(CBaseEntity **ppEntity);	// "CBaseEntity::PhysicsTestEntityPosition": scope trace (entity name), Physics_TraceHull (sub_10035030) from GetAbsOrigin() to GetAbsOrigin() with the collision bounds at +0x270 and the solid mask of slot 237; true (and *ppEntity set when given) if the trace started solid
 	void sub_100b4280(const char *pszContext);	// "CBaseEntity::AddContext": scope trace (entity name) only (the empty body); takes one stack argument
+	void sub_100b97b0();	// stub 0x10013a7f, called directly (e.g. by the sheriff's teleport bats setup)
+	void sub_100b9880(const float *pOrigin, float a, float b, float c, float d, float e, float f);	// stub 0x1001582a, called directly with an origin and six floats (two vectors by value)
