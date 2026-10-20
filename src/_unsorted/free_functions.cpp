@@ -51788,6 +51788,21 @@ void CBaseCombatCharacter::sub_10334500(int amount, int ammoIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103345d0 size=0x12
+struct CZeroFields103345d0 {
+    char pad0[0x15a4];
+    unsigned int field15a4[32];
+    void sub_103345d0();
+};
+void CZeroFields103345d0::sub_103345d0()
+{
+    int i;
+    for (i = 0; i < 32; i++) {
+        field15a4[i] = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10334600 size=0x83
 #include "CBaseCombatCharacter.h"
 

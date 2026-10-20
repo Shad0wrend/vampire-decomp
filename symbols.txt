@@ -4151,6 +4151,7 @@
 0x10014f92 func   ?vfunc432@CNPC_VAnimal@@UAEXH@Z CNPC_VAnimal::vfunc432
 0x10014fba func   ?vfunc5@CEnvParticle@@QAEPAV1@I@Z CEnvParticle::vfunc5
 0x10014ff6 func   ?sub_10298910@CAI_BaseNPCTroika@@QAEXPBD@Z CAI_BaseNPCTroika::sub_10298910
+0x10015000 func   ?sub_103345d0@CZeroFields103345d0@@QAEXXZ CZeroFields103345d0::sub_103345d0
 0x10015019 func   ?sub_10366d60@@YADXZ sub_10366d60
 0x10015023 func   ?sub_10349650@CUnknown10349590@@QAE_NXZ CUnknown10349590::sub_10349650
 0x1001505f func   ?sub_10237c30@@YAXXZ sub_10237c30
