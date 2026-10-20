@@ -2261,6 +2261,7 @@
 0x1000ddfa func   ?sub_10078d60@CUtlVector136@@QAEXHH@Z CUtlVector136::sub_10078d60
 0x1000de04 func   ?sub_102ce640@CUtlRBTree12@@QAEXPBXAAGAA_N@Z CUtlRBTree12::sub_102ce640
 0x1000de0e func   ?sub_100ce3c0@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce3c0
+0x1000de2c func   ?sub_10201100@CVStatList_t@@QAEHHH@Z CVStatList_t::sub_10201100
 0x1000de63 func   ?sub_103bf580@CNPC_VTzimisce@@QAEPAXPAX@Z CNPC_VTzimisce::sub_103bf580
 0x1000de72 func   ?vfunc384@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc384
 0x1000de95 func   _item_g_bertrams_cd item_g_bertrams_cd
