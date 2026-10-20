@@ -33553,6 +33553,18 @@ int __fastcall sub_101f25a0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f25d0 size=0x12
+// TARGET: sub_101f25d0
+int __fastcall sub_101f25d0(char *self)
+{
+    int *p = *(int **)(self - 0x18);
+    if (p == 0) {
+        return 0;
+    }
+    return *(int *)(*p + 8) + (int)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2ae0 size=0xe
 void sub_101f3030(void* p);
 
