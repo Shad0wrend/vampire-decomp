@@ -9,6 +9,26 @@ void CAI_BaseNPCTroika::vfunc416(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028ef20 size=0x76
+#include "CAI_BaseNPCTroika.h"
+char CAI_BaseNPCTroika::vfunc587(int unused)
+{
+    if (sub_10337f30())
+        return 0;
+    if (*(int *)((char *)this + 0x128))
+        return 0;
+    if (*(int *)((char *)this + 0x5bb4) > 0)
+        return 0;
+    if (*((unsigned char *)this + 0x5b84) & 0x10)
+        return 0;
+    if (sub_1033e2b0())
+        return 0;
+    if (*(int *)((char *)this + 0x6354) <= 2)
+        return 1;
+    return *(int *)((char *)this + 0x6358) <= 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293ec0 size=0x8a
 #include "CAI_BaseNPCTroika.h"
 
