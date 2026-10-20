@@ -3,11 +3,17 @@
 
 #include "CGlobalEntityList.h"
 
-struct variant_t_EHandle	// an entity handle with a destructor (so its guarded static registers an atexit stub)
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+void __cdecl sub_100031f7();	// the game's destructor stub of the static invalid handle in variant_t::Entity()
+
+struct variant_t_EHandle	// an entity handle; its constructor registers the destructor stub like the game's guarded static
 {
 	unsigned int m_Index;
-	variant_t_EHandle() { m_Index = 0xffffffff; }
-	~variant_t_EHandle() {}
+	variant_t_EHandle()
+	{
+		m_Index = 0xffffffff;
+		atexit(sub_100031f7);
+	}
 };
 
 struct variant_t
