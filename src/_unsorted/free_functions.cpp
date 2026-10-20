@@ -44007,6 +44007,33 @@ char CBaseCombatCharacter::sub_103380d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103394a0 size=0x8d
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_103394a0(char begin, int a, int b)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	} else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::TorporBegin";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (begin)
+		sub_103392c0(0, a, b);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10339560 size=0x6f
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
