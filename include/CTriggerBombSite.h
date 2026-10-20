@@ -8,6 +8,7 @@ public:
 	CTriggerBombSite *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	bool vfunc32(void *pOther);	// slot 32: false when disabled (+0x55c), or when the player object at pOther+0xa8 does not point back to this entity (handle at +0x1cb8) or this entity's own handle at +0x8c resolves to another object
+	void sub_10211870(void *pSender, void *pParam);	// called through the stub at 0x1000d913 with the owner object and the argument by CUnknown103f6a20::sub_103f6a20
 
 	char m_pad0000[0x8c];
 	unsigned int m_hOwner008c;	// 0x008c
