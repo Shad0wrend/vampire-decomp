@@ -293,6 +293,32 @@ bool CNPC_VWerewolf::vfunc566(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d87a0 size=0xf5
+#include "CNPC_VWerewolf.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+extern CUnknown1073dc28 g_1073dc28;
+
+inline int FindSoundIndex(const char *pszName)
+{
+	for (int i = 0; i < g_1073dc28.m_nRecords; i++) {
+		if (_strcmpi(g_1073dc28.m_ppRecords[i]->m_Name.Get(), pszName) == 0)
+			return g_1073dc28.m_ppRecords[i]->m_nId;
+	}
+	return -1;
+}
+
+void CNPC_VWerewolf::vfunc491()
+{
+	ScopeTrace t("CNPC_VWerewolf::ExertHvySound", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	static int s_nSound = FindSoundIndex("Pain");
+	g_1073dc28.sub_101f5950((CBaseEntity *)this, s_nSound, 2, 1.0f, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d9ab0 size=0xb8
 #include "CNPC_VWerewolf.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
