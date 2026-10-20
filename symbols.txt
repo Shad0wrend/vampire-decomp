@@ -1881,6 +1881,7 @@
 0x1000a4ed func   ?sub_103ee100@@YAHXZ sub_103ee100
 0x1000a4fc func   ?vfunc315@CWeaponIGeneric@@UAE_NXZ CWeaponIGeneric::vfunc315
 0x1000a50b func   ?sub_102b8c40@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102b8c40
+0x1000a510 func   ?sub_102008b0@CVStatList_t@@QAEDH@Z CVStatList_t::sub_102008b0
 0x1000a51a func   ?sub_100420a0@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_100420a0
 0x1000a52e func   ?sub_1027ee90@@YAXXZ sub_1027ee90
 0x1000a53d func   ?sub_10030d50@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030d50

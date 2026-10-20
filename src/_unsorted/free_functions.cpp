@@ -33542,6 +33542,17 @@ void CVStatList_t::sub_102007f0(int a, int *pSource, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102008b0 size=0x17
+#include "CVStatList_t.h"
+
+char CVStatList_t::sub_102008b0(int stat)
+{
+	if (stat >= 0 && stat < m_field04)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10200ca0 size=0x83
 #include "CVStatList_t.h"
 
