@@ -2187,6 +2187,7 @@
 0x1000c7b6 func   ?vfunc1@CPyObjStrSaveRestoreDataOps@@UAEXPAPAXPAVIRestoreLike@@@Z CPyObjStrSaveRestoreDataOps::vfunc1
 0x1000c7bb func   ?sub_10222670@CExperienceTable@@QAEPAUCExperienceAward@@H@Z CExperienceTable::sub_10222670
 0x1000c7cf func   _instanced_scripted_scene instanced_scripted_scene
+0x1000c7de func   ?sub_10265970@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_10265970
 0x1000c7ed func   ?sub_10345de0@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10345de0
 0x1000c801 func   ?vfunc2@CTEFootprintDecal@@UAEPAV1@I@Z CTEFootprintDecal::vfunc2
 0x1000c81f func   _item_k_tatoo_parlor_key item_k_tatoo_parlor_key

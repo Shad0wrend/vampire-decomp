@@ -36645,6 +36645,30 @@ unsigned char sub_10265800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10265970 size=0x9c
+void sub_10139610(const float *pAngles, float *pForward, float *pRight, float *pUp);
+
+// TARGET: CAI_BaseNPC::sub_10265970
+int CAI_BaseNPC::sub_10265970()
+{
+    float forward[3];
+    sub_10139610(vfunc221(), forward, 0, 0);
+    int act;
+    switch (*(int *)((char *)this + 0x1594)) {
+    case 1: act = 0x66; break;
+    case 3: act = 0x68; break;
+    case 4: act = 0x69; break;
+    case 5: act = 0x6a; break;
+    case 6: act = 0x6b; break;
+    case 7: act = 0x6c; break;
+    default: act = 0x49; break;
+    }
+    if (sub_1008dc40(act, -1) == -1)
+        return 0x49;
+    return act;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10267350 size=0xd
 extern int g_10920544;
 extern int g_10920548;
