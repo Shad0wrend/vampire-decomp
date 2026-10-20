@@ -5781,6 +5781,28 @@ void sub_1006aeb0(int pFilter, int delayBits, const float *pOrigin, const float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006af40 size=0x27
+#include "CTEWorldDecal.h"
+
+extern int vt_1044e1a8[];
+
+struct CBaseTempEntityHeadPlaceholder {
+    void sub_10015334(int a);
+};
+
+// TARGET: CTEWorldDecal::sub_1006af40
+CTEWorldDecal *CTEWorldDecal::sub_1006af40(int a)
+{
+    ((CBaseTempEntityHeadPlaceholder *)this)->sub_10015334(a);
+    *(int **)this = vt_1044e1a8;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c0a0 size=0xa1
 #include "CUnknown1006bea0.h"
 
