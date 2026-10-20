@@ -15,4 +15,6 @@ public:
 	void sub_10397e00(CBaseEntity *pEnt);	// tells every tentacle (handles at +0x66a8, six entries) other than pEnt to go to pEnt's slot 217 position (sub_1039ef90)
 	void vfunc448(int a);	// slot 448: state 3/4 only resets the motor's float at +0x1c to 180.0f, else sets the state to 0 and clears +0x6718; then the Troika base
 	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448, called directly
+	const char *vfunc408(int index);	// the attachment name of the body part 0x77..0x7e (xfr, xfl, xmr, xml, xbr, xbl, xsp, xmh), else the base's
+	const char *sub_10011590(int index);	// CAI_BaseNPC::vfunc408 (jump stub)
 };
