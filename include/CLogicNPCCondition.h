@@ -2,8 +2,19 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+class CBaseEntity;
+
 class CLogicNPCCondition
 {
 public:
 	CLogicNPCCondition *vfunc5(unsigned int flags);
+
+	char m_pad0000[0x10c];
+	unsigned int m_hActivator10c;	// +0x10c: entity handle passed as the activator of the name search
+	char m_pad0110[0x454 - 0x110];
+	const char *m_name454;	// +0x454: name of the entity to look up
+	char m_pad0458[0x488 - 0x458];
+	unsigned int m_hEntity488;	// +0x488: cached handle of the entity found by name
+
+	CBaseEntity *sub_10135720();	// resolves the cached handle at +0x488, searching the entity by name when it is stale
 };
