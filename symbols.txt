@@ -2801,6 +2801,7 @@
 0x10012102 func   ?sub_10412590@@YAXHH@Z sub_10412590
 0x10012125 func   ?sub_10088a80@@YAXXZ sub_10088a80
 0x1001212f func   ?sub_10076ad0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10076ad0
+0x10012134 func   ?sub_1022d050@UtlMem@@QAEXXZ UtlMem::sub_1022d050
 0x1001216b func   ?vfunc108@CBaseEntity@@UAE_NPBDMMM@Z CBaseEntity::vfunc108
 0x10012170 func   ?vfunc5@CPhysicsCannister@@QAEPAV1@I@Z CPhysicsCannister::vfunc5
 0x1001217f func   ?vfunc362@CBaseCombatCharacter@@QAEDPBM@Z CBaseCombatCharacter::vfunc362
