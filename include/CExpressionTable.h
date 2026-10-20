@@ -19,4 +19,6 @@ public:
 	const char *sub_10105090(int index);	// "CExpressionTable::GetExpressionName": scope trace, the name of the expression (id at +0x18a of its 400 byte record, looked up in m_list), "Invalid Expression" for an invalid index
 	int sub_101051b0(int index);	// "CExpressionTable::GetExpressionData": scope trace, address of record index (0 when out of range)
 	void sub_10104f20();	// "CExpressionTable::FlushTable": scope trace, clears m_list, empties the record vector (frees the block unless the grow size is -1) and rewinds the cached pointer to the base
+	int sub_10105870(int a, int b);	// "CExpressionTable::LookupExpression": scope trace, key = sub_10105270(a, b); the index of the record whose dword at +0x188 equals the key, -1 when none
+	int sub_10105270(int a, int b);	// key lookup (called through the stub at 0x1000f13c)
 };
