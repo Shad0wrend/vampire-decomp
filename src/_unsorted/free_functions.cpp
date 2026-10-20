@@ -9434,6 +9434,41 @@ void CBaseEntity::sub_100a6490(int pObject)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a68f0 size=0xb6
+#include "CBaseEntity.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern void (__cdecl *g_109f362c)(const char *fmt, ...);
+void sub_1002ee60(CBaseEntity *pEnt);
+
+void CBaseEntity::sub_100a68f0(int pObject)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseEntity::VPhysicsSwapObject";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	if (!pObject)
+		sub_1002ee60(this);
+	if (!m_obj36c)
+		g_109f362c("Bad vphysics swap for %s\n", m_classname11c ? m_classname11c : "");
+	m_obj36c = pObject;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6bb0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
