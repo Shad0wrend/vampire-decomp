@@ -875,6 +875,50 @@ QAngle CBaseCombatCharacter::vfunc367()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10331950 size=0xb6
+#include "Vector.h"
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_105387dc[];
+extern char g_106b8540[];
+extern char g_10620864[];
+extern float (__fastcall *g_1057966c)(Vector *pThis);
+
+#define S10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+#define S100(x) S10(x##0) S10(x##1) S10(x##2) S10(x##3) S10(x##4) S10(x##5) S10(x##6) S10(x##7) S10(x##8) S10(x##9)
+struct BodySlots {
+	S100(a) S100(b) S100(c)
+	S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8();
+	virtual void vfunc369(Vector *pOut);
+};
+
+struct ScopeTraceGuard {
+	ScopeTraceGuard(const char *a, const char *b, const char *c)
+	{
+		g_109f3620[*g_109f3680].a = a;
+		g_109f3620[*g_109f3680].b = b;
+		g_109f3620[*g_109f3680].c = c;
+		++*g_109f3680;
+	}
+	~ScopeTraceGuard() { --*g_109f3680; }
+};
+
+Vector CBaseCombatCharacter::vfunc368()
+{
+	const char *name = this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc;
+	ScopeTraceGuard trace(g_10620864, name, g_106b8540);
+	Vector vBodyDir;
+	((BodySlots *)this)->vfunc369(&vBodyDir);
+	vBodyDir.z = 0;
+	g_1057966c(&vBodyDir);
+	return vBodyDir;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10332010 size=0x80
 #include "CBaseCombatCharacter.h"
 struct ScopeTraceEntry { const char *m_pFunction; const char *m_pEntity; const char *m_pExtra; };
