@@ -36453,6 +36453,22 @@ UtlVec8 *UtlVec8::sub_10349a20(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10349d10 size=0x30
+#include "CUtlMemory16.h"
+
+extern void *(__cdecl *g_109f3634)(unsigned int);
+
+CUtlMemory16 *CUtlMemory16::sub_10349d10(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount)
+		m_pMemory = (char *)g_109f3634(allocationCount * 16);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349d50 size=0x8c
 #include "CUtlVector16.h"
 extern void *(*g_109f3634)(int);
