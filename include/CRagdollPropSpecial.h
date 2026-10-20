@@ -29,4 +29,7 @@ public:
 	float m_f1048;
 	CRagdollPropSpecial *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10014317();	// as in CPhysForce (transplant)
+	void sub_10157ca0(CBaseEntity *pOwner);	// when bit 4 of the spawn flags (+0x204) is set: stores pOwner's handle at +0x1050 (-1 for null), arms the think function sub_10015424 (SetThink), clears +0x1fc, sets +0x200 to 1 and schedules the next think at curtime + 0.001
+	void sub_10015424();	// think function
+	void sub_100ac4e0(void (CRagdollPropSpecial::*pfnThink)(), float flThinkTime, const char *szContext);	// "CBaseEntity::SetThink" (called through the stub at 0x10007fe5)
 };
