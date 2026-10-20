@@ -2,6 +2,8 @@
 // Only the slots that decompiled code needs have their signature; the rest are placeholders.
 #pragma once
 
+#include "CRestore.h"
+
 struct typedescription_t;
 struct CSaveEdict;
 
@@ -11,7 +13,7 @@ public:
 	virtual int vfunc0();	// current position
 	virtual void vfunc1(int pos);	// seek
 	virtual void vfunc2();
-	virtual void vfunc3();
+	virtual void vfunc3(int a, int b, int c, int d, int e);	// stub 0x1000b258
 	virtual void vfunc4();
 	virtual void vfunc5(const void *p);
 	virtual void vfunc6();	// pops the section stack, writes the section size
@@ -48,6 +50,8 @@ public:
 	virtual void vfunc37(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xc: converts the entity handles to entity table indices (sub_101a08f0) and writes them through slot 9
 	virtual void vfunc38();
 	virtual void vfunc39();
+
+	CSave(void *pData);	// stub 0x10009bf6
 
 	int *m_pSections;	// +0x04: section start stack
 	char m_pad0008[0x8];
