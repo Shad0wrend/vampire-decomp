@@ -49627,6 +49627,29 @@ int CUnknown1030bc20::sub_1030bc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030bd50 size=0x13
+struct CInnerFlags28 {
+    char pad_0000[0x28];
+    unsigned char m_b28_lo : 3;
+    unsigned char m_b28_bit3 : 1;
+};
+
+struct CHolderInner24 {
+    char pad_0000[0x24];
+    CInnerFlags28 *m_p24;
+    unsigned char sub_1030bd50();
+};
+
+// TARGET: sub_1030bd50
+unsigned char CHolderInner24::sub_1030bd50()
+{
+    if (m_p24 == 0) {
+        return 0;
+    }
+    return m_p24->m_b28_bit3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030be50 size=0x1e
 #include "CBaseCineCam.h"
 
