@@ -817,6 +817,7 @@
 0x1000510f func   ?vfunc5@CWeaponHolyLight@@QAEPAV1@I@Z CWeaponHolyLight::vfunc5
 0x10005123 func   ?vfunc619@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::vfunc619
 0x1000515f func   ?vfunc5@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc5
+0x10005173 func   ?sub_10043c40@CSaveBlockFields10043c40@@QAEXH@Z CSaveBlockFields10043c40::sub_10043c40
 0x10005178 func   _trigger_checkvolume trigger_checkvolume
 0x10005196 func   _npc_VTzimisceHeadClaw npc_VTzimisceHeadClaw
 0x100051a0 func   ?vfunc4@CTEExplosion@@QAEXPAXH@Z CTEExplosion::vfunc4
