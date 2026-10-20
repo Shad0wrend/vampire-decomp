@@ -870,6 +870,28 @@ bool CAI_BaseNPCTroika::sub_1029b180(void *pOtherArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f940 size=0xc1
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPCTroika::vfunc590
+char CAI_BaseNPCTroika::vfunc590()
+{
+	if (!sub_1028a190())
+		return 0;
+	int state = *(int *)((char *)this + 0xfec);
+	switch (state)
+	{
+	case 1: case 9: case 0x13: case 0x30: case 0x4b: case 0x4d: case 0x51:
+	case 0x73: case 0x74: case 0x75: case 0x76: case 0x77: case 0x78: case 0x79: case 0x7a:
+	case 0x7b: case 0x7c: case 0x7d: case 0x7e: case 0x7f: case 0x80: case 0x81: case 0x82:
+	case 0x83: case 0x84: case 0x85: case 0x86: case 0x87: case 0x88: case 0x89: case 0x8a:
+	case 0xcb5: case 0xd25: case 0x1121: case 0x1157: case 0x1158:
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ad110 size=0x20
 #include "CAI_BaseNPCTroika.h"
 struct CUnknownGlobals1070b228 { int m_pad[3]; float m_curtime; };
