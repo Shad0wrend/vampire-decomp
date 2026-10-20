@@ -33,7 +33,9 @@ public:
 	virtual void s85(); virtual void s86(); virtual void s87(); virtual void s88(); virtual void s89();
 	virtual void s90(); virtual void s91(); virtual void s92(); virtual void s93(); virtual void s94();
 	virtual void s95(); virtual void s96(); virtual void s97(); virtual void s98(); virtual void s99();
-	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104();
+	virtual void s100(); virtual void s101(); virtual void s102();
+	virtual void vfunc103();
+	virtual void s104();
 	virtual void s105();
 	virtual void vfunc106(const char *classname);
 };
@@ -48,6 +50,7 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual CConstraintAnchor *vfunc5(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc103();	// slot 103 (Activate): when the parent (handle at +0x254) resolves, records (its origin, its handle or -1, the name at +0x26c) in the global anchor list and removes this entity
 
 	void sub_1000cb8a();	// destructor body
 };
