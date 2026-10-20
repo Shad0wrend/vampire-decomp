@@ -37433,6 +37433,30 @@ bool CVStatList_t::sub_102017b0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10201870 size=0xb1
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "ScopeTrace.h"
+namespace block_102008b0 {
+    struct CVStatListValid : CVStatList_t { char sub_102008b0(int stat); };
+    char CVStatListValid::sub_102008b0(int stat) { return stat >= 0 && stat < m_field04; }
+}
+using namespace block_102008b0;
+struct CVStatListUnit : CVStatList_t {
+    CVStatInfo_t *sub_10201870(int stat);
+};
+
+// TARGET: CVStatListUnit::sub_10201870
+CVStatInfo_t *CVStatListUnit::sub_10201870(int stat)
+{
+    ScopeTrace trace("CVStatList_t::GetStatInfo", g_106b8540);
+    if (((CVStatListValid *)this)->sub_102008b0(stat))
+        return ((CVStatInfoList_t *)m_field0c)->sub_10200370(stat);
+    static CVStatInfo_t s_default;
+    return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10201980 size=0x8c
 #include "CVStatList_t.h"
 
