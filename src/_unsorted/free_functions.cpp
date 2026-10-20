@@ -26284,6 +26284,28 @@ Ent * __stdcall sub_101cd070(Ent *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cdac0 size=0xa7
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+int sub_100104d8(const char *pszName);
+
+void sub_101cdac0(int entindex, int pos, const char *pszSample, int volume, int soundlevel, unsigned int flags, int pitch)
+{
+	if (pszSample && pszSample[0] == '!') {
+		int index = sub_100104d8(pszSample);
+		if (index >= 0) {
+			char szName[32];
+			Q_snprintf(szName, sizeof(szName), "!%d", index);
+			g_1070b22c->vfunc49(entindex, pos, szName, volume, soundlevel, flags | 0x80, pitch);
+		}
+	} else {
+		g_1070b22c->vfunc49(entindex, pos, pszSample, volume, soundlevel, flags | 0x80, pitch);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf250 size=0x74
 void sub_101cf250(float *p, int mode)
 {

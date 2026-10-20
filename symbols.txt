@@ -2068,6 +2068,7 @@
 0x1000bbef func   ?vfunc5@CItemGDrugsPillBottle@@QAEPAV1@I@Z CItemGDrugsPillBottle::vfunc5
 0x1000bbf9 func   ?sub_10135570@@YAPAHXZ sub_10135570
 0x1000bc08 func   ?vfunc103@CNPC_VHumanCombatant@@UAEXXZ CNPC_VHumanCombatant::vfunc103
+0x1000bc0d func   ?sub_101cdac0@@YAXHHPBDHHIH@Z sub_101cdac0
 0x1000bc21 func   ?sub_1008be20@CBaseAnimating@@QAE_NPAVCBaseEntity@@@Z CBaseAnimating::sub_1008be20
 0x1000bc44 func   ?sub_10323a70@@YIFPAD@Z sub_10323a70
 0x1000bc49 func   ?sub_102c8ca0@@YAXXZ sub_102c8ca0
