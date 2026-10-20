@@ -2055,6 +2055,7 @@
 0x1000d850 func   _item_w_manbat_claw item_w_manbat_claw
 0x1000d855 func   ?vfunc5@CItemGWirelessCamera4@@QAEPAV1@I@Z CItemGWirelessCamera4::vfunc5
 0x1000d864 func   ?vfunc459@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc459
+0x1000d878 func   ?sub_1021e120@UtlMem@@QAEXXZ UtlMem::sub_1021e120
 0x1000d882 func   ?vfunc387@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc387
 0x1000d887 func   ?sub_100aa080@CBaseEntity@@QAEHPAXH@Z CBaseEntity::sub_100aa080
 0x1000d909 func   _item_p_research_hg_computers item_p_research_hg_computers
