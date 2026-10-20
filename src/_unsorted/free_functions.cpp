@@ -9689,6 +9689,22 @@ struct CUtlVectorBase { int a, b, c, m_Size; void sub_100b4950(); };
 void CUtlVectorBase::sub_100b4950() { m_Size = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100b4970 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_100b4970()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b49b0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);

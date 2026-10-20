@@ -1216,6 +1216,7 @@
 0x1000885a func   _gravity_pellet gravity_pellet
 0x1000886e func   _aiscripted_sequence aiscripted_sequence
 0x10008887 func   ?vfunc489@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc489
+0x10008896 func   ?sub_100b4970@UtlMem@@QAEXXZ UtlMem::sub_100b4970
 0x1000889b func   ?sub_10093ef0@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10093ef0
 0x100088be func   ?sub_10196850@@YAXPAUPyInst@@@Z sub_10196850
 0x100088e1 func   ?vfunc38@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc38
