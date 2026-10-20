@@ -16939,6 +16939,41 @@ void CDialog::sub_100e0a40(const char *pszSound)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1880 size=0x11a
+#include "CDialog.h"
+#include "ScopeTrace.h"
+
+struct IFileSystemExistsView
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+    virtual bool FileExists(const char *pFileName, const char *pPathID);	// slot 9 (+0x24)
+};
+
+extern IFileSystemExistsView *g_1070b238;
+extern char g_10562370[];
+extern char g_1056236c[];
+extern char g_10562368[];
+extern char g_10562364[];
+
+char *CDialog::sub_100e1880(int index)
+{
+    ScopeTrace trace(g_10562370, g_106b8540);
+    if (index >= 0) {
+        char *pszFile = sub_100e1680(index, g_1056236c, 0);
+        if (pszFile && g_1070b238->FileExists(pszFile, 0))
+            return pszFile;
+        pszFile = sub_100e1680(index, g_10562368, 0);
+        if (pszFile && g_1070b238->FileExists(pszFile, 0))
+            return sub_100e1680(index, g_10562368, 1);
+        pszFile = sub_100e1680(index, g_10562364, 0);
+        if (pszFile && g_1070b238->FileExists(pszFile, 0))
+            return sub_100e1680(index, g_10562364, 1);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e3400 size=0x98
 #include <string.h>
 #include "CUnknown100e3400.h"
