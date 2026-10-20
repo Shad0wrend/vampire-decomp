@@ -45403,6 +45403,33 @@ void CBaseCombatCharacter::sub_1033d640(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d7d0 size=0x98
+#include "CUnknown1033d7d0.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+void CUnknown1033d7d0::sub_1033d7d0(inputdata_t *pInput)
+{
+	CScopeTrace trace("CBaseCombatCharacter::InputBloodgain", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	int n = pInput->value.fieldType == 4 ? pInput->value.iValue : 0;
+	for (int i = 0; i < n; i++)
+		sub_10338cb0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d8a0 size=0x76
 #include "CBaseCombatCharacter.h"
 
