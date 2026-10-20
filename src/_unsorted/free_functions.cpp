@@ -7842,6 +7842,31 @@ const char *CBaseAnimating::sub_1008fe80(int sequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008ff50 size=0x9e
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+const char *CBaseAnimating::sub_1008ff50(int sequence)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::GetSequenceActivityName";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int *pSeq = (int *)sub_1008d990(sequence);
+    if (pSeq) {
+        const char *r = (const char *)pSeq + pSeq[1];
+        (*g_109f3680)--;
+        return r;
+    }
+    (*g_109f3680)--;
+    return "SEQUENCE_NOT_FOUND";
+}
+// END FUNCTION
+
 // FUNCTION: 0x100903e0 size=0x82
 #include "CBaseAnimating.h"
 

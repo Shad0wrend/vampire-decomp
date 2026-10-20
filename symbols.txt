@@ -1736,6 +1736,7 @@
 0x1000a088 func   _sky_camera sky_camera
 0x1000a0ba func   _logic_squad_condition logic_squad_condition
 0x1000a0d3 func   ?sub_10312320@CUnknown10312320@@QAEXXZ CUnknown10312320::sub_10312320
+0x1000a0d8 func   ?sub_1008ff50@CBaseAnimating@@QAEPBDH@Z CBaseAnimating::sub_1008ff50
 0x1000a0e2 func   ?sub_100e7230@@YGHPBDH@Z sub_100e7230
 0x1000a0fb func   ?sub_100d7210@@YAXXZ sub_100d7210
 0x1000a114 func   ?vfunc5@CWeaponMelee_Claws_Ghoul@@QAEPAV1@I@Z CWeaponMelee_Claws_Ghoul::vfunc5
