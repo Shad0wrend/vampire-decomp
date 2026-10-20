@@ -15884,6 +15884,35 @@ extern "C" GP *prop_dynamic_ornament()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190d80 size=0x72
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_1072b214;
+extern SendTable *g_1058d754;
+
+// TARGET: sub_10190d80
+int sub_10190d80()
+{
+	static const char *pTableName = "DT_OrnamentProp";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1058d754, (void *)sub_10009539),
+	};
+	g_1072b214.sub_1000e8fe(props + 1, 1, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192a30 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;

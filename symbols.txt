@@ -1662,6 +1662,7 @@
 0x1000bec4 func   ?sub_10231e60@@YIIPAD@Z sub_10231e60
 0x1000bed8 func   ?sub_1008b490@@YIXPAD@Z sub_1008b490
 0x1000bef6 func   ?sub_10260870@CUtlVector36@@QAEXH@Z CUtlVector36::sub_10260870
+0x1000bf00 func   ?sub_10190d80@@YAHXZ sub_10190d80
 0x1000bf14 func   ?vfunc546@CNPC_VBatSwarm@@QAEHH@Z CNPC_VBatSwarm::vfunc546
 0x1000bf32 func   _phys_ballsocket phys_ballsocket
 0x1000bf46 func   ?sub_1004bf70@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004bf70
