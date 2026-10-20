@@ -3113,6 +3113,7 @@
 0x10010ce9 func   _env_soundscape env_soundscape
 0x10010cf3 func   ?sub_101d9210@CUnknown101d9210@@QAEXXZ CUnknown101d9210::sub_101d9210
 0x10010d0c func   ?sub_100dda50@CUnknown100dda50@@QAEDXZ CUnknown100dda50::sub_100dda50
+0x10010d48 func   ?vfunc127@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc127
 0x10010d4d func   ?sub_101b72e0@CMem8_t@@QAEXH@Z CMem8_t::sub_101b72e0
 0x10010d57 func   ?vfunc311@CAI_BaseNPC@@UAEXHHH@Z CAI_BaseNPC::vfunc311
 0x10010d5c func   ??0CEnvLaser@@QAE@XZ CEnvLaser::CEnvLaser
