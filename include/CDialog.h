@@ -17,8 +17,12 @@ struct CDialogTable_t
 class CDialog
 {
 public:
-	char m_pad0000[8];
+	char m_pad0000[4];
+	unsigned int m_hNPC;	// 0x04: entity handle of the speaking NPC
 	CDialogTable_t *m_pTable;	// 0x08
+	char m_pad000c[0x33ad - 0xc];
+	char m_szWhisper[1];	// 0x33ad: the pending whisper text (empty when none)
 
 	int sub_100e5690(CDialogEntry_t *pEntry);	// "CDialog::get": scope trace, bsearch for the entry matching *pEntry in the table; copies the found entry over *pEntry and returns 1, else 0
+	void sub_100e0a40(const char *pszSound);	// "CDialog::PlayWhisper": scope trace, when a whisper is pending hands it and pszSound to the NPC behind the handle at +4 and clears it
 };
