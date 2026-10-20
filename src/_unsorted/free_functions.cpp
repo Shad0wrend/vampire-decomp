@@ -25904,6 +25904,25 @@ extern "C" CBaseEntity *prop_doorknob()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10225c00 size=0x43
+#include "CPropPadlock.h"
+void *sub_100aa720(int size);
+extern char g_105b26a0[];
+
+// TARGET: prop_padlock
+extern "C" CBaseEntity *prop_padlock()
+{
+	void *mem = sub_100aa720(0x824);
+	CPropPadlock *p;
+	if (mem)
+		p = ((CPropPadlock *)mem)->sub_10225c70();
+	else
+		p = 0;
+	p->vfunc106(g_105b26a0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102265c0 size=0x43
 #include "CPlayerEvents.h"
 void *sub_100aa720(int size);
