@@ -2204,6 +2204,28 @@ Vector &Vector::sub_1003e4b0(const Vector &v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003e6c0 size=0xa8
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_1003e6c0(CBaseEntity *pOther, void *pTrace)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::PhysicsImpact";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (pOther) {
+        if (!((pOther->sub_100b3700() | sub_100b3700()) & 0x4000000))
+            sub_1003e2e0(pOther, pTrace);
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003eb50 size=0x1b3
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 struct MaxVel { virtual void v0(); virtual bool v1(); char pad[0x24]; float val; };
