@@ -12,4 +12,8 @@ public:
 
 	void sub_1014d110();
 	void *sub_1014a1b0();
+	void sub_1014c130();	// \"StopLoopingSounds\": when the weapon has an owner, stops the physgun loop sound of the owner's entity for the current state at +0x928 (state 0: loop2; state 1: loop2, loop1, loop3 and loop4)
+
+	char m_pad898[0x928 - 0x898];
+	int m_nSoundState;	// 0x928
 };
