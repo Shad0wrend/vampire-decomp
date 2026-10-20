@@ -1890,6 +1890,7 @@
 0x1000a551 func   ?sub_102017b0@CVStatList_t@@QAE_NHH@Z CVStatList_t::sub_102017b0
 0x1000a56f func   ?sub_10147d50@CUnknown10147d10@@QAEXPAUCPair10147d50@@@Z CUnknown10147d10::sub_10147d50
 0x1000a5ab func   ?sub_100d6820@@YAXXZ sub_100d6820
+0x1000a5ce func   ?vfunc103@CGravityPellet@@QAEXXZ CGravityPellet::vfunc103
 0x1000a5d8 func   ?sub_10132db0@@YAPAHXZ sub_10132db0
 0x1000a5f1 func   _npc_VCombatman npc_VCombatman
 0x1000a60a func   ?sub_10057680@CUnknown10057680@@QAEXXZ CUnknown10057680::sub_10057680
