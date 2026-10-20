@@ -751,6 +751,41 @@ float CCollisionEvent::sub_100309a0(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030ae0 size=0x90
+#include "CCollisionEvent.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+struct CGlobalVarsX
+{
+	char m_pad[0xc];
+	float m_curtime;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern CGlobalVarsX *g_1070b228;
+
+void CCollisionEvent::sub_10030ae0()
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "CCollisionEvent::UpdateFrictionSounds";
+	g_109f3620[*g_109f3680].m_pszName = "";
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	for (int i = 0; i < 8; i++)
+	{
+		if (m_friction[i].m_value && *(float *)&m_friction[i].m_extra < g_1070b228->m_curtime - 0.1f)
+			sub_10012544(&m_friction[i]);
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030cb0 size=0x75
 extern char g_106b8540[];
 struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
