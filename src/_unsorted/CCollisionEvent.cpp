@@ -1,6 +1,40 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10030050 size=0xb4
+#include "CCollisionEvent.h"
+#include "CBaseEntity.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern float g_104454d0;
+void sub_10151150(void *pFluid, void *pObject, CBaseEntity *pEntity);
+
+struct IPhysObjectStub {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual CBaseEntity *vfunc6();
+};
+
+void CCollisionEvent::vfunc6(void *pObject, void *pFluid)
+{
+	g_109f3620[*g_109f3680].a = "CCollisionEvent::FluidEndTouch";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (pObject && pFluid) {
+		CBaseEntity *pEntity = ((IPhysObjectStub *)pObject)->vfunc6();
+		if (pEntity) {
+			pEntity->m_flags268 &= 0xfff7ffff;
+			if (!(sub_100309a0((int)pEntity) < g_104454d0))
+				sub_10151150(pFluid, pObject, pEntity);
+		}
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030140 size=0x99
 #include "CCollisionEvent.h"
 

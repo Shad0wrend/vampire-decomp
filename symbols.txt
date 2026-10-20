@@ -688,6 +688,7 @@
 0x1000496c func   ?sub_1030be50@CBaseCineCam@@QAEPAMPAM@Z CBaseCineCam::sub_1030be50
 0x10004980 func   ?vfunc5@CWeaponMelee_Tzimisce2Claw@@QAEPAV1@I@Z CWeaponMelee_Tzimisce2Claw::vfunc5
 0x100049a3 func   ?vfunc440@CNPC_VSheriffMan@@QAEHH@Z CNPC_VSheriffMan::vfunc440
+0x100049da func   ?vfunc6@CCollisionEvent@@QAEXPAX0@Z CCollisionEvent::vfunc6
 0x100049e9 func   ?sub_10157890@CUnknown101578b0@@QAEXD@Z CUnknown101578b0::sub_10157890
 0x100049f8 func   ?sub_102f48b0@NodeGraph@@QAE_NHH@Z NodeGraph::sub_102f48b0
 0x10004a02 func   ?sub_10185620@CUtlVector576@@QAEXH@Z CUtlVector576::sub_10185620
