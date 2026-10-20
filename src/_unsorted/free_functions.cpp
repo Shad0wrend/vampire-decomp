@@ -536,6 +536,39 @@ bool sub_1002f820(WheelObj_t *pObj, WheelEnt_t *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002fc30 size=0xac
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_10539f8c[];
+extern char g_10539f68[];
+extern char g_106b8540[];
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+struct E94 {
+    V16(p) V16(q) V16(r) V16(s) V16(t) V4(u0) V4(u1) V4(u2)
+    virtual void m0(); virtual void m1();
+    virtual int f();
+};
+struct SubObj { virtual void v0(); virtual bool v1(); char pad[0x2c - 4]; int m_n; };
+struct Holder { int pad; SubObj *p; };
+extern Holder *g_1070af4c;
+void sub_1002fc30(CBaseEntity *pEnt, float time)
+{
+    g_109f3620[*g_109f3680].a = g_10539f8c;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (((E94 *)pEnt)->f() == 7) {
+        Holder *h = g_1070af4c;
+        if (!h->p->v1() && h->p->m_n > 1)
+            *(unsigned int *)((char *)pEnt + 0x224) |= 0x20;
+        pEnt->sub_1009f3c0(g_10539f68, (int)time);
+    }
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030720 size=0x9b
 #include "CCollisionEvent.h"
 

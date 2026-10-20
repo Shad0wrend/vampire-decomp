@@ -3530,6 +3530,7 @@
 0x10015e2e func   ?vfunc5@COccultStrength@@QAEPAV1@I@Z COccultStrength::vfunc5
 0x10015e3d func   ?sub_102e0a40@CUnknown102e0a40@@QAEXH@Z CUnknown102e0a40::sub_102e0a40
 0x1002f820 func   ?sub_1002f820@@YA_NPAUWheelObj_t@@PAUWheelEnt_t@@@Z sub_1002f820
+0x1002fc30 func   ?sub_1002fc30@@YAXPAVCBaseEntity@@M@Z sub_1002fc30
 0x10036810 func   ?sub_10036810@@YAXPAUPhysEnt@@HHHH@Z sub_10036810
 0x100c1870 func   ?sub_100c1870@@YAPADPAUSStudioHdr@@HPAPAU1@HPAH@Z sub_100c1870
 0x100d6560 func   ?sub_100d6560@@YAHPBDPAD@Z sub_100d6560
