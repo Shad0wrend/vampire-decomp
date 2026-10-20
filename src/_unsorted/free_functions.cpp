@@ -40377,6 +40377,25 @@ char sub_103adc00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b19d0 size=0x43
+#include "CBatSwarm_Teleport.h"
+void *sub_100aa720(int size);
+extern char g_10651504[];
+
+// TARGET: sheriff_teleport_bats
+extern "C" CBaseEntity *sheriff_teleport_bats()
+{
+	void *mem = sub_100aa720(0xc78);
+	CBatSwarm_Teleport *p;
+	if (mem)
+		p = ((CBatSwarm_Teleport *)mem)->sub_103b1ad0();
+	else
+		p = 0;
+	p->vfunc106(g_10651504);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1d10 size=0x33
 void sub_10007897();
 void sub_10004a7f();
