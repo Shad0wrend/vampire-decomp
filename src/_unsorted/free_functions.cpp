@@ -17539,6 +17539,38 @@ void __fastcall sub_10106490(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106a40 size=0xbf
+#include "CBaseAnimating.h"
+#include "CExpressionTable.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern CExpressionTable g_10709200;
+
+int __fastcall sub_10106a40(CBaseAnimating *self, int, int a)
+{
+    CBaseAnimating *e = self;
+    const char *name = e ? (e->m_name26c ? e->m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::LookupExpressionIndex";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int *hdr = (int *)e->sub_100952d0(-1);
+    if (!hdr) {
+        (*g_109f3680)--;
+        return -1;
+    }
+    if (hdr[0x160 / 4] <= 0) {
+        (*g_109f3680)--;
+        return -1;
+    }
+    int r = g_10709200.sub_10105870(a, (int)e);
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106b30 size=0xc1
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"
