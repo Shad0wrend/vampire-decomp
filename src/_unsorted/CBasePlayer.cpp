@@ -103,6 +103,26 @@ bool CBasePlayer::sub_1015ff40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163ed0 size=0x7c
+#include "CBasePlayer.h"
+struct CPlayerGlobals { char pad[0xc]; float curtime; };
+struct CPlayerVec { float x, y, z; };
+extern CPlayerGlobals *g_1070b228;
+void sub_101668b0();
+
+void CBasePlayer::vfunc403()
+{
+    vfunc448();
+    CPlayerVec vec = *(CPlayerVec *)vfunc221();
+    vec.x = 0;
+    vec.z = 0;
+    vfunc64(&vec.x);
+    sub_100ac4e0((void *)sub_101668b0, 0, 0);
+    *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
+    sub_1032bdf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101647a0 size=0x9b
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;

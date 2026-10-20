@@ -2419,6 +2419,7 @@
 0x1000e70f func   _speaker speaker
 0x1000e714 func   ?sub_103e8f30@@YAHXZ sub_103e8f30
 0x1000e719 func   ?sub_1027ef20@CUnknown1027ef20@@QAEXPBD@Z CUnknown1027ef20::sub_1027ef20
+0x1000e75a func   ?vfunc403@CBasePlayer@@UAEXXZ CBasePlayer::vfunc403
 0x1000e75f func   _disc_particle disc_particle
 0x1000e796 func   ?sub_101f0330@CUnknown101f0330@@QAEXXZ CUnknown101f0330::sub_101f0330
 0x1000e7a0 func   ?sub_10042a40@UtlMem@@QAEXXZ UtlMem::sub_10042a40
