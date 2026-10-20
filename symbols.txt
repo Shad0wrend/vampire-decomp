@@ -2435,6 +2435,7 @@
 0x1000ec14 func   ?sub_10236d70@@YAHXZ sub_10236d70
 0x1000ec1e func   ?sub_101eab60@@YAXH@Z sub_101eab60
 0x1000ec28 func   ?sub_10122590@CGameMovement@@QAEXXZ CGameMovement::sub_10122590
+0x1000ec2d func   ?vfunc310@CNPC_VTzimisceRunner@@QAEHH@Z CNPC_VTzimisceRunner::vfunc310
 0x1000ec3c func   ?sub_100436c0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_100436c0
 0x1000ec50 func   ?vfunc5@CResearchBook_MG_FIN@@QAEPAV1@I@Z CResearchBook_MG_FIN::vfunc5
 0x1000ec55 func   ?vfunc5@CWeaponWallet@@QAEPAV1@I@Z CWeaponWallet::vfunc5

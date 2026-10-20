@@ -77,3 +77,23 @@ bool CNPC_VTzimisceRunner::vfunc600(void *pEntity)
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c3d80 size=0x6e
+#include "CNPC_VTzimisceRunner.h"
+int CNPC_VTzimisceRunner::vfunc310(int act)
+{
+    if (*((char *)this + 0x6672)) {
+        if (act == 1)
+            return sub_10295750(0x1134);
+        if (act == 9)
+            return sub_10295750(0x1136);
+        if (act == 0x13)
+            return sub_10295750(0x1137);
+        if (act == 3)
+            return sub_10295750(0x1135);
+        if (act == 0xf1)
+            return sub_10295750(0x1134);
+    }
+    return sub_10295750(act);
+}
+// END FUNCTION
