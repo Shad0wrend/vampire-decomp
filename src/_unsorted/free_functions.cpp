@@ -34876,6 +34876,25 @@ extern "C" GP *monster_generic()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034aae0 size=0x43
+#include "CNPCMaker.h"
+void *sub_100aa720(int size);
+extern char g_10624e80[];
+
+// TARGET: npc_maker
+extern "C" CBaseEntity *npc_maker()
+{
+	void *mem = sub_100aa720(0x76d0);
+	CNPCMaker *p;
+	if (mem)
+		p = ((CNPCMaker *)mem)->sub_1034ad80();
+	else
+		p = 0;
+	p->vfunc106(g_10624e80);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034b500 size=0x10
 #define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
 #define V100(n) V10(n##a) V10(n##b) V10(n##c) V10(n##d) V10(n##e) V10(n##f) V10(n##g) V10(n##h) V10(n##i) V10(n##j)
