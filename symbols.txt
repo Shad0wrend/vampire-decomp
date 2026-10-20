@@ -574,6 +574,7 @@
 0x10003c29 func   ?vfunc420@CNPC_VTzimisceHeadClaw@@UAEXXZ CNPC_VTzimisceHeadClaw::vfunc420
 0x10003c2e func   ?sub_101fda10@CVStatActionList_t@@QAEXXZ CVStatActionList_t::sub_101fda10
 0x10003c42 func   ?sub_103dc220@UtlMem@@QAEXXZ UtlMem::sub_103dc220
+0x10003c5b func   ?sub_101984c0@@YAPAUPyObj@@PAU1@0@Z sub_101984c0
 0x10003c65 func   ?sub_1023f060@@YAXPAI@Z sub_1023f060
 0x10003c6a func   ?sub_10328c80@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::sub_10328c80
 0x10003c74 func   ?vfunc5@CWeaponThrown_Grenade_Frag@@QAEPAV1@I@Z CWeaponThrown_Grenade_Frag::vfunc5

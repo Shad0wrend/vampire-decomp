@@ -26677,6 +26677,57 @@ PyObj *sub_10197e50(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101984c0 size=0x130
+struct PyObj { int m_refcnt; };
+
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObj *args, const char *format, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred(void);
+__declspec(dllimport) void PyErr_SetString(PyObj *exc, const char *msg);
+__declspec(dllimport) PyObj *PyInt_FromLong(long value);
+__declspec(dllimport) extern PyObj *PyExc_AttributeError;
+int __cdecl strcmp(const char *, const char *);
+}
+void *sub_10196780(PyObj *pObj);
+void *sub_1032e7b0();
+
+struct ActiveWeaponEntity {
+    char m_pad0000[0x9c];
+    void *m_pCharacter;
+};
+
+PyObj *sub_101984c0(PyObj *self, PyObj *args)
+{
+    const char *pszItem = 0;
+    PyObj *pEntObj = 0;
+    if (!PyArg_ParseTuple(args, "Os", &pEntObj, &pszItem)) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "bad args to HasItem()");
+        return 0;
+    }
+    if (!pszItem) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "invalid item name");
+        return 0;
+    }
+    ActiveWeaponEntity *pEnt = (ActiveWeaponEntity *)sub_10196780(pEntObj);
+    void *pChar;
+    if (pEnt == 0)
+        pChar = 0;
+    else
+        pChar = pEnt->m_pCharacter;
+    if (pChar == 0) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "invalid combat character");
+        return 0;
+    }
+    CBaseEntity *pWeapon = (CBaseEntity *)sub_1032e7b0();
+    if (pWeapon && strcmp(pWeapon->sub_1009f200(), pszItem) == 0)
+        return PyInt_FromLong(1);
+    return PyInt_FromLong(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198640 size=0x111
 struct PyObj { int m_refcnt; };
 
