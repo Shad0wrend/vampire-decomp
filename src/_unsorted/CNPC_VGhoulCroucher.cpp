@@ -39,6 +39,35 @@ CNPC_VGhoulCroucher *CNPC_VGhoulCroucher::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037bc90 size=0x96
+#include "CNPC_VGhoulCroucher.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+int CNPC_VGhoulCroucher::vfunc390(void *pInfo)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	} else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CNPC_VGhoulCroucher::OnTakeDamage_Alive";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	sub_1037b6e0(*(int *)((char *)pInfo + 0x2c));
+	*((char *)this + 0x6667) = 1;
+	int r = sub_10001b45(pInfo);
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c420 size=0x8f
 #include "CNPC_VGhoulCroucher.h"
 

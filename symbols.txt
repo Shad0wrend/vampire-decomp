@@ -2591,6 +2591,7 @@
 0x1000eb65 func   ?sub_102a9dc0@Obj@@QAEPAU1@HPAUVec3@@HHHHHH@Z Obj::sub_102a9dc0
 0x1000eb6a func   _env_fire env_fire
 0x1000eb7e func   _env_beam env_beam
+0x1000eb83 func   ?vfunc390@CNPC_VGhoulCroucher@@QAEHPAX@Z CNPC_VGhoulCroucher::vfunc390
 0x1000eb88 func   ?sub_10047840@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10047840
 0x1000eb97 func   _npc_VHumanCombatant npc_VHumanCombatant
 0x1000eb9c func   ?vfunc5@CNPC_VCamera@@QAEPAV1@I@Z CNPC_VCamera::vfunc5
