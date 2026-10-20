@@ -60,5 +60,5 @@ public:
 	CBaseEntity *sub_10270ae0();	// provisional, like sub_1015dc60 (transplant)
 	CBaseEntity *sub_102a9960();	// provisional, like sub_1015dc60 (transplant)
 	CBaseEntity *sub_1039ede0();	// provisional, like sub_1015dc60 (transplant)
-	void sub_1016f0f0(const char *name, const void *data);	// "CBasePlayer::StoreGlobalEmailFlags": scope trace (entity name), finds the 0x240 byte record at [+0x1e28] (count at +0x1e34) whose name matches (Q_strncmp over the longer length) and copies 0x200 bytes to record+0x40, else DevWarning("Could not save email for terminal: %s\n")
+	void sub_1016f0f0(const char *name, const void *data, int unused);	// "CBasePlayer::StoreGlobalEmailFlags": scope trace (entity name), finds the 0x240 byte record at [+0x1e28] (count at +0x1e34) whose name matches (Q_strncmp over the longer length) and copies 0x200 bytes to record+0x40, else DevWarning("Could not save email for terminal: %s\n"); the third stack argument is not used
 };
