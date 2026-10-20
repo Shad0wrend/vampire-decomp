@@ -21,4 +21,6 @@ public:
 	void sub_100fae90(inputdata_t *pInput);	// attachment-type input: integer 0..18 stored at +0x458 when the attach entity at +0x254 resolves, then sub_100faf60(entity)
 	void sub_100faf60(void *pEntity);	// slot 0x3cc call with (entity, the type at +0x458, the name at +0x45c or "")
 	void vfunc104();	// resolves the particle system index from the name
+	CEnvParticle *sub_100fad50();	// constructor body (env_particle entity creation): CBaseEntity constructor, vtable, default particle state
+	void sub_1009d980(char bAddAsDefault);	// CBaseEntity constructor body (stub 0x100090fc)
 };
