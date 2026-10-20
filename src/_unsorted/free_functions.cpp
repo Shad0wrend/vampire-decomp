@@ -49356,6 +49356,31 @@ void CHintData_WW::sub_103ca390(int hint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d0db0 size=0x8a
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+int CNPC_VWerewolf::sub_103d0db0(CNPC_VWerewolfVec3 a, CNPC_VWerewolfVec3 b)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	} else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CNPC_VWerewolf::HasPath";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int r = m_pHelper5d34->sub_10004e58(&a, &b);
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d1ca0 size=0x81
 #include "CNPC_VWerewolf.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
