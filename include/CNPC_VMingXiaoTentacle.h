@@ -13,4 +13,10 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	int vfunc461();	// "CNPC_VMingXiaoTentacle::SelectIdealState": picks the ideal state (1, 2 or 7) and its schedule from slot 167
 	void sub_1039ef90(float *pPos);	// called through the stub at 0x1000d1f2: scope work, then copies the three floats of pPos to +0x668c
+	void vfunc104();	// "CNPC_VMingXiaoTentacle::Precache": default model when none is set, base Precache, then the baby / transformation models (handles at +0x6664..+0x666c), three particle emitters and two sounds
+
+	char m_pad0004[0x6664 - 4];
+	int m_nModelIndex6664;	// 0x6664: PrecacheModel result of the baby model
+	int m_nModelIndex6668;	// 0x6668: PrecacheModel result of the baby model (again)
+	int m_nModelIndex666c;	// 0x666c: PrecacheModel result of the transformation model
 };
