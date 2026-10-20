@@ -10,4 +10,6 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	float vfunc516();	// as in CGeneric_NPC (transplant)
 	CGeneric_NPC_bathack *sub_1035ad10();	// as in CKeepUpright (transplant)
+	void vfunc104();	// slot 104 (Precache): the bat model and the metropolice / citizen sounds, then the base class
+	void sub_1027bb50();	// CAI_BaseNPC::vfunc104, called directly
 };
