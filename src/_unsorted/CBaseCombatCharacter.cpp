@@ -526,6 +526,108 @@ void CBaseCombatCharacter::vfunc387()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032d6e0 size=0x14e
+#include "CBaseCombatCharacter.h"
+
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CccVt
+{
+	S100(a) S100(b) S100(c) S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5) S10(d6)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3();
+	virtual int TakeAmmo(int a, int b, int c);
+};
+
+struct NameObj
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual const char *GetName();
+};
+
+struct NameHolder
+{
+	virtual void a0(); virtual void a1(); virtual void a2();
+	virtual NameObj *GetObj();
+};
+
+struct AmmoEdict
+{
+	char pad[0x40];
+	NameHolder *m_pHolder;
+};
+
+struct AmmoWeapon
+{
+	S100(a) S100(b) S100(c) S10(d0) S10(d1) S10(d2)
+	virtual void e0(); virtual void e1(); virtual void e2();
+	virtual bool Notify(int a, int b, int c, int d, int e, int f);
+};
+
+// TARGET: CBaseCombatCharacter::vfunc384
+void CBaseCombatCharacter::vfunc384(CBaseEntity *pAmmoWeapon)
+{
+	const char *name;
+	if (this)
+	{
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	}
+	else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::Weapon_EquipAmmoOnly";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	for (int i = 0; i < 0xe0; i++)
+	{
+		if (sub_1032e8b0(i))
+		{
+			AmmoEdict *edict = (AmmoEdict *)pAmmoWeapon->m_pEdict2e0;
+			const char *ammoName;
+			if (!edict->m_pHolder)
+				ammoName = g_106b8540;
+			else
+				ammoName = edict->m_pHolder->GetObj()->GetName();
+			const char **pcls = (const char **)((char *)sub_1032e8b0(i) + 0x11c);
+			const char *cls = *pcls;
+			if (!cls)
+				cls = g_106b8540;
+			if (_strcmpi(cls, ammoName) == 0)
+			{
+				int *p = (int *)((char *)pAmmoWeapon + 0x74c);
+				*((char *)this + 0x1588) = 0;
+				bool bAny = false;
+				for (int k = 2; k != 0; k--)
+				{
+					int count = p[0];
+					int taken = ((CccVt *)this)->TakeAmmo(count, p[-2], 0);
+					p[0] -= taken;
+					if (taken > 0)
+						bAny = true;
+					p++;
+				}
+				*((char *)this + 0x1588) = 1;
+				if (bAny)
+					((AmmoWeapon *)pAmmoWeapon)->Notify(10, 3, 0, 0, 0, 0);
+				--*g_109f3680;
+				return;
+			}
+		}
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032ebc0 size=0x9d
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
