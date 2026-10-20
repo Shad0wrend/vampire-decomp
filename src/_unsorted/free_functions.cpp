@@ -8294,6 +8294,35 @@ void *CBaseAnimating::sub_100952d0(int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095d80 size=0x97
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+float sub_100c4390(void *pStudioHdr, int iController, float flEncoded);
+
+// TARGET: CBaseAnimating::sub_10095d80
+float CBaseAnimating::sub_10095d80(int iController)
+{
+    const char *ent;
+    if (this != 0) {
+        ent = m_name26c;
+        if (ent == 0)
+            ent = g_106b8540;
+    } else
+        ent = "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::GetBoneController ";
+    g_109f3620[*g_109f3680].b = ent;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    void *pStudioHdr = sub_100952d0(-1);
+    float r = sub_100c4390(pStudioHdr, iController, ((float *)((char *)this + 0x6fc))[iController]);
+    --*g_109f3680;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100963d0 size=0x8e
 #include "CBaseAnimating.h"
 #include "CUnknown1070b22c.h"
