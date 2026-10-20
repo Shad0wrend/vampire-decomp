@@ -41,5 +41,5 @@ public:
 	void sub_100138fe();
 	void vfunc321();
 	int sub_10252240();	// provisional, like CAI_BaseNPCTroika::sub_10252240
-	bool sub_10253b70(int a, int b, int c, int d);
+	char sub_10253b70(int a, int b, int c, int d);
 };
