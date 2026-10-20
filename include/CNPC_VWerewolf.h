@@ -110,4 +110,6 @@ public:
 	void sub_103d6280(void *pHint);	// "CNPC_VWerewolf::PositionAtHint": scope trace (entity name), unless pHint is null: builds the hint's position (sub_103d6770) and sets the origin (slot 62), angles (slot 216) and the ground-entity-like slot 218 from the hint's slot 219, then sub_100b3b00()
 	void sub_103d6770(CNPC_VWerewolfVec3 *pOut, void *pHint);	// stub 0x100024ff: computes the position of a hint into pOut
 	void sub_100b3b00();	// CBaseEntity::sub_100b3b00 (stub 0x1001514a), called directly
+	CNPC_VWerewolfVec3 sub_103d6650(void *pHint);	// "CNPC_VWerewolf::GetHintEndpoint": scope trace (entity name), the zero vector for no hint, else the absolute origin (slot 217) of the hint's entity
+	CBaseEntity *sub_103d6390(void *pHint);	// the entity of a hint (stub 0x10008094)
 };
