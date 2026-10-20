@@ -3750,6 +3750,7 @@
 0x1001473b func   ?sub_101ab8f0@CUnknown101ab800@@QAE_NHPBEHH@Z CUnknown101ab800::sub_101ab8f0
 0x10014740 func   ?sub_100a4930@CBaseEntity@@QAEXXZ CBaseEntity::sub_100a4930
 0x1001474f func   ?vfunc58@CHalfLife2@@UAEPBDH@Z CHalfLife2::vfunc58
+0x10014763 func   ?sub_102f94f0@CUnknown102f94f0@@QAEXPAUSBitRef@@@Z CUnknown102f94f0::sub_102f94f0
 0x10014777 func   ?sub_10379040@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_10379040
 0x1001478b func   ?sub_10202350@@YAPBDHH@Z sub_10202350
 0x10014795 func   ?vfunc5@CWeaponMelee_MingXiaoMelee@@QAEPAV1@I@Z CWeaponMelee_MingXiaoMelee::vfunc5

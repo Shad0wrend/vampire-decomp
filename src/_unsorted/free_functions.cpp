@@ -43196,6 +43196,35 @@ void CMem4_t::sub_102f9330(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f94f0 size=0xa2
+#include <string.h>
+#include "CBitString.h"
+
+struct SBitRef
+{
+	int m_unk0;
+	int m_nBit;	// 0x04
+};
+
+class CUnknown102f94f0
+{
+public:
+	char m_pad0000[0x90];
+	CBitString *m_pBits;	// 0x90
+	int m_pad0094;
+	int *m_pBitCount;	// 0x98: points to the number of bits
+
+	void sub_102f94f0(SBitRef *pRef);	// sets the bit pRef->m_nBit (creating the bit string on first use)
+};
+
+void CUnknown102f94f0::sub_102f94f0(SBitRef *pRef)
+{
+	if (!m_pBits)
+		m_pBits = new CBitString(*m_pBitCount);
+	m_pBits->m_pData[pRef->m_nBit >> 5] |= 1 << (pRef->m_nBit & 0x1f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f95d0 size=0xc9
 #include "CUnknown102f95d0.h"
 
