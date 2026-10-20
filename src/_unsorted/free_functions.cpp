@@ -36191,6 +36191,36 @@ void CBaseCombatCharacter::sub_1032e9f0(int index, CBaseEntity *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032ead0 size=0xb2
+#include "CBaseCombatWeapon.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106203c4[];
+extern char g_106b8540[];
+extern char g_105387dc[];
+void CBaseCombatCharacter::sub_1032ead0()
+{
+    const char *name;
+    if (this)
+        name = m_name26c ? m_name26c : g_106b8540;
+    else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_106203c4;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    *(int *)((char *)this + 0x19a4) = -1;
+    for (int i = 0; i < 0xe0; i++) {
+        if (sub_1032e8b0(i)) {
+            ((CBaseCombatWeapon *)sub_1032e8b0(i))->vfunc359();
+            sub_1032e9f0(i, 0);
+        }
+    }
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032f930 size=0x86
 #include "CBaseCombatCharacter.h"
 
