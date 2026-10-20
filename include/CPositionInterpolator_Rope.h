@@ -40,20 +40,15 @@ public:
 	virtual void vfunc0();
 };
 
+struct CRopeVec
+{
+	int x, y, z;
+};
+
 class CPositionInterpolator_Rope : public IPositionInterpolator
 {
 public:
-	CPositionInterpolator_Rope() : m_flSlack(0), m_bChanged(0)
-	{
-		m_nType = 5;
-		CRopeVec *p = m_vecs;
-		for (int i = 2; i; i--) {
-			p->x = 0x6753c21c;
-			p->y = 0x6753c21c;
-			p->z = 0x6753c21c;
-			p++;
-		}
-	}
+	CPositionInterpolator_Rope();
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();
