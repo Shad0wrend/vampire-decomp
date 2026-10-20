@@ -9,4 +9,5 @@ public:
 	CNPCMaker_Fleshpile *sub_1034be50();
 	void vfunc139(CBaseEntity *pEnt);	// counts a spawned Tzimisce runner once on the boss (+0x66b8 down, +0x66bc up by 1), then the base maker's slot 139
 	void sub_10009c41(CBaseEntity *pEnt);	// CNPCMaker::vfunc139 (jump stub)
+	void vfunc103();	// slot 103 "Spawn": like CNPCMaker::vfunc103, with the Fleshpile think functions
 };
