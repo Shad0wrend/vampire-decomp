@@ -3524,6 +3524,7 @@
 0x10012085 func   ?vfunc103@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc103
 0x1001208a func   ?sub_10316320@CUnknown10316320@@QAEHHHPAX@Z CUnknown10316320::sub_10316320
 0x10012099 func   ?vfunc243@CBaseFire@@QAEXH@Z CBaseFire::vfunc243
+0x100120a8 func   ?sub_101dbc60@CUnknown101dbc60@@QAEXXZ CUnknown101dbc60::sub_101dbc60
 0x100120c1 func   ?vfunc87@CBaseEntity@@UAEXPAX@Z CBaseEntity::vfunc87
 0x100120df func   ?vfunc32@CPhysicsProp@@UAE_NH@Z CPhysicsProp::vfunc32
 0x10012102 func   ?sub_10412590@@YAXHH@Z sub_10412590
