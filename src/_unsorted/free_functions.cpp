@@ -13529,6 +13529,54 @@ char *CUnknown100e3400::sub_100e3400(int line, char col, const char *ext, bool i
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e4840 size=0x119
+#include "CDialog.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+void sub_100dfaf0(int level, const char *fmt, ...);
+
+int CDialog::sub_100e4840(int choice)
+{
+	g_109f3620[*g_109f3680].a = "CDialog::goto_line_for_response";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	CDialogTable_t *table = m_pTable;
+	if (table && m_nChoices > 0) {
+		if (choice >= 0) {
+			int key = m_aChoices[choice];
+			if (key == 0) {
+				(*g_109f3680)--;
+				return 0;
+			}
+			int i = 0;
+			if (i < table->m_nEntries) {
+				CDialogEntry_t *e = table->m_pEntries;
+				do {
+					if (e->m_data[0] == key) {
+						int off = i * 0x34;
+						sub_100dfaf0(1, "\t\tPlayer responded: [%d] %s\n", key, *(int *)((int)table->m_pEntries + off + 4));
+						int r = *(int *)((int)m_pTable->m_pEntries + off + 0xc);
+						(*g_109f3680)--;
+						return r;
+					}
+					i++;
+					e++;
+				} while (i < table->m_nEntries);
+			}
+		}
+		sub_100dfaf0(3, "Could not find response for player choice!\n");
+		int r = m_pTable->m_pEntries[0].m_data[0];
+		(*g_109f3680)--;
+		return r;
+	}
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e5690 size=0xa7
 #include "CDialog.h"
 
