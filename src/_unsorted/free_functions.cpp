@@ -43691,6 +43691,15 @@ void CAI_BaseNPCTroika::sub_10295240()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10295a80 size=0x11
+void __fastcall sub_10295a80(int *p, int dummy, int s1, unsigned int *out, int s3, int s4)
+{
+    typedef unsigned int (__fastcall *VFunc)(void *, void *);
+    unsigned int r = ((VFunc)(*(int **)p)[611])(p, (void *)dummy);
+    *out = r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10297430 size=0x82
 #include "CAI_BaseNPCTroika.h"
 

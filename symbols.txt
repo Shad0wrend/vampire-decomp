@@ -4281,6 +4281,7 @@
 0x10015951 func   ?sub_103065d0@CUnknown103065d0@@QAEXPBUCUnknown103065d0Vec@@0HHHD@Z CUnknown103065d0::sub_103065d0
 0x1001595b func   ?sub_100737d0@CUnknown100737d0@@QAEXD@Z CUnknown100737d0::sub_100737d0
 0x10015997 func   ?vfunc8@CSoundSchemeManager@@UAEPAV1@I@Z CSoundSchemeManager::vfunc8
+0x100159ab func   ?sub_10295a80@@YIXPAHHHPAIHH@Z sub_10295a80
 0x100159c9 func   ?sub_100acc20@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100acc20
 0x100159d3 func   _npc_VDialogPedestrian npc_VDialogPedestrian
 0x100159dd func   ?sub_1042b470@@YAHXZ sub_1042b470
