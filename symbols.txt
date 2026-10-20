@@ -2464,6 +2464,7 @@
 0x1000e5c5 func   _env_microphone env_microphone
 0x1000e5de func   _item_w_mingxiao_spit item_w_mingxiao_spit
 0x1000e5f2 func   _item_g_bailbond_receipt item_g_bailbond_receipt
+0x1000e606 func   ?sub_103e77f0@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::sub_103e77f0
 0x1000e615 func   ?sub_10202780@@YAHH@Z sub_10202780
 0x1000e61f func   _item_w_severed_arm item_w_severed_arm
 0x1000e629 func   _env_spark env_spark

@@ -50257,6 +50257,59 @@ extern "C" GP *item_w_sledgehammer()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e77f0 size=0x83
+#include "CWeaponMelee_Torch.h"
+
+#define TS1(n) virtual void s##n();
+#define TS10(p) TS1(p##0) TS1(p##1) TS1(p##2) TS1(p##3) TS1(p##4) TS1(p##5) TS1(p##6) TS1(p##7) TS1(p##8) TS1(p##9)
+
+// the weapon's vtable viewed as plain slots
+struct TorchSlots
+{
+	TS1(0) TS1(1) TS1(2) TS1(3) TS1(4) TS1(5) TS1(6) TS1(7) TS1(8) TS1(9)
+	TS10(1) TS10(2) TS10(3) TS10(4) TS10(5) TS10(6) TS10(7) TS10(8) TS10(9)
+	TS10(10) TS10(11) TS10(12) TS10(13) TS10(14) TS10(15) TS10(16) TS10(17) TS10(18) TS10(19)
+	TS10(20)
+	TS1(210) TS1(211) TS1(212) TS1(213) TS1(214) TS1(215) TS1(216)
+	virtual float *slot217();
+	TS1(218)
+	virtual float *slot219();
+};
+
+struct TorchEmitterSlots
+{
+	TS1(0) virtual unsigned int *slot1(); TS1(2) TS1(3) TS1(4) TS1(5) TS1(6) TS1(7) TS1(8) TS1(9)
+	TS10(1) TS10(2) TS10(3) TS10(4) TS10(5) TS10(6) TS10(7) TS10(8) TS10(9)
+	TS10(10) TS10(11) TS10(12) TS10(13) TS10(14) TS10(15) TS10(16) TS10(17) TS10(18) TS10(19)
+	TS10(20) TS10(21) TS10(22) TS10(23)
+	TS1(240) TS1(241) TS1(242)
+	virtual void slot243(void *pOwner, int a, const char *b);
+};
+
+struct EntInfo { void *ent; int serial; int pad; };
+extern char *g_10566458;
+TorchEmitterSlots *sub_1000389b(const char *name, float *pos, float *ang, float lifetime);
+
+void CWeaponMelee_Torch::sub_103e77f0()
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0x910);
+	bool ok = false;
+	if (h != 0xffffffff) {
+		EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+		if (e->serial == (int)(h >> 13) && e->ent)
+			ok = true;
+	}
+	if (!ok) {
+		TorchSlots *s = (TorchSlots *)this;
+		TorchEmitterSlots *em = sub_1000389b("TorchWeaponEmitter", s->slot217(), s->slot219(), -1.0f);
+		if (em) {
+			em->slot243(this, 0x11, "particle");
+			*(unsigned int *)((char *)this + 0x910) = *em->slot1();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e7b10 size=0x72
 #include "SendProp.h"
 
