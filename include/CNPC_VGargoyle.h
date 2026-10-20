@@ -17,7 +17,10 @@ public:
 	int vfunc390(void *pInfo);	// slot 390 (OnTakeDamage) override: clears the vulnerable flag at +0x6688 when the damage type has bit 26, tells the entity of the handle at +0x628c about it (sub_10005849(ent, 1, 10)), then CNPC_VHuman::vfunc390
 	int sub_10001b45(void *pInfo);	// CNPC_VHuman::vfunc390, called directly
 	void sub_10005849(CBaseEntity *pEnt, int a, int b);	// a CBaseCombatCharacter member (the stub at 0x10005849 for 0x10332ca0), called directly
+	bool sub_10378ec0();	// finds the "pillar" entity named by slot 167()'s slot 220(), stores its handle at +0x667c (-1 when none) and returns whether the handle still resolves to a live entity
 
-	char m_pad0004[0x6688 - 4];
+	char m_pad0004[0x667c - 4];
+	int m_hPillar;	// 0x667c
+	char m_pad6680[0x6688 - 0x6680];
 	int m_nVulnerable;	// 0x6688
 };
