@@ -35599,6 +35599,44 @@ void CUnknown101f5f00::sub_101f5f00(int first, int key, int second)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f61b0 size=0x15f
+#include <stdio.h>
+#include "CUnknown101f4c80.h"
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *pszFormat, ...);
+const char *sub_10412550(int index);
+struct CNameTableX : CUnknown101f4c80Table {
+    char m_pad001c[0x28 - 0x1c];
+};
+struct CActivityEntryX {
+    int m_nCount;	// 0x00
+    CNameTableX **m_ppTables;	// 0x04
+    int *m_pIds;	// 0x08
+};
+struct CActivityTableX {
+    CActivityEntryX m_Entries[0x118d];
+    void sub_101f61b0();
+};
+
+// TARGET: CActivityTableX::sub_101f61b0
+void CActivityTableX::sub_101f61b0()
+{
+    char buf[128];
+    sprintf(buf, "\n   %s:\n\n", "SoundActivityTable");
+    DevMsg(0, buf);
+    CActivityEntryX *e = m_Entries;
+    for (int i = 0; i < 0x118d; i++, e++) {
+        if (e->m_nCount != 0) {
+            sprintf(buf, "\t\t[%d]: %s\n", i, sub_10412550(i));
+            DevMsg(0, buf);
+            for (int j = 0; j < e->m_nCount; j++) {
+                sprintf(buf, "\t\t(%d): [%s] %s\n", j, (*e->m_ppTables)[j].m_directory.Get(), e->m_ppTables[j]->Find(e->m_pIds[j])->m_folder.Get());
+                DevMsg(0, buf);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f63b0 size=0x121
 #include "FileSystemViews.h"
 
