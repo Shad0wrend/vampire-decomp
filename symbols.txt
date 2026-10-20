@@ -1276,6 +1276,7 @@
 0x100071d5 func   ?sub_101d8890@@YAXH@Z sub_101d8890
 0x100071da func   ?vfunc5@CEnvSoundscape@@QAEPAV1@I@Z CEnvSoundscape::vfunc5
 0x10007211 func   ?sub_1023ea20@@YAXXZ sub_1023ea20
+0x10007220 func   ?vfunc0@CTraceFilterNavGround@@UAE_NPAXH@Z CTraceFilterNavGround::vfunc0
 0x10007225 func   ?sub_101c4070@@YAXXZ sub_101c4070
 0x1000724d func   _phys_constraintsystem phys_constraintsystem
 0x1000725c func   ?sub_103e3ec0@Mem1c@@QAEXH@Z Mem1c::sub_103e3ec0
