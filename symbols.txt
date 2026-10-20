@@ -701,6 +701,7 @@
 0x100055c9 func   _info_node_bach_teleport_1 info_node_bach_teleport_1
 0x100055d8 func   _info_node_bach_teleport_2 info_node_bach_teleport_2
 0x100055e2 func   _info_node_bach_teleport_3 info_node_bach_teleport_3
+0x100055e7 func   ?sub_101ecb10@CUnknown101ecb10@@QAEXH@Z CUnknown101ecb10::sub_101ecb10
 0x100055ec func   _info_node_bach_teleport_4 info_node_bach_teleport_4
 0x1000560a func   _inspection_node inspection_node
 0x10005619 func   ?vfunc5@CNPC_VHumanCombatPatrol@@QAEPAV1@I@Z CNPC_VHumanCombatPatrol::vfunc5
