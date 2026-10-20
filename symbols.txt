@@ -3654,6 +3654,7 @@
 0x10013a93 func   ?sub_10078f20@CUtlVector136@@QAEXHH@Z CUtlVector136::sub_10078f20
 0x10013a98 func   ?vfunc5@CWeaponMelee_BaseballBat@@QAEPAV1@I@Z CWeaponMelee_BaseballBat::vfunc5
 0x10013aa7 func   ?sub_10380470@CUnk10380470@@QAE_NXZ CUnk10380470::sub_10380470
+0x10013ae8 func   ?vfunc15@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHH@Z CTempEntsSystem::vfunc15
 0x10013b79 func   ?sub_100a9470@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9470
 0x10013ba1 func   ?sub_100bb870@CBeam@@QAEXHPBM@Z CBeam::sub_100bb870
 0x10013ba6 func   ??0CVStatList_t@@QAE@H@Z CVStatList_t::CVStatList_t
