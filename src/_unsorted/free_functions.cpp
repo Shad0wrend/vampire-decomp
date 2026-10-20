@@ -37550,6 +37550,67 @@ void sub_1023e4b0(CBaseEntity *pEnt, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023ea20 size=0xc3
+struct CQueuedNode
+{
+	unsigned int m_hEnt;	// 0x00
+	int m_nArg;	// 0x04
+	CQueuedNode *m_pNext;	// 0x08
+};
+
+struct CQueueOwner	// the global object at 0x10752c9c
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x28 - 4];
+	float m_flDelay;	// 0x28
+};
+
+struct CQueueHandleEntry
+{
+	void *m_pEnt;
+	unsigned int m_serial;
+};
+
+extern CQueueOwner *g_10752c9c;
+extern CQueuedNode *g_10752ce0[25];
+extern float g_10752d60[25];
+extern char *g_10566458;
+extern char *g_1070b228;
+void sub_1023e720(void *pEnt, int arg);	// stub 0x10004147
+void __cdecl operator delete(void *p);
+
+void sub_1023ea20()
+{
+	CQueueOwner *pOwner = g_10752c9c;
+	for (int i = 0; i < 25; i++) {
+		if (g_10752ce0[i] != 0) {
+			float delay = pOwner->vfunc1() ? 0.0f : g_10752c9c->m_flDelay;
+			pOwner = g_10752c9c;
+			if (delay + g_10752d60[i] < *(float *)(g_1070b228 + 0xc)) {
+				CQueuedNode *pNode = g_10752ce0[i];
+				g_10752ce0[i] = pNode->m_pNext;
+				unsigned int h = pNode->m_hEnt;
+				if (h != 0xffffffff) {
+					volatile CQueueHandleEntry *e = (volatile CQueueHandleEntry *)(g_10566458 + (h & 0x1fff) * 12 + 4);
+					if (e->m_serial == (h >> 13) && e->m_pEnt != 0) {
+						void *pEnt;
+						if (e->m_serial == (h >> 13))
+							pEnt = e->m_pEnt;
+						else
+							pEnt = 0;
+						sub_1023e720(pEnt, pNode->m_nArg);
+					}
+				}
+				delete pNode;
+				pOwner = g_10752c9c;
+				g_10752d60[i] = *(float *)(g_1070b228 + 0xc);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ed10 size=0xde
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
