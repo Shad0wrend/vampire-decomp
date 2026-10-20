@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103b6e90 size=0xe1
+#include "CNPC_VNewscaster.h"
+#include "CNPC_VTzimisce.h"
+
+void sub_100aa7b0(void *p);
+
+CNPC_VTzimisce *CNPC_VTzimisce::vfunc5(unsigned int flags)
+{
+	((CNewscasterList *)((char *)this + 0x6690))->Destruct();
+	((CNewscasterList *)((char *)this + 0x665c))->Destruct();
+	sub_1028d610();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b70f0 size=0x1d
 #include "CNPC_VTzimisce.h"
 struct A { int sub_10012300(int); };
