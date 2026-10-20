@@ -783,6 +783,20 @@ void CBaseCombatCharacter::vfunc345(const char *pszName, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032fe60 size=0x158
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CBaseCombatCharacter::vfunc348
+int CBaseCombatCharacter::vfunc348()
+{
+	ScopeTrace trace("CBaseCombatCharacter::HealthToPercent", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int a = GetActiveStatList()->sub_10010609(0x11);
+	int b = GetActiveStatList()->sub_10010609(0xf);
+	return (a - b) * m_iMaxHealth / a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103315e0 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
