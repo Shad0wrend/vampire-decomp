@@ -92,8 +92,15 @@ public:
 	bool sub_10107120(int event, char *pszName, float *pA, float *pB, float *pC, float *pD);	// CBaseCombatCharacter::vfunc347, called directly (stub 0x10014ba0)
 	int sub_1008dd30(int a, int b);	// CBaseAnimating::sub_1008dd30, called directly (stub 0x10004ec1)
 	float sub_10091080(int sequence);	// CBaseAnimating member (stub 0x10009813), returns a float
+	char sub_1028a190();	// "IsInterruptible"-like: false while the state is 4 and the scripted entity of the handle at +0x5d74 is not playing (CCineNPC::sub_101a8930), or the byte at +0x5bc4 / bit 12 of the dword at +0x14bc is set; else slot 158
 
-	char m_pad0004[0x6080];
+	char m_pad0004[0x14bc - 4];
+	unsigned int m_flags14bc;
+	char m_pad14c0[0x5bc4 - 0x14c0];
+	char m_b5bc4;
+	char m_pad5bc5[0x5d74 - 0x5bc5];
+	unsigned int m_h5d74;
+	char m_pad5d78[0x6084 - 0x5d78];
 	float m_f6084;
 	unsigned int m_h6088;
 	unsigned int m_h608c;
