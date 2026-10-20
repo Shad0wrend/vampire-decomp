@@ -13,6 +13,32 @@ int CNPC_VChangBros::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036ae60 size=0x106
+#include "CNPC_VChangBros.h"
+#include "ScopeTrace.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+void sub_101d0ec0(const char *name);
+
+// TARGET: CNPC_VChangBros::vfunc104
+void CNPC_VChangBros::vfunc104()
+{
+	ScopeTrace trace("CNPC_VChangBros::Precache", g_106b8540);
+	CNPC_VHuman::vfunc104();
+	g_1070b22c->vfunc17((int)"chang_teleport_in_emitter", 1);
+	g_1070b22c->vfunc17((int)"chang_teleport_out_emitter", 1);
+	g_1070b22c->vfunc17((int)"chang_powerup_emitter", 1);
+	g_1070b22c->vfunc17((int)"chang_spine_emitter", 1);
+	g_1070b22c->vfunc17((int)"chang_center_emitter", 1);
+	g_1070b22c->vfunc17((int)"chang_blast_emitter", 1);
+	g_1070b22c->vfunc17((int)"chang_ball_charge_emitter", 1);
+	sub_101d0ec0("item_w_chang_claw");
+	sub_101d0ec0("item_w_chang_blade");
+	sub_101d0ec0("item_w_chang_energy_ball");
+	sub_101d0ec0("item_w_chang_ghost");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036afc0 size=0x6d
 #include "CNPC_VChangBros.h"
 struct ScopeTraceEntry { const char *m_pFunction; const char *m_pEntity; const char *m_pExtra; };
