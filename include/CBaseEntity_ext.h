@@ -41,3 +41,4 @@
 	void sub_100acc20(inputdata_t *pInput);	// "CBaseEntity::InputSetDamageFilter": scope trace (entity name), stores the input's string (null unless it is a string) at +0x21c, finds the entity of that name with the global list at 0x106eb5d8 and stores its handle at +0x220 (-1 when none)
 	bool sub_100a52a0();	// "CBaseEntity::EntityUnselectable"-like: scope trace (entity name), true when sub_100b5190(), the flags test sub_100a8220(), slot 116 or the owner (+0x9c) without the flag byte at +0x1480 holds
 	char sub_100b5190();	// worker called by sub_100a52a0 (stub 0x10014da8)
+	void sub_100b3ee0();	// "CBaseEntity::UnsetPlayerSimulated": scope trace (entity name), when the entity behind the handle at +0x440 is live calls its CBasePlayer::sub_1017c1d0(this) (RemoveFromPlayerSimulationList), then clears the handle (-1) and the byte at +0x43c
