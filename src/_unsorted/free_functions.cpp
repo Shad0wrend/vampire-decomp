@@ -66050,6 +66050,10 @@ unsigned short CUnknown1042d9a0::sub_1042d9a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042d9f0 size=0x6
+unsigned __fastcall sub_1042d9f0(unsigned *p) { return *p >> 28; }
+// END FUNCTION
+
 // FUNCTION: 0x1042da80 size=0x9
 void CUnknown1042da80::sub_1042da80(int value)
 {

@@ -3391,6 +3391,7 @@
 0x10011e14 func   ?sub_1027d9b0@@YIXPAD@Z sub_1027d9b0
 0x10011e23 func   ?sub_101f4eb0@CDumpThing@@QAEXXZ CDumpThing::sub_101f4eb0
 0x10011e37 func   ?sub_100a9290@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9290
+0x10011e4b func   ?sub_1042d9f0@@YIIPAI@Z sub_1042d9f0
 0x10011e5f func   ?sub_1042d720@@YIIPAI@Z sub_1042d720
 0x10011ea0 func   ?sub_1009fa60@CBaseEntity@@QAEXXZ CBaseEntity::sub_1009fa60
 0x10011eb9 func   ?sub_1012e6a0@CUnknown1012e6a0@@QAEXH@Z CUnknown1012e6a0::sub_1012e6a0
