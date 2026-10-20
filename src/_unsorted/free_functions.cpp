@@ -14906,6 +14906,27 @@ void CUnknown106b89bc::sub_100d13d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d23a0 size=0xc5
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" double __cdecl atof(const char *);
+void sub_101450e0(float *pMins, float *pMaxs, int a, int b);
+
+void sub_100d23a0()
+{
+	float a[3];
+	float b[3];
+	a[0] = (float)atof(g_1070b22c->vfunc84(1));
+	a[1] = (float)atof(g_1070b22c->vfunc84(2));
+	a[2] = (float)atof(g_1070b22c->vfunc84(3));
+	b[0] = (float)atof(g_1070b22c->vfunc84(4));
+	b[1] = (float)atof(g_1070b22c->vfunc84(5));
+	b[2] = (float)atof(g_1070b22c->vfunc84(6));
+	sub_101450e0(a, b, 1, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2c30 size=0xc2
 #include "CUnknown1021e8e0.h"
 
