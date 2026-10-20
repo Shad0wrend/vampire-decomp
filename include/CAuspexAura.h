@@ -12,6 +12,8 @@ public:
 	// slot 243 "CAuspexAura::AttachToEntity", declared as a plain member
 	void vfunc243(CBaseEntity *pEnt, int a, int b);	// scope trace, CEnvParticle::vfunc243(pEnt, a, b), then when pEnt is set and the entity of the handle at +0x4b8 has a player object (+0xa8) bumps the counter byte [engine index - 1] (below 0x20) of the table at pEnt+0x9c + 0x14e4
 	void sub_10012508(CBaseEntity *pEnt, int a, int b);	// CEnvParticle::vfunc243 (stub 0x10012508), called directly
+	CAuspexAura *vfunc5(unsigned int flags);	// scalar deleting destructor: sets the vtable, scope trace "CAuspexAura::~CAuspexAura" around the same bump of the counter byte for the entity at +0x4b8 (when the handle at +0x254 resolves), then the base destructor (sub_10051a40) and, with bit 0 of flags, delete this
+	void sub_10051a40();	// base destructor body (stub 0x1000f10f), called directly
 
 	char m_pad03e0[0x4b8 - 0x3e0];
 	unsigned int m_hTarget4b8;	// 0x4b8 entity handle
