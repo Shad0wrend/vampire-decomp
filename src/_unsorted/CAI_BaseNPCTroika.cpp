@@ -984,6 +984,54 @@ float CAI_BaseNPCTroika::vfunc418(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c12a0 size=0x10b
+#include "CUnknown100ecee0.h"
+
+struct TroikaGlobals { char pad[0xc]; float curtime; };
+extern CUnknown100ecee0 g_10924980;
+extern int (*g_109f3868)(int, int);
+extern TroikaGlobals *g_1070b228;
+struct TroikaView { char pad[0x64e4]; float m_f64e4; };
+
+#define TFIELD(type, off) (*(type *)((char *)this + (off)))
+
+int CAI_BaseNPCTroika::vfunc611()
+{
+    float fA;
+    int iB, iC;
+    int *tbl = (int *)g_10924980.sub_100ecee0((CTableNpc_t *)this, (int *)&fA, &iB, &iC);
+    int result;
+    if (TFIELD(char, 0x64c0) != 0) {
+        result = tbl[TFIELD(int, 0x64c8) + 2];
+        TFIELD(char, 0x64e0) = 0;
+        TFIELD(char, 0x64e1) = 0;
+    } else if (TFIELD(char, 0x64e0) == 0 && TFIELD(char, 0x64e1) == 0) {
+        int idx = TFIELD(int, 0x64c8);
+        int (*pfnRandom)(int, int) = g_109f3868;
+        if (tbl[idx + 2] != tbl[idx + 5] && iC > pfnRandom(1, 100)) {
+            result = tbl[TFIELD(int, 0x64c8) + 5];
+            TFIELD(char, 0x64e0) = 1;
+            TFIELD(char, 0x64e1) = 0;
+        } else if (g_1070b228->curtime - ((TroikaView *)this)->m_f64e4 > fA && iB > pfnRandom(1, 100)) {
+            result = sub_102c1230();
+            TFIELD(char, 0x64e0) = 0;
+            TFIELD(char, 0x64e1) = 1;
+        } else {
+            result = tbl[TFIELD(int, 0x64c8) + 2];
+            TFIELD(char, 0x64e0) = 0;
+            TFIELD(char, 0x64e1) = 0;
+        }
+    } else {
+        result = tbl[TFIELD(int, 0x64c8) + 2];
+        TFIELD(char, 0x64e0) = 0;
+        TFIELD(char, 0x64e1) = 0;
+    }
+    if (result == -1)
+        result = TFIELD(int, 0x6f0);
+    return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c1c10 size=0x96
 #include "CAI_BaseNPCTroika.h"
 extern char *(__cdecl *g_109f3890)(char *, const char *, int);
