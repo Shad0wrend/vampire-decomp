@@ -33,6 +33,39 @@ int CNPC_VMingXiao::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10396dc0 size=0x97
+#include "CNPC_VMingXiao.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+static inline bool HandleValid(const unsigned int *ph)
+{
+	if (*ph == 0xffffffff)
+		return false;
+	CGlobalEntityList_Slot *s = &g_10566458->m_Slots[*ph & 0x1fff];
+	return s->m_Serial == (int)(*ph >> 13) && s->m_pEntity;
+}
+
+int CNPC_VMingXiao::sub_10396dc0()
+{
+	if (HandleValid((unsigned int *)((char *)this + 0x6718))
+		&& *(int *)((char *)this + 0x673c) >= 3 && *(int *)((char *)this + 0x673c) <= 4) {
+		if (sub_10014df8(0x7b)) {
+			*(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+			*(int *)((char *)this + 0x1b34) = 0xbe1;
+			return 0x15c;
+		}
+		if (sub_10014df8(0x7c)) {
+			*(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+			*(int *)((char *)this + 0x1b34) = 0xbe5;
+			return 0x15d;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039a6e0 size=0xd
 void CUnknown1039a6e0::sub_1039a6e0(int value)
 {
