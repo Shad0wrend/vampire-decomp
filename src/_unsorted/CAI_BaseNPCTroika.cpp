@@ -775,6 +775,64 @@ void CAI_BaseNPCTroika::vfunc506()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10295590 size=0x127
+#include "CAI_BaseNPCTroika.h"
+
+struct TranslateGlobal {
+    virtual void v0();
+    virtual bool IsPaused();
+    char pad[0x2c - 4];
+    int m_nMode;
+};
+extern TranslateGlobal *g_10924d6c;
+struct TranslateBase { int sub_10328030(int act); };
+
+int CAI_BaseNPCTroika::sub_10295590(int act)
+{
+    int mode = g_10924d6c->IsPaused() ? 0 : g_10924d6c->m_nMode;
+    switch (mode) {
+    case 1:
+        if (act == 9 || act == 0x1115)
+            act = 0x13;
+        break;
+    case 2:
+        if (act == 0x13)
+            act = 9;
+        break;
+    }
+    unsigned int flags = *(unsigned int *)((char *)this + 0x5b84);
+    if ((flags & 0x40) == 0x40) {
+        switch (act) {
+        case 9: case 0x13: case 0x17: case 0x1115: case 0x1121:
+            act = 0xf17;
+            goto translated;
+        case 0x16:
+            act = 0xf17;
+            goto translated;
+        }
+    } else if ((flags & 0x20) == 0x20) {
+        switch (act) {
+        case 9: case 0x1115: case 0x1121:
+            act = 0x13;
+            goto translated;
+        case 0x16:
+            act = 0x13;
+            goto translated;
+        }
+    }
+    if (act == 3)
+        act = 1;
+translated:
+    if (vfunc513() & 0x8000000) {
+        if (act == 0x55)
+            return vfunc570(*(CBaseEntity **)((char *)this + 0x5ddc));
+        if (act == 6 || (act == 1 && (*(unsigned char *)((char *)this + 0x5d8c) & 2)))
+            return vfunc569(*(CBaseEntity **)((char *)this + 0x5ddc));
+    }
+    return ((TranslateBase *)this)->sub_10328030(act);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10297560 size=0xa1
 #include "CAI_BaseNPCTroika.h"
 

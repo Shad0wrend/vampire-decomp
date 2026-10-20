@@ -2890,6 +2890,7 @@
 0x1000eade func   _logic_branch logic_branch
 0x1000eaf2 func   ?vfunc5@CBatSwarm@@QAEPAV1@I@Z CBatSwarm::vfunc5
 0x1000eaf7 func   ?vfunc104@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc104
+0x1000eafc func   ?sub_10295590@CAI_BaseNPCTroika@@QAEHH@Z CAI_BaseNPCTroika::sub_10295590
 0x1000eb01 func   ?sub_10400750@@YAHXZ sub_10400750
 0x1000eb06 func   ?sub_104004a0@@YAHXZ sub_104004a0
 0x1000eb1a func   ?sub_100ae150@CBaseEntity@@QAEXXZ CBaseEntity::sub_100ae150
