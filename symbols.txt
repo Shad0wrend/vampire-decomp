@@ -1020,6 +1020,7 @@
 0x100069a6 func   ?sub_10146790@CUnknown10146790@@QAEXXZ CUnknown10146790::sub_10146790
 0x100069ba func   ?vfunc254@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc254
 0x100069ce func   ?vfunc5@CNPC_VWolfMorph@@QAEPAV1@I@Z CNPC_VWolfMorph::vfunc5
+0x10006a05 func   ?sub_10067b70@@YAXPAVCUnknown1019d130@@MPBVVector@@HH1@Z sub_10067b70
 0x10006a19 func   ?vfunc32@CPhysicsPropContested@@UAE_NH@Z CPhysicsPropContested::vfunc32
 0x10006a4b func   ?sub_1008de20@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008de20
 0x10006a7d func   _func_lod func_lod

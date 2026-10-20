@@ -4889,6 +4889,32 @@ int sub_10066e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067b70 size=0x86
+#include "CTESparks.h"
+
+extern CTESparks g_106c5618;
+extern Vector g_1070d1b0;
+
+void sub_10067b70(CUnknown1019d130 *filter, float delay, const Vector *pos, int magnitude, int trailLength, const Vector *dir)
+{
+	g_106c5618.m_vecOrigin.x = pos->x;
+	g_106c5618.m_vecOrigin.y = pos->y;
+	g_106c5618.m_vecOrigin.z = pos->z;
+	g_106c5618.m_nMagnitude = magnitude;
+	g_106c5618.m_nTrailLength = trailLength;
+	if (dir) {
+		g_106c5618.m_vecDir.x = dir->x;
+		g_106c5618.m_vecDir.y = dir->y;
+		g_106c5618.m_vecDir.z = dir->z;
+	} else {
+		g_106c5618.m_vecDir.x = g_1070d1b0.x;
+		g_106c5618.m_vecDir.y = g_1070d1b0.y;
+		g_106c5618.m_vecDir.z = g_1070d1b0.z;
+	}
+	g_106c5618.sub_100677e0(filter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068ab0 size=0x76
 #include "CTESpriteSpray.h"
 
