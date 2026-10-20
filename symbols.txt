@@ -2921,6 +2921,7 @@
 0x1000eb9c func   ?vfunc5@CNPC_VCamera@@QAEPAV1@I@Z CNPC_VCamera::vfunc5
 0x1000eba1 func   ?sub_1020f2e0@@YIXPADHH@Z sub_1020f2e0
 0x1000ebab func   ?sub_10136450@@YIXPADHH@Z sub_10136450
+0x1000ebba func   ?sub_103c1820@HeadClawView@@QAEXPAUEventData@@@Z HeadClawView::sub_103c1820
 0x1000ebbf func   ??1CVStatList_t@@QAE@XZ CVStatList_t::~CVStatList_t
 0x1000ebc4 func   ?sub_100b49b0@CMem16c_t@@QAEXH@Z CMem16c_t::sub_100b49b0
 0x1000ebc9 func   _env_glow env_glow

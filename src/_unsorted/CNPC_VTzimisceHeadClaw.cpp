@@ -43,6 +43,54 @@ int CNPC_VTzimisceHeadClaw::vfunc440(int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1820 size=0x15f
+#include "CAI_BaseNPCTroika.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct SlotView	// an NPC viewed as a list of slots; slot 618 is used here
+{
+    S100(a) S100(b) S100(c) S100(d) S100(e) S100(f)
+    S10(g)
+    virtual void h0(); virtual void h1(); virtual void h2(); virtual void h3(); virtual void h4(); virtual void h5(); virtual void h6(); virtual void h7();
+    virtual void vfunc618();
+};
+
+struct EventData	// the event passed to slot 442: the type first
+{
+    int m_iType;
+    float m_flValue;
+};
+
+struct HeadClawView : public CAI_BaseNPCTroika
+{
+    void sub_103c1820(EventData *pEvent);
+    void sub_10010695(EventData *pEvent);	// CAI_BaseNPCTroika::vfunc442 (stub 0x10010695), called directly
+};
+
+void HeadClawView::sub_103c1820(EventData *pEvent)
+{
+    switch (pEvent->m_iType) {
+    case 0x122:
+    case 0x123:
+    case 0x124:
+        {
+            EventData data;
+            data.m_iType = 0x4b;
+            data.m_flValue = 1.0f;
+            sub_10010695(&data);
+            return;
+        }
+    case 0x36:
+    case 0x37:
+        ((SlotView *)this)->vfunc618();
+        break;
+    }
+    sub_10010695(pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1c80 size=0x14
 #include "CNPC_VTzimisceHeadClaw.h"
 
