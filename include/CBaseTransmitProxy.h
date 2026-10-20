@@ -7,4 +7,8 @@ class CBaseTransmitProxy
 public:
 	CBaseTransmitProxy *vfunc0(unsigned int flags);
 	void sub_10002428();
+	void sub_10097bd0();
+	void *m_vptr;
+	unsigned int m_hEnt;
+	short m_sUnk;
 };
