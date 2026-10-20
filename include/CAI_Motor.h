@@ -24,7 +24,7 @@ public:
 	virtual float vfunc11(int a);
 	virtual void vfunc12();
 	virtual void vfunc13();
-	virtual void vfunc14();
+	virtual void vfunc14(int a, int b, int c);	// forwards its arguments to the subobject at +0x54 (stub 0x1000b8ca)
 	virtual void vfunc15();
 	virtual void vfunc16();
 	virtual void vfunc17();
