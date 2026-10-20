@@ -161,4 +161,5 @@ public:
 	void sub_1042b9c0(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
 	CBaseEntity *sub_102729d0();	// the entity the NPC is focusing on, chosen by the kind (object at +0x5d34, 2: handle at +0x5ce0, 1: handle at +0x5ce4, 7: the handle slot 586 of the object at +0x98 gives); null for other kinds or a stale handle
 	int sub_10278090(char bFlag, int n);	// slot 482 "CAI_BaseNPC::vfunc482" override as seen at 0x10278090 (ret 8: two arguments): 1, or 2 when the scripted sequence entity of the handle at +0x5d74 is live and accepts (CCineNPC::sub_101a8ac0); 0 when slot 158 is false or, with bFlag clear and the state at +0x5cc0 not 0 / 1 (and +0x5cc4 not 1, and for state 3 n < 1), the NPC may not take part
+	int sub_10289fe0();	// the activity for the action animation named by the scripted entity (handle at +0x5d74, name at +0x5f50): 9 by default, the model's activity of that name, or 9 / 0x18 depending on whether the model has a sequence of that name
 };
