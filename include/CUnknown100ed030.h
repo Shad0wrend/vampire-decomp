@@ -9,7 +9,7 @@ struct CUnknown100ed030Stance	// 0x44 byte record of sequence numbers
 	int m_i04;
 	int m_idle[3];	// 0x08
 	int m_fidget[3];	// 0x14
-	int m_pad20[11];
+	int m_pad20[9];
 };
 
 class CUnknown100ed030
