@@ -13054,6 +13054,25 @@ extern "C" CBaseEntity *env_spark()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104220 size=0x43
+#include "CParamsExplosion.h"
+void *sub_100aa720(int size);
+extern char g_1056b4a4[];
+
+// TARGET: params_explosion
+extern "C" CBaseEntity *params_explosion()
+{
+	void *mem = sub_100aa720(0x5a0);
+	CParamsExplosion *p;
+	if (mem)
+		p = ((CParamsExplosion *)mem)->sub_10104320();
+	else
+		p = 0;
+	p->vfunc106(g_1056b4a4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104630 size=0x8
 void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
