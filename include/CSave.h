@@ -2,8 +2,6 @@
 // Only the slots that decompiled code needs have their signature; the rest are placeholders.
 #pragma once
 
-#include "CRestore.h"
-
 struct typedescription_t;
 struct CSaveEdict;
 
