@@ -41761,6 +41761,25 @@ char sub_103dd140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ddd70 size=0x43
+#include "CNPC_VZombie.h"
+void *sub_100aa720(int size);
+extern char g_10664388[];
+
+// TARGET: npc_VZombie
+extern "C" CBaseEntity *npc_VZombie()
+{
+	void *mem = sub_100aa720(0x6700);
+	CNPC_VZombie *p;
+	if (mem)
+		p = ((CNPC_VZombie *)mem)->sub_103de220();
+	else
+		p = 0;
+	p->vfunc106(g_10664388);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103de420 size=0x33
 void sub_10001564();
 void sub_100059c0();
