@@ -16123,6 +16123,22 @@ void __fastcall sub_10184360(int *p)
 void __fastcall sub_10184380(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10184ea0 size=0x30
+#include "CUtlMemory16.h"
+
+extern void *(__cdecl *g_109f3634)(unsigned int);
+
+CUtlMemory16 *CUtlMemory16::sub_10184ea0(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount)
+		m_pMemory = (char *)g_109f3634(allocationCount * 16);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184f70 size=0x8
 void __fastcall sub_10184f70(int *p) { p[3] = 0; }
 // END FUNCTION

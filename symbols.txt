@@ -1670,6 +1670,7 @@
 0x1000b01e func   ?sub_10400a00@@YAHXZ sub_10400a00
 0x1000b037 func   _npc_VHunter npc_VHunter
 0x1000b041 func   ?sub_101f9570@@YAXH@Z sub_101f9570
+0x1000b046 func   ?sub_10184ea0@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_10184ea0
 0x1000b04b func   ?vfunc338@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc338
 0x1000b050 func   ?sub_10182d70@@YIXPAXHH@Z sub_10182d70
 0x1000b05f func   ?sub_101f95d0@@YAXH@Z sub_101f95d0
