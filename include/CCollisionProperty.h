@@ -42,4 +42,5 @@ public:
 	CBaseEntity *m_pOuter;
 
 	void sub_100dc480(int solid);	// "CCollisionProperty::SetSolid" (called through the stub at 0x1000428c)
+	void sub_100dc770(const float *mins, const float *maxs);	// "CCollisionProperty::SetCollisionBounds" (called through the stub at 0x100123c3)
 };
