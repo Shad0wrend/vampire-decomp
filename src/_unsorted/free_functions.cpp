@@ -4964,6 +4964,28 @@ void CUnknown1006ed20::sub_1006ed20(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006eeb0 size=0x7a
+#include "CUnknown1006eeb0.h"
+
+struct SRecordTable {
+	int sub_10006a28(int index);
+};
+extern SRecordTable g_106c8298;
+
+int CUnknown1006eeb0::sub_1006eeb0(int which)
+{
+	if (which == 0)
+		return g_106c8298.sub_10006a28(m_iRecord) + 0x24;
+	if (which == 1)
+		return g_106c8298.sub_10006a28(m_iRecord) + 0x50;
+	if (which == 2)
+		return g_106c8298.sub_10006a28(m_iRecord) + 0x7c;
+	if (which == 3)
+		return g_106c8298.sub_10006a28(m_iRecord) + 0xa8;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071ae0 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_109f3634)(int);

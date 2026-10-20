@@ -2235,6 +2235,7 @@
 0x1000d73d func   _move_keyframed move_keyframed
 0x1000d751 func   ?vfunc5@CNPC_VAnimal@@QAEPAV1@I@Z CNPC_VAnimal::vfunc5
 0x1000d7ab func   _item_w_gargoyle_fist item_w_gargoyle_fist
+0x1000d832 func   ?sub_1006eeb0@CUnknown1006eeb0@@QAEHH@Z CUnknown1006eeb0::sub_1006eeb0
 0x1000d837 func   ?sub_103fe1b0@@YAHXZ sub_103fe1b0
 0x1000d846 func   ?vfunc5@CDynamicLight@@UAEPAV1@I@Z CDynamicLight::vfunc5
 0x1000d850 func   _item_w_manbat_claw item_w_manbat_claw
