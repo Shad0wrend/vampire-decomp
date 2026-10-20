@@ -73,6 +73,8 @@ public:
 	int sub_10092270(const char *name);	// "CBaseAnimating::LookupPoseParameter" (stub 0x10009ac5): scope trace (entity name), index of the first of 0x18 pose parameters of GetModelPtr(-1) whose name matches (case-insensitive), else -1
 	const char *sub_1008fe80(int sequence);	// "CBaseAnimating::GetSequenceName": scope trace (entity name), the name string at the offset in the first dword of the sequence description sub_1008d990 finds, "SEQUENCE_NOT_FOUND" when there is none
 	const char *sub_1008ff50(int sequence);	// "CBaseAnimating::GetSequenceActivityName": as GetSequenceName with the offset in the second dword, "SEQUENCE_NOT_FOUND" when there is none
+	float sub_10091230(int sequence);	// "CBaseAnimating::GetSequenceCycleRate": scope trace (entity name), 1.0f / sub_10091080(sequence) when that is above 0, else 10.0f
+	float sub_10091080(int sequence);	// sequence duration (stub 0x10009813), returns a float
 
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
