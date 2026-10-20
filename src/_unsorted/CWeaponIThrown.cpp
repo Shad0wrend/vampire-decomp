@@ -15,3 +15,13 @@ CWeaponIThrown *CWeaponIThrown::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103ed1b0 size=0x13
+#include "CWeaponIThrown.h"
+
+// TARGET: CWeaponIThrown::vfunc328
+int CWeaponIThrown::vfunc328()
+{
+    return (m_p86c != 0) + 0xb9;
+}
+// END FUNCTION
