@@ -234,6 +234,61 @@ void CAI_BaseNPCTroika::vfunc492()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102944c0 size=0xa0
+#include "CAI_BaseNPCTroika.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+extern char g_106b8540[];
+
+struct SSoundName
+{
+	const char *m_psz;
+
+	const char *Get() const { return m_psz ? m_psz : g_106b8540; }
+};
+
+struct SSoundEntry
+{
+	int m_id;
+	SSoundName m_name;
+};
+
+struct ISoundSettings
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int vfunc2(int a, int b);
+};
+
+struct CSoundPlayer
+{
+	void sub_100119fa(void *pEntity, int id, int flags, float volume, float pitch);
+};
+
+extern ISoundSettings *g_1070b244;
+extern int g_1073dc3c;
+extern SSoundEntry **g_1073dc40;
+extern CSoundPlayer g_1073dc28;
+
+static inline int LookupSoundId(const char *name)
+{
+	for (int i = 0; i < g_1073dc3c; i++) {
+		if (!_strcmpi(g_1073dc40[i]->m_name.Get(), name))
+			return g_1073dc40[i]->m_id;
+	}
+	return -1;
+}
+
+void CAI_BaseNPCTroika::vfunc493()
+{
+	if (g_1070b244->vfunc2(0, 0x63) < 0x19) {
+		static int s_nSoundId = LookupSoundId("Target_Lost");
+		g_1073dc28.sub_100119fa(this, s_nSoundId, 2, 1.0f, 1.25f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10294590 size=0x93
 #include "CAI_BaseNPCTroika.h"
 extern char g_106b8540[];

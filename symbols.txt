@@ -3499,6 +3499,7 @@
 0x10013499 func   ?sub_1042fc60@@YAXXZ sub_1042fc60
 0x100134c1 func   ?sub_100dea90@CUnknown100dea90@@QAEXH@Z CUnknown100dea90::sub_100dea90
 0x100134d0 func   ?sub_1042ffb0@@YAXXZ sub_1042ffb0
+0x100134e4 func   ?vfunc493@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc493
 0x100134f8 func   ?sub_10222bf0@@YAXXZ sub_10222bf0
 0x10013502 func   ?sub_10265310@CUtlVector4@@QAEXH@Z CUtlVector4::sub_10265310
 0x10013507 func   ?vfunc5@CSprite@@QAEPAV1@I@Z CSprite::vfunc5
