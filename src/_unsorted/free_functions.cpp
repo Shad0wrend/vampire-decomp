@@ -15958,6 +15958,53 @@ void __fastcall sub_100c8a00(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c98e0 size=0x9f
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CCameraTrack.h"
+
+extern CGlobalEntityList *g_10566458;
+extern double g_10449270;
+void sub_10002cd4();
+void sub_1000fca9();
+
+struct CGlobalVarsPlain
+{
+	char m_pad[0xc];
+	float curtime;
+};
+extern CGlobalVarsPlain *g_1070b228;
+
+struct CHandleLookup
+{
+	static CGlobalEntityList_Ent *Get(unsigned int hHandle)
+	{
+		if (hHandle != (unsigned int)-1) {
+			CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[hHandle & 0x1fff];
+			if (pSlot->m_Serial == (int)(hHandle >> 13))
+				return pSlot->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+void __fastcall sub_100c98e0(char *self)
+{
+	*(int *)(self + 0x4f8) = 1;
+	if (!(*(unsigned char *)(self + 0x204) & 1))
+		((CCameraTrackMember *)(self + 0x5a8))->sub_10010794((CCameraTrack *)CHandleLookup::Get(*(unsigned int *)(self + 0x53c)), (CCameraTrack *)self, 0);
+	unsigned int flags = *(unsigned int *)(self + 0x204);
+	if (flags & 0x100)
+		*(void (**)())(self + 0x1ec) = sub_10002cd4;
+	else
+		*(int *)(self + 0x1ec) = 0;
+	if (flags & 0x40) {
+		((CBaseEntity *)self)->sub_100ac4e0((int)sub_1000fca9, 0, 0);
+		*(float *)(self + 0x17c) = g_1070b228->curtime + g_10449270;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c99b0 size=0x49
 void *sub_1000db89(int);
 struct GP;
