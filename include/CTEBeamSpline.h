@@ -12,6 +12,7 @@ public:
 	virtual void vfunc4(void *pFilter, float delay);	// "Create": sends the effect (stub 0x1000e6f1 for 0x1005d4d0)
 
 	void sub_10007f81();	// destructor body
+	void sub_1005d4d0(void *pFilter, float delay);	// slot 4 called directly on the global instance
 
 	char m_pad04[8];
 	Vector m_vecPoints[16];	// 0x0c
