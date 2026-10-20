@@ -3013,6 +3013,7 @@
 0x10011b44 func   ?vfunc252@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc252
 0x10011b53 func   ?sub_1030cb00@@YGHPBD@Z sub_1030cb00
 0x10011b67 func   ?sub_10046050@PQ@@QAEXABUElem@@@Z PQ::sub_10046050
+0x10011b8f func   ??0CWeaponRangedBase@@QAE@XZ CWeaponRangedBase::CWeaponRangedBase
 0x10011bb7 func   ?sub_1006e890@CUnknown1006e890@@QAE_NXZ CUnknown1006e890::sub_1006e890
 0x10011bbc func   ?sub_10032b70@UtlMem@@QAEXXZ UtlMem::sub_10032b70
 0x10011bc1 func   ?sub_10081e50@@YIXPAUCSlots@@HH@Z sub_10081e50
