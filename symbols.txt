@@ -3207,6 +3207,7 @@
 0x10014b96 func   ?sub_1034e610@@YGXPAUInputLike@@@Z sub_1034e610
 0x10014bb4 func   ?sub_103f5cf0@@YAHXZ sub_103f5cf0
 0x10014bcd func   ?vfunc228@CBaseEntity@@QAEXHH@Z CBaseEntity::vfunc228
+0x10014bd7 func   ?sub_101857b0@UtlMem@@QAEXXZ UtlMem::sub_101857b0
 0x10014be1 func   ?sub_100464f0@S100464f0@@QAEPAU1@HHH@Z S100464f0::sub_100464f0
 0x10014bf5 func   ?sub_10184380@@YIXPAH@Z sub_10184380
 0x10014c1d func   ?sub_100ce810@@YGEPAUEv_t@@PAXPAH@Z sub_100ce810

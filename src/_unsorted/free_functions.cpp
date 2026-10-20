@@ -16076,6 +16076,22 @@ void UtlMem::sub_10185750()
 void __fastcall sub_10185790(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101857b0 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_101857b0()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101857f0 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
