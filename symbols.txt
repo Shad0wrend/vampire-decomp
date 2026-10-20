@@ -3769,6 +3769,7 @@
 0x1001573a func   ?sub_102237e0@CUnknown102237e0@@QAEXH@Z CUnknown102237e0::sub_102237e0
 0x1001573f func   ?vfunc3@?$CUtlVectorDataOps@UCAI_InterestTarget@@$08@@UAEHPAX@Z CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc3
 0x10015758 func   ?sub_10184360@@YIXPAH@Z sub_10184360
+0x1001576c func   ?vfunc104@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc104
 0x10015771 func   ??0CFunc_LOD@@QAE@XZ CFunc_LOD::CFunc_LOD
 0x10015780 func   ?vfunc359@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc359
 0x100157a8 func   ?sub_10404a80@@YAHXZ sub_10404a80
