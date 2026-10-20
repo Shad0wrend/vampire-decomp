@@ -15,3 +15,36 @@ CPointCamera *CPointCamera::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1018c410 size=0x82
+#include "CPointCamera.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown101ab800.h"
+extern CUnknown1070b22c *g_1070b22c;
+
+struct IPCamQ { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual int vfunc7(); };
+struct IPCamP { virtual void v0(); virtual void v1(); virtual void v2(); virtual IPCamQ *vfunc3(); };
+struct PCamEdict { char m_pad[0x40]; IPCamP *m_pObj; };
+
+bool CPointCamera::vfunc86(int a, int b, int c, int d, int e)
+{
+	sub_1018c2b0();
+	char cur = *((char *)this + 0x458);
+	char old = *((char *)this + 0x459);
+	if (old != cur) {
+		*((char *)this + 0x459) = cur;
+		return true;
+	}
+	PCamEdict *edict = (PCamEdict *)m_pEdict2e0;
+	int x;
+	if (edict->m_pObj == 0) {
+		x = 0;
+	} else {
+		IPCamQ *q = edict->m_pObj->vfunc3();
+		x = q->vfunc7();
+	}
+	if (!g_1070b22c->vfunc105(e, x))
+		return false;
+	return ((CUnknown101ab800 *)((char *)this + 0x2d4))->sub_101ab8f0(b, (const unsigned char *)c, d, e);
+}
+// END FUNCTION
