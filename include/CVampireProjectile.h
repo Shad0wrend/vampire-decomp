@@ -8,6 +8,7 @@
 class CVampireProjectile : public CBaseEntity
 {
 public:
+	virtual void vfunc103();	// slot 103 "CVampireProjectile::Spawn": slot 104, SetSolid(2), SetSize(zero vector, zero vector), SetMoveType(13, 0), effects |= 0xa0, the touch function, the spawn time at +0x884, the model name (+0x87c) through slot 105, and the think function
 	virtual void vfunc117(); virtual void vfunc118(); virtual void vfunc119();
 	virtual void vfunc120(); virtual void vfunc121(); virtual void vfunc122(); virtual void vfunc123(); virtual void vfunc124();
 	virtual void vfunc125(); virtual void vfunc126(); virtual void vfunc127(); virtual void vfunc128(); virtual void vfunc129();
