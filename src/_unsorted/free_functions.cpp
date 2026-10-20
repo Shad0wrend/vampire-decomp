@@ -11888,6 +11888,25 @@ void Mem44::sub_100ed500(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee240 size=0x43
+#include "CBaseDoor.h"
+void *sub_100aa720(int size);
+extern char g_105652bc[];
+
+// TARGET: func_door
+extern "C" CBaseEntity *func_door()
+{
+	void *mem = sub_100aa720(0x658);
+	CBaseDoor *p;
+	if (mem)
+		p = ((CBaseDoor *)mem)->sub_100ee2b0();
+	else
+		p = 0;
+	p->vfunc106(g_105652bc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee750 size=0x85
 #include "CUnknown100ee750.h"
 
