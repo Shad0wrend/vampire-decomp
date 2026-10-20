@@ -20394,6 +20394,56 @@ int *sub_10135570()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135720 size=0xd5
+#include "CBaseEntity.h"
+#include "CLogicNPCCondition.h"
+
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+extern char g_106b8540[];
+
+struct FoundEntity { char pad[0x94]; CBaseEntity *m_p94; };
+struct CEntFinder {
+	FoundEntity *sub_1000b9b0(int pStart, const char *name, CLogicNPCCondition *pSearcher, CBaseEntity *pActivator);
+};
+extern CEntFinder g_106eb5d8;
+
+struct CHandleSet {
+	unsigned int m_value;
+	void Set(CBaseEntity *pEnt)
+	{
+		if (pEnt)
+			m_value = *pEnt->vfunc1();
+		else
+			m_value = 0xffffffff;
+	}
+};
+
+CBaseEntity *CLogicNPCCondition::sub_10135720()
+{
+	unsigned int h = m_hEntity488;
+	EntInfo *e;
+	if (h == 0xffffffff || (e = &g_10566458->m_entries[h & 0x1fff], e->m_serial != (int)(h >> 13)) || e->m_pEntity == 0) {
+		unsigned int ha = m_hActivator10c;
+		CBaseEntity *pActivator;
+		if (ha != 0xffffffff && (e = &g_10566458->m_entries[ha & 0x1fff], e->m_serial == (int)(ha >> 13)))
+			pActivator = e->m_pEntity;
+		else
+			pActivator = 0;
+		FoundEntity *pFound = g_106eb5d8.sub_1000b9b0(0, m_name454 ? m_name454 : g_106b8540, this, pActivator);
+		((CHandleSet *)&m_hEntity488)->Set(!pFound ? 0 : pFound->m_p94);
+	}
+	h = m_hEntity488;
+	if (h != 0xffffffff) {
+		e = &g_10566458->m_entries[h & 0x1fff];
+		if (e->m_serial == (int)(h >> 13))
+			return e->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135a20 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
