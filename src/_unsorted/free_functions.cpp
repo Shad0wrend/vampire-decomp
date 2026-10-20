@@ -26619,6 +26619,49 @@ bool __stdcall sub_1019e740(EntVt *pEnt, int attachment, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019ee40 size=0x113
+#include "CBaseEntity.h"
+#include "CRopeKeyframe.h"
+#include "IVEngineServer.h"
+#include "ScopeTrace.h"
+
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" void *__RTDynamicCast(void *inptr, long VfDelta, void *SrcType, void *TargetType, int isReference);
+extern IVEngineServer *g_1070b22c;
+extern char g_10543c6c[];
+extern char g_10538764[];
+extern char g_1059290c[];
+
+struct GlobalsView { char pad[0x38]; int m_nEdicts; };
+extern GlobalsView *g_1070b228;
+
+struct EdictUnknownView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *vfunc4(); };
+struct EdictView { char pad[0x40]; EdictUnknownView *m_pUnk; char pad44[0x4c - 0x44]; char m_bFree; };
+
+bool CRopeKeyframe::sub_1019ee40()
+{
+    sub_1019f1f0(false);
+    for (int i = 1; i < g_1070b228->m_nEdicts; i++) {
+        EdictView *pEdict = (EdictView *)g_1070b22c->vfunc38(i);
+        if (pEdict && !pEdict->m_bFree) {
+            CBaseEntity *pEnt;
+            {
+                ScopeTrace trace(g_10543c6c, g_106b8540);
+                pEnt = pEdict->m_pUnk ? pEdict->m_pUnk->vfunc4() : 0;
+            }
+            CRopeKeyframe *pRope = (CRopeKeyframe *)__RTDynamicCast(pEnt, 0, g_10538764, g_1059290c, 0);
+            if (pRope) {
+                const char *a = m_name26c ? m_name26c : g_106b8540;
+                const char *b = pRope->m_pszName458 ? pRope->m_pszName458 : g_106b8540;
+                if (_strcmpi(b, a) == 0)
+                    pRope->sub_1019f1f0(true);
+            }
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0830 size=0x89
 #include "CSave.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

@@ -849,6 +849,7 @@
 0x1000533f func   ?vfunc228@CBaseCombatCharacter@@UAEXHH@Z CBaseCombatCharacter::vfunc228
 0x10005349 func   ?sub_10401cd0@@YAHXZ sub_10401cd0
 0x10005367 func   ?vfunc5@CNPC_VStalker@@QAEPAV1@I@Z CNPC_VStalker::vfunc5
+0x10005371 func   ?sub_1019ee40@CRopeKeyframe@@QAE_NXZ CRopeKeyframe::sub_1019ee40
 0x1000537b func   ?vfunc265@CVampireProjectile@@UAE_NXZ CVampireProjectile::vfunc265
 0x10005399 func   ?vfunc5@CWeaponRanged_Pistol_Glock@@QAEPAV1@I@Z CWeaponRanged_Pistol_Glock::vfunc5
 0x1000539e func   ?vfunc134@CVampireProjectile_MingXiaoSpit@@QAEXXZ CVampireProjectile_MingXiaoSpit::vfunc134
