@@ -18,4 +18,11 @@ public:
 	void vfunc444(void *pTask);	// slot 444 "CNPC_VGhoulCroucher::RunTask": scope trace (entity name); tasks 0x14a / 0x14b: when slot 251() holds (and for 0x14b setting the byte at +0x6667) calls sub_10273e80(0); other tasks go to CNPC_VHumanCombatant::vfunc444
 	void sub_100080da(void *pTask);	// CNPC_VHumanCombatant::vfunc444 (stub 0x100080da), called directly
 	void sub_10273e80(int a);	// called through the stub at 0x1000ac68
+	int vfunc438();	// slot 438 "CNPC_VGhoulCroucher::SelectSchedule": scope trace (entity name), schedule 0x158 while the getter sub_1037bb20 is zero, 0x159 until the byte at +0x6667 is set (both record file / line at +0x1b30 / +0x1b34), else CNPC_VHumanCombatant::vfunc438
+
+	char m_pad03e0[0x1b30 - 0x3e0];
+	const char *m_pszFile1b30;	// +0x1b30: source file of the last schedule selection
+	int m_nLine1b34;	// +0x1b34: its line
+	char m_pad1b38[0x6667 - 0x1b38];
+	char m_b6667;	// +0x6667
 };
