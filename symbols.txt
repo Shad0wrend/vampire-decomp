@@ -1116,6 +1116,7 @@
 0x1000814d func   ?vfunc7@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc7
 0x1000816b func   ?sub_102d4390@S102d4390@@QAEXH@Z S102d4390::sub_102d4390
 0x10008175 func   ?sub_10428eb0@@YAHPAD@Z sub_10428eb0
+0x1000817a func   ?sub_10401a20@@YAHXZ sub_10401a20
 0x10008184 func   ?sub_101895d0@@YAXPAVCBaseEntity@@HH@Z sub_101895d0
 0x10008189 func   ?sub_102e2730@@YIXPAUCOwner@@@Z sub_102e2730
 0x100081a2 func   ?sub_103fef20@@YAHXZ sub_103fef20
