@@ -46,6 +46,60 @@ void CRelationshipSaveDataOps::vfunc0(void *fieldInfo, void *pSave)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10349270 size=0x13f
+#include "CRelationshipSaveDataOps.h"
+
+struct TraceEnt { const char *a; void *b; void *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_106b8540[];
+void *operator new(unsigned int);
+
+struct RestoreIf
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+	virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13();
+	virtual int ReadInt();
+	virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24();
+	virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29();
+	virtual void ReadRec(void *p, int a, int b);
+};
+
+struct Rec { int a, b, c, d, e; Rec() { a = -1; } };
+struct Owner { char pad[0x1598]; Rec **m_pRecs; int m_alloc; int m_count; };
+struct FieldInfo { int x; Owner *owner; };
+
+// TARGET: CRelationshipSaveDataOps::vfunc1
+void CRelationshipSaveDataOps::vfunc1(void *fieldInfo, void *pRestoreArg)
+{
+	RestoreIf *pRestore = (RestoreIf *)pRestoreArg;
+	g_109f3620[*g_109f3680].a = "CRelationshipSaveDataOps::Restore";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	Owner *owner = ((FieldInfo *)fieldInfo)->owner;
+	int n = pRestore->ReadInt();
+	if (owner && n > 0)
+	{
+		owner->m_count = n;
+		owner->m_alloc = n;
+		owner->m_pRecs = (Rec **)operator new(n * 4);
+		for (int i = 0; i < n; i++)
+		{
+			owner->m_pRecs[i] = new Rec;
+			pRestore->ReadRec(owner->m_pRecs[i], 1, 0);
+			owner->m_pRecs[i]->b = pRestore->ReadInt();
+			owner->m_pRecs[i]->c = pRestore->ReadInt();
+			owner->m_pRecs[i]->d = pRestore->ReadInt();
+			owner->m_pRecs[i]->e = pRestore->ReadInt();
+		}
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349400 size=0x69
 struct TScope {
 	const char *name;
