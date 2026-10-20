@@ -25,4 +25,6 @@ public:
 	void sub_10002a7c();	// CAI_BaseNPCTroika::vfunc431, called directly
 	void vfunc617(inputdata_t *pInput);	// slot 617 "CNPC_VVampireBoss::InputTransformModel": scope trace, sets the default NPC name at +0x6694 and, when the morph model name (+0x667c, "" when null) is not empty, stores it as the monster model (+0x6680) and calls sub_102ae750(0x159, 0)
 	void sub_102ae750(int a, int b);	// called through the stub at 0x1000198d
+	int vfunc127(int a);	// slot 127 "CNPC_VVampireBoss::Restore": scope trace, base restore (sub_1000527c), clears the monster model name (+0x6680) and the body emitter names, sets the default NPC name (+0x6694); returns the base result
+	int sub_1000527c(int a);	// CAI_BaseNPCTroika::vfunc127, called directly
 };
