@@ -199,6 +199,30 @@ void CNPC_VWerewolf::vfunc141(CUnknown101c2a50 *pInfo, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d0640 size=0xfc
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+
+const char *CNPC_VWerewolf::vfunc408(int condition)
+{
+	ScopeTrace t("CNPC_VWerewolf::GetShortConditionName", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	switch (condition) {
+	case 0x77:
+		return "ww0";
+	case 0x78:
+		return "ww1";
+	case 0x79:
+		return "ww2";
+	case 0x7a:
+		return "ww3";
+	case 0x7b:
+		return "ww4";
+	default:
+		return sub_1027ede0(condition);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d0780 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
