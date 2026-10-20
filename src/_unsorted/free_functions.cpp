@@ -18532,6 +18532,82 @@ int *sub_1019b3d0(int *self, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b570 size=0x144
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct PyTypeObj {
+    int pad[6];
+    void (__cdecl *tp_dealloc)(struct PyObj *);
+};
+struct PyObj {
+    int ob_refcnt;
+    PyTypeObj *ob_type;
+};
+struct PyMgr {
+    virtual void vfunc0();
+    virtual bool vfunc1();
+    char pad[0x28];
+    int m_unk2c;
+};
+struct PyDataObj {
+    int pad[2];
+    int m_initMode;
+};
+
+extern "C" __declspec(dllimport) void __cdecl PyErr_SetString(void *, const char *);
+extern "C" __declspec(dllimport) void *PyExc_AttributeError;
+extern "C" __declspec(dllimport) char *__cdecl PyString_AsString(PyObj *);
+extern long (__cdecl *g_109f37c4)(PyObj *);
+extern PyObj *(__cdecl *g_109f3728)(PyObj *);
+extern void (__cdecl *g_109f3630)(const char *, ...);
+extern int (__cdecl *g_109f36d0)(PyObj *, const char *, PyObj *);
+extern const char *g_1058f5d0[];
+extern PyMgr *g_1072b2b4;
+extern PyObj *g_1072b370;
+
+// TARGET: sub_1019b570
+int sub_1019b570(PyDataObj *self, const char *name, PyObj *value)
+{
+    if (!_strcmpi(name, "InitMode")) {
+        if (!value) {
+            PyErr_SetString(PyExc_AttributeError, "InitMode cannot be deleted");
+            return -1;
+        }
+        self->m_initMode = g_109f37c4(value);
+        return 0;
+    }
+    if (!_strcmpi(name, "morgue")) {
+        PyErr_SetString(PyExc_AttributeError, "morgue cannot directly modified");
+        return -1;
+    }
+    if (g_1058f5d0[0]) {
+        const char **p = g_1058f5d0;
+        const char **q = p;
+        const char *t;
+        do {
+            if (!_strcmpi(name, *p)) {
+                PyErr_SetString(PyExc_AttributeError, "Cannot set method of PyDataManager");
+                return -1;
+            }
+            q += 4;
+            t = *q;
+            p = q;
+        } while (t);
+    }
+    if (!g_1072b2b4->vfunc1() && g_1072b2b4->m_unk2c) {
+        if (!value) {
+            g_109f3630("Clearing Variable: G.%s\n", name);
+        } else {
+            PyObj *s = g_109f3728(value);
+            g_109f3630("Setting Variable: G.%s = %s\n", name, PyString_AsString(s));
+            if (0 == --s->ob_refcnt)
+                s->ob_type->tp_dealloc(s);
+        }
+    }
+    return g_109f36d0(g_1072b370, name, value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019b7e0 size=0x10
 extern void *g_1072b370;
 extern void *(__cdecl *g_109f3738)(void *);

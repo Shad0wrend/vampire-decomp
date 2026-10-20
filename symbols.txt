@@ -3590,6 +3590,7 @@
 0x1012f340 func   ?sub_1012f340@@YAHPBD0@Z sub_1012f340
 0x10195940 func   ?sub_10195940@@YA_NPAUDMEntity@@PBDPAPAUtypedescription_t@@PAH@Z sub_10195940
 0x1019b3d0 func   ?sub_1019b3d0@@YAPAHPAHPBD@Z sub_1019b3d0
+0x1019b570 func   ?sub_1019b570@@YAHPAUPyDataObj@@PBDPAUPyObj@@@Z sub_1019b570
 0x1019b7e0 func   ?sub_1019b7e0@@YAPAXXZ sub_1019b7e0
 0x1019ba30 func   ?sub_1019ba30@@YAPAXPAXPAD@Z sub_1019ba30
 0x1019bb70 func   ?sub_1019bb70@@YAPAXPAXPAD@Z sub_1019bb70
