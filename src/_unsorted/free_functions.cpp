@@ -39227,6 +39227,35 @@ extern "C" CWeaponIArmor_Hvy_Cloth* item_a_body_armor()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4bf0 size=0x72
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_1094800c;
+extern SendTable *g_105c5bc0;
+
+// TARGET: sub_103f4bf0
+int sub_103f4bf0()
+{
+	static const char *pTableName = "DT_WeaponLockpick";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_105c5bc0, (void *)sub_10009539),
+	};
+	g_1094800c.sub_1000e8fe(props + 1, 1, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4d00 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
