@@ -9,6 +9,8 @@ struct UtlVec8Elem
 	int b;
 };
 
+struct SElem8;
+
 class UtlVec8
 {
 public:
@@ -30,6 +32,7 @@ public:
 	void GrowVector(int num);
 	void sub_101b6a50(int num);	// same shape as GrowVector (initial allocation 4)
 	void sub_1027fae0(int num);	// same shape as GrowVector (initial allocation 4)
+	void sub_101b6550(const SElem8 *src, int num);	// copy constructor-like: constructs num elements, then copies them
 	void sub_10055000(int elem, int num);	// provisional, like sub_10032f00 (transplant)
 	void sub_10071ba0(int elem, int num);	// provisional, like sub_10032f00 (transplant)
 	void sub_1007f4c0(int elem, int num);	// provisional, like sub_10032f00 (transplant)
