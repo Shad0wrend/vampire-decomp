@@ -34,4 +34,5 @@ public:
 	bool sub_101fead0();	// "CVStatInfo_t::IsPassive": scope trace, bit 2 of the flags, false when the global at 0x1074e6b4 is set up for it
 	bool sub_101fec30();	// "CVStatInfo_t::IsRenewable": same shape, bit 3 of the flags, global at 0x1074e77c
 	int sub_101ff270(int arg);	// "CVStatInfo_t::Default": scope trace, then evaluates the fifth value record (+0x9c) for arg
+	void sub_101fdda0(int arg);	// "CVStatInfo_t::GetValueName": scope trace (empty entity name), with an id at +8 hands (id, arg) to the global table at 0x1074e968, else calls the function pointer at +0 (when set) with arg
 };
