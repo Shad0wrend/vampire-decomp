@@ -3,6 +3,7 @@
 #pragma once
 
 struct typedescription_t;
+struct CSaveEdict;
 
 class CSave
 {
@@ -55,6 +56,7 @@ public:
 	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
 
 	int sub_101a08f0(void *pEntity);	// index of the entity in the table, or -1
+	int sub_101a0830(CSaveEdict *pEdict);	// "CSave::EntityIndex" (edict): -1 for null, else sub_101a08f0 of the entity of the edict (CBaseEntity::Instance scope trace around slot 4 of the object at edict+0x40)
 	void sub_101a05b0(int a, int bytes, int b);
 	bool sub_1000643d(const void *pData, int nBits);	// as in CUnknown100bde40 (transplant)
 	bool sub_101a1140(int a, void *pData, void *pBase, typedescription_t *pField);	// "CSave::WriteField": dispatches on the field type (0xb..0x13) to the matching write slot, "Bad field type" warning otherwise
