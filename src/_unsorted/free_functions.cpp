@@ -40187,6 +40187,25 @@ extern "C" GP *npc_VProneDialog()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a4ff0 size=0x43
+#include "CNPC_VSabbatGunman.h"
+void *sub_100aa720(int size);
+extern char g_1064c2f4[];
+
+// TARGET: npc_VSabbatGunman
+extern "C" CBaseEntity *npc_VSabbatGunman()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VSabbatGunman *p;
+	if (mem)
+		p = ((CNPC_VSabbatGunman *)mem)->sub_103a5060();
+	else
+		p = 0;
+	p->vfunc106(g_1064c2f4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5190 size=0x33
 void sub_1000ef84();
 void sub_1001492a();
