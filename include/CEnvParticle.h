@@ -23,4 +23,6 @@ public:
 	void vfunc104();	// resolves the particle system index from the name
 	CEnvParticle *sub_100fad50();	// constructor body (env_particle entity creation): CBaseEntity constructor, vtable, default particle state
 	void sub_1009d980(char bAddAsDefault);	// CBaseEntity constructor body (stub 0x100090fc)
+	char vfunc86(int a, int b, int c, int d, int e);	// slot 86 "CEnvParticle::...": true when the move type (slot 94) is 11 and the entity behind the handle at +0x254 answers its slot 86(0, b, c, d, e) with true, or when the attachment type at +0x458 is 10..13; else CBaseEntity::vfunc86
+	char sub_100ab020(int a, int b, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly
 };
