@@ -136,6 +136,7 @@
 0x10001d02 func   ?sub_102c65d0@CUtlVector4@@QAEHPBH@Z CUtlVector4::sub_102c65d0
 0x10001d43 func   _npc_VZombie npc_VZombie
 0x10001d6b func   ?vfunc335@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc335
+0x10001d7f func   ?sub_1007f540@UtlMem@@QAEXXZ UtlMem::sub_1007f540
 0x10001d98 func   ?sub_102ee270@CUnknown102ee270@@QAEDXZ CUnknown102ee270::sub_102ee270
 0x10001d9d func   ?sub_103f4bf0@@YAHXZ sub_103f4bf0
 0x10001db1 func   ?sub_10265800@@YAEXZ sub_10265800
