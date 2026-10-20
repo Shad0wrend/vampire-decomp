@@ -2439,6 +2439,7 @@
 0x1001035c func   ?sub_101d6c20@CStatList56@@QAEPAUStatItem56@@XZ CStatList56::sub_101d6c20
 0x10010384 func   ?vfunc5@CHudCounter@@QAEPAV1@I@Z CHudCounter::vfunc5
 0x10010398 func   ?sub_101afba0@CUnknown101afba0@@QAEXXZ CUnknown101afba0::sub_101afba0
+0x100103a7 func   ?sub_10403fc0@@YAHXZ sub_10403fc0
 0x100103b1 func   _funCBaseFlex funCBaseFlex
 0x100103d9 func   ?sub_101eaac0@@YAXH@Z sub_101eaac0
 0x100103e3 func   ?sub_100f4140@@YAXPBDHH@Z sub_100f4140
