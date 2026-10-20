@@ -7,6 +7,7 @@
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
 struct inputdata_t;
+struct CUnknown101c2a50;
 
 struct CNPC_VWerewolfTimer
 {
@@ -90,4 +91,6 @@ public:
 	unsigned int sub_1033c9c0();	// CBaseCombatCharacter::sub_1033c9c0 "GetMiscFlags" (stub 0x1000b672), called directly
 	void sub_1033c770(unsigned int flags);	// CBaseCombatCharacter "RemoveMiscFlag" (stub 0x10011531), called directly
 	void sub_103cca80();	// slot 305 "CNPC_VWerewolf::RemoveBaseFightingItems": scope trace (entity name), when bit 4 of the misc flags is set removes the "item_w_werewolf_attacks" weapon (sub_1021fee0(this, name)) and clears that bit
+	void vfunc141(CUnknown101c2a50 *pInfo, int b, int c);	// slot 141 "CNPC_VWerewolf::TraceAttack": scope trace (entity name), clears the dword at +0x44 of pInfo, then the base implementation
+	void sub_10015b13(CUnknown101c2a50 *pInfo, int b, int c);	// CAI_BaseNPC::vfunc141 (stub 0x10015b13), called directly
 };
