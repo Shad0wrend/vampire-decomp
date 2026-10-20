@@ -2445,6 +2445,7 @@
 0x1000c75c func   ?sub_102228f0@CExperienceTable@@QAE_NPADPAUCExperienceAward@@@Z CExperienceTable::sub_102228f0
 0x1000c761 func   ?sub_102a9c80@Obj@@QAEPAU1@HHHHH@Z Obj::sub_102a9c80
 0x1000c784 func   ?vfunc61@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc61
+0x1000c78e func   ?vfunc21@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHH@Z CTempEntsSystem::vfunc21
 0x1000c793 func   ?sub_10043540@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10043540
 0x1000c7b6 func   ?vfunc1@CPyObjStrSaveRestoreDataOps@@UAEXPAPAXPAVIRestoreLike@@@Z CPyObjStrSaveRestoreDataOps::vfunc1
 0x1000c7bb func   ?sub_10222670@CExperienceTable@@QAEPAUCExperienceAward@@H@Z CExperienceTable::sub_10222670
