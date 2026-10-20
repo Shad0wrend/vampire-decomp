@@ -36553,6 +36553,32 @@ void CUnknown10223800::sub_10223800(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10223b90 size=0xe7
+#include "CUnknown10223b90.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+static inline CGlobalEntityList_Ent *Resolve(unsigned int h)
+{
+    if (h != -1) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        if (s->m_Serial == (h >> 13))
+            return s->m_pEntity;
+    }
+    return 0;
+}
+void CUnknown10223b90::sub_10223b90()
+{
+    m_subs[0].sub_100cd660(Resolve(m_hEntity10c), this, 0);
+    if (m_nMode560 == 1)
+        m_subs[1].sub_100cd660(Resolve(m_hEntity10c), this, 0);
+    else
+        m_subs[2].sub_100cd660(Resolve(m_hEntity10c), this, 0);
+    m_nMode560 = 0;
+    m_hOld56c = m_hOld568;
+    m_hOld568 = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10223f20 size=0x49
 void *sub_1000db89(int);
 struct GP;
