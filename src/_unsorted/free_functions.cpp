@@ -60612,6 +60612,105 @@ const char *CNPC_VWerewolf::sub_103ceb60(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d0bf0 size=0x152
+#include "CNPC_VWerewolf.h"
+#include "CGlobalEntityList.h"
+
+#define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+extern CGlobalEntityList *g_10566458;
+extern float g_10450aa4;
+extern int g_106c994c;
+extern char g_1066249c[];
+extern void (*g_109f364c)(const char *pFormat, ...);
+
+struct GlobalsView	// the engine globals: the current time at +0xc, another counter at +4
+{
+    char m_pad0000[4];
+    int m_n04;
+    char m_pad0008[4];
+    float m_curtime;	// 0x0c
+};
+extern GlobalsView *g_1070b228;
+
+struct EntOriginView	// an entity: slot 220 gives its origin
+{
+    SLOTS10(a0) SLOTS10(a1) SLOTS10(a2) SLOTS10(a3) SLOTS10(a4) SLOTS10(a5) SLOTS10(a6) SLOTS10(a7) SLOTS10(a8) SLOTS10(a9)
+    SLOTS10(b0) SLOTS10(b1) SLOTS10(b2) SLOTS10(b3) SLOTS10(b4) SLOTS10(b5) SLOTS10(b6) SLOTS10(b7) SLOTS10(b8) SLOTS10(b9)
+    SLOTS10(c0) SLOTS10(c1)
+    virtual float *vfunc220();
+};
+
+struct NodeNetView : public CNPC_VWerewolfNodeNet
+{
+    int sub_102f41b0(const float *pOrigin);	// stub 0x1000109b: the index of the node nearest to the origin, -1 when there is none
+};
+
+struct Holder
+{
+    char m_pad0000[0x5d34];
+    CNPC_VWerewolfHelper5d34 *m_pHelper;	// 0x5d34
+    char m_pad5d38[0x628c - 0x5d38];
+    unsigned int m_hPlayer;	// 0x628c
+    char m_pad6290[0x6700 - 0x6290];
+    float m_flNodeTime;	// 0x6700
+    void *m_pNode;	// 0x6704
+};
+
+static inline CGlobalEntityList_Ent *ResolveHandle(unsigned int h)
+{
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (int)(h >> 13))
+            return pSlot->m_pEntity;
+    }
+    return 0;
+}
+
+void *__fastcall sub_103d0bf0(Holder *p)
+{
+    const unsigned int *ph = &p->m_hPlayer;
+    const unsigned int *ph2 = &p->m_hPlayer;
+    float t0; t0 = p->m_flNodeTime;
+    if (g_10450aa4 + t0 < g_1070b228->m_curtime)
+        p->m_pNode = 0;
+    void *pNode = p->m_pNode;
+    if (!pNode) {
+        p->m_pNode = pNode;
+        if (ResolveHandle(*ph)) {
+            EntOriginView *pPlayer = (EntOriginView *)ResolveHandle(*ph2);
+            float *pOrigin = pPlayer->vfunc220();
+            CNPC_VWerewolfVec3 v;
+            v.x = pOrigin[0];
+            v.y = pOrigin[1];
+            v.z = pOrigin[2];
+            CNPC_VWerewolfHelper5d34 *pHelper = p->m_pHelper;
+            pHelper->m_n08 = pHelper->m_pOwner->m_n156c;
+            pHelper->m_n0c = g_1070b228->m_n04;
+            NodeNetView *pNet0 = (NodeNetView *)p->m_pHelper->m_pNet;
+            int index; index = pNet0->sub_102f41b0(&v.x);
+            if ((int)index != -1) {
+                CNPC_VWerewolfNodeNet *pNet = p->m_pHelper->m_pNet;
+                void *n;
+                if (index >= 0 && index < pNet->m_nNodes) {
+                    n = pNet->m_ppNodes[index];
+                } else {
+                    g_106c994c++;
+                    n = 0;
+                }
+                p->m_pNode = n;
+            } else {
+                g_109f364c(g_1066249c);
+            }
+        }
+        GlobalsView *g = g_1070b228;
+        *(unsigned int *)&p->m_flNodeTime = (*(unsigned int *)&g->m_curtime);
+        pNode = p->m_pNode;
+    }
+    return pNode;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d0db0 size=0x8a
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;

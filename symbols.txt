@@ -851,6 +851,7 @@
 0x1000529f func   ?sub_1018eab0@@YAXPAVCBaseEntity@@D@Z sub_1018eab0
 0x100052a4 func   ?vfunc293@CAI_BaseNPCTroika@@UAEHXZ CAI_BaseNPCTroika::vfunc293
 0x100052a9 func   _item_g_cash_box item_g_cash_box
+0x100052c2 func   ?sub_103d0bf0@@YIPAXPAUHolder@@@Z sub_103d0bf0
 0x100052d6 func   ?vfunc431@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::vfunc431
 0x100052e0 func   ??0CGrabController@@QAE@XZ CGrabController::CGrabController
 0x100052e5 func   ?sub_1027e660@@YAPBDH@Z sub_1027e660
