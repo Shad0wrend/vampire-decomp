@@ -21,5 +21,6 @@ public:
 	char m_pad0000[0x2e0];
 	int m_pEdict;	// 0x2e0
 
+	int GetEdict() { return m_pEdict; }
 	int sub_103a0eb0(int nLine, CUnknown103a0eb0Info *pInfo, char bHighlight);	// prints the header, the second and then the first text of the info's entry on three consecutive screen lines starting at nLine (brighter colours when bHighlight); returns the next free line
 };
