@@ -26830,6 +26830,67 @@ PyObj *sub_10197e50(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198150 size=0x160
+struct Ent;
+struct PyWrap { char pad[0x9c]; Ent *ent; };
+struct EntInner { void *ent; unsigned serial; };
+struct EntSlot { int a; EntInner in; };
+struct Ent {
+    char pad0[0x14a8];
+    char flag;
+    char pad1[0x1538 - 0x14a9];
+    unsigned h;
+    int h2;
+    void sub_1000df99(Ent *o, int n);
+};
+extern EntSlot *g_10566458;
+extern int *g_109f3748;
+extern void **g_109f3780;
+extern char g_10590cb8[];
+extern char g_10591388[];
+extern char g_10591318[];
+extern "C" __declspec(dllimport) int PyArg_ParseTuple(void *, const char *, ...);
+extern "C" __declspec(dllimport) void *PyErr_Occurred();
+extern "C" __declspec(dllimport) void PyErr_SetString(void *, const char *);
+PyWrap *sub_10196780(void *);
+
+__forceinline bool Valid(Ent *e)
+{
+    if (e->h2 == -1 || e->h == -1) return false;
+    EntInner *p = &g_10566458[e->h & 0x1fff].in;
+    return p->serial == (e->h >> 13) && p->ent != 0;
+}
+
+// TARGET: sub_10198150
+void *sub_10198150(void *self, void *args)
+{
+    void *a = 0, *b = 0;
+    Ent *ea, *eb;
+    if (!PyArg_ParseTuple(args, g_10590cb8, &a, &b)) {
+        if (!PyErr_Occurred()) {
+            PyErr_SetString(*g_109f3780, g_10591388);
+            return 0;
+        }
+    } else {
+        PyWrap *wa = sub_10196780(a);
+        ea = !wa ? 0 : wa->ent;
+        PyWrap *wb = sub_10196780(b);
+        eb = !wb ? 0 : wb->ent;
+        if (ea && eb) {
+            if (!Valid(ea) && !Valid(eb)) {
+                ea->sub_1000df99(eb, 2);
+                ea->flag = 1;
+            }
+            ++*g_109f3748;
+            return g_109f3748;
+        }
+        if (!PyErr_Occurred())
+            PyErr_SetString(*g_109f3780, g_10591318);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101984c0 size=0x130
 struct PyObj { int m_refcnt; };
 

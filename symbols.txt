@@ -526,6 +526,7 @@
 0x100038dc func   ?vfunc175@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc175
 0x100038ff func   ?sub_10235ea0@@YAHXZ sub_10235ea0
 0x10003922 func   _item_g_bloodpack item_g_bloodpack
+0x10003927 func   ?sub_10198150@@YAPAXPAX0@Z sub_10198150
 0x10003931 func   ?sub_10050d90@CDisciplineParticle@@SAPAV1@HHHHHHHHHH@Z CDisciplineParticle::sub_10050d90
 0x1000398b func   ?sub_10103100@CUnknown10103100@@QAEXH@Z CUnknown10103100::sub_10103100
 0x1000399f func   ?sub_101eab40@@YAXH@Z sub_101eab40
