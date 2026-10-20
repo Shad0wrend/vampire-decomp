@@ -47209,6 +47209,35 @@ char *CBaseCombatCharacter::sub_10345980(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10345d00 size=0xa1
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool CBaseCombatCharacter::sub_10345d00()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::IsHoldingMeleeWeapon";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e7b0();
+	if (!pWeapon) {
+		(*g_109f3680)--;
+		return false;
+	}
+	if ((pWeapon->vfunc360() & 0x18000) == 0) {
+		(*g_109f3680)--;
+		return false;
+	}
+	(*g_109f3680)--;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10345de0 size=0xe5
 struct SEntityEntry
 {
