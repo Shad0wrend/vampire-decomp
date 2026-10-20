@@ -45810,6 +45810,28 @@ char sub_103adc00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b1470 size=0x7b
+#include "CNPC_VSheriffMan.h"
+extern char g_106b8540[];
+struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
+struct S1070b228 { char pad[0xc]; int curtime; };
+extern int *g_109f3680;
+extern ScopeTraceEntry *g_109f3620;
+extern S1070b228 *g_1070b228;
+void CNPC_VSheriffMan::sub_103b1470(int unused)
+{
+    g_109f3620[*g_109f3680].a = "CNPC_VSheriffMan::StartAttacking";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    int t;
+    sub_10013cf5(1, 1, 10); t = g_1070b228->curtime;
+    *(int *)&m_flAttackStartTime = t;
+    m_bAttacking = 1;
+    *g_109f3680 -= 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b19d0 size=0x43
 #include "CBatSwarm_Teleport.h"
 void *sub_100aa720(int size);
