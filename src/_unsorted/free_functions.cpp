@@ -34374,6 +34374,58 @@ int CUnknown10202060::sub_10202060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202140 size=0xee
+#include "CUnknown1074e098.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1074e098 g_1074e098;
+extern int g_1074e2a8[];
+
+void sub_10202140()
+{
+	ScopeTrace t("vamp_BuildSubSlotDisciplineInfo", g_106b8540);
+	int order[17];
+	int max = -1;
+	int i;
+	for (i = 0; i < 17; i++) {
+		if (g_1074e098.sub_10200370(i)->m_nSlotOrder != 0) {
+			int v = g_1074e098.sub_10200370(i)->m_nSlotOrder;
+			order[i] = v;
+			if (v > max)
+				max = v;
+		} else {
+			order[i] = -1;
+		}
+	}
+	int next = 1;
+	for (i = 0; i < 17; i++) {
+		if (order[i] == -1) {
+			int j = 0;
+			do {
+				if (order[j] == next) {
+					next++;
+					j = 0;
+				}
+				j++;
+			} while (j < 17);
+			order[i] = next;
+			next++;
+		}
+	}
+	int n = 0;
+	for (int k = 0; k < 17; k++) {
+		int j = 0;
+		do {
+			if (order[j] == k) {
+				g_1074e2a8[n] = j;
+				n++;
+			}
+			j++;
+		} while (j < 17);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202270 size=0xa8
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
