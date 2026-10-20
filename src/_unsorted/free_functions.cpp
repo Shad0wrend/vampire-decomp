@@ -6849,6 +6849,35 @@ void __fastcall sub_10078860(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078880 size=0xe4
+#include "CUtlVector12.h"
+
+struct RampPoint
+{
+	int m_n00;
+	float m_flKey;
+	int m_n08;
+};
+
+void __fastcall sub_10078a30(char *pThis);
+
+void __fastcall sub_10078880(char *pThis)
+{
+	CUtlVector12 *pPoints = (CUtlVector12 *)(pThis + 0x19c);
+	for (int i = 0; i < pPoints->m_size; i++) {
+		for (int j = i + 1; j < pPoints->m_size; j++) {
+			RampPoint a = ((RampPoint *)pPoints->m_pMemory)[i];
+			RampPoint b = ((RampPoint *)pPoints->m_pMemory)[j];
+			if (a.m_flKey > b.m_flKey) {
+				((RampPoint *)pPoints->m_pMemory)[i] = b;
+				((RampPoint *)pPoints->m_pMemory)[j] = a;
+			}
+		}
+	}
+	sub_10078a30(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078b10 size=0x8
 void __fastcall sub_10078b10(int *p) { p[3] = 0; }
 // END FUNCTION
