@@ -17945,6 +17945,40 @@ int *sub_10197510(int self, int args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10199990 size=0xad
+extern int (*g_109f37a0)(int, const char *, ...);
+extern int (*g_109f377c)();
+extern int **g_109f3780;
+extern void (*g_109f37b4)(int, const char *);
+extern int (*g_109f3798)(int);
+extern char g_10590dfc[];
+extern char g_10591798[];
+extern char g_105914b4[];
+CBaseEntity *sub_10196780(int);
+int sub_10199990(int self, int args)
+{
+    int id = 0;
+    if (!g_109f37a0(args, g_10590dfc, &id)) {
+        if (!g_109f377c())
+            g_109f37b4((int)*g_109f3780, g_10591798);
+        return 0;
+    }
+    CBaseEntity *e = sub_10196780(id);
+    CBaseCombatCharacter *cc = 0;
+    if (e)
+        cc = *(CBaseCombatCharacter **)((char *)e + 0x9c);
+    if (cc == 0) {
+        if (!g_109f377c())
+            g_109f37b4((int)*g_109f3780, g_105914b4);
+        return 0;
+    } else {
+        if (cc->sub_10336920())
+            return g_109f3798(1);
+        return g_109f3798(0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199e20 size=0x65
 struct PyObj;
 struct PyType { char pad[0x18]; void (*dealloc)(PyObj*); };

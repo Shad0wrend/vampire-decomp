@@ -1581,6 +1581,7 @@
 0x1000a3f3 func   ??0CRestore@@QAE@PAX@Z CRestore::CRestore
 0x1000a402 func   ?sub_100aacd0@@YIHPAD@Z sub_100aacd0
 0x1000a40c func   ?sub_101fb180@@YAXH@Z sub_101fb180
+0x1000a416 func   ?sub_10199990@@YAHHH@Z sub_10199990
 0x1000a457 func   _func_rotating func_rotating
 0x1000a466 func   ?sub_1013eb90@@YG_NPAVCBaseEntity@@I@Z sub_1013eb90
 0x1000a48e func   ?sub_10210fe0@@YAPAHXZ sub_10210fe0
