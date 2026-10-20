@@ -403,6 +403,7 @@
 0x1000333c func   ?sub_10279b70@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10279b70
 0x1000334b func   ?sub_101647a0@CBasePlayer@@QAEHH@Z CBasePlayer::sub_101647a0
 0x1000336e func   ?sub_1015ef60@@YIXPAD@Z sub_1015ef60
+0x10003396 func   ?sub_103327f0@CBaseCombatCharacter@@QAEXM@Z CBaseCombatCharacter::sub_103327f0
 0x100033cd func   ?vfunc416@CAI_BaseNPCTroika@@UAEXD@Z CAI_BaseNPCTroika::vfunc416
 0x100033d2 func   ?sub_10325f00@@YI_NPAVCBaseEntity@@@Z sub_10325f00
 0x100033dc func   ?vfunc5@CPhysBallSocket@@UAEPAV1@I@Z CPhysBallSocket::vfunc5

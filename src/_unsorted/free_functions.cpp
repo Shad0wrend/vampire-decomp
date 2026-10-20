@@ -42133,6 +42133,51 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x103327f0 size=0xf9
+#include "CBaseCombatCharacter.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+void CBaseCombatCharacter::sub_103327f0(float amount)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseCombatCharacter::EndSlowEntity";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	CVStatList_t **ppList = 0;
+	int i = 0;
+	float *pSlow = (float *)((char *)this + 0x10a8);
+	*pSlow = *pSlow - amount;
+	CVStatList_t *pList;
+	for (; i < m_nStatLists; i++) {
+		if (m_pStatLists[i]->m_field10 == 0) {
+			pList = m_pStatLists[i];
+			goto found;
+		}
+	}
+	{
+		static CVStatList_t s_default(-1);
+		pList = &s_default;
+	}
+found:
+	pList->sub_10201100(0x1a, (int)amount);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10332930 size=0x11d
 extern int *g_109f3680;
 extern int *g_109f3620;
