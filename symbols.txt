@@ -1338,6 +1338,7 @@
 0x10007e23 func   ?sub_101fc000@CVStatSubCost_t@@QAEXPBD@Z CVStatSubCost_t::sub_101fc000
 0x10007e32 func   ?sub_10216850@@YIXPADHH@Z sub_10216850
 0x10007e64 func   _phys_hinge phys_hinge
+0x10007e73 func   ?sub_103411c0@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_103411c0
 0x10007e7d func   ?vfunc2@CTETextMessage@@UAEPAV1@I@Z CTETextMessage::vfunc2
 0x10007e8c func   ?vfunc5@CBaseAnimatingOverlay@@QAEPAV1@I@Z CBaseAnimatingOverlay::vfunc5
 0x10007ea5 func   ?vfunc345@CBaseCombatCharacter@@QAEXPBDHH@Z CBaseCombatCharacter::vfunc345

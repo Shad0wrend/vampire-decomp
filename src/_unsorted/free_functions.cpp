@@ -49279,6 +49279,37 @@ int __fastcall sub_10341120(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103411c0 size=0xbe
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CBarterView	// the bartering character: sub_1017c600(other, value, 0, 0, 0) (stub 0x1000f330)
+{
+    void sub_1017c600(CBarterView *pOther, int value, int a, int b, int c);
+};
+
+void CBaseCombatCharacter::sub_103411c0(int a, int b)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::BarterBegin";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    CBarterView *pOther = (CBarterView *)a;
+    if (pOther) {
+        if (*(int *)((char *)this + 0xa8)) {
+            ((CBarterView *)this)->sub_1017c600(pOther, b, 0, 0, 0);
+        } else if (*(int *)((char *)pOther + 0xa8)) {
+            pOther->sub_1017c600((CBarterView *)this, b, 0, 0, 0);
+        }
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103419c0 size=0xa8
 #include "inputdata_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
