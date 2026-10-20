@@ -11637,6 +11637,52 @@ int CDialog::sub_100e5690(CDialogEntry_t *pEntry)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e5770 size=0xf2
+#include "CDialog.h"
+
+struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
+extern ScopeEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+struct IBufferFree { virtual void v0(); virtual void Free(void *p); };
+extern IBufferFree *g_1070b238;
+extern void *g_106ea780;
+extern void *g_106ea784;
+
+void CDialog::sub_100e5770()
+{
+    g_109f3620[*g_109f3680].m_pszName = "CDialog::unload";
+    g_109f3620[*g_109f3680].m_pszEnt = g_106b8540;
+    g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+    (*g_109f3680)++;
+    CDialogTable_t *t = m_pTable;
+    if (t) {
+        int i = 0;
+        if (t->m_nEntries > 0) {
+            int off = 0;
+            do {
+                sub_100e7c20((DialogLine *)((char *)t->m_pEntries + off));
+                t = m_pTable;
+                i++;
+                off += 0x34;
+            } while (i < t->m_nEntries);
+        }
+        operator delete(m_pTable->m_pEntries);
+        operator delete(m_pTable);
+        m_pTable = 0;
+    }
+    if (g_106ea780) {
+        g_1070b238->Free(g_106ea780);
+        g_106ea780 = 0;
+    }
+    if (g_106ea784) {
+        g_1070b238->Free(g_106ea784);
+        g_106ea784 = 0;
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7480 size=0x70
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

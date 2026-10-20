@@ -1196,6 +1196,7 @@
 0x1000817a func   ?sub_10401a20@@YAHXZ sub_10401a20
 0x10008184 func   ?sub_101895d0@@YAXPAVCBaseEntity@@HH@Z sub_101895d0
 0x10008189 func   ?sub_102e2730@@YIXPAUCOwner@@@Z sub_102e2730
+0x10008198 func   ?sub_100e5770@CDialog@@QAEXXZ CDialog::sub_100e5770
 0x100081a2 func   ?sub_103fef20@@YAHXZ sub_103fef20
 0x100081b1 func   ?sub_101d5d20@CUnknown101d5bd0@@QAEHPBDH@Z CUnknown101d5bd0::sub_101d5d20
 0x100081f2 func   ?vfunc525@CNPC_VVampireBoss@@QAE_NH@Z CNPC_VVampireBoss::vfunc525
