@@ -3748,6 +3748,7 @@
 0x1001560e func   ?sub_10066e20@@YAHXZ sub_10066e20
 0x1001561d func   ?vfunc67@CBaseEntity@@UAEXXZ CBaseEntity::vfunc67
 0x10015645 func   ?sub_10031520@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10031520
+0x10015654 func   ?sub_101c4580@@YI_NPAXHPAUIFile101c4580@@PBD@Z sub_101c4580
 0x1001567c func   ?vfunc503@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc503
 0x10015695 func   ?sub_10054400@@YAXXZ sub_10054400
 0x100156a4 func   ?vfunc5@CItemGRingGold@@QAEPAV1@I@Z CItemGRingGold::vfunc5

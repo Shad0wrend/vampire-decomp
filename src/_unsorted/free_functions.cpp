@@ -23666,6 +23666,57 @@ void CMem4e_t::sub_101c4490(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4580 size=0x87
+struct IFile101c4580
+{
+	virtual void *vfunc0(const char *pszFile, const char *pszMode, const char *pszPathID);	// Open
+	virtual void vfunc1(void *hFile);	// Close
+};
+
+struct Node101c4580
+{
+	Node101c4580 *m_pNext;	// 0x00 (unused here)
+	char pad0[0];
+};
+
+struct CallbackNode_t
+{
+	int m_pad0;
+	CallbackNode_t *m_pNext;	// 0x04
+	void *m_pOwner;	// 0x08
+	void (__cdecl *m_pfn)(IFile101c4580 *pFS, void *hFile, int arg);	// 0x0c
+	int m_arg;	// 0x10
+};
+
+struct ShutdownNode_t
+{
+	ShutdownNode_t *m_pNext;
+	void (__cdecl *m_pfn)();
+};
+
+CallbackNode_t *sub_101c47b0();
+extern ShutdownNode_t *g_1072cefc;
+
+// TARGET: sub_101c4580
+bool __fastcall sub_101c4580(void *self, int unused, IFile101c4580 *pFS, const char *pszFile)
+{
+	if (!pszFile)
+		pszFile = (const char *)self;
+	void *hFile = pFS->vfunc0(pszFile, "wt", "LOGDIR");
+	if (!hFile)
+		return false;
+	CallbackNode_t *pHead = sub_101c47b0();
+	for (CallbackNode_t *pNode = pHead->m_pNext; pNode != pHead; pNode = pNode->m_pNext) {
+		if (pNode->m_pOwner == self)
+			pNode->m_pfn(pFS, hFile, pNode->m_arg);
+	}
+	pFS->vfunc1(hFile);
+	for (ShutdownNode_t *p = g_1072cefc; p; p = p->m_pNext)
+		p->m_pfn();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4660 size=0x17
 extern char *(__cdecl *g_109f3890)(char *, const char *, int);
 
