@@ -57544,6 +57544,43 @@ extern "C" CBaseEntity *item_i_written()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040bfc0 size=0x84
+#include "CUnknown1040cb60.h"
+
+struct PhysObj { virtual void v0(); virtual void v1(); virtual void slot2(); };
+struct EntEntry { void *pEnt; int serial; int pad; };
+struct EntTable { int hdr; EntEntry entries[1]; };
+struct GlobalVarsFrame { char pad[0x10]; int framecount; };
+extern EntTable *g_10566458;
+extern GlobalVarsFrame *g_1070b228;
+
+void CUnknown1040cb60::sub_1040bfc0(const float *a, const float *b)
+{
+	float *p = (float *)this;
+	p[1] = a[0];
+	p[2] = a[1];
+	p[3] = a[2];
+	p[4] = b[0];
+	p[5] = b[1];
+	p[6] = b[2];
+	((int *)this)[0xd] = g_1070b228->framecount;
+	unsigned int h = m_hEntity;
+	if (h != 0xffffffff) {
+		EntEntry *e = &g_10566458->entries[h & 0x1fff];
+		if ((unsigned int)e->serial == (h >> 13)) {
+			char *pEnt = (char *)e->pEnt;
+			if (pEnt) {
+				PhysObj *obj = *(PhysObj **)(pEnt + 0x36c);
+				if (obj)
+					obj->slot2();
+				else
+					sub_1040cb60();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040cce0 size=0x91
 #include "CUnknown1040cce0.h"
 
