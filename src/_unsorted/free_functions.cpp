@@ -32541,6 +32541,31 @@ bool CAI_BaseNPCTroika::sub_1028e360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e8b0 size=0x6a
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CAI_BaseNPCTroika::sub_1028e8b0
+void CAI_BaseNPCTroika::sub_1028e8b0(CBaseEntity *pEnt, int a)
+{
+	if (pEnt == 0)
+		return;
+	if (vfunc167() != 0)
+	{
+		if ((int)pEnt == vfunc167())
+		{
+			sub_1028e940(a);
+			return;
+		}
+		CAI_BaseNPC *pOwner = *(CAI_BaseNPC **)((char *)pEnt + 0x98);
+		if (pOwner == 0)
+			return;
+		if (pOwner->vfunc167() != vfunc167())
+			return;
+	}
+	sub_1028e940(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028eb30 size=0x66
 struct Vec3 { int x, y, z; };
 struct HandleObj {
