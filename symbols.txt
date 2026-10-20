@@ -1650,6 +1650,7 @@
 0x10009ceb func   ?vfunc5@CWeaponMelee_SabbatLeaderAttack@@QAEPAV1@I@Z CWeaponMelee_SabbatLeaderAttack::vfunc5
 0x10009cf5 func   ?vfunc5@CFilterInventory@@QAEPAV1@I@Z CFilterInventory::vfunc5
 0x10009d0e func   ?sub_100ac9f0@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100ac9f0
+0x10009d13 func   ?sub_1002af90@CPhysConstraint@@QAEXH@Z CPhysConstraint::sub_1002af90
 0x10009d1d func   ?sub_103dc280@CUtlVector12@@QAEXH@Z CUtlVector12::sub_103dc280
 0x10009d45 func   ?sub_10375390@@YADXZ sub_10375390
 0x10009d6d func   ?vfunc133@CBaseEntity@@UAEXXZ CBaseEntity::vfunc133

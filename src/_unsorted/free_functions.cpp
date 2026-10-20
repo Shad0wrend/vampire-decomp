@@ -160,6 +160,50 @@ extern "C" CConstraintAnchor *info_constraint_anchor()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002af90 size=0x91
+#include "CPhysConstraint.h"
+
+struct PhysObjectIf
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void SetGameFlags(unsigned int flags);
+	virtual unsigned int GetGameFlags();
+};
+struct PhysConstraintIf
+{
+	virtual void v0(); virtual void v1();
+	virtual void Activate();
+	virtual void v3(); virtual void v4();
+	virtual PhysObjectIf *GetReferenceObject();
+	virtual PhysObjectIf *GetAttachedObject();
+};
+void sub_1001474a(PhysObjectIf *a, PhysObjectIf *b);
+
+#define CONSTRAINT (*(PhysConstraintIf **)((char *)this + 0x450))
+
+void CPhysConstraint::sub_1002af90(int unused)
+{
+	CONSTRAINT->Activate();
+	PhysObjectIf *pObj = CONSTRAINT->GetReferenceObject();
+	if (pObj) {
+		unsigned int flags = pObj->GetGameFlags();
+		pObj->SetGameFlags(flags & 0xfffd);
+	}
+	pObj = CONSTRAINT->GetAttachedObject();
+	if (pObj) {
+		unsigned int flags = pObj->GetGameFlags();
+		pObj->SetGameFlags(flags & 0xfffd);
+	}
+	if (*(unsigned char *)((char *)this + 0x204) & 1) {
+		PhysObjectIf *pRef = CONSTRAINT->GetReferenceObject();
+		PhysObjectIf *pAtt = CONSTRAINT->GetAttachedObject();
+		if (pRef && pAtt)
+			sub_1001474a(pRef, pAtt);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b360 size=0x84
 struct IObj_t
 {
