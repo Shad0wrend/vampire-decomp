@@ -26142,6 +26142,46 @@ void sub_10222ad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10222bf0 size=0xd2
+#include "QuestJournal.h"
+
+extern void (*g_109f3628)(const char *, ...);
+extern const char *g_105b1058[];
+extern const char *g_105b106c[];
+extern QuestJournal g_1074f8f8;
+
+void sub_10222bf0()
+{
+    void (*Msg)(const char *, ...) = g_109f3628;
+    Msg("\n\nDUMPING QUEST TABLE\n\n");
+    int area = 0;
+    do {
+        Msg("\n====================================================================\n");
+        Msg("AREA: %s\n", g_105b1058[area]);
+        int i = 0;
+        if (0 < g_1074f8f8.m_field[8]) {
+            do {
+                int *q = (int *)g_1074f8f8.sub_10221b10(i);
+                if (q[2] == area) {
+                    Msg("[%-3d] %-48s: %s\n", i, q[0], q[1]);
+                    int *pIdx = q + 5;
+                    int idx = *pIdx;
+                    while (idx != -1) {
+                        int *c = (int *)g_1074f8f8.sub_10221e50(idx);
+                        Msg("(%d): %-12s %-48s money:%-4d exp: %-40s event:%s\n", c[0], g_105b106c[c[2]], c[1], c[3], c[4], c[5]);
+                        pIdx++;
+                        idx = *pIdx;
+                    }
+                    Msg("----------------------------------------------------------------------\n");
+                }
+                i++;
+            } while (i < g_1074f8f8.m_field[8]);
+        }
+        area++;
+    } while (area < 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10222da0 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
