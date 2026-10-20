@@ -21121,6 +21121,22 @@ struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x101e48b0 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_101e48b0()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e48f0 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_109f3634)(int);
