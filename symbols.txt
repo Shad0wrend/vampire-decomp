@@ -3939,6 +3939,7 @@
 0x100157c1 func   ?sub_1009edc0@CBaseEntity@@QAEXPBM0@Z CBaseEntity::sub_1009edc0
 0x100157c6 func   _item_container_animated item_container_animated
 0x100157d5 func   ?sub_102d3f50@@YAHPBD@Z sub_102d3f50
+0x100157e9 func   ?sub_1021a3d0@CPropHacking@@QAEXPAVCSave@@@Z CPropHacking::sub_1021a3d0
 0x100157f3 func   _item_w_deserteagle item_w_deserteagle
 0x100157f8 func   ?sub_100f99d0@CMem8e_t@@QAEXH@Z CMem8e_t::sub_100f99d0
 0x10015802 func   ?vfunc5@CNodeEnt@@QAEPAV1@I@Z CNodeEnt::vfunc5

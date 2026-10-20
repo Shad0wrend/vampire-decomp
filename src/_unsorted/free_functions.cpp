@@ -32462,6 +32462,28 @@ void CPropHacking::sub_1021a2f0(CRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a3d0 size=0xa3
+#include "CSave.h"
+#include "CPropHacking.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CPropHacking::sub_1021a3d0(CSave *pSave)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CPropHacking::SaveGlobalEmailState";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (m_bEmailState)
+		pSave->sub_1016f0f0(m_name26c ? m_name26c : g_106b8540, m_szEmailState, 0x80);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021b330 size=0xa2
 #include "CUnknown10217f50.h"
 #include <string.h>
