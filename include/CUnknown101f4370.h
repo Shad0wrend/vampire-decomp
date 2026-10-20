@@ -1,10 +1,16 @@
-// CUnknown101f4370: object with a table pointer at +4 and a name table at +8 (count at table+0x14, array of record pointers at table+0x18); real name not yet known.
+// CUnknown101f4370: object with a name table at +8 (count at table+0x14, array of record pointers at table+0x18); real name not yet known.
 #pragma once
+
+struct CUnknown101f4370Name
+{
+	const char *m_psz;
+	const char *Get() { return m_psz; }
+};
 
 struct CUnknown101f4370NameRec
 {
 	int m_id;
-	const char *m_pszName;
+	CUnknown101f4370Name m_name;	// 0x04
 };
 
 struct CUnknown101f4370NameTable
