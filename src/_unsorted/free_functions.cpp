@@ -44119,6 +44119,39 @@ void CBaseCombatCharacter::sub_10339560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10339a90 size=0x8f
+#include "CBaseCombatCharacter.h"
+#include "StatDefault3.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CStatLookup {
+	StatDefault3 *sub_10207c40(CBaseCombatCharacter *pChar);
+};
+extern CStatLookup g_1074f028;
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+bool CBaseCombatCharacter::sub_10339a90()
+{
+	CScopeTrace trace("CBaseCombatCharacter::CanBeFedUpon", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	if (!g_1074f028.sub_10207c40(this)->m_8c[9])
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10339b50 size=0x81
 #include "CBaseCombatCharacter.h"
 
