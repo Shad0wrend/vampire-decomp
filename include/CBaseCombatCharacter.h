@@ -1,6 +1,6 @@
 // CBaseCombatCharacter: base of NPCs and players.
 // Only the members the recovered code needs are declared.
-// New method declarations can go into CBaseCombatCharacter_ext.h (included at the end of the class body).
+// New method declarations can go into CBaseCombatCharacter_ext.h / CBaseCombatCharacter_ext2.h (included at the end of the class body).
 #pragma once
 
 #include "CBaseEntity.h"
@@ -136,6 +136,7 @@ public:
 	void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);	// AngleVectors (stub 0x10002310)
 
 #include "CBaseCombatCharacter_ext.h"
+#include "CBaseCombatCharacter_ext2.h"
 
 	char m_pad03e0[0x1084 - 0x3e0];
 	int m_nStealthModifier;	// 0x1084
