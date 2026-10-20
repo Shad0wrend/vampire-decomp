@@ -36,3 +36,4 @@
 	void sub_10341370(CBaseCombatCharacter *pPartner, int unused);	// "CBaseCombatCharacter::BarterEnd" (stub 0x1000e020): scope trace (entity name), with a partner: when this has the object at +0xa8 sub_10013070() and sub_10010e60(this), else sub_10013070() on the partner when it has one
 	void sub_10013070();	// CBasePlayer::sub_1017c6d0 (stub 0x10013070), called on a character with the object at +0xa8
 	void sub_10010e60(CBaseEntity *pEnt);	// CBaseEntity::vfunc42 (stub 0x10010e60), called directly with an entity
+	bool sub_10345330();	// "CBaseCombatCharacter::IsMeleeSwi...": scope trace (entity name), true unless sub_1032e7b0 is set and the current sequence's description (sub_1008d990 of the sequence at +0x6f0) has records of 0xbc bytes (up to 0x14, count at +0x2c4, offset at +0x2c8) one of which has a first float above the float at +0x6f8
