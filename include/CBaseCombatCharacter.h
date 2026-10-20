@@ -130,6 +130,7 @@ public:
 	void vfunc403();
 	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
 	void vfunc119();	// "CBaseCombatCharacter::Kill": scope trace (entity name), then CBaseEntity::vfunc119
+	bool vfunc326(int unused1, int unused2);	// slot 326: false when the character's default stat item has the byte at +0x9e set or the first stat list with a zero field at +0x10 (default list when none) is IsEqual(0xf, 0x11); else slot 158 as a bool
 
 #include "CBaseCombatCharacter_ext.h"
 
