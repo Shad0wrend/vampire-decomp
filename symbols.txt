@@ -2194,6 +2194,7 @@
 0x1000ddeb func   _info_node_cover_corner info_node_cover_corner
 0x1000ddf0 func   ?sub_10227320@S@@QAEXPAUinputdata_t@@@Z S::sub_10227320
 0x1000ddfa func   ?sub_10078d60@CUtlVector136@@QAEXHH@Z CUtlVector136::sub_10078d60
+0x1000de04 func   ?sub_102ce640@CUtlRBTree12@@QAEXPBXAAGAA_N@Z CUtlRBTree12::sub_102ce640
 0x1000de0e func   ?sub_100ce3c0@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce3c0
 0x1000de63 func   ?sub_103bf580@CNPC_VTzimisce@@QAEPAXPAX@Z CNPC_VTzimisce::sub_103bf580
 0x1000de95 func   _item_g_bertrams_cd item_g_bertrams_cd
