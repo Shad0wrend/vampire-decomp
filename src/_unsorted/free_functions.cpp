@@ -36970,6 +36970,20 @@ int *sub_10356550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357110 size=0x2a
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+
+void CAI_BaseNPC::sub_10357110(CBaseEntity *pEnt)
+{
+	unsigned int *pHandle = (unsigned int *)((char *)this + 0x5f44);
+	if (pEnt)
+		*pHandle = *pEnt->vfunc1();
+	else
+		*pHandle = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10359190 size=0x33
 void sub_1000b15e();
 void sub_1000215d();

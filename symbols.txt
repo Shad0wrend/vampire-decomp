@@ -3244,6 +3244,7 @@
 0x10014696 func   ?sub_10041be0@@YA_NPAH0@Z sub_10041be0
 0x1001469b func   ?vfunc275@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc275
 0x100146b4 func   ?vfunc546@CNPC_VTest@@QAEHH@Z CNPC_VTest::vfunc546
+0x100146fa func   ?sub_10357110@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10357110
 0x1001470e func   ?sub_1035b1c0@CUnknown1035b1c0@@QAEHHHHH@Z CUnknown1035b1c0::sub_1035b1c0
 0x10014718 func   ?vfunc3@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc3
 0x10014722 func   ?vfunc5@CItemGPishaFetish@@QAEPAV1@I@Z CItemGPishaFetish::vfunc5
