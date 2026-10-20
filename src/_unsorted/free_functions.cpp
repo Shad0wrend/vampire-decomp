@@ -29696,6 +29696,83 @@ void CUnknown101d1460::sub_101d1460(int edict)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d1800 size=0x108
+#include "CUnknown1070b22c.h"
+
+struct CUnknown1070b22c_Edict
+{
+	char m_pad0000[0x40];
+	void *m_pUnknown;	// 0x40
+	char m_bValid;	// 0x44
+};
+
+struct CenterVector	// three floats copied member-wise
+{
+	float x, y, z;
+};
+
+#define HV1(p) virtual void p();
+#define HV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define HV100(p) HV10(p##0) HV10(p##1) HV10(p##2) HV10(p##3) HV10(p##4) HV10(p##5) HV10(p##6) HV10(p##7) HV10(p##8) HV10(p##9)
+
+struct CenterProbe	// an entity seen through its vtable: slot 193 gives its center
+{
+	HV100(ca) HV10(cb0) HV10(cb1) HV10(cb2) HV10(cb3) HV10(cb4) HV10(cb5) HV10(cb6) HV10(cb7) HV10(cb8)
+	HV1(cc0) HV1(cc1) HV1(cc2)
+	virtual CenterVector vfunc193();
+};
+
+struct EntityHolderProbe	// the object at +0x40 of an entity; slot 4 gives the entity
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual CenterProbe *vfunc4();
+};
+
+struct ViewerEntity
+{
+	char m_pad0000[0x40];
+	EntityHolderProbe *m_pHolder;	// 0x40
+};
+
+struct S_1070b228 { char pad[0xc]; float curtime; };
+extern S_1070b228 *g_1070b228;
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_1073391c;	// the cached entity index
+extern float g_10733920;	// when it was looked up
+extern double g_104493d0;	// how long it stays valid
+extern float g_104454c4;	// zero
+extern char g_10731918[];	// the visibility data handed to the PVS test
+
+int sub_101d1960(int nIndex);
+
+CUnknown1070b22c_Edict *sub_101d1800(ViewerEntity *pViewer)
+{
+	float flElapsed = g_1070b228->curtime - g_10733920;
+	if (flElapsed >= g_104493d0 || flElapsed < g_104454c4) {
+		g_1073391c = sub_101d1960(g_1073391c);
+		g_10733920 = g_1070b228->curtime;
+	}
+	CUnknown1070b22c_Edict *pEdict = g_1070b22c->vfunc38(g_1073391c);
+	if (pEdict && pEdict->m_bValid && pEdict->m_pUnknown) {
+		if (pViewer && pViewer->m_pHolder) {
+			CenterProbe *pEntity = pViewer->m_pHolder->vfunc4();
+			if (pEntity) {
+				CenterVector vecCenter;
+				vecCenter = pEntity->vfunc193();
+				if (!g_1070b22c->vfunc32(&vecCenter.x, g_10731918))
+					return g_1070b22c->vfunc38(0);
+			}
+		}
+		return pEdict;
+	}
+	return g_1070b22c->vfunc38(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2850 size=0x99
 struct PyObject;
 struct PyTypeObject {
