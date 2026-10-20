@@ -22506,6 +22506,28 @@ int *sub_1014ee10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150e50 size=0x12
+struct CVirtSlots2 {
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2();
+};
+
+struct CHolderPtr36c {
+    char pad_0000[0x36c];
+    CVirtSlots2 *m_p36c;
+    void sub_10150e50(int unused);
+};
+
+// TARGET: sub_10150e50
+void CHolderPtr36c::sub_10150e50(int unused)
+{
+    if (m_p36c != 0) {
+        m_p36c->vfunc2();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101521b0 size=0x43
 #include "CRagdollProp.h"
 void *sub_100aa720(int size);
