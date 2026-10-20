@@ -22980,6 +22980,25 @@ struct CUnknown1020b020 { char p[0x790]; int a; int sub_1020b020(int x); };
 int CUnknown1020b020::sub_1020b020(int x) { return a; }
 // END FUNCTION
 
+// FUNCTION: 0x1020b370 size=0x43
+#include "CSecCamera.h"
+void *sub_100aa720(int size);
+extern char g_105ade40[];
+
+// TARGET: security_camera
+extern "C" CBaseEntity *security_camera()
+{
+	void *mem = sub_100aa720(0x824);
+	CSecCamera *p;
+	if (mem)
+		p = ((CSecCamera *)mem)->sub_1020bf00();
+	else
+		p = 0;
+	p->vfunc106(g_105ade40);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e060 size=0xa
 void CUnknown1020e060::sub_1020e060(int unused)
 {
