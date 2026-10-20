@@ -20,4 +20,5 @@ public:
 
 	int sub_101d7380(const char *name, int start);
 	bool sub_101d70d0(const char *name, int *pIndex);	// opens the data file `name`, walks its "LevelingTemplate" nodes against the entries from *pIndex
+	void sub_101d6ef0();	// counts the "vdata_system/LevelingTemplate*.txt" files, then loads each LevelingTemplate%03d.txt (Msg when one cannot be opened)
 };
