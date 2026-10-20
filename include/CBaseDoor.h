@@ -18,4 +18,5 @@ public:
 	char sub_100027d4(void *pActivatorOwner);	// the lock check (the stub at 0x100027d4 for 0x100eec70), called directly
 	void vfunc250();	// slot 250: unless flagged 0x20 (+0x204) and unless the field at +0x3fc is already -1.0f, plays the open (flag 1 of +0x204) or close sound (+0x514 / +0x508), sets the door state at +0x4f8 to 0 / 1, resets +0x3fc to -1.0f, installs the touch function at +0x1ec and updates the area portals
 	void sub_10012837(CBaseEntity *pOther);	// the touch function installed by vfunc250 (stub 0x10012837)
+	void sub_100ee560(char bOpen);	// plays the open (bOpen) or close sound (globals 0x1072bc9c / 0x1072bca0 and volume bytes 0x1072bcc7 / 0x1072bcc8) from the entity of the handle at +0x53c, unless flag 0x1000 of +0x204 is set
 };
