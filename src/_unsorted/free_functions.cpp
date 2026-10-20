@@ -13632,6 +13632,26 @@ void sub_100f8e20(SEntV116 *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8ec0 size=0x72
+#include "CEntityListSystem.h"
+#include <malloc.h>
+#include <string.h>
+
+void CEntityListSystem::sub_100f8ec0()
+{
+    int n = m_nEntities;
+    if (n) {
+        CEntityListSystem_Ent **copy = (CEntityListSystem_Ent **)alloca(n * 4);
+        memcpy(copy, m_pEntities, n * 4);
+        m_nEntities = 0;
+        for (int i = 0; i < n; i++) {
+            if (copy[i]->m_bFlags & 1)
+                copy[i]->sub_100085a8();
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f9790 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_100f9790(); };
 void CUtlVectorBase::sub_100f9790() { m_Size = 0; }
