@@ -4840,5 +4840,6 @@
 0x1051738c vtable ??_7exception@@6B@ exception::vftable
 0x109f3624 data   __imp__Plat_Free _imp__Plat_Free
 0x109f36cc data   __imp_?PyString_AsString@@YAPADPAUPyObject@@@Z _imp_?PyString_AsString
+0x109f36ec data   __imp__PyExc_StandardError _imp__PyExc_StandardError
 0x109f37d0 data   __imp_?PyString_Type@@3PADA _imp_?PyString_Type
 0x109f3874 data   __imp_?CommandLine@@YAPAUICommandLine@@XZ _imp_?CommandLine
