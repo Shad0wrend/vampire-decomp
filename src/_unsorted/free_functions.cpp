@@ -1698,6 +1698,42 @@ CUnknown100353c0 *CUnknown100353c0::sub_100353c0(const CUnknown100353c0 *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10035a70 size=0xfb
+#include "ScopeTrace.h"
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+struct PTEPColl { virtual void v0(); virtual float *GetMins(); virtual float *GetMaxs(); };
+struct PTEPEnt {
+    V10(t00) V10(t01) V10(t02) V10(t03) V10(t04) V10(t05) V10(t06) V10(t07) V10(t08) V10(t09)
+    V10(t10) V10(t11) V10(t12) V10(t13) V10(t14) V10(t15) V10(t16) V10(t17) V10(t18) V10(t19)
+    V10(t20)
+    virtual void u210(); virtual void u211(); virtual void u212(); virtual void u213(); virtual void u214(); virtual void u215(); virtual void u216();
+    virtual float *GetAbsOrigin();
+    V10(v22) virtual void u228(); virtual void u229();
+    virtual void u230(); virtual void u231(); virtual void u232(); virtual void u233(); virtual void u234(); virtual void u235(); virtual void u236();
+    virtual unsigned int SolidMask();
+    char pad[0x270 - 4];
+    PTEPColl m_coll;
+};
+struct PTEPTrace { char pad[0x37]; bool startsolid; char pad2[0x14]; CBaseEntity *pEnt; char tail[4]; };
+void sub_10035030(CBaseEntity *ent, float *start, float *end, float *mins, float *maxs, unsigned int mask, PTEPTrace *tr);
+
+bool CBaseEntity::sub_10035a70(CBaseEntity **ppEntity)
+{
+    ScopeTrace trace("CBaseEntity::PhysicsTestEntityPosition", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    PTEPTrace tr;
+    PTEPEnt *e = (PTEPEnt *)this;
+    unsigned int mask = e->SolidMask();
+    float *mins = e->m_coll.GetMins();
+    sub_10035030(this, e->GetAbsOrigin(), e->GetAbsOrigin(), mins, e->m_coll.GetMaxs(), mask, &tr);
+    if (tr.startsolid) {
+        if (ppEntity)
+            *ppEntity = tr.pEnt;
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10035f00 size=0x95
 #include "CPhysicsPushedEntities.h"
 
