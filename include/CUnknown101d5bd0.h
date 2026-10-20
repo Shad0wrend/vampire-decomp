@@ -25,4 +25,6 @@ public:
 	void sub_101d6de0();	// purges the list, then loads the "LevelingTemplate" data files (vdata/system) one by one
 	void sub_101e0df0();	// provisional, like sub_101d6de0 (transplant)
 	void sub_101e0d60();	// deletes every entry and the pointer array, then clears the count and the first field and sets the flag byte at +0x18
+	void sub_101f81c0();	// loads the "TraitEffects" data files (vdata/system): counts the TraitEffects_*.txt files with the file system, then loads TraitEffects%03d.txt one by one through sub_101f7e90
+	bool sub_101f7e90(const char *pszFile);	// loads one trait effect file (called through the stub at 0x100024d7)
 };
