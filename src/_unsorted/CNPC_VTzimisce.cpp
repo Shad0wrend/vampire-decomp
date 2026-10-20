@@ -163,6 +163,36 @@ void CNPC_VTzimisce::vfunc627()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bde40 size=0x66
+#include "CNPC_VTzimisce.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown10381be0.h"
+
+int CNPC_VTzimisce::sub_103bde40(int activity)
+{
+    if (((CUnknown10381be0 *)this)->sub_103be130()) {
+        if (*(char *)((char *)this + 0x6688)) {
+            switch (activity) {
+            case 1:
+                return 0xfc;
+            case 9:
+            case 0x13:
+                return 0xfe;
+            }
+        } else {
+            switch (activity) {
+            case 1:
+                return 0xfd;
+            case 9:
+            case 0x13:
+                return 0xff;
+            }
+        }
+    }
+    return ((CAI_BaseNPCTroika *)this)->sub_10295590(activity);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bf580 size=0x70
 #include "CNPC_VTzimisce.h"
 
