@@ -18354,6 +18354,25 @@ extern "C" GP *prop_base()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e2a0 size=0x67
+#include "CUnknown1018e2a0.h"
+struct GlobalsL { char pad[0xc]; float curtime; };
+extern GlobalsL *g_1070b228;
+
+void CUnknown1018e2a0::sub_1018e2a0(CBaseEntity *pTarget)
+{
+    if (pTarget) {
+        *(unsigned int *)((char *)this + 0x730) = *pTarget->vfunc1();
+        sub_100ac4e0(&CUnknown1018e2a0::sub_10006177, 0, 0);
+        *(float *)((char *)this + 0x17c) = g_1070b228->curtime;
+        *(int *)((char *)this + 0x73c) = *(int *)((char *)pTarget + 0xfec);
+    } else {
+        *(unsigned int *)((char *)this + 0x730) = 0xffffffff;
+        sub_100ac4e0(0, 0, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e9d0 size=0xa
 extern int g_1058d1ac;
 // TARGET: sub_1018e9d0

@@ -305,6 +305,7 @@
 0x10002bda func   ?vfunc253@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc253
 0x10002be9 func   ?vfunc333@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::vfunc333
 0x10002bee func   ?sub_100f6d80@CUnknown100f6d80@@QAEXH@Z CUnknown100f6d80::sub_100f6d80
+0x10002c02 func   ?sub_1018e2a0@CUnknown1018e2a0@@QAEXPAVCBaseEntity@@@Z CUnknown1018e2a0::sub_1018e2a0
 0x10002c52 func   ?vfunc472@CHL2_Player@@UAEXXZ CHL2_Player::vfunc472
 0x10002c7a func   _info_player_start info_player_start
 0x10002c84 func   ?sub_1042fc90@@YAII@Z sub_1042fc90
