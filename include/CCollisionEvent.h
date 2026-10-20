@@ -12,6 +12,19 @@ struct CFrictionEntry_t
 	int m_extra;
 };
 
+struct CDamageInfoBlob	// 0x4c bytes (19 dwords): the damage info of a queued damage event
+{
+	int m_data[19];
+};
+
+struct CDamageEvent_t	// 0x58 byte record of the queued damage events
+{
+	CBaseEntity *m_pEntity;
+	int m_unused;
+	CDamageInfoBlob m_info;	// 0x08
+	int m_pad54;
+};
+
 class CCollisionEvent
 {
 public:
@@ -34,6 +47,7 @@ public:
 	void sub_10030d50();	// "CCollisionEvent::UpdateTouchEvents": scope trace, dispatches every queued touch record (0x24 bytes each, array at +0xd8, count at +0xe4): sub_10030ba0 for a start touch (record +8 is zero), else the end-touch dispatcher sub_10030cb0; then empties the queue
 	void sub_10030ba0(void *a, void *b, void *pData1, void *pData2);	// "CCollisionEvent::DispatchStartTouch" (called through the stub at 0x10009485)
 	void sub_10030cb0(void *a, void *b);	// "CCollisionEvent::DispatchEndTouch" (called through the stub at 0x1000f0bf)
+	void sub_10030e40();	// "CCollisionEvent::UpdateDamageEvents": scope trace, hands every queued damage event (0x58 byte records, array at +0xec, count at +0xf8) to its entity (copy of the damage info), then empties the queue
 
 	char m_pad0004[4];
 	CFrictionEntry_t m_friction[8];	// 0x0008
@@ -41,6 +55,10 @@ public:
 	char *m_pTouchEvents;	// 0x00d8: queued touch records of 0x24 bytes
 	char m_pad00dc[0xe4 - 0xdc];
 	int m_nTouchEvents;	// 0x00e4
-	char m_pad00e8[0x114 - 0xe8];
+	char m_pad00e8[4];
+	CDamageEvent_t *m_pDamageEvents;	// 0x00ec
+	char m_pad00f0[8];
+	int m_nDamageEvents;	// 0x00f8
+	char m_pad00fc[0x114 - 0xfc];
 	CUtlVector20 m_penetrateEvents;	// 0x0114 (size at +0x120)
 };
