@@ -14,6 +14,7 @@ public:
 	void sub_100bb870(int a, const float *pPos);	// "CBeam::PointsInit"-like: clears the type bits above 0xff0, two beam ents, slot 62(a), end position = pPos, clears the attachment entries, then sub_100bbbf0
 	void sub_100bb900(int a, const float *pPos);	// same as sub_100bb870 but sets the low type bits to 3
 	void sub_100bbbf0();	// called through the stub at 0x10013c8c
+	void sub_100bbb10(int nEnts, CBaseEntity **ppEnts, int *pAttach);	// "CBeam::SplineInit"-like: Msg when nEnts < 2 or > 10, type bits = 4, stores the entity handles (+0x468, -1 for null) and attachments (+0x490) of the first nEnts, count at +0x45c, then sub_100bbbf0
 
 	char m_pad03e0[0x45c - 0x3e0];
 	int m_nNumBeamEnts;	// 0x45c
