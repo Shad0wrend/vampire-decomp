@@ -39,4 +39,6 @@ public:
 	void sub_100e7630(void *pFile);	// "CDialog::eat_line": scope trace, reads characters from the file until a newline or EOF
 	int sub_100e7510(void *pFile);	// reads one character (-1 at end of file)
 	int sub_100e4840(int choice);	// "CDialog::goto_line_for_response": scope trace, the entry key of player choice `choice` is looked up in the table; logs "Player responded" and returns the dword at +0xc of that entry, else logs "Could not find response for player choice!" and returns the first entry's dword; 0 without table or choices
+	void sub_100e7890(CDialogEntry_t *pDest, const CDialogEntry_t *pSource);	// "CDialog::line_dup": scope trace, copies the 13 dwords of pSource into pDest, then replaces the string fields (1, 2, 4, 5 and 6..12) with copies made by sub_100e79f0
+	int sub_100e79f0(int pszText, int nKey, int nSize);	// copies a string field of a line (stub 0x10004de5)
 };
