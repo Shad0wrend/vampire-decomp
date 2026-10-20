@@ -28,6 +28,7 @@ public:
 	void sub_10096530(const char *name);	// "CBaseAnimating::SetHitboxSetByName": scope trace (entity name), stores the hitbox set index the studio helper finds for name in GetModelPtr(-1) at +0x680
 	float sub_10095d80(int iController);	// "CBaseAnimating::GetBoneController": scope trace (entity name), the studio helper's value for (GetModelPtr(-1), iController, the encoded controller float at +0x6fc + iController*4)
 	float sub_10095cb0(int iController, float flValue);	// "CBaseAnimating::SetBoneController": scope trace (entity name), the studio helper's value for (GetModelPtr(-1), iController, flValue, &the encoded controller float at +0x6fc + iController*4)
+	void sub_10095be0();	// "CBaseAnimating::InitBoneControllers": scope trace (entity name), SetBoneController(i, 0) for i in 0..3, then slot 260(i, 0) for i in 0..0x17
 	void sub_100963d0();	// "CBaseAnimating::ResetClientsideFrame": scope trace, stores a global-object value at +0x710 and 1 at +0x1b1
 	void sub_100976e0();	// "CBaseAnimating::BlendTransformWithNextSequenceChange": scope trace (entity name), sets bit 11 of +0x19c and saves slot 217() to +0x714 and slot 219() to +0x720 (three floats each)
 	void sub_100977f0(int bone);	// "CBaseAnimating::TurnOnPhysicsChain": scope trace, clears bit (1 << bone) in the dword at +0x72c
