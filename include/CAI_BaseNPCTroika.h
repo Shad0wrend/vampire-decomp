@@ -88,7 +88,10 @@ public:
 	bool sub_10297430(CAI_BaseNPCTroika *pOther);	// "CAI_BaseNPCTroika::...": false unless the entity of the handle at +0x6448 resolves to a live entity, else sub_10296c40(pOther, that entity, the dword at pOther+0x458, 0.731f) != 0
 	char sub_10296c40(CAI_BaseNPCTroika *pOther, CBaseEntity *pEnt, int a, float f);
 	int sub_10295460(int a, int b);	// called through the stub at 0x10009c14
-	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence (the stub at 0x100125c1), called directly
+	bool vfunc347(int event, char *pszName, float *pA, float *pB, float *pC, float *pD);	// "GetExpressionEvent..." override: event 1 stores "Knockback" and four float parameters (the third one raised by sub_10091080(sub_1008dd30(the dword at +0x6068, -1)) when that is not negative), true; else the CBaseCombatCharacter implementation
+	bool sub_10107120(int event, char *pszName, float *pA, float *pB, float *pC, float *pD);	// CBaseCombatCharacter::vfunc347, called directly (stub 0x10014ba0)
+	int sub_1008dd30(int a, int b);	// CBaseAnimating::sub_1008dd30, called directly (stub 0x10004ec1)
+	float sub_10091080(int sequence);	// CBaseAnimating member (stub 0x10009813), returns a float
 
 	char m_pad0004[0x6080];
 	float m_f6084;
