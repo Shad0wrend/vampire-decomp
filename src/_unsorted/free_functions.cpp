@@ -50719,6 +50719,33 @@ char CBaseCombatCharacter::sub_103380d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10338440 size=0xf0
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+int sub_10202780(int a);
+
+void CBaseCombatCharacter::sub_10338440(const int *pStat)
+{
+	ScopeTrace t("CBaseCombatCharacter::VStatGet", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int value = pStat[1];
+	int id = sub_10202780(pStat[0]);
+	CVStatList_t *pList;
+	for (int i = 0; i < m_nStatLists; i++) {
+		if (m_pStatLists[i]->m_field10 == id) {
+			pList = m_pStatLists[i];
+			goto found;
+		}
+	}
+	{
+		static CVStatList_t s_default(-1);
+		pList = &s_default;
+	}
+found:
+	pList->sub_10200d60(value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103394a0 size=0x8d
 #include "CBaseCombatCharacter.h"
 
