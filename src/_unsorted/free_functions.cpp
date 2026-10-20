@@ -3162,6 +3162,30 @@ void CUnknown10045110::sub_10045110(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10045de0 size=0x127
+#include "CUtlRBTree36.h"
+extern int g_109f0b74;
+struct Key28 { int a; char pad[24]; };
+unsigned short CUtlRBTree36::sub_10045de0(const int *pKey)
+{
+    Key28 key;
+    key.a = *pKey;
+    int ctx = *(int *)((char *)this + 0x18);
+    if (ctx)
+        g_109f0b74 = ctx;
+    unsigned short current = m_Root;
+    while (current != InvalidIndex()) {
+        if (m_LessFunc(&key, m_pElements[current].m_Data))
+            current = Links(current).m_Left;
+        else if (m_LessFunc(m_pElements[current].m_Data, &key))
+            current = Links(current).m_Right;
+        else
+            break;
+    }
+    return current;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10046050 size=0x1d0
 struct Vec { int x, y, z; void sub_1003e4b0(const Vec &o); };
 struct Box {
