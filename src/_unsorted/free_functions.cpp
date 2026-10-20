@@ -49895,6 +49895,29 @@ char CBaseCombatCharacter::sub_10337300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10337860 size=0xde
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+int CBaseCombatCharacter::sub_10337860()
+{
+	ScopeTrace t("CBaseCombatCharacter::GetCharTemplate", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CVStatList_t *pList;
+	for (int i = 0; i < m_nStatLists; i++) {
+		if (m_pStatLists[i]->m_field10 == 0) {
+			pList = m_pStatLists[i];
+			goto found;
+		}
+	}
+	{
+		static CVStatList_t s_default(-1);
+		pList = &s_default;
+	}
+found:
+	return pList->sub_10010609(10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10337a60 size=0x79
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
