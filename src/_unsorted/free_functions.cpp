@@ -19028,6 +19028,42 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016bd50 size=0x89
+#include "CBasePlayer.h"
+#include "CBaseAnimating.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct CGlobalVars_t
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+
+extern CGlobalVars_t *g_1070b228;
+extern char *(__cdecl *g_109f386c)(const char *pStr, const char *pSub);
+
+void CBasePlayer::sub_1016bd50()
+{
+	sub_101618e0(1, 1);
+	*(int *)((char *)this + 0x1ebc) = -1;
+	*(int *)((char *)this + 0x168) = 0;
+	*(int *)((char *)this + 0x16c) = 0;
+	*(char *)((char *)this + 0x1edc) = 0;
+	*(float *)((char *)this + 0x1c68) = g_1070b228->curtime;
+	char *pszModelName = (char *)this + 0x23d4;
+	char *pFound = g_109f386c(pszModelName, (char *)((CBaseAnimating *)this)->sub_100952d0(-1) + 0xc);
+	if (pFound) {
+		if (_strcmpi((char *)((CBaseAnimating *)this)->sub_100952d0(-1) + 0xc, pFound) == 0)
+			return;
+	}
+	typedef void (CBasePlayer::*Fn)(char *);
+	union { void *p; Fn f; } u;
+	u.p = (*(void ***)this)[105];
+	(this->*u.f)(pszModelName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016e500 size=0x84
 #include "CCollisionProperty.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
