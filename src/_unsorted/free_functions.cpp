@@ -23239,6 +23239,46 @@ void CBasePlayer::sub_1017bf10(int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c6d0 size=0x10c
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "IVEngineServer.h"
+#include "ScopeTrace.h"
+#include "CVariantCopy.h"
+
+extern IVEngineServer *g_1070b22c;
+extern char g_10543c6c[];
+extern char g_10555f7c[];
+
+struct EdictUnknown { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *vfunc4(); };
+struct EdictX { char pad[0x40]; EdictUnknown *m_pUnk; };
+
+void CBasePlayer::sub_1017c6d0()
+{
+    if (m_nUseEdictIndex1EB8 != 0 && m_bNotifyUse1EC0 != 0) {
+        EdictX *pEdict = (EdictX *)g_1070b22c->vfunc38(m_nUseEdictIndex1EB8);
+        CBaseEntity *pEnt;
+        {
+            ScopeTrace trace(g_10543c6c, g_106b8540);
+            if (pEdict == 0)
+                pEdict = (EdictX *)g_1070b22c->vfunc38(0);
+            if (pEdict && pEdict->m_pUnk)
+                pEnt = pEdict->m_pUnk->vfunc4();
+            else
+                pEnt = 0;
+        }
+        if (pEnt) {
+            m_bNotifyUse1EC0 = 0;
+            CVariantCopy v;
+            *(char *)&v.m_value = 0;
+            v.m_fieldType = 5;
+            pEnt->vfunc118(g_10555f7c, (CBaseEntity *)this, (CBaseEntity *)this, v, 0);
+        }
+    }
+    m_nUseEdictIndex1EB8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c830 size=0x9a
 #include "QuestJournal.h"
 #include <string.h>

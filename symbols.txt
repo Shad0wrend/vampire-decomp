@@ -3719,6 +3719,7 @@
 0x1001304d func   ?vfunc0@CAI_Motor@@UAEPAV1@I@Z CAI_Motor::vfunc0
 0x1001305c func   _item_g_wireless_camera_1 item_g_wireless_camera_1
 0x1001306b func   ?sub_10256220@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10256220
+0x10013070 func   ?sub_1017c6d0@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017c6d0
 0x10013075 func   _item_g_wireless_camera_2 item_g_wireless_camera_2
 0x1001307f func   _item_g_wireless_camera_3 item_g_wireless_camera_3
 0x10013089 func   _item_g_wireless_camera_4 item_g_wireless_camera_4
