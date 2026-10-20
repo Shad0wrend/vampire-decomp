@@ -19,4 +19,5 @@ public:
 	int m_i28;
 
 	CUnknown1024b2d0 *sub_1024b2d0(int arg, int count, char flag);
+	void sub_1024b880();	// removes all elements (stub 0x10010785)
 };
