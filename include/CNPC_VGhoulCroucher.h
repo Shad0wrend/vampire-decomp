@@ -15,4 +15,7 @@ public:
 	int sub_10001b45(void *pInfo);	// CNPC_VHuman::vfunc390 (stub 0x10001b45), called directly
 	char vfunc294(int a);	// slot 294 "CNPC_VGhoulCroucher::IsValidStealthKillTarget": scope trace (entity name), true when the free getter sub_1037bb20 (byte at +0x6666) is zero, else CAI_BaseNPCTroika::vfunc294(a)
 	char sub_1000c081(int a);	// CAI_BaseNPCTroika::vfunc294 (stub 0x1000c081), called directly
+	void vfunc444(void *pTask);	// slot 444 "CNPC_VGhoulCroucher::RunTask": scope trace (entity name); tasks 0x14a / 0x14b: when slot 251() holds (and for 0x14b setting the byte at +0x6667) calls sub_10273e80(0); other tasks go to CNPC_VHumanCombatant::vfunc444
+	void sub_100080da(void *pTask);	// CNPC_VHumanCombatant::vfunc444 (stub 0x100080da), called directly
+	void sub_10273e80(int a);	// called through the stub at 0x1000ac68
 };
