@@ -2,6 +2,7 @@
 #pragma once
 
 struct inputdata_t;
+class CBaseEntity;
 
 class CNPC_VVampireBoss
 {
@@ -30,4 +31,6 @@ public:
 	int vfunc127(int a);	// slot 127 "CNPC_VVampireBoss::Restore": scope trace, base restore (sub_1000527c), clears the monster model name (+0x6680) and the body emitter names, sets the default NPC name (+0x6694); returns the base result
 	int sub_1000527c(int a);	// CAI_BaseNPCTroika::vfunc127, called directly
 	void sub_103c7150();	// "CNPC_VVampireBoss::KillBodyEmitters": scope trace, for each of the four particle emitter handles (+0x66a0) that resolves, calls slot 242 on it, then sub_1000fb23(0.1f)
+	void sub_103c6f40();	// "CNPC_VVampireBoss::SpawnBodyEmitters": scope trace, KillBodyEmitters, then for each of the four emitter names (global table at 0x1065e6d0) spawns one with sub_103c7010 and stores its handle at +0x66a0
+	CBaseEntity *sub_103c7010(int index, const char *attachment);	// spawns the body emitter `index` on the attachment (stub 0x1000f4b6), null on failure
 };
