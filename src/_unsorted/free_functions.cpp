@@ -27141,6 +27141,16 @@ CUnknown1024b2d0 *CUnknown1024b2d0::sub_1024b2d0(int arg, int count, char flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024c000 size=0x34
+#include "UtlVec8.h"
+void UtlVec8::sub_1024c000(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&m_pMemory[(elem + num) * 4], &m_pMemory[elem * 4], numToMove * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024c050 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
