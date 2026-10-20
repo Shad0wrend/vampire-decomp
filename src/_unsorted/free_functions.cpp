@@ -29444,6 +29444,38 @@ bool CVStatList_t::sub_102017b0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10201980 size=0x8c
+#include "CVStatList_t.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+int CVStatList_t::sub_10201980()
+{
+	int bestIndex = -1;
+	int best = -1;
+	int i = 0;
+	g_109f3620[*g_109f3680].a = "CVStatList_t::GetHighestValueIndex";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (m_field04 > 0) {
+		do {
+			int v = sub_10010609(i);
+			if (v > best) {
+				best = v;
+				bestIndex = i;
+			}
+			i++;
+		} while (i < m_field04);
+	}
+	(*g_109f3680)--;
+	return bestIndex;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10201ca0 size=0x162
 #include "CUnknown10201ca0.h"
 #include "CVStatList_t.h"
