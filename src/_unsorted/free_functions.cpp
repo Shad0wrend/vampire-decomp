@@ -4512,6 +4512,27 @@ int sub_100697a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069980 size=0x66
+#include "CTETParticle.h"
+#include "CUnknown1070b22c.h"
+
+extern CTETParticle g_106c6738;
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: sub_10069980
+void sub_10069980(int pFilter, int delayBits, const float *pOrigin, const float *pDirection, int entIndex)
+{
+    g_106c6738.m_vOrigin[0] = pOrigin[0];
+    g_106c6738.m_vOrigin[1] = pOrigin[1];
+    g_106c6738.m_vOrigin[2] = pOrigin[2];
+    g_106c6738.m_vDirection[0] = pDirection[0];
+    g_106c6738.m_vDirection[1] = pDirection[1];
+    g_106c6738.m_vDirection[2] = pDirection[2];
+    g_106c6738.m_bEntIndexFlag = g_1070b22c->vfunc17(entIndex, 0);
+    g_106c6738.sub_100695e0(pFilter, delayBits);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006a7b0 size=0xe1
 #include "SendProp.h"
 
