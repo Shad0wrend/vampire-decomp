@@ -56,6 +56,8 @@ struct CBasePlayerPartOwner	// the object at +0x2100; only slot 5 is typed
 	virtual void vfunc5(CBasePlayerPart *pPart);
 };
 
+class CGlobalEntityList_Ent;
+
 class CBasePlayer
 {
 public:
@@ -68,7 +70,11 @@ public:
 	CBP_V1(sd3) CBP_V1(sd4) CBP_V1(sd5)
 	virtual float *vfunc221();
 	// slots 222..402
-	CBP_V100(se) CBP_V10(sf0) CBP_V10(sf1) CBP_V10(sf2) CBP_V10(sf3) CBP_V10(sf4) CBP_V10(sf5) CBP_V10(sf6) CBP_V10(sf7) CBP_V1(sg0)
+	CBP_V10(se0) CBP_V10(se1) CBP_V10(se2) CBP_V10(se3) CBP_V10(se4) CBP_V10(se5) CBP_V10(se6) CBP_V10(se7) CBP_V10(se8)
+	CBP_V1(se90) CBP_V1(se91) CBP_V1(se92) CBP_V1(se93)
+	virtual void vfunc316(CGlobalEntityList_Ent *pEnt, int a, int b);	// slot 316: with an entity: unless the entity of the handle at +0x1c58 is live, answers slot 158 and differs from pEnt, takes over pEnt's handle into +0x1c5c / +0x1c60 while the activity at +0xff0 is 1 or 5 and sub_1015fd50() is -1
+	CBP_V1(se95) CBP_V1(se96) CBP_V1(se97) CBP_V1(se98) CBP_V1(se99)
+	CBP_V10(sf0) CBP_V10(sf1) CBP_V10(sf2) CBP_V10(sf3) CBP_V10(sf4) CBP_V10(sf5) CBP_V10(sf6) CBP_V10(sf7) CBP_V1(sg0)
 	virtual void vfunc403();
 	CBP_V1(sh0) CBP_V1(sh1) CBP_V1(sh2)
 	virtual void vfunc407();
@@ -174,4 +180,5 @@ public:
 	void *sub_1032e8b0(int index);	// CBaseCombatCharacter::GetWeapon (stub 0x100100b4), called directly
 	int sub_103346c0(int ammoIndex);	// CBaseCombatCharacter::GetAmmoCount (stub 0x1000ff97), called directly
 	void sub_1017bf10(int mode);	// switches the active view part: mode 0 / 1 swap the parts at +0x2104 / +0x2108 (name from slot 217, show / hide through their slots 35 / 21, handed to the part owner at +0x2100 and VPhysicsSwapObject), mode 2 hides both
+	int sub_1015fd50();	// worker called by slot 316 (stub 0x10012d69)
 };
