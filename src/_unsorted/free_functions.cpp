@@ -16429,6 +16429,53 @@ extern "C" GP *light_environment()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101312f0 size=0x7e
+struct CUnk101312f0Node {
+    int m_value;
+    char pad04[0xc];
+    int m_type;	// 0x10: 4 is an integer
+    char pad14[4];
+    CUnk101312f0Node *m_pNext;	// 0x18
+
+    int Int() const { return m_type == 4 ? m_value : 0; }
+};
+struct CUnk101312f0Output {
+    char pad[0x18];
+    void sub_100cd660(int value, void *pOwner, int delay);
+};
+struct CUnk101312f0 {
+    char pad0000[0x450];
+    CUnk101312f0Output m_OnA;	// 0x450
+    CUnk101312f0Output m_OnB;	// 0x468
+    int m_nCurrent;	// 0x480
+    int m_nFlag;	// 0x484
+    CUnk101312f0Node *m_pList;	// 0x488
+    int m_n48c;	// 0x48c
+    void sub_101312f0(int *pArg);
+};
+
+void CUnk101312f0::sub_101312f0(int *pArg)
+{
+    CUnk101312f0Node *pNode = m_pList;
+    int nCurrent = m_nCurrent;
+    m_n48c = 0;
+    if (m_nFlag == 0) {
+        if (!pNode) {
+            m_OnA.sub_100cd660(*pArg, this, 0);
+            return;
+        }
+        nCurrent = pNode->Int();
+    }
+    for (; pNode; pNode = pNode->m_pNext) {
+        if (pNode->Int() != nCurrent) {
+            m_OnB.sub_100cd660(*pArg, this, 0);
+            return;
+        }
+    }
+    m_OnA.sub_100cd660(*pArg, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131490 size=0x116
 struct ISaveRestoreOps;
 struct datamap_t;
