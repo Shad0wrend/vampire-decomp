@@ -44413,6 +44413,13 @@ char sub_102b97a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bec60 size=0x11
+int sub_102bec60(int *a, int *b)
+{
+    return a[1] - b[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x102becb0 size=0x59
 #include "CUnknown102becb0.h"
 

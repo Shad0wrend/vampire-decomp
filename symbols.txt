@@ -1597,6 +1597,7 @@
 0x10008b8e func   ?sub_10074a70@CUnknown10074a70@@QAEXH@Z CUnknown10074a70::sub_10074a70
 0x10008b93 func   ?sub_10099d40@@YAHPAUSEntV137@@H@Z sub_10099d40
 0x10008ba2 func   ?vfunc505@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc505
+0x10008bca func   ?sub_102bec60@@YAHPAH0@Z sub_102bec60
 0x10008bd4 func   ?sub_102950c0@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102950c0
 0x10008bd9 func   ?sub_100cb670@@YAPAHXZ sub_100cb670
 0x10008bde func   ?sub_100a8c90@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a8c90
