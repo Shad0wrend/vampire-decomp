@@ -13312,6 +13312,20 @@ extern "C" GP *func_door_rotating()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3860 size=0x73
+struct S100f3860 { float x, y, z; };
+extern "C" double __cdecl fabs(double);
+float __cdecl sub_1013d580(float, float);
+static inline float AngleDiff(float a, float b)
+{
+    return sub_1013d580(a, b);
+}
+float __stdcall sub_100f3860(const S100f3860 *a, const S100f3860 *b)
+{
+    return (float)fabs(AngleDiff(a->x, b->x) + AngleDiff(a->y, b->y) + AngleDiff(a->z, b->z));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4140 size=0x3e
 extern "C" __declspec(dllimport) int Q_snprintf(char *buf, int size, const char *fmt, ...);
 void __cdecl sub_100f4490(char *cmd, int a);
