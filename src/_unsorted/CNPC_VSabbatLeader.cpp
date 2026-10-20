@@ -232,6 +232,28 @@ int CNPC_VSabbatLeader::sub_103aa480(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ab400 size=0x78
+#include "CNPC_VSabbatLeader.h"
+extern char g_106b8540[];
+struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeTraceEntry *g_109f3620;
+char CNPC_VSabbatLeader::vfunc590()
+{
+    g_109f3620[*g_109f3680].a = "CNPC_VSabbatLeader::OkToInterruptForMelee";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (m_nState != 0x1141) {
+        char r = sub_1000ac22();
+        --*g_109f3680;
+        return r;
+    }
+    --*g_109f3680;
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ab4a0 size=0xa9
 #include "CNPC_VSabbatLeader.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
