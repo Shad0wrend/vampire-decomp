@@ -76,6 +76,45 @@ void CCollisionEvent::vfunc0(void *pEventArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100316f0 size=0xd9
+#include "CCollisionEvent.h"
+#include "ScopeTrace.h"
+
+class CBaseEntity;
+
+struct CPhysObjSlots
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+	virtual CBaseEntity *GetGameData();
+};
+
+struct CPhysDataSlots
+{
+	virtual void GetContactPoint(float *pOut);
+	virtual void GetSurfaceNormal(float *pOut);
+};
+
+extern char g_1070d1b0[];
+
+void CCollisionEvent::vfunc4(void *pObject1, void *pObject2, void *pData)
+{
+	ScopeTrace t("CCollisionEvent::EndTouch", g_106b8540);
+	CBaseEntity *pEnt1 = ((CPhysObjSlots *)pObject1)->GetGameData();
+	CBaseEntity *pEnt2 = ((CPhysObjSlots *)pObject2)->GetGameData();
+	if (pEnt1 && pEnt2) {
+		float normal[3];
+		float point[3];
+		((CPhysDataSlots *)pData)->GetSurfaceNormal(normal);
+		((CPhysDataSlots *)pData)->GetContactPoint(point);
+		if (*((char *)this + 0x13c) == 0) {
+			sub_10030cb0(pEnt1, pEnt2);
+			return;
+		}
+		sub_10030f30(pEnt1, pEnt2, 1, g_1070d1b0, g_1070d1b0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031810 size=0x81
 #include "CCollisionEvent.h"
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
