@@ -47173,6 +47173,23 @@ PatrolPlace* sub_102dd8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dda40 size=0x11
+struct CPairFields102dda40 {
+    int pad0;
+    int field4;
+    int field8;
+    int sub_102dda40(int a);
+};
+int CPairFields102dda40::sub_102dda40(int a)
+{
+    int r = field4;
+    if (a == r) {
+        r = field8;
+    }
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ddb30 size=0xa0
 #include "CAI_LocalNavigator.h"
 
