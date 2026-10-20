@@ -2,7 +2,8 @@
 #pragma once
 #include "CAI_Component.h"
 #include "UtlMem.h"
-#include "CAnchorList.h"	// g_109f3624, the game's Plat_Free
+
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);	// tier0
 
 struct CAI_SensesVec	// a CUtlVector<int>: memory (pointer, allocation count, grow size), size, element pointer
 {
@@ -17,7 +18,7 @@ struct CAI_SensesVec	// a CUtlVector<int>: memory (pointer, allocation count, gr
 		m_pElements = m_mem.m_pMemory;
 		if (m_mem.m_growSize != -1) {
 			if (m_mem.m_pMemory) {
-				g_109f3624(m_mem.m_pMemory);
+				Plat_Free(m_mem.m_pMemory);
 				m_mem.m_pMemory = 0;
 			}
 			m_mem.m_allocationCount = 0;
