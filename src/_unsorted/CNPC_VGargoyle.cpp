@@ -13,6 +13,44 @@ int CNPC_VGargoyle::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378470 size=0x102
+#include "CNPC_VGargoyle.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+struct CSoundPrecacher
+{
+	virtual void PrecacheSound(const char *pszName, int a);
+};
+
+extern CSoundPrecacher *g_1070b248;
+extern const char *g_10639480[];
+extern const char *g_10639490[];
+void sub_101d0ec0(const char *pszName);
+
+void CNPC_VGargoyle::vfunc104()
+{
+	sub_10384670();
+	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/garg_gibbs.mdl", 1);
+	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_head.mdl", 1);
+	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_L_foot.mdl", 1);
+	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_L_hand.mdl", 1);
+	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_L_torso.mdl", 1);
+	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_pelvis.mdl", 1);
+	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_R_foot.mdl", 1);
+	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_R_hand.mdl", 1);
+	g_1070b22c->vfunc13("models/character/monster/gargoyle/gargoyle_gibbs/gargoyle_R_torso.mdl", 1);
+	unsigned int i;
+	for (i = 0; i < 4; i++)
+		g_1070b248->PrecacheSound(g_10639480[i], 0);
+	for (i = 0; i < 3; i++)
+		g_1070b248->PrecacheSound(g_10639490[i], 0);
+	g_1070b248->PrecacheSound("character/monster/gargoyle/roar2.wav", 0);
+	sub_101d0ec0("item_w_gargoyle_fist");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10378a30 size=0xf0
 #include "CNPC_VHuman.h"
 

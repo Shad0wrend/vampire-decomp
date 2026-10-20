@@ -2289,6 +2289,7 @@
 0x1000c2de func   ?sub_103e0cd0@@YAHPBD@Z sub_103e0cd0
 0x1000c2e8 func   ?sub_103a1590@@YADXZ sub_103a1590
 0x1000c2f2 func   ?sub_103167f0@HandleList@@QAE_NPAX@Z HandleList::sub_103167f0
+0x1000c2fc func   ?vfunc104@CNPC_VGargoyle@@QAEXXZ CNPC_VGargoyle::vfunc104
 0x1000c301 func   ?vfunc2@CTEBeamRing@@UAEPAV1@I@Z CTEBeamRing::vfunc2
 0x1000c32e func   ?vfunc226@CPhysicsProp@@QAEXH@Z CPhysicsProp::vfunc226
 0x1000c347 func   ?vfunc5@COccultExperience@@QAEPAV1@I@Z COccultExperience::vfunc5
