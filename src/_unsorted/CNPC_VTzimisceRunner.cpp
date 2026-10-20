@@ -38,3 +38,42 @@ bool CNPC_VTzimisceRunner::vfunc599(void *pEntity)
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c39e0 size=0x64
+#include "CNPC_VTzimisceRunner.h"
+
+struct GlobalObj
+{
+	virtual void a0();
+	virtual void a1();
+};
+extern GlobalObj *g_10924edc;
+
+struct HandleEnt
+{
+	virtual void a0();
+	virtual unsigned int *GetRefEHandle();
+};
+
+struct BehaviourObj
+{
+	bool sub_10015564(void *npc, int a);
+};
+
+// TARGET: CNPC_VTzimisceRunner::vfunc600
+bool CNPC_VTzimisceRunner::vfunc600(void *pEntity)
+{
+	g_10924edc->a1();
+	if (pEntity)
+		*(unsigned int *)((char *)this + 0x6678) = *((HandleEnt *)pEntity)->GetRefEHandle();
+	else
+		*(unsigned int *)((char *)this + 0x6678) = 0xffffffff;
+	if (!*((char *)this + 0x6078) && (*(BehaviourObj **)((char *)this + 0x65e8))->sub_10015564(this, 0))
+	{
+		*((char *)this + 0x6078) = 1;
+		return true;
+	}
+	*((char *)this + 0x6078) = 0;
+	return false;
+}
+// END FUNCTION
