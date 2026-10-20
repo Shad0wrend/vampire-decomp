@@ -739,6 +739,33 @@ int CCollisionEvent::sub_10031270(int inflictor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10031520 size=0x76
+#include "CCollisionEvent.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+void CCollisionEvent::sub_10031520()
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "CCollisionEvent::LevelShutdown";
+	g_109f3620[*g_109f3680].m_pszName = "";
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	for (int i = 0; i < 8; i++) {
+		if (m_friction[i].m_value)
+			sub_10012544(&m_friction[i]);
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031bd0 size=0x72
 struct Sub { void *pEnt; unsigned int serial; };
 struct EntInfo { int pad; Sub s; };

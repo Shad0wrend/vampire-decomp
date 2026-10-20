@@ -3608,6 +3608,7 @@
 0x100155e6 func   ?vfunc25@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc25
 0x1001560e func   ?sub_10066e20@@YAHXZ sub_10066e20
 0x1001561d func   ?vfunc67@CBaseEntity@@UAEXXZ CBaseEntity::vfunc67
+0x10015645 func   ?sub_10031520@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10031520
 0x1001567c func   ?vfunc503@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc503
 0x100156a4 func   ?vfunc5@CItemGRingGold@@QAEPAV1@I@Z CItemGRingGold::vfunc5
 0x100156a9 func   ?sub_10247450@@YAPADH@Z sub_10247450
