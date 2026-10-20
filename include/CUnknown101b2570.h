@@ -12,8 +12,11 @@ class CUnknown101b2570
 public:
 	char m_pad0000[0xc];
 	SFloatPair m_pitch;	// 0x000c
-	char m_pad0014[0xa9 - 0x14];
+	SFloatPair m_soundlevel;	// 0x0014
+	char m_pad001c[0x89 - 0x1c];
+	char m_szSoundLevel[0x20];	// 0x0089
 	char m_szPitch[0x20];	// 0x00a9
 
 	void sub_101b2570(const char *pitch);	// parses "PITCH_NORM" / "PITCH_LOW" / "PITCH_HIGH" or a number pair, and keeps the text
+	void sub_101b2630(const char *soundlevel);	// parses "SNDLVL_..." (through sub_101b49f0) or a number pair into m_soundlevel, and keeps the text
 };
