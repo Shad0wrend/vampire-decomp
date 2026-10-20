@@ -5361,6 +5361,31 @@ void sub_100611b0(int a, int b, int *pOrigin, int p4, int p5, int p6, int p7, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10061250 size=0x30
+#include "CTEEnergySplash.h"
+
+extern int vt_1044de24[];
+
+struct CBaseTempEntityHeadPlaceholder {
+    void sub_10015334(int a);
+};
+
+// TARGET: CTEEnergySplash::sub_10061250
+CTEEnergySplash *CTEEnergySplash::sub_10061250(int a)
+{
+    ((CBaseTempEntityHeadPlaceholder *)this)->sub_10015334(a);
+    *(int **)this = vt_1044de24;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(char *)((char *)this + 0x24) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10061e80 size=0xb7
 #include "CTEExplosion.h"
 

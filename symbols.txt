@@ -2653,6 +2653,7 @@
 0x1000de95 func   _item_g_bertrams_cd item_g_bertrams_cd
 0x1000de9a func   ?vfunc14@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc14
 0x1000dea9 func   ?sub_101fd8c0@@YAXH@Z sub_101fd8c0
+0x1000deae func   ?sub_10061250@CTEEnergySplash@@QAEPAV1@H@Z CTEEnergySplash::sub_10061250
 0x1000def4 func   ?vfunc5@CNPC_VFrenzyShadow@@QAEPAV1@I@Z CNPC_VFrenzyShadow::vfunc5
 0x1000df03 func   ?sub_101e48b0@UtlMem@@QAEXXZ UtlMem::sub_101e48b0
 0x1000df1c func   ?sub_102d0910@CUnk102d0910@@QAEXH@Z CUnk102d0910::sub_102d0910
