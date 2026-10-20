@@ -25,6 +25,25 @@ struct CDamageEvent_t	// 0x58 byte record of the queued damage events
 	int m_pad54;
 };
 
+struct CPenetrateEvent_t	// 20 byte record of the penetrating entity pairs
+{
+	unsigned int m_hEntity0;
+	unsigned int m_hEntity1;
+	float m_flLastTime;	// 0x08: when the pair was last reported
+	float m_flTime0c;
+	int m_nReported;	// 0x10
+};
+
+class CCollisionEvent;
+
+// The IPhysicsCollisionSolver sub-object at +4 of CCollisionEvent (its methods get this + 4 as ECX).
+struct CCollisionEventSolver
+{
+	int sub_1002fb00(void *pObject0, void *pObject1, CBaseEntity *pEntity0, CBaseEntity *pEntity1, float flDeltaTime);	// "CCollisionEvent::ShouldSolvePenetration": scope trace, orders the entity pair, finds its penetration record and, at most every 0.x seconds per pair, flags it and (without the cvar override and with the console variable set) reports both entities (sub_1002fc30 with 10.0f); always 1
+
+	CCollisionEvent *Event() { return (CCollisionEvent *)((char *)this - 4); }
+};
+
 class CCollisionEvent
 {
 public:
@@ -39,7 +58,7 @@ public:
 	int sub_10031270(int inflictor);	// "CCollisionEvent::FindDamageInflictor": index of the last 32-byte record (array at +0x100, count at +0x10c) starting with inflictor, or -1
 	CFrictionEntry_t *sub_10030720(int key);	// "CCollisionEvent::FindFriction": scope trace, the entry of the 8 at +0x8 with this key, else the first free one, else null
 	float sub_100309a0(int key);	// "CCollisionEvent::DeltaTimeSinceLast": scope trace, searches the (key, time) records of the vector at +0x128 from the back; found: curtime minus the stored time; else appends (key, curtime) and returns 0
-	void sub_1002f900(CBaseEntity *pA, CBaseEntity *pB);	// "CCollisionEvent::FindOrAddPenetrateEvent": scope trace, searches the 20 byte records of m_penetrateEvents from the back for the pair of entity handles, appending (handles, curtime, 0) when absent; then stores curtime in the record's +0xc
+	CPenetrateEvent_t *sub_1002f900(CBaseEntity *pA, CBaseEntity *pB);	// "CCollisionEvent::FindOrAddPenetrateEvent": scope trace, searches the 20 byte records of m_penetrateEvents from the back for the pair of entity handles, appending (handles, curtime, 0) when absent; then stores curtime in the record's +0xc; returns the record
 	void sub_10031520();	// "CCollisionEvent::LevelShutdown": scope trace, releases every used friction entry
 	void sub_10030ae0();	// "CCollisionEvent::UpdateFrictionSounds": scope trace, shuts down every friction entry that is set and older than curtime - 0.1
 	void sub_10012544(CFrictionEntry_t *pEntry);	// releases a friction entry (stub of 0x100307f0)
