@@ -2259,6 +2259,7 @@
 0x1000c5b8 func   ?sub_10107550@Mem400@@QAEXH@Z Mem400::sub_10107550
 0x1000c60d func   ?vfunc390@CNPC_VGargoyle@@QAEHPAX@Z CNPC_VGargoyle::vfunc390
 0x1000c630 func   _item_g_drugs_morphine_bottle item_g_drugs_morphine_bottle
+0x1000c63a func   ?sub_101e0f00@CUnknown101e0f00@@QAEXXZ CUnknown101e0f00::sub_101e0f00
 0x1000c63f func   ??1StatDefault3@@QAE@XZ StatDefault3::~StatDefault3
 0x1000c644 func   _info_node_patrol_point info_node_patrol_point
 0x1000c64e func   ?sub_100e7f70@@YA_NPADHPBD1@Z sub_100e7f70
