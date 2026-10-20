@@ -3403,6 +3403,7 @@
 0x10013ca0 func   ?sub_102becb0@CUnknown102becb0@@QAEXXZ CUnknown102becb0::sub_102becb0
 0x10013cd7 func   ?sub_100d5be0@@YAXXZ sub_100d5be0
 0x10013cff func   ?sub_1019f980@SSave@@QAEPAU1@E@Z SSave::sub_1019f980
+0x10013d0e func   ??0CVariantCopy@@QAE@ABU0@@Z CVariantCopy::CVariantCopy
 0x10013d18 func   ?sub_100b04d0@@YAXXZ sub_100b04d0
 0x10013d1d func   ?vfunc4@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc4
 0x10013d4f func   ?sub_102a95e0@CUnknown102a95e0@@QAEPAHH@Z CUnknown102a95e0::sub_102a95e0
