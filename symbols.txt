@@ -3283,6 +3283,7 @@
 0x10014402 func   _env_particle env_particle
 0x1001440c func   ?sub_10055ec0@UtlMem@@QAEXH@Z UtlMem::sub_10055ec0
 0x10014416 func   _prop_dynamic_ornament prop_dynamic_ornament
+0x10014420 func   ?sub_1025c9d0@CUtlRBTreeBig@@QAEXPBXAAGAA_N@Z CUtlRBTreeBig::sub_1025c9d0
 0x1001442a func   ?sub_10401210@@YAHXZ sub_10401210
 0x1001443e func   _item_w_chang_blade item_w_chang_blade
 0x10014448 func   _env_dustpuff env_dustpuff
