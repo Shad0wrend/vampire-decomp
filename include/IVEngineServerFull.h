@@ -25,7 +25,9 @@ public:
 	virtual void vfunc80(); virtual void vfunc81(); virtual void vfunc82(); virtual void vfunc83(); virtual void vfunc84();
 	virtual void vfunc85(); virtual void vfunc86(); virtual void vfunc87(); virtual void vfunc88(); virtual void vfunc89();
 	virtual void vfunc90(); virtual void vfunc91(); virtual void vfunc92(); virtual void vfunc93(); virtual void vfunc94();
-	virtual void vfunc95(); virtual void vfunc96(); virtual void vfunc97(); virtual void vfunc98(); virtual void vfunc99();
+	virtual void vfunc95(); virtual void vfunc96(); virtual void vfunc97();
+	virtual const char *ParseFile(const char *pData, char *pToken);	// slot 98 (+0x188): COM_Parse, returns the rest of the string
+	virtual void vfunc99();
 	virtual void vfunc100(); virtual void vfunc101(); virtual void vfunc102();
 	// slot 103: (recipient filter, delay as a raw float dword, sender, send table, class id)
 	virtual void PlaybackTempEntity(int pFilter, int delayBits, const void *pSender, void *pSendTable, int classID);
