@@ -29643,6 +29643,30 @@ int CVStatSubCost_t::sub_101fbc40(int level, bool bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fc000 size=0x9f
+#include <stdio.h>
+#include "CVStatCost_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern void (__cdecl *g_109f3650)(int level, const char *fmt, ...);
+
+void CVStatSubCost_t::sub_101fc000(const char *pszLabel)
+{
+    char buf[128];
+    g_109f3620[*g_109f3680].a = "CVStatSubCost_t::Debug_Display";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (!sub_101fb8f0()) {
+        sprintf(buf, "\t\t\t( %s: '%s' )\t", pszLabel, sub_101fbd30());
+        g_109f3650(1, buf);
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fc0d0 size=0x66
 #include "CVStatCost_t.h"
 extern int *g_109f3680;
