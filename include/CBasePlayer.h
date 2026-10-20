@@ -5,6 +5,7 @@
 #pragma once
 
 class CBaseEntity;
+class CBasePlayer;
 struct inputdata_t;
 
 struct CBasePlayerHandleVec	// a CUtlVector<EHANDLE>
@@ -29,6 +30,12 @@ struct CBasePlayerSub270	// small polymorphic object embedded at +0x270
 #define CBP_V100(p) CBP_V10(p##0) CBP_V10(p##1) CBP_V10(p##2) CBP_V10(p##3) CBP_V10(p##4) \
 	CBP_V10(p##5) CBP_V10(p##6) CBP_V10(p##7) CBP_V10(p##8) CBP_V10(p##9)
 
+struct CBasePlayerVehicle	// the vehicle object at +0x20fc; only slot 10 is typed
+{
+	CBP_V10(vv)
+	virtual void vfunc10(CBasePlayer *pPlayer);
+};
+
 class CBasePlayer
 {
 public:
@@ -45,17 +52,29 @@ public:
 	virtual void vfunc407();
 	virtual void vfunc408();
 	// slots 409..447
-	CBP_V10(si0) CBP_V10(si1) CBP_V10(si2) CBP_V1(sj0) CBP_V1(sj1) CBP_V1(sj2) CBP_V1(sj3) CBP_V1(sj4) CBP_V1(sj5) CBP_V1(sj6) CBP_V1(sj7) CBP_V1(sj8)
+	CBP_V1(si0a) CBP_V1(si0b) CBP_V1(si0c)
+	virtual bool vfunc412();
+	CBP_V1(si0e) CBP_V1(si0f) CBP_V1(si0g) CBP_V1(si0h) CBP_V1(si0i) CBP_V1(si0j)
+	CBP_V10(si1) CBP_V10(si2) CBP_V1(sj0) CBP_V1(sj1) CBP_V1(sj2) CBP_V1(sj3) CBP_V1(sj4) CBP_V1(sj5) CBP_V1(sj6) CBP_V1(sj7) CBP_V1(sj8)
 	virtual void vfunc448();
 	// slots 449..467
-	CBP_V10(sk0) CBP_V1(sl0) CBP_V1(sl1) CBP_V1(sl2) CBP_V1(sl3) CBP_V1(sl4) CBP_V1(sl5) CBP_V1(sl6) CBP_V1(sl7) CBP_V1(sl8)
+	CBP_V1(sk0a)
+	virtual void vfunc450();
+	CBP_V1(sk0c) CBP_V1(sk0d) CBP_V1(sk0e) CBP_V1(sk0f) CBP_V1(sk0g) CBP_V1(sk0h) CBP_V1(sk0i)
+	virtual void vfunc458();	// slot 458: if the entity at +0x1538 is not set up, lets the vehicle at +0x20fc handle it, else picks the weapon call by the float at +0x1564
+	CBP_V1(sl0) CBP_V1(sl1) CBP_V1(sl2) CBP_V1(sl3) CBP_V1(sl4) CBP_V1(sl5) CBP_V1(sl6) CBP_V1(sl7) CBP_V1(sl8)
 	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
 
 	char m_pad0004[0x26c];	// 0x0004 .. 0x026F
 	CBasePlayerSub270 m_sub270;	// 0x0270
 	char m_pad0274[0x6c];	// 0x0274 .. 0x02DF
 	int m_n02E0;
-	char m_pad02E4[0x1712];	// 0x02E4 .. 0x19F5
+	char m_pad02E4[0x1254];	// 0x02E4 .. 0x1537
+	unsigned int m_h1538;	// entity handle
+	int m_n153C;
+	char m_pad1540[0x24];	// 0x1540 .. 0x1563
+	float m_f1564;
+	char m_pad1568[0x48e];	// 0x1568 .. 0x19F5
 	bool m_b19F6;
 	char m_pad19F7[0x2E1];	// 0x19F7 .. 0x1CD7
 	unsigned int m_nCriminalLevelEnc;	// 0x1CD8, scrambled by the xor/and/add mask chain
@@ -65,7 +84,9 @@ public:
 	int m_n1E0C;
 	char m_pad1E10[0x298];	// 0x1E10 .. 0x20A7
 	char m_b20A8;
-	char m_pad20A9[0x1FF];	// 0x20A9 .. 0x22A7
+	char m_pad20A9[0x53];	// 0x20A9 .. 0x20FB
+	CBasePlayerVehicle *m_pVehicle;	// 0x20FC
+	char m_pad2100[0x1a8];	// 0x2100 .. 0x22A7
 	float m_f22A8;
 	float m_f22AC;
 	float m_f22B0;
@@ -108,4 +129,5 @@ public:
 	void sub_1017b6f0(int a, const char *pszName, int b, const char *pszName2);	// registers a hull pair (called through the stub at 0x100105c8)
 	void sub_1017c830();	// matches the player's saved quest records (0x40 bytes each at the pointer +0x1d68, count +0x1d74) with the global quest journal by name: after resetting the journal's records (sub_10221270), copies the record's dwords at +0x34 / +0x38 into the matching quest (+0x10 / +0xc) and stores the quest index at +0x30
 	void sub_101713c0();	// leaves the vehicle at +0x20fc (called by vfunc452): asks the vehicle for the driver slot and exit position, teleports the player there through the virtual slots, clears the flag bit 0 at +0x1e74 and the vehicle fields at +0x20f4 / +0x20f8 / +0x20fc
+	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
 };
