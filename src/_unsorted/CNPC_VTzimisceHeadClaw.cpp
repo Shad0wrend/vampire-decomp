@@ -22,6 +22,27 @@ void CNPC_VTzimisceHeadClaw::vfunc453()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1720 size=0x95
+#include "CNPC_VTzimisceHeadClaw.h"
+
+// TARGET: CNPC_VTzimisceHeadClaw::vfunc440
+int CNPC_VTzimisceHeadClaw::vfunc440(int act)
+{
+    switch (act) {
+    case 0xc7:
+        return 0xc8;
+    case 0xe7:
+        return 0x156;
+    case 0xbf:
+        return 0x157;
+    case 0xed:
+    case 0xef:
+        return 0xf0;
+    }
+    return sub_102b12f0(act);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1c80 size=0x14
 #include "CNPC_VTzimisceHeadClaw.h"
 
