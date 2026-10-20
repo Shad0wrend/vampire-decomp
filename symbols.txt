@@ -1294,6 +1294,7 @@
 0x1000860c func   ?vfunc448@CNPC_VMingXiao@@QAEXH@Z CNPC_VMingXiao::vfunc448
 0x10008620 func   ?sub_1029ca30@@YGMM@Z sub_1029ca30
 0x10008634 func   ?vfunc5@CNPC_VYukie@@QAEPAV1@I@Z CNPC_VYukie::vfunc5
+0x10008648 func   ?vfunc104@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc104
 0x1000864d func   ?sub_10211970@@YAPAHXZ sub_10211970
 0x1000866b func   ?vfunc223@CFuncKeyframedMover@@QAE_NXZ CFuncKeyframedMover::vfunc223
 0x10008684 func   ?vfunc5@CFuncAreaPortalBase@@QAEPAV1@I@Z CFuncAreaPortalBase::vfunc5
