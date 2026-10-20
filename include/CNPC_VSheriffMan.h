@@ -4,7 +4,9 @@
 class CNPC_VSheriffMan
 {
 public:
-	char pad0[0x1b38];
+	char pad0[0x1b30];
+	const char *m_pszSourceFile;	// +0x1b30: source file / line stamp of the last schedule change
+	int m_nSourceLine;	// +0x1b34
 	int m_nIdealState;	// +0x1b38
 
 	int sub_10005e20(int a);
@@ -25,4 +27,6 @@ public:
 	int vfunc337();	// as in CNPC_VSabbatLeader (transplant)
 	void vfunc444(int *pTask);	// "CNPC_VSheriffMan::RunTask": scope trace, the base implementation for every task but 0x154
 	void sub_103c5f40(int *pTask);	// CNPC_VVampireBoss::vfunc444 (RunTask), called directly through the stub at 0x10004edf
+	void sub_103b15e0(int arg);	// "CNPC_VSheriffMan::StartTransform": scope trace, stamps the source file and line 0x4c7, then sub_102ae750(0x15b, 0)
+	void sub_102ae750(int a, int b);	// schedule/task starter, called directly through the stub at 0x1000198d
 };
