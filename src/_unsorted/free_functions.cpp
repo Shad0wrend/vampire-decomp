@@ -756,6 +756,55 @@ bool sub_1002f820(WheelObj_t *pObj, WheelEnt_t *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002fb00 size=0xf0
+#include "ScopeTrace.h"
+#include "CCollisionEvent.h"
+
+struct S_1070b228 { char pad[0xc]; float curtime; };
+extern S_1070b228 *g_1070b228;
+
+class CDevConVar
+{
+public:
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+
+struct CDevConVarHolder
+{
+	int m_n00;
+	CDevConVar *m_pVar;
+};
+extern CDevConVarHolder *g_1070af4c;
+extern float g_10449258;
+
+void sub_1002fc30(CBaseEntity *pEnt, float flTime);
+
+int CCollisionEventSolver::sub_1002fb00(void *pObject0, void *pObject1, CBaseEntity *pEntity0, CBaseEntity *pEntity1, float flDeltaTime)
+{
+	ScopeTrace trace("CCollisionEvent::ShouldSolvePenetration", g_106b8540);
+	CBaseEntity *pLow = pEntity0;
+	CBaseEntity *pHigh = pEntity1;
+	if (pEntity0 > pEntity1) {
+		pLow = pEntity1;
+		pHigh = pEntity0;
+	}
+	CPenetrateEvent_t *pEvent = Event()->sub_1002f900(pLow, pHigh);
+	if (g_1070b228->curtime - pEvent->m_flLastTime > g_10449258) {
+		pEvent->m_nReported = 1;
+		CDevConVarHolder *pHolder = g_1070af4c;
+		if (!pHolder->m_pVar->vfunc1() && pHolder->m_pVar->m_n2c) {
+			sub_1002fc30(pLow, 10.0f);
+			sub_1002fc30(pHigh, 10.0f);
+		}
+		pEvent->m_flLastTime = g_1070b228->curtime;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002fc30 size=0xac
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
