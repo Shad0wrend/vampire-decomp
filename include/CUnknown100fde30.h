@@ -33,6 +33,37 @@ struct CUnknown100fde30Rec
 	}
 };
 
+struct CUnknown100fde30Node	// a node of the linked lists: 8 bytes of data, the previous / next indices
+{
+	char m_Data[8];
+	unsigned short m_Previous;	// 0x08
+	unsigned short m_Next;	// 0x0a
+};
+
+// The two records are CUtlLinkedList<T, unsigned short>s with 12 byte nodes behind two leading floats: the view of one.
+struct CUnknown100fde30List
+{
+	float m_f00;	// 0x00
+	float m_f04;	// 0x04
+	CUnknown100fde30Node *m_pMemory;	// 0x08
+	int m_allocationCount;	// 0x0c
+	int m_growSize;	// 0x10 (-1: the memory is not owned)
+	unsigned short m_Head;	// 0x14
+	unsigned short m_Tail;	// 0x16
+	unsigned short m_FirstFree;	// 0x18
+	unsigned short m_ElementCount;	// 0x1a
+	unsigned short m_NumAlloced;	// 0x1c
+
+	static unsigned short InvalidIndex() { return (unsigned short)~0; }
+	CUnknown100fde30Node &InternalElement(unsigned short i) { return m_pMemory[i]; }
+};
+
+struct CUnknown100fde30Owner	// the object the dword at +0x170 is released through (slot 5)
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual void vfunc5(int handle);
+};
+
 class CUnknown100fde30
 {
 public:
@@ -44,4 +75,7 @@ public:
 	CUnknown100fde30Rec m_rec2;	// 0x198
 
 	CUnknown100fde30 *sub_100fde30();	// constructor: builds both random streams and both records, clears +0x170; returns this
+	void sub_100fdf40();	// releases the object behind +0x170 (when set), then RemoveAll + Purge of both linked lists (the views of the records)
+	CUnknown100fde30List *List1() { return (CUnknown100fde30List *)&m_rec1; }
+	CUnknown100fde30List *List2() { return (CUnknown100fde30List *)&m_rec2; }
 };
