@@ -26477,6 +26477,31 @@ bool CUnknown101e8080::sub_101e8c90(const char *type, int *a, int *b, int *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8f20 size=0x86
+#include "CUnknown101e8f20.h"
+#include "CBaseCombatCharacter.h"
+
+int CUnknown101e8f20::sub_101e8f20(CBaseCombatCharacter *pChar)
+{
+	CVStatList_t *list;
+	for (int i = 0; i < pChar->m_nStatLists; i++) {
+		if (pChar->m_pStatLists[i]->m_field10 == 3) {
+			list = pChar->m_pStatLists[i];
+			goto found;
+		}
+	}
+	{
+		static CVStatList_t sDefault(-1);
+		list = &sDefault;
+	}
+found:
+	int value = list->sub_10010609(8);
+	if (value > 0)
+		return m_values[value];
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e94b0 size=0xa
 extern int g_1073a144;
 
