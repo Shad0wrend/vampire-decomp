@@ -53,4 +53,5 @@ public:
 	int sub_100f7040();	// the number of entity slots in use (stub 0x1000e4d0)
 	void *sub_100f9e20(void *pEnt, int a);	// "CBaseEntityList::AddNonNetworkableEntity"-like: errors when the list at +0x18020 (6 byte nodes) is empty, takes the entry at its head, unlinks and frees it and registers pEnt through sub_100f9fc0(pEnt, a, <the entry's data>, -1); returns pEnt
 	void sub_100f9fc0(void *pEnt, int a, int index, int b);	// stub 0x1000e98f
+	CBaseEntity *sub_100290c0(const unsigned int *pHandle);	// "CBaseEntityList::LookupEntity" (stub 0x10009c8c): the entity behind the handle, 0 when the handle is invalid or stale
 };
