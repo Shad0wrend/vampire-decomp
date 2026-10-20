@@ -1082,6 +1082,7 @@
 0x10007fa4 func   ?vfunc5@CSoundEnt@@QAEPAV1@I@Z CSoundEnt::vfunc5
 0x10007fea func   ?vfunc5@CAI_BaseNPC@@UAEPAV1@I@Z CAI_BaseNPC::vfunc5
 0x10007ffe func   _item_k_clinic_stairs_key item_k_clinic_stairs_key
+0x1000800d func   ?sub_103fbbd0@@YAHXZ sub_103fbbd0
 0x10008012 func   ?sub_10388150@@YADXZ sub_10388150
 0x10008030 func   _info_node_sabbat_nojump info_node_sabbat_nojump
 0x10008035 func   ?sub_101e94b0@@YAXH@Z sub_101e94b0
