@@ -1,5 +1,6 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 17, 35, 38, 59, 82, 84, 85, 105 and 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 17, 35, 38, 49, 59, 82, 84, 85, 105 and 119 to 122 are known.
 // Slot 17 is PrecacheModel(name, preload) and returns the model index.
+// Slot 49 is EmitAmbientSound(entindex, pos, sample, volume, soundlevel, flags, pitch).
 // Slot 119 takes a flag and returns a time value in ST0; slot 120 returns a dword in EAX.
 // Slots 84 / 85 are the engine's command argument accessors (Cmd_Argv(index) / Cmd_Argc()).
 // Slot 82 registers a user message by name and size and returns its id.
@@ -25,7 +26,9 @@ public:
 	virtual void a36(); virtual void a37();
 	virtual CUnknown1070b22c_Edict *vfunc38(int index);
 	virtual void a39();
-	U22C_SLOTS10(a4)
+	virtual void a40(); virtual void a41(); virtual void a42(); virtual void a43(); virtual void a44();
+	virtual void a45(); virtual void a46(); virtual void a47(); virtual void a48();
+	virtual void vfunc49(int entindex, int pos, const char *pszSample, int volume, int soundlevel, int flags, int pitch);
 	virtual void a50(); virtual void a51(); virtual void a52(); virtual void a53(); virtual void a54();
 	virtual void a55(); virtual void a56(); virtual void a57(); virtual void a58();
 	virtual void vfunc59(const char *pszCommand);
