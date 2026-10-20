@@ -38783,6 +38783,25 @@ char sub_1036f440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036fa60 size=0x43
+#include "CNPC_VCombatman.h"
+void *sub_100aa720(int size);
+extern char g_106316f8[];
+
+// TARGET: npc_VCombatman
+extern "C" CBaseEntity *npc_VCombatman()
+{
+	void *mem = sub_100aa720(0x6664);
+	CNPC_VCombatman *p;
+	if (mem)
+		p = ((CNPC_VCombatman *)mem)->sub_1036fad0();
+	else
+		p = 0;
+	p->vfunc106(g_106316f8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036fc00 size=0x33
 void sub_100053cb();
 void sub_100146d2();
