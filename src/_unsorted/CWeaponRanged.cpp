@@ -16,6 +16,37 @@ CWeaponRanged *CWeaponRanged::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10238160 size=0x99
+#include "CWeaponRanged.h"
+
+extern "C" int atoi(const char *);
+extern int g_1088aee4;
+
+// TARGET: CWeaponRanged::vfunc370
+void CWeaponRanged::vfunc370(int *event, void *other)
+{
+	switch (event[0])
+	{
+	case 0xbd6: case 0xbd7: case 0xbd8: case 0xbd9: case 0xbda: case 0xbdb: case 0xbdc: case 0xbdd:
+	case 0xbde: case 0xbdf: case 0xbe0: case 0xbe1: case 0xbe2: case 0xbe3: case 0xbe4:
+		if (g_1088aee4 != 0 && *(int *)((char *)other + 0xa8) != 0)
+		{
+			sub_10238380();
+			return;
+		}
+		sub_10238320();
+		return;
+	case 0xfa1:
+		sub_10093b10(atoi((const char *)event[1]), 1);
+		return;
+	case 0xfa2:
+		sub_10093b10(atoi((const char *)event[1]), 0);
+		return;
+	}
+	sub_1024f030(event, other);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10238230 size=0x8d
 #include "CWeaponRanged.h"
 #include "CBaseCombatWeapon.h"
