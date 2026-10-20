@@ -15397,6 +15397,83 @@ void __fastcall sub_10136490(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136ce0 size=0x116
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+extern const char *g_1070c840;
+extern char g_1070c640[256];
+
+const char *sub_10136ce0(const char *data, char *token, const char *breakset)
+{
+    int c;
+    int len = 0;
+    token[0] = 0;
+    if (!data)
+        return 0;
+    if (g_1070c840 != breakset) {
+        g_1070c840 = breakset;
+        memset(g_1070c640, 0, 256);
+        while (*breakset) {
+            g_1070c640[*breakset] = 1;
+            breakset++;
+        }
+    }
+skipwhite:
+    while ((c = *data) <= ' ') {
+        if (c == 0)
+            return 0;
+        data++;
+    }
+    if (c == '/' && data[1] == '/') {
+        while (*data && *data != '\n')
+            data++;
+        goto skipwhite;
+    }
+    if (c == '\"') {
+        data++;
+        for (;;) {
+            c = *data++;
+            if (c == '\\') {
+                if (*data) {
+                    c = *data++;
+                    if (c == 'n')
+                        c = '\n';
+                }
+            } else if (c == '\"' || !c) {
+                token[len] = 0;
+                return data;
+            }
+            token[len] = c;
+            len++;
+            if (len >= 256) {
+                len--;
+                token[len] = 0;
+                break;
+            }
+        }
+    }
+    if (g_1070c640[c]) {
+        token[len] = c;
+        len++;
+        token[len] = 0;
+        return data + 1;
+    }
+    do {
+        token[len] = c;
+        data++;
+        len++;
+        c = *data;
+        if (g_1070c640[c])
+            break;
+        if (len >= 256) {
+            len--;
+            token[len] = 0;
+        }
+    } while (c > 32);
+    token[len] = 0;
+    return data;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a030 size=0x23
 struct V3 {
 	float x, y, z;
