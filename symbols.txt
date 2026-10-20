@@ -1262,6 +1262,7 @@
 0x100093a9 func   ?vfunc217@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc217
 0x100093cc func   _filter_activator_class filter_activator_class
 0x100093d1 func   _npc_VYukie npc_VYukie
+0x100093e0 func   ?sub_103e95b0@@YAHXZ sub_103e95b0
 0x100093e5 func   ?sub_10194da0@CUnknown10194da0@@QAEXH@Z CUnknown10194da0::sub_10194da0
 0x10009403 func   _func_illusionary func_illusionary
 0x1000941c func   ?sub_100ae580@@YAXXZ sub_100ae580
