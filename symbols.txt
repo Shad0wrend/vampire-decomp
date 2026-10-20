@@ -2335,6 +2335,7 @@
 0x1000f317 func   ?sub_1037c750@@YADXZ sub_1037c750
 0x1000f31c func   ?vfunc461@CNPC_VCamera@@UAEHXZ CNPC_VCamera::vfunc461
 0x1000f326 func   ?sub_101cfd80@@YA?AUTVec@@XZ sub_101cfd80
+0x1000f33f func   ?sub_1022d090@UtlMem@@QAEXXZ UtlMem::sub_1022d090
 0x1000f34e func   ?vfunc2@CTEBaseBeam@@UAEPAV1@I@Z CTEBaseBeam::vfunc2
 0x1000f353 func   ?sub_1002cc10@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_1002cc10
 0x1000f39e func   ?vfunc329@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc329
