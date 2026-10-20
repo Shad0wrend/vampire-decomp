@@ -5973,6 +5973,66 @@ int CUnknown1006eeb0::sub_1006eeb0(int which)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006fe00 size=0xf6
+#include "CGlobalEntityList.h"
+#define XV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define XV100(p) XV(p##0) XV(p##1) XV(p##2) XV(p##3) XV(p##4) XV(p##5) XV(p##6) XV(p##7) XV(p##8) XV(p##9)
+struct Vec3 { float x, y, z; };
+struct TargetSlots
+{
+    XV100(a0) XV(a10) XV(a11) XV(a12) XV(a13) XV(a14) XV(a15) XV(a16) XV(a17) XV(a18)
+    virtual void a190(); virtual void a191();
+    virtual Vec3 *vfunc192(Vec3 *pOut);
+    XV(b19) XV(b20)
+    virtual void c213(); virtual void c214(); virtual void c215(); virtual void c216(); virtual void c217(); virtual void c218();
+    virtual Vec3 *vfunc219();
+};
+struct FollowObj
+{
+    char m_pad0000[0x55c];
+    int m_n55c;
+    char m_pad0560[0x5ec - 0x560];
+    float m_v5ec[3];
+    char m_pad05f8[0x604 - 0x5f8];
+    float m_v604[3];
+    unsigned int m_h610;
+    bool sub_10008b43();
+};
+extern CGlobalEntityList *g_10566458;
+static inline TargetSlots *Resolve(unsigned int h)
+{
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        if (s->m_Serial == (h >> 13))
+            return (TargetSlots *)s->m_pEntity;
+    }
+    return 0;
+}
+void __fastcall sub_1006fe00(FollowObj *pThis)
+{
+    Vec3 tmp;
+    bool valid = false;
+    unsigned int h = pThis->m_h610;
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        valid = s->m_Serial == (h >> 13) && s->m_pEntity;
+    }
+    if (!valid)
+        pThis->m_n55c = 0;
+    if (!pThis->sub_10008b43()) {
+        Vec3 *v = Resolve(pThis->m_h610)->vfunc192(&tmp);
+        pThis->m_v5ec[0] = v->x;
+        pThis->m_v5ec[1] = v->y;
+        pThis->m_v5ec[2] = v->z;
+        v = Resolve(pThis->m_h610)->vfunc219();
+        pThis->m_v604[0] = v->x;
+        pThis->m_v604[1] = v->y;
+        pThis->m_v604[2] = v->z;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071840 size=0x7f
 #define V1(p) virtual void p();
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \

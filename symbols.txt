@@ -2611,6 +2611,7 @@
 0x1000dc92 func   ?sub_103fdc50@@YAHXZ sub_103fdc50
 0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43
 0x1000dca1 func   ?vfunc421@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc421
+0x1000dd14 func   ?sub_1006fe00@@YIXPAUFollowObj@@@Z sub_1006fe00
 0x1000dd19 func   ?vfunc5@CPhysTorque@@UAEPAV1@I@Z CPhysTorque::vfunc5
 0x1000dd4b func   ?sub_100b5b00@CBaseFlex@@QAEXPBM@Z CBaseFlex::sub_100b5b00
 0x1000dd5f func   ?sub_1019c950@@YAXPAH@Z sub_1019c950
