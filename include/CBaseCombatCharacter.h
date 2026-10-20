@@ -35,6 +35,12 @@ public:
 	virtual int vfunc252(int a, int b, int c);
 	virtual int vfunc253(int a, int b, int c);
 	virtual int vfunc254(int a, int b, int c);
+	// Placeholder slots 255..373.
+	virtual void c255(); virtual void c256(); virtual void c257(); virtual void c258(); virtual void c259();
+	CBCC_SLOTS10(c26) CBCC_SLOTS10(c27) CBCC_SLOTS10(c28) CBCC_SLOTS10(c29) CBCC_SLOTS10(c30) CBCC_SLOTS10(c31)
+	CBCC_SLOTS10(c32) CBCC_SLOTS10(c33) CBCC_SLOTS10(c34) CBCC_SLOTS10(c35) CBCC_SLOTS10(c36)
+	virtual void c370(); virtual void c371(); virtual void c372(); virtual void c373();
+	virtual int vfunc374(int count, int ammoIndex, int unused);	// slot 374 "CBaseCombatCharacter::GiveAmmo" by index
 
 	bool sub_10336920();	// "CBaseCombatCharacter::IsMale" (matched under the provisional class name Ent)
 	void sub_103326b0(float amount);
@@ -50,6 +56,7 @@ public:
 	void sub_10334500(int amount, int ammoIndex);	// "CBaseCombatCharacter::RemoveAmmo": scope trace (entity name), subtracts amount from the count at +0x15a4 + ammoIndex*4, clamped at 0
 	void sub_10334600(int count, int ammoIndex);	// "CBaseCombatCharacter::SetAmmoCount": stores count at +0x15a4 + ammoIndex*4
 	int sub_103346c0(int ammoIndex);	// "CBaseCombatCharacter::GetAmmoCount": scope trace, the dword at +0x15a4 + ammoIndex*4 (0 for index -1)
+	int sub_103343f0(int count, int ammoName);	// "CBaseCombatCharacter::GiveAmmo" (by name): scope trace (entity name), looks the name up in the ammo definitions (global at 0x1070ba0c), then slot 374(count, index, 0); Msg when unknown
 	void sub_10346760();	// "CBaseCombatCharacter::ForceMeleeReset": scope trace (entity name), sets the byte at +0xaa1 and clears the bytes at +0xaa0/+0xaa2/+0xaa3 and the dword at +0xa94
 	void sub_1033ca60();	// "CBaseCombatCharacter::ClearMiscFlags": stores 0 at +0xfe4
 	void sub_1033c6b0(unsigned int flags);	// "CBaseCombatCharacter::AddMiscFlag": scope trace (entity name), ORs flags into +0xfe4
