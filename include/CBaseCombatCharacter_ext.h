@@ -59,3 +59,4 @@
 	Vector vfunc370();	// "CBaseCombatCharacter::HeadDirection2D"-like: scope trace (entity name), slot 371 into a local, z = 0, normalised through the function pointer at 0x1057966c, returned by value
 	void sub_10340c90(inputdata_t *data);	// "CBaseCombatCharacter::InputMoneyAdd": scope trace (entity name), when the input's type is 4 and its integer is non-zero calls sub_10340e50(integer)
 	void sub_10340e50(int amount);	// "CBaseCombatCharacter::MoneyAdd" worker
+	virtual void vfunc103();	// slot 103 "CBaseCombatCharacter::Spawn": scope trace (entity name), AddToTeam(name at +0x10ac) when non-empty, then CBaseAnimating::vfunc103
