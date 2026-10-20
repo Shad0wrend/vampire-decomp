@@ -1280,6 +1280,7 @@
 0x10008bfc func   ?sub_102e12c0@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e12c0
 0x10008c01 func   ?sub_102373f0@@YAHXZ sub_102373f0
 0x10008c1f func   _item_g_eldervitaepack item_g_eldervitaepack
+0x10008c33 func   ?sub_101b6b10@UtlVec8@@QAEXHH@Z UtlVec8::sub_101b6b10
 0x10008c42 func   _info_target info_target
 0x10008c4c func   ?vfunc5@CFilterMultiple@@QAEPAV1@I@Z CFilterMultiple::vfunc5
 0x10008c74 func   ?vfunc5@CItemGGhostPendant@@QAEPAV1@I@Z CItemGGhostPendant::vfunc5
