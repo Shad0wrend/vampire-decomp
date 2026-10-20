@@ -1,5 +1,5 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..360, used to call slots 158, 220 / 221
-// (the absolute origin / angles getters) and 360 of an entity class that does not model its vtable.
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 158, 220 / 221
+// (the absolute origin / angles getters), 360 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -25,4 +25,8 @@ public:
 	EVS10(23) EVS10(24) EVS10(25) EVS10(26) EVS10(27) EVS10(28) EVS10(29)
 	EVS10(30) EVS10(31) EVS10(32) EVS10(33) EVS10(34) EVS10(35)
 	virtual unsigned int slot360();	// weapon: its flag word (bits 0x18000 mark the special kinds)
+	EVS(361) EVS(362) EVS(363) EVS(364) EVS(365) EVS(366) EVS(367) EVS(368) EVS(369)
+	EVS10(37) EVS10(38) EVS10(39) EVS10(40) EVS10(41) EVS10(42) EVS10(43) EVS10(44)
+	EVS(450) EVS(451) EVS(452) EVS(453) EVS(454) EVS(455) EVS(456)
+	virtual void slot457(const char *pszName, int a);	// switch to / equip the named weapon
 };
