@@ -22,6 +22,6 @@ public:
 
 	void sub_10218820(int a, int b);	// called with (2, 0) (stub 0x1000c77f)
 	void sub_10217f50(char value, const char *pszCommand);	// stores value at +0x83c after sub_10218820(2, 0), then picks slot 275 / 276 / 277 from the command ("quit" prefix, or the current screen name from slot 274), and clears the four dwords at +0x82c
-	void sub_10217ac0(const char *pszText);	// prints a string to the screen (stub 0x10013f98)
+	void sub_10217ac0(const char *pszFormat, ...);	// prints a formatted string to the screen (stub 0x10013f98)
 	void sub_1021b330(const char *pszText, int column);	// prints a boxed line: '|' borders over a width-3 blank line (40 byte buffer), the text copied in at `column` (at most 0x28 - column characters), followed by a newline
 };
