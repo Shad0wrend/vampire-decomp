@@ -497,6 +497,7 @@
 0x10003bb6 func   ?sub_10133450@@YAPAHXZ sub_10133450
 0x10003bc0 func   ?sub_103a7760@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::sub_103a7760
 0x10003bc5 func   _vampireprojectile vampireprojectile
+0x10003bcf func   ?sub_1030fb90@CUnknown1030fb90@@QAE_NPAX@Z CUnknown1030fb90::sub_1030fb90
 0x10003bd4 func   ?vfunc259@CNPC_VSabbatLeader@@QAEXPAX@Z CNPC_VSabbatLeader::vfunc259
 0x10003bd9 func   ?sub_1035b440@@YADXZ sub_1035b440
 0x10003be8 func   ?sub_10203e30@@YAXH@Z sub_10203e30

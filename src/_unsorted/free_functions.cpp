@@ -41004,6 +41004,50 @@ char CAI_Senses::sub_1030fa00(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030fb90 size=0x85
+#include "CUnknown1030fb90.h"
+
+#define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLOTS100(p) SLOTS10(p##0) SLOTS10(p##1) SLOTS10(p##2) SLOTS10(p##3) SLOTS10(p##4) \
+	SLOTS10(p##5) SLOTS10(p##6) SLOTS10(p##7) SLOTS10(p##8) SLOTS10(p##9)
+
+struct CSeenByObject
+{
+	SLOTS100(a) SLOTS100(b) SLOTS100(c)
+	SLOTS10(d0) SLOTS10(d1) SLOTS10(d2) SLOTS10(d3) SLOTS10(d4) SLOTS10(d5)
+	virtual void e0(); virtual void e1(); virtual void e2();
+	virtual char vfunc363(CUnknown1030fb90_Owner *pOwner);
+};
+
+struct Vec3_t
+{
+	float x, y, z;
+	Vec3_t() { x = 0; y = 0; z = 0; }
+};
+
+char sub_1012b750(void *pEnt, CUnknown1030fb90_Owner *pOwner, Vec3_t *pVec, int flags);
+
+bool CUnknown1030fb90::sub_1030fb90(void *pEnt)
+{
+	if (m_pOwner->m_flags & 1) {
+		CSeenByObject *obj = *(CSeenByObject **)((char *)pEnt + 0xa8);
+		if (obj) {
+			Vec3_t vec;
+			if (sub_1012b750(pEnt, m_pOwner, &vec, 0)) {
+				CUnknown1030fb90_Owner *owner = m_pOwner;
+				if (obj->vfunc363(owner)) {
+					m_pOwner->m_flags &= ~1;
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fc90 size=0x68
 struct SInner { void *ent; unsigned serial; };
 struct SEnt { int pad; SInner in; };
