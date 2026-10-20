@@ -32,4 +32,6 @@ public:
 	char *sub_100e7310();	// "CDialog::get_dialog_filename": scope trace, when both handles resolve returns the lowercased, trimmed string at +0x128 of the entity behind the handle at +0, (in a global 260 byte buffer), else ""
 	void sub_100e5c70();	// "CDialog::CallPendingNPCEventScript": scope trace, when the pending event script name at +0x30ea is set runs it (sub_100e4f30) and clears it
 	void sub_100e4f30(char *pszScript);
+	void sub_100e7630(void *pFile);	// "CDialog::eat_line": scope trace, reads characters from the file until a newline or EOF
+	int sub_100e7510(void *pFile);	// reads one character (-1 at end of file)
 };
