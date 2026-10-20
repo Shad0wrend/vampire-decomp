@@ -24335,6 +24335,37 @@ void CBasePlayer::sub_1017bf10(int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c600 size=0x77
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_10587ef4[];
+extern char g_10587ee8[];
+struct CBCCX {
+    void sub_10323cc0(int a, int b, int c);
+    void sub_10324080();
+};
+struct CBasePlayerUnit : CBasePlayer {
+    void sub_1017c600(CBaseEntity *pEnt, char bLoot, int a, int b, int c);
+};
+
+// TARGET: CBasePlayerUnit::sub_1017c600
+void CBasePlayerUnit::sub_1017c600(CBaseEntity *pEnt, char bLoot, int a, int b, int c)
+{
+    int edict = pEnt->m_pEdict2e0;
+    m_nUseEdictIndex1EB8 = g_1070b22c->vfunc35(edict);
+    m_bNotifyUse1EC0 = bLoot;
+    if (!bLoot) {
+        ((CBCCX *)pEnt)->sub_10323cc0(a, b, c);
+        g_1070b22c->vfunc61(m_n02E0, g_10587ef4);
+    } else {
+        ((CBCCX *)pEnt)->sub_10324080();
+        g_1070b22c->vfunc61(m_n02E0, g_10587ee8);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c6d0 size=0x10c
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
