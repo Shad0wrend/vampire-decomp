@@ -8,6 +8,7 @@ class CBaseAnimating : public CBaseEntity
 {
 public:
 	void *sub_100952d0(int a);	// GetModelPtr-like, returns the studio header
+	int sub_10094520();	// "CBaseAnimating::GetNumFlexControllers": scope trace (entity name), returns the dword at +0x160 of the studio header, 0 when missing
 	int sub_100945e0(int index);	// "CBaseAnimating::GetFlexDescFacs"
 	void sub_10091c80();	// "CBaseAnimating::OnSequenceFinish" scope only
 	float sub_10091740();	// "CBaseAnimating::GetIdealSpeed": returns the float at +0x654
@@ -48,7 +49,6 @@ public:
 	int sub_10093ef0();	// "CBaseAnimating::GetNumBodyGroups": scope trace, then a studio helper on GetModelPtr(-1)
 	void sub_1008f540();	// "CBaseAnimating::ResetActivityIndexes ": scope trace, then a studio helper on GetModelPtr(-1)
 	int sub_10096760();	// "CBaseAnimating::GetHitboxSetCount": scope trace, then a studio helper on GetModelPtr(-1)
-	int sub_10092c90();	// "CBaseAnimating::GetNumBones": scope trace (entity name), then the int at +0xf0 of GetModelPtr(-1), 0 when missing
 
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
