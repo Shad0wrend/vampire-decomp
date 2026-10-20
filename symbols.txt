@@ -2717,6 +2717,7 @@
 0x10011f27 func   ?sub_1015ef00@CUnknown1015ef00@@QAEXXZ CUnknown1015ef00::sub_1015ef00
 0x10011f68 func   ?sub_1015ef40@@YIXPAD@Z sub_1015ef40
 0x10011f86 func   ?vfunc616@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::vfunc616
+0x10011f90 func   ?sub_10404270@@YAHXZ sub_10404270
 0x10011f95 func   ?sub_1020e080@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e080
 0x10011fa9 func   ?sub_101074c0@@YIXPAUMem32@@HH@Z sub_101074c0
 0x10011fc7 func   ?vfunc5@COccultPassiveDurations@@QAEPAV1@I@Z COccultPassiveDurations::vfunc5
