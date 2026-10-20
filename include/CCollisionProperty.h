@@ -40,4 +40,6 @@ public:
 	char m_04[0x3c - 0x04];
 	// The entity the collision property belongs to; several slots just forward to it.
 	CBaseEntity *m_pOuter;
+
+	void sub_100dc480(int solid);	// "CCollisionProperty::SetSolid" (called through the stub at 0x1000428c)
 };
