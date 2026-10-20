@@ -17,4 +17,5 @@ public:
 	bool vfunc32(void *pEntity);	// true if pEntity is the camera or no camera is set
 	CFuncMonitor *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
+	void sub_101150f0(const char *szName);	// slot 113 helper: finds the entity of that name, keeps it at +0x45c when it is a CPointCamera (else null) and its edict index (engine slot 35) at +0x458 (0 without a camera)
 };
