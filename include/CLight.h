@@ -10,6 +10,7 @@ public:
 	void sub_101308d0();	// "CLight::FadeThink": steps the current light level at +0x458 toward the target at +0x459, sets the light style, re-arms the think (+0x17c)
 	bool vfunc110(const char *szKeyName, const char *szValue);	// "CLight::KeyValue": "pitch" sets the pitch of the angles (slots 221 / 218), anything else goes to the base
 	bool sub_1000fc86(const char *szKeyName, const char *szValue);	// CBaseEntity::vfunc110 (jump stub)
+	void vfunc103();	// slot 103 (Spawn): without a name (+0x26c) only the base worker; else clamps the fade time and, for a style >= 32, sets the engine light style from the pattern (LightStyle, engine slot 62)
 
 	char m_pad00[0x450];
 	int m_iStyle;	// 0x450
