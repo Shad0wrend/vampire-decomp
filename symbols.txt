@@ -306,6 +306,7 @@
 0x10002e73 func   ?vfunc5@CNPC_VSabbatGunman@@QAEPAV1@I@Z CNPC_VSabbatGunman::vfunc5
 0x10002e82 func   ?sub_1042fe60@@YAXXZ sub_1042fe60
 0x10002ea5 func   ?sub_1013fcb0@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1013fcb0
+0x10002ec8 func   ?sub_10071ba0@UtlVec8@@QAEXHH@Z UtlVec8::sub_10071ba0
 0x10002ef5 func   ?sub_101c67e0@@YAPAHXZ sub_101c67e0
 0x10002f18 func   ?sub_10342470@@YA_NPAUUserEntity@@PAUUsedEntity@@@Z sub_10342470
 0x10002f22 func   ?vfunc0@CAI_RatLocalNavigator@@QAEPAV1@I@Z CAI_RatLocalNavigator::vfunc0

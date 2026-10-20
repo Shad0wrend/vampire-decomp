@@ -4562,6 +4562,16 @@ void CUtlVector4::sub_10071ae0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071ba0 size=0x34
+#include "UtlVec8.h"
+void UtlVec8::sub_10071ba0(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&m_pMemory[(elem + num) * 4], &m_pMemory[elem * 4], numToMove * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071cd0 size=0xe1
 extern char *(*g_109f3890)(char *, const char *, int);
 extern char g_10547308[];
