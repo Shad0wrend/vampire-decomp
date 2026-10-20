@@ -20746,6 +20746,82 @@ void S101172c0::sub_101172c0(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119750 size=0x145
+extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct ConVarView
+{
+    virtual void vfunc0();
+    virtual bool vfunc1();
+    char m_pad0004[0x2c - 4];
+    int m_n2c;	// 0x2c
+};
+
+struct LogLine
+{
+    char m_sz[0x60];
+};
+
+struct S1011d6a0
+{
+    char *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+
+    void sub_1011d6a0(int num);	// "CUtlMemory::Grow"
+};
+
+struct LogVec : public S1011d6a0
+{
+    int m_Size;	// 0x0c
+    LogLine *m_pElements;	// 0x10
+
+    LogLine &Element(int i) { return ((LogLine *)m_pMemory)[i]; }
+    void ShiftElementsRight(int elem, int num)
+    {
+        int numToMove = m_Size - elem - num;
+        if (numToMove > 0)
+            memmove(&Element(elem + num), &Element(elem), numToMove * sizeof(LogLine));
+    }
+    int InsertBefore(int elem)
+    {
+        if (m_Size + 1 > m_allocationCount)
+            sub_1011d6a0(m_Size - m_allocationCount + 1);
+        m_Size += 1;
+        m_pElements = (LogLine *)m_pMemory;
+        ShiftElementsRight(elem, 1);
+        return elem;
+    }
+};
+
+extern ConVarView *g_1070b1dc;
+extern ConVarView *g_1070b07c;
+extern ConVarView *g_1070b0f4;
+extern ConVarView *g_1070b13c;
+extern LogVec g_1070b0bc;
+extern int (*g_109f387c)(char *pDest, int maxLen, const char *pFormat, char *args);
+int sub_10119940();
+
+void sub_10119750(const char *pFormat, ...)
+{
+    char buf[0x200];
+    LogLine line;
+    if ((!g_1070b1dc->vfunc1() && g_1070b1dc->m_n2c && sub_10119940()) ||
+        (!g_1070b07c->vfunc1() && g_1070b07c->m_n2c) ||
+        (!g_1070b0f4->vfunc1() && g_1070b0f4->m_n2c) ||
+        (!g_1070b13c->vfunc1() && g_1070b13c->m_n2c)) {
+        buf[0] = 0;
+        g_109f387c(buf, 0x200, pFormat, (char *)&pFormat + 4);
+        strncpy(line.m_sz, buf, 0x60);
+        int elem = g_1070b0bc.InsertBefore(g_1070b0bc.m_Size);
+        LogLine *p = &g_1070b0bc.Element(elem);
+        if (p)
+            *p = line;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a430 size=0x8
 extern char g_1070b264;
 void sub_1011a430() { g_1070b264 = 1; }

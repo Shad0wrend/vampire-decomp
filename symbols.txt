@@ -3722,6 +3722,7 @@
 0x100129fe func   ?sub_100dcd00@CUnknown100dcd00@@QAEXPBM0H@Z CUnknown100dcd00::sub_100dcd00
 0x10012a03 func   ?sub_103fdf00@@YAHXZ sub_103fdf00
 0x10012a2b func   ?sub_1007ee20@@YIXPAH@Z sub_1007ee20
+0x10012a3a func   ?sub_10119750@@YAXPBDZZ sub_10119750
 0x10012a3f func   _func_movelinear func_movelinear
 0x10012a44 func   _info_node_werewolf_hint info_node_werewolf_hint
 0x10012a4e func   ?sub_101eb7f0@CUnknown101eb7f0@@QAEXH@Z CUnknown101eb7f0::sub_101eb7f0
