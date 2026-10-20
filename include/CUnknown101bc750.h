@@ -3,12 +3,16 @@
 #pragma once
 #include "UtlVec8.h"
 
+struct PQHeap101bc750 : public UtlVec8
+{
+	char (__cdecl *m_pLessFunc)(int *a, int *b);
+};
+
 class CUnknown101bc750
 {
 public:
 	char pad0[0x20];
-	UtlVec8 m_heap;
-	char (__cdecl *m_pLessFunc)(int *a, int *b);
+	PQHeap101bc750 m_heap;
 
-	void sub_101bc750(int value);	// \"CUtlPriorityQueue::Insert\": appends value and sifts it up
+	void sub_101bc750(int value);	// "CUtlPriorityQueue::Insert": appends value and sifts it up
 };
