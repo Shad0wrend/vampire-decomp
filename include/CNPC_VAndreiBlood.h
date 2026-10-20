@@ -20,4 +20,6 @@ public:
 	void vfunc420();	// "CNPC_VAndreiBlood::NPCInit": scope trace, the CNPC_VVampireBoss version, then copies the global vector at 0x1070d1b0 to +0x66c0
 	void sub_103c5840();	// CNPC_VVampireBoss::vfunc420, called directly
 	void sub_1035e5f0();	// "CNPC_VAndreiBlood::FacePlayerAdvance": scope trace (no entity name), when the entity behind the handle at +0x628c resolves, hands slot 217 of it (with the global at 0x104a6f80) to the object at +0x5d44 (sub_102e20b0, stub 0x10007248)
+	virtual int vfunc438();	// slot 438 "CNPC_VAndreiBlood::SelectSchedule": scope trace (no entity name), sets +0x1b2c = 4, then schedule 0x15b without the byte at +0x66cc, 0x15e with the byte at +0x66cd, 0x15d / 0x15c (by sub_1035e920) while the byte at +0x66d4 is clear and the count at +0x66d8 is below +0x66dc, else 0x15a
+	bool sub_1035e920();	// stub 0x1000eba6
 };
