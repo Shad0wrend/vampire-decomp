@@ -3076,6 +3076,7 @@
 0x1000ff51 func   ?sub_100eb280@UtlMem2@@QAEXH@Z UtlMem2::sub_100eb280
 0x1000ff56 func   ?sub_1034a1a0@@YIXPAUMem16@@HH@Z sub_1034a1a0
 0x1000ff5b func   ?sub_101a58e0@CUtlVector40@@QAEXH@Z CUtlVector40::sub_101a58e0
+0x1000ff65 func   ?sub_10148560@@YAPAHXZ sub_10148560
 0x1000ff6f func   ?vfunc5@CBaseParticleEntity@@QAEPAV1@I@Z CBaseParticleEntity::vfunc5
 0x1000ff7e func   _item_p_research_mg_security item_p_research_mg_security
 0x1000ff97 func   ?sub_103346c0@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::sub_103346c0

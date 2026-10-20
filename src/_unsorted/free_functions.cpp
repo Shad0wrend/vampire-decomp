@@ -22009,6 +22009,40 @@ extern "C" GP *gravity_pellet()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148560 size=0x106
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern int g_1057b7c0[2];
+ISaveRestoreOps *sub_10045d90(int type);
+void sub_10001ce9();
+
+int *sub_10148560()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 10, "m_pConstraint", {0x730, 0}, 1, 2, 0, sub_10045d90(5), 0 },
+        { 5, "m_isInert", {0x734, 0}, 1, 2, 0, 0, 0 },
+        { 0, "InputOnBreak", {0, 0}, 1, 8, "ConstraintBroken", 0, (void *)sub_10001ce9 },
+    };
+    g_1057b7c0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1057b7c0[0] = (int)&dataDesc[1];
+    return g_1057b7c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ca10 size=0x86
 #include "CUnknown1014ca10.h"
 
