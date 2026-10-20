@@ -3,6 +3,7 @@
 #pragma once
 
 class CRestore;
+class CSave;
 
 class CPropHacking : public CBaseEntity
 {
@@ -13,6 +14,7 @@ public:
 	void vfunc275();	// slot 275: sub_1021c890(the dword at +0x9e0), then stores the id of the global record named "access" in a global (-1 when there is none)
 	void sub_1021c890(int a);	// called through the stub at 0x10003aa8
 	void sub_1021a2f0(CRestore *pRestore);	// "CPropHacking::LoadGlobalEmailState": scope trace (entity name), when the byte at +0xa10 is set reads the 0x80 byte string at +0xa28 from pRestore under the entity name
+	void sub_1021a3d0(CSave *pSave);	// "CPropHacking::SaveGlobalEmailState": as LoadGlobalEmailState, writing the string to pSave
 
 	char m_pad03e0[0x9e0 - 0x3e0];
 	int m_n09e0;	// 0x9e0
