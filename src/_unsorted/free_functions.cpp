@@ -49001,6 +49001,18 @@ struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 void CUnknown10307b40::sub_10307b40(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10307e00 size=0x11
+extern unsigned int g_109363d8[8];
+
+void sub_10307e00()
+{
+    int i;
+    for (i = 0; i < 8; i++) {
+        g_109363d8[i] = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b100 size=0x98
 #include "CUtlVector280.h"
 
