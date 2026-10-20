@@ -4020,6 +4020,7 @@
 0x10015695 func   ?sub_10054400@@YAXXZ sub_10054400
 0x100156a4 func   ?vfunc5@CItemGRingGold@@QAEPAV1@I@Z CItemGRingGold::vfunc5
 0x100156a9 func   ?sub_10247450@@YAPADH@Z sub_10247450
+0x100156b8 func   ?sub_1010c930@CFuncAreaPortalBase@@QAEXXZ CFuncAreaPortalBase::sub_1010c930
 0x100156bd func   ?sub_10130100@@YAXH@Z sub_10130100
 0x100156cc func   ?sub_102b5dc0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102b5dc0
 0x100156db func   ?vfunc96@CBaseEntity@@UAEHXZ CBaseEntity::vfunc96

@@ -18206,6 +18206,40 @@ int *sub_1010be40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c930 size=0xb9
+#include "CFuncAreaPortalBase.h"
+#include "CUtlLinkedList8.h"
+
+extern int vt_1045e41c[];
+extern CUtlLinkedList8 g_10709680;
+
+// TARGET: CFuncAreaPortalBase::sub_1010c930
+void CFuncAreaPortalBase::sub_1010c930()
+{
+	unsigned short i = m_nPortalSlot;
+	*(int **)this = vt_1045e41c;
+	if (g_10709680.IsInList(i))
+	{
+		CUtlLinkedList8Node *pMem = g_10709680.m_pMemory;
+		CUtlLinkedList8Node *n = &pMem[i];
+		if (n->m_Previous != 0xffff)
+			pMem[n->m_Previous].m_Next = n->m_Next;
+		else
+			g_10709680.m_Head = n->m_Next;
+		if (n->m_Next != 0xffff)
+			pMem[n->m_Next].m_Previous = n->m_Previous;
+		else
+			g_10709680.m_Tail = n->m_Previous;
+		n->m_Next = i;
+		n->m_Previous = i;
+		--g_10709680.m_ElementCount;
+	}
+	g_10709680.m_pMemory[i].m_Next = g_10709680.m_FirstFree;
+	g_10709680.m_FirstFree = i;
+	sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010cbc0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
