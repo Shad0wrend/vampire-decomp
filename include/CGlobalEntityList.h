@@ -50,4 +50,5 @@ public:
 	CGlobalEntityList_Ent *sub_100f7b20(const char *pszClass, const char *pszName, int pStart, void *pSearching, int pActivator);	// a name search variant (stub 0x10009b8d); the entity found, or 0
 	CBaseEntity *sub_100f7890(CBaseEntity *pStart, const char *szName);	// the first entity after pStart that has an edict and whose name (slot 9) equals szName, case-insensitive
 	void sub_100f6e40(void *pList);	// handles a list of pending entities (the object at pList, a CUtlVector behind a leading dword); stub 0x10011de7
+	int sub_100f7040();	// the number of entity slots in use (stub 0x1000e4d0)
 };
