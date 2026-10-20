@@ -25991,6 +25991,41 @@ char *QuestJournal::sub_10221e50(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10222210 size=0xb5
+#include "CExperienceTable.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_105b153c[];
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
+void CExperienceTable::sub_10222210()
+{
+    g_109f3620[*g_109f3680].a = g_105b153c;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    sub_102223f0();
+    --*g_109f3680;
+    m_Size = 0;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            Plat_Free(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+    m_pElements = m_pMemory;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            Plat_Free(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102223f0 size=0xc3
 extern int *g_109f3680;
 extern const char **g_109f3620;

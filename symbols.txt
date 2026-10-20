@@ -2785,6 +2785,7 @@
 0x100115d6 func   _item_k_skyline_haven_key item_k_skyline_haven_key
 0x10011617 func   ?sub_10085070@@YAXPAHPBH@Z sub_10085070
 0x1001164e func   ?sub_1032e9f0@CBaseCombatCharacter@@QAEXHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1032e9f0
+0x10011653 func   ?sub_10222210@CExperienceTable@@QAEXXZ CExperienceTable::sub_10222210
 0x1001166c func   ?sub_102349e0@@YAHXZ sub_102349e0
 0x10011676 func   ?sub_10031bd0@@YA_NPAX@Z sub_10031bd0
 0x10011699 func   ?sub_104300d0@@YAII@Z sub_104300d0
