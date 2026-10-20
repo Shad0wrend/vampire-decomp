@@ -27414,6 +27414,46 @@ extern "C" CBaseEntity *env_sun()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2770 size=0xda
+#include "CUnknown101c2770.h"
+#include "CVDmg_t.h"
+#include "ScopeTrace.h"
+#define EV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct UnkObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void *vfunc4(); };
+struct Edict { char pad[0x40]; UnkObj *m_pUnk; };
+struct EngineSlots
+{
+    EV(a0) EV(a1) EV(a2)
+    virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34(); virtual void a35(); virtual void a36(); virtual void a37();
+    virtual Edict *vfunc38(int index);
+};
+extern EngineSlots *g_1070b22c;
+extern char g_10543c6c[];
+extern float g_1070d1b0[3];
+static inline void *Instance(int index)
+{
+    Edict *pEdict = g_1070b22c->vfunc38(index);
+    ScopeTrace t(g_10543c6c, g_106b8540);
+    void *pResult;
+    if (!pEdict)
+        pEdict = g_1070b22c->vfunc38(0);
+    if (pEdict && pEdict->m_pUnk)
+        pResult = pEdict->m_pUnk->vfunc4();
+    else
+        pResult = 0;
+    return pResult;
+}
+CUnknown101c2770 *CUnknown101c2770::sub_101c2770(CVDmg_t *pDmg)
+{
+    void *pEnt = Instance(pDmg->m_field34);
+    int type = pDmg->m_field10;
+    sub_101c2910(pEnt, pEnt, g_1070d1b0, g_1070d1b0, pDmg->sub_101faa70(), type, 0, -1);
+    m_pDmg = pDmg;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2a10 size=0xa
 struct CUnknown101c2a10 { char p[0x40]; int a; void sub_101c2a10(int v); };
 // TARGET: CUnknown101c2a10::sub_101c2a10

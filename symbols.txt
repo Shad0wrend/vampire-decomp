@@ -2124,6 +2124,7 @@
 0x1000b8c5 func   ?sub_103483c0@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::sub_103483c0
 0x1000b8e3 func   ?sub_102989e0@CAI_BaseNPCTroika@@QAEXPBD@Z CAI_BaseNPCTroika::sub_102989e0
 0x1000b8e8 func   ?sub_1012cf70@CUnknown1012cf70@@QAEXH@Z CUnknown1012cf70::sub_1012cf70
+0x1000b8f2 func   ?sub_101c2770@CUnknown101c2770@@QAEPAV1@PAVCVDmg_t@@@Z CUnknown101c2770::sub_101c2770
 0x1000b8f7 func   ?sub_10077730@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10077730
 0x1000b901 func   ?sub_10098810@CUnknown10098810@@QAEPAV1@XZ CUnknown10098810::sub_10098810
 0x1000b92e func   ?sub_10373620@@YADXZ sub_10373620
