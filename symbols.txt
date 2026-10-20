@@ -450,6 +450,7 @@
 0x100034b3 func   ?sub_103dae50@CUnknown103dae50@@QAEXXZ CUnknown103dae50::sub_103dae50
 0x100034db func   ?sub_10081e90@@YIXPAUCSlots@@HH@Z sub_10081e90
 0x10003503 func   _scripted_target scripted_target
+0x1000350d func   ?vfunc103@CBaseEntity@@UAEXXZ CBaseEntity::vfunc103
 0x10003512 func   ?sub_10218080@@YIXPADHH@Z sub_10218080
 0x1000352b func   _npc_VTzimisce npc_VTzimisce
 0x1000353a func   ?sub_10383e50@@YGII@Z sub_10383e50
