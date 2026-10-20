@@ -2252,6 +2252,7 @@
 0x1000e962 func   ?vfunc546@CNPC_VVampire@@QAEHH@Z CNPC_VVampire::vfunc546
 0x1000e97b func   ?vfunc5@COccultPresence@@QAEPAV1@I@Z COccultPresence::vfunc5
 0x1000e98a func   ?vfunc288@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc288
+0x1000e999 func   ?sub_100b4650@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100b4650
 0x1000e9e9 func   _window_pane window_pane
 0x1000e9fd func   ?sub_102e2710@@YIXPAUCOwner@@@Z sub_102e2710
 0x1000ea11 func   ?sub_1009f200@CBaseEntity@@QAEPBDXZ CBaseEntity::sub_1009f200

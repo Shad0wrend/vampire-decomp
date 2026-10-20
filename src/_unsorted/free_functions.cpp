@@ -9690,6 +9690,22 @@ CUtlMemory16 *CUtlMemory16::sub_100b4610(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4650 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_109f3634)(int);
+
+UtlMem *UtlMem::sub_100b4650(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_109f3634(allocationCount * 8);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b47e0 size=0x8
 void __fastcall sub_100b47e0(int *p) { p[3] = 0; }
 // END FUNCTION
