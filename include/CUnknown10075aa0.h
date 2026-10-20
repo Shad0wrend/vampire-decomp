@@ -38,4 +38,5 @@ public:
 
 	void sub_10075aa0(int arg);	// base constructor body: clears the fields, then sub_10076f10(0, 0, 0), stores arg at +0x330
 	void sub_10076f10(char c, const char *a, const char *b);	// stores c at +0x1b1 and copies the strings (the empty string for null) to +0x1b2 / +0x232 (stub 0x1000e822)
+	float sub_10076b30();	// the event's remaining length: 0.0f unless it has a time range (stub 0x10014835)
 };
