@@ -35,4 +35,4 @@
 	void sub_100a8ef0();	// "CBaseEntity::ResetScriptedSoundOverride": scope trace (entity name), when the dword at +0x108 is set asks the global at 0x106eb5d8 (sub_100f7770(0, dword, this, 0)) for the entity, then SetSoundOverrideEnt(entity or null)
 	void sub_1009d980(char bAddAsDefault);	// "CBaseEntity::CBaseEntity" body (entity base constructor, stub 0x100090fc): called directly by the derived constructors before they store their vftable
 	void sub_100b2e30(const float *pVec);	// worker taking a vector (called through the stub at 0x10013728), e.g. SetAbsVelocity-like
-	void sub_100a8e00(inputdata_t *pInput);	// "CBaseEntity::InputSetSoundOverrideEnt": scope trace (entity name), stores the input's string (null unless it is a string) at +0x108, finds the entity of that name with the global list at 0x106eb5d8 and calls SetSoundOverrideEnt
+	void sub_100a1250(const void *pDamageInfo);	// takes the damage info (stub 0x1000ad5d), e.g. TakeDamage(const CTakeDamageInfo &)
