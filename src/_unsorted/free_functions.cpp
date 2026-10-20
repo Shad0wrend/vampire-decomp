@@ -5010,6 +5010,49 @@ void sub_1005be30(int pFilter, int delay, int nStartEntity, int nEndEntity, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005c4d0 size=0xd8
+#include "CTEBeamPoints.h"
+
+struct BeamPointsData
+{
+	int f14, f18, f1c, f20, f24;
+	float f28, f2c;
+	int f30;
+	float f34;
+	int f38, f3c, f40, f44, f48;
+	int v4c[3];
+	int v58[3];
+};
+
+extern BeamPointsData g_106bfb14;
+extern CTEBeamPoints g_106bfb08;
+
+void sub_1005c4d0(int a, int b, int *p3, int *p4, int p5, int p6, int p7, int p8, int p9, int p10, int p11, int p12, int p13, int p14, int p15, int p16, int p17, int p18)
+{
+	g_106bfb14.v4c[0] = p3[0];
+	g_106bfb14.v4c[1] = p3[1];
+	g_106bfb14.v4c[2] = p3[2];
+	g_106bfb14.v58[0] = p4[0];
+	g_106bfb14.v58[1] = p4[1];
+	g_106bfb14.v58[2] = p4[2];
+	g_106bfb14.f14 = p5;
+	g_106bfb14.f18 = p6;
+	g_106bfb14.f1c = p7;
+	g_106bfb14.f20 = p8;
+	g_106bfb14.f24 = p9;
+	g_106bfb14.f28 = (float)p10;
+	g_106bfb14.f2c = (float)p11;
+	g_106bfb14.f30 = p12;
+	g_106bfb14.f34 = (float)p13;
+	g_106bfb14.f48 = p18;
+	g_106bfb14.f38 = p14;
+	g_106bfb14.f3c = p15;
+	g_106bfb14.f40 = p16;
+	g_106bfb14.f44 = p17;
+	g_106bfb08.sub_1005c150(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005cae0 size=0xad
 #include "CTEBeamRing.h"
 extern CTEBeamRing g_106bfd20;
