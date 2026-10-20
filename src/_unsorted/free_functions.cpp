@@ -18883,6 +18883,34 @@ char CBaseCombatCharacter::sub_10146a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146d50 size=0x9a
+#include "CBaseCombatCharacter.h"
+extern int g_1046bae8[];
+
+char CBaseCombatCharacter::sub_10146d50()
+{
+    if (!*(int *)((char *)this + 0xa8))
+        return 0;
+    CVStatList_t *list;
+    int i;
+    for (i = 0; i < m_nStatLists; i++) {
+        if (m_pStatLists[i]->m_field10 == 3) {
+            list = m_pStatLists[i];
+            goto found;
+        }
+    }
+    {
+        static CVStatList_t def(-1);
+        list = &def;
+    }
+found:
+    int v = list->sub_10010609(8);
+    if (v < 0 || v > 4)
+        return 0;
+    return (g_1046bae8[v] & *(int *)((char *)this + 0x14d8)) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147c10 size=0xa6
 struct ISaveRestoreOps;
 struct datamap_t;
