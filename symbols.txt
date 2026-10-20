@@ -327,6 +327,7 @@
 0x10002b30 func   ?vfunc5@CElderVitaePack@@QAEPAV1@I@Z CElderVitaePack::vfunc5
 0x10002b3f func   ?sub_10134a80@@YAPAHXZ sub_10134a80
 0x10002b49 func   ?sub_101f4570@TSeg@@QAEXHPAH0@Z TSeg::sub_101f4570
+0x10002b62 func   ?vfunc30@CRestore@@UAEHPAIHH@Z CRestore::vfunc30
 0x10002b7b func   ?vfunc5@CRotButton@@QAEPAV1@I@Z CRotButton::vfunc5
 0x10002b94 func   ?sub_1004e1c0@CPhysBox@@QAE_NH@Z CPhysBox::sub_1004e1c0
 0x10002b9e func   _env_particle_hud env_particle_hud
