@@ -6386,6 +6386,51 @@ CUnknown10075aa0 *CUnknown10075aa0::sub_10075120(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075230 size=0xd2
+#include "CUnknown10075aa0.h"
+struct S10075b90 { void sub_10075b90(int a); };
+struct S10075bd0 { void sub_10075bd0(int a); };
+struct S10075c20 { void sub_10075c20(int a); };
+CUnknown10075aa0 *CUnknown10075aa0::sub_10075230(int a, int b, int c, int d)
+{
+    m_vec19c.m_pMemory = 0;
+    m_vec19c.m_allocationCount = 0;
+    m_vec19c.m_growSize = 0;
+    m_vec19c.m_size = 0;
+    m_vec19c.m_pElements = 0;
+    m_vec2bc.m_pMemory = 0;
+    m_vec2bc.m_allocationCount = 0;
+    m_vec2bc.m_growSize = 0;
+    m_vec2bc.m_size = 0;
+    m_vec2bc.m_pElements = 0;
+    m_vec2d0.m_pMemory = 0;
+    m_vec2d0.m_allocationCount = 0;
+    m_vec2d0.m_growSize = 0;
+    m_vec2d0.m_size = 0;
+    m_vec2d0.m_pElements = 0;
+    CUnknown10075aa0Vec *p = m_vec2e4;
+    int n = 2;
+    do {
+        p->m_pMemory = 0;
+        p->m_allocationCount = 0;
+        p->m_growSize = 0;
+        p->m_size = 0;
+        p->m_pElements = 0;
+        p++;
+    } while (--n);
+    m_vec30c.m_pMemory = 0;
+    m_vec30c.m_allocationCount = 0;
+    m_vec30c.m_growSize = 0;
+    m_vec30c.m_size = 0;
+    m_vec30c.m_pElements = 0;
+    sub_10075aa0(a);
+    ((S10075b90 *)this)->sub_10075b90(b);
+    ((S10075bd0 *)this)->sub_10075bd0(c);
+    ((S10075c20 *)this)->sub_10075c20(d);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075aa0 size=0x97
 #include "CUnknown10075aa0.h"
 
