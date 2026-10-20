@@ -34396,6 +34396,63 @@ void sub_1025d940()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025da90 size=0x82
+struct HandleEntry_t
+{
+	void *m_pEnt;
+	unsigned int m_nSerial;
+	int pad;
+};
+struct HandleTable_t
+{
+	int pad;
+	HandleEntry_t m_Entries[1];
+};
+extern HandleTable_t *g_10566458;
+
+struct EntDbg_t
+{
+	const char *sub_100ab4f0();	// CBaseEntity::GetDebugName
+};
+
+struct S1025da90
+{
+	int pad0;
+	unsigned int *m_pSlots;	// 0x04
+	char pad8[0x10 - 8];
+	int m_nSlots;	// 0x10
+};
+
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+extern char g_10547e40[];
+
+static inline EntDbg_t *HandleGet(const unsigned int &h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	HandleEntry_t *e = &g_10566458->m_Entries[h & 0x1fff];
+	if (e->m_nSerial == (h >> 13))
+		return (EntDbg_t *)e->m_pEnt;
+	return 0;
+}
+
+// TARGET: sub_1025da90
+void __fastcall sub_1025da90(S1025da90 *self)
+{
+	unsigned int *pSlot = self->m_pSlots;
+	int n = self->m_nSlots;
+	void (__cdecl *pfnMsg)(const char *fmt, ...) = g_109f3630;
+	pfnMsg(g_10547e40);
+	pfnMsg("Dumping attack coordinator slots.\n");
+	for (; n != 0; n--, pSlot++) {
+		if (HandleGet(*pSlot))
+			pfnMsg("%-20s - \n", HandleGet(*pSlot)->sub_100ab4f0());
+		else
+			pfnMsg("%-20s - \n", "**NULLSLOT**");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025db50 size=0xb
 char __fastcall sub_1025db50(int *self)
 {
