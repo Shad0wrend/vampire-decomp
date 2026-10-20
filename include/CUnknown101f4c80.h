@@ -3,12 +3,20 @@
 // up inlines CUnknown101f4c80Table::Find instead of a static of its own (guard 0x109f08f8, object 0x109f0920).
 #pragma once
 
+extern char g_106b8540[];	// empty string
+
+struct CUnknown101f4c80Str	// a string member whose accessor answers "" for null
+{
+	const char *m_psz;
+	const char *Get() const { return m_psz ? m_psz : g_106b8540; }
+};
+
 class CUnknown101f4c80
 {
 public:
 	int m_nId;	// 0x00
-	const char *m_pszName;	// 0x04
-	const char *m_pszFolder;	// 0x08
+	CUnknown101f4c80Str m_name;	// 0x04
+	CUnknown101f4c80Str m_folder;	// 0x08
 	int m_unk0c;
 	int m_unk10;
 
@@ -19,7 +27,7 @@ public:
 struct CUnknown101f4c80Table
 {
 	char m_pad0000[0x0c];
-	const char *m_pszDirectory;	// 0x0c
+	CUnknown101f4c80Str m_directory;	// 0x0c
 	char m_pad0010[4];
 	int m_nRecords;	// 0x14
 	CUnknown101f4c80 **m_pRecords;	// 0x18
