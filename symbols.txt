@@ -244,6 +244,7 @@
 0x10002554 func   ?sub_1026e340@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_1026e340
 0x10002586 func   ?sub_1009b700@CBaseEntity@@QAEXHHPBD@Z CBaseEntity::sub_1009b700
 0x1000258b func   ?vfunc546@CNPC_VManBat@@QAEHH@Z CNPC_VManBat::vfunc546
+0x100025c2 func   ?sub_10136ee0@CEntityMapData@@QAE_NPAD0@Z CEntityMapData::sub_10136ee0
 0x100025c7 func   ?sub_1039b180@@YADXZ sub_1039b180
 0x100025d1 func   ?vfunc252@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc252
 0x100025e0 func   ?sub_10168e10@CBasePlayer@@QAE_NXZ CBasePlayer::sub_10168e10
