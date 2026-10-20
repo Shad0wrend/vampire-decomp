@@ -8427,7 +8427,15 @@ extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
 
-void CBaseAnimating::sub_1008d0f0(float scalar)
+// CBaseAnimating::sub_1008d0f0: the game compiled it before this function, in the same unit, so VC6 knows which registers it keeps;
+// the block's own copy, in a namespace of its own: no second definition of the game's name.
+namespace block_1008d230 {
+struct CBaseAnimatingUnit : CBaseAnimating
+{
+	void sub_1008d0f0(float scalar);
+};
+
+void CBaseAnimatingUnit::sub_1008d0f0(float scalar)
 {
     const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
     g_109f3620[*g_109f3680].a = "CBaseAnimating::SetGroundSpeedScalar";
@@ -8437,6 +8445,8 @@ void CBaseAnimating::sub_1008d0f0(float scalar)
     *(float *)((char *)this + 0x564) = scalar;
     (*g_109f3680)--;
 }
+}
+using namespace block_1008d230;
 
 // TARGET: CBaseAnimating::sub_1008d230
 void CBaseAnimating::sub_1008d230(float rate)
@@ -8447,10 +8457,10 @@ void CBaseAnimating::sub_1008d230(float rate)
     g_109f3620[*g_109f3680].c = g_106b8540;
     (*g_109f3680)++;
     if (rate < 0.0f) {
-        sub_1008d0f0(1.0f);
+        ((CBaseAnimatingUnit *)this)->sub_1008d0f0(1.0f);
         *(float *)((char *)this + 0x6f4) = 1.0f;
     } else {
-        sub_1008d0f0(rate);
+        ((CBaseAnimatingUnit *)this)->sub_1008d0f0(rate);
         *(float *)((char *)this + 0x6f4) = rate;
     }
     (*g_109f3680)--;
@@ -33604,12 +33614,22 @@ extern ScopeTraceEntry_t *g_109f3620;
 extern int *g_109f3680;
 extern char g_106b8540[];
 
-char CVStatList_t::sub_102008b0(int stat)
+// CVStatList_t::sub_102008b0: the game compiled it before this function, in the same unit, so VC6 knows which registers it keeps;
+// the block's own copy, in a namespace of its own: no second definition of the game's name.
+namespace block_10200ca0 {
+struct CVStatListUnit : CVStatList_t
+{
+	char sub_102008b0(int stat);
+};
+
+char CVStatListUnit::sub_102008b0(int stat)
 {
 	if (stat >= 0 && stat < m_field04)
 		return 1;
 	return 0;
 }
+}
+using namespace block_10200ca0;
 
 // TARGET: CVStatList_t::sub_10200ca0
 int CVStatList_t::sub_10200ca0(int stat)
@@ -33618,7 +33638,7 @@ int CVStatList_t::sub_10200ca0(int stat)
 	g_109f3620[*g_109f3680].m_pszName = g_106b8540;
 	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
 	(*g_109f3680)++;
-	if (sub_102008b0(stat)) {
+	if (((CVStatListUnit *)this)->sub_102008b0(stat)) {
 		int value = (**(int ***)&m_field08)[stat];
 		(*g_109f3680)--;
 		return value;
@@ -41700,19 +41720,22 @@ struct N {
 	void sub_10289ee0(int id);
 };
 
+// sub_102a13d0: the game compiled it before this function, in the same unit, so VC6 knows which registers it keeps;
+// the block's own copy, in a namespace of its own: no second definition of the game's name.
+namespace block_102a1560 {
 int __fastcall sub_102a13d0(N *p)
 {
 	if (p->pObj) {
-		int t = p->pObj->type;
-		if (t == 100)
-			return 0x1110;
-		if (t == 0x65)
-			return 0x110c;
-		if (t == 0x27d8)
-			return 0x111e - (p->flag != 0);
+		switch (p->pObj->type) {
+		case 100: return 0x1110;
+		case 101: return 0x110c;
+		case 0x27d8: return p->flag ? 0x111d : 0x111e;
+		}
 	}
 	return -1;
 }
+}
+using namespace block_102a1560;
 
 // TARGET: sub_102a1560
 bool __fastcall sub_102a1560(N *p)
@@ -41739,19 +41762,22 @@ struct N {
 	void sub_10289ee0(int id);
 };
 
+// sub_102a1420: the game compiled it before this function, in the same unit, so VC6 knows which registers it keeps;
+// the block's own copy, in a namespace of its own: no second definition of the game's name.
+namespace block_102a1590 {
 int __fastcall sub_102a1420(N *p)
 {
 	if (p->pObj) {
-		int t = p->pObj->type;
-		if (t == 100)
-			return 0x1110;
-		if (t == 0x65)
-			return 0x110c;
-		if (t == 0x27d8)
-			return 0x111e - (p->flag != 0);
+		switch (p->pObj->type) {
+		case 100: return 0x1111;
+		case 101: return 0x110d;
+		case 0x27d8: return 0x1118;
+		}
 	}
 	return -1;
 }
+}
+using namespace block_102a1590;
 
 // TARGET: sub_102a1590
 bool __fastcall sub_102a1590(N *p)
@@ -41778,19 +41804,22 @@ struct N {
 	void sub_10289ee0(int id);
 };
 
+// sub_102a1470: the game compiled it before this function, in the same unit, so VC6 knows which registers it keeps;
+// the block's own copy, in a namespace of its own: no second definition of the game's name.
+namespace block_102a15c0 {
 int __fastcall sub_102a1470(N *p)
 {
 	if (p->pObj) {
-		int t = p->pObj->type;
-		if (t == 100)
-			return 0x1110;
-		if (t == 0x65)
-			return 0x110c;
-		if (t == 0x27d8)
-			return 0x111e - (p->flag != 0);
+		switch (p->pObj->type) {
+		case 100: return 0x1112;
+		case 101: return 0x110e;
+		case 0x27d8: return p->flag ? 0x1119 : 0x111a;
+		}
 	}
 	return -1;
 }
+}
+using namespace block_102a15c0;
 
 // TARGET: sub_102a15c0
 bool __fastcall sub_102a15c0(N *p)
@@ -41817,19 +41846,22 @@ struct N {
 	void sub_10289ee0(int id);
 };
 
+// sub_102a14c0: the game compiled it before this function, in the same unit, so VC6 knows which registers it keeps;
+// the block's own copy, in a namespace of its own: no second definition of the game's name.
+namespace block_102a15f0 {
 int __fastcall sub_102a14c0(N *p)
 {
 	if (p->pObj) {
-		int t = p->pObj->type;
-		if (t == 100)
-			return 0x1110;
-		if (t == 0x65)
-			return 0x110c;
-		if (t == 0x27d8)
-			return 0x111e - (p->flag != 0);
+		switch (p->pObj->type) {
+		case 100: return 0x1113;
+		case 101: return 0x3f;
+		case 0x27d8: return p->flag ? 0x111b : 0x111c;
+		}
 	}
 	return -1;
 }
+}
+using namespace block_102a15f0;
 
 // TARGET: sub_102a15f0
 bool __fastcall sub_102a15f0(N *p)
@@ -41856,19 +41888,22 @@ struct N {
 	void sub_10289ee0(int id);
 };
 
+// sub_102a1510: the game compiled it before this function, in the same unit, so VC6 knows which registers it keeps;
+// the block's own copy, in a namespace of its own: no second definition of the game's name.
+namespace block_102a1620 {
 int __fastcall sub_102a1510(N *p)
 {
 	if (p->pObj) {
-		int t = p->pObj->type;
-		if (t == 100)
-			return 0x1110;
-		if (t == 0x65)
-			return 0x110c;
-		if (t == 0x27d8)
-			return 0x111e - (p->flag != 0);
+		switch (p->pObj->type) {
+		case 100: return 0x1111;
+		case 101: return 0x110d;
+		case 0x27d8: return 0x55;
+		}
 	}
 	return -1;
 }
+}
+using namespace block_102a1620;
 
 // TARGET: sub_102a1620
 bool __fastcall sub_102a1620(N *p)
@@ -66112,10 +66147,15 @@ void CUnknown1042da80::sub_1042da80(int value)
 // FUNCTION: 0x1042daa0 size=0x7e
 #include "CUnknown1042d9a0.h"
 
+// sub_1042d700, sub_1042d720, sub_1042d9a0, sub_10011e4b (0x1042d9f0): the game compiled them before this function, in the same unit, so VC6 knows which registers they keep;
+// the block's own copy, in a namespace of its own: no second definition of the game's name.
+namespace block_1042daa0 {
 unsigned __fastcall sub_1042d700(unsigned *p) { return *p >> 1 & 0x1f; }
 unsigned __fastcall sub_1042d720(unsigned *p) { return *p >> 6 & 0x3ff; }
 unsigned __fastcall sub_1042d9a0(unsigned *p) { return ((unsigned short *)p)[1] & 0xfff; }
 unsigned __fastcall sub_10011e4b(unsigned *p) { return *p >> 28; }
+}
+using namespace block_1042daa0;
 
 // TARGET: CUnknown1042d9a0::sub_1042daa0
 char CUnknown1042d9a0::sub_1042daa0(CUnknown1042d9a0 *other)
@@ -66126,7 +66166,7 @@ char CUnknown1042d9a0::sub_1042daa0(CUnknown1042d9a0 *other)
         return 0;
     if (sub_1042d720((unsigned *)this) != sub_1042d720((unsigned *)other))
         return 0;
-    if (::sub_1042d9a0((unsigned *)this) != ::sub_1042d9a0((unsigned *)other))
+    if (block_1042daa0::sub_1042d9a0((unsigned *)this) != block_1042daa0::sub_1042d9a0((unsigned *)other))
         return 0;
     return sub_10011e4b((unsigned *)this) == sub_10011e4b((unsigned *)other);
 }
