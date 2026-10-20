@@ -1,5 +1,6 @@
 	bool sub_103360a0();	// "CBaseCombatCharacter::Inventory...": scope trace (entity name), true when GetWeapon(i) is null for every i in 0..0xdf
 	virtual int vfunc126(int a);	// "CBaseCombatCharacter::Save": scope trace (entity name), brackets CBaseEntity::vfunc126(a) with the helper pair on the field at +0x13d0, calling slot 111 first
+	virtual int vfunc127(int a);	// "CBaseCombatCharacter::Restore": scope trace (entity name), CBaseEntity::vfunc127(a), AddToTeam(name at +0x10ac) when non-empty, then sub_101cf2f0(this + 0x13d0, 1); returns the base result
 	void sub_1032ead0();	// "CBaseCombatCharacter::RemoveAllWeapons": scope trace (entity name), clears the active weapon handle at +0x19a4, then for every weapon slot 0..0xdf that is set calls slot 359 on it and clears the slot
 	void *sub_10335950(const char *pszClassname);	// "CBaseCombatCharacter::Inventory...": scope trace (entity name), the first weapon whose classname at +0x11c equals pszClassname (case-insensitive, null counts as empty), else null
 	void *sub_1032d890(const char *pszClassname, int unused);	// "CBaseCombatCharacter::Weapon_OwnsThisType": scope trace (entity name), the first weapon (GetWeapon over 0..0xdf) whose classname at +0x11c ("" when null) equals pszClassname case-insensitively, else null; takes a second, unused stack argument
