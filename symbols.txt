@@ -643,6 +643,7 @@
 0x10004548 func   ?vfunc2@CTEBloodStream@@UAEPAV1@I@Z CTEBloodStream::vfunc2
 0x10004552 func   ?vfunc516@CAI_BaseHumanoid@@QAEMXZ CAI_BaseHumanoid::vfunc516
 0x1000457a func   ?sub_101150f0@CFuncMonitor@@QAEXPBD@Z CFuncMonitor::sub_101150f0
+0x1000458e func   ?sub_10075040@CUnknown10075aa0@@QAEPAV1@H@Z CUnknown10075aa0::sub_10075040
 0x100045a2 func   _npc_VScurrying npc_VScurrying
 0x100045a7 func   ?sub_10046cd0@UtlMem@@QAEXXZ UtlMem::sub_10046cd0
 0x100045b1 func   _scripted_scene scripted_scene

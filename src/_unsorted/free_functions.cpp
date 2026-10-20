@@ -6106,6 +6106,47 @@ void CFlexAnimationTrack::sub_10074b10(int nList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075040 size=0xae
+#include "CUnknown10075aa0.h"
+
+CUnknown10075aa0 *CUnknown10075aa0::sub_10075040(int arg)
+{
+	m_vec19c.m_pMemory = 0;
+	m_vec19c.m_allocationCount = 0;
+	m_vec19c.m_growSize = 0;
+	m_vec19c.m_size = 0;
+	m_vec19c.m_pElements = 0;
+	m_vec2bc.m_pMemory = 0;
+	m_vec2bc.m_allocationCount = 0;
+	m_vec2bc.m_growSize = 0;
+	m_vec2bc.m_size = 0;
+	m_vec2bc.m_pElements = 0;
+	m_vec2d0.m_pMemory = 0;
+	m_vec2d0.m_allocationCount = 0;
+	m_vec2d0.m_growSize = 0;
+	m_vec2d0.m_size = 0;
+	m_vec2d0.m_pElements = 0;
+	CUnknown10075aa0Vec *p = m_vec2e4;
+	int n = 2;
+	do {
+		p->m_pMemory = 0;
+		p->m_allocationCount = 0;
+		p->m_growSize = 0;
+		p->m_size = 0;
+		p->m_pElements = 0;
+		p++;
+		n--;
+	} while (n != 0);
+	m_vec30c.m_pMemory = 0;
+	m_vec30c.m_allocationCount = 0;
+	m_vec30c.m_growSize = 0;
+	m_vec30c.m_size = 0;
+	m_vec30c.m_pElements = 0;
+	sub_10075aa0(arg);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075aa0 size=0x97
 #include "CUnknown10075aa0.h"
 
