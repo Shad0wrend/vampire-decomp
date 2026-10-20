@@ -82,6 +82,30 @@ bool CBaseCombatCharacter::vfunc347(int event, char *pszName, float *pA, float *
 }
 // END FUNCTION
 
+// FUNCTION: 0x10323a90 size=0x96
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::vfunc103()
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::Spawn";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    const char *p = *(const char **)((char *)this + 0x10ac);
+    if (!p) p = g_106b8540;
+    if (*p)
+        sub_103239a0(p);
+    ((CBaseAnimating *)this)->CBaseAnimating::vfunc103();
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323c20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
