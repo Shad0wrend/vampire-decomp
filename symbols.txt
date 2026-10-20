@@ -1784,6 +1784,7 @@
 0x100097b9 func   _trigger_werewolf_zone trigger_werewolf_zone
 0x100097c3 func   _hud_image hud_image
 0x100097d7 func   ?sub_1023ed10@@YAXHD@Z sub_1023ed10
+0x100097dc func   ?vfunc103@CPhysicsCannister@@QAEXXZ CPhysicsCannister::vfunc103
 0x100097e1 func   ?sub_1030c600@@YGHPBD@Z sub_1030c600
 0x10009804 func   ?sub_104001f0@@YAHXZ sub_104001f0
 0x10009881 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>::vfunc3
