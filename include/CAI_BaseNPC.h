@@ -76,7 +76,8 @@ public:
 	virtual void vfunc435(void *pSchedule);	// called with the new schedule by sub_10280e50
 	CAI_NPC_V(436)
 	virtual int vfunc437();	// "SelectFailSchedule"-like (AI_BaseNPC_Schedule.cpp): returns a schedule id picked from the failure conditions
-	CAI_NPC_V(438) CAI_NPC_V(439)
+	virtual int vfunc438();	// "SelectSchedule": returns the schedule id
+	CAI_NPC_V(439)
 	CAI_NPC_V(440) CAI_NPC_V(441) CAI_NPC_V(442) CAI_NPC_V(443) CAI_NPC_V(444) CAI_NPC_V(445) CAI_NPC_V(446)
 	virtual int vfunc447(int a);	// classification of a (the dword at +0x1c of the object at +0x5c38); 0x12f is the special case of vfunc509
 	CAI_NPC_V(448)
