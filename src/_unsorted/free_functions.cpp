@@ -50240,6 +50240,39 @@ int CBaseCombatCharacter::sub_1032fab0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103300c0 size=0x101
+#include "CBaseCombatCharacter.h"
+
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+void __cdecl sub_10012a8a();	// the game's destructor stub of the shared default stat list
+extern unsigned char g_109f0b2a;	// its guard byte
+extern CVStatList_t g_109f0b40;	// the shared default stat list
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+// The game's inlined stat-list lookup by id with the function-local default list spelled out.
+static inline CVStatList_t *StatListById(CBaseCombatCharacter *pChar, int nId)
+{
+	for (int i = 0; i < pChar->m_nStatLists; i++) {
+		if (pChar->m_pStatLists[i]->m_field10 == nId)
+			return pChar->m_pStatLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		new (&g_109f0b40) CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+
+char CBaseCombatCharacter::sub_103300c0()
+{
+	if (sub_10337f30())
+		return StatListById(this, 3)->sub_10010609(7) > 0;
+	return StatListById(this, 3)->sub_10010609(0xd) > 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10330ce0 size=0xd
 #include "CUnknown10330ce0.h"
 // TARGET: CUnknown10330ce0::sub_10330ce0
