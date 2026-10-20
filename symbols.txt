@@ -1666,6 +1666,7 @@
 0x10009999 func   ?sub_1004c4c0@CUtlRBTree36@@QBE_NG@Z CUtlRBTree36::sub_1004c4c0
 0x100099a8 func   ?sub_10430280@@YAII@Z sub_10430280
 0x100099d0 func   _item_g_pisha_fetish item_g_pisha_fetish
+0x100099f8 func   ?sub_100d13d0@CUnknown106b89bc@@QAEXPAVCBaseEntity@@@Z CUnknown106b89bc::sub_100d13d0
 0x10009a16 func   ?sub_10248850@CUnknown10248850@@QAEXH@Z CUnknown10248850::sub_10248850
 0x10009a20 func   ?vfunc106@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc106
 0x10009a34 func   ?sub_10182810@CUnknown10182810@@QAEHXZ CUnknown10182810::sub_10182810

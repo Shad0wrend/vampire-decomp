@@ -14144,6 +14144,45 @@ int Queue::sub_100cfd00(SaveX *save)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d13d0 size=0xab
+#include "CUnknown106b89bc.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+void sub_100d1210(CUnknown106b89bcNode *pNode);
+
+static inline CGlobalEntityList_Ent *ResolveHandle(unsigned int hEntity)
+{
+	if (hEntity != 0xffffffff) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[hEntity & 0x1fff];
+		if (pSlot->m_Serial == (int)(hEntity >> 13))
+			return pSlot->m_pEntity;
+	}
+	return 0;
+}
+
+void CUnknown106b89bc::sub_100d13d0(CBaseEntity *pEntity)
+{
+	CUnknown106b89bcNode *pPrev = 0;
+	CUnknown106b89bcNode *pNode = m_pHead;
+	while (pNode) {
+		if ((CBaseEntity *)ResolveHandle(pNode->m_hEntity) == pEntity || !ResolveHandle(pNode->m_hEntity)) {
+			if (pPrev)
+				pPrev->m_pNext = pNode->m_pNext;
+			else
+				m_pHead = pNode->m_pNext;
+			sub_100d1210(pNode);
+			pNode = m_pHead;
+			m_nCount--;
+			pPrev = 0;
+		} else {
+			pPrev = pNode;
+			pNode = pNode->m_pNext;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d30a0 size=0x1c
 #include "CUnknown100d30a0.h"
 
