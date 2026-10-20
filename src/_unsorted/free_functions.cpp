@@ -60554,6 +60554,38 @@ void CNPC_VWerewolf::sub_103d99a0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103da0a0 size=0x132
+#include "CNPC_VWerewolf.h"
+#include "CWerewolfEnemySlots.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: sub_103da0a0
+char __fastcall sub_103da0a0(CNPC_VWerewolf *pThis)
+{
+	ScopeTrace trace("CNPC_VWerewolf::IsEnemyUnreachable", pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+	char *p = (char *)pThis;
+	CWerewolfEnemySlots *pSlots = (CWerewolfEnemySlots *)pThis;
+	if (*(int *)(p + 0x66a4) != g_1070b22c->vfunc120())
+	{
+		*(int *)(p + 0x66a4) = g_1070b22c->vfunc120();
+		void *pEnemy = pSlots->slot167();
+		if (!pEnemy || pSlots->slot530(pEnemy))
+			p[0x66a1] = 1;
+		if (p[0x66a1])
+		{
+			const CNPC_VWerewolfVec3 *pTarget = &pThis->sub_103d9c90();
+			CNPC_VWerewolfVec3 *pOrigin = (CNPC_VWerewolfVec3 *)pSlots->slot217();
+			if ((char)pThis->sub_103d0db0(*pOrigin, *pTarget))
+				p[0x66a1] = 0;
+		}
+	}
+	return p[0x66a1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dad80 size=0x9f
 struct SEntB { void *pEnt; unsigned serial; int pad; };
 extern char *g_10566458;
