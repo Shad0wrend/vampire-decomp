@@ -1203,6 +1203,7 @@
 0x100082ab func   ??0StatItem56@@QAE@H@Z StatItem56::StatItem56
 0x100082ce func   ?sub_10110430@TFilterX@@QAEPAU1@E@Z TFilterX::sub_10110430
 0x100082d8 func   ?vfunc364@CBaseCombatWeapon@@UAEXHHH@Z CBaseCombatWeapon::vfunc364
+0x100082dd func   ?sub_101fc350@CVStatCost_t@@QAEHH_N@Z CVStatCost_t::sub_101fc350
 0x100082ec func   ?sub_101a5e10@@YAPAHXZ sub_101a5e10
 0x10008300 func   ?sub_101c2a50@CUnknown101c2a50@@QAEXH@Z CUnknown101c2a50::sub_101c2a50
 0x10008305 func   ?vfunc5@CItemGGarysFilm@@QAEPAV1@I@Z CItemGGarysFilm::vfunc5
