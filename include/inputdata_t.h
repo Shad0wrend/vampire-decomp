@@ -27,20 +27,23 @@ struct variant_t
 	void sub_100d04b0(void *pOut);	// "variant_t::Convert"-like getter: stores the value into *pOut according to fieldType (nothing for unsupported types)
 	void sub_100d0390(int type, void *pData);	// "variant_t::Set": stores the type and copies the value out of *pData according to it (1 dword, 3 dwords for vector types 3 and 14, a byte for 5, an entity pointer for 11 which becomes its handle, a handle for 12; unsupported types clear the value and the type)
 
-	// The entity of an EHANDLE variant (0 for other types or a stale handle); pList is the global entity list.
-	// Other variants go through a function-local static invalid handle, like the game's inline copy.
-	CGlobalEntityList_Ent *Entity(CGlobalEntityList *pList)
+	// The entity of an EHANDLE variant (0 for other types or a stale handle); ppList is the address of the global
+	// entity list pointer. Other variants go through a function-local static invalid handle, like the game's inline copy.
+	CGlobalEntityList_Ent *Entity(CGlobalEntityList **ppList)
 	{
-		if (fieldType == 12) {
-			if (eVal != 0xffffffff && pList->m_Slots[eVal & 0x1fff].m_Serial == (int)(eVal >> 13))
-				return pList->m_Slots[eVal & 0x1fff].m_pEntity;
-			return 0;
+		unsigned int h;
+		if (fieldType != 12) {
+			static variant_t_EHandle s_hInvalid;
+			s_hInvalid.m_Index = 0xffffffff;
+			h = s_hInvalid.m_Index;
+		} else {
+			h = eVal;
 		}
-		static variant_t_EHandle s_hInvalid;
-		s_hInvalid.m_Index = 0xffffffff;
-		unsigned int h = s_hInvalid.m_Index;
-		if (h != 0xffffffff && pList->m_Slots[h & 0x1fff].m_Serial == (int)(h >> 13))
-			return pList->m_Slots[h & 0x1fff].m_pEntity;
+		if (h != 0xffffffff) {
+			CGlobalEntityList_Slot *s = &(*ppList)->m_Slots[h & 0x1fff];
+			if (s->m_Serial == (int)(h >> 13))
+				return s->m_pEntity;
+		}
 		return 0;
 	}
 };
