@@ -25735,6 +25735,30 @@ void sub_101c31f0(unsigned char type, int *v1, int *v2, unsigned short s, int f,
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c3bb0 size=0xaf
+struct Vec3 {
+	float x, y, z;
+	Vec3() {}
+	Vec3(float a, float b, float c) { x = a; y = b; z = c; }
+	Vec3(const Vec3 &o) { x = o.x; y = o.y; z = o.z; }
+};
+struct VolumeStub { char m_pad0000[0x460]; Vec3 m_vecMin; Vec3 m_vecMax; };
+
+extern "C" __declspec(dllimport) float RandomFloat(float flMinVal, float flMaxVal);
+VolumeStub *sub_1023bd00();
+
+Vec3 sub_101c3bb0()
+{
+	VolumeStub *pVolume = sub_1023bd00();
+	if (pVolume) {
+		Vec3 vecMin = pVolume->m_vecMin;
+		Vec3 vecMax = pVolume->m_vecMax;
+		return Vec3(RandomFloat(vecMin.x, vecMax.x), RandomFloat(vecMin.y, vecMax.y), RandomFloat(vecMin.z, vecMax.z));
+	}
+	return Vec3(0.0f, 0.0f, 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4070 size=0xb3
 #define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();

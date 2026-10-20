@@ -3109,6 +3109,7 @@
 0x1001105e func   ?sub_1039ede0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_1039ede0
 0x10011063 func   ?sub_101a3380@@YG_NPAUVEnt@@H@Z sub_101a3380
 0x10011090 func   ?sub_102f7c00@@YAIHID@Z sub_102f7c00
+0x100110a4 func   ?sub_101c3bb0@@YA?AUVec3@@XZ sub_101c3bb0
 0x100110a9 func   ?sub_101cf620@@YAXXZ sub_101cf620
 0x100110b8 func   ?sub_10088fc0@@YAXXZ sub_10088fc0
 0x100110c2 func   ?vfunc3@CCopyRecipientFilter@@UAEHH@Z CCopyRecipientFilter::vfunc3
