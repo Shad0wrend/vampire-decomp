@@ -40406,6 +40406,43 @@ CBaseEntity *CAI_BaseNPC::sub_102729d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279a50 size=0xd5
+#include "CAI_BaseNPC.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+struct S10739a4c { void sub_101e3d70(CAI_BaseNPC *pNPC); };
+extern S10739a4c g_10739a4c;
+static inline CGlobalEntityList_Ent *Resolve(unsigned int h)
+{
+    if (h != -1) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        if (s->m_Serial == (h >> 13))
+            return s->m_pEntity;
+    }
+    return 0;
+}
+void CAI_BaseNPC::sub_10279a50(int a)
+{
+    CGlobalEntityList_Ent *pEnt = (CGlobalEntityList_Ent *)a;
+    unsigned int *pHandle = (unsigned int *)((char *)this + 0x5ce0);
+    if (Resolve(*(volatile unsigned int *)pHandle) != pEnt) {
+        unsigned int h = *(volatile unsigned int *)pHandle;
+        if (h != -1) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+            if (s->m_Serial == (h >> 13) && s->m_pEntity)
+                sub_10279b70((CBaseEntity *)Resolve(*(volatile unsigned int *)pHandle));
+        }
+        vfunc560();
+    }
+    if (pEnt) {
+        *pHandle = *pEnt->v1();
+        g_10739a4c.sub_101e3d70(this);
+    } else {
+        *pHandle = -1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279b70 size=0x2a
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
