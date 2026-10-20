@@ -4854,6 +4854,32 @@ void sub_1005a6a0(int a, int b, const int *pos, const int *dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005cae0 size=0xad
+#include "CTEBeamRing.h"
+extern CTEBeamRing g_106bfd20;
+
+void sub_1005cae0(int filter, int delay, int start, int end, int modelindex, int haloindex, int startframe, int framerate, int life, int width, int spread, int amplitude, int r, int g, int b, int a, int speed)
+{
+	g_106bfd20.m_nStartEnt = start;
+	g_106bfd20.m_nEndEnt = end;
+	g_106bfd20.m_nModelIndex = modelindex;
+	g_106bfd20.m_nHaloIndex = haloindex;
+	g_106bfd20.m_nStartFrame = startframe;
+	g_106bfd20.m_nFrameRate = framerate;
+	g_106bfd20.m_nLife = life;
+	g_106bfd20.m_nSpeed = speed;
+	g_106bfd20.m_fWidth = (float)width;
+	g_106bfd20.m_fEndWidth = g_106bfd20.m_fWidth;
+	g_106bfd20.m_nFadeLength = 0;
+	g_106bfd20.m_fAmplitude = (float)amplitude;
+	g_106bfd20.m_nR = r;
+	g_106bfd20.m_nG = g;
+	g_106bfd20.m_nB = b;
+	g_106bfd20.m_nA = a;
+	g_106bfd20.vfunc4(filter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d830 size=0x8f
 #include "CTEBeamSpline.h"
 extern CTEBeamSpline g_106c0358;
