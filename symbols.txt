@@ -570,6 +570,7 @@
 0x100040f7 func   ?sub_1042fc30@@YAII@Z sub_1042fc30
 0x10004129 func   ?vfunc30@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc30
 0x1000414c func   ?sub_100dd990@CUnknown100dd990@@QAEXHPBUCUnknown100dd990Vec@@0@Z CUnknown100dd990::sub_100dd990
+0x10004174 func   ?sub_103cc9b0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc9b0
 0x100041dd func   ?sub_101f63b0@@YGPBDPBD@Z sub_101f63b0
 0x100041e2 func   ?sub_101f9610@@YAXH@Z sub_101f9610
 0x100041fb func   ?sub_1004a2a0@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004a2a0
