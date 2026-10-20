@@ -24692,6 +24692,50 @@ int CUnknown101a1f70::sub_101a1f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2d50 size=0xbd
+#include "CEntitySaveRestoreBlockHandler.h"
+#include "CGlobalEntityList.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" __declspec(dllimport) void Warning(const char *, ...);
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+
+static __forceinline CBaseEntity *FindEntityByGlobalName(const char *pszGlobalname)
+{
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0);
+	while (pEnt) {
+		const char *pszArg = pszGlobalname ? pszGlobalname : g_106b8540;
+		const char *pszEnt = *(const char **)((char *)pEnt + 0x120);
+		if (!pszEnt)
+			pszEnt = g_106b8540;
+		if (_strcmpi(pszEnt, pszArg) == 0)
+			return pEnt;
+		pEnt = g_106eb5d8.sub_100f7060(pEnt);
+	}
+	return pEnt;
+}
+
+CBaseEntity *CEntitySaveRestoreBlockHandler::sub_101a2d50(const char *pszClassname, const char *pszGlobalname)
+{
+	CBaseEntity *pEnt = FindEntityByGlobalName(pszGlobalname);
+	if (pEnt) {
+		const char *pszArgClass = pszClassname ? pszClassname : g_106b8540;
+		const char *pszEntClass = *(const char **)((char *)pEnt + 0x11c);
+		if (!pszEntClass)
+			pszEntClass = g_106b8540;
+		if (_strcmpi(pszEntClass, pszArgClass) != 0) {
+			const char *pszEntClass2 = *(const char **)((char *)pEnt + 0x11c);
+			if (!pszEntClass2)
+				pszEntClass2 = g_106b8540;
+			Warning("Global entity found %s, wrong class %s [expects class %s]\n", pszGlobalname ? pszGlobalname : g_106b8540, pszEntClass2, pszClassname);
+			return 0;
+		}
+	}
+	return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3380 size=0xb3
 #include "CBaseEntity.h"
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();

@@ -2736,6 +2736,7 @@
 0x1000ebce func   ?vfunc5@COccultFrenzy@@QAEPAV1@I@Z COccultFrenzy::vfunc5
 0x1000ebe7 func   ?sub_100a9080@@YI_NPAD@Z sub_100a9080
 0x1000ec0a func   ?vfunc5@CWeaponMelee_ChangClaw@@QAEPAV1@I@Z CWeaponMelee_ChangClaw::vfunc5
+0x1000ec0f func   ?sub_101a2d50@CEntitySaveRestoreBlockHandler@@QAEPAVCBaseEntity@@PBD0@Z CEntitySaveRestoreBlockHandler::sub_101a2d50
 0x1000ec14 func   ?sub_10236d70@@YAHXZ sub_10236d70
 0x1000ec1e func   ?sub_101eab60@@YAXH@Z sub_101eab60
 0x1000ec28 func   ?sub_10122590@CGameMovement@@QAEXXZ CGameMovement::sub_10122590
