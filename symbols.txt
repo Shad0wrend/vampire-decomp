@@ -83,6 +83,7 @@
 0x10001785 func   ?vfunc5@CBaseFire@@UAEPAV1@I@Z CBaseFire::vfunc5
 0x1000178f func   _npc_VDog npc_VDog
 0x10001799 func   ?sub_100c81b0@CUnknown100c81b0@@QAEXPBUCBitVecWords@@HPBUCBoneRecord@@PBUCStudioBoneCount@@@Z CUnknown100c81b0::sub_100c81b0
+0x100017ad func   ?sub_102035c0@@YAPBDH@Z sub_102035c0
 0x100017bc func   ?sub_100bd090@bf_write@@QAEXMH@Z bf_write::sub_100bd090
 0x100017c6 func   ?vfunc437@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc437
 0x100017cb func   _npc_VCop npc_VCop
