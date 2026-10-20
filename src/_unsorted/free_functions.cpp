@@ -39796,6 +39796,22 @@ UtlVec8 *UtlVec8::sub_103dbf00(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc040 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_109f3634)(int);
+
+UtlMem *UtlMem::sub_103dc040(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_109f3634(allocationCount * 4);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc220 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);

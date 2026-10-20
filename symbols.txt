@@ -1759,6 +1759,7 @@
 0x1000b92e func   ?sub_10373620@@YADXZ sub_10373620
 0x1000b983 func   ?sub_101f2cd0@CUnknown101f2cd0@@QAEXH@Z CUnknown101f2cd0::sub_101f2cd0
 0x1000b9b5 func   ?sub_100976e0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_100976e0
+0x1000b9d8 func   ?sub_103dc040@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_103dc040
 0x1000b9e7 func   ?sub_1040b120@CUtlMemory192@@QAEXH@Z CUtlMemory192::sub_1040b120
 0x1000b9f1 func   _item_k_shrekhub_four_key item_k_shrekhub_four_key
 0x1000ba0a func   ?sub_101eaaa0@@YAXH@Z sub_101eaaa0
