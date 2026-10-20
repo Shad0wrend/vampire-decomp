@@ -18593,6 +18593,25 @@ extern "C" CBaseEntity *trigger_push()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c90e0 size=0x43
+#include "CTriggerTeleport.h"
+void *sub_100aa720(int size);
+extern char g_1059fc00[];
+
+// TARGET: trigger_teleport
+extern "C" CBaseEntity *trigger_teleport()
+{
+	void *mem = sub_100aa720(0x5a0);
+	CTriggerTeleport *p;
+	if (mem)
+		p = ((CTriggerTeleport *)mem)->sub_101c91e0();
+	else
+		p = 0;
+	p->vfunc106(g_1059fc00);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9740 size=0x69
 void *sub_1000db89(int);
 struct GP;
