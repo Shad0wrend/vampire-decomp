@@ -40416,6 +40416,57 @@ struct CUnknown102eeba0 { int p[6]; int a; void sub_102eeba0(int v); };
 void CUnknown102eeba0::sub_102eeba0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x102ef0e0 size=0x8a
+struct Info102ef0e0
+{
+	char m_pad0000[0x28];
+	float m_f28;	// 0x28
+	char m_pad002c[0x38 - 0x2c];
+	unsigned int m_flags38;	// 0x38
+	char m_pad003c[0x44 - 0x3c];
+	int m_n44;	// 0x44
+};
+
+struct Ctrl102ef0e0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual char vfunc4(Info102ef0e0 *pInfo, float flTime, int *pOut);
+};
+
+struct Main102ef0e0
+{
+	char m_pad0000[0x19b0];
+	Ctrl102ef0e0 m_Ctrl;	// 0x19b0
+};
+
+struct Sub102ef0e0
+{
+	char sub_102efde0(Info102ef0e0 *pInfo, float flTime);	// stub 0x10006bf9
+};
+
+extern double g_10449280;
+
+// TARGET: sub_102ef0e0
+char __fastcall sub_102ef0e0(void *self, int unused, Info102ef0e0 *pInfo, float flTime, int *pOut)
+{
+	Main102ef0e0 *pMain = *(Main102ef0e0 **)((char *)self - 0xc);
+	if (!pMain->m_Ctrl.vfunc4(pInfo, flTime, pOut)) {
+		if (!((Sub102ef0e0 *)((char *)self - 0x10))->sub_102efde0(pInfo, flTime)) {
+			if (flTime < g_10449280) {
+				*pOut = pInfo->m_n44;
+				pInfo->m_f28 = 0;
+				return 1;
+			}
+			return 0;
+		}
+		*pOut = 0;
+		pInfo->m_f28 = flTime;
+		pInfo->m_flags38 |= 2;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1690 size=0x168
 #include "CUnknown102ee120.h"
 extern "C" void *memset(void *, int, unsigned int);

@@ -1343,6 +1343,7 @@
 0x1000844f func   ?sub_101bd0f0@SFilter@@QAEPAU1@E@Z SFilter::sub_101bd0f0
 0x100084a4 func   ?vfunc5@CNPC_VGuard1@@QAEPAV1@I@Z CNPC_VGuard1::vfunc5
 0x100084bd func   ?vfunc619@CNPC_VAndreiBlood@@QAEXH@Z CNPC_VAndreiBlood::vfunc619
+0x100084db func   ?sub_102ef0e0@@YIDPAXHPAUInfo102ef0e0@@MPAH@Z sub_102ef0e0
 0x100084ea func   ?sub_10236400@@YAHXZ sub_10236400
 0x100084f4 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc3
 0x10008530 func   ?vfunc5@CWeaponMelee_Sledgehammer@@QAEPAV1@I@Z CWeaponMelee_Sledgehammer::vfunc5
