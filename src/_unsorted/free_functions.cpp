@@ -19609,6 +19609,51 @@ extern "C" CBaseEntity *keyframe_rope()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e740 size=0x6b
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct AnimPart
+{
+	char sub_10092ef0(int attachment, float *origin, float *angles);
+};
+
+struct EntVt
+{
+	S100(a) S10(b0) S10(b1) S10(b2)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4();
+	virtual void c5(); virtual void c6();
+	virtual AnimPart *GetBaseAnimating();
+	S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5) S10(d6)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4();
+	virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8();
+	virtual float *GetAbsOrigin();
+};
+
+// TARGET: sub_1019e740
+bool __stdcall sub_1019e740(EntVt *pEnt, int attachment, float *pOut)
+{
+	if (!pEnt)
+		return false;
+	if (attachment > 0)
+	{
+		AnimPart *pAnim = pEnt->GetBaseAnimating();
+		float angles[3];
+		if (!pAnim || !pAnim->sub_10092ef0(attachment, pOut, angles))
+			return false;
+	}
+	else
+	{
+		float *p = pEnt->GetAbsOrigin();
+		pOut[0] = p[0];
+		pOut[1] = p[1];
+		pOut[2] = p[2];
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1140 size=0x110
 #include "CSave.h"
 

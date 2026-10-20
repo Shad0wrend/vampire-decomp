@@ -3258,6 +3258,7 @@
 0x10013994 func   ?vfunc104@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc104
 0x1001399e func   ?vfunc104@CCameraAnimated@@QAEXXZ CCameraAnimated::vfunc104
 0x100139b2 func   ?sub_101f4f50@S9@@QAEPAU1@XZ S9::sub_101f4f50
+0x100139bc func   ?sub_1019e740@@YG_NPAUEntVt@@HPAM@Z sub_1019e740
 0x100139d0 func   ?sub_10100ef0@@YAPAHXZ sub_10100ef0
 0x100139df func   ?sub_10077890@CUnknown10077890@@QAEXH@Z CUnknown10077890::sub_10077890
 0x100139f8 func   ?sub_100c8990@CBaseButton@@QAE_NH@Z CBaseButton::sub_100c8990
