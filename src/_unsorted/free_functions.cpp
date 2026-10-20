@@ -39206,6 +39206,25 @@ bool __fastcall sub_1037bb20(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037c5b0 size=0x43
+#include "CNPC_VGuard1.h"
+void *sub_100aa720(int size);
+extern char g_1063b68c[];
+
+// TARGET: npc_VGuard1
+extern "C" CBaseEntity *npc_VGuard1()
+{
+	void *mem = sub_100aa720(0x6664);
+	CNPC_VGuard1 *p;
+	if (mem)
+		p = ((CNPC_VGuard1 *)mem)->sub_1037c620();
+	else
+		p = 0;
+	p->vfunc106(g_1063b68c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c750 size=0x33
 void sub_100053cb();
 void sub_10001fc3();
