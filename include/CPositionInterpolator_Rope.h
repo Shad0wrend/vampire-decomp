@@ -32,18 +32,13 @@ public:
 	char m_springs[0x48];	// 0x1a0
 };
 
-struct CRopeVec
-{
-	int x, y, z;
-};
-
 // RTTI .?AVCRopeDelegate@@, at +0x1f0 of CPositionInterpolator_Rope
 class CRopeDelegate
 {
 public:
 	CRopeDelegate() { m_flSlack = 0; m_bChanged = 0; }
 	virtual void vfunc0();
-	CRopeVec m_vecs[2];	// 0x1f4
+	int m_vecs[2][3];	// 0x1f4: two vectors
 	int m_flSlack;	// 0x20c
 	char m_bChanged;	// 0x210
 };
