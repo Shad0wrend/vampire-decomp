@@ -2352,6 +2352,7 @@
 0x1000cbdf func   ?sub_101e9e20@CHistoryList@@QAEXXZ CHistoryList::sub_101e9e20
 0x1000cbe9 func   ?vfunc5@CTriggerVolume@@QAEPAV1@I@Z CTriggerVolume::vfunc5
 0x1000cbf3 func   ?sub_100bdd20@bf_write@@QAEXI@Z bf_write::sub_100bdd20
+0x1000cbf8 func   ?vfunc86@CEnvParticle@@QAEDHHHHH@Z CEnvParticle::vfunc86
 0x1000cc02 func   ?sub_10080750@CUnknown10080750@@QAEXH@Z CUnknown10080750::sub_10080750
 0x1000cc16 func   ?vfunc367@CWeaponMelee@@UAEXHHH@Z CWeaponMelee::vfunc367
 0x1000cc43 func   ?sub_1006c0a0@CUnknown1006bea0@@QAEXPAD@Z CUnknown1006bea0::sub_1006c0a0
