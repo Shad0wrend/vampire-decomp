@@ -27,3 +27,25 @@ int CNPC_VYukie::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_10940314.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x103dd900 size=0x74
+#include "CNPC_VYukie.h"
+#include "CEntityVSlots.h"
+struct S1070b228 { char pad[0xc]; float curtime; };
+struct IRandomLike { virtual void v0(); virtual float RandomFloat(float lo, float hi); };
+struct ISlot1 { virtual void v0(); virtual void vfunc1(); };
+extern S1070b228 *g_1070b228;
+extern IRandomLike *g_1070b244;
+extern ISlot1 *g_10924edc;
+char CNPC_VYukie::vfunc600(int unused)
+{
+    unsigned int flags = sub_1032e7b0() ? sub_1032e7b0()->slot360() : 0;
+    if ((flags & 0x18000) && !*((char *)this + 0x6078)) {
+        *((char *)this + 0x6078) = 1;
+        *(float *)((char *)this + 0x6074) = g_1070b244->RandomFloat(22.5f, 45.0f) + g_1070b228->curtime;
+        g_10924edc->vfunc1();
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
