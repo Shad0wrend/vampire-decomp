@@ -8260,6 +8260,19 @@ void sub_10085070(int *dst, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100855f0 size=0x1c
+extern char g_1054970c[];
+extern int g_10552810;
+void __cdecl sub_102f7c00(const char *, int, int);
+int __cdecl sub_10119390();
+
+void sub_100855f0()
+{
+    sub_102f7c00(g_1054970c, 4, 0);
+    g_10552810 = sub_10119390();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10085bd0 size=0x77
 #include "CUnknown1070b22c.h"
 extern CUnknown1070b22c *g_1070b22c;
