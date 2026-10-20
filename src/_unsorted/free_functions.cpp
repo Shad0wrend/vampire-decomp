@@ -25330,6 +25330,23 @@ S6 *CUnknown101db210::sub_101db210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db560 size=0x6a
+#include "CUnknown101db210.h"
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+extern void (__cdecl *g_109f3628)(const char *, ...);
+
+void CUnknown101db210::sub_101db560()
+{
+	char buf[512];
+	g_109f388c(buf, 512, "[Affects_Table -- %d]:\n", m_id);
+	g_109f3628("%s", buf);
+	Filter()->sub_101dadd0();
+	m_first.sub_101daf80();
+	for (int i = 0; i < m_count; i++)
+		((CUnknown101daf60 *)m_pItems[i])->sub_101daf80();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db5f0 size=0xd
 CUnknown101db5f0* CUnknown101db5f0::sub_101db5f0()
 {

@@ -2442,6 +2442,7 @@
 0x1000e507 func   ?vfunc546@CNPC_VSheriffSwarm@@QAEHH@Z CNPC_VSheriffSwarm::vfunc546
 0x1000e520 func   ?vfunc5@CVGuiScreen@@QAEPAV1@I@Z CVGuiScreen::vfunc5
 0x1000e534 func   ?vfunc126@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc126
+0x1000e561 func   ?sub_101db560@CUnknown101db210@@QAEXXZ CUnknown101db210::sub_101db560
 0x1000e56b func   ?sub_102ce100@@YA_NPBI0@Z sub_102ce100
 0x1000e570 func   _env_laser env_laser
 0x1000e57a func   ?sub_1036f440@@YADXZ sub_1036f440
