@@ -52434,6 +52434,34 @@ float CNPC_VChangBros::sub_1036dc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036e2f0 size=0xc7
+#include "CNPC_VChangBros.h"
+#include "CUnknown103160c0.h"
+#include "ScopeTrace.h"
+extern char g_10631378[];
+extern int g_1054abdc;
+extern int g_10630064;
+void *__RTDynamicCast(void *, long, void *, void *, int);
+CNPC_VChangBros *CNPC_VChangBros::sub_1036e2f0()
+{
+    ScopeTrace t(g_10631378, g_106b8540);
+    if (*(int *)((char *)this + 0x5bb0) <= 0) {
+        CUnknown103160c0 *pSquad = *(CUnknown103160c0 **)((char *)this + 0x5da4);
+        if (pSquad) {
+            for (int i = 0; i < pSquad->sub_103160a0(); i++) {
+                CBaseEntity *pEnt = pSquad->sub_103160c0(i);
+                if (pEnt) {
+                    CNPC_VChangBros *pOther = (CNPC_VChangBros *)__RTDynamicCast(pEnt, 0, &g_1054abdc, &g_10630064, 0);
+                    if (pOther && pOther != this)
+                        return pOther;
+                }
+            }
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036e400 size=0xad
 #include "CNPC_VChangBros.h"
 struct TraceEntry { const char *a, *b, *c; };
