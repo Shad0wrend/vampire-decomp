@@ -17982,6 +17982,25 @@ void CUnknown1019d490::sub_1019d490(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d680 size=0x43
+#include "CRopeKeyframe.h"
+void *sub_100aa720(int size);
+extern char g_10588abc[];
+
+// TARGET: move_rope
+extern "C" CBaseEntity *move_rope()
+{
+	void *mem = sub_100aa720(0x49c);
+	CRopeKeyframe *p;
+	if (mem)
+		p = ((CRopeKeyframe *)mem)->sub_1019dc80();
+	else
+		p = 0;
+	p->vfunc106(g_10588abc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a17c0 size=0x77
 #include "CRestore.h"
 struct CRestoreField { int pad; const char *fieldName; char rest[0x2c - 8]; };
