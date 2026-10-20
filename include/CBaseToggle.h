@@ -1,11 +1,27 @@
 // CBaseToggle: declared by pcdecomp transplant for 0x101c0e70 from CBaseCineCam (0x1006d950);
-// only what matched code needs, as plain members.
+// only what matched code needs.
 #pragma once
 
-class CBaseToggle
+#include "CBaseEntity.h"
+
+class CBaseToggle : public CBaseEntity
 {
 public:
 	CBaseToggle *vfunc5(unsigned int flags);
 	bool vfunc110(const char *szKeyName, const char *szValue);	// "CBaseToggle::KeyValue": lip (float at +0x504) and distance (float at +0x4fc), anything else to the base
 	bool sub_1000fc86(const char *szKeyName, const char *szValue);	// CBaseEntity::vfunc110 (jump stub)
+	virtual void vfunc103();	// slot 103 "CBaseToggle::Spawn": move type 8, CBaseEntity::vfunc103, caches the origin (slot 220) at +0x450 and the angles (slot 221) at +0x468 / +0x474 (+ offset along the move axis), copies the state at +0x4a0 to +0x49c
+
+	char m_pad0450[0x450 - sizeof(CBaseEntity)];
+	float m_vecPosition1[3];	// 0x450
+	char m_pad045c[0x468 - 0x45c];
+	float m_vecAngle1[3];	// 0x468
+	float m_vecAngle2[3];	// 0x474
+	char m_pad0480[0x488 - 0x480];
+	int m_nMoveAxis;	// 0x488
+	float m_flMoveAmount;	// 0x48c
+	char m_pad0490[0x498 - 0x490];
+	int m_i498;
+	int m_i49c;
+	int m_i4a0;
 };
