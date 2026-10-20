@@ -15896,6 +15896,15 @@ void sub_101802e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10181580 size=0x15
+#include "CAI_BaseNPCTroika.h"
+
+void CAI_BaseNPCTroika::sub_10181580(unsigned int flags)
+{
+	*(unsigned int *)(m_pad0004 + 0x1d60 - 4) |= flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181600 size=0xb
 void __fastcall sub_10181600(char *self)
 {

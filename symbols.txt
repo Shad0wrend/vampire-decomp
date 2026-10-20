@@ -3146,6 +3146,7 @@
 0x10013d4f func   ?sub_102a95e0@CUnknown102a95e0@@QAEPAHH@Z CUnknown102a95e0::sub_102a95e0
 0x10013d54 func   ?sub_101ddb40@Range@@QAEXPBD@Z Range::sub_101ddb40
 0x10013d5e func   ?sub_10341120@@YIHPAD@Z sub_10341120
+0x10013d63 func   ?sub_10181580@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_10181580
 0x10013d6d func   ?sub_102d41f0@@YIXPAH@Z sub_102d41f0
 0x10013d77 func   ?vfunc619@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::vfunc619
 0x10013d7c func   ?sub_1020f8b0@@YAPAHXZ sub_1020f8b0
