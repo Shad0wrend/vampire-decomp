@@ -2,6 +2,8 @@
 // Only the slots that decompiled code needs have their signature; the rest are placeholders.
 #pragma once
 
+struct typedescription_t;
+
 class CSave
 {
 public:
@@ -22,7 +24,7 @@ public:
 	virtual bool vfunc14(const void *pData, int nBytes);
 	virtual void vfunc15();
 	virtual void vfunc16();
-	virtual void vfunc17();
+	virtual void vfunc17(const char *pszName, void *pData, int count);	// slot used by WriteField for field types 0x10 / 0x11
 	virtual void vfunc18();
 	virtual void vfunc19();
 	virtual void vfunc20(const char *pString);	// WriteString
@@ -31,18 +33,18 @@ public:
 	virtual void vfunc23(const void *pData, int count);	// WriteVector
 	virtual void vfunc24();
 	virtual void vfunc25();
-	virtual void vfunc26();
+	virtual void vfunc26(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xf
 	virtual void vfunc27();
 	virtual void vfunc28();
-	virtual void vfunc29();
+	virtual void vfunc29(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xe
 	virtual void vfunc30();
-	virtual void vfunc31();
+	virtual void vfunc31(void *pBase, const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0x13
 	virtual void vfunc32();
-	virtual void vfunc33();
+	virtual void vfunc33(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xb
 	virtual void vfunc34();
-	virtual void vfunc35();
+	virtual void vfunc35(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xd
 	virtual void vfunc36(const void *pData, int count);	// WriteEHandle
-	virtual void vfunc37();
+	virtual void vfunc37(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xc
 	virtual void vfunc38();
 	virtual void vfunc39();
 
@@ -52,4 +54,5 @@ public:
 	int sub_101a08f0(void *pEntity);	// index of the entity in the table, or -1
 	void sub_101a05b0(int a, int bytes, int b);
 	bool sub_1000643d(const void *pData, int nBits);	// as in CUnknown100bde40 (transplant)
+	bool sub_101a1140(int a, void *pData, void *pBase, typedescription_t *pField);	// "CSave::WriteField": dispatches on the field type (0xb..0x13) to the matching write slot, "Bad field type" warning otherwise
 };
