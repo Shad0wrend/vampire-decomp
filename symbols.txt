@@ -3432,6 +3432,7 @@
 0x10012729 func   ?sub_1022d410@@YIXPAUMem256@@HH@Z sub_1022d410
 0x1001276a func   ?vfunc5@CBaseFilter@@QAEPAV1@I@Z CBaseFilter::vfunc5
 0x10012779 func   ?vfunc5@CItemKeyGeneric@@QAEPAV1@I@Z CItemKeyGeneric::vfunc5
+0x1001277e func   ?vfunc9@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHMMHMHHHHH@Z CTempEntsSystem::vfunc9
 0x10012783 func   ?sub_101fb340@CVDmg_t@@QAE_NH@Z CVDmg_t::sub_101fb340
 0x10012797 func   ?sub_10161ed0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10161ed0
 0x100127ba func   ?sub_10360bc0@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::sub_10360bc0
