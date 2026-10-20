@@ -443,6 +443,7 @@
 0x10003a80 func   _soundent soundent
 0x10003aad func   ?sub_102d1350@CAI_BaseNPC@@QAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::sub_102d1350
 0x10003abc func   _env_shooter env_shooter
+0x10003ad5 func   ?sub_1025c6a0@CUtlRBTreeBig@@QAEGPBX@Z CUtlRBTreeBig::sub_1025c6a0
 0x10003ae4 func   ?sub_103e7e80@@YAHXZ sub_103e7e80
 0x10003ae9 func   ?sub_100735a0@CUnknown100735a0@@QAEXH@Z CUnknown100735a0::sub_100735a0
 0x10003b02 func   ?sub_1003cb00@CBaseEntity@@QAE_NH@Z CBaseEntity::sub_1003cb00

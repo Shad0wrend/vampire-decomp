@@ -29538,6 +29538,24 @@ bool sub_1025c670(unsigned short *a, unsigned short *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025c6a0 size=0x10b
+#include "CUtlRBTreeBig.h"
+
+unsigned short CUtlRBTreeBig::sub_1025c6a0(const void *search)
+{
+    unsigned short current = m_Root;
+    while (current != InvalidIndex()) {
+        if (m_LessFunc(search, m_pElements[current].m_Data))
+            current = Links(current).m_Left;
+        else if (m_LessFunc(m_pElements[current].m_Data, search))
+            current = Links(current).m_Right;
+        else
+            break;
+    }
+    return current;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d2b0 size=0xbf
 #include "CUtlRBTreeBig.h"
 
