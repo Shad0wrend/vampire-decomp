@@ -55,3 +55,4 @@
 	void sub_103419c0(inputdata_t *data);	// "CBaseCombatCharacter::InputChang...": scope trace (entity name), then calls sub_1000b6a9(this, +-1) |integer value| times (sign of the value) when the input's type is 4
 	void sub_10340d70(inputdata_t *data);	// "CBaseCombatCharacter::InputMoney...": scope trace (entity name), when the input's type is 4 and its integer is non-zero calls sub_10341030(integer)
 	void sub_10341030(int amount);	// called through the stub at 0x1000a3d0
+	Vector vfunc368();	// "CBaseCombatCharacter::BodyDirection2D": scope trace (entity name), slot 369 (BodyDirection3D) into a local, z = 0, normalised through the function pointer at 0x1057966c, returned by value
