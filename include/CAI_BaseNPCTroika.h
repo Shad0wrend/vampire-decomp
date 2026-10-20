@@ -25,7 +25,7 @@ public:
 	virtual bool vfunc468(CBaseEntity *pEnt);	// see CAI_BaseNPC
 
 	// Slots 569..580 (past the end of the base class's declared slots).
-	virtual void vfunc569(); virtual void vfunc570(); virtual void vfunc571(); virtual void vfunc572(); virtual void vfunc573();
+	virtual void vfunc569(); virtual int vfunc570(CBaseEntity *pHint); virtual void vfunc571(); virtual void vfunc572(); virtual void vfunc573();	// slot 570: picks an activity for the hint's type at +0x5dc (100 / 101), 0x55 when none
 	virtual void vfunc574(); virtual void vfunc575(); virtual void vfunc576(); virtual void vfunc577(); virtual void vfunc578();
 	virtual void vfunc579();
 	virtual CAI_CondOwner *vfunc580();	// the object that translates condition ids (sub-object at +0x30)
@@ -87,6 +87,7 @@ public:
 	char sub_10014df8(int condition);	// "HasCondition" (the stub at 0x10014df8 for 0x10269aa0), called directly
 	bool sub_10297430(CAI_BaseNPCTroika *pOther);	// "CAI_BaseNPCTroika::...": false unless the entity of the handle at +0x6448 resolves to a live entity, else sub_10296c40(pOther, that entity, the dword at pOther+0x458, 0.731f) != 0
 	char sub_10296c40(CAI_BaseNPCTroika *pOther, CBaseEntity *pEnt, int a, float f);
+	int sub_10295460(int a, int b);	// called through the stub at 0x10009c14
 
 	char m_pad0004[0x6080];
 	float m_f6084;
