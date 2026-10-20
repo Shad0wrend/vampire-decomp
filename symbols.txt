@@ -1067,6 +1067,7 @@
 0x10006be0 func   ?sub_103fe9c0@@YAHXZ sub_103fe9c0
 0x10006c03 func   ?sub_100b0850@@YAXXZ sub_100b0850
 0x10006c08 func   ?sub_100a8d30@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_100a8d30
+0x10006c4e func   ?vfunc0@CTraceFilterManBatNoIBeamEntity@@UAE_NPAXH@Z CTraceFilterManBatNoIBeamEntity::vfunc0
 0x10006c58 func   ?vfunc1@CAI_RatPlaneSolver@@QAEPAV1@I@Z CAI_RatPlaneSolver::vfunc1
 0x10006c5d func   _filter_base filter_base
 0x10006ca8 func   ?sub_10074a90@CUnknown10074a90@@QAEXH@Z CUnknown10074a90::sub_10074a90
