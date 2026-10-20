@@ -46,6 +46,7 @@ public:
 
 	CBaseEntity *sub_100f7060(CBaseEntity *pCurrent);	// "CGlobalEntityList::NextEnt": the first entity's slot-4 result when pCurrent is null, else the first non-null slot-4 result after pCurrent in the list
 	CBaseEntity *sub_100f7770(CBaseEntity *pStart, const char *szName, CBaseEntity *pSearching, CBaseEntity *pActivator);	// "CGlobalEntityList::FindEntityByName" (called through the stub at 0x1000b4b5)
+	CBaseEntity *sub_100f7f70(CBaseEntity *pStart, const char *szName, int nSearchContext);	// a name search with one context argument (stub 0x10006fc8); the entity found, or 0
 	CBaseEntity *sub_100f7380(CBaseEntity *pStart, const char *pszClassname);	// "CGlobalEntityList::FindEntityByClassname": the first entity after pStart (the first one when null) whose classname matches
 	CGlobalEntityList_Ent *sub_100f7b20(const char *pszClass, const char *pszName, int pStart, void *pSearching, int pActivator);	// a name search variant (stub 0x10009b8d); the entity found, or 0
 	CBaseEntity *sub_100f7890(CBaseEntity *pStart, const char *szName);	// the first entity after pStart that has an edict and whose name (slot 9) equals szName, case-insensitive
