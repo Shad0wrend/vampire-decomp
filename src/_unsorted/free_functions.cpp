@@ -9516,6 +9516,25 @@ void CUnknown100b7c60::sub_100b7c60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b86c0 size=0x43
+#include "CBatSwarm.h"
+void *sub_100aa720(int size);
+extern char g_1055a724[];
+
+// TARGET: env_swarm_bats
+extern "C" CBaseEntity *env_swarm_bats()
+{
+	void *mem = sub_100aa720(0xc78);
+	CBatSwarm *p;
+	if (mem)
+		p = ((CBatSwarm *)mem)->sub_100b8730();
+	else
+		p = 0;
+	p->vfunc106(g_1055a724);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b97e0 size=0x73
 struct Vec3 { float x, y, z; };
 struct Entry {
