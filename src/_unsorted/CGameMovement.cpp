@@ -1,6 +1,38 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1011e0d0 size=0xa4
+#include "CGameMovement.h"
+#include "CUnknown10739d08.h"
+
+extern CUnknown10739d08 g_10739d08;
+
+inline void SetVec(Vector &v, float x, float y, float z)
+{
+	v.x = x;
+	v.y = y;
+	v.z = z;
+}
+
+CGameMovement::CGameMovement()
+{
+	m_field0c = 0;
+	m_field10 = 0;
+	m_pPlayer = 0;
+	SetVec(m_vecHullMin, -16.0f, -16.0f, 0.0f);
+	SetVec(m_vecHullMax, 16.0f, 16.0f, 72.0f);
+	SetVec(m_vecDuckHullMin, -16.0f, -16.0f, 0.0f);
+	SetVec(m_vecDuckHullMax, 16.0f, 16.0f, 36.0f);
+	SetVec(m_vecView, 0.0f, 0.0f, 64.0f);
+	SetVec(m_vecDuckView, 0.0f, 0.0f, 30.0f);
+	SetVec(m_vecObsHullMin, -10.0f, -10.0f, -10.0f);
+	SetVec(m_vecObsHullMax, 10.0f, 10.0f, 10.0f);
+	m_field98 = 0;
+	m_fieldA0 = 1.0f;
+	m_fieldA8 = g_10739d08.sub_101e7d90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e1d0 size=0x1e
 #include "CGameMovement.h"
 
