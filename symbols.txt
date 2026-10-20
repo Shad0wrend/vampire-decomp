@@ -1694,6 +1694,7 @@
 0x10009ca0 func   ?vfunc546@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::vfunc546
 0x10009caf func   ?vfunc174@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc174
 0x10009cb4 func   ?vfunc5@CWeaponRanged_Rifle_Crossbow@@QAEPAV1@I@Z CWeaponRanged_Rifle_Crossbow::vfunc5
+0x10009cc3 func   ?vfunc103@CDynamicProp@@QAEXXZ CDynamicProp::vfunc103
 0x10009ccd func   ?sub_10035f00@CPhysicsPushedEntities@@QAEXPAH@Z CPhysicsPushedEntities::sub_10035f00
 0x10009cd7 func   ?vfunc5@CItemContainerLock@@QAEPAV1@I@Z CItemContainerLock::vfunc5
 0x10009cdc func   _phys_slideconstraint phys_slideconstraint
