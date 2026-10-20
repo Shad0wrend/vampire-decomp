@@ -547,6 +547,7 @@
 0x100041fb func   ?sub_1004a2a0@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004a2a0
 0x1000420a func   ?sub_101bdf90@@YIXPAUMem4@@HH@Z sub_101bdf90
 0x1000420f func   ?sub_10076670@CUnknown10076670@@QAEXH@Z CUnknown10076670::sub_10076670
+0x10004214 func   ?vfunc47@CGameRules@@UAEDPAVCBaseEntity@@0@Z CGameRules::vfunc47
 0x10004228 func   ??0CPositionInterpolator_Rope@@QAE@XZ CPositionInterpolator_Rope::CPositionInterpolator_Rope
 0x10004232 func   ?sub_10158da0@@YIXPAPAX@Z sub_10158da0
 0x1000424b func   ?sub_103ebb10@@YAHXZ sub_103ebb10
