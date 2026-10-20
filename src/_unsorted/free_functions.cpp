@@ -62162,6 +62162,40 @@ float CUnknown1040cce0::sub_1040cce0(void *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040cef0 size=0xb0
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern int g_106839a0[2];
+extern datamap_t g_106836c4;
+ISaveRestoreOps *sub_10001b4f(int type);
+
+int *sub_1040cef0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 9, "m_grabController", {0x450, 0}, 1, 2, 0, 0, 0, &g_106836c4 },
+        { 10, "m_grabController.m_controller", {0x5c8, 0}, 1, 2, 0, sub_10001b4f(8), 0 },
+        { 11, "m_pPlayer", {0x5cc, 0}, 1, 2, 0, 0, 0 },
+    };
+    g_106839a0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_106839a0[0] = (int)&dataDesc[1];
+    return g_106839a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104110d0 size=0x6d
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 #define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
