@@ -1,6 +1,51 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1002d7d0 size=0x106
+#include "ScopeTrace.h"
+#include "CBCCSlotViews.h"
+
+struct PHFactory { int a; void *(*fn)(const char *, int); int c; };
+struct PHFileSystem {
+    VIEW_SLOT10(0) VIEW_SLOT10(1) VIEW_SLOT10(2) VIEW_SLOT10(3) VIEW_SLOT10(4)
+    VIEW_SLOT10(5) VIEW_SLOT10(6) VIEW_SLOT10(7) VIEW_SLOT10(8)
+    virtual void *LoadFile(const char *name, int flags);
+    virtual void FreeFile(void *p);
+};
+struct PHSurfaceProps {
+    virtual void v0();
+    virtual void Parse(const char *name, void *data);
+};
+extern void *g_10723934;
+extern void *g_1072393c;
+extern PHSurfaceProps *g_10723944;
+extern PHFileSystem *g_1070b22c;
+void sub_1012ee40(PHFactory *out);
+
+bool CPhysicsHook::vfunc0()
+{
+    ScopeTrace trace("CPhysicsHook::Init", g_106b8540);
+    PHFactory factory;
+    sub_1012ee40(&factory);
+    if (factory.fn) {
+        g_10723934 = factory.fn("VPhysics030", 0);
+        if (g_10723934) {
+            g_1072393c = factory.fn("VPhysicsCollision007", 0);
+            if (g_1072393c) {
+                g_10723944 = (PHSurfaceProps *)factory.fn("VPhysicsSurfaceProps001", 0);
+                if (g_10723944) {
+                    void *data = g_1070b22c->LoadFile("scripts/surfaceproperties.txt", 0);
+                    g_10723944->Parse("scripts/surfaceproperties.txt", data);
+                    g_1070b22c->FreeFile(data);
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002db40 size=0x5c
 #include "CPhysicsHook.h"
 struct ScopeEntry { const char *name; const char *a; const char *b; };
