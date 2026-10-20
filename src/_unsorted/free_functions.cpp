@@ -17629,6 +17629,21 @@ void CUnknown100eb310::sub_100eb310(int num)
 void __fastcall sub_100eb3b0(int *p) { p[4] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100eb3d0 size=0x12
+struct CStrHolder100eb3d0 {
+    char pad0[0x10];
+    const char *str10;
+    bool sub_100eb3d0();
+};
+bool CStrHolder100eb3d0::sub_100eb3d0()
+{
+    if (str10 != 0 && *str10 != 0) {
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb400 size=0x8
 void __fastcall sub_100eb400(int *p) { p[4] = 0; }
 // END FUNCTION

@@ -4290,6 +4290,7 @@
 0x100158ca func   ?sub_102f90e0@UtlVec8@@QAEHH@Z UtlVec8::sub_102f90e0
 0x100158cf func   ?sub_102f65b0@@YAXXZ sub_102f65b0
 0x100158e8 func   ?vfunc208@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc208
+0x10015915 func   ?sub_100eb3d0@CStrHolder100eb3d0@@QAE_NXZ CStrHolder100eb3d0::sub_100eb3d0
 0x1001591f func   ?sub_1008d6d0@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_1008d6d0
 0x10015924 func   ?sub_102d9040@CUnknown102d9040@@QAEXHPAVCBaseEntity@@PBMHMM@Z CUnknown102d9040::sub_102d9040
 0x10015951 func   ?sub_103065d0@CUnknown103065d0@@QAEXPBUCUnknown103065d0Vec@@0HHHD@Z CUnknown103065d0::sub_103065d0
