@@ -11808,6 +11808,47 @@ void sub_100d30a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5d10 size=0x6b
+#include "CBaseCombatCharacter.h"
+#include "CUnknown1070b22c.h"
+
+#define S1(p, n) virtual void p##n();
+#define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
+struct Slots385 {
+    S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+    S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8) S10(b9)
+    S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5) S10(c6) S10(c7) S10(c8) S10(c9)
+    S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5) S10(d6) S10(d7)
+    S1(e, 0) S1(e, 1) S1(e, 2) S1(e, 3) S1(e, 4)
+    virtual void f385(void *pWeapon, int a, int b);
+};
+
+struct LocalPlayerEnt {
+    char m_pad0000[0xa8];
+    CBaseCombatCharacter *m_pChar;
+};
+
+extern "C" int __cdecl atoi(const char *);
+LocalPlayerEnt *sub_101193b0();
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: sub_100d5d10
+void sub_100d5d10()
+{
+    LocalPlayerEnt *pPlayer = sub_101193b0();
+    if (!pPlayer)
+        return;
+    CBaseCombatCharacter *pChar = pPlayer->m_pChar;
+    if (!pChar)
+        return;
+    if (g_1070b22c->vfunc85() == 2) {
+        int index = atoi(g_1070b22c->vfunc84(1));
+        if (pChar->sub_1032e8b0(index))
+            ((Slots385 *)pChar)->f385(pChar->sub_1032e8b0(index), 0, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6560 size=0xa3
 #include "CStatDefault3List.h"
 #include "CUnknown101d5bd0.h"
