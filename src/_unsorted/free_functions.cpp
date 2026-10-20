@@ -50370,6 +50370,25 @@ void CUnknown1042ba00::sub_1042ba00(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042bae0 size=0x43
+#include "CBaseViewModel.h"
+void *sub_100aa720(int size);
+extern char g_10585acc[];
+
+// TARGET: viewmodel
+extern "C" CBaseEntity *viewmodel()
+{
+	void *mem = sub_100aa720(0x74c);
+	CBaseViewModel *p;
+	if (mem)
+		p = ((CBaseViewModel *)mem)->sub_1042b760();
+	else
+		p = 0;
+	p->vfunc106(g_10585acc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c310 size=0xcb
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(int);
