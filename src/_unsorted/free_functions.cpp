@@ -12313,6 +12313,25 @@ int *sub_10103c80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103d00 size=0x43
+#include "CEnvSpark.h"
+void *sub_100aa720(int size);
+extern char g_1056a984[];
+
+// TARGET: env_spark
+extern "C" CBaseEntity *env_spark()
+{
+	void *mem = sub_100aa720(0x478);
+	CEnvSpark *p;
+	if (mem)
+		p = ((CEnvSpark *)mem)->sub_10103d70();
+	else
+		p = 0;
+	p->vfunc106(g_1056a984);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104630 size=0x8
 void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
