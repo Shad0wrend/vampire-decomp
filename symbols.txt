@@ -1029,6 +1029,7 @@
 0x10006ae1 func   ?vfunc8@PyServerSystem@@UAEPAV1@I@Z PyServerSystem::vfunc8
 0x10006aeb func   ?sub_10246300@@YAXHPAH0@Z sub_10246300
 0x10006af5 func   ?vfunc5@COccultDexterity@@QAEPAV1@I@Z COccultDexterity::vfunc5
+0x10006b04 func   ?sub_10337f30@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10337f30
 0x10006b09 func   ?sub_1007f400@CUtlVector4@@QAEXH@Z CUtlVector4::sub_1007f400
 0x10006b1d func   ?sub_100e09a0@Dialog@@QAEXPBD@Z Dialog::sub_100e09a0
 0x10006b27 func   ?vfunc5@CEnvFireSensor@@QAEPAV1@I@Z CEnvFireSensor::vfunc5
