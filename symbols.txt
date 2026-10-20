@@ -4842,5 +4842,6 @@
 0x109f36cc data   __imp_?PyString_AsString@@YAPADPAUPyObject@@@Z _imp_?PyString_AsString
 0x109f36ec data   __imp__PyExc_StandardError _imp__PyExc_StandardError
 0x109f377c data   __imp__PyErr_Occurred _imp__PyErr_Occurred
+0x109f37a0 data   __imp__PyArg_ParseTuple _imp__PyArg_ParseTuple
 0x109f37d0 data   __imp_?PyString_Type@@3PADA _imp_?PyString_Type
 0x109f3874 data   __imp_?CommandLine@@YAPAUICommandLine@@XZ _imp_?CommandLine
