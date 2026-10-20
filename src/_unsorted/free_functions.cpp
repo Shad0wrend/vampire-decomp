@@ -599,6 +599,47 @@ unsigned short sub_1002e0a0(IPhysObj *obj, unsigned short flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002e140 size=0x93
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct IPhysParser {
+	virtual void slot0(void *a, void *b, void *c);
+};
+struct IPhysFactory {
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+	virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17();
+	virtual void *slot18(int a);
+};
+extern IPhysParser *g_1070b240;
+extern IPhysFactory *g_1070b250;
+extern void *g_10723940;
+extern char g_107238e0[];
+extern char g_1046ecb4[];
+void *sub_10158600(void *pBuffer, void *pWorld, void *pParams);
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = name;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+void *sub_1002e140(void *pBuffer)
+{
+	CScopeTrace trace("PhysCreateWorld", g_106b8540);
+	g_1070b240->slot0(g_10723940, g_107238e0, pBuffer);
+	return sub_10158600(pBuffer, g_1070b250->slot18(1), g_1046ecb4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002e970 size=0xa0
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
