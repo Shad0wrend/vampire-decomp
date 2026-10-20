@@ -63,6 +63,8 @@ public:
 	void vfunc505();
 	void vfunc506();
 	void vfunc616();	// slot 616: base call with 0x30, then stamps curtime + 15 at +0x65bc
+	int vfunc611();	// slot 611: picks one of the table values (index at +0x64c8) for the NPC through CUnknown100ecee0::sub_100ecee0, with random switches (flags at +0x64e0 / +0x64e1, time at +0x64e4); falls back to the dword at +0x6f0 for -1
+	int sub_102c1230();	// called through the stub at 0x1000d4cc by vfunc611
 
 	void sub_102950c0();	// plays the "Alarmed_Loop" sound
 	void sub_10295180();	// plays the "Animal_Kened" sound
