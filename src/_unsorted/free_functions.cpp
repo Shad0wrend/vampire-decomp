@@ -4885,6 +4885,54 @@ void sub_1005a6a0(int a, int b, const int *pos, const int *dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005b850 size=0xc0
+struct CBeamEntsData	// the global CTEBeamEnts object at 0x106bf7a0 (members as set by the helper)
+{
+	int m_vtbl;	// 0x00
+	int m_pad04[2];
+	int m_0c;	// 0x0c
+	int m_10;
+	int m_14;
+	int m_18;
+	int m_1c;
+	int m_20;
+	int m_24;
+	int m_28;
+	int m_2c;
+	int m_30;
+	int m_34;
+	int m_38;
+	int m_3c;
+	int m_40;
+	int m_44;
+	int m_48;
+
+	void sub_1005b500(int a, int b);	// CTEBeamEnts::vfunc4 body (stub 0x1000dd55)
+};
+extern CBeamEntsData g_106bf7a0;
+
+void sub_1005b850(int p1, int p2, int p3, int p4, int p5, int p6, int p7, int p8, int p9, int p10, int p11, int p12, int p13, int p14, int p15, int p16, int p17, int p18)
+{
+	g_106bf7a0.m_44 = (p3 & 0xfff) | 0x1000;
+	g_106bf7a0.m_48 = (p4 & 0xfff) | 0x1000;
+	g_106bf7a0.m_0c = p5;
+	g_106bf7a0.m_10 = p6;
+	g_106bf7a0.m_14 = p7;
+	g_106bf7a0.m_18 = p8;
+	g_106bf7a0.m_1c = p9;
+	g_106bf7a0.m_20 = p10;
+	g_106bf7a0.m_24 = p11;
+	g_106bf7a0.m_28 = p12;
+	g_106bf7a0.m_2c = p13;
+	g_106bf7a0.m_40 = p18;
+	g_106bf7a0.m_30 = p14;
+	g_106bf7a0.m_34 = p15;
+	g_106bf7a0.m_38 = p16;
+	g_106bf7a0.m_3c = p17;
+	g_106bf7a0.sub_1005b500(p1, p2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005be30 size=0xb0
 #include "CTEBeamLaser.h"
 
