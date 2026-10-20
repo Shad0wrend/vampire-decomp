@@ -43357,6 +43357,14 @@ void Holder::sub_1028eb30(int a, Vec3* v, HandleObj* h, char c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10293d70 size=0x10
+void __fastcall sub_10293d70(int *p)
+{
+    unsigned int *f = (unsigned int *)((char *)p + 0x5d8c);
+    *f &= 0xffffdfff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102950c0 size=0x8a
 #include "CAI_BaseNPCTroika.h"
 
