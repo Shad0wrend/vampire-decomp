@@ -1862,6 +1862,7 @@
 0x1000afd3 func   ?sub_102ecce0@@YIXPAUCOwner@@@Z sub_102ecce0
 0x1000b005 func   ?sub_102c1170@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_102c1170
 0x1000b00f func   ?sub_1042c4e0@@YA_NXZ sub_1042c4e0
+0x1000b014 func   ?sub_10201fa0@CVStatListManager_t@@QAEDH@Z CVStatListManager_t::sub_10201fa0
 0x1000b01e func   ?sub_10400a00@@YAHXZ sub_10400a00
 0x1000b037 func   _npc_VHunter npc_VHunter
 0x1000b041 func   ?sub_101f9570@@YAXH@Z sub_101f9570

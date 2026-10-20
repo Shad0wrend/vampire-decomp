@@ -29629,6 +29629,35 @@ void CUnknown10201ca0::sub_10201ca0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10201fa0 size=0x90
+#include "CVStatListManager_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+// TARGET: CVStatListManager_t::sub_10201fa0
+char CVStatListManager_t::sub_10201fa0(int time)
+{
+    char changed = 0;
+    int i = 0;
+    g_109f3620[*g_109f3680].a = "CVStatListManager_t::Update";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    m_nTime = time;
+    if (m_nLists > 0) {
+        do {
+            if (m_pLists[i]->sub_10201540())
+                changed = 1;
+            i++;
+        } while (i < m_nLists);
+    }
+    --*g_109f3680;
+    return changed;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202060 size=0xa6
 #include "CUnknown10202060.h"
 #include "CBaseEntity.h"
