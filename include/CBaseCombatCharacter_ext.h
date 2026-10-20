@@ -24,6 +24,7 @@
 	bool sub_101672d0();
 	int sub_10337860();	// "CBaseCombatCharacter::GetCharTemplate"-like: scope trace (entity name), the index of the first stat list (array at +0x13c0, count +0x13bc) with a zero field at +0x10, else the default list; used as index into the global stat default list 0x10738d10
 	char sub_10337f30();	// "CBaseCombatCharacter::IsKindred": scope trace (entity name), the byte at +0x8c of the default-stat item selected by sub_10337860()
+	char sub_10337ff0();	// "CBaseCombatCharacter::IsSupernatural": scope trace (entity name), true when IsKindred (sub_10337f30), else the byte at +0x8f of the default-stat item selected by sub_10337860()
 	char sub_10337e40();	// "CBaseCombatCharacter::IsKine...": scope trace (entity name), false when slot 70 is true or IsKindred (sub_10337f30) is true or the object at +0xac is set, else true
 	char sub_103380d0();	// "CBaseCombatCharacter::IsBossMonster": scope trace (entity name), the byte at +0x90 of the default-stat item selected by sub_10337860()
 	bool sub_10330220();	// no scope trace: when IsKindred (sub_10337f30) the value of stat 0x19 of the first stat list with a zero field at +0x10 (default list when none) is positive, else HasMiscFlag(0x20000)
