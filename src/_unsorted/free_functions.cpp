@@ -4818,6 +4818,31 @@ void sub_1005e5c0(int pFilter, int delay, const int *pOrigin, const int *pDirect
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005ed80 size=0x9d
+#include "CTEBreakModel.h"
+extern CTEBreakModel g_106c1180;
+
+// TARGET: sub_1005ed80
+void sub_1005ed80(void *pFilter, int delay, const float *pOrigin, const float *pAngles, const float *pSize, int p6, int p7, int p8, int p9, int p10)
+{
+    g_106c1180.m_vecOrigin[0] = pOrigin[0];
+    g_106c1180.m_vecOrigin[1] = pOrigin[1];
+    g_106c1180.m_vecOrigin[2] = pOrigin[2];
+    g_106c1180.m_angRotation[0] = pAngles[0];
+    g_106c1180.m_angRotation[1] = pAngles[1];
+    g_106c1180.m_angRotation[2] = pAngles[2];
+    g_106c1180.m_vecSize[0] = pSize[0];
+    g_106c1180.m_vecSize[1] = pSize[1];
+    g_106c1180.m_vecSize[2] = pSize[2];
+    g_106c1180.m_nField34 = p6;
+    g_106c1180.m_nField30 = p7;
+    g_106c1180.m_nField38 = p8;
+    g_106c1180.m_nField3c = p9;
+    g_106c1180.m_nField40 = p10;
+    g_106c1180.vfunc4(pFilter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005fc00 size=0x76
 #include "CTEBubbles.h"
 
