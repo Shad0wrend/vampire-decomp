@@ -219,6 +219,7 @@
 0x100021df func   ?sub_101fb7a0@CVStatSubCost_t@@QAEPAU1@XZ CVStatSubCost_t::sub_101fb7a0
 0x100021e4 func   ?vfunc407@CBasePlayer@@UAEXXZ CBasePlayer::vfunc407
 0x100021ee func   ?vfunc32@CPropSign@@UAE_NPAX@Z CPropSign::vfunc32
+0x100021fd func   ?sub_10204100@@YAHPAVCBaseCombatCharacter@@HD@Z sub_10204100
 0x1000220c func   ?sub_103fe460@@YAHXZ sub_103fe460
 0x1000222a func   _item_g_garys_tape item_g_garys_tape
 0x1000224d func   ?sub_100d30a0@@YAXXZ sub_100d30a0

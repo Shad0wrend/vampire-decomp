@@ -33670,6 +33670,50 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204100 size=0xc6
+#include "CBaseCombatCharacter.h"
+
+extern int g_1074e2a8[];
+
+int sub_10204100(CBaseCombatCharacter *pChar, int index, char bIncludeZero)
+{
+	int count = 0;
+	int minValue = 0;
+	if (!bIncludeZero)
+		minValue = 1;
+	for (int addr = (int)g_1074e2a8; addr < (int)(g_1074e2a8 + 17); addr += 4)
+	{
+		int stat = *(int *)addr;
+		CVStatList_t *pList;
+		int i = 0;
+		if (0 < pChar->m_nStatLists)
+		{
+			do
+			{
+				if (pChar->m_pStatLists[i]->m_field10 == 2)
+				{
+					pList = pChar->m_pStatLists[i];
+					goto found;
+				}
+				i++;
+			} while (i < pChar->m_nStatLists);
+		}
+		{
+			static CVStatList_t defaultList(-1);
+			pList = &defaultList;
+		}
+found:
+		if (pList->sub_10010609(stat) >= minValue)
+		{
+			if (count == index)
+				return stat;
+			count++;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204550 size=0xa
 extern int g_1074eec4;
 
