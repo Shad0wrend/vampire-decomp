@@ -52,7 +52,9 @@ public:
 	virtual void vfunc601(int unused);
 	virtual char vfunc69(void *pOther);	// true when the other object has one of the flags 0x16 at +0x4c, else the Troika base's answer
 
-	char m_pad0004[0x66a4 - 4];
+	char m_pad0004[0x670 - 4];
+	int m_n670;	// 0x670: state, 1 while transformed
+	char m_pad0674[0x66a4 - 0x674];
 	CNPC_VHengeyokaiTimerVec m_Timers;	// 0x66a4
 
 	int sub_10382b30(int key);
@@ -64,4 +66,7 @@ public:
 	int sub_10001b45(CNPC_VHengeyokaiInfo *pInfo);	// CNPC_VHuman::vfunc390, called directly
 	void sub_103830e0();	// called through the stub at 0x10004a0c
 	int sub_103801d0(CNPC_VHengeyokaiInfo *pInfo);	// slot 390: CNPC_VHuman::vfunc390(pInfo), then sub_103830e0() when the entity at pInfo+0x2c has the classname "point_explosion"; returns the base's result
+	int vfunc440(int task);	// slot 440 (TranslateSchedule): schedule 0x15a for 0x5b, 0x15b for 0xea, 0x15c for 0xdc, 0x15d for 0xdd, else CNPC_VHuman::vfunc440; first calls sub_10383130() while transformed (+0x670 == 1) unless the task is 0x16e
+	int sub_103851c0(int task);	// CNPC_VHuman::vfunc440 (stub 0x10005e20), called directly
+	void sub_10383130();	// called through the stub at 0x1000ed6d
 };
