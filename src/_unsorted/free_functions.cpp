@@ -7595,6 +7595,42 @@ int CFakeEnt::sub_10094370(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094520 size=0x8e
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+int CBaseAnimating::sub_10094520()
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseAnimating::GetNumFlexControllers";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	int *hdr = (int *)sub_100952d0(-1);
+	if (!hdr)
+	{
+		(*g_109f3680)--;
+		return 0;
+	}
+	int result = hdr[0x58];
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100945e0 size=0x9f
 #include "CBaseAnimating.h"
 
