@@ -3577,6 +3577,7 @@
 0x1001286e func   ?sub_103cca80@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cca80
 0x10012882 func   ?sub_101854b0@CUtlVector72@@QAEXH@Z CUtlVector72::sub_101854b0
 0x10012887 func   ?sub_100b39c0@@YIHPAD@Z sub_100b39c0
+0x100128a5 func   ?sub_100b2010@CBaseEntity@@QAEXPBMPAM@Z CBaseEntity::sub_100b2010
 0x100128aa func   ?sub_1033d700@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d700
 0x100128cd func   ?sub_1009d6a0@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d6a0
 0x100128eb func   ?sub_10349710@melee_dice_roll_result@@QAEXHHPAH@Z melee_dice_roll_result::sub_10349710

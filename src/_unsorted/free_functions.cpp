@@ -13451,6 +13451,43 @@ void CBaseEntity::sub_100b1ed0(const float *pLocal, float *pAbs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2010 size=0xf9
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+
+void sub_101381b0(const float *pIn, const float *pMatrix, float *pOut);
+
+static inline bool TestBit(unsigned int value, int bit)
+{
+	return ((value >> bit) & 1) != 0;
+}
+
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+	EntInfo *e;
+	return (h != 0xffffffff && (e = &g_10566458->m_entries[h & 0x1fff], e->m_serial == (int)(h >> 13))) ? e->m_pEntity : 0;
+}
+
+void CBaseEntity::sub_100b2010(const float *pIn, float *pOut)
+{
+	ScopeTrace trace("CBaseEntity::ComputeAbsDirection", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBaseEntity *pParent = ResolveHandle(*(unsigned int *)((char *)this + 0x25c));
+	if (!pParent) {
+		pOut[0] = pIn[0];
+		pOut[1] = pIn[1];
+		pOut[2] = pIn[2];
+	} else {
+		if (TestBit(pParent->m_flags268, 11))
+			pParent->vfunc98();
+		sub_101381b0(pIn, (const float *)((char *)pParent + 0x130), pOut);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3350 size=0xf9
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
