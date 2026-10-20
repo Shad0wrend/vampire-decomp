@@ -4518,6 +4518,27 @@ void sub_1005a6a0(int a, int b, const int *pos, const int *dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005e5c0 size=0x80
+#include "CTEBloodStream.h"
+extern CTEBloodStream g_106c0cc4;
+
+void sub_1005e5c0(int pFilter, int delay, const int *pOrigin, const int *pDirection, int a, int b, int c, int d, int e)
+{
+    g_106c0cc4.m_vecOrigin[0] = pOrigin[0];
+    g_106c0cc4.m_vecOrigin[1] = pOrigin[1];
+    g_106c0cc4.m_vecOrigin[2] = pOrigin[2];
+    g_106c0cc4.m_vecDirection[0] = pDirection[0];
+    g_106c0cc4.m_vecDirection[1] = pDirection[1];
+    g_106c0cc4.m_vecDirection[2] = pDirection[2];
+    g_106c0cc4.m_n24 = a;
+    g_106c0cc4.m_n28 = b;
+    g_106c0cc4.m_n2c = c;
+    g_106c0cc4.m_n30 = d;
+    g_106c0cc4.m_n34 = e;
+    g_106c0cc4.vfunc4(pFilter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005fc00 size=0x76
 #include "CTEBubbles.h"
 
