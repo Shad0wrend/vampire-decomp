@@ -2374,6 +2374,7 @@
 0x1001072b func   ?vfunc4@CTEBloodSprite@@QAEXHH@Z CTEBloodSprite::vfunc4
 0x10010758 func   ?sub_101dddb0@CUnknown101dddb0@@QAEXXZ CUnknown101dddb0::sub_101dddb0
 0x1001075d func   ?vfunc6@CEQ_SaveRestoreBlockHandler@@UAEXPAVIRestoreRead@@@Z CEQ_SaveRestoreBlockHandler::vfunc6
+0x10010771 func   ?sub_102356e0@@YAHXZ sub_102356e0
 0x100107b7 func   _info_node_crosswalk info_node_crosswalk
 0x100107df func   ?sub_100bd540@bf_write@@QAEXI@Z bf_write::sub_100bd540
 0x10010811 func   ?sub_10222da0@CUtlMemory24@@QAEXH@Z CUtlMemory24::sub_10222da0
