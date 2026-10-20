@@ -10,6 +10,7 @@ class CAI_BaseNPCTroika : public CAI_BaseNPC
 public:
 	virtual int vfunc293();	// the dword at +0x9c of the entity the handle at +0x647c resolves to (0 when stale)
 	virtual void vfunc416(char value);
+	virtual float vfunc418(float a);	// float lookup: -1000008 -> +0x6484, -1000007 -> +0x6488, -1000006 -> +0x648c, -1000005 -> 10.0f, else CAI_BaseNPC::vfunc418(a)
 	virtual bool vfunc468(CBaseEntity *pEnt);	// see CAI_BaseNPC
 
 	void vfunc488();	// slot 488: plays the "Death" sound
