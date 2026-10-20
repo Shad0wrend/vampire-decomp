@@ -34554,6 +34554,30 @@ void CUnknown1030fe50::sub_1030fe50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030fe70 size=0x77
+#include "CUnknown1030fe50.h"
+
+void CUnknown1030fe50::sub_1030fe70(int count, CUtlVector4 *pVec)
+{
+    int i = 0;
+    CUtlVector4 *vec = pVec;
+    vec->m_size = 0;
+    vec->sub_103109a0(0, count, 0);
+    if (count != 0) {
+        CUnknown1030fe50_Elem *p = m_pOwner->m_unk1f8;
+        for (i = 0; i < count; i++) {
+            int *dst = &pVec->m_pMemory[i];
+            if (p)
+                *dst = *p->vfunc1();
+            else
+                *dst = -1;
+            p = p->m_pNext;
+        }
+        m_pOwner->m_unk1f8 = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103109a0 size=0xb7
 #include "CUtlVector4.h"
 #include "UtlMem.h"

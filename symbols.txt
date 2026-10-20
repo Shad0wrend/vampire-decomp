@@ -3104,6 +3104,7 @@
 0x10013638 func   ?vfunc307@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc307
 0x1001363d func   _infodecal infodecal
 0x1001364c func   _keyframe_track keyframe_track
+0x100136a6 func   ?sub_1030fe70@CUnknown1030fe50@@QAEXHPAVCUtlVector4@@@Z CUnknown1030fe50::sub_1030fe70
 0x100136b5 func   ?sub_101f0270@@YIPAHPAHHH@Z sub_101f0270
 0x100136c4 func   ?sub_1025e140@@YIXPAUMem4@@HH@Z sub_1025e140
 0x100136d3 func   ?vfunc104@CNPC_VTest@@UAEXXZ CNPC_VTest::vfunc104
