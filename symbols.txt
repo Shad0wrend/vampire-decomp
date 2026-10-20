@@ -101,6 +101,7 @@
 0x1000193d func   ?vfunc9@CEffectsServer@@UAEMXZ CEffectsServer::vfunc9
 0x10001956 func   ?vfunc520@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc520
 0x1000195b func   ?sub_101855c0@UtlMem@@QAEXXZ UtlMem::sub_101855c0
+0x1000196f func   ?sub_1009c110@CBaseEntity@@QAEXHHPAV1@@Z CBaseEntity::sub_1009c110
 0x10001974 func   ?sub_1036c7f0@CUnknown1036c7f0@@QAEXH@Z CUnknown1036c7f0::sub_1036c7f0
 0x10001979 func   ?sub_10295240@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_10295240
 0x1000199c func   _info_constraint_anchor info_constraint_anchor

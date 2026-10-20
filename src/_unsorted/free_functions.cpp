@@ -7678,6 +7678,22 @@ void CBaseEntity::sub_1009bef0(int a, int b, CBaseEntityColor32 color)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c110 size=0x96
+extern int *g_109f3680;
+extern int *g_109f3620;
+
+void CBaseEntity::sub_1009c110(int a, int b, CBaseEntity *pEnt)
+{
+    const char *name = this ? (m_name26c ? m_name26c : "") : "NULL ENTITY";
+    g_109f3620[*g_109f3680 * 3] = (int)"CBaseEntity::DumpEntity";
+    g_109f3620[*g_109f3680 * 3 + 1] = (int)name;
+    g_109f3620[*g_109f3680 * 3 + 2] = (int)"";
+    ++*g_109f3680;
+    sub_1009b700(a, b, pEnt ? pEnt->m_name26c : 0);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c1e0 size=0xb2
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
