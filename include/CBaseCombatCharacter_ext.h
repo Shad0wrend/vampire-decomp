@@ -1,5 +1,3 @@
-// Extra CBaseCombatCharacter members, included inside the class body of CBaseCombatCharacter.h (no #pragma once, no includes).
-// Add new method declarations here instead of rewriting CBaseCombatCharacter.h.
 	bool sub_103360a0();	// "CBaseCombatCharacter::Inventory...": scope trace (entity name), true when GetWeapon(i) is null for every i in 0..0xdf
 	virtual int vfunc126(int a);	// "CBaseCombatCharacter::Save": scope trace (entity name), brackets CBaseEntity::vfunc126(a) with the helper pair on the field at +0x13d0, calling slot 111 first
 	void sub_1032ead0();	// "CBaseCombatCharacter::RemoveAllWeapons": scope trace (entity name), clears the active weapon handle at +0x19a4, then for every weapon slot 0..0xdf that is set calls slot 359 on it and clears the slot
@@ -35,3 +33,4 @@
 	void sub_10341370(int a, int b);	// worker of the barter inputs (stub 0x1000e020)
 	void sub_103394a0(char begin, int a, int b);	// "CBaseCombatCharacter::TorporBegin": scope trace (entity name), when begin is non-zero calls sub_103392c0(0, a, b)
 	void sub_103392c0(int a, int b, int c);	// called through the stub at 0x100034f9
+	bool sub_10339a90();	// "CBaseCombatCharacter::CanBeFedUp": scope trace (entity name), true unless the byte at +0x95 of this entity's stat record is set
