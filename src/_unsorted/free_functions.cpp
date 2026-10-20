@@ -19861,6 +19861,48 @@ extern "C" CBaseEntity *phys_animlink()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014ee10 size=0xab
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern int g_1057c1d8[2];
+ISaveRestoreOps *sub_10001b4f(int type);
+void sub_100157bc();
+
+int *sub_1014ee10()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_nameAnimator", {0x450, 0}, 1, 6, "animator" },
+        { 2, "m_nameAnimatorBone", {0x454, 0}, 1, 6, "animator_bone" },
+        { 2, "m_nameAttached", {0x458, 0}, 1, 6, "attached" },
+        { 2, "m_nameAttachedBone", {0x45c, 0}, 1, 6, "attached_bone" },
+        { 3, "m_attachmentOffset", {0x460, 0}, 1, 6, "attach_offset" },
+        { 3, "m_attachmentAngle", {0x46c, 0}, 1, 6, "attach_angle" },
+        { 12, "m_hAnimator", {0x478, 0}, 1, 2 },
+        { 4, "m_nAnimatorBone", {0x47c, 0}, 1, 2 },
+        { 1, "m_attachmentTransform.m[0]", {0x480, 0}, 12, 2 },
+        { 10, "m_pController", {0x4c0, 0}, 1, 2, 0, sub_10001b4f(6), 0 },
+        { 0, "CPhysicsAnimlinkControllerThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100157bc },
+    };
+    g_1057c1d8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1057c1d8[0] = (int)&dataDesc[1];
+    return g_1057c1d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101521b0 size=0x43
 #include "CRagdollProp.h"
 void *sub_100aa720(int size);
