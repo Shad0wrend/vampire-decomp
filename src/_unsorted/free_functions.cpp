@@ -68394,6 +68394,16 @@ int sub_104284c0(StudioHdr *pHdr, const char *pszLabel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428e60 size=0x10
+unsigned int sub_10428e60(char *p)
+{
+    if (p == 0) {
+        return 0;
+    }
+    return *(unsigned int *)(p + 0x140);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428eb0 size=0xd
 int sub_10428eb0(char *p)
 {
