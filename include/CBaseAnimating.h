@@ -41,6 +41,7 @@ public:
 	void sub_1008cfc0(int unused, void *pEvent);	// "CBaseAnimating::DisplayAnimEvent": scope trace (entity name); when the global at 0x106ccf0c is not flagged by its slot 1 and its value (+0x2c) is set, formats "Processing anim event at %5.2f %d( %s )" (event time, event id, description from slot 241) into a 256 byte buffer and passes it to slot 18 with 9
 	void sub_1008e630(CBaseEntity *pOther);	// "CBaseAnimating::RemoveWind": scope trace (entity name); clears the handle at +0x63c and the two dwords at +0x648/+0x64c unless the handle resolves to a live entity different from pOther
 	void sub_10097310(CBaseAnimating *pOther);	// "CBaseAnimating::CopyAnimationDataFrom": scope trace (entity name), copies the model name (slot 212(*pOther->slot 9())) and model index (slot 10(pOther->slot 8())) and nine dwords of animation state (bit 4 added to the flags at +0x19c)
+	void sub_100955c0();	// "CBaseAnimating::FlushBoneCache"-named trace: scope trace (entity name), with a 0x41a0 byte stack buffer: slot 257(buffer, 0xc), slot 217(0xc, buffer, ...) and slot 219(result, ...) (caller-cleaned), then sub_100c47d0(GetModelPtr(-1), the dword at +0x6f0, the dword at +0x174, slot 219 result)
 
 	int sub_10092550(int a);	// "CBaseAnimating::LookupBone"
 	void sub_100926e0(int bone, int b, int c);	// "CBaseAnimating::GetBonePosition0"
