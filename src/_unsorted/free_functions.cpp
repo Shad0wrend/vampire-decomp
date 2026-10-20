@@ -18001,6 +18001,25 @@ extern "C" CBaseEntity *move_rope()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d6f0 size=0x43
+#include "CRopeKeyframe.h"
+void *sub_100aa720(int size);
+extern char g_10588ac8[];
+
+// TARGET: keyframe_rope
+extern "C" CBaseEntity *keyframe_rope()
+{
+	void *mem = sub_100aa720(0x49c);
+	CRopeKeyframe *p;
+	if (mem)
+		p = ((CRopeKeyframe *)mem)->sub_1019dc80();
+	else
+		p = 0;
+	p->vfunc106(g_10588ac8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a17c0 size=0x77
 #include "CRestore.h"
 struct CRestoreField { int pad; const char *fieldName; char rest[0x2c - 8]; };
