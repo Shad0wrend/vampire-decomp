@@ -2279,6 +2279,7 @@
 0x1000d878 func   ?sub_1021e120@UtlMem@@QAEXXZ UtlMem::sub_1021e120
 0x1000d882 func   ?vfunc387@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc387
 0x1000d887 func   ?sub_100aa080@CBaseEntity@@QAEHPAXH@Z CBaseEntity::sub_100aa080
+0x1000d8aa func   ?sub_10203240@CUnknown10203240@@QAEPAVCUnknown102029c0@@PBD@Z CUnknown10203240::sub_10203240
 0x1000d909 func   _item_p_research_hg_computers item_p_research_hg_computers
 0x1000d93b func   ?sub_10404fe0@@YAHXZ sub_10404fe0
 0x1000d940 func   ?sub_10332fc0@CUnknown10332fc0@@QAEHPAX@Z CUnknown10332fc0::sub_10332fc0
