@@ -40396,6 +40396,25 @@ extern "C" CBaseEntity *sheriff_teleport_bats()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b1b70 size=0x43
+#include "CNPC_VSheriffSwarm.h"
+void *sub_100aa720(int size);
+extern char g_106519c4[];
+
+// TARGET: npc_VSheriffSwarm
+extern "C" CBaseEntity *npc_VSheriffSwarm()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VSheriffSwarm *p;
+	if (mem)
+		p = ((CNPC_VSheriffSwarm *)mem)->sub_103b1be0();
+	else
+		p = 0;
+	p->vfunc106(g_106519c4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1d10 size=0x33
 void sub_10007897();
 void sub_10004a7f();
