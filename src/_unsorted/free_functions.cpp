@@ -16498,6 +16498,59 @@ void CBaseDoor::sub_100ee810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100efae0 size=0xc3
+#include "CBaseEntity.h"
+#include "CBaseDoor.h"
+#include "CBCCSlotViews.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+class CDoorSlotView	// slots 158, 178 and 241
+{
+public:
+	VIEW_SLOT100(0)
+	VIEW_SLOT10(10) VIEW_SLOT10(11) VIEW_SLOT10(12) VIEW_SLOT10(13) VIEW_SLOT10(14)
+	VIEW_SLOT(150) VIEW_SLOT(151) VIEW_SLOT(152) VIEW_SLOT(153) VIEW_SLOT(154) VIEW_SLOT(155) VIEW_SLOT(156) VIEW_SLOT(157)
+	virtual bool vfunc158();
+	VIEW_SLOT(159)
+	VIEW_SLOT10(16)
+	VIEW_SLOT(170) VIEW_SLOT(171) VIEW_SLOT(172) VIEW_SLOT(173) VIEW_SLOT(174) VIEW_SLOT(175) VIEW_SLOT(176) VIEW_SLOT(177)
+	virtual void vfunc178(CDoorSlotView *pOther);
+	VIEW_SLOT(179)
+	VIEW_SLOT10(18) VIEW_SLOT10(19) VIEW_SLOT10(20) VIEW_SLOT10(21) VIEW_SLOT10(22) VIEW_SLOT10(23)
+	VIEW_SLOT(240)
+	virtual bool vfunc241();
+};
+
+struct CDoorEntListView	// the global entity list object (pointer at 0x10566458)
+{
+	CBaseEntity *sub_100290c0(unsigned int *pHandle);
+};
+extern CDoorEntListView *g_10566458;
+
+void CBaseDoor::sub_100efae0(CBaseEntity *pOther)
+{
+	g_109f3620[*g_109f3680].a = "CBaseDoor::DoorTouch";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	CBaseEntity *pActivator = g_10566458->sub_100290c0((unsigned int *)((char *)this + 0x53c));
+	if (pActivator && *(int *)((char *)pActivator + 0xa8)) {
+		if (((CDoorSlotView *)this)->vfunc241()) {
+			CDoorSlotView *pView = (CDoorSlotView *)pOther;
+			if (pView->vfunc158()) {
+				int state = *(int *)((char *)this + 0x4f8);
+				if ((state == 2 || state == 3) && *(int *)((char *)pOther + 0x9c))
+					((CDoorSlotView *)this)->vfunc178(pView);
+			}
+		}
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efbf0 size=0x79
 #include "CGlobalEntityList.h"
 #include "CEntityVSlots.h"
