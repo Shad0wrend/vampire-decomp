@@ -9477,6 +9477,51 @@ void sub_100b0ad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b0c00 size=0x106
+#include "CUnknown1070b22c.h"
+
+struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
+extern ScopeEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern void (*g_109f3630)(const char *, ...);
+extern char g_10920534;
+extern char g_10920535;
+extern CUnknown1070b22c *g_1070b22c;
+
+void sub_100b0c00()
+{
+    g_109f3620[*g_109f3680].m_pszName = "CC_Ent_Trace_Buffer";
+    g_109f3620[*g_109f3680].m_pszEnt = g_106b8540;
+    g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+    (*g_109f3680)++;
+    if (g_10920534) {
+        g_10920534 = 0;
+        g_10920535 = 0;
+        g_109f3630("Trace Buffer Off\n");
+        (*g_109f3680)--;
+        return;
+    }
+    char buf[64] = { g_106b8540[0] };
+    if (g_1070b22c->vfunc85() >= 1) {
+        const char *arg = g_1070b22c->vfunc84(1);
+        if (*arg == 'v' || *arg == 'V') {
+            g_10920535 = 1;
+            int i = 0;
+            char c;
+            do {
+                c = " in VERBOSE MODE"[i];
+                buf[i] = c;
+                i++;
+            } while (c);
+        }
+    }
+    g_10920534 = 1;
+    g_109f3630("Trace Buffer On%s\n", buf);
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b0f60 size=0x7a
 #include "IVEngineServer.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
