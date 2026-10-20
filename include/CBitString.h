@@ -10,6 +10,18 @@ public:
 	int m_nInline;	// 0x0004
 	int *m_pData;	// 0x0008
 
+	CBitString() {}
+	CBitString(int nBits)
+	{
+		m_pData = 0;
+		m_nBits = nBits;
+		m_nDwords = (nBits + 31) / 32;
+		sub_100bf5b0(m_nDwords);
+		if (m_pData)
+			memset(m_pData, 0, m_nDwords * 4);
+	}
+
+	void sub_100bf5b0(int numDwords);	// allocates the dword storage (stub 0x1000be6a)
 	void sub_100bf600(int numDwords);	// resizes the dword storage to numDwords (0 frees it); switches between the inline dword and heap memory
 	void sub_100bf6a0();	// releases the dword storage
 };
