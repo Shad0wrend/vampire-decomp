@@ -28470,6 +28470,20 @@ void CAI_BaseNPC::sub_10279b70(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279cc0 size=0x2a
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+
+void CAI_BaseNPC::sub_10279cc0(CBaseEntity *pEnt)
+{
+	unsigned int *pHandle = (unsigned int *)((char *)this + 0x5ce4);
+	if (pEnt)
+		*pHandle = *pEnt->vfunc1();
+	else
+		*pHandle = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d990 size=0xa
 struct CUnknown1027d990Sub { int p[6]; int a; };
 struct CUnknown1027d990 { char p[0x5d34]; CUnknown1027d990Sub *m; int sub_1027d990(); };
