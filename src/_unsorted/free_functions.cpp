@@ -27203,6 +27203,34 @@ void CUnknown101eb7f0::sub_101eb7f0(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ebe60 size=0x91
+#include "CUnknown101ebe60.h"
+#include "CUnknown101eb7f0.h"
+extern int g_1073a2c0;
+extern CEntryX **g_1073a2c4;
+
+static inline CEntryX *FindEntry(int key)
+{
+    for (int i = 0; i < g_1073a2c0; i++) {
+        if (g_1073a2c4[i]->m_key == key)
+            return g_1073a2c4[i];
+    }
+    static CEntryX s_default(-1);
+    return &s_default;
+}
+
+// TARGET: CUnknown101ebe60::sub_101ebe60
+void CUnknown101ebe60::sub_101ebe60(int arg, int level)
+{
+    level--;
+    if (level >= 0) {
+        if (level >= 3)
+            level = 2;
+        ((CUnknown101eb7f0 *)FindEntry(m_keys[level]))->sub_101eb7f0(arg);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ebf30 size=0x81
 #include "CEntryX.h"
 extern int g_1073a2c0;
