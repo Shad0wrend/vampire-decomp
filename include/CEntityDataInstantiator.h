@@ -39,7 +39,12 @@ public:
 	unsigned int m_nMask;
 };
 
-struct touchlink_t;
+struct touchlink_t	// 20 bytes, the first dword is an entity handle that starts invalid
+{
+	unsigned int m_hEntity;
+	int m_data[4];
+	touchlink_t() { m_hEntity = 0xffffffff; }
+};
 
 struct groundlink_t	// 12 bytes, the first dword is an entity handle that starts invalid
 {
