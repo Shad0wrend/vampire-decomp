@@ -24228,6 +24228,25 @@ extern "C" CBaseEntity *playerevents()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10226630 size=0x43
+#include "CPlayerEvents.h"
+void *sub_100aa720(int size);
+extern char g_105b3384[];
+
+// TARGET: events_player
+extern "C" CBaseEntity *events_player()
+{
+	void *mem = sub_100aa720(0x67c);
+	CPlayerEvents *p;
+	if (mem)
+		p = ((CPlayerEvents *)mem)->sub_102270b0();
+	else
+		p = 0;
+	p->vfunc106(g_105b3384);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227210 size=0xa
 void CUnknown10227210::sub_10227210(int unused)
 {
