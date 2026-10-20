@@ -189,6 +189,7 @@
 0x10001dfc func   ?sub_102d2f30@@YAPAVCEntityVSlots@@HHHH@Z sub_102d2f30
 0x10001e5b func   _info_node_sabbat_bottom info_node_sabbat_bottom
 0x10001e6f func   ?vfunc5@CRagdollPropSpecial@@QAEPAV1@I@Z CRagdollPropSpecial::vfunc5
+0x10001e9c func   ?vfunc71@CBaseEntity@@UAEXXZ CBaseEntity::vfunc71
 0x10001ea6 func   _item_p_occult_presence item_p_occult_presence
 0x10001eb0 func   _math_remap math_remap
 0x10001ec4 func   ?sub_10223b90@CUnknown10223b90@@QAEXXZ CUnknown10223b90::sub_10223b90

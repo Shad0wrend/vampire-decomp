@@ -376,6 +376,51 @@ void CBaseEntity::vfunc67()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d460 size=0x122
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1073dc28 g_1073dc28;
+extern char g_10555390[];
+
+// The fields of the entity this slot reads (CBaseEntity.h still has them as padding).
+struct EntSoundFields
+{
+    void *m_pVTable;
+    char m_pad0004[0x98];
+    CBaseCombatCharacter *m_pOwner;	// 0x9c
+    int m_n00a0;
+    char m_pad00a4[0xac - 0xa4];
+    int m_n00ac;
+    char m_pad00b0[0xb4 - 0xb0];
+    int m_nGroup;	// 0xb4
+    int m_nGroupFemale;	// 0xb8
+    int m_nTableIdx;	// 0xbc
+    const char *m_pszName;	// 0xc0
+};
+
+void CBaseEntity::vfunc71()
+{
+    ScopeTrace trace(g_10555390, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    EntSoundFields *f = (EntSoundFields *)this;
+    if (f->m_pOwner) {
+        if (f->m_n00ac != 0)
+            f->m_nTableIdx = 3;
+        else if (vfunc70())
+            f->m_nTableIdx = 2;
+        else if (f->m_pOwner->sub_10336920())
+            f->m_nTableIdx = 1;
+        else
+            f->m_nTableIdx = 0;
+    } else if (f->m_n00a0 != 0)
+        f->m_nTableIdx = 0;
+    f->m_nGroup = g_1073dc28.sub_101f55a0(this, f->m_pszName ? f->m_pszName : g_106b8540, 0);
+    f->m_nGroupFemale = g_1073dc28.sub_101f55a0(this, f->m_pszName ? f->m_pszName : g_106b8540, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009e280 size=0xd1
 #include "CBaseEntity.h"
 #include "CEntityMapData.h"
