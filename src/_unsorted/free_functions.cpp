@@ -47269,6 +47269,24 @@ void __fastcall sub_102e12e0(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e1cf0 size=0x10
+struct CUnknownEmbed102e1cf0 {
+    char m_pad0000[0x10];
+    char m_embed10[0x28];
+    float m_f38;
+    void sub_102e1cf0();
+};
+
+// TARGET: sub_102e1cf0
+void CUnknownEmbed102e1cf0::sub_102e1cf0()
+{
+    void *obj = (char *)this + 0x10;
+    void **vt = *(void ***)obj;
+    float f = ((float (__fastcall *)(void *))vt[0])(obj);
+    m_f38 = f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2610 size=0xa
 int CAI_Motor::sub_102e2610()
 {
