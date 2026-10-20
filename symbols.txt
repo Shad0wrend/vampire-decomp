@@ -139,6 +139,7 @@
 0x10001c9e func   ?vfunc5@CParamsExplosion@@QAEPAV1@I@Z CParamsExplosion::vfunc5
 0x10001cad func   ?sub_100b99b0@CUnknown100b99b0@@QAEXD@Z CUnknown100b99b0::sub_100b99b0
 0x10001cb2 func   ?sub_10042200@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_10042200
+0x10001cbc func   ?vfunc24@CNPC_VGargoyle@@QAEXPAVCBaseEntity@@@Z CNPC_VGargoyle::vfunc24
 0x10001ccb func   ?vfunc104@CBaseGrenade@@UAEXXZ CBaseGrenade::vfunc104
 0x10001cda func   ?sub_101dba50@@YAPBDH@Z sub_101dba50
 0x10001ce4 func   ?sub_1023cde0@@YAXPAUSWorldInfo@@@Z sub_1023cde0

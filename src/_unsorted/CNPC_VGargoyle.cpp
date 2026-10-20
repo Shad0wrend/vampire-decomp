@@ -42,6 +42,53 @@ void CNPC_VGargoyle::vfunc601(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037a450 size=0x108
+#include "CNPC_VGargoyle.h"
+
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" int _strnicmp(const char *, const char *, unsigned int);
+extern "C" unsigned int strlen(const char *);
+extern char g_106b8540[];
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct EntSlots_t
+{
+    SL10(a00) SL10(a01) SL10(a02) SL10(a03) SL10(a04) SL10(a05) SL10(a06) SL10(a07) SL10(a08) SL10(a09)
+    SL10(a10) SL10(a11) SL10(a12) SL10(a13) SL10(a14) SL10(a15) SL10(a16) SL10(a17) SL10(a18) SL10(a19)
+    SL10(a20) SL10(a21) SL10(a22) SL10(a23) SL10(a24) SL10(a25)
+    virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5();
+    virtual void vfunc266(CNPC_VGargoyle *pOther);
+    const char *m_pad[0x26c / 4 - 1];
+    const char *m_name;
+};
+
+static inline bool NameMatches(EntSlots_t *pEnt, const char *pszQuery)
+{
+    const char *pszFirst = *(const char *volatile *)&pEnt->m_name;
+    if (pszFirst && pszFirst == pszQuery)
+        return true;
+    unsigned int len = strlen(pszQuery);
+    int r;
+    if (len == 0) {
+        r = (int)pEnt->m_name;
+    } else if (pszQuery[len - 1] != '*') {
+        r = _strcmpi(pEnt->m_name ? pEnt->m_name : g_106b8540, pszQuery);
+    } else {
+        r = _strnicmp(pEnt->m_name ? pEnt->m_name : g_106b8540, pszQuery, len - 1);
+    }
+    return r == 0;
+}
+
+void CNPC_VGargoyle::vfunc24(CBaseEntity *pOther)
+{
+    EntSlots_t *pEnt = (EntSlots_t *)pOther;
+    if (NameMatches(pEnt, "pillar") || NameMatches(pEnt, "central_pillar"))
+        pEnt->vfunc266(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037a5f0 size=0x8
 // TARGET: CNPC_VGargoyle::vfunc359
 int CNPC_VGargoyle::vfunc359(int index)
