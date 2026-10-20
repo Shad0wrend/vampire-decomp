@@ -16862,6 +16862,43 @@ extern "C" CBaseEntity *func_door()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee630 size=0xd8
+#include "CBaseEntity.h"
+#include "CBaseDoor.h"
+
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+extern void (__cdecl *g_109f362c)(const char *fmt, ...);
+
+static inline bool IsValidHandle(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return false;
+	EntInfo *e = &g_10566458->m_entries[h & 0x1fff];
+	return e->m_serial == (int)(h >> 13) && e->m_pEntity != 0;
+}
+
+void CBaseDoor::sub_100ee630(CBaseEntity *pKnob)
+{
+	if (!IsValidHandle(m_hDoorknob0)) {
+		if (pKnob)
+			m_hDoorknob0 = *pKnob->vfunc1();
+		else
+			m_hDoorknob0 = 0xffffffff;
+	} else if (!IsValidHandle(m_hDoorknob1)) {
+		if (pKnob)
+			m_hDoorknob1 = *pKnob->vfunc1();
+		else
+			m_hDoorknob1 = 0xffffffff;
+	} else {
+		g_109f362c("Door %s already has 2 doorknobs!", sub_100ab4f0());
+	}
+	m_pfnUse = (void (CBaseEntity::*)(CBaseEntity *, CBaseEntity *, int, float))&CBaseDoor::sub_100eef50;
+	m_flags204 = (m_flags204 & ~0x400u) | 0x100;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee750 size=0x85
 #include "CUnknown100ee750.h"
 
