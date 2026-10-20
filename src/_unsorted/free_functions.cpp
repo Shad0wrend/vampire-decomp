@@ -34926,6 +34926,25 @@ struct CUnknown1034b560 { void sub_10001375(); void sub_1034b560(int); };
 void CUnknown1034b560::sub_1034b560(int) { sub_10001375(); }
 // END FUNCTION
 
+// FUNCTION: 0x1034bd50 size=0x43
+#include "CNPCMaker_Fleshpile.h"
+void *sub_100aa720(int size);
+extern char g_106251f4[];
+
+// TARGET: npc_maker_fleshpile
+extern "C" CBaseEntity *npc_maker_fleshpile()
+{
+	void *mem = sub_100aa720(0x76d0);
+	CNPCMaker_Fleshpile *p;
+	if (mem)
+		p = ((CNPCMaker_Fleshpile *)mem)->sub_1034be50();
+	else
+		p = 0;
+	p->vfunc106(g_106251f4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d490 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
