@@ -503,6 +503,7 @@
 0x10003be8 func   ?sub_10203e30@@YAXH@Z sub_10203e30
 0x10003bf2 func   ?sub_10030ae0@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030ae0
 0x10003c10 func   ?sub_10078b90@UtlMem@@QAEXXZ UtlMem::sub_10078b90
+0x10003c1a func   ?vfunc68@CBaseAnimating@@QAE_NPAVCBaseEntity@@@Z CBaseAnimating::vfunc68
 0x10003c29 func   ?vfunc420@CNPC_VTzimisceHeadClaw@@UAEXXZ CNPC_VTzimisceHeadClaw::vfunc420
 0x10003c2e func   ?sub_101fda10@CVStatActionList_t@@QAEXXZ CVStatActionList_t::sub_101fda10
 0x10003c42 func   ?sub_103dc220@UtlMem@@QAEXXZ UtlMem::sub_103dc220

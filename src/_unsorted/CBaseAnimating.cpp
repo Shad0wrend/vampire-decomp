@@ -16,6 +16,37 @@ CBaseAnimating *CBaseAnimating::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008bfe0 size=0x86
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+bool sub_10158b90(CBaseAnimating *pEnt, CBaseEntity *pOther);
+
+bool CBaseAnimating::vfunc68(CBaseEntity *pOther)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseAnimating::ShouldIgnoreCollision";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	bool bResult = sub_10158b90(this, pOther);
+	(*g_109f3680)--;
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008f3c0 size=0x81
 #include "CBaseAnimating.h"
 
