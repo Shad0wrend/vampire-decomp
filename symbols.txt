@@ -3894,6 +3894,7 @@
 0x1001540b func   ?sub_10194e40@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_10194e40
 0x1001543d func   ?vfunc5@CRevertSaved@@QAEPAV1@I@Z CRevertSaved::vfunc5
 0x10015465 func   ?vfunc546@CNPC_VTzimisceRunner@@QAEHH@Z CNPC_VTzimisceRunner::vfunc546
+0x1001546a func   ?sub_10105090@CExpressionTable@@QAEPBDH@Z CExpressionTable::sub_10105090
 0x10015474 func   ?sub_10156580@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10156580
 0x10015479 func   ?sub_100ed4d0@@YAXPAUCBlock4k@@PBU1@@Z sub_100ed4d0
 0x1001547e func   ?sub_103aa480@CNPC_VSabbatLeader@@QAEHH@Z CNPC_VSabbatLeader::sub_103aa480

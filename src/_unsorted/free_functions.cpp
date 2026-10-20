@@ -16873,6 +16873,29 @@ bool __fastcall sub_10104ff0(Table *self, int, int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105090 size=0xa4
+#include "CExpressionTable.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+const char *CExpressionTable::sub_10105090(int index)
+{
+    g_109f3620[*g_109f3680].a = "CExpressionTable::GetExpressionName";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (IsValidExpression(index)) {
+        const char *r = m_list.sub_1024b830(*(CUnknown1024b2d0Id *)(m_field00 + index * 400 + 0x18a));
+        (*g_109f3680)--;
+        return r;
+    }
+    (*g_109f3680)--;
+    return "Invalid Expression";
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105e20 size=0xcd
 extern int *g_109f3680;
 extern const char **g_109f3620;
