@@ -29096,6 +29096,37 @@ int CVStatInfoList_t::sub_101ffdf0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102007f0 size=0x87
+#include "CVStatList_t.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CVStatList_t::sub_102007f0(int a, int *pSource, int c)
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "CVStatList_t::Bind";
+	g_109f3620[*g_109f3680].m_pszName = g_106b8540;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	if (m_field04 != 0)
+		m_field04 = 0;
+	m_pad0000 = a;
+	m_field0c = (int)pSource;
+	m_field04 = pSource[1];
+	m_field08 = c;
+	sub_10200730();
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10200ca0 size=0x83
 #include "CVStatList_t.h"
 
