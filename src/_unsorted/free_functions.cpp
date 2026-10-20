@@ -43989,6 +43989,38 @@ int __stdcall sub_1030d710(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030f220 size=0xa7
+#include "CUnknown1030f480.h"
+extern int (__cdecl *g_109f388c)(char *buf, int count, const char *fmt, ...);
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8();	virtual void p##9();
+struct SEngine99 {
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8();
+	virtual void *vfunc99(const char *pszFile, int mode, int flags);
+};
+extern SEngine99 *g_1070b22c;
+
+bool CUnknown1030f480::sub_1030f220(const char *pszName, int arg)
+{
+    char szFile[128];
+    g_109f388c(szFile, 128, "vdata/schedules/%s.sch", pszName);
+    void *pFile = g_1070b22c->vfunc99(szFile, 2, 0);
+    if (!pFile) {
+        g_109f3630("Unable to open AI Schedule data file for: %s\n", szFile);
+        return false;
+    }
+    if (!sub_1030d850(pszName, pFile, arg)) {
+        g_109f3630("       Schedule file: %s\n", szFile);
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f480 size=0x9d
 #include "CUnknown1030f480.h"
 
