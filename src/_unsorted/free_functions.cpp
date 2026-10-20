@@ -70716,6 +70716,62 @@ int sub_104284c0(StudioHdr *pHdr, const char *pszLabel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428ad0 size=0x13d
+struct CStudioHdr;
+char *sub_100c7560(CStudioHdr *pStudioHdr, int iSequence, CStudioHdr **ppOwner);
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);	// Msg
+
+// TARGET: sub_10428ad0
+int sub_10428ad0(CStudioHdr *pStudioHdr, int iFrom, int iTo, int *pDirection)
+{
+	CStudioHdr *pFromHdr;
+	CStudioHdr *pToHdr;
+	char *pFrom = sub_100c7560(pStudioHdr, iFrom, &pFromHdr);
+	char *pTo = sub_100c7560(pStudioHdr, iTo, &pToHdr);
+	unsigned int uEntryNode;
+	unsigned int uExitNode;
+	if (!pFrom || !(uEntryNode = *(unsigned int *)(pFrom + 0x270)) || !pTo || !(uExitNode = *(unsigned int *)(pTo + 0x270)) || pFromHdr != pToHdr)
+	{
+		*pDirection = 1;
+		return iTo;
+	}
+	unsigned int uNode = *pDirection > 0 ? *(unsigned int *)(pFrom + 0x274) : uEntryNode;
+	if (uNode == uExitNode)
+	{
+		*pDirection = 1;
+		return iTo;
+	}
+	char *pBase = (char *)pFromHdr;
+	unsigned int uStep = *(unsigned char *)(pBase + *(int *)(pBase + 0x150) * (uNode - 1) + *(int *)(pBase + 0x154) + uExitNode - 1);
+	if (uStep == 0)
+		return iTo;
+	int i = 0;
+	char *pSeq = pBase + *(int *)(pBase + 0x114);
+	int nSeqs = *(int *)(pBase + 0x110);
+	if (0 < nSeqs)
+	{
+		do
+		{
+			if (*(unsigned int *)(pSeq + 0x270) == uNode && *(unsigned int *)(pSeq + 0x274) == uStep)
+			{
+				*pDirection = 1;
+				return i;
+			}
+			if (*(unsigned int *)(pSeq + 0x278) != 0 && *(unsigned int *)(pSeq + 0x274) == uNode && *(unsigned int *)(pSeq + 0x270) == uStep)
+			{
+				*pDirection = -1;
+				return i;
+			}
+			i++;
+			pSeq += 0x2fc;
+		} while (i < nSeqs);
+	}
+	g_109f3628("error in transition graph");
+	*pDirection = 1;
+	return iTo;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428e60 size=0x10
 unsigned int sub_10428e60(char *p)
 {
