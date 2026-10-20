@@ -4,6 +4,9 @@
 struct CUnknown1024b2d0Id	// a 16 bit string id passed by value (like CUtlSymbol)
 {
 	unsigned short m_id;
+
+	CUnknown1024b2d0Id() { }
+	CUnknown1024b2d0Id(const CUnknown1024b2d0Id &other) { m_id = other.m_id; }
 };
 
 class CUnknown1024b2d0
