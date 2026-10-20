@@ -27,4 +27,5 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void sub_100054bb(int code);	// CAI_BaseNPCTroika::vfunc448, called directly
 	int *sub_1028a150();	// the NPC's current schedule record (first dword is the schedule id), 0 when none
+	void sub_1036e8c0();	// "CNPC_VChangBros::KillCenterEmitter": scope trace (no entity name), when the entity behind the handle at +0x66f4 resolves calls its slot 242 and SetNextThink(0.1f)
 };
