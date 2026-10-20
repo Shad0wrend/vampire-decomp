@@ -17,7 +17,7 @@ public:
 	virtual void slot45(); virtual void slot46(); virtual void slot47(); virtual void slot48(); virtual void slot49();
 	virtual void slot50(); virtual void slot51(); virtual void slot52(); virtual void slot53(); virtual void slot54();
 	virtual void slot55(); virtual void slot56(); virtual void slot57(); virtual void slot58(); virtual void slot59();
-	virtual void slot60(); virtual void slot61(); virtual void slot62(); virtual void slot63(); virtual void slot64();
+	virtual void slot60(); virtual void slot61(); virtual void slot62(); virtual void slot63(); virtual void slot64(const float *pVec);
 	virtual void slot65(); virtual void slot66(); virtual void slot67(); virtual void slot68(); virtual void slot69();
 	virtual void slot70(); virtual void slot71(); virtual void slot72(); virtual void slot73(); virtual void slot74();
 	virtual void slot75(int a, int b); virtual void slot76(); virtual void slot77(); virtual void slot78(); virtual void slot79();
