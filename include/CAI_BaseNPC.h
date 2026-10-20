@@ -87,11 +87,13 @@ public:
 	CAI_NPC_V(550) CAI_NPC_V(551)
 	virtual unsigned int vfunc552();
 	CAI_NPC_V(553) CAI_NPC_V(554) CAI_NPC_V(555) CAI_NPC_V(556) CAI_NPC_V(557) CAI_NPC_V(558) CAI_NPC_V(559)
-	CAI_NPC_V(560) CAI_NPC_V(561) CAI_NPC_V(562) CAI_NPC_V(563) CAI_NPC_V(564) CAI_NPC_V(565) CAI_NPC_V(566)
+	virtual void vfunc560();	// slot 560: sets the conditions 0x4f..0x52, 0x2e, 0x2f and 0x62..0x66 (sub_10269b50 each)
+	CAI_NPC_V(561) CAI_NPC_V(562) CAI_NPC_V(563) CAI_NPC_V(564) CAI_NPC_V(565) CAI_NPC_V(566)
 	virtual int vfunc567(int unused);
 	virtual float vfunc568(int a);
 
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
+	void sub_10269b50(int condition);	// "CAI_BaseNPC::SetCondition"-like (called through the stub at 0x10015839)
 	void sub_10273e80(char flag);	// sets the state at +0x5c44 to 4 unless flag is clear and a check (0x5c) passes (called with 0 by animation event handlers)
 	void sub_10274080(CBaseEntity *pEnt);	// enemy memory update: finds pEnt's record in the 20-byte record vector at +0x5d48 (handle, time, position) and refreshes its time, or appends a new record; then stores pEnt's absolute origin in it
 	int sub_10274aa0(void *pOther);	// slot 569: picks an activity-like index (1, 6, 7 or 8) from SelectWeightedSequence results and pOther's state at +0x5dc
