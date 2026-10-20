@@ -143,4 +143,6 @@ public:
 	void vfunc491();	// slot 491 "CNPC_VWerewolf::ExertHvySound...": scope trace (entity name), plays the sound index of the "Pain" record of the global sound table 0x1073dc28 (looked up once into a function-local static) on this entity (channel 2, volume 1.0)
 	const char *vfunc408(int condition);	// slot 408 "CNPC_VWerewolf::GetShortConditionName"-like: scope trace (entity name), "ww0".."ww4" for the conditions 0x77..0x7b, else the CAI_BaseNPC implementation
 	const char *sub_1027ede0(int condition);	// CAI_BaseNPC::vfunc408 (stub 0x10011590), called directly
+	int vfunc440(int schedule);	// slot 440 "CNPC_VWerewolf::TranslateSchedule": scope trace (entity name), schedules 0x43 / 0xb7 / 0xf0 become 0x15c / 0x157 / 0xb1 (recording the source file and line in the fields at +0x1b30 / +0x1b34), everything else goes to CAI_BaseNPCTroika::vfunc440
+	int sub_102b12f0(int schedule);	// CAI_BaseNPCTroika::vfunc440 (stub 0x10001997), called directly
 };
