@@ -9342,6 +9342,41 @@ void sub_1009a0c0(TEnt *ent, int unused, int *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009ab70 size=0xa1
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+bool __fastcall sub_1000c9eb(unsigned int *p);
+unsigned int __fastcall sub_1000fd71(unsigned int *p);
+
+#define VCALL0(p, slot) ((CBaseEntity *(__fastcall *)(void *))(*(void ***)(p))[slot])(p)
+
+void *sub_1009ab70(CBaseEntity *pEnt, void *pRet, unsigned int *pBits)
+{
+	if (pEnt) {
+		unsigned int *pNet = (unsigned int *)((char *)pEnt + 0x1a8);
+		if (sub_1000c9eb(pNet)) {
+			if (VCALL0(pEnt, 97)) {
+				CBaseEntity *pOwner = VCALL0(pEnt, 97);
+				CBaseEntity *pOther = VCALL0(pOwner, 4);
+				if (pOther && *(int *)((char *)pOther + 0xa8)) {
+					unsigned int idx = sub_1000fd71(pNet);
+					int edict = pOther->m_pEdict2e0;
+					unsigned int entIndex = g_1070b22c->vfunc35(edict) - 1;
+					if (idx == entIndex) {
+						pBits[0] = 0;
+						pBits[entIndex >> 5] |= 1 << (entIndex & 0x1f);
+						return pRet;
+					}
+				}
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009b440 size=0x83
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
