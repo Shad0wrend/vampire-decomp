@@ -35,6 +35,18 @@ struct CAI_ExpresserSub	// 0x1c byte member at +0x30
 	CAI_ExpresserSub() { sub_10311490(); }
 };
 
+struct CAI_ExpresserTail	// the members at +0x4c .. +0x6f
+{
+	int m_n4c;
+	int m_n50;
+	char m_pad54[0x64 - 0x54];
+	int m_n64;
+	char m_b68;
+	int m_n6c;
+
+	CAI_ExpresserTail() : m_n4c(0), m_n50(100), m_n64(0), m_b68(0), m_n6c(-1) {}
+};
+
 class CAI_Expresser : public CAI_Component
 {
 public:
@@ -44,17 +56,12 @@ public:
 	CAI_ExpresserTree m_Tree;	// 0x14
 	void *m_pfn2c;
 	CAI_ExpresserSub m_Sub;	// 0x30
-	int m_n4c;
-	int m_n50;
-	char m_pad54[0x64 - 0x54];
-	int m_n64;
-	char m_b68;
-	int m_n6c;
+	CAI_ExpresserTail m_Tail;	// 0x4c
 
-	CAI_Expresser() : m_n0c(-1), m_n10(0), m_pfn2c(0), m_n4c(0), m_n50(100), m_n64(0), m_b68(0), m_n6c(-1)
+	CAI_Expresser() : m_n0c(-1), m_n10(0), m_pfn2c(0)
 	{
-		*(char *)&m_n64 = 0;
-		m_n6c = -1;
+		*(char *)&m_Tail.m_n64 = 0;
+		m_Tail.m_n6c = -1;
 		m_pfn2c = (void *)sub_1000feb1;
 	}
 };
