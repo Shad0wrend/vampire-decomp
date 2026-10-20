@@ -44555,6 +44555,33 @@ int S1033d380::sub_1033d380(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d640 size=0x8f
+#include "inputdata_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+void sub_1022dc30(CBaseCombatCharacter *pThis, int value);
+
+// TARGET: CBaseCombatCharacter::sub_1033d640
+void CBaseCombatCharacter::sub_1033d640(inputdata_t *data)
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (name == 0)
+            name = g_106b8540;
+    } else
+        name = "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::InputHumanityAdd";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    sub_1022dc30(this, data->value.fieldType == 4 ? data->value.iValue : 0);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d8a0 size=0x76
 #include "CBaseCombatCharacter.h"
 
