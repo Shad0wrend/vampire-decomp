@@ -3303,6 +3303,7 @@
 0x1001241d func   ?sub_101e8080@CUnknown101e8080@@QAEXPAHPAXMH@Z CUnknown101e8080::sub_101e8080
 0x10012440 func   ?sub_103d4760@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d4760
 0x1001244a func   ?sub_10406560@@YAHXZ sub_10406560
+0x10012468 func   ?vfunc103@CVGuiScreen@@UAEXXZ CVGuiScreen::vfunc103
 0x10012477 func   ?sub_101cd070@@YGPAUEnt@@PAU1@@Z sub_101cd070
 0x10012481 func   ?sub_10202ba0@CUnknown10202ba0@@QAEXXZ CUnknown10202ba0::sub_10202ba0
 0x10012486 func   ?sub_101e86e0@S@@QAEXPAUP@@@Z S::sub_101e86e0
