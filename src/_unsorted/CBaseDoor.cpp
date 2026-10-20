@@ -55,6 +55,36 @@ void CBaseDoor::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ef630 size=0x8a
+#include "CBaseDoor.h"
+
+void sub_100043cc(CBaseDoor *door, void *pData, int a);
+
+void CBaseDoor::vfunc250()
+{
+	unsigned int flags = *(unsigned int *)((char *)this + 0x204);
+	if (!(flags & 0x20) && *(int *)((char *)this + 0x3fc) != 0xbf800000) {
+		if (flags & 1) {
+			sub_100043cc(this, (char *)this + 0x514, 0);
+			*(int *)((char *)this + 0x4f8) = 0;
+		} else {
+			sub_100043cc(this, (char *)this + 0x508, 0);
+			*(int *)((char *)this + 0x4f8) = 1;
+		}
+		*(int *)((char *)this + 0x3fc) = 0xbf800000;
+		m_pfnTouch = (void (CBaseEntity::*)(CBaseEntity *))&CBaseDoor::sub_10012837;
+		switch (*(int *)((char *)this + 0x4f8)) {
+		case 0:
+			sub_100efbf0(1);
+			break;
+		case 1:
+			sub_100efbf0(0);
+			break;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efab0 size=0x13
 #include "CBaseDoor.h"
 #include "CBaseEntitySlots.h"

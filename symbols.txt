@@ -3361,6 +3361,7 @@
 0x100131c4 func   ?sub_10220e10@QuestJournal@@QAEPAV1@XZ QuestJournal::sub_10220e10
 0x100131dd func   ?vfunc35@CPropSign@@UAEHH@Z CPropSign::vfunc35
 0x100131e7 func   ?sub_102d2840@@YAPAUSNode@@HPBD@Z sub_102d2840
+0x10013205 func   ?vfunc250@CBaseDoor@@QAEXXZ CBaseDoor::vfunc250
 0x1001320a func   ?sub_1009d760@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d760
 0x10013228 func   ?sub_10043630@@YIXPAUMem8@@HH@Z sub_10043630
 0x10013232 func   ?vfunc5@CPhysExplosion@@UAEPAV1@I@Z CPhysExplosion::vfunc5
