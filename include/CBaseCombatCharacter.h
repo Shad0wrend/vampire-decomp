@@ -1,5 +1,6 @@
 // CBaseCombatCharacter: base of NPCs and players.
 // Only the members the recovered code needs are declared.
+// New method declarations can go into CBaseCombatCharacter_ext.h (included at the end of the class body).
 #pragma once
 
 #include "CBaseEntity.h"
@@ -124,6 +125,8 @@ public:
 	void vfunc403();
 	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
 	void vfunc119();	// "CBaseCombatCharacter::Kill": scope trace (entity name), then CBaseEntity::vfunc119
+
+#include "CBaseCombatCharacter_ext.h"
 
 	char m_pad03e0[0x1084 - 0x3e0];
 	int m_nStealthModifier;	// 0x1084
