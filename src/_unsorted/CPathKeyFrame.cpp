@@ -1,6 +1,24 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1013ffa0 size=0x71
+#include "CPathKeyFrame.h"
+#include "CEntityVSlots.h"
+static inline Vector &Assign(Vector &d, const Vector &s)
+{
+    d.x = s.x;
+    d.y = s.y;
+    d.z = s.z;
+    return d;
+}
+void CPathKeyFrame::vfunc103()
+{
+    Assign(m_vOrigin, *((CEntityVSlots *)this)->slot220());
+    Assign(m_vAngles, *((CEntityVSlots *)this)->slot221());
+    sub_10140270(m_vAngles);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140f00 size=0x1e
 #include "CPathKeyFrame.h"
 
