@@ -7,4 +7,5 @@ class CUnknown101e3af0
 {
 public:
 	void sub_101e3af0(CBaseCombatCharacter *pCharacter, int discipline, int flags);	// "RemoveEffect": looks up the discipline record, logs "Discipline<%s> RemoveEffect", then removes its effects from pCharacter (stub 0x10003945)
+	void sub_101e3310(CBaseCombatCharacter *pCharacter, const char *pszName);	// "ActivateEffect" by name: looks the discipline up, DevMsg("ERROR: ActivateEffect Trigger Failed ...") when unknown, else activates it on pCharacter (stub 0x1000f54c)
 };
