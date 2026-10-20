@@ -15576,6 +15576,43 @@ void __fastcall sub_10106490(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106b30 size=0xc1
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern int (__cdecl *g_109f388c)(char *dest, int size, const char *fmt, ...);
+void sub_100b6510(void *pSrc, char *pOut);
+
+void CBaseCombatCharacter::sub_10106b30(const char *pszName, char *pDest, int size)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseCombatCharacter::GetExpressionOverrideFile";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	char *hdr = (char *)((CBaseAnimating *)this)->sub_100952d0(-1);
+	if (hdr) {
+		char buf[128];
+		sub_100b6510(hdr + 0xc, buf);
+		g_109f388c(pDest, size, "expressions/%s_%s.vfe", buf, pszName);
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106f90 size=0x81
 #include "CBaseCombatCharacter.h"
 #include "CExpressionTable.h"
