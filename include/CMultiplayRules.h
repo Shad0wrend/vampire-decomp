@@ -15,4 +15,11 @@ public:
 	virtual int vfunc62(int index);
 	virtual const char *vfunc63(int index);
 	virtual void vfunc75();
+
+	int m_n04;	// 0x04
+	int m_n08;	// 0x08
+
+	CMultiplayRules *sub_10140f60();	// "CMultiplayRules::CMultiplayRules" body: base constructor, vtable, sub_1000fcbd(), then runs the dedicated / listen server config file (exec <cvar string>) when its cvar is non-empty; returns this
+	void sub_101291f0();	// CGameRules constructor body (stub 0x10011d79)
+	void sub_1000fcbd();	// CMultiplayRules::vfunc15, called directly
 };
