@@ -31423,6 +31423,36 @@ void sub_10203e30(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203f10 size=0xa0
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+
+int sub_10203f10(CBaseCombatCharacter *pChar, char bFlag)
+{
+	int nCount = 0;
+	int nMin = 0;
+	if (!bFlag)
+		nMin = 1;
+	for (int i = 0; i < 0x11; i++) {
+		CVStatList_t *pList;
+		for (int j = 0; j < pChar->m_nStatLists; j++) {
+			if (pChar->m_pStatLists[j]->m_field10 == 2) {
+				pList = pChar->m_pStatLists[j];
+				goto found;
+			}
+		}
+		{
+			static CVStatList_t s_default(-1);
+			pList = &s_default;
+		}
+found:
+		if (pList->sub_10010609(i) >= nMin)
+			nCount++;
+	}
+	return nCount;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204550 size=0xa
 extern int g_1074eec4;
 
