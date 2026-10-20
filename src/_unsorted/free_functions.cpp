@@ -31389,6 +31389,19 @@ const char *CUnknown101da960::sub_101da960(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101da9b0 size=0x12
+struct CBitfieldSet {
+    unsigned int m_bits;
+    void sub_101da9b0(unsigned int bit);
+};
+
+// TARGET: sub_101da9b0
+void CBitfieldSet::sub_101da9b0(unsigned int bit)
+{
+    m_bits |= 1u << bit;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dadd0 size=0x80
 #include "CUnknown101da960.h"
 
