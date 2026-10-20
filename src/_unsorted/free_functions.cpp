@@ -55929,6 +55929,25 @@ void CBaseCombatCharacter::sub_103411c0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10341370 size=0xb0
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+
+void CBaseCombatCharacter::sub_10341370(CBaseCombatCharacter *pPartner, int unused)
+{
+	ScopeTrace trace("CBaseCombatCharacter::BarterEnd", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pPartner) {
+		if (*(int *)((char *)this + 0xa8)) {
+			sub_10013070();
+			sub_10010e60(this);
+			return;
+		}
+		if (*(int *)((char *)pPartner + 0xa8))
+			pPartner->sub_10013070();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103419c0 size=0xa8
 #include "inputdata_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
