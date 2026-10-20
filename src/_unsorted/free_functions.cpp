@@ -10137,6 +10137,25 @@ bool sub_100ba1b0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba290 size=0x43
+#include "CBeam.h"
+void *sub_100aa720(int size);
+extern char g_1055aff4[];
+
+// TARGET: beam
+extern "C" CBaseEntity *beam()
+{
+	void *mem = sub_100aa720(0x4f4);
+	CBeam *p;
+	if (mem)
+		p = ((CBeam *)mem)->sub_100bac50();
+	else
+		p = 0;
+	p->vfunc106(g_1055aff4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc0f0 size=0x23
 #include "CUnknown100bc0f0.h"
 
