@@ -33417,6 +33417,51 @@ extern "C" CBaseEntity *ambient_soundscheme()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022a200 size=0x9f
+#include "CSoundScheme.h"
+#include "UtlMem.h"
+
+extern int vt_1048dd34[];
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+
+void CSoundScheme::sub_1022a200()
+{
+	*(int **)this = vt_1048dd34;
+	int *a = (int *)((char *)this + 0x580);
+	a[3] = 0;
+	if (a[2] != -1) {
+		if (a[0]) {
+			Plat_Free((void *)a[0]);
+			a[0] = 0;
+		}
+		a[1] = 0;
+	}
+	a[4] = a[0];
+	int *b = (int *)((char *)this + 0x594);
+	b[3] = 0;
+	((UtlMem *)b)->sub_1022cfd0();
+	b[4] = b[0];
+	if (b[2] != -1) {
+		if (b[0]) {
+			Plat_Free((void *)b[0]);
+			b[0] = 0;
+		}
+		b[1] = 0;
+	}
+	a[3] = 0;
+	((UtlMem *)a)->sub_1022cf90();
+	a[4] = a[0];
+	if (a[2] != -1) {
+		if (a[0]) {
+			Plat_Free((void *)a[0]);
+			a[0] = 0;
+		}
+		a[1] = 0;
+	}
+	sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022a380 size=0xe1
 struct SFileSystem
 {

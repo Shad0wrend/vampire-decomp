@@ -2055,6 +2055,7 @@
 0x1000bc85 func   ?vfunc408@CNPC_VMingXiao@@QAEPBDH@Z CNPC_VMingXiao::vfunc408
 0x1000bc9e func   ?sub_1030fd20@S1030fc90@@QAEPAXPAI@Z S1030fc90::sub_1030fd20
 0x1000bcbc func   ?vfunc349@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::vfunc349
+0x1000bccb func   ?sub_1022a200@CSoundScheme@@QAEXXZ CSoundScheme::sub_1022a200
 0x1000bcd5 func   ?sub_101d72a0@List@@QAEHPBD@Z List::sub_101d72a0
 0x1000bcda func   ?sub_101b61a0@CUnknown101b61a0@@QAEAAV1@ABV1@@Z CUnknown101b61a0::sub_101b61a0
 0x1000bcdf func   _auspex_aura auspex_aura
