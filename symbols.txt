@@ -1578,6 +1578,7 @@
 0x10009e0d func   ?vfunc5@CNPC_VManBat@@QAEPAV1@I@Z CNPC_VManBat::vfunc5
 0x10009e1c func   ?sub_100bdc20@bf_write@@QAEXI@Z bf_write::sub_100bdc20
 0x10009e21 func   ?sub_1042c4a0@@YAXXZ sub_1042c4a0
+0x10009e2b func   ?vfunc350@CItemContainer@@QAEXH@Z CItemContainer::vfunc350
 0x10009e30 func   ?sub_1003e250@@YAPAUtrace21@@PAU1@@Z sub_1003e250
 0x10009e35 func   ?sub_101f1c70@CUnknown101f1c70@@QAEXH@Z CUnknown101f1c70::sub_101f1c70
 0x10009e3f func   ?sub_10252470@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10252470

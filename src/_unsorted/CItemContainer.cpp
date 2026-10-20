@@ -16,6 +16,29 @@ CItemContainer *CItemContainer::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208ff0 size=0x72
+#include "CItemContainer.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+inline CBaseEntity *ResolveHandle(const unsigned int &h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13))
+			return (CBaseEntity *)s->m_pEntity;
+	}
+	return 0;
+}
+
+void CItemContainer::vfunc350(int unused)
+{
+	if (ResolveHandle(m_hUser.m_Index))
+		sub_1000e020(ResolveHandle(m_hUser.m_Index), 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209790 size=0x18b
 #include "CItemContainer.h"
 
