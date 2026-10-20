@@ -51523,6 +51523,56 @@ void CBaseCombatCharacter::sub_10339560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10339930 size=0x106
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+#include "CAI_BaseNPC.h"
+
+__declspec(dllimport) void __cdecl DevMsg(const char *pszFormat, ...);
+
+struct CStatRecord
+{
+	char m_pad0000[0x96];
+	char m_bResistsFeeding;	// 0x96
+};
+
+struct CStatRecordMgr
+{
+	CStatRecord *sub_10207c40(CBaseCombatCharacter *pChar);	// stub 0x10001de8
+};
+extern CStatRecordMgr g_1074f028;
+
+class CDevConVar
+{
+public:
+	virtual void vfunc0();
+	virtual bool vfunc1();	// the convar is unset
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+extern CDevConVar *g_1074f04c;
+
+char CBaseCombatCharacter::sub_10339930()
+{
+	ScopeTrace trace("CBaseCombatCharacter::ResistsFeeding", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!g_1074f028.sub_10207c40(this)->m_bResistsFeeding) {
+		if (!sub_1033c900(0x40000)) {
+			CAI_BaseNPC *pNPC = *(CAI_BaseNPC **)((char *)this + 0x98);
+			if (pNPC) {
+				if (pNPC->vfunc464() == 2) {
+					int pTarget = pNPC->vfunc167();
+					if (pTarget && *(int *)(pTarget + 0xa8))
+						return 1;
+				}
+			}
+			if (!g_1074f04c->vfunc1() && g_1074f04c->m_n2c)
+				DevMsg("Suppressing feed resist since NPC is not in combat with the player!\n");
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10339a90 size=0x8f
 #include "CBaseCombatCharacter.h"
 #include "StatDefault3.h"
