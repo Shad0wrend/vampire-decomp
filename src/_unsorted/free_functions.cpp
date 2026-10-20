@@ -35250,6 +35250,35 @@ int __stdcall sub_1030cb00(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030d4f0 size=0x10e
+extern "C" int _strcmpi(const char *, const char *);
+extern void (*g_109f366c)(const char *, ...);
+
+int __stdcall sub_1030d4f0(const char *pszName)
+{
+    if (_strcmpi(pszName, "ACCUM") == 0)
+        return -1000000;
+    if (_strcmpi(pszName, "TZIMISCE_CLAW") == 0)
+        return -1000001;
+    if (_strcmpi(pszName, "DIALOG") == 0)
+        return -1000002;
+    if (_strcmpi(pszName, "COMBATMOVE") == 0)
+        return -1000003;
+    if (_strcmpi(pszName, "MINGXIAO_IDEAL_RANGE") == 0)
+        return -1000004;
+    if (_strcmpi(pszName, "FOLLOWER_DISTANCE_BACKAWAY") == 0)
+        return -1000005;
+    if (_strcmpi(pszName, "FOLLOWER_DISTANCE_WALKTO") == 0)
+        return -1000006;
+    if (_strcmpi(pszName, "FOLLOWER_DISTANCE_RUNTO") == 0)
+        return -1000007;
+    if (_strcmpi(pszName, "FOLLOWER_DISTANCE_OVERLAP") == 0)
+        return -1000008;
+    g_109f366c("Schedule has invalid DIST: ID '%s'\n", pszName);
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030d650 size=0x82
 int sub_1043e780(const char *, const char *);
 extern void (*g_109f366c)(const char *fmt, ...);
