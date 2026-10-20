@@ -5189,6 +5189,22 @@ void __fastcall sub_10078c30(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078c50 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_10078c50()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078c90 size=0x97
 #include "CUtlVector136.h"
 
