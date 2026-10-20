@@ -23,8 +23,12 @@ struct CAI_ExpresserTree	// an inlined CUtlRBTree16 at +0x14
 	unsigned short m_FirstFree;
 	unsigned short m_TotalElements;
 
-	CAI_ExpresserTree() : m_pfnLess((void *)sub_1000186b), m_mem(0, 0), m_Root(0xffff), m_NumElements(0), m_FirstFree(0xffff), m_TotalElements(0)
+	CAI_ExpresserTree() : m_pfnLess((void *)sub_1000186b), m_mem(0, 0)
 	{
+		m_Root = 0xffff;
+		m_NumElements = 0;
+		m_FirstFree = 0xffff;
+		m_TotalElements = 0;
 	}
 };
 
