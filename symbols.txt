@@ -835,6 +835,7 @@
 0x10005367 func   ?vfunc5@CNPC_VStalker@@QAEPAV1@I@Z CNPC_VStalker::vfunc5
 0x1000537b func   ?vfunc265@CVampireProjectile@@UAE_NXZ CVampireProjectile::vfunc265
 0x10005399 func   ?vfunc5@CWeaponRanged_Pistol_Glock@@QAEPAV1@I@Z CWeaponRanged_Pistol_Glock::vfunc5
+0x1000539e func   ?vfunc134@CVampireProjectile_MingXiaoSpit@@QAEXXZ CVampireProjectile_MingXiaoSpit::vfunc134
 0x100053a8 func   ?sub_103fff40@@YAHXZ sub_103fff40
 0x100053bc func   ?sub_101f9630@@YAXH@Z sub_101f9630
 0x100053cb func   ?sub_10384150@@YADXZ sub_10384150
