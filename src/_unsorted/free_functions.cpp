@@ -38632,6 +38632,34 @@ Helper1030f680 *Helper1030f680::sub_1030f680(const char *s, int v1, int v2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030fa00 size=0x75
+#include "CAI_Senses.h"
+#include "CEntityVSlots.h"
+struct S1030fa00Owner { char m_pad[0x1480]; char m_b1480; };
+struct S1030fa00Ent {
+    char m_pad[0x9c];
+    S1030fa00Owner *m_pOwner9c;
+    char m_pad0a0[8];
+    int m_f0a8;
+    char m_pad0ac[0x204 - 0xac];
+    unsigned char m_nSpawnFlags;
+    char sub_100b5190();
+};
+char CAI_Senses::sub_1030fa00(CBaseEntity *pEnt)
+{
+    S1030fa00Ent *e = (S1030fa00Ent *)pEnt;
+    if (pEnt != m_pOuter && ((CEntityVSlots *)pEnt)->slot158()) {
+        if (e->m_f0a8 && (pEnt->sub_100b3700() & 0x8000))
+            return 0;
+        if (!(e->m_nSpawnFlags & 1) && (!e->m_pOwner9c || e->m_pOwner9c->m_b1480) && !e->sub_100b5190()) {
+            char c = ((CAI_BaseNPC *)m_pOuter)->vfunc468(pEnt);
+            return c != 0;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fc90 size=0x68
 struct SInner { void *ent; unsigned serial; };
 struct SEnt { int pad; SInner in; };
