@@ -28082,6 +28082,36 @@ int CVStatCost_t::sub_101fc410(int level, bool bFirst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fc6a0 size=0x85
+#include "CVStatCost_t.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern void (__cdecl *g_109f3650)(int level, const char *msg);
+
+void CVStatCost_t::sub_101fc6a0()
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "CVStatCost_t::Debug_Display";
+	g_109f3620[*g_109f3680].m_pszName = g_106b8540;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	if (!sub_101fc160()) {
+		void (__cdecl *devMsg)(int, const char *) = g_109f3650;
+		devMsg(1, "\tCost:");
+		devMsg(1, sub_101fc5b0());
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fc8d0 size=0x5f
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
