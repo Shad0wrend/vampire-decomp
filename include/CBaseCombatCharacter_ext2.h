@@ -7,6 +7,7 @@
 	void vfunc306(CBaseCombatCharacter *pTarget, char bUseEyes);	// slot 306 "CBaseCombatCharacter::LookAtEntity": scope trace (entity name), asks pTarget for its eye position (slot 192) or center (slot 193) and this for its center, then, with an AI object at +0x94, resets its look state (sub_102e0b40 on the object at +0x5d44) and hands it pTarget's slot 220 position with -1.0f (sub_102e20b0, stub 0x10007248)
 	char sub_10338cb0();	// "CBaseCombatCharacter::IncBloodPool": scope trace (entity name), hands 0xc to the active stat list (sub_10200d60), then slot 111; returns the worker's flag byte
 	char sub_103300c0();	// "CBaseCombatCharacter::...": whether the value of stat 7 (kindred) or 0xd (others) of the stat list with id 3 (the shared default list when absent) is positive
+	char sub_10339930();	// "CBaseCombatCharacter::ResistsFeeding": scope trace (entity name), true when the stat record of this character resists, or misc flag 0x40000 is set, or the NPC at +0x98 (state 2, slot 167 object with a field at +0xa8) is in combat with the player; else false (with a console message when the dev convar allows)
 
 	// The inlined stat-list lookup: the first stat list with a zero field at +0x10, else the shared default list
 	// (function-local static at 0x109f0b40, guard byte 0x109f0b2a).
