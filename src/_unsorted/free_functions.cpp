@@ -23596,6 +23596,28 @@ void sub_101d0310(float *pVector, int count, const char *pString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0410 size=0x81
+extern char *(*g_109f3890)(char *, const char *, int);
+extern "C" char *strtok(char *, const char *);
+void sub_10010b9a(int, const char *);
+
+void sub_101d0410(int a, int b, const char *str)
+{
+    char buf[256];
+    g_109f3890(buf, str, 256);
+    char *tok = strtok(buf, ",");
+    int n = 0;
+    while (tok && *tok) {
+        if (!n) {
+            sub_10010b9a(a, tok);
+            n = 1;
+        } else
+            sub_10010b9a(b, tok);
+        tok = strtok(0, ",");
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0570 size=0x86
 extern "C" int __cdecl atoi(const char *);
 extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);

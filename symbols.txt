@@ -784,6 +784,7 @@
 0x10005722 func   ?vfunc176@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc176
 0x1000574a func   ?sub_101f9590@@YAXH@Z sub_101f9590
 0x10005768 func   ?sub_10078b10@@YIXPAH@Z sub_10078b10
+0x10005772 func   ?sub_101d0410@@YAXHHPBD@Z sub_101d0410
 0x1000579f func   ?sub_10099f20@@YAXPAUEntB@@HPAM@Z sub_10099f20
 0x100057b3 func   ?sub_1018cc00@@YAPAHXZ sub_1018cc00
 0x100057c7 func   ?sub_10332930@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10332930
