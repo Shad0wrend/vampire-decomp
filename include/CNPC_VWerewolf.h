@@ -107,4 +107,7 @@ public:
 	CNPC_VWerewolfVec3 sub_103d9c90();	// returns the cached vector (+0x6674), recomputed through sub_102c3b50 from the target entity (slot 167) when the engine tick (global 0x1070b22c, slot 120) changed
 	void sub_102c3b50(CBaseEntity *pTarget, CNPC_VWerewolfVec3 v, CNPC_VWerewolfVec3 *pCache, int *pLocal);	// called through the stub at 0x100041d3
 	bool sub_103d8550(void *pHint);	// "CNPC_VWerewolf::IsValidBreakHint": scope trace (entity name), false for no hint or a hint that sub_102d14c0 rejects, else true when the hint type at +0x5dc is 0x3aa3
+	void sub_103d6280(void *pHint);	// "CNPC_VWerewolf::PositionAtHint": scope trace (entity name), unless pHint is null: builds the hint's position (sub_103d6770) and sets the origin (slot 62), angles (slot 216) and the ground-entity-like slot 218 from the hint's slot 219, then sub_100b3b00()
+	void sub_103d6770(CNPC_VWerewolfVec3 *pOut, void *pHint);	// stub 0x100024ff: computes the position of a hint into pOut
+	void sub_100b3b00();	// CBaseEntity::sub_100b3b00 (stub 0x1001514a), called directly
 };
