@@ -3928,6 +3928,7 @@
 0x10014510 func   ?sub_10032a40@@YIXPAH@Z sub_10032a40
 0x1001451f func   ?sub_10050170@@YAPAHXZ sub_10050170
 0x1001452e func   ?sub_10053df0@@YA_NPBI0@Z sub_10053df0
+0x1001454c func   ?sub_101db430@CUnknown101db210@@QAEHHH@Z CUnknown101db210::sub_101db430
 0x10014560 func   ?sub_101db5f0@CUnknown101db5f0@@QAEPAV1@XZ CUnknown101db5f0::sub_101db5f0
 0x1001456a func   ?sub_10405aa0@@YAHXZ sub_10405aa0
 0x1001457e func   ?sub_100b3640@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3640

@@ -30120,6 +30120,60 @@ S6 *CUnknown101db210::sub_101db210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db430 size=0xeb
+#include "CUnknown101db210.h"
+
+struct S6
+{
+	int m_n00;
+	int m_nValue;
+	int m_nWeight;
+	int m_nMaxCount;
+	int m_nCount;
+	int m_nStamp;
+};
+
+class CRandomSource
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual int vfunc2(int nMin, int nMax);
+};
+
+extern CRandomSource *g_1070b244;
+extern int g_105a1b28;
+extern int g_10739a7c;
+
+int CUnknown101db210::sub_101db430(int a, int b)
+{
+	if (m_count) {
+		int nRoll = g_1070b244->vfunc2(0, 100);
+		for (int i = 0; i < m_count; i++) {
+			if (m_pItems[i]->m_nStamp != g_105a1b28) {
+				m_pItems[i]->m_nCount = 0;
+				m_pItems[i]->m_nStamp = g_105a1b28;
+			}
+			S6 *pItem = m_pItems[i];
+			if (nRoll < pItem->m_nWeight && (pItem->m_nMaxCount == 0 || pItem->m_nCount < pItem->m_nMaxCount)) {
+				m_pItems[i]->m_nCount++;
+				return m_pItems[i]->m_nValue;
+			}
+			nRoll -= pItem->m_nWeight;
+		}
+	}
+	if (m_pSub->m_nCount > 0) {
+		g_10739a7c = g_1070b244->vfunc2(0, 100);
+		int nPick = m_pSub->sub_101db870(a, b);
+		if (nPick != -1)
+			return nPick;
+	}
+	if (!m_first.sub_101daf60() && m_count)
+		return (*m_pItems)->m_nValue;
+	return m_first.m_unk4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db560 size=0x6a
 #include "CUnknown101db210.h"
 extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
