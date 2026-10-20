@@ -21716,6 +21716,45 @@ PyObj *sub_101970f0(void *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101971b0 size=0x95
+#include "Vector.h"
+struct PyObj { int ob_refcnt; PyObj *ob_type; };
+extern "C" __declspec(dllimport) int __cdecl PyArg_ParseTuple(PyObj *, const char *, ...);
+extern "C" __declspec(dllimport) PyObj *__cdecl PyErr_Occurred(void);
+extern "C" __declspec(dllimport) void __cdecl PyErr_SetString(PyObj *, const char *);
+extern "C" __declspec(dllimport) PyObj *PyExc_StandardError;
+extern "C" __declspec(dllimport) PyObj _Py_NoneStruct;
+
+#define SL5(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4();
+#define SL10(p) SL5(p##a) SL5(p##b)
+#define SL50(p) SL10(p##a) SL10(p##b) SL10(p##c) SL10(p##d) SL10(p##e)
+struct EntityV {
+    SL50(e0) SL50(e1) SL50(e2) SL50(e3) SL10(e4a) SL10(e4b)
+    virtual Vector *vfunc220();
+};
+
+void *sub_10196780(PyObj *pEntity);
+PyObj *sub_10196230(Vector v);
+
+// TARGET: sub_101971b0
+PyObj *sub_101971b0(void *self, PyObj *args)
+{
+    PyObj *obj = 0;
+    if (!PyArg_ParseTuple(args, "O", &obj)) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_StandardError, "bad args to GetOrigin()");
+        return 0;
+    }
+    EntityV *pEnt = (EntityV *)sub_10196780(obj);
+    if (pEnt) {
+        Vector *v = pEnt->vfunc220();
+        return sub_10196230(*v);
+    }
+    _Py_NoneStruct.ob_refcnt++;
+    return &_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197360 size=0x95
 struct PyObj;
 struct PyVec3 { float x, y, z; };

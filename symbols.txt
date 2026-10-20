@@ -1112,6 +1112,7 @@
 0x10006feb func   ?vfunc70@CGameRules@@UAEPBDH@Z CGameRules::vfunc70
 0x10006ff0 func   ?sub_100ad6e0@@YIHPAD@Z sub_100ad6e0
 0x10006ff5 func   _phys_thruster phys_thruster
+0x10007013 func   ?sub_101971b0@@YAPAUPyObj@@PAXPAU1@@Z sub_101971b0
 0x10007018 func   ?vfunc5@CDisciplineProjectile@@QAEPAV1@I@Z CDisciplineProjectile::vfunc5
 0x10007027 func   ?vfunc546@CNPC_VStalker@@QAEHH@Z CNPC_VStalker::vfunc546
 0x1000702c func   ?sub_1030d650@@YGHPBD@Z sub_1030d650
