@@ -1,0 +1,12 @@
+// CTraceFilterNav: navigation trace filter (primary vtable 0x1049d8c0). Derives from CTraceFilterSimple (constructor 0x1000bd7f).
+#pragma once
+
+class CTraceFilterNav
+{
+public:
+	CTraceFilterNav *sub_102e30d0(int a, int b);	// constructor body: base constructor, vtable, the two fields; returns this
+
+	int m_08;
+	int m_0c;	// 0x0c: second constructor argument
+	int m_10;	// 0x10: first constructor argument
+};
