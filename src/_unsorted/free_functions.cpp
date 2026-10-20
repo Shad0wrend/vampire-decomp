@@ -17320,6 +17320,28 @@ struct CUnknown10146790 { char a; char b; char c; void sub_10146790(); };
 void CUnknown10146790::sub_10146790() { c = 0; b = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10146a80 size=0x7f
+char CBaseCombatCharacter::sub_10146a80()
+{
+    CVStatList_t *pList = 0;
+    bool bFound = false;
+    for (int i = 0; i < m_nStatLists; i++) {
+        if (m_pStatLists[i]->m_field10 == 3) {
+            pList = m_pStatLists[i];
+            bFound = true;
+            break;
+        }
+    }
+    if (!bFound) {
+        static CVStatList_t def(-1);
+        pList = &def;
+    }
+    if (pList->sub_10010609(8) < 1)
+        return 0;
+    return *((char *)this + 0x14dc) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147c10 size=0xa6
 struct ISaveRestoreOps;
 struct datamap_t;
