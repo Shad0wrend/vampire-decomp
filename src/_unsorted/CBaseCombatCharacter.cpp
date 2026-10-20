@@ -182,18 +182,7 @@ int CBaseCombatCharacter::vfunc252(int a, int b, int c)
 
 	int r = -1;
 	if (b >= 0 && b < 4) {
-		CVStatList_t *p;
-		for (int i = 0; i < m_nStatLists; i++) {
-			if (m_pStatLists[i]->m_field10 == b) {
-				p = m_pStatLists[i];
-				goto found;
-			}
-		}
-		{
-			static CVStatList_t def(-1);
-			p = &def;
-		}
-found:
+		CVStatList_t *p = CVStatListSet::Of(this)->Find(b);
 		r = p->sub_10010609(c);
 	}
 	int ret = ((CBaseAnimating *)this)->sub_1008dc40(a, r);
@@ -227,18 +216,7 @@ int CBaseCombatCharacter::vfunc254(int a, int b, int c)
 
 	int r = -1;
 	if (b >= 0 && b < 4) {
-		CVStatList_t *p;
-		for (int i = 0; i < m_nStatLists; i++) {
-			if (m_pStatLists[i]->m_field10 == b) {
-				p = m_pStatLists[i];
-				goto found;
-			}
-		}
-		{
-			static CVStatList_t def(-1);
-			p = &def;
-		}
-found:
+		CVStatList_t *p = CVStatListSet::Of(this)->Find(b);
 		r = p->sub_10010609(c);
 	}
 	int ret = ((CBaseAnimating *)this)->sub_1008de20(a, r);
@@ -273,18 +251,7 @@ int CBaseCombatCharacter::vfunc253(int a, int b, int c)
 
 	int r = -1;
 	if (b >= 0 && b < 4) {
-		CVStatList_t *p;
-		for (int i = 0; i < m_nStatLists; i++) {
-			if (m_pStatLists[i]->m_field10 == b) {
-				p = m_pStatLists[i];
-				goto found;
-			}
-		}
-		{
-			static CVStatList_t def(-1);
-			p = &def;
-		}
-found:
+		CVStatList_t *p = CVStatListSet::Of(this)->Find(b);
 		r = p->sub_10010609(c);
 	}
 	int ret = ((CBaseAnimating *)this)->sub_1008dd30(a, r);

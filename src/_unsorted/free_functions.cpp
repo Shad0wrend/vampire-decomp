@@ -22261,19 +22261,7 @@ void CUnknown10146790::sub_10146790() { c = 0; b = 0; }
 // FUNCTION: 0x10146a80 size=0x7f
 char CBaseCombatCharacter::sub_10146a80()
 {
-    CVStatList_t *pList = 0;
-    bool bFound = false;
-    for (int i = 0; i < m_nStatLists; i++) {
-        if (m_pStatLists[i]->m_field10 == 3) {
-            pList = m_pStatLists[i];
-            bFound = true;
-            break;
-        }
-    }
-    if (!bFound) {
-        static CVStatList_t def(-1);
-        pList = &def;
-    }
+    CVStatList_t *pList = CVStatListSet::Of(this)->Find(3);
     if (pList->sub_10010609(8) < 1)
         return 0;
     return *((char *)this + 0x14dc) != 0;
@@ -22288,19 +22276,7 @@ char CBaseCombatCharacter::sub_10146d50()
 {
     if (!*(int *)((char *)this + 0xa8))
         return 0;
-    CVStatList_t *list;
-    int i;
-    for (i = 0; i < m_nStatLists; i++) {
-        if (m_pStatLists[i]->m_field10 == 3) {
-            list = m_pStatLists[i];
-            goto found;
-        }
-    }
-    {
-        static CVStatList_t def(-1);
-        list = &def;
-    }
-found:
+    CVStatList_t *list = CVStatListSet::Of(this)->Find(3);
     int v = list->sub_10010609(8);
     if (v < 0 || v > 4)
         return 0;
@@ -24190,12 +24166,7 @@ struct StatOwner {
 };
 CVStatList_t *StatOwner::sub_10183880(int id)
 {
-    for (int i = 0; i < m_count; i++) {
-        if (m_items[i]->id == id)
-            return (CVStatList_t *)m_items[i];
-    }
-    static CVStatList_t s_default(-1);
-    return &s_default;
+    return ((CVStatListSet *)this)->Find(id);	// the set: count at +0x14, lists at +0x18
 }
 // END FUNCTION
 
@@ -32545,19 +32516,7 @@ int CUnknown101e1650::sub_101e1650(CBaseCombatCharacter *pChar, int stat)
         if (m_pData[i]->m_nStat == stat && m_pData[i]->m_bFlag)
             nFlagged++;
     }
-    CVStatList_t *list;
-    int j;
-    for (j = 0; j < pChar->m_nStatLists; j++) {
-        if (pChar->m_pStatLists[j]->m_field10 == 2) {
-            list = pChar->m_pStatLists[j];
-            goto found;
-        }
-    }
-    {
-        static CVStatList_t def(-1);
-        list = &def;
-    }
-found:
+    CVStatList_t *list = CVStatListSet::Of(pChar)->Find(2);
     int v = list->sub_10010609(stat);
     if (v >= nFlagged)
         v = nFlagged;
@@ -32836,18 +32795,7 @@ struct S {
 };
 void S::sub_101e85a0(P *p)
 {
-	CVStatList_t *l;
-	for (int i = 0; i < p->m_count; i++) {
-		if (p->m_items[i]->m_field10 == 0) {
-			l = p->m_items[i];
-			goto done;
-		}
-	}
-	{
-		static CVStatList_t def(-1);
-		l = &def;
-	}
-done:
+	CVStatList_t *l = CVStatListSet::Of(p)->Find(0);
 	v1(l->sub_10010609(1) - 1);
 }
 // END FUNCTION
@@ -32867,18 +32815,7 @@ struct S {
 };
 void S::sub_101e8640(P *p)
 {
-	CVStatList_t *l;
-	for (int i = 0; i < p->m_count; i++) {
-		if (p->m_items[i]->m_field10 == 0) {
-			l = p->m_items[i];
-			goto done;
-		}
-	}
-	{
-		static CVStatList_t def(-1);
-		l = &def;
-	}
-done:
+	CVStatList_t *l = CVStatListSet::Of(p)->Find(0);
 	v2(l->sub_10010609(1) - 1);
 }
 // END FUNCTION
@@ -32899,18 +32836,7 @@ struct S {
 };
 void S::sub_101e86e0(P *p)
 {
-	CVStatList_t *l;
-	for (int i = 0; i < p->m_count; i++) {
-		if (p->m_items[i]->m_field10 == 0) {
-			l = p->m_items[i];
-			goto done;
-		}
-	}
-	{
-		static CVStatList_t def(-1);
-		l = &def;
-	}
-done:
+	CVStatList_t *l = CVStatListSet::Of(p)->Find(0);
 	v3(l->sub_10010609(1) - 1);
 }
 // END FUNCTION
@@ -32932,18 +32858,7 @@ struct S {
 };
 void S::sub_101e8780(P *p)
 {
-	CVStatList_t *l;
-	for (int i = 0; i < p->m_count; i++) {
-		if (p->m_items[i]->m_field10 == 0) {
-			l = p->m_items[i];
-			goto done;
-		}
-	}
-	{
-		static CVStatList_t def(-1);
-		l = &def;
-	}
-done:
+	CVStatList_t *l = CVStatListSet::Of(p)->Find(0);
 	v4(l->sub_10010609(1) - 1);
 }
 // END FUNCTION
@@ -33020,18 +32935,7 @@ bool CUnknown101e8080::sub_101e8c90(const char *type, int *a, int *b, int *c)
 
 int CUnknown101e8f20::sub_101e8f20(CBaseCombatCharacter *pChar)
 {
-	CVStatList_t *list;
-	for (int i = 0; i < pChar->m_nStatLists; i++) {
-		if (pChar->m_pStatLists[i]->m_field10 == 3) {
-			list = pChar->m_pStatLists[i];
-			goto found;
-		}
-	}
-	{
-		static CVStatList_t sDefault(-1);
-		list = &sDefault;
-	}
-found:
+	CVStatList_t *list = CVStatListSet::Of(pChar)->Find(3);
 	int value = list->sub_10010609(8);
 	if (value > 0)
 		return m_values[value];
@@ -33091,20 +32995,10 @@ void sub_101e94b0(int value)
 #include "CUnknown101e9760.h"
 #include "CBaseCombatCharacter.h"
 
-static inline CVStatList_t *GetStatList(CBaseCombatCharacter *pChar)
-{
-	for (int i = 0; i < pChar->m_nStatLists; i++) {
-		if (pChar->m_pStatLists[i]->m_field10 == 0)
-			return pChar->m_pStatLists[i];
-	}
-	static CVStatList_t s_default(-1);
-	return &s_default;
-}
-
 bool CUnknown101e9760::sub_101e9760(CBaseCombatCharacter *pChar)
 {
 	if (m_dwMask) {
-		int value = GetStatList(pChar)->sub_10010609(0xb);
+		int value = CVStatListSet::Of(pChar)->Find(0)->sub_10010609(0xb);
 		if (value == 0) {
 			if (m_bMask & 1)
 				return false;
@@ -33385,18 +33279,6 @@ void CUnknown101eb7f0::sub_101eb7f0(int arg)
 // FUNCTION: 0x101ebe60 size=0x91
 #include "CUnknown101ebe60.h"
 #include "CUnknown101eb7f0.h"
-extern int g_1073a2c0;
-extern CEntryX **g_1073a2c4;
-
-static inline CEntryX *FindEntry(int key)
-{
-    for (int i = 0; i < g_1073a2c0; i++) {
-        if (g_1073a2c4[i]->m_key == key)
-            return g_1073a2c4[i];
-    }
-    static CEntryX s_default(-1);
-    return &s_default;
-}
 
 // TARGET: CUnknown101ebe60::sub_101ebe60
 void CUnknown101ebe60::sub_101ebe60(int arg, int level)
@@ -33412,8 +33294,6 @@ void CUnknown101ebe60::sub_101ebe60(int arg, int level)
 
 // FUNCTION: 0x101ebf30 size=0x81
 #include "CEntryX.h"
-extern int g_1073a2c0;
-extern CEntryX **g_1073a2c4;
 
 struct CKeyHolder {
     int m_pad[3];
@@ -33427,19 +33307,7 @@ const char *CKeyHolder::sub_101ebf30(int idx)
     if (idx >= 0) {
         if (idx >= 3)
             idx = 2;
-        int key = m_keys[idx];
-        CEntryX *e;
-        for (int i = 0; i < g_1073a2c0; i++) {
-            if (g_1073a2c4[i]->m_key == key) {
-                e = g_1073a2c4[i];
-                goto found;
-            }
-        }
-        {
-            static CEntryX s_default(-1);
-            e = &s_default;
-        }
-found:
+        CEntryX *e = FindEntry(m_keys[idx]);
         if (e->m_name)
             return e->m_name;
     }
@@ -36716,18 +36584,7 @@ int sub_10203f10(CBaseCombatCharacter *pChar, char bFlag)
 	if (!bFlag)
 		nMin = 1;
 	for (int i = 0; i < 0x11; i++) {
-		CVStatList_t *pList;
-		for (int j = 0; j < pChar->m_nStatLists; j++) {
-			if (pChar->m_pStatLists[j]->m_field10 == 2) {
-				pList = pChar->m_pStatLists[j];
-				goto found;
-			}
-		}
-		{
-			static CVStatList_t s_default(-1);
-			pList = &s_default;
-		}
-found:
+		CVStatList_t *pList = CVStatListSet::Of(pChar)->Find(2);
 		if (pList->sub_10010609(i) >= nMin)
 			nCount++;
 	}
@@ -52345,18 +52202,7 @@ void CBaseCombatCharacter::sub_103327f0(float amount)
 	int i = 0;
 	float *pSlow = (float *)((char *)this + 0x10a8);
 	*pSlow = *pSlow - amount;
-	CVStatList_t *pList;
-	for (; i < m_nStatLists; i++) {
-		if (m_pStatLists[i]->m_field10 == 0) {
-			pList = m_pStatLists[i];
-			goto found;
-		}
-	}
-	{
-		static CVStatList_t s_default(-1);
-		pList = &s_default;
-	}
-found:
+	CVStatList_t *pList = CVStatListSet::Of(this)->Find(0);
 	pList->sub_10201100(0x1a, (int)amount);
 	(*g_109f3680)--;
 }

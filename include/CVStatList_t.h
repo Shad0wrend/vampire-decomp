@@ -25,3 +25,26 @@ public:
 	char sub_10200d60(int value);	// "CVStatList_t::SetValue"-like worker taking one stack argument (stub 0x10005cbd), called by the VStatGet wrapper; returns a flag byte
 	void sub_102008e0(int stat, int value);	// stat setter taking (stat, value) (stub 0x10011e46)
 };
+
+// The stat lists of a character: the object at +0x13a8 of a CBaseCombatCharacter (its CUtlVector of lists at +0x8:
+// count at +0x14, elements at +0x18; the character's m_nStatLists / m_pStatLists). Find is the game's one lookup of
+// the list of a type (out of line at 0x10183880, inlined by every function that looks a list up): its default list is
+// one function-local static, so every such function inlines Find instead of a static of its own (link audit E).
+struct CVStatListSet
+{
+	char m_pad0000[0x14];
+	int m_nLists;	// 0x14
+	CVStatList_t **m_pLists;	// 0x18
+
+	static CVStatListSet *Of(void *pCharacter) { return (CVStatListSet *)((char *)pCharacter + 0x13a8); }
+
+	CVStatList_t *Find(int type)
+	{
+		for (int i = 0; i < m_nLists; i++) {
+			if (m_pLists[i]->m_field10 == type)
+				return m_pLists[i];
+		}
+		static CVStatList_t s_default(-1);
+		return &s_default;
+	}
+};
