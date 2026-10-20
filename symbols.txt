@@ -3007,6 +3007,7 @@
 0x1000fe4d func   ?sub_103fc7b0@@YAHXZ sub_103fc7b0
 0x1000fe57 func   ?vfunc37@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::vfunc37
 0x1000fe5c func   ?vfunc129@CBaseEntity@@UAEXXZ CBaseEntity::vfunc129
+0x1000fe89 func   ?vfunc103@CPlayerResource@@QAEXXZ CPlayerResource::vfunc103
 0x1000fe93 func   ?vfunc546@CNPC_VMingXiaoTentacle@@QAEHH@Z CNPC_VMingXiaoTentacle::vfunc546
 0x1000feac func   ?vfunc5@CPlayerResource@@QAEPAV1@I@Z CPlayerResource::vfunc5
 0x1000febb func   _item_w_occultblade item_w_occultblade
