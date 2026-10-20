@@ -62119,6 +62119,55 @@ CNPC_VWerewolfVec3 CNPC_VWerewolf::sub_103d6650(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d7090 size=0x12f
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+__declspec(dllimport) void DevWarning(const char *pszFormat, ...);
+struct CForwardHintX {
+    char m_pad0000[0x468];
+    const char *m_pszTarget;	// 0x468
+    char m_pad046c[0x5d8 - 0x46c];
+    CForwardHintX *m_pNext;	// 0x5d8
+    int m_nType;	// 0x5dc
+    const char *sub_100ab4f0();
+};
+extern CForwardHintX *g_10925450;
+struct CWerewolfUnit : CNPC_VWerewolf {
+    CForwardHintX *sub_103d7090(CForwardHintX *pHint);
+};
+
+// TARGET: CWerewolfUnit::sub_103d7090
+CForwardHintX *CWerewolfUnit::sub_103d7090(CForwardHintX *pHint)
+{
+    ScopeTrace trace("CNPC_VWerewolf::GetForwardHintForHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    switch (pHint->m_nType) {
+    case 0x3a98:
+    case 0x3a99:
+    case 0x3a9c:
+    case 0x3a9f:
+    case 0x3aa0:
+    case 0x3aa1:
+    case 0x3aa3:
+    case 0x3aa4:
+    case 0x3aa5:
+    case 0x3aa6:
+    case 0x3aa7:
+    case 0x3aa8:
+    case 0x3aa9:
+    case 0x3aaa:
+        return pHint;
+    }
+    CBaseEntity *pEnt = sub_103d6390(pHint);
+    CForwardHintX *h;
+    for (h = g_10925450; h; h = h->m_pNext) {
+        if (h->m_nType == 0x3a9c && sub_103d6390(h) == pEnt)
+            return h;
+    }
+    DevWarning("Could Not find forward hint for hint: %s (%s) \n", pHint->sub_100ab4f0(), pHint->m_pszTarget ? pHint->m_pszTarget : g_106b8540);
+    return h;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d7420 size=0x189
 #include "CNPC_VWerewolf.h"
 #include "CHintData_WW.h"

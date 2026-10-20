@@ -2862,6 +2862,7 @@
 0x1000e4b7 func   ?vfunc6@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXXZ CAI_Behavior<CAI_BaseNPC,100000>::vfunc6
 0x1000e4f3 func   ?vfunc5@CPhysicsProp@@QAEPAV1@I@Z CPhysicsProp::vfunc5
 0x1000e507 func   ?vfunc546@CNPC_VSheriffSwarm@@QAEHH@Z CNPC_VSheriffSwarm::vfunc546
+0x1000e511 func   ?sub_103d7090@CWerewolfUnit@@QAEPAUCForwardHintX@@PAU2@@Z CWerewolfUnit::sub_103d7090
 0x1000e520 func   ?vfunc5@CVGuiScreen@@QAEPAV1@I@Z CVGuiScreen::vfunc5
 0x1000e534 func   ?vfunc126@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc126
 0x1000e552 func   ?sub_1035e5f0@CNPC_VAndreiBlood@@QAEXXZ CNPC_VAndreiBlood::sub_1035e5f0
