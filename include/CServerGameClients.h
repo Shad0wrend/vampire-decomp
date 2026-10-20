@@ -11,7 +11,7 @@ public:
 	virtual void vfunc4();
 	virtual void vfunc5();
 	virtual void vfunc6();
-	virtual void vfunc7();
+	virtual void vfunc7(void *pEdictA, void *pEdictB, int c);	// takes two edicts (edict +0x40 is the networkable, slot 4 gives the entity); a position from entity A's slot 193 (else B's, after its slot 430) is passed to every entity in the global list at 0x10709680
 	virtual void vfunc8();
 	virtual void vfunc9();
 	virtual void vfunc10();
