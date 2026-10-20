@@ -7,7 +7,7 @@ public:
 	char m_pad0000[0x914];
 	char m_b0914;
 	char m_pad0915[3];
-	volatile unsigned int m_hSite;	// 0x918
+	unsigned int m_hSite;	// 0x918
 
 	void sub_103f6a20(void *pParam);	// clears the flag, then when the entity of the handle at +0x918 is a CTriggerBombSite (dynamic cast from CBaseTrigger) calls its sub_10211870(this, pParam)
 };
