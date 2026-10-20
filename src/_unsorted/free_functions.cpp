@@ -13463,6 +13463,25 @@ int *sub_10109840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109920 size=0x43
+#include "CFire.h"
+void *sub_100aa720(int size);
+extern char g_1056d8c8[];
+
+// TARGET: env_fire
+extern "C" CBaseEntity *env_fire()
+{
+	void *mem = sub_100aa720(0x4c4);
+	CFire *p;
+	if (mem)
+		p = ((CFire *)mem)->sub_10109990();
+	else
+		p = 0;
+	p->vfunc106(g_1056d8c8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109da0 size=0xa
 void __fastcall sub_10109da0(char *self, int, int)
 {
