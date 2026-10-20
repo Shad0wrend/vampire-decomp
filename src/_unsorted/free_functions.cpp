@@ -15252,6 +15252,20 @@ void CRagdollProp::sub_101563b0(int unused, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156580 size=0x2a
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+
+void CAI_BaseNPC::sub_10156580(CBaseEntity *pEnt)
+{
+	unsigned int *pHandle = (unsigned int *)((char *)this + 0xd50);
+	if (pEnt)
+		*pHandle = *pEnt->vfunc1();
+	else
+		*pHandle = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156d30 size=0x8
 void __fastcall sub_10156d30(char *p) { p[0x105c] = 1; }
 // END FUNCTION
