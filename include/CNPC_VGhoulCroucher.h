@@ -19,6 +19,8 @@ public:
 	void sub_100080da(void *pTask);	// CNPC_VHumanCombatant::vfunc444 (stub 0x100080da), called directly
 	void sub_10273e80(int a);	// called through the stub at 0x1000ac68
 	int vfunc438();	// slot 438 "CNPC_VGhoulCroucher::SelectSchedule": scope trace (entity name), schedule 0x158 while the getter sub_1037bb20 is zero, 0x159 until the byte at +0x6667 is set (both record file / line at +0x1b30 / +0x1b34), else CNPC_VHumanCombatant::vfunc438
+	virtual void vfunc77();	// slot 77 "CNPC_VGhoulCroucher::ScriptHide": scope trace (entity name), CAI_BaseNPCTroika::vfunc77, then slot 77 of the entity behind the handle at +0x6670 (when it resolves)
+	void sub_102c1ce0();	// CAI_BaseNPCTroika::vfunc77 (stub 0x10006d11), called directly
 
 	char m_pad03e0[0x1b30 - 0x3e0];
 	const char *m_pszFile1b30;	// +0x1b30: source file of the last schedule selection
