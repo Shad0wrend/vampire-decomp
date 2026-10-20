@@ -1632,6 +1632,7 @@
 0x1000a984 func   ?sub_101fd1b0@CVStatAction_t@@QAEXHHH@Z CVStatAction_t::sub_101fd1b0
 0x1000a9c0 func   _camera_keyframe camera_keyframe
 0x1000a9c5 func   _item_g_idol_crane item_g_idol_crane
+0x1000a9f7 func   ?sub_10197510@@YAPAHHH@Z sub_10197510
 0x1000aa42 func   ?sub_100b0ad0@@YAXXZ sub_100b0ad0
 0x1000aa5b func   ?vfunc5@CWeaponIGeneric@@QAEPAV1@I@Z CWeaponIGeneric::vfunc5
 0x1000aa7e func   ?sub_10050860@CUnknown10050860@@QAEPBDXZ CUnknown10050860::sub_10050860
