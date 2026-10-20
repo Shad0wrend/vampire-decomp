@@ -29490,6 +29490,15 @@ void CAI_BaseNPCTroika::sub_102a97d0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9800 size=0x15
+#include "CAI_BaseNPCTroika.h"
+
+void CAI_BaseNPCTroika::sub_102a9800(unsigned int flags)
+{
+	*(unsigned int *)(m_pad0004 + 0x14bc - 4) |= flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9940 size=0xd
 void CUnknown102a9750::sub_102a9940(int value)
 {

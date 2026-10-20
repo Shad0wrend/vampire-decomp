@@ -81,6 +81,7 @@
 0x100017c6 func   ?vfunc437@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc437
 0x100017cb func   _npc_VCop npc_VCop
 0x100017da func   _npc_VRat npc_VRat
+0x100017df func   ?sub_102a9800@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a9800
 0x100017e9 func   _npc_crow npc_crow
 0x100017fd func   ?sub_1009c5f0@CBaseEntity@@QAEXHPBDPBHH@Z CBaseEntity::sub_1009c5f0
 0x10001811 func   ?vfunc5@CNPC_VCameraSecurity@@QAEPAV1@I@Z CNPC_VCameraSecurity::vfunc5
