@@ -5027,6 +5027,32 @@ void sub_1005a6a0(int a, int b, const int *pos, const int *dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005ac10 size=0x33
+#include "CTEBeamEntPoint.h"
+
+extern int vt_1044dbf8[];
+
+struct CTEBaseBeamPlaceholder {
+    void sub_1000b1a4(int a);
+};
+
+// TARGET: CTEBeamEntPoint::sub_1005ac10
+CTEBeamEntPoint *CTEBeamEntPoint::sub_1005ac10(int a)
+{
+    ((CTEBaseBeamPlaceholder *)this)->sub_1000b1a4(a);
+    *(int **)this = vt_1044dbf8;
+    *(int *)((char *)this + 0x44) = 0;
+    *(int *)((char *)this + 0x54) = 0;
+    *(int *)((char *)this + 0x48) = 0;
+    *(int *)((char *)this + 0x4c) = 0;
+    *(int *)((char *)this + 0x50) = 0;
+    *(int *)((char *)this + 0x58) = 0;
+    *(int *)((char *)this + 0x5c) = 0;
+    *(int *)((char *)this + 0x60) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005b850 size=0xc0
 struct CBeamEntsData	// the global CTEBeamEnts object at 0x106bf7a0 (members as set by the helper)
 {

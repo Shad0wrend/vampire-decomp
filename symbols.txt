@@ -2447,6 +2447,7 @@
 0x1000ce91 func   ?sub_101318a0@@YGXH@Z sub_101318a0
 0x1000cec3 func   ?sub_10177ab0@Helper@@QAEPAXPBD@Z Helper::sub_10177ab0
 0x1000cec8 func   _npc_VCamera npc_VCamera
+0x1000cef0 func   ?sub_1005ac10@CTEBeamEntPoint@@QAEPAV1@H@Z CTEBeamEntPoint::sub_1005ac10
 0x1000ceff func   _npc_VProneDialog npc_VProneDialog
 0x1000cf1d func   ?sub_102e8a80@@YIXPAHHH@Z sub_102e8a80
 0x1000cf2c func   ?sub_10078880@@YIXPAD@Z sub_10078880
