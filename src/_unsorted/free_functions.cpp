@@ -12779,6 +12779,25 @@ void UtlMem7::sub_100fdd50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100feae0 size=0x43
+#include "CEnvBeam.h"
+void *sub_100aa720(int size);
+extern char g_10568a74[];
+
+// TARGET: env_beam
+extern "C" CBaseEntity *env_beam()
+{
+	void *mem = sub_100aa720(0x5ac);
+	CEnvBeam *p;
+	if (mem)
+		p = ((CEnvBeam *)mem)->sub_100febe0();
+	else
+		p = 0;
+	p->vfunc106(g_10568a74);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100ef0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
