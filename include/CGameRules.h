@@ -58,7 +58,7 @@ public:
 	virtual void vfunc44();
 	virtual void vfunc45();
 	virtual void vfunc46();
-	virtual void vfunc47();
+	virtual char vfunc47(CBaseEntity *pPlayer, CBaseEntity *pItem);	// "CanHavePlayerItem"
 	virtual int vfunc48(int index);
 	virtual float vfunc49(int a);
 	virtual float vfunc50(int a);
