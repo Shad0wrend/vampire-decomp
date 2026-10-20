@@ -12454,6 +12454,31 @@ void CDialog::sub_100e5770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e5c70 size=0x6d
+#include "CDialog.h"
+
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_106b8540[];
+
+// TARGET: CDialog::sub_100e5c70
+void CDialog::sub_100e5c70()
+{
+	g_109f3620[*g_109f3680].a = "CDialog::CallPendingNPCEventScript";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	char *p = (char *)this + 0x30ea;
+	++*g_109f3680;
+	if (*p)
+	{
+		sub_100e4f30(p);
+		*p = 0;
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7480 size=0x70
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
