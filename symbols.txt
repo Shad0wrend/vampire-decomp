@@ -805,6 +805,7 @@
 0x10005b96 func   ?sub_100792e0@CUnknown100792c0@@QAEXH@Z CUnknown100792c0::sub_100792e0
 0x10005b9b func   ?sub_10042f20@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10042f20
 0x10005bb9 func   ?sub_101a17c0@CRestore@@QAEPAUCRestoreField@@PBDPAU2@HPAH@Z CRestore::sub_101a17c0
+0x10005bc3 func   ?sub_102dc2c0@CUnknown102dc2c0@@QAEXXZ CUnknown102dc2c0::sub_102dc2c0
 0x10005bcd func   ?sub_100a53d0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a53d0
 0x10005bdc func   ?sub_10346760@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10346760
 0x10005be1 func   ?sub_10223800@CUnknown10223800@@QAEXH@Z CUnknown10223800::sub_10223800

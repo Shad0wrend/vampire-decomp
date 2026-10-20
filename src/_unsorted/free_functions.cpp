@@ -35470,6 +35470,23 @@ void CAI_InterestingPlaceConverstation::sub_102db740(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dc2c0 size=0x68
+#include "CUnknown102dc2c0.h"
+
+void CUnknown102dc2c0::sub_102dc2c0()
+{
+    char scratch[32];
+    int i = 0;
+    if (m_nHandles > 0) {
+        do {
+            m_pHandles[i].Get()->sub_102db440(scratch);
+            i++;
+        } while (i < m_nHandles);
+    }
+    m_bDone = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dcd10 size=0xa
 void CUnknown102dcd10::sub_102dcd10(int unused)
 {
