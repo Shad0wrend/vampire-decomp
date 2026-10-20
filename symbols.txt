@@ -3774,6 +3774,7 @@
 0x10012a44 func   _info_node_werewolf_hint info_node_werewolf_hint
 0x10012a4e func   ?sub_101eb7f0@CUnknown101eb7f0@@QAEXH@Z CUnknown101eb7f0::sub_101eb7f0
 0x10012a53 func   _params_explosion params_explosion
+0x10012a58 func   ?sub_100eecf0@CBaseDoor@@QAEDXZ CBaseDoor::sub_100eecf0
 0x10012a7b func   ?sub_100ecd30@CUnknown100ecd30@@QAEXHPAH000@Z CUnknown100ecd30::sub_100ecd30
 0x10012a8f func   ?sub_10078fd0@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_10078fd0
 0x10012a9e func   ?vfunc569@CAI_BaseNPCTroika@@UAEHPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc569

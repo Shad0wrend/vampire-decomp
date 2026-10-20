@@ -18435,6 +18435,43 @@ void CBaseDoor::sub_100ee810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eecf0 size=0xa2
+#include "CBaseDoor.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+struct CNodeX { char pad[4]; const char *m_pszName; };
+struct CListNode100cd940 {
+    char pad0[0x14];
+    void *m_pFirst;
+    CNodeX *sub_100cd970(int index);
+};
+int __fastcall sub_100cd940(CListNode100cd940 *p);
+
+// TARGET: CBaseDoor::sub_100eecf0
+char CBaseDoor::sub_100eecf0()
+{
+    CListNode100cd940 *l = (CListNode100cd940 *)((char *)this + 0x5dc);
+    int n = sub_100cd940(l);
+    int i;
+    for (i = 0; i < n; i++) {
+        CNodeX *p = l->sub_100cd970(i);
+        if (p && !_strcmpi("ChangeNow", p->m_pszName ? p->m_pszName : g_106b8540))
+            goto found;
+    }
+    l = (CListNode100cd940 *)((char *)this + 0x60c);
+    n = sub_100cd940(l);
+    for (i = 0; i < n; i++) {
+        CNodeX *p = l->sub_100cd970(i);
+        if (p && !_strcmpi("ChangeNow", p->m_pszName ? p->m_pszName : g_106b8540))
+            goto found;
+    }
+    return 0;
+found:
+    *((char *)this + 0x624) = 1;
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efae0 size=0xc3
 #include "CBaseEntity.h"
 #include "CBaseDoor.h"
