@@ -19,7 +19,11 @@ public:
 	virtual void a00(); virtual void a01(); virtual void a02(); virtual void a03(); virtual void a04();
 	virtual void a05(); virtual void a06(); virtual void a07(); virtual void a08();
 	virtual int vfunc143(float flHealth, int bitsDamageType);	// "CBaseCombatCharacter::TakeHealth": scope trace (entity name), 0 when the take-damage mode at +0x1fc is zero, else CBaseEntity::vfunc143
-	CBCC_SLOTS10(a1) CBCC_SLOTS10(a2) CBCC_SLOTS10(a3) CBCC_SLOTS10(a4)
+	CBCC_SLOTS10(a1)
+	virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23();
+	virtual bool vfunc158();	// slot 158 (CBaseEntity::vfunc158 is the same slot, declared there as a plain member)
+	virtual void a25(); virtual void a26(); virtual void a27(); virtual void a28(); virtual void a29();
+	CBCC_SLOTS10(a3) CBCC_SLOTS10(a4)
 	CBCC_SLOTS10(a5) CBCC_SLOTS10(a6) CBCC_SLOTS10(a7) CBCC_SLOTS10(a8)
 	virtual void a90(); virtual void a91(); virtual void a92(); virtual void a93();
 	virtual void vfunc228(int a, int b);	// "CBaseCombatCharacter::VPhysicsShadowCollision"-like: scope trace, forwards to slot 75(a, b)
