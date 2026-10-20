@@ -547,6 +547,38 @@ void CBaseEntity::vfunc144(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1d20 size=0x9b
+#include "CUnknown100a1d20.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CEntListX {
+	void *sub_100f7770(void *pStart, const char *pszName, void *pActivator, void *pCaller);
+};
+extern CEntListX g_106eb5d8;
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+void *CUnknown100a1d20::sub_100a1d20()
+{
+	CScopeTrace trace("CBaseEntity::GetNextTarget", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	if (!m_target20c)
+		return 0;
+	return g_106eb5d8.sub_100f7770(0, m_target20c, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a49d0 size=0xde
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
