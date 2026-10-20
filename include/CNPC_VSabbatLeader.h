@@ -10,7 +10,9 @@ struct CNPC_VSabbatLeaderHint
 class CNPC_VSabbatLeader
 {
 public:
-	char pad0[0x66c0];
+	char pad0[0xfec];
+	int m_nState;	// +0xfec
+	char padff0[0x66c0 - 0xff0];
 	int m_nFailureType;
 
 	void sub_103a7760(int arg);
@@ -29,4 +31,6 @@ public:
 	void sub_103ab4a0(void *pVictim);	// "OnVictimHitByMe" (slot 24 override): scope trace, when the entity of the handle at +0x628c is pVictim decrements the counter at +0x66e0 (clamped at 0)
 	int vfunc366(int a, int b, int c);	// "HandleInteraction" (slot 366 override): scope trace, then returns CNPC_VHuman::vfunc366(a, b, c)
 	int sub_10001b27(int a, int b, int c);	// CNPC_VHuman::vfunc366, called directly
+	char vfunc590();	// "OkToInterrupt" (slot 590 override): scope trace, true while the state at +0xfec is 0x1141, else the Troika base
+	char sub_1000ac22();	// CAI_BaseNPCTroika::vfunc590, called directly
 };
