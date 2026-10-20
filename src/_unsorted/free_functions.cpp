@@ -1032,6 +1032,21 @@ void CCollisionEvent::sub_100307f0(CFrictionEntry_t *pEntry)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030910 size=0x6c
+#include "CCollisionEvent.h"
+#include "ScopeTrace.h"
+
+extern char g_1053a0d8[];
+
+void CCollisionEvent::sub_10030910()
+{
+	ScopeTrace trace(g_1053a0d8, g_106b8540);
+	sub_10030ae0();
+	sub_10030d50();
+	sub_10030e40();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100309a0 size=0xf3
 #include "UtlVec8.h"
 #include "CCollisionEvent.h"
