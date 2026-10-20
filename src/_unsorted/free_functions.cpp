@@ -24376,6 +24376,41 @@ int CVStatInfo_t::sub_101fee50(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ff300 size=0xa3
+#include "CVStatInfoList_t.h"
+
+struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
+extern ScopeEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+CVStatInfoList_t *CVStatInfoList_t::sub_101ff300(const char *name, int a, int b)
+{
+    CVStatSubCost_t *pCost = &m_cost.m_first;
+    pCost->sub_101fb7a0();
+    (pCost + 1)->sub_101fb7a0();
+    g_109f3620[*g_109f3680].m_pszName = "CVStatInfoList_t::CVStatInfoList_t";
+    g_109f3620[*g_109f3680].m_pszEnt = g_106b8540;
+    g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+    (*g_109f3680)++;
+    m_pad0000 = b;
+    m_field2c = a;
+    m_nStats = 0;
+    m_pStats = 0;
+    const char *s = name;
+    char *d = m_szName;
+    char c;
+    do {
+        c = *s;
+        *d = c;
+        s++;
+        d++;
+    } while (c);
+    (*g_109f3680)--;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ffaa0 size=0xb8
 #include "CVStatInfoList_t.h"
 
