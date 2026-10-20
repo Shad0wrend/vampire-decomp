@@ -1057,6 +1057,28 @@ void CBaseCombatCharacter::vfunc50(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103320b0 size=0xbe
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntitySlots.h"
+#include "ScopeTrace.h"
+
+// TARGET: CBaseCombatCharacter::vfunc51
+void CBaseCombatCharacter::vfunc51(int unused, float *pOut)
+{
+	ScopeTrace trace("CBaseCombatCharacter::GetCameraTargetPosition", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (m_b10d4)
+	{
+		sub_10014eb6((int)pOut, 0);
+		return;
+	}
+	float buf[3];
+	float *p = ((CBaseEntitySlots *)this)->slot192(buf);
+	pOut[0] = p[0];
+	pOut[1] = p[1];
+	pOut[2] = p[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x103321a0 size=0x78
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
