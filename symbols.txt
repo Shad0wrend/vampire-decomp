@@ -2559,6 +2559,7 @@
 0x1000e719 func   ?sub_1027ef20@CUnknown1027ef20@@QAEXPBD@Z CUnknown1027ef20::sub_1027ef20
 0x1000e75a func   ?vfunc403@CBasePlayer@@UAEXXZ CBasePlayer::vfunc403
 0x1000e75f func   _disc_particle disc_particle
+0x1000e76e func   ?sub_103801d0@CNPC_VHengeyokai@@QAEHPAUCNPC_VHengeyokaiInfo@@@Z CNPC_VHengeyokai::sub_103801d0
 0x1000e796 func   ?sub_101f0330@CUnknown101f0330@@QAEXXZ CUnknown101f0330::sub_101f0330
 0x1000e7a0 func   ?sub_10042a40@UtlMem@@QAEXXZ UtlMem::sub_10042a40
 0x1000e7af func   ?sub_100734f0@S100734f0@@QAEXPBD@Z S100734f0::sub_100734f0

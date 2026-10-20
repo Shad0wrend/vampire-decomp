@@ -47,6 +47,44 @@ void CNPC_VHengeyokai::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103801d0 size=0x9a
+#include "CNPC_VHengeyokai.h"
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+extern char g_106b8540[];
+#pragma intrinsic(strlen)
+
+static inline bool ClassMatchesComplex(CNPC_VHengeyokaiEnt *pEnt, const char *pszClassOrWildcard)
+{
+	unsigned int len = strlen(pszClassOrWildcard);
+	if (len == 0)
+		return pEnt->m_iName == 0;
+	if (pszClassOrWildcard[len - 1] != '*') {
+		const char *pszClass = pEnt->m_iClassname;
+		return _strcmpi(pszClass ? pszClass : g_106b8540, pszClassOrWildcard) == 0;
+	}
+	const char *pszClass = pEnt->m_iClassname;
+	return _strnicmp(pszClass ? pszClass : g_106b8540, pszClassOrWildcard, len - 1) == 0;
+}
+
+static inline bool ClassMatches(CNPC_VHengeyokaiEnt *pEnt, const char *pszClassOrWildcard)
+{
+	const char *pszClass = pEnt->m_iClassname;
+	if (pszClass && pszClass == pszClassOrWildcard)
+		return true;
+	return ClassMatchesComplex(pEnt, pszClassOrWildcard);
+}
+
+int CNPC_VHengeyokai::sub_103801d0(CNPC_VHengeyokaiInfo *pInfo)
+{
+	int result = sub_10001b45(pInfo);
+	if (ClassMatches(pInfo->m_pEnt, "point_explosion"))
+		sub_103830e0();
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10380f90 size=0x18
 #include "CNPC_VHengeyokai.h"
 
