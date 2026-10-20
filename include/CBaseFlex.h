@@ -21,6 +21,7 @@ public:
 	void sub_100b5b00(const float *v);	// slot 277 override: stores three floats at +0x848
 	void sub_100b5ce0();	// slot 276 override: toggles the int at +0x854
 	void vfunc287(CBaseFlexItemObject *pObject);	// slot 287: removes the item of the vector at +0xa58 that refers to pObject (calls its sub_100029c8, clears the item and shifts the following ones down)
+	void vfunc285(int nKey);	// slot 285: clears the item vector when nKey is 0, else removes every item whose second field (+4) equals nKey, like slot 287
 
 	char m_pad03e0[0x848 - 0x3e0];
 	float m_vec848[3];
