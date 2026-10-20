@@ -1525,6 +1525,7 @@
 0x100085ad func   _game_sign game_sign
 0x100085b2 func   ?vfunc28@CRestore@@UAEHPAPAVCBaseEntity@@HH@Z CRestore::vfunc28
 0x100085bc func   ?sub_102f45f0@CUnknown102f45f0@@QAEXPBUCachedPos_t@@HH@Z CUnknown102f45f0::sub_102f45f0
+0x100085d0 func   ?sub_101664d0@@YI_NPAUCVirtSlots94@@@Z sub_101664d0
 0x100085e4 func   ?vfunc481@CHL2_Player@@UAEMXZ CHL2_Player::vfunc481
 0x100085f3 func   ?sub_1028eb30@Holder@@QAEXHPAUVec3@@PAUHandleObj@@D@Z Holder::sub_1028eb30
 0x1000860c func   ?vfunc448@CNPC_VMingXiao@@QAEXH@Z CNPC_VMingXiao::vfunc448
