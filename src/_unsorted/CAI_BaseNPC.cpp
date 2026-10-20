@@ -281,6 +281,41 @@ bool CAI_BaseNPC::vfunc545()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273fc0 size=0x8e
+#include "CAI_BaseNPC.h"
+
+struct AIObjX {
+	virtual void v0();
+	virtual bool vfunc1();
+	char pad[0x28];
+	int f2c;
+};
+struct AIGlobX { int pad; AIObjX *p; };
+struct AIObj2X { virtual void v0(); virtual void vfunc1(); };
+extern AIGlobX *g_1070af4c;
+extern AIObj2X *g_10924a6c;
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+const char *__cdecl sub_10316fa0(int code);
+
+void CAI_BaseNPC::vfunc448(int code)
+{
+	AIGlobX *g = g_1070af4c;
+	if (!g->p->vfunc1() && g->p->f2c) {
+		const char *s = sub_10316fa0(code);
+		unsigned int flags = *(unsigned int *)((char *)this + 0x224);
+		*(const char **)((char *)this + 0x5f30) = s;
+		*(int *)((char *)this + 0x5f3c) = 0;
+		*(int *)((char *)this + 0x5f38) = *(int *)((char *)this + 0x5c38);
+		if (flags & 0x8000000)
+			g_109f3630("   TaskFail -> %s\n", s);
+	}
+	*(char *)((char *)this + 0x1a40) = 0;
+	*(int *)((char *)this + 0x5c50) = code;
+	g_10924a6c->vfunc1();
+	sub_10269a20(0x5c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10274aa0 size=0x64
 #include "CBaseAnimating.h"
 #include "CAI_BaseNPC.h"
