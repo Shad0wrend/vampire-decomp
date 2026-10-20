@@ -3399,6 +3399,7 @@
 0x10010efb func   ?sub_1010be40@@YAPAHXZ sub_1010be40
 0x10010f14 func   _beam beam
 0x10010f23 func   ??1CVStatAction_t@@QAE@XZ CVStatAction_t::~CVStatAction_t
+0x10010f32 func   ?vfunc7@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHHHHHHH@Z CTempEntsSystem::vfunc7
 0x10010f41 func   ?sub_1013dbb0@@YIXPAUPool@@@Z sub_1013dbb0
 0x10010f46 func   ?sub_101fb200@CVDmg_t@@QAEHHH@Z CVDmg_t::sub_101fb200
 0x10010f69 func   _gibshooter gibshooter
