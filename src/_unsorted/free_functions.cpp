@@ -48591,6 +48591,20 @@ int sub_1042b470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b9c0 size=0x2a
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+
+void CAI_BaseNPC::sub_1042b9c0(CBaseEntity *pEnt)
+{
+	unsigned int *pHandle = (unsigned int *)((char *)this + 0x734);
+	if (pEnt)
+		*pHandle = *pEnt->vfunc1();
+	else
+		*pHandle = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042ba00 size=0xd
 // TARGET: CUnknown1042ba00::sub_1042ba00
 void CUnknown1042ba00::sub_1042ba00(int value)
