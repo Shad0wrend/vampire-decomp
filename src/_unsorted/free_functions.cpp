@@ -14787,6 +14787,40 @@ void CUnknown106b89bc::sub_100d13d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2c30 size=0xc2
+#include "CUnknown1021e8e0.h"
+
+extern "C" char *__cdecl strstr(const char *, const char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+extern CUnknown1021e8e0 g_1074f898;
+
+int sub_100d2c30(const char *pszInput, char *pszOut)
+{
+	const char *pszPrefix;
+	if (strstr(pszInput, "give "))
+		pszPrefix = "give ";
+	else if (strstr(pszInput, "vitem "))
+		pszPrefix = "vitem ";
+	else
+		return 0;
+	const char *pszRest = pszInput + strlen(pszPrefix);
+	g_1074f898.sub_1021eaa0();
+	int count = 0;
+	int index = g_1074f898.sub_1021e8e0(pszRest);
+	while (index != -1) {
+		Q_snprintf(pszOut, 0x40, "%s%s", pszPrefix, g_1074f898.sub_1021eac0(index));
+		count++;
+		pszOut += 0x40;
+		if (count >= 0xc0)
+			break;
+		index = g_1074f898.sub_1021e9c0(pszRest, index);
+	}
+	return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d30a0 size=0x1c
 #include "CUnknown100d30a0.h"
 
