@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members (the vtable pointer is not modelled: the pad covers 0x00..0x44f).
 #pragma once
 
+struct inputdata_t;
+
 class CLight
 {
 public:
@@ -11,8 +13,14 @@ public:
 	bool vfunc110(const char *szKeyName, const char *szValue);	// "CLight::KeyValue": "pitch" sets the pitch of the angles (slots 221 / 218), anything else goes to the base
 	bool sub_1000fc86(const char *szKeyName, const char *szValue);	// CBaseEntity::vfunc110 (jump stub)
 	void vfunc103();	// slot 103 (Spawn): without a name (+0x26c) only the base worker; else clamps the fade time and, for a style >= 32, sets the engine light style from the pattern (LightStyle, engine slot 62)
+	void sub_10130800(inputdata_t *pInput);	// "CLight::InputSetPattern": remembers the current level, the new target level (first character of the pattern) and the pattern, restarts the fade think
+	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
 
-	char m_pad00[0x450];
+	char m_pad00[0x17c];
+	float m_flNextThink;	// 0x17c
+	char m_pad180[0x204 - 0x180];
+	unsigned int m_flags204;	// 0x204
+	char m_pad208[0x450 - 0x208];
 	int m_iStyle;	// 0x450
 	const char *m_pattern;	// 0x454
 	char m_cCurrent;	// 0x458
