@@ -870,6 +870,31 @@ float __fastcall sub_10332240(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10332ef0 size=0x92
+#include "CUnknown10332fc0.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+void CUnknown10332fc0::sub_10332ef0(void *pSpeaker, int nDelta, int unused)
+{
+	CScopeTrace trace("CBaseCombatCharacter::AdjustDialogReaction", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	sub_103330f0(pSpeaker, sub_10332fc0(pSpeaker) + nDelta);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10334a50 size=0x86
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntitySlots.h"
