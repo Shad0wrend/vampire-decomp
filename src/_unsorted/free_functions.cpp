@@ -24442,6 +24442,43 @@ PyObj *sub_101976b0(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101978b0 size=0xcf
+#include "CBaseEntity.h"
+struct PyObject { int ob_refcnt; };
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObject *args, const char *fmt, ...);
+__declspec(dllimport) PyObject *PyErr_Occurred();
+__declspec(dllimport) void PyErr_SetString(PyObject *exc, const char *msg);
+__declspec(dllimport) extern PyObject *PyExc_StandardError;
+__declspec(dllimport) extern PyObject _Py_NoneStruct;
+}
+extern char g_10590d04[];
+extern char g_10591068[];
+CBaseEntity *sub_10196780(int h);
+char **sub_1042bff0(PyObject **pArgs, int obj);
+PyObject *sub_101978b0(PyObject *self, PyObject *args)
+{
+    int h = 0;
+    int name = 0;
+    if (!PyArg_ParseTuple(args, g_10590d04, &h, &name)) {
+        if (!PyErr_Occurred()) {
+            PyErr_SetString(PyExc_StandardError, g_10591068);
+            return 0;
+        }
+    } else {
+        CBaseEntity *pEnt = sub_10196780(h);
+        if (pEnt && name) {
+            pEnt->sub_100a0420(*sub_1042bff0(&args, name));
+            _Py_NoneStruct.ob_refcnt++;
+            return &_Py_NoneStruct;
+        }
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_StandardError, g_10591068);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197b00 size=0x178
 #define S1(p, n) virtual void p##n();
 #define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
