@@ -22432,6 +22432,54 @@ int *sub_10148560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014c130 size=0x121
+#include "CWeaponGravityGun.h"
+#include "CBaseEntity.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+
+struct ISoundView
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+    virtual void StopSound(int entindex, int channel, const char *pSample);	// slot 7 (+0x1c)
+};
+extern ISoundView *g_1070b248;
+extern const char *g_1057b88c;
+extern const char *g_1057b888;
+extern const char *g_1057b890;
+extern const char *g_1057b894;
+
+void CWeaponGravityGun::sub_1014c130()
+{
+    if (sub_102521f0()) {
+        switch (m_nSoundState) {
+        case 1: {
+            CBaseEntity *pOwner = (CBaseEntity *)sub_102521f0();
+            int index = g_1070b22c->vfunc35(pOwner->m_pEdict2e0);
+            g_1070b248->StopSound(index, 6, g_1057b88c);
+            pOwner = (CBaseEntity *)sub_102521f0();
+            index = g_1070b22c->vfunc35(pOwner->m_pEdict2e0);
+            g_1070b248->StopSound(index, 6, g_1057b888);
+            pOwner = (CBaseEntity *)sub_102521f0();
+            index = g_1070b22c->vfunc35(pOwner->m_pEdict2e0);
+            g_1070b248->StopSound(index, 6, g_1057b890);
+            pOwner = (CBaseEntity *)sub_102521f0();
+            index = g_1070b22c->vfunc35(pOwner->m_pEdict2e0);
+            g_1070b248->StopSound(index, 6, g_1057b894);
+            break;
+        }
+        case 0: {
+            CBaseEntity *pOwner = (CBaseEntity *)sub_102521f0();
+            int index = g_1070b22c->vfunc35(pOwner->m_pEdict2e0);
+            g_1070b248->StopSound(index, 6, g_1057b88c);
+            break;
+        }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ca10 size=0x86
 #include "CUnknown1014ca10.h"
 
