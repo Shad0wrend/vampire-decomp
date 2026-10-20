@@ -108,6 +108,41 @@ void CUnknown100295d0::sub_100295f0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100298a0 size=0x7c
+#include "CKeepUpright.h"
+
+#define SV(n) virtual void v##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+
+struct SlotKU {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV(100) SV(101) SV(102)
+	virtual void v103();
+	SV(104) SV(105) SV(106) SV(107) SV(108) SV(109)
+	SV(110) SV(111) SV(112)
+	virtual void v113();
+};
+
+CKeepUpright *sub_100a99d0(const char *classname, void *pOrigin, void *pAngles, CBaseEntity *pOwner);
+
+CKeepUpright *sub_100298a0(void *pOrigin, void *pAngles, CBaseEntity *pOwner, int nParam, char bActive)
+{
+	CKeepUpright *pKU = sub_100a99d0("phys_keepupright", pOrigin, pAngles, pOwner);
+	if (pKU) {
+		if (pOwner)
+			pKU->m_attachedObject = *pOwner->vfunc1();
+		else
+			pKU->m_attachedObject = 0xffffffff;
+		*(int *)((char *)pKU + 0x478) = nParam;
+		if (!bActive)
+			*(unsigned int *)((char *)pKU + 0x204) |= 1;
+		((SlotKU *)pKU)->v103();
+		((SlotKU *)pKU)->v113();
+	}
+	return pKU;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029ea0 size=0x4b
 #include "CConstraintAnchor.h"
 
