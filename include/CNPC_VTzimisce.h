@@ -42,7 +42,11 @@ public:
 	virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163();
 	virtual void s164(); virtual void s165(); virtual void s166();
 	virtual CNPC_VTzimisceHelper *vfunc167();
-	VT_SLOTS100(t0)
+	VT_SLOTS10(t00) VT_SLOTS10(t01) VT_SLOTS10(t02) VT_SLOTS10(t03) VT_SLOTS10(t04) VT_SLOTS10(t05) VT_SLOTS10(t06)
+	virtual void t070(); virtual void t071(); virtual void t072();
+	virtual void vfunc241(char *pszOut, int *pEvent);	// slot 241 "CNPC_VTzimisce::GetAnimEventName": the sound / event name for the anim event ids 2..8 (START_IDLE, START_FIDGET, START_RUN, START_LANDHARD, START_ATTACK, START_ATTACKBIG, START_POUNCE) copied to pszOut, the base implementation for the other ids
+	virtual void t074(); virtual void t075(); virtual void t076(); virtual void t077(); virtual void t078(); virtual void t079();
+	VT_SLOTS10(t08) VT_SLOTS10(t09)
 	VT_SLOTS100(t1)
 	VT_SLOTS100(t2)
 	VT_SLOTS10(t30)
@@ -80,4 +84,5 @@ public:
 	int sub_103bde40(int activity);	// slot 375 (NPC_TranslateActivity): while the 10381be0 check passes, activity 1 / 9 / 0x13 map to 0xfd / 0xff (0xfc / 0xfe when the byte at +0x6688 is set); everything else goes to the base implementation
 	CNPC_VTzimisce *vfunc5(unsigned int flags);	// scalar deleting destructor: destructs the vectors at +0x6690 and +0x665c, the base (sub_1028d610), and frees the object when bit 0 of flags is set
 	void sub_1028d610();	// base class destructor body (stub 0x100123af)
+	void sub_1008c170(char *pszOut, int *pEvent);	// CBaseAnimating::vfunc241 (stub 0x10002793), called directly
 };
