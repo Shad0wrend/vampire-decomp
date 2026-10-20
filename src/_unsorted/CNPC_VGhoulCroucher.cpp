@@ -39,6 +39,31 @@ CNPC_VGhoulCroucher *CNPC_VGhoulCroucher::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037bbc0 size=0x9a
+#include "CNPC_VGhoulCroucher.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+bool __fastcall sub_1037bb20(char *p);
+
+char CNPC_VGhoulCroucher::vfunc294(int a)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CNPC_VGhoulCroucher::IsValidStealthKillTarget";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (!sub_1037bb20((char *)this)) {
+        (*g_109f3680)--;
+        return 1;
+    }
+    char r = sub_1000c081(a);
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037bc90 size=0x96
 #include "CNPC_VGhoulCroucher.h"
 

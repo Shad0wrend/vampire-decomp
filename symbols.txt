@@ -2019,6 +2019,7 @@
 0x1000bab9 func   ?sub_102e2b60@CUtlVector36@@QAEXH@Z CUtlVector36::sub_102e2b60
 0x1000babe func   ?sub_10180220@@YAXXZ sub_10180220
 0x1000bac3 func   ?sub_10430170@@YAII@Z sub_10430170
+0x1000baeb func   ?vfunc294@CNPC_VGhoulCroucher@@QAEDH@Z CNPC_VGhoulCroucher::vfunc294
 0x1000baf0 func   ?vfunc104@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc104
 0x1000baf5 func   ?sub_101eaa60@@YAXH@Z sub_101eaa60
 0x1000bb09 func   ?vfunc336@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc336
