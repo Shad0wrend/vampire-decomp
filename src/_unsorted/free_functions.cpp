@@ -34132,6 +34132,36 @@ extern "C" CBaseEntity *ambient_soundscheme()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022a0f0 size=0xa7
+#include "CSoundScheme.h"
+#include <string.h>
+
+extern int vt_1048dd34[];
+
+struct Vec5 {
+	int a, b, c, d, e;
+	void Init() { a = 0; b = 0; c = 0; d = 0; e = 0; }
+};
+
+CSoundScheme *CSoundScheme::sub_1022a0f0()
+{
+	int *p = (int *)this;
+	sub_1009d980(0);
+	((Vec5 *)&p[0x160])->Init();
+	((Vec5 *)&p[0x165])->Init();
+	*(int **)this = vt_1048dd34;
+	memset(&p[0x118], 0, 0x48);
+	memset(&p[0x12a], 0, 0x48);
+	memset(&p[0x13c], 0, 0x48);
+	memset(&p[0x14e], 0, 0x48);
+	p[0x16a] = 0;
+	((char *)this)[0x454] = 0;
+	((char *)this)[0x455] = 0;
+	p[0x116] = 2;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022a200 size=0x9f
 #include "CSoundScheme.h"
 #include "UtlMem.h"
