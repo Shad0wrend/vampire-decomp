@@ -19194,6 +19194,52 @@ void UtlMem7::sub_100fdd50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fdf40 size=0x129
+#include "CUnknown100fde30.h"
+
+extern CUnknown100fde30Owner *sub_101bdb50();
+extern void (*g_109f3624)(void *);
+
+inline void ListRemoveAll(CUnknown100fde30List *p)
+{
+    if (p->m_NumAlloced) {
+        unsigned short prev = CUnknown100fde30List::InvalidIndex();
+        for (int i = (int)p->m_NumAlloced; --i >= 0; ) {
+            p->InternalElement(i).m_Next = prev;
+            p->InternalElement(i).m_Previous = i;
+            prev = i;
+        }
+        p->m_FirstFree = 0;
+        p->m_Head = CUnknown100fde30List::InvalidIndex();
+        p->m_Tail = CUnknown100fde30List::InvalidIndex();
+        p->m_ElementCount = 0;
+    }
+}
+
+inline void ListPurge(CUnknown100fde30List *p)
+{
+    if (p->m_growSize != -1) {
+        if (p->m_pMemory) {
+            g_109f3624(p->m_pMemory);
+            p->m_pMemory = 0;
+        }
+        p->m_allocationCount = 0;
+    }
+}
+
+void CUnknown100fde30::sub_100fdf40()
+{
+    CUnknown100fde30List *pList1 = List1();
+    CUnknown100fde30List *pList2 = List2();
+    if (m_field170)
+        sub_101bdb50()->vfunc5(m_field170);
+    ListRemoveAll(pList2);
+    ListPurge(pList2);
+    ListRemoveAll(pList1);
+    ListPurge(pList1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100feae0 size=0x43
 #include "CEnvBeam.h"
 void *sub_100aa720(int size);
