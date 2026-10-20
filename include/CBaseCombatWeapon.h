@@ -54,7 +54,10 @@ public:
 	virtual bool vfunc315();
 	virtual char vfunc316(int a);
 	CBCW_V(317) CBCW_V(318) CBCW_V(319)
-	CBCW_V10(32) CBCW_V(330) CBCW_V(331) CBCW_V(332) CBCW_V(333) CBCW_V(334) CBCW_V(335) CBCW_V(336)
+	CBCW_V10(32)
+	CBCW_V(330) CBCW_V(331) CBCW_V(332)
+	virtual void vfunc333(int a, int b, int c, int d, int e, int f);
+	CBCW_V(334) CBCW_V(335) CBCW_V(336)
 	virtual float vfunc337(int a, int b);
 	virtual void vfunc338(int a, int b);	// "CBaseCombatWeapon::Weapon_SetActivity"-like: called by CBaseCombatCharacter::Weapon_SetActivity with its two arguments
 	CBCW_V(339)
