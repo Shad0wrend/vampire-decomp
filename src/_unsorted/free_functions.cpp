@@ -18939,6 +18939,25 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147960 size=0x9b
+extern char g_106b8540[];
+void sub_10050d90(CBaseCombatCharacter *pThis, int arg, float a, float b, float c, const char *pszSound, int d, const char *pszEmpty, int e, int f);
+
+// TARGET: CBaseCombatCharacter::sub_10147960
+void CBaseCombatCharacter::sub_10147960(int level, int arg)
+{
+    if (level > 0 && *(int *)((char *)this + 0x14d4) == 0) {
+        *(int *)((char *)this + 0x16c) = 2;
+        sub_10050d90(this, arg, 1.0f, 0.3f, 0.5f, "D_ObfuscateIn_Emitter", 1, g_106b8540, 0, 0);
+    }
+    if (level == 0 && *(int *)((char *)this + 0x14d4) > 0) {
+        *(int *)((char *)this + 0x16c) = 0;
+        sub_10050d90(this, arg, 1.0f, 0.3f, 0.5f, "D_ObfuscateOut_Emitter", 1, g_106b8540, 0, 0);
+    }
+    *(int *)((char *)this + 0x14d4) = level;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147c10 size=0xa6
 struct ISaveRestoreOps;
 struct datamap_t;
