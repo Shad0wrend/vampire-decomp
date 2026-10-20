@@ -35,3 +35,58 @@ void CAuspexAura::vfunc243(CBaseEntity *pEnt, int a, int b)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10051e80 size=0x14c
+#include "CAuspexAura.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+extern CUnknown1070b22c *g_1070b22c;
+extern int vt_1044bf04[];	// CAuspexAura::vftable
+void sub_100aa7b0(void *p);
+
+struct CAuraSlot
+{
+	char *m_pEntity;
+	int m_Serial;
+	int m_pad;
+};
+
+__forceinline char *Resolve(unsigned int h)
+{
+	if (h != 0xffffffff)
+	{
+		CAuraSlot *pSlot = (CAuraSlot *)((char *)g_10566458 + 4) + (h & 0x1fff);
+		if (pSlot->m_Serial == (int)(h >> 13))
+			return pSlot->m_pEntity;
+	}
+	return 0;
+}
+
+// TARGET: CAuspexAura::vfunc5
+CAuspexAura *CAuspexAura::vfunc5(unsigned int flags)
+{
+	*(int **)this = vt_1044bf04;
+	{
+		ScopeTrace trace("CAuspexAura::~CAuspexAura", g_106b8540);
+		volatile unsigned int *pOwner = (volatile unsigned int *)((char *)this + 0x254);
+		if (Resolve(*pOwner) != 0)
+		{
+			char *pPlayer = *(char **)(Resolve(*pOwner) + 0x9c);
+			char *pTarget = Resolve(m_hTarget4b8);
+			if (pPlayer && pTarget && *(int *)(pTarget + 0xa8))
+			{
+				int j = g_1070b22c->vfunc35(*(int *)(pTarget + 0x2e0)) - 1;
+				if (j >= 0 && (unsigned int)j < 0x20)
+					pPlayer[0x14e4 + j]++;
+			}
+		}
+	}
+	sub_10051a40();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
