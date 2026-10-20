@@ -39290,6 +39290,63 @@ void CBaseCombatCharacter::sub_10346760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10348100 size=0x15f
+struct ScopeTraceEntry {
+    const char *m_pszName;
+    const char *m_pszEntity;
+    const char *m_pszExtra;
+};
+extern "C" __declspec(dllimport) ScopeTraceEntry g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern const char g_106b8540[];
+
+struct ScopeTrace {
+    ScopeTrace(const char *name, const char *entity)
+    {
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszName = name;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszEntity = entity;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszExtra = g_106b8540;
+        g_ScopeTraceStackDepth++;
+    }
+    ~ScopeTrace() { g_ScopeTraceStackDepth--; }
+};
+
+extern int (__cdecl *g_109f3868)(int, int);
+
+// TARGET: sub_10348100
+int sub_10348100(int count, int *values, int *weights, unsigned int *flags, unsigned int mask)
+{
+    int list[2048];
+    int wts[2048];
+    int total = 0;
+    int n = 0;
+    ScopeTrace trace("ChooseSequenceFromList", g_106b8540);
+    for (int i = 0; i < count; i++) {
+        if ((flags[i] & mask) == mask) {
+            list[n] = values[i];
+            total += weights[i];
+            wts[n] = weights[i];
+            n++;
+        }
+    }
+    if (n < 1)
+        return -1;
+    if (n == 1)
+        return list[0];
+    if (total < 1)
+        return list[g_109f3868(0, n - 1)];
+    int r = g_109f3868(0, total - 1);
+    int k = 0;
+    while (k < n - 1) {
+        r -= wts[k];
+        if (r < 0)
+            break;
+        k++;
+    }
+    return list[k];
+}
+// END FUNCTION
+
 // FUNCTION: 0x103483c0 size=0x9c
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
