@@ -926,6 +926,7 @@
 0x100060aa func   ?sub_10092d50@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10092d50
 0x100060b4 func   _item_w_claws_protean4 item_w_claws_protean4
 0x100060b9 func   _item_w_claws_protean5 item_w_claws_protean5
+0x100060be func   ?vfunc494@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc494
 0x100060f5 func   ?sub_102db740@CAI_InterestingPlaceConverstation@@QAEXH@Z CAI_InterestingPlaceConverstation::sub_102db740
 0x100060ff func   ?vfunc3@CGameMovement@@QAEPAMDH@Z CGameMovement::vfunc3
 0x1000614a func   ?vfunc431@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc431

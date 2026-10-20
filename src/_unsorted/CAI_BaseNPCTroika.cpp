@@ -234,6 +234,47 @@ void CAI_BaseNPCTroika::vfunc492()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10294590 size=0x93
+#include "CAI_BaseNPCTroika.h"
+extern char g_106b8540[];
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct CVSoundRec {
+	int m_nIndex;
+	const char *m_pszName;
+};
+
+static inline const char *SafeStr(const char *const *pp)
+{
+	return *pp ? *pp : g_106b8540;
+}
+
+struct CVSoundTable {
+	char m_pad00[0x14];
+	int m_nCount;	// 0x14
+	CVSoundRec **m_ppRecs;	// 0x18
+
+	int Find(const char *pszName)
+	{
+		for (int i = 0; i < m_nCount; i++) {
+			if (!_strcmpi(SafeStr(&m_ppRecs[i]->m_pszName), pszName))
+				return m_ppRecs[i]->m_nIndex;
+		}
+		return -1;
+	}
+	void sub_101f5950(CAI_BaseNPCTroika *pEnt, int index, int a, float b, float c);
+};
+extern CVSoundTable g_1073dc28;
+
+void CAI_BaseNPCTroika::vfunc494()
+{
+	if (!sub_1033e2b0()) {
+		static int s_nSound = g_1073dc28.Find("Target_Reacquired");
+		g_1073dc28.sub_101f5950(this, s_nSound, 2, 1.0f, 1.25f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10294660 size=0x8a
 #include "CAI_BaseNPCTroika.h"
 
