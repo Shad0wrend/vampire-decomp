@@ -40055,6 +40055,41 @@ void sub_102db650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db670 size=0x97
+struct DormantEnt
+{
+	char m_pad0000[0x540];
+	DormantEnt *m_pNext;	// 0x540
+	void sub_102daf80(float f);	// called through the stub at 0x10008ff8
+};
+
+extern char g_1092719c;
+extern DormantEnt *g_10927194;
+extern int g_10927198;
+extern int g_109271a0;
+extern int g_109271a4;
+
+void sub_102db670()
+{
+	if (g_1092719c && g_10927194) {
+		g_109271a4 = g_109271a0 + 10;
+		if (g_109271a4 > g_10927198)
+			g_109271a4 = g_10927198;
+		float f = g_10927198 * (0.1 * 0.1);
+		DormantEnt *p = g_10927194;
+		for (int i = g_109271a0; i > 0; i--)
+			p = p->m_pNext;
+		for (int j = g_109271a0; j < g_109271a4; j++) {
+			p->sub_102daf80(f);
+			p = p->m_pNext;
+		}
+		g_109271a0 = g_109271a4;
+		if (g_109271a4 >= g_10927198)
+			g_109271a0 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db740 size=0xd
 void CAI_InterestingPlaceConverstation::sub_102db740(int value)
 {

@@ -2041,6 +2041,7 @@
 0x1000bd7f func   ??0CTraceFilterSimple@@QAE@PAXH@Z CTraceFilterSimple::CTraceFilterSimple
 0x1000bd89 func   ?sub_100e7630@CDialog@@QAEXPAX@Z CDialog::sub_100e7630
 0x1000bda2 func   ?vfunc71@CItemContainer@@QAEXXZ CItemContainer::vfunc71
+0x1000bda7 func   ?sub_102db670@@YAXXZ sub_102db670
 0x1000bdac func   ?sub_100adfd0@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100adfd0
 0x1000bdbb func   ?vfunc463@CAI_BaseNPC@@UAEXHH@Z CAI_BaseNPC::vfunc463
 0x1000bdc5 func   ?vfunc5@CItemGEDaneReport@@QAEPAV1@I@Z CItemGEDaneReport::vfunc5
