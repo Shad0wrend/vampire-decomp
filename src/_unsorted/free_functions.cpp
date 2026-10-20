@@ -37917,6 +37917,25 @@ int *sub_10356550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356630 size=0x43
+#include "CNPC_Bullseye.h"
+void *sub_100aa720(int size);
+extern char g_106287ac[];
+
+// TARGET: npc_bullseye
+extern "C" CBaseEntity *npc_bullseye()
+{
+	void *mem = sub_100aa720(0x5f78);
+	CNPC_Bullseye *p;
+	if (mem)
+		p = ((CNPC_Bullseye *)mem)->sub_103566a0();
+	else
+		p = 0;
+	p->vfunc106(g_106287ac);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357110 size=0x2a
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
