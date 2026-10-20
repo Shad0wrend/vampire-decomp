@@ -55004,6 +55004,33 @@ bool CWeaponRanged_FlameThrower::sub_103e3490(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e3d80 size=0x8f
+#include "CBaseAnimating.h"
+#include "CWeaponRanged_FlameThrower.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+
+void CWeaponRanged_FlameThrower::sub_103e3d80(float *pOrigin, float *pAngles)
+{
+	int stamp = g_1070b22c->vfunc120();
+	if (stamp != m_nMuzzleStamp) {
+		int attachment = ((CBaseAnimating *)this)->sub_10092d50((int)"muzzle");
+		((CBaseAnimating *)this)->sub_10092ef0(attachment, m_vMuzzleOrigin, m_vMuzzleAngles);
+	}
+	m_nMuzzleStamp = stamp;
+	if (pOrigin) {
+		pOrigin[0] = m_vMuzzleOrigin[0];
+		pOrigin[1] = m_vMuzzleOrigin[1];
+		pOrigin[2] = m_vMuzzleOrigin[2];
+	}
+	if (pAngles) {
+		pAngles[0] = m_vMuzzleAngles[0];
+		pAngles[1] = m_vMuzzleAngles[1];
+		pAngles[2] = m_vMuzzleAngles[2];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3ec0 size=0x76
 struct Elem1c { char d[0x1c]; };
 extern void *(*g_109f3638)(void *, int);
