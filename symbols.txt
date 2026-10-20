@@ -2159,6 +2159,7 @@
 0x1000b172 func   ?vfunc36@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHH@Z CTempEntsSystem::vfunc36
 0x1000b181 func   ?sub_1011d8e0@@YAXPBD0ZZ sub_1011d8e0
 0x1000b186 func   ?sub_100b3350@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100b3350
+0x1000b1ae func   ?vfunc6@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHHHHHHHHH@Z CTempEntsSystem::vfunc6
 0x1000b1f9 func   ?vfunc212@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc212
 0x1000b212 func   ?sub_10341aa0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10341aa0
 0x1000b21c func   ?sub_10232cb0@@YA_NXZ sub_10232cb0
