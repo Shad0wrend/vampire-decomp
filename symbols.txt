@@ -1646,6 +1646,7 @@
 0x1000b433 func   ??0CExpressionTable@@QAE@XZ CExpressionTable::CExpressionTable
 0x1000b43d func   ?sub_10248980@CUnknown10248980@@QAEDXZ CUnknown10248980::sub_10248980
 0x1000b460 func   _item_k_museum_storage_key item_k_museum_storage_key
+0x1000b465 func   ?sub_10407580@@YAHXZ sub_10407580
 0x1000b46f func   _func_plat func_plat
 0x1000b488 func   _env_global env_global
 0x1000b4a1 func   ?sub_103c50c0@@YAPAHXZ sub_103c50c0
