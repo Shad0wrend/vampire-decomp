@@ -41815,6 +41815,40 @@ void CUnknown1030ba50::sub_1030ba50(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030bb30 size=0x94
+#include "CAI_Navigator.h"
+extern CAI_NavVec3 g_1070d1b0;
+
+void CAI_NavRoute::sub_1030bb30()
+{
+	m_pWaypoint.sub_10319ee0();
+	m_i5c = 0;
+	m_v4c.x = g_1070d1b0.x;
+	m_v4c.y = g_1070d1b0.y;
+	m_v4c.z = g_1070d1b0.z;
+	m_b48 = 0;
+	m_b58 = 0;
+	m_i60 = 0;
+	m_v34.x = g_1070d1b0.x;
+	m_v34.y = g_1070d1b0.y;
+	m_v34.z = g_1070d1b0.z;
+	m_i28 = 0;
+	m_i20 = 0;
+	m_i2c = 1;
+	m_i30 = -1;
+	m_v14.x = g_1070d1b0.x;
+	m_v14.y = g_1070d1b0.y;
+	m_v14.z = g_1070d1b0.z;
+	m_b11 = 0;
+	m_b00 = 0;
+	m_b01 = 0;
+	m_i04 = 0;
+	m_i08 = 0;
+	m_i0c = 0;
+	m_b10 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030bc20 size=0xc
 int CUnknown1030bc20::sub_1030bc20()
 {
