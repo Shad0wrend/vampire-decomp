@@ -3208,6 +3208,7 @@
 0x10013917 func   _info_hint info_hint
 0x1001393a func   ?sub_1034b500@S@@QAEXH@Z S::sub_1034b500
 0x1001393f func   _info_null info_null
+0x10013971 func   ?sub_100c8490@@YAPAHXZ sub_100c8490
 0x10013994 func   ?vfunc104@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc104
 0x1001399e func   ?vfunc104@CCameraAnimated@@QAEXXZ CCameraAnimated::vfunc104
 0x100139b2 func   ?sub_101f4f50@S9@@QAEPAU1@XZ S9::sub_101f4f50

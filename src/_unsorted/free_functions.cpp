@@ -11074,6 +11074,65 @@ void CMem4c_t::sub_100c83a0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c8490 size=0x16f
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1055beb0[2];
+void sub_10002cd4();
+void sub_1000fca9();
+void sub_10008f30();
+void sub_10010e6f();
+void sub_10009764();
+void sub_100111da();
+void sub_10014f88();
+void sub_1000127b();
+void sub_1000ad12();
+
+int *sub_100c8490()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_fStayPushed", {0x55c, 0}, 1, 2 },
+        { 5, "m_fRotating", {0x55d, 0}, 1, 2 },
+        { 4, "m_nState", {0x5c0, 0}, 1, 2 },
+        { 5, "m_bLocked", {0x5c4, 0}, 1, 2 },
+        { 5, "m_allowPhysicsObjectUse", {0x5c5, 0}, 1, 2 },
+        { 4, "m_UseIcon", {0x5c8, 0}, 1, 6, "use_icon" },
+        { 4, "m_LockedIcon", {0x5cc, 0}, 1, 6, "locked_icon" },
+        { 0, "CBaseButtonButtonTouch", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10002cd4 },
+        { 0, "CBaseButtonButtonSpark", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000fca9 },
+        { 0, "CBaseButtonTriggerAndWait", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10008f30 },
+        { 0, "CBaseButtonButtonReturn", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10010e6f },
+        { 0, "CBaseButtonButtonBackHome", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10009764 },
+        { 0, "CBaseButtonButtonUse", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100111da },
+        { 0, "InputLock", {0, 0}, 1, 8, "Lock", 0, (void *)sub_10014f88 },
+        { 0, "InputUnlock", {0, 0}, 1, 8, "Unlock", 0, (void *)sub_1000127b },
+        { 0, "InputPress", {0, 0}, 1, 8, "Press", 0, (void *)sub_1000ad12 },
+        { 0xa, "m_OnDamaged", {0x560, 0}, 1, 0x16, "OnDamaged", g_1055dc70 },
+        { 0xa, "m_OnPressed", {0x578, 0}, 1, 0x16, "OnPressed", g_1055dc70 },
+        { 0xa, "m_OnIn", {0x590, 0}, 1, 0x16, "OnIn", g_1055dc70 },
+        { 0xa, "m_OnOut", {0x5a8, 0}, 1, 0x16, "OnOut", g_1055dc70 },
+    };
+    g_1055beb0[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1055beb0[0] = (int)&dataDesc[1];
+    return g_1055beb0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c89e0 size=0xa
 void __fastcall sub_100c89e0(char *self, int, int)
 {
