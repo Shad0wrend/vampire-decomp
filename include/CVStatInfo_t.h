@@ -28,6 +28,7 @@ public:
 	int m_field0134;	// 0x0134
 	int m_field0138;	// 0x0138
 
+	~CVStatInfo_t();	// 0x101fdc30 (called through the stub at 0x1000f0a6)
 	CVStatInfo_t *sub_101fdaf0();	// "CVStatInfo_t::CVStatInfo_t": constructs the five records, the cost and the list, then scope trace and the plain fields
 	int sub_101fed90(int level);	// "CVStatInfo_t::Get_Duration_Initial": scope trace, duration of the level (clamped to 5), 0 without a table
 	int sub_101fee50(int level);	// "CVStatInfo_t::Get_Duration_Add": same shape, the second dword of the level entry
