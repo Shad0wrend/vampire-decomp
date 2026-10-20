@@ -14969,6 +14969,43 @@ void sub_1011a580(SHandleHolder *holder)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011a710 size=0x6c
+struct HandleVec {
+    unsigned int *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    unsigned int *m_pElements;
+};
+
+extern HandleVec g_1070b0d0;
+extern char g_1070b265;
+extern char g_1070b268;
+extern void (__cdecl *g_109f3624)(void *);
+extern void (__cdecl *g_109f3650)(int, const char *, ...);
+void sub_1011a620();
+
+// TARGET: sub_1011a710
+void sub_1011a710(char flag)
+{
+    if (g_1070b265) {
+        g_109f3650(2, "BeginRestoreEntities without previous EndRestoreEntities.\n");
+        sub_1011a620();
+    }
+    g_1070b0d0.m_size = 0;
+    if (g_1070b0d0.m_growSize != -1) {
+        if (g_1070b0d0.m_pMemory) {
+            g_109f3624(g_1070b0d0.m_pMemory);
+            g_1070b0d0.m_pMemory = 0;
+        }
+        g_1070b0d0.m_allocationCount = 0;
+    }
+    g_1070b0d0.m_pElements = g_1070b0d0.m_pMemory;
+    g_1070b268 = flag;
+    g_1070b265 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d2e0 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_1011d2e0(const Vector &v)
