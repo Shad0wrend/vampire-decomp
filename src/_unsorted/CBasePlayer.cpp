@@ -61,6 +61,43 @@ void CBasePlayer::vfunc408()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fe10 size=0xeb
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+
+extern CGlobalEntityList *g_10566458;
+
+inline CGlobalEntityList_Ent *LookupEntity(const unsigned int &h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+	if (s->m_Serial == (int)(h >> 13))
+		return s->m_pEntity;
+	return 0;
+}
+
+#define H1C58 (*(unsigned int *)((char *)this + 0x1c58))
+
+void CBasePlayer::vfunc316(CGlobalEntityList_Ent *pEnt, int a, int b)
+{
+	if (pEnt) {
+		if (LookupEntity(H1C58)) {
+			if (((CEntityVSlots *)LookupEntity(H1C58))->slot158()) {
+				if (LookupEntity(H1C58) != pEnt)
+					return;
+			}
+		}
+		int act = *(int *)((char *)this + 0xff0);
+		if ((act == 1 || act == 5) && sub_1015fd50() == -1) {
+			*(unsigned int *)((char *)this + 0x1c5c) = *pEnt->v1();
+			*(unsigned int *)((char *)this + 0x1c60) = *pEnt->v1();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ff40 size=0xc3
 struct HandleEntry { void *ent; unsigned int serial; int pad; };
 struct HandleList { int pad; HandleEntry e[1]; };
