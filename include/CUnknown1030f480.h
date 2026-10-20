@@ -19,4 +19,6 @@ public:
 	ScheduleNode_t *m_pHead;	// 0x04
 
 	void sub_1030f480();	// "Dumping schedule list": prints every schedule through DevMsg when the developer convar is set
+	bool sub_1030f220(const char *pszName, int arg);	// loads the schedule file "vdata/schedules/<name>.sch" through the engine (slot 99) and parses it with sub_1030d850; DevMsg warnings on failure
+	bool sub_1030d850(const char *pszName, void *pFile, int arg);	// parses an opened schedule file (stub 0x10006398)
 };
