@@ -13,6 +13,40 @@ int CNPC_VSabbatLeader::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a6d40 size=0xf2
+#include "ScopeTrace.h"
+#include "CNPC_VSabbatLeader.h"
+
+struct CGlobalVarsX { char pad[0xc]; int curtimeBits; };
+extern CGlobalVarsX *g_1070b228;
+extern char g_1064ccb4[];
+
+void CNPC_VSabbatLeader::vfunc420()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::NPCInit", g_106b8540);
+	sub_10013e85();
+	*(int *)((char *)this + 0x66bc) = 0;
+	*(int *)((char *)this + 0x66c0) = 0;
+	*(char *)((char *)this + 0x66b8) = 0;
+	long now = g_1070b228->curtimeBits;
+	*(int *)((char *)this + 0x5d9c) = now;
+	*(const char **)(0x6680 + (char *)this) = "models/character/monster/Andrei/andrei.mdl";
+	*(char **)((char *)this + 0x6694) = g_1064ccb4;
+	sub_10010fd7(0, "Andrei_powerup_emitter");
+	sub_10010fd7(1, "Andrei_powerup_emitter");
+	*(int *)((char *)this + 0x66c4) = 0;
+	*(int *)((char *)this + 0x66c8) = 0;
+	sub_103aaa80();
+	*(char *)((char *)this + 0x66d4) = 0;
+	*(char *)((char *)this + 0x66d5) = 0;
+	*(char *)((char *)this + 0x66d6) = 0;
+	*(char *)((char *)this + 0x66e4) = 0;
+	*(int *)((char *)this + 0x66d8) = 0;
+	*(int *)((char *)this + 0x66e0) = 3;
+	*(char *)((char *)this + 0x66e5) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a6ef0 size=0x5e
 #include "CNPC_VSabbatLeader.h"
 struct SScope { const char *a; const char *b; const char *c; };
