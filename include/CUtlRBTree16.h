@@ -23,6 +23,8 @@ public:
 	int m_unkC;
 	unsigned short m_Root;
 	unsigned short m_NumElements;
+	unsigned short m_FirstFree;
+	unsigned short m_TotalElements;
 
 	static unsigned short InvalidIndex() { return 0xffff; }
 
@@ -44,4 +46,6 @@ public:
 	bool sub_1004ba20(unsigned short i) const;	// same as sub_100483f0 (another instance)
 	bool sub_1004bf70(unsigned short i) const;	// same as sub_100483f0 (another instance)
 	bool sub_10315080(unsigned short i) const;	// same as sub_100483f0 (another instance)
+	unsigned short sub_1024a310();	// "CUtlRBTree::NewNode": takes the free list head or grows the node memory (first allocation 2 elements)
+	unsigned short sub_103134b0();	// same as sub_1024a310 (another instance)
 };
