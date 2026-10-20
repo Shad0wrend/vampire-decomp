@@ -12969,6 +12969,37 @@ void CBeam::sub_100bb900(int a, const float *pPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbb10 size=0xa9
+#include "CBeam.h"
+extern void (__cdecl *g_109f3628)(const char *, ...);
+
+struct HandleSrc {
+	virtual void pad0();
+	virtual unsigned int *GetRefEHandle();
+};
+
+void CBeam::sub_100bbb10(int nEnts, CBaseEntity **ppEnts, int *pAttach)
+{
+	if (nEnts < 2) {
+		g_109f3628("ERROR: Min of 2 ents required for spline beam.\n");
+	} else if (nEnts > 10) {
+		g_109f3628("ERROR: Max of %i ents allowed for spline beam.\n", 10);
+	}
+	m_nBeamType = (m_nBeamType & 0xff0) | 4;
+	for (int i = 0; i < nEnts; i++) {
+		HandleSrc *e = (HandleSrc *)ppEnts[i];
+		unsigned int *h = (unsigned int *)((char *)this + 0x468) + i;
+		if (e)
+			*h = *e->GetRefEHandle();
+		else
+			*h = 0xffffffff;
+		*(int *)((char *)h + 0x28) = pAttach[i];
+	}
+	m_nNumBeamEnts = nEnts;
+	sub_100bbbf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc0f0 size=0x23
 #include "CUnknown100bc0f0.h"
 
