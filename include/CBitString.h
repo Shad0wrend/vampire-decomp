@@ -2,6 +2,8 @@
 // dwords at +8; the pointer is the inline dword's address while a single dword is used).
 #pragma once
 
+#include <string.h>	// memset
+
 class CBitString
 {
 public:
