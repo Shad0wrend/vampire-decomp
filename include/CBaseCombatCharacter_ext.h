@@ -34,5 +34,4 @@
 	void sub_103394a0(char begin, int a, int b);	// "CBaseCombatCharacter::TorporBegin": scope trace (entity name), when begin is non-zero calls sub_103392c0(0, a, b)
 	void sub_103392c0(int a, int b, int c);	// called through the stub at 0x100034f9
 	bool sub_10339a90();	// "CBaseCombatCharacter::CanBeFedUp": scope trace (entity name), true unless the byte at +0x95 of this entity's stat record is set
-	void sub_1033d640(inputdata_t *data);	// "CBaseCombatCharacter::InputHuman": scope trace (entity name), then sub_1022dc30(integer value or 0)
-	void sub_1022dc30(int value);	// worker of InputHuman (stub 0x100048bd)
+	void sub_1033d640(inputdata_t *data);	// "CBaseCombatCharacter::InputHumanityAdd": scope trace (entity name), then the free function sub_1022dc30(this, integer value or 0)
