@@ -49964,6 +49964,25 @@ void CUtlMemory192::sub_1040b120(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b1b0 size=0x43
+#include "CWeaponIWritten.h"
+void *sub_100aa720(int size);
+extern char g_10683394[];
+
+// TARGET: item_i_written
+extern "C" CBaseEntity *item_i_written()
+{
+	void *mem = sub_100aa720(0x914);
+	CWeaponIWritten *p;
+	if (mem)
+		p = ((CWeaponIWritten *)mem)->sub_1040b270();
+	else
+		p = 0;
+	p->vfunc106(g_10683394);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040cce0 size=0x91
 #include "CUnknown1040cce0.h"
 
