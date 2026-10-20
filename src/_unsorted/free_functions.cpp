@@ -2012,6 +2012,34 @@ void CBaseEntity::sub_1003cc80(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003d300 size=0x91
+#include "CBaseEntity.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+void CBaseEntity::sub_1003d300()
+{
+	CScopeTrace trace("CBaseEntity::DestroyAllDataObjects", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	for (int i = 0; i < 4; i++) {
+		if (sub_1003cb00(i))
+			sub_1003d130(i);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003daa0 size=0xa6
 #define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
