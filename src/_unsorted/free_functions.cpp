@@ -39449,6 +39449,25 @@ char sub_10384150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10386a30 size=0x43
+#include "CNPC_VHumanCombatant.h"
+void *sub_100aa720(int size);
+extern char g_1063f928[];
+
+// TARGET: npc_VHumanCombatant
+extern "C" CBaseEntity *npc_VHumanCombatant()
+{
+	void *mem = sub_100aa720(0x6664);
+	CNPC_VHumanCombatant *p;
+	if (mem)
+		p = ((CNPC_VHumanCombatant *)mem)->sub_10386aa0();
+	else
+		p = 0;
+	p->vfunc106(g_1063f928);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10386bd0 size=0x33
 void sub_100053cb();
 void sub_10002234();
