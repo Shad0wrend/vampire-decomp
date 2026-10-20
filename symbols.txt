@@ -1929,6 +1929,7 @@
 0x1000c64e func   ?sub_100e7f70@@YA_NPADHPBD1@Z sub_100e7f70
 0x1000c653 func   ?sub_103e6ba0@@YAHXZ sub_103e6ba0
 0x1000c67b func   ?vfunc5@CItemGStake@@QAEPAV1@I@Z CItemGStake::vfunc5
+0x1000c699 func   ?sub_1009c2d0@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009c2d0
 0x1000c6a3 func   ?sub_10056a60@CUnknown10056a00@@QAEXXZ CUnknown10056a00::sub_10056a60
 0x1000c6c6 func   ?vfunc104@CBatSwarm@@UAEXXZ CBatSwarm::vfunc104
 0x1000c6df func   ?sub_103f6d30@@YAHXZ sub_103f6d30
