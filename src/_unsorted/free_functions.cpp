@@ -36753,6 +36753,42 @@ void CUnknown102dc2c0::sub_102dc2c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dcc20 size=0x77
+#include "CGlobalEntityList.h"
+
+struct CUnk102dcc20Ent {
+    int sub_100079b9(int a);
+};
+extern CGlobalEntityList *g_10566458;
+
+struct CUnk102dcc20Handle {
+    unsigned int m_h;
+    CUnk102dcc20Ent *Get() const
+    {
+        if (m_h != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_h & 0x1fff];
+            if (s->m_Serial == (int)(m_h >> 13))
+                return (CUnk102dcc20Ent *)s->m_pEntity;
+        }
+        return 0;
+    }
+};
+struct CUnk102dcc20 {
+    char pad0000[0x504];
+    int m_nIndex;
+    char pad0508[0x518 - 0x508];
+    CUnk102dcc20Handle *m_pHandles;
+    int sub_102dcc20();
+};
+
+int CUnk102dcc20::sub_102dcc20()
+{
+    if (m_pHandles[m_nIndex].Get())
+        return m_pHandles[m_nIndex].Get()->sub_100079b9(0);
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dcd10 size=0xa
 void CUnknown102dcd10::sub_102dcd10(int unused)
 {
