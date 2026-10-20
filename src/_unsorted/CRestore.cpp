@@ -190,6 +190,29 @@ char CRestore::vfunc16()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2040 size=0x3f
+#include "CRestore.h"
+
+struct CRestoreCalleePlaceholder {
+    void sub_1000fe9d(int a, int n);
+    void sub_1000910b(int n);
+};
+
+// TARGET: CRestore::vfunc12
+unsigned int CRestore::vfunc12(int a, int b, int c)
+{
+    int n = b * 2;
+    if (c != 0 && n >= c) {
+        n = c;
+    }
+    ((CRestoreCalleePlaceholder *)this)->sub_1000fe9d(a, n);
+    if (n < c) {
+        ((CRestoreCalleePlaceholder *)this)->sub_1000910b(c - n);
+    }
+    return (unsigned int)n >> 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2460 size=0x96
 #include "CRestore.h"
 #include <string.h>
