@@ -28626,6 +28626,111 @@ int CUnknown101b9140::sub_101b9140(int elem, int num, const CUnknown101b9140Elem
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ba9d0 size=0x123
+#include "CSoundEnt.h"
+#include "CGlobalEntityList.h"
+
+struct CSoundRec
+{
+	unsigned int m_hOwner;	// 0x00
+	int m_iType;	// 0x04
+	char m_pad08[8];
+	float m_flExpireTime;	// 0x10
+	char m_pad14[4];
+	int m_iNext;	// 0x18
+	char m_pad1c[0x2c - 0x1c];
+};
+
+struct CSoundEntData
+{
+	char m_pad0000[0x450];
+	int m_iFreeList;	// 0x450
+	int m_iActiveList;	// 0x454
+	char m_pad0458[0x464 - 0x458];
+	CSoundRec m_SoundPool[1];	// 0x464
+};
+
+struct CSoundOwner
+{
+	const char *sub_100ab4f0();	// the debug name of the entity
+};
+
+struct CSoundDebugVar	// the console variable that enables the report
+{
+	virtual void v0();
+	virtual char IsSet();
+	char m_pad[0x28];
+	int m_nValue;	// 0x2c
+};
+
+struct CSoundSlot
+{
+	CSoundOwner *m_pEntity;
+	int m_Serial;
+	int m_pad;
+};
+
+struct CSoundGlobals
+{
+	char m_pad[0xc];
+	float m_flCurTime;
+};
+
+extern CSoundEntData *g_1072c464;
+extern CSoundDebugVar *g_109243ec;
+extern CSoundGlobals *g_1070b228;
+extern CGlobalEntityList *g_10566458;
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+struct CSoundHandle
+{
+	unsigned int m_Index;
+
+	bool IsValid()
+	{
+		if (m_Index == 0xffffffff)
+			return false;
+		CSoundSlot *pSlot = (CSoundSlot *)((char *)g_10566458 + 4) + (m_Index & 0x1fff);
+		return pSlot->m_Serial == (int)(m_Index >> 13) && pSlot->m_pEntity != 0;
+	}
+
+	CSoundOwner *Get()
+	{
+		if (m_Index != 0xffffffff)
+		{
+			CSoundSlot *pSlot = (CSoundSlot *)((char *)g_10566458 + 4) + (m_Index & 0x1fff);
+			if (pSlot->m_Serial == (int)(m_Index >> 13))
+				return pSlot->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+// TARGET: CSoundEnt::sub_101ba9d0
+void CSoundEnt::sub_101ba9d0(int iSound, int iPrevious)
+{
+	if (!g_1072c464)
+		return;
+	if (!g_109243ec->IsSet() && g_109243ec->m_nValue)
+	{
+		CSoundRec *pSound = &g_1072c464->m_SoundPool[iSound];
+		const char *pszOwner;
+		CSoundHandle *pHandle = (CSoundHandle *)&pSound->m_hOwner;
+		if (pHandle->IsValid())
+			pszOwner = pHandle->Get()->sub_100ab4f0();
+		else
+			pszOwner = "**UNKNOWN**";
+		g_109f3630("Freeing sound id(%d) type(%d) owner(%s) expire(%.2f) at %f\n", -1, pSound->m_iType, pszOwner, (double)pSound->m_flExpireTime, (double)g_1070b228->m_flCurTime);
+	}
+	if (iPrevious != -1)
+		g_1072c464->m_SoundPool[iPrevious].m_iNext = g_1072c464->m_SoundPool[iSound].m_iNext;
+	else
+		g_1072c464->m_iActiveList = g_1072c464->m_SoundPool[iSound].m_iNext;
+	g_1072c464->m_SoundPool[iSound].m_iNext = g_1072c464->m_iFreeList;
+	g_1072c464->m_iFreeList = iSound;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb220 size=0x6b
 struct ScopeEntry {
     const char *a;

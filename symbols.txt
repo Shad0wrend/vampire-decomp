@@ -697,6 +697,7 @@
 0x100044f8 func   ?sub_102e0a60@CUnknown102e0a60@@QAEXH@Z CUnknown102e0a60::sub_102e0a60
 0x1000450c func   ?vfunc546@CNPC_VSabbatGunman@@QAEHH@Z CNPC_VSabbatGunman::vfunc546
 0x1000452f func   ?sub_100483f0@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_100483f0
+0x10004534 func   ?sub_101ba9d0@CSoundEnt@@SAXHH@Z CSoundEnt::sub_101ba9d0
 0x10004539 func   _physics_prop_ragdoll physics_prop_ragdoll
 0x1000453e func   _item_g_giovanni_invitation_victor item_g_giovanni_invitation_victor
 0x10004548 func   ?vfunc2@CTEBloodStream@@UAEPAV1@I@Z CTEBloodStream::vfunc2
