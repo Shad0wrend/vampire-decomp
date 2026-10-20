@@ -1,6 +1,68 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a37c0 size=0x123
+#include "CEntitySaveRestoreBlockHandler.h"
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+extern CGlobalEntityList *g_10566458;
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+#define V64(a) V16(a##a) V16(a##b) V16(a##c) V16(a##d)
+struct SaveX {
+    virtual int GetTick();
+    V16(p) V16(q) V4(r) virtual void m0();
+    virtual void *GetBlock();
+};
+struct EntX {
+    V64(p) V16(q) V16(r) V16(s) V4(t) virtual void m0();
+    virtual int f117();
+};
+struct EngineX {
+    V16(p) V16(q) virtual void m0(); virtual void m1(); virtual void m2();
+    virtual int f35(int edict);
+};
+struct GlobalsX { char pad[0x14]; int m_n14; };
+struct SaveEntry { char pad[0x10]; volatile unsigned int m_h10; int m_tick14; volatile int m_delta18; int m_f1c; unsigned __int64 m_flags20; int m_f28; int m_f2c; };
+struct SaveBlock { char pad[0x1318]; int m_nEntries; SaveEntry *m_pEntries; };
+extern EngineX *g_1070b22c;
+extern GlobalsX *g_1070b228;
+static inline CGlobalEntityList_Ent *ResolveHandle(unsigned int h)
+{
+    if (h == 0xffffffff)
+        return 0;
+    CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+    return s->m_Serial == (int)(h >> 13) ? s->m_pEntity : 0;
+}
+void CEntitySaveRestoreBlockHandler::vfunc2(CSave *pSaveArg)
+{
+    SaveX *pSave = (SaveX *)pSaveArg;
+    SaveBlock *blk = (SaveBlock *)pSave->GetBlock();
+    int i = 0;
+    if (blk->m_nEntries > 0) {
+        int off = 0;
+        do {
+            SaveEntry *e = (SaveEntry *)((char *)blk->m_pEntries + off);
+            e->m_tick14 = pSave->GetTick();
+            e->m_delta18 = 0;
+            CBaseEntity *ent = (CBaseEntity *)ResolveHandle(e->m_h10);
+            if (ent && !(((EntX *)ent)->f117() & 0x80000000)) {
+                ent->vfunc126((int)pSave);
+                e->m_delta18 = pSave->GetTick() - e->m_tick14;
+                e->m_f28 = (int)ent->m_classname11c;
+                if (ent->m_pEdict2e0 && 0 < g_1070b22c->f35(ent->m_pEdict2e0)) {
+                    ent = (CBaseEntity *)ent->m_pEdict2e0;
+                    if (g_1070b22c->f35((int)ent) < g_1070b228->m_n14 + 1)
+                        e->m_flags20 |= 0x8000000000000000ui64;
+                }
+            }
+            i++;
+            off += 0x30;
+        } while (i < blk->m_nEntries);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3940 size=0x73
 #include "CEntitySaveRestoreBlockHandler.h"
 

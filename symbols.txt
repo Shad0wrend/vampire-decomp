@@ -341,6 +341,7 @@
 0x100030e4 func   ?sub_103360a0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_103360a0
 0x100030f3 func   _game_ui game_ui
 0x100030f8 func   ?sub_10182c40@CAI_BaseNPC@@QAEXPBD0@Z CAI_BaseNPC::sub_10182c40
+0x100030fd func   ?vfunc2@CEntitySaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CEntitySaveRestoreBlockHandler::vfunc2
 0x10003111 func   _env_sun env_sun
 0x1000311b func   ?sub_10158d60@@YIXPAPAX@Z sub_10158d60
 0x1000312f func   ?sub_103c6eb0@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c6eb0
