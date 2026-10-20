@@ -1,0 +1,15 @@
+// CBitString: a growable bit string (bit count at +0, dword count at +2, one inline dword at +4, pointer to the
+// dwords at +8; the pointer is the inline dword's address while a single dword is used).
+#pragma once
+
+class CBitString
+{
+public:
+	unsigned short m_nBits;	// 0x0000
+	unsigned short m_nDwords;	// 0x0002
+	int m_nInline;	// 0x0004
+	int *m_pData;	// 0x0008
+
+	void sub_100bf600(int numDwords);	// resizes the dword storage to numDwords (0 frees it); switches between the inline dword and heap memory
+	void sub_100bf6a0();	// releases the dword storage
+};
