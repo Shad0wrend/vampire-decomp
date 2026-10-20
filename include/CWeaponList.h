@@ -4,11 +4,10 @@
 
 #include "CAnchorList.h"
 
-class CWeaponList : public CBaseGameSystem
+// The linked list embedded at +8 (its destructor empties the list and releases the node memory).
+class CWeaponListData
 {
 public:
-	virtual void vfunc5();	// resets the weapon-name list
-
 	char *m_pNodes;		// +8: 8-byte nodes
 	int m_nAlloc;		// +0xc
 	int m_nGrow;		// +0x10
@@ -20,8 +19,7 @@ public:
 	unsigned short m_pad1e;
 	char *m_pFirst;		// +0x20
 
-	// slot 8 (scalar deleting destructor): empties the linked list and releases its memory
-	~CWeaponList()
+	~CWeaponListData()
 	{
 		if (m_nCount != 0) {
 			int j = 0xffff;
@@ -43,4 +41,10 @@ public:
 			m_nAlloc = 0;
 		}
 	}
+};
+
+class CWeaponList : public CBaseGameSystem, public CWeaponListData
+{
+public:
+	virtual void vfunc5();	// resets the weapon-name list
 };
