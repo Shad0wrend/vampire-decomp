@@ -1078,6 +1078,7 @@
 0x10006b68 func   ?vfunc2@CTEGunshotDecal@@UAEPAV1@I@Z CTEGunshotDecal::vfunc2
 0x10006b72 func   _npc_VChangBrosClaw npc_VChangBrosClaw
 0x10006b7c func   ?sub_100cd640@CUnknown100cd640@@QAEPADXZ CUnknown100cd640::sub_100cd640
+0x10006b81 func   ?vfunc468@CHL2_Player@@UAEXXZ CHL2_Player::vfunc468
 0x10006b95 func   ?sub_100422e0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_100422e0
 0x10006b9f func   ?sub_103f7630@@YAHXZ sub_103f7630
 0x10006bd6 func   ?sub_102d4350@UtlMem@@QAEXXZ UtlMem::sub_102d4350

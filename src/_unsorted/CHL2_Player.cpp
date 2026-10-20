@@ -51,6 +51,51 @@ CHL2_Player *CHL2_Player::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10351430 size=0xa3
+#include "CHL2_Player.h"
+
+struct SCollisionSlots
+{
+	virtual void v0();
+	virtual int GetMins();	// slot 1
+	virtual int GetMaxs();	// slot 2
+};
+
+struct SPlayerObject
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2(const char *p);
+};
+
+int sub_1002dfe0(int a, int b);
+void __fastcall sub_100132c8(CHL2_Player *self);
+extern char g_1093827c[];
+
+void CHL2_Player::vfunc468()
+{
+	sub_100132c8(this);
+	if (*(int *)((char *)this + 0x2104) == 0 && *(int *)((char *)this + 0x2108) == 0) {
+		SCollisionSlots *pCollision = (SCollisionSlots *)((char *)this + 0x270);
+		int mins = pCollision->GetMins();
+		int maxs = pCollision->GetMaxs();
+		sub_1002dfe0(mins, maxs);
+		float hullMins[3];
+		float hullMaxs[3];
+		hullMaxs[0] = 16.0f;
+		hullMaxs[1] = 16.0f;
+		hullMaxs[2] = 36.0f;
+		hullMins[0] = -16.0f;
+		hullMins[1] = -16.0f;
+		hullMins[2] = 0.0f;
+		sub_1002dfe0((int)hullMins, (int)hullMaxs);
+		SPlayerObject *pObj = *(SPlayerObject **)((char *)this + 0x2100);
+		if (pObj)
+			pObj->v2(g_1093827c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103528d0 size=0x70
 #include "CHL2_Player.h"
 struct Globals { char pad[0x10]; float frametime; };
