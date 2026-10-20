@@ -15,6 +15,7 @@ public:
 	unsigned int *m_pActorsElements;	// 0x478
 
 	void sub_102cd3b0();	// "CAI_GoalEntity::PruneActors": removes (FastRemove, back to front) the actors whose handle no longer resolves or whose NPC state (slot 464) is 7 (dead)
-	void vfunc241(int a);	// slot 241 (called directly by the derived goal classes through the stub at 0x100141e6)
+	void vfunc241(int a);	// slot 241 (called directly by the derived goal classes through the stub at 0x100141e6): once per goal (flag bit 0 of the dword at +0x480), registers the goal (+0x450) in the global list, resolves/prunes the actors (bit 1 of the flags) and tells every actor through slot 244
 	void sub_102cdb70(int a);	// slot 243 implementation, called directly by the derived goal classes through the stub at 0x10012b7f
+	void sub_102cd4a0();	// first-time actor lookup (stub 0x1000eea8)
 };
