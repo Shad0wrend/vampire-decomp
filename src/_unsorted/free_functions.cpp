@@ -27605,6 +27605,25 @@ void sub_1023cde0(SWorldInfo *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023cf10 size=0x43
+#include "CWorldEvents.h"
+void *sub_100aa720(int size);
+extern char g_105c47bc[];
+
+// TARGET: worldevents
+extern "C" CBaseEntity *worldevents()
+{
+	void *mem = sub_100aa720(0x648);
+	CWorldEvents *p;
+	if (mem)
+		p = ((CWorldEvents *)mem)->sub_1023d930();
+	else
+		p = 0;
+	p->vfunc106(g_105c47bc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ed10 size=0xde
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
