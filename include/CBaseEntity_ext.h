@@ -30,3 +30,4 @@
 	void sub_1003d130(int type);	// "CBaseEntity::DestroyDataObject" (stub 0x10009935)
 	void sub_1003d300();	// "CBaseEntity::DestroyAllDataObjects": scope trace (entity name), DestroyDataObject(i) for each data object type i in 0..3 that HasDataObjectType
 	void vfunc144(void *pInfo);	// "CBaseEntity::Event_Killed": scope trace (entity name), take-damage mode (+0x1fc) = 0, +0x200 = 2, then sub_101cd940(this); takes one stack argument (the damage info), unused
+	void sub_100a8ef0();	// "CBaseEntity::ResetScriptedSoundOverride": scope trace (entity name), when the dword at +0x108 is set asks the global at 0x106eb5d8 (sub_100f7770(0, dword, this, 0)) for the entity, then SetSoundOverrideEnt(entity or null)
