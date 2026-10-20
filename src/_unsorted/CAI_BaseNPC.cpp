@@ -193,6 +193,36 @@ void CAI_BaseNPC::vfunc311(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273d30 size=0x7c
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+
+struct SNpcData {
+	char pad[0x5da4];
+	int m_pSquad;
+	const char *volatile m_pszSquadName;
+};
+
+extern void (*g_109f3650)(int level, const char *fmt, ...);
+int sub_10015bc7(CAI_BaseNPC *pNpc, const char *name);
+
+bool CAI_BaseNPC::vfunc545()
+{
+	SNpcData *d = (SNpcData *)this;
+	if (!d->m_pSquad) {
+		if (vfunc513() & 0x4000000) {
+			if (!d->m_pszSquadName) {
+				g_109f3650(2, "WARNING: Found %s that isn't in a squad\n", ((CBaseEntity *)this)->sub_1009f200());
+				return d->m_pSquad != 0;
+			}
+			d->m_pSquad = sub_10015bc7(this, d->m_pszSquadName);
+			vfunc542();
+		}
+	}
+	return d->m_pSquad != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10274aa0 size=0x64
 #include "CBaseAnimating.h"
 #include "CAI_BaseNPC.h"
