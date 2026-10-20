@@ -2546,6 +2546,7 @@
 0x1000d044 func   ?sub_1005e5c0@@YAXHHPBH0HHHHH@Z sub_1005e5c0
 0x1000d053 func   ?sub_102a15f0@@YI_NPAUN@@@Z sub_102a15f0
 0x1000d058 func   ?sub_1012cf50@CUnknown1012cf50@@QAEXH@Z CUnknown1012cf50::sub_1012cf50
+0x1000d062 func   ?sub_101a4cb0@BlockSetView@@QAEXPAUSaveView@@@Z BlockSetView::sub_101a4cb0
 0x1000d06c func   ?sub_10073a30@CUnknown10073a30@@QAEXD@Z CUnknown10073a30::sub_10073a30
 0x1000d085 func   ?vfunc502@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc502
 0x1000d08a func   ?sub_1009b2c0@CBaseEntity@@QAEXHH@Z CBaseEntity::sub_1009b2c0

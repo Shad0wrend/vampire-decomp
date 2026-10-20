@@ -18,6 +18,78 @@ void CSaveRestoreBlockSet::vfunc2(void *pSave)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a4cb0 size=0x15b
+#include "CSaveRestoreBlockSet.h"
+#include "CUtlVectorDataOps.h"
+
+extern "C" int __cdecl strcmp(const char *, const char *);
+#pragma intrinsic(strcmp)
+
+struct SaveRestoreBlockHeader_t;
+
+struct SaveView	// the save/restore stream passed in (CSave)
+{
+    virtual int vfunc0();	// current position
+    virtual void vfunc1(int pos);	// seek
+    virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4(); virtual void vfunc5();
+    virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+    virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13();
+    virtual void vfunc14();
+    virtual void vfunc15(void *pData, int count, int size);	// reads or writes an int
+};
+
+struct HandlerView	// a block handler
+{
+    virtual const char *vfunc0();	// the block name
+    virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4(); virtual void vfunc5();
+    virtual void vfunc6(SaveView *pSave);
+};
+
+struct FieldInfoView
+{
+    void *m_pField;
+    void *m_pOwner;
+    void *m_pTypeDesc;
+};
+
+typedef CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t, CUtlMemory<SaveRestoreBlockHeader_t> >, 9> HeaderOps;
+
+struct BlockSetView : public CSaveRestoreBlockSet
+{
+    void sub_101a4cb0(SaveView *pSave);
+};
+
+void BlockSetView::sub_101a4cb0(SaveView *pSave)
+{
+    int base = pSave->vfunc0();
+    int *pVersion = (int *)pad38;
+    pSave->vfunc15(pVersion, 1, 0);
+    pSave->vfunc15(&m_nSize, 1, 0);
+    static HeaderOps s_ops;
+    HeaderOps *pOps = &s_ops;
+    FieldInfoView info;
+    info.m_pField = &m_pEntries;
+    info.m_pOwner = 0;
+    info.m_pTypeDesc = 0;
+    pOps->vfunc1(&info, pSave);
+    for (int i = 0; i < m_nHandlers; i++) {
+        const char *pName = ((HandlerView *)m_pHandlers[i])->vfunc0();
+        for (int j = 0; j < m_nEntries; j++) {
+            char *pEntry = m_pEntries + j * 0x28;
+            if (strcmp(pEntry, pName) == 0) {
+                int offset = *(int *)(m_pEntries + j * 0x28 + 0x20);
+                if (offset != -1) {
+                    pSave->vfunc1(offset + base);
+                    ((HandlerView *)m_pHandlers[i])->vfunc6(pSave);
+                }
+                break;
+            }
+        }
+    }
+    pSave->vfunc1(*pVersion + base);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a4e70 size=0xe8
 #include "CSaveRestoreBlockSet.h"
 
