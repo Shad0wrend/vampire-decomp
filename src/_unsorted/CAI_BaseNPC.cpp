@@ -8,6 +8,20 @@ void CAI_BaseNPC::vfunc483(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6ce0 size=0x10
+struct CUnknownNPC101a6ce0 {
+    bool sub_101a6ce0(int unused);
+};
+
+// TARGET: sub_101a6ce0
+bool CUnknownNPC101a6ce0::sub_101a6ce0(int unused)
+{
+    void **vt = *(void ***)this;
+    char r = ((char (__fastcall *)(void *))vt[0x278 / 4])(this);
+    return r == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a8f0 size=0x8
 // TARGET: CAI_BaseNPC::vfunc567
 int CAI_BaseNPC::vfunc567(int unused)

@@ -1341,6 +1341,7 @@
 0x10007923 func   ?vfunc8@CEntityListSystem@@QAEPAV1@I@Z CEntityListSystem::vfunc8
 0x10007932 func   ?sub_103dad80@@YAPAXXZ sub_103dad80
 0x1000794b func   ?sub_10071ae0@CUtlVector4@@QAEXH@Z CUtlVector4::sub_10071ae0
+0x10007950 func   ?sub_101a6ce0@CUnknownNPC101a6ce0@@QAE_NH@Z CUnknownNPC101a6ce0::sub_101a6ce0
 0x1000795f func   ?sub_103e9270@@YAHXZ sub_103e9270
 0x10007969 func   ?vfunc103@CItemContainerOneItemFiltered@@UAEXXZ CItemContainerOneItemFiltered::vfunc103
 0x10007978 func   ?sub_101d3080@@YA_NPAUHandleEntLike@@H@Z sub_101d3080
