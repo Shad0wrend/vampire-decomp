@@ -3732,6 +3732,7 @@
 0x1001457e func   ?sub_100b3640@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3640
 0x10014583 func   ?vfunc5@COccultBloodBuff@@QAEPAV1@I@Z COccultBloodBuff::vfunc5
 0x1001458d func   ?sub_1040bfc0@CUnknown1040cb60@@QAEXPBM0@Z CUnknown1040cb60::sub_1040bfc0
+0x1001459c func   ?vfunc432@CNPC_VDog@@UAEXH@Z CNPC_VDog::vfunc432
 0x100145b0 func   ?sub_100766b0@CUnknown10076670@@QAEXH@Z CUnknown10076670::sub_100766b0
 0x100145ba func   ?sub_1013da70@@YAXH@Z sub_1013da70
 0x100145ce func   _info_node_tzimisce_claw_right info_node_tzimisce_claw_right
