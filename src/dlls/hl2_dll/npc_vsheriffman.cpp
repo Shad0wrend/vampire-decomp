@@ -20,3 +20,23 @@ void CNPC_VSheriffMan::vfunc619(int arg)
 	(*g_109f3680)--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b15e0 size=0x7a
+#include "CNPC_VSheriffMan.h"
+struct ScopeEnt { const char *name; const char *file; const char *file2; };
+extern ScopeEnt *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CNPC_VSheriffMan::sub_103b15e0(int arg)
+{
+    g_109f3620[*g_109f3680].name = "CNPC_VSheriffMan::StartTransformation";
+    g_109f3620[*g_109f3680].file = g_106b8540;
+    g_109f3620[*g_109f3680].file2 = g_106b8540;
+    ++*g_109f3680;
+    m_pszSourceFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\npc_vsheriffman.cpp";
+    m_nSourceLine = 0x4c7;
+    sub_102ae750(0x15b, 0);
+    --*g_109f3680;
+}
+// END FUNCTION
