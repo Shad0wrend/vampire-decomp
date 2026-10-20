@@ -1644,6 +1644,7 @@
 0x100091b0 func   ?vfunc78@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc78
 0x100091b5 func   ?sub_10428160@@YAHHHHHH@Z sub_10428160
 0x100091dd func   ?sub_10335f60@@YI_NPADHHH@Z sub_10335f60
+0x100091e2 func   ?vfunc31@CRestore@@UAEHPAHHH@Z CRestore::vfunc31
 0x10009200 func   ?sub_10345980@CBaseCombatCharacter@@QAEPADPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10345980
 0x1000920f func   ?sub_101fbb60@CVStatSubCost_t@@QAEHH@Z CVStatSubCost_t::sub_101fbb60
 0x10009228 func   ?sub_101eab20@@YAXH@Z sub_101eab20

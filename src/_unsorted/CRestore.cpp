@@ -251,3 +251,46 @@ int CRestore::vfunc30(unsigned int *pValues, int count, int nBytesAvailable)
 	return n;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a26f0 size=0xec
+#include "CRestore.h"
+#include "CGlobalEntityList.h"
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+extern CGlobalEntityList *g_10566458;
+int CRestore::vfunc31(int *pValues, int count, int nBytesAvailable)
+{
+    int buf[256];
+    int n = vfunc15(buf, count, nBytesAvailable);
+    if (0 < n) {
+        int *p = pValues;
+        int remaining = n;
+        do {
+            CRestoreSaveEnt *pRec = sub_101a2410(*(int *)((char *)buf + ((char *)p - (char *)pValues)));
+            *p = -1;
+            if (pRec) {
+                unsigned int h = pRec->m_hEntity;
+                int value;
+                if (h != -1) {
+                    CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+                    if (s->m_Serial == (h >> 13) && s->m_pEntity) {
+                        value = *(volatile int *)&pRec->m_hEntity;
+                        goto store;
+                    }
+                }
+                value = pRec->m_nIndex;
+                if (value <= 0 || value >= 0xffff)
+                    goto next;
+                value = -value;
+store:
+                *p = value;
+            }
+next:
+            p++;
+            remaining--;
+        } while (remaining != 0);
+    }
+    if (n < count)
+        memset(pValues + n, 0, (count - n) * 4);
+    return n;
+}
+// END FUNCTION
