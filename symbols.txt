@@ -244,6 +244,7 @@
 0x100025ea func   _item_k_ash_cell_key item_k_ash_cell_key
 0x1000261c func   ?sub_10204f60@CUnknown10204f60@@QAEHH@Z CUnknown10204f60::sub_10204f60
 0x10002621 func   _item_p_occult_strength item_p_occult_strength
+0x1000263a func   ?sub_101d84e0@CUnk101d84e0@@QAEPADXZ CUnk101d84e0::sub_101d84e0
 0x1000263f func   ?sub_1008d7c0@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::sub_1008d7c0
 0x10002658 func   _item_p_occult_passive_durations item_p_occult_passive_durations
 0x10002680 func   ?vfunc104@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc104

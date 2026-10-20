@@ -23773,6 +23773,36 @@ int CUnknown101d7380::sub_101d7380(const char *name, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d84e0 size=0x77
+#include <stdio.h>
+#include <string.h>
+
+struct CUnk101d84e0Elem {
+    char pad[12];
+    const char *sub_100137b9();
+};
+struct CUnk101d84e0 {
+    int m_nCount;
+    CUnk101d84e0Elem *m_pElems;
+    char *sub_101d84e0();
+};
+extern char g_10739040[];
+
+char *CUnk101d84e0::sub_101d84e0()
+{
+    int len = 0;
+    for (int i = 0; i < m_nCount; i++) {
+        if (i < m_nCount - 1) {
+            sprintf(g_10739040 + len, "%s ", m_pElems[i].sub_100137b9());
+            len = strlen(g_10739040);
+        } else {
+            sprintf(g_10739040 + len, "%s", m_pElems[i].sub_100137b9());
+        }
+    }
+    return g_10739040;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8890 size=0xa
 extern int g_1073938c;
 // TARGET: sub_101d8890
