@@ -1037,6 +1037,7 @@
 0x100070db func   ?sub_100ce4e0@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce4e0
 0x100070ea func   ?vfunc5@CPropMover@@QAEPAV1@I@Z CPropMover::vfunc5
 0x100070f4 func   ?sub_104057f0@@YAHXZ sub_104057f0
+0x100070f9 func   ?vfunc560@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc560
 0x100070fe func   ?sub_10388ed0@@YADXZ sub_10388ed0
 0x10007108 func   ?sub_102d00a0@CUnknown102d00a0@@QAEXI@Z CUnknown102d00a0::sub_102d00a0
 0x1000710d func   ?vfunc2@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc2

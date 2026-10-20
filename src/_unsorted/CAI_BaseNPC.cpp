@@ -101,6 +101,26 @@ void CAI_BaseNPC::vfunc459()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026dc80 size=0x66
+#include "CAI_BaseNPC.h"
+
+// TARGET: CAI_BaseNPC::vfunc560
+void CAI_BaseNPC::vfunc560()
+{
+	sub_10269b50(0x4f);
+	sub_10269b50(0x50);
+	sub_10269b50(0x51);
+	sub_10269b50(0x52);
+	sub_10269b50(0x2e);
+	sub_10269b50(0x2f);
+	sub_10269b50(0x62);
+	sub_10269b50(0x63);
+	sub_10269b50(0x64);
+	sub_10269b50(0x65);
+	sub_10269b50(0x66);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026e3e0 size=0xc4
 #include "CAI_BaseNPC.h"
 
