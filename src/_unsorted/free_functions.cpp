@@ -24209,6 +24209,25 @@ void __fastcall sub_10224170(CSlots *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102265c0 size=0x43
+#include "CPlayerEvents.h"
+void *sub_100aa720(int size);
+extern char g_105b3374[];
+
+// TARGET: playerevents
+extern "C" CBaseEntity *playerevents()
+{
+	void *mem = sub_100aa720(0x67c);
+	CPlayerEvents *p;
+	if (mem)
+		p = ((CPlayerEvents *)mem)->sub_102270b0();
+	else
+		p = 0;
+	p->vfunc106(g_105b3374);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227210 size=0xa
 void CUnknown10227210::sub_10227210(int unused)
 {
