@@ -12363,6 +12363,48 @@ void sub_100d6820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7210 size=0x7e
+#include <stdlib.h>
+
+#define V1(p) virtual void p();
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct IUnk1070b22c {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V1(b0) V1(b1) V1(b2) V1(b3)
+    virtual const char *vfunc84(int index);	// Cmd_Argv
+    virtual int vfunc85();	// Cmd_Argc
+};
+extern IUnk1070b22c *g_1070b22c;
+
+struct CUnk100d7210Data {
+    char pad[0x2018];
+    int m_nFirst[10];	// 0x2018
+    int m_nSecond[10];	// 0x2040
+};
+struct CUnk100d7210Player {
+    char pad[0xa8];
+    CUnk100d7210Data *m_pData;
+};
+CUnk100d7210Player *sub_101193b0();
+
+void sub_100d7210()
+{
+    if (g_1070b22c->vfunc85() != 0x15)
+        return;
+    CUnk100d7210Player *pPlayer = sub_101193b0();
+    if (!pPlayer || !pPlayer->m_pData)
+        return;
+    int nArg = 1;
+    int *pSecond = pPlayer->m_pData->m_nSecond;
+    for (int i = 10; i; i--) {
+        pSecond[-10] = atoi(g_1070b22c->vfunc84(nArg++));
+        pSecond[0] = atoi(g_1070b22c->vfunc84(nArg++));
+        pSecond++;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dac20 size=0x74
 #include "CGlobalEntityList.h"
 
