@@ -49899,6 +49899,16 @@ float CUnknown10312580::sub_10312580(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312b20 size=0x12
+void __fastcall sub_10312b20(char *p)
+{
+    *(unsigned char *)(p + 0x54) = 0;
+    *(int *)(p + 0x64) = -1;
+    *(unsigned char *)(p + 0x68) = 0;
+    *(int *)(p + 0x6c) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312f70 size=0x30
 #include "CUtlMemory16.h"
 
