@@ -35,6 +35,7 @@ public:
 	}
 
 	unsigned short sub_10046930(const void *search) const;	// "CUtlRBTree::Find"
+	unsigned short sub_10045de0(const int *pKey);	// "CUtlRBTree::Find" for a key whose first dword is copied into a 28-byte stack key; also publishes the dword at +0x18 (when set) in the global at 0x109f0b74 first
 	void sub_100498c0(unsigned short i, unsigned short parent, bool isLeft);	// "CUtlRBTree::LinkToParent" (with InsertRebalance inlined)
 	bool sub_1004c4c0(unsigned short i) const;	// "CUtlRBTree::IsLeftChild"
 	void sub_1004c5b0(unsigned short elem);	// "CUtlRBTree::RotateLeft"
