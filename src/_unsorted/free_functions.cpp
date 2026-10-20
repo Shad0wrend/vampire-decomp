@@ -24272,6 +24272,46 @@ int sub_101bb220(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bbd10 size=0x9e
+#include "CUnknown101bbd10.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b22c.h"
+extern CGlobalEntityList *g_10566458;
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_106b8540[];
+void sub_101b1880(int index, int value, const char *pszName);
+
+// TARGET: CUnknown101bbd10::sub_101bbd10
+void CUnknown101bbd10::sub_101bbd10()
+{
+    if (m_bPending) {
+        unsigned int h = m_hEntity;
+        if (h != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+            if (s->m_Serial == (int)(h >> 13) && s->m_pEntity) {
+                unsigned int h2 = *(volatile unsigned int *)&m_hEntity;
+                CBaseEntity *e;
+                if (h2 == 0xffffffff)
+                    e = 0;
+                else {
+                    CGlobalEntityList_Slot *s2 = &g_10566458->m_Slots[h2 & 0x1fff];
+                    e = (s2->m_Serial == (int)(h2 >> 13)) ? (CBaseEntity *)s2->m_pEntity : 0;
+                }
+                int edict = e->m_pEdict2e0;
+                int idx = g_1070b22c->vfunc35(edict);
+                if (idx >= 0) {
+                    const char *name = m_pszName;
+                    if (name == 0)
+                        name = g_106b8540;
+                    sub_101b1880(idx, m_nValue, name);
+                }
+            }
+        }
+        m_bPending = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc000 size=0x8
 void __fastcall sub_101bc000(int *p)
 {
