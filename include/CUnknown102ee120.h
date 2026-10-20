@@ -24,5 +24,6 @@ public:
 	void sub_102ee1c0(int value);
 	void sub_102ee250(int value);
 	void sub_102f2fe0(int value);
+	int sub_102ee3f0();	// current value (called through the stub at 0x10011f77)
 	CUnknown1030bc20_Record *sub_102ee5e0();
 };
