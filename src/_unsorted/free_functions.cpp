@@ -36789,6 +36789,34 @@ int *sub_1021d730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021d890 size=0x3c
+#include "CPropKeypad.h"
+
+extern int vt_1048ab34[];
+extern int vt_1048b074[];
+
+struct CUnknownTerminalBase1021d890 {
+    void sub_10014f4c();
+};
+
+struct CUnknownMember1021d890 {
+    void sub_10002ddd();
+};
+
+// TARGET: CPropKeypad::sub_1021d890
+CPropKeypad *CPropKeypad::sub_1021d890()
+{
+    ((CUnknownTerminalBase1021d890 *)this)->sub_10014f4c();
+    *(int **)this = vt_1048ab34;
+    ((CUnknownMember1021d890 *)((char *)this + 0x888))->sub_10002ddd();
+    ((CUnknownMember1021d890 *)((char *)this + 0x8a0))->sub_10002ddd();
+    *(int **)this = vt_1048b074;
+    m_bFlag8b8 = 0;
+    *((char *)this + 0x8b9) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e100 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_1021e100(); };
 void CUtlVectorBase::sub_1021e100() { m_Size = 0; }
