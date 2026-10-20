@@ -810,6 +810,7 @@
 0x10005f97 func   ?vfunc510@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc510
 0x10005fa6 func   ?vfunc8@CAutoGameSystem@@UAEPAV1@I@Z CAutoGameSystem::vfunc8
 0x10005fd3 func   ?sub_100575a0@CBaseFire@@QAEXH@Z CBaseFire::sub_100575a0
+0x10005ffb func   ?sub_100bf030@CUnknown100bf030@@QAE_NPBXH@Z CUnknown100bf030::sub_100bf030
 0x10006005 func   ?vfunc5@CNPC_VToreador@@QAEPAV1@I@Z CNPC_VToreador::vfunc5
 0x1000602d func   ?sub_10270ae0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10270ae0
 0x10006032 func   ?sub_101f1050@CUnknown101f1050@@QAEPAHXZ CUnknown101f1050::sub_101f1050

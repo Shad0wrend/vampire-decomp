@@ -10380,6 +10380,15 @@ float bf_read::sub_100beba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf030 size=0x14
+#include "CUnknown100bf030.h"
+
+bool CUnknown100bf030::sub_100bf030(const void *pData, int nBytes)
+{
+	return sub_10003e4a(pData, nBytes * 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0c60 size=0xd
 void CUnknown100c0c60::sub_100c0c60(float value)
 {
