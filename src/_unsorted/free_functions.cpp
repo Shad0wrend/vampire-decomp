@@ -36840,6 +36840,53 @@ int CBaseCombatCharacter::sub_103282e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10328c80 size=0x118
+extern int *g_109f3680;
+extern int *g_109f3620;
+extern char g_106b8540[];
+
+int CBaseCombatCharacter::sub_10328c80(int type)
+{
+    int r;
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680 * 3] = (int)"CBaseCombatCharacter::GetInitialGrappleAct";
+    g_109f3620[*g_109f3680 * 3 + 1] = (int)name;
+    g_109f3620[*g_109f3680 * 3 + 2] = (int)g_106b8540;
+    ++*g_109f3680;
+    switch (type) {
+    case 0:
+    case 1:
+        r = 0xf5b;
+        break;
+    case 2:
+        r = 0xfa5;
+        break;
+    case 3:
+        r = 0x1015;
+        break;
+    case 4:
+        r = 0x101e;
+        break;
+    case 5:
+        r = 0xf40;
+        break;
+    case 6:
+        r = 0x1027;
+        break;
+    case 7:
+        r = 0x94;
+        break;
+    case 8:
+        r = 0xfca;
+        break;
+    default:
+        __assume(0);
+    }
+    --*g_109f3680;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032a910 size=0xe3
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
