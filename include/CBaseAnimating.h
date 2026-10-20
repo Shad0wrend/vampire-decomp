@@ -53,6 +53,7 @@ public:
 	void sub_1008f540();	// "CBaseAnimating::ResetActivityIndexes ": scope trace, then a studio helper on GetModelPtr(-1)
 	int sub_10096760();	// "CBaseAnimating::GetHitboxSetCount": scope trace, then a studio helper on GetModelPtr(-1)
 	int sub_10092c90();	// "CBaseAnimating::GetNumBones": scope trace (entity name), then the int at +0xf0 of GetModelPtr(-1), 0 when missing
+	int sub_10097110(int index);	// "CBaseAnimating::GetPhysicsBone": scope trace (entity name), the dword at +0x94 of the 0xa0 byte record [index] (table at header + dword at +0xf4, count at +0xf0) of GetModelPtr(-1); 0 when out of range or no header
 
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
