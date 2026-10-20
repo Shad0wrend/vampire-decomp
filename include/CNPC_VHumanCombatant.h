@@ -12,4 +12,5 @@ public:
 	void sub_10384690();	// as in CNPC_VAndreiBlood (transplant)
 	void sub_10012855(int a);	// as in CNPC_VAndreiBlood (transplant)
 	CNPC_VHumanCombatant *sub_10386aa0();	// as in CKeepUpright (transplant)
+	void vfunc442(int *pEvent);	// slot 442: animation event handler, called directly as the base implementation by CNPC_VCop::vfunc442
 };
