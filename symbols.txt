@@ -3041,6 +3041,7 @@
 0x1000f1d2 func   ?sub_10073f40@CUnknown10073f40@@QAEXH@Z CUnknown10073f40::sub_10073f40
 0x1000f1d7 func   ?sub_102ee4f0@CUnknown102ee4f0@@QAEXXZ CUnknown102ee4f0::sub_102ee4f0
 0x1000f1f0 func   ?vfunc265@CBreakableProp@@QAEXXZ CBreakableProp::vfunc265
+0x1000f1f5 func   ?sub_100a99d0@@YAPAVCBaseEntity@@PBDPBM1PAV1@@Z sub_100a99d0
 0x1000f1fa func   _trigger_bomb_site trigger_bomb_site
 0x1000f1ff func   ?vfunc5@CCineNPC@@QAEPAV1@I@Z CCineNPC::vfunc5
 0x1000f213 func   ?vfunc5@CResearchBook_LG_DODGE@@QAEPAV1@I@Z CResearchBook_LG_DODGE::vfunc5

@@ -12818,6 +12818,27 @@ int CBaseEntity::sub_100a98f0(int useType, int currentState)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a99d0 size=0xa1
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+extern char g_10556a68[];
+CBaseEntity *sub_100a9ab0(const char *pszClassname, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
+void sub_101d1280(CBaseEntity *pEnt);
+
+CBaseEntity *sub_100a99d0(const char *pszClassname, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner)
+{
+	ScopeTrace trace(g_10556a68, g_106b8540);
+	CBaseEntity *pEnt = sub_100a9ab0(pszClassname, pOrigin, pAngles, pOwner);
+	if (pEnt) {
+		pEnt->vfunc11(g_106b8540);
+		pEnt->vfunc13(pszClassname);
+	}
+	sub_101d1280(pEnt);
+	return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9ab0 size=0xbc
 #include "CEntityVSlots.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
