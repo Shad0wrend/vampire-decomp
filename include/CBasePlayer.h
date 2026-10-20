@@ -87,7 +87,9 @@ public:
 	virtual void vfunc450();
 	CBP_V1(sk0c)
 	virtual bool vfunc452(const char *pszKey);	// slot 452 key handler: "vehicleRole" with two console arguments hands the role number to the vehicle at +0x20fc (leaving the vehicle first when it does not know the role yet)
-	CBP_V1(sk0e) CBP_V1(sk0f) CBP_V1(sk0g) CBP_V1(sk0h) CBP_V1(sk0i)
+	CBP_V1(sk0e) CBP_V1(sk0f) CBP_V1(sk0g)
+	virtual void vfunc456();	// slot 456: when the entity of the handle at +0xea4 is live (and the active weapon, if any, answers slot 313), hands the entity's classname and its slot 296 value to slot 457
+	virtual void vfunc457(const char *pszName, int a);
 	virtual void vfunc458();	// slot 458: if the entity at +0x1538 is not set up, lets the vehicle at +0x20fc handle it, else picks the weapon call by the float at +0x1564
 	CBP_V1(sl0) CBP_V1(sl1) CBP_V1(sl2) CBP_V1(sl3) CBP_V1(sl4) CBP_V1(sl5) CBP_V1(sl6) CBP_V1(sl7) CBP_V1(sl8)
 	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
@@ -96,7 +98,9 @@ public:
 	CBasePlayerSub270 m_sub270;	// 0x0270
 	char m_pad0274[0x6c];	// 0x0274 .. 0x02DF
 	int m_n02E0;
-	char m_pad02E4[0x1254];	// 0x02E4 .. 0x1537
+	char m_pad02E4[0xea4 - 0x2e4];	// 0x02E4 .. 0x0EA3
+	unsigned int m_hEnt0EA4;	// entity handle
+	char m_pad0EA8[0x1538 - 0xea8];	// 0x0EA8 .. 0x1537
 	unsigned int m_h1538;	// entity handle
 	int m_n153C;
 	char m_pad1540[0x24];	// 0x1540 .. 0x1563
