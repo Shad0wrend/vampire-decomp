@@ -38412,6 +38412,25 @@ float sub_103e1680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e1d20 size=0x43
+#include "CFlameCluster.h"
+void *sub_100aa720(int size);
+extern char g_10666470[];
+
+// TARGET: flame_cluster
+extern "C" CBaseEntity *flame_cluster()
+{
+	void *mem = sub_100aa720(0x48c);
+	CFlameCluster *p;
+	if (mem)
+		p = ((CFlameCluster *)mem)->sub_103e1e20();
+	else
+		p = 0;
+	p->vfunc106(g_10666470);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e2470 size=0xe1
 #include "CUnknown103e2470.h"
 #include "Mem1c.h"
