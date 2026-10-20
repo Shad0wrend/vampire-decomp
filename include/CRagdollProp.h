@@ -34,9 +34,11 @@ public:
 	virtual void vfunc250(); virtual void vfunc251(); virtual void vfunc252(); virtual void vfunc253(); virtual void vfunc254();
 	virtual void vfunc255(); virtual void vfunc256(); virtual void vfunc257(); virtual void vfunc258(); virtual void vfunc259();
 	virtual void vfunc260(); virtual void vfunc261(); virtual void vfunc262(); virtual void vfunc263(); virtual void vfunc264();
-	virtual void vfunc265(); virtual void vfunc266(); virtual void vfunc267(); virtual void vfunc268(); virtual void vfunc269();
+	virtual int vfunc265(const char *pszBone);	// slot 265: the dword at +0x744 + 0x18 * i of the first ragdoll element i (index table at +0xa08, count at +0x730) that belongs to the studio bone named pszBone or to its nearest parent bone; the first element's dword when nothing matches
+	virtual void vfunc266(); virtual void vfunc267(); virtual void vfunc268(); virtual void vfunc269();
 	virtual void vfunc270(int a, int b);
 	virtual void vfunc271(int a, int b);
+	void *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 (GetModelPtr-like), called directly
 	CRagdollProp *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10014317();	// as in CPhysForce (transplant)
 	void sub_101563b0(int index, int unused);	// stores the origin/angles of body `index` at +0x2a0 / +0x2fa (dwords); index 0 also calls slot 216 and PhysicsTouchTriggers
