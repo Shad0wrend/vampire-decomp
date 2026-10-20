@@ -28,5 +28,9 @@ public:
 	char m_pad1534[0x1550 - 0x1534];
 	char m_unk1550;
 	char m_pad1551[3];
-	int m_aN1554[5];	// 0x1554 .. 0x1567
+	int m_n1554;
+	int m_n1558;
+	int m_n155c;
+	int m_n1560;
+	int m_n1564;
 };
