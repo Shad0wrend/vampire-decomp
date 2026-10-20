@@ -10399,6 +10399,16 @@ int bf_read::sub_100be590(int numbits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be6b0 size=0x8e
+#include "bf_read.h"
+unsigned int bf_read::sub_100be6b0(int numbits, bool bSigned)
+{
+    if (bSigned)
+        return sub_100be590(numbits);
+    return ReadUBitLong(numbits);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100beba0 size=0xd1
 #include "bf_read.h"
 
