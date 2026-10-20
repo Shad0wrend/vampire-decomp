@@ -2533,6 +2533,7 @@
 0x100116a8 func   ?sub_1011d6a0@S1011d6a0@@QAEXH@Z S1011d6a0::sub_1011d6a0
 0x100116c6 func   ?sub_100466d0@S100466d0@@QAEPAU1@HHH@Z S100466d0::sub_100466d0
 0x100116f8 func   ?sub_10033aa0@CBaseEntity@@QAEXPAM00@Z CBaseEntity::sub_10033aa0
+0x10011702 func   ?sub_103e4640@@YAHXZ sub_103e4640
 0x1001171b func   ?vfunc17@CBaseEntity@@UAEXHH@Z CBaseEntity::vfunc17
 0x1001173e func   ?sub_1007fce0@UtlMem6@@QAEXH@Z UtlMem6::sub_1007fce0
 0x10011789 func   ?sub_100a0b20@CBaseEntity@@QAEXXZ CBaseEntity::sub_100a0b20
