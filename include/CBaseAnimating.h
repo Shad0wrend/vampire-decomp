@@ -100,4 +100,5 @@ public:
 	void sub_10004c3c();	// as in CSimplePhysicsProp (transplant)
 	void sub_10091f10(const char *name, float value);	// slot 261 "CBaseAnimating::SetPoseParameter01": scope trace (entity name), then slot 260(LookupPoseParameter(name), value)
 	void vfunc103();	// slot 103 "CBaseAnimating::Spawn": scope trace (entity name), CBaseEntity::vfunc103, then initialises the three 4-dword arrays at +0x574 (-2), +0x584 and +0x594 (0)
+	void vfunc130(int a);	// slot 130 "CBaseAnimating::OnRestore": scope trace (entity name), restores the bone controller / pose data (sub_100c7be0 for the two models) when the handle at +0x5b8 resolves, else slot 246(); clears +0x648/+0x64c when the handle at +0x63c is stale; then CBaseEntity::vfunc130(a)
 };
