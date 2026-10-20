@@ -40801,6 +40801,25 @@ char sub_103c29b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c4870 size=0x43
+#include "CNPC_VVampire.h"
+void *sub_100aa720(int size);
+extern char g_1065e0ec[];
+
+// TARGET: npc_VVampire
+extern "C" CBaseEntity *npc_VVampire()
+{
+	void *mem = sub_100aa720(0x6664);
+	CNPC_VVampire *p;
+	if (mem)
+		p = ((CNPC_VVampire *)mem)->sub_103c48e0();
+	else
+		p = 0;
+	p->vfunc106(g_1065e0ec);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c49d0 size=0x33
 void sub_100053cb();
 void sub_100113e2();
