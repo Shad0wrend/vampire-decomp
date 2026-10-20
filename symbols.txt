@@ -1636,6 +1636,7 @@
 0x1000a65a func   _item_w_grenade_frag item_w_grenade_frag
 0x1000a65f func   _prop_destructable prop_destructable
 0x1000a682 func   ?sub_101f95f0@@YAXH@Z sub_101f95f0
+0x1000a6c8 func   ?sub_1023adb0@CDecal@@QAE_NPBD0@Z CDecal::sub_1023adb0
 0x1000a6fa func   ?sub_10175180@@YI_NPAUHolder@@@Z sub_10175180
 0x1000a704 func   ?sub_1030bc20@CUnknown1030bc20@@QAEHXZ CUnknown1030bc20::sub_1030bc20
 0x1000a70e func   ?vfunc266@CSceneEntity@@UAEXHPBD@Z CSceneEntity::vfunc266
