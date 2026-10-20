@@ -10,7 +10,7 @@ public:
 	char pad0[0x254];
 	unsigned int m_hAttachEntity;	// 0x254
 	char pad258[0x450 - 0x258];
-	const char *m_iszParticleName;	// 0x450
+	int m_iszParticleName;	// 0x450 (string_t)
 	int m_iParticleIndex;	// 0x454
 	char pad458[0x484 - 0x458];
 	int m_unk484;
