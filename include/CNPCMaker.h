@@ -7,4 +7,17 @@ class CNPCMaker : public CBaseEntity
 {
 public:
 	CNPCMaker *sub_1034ad80();
+	void vfunc103();	// slot 103 "CNPCMaker::Spawn": SetSolid(0) (inlined scope trace), clears +0x66b0, slot 104, with the flag at +0x66c3 sets the flag at +0x66c2, then installs the think function (with the delay at +0x6664 unless the flag at +0x66c0 is set) and clears +0x66b8
+
+	char m_pad03e0[0x6664 - 0x3e0];
+	float m_flSpawnDelay;	// 0x6664
+	char m_pad6668[0x66b0 - 0x6668];
+	int m_n66b0;	// 0x66b0
+	char m_pad66b4[4];
+	int m_n66b8;	// 0x66b8
+	char m_pad66bc[4];
+	char m_b66c0;	// 0x66c0
+	char m_pad66c1;
+	char m_b66c2;	// 0x66c2
+	char m_b66c3;	// 0x66c3
 };
