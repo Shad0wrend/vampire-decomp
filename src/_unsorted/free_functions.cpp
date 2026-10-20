@@ -29606,6 +29606,22 @@ void UtlMem::sub_102c8c00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c8c40 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_102c8c40()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c8ca0 size=0xa
 extern char g_109203dc;
 void __fastcall sub_1000c3c9(void *);

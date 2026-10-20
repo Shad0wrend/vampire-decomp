@@ -2305,6 +2305,7 @@
 0x1000efbb func   ?sub_10334500@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_10334500
 0x1000efe8 func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>::vfunc2
 0x1000eff2 func   ?vfunc2@CTEBeamEnts@@UAEPAV1@I@Z CTEBeamEnts::vfunc2
+0x1000f001 func   ?sub_102c8c40@UtlMem@@QAEXXZ UtlMem::sub_102c8c40
 0x1000f006 func   ?vfunc546@CNPC_VYukie@@QAEHH@Z CNPC_VYukie::vfunc546
 0x1000f024 func   ?sub_1024a080@NodeHolder@@QAEHG@Z NodeHolder::sub_1024a080
 0x1000f065 func   ?sub_1015dc60@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_1015dc60
