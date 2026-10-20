@@ -2363,6 +2363,7 @@
 0x100100f5 func   ?sub_1002d070@@YAXPAUS10032fb0@@HHHHIGM@Z sub_1002d070
 0x10010104 func   ?sub_100cd7e0@TOutput@@QAEHPAUTSave@@@Z TOutput::sub_100cd7e0
 0x10010113 func   _npc_VSheriffMan npc_VSheriffMan
+0x10010118 func   ?sub_103f9dd0@@YAHXZ sub_103f9dd0
 0x1001011d func   ?vfunc5@CPhysConstraintSystem@@UAEPAV1@I@Z CPhysConstraintSystem::vfunc5
 0x10010140 func   ?sub_1024a980@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1024a980
 0x10010163 func   ?sub_1007ee00@@YIXPAH@Z sub_1007ee00
