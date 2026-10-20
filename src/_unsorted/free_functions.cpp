@@ -29004,6 +29004,40 @@ extern "C" GP *trigger()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4dd0 size=0x113
+#include "CBaseTrigger.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+struct SolidFlagBits
+{
+	unsigned short f0 : 1;
+	unsigned short f1 : 1;
+	unsigned short f2 : 1;
+	unsigned short f3 : 1;
+};
+
+// TARGET: CBaseTrigger::sub_101c4dd0
+void CBaseTrigger::sub_101c4dd0()
+{
+	unsigned char isSet;
+	{
+		ScopeTrace trace("CBaseEntity::IsSolidFlagSet", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		isSet = ((SolidFlagBits *)((char *)this + 0x2b4))->f3;
+	}
+	if (isSet)
+	{
+		{
+			ScopeTrace trace("CBaseEntity::RemoveSolidFlags", m_name26c ? m_name26c : g_106b8540);
+			CCollisionProperty *pColl = (CCollisionProperty *)((char *)this + 0x270);
+			pColl->sub_100dc580(*(unsigned short *)((char *)pColl + 0x44) & ~8);
+		}
+		sub_100a53d0(0);
+	}
+	*(char *)((char *)this + 0x55c) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5c30 size=0x43
 #include "CTriggerHurt.h"
 void *sub_100aa720(int size);
