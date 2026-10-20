@@ -24434,6 +24434,26 @@ const char *CUnknown101da960::sub_101da960(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dadd0 size=0x80
+#include "CUnknown101da960.h"
+
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *pszFormat, ...);
+
+void CUnknown101da960::sub_101dadd0()
+{
+    char szBuffer[512];
+    Q_snprintf(szBuffer, sizeof(szBuffer), "[AffectsFilter]:\n");
+    Msg("%s", szBuffer);
+    for (int i = 0; i < 15; i++) {
+        if (sub_101da980(i)) {
+            Q_snprintf(szBuffer, sizeof(szBuffer), "   %s\n", sub_101da960(i));
+            Msg("%s", szBuffer);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dae70 size=0x16
 struct S6 {
 	int a, b, c, d, e, f;
