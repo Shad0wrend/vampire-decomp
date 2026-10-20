@@ -25,6 +25,8 @@ public:
 	void sub_10004c3c();
 	void vfunc268(int index, int a, int sequence, char flag);	// slot 268: initialises the 0x30 byte animation overlay record [index] (array at +0x738) with the sequence, the weights and fade times; clears the fade weights again when the sequence's flag bit 1 is set
 	char *sub_1008d990(int sequence);	// CBaseAnimating::sub_1008d990 (stub 0x1000b4f6): the sequence description, 0 when invalid
+	void vfunc31(int a);	// slot 31 "CBaseAnimatingOverlay::DumpEntity"-like: 24 times the no-flinch byte (+0x730) and the record of the overlay layer (flags, finished, sequence, cycle, rate, weight, activity, auto kill) through the Dump helpers, then CBaseAnimating::vfunc31(a)
+	void sub_1008b530(int a);	// CBaseAnimating::vfunc31 (stub 0x10007144), called directly
 
 	char m_pad0000[0x738];
 	CAnimationLayer m_Layers[15];	// 0x738
