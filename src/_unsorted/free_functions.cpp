@@ -39551,6 +39551,80 @@ void CBaseCombatCharacter::sub_1033f3f0(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10340180 size=0x17e
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+extern "C" int _strcmpi(const char *, const char *);
+extern void (__cdecl *g_109f3630)(const char *, ...);
+struct IdPart {
+    int m_id;
+};
+struct NamePart {
+    const char *m_pszName;
+    const char *Get() { return m_pszName ? m_pszName : g_106b8540; }
+};
+struct SectionRec : public IdPart, public NamePart {
+};
+extern int g_1073a2dc;
+extern SectionRec **g_1073a2e0;
+extern int g_10619d28[8];
+extern int g_10937cd0[8];
+extern char g_10937cf0;
+
+void sub_10340180()
+{
+    const char *names[8] = {
+        "None", "Weapon_Melee", "Weapon_Ranged", "Weapon_Thrown",
+        "Armor", "Generic", "Powerups", "Hidden"
+    };
+    void (__cdecl *msg)(const char *, ...) = g_109f3630;
+    ScopeTrace trace("CBaseCombatCharacter::CacheInventorySections", g_106b8540, g_106b8540);
+    for (int i = 0; i < 8; i++) {
+        const char *name = names[i];
+        int j = 0;
+        int idx;
+        if (g_1073a2dc > 0) {
+            do {
+                if (_strcmpi(g_1073a2e0[j]->Get(), name) == 0) {
+                    idx = g_1073a2e0[j]->m_id;
+                    goto found;
+                }
+                j++;
+            } while (j < g_1073a2dc);
+        }
+        idx = -1;
+    found:
+        int v = idx - 1;
+        g_10619d28[i] = v;
+        if (v < 0 && i != 0) {
+            msg("***************************************\n");
+            msg("**   WARNING\n");
+            msg("inventory section '%s' was not found.\n", name);
+            msg("Perhaps the name was changed in vdata\\System\\Items.txt\n");
+            msg("NPCs may be unable to switch to certain weapons until\n");
+            msg("this is fixed.\n");
+            msg("**   WARNING\n");
+            msg("***************************************\n");
+        }
+        g_10937cd0[i] = 0;
+        if (g_10619d28[i] > 0)
+            g_10937cd0[i] = g_10619d28[i] << 5;
+    }
+    g_10937cf0 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10340bd0 size=0x86
 #include "CBaseCombatCharacter.h"
 
