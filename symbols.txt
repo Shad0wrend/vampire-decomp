@@ -856,6 +856,7 @@
 0x1000655a func   ?sub_10032bb0@CUtlVector88@@QAEXHH@Z CUtlVector88::sub_10032bb0
 0x10006569 func   ?sub_103e7b10@@YAHXZ sub_103e7b10
 0x1000656e func   ?sub_101f74e0@@YI_NPAH@Z sub_101f74e0
+0x10006578 func   ?sub_1027fba0@UtlVec8@@QAEXHH@Z UtlVec8::sub_1027fba0
 0x10006596 func   _func_breakable_surf func_breakable_surf
 0x100065aa func   ?sub_101e9880@CUnknown101e9880@@QAEPAV1@XZ CUnknown101e9880::sub_101e9880
 0x100065be func   ?sub_1042d9a0@CUnknown1042d9a0@@QAEGXZ CUnknown1042d9a0::sub_1042d9a0
