@@ -1816,6 +1816,7 @@
 0x1000b8f7 func   ?sub_10077730@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10077730
 0x1000b901 func   ?sub_10098810@CUnknown10098810@@QAEPAV1@XZ CUnknown10098810::sub_10098810
 0x1000b92e func   ?sub_10373620@@YADXZ sub_10373620
+0x1000b979 func   ?sub_1020a240@CUnknown1020a240@@QAEXPBDHHHH@Z CUnknown1020a240::sub_1020a240
 0x1000b983 func   ?sub_101f2cd0@CUnknown101f2cd0@@QAEXH@Z CUnknown101f2cd0::sub_101f2cd0
 0x1000b9b5 func   ?sub_100976e0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_100976e0
 0x1000b9d8 func   ?sub_103dc040@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_103dc040

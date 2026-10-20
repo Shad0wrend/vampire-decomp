@@ -25756,6 +25756,33 @@ extern "C" CBaseEntity *item_container_animated()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020a240 size=0x14f
+#include "CUnknown1020a240.h"
+
+extern char *(*g_109f3890)(char *, const char *, int);	// Q_strncpy
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+
+// TARGET: CUnknown1020a240::sub_1020a240
+void CUnknown1020a240::sub_1020a240(const char *text, int a, int b, int c, int d)
+{
+	CUnknown1020a240Msg msg;
+	memset(&msg, 0, sizeof(msg));
+	g_109f3890(msg.m_text, text, 0x80);
+	msg.m_a = a;
+	msg.m_b = b;
+	msg.m_c = c;
+	msg.m_d = d;
+
+	int elem = m_size;
+	GrowVector(1);
+	ShiftElementsRight(elem, 1);
+	CUnknown1020a240Msg *dst = &m_pMemory[elem];
+	if (dst)
+		*dst = msg;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b000 size=0x9
 int CBaseVampireSkillEntity::sub_1020b000(CBaseEntity *pPlayer)
 {
