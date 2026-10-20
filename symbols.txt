@@ -1244,6 +1244,7 @@
 0x1000884b func   ?sub_10313f70@@YIXPAUMem16@@HH@Z sub_10313f70
 0x10008850 func   ?sub_101daf60@CUnknown101daf60@@QAE_NXZ CUnknown101daf60::sub_101daf60
 0x1000885a func   _gravity_pellet gravity_pellet
+0x1000885f func   ?vfunc104@CWindowPane@@QAEXXZ CWindowPane::vfunc104
 0x1000886e func   _aiscripted_sequence aiscripted_sequence
 0x10008887 func   ?vfunc489@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc489
 0x10008896 func   ?sub_100b4970@UtlMem@@QAEXXZ UtlMem::sub_100b4970
