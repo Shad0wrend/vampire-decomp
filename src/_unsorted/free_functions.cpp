@@ -12548,6 +12548,42 @@ int TOutput::sub_100cd7e0(TSave *save)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdba0 size=0x82
+#include "CUnknown100cdba0.h"
+
+void *sub_100cdc60(unsigned int size);
+
+void CUnknown100cdba0::sub_100cdba0(CUnknown100cdba0Data data, int key)
+{
+	for (CUnknown100cdba0Node *p = m_pHead; p; p = p->m_pNext) {
+		if (p->m_key == key) {
+			p->m_data = data;
+			return;
+		}
+	}
+	CUnknown100cdba0Node *node;
+	CUnknown100cdba0Node *mem = (CUnknown100cdba0Node *)sub_100cdc60(sizeof(CUnknown100cdba0Node));
+	if (mem) {
+		mem->m_data.m_f0 = 0;
+		mem->m_data.m_fc = -1;
+		mem->m_data.m_f10 = 0;
+		node = mem;
+	} else {
+		node = 0;
+	}
+	node->m_data = data;
+	node->m_key = key;
+	CUnknown100cdba0Node *head = m_pHead;
+	if (head == 0) {
+		m_pHead = node;
+		node->m_pNext = head;
+		return;
+	}
+	node->m_pNext = head;
+	m_pHead = node;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce3c0 size=0x64
 struct Node_t { char pad[0x38]; Node_t *next; };
 struct CList_t {
