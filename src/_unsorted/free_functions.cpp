@@ -13603,6 +13603,28 @@ int *CUnknown100ddf40::sub_100ddf40(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ddf60 size=0x8f
+void CBaseEntity::sub_100ddf60(const int *pData)
+{
+	int *p = (int *)((char *)this + 0x450);
+	p[0] = pData[0];
+	p[1] = pData[1];
+	p[2] = pData[2];
+	p[3] = pData[3];
+	p[4] = pData[4];
+	p[5] = pData[5];
+	p[6] = pData[6];
+	p[7] = pData[7];
+	p[8] = pData[8];
+	p[9] = pData[9];
+	p[10] = pData[10];
+	p[11] = pData[11];
+	p[12] = pData[12];
+	p[13] = pData[13];
+	sub_100ac4e0(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100de610 size=0x8
 void sub_100055b5();
 void __stdcall sub_100de610(int) { sub_100055b5(); }
