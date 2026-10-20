@@ -11352,6 +11352,17 @@ void sub_100f4140(const char *name, int id, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4190 size=0x3e
+extern "C" __declspec(dllimport) int Q_snprintf(char *buf, int size, const char *fmt, ...);
+void __cdecl sub_100f4490(char *cmd, int a);
+void sub_100f4190(const char *name, int id, int a)
+{
+	char buf[260];
+	Q_snprintf(buf, sizeof(buf), "map_check_version %s %d", name, id);
+	sub_100f4490(buf, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4490 size=0xf0
 extern "C" {
 __declspec(dllimport) void *__stdcall FindWindowA(const char *, const char *);
