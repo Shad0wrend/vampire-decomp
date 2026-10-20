@@ -8,3 +8,4 @@
 	void *sub_10336f20();	// "CBaseCombatCharacter::GetBestMeleeWeapon": scope trace (entity name), walks the weapon slot types of the global list and returns the first weapon whose flags (slot 360) have bit 15 or 16, else null
 	bool sub_10336b90();	// "CBaseCombatCharacter::HasRangedWeapon": scope trace (entity name), for each type group in the global tables (terminated by -1) checks the weapon slots [start, start + slot 298(group)) for a weapon whose flags (weapon slot 360) have bit 13 or 14 set
 	void sub_1033d190(int flag);	// "CBaseCombatCharacter::RemoveDisciplineEffect": scope trace (entity name), clears the flag from the discipline effect mask (+0xeb0, or +0xeb4 with the top bit masked when the flag is negative), then removes the 16 byte record keyed by flag from the array at +0xfb4 (count at +0xfc0)
+	int sub_10328c80(int type);	// "CBaseCombatCharacter::GetInitialGrappleAct": scope trace (entity name), a switch over 0..7 returning an activity number
