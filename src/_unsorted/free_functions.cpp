@@ -12623,6 +12623,77 @@ void CUnknown100f6d80::sub_100f6d80(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f71c0 size=0x115
+inline void *operator new(unsigned int, void *p) { return p; }
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct EntSlots_t
+{
+    SL10(a00) SL10(a01) SL10(a02) SL10(a03) SL10(a04) SL10(a05) SL10(a06) SL10(a07) SL10(a08) SL10(a09) SL10(a10)
+    virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5();
+    virtual char vfunc116();
+};
+
+struct UtlMem3
+{
+    int *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    void sub_100b4a40(int num);
+};
+struct EntPtrVec_t
+{
+    UtlMem3 m_Memory;
+    int m_Size;
+    int *m_pElements;
+
+    int Count() const { return m_Size; }
+    int *Base() const { return m_Memory.m_pMemory; }
+    int Find(int src) const
+    {
+        for (int i = 0; i < Count(); i++)
+            if (Base()[i] == src)
+                return i;
+        return -1;
+    }
+};
+extern EntPtrVec_t g_10703654;
+
+void __stdcall sub_100f71c0(EntSlots_t *pEnt, unsigned int oldFlags, unsigned int newFlags)
+{
+    if (!pEnt->vfunc116()) {
+        unsigned int changed = oldFlags ^ newFlags;
+        if (changed & 0x10000) {
+            unsigned int removed = changed & oldFlags;
+            unsigned int added = changed & newFlags;
+            if (added & 0x10000) {
+                if (!pEnt->vfunc116()) {
+                    int elem = g_10703654.m_Size;
+                    if (g_10703654.m_Size + 1 > g_10703654.m_Memory.m_allocationCount)
+                        g_10703654.m_Memory.sub_100b4a40(g_10703654.m_Size - g_10703654.m_Memory.m_allocationCount + 1);
+                    g_10703654.m_Size++;
+                    g_10703654.m_pElements = g_10703654.m_Memory.m_pMemory;
+                    int numToMove = g_10703654.m_Size - elem - 1;
+                    if (numToMove > 0)
+                        memmove(g_10703654.m_Memory.m_pMemory + elem + 1, g_10703654.m_Memory.m_pMemory + elem, numToMove * 4);
+                    new (g_10703654.m_Memory.m_pMemory + elem) int((int)pEnt);
+                }
+            }
+            if (removed & 0x10000) {
+                int i = g_10703654.Find((int)pEnt);
+                if (i >= 0 && i < g_10703654.m_Size && g_10703654.m_Size > 0) {
+                    memmove(g_10703654.m_Memory.m_pMemory + i, g_10703654.m_Memory.m_pMemory + g_10703654.m_Size - 1, 4);
+                    g_10703654.m_Size--;
+                }
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8e20 size=0x80
 void *sub_10430fa0(void *, const void *, unsigned);
 
