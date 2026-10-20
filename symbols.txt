@@ -1286,6 +1286,7 @@
 0x1000732e func   _item_k_clinic_cs_key item_k_clinic_cs_key
 0x1000733d func   ?vfunc440@CNPC_VTzimisceHeadClaw@@UAEHH@Z CNPC_VTzimisceHeadClaw::vfunc440
 0x10007342 func   ?sub_10041b90@@YA_NPAH0@Z sub_10041b90
+0x10007347 func   ?sub_102a9540@CVector2Dot@@QAEMPBU1@@Z CVector2Dot::sub_102a9540
 0x1000734c func   ?sub_101c49e0@@YAPAHXZ sub_101c49e0
 0x1000737e func   ?sub_1034abb0@@YAPAHXZ sub_1034abb0
 0x10007383 func   ?vfunc5@CKeepUpright@@QAEPAV1@I@Z CKeepUpright::vfunc5

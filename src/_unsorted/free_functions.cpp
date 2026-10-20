@@ -44547,6 +44547,20 @@ bool __fastcall sub_102a1620(N *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9540 size=0x13
+struct CVector2Dot {
+    float m_x;
+    float m_y;
+    float sub_102a9540(const CVector2Dot *other);
+};
+
+// TARGET: sub_102a9540
+float CVector2Dot::sub_102a9540(const CVector2Dot *other)
+{
+    return other->m_x * m_x + other->m_y * m_y;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a95e0 size=0xa
 struct CUnknown102a95e0 { int a[1]; int *sub_102a95e0(int i); };
 // TARGET: CUnknown102a95e0::sub_102a95e0
