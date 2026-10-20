@@ -3439,6 +3439,7 @@
 0x1001175c func   ?sub_1025da90@@YIXPAUS1025da90@@@Z sub_1025da90
 0x1001177f func   ?sub_103c6f40@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c6f40
 0x10011789 func   ?sub_100a0b20@CBaseEntity@@QAEXXZ CBaseEntity::sub_100a0b20
+0x1001178e func   ?sub_1025b390@CHolderVDmg198@@QAEPAU1@XZ CHolderVDmg198::sub_1025b390
 0x10011793 func   ?vfunc103@CBaseProp@@QAEXXZ CBaseProp::vfunc103
 0x100117a2 func   ?vfunc626@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc626
 0x100117ac func   ?sub_1020b000@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z CBaseVampireSkillEntity::sub_1020b000

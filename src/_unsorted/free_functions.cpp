@@ -42353,6 +42353,25 @@ bool sub_10259120(SKeyValues *kv, char *out, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025b390 size=0x12
+struct CVDmg_t {
+    CVDmg_t();
+};
+
+struct CHolderVDmg198 {
+    char pad_0000[0x198];
+    CVDmg_t m_vDmg198;
+    CHolderVDmg198 *sub_1025b390();
+};
+
+// TARGET: sub_1025b390
+CHolderVDmg198 *CHolderVDmg198::sub_1025b390()
+{
+    m_vDmg198.CVDmg_t::CVDmg_t();
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025b5b0 size=0x9
 extern unsigned short g_1089d7da;
 
