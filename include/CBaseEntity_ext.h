@@ -49,3 +49,4 @@
 	void sub_100b4280(const char *pszContext);	// "CBaseEntity::AddContext": scope trace (entity name) only (the empty body); takes one stack argument
 	void sub_100b97b0();	// stub 0x10013a7f, called directly (e.g. by the sheriff's teleport bats setup)
 	void sub_100b9880(const float *pOrigin, float a, float b, float c, float d, float e, float f);	// stub 0x1001582a, called directly with an origin and six floats (two vectors by value)
+	void sub_100a8060();	// "CBaseEntity::MakeDormant": scope trace (entity name), sets bit 1 of the flags at +0x268 and clears the think function; with an edict (+0x2e0): sets that bit again, AddSolidFlags(4) on the collision property at +0x270 (inlined scope trace), slot 93(0, 0), next think time 0, bit 6 of +0x19c, then sub_100b3b00()
