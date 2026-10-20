@@ -23750,6 +23750,50 @@ void CUnknown101f5f00::sub_101f5f00(int first, int key, int second)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f63b0 size=0x121
+#include "FileSystemViews.h"
+
+extern IFileSystemView *g_1070b238;
+extern IUniformRandomView *g_1070b244;
+extern char g_1074b078[];
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+const char *__stdcall sub_101f63b0(const char *szName)
+{
+    char path[260];
+    int handle;
+    int count = 0;
+    int pick, i;
+    const char *file;
+    sprintf(path, "sound\\whispers\\%s\\*.wav", szName);
+    file = g_1070b238->FindFirst(path, &handle);
+    while (file) {
+        if (!g_1070b238->FindIsDirectory(handle))
+            count++;
+        file = g_1070b238->FindNext(handle);
+    }
+    g_1070b238->FindClose(handle);
+    if (count != 0) {
+        count--;
+        pick = g_1070b244->RandomInt(0, count);
+        i = 0;
+        file = g_1070b238->FindFirst(path, &handle);
+        while (file) {
+            if (!g_1070b238->FindIsDirectory(handle)) {
+                if (pick == i)
+                    break;
+                i++;
+            }
+            file = g_1070b238->FindNext(handle);
+        }
+        sprintf(g_1074b078, "whispers\\%s\\%s", szName, file);
+        g_1070b238->FindClose(handle);
+        return g_1074b078;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f6c30 size=0x9
 bool CUnknown101f6c30::sub_101f6c30()
 {

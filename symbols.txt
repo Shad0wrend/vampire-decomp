@@ -511,6 +511,7 @@
 0x100040e3 func   ?vfunc3@CEntitySaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CEntitySaveRestoreBlockHandler::vfunc3
 0x100040f7 func   ?sub_1042fc30@@YAII@Z sub_1042fc30
 0x10004129 func   ?vfunc30@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc30
+0x100041dd func   ?sub_101f63b0@@YGPBDPBD@Z sub_101f63b0
 0x100041e2 func   ?sub_101f9610@@YAXH@Z sub_101f9610
 0x100041fb func   ?sub_1004a2a0@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004a2a0
 0x1000420a func   ?sub_101bdf90@@YIXPAUMem4@@HH@Z sub_101bdf90
