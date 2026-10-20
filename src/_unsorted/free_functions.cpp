@@ -28542,6 +28542,22 @@ UtlMem *UtlMem::sub_1027f8f0(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027f940 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_109f3634)(int);
+
+UtlMem *UtlMem::sub_1027f940(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_109f3634(allocationCount * 8);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027f990 size=0x8f
 #include "CUtlVector20.h"
 extern void *(*g_109f3634)(int);
