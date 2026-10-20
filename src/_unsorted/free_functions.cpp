@@ -21716,6 +21716,50 @@ PyObj *sub_101970f0(void *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10197360 size=0x95
+struct PyObj;
+struct PyVec3 { float x, y, z; };
+
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObj *args, const char *format, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred(void);
+__declspec(dllimport) void PyErr_SetString(PyObj *exc, const char *msg);
+__declspec(dllimport) extern PyObj *PyExc_StandardError;
+}
+extern PyObj *g_109f3748;	// &_Py_NoneStruct
+void *sub_10196780(PyObj *pObj);
+PyObj *sub_10196230(PyVec3 v);
+
+#define EV_T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define EV_H(p) EV_T(p##0) EV_T(p##1) EV_T(p##2) EV_T(p##3) EV_T(p##4) EV_T(p##5) EV_T(p##6) EV_T(p##7) EV_T(p##8) EV_T(p##9)
+
+class PyEntityView	// an entity's vtable up to slot 221
+{
+public:
+	EV_H(a) EV_H(b) EV_T(c0) EV_T(c1)
+	virtual void d0();
+	virtual PyVec3 *GetAngles();
+};
+
+struct PyObj { int m_refcnt; };
+
+PyObj *sub_10197360(PyObj *self, PyObj *args)
+{
+	PyObj *pEntObj = 0;
+	if (!PyArg_ParseTuple(args, "O", &pEntObj)) {
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_StandardError, "bad args to GetAngles()");
+		return 0;
+	}
+	PyEntityView *pEnt = (PyEntityView *)sub_10196780(pEntObj);
+	if (pEnt)
+		return sub_10196230(*pEnt->GetAngles());
+	g_109f3748->m_refcnt++;
+	return g_109f3748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197510 size=0x8f
 extern int (*g_109f37a0)(int, const char *, ...);
 extern int (*g_109f377c)();
