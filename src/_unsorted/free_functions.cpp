@@ -36690,6 +36690,40 @@ void CUnknown10289cc0::sub_10289cc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028a190 size=0x97
+#include "CAI_BaseNPCTroika.h"
+#include "CCineNPC.h"
+#include "CEntityVSlots.h"
+
+struct EntInfo { CCineNPC *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+
+char CAI_BaseNPCTroika::sub_1028a190()
+{
+	if (vfunc464() == 4) {
+		unsigned int h = m_h5d74;
+		if (h != 0xffffffff) {
+			EntInfo *e = &g_10566458->m_entries[h & 0x1fff];
+			if (e->m_serial == (int)(h >> 13) && e->m_pEntity) {
+				unsigned int h2 = *(volatile unsigned int *)&m_h5d74;
+				CCineNPC *pCine;
+				EntInfo *e2;
+				if (h2 != 0xffffffff && (e2 = &g_10566458->m_entries[h2 & 0x1fff], e2->m_serial == (int)(h2 >> 13)))
+					pCine = e2->m_pEntity;
+				else
+					pCine = 0;
+				if (!pCine->sub_101a8930())
+					return 0;
+			}
+		}
+	}
+	if (m_b5bc4 || (m_flags14bc & 0x1000))
+		return 0;
+	return ((CEntityVSlots *)this)->slot158();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028ae60 size=0x8c
 #include "CAI_BaseNPC.h"
 
