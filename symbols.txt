@@ -637,6 +637,7 @@
 0x10004fde func   ?sub_1007f510@@YAXPAHPBH@Z sub_1007f510
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
 0x10004fe8 func   ?vfunc5@CWeaponMelee_Tzimisce3Claw@@QAEPAV1@I@Z CWeaponMelee_Tzimisce3Claw::vfunc5
+0x1000501a func   ?sub_101ecae0@CUnknown101ecae0@@QAEXH@Z CUnknown101ecae0::sub_101ecae0
 0x1000506f func   ?vfunc546@CNPC_VSabbatLeader@@QAEHH@Z CNPC_VSabbatLeader::vfunc546
 0x10005074 func   ?vfunc5@CSun@@QAEPAV1@I@Z CSun::vfunc5
 0x10005088 func   ?sub_103ca390@CHintData_WW@@QAEXH@Z CHintData_WW::sub_103ca390
