@@ -24514,6 +24514,50 @@ PyObj *sub_10197b00(void *self, void *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10197e50 size=0xcc
+struct PyObj { int ob_refcnt; };
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObj *args, const char *format, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred();
+__declspec(dllimport) void PyErr_SetString(PyObj *exc, const char *msg);
+__declspec(dllimport) extern PyObj *PyExc_AttributeError;
+__declspec(dllimport) extern PyObj _Py_NoneStruct;
+}
+void *sub_10196780(PyObj *pEntity);
+
+struct CCombatCharacterObj
+{
+	void sub_102c0f70(const char *pszTarget, int disposition);
+};
+
+PyObj *sub_10197e50(PyObj *self, PyObj *args)
+{
+	PyObj *pEntity;
+	int disposition;
+	const char *pszTarget;
+	pEntity = 0;
+	pszTarget = 0;
+	disposition = 0;
+	if (!PyArg_ParseTuple(args, "Osi", &pEntity, &pszTarget, &disposition))
+	{
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_AttributeError, "bad args to SetDisposition()");
+		return 0;
+	}
+	void *pEnt = sub_10196780(pEntity);
+	CCombatCharacterObj *pChar = pEnt ? *(CCombatCharacterObj **)((char *)pEnt + 0x98) : 0;
+	if (!pChar)
+	{
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_AttributeError, "SetDisposition needs to be called by a combat character.");
+		return 0;
+	}
+	pChar->sub_102c0f70(pszTarget, disposition);
+	_Py_NoneStruct.ob_refcnt++;
+	return &_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199990 size=0xad
 extern int (*g_109f37a0)(int, const char *, ...);
 extern int (*g_109f377c)();
