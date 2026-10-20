@@ -1616,6 +1616,7 @@
 0x1000aa42 func   ?sub_100b0ad0@@YAXXZ sub_100b0ad0
 0x1000aa5b func   ?vfunc5@CWeaponIGeneric@@QAEPAV1@I@Z CWeaponIGeneric::vfunc5
 0x1000aa7e func   ?sub_10050860@CUnknown10050860@@QAEPBDXZ CUnknown10050860::sub_10050860
+0x1000aabf func   ?sub_101ec6c0@CUnknown101ec6c0@@QAEXH@Z CUnknown101ec6c0::sub_101ec6c0
 0x1000aad3 func   ?sub_103c29b0@@YADXZ sub_103c29b0
 0x1000aaf6 func   ?sub_103eeec0@@YAXXZ sub_103eeec0
 0x1000ab28 func   ?sub_10060ac0@@YAXHHPBH0HHHD@Z sub_10060ac0
