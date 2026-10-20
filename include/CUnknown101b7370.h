@@ -1,5 +1,5 @@
-// CUnknown101b7370: a pool of 0xe8-byte nodes (array pointer at +4, first free node index at +0x18); each node holds two
-// small vectors at +0x3c and +0x50; real name not yet known.
+// CUnknown101b7370: a pool of 0xe8-byte nodes (array pointer at +4, first free node index at +0x18); each node holds a
+// payload at +0x1c with two small vectors; real name not yet known.
 #pragma once
 
 #include "UtlMem.h"
@@ -13,14 +13,20 @@ public:
 	int *sub_100051af();	// returns the base pointer (the first dword)
 };
 
+struct CUnknown101b7370Payload
+{
+	char m_pad00[0x20];
+	CUnknown101b7370Vec m_vecA;	// 0x20
+	CUnknown101b7370Vec m_vecB;	// 0x34
+	char m_pad48[0xe8 - 0x1c - 0x48];
+};
+
 struct CUnknown101b7370Node
 {
 	int m_nIndex;	// 0x00
 	int m_nNext;	// 0x04
-	char m_pad08[0x3c - 8];
-	CUnknown101b7370Vec m_vecA;	// 0x3c
-	CUnknown101b7370Vec m_vecB;	// 0x50
-	char m_pad64[0xe8 - 0x64];
+	char m_pad08[0x1c - 8];
+	CUnknown101b7370Payload m_payload;	// 0x1c
 };
 
 void __fastcall sub_101b6a30(int *pVec);
