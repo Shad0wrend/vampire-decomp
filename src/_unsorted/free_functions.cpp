@@ -23102,6 +23102,25 @@ extern "C" CBaseEntity *trigger_player_activity_level()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210be0 size=0x43
+#include "CTriggerDisciplineContext.h"
+void *sub_100aa720(int size);
+extern char g_105ae7dc[];
+
+// TARGET: trigger_discipline_context
+extern "C" CBaseEntity *trigger_discipline_context()
+{
+	void *mem = sub_100aa720(0x59c);
+	CTriggerDisciplineContext *p;
+	if (mem)
+		p = ((CTriggerDisciplineContext *)mem)->sub_10210ce0();
+	else
+		p = 0;
+	p->vfunc106(g_105ae7dc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210fe0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
