@@ -21,4 +21,5 @@ public:
 
 	void sub_1024b880();	// base reset, called first
 	void sub_1024b370();	// resets: base reset, clears +0x24, purges m_mem1, caches its pointer at +0x28, purges it again and m_mem0
+	void sub_1024b5e0(short *pSymbol, const char *pString);	// string table lookup/insert: stores the 16 bit symbol of pString (0xffff for null) through pSymbol
 };
