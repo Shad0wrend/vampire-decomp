@@ -3478,6 +3478,25 @@ int sub_1004dcf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004de10 size=0x43
+#include "CPhysBox.h"
+void *sub_100aa720(int size);
+extern char g_1053db40[];
+
+// TARGET: func_physbox
+extern "C" CBaseEntity *func_physbox()
+{
+	void *mem = sub_100aa720(0x4cc);
+	CPhysBox *p;
+	if (mem)
+		p = ((CPhysBox *)mem)->sub_1004e0a0();
+	else
+		p = 0;
+	p->vfunc106(g_1053db40);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050170 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
