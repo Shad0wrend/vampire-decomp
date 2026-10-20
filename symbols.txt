@@ -1195,6 +1195,7 @@
 0x10007c2f func   _item_w_baseball_bat item_w_baseball_bat
 0x10007c34 func   ?sub_1005a330@@YAXHHPBH0@Z sub_1005a330
 0x10007c4d func   ?sub_1006ed20@CUnknown1006ed20@@QAEXH@Z CUnknown1006ed20::sub_1006ed20
+0x10007c57 func   ?vfunc144@CBreakableProp@@QAEXPAX@Z CBreakableProp::vfunc144
 0x10007c5c func   _light_glspot light_glspot
 0x10007c84 func   ?vfunc5@CSimplePhysicsBrush@@UAEPAV1@I@Z CSimplePhysicsBrush::vfunc5
 0x10007c8e func   ?vfunc600@CNPC_VTzimisceRunner@@QAE_NPAX@Z CNPC_VTzimisceRunner::vfunc600

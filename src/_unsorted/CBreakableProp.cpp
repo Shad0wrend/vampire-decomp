@@ -58,3 +58,32 @@ void CBreakableProp::vfunc103()
 	*(int *)((char *)this + 0x774) = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1018f580 size=0x7d
+#include "CBaseEntity.h"
+#include "CBreakableProp.h"
+
+struct SGlobalVars {
+	char pad[0xc];
+	float curtime;
+};
+
+extern SGlobalVars *g_1070b228;
+void sub_10014e25();
+
+void CBreakableProp::vfunc144(void *pInfo)
+{
+	*(unsigned int *)((char *)this + 0x204) &= 0xffffdfff;
+	((CBaseEntity *)this)->sub_100b3640(0x40000);
+	CBaseEntity *pAttacker = *(CBaseEntity **)((char *)pInfo + 0x28);
+	if (pAttacker)
+		*(unsigned int *)((char *)this + 0x768) = *pAttacker->vfunc1();
+	else
+		*(unsigned int *)((char *)this + 0x768) = 0xffffffff;
+	sub_10007fe5((void *)sub_10014e25, 0, 0);
+	float fNext = g_1070b228->curtime + 0.001;
+	*(int *)((char *)this + 0x1fc) = 0;
+	*(int *)((char *)this + 0x200) = 1;
+	*(float *)((char *)this + 0x17c) = fNext;
+}
+// END FUNCTION
