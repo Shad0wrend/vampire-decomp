@@ -40,3 +40,4 @@
 	int sub_10334790(const char *pszAmmoName);	// "CBaseCombatCharacter::GetAmmoCount" (by name): scope trace (entity name), GetAmmoCount(ammo definitions' index of the name)
 	void vfunc345(const char *pszName, int a, int b);	// slot 345 "CBaseCombatCharacter::SetPoseParameter...": scope trace (entity name), then slot 346(LookupPoseParameter(pszName), a, b)
 	int sub_10092270(const char *pszName);	// CBaseAnimating::LookupPoseParameter, called directly (stub 0x10009ac5)
+	bool sub_1033f1a0(int value);	// "CBaseCombatCharacter::FrenzyComparison": scope trace (entity name), sub_1033eb60(value), then whether the dword at +0x146c is non-zero
