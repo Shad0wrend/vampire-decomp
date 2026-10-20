@@ -5,6 +5,7 @@
 class CAI_Component
 {
 public:
+	CAI_Component() : m_pOuter(0) {}
 	virtual ~CAI_Component() {}	// slot 0
 	virtual void vfunc1();
 	virtual void vfunc2();
