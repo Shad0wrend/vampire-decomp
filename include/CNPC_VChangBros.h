@@ -30,4 +30,7 @@ public:
 	int *sub_1028a150();	// the NPC's current schedule record (first dword is the schedule id), 0 when none
 	void sub_1036e8c0();	// "CNPC_VChangBros::KillCenterEmitter": scope trace (no entity name), when the entity behind the handle at +0x66f4 resolves calls its slot 242 and SetNextThink(0.1f)
 	int vfunc127(int a);	// "CNPC_VChangBros::Restore": scope trace (no entity name), the CNPC_VVampireBoss restore, then the float at +0x64b8 = 2.3f and the body emitter names 0 and 1 "chang_powerup_emitter", 2 "chang_spine_emitter"; returns the base result
+	void vfunc420();	// "CNPC_VChangBros::NPCInit": scope trace (no entity name), the CNPC_VVampireBoss init, clears the teleport state at +0x66bc..+0x66d0 and the flag at +0x66e8, stamps the tick at +0x66ec, sets the float at +0x64b8 and the body emitter names (as in Restore)
+	void sub_10013e85();	// CNPC_VVampireBoss::vfunc420, called directly
+	void sub_103c6df0(int index, const char *name);	// CNPC_VVampireBoss::sub_103c6df0 (stub 0x10010fd7): sets body emitter name `index`
 };
