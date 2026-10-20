@@ -2747,6 +2747,7 @@
 0x1000f024 func   ?sub_1024a080@NodeHolder@@QAEHG@Z NodeHolder::sub_1024a080
 0x1000f029 func   ?sub_102a9960@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_102a9960
 0x1000f065 func   ?sub_1015dc60@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_1015dc60
+0x1000f092 func   ?sub_10094dc0@CBaseAnimating@@QAEMM@Z CBaseAnimating::sub_10094dc0
 0x1000f0a6 func   ??1CVStatInfo_t@@QAE@XZ CVStatInfo_t::~CVStatInfo_t
 0x1000f0bf func   ?sub_10030cb0@@YGXPAX0@Z sub_10030cb0
 0x1000f0ce func   _item_p_occult_lockpicking item_p_occult_lockpicking

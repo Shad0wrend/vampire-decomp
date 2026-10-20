@@ -8953,6 +8953,36 @@ int CBaseAnimating::sub_10094790(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094dc0 size=0xb2
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_105387dc[];
+extern char g_106b8540[];
+extern char g_10550028[];
+extern float g_104454c4;
+float __cdecl sub_100c61e0(void *pStudioHdr, int a, void *b, float c);
+
+float CBaseAnimating::sub_10094dc0(float flCycle)
+{
+	const char *name = this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc;
+	g_109f3620[*g_109f3680].a = g_10550028;
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	void *pStudioHdr = sub_100952d0(-1);
+	if (!pStudioHdr) {
+		float f = g_104454c4;
+		--*g_109f3680;
+		return f;
+	}
+	float r = sub_100c61e0(pStudioHdr, *(int *)((char *)this + 0x6f0), (char *)this + 0x690, flCycle);
+	--*g_109f3680;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100952d0 size=0x133
 #include "CBaseAnimating.h"
 #include "CGlobalEntityList.h"
