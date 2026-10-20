@@ -18,11 +18,18 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
+	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual void vfunc14();
+	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
+	virtual void vfunc20(); virtual void vfunc21();
+	virtual int vfunc22(int a);	// picks the activity to use for the requested one (weapon activity translation of the standoff states)
 
 	CAI_StandoffBehaviorOuter *m_pOuter;
 	char pad0008[0x1a - 8];
 	char m_unk1a;
-	char pad001b[0x3c - 0x1b];
+	char pad001b;
+	int m_nState1c;
+	char pad0020[0x3c - 0x20];
 	float m_flTime3c;
 	float m_flMin40;
 	float m_flMax44;
