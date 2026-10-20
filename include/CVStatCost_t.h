@@ -21,5 +21,5 @@ public:
 	bool sub_101fc160();	// "CVStatCost_t::IsNull"
 	void sub_101fc0d0();	// "CVStatCost_t::Null": scope trace, nulls both sub costs
 	int sub_101fc350(int level, bool bFirst);	// "CVStatCost_t::GetCostToBuy": scope trace, GetCostToBuy of the first (bFirst) or second sub cost
-	void sub_101fc410(int level, bool bFirst);	// "CVStatCost_t::GetCostToSell": scope trace, GetCostToSell of the first (bFirst, forced) or second sub cost
+	int sub_101fc410(int level, bool bFirst);	// "CVStatCost_t::GetCostToSell": scope trace, GetCostToSell of the first (bFirst, forced) or second sub cost
 };
