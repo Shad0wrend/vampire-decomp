@@ -5910,6 +5910,36 @@ struct CUnknown10074a90 { int p[4]; int a; void sub_10074a90(int v); };
 void CUnknown10074a90::sub_10074a90(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10075aa0 size=0x97
+#include "CUnknown10075aa0.h"
+
+void CUnknown10075aa0::sub_10075aa0(int arg)
+{
+	m_i00 = 0;
+	m_b04 = 0;
+	m_b84 = 0;
+	m_b104 = 0;
+	m_i184 = 0;
+	m_f188 = -1.0f;
+	m_i2b4 = 0;
+	m_i2b8 = 0;
+	m_i330 = arg;
+	m_b198 = 0;
+	m_b1b0 = 0;
+	sub_10076f10(0, 0, 0);
+	m_b320 = 0;
+	m_i324 = 0;
+	m_b328 = 0;
+	m_i32c = 0;
+	m_i18c = 0;
+	m_i338 = 0;
+	m_i334 = 0;
+	m_i190 = -1;
+	m_i194 = 0;
+	m_b33c = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075bd0 size=0x16
 struct S10075bd0 {
 	char m_pad[0x4];
