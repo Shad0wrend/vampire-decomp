@@ -16,3 +16,4 @@
 	bool sub_1009e430(const char *szKeyName, const char *szValue);	// CBaseEntity::KeyValue (slot 110) as a direct call from the CDecal override
 	void sub_100ab450(int a, int b, int c, int d, int e);	// slot 102 "Physics_TraceEntity" wrapper: scope trace, then forwards its five arguments to sub_101cd110
 	void sub_100a4930();	// "CBaseEntity::InitPredictable": scope trace (entity name), then the global predictable-id manager at 0x106cfee0 (stub 0x1000ee4e) is given this
+	void sub_10012d14(CBaseEntity *pOther, void *pTrace);	// "CBaseEntity::PhysicsImpact" (the stub at 0x10012d14 for 0x1003e6c0): scope trace (entity name), unless either entity has the flag bit 26 hands (pOther, pTrace) to the impact worker
