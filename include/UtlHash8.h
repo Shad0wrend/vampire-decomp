@@ -46,6 +46,7 @@ public:
 	unsigned int m_ModMask;
 
 	unsigned int sub_10041d20(void *pData);	// Find: (bucket << 16) | index, or -1
+	unsigned int sub_10041e80(void *pData);	// Find (another instance, stub 0x100074a0)
 	UtlHash8 *sub_10041c80(int nBuckets, int growSize, int initSize, bool (__cdecl *pCompare)(void *, void *), unsigned int (__cdecl *pKey)(void *));	// constructor
 	UtlHash8 *sub_10041de0(int nBuckets, int growSize, int initSize, bool (__cdecl *pCompare)(void *, void *), unsigned int (__cdecl *pKey)(void *));	// constructor (another instance)
 	UtlHash8 *sub_10041f40(int nBuckets, int growSize, int initSize, bool (__cdecl *pCompare)(void *, void *), unsigned int (__cdecl *pKey)(void *));	// constructor (another instance)
