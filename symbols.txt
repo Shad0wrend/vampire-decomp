@@ -1515,6 +1515,7 @@
 0x1000920f func   ?sub_101fbb60@CVStatSubCost_t@@QAEHH@Z CVStatSubCost_t::sub_101fbb60
 0x10009228 func   ?sub_101eab20@@YAXH@Z sub_101eab20
 0x1000923c func   ?sub_10349d10@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_10349d10
+0x10009264 func   ?vfunc305@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc305
 0x1000926e func   ?vfunc5@CItemGGargoyleBook@@QAEPAV1@I@Z CItemGGargoyleBook::vfunc5
 0x10009287 func   ?vfunc546@CNPC_VZombie@@QAEHH@Z CNPC_VZombie::vfunc546
 0x1000929b func   ?sub_10046b70@@YA_NPBI0@Z sub_10046b70

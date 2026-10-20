@@ -1249,6 +1249,38 @@ void CBaseCombatCharacter::vfunc341(int discipline, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033deb0 size=0x92
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+int __fastcall sub_1033c9c0(char *pThis);
+void sub_100118d8(CBaseCombatCharacter *pThis, const char *classname);
+
+void CBaseCombatCharacter::vfunc305()
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	} else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::RemoveBaseFightingItems";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (sub_1033c9c0((char *)this) & 0x10) {
+		sub_100118d8(this, "item_w_fists");
+		sub_1033c770(0x10);
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103404f0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
