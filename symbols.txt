@@ -3569,6 +3569,7 @@
 0x100139fd func   ?vfunc5@CNPC_VSheriffSwarm@@QAEPAV1@I@Z CNPC_VSheriffSwarm::vfunc5
 0x10013a0c func   ?sub_101a1400@SRestore@@QAEPAU1@E@Z SRestore::sub_101a1400
 0x10013a34 func   ?vfunc546@CNPC_VGangrel@@QAEHH@Z CNPC_VGangrel::vfunc546
+0x10013a43 func   ?sub_101f81c0@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101f81c0
 0x10013a52 func   ?vfunc0@CAI_LocalNavigator@@QAEPAV1@I@Z CAI_LocalNavigator::vfunc0
 0x10013a5c func   ?vfunc16@CRestore@@QAEDXZ CRestore::vfunc16
 0x10013a6b func   _item_g_giovanni_invitation_maria item_g_giovanni_invitation_maria

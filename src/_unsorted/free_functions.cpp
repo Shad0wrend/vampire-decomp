@@ -28996,6 +28996,34 @@ int *CUnknown101f7b20::sub_101f7b20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f81c0 size=0x9f
+#include <stdio.h>
+#include "FileSystemViews.h"
+#include "CUnknown101d5bd0.h"
+extern IFileSystemView *g_1070b238;
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);
+
+void CUnknown101d5bd0::sub_101f81c0()
+{
+    int count = 0;
+    int handle;
+    char szFile[260];
+    if (g_1070b238->FindFirst("vdata\\system\\TraitEffects*.txt", &handle)) {
+        do {
+            count++;
+        } while (g_1070b238->FindNext(handle));
+        g_1070b238->FindClose(handle);
+        if (count > 0) {
+            for (int i = 0; i < count; i++) {
+                sprintf(szFile, "%sTraitEffects%03d.txt", "vdata\\system\\", i);
+                if (!sub_101f7e90(szFile))
+                    g_109f3628("Unable to open Trait Effect List data file for: %s\n", szFile);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f82d0 size=0x18
 #include "CUnknown101f0e50.h"
 
