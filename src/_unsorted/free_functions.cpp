@@ -17261,6 +17261,27 @@ void * __fastcall sub_1017cf90(Holder *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017e560 size=0x68
+#include "CBasePlayer.h"
+#include "inputdata_t.h"
+
+// the input's integer value (0 unless the variant holds an integer)
+__forceinline int VariantAsInt(variant_t *pValue)
+{
+    if (pValue->fieldType == 4)
+        return pValue->iValue;
+    return 0;
+}
+
+#define CLAMP(x, lo, hi) ((x) > (hi) ? (hi) : ((x) < (lo) ? (lo) : (x)))
+
+// TARGET: CBasePlayer::sub_1017e560
+void CBasePlayer::sub_1017e560(inputdata_t *pData)
+{
+    sub_1017e150(CLAMP(VariantAsInt(&pData->value), 0, 5), -1.0f, "Input");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101800e0 size=0xe
 #include "CUnknown101800e0.h"
 // TARGET: CUnknown101800e0::sub_101800e0

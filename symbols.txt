@@ -885,6 +885,7 @@
 0x1000638e func   ?sub_1022d1e0@@YAXPAUCBlock4k@@PBU1@@Z sub_1022d1e0
 0x1000639d func   ?sub_104302f0@@YAXXZ sub_104302f0
 0x100063a7 func   ?vfunc5@CPathKeyFrame@@QAEPAV1@I@Z CPathKeyFrame::vfunc5
+0x100063bb func   ?sub_1017e560@CBasePlayer@@QAEXPAUinputdata_t@@@Z CBasePlayer::sub_1017e560
 0x100063c5 func   ?sub_1042b9c0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_1042b9c0
 0x100063de func   ?vfunc5@CItemGGiovanniInvitationMaria@@QAEPAV1@I@Z CItemGGiovanniInvitationMaria::vfunc5
 0x10006401 func   ?sub_103f7930@@YAHXZ sub_103f7930
