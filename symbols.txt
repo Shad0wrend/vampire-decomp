@@ -1087,6 +1087,7 @@
 0x10008012 func   ?sub_10388150@@YADXZ sub_10388150
 0x10008030 func   _info_node_sabbat_nojump info_node_sabbat_nojump
 0x10008035 func   ?sub_101e94b0@@YAXH@Z sub_101e94b0
+0x1000803a func   ?sub_103fcbe0@@YAHXZ sub_103fcbe0
 0x10008062 func   ?sub_1012cf10@CUnknown1012cf10@@QAEPAV1@XZ CUnknown1012cf10::sub_1012cf10
 0x1000807b func   ?sub_1042fd10@@YAXXZ sub_1042fd10
 0x10008080 func   ?sub_103b5420@@YADXZ sub_103b5420
