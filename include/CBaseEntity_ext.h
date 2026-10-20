@@ -23,3 +23,4 @@
 	void sub_1016e500(int solid);	// "CBaseEntity::SetSolid": scope trace (entity name), then the collision property at +0x270 SetSolid(solid)
 	void sub_100acd40(inputdata_t *pInput);	// "CBaseEntity::InputDispatchEffect": scope trace (entity name), converts the input's value to a string (variant_t::sub_10008805) unless it already is one
 	void sub_1009edc0(const float *mins, const float *maxs);	// "CBaseEntity::SetCollisionBounds": scope trace (entity name), then the collision property at +0x270 SetCollisionBounds(mins, maxs)
+	void sub_100adf10(const float *mins, const float *maxs);	// "CBaseEntity::SetSize": scope trace (entity name), then sub_101cf390(this, mins, maxs)
