@@ -25467,6 +25467,18 @@ void __fastcall sub_10227230(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227250 size=0x18
+#include "CUnknown10227250.h"
+char *sub_101cd9e0(int index);
+void __fastcall sub_10178140(char *pPlayer);
+void CUnknown10227250::sub_10227250(int unused)
+{
+	char *p = sub_101cd9e0(1);
+	if (p)
+		sub_10178140(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227320 size=0x3a
 #include "inputdata_t.h"
 extern char g_106b8540[];
