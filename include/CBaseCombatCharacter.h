@@ -56,7 +56,7 @@ public:
 	void sub_10334500(int amount, int ammoIndex);	// "CBaseCombatCharacter::RemoveAmmo": scope trace (entity name), subtracts amount from the count at +0x15a4 + ammoIndex*4, clamped at 0
 	void sub_10334600(int count, int ammoIndex);	// "CBaseCombatCharacter::SetAmmoCount": stores count at +0x15a4 + ammoIndex*4
 	int sub_103346c0(int ammoIndex);	// "CBaseCombatCharacter::GetAmmoCount": scope trace, the dword at +0x15a4 + ammoIndex*4 (0 for index -1)
-	int sub_103343f0(int count, int ammoName);	// "CBaseCombatCharacter::GiveAmmo" (by name): scope trace (entity name), looks the name up in the ammo definitions (global at 0x1070ba0c), then slot 374(count, index, 0); Msg when unknown
+	int sub_103343f0(int count, const char *pszAmmoName);	// "CBaseCombatCharacter::GiveAmmo" (by name): scope trace (entity name), looks the name up in the ammo definitions (global at 0x1070ba0c), then slot 374(count, index, 0); Msg when unknown
 	void sub_10346760();	// "CBaseCombatCharacter::ForceMeleeReset": scope trace (entity name), sets the byte at +0xaa1 and clears the bytes at +0xaa0/+0xaa2/+0xaa3 and the dword at +0xa94
 	void sub_1033ca60();	// "CBaseCombatCharacter::ClearMiscFlags": stores 0 at +0xfe4
 	void sub_1033c6b0(unsigned int flags);	// "CBaseCombatCharacter::AddMiscFlag": scope trace (entity name), ORs flags into +0xfe4
