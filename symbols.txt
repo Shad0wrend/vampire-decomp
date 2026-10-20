@@ -2197,6 +2197,7 @@
 0x1000da58 func   _aiscripted_schedule aiscripted_schedule
 0x1000da76 func   ?sub_1003e4b0@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1003e4b0
 0x1000dacb func   ?sub_100f4410@@YAXPBDHH@Z sub_100f4410
+0x1000dada func   ?sub_1023e4b0@@YAXPAVCBaseEntity@@H@Z sub_1023e4b0
 0x1000dae4 func   ?vfunc40@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHH@Z CTempEntsSystem::vfunc40
 0x1000dafd func   ?sub_10108e00@CUnknown10108e00@@QAE_NH@Z CUnknown10108e00::sub_10108e00
 0x1000db16 func   _item_p_occult_experience item_p_occult_experience

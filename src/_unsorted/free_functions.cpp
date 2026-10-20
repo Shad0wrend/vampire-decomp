@@ -29850,6 +29850,83 @@ extern "C" CBaseEntity *events_world()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023e4b0 size=0x184
+#include "CGlobalEntityList.h"
+
+struct SeqNode {
+    unsigned int m_hEnt;
+    int m_nValue;
+    SeqNode *m_pNext;
+    SeqNode() { m_hEnt = 0xffffffff; }
+};
+
+struct StateObj {
+    virtual void v0();
+    virtual char v1();
+    char m_pad04[0x24];
+    float m_f28;
+};
+
+struct GlobalsLike {
+    char m_pad00[0xc];
+    float m_curtime;
+};
+
+extern StateObj *g_10752c9c;
+extern GlobalsLike *g_1070b228;
+extern CGlobalEntityList *g_10566458;
+extern unsigned int g_10753230[25];
+extern SeqNode *g_10752ce0[25];
+extern float g_10752d60[25];
+extern const float g_104454c4;
+
+// TARGET: sub_1023e4b0
+void sub_1023e4b0(CBaseEntity *pEnt, int value)
+{
+    if (!pEnt)
+        return;
+    int best = 25;
+    StateObj *pState = g_10752c9c;
+    for (int i = 0; i < 25; i++) {
+        unsigned int h = g_10753230[i];
+        CGlobalEntityList_Slot *s;
+        CGlobalEntityList_Ent *e = (h != 0xffffffff && (s = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13)) ? s->m_pEntity : 0;
+        if ((CBaseEntity *)e == pEnt) {
+            SeqNode *n = new SeqNode;
+            n->m_hEnt = *pEnt->vfunc1();
+            n->m_nValue = value;
+            n->m_pNext = g_10752ce0[i];
+            g_10752ce0[i] = n;
+            return;
+        }
+        if (h == 0xffffffff
+            || (s = &g_10566458->m_Slots[h & 0x1fff])->m_Serial != (int)(h >> 13)
+            || s->m_pEntity == 0) {
+            if (i < best)
+                best = i;
+        } else if (g_10752ce0[i] == 0) {
+            char b = pState->v1();
+            pState = g_10752c9c;
+            float f = b ? g_104454c4 : pState->m_f28;
+            if (f + g_10752d60[i] < g_1070b228->m_curtime) {
+                g_10753230[i] = 0xffffffff;
+                g_10752d60[i] = 0;
+                if (i < best)
+                    best = i;
+            }
+        }
+    }
+    if (best >= 0 && best < 25) {
+        SeqNode *n = new SeqNode;
+        n->m_hEnt = *pEnt->vfunc1();
+        n->m_nValue = value;
+        n->m_pNext = g_10752ce0[best];
+        g_10752ce0[best] = n;
+        g_10753230[best] = *pEnt->vfunc1();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ed10 size=0xde
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
