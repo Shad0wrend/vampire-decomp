@@ -12760,6 +12760,34 @@ void CBaseEntity::sub_100a7d00(int info, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8060 size=0x154
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+extern char g_10556790[];
+extern char g_1053dbfc[];
+
+void CBaseEntity::sub_100a8060()
+{
+	ScopeTrace trace(g_10556790, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	m_flags268 |= 2;
+	sub_100ac4e0(0, 0, 0);
+	if (m_pEdict2e0) {
+		m_flags268 |= 2;
+		{
+			ScopeTrace trace2(g_1053dbfc, m_name26c ? m_name26c : g_106b8540);
+			CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+			pCollision->sub_100dc580(*(unsigned short *)((char *)pCollision + 0x44) | 4);
+		}
+		vfunc93(0, 0);
+		*(int *)((char *)this + 0x17c) = 0;
+		*(unsigned int *)((char *)this + 0x19c) |= 0x40;
+		sub_100b3b00();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8220 size=0xa
 unsigned int CUnknown100a8220::sub_100a8220()
 {
