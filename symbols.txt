@@ -2866,6 +2866,7 @@
 0x10010839 func   ?sub_10349a00@@YIXPAH@Z sub_10349a00
 0x10010848 func   ?vfunc5@CTerrainMorph@@QAEPAV1@I@Z CTerrainMorph::vfunc5
 0x1001084d func   ?sub_100b47e0@@YIXPAH@Z sub_100b47e0
+0x10010857 func   ?vfunc341@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::vfunc341
 0x1001086b func   ?vfunc5@CEnvGlobal@@QAEPAV1@I@Z CEnvGlobal::vfunc5
 0x1001087f func   ?sub_1009bef0@CBaseEntity@@QAEXHHUCBaseEntityColor32@@@Z CBaseEntity::sub_1009bef0
 0x10010889 func   ?vfunc319@CWeaponGravityGun@@UAEXXZ CWeaponGravityGun::vfunc319

@@ -1174,6 +1174,26 @@ void CBaseCombatCharacter::vfunc339(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033cef0 size=0x86
+#include "CUnknown101e3af0.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern CUnknown101e3af0 g_10739a4c;
+
+void CBaseCombatCharacter::vfunc341(int discipline, int unused)
+{
+	const char *n = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::RemoveDisciplineEffects";
+	g_109f3620[*g_109f3680].b = n;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	g_10739a4c.sub_101e3af0(this, discipline, 0);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103404f0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
