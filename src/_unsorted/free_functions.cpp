@@ -41503,6 +41503,35 @@ extern "C" CItemGWarrLedger1* item_g_ring_gold()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fe9c0 size=0x72
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_10945d9c;
+extern SendTable *g_105c5bc0;
+
+// TARGET: sub_103fe9c0
+int sub_103fe9c0()
+{
+	static const char *pTableName = "DT_ItemGWatchNormal";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_105c5bc0, (void *)sub_10009539),
+	};
+	g_10945d9c.sub_1000e8fe(props + 1, 1, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103fea90 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
