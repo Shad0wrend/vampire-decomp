@@ -3562,6 +3562,7 @@
 0x10014911 func   _info_node_bach_run_1 info_node_bach_run_1
 0x1001491b func   _info_node_bach_run_2 info_node_bach_run_2
 0x10014948 func   ?sub_100deb10@@YIXPADHD@Z sub_100deb10
+0x1001494d func   ?sub_10094790@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10094790
 0x10014966 func   _item_a_lt_cloth item_a_lt_cloth
 0x100149a2 func   _logic_auto logic_auto
 0x100149b6 func   ?sub_102c7390@CUnknown102c7390@@QAEXD@Z CUnknown102c7390::sub_102c7390
