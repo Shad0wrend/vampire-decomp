@@ -23,6 +23,7 @@ public:
 	virtual void vfunc416(char value);
 	virtual float vfunc418(float a);	// float lookup: -1000005 -> +0x6484, -1000006 -> +0x6488, -1000007 -> +0x648c, -1000008 -> 10.0f, else CAI_BaseNPC::vfunc418(a)
 	virtual bool vfunc468(CBaseEntity *pEnt);	// see CAI_BaseNPC
+	virtual int vfunc359(CBaseEntity *pEnt);	// slot 359 "GetCombatState"-like: -1 when unselectable (sub_100a52a0) or state +0x5cc0 is 7, 4 while the count at +0x146c is positive, 3 with bit 19 of +0x14bc, then by state +0x5cc0: 2/0xb -> 1, 3/0xe -> 7, 5/6/8/9/0xa/0xd -> 0, else 2 when pEnt answers slot 404 with 1, else 5
 
 	// Slots 569..580 (past the end of the base class's declared slots).
 	virtual int vfunc569(CBaseEntity *pHint);	// slot 569: 8 while bit 9 of +0x14b8 is set, else the activity for the hint's type at +0x5dc (100 -> 0x1111, 101 -> 0x110d, 0x27d8 -> 0x1118) when sub_10295460(activity, 0) accepts it, else CAI_BaseNPC::sub_10274aa0(pHint)
