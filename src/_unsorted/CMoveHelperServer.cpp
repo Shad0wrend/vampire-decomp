@@ -23,6 +23,43 @@ void CMoveHelperServer::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013fae0 size=0x8d
+#include "CMoveHelperServer.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct SoundRecord
+{
+	int m_Id;
+	const char *m_pszName;
+};
+struct SoundSystem { void sub_100119fa(int a, int b, int c, float d, float e); };
+extern int g_1073dc3c;
+extern SoundRecord **g_1073dc40;
+extern SoundSystem g_1073dc28;
+extern char g_106b8540[];
+
+static inline const char *NameOf(const char *const *p)
+{
+	return *p ? *p : g_106b8540;
+}
+
+static inline int FindSound(const char *name)
+{
+	for (int i = 0; i < g_1073dc3c; i++) {
+		if (!_strcmpi(NameOf(&g_1073dc40[i]->m_pszName), name))
+			return g_1073dc40[i]->m_Id;
+	}
+	return -1;
+}
+
+void CMoveHelperServer::vfunc12()
+{
+	static int s_nSound = FindSound("Exert_Heavy");
+	g_1073dc28.sub_100119fa(*(int *)((char *)this + 4), s_nSound, 2, 1.0f, 1.25f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fba0 size=0x8d
 #include "CMoveHelperServer.h"
 

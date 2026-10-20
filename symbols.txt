@@ -2730,6 +2730,7 @@
 0x1000f92f func   ?sub_1012d0a0@@YAPAHXZ sub_1012d0a0
 0x1000f939 func   ?sub_10339b50@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10339b50
 0x1000f93e func   ?sub_101fd090@@YAXH@Z sub_101fd090
+0x1000f957 func   ?vfunc12@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc12
 0x1000f95c func   ?sub_101eddb0@@YAXH@Z sub_101eddb0
 0x1000f993 func   _phys_animlink phys_animlink
 0x1000f9a7 func   ?sub_104303d0@@YAII@Z sub_104303d0
