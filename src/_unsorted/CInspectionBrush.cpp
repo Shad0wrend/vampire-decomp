@@ -1,6 +1,28 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100fd180 size=0xbb
+#include "CInspectionBrush.h"
+#include "CEnvParticle.h"
+#include "ScopeTrace.h"
+
+// TARGET: CInspectionBrush::vfunc86
+char CInspectionBrush::vfunc86(int a, CInspectionBrushEdict *pEdict, int c, int d, int e)
+{
+    char r = ((CEnvParticle *)this)->vfunc86(a, (int)pEdict, c, d, e);
+    if (r) {
+        CBaseEntity *pEnt;
+        {
+            ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+            pEnt = (pEdict && pEdict->m_pUnknown) ? pEdict->m_pUnknown->vfunc4() : 0;
+        }
+        if (pEnt && *(int *)((char *)pEnt + 0xa8))
+            sub_100fd270(*(int *)((char *)pEnt + 0xa8));
+    }
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fd560 size=0x1e
 #include "CInspectionBrush.h"
 

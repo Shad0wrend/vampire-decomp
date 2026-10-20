@@ -4017,6 +4017,7 @@
 0x10013c00 func   ?sub_100aaa40@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100aaa40
 0x10013c28 func   ?sub_100fa690@@YIXPAUCSlots@@HH@Z sub_100fa690
 0x10013c50 func   ?vfunc5@CWeaponMelee_Baton@@QAEPAV1@I@Z CWeaponMelee_Baton::vfunc5
+0x10013c55 func   ?vfunc86@CInspectionBrush@@QAEDHPAUCInspectionBrushEdict@@HHH@Z CInspectionBrush::vfunc86
 0x10013c69 func   ?sub_1034d490@@YAPAHXZ sub_1034d490
 0x10013c6e func   ?vfunc2@CEntityListSystem@@QAEXXZ CEntityListSystem::vfunc2
 0x10013c87 func   ?sub_10245790@CUnknown10245790@@QAEXI@Z CUnknown10245790::sub_10245790
