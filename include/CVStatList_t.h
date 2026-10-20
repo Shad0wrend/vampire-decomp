@@ -24,6 +24,8 @@ public:
 	char sub_10201540();	// recomputes every stat value (stored in the array behind m_field08), true when one changed (stub 0x1000a1a0)
 	char sub_10200d60(int value);	// "CVStatList_t::SetValue"-like worker taking one stack argument (stub 0x10005cbd), called by the VStatGet wrapper; returns a flag byte
 	void sub_102008e0(int stat, int value);	// stat setter taking (stat, value) (stub 0x10011e46)
+	int sub_10200b10(int stat);	// the upper limit of the stat (stub 0x10005cc7)
+	void sub_10200be0(int stat, int value);	// "CVStatList_t::Set": scope trace, stores value (clamped to sub_10200b10(stat)) in the base value array behind m_field08 when the stat is valid
 };
 
 // The stat lists of a character: the object at +0x13a8 of a CBaseCombatCharacter (its CUtlVector of lists at +0x8:
