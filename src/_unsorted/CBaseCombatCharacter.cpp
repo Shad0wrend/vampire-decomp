@@ -1316,6 +1316,29 @@ void CBaseCombatCharacter::vfunc341(int discipline, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033dde0 size=0x9b
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+void sub_10011fdb(CBaseCombatCharacter *pChar, const char *pszName, int a);
+
+void CBaseCombatCharacter::vfunc304()
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::GiveBaseFightingItems";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (!sub_10335950("item_w_fists")) {
+        sub_10011fdb(this, "item_w_fists", 0);
+        sub_1033c6b0(0x10);
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033deb0 size=0x92
 #include "CBaseCombatCharacter.h"
 

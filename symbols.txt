@@ -2791,6 +2791,7 @@
 0x1000f95c func   ?sub_101eddb0@@YAXH@Z sub_101eddb0
 0x1000f993 func   _phys_animlink phys_animlink
 0x1000f9a7 func   ?sub_104303d0@@YAII@Z sub_104303d0
+0x1000f9b6 func   ?vfunc304@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc304
 0x1000fa1a func   ?vfunc516@CGenericSabbat_NPC@@UAEMXZ CGenericSabbat_NPC::vfunc516
 0x1000fa47 func   ?sub_1034e700@@YGXH@Z sub_1034e700
 0x1000fa51 func   ?sub_1018a450@@YAXXZ sub_1018a450
