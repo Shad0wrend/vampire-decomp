@@ -963,6 +963,67 @@ bool CBaseCombatCharacter::vfunc308()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10337080 size=0x149
+#include "CBaseCombatWeapon.h"
+
+#define S1(p, n) virtual void p##n();
+#define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
+struct Slots298 {
+    S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+    S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8) S10(b9)
+    S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5) S10(c6) S10(c7) S10(c8)
+    S1(d, 0) S1(d, 1) S1(d, 2) S1(d, 3) S1(d, 4) S1(d, 5) S1(d, 6) S1(d, 7)
+    virtual int f298(int group);
+};
+
+struct ScopeTraceEntry {
+    const char *m_pszName;
+    const char *m_pszEntity;
+    const char *m_pszExtra;
+};
+extern "C" __declspec(dllimport) ScopeTraceEntry g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+
+struct ScopeTrace {
+    ScopeTrace(const char *name, const char *entity)
+    {
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszName = name;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszEntity = entity;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszExtra = "";
+        g_ScopeTraceStackDepth++;
+    }
+    ~ScopeTrace() { g_ScopeTraceStackDepth--; }
+};
+
+extern int g_10619eb4[];
+extern int g_10619d28[];
+extern int g_10937cd0[];
+
+// TARGET: CBaseCombatCharacter::vfunc309
+void *CBaseCombatCharacter::vfunc309()
+{
+    ScopeTrace trace("CBaseCombatCharacter::GetBestRangedWeapon", this ? (m_name26c ? m_name26c : "") : "NULL ENTITY");
+    for (int *p = g_10619eb4; *p != -1; p++) {
+        int group = g_10619d28[*p];
+        if (group >= 0) {
+            int start = g_10937cd0[*p];
+            int end = start + ((Slots298 *)this)->f298(group);
+            for (int i = start; i < end; i++) {
+                if (sub_1032e8b0(i)) {
+                    CBaseCombatWeapon *w = (CBaseCombatWeapon *)sub_1032e8b0(i);
+                    if (w->vfunc360() & 0x6000) {
+                        w = (CBaseCombatWeapon *)sub_1032e8b0(i);
+                        if (w->vfunc280(0) || *(int *)((char *)this + *(int *)((char *)sub_1032e8b0(i) + 0x744) * 4 + 0x15a4) > 0)
+                            return sub_1032e8b0(i);
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033cb90 size=0x74
 #include "CBaseCombatCharacter.h"
 
