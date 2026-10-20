@@ -120,3 +120,27 @@ void CNPC_VAsianVampire::vfunc448(int code)
     --*g_109f3680;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10362910 size=0x83
+#include "CNPC_VAsianVampire.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+int CNPC_VAsianVampire::vfunc440(int schedule)
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VAsianVampire::TranslateSchedule";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (schedule >= 0xe5 && schedule <= 0xe6) {
+		int r = sub_10362430();
+		(*g_109f3680)--;
+		return r;
+	}
+	int r = sub_10005e20(schedule);
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
