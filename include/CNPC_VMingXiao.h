@@ -17,4 +17,6 @@ public:
 	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448, called directly
 	const char *vfunc408(int index);	// the attachment name of the body part 0x77..0x7e (xfr, xfl, xmr, xml, xbr, xbl, xsp, xmh), else the base's
 	const char *sub_10011590(int index);	// CAI_BaseNPC::vfunc408 (jump stub)
+	int sub_10396dc0();	// picks a schedule (0x15c / 0x15d) while the target handle at +0x6718 is alive and the state at +0x673c is 3 or 4, from conditions 0x7b / 0x7c; stamps the source file and line at +0x1b30 / +0x1b34
+	char sub_10014df8(int condition);	// "HasCondition" (stub 0x10014df8), called directly
 };
