@@ -4,3 +4,4 @@
 	bool sub_100b3350();	// "CBaseEntity::IsFloating": scope trace (entity name), false unless bit 19 of +0x268 and the physics object at +0x36c are set, else true when the value the physics system reports for the object (slot 19) is below 1000.0f
 	void sub_1009c2d0(int a, char *text, int value);	// "CBaseEntity::DumpActivity": scope trace (entity name), then sub_1009b980(a, text, value)
 	void sub_1009c110(int a, int b, CBaseEntity *pEnt);	// "CBaseEntity::DumpEntity": scope trace (entity name), then sub_1009b700(a, b, name of pEnt or null)
+	void sub_100a9120(inputdata_t *pInput);	// "CBaseEntity::InputSetFakeSilence": scope trace (entity name), sub_100a8fc0(1) when the input is an integer that is non-zero, else sub_100a8fc0(0)
