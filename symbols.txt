@@ -5,6 +5,7 @@
 0x1000106e func   ?sub_10131490@@YAPAHXZ sub_10131490
 0x10001078 func   ?sub_101be1d0@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101be1d0
 0x10001082 func   _trigger_brush trigger_brush
+0x1000108c func   ?sub_100920d0@CBaseAnimating@@QAEMPBD@Z CBaseAnimating::sub_100920d0
 0x100010a0 func   ?vfunc5@CBloodSplat@@QAEPAV1@I@Z CBloodSplat::vfunc5
 0x100010e1 func   ?sub_103d99a0@CNPC_VWerewolf@@QAEXPAUinputdata_t@@@Z CNPC_VWerewolf::sub_103d99a0
 0x1000110e func   ?vfunc448@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc448

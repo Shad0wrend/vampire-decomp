@@ -8601,6 +8601,26 @@ void CBaseAnimating::sub_10091c80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100920d0 size=0x89
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+float CBaseAnimating::sub_100920d0(const char *name)
+{
+    const char *ent = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::GetPoseParameter01";
+    g_109f3620[*g_109f3680].b = ent;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    float r = sub_10092190(sub_10092270(name));
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10092190 size=0xb0
 #include "CBaseAnimating.h"
 
