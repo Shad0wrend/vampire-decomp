@@ -18504,6 +18504,57 @@ extern "C" CBaseEntity *keyframe_rope()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1140 size=0x110
+#include "CSave.h"
+
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    void *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern void (*g_109f362c)(const char *, ...);
+
+bool CSave::sub_101a1140(int a, void *pData, void *pBase, typedescription_t *pField)
+{
+    switch (pField->fieldType) {
+    case 0xb:
+        vfunc33(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0xd:
+        vfunc35(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0xc:
+        vfunc37(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0xe:
+        vfunc29(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0xf:
+        vfunc26(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0x10:
+    case 0x11:
+        vfunc17(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0x13:
+        vfunc31(pBase, pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    default:
+        g_109f362c("Bad field type\n");
+        return false;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a17c0 size=0x77
 #include "CRestore.h"
 struct CRestoreField { int pad; const char *fieldName; char rest[0x2c - 8]; };
