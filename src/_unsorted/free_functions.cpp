@@ -40248,6 +40248,36 @@ void CUnknown102e12c0::sub_102e7e60()
 void __fastcall sub_102e8250(float *p) { p[6] = 3.402823466e+38f; }
 // END FUNCTION
 
+// FUNCTION: 0x102e84a0 size=0x8d
+struct Globals { char pad[0xc]; float curtime; };
+extern Globals *g_1070b228;
+
+// TARGET: CUnknown102e83e0::sub_102e84a0
+void CUnknown102e83e0::sub_102e84a0(char flag)
+{
+    CUnknown102ee120 *p = *(CUnknown102ee120 **)((char *)m_pOuter + 0x5d34);
+    int cur = p->sub_102ee3f0();
+    int next;
+    if (flag) {
+        switch (cur) {
+        case 9: next = 0x11; break;
+        case 0x13: next = 0x15; break;
+        default: return;
+        }
+    } else {
+        switch (cur) {
+        case 0x11: next = 9; break;
+        case 0x15: next = 0x13; break;
+        default: return;
+        }
+    }
+    if (m_f18 < g_1070b228->curtime + 0.3)
+        m_f18 = g_1070b228->curtime + 0.3;
+    p = *(CUnknown102ee120 **)((char *)m_pOuter + 0x5d34);
+    p->sub_102ee250(next);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e8a80 size=0xa
 void __fastcall sub_102e8a80(int *self, int, int value)
 {
