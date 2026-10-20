@@ -1366,6 +1366,7 @@
 0x100076f3 func   ?sub_101f82d0@CUnknown101f0e50@@QAE_NH@Z CUnknown101f0e50::sub_101f82d0
 0x100076f8 func   ?sub_101b6a30@@YIXPAH@Z sub_101b6a30
 0x1000772f func   ?sub_103d7420@CNPC_VWerewolf@@QAEXPAVCHintData_WW@@@Z CNPC_VWerewolf::sub_103d7420
+0x1000774d func   ?sub_100d7f20@@YAXXZ sub_100d7f20
 0x10007752 func   ?sub_10245f50@SConVar@@QAEXH@Z SConVar::sub_10245f50
 0x1000775c func   ?sub_104281f0@@YAHHHHHH@Z sub_104281f0
 0x100077a2 func   ?vfunc495@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc495

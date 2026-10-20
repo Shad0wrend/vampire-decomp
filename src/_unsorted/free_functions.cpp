@@ -16732,6 +16732,31 @@ void sub_100d7e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7f20 size=0x70
+#include <stdio.h>
+#include "CKeyHolder.h"
+struct OwnerX { char pad[0xa8]; void *p; };
+OwnerX *sub_101193b0();
+void sub_10203dd0(const char *text);
+extern const char *g_1073a2f0;
+extern int g_1073a2f8;
+extern CKeyHolder **g_1073a2fc;
+extern char g_106b8540[];
+
+// TARGET: sub_100d7f20
+void sub_100d7f20()
+{
+    OwnerX *o = sub_101193b0();
+    if (o && o->p) {
+        char buf[128];
+        sprintf(buf, "\n   %s:\n\n", g_1073a2f0 ? g_1073a2f0 : g_106b8540);
+        sub_10203dd0(buf);
+        for (int i = 0; i < g_1073a2f8; i++)
+            g_1073a2fc[i]->sub_101ebff0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9c50 size=0x9d
 #include <string.h>
 #include "CUnknown101d5bd0.h"
