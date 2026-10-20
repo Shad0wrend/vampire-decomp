@@ -15620,6 +15620,28 @@ extern "C" GP *func_plat()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159700 size=0x7c
+#include "CUnknown10159700.h"
+#include "CBaseEntity.h"
+
+void CUnknown10159700::sub_10159700(int activator, int caller, int useType, float value)
+{
+    if (vfunc241()) {
+        bool on = m_state == 1;
+        if (!((CBaseEntity *)this)->sub_100a98f0(useType, on))
+            return;
+        if (m_state == 0)
+            vfunc243();
+        else if (m_state == 1)
+            vfunc242();
+    } else {
+        m_field1f0 = 0;
+        if (m_state == 0)
+            vfunc243();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a040 size=0x49
 void *sub_1000db89(int);
 struct GP;
