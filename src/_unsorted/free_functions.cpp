@@ -54966,6 +54966,30 @@ bool __stdcall sub_104110d0(Holder *h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10411630 size=0x73
+#include "CUnknown10411630.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+inline CBaseEntity *ResolveHandle(const unsigned int &h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13))
+			return (CBaseEntity *)s->m_pEntity;
+	}
+	return 0;
+}
+
+CBaseEntity *CUnknown10411630::sub_10411630(float arg)
+{
+	if (ResolveHandle(m_hEntity))
+		return ResolveHandle(m_hEntity);
+	return sub_1000c955(arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x104121d0 size=0xb
 extern int g_109d3080;
 void sub_104121d0()
