@@ -954,6 +954,18 @@ void CUtlVector20::sub_10032db0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032e70 size=0x3e
+#include "CUtlVector20.h"
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+void CUtlVector20::sub_10032e70(int elem, int num)
+{
+	int numToMove = m_size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(m_pMemory + (elem + num) * 20, m_pMemory + elem * 20, numToMove * 20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032ec0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
