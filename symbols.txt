@@ -3235,6 +3235,7 @@
 0x10013d7c func   ?sub_1020f8b0@@YAPAHXZ sub_1020f8b0
 0x10013d81 func   ?vfunc5@CNPC_ProneDialog@@QAEPAV1@I@Z CNPC_ProneDialog::vfunc5
 0x10013d86 func   ?sub_100abbf0@CBaseEntity@@QAEXHH@Z CBaseEntity::sub_100abbf0
+0x10013d8b func   ?sub_100952d0@CBaseAnimating@@QAEPAXH@Z CBaseAnimating::sub_100952d0
 0x10013d95 func   ?sub_100b3b90@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3b90
 0x10013da9 func   ?vfunc5@CResearchBook_LG_STEALTH@@QAEPAV1@I@Z CResearchBook_LG_STEALTH::vfunc5
 0x10013dae func   ?sub_103fbed0@@YAHXZ sub_103fbed0

@@ -7027,6 +7027,60 @@ int CBaseAnimating::sub_100945e0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100952d0 size=0x133
+#include "CBaseAnimating.h"
+#include "CGlobalEntityList.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_105500dc[];
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern CGlobalEntityList *g_10566458;
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+struct EngineY {
+    V16(p) virtual void m0(); virtual void m1();
+    virtual void *GetModelPtr(int modelIndex);
+    virtual void n0(); virtual void n1();
+    virtual int GetModelType(int modelIndex);
+};
+extern EngineY *g_1070b22c;
+void *CBaseAnimating::sub_100952d0(int idx)
+{
+    const char *name;
+    if (this)
+        name = m_name26c ? m_name26c : g_106b8540;
+    else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_105500dc;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (idx < 0) {
+        if (g_1070b22c->GetModelType(vfunc8()) == 3) {
+            void *p = g_1070b22c->GetModelPtr(vfunc8());
+            --*g_109f3680;
+            return p;
+        }
+    } else if (idx < 2) {
+        unsigned int h = *(unsigned int *)((char *)this + 0x5b8);
+        if (h != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+            if (s->m_Serial == (int)(h >> 13) && s->m_pEntity) {
+                if (g_1070b22c->GetModelType(*(int *)((char *)this + 0x5bc + idx * 4)) == 3) {
+                    void *p = g_1070b22c->GetModelPtr(*(int *)((char *)this + 0x5bc + idx * 4));
+                    --*g_109f3680;
+                    return p;
+                }
+            }
+        }
+    }
+    --*g_109f3680;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100963d0 size=0x8e
 #include "CBaseAnimating.h"
 #include "CUnknown1070b22c.h"
