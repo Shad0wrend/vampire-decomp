@@ -425,6 +425,7 @@
 0x10003328 func   _gib gib
 0x1000332d func   _item_g_junkyard_businesscard item_g_junkyard_businesscard
 0x1000333c func   ?sub_10279b70@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10279b70
+0x10003341 func   ?sub_10079f50@@YIPAUCSceneElem9c@@PAUCSceneElemVecOwner@@@Z sub_10079f50
 0x1000334b func   ?sub_101647a0@CBasePlayer@@QAEHH@Z CBasePlayer::sub_101647a0
 0x1000336e func   ?sub_1015ef60@@YIXPAD@Z sub_1015ef60
 0x10003396 func   ?sub_103327f0@CBaseCombatCharacter@@QAEXM@Z CBaseCombatCharacter::sub_103327f0

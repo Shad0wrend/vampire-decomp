@@ -7143,6 +7143,74 @@ CUnknown10075aa0 * __fastcall sub_10079e60(SceneEventVec *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079f50 size=0xc3
+extern "C" {
+__declspec(dllimport) void* Plat_Alloc(int size);
+__declspec(dllimport) void* Plat_Realloc(void* p, int size);
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+}
+
+struct CSceneElem9c	// 0x9c byte element (constructor 0x10073380, stub 0x100051be)
+{
+	char m_data[0x9c];
+	CSceneElem9c *sub_10073380();
+};
+
+struct CSceneElemVecOwner	// the owner of the vector of element pointers at +0x28
+{
+	char m_pad[0x28];
+	CSceneElem9c **m_pMemory;	// 0x28
+	int m_nAllocationCount;	// 0x2c
+	int m_nGrowSize;	// 0x30
+	int m_Size;	// 0x34
+	CSceneElem9c **m_pElements;	// 0x38
+
+	void Grow(int num)
+	{
+		if (m_nGrowSize == -1)
+			return;
+		int req = m_nAllocationCount + num;
+		while (m_nAllocationCount < req) {
+			if (m_nAllocationCount != 0) {
+				if (m_nGrowSize != 0)
+					m_nAllocationCount += m_nGrowSize;
+				else
+					m_nAllocationCount += m_nAllocationCount;
+			} else {
+				m_nAllocationCount = 8;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (CSceneElem9c **)Plat_Realloc(m_pMemory, m_nAllocationCount * 4);
+		else
+			m_pMemory = (CSceneElem9c **)Plat_Alloc(m_nAllocationCount * 4);
+	}
+
+	void GrowVector()
+	{
+		if (m_Size + 1 > m_nAllocationCount)
+			Grow(m_Size + 1 - m_nAllocationCount);
+		m_pElements = m_pMemory;
+		m_Size++;
+	}
+};
+
+CSceneElem9c * __fastcall sub_10079f50(CSceneElemVecOwner *v)
+{
+	CSceneElem9c *mem = new CSceneElem9c;
+	CSceneElem9c *pElem = mem ? mem->sub_10073380() : 0;
+	int elem = v->m_Size;
+	v->GrowVector();
+	int n = v->m_Size - elem - 1;
+	if (n > 0)
+		memmove(&v->m_pMemory[elem + 1], &v->m_pMemory[elem], n * 4);
+	CSceneElem9c **slot = &v->m_pMemory[elem];
+	if (slot)
+		*slot = pElem;
+	return pElem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a270 size=0x1a
 struct S1007a270 {
 	int *m_pMemory; int m_allocationCount; int m_growSize; int m_size;
