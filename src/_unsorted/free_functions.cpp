@@ -5835,6 +5835,20 @@ void S1007b9b0::sub_1007b9b0(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bb30 size=0x67
+#include "CUnknown1007bb30.h"
+extern void (__cdecl *g_109f3890)(char *, const char *, int);
+
+void CUnknown1007bb30::sub_1007bb30(CUnknown1007bb30Dest *pDest)
+{
+    char buf[256];
+    m_pReader->vfunc1(0);
+    g_109f3890(buf, m_pReader->vfunc0(), 0x100);
+    m_pReader->vfunc1(0);
+    pDest->sub_10002eb9(buf, m_pReader->vfunc0());
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfc0 size=0xa
 struct CUnknown1007dfc0 { char p[0x78]; int a; void sub_1007dfc0(int v); };
 // TARGET: CUnknown1007dfc0::sub_1007dfc0
