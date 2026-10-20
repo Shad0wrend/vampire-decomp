@@ -11,13 +11,13 @@ struct CPurgeVec
 	int m_size;
 	int *m_pElements;
 
-	void Purge()
+	void Purge(void (*pfnFree)(void *))
 	{
 		if (m_growSize != -1)
 		{
 			if (m_pMemory)
 			{
-				g_109f3624(m_pMemory);
+				pfnFree(m_pMemory);
 				m_pMemory = 0;
 			}
 			m_allocationCount = 0;
