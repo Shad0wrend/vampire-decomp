@@ -47,3 +47,4 @@
 	bool sub_10338df0(char bAll);	// "CBaseCombatCharacter::DecBloodPoints" (called through the stub at 0x1000799b)
 	void sub_103324a0(inputdata_t *data);	// "CBaseCombatCharacter::InputFadeBodyAsCameraTarget": scope trace (entity name), then sub_103322e0(0, the input's float, 0 when it is not a float)
 	void sub_10147960(int level, int arg);	// obfuscate level setter: when level > 0 and the level at +0x14d4 is 0 sets +0x16c = 2 and plays "D_ObfuscateIn_Emitter"; when level == 0 and the level was positive sets +0x16c = 0 and plays "D_ObfuscateOut_Emitter"; stores level at +0x14d4
+	void vfunc304();	// slot 304 "CBaseCombatCharacter::GiveBaseFightingItems": scope trace (entity name), when the weapon "item_w_fists" is not owned (sub_10335950) gives it (free function sub_10011fdb) and ORs misc flag 0x10
