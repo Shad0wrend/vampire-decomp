@@ -21,6 +21,7 @@ public:
 	void *m_pData;	// +0x3c
 
 	~CVStatAction_t();	// scope trace, frees the record at +0x3c for type 4, then the part at +0x28
+	CVStatAction_t *sub_101fc760(int a, int b);	// constructor (stub 0x1000e8d6), called on freshly allocated memory
 	bool sub_101fceb0(int value);	// "CVStatAction_t::IsAffectedBy"
 	bool sub_101fcf50();	// "CVStatAction_t::AlwaysTriggers"
 	void sub_101fd110(int a, int b, int c, int d);	// "CVStatAction_t::Apply"
