@@ -439,6 +439,7 @@
 0x10003cdd func   ?sub_10103c80@@YAPAHXZ sub_10103c80
 0x10003d0f func   ?sub_100db3f0@@YAXXZ sub_100db3f0
 0x10003d14 func   ?sub_103e3f60@CUtlMemory8@@QAEXH@Z CUtlMemory8::sub_103e3f60
+0x10003d78 func   ?sub_10402230@@YAHXZ sub_10402230
 0x10003d8c func   ?vfunc5@CWeaponMelee_MingXiaoTentacle@@QAEPAV1@I@Z CWeaponMelee_MingXiaoTentacle::vfunc5
 0x10003da0 func   _item_g_keyring item_g_keyring
 0x10003dbe func   ?vfunc5@CNPC_VPedestrian@@QAEPAV1@I@Z CNPC_VPedestrian::vfunc5
