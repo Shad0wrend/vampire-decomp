@@ -8,6 +8,10 @@ public:
 	const char *m_pszSourceFile;	// +0x1b30: source file / line stamp of the last schedule change
 	int m_nSourceLine;	// +0x1b34
 	int m_nIdealState;	// +0x1b38
+	char pad1b3c[0x5d9c - 0x1b3c];
+	float m_flAttackStartTime;	// +0x5d9c
+	char pad5da0[0x66e6 - 0x5da0];
+	char m_bAttacking;	// +0x66e6
 
 	int sub_10005e20(int a);
 	int vfunc440(int a);
@@ -29,4 +33,6 @@ public:
 	void sub_103c5f40(int *pTask);	// CNPC_VVampireBoss::vfunc444 (RunTask), called directly through the stub at 0x10004edf
 	void sub_103b15e0(int arg);	// "CNPC_VSheriffMan::StartTransform": scope trace, stamps the source file and line 0x4c7, then sub_102ae750(0x15b, 0)
 	void sub_102ae750(int a, int b);	// schedule/task starter, called directly through the stub at 0x1000198d
+	void sub_103b1470(int unused);	// "CNPC_VSheriffMan::StartAttacking": scope trace, sub_10013cf5(1, 1, 10), sets the attacking byte and stamps the current time
+	void sub_10013cf5(int a, int b, int c);	// CBaseCombatCharacter member (the stub at 0x10013cf5 for 0x10332aa0), called directly
 };
