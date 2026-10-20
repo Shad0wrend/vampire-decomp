@@ -2001,6 +2001,7 @@
 0x1000b71c func   ?vfunc5@CNPC_VBrujah@@QAEPAV1@I@Z CNPC_VBrujah::vfunc5
 0x1000b721 func   ?sub_102fc540@@YAXHHPBDZZ sub_102fc540
 0x1000b726 func   _npc_VTremere npc_VTremere
+0x1000b730 func   ?sub_101975d0@@YAPAUPyObj@@PAU1@0@Z sub_101975d0
 0x1000b73a func   ?vfunc5@CMomentaryRotButton@@UAEPAV1@I@Z CMomentaryRotButton::vfunc5
 0x1000b749 func   _npc_VMingXiao npc_VMingXiao
 0x1000b74e func   ?sub_10376c10@CNPC_VFrenzyShadow@@QAEXXZ CNPC_VFrenzyShadow::sub_10376c10

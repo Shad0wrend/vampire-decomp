@@ -22747,6 +22747,58 @@ int *sub_10197510(int self, int args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101975d0 size=0xa3
+#include "Vector.h"
+
+struct PyObj
+{
+	int ob_refcnt;
+	void *ob_type;
+};
+
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObj *args, const char *format, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred(void);
+__declspec(dllimport) void PyErr_SetString(PyObj *exception, const char *string);
+__declspec(dllimport) extern PyObj *PyExc_StandardError;
+__declspec(dllimport) extern PyObj _Py_NoneStruct;
+}
+
+#define SO_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SO_V100(p) SO_V10(p##0) SO_V10(p##1) SO_V10(p##2) SO_V10(p##3) SO_V10(p##4) SO_V10(p##5) SO_V10(p##6) SO_V10(p##7) SO_V10(p##8) SO_V10(p##9)
+
+// the vtable of an entity up to slot 215, then SetOrigin at 216
+struct SEntitySlots
+{
+	SO_V100(a0) SO_V100(a1) SO_V10(a20)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5();
+	virtual void SetOrigin(const Vector *pOrigin);	// slot 216
+};
+
+void *sub_10196780(PyObj *pEntity);
+Vector *sub_101960f0(Vector *pOut, PyObj *pTuple);
+
+PyObj *sub_101975d0(PyObj *self, PyObj *args)
+{
+	PyObj *pyEntity = 0;
+	PyObj *pyOrigin = 0;
+	if (!PyArg_ParseTuple(args, "OO", &pyEntity, &pyOrigin)) {
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_StandardError, "bad args to SetOrigin()");
+		return 0;
+	}
+	SEntitySlots *pEntity = (SEntitySlots *)sub_10196780(pyEntity);
+	if (pEntity) {
+		Vector origin;
+		sub_101960f0(&origin, pyOrigin);
+		pEntity->SetOrigin(&origin);
+	}
+	_Py_NoneStruct.ob_refcnt++;
+	return &_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197b00 size=0x178
 #define S1(p, n) virtual void p##n();
 #define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
