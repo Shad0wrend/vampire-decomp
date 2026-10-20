@@ -3425,6 +3425,7 @@
 0x10010ffa func   _trigger_multiple trigger_multiple
 0x10010fff func   ?vfunc68@CBaseCombatCharacter@@QAE_NPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc68
 0x10011013 func   _worldspawn worldspawn
+0x10011036 func   ?sub_10045360@CUnknown10045360@@QAEXXZ CUnknown10045360::sub_10045360
 0x1001103b func   _item_w_hengeyokai_fist item_w_hengeyokai_fist
 0x10011040 func   ?sub_103b30c0@@YADXZ sub_103b30c0
 0x1001105e func   ?sub_1039ede0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_1039ede0

@@ -3952,6 +3952,92 @@ void CUnknown10045110::sub_10045110(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10045360 size=0x112
+struct RBLinks { unsigned short m_Left, m_Right, m_Parent, m_Tag; };
+struct RBNode16 { RBLinks m_Links; char m_Data[8]; };
+struct RBNode36 { RBLinks m_Links; char m_Data[28]; };
+
+struct RBTreeA {
+	void *m_Less;
+	RBNode16 *m_pElements;
+	int m_u8, m_uC;
+	unsigned short m_Root, m_NumElements, m_FirstFree, m_TotalElements;
+	int m_u18;
+	const RBLinks *sub_10048960(unsigned short i) const;
+	void RemoveAll()
+	{
+		int prev = 0xffff;
+		for (int i = m_TotalElements - 1; i >= 0; i--) {
+			sub_10048960(i);
+			m_pElements[(unsigned short)i].m_Links.m_Right = prev;
+			m_pElements[(unsigned short)i].m_Links.m_Left = i;
+			prev = i;
+		}
+		m_Root = 0xffff;
+		m_NumElements = 0;
+		m_FirstFree = m_TotalElements ? 0 : 0xffff;
+	}
+};
+struct RBTreeB {
+	void *m_Less;
+	RBNode16 *m_pElements;
+	int m_u8, m_uC;
+	unsigned short m_Root, m_NumElements, m_FirstFree, m_TotalElements;
+	int m_u18;
+	const RBLinks *sub_100057d6(unsigned short i) const;
+	void RemoveAll()
+	{
+		int prev = 0xffff;
+		for (int i = m_TotalElements - 1; i >= 0; i--) {
+			sub_100057d6(i);
+			m_pElements[(unsigned short)i].m_Links.m_Right = prev;
+			m_pElements[(unsigned short)i].m_Links.m_Left = i;
+			prev = i;
+		}
+		m_Root = 0xffff;
+		m_NumElements = 0;
+		m_FirstFree = m_TotalElements ? 0 : 0xffff;
+	}
+};
+struct RBTreeC {
+	void *m_Less;
+	RBNode36 *m_pElements;
+	int m_u8, m_uC;
+	unsigned short m_Root, m_NumElements, m_FirstFree, m_TotalElements;
+	int m_u18;
+	const RBLinks *sub_10049d20(unsigned short i) const;
+	void RemoveAll()
+	{
+		int prev = 0xffff;
+		for (int i = m_TotalElements - 1; i >= 0; i--) {
+			sub_10049d20(i);
+			m_pElements[(unsigned short)i].m_Links.m_Right = prev;
+			m_pElements[(unsigned short)i].m_Links.m_Left = i;
+			prev = i;
+		}
+		m_Root = 0xffff;
+		m_NumElements = 0;
+		m_FirstFree = m_TotalElements ? 0 : 0xffff;
+	}
+};
+
+struct CUnknown10045360 {
+	char pad[0x40];
+	RBTreeA m_TreeA;	// 0x40
+	RBTreeB m_TreeB;	// 0x5c
+	RBTreeC m_TreeC;	// 0x78
+
+	void sub_10045360();
+};
+
+void CUnknown10045360::sub_10045360()
+{
+	m_TreeA.RemoveAll();
+	m_TreeB.RemoveAll();
+	m_TreeC.RemoveAll();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045de0 size=0x127
 #include "CUtlRBTree36.h"
 extern int g_109f0b74;
