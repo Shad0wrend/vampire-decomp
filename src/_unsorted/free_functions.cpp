@@ -21370,6 +21370,25 @@ char CUnknown101d9840::sub_101d9840(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d9cd0 size=0x43
+#include "CDisciplineProjectile.h"
+void *sub_100aa720(int size);
+extern char g_105a1dec[];
+
+// TARGET: vdisciplineprojectile
+extern "C" CBaseEntity *vdisciplineprojectile()
+{
+	void *mem = sub_100aa720(0x8c4);
+	CDisciplineProjectile *p;
+	if (mem)
+		p = ((CDisciplineProjectile *)mem)->sub_101d9e20();
+	else
+		p = 0;
+	p->vfunc106(g_105a1dec);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101da960 size=0xe
 #include "CUnknown101da960.h"
 extern const char *g_105a1bdc[];
