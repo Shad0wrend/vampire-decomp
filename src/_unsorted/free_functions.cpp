@@ -7633,6 +7633,37 @@ char CBaseAnimating::sub_100931d0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093be0 size=0x94
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+int sub_100061d6(void *pStudioHdr, int group, int a);
+
+int CBaseAnimating::sub_10093be0(int a)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseAnimating::GetBodygroup";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	int result = sub_100061d6(sub_100952d0(-1), *(int *)((char *)this + 0x67c), a);
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093ef0 size=0x83
 #include "CBaseAnimating.h"
 

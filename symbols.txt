@@ -2857,6 +2857,7 @@
 0x10010aeb func   ?sub_100eb0e0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100eb0e0
 0x10010af5 func   ?vfunc11@ConVar@@UAEXPBD@Z ConVar::vfunc11
 0x10010b09 func   ?vfunc116@CBaseEntity@@UAEHXZ CBaseEntity::vfunc116
+0x10010b18 func   ?sub_10093be0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10093be0
 0x10010b22 func   ?vfunc566@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::vfunc566
 0x10010b45 func   ?sub_10356550@@YAPAHXZ sub_10356550
 0x10010b5e func   ?vfunc0@CGameRules@@UAEPAV1@I@Z CGameRules::vfunc0
