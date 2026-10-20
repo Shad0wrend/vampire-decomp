@@ -8,7 +8,7 @@ public:
 	CBaseTransmitProxy *vfunc0(unsigned int flags);
 	void sub_10002428();
 	void sub_10097bd0();
-	volatile void *m_vptr;
+	void *m_vptr;
 	volatile unsigned int m_hEnt;
 	volatile short m_sUnk;
 };
