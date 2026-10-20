@@ -9468,6 +9468,33 @@ int CBaseAnimating::sub_10093ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093fb0 size=0xe0
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+extern char g_1054fe04[];
+int CBaseAnimating::sub_10093fb0(int sequence, float *pMins, float *pMaxs)
+{
+    ScopeTrace t(g_1054fe04, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    float *pSeq = (float *)sub_1008d990(sequence);
+    if (!pSeq) {
+        pMins[0] = 0;
+        pMins[1] = 0;
+        pMins[2] = 0;
+        pMaxs[0] = 0;
+        pMaxs[1] = 0;
+        pMaxs[2] = 0;
+        return 0;
+    }
+    pMins[0] = pSeq[0x1c / 4];
+    pMins[1] = pSeq[0x20 / 4];
+    pMins[2] = pSeq[0x24 / 4];
+    pMaxs[0] = pSeq[0x28 / 4];
+    pMaxs[1] = pSeq[0x2c / 4];
+    pMaxs[2] = pSeq[0x30 / 4];
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094370 size=0x7f
 struct ScopeEnt { const char *a; const char *b; const char *c; };
 extern ScopeEnt *g_109f3620;
