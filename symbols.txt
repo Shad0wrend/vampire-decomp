@@ -1169,6 +1169,7 @@
 0x100072c0 func   ?sub_103315e0@@YIHPADHH@Z sub_103315e0
 0x1000731f func   ?sub_101b30d0@CUnknown101b30d0@@QAEPAV1@XZ CUnknown101b30d0::sub_101b30d0
 0x10007324 func   ?sub_1016bd50@CBasePlayer@@QAEXXZ CBasePlayer::sub_1016bd50
+0x10007329 func   ?sub_100c6280@@YAHPADPBD@Z sub_100c6280
 0x1000732e func   _item_k_clinic_cs_key item_k_clinic_cs_key
 0x1000733d func   ?vfunc440@CNPC_VTzimisceHeadClaw@@UAEHH@Z CNPC_VTzimisceHeadClaw::vfunc440
 0x10007342 func   ?sub_10041b90@@YA_NPAH0@Z sub_10041b90
