@@ -1070,6 +1070,7 @@
 0x10006d7a func   ?vfunc546@CNPC_VVampireBoss@@QAEHH@Z CNPC_VVampireBoss::vfunc546
 0x10006d7f func   _item_p_occult_obfuscate item_p_occult_obfuscate
 0x10006d84 func   ?vfunc0@CCollisionEvent@@UAEXPAX@Z CCollisionEvent::vfunc0
+0x10006dac func   ?vfunc110@CMultiSource@@UAE_NPBD0@Z CMultiSource::vfunc110
 0x10006db1 func   ?sub_100f0e70@@YIXPAD@Z sub_100f0e70
 0x10006dca func   ?sub_1013a600@@YAHM@Z sub_1013a600
 0x10006dcf func   ?vfunc590@CNPC_VSabbatLeader@@QAEDXZ CNPC_VSabbatLeader::vfunc590
