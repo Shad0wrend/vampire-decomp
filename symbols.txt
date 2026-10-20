@@ -1826,6 +1826,7 @@
 0x10009c00 func   ?sub_101e0d60@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101e0d60
 0x10009c05 func   ?vfunc5@CItemGSewerBook1@@QAEPAV1@I@Z CItemGSewerBook1::vfunc5
 0x10009c19 func   ?sub_10373420@@YIXPAH@Z sub_10373420
+0x10009c32 func   ?sub_102dfaa0@CUnknown102dfaa0@@QAEXPAXH@Z CUnknown102dfaa0::sub_102dfaa0
 0x10009c37 func   ?sub_10202760@@YAHH@Z sub_10202760
 0x10009c4b func   ?sub_101953d0@@YAPAHPAUPyObj@@PAX@Z sub_101953d0
 0x10009c5a func   ?vfunc5@CEnvBeam@@QAEPAV1@I@Z CEnvBeam::vfunc5

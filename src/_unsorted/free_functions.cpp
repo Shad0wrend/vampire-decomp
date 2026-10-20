@@ -47341,6 +47341,56 @@ void UtlMem::sub_102def00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dfaa0 size=0x114
+#include "CUnknown102dfaa0.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+void sub_102df1b0(CUnknown102dfaa0_Record *p);
+
+// TARGET: CUnknown102dfaa0::sub_102dfaa0
+void CUnknown102dfaa0::sub_102dfaa0(void *pEnt, int c)
+{
+	CUnknown102dfaa0_Record **pp = &m_pHead;
+	CUnknown102dfaa0_Record *pRec = *pp;
+	CUnknown102dfaa0_Record **ppLink;
+	if (pRec && pEnt && (ppLink = pp, *pp))
+	{
+		CGlobalEntityList *pList = g_10566458;
+		for (;;)
+		{
+			void *pFound;
+			unsigned int h = pRec->m_hEnt;
+			if (h == 0xffffffff)
+				pFound = 0;
+			else
+			{
+				CGlobalEntityList_Slot *pSlot = &pList->m_Slots[h & 0x1fff];
+				if (pSlot->m_Serial == (int)(h >> 13))
+					pFound = pSlot->m_pEntity;
+				else
+					pFound = 0;
+			}
+			if (pFound == pEnt)
+				break;
+			ppLink = &pRec->m_pNext;
+			pRec = pRec->m_pNext;
+			if (!pRec)
+				return;
+		}
+		if (m_bUseHandles)
+		{
+			if (m_pHandles)
+				m_pHandles->sub_103169a0((int)pEnt, pRec->m_vecA, pRec->m_vecB, c);
+		}
+		else if (m_pTarget)
+			m_pTarget->slot56(pEnt, pRec->m_vecA, pRec->m_vecB, c);
+		*ppLink = pRec->m_pNext;
+		sub_102df1b0(pRec);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dfd90 size=0xfa
 #include "CUnknown102dfd90.h"
 
