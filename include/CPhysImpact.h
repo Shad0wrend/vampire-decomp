@@ -28,7 +28,7 @@ public:
 	// slots 104..211
 	PI_V10(pe10) PI_V10(pe11) PI_V10(pe12) PI_V10(pe13) PI_V10(pe14) PI_V10(pe15) PI_V10(pe16) PI_V10(pe17) PI_V10(pe18) PI_V10(pe19)
 	PI_V1(pf204) PI_V1(pf205) PI_V1(pf206) PI_V1(pf207) PI_V1(pf208) PI_V1(pf209) PI_V1(pf210) PI_V1(pf211)
-	virtual void vfunc212(int set);
+	virtual void vfunc212(const char *pszModel);	// "CBaseEntity::SetModel"-like
 
 	char m_pad0004[0x268];	// 0x0004 .. 0x026B
 	const char *m_name26c;	// 0x026c: the entity name
