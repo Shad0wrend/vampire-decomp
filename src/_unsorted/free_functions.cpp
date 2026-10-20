@@ -12090,6 +12090,18 @@ void sub_100f4190(const char *name, int id, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4260 size=0x64
+extern int (*g_109f388c)(char *, int, const char *, ...);
+extern char g_10565604[];
+void sub_100f4490(char *, int);
+void sub_100f4260(int a, int b, float x, float y, float z, int c)
+{
+    char buf[260];
+    g_109f388c(buf, 260, g_10565604, a, b, (double)x, (double)y, (double)z);
+    sub_100f4490(buf, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f42f0 size=0x3e
 extern "C" __declspec(dllimport) int Q_snprintf(char *buf, int size, const char *fmt, ...);
 void __cdecl sub_100f4490(char *cmd, int a);
