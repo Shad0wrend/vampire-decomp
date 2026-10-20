@@ -33197,6 +33197,26 @@ int CUnknown1021e8e0::sub_1021e8e0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021e9c0 size=0xaa
+#include "CUnknown1021e8e0.h"
+#include <string.h>
+
+int CUnknown1021e8e0::sub_1021e9c0(const char *pszName, int nStart)
+{
+	char szName[128];
+	char szEntry[128];
+	strcpy(szName, pszName);
+	strlwr(szName);
+	for (int i = nStart + 1; i < sub_1021eaa0(); i++) {
+		strcpy(szEntry, sub_1021eac0(i));
+		strlwr(szEntry);
+		if (strstr(szEntry, szName) == szEntry)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10220e10 size=0x83
 #include "QuestJournal.h"
 
