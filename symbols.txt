@@ -2808,6 +2808,7 @@
 0x1000ebc9 func   _env_glow env_glow
 0x1000ebce func   ?vfunc5@COccultFrenzy@@QAEPAV1@I@Z COccultFrenzy::vfunc5
 0x1000ebe7 func   ?sub_100a9080@@YI_NPAD@Z sub_100a9080
+0x1000ec05 func   ??1CUnknown101ec4f0@@QAE@XZ CUnknown101ec4f0::~CUnknown101ec4f0
 0x1000ec0a func   ?vfunc5@CWeaponMelee_ChangClaw@@QAEPAV1@I@Z CWeaponMelee_ChangClaw::vfunc5
 0x1000ec0f func   ?sub_101a2d50@CEntitySaveRestoreBlockHandler@@QAEPAVCBaseEntity@@PBD0@Z CEntitySaveRestoreBlockHandler::sub_101a2d50
 0x1000ec14 func   ?sub_10236d70@@YAHXZ sub_10236d70
