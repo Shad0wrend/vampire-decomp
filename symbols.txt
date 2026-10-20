@@ -243,6 +243,7 @@
 0x10002347 func   ?sub_101ed170@CUnknown101ed170@@QAEXXZ CUnknown101ed170::sub_101ed170
 0x10002351 func   ?sub_10181600@@YIXPAD@Z sub_10181600
 0x1000236f func   ?sub_101cb6b0@@YAPAHXZ sub_101cb6b0
+0x10002397 func   ?sub_10311a20@CUnknown10311a20@@QAEXHH@Z CUnknown10311a20::sub_10311a20
 0x1000239c func   ?sub_100353c0@CUnknown100353c0@@QAEPAV1@PBV1@@Z CUnknown100353c0::sub_100353c0
 0x100023a1 func   ?sub_1027d990@CUnknown1027d990@@QAEHXZ CUnknown1027d990::sub_1027d990
 0x100023a6 func   ?sub_1009b8a0@CBaseEntity@@QAEXHHD@Z CBaseEntity::sub_1009b8a0

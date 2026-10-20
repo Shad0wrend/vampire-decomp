@@ -48492,6 +48492,42 @@ int CUtlVector4::sub_103109a0(int elem, int num, const int *pToInsert)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10311a20 size=0xfa
+#include "CUnknown10311a20.h"
+
+extern int g_109f076c;
+
+struct RBKey
+{
+	int m_nKey;
+	int m_nUnused;
+};
+
+void CUnknown10311a20::sub_10311a20(int key, int value)
+{
+	RBKey search;
+	search.m_nKey = key;
+	if (m_nContext)
+		g_109f076c = m_nContext;
+	unsigned short i = m_Root;
+	if (i == InvalidIndex())
+		return;
+	do {
+		if (m_LessFunc(&search, m_pElements[i].m_Data)) {
+			i = *sub_10313430(i);
+		} else if (m_LessFunc(m_pElements[i].m_Data, &search)) {
+			static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
+			const Links_t &links = i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
+			i = links.m_Right;
+		} else {
+			if (i != InvalidIndex())
+				(*(int **)(m_pElements[i].m_Data + 4))[1] = value;
+			return;
+		}
+	} while (i != InvalidIndex());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312320 size=0x8
 struct CSub10002397 { void sub_10002397(); };
 struct CUnknown10312320 { char pad[0x30]; CSub10002397 m_Sub; void sub_10312320(); };
