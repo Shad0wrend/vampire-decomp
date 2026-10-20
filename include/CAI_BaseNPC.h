@@ -85,7 +85,7 @@ public:
 	CAI_NPC_V(439)
 	CAI_NPC_V(440) CAI_NPC_V(441) CAI_NPC_V(442) CAI_NPC_V(443) CAI_NPC_V(444) CAI_NPC_V(445) CAI_NPC_V(446)
 	virtual int vfunc447(int a);	// classification of a (the dword at +0x1c of the object at +0x5c38); 0x12f is the special case of vfunc509
-	CAI_NPC_V(448)
+	virtual void vfunc448(int a);	// "CAI_BaseNPC::TaskFail": remembers the failure code (+0x5c50), name text (+0x5f30) and failing task (+0x5c38 -> +0x5f38) unless the AI system is paused, clears +0x1a40, then sub_10269a20(0x5c)
 	virtual int vfunc449(int a);	// returns a task/schedule id for the argument (used by PrintTask)
 	CAI_NPC_V10(45)
 	virtual int vfunc460();	// SelectIdealState helper: the NPC's current state, 0 when unset
@@ -131,6 +131,7 @@ public:
 	int vfunc440(int schedule);	// slot 440 "TranslateSchedule" base implementation (declared as a plain member like the subclasses' overrides): schedule 0x2e (a failed scripted sequence) becomes 0x2f..0x33 by the move type at +0x5f60 of the scripted sequence entity (handle at +0x5d74), after a DevWarning when that entity is gone; unchanged otherwise
 	void sub_1027d170();	// stub 0x100119b9: run by vfunc440 when the scripted sequence entity is gone, before schedule 1 is asked for
 	void sub_10270aa0(CBaseEntity *pEnt);	// stores pEnt's entity handle at +0x5d90 (-1 for null)
+	void sub_10269a20(int a);	// stub 0x100041b0, run by TaskFail with 0x5c
 	void sub_10269b50(int condition);	// "CAI_BaseNPC::SetCondition"-like (called through the stub at 0x10015839)
 	bool sub_10269aa0(int condition);	// "CAI_BaseNPC::HasCondition" (stub 0x10014df8): translates ids below 1000000000 first, then tests the condition bit in the array at +0x5c5c
 	void sub_10269bd0(int *pConditions, int nConditions);	// "CAI_BaseNPC::ClearConditions": clears the condition bits (array at +0x5c5c) of each id, translating ids below 1000000000 first through slot 580
