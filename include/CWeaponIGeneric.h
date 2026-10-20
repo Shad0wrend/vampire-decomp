@@ -7,4 +7,6 @@ class CWeaponIGeneric
 public:
 	CWeaponIGeneric *vfunc5(unsigned int flags);
 	void sub_10013a57();
+	void sub_100138fe();
+	void vfunc321();
 };
