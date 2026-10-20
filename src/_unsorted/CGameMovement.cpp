@@ -46,3 +46,26 @@ float *CGameMovement::vfunc4(char flag, int unused)
 	return (float *)((char *)this + 0x5c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1011f650 size=0x70
+#include "CGameMovement.h"
+struct S1070b228 { char pad[0x10]; float m_f10; };
+struct S109ef04c { virtual void v0(); virtual char vfunc1(); char pad[0x28 - 4]; float m_f28; };
+extern S1070b228 *g_1070b228;
+extern S109ef04c *g_109ef04c;
+extern float g_104454c4;
+void __fastcall sub_101251e0(char *);
+void CGameMovement::vfunc1(void *pMove, void *pPlayer)
+{
+    float saved = g_1070b228->m_f10;
+    sub_101251e0((char *)this);
+    *((char *)this + 0xdc) = 0;
+    m_pMove = pMove;
+    m_pPlayer = pPlayer;
+    float f = g_109ef04c->vfunc1() ? g_104454c4 : g_109ef04c->m_f28;
+    *(float *)((char *)m_pPlayer + 0x38) = f;
+    vfunc5();
+    sub_1011f6e0();
+    g_1070b228->m_f10 = saved;
+}
+// END FUNCTION

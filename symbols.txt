@@ -1467,6 +1467,7 @@
 0x1000954d func   _phys_torque phys_torque
 0x1000955c func   ??0CWeaponMelee@@QAE@XZ CWeaponMelee::CWeaponMelee
 0x10009561 func   ?vfunc5@CNPC_VLasombra@@QAEPAV1@I@Z CNPC_VLasombra::vfunc5
+0x1000956b func   ?vfunc1@CGameMovement@@UAEXPAX0@Z CGameMovement::vfunc1
 0x10009598 func   ?vfunc223@CFuncMoveLinear@@QAE_NXZ CFuncMoveLinear::vfunc223
 0x100095c5 func   ?sub_1033d380@S1033d380@@QAEHH@Z S1033d380::sub_1033d380
 0x100095cf func   ?sub_100433b0@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_100433b0
