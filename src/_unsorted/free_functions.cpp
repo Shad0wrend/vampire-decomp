@@ -50287,6 +50287,18 @@ void sub_10316ec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316fa0 size=0x11
+extern int g_106152b0[];
+
+int sub_10316fa0(int i)
+{
+    if (i < 0x2a) {
+        i = g_106152b0[i];
+    }
+    return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319f10 size=0xc
 bool sub_1000528b(void *);
 bool CUnknown10319f10::sub_10319f10()
