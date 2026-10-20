@@ -3058,6 +3058,7 @@
 0x1001241d func   ?sub_101e8080@CUnknown101e8080@@QAEXPAHPAXMH@Z CUnknown101e8080::sub_101e8080
 0x1001244a func   ?sub_10406560@@YAHXZ sub_10406560
 0x10012477 func   ?sub_101cd070@@YGPAUEnt@@PAU1@@Z sub_101cd070
+0x10012481 func   ?sub_10202ba0@CUnknown10202ba0@@QAEXXZ CUnknown10202ba0::sub_10202ba0
 0x10012486 func   ?sub_101e86e0@S@@QAEXPAUP@@@Z S::sub_101e86e0
 0x100124a4 func   _point_camera point_camera
 0x100124b3 func   _CreateInterface CreateInterface

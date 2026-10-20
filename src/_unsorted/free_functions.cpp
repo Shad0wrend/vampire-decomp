@@ -27218,6 +27218,25 @@ const char *sub_10202880(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202ba0 size=0x73
+#include "CUnknown10202ba0.h"
+
+extern char g_106b8540[];
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+void sub_10203dd0(const char *text);
+
+void CUnknown10202ba0::sub_10202ba0()
+{
+	char buf[128];
+	sprintf(buf, "\n\t%s:\n", m_pszName ? m_pszName : g_106b8540);
+	sub_10203dd0(buf);
+	for (int i = 0; i < m_nEntries; i++) {
+		sprintf(buf, "(%d):\t\t%s\n", i, sub_10202a10(i));
+		sub_10203dd0(buf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202c40 size=0x10
 struct S4 {
 	int a, b, c, d;
