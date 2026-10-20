@@ -7,3 +7,4 @@
 	void sub_100a9120(inputdata_t *pInput);	// "CBaseEntity::InputSetFakeSilence": scope trace (entity name), sub_100a8fc0(1) when the input is an integer that is non-zero, else sub_100a8fc0(0)
 	float sub_100ac720(const char *context);	// "CBaseEntity::GetLastThink": scope trace (entity name), the last think time (float at +0xc of the think context record named context, or the float at +0x178 for the default context)
 	void sub_1009c000(int a, int b, unsigned int hEntity);	// "CBaseEntity::DumpEhandle": scope trace (entity name), then sub_1009b700(a, b, name of the entity behind hEntity, or null)
+	void sub_1009c720(int a, const char *fmt, const CBaseEntityColor32 *array, int count);	// "CBaseEntity::DumpColor32Array": scope trace (entity name), sprintf(fmt) into a 256 byte buffer, then per element sprintf("%d") after it and sub_1009bef0(a, buffer, array[i])
