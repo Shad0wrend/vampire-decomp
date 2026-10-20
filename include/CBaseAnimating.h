@@ -69,6 +69,7 @@ public:
 	bool sub_10090e30(int sequence);	// "CBaseAnimating::IsValidSequence": scope trace (entity name), sub_1008d990(sequence) != 0
 	int sub_1008d990(int sequence);	// worker of IsValidSequence (stub 0x1000b4f6)
 	int sub_10092270(const char *name);	// "CBaseAnimating::LookupPoseParameter" (stub 0x10009ac5): scope trace (entity name), index of the first of 0x18 pose parameters of GetModelPtr(-1) whose name matches (case-insensitive), else -1
+	const char *sub_1008fe80(int sequence);	// "CBaseAnimating::GetSequenceName": scope trace (entity name), the name string at the offset in the first dword of the sequence description sub_1008d990 finds, "SEQUENCE NOT FOUND" when there is none
 
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
