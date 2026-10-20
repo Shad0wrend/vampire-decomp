@@ -960,6 +960,7 @@
 0x100066b3 func   ?sub_104037b0@@YAHXZ sub_104037b0
 0x100066b8 func   ?vfunc552@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc552
 0x100066c7 func   ?sub_102180a0@@YIXPADHH@Z sub_102180a0
+0x100066ea func   ??0CEntryX@@QAE@H@Z CEntryX::CEntryX
 0x100066ef func   ?sub_1016b460@CUnknown1016b460@@QAEXHHH@Z CUnknown1016b460::sub_1016b460
 0x100066f9 func   ?sub_100b4610@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_100b4610
 0x10006721 func   ?sub_102e12e0@@YIXPAUCOwner@@@Z sub_102e12e0
