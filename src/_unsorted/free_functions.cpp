@@ -12648,6 +12648,29 @@ int __stdcall sub_100e7480(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7630 size=0x71
+#include "CDialog.h"
+struct ScopeEnt { const char *name; const char *file; const char *file2; };
+extern ScopeEnt *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CDialog::sub_100e7630(void *pFile)
+{
+    g_109f3620[*g_109f3680].name = "CDialog::eat_line";
+    g_109f3620[*g_109f3680].file = g_106b8540;
+    g_109f3620[*g_109f3680].file2 = g_106b8540;
+    ++*g_109f3680;
+    int c;
+    do {
+        c = sub_100e7510(pFile);
+        if (c == 10)
+            break;
+    } while (c != -1);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e76d0 size=0xd1
 #include <string.h>
 #include <stdlib.h>
