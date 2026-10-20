@@ -11524,6 +11524,27 @@ void CBaseEntity::sub_100a4930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a52a0 size=0xe5
+#include "CBaseEntity.h"
+#include "CUnknown100a8220.h"
+#include "ScopeTrace.h"
+
+bool CBaseEntity::sub_100a52a0()
+{
+	ScopeTrace t("CBaseEntity::EntityUnselectable", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (sub_100b5190())
+		return true;
+	if (((CUnknown100a8220 *)this)->sub_100a8220())
+		return true;
+	if ((char)vfunc116())
+		return true;
+	char *pOwner = *(char **)((char *)this + 0x9c);
+	if (pOwner && !*(char *)(pOwner + 0x1480))
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a53d0 size=0x92
 #include "CUnknown1070b22c.h"
 
