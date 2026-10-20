@@ -38865,6 +38865,25 @@ char sub_10370a20()
 void __fastcall sub_10373420(int *p) { p[3] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10373480 size=0x43
+#include "CNPC_VDog.h"
+void *sub_100aa720(int size);
+extern char g_10636904[];
+
+// TARGET: npc_VDog
+extern "C" CBaseEntity *npc_VDog()
+{
+	void *mem = sub_100aa720(0x6694);
+	CNPC_VDog *p;
+	if (mem)
+		p = ((CNPC_VDog *)mem)->sub_103734f0();
+	else
+		p = 0;
+	p->vfunc106(g_10636904);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10373620 size=0x33
 void sub_10001564();
 void sub_1000176c();
