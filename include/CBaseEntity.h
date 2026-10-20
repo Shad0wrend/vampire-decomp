@@ -213,12 +213,12 @@ public:
 	int m_nThinkContexts;	// 0x01c4
 	char m_pad01c8[0x1ec - 0x1c8];
 	void (CBaseEntity::*m_pfnTouch)(CBaseEntity *pOther);	// 0x01ec
-	char m_pad01f0[0x1f4 - 0x1f0];
+	void (CBaseEntity::*m_pfnUse)(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// 0x01f0
 	void (CBaseEntity::*m_pfnBlocked)(CBaseEntity *pOther);	// 0x01f4
 	char m_pad01f8[0x1fc - 0x1f8];
 	int m_nTakeDamage;	// 0x01fc
 	int m_field200;
-	char m_pad0204[4];
+	unsigned int m_flags204;	// 0x0204
 	int m_iMaxHealth;	// 0x0208
 	char m_pad020c[4];
 	int m_iHealth;	// 0x0210
