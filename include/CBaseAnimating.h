@@ -48,6 +48,7 @@ public:
 	int sub_10093ef0();	// "CBaseAnimating::GetNumBodyGroups": scope trace, then a studio helper on GetModelPtr(-1)
 	void sub_1008f540();	// "CBaseAnimating::ResetActivityIndexes ": scope trace, then a studio helper on GetModelPtr(-1)
 	int sub_10096760();	// "CBaseAnimating::GetHitboxSetCount": scope trace, then a studio helper on GetModelPtr(-1)
+	int sub_10092c90();	// "CBaseAnimating::GetNumBones": scope trace (entity name), then the int at +0xf0 of GetModelPtr(-1), 0 when missing
 
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
