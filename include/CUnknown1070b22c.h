@@ -1,4 +1,5 @@
 // CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 17, 35, 38, 59, 82, 84, 85, 105 and 119 to 122 are known.
+// Slot 17 is PrecacheModel(name, preload) and returns the model index.
 // Slot 119 takes a flag and returns a time value in ST0; slot 120 returns a dword in EAX.
 // Slots 84 / 85 are the engine's command argument accessors (Cmd_Argv(index) / Cmd_Argc()).
 // Slot 82 registers a user message by name and size and returns its id.
@@ -16,7 +17,7 @@ public:
 	U22C_SLOTS10(a0)
 	virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14();
 	virtual void a15(); virtual void a16();
-	virtual char vfunc17(int a, int b);
+	virtual int vfunc17(int a, int b);
 	virtual void a18(); virtual void a19();
 	U22C_SLOTS10(a2)
 	virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34();
