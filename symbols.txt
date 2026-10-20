@@ -655,6 +655,7 @@
 0x10005245 func   ?sub_10221ca0@QuestJournal@@QAEDH@Z QuestJournal::sub_10221ca0
 0x10005254 func   ?sub_1033df80@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033df80
 0x10005295 func   ?vfunc5@CSimplePhysicsProp@@UAEPAV1@I@Z CSimplePhysicsProp::vfunc5
+0x1000529a func   ?vfunc337@CNPC_VSheriffMan@@QAEHXZ CNPC_VSheriffMan::vfunc337
 0x100052a4 func   ?vfunc293@CAI_BaseNPCTroika@@UAEHXZ CAI_BaseNPCTroika::vfunc293
 0x100052a9 func   _item_g_cash_box item_g_cash_box
 0x100052d6 func   ?vfunc431@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::vfunc431

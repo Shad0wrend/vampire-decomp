@@ -56,6 +56,23 @@ void CNPC_VSheriffMan::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ae840 size=0x5e
+#include "CNPC_VSheriffMan.h"
+struct SScope { const char *a; const char *b; const char *c; };
+extern "C" __declspec(dllimport) SScope g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern char g_106b8540[];
+int CNPC_VSheriffMan::vfunc337()
+{
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].a = "CNPC_VSheriffMan::GetUsedHullBits";
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].b = g_106b8540;
+	g_ScopeTraceStack[g_ScopeTraceStackDepth].c = g_106b8540;
+	g_ScopeTraceStackDepth++;
+	g_ScopeTraceStackDepth--;
+	return 0x200000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103aeac0 size=0x68
 #include "CNPC_VSheriffMan.h"
 
