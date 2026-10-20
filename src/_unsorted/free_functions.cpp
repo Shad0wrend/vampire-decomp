@@ -28000,6 +28000,20 @@ int *sub_102567b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10257200 size=0x11
+#include "CBaseCombatWeapon.h"
+
+struct CWeaponOwner {
+	char pad[0x4fe98];
+	int field2444;
+};
+
+char CBaseCombatWeapon::sub_10257200()
+{
+	return sub_102517b0()->field2444 != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258500 size=0xc
 extern const char *g_105c6388[];
 const char *sub_10258500(int index)
