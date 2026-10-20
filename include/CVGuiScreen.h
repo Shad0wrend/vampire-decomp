@@ -2,9 +2,12 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CVGuiScreen
+#include "CBaseEntity.h"
+
+class CVGuiScreen : public CBaseEntity
 {
 public:
 	CVGuiScreen *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+	virtual void vfunc103();
 };
