@@ -3092,6 +3092,7 @@
 0x1000f506 func   ?sub_10217160@CUnknown10217160@@QAEXXZ CUnknown10217160::sub_10217160
 0x1000f51a func   ?sub_101e0c30@CUnknown101e0c30@@QAEPAUS101e0520@@XZ CUnknown101e0c30::sub_101e0c30
 0x1000f51f func   _item_k_empire_mafia_key item_k_empire_mafia_key
+0x1000f55b func   ?vfunc103@CSimplePhysicsProp@@UAEXXZ CSimplePhysicsProp::vfunc103
 0x1000f560 func   ?sub_10321ec0@@YAXXZ sub_10321ec0
 0x1000f57e func   ?sub_10258af0@CUnknown10258af0@@QAEXXZ CUnknown10258af0::sub_10258af0
 0x1000f588 func   ?sub_1003c450@@YIXPAPAX@Z sub_1003c450
