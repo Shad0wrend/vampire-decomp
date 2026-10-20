@@ -3360,6 +3360,7 @@
 0x100109ec func   ?vfunc344@CBaseCombatCharacter@@QAEMXZ CBaseCombatCharacter::vfunc344
 0x10010a0a func   _phys_constraint phys_constraint
 0x10010a14 func   _prop_keypad prop_keypad
+0x10010a87 func   ?vfunc103@CNPCMaker_Zombie@@UAEXXZ CNPCMaker_Zombie::vfunc103
 0x10010a9b func   ?sub_101bd940@@YIXPAD@Z sub_101bd940
 0x10010aaa func   ?sub_100b7130@@YIXPAUMem4@@HH@Z sub_100b7130
 0x10010aaf func   _tectonic tectonic
