@@ -890,6 +890,7 @@
 0x1000629e func   ?vfunc546@CNPC_VCamera@@QAEHH@Z CNPC_VCamera::vfunc546
 0x10006339 func   ?vfunc367@CBaseCombatCharacter@@QAE?AVQAngle@@XZ CBaseCombatCharacter::vfunc367
 0x1000634d func   ?sub_102eb170@@YA_NH@Z sub_102eb170
+0x10006357 func   ?sub_101dbe30@CUnknown101dbe30@@QAE_NPAX@Z CUnknown101dbe30::sub_101dbe30
 0x10006361 func   ?vfunc5@CItemGCarStereo@@QAEPAV1@I@Z CItemGCarStereo::vfunc5
 0x1000636b func   ?sub_10032f00@UtlVec8@@QAEXHH@Z UtlVec8::sub_10032f00
 0x10006389 func   ?sub_10387800@@YADXZ sub_10387800

@@ -23861,6 +23861,39 @@ const char *sub_101dbb00(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dbe30 size=0x73
+#include "CUnknown101dbe30.h"
+
+struct KeysW {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11();
+	virtual char v12(const char *name, int def);
+	virtual const char *v13(const char *name, const char *def);
+};
+
+extern char g_106b8540[];
+int *sub_10012f0d(void *out, void *pKeys, const char *name);
+int sub_100154ba(const char *s);
+void sub_1023ee30(int a);
+
+bool CUnknown101dbe30::sub_101dbe30(void *pKeys)
+{
+	KeysW *k = (KeysW *)pKeys;
+	if (k) {
+		m_field0000 = *sub_10012f0d(&pKeys, k, "Sound");
+		const char *channel = k->v13("Channel", g_106b8540);
+		if (*channel)
+			m_field0004 = sub_100154ba(channel);
+		m_field0008 = k->v12("IsLooping", 0);
+		if (m_field0000)
+			sub_1023ee30(m_field0000);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ddb40 size=0x78
 extern int (*g_109f388c)(char *, int, const char *, ...);
 extern void (*g_109f3628)(const char *, ...);
