@@ -23763,6 +23763,57 @@ bool CUnk101afc50::sub_101afc50(CUnk101afc50Table *pTable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1040 size=0xa1
+struct SSoundParams
+{
+	int m_nChannel;	// 0x00
+	float m_flVolume;	// 0x04
+	int m_nPitch;	// 0x08
+	int m_nPitchMin;	// 0x0c
+	int m_nPitchMax;	// 0x10
+	int m_nSoundLevel;	// 0x14
+	char m_bFlag;	// 0x18
+	int m_nFlags;	// 0x1c
+	char m_szSoundFile[128];	// 0x20
+};
+
+struct CSoundScripts
+{
+	int m_vtable;
+	char sub_10005830(const char *name, SSoundParams *pParams);
+};
+
+typedef void (*PFNLog)(CSoundScripts *pThis, const char *fmt, ...);
+
+struct IEngineSoundServer
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void StopSound(int entIndex, int channel, const char *pszSample);
+};
+
+extern CSoundScripts g_1072be18;
+extern IEngineSoundServer *g_1070b248;
+
+void sub_101b1040(int entIndex, const char *pszName)
+{
+	SSoundParams params;
+	params.m_nPitch = 100;
+	params.m_nPitchMin = 100;
+	params.m_nPitchMax = 100;
+	params.m_nChannel = 0;
+	params.m_flVolume = 1.0f;
+	params.m_nSoundLevel = 75;
+	params.m_szSoundFile[0] = 0;
+	params.m_bFlag = 0;
+	params.m_nFlags = 0;
+	if (g_1072be18.sub_10005830(pszName, &params) && params.m_szSoundFile[0]) {
+		g_1070b248->StopSound(entIndex, params.m_nChannel, params.m_szSoundFile);
+		(*(PFNLog **)&g_1072be18)[3](&g_1072be18, "StopSound:  '%s' stopped as '%s' (ent %i)\n", pszName, params.m_szSoundFile, entIndex);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2070 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
