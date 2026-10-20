@@ -8,8 +8,8 @@ class ICollideable
 {
 public:
 	virtual void vfunc0();
-	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual float *vfunc1();	// OBBMins: pointer to the three floats of the local mins
+	virtual float *vfunc2();	// OBBMaxs: pointer to the three floats of the local maxs
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual void vfunc5();
