@@ -25885,6 +25885,25 @@ void __fastcall sub_10224170(CSlots *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10225830 size=0x43
+#include "CPropDoorknob.h"
+void *sub_100aa720(int size);
+extern char g_105b2620[];
+
+// TARGET: prop_doorknob
+extern "C" CBaseEntity *prop_doorknob()
+{
+	void *mem = sub_100aa720(0x824);
+	CPropDoorknob *p;
+	if (mem)
+		p = ((CPropDoorknob *)mem)->sub_102258a0();
+	else
+		p = 0;
+	p->vfunc106(g_105b2620);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102265c0 size=0x43
 #include "CPlayerEvents.h"
 void *sub_100aa720(int size);
