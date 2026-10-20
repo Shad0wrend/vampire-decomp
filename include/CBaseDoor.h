@@ -20,4 +20,11 @@ public:
 	void sub_10012837(CBaseEntity *pOther);	// the touch function installed by vfunc250 (stub 0x10012837)
 	void sub_100ee560(char bOpen);	// plays the open (bOpen) or close sound (globals 0x1072bc9c / 0x1072bca0 and volume bytes 0x1072bcc7 / 0x1072bcc8) from the entity of the handle at +0x53c, unless flag 0x1000 of +0x204 is set
 	void sub_100efae0(CBaseEntity *pOther);	// "CBaseDoor::DoorTouch": scope trace, when the activator handle at +0x53c resolves to an entity with an edict, slot 241 accepts and pOther answers slot 158, and the door is opening or closing (state +0x4f8 is 2 or 3) and pOther has the object at +0x9c, calls slot 178(pOther)
+	void sub_100ee630(CBaseEntity *pKnob);	// "CBaseDoor::AddDoorknob": stores the knob's handle in the first free doorknob slot (+0x628, then +0x62c; warns "Door %s already has 2 doorknobs!" when both are taken), installs the use function at +0x1f0 and sets flag 0x100 / clears 0x400 in +0x204
+	void sub_100eef50(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// the use function installed by AddDoorknob (stub 0x1000f010)
+	const char *sub_100ab4f0();	// debug name of the entity (stub 0x1000b5cd)
+
+	char m_pad03e0[0x628 - 0x3e0];
+	unsigned int m_hDoorknob0;	// +0x628
+	unsigned int m_hDoorknob1;	// +0x62c
 };
