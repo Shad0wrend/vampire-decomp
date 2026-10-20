@@ -43734,6 +43734,25 @@ int sub_103f15b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1680 size=0x43
+#include "CVampireProjectile_MingXiaoSpit.h"
+void *sub_100aa720(int size);
+extern char g_1067e38c[];
+
+// TARGET: vampireprojectile_mingxiaospit
+extern "C" CBaseEntity *vampireprojectile_mingxiaospit()
+{
+	void *mem = sub_100aa720(0x8c8);
+	CVampireProjectile_MingXiaoSpit *p;
+	if (mem)
+		p = ((CVampireProjectile_MingXiaoSpit *)mem)->sub_103f17d0();
+	else
+		p = 0;
+	p->vfunc106(g_1067e38c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f2de0 size=0x72
 #include "SendProp.h"
 
