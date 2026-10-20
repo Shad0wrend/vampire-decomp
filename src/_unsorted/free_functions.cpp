@@ -33864,6 +33864,33 @@ void CAI_BaseNPC::sub_10280e50(void *pSchedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10281430 size=0x7c
+#include "CAI_BaseNPCTroika.h"
+struct S10281430Bits {
+    unsigned int m_low : 29;
+    unsigned int m_b29 : 1;
+    unsigned int m_high : 2;
+    char GetBit29() { return m_b29; }
+};
+char CAI_BaseNPCTroika::sub_10281430()
+{
+    int state = *(int *)((char *)this + 0x5cc4);
+    if (state != 7 && (state != 4 || *(int *)((char *)this + 0x5cc0) == 4)) {
+        if (*((char *)this + 0x1b28)) {
+            *((char *)this + 0x1b28) = 0;
+            return 1;
+        }
+        if (!sub_10014df8(0x5d))
+            return 1;
+        if (*(int *)((char *)this + 0x5c38) && ((S10281430Bits *)((char *)this + 0x5c7c))->GetBit29())
+            return 1;
+        if (*(int *)((char *)this + 0x5cc0) == 2 && !vfunc167())
+            return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10288540 size=0x9
 struct CUnknown10288540 { int m_p; CUnknown10288540 *sub_10288540(); };
 CUnknown10288540 *CUnknown10288540::sub_10288540() { m_p = 0; return this; }

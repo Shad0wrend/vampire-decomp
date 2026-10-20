@@ -1030,6 +1030,7 @@
 0x10006dcf func   ?vfunc590@CNPC_VSabbatLeader@@QAEDXZ CNPC_VSabbatLeader::vfunc590
 0x10006dd4 func   ?vfunc5@CWeaponLockpick@@QAEPAV1@I@Z CWeaponLockpick::vfunc5
 0x10006dd9 func   ?sub_1037a8a0@@YADXZ sub_1037a8a0
+0x10006ded func   ?sub_10281430@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_10281430
 0x10006e10 func   ?sub_1040aff0@CUtlVector192@@QAEXH@Z CUtlVector192::sub_1040aff0
 0x10006e15 func   ?sub_101faa70@CVDmg_t@@QAEHXZ CVDmg_t::sub_101faa70
 0x10006e1f func   ?sub_10402cf0@@YAHXZ sub_10402cf0
