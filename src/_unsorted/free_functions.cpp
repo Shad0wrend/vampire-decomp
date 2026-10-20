@@ -46358,6 +46358,31 @@ bool CUnknown10324ad0::sub_10324ad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10324ba0 size=0xa8
+#include "CBaseCombatCharacter.h"
+#include "CUnknown10324ad0.h"
+#include "CUnknown1070b22c.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern CUnknown1070b22c *g_1070b22c;
+
+void CBaseCombatCharacter::sub_10324ba0()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::BeginVampHeal_HOT";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (((CUnknown10324ad0 *)this)->sub_10324ad0()) {
+		double start = sub_10324c80(-1);
+		*(float *)((char *)this + 0xa84) = (float)(g_1070b22c->vfunc119(0) + start);
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10325940 size=0xb8
 #include "inputdata_t.h"
 
