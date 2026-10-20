@@ -8,18 +8,23 @@
 void sub_1000186b();	// less func of the tree (a jump stub)
 void sub_1000feb1();	// callback at +0x2c (a jump stub)
 
+struct CAI_ExpresserMem	// CUtlMemory16 whose constructor is the out of line sub_10312f70
+{
+	CUtlMemory16 m_mem;
+	CAI_ExpresserMem(int growSize, int initSize) { m_mem.sub_10312f70(growSize, initSize); }
+};
+
 struct CAI_ExpresserTree	// an inlined CUtlRBTree16 at +0x14
 {
 	void *m_pfnLess;
-	CUtlMemory16 m_mem;
+	CAI_ExpresserMem m_mem;
 	unsigned short m_Root;
 	unsigned short m_NumElements;
 	unsigned short m_FirstFree;
 	unsigned short m_TotalElements;
 
-	CAI_ExpresserTree() : m_pfnLess((void *)sub_1000186b), m_Root(0xffff), m_NumElements(0), m_FirstFree(0xffff), m_TotalElements(0)
+	CAI_ExpresserTree() : m_pfnLess((void *)sub_1000186b), m_mem(0, 0), m_Root(0xffff), m_NumElements(0), m_FirstFree(0xffff), m_TotalElements(0)
 	{
-		m_mem.sub_10312f70(0, 0);
 	}
 };
 
