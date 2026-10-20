@@ -12,6 +12,7 @@ public:
 	int sub_10093be0(int a);	// "CBaseAnimating::GetBodygroup": scope trace (entity name), then a studio helper on (GetModelPtr(-1), dword at +0x67c, a)
 	void sub_10093b10(int group, int value);	// "CBaseAnimating::SetBodygroup": scope trace (entity name), then the studio helper sub_10428c60(GetModelPtr(-1), &dword at +0x67c, group, value)
 	int sub_100938a0(int sequence);	// "CBaseAnimating::GetEntryNode": scope trace (entity name), the dword at +0x270 of the sequence description sub_1008d990 finds, 0 when there is none
+	int sub_10093970(int sequence);	// "CBaseAnimating::GetExitNode": as GetEntryNode with the dword at +0x274
 	float sub_10093a40(int sequence);	// "CBaseAnimating::GetExitPhase": scope trace (entity name), the float at +0x280 of the sequence description sub_1008d990 finds, the file-scope zero when there is none
 	const char *sub_100946b0(int index);	// "CBaseAnimating::GetFlexControllerName": scope trace (entity name), the name of the 0x14 byte controller record index (table at header + dword at +0x164), 0 when no header
 	int sub_10094790(int index);	// "CBaseAnimating::GetFlexControllerType": scope trace (entity name), address of the 0x14 byte controller record [index] plus its first dword (an offset to the type string); 0 when no header
