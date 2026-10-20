@@ -4964,6 +4964,42 @@ void CUnknown1006ed20::sub_1006ed20(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006ee10 size=0x7b
+struct CUnk1006ee10Rec {
+    char pad0[0x24];
+    int m_n24;
+    char pad28[0x50 - 0x28];
+    int m_n50;
+    char pad54[0x7c - 0x54];
+    int m_n7c;
+    char pad80[0xa8 - 0x80];
+    int m_na8;
+};
+struct CUnk1006ee10Table {
+    CUnk1006ee10Rec *sub_10072b10(int index);
+};
+extern CUnk1006ee10Table g_106c8298;
+
+struct CUnk1006ee10 {
+    char pad0000[0x630];
+    int m_nIndex;
+    int sub_1006ee10(int which);
+};
+
+int CUnk1006ee10::sub_1006ee10(int which)
+{
+    if (which == 0)
+        return g_106c8298.sub_10072b10(m_nIndex)->m_n24;
+    if (which == 1)
+        return g_106c8298.sub_10072b10(m_nIndex)->m_n50;
+    if (which == 2)
+        return g_106c8298.sub_10072b10(m_nIndex)->m_n7c;
+    if (which == 3)
+        return g_106c8298.sub_10072b10(m_nIndex)->m_na8;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006eeb0 size=0x7a
 #include "CUnknown1006eeb0.h"
 
