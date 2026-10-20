@@ -1091,6 +1091,7 @@
 0x10007ad6 func   ?vfunc119@CBaseEntity@@UAEXXZ CBaseEntity::vfunc119
 0x10007b03 func   ?sub_1028e360@CAI_BaseNPCTroika@@QAE_NXZ CAI_BaseNPCTroika::sub_1028e360
 0x10007b0d func   ?sub_102f9990@@YAXXZ sub_102f9990
+0x10007b17 func   ?sub_101bdf40@UtlVec8@@QAEXHH@Z UtlVec8::sub_101bdf40
 0x10007b21 func   ?sub_100b17f0@@YIHPAD@Z sub_100b17f0
 0x10007b26 func   ?vfunc35@CPropRadio@@UAEHH@Z CPropRadio::vfunc35
 0x10007b3a func   ?sub_104110d0@@YG_NPAUHolder@@@Z sub_104110d0

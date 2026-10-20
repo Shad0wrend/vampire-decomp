@@ -18568,6 +18568,16 @@ void CMem4d_t::sub_101bdeb0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bdf40 size=0x34
+#include "UtlVec8.h"
+void UtlVec8::sub_101bdf40(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&m_pMemory[(elem + num) * 4], &m_pMemory[elem * 4], numToMove * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bdf90 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
