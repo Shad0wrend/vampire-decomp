@@ -3139,6 +3139,7 @@
 0x1001428b func   ?vfunc316@CBaseCombatWeapon@@UAEDH@Z CBaseCombatWeapon::vfunc316
 0x100142cc func   ?vfunc1@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc1
 0x100142f9 func   ?vfunc546@CNPC_VLasombra@@QAEHH@Z CNPC_VLasombra::vfunc546
+0x100142fe func   ?sub_1022d010@UtlMem@@QAEXXZ UtlMem::sub_1022d010
 0x1001433a func   ?vfunc365@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc365
 0x1001434e func   ?sub_100657e0@@YAHXZ sub_100657e0
 0x10014362 func   ?sub_101ab800@CUnknown101ab800@@QAE_NHPBEH@Z CUnknown101ab800::sub_101ab800
