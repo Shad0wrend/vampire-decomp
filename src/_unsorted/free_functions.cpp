@@ -42935,6 +42935,37 @@ char sub_103de420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e0cd0 size=0x107
+extern "C" int _strcmpi(const char *, const char *);
+extern void (*g_109f366c)(const char *, ...);
+
+int sub_103e0cd0(const char *pszType)
+{
+    if (pszType && *pszType) {
+        if (_strcmpi(pszType, "None") == 0)
+            return 0;
+        if (_strcmpi(pszType, "AttackPlayer") == 0)
+            return 1;
+        if (_strcmpi(pszType, "AttackNearestGate") == 0)
+            return 2;
+        if (_strcmpi(pszType, "AttackNextNearestGate") == 0)
+            return 3;
+        if (_strcmpi(pszType, "AttackRandom") == 0)
+            return 4;
+        if (_strcmpi(pszType, "Idle") == 0)
+            return 5;
+        if (_strcmpi(pszType, "Wander") == 0)
+            return 6;
+        if (_strcmpi(pszType, "FearPlayer") == 0)
+            return 7;
+        if (_strcmpi(pszType, "FearFacing") == 0)
+            return 8;
+        g_109f366c("Invalid Zombie AI Type (%s) in StringToZombieAIType.  Valid choices are 'None' 'AttackPlayer' 'AttackNearestGate' 'AttackNextNearestGate' 'AttackRandom' 'Idle' 'Wander'.\n", pszType);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1680 size=0x20
 #include "CUnknown103e1680.h"
 extern CUnknown103e1680 *g_10940644;

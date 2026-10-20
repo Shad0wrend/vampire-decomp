@@ -1903,6 +1903,7 @@
 0x1000c248 func   ?sub_1021e6c0@@YIXPAUMem@@HH@Z sub_1021e6c0
 0x1000c2ac func   ?sub_1007ee40@@YIXPAH@Z sub_1007ee40
 0x1000c2bb func   ?sub_10232520@@YIXPAHHH@Z sub_10232520
+0x1000c2de func   ?sub_103e0cd0@@YAHPBD@Z sub_103e0cd0
 0x1000c2e8 func   ?sub_103a1590@@YADXZ sub_103a1590
 0x1000c2f2 func   ?sub_103167f0@HandleList@@QAE_NPAX@Z HandleList::sub_103167f0
 0x1000c301 func   ?vfunc2@CTEBeamRing@@UAEPAV1@I@Z CTEBeamRing::vfunc2
