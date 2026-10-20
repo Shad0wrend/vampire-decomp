@@ -47,7 +47,9 @@ public:
 	// slots 410..482
 	CAI_NPC_V(410) CAI_NPC_V(411) CAI_NPC_V(412) CAI_NPC_V(413) CAI_NPC_V(414) CAI_NPC_V(415)
 	virtual void vfunc416(char value);
-	CAI_NPC_V(417) CAI_NPC_V(418) CAI_NPC_V(419) CAI_NPC_V(420) CAI_NPC_V(421) CAI_NPC_V(422)
+	CAI_NPC_V(417)
+	virtual float vfunc418(float a);	// float lookup keyed by magic values (-1000008..-1000005 in the Troika override), else the base value
+	CAI_NPC_V(419) CAI_NPC_V(420) CAI_NPC_V(421) CAI_NPC_V(422)
 	virtual unsigned int vfunc423();
 	CAI_NPC_V(424) CAI_NPC_V(425) CAI_NPC_V(426)
 	virtual CAI_Motor *vfunc427();	// creates the NPC's motor (operator new, then CAI_Motor::sub_102e0900(this))
