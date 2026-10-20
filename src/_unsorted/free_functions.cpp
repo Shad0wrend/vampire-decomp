@@ -16036,6 +16036,41 @@ void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
 // END FUNCTION
 
+// FUNCTION: 0x10104f20 size=0x93
+#include "CExpressionTable.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = name;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+void CExpressionTable::sub_10104f20()
+{
+	CScopeTrace trace("CExpressionTable::FlushTable", g_106b8540);
+	m_list.sub_1024b880();
+	m_field0c = 0;
+	if (m_field08 != -1) {
+		if (m_field00) {
+			Plat_Free((void *)m_field00);
+			m_field00 = 0;
+		}
+		m_field04 = 0;
+	}
+	m_field10 = m_field00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104ff0 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

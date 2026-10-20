@@ -3514,6 +3514,7 @@
 0x10013bdd func   ?vfunc33@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc33
 0x10013be2 func   ?sub_102fc5d0@CUnknown102fc5d0@@QAEPAV1@HHPBMH@Z CUnknown102fc5d0::sub_102fc5d0
 0x10013be7 func   ?sub_1006d9d0@CBaseCineCam@@QAE_NXZ CBaseCineCam::sub_1006d9d0
+0x10013bec func   ?sub_10104f20@CExpressionTable@@QAEXXZ CExpressionTable::sub_10104f20
 0x10013bf1 func   ?sub_1028ae60@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1028ae60
 0x10013bfb func   ?vfunc546@CNPC_VNosferatu@@QAEHH@Z CNPC_VNosferatu::vfunc546
 0x10013c00 func   ?sub_100aaa40@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100aaa40
