@@ -38400,6 +38400,22 @@ void CUnknown1039aaf0::sub_1039aaf0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039ae10 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_109f3634)(int);
+
+UtlMem *UtlMem::sub_1039ae10(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_109f3634(allocationCount * 8);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039b180 size=0x33
 void sub_10014d7b();
 void sub_10010451();
