@@ -1,6 +1,58 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100f21d0 size=0x81
+#include "CBaseEntity.h"
+#include "CRotDoor.h"
+#include "CBaseDoor.h"
+
+#define V1(p) virtual void p();
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+// the entity's vtable viewed as a flat list of slots (slot 64 takes a position)
+struct CRotDoorSlots {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V1(b0) V1(b1) V1(b2) V1(b3)
+    virtual void vfunc64(float *pPos);
+};
+
+struct CRotDoorFields {
+    char pad0000[0x204];
+    int m_nFlags;	// 0x204
+    char pad0208[0x3fc - 0x208];
+    float m_f3fc;	// 0x3fc
+    char pad0400[0x4f8 - 0x400];
+    int m_nState;	// 0x4f8
+    char pad04fc[0x520 - 0x4fc];
+    float m_vecClosed[3];	// 0x520
+    float m_vecOpen[3];	// 0x52c
+};
+
+void CRotDoor::vfunc250()
+{
+    CRotDoorFields *p = (CRotDoorFields *)this;
+    if (p->m_nFlags & 0x20)
+        return;
+    if (p->m_nFlags & 1) {
+        ((CRotDoorSlots *)this)->vfunc64(p->m_vecOpen);
+        p->m_nState = 0;
+    } else {
+        ((CRotDoorSlots *)this)->vfunc64(p->m_vecClosed);
+        p->m_nState = 1;
+    }
+    p->m_f3fc = -1.0f;
+    m_pfnTouch = (void (CBaseEntity::*)(CBaseEntity *))&CRotDoor::sub_100efae0;
+    switch (p->m_nState) {
+    case 0:
+        ((CBaseDoor *)this)->sub_100efbf0(1);
+        break;
+    case 1:
+        ((CBaseDoor *)this)->sub_100efbf0(0);
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2450 size=0x92
 #include "CRotDoor.h"
 
