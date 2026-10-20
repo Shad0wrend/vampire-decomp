@@ -4,6 +4,8 @@
 // real base and padding before making a virtual call through it.
 #pragma once
 
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
 struct CNewscasterEntry	// 0x28 bytes: a heap string and four heap string pairs
 {
 	void *m_pName;
@@ -18,6 +20,15 @@ struct CNewscasterList	// a CUtlVector<CNewscasterEntry>
 	int m_growSize;
 	int m_size;
 	CNewscasterEntry *m_pElements;
+
+	void RemoveFirst()	// CUtlVector::Remove(0): shifts the tail down and shrinks the size
+	{
+		int n = m_size - 1;
+		if (n > 0)
+			memmove(m_pMemory, m_pMemory + 1, n * sizeof(CNewscasterEntry));
+		n = m_size - 1;
+		m_size = n;
+	}
 };
 
 class CNPC_VNewscaster
