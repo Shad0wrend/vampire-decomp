@@ -25967,6 +25967,30 @@ extern int g_1073938c;
 void sub_101d8890(int v) { g_1073938c = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101d8a70 size=0x95
+#include "CUnknown101d8a70.h"
+#include "ConVar.h"
+
+class CvarInterface
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual ConVar *FindVar(const char *name);
+};
+extern CvarInterface *g_1070b234;
+
+void *CUnknown101d8a70::sub_101d8a70(void *pValue)
+{
+	static ConVar *s_pVar = g_1070b234->FindVar("v_printrolls");
+	if (s_pVar)
+		sub_101d8b40(pValue, s_pVar->GetBool());
+	else
+		sub_101d8b40(pValue, false);
+	return pValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d90c0 size=0x92
 #include "CUnknown101d90c0.h"
 extern char g_106b8540[];
