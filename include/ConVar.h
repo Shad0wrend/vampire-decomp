@@ -18,7 +18,8 @@ public:
 	virtual void vfunc11(const char *value);	// "ConVar::ChangeStringValue": copies the old string to the stack when a change callback is set, stores the new string, calls the callback with the old one
 	virtual void vfunc12();
 
-	char m_pad0004[0x14];	// 0x0004 .. 0x0017
+	ConVar *m_pParent;	// 0x0004
+	char m_pad0008[0x10];	// 0x0008 .. 0x0017
 	unsigned int m_nFlags;	// 0x0018
 	char m_pad001c[4];	// 0x001c
 	char *m_pszString;	// 0x0020
@@ -28,4 +29,7 @@ public:
 	char m_pad0030[0x40 - 0x30];	// 0x0030 .. 0x003f
 	void (*m_fnChangeCallback)(ConVar *pVar, const char *pOldString);	// 0x0040
 	void sub_100108bb();	// as in CDataObjectAccessSystem (transplant)
+
+	int GetInt() { return m_pParent->vfunc1() ? 0 : m_pParent->m_nValue; }
+	bool GetBool() { return GetInt() != 0; }
 };
