@@ -54,6 +54,8 @@
 	virtual void vfunc111();	// slot 111 "CBaseCombatCharacter::MemberSync...": scope trace (entity name), updates the stat list manager at +0x13a8 with the edict index (engine slot 35 of the edict at +0x2e0), then stores IsMale() (zero-extended) at +0x13cc
 	void sub_103419c0(inputdata_t *data);	// "CBaseCombatCharacter::InputChang...": scope trace (entity name), then calls sub_1000b6a9(this, +-1) |integer value| times (sign of the value) when the input's type is 4
 	void sub_10340d70(inputdata_t *data);	// "CBaseCombatCharacter::InputMoney...": scope trace (entity name), when the input's type is 4 and its integer is non-zero calls sub_10341030(integer)
-	void sub_10341030(int amount);	// called through the stub at 0x1000a3d0
+	void sub_10341030(int amount);	// "CBaseCombatCharacter::MoneyRemove": scope trace (entity name), lowers the money at +0x13d8 (not below 0) and, when the object at +0xa8 has the dword at +0x1eb8 clear, passes (0xb, amount) to sub_101cebc0
 	Vector vfunc368();	// "CBaseCombatCharacter::BodyDirection2D": scope trace (entity name), slot 369 (BodyDirection3D) into a local, z = 0, normalised through the function pointer at 0x1057966c, returned by value
 	Vector vfunc370();	// "CBaseCombatCharacter::HeadDirection2D"-like: scope trace (entity name), slot 371 into a local, z = 0, normalised through the function pointer at 0x1057966c, returned by value
+	void sub_10340c90(inputdata_t *data);	// "CBaseCombatCharacter::InputMoneyAdd": scope trace (entity name), when the input's type is 4 and its integer is non-zero calls sub_10340e50(integer)
+	void sub_10340e50(int amount);	// "CBaseCombatCharacter::MoneyAdd" worker
