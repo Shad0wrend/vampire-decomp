@@ -46679,6 +46679,43 @@ int CBaseCombatCharacter::sub_10345de0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10345f10 size=0x9d
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+CBaseEntity * __stdcall sub_1008d990(unsigned int handle);
+
+int CBaseCombatCharacter::sub_10345f10()
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : g_106b8540;
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseCombatCharacter::GetBlockReactionActivity";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	CBaseEntity *pEnt = sub_1008d990(*(unsigned int *)((char *)this + 0x6f0));
+	if (pEnt) {
+		int act = pEnt->m_pEdict2e0;
+		if (act >= 0) {
+			(*g_109f3680)--;
+			return act;
+		}
+	}
+	(*g_109f3680)--;
+	return 0x1153;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10346760 size=0x94
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
