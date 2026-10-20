@@ -46,3 +46,4 @@
 	void sub_1033d700(inputdata_t *data);	// "CBaseCombatCharacter::InputBloodloss": scope trace (entity name), then sub_10338df0(true) as many times as the input's integer (0 unless its type is 4)
 	bool sub_10338df0(char bAll);	// "CBaseCombatCharacter::DecBloodPoints" (called through the stub at 0x1000799b)
 	void sub_103324a0(inputdata_t *data);	// "CBaseCombatCharacter::InputFadeBodyAsCameraTarget": scope trace (entity name), then sub_103322e0(0, the input's float, 0 when it is not a float)
+	void sub_10147960(int level, int arg);	// obfuscate level setter: when level > 0 and the level at +0x14d4 is 0 sets +0x16c = 2 and plays "D_ObfuscateIn_Emitter"; when level == 0 and the level was positive sets +0x16c = 0 and plays "D_ObfuscateOut_Emitter"; stores level at +0x14d4
