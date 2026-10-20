@@ -10,7 +10,9 @@ struct MovedEntity_t
 {
 	CBaseEntity *m_pEntity;	// 0x00
 	float m_vecStartAbsOrigin[3];	// 0x04
-	char m_pad10[0x68 - 0x10];
+	char m_pad10[0x5c - 0x10];	// 0x10: the trace of the blocking hit
+	CBaseEntity *m_pBlocker;	// 0x5c
+	char m_pad60[0x68 - 0x60];
 };
 
 struct PusherInfo_t
@@ -45,10 +47,12 @@ class CPhysicsPushedEntities
 public:
 	CPusherVec m_rgPusher;	// 0x00
 	CMovedVec m_rgMoved;	// 0x14
+	int m_nBlockingIndex;	// 0x28: the moved entity that was blocked
 
 	CPhysicsPushedEntities();	// scope trace; both vectors preallocated (8 pusher records, 32 moved records)
 	void sub_10036ef0();	// "CPhysicsPushedEntities::RestoreEntities": scope trace, then SetAbsOrigin(start origin) (slot 216) on every moved entity, last to first
 	void sub_10035f00(int *pHandles);	// "CPhysicsPushedEntities::UnlinkPusherList": scope trace, then a handle per pusher (last to first) from the global at 0x1070b24c, keyed by the short at entity+0x2b6
 	void sub_10035fd0(int *pHandles);	// "CPhysicsPushedEntities::RelinkPusherList": same walk as UnlinkPusherList, other slot (9) of the global at 0x1070b24c
 	void sub_10036b10();	// "CPhysicsPushedEntities::FinishPush": scope trace, then PhysicsTouchTriggers + slot 232(0) on every pusher, last to first
+	CBaseEntity *sub_10036e50();	// "CPhysicsPushedEntities::RegisterBlockage": scope trace, lets the blocked entity record the impact with its blocker (PhysicsImpact) and returns the blocked entity
 };
