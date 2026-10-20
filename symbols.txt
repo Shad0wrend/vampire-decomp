@@ -2670,6 +2670,7 @@
 0x1000e250 func   _item_g_vampyr_apocrypha item_g_vampyr_apocrypha
 0x1000e27d func   ?sub_100acef0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100acef0
 0x1000e282 func   ?sub_10041c30@@YA_NPAH0@Z sub_10041c30
+0x1000e287 func   ?vfunc241@CNPC_VTzimisce@@UAEXPADPAH@Z CNPC_VTzimisce::vfunc241
 0x1000e291 func   ?vfunc5@CItemGJumblesFlyer@@QAEPAV1@I@Z CItemGJumblesFlyer::vfunc5
 0x1000e296 func   _func_physbox func_physbox
 0x1000e2af func   ?sub_1015ff40@CBasePlayer@@QAE_NXZ CBasePlayer::sub_1015ff40

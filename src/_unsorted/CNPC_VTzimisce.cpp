@@ -198,6 +198,43 @@ void CNPC_VTzimisce::vfunc627()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bdd10 size=0xe8
+#include "CNPC_VTzimisce.h"
+
+extern "C" char *strcpy(char *, const char *);
+#pragma intrinsic(strcpy)
+
+void CNPC_VTzimisce::vfunc241(char *pszOut, int *pEvent)
+{
+	switch (*pEvent) {
+	case 2:
+		strcpy(pszOut, "START_IDLE");
+		break;
+	case 3:
+		strcpy(pszOut, "START_FIDGET");
+		break;
+	case 4:
+		strcpy(pszOut, "START_RUN");
+		break;
+	case 5:
+		strcpy(pszOut, "START_LANDHARD");
+		break;
+	case 6:
+		strcpy(pszOut, "START_ATTACK");
+		break;
+	case 7:
+		strcpy(pszOut, "START_ATTACKBIG");
+		break;
+	case 8:
+		strcpy(pszOut, "START_POUNCE");
+		break;
+	default:
+		sub_1008c170(pszOut, pEvent);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bde40 size=0x66
 #include "CNPC_VTzimisce.h"
 #include "CAI_BaseNPCTroika.h"
