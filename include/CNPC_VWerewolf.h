@@ -10,6 +10,7 @@ struct inputdata_t;
 struct CUnknown101c2a50;
 class CBaseEntity;
 class CNPC_VWerewolf;
+class CHintData_WW;
 
 struct CNPC_VWerewolfTimer
 {
@@ -132,6 +133,7 @@ public:
 	void sub_10003648();	// as in CPhysForce (transplant)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	int sub_103d0db0(CNPC_VWerewolfVec3 a, CNPC_VWerewolfVec3 b);	// scope trace (entity name) "CNPC_VWerewolf::HasPath", forwards both vectors to the helper object at +0x5d34 and returns its result
+	void sub_103d7420(CHintData_WW *pData);	// "CNPC_VWerewolf::InitPathableHint": scope trace (entity name), walks the global hint list (0x10925450, next at +0x5d8): each hint other than pData's own is added as pathable when it shares pData's entity (sub_103d6390), else when HasPath from the first / second vector of pData to the hint origin (slot 217)
 	void sub_103d4760();	// "CNPC_VWerewolf::ClearTeleportHint": scope trace (entity name), when the hint object at +0x66b0 is set calls its sub_102d1420(0), then clears the pointer
 	unsigned int sub_1033c9c0();	// CBaseCombatCharacter::sub_1033c9c0 "GetMiscFlags" (stub 0x1000b672), called directly
 	void sub_1033c770(unsigned int flags);	// CBaseCombatCharacter "RemoveMiscFlag" (stub 0x10011531), called directly
