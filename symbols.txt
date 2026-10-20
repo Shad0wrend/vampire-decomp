@@ -239,6 +239,7 @@
 0x10002522 func   ?sub_10056fd0@CBaseFire@@QAEXHHH@Z CBaseFire::sub_10056fd0
 0x10002527 func   ?sub_10107760@@YAPAHXZ sub_10107760
 0x1000254f func   _info_node_sabbat_hide info_node_sabbat_hide
+0x10002554 func   ?sub_1026e340@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_1026e340
 0x10002586 func   ?sub_1009b700@CBaseEntity@@QAEXHHPBD@Z CBaseEntity::sub_1009b700
 0x1000258b func   ?vfunc546@CNPC_VManBat@@QAEHH@Z CNPC_VManBat::vfunc546
 0x100025c7 func   ?sub_1039b180@@YADXZ sub_1039b180

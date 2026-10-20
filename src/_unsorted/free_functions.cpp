@@ -33396,6 +33396,35 @@ void CUnknown1026dc60::sub_1026dc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026e340 size=0x7d
+#include "CAI_BaseNPC.h"
+struct CNpcGlobals { char pad[0xc]; float curtime; };
+extern CNpcGlobals *g_1070b228;
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *pszFormat, ...);
+
+void CAI_BaseNPC::sub_1026e340(int newState)
+{
+    int oldState = *(int *)((char *)this + 0x5cc0);
+    if (newState != oldState)
+        *(float *)((char *)this + 0x5cc8) = g_1070b228->curtime;
+    switch (newState) {
+    case 1:
+        if (vfunc167()) {
+            sub_10279a50(0);
+            DevMsg(2, "Stripped\n");
+        }
+        break;
+    }
+    bool bChanged = false;
+    if (*(int *)((char *)this + 0x5cc0) != newState)
+        bChanged = true;
+    *(int *)((char *)this + 0x5cc0) = newState;
+    *(int *)((char *)this + 0x5cc4) = newState;
+    if (bChanged)
+        vfunc463(oldState, newState);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10270290 size=0xd
 void CUnknown10270290::sub_10270290(int value)
 {
