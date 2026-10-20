@@ -173,6 +173,7 @@
 0x10002266 func   ?sub_100bc5e0@@YIXPAHHH@Z sub_100bc5e0
 0x10002289 func   _viewmodel viewmodel
 0x1000228e func   ?vfunc546@CGeneric_NPC@@QAEHH@Z CGeneric_NPC::vfunc546
+0x100022b1 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vfunc3
 0x100022bb func   ?sub_10339560@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10339560
 0x100022c0 func   ?sub_10349d50@CUtlVector16@@QAEXH@Z CUtlVector16::sub_10349d50
 0x100022e8 func   ?sub_10156d30@@YIXPAD@Z sub_10156d30
