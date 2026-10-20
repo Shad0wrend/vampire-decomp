@@ -10502,6 +10502,22 @@ int CUtlVector4::sub_100c8270(int elem, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c8350 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_109f3634)(int);
+
+UtlMem *UtlMem::sub_100c8350(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_109f3634(allocationCount * 4);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c83a0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
