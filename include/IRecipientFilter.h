@@ -8,7 +8,7 @@ public:
 	virtual void vfunc1() = 0;
 	virtual void vfunc2() = 0;
 	virtual void vfunc3() = 0;
-	virtual void vfunc4() = 0;
+	virtual char vfunc4() = 0;
 	virtual void vfunc5() = 0;
 	virtual void vfunc6() = 0;
 	virtual void vfunc7() = 0;
