@@ -798,6 +798,7 @@
 0x10006546 func   _npc_VGangrel npc_VGangrel
 0x1000654b func   ?sub_101a55a0@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_101a55a0
 0x1000655a func   ?sub_10032bb0@CUtlVector88@@QAEXHH@Z CUtlVector88::sub_10032bb0
+0x10006569 func   ?sub_103e7b10@@YAHXZ sub_103e7b10
 0x1000656e func   ?sub_101f74e0@@YI_NPAH@Z sub_101f74e0
 0x10006596 func   _func_breakable_surf func_breakable_surf
 0x100065aa func   ?sub_101e9880@CUnknown101e9880@@QAEPAV1@XZ CUnknown101e9880::sub_101e9880
