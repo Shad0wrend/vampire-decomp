@@ -8602,6 +8602,46 @@ void *CBaseAnimating::sub_100952d0(int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095be0 size=0xa0
+#include "CBaseAnimating.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+#define AV_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define AV_V100(p) AV_V10(p##0) AV_V10(p##1) AV_V10(p##2) AV_V10(p##3) AV_V10(p##4) AV_V10(p##5) AV_V10(p##6) AV_V10(p##7) AV_V10(p##8) AV_V10(p##9)
+
+// the vtable of a CBaseAnimating, up to slot 260
+struct CBaseAnimatingSlots
+{
+	AV_V100(a0) AV_V100(a1) AV_V10(a20) AV_V10(a21) AV_V10(a22) AV_V10(a23) AV_V10(a24) AV_V10(a25)
+	virtual float SetBoneControllerSlot(int iController, float flValue);	// slot 260
+};
+
+void CBaseAnimating::sub_10095be0()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::InitBoneControllers ";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int i = 0;
+	do {
+		sub_10095cb0(i, 0);
+		i++;
+	} while (i < 4);
+	i = 0;
+	do {
+		((CBaseAnimatingSlots *)this)->SetBoneControllerSlot(i, 0);
+		i++;
+	} while (i < 0x18);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095cb0 size=0x9c
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

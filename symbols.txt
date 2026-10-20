@@ -1087,6 +1087,7 @@
 0x10006cb2 func   ?vfunc5@CEnvPlayerSurfaceTrigger@@QAEPAV1@I@Z CEnvPlayerSurfaceTrigger::vfunc5
 0x10006cb7 func   ?sub_103bf330@CUnknown103bf330@@QAE_NH@Z CUnknown103bf330::sub_103bf330
 0x10006cc6 func   ?sub_102d4320@@YAXPAHPBH@Z sub_102d4320
+0x10006ce4 func   ?sub_10095be0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10095be0
 0x10006d16 func   ?sub_103dc520@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_103dc520
 0x10006d39 func   _npc_VMalkavian npc_VMalkavian
 0x10006d75 func   ?sub_100423c0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_100423c0
