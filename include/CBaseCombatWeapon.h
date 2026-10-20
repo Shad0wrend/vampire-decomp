@@ -24,7 +24,8 @@ public:
 	virtual bool vfunc280(int a);	// asked by CBaseCombatCharacter::GetBestRangedWeapon with 0
 	CBCW_V(281) CBCW_V(282) CBCW_V(283)
 	virtual void vfunc284(void *a, void *b, void *c, int d, int e);
-	CBCW_V(285) CBCW_V(286) CBCW_V(287) CBCW_V(288) CBCW_V(289)
+	virtual void *vfunc285();	// CWeaponGravityGun: the entity of the held-object handle at +0x918, else sub_1014a1b0
+	CBCW_V(286) CBCW_V(287) CBCW_V(288) CBCW_V(289)
 	CBCW_V(290) CBCW_V(291) CBCW_V(292) CBCW_V(293) CBCW_V(294) CBCW_V(295) CBCW_V(296)
 	virtual void vfunc297(int value);
 	CBCW_V(298) CBCW_V(299) CBCW_V(300) CBCW_V(301) CBCW_V(302)
