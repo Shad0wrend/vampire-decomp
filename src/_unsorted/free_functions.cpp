@@ -39527,6 +39527,25 @@ char sub_10387800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10387f60 size=0x43
+#include "CNPC_VHunter.h"
+void *sub_100aa720(int size);
+extern char g_1063ff68[];
+
+// TARGET: npc_VHunter
+extern "C" CBaseEntity *npc_VHunter()
+{
+	void *mem = sub_100aa720(0x666c);
+	CNPC_VHunter *p;
+	if (mem)
+		p = ((CNPC_VHunter *)mem)->sub_10388010();
+	else
+		p = 0;
+	p->vfunc106(g_1063ff68);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388150 size=0x33
 void sub_1000ef84();
 void sub_1000935e();
