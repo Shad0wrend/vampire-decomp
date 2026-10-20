@@ -64,6 +64,7 @@
 0x10001681 func   ?sub_100779b0@CUnknown100779b0@@QAEXH@Z CUnknown100779b0::sub_100779b0
 0x10001690 func   ?sub_10057570@CFireSmoke@@QAEXXZ CFireSmoke::sub_10057570
 0x100016a4 func   ?sub_100b1a00@CBaseEntity@@QAEHXZ CBaseEntity::sub_100b1a00
+0x100016a9 func   ?sub_10397e00@CNPC_VMingXiao@@QAEXPAVCBaseEntity@@@Z CNPC_VMingXiao::sub_10397e00
 0x100016d6 func   ?sub_101346e0@CUnknown101346e0@@QAEHH@Z CUnknown101346e0::sub_101346e0
 0x100016db func   _logic_choreographed_scene logic_choreographed_scene
 0x100016e5 func   _vampireprojectile_mingxiaospit vampireprojectile_mingxiaospit

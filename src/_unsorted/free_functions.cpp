@@ -43074,6 +43074,42 @@ bool CNPC_VMingXiao::sub_10397b40(void *pTentacle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10397e00 size=0x64
+#include "CGlobalEntityList.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CNPC_VMingXiao.h"
+
+#define S1(p, n) virtual void p##n();
+#define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
+struct Slots217 {
+    S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+    S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8) S10(b9)
+    S10(c0)
+    S1(v, 0) S1(v, 1) S1(v, 2) S1(v, 3) S1(v, 4) S1(v, 5) S1(v, 6)
+    virtual float *f217();
+};
+
+extern CGlobalEntityList *g_10566458;
+
+// TARGET: CNPC_VMingXiao::sub_10397e00
+void CNPC_VMingXiao::sub_10397e00(CBaseEntity *pEnt)
+{
+    if (!pEnt)
+        return;
+    unsigned int *ph = (unsigned int *)((char *)this + 0x66a8);
+    for (int i = 6; i; i--, ph++) {
+        unsigned int h = *ph;
+        CGlobalEntityList_Slot *s;
+        CNPC_VMingXiaoTentacle *pTentacle;
+        if (h != 0xffffffff
+            && (s = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13)
+            && (pTentacle = (CNPC_VMingXiaoTentacle *)s->m_pEntity) != 0
+            && (CBaseEntity *)pTentacle != pEnt)
+            pTentacle->sub_1039ef90(((Slots217 *)pEnt)->f217());
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398d90 size=0xd
 void CUnknown10398d90::sub_10398d90(int value)
 {
