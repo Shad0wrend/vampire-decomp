@@ -14,7 +14,7 @@ struct CAI_ExpresserMem	// CUtlMemory16 whose constructor is the out of line sub
 	CAI_ExpresserMem(int growSize, int initSize) { m_mem.sub_10312f70(growSize, initSize); }
 };
 
-struct CAI_ExpresserTree	// an inlined CUtlRBTree16 at +0x14
+struct CAI_ExpresserTree	// an inlined CUtlRBTree16 at +0x14, followed by the callback pointer at +0x2c
 {
 	void *m_pfnLess;
 	CAI_ExpresserMem m_mem;
@@ -22,10 +22,11 @@ struct CAI_ExpresserTree	// an inlined CUtlRBTree16 at +0x14
 	unsigned short m_NumElements;
 	unsigned short m_FirstFree;
 	unsigned short m_TotalElements;
+	void *m_pfn2c;
 
 	static unsigned short InvalidIndex() { return 0xffff; }
 
-	CAI_ExpresserTree() : m_pfnLess((void *)sub_1000186b), m_mem(0, 0), m_Root(InvalidIndex()), m_NumElements(0), m_FirstFree(InvalidIndex()), m_TotalElements(0)
+	CAI_ExpresserTree() : m_pfnLess((void *)sub_1000186b), m_mem(0, 0), m_Root(InvalidIndex()), m_NumElements(0), m_FirstFree(InvalidIndex()), m_TotalElements(0), m_pfn2c(0)
 	{
 	}
 };
@@ -56,14 +57,13 @@ public:
 	int m_n0c;
 	int m_n10;
 	CAI_ExpresserTree m_Tree;	// 0x14
-	void *m_pfn2c;
 	CAI_ExpresserSub m_Sub;	// 0x30
 	CAI_ExpresserTail m_Tail;	// 0x4c
 
-	CAI_Expresser() : m_n0c(-1), m_n10(0), m_pfn2c(0)
+	CAI_Expresser() : m_n0c(-1), m_n10(0)
 	{
 		*(char *)&m_Tail.m_n64 = 0;
 		m_Tail.m_n6c = -1;
-		m_pfn2c = (void *)sub_1000feb1;
+		m_Tree.m_pfn2c = (void *)sub_1000feb1;
 	}
 };
