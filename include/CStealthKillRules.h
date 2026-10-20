@@ -18,4 +18,6 @@ public:
 
 	float sub_101be1d0(CBaseEntity *pEntity);
 	void sub_101be0e0();	// "CStealthKillRules::FlushTable": scope trace, clears the four tables and sets the defaults (1, 10, 0, 3.0f, range 70.0f)
+	void sub_101bebf0();	// called through the stub at 0x1000d625 by InitTable after FlushTable
+	void sub_101be020();	// "CStealthKillRules::InitTable": scope trace, FlushTable, sub_101bebf0, then fills the float table at +0x50 with cos(table at +0x00 [i] * constants)
 };
