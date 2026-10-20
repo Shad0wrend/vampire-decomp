@@ -19051,6 +19051,24 @@ extern "C" CBaseEntity *env_beam()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100feea0 size=0x12
+void sub_10014d03();
+
+struct CFieldHolder {
+    char pad_0000[0x4f4];
+    int m_nField4f4;
+    void sub_100feea0(int unused);
+};
+
+// TARGET: sub_100feea0
+void CFieldHolder::sub_100feea0(int unused)
+{
+    if (m_nField4f4 == 0) {
+        sub_10014d03();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100ef0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
