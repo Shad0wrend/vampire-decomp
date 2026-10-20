@@ -51003,6 +51003,34 @@ bool CUnknown10349590::sub_10349650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10349710 size=0xd2
+#include "melee_dice_roll_result.h"
+#include "ScopeTrace.h"
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern void (*g_109f3628)(const char *fmt, ...);
+extern char g_10624344[];
+extern char g_10624320[];
+struct DiceDebug
+{
+    virtual void v0();
+    virtual char vfunc1();
+    char m_pad[0x28];
+    int m_nOutput;	// 0x2c
+};
+extern DiceDebug *g_1074f04c;
+int sub_10011b9e(int a, int b, int c, int d);
+void melee_dice_roll_result::sub_10349710(int a, int nRolls, int *pDice)
+{
+    ScopeTrace t(g_10624344, g_106b8540);
+    if (!g_1074f04c->vfunc1() && g_1074f04c->m_nOutput) {
+        char buf[256];
+        sprintf(buf, g_10624320, nRolls);
+        g_109f3628(buf);
+    }
+    m_nBonus += sub_10011b9e(a, pDice[0], pDice[4], nRolls);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103499d0 size=0x1e
 #include "CDataObjectAccessSystem.h"
 
