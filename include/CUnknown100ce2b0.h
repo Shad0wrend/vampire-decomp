@@ -9,6 +9,11 @@ struct CUnknown100ce2b0Blob	// five dwords passed by value
 	int a[5];
 };
 
+struct CUnknown100ce2b0Quad	// four dwords (a color / vector4)
+{
+	int a[4];
+};
+
 struct CUnknown100ce2b0Rec	// the 0x50 byte event record
 {
 	float m_flTime;	// 0x00: delay + curtime
@@ -23,7 +28,7 @@ struct CUnknown100ce2b0Rec	// the 0x50 byte event record
 	int m_n34;
 	int m_n38;
 	int m_n3c;
-	int m_Quad[4];	// 0x40 .. 0x4f
+	CUnknown100ce2b0Quad m_Quad;	// 0x40 .. 0x4f
 
 	CUnknown100ce2b0Rec()
 	{
@@ -43,5 +48,5 @@ public:
 	CUnknown100ce2b0Rec *m_pRecord;	// 0x54
 
 	void sub_100ce210(CUnknown100ce2b0Rec *pRec);	// queues the record (called through the stub at 0x1000f074)
-	void sub_100ce2b0(CBaseEntity *pSource, CUnknown100ce2b0Blob blob, float flDelay, const int *pQuad, int n14);	// builds a record (time = curtime + flDelay, the source handle, blob, quad), queues it and remembers it at +0x54
+	void sub_100ce2b0(CBaseEntity *pSource, CUnknown100ce2b0Blob blob, float flDelay, const CUnknown100ce2b0Quad *pQuad, int n14);	// builds a record (time = curtime + flDelay, the source handle, blob, quad), queues it and remembers it at +0x54
 };
