@@ -6086,6 +6086,26 @@ void CUnknown10076af0::sub_10076af0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076da0 size=0x9d
+#include "CUnknown10076da0.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+void CUnknown10076da0::sub_10076da0(const char *name)
+{
+	for (int i = 0; i < m_nEntries; i++) {
+		CUnknown10076da0Entry *p = &m_pEntries[i];
+		if (p && !_strcmpi(p->sub_100738a0(), name)) {
+			int nMove = m_nEntries - i - 1;
+			if (nMove > 0)
+				memmove(&m_pEntries[i], &m_pEntries[i + 1], nMove * sizeof(CUnknown10076da0Entry));
+			m_nEntries--;
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077730 size=0xd
 #include "CUnknown10077730.h"
 
