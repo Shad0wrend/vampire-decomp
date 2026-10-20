@@ -18375,6 +18375,25 @@ extern "C" GP *trigger()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5c30 size=0x43
+#include "CTriggerHurt.h"
+void *sub_100aa720(int size);
+extern char g_1059f788[];
+
+// TARGET: trigger_hurt
+extern "C" CBaseEntity *trigger_hurt()
+{
+	void *mem = sub_100aa720(0x608);
+	CTriggerHurt *p;
+	if (mem)
+		p = ((CTriggerHurt *)mem)->sub_101c5ca0();
+	else
+		p = 0;
+	p->vfunc106(g_1059f788);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c66e0 size=0x7a
 void *sub_1000db89(int);
 struct GP;
