@@ -29,7 +29,7 @@ public:
 	CAI_NPC_V10(17) CAI_NPC_V10(18) CAI_NPC_V10(19)
 	CAI_NPC_V10(20) CAI_NPC_V10(21)
 	CAI_NPC_V(220)
-	virtual float *vfunc221(float *pOut, int a, int b);	// fills pOut (three floats) and returns it (a position / angle getter taking two flags)
+	virtual float *vfunc221(float *pOut, ...);	// fills pOut (three floats) and returns it; the caller cleans the stack (called with two more zero arguments)
 	CAI_NPC_V(222) CAI_NPC_V(223) CAI_NPC_V(224) CAI_NPC_V(225) CAI_NPC_V(226) CAI_NPC_V(227) CAI_NPC_V(228) CAI_NPC_V(229)
 	CAI_NPC_V10(23) CAI_NPC_V10(24) CAI_NPC_V10(25) CAI_NPC_V10(26) CAI_NPC_V10(27) CAI_NPC_V10(28)
 	// slots 290..409
