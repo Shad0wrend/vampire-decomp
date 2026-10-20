@@ -431,6 +431,7 @@
 0x10003bd4 func   ?vfunc259@CNPC_VSabbatLeader@@QAEXPAX@Z CNPC_VSabbatLeader::vfunc259
 0x10003bd9 func   ?sub_1035b440@@YADXZ sub_1035b440
 0x10003be8 func   ?sub_10203e30@@YAXH@Z sub_10203e30
+0x10003c10 func   ?sub_10078b90@UtlMem@@QAEXXZ UtlMem::sub_10078b90
 0x10003c29 func   ?vfunc420@CNPC_VTzimisceHeadClaw@@UAEXXZ CNPC_VTzimisceHeadClaw::vfunc420
 0x10003c2e func   ?sub_101fda10@CVStatActionList_t@@QAEXXZ CVStatActionList_t::sub_101fda10
 0x10003c65 func   ?sub_1023f060@@YAXPAI@Z sub_1023f060
