@@ -13757,6 +13757,27 @@ void CUnknown100f0120::sub_100f0120(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0210 size=0x80
+#include "CBaseDoor.h"
+#include "CEntityVSlots.h"
+#include "inputdata_t.h"
+void CBaseDoor::sub_100f0210(inputdata_t *pInput)
+{
+    CBaseEntity *pActivator = (CBaseEntity *)pInput->pActivator;
+    if (!sub_100027d4(pActivator ? *(void **)((char *)pActivator + 0x9c) : 0)) {
+        if (pActivator)
+            *(unsigned int *)((char *)this + 0x53c) = *pActivator->vfunc1();
+        else
+            *(unsigned int *)((char *)this + 0x53c) = 0xffffffff;
+        int state = *(int *)((char *)this + 0x4f8);
+        if (state == 1 || state == 3)
+            ((CEntityVSlots *)this)->slot243(1, 1);
+        else if (state == 0 || state == 2)
+            ((CEntityVSlots *)this)->slot244(1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0300 size=0x8
 void __fastcall sub_100f0300(char *p) { p[0x55c] = 1; }
 // END FUNCTION

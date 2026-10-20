@@ -236,6 +236,7 @@
 0x100024a5 func   ?sub_100cfd00@Queue@@QAEHPAUSaveX@@@Z Queue::sub_100cfd00
 0x100024b9 func   ?sub_100963d0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_100963d0
 0x100024eb func   _npc_VCameraSecurity npc_VCameraSecurity
+0x100024f0 func   ?sub_100f0210@CBaseDoor@@QAEXPAUinputdata_t@@@Z CBaseDoor::sub_100f0210
 0x10002504 func   ?vfunc1@CAI_Component@@UAEXXZ CAI_Component::vfunc1
 0x10002522 func   ?sub_10056fd0@CBaseFire@@QAEXHHH@Z CBaseFire::sub_10056fd0
 0x10002527 func   ?sub_10107760@@YAPAHXZ sub_10107760
