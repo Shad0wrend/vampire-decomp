@@ -6055,6 +6055,31 @@ struct CUnknown10074a90 { int p[4]; int a; void sub_10074a90(int v); };
 void CUnknown10074a90::sub_10074a90(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10074b10 size=0xa8
+#include "CFlexAnimationTrack.h"
+#include "CUnknown10075aa0.h"
+#include <string.h>
+
+extern float g_104454c4;
+
+void CFlexAnimationTrack::sub_10074b10(int nList)
+{
+	if (!m_pEvent)
+		return;
+	float flEnd = m_pEvent->sub_10076b30();
+	for (int i = m_Samples[nList].m_nSize - 1; i >= 0; i--) {
+		CExpressionSampleList *pList = &m_Samples[nList];
+		CExpressionSampleStub sample = m_Samples[nList].m_pMemory[i];
+		if (sample.m_flTime < g_104454c4 || sample.m_flTime > flEnd) {
+			int nMove = pList->m_nSize - i - 1;
+			if (nMove > 0)
+				memmove(&pList->m_pMemory[i], &pList->m_pMemory[i + 1], nMove * sizeof(CExpressionSampleStub));
+			pList->m_nSize--;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075aa0 size=0x97
 #include "CUnknown10075aa0.h"
 
