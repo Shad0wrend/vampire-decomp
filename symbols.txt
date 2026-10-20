@@ -2880,6 +2880,7 @@
 0x10010edd func   ?sub_10258b00@@YAXPAVCUnknown10258b00@@@Z sub_10258b00
 0x10010efb func   ?sub_1010be40@@YAPAHXZ sub_1010be40
 0x10010f14 func   _beam beam
+0x10010f23 func   ??1CVStatAction_t@@QAE@XZ CVStatAction_t::~CVStatAction_t
 0x10010f41 func   ?sub_1013dbb0@@YIXPAUPool@@@Z sub_1013dbb0
 0x10010f46 func   ?sub_101fb200@CVDmg_t@@QAEHHH@Z CVDmg_t::sub_101fb200
 0x10010f69 func   _gibshooter gibshooter
