@@ -48872,6 +48872,44 @@ struct CUnknown10312320 { char pad[0x30]; CSub10002397 m_Sub; void sub_10312320(
 void CUnknown10312320::sub_10312320() { m_Sub.sub_10002397(); }
 // END FUNCTION
 
+// FUNCTION: 0x10312580 size=0x106
+#include "CUnknown10312580.h"
+extern const char *g_109f075c;
+extern float g_104492dc;
+
+struct Pair { int key; float value; };
+
+struct FindTree : CUtlRBTree16At<0x10936c54>
+{
+	const char *m_pName;
+
+	unsigned short Find(const void *search)
+	{
+		if (m_pName)
+			g_109f075c = m_pName;
+		unsigned short current = m_Root;
+		while (current != InvalidIndex())
+		{
+			if (m_LessFunc(search, m_pElements[current].m_Data))
+				current = *sub_10313aa0(current);
+			else if (m_LessFunc(m_pElements[current].m_Data, search))
+				current = Links(current).m_Right;
+			else
+				break;
+		}
+		return current;
+	}
+};
+
+// TARGET: CUnknown10312580::sub_10312580
+float CUnknown10312580::sub_10312580(int key)
+{
+	Pair search = { key, -1.0f };
+	unsigned short i = ((FindTree *)&m_Tree)->Find(&search);
+	return i != 0xffff ? *(float *)(m_Tree.m_pElements[i].m_Data + 4) : g_104492dc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312f70 size=0x30
 #include "CUtlMemory16.h"
 
