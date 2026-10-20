@@ -19556,6 +19556,31 @@ void CBasePlayer::sub_1017e5f0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017e840 size=0x8c
+void __stdcall sub_10004237(int a, float b, const char *name);
+
+void __stdcall sub_1017e840(int level)
+{
+	switch (level) {
+	case 1:
+		sub_10004237(1, -1.0f, "Protean 1");
+		break;
+	case 2:
+		sub_10004237(2, -1.0f, "Protean 2");
+		break;
+	case 3:
+		sub_10004237(2, -1.0f, "Protean 3");
+		break;
+	case 4:
+		sub_10004237(4, -1.0f, "Protean 4");
+		break;
+	case 5:
+		sub_10004237(5, -1.0f, "Protean 5");
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017ec40 size=0x89
 #include "CBasePlayer.h"
 
