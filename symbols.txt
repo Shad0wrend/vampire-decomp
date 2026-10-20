@@ -2196,6 +2196,7 @@
 0x1000e0ed func   ?vfunc5@CResearchBook_MG_SEC@@QAEPAV1@I@Z CResearchBook_MG_SEC::vfunc5
 0x1000e106 func   ?sub_101d54f0@CUnknown101d54f0@@QAEPAV1@XZ CUnknown101d54f0::sub_101d54f0
 0x1000e10b func   ?vfunc32@CTriggerElectricBugaloo@@QAE_NPAX@Z CTriggerElectricBugaloo::vfunc32
+0x1000e110 func   ?sub_102273e0@CUnknown102273e0@@QAEXH@Z CUnknown102273e0::sub_102273e0
 0x1000e11f func   ?vfunc89@CBaseEntity@@UAEXXZ CBaseEntity::vfunc89
 0x1000e124 func   ?sub_101e0310@S101e0310@@QAEXXZ S101e0310::sub_101e0310
 0x1000e147 func   ?sub_101d4f40@CUnknown101d4f20@@QAEXPAUCUnknown101d4f20_Value@@@Z CUnknown101d4f20::sub_101d4f40
