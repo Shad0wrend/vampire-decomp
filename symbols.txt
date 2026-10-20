@@ -1771,6 +1771,7 @@
 0x1000b9f1 func   _item_k_shrekhub_four_key item_k_shrekhub_four_key
 0x1000ba0a func   ?sub_101eaaa0@@YAXH@Z sub_101eaaa0
 0x1000ba46 func   ?sub_10043750@S10043750@@QAEXH@Z S10043750::sub_10043750
+0x1000ba5a func   ?sub_100575e0@CBaseFire@@QAEXH@Z CBaseFire::sub_100575e0
 0x1000ba5f func   ?vfunc8@CSoundscapeSystem@@QAEPAV1@I@Z CSoundscapeSystem::vfunc8
 0x1000ba78 func   ?vfunc5@CWeaponMelee_TzimisceMelee@@QAEPAV1@I@Z CWeaponMelee_TzimisceMelee::vfunc5
 0x1000ba7d func   ?sub_10041de0@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_10041de0

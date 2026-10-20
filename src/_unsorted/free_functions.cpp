@@ -3933,6 +3933,18 @@ void CBaseFire::sub_100575a0(int on)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100575e0 size=0x24
+#include "CBaseFire.h"
+
+void CBaseFire::sub_100575e0(int on)
+{
+	if (on)
+		m_flags45c |= 8;
+	else
+		m_flags45c &= ~8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057660 size=0xc
 CUnknown10057680 *CUnknown10057680::sub_10057660()
 {
