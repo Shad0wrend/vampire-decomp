@@ -41076,6 +41076,36 @@ bool sub_10342590(CBaseEntity *pEnt, CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103426b0 size=0x6f
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+struct STeamFilter {
+	int sub_10008d7d(int a);
+};
+
+int sub_103426b0(STeamFilter *pFilter, char *pEnt)
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "TeamFilter";
+	g_109f3620[*g_109f3680].m_pszName = "";
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	int v = (int)pEnt;
+	if (v)
+		v = *(int *)(v + 0x9c);
+	int r = pFilter->sub_10008d7d(v);
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10342740 size=0x8d
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
