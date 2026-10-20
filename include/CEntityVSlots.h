@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 62, 64, 86, 94, 107, 118, 122, 158, 161, 167, 173,
-// 202, 212, 216, 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 274, 346, 360, 381 and 457 of an entity class that does not model its vtable.
+// 202, 212, 216, 217 / 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 274, 346, 360, 381 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -53,7 +53,7 @@ public:
 	virtual void slot212(int set);
 	EVS(213) EVS(214) EVS(215)
 	virtual void slot216(Vector *pOrigin);	// "SetAbsOrigin"
-	EVS(217)
+	virtual Vector *slot217();	// "GetAbsOrigin"
 	virtual void slot218(Vector *pAngles);	// "SetAbsAngles"
 	EVS(219)
 	virtual Vector *slot220();	// absolute origin
