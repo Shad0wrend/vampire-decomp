@@ -41,6 +41,22 @@ CBaseCineCam *CBaseCineCam::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006d9a0 size=0x11
+struct CCineCamFields1006d9a0 {
+    char pad0[0x204];
+    unsigned char flags204;
+    char pad1[0x640 - 0x205];
+    unsigned char flag640;
+    void sub_1006d9a0();
+};
+void CCineCamFields1006d9a0::sub_1006d9a0()
+{
+    if (flags204 & 2) {
+        flag640 = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006e6a0 size=0x9c
 #include "CBaseCineCam.h"
 #include "CUnknown1006e890.h"
