@@ -21,3 +21,4 @@
 	// Slot 86 "CBaseCombatCharacter::ShouldTransmit"-like (declared as a plain member; CBaseEntity::vfunc86 is the same slot).
 	char vfunc86(int a, int b, int c, int d, int e);	// scope trace (entity name), true while the force-transmit time at +0x90 is still ahead of curtime or the flag byte at +0x14e3 + (engine slot 35 index of b) is set, else CBaseEntity::sub_100ab020(a, b, c, d, e)
 	char sub_100ab020(int a, int b, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly
+	void sub_10338440(const int *pStat);	// "CBaseCombatCharacter::VStatGet": scope trace (entity name), pStat = {stat id, value}; finds the first stat list whose field at +0x10 equals the id that sub_10202780(pStat[0]) maps (the shared default list when none) and hands it pStat[1] (sub_10200d60)
