@@ -10,7 +10,9 @@ public:
 	int m_nIdealState;	// +0x1b38
 	char pad1b3c[0x5d9c - 0x1b3c];
 	float m_flAttackStartTime;	// +0x5d9c
-	char pad5da0[0x66d0 - 0x5da0];
+	char pad5da0[0x628c - 0x5da0];
+	unsigned int m_hHeightTarget;	// +0x628c: entity handle the height categorisation looks at
+	char pad6290[0x66d0 - 0x6290];
 	unsigned int m_hTeleportBats;	// +0x66d0: entity handle of the teleport bats
 	char pad66d4[0x66e6 - 0x66d4];
 	char m_bAttacking;	// +0x66e6
@@ -40,4 +42,6 @@ public:
 	void sub_103b1470(int unused);	// "CNPC_VSheriffMan::StartAttacking": scope trace, sub_10013cf5(1, 1, 10), sets the attacking byte and stamps the current time
 	void sub_10013cf5(int a, int b, int c);	// CBaseCombatCharacter member (the stub at 0x10013cf5 for 0x10332aa0), called directly
 	void sub_103b0560();	// "CNPC_VSheriffMan::KillTeleportBats": scope trace (no entity name), removes the entity behind the handle at +0x66d0 (when it resolves), then clears the handle
+	void sub_103b1680(int *pA, int *pB);	// "CNPC_VSheriffMan::CategorizeHeight...": scope trace (no entity name), clears both outputs; when the entity behind the handle at +0x628c resolves, hands the third dword of slot 217 of it (with pA) and of this (with pB) to sub_103b1790
+	void sub_103b1790(int height);	// height classification worker (stub 0x1000b929)
 };
