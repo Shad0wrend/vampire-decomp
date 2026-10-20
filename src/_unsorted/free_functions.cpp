@@ -45044,6 +45044,40 @@ void CTriggerWWZone::sub_103daf10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dbd50 size=0x66
+#include "CGlobalEntityList.h"
+
+struct ScheduleLike {
+    char m_pad00[0x40];
+    const char *m_pszName;
+};
+
+struct WerewolfLike {
+    char m_pad0000[0x668c];
+    ScheduleLike **m_ppSchedules;
+    char m_pad6690[8];
+    int m_nSchedules;
+};
+
+extern CGlobalEntityList g_106eb5d8;
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+// TARGET: sub_103dbd50
+void sub_103dbd50()
+{
+    WerewolfLike *pWerewolf = (WerewolfLike *)g_106eb5d8.sub_100f7380(0, "npc_VWerewolf");
+    if (!pWerewolf)
+        return;
+    for (int i = 0; i < pWerewolf->m_nSchedules; i++) {
+        ScheduleLike *pSchedule = pWerewolf->m_ppSchedules[i];
+        if (pSchedule && pSchedule->m_pszName)
+            DevMsg("%s\n", pSchedule->m_pszName);
+        else
+            DevMsg("INVALID SCHEDULE\n");
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dbeb0 size=0x40
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int size);
 struct UtlVec8 {
