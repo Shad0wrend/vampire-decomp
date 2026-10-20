@@ -15292,6 +15292,50 @@ int CUnknown101346e0::sub_101346e0(int steps)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134a80 size=0x160
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10577048[2];
+void sub_100079fa();
+void sub_10003cec();
+void sub_100109ce();
+void sub_10004575();
+
+int *sub_10134a80()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_flCompareValue", {0x454, 0}, 1, 6, "CompareValue" },
+        { 1, "m_flInValue", {0x450, 0}, 1, 6, "InitialValue" },
+        { 1, "InputSetValue", {0, 0}, 1, 8, "SetValue", 0, (void *)sub_100079fa },
+        { 1, "InputSetValueCompare", {0, 0}, 1, 8, "SetValueCompare", 0, (void *)sub_10003cec },
+        { 1, "InputSetCompareValue", {0, 0}, 1, 8, "SetCompareValue", 0, (void *)sub_100109ce },
+        { 0, "InputCompare", {0, 0}, 1, 8, "Compare", 0, (void *)sub_10004575 },
+        { 0xa, "m_OnEqualTo", {0x470, 0}, 1, 0x16, "OnEqualTo", g_1055dc70 },
+        { 0xa, "m_OnNotEqualTo", {0x488, 0}, 1, 0x16, "OnNotEqualTo", g_1055dc70 },
+        { 0xa, "m_OnGreaterThan", {0x4a0, 0}, 1, 0x16, "OnGreaterThan", g_1055dc70 },
+        { 0xa, "m_OnLessThan", {0x458, 0}, 1, 0x16, "OnLessThan", g_1055dc70 },
+    };
+    g_10577048[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10577048[0] = (int)&dataDesc[1];
+    return g_10577048;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134f10 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;

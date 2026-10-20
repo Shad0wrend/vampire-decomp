@@ -286,6 +286,7 @@
 0x10002af4 func   _item_g_edane_print_report item_g_edane_print_report
 0x10002b26 func   ?sub_100e7c20@@YGXPAUDialogLine@@@Z sub_100e7c20
 0x10002b30 func   ?vfunc5@CElderVitaePack@@QAEPAV1@I@Z CElderVitaePack::vfunc5
+0x10002b3f func   ?sub_10134a80@@YAPAHXZ sub_10134a80
 0x10002b49 func   ?sub_101f4570@TSeg@@QAEXHPAH0@Z TSeg::sub_101f4570
 0x10002b7b func   ?vfunc5@CRotButton@@QAEPAV1@I@Z CRotButton::vfunc5
 0x10002b94 func   ?sub_1004e1c0@CPhysBox@@QAE_NH@Z CPhysBox::sub_1004e1c0
