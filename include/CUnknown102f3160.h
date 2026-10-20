@@ -1,7 +1,29 @@
-// CUnknown102f3160: class (not identified yet) whose destructor 0x102f3160 releases a CRestoreVec-style vector at +0x1ec.
+// CUnknown102f3160: class (not identified yet) whose destructor 0x102f3160 releases a CUtlVector-style vector at +0x1ec.
 #pragma once
 
-#include "CRestore.h"
+extern void (*g_109f3624)(void *);	// Plat_Free
+
+struct CPurgeVec
+{
+	int *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	int *m_pElements;
+
+	void Purge()
+	{
+		if (m_growSize != -1)
+		{
+			if (m_pMemory)
+			{
+				g_109f3624(m_pMemory);
+				m_pMemory = 0;
+			}
+			m_allocationCount = 0;
+		}
+	}
+};
 
 class CUnknown102f3160
 {
@@ -10,5 +32,5 @@ public:
 	void sub_10003666();
 
 	char m_pad0000[0x1ec];
-	CRestoreVec m_vec;	// 0x01ec
+	CPurgeVec m_vec;	// 0x01ec
 };
