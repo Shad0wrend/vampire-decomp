@@ -36,6 +36,7 @@ public:
 	void sub_100904a0();	// "CBaseAnimating::ClearAllClientRagdollData"-like: scope trace (entity name), resets the four 3-int arrays at +0x574 (-2), +0x584 and +0x594 (0), and +0x168 from 0x17 to 0
 	bool sub_1008be20(CBaseEntity *pOther);	// "CBaseAnimating::IsIgnoreCollisionEntity": scope trace (entity name), true when the entity behind the handle at +0x55c is pOther
 	void sub_1008bc50(CBaseEntity *pOther);	// "CBaseAnimating::StopIgnoringCollision": scope trace (entity name), when this and pOther both have the physics object at +0x36c calls sub_1001474a(object, other object) and clears the handle at +0x55c to -1
+	void sub_1008bd30();	// "CBaseAnimating::StopIgnoringCollision" (no argument): scope trace (entity name), sub_1008bc50(the entity behind the handle at +0x55c, null when stale)
 	void sub_1008bb70(CBaseEntity *pOther);	// "CBaseAnimating::StartIgnoringCollision": scope trace (entity name), when this and pOther both have the physics object at +0x36c calls sub_10009d7c(object, other object) and stores pOther's handle at +0x55c
 	void sub_1008cfc0(int unused, void *pEvent);	// "CBaseAnimating::DisplayAnimEvent": scope trace (entity name); when the global at 0x106ccf0c is not flagged by its slot 1 and its value (+0x2c) is set, formats "Processing anim event at %5.2f %d( %s )" (event time, event id, description from slot 241) into a 256 byte buffer and passes it to slot 18 with 9
 	void sub_1008e630(CBaseEntity *pOther);	// "CBaseAnimating::RemoveWind": scope trace (entity name); clears the handle at +0x63c and the two dwords at +0x648/+0x64c unless the handle resolves to a live entity different from pOther
@@ -76,7 +77,7 @@ public:
 	const char *sub_1008ff50(int sequence);	// "CBaseAnimating::GetSequenceActivityName": as GetSequenceName with the offset in the second dword, "SEQUENCE_NOT_FOUND" when there is none
 	float sub_10091230(int sequence);	// "CBaseAnimating::GetSequenceCycleRate": scope trace (entity name), 1.0f / sub_10091080(sequence) when that is above 0, else 10.0f
 	float sub_10091080(int sequence);	// sequence duration (stub 0x10009813), returns a float
-	float sub_10092190(int iParameter);	// "CBaseAnimating::GetPoseParameter": scope trace (entity name), the studio helper's value for (GetModelPtr(-1), iParameter, the float at +0x690 + iParameter*4), the file-scope zero for a negative index or no header
+	float sub_10092190(int iParameter);	// "CBaseAnimating::GetPoseParameter02": scope trace (entity name), the studio helper's value for (GetModelPtr(-1), iParameter, the float at +0x690 + iParameter*4), the file-scope zero for a negative index or no header
 	float sub_10094dc0(float flCycle);	// "CBaseAnimating::GetMovementFrame...": scope trace (entity name), without a studio header the file-scope zero, else the studio helper's value for (GetModelPtr(-1), the sequence at +0x6f0, the pose parameters at +0x690, flCycle)
 
 	// Slot 249, called directly so far; declared as a plain member.
