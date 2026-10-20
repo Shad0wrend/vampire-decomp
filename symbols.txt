@@ -3186,6 +3186,7 @@
 0x10015b0e func   ?sub_10170eb0@CUnknown10170eb0@@QAEXXZ CUnknown10170eb0::sub_10170eb0
 0x10015b54 func   ?sub_102c68e0@CUnknown102c68e0@@QAEPAHH@Z CUnknown102c68e0::sub_102c68e0
 0x10015b81 func   ?vfunc488@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc488
+0x10015bae func   ?sub_103e49b0@@YAHXZ sub_103e49b0
 0x10015bd6 func   ?vfunc2@CTEBSPDecal@@UAEPAV1@I@Z CTEBSPDecal::vfunc2
 0x10015bf4 func   ?sub_10055520@CUtlRBTree24@@QBEABULinks_t@1@H@Z CUtlRBTree24::sub_10055520
 0x10015c3a func   ?sub_101be0e0@CStealthKillRules@@QAEXXZ CStealthKillRules::sub_101be0e0
