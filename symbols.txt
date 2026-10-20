@@ -17,6 +17,7 @@
 0x10001195 func   ?sub_104301a0@@YAXXZ sub_104301a0
 0x100011db func   ?sub_1007f580@S1007f580@@QAEXH@Z S1007f580::sub_1007f580
 0x100011f4 func   ?sub_10252240@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_10252240
+0x100011f9 func   ?sub_1034f9e0@CUnk1034f9e0@@QAEXXZ CUnk1034f9e0::sub_1034f9e0
 0x1000121c func   ?vfunc17@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc17
 0x10001226 func   ?vfunc113@CBaseEntity@@UAEXXZ CBaseEntity::vfunc113
 0x1000127b func   ?sub_100c8a00@@YIXPADHH@Z sub_100c8a00

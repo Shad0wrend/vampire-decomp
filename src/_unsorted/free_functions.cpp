@@ -43057,6 +43057,50 @@ void __stdcall sub_1034e7e0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f9e0 size=0x7a
+#include "CBaseEntity.h"
+
+#define V1(p) virtual void p();
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct IUnk10723940 {
+	V10(a0) V10(a1)
+	virtual void vfunc20(void *p);
+	V10(b0) V1(c0) V1(c1) V1(c2) V1(c3) V1(c4) V1(c5) V1(c6)
+	virtual void vfunc38(void *p);
+};
+extern IUnk10723940 *g_10723940;
+void sub_1002ee60(void *pEnt);
+
+class CUnk1034f9e0 : public CBaseEntity {
+public:
+	char m_padBase[0x2100 - sizeof(CBaseEntity)];
+	void *m_p2100;
+	void *m_p2104;
+	void *m_p2108;
+	void sub_1034f9e0();
+};
+
+void CUnk1034f9e0::sub_1034f9e0()
+{
+	if (m_p2100) {
+		g_10723940->vfunc38(m_p2100);
+		m_p2100 = 0;
+	}
+	sub_1002ee60(this);
+	sub_100a6490(0);
+	if (m_p2104) {
+		g_10723940->vfunc20(m_p2104);
+		m_p2104 = 0;
+	}
+	if (m_p2108) {
+		g_10723940->vfunc20(m_p2108);
+		m_p2108 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10355d70 size=0x49
 void *sub_1000db89(int);
 struct GP;
