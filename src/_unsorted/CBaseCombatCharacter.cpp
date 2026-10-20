@@ -1460,6 +1460,27 @@ char CBaseCombatCharacter::vfunc342(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033b500 size=0xbf
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+struct CGlobalVarsLocal { char pad[0xc]; float curtime; };
+extern CGlobalVarsLocal *g_1070b228;
+extern float g_1070d1b0[3];
+
+// TARGET: CBaseCombatCharacter::vfunc356
+void CBaseCombatCharacter::vfunc356()
+{
+	ScopeTrace trace("CBaseCombatCharacter::PrayerBegin", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	*(float *)((char *)this + 0x1494) = 2.0f;
+	*(float *)((char *)this + 0x1490) = g_1070b228->curtime + 2.0f;
+	*(int *)((char *)this + 0xff0) = 0x131;
+	sub_100b2e30(g_1070d1b0);
+	if (*(int *)((char *)this + 0xa8) != 0)
+		vfunc93(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033cb90 size=0x74
 #include "CBaseCombatCharacter.h"
 

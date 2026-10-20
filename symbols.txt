@@ -37,6 +37,7 @@
 0x10001398 func   _ai_sound ai_sound
 0x1000139d func   ?vfunc5@CNPC_Bullseye@@QAEPAV1@I@Z CNPC_Bullseye::vfunc5
 0x100013a2 func   ?sub_102ecbe0@@YA_NH@Z sub_102ecbe0
+0x100013ac func   ?vfunc356@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc356
 0x100013b1 func   ?sub_100792c0@CUnknown100792c0@@QAEXH@Z CUnknown100792c0::sub_100792c0
 0x100013c0 func   ?sub_101b6680@@YA_NPAG0@Z sub_101b6680
 0x100013ca func   ?sub_10227230@@YIXPADHH@Z sub_10227230
