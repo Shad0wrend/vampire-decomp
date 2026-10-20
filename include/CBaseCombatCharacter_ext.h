@@ -28,3 +28,4 @@
 	char sub_10337f30();	// "CBaseCombatCharacter::IsKindred": scope trace (entity name), the byte at +0x8c of the default-stat item selected by sub_10337860()
 	char sub_103380d0();	// "CBaseCombatCharacter::IsBossMonster": scope trace (entity name), the byte at +0x90 of the default-stat item selected by sub_10337860()
 	void vfunc341(int discipline, int unused);	// slot 341 "CBaseCombatCharacter::RemoveDisciplineEffects": scope trace (entity name), then the global discipline manager at 0x10739a4c RemoveEffect(this, discipline, 0); takes a second, unused stack argument
+	virtual void vfunc106(const char *szClassname);	// "CBaseCombatCharacter::PostConstructor": scope trace (entity name), CBaseEntity::vfunc106(szClassname), then slot 111
