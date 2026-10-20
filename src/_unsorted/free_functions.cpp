@@ -20745,6 +20745,35 @@ CUnknown101b6250 *CUnknown101b6250::sub_101b6250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6550 size=0x6d
+#include "UtlVec8.h"
+
+struct SElem8 {
+	short a;
+	int b;
+	void sub_1000f5b0();
+};
+
+void UtlVec8::sub_101b6550(const SElem8 *src, int num)
+{
+	m_Size = 0;
+	if (num) {
+		sub_101b6a50(num);
+		sub_101b6b10(0, num);
+		for (int i = 0; i < num; i++) {
+			SElem8 *p = (SElem8 *)m_pMemory + i;
+			if (p)
+				p->sub_1000f5b0();
+		}
+	}
+	for (int i = 0; i < num; i++) {
+		SElem8 *d = (SElem8 *)m_pMemory + i;
+		d->a = src[i].a;
+		d->b = src[i].b;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6650 size=0x13
 bool sub_101b6650(unsigned short *a, unsigned short *b)
 {
