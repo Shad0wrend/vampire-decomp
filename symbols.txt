@@ -4167,6 +4167,7 @@
 0x10015a37 func   ?vfunc266@CWeaponThrown_Grenade_Frag@@UAEXXZ CWeaponThrown_Grenade_Frag::vfunc266
 0x10015a46 func   ?vfunc2@CTEBubbleTrail@@UAEPAV1@I@Z CTEBubbleTrail::vfunc2
 0x10015a5a func   ?sub_100fd680@@YAPAHXZ sub_100fd680
+0x10015a69 func   ?vfunc5@CNPC_VNewscaster@@QAEPAV1@I@Z CNPC_VNewscaster::vfunc5
 0x10015a73 func   ?sub_103fa6d0@@YAHXZ sub_103fa6d0
 0x10015a82 func   ?vfunc5@CBloodPack@@QAEPAV1@I@Z CBloodPack::vfunc5
 0x10015a91 func   ?vfunc403@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc403
