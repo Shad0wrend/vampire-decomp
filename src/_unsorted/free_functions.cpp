@@ -30192,6 +30192,22 @@ int sub_102d3f50(const char *pszString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d4160 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_102d4160()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d41f0 size=0x8
 void __fastcall sub_102d41f0(int *p) { p[3] = 0; }
 // END FUNCTION
