@@ -5,6 +5,17 @@
 
 struct inputdata_t;
 
+struct CAI_CondTable
+{
+	int sub_102ea2d0(int condition);	// translates a symbolic condition id (below 1000000000) to the id of the condition bit (stub 0x10012300)
+};
+
+struct CAI_CondOwner
+{
+	char m_pad0000[0x30];
+	CAI_CondTable m_table;	// 0x30
+};
+
 class CAI_BaseNPCTroika : public CAI_BaseNPC
 {
 public:
@@ -12,6 +23,12 @@ public:
 	virtual void vfunc416(char value);
 	virtual float vfunc418(float a);	// float lookup: -1000005 -> +0x6484, -1000006 -> +0x6488, -1000007 -> +0x648c, -1000008 -> 10.0f, else CAI_BaseNPC::vfunc418(a)
 	virtual bool vfunc468(CBaseEntity *pEnt);	// see CAI_BaseNPC
+
+	// Slots 569..580 (past the end of the base class's declared slots).
+	virtual void vfunc569(); virtual void vfunc570(); virtual void vfunc571(); virtual void vfunc572(); virtual void vfunc573();
+	virtual void vfunc574(); virtual void vfunc575(); virtual void vfunc576(); virtual void vfunc577(); virtual void vfunc578();
+	virtual void vfunc579();
+	virtual CAI_CondOwner *vfunc580();	// the object that translates condition ids (sub-object at +0x30)
 
 	void vfunc488();	// slot 488: plays the "Death" sound
 	void vfunc489();	// slot 489: plays the "Target_Suspect" sound
@@ -56,7 +73,7 @@ public:
 	int sub_102b11c0(int activity);	// translates a few activities (0x87/0x88 depend on the flag bit 12 of +0x14b8 and slot 168; 0xc7 -> 0xc9, 0xca/0xcb/0xd1/0xd2 -> 0xcc, 0xef -> 0xf0), 0 for everything else
 	bool sub_1029b180(void *pOther);	// slot 69 override: true when pOther is flagged (fields +0x94/+0xa8/+0xa0, the entity at +0x98 with flag 0x20000, bits of +0x4c), is the entity of the handle at +0x643c, else CBaseAnimating::sub_1008be20(pOther)
 	bool vfunc68(void *pOther);	// slot 68 override: like sub_1029b180, plus the checks for the entity at +0x5ddc (id 0x283c/0x283d with bits 0x14 of +0x4c), bit 1 of +0x4c and the entity of the handle at +0x1538
-	bool sub_10269d30(int state);	// true when the NPC is in the given internal state
+	bool sub_10269d30(int condition);	// "HasConditionAndNotIgnored": false without a target (+0x5c38), else the condition (ids below 1000000000 translated through slot 580) has its bit set in both bit arrays (+0x5c5c and +0x5c74)
 	int sub_102b8c40();	// when state 0x4c or 0x4d is set: clears the byte at +0x5b80, copies the three dwords at +0x5b9c to +0x5dd0, stamps the source file name and line 0x5f8b at +0x1b30 / +0x1b34 and returns 0x8a, else 0
 	int sub_10295590(int activity);	// slot 375 base implementation (NPC_TranslateActivity), called directly
 	void sub_1028e8b0(CBaseEntity *pEnt, int a);	// runs sub_1028e940(a) when pEnt is null-safe related to this NPC: this NPC has no slot 167 value, or pEnt is that value, or the object at pEnt+0x98 has the same slot 167 value
