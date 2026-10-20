@@ -12,6 +12,7 @@
 0x1000114a func   ?vfunc194@CBaseEntity@@QAEXXZ CBaseEntity::vfunc194
 0x1000114f func   ?sub_103e2470@CUnknown103e2470@@QAEXPAUCFlameEvent_t@@@Z CUnknown103e2470::sub_103e2470
 0x10001172 func   ?sub_10106490@@YIXPAD@Z sub_10106490
+0x10001177 func   ?sub_101852b0@UtlMem@@QAEXXZ UtlMem::sub_101852b0
 0x10001195 func   ?sub_104301a0@@YAXXZ sub_104301a0
 0x100011db func   ?sub_1007f580@S1007f580@@QAEXH@Z S1007f580::sub_1007f580
 0x1000121c func   ?vfunc17@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc17
