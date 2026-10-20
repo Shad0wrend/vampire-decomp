@@ -4065,6 +4065,20 @@ bool CUtlRBTree16::sub_100483f0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10048960 size=0x57
+#include "CUtlRBTree16.h"
+
+struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb44>
+{
+    const Links_t *sub_10048960(unsigned short i) const;
+};
+
+const CUtlRBTree16::Links_t *CUtlRBTree16Unit::sub_10048960(unsigned short i) const
+{
+    return &Links(i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10049d20 size=0x58
 #include "CUtlRBTreeNode36.h"
 
