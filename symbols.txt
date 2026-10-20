@@ -197,6 +197,7 @@
 0x1000204f func   ?sub_10227b20@@YIXPAUMem4@@HH@Z sub_10227b20
 0x1000209a func   ?sub_100437e0@CUnknown100437e0@@QAEXH@Z CUnknown100437e0::sub_100437e0
 0x1000209f func   ?sub_1009f3c0@CBaseEntity@@QAEXPBDH@Z CBaseEntity::sub_1009f3c0
+0x100020d1 func   ?vfunc103@CBaseAnimating@@UAEXXZ CBaseAnimating::vfunc103
 0x100020d6 func   ?vfunc2@CTESpriteSpray@@UAEPAV1@I@Z CTESpriteSpray::vfunc2
 0x10002103 func   ?vfunc173@CStripWeapons@@QAEXPAX0HM@Z CStripWeapons::vfunc173
 0x10002108 func   ?vfunc103@CPathKeyFrame@@QAEXXZ CPathKeyFrame::vfunc103

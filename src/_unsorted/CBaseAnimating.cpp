@@ -47,6 +47,33 @@ bool CBaseAnimating::vfunc68(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008c0a0 size=0xa0
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+struct SEntityBase { void sub_100aae50(); };
+
+void CBaseAnimating::vfunc103()
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::Spawn";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    ((SEntityBase *)this)->sub_100aae50();
+    int *p = (int *)((char *)this + 0x584);
+    for (int i = 0; i < 4; i++) {
+        p[-4] = -2;
+        p[0] = 0;
+        p[4] = 0;
+        p++;
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008f3c0 size=0x81
 #include "CBaseAnimating.h"
 
