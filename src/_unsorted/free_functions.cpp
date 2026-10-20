@@ -8991,6 +8991,35 @@ int CBaseAnimating::sub_1008f6c0(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f7b0 size=0xf5
+#include "ScopeTrace.h"
+#include "CBaseAnimating.h"
+#include "StudioHdr.h"
+
+int sub_10428470(StudioHdr *pHdr, const char *pszLabel);
+
+int CBaseAnimating::sub_1008f7b0(const char *pszLabel)
+{
+	ScopeTrace trace("CBaseAnimating::LookupSequence", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int nSkipped = 0;
+	for (int i = -1; i < 2; i++) {
+		StudioHdr *pHdr = (StudioHdr *)sub_100952d0(i);
+		if (pHdr) {
+			int nSeq = sub_10428470(pHdr, pszLabel);
+			if (nSeq >= 0)
+				return nSeq + nSkipped;
+			int nSkip;
+			if (pHdr->m_nIncludeModels)
+				nSkip = pHdr->IncludeModel(pHdr->m_nIncludeModels - 1)->m_nBase + pHdr->IncludeModel(pHdr->m_nIncludeModels - 1)->m_nCount;
+			else
+				nSkip = pHdr->m_nLocalSeq;
+			nSkipped += nSkip;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008fe80 size=0x9d
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

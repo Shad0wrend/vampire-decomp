@@ -2648,6 +2648,7 @@
 0x1000e01b func   _item_m_money_clip item_m_money_clip
 0x1000e034 func   _prop_largehull_ignore prop_largehull_ignore
 0x1000e039 func   ?sub_101eaa80@@YAXH@Z sub_101eaa80
+0x1000e057 func   ?sub_1008f7b0@CBaseAnimating@@QAEHPBD@Z CBaseAnimating::sub_1008f7b0
 0x1000e066 func   ?sub_1042fbc0@@YAXXZ sub_1042fbc0
 0x1000e075 func   _item_g_ring_silver item_g_ring_silver
 0x1000e07a func   _trigger_stealth_mod trigger_stealth_mod
