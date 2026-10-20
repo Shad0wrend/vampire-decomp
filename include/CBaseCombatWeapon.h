@@ -52,6 +52,7 @@ public:
 	void sub_102507b0();
 	CWeaponOwner *sub_102517b0();	// the weapon's owner (player) object
 	CWeaponOwner *sub_10252290();	// resolves the owner handle at +0x88c (0 when stale)
+	void *sub_102521f0();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale)
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
