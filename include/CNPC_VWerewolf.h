@@ -141,4 +141,6 @@ public:
 	void *sub_103d0ad0();	// "CNPC_VWerewolf::GetNearestNode"-like: the nearest AI node, cached in +0x66fc for the time stamp at +0x66f8; recomputed through the helper's node net (stub 0x1000827e) from the origin (slot 220)
 	void *sub_103d6520(void *pHint);	// "CNPC_VWerewolf::FindHintEndEntity": scope trace (entity name), follows the hint chain: the hint's target name (+0x468) is looked up (dynamic_cast to CAI_Hint) and, when that has a target name too, its entity is returned, else the hint itself
 	void vfunc491();	// slot 491 "CNPC_VWerewolf::ExertHvySound...": scope trace (entity name), plays the sound index of the "Pain" record of the global sound table 0x1073dc28 (looked up once into a function-local static) on this entity (channel 2, volume 1.0)
+	const char *vfunc408(int condition);	// slot 408 "CNPC_VWerewolf::GetShortConditionName"-like: scope trace (entity name), "ww0".."ww4" for the conditions 0x77..0x7b, else the CAI_BaseNPC implementation
+	const char *sub_1027ede0(int condition);	// CAI_BaseNPC::vfunc408 (stub 0x10011590), called directly
 };
