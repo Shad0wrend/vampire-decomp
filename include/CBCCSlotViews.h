@@ -1,0 +1,24 @@
+// CBCCSlotViews: vtable views for calling slots of a combat character / weapon entity that the class headers do not model
+// as virtuals. Cast the object to the view and call the slot; the placeholders keep the slot numbers right.
+#pragma once
+
+#define VIEW_SLOT(n) virtual void s##n();
+#define VIEW_SLOT10(p) VIEW_SLOT(p##0) VIEW_SLOT(p##1) VIEW_SLOT(p##2) VIEW_SLOT(p##3) VIEW_SLOT(p##4) VIEW_SLOT(p##5) VIEW_SLOT(p##6) VIEW_SLOT(p##7) VIEW_SLOT(p##8) VIEW_SLOT(p##9)
+#define VIEW_SLOT100(p) VIEW_SLOT10(p##0) VIEW_SLOT10(p##1) VIEW_SLOT10(p##2) VIEW_SLOT10(p##3) VIEW_SLOT10(p##4) VIEW_SLOT10(p##5) VIEW_SLOT10(p##6) VIEW_SLOT10(p##7) VIEW_SLOT10(p##8) VIEW_SLOT10(p##9)
+
+class CCombatCharSlotView	// slot 298: the number of weapons the character has of a weapon slot type
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1)
+	VIEW_SLOT10(20) VIEW_SLOT10(21) VIEW_SLOT10(22) VIEW_SLOT10(23) VIEW_SLOT10(24) VIEW_SLOT10(25) VIEW_SLOT10(26) VIEW_SLOT10(27) VIEW_SLOT10(28)
+	VIEW_SLOT(290) VIEW_SLOT(291) VIEW_SLOT(292) VIEW_SLOT(293) VIEW_SLOT(294) VIEW_SLOT(295) VIEW_SLOT(296) VIEW_SLOT(297)
+	virtual int vfunc298(int slotType);
+};
+
+class CWeaponSlotView	// slot 360: the weapon's flag bits
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2)
+	VIEW_SLOT10(30) VIEW_SLOT10(31) VIEW_SLOT10(32) VIEW_SLOT10(33) VIEW_SLOT10(34) VIEW_SLOT10(35)
+	virtual unsigned int vfunc360();
+};
