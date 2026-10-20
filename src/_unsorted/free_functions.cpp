@@ -3738,6 +3738,35 @@ void sub_1005a330(int a, int b, const int *pos, const int *dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005a510 size=0x72
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_106beb4c;
+extern SendTable *g_10540728;
+
+// TARGET: sub_1005a510
+int sub_1005a510()
+{
+	static const char *pTableName = "DT_TEArmorRicochet";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_10540728, (void *)sub_10009539),
+	};
+	g_106beb4c.sub_1000e8fe(props + 1, 1, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005a6a0 size=0x4f
 extern CTEMetalSparks g_106beb04;
 
