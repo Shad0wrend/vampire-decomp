@@ -24988,6 +24988,25 @@ void __fastcall sub_102180a0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102196a0 size=0x43
+#include "CPropHacking.h"
+void *sub_100aa720(int size);
+extern char g_105b03c8[];
+
+// TARGET: prop_hacking
+extern "C" CBaseEntity *prop_hacking()
+{
+	void *mem = sub_100aa720(0xc30);
+	CPropHacking *p;
+	if (mem)
+		p = ((CPropHacking *)mem)->sub_10219d40();
+	else
+		p = 0;
+	p->vfunc106(g_105b03c8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d730 size=0x103
 struct ISaveRestoreOps;
 struct datamap_t;
