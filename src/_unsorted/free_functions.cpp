@@ -3837,6 +3837,16 @@ void CUtlRBTreeInsert24::sub_10054ad0(const void *insert, int *parent, bool *lef
 }
 // END FUNCTION
 
+// FUNCTION: 0x10055000 size=0x34
+#include "UtlVec8.h"
+void UtlVec8::sub_10055000(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&m_pMemory[(elem + num) * 4], &m_pMemory[elem * 4], numToMove * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10055520 size=0x4f
 #include "CUtlRBTree24.h"
 

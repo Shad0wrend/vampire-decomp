@@ -21,6 +21,7 @@
 0x10001285 func   _npc_VVentrue npc_VVentrue
 0x10001299 func   ?sub_103f8830@@YAHXZ sub_103f8830
 0x1000129e func   ?sub_102f99b0@@YAXXZ sub_102f99b0
+0x100012b2 func   ?sub_10055000@UtlVec8@@QAEXHH@Z UtlVec8::sub_10055000
 0x100012b7 func   ?sub_101f2500@CUnknown101f2500@@QAEDXZ CUnknown101f2500::sub_101f2500
 0x100012d5 func   ?sub_101b90a0@CUnknown101b90a0@@QAEXH@Z CUnknown101b90a0::sub_101b90a0
 0x10001307 func   ?sub_10032ec0@UtlMem@@QAEXXZ UtlMem::sub_10032ec0
