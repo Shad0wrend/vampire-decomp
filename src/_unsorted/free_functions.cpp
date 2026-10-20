@@ -24825,6 +24825,35 @@ extern "C" GP *item_w_uzi()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102370b0 size=0x72
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_10751b3c;
+extern SendTable *g_105c5bc0;
+
+// TARGET: sub_102370b0
+int sub_102370b0()
+{
+	static const char *pTableName = "DT_WeaponRanged_Pistol_Thirtyeight";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_105c5bc0, (void *)sub_10009539),
+	};
+	g_10751b3c.sub_1000e8fe(props + 1, 1, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102371c0 size=0x49
 void *sub_1000db89(int);
 struct GP;
