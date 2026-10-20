@@ -33758,6 +33758,25 @@ bool NodeGraph::sub_102f48b0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f4ee0 size=0x43
+#include "CAI_NetworkManager.h"
+void *sub_100aa720(int size);
+extern char g_10610560[];
+
+// TARGET: ai_network
+extern "C" CBaseEntity *ai_network()
+{
+	void *mem = sub_100aa720(0x75c);
+	CAI_NetworkManager *p;
+	if (mem)
+		p = ((CAI_NetworkManager *)mem)->sub_102f4fe0();
+	else
+		p = 0;
+	p->vfunc106(g_10610560);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f65b0 size=0xd
 extern char g_1093408c;
 extern int g_1093407c;
