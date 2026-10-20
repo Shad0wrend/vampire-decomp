@@ -1637,6 +1637,55 @@ void CBaseCombatCharacter::vfunc305()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033e370 size=0xea
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+
+#define HV1(p) virtual void p();
+#define HV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define HV100(p) HV10(p##0) HV10(p##1) HV10(p##2) HV10(p##3) HV10(p##4) HV10(p##5) HV10(p##6) HV10(p##7) HV10(p##8) HV10(p##9)
+
+struct LookProbe	// a character as seen through its vtable: slots 192, 193 and 220 are typed
+{
+	HV100(la) HV10(lb0) HV10(lb1) HV10(lb2) HV10(lb3) HV10(lb4) HV10(lb5) HV10(lb6) HV10(lb7) HV10(lb8)
+	HV1(lc0) HV1(lc1)
+	virtual Vector vfunc192();
+	virtual Vector vfunc193();
+	HV10(ld0) HV10(ld1) HV1(ld20) HV1(ld21) HV1(ld22) HV1(ld23) HV1(ld24) HV1(ld25)
+	virtual void *vfunc220();
+};
+
+struct LookTarget	// the object at +0x5d44 of the AI object at +0x94
+{
+	void sub_102e20b0(void *pPos, float flTime);	// stub 0x10007248
+};
+
+struct LookOwner	// the AI object at +0x94
+{
+	char m_pad0000[0x5d44];
+	LookTarget *m_pLook;
+};
+
+void __fastcall sub_102e0b40(float *pLook);
+
+void CBaseCombatCharacter::vfunc306(CBaseCombatCharacter *pTarget, char bUseEyes)
+{
+	ScopeTrace trace("CBaseCombatCharacter::LookAtEntity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (bUseEyes)
+		((LookProbe *)pTarget)->vfunc192();
+	else
+		((LookProbe *)pTarget)->vfunc193();
+	((LookProbe *)this)->vfunc193();
+	LookOwner *pOwner = *(LookOwner **)((char *)this + 0x94);
+	if (pOwner) {
+		sub_102e0b40((float *)pOwner->m_pLook);
+		LookTarget *pLook = pOwner->m_pLook;
+		pLook->sub_102e20b0(((LookProbe *)pTarget)->vfunc220(), -1.0f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103404f0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
