@@ -38045,6 +38045,40 @@ int sub_1025b5b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025b630 size=0xc8
+#include <string.h>
+extern const char g_105c8664[];
+extern const char g_105c8658[];
+extern const char g_1054ca50[];
+void sub_1025b740(char *token, unsigned int *pFlags);
+extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+
+void sub_1025b630(const char *name, unsigned int *pOut, const char *extra)
+{
+	unsigned int flags = 0;
+	char buf[260];
+	if (strstr(name, g_105c8664))
+		flags |= 0x50;
+	else if (strstr(name, g_105c8658))
+		flags |= 0x50;
+	else
+		flags |= 1;
+	if (extra && *extra)
+	{
+		Q_strncpy(buf, extra, 260);
+		strlwr(buf);
+		char *tok = strtok(buf, g_1054ca50);
+		while (tok)
+		{
+			sub_1025b740(tok, &flags);
+			tok = strtok(0, g_1054ca50);
+		}
+	}
+	if (pOut)
+		*pOut = flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025b740 size=0x89
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 extern const char *g_105c7638[];
