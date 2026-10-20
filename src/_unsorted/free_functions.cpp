@@ -20389,6 +20389,27 @@ void CUnknown101b2570::sub_101b2570(const char *pitch)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2630 size=0x6b
+#include "CUnknown101b2570.h"
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+extern int (__cdecl *g_109f3848)(const char *, const char *, int);
+extern void (__cdecl *g_109f3890)(char *, const char *, int);
+int sub_101b49f0(const char *name);
+SFloatPair sub_1012f640(const char *str);
+
+void CUnknown101b2570::sub_101b2630(const char *soundlevel)
+{
+    if (g_109f3848(soundlevel, "SNDLVL_", strlen("SNDLVL_")) == 0) {
+        m_soundlevel.a = (float)sub_101b49f0(soundlevel);
+        m_soundlevel.b = 0;
+    } else {
+        m_soundlevel = sub_1012f640(soundlevel);
+    }
+    g_109f3890(m_szSoundLevel, soundlevel, 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b30d0 size=0x98
 #include "CUnknown101b30d0.h"
 extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);

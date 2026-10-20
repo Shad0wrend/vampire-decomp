@@ -53,6 +53,7 @@
 0x10001550 func   ?sub_101db9a0@@YIXPAD@Z sub_101db9a0
 0x10001564 func   ?sub_1035ed00@@YADXZ sub_1035ed00
 0x1000156e func   ?vfunc340@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc340
+0x10001582 func   ?sub_101b2630@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_101b2630
 0x100015e1 func   ?sub_103fd9a0@@YAHXZ sub_103fd9a0
 0x100015e6 func   ?sub_1034e520@@YGXPAUInputLike@@@Z sub_1034e520
 0x100015f0 func   ?vfunc0@ConVar@@UAEPAV1@I@Z ConVar::vfunc0
