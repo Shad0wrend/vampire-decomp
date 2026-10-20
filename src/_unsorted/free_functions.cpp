@@ -31680,6 +31680,40 @@ CBaseCombatWeapon *sub_10256890(int unused, CBaseCombatWeapon *pWeapon, unsigned
 }
 // END FUNCTION
 
+// FUNCTION: 0x10256920 size=0x6b
+#define SL5(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4();
+#define SL10(p) SL5(p##a) SL5(p##b)
+struct EngineIdx {
+    SL10(e0) SL10(e1) SL10(e2) SL5(e3)
+    virtual int v35(int edict);
+};
+extern EngineIdx *g_1070b22c;
+
+struct EdictHolder {
+    char pad[0x2e0];
+    int m_pEdict;
+};
+struct OwnerL {
+    char pad[0xa8];
+    EdictHolder *m_pWeapon;
+};
+struct EntL {
+    OwnerL *sub_102521f0();
+};
+
+EntL *sub_10256920(int unused, EntL *pEnt, unsigned int *pBits)
+{
+    OwnerL *o;
+    if (pEnt && pEnt->sub_102521f0() && (o = pEnt->sub_102521f0()) != 0 && o->m_pWeapon) {
+        unsigned int idx = g_1070b22c->v35(o->m_pWeapon->m_pEdict) - 1;
+        pBits[0] = 0;
+        pBits[idx >> 5] |= 1 << (idx & 0x1f);
+        return pEnt;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257200 size=0x11
 #include "CBaseCombatWeapon.h"
 
