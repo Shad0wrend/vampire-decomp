@@ -27,3 +27,31 @@ int CNPC_VPedestrian::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093bffc.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x103a38c0 size=0xdc
+#include "CBaseEntity.h"
+#include "CNPC_VPedestrian.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+extern char g_1053dafc[];
+
+void CNPC_VPedestrian::vfunc301(int a, int b)
+{
+	CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+	float *pMins = pCollision->vfunc1();
+	m_vecMins6660[0] = pMins[0];
+	m_vecMins6660[1] = pMins[1];
+	m_vecMins6660[2] = pMins[2];
+	float *pMaxs = pCollision->vfunc2();
+	m_vecMaxs666c[0] = pMaxs[0];
+	m_vecMaxs666c[1] = pMaxs[1];
+	m_vecMaxs666c[2] = pMaxs[2];
+	sub_10293a60(a, b);
+	sub_100ac4e0(0, 0, 0);
+	{
+		ScopeTrace trace(g_1053dafc, m_name26c ? m_name26c : g_106b8540);
+		pCollision->sub_100dc480(0);
+	}
+}
+// END FUNCTION
