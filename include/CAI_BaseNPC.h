@@ -52,7 +52,10 @@ public:
 	CAI_NPC_V(310)
 	virtual void vfunc311(int a, int b, int c);	// when c >= 0: stores the activity-like triple a (+0xfec/+0xff0, slot 465(a) first when it changes), b (+0x5cd0/+0x5cd4/+0xff4) and c (+0x5ccc, sub_10260a50(c)), then clears +0x6f8 and +0x170
 	CAI_NPC_V(312) CAI_NPC_V(313) CAI_NPC_V(314) CAI_NPC_V(315) CAI_NPC_V(316) CAI_NPC_V(317) CAI_NPC_V(318) CAI_NPC_V(319)
-	CAI_NPC_V10(32) CAI_NPC_V10(33) CAI_NPC_V10(34) CAI_NPC_V10(35) CAI_NPC_V10(36)
+	CAI_NPC_V10(32) CAI_NPC_V10(33) CAI_NPC_V10(34)
+	CAI_NPC_V(350) CAI_NPC_V(351) CAI_NPC_V(352) CAI_NPC_V(353) CAI_NPC_V(354) CAI_NPC_V(355) CAI_NPC_V(356) CAI_NPC_V(357) CAI_NPC_V(358)
+	virtual int vfunc359(CBaseEntity *pEnt);	// "GetCombatState"-like (see the Troika override)
+	CAI_NPC_V10(36)
 	CAI_NPC_V(370) CAI_NPC_V(371) CAI_NPC_V(372) CAI_NPC_V(373) CAI_NPC_V(374)
 	virtual int vfunc375(int act);	// TranslateActivity step 1: the activity the NPC wants for act
 	virtual int vfunc376(int act);	// the next activity of the fallback chain
