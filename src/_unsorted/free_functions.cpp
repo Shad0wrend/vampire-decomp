@@ -18574,6 +18574,25 @@ int *sub_101c72f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c8850 size=0x43
+#include "CTriggerPush.h"
+void *sub_100aa720(int size);
+extern char g_1059fbd0[];
+
+// TARGET: trigger_push
+extern "C" CBaseEntity *trigger_push()
+{
+	void *mem = sub_100aa720(0x5a4);
+	CTriggerPush *p;
+	if (mem)
+		p = ((CTriggerPush *)mem)->sub_101c88c0();
+	else
+		p = 0;
+	p->vfunc106(g_1059fbd0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9740 size=0x69
 void *sub_1000db89(int);
 struct GP;
