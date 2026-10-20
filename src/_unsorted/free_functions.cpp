@@ -24616,6 +24616,26 @@ void CUnknown101dddb0::sub_101dddb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dfb80 size=0x7f
+#include "CUnknown101dfb80.h"
+#include "CUnknown101e0940.h"
+extern char g_106b8540[];
+extern CUnknown101e0940 *g_10739a74;
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *pszFormat, ...);
+void CUnknown101dfb80::sub_101dfb80(int unused, CBaseEntity *pEnt, int a)
+{
+    const char *pszTable;
+    if (g_10739a74)
+        pszTable = g_10739a74->m_pszName ? g_10739a74->m_pszName : g_106b8540;
+    else
+        pszTable = "NULL";
+    const char *pszEntName = pEnt->m_name26c ? pEnt->m_name26c : g_106b8540;
+    const char *pszThisName = m_pszName ? m_pszName : g_106b8540;
+    DevMsg(3, "Discipline<%s>: HitGroup: <%s> Instant Triggered on %s (%s)\n", pszTable, pszThisName, pszEntName, pEnt->sub_1009f200());
+    m_applier.sub_10012157(pEnt, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0040 size=0xd
 CUnknown101e0040* CUnknown101e0040::sub_101e0040()
 {
