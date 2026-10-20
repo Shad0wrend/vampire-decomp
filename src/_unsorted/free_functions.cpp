@@ -44557,6 +44557,32 @@ int CAI_BaseNPC::sub_10271ff0(int act, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10272940 size=0x6f
+#include "CAI_BaseNPC.h"
+#include "CBaseAnimating.h"
+
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *fmt, ...);
+
+struct CUnknownEmbed102e1cf0
+{
+	void sub_102e1cf0();
+};
+
+void CAI_BaseNPC::sub_10272940(const char *label)
+{
+	int sequence = ((CBaseAnimating *)this)->sub_1008f7b0(label);
+	if (sequence > -1) {
+		if (*(int *)((char *)this + 0x6f0) != sequence || !*((char *)this + 0x65d))
+			*(int *)((char *)this + 0x6f8) = 0;
+		sub_10260a50(sequence);
+		(*(CUnknownEmbed102e1cf0 **)((char *)this + 0x5d44))->sub_102e1cf0();
+	} else {
+		DevWarning(2, "%s has no sequence named:%f\n", ((CBaseAnimating *)this)->sub_1009f200(), label);
+		*(int *)((char *)this + 0x6f0) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102729d0 size=0xad
 #include "CAI_BaseNPC.h"
 #include "CGlobalEntityList.h"
