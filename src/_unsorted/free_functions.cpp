@@ -21771,6 +21771,17 @@ eof:
 }
 // END FUNCTION
 
+// FUNCTION: 0x101388c0 size=0x10
+int sub_101388c0(int x)
+{
+    int n = 0;
+    while ((x >>= 1) != 0) {
+        n++;
+    }
+    return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a030 size=0x23
 struct V3 {
 	float x, y, z;

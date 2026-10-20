@@ -1383,6 +1383,7 @@
 0x10007c8e func   ?vfunc600@CNPC_VTzimisceRunner@@QAE_NPAX@Z CNPC_VTzimisceRunner::vfunc600
 0x10007ca7 func   ?sub_101c1b60@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1b60
 0x10007cde func   _player player
+0x10007cfc func   ?sub_101388c0@@YAHH@Z sub_101388c0
 0x10007d24 func   ?sub_10073260@S10073260@@QAEXPBD@Z S10073260::sub_10073260
 0x10007d33 func   ?vfunc5@CNPC_VVampire@@QAEPAV1@I@Z CNPC_VVampire::vfunc5
 0x10007d3d func   ?sub_1007f690@CUtlVector12@@QAEXH@Z CUtlVector12::sub_1007f690
