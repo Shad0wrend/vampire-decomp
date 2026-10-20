@@ -17866,6 +17866,61 @@ extern "C" CBaseEntity *activity_copy_prop()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f000 size=0x157
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1058d1c8[2];
+void sub_10013589();
+void sub_10007135();
+void sub_10002770();
+void sub_100011ea();
+void sub_100132be();
+void sub_10006857();
+void sub_10014e25();
+void sub_1000a8c6();
+
+int *sub_1018f000()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_impactEnergyScale", {0xdc, 0}, 1, 0xe, "physdamagescale" },
+        { 4, "m_createFrame", {0x760, 0}, 1, 2 },
+        { 2, "m_iszExplosionParamEnt", {0x764, 0}, 1, 6, "explosion_params" },
+        { 4, "m_CollideableGibs", {0x76c, 0}, 1, 6, "collideable_gibs" },
+        { 0xc, "m_hBreaker", {0x768, 0}, 1, 2 },
+        { 1, "m_flFadeTime", {0x770, 0}, 1, 2 },
+        { 5, "m_bForceGibsFade", {0x778, 0}, 1, 2 },
+        { 0, "InputBreak", {0, 0}, 1, 8, "Break", 0, (void *)sub_10013589 },
+        { 4, "InputSetHealth", {0, 0}, 1, 8, "SetHealth", 0, (void *)sub_10007135 },
+        { 4, "InputAddHealth", {0, 0}, 1, 8, "AddHealth", 0, (void *)sub_10002770 },
+        { 4, "InputRemoveHealth", {0, 0}, 1, 8, "RemoveHealth", 0, (void *)sub_100011ea },
+        { 1, "InputFadeOutKill", {0, 0}, 1, 8, "FadeOutKill", 0, (void *)sub_100132be },
+        { 4, "InputSetDebris", {0, 0}, 1, 8, "SetDebris", 0, (void *)sub_10006857 },
+        { 0xa, "m_OnBreak", {0x730, 0}, 1, 0x16, "OnBreak", g_1055dc70 },
+        { 0xa, "m_OnHealthChanged", {0x748, 0}, 1, 0x16, "OnHealthChanged", g_1055dc70 },
+        { 0, "CBreakablePropBreakThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10014e25 },
+        { 0, "CBreakablePropFadeOut", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000a8c6 },
+    };
+    g_1058d1c8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1058d1c8[0] = (int)&dataDesc[1];
+    return g_1058d1c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f700 size=0xd
 void CUnknown1018f700::sub_1018f700(char value)
 {

@@ -1485,6 +1485,7 @@
 0x1000993f func   ?vfunc2@CTEEnergySplash@@UAEPAV1@I@Z CTEEnergySplash::vfunc2
 0x10009971 func   ?sub_10235a20@@YAHXZ sub_10235a20
 0x10009980 func   ?sub_102e0b40@@YIXPAM@Z sub_102e0b40
+0x10009985 func   ?sub_1018f000@@YAPAHXZ sub_1018f000
 0x10009994 func   ?vfunc2@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc2
 0x10009999 func   ?sub_1004c4c0@CUtlRBTree36@@QBE_NG@Z CUtlRBTree36::sub_1004c4c0
 0x100099a8 func   ?sub_10430280@@YAII@Z sub_10430280
