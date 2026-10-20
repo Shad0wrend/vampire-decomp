@@ -35,3 +35,4 @@
 	void sub_103392c0(int a, int b, int c);	// called through the stub at 0x100034f9
 	bool sub_10339a90();	// "CBaseCombatCharacter::CanBeFedUp": scope trace (entity name), true unless the byte at +0x95 of this entity's stat record is set
 	void sub_1033d640(inputdata_t *data);	// "CBaseCombatCharacter::InputHumanityAdd": scope trace (entity name), then the free function sub_1022dc30(this, integer value or 0)
+	void vfunc305();	// slot 305 "CBaseCombatCharacter::RemoveBaseFightingItems": scope trace (entity name), when bit 4 of the misc flags (sub_1033c9c0) is set gives the "item_w_fists" weapon (sub_100118d8) and removes the flag
