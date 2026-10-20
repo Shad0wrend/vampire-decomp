@@ -11,10 +11,9 @@ public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual CTESparks *vfunc2(unsigned int flags);	// scalar deleting destructor
-	virtual void vfunc3();
-	virtual void vfunc4(CUnknown1019d130 *filter, float delay);	// sends the temp entity to the recipients
 
 	void sub_1000dc10();	// destructor body
+	void sub_100677e0(CUnknown1019d130 *filter, float delay);	// slot 4 (called directly, stub 0x10011f22): sends the temp entity to the recipients
 
 	char m_pad0004[8];
 	Vector m_vecOrigin;	// 0x0c
