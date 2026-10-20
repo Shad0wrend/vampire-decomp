@@ -50,6 +50,7 @@ public:
 	char m_pad33d[3];
 
 	CUnknown10075aa0 *sub_10075040(int arg);	// constructor: clears the vectors, then sub_10075aa0(arg); returns this
+	CUnknown10075aa0 *sub_10075120(int a, int b, int c);	// constructor overload: clears the vectors, then sub_10075aa0(a), sub_10075b90(b), S10075bd0::sub_10075bd0(c); returns this
 	void sub_10075aa0(int arg);	// base constructor body: clears the fields, then sub_10076f10(0, 0, 0), stores arg at +0x330
 	void sub_10076f10(char c, const char *a, const char *b);	// stores c at +0x1b1 and copies the strings (the empty string for null) to +0x1b2 / +0x232 (stub 0x1000e822)
 	float sub_10076b30();	// the event's remaining length: 0.0f unless it has a time range (stub 0x10014835)
