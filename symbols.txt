@@ -2320,6 +2320,7 @@
 0x1000eed0 func   ?sub_1007dfc0@CUnknown1007dfc0@@QAEXH@Z CUnknown1007dfc0::sub_1007dfc0
 0x1000eee4 func   ?vfunc304@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc304
 0x1000eef8 func   ?sub_101d56f0@Loader@@QAE_NPBD@Z Loader::sub_101d56f0
+0x1000ef0c func   ?sub_102c6b30@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102c6b30
 0x1000ef1b func   ?vfunc13@CServerGameClients@@UAEXPAXPAM@Z CServerGameClients::vfunc13
 0x1000ef25 func   ?vfunc309@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc309
 0x1000ef34 func   ?vfunc41@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc41
