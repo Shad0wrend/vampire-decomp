@@ -20,4 +20,6 @@ public:
 	int m_nRecords;	// 0x15a0
 
 	int sub_10332fc0(void *pSpeaker);	// "CBaseCombatCharacter::GetDialogReactionModifier": scope trace (entity name), the modifier (+0x10) of the first record whose speaker handle resolves to pSpeaker, else 0
+	void sub_10332ef0(void *pSpeaker, int nDelta, int unused);	// slot 297 "CBaseCombatCharacter::AdjustDialogReaction": scope trace (entity name), sub_103330f0(pSpeaker, GetDialogReactionModifier(pSpeaker) + nDelta); takes a third, unused stack argument
+	void sub_103330f0(void *pSpeaker, int nModifier);	// called through the stub at 0x1000fb9b
 };
