@@ -50,6 +50,47 @@ extern float g_104454c0;
 float CMultiplayRules::vfunc30(int a) { return g_104454c0; }
 // END FUNCTION
 
+// FUNCTION: 0x101419d0 size=0x7b
+#include "CMultiplayRules.h"
+#include "CGlobalEntityList.h"
+#include "CBaseCombatCharacter.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+#define D(x) virtual void x();
+#define T(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+
+struct EquipSlots175
+{
+	H(a0) T(b0) T(b1) T(b2) T(b3) T(b4) T(b5) T(b6)
+	D(c0) D(c1) D(c2) D(c3) D(c4)
+	virtual void slot175(CBaseEntity *pPlayer);
+};
+
+struct PlayerSlots459
+{
+	H(a0) H(b0) H(c0) H(d0) T(e0) T(e1) T(e2) T(e3) T(e4)
+	D(f0) D(f1) D(f2) D(f3) D(f4) D(f5) D(f6) D(f7) D(f8)
+	virtual void slot459(const char *pszName, int a);
+};
+
+void CMultiplayRules::vfunc35(CBaseEntity *pPlayer)
+{
+	CBaseEntity *pEquip = g_106eb5d8.sub_100f7380(0, "game_player_equip");
+	if (pEquip) {
+		do {
+			((EquipSlots175 *)pEquip)->slot175(pPlayer);
+			pEquip = g_106eb5d8.sub_100f7380(pEquip, "game_player_equip");
+		} while (pEquip);
+		return;
+	}
+	((PlayerSlots459 *)pPlayer)->slot459("weapon_crowbar", 0);
+	((PlayerSlots459 *)pPlayer)->slot459("weapon_9mmhandgun", 0);
+	((CBaseCombatCharacter *)pPlayer)->sub_103343f0(0x44, "SmallRound");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141a90 size=0xb
 struct Unk1070b228 {
 	char pad[0xc];
