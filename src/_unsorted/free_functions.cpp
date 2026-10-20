@@ -38063,6 +38063,25 @@ void sub_1035aaa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035ab40 size=0x43
+#include "CGeneric_NPC_bathack.h"
+void *sub_100aa720(int size);
+extern char g_10629e60[];
+
+// TARGET: npc_generic_bathack
+extern "C" CBaseEntity *npc_generic_bathack()
+{
+	void *mem = sub_100aa720(0x5f48);
+	CGeneric_NPC_bathack *p;
+	if (mem)
+		p = ((CGeneric_NPC_bathack *)mem)->sub_1035ad10();
+	else
+		p = 0;
+	p->vfunc106(g_10629e60);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035ac30 size=0x33
 void sub_1000b15e();
 void sub_1000345e();
