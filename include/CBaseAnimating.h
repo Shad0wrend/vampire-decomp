@@ -76,6 +76,7 @@ public:
 	const char *sub_1008ff50(int sequence);	// "CBaseAnimating::GetSequenceActivityName": as GetSequenceName with the offset in the second dword, "SEQUENCE_NOT_FOUND" when there is none
 	float sub_10091230(int sequence);	// "CBaseAnimating::GetSequenceCycleRate": scope trace (entity name), 1.0f / sub_10091080(sequence) when that is above 0, else 10.0f
 	float sub_10091080(int sequence);	// sequence duration (stub 0x10009813), returns a float
+	float sub_10092190(int iParameter);	// "CBaseAnimating::GetPoseParameter": scope trace (entity name), the studio helper's value for (GetModelPtr(-1), iParameter, the float at +0x690 + iParameter*4), the file-scope zero for a negative index or no header
 
 	// Slot 249, called directly so far; declared as a plain member.
 	float vfunc249();	// "CBaseAnimating::GetIdealAccel": slot 248 + constant
