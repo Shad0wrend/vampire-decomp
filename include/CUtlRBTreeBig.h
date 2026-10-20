@@ -35,4 +35,5 @@ public:
 	bool sub_1025d2b0(unsigned short i) const;	// "CUtlRBTree::IsLeftChild"
 	bool sub_1025d3a0(unsigned short i) const;	// "CUtlRBTree::IsRightChild"
 	unsigned short sub_1025c6a0(const void *search);	// "CUtlRBTree::Find": index of the node equal to search, or InvalidIndex()
+	void sub_1025c9d0(const void *insert, unsigned short &parent, bool &leftchild);	// "CUtlRBTree::FindInsertionPoint": walks down from the root with the less function, remembering the last node and the side
 };
