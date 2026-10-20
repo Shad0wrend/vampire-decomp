@@ -2284,6 +2284,7 @@
 0x1000d003 func   _npc_VManBat npc_VManBat
 0x1000d035 func   _item_w_mingxiao_melee item_w_mingxiao_melee
 0x1000d03a func   ?vfunc2@CTEMetalSparks@@UAEPAV1@I@Z CTEMetalSparks::vfunc2
+0x1000d03f func   ?sub_1033f4c0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_1033f4c0
 0x1000d044 func   ?sub_1005e5c0@@YAXHHPBH0HHHHH@Z sub_1005e5c0
 0x1000d053 func   ?sub_102a15f0@@YI_NPAUN@@@Z sub_102a15f0
 0x1000d058 func   ?sub_1012cf50@CUnknown1012cf50@@QAEXH@Z CUnknown1012cf50::sub_1012cf50

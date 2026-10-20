@@ -46009,6 +46009,38 @@ void CBaseCombatCharacter::sub_1033f3f0(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033f4c0 size=0x9c
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::sub_1033f4c0(int value)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : g_106b8540;
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseCombatCharacter::HungerCheck";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	if (m_field146c <= 0) {
+		sub_1033eb60(value);
+		if (m_field146c > 0)
+			m_flag1474 = 1;
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10340180 size=0x17e
 struct TraceEntry { const char *a, *b, *c; };
 extern int *g_109f3680;
