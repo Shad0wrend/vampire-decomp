@@ -15,6 +15,8 @@ public:
 	const char *m_pMonsterModelName;	// +0x6680
 	const char *m_pBodyEmitterNames[4];	// +0x6684
 	const char *m_pDefaultNPCName;	// +0x6694
+	char pad6698[0x66a0 - 0x6698];
+	unsigned int m_hParticleEmitters[4];	// +0x66a0
 
 	bool vfunc525(int unused);
 	void sub_103c6df0(int index, const char *name);
@@ -27,4 +29,5 @@ public:
 	void sub_102ae750(int a, int b);	// called through the stub at 0x1000198d
 	int vfunc127(int a);	// slot 127 "CNPC_VVampireBoss::Restore": scope trace, base restore (sub_1000527c), clears the monster model name (+0x6680) and the body emitter names, sets the default NPC name (+0x6694); returns the base result
 	int sub_1000527c(int a);	// CAI_BaseNPCTroika::vfunc127, called directly
+	void sub_103c7150();	// "CNPC_VVampireBoss::KillBodyEmitters": scope trace, for each of the four particle emitter handles (+0x66a0) that resolves, calls slot 242 on it, then sub_1000fb23(0.1f)
 };
