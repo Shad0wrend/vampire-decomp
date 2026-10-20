@@ -2693,6 +2693,7 @@
 0x1000fcf4 func   ?vfunc5@CCameraTrack@@UAEPAV1@I@Z CCameraTrack::vfunc5
 0x1000fd03 func   ?sub_101c4790@CUnknown101c4790@@QAEPAU1@H@Z CUnknown101c4790::sub_101c4790
 0x1000fd0d func   ?sub_102c6590@CUnknown102c6590@@QAEPAHH@Z CUnknown102c6590::sub_102c6590
+0x1000fd30 func   ?vfunc2@CNotifyList@@UAEXPAVCBaseEntity@@PBD@Z CNotifyList::vfunc2
 0x1000fd58 func   ?vfunc5@CFilterClass@@QAEPAV1@I@Z CFilterClass::vfunc5
 0x1000fd71 func   ?sub_1042d700@@YIIPAI@Z sub_1042d700
 0x1000fd76 func   ?sub_10411630@CUnknown10411630@@QAEPAVCBaseEntity@@M@Z CUnknown10411630::sub_10411630
