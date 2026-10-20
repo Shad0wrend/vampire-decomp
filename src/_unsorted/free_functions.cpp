@@ -12968,6 +12968,22 @@ void CBaseCombatCharacter::sub_10107050(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107480 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_10107480()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101074c0 size=0x67
 struct Mem32 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
