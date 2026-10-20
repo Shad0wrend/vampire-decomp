@@ -51,3 +51,4 @@
 	int sub_10345f10();	// "CBaseCombatCharacter::GetBlockRe...": scope trace (entity name), the edict index (+0x2e0) of the entity behind sub_1008d990(the handle at +0x6f0) when it is not negative, else 0x1153
 	void *sub_1032e7b0();	// "CBaseCombatCharacter::GetActiveWeapon": scope trace (entity name), the entity behind the handle at +0x19a4 when it resolves, else null (stub 0x10007e19)
 	bool sub_10345d00();	// "CBaseCombatCharacter::IsHoldingMeleeWeapon": scope trace (entity name), true when the active weapon exists and its flags (weapon slot 360) have bit 15 or 16 set
+	virtual void vfunc111();	// slot 111 "CBaseCombatCharacter::MemberSync...": scope trace (entity name), updates the stat list manager at +0x13a8 with the edict index (engine slot 35 of the edict at +0x2e0), then stores IsMale() (zero-extended) at +0x13cc
