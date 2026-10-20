@@ -26416,6 +26416,48 @@ bool Loader::sub_101d7000(const char *file)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d70d0 size=0x9b
+struct DFNode {
+	virtual void n0();
+	virtual void n1();
+	virtual void n2();
+	virtual DFNode *Next();
+};
+struct DFBase {
+	virtual void b0();
+	virtual void Close();
+};
+struct DFFile : virtual DFBase {
+	virtual void f0();
+	virtual void f1();
+	virtual DFNode *Find(const char *name);
+};
+extern int g_1070b238;
+DFFile *sub_1000a119(const char *name, int arg);
+extern void (*g_109f3628)(const char *fmt, ...);
+
+// TARGET: CUnknown101d7380::sub_101d70d0
+bool CUnknown101d7380::sub_101d70d0(const char *name, int *pIndex)
+{
+	DFFile *file = sub_1000a119(name, g_1070b238);
+	if (!file) {
+		g_109f3628("Unable to open data file for: %s\n", name);
+		return false;
+	}
+	DFNode *node = file->Find("LevelingTemplate");
+	while (node) {
+		CUnknown101d7380Entry *item = m_pData[(*pIndex)++];
+		if (!item) {
+			g_109f3628("Unable to parse data file for: %s.  Memory allocation ERROR!\n", name);
+			return false;
+		}
+		node = node->Next();
+	}
+	file->Close();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d72a0 size=0xa8
 extern "C" char *_strlwr(char *);
 extern "C" char *strstr(const char *, const char *);
