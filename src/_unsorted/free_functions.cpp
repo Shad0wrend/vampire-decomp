@@ -24493,6 +24493,25 @@ void CAI_BaseNPC::sub_10209ac0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209cd0 size=0x43
+#include "CItemContainerAnimated.h"
+void *sub_100aa720(int size);
+extern char g_105a9c10[];
+
+// TARGET: item_container_animated
+extern "C" CBaseEntity *item_container_animated()
+{
+	void *mem = sub_100aa720(0x1a38);
+	CItemContainerAnimated *p;
+	if (mem)
+		p = ((CItemContainerAnimated *)mem)->sub_10209d40();
+	else
+		p = 0;
+	p->vfunc106(g_105a9c10);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b000 size=0x9
 int CBaseVampireSkillEntity::sub_1020b000(CBaseEntity *pPlayer)
 {
