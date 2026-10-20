@@ -25705,6 +25705,43 @@ void CUnknown101eb7f0::sub_101eb7f0(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ebf30 size=0x81
+#include "CEntryX.h"
+extern int g_1073a2c0;
+extern CEntryX **g_1073a2c4;
+
+struct CKeyHolder {
+    int m_pad[3];
+    int m_keys[3];
+    const char *sub_101ebf30(int idx);
+};
+
+const char *CKeyHolder::sub_101ebf30(int idx)
+{
+    idx--;
+    if (idx >= 0) {
+        if (idx >= 3)
+            idx = 2;
+        int key = m_keys[idx];
+        CEntryX *e;
+        for (int i = 0; i < g_1073a2c0; i++) {
+            if (g_1073a2c4[i]->m_key == key) {
+                e = g_1073a2c4[i];
+                goto found;
+            }
+        }
+        {
+            static CEntryX s_default(-1);
+            e = &s_default;
+        }
+found:
+        if (e->m_name)
+            return e->m_name;
+    }
+    return "";
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ec690 size=0x17
 #include "CUnknown101ec690.h"
 extern void (__cdecl *g_1073a3a0)(CUnknown101ec690 *, int);
