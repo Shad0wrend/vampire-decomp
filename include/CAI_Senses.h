@@ -29,7 +29,7 @@ struct CAI_SensesVec	// a CUtlVector<int>: memory (pointer, allocation count, gr
 class CAI_Senses : public CAI_Component
 {
 public:
-	virtual ~CAI_Senses() {}	// slot 0: scalar deleting destructor at 0x1027cde0
+	virtual ~CAI_Senses();	// slot 0: scalar deleting destructor at 0x1027cde0
 
 	char pad08[0x20 - 0x08];
 	CAI_SensesVec m_vec20;
