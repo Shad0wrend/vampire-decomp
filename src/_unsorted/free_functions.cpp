@@ -5171,6 +5171,29 @@ void sub_1005cae0(int filter, int delay, int start, int end, int modelindex, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005cbc0 size=0x2a
+#include "CTEBeamRingPoint.h"
+
+extern int vt_1044dcac[];
+
+struct CTEBaseBeamPlaceholder {
+    void sub_1000b1a4(int a);
+};
+
+// TARGET: CTEBeamRingPoint::sub_1005cbc0
+CTEBeamRingPoint *CTEBeamRingPoint::sub_1005cbc0(int a)
+{
+    ((CTEBaseBeamPlaceholder *)this)->sub_1000b1a4(a);
+    *(int **)this = vt_1044dcac;
+    *(int *)((char *)this + 0x44) = 0;
+    *(int *)((char *)this + 0x48) = 0;
+    *(int *)((char *)this + 0x4c) = 0;
+    *(int *)((char *)this + 0x50) = 0;
+    *(int *)((char *)this + 0x54) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d830 size=0x8f
 #include "CTEBeamSpline.h"
 extern CTEBeamSpline g_106c0358;

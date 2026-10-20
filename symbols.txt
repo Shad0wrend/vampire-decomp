@@ -1637,6 +1637,7 @@
 0x10008fd5 func   ?sub_1030f680@Helper1030f680@@QAEPAU1@PBDHH@Z Helper1030f680::sub_1030f680
 0x10008fee func   ?vfunc5@CWeaponIWritten@@QAEPAV1@I@Z CWeaponIWritten::vfunc5
 0x10009002 func   ?vfunc5@CNPC_VSheriffMan@@QAEPAV1@I@Z CNPC_VSheriffMan::vfunc5
+0x10009039 func   ?sub_1005cbc0@CTEBeamRingPoint@@QAEPAV1@H@Z CTEBeamRingPoint::sub_1005cbc0
 0x1000903e func   ?vfunc237@CBaseEntity@@QAEHXZ CBaseEntity::vfunc237
 0x1000904d func   _light_environment light_environment
 0x1000905c func   ?sub_101c0cc0@@YAPAHXZ sub_101c0cc0
