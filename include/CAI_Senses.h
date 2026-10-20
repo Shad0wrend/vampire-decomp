@@ -38,5 +38,5 @@ public:
 	CAI_SensesVec m_vec34;
 	CAI_SensesVec m_vec48;
 
-	bool sub_1030fa00(CBaseEntity *pEnt);	// "CAI_Senses::ShouldSeeEntity": false for the NPC itself, an entity whose slot 158 fails, a flagged / spawn-flagged or hidden one, else the NPC's slot 468 (classification) answer
+	char sub_1030fa00(CBaseEntity *pEnt);	// "CAI_Senses::ShouldSeeEntity": false for the NPC itself, an entity whose slot 158 fails, a flagged / spawn-flagged or hidden one, else the NPC's slot 468 (classification) answer
 };
