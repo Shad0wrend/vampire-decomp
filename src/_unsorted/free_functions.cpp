@@ -43230,6 +43230,18 @@ const char * __stdcall sub_1027f1e0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027f610 size=0x12
+void __fastcall sub_1027f610(unsigned int *p)
+{
+    int i;
+    if (p != 0) {
+        for (i = 0; i < 6; i++) {
+            p[i] = 0;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027f8f0 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_109f3634)(int);

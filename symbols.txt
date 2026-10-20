@@ -2505,6 +2505,7 @@
 0x1000cff4 func   ?sub_10406000@@YAHXZ sub_10406000
 0x1000cffe func   _item_p_research_mg_finance item_p_research_mg_finance
 0x1000d003 func   _npc_VManBat npc_VManBat
+0x1000d030 func   ?sub_1027f610@@YIXPAI@Z sub_1027f610
 0x1000d035 func   _item_w_mingxiao_melee item_w_mingxiao_melee
 0x1000d03a func   ?vfunc2@CTEMetalSparks@@UAEPAV1@I@Z CTEMetalSparks::vfunc2
 0x1000d03f func   ?sub_1033f4c0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_1033f4c0
