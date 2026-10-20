@@ -66,6 +66,8 @@ public:
 	char sub_1033e2b0();	// CBaseCombatCharacter::IsBusyWithDiscipline (the stub at 0x1000caae), called directly
 	char sub_10281430();	// true when the NPC may skip its pending request: not dead / mid-switch (state +0x5cc4 is not 7, nor 4 with +0x5cc0 not 4), and either the one-shot byte at +0x1b28 was set (cleared here), condition 0x5d is not set, bit 29 of +0x5c7c is set with a target at +0x5c38, or state +0x5cc0 is 2 without a slot 167 value
 	char sub_10014df8(int condition);	// "HasCondition" (the stub at 0x10014df8 for 0x10269aa0), called directly
+	bool sub_10297430(CAI_BaseNPCTroika *pOther);	// "CAI_BaseNPCTroika::...": false unless the entity of the handle at +0x6448 resolves to a live entity, else sub_10296c40(pOther, that entity, the dword at pOther+0x458, 0.731f) != 0
+	char sub_10296c40(CAI_BaseNPCTroika *pOther, CBaseEntity *pEnt, int a, float f);
 
 	char m_pad0004[0x6080];
 	float m_f6084;
@@ -74,7 +76,9 @@ public:
 	float m_v6090[3];
 	char m_pad609c[0x63d8 - 0x609c];
 	char m_b63d8;
-	char m_pad63d9[0x64cc - 0x63d9];
+	char m_pad63d9[0x6448 - 0x63d9];
+	unsigned int m_h6448;
+	char m_pad644c[0x64cc - 0x644c];
 	float m_f64cc;
 	char m_pad64d0[0x6554 - 0x64d0];
 	unsigned int m_h6554;
