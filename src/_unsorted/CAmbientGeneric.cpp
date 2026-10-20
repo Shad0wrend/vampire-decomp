@@ -15,3 +15,30 @@ CAmbientGeneric *CAmbientGeneric::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101ac930 size=0x66
+#include "CAmbientGeneric.h"
+
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+extern const char g_106b8540[];
+
+struct SoundSystemLike {
+    virtual void Precache(const char *pszName, int a);
+};
+extern SoundSystemLike *g_1070b248;
+
+// TARGET: CAmbientGeneric::vfunc104
+void CAmbientGeneric::vfunc104()
+{
+    const char *p = m_pszSoundFile;
+    const char *pszName = p ? p : g_106b8540;
+    if (m_pszSoundFile) {
+        if (strlen(pszName) > 1 && *pszName != '!')
+            g_1070b248->Precache(pszName, 0);
+    }
+    sub_101ad0f0();
+    if (!(m_spawnflags & 0x10) && m_b04bd)
+        m_b04bc = 1;
+}
+// END FUNCTION

@@ -1972,6 +1972,7 @@
 0x1000c504 func   ?sub_10046570@CUtlRBTreeFind16@@QAEGPBX@Z CUtlRBTreeFind16::sub_10046570
 0x1000c54a func   ?vfunc5@CTEFizz@@QAEXXZ CTEFizz::vfunc5
 0x1000c568 func   ?sub_103eee60@CUnknown103eee60@@QAEXXZ CUnknown103eee60::sub_103eee60
+0x1000c572 func   ?vfunc104@CAmbientGeneric@@QAEXXZ CAmbientGeneric::vfunc104
 0x1000c581 func   ?sub_1042c310@@YAXH@Z sub_1042c310
 0x1000c59a func   ?sub_1004ae60@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004ae60
 0x1000c5b3 func   ?sub_1021e320@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e320
