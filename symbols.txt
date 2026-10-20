@@ -3073,6 +3073,7 @@
 0x10014006 func   _item_w_crossbow_flaming item_w_crossbow_flaming
 0x10014010 func   _npc_VSheriffSwarm npc_VSheriffSwarm
 0x1001401a func   ?vfunc12@CServerGameClients@@UAEPAXPAX@Z CServerGameClients::vfunc12
+0x10014029 func   ?sub_10032d70@UtlMem@@QAEXXZ UtlMem::sub_10032d70
 0x1001402e func   ?sub_102ee1c0@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102ee1c0
 0x1001404c func   ?vfunc5@CFilterName@@QAEPAV1@I@Z CFilterName::vfunc5
 0x1001407e func   _item_g_drugs_pill_bottle item_g_drugs_pill_bottle
