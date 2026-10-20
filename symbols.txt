@@ -1986,6 +1986,7 @@
 0x1000af65 func   ?sub_1037e9b0@@YADXZ sub_1037e9b0
 0x1000af79 func   ?sub_10042d00@CMem8c_t@@QAEXH@Z CMem8c_t::sub_10042d00
 0x1000afa6 func   ?sub_102c9d20@@YIPAHPAH@Z sub_102c9d20
+0x1000afc9 func   ?sub_101072b0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_101072b0
 0x1000afd3 func   ?sub_102ecce0@@YIXPAUCOwner@@@Z sub_102ecce0
 0x1000b005 func   ?sub_102c1170@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_102c1170
 0x1000b00f func   ?sub_1042c4e0@@YA_NXZ sub_1042c4e0

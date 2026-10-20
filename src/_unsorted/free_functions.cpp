@@ -18370,6 +18370,34 @@ void CBaseCombatCharacter::sub_10107050(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101072b0 size=0xc9
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+#define SL1(n) virtual void s##n();
+#define SL10(p) SL1(p##0) SL1(p##1) SL1(p##2) SL1(p##3) SL1(p##4) SL1(p##5) SL1(p##6) SL1(p##7) SL1(p##8) SL1(p##9)
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+class CBCCSlots347
+{
+public:
+	SL100(0) SL100(1) SL100(2)
+	SL10(30) SL10(31) SL10(32) SL10(33)
+	SL1(340) SL1(341) SL1(342) SL1(343) SL1(344) SL1(345) SL1(346)
+	virtual bool slot347(int event, char *pszName, float *pA, float *pB, float *pC, float *pD);
+};
+
+// TARGET: CBaseCombatCharacter::sub_101072b0
+void CBaseCombatCharacter::sub_101072b0(int event)
+{
+	ScopeTrace trace("CBaseCombatCharacter::AddExpressionForEvent", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char name[64];
+	float v3, v1, v4, v2;
+	if (((CBCCSlots347 *)this)->slot347(event, name, &v1, &v2, &v3, &v4))
+		sub_101067e0(name, v2, v4, v1, 0, v3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107480 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
