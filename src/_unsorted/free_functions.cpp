@@ -29057,6 +29057,56 @@ bool sub_1024a2b0(unsigned short *a, unsigned short *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024a310 size=0x116
+#include "CUtlRBTree16.h"
+extern void *(*g_109f3638)(void *, unsigned int);
+extern void *(*g_109f3634)(unsigned int);
+struct Mem16 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void Grow(int num)
+    {
+        if (m_nGrowSize == -1)
+            return;
+        int a = *(volatile int *)&m_nAllocationCount;
+        int nAllocationRequested = a + num;
+        if (a < nAllocationRequested) {
+            do {
+                if (a != 0) {
+                    if (m_nGrowSize != 0)
+                        a += m_nGrowSize;
+                    else
+                        a += a;
+                } else
+                    a = 2;
+            } while (a < nAllocationRequested);
+            m_nAllocationCount = a;
+        }
+        if (m_pMemory)
+            m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount << 4);
+        else
+            m_pMemory = g_109f3634(m_nAllocationCount << 4);
+    }
+};
+unsigned short CUtlRBTree16::sub_1024a310()
+{
+    unsigned short elem;
+    if (m_FirstFree == InvalidIndex()) {
+        if (m_unk8 == m_TotalElements)
+            ((Mem16 *)&m_pElements)->Grow(1);
+        elem = m_TotalElements++;
+    } else {
+        elem = m_FirstFree;
+        m_FirstFree = Links(m_FirstFree).m_Right;
+    }
+    unsigned short *p = (unsigned short *)&m_pElements[elem].m_Data;
+    if (p)
+        *p = 0xffff;
+    return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024a980 size=0xb9
 #include "CUtlRBTree16.h"
 
