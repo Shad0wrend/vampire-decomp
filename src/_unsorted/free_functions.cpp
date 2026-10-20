@@ -56286,6 +56286,58 @@ void CBaseCombatCharacter::sub_10340d70(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10340e50 size=0x172
+#include "CBaseCombatCharacter.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_10623504[];
+extern char g_10543c6c[];
+extern char g_10538764[];	// RTTI type descriptor of CBaseEntity
+extern char g_10560664[];	// RTTI type descriptor of CItemContainer
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long vfDelta, void *pSrcType, void *pTargetType, int isReference);
+void sub_101cebc0(void *pPlayer, int type, int amount);
+
+struct CEdictView
+{
+	char m_pad[0x40];
+	CBaseEntity *m_pUnknown;	// 0x40: the IServerUnknown-like object; slot 4 gives the entity
+};
+
+struct CServerUnknownView
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual CBaseEntity *GetBaseEntity();
+};
+
+void CBaseCombatCharacter::sub_10340e50(int amount)
+{
+	ScopeTrace trace(g_10623504, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	*(int *)((char *)this + 0x13d8) += amount;
+	char *pPlayer = *(char **)((char *)this + 0xa8);
+	if (pPlayer && amount) {
+		int iContainer = *(int *)(pPlayer + 0x1eb8);
+		if (iContainer) {
+			CEdictView *pEdict = (CEdictView *)g_1070b22c->vfunc38(iContainer);
+			CBaseEntity *pEntity;
+			{
+				ScopeTrace instanceTrace(g_10543c6c, g_106b8540);
+				if (!pEdict)
+					pEdict = (CEdictView *)g_1070b22c->vfunc38(0);
+				if (pEdict && pEdict->m_pUnknown)
+					pEntity = ((CServerUnknownView *)pEdict->m_pUnknown)->GetBaseEntity();
+				else
+					pEntity = 0;
+			}
+			if (!__RTDynamicCast(pEntity, 0, g_10538764, g_10560664, 0))
+				return;
+		}
+		sub_101cebc0(*(void **)((char *)this + 0xa8), 10, amount);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10341030 size=0xb6
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
