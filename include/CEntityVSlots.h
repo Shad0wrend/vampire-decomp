@@ -1,4 +1,4 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 118, 158, 161, 173,
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 118, 158, 161, 167, 173,
 // 212, 220 / 221 (the absolute origin / angles getters), 243, 244, 260, 346, 360 and 457 of an entity class that does not model its vtable.
 #pragma once
 
@@ -22,7 +22,9 @@ public:
 	virtual char slot158();
 	EVS(159) EVS(160)
 	virtual char slot161(const char *pszName);	// "HasLinkedDoor"-like name test
-	EVS(162) EVS(163) EVS(164) EVS(165) EVS(166) EVS(167) EVS(168) EVS(169)
+	EVS(162) EVS(163) EVS(164) EVS(165) EVS(166)
+	virtual int slot167();	// the entity's target / enemy (0 when none)
+	EVS(168) EVS(169)
 	EVS(170) EVS(171) EVS(172)
 	virtual void slot173(CEntityVSlots *pActivator, CEntityVSlots *pCaller, int useType, int value);	// "Use"
 	EVS(174) EVS(175) EVS(176) EVS(177) EVS(178) EVS(179)
