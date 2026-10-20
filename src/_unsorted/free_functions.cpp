@@ -20956,6 +20956,37 @@ struct CUnknown101afba0 { char pad[0x100]; char m_Flag; void sub_101afba0(); };
 void CUnknown101afba0::sub_101afba0() { m_Flag = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101afc50 size=0x7a
+#include <stdio.h>
+
+struct CUnk101afc50Table {
+    int sub_10248bb0(const char *pszKey, int nDefault);
+};
+struct CUnk101afc50 {
+    char pad0000[0xec];
+    char m_bOccluded[16];	// 0xec
+    bool sub_101afc50(CUnk101afc50Table *pTable);
+};
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *pszFormat, ...);
+
+bool CUnk101afc50::sub_101afc50(CUnk101afc50Table *pTable)
+{
+    if (!pTable)
+        return false;
+    for (int i = 0; i < 16; i++) {
+        char szKey[4];
+        sprintf(szKey, "%d", i);
+        int nValue = pTable->sub_10248bb0(szKey, -1);
+        if (nValue == -1) {
+            nValue = 0;
+            Msg("Sound volume table has no occluded setting for volume level %s.  Defaulting to %s\n", szKey, "false");
+        }
+        m_bOccluded[i] = nValue != 0;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2070 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
