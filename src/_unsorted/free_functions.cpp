@@ -8606,6 +8606,37 @@ float CBaseAnimating::sub_10092190(int iParameter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10092270 size=0xc2
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+void *sub_100c73b0(void *pStudioHdr, int index);
+
+int CBaseAnimating::sub_10092270(const char *name)
+{
+    const char *ent = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::LookupPoseParameter";
+    g_109f3620[*g_109f3680].b = ent;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    void *hdr = sub_100952d0(-1);
+    for (int i = 0; i < 0x18; i++) {
+        int *p = (int *)sub_100c73b0(hdr, i);
+        if (!p)
+            break;
+        if (_strcmpi((char *)p + *p, name) == 0) {
+            (*g_109f3680)--;
+            return i;
+        }
+    }
+    (*g_109f3680)--;
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10092610 size=0x93
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

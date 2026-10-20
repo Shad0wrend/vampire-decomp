@@ -1695,6 +1695,7 @@
 0x10009aac func   ?sub_100828d0@@YAXXZ sub_100828d0
 0x10009ab1 func   ?sub_101fc0d0@CVStatCost_t@@QAEXXZ CVStatCost_t::sub_101fc0d0
 0x10009ab6 func   ?sub_10185790@@YIXPAH@Z sub_10185790
+0x10009ac5 func   ?sub_10092270@CBaseAnimating@@QAEHPBD@Z CBaseAnimating::sub_10092270
 0x10009ae8 func   ?sub_10027570@CBaseEntity@@QAEHXZ CBaseEntity::sub_10027570
 0x10009aed func   _env_swarm_bats env_swarm_bats
 0x10009af7 func   ?sub_10342590@@YA_NPAVCBaseEntity@@0@Z sub_10342590
