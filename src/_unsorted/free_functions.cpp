@@ -4390,6 +4390,44 @@ const char *CUnknown10050860::sub_10050860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050b90 size=0xa9
+#include "CDisciplineParticle.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct IEngineServerSlots
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16();
+	virtual int PrecacheModel(const char *pszName, int bPreload);	// slot 17
+};
+
+extern IEngineServerSlots *g_1070b22c;
+
+CDisciplineParticle *CDisciplineParticle::sub_10050b90(CDisciplineParticleParams *pParams, int a2, int a3, int a10, int a11)
+{
+	g_109f3620[*g_109f3680].m_pszFunc = "CDisciplineParticle::Create";
+	g_109f3620[*g_109f3680].m_pszName = g_106b8540;
+	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+	(*g_109f3680)++;
+	CDisciplineParticle *pParticle = sub_10050e70(pParams->m_pszClassname, a2, a3, pParams->m_n04, pParams->m_n08, pParams->m_n0c,
+		g_1070b22c->PrecacheModel(pParams->m_pszModel, 0), pParams->m_n14, pParams->m_n18, a10, a11, pParams->m_n20);
+	(*g_109f3680)--;
+	return pParticle;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050d90 size=0xa6
 #include "CDisciplineParticle.h"
 #include "CUnknown1070b22c.h"
