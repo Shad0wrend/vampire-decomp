@@ -69,6 +69,7 @@ public:
 	void sub_10030cb0(void *a, void *b);	// "CCollisionEvent::DispatchEndTouch" (called through the stub at 0x1000f0bf)
 	void sub_10030f30(void *a, void *b, int c, void *pData1, void *pData2);	// "CCollisionEvent::AddTouchEvent"-like (called through the stub at 0x1000a0a1)
 	void sub_10030e40();	// "CCollisionEvent::UpdateDamageEvents": scope trace, hands every queued damage event (0x58 byte records, array at +0xec, count at +0xf8) to its entity (copy of the damage info), then empties the queue
+	void sub_10030910();	// "CCollisionEvent::FrameUpdate": scope trace, UpdateFrictionSounds, UpdateTouchEvents, then UpdateDamageEvents (called through the stub at 0x10005a42)
 
 	char m_pad0004[4];
 	CFrictionEntry_t m_friction[8];	// 0x0008
