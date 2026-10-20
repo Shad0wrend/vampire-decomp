@@ -17,4 +17,6 @@ public:
 	char *sub_10221e50(int index);	// "QuestJournal::GetCompletionState": scope trace, record `index` (0x18 bytes each) of the array whose base is m_field[0], or a warning and the base when invalid
 	void sub_102210f0();	// "QuestJournal::PurgeQuestData": scope trace, clears the flag, frees the strings of every completion (0x18 byte records at m_field[0]) and quest (0x68 byte records at m_field[5]) record, then empties and releases both vectors
 	void sub_10221270();	// resets every quest record (0x68 bytes each at m_field[5], count m_field[8]): the dword at +0x10 = -1, the dword at +0xc = 0
+	void sub_10221000();	// "QuestJournal::PreCache": scope trace, once (flag +0x28): loads the four quest script files "vdata\system\<name>.txt" through sub_102212b0
+	void sub_102212b0(const char *pszFile, int index);	// loads one quest script file (called through the stub at 0x100125b7)
 };
