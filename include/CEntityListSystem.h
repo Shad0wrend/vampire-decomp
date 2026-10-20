@@ -20,4 +20,5 @@ public:
 	CEntityListSystem *vfunc8(unsigned int flags);
 	void sub_1000cfbd();
 	void sub_100f8ec0();	// takes a copy of the pending list, empties it and calls sub_100085a8 on each entity whose flag bit 0 is set
+	void vfunc5();	// slot 5: hands the two global pending lists (0x107036b0, 0x10703650) to the global entity list, then empties and frees both vectors
 };
