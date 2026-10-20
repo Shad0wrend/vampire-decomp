@@ -42747,6 +42747,23 @@ void CUnknown102f45f0::sub_102f45f0(const CachedPos_t *pPos, int node, int field
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f46d0 size=0xa2
+#include "CUnknown102f46d0.h"
+extern Vector g_1070d1b0;
+
+Vector CUnknown102f46d0::sub_102f46d0(void *pObj, int index)
+{
+    if (!m_pData)
+        return g_1070d1b0;
+    if (index >= 0 && index <= m_count) {
+        if (!pObj)
+            return g_1070d1b0;
+        return m_pData[index]->sub_102fb0d0(*(int *)((char *)pObj + 0x156c));
+    }
+    return g_1070d1b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f47f0 size=0x81
 #include "CUnknown102f47f0.h"
 extern void (*g_109f3630)(const char *, ...);
