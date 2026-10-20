@@ -27,4 +27,5 @@ public:
 	CUnknown1073dc28Record **m_ppRecords;	// 0x18
 
 	void sub_101f5950(CBaseEntity *pEntity, int soundId, int channel, float volume, int flags);	// plays the sound (stub 0x100119fa)
+	int sub_101f55a0(CBaseEntity *pEntity, const char *pszName, int bFemale);	// looks up the sound group of the named table for the entity (stub 0x10009331)
 };
