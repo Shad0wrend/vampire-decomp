@@ -8156,6 +8156,31 @@ bool CBaseAnimating::sub_10090e30(int sequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10091230 size=0xa4
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+float CBaseAnimating::sub_10091230(int sequence)
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::GetSequenceCycleRate";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    float t = sub_10091080(sequence);
+    if (t > 0.0f) {
+        float r = 1.0f / t;
+        (*g_109f3680)--;
+        return r;
+    }
+    (*g_109f3680)--;
+    return 10.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091c80 size=0x6f
 #include "CBaseAnimating.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
