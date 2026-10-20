@@ -7711,6 +7711,45 @@ void CBaseEntity::sub_1009bef0(int a, int b, CBaseEntityColor32 color)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c000 size=0xc9
+#include "CGlobalEntityList.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_10554ff0[];
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern CGlobalEntityList *g_10566458;
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        if (s->m_Serial == (int)(h >> 13))
+            return (CBaseEntity *)s->m_pEntity;
+    }
+    return 0;
+}
+void CBaseEntity::sub_1009c000(int a, int b, unsigned int hEntity)
+{
+    const char *name;
+    if (this)
+        name = m_name26c ? m_name26c : g_106b8540;
+    else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_10554ff0;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    const char *n;
+    if (ResolveHandle(hEntity))
+        n = ResolveHandle(hEntity)->m_name26c;
+    else
+        n = 0;
+    sub_1009b700(a, b, n);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009c110 size=0x96
 extern int *g_109f3680;
 extern int *g_109f3620;

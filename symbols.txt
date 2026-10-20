@@ -2913,6 +2913,7 @@
 0x10012170 func   ?vfunc5@CPhysicsCannister@@QAEPAV1@I@Z CPhysicsCannister::vfunc5
 0x1001217f func   ?vfunc362@CBaseCombatCharacter@@QAEDPBM@Z CBaseCombatCharacter::vfunc362
 0x1001218e func   ?sub_101c2ad0@CUnknown101c2a90@@QAEXD@Z CUnknown101c2a90::sub_101c2ad0
+0x1001219d func   ?sub_1009c000@CBaseEntity@@QAEXHHI@Z CBaseEntity::sub_1009c000
 0x100121a7 func   ?sub_10203dd0@@YAXXZ sub_10203dd0
 0x100121ca func   ?sub_1015eec0@CUnknown1015ef20@@QAE_NXZ CUnknown1015ef20::sub_1015eec0
 0x100121cf func   ?sub_102652d0@CUnknown102652d0@@QAEHXZ CUnknown102652d0::sub_102652d0
