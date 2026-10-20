@@ -1398,6 +1398,7 @@
 0x100099d0 func   _item_g_pisha_fetish item_g_pisha_fetish
 0x10009a16 func   ?sub_10248850@CUnknown10248850@@QAEXH@Z CUnknown10248850::sub_10248850
 0x10009a34 func   ?sub_10182810@CUnknown10182810@@QAEHXZ CUnknown10182810::sub_10182810
+0x10009a39 func   ?sub_10032c20@UtlMem@@QAEXXZ UtlMem::sub_10032c20
 0x10009a61 func   _hud_timer hud_timer
 0x10009a75 func   ?sub_102a15c0@@YI_NPAUN@@@Z sub_102a15c0
 0x10009a7f func   ?sub_1004e910@CPhysBox@@QAEXH@Z CPhysBox::sub_1004e910
