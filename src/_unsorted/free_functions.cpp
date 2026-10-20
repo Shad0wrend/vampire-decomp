@@ -32394,6 +32394,27 @@ extern "C" CBaseEntity *prop_hacking()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021b330 size=0xa2
+#include "CUnknown10217f50.h"
+#include <string.h>
+
+extern char g_10547e40[];
+
+void CUnknown10217f50::sub_1021b330(const char *pszText, int column)
+{
+	char line[40];
+	memset(line, 0, sizeof(line));
+	memset(line, ' ', m_nLineWidth - 3);
+	line[0] = '|';
+	line[m_nLineWidth - 3] = '|';
+	unsigned int n = 0x28 - column;
+	unsigned int len = (strlen(pszText) < n) ? strlen(pszText) : n;
+	memcpy(line + column, pszText, len);
+	sub_10217ac0(line);
+	sub_10217ac0(g_10547e40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d730 size=0x103
 struct ISaveRestoreOps;
 struct datamap_t;
