@@ -2004,6 +2004,7 @@
 0x1000d06c func   ?sub_10073a30@CUnknown10073a30@@QAEXD@Z CUnknown10073a30::sub_10073a30
 0x1000d085 func   ?vfunc502@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc502
 0x1000d08a func   ?sub_1009b2c0@CBaseEntity@@QAEXHH@Z CBaseEntity::sub_1009b2c0
+0x1000d0d5 func   ?vfunc5@CTEBreakModel@@QAEXXZ CTEBreakModel::vfunc5
 0x1000d0f8 func   ?sub_101c2a90@CUnknown101c2a90@@QAEXD@Z CUnknown101c2a90::sub_101c2a90
 0x1000d0fd func   ?vfunc1@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc1
 0x1000d10c func   ?sub_102cefc0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102cefc0
