@@ -3367,6 +3367,7 @@
 0x1001548d func   ?sub_10043870@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_10043870
 0x1001549c func   ?vfunc5@CInfoIntermission@@QAEPAV1@I@Z CInfoIntermission::vfunc5
 0x100154b0 func   ?sub_100784b0@CUnknown10077730@@QAEXM@Z CUnknown10077730::sub_100784b0
+0x100154d3 func   ?sub_10209ac0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10209ac0
 0x100154d8 func   ?sub_1036ec40@@YADXZ sub_1036ec40
 0x100154e2 func   ?sub_100b03b0@@YAXXZ sub_100b03b0
 0x10015555 func   ?vfunc49@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc49

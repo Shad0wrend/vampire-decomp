@@ -23962,6 +23962,20 @@ void *CItemContainer::sub_10209a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209ac0 size=0x2a
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+
+void CAI_BaseNPC::sub_10209ac0(CBaseEntity *pEnt)
+{
+	unsigned int *pHandle = (unsigned int *)((char *)this + 0x1a2c);
+	if (pEnt)
+		*pHandle = *pEnt->vfunc1();
+	else
+		*pHandle = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b000 size=0x9
 int CBaseVampireSkillEntity::sub_1020b000(CBaseEntity *pPlayer)
 {
