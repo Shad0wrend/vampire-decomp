@@ -2339,6 +2339,7 @@
 0x1000d6b6 func   ?sub_1011d2e0@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1011d2e0
 0x1000d6cf func   _npc_VAnimal npc_VAnimal
 0x1000d6f7 func   ?sub_100deb50@@YAXPAHPBH@Z sub_100deb50
+0x1000d6fc func   ?vfunc506@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc506
 0x1000d70b func   _physics_cannister physics_cannister
 0x1000d73d func   _move_keyframed move_keyframed
 0x1000d751 func   ?vfunc5@CNPC_VAnimal@@QAEPAV1@I@Z CNPC_VAnimal::vfunc5

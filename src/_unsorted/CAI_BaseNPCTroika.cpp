@@ -644,6 +644,41 @@ void CAI_BaseNPCTroika::vfunc505()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10294e70 size=0x93
+#include "CAI_BaseNPCTroika.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct SoundRecord { int m_Id; const char *m_pszName; };
+struct SoundSystem { void sub_100119fa(void *pEntity, int a, int b, float c, float d); };
+extern int g_1073dc3c;
+extern SoundRecord **g_1073dc40;
+extern SoundSystem g_1073dc28;
+extern char g_106b8540[];
+
+static inline const char *NameOf(const char *const *p)
+{
+	return *p ? *p : g_106b8540;
+}
+
+static inline int FindSound(const char *name)
+{
+	for (int i = 0; i < g_1073dc3c; i++) {
+		if (!_strcmpi(NameOf(&g_1073dc40[i]->m_pszName), name))
+			return g_1073dc40[i]->m_Id;
+	}
+	return -1;
+}
+
+void CAI_BaseNPCTroika::vfunc506()
+{
+	if (sub_1033e2b0())
+		return;
+	static int s_nSound = FindSound("Target_Reacquired");
+	g_1073dc28.sub_100119fa(this, s_nSound, 2, 1.0f, 1.25f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029b180 size=0xce
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseAnimating.h"
