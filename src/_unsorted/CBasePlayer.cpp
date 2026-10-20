@@ -103,6 +103,57 @@ bool CBasePlayer::sub_1015ff40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163630 size=0xd9
+#include "CBasePlayer.h"
+#define GV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct S1070ba0c
+{
+    GV(a0) GV(a1) GV(a2) GV(a3) GV(a4) GV(a5)
+    virtual int vfunc60(CBasePlayer *p);
+    virtual int vfunc61(CBasePlayer *p);
+    virtual int vfunc62(CBasePlayer *p);
+};
+extern S1070ba0c *g_1070ba0c;
+void CBasePlayer::vfunc441()
+{
+    int list[33];
+    int type;
+    int sub;
+    type = g_1070ba0c->vfunc61(this);
+    sub = g_1070ba0c->vfunc62(this);
+    if (type == 9 && sub == 12) {
+        vfunc442(1);
+        return;
+    }
+    int i = 0;
+    int *p = list;
+    for (; i < 0xe0; i++) {
+        void *w = sub_1032e8b0(i);
+        if (w) {
+            switch (type) {
+            case 7:
+                *p++ = (int)w;
+                break;
+            case 8:
+                if (sub_1032e7b0() && w == sub_1032e7b0())
+                    *p++ = (int)w;
+                break;
+            }
+        }
+    }
+    if (sub != 12) {
+        int j = 0;
+        p = list;
+        for (; j < 0x20; j++) {
+            if (sub_103346c0(j) > 0 && sub == 10)
+                *p++ = j;
+        }
+    }
+    vfunc442(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163ed0 size=0x7c
 #include "CBasePlayer.h"
 struct CPlayerGlobals { char pad[0xc]; float curtime; };
