@@ -77,4 +77,5 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	char vfunc69(void *pOther);	// as in CNPC_VHengeyokai (transplant)
 	char sub_1029b180(void *pOther);	// as in CNPC_VHengeyokai (transplant)
+	int sub_103bde40(int activity);	// slot 375 (NPC_TranslateActivity): while the 10381be0 check passes, activity 1 / 9 / 0x13 map to 0xfd / 0xff (0xfc / 0xfe when the byte at +0x6688 is set); everything else goes to the base implementation
 };
