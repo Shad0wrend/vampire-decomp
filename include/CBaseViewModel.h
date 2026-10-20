@@ -9,4 +9,5 @@ public:
 	void sub_10007126();
 	CBaseEntity *vfunc267();	// as in CBasePlayer (transplant)
 	CBaseViewModel *sub_1042b760();	// as in CKeepUpright (transplant)
+	virtual void vfunc103();	// slot 103 (Spawn): slot 104, SetSize(-8,-4,-2 / 8,4,2), SetSolid(SOLID_NONE) scope trace, clears bit 18 of the flags at +0x268
 };
