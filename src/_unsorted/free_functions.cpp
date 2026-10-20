@@ -24456,6 +24456,25 @@ void S1022b4d0::sub_1022b4d0(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022bb30 size=0x43
+#include "CPropRadio.h"
+void *sub_100aa720(int size);
+extern char g_105b4900[];
+
+// TARGET: prop_radio
+extern "C" CBaseEntity *prop_radio()
+{
+	void *mem = sub_100aa720(0x75c);
+	CPropRadio *p;
+	if (mem)
+		p = ((CPropRadio *)mem)->sub_1022bc30();
+	else
+		p = 0;
+	p->vfunc106(g_105b4900);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022d0d0 size=0x8f
 #include "CUtlVector72.h"
 extern void *(*g_109f3634)(int);
