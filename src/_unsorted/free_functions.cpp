@@ -27930,6 +27930,38 @@ void CUnknown101d5bd0::sub_101d6de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6ef0 size=0xc5
+#include "CUnknown101d7380.h"
+#include "FileSystemViews.h"
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern IFileSystemView *g_1070b238;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+void CUnknown101d7380::sub_101d6ef0()
+{
+	int handle;
+	char path[260];
+	int i = 0;
+	int count = 0;
+	int index = 0;
+	sprintf(path, "%s%s*.txt", "vdata\\system\\", "LevelingTemplate_");
+	if (g_1070b238->FindFirst(path, &handle)) {
+		do {
+			count++;
+		} while (g_1070b238->FindNext(handle));
+		g_1070b238->FindClose(handle);
+		if (count > 0) {
+			do {
+				sprintf(path, "%s%s%03d.txt", "vdata\\system\\", "LevelingTemplate_", i);
+				if (!sub_101d70d0(path, &index))
+					Msg("Unable to open Leveling Template data file for: %s\n", path);
+				i++;
+			} while (i < count);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d7000 size=0x9c
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 struct VBase {
