@@ -43075,6 +43075,66 @@ void CUtlVector4::sub_10265310(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10265680 size=0x124
+#include "CBCCSlotViews.h"
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+class CBaseEntity;
+struct AIToggleListView { CBaseEntity *sub_100f8370(CBaseEntity *pStart, int mask); };
+extern AIToggleListView g_106eb5d8;
+extern int g_1092053c;
+struct AIToggleGlobals { char pad[0xc]; float curtime; };
+extern AIToggleGlobals *g_1070b228;
+
+struct AIToggleNPC {
+    VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2) VIEW_SLOT100(3) VIEW_SLOT100(4) VIEW_SLOT100(5)
+    VIEW_SLOT10(60) VIEW_SLOT(610) VIEW_SLOT(611) VIEW_SLOT(612) VIEW_SLOT(613)
+    virtual void vfunc614();
+    char pad[0x178 - 4];
+    float m_f178;
+    char pad2[0x6254 - 0x17c];
+    float m_f6254, m_f6258, m_f625c, m_f6260;
+};
+struct AIToggleEnt {
+    char pad[0x98];
+    AIToggleNPC *m_pNPC;
+    char pad2[0x17c - 0x9c];
+    float m_f17c;
+};
+
+void sub_10265680(char bEnable)
+{
+    if (bEnable) {
+        if (g_1092053c & 1) {
+            g_1092053c &= ~1;
+            for (AIToggleEnt *e = (AIToggleEnt *)g_106eb5d8.sub_100f8370(0, 0x20); e; e = (AIToggleEnt *)g_106eb5d8.sub_100f8370((CBaseEntity *)e, 0x20)) {
+                AIToggleNPC *npc = e->m_pNPC;
+                if (npc) {
+                    npc->vfunc614();
+                    npc->m_f178 = g_1070b228->curtime;
+                    npc->m_f6254 = g_1070b228->curtime;
+                    npc->m_f6258 = g_1070b228->curtime;
+                    npc->m_f625c = g_1070b228->curtime;
+                    npc->m_f6260 = g_1070b228->curtime;
+                } else {
+                    e->m_f17c = g_1070b228->curtime - 0.1f;
+                }
+            }
+            DevMsg("AI Enabled.\n");
+        } else {
+            DevMsg("AI Already Enabled.\n");
+        }
+    } else {
+        if (g_1092053c & 1) {
+            DevMsg("AI Already Disabled.\n");
+        } else {
+            g_1092053c |= 1;
+            DevMsg("AI Disabled.\n");
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10265800 size=0xa
 extern unsigned char g_1092053c;
 

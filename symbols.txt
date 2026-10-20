@@ -2368,6 +2368,7 @@
 0x1000c3c4 func   ?sub_101fc8d0@@YAXH@Z sub_101fc8d0
 0x1000c3f1 func   ?sub_10271ff0@CAI_BaseNPC@@QAEHHPAH@Z CAI_BaseNPC::sub_10271ff0
 0x1000c400 func   ?vfunc5@CWeaponRanged_Smg_Mac10@@QAEPAV1@I@Z CWeaponRanged_Smg_Mac10::vfunc5
+0x1000c42d func   ?sub_10265680@@YAXD@Z sub_10265680
 0x1000c432 func   ?vfunc5@CNPC_Crow@@QAEPAV1@I@Z CNPC_Crow::vfunc5
 0x1000c446 func   ?sub_100aa5c0@CBaseEntity@@QAEHPAVCRestore@@H@Z CBaseEntity::sub_100aa5c0
 0x1000c464 func   ?sub_100aaf30@CBaseEntity@@QAEXXZ CBaseEntity::sub_100aaf30
