@@ -477,6 +477,7 @@
 0x100040f7 func   ?sub_1042fc30@@YAII@Z sub_1042fc30
 0x10004129 func   ?vfunc30@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc30
 0x100041e2 func   ?sub_101f9610@@YAXH@Z sub_101f9610
+0x100041fb func   ?sub_1004a2a0@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004a2a0
 0x1000420a func   ?sub_101bdf90@@YIXPAUMem4@@HH@Z sub_101bdf90
 0x1000420f func   ?sub_10076670@CUnknown10076670@@QAEXH@Z CUnknown10076670::sub_10076670
 0x10004232 func   ?sub_10158da0@@YIXPAPAX@Z sub_10158da0
