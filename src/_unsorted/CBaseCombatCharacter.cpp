@@ -474,6 +474,34 @@ void CBaseCombatCharacter::vfunc387()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032ebc0 size=0x9d
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106203f4[];
+extern char g_106b8540[];
+extern char g_105387dc[];
+int CBaseCombatCharacter::vfunc143(float flHealth, int bitsDamageType)
+{
+    const char *name;
+    if (this)
+        name = m_name26c ? m_name26c : g_106b8540;
+    else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_106203f4;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (m_nTakeDamage == 0) {
+        --*g_109f3680;
+        return 0;
+    }
+    int r = CBaseEntity::vfunc143(flHealth, bitsDamageType);
+    --*g_109f3680;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103315e0 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
