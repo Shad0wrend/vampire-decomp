@@ -27269,6 +27269,34 @@ int * __fastcall sub_10206300(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10206340 size=0x71
+#include "CUnknown10206340.h"
+
+struct KeysV {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual int v10(const char *name, int def);
+	virtual void v11(); virtual void v12();
+	virtual const char *v13(const char *name, const char *def);
+};
+
+int *sub_1000fc2c(int *out, const char *name);
+
+bool CUnknown10206340::sub_10206340(void *pKeys)
+{
+	KeysV *k = (KeysV *)pKeys;
+	if (k) {
+		int tmp;
+		m_field0004 = *sub_1000fc2c(&tmp, k->v13("Name", ""));
+		m_field0008 = k->v10("AmmoOnly", 0);
+		m_field000c = k->v10("MinStage", 0);
+		m_field0010 = k->v10("MinVendorState", 0);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206980 size=0x7a
 extern "C" int sprintf(char *, const char *, ...);
 extern "C" int _strcmpi(const char *, const char *);
