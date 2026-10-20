@@ -9,4 +9,5 @@ public:
 	void *m_pData;
 
 	bool sub_101daf60();
+	void sub_101daf80();	// prints this entry (stub 0x1000760d)
 };
