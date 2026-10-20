@@ -1370,6 +1370,33 @@ void CBaseEntity::vfunc119()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ad460 size=0xbb
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern CUnknown1070b22c *g_1070b22c;
+extern void (__cdecl *g_109f3628)(const char *, ...);
+void sub_101cf4a0(CBaseEntity *pEnt, const char *pszModel);
+
+void CBaseEntity::vfunc105(const char *pszModel)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::SetModel";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int idx = g_1070b22c->vfunc20(pszModel);
+	if (g_1070b22c->vfunc21(idx) != 1)
+		g_109f3628("Setting CBaseEntity to non-brush model %s\n", pszModel);
+	sub_101cf4a0(this, pszModel);
+	*((char *)this + 0x1b1) = 1;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ad6e0 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
