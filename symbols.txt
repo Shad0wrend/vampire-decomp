@@ -2747,6 +2747,7 @@
 0x10011ed2 func   ?vfunc5@CItemGWirelessCamera3@@QAEPAV1@I@Z CItemGWirelessCamera3::vfunc5
 0x10011ee6 func   ?sub_102dce10@@YIXPAH@Z sub_102dce10
 0x10011ef0 func   ?sub_103a7390@CNPC_VSabbatLeader@@QAEHH@Z CNPC_VSabbatLeader::sub_103a7390
+0x10011efa func   ?sub_10078f90@UtlMem@@QAEXXZ UtlMem::sub_10078f90
 0x10011f04 func   ?sub_100f97b0@CUnknown100f97b0@@QAEPAUCUnknown100f97b0_Elem@@H@Z CUnknown100f97b0::sub_100f97b0
 0x10011f09 func   _worldevents worldevents
 0x10011f0e func   _npc_VVampireBoss npc_VVampireBoss
