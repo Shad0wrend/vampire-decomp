@@ -4296,6 +4296,7 @@
 0x10015dd9 func   ?sub_10323c20@@YIHPADHH@Z sub_10323c20
 0x10015de3 func   ?sub_101bd650@@YGXPAUS@@H@Z sub_101bd650
 0x10015e2e func   ?vfunc5@COccultStrength@@QAEPAV1@I@Z COccultStrength::vfunc5
+0x10015e38 func   ?sub_101dc790@CUnknown101dc790@@QAEXH@Z CUnknown101dc790::sub_101dc790
 0x10015e3d func   ?sub_102e0a40@CUnknown102e0a40@@QAEXH@Z CUnknown102e0a40::sub_102e0a40
 0x1002e140 func   ?sub_1002e140@@YAPAXPAX@Z sub_1002e140
 0x1002f820 func   ?sub_1002f820@@YA_NPAUWheelObj_t@@PAUWheelEnt_t@@@Z sub_1002f820

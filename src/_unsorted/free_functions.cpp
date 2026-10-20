@@ -31039,6 +31039,31 @@ bool CUnknown101dbe30::sub_101dbe30(void *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc790 size=0x2c
+struct CUnknown101dc790Item {
+    void sub_1000766c(int a);
+};
+
+struct CUnknown101dc790 {
+    char m_pad0000[8];
+    int m_nCount;
+    CUnknown101dc790Item **m_ppItems;
+    void sub_101dc790(int a);
+};
+
+// TARGET: sub_101dc790
+void CUnknown101dc790::sub_101dc790(int a)
+{
+    int i = 0;
+    if (m_nCount > 0) {
+        do {
+            m_ppItems[i]->sub_1000766c(a);
+            i++;
+        } while (i < m_nCount);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd910 size=0xde
 #include "CUnknown101dd910.h"
 #include "ScopeTrace.h"
