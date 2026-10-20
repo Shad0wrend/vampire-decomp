@@ -896,6 +896,7 @@
 0x10005529 func   ?sub_102a1560@@YI_NPAUN@@@Z sub_102a1560
 0x10005538 func   _intersting_place_conversation intersting_place_conversation
 0x1000553d func   ?vfunc5@CBaseTerminal@@QAEPAV1@I@Z CBaseTerminal::vfunc5
+0x1000554c func   ?vfunc2@CAI_SaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CAI_SaveRestoreBlockHandler::vfunc2
 0x10005560 func   _item_g_ring_serial_killer_1 item_g_ring_serial_killer_1
 0x1000559c func   ?sub_103ff480@@YAHXZ sub_103ff480
 0x100055a1 func   ?sub_103eec60@CUnknown103eec60@@QAEXD@Z CUnknown103eec60::sub_103eec60
