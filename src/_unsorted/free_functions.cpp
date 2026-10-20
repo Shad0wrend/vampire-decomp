@@ -56566,6 +56566,46 @@ void CNPC_VSabbatLeader::sub_103aa960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103aaa80 size=0xff
+#include "CBaseCombatCharacter.h"
+#include "CNPC_VSabbatLeader.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+
+inline CGlobalEntityList_Ent *LookupEntity(const unsigned int &h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+	if (s->m_Serial == (int)(h >> 13))
+		return s->m_pEntity;
+	return 0;
+}
+
+void CNPC_VSabbatLeader::sub_103aaa80()
+{
+	ScopeTrace t("CNPC_VSabbatLeader::RecordPlayerHealth", g_106b8540);
+	CBaseCombatCharacter *pPlayer = (CBaseCombatCharacter *)LookupEntity(m_hPlayer);
+	if (pPlayer) {
+		CVStatList_t *pList;
+		for (int i = 0; i < pPlayer->m_nStatLists; i++) {
+			if (pPlayer->m_pStatLists[i]->m_field10 == 0) {
+				pList = pPlayer->m_pStatLists[i];
+				goto found;
+			}
+		}
+		{
+			static CVStatList_t s_default(-1);
+			pList = &s_default;
+		}
+found:
+		m_nPlayerHealth = pList->sub_10010609(0xf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103aba00 size=0x43
 #include "CNPC_VScurrying.h"
 void *sub_100aa720(int size);
