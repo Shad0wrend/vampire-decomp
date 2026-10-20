@@ -2762,6 +2762,7 @@
 0x10011fa9 func   ?sub_101074c0@@YIXPAUMem32@@HH@Z sub_101074c0
 0x10011fc7 func   ?vfunc5@COccultPassiveDurations@@QAEPAV1@I@Z COccultPassiveDurations::vfunc5
 0x10011fd6 func   ?vfunc2@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc2
+0x10011ff4 func   ?sub_1007f610@UtlMem@@QAEXXZ UtlMem::sub_1007f610
 0x10011ff9 func   ?vfunc431@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc431
 0x10011ffe func   ?vfunc5@CWeaponMelee_Torch@@QAEPAV1@I@Z CWeaponMelee_Torch::vfunc5
 0x10012003 func   _math_colorblend math_colorblend
