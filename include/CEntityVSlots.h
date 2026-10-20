@@ -1,4 +1,4 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 62, 64, 107, 118, 122, 158, 161, 167, 173,
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 62, 64, 86, 94, 107, 118, 122, 158, 161, 167, 173,
 // 202, 212, 216, 218, 220 / 221 (the absolute origin / angles getters), 243, 244, 251, 260, 274, 346, 360 and 457 of an entity class that does not model its vtable.
 #pragma once
 
@@ -18,7 +18,13 @@ public:
 	EVS(63)
 	virtual void slot64(const float *pAngles);	// "SetAbsAngles"-like
 	EVS(65) EVS(66) EVS(67) EVS(68) EVS(69)
-	EVS10(7) EVS10(8) EVS10(9)
+	EVS10(7)
+	EVS(80) EVS(81) EVS(82) EVS(83) EVS(84) EVS(85)
+	virtual char slot86(int a, int b, int c, int d, int e);	// takes five arguments, a boolean answer in al (CBaseEntity::vfunc86)
+	EVS(87) EVS(88) EVS(89)
+	EVS(90) EVS(91) EVS(92) EVS(93)
+	virtual int slot94();	// the move type
+	EVS(95) EVS(96) EVS(97) EVS(98) EVS(99)
 	EVS(100) EVS(101) EVS(102) EVS(103) EVS(104) EVS(105) EVS(106)
 	virtual void slot107(const float *pData);	// takes a pointer to a small block (a "ParseMapData"-like slot)
 	EVS(108) EVS(109)
