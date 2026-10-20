@@ -22,6 +22,8 @@ public:
 	void vfunc619(int arg);
 	void sub_1000c27a(int arg);
 	void vfunc103();	// "CNPC_VSheriffMan::Spawn": scope trace around sub_10012855(0x201000) and the base spawn
+	void vfunc104();	// "CNPC_VSheriffMan::Precache": scope trace, the base precache, then the sheriff models / emitters / sword weapon
+	void sub_100013f7();	// CNPC_VHuman::vfunc104 (Precache), called directly
 	void vfunc431();	// "CNPC_VSheriffMan::NPCThink": scope trace around the base think, then schedules the next think
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
 	int vfunc461();	// "CNPC_VSheriffMan::SelectIdealSchedule": scope trace, sets the ideal state to 0x21, then the base implementation
