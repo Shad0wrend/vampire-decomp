@@ -168,6 +168,31 @@ void CAI_BaseNPC::vfunc463(int a, int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10272400 size=0x6e
+#include "CAI_BaseNPC.h"
+
+#define NPCF(type, off) (*(type *)((char *)this + (off)))
+
+// TARGET: CAI_BaseNPC::vfunc311
+void CAI_BaseNPC::vfunc311(int a, int b, int c)
+{
+	if (c >= 0)
+	{
+		if (NPCF(int, 0xfec) != a)
+			vfunc465(a);
+		NPCF(int, 0xfec) = a;
+		NPCF(int, 0xff0) = a;
+		NPCF(int, 0x5cd4) = b;
+		NPCF(int, 0x5cd0) = b;
+		NPCF(int, 0xff4) = b;
+		NPCF(int, 0x5ccc) = c;
+		sub_10260a50(c);
+		NPCF(int, 0x6f8) = 0;
+		NPCF(int, 0x170) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10274aa0 size=0x64
 #include "CBaseAnimating.h"
 #include "CAI_BaseNPC.h"
