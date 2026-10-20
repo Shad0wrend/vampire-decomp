@@ -9738,6 +9738,27 @@ void sub_100b03b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b04d0 size=0x70
+struct ScopeEnt { const char *name; const char *file; const char *file2; };
+extern ScopeEnt *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern char g_106cff50;
+extern int g_10552810;
+int sub_1000f0fb();
+
+void sub_100b04d0()
+{
+    g_109f3620[*g_109f3680].name = "CC_Ent_Picker";
+    g_109f3620[*g_109f3680].file = g_106b8540;
+    g_109f3620[*g_109f3680].file2 = g_106b8540;
+    ++*g_109f3680;
+    g_106cff50 = g_106cff50 == 0;
+    g_10552810 = sub_1000f0fb();
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b05f0 size=0x77
 #include "IVEngineServer.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
