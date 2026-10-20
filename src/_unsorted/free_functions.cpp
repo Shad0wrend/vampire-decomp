@@ -45684,6 +45684,39 @@ struct CUnknown1034d590 { void sub_1000a1b4(); void sub_1034d590(int); };
 void CUnknown1034d590::sub_1034d590(int) { sub_1000a1b4(); }
 // END FUNCTION
 
+// FUNCTION: 0x1034d620 size=0x8c
+#include "CUnknown1034d620.h"
+
+extern CGlobalEntityList *g_10566458;
+extern int g_10938054;
+
+static inline bool HandleValid(const unsigned int *ph)
+{
+	if (*ph == 0xffffffff)
+		return false;
+	CGlobalEntityList_Slot *s = &g_10566458->m_Slots[*ph & 0x1fff];
+	return s->m_Serial == (int)(*ph >> 13) && s->m_pEntity;
+}
+
+static inline CUnknown1034d620_Ent *HandleGet(const unsigned int *ph)
+{
+	if (*ph != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[*ph & 0x1fff];
+		if (s->m_Serial == (int)(*ph >> 13))
+			return (CUnknown1034d620_Ent *)s->m_pEntity;
+	}
+	return 0;
+}
+
+void CUnknown1034d620::sub_1034d620()
+{
+	sub_10007fe5(0, 0, 0);
+	m_field5f50 = 1;
+	if (HandleValid(&m_hEntity))
+		HandleGet(&m_hEntity)->m_pTarget->vfunc366(g_10938054, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034e520 size=0xbb
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
