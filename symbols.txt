@@ -1292,6 +1292,7 @@
 0x10007ac7 func   ?vfunc623@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc623
 0x10007acc func   ?sub_102e27b0@@YIMPAD@Z sub_102e27b0
 0x10007ad6 func   ?vfunc119@CBaseEntity@@UAEXXZ CBaseEntity::vfunc119
+0x10007af4 func   ?sub_1019c9f0@@YAHPAHH0@Z sub_1019c9f0
 0x10007b03 func   ?sub_1028e360@CAI_BaseNPCTroika@@QAE_NXZ CAI_BaseNPCTroika::sub_1028e360
 0x10007b0d func   ?sub_102f9990@@YAXXZ sub_102f9990
 0x10007b17 func   ?sub_101bdf40@UtlVec8@@QAEXHH@Z UtlVec8::sub_101bdf40

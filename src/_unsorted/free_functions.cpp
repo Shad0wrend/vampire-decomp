@@ -24126,6 +24126,57 @@ void sub_1019c950(int *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019c9f0 size=0xb6
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct KVIterator
+{
+	virtual void v0();
+	virtual const char *vfunc1();
+	virtual char vfunc2();
+	virtual void vfunc3(int *pOut, int flag);
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void vfunc9();
+};
+
+struct KVSource
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25();
+	virtual KVIterator *vfunc26(int index);
+	virtual void vfunc27(KVIterator *pIter);
+};
+
+extern KVSource *g_1072393c;
+int sub_1000dce7(int a, char *pBuf);
+
+int sub_1019c9f0(int *pOut, int a, int *pInfo)
+{
+	char buf[0x63c];
+	int value;
+	int n = 0;
+	KVIterator *pIter = g_1072393c->vfunc26(pInfo[2]);
+	while (!pIter->vfunc2()) {
+		const char *name = pIter->vfunc1();
+		if (_strcmpi(name, "solid") == 0) {
+			pIter->vfunc3(&value, 0);
+			if (value >= 0 && value < pInfo[0] && n < 30) {
+				pOut[n] = sub_1000dce7(a, buf);
+				n++;
+			}
+		} else {
+			pIter->vfunc9();
+		}
+	}
+	g_1072393c->vfunc27(pIter);
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d130 size=0x6c
 #include "CUnknown1019d130.h"
 struct IObj {
