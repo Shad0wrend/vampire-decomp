@@ -16,6 +16,11 @@ struct CAI_CondOwner
 	CAI_CondTable m_table;	// 0x30
 };
 
+struct CAI_NamedThing	// one of the three global objects an NPC can be bound to by name
+{
+	const char *sub_1025e120();	// the name (stub 0x1000f579)
+};
+
 class CAI_BaseNPCTroika : public CAI_BaseNPC
 {
 public:
@@ -42,6 +47,8 @@ public:
 	virtual void vfunc591(); virtual void vfunc592(); virtual void vfunc593(); virtual void vfunc594(); virtual void vfunc595();
 	virtual void vfunc596(); virtual void vfunc597(); virtual void vfunc598(); virtual void vfunc599(); virtual void vfunc600();
 	virtual void vfunc601(int a);	// slot 601: takes one argument
+	virtual void vfunc602(); virtual void vfunc603(); virtual void vfunc604(); virtual void vfunc605(); virtual void vfunc606(); virtual void vfunc607();
+	virtual bool vfunc608(const char *pszName);	// slot 608: binds the NPC to the first of the three global named objects whose name equals pszName (case-sensitive; false for null / empty / no match), stores it at +0x65e8 and its name (null when empty) at +0x65ec
 
 	void vfunc488();	// slot 488: plays the "Death" sound
 	void vfunc489();	// slot 489: plays the "Target_Suspect" sound
