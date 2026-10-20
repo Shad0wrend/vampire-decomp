@@ -8,6 +8,91 @@ bool CAI_BaseHumanoid::vfunc586()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260de0 size=0x10e
+#include "CAI_BaseHumanoid.h"
+#include "UtlMem.h"
+
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
+void sub_100aa7b0(void *p);
+
+struct HumanoidVec
+{
+	int *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	int *m_pElements;
+};
+
+// TARGET: CAI_BaseHumanoid::vfunc5
+CAI_BaseHumanoid *CAI_BaseHumanoid::vfunc5(unsigned int flags)
+{
+	HumanoidVec *pA = (HumanoidVec *)((char *)this + 0x6038);
+	HumanoidVec *pB = (HumanoidVec *)((char *)this + 0x6024);
+	HumanoidVec *pC = (HumanoidVec *)((char *)this + 0x5f88);
+
+	pA->m_size = 0;
+	((UtlMem *)pA)->sub_10264330();
+	pA->m_pElements = pA->m_pMemory;
+	if (pA->m_growSize != -1)
+	{
+		if (pA->m_pMemory)
+		{
+			Plat_Free(pA->m_pMemory);
+			pA->m_pMemory = 0;
+		}
+		pA->m_allocationCount = 0;
+	}
+
+	pB->m_size = 0;
+	if (pB->m_growSize != -1)
+	{
+		if (pB->m_pMemory)
+		{
+			Plat_Free(pB->m_pMemory);
+			pB->m_pMemory = 0;
+		}
+		pB->m_allocationCount = 0;
+	}
+	pB->m_pElements = pB->m_pMemory;
+	if (pB->m_growSize != -1)
+	{
+		if (pB->m_pMemory)
+		{
+			Plat_Free(pB->m_pMemory);
+			pB->m_pMemory = 0;
+		}
+		pB->m_allocationCount = 0;
+	}
+
+	pC->m_size = 0;
+	if (pC->m_growSize != -1)
+	{
+		if (pC->m_pMemory)
+		{
+			Plat_Free(pC->m_pMemory);
+			pC->m_pMemory = 0;
+		}
+		pC->m_allocationCount = 0;
+	}
+	pC->m_pElements = pC->m_pMemory;
+	if (pC->m_growSize != -1)
+	{
+		if (pC->m_pMemory)
+		{
+			Plat_Free(pC->m_pMemory);
+			pC->m_pMemory = 0;
+		}
+		pC->m_allocationCount = 0;
+	}
+
+	sub_1000aa51();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102624b0 size=0x74
 #include "CAI_BaseHumanoid.h"
 
