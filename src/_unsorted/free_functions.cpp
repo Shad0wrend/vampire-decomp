@@ -24754,6 +24754,25 @@ int *sub_10211970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10212430 size=0x43
+#include "CGameSign.h"
+void *sub_100aa720(int size);
+extern char g_105ae950[];
+
+// TARGET: game_sign
+extern "C" CBaseEntity *game_sign()
+{
+	void *mem = sub_100aa720(0x474);
+	CGameSign *p;
+	if (mem)
+		p = ((CGameSign *)mem)->sub_10212530();
+	else
+		p = 0;
+	p->vfunc106(g_105ae950);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212fd0 size=0x43
 #include "CPropHaunted.h"
 void *sub_100aa720(int size);
