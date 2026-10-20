@@ -34766,6 +34766,50 @@ void sub_10204550(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102047d0 size=0xed
+#include "CUnknown102047d0.h"
+
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+extern "C" char *__cdecl _strlwr(char *);
+extern "C" char *__cdecl strstr(const char *, const char *);
+extern "C" char *__cdecl strchr(const char *, int);
+extern "C" char *__cdecl strtok(char *, const char *);
+extern "C" int __cdecl atoi(const char *);
+
+void CUnknown102047d0::sub_102047d0(const char *pszName, int *pGender, int *pValue)
+{
+	char buf[256];
+	Q_strncpy(buf, pszName, 0x100);
+	char *p = buf;
+	if (pGender) {
+		_strlwr(buf);
+		if (strstr(buf, "f_")) {
+			*pGender = 0;
+			p = buf + 2;
+		} else if (strstr(buf, "m_")) {
+			*pGender = 1;
+			p = buf + 2;
+		} else {
+			*pGender = -1;
+		}
+	}
+	char *pDash = strchr(p, '-');
+	if (pDash) {
+		*pDash = ' ';
+		m_bDashed = 1;
+	} else {
+		m_bDashed = 0;
+	}
+	char *tok = strtok(p, " ");
+	sub_10204570(tok);
+	if (pValue) {
+		tok = strtok(0, " ");
+		if (tok)
+			*pValue = atoi(tok);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204f60 size=0x94
 #include "CUnknown10204f60.h"
 
