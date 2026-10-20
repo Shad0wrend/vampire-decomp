@@ -2796,6 +2796,7 @@
 0x1001059b func   ?vfunc5@CItemGJunkyardBusinesscard@@QAEPAV1@I@Z CItemGJunkyardBusinesscard::vfunc5
 0x100105aa func   ?vfunc5@CItemGBrotherhoodFlyer@@QAEPAV1@I@Z CItemGBrotherhoodFlyer::vfunc5
 0x100105d2 func   ?vfunc501@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc501
+0x100105d7 func   ??1CExpressionTable@@QAE@XZ CExpressionTable::~CExpressionTable
 0x100105e1 func   ?sub_1002dfe0@@YAHHH@Z sub_1002dfe0
 0x100105eb func   _func_pushable func_pushable
 0x100105fa func   ?vfunc254@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc254
