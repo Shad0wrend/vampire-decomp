@@ -21,3 +21,4 @@
 	void sub_100a68f0(int pObject);	// "CBaseEntity::VPhysicsSwapObject": scope trace (entity name), calls sub_1002ee60(this) when pObject is null, warns "Bad vphysics swap for %s" when the object at +0x36c is null, stores pObject at +0x36c
 	void sub_100b1d10();	// worker called by "CBaseEntity::OnSave" (slot 129) after slot 98 (stub 0x1000d486)
 	void sub_1016e500(int solid);	// "CBaseEntity::SetSolid": scope trace (entity name), then the collision property at +0x270 SetSolid(solid)
+	void sub_100acd40(inputdata_t *pInput);	// "CBaseEntity::InputDispatchEffect": scope trace (entity name), converts the input's value to a string (variant_t::sub_10008805) unless it already is one
