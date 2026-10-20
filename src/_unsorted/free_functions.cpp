@@ -4098,6 +4098,30 @@ bool sub_10053df0(const unsigned int *a, const unsigned int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054360 size=0x7c
+#include "IVEngineServer.h"
+extern IVEngineServer *g_1070b22c;
+extern char g_106b8540[];
+struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeTraceEntry *g_109f3620;
+struct S10054360Particle {
+    char m_pad[0x10];
+    int m_nIndex;
+    char sub_100eb3d0();
+};
+void sub_10054360(S10054360Particle *pParticle)
+{
+    g_109f3620[*g_109f3680].a = "PrecacheDiscParticle";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    if (pParticle && pParticle->sub_100eb3d0())
+        g_1070b22c->vfunc17(pParticle->m_nIndex, 1);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054ad0 size=0xf0
 #include "CUtlRBTreeInsert24.h"
 
