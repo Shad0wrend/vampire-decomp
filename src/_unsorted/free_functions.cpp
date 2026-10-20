@@ -5102,6 +5102,56 @@ int CUnknown1006eeb0::sub_1006eeb0(int which)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071840 size=0x7f
+#define V1(p) virtual void p();
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct CUnk10071840Cvar {
+    virtual void v0();
+    virtual bool vfunc1();
+    char pad[0x2c - 4];
+    int m_nValue;	// 0x2c
+};
+extern CUnk10071840Cvar *g_106c7fa4;
+struct CUnk10071840Globals { char pad[0xc]; float curtime; };
+extern CUnk10071840Globals *g_1070b228;
+
+static inline int CvarGetInt()
+{
+    if (g_106c7fa4->vfunc1())
+        return 0;
+    return g_106c7fa4->m_nValue;
+}
+
+struct CUnk10071840 {
+    V100(a) V100(b) V10(c0) V10(c1) V10(c2) V10(c3) V10(c4)
+    virtual float vfunc250(int a);
+    V1(e0) V1(e1) V1(e2) V1(e3) V1(e4) V1(e5) V1(e6)
+    virtual void vfunc258(float f, CUnk10071840 *pOther);
+    char m_pad0004[0x17c - 4];
+    float m_flNextThink;	// 0x17c
+    char m_pad0180[0x65c - 0x180];
+    char m_b65c;	// 0x65c
+    char m_pad065d[0x828 - 0x65d];
+    char m_b828;	// 0x828
+    void sub_10071840();
+    void sub_10013b65();
+};
+
+void CUnk10071840::sub_10071840()
+{
+    float f = vfunc250(0);
+    vfunc258(f, this);
+    if (m_b65c)
+        sub_10013b65();
+    else
+        m_flNextThink = g_1070b228->curtime + 0.1;
+    m_b828 = CvarGetInt() != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071ae0 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_109f3634)(int);
