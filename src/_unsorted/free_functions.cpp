@@ -15914,6 +15914,14 @@ void CAI_BaseNPCTroika::sub_10181580(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101815b0 size=0x17
+#include "CAI_BaseNPCTroika.h"
+void CAI_BaseNPCTroika::sub_101815b0(unsigned int flags)
+{
+	*(unsigned int *)((char *)this + 0x1d60) &= ~flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181600 size=0xb
 void __fastcall sub_10181600(char *self)
 {
