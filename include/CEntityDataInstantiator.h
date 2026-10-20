@@ -22,7 +22,7 @@ class CEntityDataInstantiator
 public:
 	virtual void vfunc0();
 	virtual int vfunc1(unsigned int key);
-	virtual void vfunc2();
+	virtual void *vfunc2(unsigned int key);	// "CreateDataObject": finds or inserts the hash entry of key and gives it a new zeroed T
 	virtual void vfunc3(unsigned int key);
 
 	unsigned int HashFind(EntityDataKey_t *pKey);
@@ -40,3 +40,11 @@ public:
 };
 
 struct touchlink_t;
+
+struct groundlink_t	// 12 bytes, the first dword is an entity handle that starts invalid
+{
+	unsigned int m_hEntity;
+	int m_a;
+	int m_b;
+	groundlink_t() { m_hEntity = 0xffffffff; }
+};
