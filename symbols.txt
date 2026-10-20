@@ -3563,6 +3563,7 @@
 0x10011dba func   ?vfunc5@CNPC_VHumanCombatant@@QAEPAV1@I@Z CNPC_VHumanCombatant::vfunc5
 0x10011dce func   ?sub_10057660@CUnknown10057680@@QAEPAV1@XZ CUnknown10057680::sub_10057660
 0x10011e0a func   ?vfunc5@CItemGAstrolite@@QAEPAV1@I@Z CItemGAstrolite::vfunc5
+0x10011e0f func   ?sub_101f6c50@CUnknown101f6c50@@QAEXPAUCTraitStatBlock@@@Z CUnknown101f6c50::sub_101f6c50
 0x10011e14 func   ?sub_1027d9b0@@YIXPAD@Z sub_1027d9b0
 0x10011e1e func   ?sub_100a52a0@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100a52a0
 0x10011e23 func   ?sub_101f4eb0@CDumpThing@@QAEXXZ CDumpThing::sub_101f4eb0

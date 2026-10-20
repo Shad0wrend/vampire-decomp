@@ -34866,6 +34866,86 @@ bool CUnknown101f6c30::sub_101f6c30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f6c50 size=0x164
+#include "CUnknown101f6c50.h"
+
+extern char g_105a68fc[];
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+// TARGET: CUnknown101f6c50::sub_101f6c50
+void CUnknown101f6c50::sub_101f6c50(CTraitStatBlock *pBlock)
+{
+    if (!sub_10205430(&pBlock->m_pad04))
+        return;
+    switch (m_nType) {
+    case 0:
+        pBlock->m_add += m_nValue;
+        return;
+    case 1:
+        if (pBlock->m_hi1 < pBlock->m_ref) {
+            pBlock->m_lo1 = m_nValue;
+            pBlock->m_hi1 = pBlock->m_ref;
+            return;
+        }
+        if (pBlock->m_hi1 == pBlock->m_ref) {
+            if (pBlock->m_lo1 > m_nValue)
+                pBlock->m_lo1 = m_nValue;
+            pBlock->m_hi1 = pBlock->m_ref;
+        }
+        return;
+    case 2:
+        if (pBlock->m_hi2 < pBlock->m_ref) {
+            pBlock->m_lo2 = m_nValue;
+            pBlock->m_hi3 = pBlock->m_ref;
+            return;
+        }
+        if (pBlock->m_hi3 == pBlock->m_ref) {
+            if (pBlock->m_lo2 > m_nValue)
+                pBlock->m_lo2 = m_nValue;
+            pBlock->m_hi3 = pBlock->m_ref;
+        }
+        return;
+    case 3:
+        if (pBlock->m_hi3 < pBlock->m_ref) {
+            pBlock->m_lo3 = m_nValue;
+            pBlock->m_hi3 = pBlock->m_ref;
+            return;
+        }
+        if (pBlock->m_hi3 == pBlock->m_ref) {
+            if (pBlock->m_lo3 > m_nValue)
+                pBlock->m_lo3 = m_nValue;
+            pBlock->m_hi3 = pBlock->m_ref;
+        }
+        return;
+    case 4:
+        if (pBlock->m_hi4 < pBlock->m_ref) {
+            pBlock->m_lo4 = m_nValue;
+            pBlock->m_hi4 = pBlock->m_ref;
+            return;
+        }
+        if (pBlock->m_hi4 == pBlock->m_ref) {
+            if (pBlock->m_lo3 > m_nValue)
+                pBlock->m_lo3 = m_nValue;
+            pBlock->m_hi4 = pBlock->m_ref;
+        }
+        return;
+    case 5:
+        pBlock->m_pct += 100 - m_nValue;
+        return;
+    case 6:
+        pBlock->m_v0 = m_nValue;
+        return;
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+        return;
+    default:
+        Msg(g_105a68fc);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f7380 size=0x11
 extern int vt_10483be8[];
 
