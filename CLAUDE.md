@@ -95,3 +95,38 @@ functions) are not compared, but copy every string exactly from read_data. A wro
 differs from the game's at <table address>" (the bytes it shows are the table's first 16, not the differing ones:
 compare your entries with read_data entry by entry). A wrong entry count gives "the game's code refers to different
 addresses where yours uses it".
+
+## The matches together: what the link audit checks (rulings of 2026-10-20)
+
+`pcdecomp link-audit` checks the matched functions as one program would see them; judging one function at a time
+cannot see these. Keep to them in new work:
+
+- **One name, one definition.** A class, struct or global is defined in exactly one header; a header that needs it
+  `#include`s that one (never a second copy, not even a placeholder class with `vfuncN` slots: it clashes as soon as
+  the real base is modelled). A placeholder global has one type in every header that declares it (`g_10566458` is
+  `CGlobalEntityList *`; cast where another view is needed).
+- **VC6 has no covariant returns.** An override returns the base slot's type: `CBaseCombatWeapon *vfunc5(unsigned int
+  flags)` in every weapon, not `CWeaponMelee *` (error C2555 once the base is modelled).
+- **A vtable slot that holds the class's own function is declared in that class** (with the base slot's signature),
+  matched or not; otherwise the vtable the class's constructor emits holds the base's function there.
+- **A callee the game compiled before its caller, in the same unit.** If a function only matches with its callee
+  defined in its own block (VC6 then knows which registers the callee keeps; with a declaration you get
+  `push esi; mov esi, ecx` around the call), match the callee in its own block first, then copy that source into the
+  caller's block in a namespace of the block's own:
+  `namespace block_102a1590 { int __fastcall sub_102a1420(N *p) { ... } } using namespace block_102a1590;`
+  Never a second plain definition (two blocks defining one name: LNK2005), never `inline` (it gets inlined) or
+  `static` (VC6 compiles it last and forgets its registers), never an anonymous namespace (VC6 writes the file's path
+  into its names). A member callee: `struct CFooUnit : CFoo { void sub_X(); };` in that namespace, defined there, and
+  called as `((CFooUnit *)this)->sub_X()` (0x1008d230, 0x10200ca0).
+- **CUtlRBTree instances.** `CUtlRBTree12/16/24/36/232` each stand for every game instance of `CUtlRBTree<T, I>` with
+  that node size, and each instance has its own sentinel (a guarded static in `Links()`). A function of an instance
+  reads its links through `CUtlRBTree16At<sentinel address>` (the address its code fills with `0xffff`, `0xffff`,
+  `0xffff`, `1` after testing the guard byte; e.g. `mov word ptr [0x106bdb44], si`):
+  `const CUtlRBTree16At<0x106bdb44> *tree = (const CUtlRBTree16At<0x106bdb44> *)this; ... tree->Links(i)`.
+  The tree classes have no `Links()` of their own any more; the other classes of one tree (`CUtlRBTreeFind16`,
+  `CUtlRBTreeInsert24`, `CUtlRBTreeFind232`, `CUtlRBTreeNode36`) cast `this` the same way.
+- **One static in the game, one function in include/.** When several functions' code use the same guarded static
+  (same guard byte, same object), they all inline one function that holds it: that function goes in include/ and
+  every one of them calls it, never a `static` of its own. Not yet for a static with a destructor inside an inline
+  function (the stat list lookup's `static CVStatList_t s_default(-1)`, `FindEntry`'s `CEntryX`): the judge cannot
+  place its destroy function (`?s_default@...@$AV2@A`) yet, so those stay as they are.
