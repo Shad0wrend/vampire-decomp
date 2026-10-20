@@ -3291,6 +3291,7 @@
 0x10010fdc func   ?sub_10185750@UtlMem@@QAEXXZ UtlMem::sub_10185750
 0x10010fe1 func   ?sub_102a9940@CUnknown102a9750@@QAEXH@Z CUnknown102a9750::sub_102a9940
 0x10010ffa func   _trigger_multiple trigger_multiple
+0x10010fff func   ?vfunc68@CBaseCombatCharacter@@QAE_NPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc68
 0x10011013 func   _worldspawn worldspawn
 0x1001103b func   _item_w_hengeyokai_fist item_w_hengeyokai_fist
 0x10011040 func   ?sub_103b30c0@@YADXZ sub_103b30c0

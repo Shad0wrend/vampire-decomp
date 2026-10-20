@@ -1731,6 +1731,29 @@ bool CBaseCombatCharacter::vfunc73(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10340650 size=0x10c
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntitySlots.h"
+#include "ScopeTrace.h"
+
+// TARGET: CBaseCombatCharacter::vfunc68
+bool CBaseCombatCharacter::vfunc68(CBaseEntity *pOther)
+{
+	ScopeTrace trace("CBaseCombatCharacter::ShouldIgnoreCollision", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char *pOwner = *(char **)((char *)pOther + 0x9c);
+	if (pOwner && !pOwner[0x1480])
+		return false;
+	if (pOther->sub_100b5190())
+		return false;
+	if (((CBaseEntitySlots *)pOther)->slot95() == 1)
+		return true;
+	char *pChar = *(char **)((char *)pOther + 0x98);
+	if (pChar && (*(unsigned int *)(pChar + 0x14b8) & 0x20000))
+		return true;
+	return sub_1008bfe0(pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103407b0 size=0xec
 #include "CBaseCombatCharacter.h"
 #include "CUnknown1070b22c.h"
