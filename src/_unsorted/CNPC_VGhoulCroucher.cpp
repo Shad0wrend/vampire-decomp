@@ -39,6 +39,50 @@ CNPC_VGhoulCroucher *CNPC_VGhoulCroucher::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b040 size=0x10b
+#include "CNPC_VGhoulCroucher.h"
+#include "CBaseEntitySlots.h"
+
+extern int (__cdecl *g_109f3868)(int, int);
+
+#define MAKE_NAME(s) ((s)[0] ? (s) : 0)
+
+// TARGET: CNPC_VGhoulCroucher::vfunc103
+void CNPC_VGhoulCroucher::vfunc103()
+{
+	sub_10012855(0x4000000);
+	sub_10012855(0x200000);
+	sub_10012855(0x8000);
+	m_n1a98 = 0;
+	m_n5dec = 0;
+	if (m_b6665)
+		m_pszName10e4 = MAKE_NAME("MalkMansionStalkerBurning");
+	else if (m_b6664)
+		m_pszName10e4 = MAKE_NAME("MalkMansionStalker");
+	else
+		m_pszName10e4 = MAKE_NAME("MalkMansionCroucher");
+	sub_1000bc08();
+	if (m_b6664)
+	{
+		m_b6666 = 1;
+		m_b6667 = 1;
+		((CBaseEntitySlots *)this)->slot105("models/character/npc/unique/Malkavian_mansion/Stalker/stalker.mdl");
+	}
+	else
+	{
+		m_b6666 = 0;
+		m_b6667 = 0;
+		((CBaseEntitySlots *)this)->slot105("models/character/npc/unique/Malkavian_mansion/Stalker_Female/stalker_female.mdl");
+	}
+	m_n6668 = g_109f3868(0, 3);
+	m_n6348[0] = 999999;
+	m_n6348[1] = 999999;
+	m_n6348[2] = 999999;
+	m_n6348[3] = 999999;
+	m_n6348[4] = 999999;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037b9f0 size=0xc6
 #include "CNPC_VGhoulCroucher.h"
 #include "CEntityVSlots.h"
