@@ -24,4 +24,5 @@ public:
 	int sub_10222500(const char *pszName);	// "ExperienceTable::FindIndex": scope trace, index of the record whose name equals pszName (case-insensitive, compared over the longer length), else a warning and -1
 	bool sub_102228f0(char *line, CExperienceAward *out);	// "ExperienceTable::ParseLine": scope trace, splits "name|desc|number" in place at the two '|' and fills out with heap copies of name and desc and atoi(number); false when a part is missing or empty
 	void sub_10222740(int hFile);	// "ExperienceTable::LoadFile": scope trace, reads lines of the file through slot 20 of the global at 0x1070b238 into a 0x1000 byte buffer; skips lines starting with '>' and lines shorter than 3 characters, parses the others and appends them (inlined CUtlVector::AddToTail); stops at the end of the file or on a parse failure
+	void sub_10222300();	// "ExperienceTable::PreCache": scope trace, unless already loaded opens "vdata\system\Experience_Table.txt" through the file system (global 0x1070b238, slot 0), LoadFile, closes it (slot 1) and sets the flag at +0x14; DevWarning and the flag cleared when the file cannot be opened
 };
