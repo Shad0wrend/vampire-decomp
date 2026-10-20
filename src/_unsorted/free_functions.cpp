@@ -23209,6 +23209,25 @@ extern "C" CBaseEntity *prop_haunted()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10214d60 size=0x43
+#include "CPropButton.h"
+void *sub_100aa720(int size);
+extern char g_105aeccc[];
+
+// TARGET: prop_button
+extern "C" CBaseEntity *prop_button()
+{
+	void *mem = sub_100aa720(0x834);
+	CPropButton *p;
+	if (mem)
+		p = ((CPropButton *)mem)->sub_102154f0();
+	else
+		p = 0;
+	p->vfunc106(g_105aeccc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102158f0 size=0xa
 void __fastcall sub_102158f0(char *self, int, int)
 {
