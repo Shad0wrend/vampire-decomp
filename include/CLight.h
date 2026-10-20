@@ -8,6 +8,8 @@ public:
 	CLight *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	void sub_101308d0();	// "CLight::FadeThink": steps the current light level at +0x458 toward the target at +0x459, sets the light style, re-arms the think (+0x17c)
+	bool vfunc110(const char *szKeyName, const char *szValue);	// "CLight::KeyValue": "pitch" sets the pitch of the angles (slots 221 / 218), anything else goes to the base
+	bool sub_1000fc86(const char *szKeyName, const char *szValue);	// CBaseEntity::vfunc110 (jump stub)
 
 	char m_pad00[0x450];
 	int m_iStyle;	// 0x450
