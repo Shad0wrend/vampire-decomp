@@ -46,7 +46,9 @@ public:
 	CAI_NPC_V(290) CAI_NPC_V(291) CAI_NPC_V(292)
 	virtual int vfunc293();
 	CAI_NPC_V(294) CAI_NPC_V(295) CAI_NPC_V(296) CAI_NPC_V(297) CAI_NPC_V(298) CAI_NPC_V(299)
-	CAI_NPC_V10(30)
+	CAI_NPC_V(300) CAI_NPC_V(301) CAI_NPC_V(302) CAI_NPC_V(303) CAI_NPC_V(304) CAI_NPC_V(305) CAI_NPC_V(306) CAI_NPC_V(307)
+	virtual bool vfunc308();	// asked by the Troika schedule selection (true when the NPC can take the offered action)
+	CAI_NPC_V(309)
 	CAI_NPC_V(310)
 	virtual void vfunc311(int a, int b, int c);	// when c >= 0: stores the activity-like triple a (+0xfec/+0xff0, slot 465(a) first when it changes), b (+0x5cd0/+0x5cd4/+0xff4) and c (+0x5ccc, sub_10260a50(c)), then clears +0x6f8 and +0x170
 	CAI_NPC_V(312) CAI_NPC_V(313) CAI_NPC_V(314) CAI_NPC_V(315) CAI_NPC_V(316) CAI_NPC_V(317) CAI_NPC_V(318) CAI_NPC_V(319)
