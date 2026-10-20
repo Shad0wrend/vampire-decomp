@@ -19187,6 +19187,34 @@ void __fastcall sub_101bc000(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc750 size=0x7e
+#include "CUnknown101bc750.h"
+struct Mem4;
+void __fastcall sub_101bdf90(Mem4 *, int, int);
+void CUnknown101bc750::sub_101bc750(int value)
+{
+    PQHeap101bc750 *h = &m_heap;
+    int idx = h->m_Size;
+    if (idx + 1 > h->m_allocationCount)
+        sub_101bdf90((Mem4 *)h, idx - h->m_allocationCount + 1, idx - h->m_allocationCount + 1);
+    h->m_Size++;
+    h->m_pElements = (UtlVec8Elem *)h->m_pMemory;
+    h->sub_101bdf40(idx, 1);
+    ((int *)h->m_pMemory)[idx] = value;
+    while (idx != 0) {
+        int parent = (idx + 1) / 2 - 1;
+        int *mem = (int *)h->m_pMemory;
+        if (h->m_pLessFunc(&mem[idx], &mem[parent]))
+            break;
+        mem = (int *)h->m_pMemory;
+        int t = mem[parent];
+        mem[parent] = mem[idx];
+        ((int *)h->m_pMemory)[idx] = t;
+        idx = parent;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd940 size=0x9
 struct S { virtual void v0(); virtual void v1(); };
 // TARGET: sub_101bd940
