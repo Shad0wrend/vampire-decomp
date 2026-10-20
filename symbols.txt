@@ -1588,6 +1588,7 @@
 0x10008a85 func   _item_g_eyes item_g_eyes
 0x10008aa3 func   ?vfunc0@CRelationshipSaveDataOps@@UAEXPAX0@Z CRelationshipSaveDataOps::vfunc0
 0x10008ab7 func   ?sub_102c36b0@CAI_BaseNPCTroika@@QAEPBDH@Z CAI_BaseNPCTroika::sub_102c36b0
+0x10008ac6 func   ?sub_102a9890@@YIPAIPAI@Z sub_102a9890
 0x10008ad0 func   ?sub_101fb830@CVStatSubCost_t@@QAEXXZ CVStatSubCost_t::sub_101fb830
 0x10008afd func   ?sub_101f7960@CUnknown101f7960@@QAEPAUS101f7310@@XZ CUnknown101f7960::sub_101f7960
 0x10008b07 func   ?sub_1021e620@CUnknown1021e620@@QAEXH@Z CUnknown1021e620::sub_1021e620

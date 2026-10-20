@@ -44232,6 +44232,17 @@ void CAI_BaseNPCTroika::sub_102a9830(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9890 size=0x12
+unsigned int *__fastcall sub_102a9890(unsigned int *p)
+{
+    int i;
+    for (i = 0; i < 14; i++) {
+        p[i] = 0;
+    }
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a98e0 size=0x17
 #include "CAI_BaseNPCTroika.h"
 void CAI_BaseNPCTroika::sub_102a98e0(unsigned int flags)
