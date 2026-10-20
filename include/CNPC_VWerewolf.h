@@ -61,9 +61,10 @@ struct CNPC_VWerewolfHelper5d34
 {
 	int sub_10004e58(const CNPC_VWerewolfVec3 *pA, const CNPC_VWerewolfVec3 *pB);
 
+	char m_pad00[4];
 	CNPC_VWerewolfNodeOwner *m_pOwner;	// 0x04
 	int m_n08;	// 0x08
-	float m_f0c;	// 0x0c
+	int m_n0c;	// 0x0c
 	char m_pad10[0x2c - 0x10];
 	CNPC_VWerewolfNodeNet *m_pNet;	// 0x2c
 };
@@ -138,5 +139,4 @@ public:
 	CNPC_VWerewolfVec3 sub_103d6650(void *pHint);	// "CNPC_VWerewolf::GetHintEndpoint": scope trace (entity name), the zero vector for no hint, else the absolute origin (slot 217) of the hint's entity
 	CBaseEntity *sub_103d6390(void *pHint);	// the entity of a hint (stub 0x10008094)
 	void *sub_103d0ad0();	// "CNPC_VWerewolf::GetNearestNode"-like: the nearest AI node, cached in +0x66fc for the time stamp at +0x66f8; recomputed through the helper's node net (stub 0x1000827e) from the origin (slot 220)
-	const float *vfunc220();	// absolute origin getter (slot 220)
 };
