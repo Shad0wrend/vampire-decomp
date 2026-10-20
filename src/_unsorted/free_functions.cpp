@@ -21443,6 +21443,36 @@ SPyObj *sub_10196ea0(void *self, void *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101970f0 size=0x8e
+struct PyObj;
+extern "C" __declspec(dllimport) int PyArg_ParseTuple(PyObj *, const char *, ...);
+extern "C" __declspec(dllimport) void PyErr_SetString(void *, const char *);
+extern void (*g_109f375c)();
+extern PyObj *g_109f3748;
+extern void **g_109f37b0;
+void *sub_10196780(PyObj *);
+void sub_101d1280(void *);
+
+PyObj *sub_101970f0(void *self, PyObj *args)
+{
+	PyObj *pEntObj = 0;
+	if (PyArg_ParseTuple(args, "O", &pEntObj)) {
+		void *pEnt = sub_10196780(pEntObj);
+		if (pEnt) {
+			sub_101d1280(pEnt);
+			++*(int *)g_109f3748;
+			return g_109f3748;
+		}
+		PyErr_SetString(*g_109f37b0, "NULL entity in call_entity_spawn");
+		++*(int *)g_109f3748;
+		return g_109f3748;
+	}
+	g_109f375c();
+	++*(int *)g_109f3748;
+	return g_109f3748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197510 size=0x8f
 extern int (*g_109f37a0)(int, const char *, ...);
 extern int (*g_109f377c)();
