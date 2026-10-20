@@ -11,7 +11,7 @@ public:
 	char m_b04bc;
 	char m_b04bd;
 	char pad04be[2];
-	const char *m_pszSoundFile;	// 0x4c0
+	const char *volatile m_pszSoundFile;	// 0x4c0 (volatile: the game's code reads it again for the null check)
 
 	unsigned int sub_101ac2f0();
 	CAmbientGeneric *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
