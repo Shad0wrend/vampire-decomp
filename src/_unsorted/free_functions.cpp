@@ -37065,6 +37065,44 @@ call:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10336f20 size=0x103
+#include "CBCCSlotViews.h"
+
+extern int *g_109f3680;
+extern int *g_109f3620;
+extern char g_106b8540[];
+extern int g_10619eb4[];
+extern int g_10619d28[];
+extern int g_10937cd0[];
+
+void *CBaseCombatCharacter::sub_10336f20()
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680 * 3] = (int)"CBaseCombatCharacter::GetBestMeleeWeapon";
+    g_109f3620[*g_109f3680 * 3 + 1] = (int)name;
+    g_109f3620[*g_109f3680 * 3 + 2] = (int)g_106b8540;
+    ++*g_109f3680;
+    for (int *p = g_10619eb4; *p != -1; p++) {
+        int slotType = g_10619d28[*p];
+        if (slotType >= 0) {
+            int i = g_10937cd0[*p];
+            int last = ((CCombatCharSlotView *)this)->vfunc298(slotType) + i;
+            for (; i < last; i++) {
+                if (sub_1032e8b0(i)) {
+                    if (((CWeaponSlotView *)sub_1032e8b0(i))->vfunc360() & 0x18000) {
+                        void *w = sub_1032e8b0(i);
+                        --*g_109f3680;
+                        return w;
+                    }
+                }
+            }
+        }
+    }
+    --*g_109f3680;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10337300 size=0xa1
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
