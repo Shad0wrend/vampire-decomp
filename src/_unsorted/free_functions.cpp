@@ -39544,6 +39544,18 @@ unsigned int CUnknown10231ed0::sub_10231ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10232090 size=0x12
+void sub_10014614(void *p);
+
+// TARGET: sub_10232090
+void sub_10232090(void *p)
+{
+    if (p) {
+        sub_10014614(p);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232520 size=0xa
 void __fastcall sub_10232520(int *self, int, int value)
 {

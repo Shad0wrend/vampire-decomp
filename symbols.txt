@@ -3678,6 +3678,7 @@
 0x1001291d func   ?sub_1009bc30@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009bc30
 0x10012936 func   ?vfunc461@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc461
 0x10012940 func   ?vfunc0@CEffectsServer@@UAEPAV1@I@Z CEffectsServer::vfunc0
+0x1001295e func   ?sub_10232090@@YAXPAX@Z sub_10232090
 0x10012968 func   ?sub_1002ee60@@YAXPAX@Z sub_1002ee60
 0x10012977 func   ?vfunc5@CWeaponMelee_ManBatClaw@@QAEPAV1@I@Z CWeaponMelee_ManBatClaw::vfunc5
 0x100129b8 func   ?sub_101153a0@S@@QAEXPAUinputdata_t@@@Z S::sub_101153a0
