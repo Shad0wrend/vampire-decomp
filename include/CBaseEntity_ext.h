@@ -8,3 +8,4 @@
 	float sub_100ac720(const char *context);	// "CBaseEntity::GetLastThink": scope trace (entity name), the last think time (float at +0xc of the think context record named context, or the float at +0x178 for the default context)
 	void sub_1009c000(int a, int b, unsigned int hEntity);	// "CBaseEntity::DumpEhandle": scope trace (entity name), then sub_1009b700(a, b, name of the entity behind hEntity, or null)
 	void sub_1009c720(int a, const char *fmt, const CBaseEntityColor32 *array, int count);	// "CBaseEntity::DumpColor32Array": scope trace (entity name), sprintf(fmt) into a 256 byte buffer, then per element sprintf("%d") after it and sub_1009bef0(a, buffer, array[i])
+	void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value);	// "CBaseEntity::Use": scope trace (entity name), calls the use function pointer at +0x1f0 (when set), else forwards the arguments to slot 173 of the entity behind the handle at +0x254 (when it resolves)
