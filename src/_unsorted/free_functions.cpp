@@ -25634,6 +25634,25 @@ void sub_10238380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023ae40 size=0x43
+#include "CWorld.h"
+void *sub_100aa720(int size);
+extern char g_10546e3c[];
+
+// TARGET: worldspawn
+extern "C" CBaseEntity *worldspawn()
+{
+	void *mem = sub_100aa720(0x524);
+	CWorld *p;
+	if (mem)
+		p = ((CWorld *)mem)->sub_1023b840();
+	else
+		p = 0;
+	p->vfunc106(g_10546e3c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023cde0 size=0xed
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
     virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
