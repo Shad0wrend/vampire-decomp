@@ -18486,6 +18486,59 @@ void S::sub_1015f100(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f510 size=0xd3
+#include "CBaseCombatCharacter.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+#define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLOTS100(p) SLOTS10(p##0) SLOTS10(p##1) SLOTS10(p##2) SLOTS10(p##3) SLOTS10(p##4) \
+	SLOTS10(p##5) SLOTS10(p##6) SLOTS10(p##7) SLOTS10(p##8) SLOTS10(p##9)
+
+struct CHolsterSlots
+{
+	SLOTS100(a) SLOTS100(b) SLOTS100(c) SLOTS100(d)
+	SLOTS10(e0) SLOTS10(e1) SLOTS10(e2) SLOTS10(e3) SLOTS10(e4)
+	virtual void e50(); virtual void e51(); virtual void e52(); virtual void e53(); virtual void e54();
+	virtual void e55(); virtual void e56();
+	virtual void vfunc457(const char *pszName, int a);
+	virtual void vfunc458();
+	virtual void vfunc459(const char *pszName, int a);
+};
+
+void CBaseCombatCharacter::sub_1015f510(inputdata_t *data)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseCombatCharacter::InputHolster";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	if (!sub_10335950("item_w_unarmed"))
+		((CHolsterSlots *)this)->vfunc459("item_w_unarmed", 0);
+	if (sub_10335950("item_w_unarmed")) {
+		((CHolsterSlots *)this)->vfunc457("item_w_unarmed", 0);
+		(*g_109f3680)--;
+		return;
+	}
+	g_109f3630("Warning: Player does not have unarmed weapon!\n");
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160680 size=0xd
 extern float g_10725c9c;
 // TARGET: CUnknown10160680::sub_10160680

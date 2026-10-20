@@ -3387,6 +3387,7 @@
 0x100138cc func   ?sub_103f3a70@@YAHXZ sub_103f3a70
 0x100138d6 func   ?sub_10334860@CBaseCombatCharacter@@QAEDPAX@Z CBaseCombatCharacter::sub_10334860
 0x100138e0 func   ?vfunc5@CTriggerImpact@@QAEPAV1@I@Z CTriggerImpact::vfunc5
+0x100138ef func   ?sub_1015f510@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1015f510
 0x100138f9 func   ?sub_102231c0@@YAPAHXZ sub_102231c0
 0x1001390d func   ?vfunc0@CChoreoQueueItem@@QAEPAV1@I@Z CChoreoQueueItem::vfunc0
 0x10013917 func   _info_hint info_hint
