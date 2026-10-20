@@ -46202,6 +46202,52 @@ char sub_10377c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378ec0 size=0x82
+#include "CNPC_VGargoyle.h"
+#include "CGlobalEntityList.h"
+
+#define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLOTS100(p) SLOTS10(p##0) SLOTS10(p##1) SLOTS10(p##2) SLOTS10(p##3) SLOTS10(p##4) \
+	SLOTS10(p##5) SLOTS10(p##6) SLOTS10(p##7) SLOTS10(p##8) SLOTS10(p##9)
+
+struct CPillarOwnerName
+{
+	SLOTS100(a) SLOTS100(b) SLOTS10(c0) SLOTS10(c1)
+	virtual const char *vfunc220();
+};
+
+struct CPillarSlots
+{
+	SLOTS100(a) SLOTS10(b0) SLOTS10(b1) SLOTS10(b2) SLOTS10(b3) SLOTS10(b4) SLOTS10(b5)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4();
+	virtual void c5(); virtual void c6();
+	virtual CPillarOwnerName *vfunc167();
+};
+
+extern CGlobalEntityList g_106eb5d8;
+extern CGlobalEntityList *g_10566458;
+
+bool CNPC_VGargoyle::sub_10378ec0()
+{
+	CPillarOwnerName *owner = ((CPillarSlots *)this)->vfunc167();
+	if (owner) {
+		CGlobalEntityList_Ent *ent = g_106eb5d8.sub_100f7b20("pillar", owner->vfunc220(), 0, this, 0);
+		if (ent)
+			m_hPillar = *ent->v1();
+		else
+			m_hPillar = -1;
+		unsigned int h = m_hPillar;
+		if (h != 0xffffffff) {
+			CGlobalEntityList_Slot *slot = &g_10566458->m_Slots[h & 0x1fff];
+			if (slot->m_Serial == (h >> 13) && slot->m_pEntity)
+				return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379040 size=0xc
 bool CUnknown10381be0::sub_10379040()
 {
