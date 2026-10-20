@@ -51690,6 +51690,60 @@ int CBaseCombatCharacter::sub_103232b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103234a0 size=0x13d
+#include "CBaseCombatCharacter.h"
+#include "CUtlVector4.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+extern CUtlVector4 g_109370bc;
+extern char g_1061f05c[];
+
+struct EntListLookup	// the global entity list's handle lookup (stub 0x10009c8c)
+{
+    void *sub_100290c0(const unsigned int *pHandle);
+};
+
+inline void *ResolveHandle(unsigned int h)
+{
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (h >> 13))
+            return pSlot->m_pEntity;
+    }
+    return 0;
+}
+
+inline int FindHandle(CUtlVector4 *pVec, const unsigned int *pHandle)
+{
+    for (int i = 0; i < pVec->m_size; i++) {
+        const unsigned int *pElem = (const unsigned int *)&pVec->m_pMemory[i];
+        void *pSrc = ((EntListLookup *)g_10566458)->sub_100290c0(pHandle);
+        if (ResolveHandle(*pElem) == pSrc)
+            return i;
+    }
+    return -1;
+}
+
+void __fastcall sub_103234a0(CBaseCombatCharacter *pThis)
+{
+    ScopeTrace trace(g_1061f05c, pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+    unsigned int h = 0xffffffff;
+    if (pThis)
+        h = *pThis->vfunc1();
+    else
+        h = 0xffffffff;
+    int elem = FindHandle(&g_109370bc, &h);
+    if (elem != -1) {
+        int numToMove = g_109370bc.m_size - elem - 1;
+        if (numToMove > 0)
+            memmove(&g_109370bc.m_pMemory[elem], &g_109370bc.m_pMemory[elem + 1], numToMove * 4);
+        g_109370bc.m_size--;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103239a0 size=0x99
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
