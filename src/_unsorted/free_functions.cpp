@@ -34765,6 +34765,33 @@ void __fastcall sub_102e8a80(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e9cd0 size=0x12e
+#include "CUtlVectorElem118.h"
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+inline void *operator new(unsigned int, void *p) { return p; }
+struct Mem;
+void __fastcall sub_102e9e50(Mem *, int, int);
+int CUtlVectorElem118::sub_102e9cd0(int elem, int num, const Elem118 *pToInsert)
+{
+    if (num == 0)
+        return elem;
+    if (m_Size + num > m_allocationCount)
+        sub_102e9e50((Mem *)this, m_Size + num, m_Size + num - m_allocationCount);
+    m_Size += num;
+    m_pElements = m_pMemory;
+    int numToMove = m_Size - elem - num;
+    if (numToMove > 0 && num > 0)
+        memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(Elem118));
+    for (int i = 0; i < num; ++i)
+        new (&m_pMemory[elem + i]) Elem118;
+    if (pToInsert) {
+        for (int i = 0; i < num; ++i)
+            m_pMemory[elem + i] = pToInsert[i];
+    }
+    return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e9e50 size=0x73
 struct Elem { char data[0x118]; };
 struct Mem {

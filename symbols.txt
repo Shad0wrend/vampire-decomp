@@ -3178,6 +3178,7 @@
 0x100137fa func   ?vfunc104@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc104
 0x10013804 func   ?sub_100c0c60@CUnknown100c0c60@@QAEXM@Z CUnknown100c0c60::sub_100c0c60
 0x10013822 func   ?sub_10342740@@YA_NPAXPAUHasFilter@@@Z sub_10342740
+0x1001382c func   ?sub_102e9cd0@CUtlVectorElem118@@QAEHHHPBUElem118@@@Z CUtlVectorElem118::sub_102e9cd0
 0x10013840 func   ?sub_1004d100@CPhysicsSpring@@QAEXXZ CPhysicsSpring::sub_1004d100
 0x1001384a func   ?vfunc202@CNodeEnt@@QAEXH@Z CNodeEnt::vfunc202
 0x1001384f func   ?vfunc546@CNPC_VScurrying@@QAEHH@Z CNPC_VScurrying::vfunc546
