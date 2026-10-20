@@ -941,6 +941,37 @@ void __stdcall sub_10030cb0(void *pA, void *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030d50 size=0xb9
+#include "CCollisionEvent.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CCollisionEvent::sub_10030d50()
+{
+	int i = 0;
+	g_109f3620[*g_109f3680].a = "CCollisionEvent::UpdateTouchEvents";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (m_nTouchEvents > 0) {
+		int offset = 0;
+		do {
+			int *pRec = (int *)(m_pTouchEvents + offset);
+			if (pRec[2] == 0)
+				sub_10030ba0((void *)pRec[0], (void *)pRec[1], pRec + 3, pRec + 6);
+			else
+				sub_10030cb0((void *)pRec[0], (void *)pRec[1]);
+			i++;
+			offset += 0x24;
+		} while (i < m_nTouchEvents);
+	}
+	m_nTouchEvents = 0;
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031270 size=0x92
 #include "CCollisionEvent.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
