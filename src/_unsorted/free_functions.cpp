@@ -16027,6 +16027,24 @@ int *sub_100cb670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc360 size=0x9e
+#include "CCameraTrack.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+#define TRACK_FLOAT(off) ((float *)((char *)this + (off)))
+
+void CCameraTrack::sub_100cc360()
+{
+	char bFirst = sub_100cc430(TRACK_FLOAT(0x4d4), TRACK_FLOAT(0x4d8), TRACK_FLOAT(0x4dc), TRACK_FLOAT(0x4e0), TRACK_FLOAT(0x4f0), TRACK_FLOAT(0x4ec), 0, 0);
+	float flZero = 0;
+	char bSecond = sub_100cc430(TRACK_FLOAT(0x4bc), TRACK_FLOAT(0x4c0), TRACK_FLOAT(0x4c4), TRACK_FLOAT(0x4c8), &flZero, &flZero, 1, 0);
+	if (bFirst || bSecond)
+		sub_100ac610((float)g_1070b22c->vfunc119(0), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd640 size=0xc
 extern char g_106b8540[];
 char *CUnknown100cd640::sub_100cd640()

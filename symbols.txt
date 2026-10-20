@@ -4231,6 +4231,7 @@
 0x10014d2b func   ?sub_1035a870@S@@QAEXH@Z S::sub_1035a870
 0x10014d35 func   _item_a_hvy_cloth item_a_hvy_cloth
 0x10014d49 func   ?sub_100fa600@S100fa600@@QAEXH@Z S100fa600::sub_100fa600
+0x10014d58 func   ?sub_100cc360@CCameraTrack@@QAEXXZ CCameraTrack::sub_100cc360
 0x10014d5d func   ?sub_102158f0@@YIXPADHH@Z sub_102158f0
 0x10014d7b func   ?sub_102b97a0@@YADXZ sub_102b97a0
 0x10014d8a func   ?sub_1042ffe0@@YAII@Z sub_1042ffe0
