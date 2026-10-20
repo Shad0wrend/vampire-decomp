@@ -38712,6 +38712,51 @@ void CAI_BaseNPC::sub_1028ae60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028b190 size=0xac
+#include "CUnknown1028b190.h"
+extern float g_1044e674;
+extern CUnknown1028b190Clock *g_1070b228;
+
+struct CharLike {
+	char pad0[0xa8];
+	void *m_pa8;
+	char pad1[0x6f0 - 0xac];
+	int m_hTarget;
+	int sub_1008d990(int handle);
+};
+
+void CUnknown1028b190::sub_1028b190(void *pCharacter)
+{
+	CharLike *c = (CharLike *)pCharacter;
+	if (c != 0 && c->m_pa8 != 0) {
+		int id = c->sub_1008d990(c->m_hTarget);
+		if (id != 0) {
+			float bestTime = g_1044e674;
+			int bestIndex = -1;
+			int minCount = 0x7fffffff;
+			for (int i = 0; i < 5; i++) {
+				if (m_entries[i].m_id == id) {
+					m_entries[i].m_count++;
+					m_entries[i].m_time = g_1070b228->m_time;
+					return;
+				}
+				if (m_entries[i].m_time < bestTime) {
+					bestTime = m_entries[i].m_time;
+					bestIndex = i;
+				}
+				if (m_entries[i].m_count < minCount)
+					minCount = m_entries[i].m_count;
+			}
+			if (bestIndex >= 0) {
+				m_entries[bestIndex].m_id = id;
+				m_entries[bestIndex].m_count = minCount;
+				m_entries[bestIndex].m_time = g_1070b228->m_time;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e360 size=0xd7
 #include "CAI_BaseNPCTroika.h"
 struct EntInfo { CBaseEntity *ent; int serial; int pad; };
