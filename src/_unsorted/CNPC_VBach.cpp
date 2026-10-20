@@ -27,3 +27,22 @@ int CNPC_VBach::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093a608.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x103637b0 size=0x7c
+#include "CNPC_VBach.h"
+struct ISoundPrecache { virtual int Precache(const char *pszSound, int bPreload); };
+extern ISoundPrecache *g_1070b248;
+void __cdecl sub_10006c3a(const char *pszItem);
+void CNPC_VBach::vfunc104()
+{
+    sub_100013f7();
+    sub_10006c3a("item_w_grenade_frag");
+    sub_10006c3a("item_w_katana");
+    sub_10006c3a("item_w_rem_m_700_bach");
+    g_1070b248->Precache("Character/Boss/Bach/bach_grenade.wav", 0);
+    g_1070b248->Precache("Character/Boss/Bach/bach_shield.wav", 0);
+    g_1070b248->Precache("Character/Boss/Bach/bach_camp_warn.wav", 0);
+    g_1070b248->Precache("Character/Boss/Bach/bach_holy_light.wav", 0);
+    g_1070b248->Precache("Character/Boss/Bach/snipe_warn6.wav", 0);
+}
+// END FUNCTION
