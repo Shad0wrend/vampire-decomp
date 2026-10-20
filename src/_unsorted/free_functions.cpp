@@ -38988,6 +38988,25 @@ void CNPC_VFrenzyShadow::sub_10376c10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10376fc0 size=0x43
+#include "CNPC_VGangrel.h"
+void *sub_100aa720(int size);
+extern char g_106390f0[];
+
+// TARGET: npc_VGangrel
+extern "C" CBaseEntity *npc_VGangrel()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VGangrel *p;
+	if (mem)
+		p = ((CNPC_VGangrel *)mem)->sub_10377030();
+	else
+		p = 0;
+	p->vfunc106(g_106390f0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10377160 size=0x33
 void sub_10007897();
 void sub_100130d9();
