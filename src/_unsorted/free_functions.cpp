@@ -691,6 +691,24 @@ float CCollisionEvent::sub_100309a0(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030cb0 size=0x75
+extern char g_106b8540[];
+struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeTraceEntry *g_109f3620;
+void __cdecl sub_1003d640(void *pA, void *pB);
+void __stdcall sub_10030cb0(void *pA, void *pB)
+{
+    g_109f3620[*g_109f3680].a = "CCollisionEvent::DispatchEndTouch";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    sub_1003d640(pA, pB);
+    sub_1003d640(pB, pA);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031270 size=0x92
 #include "CCollisionEvent.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
