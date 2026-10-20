@@ -19419,6 +19419,25 @@ void CUnknown101c1b60::sub_101c1ba0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c23b0 size=0x43
+#include "CSun.h"
+void *sub_100aa720(int size);
+extern char g_1059c880[];
+
+// TARGET: env_sun
+extern "C" CBaseEntity *env_sun()
+{
+	void *mem = sub_100aa720(0x46c);
+	CSun *p;
+	if (mem)
+		p = ((CSun *)mem)->sub_101c24b0();
+	else
+		p = 0;
+	p->vfunc106(g_1059c880);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2a10 size=0xa
 struct CUnknown101c2a10 { char p[0x40]; int a; void sub_101c2a10(int v); };
 // TARGET: CUnknown101c2a10::sub_101c2a10
