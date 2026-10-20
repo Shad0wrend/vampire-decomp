@@ -10558,6 +10558,95 @@ extern "C" CBaseEntity *beam()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb270 size=0x16e
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b22c.h"
+#include "CBeam.h"
+
+#define S1(p, n) virtual void p##n();
+#define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
+struct Slots217 {
+    S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+    S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8) S10(b9)
+    S10(c0)
+    S1(v, 0) S1(v, 1) S1(v, 2) S1(v, 3) S1(v, 4) S1(v, 5) S1(v, 6)
+    virtual float *f217();
+};
+
+struct ScopeTraceEntry {
+    const char *m_pszName;
+    const char *m_pszEntity;
+    const char *m_pszExtra;
+};
+extern "C" __declspec(dllimport) ScopeTraceEntry g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern const char g_106b8540[];
+
+struct ScopeTrace {
+    ScopeTrace(const char *name, const char *entity)
+    {
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszName = name;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszEntity = entity;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszExtra = g_106b8540;
+        g_ScopeTraceStackDepth++;
+    }
+    ~ScopeTrace() { g_ScopeTraceStackDepth--; }
+};
+
+extern CGlobalEntityList *g_10566458;
+extern CUnknown1070b22c *g_1070b22c;
+
+struct UnkLike {
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+    virtual CBaseEntity *GetBaseEntity();
+};
+
+struct CUnknown1070b22c_Edict {
+    char m_pad0000[0x40];
+    UnkLike *m_pUnk;
+};
+
+struct EdictOwner {
+    char m_pad0000[0x2e0];
+    int m_pEdict;
+    int GetEdict() { return m_pEdict; }
+};
+
+// TARGET: CBeam::sub_100bb270
+float *CBeam::sub_100bb270()
+{
+    CGlobalEntityList_Slot *s;
+    CBaseEntity *pEnt = 0;
+    if ((m_nBeamType & 0xf) == 2 && m_hEndEntity != 0xffffffff
+        && (s = &g_10566458->m_Slots[m_hEndEntity & 0x1fff])->m_Serial == (int)(m_hEndEntity >> 13)
+        && s->m_pEntity
+        && g_1070b22c->vfunc35(((EdictOwner *)s->m_pEntity)->GetEdict())) {
+        int idx = (m_hEndEntity != 0xffffffff
+                   && (s = &g_10566458->m_Slots[m_hEndEntity & 0x1fff])->m_Serial == (int)(m_hEndEntity >> 13)
+                   && s->m_pEntity)
+            ? g_1070b22c->vfunc35(((EdictOwner *)s->m_pEntity)->GetEdict())
+            : 0;
+        CUnknown1070b22c_Edict *pEdict = g_1070b22c->vfunc38(idx);
+        {
+            ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+            if (!pEdict)
+                pEdict = g_1070b22c->vfunc38(0);
+            if (pEdict && pEdict->m_pUnk)
+                pEnt = pEdict->m_pUnk->GetBaseEntity();
+            else
+                pEnt = 0;
+        }
+        if (!pEnt)
+            return ((Slots217 *)this)->f217();
+        return ((Slots217 *)pEnt)->f217();
+    }
+    return ((Slots217 *)this)->f217();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc0f0 size=0x23
 #include "CUnknown100bc0f0.h"
 

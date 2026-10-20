@@ -3357,6 +3357,7 @@
 0x100146fa func   ?sub_10357110@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10357110
 0x1001470e func   ?sub_1035b1c0@CUnknown1035b1c0@@QAEHHHHH@Z CUnknown1035b1c0::sub_1035b1c0
 0x10014718 func   ?vfunc3@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc3
+0x1001471d func   ?sub_100bb270@CBeam@@QAEPAMXZ CBeam::sub_100bb270
 0x10014722 func   ?vfunc5@CItemGPishaFetish@@QAEPAV1@I@Z CItemGPishaFetish::vfunc5
 0x1001473b func   ?sub_101ab8f0@CUnknown101ab800@@QAE_NHPBEHH@Z CUnknown101ab800::sub_101ab8f0
 0x1001474f func   ?vfunc58@CHalfLife2@@UAEPBDH@Z CHalfLife2::vfunc58
