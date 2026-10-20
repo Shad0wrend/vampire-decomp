@@ -31179,6 +31179,42 @@ CVStatInfo_t *CVStatInfo_t::sub_101fdaf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fde60 size=0xae
+#include "CVStatInfo_t.h"
+extern "C" int __cdecl atoi(const char *);
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105a7d14[];
+
+struct CStatValue {
+	int sub_10202a50();
+};
+struct CStatNameTable {
+	CStatValue *sub_10203190(int id, const char *s);
+};
+extern CStatNameTable g_1074e968;
+
+int CVStatInfo_t::sub_101fde60(const char *pszValue)
+{
+	int r;
+	g_109f3620[*g_109f3680].a = g_105a7d14;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (m_field0008 != -1) {
+		r = g_1074e968.sub_10203190(m_field0008, pszValue)->sub_10202a50();
+	} else if (m_field0004) {
+		r = ((int (__cdecl *)(const char *))m_field0004)(pszValue);
+	} else {
+		r = atoi(pszValue);
+	}
+	--*g_109f3680;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fdf40 size=0x69
 struct TScope {
 	const char *name;
