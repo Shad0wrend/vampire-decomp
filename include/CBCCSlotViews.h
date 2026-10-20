@@ -31,3 +31,19 @@ public:
 	VIEW_SLOT(210) VIEW_SLOT(211) VIEW_SLOT(212) VIEW_SLOT(213) VIEW_SLOT(214) VIEW_SLOT(215) VIEW_SLOT(216)
 	virtual float *vfunc217();
 };
+
+class CEntityOrigin220SlotView	// slot 220: CBaseEntity::GetOrigin (pointer to three floats)
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1)
+	VIEW_SLOT10(20)
+	VIEW_SLOT(210) VIEW_SLOT(211) VIEW_SLOT(212) VIEW_SLOT(213) VIEW_SLOT(214) VIEW_SLOT(215) VIEW_SLOT(216) VIEW_SLOT(217) VIEW_SLOT(218) VIEW_SLOT(219)
+	virtual float *vfunc220();
+};
+
+class CServerUnknownSlotView	// slot 4: IServerUnknown::GetBaseEntity
+{
+public:
+	VIEW_SLOT(0) VIEW_SLOT(1) VIEW_SLOT(2) VIEW_SLOT(3)
+	virtual void *vfunc4();
+};
