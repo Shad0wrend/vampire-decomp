@@ -27723,6 +27723,20 @@ float CUnknown10252450::sub_10252450(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252470 size=0x2a
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+
+void CAI_BaseNPC::sub_10252470(CBaseEntity *pEnt)
+{
+	unsigned int *pHandle = (unsigned int *)((char *)this + 0x88c);
+	if (pEnt)
+		*pHandle = *pEnt->vfunc1();
+	else
+		*pHandle = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10256200 size=0xb
 unsigned char __fastcall sub_10256200(unsigned char *self)
 {
