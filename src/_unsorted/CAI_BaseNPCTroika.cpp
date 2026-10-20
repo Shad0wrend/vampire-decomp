@@ -624,6 +624,74 @@ void CAI_BaseNPCTroika::vfunc505()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029b180 size=0xce
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseAnimating.h"
+
+extern char *g_10566458;
+
+struct SOtherNpc { char pad[0x14b8]; unsigned int flags; };
+struct SOther {
+    char pad0[0x4c];
+    unsigned char b4c;
+    char pad1[0x94 - 0x4d];
+    int m94;
+    SOtherNpc *m98;
+    char pad2[4];
+    int ma0;
+    char pad3[4];
+    int ma8;
+};
+struct SHandleEntry { SOther *pEnt; unsigned int serial; };
+struct STroikaView {
+    char pad0[0x14b8];
+    unsigned int flags14b8;
+    char pad1[0x63da - 0x14bc];
+    char b63da;
+    char pad2[0x643c - 0x63db];
+    unsigned int h643c;
+    char pad3[0x65f7 - 0x6440];
+    char b65f7;
+};
+
+bool CAI_BaseNPCTroika::sub_1029b180(void *pOtherArg)
+{
+    STroikaView *t = (STroikaView *)this;
+    SOther *pOther = (SOther *)pOtherArg;
+    if (!t->b63da) {
+        if ((t->flags14b8 & 0x40) == 0x40) {
+            if (pOther->m94)
+                return true;
+            if (pOther->ma8)
+                return true;
+        } else {
+            if (pOther->m98 && (pOther->m98->flags & 0x20000))
+                return true;
+        }
+    }
+    unsigned int h = t->h643c;
+    SOther *pHandled;
+    if (h == 0xffffffff) {
+        pHandled = 0;
+    } else {
+        SHandleEntry *e = (SHandleEntry *)(g_10566458 + 4 + (h & 0x1fff) * 12);
+        pHandled = e->serial == (h >> 13) ? e->pEnt : 0;
+    }
+    if (pOther == pHandled)
+        return true;
+    if (pOther->ma0)
+        return true;
+    if (t->b65f7) {
+        if (pOther->b4c & 0x16)
+            return true;
+    } else {
+        if (pOther->b4c & 0x12)
+            return true;
+    }
+    return ((CBaseAnimating *)this)->sub_1008be20((CBaseEntity *)pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ad110 size=0x20
 #include "CAI_BaseNPCTroika.h"
 struct CUnknownGlobals1070b228 { int m_pad[3]; float m_curtime; };
