@@ -40003,6 +40003,25 @@ char sub_103a1590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a1cb0 size=0x43
+#include "CNPC_VPedestrian.h"
+void *sub_100aa720(int size);
+extern char g_1064b2c0[];
+
+// TARGET: npc_VPedestrian
+extern "C" CBaseEntity *npc_VPedestrian()
+{
+	void *mem = sub_100aa720(0x6684);
+	CNPC_VPedestrian *p;
+	if (mem)
+		p = ((CNPC_VPedestrian *)mem)->sub_103a1d90();
+	else
+		p = 0;
+	p->vfunc106(g_1064b2c0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1ef0 size=0x33
 void sub_100053cb();
 void sub_1000fbf5();
