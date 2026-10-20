@@ -44991,6 +44991,25 @@ extern "C" CItemGWarrLedger1* item_p_research_lg_firearms()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f95a0 size=0x43
+#include "COccultRegen.h"
+void *sub_100aa720(int size);
+extern char g_10620048[];
+
+// TARGET: item_p_occult_regen
+extern "C" CBaseEntity *item_p_occult_regen()
+{
+	void *mem = sub_100aa720(0x91c);
+	COccultRegen *p;
+	if (mem)
+		p = ((COccultRegen *)mem)->sub_103f90f0();
+	else
+		p = 0;
+	p->vfunc106(g_10620048);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f97d0 size=0x72
 #include "SendProp.h"
 
