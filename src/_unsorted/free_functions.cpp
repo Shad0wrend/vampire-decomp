@@ -3895,6 +3895,64 @@ int *sub_1004dee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004feb0 size=0x70
+#define SV(n) virtual void v##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+
+struct EntV {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21)
+	SV(220) SV(221) SV(222) SV(223) SV(224) SV(225)
+	virtual void v226(void *p);
+};
+
+struct PhysObj {
+	virtual void v0();
+	virtual bool v1();
+	virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(CBaseEntity *pEnt);
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21();
+	virtual void v22(int a);
+	virtual void v23();
+	virtual void v24(int a);
+	virtual void v25();
+	virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44();
+	virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50();
+	virtual void v51();
+};
+
+struct EntHelper {
+	void sub_100a68f0(int a);
+};
+
+bool sub_1004feb0(CBaseEntity *pEnt, CBaseEntity *pOther)
+{
+	PhysObj *p = (PhysObj *)pEnt->m_obj36c;
+	if (p) {
+		if (!p->v1()) {
+			((EntHelper *)pEnt)->sub_100a68f0(0);
+			p->v51();
+			pOther->sub_100a6490((int)p);
+			p->v5(pOther);
+			((EntV *)pOther)->v226(p);
+			p->v24(1);
+			p->v22(1);
+			p->v25();
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100500a0 size=0x43
 #include "CPhysConvert.h"
 void *sub_100aa720(int size);
