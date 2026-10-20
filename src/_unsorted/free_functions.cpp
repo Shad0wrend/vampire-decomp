@@ -25052,6 +25052,40 @@ void CCineNPC::sub_101a77a0(void *pNpc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8cf0 size=0xc0
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+extern char g_106b8540[];
+extern CGlobalEntityList g_106eb5d8;
+extern char *g_1070b228;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct CScriptedCount
+{
+	char m_pad[0x5f70];
+	int m_nCount;	// 0x5f70
+	float m_flTime;	// 0x5f74
+};
+
+void __fastcall sub_101a8cf0(CBaseEntity *self, int, int bStart)
+{
+	const char *pszName = self->m_name26c ? self->m_name26c : g_106b8540;
+	for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, pszName, 0, 0); pEnt != 0; pEnt = g_106eb5d8.sub_100f7770(pEnt, pszName, 0, 0)) {
+		const char *pszClass = pEnt->m_classname11c ? pEnt->m_classname11c : g_106b8540;
+		if (_strcmpi(pszClass, "scripted_sequence") == 0) {
+			CScriptedCount *pSeq = (CScriptedCount *)pEnt;
+			if (bStart) {
+				pSeq->m_nCount += 1;
+			} else if (--pSeq->m_nCount <= 0) {
+				pSeq->m_flTime = *(float *)(0xc + g_1070b228) + 0.05;
+				pSeq->m_nCount = 0;
+			}
+		}
+		pszName = self->m_name26c ? self->m_name26c : g_106b8540;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8fe0 size=0x53
 void *sub_1000db89(int);
 struct GP;
