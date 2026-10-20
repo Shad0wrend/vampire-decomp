@@ -36,6 +36,15 @@ CGameRules *CMultiplayRules::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141320 size=0x11
+extern char *g_1070b228;
+
+bool sub_10141320()
+{
+    return g_1070b228[0x31] != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141940 size=0x9
 extern float g_104454c0;
 float CMultiplayRules::vfunc30(int a) { return g_104454c0; }
