@@ -2937,6 +2937,7 @@
 0x1000f31c func   ?vfunc461@CNPC_VCamera@@UAEHXZ CNPC_VCamera::vfunc461
 0x1000f326 func   ?sub_101cfd80@@YA?AUTVec@@XZ sub_101cfd80
 0x1000f33f func   ?sub_1022d090@UtlMem@@QAEXXZ UtlMem::sub_1022d090
+0x1000f349 func   ?sub_101d5a30@CStatDefault3List@@QAEXPBDH@Z CStatDefault3List::sub_101d5a30
 0x1000f34e func   ?vfunc2@CTEBaseBeam@@UAEPAV1@I@Z CTEBaseBeam::vfunc2
 0x1000f353 func   ?sub_1002cc10@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_1002cc10
 0x1000f380 func   ?sub_102dcc20@CUnk102dcc20@@QAEHXZ CUnk102dcc20::sub_102dcc20

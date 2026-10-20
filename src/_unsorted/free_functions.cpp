@@ -29978,6 +29978,42 @@ void CClanDocLoader::sub_101d59f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d5a30 size=0x105
+#include "CStatDefault3List.h"
+#include "IFileSystemFind.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern IFileSystemFind *g_1070b238;
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *pszFormat, ...);
+
+void CStatDefault3List::sub_101d5a30(const char *pszName, int arg)
+{
+	int nFiles = 0;
+	if (pszName) {
+		char szFile[260];
+		int hFind;
+		sprintf(szFile, "%s%s*.txt", "vdata\\system\\", pszName);
+		const char *pszFound = g_1070b238->vfunc22(szFile, &hFind);
+		if (pszFound) {
+			do {
+				nFiles++;
+			} while (g_1070b238->vfunc23(hFind));
+			g_1070b238->vfunc25(hFind);
+			if (nFiles > 0) {
+				pszFound = g_1070b238->vfunc22(szFile, &hFind);
+				do {
+					sprintf(szFile, "%s%s", "vdata\\system\\", pszFound);
+					if (!sub_101d57c0(szFile, arg))
+						Msg("Unable to open Character Template List data file for: %s\n", szFile);
+					pszFound = g_1070b238->vfunc23(hFind);
+				} while (pszFound);
+				g_1070b238->vfunc25(hFind);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d5c40 size=0xa8
 extern "C" char *_strlwr(char *);
 extern "C" char *strstr(const char *, const char *);
