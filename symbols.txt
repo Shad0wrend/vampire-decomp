@@ -324,6 +324,7 @@
 0x10002ccf func   ?sub_10107480@UtlMem@@QAEXXZ UtlMem::sub_10107480
 0x10002d65 func   ?sub_101fa700@CVDmg_t@@QAEXPAV1@@Z CVDmg_t::sub_101fa700
 0x10002d79 func   _ai_network ai_network
+0x10002d9c func   ??0CUnknown101ec4f0@@QAE@H@Z CUnknown101ec4f0::CUnknown101ec4f0
 0x10002dbf func   _item_w_thirtyeight item_w_thirtyeight
 0x10002dc9 func   ?sub_1042fb20@@YAXXZ sub_1042fb20
 0x10002dd8 func   ?sub_100738e0@CUnknown100738e0@@QAEXH@Z CUnknown100738e0::sub_100738e0
