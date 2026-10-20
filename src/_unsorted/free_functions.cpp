@@ -24245,6 +24245,22 @@ void CUtlVector4::sub_1021e430(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021e540 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_1021e540()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e580 size=0x75
 #include "CUnknown1021e580.h"
 
