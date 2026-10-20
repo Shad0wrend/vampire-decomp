@@ -4045,6 +4045,7 @@
 0x1001410a func   ?vfunc6@CBaseEntity@@UAEX_N@Z CBaseEntity::vfunc6
 0x10014123 func   ?vfunc0@CAI_CsActList@@UAEXPAUCsActSaveIface@@@Z CAI_CsActList::vfunc0
 0x10014137 func   ?sub_101e01e0@CUnknown101e01e0@@QAEPAUS101df260@@XZ CUnknown101e01e0::sub_101e01e0
+0x10014150 func   ?sub_101eb820@CUnknown101eb820@@QAEXXZ CUnknown101eb820::sub_101eb820
 0x10014187 func   _logic_npc_condition logic_npc_condition
 0x100141aa func   ?sub_10046b40@@YA_NPBI0@Z sub_10046b40
 0x100141b4 func   ?sub_103134b0@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_103134b0

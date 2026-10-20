@@ -34157,6 +34157,50 @@ void CUnknown101eb7f0::sub_101eb7f0(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eb820 size=0x166
+#include <string.h>
+#include <stdio.h>
+#include "CUnknown101eb820.h"
+
+void sub_10203dd0(const char *);
+
+// TARGET: CUnknown101eb820::sub_101eb820
+void CUnknown101eb820::sub_101eb820()
+{
+    char buf[128];
+    sprintf(buf, "(%d): %s\n", m_nIndex, m_pszName ? m_pszName : "");
+    sub_10203dd0(buf);
+    sprintf(buf, "\t\t");
+    int len = 2;
+    if (m_Dmg.m_nValue != -1) {
+        sprintf(buf + 2, "Dmg%s", m_Dmg.sub_1000a286());
+        len = strlen(buf);
+    }
+    if (m_nAmmoLost == -1) {
+        strcpy(buf + len, "\tAmmoLost: Clip");
+        len = strlen(buf);
+    } else if (m_nAmmoLost > 0) {
+        sprintf(buf + len, "\tAmmoLost: %d", m_nAmmoLost);
+        len = strlen(buf);
+    }
+    unsigned int f = m_nFlags;
+    if (f & 1) {
+        strcpy(buf + len, "\tForceReload");
+        len = strlen(buf);
+    }
+    if (f & 2) {
+        strcpy(buf + len, "\tItemBreaks");
+        len = strlen(buf);
+    }
+    if (f & 4) {
+        strcpy(buf + len, "\tFallToGround");
+        len = strlen(buf);
+    }
+    strcpy(buf + len, "\n");
+    sub_10203dd0(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ebe60 size=0x91
 #include "CUnknown101ebe60.h"
 #include "CUnknown101eb7f0.h"
