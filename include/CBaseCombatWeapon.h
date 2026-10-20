@@ -41,7 +41,8 @@ public:
 	virtual float vfunc337(int a, int b);
 	virtual void vfunc338(int a, int b);	// "CBaseCombatWeapon::Weapon_SetActivity"-like: called by CBaseCombatCharacter::Weapon_SetActivity with its two arguments
 	CBCW_V(339)
-	CBCW_V10(34) CBCW_V10(35) CBCW_V(360) CBCW_V(361) CBCW_V(362) CBCW_V(363)
+	CBCW_V10(34) CBCW_V10(35) virtual unsigned int vfunc360();	// the weapon's type flags (bits 13 and 14 mark ranged weapons) CBCW_V(361) CBCW_V(362) CBCW_V(363)
+	CBCW_V(361) CBCW_V(362) CBCW_V(363)
 	virtual void vfunc364(int a, int b, int c);
 	CBCW_V(365) CBCW_V(366) CBCW_V(367) CBCW_V(368) CBCW_V(369)
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other);
