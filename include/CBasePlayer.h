@@ -1,8 +1,7 @@
 // CBasePlayer: the player entity.
 // Barely recovered yet: only the members decompiled code needs are named, the
-// rest is padding that keeps their offsets. The vtable slots are *not* modelled
-// here, so the declaration order of the virtuals below carries no meaning --
-// add the padding slots before using a virtual call through this class.
+// rest is padding that keeps their offsets. The vtable is modelled as placeholder
+// slots up to slot 448 (the ones the code calls are typed).
 #pragma once
 
 class CBaseEntity;
@@ -17,11 +16,30 @@ struct CBasePlayerHandleVec	// a CUtlVector<EHANDLE>
 	unsigned int *m_pElements;
 };
 
+#define CBP_V1(p) virtual void p();
+#define CBP_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define CBP_V100(p) CBP_V10(p##0) CBP_V10(p##1) CBP_V10(p##2) CBP_V10(p##3) CBP_V10(p##4) \
+	CBP_V10(p##5) CBP_V10(p##6) CBP_V10(p##7) CBP_V10(p##8) CBP_V10(p##9)
+
 class CBasePlayer
 {
 public:
+	// slots 0..63
+	CBP_V10(sa0) CBP_V10(sa1) CBP_V10(sa2) CBP_V10(sa3) CBP_V10(sa4) CBP_V10(sa5) CBP_V1(sa6) CBP_V1(sa7) CBP_V1(sa8) CBP_V1(sa9)
+	virtual void vfunc64(float *pVec);
+	// slots 65..220
+	CBP_V100(sb) CBP_V10(sc0) CBP_V10(sc1) CBP_V10(sc2) CBP_V10(sc3) CBP_V10(sc4) CBP_V1(sd0) CBP_V1(sd1) CBP_V1(sd2) CBP_V1(sd3) CBP_V1(sd4) CBP_V1(sd5)
+	virtual float *vfunc221();
+	// slots 222..402
+	CBP_V100(se) CBP_V10(sf0) CBP_V10(sf1) CBP_V10(sf2) CBP_V10(sf3) CBP_V10(sf4) CBP_V10(sf5) CBP_V10(sf6) CBP_V10(sf7) CBP_V1(sg0)
+	virtual void vfunc403();
+	CBP_V1(sh0) CBP_V1(sh1) CBP_V1(sh2)
 	virtual void vfunc407();
 	virtual void vfunc408();
+	// slots 409..447
+	CBP_V10(si0) CBP_V10(si1) CBP_V10(si2) CBP_V1(sj0) CBP_V1(sj1) CBP_V1(sj2) CBP_V1(sj3) CBP_V1(sj4) CBP_V1(sj5) CBP_V1(sj6) CBP_V1(sj7) CBP_V1(sj8)
+	virtual void vfunc448();
 
 	char m_pad0004[0x2DC];	// 0x0004 .. 0x02DF
 	int m_n02E0;
@@ -69,4 +87,6 @@ public:
 	void sub_1017cef0(CBaseEntity *pEnt);	// "CBasePlayer::SetUseEntity"-like: remembers the engine index (+0x1ec4) and handle (+0x19b4) of pEnt (cleared when null) and releases the previous use entity when it is different and flagged
 	CBaseEntity *sub_1000306c();	// the current use entity (CBasePlayer::sub_1017cf90 stub)
 	void vfunc149(int a, int b);	// forwards (a, b) to slot 148 of every other connected player the game rules (slot 64) relate to this one with the value 1
+	void sub_100ac4e0(void *pFunc, int a, int b);	// schedules a think function (called through the stub at 0x10007fe5)
+	void sub_10015a91();	// CBaseCombatCharacter::vfunc403, called directly
 };
