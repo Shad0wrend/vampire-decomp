@@ -17716,6 +17716,22 @@ int CUtlVector4::sub_101a55a0(int elem, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a5680 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_109f3634)(int);
+
+UtlMem *UtlMem::sub_101a5680(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_109f3634(allocationCount * 4);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a56d0 size=0xa4
 #include "CUtlVector40.h"
 #include "CUnknown101a59f0.h"
