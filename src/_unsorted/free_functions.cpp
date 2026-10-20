@@ -17288,6 +17288,25 @@ int sub_10190d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192800 size=0x43
+#include "CPropMover.h"
+void *sub_100aa720(int size);
+extern char g_1058f1d4[];
+
+// TARGET: prop_mover
+extern "C" CBaseEntity *prop_mover()
+{
+	void *mem = sub_100aa720(0x730);
+	CPropMover *p;
+	if (mem)
+		p = ((CPropMover *)mem)->sub_10192870();
+	else
+		p = 0;
+	p->vfunc106(g_1058f1d4);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192a30 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
