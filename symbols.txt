@@ -1614,6 +1614,7 @@
 0x1000a682 func   ?sub_101f95f0@@YAXH@Z sub_101f95f0
 0x1000a6fa func   ?sub_10175180@@YI_NPAUHolder@@@Z sub_10175180
 0x1000a704 func   ?sub_1030bc20@CUnknown1030bc20@@QAEHXZ CUnknown1030bc20::sub_1030bc20
+0x1000a70e func   ?vfunc266@CSceneEntity@@UAEXHPBD@Z CSceneEntity::vfunc266
 0x1000a75e func   _item_g_brotherhood_flyer item_g_brotherhood_flyer
 0x1000a763 func   ?vfunc546@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc546
 0x1000a7b3 func   ?sub_10400f60@@YAHXZ sub_10400f60
