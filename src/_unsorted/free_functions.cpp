@@ -59676,6 +59676,44 @@ void CHintData_WW::sub_103ca390(int hint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ceb60 size=0x120
+#include "CNPC_VWerewolf.h"
+
+struct HintNameView { char m_pad[0x5dc]; int m_nHintType; };
+struct DebugNameView { const char *sub_100ab4f0(); };
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+extern char g_1093d4a0[];
+
+const char *CNPC_VWerewolf::sub_103ceb60(void *pHint)
+{
+    const char *pszType;
+    switch (((HintNameView *)pHint)->m_nHintType) {
+    case 15000: pszType = "HINT_WEREWOLF_ROOF_JUMP_DOWN"; break;
+    case 0x3a99: pszType = "HINT_WEREWOLF_SMASH_DOOR_FRONT"; break;
+    case 0x3a9a: pszType = "HINT_WEREWOLF_SMASH_DOOR_LEFT"; break;
+    case 0x3a9b: pszType = "HINT_WEREWOLF_SMASH_DOOR_RIGHT"; break;
+    case 0x3a9c: pszType = "HINT_WEREWOLF_SQUEEZETHROUGH_FRONT"; break;
+    case 0x3a9d: pszType = "HINT_WEREWOLF_SQUEEZETHROUGH_LEFT"; break;
+    case 0x3a9e: pszType = "HINT_WEREWOLF_SQUEEZETHROUGH_RIGHT"; break;
+    case 0x3a9f: pszType = "HINT_WEREWOLF_WINDOW_LEAP"; break;
+    case 0x3aa0: pszType = "HINT_WEREWOLF_FENCE_LEAP"; break;
+    case 0x3aa1: pszType = "HINT_WEREWOLF_ROCK_LEAP"; break;
+    case 0x3aa2: pszType = "HINT_WEREWOLF_PATIO_LEAP"; break;
+    case 0x3aa3: pszType = "HINT_WEREWOLF_BREAK_ZONE"; break;
+    case 0x3aa4: pszType = "HINT_WEREWOLF_JUMP_TO_ENDPOINT"; break;
+    case 0x3aa5: pszType = "HINT_WEREWOLF_DEATH_SEQUENCE"; break;
+    case 0x3aa6: pszType = "HINT_WEREWOLF_JUMP_DOWN"; break;
+    case 0x3aa7: pszType = "HINT_WEREWOLF_JUMP_UP"; break;
+    case 0x3aa8: pszType = "HINT_WEREWOLF_ROOF_EGRESS"; break;
+    case 0x3aa9: pszType = "HINT_WEREWOLF_FILTHY_CHEATER"; break;
+    case 0x3aaa: pszType = "HINT_WEREWOLF_OBS_DOOR_SQUEEZE"; break;
+    default: pszType = "HINT_UNKNOWN"; break;
+    }
+    g_109f388c(g_1093d4a0, 0x40, "%s (%s)", pszType, ((DebugNameView *)pHint)->sub_100ab4f0());
+    return g_1093d4a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d0db0 size=0x8a
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
