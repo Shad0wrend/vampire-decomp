@@ -1293,6 +1293,26 @@ const char *CBaseCombatCharacter::vfunc244()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103412b0 size=0x8c
+#include "inputdata_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseCombatCharacter::vfunc349(inputdata_t *pInput)
+{
+	const char *n = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::InputBarterBegin";
+	g_109f3620[*g_109f3680].b = n;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (pInput->pActivator)
+		sub_103411c0(*(int *)((char *)pInput->pActivator + 0x9c), 0);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103415f0 size=0x6f
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
