@@ -3460,6 +3460,7 @@
 0x100112c0 func   ?sub_10035a70@CBaseEntity@@QAE_NPAPAV1@@Z CBaseEntity::sub_10035a70
 0x100112cf func   ?sub_1034d590@CUnknown1034d590@@QAEXH@Z CUnknown1034d590::sub_1034d590
 0x100112ed func   ?vfunc77@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc77
+0x100112f2 func   ?vfunc103@CNPCMaker@@UAEXXZ CNPCMaker::vfunc103
 0x100112fc func   ?sub_102273b0@CUnknown102273b0@@QAEXH@Z CUnknown102273b0::sub_102273b0
 0x10011315 func   ?vfunc5@CTempEntTester@@UAEPAV1@I@Z CTempEntTester::vfunc5
 0x1001131f func   _item_g_bach_journal item_g_bach_journal
