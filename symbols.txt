@@ -935,6 +935,7 @@
 0x10005b8c func   ?sub_1003db80@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_1003db80
 0x10005b96 func   ?sub_100792e0@CUnknown100792c0@@QAEXH@Z CUnknown100792c0::sub_100792e0
 0x10005b9b func   ?sub_10042f20@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10042f20
+0x10005baf func   ?sub_1008d320@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d320
 0x10005bb9 func   ?sub_101a17c0@CRestore@@QAEPAUCRestoreField@@PBDPAU2@HPAH@Z CRestore::sub_101a17c0
 0x10005bc3 func   ?sub_102dc2c0@CUnknown102dc2c0@@QAEXXZ CUnknown102dc2c0::sub_102dc2c0
 0x10005bcd func   ?sub_100a53d0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a53d0

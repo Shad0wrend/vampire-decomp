@@ -8490,6 +8490,35 @@ void CBaseAnimating::sub_1008d230(float rate)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008d320 size=0xe6
+#include "ScopeTrace.h"
+#include "CBaseAnimating.h"
+
+extern void (__cdecl *g_109f3888)(const char *pszSrc, char *pszDest, int nSize);
+extern char g_1054ca50[];
+extern "C" int atoi(const char *);
+extern "C" char *strstr(const char *, const char *);
+
+void CBaseAnimating::sub_1008d320(inputdata_t *pInput)
+{
+	ScopeTrace trace("CBaseAnimating::InputSetBodygroup", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	variant_t *pValue = &pInput->value;
+	const char *psz;
+	if (pValue->fieldType == 2)
+		psz = pValue->iszValue ? pValue->iszValue : g_106b8540;
+	else
+		psz = pValue->sub_10008805();
+	char szBuf[64];
+	g_109f3888(psz, szBuf, 64);
+	int nValue = 0;
+	int nGroup = atoi(szBuf);
+	char *pszValue = strstr(szBuf, g_1054ca50);
+	if (pszValue)
+		nValue = atoi(pszValue);
+	sub_10093b10(nGroup, nValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008d450 size=0x99
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
