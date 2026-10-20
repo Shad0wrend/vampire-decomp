@@ -11448,6 +11448,37 @@ void Dialog::sub_100e09a0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0a40 size=0x9d
+#include "CDialog.h"
+#include "CGlobalEntityList.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_1056212c[];
+extern char g_106b8540[];
+extern CGlobalEntityList *g_10566458;
+static inline CGlobalEntityList_Ent *ResolveHandle(unsigned int h)
+{
+    if (h == 0xffffffff)
+        return 0;
+    CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+    return s->m_Serial == (int)(h >> 13) ? s->m_pEntity : 0;
+}
+void CDialog::sub_100e0a40(const char *pszSound)
+{
+    g_109f3620[*g_109f3680].a = g_1056212c;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    char *p = m_szWhisper;
+    if (*p) {
+        ((CAI_BaseNPC *)ResolveHandle(m_hNPC))->sub_10182c40(p, pszSound);
+        *p = 0;
+    }
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e3400 size=0x98
 #include <string.h>
 #include "CUnknown100e3400.h"
