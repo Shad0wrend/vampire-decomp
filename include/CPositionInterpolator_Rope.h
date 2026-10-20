@@ -41,7 +41,7 @@ struct CRopeVec
 class CRopeDelegate
 {
 public:
-	CRopeDelegate() : m_flSlack(0), m_bChanged(0) {}
+	CRopeDelegate() { m_flSlack = 0; m_bChanged = 0; }
 	virtual void vfunc0();
 	CRopeVec m_vecs[2];	// 0x1f4
 	int m_flSlack;	// 0x20c
