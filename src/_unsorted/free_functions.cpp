@@ -28211,6 +28211,34 @@ void CAI_BaseNPC::sub_10270aa0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10270ae0 size=0x2d
+#include "CBasePlayer.h"
+
+struct EntInfo {
+	CBaseEntity *m_pEntity;
+	unsigned int m_serial;
+	int m_pad;
+};
+
+struct EntList {
+	int m_hdr;
+	EntInfo m_entries[1];
+};
+
+extern EntList *g_10566458;
+
+CBaseEntity *CBasePlayer::sub_10270ae0()
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0x5d90);
+	if (h != 0xffffffff) {
+		EntInfo *info = &g_10566458->m_entries[h & 0x1fff];
+		if (info->m_serial == (h >> 13))
+			return info->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102718e0 size=0xd
 CUnknown102718e0 *CUnknown102718e0::sub_102718e0(const CUnknown102718e0 *other)
 {
