@@ -37470,6 +37470,42 @@ void __fastcall sub_102ca760(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cabd0 size=0x88
+#include "CUnknown102cabd0.h"
+
+struct EntInfo { void *ent; int serial; int pad; };
+extern char *g_10566458;
+
+inline void *HGet(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
+	if (e->serial == (int)(h >> 13))
+		return e->ent;
+	return 0;
+}
+
+int CUnknown102cabd0::sub_102cabd0(CUnknown1028ebc0 *pNPC, void **pOut, int nMax)
+{
+	if (m_nEntries == 0)
+		return 0;
+	CUnknown102cabd0_Entry *end = m_Entries + m_nEntries;
+	int n = 0;
+	for (CUnknown102cabd0_Entry *p = m_Entries; p < end; p++) {
+		if (p->m_bActive && pNPC->sub_1028ebc0(p)) {
+			unsigned int h = p->m_hEntity;
+			if (HGet(h)) {
+				pOut[n++] = HGet(h);
+				if (n >= nMax)
+					break;
+			}
+		}
+	}
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc520 size=0x9
 CUnknown102cc520 *CUnknown102cc520::sub_102cc520()
 {
