@@ -38,3 +38,34 @@ CNPC_VGhoulCroucher *CNPC_VGhoulCroucher::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1037c420 size=0x8f
+#include "CNPC_VGhoulCroucher.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+char CNPC_VGhoulCroucher::vfunc615()
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	} else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CNPC_VGhoulCroucher::CanBeSetOnFire";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (*((char *)this + 0x6665)) {
+		(*g_109f3680)--;
+		return 0;
+	}
+	char r = sub_1000c5db();
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
