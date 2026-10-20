@@ -27448,6 +27448,22 @@ extern "C" GP *npc_payphone()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab590 size=0x12
+struct CInitPair101ab590 {
+    int pad0;
+    int field4;
+    int field8;
+    int fieldc;
+    void sub_101ab590(int a);
+};
+void CInitPair101ab590::sub_101ab590(int a)
+{
+    fieldc = 0;
+    field4 = a;
+    field8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab800 size=0xb9
 #include "CUnknown101ab800.h"
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
