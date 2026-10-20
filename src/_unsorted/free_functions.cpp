@@ -60328,6 +60328,60 @@ void CNPC_VWerewolf::sub_103d6280(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d6390 size=0x132
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct WWHintRec {
+	unsigned int m_Handle;
+	void *m_Key;
+	char m_pad08[0x48 - 8];
+
+	CBaseEntity *Get()
+	{
+		if (m_Handle != 0xffffffff) {
+			CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_Handle & 0x1fff];
+			if (s->m_Serial == (int)(m_Handle >> 13))
+				return (CBaseEntity *)s->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+struct WWView {
+	char pad0000[0x6714];
+	WWHintRec *m_pRecs;
+	char pad6718[8];
+	int m_nRecs;
+};
+
+CBaseEntity *CNPC_VWerewolf::sub_103d6390(void *pHint)
+{
+	ScopeTrace t("CNPC_VWerewolf::GetHintEndEntity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	WWView *v = (WWView *)this;
+	int i = 0;
+	if (v->m_nRecs > 0) {
+		WWHintRec *base = v->m_pRecs;
+		WWHintRec *rec = base;
+		CGlobalEntityList *list = g_10566458;
+		do {
+			if (pHint == rec->m_Key && rec->m_Handle != 0xffffffff) {
+				unsigned int h = rec->m_Handle;
+				CGlobalEntityList_Slot *s = &list->m_Slots[h & 0x1fff];
+				if (s->m_Serial == (int)(h >> 13) && s->m_pEntity != 0)
+					return base[i].Get();
+			}
+			i++;
+			rec++;
+		} while (i < v->m_nRecs);
+	}
+	return (CBaseEntity *)sub_103d6520(pHint);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d6520 size=0xe8
 #include "CNPC_VWerewolf.h"
 #include "CGlobalEntityList.h"
