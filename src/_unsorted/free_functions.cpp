@@ -13385,6 +13385,22 @@ void CBaseDoor::sub_100ee810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100efbf0 size=0x79
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+extern CGlobalEntityList g_106eb5d8;
+void CBaseDoor::sub_100efbf0(char bOpen)
+{
+    const char *pszName = m_name26c;
+    if (pszName) {
+        for (CBaseEntity *pPortal = g_106eb5d8.sub_100f7380(0, "func_areaportal"); pPortal; pPortal = g_106eb5d8.sub_100f7380(pPortal, "func_areaportal")) {
+            if (((CEntityVSlots *)pPortal)->slot161(pszName))
+                ((CEntityVSlots *)pPortal)->slot173((CEntityVSlots *)this, (CEntityVSlots *)this, bOpen != 0, 0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0120 size=0x3a
 #include "CUnknown100f0120.h"
 #include "CBaseEntity.h"
