@@ -38493,6 +38493,25 @@ char sub_10366d60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103677c0 size=0x43
+#include "CNPC_VBrujah.h"
+void *sub_100aa720(int size);
+extern char g_1062f2d8[];
+
+// TARGET: npc_VBrujah
+extern "C" CBaseEntity *npc_VBrujah()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VBrujah *p;
+	if (mem)
+		p = ((CNPC_VBrujah *)mem)->sub_10367830();
+	else
+		p = 0;
+	p->vfunc106(g_1062f2d8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367960 size=0x33
 void sub_10007897();
 void sub_1001324b();
