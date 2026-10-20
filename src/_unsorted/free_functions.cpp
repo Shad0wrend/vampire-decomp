@@ -8691,6 +8691,46 @@ struct CUnknown10083960 { int p; int a; void sub_10083960(int v); };
 void CUnknown10083960::sub_10083960(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10084b40 size=0xb1
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CUnknown10082e40.h"
+
+CEntityVSlots *sub_100a9ab0(const char *pszClassname, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
+extern char g_105491f8[];	// "instanced_scripted_scene"
+extern char g_10549218[];	// "Unknown scene specified:  %s\n"
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+extern float g_104454c4;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+struct CSceneTail : CEntityVSlots
+{
+	float sub_10081980();
+};
+
+float sub_10084b40(CBaseEntity *pActor, const char *pszScene, unsigned int *phScene)
+{
+	CSceneTail *pScene = (CSceneTail *)sub_100a9ab0(g_105491f8, g_1070d1b0, g_1070d9d0, 0);
+	*(const char **)((char *)pScene + 0x450) = *pszScene ? pszScene : 0;
+	if (pActor)
+		*(unsigned int *)((char *)pScene + 0x580) = *pActor->vfunc1();
+	else
+		*(unsigned int *)((char *)pScene + 0x580) = 0xffffffff;
+	pScene->slot103();
+	pScene->slot242();
+	if (!((CUnknown10082e40 *)pScene)->sub_10082e40()) {
+		Msg(g_10549218, pszScene);
+		if (phScene)
+			*phScene = 0xffffffff;
+		return g_104454c4;
+	}
+	if (phScene)
+		*phScene = *((CBaseEntity *)pScene)->vfunc1();
+	return pScene->sub_10081980();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084fb0 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_109f3634)(int);
