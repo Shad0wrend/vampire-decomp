@@ -10,3 +10,4 @@
 	void vfunc199(float *vVelocity, float *vAngVelocity);	// "CBaseEntity::GetVelocity": scope trace (entity name), asks the physics object at +0x36c (slot 40) or else copies the fields at +0x3d4 / +0x3c8
 	int sub_100ac360(const char *szContext);	// "CBaseEntity::RegisterThinkContext": scope trace (entity name), returns the index of the named think context, adding a new 16 byte record (name, 0, 0, 0) to the vector at +0x1b8 when there is none
 	void sub_100ab280(void *pInfo);	// "CBaseEntity::SetTransmit" (slot 87): scope trace (entity name), sets the bit of the edict's index (engine slot 35) in the bitvector at pInfo+0x10 unless set, then calls slot 87(pInfo) on the entity behind the handle at +0x25c (when it resolves)
+	void sub_1009ef50(int index);	// "CBaseEntity::SetAimEntByIndex": scope trace (entity name), SetAimEnt(CBaseEntity::Instance(index)) with both nested Instance scope traces
