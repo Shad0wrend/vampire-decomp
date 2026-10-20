@@ -53275,6 +53275,55 @@ void CUnknown103e2470::sub_103e2470(CFlameEvent_t *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e3490 size=0xa6
+#include "CWeaponRanged_FlameThrower.h"
+
+struct SBurnRecord
+{
+	unsigned int m_hEntity;
+	float m_flTime;
+};
+
+struct SHandleSlot
+{
+	CBaseEntity *m_pEntity;
+	int m_Serial;
+};
+
+extern CGlobalEntityList *g_10566458;
+bool __fastcall sub_100a52a0(CBaseEntity *self);
+
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	SHandleSlot *s = (SHandleSlot *)&g_10566458->m_Slots[h & 0x1fff].m_pEntity;
+	if (s->m_Serial == (int)(h >> 13))
+		return s->m_pEntity;
+	return 0;
+}
+
+bool CWeaponRanged_FlameThrower::sub_103e3490(CBaseEntity *pEnt)
+{
+	if (!pEnt)
+		return false;
+	if (!(pEnt->sub_100b3700() & 0x20002080))
+		return false;
+	if (*(unsigned char *)((char *)pEnt + 0x19c) & 0x40)
+		return false;
+	if (sub_100a52a0(pEnt))
+		return false;
+	int i = 0;
+	while (i < *(int *)((char *)this + 0x1560)) {
+		SBurnRecord *pRecord = *(SBurnRecord **)((char *)this + 0x1554) + i;
+		if (ResolveHandle(pRecord->m_hEntity) == pEnt)
+			return false;
+		i++;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3ec0 size=0x76
 struct Elem1c { char d[0x1c]; };
 extern void *(*g_109f3638)(void *, int);
