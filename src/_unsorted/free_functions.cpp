@@ -45030,6 +45030,55 @@ struct CUnknown10319fe0 { int a; void sub_10319fe0(int v); };
 void CUnknown10319fe0::sub_10319fe0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x1031a0e0 size=0xab
+#include "CUnknown10936c84.h"
+
+struct CChainNodeStub {
+	char m_pad0000[0x10];
+	int m_nId;	// 0x10
+	char m_pad0014[0x28 - 0x14];
+	unsigned int m_nFlags;	// 0x28
+	char m_pad002c[4];
+	CChainNodeStub *m_pNext;	// 0x30
+	CChainNodeStub *m_pPrev;	// 0x34
+};
+
+extern CUnknown10936c84 g_10936c84;
+
+void sub_1031a0e0(CChainNodeStub *pHead, CChainNodeStub *pNew)
+{
+	while (pHead->m_pNext)
+		pHead = pHead->m_pNext;
+	if ((pHead->m_nFlags & 8) == 8)
+		pHead->m_nFlags &= ~8;
+	if (pHead->m_nId == -1 || pHead->m_nId != pNew->m_nId) {
+		if (pHead->m_pNext)
+			pHead->m_pNext->m_pPrev = 0;
+		pHead->m_pNext = pNew;
+		if (pNew) {
+			if (pNew->m_pPrev)
+				pNew->m_pPrev->m_pNext = 0;
+			pHead->m_pNext->m_pPrev = pHead;
+		}
+	} else {
+		CChainNodeStub *pAfter = pNew->m_pNext;
+		if (pAfter)
+			pAfter->m_pPrev = pNew->m_pPrev;
+		if (pNew->m_pPrev)
+			pNew->m_pPrev->m_pNext = pNew->m_pNext;
+		g_10936c84.sub_1013dce0(pNew);
+		if (pHead->m_pNext)
+			pHead->m_pNext->m_pPrev = 0;
+		pHead->m_pNext = pAfter;
+		if (pAfter) {
+			if (pAfter->m_pPrev)
+				pAfter->m_pPrev->m_pNext = 0;
+			pHead->m_pNext->m_pPrev = pHead;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10321ec0 size=0xb
 extern int g_10937ccc;
 void sub_10321ec0(void)
