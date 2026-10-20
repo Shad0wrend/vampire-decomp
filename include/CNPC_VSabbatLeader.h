@@ -16,7 +16,12 @@ public:
 	int m_nPresence2;	// +0xe88
 	char pad0e8c[0xfec - 0xe8c];
 	int m_nState;	// +0xfec
-	char padff0[0x66c0 - 0xff0];
+	char padff0[0x1b2c - 0xff0];
+	int m_n1b2c;	// +0x1b2c
+	char pad1b30[0x5cc0 - 0x1b30];
+	int m_nState5cc0;	// +0x5cc0
+	int m_nState5cc4;	// +0x5cc4
+	char pad5cc8[0x66c0 - 0x5cc8];
 	int m_nFailureType;
 
 	void sub_103a7760(int arg);
@@ -38,4 +43,6 @@ public:
 	char vfunc590();	// "OkToInterrupt" (slot 590 override): scope trace, true while the state at +0xfec is 0x1141, else the Troika base
 	char sub_1000ac22();	// CAI_BaseNPCTroika::vfunc590, called directly
 	void vfunc313();	// "CNPC_VSabbatLeader::UpdatePresenceEffect": scope trace, a call on the global object 0x10739a4c with this, then clears +0xe80 / +0xe88 / +0xe84
+	void sub_103aa510();	// slot 437 "CNPC_VSabbatLeader::PreSelectSchedule": scope trace, sets +0x1b2c = 0x1f, drops state 2 at +0x5cc0 to 1 (and +0x5cc4 = 1) when slot 167 reports none, then CAI_BaseNPCTroika::vfunc437
+	void sub_102ae920();	// CAI_BaseNPCTroika::vfunc437 (stub 0x1000df2b), called directly
 };
