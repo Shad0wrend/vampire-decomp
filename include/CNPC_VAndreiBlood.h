@@ -42,4 +42,6 @@ public:
 	CNPC_VAndreiBlood *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10004110();	// as in CPhysForce (transplant)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	void vfunc420();	// "CNPC_VAndreiBlood::NPCInit": scope trace, the CNPC_VVampireBoss version, then copies the global vector at 0x1070d1b0 to +0x66c0
+	void sub_103c5840();	// CNPC_VVampireBoss::vfunc420, called directly
 };
