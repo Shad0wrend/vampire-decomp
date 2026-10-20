@@ -2103,6 +2103,7 @@
 0x1000c9af func   ?vfunc71@CBaseDoor@@UAEXXZ CBaseDoor::vfunc71
 0x1000c9b9 func   ?sub_1036a340@@YADXZ sub_1036a340
 0x1000c9e1 func   ?vfunc5@CWeaponRanged_Rifle_SteyrAug@@QAEPAV1@I@Z CWeaponRanged_Rifle_SteyrAug::vfunc5
+0x1000c9f0 func   ??1CEntryX@@QAE@XZ CEntryX::~CEntryX
 0x1000ca04 func   ?vfunc5@CWeaponMelee_Claws_Protean4@@QAEPAV1@I@Z CWeaponMelee_Claws_Protean4::vfunc5
 0x1000ca09 func   ?sub_10222ad0@@YAXXZ sub_10222ad0
 0x1000ca2c func   ?vfunc5@CAI_NetworkManager@@QAEPAV1@I@Z CAI_NetworkManager::vfunc5
