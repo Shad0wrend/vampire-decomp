@@ -233,6 +233,50 @@ void CBasePlayer::vfunc149(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174ce0 size=0xb3
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+
+struct CTimeGlobals {
+	char pad0[0xc];
+	float m_curtime;
+};
+extern CTimeGlobals *g_1070b228;
+
+#define W10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+#define W100(x) W10(x##0) W10(x##1) W10(x##2) W10(x##3) W10(x##4) W10(x##5) W10(x##6) W10(x##7) W10(x##8) W10(x##9)
+struct WeaponSlots {
+	W100(a) W100(b) W100(c)
+	W10(d0)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8();
+	virtual void vfunc319();
+	virtual void vfunc320();
+};
+
+void CBasePlayer::vfunc458()
+{
+	unsigned int h = m_h1538;
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13) && s->m_pEntity != 0 && m_n153C != -1)
+			return;
+	}
+	if (m_pVehicle) {
+		m_pVehicle->vfunc10(this);
+		return;
+	}
+	if (!(g_1070b228->m_curtime < m_f1564) && !vfunc412()) {
+		vfunc450();
+		if (sub_1032e7b0())
+			((WeaponSlots *)sub_1032e7b0())->vfunc319();
+	} else {
+		if (sub_1032e7b0())
+			((WeaponSlots *)sub_1032e7b0())->vfunc320();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174e20 size=0x21
 #include "CBasePlayer.h"
 

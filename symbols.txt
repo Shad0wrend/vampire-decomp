@@ -474,6 +474,7 @@
 0x10003800 func   ?vfunc5@CBeam@@QAEPAV1@I@Z CBeam::vfunc5
 0x1000380a func   ?sub_102dcd30@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_102dcd30
 0x10003850 func   ?vfunc500@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc500
+0x10003878 func   ?vfunc458@CBasePlayer@@UAEXXZ CBasePlayer::vfunc458
 0x10003891 func   ?vfunc5@CNPC_VTremere@@QAEPAV1@I@Z CNPC_VTremere::vfunc5
 0x100038a0 func   ?sub_103eb3c0@@YAHXZ sub_103eb3c0
 0x100038b9 func   ?sub_100eb3b0@@YIXPAH@Z sub_100eb3b0
