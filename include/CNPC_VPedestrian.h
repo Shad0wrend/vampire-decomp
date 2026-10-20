@@ -14,7 +14,7 @@ public:
 	void vfunc301(int a, int b);	// scope trace aside: stores the collision bounds (mins / maxs of the object at +0x270) at +0x6660 / +0x666c, runs CAI_BaseNPCTroika::vfunc301(a, b), clears the think function and makes the entity non-solid
 	void sub_10293a60(int a, int b);	// CAI_BaseNPCTroika::vfunc301 (stub 0x10005c90), called directly
 
-	char m_pad0004[0x6660 - 4];
+	char m_pad03e0[0x6660 - 0x3e0];
 	float m_vecMins6660[3];	// 0x6660
 	float m_vecMaxs666c[3];	// 0x666c
 };
