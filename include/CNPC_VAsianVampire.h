@@ -20,11 +20,12 @@ public:
 	int m_nIdealState;	// +0x1b38
 	char pad1b3c[0x628c - 0x1b3c];
 	unsigned int m_hJumpTarget;	// +0x628c, entity handle
-	char pad6290[0x66b8 - 0x6290];
+	char pad6290[0x64b8 - 0x6290];
+	float m_flRestoredTime;	// +0x64b8: reset to a constant by Restore
+	char pad64bc[0x66b8 - 0x64bc];
 	StoredHintPos_t m_storedHints[2];	// +0x66b8: ring of the last two hint origins
 	int m_nNextStoredHint;	// +0x66d0
-	char m_bTaskFailedJump;	// +0x66d4: set when a task fails with a code in 12..15
-	char pad66d5[3];
+	char pad66d4[4];
 	float m_flStationaryTime;	// +0x66d8
 
 	bool sub_10362670();	// "CNPC_VAsianVampire::StationaryFor...": curtime - m_flStationaryTime >= constant
@@ -42,6 +43,6 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void sub_10384670();	// CNPC_VHuman::vfunc104 (Precache), called directly
 	void sub_10360bc0();	// slot 104 "CNPC_VAsianVampire::Precache": scope trace around the base Precache and a precache of "item_w_avamp_blade"
-	void vfunc448(int code);	// "CNPC_VAsianVampire::TaskFail": scope trace, remembers a failure code in 12..15, then the base implementation
-	void sub_100054bb(int code);	// CAI_BaseNPCTroika::vfunc448, called directly
+	void vfunc127(void *pRestore);	// slot 127 "CNPC_VAsianVampire::Restore": scope trace, the base Restore, then m_flRestoredTime is reset to a constant
+	void sub_1000b28f(void *pRestore);	// CNPC_VVampireBoss::vfunc127, called directly
 };
