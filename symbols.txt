@@ -1545,6 +1545,7 @@
 0x100088c3 func   ?sub_103aa510@CNPC_VSabbatLeader@@QAEHXZ CNPC_VSabbatLeader::sub_103aa510
 0x100088c8 func   ?sub_10092c90@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10092c90
 0x100088e1 func   ?vfunc38@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc38
+0x100088eb func   ?sub_103fc190@CBloodPack@@QAEXXZ CBloodPack::sub_103fc190
 0x100088f0 func   ?sub_100bc3a0@@YAXH@Z sub_100bc3a0
 0x100088fa func   ?vfunc13@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc13
 0x10008913 func   ?sub_1030ba50@CUnknown1030ba50@@QAEXH@Z CUnknown1030ba50::sub_1030ba50
