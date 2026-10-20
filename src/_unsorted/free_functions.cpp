@@ -47951,6 +47951,40 @@ void CUnknown102dfaa0::sub_102dfaa0(void *pEnt, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dfc10 size=0x121
+#include "CUnknown102dfc10.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+void sub_102df1b0(CUnknown102dfc10Node *pNode);
+
+inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (h >> 13))
+            return (CBaseEntity *)pSlot->m_pEntity;
+    }
+    return 0;
+}
+
+void CUnknown102dfc10::sub_102dfc10(int c)
+{
+    CUnknown102dfc10Node *pNode;
+    while ((pNode = m_pHead) != 0) {
+        m_pHead = pNode->m_pNext;
+        if (m_bUseHandleSink) {
+            if (m_pHandleSink)
+                m_pHandleSink->sub_103169a0((int)ResolveHandle(pNode->m_hEnt), pNode->m_vecA, pNode->m_vecB, c);
+        } else if (m_pSink) {
+            m_pSink->vfunc56(ResolveHandle(pNode->m_hEnt), pNode->m_vecA, pNode->m_vecB, c);
+        }
+        sub_102df1b0(pNode);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dfd90 size=0xfa
 #include "CUnknown102dfd90.h"
 
