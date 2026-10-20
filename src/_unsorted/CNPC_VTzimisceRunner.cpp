@@ -97,3 +97,33 @@ int CNPC_VTzimisceRunner::vfunc310(int act)
     return sub_10295750(act);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c3e10 size=0x159
+#include "CAI_BaseNPCTroika.h"
+
+struct TzimisceView : public CAI_BaseNPCTroika
+{
+    char m_pad65c0[0x6672 - 0x65c0];
+    char m_b6672;	// 0x6672
+    int sub_103c3e10(int activity);
+};
+
+int TzimisceView::sub_103c3e10(int activity)
+{
+    int act = sub_10295590(activity);
+    if (m_b6672) {
+        switch (act) {
+        case 9:
+            return 0x1136;
+        case 0x13:
+            return 0x1137;
+        case 3:
+            return 0x1135;
+        case 1:
+        case 0xf1:
+            return 0x1134;
+        }
+    }
+    return act;
+}
+// END FUNCTION
