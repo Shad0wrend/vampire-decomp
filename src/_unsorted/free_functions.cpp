@@ -223,6 +223,70 @@ void CPhysConstraint::sub_1002af90(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b1e0 size=0x12d
+#include "CGlobalEntityList.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern CGlobalEntityList *g_10566458;
+extern char g_106b8540[];
+
+struct NamedPos {
+    int m_pos[3];
+    unsigned int m_handle;
+    const char *m_name;
+};
+extern NamedPos *g_106b858c;
+extern int g_106b8598;
+struct Vec3I { int x, y, z; };
+extern Vec3I g_1070d1b0;
+struct NamedPosOut {
+    int m_ent[2];
+    Vec3I m_pos[2];
+};
+struct NamedPosEnt { char pad[0x36c]; int m_n36c; };
+int sub_1004d650(const char *name);
+
+static inline NamedPosEnt *GetNamedEnt(unsigned int h)
+{
+    if (h == 0xffffffff)
+        return 0;
+    CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+    if (s->m_Serial == (int)(h >> 13))
+        return (NamedPosEnt *)s->m_pEntity;
+    return 0;
+}
+
+void sub_1002b1e0(const char *name, NamedPosOut *pOut, int idx)
+{
+    for (int i = g_106b8598 - 1; i >= 0; i--) {
+        const char *key = name;
+        if (key == 0)
+            key = g_106b8540;
+        const char *rec = g_106b858c[i].m_name;
+        if (rec == 0)
+            rec = g_106b8540;
+        if (_strcmpi(rec, key) == 0) {
+            NamedPos *r = &g_106b858c[i];
+            unsigned int h;
+            CGlobalEntityList_Slot *s;
+            if (r != 0 && (h = r->m_handle) != 0xffffffff && (s = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13) && s->m_pEntity != 0) {
+                Vec3I *dst = &pOut->m_pos[idx];
+                dst->x = r->m_pos[0];
+                dst->y = r->m_pos[1];
+                dst->z = r->m_pos[2];
+                pOut->m_ent[idx] = GetNamedEnt(r->m_handle)->m_n36c;
+                return;
+            }
+            break;
+        }
+    }
+    Vec3I *dst = &pOut->m_pos[idx];
+    dst->x = g_1070d1b0.x;
+    dst->y = g_1070d1b0.y;
+    dst->z = g_1070d1b0.z;
+    pOut->m_ent[idx] = sub_1004d650(name ? name : g_106b8540);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b360 size=0x84
 struct IObj_t
 {

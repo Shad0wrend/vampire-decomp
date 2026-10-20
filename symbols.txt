@@ -1563,6 +1563,7 @@
 0x10008792 func   ??_GCPASAttenuationFilter@@UAEPAXI@Z ??_GCPASAttenuationFilter@@UAEPAXI@Z
 0x1000879c func   ?sub_10337a60@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10337a60
 0x100087a1 func   ?sub_101a5680@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_101a5680
+0x100087c4 func   ?sub_1002b1e0@@YAXPBDPAUNamedPosOut@@H@Z sub_1002b1e0
 0x100087d8 func   _trigger trigger
 0x100087e2 func   ?sub_101e22b0@CUnknown101e22b0@@QAE_NXZ CUnknown101e22b0::sub_101e22b0
 0x10008800 func   ?vfunc134@CVampireProjectile@@UAEXXZ CVampireProjectile::vfunc134
