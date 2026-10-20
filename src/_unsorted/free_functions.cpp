@@ -23481,6 +23481,32 @@ S101e0520 *CUnknown101e0c30::sub_101e0c30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0d60 size=0x6a
+#include "CUnknown101d5bd0.h"
+
+extern "C++" void __cdecl operator delete(void *);
+
+// TARGET: CUnknown101d5bd0::sub_101e0d60
+void CUnknown101d5bd0::sub_101e0d60()
+{
+    if (m_pData) {
+        for (int i = 0; i < m_count; i++) {
+            CUnknown101d5bd0Entry *p = m_pData[i];
+            if (p) {
+                p->sub_101e05e0();
+                operator delete(p);
+            }
+            m_pData[i] = 0;
+        }
+        operator delete(m_pData);
+        m_pData = 0;
+    }
+    m_count = 0;
+    m_unk0 = 0;
+    m_bFlag18 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0df0 size=0xc5
 struct S101e0d60 { void sub_101e0d60(); };
 struct Loader { bool sub_101e1010(const char *path); };

@@ -1536,6 +1536,7 @@
 0x10009b9c func   ?vfunc5@CPropLargeHullIgnore@@QAEPAV1@I@Z CPropLargeHullIgnore::vfunc5
 0x10009bb0 func   ?sub_1032e210@CBaseCombatCharacter@@QAEXPAX@Z CBaseCombatCharacter::sub_1032e210
 0x10009be7 func   ?sub_1039aaf0@CUnknown1039aaf0@@QAEXD@Z CUnknown1039aaf0::sub_1039aaf0
+0x10009c00 func   ?sub_101e0d60@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101e0d60
 0x10009c05 func   ?vfunc5@CItemGSewerBook1@@QAEPAV1@I@Z CItemGSewerBook1::vfunc5
 0x10009c19 func   ?sub_10373420@@YIXPAH@Z sub_10373420
 0x10009c37 func   ?sub_10202760@@YAHH@Z sub_10202760
