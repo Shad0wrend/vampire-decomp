@@ -2674,6 +2674,7 @@
 0x1000e593 func   ?sub_1028e8b0@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@H@Z CAI_BaseNPCTroika::sub_1028e8b0
 0x1000e598 func   ?sub_100ae6b0@@YAXXZ sub_100ae6b0
 0x1000e5a7 func   _item_p_research_hg_firearms item_p_research_hg_firearms
+0x1000e5b1 func   ?sub_10278090@CAI_BaseNPC@@QAEHDH@Z CAI_BaseNPC::sub_10278090
 0x1000e5c0 func   _item_w_supershotgun item_w_supershotgun
 0x1000e5c5 func   _env_microphone env_microphone
 0x1000e5de func   _item_w_mingxiao_spit item_w_mingxiao_spit

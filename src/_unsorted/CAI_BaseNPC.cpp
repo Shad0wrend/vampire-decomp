@@ -294,6 +294,52 @@ int CAI_BaseNPC::sub_10274aa0(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10278090 size=0xc7
+#include "CAI_BaseNPC.h"
+#include "CCineNPC.h"
+#include "CEntityVSlots.h"
+
+struct EntInfo { void *pEnt; unsigned int serial; int pad; };
+struct EntList { int hdr; EntInfo e[1]; };
+extern EntList *g_10566458;
+
+struct EHandle
+{
+	volatile unsigned int m_Index;
+
+	void *Get() const
+	{
+		unsigned int h = m_Index;
+		if (h != 0xffffffff) {
+			EntInfo *e = &g_10566458->e[h & 0x1fff];
+			if (e->serial == (h >> 13))
+				return e->pEnt;
+		}
+		return 0;
+	}
+};
+
+int CAI_BaseNPC::sub_10278090(char bFlag, int n)
+{
+	int result = 1;
+	EHandle *pHandle = (EHandle *)((char *)this + 0x5d74);
+	if (pHandle->Get()) {
+		CCineNPC *pCine = (CCineNPC *)pHandle->Get();
+		if (!pCine->sub_101a8ac0())
+			return 0;
+		result = 2;
+	}
+	if (!((CEntityVSlots *)this)->slot158())
+		return 0;
+	if (!bFlag) {
+		int state = *(int *)((char *)this + 0x5cc0);
+		if (state != 0 && state != 1 && *(int *)((char *)this + 0x5cc4) != 1 && (state != 3 || n < 1))
+			return 0;
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278cb0 size=0x47
 struct ConVarLike {
 	virtual void vfunc0();
