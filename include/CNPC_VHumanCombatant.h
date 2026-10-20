@@ -11,6 +11,7 @@ public:
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void vfunc103();	// as in CNPC_VAndreiBlood (transplant)
+	void vfunc420();	// slot 420: calls CAI_BaseNPCTroika::vfunc420 (stub 0x1000c531), then, when the active weapon (sub_1032e7b0) is set, calls slot 66 of it
 	void sub_10384690();	// as in CNPC_VAndreiBlood (transplant)
 	void sub_10012855(int a);	// as in CNPC_VAndreiBlood (transplant)
 	CNPC_VHumanCombatant *sub_10386aa0();	// as in CKeepUpright (transplant)
