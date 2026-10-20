@@ -40188,6 +40188,25 @@ struct CUnknown10248a50 { int p[4]; int a; void sub_10248a50(int v); };
 void CUnknown10248a50::sub_10248a50(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10249160 size=0x25
+struct CUnknown10249160 {
+    char m_pad0000[0xc];
+    int m_0c;
+    int *sub_1000b58c(int a, int b);
+    void sub_10249160(int a, int b);
+};
+
+// TARGET: CUnknown10249160::sub_10249160
+void CUnknown10249160::sub_10249160(int a, int b)
+{
+    int *p = sub_1000b58c(a, 1);
+    if (p != 0) {
+        p[2] = b;
+        m_0c = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249450 size=0xa
 void CUnknown10249450::sub_10249450(int value)
 {
