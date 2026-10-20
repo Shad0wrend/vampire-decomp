@@ -36722,6 +36722,43 @@ char CBaseCombatCharacter::sub_10334860(void *pCurrent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10335950 size=0xd5
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_10621108[];
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+void *CBaseCombatCharacter::sub_10335950(const char *pszClassname)
+{
+    const char *name;
+    if (this)
+        name = m_name26c ? m_name26c : g_106b8540;
+    else
+        name = g_105387dc;
+    g_109f3620[*g_109f3680].a = g_10621108;
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    for (int i = 0; i < 0xe0; i++) {
+        if (sub_1032e8b0(i)) {
+            const char **pcn = &((CBaseEntity *)sub_1032e8b0(i))->m_classname11c;
+            const char *cn = *pcn;
+            if (!cn)
+                cn = g_106b8540;
+            if (_strcmpi(cn, pszClassname) == 0) {
+                void *w = sub_1032e8b0(i);
+                --*g_109f3680;
+                return w;
+            }
+        }
+    }
+    --*g_109f3680;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103360a0 size=0xa0
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
