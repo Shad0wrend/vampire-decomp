@@ -26794,24 +26794,7 @@ PyObject *sub_10199ce0(PyObject *self, PyObject *args)
         pChar = *(CBaseCombatCharacter **)((char *)pEnt + 0x9c);
     if (*(int *)((char *)pChar + 0xa8) == 0)
         g_109f3630(g_10591818);
-    int i = 0;
-    CVStatList_t *pList;
-    if (0 < pChar->m_nStatLists) {
-        CVStatList_t **pp = pChar->m_pStatLists;
-        do {
-            if ((*pp)->m_field10 == 0) {
-                pList = pChar->m_pStatLists[i];
-                goto found;
-            }
-            i++;
-            pp++;
-        } while (i < pChar->m_nStatLists);
-    }
-    {
-        static CVStatList_t s_default(-1);
-        pList = &s_default;
-    }
-found:
+    CVStatList_t *pList = CVStatListSet::Of(pChar)->Find(0);
     return PyInt_FromLong(pList->sub_10010609(0x1c));
 }
 // END FUNCTION
@@ -33343,18 +33326,7 @@ int CUnknown101e8f20::sub_101e8f20(CBaseCombatCharacter *pChar)
 
 int CUnknown101e9170::sub_101e9170(CUnknown101e9170Char *pChar, int a, int b)
 {
-	CVStatList_t *pList;
-	for (int i = 0; i < pChar->m_nStatLists; i++) {
-		if (pChar->m_ppStatLists[i]->m_field10 == 0) {
-			pList = pChar->m_ppStatLists[i];
-			goto found;
-		}
-	}
-	{
-		static CVStatList_t s_default(-1);
-		pList = &s_default;
-	}
-found:
+	CVStatList_t *pList = CVStatListSet::Of(pChar)->Find(0);
 	int n;
 	switch (pList->sub_10010609(0x20)) {
 	case 0:
@@ -37000,25 +36972,7 @@ int sub_10204100(CBaseCombatCharacter *pChar, int index, char bIncludeZero)
 	for (int addr = (int)g_1074e2a8; addr < (int)(g_1074e2a8 + 17); addr += 4)
 	{
 		int stat = *(int *)addr;
-		CVStatList_t *pList;
-		int i = 0;
-		if (0 < pChar->m_nStatLists)
-		{
-			do
-			{
-				if (pChar->m_pStatLists[i]->m_field10 == 2)
-				{
-					pList = pChar->m_pStatLists[i];
-					goto found;
-				}
-				i++;
-			} while (i < pChar->m_nStatLists);
-		}
-		{
-			static CVStatList_t defaultList(-1);
-			pList = &defaultList;
-		}
-found:
+		CVStatList_t *pList = CVStatListSet::Of(pChar)->Find(2);
 		if (pList->sub_10010609(stat) >= minValue)
 		{
 			if (count == index)
@@ -50745,9 +50699,7 @@ void CUnknown10311a20::sub_10311a20(int key, int value)
 		if (m_LessFunc(&search, m_pElements[i].m_Data)) {
 			i = *sub_10313430(i);
 		} else if (m_LessFunc(m_pElements[i].m_Data, &search)) {
-			static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), 1 };
-			const Links_t &links = i != InvalidIndex() ? m_pElements[i].m_Links : s_Sentinel;
-			i = links.m_Right;
+			i = Links(i).m_Right;	// CUtlRBTree16At<0x10936c48>: the base class
 		} else {
 			if (i != InvalidIndex())
 				(*(int **)(m_pElements[i].m_Data + 4))[1] = value;
@@ -53323,18 +53275,7 @@ char CBaseCombatCharacter::sub_10337300()
 int CBaseCombatCharacter::sub_10337860()
 {
 	ScopeTrace t("CBaseCombatCharacter::GetCharTemplate", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
-	CVStatList_t *pList;
-	for (int i = 0; i < m_nStatLists; i++) {
-		if (m_pStatLists[i]->m_field10 == 0) {
-			pList = m_pStatLists[i];
-			goto found;
-		}
-	}
-	{
-		static CVStatList_t s_default(-1);
-		pList = &s_default;
-	}
-found:
+	CVStatList_t *pList = CVStatListSet::Of(this)->Find(0);
 	return pList->sub_10010609(10);
 }
 // END FUNCTION
@@ -53477,18 +53418,7 @@ void CBaseCombatCharacter::sub_10338440(const int *pStat)
 	ScopeTrace t("CBaseCombatCharacter::VStatGet", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	int value = pStat[1];
 	int id = sub_10202780(pStat[0]);
-	CVStatList_t *pList;
-	for (int i = 0; i < m_nStatLists; i++) {
-		if (m_pStatLists[i]->m_field10 == id) {
-			pList = m_pStatLists[i];
-			goto found;
-		}
-	}
-	{
-		static CVStatList_t s_default(-1);
-		pList = &s_default;
-	}
-found:
+	CVStatList_t *pList = CVStatListSet::Of(this)->Find(id);
 	pList->sub_10200d60(value);
 }
 // END FUNCTION
@@ -58844,18 +58774,7 @@ void CNPC_VSabbatLeader::sub_103aaa80()
 	ScopeTrace t("CNPC_VSabbatLeader::RecordPlayerHealth", g_106b8540);
 	CBaseCombatCharacter *pPlayer = (CBaseCombatCharacter *)LookupEntity(m_hPlayer);
 	if (pPlayer) {
-		CVStatList_t *pList;
-		for (int i = 0; i < pPlayer->m_nStatLists; i++) {
-			if (pPlayer->m_pStatLists[i]->m_field10 == 0) {
-				pList = pPlayer->m_pStatLists[i];
-				goto found;
-			}
-		}
-		{
-			static CVStatList_t s_default(-1);
-			pList = &s_default;
-		}
-found:
+		CVStatList_t *pList = CVStatListSet::Of(pPlayer)->Find(0);
 		m_nPlayerHealth = pList->sub_10010609(0xf);
 	}
 }
