@@ -32,3 +32,11 @@ void CWeaponList::vfunc5()
     m_pFirst = m_pNodes;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10250340 size=0x89
+#include "CWeaponList.h"
+
+CWeaponList g_weaponListX;
+
+// TARGET: ??_GCWeaponList@@UAEPAXI@Z
+// END FUNCTION
