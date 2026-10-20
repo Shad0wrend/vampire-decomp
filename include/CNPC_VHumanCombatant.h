@@ -16,6 +16,6 @@ public:
 	CNPC_VHumanCombatant *sub_10386aa0();	// as in CKeepUpright (transplant)
 	void sub_10387290(int *pEvent);	// slot 442 (animation event handler), called directly as the base implementation by CNPC_VCop::vfunc442
 	void vfunc463(int a, int type);	// slot 463 "SetIdealActivityForType"-like: types 1 / 2 / 3 / 0xb tell the active weapon (slot 66 / 67) before the base implementation
-	void sub_10011234(int a, int type);	// CNPC_VHuman::vfunc463 (stub 0x10011234), called directly
+	virtual void sub_10011234(int a, int type);	// CNPC_VHuman::vfunc463 (stub 0x10011234), called directly
 	CNPC_VHumanCombatantWeapon *sub_1032e7b0();	// the active weapon (stub 0x10007e19), 0 when none
 };
