@@ -21078,6 +21078,25 @@ void sub_101eddd0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee190 size=0x43
+#include "CVampireProjectile.h"
+void *sub_100aa720(int size);
+extern char g_105a58cc[];
+
+// TARGET: vampireprojectile
+extern "C" CBaseEntity *vampireprojectile()
+{
+	void *mem = sub_100aa720(0x8bc);
+	CVampireProjectile *p;
+	if (mem)
+		p = ((CVampireProjectile *)mem)->sub_101ee2e0();
+	else
+		p = 0;
+	p->vfunc106(g_105a58cc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0270 size=0xb
 int * __fastcall sub_101f0270(int *self, int, int value)
 {
