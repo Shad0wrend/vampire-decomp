@@ -3428,6 +3428,7 @@
 0x10015aff func   ?vfunc546@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc546
 0x10015b0e func   ?sub_10170eb0@CUnknown10170eb0@@QAEXXZ CUnknown10170eb0::sub_10170eb0
 0x10015b54 func   ?sub_102c68e0@CUnknown102c68e0@@QAEPAHH@Z CUnknown102c68e0::sub_102c68e0
+0x10015b72 func   ?sub_102c6a00@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102c6a00
 0x10015b81 func   ?vfunc488@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc488
 0x10015bae func   ?sub_103e49b0@@YAHXZ sub_103e49b0
 0x10015bd6 func   ?vfunc2@CTEBSPDecal@@UAEPAV1@I@Z CTEBSPDecal::vfunc2
