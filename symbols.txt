@@ -688,6 +688,7 @@
 0x10005213 func   ?sub_101d4f20@CUnknown101d4f20@@QAEXPAUCUnknown101d4f20_Value@@@Z CUnknown101d4f20::sub_101d4f20
 0x10005245 func   ?sub_10221ca0@QuestJournal@@QAEDH@Z QuestJournal::sub_10221ca0
 0x10005254 func   ?sub_1033df80@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033df80
+0x10005263 func   ?sub_1024b370@CUnknown1024b370@@QAEXXZ CUnknown1024b370::sub_1024b370
 0x10005295 func   ?vfunc5@CSimplePhysicsProp@@UAEPAV1@I@Z CSimplePhysicsProp::vfunc5
 0x1000529a func   ?vfunc337@CNPC_VSheriffMan@@QAEHXZ CNPC_VSheriffMan::vfunc337
 0x100052a4 func   ?vfunc293@CAI_BaseNPCTroika@@UAEHXZ CAI_BaseNPCTroika::vfunc293

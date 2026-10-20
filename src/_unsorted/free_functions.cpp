@@ -30893,6 +30893,47 @@ CUnknown1024b2d0 *CUnknown1024b2d0::sub_1024b2d0(int arg, int count, char flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024b370 size=0x6b
+#include "CUnknown1024b370.h"
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *p);
+
+inline void Purge(CUnknown1024b370Mem &m)
+{
+    if (m.m_growSize != -1) {
+        if (m.m_pMemory) {
+            Plat_Free(m.m_pMemory);
+            m.m_pMemory = 0;
+        }
+        m.m_allocationCount = 0;
+    }
+}
+
+void CUnknown1024b370::sub_1024b370()
+{
+    sub_1024b880();
+    int g = m_mem1.m_growSize;
+    m_n24 = 0;
+    if (g != -1) {
+        if (m_mem1.m_pMemory) {
+            Plat_Free(m_mem1.m_pMemory);
+            m_mem1.m_pMemory = 0;
+        }
+        m_mem1.m_allocationCount = 0;
+    }
+    int g2 = m_mem1.m_growSize;
+    void *p = m_mem1.m_pMemory;
+    m_p28 = p;
+    if (g2 != -1) {
+        if (p) {
+            Plat_Free(p);
+            m_mem1.m_pMemory = 0;
+        }
+        m_mem1.m_allocationCount = 0;
+    }
+    Purge(m_mem0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024c000 size=0x34
 #include "UtlVec8.h"
 void UtlVec8::sub_1024c000(int elem, int num)
