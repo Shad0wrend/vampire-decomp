@@ -22,7 +22,11 @@ public:
 	unsigned int m_hSpeaker;	// 0x00: entity handle whose dialog file name is looked up
 	unsigned int m_hNPC;	// 0x04: entity handle of the speaking NPC
 	CDialogTable_t *m_pTable;	// 0x08
-	char m_pad000c[0x33ad - 0xc];
+	char m_pad000c[0x2830 - 0xc];
+	int m_nChoices;	// 0x2830: number of player choices
+	char m_pad2834[4];
+	int m_aChoices[1];	// 0x2838: the dialog entry key of each player choice
+	char m_pad283c[0x33ad - 0x283c];
 	char m_szWhisper[1];	// 0x33ad: the pending whisper text (empty when none)
 
 	int sub_100e5690(CDialogEntry_t *pEntry);	// "CDialog::get": scope trace, bsearch for the entry matching *pEntry in the table; copies the found entry over *pEntry and returns 1, else 0
@@ -34,4 +38,5 @@ public:
 	void sub_100e4f30(char *pszScript);
 	void sub_100e7630(void *pFile);	// "CDialog::eat_line": scope trace, reads characters from the file until a newline or EOF
 	int sub_100e7510(void *pFile);	// reads one character (-1 at end of file)
+	int sub_100e4840(int choice);	// "CDialog::goto_line_for_response": scope trace, the entry key of player choice `choice` is looked up in the table; logs "Player responded" and returns the dword at +0xc of that entry, else logs "Could not find response for player choice!" and returns the first entry's dword; 0 without table or choices
 };
