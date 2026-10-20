@@ -12,4 +12,5 @@ public:
 	int m_nTime;	// 0x1c
 
 	char sub_10201fa0(int time);	// "CVStatListManager_t::Update": scope trace, stores the argument at +0x1c, recomputes every list, true when any value changed
+	void sub_10201e70(int which, int c);	// "CVStatListManager_t::BindStatList": scope trace, binds list [which] (0..3) to its fixed source table with c
 };
