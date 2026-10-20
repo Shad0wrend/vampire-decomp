@@ -519,6 +519,34 @@ int CBaseEntity::vfunc143(float flHealth, int bitsDamageType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1a70 size=0x94
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+void sub_101cd940(CBaseEntity *pThis);
+
+// TARGET: CBaseEntity::vfunc144
+void CBaseEntity::vfunc144(void *pInfo)
+{
+    const char *name;
+    if (this != 0) {
+        name = m_name26c;
+        if (name == 0)
+            name = g_106b8540;
+    } else
+        name = "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseEntity::Event_Killed";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    m_nTakeDamage = 0;
+    m_field200 = 2;
+    sub_101cd940(this);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a49d0 size=0xde
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
