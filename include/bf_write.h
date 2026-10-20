@@ -19,4 +19,5 @@ public:
 	void sub_100bc600(unsigned int curData, int numbits);	// range checked variant, called through the stub at 0x10001ef1
 	void sub_100bc860(unsigned int curData, int numbits, bool bCheckRange);	// "WriteUBitLong" (older copy): with bCheckRange forwards to sub_100bc600, else as sub_100bd450
 	void sub_100bd090(float fAngle, int numbits);	// "WriteBitAngle": writes (int)((1 << numbits) * fAngle) / 360 masked to numbits bits
+	void sub_100bd840(float f);	// "WriteBitNormal": a sign bit (f <= -1/2047), then |(int)(f * 2047)| clamped to 2047 in 11 bits (WriteOneBit and WriteUBitLong inlined)
 };
