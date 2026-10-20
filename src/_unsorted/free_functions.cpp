@@ -34768,6 +34768,41 @@ void CAI_DynamicLink::sub_102ccce0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cd310 size=0x71
+#include "inputdata_t.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct CUnk102cd310 {
+	V100(a) V100(b)
+	V10(c0) V10(c1) V10(c2) V10(c3)
+	virtual void vfunc240();
+	virtual void vfunc241(inputdata_t *d);
+	virtual void vfunc242(inputdata_t *d);
+	char pad[0x45c - 4];
+	char m_bOn;
+	void sub_10007fe5(void *a, void *b, void *c);
+	void sub_102cd310();
+};
+
+// TARGET: CUnk102cd310::sub_102cd310
+void CUnk102cd310::sub_102cd310()
+{
+	inputdata_t data;
+	data.value.iValue = 0;
+	data.value.eVal = 0xffffffff;
+	data.value.fieldType = 0;
+	if (m_bOn) {
+		vfunc241(&data);
+		m_bOn = 0;
+	} else {
+		vfunc242(&data);
+	}
+	sub_10007fe5(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cd3b0 size=0xb9
 #include "CAI_GoalEntity.h"
 
