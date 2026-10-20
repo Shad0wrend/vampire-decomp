@@ -9,6 +9,6 @@ public:
 	void sub_10002428();
 	void sub_10097bd0();
 	void *m_vptr;
-	unsigned int m_hEnt;
+	volatile unsigned int m_hEnt;
 	short m_sUnk;
 };
