@@ -24544,6 +24544,25 @@ extern "C" CBaseEntity *security_camera()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020d0e0 size=0x43
+#include "CPropSwitch.h"
+void *sub_100aa720(int size);
+extern char g_105ae144[];
+
+// TARGET: prop_switch
+extern "C" CBaseEntity *prop_switch()
+{
+	void *mem = sub_100aa720(0x7b8);
+	CPropSwitch *p;
+	if (mem)
+		p = ((CPropSwitch *)mem)->sub_1020d5f0();
+	else
+		p = 0;
+	p->vfunc106(g_105ae144);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e060 size=0xa
 void CUnknown1020e060::sub_1020e060(int unused)
 {
