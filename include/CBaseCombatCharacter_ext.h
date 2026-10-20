@@ -27,3 +27,4 @@
 	int sub_10337860();	// "CBaseCombatCharacter::GetCharTemplate"-like: scope trace (entity name), the index of the first stat list (array at +0x13c0, count +0x13bc) with a zero field at +0x10, else the default list; used as index into the global stat default list 0x10738d10
 	char sub_10337f30();	// "CBaseCombatCharacter::IsKindred": scope trace (entity name), the byte at +0x8c of the default-stat item selected by sub_10337860()
 	char sub_103380d0();	// "CBaseCombatCharacter::IsBossMonster": scope trace (entity name), the byte at +0x90 of the default-stat item selected by sub_10337860()
+	void vfunc341(int discipline);	// slot 341 "CBaseCombatCharacter::RemoveDisciplineEffects": scope trace (entity name), then the global discipline manager at 0x10739a4c RemoveEffect(this, discipline, 0)
