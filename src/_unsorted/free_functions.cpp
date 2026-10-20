@@ -5435,6 +5435,20 @@ void CUnknown100779b0::sub_100779b0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077b30 size=0x72
+#include "CUnknown10077b30.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+CUnknown10073ae0 *CUnknown10077b30::sub_10077b30(int index, const char *name)
+{
+    for (int i = 0; i < m_vecs[index].m_size; i++) {
+        CUnknown10073ae0 *p = &m_vecs[index].m_pMemory[i];
+        if (p && !_strcmpi(p->sub_10073ae0(), name))
+            return p;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100784b0 size=0xd
 void CUnknown10077730::sub_100784b0(float value)
 {

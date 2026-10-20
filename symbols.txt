@@ -1594,6 +1594,7 @@
 0x10009f02 func   ?vfunc370@CBaseCombatWeapon@@UAEXPAHPAV1@@Z CBaseCombatWeapon::vfunc370
 0x10009f07 func   ?sub_100f9820@UtlMem@@QAEXXZ UtlMem::sub_100f9820
 0x10009f39 func   _prop_haunted prop_haunted
+0x10009f3e func   ?sub_10077b30@CUnknown10077b30@@QAEPAVCUnknown10073ae0@@HPBD@Z CUnknown10077b30::sub_10077b30
 0x10009f48 func   ?vfunc5@CPropSign@@UAEPAV1@I@Z CPropSign::vfunc5
 0x10009f52 func   ?sub_10325c10@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325c10
 0x10009f7a func   ?sub_1007bb30@CUnknown1007bb30@@QAEXPAVCUnknown1007bb30Dest@@@Z CUnknown1007bb30::sub_1007bb30
