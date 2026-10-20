@@ -27589,6 +27589,62 @@ bool CRopeKeyframe::sub_1019ee40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a05f0 size=0x153
+#include "CSave.h"
+#include <string.h>
+#include <stdlib.h>
+#pragma intrinsic(_rotr)
+
+extern void (*g_109f362c)(const char *fmt, ...);	// Warning
+
+struct CSaveTokenData
+{
+	char m_pad[0x10];
+	int m_nTokenCount;
+	const char **m_pTokens;
+};
+
+struct CSaveBuf
+{
+	char m_pad[0x18];
+	CSaveTokenData *m_pdata;
+
+	int TokenHash(const char *pszToken)
+	{
+		CSaveTokenData *pdata = m_pdata;
+		unsigned int hash = 0;
+		for (const char *q = pszToken; *q; q++)
+			hash = _rotr(hash, 4) ^ (int)*q;
+
+		unsigned short start = (unsigned short)(hash % pdata->m_nTokenCount);
+		for (int i = 0; i < pdata->m_nTokenCount; i++)
+		{
+			int index = start + i;
+			if (index >= pdata->m_nTokenCount)
+				index -= pdata->m_nTokenCount;
+			if (!pdata->m_pTokens[index] || strcmp(pszToken, pdata->m_pTokens[index]) == 0)
+			{
+				pdata->m_pTokens[index] = pszToken;
+				return index;
+			}
+		}
+		g_109f362c("CSaveRestoreBuffer::TokenHash() is COMPLETELY FULL!");
+		return 0;
+	}
+};
+
+// TARGET: CSave::sub_101a05f0
+void CSave::sub_101a05f0(const void *p, int a)
+{
+	int size = a;
+	int token = ((CSaveBuf *)this)->TokenHash((const char *)p);
+	if (a > 0x7fff || a < 0)
+		g_109f362c("CSave::WriteHeader() size parameter exceeds 'short'!");
+	sub_1000643d(&size, 2);
+	sub_1000643d(&token, 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0830 size=0x89
 #include "CSave.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
