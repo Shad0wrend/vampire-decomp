@@ -1313,6 +1313,37 @@ void CBaseCombatCharacter::vfunc349(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10341450 size=0x8c
+#include "CBaseCombatCharacter.h"
+#include "inputdata_t.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+void CBaseCombatCharacter::vfunc350(inputdata_t *pInput)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseCombatCharacter::InputBarterEnd";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	if (pInput->pActivator)
+		sub_10341370(*(int *)((char *)pInput->pActivator + 0x9c), 0);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103415f0 size=0x6f
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

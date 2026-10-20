@@ -182,6 +182,7 @@
 0x10001f5f func   _item_w_zombie_fists item_w_zombie_fists
 0x10001f73 func   ?sub_101db6b0@CStatDefault60List@@QAEPAUStatDefault60@@XZ CStatDefault60List::sub_101db6b0
 0x10001f78 func   ?vfunc5@CNullEntity@@QAEPAV1@I@Z CNullEntity::vfunc5
+0x10001f82 func   ?vfunc350@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::vfunc350
 0x10001f9b func   _item_k_leopold_int_key item_k_leopold_int_key
 0x10001faa func   ?vfunc5@CWindowPane@@QAEPAV1@I@Z CWindowPane::vfunc5
 0x10001fd7 func   ?vfunc62@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc62
