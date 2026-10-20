@@ -6909,6 +6909,32 @@ void sub_10085070(int *dst, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10085bd0 size=0x77
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" int __cdecl atoi(const char *);
+unsigned int sub_102f7c00(int name, unsigned int flag, char value);
+int sub_10119390();
+extern int g_10552810;
+extern char g_1054970c[];
+
+void sub_10085bd0()
+{
+	int v = atoi(g_1070b22c->vfunc84(1));
+	if (v == 0) {
+		sub_102f7c00((int)g_1054970c, 1, 1);
+	} else {
+		if (v & 1)
+			sub_102f7c00((int)g_1054970c, 1, 0);
+		if (v & 2)
+			sub_102f7c00((int)g_1054970c, 2, 0);
+		if (v & 4)
+			sub_102f7c00((int)g_1054970c, 0x100, 0);
+	}
+	g_10552810 = sub_10119390();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088a80 size=0x10
 extern bool g_10924fbb;
 
