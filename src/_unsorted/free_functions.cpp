@@ -37446,6 +37446,48 @@ extern "C" CBaseEntity *intersting_place()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102da7c0 size=0x80
+class CUnk102da7c0;
+struct CUnk102da7c0Output {
+    void sub_100cd660(CUnk102da7c0 *pOwner, void *pEnt, int delay);
+};
+struct CUnk102da7c0Entry {
+    void *m_pEnt;
+    char pad[0x1c - 4];
+};
+class CUnk102da7c0 {
+public:
+    char pad0000[0x450];
+    CUnk102da7c0Output m_Output;	// 0x450
+    char pad0451[0x564 - 0x451];
+    int m_nCount;	// 0x564
+    char pad0568[0x580 - 0x568];
+    CUnk102da7c0Entry *m_pEntries;	// 0x580
+    char pad0584[4];
+    int m_nEntries;	// 0x588
+    void sub_102da7c0(void *pEnt, char bTrack, char bFire);
+};
+
+void CUnk102da7c0::sub_102da7c0(void *pEnt, char bTrack, char bFire)
+{
+    if (pEnt && bTrack) {
+        CUnk102da7c0Entry *pEntry = m_pEntries;
+        if (pEntry) {
+            for (int i = 0; i < m_nEntries; i++, pEntry++) {
+                if (pEntry->m_pEnt == pEnt) {
+                    if (bFire)
+                        m_Output.sub_100cd660(this, pEnt, 0);
+                    m_nCount++;
+                    return;
+                }
+            }
+        }
+    } else if (bFire) {
+        m_Output.sub_100cd660(this, pEnt, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db420 size=0xa
 void CUnknown102db420::sub_102db420(int unused)
 {

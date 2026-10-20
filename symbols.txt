@@ -1621,6 +1621,7 @@
 0x10009ef8 func   _prop_hacking prop_hacking
 0x10009f02 func   ?vfunc370@CBaseCombatWeapon@@UAEXPAHPAV1@@Z CBaseCombatWeapon::vfunc370
 0x10009f07 func   ?sub_100f9820@UtlMem@@QAEXXZ UtlMem::sub_100f9820
+0x10009f25 func   ?sub_102da7c0@CUnk102da7c0@@QAEXPAXDD@Z CUnk102da7c0::sub_102da7c0
 0x10009f39 func   _prop_haunted prop_haunted
 0x10009f3e func   ?sub_10077b30@CUnknown10077b30@@QAEPAVCUnknown10073ae0@@HPBD@Z CUnknown10077b30::sub_10077b30
 0x10009f48 func   ?vfunc5@CPropSign@@UAEPAV1@I@Z CPropSign::vfunc5
