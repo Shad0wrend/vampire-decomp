@@ -29216,6 +29216,30 @@ int CVStatList_t::sub_10201100(int stat, int amount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102017b0 size=0x89
+#include "CVStatList_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool CVStatList_t::sub_102017b0(int a, int b)
+{
+	g_109f3620[*g_109f3680].a = "CVStatList_t::IsEqual";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	int x = sub_10010609(a);
+	int y = sub_10010609(b);
+	if (x == y) {
+		(*g_109f3680)--;
+		return true;
+	}
+	(*g_109f3680)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10201ca0 size=0x162
 #include "CUnknown10201ca0.h"
 #include "CVStatList_t.h"

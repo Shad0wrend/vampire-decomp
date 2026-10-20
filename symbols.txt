@@ -1733,6 +1733,7 @@
 0x1000a50b func   ?sub_102b8c40@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102b8c40
 0x1000a51a func   ?sub_100420a0@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_100420a0
 0x1000a52e func   ?sub_1027ee90@@YAXXZ sub_1027ee90
+0x1000a551 func   ?sub_102017b0@CVStatList_t@@QAE_NHH@Z CVStatList_t::sub_102017b0
 0x1000a56f func   ?sub_10147d50@CUnknown10147d10@@QAEXPAUCPair10147d50@@@Z CUnknown10147d10::sub_10147d50
 0x1000a5ab func   ?sub_100d6820@@YAXXZ sub_100d6820
 0x1000a5d8 func   ?sub_10132db0@@YAPAHXZ sub_10132db0
