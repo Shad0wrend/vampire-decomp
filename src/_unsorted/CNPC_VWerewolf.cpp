@@ -95,6 +95,35 @@ bool CNPC_VWerewolf::vfunc600(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cca80 size=0x92
+#include "CNPC_VWerewolf.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+void sub_1021fee0(CNPC_VWerewolf *pChar, const char *pszClassname);
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+void CNPC_VWerewolf::sub_103cca80()
+{
+	CScopeTrace trace("CNPC_VWerewolf::RemoveBaseFightingItems", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	if (sub_1033c9c0() & 0x10) {
+		sub_1021fee0(this, "item_w_werewolf_attacks");
+		sub_1033c770(0x10);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ccb50 size=0x74
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
