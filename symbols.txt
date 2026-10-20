@@ -2542,6 +2542,7 @@
 0x100108cf func   _item_g_sewerbook_1 item_g_sewerbook_1
 0x100108fc func   ?sub_101a59f0@CUnknown101a59f0@@QAEXH@Z CUnknown101a59f0::sub_101a59f0
 0x10010929 func   ?sub_103e8570@@YAHXZ sub_103e8570
+0x1001092e func   ?sub_101b20b0@UtlMem@@QAEXXZ UtlMem::sub_101b20b0
 0x1001094c func   ?vfunc0@CGameMovement@@UAEPAV1@I@Z CGameMovement::vfunc0
 0x1001096f func   ?sub_103e5380@@YAHXZ sub_103e5380
 0x10010974 func   ?sub_103e5020@@YAHXZ sub_103e5020

@@ -17888,6 +17888,22 @@ void UtlMem::sub_101b2070()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b20b0 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_101b20b0()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2170 size=0x46
 struct Entry { float value; const char *text; };
 extern Entry g_10598cb0[1];
