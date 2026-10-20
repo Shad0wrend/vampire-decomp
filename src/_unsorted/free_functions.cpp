@@ -12258,6 +12258,37 @@ void CBaseEntity::sub_100ac9f0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100acc20 size=0xd3
+#include "CBaseEntity.h"
+#include "inputdata_t.h"
+#include "ScopeTrace.h"
+extern char g_1055728c[];
+extern CGlobalEntityList g_106eb5d8;
+static inline const char *VariantString(variant_t *pv, const char **ppDummy)
+{
+    const char **pp = (const char **)pv;
+    if (pv->fieldType != 2) {
+        *ppDummy = 0;
+        pp = ppDummy;
+    }
+    return *pp;
+}
+void CBaseEntity::sub_100acc20(inputdata_t *pInput)
+{
+    ScopeTrace t(g_1055728c, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    const char *name = VariantString(&pInput->value, (const char **)&pInput);
+    *(const char **)((char *)this + 0x21c) = name;
+    if (name) {
+        CGlobalEntityList_Ent *pEnt = (CGlobalEntityList_Ent *)g_106eb5d8.sub_100f7770(0, name, 0, 0);
+        if (pEnt) {
+            *(unsigned int *)((char *)this + 0x220) = *pEnt->v1();
+            return;
+        }
+    }
+    *(unsigned int *)((char *)this + 0x220) = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100acd40 size=0x85
 #include "CBaseEntity.h"
 #include "inputdata_t.h"
