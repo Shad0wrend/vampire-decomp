@@ -44,6 +44,7 @@ public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual int vfunc2(CBaseEntity *pEnt, int map);	// reads the entity's data description block
+	virtual void vfunc3(int a, int b, int c, int d, int e);	// stub 0x10004b65 for 0x101a1b70
 
 	CRestore(void *pData);	// 0x101a12a0
 
