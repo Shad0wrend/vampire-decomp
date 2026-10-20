@@ -30,6 +30,58 @@ float CBaseCombatCharacter::vfunc344()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107120 size=0x134
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
+extern ScopeEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern void (*g_109f3890)(char *, const char *, int);
+extern void (*g_109f364c)(const char *, ...);
+
+bool CBaseCombatCharacter::vfunc347(int event, char *pszName, float *pA, float *pB, float *pC, float *pD)
+{
+    const char *pszEnt;
+    if (this) {
+        pszEnt = m_name26c;
+        if (!pszEnt)
+            pszEnt = g_106b8540;
+    } else {
+        pszEnt = "NULL ENTITY";
+    }
+    g_109f3620[*g_109f3680].m_pszName = "CBaseCombatCharacter::GetExpressionEventParams";
+    g_109f3620[*g_109f3680].m_pszEnt = pszEnt;
+    g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+    (*g_109f3680)++;
+    if (event >= 0 && event < 2) {
+        switch (event) {
+        case 0:
+            g_109f3890(pszName, "Knockback", 64);
+            *pA = 1.0f;
+            *pB = 0.1f;
+            *pC = 1.0f;
+            *pD = 0.2f;
+            (*g_109f3680)--;
+            return true;
+        case 1:
+            g_109f3890(pszName, "Knockback", 64);
+            *pA = 1.0f;
+            *pB = 0.25f;
+            *pC = 2.0f;
+            *pD = 0.5f;
+            (*g_109f3680)--;
+            return true;
+        default:
+            g_109f364c("Unhandled Expression Event: %s!!\n", event);
+            break;
+        }
+    }
+    (*g_109f3680)--;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323c20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
