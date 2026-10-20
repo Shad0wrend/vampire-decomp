@@ -33,3 +33,5 @@
 	void sub_103411c0(int a, int b);	// called through the stub at 0x10007e73
 	void vfunc350(inputdata_t *pInput);	// slot 350 "CBaseCombatCharacter::InputBarterEnd": scope trace (entity name), when the activator (first dword of the input) is set calls sub_10341370(the dword at +0x9c of the activator, 0)
 	void sub_10341370(int a, int b);	// worker of the barter inputs (stub 0x1000e020)
+	void sub_103394a0(char begin, int a, int b);	// "CBaseCombatCharacter::TorporBegin": scope trace (entity name), when begin is non-zero calls sub_103392c0(0, a, b)
+	void sub_103392c0(int a, int b, int c);	// called through the stub at 0x100034f9
