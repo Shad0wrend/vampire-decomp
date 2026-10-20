@@ -62,6 +62,7 @@ public:
 
 	int sub_102e2610();
 	CAI_Motor *sub_102e0900(int outer);
+	void sub_102e2840(int a, int b);	// forwards (a, b) to slot 93 of the owning NPC (stub 0x1000628a)
 
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
 	static int *sub_102e0860();
