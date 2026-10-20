@@ -20,4 +20,5 @@ public:
 
 	CExperienceAward *sub_10222670(int index);	// "ExperienceTable::GetAward": scope trace, record `index` or a warning and the static dummy record
 	void sub_102223f0();	// "ExperienceTable::PurgeExperience": scope trace, frees the two strings of every record and purges the memory
+	void sub_10222210();	// "ExperienceTable::~ExperienceTable": scope trace, PurgeExperience, then the inlined CUtlVector destructor (RemoveAll + Purge, then the CUtlMemory Purge)
 };
