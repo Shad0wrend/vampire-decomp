@@ -8312,6 +8312,33 @@ void CBaseAnimating::sub_10096490(int set)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096530 size=0x95
+#include "CBaseAnimating.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+int sub_10428f10(void *pStudioHdr, const char *name);
+
+// TARGET: CBaseAnimating::sub_10096530
+void CBaseAnimating::sub_10096530(const char *name)
+{
+    const char *ent;
+    if (this != 0) {
+        ent = m_name26c;
+        if (ent == 0)
+            ent = g_106b8540;
+    } else
+        ent = "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseAnimating::SetHitboxSetByName";
+    g_109f3620[*g_109f3680].b = ent;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    *(int *)((char *)this + 0x680) = sub_10428f10(sub_100952d0(-1), name);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096600 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
