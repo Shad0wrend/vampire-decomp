@@ -35833,6 +35833,56 @@ CUtlMemory16 *CUtlMemory16::sub_10312f70(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103134b0 size=0x118
+#include "CUtlRBTree16.h"
+extern void *(*g_109f3638)(void *, unsigned int);
+extern void *(*g_109f3634)(unsigned int);
+struct Mem16 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void Grow(int num)
+    {
+        if (m_nGrowSize == -1)
+            return;
+        int a = *(volatile int *)&m_nAllocationCount;
+        int nAllocationRequested = a + num;
+        if (a < nAllocationRequested) {
+            do {
+                if (a != 0) {
+                    if (m_nGrowSize != 0)
+                        a += m_nGrowSize;
+                    else
+                        a += a;
+                } else
+                    a = 2;
+            } while (a < nAllocationRequested);
+            m_nAllocationCount = a;
+        }
+        if (m_pMemory)
+            m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount << 4);
+        else
+            m_pMemory = g_109f3634(m_nAllocationCount << 4);
+    }
+};
+unsigned short CUtlRBTree16::sub_103134b0()
+{
+    unsigned short elem;
+    if (m_FirstFree == InvalidIndex()) {
+        if (m_unk8 == m_TotalElements)
+            ((Mem16 *)&m_pElements)->Grow(1);
+        elem = m_TotalElements++;
+    } else {
+        elem = m_FirstFree;
+        m_FirstFree = Links(m_FirstFree).m_Right;
+    }
+    char *p = (char *)&m_pElements[elem].m_Data;
+    if (p)
+        *(float *)(p + 4) = -1.0f;
+    return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10313f70 size=0x67
 struct Mem16 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
