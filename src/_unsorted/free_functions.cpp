@@ -25908,6 +25908,62 @@ PyObj *sub_10197e50(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198640 size=0x111
+struct PyObj { int m_refcnt; };
+
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObj *args, const char *format, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred(void);
+__declspec(dllimport) void PyErr_SetString(PyObj *exc, const char *msg);
+__declspec(dllimport) PyObj *PyInt_FromLong(long value);
+__declspec(dllimport) extern PyObj *PyExc_AttributeError;
+}
+void *sub_10196780(PyObj *pObj);
+
+struct HasItemInventory { int sub_10178470(const char *name); };
+struct HasItemCharacter {
+    char m_pad0000[0xa8];
+    HasItemInventory *m_pInventory;
+    void *sub_10335950(const char *name);
+};
+struct HasItemEntity {
+    char m_pad0000[0x9c];
+    HasItemCharacter *m_pCharacter;
+};
+
+PyObj *sub_10198640(PyObj *self, PyObj *args)
+{
+    const char *pszItem = 0;
+    PyObj *pEntObj = 0;
+    if (!PyArg_ParseTuple(args, "Os", &pEntObj, &pszItem)) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "bad args to HasItem()");
+        return 0;
+    }
+    HasItemEntity *pEnt = (HasItemEntity *)sub_10196780(pEntObj);
+    HasItemCharacter *pChar;
+    if (pEnt == 0)
+        pChar = 0;
+    else
+        pChar = pEnt->m_pCharacter;
+    if (!pszItem) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "invalid item name");
+        return 0;
+    }
+    if (!pChar) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "invalid combat character");
+        return 0;
+    }
+    if (pChar->sub_10335950(pszItem))
+        return PyInt_FromLong(1);
+    if (pChar->m_pInventory && pChar->m_pInventory->sub_10178470(pszItem) != -1)
+        return PyInt_FromLong(1);
+    return PyInt_FromLong(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199100 size=0xfc
 struct PyObject;
 extern "C" __declspec(dllimport) int PyArg_ParseTuple(PyObject *, const char *, ...);
