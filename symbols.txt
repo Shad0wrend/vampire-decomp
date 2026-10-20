@@ -3237,6 +3237,7 @@
 0x10011f90 func   ?sub_10404270@@YAHXZ sub_10404270
 0x10011f95 func   ?sub_1020e080@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e080
 0x10011fa9 func   ?sub_101074c0@@YIXPAUMem32@@HH@Z sub_101074c0
+0x10011fbd func   ?vfunc4@CTEBreakModel@@QAEXPAXH@Z CTEBreakModel::vfunc4
 0x10011fc7 func   ?vfunc5@COccultPassiveDurations@@QAEPAV1@I@Z COccultPassiveDurations::vfunc5
 0x10011fd6 func   ?vfunc2@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc2
 0x10011fe5 func   ?sub_102c6b80@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102c6b80
