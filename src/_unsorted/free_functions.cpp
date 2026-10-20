@@ -43449,6 +43449,33 @@ void CBaseCombatCharacter::sub_103245a0(int translated)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10324ad0 size=0x98
+#include "CUnknown10324ad0.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct CScopeTrace {
+	CScopeTrace(const char *fn, const char *name)
+	{
+		g_109f3620[*g_109f3680].a = fn;
+		g_109f3620[*g_109f3680].b = name;
+		g_109f3620[*g_109f3680].c = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~CScopeTrace() { (*g_109f3680)--; }
+};
+
+bool CUnknown10324ad0::sub_10324ad0()
+{
+	CScopeTrace trace("CBaseCombatCharacter::CanVampHeal_HOT", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	if (sub_10337f30() && m_field00a8)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10325940 size=0xb8
 #include "inputdata_t.h"
 
