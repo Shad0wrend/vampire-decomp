@@ -41564,6 +41564,31 @@ int __fastcall sub_102a1420(N *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a1470 size=0x3f
+struct Obj {
+	char pad[0x5dc];
+	int type;
+};
+struct N {
+	char pad[0x5ddc];
+	Obj *pObj;
+	char pad2[0x63fd - 0x5ddc - 4];
+	char flag;
+};
+
+int __fastcall sub_102a1470(N *p)
+{
+	if (p->pObj) {
+		switch (p->pObj->type) {
+		case 100: return 0x1112;
+		case 101: return 0x110e;
+		case 0x27d8: return p->flag ? 0x1119 : 0x111a;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a1560 size=0x16
 struct Obj {
 	char pad[0x5dc];
