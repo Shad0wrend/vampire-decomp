@@ -3620,6 +3620,7 @@
 0x10012594 func   ?sub_102e2770@CUnknown102e2770@@QAEXHM@Z CUnknown102e2770::sub_102e2770
 0x100125c1 func   ?sub_1008dc40@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008dc40
 0x100125cb func   ?vfunc8@CNavPropertyDatabase@@QAEPAV1@I@Z CNavPropertyDatabase::vfunc8
+0x100125e9 func   ?sub_10174550@CFlagSet10174550@@QAEX_N@Z CFlagSet10174550::sub_10174550
 0x100125ee func   ?vfunc2@CTEFogRipple@@UAEPAV1@I@Z CTEFogRipple::vfunc2
 0x100125f3 func   ?vfunc5@CWeaponMelee_WerewolfAttacks@@QAEPAV1@I@Z CWeaponMelee_WerewolfAttacks::vfunc5
 0x10012607 func   ?vfunc103@CFlameCluster@@UAEXXZ CFlameCluster::vfunc103

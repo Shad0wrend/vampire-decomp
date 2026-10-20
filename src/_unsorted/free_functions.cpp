@@ -23220,6 +23220,18 @@ void CBloodSplat::sub_101719d0(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174550 size=0x12
+struct CFlagSet10174550 {
+    char pad0[0x1f14];
+    bool field1f14;
+    void sub_10174550(bool v);
+};
+void CFlagSet10174550::sub_10174550(bool v)
+{
+    field1f14 = v != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10175180 size=0x74
 #define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define HUN(p) TEN(p##0) TEN(p##1) TEN(p##2) TEN(p##3) TEN(p##4) TEN(p##5) TEN(p##6) TEN(p##7) TEN(p##8) TEN(p##9)
