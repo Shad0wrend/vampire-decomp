@@ -376,6 +376,27 @@ void CBaseEntity::vfunc67()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009e280 size=0xd1
+#include "CBaseEntity.h"
+#include "CEntityMapData.h"
+#include "ScopeTrace.h"
+
+// TARGET: CBaseEntity::vfunc107
+void CBaseEntity::vfunc107(CEntityMapData *pMapData)
+{
+	ScopeTrace trace("CBaseEntity::ParseMapData", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char szValue[256];
+	char szKey[256];
+	if (pMapData->sub_10136e80(szKey, szValue))
+	{
+		do
+		{
+			vfunc110(szKey, szValue);
+		} while (pMapData->sub_10136ee0(szKey, szValue));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ebb0 size=0xbe
 #include "CBaseEntity.h"
 struct TraceEntry { const char *a, *b, *c; };

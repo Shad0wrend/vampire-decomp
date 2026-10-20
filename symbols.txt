@@ -1610,6 +1610,7 @@
 0x100090fc func   ??0CConstraintAnchorBase@@QAE@H@Z CConstraintAnchorBase::CConstraintAnchorBase
 0x1000911a func   ?sub_10256200@@YIEPAE@Z sub_10256200
 0x1000911f func   ?sub_1028b190@CUnknown1028b190@@QAEXPAX@Z CUnknown1028b190::sub_1028b190
+0x1000915b func   ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z CBaseEntity::vfunc107
 0x10009160 func   ?sub_1032d9b0@CBaseCombatCharacter@@QAE_NPAX@Z CBaseCombatCharacter::sub_1032d9b0
 0x10009174 func   ?sub_102a99c0@CUnknown102a99c0@@QAEXD@Z CUnknown102a99c0::sub_102a99c0
 0x10009188 func   ?sub_100f71c0@@YGXPAUEntSlots_t@@II@Z sub_100f71c0
