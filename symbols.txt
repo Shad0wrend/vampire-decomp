@@ -3853,6 +3853,7 @@
 0x10014e2f func   ?vfunc5@CWeaponRanged@@UAEPAV1@I@Z CWeaponRanged::vfunc5
 0x10014e34 func   ?sub_101931c0@@YAPAHXZ sub_101931c0
 0x10014e3e func   ?sub_10068ab0@@YAXHHPBH0HHHH@Z sub_10068ab0
+0x10014e4d func   ?sub_103158f0@CUnknown103158f0@@QAEXPAVCBaseEntity@@@Z CUnknown103158f0::sub_103158f0
 0x10014e57 func   ?sub_101d5e80@CStatDefault3List@@QAEPAUStatDefault3@@H@Z CStatDefault3List::sub_101d5e80
 0x10014e5c func   ?sub_1040dc70@@YIDPAD@Z sub_1040dc70
 0x10014e66 func   ?vfunc546@CNPC_VCombatman@@QAEHH@Z CNPC_VCombatman::vfunc546

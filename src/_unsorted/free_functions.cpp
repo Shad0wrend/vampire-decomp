@@ -44643,6 +44643,60 @@ bool CUtlRBTree16::sub_10315080(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x103158f0 size=0xab
+#include "CUnknown103158f0.h"
+#include "CGlobalEntityList.h"
+
+extern void (*g_109f3630)(const char *pMsg, ...);
+
+#define SQ_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SQ_V100(p) SQ_V10(p##0) SQ_V10(p##1) SQ_V10(p##2) SQ_V10(p##3) SQ_V10(p##4) SQ_V10(p##5) SQ_V10(p##6) SQ_V10(p##7) SQ_V10(p##8) SQ_V10(p##9)
+
+// the vtable of an NPC up to slot 577, then slot 578
+struct CSquadMemberSlots
+{
+	SQ_V100(a0) SQ_V100(a1) SQ_V100(a2) SQ_V100(a3) SQ_V100(a4)
+	SQ_V10(b0) SQ_V10(b1) SQ_V10(b2) SQ_V10(b3) SQ_V10(b4) SQ_V10(b5) SQ_V10(b6)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3();
+	virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7();
+	virtual void OnSquadMemberRemoved(CBaseEntity *pMember);	// slot 578
+};
+
+struct SHandleSlot
+{
+	CSquadMemberSlots *m_pEntity;
+	int m_Serial;
+};
+
+extern CGlobalEntityList *g_10566458;
+
+void CUnknown103158f0::sub_103158f0(CBaseEntity *pMember)
+{
+	int i = 0;
+	if (pMember) {
+		int idx = sub_10316760(pMember);
+		if (idx == -1) {
+			g_109f3630("ERROR: Attempting to remove non-existing squad membmer!\n");
+			return;
+		}
+		for (int j = idx; j < m_nMembers - 1; j++)
+			m_aMembers[j] = m_aMembers[j + 1];
+		m_nMembers--;
+		if (m_nMembers < 0)
+			m_nMembers = 0;
+		for (; i < m_nMembers; i++) {
+			unsigned int h = m_aMembers[i];
+			if (h != 0xffffffff) {
+				SHandleSlot *s = (SHandleSlot *)&g_10566458->m_Slots[h & 0x1fff].m_pEntity;
+				if (s->m_Serial == (int)(h >> 13) && s->m_pEntity)
+					s->m_pEntity->OnSquadMemberRemoved(pMember);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103159d0 size=0x6d
 struct Squad;
 struct Ent {
