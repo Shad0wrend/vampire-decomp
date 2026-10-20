@@ -34168,6 +34168,28 @@ void __fastcall sub_102e9e50(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102eb170 size=0x107
+#include "CUtlRBTree12.h"
+extern CUtlRBTree12 g_10934014;
+bool sub_102eb170(int key)
+{
+    CUtlRBTree12 &t = g_10934014;
+    unsigned short current = t.m_Root;
+    while (current != CUtlRBTree12::InvalidIndex()) {
+        if (t.m_LessFunc(&key, t.m_pElements[current].m_Data))
+            current = t.Links(current).m_Left;
+        else if (t.m_LessFunc(t.m_pElements[current].m_Data, &key))
+            current = t.Links(current).m_Right;
+        else {
+            if (current == CUtlRBTree12::InvalidIndex())
+                break;
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eb7f0 size=0xbd
 #include "CUtlRBTree12.h"
 
