@@ -30,3 +30,4 @@
 	int sub_10328380(int a, int b, CBaseCombatCharacter *pOther, int c);	// "CBaseCombatCharacter::TranslateBodyPosition"-like (stub 0x10008a35): scope trace (entity name), a plus bits for the grapple position
 	int sub_10328af0(CBaseCombatCharacter *pOther, int a, int b);	// "CBaseCombatCharacter::CheckAndTranslateGrapplePosition": scope trace (entity name), over two candidate positions returns the first both characters know a sequence for, else -1
 	void sub_10323770();	// "CBaseCombatCharacter::RemoveFromComfortList": scope trace (entity name), removes the entry resolving to this entity from the global handle vector at 0x10937af4 (the first match is memmoved out), then clears the dword at +0xe94
+	int vfunc348();	// slot 348 "CBaseCombatCharacter::HealthToPercent": scope trace (entity name), (a - b) * max health (+0x208) / a with a = stat 0x11 and b = stat 0xf of the active stat list
