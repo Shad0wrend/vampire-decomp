@@ -703,6 +703,30 @@ void CAI_BaseNPCTroika::vfunc616()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf6e0 size=0x68
+#include "CAI_BaseNPCTroika.h"
+
+#define NPCF(type, off) (*(type *)((char *)this + (off)))
+
+// TARGET: CAI_BaseNPCTroika::vfunc418
+float CAI_BaseNPCTroika::vfunc418(float a)
+{
+	switch ((int)a)
+	{
+	case -1000005:
+		return NPCF(float, 0x6484);
+	case -1000006:
+		return NPCF(float, 0x6488);
+	case -1000007:
+		return NPCF(float, 0x648c);
+	case -1000008:
+		return 10.0f;
+	default:
+		return CAI_BaseNPC::vfunc418(a);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c5470 size=0x38
 #include "CAI_BaseNPCTroika.h"
 

@@ -2496,6 +2496,7 @@
 0x1000f2a9 func   ?vfunc546@CNPC_VCop@@QAEHH@Z CNPC_VCop::vfunc546
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
 0x1000f2ea func   ?vfunc5@CResearchBook_MG_BRAWL@@QAEPAV1@I@Z CResearchBook_MG_BRAWL::vfunc5
+0x1000f2fe func   ?vfunc418@CAI_BaseNPCTroika@@UAEMM@Z CAI_BaseNPCTroika::vfunc418
 0x1000f303 func   ?vfunc5@CRagdollProp@@QAEPAV1@I@Z CRagdollProp::vfunc5
 0x1000f312 func   ?vfunc13@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHH@Z CTempEntsSystem::vfunc13
 0x1000f317 func   ?sub_1037c750@@YADXZ sub_1037c750
