@@ -36229,6 +36229,29 @@ extern "C" CBaseEntity *prop_radio()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022c750 size=0xc7
+#include "CPropRadio.h"
+#include "ScopeTrace.h"
+extern char g_105b4a5c[];
+extern int g_10750fec;
+extern int g_10750ff0;
+struct S1073dc00 { void sub_100119fa(CBaseEntity *e, int v, int n, float a, float b); };
+extern S1073dc00 g_1073dc00;
+void CPropRadio::sub_1022c750(int a)
+{
+    ScopeTrace t(g_105b4a5c, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    if ((char)a) {
+        g_1073dc00.sub_100119fa(this, g_10750fec, 2, 1.0f, 1.25f);
+        *((char *)this + 0x734) = 1;
+        sub_100a8fc0(0);
+    } else {
+        g_1073dc00.sub_100119fa(this, g_10750ff0, 2, 1.0f, 1.25f);
+        *((char *)this + 0x734) = 0;
+        sub_100a8fc0(1);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022c860 size=0x85
 #include "CPropRadio.h"
 
