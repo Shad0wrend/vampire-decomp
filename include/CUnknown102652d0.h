@@ -9,4 +9,5 @@ public:
 	int m_unkC;
 
 	int sub_102652d0();
+	int sub_102652f0();	// the element count (stub 0x1000477d)
 };
