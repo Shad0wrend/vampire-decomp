@@ -99,6 +99,27 @@ int CNPC_VAndreiBlood::vfunc127(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035d010 size=0xda
+#include "ScopeTrace.h"
+#include "CNPC_VAndreiBlood.h"
+
+int CNPC_VAndreiBlood::vfunc438()
+{
+	ScopeTrace trace("CNPC_VAndreiBlood::SelectSchedule", g_106b8540);
+	*(int *)((char *)this + 0x1b2c) = 4;
+	if (!*((char *)this + 0x66cc))
+		return 0x15b;
+	if (*((char *)this + 0x66cd))
+		return 0x15e;
+	if (!*((char *)this + 0x66d4) && *(int *)((char *)this + 0x66d8) < *(int *)((char *)this + 0x66dc)) {
+		if (sub_1035e920())
+			return 0x15d;
+		return 0x15c;
+	}
+	return 0x15a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035d180 size=0x13
 #include "CNPC_VAndreiBlood.h"
 void CNPC_VAndreiBlood::vfunc433()
