@@ -91,4 +91,6 @@ public:
 	void sub_1032bdf0();	// CBaseCombatCharacter::vfunc403, called directly
 	void sub_1017ec40();	// per-frame timer: when curtime reached the float at +0x1cf8, either postpones it by a constant (flag byte 0x106c8a41) or resets it to FLT_MAX and, when the entity handle at +0x1d00 resolves, calls sub_1017ee80(dword at +0x1cfc, the dword at +0x98 of that entity, &+0x1d04)
 	void sub_1017ee80(int a, int b, void *pData);	// called through the stub at 0x10006055
+	void sub_1016bd50();	// resets the model related state: sub_101618e0(1, 1), -1 at +0x1ebc, 0 at +0x168 / +0x16c / +0x1edc, curtime at +0x1c68, then makes sure the model name buffer at +0x23d4 matches the model (slot 105 otherwise)
+	void sub_101618e0(int a, int b);	// worker (stub 0x10012503)
 };
