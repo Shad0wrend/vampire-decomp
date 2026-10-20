@@ -13,7 +13,7 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3(int a, int b, int c, int d, int e);	// stub 0x1000b258
 	virtual void vfunc4();
-	virtual void vfunc5(const void *p);
+	virtual void vfunc5(const void *p);	// pushes the current position on the section stack (vector at +4) after sub_101a05f0(p, 0)
 	virtual void vfunc6();	// pops the section stack, writes the section size
 	virtual void vfunc7(int a, int b, int count);	// forwards to sub_101a05b0 with the count doubled (shorts to bytes)
 	virtual void vfunc8();
@@ -60,6 +60,7 @@ public:
 	int sub_101a08f0(void *pEntity);	// index of the entity in the table, or -1
 	int sub_101a0830(CSaveEdict *pEdict);	// "CSave::EntityIndex" (edict): -1 for null, else sub_101a08f0 of the entity of the edict (CBaseEntity::Instance scope trace around slot 4 of the object at edict+0x40)
 	void sub_101a05b0(int a, int bytes, int b);
+	void sub_101a05f0(const void *p, int a);	// called by vfunc5 through the stub at 0x1000950c
 	bool sub_1000643d(const void *pData, int nBits);	// as in CUnknown100bde40 (transplant)
 	bool sub_101a1140(int a, void *pData, void *pBase, typedescription_t *pField);	// "CSave::WriteField": dispatches on the field type (0xb..0x13) to the matching write slot, "Bad field type" warning otherwise
 	CSave *sub_1019f870(void *pBuffer);	// the CSave constructor (the stub at 0x10009bf6): vtable, +0x18 = pBuffer, +0x1c = pBuffer + 0x18 (0 for null), room for 0x20 elements in the char vector at +4
