@@ -45450,6 +45450,36 @@ void CBaseCombatCharacter::sub_1033ea90(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033f1a0 size=0x98
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+// TARGET: CBaseCombatCharacter::sub_1033f1a0
+bool CBaseCombatCharacter::sub_1033f1a0(int value)
+{
+    const char *ent;
+    if (this != 0) {
+        ent = m_name26c;
+        if (ent == 0)
+            ent = g_106b8540;
+    } else
+        ent = "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::FrenzyComparison";
+    g_109f3620[*g_109f3680].b = ent;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    sub_1033eb60(value);
+    if (*(int *)((char *)this + 0x146c) != 0) {
+        --*g_109f3680;
+        return true;
+    }
+    --*g_109f3680;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033f3f0 size=0x99
 #include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
