@@ -21308,6 +21308,31 @@ int *sub_101351b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135420 size=0x3b
+struct CUnknownHelper10135420 {
+    void sub_10010794(int a, void *owner, int b);
+};
+
+struct CUnknown10135420 {
+    char m_pad0000[0x454];
+    CUnknownHelper10135420 m_helper454;
+    char m_pad0455[0x46c - 0x455];
+    CUnknownHelper10135420 m_helper46c;
+    bool sub_100065ff();
+    void sub_10135420(int *pArg);
+};
+
+// TARGET: sub_10135420
+void CUnknown10135420::sub_10135420(int *pArg)
+{
+    if (sub_100065ff()) {
+        m_helper454.sub_10010794(*pArg, this, 0);
+    } else {
+        m_helper46c.sub_10010794(*pArg, this, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135570 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
