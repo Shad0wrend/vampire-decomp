@@ -11,4 +11,8 @@ public:
 
 	char m_pad03e0[0x730 - 0x3e0];
 	unsigned int m_hTarget;	// 0x0730: handle of the entity this prop copies the activity of
+	char m_pad0734;
+	char m_bActive;	// 0x0735
+	char m_pad0736[0x740 - 0x736];
+	int m_nActivity;	// 0x0740
 };
