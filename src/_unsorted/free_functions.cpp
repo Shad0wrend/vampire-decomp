@@ -26122,6 +26122,25 @@ void CUnknown10227c90::sub_10227c90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10229ff0 size=0x43
+#include "CSoundScheme.h"
+void *sub_100aa720(int size);
+extern char g_105b4574[];
+
+// TARGET: ambient_soundscheme
+extern "C" CBaseEntity *ambient_soundscheme()
+{
+	void *mem = sub_100aa720(0x5b0);
+	CSoundScheme *p;
+	if (mem)
+		p = ((CSoundScheme *)mem)->sub_1022a0f0();
+	else
+		p = 0;
+	p->vfunc106(g_105b4574);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022a380 size=0xe1
 struct SFileSystem
 {
