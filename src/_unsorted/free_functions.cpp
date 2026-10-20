@@ -22661,6 +22661,17 @@ int *CUnknown101f7b20::sub_101f7b20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f82d0 size=0x18
+#include "CUnknown101f0e50.h"
+
+bool CUnknown101f0e50::sub_101f82d0(int index)
+{
+	if (index != -1 && index < m_f04)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9550 size=0xa
 extern int g_1074e008;
 void sub_101f9550(int value)
