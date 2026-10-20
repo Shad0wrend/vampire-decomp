@@ -39566,6 +39566,25 @@ char sub_10388150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388d30 size=0x43
+#include "CNPC_VLasombra.h"
+void *sub_100aa720(int size);
+extern char g_10640768[];
+
+// TARGET: npc_VLasombra
+extern "C" CBaseEntity *npc_VLasombra()
+{
+	void *mem = sub_100aa720(0x666c);
+	CNPC_VLasombra *p;
+	if (mem)
+		p = ((CNPC_VLasombra *)mem)->sub_10388da0();
+	else
+		p = 0;
+	p->vfunc106(g_10640768);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388ed0 size=0x33
 void sub_10007897();
 void sub_10007234();
