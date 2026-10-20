@@ -3849,6 +3849,7 @@
 0x100155dc func   ?sub_10221d60@QuestJournal@@QAEPADHH@Z QuestJournal::sub_10221d60
 0x100155e6 func   ?vfunc25@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc25
 0x1001560e func   ?sub_10066e20@@YAHXZ sub_10066e20
+0x10015613 func   ?vfunc12@ConVar@@UAEXPBD0H0_NM1MP6AXPAV1@0@Z@Z ConVar::vfunc12
 0x1001561d func   ?vfunc67@CBaseEntity@@UAEXXZ CBaseEntity::vfunc67
 0x10015645 func   ?sub_10031520@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10031520
 0x10015654 func   ?sub_101c4580@@YI_NPAXHPAUIFile101c4580@@PBD@Z sub_101c4580

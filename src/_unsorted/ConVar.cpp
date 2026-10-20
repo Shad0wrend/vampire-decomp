@@ -93,3 +93,30 @@ void SConVar::sub_10245f50(int nValue)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10245fe0 size=0x99
+#include "ConVar.h"
+extern "C" double __cdecl atof(const char *);
+extern "C" void *__cdecl memcpy(void *, const void *, unsigned int);
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(memcpy, strlen)
+extern const char *g_105c4e74;
+
+void ConVar::vfunc12(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax, void (*pCallback)(ConVar *, const char *))
+{
+	if (!pDefaultValue)
+		pDefaultValue = g_105c4e74;
+	m_pszDefaultValue = pDefaultValue;
+	m_nStringLength = strlen(m_pszDefaultValue) + 1;
+	m_pszString = new char[m_nStringLength];
+	memcpy(m_pszString, m_pszDefaultValue, m_nStringLength);
+	m_bHasMin = bMin;
+	m_fMinVal = fMin;
+	m_bHasMax = bMax;
+	m_fMaxVal = fMax;
+	m_fnChangeCallback = pCallback;
+	m_fValue = (float)atof(m_pszString);
+	m_nValue = (int)m_fValue;
+	sub_102455c0(pName, pHelpString, flags);
+}
+// END FUNCTION
