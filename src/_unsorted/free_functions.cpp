@@ -32983,6 +32983,60 @@ extern "C" CBaseEntity *events_world()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023df30 size=0x83
+#include "CUnknown1023df30.h"
+#include "inputdata_t.h"
+
+struct CCopOwner_t
+{
+	char m_pad[0x4a0];
+	char m_bWaitArea;	// 0x4a0
+};
+
+class CDevCvar_t
+{
+public:
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad04[0x2c - 4];
+	int m_nValue;	// 0x2c
+};
+
+struct CGlobalVarsX
+{
+	char m_pad[0xc];
+	float m_curtime;
+};
+
+CCopOwner_t *sub_1023bd00();
+extern CDevCvar_t *g_107258dc;
+extern CGlobalVarsX *g_1070b228;
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+static inline char InputBool(inputdata_t *inputdata)
+{
+	if (inputdata->value.fieldType == 5)
+		return *(char *)&inputdata->value;
+	return 0;
+}
+
+void CUnknown1023df30::sub_1023df30(inputdata_t *inputdata)
+{
+	CCopOwner_t *cop = sub_1023bd00();
+	if (cop) {
+		if (!g_107258dc->vfunc1() && g_107258dc->m_nValue) {
+			const char *text;
+			if (inputdata->value.fieldType == 5 && *(char *)&inputdata->value)
+				text = "true";
+			else
+				text = "false";
+			g_109f3630("CSActs:    %6.1f - Cop Wait Area = %s\n", (double)g_1070b228->m_curtime, text);
+		}
+		cop->m_bWaitArea = InputBool(inputdata);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023e4b0 size=0x184
 #include "CGlobalEntityList.h"
 
