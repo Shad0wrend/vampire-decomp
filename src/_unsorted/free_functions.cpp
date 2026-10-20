@@ -3497,6 +3497,25 @@ extern "C" CBaseEntity *func_physbox()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100500a0 size=0x43
+#include "CPhysConvert.h"
+void *sub_100aa720(int size);
+extern char g_1053dd98[];
+
+// TARGET: phys_convert
+extern "C" CBaseEntity *phys_convert()
+{
+	void *mem = sub_100aa720(0x470);
+	CPhysConvert *p;
+	if (mem)
+		p = ((CPhysConvert *)mem)->sub_100501f0();
+	else
+		p = 0;
+	p->vfunc106(g_1053dd98);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050170 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
