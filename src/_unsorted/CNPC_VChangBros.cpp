@@ -30,6 +30,32 @@ void CNPC_VChangBros::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036b170 size=0xa7
+#include "CNPC_VChangBros.h"
+#include "CNPC_VVampireBoss.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern const float g_104ada44;
+
+int CNPC_VChangBros::vfunc127(int a)
+{
+    g_109f3620[*g_109f3680].a = "CNPC_VChangBros::Restore";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int r = ((CNPC_VVampireBoss *)this)->vfunc127(a);
+    float v = g_104ada44;
+    *(float *)((char *)this + 0x64b8) = v;
+    ((CNPC_VVampireBoss *)this)->sub_103c6df0(0, "chang_powerup_emitter");
+    ((CNPC_VVampireBoss *)this)->sub_103c6df0(1, "chang_powerup_emitter");
+    ((CNPC_VVampireBoss *)this)->sub_103c6df0(2, "chang_spine_emitter");
+    (*g_109f3680)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036b460 size=0x7c
 #include "CNPC_VChangBros.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
