@@ -3,16 +3,6 @@
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
-class UtlMem5
-{
-public:
-	int *m_pMemory;
-	int m_allocationCount;
-	int m_growSize;
-
-	void sub_100732f0(int num);	// "CUtlMemory::Grow"
-};
-
 class CUnknown10072f10
 {
 public:
