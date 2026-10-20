@@ -143,6 +143,33 @@ bool __fastcall sub_103ccb50(CBaseEntity *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ccbf0 size=0x96
+#include "CUnknown101c2a50.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+void CNPC_VWerewolf::vfunc141(CUnknown101c2a50 *pInfo, int b, int c)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	} else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CNPC_VWerewolf::TraceAttack";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	pInfo->sub_101c2a50(0);
+	sub_10015b13(pInfo, b, c);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d0780 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
