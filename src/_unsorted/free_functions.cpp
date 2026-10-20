@@ -23083,6 +23083,25 @@ int *sub_1020f8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102106c0 size=0x43
+#include "CTriggerPlayerActivityLevel.h"
+void *sub_100aa720(int size);
+extern char g_105ae720[];
+
+// TARGET: trigger_player_activity_level
+extern "C" CBaseEntity *trigger_player_activity_level()
+{
+	void *mem = sub_100aa720(0x5a4);
+	CTriggerPlayerActivityLevel *p;
+	if (mem)
+		p = ((CTriggerPlayerActivityLevel *)mem)->sub_102107c0();
+	else
+		p = 0;
+	p->vfunc106(g_105ae720);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210fe0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
