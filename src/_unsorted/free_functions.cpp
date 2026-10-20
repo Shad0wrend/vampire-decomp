@@ -42160,6 +42160,47 @@ UtlMem *UtlMem::sub_103dc040(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc090 size=0xbb
+#include "CUtlVectorHintData.h"
+#include "CHintData_WW.h"
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern void *(*g_109f3638)(void *, unsigned int);
+extern void *(*g_109f3634)(unsigned int);
+int CUtlVectorHintData::sub_103dc090(int elem, const CHintData_WW *pSrc)
+{
+    if (m_Size + 1 > m_allocationCount && m_growSize != -1) {
+        int num = m_Size + 1 - m_allocationCount;
+        int req = m_allocationCount + num;
+        if (m_allocationCount < req) {
+            int a = m_allocationCount;
+            do {
+                if (a != 0) {
+                    if (m_growSize != 0)
+                        a += m_growSize;
+                    else
+                        a += a;
+                } else
+                    a = 1;
+            } while (a < req);
+            m_allocationCount = a;
+        }
+        if (m_pMemory)
+            m_pMemory = (char *)g_109f3638(m_pMemory, m_allocationCount * 0x48);
+        else
+            m_pMemory = (char *)g_109f3634(m_allocationCount * 0x48);
+    }
+    m_Size++;
+    m_pElements = m_pMemory;
+    int toMove = m_Size - elem - 1;
+    if (toMove > 0)
+        memmove(m_pMemory + (elem + 1) * 0x48, m_pMemory + elem * 0x48, toMove * 0x48);
+    CHintData_WW *p = (CHintData_WW *)(m_pMemory + elem * 0x48);
+    if (p)
+        p->sub_103c9ed0(pSrc);
+    return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc220 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);

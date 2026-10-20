@@ -2889,6 +2889,7 @@
 0x10011fc7 func   ?vfunc5@COccultPassiveDurations@@QAEPAV1@I@Z COccultPassiveDurations::vfunc5
 0x10011fd6 func   ?vfunc2@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc2
 0x10011fe5 func   ?sub_102c6b80@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102c6b80
+0x10011fef func   ?sub_103dc090@CUtlVectorHintData@@QAEHHPBVCHintData_WW@@@Z CUtlVectorHintData::sub_103dc090
 0x10011ff4 func   ?sub_1007f610@UtlMem@@QAEXXZ UtlMem::sub_1007f610
 0x10011ff9 func   ?vfunc431@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc431
 0x10011ffe func   ?vfunc5@CWeaponMelee_Torch@@QAEPAV1@I@Z CWeaponMelee_Torch::vfunc5
