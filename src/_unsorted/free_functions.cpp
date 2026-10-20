@@ -15783,6 +15783,20 @@ int CBasePlayer::sub_10175290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175360 size=0x2a
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+
+void CAI_BaseNPC::sub_10175360(CBaseEntity *pEnt)
+{
+	unsigned int *pHandle = (unsigned int *)((char *)this + 0x1e04);
+	if (pEnt)
+		*pHandle = *pEnt->vfunc1();
+	else
+		*pHandle = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017cf90 size=0x6f
 struct EntInfo { void *ent; unsigned int serial; int pad; };
 struct EntList {
