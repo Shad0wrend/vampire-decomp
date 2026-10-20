@@ -1735,6 +1735,7 @@
 0x1000a40c func   ?sub_101fb180@@YAXH@Z sub_101fb180
 0x1000a416 func   ?sub_10199990@@YAHHH@Z sub_10199990
 0x1000a457 func   _func_rotating func_rotating
+0x1000a461 func   ?vfunc291@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc291
 0x1000a466 func   ?sub_1013eb90@@YG_NPAVCBaseEntity@@I@Z sub_1013eb90
 0x1000a48e func   ?sub_10210fe0@@YAPAHXZ sub_10210fe0
 0x1000a4bb func   ?sub_10231ed0@CUnknown10231ed0@@QAEIXZ CUnknown10231ed0::sub_10231ed0
