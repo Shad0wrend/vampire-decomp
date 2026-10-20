@@ -526,3 +526,14 @@ unsigned int CAI_BaseNPC::vfunc423()
 	return (((NpcFlags204 *)this)->m >> 11) & 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1028b0f0 size=0x13
+extern int (*g_109f3630)(const char *, ...);
+
+// TARGET: sub_1028b0f0
+int __stdcall sub_1028b0f0(int unused)
+{
+    g_109f3630("ERROR! Subclass missing GetSlotSchedule Function!\n");
+    return 0;
+}
+// END FUNCTION
