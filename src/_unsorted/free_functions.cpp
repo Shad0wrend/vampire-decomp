@@ -14665,6 +14665,33 @@ int sub_10114820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101150f0 size=0x66
+#include "CFuncMonitor.h"
+#include "CPointCamera.h"
+#include "CGlobalEntityList.h"
+#define SL5(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4();
+#define SL10(p) SL5(p##a) SL5(p##b)
+struct EngineIdx {
+    SL10(e0) SL10(e1) SL10(e2) SL5(e3)
+    virtual int v35(int edict);
+};
+extern CGlobalEntityList g_106eb5d8;
+extern EngineIdx *g_1070b22c;
+extern char g_10538764[];
+extern char g_105706f0[];
+extern "C" void *__cdecl __RTDynamicCast(void *inptr, long vfDelta, void *srcType, void *targetType, int isReference);
+
+void CFuncMonitor::sub_101150f0(const char *szName)
+{
+    CPointCamera *pCamera = (CPointCamera *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, szName, 0, 0), 0, g_10538764, g_105706f0, 0);
+    *(CPointCamera **)((char *)this + 0x45c) = pCamera;
+    if (pCamera)
+        *(int *)((char *)this + 0x458) = g_1070b22c->v35(pCamera->m_pEdict2e0);
+    else
+        *(int *)((char *)this + 0x458) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101151a0 size=0xa
 struct CUnknown101151a0 { char p[0x204]; unsigned int a; unsigned int sub_101151a0(); };
 // TARGET: CUnknown101151a0::sub_101151a0
