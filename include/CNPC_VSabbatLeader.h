@@ -66,4 +66,7 @@ public:
 	bool sub_103aabc0();	// "CNPC_VSabbatLeader::PlayerDamaged...": scope trace, true when the player entity (handle at +0x628c) is live and its stat 0xf (first non-pending list) is at least a constant above the value recorded at +0x66cc
 	void vfunc432(int arg);	// slot 432 override (the RunAI-like tick): scope trace, CNPC_VHuman::vfunc432(arg), then UpdateBloodSplash
 	void sub_1000698d(int arg);	// CNPC_VHuman::vfunc432, called directly
+	void vfunc420();	// "CNPC_VSabbatLeader::NPCInit" (slot 420 override): scope trace, CNPC_VVampireBoss::vfunc420, resets the boss state (+0x66b8..+0x66e5), the Andrei model and class name, the two powerup emitters, RecordPlayerHealth
+	void sub_10013e85();	// CNPC_VVampireBoss::vfunc420 (stub 0x10013e85), called directly
+	void sub_10010fd7(int index, const char *pszEmitterName);	// CNPC_VVampireBoss::sub_103c6df0 (stub 0x10010fd7): sets the body emitter name of an index
 };
