@@ -14,6 +14,7 @@ public:
 	CUnknown1024b2d0 m_list;	// +0x14
 
 	CExpressionTable();
+	~CExpressionTable();	// scope trace, destroys m_list, then purges the memory block twice (utl-vector destructor)
 	bool IsValidExpression(int index);	// 0 <= index < m_field0c
 	void sub_10105090(int index);	// "CBaseCombatCharacter::GetExpress..." callee
 	int sub_101051b0(int index);	// "CExpressionTable::GetExpressionData": scope trace, address of record index (0 when out of range)
