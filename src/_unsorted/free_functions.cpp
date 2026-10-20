@@ -14322,6 +14322,60 @@ char *sub_100c7560(CStudioHdr *pHdr, int index, CStudioHdr **ppOwner)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c7900 size=0xca
+struct StudioHdr;
+
+struct IncludeModelProvider
+{
+	virtual void v0();
+	virtual StudioHdr *vfunc1(StudioHdr *pHdr, int index);
+};
+
+struct IncludeModel
+{
+	int m_pad0000;
+	IncludeModelProvider *m_pProvider;	// 0x04
+	int m_nBaseSequence;	// 0x08
+	int m_nNumSequences;	// 0x0c
+	int m_nBoneRemapIndex;	// 0x10
+	char m_pad0014[0x74 - 0x14];
+};
+
+struct StudioHdr
+{
+	char m_pad0000[0xf0];
+	int numbones;	// 0xf0
+	char m_pad00f4[0x110 - 0xf4];
+	int numseq;	// 0x110
+	int seqindex;	// 0x114
+	char m_pad0118[0x194 - 0x118];
+	int numincludemodels;	// 0x194
+	int includemodelindex;	// 0x198
+};
+
+int sub_100118dd(StudioHdr *pHdr, int iSequence, int iBone);	// the stub of this function, used by its recursion
+
+int sub_100c7900(StudioHdr *pHdr, int iSequence, int iBone)
+{
+	if (pHdr && iSequence >= 0 && iBone >= 0 && iBone < pHdr->numbones) {
+		if (iSequence < pHdr->numseq)
+			return iBone;
+		for (int j = 0; j < pHdr->numincludemodels; j++) {
+			IncludeModel *pInc = (IncludeModel *)((char *)pHdr + (pHdr->includemodelindex + j * sizeof(IncludeModel)));
+			if (pInc->m_nBaseSequence <= iSequence && pInc->m_nBaseSequence + pInc->m_nNumSequences > iSequence && pInc->m_pProvider) {
+				StudioHdr *pSub = pInc->m_pProvider->vfunc1(pHdr, j);
+				if (pSub) {
+					int r = sub_100118dd(pSub, iSequence - pInc->m_nBaseSequence, *(short *)((char *)pInc + pInc->m_nBoneRemapIndex + iBone * 0x38));
+					if (r >= 0)
+						return r;
+				}
+			}
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c81b0 size=0x8e
 #include "CUnknown100c81b0.h"
 

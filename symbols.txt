@@ -3300,6 +3300,7 @@
 0x10011892 func   ?sub_101a0830@CSave@@QAEHPAUCSaveEdict@@@Z CSave::sub_101a0830
 0x100118b0 func   ?sub_1034b520@CUnknown1034b520@@QAEXH@Z CUnknown1034b520::sub_1034b520
 0x100118d3 func   ?sub_101f4280@@YIHPAH@Z sub_101f4280
+0x100118dd func   ?sub_100c7900@@YAHPAUStudioHdr@@HH@Z sub_100c7900
 0x100118f6 func   ?sub_101dae70@S6@@QAEPAU1@H@Z S6::sub_101dae70
 0x10011937 func   ?vfunc2@CTEBloodSprite@@UAEPAV1@I@Z CTEBloodSprite::vfunc2
 0x1001193c func   ?sub_1033c830@CBaseCombatCharacter@@QAEXI@Z CBaseCombatCharacter::sub_1033c830
