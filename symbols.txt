@@ -3030,6 +3030,7 @@
 0x10013552 func   ?vfunc5@CItemGWarrLedger2@@QAEPAV1@I@Z CItemGWarrLedger2::vfunc5
 0x10013557 func   ?vfunc7@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc7
 0x10013575 func   _light_spot light_spot
+0x10013598 func   ?sub_102ce9a0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102ce9a0
 0x100135b1 func   ?sub_1007ed50@CUnknown1007ecf0@@QAEXH@Z CUnknown1007ecf0::sub_1007ed50
 0x100135c0 func   ?sub_10224150@@YIXPAUCSlots@@HH@Z sub_10224150
 0x100135d4 func   ?sub_102a96f0@@YIXPAUTroikaStub@@@Z sub_102a96f0
