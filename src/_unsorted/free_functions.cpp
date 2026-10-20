@@ -48508,6 +48508,34 @@ int CUnknown10332fc0::sub_10332fc0(void *pSpeaker)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103343f0 size=0xc9
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+extern char g_10620e54[];
+extern char g_10620e7c[];
+extern void (*g_109f3628)(const char *fmt, ...);
+#define AV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct AmmoDef { int sub_1000df3f(); };
+struct AmmoDefs
+{
+    AV(a0) AV(a1) AV(a2) AV(a3) AV(a4)
+    virtual void a50(); virtual void a51(); virtual void a52(); virtual void a53(); virtual void a54();
+    virtual AmmoDef *vfunc55(const char *name);
+};
+extern AmmoDefs *g_1070ba0c;
+int CBaseCombatCharacter::sub_103343f0(int count, const char *pszAmmoName)
+{
+    ScopeTrace t(g_10620e54, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    int index = g_1070ba0c->vfunc55(pszAmmoName)->sub_1000df3f();
+    if (index == -1) {
+        g_109f3628(g_10620e7c, pszAmmoName);
+        return 0;
+    }
+    return vfunc374(count, index, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10334500 size=0x9d
 #include "CBaseCombatCharacter.h"
 
