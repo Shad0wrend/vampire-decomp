@@ -5368,6 +5368,27 @@ void sub_10061e80(void *pFilter, int delay, const float *pOrigin, int a, int b, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10061f70 size=0x24
+#include "CTEFizz.h"
+
+extern int vt_1044de6c[];
+
+struct CBaseTempEntityHeadPlaceholder {
+    void sub_10015334(int a);
+};
+
+// TARGET: CTEFizz::sub_10061f70
+CTEFizz *CTEFizz::sub_10061f70(int a)
+{
+    ((CBaseTempEntityHeadPlaceholder *)this)->sub_10015334(a);
+    *(int **)this = vt_1044de6c;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10063880 size=0xea
 #include "CTEShatterSurface.h"
 
