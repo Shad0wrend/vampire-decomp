@@ -758,6 +758,40 @@ int CBaseCombatCharacter::vfunc143(float flHealth, int bitsDamageType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032fb80 size=0x98
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+#define SL5(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4();
+#define SL10(p) SL5(p##a) SL5(p##b)
+#define SL50(p) SL10(p##a) SL10(p##b) SL10(p##c) SL10(p##d) SL10(p##e)
+struct PoseSetter {
+    SL50(q0) SL50(q1) SL50(q2) SL50(q3) SL50(q4) SL50(q5) SL10(q6a) SL10(q6b) SL10(q6c) SL10(q6d) SL5(q7)
+    virtual void q8();
+    virtual void vfunc346(int pose, int a, int b);
+};
+
+// TARGET: CBaseCombatCharacter::vfunc345
+void CBaseCombatCharacter::vfunc345(const char *pszName, int a, int b)
+{
+    const char *ent;
+    if (this != 0) {
+        ent = m_name26c;
+        if (ent == 0)
+            ent = g_106b8540;
+    } else
+        ent = "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::SetPoseParameter";
+    g_109f3620[*g_109f3680].b = ent;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    ((PoseSetter *)this)->vfunc346(sub_10092270(pszName), a, b);
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103315e0 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
