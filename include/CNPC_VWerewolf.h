@@ -36,6 +36,16 @@ struct CNPC_VWerewolfTimerVec
 	}
 };
 
+// CUtlVector<int> embedded at +0x668c (the most recent schedule changes, at most 50 are kept).
+struct CNPC_VWerewolfIntVec
+{
+	int *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	int *m_pElements;
+};
+
 struct CNPC_VWerewolfVec3
 {
 	float x, y, z;
@@ -88,7 +98,9 @@ public:
 	CNPC_VWerewolfTimerVec m_Timers;	// 0x665c
 	int m_nCacheTick;	// 0x6670: engine tick of the cached vector
 	CNPC_VWerewolfVec3 m_vCache;	// 0x6674: cached vector
-	char pad6680[0x66b0 - 0x6680];
+	char pad6680[0x668c - 0x6680];
+	CNPC_VWerewolfIntVec m_History;	// 0x668c
+	char pad66a0[0x66b0 - 0x66a0];
 	CNPC_VWerewolfHint66b0 *m_pHint66b0;	// 0x66b0
 	char pad66b4[0x66c8 - 0x66b4];
 	char m_b66c8;	// 0x66c8
@@ -145,4 +157,5 @@ public:
 	const char *sub_1027ede0(int condition);	// CAI_BaseNPC::vfunc408 (stub 0x10011590), called directly
 	int vfunc440(int schedule);	// slot 440 "CNPC_VWerewolf::TranslateSchedule": scope trace (entity name), schedules 0x43 / 0xb7 / 0xf0 become 0x15c / 0x157 / 0xb1 (recording the source file and line in the fields at +0x1b30 / +0x1b34), everything else goes to CAI_BaseNPCTroika::vfunc440
 	int sub_102b12f0(int schedule);	// CAI_BaseNPCTroika::vfunc440 (stub 0x10001997), called directly
+	void vfunc435(int arg);	// slot 435 "CNPC_VWerewolf::OnScheduleChange": scope trace (entity name), the base implementation, then drops the oldest entry of the history at +0x668c once it holds more than 50 and appends arg
 };
