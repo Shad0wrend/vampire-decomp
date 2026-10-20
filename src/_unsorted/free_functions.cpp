@@ -18189,6 +18189,22 @@ void UtlVec8::sub_101b6a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6b90 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_101b6b90()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6d60 size=0xf9
 #include "CUtlRBTree232.h"
 
