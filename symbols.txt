@@ -1805,6 +1805,7 @@
 0x1000c103 func   ?vfunc5@CNPC_VMingXiaoTentacle@@QAEPAV1@I@Z CNPC_VMingXiaoTentacle::vfunc5
 0x1000c126 func   _info_node_cover_low info_node_cover_low
 0x1000c12b func   _weapon_physcannon weapon_physcannon
+0x1000c144 func   ?sub_10185140@UtlMem@@QAEXXZ UtlMem::sub_10185140
 0x1000c16c func   ?vfunc5@CItemGEyes@@QAEPAV1@I@Z CItemGEyes::vfunc5
 0x1000c18a func   ?vfunc359@CNPC_VGargoyle@@UAEHH@Z CNPC_VGargoyle::vfunc359
 0x1000c1a3 func   ?sub_100732f0@UtlMem5@@QAEXH@Z UtlMem5::sub_100732f0
