@@ -3801,6 +3801,7 @@
 0x10013fa7 func   ?sub_103bf200@CUnknown103bf200@@QAEXH@Z CUnknown103bf200::sub_103bf200
 0x10013fca func   ?sub_100ea1e0@CUnknown100ea1e0@@QAEXDPAD0@Z CUnknown100ea1e0::sub_100ea1e0
 0x10013fed func   ?sub_101e0df0@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101e0df0
+0x10013ff7 func   ?vfunc5@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc5
 0x10013ffc func   ?sub_10042680@UtlMem@@QAEXXZ UtlMem::sub_10042680
 0x10014006 func   _item_w_crossbow_flaming item_w_crossbow_flaming
 0x10014010 func   _npc_VSheriffSwarm npc_VSheriffSwarm

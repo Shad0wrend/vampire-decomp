@@ -79,3 +79,63 @@ void CSoundSchemeManager::vfunc2()
     m_b08 = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102287a0 size=0xce
+#include "CSoundSchemeManager.h"
+
+extern void (*g_109f3624)(void *);
+
+struct SoundSchemeVec
+{
+	void *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	void *m_pElements;
+};
+
+// TARGET: CSoundSchemeManager::vfunc5
+void CSoundSchemeManager::vfunc5()
+{
+	sub_102288b0();
+	void (*pfnFree)(void *) = g_109f3624;
+	m_b08 = 0;
+	SoundSchemeVec *v;
+	v = (SoundSchemeVec *)((char *)this + 0x188);
+	v->m_size = 0;
+	if (v->m_growSize != -1)
+	{
+		if (v->m_pMemory)
+		{
+			pfnFree(v->m_pMemory);
+			v->m_pMemory = 0;
+		}
+		v->m_allocationCount = 0;
+	}
+	v->m_pElements = v->m_pMemory;
+	v = (SoundSchemeVec *)((char *)this + 0x174);
+	v->m_size = 0;
+	if (v->m_growSize != -1)
+	{
+		if (v->m_pMemory)
+		{
+			pfnFree(v->m_pMemory);
+			v->m_pMemory = 0;
+		}
+		v->m_allocationCount = 0;
+	}
+	v->m_pElements = v->m_pMemory;
+	v = (SoundSchemeVec *)((char *)this + 0x19c);
+	v->m_size = 0;
+	if (v->m_growSize != -1)
+	{
+		if (v->m_pMemory)
+		{
+			pfnFree(v->m_pMemory);
+			v->m_pMemory = 0;
+		}
+		v->m_allocationCount = 0;
+	}
+	v->m_pElements = v->m_pMemory;
+}
+// END FUNCTION
