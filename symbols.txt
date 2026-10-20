@@ -1010,6 +1010,7 @@
 0x1000696f func   ?sub_100eb060@@YGII@Z sub_100eb060
 0x1000697e func   _npc_VTzimisceRunner npc_VTzimisceRunner
 0x10006992 func   ?sub_102d1220@CUnknown102d1220@@QAE_NHPBD@Z CUnknown102d1220::sub_102d1220
+0x10006997 func   ?sub_1016e500@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1016e500
 0x100069a6 func   ?sub_10146790@CUnknown10146790@@QAEXXZ CUnknown10146790::sub_10146790
 0x100069ba func   ?vfunc254@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc254
 0x100069ce func   ?vfunc5@CNPC_VWolfMorph@@QAEPAV1@I@Z CNPC_VWolfMorph::vfunc5

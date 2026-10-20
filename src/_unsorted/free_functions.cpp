@@ -18910,6 +18910,25 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016e500 size=0x84
+#include "CCollisionProperty.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+void CBaseEntity::sub_1016e500(int solid)
+{
+	const char *n = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseEntity::SetSolid";
+	g_109f3620[*g_109f3680].b = n;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(solid);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016e650 size=0x16d
 #include "CUnknown1070b22c.h"
 
