@@ -15,7 +15,10 @@ class CBaseCombatCharacter : public CBaseEntity
 {
 public:
 	// Placeholder slots 134..251 (the base declares slots up to 133).
-	CBCC_SLOTS10(a0) CBCC_SLOTS10(a1) CBCC_SLOTS10(a2) CBCC_SLOTS10(a3) CBCC_SLOTS10(a4)
+	virtual void a00(); virtual void a01(); virtual void a02(); virtual void a03(); virtual void a04();
+	virtual void a05(); virtual void a06(); virtual void a07(); virtual void a08();
+	virtual int vfunc143(float flHealth, int bitsDamageType);	// "CBaseCombatCharacter::TakeHealth": scope trace (entity name), 0 when the take-damage mode at +0x1fc is zero, else CBaseEntity::vfunc143
+	CBCC_SLOTS10(a1) CBCC_SLOTS10(a2) CBCC_SLOTS10(a3) CBCC_SLOTS10(a4)
 	CBCC_SLOTS10(a5) CBCC_SLOTS10(a6) CBCC_SLOTS10(a7) CBCC_SLOTS10(a8)
 	virtual void a90(); virtual void a91(); virtual void a92(); virtual void a93();
 	virtual void vfunc228(int a, int b);	// "CBaseCombatCharacter::VPhysicsShadowCollision"-like: scope trace, forwards to slot 75(a, b)
