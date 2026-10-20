@@ -68411,6 +68411,16 @@ int sub_10428eb0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428fd0 size=0x10
+unsigned int sub_10428fd0(char *p)
+{
+    if (p == 0) {
+        return 0;
+    }
+    return *(unsigned int *)(p + 0x100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10429240 size=0xc
 extern const char *g_106ac3a0[];
 const char *sub_10429240(int index)
