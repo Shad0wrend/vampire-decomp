@@ -2,8 +2,7 @@
 #pragma once
 #include "CAI_Component.h"
 #include "UtlMem.h"
-
-extern void (* const g_109f3624)(void *);	// the game's Plat_Free
+#include "CAnchorList.h"	// g_109f3624, the game's Plat_Free
 
 struct CAI_SensesVec	// a CUtlVector<int>: memory (pointer, allocation count, grow size), size, element pointer
 {
