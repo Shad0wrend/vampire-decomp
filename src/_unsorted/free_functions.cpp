@@ -29723,6 +29723,16 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc810(void **p) { ((Fn *)*p)[246](p); }
 // END FUNCTION
 
+// FUNCTION: 0x101ccd40 size=0x11
+int __fastcall sub_101ccd40(int *p)
+{
+    if (p[0] < p[1]) {
+        return p[p[0] + 2];
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cd070 size=0x73
 struct EntInfo { void *ent; unsigned int serial; int pad; };
 struct EntList {
