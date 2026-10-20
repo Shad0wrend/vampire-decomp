@@ -13,6 +13,8 @@ struct CVStatSubCost_t
 	void sub_101fb980(const char *str);	// "CVStatSubCost_t::Parse": scope trace; "Current_Rating..." gives type 9999 and the first number after it (+4), "Table: a, b, c" type 9998 with a heap array of the numbers (count at +0xc, array at +0x10), else the plain number is the type
 };
 
+struct CVStatKV;	// a KeyValues-like object (slot 2 = FindKey, slot 13 = GetString)
+
 class CVStatCost_t
 {
 public:
@@ -23,4 +25,5 @@ public:
 	void sub_101fc0d0();	// "CVStatCost_t::Null": scope trace, nulls both sub costs
 	int sub_101fc350(int level, bool bFirst);	// "CVStatCost_t::GetCostToBuy": scope trace, GetCostToBuy of the first (bFirst) or second sub cost
 	int sub_101fc410(int level, bool bFirst);	// "CVStatCost_t::GetCostToSell": scope trace, GetCostToSell of the first (bFirst, forced) or second sub cost
+	bool sub_101fc220(CVStatKV *pKV);	// "CVStatCost_t::Load": scope trace; reads the "Costs" sub key's "New" and "Raise" strings into the two sub costs, then copies the non-null one over a null one; false without a sub key
 };
