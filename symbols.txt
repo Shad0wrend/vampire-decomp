@@ -2774,6 +2774,7 @@
 0x10012369 func   ?vfunc490@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc490
 0x100123ff func   ?sub_102ce8e0@CUtlVector4@@QAEXH@Z CUtlVector4::sub_102ce8e0
 0x1001241d func   ?sub_101e8080@CUnknown101e8080@@QAEXPAHPAXMH@Z CUnknown101e8080::sub_101e8080
+0x1001244a func   ?sub_10406560@@YAHXZ sub_10406560
 0x10012477 func   ?sub_101cd070@@YGPAUEnt@@PAU1@@Z sub_101cd070
 0x10012486 func   ?sub_101e86e0@S@@QAEXPAUP@@@Z S::sub_101e86e0
 0x100124a4 func   _point_camera point_camera
