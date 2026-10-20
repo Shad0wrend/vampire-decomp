@@ -8,6 +8,7 @@
 class CRestore;
 class CEntityMapData;
 struct inputdata_t;
+struct CVariantCopy;
 
 struct CBaseEntityColor32	// four bytes passed by value to the Dump helpers
 {
@@ -66,7 +67,8 @@ public:
 	virtual bool vfunc110(const char *key, const char *value); virtual void vfunc111(); virtual void vfunc112(); virtual void vfunc113();
 	virtual void vfunc114(); virtual void vfunc115();
 	virtual int vfunc116();
-	virtual void vfunc117(); virtual void vfunc118(); virtual void vfunc119();
+	virtual void vfunc117(); virtual void vfunc118(const char *pszInputName, CBaseEntity *pActivator, CBaseEntity *pCaller, CVariantCopy value, int outputID);	// slot 118 "CBaseEntity::AcceptInput" (variant passed by value) 
+	virtual void vfunc119();
 	virtual void vfunc120(const char *key, float *pos, float *ang);	// "CBaseEntity::GetInputDispatchEffectPosition": scope trace (entity name), copies GetAbsOrigin() to pos and GetAbsAngles() to ang
 	virtual void vfunc121(); virtual void vfunc122(const char *classname);	// slot 122 "CBaseEntity::SetClassname": scope trace (entity name), stores the pooled string at +0x11c, then slot 13(string or "")
 	virtual void vfunc123(); virtual void vfunc124();
