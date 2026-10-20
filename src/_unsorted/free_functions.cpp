@@ -30063,6 +30063,34 @@ char HOwner::sub_101e9a80(const char* name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9e20 size=0xc0
+#include "CHistoryList.h"
+#include "FileSystemViews.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+extern IFileSystemView *g_1070b238;
+
+void CHistoryList::sub_101e9e20()
+{
+	int handle;
+	char szFile[260];
+	if (g_1070b238->FindFirst("vdata\\system\\Histories*.txt", &handle)) {
+		int count = 1;
+		while (g_1070b238->FindNext(handle))
+			count++;
+		g_1070b238->FindClose(handle);
+		if (count > 0) {
+			for (int i = 0; i < count; i++) {
+				sprintf(szFile, "%sHistories%03d.txt", "vdata\\system\\", i);
+				if (!sub_101e9b60(szFile))
+					Msg("Unable to open History List data file for: %s\n", szFile);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eaa40 size=0xa
 extern int g_1073a38c;
 

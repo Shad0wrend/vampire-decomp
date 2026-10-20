@@ -2328,6 +2328,7 @@
 0x1000cbbc func   ?sub_1018ec20@@YAXPAVCBaseEntity@@M@Z sub_1018ec20
 0x1000cbd0 func   _env_firesource env_firesource
 0x1000cbda func   ?sub_10046b10@@YA_NPBI0@Z sub_10046b10
+0x1000cbdf func   ?sub_101e9e20@CHistoryList@@QAEXXZ CHistoryList::sub_101e9e20
 0x1000cbe9 func   ?vfunc5@CTriggerVolume@@QAEPAV1@I@Z CTriggerVolume::vfunc5
 0x1000cbf3 func   ?sub_100bdd20@bf_write@@QAEXI@Z bf_write::sub_100bdd20
 0x1000cc02 func   ?sub_10080750@CUnknown10080750@@QAEXH@Z CUnknown10080750::sub_10080750
