@@ -48680,6 +48680,36 @@ void *CBaseCombatCharacter::sub_10335950(const char *pszClassname)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10335a70 size=0xc7
+#include "CBaseCombatCharacter.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+class CUnknown1073a300
+{
+public:
+	bool sub_101ed0f0(int a, int b);
+};
+extern CUnknown1073a300 g_1073a300;
+
+// TARGET: CBaseCombatCharacter::sub_10335a70
+bool CBaseCombatCharacter::sub_10335a70(CBaseEntity *pOther)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Inventory_Can_Wield", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pOther)
+	{
+		int edictOther = pOther->m_pEdict2e0;
+		int edictThis = m_pEdict2e0;
+		int a = g_1070b22c->vfunc35(edictThis);
+		int b = g_1070b22c->vfunc35(edictOther);
+		return g_1073a300.sub_101ed0f0(a, b);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103360a0 size=0xa0
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
