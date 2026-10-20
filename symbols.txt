@@ -3989,6 +3989,7 @@
 0x100139bc func   ?sub_1019e740@@YG_NPAUEntVt@@HPAM@Z sub_1019e740
 0x100139d0 func   ?sub_10100ef0@@YAPAHXZ sub_10100ef0
 0x100139df func   ?sub_10077890@CUnknown10077890@@QAEXH@Z CUnknown10077890::sub_10077890
+0x100139ee func   ?sub_102f97c0@CRelSetUnit@@QAEXD@Z CRelSetUnit::sub_102f97c0
 0x100139f8 func   ?sub_100c8990@CBaseButton@@QAE_NH@Z CBaseButton::sub_100c8990
 0x100139fd func   ?vfunc5@CNPC_VSheriffSwarm@@QAEPAV1@I@Z CNPC_VSheriffSwarm::vfunc5
 0x10013a0c func   ?sub_101a1400@SRestore@@QAEPAU1@E@Z SRestore::sub_101a1400

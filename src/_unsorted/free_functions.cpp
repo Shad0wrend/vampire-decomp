@@ -51176,6 +51176,63 @@ void CUnknown102f95d0::sub_102f95d0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f97c0 size=0xd0
+extern int g_106c994c;
+struct CRelElemUnit {
+    char sub_102f98d0();
+};
+struct CRelPairUnit {
+    char pad0[4];
+    int m_a;
+    int m_b;
+    char pad0c[0x64 - 0xc];
+    unsigned int m_flags;	// 0x64
+    int sub_102dda40(int key);
+};
+struct CRelVecUnit {
+    int m_nCount;
+    CRelElemUnit **m_pData;
+    CRelElemUnit *At(int i)
+    {
+        if (i >= 0 && i < m_nCount)
+            return m_pData[i];
+        g_106c994c++;
+        return 0;
+    }
+};
+struct CRelSetUnit {
+    char pad0[4];
+    int m_nKey;	// 0x04
+    char pad08[0x78 - 8];
+    int m_nItems;	// 0x78
+    CRelPairUnit **m_pItems;	// 0x7c
+    char pad80[0x98 - 0x80];
+    CRelVecUnit *m_pVec;	// 0x98
+    void sub_102f97c0(char bClear);
+};
+
+// TARGET: CRelSetUnit::sub_102f97c0
+void CRelSetUnit::sub_102f97c0(char bClear)
+{
+    if (m_nItems > 0) {
+        int i = 0;
+        if (bClear) {
+            for (; i < m_nItems; i++) {
+                CRelPairUnit *p = m_pItems[i];
+                if (m_pVec->At(p->sub_102dda40(m_nKey))->sub_102f98d0())
+                    p->m_flags &= 0xffffff0f;
+            }
+        } else {
+            for (; i < m_nItems; i++) {
+                CRelPairUnit *p = m_pItems[i];
+                if (m_pVec->At(p->sub_102dda40(m_nKey))->sub_102f98d0())
+                    p->m_flags |= 0xf0;
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9900 size=0xd
 extern int g_10610be8;
 extern char g_1093412c;
