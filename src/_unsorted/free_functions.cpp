@@ -40789,6 +40789,40 @@ bool CUnknown102ee120_x::sub_102f1690(HelperParams102f1690 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f1fa0 size=0x90
+#include "CAI_Navigator.h"
+struct CGlobalVarsX { char pad[0xc]; float curtime; };
+extern CGlobalVarsX *g_1070b228;
+extern int g_106c994c;
+
+void CAI_Navigator::sub_102f1fa0(float flDelay, CAI_NavSource *pSource)
+{
+	if (m_b50 && m_p30 && m_p30->m_pWaypoint) {
+		int iProvider = m_p30->m_nProvider;
+		int iEntry = m_p30->m_pWaypoint->m_nEntryId;
+		if (iProvider != -1 && iEntry != -1) {
+			CAI_NavProviderList *pList = m_pProviders;
+			CAI_NavProvider *pProvider;
+			if (iProvider >= 0 && iProvider < pList->m_nCount) {
+				pProvider = pList->m_ppItems[iProvider];
+			} else {
+				g_106c994c++;
+				pProvider = 0;
+			}
+			CAI_NavEntry *pEntry = pProvider->sub_102f9400(iEntry);
+			if (pEntry) {
+				pEntry->m_flags |= 1;
+				pEntry->m_flTime = flDelay + g_1070b228->curtime;
+				if (pSource)
+					pEntry->m_hHandle = *pSource->vfunc1();
+				else
+					pEntry->m_hHandle = -1;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f2d10 size=0x9a
 void sub_102f2d10(float *color, int mode, unsigned int flags)
 {

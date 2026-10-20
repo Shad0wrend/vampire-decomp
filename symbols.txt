@@ -3103,6 +3103,7 @@
 0x10011a1d func   ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z CBaseEntity::vfunc120
 0x10011a36 func   ?vfunc0@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCSave@@@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc0
 0x10011a3b func   _entityflame entityflame
+0x10011a4f func   ?sub_102f1fa0@CAI_Navigator@@QAEXMPAUCAI_NavSource@@@Z CAI_Navigator::sub_102f1fa0
 0x10011a54 func   ?sub_100b37a0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b37a0
 0x10011a68 func   ?sub_100f4190@@YAXPBDHH@Z sub_100f4190
 0x10011a6d func   ?sub_10147c10@@YAPAHXZ sub_10147c10
