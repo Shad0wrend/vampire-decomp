@@ -116,3 +116,20 @@ char CRestore::vfunc16()
 	return c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a2460 size=0x96
+#include "CRestore.h"
+#include <string.h>
+
+// TARGET: CRestore::vfunc28
+int CRestore::vfunc28(CBaseEntity **pValues, int count, int nBytesAvailable)
+{
+    int ids[256];
+    int nRead = vfunc15(ids, count, nBytesAvailable);
+    for (int i = 0; i < nRead; i++)
+        pValues[i] = sub_101a2390(ids[i]);
+    if (nRead < count)
+        memset(&pValues[nRead], 0, (count - nRead) * sizeof(CBaseEntity *));
+    return nRead;
+}
+// END FUNCTION
