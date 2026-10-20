@@ -2449,6 +2449,7 @@
 0x1001096f func   ?sub_103e5380@@YAHXZ sub_103e5380
 0x10010974 func   ?sub_103e5020@@YAHXZ sub_103e5020
 0x10010979 func   ?sub_1012cf30@@YGXH@Z sub_1012cf30
+0x100109b5 func   ?sub_103f8b30@@YAHXZ sub_103f8b30
 0x100109ba func   _prop_switch prop_switch
 0x100109c9 func   _item_g_garys_photo item_g_garys_photo
 0x100109e2 func   ?sub_100b4950@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100b4950
