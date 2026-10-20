@@ -14077,6 +14077,25 @@ int *sub_10135a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136260 size=0x43
+#include "CLogicRelay.h"
+void *sub_100aa720(int size);
+extern char g_105792fc[];
+
+// TARGET: logic_relay
+extern "C" CBaseEntity *logic_relay()
+{
+	void *mem = sub_100aa720(0x46c);
+	CLogicRelay *p;
+	if (mem)
+		p = ((CLogicRelay *)mem)->sub_101363b0();
+	else
+		p = 0;
+	p->vfunc106(g_105792fc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136330 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
