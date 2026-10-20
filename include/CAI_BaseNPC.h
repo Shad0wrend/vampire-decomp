@@ -4,6 +4,8 @@
 // The vtable has at least 569 slots; add the ones past 568 as they turn up.
 #pragma once
 
+#include "Vector.h"
+
 class CBaseEntity;
 class CAI_Motor;
 
@@ -26,8 +28,14 @@ public:
 	CAI_NPC_V(160) CAI_NPC_V(161) CAI_NPC_V(162) CAI_NPC_V(163) CAI_NPC_V(164) CAI_NPC_V(165) CAI_NPC_V(166)
 	virtual int vfunc167();	// the NPC's squad/classification id (compared between a squad member and its leader)
 	CAI_NPC_V(168) CAI_NPC_V(169)
-	CAI_NPC_V10(17) CAI_NPC_V10(18) CAI_NPC_V10(19)
-	CAI_NPC_V10(20) CAI_NPC_V10(21)
+	CAI_NPC_V10(17) CAI_NPC_V10(18)
+	CAI_NPC_V(190) CAI_NPC_V(191)
+	virtual Vector vfunc192();	// returns a vector by value (hidden result pointer)
+	CAI_NPC_V(193) CAI_NPC_V(194) CAI_NPC_V(195) CAI_NPC_V(196) CAI_NPC_V(197) CAI_NPC_V(198) CAI_NPC_V(199)
+	CAI_NPC_V10(20)
+	CAI_NPC_V(210) CAI_NPC_V(211) CAI_NPC_V(212) CAI_NPC_V(213) CAI_NPC_V(214) CAI_NPC_V(215) CAI_NPC_V(216)
+	virtual float *vfunc217();	// "CBaseEntity::GetAbsOrigin"
+	CAI_NPC_V(218) CAI_NPC_V(219)
 	CAI_NPC_V(220)
 	virtual float *vfunc221();	// "CBaseEntity::GetAngles": the pointer to the three angle floats at +0x428
 	CAI_NPC_V(222) CAI_NPC_V(223) CAI_NPC_V(224) CAI_NPC_V(225) CAI_NPC_V(226) CAI_NPC_V(227) CAI_NPC_V(228) CAI_NPC_V(229)
