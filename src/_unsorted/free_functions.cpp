@@ -7532,6 +7532,41 @@ void CBaseAnimating::sub_10092610(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10092c90 size=0x8e
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+int CBaseAnimating::sub_10092c90()
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseAnimating::GetNumBones ";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	int *p = (int *)sub_100952d0(-1);
+	if (p) {
+		int r = p[0xf0 / 4];
+		(*g_109f3680)--;
+		return r;
+	}
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10092e20 size=0x94
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
