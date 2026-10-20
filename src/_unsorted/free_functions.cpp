@@ -19915,6 +19915,29 @@ void *Helper::sub_10177ab0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c830 size=0x9a
+#include "QuestJournal.h"
+#include <string.h>
+extern QuestJournal g_1074f8f8;
+
+// TARGET: CBasePlayer::sub_1017c830
+void CBasePlayer::sub_1017c830()
+{
+    g_1074f8f8.sub_10221270();
+    for (int i = 0; i < *(int *)((char *)this + 0x1d74); i++) {
+        char *rec = *(char **)((char *)this + 0x1d68) + i * 0x40;
+        for (int j = 0; j < g_1074f8f8.m_field[8]; j++) {
+            char *quest = g_1074f8f8.sub_10221b10(j);
+            if (_strcmpi(*(char **)quest, rec) == 0) {
+                *(int *)(rec + 0x30) = j;
+                *(int *)(quest + 0x10) = *(int *)(rec + 0x34);
+                *(int *)(quest + 0xc) = *(int *)(rec + 0x38);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017cb80 size=0x7b
 #include "CUnknown1017cb80.h"
 #include "QuestJournal.h"
