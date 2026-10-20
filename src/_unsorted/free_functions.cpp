@@ -54761,6 +54761,29 @@ char sub_103a5da0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103aa960 size=0xd4
+#include "ScopeTrace.h"
+#include "CNPC_VSabbatLeader.h"
+
+struct S_1070b228 { char pad[0xc]; float curtime; };
+extern S_1070b228 *g_1070b228;
+extern float g_104c3cdc;
+
+void CNPC_VSabbatLeader::sub_103aa960()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::UpdateBloodSplash", g_106b8540);
+	if (!m_b66d5) {
+		if (0 < (*(int *)(0x3e0 + (char *)this)) && (0 == (int)m_n66c4 || g_1070b228->curtime > (g_104c3cdc + m_f66c8))) {
+			sub_1000136b("bloodsplash_emitter", 0);
+			if (m_n66c4 == 0)
+				sub_1000136b("bloodbigsplash_emitter", 0);
+			m_f66c8 = g_1070b228->curtime;
+		}
+		m_n66c4 = *(int *)(0x3e0 + (char *)this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103aba00 size=0x43
 #include "CNPC_VScurrying.h"
 void *sub_100aa720(int size);

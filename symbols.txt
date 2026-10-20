@@ -2363,6 +2363,7 @@
 0x1000cc43 func   ?sub_1006c0a0@CUnknown1006bea0@@QAEXPAD@Z CUnknown1006bea0::sub_1006c0a0
 0x1000cc5c func   ?vfunc0@CVoiceGameMgr@@QAEPAV1@I@Z CVoiceGameMgr::vfunc0
 0x1000cc7f func   ?sub_10227410@CUnknown10227410@@QAEXH@Z CUnknown10227410::sub_10227410
+0x1000cca7 func   ?sub_103aa960@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::sub_103aa960
 0x1000ccde func   _item_w_werewolf_attacks item_w_werewolf_attacks
 0x1000cce8 func   ?sub_10189660@@YAXPAVCBaseEntity@@HH@Z sub_10189660
 0x1000ccf7 func   ?vfunc0@CAI_HumanoidMotor@@QAEPAV1@I@Z CAI_HumanoidMotor::vfunc0
