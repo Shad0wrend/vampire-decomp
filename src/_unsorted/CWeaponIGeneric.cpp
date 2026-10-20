@@ -39,3 +39,24 @@ void CWeaponIGeneric::vfunc321()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x103f4950 size=0x75
+#include "CWeaponIGeneric.h"
+struct Ent { bool sub_10336920(); };
+
+bool CWeaponIGeneric::vfunc315()
+{
+    Ent *pEnt = (Ent *)sub_10252240();
+    if (!pEnt)
+        return false;
+    char *pszName;
+    if (!pEnt->sub_10336920())
+        pszName = vfunc272();
+    else
+        pszName = vfunc273();
+    if (*pszName)
+        vfunc105(pszName);
+    char r = sub_10253b70(vfunc342(0), vfunc343(), 0xb4, vfunc344());
+    return r ? true : false;
+}
+// END FUNCTION

@@ -1661,6 +1661,7 @@
 0x1000a4bb func   ?sub_10231ed0@CUnknown10231ed0@@QAEIXZ CUnknown10231ed0::sub_10231ed0
 0x1000a4cf func   ?sub_10405d50@@YAHXZ sub_10405d50
 0x1000a4ed func   ?sub_103ee100@@YAHXZ sub_103ee100
+0x1000a4fc func   ?vfunc315@CWeaponIGeneric@@UAE_NXZ CWeaponIGeneric::vfunc315
 0x1000a50b func   ?sub_102b8c40@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102b8c40
 0x1000a51a func   ?sub_100420a0@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_100420a0
 0x1000a52e func   ?sub_1027ee90@@YAXXZ sub_1027ee90
