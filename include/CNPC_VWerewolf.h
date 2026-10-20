@@ -8,6 +8,7 @@ extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
 struct inputdata_t;
 struct CUnknown101c2a50;
+class CBaseEntity;
 
 struct CNPC_VWerewolfTimer
 {
@@ -62,7 +63,9 @@ public:
 	CNPC_VWerewolfHelper5d34 *m_pHelper5d34;	// 0x5d34
 	char pad5d38[0x665c - 0x5d38];
 	CNPC_VWerewolfTimerVec m_Timers;	// 0x665c
-	char pad6670[0x66b0 - 0x6670];
+	int m_nCacheTick;	// 0x6670: engine tick of the cached vector
+	CNPC_VWerewolfVec3 m_vCache;	// 0x6674: cached vector
+	char pad6680[0x66b0 - 0x6680];
 	CNPC_VWerewolfHint66b0 *m_pHint66b0;	// 0x66b0
 	char pad66b4[0x66c8 - 0x66b4];
 	char m_b66c8;	// 0x66c8
@@ -99,4 +102,6 @@ public:
 	void *sub_10335950(const char *pszClassname);	// CBaseCombatCharacter "Weapon_OwnsThisType"-like lookup by classname (stub 0x10015195), called directly
 	void sub_1033c6b0(unsigned int flags);	// CBaseCombatCharacter "AddMiscFlag" (stub 0x100153a7), called directly
 	void sub_103cc9b0();	// slot 304 "CNPC_VWerewolf::GiveBaseFightingItems": scope trace (entity name), when the character does not own "item_w_werewolf_attacks" gives it (sub_1021fe50(this, name, 0)) and sets misc flag bit 4
+	CNPC_VWerewolfVec3 sub_103d9c90();	// returns the cached vector (+0x6674), recomputed through sub_102c3b50 from the target entity (slot 167) when the engine tick (global 0x1070b22c, slot 120) changed
+	void sub_102c3b50(CBaseEntity *pTarget, CNPC_VWerewolfVec3 v, CNPC_VWerewolfVec3 *pCache, int *pLocal);	// called through the stub at 0x100041d3
 };
