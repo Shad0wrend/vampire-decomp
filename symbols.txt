@@ -2948,6 +2948,7 @@
 0x1000ffdd func   _item_container_lock item_container_lock
 0x1000ffe2 func   ?sub_100f9790@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100f9790
 0x1001000f func   _item_k_museum_office_key item_k_museum_office_key
+0x1001002d func   ?vfunc342@CBaseCombatCharacter@@QAEDH@Z CBaseCombatCharacter::vfunc342
 0x10010037 func   _math_counter math_counter
 0x10010055 func   ?sub_10332240@@YIMPAD@Z sub_10332240
 0x10010064 func   ?vfunc625@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc625

@@ -1352,6 +1352,46 @@ void CBaseCombatCharacter::vfunc106(const char *szClassname)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10339800 size=0xed
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+struct EntInfo { void *pEnt; unsigned int serial; int pad; };
+struct EntList { int hdr; EntInfo e[1]; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern EntList *g_10566458;
+
+__forceinline void *ResolveHandle(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		EntInfo *e = &g_10566458->e[h & 0x1fff];
+		if (e->serial == (h >> 13))
+			return e->pEnt;
+	}
+	return 0;
+}
+
+char CBaseCombatCharacter::vfunc342(int unused)
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::CanBeFedUponBy";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (sub_10339a90() && !(*(unsigned int *)((char *)this + 0x14bc) & 0x8000000)) {
+		if (!ResolveHandle(*(unsigned int *)((char *)this + 0x1538)) || *(int *)((char *)this + 0x153c) == -1) {
+			if (vfunc158() && !sub_10341aa0()) {
+				(*g_109f3680)--;
+				return 1;
+			}
+		}
+	}
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033cb90 size=0x74
 #include "CBaseCombatCharacter.h"
 
