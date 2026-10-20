@@ -33589,6 +33589,35 @@ QuestJournal *QuestJournal::sub_10220e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10221000 size=0xb1
+#include "QuestJournal.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern char g_105b11e0[];
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+extern const char *g_105b1080[];
+
+void QuestJournal::sub_10221000()
+{
+	g_109f3620[*g_109f3680].a = g_105b11e0;
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (!m_flag28) {
+		int (__cdecl *pfnSnprintf)(char *, int, const char *, ...) = g_109f388c;
+		for (int i = 0; i < 4; i++) {
+			char szFile[128];
+			pfnSnprintf(szFile, 128, "%s%s.txt", "vdata\\system\\", g_105b1080[i]);
+			sub_102212b0(szFile, i);
+		}
+		m_flag28 = 1;
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102210f0 size=0x123
 #include "QuestJournal.h"
 
