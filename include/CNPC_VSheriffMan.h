@@ -23,4 +23,6 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VSheriffMan *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
 	int vfunc337();	// as in CNPC_VSabbatLeader (transplant)
+	void vfunc444(int *pTask);	// "CNPC_VSheriffMan::RunTask": scope trace, the base implementation for every task but 0x154
+	void sub_103c5f40(int *pTask);	// CNPC_VVampireBoss::vfunc444 (RunTask), called directly through the stub at 0x10004edf
 };
