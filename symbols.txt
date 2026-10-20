@@ -1333,6 +1333,7 @@
 0x100086ed func   _npc_VTest npc_VTest
 0x100086f7 func   ?sub_101fec30@CVStatInfo_t@@QAE_NXZ CVStatInfo_t::sub_101fec30
 0x100086fc func   ?vfunc367@CBasePlayer@@QAEPAMPAM@Z CBasePlayer::vfunc367
+0x1000874c func   ?vfunc103@CEnvSpark@@UAEXXZ CEnvSpark::vfunc103
 0x10008751 func   _item_container_one_item_filtered item_container_one_item_filtered
 0x10008788 func   _item_g_drugs_perscription_bottle item_g_drugs_perscription_bottle
 0x10008792 func   ??_GCPASAttenuationFilter@@UAEPAXI@Z ??_GCPASAttenuationFilter@@UAEPAXI@Z
