@@ -27,6 +27,31 @@ CBreakableProp *CBreakableProp::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f280 size=0x85
+#include "CBreakableProp.h"
+#include "CUnknown1070b22c.h"
+
+struct CListNode100cd940;
+int __fastcall sub_100cd940(CListNode100cd940 *p);
+extern CUnknown1070b22c *g_1070b22c;
+extern void (__cdecl *g_109f3658)(int level, const char *fmt, ...);
+
+void CBreakableProp::vfunc265()
+{
+	if (*(int *)((char *)this + 0x210) == 5) {
+		if (!sub_100cd940((CListNode100cd940 *)((char *)this + 0x748)) && !sub_100cd940((CListNode100cd940 *)((char *)this + 0x730))) {
+			void (__cdecl *warn)(int level, const char *fmt, ...) = g_109f3658;
+			*(int *)((char *)this + 0x210) = 0;
+			warn(2, "\n**** HACK DESTRUCTABLE PROP HEALTH HACK ****\n");
+			int edict = *(int *)((char *)this + 0x2e0);
+			int idx = g_1070b22c->vfunc35(edict);
+			warn(2, "\nSetting entity %-4d's health to 0,  (%s, %s)\n", idx, sub_100ab4f0(), sub_1009f200());
+			warn(2, "\n**** HACK DESTRUCTABLE PROP HEALTH HACK ****\n\n");
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f340 size=0x73
 #include "CBreakableProp.h"
 
