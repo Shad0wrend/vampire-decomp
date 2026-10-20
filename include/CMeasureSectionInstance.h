@@ -10,5 +10,6 @@ public:
     CMeasureTsc m_tsc;
     int m_section;
     CMeasureSectionInstance(int section);
+    ~CMeasureSectionInstance();	// 0x10247ac0: stops the sample and adds the elapsed cycles to the section
     void sub_10001d16();	// as in CDataObjectAccessSystem (transplant)
 };
