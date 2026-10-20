@@ -38190,6 +38190,25 @@ char sub_1035c3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035eaa0 size=0x43
+#include "CNPC_VAnimal.h"
+void *sub_100aa720(int size);
+extern char g_1062b794[];
+
+// TARGET: npc_VAnimal
+extern "C" CBaseEntity *npc_VAnimal()
+{
+	void *mem = sub_100aa720(0x6674);
+	CNPC_VAnimal *p;
+	if (mem)
+		p = ((CNPC_VAnimal *)mem)->sub_1035eba0();
+	else
+		p = 0;
+	p->vfunc106(g_1062b794);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035ed00 size=0x33
 void sub_10014d7b();
 void sub_1000a4f7();
