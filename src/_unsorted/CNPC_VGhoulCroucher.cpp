@@ -128,6 +128,31 @@ int CNPC_VGhoulCroucher::vfunc390(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037c2f0 size=0xe8
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CNPC_VGhoulCroucher.h"
+
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+
+static inline CBaseEntity *ResolveHandle(volatile unsigned int *pHandle)
+{
+	unsigned int h = *pHandle;
+	EntInfo *e;
+	return (h != 0xffffffff && (e = &g_10566458->m_entries[h & 0x1fff], e->m_serial == (int)(h >> 13))) ? e->m_pEntity : 0;
+}
+
+void CNPC_VGhoulCroucher::vfunc78()
+{
+	ScopeTrace trace("CNPC_VGhoulCroucher::ScriptUnhide", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_102c1ec0();
+	if (ResolveHandle(&m_h6670))
+		ResolveHandle(&m_h6670)->vfunc78();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c420 size=0x8f
 #include "CNPC_VGhoulCroucher.h"
 

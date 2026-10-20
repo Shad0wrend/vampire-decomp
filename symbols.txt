@@ -1635,6 +1635,7 @@
 0x10009188 func   ?sub_100f71c0@@YGXPAUEntSlots_t@@II@Z sub_100f71c0
 0x100091a6 func   ?sub_10322800@CBaseCombatCharacter@@QAEXIH@Z CBaseCombatCharacter::sub_10322800
 0x100091ab func   _logic_timer logic_timer
+0x100091b0 func   ?vfunc78@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc78
 0x100091b5 func   ?sub_10428160@@YAHHHHHH@Z sub_10428160
 0x100091dd func   ?sub_10335f60@@YI_NPADHHH@Z sub_10335f60
 0x10009200 func   ?sub_10345980@CBaseCombatCharacter@@QAEPADPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10345980
