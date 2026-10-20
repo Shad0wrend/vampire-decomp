@@ -173,6 +173,7 @@
 0x10002121 func   ?sub_10236a30@@YAHXZ sub_10236a30
 0x1000212b func   _item_k_shrekhub_three_key item_k_shrekhub_three_key
 0x10002153 func   _item_g_car_stereo item_g_car_stereo
+0x100021a8 func   ?sub_1022cfd0@UtlMem@@QAEXXZ UtlMem::sub_1022cfd0
 0x100021ad func   _trigger_fog trigger_fog
 0x100021df func   ?sub_101fb7a0@CVStatSubCost_t@@QAEPAU1@XZ CVStatSubCost_t::sub_101fb7a0
 0x100021e4 func   ?vfunc407@CBasePlayer@@UAEXXZ CBasePlayer::vfunc407
