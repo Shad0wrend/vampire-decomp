@@ -11177,6 +11177,34 @@ void CUnknown100dea90::sub_100dea90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dead0 size=0x2a
+#include "CBasePlayer.h"
+
+struct EntInfo {
+	CBaseEntity *m_pEntity;
+	unsigned int m_serial;
+	int m_pad;
+};
+
+struct EntList {
+	int m_hdr;
+	EntInfo m_entries[1];
+};
+
+extern EntList *g_10566458;
+
+CBaseEntity *CBasePlayer::sub_100dead0()
+{
+	unsigned int h = *(unsigned int *)((char *)this + 0x4);
+	if (h != 0xffffffff) {
+		EntInfo *info = &g_10566458->m_entries[h & 0x1fff];
+		if (info->m_serial == (h >> 13))
+			return info->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100deb10 size=0xa
 void __fastcall sub_100deb10(char *self, int, char value)
 {
