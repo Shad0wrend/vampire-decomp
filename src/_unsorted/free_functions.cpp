@@ -6307,6 +6307,55 @@ CUnknown10075aa0 *CUnknown10075aa0::sub_10075040(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075120 size=0xc6
+#include "CUnknown10075aa0.h"
+
+struct CSceneEventSetterView	// the two setters called on the new event (stubs 0x10010c94 and 0x100110f9)
+{
+	void sub_10075b90(int b);
+	void sub_10075bd0(int c);
+};
+
+CUnknown10075aa0 *CUnknown10075aa0::sub_10075120(int a, int b, int c)
+{
+	int n = 2;
+	m_vec19c.m_pMemory = 0;
+	m_vec19c.m_allocationCount = 0;
+	m_vec19c.m_growSize = 0;
+	m_vec19c.m_size = 0;
+	m_vec19c.m_pElements = 0;
+	m_vec2bc.m_pMemory = 0;
+	m_vec2bc.m_allocationCount = 0;
+	m_vec2bc.m_growSize = 0;
+	m_vec2bc.m_size = 0;
+	m_vec2bc.m_pElements = 0;
+	m_vec2d0.m_pMemory = 0;
+	m_vec2d0.m_allocationCount = 0;
+	m_vec2d0.m_growSize = 0;
+	m_vec2d0.m_size = 0;
+	m_vec2d0.m_pElements = 0;
+	CUnknown10075aa0Vec *p = m_vec2e4;
+	do {
+		p->m_pMemory = 0;
+		p->m_allocationCount = 0;
+		p->m_growSize = 0;
+		p->m_size = 0;
+		p->m_pElements = 0;
+		p++;
+		n--;
+	} while (n != 0);
+	m_vec30c.m_pMemory = 0;
+	m_vec30c.m_allocationCount = 0;
+	m_vec30c.m_growSize = 0;
+	m_vec30c.m_size = 0;
+	m_vec30c.m_pElements = 0;
+	sub_10075aa0(a);
+	((CSceneEventSetterView *)this)->sub_10075b90(b);
+	((CSceneEventSetterView *)this)->sub_10075bd0(c);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075aa0 size=0x97
 #include "CUnknown10075aa0.h"
 
