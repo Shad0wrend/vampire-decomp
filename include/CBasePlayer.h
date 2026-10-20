@@ -87,6 +87,6 @@ public:
 	void sub_1017cef0(CBaseEntity *pEnt);	// "CBasePlayer::SetUseEntity"-like: remembers the engine index (+0x1ec4) and handle (+0x19b4) of pEnt (cleared when null) and releases the previous use entity when it is different and flagged
 	CBaseEntity *sub_1000306c();	// the current use entity (CBasePlayer::sub_1017cf90 stub)
 	void vfunc149(int a, int b);	// forwards (a, b) to slot 148 of every other connected player the game rules (slot 64) relate to this one with the value 1
-	void sub_100ac4e0(void *pFunc, int a, int b);	// schedules a think function (called through the stub at 0x10007fe5)
-	void sub_10015a91();	// CBaseCombatCharacter::vfunc403, called directly
+	void sub_100ac4e0(void *pFunc, int a, int b);	// sets a think function and delay (called through the stub at 0x10007fe5)
+	void sub_1032bdf0();	// CBaseCombatCharacter::vfunc403, called directly
 };
