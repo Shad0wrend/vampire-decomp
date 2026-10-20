@@ -1,6 +1,60 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a9e20 size=0x122
+#include "CBaseEntity.h"
+#include "CScriptedSentence.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+extern char g_1053dafc[];
+extern double g_10449280;
+extern float g_104454c4;
+void sub_1000880a();
+
+struct CGlobalVarsPlain
+{
+	char m_pad[0xc];
+	float curtime;
+};
+extern CGlobalVarsPlain *g_1070b228;
+
+void CScriptedSentence::vfunc103()
+{
+	CBaseEntity *pEntity = (CBaseEntity *)this;
+	{
+		ScopeTrace trace(g_1053dafc, this ? (pEntity->m_name26c ? pEntity->m_name26c : g_106b8540) : g_105387dc);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+	*((char *)this + 0x470) = 1;
+	if (!pEntity->m_name26c) {
+		pEntity->sub_100ac4e0((int)sub_1000880a, 0, 0);
+		*(float *)((char *)this + 0x17c) = g_1070b228->curtime + g_10449280;
+	}
+	switch (*(int *)((char *)this + 0x468)) {
+	case 1:
+		*(int *)((char *)this + 0x464) = 0x46;
+		break;
+	case 2:
+		*(int *)((char *)this + 0x464) = 0x4b;
+		break;
+	case 3:
+		*(int *)((char *)this + 0x464) = 0;
+		break;
+	default:
+		*(int *)((char *)this + 0x464) = 0x3c;
+		break;
+	}
+	if (*(float *)((char *)this + 0x46c) <= g_104454c4) {
+		*(int *)((char *)this + 0x468) = 0;
+		*(float *)((char *)this + 0x46c) = 1.0f;
+	} else {
+		*(int *)((char *)this + 0x468) = 0;
+	}
+	pEntity->sub_100b3b00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab160 size=0x36
 #include "CScriptedSentence.h"
 
