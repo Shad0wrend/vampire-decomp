@@ -21,4 +21,6 @@ public:
 	char sub_10014df8(int condition);	// "HasCondition" (stub 0x10014df8), called directly
 	int sub_10395650(int a, void *pWeapon);	// maps the weapon (flags from its slot 360 have bit 15 or 16) through sub_103952b0(a), else the state at +0x1594 to a small code via a jump table (1 -> -2, 4 -> 1, 5 -> 0, 6 -> 5, 7 -> 4, 8 -> 3, 9 -> 2, everything else -1)
 	int sub_103952b0(int a);	// called through the stub at 0x10012f85
+	int vfunc376(int act);	// slot 376 "CNPC_VMingXiao::TranslateActivity": 0x3d -> 0x3b, 0x3e -> 0x3c, 0x9f -> 0x9d, 0xa0 -> 0x9e, 0xa3 -> 0xa1, 0xa4 -> 0xa2, else the Troika base
+	int sub_1000fb14(int act);	// CAI_BaseNPCTroika::vfunc376, called directly
 };
