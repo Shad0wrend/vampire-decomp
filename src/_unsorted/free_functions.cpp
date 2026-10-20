@@ -2272,6 +2272,22 @@ void UtlMem::sub_10042a00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10042a40 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_109f3624)(void *);
+
+void UtlMem::sub_10042a40()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_109f3624(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042a80 size=0x132
 #include "CUtlVector20.h"
 #include "CUtlMemory20.h"
