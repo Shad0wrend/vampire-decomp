@@ -20579,6 +20579,33 @@ float __stdcall sub_101b4900(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b61a0 size=0x6b
+#include "CUnknown101b61a0.h"
+
+CUnknown101b61a0 &CUnknown101b61a0::sub_101b61a0(const CUnknown101b61a0 &other)
+{
+    int n = other.m_Size;
+    CUnknown101b61a0Elem *src = (CUnknown101b61a0Elem *)other.m_pMemory;
+    int i = 0;
+    m_Size = 0;
+    if (n != 0) {
+        sub_101b6a50(n);
+        sub_101b6b10(0, n);
+        for (i = 0; i < n; i++) {
+            CUnknown101b61a0Elem *e = &((CUnknown101b61a0Elem *)m_pMemory)[i];
+            if (e)
+                e->sub_1000f5b0();
+        }
+    }
+    for (i = 0; i < n; i++) {
+        CUnknown101b61a0Elem *dst = &((CUnknown101b61a0Elem *)m_pMemory)[i];
+        dst->m_a = src[i].m_a;
+        dst->m_b = src[i].m_b;
+    }
+    return *this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6250 size=0x9e
 #include "CUnknown101b6250.h"
 
