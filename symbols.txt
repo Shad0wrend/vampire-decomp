@@ -1176,6 +1176,7 @@
 0x10007f1d func   ?sub_1037bb20@@YI_NPAD@Z sub_1037bb20
 0x10007f22 func   ?sub_101800e0@CUnknown101800e0@@QAEMH@Z CUnknown101800e0::sub_101800e0
 0x10007fa4 func   ?vfunc5@CSoundEnt@@QAEPAV1@I@Z CSoundEnt::vfunc5
+0x10007fb8 func   ?sub_102210f0@QuestJournal@@QAEXXZ QuestJournal::sub_102210f0
 0x10007fea func   ?vfunc5@CAI_BaseNPC@@UAEPAV1@I@Z CAI_BaseNPC::vfunc5
 0x10007ffe func   _item_k_clinic_stairs_key item_k_clinic_stairs_key
 0x1000800d func   ?sub_103fbbd0@@YAHXZ sub_103fbbd0
