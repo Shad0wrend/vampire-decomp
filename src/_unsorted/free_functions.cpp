@@ -48240,6 +48240,77 @@ extern "C" CBaseEntity *intersting_place()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102da600 size=0x151
+struct CTriple
+{
+	int a, b, c;
+	void Set(const CTriple &o)
+	{
+		a = o.a;
+		b = o.b;
+		c = o.c;
+	}
+};
+
+struct CEntry1c
+{
+	int m_pKey;
+	CTriple m_t4;
+	CTriple m_t10;
+};
+
+struct CHolder;
+
+struct CSub468
+{
+	char m_data[0xfc];
+	void sub_10010794(CHolder *pHolder, char *pObj, int n);
+};
+
+struct CHolder
+{
+	char m_pad0[0x468];
+	CSub468 m_sub468;
+	int m_n564;
+	char m_pad568[0x18];
+	CEntry1c *m_pEntries;
+	int m_nPad584;
+	int m_nEntries;
+
+	void sub_102da600(char *pObj, char bValid, char bNotify);
+};
+
+// TARGET: CHolder::sub_102da600
+void CHolder::sub_102da600(char *pObj, char bValid, char bNotify)
+{
+	if (pObj && bValid)
+	{
+		*(CHolder **)(pObj + 0x62fc) = this;
+		if (m_pEntries)
+		{
+			for (int i = 0; i < m_nEntries; i++)
+			{
+				if ((char *)m_pEntries[i].m_pKey == pObj)
+				{
+					m_pEntries[i].m_pKey = 0;
+					if (bNotify)
+						m_sub468.sub_10010794(this, pObj, 0);
+					m_n564--;
+					m_nEntries--;
+					m_pEntries[i].m_pKey = m_pEntries[m_nEntries].m_pKey;
+					m_pEntries[i].m_t10.Set(m_pEntries[m_nEntries].m_t10);
+					m_pEntries[i].m_t4.Set(m_pEntries[m_nEntries].m_t4);
+					m_pEntries[m_nEntries].m_pKey = 0;
+					return;
+				}
+			}
+		}
+	}
+	else if (bNotify)
+		m_sub468.sub_10010794(this, pObj, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102da7c0 size=0x80
 class CUnk102da7c0;
 struct CUnk102da7c0Output {
