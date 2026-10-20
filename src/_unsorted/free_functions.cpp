@@ -42003,6 +42003,46 @@ void *CBaseCombatCharacter::sub_10336f20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10337230 size=0x9b
+#include "CBaseCombatCharacter.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+char CBaseCombatCharacter::sub_10337230()
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseCombatCharacter::ChooseBestMeleeWeapon";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	void *weapon = sub_10336f20();
+	if (weapon) {
+		typedef void (CBaseCombatCharacter::*Fn)(void *, int);
+		struct U { void **vt; };
+		void **vt = *(void ***)this;
+		union { void *p; Fn f; } u;
+		u.p = vt[388];
+		(this->*u.f)(weapon, 0);
+		(*g_109f3680)--;
+		return 1;
+	}
+	(*g_109f3680)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10337300 size=0xa1
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();

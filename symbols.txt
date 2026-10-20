@@ -883,6 +883,7 @@
 0x10005fd3 func   ?sub_100575a0@CBaseFire@@QAEXH@Z CBaseFire::sub_100575a0
 0x10005ffb func   ?sub_100bf030@CUnknown100bf030@@QAE_NPBXH@Z CUnknown100bf030::sub_100bf030
 0x10006005 func   ?vfunc5@CNPC_VToreador@@QAEPAV1@I@Z CNPC_VToreador::vfunc5
+0x1000600a func   ?sub_10337230@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10337230
 0x1000602d func   ?sub_10270ae0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10270ae0
 0x10006032 func   ?sub_101f1050@CUnknown101f1050@@QAEPAHXZ CUnknown101f1050::sub_101f1050
 0x1000603c func   ?sub_1003c0e0@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_1003c0e0
