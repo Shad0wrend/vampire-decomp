@@ -27235,6 +27235,36 @@ void sub_101e94b0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9760 size=0x97
+#include "CUnknown101e9760.h"
+#include "CBaseCombatCharacter.h"
+
+static inline CVStatList_t *GetStatList(CBaseCombatCharacter *pChar)
+{
+	for (int i = 0; i < pChar->m_nStatLists; i++) {
+		if (pChar->m_pStatLists[i]->m_field10 == 0)
+			return pChar->m_pStatLists[i];
+	}
+	static CVStatList_t s_default(-1);
+	return &s_default;
+}
+
+bool CUnknown101e9760::sub_101e9760(CBaseCombatCharacter *pChar)
+{
+	if (m_dwMask) {
+		int value = GetStatList(pChar)->sub_10010609(0xb);
+		if (value == 0) {
+			if (m_bMask & 1)
+				return false;
+		} else {
+			if (m_bMask & 2)
+				return false;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9880 size=0xd
 CUnknown101e9880* CUnknown101e9880::sub_101e9880()
 {
