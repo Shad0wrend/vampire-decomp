@@ -860,6 +860,7 @@
 0x10005f8d func   ?vfunc5@CDisciplineParticle@@UAEPAV1@I@Z CDisciplineParticle::vfunc5
 0x10005f97 func   ?vfunc510@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc510
 0x10005fa6 func   ?vfunc8@CAutoGameSystem@@UAEPAV1@I@Z CAutoGameSystem::vfunc8
+0x10005fb0 func   ?sub_100611b0@@YAXHHPAHHHHHHHH@Z sub_100611b0
 0x10005fd3 func   ?sub_100575a0@CBaseFire@@QAEXH@Z CBaseFire::sub_100575a0
 0x10005ffb func   ?sub_100bf030@CUnknown100bf030@@QAE_NPBXH@Z CUnknown100bf030::sub_100bf030
 0x10006005 func   ?vfunc5@CNPC_VToreador@@QAEPAV1@I@Z CNPC_VToreador::vfunc5

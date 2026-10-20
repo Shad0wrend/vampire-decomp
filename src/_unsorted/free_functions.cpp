@@ -4476,6 +4476,39 @@ void sub_10060ac0(int a, int b, const int *mins, const int *maxs, int p5, int p6
 }
 // END FUNCTION
 
+// FUNCTION: 0x100611b0 size=0x76
+struct SDynLight {
+	int m_vt;
+	char pad0004[8];
+	int m_vOrigin[3];	// 0x0c
+	int m_p8;	// 0x18
+	int m_p4;	// 0x1c
+	int m_p5;	// 0x20
+	int m_p6;	// 0x24
+	int m_p7;	// 0x28
+	int m_p9;	// 0x2c
+	int m_p10;	// 0x30
+	void sub_1001229c(int a, int b);
+};
+
+extern SDynLight g_106c2010;
+
+void sub_100611b0(int a, int b, int *pOrigin, int p4, int p5, int p6, int p7, int p8, int p9, int p10)
+{
+	g_106c2010.m_vOrigin[0] = pOrigin[0];
+	g_106c2010.m_vOrigin[1] = pOrigin[1];
+	g_106c2010.m_vOrigin[2] = pOrigin[2];
+	g_106c2010.m_p4 = p4;
+	g_106c2010.m_p5 = p5;
+	g_106c2010.m_p6 = p6;
+	g_106c2010.m_p7 = p7;
+	g_106c2010.m_p8 = p8;
+	g_106c2010.m_p9 = p9;
+	g_106c2010.m_p10 = p10;
+	g_106c2010.sub_1001229c(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064ca0 size=0x72
 #include "SendProp.h"
 
