@@ -27,6 +27,6 @@ public:
 	void sub_100076bc(void *pEvent);	// CNPC_VHuman::vfunc259, called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void sub_103ab4a0(void *pVictim);	// "OnVictimHitByMe" (slot 24 override): scope trace, when the entity of the handle at +0x628c is pVictim decrements the counter at +0x66e0 (clamped at 0)
-	void vfunc366(int a, int b, int c);	// "HandleInteraction" (slot 366 override): scope trace, then CNPC_VHuman::vfunc366(a, b, c)
-	void sub_10001b27(int a, int b, int c);	// CNPC_VHuman::vfunc366, called directly
+	int vfunc366(int a, int b, int c);	// "HandleInteraction" (slot 366 override): scope trace, then returns CNPC_VHuman::vfunc366(a, b, c)
+	int sub_10001b27(int a, int b, int c);	// CNPC_VHuman::vfunc366, called directly
 };
