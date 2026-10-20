@@ -8872,6 +8872,42 @@ int CBaseEntity::sub_100ac250(const char *context)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ac720 size=0xb1
+struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
+extern ScopeEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+float CBaseEntity::sub_100ac720(const char *context)
+{
+    const char *pszName;
+    if (this) {
+        pszName = m_name26c;
+        if (!pszName)
+            pszName = "";
+    } else {
+        pszName = "NULL ENTITY";
+    }
+    g_109f3620[*g_109f3680].m_pszName = "CBaseEntity::GetLastThink";
+    g_109f3620[*g_109f3680].m_pszEnt = pszName;
+    g_109f3620[*g_109f3680].m_pszExtra = "";
+    (*g_109f3680)++;
+    int idx;
+    if (!context) {
+        idx = *(int *)((char *)this + 0x1cc);
+        if (idx == -1) {
+            float f = *(float *)((char *)this + 0x178);
+            (*g_109f3680)--;
+            return f;
+        }
+    } else {
+        idx = sub_100ac250(context);
+    }
+    float f = *(float *)((char *)m_pThinkContexts + idx * 16 + 0xc);
+    (*g_109f3680)--;
+    return f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac810 size=0xd0
 #include "inputdata_t.h"
 
