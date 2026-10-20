@@ -21,11 +21,14 @@ public:
 	char pad1b30[0x5cc0 - 0x1b30];
 	int m_nState5cc0;	// +0x5cc0
 	int m_nState5cc4;	// +0x5cc4
-	char pad5cc8[0x66c0 - 0x5cc8];
+	char pad5cc8[0x628c - 0x5cc8];
+	unsigned int m_hPlayer;	// +0x628c: entity handle of the tracked player
+	char pad6290[0x66c0 - 0x6290];
 	int m_nFailureType;
 	int m_n66c4;	// +0x66c4: last health seen by UpdateBloodSplash
 	float m_f66c8;	// +0x66c8: time of last splash
-	char pad66cc[0x66d5 - 0x66cc];
+	int m_nPlayerHealth;	// +0x66cc: the player's stat 0xf, recorded by RecordPlayerHealth
+	char pad66d0[0x66d5 - 0x66d0];
 	char m_b66d5;	// +0x66d5
 
 	void sub_103a7760(int arg);
@@ -51,4 +54,5 @@ public:
 	int sub_102ae920();	// CAI_BaseNPCTroika::vfunc437 (stub 0x1000df2b), called directly
 	void sub_103aa960();	// "UpdateBloodSplash": scope trace, spawns splash emitters when health changed
 	void sub_1000136b(const char *pName, int arg);	// spawns a particle emitter by name
+	void sub_103aaa80();	// "CNPC_VSabbatLeader::RecordPlayerHealth": scope trace, with the player entity (handle at +0x628c) live stores stat 0xf of its first non-pending stat list (default list when none) at +0x66cc
 };
