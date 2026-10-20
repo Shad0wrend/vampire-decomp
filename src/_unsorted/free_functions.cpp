@@ -7794,6 +7794,43 @@ int CBaseAnimating::sub_100945e0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100946b0 size=0xa3
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+const char *CBaseAnimating::sub_100946b0(int index)
+{
+	const char *name;
+	if (this)
+		name = m_name26c ? m_name26c : "";
+	else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseAnimating::GetFlexControllerName";
+	g_109f3620[*g_109f3680].m_pszName = name;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	char *hdr = (char *)sub_100952d0(-1);
+	if (!hdr)
+	{
+		(*g_109f3680)--;
+		return 0;
+	}
+	char *rec = hdr + *(int *)(hdr + 0x164) + index * 0x14;
+	const char *result = rec + *(int *)(rec + 4);
+	(*g_109f3680)--;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100952d0 size=0x133
 #include "CBaseAnimating.h"
 #include "CGlobalEntityList.h"
