@@ -16,7 +16,7 @@ public:
 	virtual void vfunc6();	// pops the section stack, writes the section size
 	virtual void vfunc7(int a, int b, int count);	// forwards to sub_101a05b0 with the count doubled (shorts to bytes)
 	virtual void vfunc8();
-	virtual void vfunc9();
+	virtual void vfunc9(const char *pszName, void *pData, int count);	// writes count ints (called by vfunc37 with the entity indices)
 	virtual bool vfunc10(const void *pData, int nBytes);	// WriteInt
 	virtual void vfunc11();
 	virtual void vfunc12(const void *pData, int count);
@@ -44,7 +44,7 @@ public:
 	virtual void vfunc34();
 	virtual void vfunc35(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xd
 	virtual void vfunc36(const void *pData, int count);	// WriteEHandle
-	virtual void vfunc37(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xc
+	virtual void vfunc37(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xc: converts the entity handles to entity table indices (sub_101a08f0) and writes them through slot 9
 	virtual void vfunc38();
 	virtual void vfunc39();
 
