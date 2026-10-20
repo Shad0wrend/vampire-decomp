@@ -19,4 +19,6 @@ public:
 	const char *sub_10011590(int index);	// CAI_BaseNPC::vfunc408 (jump stub)
 	int sub_10396dc0();	// picks a schedule (0x15c / 0x15d) while the target handle at +0x6718 is alive and the state at +0x673c is 3 or 4, from conditions 0x7b / 0x7c; stamps the source file and line at +0x1b30 / +0x1b34
 	char sub_10014df8(int condition);	// "HasCondition" (stub 0x10014df8), called directly
+	int sub_10395650(int a, void *pWeapon);	// maps the weapon (flags from its slot 360 have bit 15 or 16) through sub_103952b0(a), else the state at +0x1594 to a small code via a jump table (1 -> -2, 4 -> 1, 5 -> 0, 6 -> 5, 7 -> 4, 8 -> 3, 9 -> 2, everything else -1)
+	int sub_103952b0(int a);	// called through the stub at 0x10012f85
 };
