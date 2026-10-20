@@ -1185,6 +1185,31 @@ void *CBaseCombatCharacter::vfunc309()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10337ca0 size=0xa6
+#include "CBaseCombatCharacter.h"
+#include "CUnknown1070b22c.h"
+#include "CVStatListManager_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern CUnknown1070b22c *g_1070b22c;
+
+void CBaseCombatCharacter::vfunc111()
+{
+    const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+    g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::MemberSync";
+    g_109f3620[*g_109f3680].b = name;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    int edict = m_pEdict2e0;
+    int index = g_1070b22c->vfunc35(edict);
+    ((CVStatListManager_t *)((char *)this + 0x13a8))->sub_10201fa0(index);
+    *(unsigned int *)((char *)this + 0x13cc) = (unsigned char)sub_10336920();
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10337d80 size=0x8b
 #include "CBaseCombatCharacter.h"
 
