@@ -13827,6 +13827,33 @@ void __stdcall sub_100f71c0(EntSlots_t *pEnt, unsigned int oldFlags, unsigned in
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7890 size=0x77
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+
+CBaseEntity *CGlobalEntityList::sub_100f7890(CBaseEntity *pStart, const char *szName)
+{
+	CBaseEntity *pEnt = sub_100f7060(pStart);
+	if (!pEnt)
+		return 0;
+	const char *szTarget = szName;
+	do {
+		if (pEnt->m_pEdict2e0 && *pEnt->vfunc9((int *)&pStart)) {
+			const char *pName = *pEnt->vfunc9((int *)&szName);
+			if (!pName)
+				pName = g_106b8540;
+			if (!_strcmpi(pName, szTarget))
+				return pEnt;
+		}
+		pEnt = sub_100f7060(pEnt);
+	} while (pEnt);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8e20 size=0x80
 void *sub_10430fa0(void *, const void *, unsigned);
 
