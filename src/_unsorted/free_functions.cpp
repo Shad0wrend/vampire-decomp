@@ -39109,6 +39109,25 @@ void __fastcall sub_10379e80(E *e, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037a670 size=0x43
+#include "CNPC_VGhoulCroucher.h"
+void *sub_100aa720(int size);
+extern char g_1063ad80[];
+
+// TARGET: npc_VGhoulCroucher
+extern "C" CBaseEntity *npc_VGhoulCroucher()
+{
+	void *mem = sub_100aa720(0x66a8);
+	CNPC_VGhoulCroucher *p;
+	if (mem)
+		p = ((CNPC_VGhoulCroucher *)mem)->sub_1037aea0();
+	else
+		p = 0;
+	p->vfunc106(g_1063ad80);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037a740 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
