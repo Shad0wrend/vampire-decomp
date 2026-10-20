@@ -39888,6 +39888,64 @@ extern "C" CBaseEntity *npc_maker()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034abb0 size=0x162
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10624718[2];
+void sub_1001393a();
+void sub_100118b0();
+void sub_10001037();
+void sub_10015712();
+void sub_1000696a();
+
+int *sub_1034abb0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 2, "m_iszNPCClassname", {0x665c, 0}, 1, 6, "NPCType" },
+        { 4, "m_iMaxNumNPCs", {0x6660, 0}, 1, 6, "MaxNPCCount" },
+        { 1, "m_flSpawnFrequency", {0x6664, 0}, 1, 6, "SpawnFrequency" },
+        { 4, "m_cLiveChildren", {0x66b0, 0}, 1, 2 },
+        { 4, "m_iMaxLiveChildren", {0x66b4, 0}, 1, 6, "MaxLiveChildren" },
+        { 1, "m_flGround", {0x66b8, 0}, 1, 2 },
+        { 2, "m_ChildTargetName", {0x66bc, 0}, 1, 6, "NPCTargetname" },
+        { 5, "m_bDisabled", {0x66c0, 0}, 1, 6, "Flag_StartDisabled" },
+        { 5, "m_bNPCClip", {0x66c1, 0}, 1, 6, "Flag_NPCClip" },
+        { 5, "m_bFade", {0x66c2, 0}, 1, 6, "Flag_Fade" },
+        { 5, "m_bInfChild", {0x66c3, 0}, 1, 6, "Flag_InfChild" },
+        { 5, "m_bNoDrop", {0x66c4, 0}, 1, 6, "Flag_NoDrop" },
+        { 5, "m_bViewCone", {0x66c5, 0}, 1, 6, "Flag_ViewCone" },
+        { 4, "m_iMinPCDistance", {0x66c8, 0}, 1, 6, "MinPCDistance" },
+        { 2, "m_sRefMapDataBuffer", {0x76cc, 0}, 1, 2 },
+        { 0, "InputSpawnNPC", {0, 0}, 1, 8, "Spawn", 0, (void *)sub_1001393a },
+        { 0, "InputEnable", {0, 0}, 1, 8, "Enable", 0, (void *)sub_100118b0 },
+        { 0, "InputDisable", {0, 0}, 1, 8, "Disable", 0, (void *)sub_10001037 },
+        { 0, "InputToggle", {0, 0}, 1, 8, "Toggle", 0, (void *)sub_10015712 },
+        { 10, "m_OnSpawnNPC", {0x6668, 0}, 1, 0x16, "OnSpawnNPC", g_1055dc70 },
+        { 10, "m_OnNPCDied", {0x6680, 0}, 1, 0x16, "OnNPCDied", g_1055dc70 },
+        { 10, "m_OnLastNPCDied", {0x6698, 0}, 1, 0x16, "OnLastNPCDied", g_1055dc70 },
+        { 0, "CNPCMakerMakerThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000696a },
+    };
+    g_10624718[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10624718[0] = (int)&dataDesc[1];
+    return g_10624718;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034b500 size=0x10
 #define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
 #define V100(n) V10(n##a) V10(n##b) V10(n##c) V10(n##d) V10(n##e) V10(n##f) V10(n##g) V10(n##h) V10(n##i) V10(n##j)
