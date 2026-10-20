@@ -1,4 +1,4 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 105 and 119 to 122 are known.
 // Slot 119 takes a flag and returns a time value in ST0; slot 120 returns a dword in EAX.
 #pragma once
 
@@ -10,7 +10,9 @@ class CUnknown1070b22c
 public:
 	U22C_SLOTS10(a0) U22C_SLOTS10(a1) U22C_SLOTS10(a2) U22C_SLOTS10(a3) U22C_SLOTS10(a4)
 	U22C_SLOTS10(a5) U22C_SLOTS10(a6) U22C_SLOTS10(a7) U22C_SLOTS10(a8) U22C_SLOTS10(a9)
-	U22C_SLOTS10(b0)
+	virtual void b00(); virtual void b01(); virtual void b02(); virtual void b03(); virtual void b04();
+	virtual int vfunc105(int a, int b);
+	virtual void b06(); virtual void b07(); virtual void b08(); virtual void b09();
 	virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13(); virtual void b14();
 	virtual void b15(); virtual void b16(); virtual void b17(); virtual void b18();
 	virtual double vfunc119(int flag);
