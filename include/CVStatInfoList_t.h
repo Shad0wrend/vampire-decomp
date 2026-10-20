@@ -17,6 +17,6 @@ public:
 	CVStatInfoList_t *sub_101ff300(const char *name, int a, int b);	// "CVStatInfoList_t::CVStatInfoList_t": scope trace, nulls the cost, stores b at +0, zeroes the list, a at +0x2c and copies name to +0xc
 	int sub_101ffaa0(const char *name);	// "CVStatInfoList_t::Lookup(char*)": scope trace, index of the stat whose name equals the argument (case-insensitive, null name counts as ""), -1 when none
 	int sub_101ffb90(const char *name);	// "CVStatInfoList_t::Lookup( const char *name )": same lookup (name string at +0x18 of each record)
-	int sub_101ffdf0(const char *name);	// "CVStatInfoList_t::LookupPartial": scope trace, index of the first stat whose lower-cased name starts with the lower-cased argument, -1 when none
+	int sub_101ffc80(const char *name);	// "CVStatInfoList_t::LookupPartial": scope trace, index of the first stat whose lowercased name starts with the lowercased argument, -1 when none
 	CVStatInfo_t *sub_10200370(int idx);	// element accessor: the record at idx, or a shared default record when idx is out of range
 };
