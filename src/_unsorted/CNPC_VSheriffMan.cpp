@@ -94,6 +94,38 @@ int CNPC_VSheriffMan::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103af780 size=0x6c
+#include "CNPC_VSheriffMan.h"
+
+struct ScopeTraceEntry {
+    const char *m_pszName;
+    const char *m_pszEntity;
+    const char *m_pszExtra;
+};
+extern "C" __declspec(dllimport) ScopeTraceEntry g_ScopeTraceStack[];
+extern "C" __declspec(dllimport) int g_ScopeTraceStackDepth;
+extern const char g_106b8540[];
+
+struct ScopeTrace {
+    ScopeTrace(const char *name, const char *entity)
+    {
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszName = name;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszEntity = entity;
+        g_ScopeTraceStack[g_ScopeTraceStackDepth].m_pszExtra = g_106b8540;
+        g_ScopeTraceStackDepth++;
+    }
+    ~ScopeTrace() { g_ScopeTraceStackDepth--; }
+};
+
+// TARGET: CNPC_VSheriffMan::vfunc444
+void CNPC_VSheriffMan::vfunc444(int *pTask)
+{
+    ScopeTrace trace("CNPC_VSheriffMan::RunTask", g_106b8540);
+    if (*pTask != 0x154)
+        sub_103c5f40(pTask);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103af830 size=0x72
 #include "CNPC_VSheriffMan.h"
 
