@@ -15404,6 +15404,25 @@ void CUnknown1014ca10::sub_1014ca10(unsigned char r, unsigned char g, unsigned c
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014ed40 size=0x43
+#include "CPhysicsAnimlink.h"
+void *sub_100aa720(int size);
+extern char g_1057c624[];
+
+// TARGET: phys_animlink
+extern "C" CBaseEntity *phys_animlink()
+{
+	void *mem = sub_100aa720(0x4d8);
+	CPhysicsAnimlink *p;
+	if (mem)
+		p = ((CPhysicsAnimlink *)mem)->sub_1014eef0();
+	else
+		p = 0;
+	p->vfunc106(g_1057c624);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101521b0 size=0x43
 #include "CRagdollProp.h"
 void *sub_100aa720(int size);
