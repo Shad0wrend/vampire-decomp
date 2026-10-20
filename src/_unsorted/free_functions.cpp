@@ -9386,6 +9386,25 @@ extern int g_106cff54;
 void sub_100b4e80(int v) { g_106cff54 = v; }
 // END FUNCTION
 
+// FUNCTION: 0x100b5840 size=0x43
+#include "CBaseFlex.h"
+void *sub_100aa720(int size);
+extern char g_1055962c[];
+
+// TARGET: funCBaseFlex
+extern "C" CBaseEntity *funCBaseFlex()
+{
+	void *mem = sub_100aa720(0xa80);
+	CBaseFlex *p;
+	if (mem)
+		p = ((CBaseFlex *)mem)->sub_100b58d0();
+	else
+		p = 0;
+	p->vfunc106(g_1055962c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6510 size=0x7f
 extern "C" unsigned strlen(const char *);
 extern void (*g_109f3890)(char *dest, const char *src, int count);
