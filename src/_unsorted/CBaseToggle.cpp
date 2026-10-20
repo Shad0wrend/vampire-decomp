@@ -46,3 +46,43 @@ bool CBaseToggle::vfunc110(const char *szKeyName, const char *szValue)
 	return sub_1000fc86(szKeyName, szValue);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c1cb0 size=0xc9
+#include "CBaseToggle.h"
+
+#define SL1(n) virtual void s##n();
+#define SL10(p) SL1(p##0) SL1(p##1) SL1(p##2) SL1(p##3) SL1(p##4) SL1(p##5) SL1(p##6) SL1(p##7) SL1(p##8) SL1(p##9)
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+class CToggleSlots221
+{
+public:
+	SL100(0) SL100(1) SL10(20) SL10(21)
+	virtual Vector *slot220();
+	virtual Vector *slot221();
+};
+
+static inline void AssignVector(Vector &dst, const Vector &src)
+{
+	dst.x = src.x;
+	dst.y = src.y;
+	dst.z = src.z;
+}
+
+// TARGET: CBaseToggle::vfunc103
+void CBaseToggle::vfunc103()
+{
+	vfunc93(8, 0);
+	sub_100b3b00();
+	CBaseEntity::vfunc103();
+	AssignVector(m_vecPosition1, *((CToggleSlots221 *)this)->slot220());
+	AssignVector(m_vecAngle1, *((CToggleSlots221 *)this)->slot221());
+	AssignVector(m_vecAngle2, m_vecAngle1);
+	((float *)&m_vecAngle2)[m_nMoveAxis] += m_flMoveAmount;
+	m_i49c = m_i4a0;
+	if (m_i4a0 == 1)
+		m_i498 = 0;
+	else if (m_i4a0 == 2)
+		m_i498 = m_i4a0;
+}
+// END FUNCTION
