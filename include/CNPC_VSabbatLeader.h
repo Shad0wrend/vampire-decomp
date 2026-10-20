@@ -23,6 +23,10 @@ public:
 	int m_nState5cc4;	// +0x5cc4
 	char pad5cc8[0x66c0 - 0x5cc8];
 	int m_nFailureType;
+	int m_n66c4;	// +0x66c4: last health seen by UpdateBloodSplash
+	float m_f66c8;	// +0x66c8: time of last splash
+	char pad66cc[0x66d5 - 0x66cc];
+	char m_b66d5;	// +0x66d5
 
 	void sub_103a7760(int arg);
 	void sub_1000b8a2(int arg);
@@ -45,4 +49,6 @@ public:
 	void vfunc313();	// "CNPC_VSabbatLeader::UpdatePresenceEffect": scope trace, a call on the global object 0x10739a4c with this, then clears +0xe80 / +0xe88 / +0xe84
 	int sub_103aa510();	// slot 437 "CNPC_VSabbatLeader::PreSelectSchedule": scope trace, sets +0x1b2c = 0x1f, drops state 2 at +0x5cc0 to 1 (and +0x5cc4 = 1) when slot 167 reports none, then returns CAI_BaseNPCTroika::vfunc437()
 	int sub_102ae920();	// CAI_BaseNPCTroika::vfunc437 (stub 0x1000df2b), called directly
+	void sub_103aa960();	// "UpdateBloodSplash": scope trace, spawns splash emitters when health changed
+	void sub_1000136b(const char *pName, int arg);	// spawns a particle emitter by name
 };
