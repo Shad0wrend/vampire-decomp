@@ -23027,6 +23027,25 @@ void __fastcall sub_1020f2e0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020f7e0 size=0x43
+#include "CLogicVisible.h"
+void *sub_100aa720(int size);
+extern char g_105ae698[];
+
+// TARGET: logic_visibility_test
+extern "C" CBaseEntity *logic_visibility_test()
+{
+	void *mem = sub_100aa720(0x4b8);
+	CLogicVisible *p;
+	if (mem)
+		p = ((CLogicVisible *)mem)->sub_1020f990();
+	else
+		p = 0;
+	p->vfunc106(g_105ae698);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020f8b0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
