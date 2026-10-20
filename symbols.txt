@@ -587,6 +587,7 @@
 0x10004903 func   _vdisciplineprojectile vdisciplineprojectile
 0x10004917 func   ?vfunc28@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc28
 0x1000493a func   ?vfunc2@CTEInspectionFX@@UAEPAV1@I@Z CTEInspectionFX::vfunc2
+0x1000496c func   ?sub_1030be50@CBaseCineCam@@QAEPAMPAM@Z CBaseCineCam::sub_1030be50
 0x10004980 func   ?vfunc5@CWeaponMelee_Tzimisce2Claw@@QAEPAV1@I@Z CWeaponMelee_Tzimisce2Claw::vfunc5
 0x100049a3 func   ?vfunc440@CNPC_VSheriffMan@@QAEHH@Z CNPC_VSheriffMan::vfunc440
 0x100049e9 func   ?sub_10157890@CUnknown101578b0@@QAEXD@Z CUnknown101578b0::sub_10157890

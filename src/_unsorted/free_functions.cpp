@@ -33628,6 +33628,20 @@ int CUnknown1030bc20::sub_1030bc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030be50 size=0x1e
+#include "CBaseCineCam.h"
+
+struct V3 {
+	float x, y, z;
+};
+
+float *CBaseCineCam::sub_1030be50(float *out)
+{
+	*(V3 *)out = *(V3 *)((char *)this + 0x14);
+	return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030bec0 size=0x69
 extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
 
