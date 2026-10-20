@@ -12,4 +12,5 @@ public:
 	int m_nRecords;	// 0x0b14
 
 	void sub_1014ca10(unsigned char r, unsigned char g, unsigned char b);	// sets the render colour (r, g, b, 255) of every record's entity that is not hidden
+	void sub_1014c880(void *pEnt);	// filter: moves the records keyed by pEnt (whose other entity has the byte at +0x734 clear) to the front, counting them in m_nRecords, then colours them (0xc0, 0xff, 0xc0)
 };
