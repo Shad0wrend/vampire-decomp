@@ -2848,6 +2848,7 @@
 0x10010118 func   ?sub_103f9dd0@@YAHXZ sub_103f9dd0
 0x1001011d func   ?vfunc5@CPhysConstraintSystem@@UAEPAV1@I@Z CPhysConstraintSystem::vfunc5
 0x10010140 func   ?sub_1024a980@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1024a980
+0x1001014a func   ?sub_10334790@CBaseCombatCharacter@@QAEHPBD@Z CBaseCombatCharacter::sub_10334790
 0x10010163 func   ?sub_1007ee00@@YIXPAH@Z sub_1007ee00
 0x1001019f func   ?vfunc5@CGameSign@@QAEPAV1@I@Z CGameSign::vfunc5
 0x100101a9 func   ?sub_102a9ec0@CAI_BaseNPCTroika@@QAEDH@Z CAI_BaseNPCTroika::sub_102a9ec0
