@@ -1264,6 +1264,7 @@
 0x10007f18 func   ??0CUnknown102029c0@@QAE@H@Z CUnknown102029c0::CUnknown102029c0
 0x10007f1d func   ?sub_1037bb20@@YI_NPAD@Z sub_1037bb20
 0x10007f22 func   ?sub_101800e0@CUnknown101800e0@@QAEMH@Z CUnknown101800e0::sub_101800e0
+0x10007f27 func   ?sub_1018e9f0@@YAHPAVCBaseEntity@@PAPAVCActivityCopyProp@@H@Z sub_1018e9f0
 0x10007f40 func   ?sub_101e98c0@CUnknown101e98c0@@QAEXXZ CUnknown101e98c0::sub_101e98c0
 0x10007fa4 func   ?vfunc5@CSoundEnt@@QAEPAV1@I@Z CSoundEnt::vfunc5
 0x10007fb3 func   ?sub_1017e5f0@CBasePlayer@@QAEXPAUinputdata_t@@@Z CBasePlayer::sub_1017e5f0

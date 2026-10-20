@@ -20535,6 +20535,57 @@ extern int g_1058d1ac;
 void sub_1018e9d0(int a, int b) { g_1058d1ac = b; }
 // END FUNCTION
 
+// FUNCTION: 0x1018e9f0 size=0x86
+#include "CBaseEntity.h"
+#include "CActivityCopyProp.h"
+#include "CGlobalEntityList.h"
+
+struct HandleEntry_t
+{
+	CBaseEntity *m_pEnt;
+	unsigned int m_nSerial;
+	int pad;
+};
+struct HandleTable_t
+{
+	int pad;
+	HandleEntry_t m_Entries[1];
+};
+extern HandleTable_t *g_10566458;
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];	// CBaseEntity type descriptor
+extern char g_1058ed4c[];	// CActivityCopyProp type descriptor
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long vfDelta, void *pSrcType, void *pTargetType, int isReference);
+
+static inline CBaseEntity *HandleGet(const unsigned int &h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	HandleEntry_t *e = &g_10566458->m_Entries[h & 0x1fff];
+	if (e->m_nSerial == (h >> 13))
+		return e->m_pEnt;
+	return 0;
+}
+
+int sub_1018e9f0(CBaseEntity *pTarget, CActivityCopyProp **ppOut, int nMax)
+{
+	int n = 0;
+	CBaseEntity *pEnt = 0;
+	do {
+		pEnt = g_106eb5d8.sub_100f7380(pEnt, "activity_copy_prop");
+		CActivityCopyProp *pProp = (CActivityCopyProp *)__RTDynamicCast(pEnt, 0, g_10538764, g_1058ed4c, 0);
+		if (pProp) {
+			if (HandleGet(pProp->m_hTarget) == pTarget) {
+				if (ppOut)
+					ppOut[n] = pProp;
+				n++;
+			}
+		}
+	} while (pEnt && n < nMax);
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018eab0 size=0x7c
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
