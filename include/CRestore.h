@@ -64,6 +64,7 @@ public:
 	void sub_101a1f90(void *pData, int size);	// reads size bytes into pData
 	char vfunc16();	// slot 16: reads one byte
 	CBaseEntity *sub_101a2390(int index);	// the entity of the given save index (stub 0x10014a3d)
+	void sub_1016eec0(const char *pszName, char *pDest, int size);	// reads the string stored under pszName into the size byte buffer pDest (stub 0x10004728)
 
 	CRestoreVec m_vec;	// 0x0004
 	void *m_pData;	// 0x0018
