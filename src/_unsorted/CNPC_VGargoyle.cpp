@@ -28,6 +28,39 @@ int CNPC_VGargoyle::vfunc440(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378c10 size=0x7c
+#include "CNPC_VGargoyle.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+struct S10378c10Dmg { char m_pad[0x10]; unsigned int m_nDamageType; };
+struct S10378c10Info {
+    S10378c10Dmg *m_pDmg;
+    char m_pad[0x38 - 4];
+    unsigned int m_nDamageType;
+};
+int CNPC_VGargoyle::vfunc390(void *pInfo)
+{
+    S10378c10Info *info = (S10378c10Info *)pInfo;
+    m_nVulnerable = 1;
+    unsigned int type;
+    if (info->m_pDmg)
+        type = info->m_pDmg->m_nDamageType | info->m_nDamageType;
+    else
+        type = info->m_nDamageType;
+    if (type & 0x4000000)
+        m_nVulnerable = 0;
+    unsigned int h = *(unsigned int *)((char *)this + 0x628c);
+    CGlobalEntityList_Ent *pTarget;
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        pTarget = s->m_Serial == (int)(h >> 13) ? s->m_pEntity : 0;
+    } else
+        pTarget = 0;
+    sub_10005849((CBaseEntity *)pTarget, 1, 10);
+    return sub_10001b45(pInfo);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379f50 size=0xe
 struct CUnk10924edc
 {
