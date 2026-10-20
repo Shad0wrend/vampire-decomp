@@ -133,3 +133,22 @@ int CRestore::vfunc28(CBaseEntity **pValues, int count, int nBytesAvailable)
     return nRead;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a2530 size=0xa3
+#include <string.h>
+#include "CBaseEntity.h"
+#include "CRestore.h"
+
+int CRestore::vfunc29(int *pValues, int count, int nBytesAvailable)
+{
+    int buf[256];
+    int n = vfunc15(buf, count, nBytesAvailable);
+    for (int i = 0; i < n; i++) {
+        CBaseEntity *pEnt = sub_101a2390(buf[i]);
+        pValues[i] = pEnt ? pEnt->m_pEdict2e0 : 0;
+    }
+    if (n < count)
+        memset(&pValues[n], 0, (count - n) * 4);
+    return n;
+}
+// END FUNCTION
