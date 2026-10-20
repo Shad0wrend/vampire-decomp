@@ -20,6 +20,50 @@ public:
 	int m_i0c;
 };
 
+// Names below are provisional (classes not recovered yet).
+struct CAI_NavSource	// supplies a handle through slot 1 (the pOut argument of sub_102f1fa0)
+{
+	virtual void vfunc0();
+	virtual int *vfunc1();
+};
+
+struct CAI_NavEntry	// 0x68+ byte record found by id
+{
+	int m_hHandle;	// 0x00, -1 = none
+	char m_pad04[0x64 - 4];
+	unsigned int m_flags;	// 0x64
+	float m_flTime;	// 0x68
+};
+
+struct CAI_NavProvider	// owner of the records: 0x78 count, 0x7c pointer array
+{
+	char m_pad00[0x78];
+	int m_nEntries;	// 0x78
+	CAI_NavEntry **m_ppEntries;	// 0x7c
+
+	CAI_NavEntry *sub_102f9400(int id);	// stub 0x10012639: the record whose id (sub_100122ab of the record, owner at +4) equals id, or null
+};
+
+struct CAI_NavProviderList	// count, array
+{
+	int m_nCount;	// 0x00
+	CAI_NavProvider **m_ppItems;	// 0x04
+};
+
+struct CAI_NavWaypoint
+{
+	char m_pad00[0x10];
+	int m_nEntryId;	// 0x10
+};
+
+struct CAI_NavRoute	// the object at CAI_Navigator +0x30
+{
+	char m_pad00[0x24];
+	CAI_NavWaypoint *m_pWaypoint;	// 0x24
+	char m_pad28[0x44 - 0x28];
+	int m_nProvider;	// 0x44
+};
+
 class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
 {
 public:
@@ -33,6 +77,7 @@ public:
 	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20();
 	void sub_10011c98();	// as in CDataObjectAccessSystem (transplant)
+	void sub_102f1fa0(float flDelay, CAI_NavSource *pSource);	// finds the record of the route's waypoint (provider list at +0x2c), sets bit 0 of its flags, its time to curtime + flDelay and its handle from pSource (-1 without)
 
 	int m_i14;
 	int m_i18;
@@ -40,8 +85,8 @@ public:
 	int m_i20;
 	int m_i24;
 	int m_i28;
-	int m_i2c;
-	void *m_p30;
+	CAI_NavProviderList *m_pProviders;	// 0x2c
+	CAI_NavRoute *m_p30;
 	char m_b34;
 	int m_i38;
 	char m_pad3c[0x50 - 0x3c];
