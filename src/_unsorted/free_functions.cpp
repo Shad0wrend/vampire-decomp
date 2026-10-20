@@ -45374,6 +45374,35 @@ const char *sub_10429240(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b470 size=0x72
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_109ee80c;
+extern SendTable *g_1055282c;
+
+// TARGET: sub_1042b470
+int sub_1042b470()
+{
+	static const char *pTableName = "DT_BaseParticleEntity";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1055282c, (void *)sub_10009539),
+	};
+	g_109ee80c.sub_1000e8fe(props + 1, 1, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042ba00 size=0xd
 // TARGET: CUnknown1042ba00::sub_1042ba00
 void CUnknown1042ba00::sub_1042ba00(int value)
