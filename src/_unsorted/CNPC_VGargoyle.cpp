@@ -51,6 +51,27 @@ void CNPC_VGargoyle::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103785f0 size=0x32
+#include "CNPC_VGargoyle.h"
+
+extern int g_109340d8;
+
+struct CAI_BaseNPCTroikaPlaceholder {
+    void sub_1000c531();
+};
+
+// TARGET: CNPC_VGargoyle::vfunc420
+void CNPC_VGargoyle::vfunc420()
+{
+    ((CAI_BaseNPCTroikaPlaceholder *)this)->sub_1000c531();
+    m_hPillar = -1;
+    *(int *)((char *)this + 0x6680) = 0;
+    *(int *)((char *)this + 0x6684) = 0;
+    m_nVulnerable = 0;
+    g_109340d8 = 0xe;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10378a30 size=0xf0
 #include "CNPC_VHuman.h"
 
