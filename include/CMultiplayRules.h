@@ -8,6 +8,7 @@ class CMultiplayRules : public CGameRules
 public:
 	virtual CGameRules *vfunc0(unsigned int flags);	// scalar deleting destructor
 	virtual float vfunc30(int a);
+	virtual void vfunc35(CBaseEntity *pPlayer);	// "EquipPlayer": every game_player_equip entity equips the player (slot 175); without one gives weapon_crowbar, weapon_9mmhandgun and 0x44 SmallRound
 	virtual float vfunc38(int a);
 	virtual int vfunc43(int a, int b);
 	virtual char vfunc47(CBaseEntity *pPlayer, CBaseEntity *pItem);	// \"CanHavePlayerItem\": in a running multiplayer game with the item limit set, refuses an item (without the flag bit 3 of its slot 346) the player already owns in one of its 0xe0 weapon slots; everything else goes to CGameRules
