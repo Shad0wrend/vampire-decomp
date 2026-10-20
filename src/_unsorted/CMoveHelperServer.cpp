@@ -22,3 +22,46 @@ void CMoveHelperServer::vfunc1()
 	m_nTouchCount = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1013fba0 size=0x8d
+#include "CMoveHelperServer.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct SoundName_t
+{
+	const char *m_psz;
+
+	const char *Get() const { return m_psz ? m_psz : ""; }
+};
+
+struct SoundEntry_t
+{
+	int m_nIndex;
+	SoundName_t m_Name;
+};
+
+struct SoundMgr_t
+{
+	void sub_101f5950(int pEnt, int nSound, int a, float flVolume, float flPitch);	// stub 0x100119fa
+};
+
+extern int g_1073dc3c;	// number of sounds
+extern SoundEntry_t **g_1073dc40;	// the sound table
+extern SoundMgr_t g_1073dc28;
+
+static inline int FindSound(const char *pszName)
+{
+	for (int i = 0; i < g_1073dc3c; i++) {
+		if (!_strcmpi(g_1073dc40[i]->m_Name.Get(), pszName))
+			return g_1073dc40[i]->m_nIndex;
+	}
+	return -1;
+}
+
+void CMoveHelperServer::vfunc11()
+{
+	static int s_nSound = FindSound("Exert_Light");
+	g_1073dc28.sub_101f5950(*(int *)((char *)this + 4), s_nSound, 2, 1.0f, 1.25f);
+}
+// END FUNCTION
