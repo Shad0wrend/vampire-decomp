@@ -342,6 +342,7 @@
 0x10002b7b func   ?vfunc5@CRotButton@@QAEPAV1@I@Z CRotButton::vfunc5
 0x10002b94 func   ?sub_1004e1c0@CPhysBox@@QAE_NH@Z CPhysBox::sub_1004e1c0
 0x10002b9e func   _env_particle_hud env_particle_hud
+0x10002bb7 func   ?sub_101dd910@CUnknown101dd910@@QAEXXZ CUnknown101dd910::sub_101dd910
 0x10002bc1 func   ?sub_103fe710@@YAHXZ sub_103fe710
 0x10002bc6 func   ?sub_101eaae0@@YAXH@Z sub_101eaae0
 0x10002bd0 func   ?sub_101daec0@CUnknown101daec0@@QAEDPAVIKVNodeView@@PBD@Z CUnknown101daec0::sub_101daec0

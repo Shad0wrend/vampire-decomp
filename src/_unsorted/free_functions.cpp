@@ -30022,6 +30022,32 @@ bool CUnknown101dbe30::sub_101dbe30(void *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dd910 size=0xde
+#include "CUnknown101dd910.h"
+#include "ScopeTrace.h"
+
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+
+void CUnknown101dd910::sub_101dd910()
+{
+	char buf[512];
+	if (sub_101dd4f0()) {
+		Msg("%s", "[Projectile]:\n");
+		Q_snprintf(buf, 512, "   Speed: %d\n", m_nSpeed);
+		Msg("%s", buf);
+		Q_snprintf(buf, 512, "   Model: %s\n", m_pszModel ? m_pszModel : g_106b8540);
+		Msg("%s", buf);
+		Q_snprintf(buf, 512, "   Particle: %s\n", m_pszParticle ? m_pszParticle : g_106b8540);
+		Msg("%s", buf);
+		if (m_bParticleDiesOnHit) {
+			Q_snprintf(buf, 512, "   ParticleDiesOnHit: True\n");
+			Msg("%s", buf);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ddb40 size=0x78
 extern int (*g_109f388c)(char *, int, const char *, ...);
 extern void (*g_109f3628)(const char *, ...);
