@@ -8157,6 +8157,59 @@ int CBaseAnimating::sub_10097110(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097200 size=0xc1
+#include "CBaseAnimating.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_109f3620;
+extern int *g_109f3680;
+
+struct HitboxSet_t
+{
+	int m_name;
+	int m_numHitboxes;
+	int m_hitboxIndex;
+
+	int NumHitboxes()
+	{
+		if (this == 0)
+			return 0;
+		return m_numHitboxes;
+	}
+};
+
+bool CBaseAnimating::sub_10097200(const char *name, int *pSet, int *pHitbox)
+{
+	const char *entName;
+	if (this)
+		entName = m_name26c ? m_name26c : "";
+	else
+		entName = "NULL ENTITY";
+	g_109f3620[*g_109f3680].m_pszFunc = "CBaseAnimating::LookupHitbox";
+	g_109f3620[*g_109f3680].m_pszName = entName;
+	g_109f3620[*g_109f3680].m_pszExtra = "";
+	(*g_109f3680)++;
+	char *hdr = (char *)sub_100952d0(-1);
+	*pSet = -1;
+	*pHitbox = -1;
+	if (hdr) {
+		for (int j = 0; j < *(int *)(hdr + 0x100); j++) {
+			HitboxSet_t *set = (HitboxSet_t *)(hdr + *(int *)(hdr + 0x104)) + j;
+			for (int i = 0; i < set->NumHitboxes(); i++)
+				;
+		}
+	}
+	(*g_109f3680)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100976e0 size=0xca
 #include "CBaseAnimating.h"
 

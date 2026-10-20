@@ -581,6 +581,7 @@
 0x10004377 func   ?sub_103c76b0@CUnknown103c76b0@@QAEXXZ CUnknown103c76b0::sub_103c76b0
 0x10004381 func   ?vfunc546@CNPC_VBach@@QAEHH@Z CNPC_VBach::vfunc546
 0x10004386 func   ?sub_101cc7e0@@YIXPAPAX@Z sub_101cc7e0
+0x1000438b func   ?sub_10097200@CBaseAnimating@@QAE_NPBDPAH1@Z CBaseAnimating::sub_10097200
 0x10004390 func   ?sub_1034a240@CUnknown1034a240@@QAEXXZ CUnknown1034a240::sub_1034a240
 0x10004395 func   ?sub_101cc7d0@CUnknown101cc7d0@@QAEXXZ CUnknown101cc7d0::sub_101cc7d0
 0x1000439a func   ?sub_101cc7c0@@YIXPAPAX@Z sub_101cc7c0
