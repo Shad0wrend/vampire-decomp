@@ -4213,6 +4213,39 @@ void sub_10054360(S10054360Particle *pParticle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10054400 size=0xbf
+#include "CUnknown1070b22c.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern CUnknown1070b22c *g_1070b22c;
+struct DiscParticle { int m_data[9]; };
+extern DiscParticle g_1053e3e8[3];
+extern DiscParticle g_1053e458[3];
+extern DiscParticle g_1053e4c8[5];
+extern DiscParticle g_1053e57c;
+extern char g_1053ed24[];
+void sub_10054360(DiscParticle *p);
+
+void sub_10054400()
+{
+	g_109f3620[*g_109f3680].a = "PrecacheDiscParticles";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	for (int i = 0; i < 3; i++)
+		sub_10054360(&g_1053e3e8[i]);
+	for (int j = 0; j < 3; j++)
+		sub_10054360(&g_1053e458[j]);
+	for (int k = 0; k < 5; k++)
+		sub_10054360(&g_1053e4c8[k]);
+	sub_10054360(&g_1053e57c);
+	g_1070b22c->vfunc17((int)g_1053ed24, 1);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054ad0 size=0xf0
 #include "CUtlRBTreeInsert24.h"
 
