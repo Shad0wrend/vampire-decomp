@@ -30,9 +30,11 @@ struct CBasePlayerSub270	// small polymorphic object embedded at +0x270
 #define CBP_V100(p) CBP_V10(p##0) CBP_V10(p##1) CBP_V10(p##2) CBP_V10(p##3) CBP_V10(p##4) \
 	CBP_V10(p##5) CBP_V10(p##6) CBP_V10(p##7) CBP_V10(p##8) CBP_V10(p##9)
 
-struct CBasePlayerVehicle	// the vehicle object at +0x20fc; only slot 10 is typed
+struct CBasePlayerVehicle	// the vehicle object at +0x20fc; slots 2 and 10 are typed
 {
-	CBP_V10(vv)
+	virtual void vv0(); virtual void vv1();
+	virtual int vfunc2(int a);	// slot 2: whether the vehicle knows the given role (0 = not yet)
+	virtual void vv3(); virtual void vv4(); virtual void vv5(); virtual void vv6(); virtual void vv7(); virtual void vv8(); virtual void vv9();
 	virtual void vfunc10(CBasePlayer *pPlayer);
 };
 
@@ -76,7 +78,9 @@ public:
 	// slots 449..467
 	CBP_V1(sk0a)
 	virtual void vfunc450();
-	CBP_V1(sk0c) CBP_V1(sk0d) CBP_V1(sk0e) CBP_V1(sk0f) CBP_V1(sk0g) CBP_V1(sk0h) CBP_V1(sk0i)
+	CBP_V1(sk0c)
+	virtual bool vfunc452(const char *pszKey);	// slot 452 key handler: "vehicleRole" with two console arguments hands the role number to the vehicle at +0x20fc (leaving the vehicle first when it does not know the role yet)
+	CBP_V1(sk0e) CBP_V1(sk0f) CBP_V1(sk0g) CBP_V1(sk0h) CBP_V1(sk0i)
 	virtual void vfunc458();	// slot 458: if the entity at +0x1538 is not set up, lets the vehicle at +0x20fc handle it, else picks the weapon call by the float at +0x1564
 	CBP_V1(sl0) CBP_V1(sl1) CBP_V1(sl2) CBP_V1(sl3) CBP_V1(sl4) CBP_V1(sl5) CBP_V1(sl6) CBP_V1(sl7) CBP_V1(sl8)
 	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
@@ -100,7 +104,9 @@ public:
 	int m_n1E0C;
 	char m_pad1E10[0x298];	// 0x1E10 .. 0x20A7
 	char m_b20A8;
-	char m_pad20A9[0x53];	// 0x20A9 .. 0x20FB
+	char m_pad20A9[0x4b];	// 0x20A9 .. 0x20F3
+	char m_b20F4;	// vehicle active flag
+	char m_pad20F5[7];	// 0x20F5 .. 0x20FB
 	CBasePlayerVehicle *m_pVehicle;	// 0x20FC
 	CBasePlayerPartOwner *m_pPartOwner;	// 0x2100
 	CBasePlayerPart *m_pPart2104;	// 0x2104
@@ -149,6 +155,7 @@ public:
 	void sub_1017b6f0(int a, const char *pszName, int b, const char *pszName2);	// registers a hull pair (called through the stub at 0x100105c8)
 	void sub_1017c830();	// matches the player's saved quest records (0x40 bytes each at the pointer +0x1d68, count +0x1d74) with the global quest journal by name: after resetting the journal's records (sub_10221270), copies the record's dwords at +0x34 / +0x38 into the matching quest (+0x10 / +0xc) and stores the quest index at +0x30
 	void sub_101713c0();	// leaves the vehicle at +0x20fc (called by vfunc452): asks the vehicle for the driver slot and exit position, teleports the player there through the virtual slots, clears the flag bit 0 at +0x1e74 and the vehicle fields at +0x20f4 / +0x20f8 / +0x20fc
+	void sub_101712d0(CBasePlayerVehicle *pVehicle, int role);	// worker called by vfunc452 through the stub at 0x10006631
 	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
 	void sub_1017bf10(int mode);	// switches the active view part: mode 0 / 1 swap the parts at +0x2104 / +0x2108 (name from slot 217, show / hide through their slots 35 / 21, handed to the part owner at +0x2100 and VPhysicsSwapObject), mode 2 hides both
 };
