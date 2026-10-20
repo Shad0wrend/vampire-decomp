@@ -42689,6 +42689,20 @@ int sub_103f6630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f6ab0 size=0x2a
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+
+void CAI_BaseNPC::sub_103f6ab0(CBaseEntity *pEnt)
+{
+	unsigned int *pHandle = (unsigned int *)((char *)this + 0x918);
+	if (pEnt)
+		*pHandle = *pEnt->vfunc1();
+	else
+		*pHandle = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f6d30 size=0x72
 #include "SendProp.h"
 

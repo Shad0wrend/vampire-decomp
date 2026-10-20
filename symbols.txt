@@ -3451,6 +3451,7 @@
 0x10015bae func   ?sub_103e49b0@@YAHXZ sub_103e49b0
 0x10015bd6 func   ?vfunc2@CTEBSPDecal@@UAEPAV1@I@Z CTEBSPDecal::vfunc2
 0x10015bf4 func   ?sub_10055520@CUtlRBTree24@@QBEABULinks_t@1@H@Z CUtlRBTree24::sub_10055520
+0x10015c1c func   ?sub_103f6ab0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_103f6ab0
 0x10015c3a func   ?sub_101be0e0@CStealthKillRules@@QAEXXZ CStealthKillRules::sub_101be0e0
 0x10015c62 func   ?sub_1019d490@CUnknown1019d490@@QAEXD@Z CUnknown1019d490::sub_1019d490
 0x10015c6c func   _env_firesensor env_firesensor
