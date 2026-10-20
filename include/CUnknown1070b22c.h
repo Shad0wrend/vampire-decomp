@@ -1,5 +1,6 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 105 and 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 84, 85, 105 and 119 to 122 are known.
 // Slot 119 takes a flag and returns a time value in ST0; slot 120 returns a dword in EAX.
+// Slots 84 / 85 are the engine's command argument accessors (Cmd_Argv(index) / Cmd_Argc()).
 #pragma once
 
 #define U22C_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -9,7 +10,12 @@ class CUnknown1070b22c
 {
 public:
 	U22C_SLOTS10(a0) U22C_SLOTS10(a1) U22C_SLOTS10(a2) U22C_SLOTS10(a3) U22C_SLOTS10(a4)
-	U22C_SLOTS10(a5) U22C_SLOTS10(a6) U22C_SLOTS10(a7) U22C_SLOTS10(a8) U22C_SLOTS10(a9)
+	U22C_SLOTS10(a5) U22C_SLOTS10(a6) U22C_SLOTS10(a7)
+	virtual void a80(); virtual void a81(); virtual void a82(); virtual void a83();
+	virtual const char *vfunc84(int index);
+	virtual int vfunc85();
+	virtual void a86(); virtual void a87(); virtual void a88(); virtual void a89();
+	U22C_SLOTS10(a9)
 	virtual void b00(); virtual void b01(); virtual void b02(); virtual void b03(); virtual void b04();
 	virtual int vfunc105(int a, int b);
 	virtual void b06(); virtual void b07(); virtual void b08(); virtual void b09();
