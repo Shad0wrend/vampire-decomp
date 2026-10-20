@@ -3768,6 +3768,7 @@
 0x10014e57 func   ?sub_101d5e80@CStatDefault3List@@QAEPAUStatDefault3@@H@Z CStatDefault3List::sub_101d5e80
 0x10014e5c func   ?sub_1040dc70@@YIDPAD@Z sub_1040dc70
 0x10014e66 func   ?vfunc546@CNPC_VCombatman@@QAEHH@Z CNPC_VCombatman::vfunc546
+0x10014ed4 func   ?sub_101b40a0@@YGPADPADH@Z sub_101b40a0
 0x10014eed func   _item_g_warr_clipboard item_g_warr_clipboard
 0x10014f0b func   ?sub_102e2750@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e2750
 0x10014f1a func   ?sub_1020f2c0@@YIXPADHH@Z sub_1020f2c0

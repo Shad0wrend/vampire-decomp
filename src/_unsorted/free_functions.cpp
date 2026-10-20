@@ -23428,6 +23428,41 @@ CUnknown101b30d0 *CUnknown101b30d0::sub_101b30d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b40a0 size=0x99
+struct S101b40a0 {
+    int a;
+    float b;
+    int c, d, e;
+    int f;
+    char g;
+    int h;
+    char name[128];
+};
+extern char g_1072c0c8[];
+char __stdcall sub_10005830(const char *p, S101b40a0 *s);
+extern char *(__cdecl *g_109f3890)(char *, const char *, int);
+
+char * __stdcall sub_101b40a0(char *p, int unused)
+{
+    S101b40a0 s;
+    s.c = 100;
+    s.d = 100;
+    s.e = 100;
+    s.a = 0;
+    s.b = 1.0f;
+    s.f = 75;
+    s.name[0] = 0;
+    s.g = 0;
+    s.h = 0;
+    if (!sub_10005830(p, &s))
+        return p;
+    if (!s.name[0])
+        return p;
+    g_109f3890(g_1072c0c8, s.name, 512);
+    return g_1072c0c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b45b0 size=0x99
 #include "CUnknown101b45b0.h"
 extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
