@@ -2,12 +2,22 @@
 // decompiled code reads. Only what the sequence lookups need.
 #pragma once
 
+struct StudioHdr;
+
+struct StudioVirtualModel	// the object behind an include model: slot 1 gives the included model's header
+{
+	virtual void vfunc0();
+	virtual StudioHdr *vfunc1(StudioHdr *pOwner, int index);
+};
+
 struct StudioIncludeModel	// 0x74 bytes: a model whose sequences are included
 {
-	char m_pad00[8];
+	char m_pad00[4];
+	StudioVirtualModel *m_pVirtual;	// 0x04
 	int m_nBase;	// 0x08: first sequence index
 	int m_nCount;	// 0x0c: sequence count
-	char m_pad10[0x74 - 0x10];
+	char m_pad10[0x44 - 0x10];
+	short m_aPoseParamRemap[24];	// 0x44: the pose parameter of the owner each of the included model's parameters follows (-1: none)
 };
 
 struct StudioHdr
