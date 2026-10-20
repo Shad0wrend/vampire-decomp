@@ -2702,6 +2702,7 @@
 0x10011b53 func   ?sub_1030cb00@@YGHPBD@Z sub_1030cb00
 0x10011b67 func   ?sub_10046050@PQ@@QAEXABUElem@@@Z PQ::sub_10046050
 0x10011bb7 func   ?sub_1006e890@CUnknown1006e890@@QAE_NXZ CUnknown1006e890::sub_1006e890
+0x10011bbc func   ?sub_10032b70@UtlMem@@QAEXXZ UtlMem::sub_10032b70
 0x10011bc1 func   ?sub_10081e50@@YIXPAUCSlots@@HH@Z sub_10081e50
 0x10011bd0 func   ?sub_100b79c0@@YIPADPAD@Z sub_100b79c0
 0x10011bf8 func   ?vfunc5@CItemGHorrorTape_1@@QAEPAV1@I@Z CItemGHorrorTape_1::vfunc5
