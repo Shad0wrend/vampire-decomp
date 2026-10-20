@@ -34892,6 +34892,39 @@ int sub_1025b5b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025b740 size=0x89
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern const char *g_105c7638[];
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);
+int sub_1025b800();
+
+void sub_1025b740(const char *pszFlag, unsigned int *pFlags)
+{
+	unsigned int flag = 0;
+	if (_strcmpi(pszFlag, "normal") == 0) {
+		flag = 0x50;
+	} else {
+		int i = 0;
+		if (sub_1025b800() > 0) {
+			do {
+				if (_strcmpi(pszFlag, g_105c7638[i]) == 0) {
+					flag = 1 << i;
+					break;
+				}
+				i++;
+			} while (i < sub_1025b800());
+		}
+		if (i >= sub_1025b800())
+			g_109f3628("ERROR: weapon_parse::ParseEquipFlag:  Unknown flag ( %s )!\n", pszFlag);
+	}
+	if (pFlags) {
+		if (flag != 0 && flag != 1)
+			*pFlags &= 0xfffffffe;
+		*pFlags |= flag;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025c670 size=0x13
 bool sub_1025c670(unsigned short *a, unsigned short *b)
 {

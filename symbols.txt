@@ -2836,6 +2836,7 @@
 0x100104c9 func   _item_k_fu_office_key item_k_fu_office_key
 0x100104ec func   ?vfunc5@CWeaponMelee_Sheriff_Sword@@QAEPAV1@I@Z CWeaponMelee_Sheriff_Sword::vfunc5
 0x10010519 func   ?sub_1013fd20@CUtlMemory96@@QAEXH@Z CUtlMemory96::sub_1013fd20
+0x10010528 func   ?sub_1025b740@@YAXPBDPAI@Z sub_1025b740
 0x10010532 func   _trigger_teleport trigger_teleport
 0x1001057d func   ?sub_102ccce0@CAI_DynamicLink@@QAEXXZ CAI_DynamicLink::sub_102ccce0
 0x1001058c func   ?sub_102168a0@CPropModelState@@QAEXPAUinputdata_t@@@Z CPropModelState::sub_102168a0
