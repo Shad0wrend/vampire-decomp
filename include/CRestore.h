@@ -4,6 +4,7 @@
 #include "IRestore.h"
 
 struct CRestoreField;
+struct typedescription_t;
 class CBaseEntity;
 
 extern void (*g_109f3624)(void *);	// Plat_Free
@@ -47,7 +48,8 @@ public:
 	virtual void vfunc3(int a, int b, int c, int d, int e);	// stub 0x10004b65 for 0x101a1b70
 
 	// Slots 4..28 (slot 7 and slot 16 are the plain members below).
-	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void vfunc4(void *pBaseData, typedescription_t *pFields, int fieldCount);	// "CRestore::EmptyFields": clears every readable field (custom ops Empty, embedded tables recursively, else zero fill)
+	virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
 	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
 	virtual int vfunc15(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadInt": reads up to count ints into pValues, returns the number read
 	virtual void s16();
@@ -61,6 +63,7 @@ public:
 
 	// Searches the field table starting from the remembered position, wrapping around.
 	CRestoreField *sub_101a17c0(const char *name, CRestoreField *fields, int count, int *pStart);
+	char sub_101a1860(typedescription_t *pField);	// "CRestore::ShouldReadField" (stub 0x100092cd)
 	void sub_101a1990(unsigned short *pValue);	// slot 7: calls slot 9(pValue), then appends slot 0() + *pValue to the vector at +4
 	void sub_101a1f90(void *pData, int size);	// reads size bytes into pData
 	char vfunc16();	// slot 16: reads one byte
