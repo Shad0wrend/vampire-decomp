@@ -10,7 +10,7 @@ class CAI_BaseNPCTroika : public CAI_BaseNPC
 public:
 	virtual int vfunc293();	// the dword at +0x9c of the entity the handle at +0x647c resolves to (0 when stale)
 	virtual void vfunc416(char value);
-	virtual float vfunc418(float a);	// float lookup: -1000008 -> +0x6484, -1000007 -> +0x6488, -1000006 -> +0x648c, -1000005 -> 10.0f, else CAI_BaseNPC::vfunc418(a)
+	virtual float vfunc418(float a);	// float lookup: -1000005 -> +0x6484, -1000006 -> +0x6488, -1000007 -> +0x648c, -1000008 -> 10.0f, else CAI_BaseNPC::vfunc418(a)
 	virtual bool vfunc468(CBaseEntity *pEnt);	// see CAI_BaseNPC
 
 	void vfunc488();	// slot 488: plays the "Death" sound
@@ -59,6 +59,8 @@ public:
 	bool sub_10269d30(int state);	// true when the NPC is in the given internal state
 	int sub_102b8c40();	// when state 0x4c or 0x4d is set: clears the byte at +0x5b80, copies the three dwords at +0x5b9c to +0x5dd0, stamps the source file name and line 0x5f8b at +0x1b30 / +0x1b34 and returns 0x8a, else 0
 	int sub_10295590(int activity);	// slot 375 base implementation (NPC_TranslateActivity), called directly
+	void sub_1028e8b0(CBaseEntity *pEnt, int a);	// runs sub_1028e940(a) when pEnt is null-safe related to this NPC: this NPC has no slot 167 value, or pEnt is that value, or the object at pEnt+0x98 has the same slot 167 value
+	void sub_1028e940(int a);
 
 	char m_pad0004[0x6080];
 	float m_f6084;
