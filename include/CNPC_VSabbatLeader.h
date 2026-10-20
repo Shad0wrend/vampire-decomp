@@ -3,8 +3,9 @@
 
 struct CNPC_VSabbatLeaderHint
 {
-	char pad0[0x5dc];
-	int m_hintType;
+	char pad0[0x5d8];
+	CNPC_VSabbatLeaderHint *m_pNext;	// +0x5d8: next hint of the global hint list
+	int m_hintType;	// +0x5dc
 };
 
 class CNPC_VSabbatLeader
@@ -55,4 +56,6 @@ public:
 	void sub_103aa960();	// "UpdateBloodSplash": scope trace, spawns splash emitters when health changed
 	void sub_1000136b(const char *pName, int arg);	// spawns a particle emitter by name
 	void sub_103aaa80();	// "CNPC_VSabbatLeader::RecordPlayerHealth": scope trace, with the player entity (handle at +0x628c) live stores stat 0xf of its first non-pending stat list (default list when none) at +0x66cc
+	bool sub_103a9e70();	// "CNPC_VSabbatLeader::PlayerInNoJumpZone": scope trace, true when for a no-jump hint (type 0x3e84, global list at 0x10925450 via +0x5d8) both the player's and this NPC's origin are within 100.0f (sub_103c6570)
+	float sub_103c6570(CNPC_VSabbatLeaderHint *pHint, const float *pOrigin);	// distance-like measure between a hint and a position (stub 0x100119d2), returned in ST0
 };
