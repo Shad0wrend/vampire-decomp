@@ -38,3 +38,4 @@
 	void sub_10010e60(CBaseEntity *pEnt);	// CBaseEntity::vfunc42 (stub 0x10010e60), called directly with an entity
 	bool sub_10345330();	// "CBaseCombatCharacter::IsMeleeSwi...": scope trace (entity name), true unless sub_1032e7b0 is set and the current sequence's description (sub_1008d990 of the sequence at +0x6f0) has records of 0xbc bytes (up to 0x14, count at +0x2c4, offset at +0x2c8) one of which has a first float above the float at +0x6f8
 	bool sub_1032db60(CBaseEntity *pWeapon);	// weapon test used by CMultiplayRules::vfunc20 (stub 0x10014c77)
+	void sub_10335780(CBaseEntity *pWeapon);	// "CBaseCombatCharacter::Inventory_Reorder"-like: scope trace (entity name), moves pWeapon down to its first slot of its type (slot 298 counts per type), shifting the weapons in between up and updating their slot index (+0x73c)
