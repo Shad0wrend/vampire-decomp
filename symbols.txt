@@ -2417,6 +2417,7 @@
 0x10010b45 func   ?sub_10356550@@YAPAHXZ sub_10356550
 0x10010b5e func   ?vfunc0@CGameRules@@UAEPAV1@I@Z CGameRules::vfunc0
 0x10010b7c func   ?sub_10216c20@@YAPAHXZ sub_10216c20
+0x10010b86 func   ?sub_102366f0@@YAHXZ sub_102366f0
 0x10010b95 func   ?sub_101c2b10@CUnknown101c2b10@@QAEXD@Z CUnknown101c2b10::sub_101c2b10
 0x10010bcc func   ?sub_1009c1e0@CBaseEntity@@QAEXHHPAH@Z CBaseEntity::sub_1009c1e0
 0x10010c08 func   ?sub_10158570@@YAXHPAUIFieldSink@@PAUIRestoreSrc@@@Z sub_10158570
