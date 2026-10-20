@@ -34945,6 +34945,25 @@ extern "C" CBaseEntity *npc_maker_fleshpile()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034c980 size=0x43
+#include "CNPCMaker_Zombie.h"
+void *sub_100aa720(int size);
+extern char g_10625608[];
+
+// TARGET: npc_maker_zombie
+extern "C" CBaseEntity *npc_maker_zombie()
+{
+	void *mem = sub_100aa720(0x76dc);
+	CNPCMaker_Zombie *p;
+	if (mem)
+		p = ((CNPCMaker_Zombie *)mem)->sub_1034ca80();
+	else
+		p = 0;
+	p->vfunc106(g_10625608);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d490 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
