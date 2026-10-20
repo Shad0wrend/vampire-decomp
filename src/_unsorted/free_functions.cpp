@@ -25366,6 +25366,72 @@ void CVStatAction_t::sub_101fd1b0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fd250 size=0x180
+#include "CVStatAction_t.h"
+
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern TraceEnt *g_109f3620;
+extern char g_106b8540[];
+extern char g_1074e470[];
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+struct UnkTable1074df78
+{
+	char *sub_1000c5d1(int index);
+};
+extern UnkTable1074df78 g_1074df78;
+const char *sub_1001490c(void *p, int arg);
+
+// TARGET: CVStatAction_t::sub_101fd250
+const char *CVStatAction_t::sub_101fd250()
+{
+	g_109f3620[*g_109f3680].a = "CVStatAction_t::ToDetailedStr";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	int *self = (int *)this;
+	switch (self[1])
+	{
+	case 1:
+	{
+		const char **pName = (const char **)(g_1074df78.sub_1000c5d1(self[0xf]) + 8);
+		const char *name = *pName;
+		if (!name)
+			name = g_106b8540;
+		sprintf(g_1074e470, "[ %d - %d ]: %s", self[2], self[3], name);
+		--*g_109f3680;
+		return g_1074e470;
+	}
+	case 2:
+		sprintf(g_1074e470, "[ %d - %d ]: %s", self[2], self[3], sub_1001490c(&self[0x10], self[0xf]));
+		--*g_109f3680;
+		return g_1074e470;
+	case 4:
+		sprintf(g_1074e470, "[ %d - %d ]: %s @ %s", self[2], self[3], (char *)self[0xf], (char *)self[0xf] + 0x84);
+		--*g_109f3680;
+		return g_1074e470;
+	case 3:
+		sprintf(g_1074e470, "[ %d - %d ]: FUNC", self[2], self[3]);
+		--*g_109f3680;
+		return g_1074e470;
+	default:
+	{
+		int i = 0;
+		char c;
+		do
+		{
+			c = "<ERROR>"[i];
+			g_1074e470[i] = c;
+			i++;
+		} while (c);
+		--*g_109f3680;
+		return g_1074e470;
+	}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fd430 size=0x69
 struct TScope {
 	const char *name;
