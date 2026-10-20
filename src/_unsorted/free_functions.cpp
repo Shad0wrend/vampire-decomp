@@ -23889,6 +23889,32 @@ CUnknown101e9880* CUnknown101e9880::sub_101e9880()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e98c0 size=0x67
+#include "CUnknown101e98c0.h"
+
+// TARGET: CUnknown101e98c0::sub_101e98c0
+void CUnknown101e98c0::sub_101e98c0()
+{
+	if (m_ppItems)
+	{
+		for (int i = 0; i < m_count; i++)
+		{
+			CUnknown101e98c0Item *p = m_ppItems[i];
+			if (p)
+			{
+				p->m_sub.sub_101d8250();
+				delete p;
+			}
+			m_ppItems[i] = 0;
+		}
+		operator delete(m_ppItems);
+		m_ppItems = 0;
+	}
+	m_count = 0;
+	m_field00 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9950 size=0xeb
 #include "CUnknown101e9950.h"
 
