@@ -9,6 +9,7 @@ extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 struct inputdata_t;
 struct CUnknown101c2a50;
 class CBaseEntity;
+class CNPC_VWerewolf;
 
 struct CNPC_VWerewolfTimer
 {
@@ -40,10 +41,31 @@ struct CNPC_VWerewolfVec3
 	float x, y, z;
 };
 
+// The node list of the AI network held by the helper object: element count at +0, node pointer array at +4.
+struct CNPC_VWerewolfNodeNet
+{
+	int m_nNodes;
+	void **m_ppNodes;
+
+	int sub_102f3c10(CNPC_VWerewolf *pNPC, const float *pOrigin);	// stub 0x1000827e: the index of the node nearest to the origin, -1 when there is none
+};
+
+struct CNPC_VWerewolfNodeOwner
+{
+	char m_pad0000[0x156c];
+	int m_n156c;
+};
+
 // The object at +0x5d34 (class not known yet).
 struct CNPC_VWerewolfHelper5d34
 {
 	int sub_10004e58(const CNPC_VWerewolfVec3 *pA, const CNPC_VWerewolfVec3 *pB);
+
+	CNPC_VWerewolfNodeOwner *m_pOwner;	// 0x04
+	int m_n08;	// 0x08
+	float m_f0c;	// 0x0c
+	char m_pad10[0x2c - 0x10];
+	CNPC_VWerewolfNodeNet *m_pNet;	// 0x2c
 };
 
 // The hint object at +0x66b0 (class not known yet).
@@ -69,6 +91,9 @@ public:
 	CNPC_VWerewolfHint66b0 *m_pHint66b0;	// 0x66b0
 	char pad66b4[0x66c8 - 0x66b4];
 	char m_b66c8;	// 0x66c8
+	char pad66c9[0x66f8 - 0x66c9];
+	float m_flNodeTime;	// 0x66f8: time stamp of the cached node
+	void *m_pNode;	// 0x66fc: cached nearest node
 
 	int sub_10366490(int key);
 	bool sub_10366400(int key);
@@ -112,4 +137,6 @@ public:
 	void sub_100b3b00();	// CBaseEntity::sub_100b3b00 (stub 0x1001514a), called directly
 	CNPC_VWerewolfVec3 sub_103d6650(void *pHint);	// "CNPC_VWerewolf::GetHintEndpoint": scope trace (entity name), the zero vector for no hint, else the absolute origin (slot 217) of the hint's entity
 	CBaseEntity *sub_103d6390(void *pHint);	// the entity of a hint (stub 0x10008094)
+	void *sub_103d0ad0();	// "CNPC_VWerewolf::GetNearestNode"-like: the nearest AI node, cached in +0x66fc for the time stamp at +0x66f8; recomputed through the helper's node net (stub 0x1000827e) from the origin (slot 220)
+	const float *vfunc220();	// absolute origin getter (slot 220)
 };
