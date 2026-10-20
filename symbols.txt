@@ -2488,6 +2488,7 @@
 0x1000d990 func   ?sub_1026dc60@CUnknown1026dc60@@QAEXXZ CUnknown1026dc60::sub_1026dc60
 0x1000d99f func   ?vfunc104@CBaseProp@@QAEXXZ CBaseProp::vfunc104
 0x1000d9d6 func   _npc_VPlaceholder npc_VPlaceholder
+0x1000d9db func   ?vfunc5@CSave@@UAEXPBX@Z CSave::vfunc5
 0x1000d9e5 func   _item_g_lilly_diary item_g_lilly_diary
 0x1000d9ea func   ?sub_10037680@CBaseEntity@@QAE_NXZ CBaseEntity::sub_10037680
 0x1000d9ef func   ?vfunc546@CNPC_VMoleman@@QAEHH@Z CNPC_VMoleman::vfunc546
