@@ -39605,6 +39605,25 @@ char sub_10388ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103894b0 size=0x43
+#include "CNPC_VMalkavian.h"
+void *sub_100aa720(int size);
+extern char g_1064094c[];
+
+// TARGET: npc_VMalkavian
+extern "C" CBaseEntity *npc_VMalkavian()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VMalkavian *p;
+	if (mem)
+		p = ((CNPC_VMalkavian *)mem)->sub_10389520();
+	else
+		p = 0;
+	p->vfunc106(g_1064094c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10389650 size=0x33
 void sub_10007897();
 void sub_100106f4();
