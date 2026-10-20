@@ -49,7 +49,7 @@ public:
 	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3();
 	virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7();
 	virtual bool vfunc486();
-	virtual void v487(); virtual void v488(); virtual void v489();
+	virtual void v487(); virtual void vfunc488(); virtual void v489();	// slot 488: logs "SPI_DIES" with the three convar values, then runs slot 487
 	virtual void vfunc490();
 	VT_SLOTS100(w0)
 	VT_SLOTS10(w10)
