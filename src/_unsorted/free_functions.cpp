@@ -51773,6 +51773,39 @@ void CNPC_VWerewolf::sub_103d99a0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dad80 size=0x9f
+struct SEntB { void *pEnt; unsigned serial; int pad; };
+extern char *g_10566458;
+extern unsigned int g_1093f80c;
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];
+extern char g_106618b4[];
+extern char g_1065fbdc[];
+
+void *sub_103dad80()
+{
+    SEntB *e1;
+    if (g_1093f80c == 0xffffffff
+        || (e1 = (SEntB *)(g_10566458 + 4) + (g_1093f80c & 0x1fff), e1->serial != (g_1093f80c >> 13))
+        || !e1->pEnt) {
+        CBaseEntity *pWerewolf = (CBaseEntity *)__RTDynamicCast(g_106eb5d8.sub_100f7380(0, g_1065fbdc), 0, g_10538764, g_106618b4, 0);
+        if (pWerewolf) {
+            g_1093f80c = *pWerewolf->vfunc1();
+        } else {
+            g_1093f80c = 0xffffffff;
+            return 0;
+        }
+    }
+    unsigned int h = g_1093f80c;
+    if (h != 0xffffffff) {
+        SEntB *e = (SEntB *)(g_10566458 + 4) + (h & 0x1fff);
+        if (e->serial == (h >> 13))
+            return e->pEnt;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dae50 size=0x8d
 #include "CUnknown103dae50.h"
 #include "CBaseEntity.h"
