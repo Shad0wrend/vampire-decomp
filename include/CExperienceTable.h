@@ -22,4 +22,5 @@ public:
 	void sub_102223f0();	// "ExperienceTable::PurgeExperience": scope trace, frees the two strings of every record and purges the memory
 	void sub_10222210();	// "ExperienceTable::~ExperienceTable": scope trace, PurgeExperience, then the inlined CUtlVector destructor (RemoveAll + Purge, then the CUtlMemory Purge)
 	int sub_10222500(const char *pszName);	// "ExperienceTable::FindIndex": scope trace, index of the record whose name equals pszName (case-insensitive, compared over the longer length), else a warning and -1
+	bool sub_102228f0(char *line, CExperienceAward *out);	// "ExperienceTable::ParseLine": scope trace, splits "name|desc|number" in place at the two '|' and fills out with heap copies of name and desc and atoi(number); false when a part is missing or empty
 };
