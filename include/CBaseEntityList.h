@@ -10,7 +10,7 @@ struct CBaseEntityListNode	// a node of the linked lists
 	unsigned short m_Next;	// 0x04
 };
 
-struct CBaseEntityListLL	// one linked list: memory, allocation count, grow size, then the indices
+struct CBaseEntityListLL	// one linked list: memory, allocation count, grow size, then the indices (0x18 bytes with the padding)
 {
 	CBaseEntityListNode *m_pMemory;	// 0x00
 	int m_allocationCount;	// 0x04
@@ -33,9 +33,9 @@ public:
 
 	char m_pad0004[0x18004 - 4];
 	CBaseEntityListLL m_Live;	// 0x18004
-	char m_pad1801a[0x18020 - 0x1801a];
+	char m_pad1801c[0x18020 - 0x1801c];
 	CBaseEntityListLL m_Second;	// 0x18020
 
-	void sub_100fa0f0(unsigned short element);	// releases the entity of a live list node (stub 0x1000a362)
+	void sub_100fa0f0(unsigned int element);	// releases the entity of a live list node (stub 0x1000a362)
 	void sub_100f9c40();	// destructor body: stores the vtable, releases every live node, then RemoveAll + Purge of both linked lists
 };
