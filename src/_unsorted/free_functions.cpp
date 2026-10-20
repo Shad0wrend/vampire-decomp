@@ -55686,6 +55686,47 @@ void CNPC_VWerewolf::sub_103d4760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d6280 size=0xce
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#define WV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define WV100(p) WV(p##0) WV(p##1) WV(p##2) WV(p##3) WV(p##4) WV(p##5) WV(p##6) WV(p##7) WV(p##8) WV(p##9)
+extern char g_10662e20[];
+// this object's virtual table: slots 62, 216 and 218
+struct WolfSlots
+{
+    WV(a0) WV(a1) WV(a2) WV(a3) WV(a4) WV(a5)
+    virtual void a60(); virtual void a61();
+    virtual void vfunc62(CNPC_VWerewolfVec3 *p);
+    virtual void a63(); virtual void a64(); virtual void a65(); virtual void a66(); virtual void a67(); virtual void a68(); virtual void a69();
+    WV(b7) WV(b8) WV(b9) WV(b10) WV(b11) WV(b12) WV(b13) WV(b14) WV(b15) WV(b16) WV(b17) WV(b18) WV(b19) WV(b20)
+    virtual void c210(); virtual void c211(); virtual void c212(); virtual void c213(); virtual void c214(); virtual void c215();
+    virtual void vfunc216(CNPC_VWerewolfVec3 *p);
+    virtual void c217();
+    virtual void vfunc218(int a);
+};
+// the hint's virtual table: slot 219
+struct HintSlots
+{
+    WV100(h0) WV100(h1) WV(h20)
+    virtual void h210(); virtual void h211(); virtual void h212(); virtual void h213(); virtual void h214(); virtual void h215(); virtual void h216(); virtual void h217(); virtual void h218();
+    virtual int vfunc219();
+};
+void CNPC_VWerewolf::sub_103d6280(void *pHint)
+{
+    ScopeTrace t(g_10662e20, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    if (pHint) {
+        CNPC_VWerewolfVec3 pos;
+        sub_103d6770(&pos, pHint);
+        ((WolfSlots *)this)->vfunc62(&pos);
+        ((WolfSlots *)this)->vfunc216(&pos);
+        ((WolfSlots *)this)->vfunc218(((HintSlots *)pHint)->vfunc219());
+        sub_100b3b00();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d7620 size=0xb6
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

@@ -1717,6 +1717,7 @@
 0x10009985 func   ?sub_1018f000@@YAPAHXZ sub_1018f000
 0x10009994 func   ?vfunc2@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc2
 0x10009999 func   ?sub_1004c4c0@CUtlRBTree36@@QBE_NG@Z CUtlRBTree36::sub_1004c4c0
+0x1000999e func   ?sub_103d6280@CNPC_VWerewolf@@QAEXPAX@Z CNPC_VWerewolf::sub_103d6280
 0x100099a8 func   ?sub_10430280@@YAII@Z sub_10430280
 0x100099d0 func   _item_g_pisha_fetish item_g_pisha_fetish
 0x100099f8 func   ?sub_100d13d0@CUnknown106b89bc@@QAEXPAVCBaseEntity@@@Z CUnknown106b89bc::sub_100d13d0
