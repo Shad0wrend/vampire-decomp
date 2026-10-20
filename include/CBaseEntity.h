@@ -66,7 +66,8 @@ public:
 	virtual int vfunc116();
 	virtual void vfunc117(); virtual void vfunc118(); virtual void vfunc119();
 	virtual void vfunc120(const char *key, float *pos, float *ang);	// "CBaseEntity::GetInputDispatchEffectPosition": scope trace (entity name), copies GetAbsOrigin() to pos and GetAbsAngles() to ang
-	virtual void vfunc121(); virtual void vfunc122(); virtual void vfunc123(); virtual void vfunc124();
+	virtual void vfunc121(); virtual void vfunc122(const char *classname);	// slot 122 "CBaseEntity::SetClassname": scope trace (entity name), stores the pooled string at +0x11c, then slot 13(string or "")
+	virtual void vfunc123(); virtual void vfunc124();
 	virtual void vfunc125(); virtual int vfunc126(int a); virtual int vfunc127(int a); virtual void vfunc128(); virtual void vfunc129();
 	virtual void vfunc130(int a); virtual void vfunc131(); virtual void vfunc132(); virtual void vfunc133();
 
