@@ -205,6 +205,7 @@
 0x10001fd7 func   ?vfunc62@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc62
 0x10001ff0 func   ?sub_102c6d40@UtlMem@@QAEXXZ UtlMem::sub_102c6d40
 0x10001ffa func   _item_d_holy_light item_d_holy_light
+0x10001fff func   ?vfunc104@CNPC_VManBat@@QAEXXZ CNPC_VManBat::vfunc104
 0x10002013 func   ?sub_100ee630@CBaseDoor@@QAEXPAVCBaseEntity@@@Z CBaseDoor::sub_100ee630
 0x10002027 func   ?sub_102e26f0@@YIXPAUCOwner@@@Z sub_102e26f0
 0x10002031 func   ?vfunc5@CBaseCineCam@@UAEPAV1@I@Z CBaseCineCam::vfunc5
