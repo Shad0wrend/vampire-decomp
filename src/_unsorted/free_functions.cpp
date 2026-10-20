@@ -53757,6 +53757,34 @@ void CNPC_VVampireBoss::sub_103c6eb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6f40 size=0x95
+#include "CNPC_VVampireBoss.h"
+#include "CBaseEntity.h"
+
+struct ScopeEntry { const char *name; const void *file; const void *line; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern const char *g_1065e6d0[];
+
+// TARGET: CNPC_VVampireBoss::sub_103c6f40
+void CNPC_VVampireBoss::sub_103c6f40()
+{
+	g_109f3620[*g_109f3680].name = "CNPC_VVampireBoss::SpawnBodyEmitters";
+	g_109f3620[*g_109f3680].file = g_106b8540;
+	g_109f3620[*g_109f3680].line = g_106b8540;
+	(*g_109f3680)++;
+	sub_103c7150();
+	for (int i = 0; i < 4; i++)
+	{
+		CBaseEntity *pEmitter = sub_103c7010(i, g_1065e6d0[i]);
+		if (pEmitter)
+			m_hParticleEmitters[i] = *pEmitter->vfunc1();
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c7150 size=0xaa
 #include "CNPC_VVampireBoss.h"
 #include "CGlobalEntityList.h"

@@ -3228,6 +3228,7 @@
 0x10011720 func   ?sub_10407020@@YAHXZ sub_10407020
 0x1001173e func   ?sub_1007fce0@UtlMem6@@QAEXH@Z UtlMem6::sub_1007fce0
 0x1001175c func   ?sub_1025da90@@YIXPAUS1025da90@@@Z sub_1025da90
+0x1001177f func   ?sub_103c6f40@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c6f40
 0x10011789 func   ?sub_100a0b20@CBaseEntity@@QAEXXZ CBaseEntity::sub_100a0b20
 0x100117a2 func   ?vfunc626@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc626
 0x100117ac func   ?sub_1020b000@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z CBaseVampireSkillEntity::sub_1020b000
