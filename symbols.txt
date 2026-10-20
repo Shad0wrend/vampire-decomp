@@ -2182,6 +2182,7 @@
 0x1000be4c func   ?sub_103d3220@CNPC_VWerewolf@@QAEHPAX@Z CNPC_VWerewolf::sub_103d3220
 0x1000be5b func   _prop_ragdoll_special prop_ragdoll_special
 0x1000be79 func   ?sub_101e1010@Loader@@QAE_NPBD@Z Loader::sub_101e1010
+0x1000be97 func   ?sub_10050c70@CDisciplineParticle@@SAPAV1@PAUCDisciplineParticleParams@@HHHH@Z CDisciplineParticle::sub_10050c70
 0x1000be9c func   ?vfunc5@CTriggerBombSite@@QAEPAV1@I@Z CTriggerBombSite::vfunc5
 0x1000beb5 func   ?sub_102def00@UtlMem@@QAEXXZ UtlMem::sub_102def00
 0x1000bec4 func   ?sub_10231e60@@YIIPAD@Z sub_10231e60

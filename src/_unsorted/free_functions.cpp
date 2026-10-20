@@ -4489,6 +4489,26 @@ CDisciplineParticle *CDisciplineParticle::sub_10050b90(CDisciplineParticleParams
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050c70 size=0xd6
+#include "ScopeTrace.h"
+#include "CDisciplineParticle.h"
+#include "CUnknown100eb420.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+CDisciplineParticle *CDisciplineParticle::sub_10050c70(CDisciplineParticleParams *pParams, int a2, int a3, int a10, int a11)
+{
+	ScopeTrace trace("CDisciplineParticle::Create", g_106b8540);
+	if (((CUnknown100eb420 *)pParams)->sub_100eb420()) {
+		return sub_10050e70(pParams->m_pszClassname ? pParams->m_pszClassname : g_106b8540, a2, a3, pParams->m_n04, pParams->m_n08, pParams->m_n0c,
+			g_1070b22c->vfunc17((int)(pParams->m_pszModel ? pParams->m_pszModel : g_106b8540), 0), pParams->m_n14,
+			(int)(pParams->m_n18 ? (const char *)pParams->m_n18 : g_106b8540), a10, a11, pParams->m_n20);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050d90 size=0xa6
 #include "CDisciplineParticle.h"
 #include "CUnknown1070b22c.h"
