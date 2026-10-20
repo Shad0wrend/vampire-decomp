@@ -13,7 +13,6 @@ public:
 	int vfunc390(void *pInfo);	// slot 390 "CNPC_VGhoulCroucher::OnTakeDamage_Alive": scope trace (entity name), sub_1037b6e0(the dword at +0x2c of pInfo), sets the byte at +0x6667, then CNPC_VHuman::vfunc390
 	void sub_1037b6e0(int a);	// called through the stub at 0x1000a2e5
 	int sub_10001b45(void *pInfo);	// CNPC_VHuman::vfunc390 (stub 0x10001b45), called directly
-	int vfunc294(int a);	// slot 294 "CNPC_VGhoulCroucher::IsValidSteal...": scope trace (entity name), true when sub_1037bb20() is zero, else CAI_BaseNPCTroika::vfunc294(a)
-	char sub_1037bb20();	// stub 0x10007f1d
+	int vfunc294(int a);	// slot 294 "CNPC_VGhoulCroucher::IsValidSteal...": scope trace (entity name), true when the free getter sub_1037bb20 (byte at +0x6666) is zero, else CAI_BaseNPCTroika::vfunc294(a)
 	int sub_1000c081(int a);	// CAI_BaseNPCTroika::vfunc294 (stub 0x1000c081), called directly
 };
