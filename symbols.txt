@@ -506,6 +506,7 @@
 0x10003ae4 func   ?sub_103e7e80@@YAHXZ sub_103e7e80
 0x10003ae9 func   ?sub_100735a0@CUnknown100735a0@@QAEXH@Z CUnknown100735a0::sub_100735a0
 0x10003b02 func   ?sub_1003cb00@CBaseEntity@@QAE_NH@Z CBaseEntity::sub_1003cb00
+0x10003b07 func   ?sub_101713c0@CBasePlayer@@QAEXXZ CBasePlayer::sub_101713c0
 0x10003b1b func   ?vfunc546@CNPC_VPlaceholder@@QAEHH@Z CNPC_VPlaceholder::vfunc546
 0x10003b4d func   ?sub_100ba0c0@CBatSwarm@@QAE_NPAX@Z CBatSwarm::sub_100ba0c0
 0x10003b57 func   ?sub_10376b70@CNPC_VFrenzyShadow@@QAEDH@Z CNPC_VFrenzyShadow::sub_10376b70

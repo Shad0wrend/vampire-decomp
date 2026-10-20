@@ -20873,6 +20873,67 @@ void CUnknown10170eb0::sub_10170eb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101713c0 size=0xab
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+
+#define PS_V1(p) virtual void p();
+#define PS_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define PS_V100(p) PS_V10(p##0) PS_V10(p##1) PS_V10(p##2) PS_V10(p##3) PS_V10(p##4) PS_V10(p##5) PS_V10(p##6) PS_V10(p##7) PS_V10(p##8) PS_V10(p##9)
+
+struct CPlayerSlots
+{
+	PS_V10(a0) PS_V10(a1) PS_V10(a2) PS_V10(a3) PS_V10(a4) PS_V10(a5) PS_V1(b0) PS_V1(b1) PS_V1(b2) PS_V1(b3) PS_V1(b4) PS_V1(b5) PS_V1(b6)
+	virtual void vfunc67();
+	PS_V10(c0) PS_V10(c1) PS_V1(d0) PS_V1(d1) PS_V1(d2) PS_V1(d3) PS_V1(d4)
+	virtual void vfunc93(int moveType, int moveCollide);
+	PS_V100(e0) PS_V100(e1) PS_V100(e2) PS_V10(f0) PS_V10(f1) PS_V10(f2) PS_V10(f3) PS_V10(f4) PS_V10(f5) PS_V1(g0)
+	virtual void vfunc455(float *pPos);
+};
+
+struct CPlayerVehicle
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual int GetDriverSlot(CBasePlayer *pPlayer);	// slot 3
+	virtual void v4Release(int slot, int flag);	// slot 4
+	virtual void v5();
+	virtual void GetExitPosition(int slot, float *pPos);	// slot 6
+};
+
+struct SVehicleLink
+{
+	char m_bInVehicle;	// 0x20f4
+	char m_pad[3];
+	int m_hSeat;	// 0x20f8
+	CPlayerVehicle *m_pVehicle;	// 0x20fc
+};
+
+void sub_100043cc(CBasePlayer *pPlayer, float *pPos, int flag);
+
+void CBasePlayer::sub_101713c0()
+{
+	SVehicleLink *link = (SVehicleLink *)((char *)this + 0x20f4);
+	if (link->m_pVehicle) {
+		int slot = link->m_pVehicle->GetDriverSlot(this);
+		float pos[3];
+		link->m_pVehicle->GetExitPosition(slot, pos);
+		((CPlayerSlots *)this)->vfunc455(pos);
+		*(unsigned int *)((char *)this + 0x1e74) &= ~1;
+		((CPlayerSlots *)this)->vfunc67();
+		((CPlayerSlots *)this)->vfunc93(3, 0);
+		((CBaseEntity *)this)->sub_100aaa40(3);
+		sub_100043cc(this, pos, 0);
+		*(volatile int *)&link->m_hSeat = -1;
+		link->m_bInVehicle = 0;
+		(*(CPlayerVehicle *volatile *)&link->m_pVehicle)->v4Release(slot, 0);
+		link->m_pVehicle = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101719d0 size=0x94
 #define V4(x) virtual void x##a(); virtual void x##b(); virtual void x##c(); virtual void x##d();
 #define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
