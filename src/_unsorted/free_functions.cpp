@@ -16444,6 +16444,15 @@ void sub_100dc120(int *p, int unused, int *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc140 size=0x10
+void sub_100dc140(int *p, int unused, int *out)
+{
+    typedef int (__fastcall *VFunc)(void *);
+    int r = ((VFunc)(*(int **)p)[12])(p);
+    *out = r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc300 size=0x76
 extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
 struct Rec64 {
