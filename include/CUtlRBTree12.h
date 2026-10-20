@@ -46,4 +46,5 @@ public:
 	unsigned short sub_1024b9e0();	// "CUtlRBTree::NewNode": takes the free list head or grows the node memory (first allocation 3 elements)
 	unsigned short sub_10194780();	// same as sub_1024b9e0 (another instance)
 	void sub_101945f0(const void *insert, unsigned short &parent, bool &leftchild);	// "CUtlRBTree::FindInsertionPoint": walks down from the root with the less function, remembering the last node and the side
+	void sub_102ce640(const void *insert, unsigned short &parent, bool &leftchild);	// "CUtlRBTree::FindInsertionPoint" (another instance)
 };
