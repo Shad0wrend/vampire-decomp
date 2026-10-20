@@ -1569,6 +1569,27 @@ void CPhysicsPushedEntities::sub_10036b10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036e50 size=0x7e
+#include "CPhysicsPushedEntities.h"
+extern char g_106b8540[];
+struct ScopeTraceEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeTraceEntry *g_109f3620;
+CBaseEntity *CPhysicsPushedEntities::sub_10036e50()
+{
+    g_109f3620[*g_109f3680].a = "CPhysicsPushedEntities::RegisterBlockage";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    ++*g_109f3680;
+    MovedEntity_t &moved = m_rgMoved[m_nBlockingIndex];
+    if (moved.m_pBlocker)
+        moved.m_pEntity->sub_10012d14(moved.m_pBlocker, moved.m_pad10);
+    CBaseEntity *pEntity = moved.m_pEntity;
+    --*g_109f3680;
+    return pEntity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037680 size=0x93
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
