@@ -3222,6 +3222,7 @@
 0x1001139c func   ?sub_1004d140@CPhysicsSpring@@QAEXPAUinputdata_t@@@Z CPhysicsSpring::sub_1004d140
 0x100113ce func   _trigger_electric_bugaloo trigger_electric_bugaloo
 0x100113d3 func   _npc_VChangBrosBlade npc_VChangBrosBlade
+0x100113dd func   ??0CUnknown1007a060Elem@@QAE@XZ CUnknown1007a060Elem::CUnknown1007a060Elem
 0x100113ec func   ?sub_1012f190@@YAHH@Z sub_1012f190
 0x10011414 func   ?sub_1012d720@CHudTimer@@QAEXXZ CHudTimer::sub_1012d720
 0x10011428 func   ?vfunc2@CTEWorldDecal@@UAEPAV1@I@Z CTEWorldDecal::vfunc2
