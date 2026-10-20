@@ -614,6 +614,7 @@
 0x100045f7 func   ?sub_101fd540@CVStatActionList_t@@QAEXXZ CVStatActionList_t::sub_101fd540
 0x100045fc func   ?sub_103dbeb0@UtlVec8@@QAEPAU1@HH@Z UtlVec8::sub_103dbeb0
 0x10004601 func   ?sub_102ce9f0@@YAXPAHPBH@Z sub_102ce9f0
+0x10004638 func   ?sub_10136a30@@YA_NPBD0PAD@Z sub_10136a30
 0x1000463d func   ?sub_1042c0c0@THL@@QAE_NHH@Z THL::sub_1042c0c0
 0x100046b0 func   ?sub_102b11c0@CAI_BaseNPCTroika@@QAEHH@Z CAI_BaseNPCTroika::sub_102b11c0
 0x100046ba func   ?vfunc2@CTESparks@@UAEPAV1@I@Z CTESparks::vfunc2

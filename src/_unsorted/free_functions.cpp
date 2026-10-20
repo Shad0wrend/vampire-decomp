@@ -17583,6 +17583,31 @@ void __fastcall sub_10136490(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136a30 size=0xc7
+extern "C" int __cdecl strcmp(const char *, const char *);
+#pragma intrinsic(strcmp)
+extern const char *g_10579478;
+extern char *(__cdecl *g_109f3890)(char *dest, const char *src, int n);
+const char *sub_10136ce0(const char *pData, char *pToken, const char *pBreak);
+
+bool sub_10136a30(const char *pData, const char *pKey, char *pOut)
+{
+	char token[256];
+	while (pData) {
+		const char *pNext = sub_10136ce0(pData, token, g_10579478);
+		if (token[0] == '}')
+			break;
+		if (!strcmp(token, pKey)) {
+			sub_10136ce0(pNext, token, g_10579478);
+			g_109f3890(pOut, token, 256);
+			return true;
+		}
+		pData = sub_10136ce0(pNext, token, g_10579478);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136ce0 size=0x116
 extern "C" void *__cdecl memset(void *, int, unsigned int);
 extern const char *g_1070c840;
