@@ -42,3 +42,4 @@
 	bool sub_100a52a0();	// "CBaseEntity::EntityUnselectable"-like: scope trace (entity name), true when sub_100b5190(), the flags test sub_100a8220(), slot 116 or the owner (+0x9c) without the flag byte at +0x1480 holds
 	char sub_100b5190();	// worker called by sub_100a52a0 (stub 0x10014da8)
 	void sub_100b3ee0();	// "CBaseEntity::UnsetPlayerSimulated": scope trace (entity name), when the entity behind the handle at +0x440 is live calls its CBasePlayer::sub_1017c1d0(this) (RemoveFromPlayerSimulationList), then clears the handle (-1) and the byte at +0x43c
+	void sub_100b1ed0(const float *pLocal, float *pAbs);	// "CBaseEntity::ComputeAbsPosition": scope trace (entity name), with a live move parent (handle at +0x25c) transforms the local position by the parent's matrix at +0x130 (calling slot 98 first when bit 11 of its flags +0x268 is set), else copies it
