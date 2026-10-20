@@ -476,6 +476,7 @@
 0x1000369d func   ?sub_1003c9f0@CDataObjectAccessSystem@@QAEXHPAX@Z CDataObjectAccessSystem::sub_1003c9f0
 0x100036a7 func   ?sub_1006cd90@CStatDefaultList@@QAEPAUStatDefault@@XZ CStatDefaultList::sub_1006cd90
 0x100036ac func   _trigger_push trigger_push
+0x100036b1 func   ?vfunc438@CNPC_VGhoulCroucher@@QAEHXZ CNPC_VGhoulCroucher::vfunc438
 0x100036c0 func   ?sub_10184fd0@UtlMem@@QAEXXZ UtlMem::sub_10184fd0
 0x100036c5 func   ?sub_103dd140@@YADXZ sub_103dd140
 0x100036d4 func   ?vfunc197@CBaseEntity@@QAEHHHHH@Z CBaseEntity::vfunc197
