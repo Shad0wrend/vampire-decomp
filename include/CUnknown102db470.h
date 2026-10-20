@@ -15,11 +15,18 @@ public:
 	bool sub_102dad60(CUnknown102db470 *pNPC, float *pOut1, float *pOut2);	// whether the node can serve the NPC (stub 0x1000f826)
 };
 
+struct CUnknown102db470Sub	// small polymorphic object embedded at +0x270
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+};
+
 class CUnknown102db470
 {
 public:
-	char m_pad0000[0x62fc];
+	char m_pad0000[0x270];
+	CUnknown102db470Sub m_sub270;	// 0x270 (vptr + nothing else known)
+	char m_pad0274[0x62fc - 0x274];
 	CUnknown102db470Node *m_pCurrentNode;	// 0x62fc
-
-	int sub_102db470();	// collects into the global table at 0x10926d80 the usable nodes of the best (highest) rank other than the current one, falling back to the current node; returns how many
 };
