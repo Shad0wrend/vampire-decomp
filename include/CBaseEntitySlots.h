@@ -43,6 +43,6 @@ public:
 	virtual void slot175(); virtual void slot176(); virtual void slot177(); virtual void slot178(); virtual void slot179();
 	virtual void slot180(); virtual void slot181(); virtual void slot182(); virtual void slot183(); virtual void slot184();
 	virtual void slot185(); virtual void slot186(); virtual void slot187(); virtual void slot188(); virtual void slot189();
-	virtual void slot190(); virtual void slot191(); virtual void slot192(float *a);
+	virtual void slot190(); virtual void slot191(); virtual float *slot192(float *a);
 	virtual void slot193(int a);
 };
