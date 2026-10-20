@@ -2806,6 +2806,7 @@
 0x1000e62e func   ?sub_1008e630@CBaseAnimating@@QAEXPAVCBaseEntity@@@Z CBaseAnimating::sub_1008e630
 0x1000e651 func   ?sub_10326d40@@YI_NPADHHHH@Z sub_10326d40
 0x1000e697 func   ?sub_10397b40@CNPC_VMingXiao@@QAE_NPAX@Z CNPC_VMingXiao::sub_10397b40
+0x1000e6a6 func   ?sub_101a8ac0@CCineNPC@@QAEDXZ CCineNPC::sub_101a8ac0
 0x1000e6ce func   ?vfunc327@CDisciplineWeapon@@UAEXXZ CDisciplineWeapon::vfunc327
 0x1000e700 func   ?sub_1005cae0@@YAXHHHHHHHHHHHHHHHHH@Z sub_1005cae0
 0x1000e70f func   _speaker speaker

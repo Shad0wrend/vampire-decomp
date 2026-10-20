@@ -27154,6 +27154,48 @@ void CCineNPC::sub_101a77a0(void *pNpc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8ac0 size=0x116
+#include "CBaseEntity.h"
+#include "CCineNPC.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+extern void (*g_109f3628)(const char *pMsg, ...);
+extern char g_10594f80[];
+extern char g_10594f30[];
+
+struct EntNameView
+{
+    const char *sub_1000b5cd();	// "CBaseEntity::GetDebugName" (stub 0x1000b5cd); valid with a null this
+};
+
+inline EntNameView *ResolveHandle(unsigned int h)
+{
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (h >> 13))
+            return (EntNameView *)pSlot->m_pEntity;
+    }
+    return 0;
+}
+
+char CCineNPC::sub_101a8ac0()
+{
+    const unsigned int *ph = &m_hNPC5f94;
+    const unsigned int *ph2 = &m_hNPC5f94;
+    if (!ResolveHandle(m_hNPC5f94))
+        return 1;
+    if (m_n5f58 != 0) {
+        g_109f3628(g_10594f80, ResolveHandle(*ph)->sub_1000b5cd());
+        return 0;
+    }
+    if (!(((CBaseEntity *)ResolveHandle(*ph))->m_flags204 & 0x200))
+        return 1;
+    g_109f3628(g_10594f30, ResolveHandle(*ph2)->sub_1000b5cd());
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8cf0 size=0xc0
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
