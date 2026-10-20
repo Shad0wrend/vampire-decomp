@@ -13829,6 +13829,41 @@ void sub_100d7210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9c50 size=0x9d
+#include <string.h>
+#include "CUnknown101d5bd0.h"
+extern CUnknown101d5bd0 g_10739a4c;
+extern char g_106b8540[];
+extern int (__cdecl *g_109f388c)(char *buf, int count, const char *fmt, ...);
+
+struct List {
+    int sub_101e1360(const char *name);
+    CUnknown101d5bd0Entry *sub_101e11c0(int index);
+};
+
+int sub_100d9c50(const char *pszLine, char *pszOut)
+{
+    if (!strstr(pszLine, "vdiscipline_info "))
+        return 0;
+    const char *pszArgs = pszLine + strlen("vdiscipline_info ");
+    int count = 0;
+    int index = ((List *)&g_10739a4c)->sub_101e1360(pszArgs);
+    while (index != -1) {
+        const char **ppName = &((List *)&g_10739a4c)->sub_101e11c0(index)->m_p;
+        const char *pszName = *ppName;
+        if (!pszName)
+            pszName = g_106b8540;
+        g_109f388c(pszOut, 64, "%s%s", "vdiscipline_info ", pszName);
+        count++;
+        pszOut += 64;
+        if (count >= 192)
+            break;
+        index = g_10739a4c.sub_101e1440(pszArgs, index);
+    }
+    return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dac20 size=0x74
 #include "CGlobalEntityList.h"
 
