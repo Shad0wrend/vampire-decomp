@@ -993,6 +993,7 @@
 0x100075ef func   ?sub_101c31f0@@YAXEPAH0GHE@Z sub_101c31f0
 0x100075fe func   ?sub_101b7df0@CUnknown101b9140@@QAEHHPBUCUnknown101b9140Elem@@@Z CUnknown101b9140::sub_101b7df0
 0x1000762b func   _item_k_lilly_key item_k_lilly_key
+0x10007630 func   ?sub_103fcee0@@YAHXZ sub_103fcee0
 0x1000763f func   ?sub_10105e20@CBaseCombatCharacter@@QAEXPAMPAD@Z CBaseCombatCharacter::sub_10105e20
 0x1000765d func   _npc_maker npc_maker
 0x10007671 func   ?sub_10081eb0@@YIXPAUCSlots@@HH@Z sub_10081eb0
