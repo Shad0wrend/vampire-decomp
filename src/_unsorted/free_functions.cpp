@@ -27892,6 +27892,20 @@ unsigned char __fastcall sub_10256200(unsigned char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10256220 size=0x11
+#include "CBaseCombatWeapon.h"
+
+struct CWeaponOwner {
+	char pad[0x2448];
+	int field2444;
+};
+
+char CBaseCombatWeapon::sub_10256220()
+{
+	return sub_102517b0()->field2444 != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102567b0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
