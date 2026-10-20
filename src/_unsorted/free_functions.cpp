@@ -40593,6 +40593,13 @@ void sub_10246430(int unused, int *src, int *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10246470 size=0x10
+void sub_10246470(int unused, unsigned short *src, unsigned int *dst)
+{
+    *dst = *src;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246490 size=0xd
 void sub_10246490(int unused, int *src, int *dst)
 {
