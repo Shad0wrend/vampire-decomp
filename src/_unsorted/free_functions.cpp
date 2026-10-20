@@ -37083,6 +37083,39 @@ char CVStatList_t::sub_102008b0(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10200be0 size=0x88
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+
+extern char g_105a860c[];
+
+namespace block_10200be0 {
+struct CVStatListUnit : CVStatList_t
+{
+	char sub_102008b0(int stat);
+};
+
+char CVStatListUnit::sub_102008b0(int stat)
+{
+	if (stat >= 0 && stat < m_field04)
+		return 1;
+	return 0;
+}
+}
+using namespace block_10200be0;
+
+// TARGET: CVStatList_t::sub_10200be0
+void CVStatList_t::sub_10200be0(int stat, int value)
+{
+	ScopeTrace trace(g_105a860c, g_106b8540);
+	int limit = sub_10200b10(stat);
+	if (value > limit)
+		value = limit;
+	if (((CVStatListUnit *)this)->sub_102008b0(stat))
+		(*(int **)m_field08)[stat] = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10200ca0 size=0x83
 #include "CVStatList_t.h"
 
