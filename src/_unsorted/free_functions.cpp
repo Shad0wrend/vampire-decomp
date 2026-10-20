@@ -11436,6 +11436,40 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce630 size=0x64
+#include "CUnknown100ce630.h"
+
+struct Globals { char pad[0xc]; float curtime; };
+extern Globals *g_1070b228;
+
+// TARGET: CUnknown100ce630::sub_100ce630
+bool CUnknown100ce630::sub_100ce630(float delay)
+{
+	CUnknown100ce630Item *pItem = m_pCurrent;
+	if (!pItem)
+		return false;
+	CUnknown100ce630Item *p = m_pHead;
+	if (p != pItem)
+	{
+		for (; p; p = p->m_pNext)
+		{
+			if (p->m_pNext == pItem)
+			{
+				p->m_pNext = pItem->m_pNext;
+				goto relink;
+			}
+		}
+		return false;
+	}
+	m_pHead = pItem->m_pNext;
+relink:
+	m_pCurrent->m_pNext = 0;
+	m_pCurrent->m_time = delay + g_1070b228->curtime;
+	sub_100ce210(m_pCurrent);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce750 size=0x85
 struct EntInfo { void *m_pEntity; int m_serial; int m_unused; };
 struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
