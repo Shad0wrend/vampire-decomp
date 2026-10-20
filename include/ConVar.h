@@ -5,7 +5,7 @@ class ConVar
 {
 public:
 	virtual ConVar *vfunc0(unsigned int flags);
-	virtual void vfunc1();
+	virtual char vfunc1();	// "IsCommand"-like test (a boolean answer in al)
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
