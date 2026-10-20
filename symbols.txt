@@ -3083,6 +3083,7 @@
 0x1000f93e func   ?sub_101fd090@@YAXH@Z sub_101fd090
 0x1000f957 func   ?vfunc12@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc12
 0x1000f95c func   ?sub_101eddb0@@YAXH@Z sub_101eddb0
+0x1000f97f func   ?sub_1003d770@@YAXPAUCTouchSlots@@PAUCTouchLink@@@Z sub_1003d770
 0x1000f993 func   _phys_animlink phys_animlink
 0x1000f9a7 func   ?sub_104303d0@@YAII@Z sub_104303d0
 0x1000f9b6 func   ?vfunc304@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc304

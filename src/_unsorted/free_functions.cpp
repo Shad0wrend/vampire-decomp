@@ -2246,6 +2246,80 @@ void CBaseEntity::sub_1003d300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003d770 size=0x125
+#include "CCineNPCSlots.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CTouchSlots	// the virtual table of an entity up to slot 176
+{
+	CCS_V100(a) CCS_V10(b0) CCS_V10(b1) CCS_V10(b2) CCS_V10(b3) CCS_V10(b4) CCS_V10(b5) CCS_V10(b6)
+	CCS_V(b170) CCS_V(b171) CCS_V(b172) CCS_V(b173) CCS_V(b174) CCS_V(b175)
+	virtual void slot176(void *pOther);	// EndTouch
+};
+
+struct CTouchSlot
+{
+	CTouchSlots *m_pEntity;
+	int m_Serial;
+	int m_pad;
+};
+
+struct CTouchLink
+{
+	unsigned int m_hEntity;	// 0x00
+	int m_pad04;
+	CTouchLink *m_pPrev;	// 0x08
+	CTouchLink *m_pNext;	// 0x0c
+	unsigned int m_nFlags;	// 0x10
+
+	CTouchSlots *Get()
+	{
+		if (m_hEntity != 0xffffffff)
+		{
+			CTouchSlot *pSlot = (CTouchSlot *)((char *)g_10566458 + 4) + (m_hEntity & 0x1fff);
+			if (pSlot->m_Serial == (int)(m_hEntity >> 13))
+				return pSlot->m_pEntity;
+		}
+		return 0;
+	}
+
+	bool IsValid()
+	{
+		return Get() != 0;
+	}
+};
+
+struct CTouchLinkPool
+{
+	void sub_1013dce0(CTouchLink *pLink);	// stub 0x1000330f
+};
+
+extern CTouchLinkPool g_106bd904;
+extern int g_106bd9b8;
+
+// TARGET: sub_1003d770
+void sub_1003d770(CTouchSlots *pEntity, CTouchLink *pLink)
+{
+	ScopeTrace trace("CBaseEntity::PhysicsRemoveToucher", g_106b8540);
+	if ((pLink->m_nFlags & 1) && pLink->IsValid())
+	{
+		CTouchSlots *pTouched = pLink->Get();
+		if (pTouched && pEntity)
+			pEntity->slot176(pTouched);
+	}
+	pLink->m_pPrev->m_pNext = pLink->m_pNext;
+	pLink->m_pNext->m_pPrev = pLink->m_pPrev;
+	{
+		ScopeTrace trace2("FreeTouchLink", g_106b8540);
+		g_106bd9b8--;
+		g_106bd904.sub_1013dce0(pLink);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003daa0 size=0xa6
 #define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
