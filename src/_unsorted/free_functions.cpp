@@ -6089,6 +6089,30 @@ struct CUnknown100740f0 { int p[2]; char a; void sub_100740f0(char v); };
 void CUnknown100740f0::sub_100740f0(char v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10074820 size=0x10e
+#include "CFlexAnimationTrack.h"
+
+// TARGET: CFlexAnimationTrack::sub_10074820
+void CFlexAnimationTrack::sub_10074820(int nList)
+{
+	for (int i = 0; i < m_Samples[nList].m_nSize; i++)
+	{
+		for (int j = i + 1; j < m_Samples[nList].m_nSize; j++)
+		{
+			CExpressionSampleStub a = m_Samples[nList].m_pMemory[i];
+			CExpressionSampleStub b = m_Samples[nList].m_pMemory[j];
+			if (a.m_flTime > b.m_flTime)
+			{
+				m_Samples[nList].m_pMemory[i] = b;
+				m_Samples[nList].m_pMemory[j] = a;
+			}
+		}
+	}
+	sub_10074b10(0);
+	sub_10074b10(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074a30 size=0xa
 void CUnknown10074a30::sub_10074a30(char value)
 {
