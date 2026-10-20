@@ -44111,6 +44111,25 @@ int sub_103f5220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f5330 size=0x43
+#include "CWeaponUnarmed.h"
+void *sub_100aa720(int size);
+extern char g_1055f6bc[];
+
+// TARGET: item_w_unarmed
+extern "C" CBaseEntity *item_w_unarmed()
+{
+	void *mem = sub_100aa720(0x910);
+	CWeaponUnarmed *p;
+	if (mem)
+		p = ((CWeaponUnarmed *)mem)->sub_103f53f0();
+	else
+		p = 0;
+	p->vfunc106(g_1055f6bc);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f59f0 size=0x72
 #include "SendProp.h"
 
