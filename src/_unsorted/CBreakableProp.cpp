@@ -87,3 +87,15 @@ void CBreakableProp::vfunc144(void *pInfo)
 	*(float *)((char *)this + 0x17c) = fNext;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1018fe50 size=0x11
+struct CBreakablePropFields1018fe50 {
+    char pad0[0x1fc];
+    int field1fc;
+    bool sub_1018fe50(int a);
+};
+bool CBreakablePropFields1018fe50::sub_1018fe50(int a)
+{
+    return field1fc == 2;
+}
+// END FUNCTION

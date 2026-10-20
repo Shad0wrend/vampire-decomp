@@ -1185,6 +1185,7 @@
 0x10006ce4 func   ?sub_10095be0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10095be0
 0x10006d16 func   ?sub_103dc520@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_103dc520
 0x10006d39 func   _npc_VMalkavian npc_VMalkavian
+0x10006d48 func   ?sub_1018fe50@CBreakablePropFields1018fe50@@QAE_NH@Z CBreakablePropFields1018fe50::sub_1018fe50
 0x10006d75 func   ?sub_100423c0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_100423c0
 0x10006d7a func   ?vfunc546@CNPC_VVampireBoss@@QAEHH@Z CNPC_VVampireBoss::vfunc546
 0x10006d7f func   _item_p_occult_obfuscate item_p_occult_obfuscate
