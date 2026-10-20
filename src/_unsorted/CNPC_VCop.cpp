@@ -27,3 +27,45 @@ int CNPC_VCop::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093ac40.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x10371b70 size=0x65
+#include "CGlobalEntityList.h"
+#include "CAI_BaseNPC.h"
+#include "CNPC_VHumanCombatant.h"
+#include "CNPC_VCop.h"
+
+#define S1(p, n) virtual void p##n();
+#define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
+struct Slots598 {
+    S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+    S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8) S10(b9)
+    S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5) S10(c6) S10(c7) S10(c8) S10(c9)
+    S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5) S10(d6) S10(d7) S10(d8) S10(d9)
+    S10(e0) S10(e1) S10(e2) S10(e3) S10(e4) S10(e5) S10(e6) S10(e7) S10(e8) S10(e9)
+    S10(f0) S10(f1) S10(f2) S10(f3) S10(f4) S10(f5) S10(f6) S10(f7) S10(f8)
+    S1(x, 0) S1(x, 1) S1(x, 2) S1(x, 3) S1(x, 4) S1(x, 5) S1(x, 6) S1(x, 7)
+    virtual void f598(void *pEnt);
+};
+
+extern CGlobalEntityList *g_10566458;
+
+// TARGET: CNPC_VCop::vfunc442
+void CNPC_VCop::vfunc442(int *pEvent)
+{
+    switch (*pEvent) {
+    case 0x107:
+        ((CAI_BaseNPC *)this)->sub_10273e80(0);
+        break;
+    case 0x14a: {
+        unsigned int h = m_h628c;
+        CGlobalEntityList_Slot *s;
+        void *pEnt = (h != 0xffffffff && (s = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13)) ? s->m_pEntity : 0;
+        ((Slots598 *)this)->f598(pEnt);
+        break;
+    }
+    default:
+        ((CNPC_VHumanCombatant *)this)->sub_10387290(pEvent);
+        break;
+    }
+}
+// END FUNCTION

@@ -2266,6 +2266,7 @@
 0x1000e0de func   ?sub_102dcec0@@YIXPAUMem4@@HH@Z sub_102dcec0
 0x1000e0e8 func   ?vfunc5@CWeaponRanged_Rifle_SuperShotgun@@QAEPAV1@I@Z CWeaponRanged_Rifle_SuperShotgun::vfunc5
 0x1000e0ed func   ?vfunc5@CResearchBook_MG_SEC@@QAEPAV1@I@Z CResearchBook_MG_SEC::vfunc5
+0x1000e101 func   ?vfunc442@CNPC_VCop@@QAEXPAH@Z CNPC_VCop::vfunc442
 0x1000e106 func   ?sub_101d54f0@CUnknown101d54f0@@QAEPAV1@XZ CUnknown101d54f0::sub_101d54f0
 0x1000e10b func   ?vfunc32@CTriggerElectricBugaloo@@QAE_NPAX@Z CTriggerElectricBugaloo::vfunc32
 0x1000e110 func   ?sub_102273e0@CUnknown102273e0@@QAEXH@Z CUnknown102273e0::sub_102273e0
