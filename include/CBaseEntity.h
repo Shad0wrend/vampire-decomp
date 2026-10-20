@@ -6,6 +6,7 @@
 #pragma once
 
 class CRestore;
+class CEntityMapData;
 struct inputdata_t;
 
 struct CBaseEntityColor32	// four bytes passed by value to the Dump helpers
@@ -59,7 +60,7 @@ public:
 	virtual void vfunc97(); virtual void vfunc98();
 	virtual bool vfunc99(int a, int b, int c); virtual void vfunc100(); virtual void vfunc101(); virtual void vfunc102(); virtual void vfunc103();
 	virtual void vfunc104(); virtual void vfunc105(const char *pszModel);	// slot 105 "CBaseEntity::SetModel": scope trace (entity name), warns when the model is not a brush model (engine slots 20 / 21), then sub_101cf4a0(this, pszModel) and sets the byte at +0x1b1
-	virtual void vfunc106(const char *classname); virtual void vfunc107();
+	virtual void vfunc106(const char *classname); virtual void vfunc107(CEntityMapData *pMapData);	// slot 107 "CBaseEntity::ParseMapData": scope trace (entity name), feeds every key / value pair of the map data to slot 110 (KeyValue)
 	virtual bool vfunc108(const char *key, float x, float y, float z);	// "CBaseEntity::KeyValue" (vector): scope trace (entity name), formats the three floats with "%f %f %f" into a 256 byte buffer and returns slot 110(key, buffer)
 	virtual bool vfunc109(const char *key, float value);	// "CBaseEntity::KeyValue" (float): scope trace (entity name), formats the float with "%f" into a 256 byte buffer and returns slot 110(key, buffer)
 	virtual bool vfunc110(const char *key, const char *value); virtual void vfunc111(); virtual void vfunc112(); virtual void vfunc113();
