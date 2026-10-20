@@ -16019,6 +16019,45 @@ void __fastcall sub_100c8a00(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c96a0 size=0xd7
+#include "CBaseEntity.h"
+#include "CCameraTrack.h"
+
+struct CGlobalVarsX { char pad[0xc]; float curtime; };
+struct EntInfo { CBaseEntity *ent; int serial; int pad; };
+extern CGlobalVarsX *g_1070b228;
+extern char *g_10566458;
+void sub_10002cd4();
+void sub_10010e6f();
+
+struct CUnknown100c96a0 : CBaseEntity {
+	void sub_100c96a0();
+};
+
+void CUnknown100c96a0::sub_100c96a0()
+{
+	if (!*((char *)this + 0x5c4)) {
+		*(int *)((char *)this + 0x4f8) = 0;
+		if (*((char *)this + 0x55c) || (*(unsigned int *)((char *)this + 0x204) & 0x20)) {
+			if (*(unsigned int *)((char *)this + 0x204) & 0x100)
+				*(void (**)())((char *)this + 0x1ec) = sub_10002cd4;
+			else
+				*(void (**)())((char *)this + 0x1ec) = 0;
+		}
+		if (!*((char *)this + 0x55c)) {
+			*(float *)((char *)this + 0x17c) = *(float *)((char *)this + 0x500) + g_1070b228->curtime;
+			sub_100ac4e0((int)sub_10010e6f, 0, 0);
+		}
+		*(int *)((char *)this + 0x5c0) = 1;
+		if (!(*((char *)this + 0x204) & 1)) {
+			unsigned int h = *(unsigned int *)((char *)this + 0x53c);
+			EntInfo *e;
+			((CCameraTrackMember *)((char *)this + 0x590))->sub_10010794((CCameraTrack *)((h != 0xffffffff && (e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff), e->serial == (h >> 13))) ? e->ent : 0), (CCameraTrack *)this, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c98e0 size=0x9f
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"

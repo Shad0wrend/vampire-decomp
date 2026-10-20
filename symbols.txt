@@ -1696,6 +1696,7 @@
 0x10008f12 func   ?sub_101ffb90@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffb90
 0x10008f1c func   ?sub_101ffaa0@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffaa0
 0x10008f26 func   ?vfunc2@CTEBeamSpline@@UAEPAV1@I@Z CTEBeamSpline::vfunc2
+0x10008f30 func   ?sub_100c96a0@CUnknown100c96a0@@QAEXXZ CUnknown100c96a0::sub_100c96a0
 0x10008f67 func   _info_node_climb info_node_climb
 0x10008f71 func   ?vfunc5@CWeaponMelee_ZombieFists@@QAEPAV1@I@Z CWeaponMelee_ZombieFists::vfunc5
 0x10008f85 func   ?sub_10033040@CUtlMemory36@@QAEXH@Z CUtlMemory36::sub_10033040
