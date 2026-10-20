@@ -38245,6 +38245,23 @@ extern "C" CBaseEntity *ai_network()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f5b30 size=0x7b
+#include <string.h>
+
+void sub_1006c470(void *pOut, const char *pszFormat, const char *pszValue);
+extern "C" __declspec(dllimport) void __cdecl DevWarning(int level, const char *pszFormat, ...);
+
+bool __stdcall sub_102f5b30(void *pOut, const char *pszValue, const char *pszFile, const char *pszTag)
+{
+    sub_1006c470(pOut, "%s", pszValue);
+    if (strcmp(pszValue, pszTag) != 0) {
+        DevWarning(2, "%s tag not found in %s!\n", pszTag, pszFile);
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f65b0 size=0xd
 extern char g_1093408c;
 extern int g_1093407c;

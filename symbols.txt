@@ -3453,6 +3453,7 @@
 0x10014416 func   _prop_dynamic_ornament prop_dynamic_ornament
 0x10014420 func   ?sub_1025c9d0@CUtlRBTreeBig@@QAEXPBXAAGAA_N@Z CUtlRBTreeBig::sub_1025c9d0
 0x1001442a func   ?sub_10401210@@YAHXZ sub_10401210
+0x1001442f func   ?sub_102f5b30@@YG_NPAXPBD11@Z sub_102f5b30
 0x1001443e func   _item_w_chang_blade item_w_chang_blade
 0x10014448 func   _env_dustpuff env_dustpuff
 0x100144ac func   ?sub_1007f650@UtlMem@@QAEXXZ UtlMem::sub_1007f650
