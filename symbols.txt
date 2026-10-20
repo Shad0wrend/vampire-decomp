@@ -267,6 +267,7 @@
 0x100029e1 func   ?vfunc5@CNPC_VAndreiBlood@@QAEPAV1@I@Z CNPC_VAndreiBlood::vfunc5
 0x10002a09 func   ?sub_1013e800@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e800
 0x10002a1d func   ?sub_10399c70@@YIXPAD@Z sub_10399c70
+0x10002a27 func   ?sub_102d08e0@CPhysBox@@QAEXH@Z CPhysBox::sub_102d08e0
 0x10002a2c func   ?sub_103facd0@@YAHXZ sub_103facd0
 0x10002a45 func   ?sub_100e5690@CDialog@@QAEHPAUCDialogEntry_t@@@Z CDialog::sub_100e5690
 0x10002a4a func   ?sub_1006cc20@Dump@@QAEXXZ Dump::sub_1006cc20

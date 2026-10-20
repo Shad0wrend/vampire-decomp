@@ -30737,6 +30737,15 @@ void __stdcall sub_102d00e0(S102d4390 *vec, const float *v, float w)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d08e0 size=0x16
+#include "CPhysBox.h"
+
+void CPhysBox::sub_102d08e0(int a)
+{
+	((CPhysBoxHelper498 *)((char *)this + 0x5f4))->sub_10010794(a, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1220 size=0x90
 #include "CUnknown102d1220.h"
 
