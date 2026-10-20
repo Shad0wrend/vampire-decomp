@@ -19294,6 +19294,45 @@ extern int g_1058d1ac;
 void sub_1018e9d0(int a, int b) { g_1058d1ac = b; }
 // END FUNCTION
 
+// FUNCTION: 0x1018eab0 size=0x7c
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern CGlobalEntityList *g_10566458;
+extern char g_10538764[];
+extern char g_1058ed4c[];
+
+struct SCopyProp {
+	char pad[0x730];
+	unsigned int m_hTarget;
+	char m_bFlag;
+};
+
+inline CBaseEntity *ResolveHandle(const unsigned int &h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13))
+			return (CBaseEntity *)s->m_pEntity;
+	}
+	return 0;
+}
+
+void sub_1018eab0(CBaseEntity *pTarget, char flag)
+{
+	CBaseEntity *pEnt = 0;
+	do {
+		pEnt = g_106eb5d8.sub_100f7380(pEnt, "activity_copy_prop");
+		SCopyProp *pProp = (SCopyProp *)__RTDynamicCast(pEnt, 0, g_10538764, g_1058ed4c, 0);
+		if (pProp) {
+			if (ResolveHandle(pProp->m_hTarget) == pTarget)
+				pProp->m_bFlag = flag;
+		}
+	} while (pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018ef30 size=0x43
 #include "CActivityCopyProp.h"
 void *sub_100aa720(int size);
