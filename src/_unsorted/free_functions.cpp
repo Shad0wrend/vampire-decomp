@@ -24995,6 +24995,66 @@ int CVStatInfoList_t::sub_101ffb90(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ffdf0 size=0x11b
+#include "CVStatInfoList_t.h"
+
+extern "C" char *_strlwr(char *);
+extern "C" char *strstr(const char *, const char *);
+struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
+extern ScopeEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+struct StatName_t
+{
+    const char *m_psz;
+    const char *Get() { return m_psz ? m_psz : g_106b8540; }
+};
+
+int CVStatInfoList_t::sub_101ffdf0(const char *name)
+{
+    g_109f3620[*g_109f3680].m_pszName = "CVStatInfoList_t::LookupPartial( const char *name )";
+    g_109f3620[*g_109f3680].m_pszEnt = g_106b8540;
+    g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+    (*g_109f3680)++;
+    char szQuery[128];
+    char szName[128];
+    const char *s = name;
+    char *d = szQuery;
+    char c;
+    do {
+        c = *s;
+        *d = c;
+        s++;
+        d++;
+    } while (c);
+    _strlwr(szQuery);
+    int i = 0;
+    if (m_nStats > 0) {
+        int off = 0;
+        do {
+            char *s2 = (char *)((StatName_t *)(off + (int)m_pStats + 0x18))->Get();
+            int diff = szName - s2;
+            char c2;
+            do {
+                c2 = *s2;
+                s2[diff] = c2;
+                s2++;
+            } while (c2);
+            _strlwr(szName);
+            if (strstr(szName, szQuery) == szName) {
+                (*g_109f3680)--;
+                return i;
+            }
+            i++;
+            off += 0x13c;
+        } while (i < m_nStats);
+    }
+    (*g_109f3680)--;
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202060 size=0xa6
 #include "CUnknown10202060.h"
 #include "CBaseEntity.h"
