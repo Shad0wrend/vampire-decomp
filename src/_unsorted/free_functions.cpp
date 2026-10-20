@@ -3806,6 +3806,47 @@ extern "C" CBaseEntity *func_physbox()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004dee0 size=0x160
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1053cf30[2];
+void sub_10002879();
+
+int *sub_1004dee0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bSimulating", {0x4c8, 0}, 1, 2 },
+        { 1, "m_massBias", {0x454, 0}, 1, 6, "massbias" },
+        { 4, "m_damageType", {0x450, 0}, 1, 6, "Damagetype" },
+        { 1, "m_massOverride", {0x464, 0}, 1, 6, "override_mass" },
+        { 1, "m_impactEnergyScale", {0xdc, 0}, 1, 0xe, "physdamagescale" },
+        { 0, "InputWake", {0, 0}, 1, 8, "Wake", 0, (void *)sub_10002879 },
+        { 10, "m_OnDamaged", {0x468, 0}, 1, 0x16, "OnDamaged", g_1055dc70 },
+        { 10, "m_OnAwakened", {0x480, 0}, 1, 0x16, "OnAwakened", g_1055dc70 },
+        { 10, "m_OnPhysGunPickup", {0x498, 0}, 1, 0x16, "OnPhysGunPickup", g_1055dc70 },
+        { 10, "m_OnPhysGunDrop", {0x4b0, 0}, 1, 0x16, "OnPhysGunDrop", g_1055dc70 },
+    };
+    g_1053cf30[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1053cf30[0] = (int)&dataDesc[1];
+    return g_1053cf30;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100500a0 size=0x43
 #include "CPhysConvert.h"
 void *sub_100aa720(int size);
