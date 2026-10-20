@@ -1629,6 +1629,7 @@
 0x10009aed func   _env_swarm_bats env_swarm_bats
 0x10009af7 func   ?sub_10342590@@YA_NPAVCBaseEntity@@0@Z sub_10342590
 0x10009afc func   ?vfunc5@CPhysSlideConstraint@@UAEPAV1@I@Z CPhysSlideConstraint::vfunc5
+0x10009b1f func   ?vfunc104@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc104
 0x10009b24 func   ?sub_1018f700@CUnknown1018f700@@QAEXD@Z CUnknown1018f700::sub_1018f700
 0x10009b29 func   ?vfunc5@CPayphone@@QAEPAV1@I@Z CPayphone::vfunc5
 0x10009b51 func   ?sub_10049d20@CUtlRBTreeNode36@@QBEABURBTreeNode36Links@@G@Z CUtlRBTreeNode36::sub_10049d20
