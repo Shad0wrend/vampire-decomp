@@ -12305,6 +12305,28 @@ int CBaseEntity::sub_100ac250(const char *context)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ac4e0 size=0xe2
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+int CBaseEntity::sub_100ac4e0(int func, int thinkTime, const char *szContext)
+{
+	ScopeTrace t("CBaseEntity::ThinkSet", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (szContext == 0) {
+		*(int *)&m_pfnThink = func;
+		return func;
+	}
+	int idx = sub_100ac250(szContext);
+	if (idx == -1)
+		idx = sub_100ac360(szContext);
+	int off = idx * sizeof(CBaseEntityThinkContext);
+	((CBaseEntityThinkContext *)((char *)m_pThinkContexts + off))->m_a = func;
+	if (*(float *)&thinkTime != 0.0f)
+		*(float *)&((CBaseEntityThinkContext *)((char *)m_pThinkContexts + off))->m_b = *(float *)&thinkTime;
+	return func;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac610 size=0xc6
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

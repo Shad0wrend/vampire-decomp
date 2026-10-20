@@ -1389,6 +1389,7 @@
 0x10007fa4 func   ?vfunc5@CSoundEnt@@QAEPAV1@I@Z CSoundEnt::vfunc5
 0x10007fb3 func   ?sub_1017e5f0@CBasePlayer@@QAEXPAUinputdata_t@@@Z CBasePlayer::sub_1017e5f0
 0x10007fb8 func   ?sub_102210f0@QuestJournal@@QAEXXZ QuestJournal::sub_102210f0
+0x10007fe5 func   ?sub_100ac4e0@CBaseEntity@@QAEHHHPBD@Z CBaseEntity::sub_100ac4e0
 0x10007fea func   ?vfunc5@CAI_BaseNPC@@UAEPAV1@I@Z CAI_BaseNPC::vfunc5
 0x10007ffe func   _item_k_clinic_stairs_key item_k_clinic_stairs_key
 0x1000800d func   ?sub_103fbbd0@@YAHXZ sub_103fbbd0
