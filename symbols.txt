@@ -1288,6 +1288,7 @@
 0x10008e09 func   ?sub_10202880@@YAPBDH@Z sub_10202880
 0x10008e0e func   ?sub_10258500@@YAPBDH@Z sub_10258500
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
+0x10008e40 func   ?sub_101bde70@UtlMem@@QAEXXZ UtlMem::sub_101bde70
 0x10008e72 func   ?sub_10109840@@YAPAHXZ sub_10109840
 0x10008e8b func   ?vfunc1@PyServerSystem@@UAEXXZ PyServerSystem::vfunc1
 0x10008e9f func   ?vfunc207@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc207
