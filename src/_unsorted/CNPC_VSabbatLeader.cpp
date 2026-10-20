@@ -167,6 +167,27 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a75c0 size=0x6f
+#include "CNPC_VSabbatLeader.h"
+extern int *g_109f3680;
+struct TraceEntryX { const char *a; const char *b; const char *c; };
+extern TraceEntryX *g_109f3620;
+extern char g_106b8540[];
+extern const char g_1064ec84[];
+
+// TARGET: CNPC_VSabbatLeader::vfunc432
+void CNPC_VSabbatLeader::vfunc432(int arg)
+{
+    g_109f3620[*g_109f3680].a = g_1064ec84;
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    sub_1000698d(arg);
+    sub_103aa960();
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a76d0 size=0x6f
 #include "CNPC_VSabbatLeader.h"
 
