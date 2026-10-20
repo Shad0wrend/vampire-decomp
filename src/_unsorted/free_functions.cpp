@@ -33823,6 +33823,26 @@ void CUnknown102f45f0::sub_102f45f0(const CachedPos_t *pPos, int node, int field
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f47f0 size=0x81
+#include "CUnknown102f47f0.h"
+extern void (*g_109f3630)(const char *, ...);
+
+CUnknown102fc5d0 *CUnknown102f47f0::sub_102f47f0(const float *pVec, int c)
+{
+    if (!m_pNodes || !*m_pNodes)
+        m_pNodes = (CUnknown102fc5d0 **)operator new(0x1770);
+    if (m_nNodes >= 0x5dc) {
+        g_109f3630("ERROR: too many nodes in map, deleting last node.\n", 0x5dc);
+        m_nNodes--;
+    }
+    CUnknown102fc5d0 *p = new CUnknown102fc5d0;
+    CUnknown102fc5d0 *node = p ? p->sub_102fc5d0((int)this, m_nNodes, pVec, c) : 0;
+    m_pNodes[m_nNodes] = node;
+    m_nNodes++;
+    return m_pNodes[m_nNodes - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f48b0 size=0x67
 extern char g_1061052c[];
 extern void (*g_109f3630)(const char* fmt, ...);

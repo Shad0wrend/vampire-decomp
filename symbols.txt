@@ -1867,6 +1867,7 @@
 0x1000c0b8 func   ?vfunc0@CChoreoEventCallback@@UAEXMHH@Z CChoreoEventCallback::vfunc0
 0x1000c0cc func   ?sub_10221a00@QuestJournal@@QAEHPBD@Z QuestJournal::sub_10221a00
 0x1000c0d6 func   ?sub_103cab50@@YIHPAD@Z sub_103cab50
+0x1000c0db func   ?sub_102f47f0@CUnknown102f47f0@@QAEPAVCUnknown102fc5d0@@PBMH@Z CUnknown102f47f0::sub_102f47f0
 0x1000c103 func   ?vfunc5@CNPC_VMingXiaoTentacle@@QAEPAV1@I@Z CNPC_VMingXiaoTentacle::vfunc5
 0x1000c126 func   _info_node_cover_low info_node_cover_low
 0x1000c12b func   _weapon_physcannon weapon_physcannon
