@@ -40533,6 +40533,25 @@ char sub_103b3c10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b5280 size=0x43
+#include "CNPC_VToreador.h"
+void *sub_100aa720(int size);
+extern char g_1065296c[];
+
+// TARGET: npc_VToreador
+extern "C" CBaseEntity *npc_VToreador()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VToreador *p;
+	if (mem)
+		p = ((CNPC_VToreador *)mem)->sub_103b52f0();
+	else
+		p = 0;
+	p->vfunc106(g_1065296c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b5420 size=0x33
 void sub_10007897();
 void sub_10009fa7();
