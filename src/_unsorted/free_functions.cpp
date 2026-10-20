@@ -40540,6 +40540,24 @@ void sub_1023f060(unsigned int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245770 size=0x10
+struct CFlagHolder245770 {
+    char pad[4];
+    struct Inner {
+        char pad[0x18];
+        unsigned int flags;
+    } *inner;
+    bool sub_10245770(unsigned int mask);
+};
+bool CFlagHolder245770::sub_10245770(unsigned int mask)
+{
+    if (inner->flags & mask) {
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245790 size=0xd
 void CUnknown10245790::sub_10245790(unsigned int flags)
 {
