@@ -762,6 +762,7 @@
 0x100052fe func   ?sub_100be6b0@bf_read@@QAEIH_N@Z bf_read::sub_100be6b0
 0x10005308 func   ?vfunc5@CLogicSquadCondition@@QAEPAV1@I@Z CLogicSquadCondition::vfunc5
 0x10005317 func   _prop_radio prop_radio
+0x10005321 func   ?sub_10093970@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10093970
 0x1000532b func   _prop_mover prop_mover
 0x10005330 func   ?vfunc158@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc158
 0x10005335 func   ?sub_101e8c90@CUnknown101e8080@@QAE_NPBDPAH11@Z CUnknown101e8080::sub_101e8c90

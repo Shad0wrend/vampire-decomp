@@ -8048,6 +8048,38 @@ int CBaseAnimating::sub_100938a0(int sequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093970 size=0x98
+#include "CBaseAnimating.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+int CBaseAnimating::sub_10093970(int sequence)
+{
+	const char *name;
+	if (this) {
+		name = m_name26c;
+		if (!name)
+			name = g_106b8540;
+	} else
+		name = "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::GetExitNode";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	char *pSeq = (char *)sub_1008d990(sequence);
+	if (!pSeq) {
+		(*g_109f3680)--;
+		return 0;
+	}
+	int r = *(int *)(pSeq + 0x274);
+	(*g_109f3680)--;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093a40 size=0x98
 #include "CBaseAnimating.h"
 
