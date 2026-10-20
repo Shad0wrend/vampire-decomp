@@ -3760,6 +3760,7 @@
 0x100139f8 func   ?sub_100c8990@CBaseButton@@QAE_NH@Z CBaseButton::sub_100c8990
 0x100139fd func   ?vfunc5@CNPC_VSheriffSwarm@@QAEPAV1@I@Z CNPC_VSheriffSwarm::vfunc5
 0x10013a0c func   ?sub_101a1400@SRestore@@QAEPAU1@E@Z SRestore::sub_101a1400
+0x10013a2f func   ?vfunc31@CBaseAnimatingOverlay@@QAEXH@Z CBaseAnimatingOverlay::vfunc31
 0x10013a34 func   ?vfunc546@CNPC_VGangrel@@QAEHH@Z CNPC_VGangrel::vfunc546
 0x10013a43 func   ?sub_101f81c0@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101f81c0
 0x10013a52 func   ?vfunc0@CAI_LocalNavigator@@QAEPAV1@I@Z CAI_LocalNavigator::vfunc0

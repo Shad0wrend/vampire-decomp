@@ -16,6 +16,31 @@ CBaseAnimatingOverlay *CBaseAnimatingOverlay::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098a90 size=0xe0
+#include "CBaseEntity.h"
+#include "CBaseAnimatingOverlay.h"
+
+void CBaseAnimatingOverlay::vfunc31(int a)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	int *p = (int *)((char *)this + 0x738);
+	for (int i = 24; i != 0; i--) {
+		pEnt->sub_1009b8a0(a, (int)"m_bNoFlinch", *((char *)this + 0x730));
+		pEnt->sub_1009b640(a, (int)"m_AnimOverlay", (int)"-v-");
+		pEnt->sub_1009bb40(a, (int)"  m_fFlags", p[-1]);
+		pEnt->sub_1009b8a0(a, (int)"  m_fSequenceFinished", p[0] != 0);
+		pEnt->sub_1009b980(a, "  m_nSequence", p[1]);
+		pEnt->sub_1009ba60(a, "  m_flCycle", p[2]);
+		pEnt->sub_1009ba60(a, "  m_flPlaybackRate", p[3]);
+		pEnt->sub_1009ba60(a, "  m_flWeight", p[4]);
+		pEnt->sub_1009b980(a, "  m_nActivity", p[8]);
+		pEnt->sub_1009b8a0(a, (int)"  m_bAutoKillWhenFinished", (char)p[9]);
+		p += 12;
+	}
+	sub_1008b530(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099020 size=0x98
 #include "CBaseAnimatingOverlay.h"
 
