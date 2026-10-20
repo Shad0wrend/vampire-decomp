@@ -1649,6 +1649,64 @@ int __fastcall sub_100ad850(CBaseEntity *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ada20 size=0x142
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct UtlMem3
+{
+    int *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+
+    void sub_100b4a40(int num);	// "CUtlMemory::Grow"
+};
+
+struct EntStack : public UtlMem3	// the global CUtlVector<CBaseEntity *> of the entities being teleported
+{
+    int m_Size;	// 0x0c
+    int *m_pElements;	// 0x10
+
+    int Find(int pEnt)
+    {
+        for (int i = 0; i < m_Size; i++) {
+            if (m_pMemory[i] == pEnt)
+                return i;
+        }
+        return -1;
+    }
+};
+
+extern EntStack g_106cf218;
+extern char g_105574a0[];
+void sub_100adbd0(CBaseEntity *pTarget, CBaseEntity *pThis, const float *pOrigin, const float *pAngles, const float *pVelocity);
+
+void __fastcall sub_100ada20(CBaseEntity *pThis, int unused, const float *pOrigin, const float *pAngles, const float *pVelocity)
+{
+    ScopeTrace trace(g_105574a0, pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+    if (g_106cf218.Find((int)pThis) >= 0)
+        return;
+    int elem = g_106cf218.m_Size;
+    if (g_106cf218.m_Size + 1 > g_106cf218.m_allocationCount)
+        g_106cf218.sub_100b4a40(g_106cf218.m_Size - g_106cf218.m_allocationCount + 1);
+    g_106cf218.m_Size += 1;
+    g_106cf218.m_pElements = g_106cf218.m_pMemory;
+    int numToMove = g_106cf218.m_Size - elem - 1;
+    if (numToMove > 0)
+        memmove(g_106cf218.m_pMemory + elem + 1, g_106cf218.m_pMemory + elem, numToMove * 4);
+    int *p = g_106cf218.m_pMemory + elem;
+    if (p)
+        *p = (int)pThis;
+    sub_100adbd0(pThis, pThis, pOrigin, pAngles, pVelocity);
+    if (g_106cf218.m_Size > 0) {
+        memmove(g_106cf218.m_pMemory + elem, g_106cf218.m_pMemory + g_106cf218.m_Size - 1, 4);
+        g_106cf218.m_Size--;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b11d0 size=0xc1
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
