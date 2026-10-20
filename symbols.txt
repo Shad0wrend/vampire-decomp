@@ -1531,6 +1531,7 @@
 0x10008c74 func   ?vfunc5@CItemGGhostPendant@@QAEPAV1@I@Z CItemGGhostPendant::vfunc5
 0x10008c83 func   ?sub_102522e0@CUnknown102522e0@@QAEHXZ CUnknown102522e0::sub_102522e0
 0x10008c88 func   ?sub_100bde40@CUnknown100bde40@@QAE_NPBXH@Z CUnknown100bde40::sub_100bde40
+0x10008cd3 func   ?vfunc369@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc369
 0x10008cd8 func   ?sub_100de610@@YGXH@Z sub_100de610
 0x10008ce7 func   ?sub_10402a40@@YAHXZ sub_10402a40
 0x10008d14 func   _info_landmark info_landmark

@@ -943,6 +943,52 @@ Vector CBaseCombatCharacter::vfunc368()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10331a40 size=0xb8
+#include "CBaseCombatCharacter.h"
+
+struct ScopeEntry { const char *name; const void *file; const void *line; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+
+struct ScopeTrace
+{
+	ScopeTrace(const char *func, const char *name)
+	{
+		g_109f3620[*g_109f3680].name = func;
+		g_109f3620[*g_109f3680].file = name;
+		g_109f3620[*g_109f3680].line = g_106b8540;
+		(*g_109f3680)++;
+	}
+	~ScopeTrace() { (*g_109f3680)--; }
+};
+
+#define SL1(n) virtual void s##n();
+#define SL10(p) SL1(p##0) SL1(p##1) SL1(p##2) SL1(p##3) SL1(p##4) SL1(p##5) SL1(p##6) SL1(p##7) SL1(p##8) SL1(p##9)
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+class CBCCSlots367
+{
+public:
+	SL100(0) SL100(1) SL100(2)
+	SL10(30) SL10(31) SL10(32) SL10(33) SL10(34) SL10(35)
+	SL1(360) SL1(361) SL1(362) SL1(363) SL1(364) SL1(365) SL1(366)
+	virtual QAngle slot367();
+};
+
+// TARGET: CBaseCombatCharacter::vfunc369
+Vector CBaseCombatCharacter::vfunc369()
+{
+	ScopeTrace trace("CBaseCombatCharacter::BodyDirection3D", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	QAngle ang = ((CBCCSlots367 *)this)->slot367();
+	Vector fwd;
+	::sub_10139610(&ang, &fwd, 0, 0);
+	return fwd;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10331cb0 size=0xb6
 #include "Vector.h"
 #include "CBaseCombatCharacter.h"
