@@ -25415,6 +25415,61 @@ int CVStatInfoList_t::sub_101ffdf0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10201ca0 size=0x162
+#include "CUnknown10201ca0.h"
+#include "CVStatList_t.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+void *__cdecl operator new(unsigned int);
+void __cdecl operator delete(void *);
+
+void CUnknown10201ca0::sub_10201ca0(int a, int b)
+{
+    ScopeTrace trace("CVStatListManager_t::Bind", g_106b8540, g_106b8540);
+    m_a = a;
+    m_b = b;
+    for (int n = 0; n < 4; n++) {
+        int size;
+        if (m_allocationCount == m_size) {
+            m_allocationCount += m_growSize;
+            if (m_pMemory) {
+                CVStatList_t **p = (CVStatList_t **)operator new(m_allocationCount * 4);
+                int i;
+                for (i = 0; i < m_size; i++)
+                    p[i] = m_pMemory[i];
+                for (; i < m_allocationCount; i++)
+                    p[i] = 0;
+                operator delete(m_pMemory);
+                m_pMemory = p;
+                size = ++m_size;
+            } else {
+                m_pMemory = (CVStatList_t **)operator new(m_allocationCount * 4);
+                for (int i = 0; i < m_allocationCount; i++)
+                    m_pMemory[i] = 0;
+                size = ++m_size;
+            }
+        } else {
+            size = ++m_size;
+        }
+        if (m_pMemory[size - 1] == 0) {
+            CVStatList_t *p = new CVStatList_t(m_nNextId++);
+            m_pMemory[m_size - 1] = p;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202060 size=0xa6
 #include "CUnknown10202060.h"
 #include "CBaseEntity.h"
