@@ -298,6 +298,7 @@
 0x100027ed func   ?sub_1025d940@@YAXXZ sub_1025d940
 0x100027f7 func   _light_dynamic light_dynamic
 0x100027fc func   ?sub_102464b0@@YAXHHPAH@Z sub_102464b0
+0x10002801 func   ?sub_102db470@@YAHPAVCUnknown102db470@@@Z sub_102db470
 0x1000280b func   ?sub_103c9ed0@CHintData_WW@@QAEPAV1@PBV1@@Z CHintData_WW::sub_103c9ed0
 0x10002847 func   ?vfunc546@CNPC_VHumanCombatant@@QAEHH@Z CNPC_VHumanCombatant::vfunc546
 0x1000285b func   ?sub_101fd250@CVStatAction_t@@QAEPBDXZ CVStatAction_t::sub_101fd250

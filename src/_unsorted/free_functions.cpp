@@ -44157,6 +44157,48 @@ void CUnknown102db420::sub_102db420(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db470 size=0xd2
+#include "CUnknown102db470.h"
+
+extern CUnknown102db470Node *g_10927194;
+extern CUnknown102db470Node *g_10926d80[];
+
+int sub_102db470(CUnknown102db470 *pNPC)
+{
+	pNPC->m_sub270.v1();
+	pNPC->m_sub270.v2();
+	float vec[3];
+	for (int rank = 5; rank >= 0; rank--)
+	{
+		int count = 0;
+		CUnknown102db470Node *pNode = g_10927194;
+		if (pNode)
+		{
+			do
+			{
+				if (pNode->m_nRank == rank && pNode != pNPC->m_pCurrentNode && count < 0x100)
+				{
+					if (pNode->sub_102dad60(pNPC, vec, vec))
+					{
+						g_10926d80[count] = pNode;
+						count++;
+					}
+				}
+				pNode = pNode->m_pNext;
+			} while (pNode);
+			if (count > 0)
+				return count;
+		}
+	}
+	if (pNPC->m_pCurrentNode && pNPC->m_pCurrentNode->sub_102dad60(pNPC, vec, vec))
+	{
+		g_10926d80[0] = pNPC->m_pCurrentNode;
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db630 size=0xa
 extern char g_1092719c;
 void sub_102db630(char value)
