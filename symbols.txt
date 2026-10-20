@@ -728,6 +728,7 @@
 0x10005939 func   ?sub_100ae320@@YAXXZ sub_100ae320
 0x10005984 func   _item_k_clinic_maintenance_key item_k_clinic_maintenance_key
 0x1000598e func   ?vfunc5@CLight@@QAEPAV1@I@Z CLight::vfunc5
+0x10005998 func   ?sub_10349e60@UtlMem@@QAEXXZ UtlMem::sub_10349e60
 0x100059cf func   ?sub_10026c70@CBaseEntity@@QAEXXZ CBaseEntity::sub_10026c70
 0x100059e8 func   ?vfunc7@CSave@@UAEXHHH@Z CSave::vfunc7
 0x100059f7 func   ?vfunc5@CItemGWarrClipboard@@QAEPAV1@I@Z CItemGWarrClipboard::vfunc5
