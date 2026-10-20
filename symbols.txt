@@ -1204,6 +1204,7 @@
 0x10006cb7 func   ?sub_103bf330@CUnknown103bf330@@QAE_NH@Z CUnknown103bf330::sub_103bf330
 0x10006cc6 func   ?sub_102d4320@@YAXPAHPBH@Z sub_102d4320
 0x10006ce4 func   ?sub_10095be0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10095be0
+0x10006d02 func   ?sub_101dc260@CElemList@@QAEPAU1@ABU1@@Z CElemList::sub_101dc260
 0x10006d16 func   ?sub_103dc520@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_103dc520
 0x10006d39 func   _npc_VMalkavian npc_VMalkavian
 0x10006d48 func   ?sub_1018fe50@CBreakablePropFields1018fe50@@QAE_NH@Z CBreakablePropFields1018fe50::sub_1018fe50

@@ -32682,6 +32682,75 @@ bool CUnknown101dbe30::sub_101dbe30(void *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc260 size=0x150
+void *operator new(unsigned int);
+void operator delete(void *);
+
+struct CElem12
+{
+	int m_n0, m_n4, m_n8;
+	CElem12 *sub_10003350(int index);	// constructor (stub 0x10003350)
+};
+
+struct CElemList
+{
+	int m_nGrow;
+	int m_nAlloc;
+	int m_nCount;
+	CElem12 **m_pData;
+
+	CElemList *sub_101dc260(const CElemList &src);
+};
+
+// TARGET: CElemList::sub_101dc260
+CElemList *CElemList::sub_101dc260(const CElemList &src)
+{
+	m_nGrow = 1;
+	m_nAlloc = 0;
+	m_nCount = 0;
+	m_pData = 0;
+	for (int i = 0; i < src.m_nCount; i++)
+	{
+		if (m_nAlloc == m_nCount)
+		{
+			m_nAlloc += m_nGrow;
+			if (m_pData)
+			{
+				CElem12 **p = (CElem12 **)operator new(m_nAlloc * 4);
+				int j = 0;
+				for (; j < m_nCount; j++)
+					p[j] = m_pData[j];
+				for (; j < m_nAlloc; j++)
+					p[j] = 0;
+				operator delete(m_pData);
+				m_pData = p;
+				m_nCount++;
+			}
+			else
+			{
+				m_pData = (CElem12 **)operator new(m_nAlloc * 4);
+				for (int j = 0; j < m_nAlloc; j++)
+					m_pData[j] = 0;
+				m_nCount++;
+			}
+		}
+		else
+			m_nCount++;
+		if (m_pData[m_nCount - 1] == 0)
+		{
+			CElem12 *e = (CElem12 *)operator new(12);
+			m_pData[m_nCount - 1] = e ? e->sub_10003350(m_nCount - 1) : 0;
+		}
+		CElem12 *s = src.m_pData[i];
+		CElem12 *d = m_pData[m_nCount - 1];
+		d->m_n0 = s->m_n0;
+		d->m_n4 = s->m_n4;
+		d->m_n8 = s->m_n8;
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dc410 size=0x131
 void *operator new(unsigned int);
 void operator delete(void *);
