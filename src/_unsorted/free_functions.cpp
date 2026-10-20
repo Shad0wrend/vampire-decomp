@@ -40435,6 +40435,25 @@ char sub_103b1d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b2800 size=0x43
+#include "CNPC_VStalker.h"
+void *sub_100aa720(int size);
+extern char g_10651d5c[];
+
+// TARGET: npc_VStalker
+extern "C" CBaseEntity *npc_VStalker()
+{
+	void *mem = sub_100aa720(0x6668);
+	CNPC_VStalker *p;
+	if (mem)
+		p = ((CNPC_VStalker *)mem)->sub_103b2870();
+	else
+		p = 0;
+	p->vfunc106(g_10651d5c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b29a0 size=0x33
 void sub_1000ef84();
 void sub_10004179();
