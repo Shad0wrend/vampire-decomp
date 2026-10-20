@@ -5,7 +5,7 @@ class CUnknown103f6a20
 {
 public:
 	char m_pad0000[0x914];
-	char m_b0914;
+	volatile char m_b0914;
 	char m_pad0915[3];
 	unsigned int m_hSite;	// 0x918
 
