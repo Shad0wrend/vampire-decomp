@@ -23655,6 +23655,17 @@ void __stdcall sub_1017e840(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017ec10 size=0x12
+int __stdcall sub_1017ec10(int a)
+{
+    a = a - 1;
+    if (a < 1) {
+        a = 1;
+    }
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017ec40 size=0x89
 #include "CBasePlayer.h"
 
