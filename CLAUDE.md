@@ -127,6 +127,7 @@ cannot see these. Keep to them in new work:
   `CUtlRBTreeInsert24`, `CUtlRBTreeFind232`, `CUtlRBTreeNode36`) cast `this` the same way.
 - **One static in the game, one function in include/.** When several functions' code use the same guarded static
   (same guard byte, same object), they all inline one function that holds it: that function goes in include/ and
-  every one of them calls it, never a `static` of its own. Not yet for a static with a destructor inside an inline
-  function (the stat list lookup's `static CVStatList_t s_default(-1)`, `FindEntry`'s `CEntryX`): the judge cannot
-  place its destroy function (`?s_default@...@$AV2@A`) yet, so those stay as they are.
+  every one of them calls it, never a `static` of its own. This holds for a static with a destructor too (the judge
+  places its destroy `?s_default@...@$AV2@A` since 2026-10-21). The stat list lookup (guard 0x109f0b2a, default list
+  0x109f0b40) is `CVStatListSet::Of(pChar)->Find(type)` (CVStatList_t.h); the entry lookup (0x109f0938, 0x109f0960)
+  is `FindEntry(key)` (CEntryX.h). Never a `static CVStatList_t s_default(-1)` or `static CEntryX` of your own.
