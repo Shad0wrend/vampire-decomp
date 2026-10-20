@@ -12,4 +12,5 @@ public:
 	void sub_100123af();	// as in CPhysForce (transplant)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	int vfunc461();	// "CNPC_VMingXiaoTentacle::SelectIdealState": picks the ideal state (1, 2 or 7) and its schedule from slot 167
+	void sub_1039ef90(float *pPos);	// called through the stub at 0x1000d1f2: scope work, then copies the three floats of pPos to +0x668c
 };
