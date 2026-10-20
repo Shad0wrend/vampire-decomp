@@ -39692,6 +39692,25 @@ unsigned int __stdcall sub_103908c0(unsigned int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10390e70 size=0x43
+#include "CNPC_VMingXiao.h"
+void *sub_100aa720(int size);
+extern char g_10643ad8[];
+
+// TARGET: npc_VMingXiao
+extern "C" CBaseEntity *npc_VMingXiao()
+{
+	void *mem = sub_100aa720(0x6754);
+	CNPC_VMingXiao *p;
+	if (mem)
+		p = ((CNPC_VMingXiao *)mem)->sub_10390ee0();
+	else
+		p = 0;
+	p->vfunc106(g_10643ad8);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103912e0 size=0x33
 void sub_10014d7b();
 void sub_10013386();
