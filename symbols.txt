@@ -42,6 +42,7 @@
 0x100013d9 func   ?sub_100ad850@@YIHPAVCBaseEntity@@@Z sub_100ad850
 0x100013e8 func   ?vfunc86@CPointCamera@@QAE_NHHHHH@Z CPointCamera::vfunc86
 0x100013f7 func   ?vfunc104@CNPC_VHuman@@UAEXXZ CNPC_VHuman::vfunc104
+0x10001410 func   ?vfunc241@CBaseParticleEntity@@QAE_NHPAUCParticleTransmitInfo_t@@HH@Z CBaseParticleEntity::vfunc241
 0x1000143d func   ?sub_10096490@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_10096490
 0x10001451 func   ?vfunc2@CGameMovement@@UAEPAMDH@Z CGameMovement::vfunc2
 0x10001456 func   _logic_pythoncheck logic_pythoncheck
