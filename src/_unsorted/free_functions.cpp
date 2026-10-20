@@ -7718,6 +7718,35 @@ void CBaseAnimating::sub_1008bc50(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008bd30 size=0xb3
+#include "CBaseAnimating.h"
+#include "CGlobalEntityList.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern CGlobalEntityList *g_10566458;
+
+void CBaseAnimating::sub_1008bd30()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseAnimating::StopIgnoringCollision";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	unsigned int hOther = *(unsigned int *)((char *)this + 0x55c);
+	CBaseEntity *pOther;
+	CGlobalEntityList_Slot *pSlot;
+	if (hOther != 0xffffffff && (pSlot = &g_10566458->m_Slots[hOther & 0x1fff], pSlot->m_Serial == (int)(hOther >> 13)))
+		pOther = (CBaseEntity *)pSlot->m_pEntity;
+	else
+		pOther = 0;
+	sub_1008bc50(pOther);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008be20 size=0xae
 #include "CBaseAnimating.h"
 struct TraceEntry { const char *a, *b, *c; };

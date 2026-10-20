@@ -519,6 +519,7 @@
 0x10003bd4 func   ?vfunc259@CNPC_VSabbatLeader@@QAEXPAX@Z CNPC_VSabbatLeader::vfunc259
 0x10003bd9 func   ?sub_1035b440@@YADXZ sub_1035b440
 0x10003be8 func   ?sub_10203e30@@YAXH@Z sub_10203e30
+0x10003bed func   ?sub_1008bd30@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_1008bd30
 0x10003bf2 func   ?sub_10030ae0@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030ae0
 0x10003c10 func   ?sub_10078b90@UtlMem@@QAEXXZ UtlMem::sub_10078b90
 0x10003c1a func   ?vfunc68@CBaseAnimating@@QAE_NPAVCBaseEntity@@@Z CBaseAnimating::vfunc68
