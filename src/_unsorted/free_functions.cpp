@@ -42299,6 +42299,44 @@ SNode *sub_102d2840(int unused, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d2f30 size=0xc1
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+
+extern int g_10925454;
+extern int g_10925458;
+extern char g_1060a388[];
+CEntityVSlots *sub_10002e32(const char *pszClassName);
+
+struct HintData2
+{
+	int a, b;
+	HintData2(int v) { a = v; b = v; }
+};
+
+CEntityVSlots *sub_102d2f30(int a, int b, int c, int d)
+{
+	g_10925454 = 0;
+	g_10925458++;
+	CEntityVSlots *pHint = sub_10002e32(g_1060a388);
+	if (pHint) {
+		HintData2 data(c);
+		pHint->slot107((const float *)&data);
+		pHint->slot111();
+		if (*(int *)((char *)pHint + 0x124) == 0) {
+			pHint->slot216(pHint->slot220());
+			pHint->slot218(pHint->slot221());
+		}
+		pHint->slot122(g_1060a388);
+		*(int *)((char *)pHint + 0x5e4) = d;
+		pHint->slot103();
+		((CBaseEntity *)pHint)->sub_100aaf30();
+		return pHint;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d3f50 size=0xc9
 extern "C" unsigned int __cdecl strlen(const char *);
 extern "C" char *__cdecl strstr(const char *, const char *);

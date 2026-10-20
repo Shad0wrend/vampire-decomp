@@ -179,6 +179,7 @@
 0x10001dc5 func   ?sub_10185310@CUtlVector52@@QAEXH@Z CUtlVector52::sub_10185310
 0x10001dd9 func   ?sub_1007e5a0@CUnknown1007e5a0@@QAEXM@Z CUnknown1007e5a0::sub_1007e5a0
 0x10001df2 func   ?vfunc8@CCheckClient@@QAEPAV1@I@Z CCheckClient::vfunc8
+0x10001dfc func   ?sub_102d2f30@@YAPAVCEntityVSlots@@HHHH@Z sub_102d2f30
 0x10001e5b func   _info_node_sabbat_bottom info_node_sabbat_bottom
 0x10001e6f func   ?vfunc5@CRagdollPropSpecial@@QAEPAV1@I@Z CRagdollPropSpecial::vfunc5
 0x10001ea6 func   _item_p_occult_presence item_p_occult_presence
