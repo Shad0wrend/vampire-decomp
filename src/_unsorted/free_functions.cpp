@@ -5146,6 +5146,59 @@ CTEBeamEntPoint *CTEBeamEntPoint::sub_1005ac10(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005b1e0 size=0x125
+struct TEVec3 { int x, y, z; };
+struct TEBeamEntPointData {
+    char m_pad00[0xc];
+    int m_0c, m_10, m_14, m_18, m_1c, m_20, m_24, m_28, m_2c, m_30, m_34, m_38, m_3c, m_40;
+    int m_nStartModel;
+    TEVec3 m_vStart;
+    int m_nEndModel;
+    TEVec3 m_vEnd;
+    void sub_1005ae30(int a, int b);
+};
+extern TEBeamEntPointData g_106bf368;
+extern TEVec3 g_1070d1b0;
+
+void sub_1005b1e0(int a1, int a2, int model, TEVec3 *start, int model2, TEVec3 *end,
+                  int p7, int p8, int p9, int p10, int p11, int p12, int p13, int p14, int p15, int p16, int p17, int p18, int p19, int p20)
+{
+    if (model > 0)
+        g_106bf368.m_nStartModel = (model & 0xfff) | 0x1000;
+    else
+        g_106bf368.m_nStartModel = 0;
+    if (model2 > 0)
+        g_106bf368.m_nEndModel = (model2 & 0xfff) | 0x1000;
+    else
+        g_106bf368.m_nEndModel = 0;
+    if (start == 0)
+        start = &g_1070d1b0;
+    g_106bf368.m_vStart.x = start->x;
+    g_106bf368.m_vStart.y = start->y;
+    g_106bf368.m_vStart.z = start->z;
+    if (end == 0)
+        end = &g_1070d1b0;
+    g_106bf368.m_vEnd.x = end->x;
+    g_106bf368.m_vEnd.y = end->y;
+    g_106bf368.m_vEnd.z = end->z;
+    g_106bf368.m_0c = p7;
+    g_106bf368.m_10 = p8;
+    g_106bf368.m_14 = p9;
+    g_106bf368.m_18 = p10;
+    g_106bf368.m_1c = p11;
+    g_106bf368.m_20 = p12;
+    g_106bf368.m_24 = p13;
+    g_106bf368.m_28 = p14;
+    g_106bf368.m_2c = p15;
+    g_106bf368.m_40 = p20;
+    g_106bf368.m_30 = p16;
+    g_106bf368.m_34 = p17;
+    g_106bf368.m_38 = p18;
+    g_106bf368.m_3c = p19;
+    g_106bf368.sub_1005ae30(a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005b850 size=0xc0
 struct CBeamEntsData	// the global CTEBeamEnts object at 0x106bf7a0 (members as set by the helper)
 {
