@@ -25829,6 +25829,44 @@ unsigned sub_101d13a0(TEnt *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d1460 size=0x9d
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown101d1460.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern CUnknown1070b22c *g_1070b22c;
+
+struct SNetworkable {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
+	virtual CBaseEntity *vfunc4();
+};
+struct SEdict {
+	char pad[0x40];
+	SNetworkable *m_pNetworkable;
+};
+
+void CUnknown101d1460::sub_101d1460(int edict)
+{
+    SEdict *pEdict = (SEdict *)edict;
+    CBaseEntity *pEnt;
+    g_109f3620[*g_109f3680].a = "CBaseEntity::Instance";
+    g_109f3620[*g_109f3680].b = g_106b8540;
+    g_109f3620[*g_109f3680].c = g_106b8540;
+    (*g_109f3680)++;
+    if (!pEdict)
+        pEdict = (SEdict *)g_1070b22c->vfunc38((int)pEdict);
+    if (pEdict && pEdict->m_pNetworkable)
+        pEnt = pEdict->m_pNetworkable->vfunc4();
+    else
+        pEnt = 0;
+    (*g_109f3680)--;
+    sub_101d1530(pEnt, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2850 size=0x99
 struct PyObject;
 struct PyTypeObject {
