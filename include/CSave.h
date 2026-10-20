@@ -7,13 +7,13 @@ struct typedescription_t;
 class CSave
 {
 public:
-	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual int vfunc0();	// current position
+	virtual void vfunc1(int pos);	// seek
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual void vfunc5(const void *p);
-	virtual void vfunc6();
+	virtual void vfunc6();	// pops the section stack, writes the section size
 	virtual void vfunc7(int a, int b, int count);	// forwards to sub_101a05b0 with the count doubled (shorts to bytes)
 	virtual void vfunc8();
 	virtual void vfunc9();
@@ -48,7 +48,10 @@ public:
 	virtual void vfunc38();
 	virtual void vfunc39();
 
-	char m_pad0004[0x18];
+	int *m_pSections;	// +0x04: section start stack
+	char m_pad0008[0x8];
+	int m_nSections;	// +0x10
+	char m_pad0014[0x8];
 	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
 
 	int sub_101a08f0(void *pEntity);	// index of the entity in the table, or -1
