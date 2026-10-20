@@ -2745,6 +2745,7 @@
 0x1000eda4 func   ?sub_100b3a60@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3a60
 0x1000edb8 func   ?sub_103ab4a0@CNPC_VSabbatLeader@@QAEXPAX@Z CNPC_VSabbatLeader::sub_103ab4a0
 0x1000edc2 func   ?vfunc5@CNPC_VBatSwarm@@QAEPAV1@I@Z CNPC_VBatSwarm::vfunc5
+0x1000edc7 func   ?sub_100f4260@@YAHHHMMMH@Z sub_100f4260
 0x1000edc7 func   ?sub_100f4260@@YAXHHMMMH@Z sub_100f4260
 0x1000edea func   ?sub_1014ee10@@YAPAHXZ sub_1014ee10
 0x1000ee26 func   ?vfunc2@CTEKillPlayerAttachments@@UAEPAV1@I@Z CTEKillPlayerAttachments::vfunc2
