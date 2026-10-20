@@ -32709,6 +32709,26 @@ void __fastcall sub_1021e6c0(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021e8e0 size=0xa2
+#include <string.h>
+#include "CUnknown1021e8e0.h"
+
+int CUnknown1021e8e0::sub_1021e8e0(const char *pszName)
+{
+    char szWanted[128];
+    strcpy(szWanted, pszName);
+    _strlwr(szWanted);
+    for (int i = 0; i < sub_1021eaa0(); i++) {
+        char szEntry[128];
+        strcpy(szEntry, sub_1021eac0(i));
+        _strlwr(szEntry);
+        if (strstr(szEntry, szWanted) == szEntry)
+            return i;
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10220e10 size=0x83
 #include "QuestJournal.h"
 
