@@ -18761,6 +18761,42 @@ CBaseEntity *CBasePlayer::sub_10161ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101671a0 size=0x73
+#include "CBaseCombatCharacter.h"
+
+struct HandleEntry_t
+{
+	CBaseEntity *m_pEnt;
+	unsigned int m_nSerial;
+	int pad;
+};
+struct HandleTable_t
+{
+	int pad;
+	HandleEntry_t m_Entries[1];
+};
+extern HandleTable_t *g_10566458;
+
+bool CBaseCombatCharacter::sub_101671a0()
+{
+	if (sub_10146a80())
+		return true;
+	unsigned int h = *(unsigned int *)((char *)this + 0x1538);
+	if (h != 0xffffffff) {
+		HandleEntry_t *e = &g_10566458->m_Entries[h & 0x1fff];
+		if (e->m_nSerial == (h >> 13) && e->m_pEnt != 0
+			&& *(int *)((char *)this + 0x153c) != -1
+			&& *(int *)((char *)this + 0x1540) == 3)
+			return true;
+	}
+	if ((sub_100b3700() & 2) == 2) {
+		bool bNull = sub_101672d0() == 0;
+		return bNull;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168e60 size=0x72
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 struct EntX {
