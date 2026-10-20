@@ -881,6 +881,63 @@ void CAI_BaseNPCTroika::vfunc616()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4540 size=0xb4
+#include "CAI_BaseNPCTroika.h"
+#include "CGlobalEntityList.h"
+
+struct SHandleSlot
+{
+	CBaseEntity *m_pEntity;
+	int m_Serial;
+};
+
+struct SOtherEntity
+{
+	char m_pad0000[0x98];
+	char *m_p0098;
+	int m_n00a0pad;
+	int m_n00a8;
+};
+
+// the CBaseCombatCharacter implementation of the slot (stub 0x10010e24)
+struct SBaseCharacter
+{
+	char sub_10326750(SOtherEntity *pOther);
+};
+
+extern char g_10924fba;
+extern char g_10924fb9;
+extern CGlobalEntityList *g_10566458;
+
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	SHandleSlot *s = (SHandleSlot *)&g_10566458->m_Slots[h & 0x1fff].m_pEntity;
+	if (s->m_Serial == (int)(h >> 13))
+		return s->m_pEntity;
+	return 0;
+}
+
+// CAI_BaseNPCTroika::vfunc363 as a fastcall function: ecx = this, edx unused
+char __fastcall sub_102b4540(CAI_BaseNPCTroika *self, int unused, SOtherEntity *pOther)
+{
+	if (!pOther)
+		return false;
+	if (g_10924fba)
+		return false;
+	if (g_10924fb9 && *(int *)((char *)pOther + 0xa8))
+		return false;
+	if (self->vfunc293()) {
+		CBaseEntity *pTarget = ResolveHandle(*(unsigned int *)((char *)self + 0x628c));
+		if (self->vfunc293() == (int)pTarget && pOther->m_p0098 && *(pOther->m_p0098 + 0x6279))
+			return true;
+	}
+	char c = ((SBaseCharacter *)self)->sub_10326750(pOther);
+	return c != '\0';
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf6e0 size=0x68
 #include "CAI_BaseNPCTroika.h"
 
