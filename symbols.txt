@@ -3089,6 +3089,7 @@
 0x100121e3 func   _npc_VMoleman npc_VMoleman
 0x10012215 func   ?sub_101308d0@CLight@@QAEXXZ CLight::sub_101308d0
 0x1001221a func   ?sub_1015ef20@CUnknown1015ef20@@QAE_NXZ CUnknown1015ef20::sub_1015ef20
+0x10012233 func   ?vfunc19@CServerGameDLL@@UAEXPAX@Z CServerGameDLL::vfunc19
 0x10012242 func   ?vfunc125@CBaseEntity@@UAEXXZ CBaseEntity::vfunc125
 0x1001226a func   ?sub_10041c80@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_10041c80
 0x10012292 func   ?vfunc568@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc568
