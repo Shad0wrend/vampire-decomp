@@ -7,4 +7,5 @@ class CWindowPane
 public:
 	CWindowPane *vfunc5(unsigned int flags);
 	void sub_10004c3c();
+	void vfunc104();	// as in CFireSmoke (transplant)
 };

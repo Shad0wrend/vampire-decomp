@@ -16,4 +16,6 @@ public:
 	void sub_1004e910(int a);	// slot 242 override: forwards to the helper at +0x498 with this
 	bool vfunc223();	// slot 223 override: warns when there is no physics object (+0x36c), otherwise wakes it / copies the origin to +0x458 and sets the flag object at +0x1b0
 	void vfunc243(int a);	// as in CPhysBox (transplant)
+	CPhysBox *sub_1004e0a0();	// as in CKeepUpright (transplant)
+	void sub_102d08e0(int a);	// provisional, like sub_1004e910 (transplant)
 };

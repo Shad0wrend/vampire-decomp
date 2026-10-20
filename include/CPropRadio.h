@@ -8,4 +8,5 @@ class CPropRadio : public CBaseEntity
 public:
 	// Slot 35, called directly so far; declared as a plain member.
 	int vfunc35(int a);	// "CPropRadio::GetUseIcon": returns the field at +0x730
+	CPropRadio *sub_1022bc30();	// as in CKeepUpright (transplant)
 };

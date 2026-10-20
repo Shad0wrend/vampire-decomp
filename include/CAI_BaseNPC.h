@@ -101,4 +101,13 @@ public:
 	void sub_10280e50(void *pSchedule);	// "CAI_BaseNPC::SetSchedule": calls slot 435(pSchedule), resets the schedule bookkeeping at +0x5bb8/+0x5c38.., stamps curtime, may start the idle state; prints "Schedule: %s" when flag 0x8000000 is set at +0x224
 	void sub_10182c40(const char *text, const char *sound);	// copies text into a global buffer (+0x1ca4 = the buffer, or null when empty), stamps curtime - 0.5 at +0x1ca8, then moves that time forward by the sound's duration (when the dialog partner at +0xfe8 has the object at +0x98) or by 0.6, and sets bit 0 of +0x1cac
 	void sub_1000c9cd();	// as in CPhysForce (transplant)
+	void sub_10156580(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
+	void sub_10175360(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
+	void sub_10209ac0(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
+	void sub_10252470(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
+	void sub_10279b70(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
+	void sub_10279cc0(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
+	void sub_10357110(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
+	void sub_103f6ab0(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
+	void sub_1042b9c0(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
 };

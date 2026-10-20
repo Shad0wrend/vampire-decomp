@@ -40,4 +40,5 @@ public:
 	CRagdollProp *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10014317();	// as in CPhysForce (transplant)
 	void sub_101563b0(int index, int unused);	// stores the origin/angles of body `index` at +0x2a0 / +0x2fa (dwords); index 0 also calls slot 216 and PhysicsTouchTriggers
+	CRagdollProp *sub_101550d0();	// as in CKeepUpright (transplant)
 };

@@ -9,4 +9,5 @@ public:
 	virtual void vfunc130(int a);
 	CWorld *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_1000fe98();	// as in CPhysForce (transplant)
+	CWorld *sub_1023b840();	// as in CKeepUpright (transplant)
 };

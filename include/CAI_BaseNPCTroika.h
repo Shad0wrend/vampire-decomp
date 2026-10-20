@@ -66,4 +66,12 @@ public:
 	unsigned int m_h6554;
 	char m_pad6558[0x65bc - 0x6558];
 	float m_f65bc;
+	void sub_100f0e90(unsigned int flags);	// provisional, like sub_102a97a0 (transplant)
+	void sub_10181580(unsigned int flags);	// provisional, like sub_102a97a0 (transplant)
+	void sub_102a9800(unsigned int flags);	// provisional, like sub_102a97a0 (transplant)
+	int sub_10252240();	// provisional, like vfunc293 (transplant)
+	int sub_1042b110();	// provisional, like vfunc293 (transplant)
+	void sub_101815b0(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
+	void sub_102a9830(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
+	void sub_102a98e0(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
 };

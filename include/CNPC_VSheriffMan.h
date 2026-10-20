@@ -22,4 +22,5 @@ public:
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VSheriffMan *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
+	int vfunc337();	// as in CNPC_VSabbatLeader (transplant)
 };

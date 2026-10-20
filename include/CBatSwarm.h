@@ -18,4 +18,5 @@ public:
 	void sub_10004c3c();	// as in CSimplePhysicsProp (transplant)
 	bool vfunc69(void *pEntity);	// as in CBatSwarm (transplant)
 	void vfunc104();	// as in CCameraAnimated (transplant)
+	CBatSwarm *sub_100b8730();	// as in CKeepUpright (transplant)
 };

@@ -10,4 +10,5 @@ public:
 
 	char m_padSpark[0x454 - 0x3e0];
 	int m_nGlowModelIndex;	// 0x454
+	CEnvSpark *sub_10103d70();	// as in CKeepUpright (transplant)
 };

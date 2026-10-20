@@ -22,4 +22,5 @@ public:
 	unsigned int m_hShot610[4];	// 0x0610: entity handles, one per flag bit
 	char m_pad0620[0x630 - 0x620];
 	unsigned int m_hShot630;	// 0x0630
+	float *sub_1030be50(float *out);	// provisional, like vfunc193 (transplant)
 };

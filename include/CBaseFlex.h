@@ -13,4 +13,5 @@ public:
 	int m_toggle854;
 	CBaseFlex *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100152ad();	// as in CPhysForce (transplant)
+	CBaseFlex *sub_100b58d0();	// as in CKeepUpright (transplant)
 };

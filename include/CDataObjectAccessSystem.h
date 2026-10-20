@@ -15,4 +15,6 @@ public:
 
 	void sub_1003c9f0(int index, void *pData);
 	void sub_1000cfbd();	// destructor body
+	CDataObjectAccessSystem *sub_103499d0(unsigned int flags);	// provisional, like vfunc8 (transplant)
+	void sub_1000ebbf();	// provisional, like sub_1000cfbd (transplant)
 };

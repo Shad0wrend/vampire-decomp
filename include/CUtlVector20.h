@@ -17,4 +17,6 @@ public:
 	int sub_100430a0(int elem, int num, const void *pToCopy);	// same as sub_10042a80 (another instance)
 	int sub_100433b0(int elem, int num, const void *pToCopy);	// same as sub_10042a80 (another instance)
 	void sub_1027f990(int num);	// same shape as sub_10032db0
+	void sub_10032e70(int elem, int num);	// provisional, like sub_1002cc10 (transplant)
+	void sub_1027fa50(int elem, int num);	// provisional, like sub_1002cc10 (transplant)
 };

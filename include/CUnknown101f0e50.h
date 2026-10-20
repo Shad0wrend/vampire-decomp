@@ -15,4 +15,5 @@ public:
 
 	CUnknown101f0e50 *sub_101f0e50();	// zeroes the fields above and returns this
 	bool sub_101f18f0(int index);	// "IsValidIndex": index is not -1 and below the count at +0x4
+	bool sub_101f82d0(int index);	// provisional, like sub_101f18f0 (transplant)
 };

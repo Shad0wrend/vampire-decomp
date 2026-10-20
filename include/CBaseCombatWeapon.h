@@ -57,4 +57,7 @@ public:
 	char m_pad890[4];
 	float m_f894;
 	void sub_10013a57();	// as in CPhysForce (transplant)
+	char sub_10256220();	// provisional, like vfunc304 (transplant)
+	char sub_10256250();	// provisional, like vfunc304 (transplant)
+	char sub_10257200();	// provisional, like vfunc304 (transplant)
 };

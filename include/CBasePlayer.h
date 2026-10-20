@@ -53,4 +53,11 @@ public:
 	float *vfunc367(float *out);	// as in CBaseEntity (transplant)
 	int sub_101647a0(int act);	// NPC_TranslateActivity: scope-traced, 0x16 -> 9, 0x17 -> 0x13
 	void sub_1017c1d0(CBaseEntity *pEnt);	// "CBasePlayer::RemoveFromPlayerSimulationList": removes the entity from the handle vector at +0x23bc (count at +0x23c8) by shifting the tail down
+	CBaseEntity *sub_10081890();	// provisional, like sub_1015dc60 (transplant)
+	CBaseEntity *sub_100dead0();	// provisional, like sub_1015dc60 (transplant)
+	CBaseEntity *sub_101618a0();	// provisional, like sub_1015dc60 (transplant)
+	CBaseEntity *sub_10161ed0();	// provisional, like sub_1015dc60 (transplant)
+	CBaseEntity *sub_10270ae0();	// provisional, like sub_1015dc60 (transplant)
+	CBaseEntity *sub_102a9960();	// provisional, like sub_1015dc60 (transplant)
+	CBaseEntity *sub_1039ede0();	// provisional, like sub_1015dc60 (transplant)
 };
