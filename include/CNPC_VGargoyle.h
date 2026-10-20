@@ -18,6 +18,8 @@ public:
 	int sub_10001b45(void *pInfo);	// CNPC_VHuman::vfunc390, called directly
 	void sub_10005849(CBaseEntity *pEnt, int a, int b);	// a CBaseCombatCharacter member (the stub at 0x10005849 for 0x10332ca0), called directly
 	bool sub_10378ec0();	// finds the "pillar" entity named by slot 167()'s slot 220(), stores its handle at +0x667c (-1 when none) and returns whether the handle still resolves to a live entity
+	void vfunc104();	// slot 104 (Precache): CNPC_VHuman::vfunc104, then precaches the nine gargoyle gib models, the stomp / exert / roar2 sounds and the "item_w_gargoyle_fist" weapon
+	void sub_10384670();	// CNPC_VHuman::vfunc104 (stub 0x100013f7), called directly
 
 	char m_pad0004[0x667c - 4];
 	int m_hPillar;	// 0x667c
