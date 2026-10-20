@@ -1,4 +1,5 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 17, 35, 38, 49, 59, 82, 84, 85, 105 and 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 13, 17, 35, 38, 49, 59, 82, 84, 85, 105 and 119 to 122 are known.
+// Slot 13 takes a resource name and a preload flag (precaches a sound / resource).
 // Slot 17 is PrecacheModel(name, preload) and returns the model index.
 // Slot 49 is EmitAmbientSound(entindex, pos, sample, volume, soundlevel, flags, pitch).
 // Slot 119 takes a flag and returns a time value in ST0; slot 120 returns a dword in EAX.
@@ -16,7 +17,7 @@ class CUnknown1070b22c
 {
 public:
 	U22C_SLOTS10(a0)
-	virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14();
+	virtual void a10(); virtual void a11(); virtual void a12(); virtual void vfunc13(const char *pszName, int bPreload); virtual void a14();
 	virtual void a15(); virtual void a16();
 	virtual int vfunc17(int a, int b);
 	virtual void a18(); virtual void a19();
