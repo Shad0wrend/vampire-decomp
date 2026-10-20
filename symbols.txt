@@ -2602,6 +2602,7 @@
 0x10010aaf func   _tectonic tectonic
 0x10010ac8 func   ?sub_10168e60@@YA_NPAXPAUEntX@@@Z sub_10168e60
 0x10010ae6 func   ?vfunc38@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc38
+0x10010aeb func   ?sub_100eb0e0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100eb0e0
 0x10010af5 func   ?vfunc11@ConVar@@UAEXPBD@Z ConVar::vfunc11
 0x10010b09 func   ?vfunc116@CBaseEntity@@UAEHXZ CBaseEntity::vfunc116
 0x10010b22 func   ?vfunc566@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::vfunc566
