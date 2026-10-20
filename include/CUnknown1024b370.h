@@ -7,15 +7,6 @@ struct CUnknown1024b370Mem
 	void *m_pMemory;
 	int m_allocationCount;
 	int m_growSize;	// -1: external memory
-
-	void Purge()
-	{
-		if (m_growSize != -1) {
-			if (m_pMemory) {
-				extern void __cdecl Plat_Free_Placeholder(void *);
-			}
-		}
-	}
 };
 
 class CUnknown1024b370
