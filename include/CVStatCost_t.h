@@ -26,4 +26,6 @@ public:
 	int sub_101fc350(int level, bool bFirst);	// "CVStatCost_t::GetCostToBuy": scope trace, GetCostToBuy of the first (bFirst) or second sub cost
 	int sub_101fc410(int level, bool bFirst);	// "CVStatCost_t::GetCostToSell": scope trace, GetCostToSell of the first (bFirst, forced) or second sub cost
 	bool sub_101fc220(CVStatKV *pKV);	// "CVStatCost_t::Load": scope trace; reads the "Costs" sub key's "New" and "Raise" strings into the two sub costs, then copies the non-null one over a null one; false without a sub key
+	const char *sub_101fc5b0();	// the cost as text (stub 0x10015d07)
+	void sub_101fc6a0();	// "CVStatCost_t::Debug_Display": scope trace; unless IsNull(), prints "Cost: " and the cost text with DevMsg(1, ...)
 };
