@@ -129,6 +129,22 @@ void CNPC_VAndreiBlood::vfunc433()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035db20 size=0x5a
+#include "ScopeTrace.h"
+#include "CNPC_VAndreiBlood.h"
+#include "CNPC_VVampireBoss.h"
+
+void CNPC_VAndreiBlood::vfunc431()
+{
+    g_109f3620[*g_109f3680].name = "CNPC_VAndreiBlood::NPCThink";
+    g_109f3620[*g_109f3680].file = g_106b8540;
+    g_109f3620[*g_109f3680].line = g_106b8540;
+    (*g_109f3680)++;
+    ((CNPC_VVampireBoss *)this)->vfunc431();
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035dba0 size=0x64
 #include "CNPC_VAndreiBlood.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
