@@ -15664,6 +15664,26 @@ int TOutput::sub_100cd7e0(TSave *save)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd940 size=0x12
+struct CListNode100cd940 {
+    char pad0[0x14];
+    CListNode100cd940 *next14;
+    char pad1[4];
+    CListNode100cd940 *next1c;
+};
+
+int __fastcall sub_100cd940(CListNode100cd940 *p)
+{
+    int n = 0;
+    CListNode100cd940 *q = p->next14;
+    while (q != 0) {
+        q = q->next1c;
+        n++;
+    }
+    return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdba0 size=0x82
 #include "CUnknown100cdba0.h"
 
