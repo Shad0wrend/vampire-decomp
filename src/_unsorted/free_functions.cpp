@@ -75,6 +75,25 @@ extern "C" GP *phys_torque()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029100 size=0x13
+struct CUnknown10029100 {
+    float m_f0;
+    int m_n4;
+    int m_n8;
+    unsigned char m_b12;
+    void sub_10029100();
+};
+
+// TARGET: sub_10029100
+void CUnknown10029100::sub_10029100()
+{
+    m_f0 = 1.0f;
+    m_n4 = 0;
+    m_n8 = 0;
+    m_b12 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029200 size=0x43
 #include "CKeepUpright.h"
 void *sub_100aa720(int size);
