@@ -39,6 +39,14 @@ struct CRestoreVec
 	void EnsureCapacity(int num);
 };
 
+struct CRestoreSaveEnt	// the record the save index maps to (stub 0x10012ff8 / 0x101a2410): entity index at +4, entity handle at +0x10
+{
+	char m_pad0000[4];
+	int m_nIndex;	// 0x04
+	char m_pad0008[8];
+	unsigned int m_hEntity;	// 0x10
+};
+
 class CRestore : public IRestore
 {
 public:
@@ -58,6 +66,7 @@ public:
 	virtual int vfunc28(CBaseEntity **pValues, int count, int nBytesAvailable);	// "CRestore::ReadEntityPtr": reads entity indexes (slot 15) and maps each to the entity (sub_101a2390), zero-filling the rest
 	virtual int vfunc29(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadEdictPtr": like slot 28 but stores the edict (+0x2e0) of each entity (0 when it does not resolve); reads through slot 15 into a 256 dword buffer, zero-filling up to the third argument
 	virtual int vfunc30(unsigned int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadEHandle": like slot 29 but stores the entity handle (slot 1 of the entity, -1 when it does not resolve); zero-fills up to the third argument
+	virtual int vfunc31(int *pValues, int count, int nBytesAvailable);	// slot 31: like slot 30 on the save index records (sub_101a2410): -1 when there is none, the record's live entity handle (+0x10), else minus the record's index (+4) when that is within 1..0xfffe (otherwise -1); zero-fills up to the third argument
 
 	CRestore(void *pData);	// 0x101a12a0
 
@@ -68,6 +77,7 @@ public:
 	void sub_101a1f90(void *pData, int size);	// reads size bytes into pData
 	char vfunc16();	// slot 16: reads one byte
 	CBaseEntity *sub_101a2390(int index);	// the entity of the given save index (stub 0x10014a3d)
+	CRestoreSaveEnt *sub_101a2410(int index);	// the save index record (stub 0x10012ff8)
 	void sub_1016eec0(const char *pszName, char *pDest, int size);	// reads the string stored under pszName into the size byte buffer pDest (stub 0x10004728)
 
 	CRestoreVec m_vec;	// 0x0004
