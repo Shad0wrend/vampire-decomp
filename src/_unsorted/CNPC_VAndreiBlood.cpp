@@ -55,6 +55,29 @@ void CNPC_VAndreiBlood::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035cec0 size=0x81
+#include "CNPC_VAndreiBlood.h"
+struct ScopeEnt { const char *name; const char *file; const char *file2; };
+extern ScopeEnt *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+extern int g_1070d1b0[3];
+
+void CNPC_VAndreiBlood::vfunc420()
+{
+    g_109f3620[*g_109f3680].name = "CNPC_VAndreiBlood::NPCInit";
+    g_109f3620[*g_109f3680].file = g_106b8540;
+    g_109f3620[*g_109f3680].file2 = g_106b8540;
+    ++*g_109f3680;
+    sub_103c5840();
+    int *pDest = (int *)((char *)this + 0x66c0);
+    pDest[0] = g_1070d1b0[0];
+    pDest[1] = g_1070d1b0[1];
+    pDest[2] = g_1070d1b0[2];
+    --*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035cf80 size=0x65
 #include "CNPC_VAndreiBlood.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
