@@ -1,0 +1,55 @@
+// CUnknown10258670: an object with a name virtual (slot 348) that is checked against the name records of a character's
+// template (real name not yet known). The records live in a global table of lists (by key), each list holding
+// name records numbered from 0; a static default list / record (key -1) is the fallback.
+#pragma once
+
+class CUnknown10258670Entry	// a name record: key at +0, name at +4
+{
+public:
+	int m_key;
+	const char *m_name;
+
+	CUnknown10258670Entry(int key);	// stub 0x10005ab0
+	~CUnknown10258670Entry();	// stub 0x1000354e
+};
+
+class CUnknown10258670List	// a list of name records: count at +0x14, pointer array at +0x18, key at +0x1c
+{
+public:
+	char m_pad0000[0x14];
+	int m_nEntries;	// 0x14
+	CUnknown10258670Entry **m_ppEntries;	// 0x18
+	int m_key;	// 0x1c
+
+	CUnknown10258670List(int key);	// stub 0x1000aa9c
+	~CUnknown10258670List();	// stub 0x10014574
+};
+
+struct CUnknown10258670Character	// the part of the character the key is read from
+{
+	char m_pad0000[0xe30];
+	int m_nKey;	// 0xe30
+};
+
+extern int g_1074f018;	// the number of lists
+extern CUnknown10258670List **g_1074f01c;	// the lists
+
+#define CU258670_V(n) virtual void vfunc##n();
+#define CU258670_V10(p) CU258670_V(p##0) CU258670_V(p##1) CU258670_V(p##2) CU258670_V(p##3) CU258670_V(p##4) CU258670_V(p##5) CU258670_V(p##6) CU258670_V(p##7) CU258670_V(p##8) CU258670_V(p##9)
+
+class CUnknown10258670
+{
+public:
+	// slots 0..347 (placeholders keep the slot numbers right)
+	CU258670_V10(00) CU258670_V10(01) CU258670_V10(02) CU258670_V10(03) CU258670_V10(04) CU258670_V10(05) CU258670_V10(06) CU258670_V10(07) CU258670_V10(08) CU258670_V10(09)
+	CU258670_V10(1) CU258670_V10(2) CU258670_V10(3) CU258670_V10(4) CU258670_V10(5) CU258670_V10(6) CU258670_V10(7) CU258670_V10(8) CU258670_V10(9)
+	CU258670_V10(10) CU258670_V10(11) CU258670_V10(12) CU258670_V10(13) CU258670_V10(14) CU258670_V10(15) CU258670_V10(16) CU258670_V10(17) CU258670_V10(18) CU258670_V10(19)
+	CU258670_V10(20) CU258670_V10(21) CU258670_V10(22) CU258670_V10(23) CU258670_V10(24) CU258670_V10(25) CU258670_V10(26) CU258670_V10(27) CU258670_V10(28) CU258670_V10(29)
+	CU258670_V10(30) CU258670_V10(31) CU258670_V10(32) CU258670_V10(33) CU258670_V10(34)
+	virtual const char *vfunc348();	// the name compared with the records
+
+	bool sub_10258670(CUnknown10258670Character *pChar);	// true when one of the name records of the character's template list equals (case-insensitive) the name of slot 348
+};
+
+#undef CU258670_V10
+#undef CU258670_V
