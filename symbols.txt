@@ -1132,6 +1132,7 @@
 0x10008143 func   ?vfunc2@CTEBeamPoints@@UAEPAV1@I@Z CTEBeamPoints::vfunc2
 0x10008148 func   ?sub_10032ab0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_10032ab0
 0x1000814d func   ?vfunc7@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc7
+0x10008166 func   ?sub_1003c1e0@UtlMem@@QAEXXZ UtlMem::sub_1003c1e0
 0x1000816b func   ?sub_102d4390@S102d4390@@QAEXH@Z S102d4390::sub_102d4390
 0x10008175 func   ?sub_10428eb0@@YAHPAD@Z sub_10428eb0
 0x1000817a func   ?sub_10401a20@@YAHXZ sub_10401a20
