@@ -22141,6 +22141,27 @@ TVec sub_101cfd80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cfe10 size=0x68
+struct GameL {
+    virtual void a0();
+    virtual void a1();
+    virtual char *v2(int a, int b);
+};
+extern GameL *g_1070b244;
+bool sub_101cf9b0(int a);
+void sub_101cfea0(void *pObj, char *p, int c);
+
+void sub_101cfe10(void *pObj, int a, int c)
+{
+    if (sub_101cf9b0(a)) {
+        if (a == 0xf7)
+            sub_101cfea0(pObj, g_1070b244->v2(0, 6) + 0x44, c);
+        else
+            sub_101cfea0(pObj, g_1070b244->v2(0, 5) + 0x26, c);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0310 size=0x9a
 extern "C" double __cdecl atof(const char *);
 extern void (*g_109f3890)(char *dest, const char *src, int maxLen);
