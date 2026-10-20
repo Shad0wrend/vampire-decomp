@@ -4368,6 +4368,28 @@ const char *CUnknown10050860::sub_10050860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050d90 size=0xa6
+#include "CDisciplineParticle.h"
+#include "CUnknown1070b22c.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern CUnknown1070b22c *g_1070b22c;
+
+CDisciplineParticle *CDisciplineParticle::sub_10050d90(int a1, int a2, int a3, int a4, int a5, int pszModel, int a7, int a8, int a9, int a10)
+{
+	g_109f3620[*g_109f3680].a = "CDisciplineParticle::Create";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	CDisciplineParticle *pParticle = sub_10050e70("disc_particle", a1, a2, a3, a4, a5, g_1070b22c->vfunc17(pszModel, 0), a7, a8, a9, a10, 0);
+	(*g_109f3680)--;
+	return pParticle;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10053df0 size=0x13
 bool sub_10053df0(const unsigned int *a, const unsigned int *b)
 {
