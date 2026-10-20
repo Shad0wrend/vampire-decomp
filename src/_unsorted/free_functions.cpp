@@ -12149,6 +12149,29 @@ bool sub_100df7b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dfaf0 size=0x6a
+extern char g_106ea788;
+extern char g_106e9108[];
+extern int (__cdecl *g_109f387c)(char *, int, const char *, char *);
+extern void (__cdecl *g_109f364c)(const char *, ...);
+extern void (__cdecl *g_109f366c)(const char *, ...);
+void sub_100df850(const char *msg);
+
+void sub_100dfaf0(unsigned char flags, const char *fmt, ...)
+{
+    if (!g_106ea788 || (flags & 8)) {
+        char *args = (char *)&fmt + sizeof(fmt);
+        g_109f387c(g_106e9108, 0x400, fmt, args);
+        if (flags & 2)
+            g_109f364c(g_106e9108);
+        if (flags & 1)
+            sub_100df850(g_106e9108);
+        if (flags & 4)
+            g_109f366c(g_106e9108);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e09a0 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
