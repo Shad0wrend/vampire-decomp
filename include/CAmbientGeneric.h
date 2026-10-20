@@ -12,10 +12,13 @@ public:
 	char m_b04bd;
 	char pad04be[2];
 	const char *volatile m_pszSoundFile;	// 0x4c0 (volatile: the game's code reads it again for the null check)
+	char pad04c4[4];
+	unsigned int m_hSoundEnt;	// 0x4c8: entity handle of the entity the sound is attached to
 
 	unsigned int sub_101ac2f0();
 	CAmbientGeneric *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 	void vfunc104();	// slot 104: precaches the sound file (when it is set, longer than one character and not a '!' sentence), then sub_101ad0f0, then flags bit 0 of the 0x4bc byte when the 0x4bd byte is set and spawnflag 0x10 is clear
 	void sub_101ad0f0();	// ambient sound parameter setup (called through the stub at 0x1000da80)
+	void vfunc180();	// slot 180: when the attached entity resolves, stops the sound on its edict (sub_101cdac0), then CBaseEntity::vfunc180
 };
