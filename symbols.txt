@@ -879,6 +879,7 @@
 0x1000539e func   ?vfunc134@CVampireProjectile_MingXiaoSpit@@QAEXXZ CVampireProjectile_MingXiaoSpit::vfunc134
 0x100053a8 func   ?sub_103fff40@@YAHXZ sub_103fff40
 0x100053bc func   ?sub_101f9630@@YAXH@Z sub_101f9630
+0x100053c1 func   ?vfunc278@CWeaponGravityGun@@UAEMXZ CWeaponGravityGun::vfunc278
 0x100053cb func   ?sub_10384150@@YADXZ sub_10384150
 0x100053d5 func   ?sub_10043230@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10043230
 0x100053e4 func   ?sub_100ce8a0@@YGXPBD@Z sub_100ce8a0
