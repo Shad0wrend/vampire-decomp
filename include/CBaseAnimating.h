@@ -11,6 +11,7 @@ public:
 	int sub_10094520();	// "CBaseAnimating::GetNumFlexControllers": scope trace (entity name), returns the dword at +0x160 of the studio header, 0 when missing
 	int sub_10093be0(int a);	// "CBaseAnimating::GetBodygroup": scope trace (entity name), then a studio helper on (GetModelPtr(-1), dword at +0x67c, a)
 	const char *sub_100946b0(int index);	// "CBaseAnimating::GetFlexControllerName": scope trace (entity name), the name of the 0x14 byte controller record index (table at header + dword at +0x164), 0 when no header
+	int sub_10094790(int index);	// "CBaseAnimating::GetFlexControllerType": scope trace (entity name), address of the 0x14 byte controller record [index] plus its first dword (an offset to the type string); 0 when no header
 	int sub_100945e0(int index);	// "CBaseAnimating::GetFlexDescFacs"
 	void sub_10091c80();	// "CBaseAnimating::OnSequenceFinish" scope only
 	float sub_10091740();	// "CBaseAnimating::GetIdealSpeed": returns the float at +0x654
