@@ -22034,6 +22034,16 @@ void CUnknown101eb7f0::sub_101eb7f0(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ec690 size=0x17
+#include "CUnknown101ec690.h"
+extern void (__cdecl *g_1073a3a0)(CUnknown101ec690 *, int);
+void CUnknown101ec690::sub_101ec690(int arg)
+{
+	if (g_1073a3a0)
+		g_1073a3a0(this, arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ec6f0 size=0x9c
 #include "CUnknown101ec6f0.h"
 
