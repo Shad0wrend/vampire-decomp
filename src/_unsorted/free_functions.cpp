@@ -31653,6 +31653,33 @@ int *sub_102567b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10256890 size=0x6b
+#include "CBaseCombatWeapon.h"
+#include "CUnknown1070b22c.h"
+
+struct OwnerEnt {
+    char m_pad0000[0xa8];
+    CBaseEntity *m_pPlayer;
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: sub_10256890
+CBaseCombatWeapon *sub_10256890(int unused, CBaseCombatWeapon *pWeapon, unsigned int *pBits)
+{
+    if (pWeapon && pWeapon->sub_102521f0()) {
+        OwnerEnt *pOwner = (OwnerEnt *)pWeapon->sub_102521f0();
+        if (pOwner && pOwner->m_pPlayer) {
+            unsigned int index = g_1070b22c->vfunc35(pOwner->m_pPlayer->m_pEdict2e0) - 1;
+            pBits[0] = 0;
+            pBits[index >> 5] |= 1 << (index & 0x1f);
+            return pWeapon;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257200 size=0x11
 #include "CBaseCombatWeapon.h"
 
