@@ -93,6 +93,7 @@ public:
 	int sub_1008dd30(int a, int b);	// CBaseAnimating::sub_1008dd30, called directly (stub 0x10004ec1)
 	float sub_10091080(int sequence);	// CBaseAnimating member (stub 0x10009813), returns a float
 	char sub_1028a190();	// "IsInterruptible"-like: false while the state is 4 and the scripted entity of the handle at +0x5d74 is not playing (CCineNPC::sub_101a8930), or the byte at +0x5bc4 / bit 12 of the dword at +0x14bc is set; else slot 158
+	void sub_102c41d0(int a, const Vector *pFrom, const Vector *pTo, int c);	// resolves the defaults (this NPC's slot 217 origin, the global vector at 0x1070d9d0), then hands them with the slot 192 vector to the worker behind the stub at 0x10001a8c
 
 	char m_pad0004[0x14bc - 4];
 	unsigned int m_flags14bc;
