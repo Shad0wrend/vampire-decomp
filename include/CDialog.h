@@ -1,6 +1,8 @@
 // CDialog: a dialog table object (name from the scope trace strings, not from RTTI). Only the lookup is recovered.
 #pragma once
 
+struct DialogLine;
+
 struct CDialogEntry_t
 {
 	int m_data[13];	// 0x34 bytes; the first dword is the sort key
@@ -25,4 +27,6 @@ public:
 
 	int sub_100e5690(CDialogEntry_t *pEntry);	// "CDialog::get": scope trace, bsearch for the entry matching *pEntry in the table; copies the found entry over *pEntry and returns 1, else 0
 	void sub_100e0a40(const char *pszSound);	// "CDialog::PlayWhisper": scope trace, when a whisper is pending hands it and pszSound to the NPC behind the handle at +4 and clears it
+	void sub_100e5770();	// "CDialog::unload": scope trace, frees every line of the table and the table itself, then releases the two global buffers at 0x106ea780 / 0x106ea784
+	void sub_100e7c20(DialogLine *pLine);	// "CDialog::line_free" (called with this in ecx; it is declared elsewhere as a free __stdcall function)
 };
