@@ -27,4 +27,5 @@ struct StatDefault3
 	int m_d0[4];	// 0xd0..0xdc
 	StatDefault3(int);
 	~StatDefault3();
+	int sub_101d4d80();	// stub 0x100054ca
 };
