@@ -26978,6 +26978,48 @@ extern "C" CBaseEntity *entityflame()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f54c0 size=0xc4
+#include "CUnknown100f5600.h"
+#include "CEntityVSlots.h"
+
+struct CGlobalVarsView {
+	char m_pad0000[0xc];
+	float curtime;	// 0xc
+};
+extern CGlobalVarsView *g_1070b228;
+
+struct CBoundsView {	// the collision property at +0x270: slot 1 = mins, slot 2 = maxs
+	virtual void v0();
+	virtual float *OBBMins();
+	virtual float *OBBMaxs();
+};
+
+CBaseEntity *sub_10136580(const char *pszClassname);	// CreateEntityByName
+void sub_101cf5c0(CBaseEntity *pEntity, const Vector &vecOrigin, int bFlag);
+void sub_100f5620();	// the flame think function (stub 0x10005411)
+
+CUnknown100f5600 *sub_100f54c0(CBaseEntity *pTarget)
+{
+	CUnknown100f5600 *pFlame = (CUnknown100f5600 *)sub_10136580("entityflame");
+	if (!pFlame)
+		return 0;
+	CBoundsView *pBounds = (CBoundsView *)((char *)pTarget + 0x270);
+	float *pMins = pBounds->OBBMins();
+	float *pMaxs = pBounds->OBBMaxs();
+	float flSize = pMaxs[1] - pMins[1];
+	if (flSize < 8.0f)
+		flSize = 8.0f;
+	sub_101cf5c0(pFlame, *((CEntityVSlots *)pTarget)->slot217(), 0);
+	pFlame->m_fUnk450 = flSize;
+	pFlame->sub_100ac4e0((int)sub_100f5620, 0, 0);
+	pFlame->m_flNextThink = g_1070b228->curtime + 0.1f;
+	pFlame->sub_100f55d0(pTarget);
+	pFlame->sub_100f5600(2.0f);
+	pFlame->m_flags268 |= 0x80;
+	return pFlame;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5600 size=0xd
 #include "CUnknown100f5600.h"
 
