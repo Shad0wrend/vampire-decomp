@@ -9,7 +9,7 @@ class CMoveHelperServer
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual bool vfunc2(const void *pTrace, const float *pVelocity);	// "CMoveHelperServer::AddToTouched": false for a trace without entity, the host (+0x4) or an entity already touched; else appends the trace and the impact velocity to the touch list at +0x8
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual void vfunc5();
