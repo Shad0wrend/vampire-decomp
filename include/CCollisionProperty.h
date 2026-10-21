@@ -15,9 +15,9 @@ public:
 	virtual void vfunc5();
 	virtual int vfunc6();
 	virtual void vfunc7();
-	virtual void vfunc8();
+	virtual void vfunc8();	// GetCollisionOrigin: returns the pointer to the three floats of the world origin (declared void: vfunc8 is matched that way)
 	virtual void vfunc9();
-	virtual void vfunc10();
+	virtual float *vfunc10();	// CollisionToWorldTransform: the matrix3x4_t (12 floats) of the collision space
 	virtual void vfunc11();
 	virtual void vfunc12();
 	virtual void vfunc13();
@@ -35,11 +35,14 @@ public:
 	virtual void vfunc5();
 	virtual int vfunc6();
 	virtual void vfunc8();
+	virtual float *vfunc10();	// "CCollisionProperty::CollisionToWorldTransform": one of four rotating static matrices; the outer entity's own transform when the bounds are in entity space, else identity with the origin as column 3
 	virtual int vfunc14();
 
 	char m_04[0x3c - 0x04];
 	// The entity the collision property belongs to; several slots just forward to it.
 	CBaseEntity *m_pOuter;
+	int m_nSolidType;	// 0x40
+	unsigned short m_usSolidFlags;	// 0x44
 
 	void sub_100dc480(int solid);	// "CCollisionProperty::SetSolid" (called through the stub at 0x1000428c)
 	void sub_100dc770(const float *mins, const float *maxs);	// "CCollisionProperty::SetCollisionBounds" (called through the stub at 0x100123c3)
