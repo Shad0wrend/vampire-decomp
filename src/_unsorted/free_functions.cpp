@@ -19961,6 +19961,27 @@ void __fastcall sub_100c8a00(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c8a20 size=0x105
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+
+void CBaseButton::sub_100c8a20(CBaseEntity *pOther)
+{
+	if (m_nState4f8 != 2 && m_nState4f8 != 3 && !m_b5c4) {
+		if (sub_100a7bd0((CBaseEntity *)EHandle_Get(m_hActivator53c))) {
+			m_pfnTouch1ec = 0;
+			if (m_nState4f8 == 0) {
+				m_Output578.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0);
+				sub_100c97c0();
+			} else {
+				m_Output578.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0);
+				sub_100c9560();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9250 size=0x104
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
