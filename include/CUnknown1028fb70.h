@@ -13,4 +13,5 @@ public:
 	float m_flHearingScalar;	// 0x63c0
 
 	void sub_1028fb70();	// fills +0x63b8 / +0x63c0 from the configured overrides, else from the "Inspection_Vision_Distances" / "Inspection_Hearing_Scalars" stat tables at the level
+	const char *sub_100ab4f0();	// CBaseEntity::sub_100ab4f0 (stub 0x1000b5cd): the entity's debug name
 };
