@@ -19431,6 +19431,56 @@ void CCameraTrack::sub_100cc360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ccf90 size=0x186
+#include "CEventAction.h"
+
+extern int g_106e70e8;
+extern "C" double atof(const char *);
+extern "C" int atoi(const char *);
+const char *sub_1000dd3c(char *pszToken, const char *pszSrc, char cSep);
+int *sub_10002095(int *pTemp, const char *psz);
+
+CEventAction *CEventAction::sub_100ccf90(const char *pszTargetName)
+{
+	m_pNext = 0;
+	m_iIDStamp = ++g_106e70e8;
+	m_flDelay = 0;
+	m_iTarget = 0;
+	m_iParameter = 0;
+	m_iTargetInput = 0;
+	m_nTimesToFire = -1;
+	m_iUnk0c = 0;
+	if (pszTargetName == 0)
+		return this;
+	char szToken[256];
+	int tmp;
+	const char *psz = sub_1000dd3c(szToken, pszTargetName, ',');
+	if (szToken[0] != 0)
+		m_iTarget = *sub_10002095(&tmp, szToken);
+	psz = sub_1000dd3c(szToken, psz, ',');
+	if (szToken[0] != 0)
+		m_iTargetInput = *sub_10002095(&tmp, szToken);
+	else
+		m_iTargetInput = *sub_10002095(&tmp, "Use");
+	psz = sub_1000dd3c(szToken, psz, ',');
+	if (szToken[0] != 0)
+		m_iParameter = *sub_10002095(&tmp, szToken);
+	psz = sub_1000dd3c(szToken, psz, ',');
+	if (szToken[0] != 0)
+		m_flDelay = (float)atof(szToken);
+	psz = sub_1000dd3c(szToken, psz, ',');
+	if (szToken[0] != 0) {
+		m_nTimesToFire = atoi(szToken);
+		if (m_nTimesToFire == 0)
+			m_nTimesToFire = -1;
+	}
+	psz = sub_1000dd3c(szToken, psz, ',');
+	if (szToken[0] != 0)
+		m_iUnk0c = *sub_10002095(&tmp, szToken);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd640 size=0xc
 extern char g_106b8540[];
 char *CUnknown100cd640::sub_100cd640()

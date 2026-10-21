@@ -480,6 +480,7 @@
 0x100030fd func   ?vfunc2@CEntitySaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CEntitySaveRestoreBlockHandler::vfunc2
 0x10003111 func   _env_sun env_sun
 0x1000311b func   ?sub_10158d60@@YIXPAPAX@Z sub_10158d60
+0x1000312a func   ?sub_100ccf90@CEventAction@@QAEPAV1@PBD@Z CEventAction::sub_100ccf90
 0x1000312f func   ?sub_103c6eb0@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c6eb0
 0x1000313e func   ?sub_10075230@CUnknown10075aa0@@QAEPAV1@HHHH@Z CUnknown10075aa0::sub_10075230
 0x10003148 func   ?sub_10032fb0@S10032fb0@@QAEXH@Z S10032fb0::sub_10032fb0
