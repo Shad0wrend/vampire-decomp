@@ -63053,6 +63053,43 @@ void CUnknown102dc2c0::sub_102dc2c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dc490 size=0x6e
+#include "CUnknown102dca60.h"
+#include "CUnknown102dc2c0.h"
+
+struct CUnknown102dca60Out
+{
+	char m_pad0000[0x49c];
+	COutputEvent m_Output;
+};
+
+namespace block_102dc490 {
+struct CTargetUnit : CUnknown102dca60_Target
+{
+	void sub_102db3b0(int mode);
+};
+
+void CTargetUnit::sub_102db3b0(int mode)
+{
+	if (mode == 0 || mode == 1 || mode == 2)
+		m_nMode = mode;
+}
+}
+using namespace block_102dc490;
+
+// TARGET: CUnknown102dca60::sub_102dc490
+void CUnknown102dca60::sub_102dc490()
+{
+	for (int i = 0; i < m_nTargets; i++)
+	{
+		CUnknown102dc2c0Handle *pHandle = (CUnknown102dc2c0Handle *)m_pTargets + i;
+		((CTargetUnit *)pHandle->Get())->sub_102db3b0(0);
+	}
+	sub_102dc520();
+	((CUnknown102dca60Out *)this)->m_Output.sub_100cd660(this, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dca60 size=0x15e
 #include "CUnknown102dca60.h"
 #include "CGlobalEntityList.h"
