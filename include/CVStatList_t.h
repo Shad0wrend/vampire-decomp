@@ -33,6 +33,7 @@ public:
 	const char *sub_10201470(int stat);	// "CVStatList_t::GetValueName": like sub_102013a0 but selects by the full stat value sub_10010609
 	bool sub_10200ea0(int stat);	// "CVStatList_t::DecBase": scope trace, when the stat is valid and its base value is above the stat's minimum (value record of the info object at +0xc, evaluated for the owner entity of the object at +0) lowers it by one, tells the info's action list (+0x10c) about the change and returns true; else false (stub 0x1000ffb0 etc.)
 	void sub_102016a0(int stat);	// "CVStatList_t::SetMax": scope trace, when the stat is valid moves the base value by (the stat's MaxBuy-like value record evaluated for the owner entity) - (the stat's current value) and tells the info's action list (+0x10c) about the change
+	void sub_10201590(int stat);	// "CVStatList_t::SetMin": like SetMax with the stat's minimum value record (sub_101ff010)
 };
 
 // The stat lists of a character: the object at +0x13a8 of a CBaseCombatCharacter (its CUtlVector of lists at +0x8:
