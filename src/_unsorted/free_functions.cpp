@@ -26747,6 +26747,45 @@ void CUnknown100f5600::sub_100f5600(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f5620 size=0xba
+#include "CUnknown100f5600.h"
+#include "CTakeDamageInfo.h"
+#include "CEntityVSlots.h"
+
+struct BurnGlobals_t {
+	char pad[0xc];
+	float curtime;
+};
+
+#define GV(n) virtual void v##n();
+#define GV10(p) GV(p##0) GV(p##1) GV(p##2) GV(p##3) GV(p##4) GV(p##5) GV(p##6) GV(p##7) GV(p##8) GV(p##9)
+
+struct GameRules_t {
+	GV10(0) GV10(1) GV10(2)
+	GV(30) GV(31) GV(32)
+	virtual void RadiusDamage(const CTakeDamageInfo &info, const Vector &vecSrc, float flRadius, int iClassIgnore, void *pEntityIgnore);
+};
+
+extern BurnGlobals_t *g_1070b228;
+extern GameRules_t *g_1070ba0c;
+void sub_101c0b10();
+void sub_10109770(Vector *pOrigin, float flRadius, float flHeat);
+
+void CUnknown100f5600::sub_100f5620()
+{
+	if (m_fUnk454 < g_1070b228->curtime) {
+		sub_100ac4e0((int)sub_101c0b10, 0, 0);
+		m_flNextThink = g_1070b228->curtime + 0.1f;
+		return;
+	}
+	CTakeDamageInfo info;
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	g_1070ba0c->RadiusDamage(*info.sub_101c26d0(this, this, 4.0f, 8, 0, 0, -1), *pSelf->slot217(), 32.0f, 0, 0);
+	sub_10109770(pSelf->slot217(), 32.0f, 2.0f);
+	m_flNextThink = g_1070b228->curtime + 0.1f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6bb0 size=0xed
 extern "C" void *memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(unsigned int);
