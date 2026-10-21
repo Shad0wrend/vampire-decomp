@@ -37208,6 +37208,46 @@ void *Helper::sub_10177ab0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178170 size=0xcc
+#include "CUnknown101800e0.h"
+
+struct GlobalVarsX { int pad0[3]; float curtime; };
+extern GlobalVarsX *g_1070b228;
+
+struct PlayerView10178170 {
+	char pad0[0x1cf8];
+	int m_nActTimer;
+	char pad1[0x1dd0 - 0x1cfc];
+	float m_f1dd0;
+	char pad2[4];
+	float m_f1dd8;
+};
+
+bool CBasePlayer::sub_10178170()
+{
+	PlayerView10178170 *v = (PlayerView10178170 *)this;
+	if (sub_1017f8d0())
+		return true;
+	float flValue = ((CUnknown101800e0 *)this)->sub_101800e0(1);
+	if (flValue > 0.0f && flValue >= g_1070b228->curtime - 10.0f)
+		return true;
+	float flTime = g_1070b228->curtime - 10.0f;
+	if (0.0f > flTime)
+		flTime = 0.0f;
+	if (flTime < v->m_f1dd0)
+		return true;
+	if (flTime < v->m_f1dd8)
+		return true;
+	if (sub_1017f770() > 0)
+		return true;
+	if (sub_1017f8b0() > 0)
+		return true;
+	if (v->m_nActTimer != 0x7f7fffff)
+		return true;
+	return (bool)sub_10175180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101784c0 size=0x67
 #include "CBasePlayer.h"
 #include "CItemGKeyring.h"
