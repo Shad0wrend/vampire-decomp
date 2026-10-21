@@ -21,6 +21,89 @@ void S10027890::sub_10027890(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027960 size=0xd0
+// TARGET: CPhysForce::sub_10027960
+#include "CPhysForce.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CPhysObjectX {
+	virtual void s0(); virtual void s1();
+	virtual void s2();
+};
+struct CPhysControllerX {
+	virtual void s0(); virtual void s1();
+	virtual void s2(CPhysObjectX *pObject);
+};
+struct CPhysEnvX {
+	SV10(0) SV10(1) SV10(2) SV(30) SV(31) SV(32) SV(33) SV(34) SV(35) SV(36) SV(37) SV(38)
+	virtual CPhysControllerX *s39(void *pMotion);
+};
+struct CPhysForceHostX {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21) SV10(22) SV10(23)
+	SV(240)
+	virtual void s241(CPhysObjectX *pObject, CPhysForceVec3 *pStart, CPhysForceVec3 *pEnd);
+};
+extern CPhysEnvX *g_10723940;
+
+struct CAttachedEntX {
+	char m_pad[0x36c];
+	CPhysObjectX *m_pPhysics;	// 0x36c
+};
+
+static inline CAttachedEntX *ResolveAttached(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *slot = &g_10566458->m_Slots[h & 0x1fff];
+		if (slot->m_Serial == (int)(h >> 13))
+			return (CAttachedEntX *)slot->m_pEntity;
+	}
+	return 0;
+}
+
+namespace block_10025f00 {
+struct CPhysForceMotionUnit : CPhysForceMotion { void sub_10025f00(const CPhysForceVec3 *pStart, const CPhysForceVec3 *pEnd); };
+void CPhysForceMotionUnit::sub_10025f00(const CPhysForceVec3 *pStart, const CPhysForceVec3 *pEnd)
+{
+	m_vStart.x = pStart->x;
+	m_vStart.y = pStart->y;
+	m_vStart.z = pStart->z;
+	m_vEnd.x = pEnd->x;
+	m_vEnd.y = pEnd->y;
+	m_vEnd.z = pEnd->z;
+	m_vStart2.x = pStart->x;
+	m_vStart2.y = pStart->y;
+	m_vStart2.z = pStart->z;
+	m_vEnd2.x = pEnd->x;
+	m_vEnd2.y = pEnd->y;
+	m_vEnd2.z = pEnd->z;
+}
+}
+using namespace block_10025f00;
+
+void CPhysForce::sub_10027960()
+{
+	sub_100a0bc0();
+	if (ResolveAttached(*(volatile unsigned int *)&m_hAttached)) {
+		CPhysObjectX *pPhysics = ResolveAttached(*(volatile unsigned int *)&m_hAttached)->m_pPhysics;
+		if (pPhysics) {
+			CPhysForceVec3 vecA;
+			CPhysForceVec3 vecB;
+			((CPhysForceHostX *)this)->s241(pPhysics, &vecB, &vecA);
+			((CPhysForceMotionUnit *)&m_Motion)->sub_10025f00(&vecB, &vecA);
+			CPhysControllerX *pController = g_10723940->s39(&m_Motion);
+			m_pController = pController;
+			pController->s2(pPhysics);
+			pPhysics->s2();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027a70 size=0xb5
 #include "CBaseEntity.h"
 
