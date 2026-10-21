@@ -1531,6 +1531,7 @@
 0x100076b2 func   ?vfunc104@CBaseDoor@@UAEXXZ CBaseDoor::vfunc104
 0x100076d5 func   ?sub_10075ce0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10075ce0
 0x100076e9 func   ?vfunc5@CNPC_VMoleman@@QAEPAV1@I@Z CNPC_VMoleman::vfunc5
+0x100076ee func   ?sub_1035f5c0@CAnimalUnit@@QAEXPAVCEntityVSlots@@PAVVector@@HH@Z CAnimalUnit::sub_1035f5c0
 0x100076f3 func   ?sub_101f82d0@CUnknown101f0e50@@QAE_NH@Z CUnknown101f0e50::sub_101f82d0
 0x100076f8 func   ?sub_101b6a30@@YIXPAH@Z sub_101b6a30
 0x1000770c func   ?vfunc561@CNPC_VWerewolf@@QAEXHH@Z CNPC_VWerewolf::vfunc561
