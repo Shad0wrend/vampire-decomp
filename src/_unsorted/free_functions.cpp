@@ -29241,6 +29241,50 @@ PyObj *sub_10197360(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10197430 size=0xaa
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+struct PyObj;
+struct Vec3 { float x, y, z; };
+
+struct CAngleEnt
+{
+	SL100(a0) SL100(a1) SL10(a2)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5();
+	virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9(); virtual void b10();
+	virtual float *v221();
+};
+
+extern "C" __declspec(dllimport) int PyArg_ParseTuple(PyObj *, const char *, ...);
+extern "C" __declspec(dllimport) void *PyErr_Occurred();
+extern "C" __declspec(dllimport) void PyErr_SetString(void *, const char *);
+extern "C" __declspec(dllimport) void *PyExc_StandardError;
+extern "C" __declspec(dllimport) int _Py_NoneStruct;
+extern void *sub_10196780(PyObj *);
+extern void sub_10139550(const float *, Vec3 *);
+extern int *sub_10196230(Vec3);
+
+int *sub_10197430(void *self, PyObj *args)
+{
+	PyObj *pObj = 0;
+	if (!PyArg_ParseTuple(args, "O", &pObj)) {
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_StandardError, "bad args to GetAngleVectors()");
+		return 0;
+	}
+	CAngleEnt *pEnt = (CAngleEnt *)sub_10196780(pObj);
+	if (pEnt) {
+		Vec3 v;
+		sub_10139550(pEnt->v221(), &v);
+		return sub_10196230(v);
+	}
+	_Py_NoneStruct++;
+	return &_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197510 size=0x8f
 extern int (*g_109f37a0)(int, const char *, ...);
 extern int (*g_109f377c)();
