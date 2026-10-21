@@ -17,6 +17,6 @@ public:
 	int m_nCount;	// 0x0004
 	CUnknown101d7520Entry **m_ppEntries;	// 0x0008
 
-	int sub_101d7520_find(const char *name);	// stub 0x1000f759: index of the entry named `name`, -1 when none
+	int sub_1000f759(const char *name);	// stub of the lookup: index of the entry named `name`, -1 when none
 	void sub_101d7520(const char *name);	// "Auto-Level Manager" dump: all entries (name null), one entry, or "ALL" entries
 };
