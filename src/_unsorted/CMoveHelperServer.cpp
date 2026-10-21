@@ -23,6 +23,119 @@ void CMoveHelperServer::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f090 size=0x127
+#include "CMoveHelperServer.h"
+#include "Vector.h"
+
+struct CMHVec3X { float x, y, z; };
+
+struct CMHPlaneX
+{
+	Vector normal;
+	float dist;
+	unsigned char type, signbits;
+	unsigned char pad[2];
+	void sub_1013f210(const CMHPlaneX &src);
+};
+
+struct CMHTraceX
+{
+	CMHVec3X startpos;
+	Vector endpos;
+	CMHPlaneX plane;
+	float fraction;
+	int contents;
+	unsigned short dispFlags;
+	unsigned char allsolid, startsolid;
+	float fractionleftsolid;
+	int surf0, surf1;
+	int hitgroup;
+	short physicsbone;
+	void *m_pEnt;
+	int hitbox;
+	void sub_1003ff80();
+};
+
+struct CMHTouchX
+{
+	CMHVec3X delta;
+	CMHTraceX trace;
+};
+
+struct CMHListX
+{
+	CMHTouchX *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	CMHTouchX *m_pElements;
+	void sub_1013fd20(int num);
+	void sub_1013fcb0(int elem, int num);
+
+	int AddToTail()
+	{
+		int elem = m_size;
+		if (m_size + 1 > m_allocationCount)
+			sub_1013fd20(m_size + 1 - m_allocationCount);
+		m_size += 1;
+		m_pElements = m_pMemory;
+		sub_1013fcb0(elem, 1);
+		CMHTouchX *pElem = m_pMemory;
+		pElem += elem;
+		if (pElem)
+			pElem->trace.sub_1003ff80();
+		return elem;
+	}
+};
+
+struct CMHServerX
+{
+	void *vtbl;
+	void *m_pHost;
+	CMHListX m_List;
+};
+
+// TARGET: CMoveHelperServer::vfunc2
+bool CMoveHelperServer::vfunc2(const void *pTrace, const float *pVelocity)
+{
+	const CMHTraceX &tr = *(const CMHTraceX *)pTrace;
+	CMHServerX *h = (CMHServerX *)this;
+	void *pEnt = tr.m_pEnt;
+	if (!pEnt)
+		return false;
+	if (pEnt == h->m_pHost)
+		return false;
+	for (int i = h->m_List.m_size - 1; i >= 0; i--) {
+		if (h->m_List.m_pMemory[i].trace.m_pEnt == pEnt)
+			return false;
+	}
+	int j = h->m_List.AddToTail();
+	CMHTraceX &t = h->m_List.m_pMemory[j].trace;
+	t.startpos.x = tr.startpos.x;
+	t.startpos.y = tr.startpos.y;
+	t.startpos.z = tr.startpos.z;
+	t.endpos.sub_1003e4b0(tr.endpos);
+	t.plane.sub_1013f210(tr.plane);
+	t.fraction = tr.fraction;
+	t.contents = tr.contents;
+	t.dispFlags = tr.dispFlags;
+	t.allsolid = tr.allsolid;
+	t.startsolid = tr.startsolid;
+	t.fractionleftsolid = tr.fractionleftsolid;
+	t.surf0 = tr.surf0;
+	t.surf1 = tr.surf1;
+	t.hitgroup = tr.hitgroup;
+	t.physicsbone = tr.physicsbone;
+	t.m_pEnt = tr.m_pEnt;
+	t.hitbox = tr.hitbox;
+	CMHTouchX *pT = h->m_List.m_pMemory + j;
+	pT->delta.x = pVelocity[0];
+	pT->delta.y = pVelocity[1];
+	pT->delta.z = pVelocity[2];
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fae0 size=0x8d
 #include "CMoveHelperServer.h"
 
