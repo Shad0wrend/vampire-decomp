@@ -64308,6 +64308,44 @@ char sub_10389ea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038c170 size=0xa5
+#include "CNPC_VManBat.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+
+struct CManBatX {
+    void sub_1027d9b0(int nState);
+    void sub_1026dc30(int a);
+    void sub_1026dc00(int a);
+};
+
+void CNPC_VManBat::sub_1038c170(int nMode)
+{
+    CBaseEntity *pEnt = (CBaseEntity *)this;
+    CManBatX *pBat = (CManBatX *)this;
+    if (nMode == 1) {
+        ((CAI_BaseNPC *)this)->vfunc208(0);
+        pEnt->sub_100b3580(0x400);
+        pBat->sub_1027d9b0(2);
+        pBat->sub_1026dc30(1);
+        pBat->sub_1026dc00(4);
+        pEnt->vfunc93(4, 0);
+    } else if (nMode == 0) {
+        pEnt->sub_100b3640(0x400);
+        pBat->sub_1027d9b0(0);
+        pBat->sub_1026dc30(4);
+        pBat->sub_1026dc00(1);
+        pEnt->vfunc93(4, 0);
+    } else {
+        pEnt->sub_100b3640(0x400);
+        pBat->sub_1027d9b0(0);
+        pBat->sub_1026dc30(4);
+        pBat->sub_1026dc00(1);
+        pEnt->vfunc93(4, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038f290 size=0x1e
 #include "CNPC_VManBat.h"
 bool CNPC_VManBat::sub_1038f290()
