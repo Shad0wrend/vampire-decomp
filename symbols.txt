@@ -4426,6 +4426,7 @@
 0x10012530 func   ?sub_10094520@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10094520
 0x10012544 func   ?sub_100307f0@CCollisionEvent@@QAEXPAUCFrictionEntry_t@@@Z CCollisionEvent::sub_100307f0
 0x10012567 func   ?vfunc144@CGenericSabbat_NPC@@UAEXH@Z CGenericSabbat_NPC::vfunc144
+0x1001256c func   ?sub_1022d8a0@@YAXHPBD@Z sub_1022d8a0
 0x1001258f func   ?sub_10377970@@YAPAHXZ sub_10377970
 0x10012594 func   ?sub_102e2770@CUnknown102e2770@@QAEXHM@Z CUnknown102e2770::sub_102e2770
 0x1001259e func   ?vfunc395@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc395

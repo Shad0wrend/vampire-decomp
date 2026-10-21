@@ -56256,6 +56256,59 @@ void sub_1022d780(int index, int arg2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022d8a0 size=0xf0
+#include "CBasePlayer.h"
+#include "CBaseCombatWeapon.h"
+#include "CGlobalEntityList.h"
+#include "CVDmg_t.h"
+#include "IVEngineServer.h"
+#include "ScopeTrace.h"
+
+#define GR(n) virtual void gr##n();
+#define GR10(p) GR(p##0) GR(p##1) GR(p##2) GR(p##3) GR(p##4) GR(p##5) GR(p##6) GR(p##7) GR(p##8) GR(p##9)
+struct GameRulesView {
+	GR10(0) GR10(1)
+	virtual void vfunc20(void *pCharacter, int a);
+};
+struct EdictView {
+	char m_pad0000[0x40];
+	CGlobalEntityList_Ent *m_pUnknown;
+};
+
+extern IVEngineServer *g_1070b22c;
+extern GameRulesView *g_1070ba0c;
+
+void sub_1022d8a0(int index, const char *pszName)
+{
+	EdictView *pEdict = (EdictView *)g_1070b22c->vfunc38(index);
+	CVDmgSource_t *pEntity;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if (!pEdict)
+			pEdict = (EdictView *)g_1070b22c->vfunc38(0);
+		if (pEdict && pEdict->m_pUnknown)
+			pEntity = (CVDmgSource_t *)pEdict->m_pUnknown->vfunc4();
+		else
+			pEntity = 0;
+	}
+	if (pEntity) {
+		CBasePlayer *pChar = (CBasePlayer *)pEntity->m_pCharacter;
+		if (pChar) {
+			void *pWeapon = pChar->sub_10335950(pszName);
+			if (pWeapon) {
+				bool bActive = false;
+				if (pChar->sub_1032e7b0() == pWeapon)
+					bActive = true;
+				pChar->sub_10335470(pWeapon);
+				((CBaseCombatWeapon *)pWeapon)->sub_1024f7b0();
+				if (bActive)
+					g_1070ba0c->vfunc20(pChar, 0);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022eb60 size=0x82
 struct TStat { void sub_101fc950(int a, int b); };
 
