@@ -37133,6 +37133,35 @@ void sub_101d0570(int *pVector, int count, const char *pString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0680 size=0x111
+extern float (__fastcall *g_1057966c)(Vector *);
+
+Vector sub_101d0680(const Vector &a, const Vector &b)
+{
+	Vector v = a;
+	if (v.x > b.x)
+		v.x = v.x - b.x;
+	else if (-b.x > v.x)
+		v.x = v.x + b.x;
+	else
+		v.x = 0;
+	if (v.y > b.y)
+		v.y = v.y - b.y;
+	else if (-b.y > v.y)
+		v.y = v.y + b.y;
+	else
+		v.y = 0;
+	if (v.z > b.z)
+		v.z = v.z - b.z;
+	else if (-b.z > v.z)
+		v.z = v.z + b.z;
+	else
+		v.z = 0;
+	g_1057966c(&v);
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0ce0 size=0x146
 #include "CBroadcastRecipientFilter.h"
 
