@@ -15602,6 +15602,54 @@ extern "C" CBaseEntity *beam()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb0b0 size=0x9e
+#include "CBeam.h"
+extern CGlobalEntityList *g_10566458;
+
+static inline bool TestBit(unsigned int value, int bit)
+{
+    return ((value >> bit) & 1) != 0;
+}
+
+#define D(n) virtual void n();
+#define D10(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+struct CBeamSlots {
+    D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D(b60) D(b61)
+    virtual void vfunc62(const float *pPos);
+};
+
+struct CHandleX {
+    unsigned int m_Index;
+    CBaseEntity *Get() const
+    {
+        if (m_Index != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_Index & 0x1fff];
+            if (s->m_Serial == (int)(m_Index >> 13))
+                return (CBaseEntity *)s->m_pEntity;
+        }
+        return 0;
+    }
+};
+
+void sub_10138630(const float *pIn, float *pOut);
+void sub_10137fe0(const float *pPos, const float *pMatrix, float *pOut);
+
+void CBeam::sub_100bb0b0(const float *pPos)
+{
+    if (((CHandleX *)((char *)this + 0x25c))->Get() == 0) {
+        ((CBeamSlots *)this)->vfunc62(pPos);
+        return;
+    }
+    if (TestBit(m_flags268, 11))
+        vfunc98();
+    float vecLocal[3];
+    float matInverse[12];
+    sub_10138630((const float *)((char *)this + 0x130), matInverse);
+    sub_10137fe0(pPos, matInverse, vecLocal);
+    ((CBeamSlots *)this)->vfunc62(vecLocal);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb270 size=0x16e
 #include "CGlobalEntityList.h"
 #include "CUnknown1070b22c.h"
