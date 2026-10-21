@@ -1,6 +1,8 @@
 // CVFeat_t: one feat of the vampire feat list ("Unable to load VFeat data"); real layout only partly known.
 #pragma once
 
+#include "CVDmg_t.h"
+
 struct CVFeatKV	// a KeyValues-like object (slot 10 = GetInt, slot 13 = GetString)
 {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
@@ -19,6 +21,10 @@ public:
 	unsigned int m_flags;	// 0x0c: bit 0 = disabled
 	int m_pad0010;
 	int m_iName;	// 0x14
+	char m_pad0018[0x24 - 0x18];
+	int m_nEffects;	// 0x24
+	CVDmgBlock16_t *m_pEffects;	// 0x28: m_nEffects blocks of 16 bytes (kind, stat, ?, multiplier)
 
 	void sub_101e4fe0(CVFeatKV *pKV);	// loads the feat from its key: Name, InternalName, HelpText and the Disabled flag; Msg when there is no key
+	int sub_101e5b30(void *pCharacter);	// the sum over the effects of kind 0 / 1 of the multiplier-scaled value of the effect's stat in the character's stat list of that kind (0 without a character)
 };
