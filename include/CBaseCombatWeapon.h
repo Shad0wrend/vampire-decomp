@@ -83,10 +83,13 @@ public:
 	virtual void vfunc371();
 	void sub_102507b0();
 	CWeaponOwner *sub_102517b0();	// the weapon's owner (player) object
+	int *sub_102517e0();	// the weapon's current roll slot index (static fallback record when none matches)
 	CWeaponOwner *sub_10252290();	// resolves the owner handle at +0x88c (0 when stale)
 	void *sub_102521f0();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale)
+	int sub_10252240();	// same as sub_102521f0 (stub 0x100011f4)
 	void sub_1024edc0();	// prints the weapon's activity translation table (base activity, weapon activity, required) with Msg
 	bool sub_10253b40(int a);	// true when the ammo type at +0x744 + a * 4 is not negative
+	int *sub_10256350(int *pOut);	// builds the roll result record (owner, this, the 16 byte record of the current roll slot at +0x7a0, 6) and stores its printed value in *pOut
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
