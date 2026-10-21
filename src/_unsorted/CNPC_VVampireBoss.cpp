@@ -36,6 +36,19 @@ int CNPC_VVampireBoss::vfunc127(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c5f40 size=0x7b
+#include "CNPC_VVampireBoss.h"
+#include "ScopeTrace.h"
+void CNPC_VVampireBoss::vfunc444(int *pTask)
+{
+	ScopeTrace trace("CNPC_VVampireBoss::RunTask", g_106b8540);
+	if (*pTask != 0x14d)
+		sub_10011928(pTask);
+	else
+		sub_10011851();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c5fe0 size=0xe
 bool CNPC_VVampireBoss::vfunc525(int unused)
 {
