@@ -1,3 +1,5 @@
+	void sub_100b2aa0(const Vector &inVecImpulse);	// "CBaseEntity::ApplyAbsVelocityImpulse": scope trace (entity name); unless the impulse is the zero vector: runs sub_100b1d10 when bit 12 of the flags at +0x268 is set, then hands the velocity (+0x3bc) plus the impulse to sub_100b2770
+	void sub_100b2770(const float *pVec);	// the absolute velocity setter (stub 0x1000489a), called directly
 	bool sub_100a7bd0(CBaseEntity *pActivator);	// "CBaseEntity::PassesUseFilter": scope trace (entity name), true when the use filter handle at +0x218 does not resolve, else the result of slot 241(pActivator) of that filter entity
 	bool sub_100b3350();	// "CBaseEntity::IsFloating": scope trace (entity name), false unless bit 19 of +0x268 and the physics object at +0x36c are set, else true when the value the physics system reports for the object (slot 19) is below 1000.0f
 	void sub_1009c2d0(int a, char *text, int value);	// "CBaseEntity::DumpActivity": scope trace (entity name), then sub_1009b980(a, text, value)
