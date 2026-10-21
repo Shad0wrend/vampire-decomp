@@ -56920,6 +56920,48 @@ void CUnknown1028fb70::sub_1028fb70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10290200 size=0xad
+#include "CAI_BaseNPCTroika.h"
+#include "CGlobalEntityList.h"
+
+struct SGlobals {
+	char pad[0xc];
+	float curtime;
+};
+struct STarget {
+	char sub_102ee2e0();
+};
+struct SNpcWorker {
+	void sub_102bf7e0();
+};
+
+extern CGlobalEntityList *g_10566458;
+extern SGlobals *g_1070b228;
+
+bool CAI_BaseNPCTroika::sub_10290200(int unused)
+{
+	sub_102727d0();
+	if (g_1070b228->curtime >= m_f6450) {
+		unsigned int h = m_h5d24;
+		CGlobalEntityList_Slot *pSlot;
+		if (h != (unsigned int)-1
+			&& (pSlot = &g_10566458->m_Slots[h & 0x1fff], pSlot->m_Serial == (int)(h >> 13))
+			&& pSlot->m_pEntity != 0) {
+			vfunc448(0xe);
+			m_h5d24 = (unsigned int)-1;
+			m_b5d30 = 0;
+			m_n644c = 0;
+			return true;
+		}
+		if (((STarget *)m_p5d34)->sub_102ee2e0())
+			((SNpcWorker *)this)->sub_102bf7e0();
+		vfunc528();
+		m_n644c = 0;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293d70 size=0x10
 void __fastcall sub_10293d70(int *p)
 {

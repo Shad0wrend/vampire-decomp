@@ -1314,6 +1314,7 @@
 0x10006898 func   ?vfunc113@CMoverKeyFrame@@UAEXXZ CMoverKeyFrame::vfunc113
 0x1000689d func   ?sub_10209a20@CItemContainer@@QAEPAXXZ CItemContainer::sub_10209a20
 0x100068a7 func   ?sub_101ebf30@CKeyHolder@@QAEPBDH@Z CKeyHolder::sub_101ebf30
+0x100068e8 func   ?sub_10290200@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10290200
 0x100068f2 func   ?sub_10035fd0@CPhysicsPushedEntities@@QAEXPAH@Z CPhysicsPushedEntities::sub_10035fd0
 0x10006901 func   ?vfunc5@CWeaponRanged_Smg_Uzi@@QAEPAV1@I@Z CWeaponRanged_Smg_Uzi::vfunc5
 0x10006906 func   ?sub_101f25a0@@YIHPAD@Z sub_101f25a0
