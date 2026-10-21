@@ -2614,6 +2614,7 @@
 0x1000b947 func   ?sub_10247280@@YAPADPAD00@Z sub_10247280
 0x1000b974 func   ?sub_10279a50@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10279a50
 0x1000b979 func   ?sub_1020a240@CUnknown1020a240@@QAEXPBDHHHH@Z CUnknown1020a240::sub_1020a240
+0x1000b97e func   ?vfunc245@CSceneEntity@@UAEXXZ CSceneEntity::vfunc245
 0x1000b983 func   ?sub_101f2cd0@CUnknown101f2cd0@@QAEXH@Z CUnknown101f2cd0::sub_101f2cd0
 0x1000b9b5 func   ?sub_100976e0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_100976e0
 0x1000b9bf func   ?sub_1040cef0@@YAPAHXZ sub_1040cef0

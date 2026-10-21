@@ -212,3 +212,39 @@ void CSceneEntity::vfunc260(int unused, void *pEvent, const char *pszTarget, int
     pActor->sub_102c0520(szName, a5, *((char *)this + 0x57f));
 }
 // END FUNCTION
+
+// FUNCTION: 0x10082b80 size=0x7f
+#include "CSceneEntity.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+void __stdcall sub_100845a0(void *pScene);
+void sub_100828d0();
+
+struct CHandleLookup
+{
+	static CGlobalEntityList_Ent *Get(unsigned int h)
+	{
+		if (h != 0xffffffff) {
+			CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+			if (s->m_Serial == (int)(h >> 13))
+				return s->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+void CSceneEntity::vfunc245()
+{
+	if (m_pScene4bc)
+		sub_100845a0(m_pScene4bc);
+	if (m_bPlaying498) {
+		sub_10082d20();
+		if (m_b57e)
+			sub_100828d0();
+		m_list4fc.sub_100cd660(CHandleLookup::Get(m_hPlayer10c), this, 0);
+		m_bPlaying498 = 0;
+		m_bPlaying499 = 0;
+	}
+}
+// END FUNCTION
