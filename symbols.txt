@@ -1605,6 +1605,7 @@
 0x1000729d func   ?sub_101f4950@CUnknown101f4370@@QAEPBDHH@Z CUnknown101f4370::sub_101f4950
 0x100072c0 func   ?sub_103315e0@@YIHPADHH@Z sub_103315e0
 0x100072d4 func   ?sub_1005c4d0@@YAXHHPAH0HHHHHHHHHHHHHH@Z sub_1005c4d0
+0x100072ed func   ?sub_10397930@CNPC_VMingXiao@@QAEXH@Z CNPC_VMingXiao::sub_10397930
 0x100072f7 func   ?sub_103228c0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_103228c0
 0x1000731a func   ?vfunc583@CCineAISchedule@@QAEXXZ CCineAISchedule::vfunc583
 0x1000731f func   ?sub_101b30d0@CUnknown101b30d0@@QAEPAV1@XZ CUnknown101b30d0::sub_101b30d0

@@ -84758,6 +84758,32 @@ int CNPC_VMingXiao::sub_10395650(int a, void *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10397930 size=0x75
+#include "CNPC_VMingXiao.h"
+#include "CBaseAnimatingOverlay.h"
+
+struct CGlobals1070b228 { char pad[0xc]; float m_flCurTime; };
+extern CGlobals1070b228 *g_1070b228;
+
+struct CObj10739d08 {
+	struct CVal { float a; float b; } *sub_101e8da0();
+	float GetB() { return sub_101e8da0()->b; }
+};
+extern CObj10739d08 g_10739d08;
+
+// TARGET: CNPC_VMingXiao::sub_10397930
+void CNPC_VMingXiao::sub_10397930(int index)
+{
+	m_hSlotOld[index] = -1;
+	m_bSlotFlag[index] = 0;
+	m_hSlotNew[index] = -1;
+	m_flSlotValue[index] = g_10739d08.GetB();
+	m_flSlotTimeA[index] = g_1070b228->m_flCurTime + 10.0f;
+	m_flSlotTimeB[index] = g_1070b228->m_flCurTime + 1.0f;
+	((CBaseAnimatingOverlay *)this)->sub_100991b0(index + 0x1124, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10397b40 size=0xe1
 #include "CNPC_VMingXiao.h"
 struct EntInfo { void *ent; int serial; int pad; };
