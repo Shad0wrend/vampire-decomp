@@ -30,7 +30,7 @@ public:
 
 	CHL2_V100(pa)	// slots 0..99
 	virtual void pb00(); virtual void pb01(); virtual void pb02();	// slots 100..102
-	virtual void vfunc103();	// slot 103 "CHL2_Player::Spawn": the player base (sub_1016d260) and CBasePlayer::vfunc103 around a switch of slot 406 / 407 / 408 on the CUnknown1015ef20 flag tests; flag bit 5 at +0x19c follows the same test
+	virtual void vfunc103();	// slot 103 "CHL2_Player::Spawn": clears the byte at +0x2544, slot 408 / 407 around the flag tests of CUnknown1015ef20 (bit 5 of +0x19c follows them), the player base (sub_1016d260), then CBasePlayer::vfunc103 when slot 406 says so
 	virtual void pb04(); virtual void pb05(); virtual void pb06(); virtual void pb07(); virtual void pb08(); virtual void pb09();	// slots 104..109
 	CHL2_V10(pb1) CHL2_V10(pb2) CHL2_V10(pb3) CHL2_V10(pb4) CHL2_V10(pb5) CHL2_V10(pb6) CHL2_V10(pb7) CHL2_V10(pb8) CHL2_V10(pb9)	// slots 110..199
 	CHL2_V100(pc) CHL2_V100(pd)	// slots 200..399
@@ -63,4 +63,5 @@ public:
 	void sub_100140f1();	// as in CPhysForce (transplant)
 	void sub_1016d260();	// the player base's slot 103 (stub 0x10002f9f), called directly
 	bool sub_1015ef80();	// stub 0x100157a3, called directly by Spawn
+	bool Slot406();	// calls slot 406 (placeholder pe06) as a bool-returning slot, see CHL2_Player_Slot406.h
 };
