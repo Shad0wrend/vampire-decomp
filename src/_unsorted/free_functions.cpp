@@ -43246,6 +43246,39 @@ void S1022b4d0::sub_1022b4d0(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022b590 size=0x92
+#include "CSoundScheme.h"
+#include "CAI_BaseNPC.h"
+
+struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
+extern CGlobalVarsX *g_1070b228;
+
+struct CSoundSysX {
+    void sub_10229270(float flDelay, void *pA, void *pB, void *pC, void *pD);
+};
+extern CSoundSysX g_10750d78;
+extern float g_104491b4;
+void sub_10003a71();
+CAI_BaseNPC *sub_101cda50();
+
+void CSoundScheme::sub_1022b590(float flDelay)
+{
+    if (flDelay < 0.5f)
+        flDelay = 0.5f;
+    if (!*((char *)this + 0x455)) {
+        CAI_BaseNPC *pNPC = sub_101cda50();
+        if (pNPC)
+            pNPC->sub_10175360(this);
+        g_10750d78.sub_10229270(flDelay, (char *)this + 0x460, (char *)this + 0x4f0, (char *)this + 0x4a8, (char *)this + 0x538);
+        sub_100ac4e0((int)sub_10003a71, 0, 0);
+        *((char *)this + 0x455) = 1;
+        float t = g_1070b228->m_curtime;
+        t += g_104491b4;
+        *(float *)((char *)this + 0x17c) = t;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022bb30 size=0x43
 #include "CPropRadio.h"
 void *sub_100aa720(int size);

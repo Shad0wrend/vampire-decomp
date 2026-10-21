@@ -3025,6 +3025,7 @@
 0x1000e999 func   ?sub_100b4650@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100b4650
 0x1000e9a8 func   ?sub_100dc580@CFlagsUnit@@QAEXG@Z CFlagsUnit::sub_100dc580
 0x1000e9b2 func   ?sub_1036e820@CNPC_VChangBros@@QAE_NXZ CNPC_VChangBros::sub_1036e820
+0x1000e9d0 func   ?sub_1022b590@CSoundScheme@@QAEXM@Z CSoundScheme::sub_1022b590
 0x1000e9e9 func   _window_pane window_pane
 0x1000e9fd func   ?sub_102e2710@@YIXPAUCOwner@@@Z sub_102e2710
 0x1000ea11 func   ?sub_1009f200@CBaseEntity@@QAEPBDXZ CBaseEntity::sub_1009f200
