@@ -18,4 +18,5 @@ public:
 	virtual void vfunc202(CBaseEntity *pOwner);	// SetOwnerEntity
 
 	void sub_10190fa0();	// detaches the prop: clears the aim entity, the owner and the parent, adds solid flag 4 (inlined AddSolidFlags with scope trace), then slot 93(0, 0), slot 66() and sub_100b3b00()
+	void sub_10191170(const char *pszParentName);	// attaches the prop to the entity of that name (stub 0x10004fbb), called by the creation helper
 };
