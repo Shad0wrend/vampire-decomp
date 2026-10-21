@@ -54470,6 +54470,53 @@ void __fastcall sub_10224170(CSlots *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10224950 size=0x13a
+#include "CItemContainerLock.h"
+#include "CItemGKeyring.h"
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+struct SlotView {
+	SV100(0) SV100(1) SV100(2)
+};
+struct ContainerFields {
+	char pad[0x53c];
+	unsigned int m_hUser;
+};
+
+extern CItemGKeyring g_106b8540;
+void sub_101cebc0(CBaseEntity *pPlayer, int msg, int value);
+
+void CItemContainerLock::sub_10224950(CBaseEntity *pPlayer)
+{
+	CItemGKeyring *pKeyring = m_pKeyring;
+	if (pKeyring == 0)
+		pKeyring = &g_106b8540;
+	int id = ((CBasePlayer *)pPlayer)->sub_10178470(pKeyring);
+	sub_101cebc0(pPlayer, 0x13, id);
+	m_unk780 = 3;
+	if (m_bGiveKeyring) {
+		sub_101cebc0(pPlayer, 0x14, id);
+		pKeyring = m_pKeyring;
+		if (pKeyring == 0)
+			pKeyring = &g_106b8540;
+		((CBasePlayer *)pPlayer)->sub_101784c0(pKeyring);
+	}
+	((SlotView *)this)->s274();
+	if (EHandle_Get(m_hContainer)) {
+		ContainerFields *pContainer = (ContainerFields *)EHandle_Get(m_hContainer);
+		if (pPlayer)
+			pContainer->m_hUser = *pPlayer->vfunc1();
+		else
+			pContainer->m_hUser = 0xffffffff;
+		((SlotView *)EHandle_Get(m_hContainer))->s242();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10225830 size=0x43
 #include "CPropDoorknob.h"
 void *sub_100aa720(int size);

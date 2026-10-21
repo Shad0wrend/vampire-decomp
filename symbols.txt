@@ -4650,6 +4650,7 @@
 0x10013525 func   ?sub_10135a20@@YAPAHXZ sub_10135a20
 0x1001352a func   ?sub_101ec690@CUnknown101ec690@@QAEXH@Z CUnknown101ec690::sub_101ec690
 0x10013534 func   ?vfunc130@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc130
+0x1001354d func   ?sub_10224950@CItemContainerLock@@QAEXPAVCBaseEntity@@@Z CItemContainerLock::sub_10224950
 0x10013552 func   ?vfunc5@CItemGWarrLedger2@@QAEPAV1@I@Z CItemGWarrLedger2::vfunc5
 0x10013557 func   ?vfunc7@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc7
 0x1001356b func   ?sub_1028a190@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_1028a190
