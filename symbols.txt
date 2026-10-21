@@ -2091,6 +2091,7 @@
 0x1000932c func   ?vfunc326@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc326
 0x1000933b func   ?sub_100acd40@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100acd40
 0x1000934f func   ?vfunc29@CRestore@@UAEHPAHHH@Z CRestore::vfunc29
+0x10009354 func   ?vfunc7@CMoveHelperServer@@UAE_NXZ CMoveHelperServer::vfunc7
 0x10009381 func   _camera_track camera_track
 0x1000938b func   ?sub_101f6c30@CUnknown101f6c30@@QAE_NXZ CUnknown101f6c30::sub_101f6c30
 0x1000939a func   _security_camera security_camera

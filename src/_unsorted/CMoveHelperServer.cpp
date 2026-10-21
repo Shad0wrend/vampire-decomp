@@ -189,6 +189,53 @@ bool CMoveHelperServer::vfunc2(const void *pTrace, const float *pVelocity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f7d0 size=0x10f
+#include "CBaseEntity.h"
+#include "CGameRules.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b22c.h"
+#include "CVDmg_t.h"
+#include "CTakeDamageInfo.h"
+#include "CMoveHelperServer.h"
+
+extern CGameRules *g_1070ba0c;
+extern CUnknown1070b22c *g_1070b22c;
+
+struct S1013f7d0Edict
+{
+	char m_pad[0x40];
+	CGlobalEntityList_Ent *m_pEntity;
+};
+
+static inline CBaseEntity *GetWorldEntity()
+{
+	S1013f7d0Edict *pEdict = (S1013f7d0Edict *)g_1070b22c->vfunc38(0);
+	if (pEdict && pEdict->m_pEntity)
+		return pEdict->m_pEntity->vfunc4();
+	return 0;
+}
+
+bool CMoveHelperServer::vfunc7()
+{
+	float flFall = g_1070ba0c->vfunc30((int)m_pHost);
+	CVDmg_t dmg;
+	int nFall = (int)flFall;
+	if (nFall < 10)
+		dmg.sub_101fa8d0(0, 0, nFall);
+	else
+		dmg.sub_101fa8d0(1, 0x20, nFall);
+	int edict = m_pHost->m_pEdict2e0;
+	dmg.sub_101fb200(g_1070b22c->vfunc35(edict), 0);
+	float flDamage = (float)dmg.sub_101faa70();
+	if (flDamage > 0.0f) {
+		CTakeDamageInfo info;
+		m_pHost->sub_100a1250(info.sub_101c26d0(GetWorldEntity(), GetWorldEntity(), flDamage, 0x20, 0, 0, -1));
+	}
+	dmg.sub_101fa680();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fae0 size=0x8d
 #include "CMoveHelperServer.h"
 
