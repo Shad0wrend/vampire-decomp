@@ -46,7 +46,7 @@ public:
 	char m_29[3];
 	int m_2c;
 	int m_30;
-	int m_34;	// a float: the ideal yaw
+	float m_34;	// the ideal yaw
 	int m_38;
 	int m_3c;
 	int m_40;
