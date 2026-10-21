@@ -158,7 +158,10 @@ public:
 	int m_nUseEdictIndex1EB8;	// engine index of the entity to notify (0 = none)
 	char m_pad1EBC[4];	// 0x1EBC .. 0x1EBF
 	char m_bNotifyUse1EC0;
-	char m_pad1EC1[0x2018 - 0x1ec1];	// 0x1EC1 .. 0x2017
+	char m_pad1EC1[0x1efc - 0x1ec1];	// 0x1EC1 .. 0x1EFB
+	Vector m_vec1EFC;	// 0x1EFC: a vector pair (reset together by sub_101711e0)
+	Vector m_vec1F08;	// 0x1F08
+	char m_pad1F14[0x2018 - 0x1f14];	// 0x1F14 .. 0x2017
 	int m_aSlotType2018[10];	// 0x2018: kind of each of the ten command slots (0 = unused)
 	int m_aSlotValue2040[10];	// 0x2040: value of each command slot (a name hash or packed range)
 	char m_pad2068[4];	// 0x2068 .. 0x206B
@@ -243,6 +246,7 @@ public:
 	void *sub_10335950(const char *pszName);	// CBaseCombatCharacter::Inventory_FindWeapon (stub 0x10015195): the carried weapon whose classname matches, 0 when none; called directly
 	void sub_101784c0(CBaseEntity *pOther);	// adds the keyring item the player carries to the inventory object at +0x245c: lets the keyring look at pOther, creates the inventory when needed, hands it the loose keys and copies the keyring's records into it
 	void sub_10182e00(CBaseCombatWeapon *pWeapon);	// "CBasePlayer::SetViewModel"-like: the model name of the character's default stat item for the weapon (or none when the weapon is not a ranged / usable one) is precached and handed to slot 266 of the second view model
+	void sub_101711e0(float flThreshold);	// resets the vector pair at +0x1efc / +0x1f08 to the zero vector unless the threshold is non-zero and the pair's squared length is above flThreshold squared
 
 #include "CBasePlayer_ext.h"
 };
