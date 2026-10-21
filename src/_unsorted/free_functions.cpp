@@ -28665,6 +28665,35 @@ void CBasePlayer::sub_101784c0(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10179270 size=0x96
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_10246700(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, int varProxy);	// SendPropVector
+void sub_10003012();
+
+extern SendTable g_10725d78;
+
+// TARGET: sub_10179270
+int sub_10179270()
+{
+	static const char *pTableName = "DT_PlayerState";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10007bfd("deadflag", 0, 4, 4, 1, 0, 0),
+		sub_10246700("v_angle", 4, 12, 0, 4, 0.0f, -121121.121212f, (int)sub_10003012),
+	};
+	g_10725d78.sub_1000e8fe(props + 1, 2, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017bf10 size=0x10d
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"

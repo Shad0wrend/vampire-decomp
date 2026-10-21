@@ -1436,6 +1436,7 @@
 0x10007095 func   ?vfunc5@CItemGVampyrApocrypha@@QAEPAV1@I@Z CItemGVampyrApocrypha::vfunc5
 0x1000709a func   ?sub_1007e050@S1007e050@@QAEHH@Z S1007e050::sub_1007e050
 0x1000709f func   ?sub_1039f6f0@@YADXZ sub_1039f6f0
+0x100070c2 func   ?sub_10179270@@YAHXZ sub_10179270
 0x100070c7 func   ?sub_10077ac0@CTableFields10077ac0@@QAEIH@Z CTableFields10077ac0::sub_10077ac0
 0x100070d6 func   _raggib raggib
 0x100070db func   ?sub_100ce4e0@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce4e0
