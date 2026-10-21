@@ -15,6 +15,10 @@ public:
 	void sub_1039ef90(float *pPos);	// called through the stub at 0x1000d1f2: scope work, then copies the three floats of pPos to +0x668c
 	void vfunc104();	// "CNPC_VMingXiaoTentacle::Precache": default model when none is set, base Precache, then the baby / transformation models (handles at +0x6664..+0x666c), three particle emitters and two sounds
 	void vfunc103();	// "CNPC_VMingXiaoTentacle::Spawn": solid flags 0x4000000 / 0x200000, the base spawn, 0x80000 flag, clears the tentacle state, arms the timer at +0x6684 (curtime + const), removes flag2 4
+	void vfunc433();	// "CNPC_VMingXiaoTentacle::RunAI"-like: sets the conditions 0x77 and 0x79, the Troika base, then (with a slot 167 target, the time at +0x6678 passed and the float at +0x6268 not above the limit) rings the dev object and fails task 0x77; once the time at +0x6674 has passed it does the same for task 0x79
+	void sub_10269b50(int condition);	// CAI_BaseNPC member (stub 0x10015839), called directly
+	void sub_10269a20(int a);	// CAI_BaseNPC member (stub 0x100041b0), called directly
+	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
 	void sub_10012855(int flags);	// sets the solid flags (stub of the entity member), called directly
 	void sub_1000303a();	// CAI_BaseNPCTroika::vfunc103 (Spawn), called directly
 	void sub_100153a7(int flags);	// CBaseCombatCharacter member (stub of 0x1033c6b0), called directly
