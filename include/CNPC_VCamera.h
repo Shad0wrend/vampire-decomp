@@ -15,10 +15,14 @@ public:
 	int m_n1b40;
 	char pad1b44[0x5cc4 - 0x1b44];
 	int m_n5cc4;
+	char pad5cc8[0x5da4 - 0x5cc8];
+	void *m_p5da4;
+	void *m_p5da8;
 
 	int sub_10368f20();
 	CNPC_VCamera *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100123af();	// as in CPhysForce (transplant)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	int vfunc438();	// as in CNPC_VCamera (transplant)
+	int vfunc545();	// slot 545 (0x884)
 };
