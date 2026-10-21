@@ -47,3 +47,4 @@
 	float sub_10346220();	// "CBaseCombatCharacter::GetRawDefenseValue": scope trace (entity name), the value of the block (4, 0xc) for this character as a float
 	int sub_10337b00(int a);	// looks up the "Attribute Order Lookups" table of the global at 0x106c7c34 and returns its entry for a + 3 * (the value of stat 0 of the active stat list)
 	int sub_10337bd0(int a);	// as sub_10337b00, for the "Ability Order Lookups" table
+	virtual int vfunc375(int act);	// slot 375 "CBaseCombatCharacter::NPC_EarlyTranslateActivity": scope trace (entity name), activities that sub_104126a0 flags are translated by sub_10328380(act, -1, 0, -1), else returned unchanged
