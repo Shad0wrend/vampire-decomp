@@ -1388,6 +1388,7 @@
 0x1000666d func   ?sub_101d6220@CPartListUnit2@@QAEXXZ CPartListUnit2::sub_101d6220
 0x10006672 func   ?sub_102cd310@CUnk102cd310@@QAEXXZ CUnk102cd310::sub_102cd310
 0x10006681 func   ?sub_10430020@@YAII@Z sub_10430020
+0x100066a4 func   ?vfunc103@CEnvBeam@@UAEXXZ CEnvBeam::vfunc103
 0x100066b3 func   ?sub_104037b0@@YAHXZ sub_104037b0
 0x100066b8 func   ?vfunc552@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc552
 0x100066c7 func   ?sub_102180a0@@YIXPADHH@Z sub_102180a0
