@@ -214,4 +214,7 @@ public:
 	void sub_10323a90();	// CBaseCombatCharacter::vfunc103 (stub 0x1001374b), called directly
 	void *sub_1032e120(const char *pszName);	// CBaseCombatCharacter::Weapon_Create (stub 0x1000b0b4), called directly
 	void sub_10272490(int act, int seq, int c, int d);	// "CAI_BaseNPC::ResetActivity"-like (ret 0x10: four arguments): stores c at +0xff4, sets the sequence (sub_10260a50, with the sequence duration handed to sub_1032a910(d, duration)) or clears it when seq < 0, asks slot 533 for the activity vector, switches the activity at +0xfec to act (slot 465, the sound table when the byte at +0x5cd8 is clear) and updates the motor object at +0x5d44
+	void sub_1028e790();	// notes the position of the focus entities: with a slot 167 object hands the position at +0x62cc to sub_1028e700(0x48, ...) and, while the condition 0x48 is not set, sub_10270180(slot 167 object, 0); with a live entity in the handle at +0x5ce4 hands +0x62d0 to sub_1028e700(0x49, ...)
+	void sub_1028e700(int kind, int *pPosition);	// stub 0x1001596f, called directly
+	void sub_10270180(void *pObject, int a);	// stub 0x10006217, called directly
 };
