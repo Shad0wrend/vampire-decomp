@@ -20876,6 +20876,38 @@ void CFieldHolder::sub_100feea0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fef50 size=0x9c
+#include "CEnvBeam.h"
+#include "CBeam.h"
+
+struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
+extern CGlobalVarsX *g_1070b228;
+extern float g_104454c4;
+
+struct CBeamY : CBeam {
+    int sub_100bb440();
+    void sub_100bbe70(float *pEndPos, int a);
+};
+void sub_10004bec();
+void sub_1000752c();
+
+void CEnvBeam::sub_100fef50()
+{
+    *(int *)((char *)this + 0x4f4) = 1;
+    if (*(float *)((char *)this + 0x500) == 0.0f && !(m_flags204 & 8)) {
+        *(unsigned int *)((char *)this + 0x19c) &= ~0x40;
+        CBeamY *pBeam = (CBeamY *)this;
+        pBeam->sub_100bbe70(pBeam->sub_100bb270(), pBeam->sub_100bb440());
+        sub_100ac4e0((int)sub_10004bec, 0, 0);
+        *(float *)((char *)this + 0x17c) = g_1070b228->m_curtime;
+        *(float *)((char *)this + 0x454) = g_1070b228->m_curtime;
+    } else {
+        sub_100ac4e0((int)sub_1000752c, 0, 0);
+        *(float *)((char *)this + 0x17c) = g_1070b228->m_curtime;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100ef0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
