@@ -65442,6 +65442,21 @@ void CNPC_VWerewolf::sub_103d45c0(CNPC_VWerewolfHint66b0 *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d4690 size=0x97
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+
+// TARGET: CNPC_VWerewolf::sub_103d4690
+void CNPC_VWerewolf::sub_103d4690()
+{
+	ScopeTrace trace("CNPC_VWerewolf::ClearMoveHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (m_pHint66bc)
+		m_pHint66bc->sub_102d1420(0);
+	m_pHint66bc = 0;
+	sub_10015839(0x78);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d4760 size=0x8e
 #include "CNPC_VWerewolf.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
