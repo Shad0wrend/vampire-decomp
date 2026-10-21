@@ -20,4 +20,7 @@ public:
 	void sub_100117ca();	// CNPC_VAnimal::vfunc103 (stub 0x100117ca), called directly
 	virtual int vfunc124();	// slot 124 "CNPC_VZombie::DrawDebugTextOverlays": base lines, then (with bit 18 of the debug flags at +0x224) one "Cond: %s" overlay line per condition bit set in the 192 bit vector at +0x5c5c
 	int sub_1029d4e0();	// CAI_BaseNPCTroika::vfunc124 (stub 0x10006f64), called directly
+	void sub_103e0a00();	// "CNPC_VZombie::UpdateEnemyTarget"-like (called by vfunc431): with an enemy (slot 167) that has a character (+0x9c): a character that fails CBaseCombatCharacter::sub_10146a80 gets slot 544 (character, its slot 217 position), one that passes goes through slot 541 / sub_102dfa20 and then sub_10279c20(); without an enemy the entity behind the handle at +0x628c is used the same way (sub_10279a50 for a passing character, slot 596 otherwise)
+	void sub_10279a50(CBaseEntity *pEnt);	// CAI_BaseNPC::sub_10279a50 (stub 0x1000b974), called directly
+	void sub_10279c20();	// stub 0x10003422, called directly
 };
