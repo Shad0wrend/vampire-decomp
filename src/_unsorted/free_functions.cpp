@@ -58555,6 +58555,45 @@ bool CUtlRBTree16::sub_10315080(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10315800 size=0xb7
+#include "CBaseEntity.h"
+#include "CUnknown103164c0.h"
+
+extern CUnknown103164c0 *sub_10315790(const char *);
+extern void (*g_109f3630)(const char *, ...);
+extern char g_10614ec8[];
+
+CUnknown103164c0 *sub_10315800(CBaseEntity *pMember, const char *pszName)
+{
+	CUnknown103164c0 *pSquad = sub_10315790(pszName);
+	if (pSquad) {
+		if (pSquad->m_nMembers + 1 > 16) {
+			g_109f3630(g_10614ec8, pszName);
+			pSquad->m_nMembers--;
+		}
+		unsigned int *pSlot = &pSquad->m_hMembers[pSquad->m_nMembers];
+		if (pMember) {
+			*pSlot = *pMember->vfunc1();
+			pSquad->m_nMembers++;
+			return pSquad;
+		}
+		*pSlot = 0xffffffff;
+		pSquad->m_nMembers++;
+		return pSquad;
+	}
+	pSquad = new CUnknown103164c0(pszName);
+	unsigned int *pFirst = &pSquad->m_hMembers[0];
+	if (pMember) {
+		*pFirst = *pMember->vfunc1();
+		pSquad->m_nMembers = 1;
+		return pSquad;
+	}
+	*pFirst = 0xffffffff;
+	pSquad->m_nMembers = 1;
+	return pSquad;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103158f0 size=0xab
 #include "CUnknown103158f0.h"
 #include "CGlobalEntityList.h"
