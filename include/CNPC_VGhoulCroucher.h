@@ -29,6 +29,9 @@ public:
 	void vfunc105(const char *pszModel);	// slot 105 "SetModel": the Troika version, then the sound name "Zombie_Male" / "Zombie_Female" at +0xc0 (by IsMale), sound table index 2, and the sound group looked up in the global sound table
 	void sub_10298ce0(const char *pszModel);	// CAI_BaseNPCTroika::vfunc105 (stub 0x10009b6f), called directly
 	char sub_10336920();	// CBaseCombatCharacter::IsMale (stub 0x100092be)
+	void vfunc24(void *pVictim);	// slot 24 "CNPC_VGhoulCroucher::OnVictimHitByMe": scope trace (entity name), when the burning variant byte (+0x6665) is set and the victim has the dword at +0xa8 calls sub_1037c090(that dword, 10.0f), then CAI_BaseNPCTroika::vfunc24(pVictim); declared as a plain member
+	void sub_1037c090(void *pObject, float flValue);	// stub 0x10008855, called directly
+	void sub_10006136(void *pVictim);	// CAI_BaseNPCTroika::vfunc24 (stub 0x10006136), called directly
 
 	char m_pad03e0[0x10e4 - 0x3e0];
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
