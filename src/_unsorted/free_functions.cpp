@@ -65806,6 +65806,40 @@ bool CUnknown1025ddd0::sub_1025db70(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025dca0 size=0xe9
+#include "CUnknown1025ddd0.h"
+#include "CEHandleGet.h"
+
+struct HEnt {
+	char m_pad[0x6268];
+	float m_flValue;
+};
+
+bool CUnknown1025ddd0::sub_1025dca0(CBaseEntity *pEntity, char bFlag)
+{
+	if (m_size < m_limit)
+		return sub_1025db70(pEntity);
+	unsigned int *p = m_pMemory;
+	unsigned int *pWorst = 0;
+	unsigned int *pEnd = p + m_size;
+	float flBest = 0.0f;
+	if (bFlag)
+		flBest = ((HEnt *)pEntity)->m_flValue;
+	for (; p < pEnd; p++) {
+		HEnt *pEnt = (HEnt *)EHandle_Get(*p);
+		if (pEnt && flBest < pEnt->m_flValue) {
+			flBest = pEnt->m_flValue;
+			pWorst = p;
+		}
+	}
+	if (pWorst) {
+		sub_1025ddd0(EHandle_Get(*pWorst));
+		return sub_1025db70(pEntity);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025e140 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
