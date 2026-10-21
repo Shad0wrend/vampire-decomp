@@ -4071,6 +4071,7 @@
 0x10013700 func   ?sub_10323210@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10323210
 0x1001370a func   ?sub_10079320@@YAXPAUSDumpOutput@@HPBDZZ sub_10079320
 0x1001371e func   ?vfunc0@CTraceFilterHasThrowLOS@@UAE_NPAXH@Z CTraceFilterHasThrowLOS::vfunc0
+0x1001372d func   ?vfunc104@CNPC_VTzimisceRunner@@QAEXXZ CNPC_VTzimisceRunner::vfunc104
 0x1001373c func   ?sub_100b97e0@Obj@@QAEXPBUVec3@@MM@Z Obj::sub_100b97e0
 0x10013746 func   ?vfunc23@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHHHHH@Z CTempEntsSystem::vfunc23
 0x1001374b func   ?vfunc103@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc103

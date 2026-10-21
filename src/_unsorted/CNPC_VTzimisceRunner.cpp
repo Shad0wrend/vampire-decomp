@@ -13,6 +13,31 @@ int CNPC_VTzimisceRunner::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c31e0 size=0x89
+#include "CNPC_VTzimisceRunner.h"
+struct CRunnerSoundSystem { virtual void vfunc0(const char *pszSound, int bPreload); };
+extern CRunnerSoundSystem *g_1070b248;
+extern const char *g_1065d680[2];
+extern const char *g_1065d688[2];
+extern const char *g_1065d690[4];
+extern const char *g_1065d6a0[3];
+extern char g_1065deb0[];
+void sub_101d0ec0(const char *pszWeapon);
+void CNPC_VTzimisceRunner::vfunc104()
+{
+	sub_100097b4();
+	for (int i = 0; i < sizeof(g_1065d680) / sizeof(g_1065d680[0]); i++)
+		g_1070b248->vfunc0(g_1065d680[i], 0);
+	for (int j = 0; j < sizeof(g_1065d688) / sizeof(g_1065d688[0]); j++)
+		g_1070b248->vfunc0(g_1065d688[j], 0);
+	for (int k = 0; k < sizeof(g_1065d690) / sizeof(g_1065d690[0]); k++)
+		g_1070b248->vfunc0(g_1065d690[k], 0);
+	for (int l = 0; l < sizeof(g_1065d6a0) / sizeof(g_1065d6a0[0]); l++)
+		g_1070b248->vfunc0(g_1065d6a0[l], 0);
+	sub_101d0ec0(g_1065deb0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3960 size=0x58
 #include "CNPC_VTzimisceRunner.h"
 
