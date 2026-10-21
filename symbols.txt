@@ -4169,6 +4169,7 @@
 0x10011036 func   ?sub_10045360@CUnknown10045360@@QAEXXZ CUnknown10045360::sub_10045360
 0x1001103b func   _item_w_hengeyokai_fist item_w_hengeyokai_fist
 0x10011040 func   ?sub_103b30c0@@YADXZ sub_103b30c0
+0x1001104a func   ?sub_100c7a10@@YAMPAUSObj@@0M@Z sub_100c7a10
 0x10011054 func   ?sub_101e7c50@CUnknown101e7c50@@QAEPAUCVDmgBlock16_t@@PBD@Z CUnknown101e7c50::sub_101e7c50
 0x1001105e func   ?sub_1039ede0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_1039ede0
 0x10011063 func   ?sub_101a3380@@YG_NPAUVEnt@@H@Z sub_101a3380

@@ -20481,6 +20481,50 @@ int sub_100c7900(StudioHdr *pHdr, int iSequence, int iBone)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c7a10 size=0x10d
+#include <math.h>
+double sub_10432449(double);
+extern float g_104454d0;
+struct SObj {
+    char pad0[8];
+    unsigned int flags;
+    char pad1[0x264 - 12];
+    float a;
+    float b;
+    float c;
+};
+float sub_100c7a10(SObj *p, SObj *q, float t)
+{
+    if (p == 0 || q == 0 || (q->flags & 2))
+        return 0.0f;
+    float lim = q->a;
+    float r;
+    if (t < 0.5f) {
+        r = (p->b - p->c) * t;
+        r = r + r + p->a;
+    } else {
+        if (p->flags & 1) {
+            double f = fabs(t - sub_10432449(t) - g_104454d0);
+            f = f + f;
+            r = (p->c - p->b) * f;
+            r = r + p->b;
+        } else if (t >= 1.0f) {
+            r = p->c;
+        } else {
+            r = (t - 0.5f) * (p->c - p->b);
+            r = r + r;
+            r = r + p->b;
+        }
+    }
+    if (q->flags & 0x400) {
+        if (lim < r) return lim;
+    } else {
+        if (lim > r) return lim;
+    }
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c81b0 size=0x8e
 #include "CUnknown100c81b0.h"
 
