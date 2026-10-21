@@ -2151,3 +2151,59 @@ void CBaseEntity::vfunc84(int flags)
 	m_flags268 = flags;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b4f30 size=0xcb
+#include "CBaseEntity.h"
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CPhysObjSlotsX {
+	SV10(0) SV10(1) SV10(2)
+	SV(30) SV(31) SV(32) SV(33) SV(34) SV(35) SV(36)
+	virtual void s37(float *pPosition, float *pAngles);
+};
+
+struct CEntitySlotsX {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20)
+	SV(210) SV(211) SV(212) SV(213) SV(214) SV(215)
+	virtual void s216(float *pOrigin);
+	virtual void s217();
+	virtual void s218(float *pAngles);
+};
+
+static inline unsigned long &FloatBits(float &f)
+{
+	return *reinterpret_cast<unsigned long *>(&f);
+}
+
+static inline bool IsFinite(float f)
+{
+	return (FloatBits(f) & 0x7F800000) != 0x7F800000;
+}
+
+void CBaseEntity::vfunc226(int a)
+{
+	int moveType = (*(int (__fastcall **)(CBaseEntity *))(*(int *)this + 0x178))(this);
+	switch (moveType) {
+	case 1:
+	case 8:
+		sub_100a55b0((void *)a);
+		break;
+	case 7: {
+		float angles[3];
+		float origin[3];
+		((CPhysObjSlotsX *)a)->s37(origin, angles);
+		if (!IsFinite(angles[0]) || !IsFinite(angles[1]) || !IsFinite(angles[0]))
+			g_109f3628("Infinite values from vphysics!\n");
+		((CEntitySlotsX *)this)->s216(origin);
+		((CEntitySlotsX *)this)->s218(angles);
+		sub_100a53d0(0);
+		sub_100342c0();
+		break;
+	}
+	}
+}
+// END FUNCTION
