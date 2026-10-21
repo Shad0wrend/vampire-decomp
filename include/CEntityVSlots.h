@@ -1,5 +1,5 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..601, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 142, 143, 158, 161, 162, 167, 173,
-// 192, 193, 194, 198, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 316, 346, 360, 371, 376, 381, 385, 404, 426, 448, 457 and 601 of an entity class that does not model its vtable.
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..605, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 142, 143, 158, 161, 162, 167, 173,
+// 192, 193, 194, 198, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 316, 346, 360, 371, 376, 381, 385, 404, 426, 448, 457, 601 and 605 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -153,4 +153,6 @@ public:
 	EVS10(50) EVS10(51) EVS10(52) EVS10(53) EVS10(54) EVS10(55) EVS10(56) EVS10(57) EVS10(58) EVS10(59)
 	EVS(600)
 	virtual void slot601(int a);	// NPC: takes one argument
+	EVS(602) EVS(603) EVS(604)
+	virtual int slot605(int a);	// NPC: schedule selection helper, takes the task argument and returns a schedule id
 };
