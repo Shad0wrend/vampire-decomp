@@ -18,6 +18,7 @@ struct CVDmgBlock16_t
 	int sub_10204900(void *pCharacter);	// the value this block names for the character (a stat, a feat, ...; stub 0x10013cc8), 0 for an empty block or no character
 	int sub_10204ad0(void *pCharacter);	// the part of sub_10204900 for a feat block (kind 4), without the null character test: the feat record of the id (m_b) answers for the character; 0 for other kinds or an empty block
 	const char *sub_102043a0();	// the block's name text (stub 0x10001af0)
+	int sub_10204c20(int value);	// scales value by the multiplier m_d (stub 0x1000c45f): 1 keeps it, a negative multiplier divides (negated), else multiplies
 };
 
 // The entity handed to CVDmg_t::SetSrc (class not known): its character at +0x9c and its edict at +0x2e0.
