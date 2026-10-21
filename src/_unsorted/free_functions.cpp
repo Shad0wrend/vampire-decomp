@@ -33092,6 +33092,52 @@ void __fastcall sub_101bc000(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc140 size=0xd5
+#include "CUnknown101bc140.h"
+#include "IVEngineServer.h"
+
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+extern IVEngineServer *g_1070b22c;
+extern char g_106b8540[];
+
+struct CSoundEHandle
+{
+	unsigned int m_Index;
+	CBaseEntity *Get() const
+	{
+		EntInfo *e;
+		return (m_Index != 0xffffffff && (e = &g_10566458->m_entries[m_Index & 0x1fff], e->m_serial == (int)(m_Index >> 13))) ? e->m_pEntity : 0;
+	}
+};
+
+static inline const char *SafeString(const char *p)
+{
+	return p ? p : g_106b8540;
+}
+
+void sub_101b14d0(void *pFilter, int nEntIndex, int nChannel, const char *pszSample, float flVolume, int nSoundLevel, int nFlags, int nPitch, int a, int b, int c);
+
+void CUnknown101bc140::sub_101bc140()
+{
+	if (m_pEmitter == 0)
+		return;
+	if (!(m_nFlags & 1))
+		return;
+	float flVolume = m_flVolume;
+	const char *pszSample = SafeString(m_pszSample);
+	int nEntIndex;
+	if (((CSoundEHandle *)&m_hEntity)->Get()) {
+		int nEdict = ((CSoundEHandle *)&m_hEntity)->Get()->m_pEdict2e0;
+		nEntIndex = g_1070b22c->vfunc35(nEdict);
+	} else {
+		nEntIndex = -1;
+	}
+	sub_101b14d0(m_Filter, nEntIndex, m_nChannel, pszSample, sub_101bbcf0(), m_nSoundLevel, 3, (int)flVolume, 0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc750 size=0x7e
 #include "CUnknown101bc750.h"
 struct Mem4;
