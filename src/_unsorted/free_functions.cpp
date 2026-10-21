@@ -58196,6 +58196,25 @@ CUnknown102fc5d0 *CUnknown102fc5d0::sub_102fc5d0(int a, int b, const float *pVec
 }
 // END FUNCTION
 
+// FUNCTION: 0x103058c0 size=0xc6
+#include "CAI_Pathfinder.h"
+
+bool CAI_Pathfinder::sub_103058c0(int navType, const float *vecStart, const float *vecApex, const float *vecEnd, const CBaseEntity *pTarget, AIMoveTrace_t *pStartTrace, unsigned int collisionMask)
+{
+	AIMoveTrace_t endTrace;
+	endTrace.fStatus = 0;
+	bool bResult = false;
+	CAI_MoveProbe *pProbe = ((CAI_PathfinderOuter *)m_pOuter)->m_pMoveProbe;
+	if (pProbe->sub_102e6d70(navType, vecStart, vecApex, collisionMask, pTarget, 100.0f, 0, pStartTrace, 0, 0)) {
+		if (pProbe->sub_102e6d70(navType, vecApex, vecEnd, collisionMask, pTarget, 100.0f, 0, &endTrace, 0, 0))
+			bResult = true;
+	}
+	if (((CAI_PathfinderOuter *)m_pOuter)->m_nDebugBits & 0x8000)
+		m_Overlay.sub_10306280(vecStart, vecApex, vecEnd, pStartTrace, &endTrace, bResult);
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103065d0 size=0xe5
 #include "CUnknown103065d0.h"
 

@@ -585,6 +585,7 @@
 0x10003a99 func   ?sub_10428fd0@@YAIPAD@Z sub_10428fd0
 0x10003aad func   ?sub_102d1350@CAI_BaseNPC@@QAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::sub_102d1350
 0x10003abc func   _env_shooter env_shooter
+0x10003acb func   ?sub_103058c0@CAI_Pathfinder@@QAE_NHPBM00PBVCBaseEntity@@PAUAIMoveTrace_t@@I@Z CAI_Pathfinder::sub_103058c0
 0x10003ad5 func   ?sub_1025c6a0@CUtlRBTreeBig@@QAEGPBX@Z CUtlRBTreeBig::sub_1025c6a0
 0x10003ae4 func   ?sub_103e7e80@@YAHXZ sub_103e7e80
 0x10003ae9 func   ?sub_100735a0@CUnknown100735a0@@QAEXH@Z CUnknown100735a0::sub_100735a0
