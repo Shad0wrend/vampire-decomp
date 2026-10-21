@@ -341,6 +341,61 @@ bool CBaseCombatWeapon::vfunc280(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253ca0 size=0x17c
+#include "CBaseAnimating.h"
+
+struct GlobalVarsLite { char pad[0xc]; float curtime; };
+struct EntSlot { void *ent; int serial; int pad; };
+struct WeaponHolderObj { char pad[0x1564]; float m_fTimer; };
+extern GlobalVarsLite *g_1070b228;
+extern char *g_10566458;
+
+static inline void *ResolveHandle(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		EntSlot *slot = (EntSlot *)(g_10566458 + 4) + (h & 0x1fff);
+		if (slot->serial == (int)(h >> 13))
+			return slot->ent;
+	}
+	return 0;
+}
+
+char CBaseCombatWeapon::vfunc316(int a)
+{
+	*((char *)this + 0x898) = 0;
+	sub_100ac4e0(0, 0, 0);
+	if (a)
+		vfunc307(0xde);
+	CBaseCombatCharacter *owner = (CBaseCombatCharacter *)sub_102521f0();
+	char *p = (char *)sub_102521f0();
+	char *ai = (!p) ? 0 : *(char **)(p + 0xa8);
+	if (owner) {
+		float t;
+		if (*(char **)((char *)owner + 0xa8) == 0) {
+			t = g_1070b228->curtime + 0.2f;
+		} else {
+			unsigned int h = *(unsigned int *)(ai + 0x1c64);
+			EntSlot *s;
+			if (h != 0xffffffff && (s = (EntSlot *)(g_10566458 + 4) + (h & 0x1fff), s->serial == (int)(h >> 13)) && s->ent && sub_10256220()) {
+				int seq = *(int *)((char *)ResolveHandle(*(volatile unsigned int *)(ai + 0x1c64)) + 0x6f0);
+				CBaseAnimating *ba = (CBaseAnimating *)ResolveHandle(*(volatile unsigned int *)(ai + 0x1c64));
+				t = ba->sub_10091080(seq) + g_1070b228->curtime;
+			} else {
+				t = g_1070b228->curtime + 0.1;
+			}
+		}
+		((WeaponHolderObj *)owner)->m_fTimer = t;
+		owner->sub_10335ea0((CBaseEntity *)this);
+	}
+	vfunc66();
+	if (ai)
+		vfunc333(0x12, 1, 0, 0, 0, 0);
+	else
+		vfunc333(0x13, 1, 0, 0, 0, 0);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10255030 size=0x8
 #include "CBaseCombatWeapon.h"
 
