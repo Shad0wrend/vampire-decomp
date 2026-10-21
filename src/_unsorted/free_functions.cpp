@@ -32659,6 +32659,81 @@ void CBasePlayer::sub_1017ec40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f170 size=0xec
+#include "CBasePlayer.h"
+#include "COutputEvent.h"
+
+struct CUnk107258dc
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char pad[0x2c - 4];
+	int m_n2c;
+};
+extern CUnk107258dc *g_107258dc;
+
+struct CGlobalVarsStub
+{
+	char pad[0xc];
+	float m_flCurTime;
+};
+extern CGlobalVarsStub *g_1070b228;
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+struct CCopSpawnerView
+{
+	char pad[0x450];
+	COutputEvent m_Out450;
+	COutputEvent m_Out468;
+	COutputEvent m_Out480;
+	char pad498[0x4c8 - 0x498];
+	COutputEvent m_Out4c8;
+	COutputEvent m_Out4e0;
+};
+
+struct CBasePlayerView : public CBasePlayer
+{
+	int sub_1017f770();	// stub 0x10007ee6
+	char sub_1017f8d0();	// stub 0x1000ae3e
+};
+
+// TARGET: CBasePlayer::sub_1017f170
+void CBasePlayer::sub_1017f170(void *pSpawnerVoid)
+{
+	CCopSpawnerView *pSpawner = (CCopSpawnerView *)pSpawnerVoid;
+	if (pSpawner) {
+		if (!g_107258dc->vfunc1() && g_107258dc->m_n2c != 0)
+			DevMsg("CSActs:    %6.1f - Immediate spwan of %d cops\n", (double)g_1070b228->m_flCurTime, *(int *)((char *)this + 0x1dcc));
+		switch (*(int *)((char *)this + 0x1dcc)) {
+		case 0:
+			pSpawner->m_Out450.sub_100cd660(pSpawner, pSpawner, 0);
+			break;
+		case 1:
+		case 2:
+			pSpawner->m_Out468.sub_100cd660(pSpawner, pSpawner, 0);
+			break;
+		case 3:
+		case 4:
+			pSpawner->m_Out480.sub_100cd660(pSpawner, pSpawner, 0);
+			break;
+		default:
+			pSpawner->m_Out450.sub_100cd660(pSpawner, pSpawner, 0);
+			break;
+		}
+		if (((CBasePlayerView *)this)->sub_1017f770()) {
+			pSpawner->m_Out4c8.sub_100cd660(pSpawner, pSpawner, 0);
+			*(int *)((char *)this + 0x1d10) = 0;
+		}
+		if (((CBasePlayerView *)this)->sub_1017f8d0())
+			pSpawner->m_Out4e0.sub_100cd660(pSpawner, pSpawner, 0);
+		*(int *)((char *)this + 0x1d14) = 0;
+		*(int *)((char *)this + 0x1dc4) = 0;
+		*((char *)this + 0x1dc8) = 0;
+		*(int *)((char *)this + 0x1dcc) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f650 size=0x6b
 #include "CNPC_VCop.h"
 #include "ConVar.h"
