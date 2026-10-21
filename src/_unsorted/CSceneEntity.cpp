@@ -56,6 +56,72 @@ void CSceneEntity::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081020 size=0x118
+#include "CSceneEntity.h"
+
+struct SceneGlobals_t {
+	char pad[0xc];
+	float curtime;
+};
+
+struct SceneAutoView_t {
+	char pad[0x4ac];
+	char bTimed;
+	char pad4ad[3];
+	int nType;
+	float flTime;
+	float flElapsed;
+	CSceneEntityScene *pScene;
+};
+
+extern SceneGlobals_t *g_1070b228;
+void sub_10081190(const char *pszFormat, ...);
+
+void CSceneEntity::vfunc241()
+{
+	SceneAutoView_t *pView = (SceneAutoView_t *)this;
+	if (!pView->pScene)
+		return;
+	if (pView->pScene->sub_1007d190()) {
+		switch (pView->nType) {
+		case 1:
+			vfunc245();
+			break;
+		case 2:
+			vfunc244();
+			break;
+		default:
+			vfunc244();
+			break;
+		}
+	} else {
+		if (!pView->bTimed)
+			return;
+		pView->flElapsed = (g_1070b228->curtime - sub_100ac720(0)) + pView->flElapsed;
+		if (pView->flTime > 0.0f && pView->flElapsed < pView->flTime)
+			return;
+		switch (pView->nType) {
+		case 1:
+			sub_10081190("Automatically canceling playback\n");
+			vfunc245();
+			break;
+		case 2:
+			sub_10081190("Automatically resuming playback\n");
+			vfunc244();
+			break;
+		default:
+			sub_10081190("Unknown action %i, automatically resuming playback\n", pView->nType);
+			vfunc244();
+			break;
+		}
+	}
+	pView->bTimed = 0;
+	pView->nType = 0;
+	pView->flElapsed = 0;
+	pView->flTime = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081210 size=0x113
 #include "IVEngineServerFull.h"
 
