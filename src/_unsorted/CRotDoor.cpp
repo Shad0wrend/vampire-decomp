@@ -120,6 +120,50 @@ void CRotDoor::vfunc248()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2a00 size=0x16f
+#include "CRotDoor.h"
+#include "CEntityVSlots.h"
+
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+
+struct SDoorBoundsView
+{
+	char m_pad0000[0x52c];
+	Vector m_angRotation52c;	// 0x52c
+	char m_pad0538[0x698 - 0x538];
+	Vector m_vecA698;	// 0x698
+	Vector m_vecB6a4;	// 0x6a4
+	char m_pad06b0[0x6bc - 0x6b0];
+	Vector m_vecA6bc;	// 0x6bc
+	Vector m_vecB6c8;	// 0x6c8
+};
+
+struct CRotDoorUnit : CRotDoor
+{
+	void sub_100f2a00(Vector *pMins, Vector *pMaxs);	// "CRotDoor::ComputeCloseBounds"-like
+	void sub_100f19b0(Vector vecAngles, Vector *pMins, Vector *pMaxs);	// stub 0x10011216
+};
+
+void CRotDoorUnit::sub_100f2a00(Vector *pMins, Vector *pMaxs)
+{
+	SDoorBoundsView *pView = (SDoorBoundsView *)this;
+	CEntityVSlots *pThis = (CEntityVSlots *)this;
+	if (*pThis->slot221() == pView->m_angRotation52c) {
+		*pMins = pView->m_vecA698;
+		*pMaxs = pView->m_vecB6a4;
+		return;
+	}
+	Vector vecScaled = pView->m_angRotation52c * -1.0f;
+	if (*pThis->slot221() == vecScaled) {
+		*pMins = pView->m_vecA6bc;
+		*pMaxs = pView->m_vecB6c8;
+		return;
+	}
+	DevMsg("ComputeCloseBounds() called when not fully open from either direction. Is that OK?\n");
+	sub_100f19b0(*pThis->slot221(), pMins, pMaxs);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4080 size=0x8e
 #include "CRotDoor.h"
 
