@@ -3558,6 +3558,7 @@
 0x1000feac func   ?vfunc5@CPlayerResource@@QAEPAV1@I@Z CPlayerResource::vfunc5
 0x1000febb func   _item_w_occultblade item_w_occultblade
 0x1000feca func   ?sub_103d6650@CNPC_VWerewolf@@QAE?AUCNPC_VWerewolfVec3@@PAX@Z CNPC_VWerewolf::sub_103d6650
+0x1000fef2 func   ?vfunc507@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc507
 0x1000ff01 func   ?vfunc5@CFuncAreaPortalWindow@@QAEPAV1@I@Z CFuncAreaPortalWindow::vfunc5
 0x1000ff1f func   ?sub_101c4460@@YAXPAHPBH@Z sub_101c4460
 0x1000ff4c func   ?sub_100e9ff0@CDialogDependency@@QAE_NHH@Z CDialogDependency::sub_100e9ff0

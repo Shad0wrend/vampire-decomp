@@ -795,6 +795,61 @@ void CAI_BaseNPCTroika::vfunc506()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10294f40 size=0x12e
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown1070b22c.h"
+#include "StatDefault.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct SndEntry {
+	int id;
+	const char *name;
+};
+struct SndTable {
+	char pad[0x14];
+	int count;
+	SndEntry **items;
+	SndEntry *&Get(int i) { return items[i]; }
+	void sub_100119fa(CAI_BaseNPCTroika *pEnt, int id, int a, float b, float c);
+};
+extern SndTable g_1073dc28;
+extern char g_106b8540[];
+
+struct StatOwner {
+	int sub_1006cf30(const char *pszName);
+	StatDefault *sub_1006cff0(int id);
+};
+extern StatOwner g_106c7c34;
+extern CUnknown1070b22c *g_1070b22c;
+
+static inline const char *NameOf(SndEntry *&e)
+{
+	const char *&r = e->name;
+	return r ? r : g_106b8540;
+}
+
+static inline int FindSound(const char *wanted)
+{
+	for (int i = 0; i < g_1073dc28.count; i++) {
+		if (!_strcmpi(NameOf(g_1073dc28.Get(i)), wanted))
+			return g_1073dc28.Get(i)->id;
+	}
+	return -1;
+}
+
+void CAI_BaseNPCTroika::vfunc507()
+{
+	static int id = FindSound("Float");
+	int base = (*(int *)((char *)this + 0x128) ? 0xe : 0) + 0x42;
+	float pitch = base > 0x32 ? 20 / (base - 0x32) : 4.0;
+	g_1073dc28.sub_100119fa(this, id, 2, 1.0f, pitch);
+	static int statId = g_106c7c34.sub_1006cf30("Float_Sound_Info");
+	static int bonus = g_106c7c34.sub_1006cff0(statId)->sub_1006cb60(1);
+	*(float *)((char *)this + 0x10ec) = g_1070b22c->vfunc119(0) + bonus;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10295590 size=0x127
 #include "CAI_BaseNPCTroika.h"
 
