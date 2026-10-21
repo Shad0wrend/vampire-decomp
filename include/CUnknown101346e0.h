@@ -2,6 +2,8 @@
 // real name not yet known.
 #pragma once
 
+struct inputdata_t;
+
 class CUnknown101346e0
 {
 public:
@@ -11,4 +13,6 @@ public:
 	int m_current;
 
 	int sub_101346e0(int steps);
+	void sub_10134420(inputdata_t *pInput);	// "CLogicCase::InputPickRandom": fires a random one of the outputs (16 of 0x18 bytes at +0x490) that has listeners, with the input's activator; DevMsg when none has
+	const char *sub_100ab4f0();	// the entity's name for messages (called through the stub at 0x1000b5cd)
 };
