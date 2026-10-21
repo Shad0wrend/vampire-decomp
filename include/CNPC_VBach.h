@@ -25,10 +25,19 @@ public:
 	void sub_1026dc00(unsigned int flags);	// stub 0x10012855, called directly by Spawn with 0x200000
 	void sub_1026dc30(int a);	// stub 0x1001005f, called directly by Spawn with 1
 	void sub_103c4ef0();	// CNPC_VVampire::vfunc103 (stub 0x10014876), called directly
+	int vfunc604(int arg);	// slot 604 "CNPC_VBach::SelectFailSchedule"-like: picks a schedule from the conditions 0x7b / 0x7a / 0x79 and the active weapon (katana / "item_w_rem_m_700_bach"), recording the source line (+0x1b34) and file (+0x1b30) of the choice; the rest goes to CNPC_VHuman::vfunc604
+	int sub_10385e40(int arg);	// CNPC_VHuman::vfunc604 (stub 0x10004462), called directly
 
-	char m_pad03e0[0x5db4 - 0x3e0];
+	char m_pad03e0[0x1b30 - 0x3e0];
+	const char *m_pszSchedFile;	// 0x1b30: source file of the last schedule choice
+	int m_nSchedLine;	// 0x1b34: source line of the last schedule choice
+	char m_pad1b38[0x5cc0 - 0x1b38];
+	int m_n5cc0;
+	char m_pad5cc4[0x5db4 - 0x5cc4];
 	int m_n5db4;
-	char m_pad5db8[0x6664 - 0x5db8];
+	char m_pad5db8[0x6444 - 0x5db8];
+	int m_n6444;
+	char m_pad6448[0x6664 - 0x6448];
 	int m_n6664;
 	int m_n6668;
 	int m_n666c;
@@ -40,7 +49,7 @@ public:
 	int m_n6684;	// the time of the byte at +0x66a5
 	int m_n6688;
 	int m_n668c;
-	int m_n6690;
+	int m_n6690;	// a time stamp (curtime + 15.0f, stored as a float)
 	int m_n6694;
 	int m_n6698;
 	int m_n669c;
