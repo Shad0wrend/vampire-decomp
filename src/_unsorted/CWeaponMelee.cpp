@@ -54,3 +54,48 @@ void CWeaponMelee::vfunc367(int a, int b, int c)
 	sub_103ea7e0(0x4b, a, b, c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103eae00 size=0x78
+#include "CWeaponMelee.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CMeleeOwnerSlot429View {
+    S100(a0) S100(a1) S100(a2) S100(a3)
+    S10(b0) S10(b1)
+    virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4();
+    virtual void c5(); virtual void c6(); virtual void c7(); virtual void c8();
+    virtual void vfunc429();
+};
+struct CMeleeSlot372View {
+    S100(a0) S100(a1) S100(a2)
+    S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6)
+    virtual void c0(); virtual void c1();
+    virtual bool vfunc372(int a, int b, int c);
+};
+struct CMeleePlayerView {
+    char m_pad[0x1538];
+    unsigned int m_h1538;
+    int m_n153C;
+};
+
+void CWeaponMelee::vfunc327()
+{
+    CMeleePlayerView *pPlayer = (CMeleePlayerView *)sub_102521f0();
+    CMeleeOwnerSlot429View *pOwner = (CMeleeOwnerSlot429View *)sub_10252290();
+    if (pPlayer) {
+        unsigned int h = pPlayer->m_h1538;
+        CGlobalEntityList_Ent *pEnt = 0;
+        if (h != 0xffffffff) {
+            CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+            if (pSlot->m_Serial == (int)(h >> 13))
+                pEnt = pSlot->m_pEntity;
+        }
+        if (!pEnt || pPlayer->m_n153C == -1) {
+            if (((CMeleeSlot372View *)this)->vfunc372(0x4e, 1, 0) && pOwner)
+                pOwner->vfunc429();
+        }
+    }
+}
+// END FUNCTION
