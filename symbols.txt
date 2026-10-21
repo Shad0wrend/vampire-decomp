@@ -156,6 +156,7 @@
 0x100019c9 func   ?vfunc5@CPropDoorknobElectronic@@QAEPAV1@I@Z CPropDoorknobElectronic::vfunc5
 0x100019d8 func   ?sub_100ddf40@CUnknown100ddf40@@QAEPAHH@Z CUnknown100ddf40::sub_100ddf40
 0x100019dd func   ?sub_1005ed80@@YAXPAXHPBM11HHHHH@Z sub_1005ed80
+0x100019ec func   ?sub_10190a00@CDynamicProp@@QAEXPAUinputdata_t@@@Z CDynamicProp::sub_10190a00
 0x100019f6 func   ?vfunc5@CBaseAnimating@@QAEPAV1@I@Z CBaseAnimating::vfunc5
 0x100019fb func   ?sub_100be3d0@bf_read@@QAEMH@Z bf_read::sub_100be3d0
 0x10001a19 func   ?vfunc103@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc103

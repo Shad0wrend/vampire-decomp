@@ -33940,6 +33940,55 @@ int sub_10190440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190a00 size=0xd0
+#include "CDynamicProp.h"
+#include "CBaseAnimating.h"
+#include "COutputEvent.h"
+#include "inputdata_t.h"
+
+struct CGlobalVarsDyn	// gpGlobals
+{
+	char m_pad0000[0xc];
+	float curtime;	// 0x0c
+};
+
+struct CAnimResetX
+{
+	void sub_10090950();	// ResetSequenceInfo (stub 0x100117b1)
+};
+
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);	// Msg
+extern char g_106b8540[];
+extern CGlobalVarsDyn *g_1070b228;
+void sub_1000d2ce();	// the think function of the dynamic prop (stub)
+
+static inline const char *InputString(variant_t &v)
+{
+	if (v.fieldType == 2)
+		return v.iszValue ? v.iszValue : g_106b8540;
+	return v.sub_10008805();
+}
+
+void CDynamicProp::sub_10190a00(inputdata_t *pInput)
+{
+	variant_t *pValue = &pInput->value;
+	int nSequence = ((CBaseAnimating *)this)->sub_1008f7b0(InputString(*pValue));
+	if (nSequence > -1) {
+		m_nSequence = nSequence;
+		m_flCycle = 0;
+		((CAnimResetX *)this)->sub_10090950();
+		((CBaseAnimating *)this)->sub_100963d0();
+		((COutputEvent *)&m_slotC)->sub_100cd660(0, this, 0);
+		((CBaseEntity *)this)->sub_100b3640(0x40000);
+		((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000d2ce, 0, 0);
+		*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
+		return;
+	}
+	g_109f3628("Dynamic prop no sequence named:%s\n", InputString(*pValue));
+	m_nSequence = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190b10 size=0x49
 void *sub_1000db89(int);
 struct GP;
