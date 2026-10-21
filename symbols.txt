@@ -1340,6 +1340,7 @@
 0x10006f82 func   ?sub_100fb850@S100fb850@@QAEXAAUinputdata_t@@@Z S100fb850::sub_100fb850
 0x10006f96 func   ?sub_10335ea0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10335ea0
 0x10006f9b func   ?vfunc144@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc144
+0x10006fa5 func   ?sub_1027ffe0@@YAXXZ sub_1027ffe0
 0x10006faa func   ?vfunc223@CRotDoor@@QAE_NXZ CRotDoor::vfunc223
 0x10006fd7 func   ?sub_102ee250@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102ee250
 0x10006feb func   ?vfunc70@CGameRules@@UAEPBDH@Z CGameRules::vfunc70

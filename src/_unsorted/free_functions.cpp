@@ -50221,6 +50221,49 @@ struct CUnknown1027fc40 {
 void CUnknown1027fc40::sub_1027fc40() { slot431(); }
 // END FUNCTION
 
+// FUNCTION: 0x1027ffe0 size=0xa7
+#include "CGlobalEntityList.h"
+#include "CUnknown102ee120.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_1054abdc[];	// type descriptor of CAI_BaseNPC
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long vfDelta, void *pSrcType, void *pTargetType, int isReference);
+
+struct CNPCFlagsX
+{
+	char m_pad0000[0x224];
+	unsigned int m_flags224;
+	char m_pad0228[0x5d34 - 0x228];
+	CUnknown102ee120 *m_pHelper;
+
+	void sub_10280de0(int a);
+};
+
+static inline CNPCFlagsX *NextNPC(CBaseEntity *pStart)
+{
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(pStart);
+	while (pEnt) {
+		CNPCFlagsX *pNPC = (CNPCFlagsX *)__RTDynamicCast(pEnt, 0, g_10538764, g_1054abdc, 0);
+		if (pNPC)
+			return pNPC;
+		pEnt = g_106eb5d8.sub_100f7060(pEnt);
+	}
+	return 0;
+}
+
+// TARGET: sub_1027ffe0
+void sub_1027ffe0()
+{
+	for (CNPCFlagsX *pNPC = NextNPC(0); pNPC; pNPC = NextNPC((CBaseEntity *)pNPC)) {
+		if (pNPC->m_flags224 & 0x1000) {
+			pNPC->sub_10280de0(0x3d);
+			pNPC->m_pHelper->sub_102ee250(0x13);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280d10 size=0xc
 bool CUnknown10280d10::sub_10280d10()
 {
