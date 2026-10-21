@@ -3504,6 +3504,7 @@
 0x10010aaa func   ?sub_100b7130@@YIXPAUMem4@@HH@Z sub_100b7130
 0x10010aaf func   _tectonic tectonic
 0x10010ac8 func   ?sub_10168e60@@YA_NPAXPAUEntX@@@Z sub_10168e60
+0x10010ad7 func   ?sub_102c47e0@CAI_BaseNPCTroika@@QAEHPBD0@Z CAI_BaseNPCTroika::sub_102c47e0
 0x10010ae6 func   ?vfunc38@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc38
 0x10010aeb func   ?sub_100eb0e0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100eb0e0
 0x10010af5 func   ?vfunc11@ConVar@@UAEXPBD@Z ConVar::vfunc11

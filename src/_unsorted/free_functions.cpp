@@ -50141,6 +50141,35 @@ const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c47e0 size=0x99
+#include "CAI_BaseNPCTroika.h"
+#include <stdio.h>
+
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+int sub_102cadb0(const char *pszName);
+
+int CAI_BaseNPCTroika::sub_102c47e0(const char *pszName, const char *pszCaller)
+{
+    char szBuf[256];
+    int id = sub_102cadb0(pszName);
+    if (id == -1) {
+        sprintf(szBuf, "SCHED_%s", pszName);
+        id = sub_102cadb0(szBuf);
+        if (id == -1) {
+            DevMsg(1, "ERROR: Could not find schedule '%s' (%s)\n", szBuf, pszCaller);
+            return -1;
+        }
+    }
+    CAI_CondOwner *pOwner = vfunc580();
+    id = pOwner->sub_102ea280(id);
+    if (id == -1) {
+        DevMsg(1, "ERROR: Could not convert schedule '%s' to local (%s)\n", pszName, pszCaller);
+        return -1;
+    }
+    return id;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c62f0 size=0x24
 unsigned int __stdcall sub_102c62f0(unsigned int x)
 {
