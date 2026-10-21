@@ -3968,6 +3968,7 @@
 0x1001193c func   ?sub_1033c830@CBaseCombatCharacter@@QAEXI@Z CBaseCombatCharacter::sub_1033c830
 0x1001196e func   _npc_VFrenzyShadow npc_VFrenzyShadow
 0x10011973 func   ?sub_102ecc20@@YIHPAD@Z sub_102ecc20
+0x10011982 func   ?sub_103be3d0@CTargetNPC@@QAE_NPAVCBaseEntity@@@Z CTargetNPC::sub_103be3d0
 0x1001198c func   ?vfunc0@ConCommand@@UAEPAV1@I@Z ConCommand::vfunc0
 0x10011991 func   ?sub_10183910@StatOwner2@@QAEPAUStatDefault2@@H@Z StatOwner2::sub_10183910
 0x100119d7 func   ?vfunc5@CPropPadlock@@QAEPAV1@I@Z CPropPadlock::vfunc5

@@ -73292,6 +73292,65 @@ bool CUnknown10381be0::sub_103be130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103be3d0 size=0x108
+#include "CRagdollProp.h"
+extern const char *g_106530e8[];
+extern int g_10538764;
+extern int g_1057c684;
+extern "C" void *__RTDynamicCast(void *pObj, long vfDelta, void *pSrcType, void *pTargetType, int isReference);
+#define P(n) virtual void p##n();
+#define P10(x) P(x##0) P(x##1) P(x##2) P(x##3) P(x##4) P(x##5) P(x##6) P(x##7) P(x##8) P(x##9)
+struct SBone {
+	P(0) P(1) P(2) P(3) P(4) P(5) P(6) P(7) P(8) P(9)
+	P10(1) P10(2)
+	P(30) P(31) P(32) P(33) P(34) P(35) P(36)
+	virtual void GetPos(float *pos, float *ang);
+};
+struct SSelf {
+	P(0) P(1) P(2) P(3) P(4) P(5) P(6) P(7) P(8) P(9)
+	P10(1) P10(2) P10(3) P10(4) P10(5) P10(6) P10(7) P10(8) P10(9)
+	P10(10) P10(11) P10(12) P10(13) P10(14) P10(15) P10(16) P10(17) P10(18) P10(19) P10(20) P10(21)
+	virtual float *GetOrigin();
+};
+struct CTargetNPC : SSelf {
+	char pad[0x6674 - 4];
+	float m_vPos[3];
+	int m_nIndex;
+	bool sub_103be3d0(CBaseEntity *pEntity);
+};
+bool CTargetNPC::sub_103be3d0(CBaseEntity *pEntity)
+{
+	bool found = false;
+	float best = 1050625.0f;
+	CRagdollProp *pRagdoll = (CRagdollProp *)__RTDynamicCast(pEntity, 0, &g_10538764, &g_1057c684, 0);
+	if (pRagdoll) {
+		const char **pp = g_106530e8;
+		for (int i = 0; **pp; i++, pp++) {
+			SBone *pBone = (SBone *)pRagdoll->vfunc265(*pp);
+			if (pBone) {
+				float pos[3];
+				float ang[3];
+				pBone->GetPos(pos, ang);
+				const float *o = GetOrigin();
+				float dx = o[0] - pos[0];
+				float dy = o[1] - pos[1];
+				float dz = o[2] - pos[2];
+				float d = dx * dx + dy * dy + dz * dz;
+				if (d < best) {
+					m_vPos[0] = pos[0];
+					m_vPos[1] = pos[1];
+					m_vPos[2] = pos[2];
+					found = true;
+					m_nIndex = i;
+					best = d;
+				}
+			}
+		}
+	}
+	return found;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bf200 size=0xed
 #include "CUnknown103bf200.h"
 
