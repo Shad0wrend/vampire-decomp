@@ -97,4 +97,5 @@ public:
 	bool sub_10269d30(int condition);	// CAI_BaseNPC condition test (stub 0x1001482b), called directly
 	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
 	int sub_103bc820();	// the base schedule choice (stub 0x10002a4f), called directly
+	int sub_103bca20(int a);	// picks a schedule (slot 438 helper): condition 0xc schedule 0x173 (source line 0xb66 recorded at +0x1b30 / +0x1b34); 10 or 0xd schedule 0x174 (line 0xb6a); condition 0x5d the base choice sub_103bc820; else schedule 0x170 (line 0xb7c)
 };
