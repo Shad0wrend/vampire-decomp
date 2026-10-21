@@ -581,6 +581,7 @@
 0x100035d5 func   ??0CRecipientFilter@@QAE@XZ CRecipientFilter::CRecipientFilter
 0x100035e4 func   ?vfunc106@CBaseCombatCharacter@@UAEXPBD@Z CBaseCombatCharacter::vfunc106
 0x100035e9 func   ?vfunc104@CEnvSpark@@UAEXXZ CEnvSpark::vfunc104
+0x100035ee func   ?vfunc315@CBloodPack@@QAEDXZ CBloodPack::vfunc315
 0x100035f8 func   _trigger_once trigger_once
 0x100035fd func   ?sub_1027f940@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_1027f940
 0x10003607 func   ?vfunc103@CPropPadlock@@UAEXXZ CPropPadlock::vfunc103
