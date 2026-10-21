@@ -11132,6 +11132,37 @@ void SDumpOutput::sub_10079ca0(int nIndent, CDumpChannel10079ca0 *pChannel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079d40 size=0x78
+struct SDumpOutput;
+void sub_10079320(SDumpOutput *pOut, int nIndent, const char *pszFormat, ...);
+
+struct CDumpItem10079d40;
+
+struct CDumpActor10079d40 {
+	const char *sub_10072d90();
+	int sub_10072eb0();
+	CDumpItem10079d40 *sub_10072ed0(int index);
+};
+
+struct SDumpOutput {
+	void sub_10079ca0(int nIndent, CDumpItem10079d40 *pItem);
+	void sub_10079d40(int nIndent, CDumpActor10079d40 *pActor);
+};
+
+// TARGET: SDumpOutput::sub_10079d40
+void SDumpOutput::sub_10079d40(int nIndent, CDumpActor10079d40 *pActor)
+{
+	sub_10079320(this, nIndent, "actor \"%s\"\n", pActor->sub_10072d90());
+	sub_10079320(this, nIndent, "{\n");
+	for (int i = 0; i < pActor->sub_10072eb0(); i++) {
+		CDumpItem10079d40 *pItem = pActor->sub_10072ed0(i);
+		if (pItem)
+			sub_10079ca0(nIndent + 1, pItem);
+	}
+	sub_10079320(this, nIndent, "}\n\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079e60 size=0xc0
 #include "CUnknown10075aa0.h"
 extern "C" {
