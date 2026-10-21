@@ -85,6 +85,41 @@ bool CRotDoor::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2520 size=0xdb
+#include <math.h>
+#include "CRotDoor.h"
+#include "CEntityVSlots.h"
+#pragma intrinsic(fabs)
+
+static inline float FloatMakePositive(float f)
+{
+    return (float)fabs(f);
+}
+
+static inline bool VectorsAreEqual(const Vector &src1, const Vector &src2, float tolerance)
+{
+    if (FloatMakePositive(src1.x - src2.x) > tolerance)
+        return false;
+    if (FloatMakePositive(src1.y - src2.y) > tolerance)
+        return false;
+    return FloatMakePositive(src1.z - src2.z) <= tolerance;
+}
+
+// TARGET: CRotDoor::vfunc248
+void CRotDoor::vfunc248()
+{
+    if (VectorsAreEqual(m_angRotation520, *((CEntityVSlots *)this)->slot221(), 0.001f)) {
+        m_nState4f8 = 1;
+        ((CEntityVSlots *)this)->slot249();
+        return;
+    }
+    if (VectorsAreEqual(m_angRotation52c, *((CEntityVSlots *)this)->slot221(), 0.001f)) {
+        m_nState4f8 = 0;
+        ((CEntityVSlots *)this)->slot249();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4080 size=0x8e
 #include "CRotDoor.h"
 
