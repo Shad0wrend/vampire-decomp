@@ -5324,6 +5324,7 @@
 0x1001508c func   ?sub_10078c50@UtlMem@@QAEXXZ UtlMem::sub_10078c50
 0x100150aa func   ?vfunc5@CPropKeypad@@QAEPAV1@I@Z CPropKeypad::vfunc5
 0x100150af func   ?sub_10215910@CUnknown10215910@@QAEXH@Z CUnknown10215910::sub_10215910
+0x100150b4 func   ?sub_1011fa80@CGameMovement@@QAEXXZ CGameMovement::sub_1011fa80
 0x100150b9 func   ?vfunc141@CBatSwarm@@QAEXPAHHPAX@Z CBatSwarm::vfunc141
 0x100150c8 func   ?sub_102edbb0@CAI_Navigator@@QAE_NPBVVector@@MHPAV2@@Z CAI_Navigator::sub_102edbb0
 0x100150ff func   ?vfunc545@CNPC_VCamera@@QAEHXZ CNPC_VCamera::vfunc545

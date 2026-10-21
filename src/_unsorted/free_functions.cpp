@@ -29598,6 +29598,53 @@ void sub_1011d8e0(const char *file, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011fa80 size=0x9a
+#include "CGameMovement.h"
+
+struct MoveData {
+	char m_pad[0x3ec];
+	float m_flScale;
+};
+
+struct PlayerData {
+	char m_pad[0x48];
+	float m_flValue48;
+	char m_pad4c[8];
+	float m_flValue54;
+};
+
+struct GravityObj {
+	virtual void v0();
+	virtual bool IsZero();
+	char m_pad[0x24];
+	float m_flValue;
+};
+
+struct TimeObj {
+	char m_pad[0x10];
+	float m_flFrameTime;
+};
+
+extern GravityObj *g_109ef2d4;
+extern TimeObj *g_1070b228;
+
+void CGameMovement::sub_1011fa80()
+{
+	float flScale;
+	if (((MoveData *)m_pMove)->m_flScale != 0.0f)
+		flScale = ((MoveData *)m_pMove)->m_flScale;
+	else
+		flScale = 1.0f;
+	float *pVal = &((PlayerData *)m_pPlayer)->m_flValue48;
+	float flGrav = g_109ef2d4->IsZero() ? 0.0f : g_109ef2d4->m_flValue;
+	float flStep = flGrav * flScale;
+	*pVal = *pVal - flStep * g_1070b228->m_flFrameTime * 0.5;
+	((PlayerData *)m_pPlayer)->m_flValue48 = ((PlayerData *)m_pPlayer)->m_flValue54 * g_1070b228->m_flFrameTime + ((PlayerData *)m_pPlayer)->m_flValue48;
+	((PlayerData *)m_pPlayer)->m_flValue54 = 0.0f;
+	sub_10004ebc();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ffe0 size=0xa9
 #include "CGameMovement.h"
 
