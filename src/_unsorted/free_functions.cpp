@@ -36039,6 +36039,17 @@ CVDmgBlock16_t *CUnknown101e7c50::sub_101e7c50(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e7fb0 size=0x93
+#include "CUnknown101e56e0.h"
+
+int CUnknown101e7fb0::sub_101e7fb0(CBaseCombatCharacter *pCharacter, CBaseCombatCharacter *pTarget)
+{
+	int nCost = m_pHolder->m_pCost->sub_101e56e0(pCharacter);
+	CVStatList_t *pList = CVStatListSet::Of(pTarget)->Find(1);
+	return (10 - nCost + pList->sub_10010609(0xb)) * 10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8080 size=0xd
 // TARGET: CUnknown101e8080::sub_101e8080
 void CUnknown101e8080::sub_101e8080(int *out, void *ent, float dist, int flags)
