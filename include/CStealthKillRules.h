@@ -25,4 +25,5 @@ public:
 	void sub_101be020();	// "CStealthKillRules::InitTable": scope trace, FlushTable, sub_101bebf0, then fills the float table at +0x50 with cos(table at +0x00 [i] * constants)
 	void sub_101bedb0(CSKRKeyValues *pKeys, const char *pszName, float *pTable);	// "CStealthKillRules::LoadKey": scope trace; reads the 20 floats "1".."20" of the sub key pszName into pTable (each defaulting to the previous one, the first to 0); Warning "%s needs key values for '%s'!!" when the key is missing
 	float sub_101bef50(int a, float b);	// "CStealthKillRules::ComputeMinDepth": scope trace; the range (+0xb0) minus the range times (the clamped position of a between the values at +0xa0 / +0xa4 minus that of b between the values at +0xa8 / +0xac), never below 0.0f
+	static float sub_101beed0(float x, float lo, float hi);	// the position of x between lo and hi, clamped to 0..1 (cdecl; called by ComputeMinDepth with ecx still holding this)
 };
