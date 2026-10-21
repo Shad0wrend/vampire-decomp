@@ -44354,6 +44354,30 @@ void sub_101e94b0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9640 size=0x96
+#include "CUnknown101e98c0.h"
+
+extern CEffectTable g_1074df78;
+int *sub_102038e0(int *pOut, CDataNode *pNode, const char *pszName);
+void sub_101e9710(void *pGenders, const char *pszList);
+
+// TARGET: CUnknown101e98c0Item::sub_101e9640
+bool CUnknown101e98c0Item::sub_101e9640(CDataNode *pNode)
+{
+	if (pNode == 0)
+		return true;
+	CDataNode *pGeneral = pNode->v2("General");
+	if (pGeneral) {
+		int tmp;
+		m_nInternalName = *sub_102038e0(&tmp, pGeneral, "InternalName");
+		m_sub.sub_101d83a0(pGeneral->v13("CritterScope", ""));
+		sub_101e9710(m_genders, pGeneral->v13("Genders_Disallowed", ""));
+		m_nEffect = g_1074df78.sub_101f83a0(pGeneral->v13("Effect", ""));
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9760 size=0x97
 #include "CUnknown101e9760.h"
 #include "CBaseCombatCharacter.h"
