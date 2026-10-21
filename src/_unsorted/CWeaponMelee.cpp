@@ -46,6 +46,29 @@ void CWeaponMelee::vfunc370(int *event, CBaseCombatWeapon *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ea6d0 size=0xc1
+#include "CWeaponMelee.h"
+#include "CEntityVSlots.h"
+
+bool CWeaponMelee::vfunc283(CBaseEntity *pTarget)
+{
+	if (!pTarget)
+		return false;
+	if (!((CEntityVSlots *)pTarget)->slot158())
+		return false;
+	CEntityVSlots *pOwner = (CEntityVSlots *)sub_102521f0();
+	if (!pOwner)
+		return false;
+	if (pOwner == (CEntityVSlots *)pTarget)
+		return false;
+	Vector vecOwner = pOwner->slot192();
+	Vector vecTarget = ((CEntityVSlots *)pTarget)->slot192();
+	if (vecOwner.DistToSqr(vecTarget) > 22500.0f)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eac30 size=0x19
 #include "CWeaponMelee_TzimisceMelee.h"
 
