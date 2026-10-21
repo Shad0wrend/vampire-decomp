@@ -4598,6 +4598,7 @@
 0x1001340d func   ?sub_102345e0@@YAHXZ sub_102345e0
 0x1001342b func   ?sub_1008d520@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d520
 0x10013430 func   ?vfunc5@CInstancedSceneEntity@@QAEPAV1@I@Z CInstancedSceneEntity::vfunc5
+0x10013444 func   ?vfunc194@CBasePlayer@@UAEPAMXZ CBasePlayer::vfunc194
 0x10013449 func   ?sub_104304f0@@YAXXZ sub_104304f0
 0x10013458 func   ?vfunc242@CEnvShooter@@QAEPAVCBaseEntity@@VVector@@0@Z CEnvShooter::vfunc242
 0x1001345d func   ?sub_100b1130@@YIHPAVCBaseEntity@@@Z sub_100b1130

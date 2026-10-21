@@ -1,6 +1,41 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100b7e40 size=0xbd
+extern CGlobalEntityList *g_10566458;
+
+struct CMat3x4X
+{
+	float m[3][4];
+};
+
+void __cdecl sub_10139b90(const Vector *pAngles, CMat3x4X *pOut);	// AngleMatrix (stub 0x10012deb)
+void __cdecl sub_10138df0(const CMat3x4X *pIn1, const CMat3x4X *pIn2, CMat3x4X *pOut);	// ConcatTransforms (stub 0x1000a01a)
+void __cdecl sub_10137ed0(const CMat3x4X *pMatrix, Vector *pAngles);	// MatrixAngles (stub 0x10012756)
+
+float *CBasePlayer::vfunc194()
+{
+	CBaseEntity *pParent = 0;
+	unsigned int h = *(unsigned int *)((char *)this + 0x25c);
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13))
+			pParent = (CBaseEntity *)s->m_pEntity;
+	}
+	if (!pParent)
+		return &m_vec206c.x;
+	CMat3x4X local;
+	CMat3x4X world;
+	sub_10139b90(&m_vec206c, &local);
+	if ((unsigned char)(pParent->m_flags268 >> 11) & 1)
+		pParent->vfunc98();
+	sub_10138df0((const CMat3x4X *)((char *)pParent + 0x130), &local, &world);
+	static Vector s_vecAngles;
+	sub_10137ed0(&world, &s_vecAngles);
+	return &s_vecAngles.x;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015dc60 size=0x2d
 #include "CBasePlayer.h"
 
