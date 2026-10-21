@@ -58958,6 +58958,25 @@ int CBaseCombatCharacter::sub_10337a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10337b00 size=0x9d
+#include "CBaseCombatCharacter.h"
+#include "StatDefault.h"
+
+struct StatOwner {
+    int sub_1006cf30(const char *pszName);
+    StatDefault *sub_1006cff0(int id);
+};
+extern StatOwner g_106c7c34;
+
+int CBaseCombatCharacter::sub_10337b00(int a)
+{
+    int nValue = GetActiveStatList()->sub_10010609(0);
+    int id = g_106c7c34.sub_1006cf30("Attribute_Order_Lookups");
+    int index = a + nValue * 3;
+    return g_106c7c34.sub_1006cff0(id)->sub_1006cb60(index);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10337e40 size=0xbe
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

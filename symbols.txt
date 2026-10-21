@@ -3984,6 +3984,7 @@
 0x10012c24 func   ?sub_103ec6f0@@YAHXZ sub_103ec6f0
 0x10012c2e func   ?sub_102c6740@CUnknown102c6740@@QAEPAUCUnknown102c6740_Elem@@H@Z CUnknown102c6740::sub_102c6740
 0x10012c38 func   ?vfunc5@CWeaponMelee@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee::vfunc5
+0x10012c3d func   ?sub_10337b00@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::sub_10337b00
 0x10012c5b func   ?vfunc5@CItemGLillyPurse@@QAEPAV1@I@Z CItemGLillyPurse::vfunc5
 0x10012c65 func   ?sub_1003c1c0@@YIXPAH@Z sub_1003c1c0
 0x10012c6a func   ?vfunc111@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc111
