@@ -2,10 +2,14 @@
 // vtable 0x104540b0, 5 slots). The base ISaveRestoreOps is not modelled.
 #pragma once
 
+#include "CSave.h"
+
 struct CVTSDependencyRecord	// the record the field points to
 {
 	void sub_10204270();	// reset (stub 0x10010573)
 	void sub_10204570(const char *pszBuffer);	// fills the record from its saved string (stub 0x100045e3)
+	bool sub_10204250();	// has a string to save (stub 0x100051f0)
+	const char *sub_102043a0();	// the string to save (stub 0x10001af0)
 };
 
 struct CVTSDependencyField
@@ -30,7 +34,7 @@ public:
 class CVTSDependencySaveRestoreDataOps
 {
 public:
-	virtual void vfunc0();
+	virtual void vfunc0(CVTSDependencyField *pField, CSave *pSave);	// "Save": a flag byte, then the record's string length and string
 	virtual void vfunc1(CVTSDependencyField *pField, CVTSDependencyRestore *pRestore);	// "Restore": a flag byte, then the record's string (or the reset record when the flag is clear)
 	virtual void vfunc2();
 	virtual void vfunc3();
