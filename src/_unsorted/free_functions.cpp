@@ -1257,6 +1257,52 @@ void CCollisionEvent::sub_10030d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030f30 size=0xfc
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CUtlVector36.h"
+#include "CCollisionEvent.h"
+
+struct CTouchEventRec {	// 0x24 bytes
+	void *m_pObject0;
+	void *m_pObject1;
+	int m_nType;
+	int m_data0[3];
+	int m_data1[3];
+
+	void sub_100119ff();	// constructor (stub 0x100119ff)
+};
+
+void CCollisionEvent::sub_10030f30(void *a, void *b, int c, void *pData1, void *pData2)
+{
+	ScopeTrace trace("CCollisionEvent::AddTouchEvent", g_106b8540);
+	if (a && b) {
+		CUtlVector36 *pVec = (CUtlVector36 *)&m_pTouchEvents;
+		int elem = pVec->m_size;
+		if (elem + 1 > pVec->m_allocationCount)
+			pVec->sub_10033040(elem - pVec->m_allocationCount + 1);
+		pVec->m_size++;
+		pVec->m_pElements = pVec->m_pMemory;
+		pVec->sub_10032b20(elem, 1);
+		CTouchEventRec *pRec = (CTouchEventRec *)(pVec->m_pMemory + elem * sizeof(CTouchEventRec));
+		if (pRec)
+			pRec->sub_100119ff();
+		pRec = (CTouchEventRec *)(pVec->m_pMemory + elem * sizeof(CTouchEventRec));
+		pRec->m_nType = c;
+		pRec->m_pObject0 = a;
+		pRec->m_pObject1 = b;
+		const int *pSrc0 = (const int *)pData1;
+		pRec->m_data0[0] = pSrc0[0];
+		pRec->m_data0[1] = pSrc0[1];
+		pRec->m_data0[2] = pSrc0[2];
+		const int *pSrc1 = (const int *)pData2;
+		pRec->m_data1[0] = pSrc1[0];
+		pRec->m_data1[1] = pSrc1[1];
+		pRec->m_data1[2] = pSrc1[2];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031070 size=0x189
 #include "CCollisionEvent.h"
 #include "CUtlVector88.h"

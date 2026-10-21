@@ -2133,6 +2133,7 @@
 0x1000a074 func   _player_manager player_manager
 0x1000a079 func   ?sub_10279cc0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10279cc0
 0x1000a088 func   _sky_camera sky_camera
+0x1000a0a1 func   ?sub_10030f30@CCollisionEvent@@QAEXPAX0H00@Z CCollisionEvent::sub_10030f30
 0x1000a0a6 func   ?sub_10324080@@YIXPAVCBaseCombatCharacter@@@Z sub_10324080
 0x1000a0ba func   _logic_squad_condition logic_squad_condition
 0x1000a0d3 func   ?sub_10312320@CUnknown10312320@@QAEXXZ CUnknown10312320::sub_10312320
