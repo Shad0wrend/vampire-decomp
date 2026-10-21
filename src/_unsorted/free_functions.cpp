@@ -80239,6 +80239,57 @@ char __fastcall sub_103da0a0(CNPC_VWerewolf *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103da470 size=0x96
+#include "CBaseEntity.h"
+
+extern void *vt_104d00b4[];
+extern char g_10661990[];
+void *sub_100aa720(int size);
+
+struct COutputCtor {
+	char m_data[0x18];
+	void sub_100cd2a0();
+};
+
+struct CTriggerWWZoneView : CBaseEntity {
+	void sub_101c0e20();
+	char m_padView[0x564 - 0x3e0];
+	int m_h564;
+	COutputCtor m_out568;
+	COutputCtor m_out580;
+	int m_n598;
+	int m_n59c;
+	int m_n5a0;
+	int m_n5a4;
+	int m_n5a8;
+	char m_pad5ac[0x5b4 - 0x5ac];
+	int m_h5b4;
+};
+
+extern "C" CBaseEntity *trigger_werewolf_zone()
+{
+	CTriggerWWZoneView *p = (CTriggerWWZoneView *)sub_100aa720(0x5b8);
+	CBaseEntity *e;
+	if (p) {
+		p->sub_101c0e20();
+		p->m_h564 = -1;
+		p->m_out568.sub_100cd2a0();
+		p->m_out580.sub_100cd2a0();
+		p->m_n598 = 0;
+		p->m_n59c = 0;
+		p->m_n5a0 = 0;
+		p->m_n5a4 = 0;
+		p->m_n5a8 = 0;
+		p->m_h5b4 = -1;
+		*(void ***)p = vt_104d00b4;
+		e = p;
+	} else
+		e = 0;
+	e->vfunc106(g_10661990);
+	return e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dad80 size=0x9f
 struct SEntB { void *pEnt; unsigned serial; int pad; };
 extern char *g_10566458;
