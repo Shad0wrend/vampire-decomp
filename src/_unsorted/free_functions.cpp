@@ -61691,6 +61691,46 @@ void CUnknown1023df30::sub_1023df30(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023dff0 size=0x84
+#include "inputdata_t.h"
+
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+struct CGlobals1070b228 { char pad[0xc]; float m_flCurTime; };
+extern CGlobals1070b228 *g_1070b228;
+
+struct CCopGlobal107258dc {
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x2c - 4];
+	int m_n2c;
+};
+extern CCopGlobal107258dc *g_107258dc;
+
+struct CCopTarget1023bd00 {
+	char m_pad0000[0x4a4];
+	float m_flGraceTimer;
+};
+CCopTarget1023bd00 *sub_1023bd00();
+
+struct CUnit1023dff0 {
+	void sub_1023dff0(inputdata_t *pInput);
+};
+
+// TARGET: CUnit1023dff0::sub_1023dff0
+void CUnit1023dff0::sub_1023dff0(inputdata_t *pInput)
+{
+	CCopTarget1023bd00 *pCop = sub_1023bd00();
+	if (!pCop)
+		return;
+	if (!g_107258dc->vfunc1() && g_107258dc->m_n2c) {
+		float f = pInput->value.fieldType == 1 ? pInput->value.flValue : 0.0f;
+		DevMsg("CSActs:    %6.1f - Cop Grace Timer = %f\n", g_1070b228->m_flCurTime, f);
+	}
+	pCop->m_flGraceTimer = pInput->value.fieldType == 1 ? pInput->value.flValue : 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023e1c0 size=0x64
 struct CTarget { void sub_10006690(float f); };
 struct CParam { int pad0[2]; float value; int pad1[3]; int type; };

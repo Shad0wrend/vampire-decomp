@@ -1121,6 +1121,7 @@
 0x1000554c func   ?vfunc2@CAI_SaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CAI_SaveRestoreBlockHandler::vfunc2
 0x10005560 func   _item_g_ring_serial_killer_1 item_g_ring_serial_killer_1
 0x1000556f func   ?sub_101a8070@CCineNPC@@QAEXXZ CCineNPC::sub_101a8070
+0x1000557e func   ?sub_1023dff0@CUnit1023dff0@@QAEXPAUinputdata_t@@@Z CUnit1023dff0::sub_1023dff0
 0x10005588 func   ?sub_103d68d0@CNPC_VWerewolf@@QAEPAUCNPC_VWerewolfVec3@@PAU2@PAX@Z CNPC_VWerewolf::sub_103d68d0
 0x1000559c func   ?sub_103ff480@@YAHXZ sub_103ff480
 0x100055a1 func   ?sub_103eec60@CUnknown103eec60@@QAEXD@Z CUnknown103eec60::sub_103eec60
