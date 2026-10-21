@@ -25425,6 +25425,31 @@ void * __fastcall sub_1017cf90(Holder *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017d020 size=0x6d
+struct CUseTargetView {
+    char sub_1000d15c(const char *pszName, int a, int b);
+};
+CBaseEntity *sub_100138c7(const char *pszName, int a, int b, int c, int d);
+
+struct CPlayerDialogUnit : CBasePlayer {
+    void sub_1017d020(const char *pszName);
+};
+
+void CPlayerDialogUnit::sub_1017d020(const char *pszName)
+{
+    CUseTargetView *pUse = (CUseTargetView *)sub_1000306c();
+    if (pUse) {
+        if (!pUse->sub_1000d15c(pszName, 1, 0))
+            pUse->sub_1000d15c("DialogDefault", 1, 0);
+    } else {
+        CBaseEntity *pEnt = sub_100138c7(pszName, 0, 0, 0, 0);
+        if (!pEnt)
+            pEnt = sub_100138c7("DialogDefault", 0, 0, 0, 0);
+        sub_1017cef0(pEnt);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017e560 size=0x68
 #include "CBasePlayer.h"
 #include "inputdata_t.h"
