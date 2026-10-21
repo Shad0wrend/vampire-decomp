@@ -37198,6 +37198,50 @@ int *sub_101c0cc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1520 size=0x18e
+#include "CBaseToggle.h"
+
+struct CBaseToggleView : CBaseToggle {
+	char m_pad04a4[0x4d4 - 0x4a4];
+	float m_f4d4;
+	float m_f4d8;
+	float m_f4dc;
+	Vector m_vec4e0;
+	char m_pad04ec[0x540 - 0x4ec];
+	Vector m_vecFinalDest;
+	char m_pad054c[0x558 - 0x54c];
+	int m_i558;
+};
+
+typedef Vector *(__fastcall *GetLocalOriginFn)(CBaseToggle *);
+#define GetLocalOrigin() (((GetLocalOriginFn)(*(void ***)this)[220])(this))
+
+void CBaseToggle::sub_101c1520(Vector *pPosition, float flSpeed)
+{
+	CBaseToggleView *p = (CBaseToggleView *)this;
+	const Vector &vecDest = *pPosition;
+	p->m_vecFinalDest = vecDest;
+	p->m_i558 = 1;
+	if (vecDest == *GetLocalOrigin())
+	{
+		vfunc133();
+		return;
+	}
+	Vector vecDestDelta;
+	vecDestDelta = vecDest - *GetLocalOrigin();
+	float flTravelTime = vecDestDelta.Length() / flSpeed;
+	m_flNextThink3fc = m_flLocalTime3f4 + flTravelTime;
+	Vector vecVelocity = vecDestDelta * (1.0f / flTravelTime);
+	sub_100b2e30((float *)&vecVelocity);
+	if (p->m_f4d4 > 0.0f)
+	{
+		p->m_f4dc = m_flNextThink3fc;
+		m_flNextThink3fc = p->m_f4d4 + m_flNextThink3fc;
+		p->m_vec4e0 = *(Vector *)m_vel3d4 * -p->m_f4d8;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1b40 size=0xd
 void CUnknown101c1b40::sub_101c1b40(int mode)
 {

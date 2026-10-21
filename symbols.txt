@@ -1708,6 +1708,7 @@
 0x10008035 func   ?sub_101e94b0@@YAXH@Z sub_101e94b0
 0x1000803a func   ?sub_103fcbe0@@YAHXZ sub_103fcbe0
 0x10008062 func   ?sub_1012cf10@CUnknown1012cf10@@QAEPAV1@XZ CUnknown1012cf10::sub_1012cf10
+0x10008076 func   ?sub_101c1520@CBaseToggle@@QAEXPAVVector@@M@Z CBaseToggle::sub_101c1520
 0x1000807b func   ?sub_1042fd10@@YAXXZ sub_1042fd10
 0x10008080 func   ?sub_103b5420@@YADXZ sub_103b5420
 0x1000808a func   ?sub_1042ba00@CUnknown1042ba00@@QAEXH@Z CUnknown1042ba00::sub_1042ba00
