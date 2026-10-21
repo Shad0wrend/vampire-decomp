@@ -5977,6 +5977,47 @@ void CBaseCombatCharacter::sub_100544f0(int which)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100546b0 size=0x11b
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CVDmg_t.h"
+#include "ScopeTrace.h"
+
+struct SPlayerView
+{
+	char pad[0xa8];
+	CBaseCombatCharacter *pChar;
+};
+
+SPlayerView *sub_101193b0();
+
+void sub_100546b0()
+{
+	ScopeTrace trace("CC_VTestFortitudeSoak", g_106b8540);
+	SPlayerView *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		CBaseCombatCharacter *pChar = pPlayer->pChar;
+		if (pChar) {
+			CVStatList_t *pList = CVStatListSet::Of(pChar)->Find(2);
+			int nStat = pList->sub_10010609(7);
+			int nTimes;
+			if (nStat > 0)
+				nTimes = 5 - nStat;
+			else
+				nTimes = 6;
+			if (nTimes > 0) {
+				CVDmgBlock16_t block(2, 7);
+				do {
+					pChar->sub_10338440((const int *)&block);
+					nTimes--;
+				} while (nTimes != 0);
+			}
+			pChar->sub_100544f0(0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100548b0 size=0x117
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
