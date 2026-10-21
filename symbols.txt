@@ -3508,6 +3508,7 @@
 0x1000fb8c func   ?sub_1034e7e0@@YGXH@Z sub_1034e7e0
 0x1000fbb4 func   _point_anglesensor point_anglesensor
 0x1000fbcd func   _move_rope move_rope
+0x1000fbd2 func   ?sub_100f6ec0@CGlobalEntityList@@QAEXXZ CGlobalEntityList::sub_100f6ec0
 0x1000fbe1 func   ?sub_102563f0@CBaseCombatWeapon@@QAE?AUCWeaponRollValue@@PAVCUnknown101d8a70@@H@Z CBaseCombatWeapon::sub_102563f0
 0x1000fbff func   ?vfunc267@CBaseViewModel@@QAEPAVCBaseEntity@@XZ CBaseViewModel::vfunc267
 0x1000fc1d func   ?vfunc2@CTEBreakModel@@UAEPAV1@I@Z CTEBreakModel::vfunc2

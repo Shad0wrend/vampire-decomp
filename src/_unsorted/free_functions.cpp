@@ -21766,6 +21766,81 @@ void CUnknown100f6d80::sub_100f6d80(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6ec0 size=0x123
+#include "CGlobalEntityList.h"
+
+extern "C" __declspec(dllimport) void Plat_Free(void *p);
+void sub_101cd8c0(CBaseEntity *pEnt);
+
+struct GlobalVec5
+{
+	void *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	void *m_pElements;
+};
+
+extern GlobalVec5 g_10703668;
+extern int g_10552810;
+extern char g_106cff50;
+
+struct EntHandleValue
+{
+	unsigned int m_value;
+};
+
+static inline unsigned int HandleOfIndex(CGlobalEntityList *l, unsigned int idx)
+{
+	return (l->m_Slots[idx].m_Serial << 13) | idx;
+}
+
+static inline EntHandleValue NextHandle(CGlobalEntityList *l, unsigned int slot)
+{
+	EntHandleValue r;
+	unsigned int n = l->m_pNodes[l->m_Slots[slot].m_ListIndex].m_Next;
+	if (n == 0xffff)
+		r.m_value = 0xffffffff;
+	else
+		r.m_value = HandleOfIndex(l, l->m_pNodes[(unsigned short)n].m_EntIndex);
+	return r;
+}
+
+void CGlobalEntityList::sub_100f6ec0()
+{
+	m_b18044 = 1;
+	if (m_Head != 0xffff) {
+		unsigned int h = HandleOfIndex(this, m_pNodes[m_Head].m_EntIndex);
+		while (h != 0xffffffff) {
+			unsigned int slot = h & 0x1fff;
+			CGlobalEntityList_Slot *s = &m_Slots[slot];
+			if (s->m_Serial == (int)(h >> 13) && s->m_pEntity) {
+				CBaseEntity *pEnt = s->m_pEntity->v3();
+				if (pEnt) {
+					sub_101cd8c0(pEnt);
+					h = NextHandle(this, slot).m_value;
+				}
+			}
+		}
+	}
+	sub_100f6ce0();
+	g_10703668.m_size = 0;
+	if (g_10703668.m_growSize != -1) {
+		if (g_10703668.m_pMemory) {
+			Plat_Free(g_10703668.m_pMemory);
+			g_10703668.m_pMemory = 0;
+		}
+		g_10703668.m_allocationCount = 0;
+	}
+	g_10703668.m_pElements = g_10703668.m_pMemory;
+	g_10552810 = -1;
+	g_106cff50 = 0;
+	m_n1803c = 0;
+	m_iNumEnts = 0;
+	m_b18044 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f71c0 size=0x115
 inline void *operator new(unsigned int, void *p) { return p; }
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
