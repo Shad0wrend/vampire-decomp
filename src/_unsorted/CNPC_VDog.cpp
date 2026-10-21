@@ -28,6 +28,56 @@ int CNPC_VDog::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10374130 size=0xed
+#include <math.h>
+#include "CNPC_VDog.h"
+#include "CEntityFSlots.h"
+#include "ConVar.h"
+#pragma intrinsic(fabs)
+
+extern ConVar *g_1093ad24;
+extern ConVar *g_109247ec;
+extern ConVar *g_10923e84;
+
+// TARGET: CNPC_VDog::vfunc516
+float CNPC_VDog::vfunc516()
+{
+    if (*(unsigned int *)((char *)this + 0x5d8c) & 0x2000) {
+        float flSpeed = ((CEntityFSlots *)this)->slot242();
+        float flScale = g_1093ad24->vfunc1() ? 0.0f : g_1093ad24->m_fValue;
+        float flResult = (float)fabs(flSpeed) * flScale;
+        if (flResult > 1.0f)
+            return flResult;
+        return 1.0f;
+    }
+    if (*(unsigned int *)((char *)this + 0x14b8) & 0x8000000)
+        return 45.0f;
+    int act = *(int *)((char *)this + 0xfec);
+    if (act <= 0x3c) {
+        if (act >= 0x3b)
+            goto l30;
+        switch (act) {
+        case 1:
+        case 5:
+            if (g_109247ec->vfunc1() || g_109247ec->m_nValue == 0) {
+                if (g_10923e84->vfunc1())
+                    return 0.0f;
+                return g_10923e84->m_fValue;
+            }
+l30:
+            return 30.0f;
+        case 0x13:
+            return 40.0f;
+        default:
+            return 45.0f;
+        }
+    }
+    if (act == 0x1093 || (act > 0x1093 && act <= 0x1096))
+        return 40.0f;
+    return 45.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103747e0 size=0xa4
 #include "CNPC_VDog.h"
 
