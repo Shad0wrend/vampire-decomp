@@ -2668,6 +2668,7 @@
 0x1000b1f9 func   ?vfunc212@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc212
 0x1000b1fe func   ?vfunc142@CNPC_Bullseye@@QAEHPAX@Z CNPC_Bullseye::vfunc142
 0x1000b212 func   ?sub_10341aa0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10341aa0
+0x1000b217 func   ?sub_100c46c0@@YAPAUCacheEntry@@HHMPBM0I@Z sub_100c46c0
 0x1000b21c func   ?sub_10232cb0@@YA_NXZ sub_10232cb0
 0x1000b22b func   ?vfunc134@CBloodSplat@@QAEXXZ CBloodSplat::vfunc134
 0x1000b23f func   ?sub_1013b300@@YAXABVVector@@MAAUQuaternion@@@Z sub_1013b300
