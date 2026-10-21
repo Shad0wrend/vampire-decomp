@@ -47,4 +47,5 @@ public:
 struct CAnimationLayerAdvance
 {
 	float sub_10098830(float dt, CBaseAnimatingOverlay *pEntity);	// "CAnimationLayer::StudioFrameAdvance": cycle += cycles per second * rate * dt (wrapping or clamping by the loop flag, setting the finished flag at +4), then the fade-in / fade-out weight spline, clamped to the maximum weight (+0x18); returns dt
+	void sub_10098cd0(int unused, void *pListener, void *pEntity);	// dispatches the sequence's anim events crossed by the layer's cycle step to pListener (slot 259); this is the layer minus 4 like above
 };
