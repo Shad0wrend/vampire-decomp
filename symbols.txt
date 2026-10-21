@@ -4977,6 +4977,7 @@
 0x100146b4 func   ?vfunc546@CNPC_VTest@@QAEHH@Z CNPC_VTest::vfunc546
 0x100146e6 func   ?sub_1024a310@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_1024a310
 0x100146fa func   ?sub_10357110@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10357110
+0x10014709 func   ?vfunc598@CNPC_VCop@@QAEXPAVCBaseEntity@@@Z CNPC_VCop::vfunc598
 0x1001470e func   ?sub_1035b1c0@CUnknown1035b1c0@@QAEHHHHH@Z CUnknown1035b1c0::sub_1035b1c0
 0x10014718 func   ?vfunc3@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc3
 0x1001471d func   ?sub_100bb270@CBeam@@QAEPAMXZ CBeam::sub_100bb270
