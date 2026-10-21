@@ -19795,6 +19795,33 @@ void CUnknown100c96a0::sub_100c96a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c97c0 size=0xd4
+#include "CBaseButton.h"
+#include "CBaseToggle.h"
+#include "CEHandleGet.h"
+#include "CUnknown1073dc00.h"
+extern CUnknown1073dc00 g_1073dc00;
+extern int g_106e6f7c;
+
+// TARGET: CBaseButton::sub_100c97c0
+void CBaseButton::sub_100c97c0()
+{
+    m_nState4f8 = 3;
+    if (m_flags204 & 1)
+        m_Output5a8.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0.0f);
+    if (!((char)(m_flags204 >> 13) & 1))
+        g_1073dc00.sub_101f5950((CBaseEntity *)this, g_106e6f7c, 2, 1.0f, 1.25f);
+    m_pfnThink114 = &CBaseButton::sub_100c98e0;
+    if (!m_b55d) {
+        ((CBaseToggle *)this)->sub_101c1520(&m_vec508, m_flSpeed164);
+        m_n5c0 = 0;
+    } else {
+        ((CBaseToggle *)this)->sub_101c17e0(&m_vec520, *(int *)&m_flSpeed164);
+        m_n5c0 = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c98e0 size=0x9f
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
