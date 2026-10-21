@@ -3327,6 +3327,7 @@
 0x1000f349 func   ?sub_101d5a30@CStatDefault3List@@QAEXPBDH@Z CStatDefault3List::sub_101d5a30
 0x1000f34e func   ?vfunc2@CTEBaseBeam@@UAEPAV1@I@Z CTEBaseBeam::vfunc2
 0x1000f353 func   ?sub_1002cc10@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_1002cc10
+0x1000f358 func   ?sub_101f8e20@CUnknown101f0e50@@QAEXPAVCTraitOwnerX@@H@Z CUnknown101f0e50::sub_101f8e20
 0x1000f380 func   ?sub_102dcc20@CUnk102dcc20@@QAEHXZ CUnk102dcc20::sub_102dcc20
 0x1000f39e func   ?vfunc329@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc329
 0x1000f3c1 func   ?vfunc2@CTEBeamEntPoint@@UAEPAV1@I@Z CTEBeamEntPoint::vfunc2

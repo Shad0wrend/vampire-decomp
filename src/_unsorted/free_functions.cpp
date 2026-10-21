@@ -40386,6 +40386,46 @@ void CUnknown101f0e50::sub_101f8510(CTraitOwnerX *pOwner, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f8e20 size=0xce
+#include "CUnknown101f0e50.h"
+#include "CVTraitEffectGroup_t.h"
+
+extern char g_106b8540[];
+
+struct CTraitEffectRec	// the 0x44 byte effect record
+{
+	int m_nKind;	// 0x00: 5 = remove a trait id, 6 = apply a named trait
+	const char *m_pszName;	// 0x04, doubles as the trait id for kind 5
+	char m_pad08[0x14 - 8];
+	int m_nCount;	// 0x14
+	char m_pad18[0x44 - 0x18];
+};
+
+void CUnknown101f0e50::sub_101f8e20(CTraitOwnerX *pOwner, int index)
+{
+	if (pOwner != 0) {
+		CVTraitEffectGroup_t *pGroup = sub_101f8480(index);
+		for (int i = 0; i < pGroup->m_nEffects; i++) {
+			CTraitEffectRec *pEffect = (CTraitEffectRec *)((char *)pGroup->m_pEffects + i * 0x44);
+			switch (pEffect->m_nKind) {
+			case 6:
+				if (pEffect->m_nCount > 0) {
+					for (int j = 0; j < pEffect->m_nCount; j++)
+						sub_101f9af0(pOwner, pEffect->m_pszName ? pEffect->m_pszName : g_106b8540);
+				}
+				break;
+			case 5:
+				if (pEffect->m_nCount > 0) {
+					for (int j = 0; j < pEffect->m_nCount; j++)
+						pOwner->m_Applied.sub_101f1c70((int)pEffect->m_pszName);
+				}
+				break;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9550 size=0xa
 extern int g_1074e008;
 void sub_101f9550(int value)
