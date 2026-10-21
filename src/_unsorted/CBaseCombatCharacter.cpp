@@ -472,6 +472,21 @@ int CBaseCombatCharacter::vfunc393()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10328030 size=0xa5
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+char __cdecl sub_104126a0(int act);
+
+int CBaseCombatCharacter::vfunc375(int act)
+{
+	ScopeTrace trace("CBaseCombatCharacter::NPC_EarlyTranslateActivity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (sub_104126a0(act))
+		return sub_10328380(act, -1, 0, -1);
+	return act;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10328110 size=0x78
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
