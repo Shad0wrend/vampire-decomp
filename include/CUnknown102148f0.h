@@ -24,6 +24,7 @@ public:
 	void sub_102148f0();	// starts the "idle" sequence, sets the think function, fires the output at +0x804 with itself, stamps curtime at +0x780 and, when the target entity behind +0x7d0 is live, calls its slot 242, sets its next think time to 5.0f and clears the handle
 	void sub_102143e0();
 	void sub_10214a20();	// tail-called from sub_102143e0 (stub 0x1000ff38)
+	unsigned int sub_10090ef0(int a);	// stub 0x10014ffb, returns a flag word
 	int sub_1008f7b0(const char *label);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
 	void sub_10260a50(int a);	// CAI_BaseNPC member (stub 0x1000d0b2), called directly with a sequence
 	void sub_100ac4e0(void *pFunc, int a, int b);	// CBaseEntity::ThinkSet (stub 0x10007fe5), called directly
