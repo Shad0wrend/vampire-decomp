@@ -19598,6 +19598,47 @@ bool CUnknown100bf030::sub_100bf030(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf1c0 size=0x133
+#include "bf_read.h"
+#include "bf_write.h"
+
+namespace block_100bf1c0 {
+struct bf_writeUnit : bf_write
+{
+	bf_writeUnit *sub_100bc460();
+};
+
+bf_writeUnit *bf_writeUnit::sub_100bc460()
+{
+	m_pData = 0;
+	m_nDataBytes = 0;
+	m_nDataBits = -1;
+	m_iCurBit = 0;
+	m_bOverflow = false;
+	m_bAssertOnOverflow = true;
+	m_pDebugName = 0;
+	return this;
+}
+}
+using namespace block_100bf1c0;
+
+// TARGET: bf_read::sub_100bf1c0
+void bf_read::sub_100bf1c0(int iStart, int nBits)
+{
+	int iEnd = nBits + iStart;
+	int nRemaining = m_nDataBits - iEnd;
+	bf_writeUnit bf;
+	bf.sub_100bc460();
+	bf.sub_100bc510(m_pData, m_nDataBits * 8, iStart, -1);
+	sub_100bf180(iEnd);
+	for (int i = 0; i < nRemaining; i++)
+		bf.WriteOneBit(ReadOneBit());
+	sub_100bf180(iStart);
+	m_nDataBits -= nBits;
+	m_nDataBytes = m_nDataBits >> 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf480 size=0xe7
 #include "CBitString.h"
 

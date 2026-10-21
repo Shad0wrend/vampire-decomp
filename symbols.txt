@@ -5105,6 +5105,7 @@
 0x100149fc func   ?sub_101eb1d0@CUnknown101eb1d0@@QAEXXZ CUnknown101eb1d0::sub_101eb1d0
 0x10014a06 func   _info_node_tzimisce_claw_left info_node_tzimisce_claw_left
 0x10014a0b func   ?vfunc0@CVTraitEffectGroup_t@@QAEPAV1@I@Z CVTraitEffectGroup_t::vfunc0
+0x10014a1f func   ?sub_100bf1c0@bf_read@@QAEXHH@Z bf_read::sub_100bf1c0
 0x10014a29 func   ?sub_1003e2e0@CBaseEntity@@QAEXPAV1@PAX@Z CBaseEntity::sub_1003e2e0
 0x10014a2e func   ?vfunc617@CNPC_VWerewolf@@QAE_NUCNPC_VWerewolfVec3@@HH0@Z CNPC_VWerewolf::vfunc617
 0x10014a5b func   ?sub_101f1a30@CUnknown101f1a30@@QAEHPBD@Z CUnknown101f1a30::sub_101f1a30
