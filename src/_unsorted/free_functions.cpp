@@ -26045,6 +26045,54 @@ void __fastcall sub_10181600(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101816c0 size=0x8f
+#include "CBasePlayer.h"
+
+#define OV(n) virtual void v##n();
+#define OV10(p) OV(p##0) OV(p##1) OV(p##2) OV(p##3) OV(p##4) OV(p##5) OV(p##6) OV(p##7) OV(p##8) OV(p##9)
+
+struct CHeldWeaponSlots {
+	OV(0) OV(1) OV(2) OV(3) OV(4) OV(5) OV(6) OV(7) OV(8) OV(9)
+	OV10(1) OV10(2) OV10(3) OV10(4) OV10(5) OV10(6) OV10(7) OV10(8) OV10(9)
+	OV10(10) OV10(11) OV10(12) OV10(13) OV10(14) OV10(15) OV10(16) OV10(17) OV10(18) OV10(19)
+	OV10(20) OV10(21) OV10(22) OV10(23) OV10(24) OV10(25) OV10(26) OV10(27) OV10(28) OV10(29)
+	OV10(30)
+	virtual void v310(int a);
+	OV(311) OV(312) OV(313) OV(314) OV(315) OV(316) OV(317) OV(318) OV(319) OV(320)
+	virtual void v321();
+	OV(322) OV(323) OV(324) OV(325) OV(326) OV(327) OV(328) OV(329)
+	OV10(33) OV(340) OV(341)
+	virtual char *v342(int a);
+};
+
+struct CHeldEntitySlots {
+	OV(0) OV(1) OV(2) OV(3) OV(4) OV(5) OV(6) OV(7) OV(8) OV(9)
+	OV10(1) OV10(2) OV10(3) OV10(4) OV10(5) OV10(6) OV10(7) OV10(8) OV10(9)
+	OV10(10) OV10(11) OV10(12) OV10(13) OV10(14) OV10(15) OV10(16) OV10(17) OV10(18) OV10(19)
+	OV10(20) OV10(21) OV10(22) OV10(23) OV10(24) OV10(25)
+	OV(260) OV(261) OV(262) OV(263) OV(264) OV(265)
+	virtual void v266(int a);
+};
+
+void CBasePlayer::sub_101816c0(const char *pszName)
+{
+	vfunc457(pszName, 0);
+	m_f1564 = 0;
+	CHeldWeaponSlots *pWeapon = (CHeldWeaponSlots *)sub_1032e7b0();
+	if (pWeapon) {
+		pWeapon->v310(0);
+		*(int *)((char *)pWeapon + 0x854) = -1;
+		CHeldEntitySlots *pEnt = (CHeldEntitySlots *)sub_1015d680(*(unsigned int *)((char *)pWeapon + 0x890));
+		if (pEnt) {
+			char *pszText = pWeapon->v342(0);
+			if (pszText && !*pszText)
+				pEnt->v266(0);
+		}
+		((CHeldWeaponSlots *)sub_1032e7b0())->v321();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182810 size=0x80
 #include "CUnknown10182810.h"
 
