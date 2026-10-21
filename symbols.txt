@@ -314,6 +314,7 @@
 0x10002685 func   ?sub_100b3c50@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3c50
 0x1000268a func   ?sub_100926e0@CBaseAnimating@@QAEXHHH@Z CBaseAnimating::sub_100926e0
 0x1000269e func   _info_node_chang_teleport info_node_chang_teleport
+0x100026a3 func   ?sub_10200ea0@CVStatList_t@@QAE_NH@Z CVStatList_t::sub_10200ea0
 0x100026e9 func   ?sub_1011d490@@YIXPAXHH@Z sub_1011d490
 0x10002702 func   ?sub_101b7120@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_101b7120
 0x10002716 func   ?sub_100df010@@YA_NPAUS100df010@@@Z sub_100df010

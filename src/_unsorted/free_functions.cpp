@@ -42806,6 +42806,32 @@ int CVStatList_t::sub_10200ca0(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10200ea0 size=0xd8
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CVStatActionList_t.h"
+#include "CUnknown10202060.h"
+#include "ScopeTrace.h"
+
+#define OWNER ((CUnknown10202060 *)m_pad0000)
+#define INFOS ((CVStatInfoList_t *)m_field0c)
+
+bool CVStatList_t::sub_10200ea0(int stat)
+{
+    ScopeTrace trace("CVStatList_t::DecBase", g_106b8540);
+    if (sub_102008b0(stat)) {
+        int nBase = (*(int **)m_field08)[stat];
+        if (nBase > INFOS->sub_10200370(stat)->sub_101ff010(OWNER->sub_10202060())) {
+            int nNew = nBase - 1;
+            ((CVStatActionList_t *)((char *)INFOS->sub_10200370(stat) + 0x10c))->sub_101fd940((void *)OWNER->sub_10202060(), nBase, nNew);
+            (*(int **)m_field08)[stat] = nNew;
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10201100 size=0x6c
 #include "CVStatList_t.h"
 
