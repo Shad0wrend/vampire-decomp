@@ -19,3 +19,4 @@
 	virtual bool vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d);	// slot 201 override: false for no entity; with the global flag byte 0x10924fba set (or 0x10924fb9 set and the entity having an object at +0xa8) stores 0 in *pOut and returns false; else slot 594(pEnt, a, 0, 0) must accept, the "Dominate_BrainWipe" discipline bit (sub_1033d2f0) must be clear, then CBaseEntity::vfunc201
 	char sub_100a6fa0(CBaseEntity *pEnt, int a, int *pOut, int d);	// CBaseEntity::vfunc201 (stub 0x10001b63), called directly
 	char sub_1033d2f0(unsigned int discipline);	// CBaseCombatCharacter member (stub 0x1000d3d7), called directly
+	void sub_1027c1f0();	// CAI_BaseNPC member (stub 0x1000e967): the NPC reacts to the debug "all NPCs" command: condition 0x75 / 0x76 by whether its target (+0x5c38) is the player's, slot 93, resets the look target
