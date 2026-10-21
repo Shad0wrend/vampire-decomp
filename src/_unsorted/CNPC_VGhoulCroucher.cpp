@@ -172,6 +172,24 @@ int CNPC_VGhoulCroucher::vfunc390(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037be80 size=0xac
+#include "ScopeTrace.h"
+#include "CNPC_VGhoulCroucher.h"
+
+void CNPC_VGhoulCroucher::vfunc24(void *pVictim)
+{
+	ScopeTrace trace("CNPC_VGhoulCroucher::OnVictimHitByMe", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int nObject;
+	if (pVictim == 0)
+		nObject = 0;
+	else
+		nObject = *(int *)((char *)pVictim + 0xa8);
+	if (m_b6665 && nObject)
+		sub_1037c090((void *)nObject, 10.0f);
+	sub_10006136(pVictim);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c1c0 size=0xe8
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
