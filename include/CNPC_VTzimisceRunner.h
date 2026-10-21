@@ -3,6 +3,8 @@
 // virtual below is not its real slot (599).
 #pragma once
 
+class CAI_Motor;
+
 class CNPC_VTzimisceRunner
 {
 public:
@@ -18,6 +20,10 @@ public:
 	void sub_10012855(int flags);	// sets the solid flags, called directly
 	void sub_1009b060(const float *pSize);	// stub 0x10001a50, called directly with a three-float vector
 	void sub_100b3900(unsigned int flags);	// CBaseEntity::RemoveFlag2 (stub 0x1000df44), called directly
+	void vfunc444(int *pTask);	// slot 444 "RunTask" (plain member): tasks 0x122..0x124 run AutoMovement, keep the motor looking at the position of the slot 167 object (facing target, weight -1.0f) until the time at +0x5db4 has passed, then clear +0x63ec and call sub_10273e80(0); other tasks go to CAI_BaseNPCTroika::vfunc444
+	bool sub_10280a50();	// CAI_BaseNPC::AutoMovement (stub 0x1000cf6d), called directly
+	void sub_102aacf0(int *pTask);	// CAI_BaseNPCTroika::vfunc444 (stub 0x10015c2b), called directly
+	void sub_10273e80(int a);	// called through the stub at 0x1000ac68
 
 	char pad4[0xfe0 - 4];
 	char m_b0fe0;	// +0xfe0
@@ -25,9 +31,15 @@ public:
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
 	char pad10e8[0x5b84 - 0x10e8];
 	unsigned int m_nFlags5b84;	// +0x5b84
-	char pad5b88[0x63ac - 0x5b88];
+	char pad5b88[0x5d44 - 0x5b88];
+	CAI_Motor *m_pMotor;	// +0x5d44
+	char pad5d48[0x5db4 - 0x5d48];
+	float m_flTime5db4;	// +0x5db4
+	char pad5db8[0x63ac - 0x5db8];
 	const char *m_pszName63ac;	// +0x63ac
-	char pad63b0[0x6420 - 0x63b0];
+	char pad63b0[0x63ec - 0x63b0];
+	int m_n63ec;	// +0x63ec
+	char pad63f0[0x6420 - 0x63f0];
 	int m_n6420;	// +0x6420 .. +0x642c cleared at spawn
 	int m_n6424;
 	int m_n6428;
