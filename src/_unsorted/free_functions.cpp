@@ -28358,6 +28358,53 @@ void CGameMovement::sub_10120f30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10121000 size=0xe0
+#include "CGameMovement.h"
+
+struct S121000Globals { char pad[0x10]; float frametime; };
+extern S121000Globals *g_1070b228;
+
+struct S121000Player
+{
+    char m_pad0000[0x2068];
+    int m_nDead;
+    char m_pad206c[0x2314 - 0x206c];
+    float m_flWaterJumpTime;
+};
+
+struct S121000Move
+{
+    char m_pad0000[0x40];
+    Vector m_vecVelocity;
+    char m_pad004c[0x80 - 0x4c];
+    Vector m_outWishVel;
+};
+
+#define MV ((S121000Move *)m_pPlayer)
+
+// TARGET: CGameMovement::sub_10121000
+void CGameMovement::sub_10121000(Vector &wishdir, float wishspeed, float accel)
+{
+    float wishspd = wishspeed;
+    S121000Player *player = (S121000Player *)m_pMove;
+    if (player->m_nDead == 0 && player->m_flWaterJumpTime == 0) {
+        if (wishspd > 30)
+            wishspd = 30;
+        float currentspeed = MV->m_vecVelocity.Dot(wishdir);
+        float addspeed = wishspd - currentspeed;
+        if (addspeed <= 0)
+            return;
+        float accelspeed = g_1070b228->frametime * m_fieldA0 * wishspeed * accel;
+        if (accelspeed > addspeed)
+            accelspeed = addspeed;
+        for (int i = 0; i < 3; i++) {
+            MV->m_vecVelocity[i] += accelspeed * wishdir[i];
+            MV->m_outWishVel[i] += accelspeed * wishdir[i];
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10122590 size=0xd8
 #include "CGameMovement.h"
 struct SVarA { virtual void v0(); virtual bool v1(); char pad[0x24]; float f28; };

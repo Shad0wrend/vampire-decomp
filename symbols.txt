@@ -3215,6 +3215,7 @@
 0x1000d58f func   ?sub_10064df0@@YAXPAXHPAH1HHHHDHHH@Z sub_10064df0
 0x1000d594 func   ?sub_103c8e20@@YADXZ sub_103c8e20
 0x1000d599 func   _npc_VGuard1 npc_VGuard1
+0x1000d5a8 func   ?sub_10121000@CGameMovement@@QAEXAAVVector@@MM@Z CGameMovement::sub_10121000
 0x1000d5b2 func   ?sub_103b1d10@@YADXZ sub_103b1d10
 0x1000d5bc func   _physics_prop physics_prop
 0x1000d5d0 func   ?vfunc5@CNPC_VRat@@QAEPAV1@I@Z CNPC_VRat::vfunc5
