@@ -29,3 +29,43 @@ void CTriggerWind::vfunc103()
     *(float *)((char *)this + 0x17c) = g_1070b228->curtime;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101caee0 size=0xe9
+#include "CTriggerWind.h"
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+
+#define ESD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CEngineServerTW
+{
+public:
+    ESD10(a) ESD10(b) ESD10(c)
+    virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+    virtual int IndexOfEdict(int pEdict);
+};
+
+extern CEngineServerTW *g_1070b22c;
+void sub_101434b0(int nEntIndex, int nLine, const char *pszText, int nDuration, int r, int g, int b, int a);
+
+static inline int EntIndex(CTriggerWind *p)
+{
+    int pEdict = *(int *)((char *)p + 0x2e0);
+    return g_1070b22c->IndexOfEdict(pEdict);
+}
+
+int CTriggerWind::vfunc124()
+{
+    int nTextOffset = sub_101c4f40();
+    if (*((unsigned char *)this + 0x224) & 1) {
+        char szText[255];
+        Q_snprintf(szText, 255, "Dir: %i (%i)", m_n05c8, *(int *)((char *)this + 0x5cc));
+        sub_101434b0(EntIndex(this), nTextOffset, szText, 0, 255, 255, 255, 255);
+        nTextOffset++;
+        Q_snprintf(szText, 255, "Speed: %i (%i)", m_n05b8, *(int *)((char *)this + 0x5bc));
+        sub_101434b0(EntIndex(this), nTextOffset, szText, 0, 255, 255, 255, 255);
+        nTextOffset++;
+    }
+    return nTextOffset;
+}
+// END FUNCTION

@@ -2985,6 +2985,7 @@
 0x1000db66 func   ?vfunc321@CWeaponIGeneric@@QAEXXZ CWeaponIGeneric::vfunc321
 0x1000db6b func   ?sub_1006aeb0@@YAXHHPBM0HHD@Z sub_1006aeb0
 0x1000db70 func   ?sub_104121d0@@YAXXZ sub_104121d0
+0x1000db84 func   ?vfunc124@CTriggerWind@@UAEHXZ CTriggerWind::vfunc124
 0x1000db89 func   ?sub_100aa720@@YAHH@Z sub_100aa720
 0x1000db8e func   ?sub_1030bb30@CAI_NavRoute@@QAEXXZ CAI_NavRoute::sub_1030bb30
 0x1000dbac func   ?vfunc41@CGameSign@@QAEXPAX@Z CGameSign::vfunc41
