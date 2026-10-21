@@ -12,6 +12,7 @@ class CBaseEntity;
 class CBaseCombatWeapon;
 class CBasePlayer;
 struct inputdata_t;
+struct melee_dice_roll_result;
 
 struct CBasePlayerHandleVec	// a CUtlVector<EHANDLE>
 {
@@ -83,7 +84,9 @@ public:
 	CBP_V10(se0) CBP_V10(se1) CBP_V10(se2) CBP_V10(se3) CBP_V10(se4) CBP_V10(se5) CBP_V10(se6) CBP_V10(se7) CBP_V10(se8)
 	CBP_V1(se90) CBP_V1(se91) CBP_V1(se92) CBP_V1(se93)
 	virtual void vfunc316(CGlobalEntityList_Ent *pEnt, int a, int b);	// slot 316: with an entity: unless the entity of the handle at +0x1c58 is live, answers slot 158 and differs from pEnt, takes over pEnt's handle into +0x1c5c / +0x1c60 while the activity at +0xff0 is 1 or 5 and sub_1015fd50() is -1
-	CBP_V1(se95) CBP_V1(se96) CBP_V1(se97) CBP_V1(se98) CBP_V1(se99)
+	CBP_V1(se95)
+	virtual bool vfunc318(int a, melee_dice_roll_result *pRoll, int c);	// slot 318: false without a roll; when the roll hit (AttackHit) adds the soak dice of the character's first stat list (stat 2) to it and picks the reaction activity by the roll's level (level 3: 0x1156 with a 1.0f pause, else 0x52 with 0.3f); starts the activity (sub_101644f0), copies +0x1488 to +0x6f4 and arms the timer at +0x1564; true
+	CBP_V1(se97) CBP_V1(se98) CBP_V1(se99)
 	CBP_V1(sf00) CBP_V1(sf01) CBP_V1(sf02) CBP_V1(sf03)
 	virtual bool vfunc326(int a, CBaseEntity *pOther);	// slot 326: when the active weapon's type flags (slot 360) have bit 13 or 14, false unless pOther is set and its character template (default stat item) has the byte at +0xa0; else CBaseCombatCharacter::vfunc326(a, pOther)
 	CBP_V1(sf05) CBP_V1(sf06) CBP_V1(sf07) CBP_V1(sf08) CBP_V1(sf09)
