@@ -6717,6 +6717,43 @@ void sub_100602e0(int a, int b, const int *mins, const int *maxs, int p5, int p6
 }
 // END FUNCTION
 
+// FUNCTION: 0x10060880 size=0x135
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+void sub_10009539();
+void sub_10003012();
+
+extern SendTable g_106c1c78;
+extern SendTable *g_1053dfa8;
+extern const char *g_105427ac;
+
+// TARGET: sub_10060880
+int sub_10060880()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_1000c14e("m_vecOrigin", 0xc, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_1000c14e("m_vecStart", 0x18, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_10007bfd("m_nEntity", 0x24, 4, 0xb, 1, 0, 0),
+		sub_10007bfd("m_nHitbox", 0x28, 4, 0xb, 1, 0, 0),
+		sub_10007bfd("m_nIndex", 0x2c, 4, 9, 1, 0, 0),
+		sub_10007bfd("m_bCombatEffect", 0x30, 1, 1, 1, 0, 0),
+	};
+	g_106c1c78.sub_1000e8fe(props + 1, 7, g_105427ac);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10060ac0 size=0x76
 #include "CTEDecal.h"
 
