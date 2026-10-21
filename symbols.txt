@@ -2667,6 +2667,7 @@
 0x1000b9e7 func   ?sub_1040b120@CUtlMemory192@@QAEXH@Z CUtlMemory192::sub_1040b120
 0x1000b9f1 func   _item_k_shrekhub_four_key item_k_shrekhub_four_key
 0x1000ba0a func   ?sub_101eaaa0@@YAXH@Z sub_101eaaa0
+0x1000ba14 func   ?vfunc438@CNPC_VGuard1@@QAEHXZ CNPC_VGuard1::vfunc438
 0x1000ba28 func   ?sub_10272940@CAI_BaseNPC@@QAEXPBD@Z CAI_BaseNPC::sub_10272940
 0x1000ba46 func   ?sub_10043750@S10043750@@QAEXH@Z S10043750::sub_10043750
 0x1000ba5a func   ?sub_100575e0@CBaseFire@@QAEXH@Z CBaseFire::sub_100575e0

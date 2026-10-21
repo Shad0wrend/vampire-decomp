@@ -27,3 +27,43 @@ int CNPC_VGuard1::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093b1b4.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x1037d130 size=0xcb
+#include "CNPC_VGuard1.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct GuardTargetView
+{
+	void sub_1017e6f0(int a);	// stub 0x1000c838
+};
+
+static inline GuardTargetView *GetTarget(const unsigned int &rh)
+{
+	if (rh != 0xffffffff) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[rh & 0x1fff];
+		if (pSlot->m_Serial == (int)(rh >> 13))
+			return (GuardTargetView *)pSlot->m_pEntity;
+	}
+	return 0;
+}
+
+// TARGET: CNPC_VGuard1::vfunc438
+int CNPC_VGuard1::vfunc438()
+{
+	m_n1b2c = 0x12;
+	if ((m_flags14b8 & 2) == 2) {
+		m_flags14b8 &= ~2;
+		return 0xf1;
+	}
+	if (m_nState5cc0 == 0xc) {
+		if (sub_1001482b(0x1e) && GetTarget(m_h628c)) {
+			GetTarget(m_h628c)->sub_1017e6f0(0);
+			return 0x6d;
+		}
+		sub_1026e340(1);
+	}
+	return sub_10015ad2();
+}
+// END FUNCTION
