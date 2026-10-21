@@ -26,6 +26,7 @@ public:
 	CVDmgBlock16_t *m_pEffects;	// 0x28: m_nEffects blocks of 16 bytes (kind, stat, ?, multiplier)
 
 	CVFeat_t(int a);	// 0x101e4f30: the default feat (id a at +0 and +0x10, +0x18 = 10, the rest cleared)
+	~CVFeat_t();	// the destructor run at exit for the static default feat (stub 0x1001509b)
 	void sub_101e4fe0(CVFeatKV *pKV);	// loads the feat from its key: Name, InternalName, HelpText and the Disabled flag; Msg when there is no key
 	int sub_101e5b30(void *pCharacter);	// the sum over the effects of kind 0 / 1 of the multiplier-scaled value of the effect's stat in the character's stat list of that kind (0 without a character)
 	int sub_101e5e10(void *pEntity);	// the feat's value for an entity (stub 0x10015537), used for the dice roll bonus
