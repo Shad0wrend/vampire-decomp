@@ -32291,6 +32291,25 @@ void CUnknown10170eb0::sub_10170eb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101711e0 size=0xbc
+#include "CBasePlayer.h"
+
+extern Vector g_1070d9d0;
+
+static inline float LenSqr(const Vector &v)
+{
+	return v.x * v.x + v.y * v.y + v.z * v.z;
+}
+
+void CBasePlayer::sub_101711e0(float flThreshold)
+{
+	if (flThreshold == 0.0f || !(LenSqr(m_vec1F08) + LenSqr(m_vec1EFC) > flThreshold * flThreshold)) {
+		m_vec1EFC = g_1070d9d0;
+		m_vec1F08 = g_1070d9d0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101712d0 size=0xbb
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
