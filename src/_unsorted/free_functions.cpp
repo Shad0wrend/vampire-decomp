@@ -57317,6 +57317,27 @@ void CBaseCombatCharacter::sub_10335de0(CBaseEntity *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10335ea0 size=0x8f
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CUnknown10207dd0.h"
+
+extern CUnknown10207dd0 g_1074f028;
+void __fastcall sub_1000c41e(CBaseEntity *pWeapon);	// stub 0x1000c41e for 0x10256300: lets the weapon update its owner's records
+
+// TARGET: CBaseCombatCharacter::sub_10335ea0
+void CBaseCombatCharacter::sub_10335ea0(CBaseEntity *pWeapon)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Inventory_Unwield", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pWeapon)
+	{
+		sub_1000c41e(pWeapon);
+		g_1074f028.sub_10207dd0(this, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103360a0 size=0xa0
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
