@@ -26,6 +26,12 @@ class CUnknown101e56e0 : public CUnknown101e56e0Id, public CUnknown101e56e0Name
 public:
 	char m_pad0008[0x08];
 	int m_nKind;	// 0x10
+	const char *m_pszName14;	// 0x14: the display name
+	int m_n18;	// 0x18
+	int m_nCount1c;	// 0x1c: number of entries of the first table
+	char *m_pTable20;	// 0x20: 16 byte entries (CUnknown102043a0)
+	int m_nCount24;	// 0x24: number of entries of the second table
+	char *m_pTable28;	// 0x28: 16 byte entries (CUnknown102043a0)
 
 	CUnknown101e56e0(int id) { sub_101e4f30(id); }	// constructor (stub 0x1001246d), the one of the shared default record
 	~CUnknown101e56e0() { sub_101e4f70(); }	// frees the three tables (+0x20, +0x28, +0x30)
@@ -33,6 +39,7 @@ public:
 	void sub_101e4f70();
 	int sub_101e56e0(CBaseCombatCharacter *pCharacter);	// the cost of the skill for the character (stub 0x1000f03d), clamped to its limit
 	int sub_101e5b30(void *pCharacter);	// the sum over the second table of the stat values the character has (stub 0x1000c036)
+	void sub_101e5e60(CBaseCombatCharacter *pCharacter);	// debug print of the cost formula for the character ("name<id> ( stat + stat <stat> ...):\tcost"), handed to the debug output function pointer (sub_10203dd0)
 };
 
 // The global table of these records (count at 0x10739d20, array at 0x10739d24). Find is the game's one lookup of the
