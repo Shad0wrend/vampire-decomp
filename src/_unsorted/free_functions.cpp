@@ -69140,6 +69140,40 @@ SVec3 *CUnknown102d8a90::sub_102d8a90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d8bc0 size=0xe7
+#include "CUnknown102d8bc0.h"
+#include <math.h>
+
+struct SInterestGlobals
+{
+	char pad[0xc];
+	float curtime;
+};
+extern SInterestGlobals *g_1070b228;
+extern float g_104454c4;
+
+static inline float SimpleSpline(float value)
+{
+	float valueSquared = value * value;
+	return (3 * valueSquared - 2 * valueSquared * value);
+}
+
+float CUnknown102d8bc0::sub_102d8bc0()
+{
+	float t = (g_1070b228->curtime - m_flStart) / (m_flEnd - m_flStart);
+	if (t < 0.0f || t > 1.0f)
+		return g_104454c4;
+	float flValue;
+	if (m_flRamp != 0.0f && t < 1.0f - m_flRamp)
+		flValue = 1.0 - exp(log(0.2f) / m_flRamp * t);
+	else if (t > 1.0f - m_flRamp)
+		flValue = SimpleSpline((1.0 - t) / m_flRamp);
+	else
+		flValue = 1.0f;
+	return flValue * m_flInterest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d8e50 size=0x93
 #include "CUnknown102d9040.h"
 #include "Vector.h"
