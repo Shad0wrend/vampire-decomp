@@ -17,7 +17,9 @@ public:
 	bool sub_101c53d0(CBaseEntity *pOther);	// the spawn flag 4 test (stub 0x1000763a)
 	bool sub_101c5420(CBaseEntity *pOther);	// the spawn flag 8 test (stub 0x10007d1a)
 
-	char m_pad04a4[0x564 - 0x4a4];
+	char m_pad04a4[0x55c - 0x4a4];
+	char m_bDisabled;	// 0x55c
+	char m_pad055d[0x564 - 0x55d];
 	int m_i564;
 	COutputEvent m_out568;
 	COutputEvent m_out580;
