@@ -4,6 +4,8 @@
 // vtable. The vtable has 372 slots.
 #pragma once
 
+#include "Vector.h"
+
 struct CWeaponHolder_t;
 struct CWeaponOwner;
 class CUnknown101d8a70;
@@ -42,7 +44,8 @@ public:
 	CBCW_V(100) CBCW_V(101) CBCW_V(102) CBCW_V(103) CBCW_V(104)
 	virtual void vfunc105(const char *pszName);
 	CBCW_V(106) CBCW_V(107) CBCW_V(108) CBCW_V(109)
-	CBCW_V10(11) CBCW_V10(12) CBCW_V10(13) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16) CBCW_V10(17)
+	CBCW_V10(11) CBCW_V10(12) CBCW_V10(13) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16)
+	CBCW_V(170) CBCW_V(171) CBCW_V(172) CBCW_V(173) CBCW_V(174) CBCW_V(175) CBCW_V(176) CBCW_V(177) CBCW_V(178) CBCW_V(179)
 	CBCW_V(180) CBCW_V(181) CBCW_V(182) CBCW_V(183) CBCW_V(184) CBCW_V(185) CBCW_V(186)
 	virtual CBaseEntity *vfunc187();	// "CBaseCombatWeapon::Respawn": creates a new entity of the weapon's class at the game rules' respawn spot
 	CBCW_V(188) CBCW_V(189)
@@ -50,7 +53,9 @@ public:
 	CBCW_V10(20) CBCW_V10(21)
 	CBCW_V(220) virtual float *vfunc221();	// "GetAngles"
 	CBCW_V(222) CBCW_V(223) CBCW_V(224) CBCW_V(225) CBCW_V(226) CBCW_V(227) CBCW_V(228) CBCW_V(229)
-	CBCW_V10(23) CBCW_V10(24) CBCW_V10(25) CBCW_V10(26)
+	CBCW_V10(23) CBCW_V10(24) CBCW_V10(25)
+	CBCW_V(260) CBCW_V(261) CBCW_V(262) CBCW_V(263) CBCW_V(264) CBCW_V(265) CBCW_V(266) CBCW_V(267) CBCW_V(268)
+	virtual void vfunc269(CBaseCombatWeapon *pOther, Vector vecDir);	// scales vecDir by the value slot 1 of the global at 0x1070b244 reports for the current roll slot (sub_102517e0) and, when that is not zero, hands it to slot 170 of pOther
 	CBCW_V(270) CBCW_V(271)
 	virtual char *vfunc272();
 	virtual char *vfunc273();
