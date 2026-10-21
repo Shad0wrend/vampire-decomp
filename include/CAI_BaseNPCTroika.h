@@ -74,6 +74,7 @@ public:
 	void vfunc504();
 	void vfunc505();
 	void vfunc506();
+	void vfunc507();	// slot 507: plays the "Float" sound (pitch from the value at +0x128), then stamps the float at +0x10ec with the engine time plus the "Float Sound Info" stat
 	void vfunc616();	// slot 616: base call with 0x30, then stamps curtime + 15 at +0x65bc
 	int vfunc611();	// slot 611: picks one of the table values (index at +0x64c8) for the NPC through CUnknown100ecee0::sub_100ecee0, with random switches (flags at +0x64e0 / +0x64e1, time at +0x64e4); falls back to the dword at +0x6f0 for -1
 	int sub_102c1230();	// called through the stub at 0x1000d4cc by vfunc611
