@@ -10760,6 +10760,38 @@ void CUnknown10080750::sub_10080750(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100809f0 size=0x6d
+#include "CSceneEntity.h"
+#include "COutputEvent.h"
+
+extern void *vt_1044f05c[];
+
+struct CSceneEntityView
+{
+	char m_pad0000[0x498];
+	char m_bPlaying;
+	char m_pad0499[0x4cc - 0x499];
+	COutputEvent m_Output[7];
+};
+
+// TARGET: CSceneEntity::sub_100809f0
+void CSceneEntity::sub_100809f0()
+{
+	CSceneEntityView *v = (CSceneEntityView *)this;
+	*(void ***)this = vt_1044f05c;
+	if (v->m_bPlaying)
+		sub_10082b80();
+	v->m_Output[6].sub_100cd2d0();
+	v->m_Output[5].sub_100cd2d0();
+	v->m_Output[4].sub_100cd2d0();
+	v->m_Output[3].sub_100cd2d0();
+	v->m_Output[2].sub_100cd2d0();
+	v->m_Output[1].sub_100cd2d0();
+	v->m_Output[0].sub_100cd2d0();
+	sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081890 size=0x2d
 #include "CBasePlayer.h"
 
