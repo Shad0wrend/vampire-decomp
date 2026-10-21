@@ -51504,6 +51504,54 @@ SendProp sub_102469b0(const char *pVarName, int offset, int sizeofVar, int nBits
 }
 // END FUNCTION
 
+// FUNCTION: 0x10246af0 size=0x145
+#include "SendProp.h"
+void sub_100065cd();
+void sub_10010767();
+void sub_10003f44();
+void sub_1000f308();
+void sub_1000c84c();
+void sub_1000a399();
+
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int p7, void *proxy)
+{
+    SendProp ret;
+    if (!proxy) {
+        if (sizeofVar == 1)
+            proxy = sub_100065cd;
+        else if (sizeofVar == 2)
+            proxy = sub_10010767;
+        else {
+            proxy = sub_10003f44;
+            if (sizeofVar != 4)
+                proxy = sub_100065cd;
+        }
+    }
+    if (nBits == -1)
+        nBits = sizeofVar * 8;
+    ret.m_n08 = 0;
+    ret.m_pszVarName = pVarName;
+    ret.m_n4c = offset;
+    ret.m_n0c = nBits;
+    ret.m_nFlags = flags;
+    ret.m_n1c = p7;
+    ret.m_n40 = (int)proxy;
+    if (flags & 1) {
+        if (proxy == sub_100065cd) {
+            proxy = sub_1000f308;
+            ret.m_n40 = (int)proxy;
+        } else if (proxy == sub_10010767) {
+            proxy = sub_1000c84c;
+            ret.m_n40 = (int)proxy;
+        } else if (proxy == sub_10003f44) {
+            proxy = sub_1000a399;
+            ret.m_n40 = (int)proxy;
+        }
+    }
+    return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246ca0 size=0xd5
 #include "SendProp.h"
 

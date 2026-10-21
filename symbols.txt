@@ -1590,6 +1590,7 @@
 0x10007be9 func   _func_areaportalwindow func_areaportalwindow
 0x10007bee func   ?sub_1042b110@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_1042b110
 0x10007bf8 func   ?vfunc2@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc2
+0x10007bfd func   ?sub_10246af0@@YA?AVSendProp@@PBDHHHHHPAX@Z sub_10246af0
 0x10007c07 func   _item_w_crossbow item_w_crossbow
 0x10007c20 func   ?vfunc5@CItemGWatchFancy@@QAEPAV1@I@Z CItemGWatchFancy::vfunc5
 0x10007c2f func   _item_w_baseball_bat item_w_baseball_bat
