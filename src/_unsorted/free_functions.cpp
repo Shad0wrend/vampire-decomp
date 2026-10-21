@@ -44444,6 +44444,47 @@ int *sub_101c67e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c68e0 size=0xe8
+#include "CTriggerMultiple.h"
+#include "CEHandleGet.h"
+
+struct TimeObjC {
+	char m_pad[0xc];
+	float m_flCurTime;
+};
+extern TimeObjC *g_1070b228;
+
+struct MultiView {
+	char m_pad[0x500];
+	float m_flWait;
+	char m_pad504[0x53c - 0x504];
+	unsigned int m_hActivator;
+};
+
+void sub_1000ae1b();
+void sub_10015b68();
+
+void CTriggerMultiple::sub_101c68e0(CBaseEntity *pActivator)
+{
+	MultiView *v = (MultiView *)this;
+	if (!(m_flNextThink > g_1070b228->m_flCurTime)) {
+		if (pActivator)
+			v->m_hActivator = *pActivator->vfunc1();
+		else
+			v->m_hActivator = 0xffffffff;
+		m_OnTrigger.sub_100cd660(EHandle_Get(v->m_hActivator), this, 0.0f);
+		if (v->m_flWait > 0.0f) {
+			sub_100ac4e0((int)&sub_1000ae1b, 0, 0);
+			m_flNextThink = g_1070b228->m_flCurTime + v->m_flWait;
+		} else {
+			m_pfnTouch = 0;
+			m_flNextThink = g_1070b228->m_flCurTime + 0.1;
+			sub_100ac4e0((int)&sub_10015b68, 0, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6a30 size=0x7a
 void *sub_1000db89(int);
 struct GP;
