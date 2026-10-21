@@ -29981,6 +29981,31 @@ extern "C" CBaseEntity *momentary_door()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116ff0 size=0x147
+#include "CFuncMoveLinear.h"
+
+#define EV(n) virtual void ev##n();
+#define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
+
+struct MoverV {
+	EV10(0) EV10(1) EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8) EV10(9)
+	EV10(10) EV10(11) EV10(12) EV10(13) EV10(14) EV10(15) EV10(16) EV10(17) EV10(18) EV10(19)
+	EV10(20)
+	EV(210) EV(211) EV(212) EV(213) EV(214) EV(215) EV(216) EV(217) EV(218) EV(219)
+	virtual Vector *ev220();
+};
+
+void CFuncMoveLinear::sub_10116ff0(inputdata_t &inputdata)
+{
+	MoverV *v = (MoverV *)this;
+	if (*v->ev220() == m_vecPosition2) {
+		sub_10116570(m_vecPosition1, m_flSpeed);
+	} else if (*v->ev220() == m_vecPosition1 || m_vecFinalDest == m_vecPosition1 || m_vecFinalDest == m_vecPosition1) {
+		sub_10116570(m_vecPosition2, m_flSpeed);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101171a0 size=0x6d
 #include "CFuncMoveLinear.h"
 #include "CEntityVSlots.h"
