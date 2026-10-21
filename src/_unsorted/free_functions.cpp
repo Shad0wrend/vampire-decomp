@@ -32117,6 +32117,38 @@ bool CUnk101afc50::sub_101afc50(CUnk101afc50Table *pTable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b0ab0 size=0xdc
+#include <string.h>
+#include "CSoundEmitterSystemBase.h"
+
+extern CSoundEmitterSystemBase g_1072be18;
+extern "C" __declspec(dllimport) int Q_strncasecmp(const char *s1, const char *s2, int n);
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+
+int sub_101b0ab0(const char *partial, char (*commands)[64])
+{
+    const char *cmdname = "playgamesound";
+    int current = 0; char *substring = 0;
+    long substringLen = 0;
+    if (strstr(partial, cmdname) && strlen(partial) > strlen(cmdname) + 1) {
+        substring = 1 + ((char *)partial + strlen(cmdname));
+        substringLen = strlen(substring);
+    }
+    for (int i = g_1072be18.sub_101b3220() - 1; (int)i >= 0 && (int)current < 0xc0; --i) {
+        const char *pSoundName = g_1072be18.sub_101b31d0(i);
+        if (pSoundName) {
+            if (substring) {
+                if (Q_strncasecmp(pSoundName, substring, substringLen))
+                    continue;
+            }
+            Q_snprintf(*(commands + current), 64, "%s %s", cmdname, pSoundName);
+            current++;
+        }
+    }
+    return current;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1040 size=0xa1
 struct SSoundParams
 {
