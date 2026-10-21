@@ -29395,6 +29395,44 @@ void CFire::sub_1010a370(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b470 size=0x82
+#include "CBaseEntity.h"
+#include "CFire.h"
+#include "CEHandleGet.h"
+
+struct FireGlobals_t {
+	char pad[0xc];
+	float curtime;
+};
+
+struct FireView_t {
+	char pad[0x450];
+	unsigned int hSmoke;
+	char pad2[0x48c - 0x454];
+	float flBurnOutTime;
+};
+
+struct SmokeView_t {
+	char pad[0x458];
+	float flLifetime;
+};
+
+extern FireGlobals_t *g_1070b228;
+
+void CFire::sub_1010b470()
+{
+	FireView_t *pFire = (FireView_t *)this;
+	if (pFire->flBurnOutTime < g_1070b228->curtime) {
+		sub_1010b9d0();
+	} else {
+		SmokeView_t *pSmoke = (SmokeView_t *)EHandle_Get(pFire->hSmoke);
+		if (pSmoke)
+			sub_1010a900((pFire->flBurnOutTime - g_1070b228->curtime) / pSmoke->flLifetime);
+	}
+	m_flNextThink = g_1070b228->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010be40 size=0xaf
 struct ISaveRestoreOps;
 struct datamap_t;
