@@ -47969,6 +47969,46 @@ void __fastcall sub_10250910(Mem8 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10250c50 size=0x6c
+#include "CBaseAnimating.h"
+
+struct CWeaponHandleOwner
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22();
+	virtual void vfunc23(void *pObject);
+};
+
+extern int vt_1049757c[];
+extern CWeaponHandleOwner *g_10723940;
+void sub_10250560(int pWeapon);
+void __fastcall sub_100cd2d0(void *pList);
+void __fastcall sub_101fa680(void *pDmg);
+
+void CBaseCombatWeapon::sub_10250c50()
+{
+	void *pObject = *(void **)((char *)this + 0x8dc);
+	*(int **)this = vt_1049757c;
+	if (pObject) {
+		g_10723940->vfunc23(pObject);
+		*(void **)((char *)this + 0x8dc) = 0;
+	}
+	sub_10250560((int)this);
+	sub_100cd2d0((char *)this + 0x8f8);
+	sub_100cd2d0((char *)this + 0x8e0);
+	char *pDmg = (char *)this + 0x848;
+	int n = 3;
+	do {
+		pDmg -= 0x44;
+		sub_101fa680(pDmg);
+	} while (--n);
+	((CBaseAnimating *)this)->sub_1008b3c0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252240 size=0x38
 #include "CAI_BaseNPCTroika.h"
 
