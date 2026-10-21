@@ -46,4 +46,9 @@ public:
 	void sub_102beda0(CTakeDamageInfo *pInfo);	// CAI_BaseNPCTroika::vfunc390, called directly (stub 0x10012611)
 	void sub_10395750(int a, CTakeDamageInfo *pInfo, void *pWeapon);	// stub 0x10008170
 	float vfunc603(float *pCurrent, float *pTarget);	// slot 603: picks a random turn angle (global random stream 0x1070b244, slot 1 RandomFloat) from how far *pCurrent is from *pTarget (32.0f window): within it +-30; below it *pCurrent follows the target and a coin flip (slot 2) picks 170..179 or -170..-179; above it a coin flip picks 80..120 or -80..-120
+	void sub_10398890(const float *pOrigin, int nMode, Vector *pOutPoint, Vector *pOutAxis);	// the tip trace points: pOutPoint = the origin + the vector at +0x6290 scaled, plus (mode 4) or minus the vector at +0x629c scaled; pOutAxis = the vector at +0x6290
+
+	char m_pad03e0[0x6290 - 0x3e0];
+	Vector m_vecAxis6290;	// +0x6290
+	Vector m_vecExtent629c;	// +0x629c
 };
