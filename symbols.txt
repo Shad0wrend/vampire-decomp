@@ -2431,6 +2431,7 @@
 0x1000bb36 func   ?vfunc448@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc448
 0x1000bb4f func   ?sub_100584a0@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::sub_100584a0
 0x1000bb95 func   ?sub_10401f80@@YAHXZ sub_10401f80
+0x1000bb9a func   ?sub_101e10e0@CUnknown101e0f00@@QAE_NPBDPAH@Z CUnknown101e0f00::sub_101e10e0
 0x1000bba4 func   ?sub_103bcb60@CTzimisceScheduleUnit@@QAEHH@Z CTzimisceScheduleUnit::sub_103bcb60
 0x1000bba9 func   _item_w_bush_hook item_w_bush_hook
 0x1000bbb8 func   ?sub_100931d0@CBaseAnimating@@QAEDHHH@Z CBaseAnimating::sub_100931d0
