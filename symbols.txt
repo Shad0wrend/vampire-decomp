@@ -3610,6 +3610,7 @@
 0x100104b5 func   ?vfunc5@CItemGWirelessCamera2@@QAEPAV1@I@Z CItemGWirelessCamera2::vfunc5
 0x100104c4 func   ?vfunc5@CParamsParticle@@QAEPAV1@I@Z CParamsParticle::vfunc5
 0x100104c9 func   _item_k_fu_office_key item_k_fu_office_key
+0x100104e2 func   ?vfunc124@CBaseTrigger@@UAEHXZ CBaseTrigger::vfunc124
 0x100104ec func   ?vfunc5@CWeaponMelee_Sheriff_Sword@@QAEPAV1@I@Z CWeaponMelee_Sheriff_Sword::vfunc5
 0x100104f1 func   ?vfunc103@CEnvParticle@@QAEXXZ CEnvParticle::vfunc103
 0x10010519 func   ?sub_1013fd20@CUtlMemory96@@QAEXH@Z CUtlMemory96::sub_1013fd20
