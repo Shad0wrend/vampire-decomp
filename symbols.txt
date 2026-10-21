@@ -1567,6 +1567,7 @@
 0x1000745f func   _item_k_sarcophagus_key item_k_sarcophagus_key
 0x1000746e func   ?sub_10092460@CBaseAnimating@@QAE_NHH@Z CBaseAnimating::sub_10092460
 0x10007482 func   ?sub_101a2a80@@YIXPAHHH@Z sub_101a2a80
+0x10007487 func   ?sub_102016a0@CVStatList_t@@QAEXH@Z CVStatList_t::sub_102016a0
 0x1000748c func   ?vfunc103@CBaseToggle@@UAEXXZ CBaseToggle::vfunc103
 0x100074c3 func   _activity_copy_prop activity_copy_prop
 0x100074d2 func   ?sub_1033ce10@CBaseCombatCharacter@@QAE_NII@Z CBaseCombatCharacter::sub_1033ce10
