@@ -61747,6 +61747,61 @@ extern "C" GP *item_w_mac_10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10235bf0 size=0xf8
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+struct CKickOwner
+{
+	char m_pad0000[0x2430];
+	float m_flMinA;	// 0x2430
+	float m_flMaxA;	// 0x2434
+	float m_flMinB;	// 0x2438
+	float m_flMaxB;	// 0x243c
+};
+
+struct CKickWeapon
+{
+	CKickOwner *sub_102517b0();	// stub 0x10010ea6: the weapon's owner
+};
+
+struct CWeaponKick
+{
+	float m_flPhase;	// 0x00
+	float m_flPeriod;	// 0x04
+	float m_flTimeLeft;	// 0x08
+	float m_flFrom;	// 0x0c
+	float m_flTo;	// 0x10
+
+	void sub_10235bf0(float flFrameTime, CKickWeapon *pWeapon);
+};
+
+extern float g_104454c4;
+
+// TARGET: CWeaponKick::sub_10235bf0
+void CWeaponKick::sub_10235bf0(float flFrameTime, CKickWeapon *pWeapon)
+{
+	if (pWeapon && pWeapon->sub_102517b0())
+	{
+		float flMinA = pWeapon->sub_102517b0()->m_flMinA;
+		float flMaxA = pWeapon->sub_102517b0()->m_flMaxA;
+		float flMinB = pWeapon->sub_102517b0()->m_flMinB;
+		float flMaxB = pWeapon->sub_102517b0()->m_flMaxB;
+		m_flTimeLeft = m_flTimeLeft - flFrameTime;
+		if (m_flTimeLeft <= g_104454c4)
+		{
+			m_flTo = m_flFrom;
+			m_flFrom = g_1070b244->vfunc1(flMinA, flMaxA);
+			m_flPeriod = m_flTimeLeft = g_1070b244->vfunc1(flMinB, flMaxB);
+		}
+		m_flPhase = m_flPhase + ((m_flTo - m_flFrom) * (m_flTimeLeft / m_flPeriod) + m_flFrom) * flFrameTime;
+		if (m_flPhase > 3.141592653589793)
+			m_flPhase = m_flPhase - 6.283185307179586;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10235ea0 size=0x72
 #include "SendProp.h"
 
