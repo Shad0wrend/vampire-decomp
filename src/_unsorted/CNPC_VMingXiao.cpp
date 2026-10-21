@@ -13,6 +13,41 @@ int CNPC_VMingXiao::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10392660 size=0xff
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+#include "CNPC_VMingXiao.h"
+
+struct CMingXiaoPrecacheIface {
+	virtual void vfunc0(const char *pszName, int a);
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CMingXiaoPrecacheIface *g_1070b248;
+extern const char *g_1064339c[];
+void sub_101d0ec0(const char *pszClassname);
+
+void CNPC_VMingXiao::vfunc104()
+{
+	sub_10298ad0();
+	g_1070b22c->vfunc17((int)"Ming_xiao_slimetrail_emitter", 0);
+	g_1070b22c->vfunc17((int)"Ming_xiao_slimetrail_emitter2", 0);
+	g_1070b22c->vfunc17((int)"Ming_xiao_tentacle_damage_emitter", 0);
+	g_1070b22c->vfunc17((int)"Ming_xiao_tentacle_burst_emitter", 0);
+	g_1070b22c->vfunc17((int)"Ming_xiao_death_emitter", 0);
+	g_1070b22c->vfunc17((int)"Ming_xiao_death_emitter2", 0);
+	g_1070b22c->vfunc17((int)"Ming_xiao_death_proxy_emitter", 0);
+	g_1070b22c->vfunc17((int)"Ming_xiao_death_proxy_emitter2", 0);
+	g_1070b22c->vfunc17((int)"Ming_xiao_vomit_emitter", 0);
+	g_1070b22c->vfunc17((int)"Ming_xiao_transform_emitter", 0);
+	g_1070b22c->vfunc17((int)"Ming_xiao_transform_emitter2", 0);
+	g_1070b248->vfunc0(g_1064339c[0], 0);
+	sub_101d0ec0("item_w_mingxiao_melee");
+	sub_101d0ec0("item_w_mingxiao_tentacle");
+	sub_101d0ec0("item_w_mingxiao_spit");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10394090 size=0x6c
 #include "CNPC_VMingXiao.h"
 struct CUnknown102e0a60 { void sub_102e0a60(int); };
