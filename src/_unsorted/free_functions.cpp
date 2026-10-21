@@ -13418,6 +13418,82 @@ void CBaseAnimating::sub_10090890(float delay)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10090950 size=0x170
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CResetSeqSlots
+{
+	PV10(0) PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV100(1)
+	PV10(20) PV10(21) PV10(22) PV10(23)
+	PV(240) PV(241) PV(242) PV(243) PV(244) PV(245) PV(246)
+	virtual void v247(int sequence);
+};
+
+struct CResetSeqFields
+{
+	char m_pad0000[0x19c];
+	unsigned int m_nFlags;	// 0x19c
+	char m_pad01a0[0x560 - 0x1a0];
+	float m_flGroundSpeed;	// 0x560
+	char m_pad0564[0x5a8 - 0x564];
+	unsigned int m_hEffectsEnt;	// 0x5a8
+	char m_pad05ac[1];
+	char m_pad05ad[3];
+	unsigned int m_nEffects;	// 0x5b0
+	char m_pad05b4[0x650 - 0x5b4];
+	int m_nOldSequence;	// 0x650
+	float m_flIdealSpeed;	// 0x654
+	int m_n658;
+	char m_bFinished;	// 0x65c
+	char m_bLoops;	// 0x65d
+	char m_pad065e[0x6f0 - 0x65e];
+	int m_nSequence;	// 0x6f0
+	float m_flPlaybackRate;	// 0x6f4
+	char m_pad06f8[0x70c - 0x6f8];
+	char m_b70c;
+};
+
+struct CResetSeqUnit : CBaseAnimating
+{
+	float sub_10091490(int sequence, int unused);
+	void sub_100963d0();
+};
+
+void sub_101cd940(CBaseEntity *pEnt);
+
+// TARGET: CBaseAnimating::sub_10090950
+void CBaseAnimating::sub_10090950()
+{
+	ScopeTrace trace("CBaseAnimating::ResetSequenceInfo ", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CResetSeqFields *f = (CResetSeqFields *)this;
+	if (f->m_nSequence == -1)
+		f->m_nSequence = 0;
+	((char *)f)[0x5ac] = 0;
+	f->m_flGroundSpeed = sub_10091310(f->m_nSequence, 0);
+	f->m_flIdealSpeed = ((CResetSeqUnit *)this)->sub_10091490(f->m_nSequence, 0);
+	f->m_bLoops = sub_10090ef0(f->m_nSequence) & 1;
+	f->m_flPlaybackRate = 1.0f;
+	f->m_bFinished = 0;
+	f->m_n658 = 0;
+	f->m_nFlags |= f->m_nEffects | 0x300;
+	f->m_nEffects = 0;
+	if (f->m_b70c)
+		sub_100963d0();
+	sub_101cd940((CBaseEntity *)EHandle_Get(f->m_hEffectsEnt));
+	if (f->m_nOldSequence != f->m_nSequence) {
+		((CResetSeqSlots *)this)->v247(f->m_nSequence);
+		f->m_nOldSequence = f->m_nSequence;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10090b20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
