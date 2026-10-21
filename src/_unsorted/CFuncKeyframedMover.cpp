@@ -1,6 +1,34 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10223cc0 size=0x138
+#include "CFuncKeyframedMover.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+typedef bool (__fastcall *MoverSlot223Fn)(CFuncKeyframedMover *pThis);
+
+void CFuncKeyframedMover::vfunc103()
+{
+	sub_100b3580(0x1000);
+	CBaseEntity::vfunc103();
+	int unused;
+	const char **ppName = vfunc9(&unused);
+	vfunc105(*ppName ? *ppName : g_106b8540);
+	CCollisionProperty *pCollision;
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		pCollision = (CCollisionProperty *)((char *)this + 0x270);
+		pCollision->sub_100dc480(1);
+	}
+	if (m_flags204 & 1) {
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		pCollision->sub_100dc580(pCollision->m_usSolidFlags | 4);
+	}
+	((MoverSlot223Fn)(*(void ***)this)[223])(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10223e50 size=0x92
 #include "CFuncKeyframedMover.h"
 

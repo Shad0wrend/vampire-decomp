@@ -3482,6 +3482,7 @@
 0x1000f8bc func   ?sub_100f6bb0@@YGXPAUSEntityObject@@@Z sub_100f6bb0
 0x1000f8c6 func   ?sub_103109a0@CUtlVector4@@QAEHHHPBH@Z CUtlVector4::sub_103109a0
 0x1000f907 func   ?sub_102c66f0@UtlVec8@@QAEPAU1@HH@Z UtlVec8::sub_102c66f0
+0x1000f90c func   ?vfunc103@CFuncKeyframedMover@@UAEXXZ CFuncKeyframedMover::vfunc103
 0x1000f916 func   ?vfunc5@CWeaponMelee_ChangBlade@@QAEPAV1@I@Z CWeaponMelee_ChangBlade::vfunc5
 0x1000f925 func   ?sub_100c73b0@@YAPAUSPoseHdr@@PAU1@H@Z sub_100c73b0
 0x1000f92f func   ?sub_1012d0a0@@YAPAHXZ sub_1012d0a0
