@@ -4,7 +4,8 @@
 
 struct CUnknown101dcc80Record	// 0x2c bytes
 {
-	char m_data[0x2c];
+	int m_nSlot;	// 0x00: which view the particle belongs to (0 third person, 1 first person)
+	char m_data[0x28];
 
 	CUnknown101dcc80Record *sub_101dc850();	// constructor body (stub 0x10014e70), returns this
 };
