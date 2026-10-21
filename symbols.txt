@@ -73,6 +73,7 @@
 0x10001537 func   ??_GIRecipientFilter@@UAEPAXI@Z ??_GIRecipientFilter@@UAEPAXI@Z
 0x10001541 func   ?sub_10101e30@@YAPAHXZ sub_10101e30
 0x10001550 func   ?sub_101db9a0@@YIXPAD@Z sub_101db9a0
+0x1000155f func   ?sub_1042edb0@@YIXPAUFadeEntView@@@Z sub_1042edb0
 0x10001564 func   ?sub_1035ed00@@YADXZ sub_1035ed00
 0x1000156e func   ?vfunc340@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc340
 0x1000157d func   ?sub_103b15e0@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::sub_103b15e0

@@ -93910,6 +93910,46 @@ CSprite *sub_1042eb80(int a, int b, int c, int d, bool animate)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042edb0 size=0x7c
+#include "CBaseEntity.h"
+
+struct FadeGlobals {
+	char pad[0xc];
+	float curtime;
+};
+extern FadeGlobals *g_1070b228;
+
+struct FadeEntView {
+	char m_pad0000[0x164];
+	float m_f164;
+	char m_pad0168[0x17c - 0x168];
+	float m_flNextThink;
+	char m_pad0180[0x1a3 - 0x180];
+	unsigned char m_nAlpha;
+	char m_pad01a4[0x210 - 0x1a4];
+	int m_iHealth;
+	char m_pad0214[0x46c - 0x214];
+	float m_f46c;
+	char m_pad0470[4];
+	float m_f474;
+};
+
+void __fastcall sub_1042edb0(FadeEntView *pThis)
+{
+	float dt = g_1070b228->curtime - pThis->m_f474;
+	pThis->m_f46c = dt * pThis->m_f164 + pThis->m_f46c;
+	int n = (int)(pThis->m_iHealth * dt);
+	if (n > pThis->m_nAlpha) {
+		pThis->m_nAlpha = 0;
+		((CBaseEntity *)pThis)->sub_100ae150();
+		return;
+	}
+	pThis->m_nAlpha -= n;
+	pThis->m_flNextThink = g_1070b228->curtime;
+	pThis->m_f474 = g_1070b228->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042fb20 size=0x22
 extern int g_106af554;
 extern int g_106af5dc;
