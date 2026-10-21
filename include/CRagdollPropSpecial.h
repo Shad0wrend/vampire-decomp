@@ -16,7 +16,7 @@ public:
 	virtual void vfunc155(); virtual void vfunc156(); virtual void vfunc157(); virtual void vfunc158(); virtual void vfunc159();
 	virtual void vfunc160(); virtual void vfunc161(); virtual void vfunc162(); virtual void vfunc163(); virtual void vfunc164();
 	virtual void vfunc165(); virtual void vfunc166(); virtual void vfunc167(); virtual void vfunc168(); virtual void vfunc169();
-	virtual void vfunc170(); virtual void vfunc171(); virtual void vfunc172(); virtual void vfunc173(); virtual void vfunc174();
+	virtual void vfunc170(); virtual void vfunc171(); virtual void vfunc172(); virtual void vfunc173(); virtual void vfunc174(CBaseEntity *pOther);
 	virtual void vfunc175(); virtual void vfunc176(); virtual void vfunc177(); virtual void vfunc178(); virtual void vfunc179();
 	virtual void vfunc180(); virtual void vfunc181(); virtual void vfunc182(); virtual void vfunc183(); virtual void vfunc184();
 	virtual void vfunc185(); virtual void vfunc186(); virtual void vfunc187(); virtual void vfunc188(); virtual void vfunc189();
@@ -24,7 +24,8 @@ public:
 
 	char m_pad03e0[0x103c - 0x3e0];
 	char m_b103c;
-	char m_pad103d[0x1044 - 0x103d];
+	char m_pad103d[0x1040 - 0x103d];
+	float m_f1040;
 	float m_f1044;
 	float m_f1048;
 	CRagdollPropSpecial *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
