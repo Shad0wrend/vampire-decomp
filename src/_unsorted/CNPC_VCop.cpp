@@ -69,3 +69,58 @@ void CNPC_VCop::vfunc442(int *pEvent)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10372cc0 size=0xc9
+#include "CNPC_VCop.h"
+
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+	EntInfo *e;
+	return (h != 0xffffffff && (e = &g_10566458->m_entries[h & 0x1fff], e->m_serial == (int)(h >> 13))) ? e->m_pEntity : 0;
+}
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CCopSlots
+{
+	S100(a) S100(b) S100(c) S100(d) S10(e0) S10(e1) S10(e2) S10(e3) S10(e4) S10(e5)
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3();
+	virtual int vfunc464();	// the NPC state
+	void sub_10273790(const char *pszMessage, int a);
+	void sub_102b4fb0(CBaseEntity *pTarget, int a);	// CAI_BaseNPCTroika::vfunc597
+};
+
+struct CNPC_VCopUnit
+{
+	virtual void v0();
+	virtual unsigned int *vfunc1();	// GetRefEHandle
+	void sub_1017f650();
+};
+
+void CNPC_VCop::vfunc597(CBaseEntity *pTarget, int a)
+{
+	if (pTarget == ResolveHandle(m_h628c)) {
+		if (!ResolveHandle(*(unsigned int *)((char *)this + 0x6664))) {
+			if (((CCopSlots *)this)->vfunc464() == 2) {
+				CNPC_VCopUnit *pPlayer;
+				if (pTarget == 0)
+					pPlayer = 0;
+				else
+					pPlayer = *(CNPC_VCopUnit **)((char *)pTarget + 0xa8);
+				pPlayer->sub_1017f650();
+				if (pPlayer)
+					*(unsigned int *)((char *)this + 0x6664) = *pPlayer->vfunc1();
+				else
+					*(unsigned int *)((char *)this + 0x6664) = 0xffffffff;
+			}
+		}
+		((CCopSlots *)this)->sub_10273790("Player D_HT 10", 0);
+	}
+	((CCopSlots *)this)->sub_102b4fb0(pTarget, a);
+}
+// END FUNCTION
