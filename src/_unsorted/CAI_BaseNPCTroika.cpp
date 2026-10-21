@@ -9,6 +9,26 @@ void CAI_BaseNPCTroika::vfunc416(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028de90 size=0x7d
+#include "CAI_BaseNPCTroika.h"
+extern char g_10920534;
+extern __declspec(dllimport) void DevMsg(const char *fmt, ...);
+extern "C" __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+void sub_10013304(CAI_BaseNPCTroika *pNpc, const char *pszText);
+void CAI_BaseNPCTroika::vfunc17(const char *pszFormat, int arg)
+{
+	char szCopy[512];
+	char szText[512];
+	sub_10004011(pszFormat, arg, szText, 512);
+	if (g_10920534) {
+		Q_strncpy(szCopy, pszFormat, 512);
+		sub_10013304(this, szCopy);
+	} else {
+		DevMsg(szText);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028ef20 size=0x76
 #include "CAI_BaseNPCTroika.h"
 char CAI_BaseNPCTroika::vfunc587(int unused)

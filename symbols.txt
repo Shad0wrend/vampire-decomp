@@ -3913,6 +3913,7 @@
 0x10012d14 func   ?sub_1003e6c0@CBaseEntity@@QAEXPAV1@PAX@Z CBaseEntity::sub_1003e6c0
 0x10012d1e func   ?sub_10202c80@CUnknown10202c80@@QAEXXZ CUnknown10202c80::sub_10202c80
 0x10012d23 func   ?sub_101fde60@CVStatInfo_t@@QAEHPBD@Z CVStatInfo_t::sub_101fde60
+0x10012d28 func   ?vfunc17@CAI_BaseNPCTroika@@QAEXPBDH@Z CAI_BaseNPCTroika::vfunc17
 0x10012d2d func   _item_k_kiki_key item_k_kiki_key
 0x10012d3c func   ?sub_103566a0@CNPC_Bullseye@@QAEPAV1@XZ CNPC_Bullseye::sub_103566a0
 0x10012d55 func   ?sub_101f4b20@CUnknown101f4b20@@QAEXXZ CUnknown101f4b20::sub_101f4b20
