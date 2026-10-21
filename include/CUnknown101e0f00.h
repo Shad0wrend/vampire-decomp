@@ -99,4 +99,5 @@ public:
 	void sub_101e3730(void *pSource, void *pTarget, unsigned int mask, int flag);	// applies the entry's effect (stub 0x1000ae07)
 	void sub_101e3400(void *pSource, void *pTarget, int a, int b);	// "ActivateEffect" by reference: finds the entry, applies it to the target when sub_101e1a60 accepts the pair or the target is a CNPC_VPlayerController (dynamic cast of a CBaseCombatCharacter)
 	void sub_101e4220(CBasePlayer *pPlayer);	// "CVTgt_DisciplineFXMgr_t::UpdateSupernaturalLevel": when the player's default stat list has a positive stat 0x19, hands the level of the "Thaumaturgy_Bloodshield" entry to the player's sub_1017df50 (time -1.0f)
+	void sub_101e3380(void *pSource, void *pTarget, int id);	// "ActivateEffect" by discipline id (stub 0x10005c0e): prepares the pair (sub_101e3560) and applies the entry (sub_101e3730 with flag -1)
 };
