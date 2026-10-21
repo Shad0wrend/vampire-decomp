@@ -36481,6 +36481,28 @@ struct CUnknown101e4a90 {
 void CUnknown101e4a90::sub_101e4a90() { slot266(); }
 // END FUNCTION
 
+// FUNCTION: 0x101e4fe0 size=0x9b
+#include "CVFeat_t.h"
+
+extern void (__cdecl *g_109f3628)(const char *pszFormat, ...);	// Msg
+int *__cdecl sub_10203ed0(int *pOut, const char *pszString);
+int *__cdecl sub_102038e0(int *pOut, CVFeatKV *pKV, const char *pszKey);
+
+void CVFeat_t::sub_101e4fe0(CVFeatKV *pKV)
+{
+	if (pKV) {
+		int nTemp;
+		m_iName = *sub_10203ed0(&nTemp, pKV->GetString("Name", ""));
+		m_iInternalName = *sub_102038e0(&nTemp, pKV, "InternalName");
+		m_iHelpText = *sub_10203ed0(&nTemp, pKV->GetString("HelpText", ""));
+		if (pKV->GetInt("Disabled", 0))
+			m_flags |= 1;
+	} else {
+		g_109f3628("Unable to load VFeat data\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e7c50 size=0x8e
 #include "CUnknown101e7c50.h"
 
