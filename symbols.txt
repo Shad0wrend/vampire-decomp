@@ -2093,6 +2093,7 @@
 0x1000a169 func   ?vfunc5@CBaseVampireSkillEntity@@QAEPAV1@I@Z CBaseVampireSkillEntity::vfunc5
 0x1000a16e func   ?sub_10030910@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030910
 0x1000a178 func   ?sub_101e0040@CUnknown101e0040@@QAEPAV1@XZ CUnknown101e0040::sub_101e0040
+0x1000a196 func   ?sub_10399ef0@@YG_NPAXHPAD11H@Z sub_10399ef0
 0x1000a19b func   _ai_goal_standoff ai_goal_standoff
 0x1000a1a5 func   _prop_dynamic prop_dynamic
 0x1000a1af func   ?vfunc5@CTESprite@@UAEXXZ CTESprite::vfunc5

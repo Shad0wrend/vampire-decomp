@@ -66558,6 +66558,39 @@ void __fastcall sub_10399c70(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10399ef0 size=0xb5
+struct CSurfaceProps
+{
+	virtual void a0(); virtual void a1(); virtual void a2();
+	virtual unsigned short v3(const char *pszName);
+};
+
+struct CTraceBuf { char data[1400]; };
+
+extern CSurfaceProps *g_10723944;
+extern char g_1055022c[];
+extern void sub_100c4600(CTraceBuf *, int, char *, char *);
+extern char sub_100c4d50(void *, char *, char *, CTraceBuf *, int, char *);
+
+bool __stdcall sub_10399ef0(void *a1, int a2, char *a3, char *a4, char *a5, int a6)
+{
+	CTraceBuf buf;
+	sub_100c4600(&buf, a6, a4, a5);
+	if (sub_100c4d50(a1, a4, a5, &buf, a2, a3)) {
+		int idx = *(int *)(a5 + *(int *)(a5 + 8) + *(int *)(a3 + 0x50) * 0x20);
+		int off = *(int *)(a4 + 0xf4);
+		*(char **)(a3 + 0x3c) = g_1055022c;
+		*(unsigned short *)(a3 + 0x42) = 0x8000;
+		int rel = idx * 0xa0;
+		CSurfaceProps *pSurf = g_10723944;
+		char *pElem = rel + off + a4;
+		*(unsigned short *)(a3 + 0x40) = pSurf->v3(pElem + *(int *)(pElem + 0x98));
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039aa20 size=0x98
 #include "CNPC_VMingXiao.h"
 #include "CBaseCombatCharacter.h"
