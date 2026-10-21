@@ -1457,6 +1457,83 @@ bool CAI_BaseNPCTroika::vfunc347(int event, char *pszName, float *pA, float *pB,
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c21c0 size=0xf4
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+
+int sub_1023bd00();
+bool __fastcall sub_10175180(CBaseCombatCharacter *pChar);
+
+#define PV1(p) virtual void p();
+#define PV10(p) PV1(p##0) PV1(p##1) PV1(p##2) PV1(p##3) PV1(p##4) PV1(p##5) PV1(p##6) PV1(p##7) PV1(p##8) PV1(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CTroikaSlots404
+{
+	PV100(ta) PV100(tb) PV100(tc) PV100(td)
+	PV1(te0) PV1(te1) PV1(te2) PV1(te3)
+	virtual int vfunc404(CBaseCombatCharacter *pOther);
+};
+
+struct CTroikaCheckView : public CBaseCombatCharacter
+{
+	char sub_100b5190();	// stub 0x10014da8
+};
+
+struct CTroikaOtherView : public CBaseCombatCharacter
+{
+	char sub_10146b20(CAI_BaseNPCTroika *pNPC);	// stub 0x1000983b
+};
+
+struct CTroikaWorldView
+{
+	char pad[0x4ac];
+	int m_n4ac;
+};
+CTroikaWorldView *sub_1023bd00_w();
+
+// TARGET: CAI_BaseNPCTroika::vfunc295
+bool CAI_BaseNPCTroika::vfunc295(CBaseCombatCharacter *pOther)
+{
+	CTroikaCheckView *pSelf = (CTroikaCheckView *)this;
+	if (!pOther)
+		return false;
+	if (!*(int *)((char *)this + 0x128))
+		return false;
+	if (!pSelf->vfunc158())
+		return false;
+	if (!pOther->vfunc158())
+		return false;
+	if (pSelf->sub_10341aa0())
+		return false;
+	if (pSelf->sub_100b5190())
+		return false;
+	if (!*((char *)this + 0x1088))
+		return false;
+	if ((unsigned char)(*(unsigned int *)((char *)this + 0x5b64) >> 2) & 1)
+		return false;
+	if (*(unsigned int *)((char *)this + 0x14b8) & 0x80000)
+		return false;
+	if (sub_102c1170())
+		return false;
+	if (sub_10175180(pOther))
+		return false;
+	if (!((CTroikaOtherView *)pOther)->sub_10146b20(this))
+		return false;
+	if (pSelf->sub_1033e2b0())
+		return false;
+	if (*(unsigned int *)((char *)this + 0x14bc) & 0x10000000)
+		return false;
+	CTroikaWorldView *pWorld = (CTroikaWorldView *)sub_1023bd00();
+	if (pWorld && pWorld->m_n4ac)
+		return false;
+	int r = ((CTroikaSlots404 *)this)->vfunc404(pOther);
+	if (r == 1 || r == 2)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c48b0 size=0x146
 #include "CAI_BaseNPCTroika.h"
 
