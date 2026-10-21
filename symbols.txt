@@ -898,6 +898,7 @@
 0x100047af func   ?vfunc5@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc5
 0x100047be func   ?vfunc103@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc103
 0x100047c3 func   _item_w_tzimisce2_head item_w_tzimisce2_head
+0x100047dc func   ?sub_101d20a0@@YAXPAUEntV@@0@Z sub_101d20a0
 0x1000482c func   _item_w_tzimisce2_claw item_w_tzimisce2_claw
 0x10004854 func   ?vfunc5@CItemContainerAnimated@@QAEPAV1@I@Z CItemContainerAnimated::vfunc5
 0x10004868 func   ?vfunc5@CLogicPythonCheck@@QAEPAV1@I@Z CLogicPythonCheck::vfunc5

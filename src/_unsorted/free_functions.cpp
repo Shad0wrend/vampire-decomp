@@ -44256,6 +44256,45 @@ CUnknown1070b22c_Edict *sub_101d1800(ViewerEntity *pViewer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d20a0 size=0x112
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct EntV {
+    V100(a) V100(b) V10(c0) V10(c1)
+    virtual const float *GetOrigin();
+};
+struct PVSVec {
+    float x, y, z;
+    PVSVec() { x = 0; y = 0; z = 0; }
+    ~PVSVec() {}
+};
+extern int g_105a0130;
+extern char g_10733928[];
+void sub_101d20a0(EntV *a, EntV *b)
+{
+    static PVSVec s_last;
+    const float *p = a->GetOrigin();
+    float v[3];
+    v[0] = p[0];
+    v[1] = p[1];
+    v[2] = p[2];
+    if (s_last.x != v[0] || s_last.y != v[1] || s_last.z != v[2]) {
+        s_last.x = v[0];
+        s_last.y = v[1];
+        s_last.z = v[2];
+        int cluster = g_1070b22c->vfunc30(v);
+        if (cluster != g_105a0130) {
+            g_105a0130 = cluster;
+            g_1070b22c->vfunc31(cluster, 0x2000, g_10733928);
+        }
+    }
+    g_1070b22c->vfunc32(b->GetOrigin(), g_10733928);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2460 size=0x9a
 #include "CRecipientFilter.h"
 
