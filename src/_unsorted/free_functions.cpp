@@ -52347,6 +52347,34 @@ EntL *sub_10256920(int unused, EntL *pEnt, unsigned int *pBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10256c20 size=0x11a
+#include "SendProp.h"
+
+struct SendTable
+{
+	bool sub_10247240(SendProp *pProps, int nProps, const char *pNetTableName);	// SendTable::Init (stub 0x1000e8fe)
+};
+
+extern SendTable g_1088aeb0;
+extern const char *g_105c6374;	// "DT_LocalWeaponData"
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, void *varProxy, int extra);	// SendPropInt (stub 0x10007bfd)
+
+int sub_10256c20()
+{
+	static SendProp props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246af0("m_iMagazineCurAmts[ 0 ]", 0x74c, 4, 9, 0, 0, 0),
+		sub_10246af0("m_iMagazineCurAmts[ 1 ]", 0x750, 4, 9, 0, 0, 0),
+		sub_10246af0("m_iAmmoTypes[ 0 ]", 0x744, 4, 9, 0, 0, 0),
+		sub_10246af0("m_iAmmoTypes[ 1 ]", 0x748, 4, 9, 0, 0, 0),
+		sub_10246af0("m_nViewModelIndex", 0x890, 4, 1, 1, 0, 0),
+		sub_10246af0("m_bIsJammed", 0x89a, 1, 1, 1, 0, 0),
+	};
+	g_1088aeb0.sub_10247240(&props[1], 6, g_105c6374);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257200 size=0x11
 #include "CBaseCombatWeapon.h"
 
