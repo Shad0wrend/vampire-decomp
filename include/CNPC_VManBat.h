@@ -13,7 +13,11 @@ public:
 	int m_n6674;
 	char m_pad6678[0x6684 - 0x6678];
 	float m_f6684;
-	char m_pad6688[0x66a4 - 0x6688];
+	char m_pad6688[0x668c - 0x6688];
+	unsigned int m_h668c;	// entity handle of the ragdoll the bat holds (released by sub_1038f660)
+	unsigned int m_h6690;	// entity handle released by sub_1038f660
+	char m_b6694;	// handed to the ragdoll when it is let go
+	char m_pad6695[0x66a4 - 0x6695];
 	unsigned int m_h66a4;	// entity handle released by vfunc144
 	char m_pad66a8[0x66b0 - 0x66a8];
 	char m_b66b0;	// set once the minions have been told about the target
@@ -33,6 +37,7 @@ public:
 	void sub_1038fd40();	// the reverse of sub_1038fc80: while the flag at +0x66b0 is set, every living \"ManBat_Minion\" NPC with a target count is released (sub_1026d0c0), told about the bat's target (relationship 1 / 10) and scheduled (sub_102ae840 with 2 when slot 167 of the bat answers, else 1); then clears the flag
 	void vfunc144(int arg);	// slot 144: sub_1038f020(1), sub_1038c170(2), sub_1038f660, sub_1038fd40, releases the entity behind the handle at +0x66a4, then CNPC_VVampire::vfunc144
 	void sub_1038f020(int a);	// stub 0x10015591, called by vfunc144 first
-	void sub_1038f660();	// stub 0x10005ca9
+	void sub_1038f660();	// stub 0x10005ca9: while carried (flag 5 of +0x14b8), lets the ragdoll of the handle at +0x668c go (with the byte at +0x6694), removes the entity of the handle at +0x6690 and clears the carry flag (sub_1038f600(0))
 	void sub_103c4f40(int arg);	// CNPC_VVampire::vfunc144 (stub 0x1000b8a2), called directly
+	void sub_1038f600(char bOn);	// sets / clears bit 5 of the flags at +0x14b8
 };
