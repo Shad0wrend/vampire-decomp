@@ -138,10 +138,17 @@ public:
 	int sub_102c47e0(const char *pszName, const char *pszCaller);	// "LookupSchedule": the local id of the schedule pszName (also tried as "SCHED_<name>"), -1 with an error message naming pszCaller when it is unknown
 	void sub_102c0bb0();	// resets the NPC's look target: tells the global at 0x1070b248 (slot 6) about the engine index of this edict with 5, runs slot 275, FadeoutExpressions, sub_102c0ca0; then, when slot 613 holds and the state is not 0xf1, takes the activity slot 611 gives (if not negative) as the ideal state 0xf1 and, unless the byte at +0x6080 is set, plays it (+0x6f0, +0x6f8 = 0, +0x174 = curtime, +0xfec = 0xf1, sub_10090950)
 	void sub_1029ea40(inputdata_t *pInput);	// "ProcessTweakParam" input handler: the input as text (converted when it is not a string) is copied into a 256 byte buffer and split at ", " into a name and a value handed to slot 585(name, value); with fewer than two tokens DevMsg's "ERROR: %s - Argument to ProcessTweakParam(%s) is in the wrong format."
+	void sub_102c0270(int a);	// scripted-sequence cleanup: clears the byte at +0x6495, sets the byte at +0x1590, counts +0x64bc, runs sub_102c0ca0 (stub 0x1000e4d5) and CBaseCombatCharacter::sub_10107050(a), calls slot 306(a, 0) unless bit 3 of the flags at +0x204 is set, cancels the scripted sequence entity of the handle at +0x5d74 (CCineNPC::sub_101a8c30) and hands (a, this, 0) to the sub-object at +0x5f44 (stub 0x10010794)
+	void sub_1000e4d5();	// stub of 0x102c0ca0, called directly
+	void sub_10107050(int a);	// CBaseCombatCharacter member (stub 0x1000fdd0), called directly
 
-	char m_pad0004[0x14bc - 4];
+	char m_pad0004[0x204 - 4];
+	unsigned int m_flags204;
+	char m_pad0208[0x14bc - 0x208];
 	unsigned int m_flags14bc;
-	char m_pad14c0[0x5bc4 - 0x14c0];
+	char m_pad14c0[0x1590 - 0x14c0];
+	char m_b1590;
+	char m_pad1591[0x5bc4 - 0x1591];
 	char m_b5bc4;
 	char m_pad5bc5[0x5d74 - 0x5bc5];
 	unsigned int m_h5d74;
@@ -156,7 +163,11 @@ public:
 	float m_f6440;
 	CBaseEntity *m_p6444;
 	unsigned int m_h6448;
-	char m_pad644c[0x64cc - 0x644c];
+	char m_pad644c[0x6495 - 0x644c];
+	char m_b6495;
+	char m_pad6496[0x64bc - 0x6496];
+	int m_n64bc;
+	char m_pad64c0[0x64cc - 0x64c0];
 	float m_f64cc;
 	char m_pad64d0[0x6554 - 0x64d0];
 	unsigned int m_h6554;
