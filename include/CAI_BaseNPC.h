@@ -175,4 +175,7 @@ public:
 	int sub_10289fe0();	// the activity for the action animation named by the scripted entity (handle at +0x5d74, name at +0x5f50): 9 by default, the model's activity of that name, or 9 / 0x18 depending on whether the model has a sequence of that name
 	void sub_10272940(const char *label);	// "CAI_BaseNPC::ResetSequence"-like: LookupSequence(label); a found sequence is set (sub_10260a50), the ground-speed-like float at +0x6f8 cleared unless the sequence is unchanged and the byte at +0x65d is set, then the object at +0x5d44 updated (sub_102e1cf0); else DevWarning "%s has no sequence named:%f" and the sequence at +0x6f0 cleared
 	int sub_10348890(CRestore *pRestore);	// CBaseCombatCharacter::vfunc127 (stub 0x10010d48), called directly
+	bool sub_1026fb40();	// throttled check: when the class flags (slot 513) have bit 21 and the time at +0x5da0 has passed, pushes it ahead and, unless sub_10007e19() holds, asks sub_10005dd5 about a (300, 300, 100) box
+	int sub_10007e19();	// CBaseCombatCharacter member (the stub at 0x10007e19 for 0x1032e7b0), called directly
+	int sub_10005dd5(float *pBox);	// CBaseCombatCharacter member (the stub at 0x10005dd5 for 0x10333ad0), called directly with a three-float box
 };
