@@ -29754,6 +29754,41 @@ void CFire::sub_1010a370(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a7f0 size=0xa1
+#include "CBaseEntity.h"
+#include "CFire.h"
+#include "CSceneEntity.h"
+
+struct FireStartView_t {
+	char pad[0x458];
+	int n458;
+	char pad45c[0x460 - 0x45c];
+	int n460;
+	char pad464[0x468 - 0x464];
+	float flSize;
+	char pad46c[0x494 - 0x46c];
+	CSceneOutputList output494;
+};
+
+void sub_101cf390(CBaseEntity *pEnt, const float *pMins, const float *pMaxs);
+
+void CFire::sub_1010a7f0()
+{
+	FireStartView_t *pView = (FireStartView_t *)this;
+	float flHalf = pView->flSize * 0.5f;
+	float flQuarter = flHalf * 0.5f;
+	Vector vecMaxs(flQuarter, flQuarter, pView->flSize);
+	Vector vecMins(-flQuarter, -flQuarter, 0.0f);
+	sub_101cf390(this, &vecMins.x, &vecMaxs.x);
+	sub_1010a370(pView->n458, pView->flSize * 0.00390625f);
+	pView->output494.sub_100cd660(this, this, 0);
+	void (CFire::*pfnThink)() = &CFire::sub_1010b430;
+	sub_100ac4e0(*(int *)&pfnThink, 0, 0);
+	pView->n460 = 0;
+	sub_1010b430();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b470 size=0x82
 #include "CBaseEntity.h"
 #include "CFire.h"
