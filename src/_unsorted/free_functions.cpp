@@ -27333,6 +27333,51 @@ void __cdecl sub_1012a610(CBaseEntity *pOwner, int nGibs, void *a, void *b, cons
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a6e0 size=0xd3
+#include "CGib.h"
+
+__declspec(dllimport) void Warning(const char *, ...);
+CBaseEntity *sub_10136580(const char *pszClassname);	// CreateEntityByName
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long nVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+extern char g_10538764[];	// CBaseEntity type descriptor
+extern char g_10566074[];	// CGib type descriptor
+
+// the object at 0x1070b244: slot 2 answers a random number in a range
+struct CRandom_1012a6e0
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual int vfunc2(int nMin, int nMax);
+};
+extern CRandom_1012a6e0 *g_1070b244;
+extern int g_1070ba34;
+
+void sub_1012a6e0(CBaseEntity *pOwner, int nCount, int nType)
+{
+	for (int i = nCount; i > 0; i--) {
+		CGib *pGib = (CGib *)__RTDynamicCast(sub_10136580("gib"), 0, g_10538764, g_10566074, 0);
+		if (!pGib)
+			Warning("classname %s used to create wrong class type\n");
+		if (g_1070ba34 == 1) {
+			pGib->sub_1012b080("models/germangibs.mdl");
+			pGib->m_nBody = g_1070b244->vfunc2(0, 3);
+		} else {
+			switch (nType) {
+			case 0:
+				pGib->sub_1012b080("models/gibs/hgibs.mdl");
+				pGib->m_nBody = g_1070b244->vfunc2(1, 5);
+				break;
+			case 1:
+				pGib->sub_1012b080("models/gibs/agibs.mdl");
+				pGib->m_nBody = g_1070b244->vfunc2(0, 3);
+				break;
+			}
+		}
+		pGib->sub_1012a1d0(pOwner, 300.0f, 400.0f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b290 size=0x49
 void *sub_1000db89(int);
 struct GP;
