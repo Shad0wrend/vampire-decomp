@@ -3259,6 +3259,7 @@
 0x1000e8d6 func   ??0CVStatAction_t@@QAE@HH@Z CVStatAction_t::CVStatAction_t
 0x1000e8ef func   ?sub_1027f8f0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_1027f8f0
 0x1000e917 func   ?sub_103323d0@CUnknown103323d0@@QAEXPAUinputdata_t@@@Z CUnknown103323d0::sub_103323d0
+0x1000e926 func   ?sub_1040c080@CUnknown1040cb60@@QAEMXZ CUnknown1040cb60::sub_1040c080
 0x1000e930 func   ?sub_100b4a40@UtlMem3@@QAEXH@Z UtlMem3::sub_100b4a40
 0x1000e93f func   ?sub_1036b6b0@@YG_NH@Z sub_1036b6b0
 0x1000e94e func   ?vfunc491@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc491

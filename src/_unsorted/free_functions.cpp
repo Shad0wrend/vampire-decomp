@@ -84081,6 +84081,62 @@ void CUnknown1040cb60::sub_1040bfc0(const float *a, const float *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040c080 size=0x148
+#include "CUnknown1040cb60.h"
+#include "CGlobalEntityList.h"
+
+struct PhysObjA { virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9();
+virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7(); virtual void c8(); virtual void c9();
+virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8(); virtual void d9();
+virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6();
+virtual void GetPosition(float *pOut, int n); };
+
+extern CGlobalEntityList *g_10566458;
+extern float g_104454c0;
+extern float g_104454c4;
+extern float g_104bea38;
+extern double g_10449270;
+extern float (__cdecl *g_10579660)(float);
+__declspec(dllimport) void DevMsg(const char *, ...);
+void __fastcall sub_100143ee(void *);
+
+float CUnknown1040cb60::sub_1040c080()
+{
+	if (m_f38 <= g_104454c4)
+		return g_104454c4;
+	if (m_hEntity != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_hEntity & 0x1fff];
+		if (s->m_Serial == (int)(m_hEntity >> 13) && s->m_pEntity) {
+			PhysObjA *phys = *(PhysObjA **)(0x36c + (char *)s->m_pEntity);
+			if (phys) {
+				float p[3];
+				float dx;
+				phys->GetPosition(p, 0); dx = m_vPos[0] - p[0];
+				float dy; dy = m_vPos[1] - *(p + 1);
+				float dz = m_vPos[2] - p[2];
+				float dist; float t0 = dz * dz; float t1 = dx * dx; dist = g_10579660(t0 + dy * dy + t1);
+				if (m_f38 > g_104454c4) {
+					if (m_f38 > g_104454c0)
+						m_f38 = 1.0f;
+					if (dist / m_f38 > m_f24)
+						dist *= g_10449270;
+					m_f3c = (g_104454c0 - m_f38) * m_f3c + dist * m_f38;
+					m_f38 = 0;
+					return m_f3c;
+				}
+			} else {
+				DevMsg("Object attached to Physcannon has no physics object\n");
+				sub_100143ee(this);
+				return g_104bea38;
+			}
+		}
+	}
+	m_f38 = 0;
+	return m_f3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040c430 size=0xa0
 #include "CUnknown1040cb60.h"
 #include "CBaseEntity.h"
