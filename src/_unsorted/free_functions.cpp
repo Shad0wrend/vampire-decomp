@@ -27894,6 +27894,111 @@ void sub_1013bb40(const Vector &p1, const Vector &p2, const Vector &p3, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d0e0 size=0x18d
+#include "Vector.h"
+
+struct CPUInformation
+{
+	int m_Size;
+	bool m_bRDTSC : 1, m_bCMOV : 1, m_bFCMOV : 1, m_bSSE : 1, m_bSSE2 : 1, m_b3DNow : 1, m_bMMX : 1;
+};
+
+extern const CPUInformation *(*g_109f3674)();
+extern bool g_10717df0;
+extern bool g_10717df8;
+extern bool g_10717df9;
+extern bool g_10717dfa;
+extern bool g_10717dfb;
+extern void (*g_10579664)();
+extern void (*g_10579668)();
+extern void (*g_10579670)();
+extern void (*g_10579674)();
+extern void (*g_10579678)();
+extern void (*g_1057967c)();
+void sub_10010f5f();
+void sub_10003445();
+void sub_1000a9de();
+void sub_10001dd4();
+void sub_100154ab();
+void sub_10007d29();
+void sub_10011437();
+void sub_10001bf4();
+void sub_1000b42e();
+void sub_1000200e();
+void sub_10001221();
+void sub_100090c0();
+void sub_10011b49();
+void sub_10012a35();
+void sub_100125e4();
+void sub_1000c02c();
+void sub_1000e908();
+void sub_10001b13();
+void sub_10013610();
+void sub_1000dbe8();
+void sub_10014439();
+void sub_100011b3();
+void sub_10013c64(float gamma, float texGamma, float brightness, int overbright);
+
+// TARGET: sub_1013d0e0
+void sub_1013d0e0(float gamma, float texGamma, float brightness, int overbright, bool bAllow3DNow, bool bAllowSSE, bool bAllowSSE2, bool bAllowMMX)
+{
+	const CPUInformation *pi = g_109f3674();
+
+	g_10579664 = sub_1000a9de;
+	g_10579668 = sub_1000a9de;
+	pfSqrt = (float (*)(float))sub_10010f5f;
+	pfVectorNormalize = (float (__fastcall *)(Vector &))sub_10003445;
+	g_10579670 = sub_10001dd4;
+	g_10579674 = sub_100154ab;
+	g_10579678 = sub_10007d29;
+	g_1057967c = sub_10011437;
+
+	if (bAllowMMX && pi->m_bMMX) {
+		g_10717df9 = true;
+	} else {
+		g_10717df9 = false;
+	}
+
+	if (bAllow3DNow && pi->m_b3DNow) {
+		g_10717df8 = true;
+		pfVectorNormalize = (float (__fastcall *)(Vector &))sub_1000b42e;
+		g_10579670 = sub_1000200e;
+		g_10579674 = sub_10001221;
+		pfSqrt = (float (*)(float))sub_100090c0;
+		g_10579664 = sub_10001bf4;
+		g_10579668 = sub_10001bf4;
+	} else {
+		g_10717df8 = false;
+	}
+
+	if (bAllowSSE && pi->m_bSSE) {
+		g_10717dfa = true;
+		pfVectorNormalize = (float (__fastcall *)(Vector &))sub_10003445;
+		g_10579670 = sub_10011b49;
+		g_10579674 = sub_10012a35;
+		pfSqrt = (float (*)(float))sub_100125e4;
+		g_10579664 = sub_1000c02c;
+		g_10579668 = sub_1000e908;
+		g_10579678 = sub_10001b13;
+		g_1057967c = sub_10013610;
+	} else {
+		g_10717dfa = false;
+	}
+
+	if (bAllowSSE2 && pi->m_bSSE2) {
+		g_10717dfb = true;
+		g_10579678 = sub_1000dbe8;
+		g_1057967c = sub_10014439;
+	} else {
+		g_10717dfb = false;
+	}
+
+	g_10717df0 = true;
+	sub_100011b3();
+	sub_10013c64(gamma, texGamma, brightness, overbright);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d900 size=0x72
 extern int g_10579690[4][2][3];
 bool sub_1013d900(int a, int b, int c, int *out)
