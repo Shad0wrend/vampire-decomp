@@ -42350,6 +42350,66 @@ void NameSet::sub_10206980(const char *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208e50 size=0xa5
+#include "CUnknown10208e50.h"
+#include "inputdata_t.h"
+#include "CGlobalEntityList.h"
+#include "CBaseCombatWeapon.h"
+#include "ScopeTrace.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CUnknown10208e50Slots
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV100(1) PV100(2)
+	PV10(30) PV10(31) PV10(32) PV10(33) PV10(34) PV10(35) PV10(36) PV10(37)
+	PV(380) PV(381) PV(382)
+	virtual void vfunc383(CBaseCombatWeapon *pWeapon, int a);
+};
+
+struct CEntityWeaponField
+{
+	char m_pad0000[0xa0];
+	CBaseCombatWeapon *m_pWeapon;
+};
+
+extern CGlobalEntityList g_106eb5d8;
+
+#define VALUE_NAME(dst) \
+	{ \
+		const char **pp; \
+		if (pVal->fieldType == 2) { \
+			pp = &pVal->iszValue; \
+		} else { \
+			pInput = 0; \
+			pp = (const char **)&pInput; \
+		} \
+		dst = *pp; \
+		if (!dst) \
+			dst = g_106b8540; \
+	}
+
+// TARGET: CUnknown10208e50::sub_10208e50
+void CUnknown10208e50::sub_10208e50(inputdata_t *pInput)
+{
+	variant_t *pVal = &pInput->value;
+	const char *pszName;
+	VALUE_NAME(pszName)
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, pszName, (CBaseEntity *)this, 0);
+	while (pEnt) {
+		CEntityWeaponField *pField = (CEntityWeaponField *)pEnt;
+		if (pField->m_pWeapon && !pField->m_pWeapon->sub_102521f0())
+			((CUnknown10208e50Slots *)this)->vfunc383(pField->m_pWeapon, 1);
+		VALUE_NAME(pszName)
+		pEnt = g_106eb5d8.sub_100f7770(pEnt, pszName, (CBaseEntity *)this, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209a20 size=0x7c
 #include "CItemContainer.h"
 struct Sub { void *pEnt; unsigned int serial; };

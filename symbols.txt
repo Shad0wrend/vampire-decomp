@@ -3214,6 +3214,7 @@
 0x1000f10f func   ?sub_10051a40@CDisciplineParticleUnit@@QAEXXZ CDisciplineParticleUnit::sub_10051a40
 0x1000f12d func   _item_w_sledgehammer item_w_sledgehammer
 0x1000f132 func   ?vfunc370@CWeaponRanged@@QAEXPAHPAX@Z CWeaponRanged::vfunc370
+0x1000f137 func   ?sub_10208e50@CUnknown10208e50@@QAEXPAUinputdata_t@@@Z CUnknown10208e50::sub_10208e50
 0x1000f13c func   ?sub_10105270@CExpressionTable@@QAEHHH@Z CExpressionTable::sub_10105270
 0x1000f141 func   ?vfunc431@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc431
 0x1000f14b func   ?sub_101d3430@CTraceEntList@@QAEXH@Z CTraceEntList::sub_101d3430
