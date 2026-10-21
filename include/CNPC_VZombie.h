@@ -14,4 +14,5 @@ public:
 	void sub_10015b13(CUnknown101c2a50 *pInfo, int b, char *pTrace);	// CAI_BaseNPC::vfunc141 (stub 0x10015b13), called directly
 	bool vfunc201(CBaseCombatCharacter *pEnt, int b, int c, int d);	// slot 201 "CNPC_VZombie::FVisible": scope trace (entity name); when pEnt is the player record at +0x9c of the entity slot 167 gives, true unless that player passes CBaseCombatCharacter::sub_10146a80, else CAI_BaseNPCTroika::vfunc201(pEnt, b, c, 0); the fourth argument is not used
 	bool sub_1000dbcf(CBaseCombatCharacter *pEnt, int b, int c, int d);	// CAI_BaseNPCTroika::vfunc201 (stub 0x1000dbcf), called directly
+	virtual void vfunc105(const char *pszModel);	// slot 105 "CNPC_VZombie::SetModel": CAI_BaseNPCTroika::vfunc105, then the sound group (+0xb4) of the male / female zombie name (+0xc0) with the kind +0xbc = 2
 };
