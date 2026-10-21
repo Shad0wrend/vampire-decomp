@@ -588,6 +588,7 @@
 0x10003571 func   ?sub_102469b0@@YA?AVSendProp@@PBDHHHHH@Z sub_102469b0
 0x10003580 func   ?sub_10058200@CUnknown10058200@@QAEXH@Z CUnknown10058200::sub_10058200
 0x100035b2 func   ?vfunc420@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc420
+0x100035c1 func   ?sub_102c4680@CAI_BaseNPCTroika@@QAE_NPBD@Z CAI_BaseNPCTroika::sub_102c4680
 0x100035d0 func   ?sub_102e2610@CAI_Motor@@QAEHXZ CAI_Motor::sub_102e2610
 0x100035d5 func   ??0CRecipientFilter@@QAE@XZ CRecipientFilter::CRecipientFilter
 0x100035e4 func   ?vfunc106@CBaseCombatCharacter@@UAEXPBD@Z CBaseCombatCharacter::vfunc106

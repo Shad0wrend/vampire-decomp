@@ -67302,6 +67302,47 @@ bool CAI_BaseNPCTroika::sub_102c44e0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4680 size=0x108
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown101e8080.h"
+
+struct CTroikaFollowerFields
+{
+	char m_pad0000[0x6484];
+	float m_flBackAway;
+	float m_flWalkTo;
+	float m_flRunTo;
+};
+
+extern CUnknown101e8080 g_10739d08;
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+
+// TARGET: CAI_BaseNPCTroika::sub_102c4680
+bool CAI_BaseNPCTroika::sub_102c4680(const char *pszType)
+{
+	CTroikaFollowerFields *p = (CTroikaFollowerFields *)this;
+	float *pRun = &p->m_flRunTo;
+	float *pWalk = &p->m_flWalkTo;
+	float *pBack = &p->m_flBackAway;
+	bool bFound = g_10739d08.sub_101e8c90(pszType, (int *)pBack, (int *)pWalk, (int *)pRun);
+	if (*pBack + 10.0f > *pWalk) {
+		DevMsg("WARNING:  FollowerDistanceBackAway(%f) + overlap(%f) > FollowerDistanceWalkTo(%f)\n", *pBack, 10.0, *pWalk);
+		DevMsg("          If they overlay, NPC will behave erratically.\n");
+		*pWalk = *pBack + 10.0f;
+		DevMsg("          Changing FollowerDistanceWalkTo to %f\n", *pWalk);
+		DevMsg("          NPC is using Follower Type (%s)\n", pszType);
+	}
+	if (*pWalk + 10.0f > *pRun) {
+		DevMsg("WARNING:  FollowerDistanceWalkTo(%f) + overlap(%f) > FollowerDistanceRunTo(%f)\n", *pWalk, 10.0, *pRun);
+		DevMsg("          If they overlay, NPC will behave erratically.\n");
+		*pRun = *pWalk + 10.0f;
+		DevMsg("          Changing FollowerDistanceRunTo to %f\n", *pRun);
+		DevMsg("          NPC is using Follower Type (%s)\n", pszType);
+	}
+	return bFound;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c47e0 size=0x99
 #include "CAI_BaseNPCTroika.h"
 #include <stdio.h>
