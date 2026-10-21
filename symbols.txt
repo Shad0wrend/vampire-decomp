@@ -3553,6 +3553,7 @@
 0x1000ef8e func   _ambient_soundscheme ambient_soundscheme
 0x1000ef98 func   ?sub_10076990@@YAPBDH@Z sub_10076990
 0x1000ef9d func   ?vfunc5@CWeaponIArmor_Hvy_Leather@@QAEPAV1@I@Z CWeaponIArmor_Hvy_Leather::vfunc5
+0x1000efa2 func   ?vfunc367@CWeaponMelee_TzimisceMelee@@UAEHHMM@Z CWeaponMelee_TzimisceMelee::vfunc367
 0x1000efb1 func   ?vfunc2@CTETracer@@UAEPAV1@I@Z CTETracer::vfunc2
 0x1000efb6 func   _item_k_lucky_star_murder_key item_k_lucky_star_murder_key
 0x1000efbb func   ?sub_10334500@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_10334500
