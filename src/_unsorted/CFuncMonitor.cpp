@@ -23,6 +23,38 @@ bool CFuncMonitor::vfunc32(void *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101153f0 size=0x84
+#include "CFuncMonitor.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+inline CGlobalEntityList_Ent *LookupEntity(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+	if (pSlot->m_Serial != (int)(h >> 13))
+		return 0;
+	return pSlot->m_pEntity;
+}
+
+// TARGET: CFuncMonitor::vfunc77
+void CFuncMonitor::vfunc77()
+{
+	if (!sub_10014da8() && LookupEntity(m_hCamera.m_Index))
+	{
+		unsigned int h = *(volatile unsigned int *)&m_hCamera.m_Index;
+		CGlobalEntityList_Slot *pSlot;
+		CGlobalEntityList_Ent *pCamera = (h != 0xffffffff && (pSlot = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13)) ? pSlot->m_pEntity : 0;
+		((CEntityVSlots *)this)->slot42((CEntityVSlots *)pCamera);
+		m_hCamera.m_Index = 0xffffffff;
+	}
+	sub_100011cc();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10115af0 size=0x1e
 #include "CFuncMonitor.h"
 
