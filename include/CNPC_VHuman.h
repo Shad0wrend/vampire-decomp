@@ -18,4 +18,6 @@ public:
 	int sub_10295710(int act);	// CAI_BaseNPCTroika::vfunc376 (stub 0x1000fb14), called directly
 	// Slot 600 override: same as CAI_BaseNPCTroika::sub_102b57c0.
 	virtual char vfunc600(int unused);
+	// Slot 463 implementation (stub 0x10011234), called directly by the Guard override; two arguments.
+	void vfunc463(int a, int b);
 };
