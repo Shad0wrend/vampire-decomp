@@ -1,6 +1,50 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f4e70 size=0x97
+#include "CWeaponLockpick.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+
+struct CHandleX {
+    unsigned int m_Index;
+    CBaseEntity *Get() const
+    {
+        if (m_Index != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_Index & 0x1fff];
+            if (s->m_Serial == (int)(m_Index >> 13))
+                return (CBaseEntity *)s->m_pEntity;
+        }
+        return 0;
+    }
+};
+
+typedef void (__fastcall *PFN_Void)(void *);
+
+void CWeaponLockpick::vfunc319()
+{
+    sub_10253ea0();
+    void *pOwner = sub_102521f0();
+    CBaseCombatCharacter *pChar;
+    if (pOwner == 0)
+        pChar = 0;
+    else
+        pChar = *(CBaseCombatCharacter **)((char *)pOwner + 0xa8);
+    if (!vfunc314() && pChar) {
+        CHandleX *h = (CHandleX *)((char *)pChar + 0xea4);
+        if (!h->Get()) {
+            CBaseEntity *pUnarmed = (CBaseEntity *)pChar->sub_10335950("item_w_unarmed");
+            if (pUnarmed)
+                h->m_Index = *pUnarmed->vfunc1();
+            else
+                h->m_Index = 0xffffffff;
+        }
+        ((PFN_Void)(*(void ***)pChar)[456])(pChar);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4f40 size=0x78
 #include "CWeaponLockpick.h"
 struct CLockpickGlobals { char pad[0xc]; float curtime; };
