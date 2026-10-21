@@ -3852,6 +3852,7 @@
 0x10011c0c func   ?vfunc600@CNPC_VHuman@@UAEDH@Z CNPC_VHuman::vfunc600
 0x10011c1b func   ?vfunc347@CAI_BaseNPCTroika@@QAE_NHPADPAM111@Z CAI_BaseNPCTroika::vfunc347
 0x10011c2a func   ?vfunc5@CGameText@@QAEPAV1@I@Z CGameText::vfunc5
+0x10011c34 func   ?sub_102c0270@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_102c0270
 0x10011c39 func   ?sub_10095d80@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10095d80
 0x10011c43 func   ?vfunc5@CFuncRotating@@QAEPAV1@I@Z CFuncRotating::vfunc5
 0x10011c48 func   ?vfunc461@CNPC_VSabbatLeader@@QAEHXZ CNPC_VSabbatLeader::vfunc461

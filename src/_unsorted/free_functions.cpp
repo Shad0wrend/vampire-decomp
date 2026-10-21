@@ -52708,6 +52708,49 @@ void CUnknown102becb0::sub_102becb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c0270 size=0xbf
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CCineNPC.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CAI_Sub5f44
+{
+    void sub_10010794(int a, CAI_BaseNPCTroika *pNPC, int b);
+};
+
+static inline CBaseEntity *LookupHandle(const unsigned int *pHandle)
+{
+    if (*pHandle == 0xffffffff)
+        return 0;
+    CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[*pHandle & 0x1fff];
+    if (pSlot->m_Serial == (int)(*pHandle >> 13))
+        return (CBaseEntity *)pSlot->m_pEntity;
+    return 0;
+}
+
+static inline bool FlagBit3(const unsigned int *pFlags)
+{
+    return ((*pFlags >> 3) & 1) != 0;
+}
+
+void CAI_BaseNPCTroika::sub_102c0270(int a)
+{
+    m_b6495 = 0;
+    m_b1590 = 1;
+    m_n64bc++;
+    sub_1000e4d5();
+    sub_10107050(a);
+    if (!FlagBit3(&m_flags204))
+        ((CEntityVSlots *)this)->slot306(a, 0);
+    if (LookupHandle(&m_h5d74))
+        ((CCineNPC *)LookupHandle(&m_h5d74))->sub_101a8c30();
+    ((CAI_Sub5f44 *)((char *)this + 0x5f44))->sub_10010794(a, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c0bb0 size=0xb8
 #include "CAI_BaseNPCTroika.h"
 #include "IVEngineServer.h"
