@@ -22,7 +22,7 @@
 		return &s_default;
 	}
 
-	// Slot 86 "CBaseCombatCharacter::ShouldTransmit"-like (declared as a plain member; CBaseEntity::vfunc86 is the same slot).
+	// Slot 86 "ShouldTransmit"-like (declared as a plain member; CBaseEntity::vfunc86 is the same slot).
 	char vfunc86(int a, int b, int c, int d, int e);	// scope trace (entity name), true while the force-transmit time at +0x90 is still ahead of curtime or the flag byte at +0x14e3 + (engine slot 35 index of b) is set, else CBaseEntity::sub_100ab020(a, b, c, d, e)
 	char sub_100ab020(int a, int b, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly
 	void sub_10338440(const int *pStat);	// "CBaseCombatCharacter::VStatGet": scope trace (entity name), pStat = {stat id, value}; finds the first stat list whose field at +0x10 equals the id that sub_10202780(pStat[0]) maps (the shared default list when none) and hands it pStat[1] (sub_10200d60)
@@ -59,3 +59,4 @@
 	void sub_100976e0();	// CBaseAnimating::BlendTransformWithNextSequenceChange (stub 0x1000b9b5), called directly
 	int sub_10092550(int a);	// CBaseAnimating::LookupBone (stub 0x10002c0c), called directly
 	void sub_100926e0(int bone, float *pPos, float *pAngles);	// CBaseAnimating::GetBonePosition02 (stub 0x1000268a), called directly
+	void sub_103387a0(int value);	// "CBaseCombatCharacter::AbilityBonus": scope trace (entity name), hands value to the stat list with id 1 (shared default list when absent; sub_10200d60), then slot 93-ish call sub_100138c2(object at +0xa8, 0x19, 0) when that object is set
