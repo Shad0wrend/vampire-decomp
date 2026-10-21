@@ -1,6 +1,70 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103bc820 size=0x18b
+#include "CNPC_VTzimisce.h"
+#include "CUnknown1070b244.h"
+
+struct TzimisceView103bc820 {
+	char pad0[0x1b30];
+	const char *m_pszFile;
+	int m_nLine;
+	char pad1[0x66b8 - 0x1b38];
+	int m_n66b8;
+};
+extern CUnknown1070b244 *g_1070b244;
+
+int CNPC_VTzimisce::sub_103bc820()
+{
+	TzimisceView103bc820 *v = (TzimisceView103bc820 *)this;
+	v->m_n66b8 = 0;
+	if (sub_10269aa0(0x51)) {
+		v->m_nLine = 0xb2c;
+		v->m_pszFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+		return 0x177;
+	}
+	if (sub_10269d30(0x1a)) {
+		v->m_nLine = 0xb32;
+		v->m_pszFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+		return 0x178;
+	}
+	if (vfunc167()) {
+		const float *pEnemyPos = (const float *)vfunc167()->vfunc220();
+		const float *pPos = (const float *)((CNPC_VTzimisceHelper *)this)->vfunc220();
+		float dx = pPos[0] - pEnemyPos[0];
+		float dy = pPos[1] - pEnemyPos[1];
+		float dz = pPos[2] - pEnemyPos[2];
+		float flDistSqr = dx * dx + dy * dy + dz * dz;
+		if (flDistSqr > 160000.0f) {
+			int r = g_1070b244->vfunc2(0, 99);
+			v->m_pszFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+			if (r < 0x46) {
+				v->m_nLine = 0xb40;
+				return 0x178;
+			}
+			v->m_nLine = 0xb44;
+			return 0x179;
+		}
+		if (flDistSqr > 40000.0f) {
+			int r = g_1070b244->vfunc2(0, 99);
+			v->m_pszFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+			if (r < 0x28) {
+				v->m_nLine = 0xb4e;
+				return 0x178;
+			}
+			v->m_nLine = 0xb52;
+			return 0x179;
+		}
+		v->m_nLine = 0xb58;
+		v->m_pszFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+		return 0x179;
+	}
+	v->m_nLine = 0xb5c;
+	v->m_pszFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+	return 0x178;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bca20 size=0x97
 #include "CNPC_VTzimisce.h"
 

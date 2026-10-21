@@ -429,6 +429,7 @@
 0x10002a2c func   ?sub_103facd0@@YAHXZ sub_103facd0
 0x10002a45 func   ?sub_100e5690@CDialog@@QAEHPAUCDialogEntry_t@@@Z CDialog::sub_100e5690
 0x10002a4a func   ?sub_1006cc20@Dump@@QAEXXZ Dump::sub_1006cc20
+0x10002a4f func   ?sub_103bc820@CNPC_VTzimisce@@QAEHXZ CNPC_VTzimisce::sub_103bc820
 0x10002a5e func   ?sub_10045de0@CUtlRBTree36@@QAEGPBH@Z CUtlRBTree36::sub_10045de0
 0x10002a72 func   ?sub_102013a0@CVStatList_t@@QAEPBDH@Z CVStatList_t::sub_102013a0
 0x10002a90 func   ?sub_1017f170@CBasePlayer@@QAEXPAX@Z CBasePlayer::sub_1017f170
