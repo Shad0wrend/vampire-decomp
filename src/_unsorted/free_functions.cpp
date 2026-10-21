@@ -87516,6 +87516,48 @@ void CNPC_VMingXiao::sub_10397e00(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10397f70 size=0x6f
+#include "CUnknown10739d08.h"
+
+extern CUnknown10739d08 g_10739d08;
+extern float g_104454c4;
+
+struct TuneBlock
+{
+	char m_pad0000[0x20];
+	float m_flGrace;	// 0x20
+	char m_pad0024[0x6c - 0x24];
+	float m_flBase;	// 0x6c
+	float m_flStep;	// 0x70
+};
+
+inline TuneBlock *Tune()
+{
+	return (TuneBlock *)g_10739d08.sub_101e8da0();
+}
+
+struct CNPC_VMingXiaoUnit
+{
+	char m_pad0000[0x670c];
+	int m_n670c;	// 0x670c
+	char sub_10398870();	// stub 0x10012f26
+	float sub_10397f70();
+};
+
+float CNPC_VMingXiaoUnit::sub_10397f70()
+{
+	if (sub_10398870())
+		return Tune()->m_flGrace;
+	double dBase = Tune()->m_flBase;
+	float flBase = (float)dBase;
+	double dStep = Tune()->m_flStep;
+	float flTime = (float)dStep * (6 - m_n670c) + flBase;
+	if (!(flTime > g_104454c4))
+		flTime = g_104454c4;
+	return flTime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398d90 size=0xd
 void CUnknown10398d90::sub_10398d90(int value)
 {
