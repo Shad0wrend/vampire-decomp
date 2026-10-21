@@ -56,4 +56,5 @@ public:
 	void sub_10254250();	// CBaseCombatWeapon::vfunc320, called directly (stub 0x1000668b)
 	void sub_10239e70();	// uses up one shot: slot 307(0xb9), sub_10239f30(the owner's character), and unless a tuning flag holds lowers the clip of the current roll slot; an empty clip tells the owner's character slot 385(this, 0, 0) and removes the weapon
 	void sub_10239f30(void *pOwner);	// stub 0x1000d198, called directly with the owner's character
+	bool sub_10237a50(int a, float *pAngles, float *pOrigin);	// the position and angles of the left index finger bone ("Bip01 L Finger01") of the character behind the aim entity handle at +0x37c (its object at +0x9c): the bone transform (slot 256) combined with a zero matrix, then converted; false without the entity / character / bone
 };
