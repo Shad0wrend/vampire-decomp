@@ -45,7 +45,8 @@ public:
 	virtual void vfunc105(const char *pszName);
 	CBCW_V(106) CBCW_V(107) CBCW_V(108) CBCW_V(109)
 	CBCW_V10(11) CBCW_V10(12) CBCW_V10(13) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16)
-	CBCW_V(170) CBCW_V(171) CBCW_V(172) CBCW_V(173) CBCW_V(174) CBCW_V(175) CBCW_V(176) CBCW_V(177) CBCW_V(178) CBCW_V(179)
+	virtual void vfunc170(const Vector *pVec);	// asked by vfunc269 with the scaled direction
+	CBCW_V(171) CBCW_V(172) CBCW_V(173) CBCW_V(174) CBCW_V(175) CBCW_V(176) CBCW_V(177) CBCW_V(178) CBCW_V(179)
 	CBCW_V(180) CBCW_V(181) CBCW_V(182) CBCW_V(183) CBCW_V(184) CBCW_V(185) CBCW_V(186)
 	virtual CBaseEntity *vfunc187();	// "CBaseCombatWeapon::Respawn": creates a new entity of the weapon's class at the game rules' respawn spot
 	CBCW_V(188) CBCW_V(189)
