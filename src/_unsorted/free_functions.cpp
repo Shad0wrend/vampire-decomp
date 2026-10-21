@@ -68832,6 +68832,48 @@ void CUnknown102d9040::sub_102d8e50(const float *vec, int arg4, float duration, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d8f20 size=0xd6
+#include <string.h>
+#include "CUnknown102d9040.h"
+#include "CEHandleGet.h"
+
+struct S102d8f20Globals { char pad[0xc]; float curtime; };
+extern S102d8f20Globals *g_1070b228;
+
+struct S102d8f20Entry
+{
+    char pad[0x20];
+    float m_flValue;
+};
+
+// TARGET: CUnknown102d9040::sub_102d8f20
+void CUnknown102d9040::sub_102d8f20(CBaseEntity *pEnt, const float *vec, float flValue, float duration, float amount)
+{
+    int i = 0;
+    int n = m_nSize;
+    if (n > 0) {
+        CUnknown102d9040Entry *pBase = (CUnknown102d9040Entry *)m_pMemory;
+        CUnknown102d9040Entry *p = pBase;
+        do {
+            if (EHandle_Get(p->m_unk4) == (void *)pEnt) {
+                if (p->m_flStart == g_1070b228->curtime && !(((S102d8f20Entry *)p)->m_flValue < flValue)) {
+                    double d = ((S102d8f20Entry *)p)->m_flValue;
+                    flValue = (float)d;
+                }
+                int nMove = n - i - 1;
+                if (nMove > 0)
+                    memmove(&pBase[i], &pBase[i + 1], nMove * sizeof(CUnknown102d9040Entry));
+                m_nSize--;
+                break;
+            }
+            i++;
+            p++;
+        } while (i < n);
+    }
+    sub_102d9040(2, pEnt, vec, *(int *)&flValue, duration, amount);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d9040 size=0xcf
 #include "CUnknown102d9040.h"
 
