@@ -69,3 +69,4 @@
 	virtual void vfunc103();	// slot 103 "CBaseCombatCharacter::Spawn": scope trace (entity name), AddToTeam(name at +0x10ac) when non-empty, then CBaseAnimating::vfunc103
 	void vfunc311(int a, int b, int c);	// slot 311 "CBaseCombatCharacter::ForcePreTranslatedSequenceAndActivity": scope trace (entity name), when c >= 0 stores a / b at +0xff0 / +0xff4, sets the sequence (CAI_BaseNPC::sub_10260a50(c)), clears the float at +0x6f8, runs sub_10090950 and copies the dword at +0x1488 to +0x6f4
 	void sub_10090950();	// stub 0x100117b1, called directly by vfunc311
+	virtual int vfunc34(int pOther);	// slot 34 "CBaseCombatCharacter::GetHighlight...": scope trace (entity name), pOther (a character) holding a weapon (sub_1032e7b0) that is not disabled (slot 267), whose info block has bit 1 at +0x242c and whose owner (slot 285) is this entity: 6, else 0; takes the character pointer as a stack argument
