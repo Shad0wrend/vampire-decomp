@@ -4409,6 +4409,7 @@
 0x10014cc2 func   ?sub_10316fa0@@YAHH@Z sub_10316fa0
 0x10014ccc func   ?sub_101ff3e0@CVStatInfoList_t@@QAEXXZ CVStatInfoList_t::sub_101ff3e0
 0x10014cd6 func   ?vfunc5@CPropHacking@@QAEPAV1@I@Z CPropHacking::vfunc5
+0x10014ce5 func   ?sub_10265820@@YAXXZ sub_10265820
 0x10014cf4 func   ?sub_102382f0@@YAXXZ sub_102382f0
 0x10014d17 func   ?sub_102a97d0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97d0
 0x10014d1c func   ?vfunc5@CBaseDMStart@@QAEPAV1@I@Z CBaseDMStart::vfunc5

@@ -47448,6 +47448,38 @@ unsigned char sub_10265800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10265820 size=0x94
+#include "CGlobalEntityList.h"
+#include "CAI_BaseNPC.h"
+#include "CUnknown102ee270.h"
+extern CGlobalEntityList g_106eb5d8;
+extern int g_10538764, g_1054abdc;
+extern "C" void *__RTDynamicCast(void *, long, void *, void *, int);
+
+struct CAI_BaseNPCY : CAI_BaseNPC {
+    void sub_10280d30();
+};
+
+inline CBaseEntity *FindNPC(CBaseEntity *pEnt)
+{
+    while (pEnt) {
+        CBaseEntity *pNPC = (CBaseEntity *)__RTDynamicCast(pEnt, 0, &g_10538764, &g_1054abdc, 0);
+        if (pNPC)
+            return pNPC;
+        pEnt = g_106eb5d8.sub_100f7060(pEnt);
+    }
+    return 0;
+}
+
+void sub_10265820()
+{
+    for (CBaseEntity *p = FindNPC(g_106eb5d8.sub_100f7060(0)); p; p = FindNPC(g_106eb5d8.sub_100f7060(p))) {
+        ((CAI_BaseNPCY *)p)->sub_10280d30();
+        (*(CUnknown102ee270 **)((char *)p + 0x5d34))->sub_102ee270();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10265970 size=0x9c
 void sub_10139610(const float *pAngles, float *pForward, float *pRight, float *pUp);
 
