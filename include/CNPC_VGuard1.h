@@ -14,4 +14,5 @@ public:
 	void vfunc463(int a, int b);	// slot 463 override: slot 167()'s object at +0xa8 set -> sub_1037e2d0(); on b == 1 calls slot 66 of sub_1032e7b0()'s object, on b == 2, 3 or 11 slot 67; then CNPC_VHuman::vfunc463(a, b)
 	void sub_1037e2d0();	// stub 0x1000b73f, called directly
 	CEntityVSlots *sub_1032e7b0();	// stub 0x10007e19, called directly: an entity (0 when none)
+	void sub_10384720(int a, int b);	// CNPC_VHuman::vfunc463 (stub 0x10011234), called directly
 };
