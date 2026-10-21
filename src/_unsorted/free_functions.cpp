@@ -14190,6 +14190,22 @@ void sub_100aec70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100afe70 size=0x6f
+#include "ScopeTrace.h"
+
+struct CEntBreakTarget { char m_pad[0xa8]; int m_pObj; };
+CEntBreakTarget *sub_101193b0();
+void sub_10172710(int obj);
+
+void sub_100afe70()
+{
+	ScopeTrace trace("CC_Ent_Break", g_106b8540);
+	CEntBreakTarget *p = sub_101193b0();
+	if (p && p->m_pObj)
+		sub_10172710(p->m_pObj);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b0280 size=0x77
 #include "IVEngineServer.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
