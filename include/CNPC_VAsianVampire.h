@@ -11,14 +11,24 @@ struct StoredHintPos_t
 	StoredHintPos_t &operator=(const StoredHintPos_t &v) { x = v.x; y = v.y; z = v.z; return *this; }
 };
 
+struct CVAsianVampireTask_t	// the AI task record RunTask receives: the task id first
+{
+	int iTask;
+	float flTaskData;
+};
+
 class CNPC_VAsianVampire
 {
 public:
 	char pad0[0x17c];
 	float m_flNextThink;	// +0x17c
-	char pad180[0x1b38 - 0x180];
+	char pad180[0xfec - 0x180];
+	int m_nIdealActivity;	// +0xfec
+	char padff0[0x1b38 - 0xff0];
 	int m_nIdealState;	// +0x1b38
-	char pad1b3c[0x628c - 0x1b3c];
+	char pad1b3c[0x5ddc - 0x1b3c];
+	void *m_pHint5ddc;	// +0x5ddc: the hint node the NPC is working on
+	char pad5de0[0x628c - 0x5de0];
 	unsigned int m_hJumpTarget;	// +0x628c, entity handle
 	char pad6290[0x64b8 - 0x6290];
 	float m_flRestoredTime;	// +0x64b8: reset to a constant by Restore
@@ -57,4 +67,9 @@ public:
 	void vfunc432(int arg);	// slot 432 "CNPC_VAsianVampire::RunAI": scope trace, sub_10005673(), then CNPC_VHuman::vfunc432(arg)
 	void sub_10005673();	// the Asian vampire's per-tick update (stub of 0x10362540), called with this
 	void sub_1000698d(int arg);	// CNPC_VHuman::vfunc432, called directly
+	void vfunc444(const CVAsianVampireTask_t *pTask);	// slot 444 "CNPC_VAsianVampire::RunTask": scope trace; task 0x13a: the base RunTask, then, unless the ideal activity (+0xfec) is already 0x2d, starts it (sub_10014524) when the z of the slot 198 vector is not above a constant; task 0x150: sub_10005d17(+0x5ddc), clears the failed-jump byte (+0x66d4) and sub_1000ac68(0); tasks 0x151 / 0x152 do nothing; the rest goes to the base RunTask
+	void sub_10004edf(const CVAsianVampireTask_t *pTask);	// CNPC_VVampireBoss::vfunc444, called directly
+	void sub_10005d17(void *pHint);	// stub of 0x10361a70, run when task 0x150 ends
+	void sub_1000ac68(int a);	// stub of 0x10273e80 (CAI_BaseNPC::sub_10273e80), called directly
+	void sub_10014524(int activity);	// starts the activity (stub of CAI_BaseNPCTroika::sub_10289ee0)
 };
