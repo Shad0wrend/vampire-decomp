@@ -40432,6 +40432,41 @@ void sub_101cdac0(int entindex, int pos, const char *pszSample, int volume, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ce2e0 size=0xb4
+#include "CSingleUserRecipientFilter.h"
+#include "CEntityVSlots.h"
+
+struct PlayerSlots162
+{
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15)
+	EVS(160) EVS(161)
+	virtual char slot162();
+};
+
+#define MSG_V(n) virtual void v##n();
+#define MSG_V10(p) MSG_V(p##0) MSG_V(p##1) MSG_V(p##2) MSG_V(p##3) MSG_V(p##4) MSG_V(p##5) MSG_V(p##6) MSG_V(p##7) MSG_V(p##8) MSG_V(p##9)
+struct CMsgSystem10540528
+{
+	MSG_V10(0) MSG_V10(1) MSG_V10(2)
+	MSG_V(30) MSG_V(31) MSG_V(32) MSG_V(33) MSG_V(34) MSG_V(35) MSG_V(36) MSG_V(37)
+	virtual void vfunc38(CRecipientFilter *pFilter, int a, int b, int c);
+};
+
+extern CMsgSystem10540528 *g_10540528;
+
+// TARGET: sub_101ce2e0
+void sub_101ce2e0(PlayerSlots162 *pPlayer, int a, int b)
+{
+	if (pPlayer && pPlayer->slot162()) {
+		CSingleUserRecipientFilter filter(pPlayer);
+		filter.sub_1019cf50();
+		g_10540528->vfunc38(&filter, 0, a, b);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cee20 size=0x96
 #include "Vector.h"
 #include "QAngle.h"
