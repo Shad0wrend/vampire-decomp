@@ -44,7 +44,7 @@ public:
 	EVS(123) EVS(124) EVS(125) EVS(126) EVS(127) EVS(128) EVS(129)
 	EVS10(13)
 	EVS(140) EVS(141)
-	virtual void slot142(const void *pInfo);	// "OnTakeDamage": takes the damage info record
+	virtual int slot142(const void *pInfo);	// "OnTakeDamage": takes the damage info record, answers an int
 	EVS(143) EVS(144) EVS(145) EVS(146) EVS(147) EVS(148) EVS(149)
 	EVS(150) EVS(151) EVS(152) EVS(153) EVS(154) EVS(155) EVS(156) EVS(157)
 	virtual char slot158();
