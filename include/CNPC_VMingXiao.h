@@ -45,4 +45,5 @@ public:
 	char sub_10398870();	// stub 0x10012f26
 	void sub_102beda0(CTakeDamageInfo *pInfo);	// CAI_BaseNPCTroika::vfunc390, called directly (stub 0x10012611)
 	void sub_10395750(int a, CTakeDamageInfo *pInfo, void *pWeapon);	// stub 0x10008170
+	float vfunc603(float *pCurrent, float *pTarget);	// slot 603: picks a random turn angle (global random stream 0x1070b244, slot 1 RandomFloat) from how far *pCurrent is from *pTarget (32.0f window): within it +-30; below it *pCurrent follows the target and a coin flip (slot 2) picks 170..179 or -170..-179; above it a coin flip picks 80..120 or -80..-120
 };
