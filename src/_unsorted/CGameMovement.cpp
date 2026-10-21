@@ -79,6 +79,46 @@ float *CGameMovement::vfunc4(char flag, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011f520 size=0xe6
+#include "CGameMovement.h"
+
+struct SMoveGlobals
+{
+	char pad[0x10];
+	float frametime;
+};
+extern SMoveGlobals *g_1070b228;
+
+struct SMoveTimers
+{
+	char pad0[0x1ee0];
+	float t1ee0;
+	char pad1[0x2328 - 0x1ee4];
+	float t2328;
+	float t232c;
+};
+
+void CGameMovement::vfunc24()
+{
+	float flDelta = g_1070b228->frametime * 1000.0f;
+	if (((SMoveTimers *)m_pMove)->t2328 > 0.0f) {
+		((SMoveTimers *)m_pMove)->t2328 -= flDelta;
+		if (((SMoveTimers *)m_pMove)->t2328 < 0.0f)
+			((SMoveTimers *)m_pMove)->t2328 = 0.0f;
+	}
+	if (((SMoveTimers *)m_pMove)->t1ee0 > 0.0f) {
+		((SMoveTimers *)m_pMove)->t1ee0 -= flDelta;
+		if (((SMoveTimers *)m_pMove)->t1ee0 < 0.0f)
+			((SMoveTimers *)m_pMove)->t1ee0 = 0.0f;
+	}
+	if (((SMoveTimers *)m_pMove)->t232c > 0.0f) {
+		((SMoveTimers *)m_pMove)->t232c -= flDelta;
+		if (((SMoveTimers *)m_pMove)->t232c < 0.0f)
+			((SMoveTimers *)m_pMove)->t232c = 0.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011f650 size=0x70
 #include "CGameMovement.h"
 struct S1070b228 { char pad[0x10]; float m_f10; };
