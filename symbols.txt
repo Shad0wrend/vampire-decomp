@@ -1493,6 +1493,7 @@
 0x100075e5 func   ?sub_1008f540@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_1008f540
 0x100075ef func   ?sub_101c31f0@@YAXEPAH0GHE@Z sub_101c31f0
 0x100075fe func   ?sub_101b7df0@CUnknown101b9140@@QAEHHPBUCUnknown101b9140Elem@@@Z CUnknown101b9140::sub_101b7df0
+0x10007608 func   ?sub_101ed6c0@CUnknown101ed6c0@@QAE_NXZ CUnknown101ed6c0::sub_101ed6c0
 0x1000760d func   ?sub_101daf80@CUnknown101daf60@@QAEXXZ CUnknown101daf60::sub_101daf80
 0x10007612 func   ??0CUnknown101d82d0_Elem@@QAE@XZ CUnknown101d82d0_Elem::CUnknown101d82d0_Elem
 0x1000762b func   _item_k_lilly_key item_k_lilly_key
