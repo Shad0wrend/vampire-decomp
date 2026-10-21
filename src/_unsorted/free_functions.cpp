@@ -38687,6 +38687,35 @@ void __fastcall sub_101f0740(Holder *self, int, const char *filter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0bc0 size=0xb2
+#include "CUnknown101f0960.h"
+#include "CUnknown101f0bc0.h"
+
+struct CKVNode
+{
+	virtual void a0(); virtual void a1();
+	virtual CKVNode *v2(const char *name);
+	virtual CKVNode *v3();
+};
+
+void CUnknown101f0bc0::sub_101f0bc0(void *pKeyValues)
+{
+	CKVNode *pKV = (CKVNode *)pKeyValues;
+	for (CKVNode *pKey = pKV->v2("Reaction"); pKey; pKey = pKey->v3())
+		m_nReactions++;
+	if (m_nReactions > 0) {
+		m_pReactions = new CUnknown101f0960[m_nReactions];
+		CKVNode *pKey = pKV->v2("Reaction");
+		for (int i = 0; i < m_nReactions; i++) {
+			if (!pKey)
+				break;
+			m_pReactions[i].sub_101f0a60(pKey);
+			pKey = pKey->v3();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0d40 size=0xd
 void CUnknown101f0d40::sub_101f0d40(int* dest)
 {
