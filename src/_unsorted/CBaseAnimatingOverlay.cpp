@@ -77,6 +77,36 @@ float CBaseAnimatingOverlay::vfunc250(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098eb0 size=0x11d
+#include "CBaseAnimating.h"
+#include "CBaseAnimatingOverlay.h"
+#include "CUnknown1070b22c.h"
+#include "Quaternion.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+void sub_100c32e0(void *pHdr, void *pPos, void *pQ, float *pPose, int mask);
+void sub_100c2ce0(void *pHdr, void *pPos, void *pQ, float *pCtl, int mask);
+
+void CBaseAnimatingOverlay::vfunc255(void *pPos, void *pQ, int mask)
+{
+	Quaternion q2[350];
+	Vector pos2[350];
+	CBaseAnimating *pAnim = (CBaseAnimating *)this;
+	void *pHdr = g_1070b22c->vfunc18(((CBaseEntity *)this)->vfunc8());
+	if (pHdr) {
+		pAnim->sub_1008e770(pPos, pQ, *(int *)((char *)this + 0x6f0), *(int *)((char *)this + 0x6f8), (float *)((char *)this + 0x690), mask);
+		for (int i = 0; i < 4; i++) {
+			if (m_Layers[i].m_f10 > 0.0f) {
+				pAnim->sub_1008e770(pos2, q2, m_Layers[i].m_nSequence, m_Layers[i].m_n08, (float *)((char *)this + 0x690), mask);
+				pAnim->sub_1008eb70((int)pQ, (int)pPos, m_Layers[i].m_nSequence, (int)q2, (int)pos2, *(int *)&m_Layers[i].m_f10, mask);
+			}
+		}
+		sub_100c32e0(pHdr, pPos, pQ, (float *)((char *)this + 0x690), mask);
+		sub_100c2ce0(pHdr, pPos, pQ, (float *)((char *)this + 0x6fc), mask);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099020 size=0x98
 #include "CBaseAnimatingOverlay.h"
 

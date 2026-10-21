@@ -1143,6 +1143,7 @@
 0x1000580d func   ?sub_102567b0@@YAPAHXZ sub_102567b0
 0x1000581c func   ?sub_102792b0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_102792b0
 0x10005821 func   ?vfunc488@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc488
+0x10005844 func   ?vfunc255@CBaseAnimatingOverlay@@QAEXPAX0H@Z CBaseAnimatingOverlay::vfunc255
 0x10005853 func   ?sub_10071cd0@@YAXPAMPBD@Z sub_10071cd0
 0x1000586c func   ?sub_1002fb00@CCollisionEventSolver@@QAEHPAX0PAVCBaseEntity@@1M@Z CCollisionEventSolver::sub_1002fb00
 0x10005876 func   ?sub_102e8250@@YIXPAM@Z sub_102e8250
