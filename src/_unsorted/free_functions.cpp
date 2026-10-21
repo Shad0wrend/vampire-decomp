@@ -53004,6 +53004,45 @@ void CUnknown10227c90::sub_10227c90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227f60 size=0x8a
+int sub_10431c2f(char *, const char *, ...);
+
+struct CUnknown101f0d60 {
+	void sub_101f0d60();
+};
+
+struct CIdTable {
+	CUnknown101f0d60 *sub_101f1aa0(int id);
+};
+extern CIdTable g_1073a9a0;
+
+void *sub_101193b0();
+void sub_101ce620(void *pPlayer, int a, const char *msg, int b, int c, int d, int e);
+
+class CUnknown10227f60 {
+public:
+	int m_count;
+	int *m_pIds;
+
+	void sub_10227f60();
+};
+
+void CUnknown10227f60::sub_10227f60()
+{
+	char buf[128];
+	void *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		sub_10431c2f(buf, "\n");
+		sub_101ce620(pPlayer, 2, buf, 0, 0, 0, 0);
+		if (m_count > 0) {
+			for (int i = 0; i < m_count; i++)
+				g_1073a9a0.sub_101f1aa0(m_pIds[i])->sub_101f0d60();
+		}
+		sub_101ce620(pPlayer, 2, "\n", 0, 0, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102283a0 size=0x67
 float sub_102283a0(float cur, float target, float a, float b)
 {

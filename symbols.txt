@@ -4646,6 +4646,7 @@
 0x10013a2f func   ?vfunc31@CBaseAnimatingOverlay@@QAEXH@Z CBaseAnimatingOverlay::vfunc31
 0x10013a34 func   ?vfunc546@CNPC_VGangrel@@QAEHH@Z CNPC_VGangrel::vfunc546
 0x10013a43 func   ?sub_101f81c0@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101f81c0
+0x10013a48 func   ?sub_10227f60@CUnknown10227f60@@QAEXXZ CUnknown10227f60::sub_10227f60
 0x10013a52 func   ?vfunc0@CAI_LocalNavigator@@QAEPAV1@I@Z CAI_LocalNavigator::vfunc0
 0x10013a57 func   ?sub_10250c50@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_10250c50
 0x10013a5c func   ?vfunc16@CRestore@@QAEDXZ CRestore::vfunc16
