@@ -321,6 +321,30 @@ void CBasePlayer::vfunc149(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016eb20 size=0x6f
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CStatDefault3List.h"
+extern CStatDefault3List g_10738d10;
+struct CBaseCombatCharacterView {
+    bool sub_1000e494(int a, int b);
+};
+
+bool CBasePlayer::vfunc326(int a, CBaseEntity *pOther)
+{
+    CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e7b0();
+    if (pWeapon && (pWeapon->vfunc360() & 0x6000)) {
+        if (pOther) {
+            int nTemplate = ((CBaseCombatCharacter *)pOther)->sub_10337860();
+            if (g_10738d10.sub_101d5e80(nTemplate)->m_98[8])
+                return ((CBaseCombatCharacterView *)this)->sub_1000e494(a, (int)pOther);
+        }
+        return false;
+    }
+    return ((CBaseCombatCharacterView *)this)->sub_1000e494(a, (int)pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10173ed0 size=0x87
 #include "CBasePlayer.h"
 #include "CUnknown1070b22c.h"
