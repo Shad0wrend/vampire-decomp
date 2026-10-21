@@ -1072,6 +1072,7 @@
 0x10005bd7 func   ?vfunc144@CBaseEntity@@QAEXPAX@Z CBaseEntity::vfunc144
 0x10005bdc func   ?sub_10346760@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10346760
 0x10005be1 func   ?sub_10223800@CUnknown10223800@@QAEXH@Z CUnknown10223800::sub_10223800
+0x10005be6 func   ?vfunc103@CFuncParticle@@QAEXXZ CFuncParticle::vfunc103
 0x10005beb func   ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z CBaseEntity::vfunc140
 0x10005c09 func   ?vfunc99@CBaseEntity@@UAE_NHHH@Z CBaseEntity::vfunc99
 0x10005c3b func   ?sub_102deec0@UtlMem@@QAEXXZ UtlMem::sub_102deec0
