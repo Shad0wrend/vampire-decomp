@@ -62398,6 +62398,37 @@ char sub_10373620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10374f40 size=0x98
+#include "CBaseEntity.h"
+#include "CNPC_VDog.h"
+#include "CEntityVSlots.h"
+
+void sub_101cd110(CNPC_VDog *pEntity, Vector *pStart, Vector *pEnd, int mask, void *pTrace);	// UTIL_TraceLine-like
+
+// TARGET: CNPC_VDog::sub_10374f40
+void CNPC_VDog::sub_10374f40()
+{
+	char trace[0x54];
+	Vector vecEnd;
+	Vector vecStart;
+	CEntityVSlots *pEnemy = (CEntityVSlots *)((CEntityVSlots *)this)->slot167();
+	if (pEnemy)
+	{
+		CEntityVSlots *pWeapon = sub_1032e7b0();
+		if (pWeapon)
+		{
+			vecStart = *((CEntityVSlots *)this)->slot217();
+			Vector *pEnd = pEnemy->slot217();
+			vecEnd.x = pEnd->x;
+			vecEnd.y = pEnd->y;
+			vecStart.z = vecEnd.z = pEnd->z;
+			sub_101cd110(this, &vecStart, &vecEnd, 0x202400b, trace);
+			pWeapon->slot270(trace, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375390 size=0x33
 void sub_10007897();
 void sub_10014669();
