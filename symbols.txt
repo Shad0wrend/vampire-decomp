@@ -3292,6 +3292,7 @@
 0x1000dc92 func   ?sub_103fdc50@@YAHXZ sub_103fdc50
 0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43
 0x1000dca1 func   ?vfunc421@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc421
+0x1000dcab func   ?sub_1013c7e0@@YAMABVVector@@00@Z sub_1013c7e0
 0x1000dcba func   ?vfunc420@CNPC_VHumanCombatant@@QAEXXZ CNPC_VHumanCombatant::vfunc420
 0x1000dcf6 func   ?sub_100c2bd0@@YAXHHHHHHHM@Z sub_100c2bd0
 0x1000dd0f func   ?sub_100d7c40@@YAXXZ sub_100d7c40

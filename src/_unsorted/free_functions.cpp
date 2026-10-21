@@ -30228,6 +30228,37 @@ void sub_1013bb40(const Vector &p1, const Vector &p2, const Vector &p3, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013c7e0 size=0xab
+// TARGET: sub_1013c7e0
+float sub_1013c7e0(const Vector &mins, const Vector &maxs, const Vector &point)
+{
+    float flDelta;
+    float flDistSqr = 0.0f;
+    if (point.x < mins.x) {
+        flDelta = mins.x - point.x;
+        flDistSqr += flDelta * flDelta;
+    } else if (point.x > maxs.x) {
+        flDelta = point.x - maxs.x;
+        flDistSqr += flDelta * flDelta;
+    }
+    if (point.y < mins.y) {
+        flDelta = mins.y - point.y;
+        flDistSqr += flDelta * flDelta;
+    } else if (point.y > maxs.y) {
+        flDelta = point.y - maxs.y;
+        flDistSqr += flDelta * flDelta;
+    }
+    if (point.z < mins.z) {
+        flDelta = mins.z - point.z;
+        flDistSqr += flDelta * flDelta;
+    } else if (point.z > maxs.z) {
+        flDelta = point.z - maxs.z;
+        flDistSqr += flDelta * flDelta;
+    }
+    return flDistSqr;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c940 size=0x88
 // TARGET: sub_1013c940
 float sub_1013c940(const Vector &P, const Vector &vLineA, const Vector &vLineB, Vector &vDir)
