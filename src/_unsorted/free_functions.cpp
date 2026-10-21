@@ -70260,6 +70260,30 @@ void CUnknown10311a20::sub_10311a20(int key, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103121a0 size=0x67
+#include "CAI_Expresser.h"
+
+struct SpeakGlobals {
+	char pad[0xc];
+	float curtime;
+};
+extern SpeakGlobals *g_1070b228;
+extern float g_10936c40;
+
+void CAI_Expresser::sub_103121a0(float a, float b)
+{
+	a = a + b;
+	m_n10->vfunc3();
+	if (a <= 0.0f) {
+		a = 0.0f;
+		m_Tail.m_n4c = g_1070b228->curtime + 3.0f;
+	} else {
+		m_Tail.m_n4c = a + g_1070b228->curtime;
+	}
+	g_10936c40 = a + g_1070b228->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312320 size=0x8
 struct CSub10002397 { void sub_10002397(); };
 struct CUnknown10312320 { char pad[0x30]; CSub10002397 m_Sub; void sub_10312320(); };
