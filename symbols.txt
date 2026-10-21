@@ -1399,6 +1399,7 @@
 0x10007766 func   ?vfunc103@CPropSlashable@@UAEXXZ CPropSlashable::vfunc103
 0x100077a2 func   ?vfunc495@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc495
 0x100077c0 func   ?sub_104047d0@@YAHXZ sub_104047d0
+0x100077de func   ?sub_10196bb0@@YAPAXXZ sub_10196bb0
 0x100077ed func   ?sub_10079060@CUnknown10079060@@QAEXH@Z CUnknown10079060::sub_10079060
 0x100077f2 func   ?vfunc2@CAI_CsActList@@UAEXD@Z CAI_CsActList::vfunc2
 0x1000780b func   ?sub_101e1870@@YGII@Z sub_101e1870

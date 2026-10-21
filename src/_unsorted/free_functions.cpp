@@ -27601,6 +27601,29 @@ void sub_10196850(PyInst *inst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196bb0 size=0x73
+#include "CBaseCombatCharacter.h"
+
+struct CNameTableX { int sub_101d5bd0(const char *name); };
+extern CNameTableX g_10738d10;
+CBaseCombatCharacter *sub_101cd9e0(int index);
+extern "C" __declspec(dllimport) void *PyInt_FromLong(long value);
+extern int *g_109f3748;
+
+void *sub_10196bb0()
+{
+	CBaseCombatCharacter *pPlayer = sub_101cd9e0(1);
+	static int s_malkavian = g_10738d10.sub_101d5bd0("Player_Malkavian");
+	if (pPlayer) {
+		if (pPlayer->sub_10337860() == s_malkavian)
+			return PyInt_FromLong(1);
+		return PyInt_FromLong(0);
+	}
+	(*g_109f3748)++;
+	return g_109f3748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196c50 size=0x81
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 #define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
