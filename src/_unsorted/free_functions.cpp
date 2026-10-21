@@ -31055,6 +31055,42 @@ extern "C" CBaseEntity *keyframe_rope()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e310 size=0xdc
+#include "CRopeKeyframe.h"
+#include "CUnknown101466e0.h"
+
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+	EntInfo *e;
+	return (h != 0xffffffff && (e = &g_10566458->m_entries[h & 0x1fff], e->m_serial == (int)(h >> 13))) ? e->m_pEntity : 0;
+}
+
+void sub_10012247();
+
+void CRopeKeyframe::sub_1019e310()
+{
+	sub_100b3b00();
+	sub_1019e5d0();
+	int nSegments = *(int *)((char *)this + 0x468);
+	if (nSegments > 10)
+		nSegments = 10;
+	else if (nSegments < 2)
+		nSegments = 2;
+	*(int *)((char *)this + 0x468) = nSegments;
+	sub_1019e8b0(1);
+	*((char *)this + 0x48c) = ResolveHandle(*(unsigned int *)((char *)this + 0x490)) != 0;
+	*((char *)this + 0x48d) = ResolveHandle(*(unsigned int *)((char *)this + 0x494)) != 0;
+	((CUnknown101466e0 *)((char *)this + 0x1b0))->sub_101466e0(1);
+	*((char *)this + 0x1b1) = 1;
+	sub_100ac4e0((int)sub_10012247, 0, 0);
+	*(float *)((char *)this + 0x17c) = 0.1f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019e740 size=0x6b
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
