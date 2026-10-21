@@ -88060,6 +88060,35 @@ bool __fastcall sub_1037bb20(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037c090 size=0xe4
+#include "CNPC_VGhoulCroucher.h"
+#include "CTakeDamageInfo.h"
+#include "ScopeTrace.h"
+
+struct CBurnVictim {	// the character behind the dword at +0xa8 of a victim entity
+	void *sub_100952d0(int a);	// CBaseAnimating::GetModelPtr (stub 0x10013d8b)
+	void sub_1032f770(int index, float flA, float flB);	// stub 0x1000596b
+	int sub_100a1250(const void *pDamageInfo);	// CBaseEntity::TakeDamage (stub 0x1000ad5d)
+	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19)
+};
+
+// TARGET: CNPC_VGhoulCroucher::sub_1037c090
+void CNPC_VGhoulCroucher::sub_1037c090(void *pObject, float flValue)
+{
+	ScopeTrace st("CNPC_VGhoulCroucher::BurnPlayer", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pObject) {
+		CBurnVictim *pVictim = (CBurnVictim *)pObject;
+		char *pHdr = (char *)pVictim->sub_100952d0(-1);
+		int nCount = *(int *)(pHdr + *(int *)(pHdr + 0x104) + 4);
+		for (int i = 0; i < nCount; i++)
+			pVictim->sub_1032f770(i, 5.0f, 0.5f);
+		CTakeDamageInfo info;
+		info.sub_101c26d0(((CBurnVictim *)this)->sub_1032e7b0(), this, flValue, 8, 0, 0, -1);
+		pVictim->sub_100a1250(&info);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c5b0 size=0x43
 #include "CNPC_VGuard1.h"
 void *sub_100aa720(int size);
