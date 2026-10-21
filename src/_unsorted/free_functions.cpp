@@ -47892,6 +47892,43 @@ struct CUnknown10217160 {
 void CUnknown10217160::sub_10217160() { slot265(); }
 // END FUNCTION
 
+// FUNCTION: 0x102173e0 size=0x172
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+void sub_10009539();
+
+extern SendTable g_1074f6ec;
+extern SendTable *g_1054d524;
+
+// TARGET: sub_102173e0
+int sub_102173e0()
+{
+	static const char *pTableName = "DT_BaseTerminal";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1054d524, (void *)sub_10009539),
+		sub_10007bfd("m_bInUse", 0x80d, 1, 1, 1, 0, 0),
+		sub_10007bfd("m_nScreenColumns", 0x810, 4, 6, 1, 0, 0),
+		sub_10007bfd("m_nScreenRows", 0x814, 4, 6, 1, 0, 0),
+		sub_10007bfd("m_nColorScheme", 0x818, 4, 4, 1, 0, 0),
+		sub_10007bfd("m_HackFlags", 0x81c, 4, 4, 1, 0, 0),
+		sub_10007bfd("m_nMaxInput", 0x820, 4, 8, 1, 0, 0),
+		sub_10007bfd("m_idxKeystrokeSnd", 0x828, 4, 0x10, 1, 0, 0),
+		sub_10007bfd("m_bAllowDirKeys", 0x824, 1, 1, 1, 0, 0),
+	};
+	g_1074f6ec.sub_1000e8fe(props + 1, 9, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218080 size=0xa
 void __fastcall sub_10218080(char *self, int, int)
 {

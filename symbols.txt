@@ -4378,6 +4378,7 @@
 0x10013205 func   ?vfunc250@CBaseDoor@@QAEXXZ CBaseDoor::vfunc250
 0x1001320a func   ?sub_1009d760@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d760
 0x10013228 func   ?sub_10043630@@YIXPAUMem8@@HH@Z sub_10043630
+0x1001322d func   ?sub_102173e0@@YAHXZ sub_102173e0
 0x10013232 func   ?vfunc5@CPhysExplosion@@UAEPAV1@I@Z CPhysExplosion::vfunc5
 0x10013246 func   ?sub_1009bd10@CBaseEntity@@QAEXHHMMM@Z CBaseEntity::sub_1009bd10
 0x10013282 func   ?sub_10090e30@CBaseAnimating@@QAE_NH@Z CBaseAnimating::sub_10090e30
