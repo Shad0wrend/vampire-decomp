@@ -29023,6 +29023,45 @@ void __fastcall sub_10136490(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136910 size=0xd2
+#include "CGlobalEntityList.h"
+#include <string.h>
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void Error(const char *pszFormat, ...);
+extern "C" __declspec(dllimport) int Q_strncmp(const char *s1, const char *s2, int count);
+
+struct ParentEntityView
+{
+	char m_pad0000[0x124];
+	const char *m_pszParent;	// 0x124
+	char m_pad0128[0x26c - 0x128];
+	const char *m_pszName;	// 0x26c
+	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName
+};
+
+#define MAX(a, b) (((a) > (b)) ? (a) : (b))
+#define Q_strlen(s) ((int)strlen(s))
+
+// TARGET: sub_10136910
+int sub_10136910(ParentEntityView *pEntity)
+{
+	if (!pEntity->m_pszParent)
+		return 1;
+	ParentEntityView *pParent = (ParentEntityView *)g_106eb5d8.sub_100f7770(0, pEntity->m_pszParent, 0, 0);
+	if (!pParent)
+		return 1;
+	const char *pszName = pEntity->m_pszName ? pEntity->m_pszName : g_106b8540;
+	const char *pszParent = pEntity->m_pszParent ? pEntity->m_pszParent : g_106b8540;
+	if (!Q_strncmp(pszName, pszParent, MAX(Q_strlen(pszName), Q_strlen(pszParent))))
+		Error("Entity %s parented to itself. This is bad.\n", pEntity->sub_1000b5cd());
+	if (pParent == pEntity)
+		Error("Entity %s parented to itself. This is bad.\n", pEntity->sub_1000b5cd());
+	return sub_10136910(pParent) + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136a30 size=0xc7
 extern "C" int __cdecl strcmp(const char *, const char *);
 #pragma intrinsic(strcmp)
