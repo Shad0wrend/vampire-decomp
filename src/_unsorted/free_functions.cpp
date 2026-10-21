@@ -22731,6 +22731,40 @@ void CUnknown100dcd00::sub_100dcd00(const float *pA, const float *pB, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd630 size=0xcf
+#include "CCollisionProperty.h"
+#include <math.h>
+
+static inline bool BoundsInEntitySpace(const CCollisionProperty *p)
+{
+	return (p->m_usSolidFlags & 0x80) == 0 && p->m_nSolidType != 2 && p->m_nSolidType != 0;
+}
+
+void CCollisionProperty::sub_100dd630(Vector *pOutMins, Vector *pOutMaxs)
+{
+	if (!BoundsInEntitySpace(this)) {
+		*pOutMins = m_vecMins;
+		*pOutMaxs = m_vecMaxs;
+	} else {
+		float flAx = (float)fabs(m_vecMins.x);
+		float flBx = (float)fabs(m_vecMaxs.x);
+		float flX = flAx > flBx ? flAx : flBx;
+		pOutMins->x = -flX;
+		pOutMaxs->x = flX;
+		float flAy = (float)fabs(m_vecMins.y);
+		float flBy = (float)fabs(m_vecMaxs.y);
+		float flY = flAy > flBy ? flAy : flBy;
+		pOutMins->y = -flY;
+		pOutMaxs->y = flY;
+		float flAz = (float)fabs(m_vecMins.z);
+		float flBz = (float)fabs(m_vecMaxs.z);
+		float flZ = flAz > flBz ? flAz : flBz;
+		pOutMins->z = -flZ;
+		pOutMaxs->z = flZ;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd990 size=0x65
 #include "CUnknown100dd990.h"
 
