@@ -3232,6 +3232,7 @@
 0x1000e11f func   ?vfunc89@CBaseEntity@@UAEXXZ CBaseEntity::vfunc89
 0x1000e124 func   ?sub_101e0310@S101e0310@@QAEXXZ S101e0310::sub_101e0310
 0x1000e129 func   ?vfunc103@CSimplePhysicsBrush@@QAEXXZ CSimplePhysicsBrush::vfunc103
+0x1000e142 func   ?sub_1010db90@CBreakable@@QAEXPAUinputdata_t@@@Z CBreakable::sub_1010db90
 0x1000e147 func   ?sub_101d4f40@CUnknown101d4f20@@QAEXPAUCUnknown101d4f20_Value@@@Z CUnknown101d4f20::sub_101d4f40
 0x1000e160 func   ?sub_101945f0@CUtlRBTree12@@QAEXPBXAAGAA_N@Z CUtlRBTree12::sub_101945f0
 0x1000e17e func   ?vfunc126@CPointAngleSensor@@UAEHH@Z CPointAngleSensor::vfunc126
