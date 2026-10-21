@@ -61188,6 +61188,42 @@ void CAI_BaseNPCTroika::sub_102989e0(const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029a930 size=0xa7
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown103164c0.h"
+#include "CUnknown103158f0.h"
+#define F(T, off) (*(T *)((char *)this + off))
+CUnknown103164c0 *sub_10315800(CBaseEntity *pEnt, const char *pszName);
+void *__cdecl operator new(unsigned int);
+void __cdecl operator delete(void *);
+
+void CAI_BaseNPCTroika::sub_1029a930(const char *pszSquad)
+{
+	if (F(CUnknown103158f0 *, 0x5da4)) {
+		F(CUnknown103158f0 *, 0x5da4)->sub_103158f0((CBaseEntity *)this);
+		F(CUnknown102e06f0 *, 0x5d88) = 0;
+	} else {
+		CUnknown102e06f0 *pOld = F(CUnknown102e06f0 *, 0x5d88);
+		if (pOld) {
+			pOld->sub_102e0730();
+			operator delete(pOld);
+		}
+	}
+	pszSquad = *pszSquad ? pszSquad : 0;
+	CUnknown103164c0 *pSquad = sub_10315800((CBaseEntity *)this, pszSquad);
+	if (pSquad) {
+		F(CUnknown103164c0 *, 0x5da4) = pSquad;
+		F(CUnknown102e06f0 *, 0x5d88) = &pSquad->m_base;
+	} else {
+		F(CUnknown103164c0 *, 0x5da4) = 0;
+		CUnknown102e06f0 *pNew = (CUnknown102e06f0 *)operator new(0x14);
+		F(CUnknown102e06f0 *, 0x5d88) = pNew ? pNew->sub_102e06f0() : 0;
+	}
+	if (F(int, 0x5bb0) > 0 && F(CUnknown103164c0 *, 0x5da4))
+		F(CUnknown103164c0 *, 0x5da4)->sub_10316700((CBaseEntity *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029ca30 size=0xd
 extern float g_10457f54;
 float __stdcall sub_1029ca30(float x)

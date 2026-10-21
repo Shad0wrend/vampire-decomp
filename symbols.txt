@@ -4501,6 +4501,7 @@
 0x10012f1c func   ?sub_1004dee0@@YAPAHXZ sub_1004dee0
 0x10012f2b func   _info_node_tzimisce info_node_tzimisce
 0x10012f35 func   ?sub_100ce450@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce450
+0x10012f3f func   ?sub_1029a930@CAI_BaseNPCTroika@@QAEXPBD@Z CAI_BaseNPCTroika::sub_1029a930
 0x10012f44 func   ?sub_103fec70@@YAHXZ sub_103fec70
 0x10012f49 func   ?sub_101273e0@@YAPBDH@Z sub_101273e0
 0x10012f4e func   ?sub_1030f480@CUnknown1030f480@@QAEXXZ CUnknown1030f480::sub_1030f480
