@@ -4,13 +4,13 @@
 
 #include "COutputEvent.h"
 
-class CUnknown102dca60_Target	// a target entity: its enabled state is at +0x564 (1 = enabled)
+class CUnknown102dca60_Target	// a target entity: its enabled state is at +0x564 (1 = enabled), its mode at +0x590
 {
 public:
 	char m_pad0000[0x564];
 	int m_nState;	// 0x564
-
-	void sub_102db3b0(int mode);	// switches the target on (1) or off (2) (stub 0x1000e3ae)
+	char m_pad0568[0x590 - 0x568];
+	int m_nMode;	// 0x590: 0, 1 or 2 (set by the unit-local setter sub_102db3b0)
 };
 
 class CUnknown102dca60
