@@ -27003,6 +27003,24 @@ extern "C" GP *light_environment()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131260 size=0x67
+#include "CUnknown10131260.h"
+#include "CEventQueue.h"
+
+extern CEventQueue g_106e7050;
+
+void CUnknown10131260::sub_10131260(inputdata_t &data)
+{
+	if (data.value.sub_100d05d0(4)) {
+		m_list488.sub_100cdba0(*(CVariantCopy *)&data.value, data.nOutputID);
+		if (!m_nRecompareQueued) {
+			g_106e7050.sub_100ce040(this, "ForceRecompare", 0, (CBaseEntity *)data.pActivator, this, data.nOutputID);
+			m_nRecompareQueued = 1;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101312f0 size=0x7e
 struct CUnk101312f0Node {
     int m_value;

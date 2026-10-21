@@ -4774,6 +4774,7 @@
 0x100144ed func   ?sub_102801e0@CAI_BaseNPC@@QAEXHPAVCBaseEntity@@H@Z CAI_BaseNPC::sub_102801e0
 0x1001450b func   ?sub_1025db50@@YIDPAH@Z sub_1025db50
 0x10014510 func   ?sub_10032a40@@YIXPAH@Z sub_10032a40
+0x10014515 func   ?sub_10131260@CUnknown10131260@@QAEXAAUinputdata_t@@@Z CUnknown10131260::sub_10131260
 0x1001451f func   ?sub_10050170@@YAPAHXZ sub_10050170
 0x1001452e func   ?sub_10053df0@@YA_NPBI0@Z sub_10053df0
 0x1001454c func   ?sub_101db430@CUnknown101db210@@QAEHHH@Z CUnknown101db210::sub_101db430
