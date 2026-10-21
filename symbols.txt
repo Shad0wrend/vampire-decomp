@@ -4377,6 +4377,7 @@
 0x10015613 func   ?vfunc12@ConVar@@UAEXPBD0H0_NM1MP6AXPAV1@0@Z@Z ConVar::vfunc12
 0x1001561d func   ?vfunc67@CBaseEntity@@UAEXXZ CBaseEntity::vfunc67
 0x10015645 func   ?sub_10031520@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10031520
+0x1001564f func   ?sub_101e9290@CBloodAmountUnit@@QAEHPAXH@Z CBloodAmountUnit::sub_101e9290
 0x10015654 func   ?sub_101c4580@@YI_NPAXHPAUIFile101c4580@@PBD@Z sub_101c4580
 0x1001567c func   ?vfunc503@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc503
 0x10015695 func   ?sub_10054400@@YAXXZ sub_10054400

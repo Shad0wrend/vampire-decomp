@@ -34565,6 +34565,31 @@ int CUnknown101e9170::sub_101e9170(CUnknown101e9170Char *pChar, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9290 size=0x173
+#include "CVStatList_t.h"
+struct CBloodAmountUnit {
+    char m_pad0000[0x3c0];
+    char m_bFixed;	// 0x3c0
+    char m_pad03c1[3];
+    int m_nFixedPerUnit;	// 0x3c4
+    int sub_101e9290(void *pChar, int amount);
+};
+
+// TARGET: CBloodAmountUnit::sub_101e9290
+int CBloodAmountUnit::sub_101e9290(void *pChar, int amount)
+{
+    if (!pChar || m_bFixed)
+        return m_nFixedPerUnit * amount;
+    int a = CVStatListSet::Of(pChar)->Find(0)->sub_10010609(0xd);
+    int b = CVStatListSet::Of(pChar)->Find(0)->sub_10010609(0x11);
+    int room = b - CVStatListSet::Of(pChar)->Find(0)->sub_10010609(0xf);
+    int r = b * amount / a;
+    if (r > room)
+        return room;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e94b0 size=0xa
 extern int g_1073a144;
 
