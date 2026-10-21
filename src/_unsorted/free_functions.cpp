@@ -55863,6 +55863,36 @@ const char *CUnknown10205ba0::sub_10205ba0(CUnknown10204bf0 *pNames)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205dc0 size=0x7e
+#include "vampire.h"
+#include "CUnknown10205dc0.h"
+#include "CUnknown102029c0.h"
+#include "CUnknown10204bf0.h"
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+
+struct StatOwner2 {
+	char m_pad0000[8];
+	int m_nCount;
+	CUnknown102029c0 **m_pItems;
+	int sub_10203020(const char *pszName);
+	CUnknown102029c0 *sub_10203190(int key);
+};
+extern StatOwner2 g_1074e968;
+extern char g_1074ef50[128];
+extern char g_106b8540[];
+
+const char *CUnknown10205dc0::sub_10205dc0()
+{
+	if (!m_block.sub_10204250()) {
+		int key = g_1074e968.sub_10203020("Equality");
+		CUnknown10204bf0 *pNames = this ? (CUnknown10204bf0 *)&m_block : 0;
+		Q_snprintf(g_1074ef50, 0x80, "(%s  %s  %s)\n", m_block.sub_102043a0(), g_1074e968.sub_10203190(key)->sub_10202a10(m_nStat), m_value.sub_10205ba0(pNames));
+		return g_1074ef50;
+	}
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205e60 size=0xac
 #include "CUnknown10205e60.h"
 extern "C" __declspec(dllimport) void Msg(const char *, ...);
