@@ -11,3 +11,4 @@
 	bool sub_102b5de0();	// stub 0x10006aa5, asked before the hint activities
 	void sub_10289ee0(int activity);	// stub 0x10014524: starts the activity
 	int sub_102b9060();	// stub 0x10007d56: the second schedule pick of the "SelectSchedule" of the animal NPCs (called after sub_102b8a60 found none)
+	int sub_102af660();	// CAI_BaseNPCTroika::vfunc438 (stub 0x10015596), called directly (tail jump) by the animal NPCs' schedule selection
