@@ -16,6 +16,61 @@ CBaseCombatWeapon *CWeaponMelee::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e9bf0 size=0x133
+#include "CWeaponMelee.h"
+#include "CVStatList_t.h"
+#include "CUnknown1070b244.h"
+
+#define PV(n) virtual void s##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct MeleePlayer_t {
+	PV100(a)
+	PV10(b0) PV10(b1) PV10(b2) PV10(b3) PV10(b4) PV10(b5)
+	PV(b60) PV(b61) PV(b62) PV(b63) PV(b64) PV(b65) PV(b66) PV(b67) PV(b68)
+	virtual void vfunc169(Vector *pImpulse);
+};
+
+struct MeleeOwner_t {
+	char pad[0xa8];
+	MeleePlayer_t *pPlayer;
+};
+
+struct MeleeRollView_t {
+	char pad0[0x384];
+	float f384;
+	float f388;
+	char pad38c[0x394 - 0x38c];
+	float f394;
+	float f398;
+};
+
+extern CUnknown1070b244 *g_1070b244;
+
+void CWeaponMelee::vfunc339()
+{
+	MeleeOwner_t *pOwner = (MeleeOwner_t *)sub_102521f0();
+	if (pOwner && pOwner->pPlayer) {
+		MeleePlayer_t *pPlayer = pOwner->pPlayer;
+		MeleeRollView_t *pInfo = (MeleeRollView_t *)sub_102517e0();
+		Vector vec;
+		vec.z = 0.0f;
+		vec.x = g_1070b244->vfunc1(pInfo->f384, pInfo->f388);
+		vec.y = g_1070b244->vfunc1(pInfo->f394, pInfo->f398);
+		CVStatList_t *pList = CVStatListSet::Of(pPlayer)->Find(0);
+		float flStat = (float)pList->sub_10010609(1);
+		if (flStat > 9.0f)
+			flStat = 9.0f;
+		double dScale = (10.0f - flStat) * 0.1f;
+		vec.x = (float)(vec.x * dScale);
+		vec.y = (float)(vec.y * dScale);
+		vec.z = (float)(vec.z * dScale);
+		pPlayer->vfunc169(&vec);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ea5b0 size=0xd5
 #include "CWeaponMelee.h"
 
