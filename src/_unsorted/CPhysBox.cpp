@@ -12,6 +12,43 @@ bool CPhysBox::sub_1004e1c0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e260 size=0x125
+#include "CPhysBox.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+extern float g_1070d1b0[3];
+
+typedef bool (__fastcall *PhysBoxSlot223Fn)(CPhysBox *pThis);
+
+void CPhysBox::vfunc103()
+{
+	vfunc93(0, 0);
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(1);
+	}
+	if (*(int *)((char *)this + 0x124)) {
+		*((char *)this + 0x4c8) = 0;
+		vfunc93(8, 0);
+	} else {
+		*((char *)this + 0x4c8) = 1;
+	}
+	sub_100b2e30(g_1070d1b0);
+	m_nTakeDamage = 1;
+	int unused;
+	const char **ppName = vfunc9(&unused);
+	vfunc105(*ppName ? *ppName : g_106b8540);
+	sub_100b3b00();
+	vfunc104();
+	if (m_flags204 & 0x10)
+		sub_100aaa40(1);
+	if (!(m_flags204 & 0x20))
+		sub_100b3840(2);
+	((PhysBoxSlot223Fn)(*(void ***)this)[223])(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e430 size=0x97
 #include "CPhysBox.h"
 #include "CUnknown101466e0.h"
