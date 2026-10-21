@@ -35,3 +35,4 @@
 	void sub_102b53d0(int a, const char *pszMessage);	// stub 0x10001e06, called directly by vfunc180
 	void sub_1029f5d0(void *pHolder);	// stub 0x10009638: releases a patrol path holder, called directly by vfunc180
 	void sub_1027ca30();	// CAI_BaseNPC::vfunc180 (stub 0x10005a47), called directly (tail jump) by vfunc180
+	virtual void vfunc563(CBaseEntity *pEnt, const void *pGoal, const void *pParams, const void *pExtra);	// slot 563 override: with the ideal state (sub_1027d990) 2, moves the vector pParams by the offset between the entity's slot 193 and slot 217 positions and stores in *pExtra the float sub_102d61b0 gives for the dword at +0x1568
