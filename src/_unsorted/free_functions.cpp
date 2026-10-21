@@ -75730,6 +75730,50 @@ void CNPC_VWerewolf::sub_103cade0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cc450 size=0x119
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+
+#define WS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define WS100(p) WS10(p##0) WS10(p##1) WS10(p##2) WS10(p##3) WS10(p##4) WS10(p##5) WS10(p##6) WS10(p##7) WS10(p##8) WS10(p##9)
+
+// The NPC's virtual table up to slot 217 (GetAbsOrigin).
+struct CNPC_VWerewolfSlots
+{
+	WS100(a) WS100(b) WS10(c)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+	virtual CNPC_VWerewolfVec3 *vfunc217();
+};
+
+struct CWerewolfZoneObject
+{
+	virtual void v0();
+	virtual void vfunc1();
+};
+extern CWerewolfZoneObject *g_10924a6c;
+
+// TARGET: CNPC_VWerewolf::sub_103cc450
+void CNPC_VWerewolf::sub_103cc450()
+{
+    ScopeTrace trace("CNPC_VWerewolf::UpdateConditionShouldBreakHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    sub_10015839(0x7b);
+    if ((m_nFlags66e8 & 2) != 2)
+        *(void **)((char *)this + 0x66c4) = 0;
+    if (*(void **)((char *)this + 0x66c4) != 0) {
+        if (sub_103d8550(*(void **)((char *)this + 0x66c4))) {
+            CNPC_VWerewolfVec3 tmp;
+            CNPC_VWerewolfVec3 *pGround = sub_103d6770(&tmp, *(void **)((char *)this + 0x66c4));
+            CNPC_VWerewolfVec3 *pOrigin = ((CNPC_VWerewolfSlots *)this)->vfunc217();
+            if ((char)sub_103d0db0(*pOrigin, *pGround)) {
+                g_10924a6c->vfunc1();
+                sub_10269a20(0x7b);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ceb60 size=0x120
 #include "CNPC_VWerewolf.h"
 

@@ -993,6 +993,7 @@
 0x100052ef func   ?sub_10227210@CUnknown10227210@@QAEXH@Z CUnknown10227210::sub_10227210
 0x100052fe func   ?sub_100be6b0@bf_read@@QAEIH_N@Z bf_read::sub_100be6b0
 0x10005308 func   ?vfunc5@CLogicSquadCondition@@QAEPAV1@I@Z CLogicSquadCondition::vfunc5
+0x1000530d func   ?sub_103cc450@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc450
 0x10005317 func   _prop_radio prop_radio
 0x1000531c func   ?vfunc103@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc103
 0x10005321 func   ?sub_10093970@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10093970
