@@ -24205,6 +24205,54 @@ void CCollisionProperty::sub_100dcd90(const float *pMins, const float *pMaxs, fl
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dcea0 size=0x103
+#include "CCollisionProperty.h"
+
+extern float g_1070d9d0[3];
+void sub_10138130(const float *pPoint, const float *pMatrix, float *pOut);
+
+// slot 8 of the collideable returns the origin pointer (the class declares it void)
+struct CCollisionSlot8
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual float *slot8();
+};
+
+struct CCollisionPropertyUnit : CCollisionProperty
+{
+	int sub_100dcea0(const float *pPoint);
+};
+
+// TARGET: CCollisionPropertyUnit::sub_100dcea0
+int CCollisionPropertyUnit::sub_100dcea0(const float *pPoint)
+{
+	Vector local;
+	if (!(m_usSolidFlags & 0x80) && m_nSolidType != 2 && m_nSolidType != 0)
+	{
+		float *ang = vfunc9(0);
+		if (g_1070d9d0[0] != ang[0] || g_1070d9d0[1] != ang[1] || g_1070d9d0[2] != ang[2])
+		{
+			float *pMatrix = vfunc10();
+			sub_10138130(pPoint, pMatrix, &local.x);
+			goto bounds;
+		}
+	}
+	{
+		float *org = ((CCollisionSlot8 *)this)->slot8();
+		local.x = pPoint[0] - org[0];
+		local.y = pPoint[1] - org[1];
+		local.z = pPoint[2] - org[2];
+	}
+bounds:
+	if (local.x >= m_vecMins.x && local.x <= m_vecMaxs.x &&
+		local.y >= m_vecMins.y && local.y <= m_vecMaxs.y &&
+		local.z >= m_vecMins.z && local.z <= m_vecMaxs.z)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd630 size=0xcf
 #include "CCollisionProperty.h"
 #include <math.h>
