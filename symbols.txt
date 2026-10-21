@@ -3345,6 +3345,7 @@
 0x1000eff2 func   ?vfunc2@CTEBeamEnts@@UAEPAV1@I@Z CTEBeamEnts::vfunc2
 0x1000f001 func   ?sub_102c8c40@UtlMem@@QAEXXZ UtlMem::sub_102c8c40
 0x1000f006 func   ?vfunc546@CNPC_VYukie@@QAEHH@Z CNPC_VYukie::vfunc546
+0x1000f015 func   ?vfunc103@CPropSwitch@@UAEXXZ CPropSwitch::vfunc103
 0x1000f01a func   ?vfunc20@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHH@Z CTempEntsSystem::vfunc20
 0x1000f024 func   ?sub_1024a080@NodeHolder@@QAEHG@Z NodeHolder::sub_1024a080
 0x1000f029 func   ?sub_102a9960@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_102a9960

@@ -12,6 +12,44 @@ void CPropSwitch::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020d850 size=0x11f
+#include "CPropSwitch.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+void CPropSwitch::vfunc103()
+{
+	sub_1018df70();
+	*(int *)((char *)this + 0x19c) = 0xa0;
+	if (!(m_flags204 & 0x8000)) {
+		char *pHdr = (char *)sub_100952d0(-1);
+		if (pHdr) {
+			CCollisionProperty *pCollision;
+			{
+				ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+				pCollision = (CCollisionProperty *)((char *)this + 0x270);
+				pCollision->sub_100dc480(3);
+			}
+			sub_100adf10((const float *)(pHdr + 0xb4), (const float *)(pHdr + 0xc0));
+			sub_100aaa40(1);
+			pCollision->sub_100ddd90();
+			sub_100b3b00();
+		}
+	}
+	if (m_flags204 & 0x4000)
+		*((char *)this + 0x7a4) = 1;
+	else
+		*((char *)this + 0x7a4) = 0;
+	if (m_flags204 & 0x2000) {
+		*(int *)((char *)this + 0x670) = 1;
+		*((char *)this + 0x7a5) = 1;
+	} else {
+		*(int *)((char *)this + 0x670) = 0;
+		*((char *)this + 0x7a5) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020d9c0 size=0xf5
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
