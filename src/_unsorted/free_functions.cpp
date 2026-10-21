@@ -85692,6 +85692,49 @@ int CNPC_VHengeyokai::sub_10382b30(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10382f60 size=0xee
+#include "CNPC_VHengeyokai.h"
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+#define EV(n) virtual void ev##n();
+#define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
+
+struct NpcV {
+	EV10(0) EV10(1) EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8) EV10(9)
+	EV10(10) EV10(11) EV10(12) EV10(13) EV10(14) EV10(15)
+	EV(160) EV(161) EV(162) EV(163) EV(164) EV(165) EV(166)
+	virtual NpcV *ev167();
+	EV(168) EV(169)
+	EV10(17) EV10(18) EV10(19) EV10(20) EV10(21)
+	virtual float *ev220();
+};
+
+int CNPC_VHengeyokai::sub_10382f60()
+{
+	*(int *)((char *)this + 0x6678) = 0;
+	if (!sub_10269d30(0x1a)) {
+		NpcV *self = (NpcV *)this;
+		if (self->ev167()) {
+			NpcV *pEnemy = self->ev167();
+			float *pOther = pEnemy->ev220();
+			float *pMine = self->ev220();
+			float dx = pMine[0] - pOther[0];
+			float dy = pMine[1] - pOther[1];
+			float dz = pMine[2] - pOther[2];
+			float flDist = dx * dx + dy * dy + dz * dz;
+			if (flDist > 160000.0f)
+				return g_1070b244->vfunc2(0, 99) < 70 ? 0x15c : 0x16a;
+			if (flDist > 40000.0f)
+				return g_1070b244->vfunc2(0, 99) < 40 ? 0x15c : 0x16a;
+			return 0x16a;
+		}
+	}
+	return 0x15c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10383470 size=0x96
 #include "CNPC_VHengeyokai.h"
 #include "CVStatList_t.h"
