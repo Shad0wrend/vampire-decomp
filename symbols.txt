@@ -3253,6 +3253,7 @@
 0x1000d6fc func   ?vfunc506@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc506
 0x1000d706 func   ?sub_101ec550@CUnknown101ec6f0@@QAE_NPAUCVFeatKV@@@Z CUnknown101ec6f0::sub_101ec550
 0x1000d70b func   _physics_cannister physics_cannister
+0x1000d724 func   ?sub_101ce060@@YAXPBUCMsgShortsBytes@@PAVCEntityVSlots@@@Z sub_101ce060
 0x1000d73d func   _move_keyframed move_keyframed
 0x1000d747 func   ?sub_10348560@@YAXXZ sub_10348560
 0x1000d74c func   ?sub_101e3910@CUnknown101e0f00@@QAEXHHHH@Z CUnknown101e0f00::sub_101e3910

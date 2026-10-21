@@ -43348,6 +43348,43 @@ void sub_101cde40(void *pPlayer, float a, float b, float c, float d, int nByte)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ce060 size=0x14c
+#include "CSingleUserRecipientFilter.h"
+#include "IVEngineServer.h"
+#include "CEntityVSlots.h"
+
+extern IVEngineServer *g_1070b22c;
+extern int g_10726010;
+
+struct CMsgShortsBytes
+{
+	unsigned short w0;
+	unsigned short w2;
+	short s4;
+	unsigned char b6;
+	unsigned char b7;
+	unsigned char b8;
+	unsigned char b9;
+};
+
+void sub_101ce060(const CMsgShortsBytes *pMsg, CEntityVSlots *pPlayer)
+{
+	if (pPlayer && pPlayer->slot162()) {
+		CSingleUserRecipientFilter filter(pPlayer);
+		filter.sub_1019cf50();
+		g_1070b22c->vfunc65(&filter, g_10726010);
+		g_1070b22c->vfunc70(pMsg->w0);
+		g_1070b22c->vfunc70(pMsg->w2);
+		g_1070b22c->vfunc70(pMsg->s4);
+		g_1070b22c->vfunc67(pMsg->b6);
+		g_1070b22c->vfunc67(pMsg->b7);
+		g_1070b22c->vfunc67(pMsg->b8);
+		g_1070b22c->vfunc67(pMsg->b9);
+		g_1070b22c->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ce2e0 size=0xb4
 #include "CSingleUserRecipientFilter.h"
 #include "CEntityVSlots.h"
