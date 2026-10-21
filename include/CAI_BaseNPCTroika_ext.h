@@ -31,3 +31,7 @@
 	bool sub_102c4680(const char *pszType);	// loads the follower distances of the follower type pszType into +0x6484 (back away) / +0x6488 (walk to) / +0x648c (run to) and raises the walk-to and run-to distance (DevMsg) when it is less than 10.0f above the previous one; returns the lookup's result
 	void sub_1029ed90(inputdata_t *pInput);	// "InputFollowPatrolPath" input handler: unless the state (+0x5cc0) is 7, the input as text is split at ", " into node names, each looked up by sub_102d2900(this, name) (DevMsg "ERROR: ..." and return on a bad format / unknown node); then hands the node id list (terminated by -1) to sub_1029f460 for the patrol path holder at +0x658c
 	void sub_1029f460(void *pHolder, int a, int b, int c, int *pNodes, char bFlag);	// stub 0x10009c7d: sets up the patrol path of the holder (create / reset, add the node ids, schedule 0x...), takes six stack arguments
+	virtual void vfunc180();	// slot 180 "CAI_BaseNPCTroika::...": ClearHintNode(5.0f), slot 601(this) when bound to a named object (+0x65e8), the debug message "Leaving interesting place", the look target reset when sub_102c1170 holds, releases the two patrol path holders (+0x658c, +0x6594), then CAI_BaseNPC::vfunc180
+	void sub_102b53d0(int a, const char *pszMessage);	// stub 0x10001e06, called directly by vfunc180
+	void sub_1029f5d0(void *pHolder);	// stub 0x10009638: releases a patrol path holder, called directly by vfunc180
+	void sub_1027ca30();	// CAI_BaseNPC::vfunc180 (stub 0x10005a47), called directly (tail jump) by vfunc180
