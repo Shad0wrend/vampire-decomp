@@ -46,7 +46,7 @@ public:
 	char m_29[3];
 	int m_2c;
 	int m_30;
-	int m_34;
+	int m_34;	// a float: the ideal yaw
 	int m_38;
 	int m_3c;
 	int m_40;
@@ -68,6 +68,7 @@ public:
 	int sub_102e0bd0(void *pOut, CBaseEntity *pTarget, int a, int b, int c, int d, int e);	// stub 0x100103ca: 7 stack arguments (the AutoMovement test of a move toward pTarget); 1 when the move is possible
 	void sub_102e20b0(const float *pPosition, float flWeight);	// "AddFacingTarget"-like: queues a look target (position, priority) (stub 0x10007248)
 	float sub_102e0a80(float flIdealYaw);	// the yaw the motor reaches when turning toward flIdealYaw: the difference to the yaw at +0x18 (wrapped into -180..180) is clamped to +-the float at +0x1c, added back and wrapped into 0..360
+	float sub_102e1f90();	// "CAI_Motor::DeltaIdealYaw": 0 when the owner's yaw (angles slot 221, y * 182.04445f quantised to 16 bits and scaled back) equals the ideal yaw at +0x34, else AngleDiff(ideal yaw, current yaw) (sub_1013d580, stub 0x100097e6)
 
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
 	static int *sub_102e0860();
