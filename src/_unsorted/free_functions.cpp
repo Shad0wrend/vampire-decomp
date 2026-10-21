@@ -4369,6 +4369,68 @@ void CUtlMemory20::sub_10043870(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10044a90 size=0x140
+#include "CUnknown10044a90.h"
+
+extern int g_109f0b7c;
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+void *operator new(unsigned int);
+void operator delete(void *);
+
+struct CProbe44a90
+{
+	unsigned int m_key;
+	int m_value;
+};
+
+void CUnknown10044a90::sub_10044a90(unsigned int key)
+{
+	CUtlRBTree16 *t = &m_Tree;
+	CProbe44a90 probe;
+	probe.m_key = key;
+	int owner = ((int *)t)[6];
+	if (owner)
+		g_109f0b7c = owner;
+	unsigned short i = t->m_Root;
+	while (i != 0xffff) {
+		if (t->m_LessFunc(&probe, t->m_pElements[i].m_Data)) {
+			i = t->sub_10047930(i).m_Left;
+		} else if (t->m_LessFunc(t->m_pElements[i].m_Data, &probe)) {
+			i = t->sub_10047930(i).m_Right;
+		} else {
+			break;
+		}
+	}
+	if (i == 0xffff)
+		return;
+	CUtlVector4 *pVec = *(CUtlVector4 **)(m_Tree.m_pElements[i].m_Data + 4);
+	if (pVec) {
+		pVec->m_size = 0;
+		if (pVec->m_growSize != -1) {
+			if (pVec->m_pMemory) {
+				Plat_Free(pVec->m_pMemory);
+				pVec->m_pMemory = 0;
+			}
+			pVec->m_allocationCount = 0;
+		}
+		pVec->m_pElements = pVec->m_pMemory;
+		if (pVec->m_growSize != -1) {
+			if (pVec->m_pMemory) {
+				Plat_Free(pVec->m_pMemory);
+				pVec->m_pMemory = 0;
+			}
+			pVec->m_allocationCount = 0;
+		}
+		operator delete(pVec);
+	}
+	t->sub_10046d10(i);
+	t->m_pElements[i].m_Links.m_Left = i;
+	t->m_pElements[i].m_Links.m_Right = t->m_FirstFree;
+	t->m_NumElements--;
+	t->m_FirstFree = i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044db0 size=0x14b
 #include "CUtlMap16.h"
 

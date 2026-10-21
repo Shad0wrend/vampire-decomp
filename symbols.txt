@@ -2327,6 +2327,7 @@
 0x1000ac9f func   ?vfunc1@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAX@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc1
 0x1000acb3 func   _npc_VLasombra npc_VLasombra
 0x1000acb8 func   ??1CUnknown101f4c80@@QAE@XZ CUnknown101f4c80::~CUnknown101f4c80
+0x1000acbd func   ?sub_10044a90@CUnknown10044a90@@QAEXI@Z CUnknown10044a90::sub_10044a90
 0x1000acd1 func   ?sub_10194750@@YAXPAHPBH@Z sub_10194750
 0x1000ace0 func   _prop_doorknob_electronic prop_doorknob_electronic
 0x1000ace5 func   ?vfunc5@CGravityPellet@@QAEPAV1@I@Z CGravityPellet::vfunc5
