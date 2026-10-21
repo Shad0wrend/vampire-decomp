@@ -28586,6 +28586,29 @@ void *Helper::sub_10177ab0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101784c0 size=0x67
+#include "CBasePlayer.h"
+#include "CItemGKeyring.h"
+#include "CUnknown10408220.h"
+
+extern "C" void *__cdecl __RTDynamicCast(void *pObj, long vfDelta, void *pSrcType, void *pTargetType, int isReference);
+extern char g_1055f710[];
+extern char g_105869b8[];
+
+void CBasePlayer::sub_101784c0(CBaseEntity *pOther)
+{
+	CItemGKeyring *pKeyring = (CItemGKeyring *)__RTDynamicCast(sub_10335950("item_g_keyring"), 0, g_1055f710, g_105869b8, 0);
+	if (pKeyring && pOther) {
+		pKeyring->sub_10407e90(pOther);
+		sub_101835e0();
+		if (m_pInventory) {
+			sub_101836d0(pKeyring);
+			((CUnknown10408220 *)pKeyring)->sub_10408220((CUtlMemory192 *)m_pInventory);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017bf10 size=0x10d
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
