@@ -32,3 +32,34 @@ bool CFuncMoveLinear::vfunc223()
 	return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10116bf0 size=0xed
+#include "CFuncMoveLinear.h"
+
+struct COutputX { void sub_10010794(CFuncMoveLinear *a, CFuncMoveLinear *b, int c); };
+__declspec(dllimport) void Warning(const char *, ...);
+extern struct { char pad[0xc]; float curtime; } *g_1070b228;
+void sub_10007180();
+
+typedef Vector *(__fastcall *Slot220)(CFuncMoveLinear *);
+#define SLOT220(p) ((*(Slot220 **)(p))[220](p))
+
+void CFuncMoveLinear::sub_10116bf0()
+{
+    ((COutputX *)((char *)this + 0x590))->sub_10010794(this, this, 0);
+    sub_100ac4e0((int)sub_10007180, 0, 0);
+    *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
+    sub_10013912();
+    Vector *p = SLOT220(this);
+    if (*p == m_vecPosition2) {
+        ((COutputX *)((char *)this + 0x5c0))->sub_10010794(this, this, 0);
+        return;
+    }
+    p = SLOT220(this);
+    if (*p == m_vecPosition1) {
+        ((COutputX *)((char *)this + 0x5a8))->sub_10010794(this, this, 0);
+        return;
+    }
+    Warning("%s done moving, at invalid position?\n", sub_100ab4f0());
+}
+// END FUNCTION
