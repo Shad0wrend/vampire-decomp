@@ -2261,6 +2261,7 @@
 0x10009674 func   ?sub_1003cbc0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1003cbc0
 0x1000967e func   ?sub_1034a030@CUtlVector76@@QAEXH@Z CUtlVector76::sub_1034a030
 0x10009697 func   _test_traceline test_traceline
+0x100096a6 func   ?sub_100d4e50@@YAXXZ sub_100d4e50
 0x100096ab func   _te_tester te_tester
 0x100096b5 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc3
 0x100096c4 func   ?vfunc5@CConstraintAnchor@@UAEPAV1@I@Z CConstraintAnchor::vfunc5

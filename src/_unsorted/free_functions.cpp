@@ -23545,6 +23545,38 @@ void sub_100d46c0(CVStatList_t *pList, int nMinValue, int nArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4e50 size=0xdf
+#include <stdio.h>
+#include "CVFeat_t.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern const char *g_10739d18;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+
+struct EntView100d4e50 {
+	char pad[0x9c];
+	void *m_pCharacter;
+};
+void *sub_101193b0();
+EntView100d4e50 *sub_100db920(void *pPlayer, const char *pszName);
+
+void sub_100d4e50()
+{
+	const char *pszName = g_1070b22c->vfunc84(1);
+	EntView100d4e50 *pEnt = sub_100db920(sub_101193b0(), pszName);
+	if (pEnt && pEnt->m_pCharacter) {
+		void *pCharacter = pEnt->m_pCharacter;
+		char szBuf[24];
+		sprintf(szBuf, "\n   %s:\n\n", g_10739d18 ? g_10739d18 : g_106b8540);
+		Msg(szBuf);
+		for (int i = 0; i < g_10739d20; i++)
+			CVFeatSet::Find(i)->sub_101e5e60(pCharacter);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5000 size=0xdc
 #include "CBasePlayer.h"
 #include "COutputEvent.h"
