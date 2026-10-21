@@ -23,3 +23,7 @@
 	bool vfunc295(CBaseCombatCharacter *pOther);	// slot 295 (plain member): whether this NPC may feed on / attack pOther: both alive, not unconscious, not busy with disciplines, no frenzy and the other not hidden, slot 404 neither 1 nor 2
 	void vfunc610(int emotion);	// slot 610 (plain member): picks the expression pair (+0x10b4 / +0x64d0) and the weight (+0x10b8) of an emotion: Fear / Fear_NoDeform (8, 10), Anger / Anger_No_Deform (2 with weight 1.0, 3 / 0xb / 0xe with 0.5), else the values of the table at 0x10924980 for the index at +0x64d4
 	int sub_10106a40(const char *pszName);	// "CBaseCombatCharacter::LookupExpression" (stub 0x1000d0a3), called directly
+	void sub_102c5310(CBaseEntity *pEnemy);	// makes pEnemy the NPC's problem: sets the misc flag 0x800 when the NPC's focus (slot 167) or pEnemy answers slot 404 with 1, resets the target (sub_102b52a0(1, 1)), slot 595 and 304, flags 0x80820000 at +0x14bc, "player D_LI 99" when the enemy has an object at +0xa8, source line stamp 0x6e7f at +0x1b3c / +0x1b40, state 0xb (SetState), +0x6338 / +0x633c = 6, remembers pEnemy's handle at +0x60ac and +0x5b84 = 0x9fbd
+	void sub_1033c6b0(unsigned int flags);	// "CBaseCombatCharacter::AddMiscFlag" (stub 0x100153a7), called directly
+	void sub_1026d050();	// stub 0x1000c153, called directly
+	void sub_10273790(const char *pszCommand, int a);	// stub 0x1000421e, called directly with a console style command
