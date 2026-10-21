@@ -41,3 +41,35 @@ void CLogicLineToEntity::vfunc113()
 	m_hSource = *vfunc1();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10131cb0 size=0x153
+#include "CLogicLineToEntity.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+struct CGlobalVarsView {
+	char m_pad0000[0xc];
+	float curtime;	// 0xc
+};
+extern CGlobalVarsView *g_1070b228;
+extern Vector g_1070d1b0;
+
+// TARGET: CLogicLineToEntity::vfunc134
+void CLogicLineToEntity::vfunc134()
+{
+	CEntityVSlots *pTarget = (CEntityVSlots *)EHandle_Get(m_hTarget);
+	CEntityVSlots *pSource = (CEntityVSlots *)EHandle_Get(m_hSource);
+
+	if (pTarget && pSource && ((CBaseEntity *)pTarget)->m_pEdict2e0 && ((CBaseEntity *)pSource)->m_pEdict2e0) {
+		Vector *pSourceOrigin = pSource->slot217();
+		Vector *pTargetOrigin = pTarget->slot217();
+		m_Output.SetVector3D(*pTargetOrigin - *pSourceOrigin);
+		m_Output.sub_100cd300(*(CVariantCopy *)&m_Output, this, this, 0.0f);
+		m_flNextThink = g_1070b228->curtime + 0.01;
+	} else {
+		m_Output.SetVector3D(g_1070d1b0);
+		m_Output.sub_100cd300(*(CVariantCopy *)&m_Output, this, this, 0.0f);
+		m_flNextThink = g_1070b228->curtime + 10.0f;
+	}
+}
+// END FUNCTION
