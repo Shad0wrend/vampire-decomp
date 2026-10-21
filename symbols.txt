@@ -347,6 +347,7 @@
 0x100029a0 func   _hud_counter hud_counter
 0x100029c3 func   ?vfunc280@CBaseCombatWeapon@@UAE_NH@Z CBaseCombatWeapon::vfunc280
 0x100029e1 func   ?vfunc5@CNPC_VAndreiBlood@@UAEPAVCAI_BaseNPC@@I@Z CNPC_VAndreiBlood::vfunc5
+0x100029ff func   ?vfunc5@CLogicVisible@@QAEPAV1@I@Z CLogicVisible::vfunc5
 0x10002a09 func   ?sub_1013e800@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e800
 0x10002a1d func   ?sub_10399c70@@YIXPAD@Z sub_10399c70
 0x10002a27 func   ?sub_102d08e0@CPhysBox@@QAEXH@Z CPhysBox::sub_102d08e0
