@@ -86,7 +86,7 @@ public:
 	virtual void vfunc71();
 	virtual void vfunc72();
 	virtual void vfunc73();
-	virtual void vfunc74();
+	virtual char vfunc74();	// asked by Spawn of the NPCs: false removes the NPC again (the rule set does not allow it)
 	virtual void vfunc75();
 	virtual void vfunc76();
 	virtual void vfunc77();
