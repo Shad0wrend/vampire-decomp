@@ -79242,6 +79242,49 @@ int sub_10428280(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428360 size=0xc3
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+void sub_10427dc0(char *);
+int sub_10001aaa(char *p, const char *name);
+struct SlotObjX { virtual void v0(); virtual char *v1(char *a, int b); };
+struct SlotRecX { int a; SlotObjX *obj; char pad[0x6c]; };
+
+int sub_10428360(char *p, const char *name)
+{
+    if (p) {
+        if (*(int *)(p + 0x110)) {
+            sub_10427dc0(p);
+            char *base = p + *(int *)(p + 0x114);
+            int i = 0;
+            if (0 < *(int *)(p + 0x110)) {
+                char *e = base;
+                do {
+                    if (_strcmpi(e + *(int *)(e + 4), name) == 0)
+                        return *(int *)(base + i * 0x2fc + 0xc);
+                    i++;
+                    e += 0x2fc;
+                } while (i < *(int *)(p + 0x110));
+            }
+        }
+        int j = 0;
+        if (0 < *(int *)(p + 0x194)) {
+            int o = 0;
+            do {
+                SlotRecX *q = (SlotRecX *)((char *)(*(int *)(p + 0x198) + o) + (int)p);
+                if (q->obj) {
+                    int r = sub_10001aaa(q->obj->v1(p, j), name);
+                    if (r != -1)
+                        return r;
+                }
+                j++;
+                o += 0x74;
+            } while (j < *(int *)(p + 0x194));
+        }
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104284c0 size=0xc2
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 
