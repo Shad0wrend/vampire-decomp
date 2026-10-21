@@ -38,6 +38,7 @@
 	void sub_1009d980(char bAddAsDefault);	// "CBaseEntity::CBaseEntity" body (entity base constructor, stub 0x100090fc): called directly by the derived constructors before they store their vftable
 	void sub_100b2e30(const float *pVec);	// worker taking a vector (called through the stub at 0x10013728), e.g. SetAbsVelocity-like
 	void sub_100b2f50(const float *pVec);	// worker taking a vector (called through the stub at 0x10006a5f), e.g. SetAbsOrigin-like
+	void *sub_100a5ea0(int solidType, int solidFlags, int createAsleep, int a4);	// "CBaseEntity::VPhysicsInitNormal" (stub 0x1000e78c): scope trace (entity name), VPhysicsInitSetup, SetSolid, SetSolidFlags, then creates the physics object and returns it (null on failure)
 	void sub_100a1250(const void *pDamageInfo);	// takes the damage info (stub 0x1000ad5d), e.g. TakeDamage(const CTakeDamageInfo &)
 	void sub_100a8e00(inputdata_t *pInput);	// "CBaseEntity::InputSetSoundOverrideEnt": scope trace (entity name), stores the input's string (null unless it is a string) at +0x108, finds the entity of that name with the global list at 0x106eb5d8 and calls SetSoundOverrideEnt
 	void vfunc231(void *pObject, float energy, int surfaceProps, int surfacePropsHit);	// slot 231 "CBaseEntity::VPhysicsFriction": scope trace (entity name), unless either surface data record (physprops slot 5 of surfacePropsHit / surfaceProps) has the word 0x58 at +0x70 forwards (this, pObject, energy, surfaceProps) to sub_100324b0
