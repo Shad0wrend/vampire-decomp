@@ -42540,6 +42540,77 @@ void sub_101a7170(CCineNPC *pScript)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7390 size=0x11e
+#include "CCineNPC.h"
+#include "CEHandleGet.h"
+
+#define SLA(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLB(p) SLA(p##0) SLA(p##1) SLA(p##2) SLA(p##3) SLA(p##4) SLA(p##5) SLA(p##6) SLA(p##7) SLA(p##8) SLA(p##9)
+struct CineVT101a7390 {
+	SLB(a) SLB(b) SLB(c) SLB(d) SLB(e)
+	SLA(f0) SLA(f1) SLA(f2) SLA(f3) SLA(f4) SLA(f5) SLA(f6) SLA(f7)
+	virtual void s580(); virtual void s581(); virtual void s582();
+	virtual void a583();
+	virtual void s584();
+	virtual int a585(int a);
+};
+struct NpcVT101a7390 {
+	SLB(a) SLB(b) SLB(c) SLB(d)
+	SLA(e0) SLA(e1) SLA(e2) SLA(e3) SLA(e4) SLA(e5) SLA(e6) SLA(e7)
+	virtual void s480(); virtual void s481();
+	virtual int a482(int a);
+};
+struct CineView101a7390 {
+	char pad0[0x17c];
+	float m_flNextThink;
+	char pad1[0x5ce4 - 0x180];
+	unsigned int m_hNPC;
+	char pad2[0x5f74 - 0x5ce8];
+	float m_f5f74;
+};
+struct EntView101a7390 {
+	char pad[0x94];
+	struct NpcView101a7390 *m_pNpc;
+};
+struct NpcView101a7390 {
+	char pad[0x5d70];
+	int m_nState;
+};
+struct GlobalVarsX { int pad0[3]; float curtime; };
+extern GlobalVarsX *g_1070b228;
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+void sub_1000556f();
+
+void CCineNPC::sub_101a7390(int unused)
+{
+	CineView101a7390 *v = (CineView101a7390 *)this;
+	if (v->m_flNextThink > g_1070b228->curtime) {
+		DevMsg("***WARNING*** Called BeginSequence for '%s' before it had a chance to think.\n", sub_1000b5cd());
+		DevMsg("              Still another %f seconds before we think.\n", (double)(v->m_flNextThink - g_1070b228->curtime));
+		DevMsg("              Try delaying your BeginSequence call.\n");
+		v->m_f5f74 = v->m_flNextThink + 0.05;
+		return;
+	}
+	v->m_f5f74 = g_1070b228->curtime + 0.05;
+	if (sub_101a7760()) {
+		EntView101a7390 *pEnt = (EntView101a7390 *)EHandle_Get(v->m_hNPC);
+		NpcView101a7390 *pNpc = pEnt ? pEnt->m_pNpc : 0;
+		if (pNpc) {
+			if (pNpc->m_nState == 0 || pNpc->m_nState == 2) {
+				if (((NpcVT101a7390 *)pNpc)->a482(((CineVT101a7390 *)this)->a585(1))) {
+					((CineVT101a7390 *)this)->a583();
+					return;
+				}
+			}
+		} else {
+			sub_100ac4e0((void *)sub_1000556f, 0, 0);
+			v->m_flNextThink = g_1070b228->curtime;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a77a0 size=0xa2
 #include "CCineNPC.h"
 extern void (__cdecl *g_109f364c)(const char *fmt, ...);
