@@ -2,3 +2,4 @@
 	int sub_10348980(int a);	// CBaseCombatCharacter::vfunc126 (stub 0x1000e534), called directly
 	void sub_1016fa90();	// stub 0x10008e77, run when the field at +0x1e24 had to be created
 	int sub_10178470(CBaseEntity *pKeyring);	// stub 0x100075a9: a value derived from the keyring item the player holds (negative when none), the hud message argument of the lock code
+	void sub_101710b0(const Vector *pImpulse);	// slot 169 "CBasePlayer::vfunc169" (plain member): in the cases the global at 0x10725de4 allows adds 20 * pImpulse to the vector at +0x1f08
