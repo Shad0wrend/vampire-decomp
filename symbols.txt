@@ -2824,6 +2824,7 @@
 0x1000cf31 func   ?sub_100eb310@CUnknown100eb310@@QAEXH@Z CUnknown100eb310::sub_100eb310
 0x1000cf3b func   ?sub_1022d2f0@CMem32_t@@QAEXH@Z CMem32_t::sub_1022d2f0
 0x1000cf4a func   ?sub_101e85a0@S@@QAEXPAUP@@@Z S::sub_101e85a0
+0x1000cf6d func   ?sub_10280a50@CAI_BaseNPC@@QAE_NXZ CAI_BaseNPC::sub_10280a50
 0x1000cf90 func   ?sub_1007f3d0@@YAXPAUE8@@PBU1@@Z sub_1007f3d0
 0x1000cf9a func   ?sub_103f6630@@YAHXZ sub_103f6630
 0x1000cfa4 func   ?sub_103912e0@@YADXZ sub_103912e0

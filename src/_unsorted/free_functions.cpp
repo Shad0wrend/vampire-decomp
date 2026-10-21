@@ -54162,6 +54162,41 @@ void CAI_BaseNPC::sub_102801e0(int a, CBaseEntity *pEnt, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280a50 size=0x10e
+#include "CAI_BaseNPC.h"
+#include "CAI_Motor.h"
+#include "ScopeTrace.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct AutoMovementSlots
+{
+	V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8)
+	virtual void a90(); virtual void a91(); virtual void a92(); virtual void a93();
+	virtual int slot94();
+	virtual void a95(); virtual void a96(); virtual void a97(); virtual void a98(); virtual void a99();
+	V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V10(b7) V10(b8) V10(b9)
+	V10(c0) V10(c1) V10(c2) V10(c3) V10(c4)
+	virtual float slot250(int a);
+};
+
+bool CAI_BaseNPC::sub_10280a50()
+{
+	ScopeTrace trace("CAI_BaseNPC::AutoMovement", this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc);
+	char bFlag;
+	Vector vecAngles;
+	Vector vecDelta;
+	((AutoMovementSlots *)this)->slot250(0);
+	sub_10094b70(*(float *)((char *)this + 0x174) - *(float *)((char *)this + 0x170), &bFlag, &vecDelta, (int *)&vecAngles);
+	if (((AutoMovementSlots *)this)->slot94() == 4 && !(sub_100b3700() & 0x400)) {
+		CAI_Motor *pMotor = *(CAI_Motor **)((char *)this + 0x5d44);
+		return pMotor->sub_102e0bd0(&vecDelta, sub_102729d0(), *(int *)&vecAngles.y, 0, 0, 0, 0) == 1;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280d10 size=0xc
 bool CUnknown10280d10::sub_10280d10()
 {
