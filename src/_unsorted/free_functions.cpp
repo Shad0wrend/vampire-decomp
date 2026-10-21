@@ -3313,6 +3313,28 @@ void CBaseEntity::sub_1003eb50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003ef00 size=0x118
+#include "ScopeTrace.h"
+int __fastcall sub_1003ef00(CBaseEntity *self, int unused, const Vector &in, const Vector &normal, Vector &out, float overbounce)
+{
+    ScopeTrace trace("CBaseEntity::PhysicsClipVelocity", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+    int blocked = 0;
+    float nz = normal.z;
+    if (nz > 0.0f)
+        blocked |= 1;
+    if (nz == 0.0f)
+        blocked |= 2;
+    float backoff = DotProduct(in, normal) * overbounce;
+    for (int i = 0; i < 3; i++) {
+        float change = normal[i] * backoff;
+        out[i] = in[i] - change;
+        if (out[i] > -0.1 && out[i] < 0.1)
+            out[i] = 0.0f;
+    }
+    return blocked;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003f810 size=0xc6
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"

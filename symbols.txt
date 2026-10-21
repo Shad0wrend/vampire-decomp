@@ -2407,6 +2407,7 @@
 0x1000a40c func   ?sub_101fb180@@YAXH@Z sub_101fb180
 0x1000a411 func   ?vfunc562@CAI_BaseNPC@@UAEDHHD@Z CAI_BaseNPC::vfunc562
 0x1000a416 func   ?sub_10199990@@YAHHH@Z sub_10199990
+0x1000a420 func   ?sub_1003ef00@@YIHPAVCBaseEntity@@HABVVector@@1AAV2@M@Z sub_1003ef00
 0x1000a457 func   _func_rotating func_rotating
 0x1000a461 func   ?vfunc291@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc291
 0x1000a466 func   ?sub_1013eb90@@YG_NPAVCBaseEntity@@I@Z sub_1013eb90
