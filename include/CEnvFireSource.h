@@ -10,7 +10,7 @@ public:
 	CEnvFireSource *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	void vfunc103();	// stub 0x10003e9f when the flag byte at +0x204 bit 0 is set, else stub 0x10009a02
-	void vfunc134();	// think: while enabled (byte at +0x450) re-arms the think (curtime + 0.25) and warms every fire found around the origin (slot 217 of this with the radius at +0x454) by 0.25 * the damage at +0x458
+	void vfunc134();	// think: while enabled (byte at +0x450) re-arms the think (curtime + 0.25) and warms every fire found within the radius at +0x454 of the origin by 0.25 * the damage at +0x458
 
 	char m_pad0000[0x17c];
 	float m_flNextThink;	// 0x17c
@@ -19,6 +19,6 @@ public:
 	char m_pad0205[0x450 - 0x205];
 	char m_bEnabled;	// 0x450
 	char m_pad0451[3];
-	int m_nRadius;	// 0x454: the argument handed to slot 217 when looking for fires
+	float m_flRadius;	// 0x454
 	float m_flDamage;	// 0x458
 };
