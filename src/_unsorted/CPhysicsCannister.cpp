@@ -72,3 +72,40 @@ CPhysicsCannister *CPhysicsCannister::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10150710 size=0x104
+#include "CVDmg_t.h"
+#include "CPhysicsCannister.h"
+struct CRandomHook { virtual void v0(); virtual void v1(); virtual int RandomInt(int lo, int hi); };
+struct CGlobalVarsX { int pad[3]; float curtime; };
+extern CRandomHook *g_1070b244;
+extern CGlobalVarsX *g_1070b228;
+extern char g_1070ba40[];
+
+#define DMGBITS(p) ((p)->m_pDmg ? ((p)->m_pDmg->m_field10 | (p)->m_nDamageType) : (p)->m_nDamageType)
+
+// TARGET: CPhysicsCannister::vfunc142
+int CPhysicsCannister::vfunc142(CCannisterTakeInfo *pInfo)
+{
+	if (!m_nTakeDamage)
+		return 0;
+	if (!m_bLeaking) {
+		float flDamage;
+		if (pInfo->m_pDmg)
+			flDamage = (float)pInfo->m_pDmg->sub_101faa70();
+		else
+			flDamage = pInfo->m_flDamage;
+		m_iHealth = (int)((float)m_iHealth - flDamage);
+		if (m_iHealth < 0)
+			sub_10150f50();
+		else if ((DMGBITS(pInfo) & 0x40) || ((DMGBITS(pInfo) & 0x85) && g_1070b244->RandomInt(1, 100) < 50))
+			sub_10150910(pInfo->m_field2c, g_1070ba40);
+		return 1;
+	}
+	if (g_1070b228->curtime - m_flLeakStart <= 0.1)
+		return 0;
+	if (DMGBITS(pInfo) & 0x400004a)
+		sub_10150f50();
+	return 0;
+}
+// END FUNCTION
