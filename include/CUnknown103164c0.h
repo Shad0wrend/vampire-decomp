@@ -5,6 +5,8 @@
 #include "CUnknown102e06f0.h"
 #include "CBitString.h"
 
+class CBaseEntity;
+
 struct CSquadName	// the name argument of the squad's name setter: one pointer, passed by value
 {
 	const char *m_psz;
@@ -28,4 +30,5 @@ public:
 	CUnknown103164c0 *sub_10316560();	// the default constructor body (no name), stub-called by CAI_SaveRestoreBlockHandler::vfunc7: returns this
 	void sub_103165f0(const char *pszName);	// sets the squad name (stub 0x100132eb)
 	void sub_103165f0(CSquadName name);
+	void sub_10316700(CBaseEntity *pMember);	// stub 0x100145ab: told about a member that joined
 };
