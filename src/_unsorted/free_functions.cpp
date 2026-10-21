@@ -67763,6 +67763,80 @@ int CBaseCombatCharacter::sub_10328c80(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10329560 size=0x189
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+int sub_10431c2f(char *, const char *, ...);
+
+struct CDevFlagObj {
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x2c - 4];
+	int m_n2c;
+};
+extern CDevFlagObj *g_10937034;
+
+struct CGrappleAI {
+	void sub_10175400(int a);
+};
+
+struct CGrappleFields {
+	char m_pad[0xa8];
+	CGrappleAI *m_pAI;
+	char m_pad2[0x1538 - 0xac];
+	unsigned int m_hTarget;
+	int m_n153c;
+	int m_n1540;
+};
+
+struct CSlotEnt {
+	CBCC_SLOTS10(a0) CBCC_SLOTS10(a1) CBCC_SLOTS10(a2) CBCC_SLOTS10(a3) CBCC_SLOTS10(a4)
+	CBCC_SLOTS10(a5) CBCC_SLOTS10(a6) CBCC_SLOTS10(a7) CBCC_SLOTS10(a8) CBCC_SLOTS10(a9)
+	CBCC_SLOTS10(b0) CBCC_SLOTS10(b1) CBCC_SLOTS10(b2) CBCC_SLOTS10(b3) CBCC_SLOTS10(b4)
+	CBCC_SLOTS10(b5) CBCC_SLOTS10(b6) CBCC_SLOTS10(b7) CBCC_SLOTS10(b8) CBCC_SLOTS10(b9)
+	CBCC_SLOTS10(c0) CBCC_SLOTS10(c1) CBCC_SLOTS10(c2) CBCC_SLOTS10(c3) CBCC_SLOTS10(c4)
+	CBCC_SLOTS10(c5) CBCC_SLOTS10(c6) CBCC_SLOTS10(c7) CBCC_SLOTS10(c8) CBCC_SLOTS10(c9)
+	CBCC_SLOTS10(d0) CBCC_SLOTS10(d1) CBCC_SLOTS10(d2) CBCC_SLOTS10(d3) CBCC_SLOTS10(d4)
+	CBCC_SLOTS10(d5) CBCC_SLOTS10(d6) CBCC_SLOTS10(d7)
+	virtual void vfunc380();
+};
+
+// TARGET: CBaseCombatCharacter::sub_10329560
+void CBaseCombatCharacter::sub_10329560()
+{
+	ScopeTrace trace("CBaseCombatCharacter::EndGrapple", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CGrappleFields *f = (CGrappleFields *)this;
+	if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
+		char buf[256];
+		CBaseEntity *pEnt;
+		if (f->m_hTarget != 0xffffffff) {
+			CGlobalEntityList_Slot *s = &g_10566458->m_Slots[f->m_hTarget & 0x1fff];
+			if (s->m_Serial == (int)(f->m_hTarget >> 13))
+				pEnt = (CBaseEntity *)s->m_pEntity;
+			else
+				pEnt = 0;
+		} else
+			pEnt = 0;
+		sub_10431c2f(buf, "%s EndGrapple with %s", sub_100ab4f0(), pEnt->sub_100ab4f0());
+		sub_103221b0(buf);
+	}
+	if (f->m_pAI && f->m_hTarget != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[f->m_hTarget & 0x1fff];
+		if (s->m_Serial == (int)(f->m_hTarget >> 13) && s->m_pEntity && f->m_n153c != -1 && f->m_n1540 == 8)
+			f->m_pAI->sub_10175400(0);
+	}
+	if (f->m_hTarget != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[f->m_hTarget & 0x1fff];
+		if (s->m_Serial == (int)(f->m_hTarget >> 13) && s->m_pEntity)
+			((CSlotEnt *)s->m_pEntity)->vfunc380();
+	}
+	((CSlotEnt *)this)->vfunc380();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032a910 size=0xe3
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
