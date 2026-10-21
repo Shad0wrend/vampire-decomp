@@ -99,7 +99,9 @@ public:
 	CNPC_VWerewolfTimerVec m_Timers;	// 0x665c
 	int m_nCacheTick;	// 0x6670: engine tick of the cached vector
 	CNPC_VWerewolfVec3 m_vCache;	// 0x6674: cached vector
-	char pad6680[0x668c - 0x6680];
+	char pad6680[0x6684 - 0x6680];
+	unsigned int m_hRotDoor1;	// 0x6684: entity handle of the func_movelinear "rotdoor1"
+	unsigned int m_hRotDoor2;	// 0x6688: entity handle of the func_movelinear "rotdoor2"
 	CNPC_VWerewolfIntVec m_History;	// 0x668c
 	char pad66a0[0x66a8 - 0x66a0];
 	char m_b66a8;	// 0x66a8
@@ -110,7 +112,7 @@ public:
 	char pad66c0[0x66c8 - 0x66c0];
 	char m_b66c8;	// 0x66c8
 	char pad66c9[0x66dc - 0x66c9];
-	CNPC_VWerewolfVec3 m_vSnap66dc;	// 0x66dc: set from the global vector at 0x1070d1b0 by SnapToAnimationPosition
+	CNPC_VWerewolfVec3 m_vSnap66dc;	// 0x66dc: set from the global vector at 0x1070d1b0 by SnapToAnimationPoint
 	char pad66e8[0x66f8 - 0x66e8];
 	float m_flNodeTime;	// 0x66f8: time stamp of the cached node
 	void *m_pNode;	// 0x66fc: cached nearest node
@@ -178,7 +180,8 @@ public:
 	bool vfunc617(CNPC_VWerewolfVec3 a, int b, int c, CNPC_VWerewolfVec3 d);	// slot 617 "CNPC_VWerewolf::EnemyCouldSeeHull...": scope trace (entity name); false while the global at 0x1093d694 answers slot 1 false with its field +0x2c set, or when the target (slot 167) answers slot 158 false; else CNPC_VBaseBoss::vfunc617
 	bool sub_10366510(CNPC_VWerewolfVec3 a, int b, int c, CNPC_VWerewolfVec3 d);	// CNPC_VBaseBoss::vfunc617 (stub 0x10007cd4), called directly
 	const char *sub_103ceb60(void *pHint);	// "CNPC_VWerewolf::HintTypeName": "<HINT_WEREWOLF_...> (<debug name of the hint>)" formatted into a global 0x40 byte buffer (0x1093d4a0) from the hint type at +0x5dc (0x3a98..0x3aaa, else HINT_UNKNOWN); returns the buffer
-	void sub_103d9f90();	// "CNPC_VWerewolf::SnapToAnimationPosition": scope trace (entity name), sub_1008eec0("Bip01", 1, 1), sub_10273180(0), then copies the global vector at 0x1070d1b0 to +0x66dc, clears the byte at +0x66a8 and sets the dwords at +0x6708 / +0x670c to -1
+	void sub_103d9f90();	// "CNPC_VWerewolf::SnapToAnimationPoint": scope trace (entity name), sub_1008eec0("Bip01", 1, 1), sub_10273180(0), then copies the global vector at 0x1070d1b0 to +0x66dc, clears the byte at +0x66a8 and sets the dwords at +0x6708 / +0x670c to -1
 	void sub_1008eec0(const char *pszName, int a, int b);	// CBaseAnimating member (stub 0x1000577c), called directly
 	void sub_10273180(int a);	// CAI_BaseNPC member (stub 0x10013b97), called directly
+	void sub_103cade0();	// finds the doors of the level: calls slot 251 on every "trigger_werewolf_zone", then stores the handles of the func_movelinear entities named "rotdoor1" / "rotdoor2" (-1 when missing) at +0x6684 / +0x6688
 };
