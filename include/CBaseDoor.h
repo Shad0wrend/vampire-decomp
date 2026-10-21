@@ -14,7 +14,7 @@ public:
 	void vfunc246(int a, int* b, int c);
 	char sub_100eecf0();	// true (and the flag byte at +0x624 set) when one of the two event lists at +0x5dc / +0x60c has an entry named "ChangeNow"
 	void sub_100ee810();	// scope-less: for each of the two entity handles at +0x628 and +0x62c that resolve, calls sub_10224170 on the entity with a zeroed inputdata_t (value -1 handle), and for the second also again when it still resolves
-	CBaseDoor *sub_100ee2b0();	// as in CKeepUpright (transplant)
+	CBaseDoor *sub_100ee2b0();	// "CBaseDoor::CBaseDoor" body: base constructor, the eight output members (+0x564 .. +0x60c), the doorknob / linked handles to -1, the vtable, +0x64c = 10, +0x650 = 3, the self pointer at +0xa4, bytes +0x654 = 1 / +0x624 = 0; returns this
 	int sub_100f12a0(CBaseDoor **ppDoors, int maxDoors);	// the other doors that share this door's name (a door pair), up to maxDoors
 	void sub_100efbf0(char bOpen);	// "UpdateAreaPortals": for every func_areaportal whose slot 161 accepts the door's name (+0x26c) calls its Use(this, this, bOpen, 0)
 	void sub_100f0210(inputdata_t *pInput);	// door use input: unless the lock check refuses the activator, remembers its handle at +0x53c and starts the movement through slot 243 / 244 according to the door state at +0x4f8
@@ -28,6 +28,8 @@ public:
 	const char *sub_100ab4f0();	// debug name of the entity (stub 0x1000b5cd)
 	CBaseDoor *vfunc5(unsigned char flags);	// scalar deleting destructor: releases the ten event lists, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
+	void sub_100f11b0();	// the door reached the open position (state 1): installs the touch function, fires the output at +0x5dc (flag 1 of +0x204 set) or +0x5c4 with the activator of the handle at +0x53c, closes the area portals (sub_100efbf0(0)) and runs slot 249
+	void sub_100ee4e0(int a, int b);	// stdcall helper called first with the global at 0x106eb3dc and 0 (stub 0x1000ae20)
 
 	char m_pad03e0[0x4a4 - 0x3e0];
 	CDoorEventList m_items4a4[2];	// +0x4a4, +0x4bc
