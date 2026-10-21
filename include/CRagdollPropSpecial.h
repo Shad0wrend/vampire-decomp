@@ -33,4 +33,5 @@ public:
 	void sub_10157ca0(CBaseEntity *pOwner);	// when bit 4 of the spawn flags (+0x204) is set: stores pOwner's handle at +0x1050 (-1 for null), arms the think function sub_10015424 (SetThink), clears +0x1fc, sets +0x200 to 1 and schedules the next think at curtime + 0.001
 	void sub_10015424();	// think function
 	void sub_100ac4e0(void (CRagdollPropSpecial::*pfnThink)(), float flThinkTime, const char *szContext);	// "CBaseEntity::SetThink" (called through the stub at 0x10007fe5)
+	void sub_101578d0(char bValue);	// stub 0x10009a4d: takes the byte the man-bat kept at +0x6694 (called by CNPC_VManBat::sub_1038f660)
 };
