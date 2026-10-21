@@ -7,7 +7,7 @@ public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual CTETParticle *vfunc2(unsigned int flags);	// scalar deleting destructor
-	virtual void vfunc3();
+	virtual void vfunc3(const float *pOrigin, const float *pAngles);	// "CTETParticle::Test": stores the origin and the direction, looks up the "impact_test" resource (flag byte at +0x24), then creates the temp entity for a broadcast filter (slot 4)
 	virtual void vfunc4(int a, int b);	// the Create/Send step; called directly (as sub_100695e0) with the filter and delay of the Particle temp entity call
 
 	void sub_1001267a();	// destructor body
