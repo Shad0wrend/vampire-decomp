@@ -60159,6 +60159,48 @@ void CAI_BaseNPC::sub_10279cc0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027a310 size=0xb7
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);	// DevMsg
+
+struct CRandomStreamX
+{
+	virtual void v0();
+	virtual float RandomFloat(float flMin, float flMax);
+};
+extern CRandomStreamX *g_1070b244;
+
+struct CDropItemX	// the created item entity
+{
+	void sub_100b1d10();	// stub 0x1000d486: ClearParent
+	void sub_100b2770(const Vector *pVelocity);	// stub 0x1000489a
+	void sub_100b2f50(const Vector *pImpulse);	// stub 0x10006a5f
+};
+
+CDropItemX *sub_100a99d0(const char *pszName, const Vector *pOrigin, const Vector *pAngles, CAI_BaseNPC *pOwner);
+
+CBaseEntity *CAI_BaseNPC::sub_1027a310(const char *pszItemName, Vector vecPos, Vector vecAng)
+{
+	if (!pszItemName) {
+		g_109f3630("DropItem() - No item name!\n");
+		return 0;
+	}
+	CDropItemX *pItem = sub_100a99d0(pszItemName, &vecPos, &vecAng, this);
+	if (pItem) {
+		if ((unsigned char)(*(unsigned int *)((char *)this + 0x268) >> 12) & 1)
+			((CDropItemX *)this)->sub_100b1d10();
+		pItem->sub_100b2770((const Vector *)((char *)this + 0x3bc));
+		Vector vecImpulse;
+		vecImpulse.y = g_1070b244->RandomFloat(0, 100.0f);
+		vecImpulse.x = 0;
+		vecImpulse.z = 0;
+		pItem->sub_100b2f50(&vecImpulse);
+		return (CBaseEntity *)pItem;
+	}
+	g_109f3630("DropItem() - Didn't create!\n");
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d8d0 size=0x90
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
