@@ -11,10 +11,13 @@ public:
 	~CVStatActionPart();	// empty out-of-line destructor (0x102056f0, reached through the stub at 0x1000c0c2)
 };
 
-class CVStatActionValue	// the 0x30 byte CVTraitDependencyValue_t-like object at +0x10 of the action
+class CVStatActionHead	// the first 0x18 bytes of the CVTraitDependencyValue_t-like object at +0x10 of the action (vtable, then data)
 {
 public:
-	void sub_10205c70();	// constructor (stub 0x100135d9)
+	char m_pad0000[0x18];
+
+	CVStatActionHead() { sub_10205c70(); }	// the constructor of the whole object (stub 0x100135d9)
+	void sub_10205c70();
 };
 
 class CVStatAction_t
@@ -24,15 +27,15 @@ public:
 	int m_pad0004;	// +4: the action type (1 name of a table entry, 2 lookup, 3 FUNC, 4 owns the string record at +0x3c)
 	int m_nMin;	// +8
 	int m_nMax;	// +0xc
-	char m_pad0010[0x28 - 0x10];
+	CVStatActionHead m_head;	// +0x10
 	CVStatActionPart m_part;	// +0x28
 	void *m_pData;	// +0x3c
 	CVDmgBlock16_t m_block40;	// +0x40
 	int m_a50;	// +0x50
 	int m_b54;	// +0x54
 
+	CVStatAction_t(int a, int b);	// "CVStatAction_t::CVStatAction_t" (0x101fc760, stub 0x1000e8d6), called on freshly allocated memory
 	~CVStatAction_t();	// scope trace, frees the record at +0x3c for type 4, then the part at +0x28
-	CVStatAction_t *sub_101fc760(int a, int b);	// constructor (stub 0x1000e8d6), called on freshly allocated memory
 	bool sub_101fceb0(int value);	// "CVStatAction_t::IsAffectedBy"
 	bool sub_101fcf50();	// "CVStatAction_t::AlwaysTriggers"
 	void sub_101fd110(int a, int b, int c, int d);	// "CVStatAction_t::Apply"
