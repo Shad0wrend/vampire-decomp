@@ -16,8 +16,13 @@ struct CUnknown102ca630EntInfo
 
 struct CUnknown102ca630Rec
 {
-	char m_pad0000[0x20];
-	unsigned int m_hEnt;	// 0x20
+	int m_nType;	// 0x00: 2 = a supernatural act level, else a criminal one
+	char m_pad0004[4];
+	float m_vecPos[3];	// 0x08
+	int m_nLevel;	// 0x14: the act level
+	char m_pad0018[4];
+	unsigned int m_hOwner;	// 0x1c
+	unsigned int m_hEnt;	// 0x20: the offender
 	char m_pad0024[4];
 
 	CBaseEntity *Entity()
@@ -28,6 +33,8 @@ struct CUnknown102ca630Rec
 		}
 		return 0;
 	}
+
+	void sub_102c9da0(CUnknown102ca630Rec *pOther);	// copies the record (stub 0x10008d50)
 };
 
 class CUnknown102ca630
@@ -38,6 +45,6 @@ public:
 	char m_pad002c[0xa04 - 0x2c];
 	int m_nRecs;	// 0xa04
 
-	void sub_102ca460(CUnknown102ca630Rec *pRec);	// removes the record
+	void sub_102ca460(CUnknown102ca630Rec *pRec);	// removes the record: with the cvar at 0x107258dc on, DevMsg "CSActs: %6.1f - External %s act level %d removed from (%f, %f, %f) (offender - %s) (owner - %s)", then the last record is moved over it
 	void sub_102ca630(CBaseEntity *pEnt);	// removes every record whose handle resolves to pEnt
 };
