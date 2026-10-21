@@ -143,6 +143,8 @@ public:
 	void sub_102c0270(int a);	// scripted-sequence cleanup: clears the byte at +0x6495, sets the byte at +0x1590, counts +0x64bc, runs sub_102c0ca0 (stub 0x1000e4d5) and CBaseCombatCharacter::sub_10107050(a), calls slot 306(a, 0) unless bit 3 of the flags at +0x204 is set, cancels the scripted sequence entity of the handle at +0x5d74 (CCineNPC::sub_101a8c30) and hands (a, this, 0) to the sub-object at +0x5f44 (stub 0x10010794)
 	void sub_1000e4d5();	// stub of 0x102c0ca0, called directly
 	void sub_10107050(int a);	// CBaseCombatCharacter member (stub 0x1000fdd0), called directly
+	bool sub_102c44e0(const char *pszName);	// sets the follow target: the entity of that name (slot 559) is stored as the handle at +0x647c (-1 when none); false (handle cleared) when it is invalid or this NPC itself, or a squad member that is not allowed; else resets the target (sub_102b52a0(0, 0)), sets flags 0x3008 at +0x5b84 and returns true
+	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd), called directly
 
 	char m_pad0004[0x204 - 4];
 	unsigned int m_flags204;
