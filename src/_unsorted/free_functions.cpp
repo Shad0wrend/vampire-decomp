@@ -58905,6 +58905,54 @@ void __fastcall sub_10224170(CSlots *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102241f0 size=0x149
+#include "CItemContainerLock.h"
+#include "inputdata_t.h"
+#include "CEHandleGet.h"
+void sub_101cebc0(void *pView, int a, int b);
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+struct CLockContainerView {
+	PV10(a0) PV10(a1) PV10(a2) PV10(a3) PV10(a4) PV10(a5) PV10(a6) PV10(a7) PV10(a8) PV10(a9)
+	PV10(b0) PV10(b1) PV10(b2) PV10(b3) PV10(b4) PV10(b5) PV10(b6) PV10(b7) PV10(b8) PV10(b9)
+	PV10(c0) PV10(c1) PV10(c2) PV10(c3)
+	PV(y0) PV(y1)
+	virtual void vfunc242();
+	char m_pad0004[0x53c - 4];
+	unsigned int m_h53c;
+	bool sub_100eef10();
+};
+struct CLockActivatorView {
+	virtual void v0();
+	virtual unsigned int *v1();
+	char m_pad0004[0xa8 - 4];
+	void *m_pView;
+};
+
+void CItemContainerLock::sub_102241f0(inputdata_t *pInput)
+{
+	if (!sub_10224100() && EHandle_Get(m_hContainer)) {
+		if (((CLockContainerView *)EHandle_Get(m_hContainer))->sub_100eef10()) {
+			CLockActivatorView *pActivator = (CLockActivatorView *)pInput->pActivator;
+			if (!pActivator) {
+				sub_101cebc0(pInput->pActivator, 0x4d, (int)pInput->pActivator);
+				return;
+			}
+			sub_101cebc0(pActivator->m_pView, 0x4d, 0);
+			return;
+		}
+		CLockContainerView *pContainer = (CLockContainerView *)EHandle_Get(m_hContainer);
+		CLockActivatorView *pActivator = (CLockActivatorView *)pInput->pActivator;
+		if (pActivator)
+			pContainer->m_h53c = *pActivator->v1();
+		else
+			pContainer->m_h53c = 0xffffffff;
+		((CLockContainerView *)EHandle_Get(m_hContainer))->vfunc242();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224950 size=0x13a
 #include "CItemContainerLock.h"
 #include "CItemGKeyring.h"
