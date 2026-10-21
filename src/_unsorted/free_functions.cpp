@@ -2635,6 +2635,73 @@ Vector &Vector::sub_1003e4b0(const Vector &v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003e4e0 size=0x17b
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "Vector.h"
+
+struct PhysEventSubX {
+	Vector v;
+	int i0;
+	char b0, b1;
+	char a[2];
+};
+struct PhysEventX {
+	int i0, i4, i8, ic, i10, i14;
+	PhysEventSubX sub;	// 0x18
+	int i2c, i30;
+	short s34;
+	char b36, b37;
+	int i38, i3c, i40, i44;
+	short s48;
+	int i4c, i50;
+};
+extern PhysEventX g_106bd8b0;
+struct TouchLinkX { int pad; int m_nFlags; };
+struct MarkX { TouchLinkX *sub_1003dc70(CBaseEntity *p); };
+
+struct CUnknown1003e4e0 : CBaseEntity {
+	void sub_1003e4e0(CBaseEntity *pOther, void *pTrace);
+};
+
+void CUnknown1003e4e0::sub_1003e4e0(CBaseEntity *pOther, void *pTrace)
+{
+	ScopeTrace trace("CBaseEntity::PhysicsMarkEntitiesAsTouchingEventDriven", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	const PhysEventX *e = (const PhysEventX *)pTrace;
+	const PhysEventSubX &s = e->sub;
+	g_106bd8b0.i0 = e->i0;
+	g_106bd8b0.i4 = e->i4;
+	g_106bd8b0.i8 = e->i8;
+	g_106bd8b0.ic = e->ic;
+	g_106bd8b0.i10 = e->i10;
+	g_106bd8b0.i14 = e->i14;
+	g_106bd8b0.sub.v.sub_1003e4b0(s.v);
+	g_106bd8b0.sub.i0 = s.i0;
+	g_106bd8b0.sub.b0 = s.b0;
+	g_106bd8b0.sub.b1 = s.b1;
+	for (unsigned int k = 0; k < 2; k++)
+		g_106bd8b0.sub.a[k] = s.a[k];
+	g_106bd8b0.i2c = e->i2c;
+	g_106bd8b0.i30 = e->i30;
+	g_106bd8b0.s34 = e->s34;
+	g_106bd8b0.b36 = e->b36;
+	g_106bd8b0.b37 = e->b37;
+	g_106bd8b0.i38 = e->i38;
+	g_106bd8b0.i3c = e->i3c;
+	g_106bd8b0.i40 = e->i40;
+	g_106bd8b0.i44 = e->i44;
+	g_106bd8b0.s48 = e->s48;
+	g_106bd8b0.i4c = e->i4c;
+	g_106bd8b0.i50 = e->i50;
+	TouchLinkX *p = ((MarkX *)this)->sub_1003dc70(pOther);
+	if (p)
+		p->m_nFlags = -1;
+	TouchLinkX *q = ((MarkX *)pOther)->sub_1003dc70(this);
+	if (q)
+		q->m_nFlags = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003e6c0 size=0xa8
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

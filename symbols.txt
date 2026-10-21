@@ -3761,6 +3761,7 @@
 0x10012837 func   ?sub_100efae0@CBaseDoor@@QAEXPAVCBaseEntity@@@Z CBaseDoor::sub_100efae0
 0x10012846 func   ?vfunc516@CGeneric_NPC_bathack@@QAEMXZ CGeneric_NPC_bathack::vfunc516
 0x1001285a func   ?vfunc5@CEnvLaser@@QAEPAV1@I@Z CEnvLaser::vfunc5
+0x1001285f func   ?sub_1003e4e0@CUnknown1003e4e0@@QAEXPAVCBaseEntity@@PAX@Z CUnknown1003e4e0::sub_1003e4e0
 0x10012864 func   _item_k_murietta_key item_k_murietta_key
 0x1001286e func   ?sub_103cca80@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cca80
 0x10012882 func   ?sub_101854b0@CUtlVector72@@QAEXH@Z CUtlVector72::sub_101854b0
