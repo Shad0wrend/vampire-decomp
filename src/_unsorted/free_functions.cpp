@@ -36425,6 +36425,59 @@ void CPlayerDialogUnit::sub_1017d020(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017d0b0 size=0x170
+#define EV(n) virtual void e##n();
+#define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
+struct CEngineTimeView
+{
+	EV10(0) EV10(1) EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8) EV10(9)
+	EV10(10) EV10(11)
+	virtual float e119(int a);
+};
+extern CEngineTimeView *g_1070b22c;
+
+struct SBlendView
+{
+	char m_pad0000[0x19b8];
+	float m_flStart;	// 0x19b8
+	float m_flRate;	// 0x19bc
+
+	void sub_1017d0b0(float flRate);
+	float sub_1017d900();	// stub 0x1000c07c
+};
+
+void SBlendView::sub_1017d0b0(float flRate)
+{
+	if (!(flRate > 0.0f))
+		flRate = 0;
+	float flNow = g_1070b22c->e119(0);
+	if (m_flStart > 0.0f) {
+		float flFrac = sub_1017d900();
+		if (m_flRate < 0.0f) {
+			m_flStart = flNow - flFrac * flRate;
+			m_flRate = flRate;
+			return;
+		}
+		if (m_flRate > 0.0f) {
+			if (flFrac < 1.0f && flNow + flRate > m_flRate + m_flStart) {
+				m_flStart = flNow - flFrac * flRate;
+				m_flRate = flRate;
+				return;
+			}
+		} else {
+			if (m_flRate == 0.0f && flNow - 0.01f <= m_flStart && flRate > 0.0f) {
+				m_flStart = flNow;
+				m_flRate = flRate;
+				return;
+			}
+		}
+	} else {
+		m_flStart = flNow;
+		m_flRate = flRate;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017deb0 size=0x73
 struct CGameTimeScale {
 	virtual void vfunc0();
