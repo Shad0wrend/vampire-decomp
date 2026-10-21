@@ -4748,6 +4748,7 @@
 0x1001389a func   _info_node info_node
 0x100138a9 func   ?vfunc432@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::vfunc432
 0x100138b8 func   _player_weaponstrip player_weaponstrip
+0x100138c2 func   ?sub_101cebc0@@YAXPAUCMsgPlayerView@@HH@Z sub_101cebc0
 0x100138cc func   ?sub_103f3a70@@YAHXZ sub_103f3a70
 0x100138d6 func   ?sub_10334860@CBaseCombatCharacter@@QAEDPAX@Z CBaseCombatCharacter::sub_10334860
 0x100138e0 func   ?vfunc5@CTriggerImpact@@QAEPAV1@I@Z CTriggerImpact::vfunc5
