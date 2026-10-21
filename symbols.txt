@@ -2397,6 +2397,7 @@
 0x1000a92a func   ?sub_10297430@CAI_BaseNPCTroika@@QAE_NPAV1@@Z CAI_BaseNPCTroika::sub_10297430
 0x1000a934 func   ?vfunc103@CScriptedTarget@@UAEXXZ CScriptedTarget::vfunc103
 0x1000a943 func   ?vfunc5@CItemGGarysCD@@QAEPAV1@I@Z CItemGGarysCD::vfunc5
+0x1000a948 func   ?sub_102ea130@CUnknown10359c50@@QAE_NPBDH00@Z CUnknown10359c50::sub_102ea130
 0x1000a957 func   ?sub_102c6780@UtlVec8@@QAEHPBUUtlVec8Elem@@@Z UtlVec8::sub_102c6780
 0x1000a961 func   ?vfunc196@CBaseEntity@@QAEHH@Z CBaseEntity::vfunc196
 0x1000a96b func   ?sub_10349fd0@UtlMem@@QAEXXZ UtlMem::sub_10349fd0

@@ -67023,6 +67023,41 @@ void __fastcall sub_102e9e50(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea130 size=0xc3
+#include "CUnknown10359c50.h"
+
+extern void (__cdecl *g_109f3628)(const char *pszFormat, ...);	// tier0 Msg
+
+// TARGET: CUnknown10359c50::sub_102ea130
+bool CUnknown10359c50::sub_102ea130(const char *pszSymbol, int nLocalId, const char *pszIdType, const char *pszClassName)
+{
+	if (!m_pSymbols) {
+		g_109f3628("ERROR: Adding symbol to uninitialized table %s\n", pszClassName);
+		return false;
+	}
+	if (m_nLocalBase == 9999 && !sub_102ea240(nLocalId)) {
+		g_109f3628("ERROR: Bad %s LOCALID for %s\n", pszIdType, pszClassName);
+		return false;
+	}
+	if (nLocalId < m_nLocalBase) {
+		g_109f3628("ERROR: %s First added %s must be first LOCALID!\n", pszIdType, pszClassName);
+		return false;
+	}
+	if (m_nHighestLocal != -1) {
+		if (nLocalId > m_nHighestLocal) {
+			m_nHighestLocal = nLocalId;
+			m_nHighestGlobal = m_nGlobalBase - m_nLocalBase + nLocalId;
+		}
+	} else {
+		m_nHighestLocal = m_nLocalBase;
+		m_nHighestGlobal = m_nGlobalBase;
+	}
+	int nGlobalId = sub_102ea2d0(nLocalId);
+	m_pSymbols->sub_102e9fe0(pszSymbol, nGlobalId);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eb170 size=0x107
 #include "CUtlRBTree12.h"
 extern CUtlRBTree12 g_10934014;
