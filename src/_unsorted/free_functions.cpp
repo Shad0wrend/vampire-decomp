@@ -61758,6 +61758,39 @@ void CAI_BaseNPCTroika::sub_1029ea40(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f370 size=0xbc
+#include "CAI_BaseNPCTroika.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern void (__cdecl *g_109f3650)(int level, const char *pszFormat, ...);	// tier0 DevMsg / DevWarning with a level
+int sub_102cadb0(const char *pszName);
+
+// TARGET: CAI_BaseNPCTroika::sub_1029f370
+int CAI_BaseNPCTroika::sub_1029f370(const char *pszName)
+{
+	char szName[256];
+	int nSchedule = sub_102cadb0(pszName);
+	if (nSchedule == -1) {
+		sprintf(szName, "SCHED_%s", pszName);
+		nSchedule = sub_102cadb0(szName);
+		if (nSchedule == -1) {
+			sprintf(szName, "SCHED_TROIKA_%s", pszName);
+			nSchedule = sub_102cadb0(szName);
+			if (nSchedule == -1) {
+				g_109f3650(1, "ERROR: %s - Could not find schedule '%s'\n", sub_1000b5cd(), szName);
+				return 0;
+			}
+		}
+	}
+	CAI_CondOwner *pOwner = vfunc580();
+	int nLocal = pOwner->sub_102ea280(nSchedule);
+	if (nLocal != -1)
+		return nLocal;
+	g_109f3650(1, "ERROR: %s - Could not convert schedule '%s' to local\n", sub_1000b5cd(), pszName);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0eb0 size=0xb
 void __fastcall sub_100037e2(void *);
 void __fastcall sub_102a0eb0(char *self)

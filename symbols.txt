@@ -5079,6 +5079,7 @@
 0x10015334 func   ??0CBaseTempEntityHead@@QAE@PBD@Z CBaseTempEntityHead::CBaseTempEntityHead
 0x10015339 func   ?sub_10359190@@YADXZ sub_10359190
 0x10015370 func   ?vfunc51@CMultiplayRules@@UAE?AVVector@@PAVCBaseEntity@@@Z CMultiplayRules::vfunc51
+0x10015384 func   ?sub_1029f370@CAI_BaseNPCTroika@@QAEHPBD@Z CAI_BaseNPCTroika::sub_1029f370
 0x10015389 func   ?vfunc31@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc31
 0x1001538e func   ?sub_10079910@@YIXPAUObj@@HH@Z sub_10079910
 0x10015393 func   _item_w_sabbatleader_attack item_w_sabbatleader_attack
