@@ -59,3 +59,5 @@
 	const char *sub_100ab4f0();	// stub 0x1000b5cd, text for the "Trying to set attack extents" warning
 	void sub_100b51b0();	// stub 0x10004ade: switches on the byte at +0x28c of the collision property (surround type): types 0, 1, 6 call sub_100dda20 unless the property is not solid (flag bit 7 / type 0 / type 2), types 2, 4 and above 6 always do, types 3, 5 never; then recurses into every move child (handle chain +0x260, next at +0x264)
 	float vfunc203();	// slot 203 "CBaseEntity::GetAttackDamageScale": scope trace (entity name), the product of the modifiers of the list at +0x230 (head index +0x23c, 12 byte nodes with the next index at +8) that are not disabled
+	void sub_100a55b0(void *pPhysics);	// stub 0x1000d8be: the update of an entity whose move type is not simulated by vphysics (called by vfunc226 for move types 1 and 8)
+	void sub_100342c0();	// stub 0x10006456: run by vfunc226 after a vphysics update moved the entity
