@@ -4132,6 +4132,7 @@
 0x10010fe1 func   ?sub_102a9940@CUnknown102a9750@@QAEXH@Z CUnknown102a9750::sub_102a9940
 0x10010ffa func   _trigger_multiple trigger_multiple
 0x10010fff func   ?vfunc68@CBaseCombatCharacter@@QAE_NPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc68
+0x1001100e func   ?vfunc326@CDisciplineWeapon@@UAEXXZ CDisciplineWeapon::vfunc326
 0x10011013 func   _worldspawn worldspawn
 0x10011027 func   ?sub_103387a0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_103387a0
 0x10011036 func   ?sub_10045360@CUnknown10045360@@QAEXXZ CUnknown10045360::sub_10045360
