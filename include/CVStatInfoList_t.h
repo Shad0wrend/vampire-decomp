@@ -3,6 +3,7 @@
 
 #include "CVStatInfo_t.h"
 #include "CVStatCost_t.h"
+#include "CVDmg_t.h"
 
 class CVStatInfoList_t
 {
@@ -23,4 +24,5 @@ public:
 	int sub_101fff60(const char *name, int startIdx);	// "CVStatInfoList_t::LookupNextPart": scope trace, like LookupPartial but starting after startIdx
 	int sub_102000e0(const char *name, int startIdx);	// "CVStatInfoList_t::LookupNextPart" (another instance)
 	CVStatInfo_t *sub_10200370(int idx);	// element accessor: the record at idx, or a shared default record when idx is out of range
+	CVDmgBlock16_t *sub_10200260(const char *name);	// "CVStatInfoList_t::LookupDependency": scope trace, a function-local static block set to (the table entry for +0x2c, the index of the stat named name) and returned
 };
