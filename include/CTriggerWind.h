@@ -22,6 +22,9 @@ public:
 	void sub_100b3b00();	// CBaseEntity::sub_100b3b00, called directly
 	void sub_101c6860();	// CTriggerMultiple::vfunc103, called directly (stub 0x100048ef)
 	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
+	int vfunc124_impl_placeholder();	// unused placeholder keeping this header's method list stable
+	int sub_101caee0();	// "CTriggerWind::DrawDebugTextOverlays" (slot 124, declared as a plain member because the placeholder slot above is void): the base overlays, then with the text bit (bit 0 of the debug overlays at +0x224) "Dir: %i (%i)" / "Speed: %i (%i)" lines; returns the next line
+	int sub_101c4f40();	// CBaseTrigger::vfunc124 (stub 0x100104e2), called directly
 
 	char m_pad0004[0x5b0 - 4];
 	int m_n05b0;	// 0x5b0
