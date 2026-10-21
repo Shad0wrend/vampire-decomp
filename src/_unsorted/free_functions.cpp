@@ -26914,6 +26914,42 @@ float CGameMovement::sub_101282b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a610 size=0x99
+#include "CGib.h"
+
+#define U1(n) virtual void u##n();
+#define U10(n) U1(n##0) U1(n##1) U1(n##2) U1(n##3) U1(n##4) U1(n##5) U1(n##6) U1(n##7) U1(n##8) U1(n##9)
+
+struct CGibSlots : CGib	// slots 134..201 are placeholders, then the owner notification
+{
+	U1(134) U1(135) U1(136) U1(137) U1(138) U1(139)
+	U10(14) U10(15) U10(16) U10(17) U10(18) U10(19)
+	U1(200) U1(201)
+	virtual void vfunc202(CBaseEntity *pOwner);	// slot 202 (+0x328)
+};
+
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long nVfDelta, void *pSrcType, void *pTargetType, int bReference);
+extern "C" __declspec(dllimport) void Warning(const char *pMsg, ...);
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_10566074[];	// type descriptor of CGib
+CBaseEntity *__cdecl sub_10136580(const char *pszClassname);
+
+void __cdecl sub_1012a610(CBaseEntity *pOwner, int nGibs, void *a, void *b, const char *pszModel, float flLife)
+{
+	for (int i = 0; i < nGibs; i++) {
+		CGibSlots *pGib = (CGibSlots *)__RTDynamicCast(sub_10136580("gib"), 0, g_10538764, g_10566074, 0);
+		if (!pGib)
+			Warning("classname %s used to create wrong class type\n");
+		pGib->sub_1012b080(pszModel);
+		pGib->m_nBody = i;
+		pGib->sub_1012a1d0(pOwner, a, b);
+		pGib->m_flLife73c = flLife;
+		if (pOwner)
+			pGib->vfunc202(pOwner);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b290 size=0x49
 void *sub_1000db89(int);
 struct GP;
