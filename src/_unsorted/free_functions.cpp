@@ -26806,6 +26806,53 @@ void S100fb8a0::sub_100fb8a0(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fb980 size=0x88
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CEngine1070b22c {
+	V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9) V10(b0) V10(b1)
+	virtual int vfunc120();
+};
+extern CEngine1070b22c *g_1070b22c;
+
+struct CRateGlobal107083dc {
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x28 - 4];
+	float m_flScale;
+};
+extern CRateGlobal107083dc *g_107083dc;
+
+struct CUnit100fb980 {
+	char m_pad0000[0x48c];
+	float m_flRateScale;
+	char m_pad0490[4];
+	int m_n494;
+	char m_pad0498[0x4a1 - 0x498];
+	char m_bScaled;
+	const char *sub_100ab4f0();
+	void sub_100fb980(float flRate);
+};
+
+// TARGET: CUnit100fb980::sub_100fb980
+void CUnit100fb980::sub_100fb980(float flRate)
+{
+	if (flRate < 0.0f) {
+		Warning("%s rate scale set to %.2f, must be >=0\n", sub_100ab4f0(), (double)flRate);
+		flRate = 0.0f;
+	}
+	m_flRateScale = flRate;
+	if (m_bScaled) {
+		float f = g_107083dc->vfunc1() ? 0.0f : g_107083dc->m_flScale;
+		m_flRateScale = f * m_flRateScale;
+	}
+	m_n494 = g_1070b22c->vfunc120();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbc20 size=0x19
 #include "CBaseEntity.h"
 
