@@ -47,7 +47,7 @@ public:
 	virtual void vfunc588(); virtual void vfunc589();
 	virtual char vfunc590();	// slot 590: true when the NPC may act and its state (+0xfec) is one of a fixed set (1, 9, 0x13, 0x30, 0x4b, 0x4d, 0x51, 0x73..0x8a, 0xcb5, 0xd25, 0x1121, 0x1157..0x1158)
 	virtual void vfunc591(); virtual void vfunc592(); virtual void vfunc593(); virtual void vfunc594(); virtual void vfunc595();
-	virtual void vfunc596(); virtual void vfunc597(); virtual void vfunc598(); virtual void vfunc599(); virtual void vfunc600();
+	virtual void vfunc596(); virtual void vfunc597(); virtual void vfunc598(); virtual void vfunc599(); virtual char vfunc600(int unused);	// slot 600: see sub_102b57c0
 	virtual void vfunc601(int a);	// slot 601: takes one argument
 	virtual void vfunc602(); virtual void vfunc603(); virtual void vfunc604(); virtual void vfunc605(); virtual void vfunc606(); virtual void vfunc607();
 	virtual bool vfunc608(const char *pszName);	// slot 608: binds the NPC to the first of the three global named objects whose name equals pszName (case-sensitive; false for null / empty / no match), stores it at +0x65e8 and its name (null when empty) at +0x65ec
@@ -129,7 +129,6 @@ public:
 	void sub_102ae750(int schedule, int a);	// stub 0x1000198d
 	char sub_102b57c0(int unused);	// slot 600: when the active weapon (sub_10007e19) is a ranged one (type flags bits 15 / 16) and the flag byte at +0x6078 is clear, asks the named thing at +0x65e8 (sub_1025dca0); on yes sets the flag, stamps the next time at +0x6074 (curtime + random 7.5 .. 15.0), notifies the global at 0x10924edc and returns true; else clears the flag and returns false
 	int sub_10007e19();	// CBaseCombatCharacter member (the stub at 0x10007e19 for 0x1032e7b0): the active weapon
-	void sub_102b2730();	// part of GatherConditions: with no pending count (+0x5bb0) and a squad (+0x5da4), when the enemy (slot 168) was last seen long enough ago sets the task 0x31 (then 0x32 when condition 0x4a is set); then asks condition 0x46
 
 	char m_pad0004[0x14bc - 4];
 	unsigned int m_flags14bc;
