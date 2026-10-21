@@ -23,4 +23,5 @@ public:
 
 	void sub_102d9040(int a, CBaseEntity *pEnt, const float *vec, int arg4, float duration, float amount);	// appends a record: id, the entity's handle (-1 for none), a vector, the start time (curtime), the end time (curtime + duration) and amount / duration
 	void sub_102d8e50(const float *vec, int arg4, float duration, float amount);	// removes the first record with exactly this vector, then appends a new one for it (sub_102d9040(1, 0, vec, ...))
+	void sub_102d8f20(CBaseEntity *pEnt, const float *vec, int arg4, float duration, float amount);	// removes the record of pEnt (when its start time is now and its field +0x20 is not below the value (a float in arg4) the value is replaced by it), then appends a new one with the id 2 (sub_102d9040)
 };
