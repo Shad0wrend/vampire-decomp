@@ -49,7 +49,8 @@ class CCollisionEvent
 public:
 	virtual void vfunc0(void *pEvent);	// "CCollisionEvent::PreCollision": scope trace, copies the 32 byte event to +0x68, then slot 40 of both objects fills the records at +0x88 / +0x94 (second argument 0x30 further)
 
-	// Slots 4, 6, 8 and 9, declared as plain members.
+	// Slots 3, 4, 6, 8 and 9, declared as plain members.
+	void vfunc3(void *pObject1, void *pObject2, void *pData);	// "CCollisionEvent::StartTouch": scope trace, with both entities (slot 6 of the objects) set and the collision data queried (slots 1 / 0), the start touch is dispatched at once (sub_10030ba0) unless the byte at +0x13c is set, which goes to sub_10030f30 (queued) instead
 	void vfunc4(void *pObject1, void *pObject2, void *pData);	// "CCollisionEvent::EndTouch": scope trace, with both entities (slot 6 of the objects) set and the collision data queried (slots 1 / 0), the end touch is dispatched at once (sub_10030cb0) unless the byte at +0x13c is set, which goes to sub_10030f30 (queued) instead
 	void vfunc6(void *pObject, void *pFluid);	// "CCollisionEvent::FluidEndTouch": scope trace, the entity of the object (slot 6) loses bit 19 of its flags at +0x268 and, when the time since its last fluid touch (DeltaTimeSinceLast) reaches a minimum, sub_10151150(pFluid, pObject, entity)
 	void vfunc8(void *pObject1, void *pObject2);	// "CCollisionEvent::ObjectEnterTrigger"
