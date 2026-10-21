@@ -27762,6 +27762,44 @@ void CUnknown101346e0::sub_10134420(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101344f0 size=0x78
+#include "CBaseEntity.h"
+
+extern void *vt_104475c4[];
+extern void *vt_10468434[];
+extern char g_10578bb8[];
+void *sub_100aa720(int size);
+
+struct COutputSlot {
+	char m_data[0x18];
+	void sub_100cd2a0();
+};
+
+struct CCaseToggleView : CBaseEntity {
+	char m_padView[0x490 - 0x3e0];
+	COutputSlot m_out[16];
+	COutputSlot m_out610;
+};
+
+extern "C" CBaseEntity *logic_case_toggle()
+{
+	CCaseToggleView *p = (CCaseToggleView *)sub_100aa720(0x62c);
+	CBaseEntity *e;
+	if (p) {
+		p->sub_1009d980(0);
+		*(void ***)p = vt_104475c4;
+		for (int i = 0; i < 16; i++)
+			p->m_out[i].sub_100cd2a0();
+		p->m_out610.sub_100cd2a0();
+		*(void ***)p = vt_10468434;
+		e = p;
+	} else
+		e = 0;
+	e->vfunc106(g_10578bb8);
+	return e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101346e0 size=0x7f
 #include "CUnknown101346e0.h"
 
