@@ -147,6 +147,7 @@ public:
 	bool sub_102c44e0(const char *pszName);	// sets the follow target: the entity of that name (slot 559) is stored as the handle at +0x647c (-1 when none); false (handle cleared) when it is invalid or this NPC itself, or a squad member that is not allowed; else resets the target (sub_102b52a0(0, 0)), sets flags 0x3008 at +0x5b84 and returns true
 	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd), called directly
 	void sub_102aab70(int unused);	// looks the NPC's target toward a position: with flag 0x10 of +0x14bc and an enemy (slot 167) the position slot 541 gives for it, with flag 0x20 and the entity of the handle at +0x5ce4 that entity's origin (slot 217); when slot 556 does not accept the position it is handed to the motor (+0x5d44) as a facing target with weight -2.0f; takes one unused stack argument
+	bool sub_10290200(int unused);	// task state 2 of the scripted-action runner (CAI_BaseNPCTroika::RunAlternateAction, state at +0x644c): after the base work, once curtime passed the time at +0x6450, when the entity of the handle at +0x5d24 is live runs slot 448(0xe) and clears the handle, the byte at +0x5d30 and the state; else lets the object at +0x5d34 decide (sub_102ee2e0) to run sub_102bf7e0, then slot 528 and clears the state; always true
 
 	char m_pad0004[0x204 - 4];
 	unsigned int m_flags204;
@@ -156,7 +157,13 @@ public:
 	char m_b1590;
 	char m_pad1591[0x5bc4 - 0x1591];
 	char m_b5bc4;
-	char m_pad5bc5[0x5d74 - 0x5bc5];
+	char m_pad5bc5[0x5d24 - 0x5bc5];
+	unsigned int m_h5d24;
+	char m_pad5d28[0x5d30 - 0x5d28];
+	char m_b5d30;
+	char m_pad5d31[3];
+	void *m_p5d34;
+	char m_pad5d38[0x5d74 - 0x5d38];
 	unsigned int m_h5d74;
 	char m_pad5d78[0x6084 - 0x5d78];
 	float m_f6084;
@@ -169,7 +176,9 @@ public:
 	float m_f6440;
 	CBaseEntity *m_p6444;
 	unsigned int m_h6448;
-	char m_pad644c[0x6495 - 0x644c];
+	int m_n644c;
+	float m_f6450;
+	char m_pad6454[0x6495 - 0x6454];
 	char m_b6495;
 	char m_pad6496[0x64bc - 0x6496];
 	int m_n64bc;
