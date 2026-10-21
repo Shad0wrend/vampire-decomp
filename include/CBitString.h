@@ -26,4 +26,5 @@ public:
 	void sub_100bf5b0(int numDwords);	// allocates the dword storage (stub 0x1000be6a)
 	void sub_100bf600(int numDwords);	// resizes the dword storage to numDwords (0 frees it); switches between the inline dword and heap memory
 	void sub_100bf6a0();	// releases the dword storage
+	void sub_100bf480(int nBits);	// "CBitString::Resize": sets the bit count; reallocates when the dword count changes (new dwords cleared; when growing the stale bits above the old bit count in the last old dword are cleared with the mask table at 0x1055b298)
 };
