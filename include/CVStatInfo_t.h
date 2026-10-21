@@ -43,7 +43,7 @@ public:
 	int sub_101ff010(int arg);	// evaluates the stat's value record (stub 0x10003a08), used by MinSell
 	int sub_101ff0b0(int arg);	// "CVStatInfo_t::MinSell": scope trace (empty entity name), the larger of the third value record (+0x74) and sub_101ff010 for arg (each evaluated again for the result)
 	int sub_101ff190(int arg);	// "CVStatInfo_t::MaxBuy": scope trace (empty entity name), the smaller of the value record at +0x88 and sub_101ff060 for arg (each evaluated again for the result)
-	void sub_101fdda0(int arg);	// "CVStatInfo_t::GetValueName": scope trace (empty entity name), with an id at +8 hands (id, arg) to the global table at 0x1074e968, else calls the function pointer at +0 (when set) with arg
+	const char *sub_101fdda0(int arg);	// "CVStatInfo_t::GetValueName": scope trace (empty entity name), with an id at +8 hands (id, arg) to the global table at 0x1074e968, else calls the function pointer at +0 (when set) with arg; returns the name text
 	int sub_101fde60(const char *pszValue);	// "CVStatInfo_t::GetNameValue": scope trace (empty entity name), with an id at +8 looks the id and the string up in the global table at 0x1074e968 (sub_10203190) and evaluates the result, else calls the function pointer at +4 (when set) with the string, else atoi(string); returns the value
 	void sub_101fe8b0(CVStatKV *pKV, void *pDefaults);	// "CVStatInfo_t::PostLoad": scope trace (empty entity name); Msg when there is no data, else loads the value records +0x4c "Min", +0x60 "Max", +0x74 "MinSell" (a copy of Min when unset), +0x88 "MaxBuy" (a copy of Max when unset), +0x9c "Default", the action list (+0x10c), the "IncPredependency" list (+0x120) and the cost (+0xb0), which is copied from pDefaults+0x30 when the cost is missing
 };
