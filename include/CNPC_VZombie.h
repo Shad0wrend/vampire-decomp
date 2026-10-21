@@ -18,4 +18,6 @@ public:
 	void vfunc103();	// slot 103 "CNPC_VZombie::Spawn" (declared as a plain member): solid flags 0x4000000 / 0x200000 / 0x8000, the distances at +0x6348 to 999999, a scrambled random value at +0x6364, then CNPC_VAnimal::vfunc103
 	void sub_10012855(int flags);	// sets the solid flags, called directly
 	void sub_100117ca();	// CNPC_VAnimal::vfunc103 (stub 0x100117ca), called directly
+	virtual int vfunc124();	// slot 124 "CNPC_VZombie::DrawDebugTextOverlays": base lines, then (with bit 18 of the debug flags at +0x224) one "Cond: %s" overlay line per condition bit set in the 192 bit vector at +0x5c5c
+	int sub_1029d4e0();	// CAI_BaseNPCTroika::vfunc124 (stub 0x10006f64), called directly
 };
