@@ -33,6 +33,27 @@ void CNPC_VSheriffMan::vfunc619(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b1510 size=0x9c
+#include "CNPC_VSheriffMan.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+void CNPC_VSheriffMan::sub_103b1510()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::CacheFloorHeights", g_106b8540);
+	CEntityVSlots *pEnt = sub_103b0930();
+	if (pEnt) {
+		*(int *)((char *)this + 0x66e8) = *(int *)&pEnt->slot217()->z;
+		pEnt = sub_103b0ab0(0);
+		if (pEnt) {
+			int nHeight = *(int *)&pEnt->slot217()->z;
+			*(char *)((char *)this + 0x66e7) = 1;
+			*(int *)((char *)this + 0x66ec) = nHeight;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b15e0 size=0x7a
 #include "CNPC_VSheriffMan.h"
 struct ScopeEnt { const char *name; const char *file; const char *file2; };
