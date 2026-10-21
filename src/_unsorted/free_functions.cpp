@@ -19983,6 +19983,59 @@ float sub_100c4160(void *hdr, int index, float value, float *ctl)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c47d0 size=0x143
+struct Item48 { int d[12]; };
+struct Node { int idx; Item48 item; Node *next; };
+struct Rec { int a; int b; int c; Vector v1; Vector v2; unsigned flags; Node *head; };
+struct Ent { char pad[0x88]; unsigned flags; char pad2[0xa0 - 0x8c]; };
+struct Src {
+    char pad[0xf0];
+    int count;
+    int offset;
+    Ent *Ents() { return (Ent *)((char *)this + offset); }
+};
+extern int g_106e39c0;
+extern Rec g_106dbe80[16];
+extern Node *g_106e39bc;
+void sub_10003b25();
+void sub_100c4980(Rec *);
+void sub_100c49d0();
+
+Rec *sub_100c47d0(Src *src, int b, int c, Vector *v1, Vector *v2, unsigned flags, Item48 *items)
+{
+    sub_10003b25();
+    g_106e39c0 = (1 + g_106e39c0) & 0xf;
+    Rec *r = &*(g_106dbe80 + g_106e39c0);
+    sub_100c4980(r);
+    r->a = (int)src;
+    r->b = b;
+    r->c = c;
+    r->v1 = *v1;
+    r->v2 = *v2;
+    r->flags = flags;
+    r->head = 0;
+    Node *last = 0;
+    { long i = 0; while ((int)i < src->count) { if ((flags & src->Ents()[i].flags) || !(src->Ents()[0].flags & 0xfffc)) {
+            Node *n = g_106e39bc;
+            if (!n) {
+                sub_100c49d0();
+                n = g_106e39bc;
+            }
+            g_106e39bc = n->next;
+            if (!r->head)
+                r->head = n;
+            else
+                last->next = n;
+            n->idx = i;
+            n->item = *(items + i);
+            last = n;
+        } i += 1; } }
+    if (last)
+        last->next = 0;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6280 size=0xa0
 #include <string.h>
 struct SModelLoader {
