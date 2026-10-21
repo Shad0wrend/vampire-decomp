@@ -86324,6 +86324,47 @@ char sub_103c8e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c9cf0 size=0x159
+#include "ScopeTrace.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct EntV {
+    V100(a) V100(b) V10(c0) V10(c1)
+    virtual const float *GetOrigin();
+};
+struct PVSVec {
+    float x, y, z;
+    PVSVec() { x = 0; y = 0; z = 0; }
+    ~PVSVec() {}
+};
+extern int g_1065f798;
+extern char g_1093d738[];
+char sub_103c9cf0(EntV *pEnt, Vector vecPoint)
+{
+    ScopeTrace trace("UTIL_PointInEntitiesPVS", g_106b8540);
+    static PVSVec s_last;
+    const float *p = pEnt->GetOrigin();
+    float v[3];
+    v[0] = p[0];
+    v[1] = p[1];
+    v[2] = p[2];
+    if (s_last.x != v[0] || s_last.y != v[1] || s_last.z != v[2]) {
+        s_last.x = v[0];
+        s_last.y = v[1];
+        s_last.z = v[2];
+        int cluster = g_1070b22c->vfunc30(v);
+        if (cluster != g_1065f798) {
+            g_1065f798 = cluster;
+            g_1070b22c->vfunc31(cluster, 0x2000, g_1093d738);
+        }
+    }
+    return g_1070b22c->vfunc32(&vecPoint.x, g_1093d738);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c9ed0 size=0xb5
 #include "CHintData_WW.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
