@@ -23,4 +23,6 @@ public:
 	CUnknown102f7970Vec *m_pVec;
 
 	void sub_102f7970();
+	unsigned int sub_102f9950();
+	void sub_102f7a90();
 };
