@@ -66,3 +66,39 @@ void CPropHaunted::vfunc180()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10213c60 size=0xeb
+#include "CPropHaunted.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+struct CPrecacheSounds { virtual void vfunc0(const char *name, int preload); };
+extern CPrecacheSounds *g_1070b248;
+extern char g_106b8540[];
+void sub_10014e93(const char *src, char *dst, int size);
+void CPropHaunted::vfunc104()
+{
+	char buf[260];
+	sub_1000978c();
+	const char *p = *(const char **)((char *)this + 0x7bc);
+	if (!p) p = g_106b8540;
+	if (*p) {
+		sub_10014e93(p, buf, 260);
+		g_1070b22c->vfunc17((int)buf, 1);
+	}
+	p = *(const char **)((char *)this + 0x7c0);
+	if (!p) p = g_106b8540;
+	if (*p) {
+		sub_10014e93(p, buf, 260);
+		g_1070b22c->vfunc17((int)buf, 1);
+	}
+	p = *(const char **)((char *)this + 0x7c4);
+	if (!p) p = g_106b8540;
+	if (*p) g_1070b248->vfunc0(p, 1);
+	p = *(const char **)((char *)this + 0x7c8);
+	if (!p) p = g_106b8540;
+	if (*p) g_1070b248->vfunc0(p, 1);
+	p = *(const char **)((char *)this + 0x7cc);
+	if (!p) p = g_106b8540;
+	if (*p) g_1070b248->vfunc0(p, 1);
+}
+// END FUNCTION
