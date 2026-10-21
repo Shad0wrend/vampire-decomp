@@ -2,7 +2,7 @@
 // queued events is at +0x50. Real layout only partly known.
 #pragma once
 
-struct CEQEvent	// a "PEvent" record as the queue restores it (0x40 bytes); the entity handles start invalid
+struct CEQEvent	// a "PEvent" record as the queue restores it (0x44 bytes); the entity handles start invalid
 {
 	char m_pad0000[0xc];
 	int m_hActivator;	// 0x0c
@@ -14,7 +14,7 @@ struct CEQEvent	// a "PEvent" record as the queue restores it (0x40 bytes); the 
 	char m_pad0024[8];
 	int m_hVariant;	// 0x2c
 	int m_n30;	// 0x30
-	char m_pad0034[0x40 - 0x34];
+	char m_pad0034[0x44 - 0x34];
 
 	CEQEvent()
 	{
