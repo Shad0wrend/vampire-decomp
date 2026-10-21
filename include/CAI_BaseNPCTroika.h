@@ -54,7 +54,8 @@ public:
 	virtual char vfunc590();	// slot 590: true when the NPC may act and its state (+0xfec) is one of a fixed set (1, 9, 0x13, 0x30, 0x4b, 0x4d, 0x51, 0x73..0x8a, 0xcb5, 0xd25, 0x1121, 0x1157..0x1158)
 	virtual void vfunc591(); virtual void vfunc592(); virtual void vfunc593(); virtual void vfunc594(); virtual void vfunc595();
 	virtual void vfunc596(); virtual void vfunc597(); virtual void vfunc598(CBaseEntity *pEnt);	// slot 598: forgets pEnt (sub_10332ca0(pEnt, 4, 0), clears the focus / target when it is pEnt, drops its record from the memory list of slot 541)
-	virtual void vfunc599(); virtual char vfunc600(int unused);	// slot 600: see sub_102b57c0
+	virtual char vfunc599();	// slot 599: true when the NPC may take a ranged position now (keeps +0x6078 up to date): see the definition
+	virtual char vfunc600(int unused);	// slot 600: see sub_102b57c0
 	virtual void vfunc601(int a);	// slot 601: takes one argument
 	virtual char vfunc602(); virtual float vfunc603(float *pCur, float *pTarget);	// slot 602: true when the NPC may carry on (flags +0x5b84 bit 1 clear, slot 293 zero, bound named object at +0x65e8 content with the NPC's timers), see CNPC_VHuman::vfunc602; slot 603: random yaw offset picked by where *pCur lies relative to *pTarget (+-32.0f); see the definition
 	virtual void vfunc604(); virtual void vfunc605(); virtual void vfunc606(); virtual void vfunc607();
