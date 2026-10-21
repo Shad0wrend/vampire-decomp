@@ -58,6 +58,54 @@ void CBaseEntity::vfunc168()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027160 size=0x14e
+#include "TempVector.h"
+
+struct CColView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7();
+	virtual Vector *GetCollisionOrigin();
+	virtual Vector *GetCollisionAngles(int a);
+	virtual float *CollisionToWorldTransform();
+	Vector m_vecMins;
+	Vector m_vecMaxs;
+	char m_pad1c[0x40 - 0x1c];
+	int m_nSolidType;
+	char m_usSolidFlags;
+};
+
+extern Vector g_1070d9d0;
+extern float g_104454d0;
+void sub_100087ba(const float *in, const float *matrix, float *out);
+
+inline void VectorTransform(const Vector &in1, const float *matrix, Vector &out)
+{
+	sub_100087ba(&in1.x, matrix, &out.x);
+}
+
+// TARGET: CBaseEntity::vfunc192
+Vector CBaseEntity::vfunc192()
+{
+	CColView *pCol = (CColView *)((char *)this + 0x270);
+	Vector &vecResult = AllocTempVector();
+	Vector &vecCenter = AllocTempVector();
+	vecCenter.x = (pCol->m_vecMaxs.x - pCol->m_vecMins.x) * g_104454d0 + pCol->m_vecMins.x;
+	vecCenter.y = (pCol->m_vecMaxs.y - pCol->m_vecMins.y) * g_104454d0 + pCol->m_vecMins.y;
+	vecCenter.z = (pCol->m_vecMaxs.z - pCol->m_vecMins.z) * g_104454d0 + pCol->m_vecMins.z;
+	if ((pCol->m_usSolidFlags & 0x80) == 0 && pCol->m_nSolidType != 2 && pCol->m_nSolidType != 0
+		&& *pCol->GetCollisionAngles(0) != g_1070d9d0)
+	{
+		VectorTransform(vecCenter, pCol->CollisionToWorldTransform(), vecResult);
+	}
+	else
+	{
+		VectorAdd(vecCenter, *pCol->GetCollisionOrigin(), vecResult);
+	}
+	return vecResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027490 size=0xa
 #include "CBaseEntity.h"
 // TARGET: CBaseEntity::vfunc116
