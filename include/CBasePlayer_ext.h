@@ -30,3 +30,5 @@
 	void *sub_1008d990(int sequence);	// CBaseAnimating member (stub 0x1000b4f6): the sequence descriptor (a float at +0x2f8), 0 when none; called directly
 	char sub_10344da0(int activity);	// CBaseCombatCharacter member (stub 0x10010c3f): whether the activity is one of the character's own, called directly
 	char sub_10161380();	// stub 0x1000a6a5: an activity-machine check on the player, called directly
+	void sub_1017f2a0(int priority, CBaseEntity *pEntity, const Vector *pPos);	// "CBasePlayer::NoticeCriminalAct"-like: with the global at 0x107258dc allowing it, stamps the witness (+0x63a4 = curtime + 20) and prints "CSActs: Criminal act witnessed by %s"; then, when the local player object (global 0x107532e8) has the field +0x49c, sends the player view message (sub_101cebc0(this, 5, 0)) and records the act (sub_1017ed00)
+	void sub_1017ed00(int priority, CBaseEntity *pEntity, const Vector *pPos);	// stub 0x10010eb0: stores the highest priority criminal act (+0x1cfc priority, +0x1d00 witness handle, +0x1d04 position) and arms the timer at +0x1cf8; called directly
