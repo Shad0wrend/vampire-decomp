@@ -1,5 +1,5 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 158, 161, 162, 167, 173,
-// 192, 193, 194, 202, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 346, 360, 371, 376, 381, 385, 448 and 457 of an entity class that does not model its vtable.
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 142, 158, 161, 162, 167, 173,
+// 192, 193, 194, 202, 203, 204, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 346, 360, 371, 376, 381, 385, 448 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -42,7 +42,10 @@ public:
 	EVS(120) EVS(121)
 	virtual void slot122(const char *pszClassname);	// "SetClassname"
 	EVS(123) EVS(124) EVS(125) EVS(126) EVS(127) EVS(128) EVS(129)
-	EVS10(13) EVS10(14)
+	EVS10(13)
+	EVS(140) EVS(141)
+	virtual void slot142(const void *pInfo);	// "OnTakeDamage": takes the damage info record
+	EVS(143) EVS(144) EVS(145) EVS(146) EVS(147) EVS(148) EVS(149)
 	EVS(150) EVS(151) EVS(152) EVS(153) EVS(154) EVS(155) EVS(156) EVS(157)
 	virtual char slot158();
 	EVS(159) EVS(160)
@@ -62,7 +65,9 @@ public:
 	EVS(195) EVS(196) EVS(197) EVS(198) EVS(199)
 	EVS(200) EVS(201)
 	virtual void slot202(CEntityVSlots *pOwner);	// "SetOwnerEntity"
-	EVS(203) EVS(204) EVS(205) EVS(206) EVS(207) EVS(208) EVS(209)
+	virtual float slot203();	// "GetAttackDamageScale"
+	virtual float slot204();	// "GetReceivedDamageScale"
+	EVS(205) EVS(206) EVS(207) EVS(208) EVS(209)
 	EVS(210) EVS(211)
 	virtual void slot212(int set);
 	virtual void slot213(const float *pSize);	// "SetSize"
