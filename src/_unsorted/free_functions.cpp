@@ -27856,6 +27856,41 @@ void CAI_BaseNPC::sub_10156580(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156810 size=0x108
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+void sub_10009539();
+void sub_10003012();
+
+extern SendTable g_10723258;
+extern SendTable *g_1057d5a0;
+extern const char *g_1057e85c;
+
+// TARGET: sub_10156810
+int sub_10156810()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1057d5a0, (void *)sub_10009539),
+		sub_10007bfd("m_boneIndexAttached", 0x103c, 4, 9, 1, 0, 0),
+		sub_10007bfd("m_ragdollAttachedObjectIndex", 0x1040, 4, 5, 1, 0, 0),
+		sub_1000c14e("m_attachmentPointBoneSpace", 0x1044, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_1000c14e("m_attachmentPointRagdollSpace", 0x1050, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+	};
+	g_10723258.sub_1000e8fe(props + 1, 5, g_1057e85c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156d30 size=0x8
 void __fastcall sub_10156d30(char *p) { p[0x105c] = 1; }
 // END FUNCTION
