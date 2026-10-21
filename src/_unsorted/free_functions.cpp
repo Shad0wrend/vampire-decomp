@@ -7281,6 +7281,39 @@ CTEWorldDecal *CTEWorldDecal::sub_1006af40(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006b440 size=0xb7
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10246700(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, int varProxy);	// SendPropVector
+void sub_10009539();
+void sub_10003012();
+
+extern SendTable g_106c753c;
+extern SendTable *g_1053dfa8;
+
+// TARGET: sub_1006b440
+int sub_1006b440()
+{
+	static const char *pTableName = "DT_TEWorldDecal";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_10246700("m_vecOrigin", 12, 12, -1, 2, 0.0f, -121121.121212f, (int)sub_10003012),
+		sub_10007bfd("m_nIndex", 0x18, 4, 9, 1, 0, 0),
+	};
+	g_106c753c.sub_1000e8fe(props + 1, 3, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c0a0 size=0xa1
 #include "CUnknown1006bea0.h"
 
