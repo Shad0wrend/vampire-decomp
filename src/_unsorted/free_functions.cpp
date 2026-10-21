@@ -40538,6 +40538,43 @@ void CUnknown102047d0::sub_102047d0(const char *pszName, int *pGender, int *pVal
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204e90 size=0x94
+#include "CUnknown10204e90.h"
+
+extern CVStatInfoList_t g_1074e658;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e098;
+
+int CUnknown10204e90::sub_10204e90(int arg)
+{
+	if (m_nIndex != -1) {
+		switch (m_nKind) {
+		case 0:
+			return g_1074e658.sub_10200370(m_nIndex)->sub_101ff060(arg);
+		case 1:
+			return g_1074e4f0.sub_10200370(m_nIndex)->sub_101ff060(arg);
+		case 2:
+			return g_1074e098.sub_10200370(m_nIndex)->sub_101ff060(arg);
+		case 3:
+			return 0;
+		case 4:
+			return 0;
+		case 5:
+			return 0;
+		case 6:
+			return 0;
+		case 7:
+			return 0;
+		case 8:
+			return 0;
+		case 9:
+			return 0;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204f60 size=0x94
 #include "CUnknown10204f60.h"
 
