@@ -6,6 +6,8 @@ class CUnknown1007bb30Reader	// the object at +0xa8
 public:
 	virtual const char *vfunc0();	// the current string
 	virtual void vfunc1(int a);	// advances
+	virtual void vfunc2();
+	virtual void vfunc3(const char *pszFormat, ...);	// reports an error (variadic: the object is pushed as the first stack argument)
 };
 
 class CUnknown1007bb30Dest	// the receiver of the copied text
