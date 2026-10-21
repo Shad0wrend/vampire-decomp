@@ -169,3 +169,36 @@ void CGameMovement::vfunc10(Vector &wishdir, float wishspeed, float accel)
 		MOVE_VELOCITY[i] += accelspeed * wishdir[i];
 }
 // END FUNCTION
+
+// FUNCTION: 0x10122c30 size=0x77
+#include "CGameMovement.h"
+
+struct CPlayerView10122c30 {
+	char m_pad0000[0x24];
+	int m_nFlags24;
+	int m_nFlags28;
+	char m_pad002c[0x40 - 0x2c];
+	Vector m_vecVelocity;
+};
+
+struct CMoveView10122c30 {
+	char m_pad0000[0x3b0];
+	Vector m_vecBase;
+};
+
+// TARGET: CGameMovement::vfunc18
+void CGameMovement::vfunc18()
+{
+	sub_101252e0();
+	CPlayerView10122c30 *pPlayer = (CPlayerView10122c30 *)m_pPlayer;
+	if (pPlayer->m_nFlags24 & 2)
+		slot17();
+	else
+		pPlayer->m_nFlags28 &= ~2;
+	pPlayer = (CPlayerView10122c30 *)m_pPlayer;
+	VectorAdd(pPlayer->m_vecVelocity, ((CMoveView10122c30 *)m_pMove)->m_vecBase, pPlayer->m_vecVelocity);
+	slot19(0, 0);
+	pPlayer = (CPlayerView10122c30 *)m_pPlayer;
+	VectorSubtract(pPlayer->m_vecVelocity, ((CMoveView10122c30 *)m_pMove)->m_vecBase, pPlayer->m_vecVelocity);
+}
+// END FUNCTION
