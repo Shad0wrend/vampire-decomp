@@ -1,6 +1,54 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10132be0 size=0x11e
+#include "CEnvGlobal.h"
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EngineText {
+	S10(a) S10(b) S10(c)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+	virtual int entIndex(int edict);
+};
+struct GlobalState {
+	int sub_10057820(const char *name);
+};
+extern EngineText *g_1070b22c;
+extern GlobalState g_106be530;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) int Q_snprintf(char *buf, int n, const char *fmt, ...);
+extern "C" __declspec(dllimport) char *Q_strncpy(char *dst, const char *src, int n);
+void sub_101434b0(int ent, int line, const char *text, int a, int r, int g, int b, int al);
+
+// TARGET: CEnvGlobal::vfunc124
+int CEnvGlobal::vfunc124()
+{
+	int line = CBaseEntity::vfunc124();
+	char buf[512];
+	if (*(unsigned char *)((char *)this + 0x224) & 1) {
+		const char *name = *(const char **)((char *)this + 0x450);
+		Q_snprintf(buf, 512, "State: %s", name ? name : g_106b8540);
+		int edict = *(int *)((char *)this + 0x2e0);
+		sub_101434b0(g_1070b22c->entIndex(edict), line, buf, 0, 255, 255, 255, 255);
+		line++;
+		switch (g_106be530.sub_10057820(*(const char **)((char *)this + 0x450))) {
+		case 0:
+			Q_strncpy(buf, "Value: OFF", 512);
+			break;
+		case 1:
+			Q_strncpy(buf, "Value: ON", 512);
+			break;
+		case 2:
+			Q_strncpy(buf, "Value: DEAD", 512);
+			break;
+		}
+		int edict2 = *(int *)((char *)this + 0x2e0);
+		sub_101434b0(g_1070b22c->entIndex(edict2), line, buf, 0, 255, 255, 255, 255);
+		line++;
+	}
+	return line;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135ef0 size=0x1e
 #include "CEnvGlobal.h"
 
