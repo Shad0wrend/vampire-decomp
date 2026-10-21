@@ -41,6 +41,8 @@ public:
 	float m_fieldA0;
 	char m_pad00a4[4];
 	float m_fieldA8;
+	int m_nCachedContents;	// 0xac: the cached point contents (-9999 when none)
+	Vector m_vecCachedPoint;	// 0xb0: the point the cached contents belong to
 
 	float sub_101282b0();	// movement speed scale: 0.8 * a tuning value chosen by the player's state at +0xc0 (0 for other states)
 	void sub_10122590();	// plays a random "surfaces/wade/step*.wav" footstep sound at the player's origin (+0x70) with a clamped volume
@@ -49,4 +51,5 @@ public:
 	void sub_10004ebc();
 	int sub_10124120(Vector &in, Vector &normal, Vector &out, float overbounce);	// "CGameMovement::ClipVelocity": blocked flags (1 for a floor normal with z > 0, 2 for a step normal with z == 0); out = in - normal * (in . normal * overbounce), components within +-0.1 are zeroed
 	void sub_1011ffe0();	// "CGameMovement::WaterJump": the water jump time at +0x2314 of the object at +8 is capped at 10000, counted down by frame time * 1000 and ends (cleared, flag 4 removed) when it runs out or the object at +8 has no value at +0x3e0; while it runs the velocity x / y (+0x40 / +0x44 of the object at +4) are set from the object at +8 (+0x2318 / +0x231c)
+	int sub_10125200(const Vector &point);	// "CGameMovement::GetPointContentsCached": with the global movement optimisation flag at 0x10572420 set, asks the engine trace object (global 0x1070b254, slot 0) for the contents of the point only when nothing is cached or the point moved more than 1 unit from the cached one, and returns the cached value; without the flag always asks
 };
