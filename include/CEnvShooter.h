@@ -14,11 +14,11 @@ public:
 	void sub_1000cb8a();
 
 	// Slot 241, declared as a plain member.
-	CGib *vfunc241();	// "CEnvShooter::CreateGib": creates a "gib" entity (warns when it is the wrong class), gives it the model name of slot 9, a random body from the body count at +0x470, and copies the shooter's settings (+0x458, +0x16c, +0x1a0, +0x168, +0x47c, +0x478, life time +0x468 + curtime); with flag 2 of +0x204 also lights it (sub_100f54c0 + sub_100f5600)
+	CGib *vfunc241();	// "CEnvShooter::CreateGib": creates a "gib" entity (warns when it is the wrong class), gives it the model name of slot 9, a random body from the body count at +0x470, and copies the shooter's settings (+0x458, +0x16c, +0x1a0, +0x168, +0x47c, +0x478, life time +0x468 + curtime); with flag 2 of +0x204 also lights it (free function sub_100f54c0 + sub_100f5600)
 	// Slot 242, declared as a plain member.
 	CBaseEntity *vfunc242(Vector origin, Vector angles);	// "CEnvShooter::CreateEnvGib"-like: creates a prop_physics at origin / angles with the model of slot 9, the skin-like value at +0x478 copied to +0x670, spawns it, sets bits 5 and 7 of +0x19c and applies a random 0.95..1.05 times the float at +0x468; returns it
-	CBaseEntity *sub_100f54c0(CGib *pGib);	// creates the flame entity of a gib (stub 0x10015a50); null when there is none
 
+	char m_pad0000[4];	// the vtable pointer
 	char m_pad0004[0x168 - 4];
 	int m_n168;	// 0x168
 	int m_n16c;	// 0x16c
