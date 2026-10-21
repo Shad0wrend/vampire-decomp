@@ -58985,6 +58985,32 @@ void CUnknown10227f60::sub_10227f60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10228220 size=0x75
+#include "CUnknown10228020.h"
+#include "CUnknown10248a50.h"
+#include "CUnknown1070b22c.h"
+#include "CKeyValuesX.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+void sub_10002095(const char **pOut, const char *pszString);
+
+char CUnknown10228020::sub_10228220(CUnknown10248a50 *pData)
+{
+	if (pData) {
+		CKeyValuesX *pKey = ((CKeyValuesX *)pData)->sub_1001569a("PreCacheData", 0);
+		if (pKey) {
+			for (CKeyValuesX *p = pKey->sub_10004c8c(); p; p = p->sub_1000fa65()) {
+				const char *psz;
+				sub_10002095(&psz, p->sub_10248cd0(0, ""));
+				g_1070b22c->vfunc13(psz ? psz : "", 0);
+			}
+			return 1;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102283a0 size=0x67
 float sub_102283a0(float cur, float target, float a, float b)
 {

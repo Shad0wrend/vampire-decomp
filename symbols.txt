@@ -2875,6 +2875,7 @@
 0x1000bea6 func   ?sub_10233ad0@@YAXPAX@Z sub_10233ad0
 0x1000beb5 func   ?sub_102def00@UtlMem@@QAEXXZ UtlMem::sub_102def00
 0x1000bec4 func   ?sub_10231e60@@YIIPAD@Z sub_10231e60
+0x1000bec9 func   ?sub_10228220@CUnknown10228020@@QAEDPAVCUnknown10248a50@@@Z CUnknown10228020::sub_10228220
 0x1000bed8 func   ?sub_1008b490@@YIXPAD@Z sub_1008b490
 0x1000bef6 func   ?sub_10260870@CUtlVector36@@QAEXH@Z CUtlVector36::sub_10260870
 0x1000bf00 func   ?sub_10190d80@@YAHXZ sub_10190d80
