@@ -36,6 +36,8 @@ public:
 	void vfunc265(int activity, float flWeight, float flFade, int pszEvent, int nExtra);	// slot 265: while alive and not flagged no-flinch (+0x730) takes the oldest of the four 0x1c byte layers (array at +0x7f4, its time at +0x18), starts the sequence selected for the activity in it (order counter +4 advanced mod 4, weight +8, fade +0xc, kind 0x18, end time now + weight + fade) and, with a second sequence name, looks that up and fills the layer's data block (+0x14) through sub_100c43e0
 	int sub_10092270(int a);	// CBaseAnimating::sub_10092270 (stub 0x10009ac5), called directly: looks up a sequence by its name argument, -1 when there is none
 	void *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 "GetModelPtr" (stub 0x100125...), called directly
+	float sub_10091230(int sequence);	// CBaseAnimating::sub_10091230 (stub 0x10001429): the cycles per second of the sequence, called by the layer advance
+	char sub_10090ef0(int sequence);	// CBaseAnimating::sub_10090ef0 (stub 0x10014ffb): whether the sequence loops (bit 0 of the answer), called by the layer advance
 
 	char m_pad0000[0x738];
 	CAnimationLayer m_Layers[15];	// 0x738
@@ -44,5 +46,5 @@ public:
 // Callee of vfunc250: advances a layer's cycle and fade weight. The game passes the address of the layer minus 4 as this.
 struct CAnimationLayerAdvance
 {
-	float sub_10098830(float dt, CBaseAnimatingOverlay *pEntity);
+	float sub_10098830(float dt, CBaseAnimatingOverlay *pEntity);	// "CAnimationLayer::StudioFrameAdvance": cycle += cycles per second * rate * dt (wrapping or clamping by the loop flag, setting the finished flag at +4), then the fade-in / fade-out weight spline, clamped to the maximum weight (+0x18); returns dt
 };
