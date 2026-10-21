@@ -4426,6 +4426,7 @@
 0x100132cd func   ?sub_102342d0@@YAHXZ sub_102342d0
 0x100132d2 func   ?sub_1019cae0@@YA_NPAUCRagdollLayout@@PAUCRagdollStudio@@H@Z sub_1019cae0
 0x100132f0 func   ?sub_10056fa0@CBaseFire@@QAEXHH@Z CBaseFire::sub_10056fa0
+0x10013309 func   ?vfunc103@CPropDestructable@@UAEXXZ CPropDestructable::vfunc103
 0x10013327 func   ?vfunc5@CResearchBook_LG_COMP@@QAEPAV1@I@Z CResearchBook_LG_COMP::vfunc5
 0x10013331 func   ?vfunc599@CNPC_VTzimisceRunner@@UAE_NPAX@Z CNPC_VTzimisceRunner::vfunc599
 0x1001334f func   ?sub_102edc80@CAI_Navigator@@QAE_NPBVVector@@MHHPAV2@H@Z CAI_Navigator::sub_102edc80

@@ -1,6 +1,35 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10193a50 size=0xf7
+#include "CPropDestructable.h"
+#include "CBreakableProp.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+void CPropDestructable::vfunc103()
+{
+	*(const char **)((char *)this + 0x794) = *(const char **)((char *)this + 0x388);
+	((CBreakableProp *)this)->vfunc103();
+	const char *pszModel = *(const char **)((char *)this + 0x794);
+	if (!pszModel)
+		pszModel = g_106b8540;
+	vfunc105(pszModel);
+	*(int *)((char *)this + 0x784) = 0;
+	*(int *)((char *)this + 0x780) = m_iHealth;
+	sub_100b3580(0x40000);
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(6);
+	}
+	if (*(int *)((char *)this + 0x788))
+		sub_100a5bb0();
+	else
+		sub_100a5ea0(6, 0, 0, 0);
+	sub_100a9470(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194080 size=0xa8
 #include "CPropDestructable.h"
 #include "COutputEvent.h"
