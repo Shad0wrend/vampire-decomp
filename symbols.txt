@@ -4139,6 +4139,7 @@
 0x100108ac func   ?sub_100c77d0@@YAHPAUStudioHdr@@HH@Z sub_100c77d0
 0x100108b1 func   ?sub_10049da0@@YIXPAUMem@@HH@Z sub_10049da0
 0x100108b6 func   ?sub_102480f0@CUnknown10248a50@@QAE_NPBDPAUIFileSys@@0_N@Z CUnknown10248a50::sub_102480f0
+0x100108bb func   ??1ConVar@@QAE@XZ ConVar::~ConVar
 0x100108c0 func   _point_teleport point_teleport
 0x100108c5 func   ?sub_100d3a50@@YAXXZ sub_100d3a50
 0x100108cf func   _item_g_sewerbook_1 item_g_sewerbook_1
