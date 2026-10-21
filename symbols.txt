@@ -125,6 +125,7 @@
 0x10001898 func   ?sub_100ba120@CUnknown100ba120@@QAEXD@Z CUnknown100ba120::sub_100ba120
 0x1000189d func   ?vfunc5@CScriptedSentence@@QAEPAV1@I@Z CScriptedSentence::vfunc5
 0x100018b1 func   ??_GCRelieableBroadcastRecipientFilter@@UAEPAXI@Z ??_GCRelieableBroadcastRecipientFilter@@UAEPAXI@Z
+0x100018e3 func   ?sub_102506a0@@YIDPAVCBaseCombatWeapon@@@Z sub_102506a0
 0x100018ed func   ?sub_101835e0@CBasePlayer@@QAEXXZ CBasePlayer::sub_101835e0
 0x100018f7 func   ?sub_101b45b0@CUnknown101b45b0@@QAEPAV1@XZ CUnknown101b45b0::sub_101b45b0
 0x10001906 func   ?sub_100ddc40@CUnknown100dda50@@QAEXXZ CUnknown100dda50::sub_100ddc40

@@ -49126,6 +49126,36 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102506a0 size=0xc4
+#include "CBaseAnimating.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+
+static inline CBaseAnimating *ResolveX(char *owner)
+{
+	unsigned int h = *(volatile unsigned int *)(owner + 0x1c64);
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *slot = &g_10566458->m_Slots[h & 0x1fff];
+		if (slot->m_Serial == (int)(h >> 13))
+			return (CBaseAnimating *)slot->m_pEntity;
+	}
+	return 0;
+}
+
+char __fastcall sub_102506a0(CBaseCombatWeapon *thiz)
+{
+	if (thiz->sub_10256220()) {
+		char *owner = (char *)thiz->sub_10252290();
+		if (owner && ResolveX(owner)) {
+			int seq = *(int *)((char *)ResolveX(owner) + 0x6f0);
+			if (ResolveX(owner)->sub_10090020(seq) == 0xb7)
+				return 1;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102507b0 size=0x8
 void CBaseCombatWeapon::sub_102507b0() { vfunc361(); }
 // END FUNCTION
