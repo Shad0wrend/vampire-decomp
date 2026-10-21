@@ -81755,6 +81755,40 @@ void CNPC_VChangBros::sub_1036e400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036e580 size=0x111
+#include "ScopeTrace.h"
+#include "CNPC_VChangBros.h"
+extern float g_1093aa88;
+extern float g_1093aa0c;
+struct ChangView {
+    char pad[0x66dc];
+    float cx, cy, cz;
+    char ready;
+};
+int CNPC_VChangBros::sub_1036e580(int slot)
+{
+    ScopeTrace trace("CNPC_VChangBros::GetSector", g_106b8540);
+    ChangView *v = (ChangView *)this;
+    if (!v->ready)
+        return 0;
+    float *p = (float *)slot;
+    float dx = p[0] - v->cx;
+    float dy = p[1] - v->cy;
+    float d2 = dx * dx;
+    d2 += dy * dy;
+    if (p[2] - v->cz < 200.0f) {
+        if (d2 <= 270.0f)
+            return 1;
+        if (d2 <= g_1093aa88)
+            return 2;
+    } else {
+        if (d2 <= g_1093aa0c)
+            return 3;
+    }
+    return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036e820 size=0x80
 #include "CNPC_VChangBros.h"
 struct ScopeEnt { const char *name; const char *file; const char *file2; };
