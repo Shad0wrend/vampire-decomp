@@ -22,7 +22,7 @@ public:
 	virtual void vfunc12();
 	virtual void vfunc13();
 	virtual int vfunc14();
-	virtual void vfunc15();
+	virtual void vfunc15(Vector *pMins, Vector *pMaxs);	// WorldSpaceSurroundingBounds
 	virtual void vfunc16();
 	virtual void vfunc17();
 	virtual void vfunc18();
@@ -37,6 +37,7 @@ public:
 	virtual void vfunc8();
 	virtual float *vfunc10();	// "CCollisionProperty::CollisionToWorldTransform": one of four rotating static matrices; the outer entity's own transform when the bounds are in entity space, else identity with the origin as column 3
 	virtual int vfunc14();
+	virtual void vfunc15(Vector *pMins, Vector *pMaxs);	// "CCollisionProperty::WorldSpaceSurroundingBounds": when the outer entity's surrounding bounds dirty flag (bit 14 of +0x268) is set clears it and recomputes the offsets (sub_100dd780) from the collision origin, else adds the cached offsets to the origin
 
 	Vector m_vecMins;	// 0x04
 	Vector m_vecMaxs;	// 0x10
@@ -46,6 +47,9 @@ public:
 	int m_nSolidType;	// 0x40
 	unsigned short m_usSolidFlags;	// 0x44
 	unsigned short m_hPartition;	// 0x46: the spatial partition handle, 0xffff while not inserted
+	char m_48[4];
+	Vector m_vecSurroundingMins;	// 0x4c: offsets from the collision origin
+	Vector m_vecSurroundingMaxs;	// 0x58
 
 	void sub_100dc480(int solid);	// "CCollisionProperty::SetSolid" (called through the stub at 0x1000428c): remembers whether the property was solid, runs sub_100dda20, turns SOLID_BBOX into 6 when the outer entity's handle at +0x25c resolves, stores the type, tells the outer entity's physics object (+0x36c, slot 25), runs sub_100ddc40 and, when the solidity changed, sub_100dc430
 	void sub_100dc770(const float *mins, const float *maxs);	// "CCollisionProperty::SetCollisionBounds" (called through the stub at 0x100123c3)
@@ -60,5 +64,6 @@ public:
 	void sub_100dcd90(const float *pMins, const float *pMaxs, float *pOutA, float *pOutB);	// world-space bounds of the box (pMins, pMaxs) (stub 0x100053fd); the two results are written to the last two arguments
 	void sub_100dd630(Vector *pOutMins, Vector *pOutMaxs);	// the bounds as stored (solid type 0 / 2 or flag bit 7), else the symmetric box that holds them: per axis the larger absolute value of mins / maxs, negated for the mins
 	void sub_100dd450(Vector *pMins, Vector *pMaxs);	// "CCollisionProperty::WorldSpaceSurroundingBounds"-like: the world bounds of the outer entity (from its physics object, slot 49 of it through the global at 0x1072393c slot 18, else the collision origin twice), grown by the trigger bounds (slot 3) when bit 8 of the solid flags is set
+	void sub_100dd780(Vector *pMins, Vector *pMaxs);	// stub 0x10012c9c: recomputes the surrounding bounds, called by slot 15 when the dirty flag is set
 	Vector *sub_104103c0(const Vector &in, Vector *pResult);	// "CCollisionProperty::CollisionToWorldSpace": the entity-space bounds (solid type neither 0 nor 2, flag bit 7 clear) with non-zero angles go through the collision transform (VectorTransform), else collision origin + in
 };
