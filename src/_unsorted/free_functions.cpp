@@ -28202,6 +28202,35 @@ void __fastcall sub_1013dbb0(Pool *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e4a0 size=0x6c
+#include "CBaseEntity.h"
+
+void *sub_100aa720(int size);
+extern void *vt_1046aa7c[];
+extern char g_10579f58[];
+void __fastcall sub_10002ddd(void *pThis);
+
+// TARGET: trigger_brush
+extern "C" CBaseEntity *trigger_brush()
+{
+	void *mem = sub_100aa720(0x4a0);
+	CBaseEntity *p;
+	if (mem)
+	{
+		p = (CBaseEntity *)mem;
+		p->sub_1009d980(0);
+		sub_10002ddd((char *)p + 0x450);
+		sub_10002ddd((char *)p + 0x468);
+		sub_10002ddd((char *)p + 0x480);
+		*(void ***)p = vt_1046aa7c;
+	}
+	else
+		p = 0;
+	p->vfunc106(g_10579f58);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e7e0 size=0xd
 #include "CUnknown1013e7e0.h"
 // TARGET: CUnknown1013e7e0::sub_1013e7e0
