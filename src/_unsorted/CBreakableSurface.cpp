@@ -1,6 +1,31 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101134f0 size=0x72
+#include "CBreakableSurface.h"
+
+extern void (*g_109f362c)(const char *fmt, ...);
+void sub_101cd940(CBaseEntity *pEntity);
+
+void CBreakableSurface::vfunc103()
+{
+	sub_1010d6a0();
+	if (m_nFaceCheck == 1) {
+		g_109f362c("Rejecting func_breakablesurf.  Has multiple faces that aren't NODRAW.\n");
+		sub_101cd940(this);
+	} else if (m_nFaceCheck == 2) {
+		g_109f362c("Rejecting func_breakablesurf.  Drawn face isn't a quad.\n");
+		sub_101cd940(this);
+	} else {
+		sub_100aaa40(4);
+		m_b4c4 = 0;
+		m_n454 = 0;
+	}
+	sub_100b3580(0x20000000);
+	sub_100a9470(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101135c0 size=0x36
 #include "CBreakableSurface.h"
 
