@@ -1504,6 +1504,7 @@
 0x100071d0 func   _item_a_lt_leather item_a_lt_leather
 0x100071d5 func   ?sub_101d8890@@YAXH@Z sub_101d8890
 0x100071da func   ?vfunc5@CEnvSoundscape@@QAEPAV1@I@Z CEnvSoundscape::vfunc5
+0x100071f3 func   ?vfunc584@CCineAI@@QAE_NPAXPBDD@Z CCineAI::vfunc584
 0x10007211 func   ?sub_1023ea20@@YAXXZ sub_1023ea20
 0x10007216 func   ?vfunc26@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHH@Z CTempEntsSystem::vfunc26
 0x10007220 func   ?vfunc0@CTraceFilterNavGround@@UAE_NPAXH@Z CTraceFilterNavGround::vfunc0
