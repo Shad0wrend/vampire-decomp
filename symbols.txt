@@ -2388,6 +2388,7 @@
 0x1000ad62 func   ??0CUnknown109f08c0@@QAE@H@Z CUnknown109f08c0::CUnknown109f08c0
 0x1000ad6c func   _npc_VTaxiDriver npc_VTaxiDriver
 0x1000ad76 func   ?sub_10199800@@YAPAXPAX0@Z sub_10199800
+0x1000ad85 func   ?sub_100b2150@CBaseEntity@@QAEPAMPAM@Z CBaseEntity::sub_100b2150
 0x1000ad8a func   ?sub_100ad100@@YIXPAVCBaseEntity@@HH@Z sub_100ad100
 0x1000ada3 func   ?sub_102e2630@CUnknown102e2630@@QAEHH@Z CUnknown102e2630::sub_102e2630
 0x1000adc1 func   ?sub_101fb980@CVStatSubCost_t@@QAEXPBD@Z CVStatSubCost_t::sub_101fb980

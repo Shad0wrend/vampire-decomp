@@ -16650,6 +16650,55 @@ void CBaseEntity::sub_100b2010(const float *pIn, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2150 size=0x14e
+#include "CBaseEntity.h"
+#include "CBaseAnimating.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+#define V virtual void
+#define S10(p) V p##0(); V p##1(); V p##2(); V p##3(); V p##4(); V p##5(); V p##6(); V p##7(); V p##8(); V p##9();
+struct SEnt {
+	S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+	S10(b0) S10(b1) S10(b2)
+	V n0(); V n1(); V n2(); V n3(); V n4(); V n5(); V n6();
+	virtual CBaseAnimating *vfunc137();
+};
+
+extern CGlobalEntityList *g_10566458;
+void sub_10139a90(float *pOut);
+void sub_10139b50(float *pAngles, float *pOrigin, float *pOut);
+
+float *CBaseEntity::sub_100b2150(float *pOut)
+{
+	ScopeTrace trace("CBaseEntity::GetParentToWorldTransform", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	unsigned int h = *(unsigned int *)((char *)this + 0x25c);
+	CGlobalEntityList_Slot *pSlot;
+	CBaseEntity *pParent;
+	if (h == (unsigned int)-1 || (pSlot = &g_10566458->m_Slots[h & 0x1fff], pSlot->m_Serial != (int)(h >> 13)))
+		pParent = 0;
+	else
+		pParent = (CBaseEntity *)pSlot->m_pEntity;
+	if (!pParent) {
+		sub_10139a90(pOut);
+		return pOut;
+	}
+	if (*((unsigned char *)this + 0x258)) {
+		CBaseAnimating *pAnim = ((SEnt *)pParent)->vfunc137();
+		if (pAnim) {
+			float origin[3], angles[3];
+			if (pAnim->sub_10092ef0(*((unsigned char *)this + 0x258), origin, angles)) {
+				sub_10139b50(angles, origin, pOut);
+				return pOut;
+			}
+		}
+	}
+	if ((unsigned char)(pParent->m_flags268 >> 11) & 1)
+		pParent->vfunc98();
+	return (float *)((char *)pParent + 0x130);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3350 size=0xf9
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
