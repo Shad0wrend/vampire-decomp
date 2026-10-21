@@ -6443,6 +6443,7 @@
 0x109f3624 data   __imp__Plat_Free _imp__Plat_Free
 0x109f3628 data   ?Msg@@YAXPBDZZ Msg
 0x109f3628 data   Msg Msg
+0x109f362c data   __imp_?Warning@@YAXPBDZZ _imp_?Warning
 0x109f3630 data   ?DevMsg@@YAXPBDZZ DevMsg
 0x109f3650 data   ?DevMsg@@YAXHPBDZZ DevMsg
 0x109f3650 data   DevMsg DevMsg
