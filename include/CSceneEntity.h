@@ -36,6 +36,8 @@ public:
 	virtual void vfunc266(int unused, const char *pszArgs);	// parses "automate <Cancel|Resume> <seconds>" arguments into the automation fields
 	SCENE_V(267) SCENE_V(268)
 	void sub_1000b1ef();	// as in CPhysForce (transplant)
+	void sub_1000cb8a();	// the base class destructor body, tail called by sub_100809f0
+	void sub_100809f0();	// the destructor body (called by vfunc5): vtable, vfunc245 while the byte at +0x498 is set, destroys the seven outputs at +0x4cc..+0x55c (sub_100cd2d0, last first), then the base destructor body
 	void sub_10083a30(const char *pszScene);	// stub 0x100106f9, called directly by vfunc104 with the scene file name at +0x450 ("" when unset)
 	void sub_10080cb0(int a);	// stub 0x1001163f, called directly by vfunc104 with the dword at +0x4bc
 
