@@ -13,6 +13,11 @@ public:
 	virtual void slot3();
 	virtual void slot4();
 	virtual void vfunc5();
+	virtual void slot6();
+	virtual void slot7();
+	virtual void slot8();
+	virtual char vfunc9();	// slot 9 "CanAccelerate"
+	virtual void vfunc10(Vector &wishdir, float wishspeed, float accel);	// slot 10 "Accelerate": when slot 9 allows, adds up to min(frametime * surface friction (+0xa0) * wishspeed * accel, wishspeed - velocity . wishdir) along wishdir to the velocity (the vector at +0x40 of the object at +4); nothing when the velocity already reaches wishspeed
 	void sub_100102f3();	// as in CDataObjectAccessSystem (transplant)
 	float *vfunc3(char flag, int unused);	// as in CGameMovement (transplant)
 	float *vfunc4(char flag, int unused);	// as in CGameMovement (transplant)
