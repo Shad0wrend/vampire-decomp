@@ -2,6 +2,8 @@
 // the ones we need are placeholders that keep the slot numbers right.
 #pragma once
 
+#include "Vector.h"
+
 #define VT_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define VT_SLOTS100(p) VT_SLOTS10(p##0) VT_SLOTS10(p##1) VT_SLOTS10(p##2) VT_SLOTS10(p##3) VT_SLOTS10(p##4) \
@@ -98,4 +100,7 @@ public:
 	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
 	int sub_103bc820();	// the base schedule choice (stub 0x10002a4f), called directly
 	int sub_103bca20(int a);	// picks a schedule (slot 438 helper): condition 0xc schedule 0x173 (source line 0xb66 recorded at +0x1b30 / +0x1b34); 10 or 0xd schedule 0x174 (line 0xb6a); condition 0x5d the base choice sub_103bc820; else schedule 0x170 (line 0xb7c)
+	void sub_103ba640(void *pEnt, Vector *pVec, int *pFlag, int *pOut);	// slot 563: with the navigator state 2 (sub_1027d990) shifts *pVec by the entity's position difference (slot 193 minus slot 217); else runs the two path-step workers sub_102c3b50 / sub_102c36d0 and stores the stepped vector back in *pVec
+	void sub_102c3b50(void *pEnt, Vector vecStart, Vector *pVec, int *pOut);	// stub 0x100041d3
+	void sub_102c36d0(Vector vecOrigin, void *pEnt, int nParam, Vector *pVec, Vector *pOut);	// stub 0x1000c0ae
 };
