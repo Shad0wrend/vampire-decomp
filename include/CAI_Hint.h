@@ -1,7 +1,7 @@
 // CAI_Hint: an AI hint node entity.
 // Only the vtable slots that decompiled code needs are given their real names,
 // the others are placeholders that keep the slot indices of the game's primary
-// vtable (the slots up to 119 are declared so far).
+// vtable (the slots up to 124 are declared so far).
 #pragma once
 
 // 0x18-byte member objects of CAI_Hint, initialised by sub_100cd2a0.
@@ -135,6 +135,11 @@ public:
 	virtual void vfunc117();
 	virtual void vfunc118();
 	virtual void vfunc119();
+	virtual void vfunc120();
+	virtual void vfunc121();
+	virtual void vfunc122();
+	virtual void vfunc123();
+	virtual int vfunc124();	// slot 124 "CAI_Hint::DrawDebugTextOverlays": the base entity's line count, plus (while bit 0 of the byte at +0x224 is set) two overlay lines: the hint's node id (+0x5dc) and "delay %f" (the lock time at +0x5ec minus curtime, at least 0)
 	void sub_10005e98();	// as in CPhysForce (transplant)
 
 	char m_pad0004[0x4f8];
