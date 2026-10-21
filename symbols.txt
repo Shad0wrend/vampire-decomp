@@ -3517,6 +3517,7 @@
 0x1000fc1d func   ?vfunc2@CTEBreakModel@@UAEPAV1@I@Z CTEBreakModel::vfunc2
 0x1000fc27 func   ?sub_100737b0@CUnknown100737b0@@QAEXH@Z CUnknown100737b0::sub_100737b0
 0x1000fc3b func   ?vfunc5@COccultThaumDamage@@QAEPAV1@I@Z COccultThaumDamage::vfunc5
+0x1000fc40 func   ?sub_101d77d0@@YAXXZ sub_101d77d0
 0x1000fc5e func   ?vfunc109@CBaseEntity@@UAE_NPBDM@Z CBaseEntity::vfunc109
 0x1000fc77 func   ?sub_101ff300@CVStatInfoList_t@@QAEPAV1@PBDHH@Z CVStatInfoList_t::sub_101ff300
 0x1000fc86 func   ?vfunc110@CBaseEntity@@UAE_NPBD0@Z CBaseEntity::vfunc110

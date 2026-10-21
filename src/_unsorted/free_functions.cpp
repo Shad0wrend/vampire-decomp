@@ -37979,6 +37979,55 @@ int CUnknown101d76e0::sub_101d76e0(void *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d77d0 size=0x128
+#include "CVStatList_t.h"
+#include "CUnknown101d7460.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown101d7460 g_10738cf0;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *fmt, ...);
+extern "C" int __cdecl atoi(const char *);
+
+struct CPlayerHolderX { char pad[0xa8]; void *m_pChar; };
+CPlayerHolderX *sub_101193b0();
+
+struct CPlayerNameX
+{
+	const char *m_psz;
+	const char *Get() { return m_psz; }
+};
+struct CPlayerTemplateX { char pad[0x14]; CPlayerNameX m_Name; };
+struct CPlayerTemplateListX { CPlayerTemplateX *sub_101d71a0(int index); };
+
+// TARGET: sub_101d77d0
+void sub_101d77d0()
+{
+	CPlayerHolderX *pPlayer = sub_101193b0();
+	if (!pPlayer)
+		return;
+	void *pChar = pPlayer->m_pChar;
+	if (!pChar)
+		return;
+	int argc = g_1070b22c->vfunc85();
+	if (argc > 1) {
+		int i = 1;
+		do {
+			int val = atoi(g_1070b22c->vfunc84(i));
+			CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(0x21, val);
+			const char *name = ((CPlayerTemplateListX *)&g_10738cf0)->sub_101d71a0(val)->m_Name.Get();
+			if (!name)
+				name = g_106b8540;
+			DevMsg(3, "AutoLevel: Changing player template to: %s (%d)\n", name, val);
+			g_10738cf0.sub_101d7460(pChar);
+			i++;
+		} while (i < argc);
+	} else
+		g_10738cf0.sub_101d7460(pChar);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d7ec0 size=0xb2
 #include "CUnknown101d82d0.h"
 
