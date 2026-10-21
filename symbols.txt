@@ -1210,6 +1210,7 @@
 0x10006906 func   ?sub_101f25a0@@YIHPAD@Z sub_101f25a0
 0x1000693d func   ?sub_102ee600@CUnknown102ee600@@QAEHXZ CUnknown102ee600::sub_102ee600
 0x10006947 func   ?sub_101df260@S101df260@@QAEPAU1@H@Z S101df260::sub_101df260
+0x10006956 func   ?vfunc20@CSingleplayRules@@UAEPAVCBaseEntity@@PAV2@0@Z CSingleplayRules::vfunc20
 0x10006965 func   ?vfunc2@CTEBeamLaser@@UAEPAV1@I@Z CTEBeamLaser::vfunc2
 0x1000696f func   ?sub_100eb060@@YGII@Z sub_100eb060
 0x1000697e func   _npc_VTzimisceRunner npc_VTzimisceRunner

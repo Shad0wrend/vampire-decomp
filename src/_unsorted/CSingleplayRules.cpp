@@ -11,6 +11,37 @@ const char *CSingleplayRules::vfunc63(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101abd40 size=0x99
+#include "CSingleplayRules.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+
+struct CWeaponX : CBaseCombatWeapon {
+    char sub_10256280();
+};
+typedef char (__fastcall *PFN_Char)(void *);
+
+CBaseEntity *CSingleplayRules::vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurrentWeapon)
+{
+    int nBest = -1;
+    CWeaponX *pBest = 0;
+    CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pPlayer;
+    for (int i = 0; i < 0xe0; i++) {
+        CWeaponX *pWeapon = (CWeaponX *)pChar->sub_1032e8b0(i);
+        if (!pWeapon)
+            continue;
+        if (!pChar->sub_1032db60((CBaseEntity *)pWeapon))
+            continue;
+        if (pWeapon->vfunc345() > nBest && *(int *)((char *)pWeapon + 0x778) && !pWeapon->sub_10256280()
+            && ((PFN_Char)(*(void ***)pWeapon)[312])(pWeapon) && pChar->sub_10335a70((CBaseEntity *)pWeapon)) {
+            nBest = pWeapon->vfunc345();
+            pBest = pWeapon;
+        }
+    }
+    return (CBaseEntity *)pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abf00 size=0xb
 extern char *g_1070b228;
 
