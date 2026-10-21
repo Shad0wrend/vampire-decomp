@@ -32,6 +32,7 @@ public:
 	int sub_103954e0(int a, void *pWeapon);	// like sub_10395650, but each state falls through a chain of availability tests (sub_10398000 / stub 0x10001802): 4 -> 1, 3, 5; 5 -> 0, 2, 4; 9 -> 2, 4; 8 -> 3, 5; 6 -> 5; 7 -> 4; 1 -> -2; -1 when a test fails at the end of the chain
 	char sub_10398000(int code);	// availability test of a result code (stub 0x10001802)
 	float sub_103986b0();	// average of the four limb weights (g_1046bad0 for codes 0 and 1, g_10462b84 for 2 and 3) over the available codes (sub_10398000), g_10462b84 when none is
+	void sub_10397a50(void *pTentacle);	// when the tentacle is given: sets the slot time (+0x66a4) to the current time (+0xc of the global 0x1070b228) plus max(0, the tuning base + the per-step delay * (6 - the count at +0x670c)); when the tentacle is the entity of its slot's new handle (+0x668c[index], index at its +0x6674) runs sub_10397930(index)
 	int sub_103952b0(int a);	// called through the stub at 0x10012f85
 	int vfunc376(int act);	// slot 376 "CNPC_VMingXiao::TranslateActivity": 0x3d -> 0x3b, 0x3e -> 0x3c, 0x9f -> 0x9d, 0xa0 -> 0x9e, 0xa3 -> 0xa1, 0xa4 -> 0xa2, else the Troika base
 	int sub_1000fb14(int act);	// CAI_BaseNPCTroika::vfunc376, called directly
@@ -63,4 +64,5 @@ public:
 	float m_flSlotTimeA[6];	// +0x66c4
 	float m_flSlotValue[6];	// +0x66dc
 	float m_flSlotTimeB[6];	// +0x66f4
+	int m_n670c;	// +0x670c: the count the delay is scaled by (6 - count)
 };
