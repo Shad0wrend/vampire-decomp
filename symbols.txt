@@ -3772,6 +3772,7 @@
 0x10010299 func   ?sub_100ed500@Mem44@@QAEXH@Z Mem44::sub_100ed500
 0x100102a8 func   ?vfunc244@CBaseCombatCharacter@@UAEPBDXZ CBaseCombatCharacter::vfunc244
 0x100102b7 func   ?vfunc266@CVampireProjectile_MingXiaoSpit@@UAEXPAVCBaseEntity@@@Z CVampireProjectile_MingXiaoSpit::vfunc266
+0x100102bc func   ?sub_1021eaf0@CUnknown1021eaf0@@QAEXXZ CUnknown1021eaf0::sub_1021eaf0
 0x100102c1 func   ?sub_10103370@@YAXXZ sub_10103370
 0x100102c6 func   ?sub_100785f0@CUnknown10078540@@QAEXH@Z CUnknown10078540::sub_100785f0
 0x100102df func   ?sub_102dfc10@CUnknown102dfc10@@QAEXH@Z CUnknown102dfc10::sub_102dfc10

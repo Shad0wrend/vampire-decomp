@@ -52117,6 +52117,40 @@ int CUnknown1021e8e0::sub_1021e9c0(const char *pszName, int nStart)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021eaf0 size=0x94
+#include "CUnknown1021eaf0.h"
+
+extern "C" int __cdecl sprintf(char *pDest, const char *pFormat, ...);
+
+struct CUnknown1021eaf0Unit : CUnknown1021eaf0
+{
+	int sub_10015721();	// sub_1025b5b0 as the game calls it (through the stub)
+};
+
+struct CCmdPlayer;
+CCmdPlayer *__cdecl sub_101193b0();
+char *__cdecl sub_1025b5d0(int index);
+void __cdecl sub_101ce620(CCmdPlayer *pPlayer, int nDest, const char *pszText, int a, int b, int c, int d);
+
+void CUnknown1021eaf0::sub_1021eaf0()
+{
+	CCmdPlayer *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		char szText[0x30];
+		int nItems = ((CUnknown1021eaf0Unit *)this)->sub_10015721();
+		sprintf(szText, "\n\t\t%s (%d)\n", "Items", nItems);
+		sub_101ce620(pPlayer, 2, szText, 0, 0, 0, 0);
+		for (int i = 0; i < nItems; i++) {
+			char *pInfo = sub_1025b5d0(i);
+			if (pInfo) {
+				sprintf(szText, " (%d): %s\n", i, pInfo + 8);
+				sub_101ce620(pPlayer, 2, szText, 0, 0, 0, 0);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021fb50 size=0xff
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
