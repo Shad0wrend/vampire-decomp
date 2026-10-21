@@ -1,10 +1,13 @@
 // CPointTeleport: declared by pcdecomp transplant for 0x1018ded0 from CLogicalEntity (0x1002b100);
-// only what matched code needs, as plain members.
+// only what matched code needs.
 #pragma once
 
-class CPointTeleport
+#include "CBaseEntity.h"
+
+class CPointTeleport : public CBaseEntity
 {
 public:
 	CPointTeleport *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+	virtual void vfunc113();	// "CPointTeleport::Activate": saves origin / angles (+0x450 / +0x45c), warns on a parented or missing target
 };
