@@ -8,6 +8,40 @@ void CItemContainerLock::vfunc275()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10224ed0 size=0x9d
+#include "CItemContainerLock.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CContainerView
+{
+	bool sub_100eef10();	// stub 0x100127ec
+};
+
+struct CHandleLookup
+{
+	static CContainerView *Get(const unsigned int &r)
+	{
+		if (r != 0xffffffff) {
+			CGlobalEntityList_Slot *s = &g_10566458->m_Slots[r & 0x1fff];
+			if (s->m_Serial == (int)(r >> 13))
+				return (CContainerView *)s->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+int CItemContainerLock::vfunc34(int a)
+{
+	if (CHandleLookup::Get(m_hContainer) && CHandleLookup::Get(m_hContainer)->sub_100eef10())
+		return 2;
+	if (sub_10224100())
+		return (sub_10224910(a) != 0) + 2;
+	return 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10226460 size=0x6d
 #include "CItemContainerLock.h"
 

@@ -82,6 +82,7 @@
 0x100015e6 func   ?sub_1034e520@@YGXPAUInputLike@@@Z sub_1034e520
 0x100015f0 func   ?vfunc0@ConVar@@UAEPAV1@I@Z ConVar::vfunc0
 0x10001604 func   _filter_multi filter_multi
+0x10001609 func   ?vfunc34@CItemContainerLock@@QAEHH@Z CItemContainerLock::vfunc34
 0x10001613 func   ?sub_10349ec0@CUtlVector16@@QAEXH@Z CUtlVector16::sub_10349ec0
 0x10001622 func   ?sub_1002edd0@@YAXPAX@Z sub_1002edd0
 0x10001640 func   ?sub_10141320@@YA_NXZ sub_10141320
