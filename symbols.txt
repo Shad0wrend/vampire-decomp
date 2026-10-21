@@ -4008,6 +4008,7 @@
 0x1001019f func   ?vfunc5@CGameSign@@QAEPAV1@I@Z CGameSign::vfunc5
 0x100101a9 func   ?sub_102a9ec0@CAI_BaseNPCTroika@@QAEDH@Z CAI_BaseNPCTroika::sub_102a9ec0
 0x100101bd func   ?vfunc5@CBaseToggle@@QAEPAV1@I@Z CBaseToggle::vfunc5
+0x100101c7 func   ?sub_100f8580@@YGPAVCBaseEntity@@PBVVector@@M@Z sub_100f8580
 0x100101ea func   ?sub_1032a910@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_1032a910
 0x100101f4 func   ?vfunc5@CSoundScheme@@QAEPAV1@I@Z CSoundScheme::vfunc5
 0x100101fe func   ?vfunc372@CWeaponThrown_Grenade_Frag@@QAEPAVCBaseEntity@@VVector@@000@Z CWeaponThrown_Grenade_Frag::vfunc372

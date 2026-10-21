@@ -26354,6 +26354,46 @@ CBaseEntity *CGlobalEntityList::sub_100f7890(CBaseEntity *pStart, const char *sz
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8580 size=0xa6
+#include "CGlobalEntityList.h"
+#include "Vector.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+#define EV(n) virtual void ev##n();
+#define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
+
+struct EntV {
+	EV10(0) EV10(1) EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8) EV10(9)
+	EV10(10) EV10(11) EV10(12) EV10(13) EV10(14) EV10(15) EV10(16) EV10(17) EV10(18) EV10(19)
+	EV10(20)
+	EV(210) EV(211) EV(212) EV(213) EV(214) EV(215) EV(216)
+	virtual float *ev217();
+	char m_pad[0x2e0 - 4];
+	int m_pEdict;
+};
+
+CBaseEntity * __stdcall sub_100f8580(const Vector *pPos, float flRadius)
+{
+	flRadius = flRadius * flRadius;
+	CBaseEntity *pBest = 0;
+	if (flRadius == 0.0f)
+		flRadius = 3.2212255e+09f;
+	for (CBaseEntity *pEnt = g_106eb5d8.sub_100f8420(0); pEnt; pEnt = g_106eb5d8.sub_100f8420(pEnt)) {
+		EntV *e = (EntV *)pEnt;
+		if (e->m_pEdict) {
+			Vector *pOrigin = (Vector *)e->ev217();
+			float flDist = (*pOrigin - *pPos).LengthSqr();
+			if (flRadius > flDist) {
+				pBest = pEnt;
+				flRadius = flDist;
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8e20 size=0x80
 void *sub_10430fa0(void *, const void *, unsigned);
 
