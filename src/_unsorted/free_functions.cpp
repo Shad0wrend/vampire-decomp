@@ -78346,6 +78346,60 @@ int CUnknown1030fe50::sub_1030fff0(int radius)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103105d0 size=0xf1
+#include "CAI_Senses.h"
+#include "CEHandleGet.h"
+
+#define SLA(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct OuterVT103105d0 {
+	SLA(a0) SLA(a1) SLA(a2) SLA(a3) SLA(a4) SLA(a5) SLA(a6) SLA(a7) SLA(a8) SLA(a9)
+	SLA(b0) SLA(b1) SLA(b2) SLA(b3) SLA(b4) SLA(b5)
+	virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163(); virtual void s164();
+	virtual void s165(); virtual void s166();
+	virtual void *a167();
+	SLA(c0) SLA(c1)
+	virtual void s188(); virtual void s189(); virtual void s190(); virtual void s191(); virtual void s192();
+	virtual void s193(); virtual void s194(); virtual void s195();
+	virtual void a196(float *pOut);
+};
+struct SoundRec103105d0 {
+	unsigned int m_hOwner;
+	int m_iType;
+	char pad[0x20 - 8];
+	float m_org[3];
+};
+
+void *CAI_Senses::sub_103105d0(int type)
+{
+	void *pTarget = ((OuterVT103105d0 *)m_pOuter)->a167();
+	float flBest = 268435456.0f;
+	SoundRec103105d0 *pBest = 0;
+	int iter;
+	SoundRec103105d0 *pCur = (SoundRec103105d0 *)sub_10310440(&iter);
+	float ear[3];
+	((OuterVT103105d0 *)m_pOuter)->a196(ear);
+	while (pCur) {
+		if (pCur->m_iType == type) {
+			if (pTarget) {
+				if (EHandle_Get(pCur->m_hOwner) == pTarget)
+					return pCur;
+			}
+			float dx = pCur->m_org[0] - ear[0];
+			float dy = pCur->m_org[1] - ear[1];
+			float dz = pCur->m_org[2] - ear[2];
+			float dist = (dx * dx + dz * dz) + dy * dy;
+			if (dist < flBest) {
+				pBest = pCur;
+				flBest = dist;
+			}
+		}
+		pCur = (SoundRec103105d0 *)sub_10310480(&iter);
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103109a0 size=0xb7
 #include "CUtlVector4.h"
 #include "UtlMem.h"
