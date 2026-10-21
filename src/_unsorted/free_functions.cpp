@@ -51301,6 +51301,78 @@ char __fastcall sub_1025db50(int *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025db70 size=0xe1
+#include "CUnknown1025ddd0.h"
+
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+	EntInfo *e;
+	return (h != 0xffffffff && (e = &g_10566458->m_entries[h & 0x1fff], e->m_serial == (int)(h >> 13))) ? e->m_pEntity : 0;
+}
+
+struct CSquadMemory	// the CUtlMemory part at +4 of the list
+{
+	unsigned int *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_nSize;
+	unsigned int *m_pElements;
+
+	void sub_1025e140(int num);	// Grow (stub 0x100136c4)
+
+	void GrowVector(int num)
+	{
+		if (m_nSize + num > m_nAllocationCount)
+			sub_1025e140(m_nSize + num - m_nAllocationCount);
+		m_nSize += num;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem, int num)
+	{
+		int numToMove = m_nSize - elem - num;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(unsigned int));
+	}
+	void InsertBefore(int elem, const unsigned int &src)
+	{
+		GrowVector(1);
+		ShiftElementsRight(elem, 1);
+		unsigned int *p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+	}
+};
+
+struct CSquadHandle
+{
+	unsigned int m_Index;
+	void sub_1025d840(CBaseEntity *pEntity);	// handle from entity (stub 0x10011ca7)
+};
+
+bool CUnknown1025ddd0::sub_1025db70(CBaseEntity *pEntity)
+{
+	if (pEntity) {
+		CSquadMemory *pVec = (CSquadMemory *)&m_pMemory;
+		unsigned int *pHandle = m_pMemory;
+		for (int n = m_size; n != 0; n--, pHandle++) {
+			if (ResolveHandle(*pHandle) == pEntity)
+				return true;
+		}
+		if (m_size < m_limit) {
+			CSquadHandle handle;
+			handle.sub_1025d840(pEntity);
+			pVec->InsertBefore(pVec->m_nSize, handle.m_Index);
+			return true;
+		}
+	}
+	return sub_1025dca0(pEntity, 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025e140 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
