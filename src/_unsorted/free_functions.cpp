@@ -59394,6 +59394,63 @@ CSecCamera *CSecCamera::sub_1020bf00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020c2a0 size=0xe8
+#include "CSecCamera.h"
+
+struct CGlobalVarsView {
+	char m_pad0000[0xc];
+	float curtime;	// 0xc
+};
+extern CGlobalVarsView *g_1070b228;
+
+#define CSV1(n) virtual void s##n();
+#define CSV10(p) CSV1(p##0) CSV1(p##1) CSV1(p##2) CSV1(p##3) CSV1(p##4) CSV1(p##5) CSV1(p##6) CSV1(p##7) CSV1(p##8) CSV1(p##9)
+struct CSecCameraSlots {	// the entity vtable up to slot 250 (the animation advance)
+	CSV1(0) CSV1(1) CSV1(2) CSV1(3) CSV1(4) CSV1(5) CSV1(6) CSV1(7) CSV1(8) CSV1(9)
+	CSV10(1) CSV10(2) CSV10(3) CSV10(4) CSV10(5) CSV10(6) CSV10(7) CSV10(8) CSV10(9)
+	CSV10(10) CSV10(11) CSV10(12) CSV10(13) CSV10(14) CSV10(15) CSV10(16) CSV10(17) CSV10(18) CSV10(19)
+	CSV10(20) CSV10(21) CSV10(22) CSV10(23) CSV10(24)
+	virtual float AdvanceAnimation(int a);	// slot 250
+};
+
+struct CSecCameraView {
+	char m_pad0000[0x65c];
+	char m_b65c;	// 0x65c
+	char m_pad065d[0x6f4 - 0x65d];
+	float m_flPlaybackRate;	// 0x6f4
+	char m_pad06f8[0x7a4 - 0x6f8];
+	float m_flNextCheck7a4;	// 0x7a4
+	char m_pad07a8[0x7c0 - 0x7a8];
+	float m_flRate7c0;	// 0x7c0
+};
+
+// TARGET: CSecCamera::sub_1020c2a0
+void CSecCamera::sub_1020c2a0()
+{
+	CSecCameraView *p = (CSecCameraView *)this;
+	if (m_b77c) {
+		sub_1020c3d0();
+		if (p->m_flNextCheck7a4 < g_1070b228->curtime) {
+			char bResult = sub_1020cd30();
+			p->m_flNextCheck7a4 = g_1070b228->curtime + 0.25;
+			if (bResult && m_nState79c != 4 && m_nState79c != 6)
+				sub_1020c4f0(4);
+		}
+		if (m_nState79c == 4 || m_nState79c == 5) {
+			p->m_flPlaybackRate = 1.0f / p->m_flRate7c0;
+			((CSecCameraSlots *)this)->AdvanceAnimation(0);
+			if (p->m_b65c) {
+				if (m_nState79c == 5)
+					sub_1020cbf0("idle");
+				if (p->m_b65c && m_nState79c == 4)
+					sub_1020cbf0("zoom_idle");
+			}
+		}
+	}
+	m_flNextThink = g_1070b228->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020c3d0 size=0xe0
 #include "CSecCamera.h"
 
