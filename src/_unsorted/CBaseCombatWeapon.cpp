@@ -39,6 +39,59 @@ void CBaseCombatWeapon::vfunc370(int *event, CBaseCombatWeapon *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024f0e0 size=0xf0
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
+#include "CGameRules.h"
+
+extern char g_106b8540[];
+
+struct CClsBObj
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual const char *v5();
+};
+struct CClsAObj
+{
+	virtual void a0(); virtual void a1(); virtual void a2();
+	virtual CClsBObj *v3();
+};
+struct CHolderLike
+{
+	char pad[0x40];
+	CClsAObj *m_pObj;
+
+	const char *ClassnameStr()
+	{
+		if (!m_pObj)
+			return g_106b8540;
+		return m_pObj->v3()->v5();
+	}
+};
+
+extern CGameRules *g_1070ba0c;
+extern void (*g_109f362c)(const char *, ...);
+extern CBaseEntity *sub_100a99d0(const char *, const float *, const float *, CBaseEntity *);
+extern void sub_101cd250(CBaseCombatWeapon *, int, int);
+void sub_100155eb();
+
+CBaseEntity *CBaseCombatWeapon::vfunc187()
+{
+	const char *name = ((CHolderLike *)m_pHolder)->ClassnameStr();
+	CBaseEntity *pNew = sub_100a99d0(name, (const float *)&g_1070ba0c->vfunc51((CBaseEntity *)this), vfunc221(), vfunc97());
+	if (pNew) {
+		*(unsigned int *)((char *)pNew + 0x19c) |= 0x40;
+		*(unsigned int *)((char *)pNew + 0x1ec) = 0;
+		pNew->sub_100ac4e0((int)sub_100155eb, 0, 0);
+		sub_101cd250(this, 0x200400b, 0);
+		*(float *)((char *)pNew + 0x17c) = g_1070ba0c->vfunc49((int)this);
+	} else {
+		g_109f362c("Respawn failed to create %s!\n", ((CHolderLike *)m_pHolder)->ClassnameStr());
+	}
+	return pNew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f330 size=0x71
 #include "CBaseCombatWeapon.h"
 #define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
