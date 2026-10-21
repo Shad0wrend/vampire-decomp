@@ -63957,6 +63957,76 @@ unsigned int sub_102f7c00(int unused, unsigned int mask, char cycle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f7ca0 size=0x15c
+#include "CUnknown102f7ca0.h"
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+extern "C" char *strncat(char *, const char *, unsigned int);
+
+struct SHudTextParms
+{
+	float x, y;
+	int effect;
+	unsigned char r1, g1, b1, a1, r2, g2, b2, a2;
+	float fadeinTime, fadeoutTime, holdTime, fxTime;
+	int channel;
+};
+
+struct SEngineEdit
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+	virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual int IsEditing();
+};
+
+extern SEngineEdit *g_1070b22c;
+extern int g_109340d8;
+extern char g_109340dc;
+extern char g_109340dd;
+const char *sub_102d6230(int index);
+void sub_101ce3d0(SHudTextParms *pParams, const char *pszText);
+
+void CUnknown102f7ca0::sub_102f7ca0()
+{
+	SHudTextParms params;
+	char szHull[0x32];
+	char szLinks[0x32];
+	char szMode[0x32];
+	char szText[256];
+	char szEdit[256];
+
+	params.effect = 0;
+	params.fadeinTime = 0;
+	params.fadeoutTime = 0;
+	params.fxTime = 0;
+	params.channel = 0;
+	params.x = 0.8f;
+	params.y = 0.8f;
+	params.r1 = 255;
+	params.g1 = 255;
+	params.b1 = 255;
+	params.a1 = 255;
+	params.r2 = 255;
+	params.g2 = 255;
+	params.b2 = 255;
+	params.a2 = 255;
+	params.holdTime = 1.0f;
+	Q_snprintf(szHull, 0x32, "  %s", sub_102d6230(g_109340d8));
+	Q_snprintf(szText, 255, "Displaying:\n%s\n\n", szHull);
+	if (g_1070b22c->IsEditing()) {
+		Q_snprintf(szLinks, 0x32, "  %s (l)", g_109340dd ? "Links" : "Nodes");
+		Q_snprintf(szMode, 0x32, "  %s (m)", g_109340dc ? "Air" : "Ground");
+		Q_snprintf(szEdit, 255, "Editing:\n%s\n%s", szMode, szLinks);
+		strncat(szText, szEdit, 255);
+		if (m_nDebugFlags & 0x10000000) {
+			params.g1 = 0;
+			params.b1 = 0;
+		}
+	}
+	sub_101ce3d0(&params, szText);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f8ef0 size=0x8
 void __fastcall sub_102f8ef0(int *p)
 {
