@@ -1038,6 +1038,41 @@ char __fastcall sub_102b4540(CAI_BaseNPCTroika *self, int unused, SOtherEntity *
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b57c0 size=0x8d
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatWeapon.h"
+
+struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
+extern CGlobalVarsX *g_1070b228;
+
+struct CRandomX {
+	virtual void v0();
+	virtual float RandomFloat(float flMin, float flMax);
+};
+extern CRandomX *g_1070b244;
+
+struct CNotifyX {
+	virtual void v0();
+	virtual void v1();
+};
+extern CNotifyX *g_10924edc;
+
+char CAI_BaseNPCTroika::sub_102b57c0(int unused)
+{
+	unsigned int flags = sub_10007e19() ? ((CBaseCombatWeapon *)sub_10007e19())->vfunc360() : 0;
+	if ((flags & 0x18000) && !*((char *)this + 0x6078)) {
+		if ((*(CAI_NamedThing **)((char *)this + 0x65e8))->sub_1025dca0(this, 0)) {
+			*((char *)this + 0x6078) = 1;
+			*(float *)((char *)this + 0x6074) = g_1070b244->RandomFloat(7.5f, 15.0f) + g_1070b228->m_curtime;
+			g_10924edc->v1();
+			return 1;
+		}
+		*((char *)this + 0x6078) = 0;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf6e0 size=0x68
 #include "CAI_BaseNPCTroika.h"
 
