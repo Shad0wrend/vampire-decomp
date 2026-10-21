@@ -4065,6 +4065,7 @@
 0x10012ef4 func   ?sub_1017f650@CNPC_VCopUnit@@QAEXXZ CNPC_VCopUnit::sub_1017f650
 0x10012f08 func   _item_g_oh_diary item_g_oh_diary
 0x10012f12 func   ?sub_10044db0@CUtlMap16@@QAEXII@Z CUtlMap16::sub_10044db0
+0x10012f17 func   ??0CUnknown103f04f0@@QAE@ABV0@@Z CUnknown103f04f0::CUnknown103f04f0
 0x10012f17 func   ?sub_103f04f0@CUnknown103f04f0@@QAEPAV1@ABV1@@Z CUnknown103f04f0::sub_103f04f0
 0x10012f1c func   ?sub_1004dee0@@YAPAHXZ sub_1004dee0
 0x10012f2b func   _info_node_tzimisce info_node_tzimisce
