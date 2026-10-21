@@ -28126,6 +28126,38 @@ void sub_10196850(PyInst *inst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196970 size=0x98
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+
+struct PyObject { int ob_refcnt; };
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObject *args, const char *format, ...);
+__declspec(dllimport) PyObject *PyErr_Format(PyObject *exception, const char *format, ...);
+__declspec(dllimport) extern PyObject *PyExc_NameError;
+__declspec(dllimport) extern PyObject _Py_NoneStruct;
+}
+PyObject *sub_101966a0(CBaseEntity *pEnt);
+
+PyObject *sub_10196970(PyObject *self, PyObject *args)
+{
+    const char *pszName = 0;
+    if (PyArg_ParseTuple(args, "s", &pszName)) {
+        CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, pszName, 0, 0);
+        if (pEnt) {
+            if (g_106eb5d8.sub_100f7770(pEnt, pszName, 0, 0))
+                PyErr_Format(PyExc_NameError, "multiple entities named '%s'", pszName);
+            else
+                return sub_101966a0(pEnt);
+        } else {
+            _Py_NoneStruct.ob_refcnt++;
+            return &_Py_NoneStruct;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196bb0 size=0x73
 #include "CBaseCombatCharacter.h"
 
