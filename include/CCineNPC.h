@@ -25,6 +25,8 @@ public:
 	void sub_101a77a0(void *pNpc);	// warns (DevWarning) that a scripted sequence (this) was asked to play on a ScriptHidden NPC (pNpc), after setting the byte at +0x5d78 of pNpc
 	char sub_101a8ac0();	// stub 0x1000e6a6: asked of the scripted sequence entity by CAI_BaseNPC::sub_10278090; true lets the NPC take part. With the NPC entity (handle at +0x5f94) live: false (Msg "%s is specified as the Next Script...") while +0x5f58 is set, false (Msg "%s is a priority script...") when the entity has flag bit 9 of +0x204, else true
 	void *sub_101a7600();	// finds the NPC to play the script: walks the entities named like this one (name at +0x5f54, search start at +0x5f98) and returns the first NPC (object at +0x94) that accepts (slot 482 == 1), else the last one that accepts as a fallback (== 2), else null; Msg "Found %s, but can't play!" for the others unless flag bit 11 of +0x204 is set
+	char sub_101a7760();	// stub 0x1000db93 for 0x101a7600 then (flag bit 10 of +0x204) remembers the NPC as the search start (+0x5f98) and hands it to CAI_BaseNPC::sub_10279cc0; true when an NPC was found
+	void sub_101a8070();	// "StartScript"-like (scripted.cpp): when sub_101a7760 finds an NPC clears the byte at +0x5f91, runs slot 583 and prints DevMsg(2, "script \"%s\" using NPC \"%s\"\n"); else cancels the script (sub_101a8c30), prints DevMsg(2, "script \"%s\" can't find NPC \"%s\"\n") and retries one second later (next think at +0x17c)
 
 	char m_pad0004[0x204 - 4];
 	unsigned int m_flags204;	// 0x204
