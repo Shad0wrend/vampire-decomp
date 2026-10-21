@@ -79,6 +79,37 @@ char CAI_BaseNPCTroika::sub_1029fcf0(int a, CBaseEntity *pEnt, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4fe0 size=0x91
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown102dfaa0.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+char *sub_101d3730(const char *fmt, ...);
+
+struct CHandleX {
+    unsigned int m_Index;
+    CBaseEntity *Get() const
+    {
+        if (m_Index != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_Index & 0x1fff];
+            if (s->m_Serial == (int)(m_Index >> 13))
+                return (CBaseEntity *)s->m_pEntity;
+        }
+        return 0;
+    }
+};
+
+void CAI_BaseNPCTroika::vfunc598(CBaseEntity *pEnt)
+{
+    sub_10332ca0(pEnt, 4, 0);
+    if (vfunc167() == (int)pEnt)
+        sub_10279a50(0);
+    if (((CHandleX *)((char *)this + 0x1a94))->Get() == pEnt)
+        sub_10279b70(0);
+    ((CUnknown102dfaa0 *)vfunc541())->sub_102dfaa0(pEnt, (int)sub_101d3730("%s(%d) :", "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp", 0x5511));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b6fe0 size=0xe1
 #include "CBaseEntity.h"
 #include "CAI_BaseNPCTroika.h"

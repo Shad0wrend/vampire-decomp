@@ -1745,6 +1745,7 @@
 0x10008e9f func   ?vfunc207@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc207
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point
 0x10008ebd func   ?vfunc274@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc274
+0x10008ec2 func   ?vfunc598@CAI_BaseNPCTroika@@UAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc598
 0x10008ecc func   ??0CGameMovement@@QAE@XZ CGameMovement::CGameMovement
 0x10008ee0 func   ?sub_10234d20@@YAHXZ sub_10234d20
 0x10008f03 func   ?sub_102223f0@CExperienceTable@@QAEXXZ CExperienceTable::sub_102223f0
