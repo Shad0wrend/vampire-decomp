@@ -3527,6 +3527,7 @@
 0x1000edc7 func   ?sub_100f4260@@YAHHHMMMH@Z sub_100f4260
 0x1000edc7 func   ?sub_100f4260@@YAXHHMMMH@Z sub_100f4260
 0x1000edea func   ?sub_1014ee10@@YAPAHXZ sub_1014ee10
+0x1000edf4 func   ?vfunc130@CAI_InterestingPlace@@UAEXH@Z CAI_InterestingPlace::vfunc130
 0x1000ee26 func   ?vfunc2@CTEKillPlayerAttachments@@UAEPAV1@I@Z CTEKillPlayerAttachments::vfunc2
 0x1000ee5d func   ?vfunc425@CAI_BaseNPC@@UAEPAVCAI_Senses@@XZ CAI_BaseNPC::vfunc425
 0x1000ee6c func   ?sub_101b7370@CUnknown101b7370@@QAEXH@Z CUnknown101b7370::sub_101b7370

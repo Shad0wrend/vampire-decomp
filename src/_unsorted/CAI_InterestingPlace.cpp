@@ -57,3 +57,34 @@ void CAI_InterestingPlace::vfunc103()
 		m_nPriority = 5;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102d9dd0 size=0xab
+#include "CAI_InterestingPlace.h"
+extern char g_106b8540[];
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);	// DevMsg
+extern "C" int __cdecl strcmp(const char *, const char *);
+int sub_102dd9c0(const char *pszName);
+void sub_101cd970(CBaseEntity *pEnt);
+
+inline const char *STRING(const char *psz)
+{
+	return psz ? psz : g_106b8540;
+}
+
+void CAI_InterestingPlace::vfunc130(int a)
+{
+	CBaseEntity::vfunc130(a);
+	const char *volatile *ppName = (const char *volatile *)&m_pszTypeName;
+	int iDiff = strcmp(STRING(*ppName), g_106b8540);
+	if (iDiff != 0) {
+		int pType = sub_102dd9c0(STRING(*ppName));
+		m_pType = pType;
+		if (!pType) {
+			g_109f3630("Could not find InterestingPlaceType for '%s'\n", STRING(*ppName));
+			sub_101cd970(this);
+			return;
+		}
+	}
+	sub_102d9eb0();
+}
+// END FUNCTION
