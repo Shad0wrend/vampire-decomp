@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..601, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 142, 158, 161, 162, 167, 173,
-// 192, 193, 194, 198, 202, 203, 204, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 346, 360, 371, 376, 381, 385, 404, 448, 457 and 601 of an entity class that does not model its vtable.
+// 192, 193, 194, 198, 202, 203, 204, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 316, 346, 360, 371, 376, 381, 385, 404, 448, 457 and 601 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -111,7 +111,10 @@ public:
 	EVS(307)
 	virtual char slot308();	// NPC: a boolean answer in al (CNPC_VYukie::vfunc602)
 	EVS(309)
-	EVS10(31) EVS10(32) EVS10(33)
+	EVS(310) EVS(311) EVS(312) EVS(313) EVS(314) EVS(315)
+	virtual void slot316(CEntityVSlots *pAttacker, unsigned char a, unsigned char b);	// character: told about an incoming melee attack (attacker, dodge flag, block flag)
+	EVS(317) EVS(318) EVS(319)
+	EVS10(32) EVS10(33)
 	EVS(340) EVS(341) EVS(342) EVS(343) EVS(344) EVS(345)
 	virtual unsigned char slot346();	// weapon: a flag byte (bit 3 = may be held twice)
 	EVS(347) EVS(348) EVS(349)
