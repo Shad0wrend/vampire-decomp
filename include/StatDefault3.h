@@ -1,6 +1,8 @@
 // StatDefault3: default item object (0xe0 bytes) used by a list lookup; name provisional.
 #pragma once
 
+class CStatDefault3List;
+
 struct StatDefault3
 {
 	int m_0;	// 0x00
@@ -28,4 +30,6 @@ struct StatDefault3
 	StatDefault3(int);
 	~StatDefault3();
 	int sub_101d4d80();	// stub 0x100054ca
+	void sub_101d3a10();	// stub 0x10012a12: resets the item before it is loaded from a data node
+	void sub_101d4520(void *pNode, CStatDefault3List *pList);	// stub 0x1000a32b: loads the item from a "ClanData" node
 };
