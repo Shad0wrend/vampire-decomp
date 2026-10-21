@@ -27,4 +27,7 @@ public:
 	char sub_1000b005();	// CAI_BaseNPCTroika::sub_102c1170 (stub 0x1000b005), called directly
 	char sub_1000b212();	// CBaseCombatCharacter::sub_10341aa0 (stub 0x1000b212), called directly
 	bool sub_10005f97();	// CAI_BaseNPC::vfunc510 (stub 0x10005f97), tail called
+	void vfunc431();	// slot 431 "CNPC_VZombie::NPCThink" (plain member): scope trace (entity name); unless sub_1029f2e0() holds: sub_103e0a00() while the state at +0x6678 is 1, the inspection ranges when the vision distance (+0x63b8) is at most 1.0f, the Troika think, and slot 614 once the next think time (+0x17c) is not in the future
+	char sub_1029f2e0();	// stub 0x1000347c, called directly by the think
+	void sub_10292de0();	// CAI_BaseNPCTroika::vfunc431 (stub 0x10002a7c), called directly
 };
