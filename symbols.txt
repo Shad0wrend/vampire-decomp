@@ -2314,6 +2314,7 @@
 0x1000baeb func   ?vfunc294@CNPC_VGhoulCroucher@@QAEDH@Z CNPC_VGhoulCroucher::vfunc294
 0x1000baf0 func   ?vfunc104@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc104
 0x1000baf5 func   ?sub_101eaa60@@YAXH@Z sub_101eaa60
+0x1000baff func   ?sub_1020dce0@CPropSwitchUnit@@QAEXD@Z CPropSwitchUnit::sub_1020dce0
 0x1000bb09 func   ?vfunc336@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc336
 0x1000bb13 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc3
 0x1000bb36 func   ?vfunc448@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc448

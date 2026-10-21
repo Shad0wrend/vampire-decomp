@@ -39492,6 +39492,39 @@ extern "C" CBaseEntity *prop_switch()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020dce0 size=0x6b
+#include "CPropSwitch.h"
+#include "CUnknown1073dc00.h"
+struct CSoundTableUnit : CUnknown1073dc00 {
+    void sub_100119fa(CBaseEntity *pEnt, int sound, int channel, float volume, float pitch);
+};
+extern CSoundTableUnit g_1073dc00;
+extern int g_1074f13c;
+extern int g_1074f140;
+struct CPropSwitchUnit : CPropSwitch {
+    char m_pad[0x7a5 - sizeof(CBaseEntity)];
+    char m_bOn;
+    char m_pad7a6[2];
+    int m_nOnSound;
+    int m_nOffSound;
+    float sub_10001500(int a);
+    void sub_1020dce0(char on);
+};
+
+void CPropSwitchUnit::sub_1020dce0(char on)
+{
+    if (on) {
+        g_1073dc00.sub_100119fa(this, g_1074f13c, 2, 1.0f, 1.25f);
+        m_bOn = 1;
+        sub_10001500(m_nOnSound);
+        return;
+    }
+    g_1073dc00.sub_100119fa(this, g_1074f140, 2, 1.0f, 1.25f);
+    m_bOn = 0;
+    sub_10001500(m_nOffSound);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e060 size=0xa
 void CUnknown1020e060::sub_1020e060(int unused)
 {
