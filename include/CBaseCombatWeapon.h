@@ -68,7 +68,8 @@ public:
 	virtual int vfunc342(int a);	// the owner object (sub_102517b0) + 0x2188
 	virtual int vfunc343();
 	virtual int vfunc344();	// the owner object (sub_102517b0) + 0x2408
-	CBCW_V(345) CBCW_V(346) CBCW_V(347) CBCW_V(348) CBCW_V(349)
+	virtual int vfunc345();	// the weapon's weight (compared by CMultiplayRules::vfunc19)
+	CBCW_V(346) CBCW_V(347) CBCW_V(348) CBCW_V(349)
 	CBCW_V10(35) virtual unsigned int vfunc360();	// the weapon's type flags (bits 13 and 14 mark ranged weapons)
 	CBCW_V(361)
 	virtual CWeaponActivityRecord *vfunc362();	// the weapon's activity translation table
