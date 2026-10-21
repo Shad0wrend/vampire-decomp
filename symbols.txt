@@ -2992,6 +2992,7 @@
 0x1000cd60 func   ?sub_1003daa0@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_1003daa0
 0x1000cd65 func   ?vfunc103@CGibShooter@@QAEXXZ CGibShooter::vfunc103
 0x1000cd6f func   ?sub_10227250@CUnknown10227250@@QAEXH@Z CUnknown10227250::sub_10227250
+0x1000cd74 func   ?vfunc431@CNPC_VCamera@@QAEXXZ CNPC_VCamera::vfunc431
 0x1000cd97 func   ?sub_100b68d0@@YAXHPAUTSet@@@Z sub_100b68d0
 0x1000cdb0 func   ?sub_10076c30@CUnknown10076da0@@QAEXHH@Z CUnknown10076da0::sub_10076c30
 0x1000cdba func   ?sub_1033d8a0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d8a0
