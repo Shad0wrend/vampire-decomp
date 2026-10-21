@@ -5505,6 +5505,7 @@
 0x104974f8 vtable ??_7CMeasureSection@@6B@ CMeasureSection::vftable
 0x10497504 vtable ??_7CMeasureSectionInstance@@6B@ CMeasureSectionInstance::vftable
 0x10497510 vtable ??_7CBaseRopePhysics@@6B@ CBaseRopePhysics::vftable
+0x10497510 data   ??_7CRopeSimBase@@6B@ ??_7CRopeSimBase@@6B@
 0x10497520 vtable ??_7IHelper@CSimplePhysics@@6B@ CSimplePhysics::IHelper::vftable
 0x10497544 vtable ??_7CWeaponList@@6B@ CWeaponList::vftable
 0x1049757c vtable ??_7CBaseCombatWeapon@@6B@ CBaseCombatWeapon::vftable
