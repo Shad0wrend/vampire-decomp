@@ -71,7 +71,8 @@ public:
 	virtual void vfunc307(int value);
 	CBCW_V(308)
 	virtual bool vfunc309();	// true when gpGlobals->curtime is past the time at +0x894
-	CBCW_V(310) CBCW_V(311)
+	virtual void vfunc310(float time);	// "SetNextAttack"-like: stores time at +0x894 of this weapon (just this one without an owner), of the owner's active weapon and of the weapon behind the owner's handle at +0x1c64
+	CBCW_V(311)
 	virtual char vfunc312();	// asked by sub_10253b70 (whether the weapon may be used)
 	CBCW_V(313) CBCW_V(314)
 	virtual bool vfunc315();
