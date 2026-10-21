@@ -26551,6 +26551,44 @@ CBaseEntity * __stdcall sub_100f7b20(const char *pszName, const Vector *pCenter,
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7c30 size=0xd9
+#include "CGlobalEntityList.h"
+#include "Vector.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+#define EV(n) virtual void ev##n();
+#define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
+
+struct EntV {
+	EV10(0) EV10(1) EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8) EV10(9)
+	EV10(10) EV10(11) EV10(12) EV10(13) EV10(14) EV10(15) EV10(16) EV10(17) EV10(18) EV10(19)
+	EV10(20)
+	EV(210) EV(211) EV(212) EV(213) EV(214) EV(215) EV(216)
+	virtual float *ev217();
+	char m_pad[0x2e0 - 4];
+	int m_pEdict;
+};
+
+CBaseEntity * __stdcall sub_100f7c30(CBaseEntity *pStart, const char *pszName, const Vector *pCenter, float flRadius, CBaseEntity *pActivator, CBaseEntity *pSearching)
+{
+	float flRadiusSqr = flRadius * flRadius;
+	if (flRadiusSqr == 0.0f)
+		return g_106eb5d8.sub_100f7770(pStart, pszName, pSearching, pActivator);
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(pStart, pszName, pSearching, pActivator);
+	while (pEnt) {
+		EntV *e = (EntV *)pEnt;
+		if (e->m_pEdict) {
+			Vector *pOrigin = (Vector *)e->ev217();
+			if (flRadiusSqr > (*pOrigin - *pCenter).LengthSqr())
+				return pEnt;
+		}
+		pEnt = g_106eb5d8.sub_100f7770(pEnt, pszName, pSearching, pActivator);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f7d50 size=0xae
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
