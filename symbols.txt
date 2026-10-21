@@ -2420,6 +2420,7 @@
 0x1000be79 func   ?sub_101e1010@Loader@@QAE_NPBD@Z Loader::sub_101e1010
 0x1000be97 func   ?sub_10050c70@CDisciplineParticle@@SAPAV1@PAUCDisciplineParticleParams@@HHHH@Z CDisciplineParticle::sub_10050c70
 0x1000be9c func   ?vfunc5@CTriggerBombSite@@QAEPAV1@I@Z CTriggerBombSite::vfunc5
+0x1000bea6 func   ?sub_10233ad0@@YAXPAX@Z sub_10233ad0
 0x1000beb5 func   ?sub_102def00@UtlMem@@QAEXXZ UtlMem::sub_102def00
 0x1000bec4 func   ?sub_10231e60@@YIIPAD@Z sub_10231e60
 0x1000bed8 func   ?sub_1008b490@@YIXPAD@Z sub_1008b490

@@ -43886,6 +43886,74 @@ bool sub_10232cb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10233ad0 size=0x94
+struct CNodeLinkView
+{
+	char m_pad0000[4];
+	int m_nNodeA;	// 0x04
+	int m_nNodeB;	// 0x08
+	char m_pad000c[0x64 - 0xc];
+	unsigned int m_flags;	// 0x64
+};
+
+struct CNodeLinkEnt
+{
+	char m_pad0000[0x454];
+	int m_nNodeA;	// 0x454
+	int m_nNodeB;	// 0x458
+	int m_nField45c;	// 0x45c
+};
+
+struct CWorldcraftNodes
+{
+	char m_pad0000[0xc];
+	int *m_pIds;	// 0x0c
+};
+
+struct CWorldcraftView
+{
+	char m_pad0000[0x454];
+	CWorldcraftNodes *m_pNodes;	// 0x454
+};
+
+extern CWorldcraftView *g_10934088;
+extern void (*g_109f3628)(const char *fmt, ...);
+
+bool sub_10232cb0();
+CNodeLinkView *sub_10172830(void *pArg);	// stub 0x10003c24
+int sub_100f42f0(int a, int b, int c);	// "nodelink_create %d %d" through the Worldcraft connection, the answer (0 = ok, 2 = failed)
+CNodeLinkEnt *sub_10136580(const char *pszClassname);	// stub 0x10002e32: CreateEntityByName
+
+// TARGET: sub_10233ad0
+void sub_10233ad0(void *pArg)
+{
+	if (sub_10232cb0())
+	{
+		CNodeLinkView *pNode = sub_10172830(pArg);
+		if (pNode)
+		{
+			int *pIds = g_10934088->m_pNodes->m_pIds;
+			int nIdA = pIds[pNode->m_nNodeA];
+			int nIdB = pIds[pNode->m_nNodeB];
+			int rc = sub_100f42f0(nIdA, nIdB, 0);
+			if (rc == 2)
+			{
+				g_109f3628("Worldcraft failed on node link creation...\n");
+				return;
+			}
+			if (rc == 0)
+			{
+				CNodeLinkEnt *pEnt = sub_10136580("info_node_link");
+				pEnt->m_nNodeA = pNode->m_nNodeA;
+				pEnt->m_nNodeB = pNode->m_nNodeB;
+				pEnt->m_nField45c = 0;
+				pNode->m_flags |= 0x1000;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102342d0 size=0x72
 #include "SendProp.h"
 
