@@ -20725,6 +20725,52 @@ void sub_100d7210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7400 size=0x70
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+class CUnknown101f0d60
+{
+public:
+	void sub_101f0d60();
+};
+
+struct CReactionList
+{
+	int m_dummy;
+	CUnknown101f0d60 *sub_1000c30b(int index);
+};
+
+extern int g_1073a9a4;
+extern CReactionList g_1073a9a0;
+
+struct CReactionOwner
+{
+	char m_pad0000[0xa8];
+	void *m_pCharacter;
+};
+
+CReactionOwner *sub_101193b0();
+void sub_101ce620(void *pCharacter, int a, const char *pszText, int b, int c, int d, int e);
+
+// TARGET: sub_100d7400
+void sub_100d7400()
+{
+	CReactionOwner *pOwner = sub_101193b0();
+	if (pOwner)
+	{
+		void *pChar = pOwner->m_pCharacter;
+		if (pChar)
+		{
+			char szText[64];
+			sprintf(szText, "\n\tAvailable Reactions (%d):\n\n", g_1073a9a4);
+			sub_101ce620(pChar, 2, szText, 0, 0, 0, 0);
+			for (int i = 0; i < g_1073a9a4; i++)
+				g_1073a9a0.sub_1000c30b(i)->sub_101f0d60();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7c40 size=0xea
 #include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"

@@ -5129,6 +5129,7 @@
 0x10015b27 func   ?vfunc103@CFunc_Dust@@QAEXXZ CFunc_Dust::vfunc103
 0x10015b54 func   ?sub_102c68e0@CUnknown102c68e0@@QAEPAHH@Z CUnknown102c68e0::sub_102c68e0
 0x10015b72 func   ?sub_102c6a00@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102c6a00
+0x10015b77 func   ?sub_100d7400@@YAXXZ sub_100d7400
 0x10015b81 func   ?vfunc488@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc488
 0x10015bae func   ?sub_103e49b0@@YAHXZ sub_103e49b0
 0x10015bc2 func   ?vfunc4@CRestore@@UAEXPAXPAUtypedescription_t@@H@Z CRestore::vfunc4
