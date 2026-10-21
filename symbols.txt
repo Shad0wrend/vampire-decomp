@@ -2137,6 +2137,7 @@
 0x1000a114 func   ?vfunc5@CWeaponMelee_Claws_Ghoul@@QAEPAV1@I@Z CWeaponMelee_Claws_Ghoul::vfunc5
 0x1000a12d func   _item_g_driver_license_gimble item_g_driver_license_gimble
 0x1000a137 func   ?vfunc438@CNPC_VCamera@@QAEHXZ CNPC_VCamera::vfunc438
+0x1000a15a func   ?sub_101ecde0@ItemLoader@@QAE_NXZ ItemLoader::sub_101ecde0
 0x1000a169 func   ?vfunc5@CBaseVampireSkillEntity@@QAEPAV1@I@Z CBaseVampireSkillEntity::vfunc5
 0x1000a16e func   ?sub_10030910@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030910
 0x1000a178 func   ?sub_101e0040@CUnknown101e0040@@QAEPAV1@XZ CUnknown101e0040::sub_101e0040

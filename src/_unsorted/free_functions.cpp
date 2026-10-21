@@ -39840,6 +39840,64 @@ void CUnknown101eccd0::sub_101eccd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ecde0 size=0xee
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+extern "C" int sprintf(char *, const char *, ...);
+
+struct VBase {
+	virtual void a0();
+	virtual void Release();
+};
+struct KVFile : virtual VBase {
+	virtual void c0();
+	virtual void c1();
+};
+struct ItemRecord;
+struct ItemLoader {
+	int m_nGrow;
+	int m_nNext;
+	int m_n8;
+	int m_nC;
+	int m_nAlloc;
+	int m_nCount;
+	ItemRecord **m_pRecords;
+	bool sub_101ecde0();
+	bool sub_1000dc47(KVFile *kv);
+};
+extern void *g_1070b238;
+KVFile *__cdecl sub_101f2e20(const char *file, void *path);
+
+bool ItemLoader::sub_101ecde0()
+{
+	bool bOK = true;
+	if (m_pRecords) {
+		for (int i = 0; i < m_nCount; i++) {
+			if (m_pRecords[i])
+				delete (void *)m_pRecords[i];
+			m_pRecords[i] = 0;
+		}
+		delete (void *)m_pRecords;
+		m_pRecords = 0;
+	}
+	m_nNext = 0;
+	m_nCount = 0;
+	m_nAlloc = 0;
+	char szFile[128];
+	sprintf(szFile, "%s%s.txt", "vdata\\system\\", "items");
+	KVFile *kv = sub_101f2e20(szFile, g_1070b238);
+	if (kv) {
+		if (!sub_1000dc47(kv)) {
+			Msg("Unable to open data file for: %s\n", szFile);
+			bOK = false;
+		}
+		kv->Release();
+		return bOK;
+	}
+	Msg("Unable to load data for: %s\n", szFile);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ed170 size=0x7b
 #include "CUnknown101ed170.h"
 
