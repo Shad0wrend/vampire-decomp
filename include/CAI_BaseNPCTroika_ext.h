@@ -5,3 +5,5 @@
 	void sub_1027e0f0(int a);	// CAI_BaseNPC::vfunc532 (stub 0x10011d7e), called directly
 	void sub_102bf7e0();	// stub 0x100151ae, run by the alternate action end
 	int sub_1029f370(const char *pszName);	// "LookupSchedule" (local id of a schedule by name): the global id of the name, else of "SCHED_<name>", else of "SCHED_TROIKA_<name>" (DevMsg "Could not find schedule" and 0 when none), translated to the local id through slot 580 (DevMsg "Could not convert schedule" and 0 when unknown)
+	void sub_102bfe10();	// ground check: copies the absolute origin (slot 217), asks the move probe (+0x5d40) for the ground below it (mask 0x202400b, 32.0f up, -1024.0f down); DevMsg "I'm floating" when there is none and "got below the ground" when the origin is more than 1 unit under it, then (in either case) runs sub_1027efb0 and prints four newlines
+	void sub_1027efb0();	// stub 0x10007829, run by the ground check
