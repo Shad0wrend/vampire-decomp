@@ -3975,6 +3975,7 @@
 0x10010311 func   _item_g_bluebloodpack item_g_bluebloodpack
 0x10010316 func   ?vfunc5@CNPC_VTzimisce@@QAEPAV1@I@Z CNPC_VTzimisce::vfunc5
 0x1001031b func   ?sub_100e7480@@YGHH@Z sub_100e7480
+0x1001032a func   ?sub_1003ed80@CBaseEntity@@QAEXAAVVector@@@Z CBaseEntity::sub_1003ed80
 0x1001032f func   ?sub_10398fd0@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_10398fd0
 0x10010334 func   ?sub_102ae8c0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102ae8c0
 0x10010339 func   ?vfunc193@CBaseCineCam@@QAEPAMPAM@Z CBaseCineCam::vfunc193

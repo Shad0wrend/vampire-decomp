@@ -3313,6 +3313,38 @@ void CBaseEntity::sub_1003eb50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003ed80 size=0x126
+#include "ScopeTrace.h"
+#include "ConVar.h"
+
+struct CGlobalVarsGM
+{
+	char pad[0x10];
+	float frametime;
+};
+extern CGlobalVarsGM *g_1070b228;
+extern ConVar *g_109ef2d4;
+extern float g_104454c4;
+
+void CBaseEntity::sub_1003ed80(Vector &move)
+{
+	ScopeTrace trace("CBaseEntity::PhysicsAddGravityMove", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	float ent_gravity;
+	float flGravity = *(float *)((char *)this + 0x3ec);
+	if (flGravity != g_104454c4)
+		ent_gravity = *(float *)((char *)this + 0x3ec);
+	else
+		ent_gravity = 1.0f;
+	float t0 = ent_gravity * (g_109ef2d4->vfunc1() ? g_104454c4 : g_109ef2d4->m_fValue); float newZVelocity = m_vel3d4[2] - t0 * g_1070b228->frametime;
+	Vector *pBase = (Vector *)((char *)this + 0x3b0);
+	move.x = (m_vel3d4[0] + pBase->x) * g_1070b228->frametime;
+	move.y = (m_vel3d4[1] + pBase->y) * g_1070b228->frametime;
+	move.z = ((m_vel3d4[2] + newZVelocity) * 0.5 + pBase->z) * g_1070b228->frametime;
+	m_vel3d4[2] = newZVelocity;
+	sub_1003eb50();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003ef00 size=0x118
 #include "ScopeTrace.h"
 int __fastcall sub_1003ef00(CBaseEntity *self, int unused, const Vector &in, const Vector &normal, Vector &out, float overbounce)
