@@ -1634,6 +1634,51 @@ void sub_10032660(void *a1, void *a2, int *p, int sel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032720 size=0x10a
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CCollisionEvent.h"
+
+struct CPhysCallbackVec {
+	float x, y, z;
+};
+
+struct CPhysDamageInfo {
+	char m_pad0000[0x28];
+	CBaseEntity *m_pInflictor;	// 0x28
+};
+
+class CPhysCallbackIface {
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26();
+	virtual char vfunc27();
+};
+
+extern CPhysCallbackIface *g_10723940;
+extern CCollisionEvent g_106b86d8;
+extern CPhysCallbackVec g_1070d1b0;
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *pszFormat, ...);
+
+void sub_10032720(CBaseEntity *pEntity, CPhysDamageInfo *pInfo)
+{
+	ScopeTrace trace("PhysCallbackDamage", g_106b8540);
+	if (g_10723940->vfunc27()) {
+		int pObject = pInfo->m_pInflictor ? *(int *)((char *)pInfo->m_pInflictor + 0x36c) : 0;
+		CPhysCallbackVec vecLocal = g_1070d1b0;
+		g_106b86d8.sub_10031070((int)pEntity, pInfo, pObject, 0, &g_1070d1b0, &vecLocal);
+		if (pEntity && pInfo->m_pInflictor)
+			DevMsg(2, "Warning: Physics damage event with no recovery info!\nObjects: %s, %s\n", pEntity->sub_1009f200(), pInfo->m_pInflictor->sub_1009f200());
+	} else {
+		pEntity->sub_100a1250(pInfo);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032880 size=0xc9
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

@@ -2551,6 +2551,7 @@
 0x1000bd34 func   ?vfunc5@CResearchBook_HG_MELEE@@QAEPAV1@I@Z CResearchBook_HG_MELEE::vfunc5
 0x1000bd39 func   ?vfunc1@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc1
 0x1000bd48 func   ?sub_10390040@@YIXPAD@Z sub_10390040
+0x1000bd70 func   ?sub_10032720@@YAXPAVCBaseEntity@@PAUCPhysDamageInfo@@@Z sub_10032720
 0x1000bd7a func   ?sub_100766f0@CUnknown100766f0@@QAEXH@Z CUnknown100766f0::sub_100766f0
 0x1000bd7f func   ??0CTraceFilterSimple@@QAE@PAXH@Z CTraceFilterSimple::CTraceFilterSimple
 0x1000bd89 func   ?sub_100e7630@CDialog@@QAEXPAX@Z CDialog::sub_100e7630
