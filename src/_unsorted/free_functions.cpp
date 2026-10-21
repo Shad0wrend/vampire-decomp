@@ -60228,6 +60228,49 @@ void sub_1024e030(const mat34_1024e030 &matrix, ang_1024e030 &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024e140 size=0xb4
+struct S1024e140Matrix
+{
+	float m[4][4];
+};
+
+static inline void SwapFloat(float &a, float &b)
+{
+	float tmp = a;
+	a = b;
+	b = tmp;
+}
+
+void sub_1024e140(const S1024e140Matrix &src, S1024e140Matrix &dst)
+{
+	if (&src == &dst) {
+		SwapFloat(dst.m[0][1], dst.m[1][0]);
+		SwapFloat(dst.m[0][2], dst.m[2][0]);
+		SwapFloat(dst.m[0][3], dst.m[3][0]);
+		SwapFloat(dst.m[1][2], dst.m[2][1]);
+		SwapFloat(dst.m[1][3], dst.m[3][1]);
+		SwapFloat(dst.m[2][3], dst.m[3][2]);
+	} else {
+		dst.m[0][0] = src.m[0][0];
+		dst.m[0][1] = src.m[1][0];
+		dst.m[0][2] = src.m[2][0];
+		dst.m[0][3] = src.m[3][0];
+		dst.m[1][0] = src.m[0][1];
+		dst.m[1][1] = src.m[1][1];
+		dst.m[1][2] = src.m[2][1];
+		dst.m[1][3] = src.m[3][1];
+		dst.m[2][0] = src.m[0][2];
+		dst.m[2][1] = src.m[1][2];
+		dst.m[2][2] = src.m[2][2];
+		dst.m[2][3] = src.m[3][2];
+		dst.m[3][0] = src.m[0][3];
+		dst.m[3][1] = src.m[1][3];
+		dst.m[3][2] = src.m[2][3];
+		dst.m[3][3] = src.m[3][3];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10250400 size=0x104
 #include "CUnknown10250830.h"
 extern CUnknown10250830 g_1088ae60;

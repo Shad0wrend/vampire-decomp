@@ -1687,6 +1687,7 @@
 0x10007a0e func   ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ CBaseEntity::vfunc192
 0x10007a13 func   ?sub_1006d9a0@CCineCamFields1006d9a0@@QAEXXZ CCineCamFields1006d9a0::sub_1006d9a0
 0x10007a1d func   ?vfunc265@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::vfunc265
+0x10007a2c func   ?sub_1024e140@@YAXABUS1024e140Matrix@@AAU1@@Z sub_1024e140
 0x10007a36 func   ?sub_1005e330@@YAHXZ sub_1005e330
 0x10007a3b func   ?sub_1038fd40@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038fd40
 0x10007a45 func   ?sub_1030b100@CUtlVector280@@QAEXH@Z CUtlVector280::sub_1030b100
