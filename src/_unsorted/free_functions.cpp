@@ -11332,6 +11332,57 @@ void sub_10086e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086fb0 size=0xeb
+#include "CAI_BaseNPCTroika.h"
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+#include "IVEngineServer.h"
+
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" void *__RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pDestType, int isReference);
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_1054abdc[];	// type descriptor of CAI_BaseNPC
+extern char g_106b8540[];
+extern IVEngineServer *g_1070b22c;
+extern CGlobalEntityList g_106eb5d8;
+CBasePlayer *sub_101193b0();
+CAI_BaseNPCTroika *sub_10172710(CBasePlayer *pPlayer);
+
+inline CAI_BaseNPCTroika *FindNPC(CBaseEntity *pEnt)
+{
+	while (pEnt) {
+		void *p = __RTDynamicCast(pEnt, 0, g_10538764, g_1054abdc, 0);
+		if (p)
+			return (CAI_BaseNPCTroika *)p;
+		pEnt = g_106eb5d8.sub_100f7060(pEnt);
+	}
+	return 0;
+}
+
+// TARGET: sub_10086fb0
+void sub_10086fb0()
+{
+	const char *pszArg = (const char *)g_1070b22c->vfunc84(1);
+	if (_strcmpi(pszArg, g_106b8540) == 0) {
+		bool bFound = false;
+		for (CAI_BaseNPCTroika *pNPC = FindNPC(g_106eb5d8.sub_100f7060(0)); pNPC; pNPC = FindNPC(g_106eb5d8.sub_100f7060((CBaseEntity *)pNPC))) {
+			if (*(unsigned int *)((char *)pNPC + 0x224) & 0x1000) {
+				bFound = true;
+				pNPC->sub_1027c1f0();
+			}
+		}
+		if (!bFound) {
+			CAI_BaseNPCTroika *pNPC = sub_10172710(sub_101193b0());
+			if (pNPC) {
+				CAI_BaseNPCTroika *pTarget = *(CAI_BaseNPCTroika **)((char *)pNPC + 0x94);
+				if (pTarget)
+					pTarget->sub_1027c1f0();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088a80 size=0x10
 extern bool g_10924fbb;
 
