@@ -72,7 +72,9 @@ public:
 	void sub_1028d610();	// base class destructor body (stub 0x100123af)
 	void vfunc431();	// slot 431 "CNPC_VNewscaster::...": stamps curtime + 1.0f at +0x624c / +0x6250 and curtime at +0x625c / +0x6260, runs the Troika version and sub_103a0670 and, when the dev flag object allows and bit 0 of +0x224 is clear, the extra overlay lines sub_103a0ff0(0) (the position of this virtual is not its real slot)
 	void sub_10292de0();	// CAI_BaseNPCTroika::vfunc431, called directly (stub 0x10002a7c)
-	void sub_103a0670();	// stub 0x10003ef9, called directly
+	void sub_103a0670();	// "CNPC_VNewscaster::...": once (byte at +0x6690) needs the player, sub_103a0ab0() and a random start in both lists; then, unless the NPC is busy (CAI_BaseNPCTroika::sub_102c1170), picks list A or B at random in proportion to their sizes and plays the next entry's pair (sub_102c0520); stub 0x10003ef9
+	void sub_103a0ab0();	// stub 0x100078b5, run once at the start of sub_103a0670
+	void sub_102c0520(void *pLine, int a, int b);	// CAI_BaseNPCTroika member (stub 0x10014cbd): plays the given line
 
 	char m_pad0004[0x224 - 4];
 	char m_bFlags224;	// 0x224: bit 0 asks for the extra overlay lines
@@ -106,6 +108,8 @@ public:
 	char m_pad6420[0x665c - 0x6420];
 	CNewscasterList m_listA;	// 0x665c
 	CNewscasterList m_listB;	// 0x6670
-	char m_pad6684[0x6690 - 0x6684];
+	int m_nCursorA;	// 0x6684
+	int m_nCursorB;	// 0x6688
+	int m_bPickA;	// 0x668c
 	char m_bFlag6690;
 };
