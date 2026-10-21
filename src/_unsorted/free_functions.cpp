@@ -61972,6 +61972,71 @@ void CUnknown102dc2c0::sub_102dc2c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dca60 size=0x15e
+#include "CUnknown102dca60.h"
+#include "CGlobalEntityList.h"
+
+extern "C" __declspec(dllimport) int RandomInt(int, int);
+extern "C" __declspec(dllimport) float RandomFloat(float, float);
+
+struct SGlobalVars
+{
+	char m_pad[0xc];
+	float m_flCurTime;	// 0x0c
+};
+
+extern CGlobalEntityList *g_10566458;
+extern SGlobalVars *g_1070b228;
+
+namespace block_102dca60 {
+	struct CTargetUnit : CUnknown102dca60_Target
+	{
+		void sub_102db3b0(int mode);
+	};
+
+	void CTargetUnit::sub_102db3b0(int mode)
+	{
+		if (mode == 0 || mode == 1 || mode == 2)
+			m_nMode = mode;
+	}
+}
+using namespace block_102dca60;
+
+inline CTargetUnit *LookupTarget(const unsigned int &h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13))
+			return (CTargetUnit *)pSlot->m_pEntity;
+	}
+	return 0;
+}
+
+// TARGET: CUnknown102dca60::sub_102dca60
+void CUnknown102dca60::sub_102dca60()
+{
+	int i;
+	for (i = 0; i < m_nTargets; i++)
+		LookupTarget(m_pTargets[i])->sub_102db3b0(2);
+	for (;;) {
+		int nEnabled = 0;
+		int iPick = RandomInt(0, m_nPickRange);
+		for (i = 0; i < m_nTargets; i++) {
+			if (LookupTarget(m_pTargets[i])->m_nState == 1) {
+				nEnabled++;
+				if (i != m_iCurrent && nEnabled == iPick) {
+					LookupTarget(m_pTargets[i])->sub_102db3b0(1);
+					m_iCurrent = i;
+					m_OnPick.sub_100cd660(this, this, 0);
+					m_flNextTime = RandomFloat(m_flMinDelay, m_flMaxDelay) + g_1070b228->m_flCurTime;
+					return;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dcc20 size=0x77
 #include "CGlobalEntityList.h"
 
