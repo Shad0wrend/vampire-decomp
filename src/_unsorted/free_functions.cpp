@@ -24015,6 +24015,41 @@ extern "C" GP *func_particle()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fc7a0 size=0x18c
+#include "SendProp.h"
+
+struct SendTable
+{
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);
+};
+
+SendProp sub_10246af0(const char *pName, int offset, int size, int bits, int flags, int type, void *pProxy);
+SendProp sub_10246dc0(const char *pName, int offset, int pTable, void *pProxy);
+SendProp sub_10246510(const char *pName, int offset, int size, int bits, int flags, float flLow, float flHigh, void *pProxy);
+void sub_10009539();
+void sub_10246300();
+extern int g_105669d0;
+extern const char *g_10566ee8;
+extern SendTable g_10708dfc;
+
+int sub_100fc7a0()
+{
+	static SendProp g_SendProps[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_105669d0, (void *)sub_10009539),
+		sub_10246510("m_flSizeScalar", 0x4a4, 4, -1, 4, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10246510("m_vecSpawnMins[0]", 0x4a8, 4, 0, 2, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10246510("m_vecSpawnMins[1]", 0x4ac, 4, 0, 2, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10246510("m_vecSpawnMins[2]", 0x4b0, 4, 0, 2, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10246510("m_vecSpawnMaxs[0]", 0x4b4, 4, 0, 2, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10246510("m_vecSpawnMaxs[1]", 0x4b8, 4, 0, 2, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10246510("m_vecSpawnMaxs[2]", 0x4bc, 4, 0, 2, 0.0f, -121121.125f, (void *)sub_10246300),
+	};
+	g_10708dfc.sub_10247240(g_SendProps + 1, sizeof(g_SendProps) / sizeof(SendProp) - 1, g_10566ee8);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fd000 size=0x49
 void *sub_1000db89(int);
 struct GP;
