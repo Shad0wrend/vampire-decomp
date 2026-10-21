@@ -553,6 +553,7 @@
 0x10003927 func   ?sub_10198150@@YAPAXPAX0@Z sub_10198150
 0x1000392c func   ?sub_101727a0@@YAXPAUCPlayerVecSlotsX@@H@Z sub_101727a0
 0x10003931 func   ?sub_10050d90@CDisciplineParticle@@SAPAV1@HHHHHHHHHH@Z CDisciplineParticle::sub_10050d90
+0x10003963 func   ?vfunc103@CSoundEnt@@UAEXXZ CSoundEnt::vfunc103
 0x1000398b func   ?sub_10103100@CUnknown10103100@@QAEXH@Z CUnknown10103100::sub_10103100
 0x1000399f func   ?sub_101eab40@@YAXH@Z sub_101eab40
 0x100039ae func   ?sub_103fd6f0@@YAHXZ sub_103fd6f0
