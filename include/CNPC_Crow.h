@@ -12,4 +12,6 @@ public:
 	void sub_1027d9b0(int a);	// stub 0x10011e14 (0x1027d9b0 forwards to sub_102eeba0 of the object at +0x5d34), called directly
 	void sub_1026dc30(int a);	// stub 0x1001005f, called directly
 	void sub_1026dc00(int a);	// stub 0x10012855, called directly
+	int sub_102767d0();	// CAI_BaseNPC::vfunc124 (stub 0x1000e624), called directly
+	int vfunc124();	// slot 124 "DrawDebugTextOverlays": the base's line offset; with the text overlay bit (bit 0 of +0x224) a "morale: %d" line (+0x5f50) and, with an enemy, an "enemy (dist): %s (%g)" line (+0x5f4c)
 };
