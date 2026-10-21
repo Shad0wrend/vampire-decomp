@@ -87,3 +87,44 @@ void CPropSwitch::vfunc113()
 		sub_1020df00(*(int *)((char *)this + 0x7b4));
 }
 // END FUNCTION
+
+// FUNCTION: 0x1020db30 size=0x144
+#include "CPropSwitch.h"
+#include "COutputEvent.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+
+struct CPropSwitchUnit : CPropSwitch
+{
+	void sub_1020dce0(char bOn);
+};
+
+struct CPropSwitchUseFields
+{
+	char m_pad0000[0x740];
+	unsigned int m_hLinked;
+	char m_pad0744[0x774 - 0x744];
+	COutputEvent m_OnOff;
+	COutputEvent m_OnOn;
+};
+
+// TARGET: CPropSwitch::vfunc173
+void CPropSwitch::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value)
+{
+	CPropSwitchUseFields *p = (CPropSwitchUseFields *)this;
+	if (sub_1020e020()) {
+		p->m_OnOn.sub_100cd660(pActivator, pCaller, 0);
+		return;
+	}
+	p->m_OnOff.sub_100cd660(pActivator, pCaller, 0);
+	if (sub_1020e040()) {
+		((CPropSwitchUnit *)this)->sub_1020dce0(0);
+		if (EHandle_Get(p->m_hLinked))
+			((CPropSwitchUnit *)EHandle_Get(p->m_hLinked))->sub_1020dce0(0);
+	} else {
+		((CPropSwitchUnit *)this)->sub_1020dce0(1);
+		if (EHandle_Get(p->m_hLinked))
+			((CPropSwitchUnit *)EHandle_Get(p->m_hLinked))->sub_1020dce0(1);
+	}
+}
+// END FUNCTION
