@@ -75870,6 +75870,31 @@ Vector *CUnknown1040cb60::sub_1040c430(Vector *pOut, const Vector *pIn, CBaseEnt
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040c500 size=0xa0
+#include "CGrabController.h"
+#include "CEntityVSlots.h"
+
+void __cdecl sub_10012deb(const Vector *pAngles, float *pMatrix);	// AngleMatrix
+void __cdecl sub_100103de(Vector *pOut, const Vector *pIn, const float *pMatrix);	// VectorTransform
+
+Vector *CGrabController::sub_1040c500(Vector *pOut, const Vector *pIn, CEntityVSlots *pEnt)
+{
+	if (m_b45) {
+		Vector angles = *pEnt->slot194();
+		angles.x = 0;
+		float matrix[12];
+		sub_10012deb(&angles, matrix);
+		sub_100103de(pOut, pIn, matrix);
+		return pOut;
+	}
+	unsigned char nBits = (unsigned char)(*(unsigned int *)((char *)pEnt + 0x268) >> 11);
+	if (nBits & 1)
+		pEnt->slot98();
+	sub_100103de(pOut, pIn, (const float *)((char *)pEnt + 0x130));
+	return pOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040cce0 size=0x91
 #include "CUnknown1040cce0.h"
 
