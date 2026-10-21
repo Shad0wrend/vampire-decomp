@@ -55,4 +55,5 @@ public:
 	int IsSolid() const { return m_nSolidType != 0 && !(m_usSolidFlags & 4); }	// the solid type is set and the not-solid flag (bit 2) is clear
 	void sub_100dc220(int a);	// partition update: with the partition object at 0x1070b24c (DevMsg "partition not initialized" otherwise) makes sure the handle at +0x46 exists (sub_100ddd90, stub 0x10014092; DevMsg "m_Partition failed to initialize" when it still does not) and calls slot 0 of the partition object with (handle, a)
 	void sub_100ddd90();	// creates the partition handle (stub 0x10014092)
+	void sub_100dcd90(const float *pMins, const float *pMaxs, float *pOutA, float *pOutB);	// world-space bounds of the box (pMins, pMaxs) (stub 0x100053fd); the two results are written to the last two arguments
 };
