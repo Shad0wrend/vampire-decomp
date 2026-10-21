@@ -7027,6 +7027,40 @@ int sub_100657e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10066820 size=0xf0
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246700(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246dc0(const char *name, int offset, int pTable, void *proxy);
+void sub_10009539();
+void sub_10003012();
+extern SendTable g_106c4cec;
+extern const char *g_1054465c;
+extern int g_1053dfa8;
+
+// TARGET: sub_10066820
+int sub_10066820()
+{
+    static SendProp g_SendProps[] = {
+        sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+        sub_10246dc0("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+        sub_10246700("m_vecOrigin", 0x10, 12, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+        sub_10246af0("m_nEntity", 0x1c, 4, 0xb, 1, 0, 0),
+        sub_10246af0("m_nIndex", 0x20, 4, 9, 1, 0, 0),
+        sub_10246af0("m_nPlayer", 0xc, 4, 5, 1, 0, 0),
+    };
+    g_106c4cec.sub_10247240(g_SendProps + 1, 5, g_1054465c);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066e20 size=0x98
 #include "SendProp.h"
 
