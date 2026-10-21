@@ -33050,6 +33050,21 @@ void sub_101cdac0(int entindex, int pos, const char *pszSample, int volume, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cee20 size=0x96
+#include "Vector.h"
+#include "QAngle.h"
+
+void sub_10002310(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_101ceef0(float a, Vector b, Vector forward, Vector right, Vector up, int c);
+
+void sub_101cee20(float a, Vector b, QAngle angles, int c)
+{
+	Vector forward, right, up;
+	sub_10002310(&angles, &forward, &right, &up);
+	sub_101ceef0(a, b, forward, right, up, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf250 size=0x74
 void sub_101cf250(float *p, int mode)
 {
