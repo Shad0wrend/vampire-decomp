@@ -49185,6 +49185,26 @@ SNode *sub_102d2840(int unused, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d2e30 size=0x6b
+extern CAI_Hint *g_10925450;
+extern void *vt_1049b9a4[];
+
+CAI_Hint *CAI_Hint::sub_102d2e30()
+{
+	sub_1009d980(0);
+	for (int i = 0; i < 8; i++)
+		m_items4fc[i].sub_100cd2a0();
+	m_item5bc.sub_100cd2a0();
+	m_n5e0 = -1;
+	m_item5f4.sub_100cd2a0();
+	*(void ***)this = vt_1049b9a4;
+	m_n5ec = 0;
+	m_pNext = g_10925450;
+	g_10925450 = this;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d2f30 size=0xc1
 #include "CEntityVSlots.h"
 #include "CBaseEntity.h"
