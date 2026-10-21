@@ -75015,6 +75015,23 @@ void CUnknown10330ce0::sub_10330ce0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10331770 size=0xca
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+// TARGET: sub_10331770
+float __fastcall sub_10331770(CBaseCombatCharacter *pThis, int, float flDamage)
+{
+    ScopeTrace trace("CBaseCombatCharacter::DamageForce", pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+    CEntityVSlots *p = (CEntityVSlots *)pThis;
+    float flForce = (float)(73728.0 / (p->slot214()->x * p->slot214()->z * p->slot214()->y) * flDamage * 5.0);
+    if (flForce > 1000.0)
+        flForce = 1000.0f;
+    return flForce;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103322e0 size=0xbd
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
