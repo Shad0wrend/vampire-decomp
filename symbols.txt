@@ -1392,6 +1392,7 @@
 0x100070c7 func   ?sub_10077ac0@CTableFields10077ac0@@QAEIH@Z CTableFields10077ac0::sub_10077ac0
 0x100070d6 func   _raggib raggib
 0x100070db func   ?sub_100ce4e0@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce4e0
+0x100070e5 func   ?vfunc134@CSoundEnt@@QAEXXZ CSoundEnt::vfunc134
 0x100070ea func   ?vfunc5@CPropMover@@QAEPAV1@I@Z CPropMover::vfunc5
 0x100070f4 func   ?sub_104057f0@@YAHXZ sub_104057f0
 0x100070f9 func   ?vfunc560@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc560

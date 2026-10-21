@@ -27,6 +27,42 @@ void CSoundEnt::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ba890 size=0xd2
+#include "CSoundEnt.h"
+
+struct CGlobalVarsSE
+{
+    char pad[0xc];
+    float curtime;
+};
+
+extern CGlobalVarsSE *g_1070b228;
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+
+void CSoundEnt::vfunc134()
+{
+    m_flNextThink = g_1070b228->curtime + 0.3;
+    int iPrevious = -1;
+    int iSound = m_iActiveSound;
+    while (iSound != -1) {
+        if (*(float *)&m_SoundPool[iSound].m_flExpireTime + 4.0f <= g_1070b228->curtime && m_SoundPool[iSound].m_flExpireTime != 0xbf800000) {
+            int iNext = m_SoundPool[iSound].m_iNext;
+            sub_101ba9d0(iSound, iPrevious);
+            iSound = iNext;
+        } else {
+            iPrevious = iSound;
+            iSound = m_SoundPool[iSound].m_iNext;
+        }
+    }
+    if (m_bShowReport) {
+        int n = sub_101bb070(2) - m_cLastActiveSounds;
+        DevMsg(2, "Soundlist: %d / %d  (%d)\n", sub_101bb070(2), sub_101bb070(1), n);
+        m_cLastActiveSounds = sub_101bb070(2);
+    }
+    sub_101bb350();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb580 size=0x1e
 #include "CSoundEnt.h"
 
