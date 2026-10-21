@@ -2,9 +2,24 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+#include "CBaseEntitySlots.h"
+
+// The CBaseEntity vtable out to slot 223 (CBaseEntitySlots stops at 193), to call the slots of a brush entity.
+struct CFuncBrushSlots : public CBaseEntitySlots
+{
+	virtual void slot194(); virtual void slot195(); virtual void slot196(); virtual void slot197(); virtual void slot198();
+	virtual void slot199(); virtual void slot200(); virtual void slot201(); virtual void slot202(); virtual void slot203();
+	virtual void slot204(); virtual void slot205(); virtual void slot206(); virtual void slot207(); virtual void slot208();
+	virtual void slot209(); virtual void slot210(); virtual void slot211(); virtual void slot212(); virtual void slot213();
+	virtual void slot214(); virtual void slot215(); virtual void slot216(); virtual void slot217(); virtual void slot218();
+	virtual void slot219(); virtual void slot220(); virtual void slot221(); virtual void slot222(); virtual void slot223();
+};
+
 class CFuncBrush
 {
 public:
 	CFuncBrush *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+	void vfunc103();	// slot 103 "CFuncBrush::Spawn": move type 8 (slot 93), inlined SetSolid(1) and, when the dword at +0x450 is 1, AddSolidFlags(4) on the collision property at +0x270 (both with scope traces), the model name from slot 9 into slot 105, sub_1013e420 when the dword at +0x454 is set, flag 0x1000000 for an unnamed entity or one without the dword at +0x124, sub_100b3b00, slot 223
+	void sub_1013e420();	// stub 0x10003cb5: when slot 240 reports true calls slot 77
 };
