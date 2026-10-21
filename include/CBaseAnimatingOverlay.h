@@ -29,6 +29,9 @@ public:
 	void sub_1008b530(int a);	// CBaseAnimating::vfunc31 (stub 0x10007144), called directly
 	float vfunc250(float a);	// slot 250: CBaseAnimating::vfunc250(a), then advances the first four overlay layers that have a rate and, once finished, calls slot 112(layer, activity)
 	float sub_1008f120(float a);	// CBaseAnimating::vfunc250 (stub 0x1000b32a), called directly
+	int sub_1008dc40(int activity, int b);	// CBaseAnimating::sub_1008dc40 (stub 0x100125c1): "SelectWeightedSequence", called directly
+	int sub_100990f0(int sequence, int b);	// "CBaseAnimatingOverlay::AddGestureSequence": slot 272 picks a free layer, slot 268 starts it; returns the layer or -1
+	int sub_100991b0(int activity, int b);	// "CBaseAnimatingOverlay::AddGesture": slot 270(activity) true: slot 271(activity); else selects a sequence for the activity (DevMsg "model missing activity" and -1 when there is none), AddGestureSequence and records the activity in the layer
 
 	char m_pad0000[0x738];
 	CAnimationLayer m_Layers[15];	// 0x738
