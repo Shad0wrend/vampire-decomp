@@ -56,4 +56,5 @@ public:
 	void sub_101fa960(CVDmgSource_t *pSource);	// "CVDmg_t::SetSrc": scope trace; removes the first block's value for the old source from the field at +0x4, stores the new source's edict index (IndexOfEdict) at +0x34 (0 for no source) and adds the block's value for the new source
 	char *sub_101fb680();	// "CVDmg_t::ToShortStr": scope trace; into the global buffer at 0x1074e2ec: "" for field +0 == -1, else " %s %d" (block name, field +4) or " %d" (field +4) when the block at +0x14 is empty
 	void sub_101fa680();	// the destructor body (stub 0x10010956), called directly
+	void sub_101fa8d0(int a, int b, int c);	// "CVDmg_t::Set": scope trace, stores a / c / b in the fields +0 / +4 / +0x10 (the free-function form of the same address is matched as sub_101fa8d0)
 };
