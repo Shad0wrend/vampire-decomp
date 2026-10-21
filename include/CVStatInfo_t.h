@@ -8,6 +8,8 @@ struct CVStatLevelEntry_t
 	int m_durationAdd;
 };
 
+class CVStatActionList_t;
+
 class CVStatInfo_t
 {
 public:
@@ -25,11 +27,11 @@ public:
 	int m_field0124;	// 0x0124
 	char m_pad0128[0x130 - 0x128];
 	int m_field0130;	// 0x0130
-	int m_field0134;	// 0x0134
-	int m_field0138;	// 0x0138
+	int m_field0134;	// 0x0134: number of entries of the action pointer array
+	int m_field0138;	// 0x0138: the action pointer array
 
 	CVStatInfo_t();	// 0x101fdaf0 (called through the stub at 0x1000dfb2): constructs the five records, the cost and the list, then scope trace and the plain fields
-	~CVStatInfo_t();	// 0x101fdc30 (called through the stub at 0x1000f0a6)
+	~CVStatInfo_t();	// 0x101fdc30 (called through the stub at 0x1000f0a6): scope trace around the free of the level table, frees the action pointer array (each action's part at +0x18 first), clears the fields, then the list at +0x10c (sub_101fd4c0) and the five records (+0x9c .. +0x4c, last first)
 	CVStatInfo_t *sub_101fdaf0();	// "CVStatInfo_t::CVStatInfo_t": constructs the five records, the cost and the list, then scope trace and the plain fields
 	int sub_101fed90(int level);	// "CVStatInfo_t::Get_Duration_Initial": scope trace, duration of the level (clamped to 5), 0 without a table
 	int sub_101fee50(int level);	// "CVStatInfo_t::Get_Duration_Add": same shape, the second dword of the level entry
