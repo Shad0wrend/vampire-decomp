@@ -488,6 +488,27 @@ void CBaseCombatWeapon::vfunc288()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258320 size=0x82
+struct CRollTable {
+	virtual void vfunc0();
+	virtual float vfunc1(int lo, int hi);
+};
+extern CRollTable *g_1070b244;
+
+// TARGET: CBaseCombatWeapon::vfunc269
+void CBaseCombatWeapon::vfunc269(CBaseCombatWeapon *pOther, Vector vecDir)
+{
+	if (pOther) {
+		int *p = sub_102517e0();
+		float f = g_1070b244->vfunc1(p[0x3b8 / 4], p[0x3bc / 4]);
+		if (f != 0.0f) {
+			vecDir = vecDir * f;
+			pOther->vfunc170(&vecDir);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258560 size=0xe
 // TARGET: CBaseCombatWeapon::vfunc291
 void CBaseCombatWeapon::vfunc291()
