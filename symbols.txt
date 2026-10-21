@@ -1405,6 +1405,7 @@
 0x10006636 func   ?sub_1024a2b0@@YA_NPAG0@Z sub_1024a2b0
 0x10006640 func   ?vfunc173@CPropRadio@@QAEXPAVCBaseEntity@@0HH@Z CPropRadio::vfunc173
 0x1000665e func   ?sub_100eb130@@YIXPAH@Z sub_100eb130
+0x10006663 func   ?sub_10229430@CUnknown10229550@@QAEXPBDMHMPAUCUnknown10229550Item@@@Z CUnknown10229550::sub_10229430
 0x1000666d func   ?sub_101d6220@CPartListUnit2@@QAEXXZ CPartListUnit2::sub_101d6220
 0x10006672 func   ?sub_102cd310@CUnk102cd310@@QAEXXZ CUnk102cd310::sub_102cd310
 0x10006681 func   ?sub_10430020@@YAII@Z sub_10430020

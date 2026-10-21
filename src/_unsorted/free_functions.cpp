@@ -59946,6 +59946,37 @@ float sub_102283a0(float cur, float target, float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10229430 size=0xde
+#include "CUnknown10229550.h"
+
+__declspec(dllimport) int Q_strnicmp(const char *s1, const char *s2, int n);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+
+void CUnknown10229550::sub_10229430(const char *pszName, float flVolume, int a, float flTime, CUnknown10229550Item *pItem)
+{
+	if (flVolume == 0.0 || !pszName || !*pszName) {
+		sub_10229550(pItem, flTime);
+		return;
+	}
+	if (flVolume > 0.0f) {
+		if (Q_strnicmp(pszName, (char *)pItem, 0x40) == 0) {
+			pItem->m_f48 = flVolume;
+			pItem->m_n40 = *(int *)&flVolume;
+			pItem->m_n54 = a;
+			pItem->m_f4c = flVolume / flTime;
+			return;
+		}
+		sub_10229550(pItem, flTime);
+		Q_strncpy((char *)pItem, pszName, 0x40);
+		pItem->m_f48 = flVolume;
+		pItem->m_n40 = *(int *)&flVolume;
+		pItem->m_f4c = flVolume / flTime;
+		pItem->m_n50 = sub_102297a0();
+		pItem->m_n54 = a;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10229550 size=0x11c
 #include "CUnknown10229550.h"
 
