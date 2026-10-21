@@ -123,7 +123,7 @@ public:
 	void sub_1029f060(int unused);	// when the player's dialog partner (handle at player+0xfe8) is gone, this NPC is not busy with a discipline and flag bit 28 of +0x14bc is clear: sub_1000e4d5, slot 614, sets the byte at +0x6495, stamps the source file / line 0x268e at +0x1b30 / +0x1b34 and starts schedule 0x6e (sub_102ae750); takes one unused stack argument
 	void vfunc432(int a);	// slot 432 "CAI_BaseNPCTroika::RunAI" (plain member): scope trace (entity name), sub_1028fc90(), sub_102a0d20(), then CAI_BaseNPC::vfunc432(a)
 	void sub_1028fc90();	// stub 0x1000ccd4, called directly by RunAI
-	void sub_1026f110(int a);	// CAI_BaseNPC::vfunc432 (stub 0x1000a529), called directly
+	void sub_1026f110(int a);	// CAI_BaseNPC::vfunc432 (stub 0x1000a529), called directly by RunAI
 	bool sub_10297430(CAI_BaseNPCTroika *pOther);	// "CAI_BaseNPCTroika::...": false unless the entity of the handle at +0x6448 resolves to a live entity, else sub_10296c40(pOther, that entity, the dword at pOther+0x458, 0.731f) != 0
 	char sub_10296c40(CAI_BaseNPCTroika *pOther, CBaseEntity *pEnt, int a, float f);
 	int sub_10295460(int a, int b);	// called through the stub at 0x10009c14
@@ -139,6 +139,9 @@ public:
 	void sub_102b52a0(char bClearTarget, char bDead);	// resets the target (sub_10279a50(0), sub_10279b70(0)), clears bits of the flags at +0x5d8c, flushes the pending queue of slot 541; with bDead stamps the source line at +0x1b3c / +0x1b40 and sets the state +0x5cc4 to 1
 	void sub_1000dc38();	// stub 0x1000dc38 for 0x10273760, run by sub_102b52a0 when its first argument is set
 	char sub_1029fcf0(int a, CBaseEntity *pEnt, int b);	// slot 318: false without pEnt or when sub_1028a190 refuses; else (by pEnt's kind == 3) picks schedule 0xd8 / 0xd7, stamps the source file / line at +0x1b30 / +0x1b34, runs sub_102ae750(schedule, 0) and arms the timer at +0x1564 with curtime + a constant; true
+	char vfunc320(int a, int b);	// slot 320 (declared as a plain member): false unless sub_1028a190 holds and sub_102c1170 does not and the sequence of activity b is known (sub_1008dd30); else remembers b at +0x6068, runs slot 614, stamps the source file / line 0x29b5 at +0x1b30 / +0x1b34 and starts schedule 0x14d (after sub_102a0290(a, b)) when sub_10344da0(b) holds, else schedule 0x14c; true
+	char sub_10344da0(int a);	// stub 0x10010c3f, called directly
+	void sub_102a0290(int a, int b);	// stub 0x10013647, called directly
 	void sub_102ae750(int schedule, int a);	// stub 0x1000198d
 	char sub_102b57c0(int unused);	// slot 600: when the active weapon (sub_10007e19) is a ranged one (type flags bits 15 / 16) and the flag byte at +0x6078 is clear, asks the named thing at +0x65e8 (sub_1025dca0); on yes sets the flag, stamps the next time at +0x6074 (curtime + random 7.5 .. 15.0), notifies the global at 0x10924edc and returns true; else clears the flag and returns false
 	int sub_10007e19();	// CBaseCombatCharacter member (the stub at 0x10007e19 for 0x1032e7b0): the active weapon
