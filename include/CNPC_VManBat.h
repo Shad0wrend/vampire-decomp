@@ -28,4 +28,5 @@ public:
 	void sub_100013f7();	// CNPC_VHuman::vfunc104 (jump stub), called directly
 	void sub_1038c170(int nMode);	// switches between the grounded (1: flag 0x400 set, state 2) and the flying (other: flag cleared, state 0) setup, then slot 93(4, 0)
 	void sub_1038fc80();	// tells every living \"ManBat_Minion\" NPC without a target about the bat's target (once; sets the flag at +0x66b0)
+	void sub_1038fd40();	// the reverse of sub_1038fc80: while the flag at +0x66b0 is set, every living \"ManBat_Minion\" NPC with a target count is released (sub_1026d0c0), told about the bat's target (relationship 1 / 10) and scheduled (sub_102ae840 with 2 when slot 167 of the bat answers, else 1); then clears the flag
 };
