@@ -44044,6 +44044,21 @@ void CUnknown101e4150::sub_101e4150(CUnknown101e4150Char *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e4220 size=0xa5
+#include "CUnknown101e0f00.h"
+#include "CBasePlayer.h"
+#include "CVStatList_t.h"
+
+void CUnknown101e0f00::sub_101e4220(CBasePlayer *pPlayer)
+{
+	if (CVStatListSet::Of(pPlayer)->Find(0)->sub_10010609(0x19) > 0) {
+		int i = sub_101e12f0("Thaumaturgy_Bloodshield");
+		if (i != -1)
+			pPlayer->sub_1017df50(((CUnknown101e0f00Entry *)m_ppEntries[i])->m_n28, -1.0f, "CVTgt_DisciplineFXMgr_t::UpdateSupernaturalLevel");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e4380 size=0xfb
 #include "CUnknown101e0f00.h"
 #include "ScopeTrace.h"
