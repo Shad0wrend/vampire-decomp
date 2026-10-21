@@ -48,3 +48,25 @@ void CPropClockHand::vfunc103()
 	*(float *)((char *)this + 0x764) = g_1070b228->curtime;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012ddf0 size=0x75
+#include "CBaseEntity.h"
+#include "CPropClockHand.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+void sub_101434b0(int index, int line, const char *text, int a, int r, int g, int b, int al);
+char *sub_101d3730(const char *fmt, ...);
+
+// TARGET: CPropClockHand::vfunc124
+int CPropClockHand::vfunc124()
+{
+    int line = sub_10096100();
+    if (*(unsigned char *)((char *)this + 0x224) & 1) {
+        int ed = m_pEdict2e0;
+        int idx = g_1070b22c->vfunc35(ed);
+        sub_101434b0(idx, line, sub_101d3730("ang: %.2f", (double)m_flAngle[m_iAxis]), 0, 255, 255, 255, 255);
+        line++;
+    }
+    return line;
+}
+// END FUNCTION
