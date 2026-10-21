@@ -27,6 +27,7 @@ public:
 	void *sub_101a7600();	// finds the NPC to play the script: walks the entities named like this one (name at +0x5f54, search start at +0x5f98) and returns the first NPC (object at +0x94) that accepts (slot 482 == 1), else the last one that accepts as a fallback (== 2), else null; Msg "Found %s, but can't play!" for the others unless flag bit 11 of +0x204 is set
 	char sub_101a7760();	// stub 0x1000db93 for 0x101a7600 then (flag bit 10 of +0x204) remembers the NPC as the search start (+0x5f98) and hands it to CAI_BaseNPC::sub_10279cc0; true when an NPC was found
 	void sub_101a8070();	// "StartScript"-like (scripted.cpp): when sub_101a7760 finds an NPC clears the byte at +0x5f91, runs slot 583 and prints DevMsg(2, "script \"%s\" using NPC \"%s\"\n"); else cancels the script (sub_101a8c30), prints DevMsg(2, "script \"%s\" can't find NPC \"%s\"\n") and retries one second later (next think at +0x17c)
+	void vfunc459();	// slot 459 (declared as a plain member): unless sub_101a8930() holds, clears twelve NPC conditions (and the byte at +0x5b80) of the NPC (object at +0x94) of the entity behind the handle at +0x5ce4
 
 	char m_pad0004[0x204 - 4];
 	unsigned int m_flags204;	// 0x204
