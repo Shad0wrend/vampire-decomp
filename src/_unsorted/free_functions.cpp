@@ -20875,6 +20875,35 @@ int sub_100c5600(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5720 size=0x8a
+#include "vampire.h"
+struct mstudioanimdesc_t {
+	char m_pad0000[4];
+	float fps;
+	char m_pad0008[4];
+	int numframes;
+};
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *fmt, ...);
+void sub_100c5400(int a, int b, int c, mstudioanimdesc_t **panim, float *weight);
+
+float sub_100c5720(int a, int b, int c)
+{
+	mstudioanimdesc_t *panim[4];
+	float weight[4];
+	sub_100c5400(a, b, c, panim, weight);
+	if (panim[0] == 0) {
+		DevWarning(2, "Studio_Duration sequence %d out of range\n", b);
+		return 0.1f;
+	}
+	float t = 0.0f;
+	for (int i = 0; i < 4; i++) {
+		if (weight[i] > 0.0f)
+			t += (float)(panim[i]->numframes - 1) / panim[i]->fps * weight[i];
+	}
+	return t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6280 size=0xa0
 #include <string.h>
 struct SModelLoader {
