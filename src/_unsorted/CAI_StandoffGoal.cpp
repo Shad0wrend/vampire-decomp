@@ -1,6 +1,44 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102c8690 size=0xc4
+#include "CAI_StandoffGoal.h"
+extern CStandoffParams g_10601880[];
+extern int g_10601db0, g_10601e70;
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CNpcSlotsX {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21) SV10(22) SV10(23) SV10(24) SV10(25) SV10(26) SV10(27) SV10(28) SV10(29)
+	SV10(30) SV10(31) SV10(32) SV10(33) SV10(34) SV10(35) SV10(36) SV10(37) SV10(38) SV10(39)
+	SV10(40) SV10(41) SV10(42) SV10(43) SV10(44)
+	SV(450) SV(451) SV(452) SV(453) SV(454) SV(455)
+	virtual CAI_BehaviorBase **s456();
+	virtual int s457();
+};
+
+void CAI_StandoffGoal::vfunc245(CAI_BaseNPC *pActor)
+{
+	CNpcSlotsX *npc = (CNpcSlotsX *)pActor;
+	CAI_BehaviorBase **ppBehaviors = npc->s456();
+	for (int i = 0; i < npc->s457(); i++) {
+		CAI_StandoffBehavior *pBehavior = (CAI_StandoffBehavior *)__RTDynamicCast(ppBehaviors[i], 0, &g_10601db0, &g_10601e70, 0);
+		if (pBehavior) {
+			pBehavior->sub_102c7360(0);
+			CStandoffParams params;
+			if (m_Aggressiveness != 5)
+				params = g_10601880[m_Aggressiveness];
+			else
+				params = m_CustomParams;
+			params.m_unk0 = m_unk4a4;
+			pBehavior->sub_102c73b0(&params);
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c87a0 size=0x69
 #include "CAI_StandoffGoal.h"
 
