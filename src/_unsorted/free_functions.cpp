@@ -38940,6 +38940,36 @@ void CUnknown101ecb10::sub_101ecb10(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eccd0 size=0xcb
+#include "CUnknown101eccd0.h"
+extern char g_106b8540[];
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+void sub_10203dd0(const char *text);
+int sub_1025b800();
+const char *sub_1025b820(unsigned int mask);
+
+void CUnknown101eccd0::sub_101eccd0()
+{
+	char text[128];
+	sprintf(text, "(%d): %s\n", m_index, m_name ? m_name : g_106b8540);
+	sub_10203dd0(text);
+	for (int i = 0; i < sub_1025b800(); i++) {
+		unsigned int bit = 1 << i;
+		if (m_excludedMask & bit) {
+			sprintf(text, "\t\t   (Excluded): %s\n", sub_1025b820(bit));
+			sub_10203dd0(text);
+		}
+	}
+	for (int j = 0; j < sub_1025b800(); j++) {
+		unsigned int bit = 1 << j;
+		if (m_requiredMask & bit) {
+			sprintf(text, "\t\t   (Required): %s\n", sub_1025b820(bit));
+			sub_10203dd0(text);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ed170 size=0x7b
 #include "CUnknown101ed170.h"
 
