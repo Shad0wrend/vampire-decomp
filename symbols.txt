@@ -2014,6 +2014,7 @@
 0x100092d7 func   ?sub_10057850@SaveList@@QAEHPAUIVisitor@@@Z SaveList::sub_10057850
 0x100092e1 func   ?sub_101f76e0@CDebugListEntry@@QAEXXZ CDebugListEntry::sub_101f76e0
 0x100092fa func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc3
+0x1000932c func   ?vfunc326@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc326
 0x1000933b func   ?sub_100acd40@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100acd40
 0x1000934f func   ?vfunc29@CRestore@@UAEHPAHHH@Z CRestore::vfunc29
 0x10009381 func   _camera_track camera_track

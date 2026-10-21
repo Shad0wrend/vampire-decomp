@@ -17,6 +17,56 @@ void CWeaponPhysCannon::vfunc291()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040e620 size=0x7b
+#include "CWeaponPhysCannon.h"
+#include "CUnknown10739d08.h"
+
+struct CGlobalVarsView
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+extern CUnknown10739d08 g_10739d08;
+
+struct CPhysCannonView
+{
+	char m_pad0000[0x730];
+	float m_flNextTime;
+	char m_pad0734[0x911 - 0x734];
+	char m_bActive;
+};
+
+struct CPhysCannonOwner
+{
+	char m_pad0000[0xa8];
+	void *m_pCharacter;
+};
+
+struct CPhysCannonCharacter
+{
+	void sub_100b7fa0(Vector *pOut, int a, int b);	// stub 0x1000cb8f
+};
+
+// TARGET: CWeaponPhysCannon::vfunc326
+void CWeaponPhysCannon::vfunc326()
+{
+	CPhysCannonView *v = (CPhysCannonView *)this;
+	if (v->m_flNextTime > g_1070b228->curtime)
+		return;
+	CPhysCannonOwner *pOwner = (CPhysCannonOwner *)sub_102521f0();
+	if (!pOwner)
+		return;
+	CPhysCannonCharacter *pChar = (CPhysCannonCharacter *)pOwner->m_pCharacter;
+	if (!pChar || !v->m_bActive)
+		return;
+	Vector vecPos;
+	pChar->sub_100b7fa0(&vecPos, 0, 0);
+	sub_10410bf0(&vecPos, g_10739d08.sub_101e8640(pChar));
+	vfunc307(0xc0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10410ae0 size=0xd0
 #include "CWeaponPhysCannon.h"
 #include "CBaseCombatCharacter.h"
