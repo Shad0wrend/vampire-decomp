@@ -62902,6 +62902,29 @@ int CNPC_VHengeyokai::sub_10382b30(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10383470 size=0x96
+#include "CNPC_VHengeyokai.h"
+#include "CVStatList_t.h"
+
+struct CGlobalVarsTime
+{
+	char m_pad0000[0xc];
+	float m_flCurTime;	// 0x0c
+};
+
+extern CGlobalVarsTime *g_1070b228;
+extern float g_104b6808;	// 2.0f
+
+void CNPC_VHengeyokai::sub_10383470()
+{
+	if (g_104b6808 + *(float *)((char *)this + 0x1560) < g_1070b228->m_flCurTime) {
+		CVStatListSet::Of(this)->Find(0)->sub_10200be0(0xf, 0);
+		*((char *)this + 0x6694) = 1;
+		sub_10273e80(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10383e50 size=0x24
 unsigned int __stdcall sub_10383e50(unsigned int x)
 {
