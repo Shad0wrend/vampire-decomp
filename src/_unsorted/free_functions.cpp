@@ -44421,6 +44421,29 @@ void NameSet::sub_10206980(const char *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10206c70 size=0xe6
+#include "CUnknown10206c70.h"
+#include "CBaseCombatCharacter.h"
+extern char g_105a9230;
+extern char g_1055f6bc[];
+
+void CUnknown10206c70::sub_10206c70(int nTemplate, CBaseCombatCharacter *pChar)
+{
+	g_105a9230 = 0;
+	int bMale = (unsigned char)pChar->sub_10336920();
+	sub_10206c30("Clear", pChar);
+	CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(0xb, bMale);
+	*(int *)((char *)pChar + 0x13cc) = bMale;
+	sub_10206aa0(nTemplate, pChar);
+	g_105a9230 = 1;
+	CBaseEntity *pUnarmed = (CBaseEntity *)pChar->sub_10335950(g_1055f6bc);
+	if (pUnarmed)
+		*(unsigned int *)((char *)pChar + 0xea4) = *pUnarmed->vfunc1();
+	else
+		*(unsigned int *)((char *)pChar + 0xea4) = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208e50 size=0xa5
 #include "CUnknown10208e50.h"
 #include "inputdata_t.h"

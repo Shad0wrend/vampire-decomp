@@ -295,6 +295,7 @@
 0x10002527 func   ?sub_10107760@@YAPAHXZ sub_10107760
 0x1000254f func   _info_node_sabbat_hide info_node_sabbat_hide
 0x10002554 func   ?sub_1026e340@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_1026e340
+0x1000255e func   ?sub_10206c70@CUnknown10206c70@@QAEXHPAVCBaseCombatCharacter@@@Z CUnknown10206c70::sub_10206c70
 0x10002586 func   ?sub_1009b700@CBaseEntity@@QAEXHHPBD@Z CBaseEntity::sub_1009b700
 0x1000258b func   ?vfunc546@CNPC_VManBat@@QAEHH@Z CNPC_VManBat::vfunc546
 0x1000259a func   ?sub_103343f0@CBaseCombatCharacter@@QAEHHPBD@Z CBaseCombatCharacter::sub_103343f0
