@@ -76854,6 +76854,36 @@ bool CAI_Navigator::sub_102efd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f09a0 size=0xc2
+#include "CUnknown102f09a0.h"
+#include "CAI_Waypoint.h"
+
+struct CWaypointFieldsView {
+	Vector m_vecPosition;	// 0x00
+	char m_pad000c[0x2c - 0xc];
+	int m_n2c;	// 0x2c
+	CAI_Waypoint *m_pNext;	// 0x30
+	int NavType() const { return m_n2c; }
+};
+
+// TARGET: CUnknown102f09a0::sub_102f09a0
+void CUnknown102f09a0::sub_102f09a0(CAI_Waypoint *pWaypoint, const float *pPosition)
+{
+	CWaypointFieldsView *pView = (CWaypointFieldsView *)pWaypoint;
+	if (*(const Vector *)pPosition != pView->m_vecPosition) {
+		CAI_Waypoint *pNext = pView->m_pNext;
+		CAI_Waypoint *pNew = new CAI_Waypoint(pPosition, 0, pView->NavType(), 0, -1);
+		while ((CAI_Waypoint *)m_pRoute->m_pNode != pNext)
+			m_pRoute->sub_1030ba90();
+		pNew->SetNext(pNext);
+		m_pRoute->sub_1030b4d0((CHolderInner24_Node *)pNew, 0);
+	} else {
+		while ((CAI_Waypoint *)m_pRoute->m_pNode != pWaypoint)
+			m_pRoute->sub_1030ba90();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1690 size=0x168
 #include "CUnknown102ee120.h"
 extern "C" void *memset(void *, int, unsigned int);
