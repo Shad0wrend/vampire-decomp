@@ -2,6 +2,8 @@
 #pragma once
 #include "CUnknown1024b2d0.h"
 
+class UtlMem2;
+
 class CSoundEmitterSystemBase
 {
 public:
@@ -39,4 +41,6 @@ public:
 	void sub_101b50f0(const char *pszName);	// flags the sound record and its script file (record dword +0x18, flag table at +0x9c, 0x82 bytes each) as changed; DevWarning when there is no such sound
 	int sub_101b3220();	// "GetSoundCount" (stub 0x100070a9)
 	const char *sub_101b31d0(int index);	// "GetSoundName" (stub 0x1000e732): the name of the sound record, null when the index is invalid
+	int sub_101b4cc0(const char *pszScript);	// the index of a script file in the manifest (stub 0x1000b113), -1 when it is not in it
+	void sub_101b2b30(const char *pszScript, UtlMem2 *pOut);	// "GetSoundIndexesForScript"-like: clears the output vector, then appends the index of every sound record whose script file is pszScript; DevWarning "Can't PrecacheSoundScript( '%s' ), file not in manifest '%s'" when the script is unknown
 };
