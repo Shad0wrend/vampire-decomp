@@ -19,4 +19,6 @@ public:
 	virtual void vfunc113();	// "CTriggerWWZone::Activate": scope trace (entity name), the base activation, then sub_1000dfd0
 	void sub_100113a6();	// CBaseTrigger::vfunc113 (Activate), called directly
 	void sub_1000dfd0();	// the zone's own activation step (stub of 0x101c5080)
+	CTriggerWWZone *vfunc5(unsigned char flags);	// scalar deleting destructor, declared as a plain member: purges the handle vector at +0x598 (twice, like the inlined CUtlVector destructor), destroys the four outputs at +0x580 / +0x568 / +0x4bc / +0x4a4, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
+	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
 };
