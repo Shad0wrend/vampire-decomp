@@ -1,6 +1,37 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10108360 size=0xfa
+#include "CFilterFeat.h"
+#include "CUnknown101e56e0.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+inline const char *OrEmpty(const char *p)
+{
+	return p ? p : g_106b8540;
+}
+
+inline int FindFeatId(const char *pszName)
+{
+	for (int i = 0; i < g_10739d20; i++) {
+		if (_strcmpi(g_10739d24[i]->Get(), pszName) == 0)
+			return g_10739d24[i]->m_id;
+	}
+	return -1;
+}
+
+bool CFilterFeat::vfunc241(char *pEntity)
+{
+	CBaseCombatCharacter *pChar = pEntity ? *(CBaseCombatCharacter **)(pEntity + 0x9c) : 0;
+	if (!pChar)
+		return false;
+	int id = FindFeatId(OrEmpty(m_pszFeat));
+	if (id == -1)
+		return false;
+	return CUnknown101e56e0Table::Find(id)->sub_101e56e0(pChar) >= m_nMinCost;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108710 size=0x36
 #include "CFilterFeat.h"
 
