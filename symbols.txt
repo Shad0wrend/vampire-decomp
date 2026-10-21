@@ -563,6 +563,7 @@
 0x1000364d func   ?sub_101f3690@CUnknown101f35c0@@QAEXHPAVCUnknown101f3d80@@HH@Z CUnknown101f35c0::sub_101f3690
 0x10003652 func   ?vfunc191@CRagdollPropSpecial@@UAEXH@Z CRagdollPropSpecial::vfunc191
 0x10003657 func   _trigger_wind trigger_wind
+0x1000366b func   ?sub_102e0290@CUnknown102e0150@@QAEDPAVCBaseEntity@@PAVVector@@1@Z CUnknown102e0150::sub_102e0290
 0x10003698 func   ?sub_100903e0@CBaseAnimating@@QAEDXZ CBaseAnimating::sub_100903e0
 0x1000369d func   ?sub_1003c9f0@CDataObjectAccessSystem@@QAEXHPAX@Z CDataObjectAccessSystem::sub_1003c9f0
 0x100036a7 func   ?sub_1006cd90@CStatDefaultList@@QAEPAUStatDefault@@XZ CStatDefaultList::sub_1006cd90

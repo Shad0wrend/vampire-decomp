@@ -62806,6 +62806,85 @@ float CUnknown102e0150::sub_102e0150(void *pEnemy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0290 size=0x173
+#include "CUnknown102e0150.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "Vector.h"
+
+extern "C" __declspec(dllimport) void DevWarning(int, const char *, ...);
+
+struct SEnemyNode
+{
+	char m_pad0000[0x0c];
+	float m_x, m_y, m_z;	// 0x0c
+	float m_x2, m_y2, m_z2;	// 0x18
+	unsigned int m_hEnt;	// 0x24
+	char m_pad0028[0x34 - 0x28];
+	char m_bFlag;	// 0x34
+	char m_pad0035[3];
+	SEnemyNode *m_pNext;	// 0x38
+};
+
+extern CGlobalEntityList *g_10566458;
+extern float g_1070d1b0[3];
+
+inline CBaseEntity *LookupEnt(const unsigned int &h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13))
+			return (CBaseEntity *)pSlot->m_pEntity;
+	}
+	return 0;
+}
+
+char CUnknown102e0150::sub_102e0290(CBaseEntity *pEnemy, Vector *pPos, Vector *pPos2)
+{
+	SEnemyNode *pNode = (SEnemyNode *)m_pHead;
+	bool bFound = false;
+	float lx = 0, ly = 0, lz = 0;
+	while (pNode) {
+		CBaseEntity *pNodeEnt = LookupEnt(pNode->m_hEnt);
+		if (pNodeEnt && pEnemy == pNodeEnt) {
+			pPos->x = pNode->m_x;
+			pPos->y = pNode->m_y;
+			pPos->z = pNode->m_z;
+			pPos2->x = pNode->m_x2;
+			pPos2->y = pNode->m_y2;
+			pPos2->z = pNode->m_z2;
+			return 1;
+		}
+		if (pNode->m_bFlag == 1) {
+			lx = pNode->m_x;
+			ly = pNode->m_y;
+			lz = pNode->m_z;
+			bFound = true;
+		}
+		pNode = pNode->m_pNext;
+	}
+	if (m_bUseHandleSink) {
+		if (m_pHandleSink)
+			m_pHandleSink->sub_10316bc0(pEnemy);
+	} else {
+		if (m_pSink)
+			m_pSink->vfunc58(pEnemy);
+	}
+	if (bFound) {
+		DevWarning(2, "Asking LastKnownPosition for enemy (%s) that's not in my memory (using danger pos)!!\n", pEnemy ? pEnemy->sub_100ab4f0() : "**NULL**");
+		pPos->x = lx;
+		pPos->y = ly;
+		pPos->z = lz;
+		pPos2->x = g_1070d1b0[0];
+		pPos2->y = g_1070d1b0[1];
+		pPos2->z = g_1070d1b0[2];
+		return 1;
+	}
+	DevWarning(2, "Asking LastKnownPosition for enemy (%s) that's not in my memory!!\n", pEnemy ? pEnemy->sub_100ab4f0() : "**NULL**");
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0630 size=0x85
 #include "CUnknown102e0630.h"
 
