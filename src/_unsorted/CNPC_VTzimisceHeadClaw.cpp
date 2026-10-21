@@ -165,6 +165,33 @@ void HeadClawView::sub_103c1820(EventData *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1b90 size=0xb4
+#include "CNPC_VTzimisceHeadClaw.h"
+
+void CNPC_VTzimisceHeadClaw::vfunc103()
+{
+	const char *pszName = "TzimisceCreation2";
+	m_pszName10e4 = *pszName ? pszName : 0;
+	const char *pszName2 = "D_HT 10";
+	m_pszName63ac = *pszName2 ? pszName2 : 0;
+	m_n6420 = 0;
+	m_n6424 = 0;
+	m_n6428 = 0;
+	m_n642c = 0;
+	m_n6430 = 100;
+	sub_10298d30();
+	sub_10012855(0x4000000);
+	sub_10012855(0x200000);
+	m_nFlags5b84 |= 0x80;
+	float size[3];
+	size[0] = 45.0f;
+	size[1] = 45.0f;
+	size[2] = 100.0f;
+	sub_1009b060(size);
+	sub_100b3900(4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1c80 size=0x14
 #include "CNPC_VTzimisceHeadClaw.h"
 
