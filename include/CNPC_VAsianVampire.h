@@ -37,6 +37,8 @@ public:
 	int vfunc461();	// "CNPC_VAsianVampire::SelectIdealState": scope trace, sets the ideal state to 6, then the base implementation
 	void sub_10361990(CBaseEntity *pHint);	// "CNPC_VAsianVampire::AddHintToStoredJumpPositions": scope trace, stores the hint's origin (slot 217) in the two-entry ring
 	int sub_10362430();	// "CNPC_VAsianVampire::GetJumpSchedule": scope trace, 0x15b when the jump target (handle at +0x628c) resolves and lies more than a constant below this NPC (z of slot 217), else 0x15a
+	bool sub_10004b8d(const float *pos);	// stub of 0x103618a0 "CNPC_VAsianVampire::IsPosNearStored...": true when pos is within a constant of a stored hint
+	bool sub_103629d0(const float *pos, float radius);	// "CNPC_VAsianVampire::PositionClea...": false when pos is near a stored hint or within radius (2D) of the jump target or of this NPC
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x201000
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
