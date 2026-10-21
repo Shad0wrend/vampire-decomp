@@ -53862,6 +53862,54 @@ bool sub_10232cb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10233a10 size=0x89
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+char sub_10232cb0();
+int sub_100f4410(int a, int b, int c);
+void sub_101cd940(void *pEnt);
+
+struct CNodeLinkRec {
+	char m_pad0[4];
+	int m_iSrc;	// 0x04
+	int m_iDst;	// 0x08
+	char m_pad0c[0x64 - 0xc];
+	unsigned int m_nFlags;	// 0x64
+};
+
+struct CNodeTable {
+	char m_pad[0xc];
+	int *m_pNodes;	// 0x0c
+};
+
+struct CNodeNetwork {
+	char m_pad[0x454];
+	CNodeTable *m_pTable;	// 0x454
+};
+
+extern CNodeNetwork *g_10934088;
+CNodeLinkRec *sub_10172830(int id);
+void *sub_102cce10(int a, int b);
+
+void sub_10233a10(int id)
+{
+	if (sub_10232cb0()) {
+		CNodeLinkRec *pLink = sub_10172830(id);
+		if (pLink && (pLink->m_nFlags & 0x1000)) {
+			int *pNodes = g_10934088->m_pTable->m_pNodes;
+			int nodeA = pNodes[pLink->m_iSrc];
+			int nodeB = pNodes[pLink->m_iDst];
+			int result = sub_100f4410(nodeA, nodeB, 0);
+			if (result == 2) {
+				Msg("Worldcraft failed on node link creation...\n");
+			} else if (result == 0) {
+				pLink->m_nFlags &= ~0x1000;
+				sub_101cd940(sub_102cce10(pLink->m_iSrc, pLink->m_iDst));
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10233ad0 size=0x94
 struct CNodeLinkView
 {
