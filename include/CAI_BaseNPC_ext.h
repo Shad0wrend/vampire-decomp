@@ -1,2 +1,3 @@
 	int sub_100936e0(int sequence, int a, int b);	// CBaseAnimating member (stub 0x1000af01): looks the sequence up for the activity values, -1 when there is none
 	int vfunc553(float a, float b);	// slot 553: an activity picked by the float b (< 100: 8, < 200: 0x5f, > 1024: 0x60) else 0x4f / 0x61 by the float a against 0.5
+	void sub_10270180(CBaseEntity *pEnt, char bTrack);	// remembers a position at +0x5bc8 (flag byte +0x5bc5): without an entity the zero vector and bTrack; without bTrack the entity's absolute origin (slot 217) and the flag cleared; while tracking sets the flag once the entity is more than 64 units (4096.0f squared) from the remembered position
