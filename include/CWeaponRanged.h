@@ -38,11 +38,13 @@ public:
 
 	// Slot 370 (animation events), declared as a plain member for now: the slots between 32x and 370 are not modelled.
 	void vfunc370(int *event, void *other);	// events 0xfa1 / 0xfa2 set a bodygroup from the event's string, 0xbd6..0xbe4 run sub_10238380 (when the global at 0x1088aee4 and the dword at other+0xa8 are set) or sub_10238320, the rest go to CBaseCombatWeapon::vfunc370
+	void vfunc374();	// slot 374 "CWeaponRanged::ToggleZoom"-like (declared as a plain member): flips the state at +0x86c (slot 307 with 0xe7 / 0xe6, slot 333 with 8 or 3), mirrors it into +0x84c and the global at 0x1088aee4, then tells the owner (sub_101cebc0 with 0x1a and the new state)
 	void sub_10238380();	// worker of events 0xbd6..0xbe4
 	void sub_10238320();	// worker of events 0xbd6..0xbe4 (stub 0x100049ad)
 	void sub_10093b10(int group, int value);	// CBaseAnimating::SetBodygroup, called directly (stub 0x10001bb8)
 	void sub_1024f030(int *event, void *other);	// CBaseCombatWeapon::vfunc370, called directly (stub 0x10009f02)
 	void *sub_10252240();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale; stub 0x100011f4)
+	void *sub_10252290();	// CBaseCombatWeapon::sub_10252290: resolves the owner handle at +0x88c (0 when stale; stub 0x1000411a)
 	char sub_10253b70(int a);	// stub 0x1000c37e
 	void sub_10239d80();	// stub 0x10003814
 };
