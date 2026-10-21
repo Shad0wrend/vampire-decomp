@@ -61,6 +61,36 @@ void CBasePlayer::vfunc408()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015efa0 size=0xb8
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+struct CUnknown1015ef00
+{
+	void sub_1015ef00();
+};
+
+void __cdecl sub_101cf600(CBaseEntity *pEnt);
+
+// TARGET: CBasePlayer::vfunc103
+void CBasePlayer::vfunc103()
+{
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	vfunc407();
+	((CUnknown1015ef00 *)this)->sub_1015ef00();
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", pEnt->m_name26c ? pEnt->m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+	pEnt->vfunc93(9, 0);
+	sub_101cf600(pEnt);
+	pEnt->sub_100b3640(1);
+	vfunc457("item_w_fists", 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015fe10 size=0xeb
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
