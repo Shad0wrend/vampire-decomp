@@ -37877,6 +37877,62 @@ extern "C" CBaseEntity *vampireprojectile()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ef900 size=0xe7
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+struct CProjSlots
+{
+	virtual void s0();
+	virtual unsigned int *v1();
+	SL100(a0) SL100(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5)
+	virtual void x242();
+	virtual void v243(CProjSlots *pEnt, int a, const char *psz);
+	SL10(b0) SL10(b1)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3();
+	virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7();
+	virtual void v272(const float *pos, const float *ang, CBaseEntity *pOwner, int a, float f, const char *s1, const char *s2);
+	char pad[0x8b8 - 4];
+	unsigned int m_h8b8;
+
+	void StoreInto(unsigned int *pDst)
+	{
+		if (this)
+			*pDst = *v1();
+		else
+			*pDst = 0xffffffff;
+	}
+};
+
+extern char g_106b8540[];
+extern char g_1070d9d0[];
+extern char g_105a58cc[];
+extern void *sub_10136580(const char *);
+extern CEntityVSlots *sub_100fbc90(const char *, const float *, const float *, float);
+
+CProjSlots *sub_101ef900(const float *pos, const float *ang, CBaseEntity *pOwner, int a4, float f5, const char *s6, const char *s7, const char *classname, const char *s9)
+{
+	char defname[] = "vampireprojectile";
+	if (!classname)
+		classname = defname;
+	CProjSlots *pNew = (CProjSlots *)sub_10136580(classname);
+	if (!pNew)
+		return 0;
+	pNew->v272(pos, ang, pOwner, a4, f5, s6, s9);
+	if (s7 && *s7) {
+		CProjSlots *pOwn = (CProjSlots *)sub_100fbc90(s7, pos, (const float *)g_1070d9d0, 0);
+		if (pOwn)
+			pOwn->v243(pNew, 0, g_106b8540);
+		pOwn->StoreInto(&pNew->m_h8b8);
+	}
+	return pNew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0270 size=0xb
 int * __fastcall sub_101f0270(int *self, int, int value)
 {
