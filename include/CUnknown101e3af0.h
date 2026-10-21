@@ -11,4 +11,6 @@ public:
 	unsigned int sub_101e1610(int n);	// a discipline mask (stub 0x100060dc)
 	unsigned int sub_101e1520(int n, int k);	// a discipline mask (stub 0x100136c9)
 	void sub_101e40b0(CBaseCombatCharacter *pCharacter);	// removes the first of five discipline effects from the character's active mask (+0xeb0) that a mask pair (function-local statics) selects
+	void sub_101e3ff0(CBaseCombatCharacter *pCharacter);	// same as sub_101e40b0 for the second mask word (+0xeb4)
+	unsigned int sub_101e1870(unsigned int id);	// id | 0x80000000 (stub 0x1000780b), called with this in ecx
 };
