@@ -2782,6 +2782,7 @@
 0x1000b979 func   ?sub_1020a240@CUnknown1020a240@@QAEXPBDHHHH@Z CUnknown1020a240::sub_1020a240
 0x1000b97e func   ?vfunc245@CSceneEntity@@UAEXXZ CSceneEntity::vfunc245
 0x1000b983 func   ?sub_101f2cd0@CUnknown101f2cd0@@QAEXH@Z CUnknown101f2cd0::sub_101f2cd0
+0x1000b992 func   ?vfunc563@CAI_BaseNPCTroika@@UAEXPAVCBaseEntity@@PBX11@Z CAI_BaseNPCTroika::vfunc563
 0x1000b9b5 func   ?sub_100976e0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_100976e0
 0x1000b9bf func   ?sub_1040cef0@@YAPAHXZ sub_1040cef0
 0x1000b9d8 func   ?sub_103dc040@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_103dc040

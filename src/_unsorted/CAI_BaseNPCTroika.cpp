@@ -926,6 +926,36 @@ void CAI_BaseNPCTroika::vfunc507()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10295300 size=0x7d
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown1027d990.h"
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+struct CEntPosView {
+	PV10(a0) PV10(a1) PV10(a2) PV10(a3) PV10(a4) PV10(a5) PV10(a6) PV10(a7) PV10(a8) PV10(a9)
+	PV10(b0) PV10(b1) PV10(b2) PV10(b3) PV10(b4) PV10(b5) PV10(b6) PV10(b7) PV10(b8)
+	PV(c0) PV(c1) PV(c2)
+	virtual Vector *vfunc193(Vector *pOut);
+	PV10(d0) PV10(d1) PV(d2) PV(d3) PV(d4)
+	virtual Vector *vfunc217();
+};
+float sub_102d61b0(int a);
+void CAI_BaseNPCTroika::vfunc563(CBaseEntity *pEnt, const void *pGoal, const void *pParams, const void *pExtra)
+{
+	if (((CUnknown1027d990 *)this)->sub_1027d990() == 2) {
+		CEntPosView *pView = (CEntPosView *)pEnt;
+		Vector *pVec = (Vector *)pGoal;
+		const Vector *pB = pView->vfunc217();
+		{
+			Vector buf;
+			const Vector *pA = pView->vfunc193(&buf);
+			*pVec += *pA - *pB;
+		}
+		*(float *)pParams = sub_102d61b0(*(int *)((char *)this + 0x1568));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10295590 size=0x127
 #include "CAI_BaseNPCTroika.h"
 
