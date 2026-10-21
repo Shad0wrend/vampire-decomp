@@ -19,6 +19,7 @@ public:
 	void vfunc276();	// slot 276: counts the current screen (+0x9e0: -2 bumps +0xc28, a valid index bumps the counter in the array at +0x98c), switches the display (sub_10218820, sub_1021b5e0 / sub_1021c890), then stores the id of the global record named "error" in a global (-1 when there is none)
 	void sub_10218820(int a, int b);	// stub 0x1000c77f, called directly
 	void sub_1021b5e0(int a);	// stub 0x100139ad, called directly
+	void sub_1021a1c0();	// stub 0x10003deb, run at the end of the constructor
 
 	char m_pad03e0[0x83c - 0x3e0];
 	char m_b083c;	// 0x83c
