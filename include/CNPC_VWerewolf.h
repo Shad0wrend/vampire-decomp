@@ -200,4 +200,6 @@ public:
 	bool sub_103d2810(void *pHint);	// "CNPC_VWerewolf::IsImperativeRandomMoveHint": scope trace (entity name); for a hint of type 0x3aa8 whose time check against the global at 0x1093d574 passes and that slot 617 / HasPath accept, true; else sub_103d2070(pHint)
 	bool sub_103d2070(void *pHint);	// the fallback of sub_103d2810 (stub 0x10005911)
 	void sub_103cc450();	// "CNPC_VWerewolf::UpdateConditionShouldBreakHint": scope trace (entity name), SetCondition(0x7b); the break hint handle at +0x66c4 is dropped unless bit 1 of the attack state (+0x66e8) is set; with a valid break hint (sub_103d8550) and HasPath from this entity's origin (slot 217) to the hint's ground point it signals the object behind the global 0x10924a6c (slot 1) and sets condition 0x7b again (sub_10269a20)
+	void sub_103cac20();	// the NPC init: SetSchedule-like sub_10279a50(0), resets the move / hint state (+0x628c, +0x66a1..+0x6708), stamps the current time at +0x66ec / +0x66f4 and adds the hull's half diagonal (from its mins / maxs, sub_102d6100 / sub_102d6120) and a constant square root to the totals at +0x66cc / +0x66d0
+	void sub_10279a50(int a);	// CAI_BaseNPC member (stub 0x1000b974), called directly
 };
