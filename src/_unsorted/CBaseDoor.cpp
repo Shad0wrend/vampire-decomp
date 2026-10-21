@@ -109,6 +109,41 @@ void CBaseDoor::vfunc250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ef990 size=0xa3
+#include "CBaseEntity.h"
+#include "CBaseDoor.h"
+#include "CGlobalEntityList.h"
+
+extern char g_106b8540[];	// empty string
+extern CGlobalEntityList g_106eb5d8;
+
+static inline void SetHandle(unsigned int *pHandle, CGlobalEntityList_Ent *pObj)
+{
+	if (pObj)
+		*pHandle = *pObj->v1();
+	else
+		*pHandle = 0xffffffff;
+}
+
+void CBaseDoor::vfunc113()
+{
+	CBaseEntity::vfunc113();
+	switch (m_nState4f8) {
+	case 0:
+		sub_100efbf0(1);
+		break;
+	case 1:
+		sub_100efbf0(0);
+		break;
+	}
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, m_pszLinked634 ? m_pszLinked634 : g_106b8540, 0, 0);
+	SetHandle(&m_hLinked630, pEnt == 0 ? 0 : *(CGlobalEntityList_Ent **)((char *)pEnt + 0xa4));
+	pEnt = g_106eb5d8.sub_100f7770(0, m_pszLinked63c ? m_pszLinked63c : g_106b8540, 0, 0);
+	if (pEnt)
+		m_hLinked638 = *pEnt->vfunc1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efab0 size=0x13
 #include "CBaseDoor.h"
 #include "CBaseEntitySlots.h"
