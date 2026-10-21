@@ -4141,6 +4141,7 @@
 0x10013dae func   ?sub_103fbed0@@YAHXZ sub_103fbed0
 0x10013db3 func   ?sub_102c6bd0@@YIXPAH@Z sub_102c6bd0
 0x10013dc7 func   ?sub_10227c00@CUnknown10227c90@@QAEXH@Z CUnknown10227c90::sub_10227c00
+0x10013dcc func   ??0CUnknown102496a0@@QAE@XZ CUnknown102496a0::CUnknown102496a0
 0x10013dcc func   ?sub_102496a0@CUnknown102496a0@@QAEPAV1@XZ CUnknown102496a0::sub_102496a0
 0x10013dd1 func   ?sub_10065430@@YAXHH@Z sub_10065430
 0x10013de0 func   ?sub_102cef30@UtlMem9@@QAEXH@Z UtlMem9::sub_102cef30
