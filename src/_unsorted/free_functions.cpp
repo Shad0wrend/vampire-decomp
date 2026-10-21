@@ -40808,6 +40808,23 @@ const char *sub_101b2200(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2320 size=0x65
+#include "CUnknown101b2570.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+const char *sub_101b23b0(float value);
+extern char g_1072bfd8[];
+
+// TARGET: CUnknown101b2570::sub_101b2320
+const char *CUnknown101b2570::sub_101b2320()
+{
+	if (m_pitch.b == 0.0f)
+		return sub_101b23b0((float)(int)m_pitch.a);
+	Q_snprintf(g_1072bfd8, 0x40, "%i, %i", (int)m_pitch.a, (int)(m_pitch.b + m_pitch.a));
+	return g_1072bfd8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b24d0 size=0x7b
 struct ChanEnt { int value; const char *name; };
 extern ChanEnt g_10598c78[7];
