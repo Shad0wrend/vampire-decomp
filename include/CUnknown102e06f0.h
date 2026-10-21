@@ -6,5 +6,6 @@ struct CUnknown102e06f0
 {
 	char m_pad00[0x14];
 
-	void sub_102e06f0();	// initialiser: returns this in eax like a constructor (stub 0x10011955)
+	CUnknown102e06f0 *sub_102e06f0();	// initialiser: returns this in eax like a constructor (stub 0x10011955)
+	void sub_102e0730();	// destructor body (stub 0x100146d7)
 };
