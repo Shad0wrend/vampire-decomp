@@ -25,5 +25,5 @@ public:
 	char m_pad0000[0x1c];
 	CUnknown101e56e0Holder *m_pHolder;	// 0x1c
 
-	int sub_101e7fb0(CBaseCombatCharacter *pCharacter);	// 10 * (10 - cost + the character's stat 0xb of its stat list of type 1)
+	int sub_101e7fb0(CBaseCombatCharacter *pCharacter, CBaseCombatCharacter *pTarget);	// 10 * (10 - cost for pCharacter + the stat 0xb of pTarget's stat list of type 1)
 };
