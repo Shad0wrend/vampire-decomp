@@ -11399,6 +11399,45 @@ void sub_10089c60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10089e50 size=0xa3
+#include "CUnknown1070b22c.h"
+#include "CAI_BaseNPCTroika.h"
+struct ShowRelNPC : CAI_BaseNPCTroika
+{
+	char m_pad65c0[0x6658 - sizeof(CAI_BaseNPCTroika)];
+	char m_bShowRelationships;
+};
+struct ShowRelEnt
+{
+	char m_pad00[0x98];
+	CAI_BaseNPCTroika *m_pNPC;
+};
+
+void *sub_10008d8c();
+ShowRelEnt *sub_10008e36(void *pClass, const char *pszName, ShowRelEnt *pStart);
+extern CUnknown1070b22c *g_1070b22c;
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+
+// TARGET: sub_10089e50
+void sub_10089e50()
+{
+	void *pClass = sub_10008d8c();
+	const char *pszName = g_1070b22c->vfunc84(1);
+	ShowRelEnt *pEnt;
+	for (pEnt = sub_10008e36(pClass, pszName, 0); pEnt; pEnt = sub_10008e36(pClass, pszName, pEnt)) {
+		ShowRelNPC *pNPC = (ShowRelNPC *)pEnt->m_pNPC;
+		if (pNPC) {
+			pNPC->m_bShowRelationships = !pNPC->m_bShowRelationships;
+			DevMsg("%s - ShowRelationships set to %s\n", pNPC->sub_1000b5cd(), pNPC->m_bShowRelationships ? "true" : "false");
+			if (pNPC->m_bShowRelationships)
+				*(unsigned int *)((char *)pNPC + 0x224) |= 0x1000;
+			else
+				*(unsigned int *)((char *)pNPC + 0x224) &= ~0x1000;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008a6d0 size=0x64
 #include "CUnknown1070b22c.h"
 
