@@ -62523,6 +62523,52 @@ bool sub_102404e0(const Vec3 &mins, const Vec3 &maxs, const Vec3 &start, const V
 }
 // END FUNCTION
 
+// FUNCTION: 0x10240670 size=0x127
+#include "Vector.h"
+
+struct Vec3 { float x, y, z; };
+
+struct BoxObj {
+	Vec3 m_vMin;
+	Vec3 m_vMax;
+	char m_pad18[0xc];
+	Vec3 m_vExt;
+	char m_pad30;
+	bool m_bFlag;
+};
+
+bool sub_10240250(const Vector &a, const Vector &b, const Vector &c, const Vector &d);
+bool sub_102404e0(const Vec3 &a, const Vec3 &b, const Vec3 &c, const Vec3 &d, float e);
+extern float g_104454c4;
+
+bool sub_10240670(const Vector &a, const Vector &b, BoxObj *obj, float margin)
+{
+	float v[6];
+	if (!obj->m_bFlag) {
+		v[3] = obj->m_vMin.x - obj->m_vExt.x;
+		v[4] = obj->m_vMin.y - obj->m_vExt.y;
+		v[5] = obj->m_vMin.z - obj->m_vExt.z;
+		v[0] = obj->m_vMin.x + obj->m_vExt.x;
+		v[1] = obj->m_vExt.y + obj->m_vMin.y;
+		v[2] = obj->m_vExt.z + obj->m_vMin.z;
+		if (margin != g_104454c4) {
+			v[3] -= margin; v[4] -= margin; v[5] -= margin;
+			v[0] += margin; v[1] += margin; v[2] += margin;
+		}
+		return sub_10240250(a, b, *(Vector *)&v[3], *(Vector *)&v[0]);
+	}
+	v[0] = a.x - obj->m_vExt.x;
+	v[1] = a.y - obj->m_vExt.y;
+	v[2] = a.z - obj->m_vExt.z;
+	v[3] = b.x + obj->m_vExt.x;
+	float ey = obj->m_vExt.y;
+	float ez = obj->m_vExt.z;
+	v[4] = ey + b.y;
+	v[5] = ez + b.z;
+	return sub_102404e0(*(Vec3 *)&v[0], *(Vec3 *)&v[3], obj->m_vMin, obj->m_vMax, margin);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10242390 size=0x6f
 #include <math.h>
 void sub_10242390(const float *v, float *out)
