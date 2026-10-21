@@ -84192,6 +84192,44 @@ Vector *CGrabController::sub_1040c500(Vector *pOut, const Vector *pIn, CEntityVS
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040c8f0 size=0xeb
+#include <math.h>
+extern float g_104454c4;
+void sub_10012deb(int, void *);
+void sub_10011342(void *, int, float *);
+void sub_10011996(float *, int, void *);
+void sub_1040ca20(void *, int);
+void sub_10012756(void *, void *);
+
+struct V3 { int x, y, z; };
+
+V3 sub_1040c8f0(int p, float tol)
+{
+    float v[3];
+    V3 r;
+    int m[12];
+    int i, j;
+    sub_10012deb(p, m);
+    for (i = 2; i >= 0; i--) {
+        sub_10011342(m, i, v);
+        for (j = 0; j < 3; j++) {
+            if (fabs(v[j]) > tol) {
+                p = -1;
+                if (!(v[j] < g_104454c4)) p = 1;
+                v[j] = (float)p;
+                v[(j + 1) % 3] = 0;
+                v[(j + 2) % 3] = 0;
+                sub_10011996(v, i, m);
+                sub_1040ca20(m, i);
+                break;
+            }
+        }
+    }
+    sub_10012756(m, &r);
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040cce0 size=0x91
 #include "CUnknown1040cce0.h"
 
