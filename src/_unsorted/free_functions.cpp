@@ -8636,6 +8636,40 @@ int sub_1006b440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006bb80 size=0xe6
+#include <math.h>
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ConVar.h"
+
+struct CSpinGlobals
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern CSpinGlobals *g_1070b228;
+
+struct CTraceSpinEntity : CBaseEntity
+{
+	void sub_1006bb80();
+};
+
+// TARGET: CTraceSpinEntity::sub_1006bb80
+void CTraceSpinEntity::sub_1006bb80()
+{
+	static ConVar traceline_spin("traceline_spin", "1", 0);
+	if (traceline_spin.GetBool())
+	{
+		float s = sin(g_1070b228->curtime);
+		Vector ang = *(Vector *)((CEntityVSlots *)this)->slot221();
+		ang.x = (s * s * s + 1.0f + 1.0) * 90.0;
+		ang.y = g_1070b228->curtime * 10.0f;
+		vfunc64(&ang.x);
+	}
+	m_flNextThink = g_1070b228->curtime + 0.01;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c0a0 size=0xa1
 #include "CUnknown1006bea0.h"
 

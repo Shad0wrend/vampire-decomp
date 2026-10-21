@@ -765,6 +765,7 @@
 0x10003f4e func   ?vfunc1@CBreakParser@@UAEXPAX@Z CBreakParser::vfunc1
 0x10003f53 func   ?vfunc103@CFuncPlat@@UAEXXZ CFuncPlat::vfunc103
 0x10003f58 func   ?sub_10196ea0@@YAPAUSPyObj@@PAX0@Z sub_10196ea0
+0x10003f62 func   ?sub_1006bb80@CTraceSpinEntity@@QAEXXZ CTraceSpinEntity::sub_1006bb80
 0x10003f71 func   ?sub_102477a0@CUnknown102477a0@@QAEXXZ CUnknown102477a0::sub_102477a0
 0x10003f76 func   ?sub_101e1440@CUnknown101d5bd0@@QAEHPBDH@Z CUnknown101d5bd0::sub_101e1440
 0x10003f85 func   ?sub_1002e0a0@@YAGPAUIPhysObj@@G@Z sub_1002e0a0
