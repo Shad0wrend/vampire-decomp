@@ -47047,6 +47047,77 @@ void sub_102399b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10239d80 size=0xb2
+#include "CWeaponRanged.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CWeaponRangedSlotsX
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV100(1) PV100(2)
+	PV10(30) PV10(31) PV10(32)
+	PV(330) PV(331) PV(332)
+	virtual void vfunc333(int a, int b, int c, int d, int e, int f);
+};
+
+struct CFlagSet10174550
+{
+	void sub_10174550(bool b);
+};
+
+struct CRangedEntityX
+{
+	char m_pad0000[0xa8];
+	CFlagSet10174550 *m_pChar;
+};
+
+struct CRangedCharX : CFlagSet10174550
+{
+};
+
+struct CRangedOwnerX
+{
+	char m_pad0000[0x4fe70];
+	int m_slots[1];
+};
+
+struct CWeaponOwnerListX
+{
+	char m_pad0000[0x4fe84];
+	int m_nCount;
+};
+
+// TARGET: CWeaponRanged::sub_10239d80
+void CWeaponRanged::sub_10239d80()
+{
+	CRangedEntityX *pEnt = (CRangedEntityX *)sub_102521f0();
+	if (pEnt && pEnt->m_pChar) {
+		CFlagSet10174550 *pChar = pEnt->m_pChar;
+		int nCount = ((CWeaponOwnerListX *)sub_102517b0())->m_nCount;
+		if (nCount > 0) {
+			int *pIndex = (int *)((char *)this + 0x914);
+			(*pIndex)++;
+			if (*pIndex >= nCount)
+				*pIndex = 0;
+			int nEntry = ((CRangedOwnerX *)sub_102517b0())->m_slots[*pIndex];
+			if (!nEntry) {
+				pChar->sub_10174550(true);
+				((CWeaponRangedSlotsX *)this)->vfunc333(4, 1, 0, 0, 0, 0);
+				*(int *)((char *)pChar + 0x1e78) = nEntry;
+				return;
+			}
+			pChar->sub_10174550(false);
+			((CWeaponRangedSlotsX *)this)->vfunc333(9, 1, 0, 0, 0, 0);
+			*(int *)((char *)pChar + 0x1e78) = nEntry;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ae40 size=0x43
 #include "CWorld.h"
 void *sub_100aa720(int size);
