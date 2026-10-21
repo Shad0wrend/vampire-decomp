@@ -56128,6 +56128,60 @@ int CAI_BaseNPC::sub_10271ff0(int act, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10272490 size=0xf3
+#include "CAI_BaseNPC.h"
+#include "CVSoundActivityTable_t.h"
+
+#define SN10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SN100(p) SN10(p##0) SN10(p##1) SN10(p##2) SN10(p##3) SN10(p##4) SN10(p##5) SN10(p##6) SN10(p##7) SN10(p##8) SN10(p##9)
+
+// The NPC's virtual table up to slot 533.
+struct CNPCSlots533
+{
+	SN100(a) SN100(b) SN100(c) SN100(d) SN100(e) SN10(f0) SN10(f1) SN10(f2)
+	virtual void g0(); virtual void g1(); virtual void g2();
+	virtual Vector vfunc533(int act, int a);
+};
+
+struct CNPCUnit : CAI_BaseNPC
+{
+	float sub_10091080(int seq);	// sequence duration (stub 0x10009813)
+	void sub_1032a910(int d, float duration);	// CBaseCombatCharacter member (stub 0x100101ea)
+	void sub_1009f380(const Vector &vec);	// stub 0x10015bfe
+};
+
+struct CMotorTick
+{
+	void sub_102e1cf0();	// stub 0x10011af9
+};
+
+extern CVSoundActivityTable_t g_1073dd58;
+
+// TARGET: CAI_BaseNPC::sub_10272490
+void CAI_BaseNPC::sub_10272490(int act, int seq, int c, int d)
+{
+    CNPCUnit *self = (CNPCUnit *)this;
+    *(int *)((char *)this + 0xff4) = c;
+    if (seq > -1) {
+        if ((*(int *)((char *)this + 0x6f0) != seq || !*(char *)((char *)this + 0x65d))
+            && ((*(int *)((char *)this + 0xfec) != 9 && *(int *)((char *)this + 0xfec) != 0x13) || (act != 9 && act != 0x13)))
+            *(int *)((char *)this + 0x6f8) = 0;
+        sub_10260a50(seq);
+        self->sub_1032a910(d, self->sub_10091080(seq));
+    } else {
+        sub_10260a50(0);
+    }
+    self->sub_1009f380(((CNPCSlots533 *)this)->vfunc533(act, *(int *)((char *)this + 0xff4)));
+    if (*(int *)((char *)this + 0xfec) != act)
+        vfunc465(act);
+    if (*(int *)((char *)this + 0xfec) != *(int *)((char *)this + 0xff4) && !*(char *)((char *)this + 0x5cd8))
+        g_1073dd58.sub_101f6010((CBaseCombatCharacter *)this, *(int *)((char *)this + 0xff4), *(int *)((char *)this + 0xfec));
+    *(int *)((char *)this + 0xfec) = act;
+    (*(CMotorTick **)((char *)this + 0x5d44))->sub_102e1cf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102727d0 size=0xe6
 #include "CAI_BaseNPC.h"
 #include "ScopeTrace.h"

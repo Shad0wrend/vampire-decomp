@@ -917,6 +917,7 @@
 0x10004e08 func   ?sub_101d13a0@@YAIPAUTEnt@@@Z sub_101d13a0
 0x10004e2b func   ?sub_101f73f0@CVTraitEffectGroup_t@@QAEXPAUCVStatKV@@@Z CVTraitEffectGroup_t::sub_101f73f0
 0x10004e3a func   ?vfunc0@CPhysicsHook@@QAE_NXZ CPhysicsHook::vfunc0
+0x10004e49 func   ?sub_10272490@CAI_BaseNPC@@QAEXHHHH@Z CAI_BaseNPC::sub_10272490
 0x10004e53 func   ?vfunc24@CNPC_VGhoulCroucher@@QAEXPAX@Z CNPC_VGhoulCroucher::vfunc24
 0x10004e62 func   ?vfunc141@CNPC_VWerewolf@@QAEXPAUCUnknown101c2a50@@HH@Z CNPC_VWerewolf::vfunc141
 0x10004e6c func   ?vfunc103@CBaseViewModel@@UAEXXZ CBaseViewModel::vfunc103
