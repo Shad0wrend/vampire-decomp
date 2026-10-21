@@ -1838,6 +1838,7 @@
 0x1000830a func   ?vfunc251@CTriggerCheckVolume@@UAEXH@Z CTriggerCheckVolume::vfunc251
 0x1000831e func   ?sub_103c51c0@@YADXZ sub_103c51c0
 0x10008328 func   _item_a_body_armor item_a_body_armor
+0x1000832d func   ?sub_10295ab0@CAI_BaseNPCTroika@@QAEXM@Z CAI_BaseNPCTroika::sub_10295ab0
 0x1000833c func   _bodyque bodyque
 0x10008346 func   ?sub_10264370@Mem38@@QAEXH@Z Mem38::sub_10264370
 0x1000834b func   ?sub_100e76d0@@YGPAXPAXHH@Z sub_100e76d0

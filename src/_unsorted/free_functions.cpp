@@ -64197,6 +64197,47 @@ void __fastcall sub_10295a80(int *p, int dummy, int s1, unsigned int *out, int s
 }
 // END FUNCTION
 
+// FUNCTION: 0x10295ab0 size=0x111
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Hint.h"
+#include "ScopeTrace.h"
+
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+struct SNpcView
+{
+	char pad0[0x26c];
+	const char *name26c;
+	char pad1[0x14b8 - 0x270];
+	unsigned int flags14b8;
+	char pad2[0x5ddc - 0x14bc];
+	CAI_Hint *pHint;
+	char pad3[0x6404 - 0x5de0];
+	int n6404;
+	char pad4[0x65d0 - 0x6408];
+	int vSaved[3];
+};
+
+void CAI_BaseNPCTroika::sub_10295ab0(float flDelay)
+{
+	SNpcView *v = (SNpcView *)this;
+	ScopeTrace trace("CAI_BaseNPCTroika::ClearHintNode", this ? (v->name26c ? v->name26c : g_106b8540) : g_105387dc);
+	if (v->pHint) {
+		if (v->pHint->sub_102d1450(this))
+			v->pHint->sub_102d1420(flDelay);
+		unsigned int hintFlags = *(unsigned int *)((char *)v->pHint + 0x474);
+		v->pHint = 0;
+		v->n6404 = 0;
+		v->flags14b8 &= 0xffffdfff;
+		if ((hintFlags & 0x1f) == 0 && v->vSaved[0] == 0xbf800000 && v->vSaved[1] == 0xbf800000 && v->vSaved[2] == 0xbf800000)
+			DevMsg("WARNING: %s called ClearHintNode but never set m_vecSavedAttackExtents\n", sub_1000b5cd());
+		v->vSaved[0] = 0xbf800000;
+		v->vSaved[1] = 0xbf800000;
+		v->vSaved[2] = 0xbf800000;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10297430 size=0x82
 #include "CAI_BaseNPCTroika.h"
 
