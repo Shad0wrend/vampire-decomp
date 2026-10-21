@@ -2516,6 +2516,7 @@
 0x1000bb13 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc3
 0x1000bb36 func   ?vfunc448@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc448
 0x1000bb4f func   ?sub_100584a0@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::sub_100584a0
+0x1000bb6d func   ?sub_1021fb50@@YAXPAUCEquipList@@H@Z sub_1021fb50
 0x1000bb95 func   ?sub_10401f80@@YAHXZ sub_10401f80
 0x1000bb9a func   ?sub_101e10e0@CUnknown101e0f00@@QAE_NPBDPAH@Z CUnknown101e0f00::sub_101e10e0
 0x1000bba4 func   ?sub_103bcb60@CTzimisceScheduleUnit@@QAEHH@Z CTzimisceScheduleUnit::sub_103bcb60

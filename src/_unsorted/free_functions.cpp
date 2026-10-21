@@ -46760,6 +46760,60 @@ int CUnknown1021e8e0::sub_1021e9c0(const char *pszName, int nStart)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021fb50 size=0xff
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+#include "CBaseCombatCharacter.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+struct CEquipUnknown {
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual CBaseEntity *GetBaseEntity();
+};
+struct CEquipEdict {
+	char m_pad0000[0x40];
+	CEquipUnknown *m_pUnk;
+};
+struct CEquipItem {	// the weapon given
+	void sub_1024f7b0();	// stub 0x10003ca1
+};
+struct CEquipList {
+	char m_pad0000[0xc];
+	int m_nMoney;
+	int m_nItems;
+	const char **m_ppItems;
+
+	const char *Item(int i) { const char **pp = &m_ppItems[i]; return *pp ? *pp : g_106b8540; }
+};
+
+void sub_1021fb50(CEquipList *pList, int index)
+{
+	CEquipEdict *pEdict = (CEquipEdict *)g_1070b22c->vfunc38(index);
+	CBaseEntity *pEnt;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if (!pEdict)
+			pEdict = (CEquipEdict *)g_1070b22c->vfunc38(0);
+		pEnt = (pEdict && pEdict->m_pUnk) ? pEdict->m_pUnk->GetBaseEntity() : 0;
+	}
+	if (pEnt) {
+		CBaseCombatCharacter *pChar = *(CBaseCombatCharacter **)((char *)pEnt + 0x9c);
+		if (pChar) {
+			pChar->sub_10341030(pList->m_nMoney);
+			for (int i = 0; i < pList->m_nItems; i++) {
+				CEquipItem *pItem = (CEquipItem *)pChar->sub_10335950(pList->Item(i));
+				if (pItem) {
+					pChar->sub_10335470(pItem);
+					pItem->sub_1024f7b0();
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10220e10 size=0x83
 #include "QuestJournal.h"
 
