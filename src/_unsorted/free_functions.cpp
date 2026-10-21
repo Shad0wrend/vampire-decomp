@@ -20947,6 +20947,39 @@ void sub_100d5360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5510 size=0xc3
+#include "CVFeat_t.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern char g_106b8540[];
+extern const char *g_10739d18;
+extern void (__cdecl *g_109f3628)(const char *pszFormat, ...);	// tier0 Msg
+
+struct FeatListPlayerView
+{
+	char m_pad0000[0xa8];
+	void *m_pCharacter;	// 0xa8
+};
+FeatListPlayerView *sub_10008d8c();
+
+// TARGET: sub_100d5510
+void sub_100d5510()
+{
+	char szLine[24];
+	FeatListPlayerView *pPlayer = sub_10008d8c();
+	if (pPlayer && pPlayer->m_pCharacter) {
+		void *pCharacter = pPlayer->m_pCharacter;
+		const char *pszName = g_10739d18;
+		if (!pszName)
+			pszName = g_106b8540;
+		sprintf(szLine, "\n   %s:\n\n", pszName);
+		g_109f3628(szLine);
+		for (int i = 0; i < g_10739d20; i++)
+			CVFeatSet::Find(i)->sub_101e5e60(pCharacter);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5be0 size=0x77
 #include "IVEngineServer.h"
 #include "CEntityVSlots.h"
