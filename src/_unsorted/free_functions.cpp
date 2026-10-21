@@ -18543,6 +18543,44 @@ void Obj::sub_100b97e0(const Vec3 *pos, float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b9880 size=0xc0
+#include "CBaseEntity.h"
+
+struct SExtentRec
+{
+	float origin[3];
+	float a, b;
+	char flag;
+	float c, d, e, f;
+};
+
+struct SExtentView
+{
+	char pad[0x740];
+	int n;
+	SExtentRec recs[10];
+};
+
+void CBaseEntity::sub_100b9880(const float *pOrigin, float a, float b, float c, float d, float e, float f)
+{
+	SExtentView *v = (SExtentView *)this;
+	if (v->n < 10) {
+		SExtentRec *r = &v->recs[v->n];
+		r->origin[0] = pOrigin[0];
+		r->origin[1] = pOrigin[1];
+		r->origin[2] = pOrigin[2];
+		v->recs[v->n].a = a;
+		v->recs[v->n].b = b;
+		v->recs[v->n].flag = 0;
+		v->recs[v->n].c = c;
+		v->recs[v->n].d = d;
+		v->recs[v->n].e = e;
+		v->recs[v->n].f = f;
+		v->n++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b99b0 size=0xd
 void CUnknown100b99b0::sub_100b99b0(char value)
 {
