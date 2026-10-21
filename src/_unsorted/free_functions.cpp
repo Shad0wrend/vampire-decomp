@@ -32907,6 +32907,34 @@ void sub_1013add0(const float *p, float t, float *q)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013af60 size=0xed
+#include "Quaternion.h"
+
+void sub_1013a9f0(const Quaternion &p, const Quaternion &q, Quaternion &qt);
+void sub_100092b9(const Quaternion &p, const Quaternion &q, Quaternion &qt);
+
+// TARGET: sub_1013af60
+void sub_1013af60(const Quaternion &p, const Quaternion &q, Quaternion &qt)
+{
+	if (&p == &qt)
+	{
+		Quaternion p2 = p;
+		sub_100092b9(p2, q, qt);
+		return;
+	}
+	else
+	{
+		Quaternion q2;
+		sub_1013a9f0(p, q, q2);
+
+		qt.x = q2.z * p.y + q2.w * p.x - q2.y * p.z + q2.x * p.w;
+		qt.y = q2.x * p.z - q2.z * p.x + q2.w * p.y + q2.y * p.w;
+		qt.z = q2.y * p.x - q2.x * p.y + q2.w * p.z + q2.z * p.w;
+		qt.w = q2.w * p.w - (q2.y * p.y + q2.z * p.z + q2.x * p.x);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013b0d0 size=0xdb
 struct Q { float x, y, z, w; };
 void sub_1013b0d0(const Q &q, float *m)
