@@ -46572,6 +46572,29 @@ void CAI_BaseNPC::sub_1026e4f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026fb40 size=0x7b
+#include "CAI_BaseNPC.h"
+struct CGlobalVarsTime { char pad[0xc]; float curtime; };
+extern CGlobalVarsTime *g_1070b228;
+extern float g_10452dc4;
+bool CAI_BaseNPC::sub_1026fb40()
+{
+	if (vfunc513() & 0x200000) {
+		float *pNext = (float *)((char *)this + 0x5da0);
+		if (*pNext < g_1070b228->curtime) {
+			float t = g_1070b228->curtime;
+			*pNext = t + g_10452dc4;
+			if (!sub_10007e19()) {
+				float box[3] = { 300.0f, 300.0f, 100.0f };
+				if (sub_10005dd5(box))
+					return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10270290 size=0xd
 void CUnknown10270290::sub_10270290(int value)
 {
