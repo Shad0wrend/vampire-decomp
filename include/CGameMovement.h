@@ -17,12 +17,22 @@ public:
 	virtual void slot7();
 	virtual void slot8();
 	virtual char vfunc9();	// slot 9 "CanAccelerate"
-	virtual void vfunc10(Vector &wishdir, float wishspeed, float accel);	// slot 10 "Accelerate": when slot 9 allows, adds up to min(frametime * surface friction (+0xa0) * wishspeed * accel, wishspeed - velocity . wishdir) along wishdir to the velocity (the vector at +0x40 of the object at +4); nothing when the velocity already reaches wishspeed
+	virtual void vfunc10(Vector &wishdir, float wishspeed, float accel);	// slot 10 "Accelerate": when slot 9 allows, adds up to min(frametime * surface friction (+0xa0) * wishspeed * accel, wishspeed - velocity . wishdir) along wishdir to the velocity (the vector at +0x40 of the object at +0x4); nothing when the velocity already reaches wishspeed
+	virtual void slot11();
+	virtual void slot12();
+	virtual void slot13();
+	virtual void slot14();
+	virtual void slot15();
+	virtual void slot16();
+	virtual void slot17();	// called by vfunc18 when bit 1 of the player's +0x24 is set
+	virtual void vfunc18();	// slot 18: sub_101252e0, then slot 17 (bit 1 of the player's +0x24 set) or clears bit 1 of the player's +0x28; adds the move data's vector (+0x3b0) to the player's velocity (+0x40), runs slot 19(0, 0) and subtracts it again
+	virtual void slot19(int a, int b);
 	void sub_100102f3();	// as in CDataObjectAccessSystem (transplant)
 	float *vfunc3(char flag, int unused);	// as in CGameMovement (transplant)
 	float *vfunc4(char flag, int unused);	// as in CGameMovement (transplant)
 	void vfunc16(void *pSurface, float volume, char bForce);	// slot 16 "PlayStepSound"-like: in multiplayer returns when slot 1 of the global at 0x109ef094 is set or its value (+0x28) is zero; unless bForce asks slot 15(pSurface, volume); alternates the flag at +0x1ee4 of the move data, picks the surface's short at +0x2c or +0x2e and plays that step sound (channel 4, level 75, pitch 95 + rand(0, 10)) at the player's origin
 	void vfunc24();	// slot 24 (plain member): counts the three timers of the move data (+0x2328, +0x1ee0, +0x232c) down by frame time * 1000, each stopping at zero
+	void sub_101252e0();	// stub 0x1000ee85, run first by vfunc18
 
 	void *m_pPlayer;	// 0x04
 	void *m_pMove;	// 0x08
