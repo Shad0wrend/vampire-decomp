@@ -40232,6 +40232,42 @@ void CUnknown101f5f00::sub_101f5f00(int first, int key, int second)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f6010 size=0xd6
+#include "CVSoundActivityTable_t.h"
+
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);
+
+void CVSoundActivityTable_t::sub_101f6010(CBaseCombatCharacter *pCharacter, int nNewActivity, int nOldActivity)
+{
+	if (nNewActivity < 0x118d) {
+		if (nOldActivity >= 0x118d) {
+			g_109f3628(" CVSoundActivityTable_t::Play !!!!!!!!!!!!!!!!!!!!!!!! %d is greater than LAST_SHARED_ACTIVITY, not a bug perhaps but this table doesn't go past that!  Aieeee!\n", nOldActivity);
+			return;
+		}
+		if (nOldActivity != -1 && *(int *)((char *)pCharacter + 0x9c)) {
+			int i = 0;
+			CVSoundActivityRecord_t *pRecord = &m_Records[nOldActivity];
+			if (pRecord->m_nSounds > 0) {
+				do {
+					pRecord->m_pSounds[i]->sub_101f5b60(*(int *)((char *)pCharacter + 0x9c), pRecord->m_pIds[i], 2);
+					i++;
+				} while (i < pRecord->m_nSounds);
+			}
+		}
+		if (nNewActivity != -1 && *(int *)((char *)pCharacter + 0x9c)) {
+			int i = 0;
+			CVSoundActivityRecord_t *pRecord = &m_Records[nNewActivity];
+			if (pRecord->m_nSounds > 0) {
+				do {
+					pRecord->m_pSounds[i]->sub_101f5950(*(int *)((char *)pCharacter + 0x9c), pRecord->m_pIds[i], 2, 1.0f, 1.25f);
+					i++;
+				} while (i < pRecord->m_nSounds);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f61b0 size=0x15f
 #include <stdio.h>
 #include "CUnknown101f4c80.h"
