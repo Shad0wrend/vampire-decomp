@@ -92,6 +92,39 @@ CBaseEntity *CBaseCombatWeapon::vfunc187()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024f210 size=0xdb
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "CWeaponOwner.h"
+// TARGET: CBaseCombatWeapon::vfunc361
+int CBaseCombatWeapon::vfunc361(int act)
+{
+    CWeaponActivityRecord *pRec = vfunc362();
+    int nRecords = vfunc363();
+    CWeaponOwner *pOwnerObj = sub_10252290();
+    CBaseAnimating *pOwner = (CBaseAnimating *)sub_102521f0();
+    CBaseAnimating *pPlayerAnim = 0;
+    if (pOwnerObj) {
+        pPlayerAnim = (CBaseAnimating *)pOwnerObj->sub_1015d680(1);
+        if (!pPlayerAnim->sub_100952d0(-1))
+            pPlayerAnim = 0;
+    }
+    for (int i = 0; i < nRecords; i++, pRec++) {
+        if (act == pRec->m_baseAct) {
+            int weaponAct = pRec->m_weaponAct;
+            if (!pOwner)
+                return weaponAct;
+            int seq = ((CEntityVSlots *)pOwner)->slot376(weaponAct);
+            if (pOwner->sub_1008dd30(seq, -1) >= 0)
+                return weaponAct;
+            if (pPlayerAnim && pPlayerAnim->sub_1008dd30(seq, -1) >= 0)
+                return weaponAct;
+        }
+    }
+    return act;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f330 size=0x71
 #include "CBaseCombatWeapon.h"
 #define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
