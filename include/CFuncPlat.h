@@ -24,7 +24,11 @@ public:
 	unsigned char m_spawnflags;
 	char m_pad0205[0x2e0 - 0x205];
 	void *m_pEdict;	// 0x2e0
-	char m_pad02e4[0x4f8 - 0x2e4];
+	char m_pad02e4[0x3f4 - 0x2e4];
+	float m_flLocalTime;	// 0x3f4
+	char m_pad03f8[0x3fc - 0x3f8];
+	float m_flMoveDoneTime;	// 0x3fc
+	char m_pad0400[0x4f8 - 0x400];
 	int m_nToggleState;	// 0x4f8
 	char m_pad04fc[0x570 - 0x4fc];
 	const char *m_pszStopSound;	// 0x570
