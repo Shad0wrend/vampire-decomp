@@ -22,4 +22,5 @@ public:
 	CUnknown102d9040Entry *m_pElements;	// 0x10
 
 	void sub_102d9040(int a, CBaseEntity *pEnt, const float *vec, int arg4, float duration, float amount);	// appends a record: id, the entity's handle (-1 for none), a vector, the start time (curtime), the end time (curtime + duration) and amount / duration
+	void sub_102d8e50(const float *vec, int arg4, float duration, float amount);	// removes the first record with exactly this vector, then appends a new one for it (sub_102d9040(1, 0, vec, ...))
 };
