@@ -560,6 +560,7 @@
 0x1000352b func   _npc_VTzimisce npc_VTzimisce
 0x1000353a func   ?sub_10383e50@@YGII@Z sub_10383e50
 0x1000353f func   ?vfunc440@CNPC_VChangBros@@QAEHH@Z CNPC_VChangBros::vfunc440
+0x10003544 func   ??0CEntryZ@@QAE@H@Z CEntryZ::CEntryZ
 0x10003549 func   ?sub_10315fe0@CUnknown10315fe0@@QAEPAXXZ CUnknown10315fe0::sub_10315fe0
 0x10003571 func   ?sub_102469b0@@YA?AVSendProp@@PBDHHHHH@Z sub_102469b0
 0x10003580 func   ?sub_10058200@CUnknown10058200@@QAEXH@Z CUnknown10058200::sub_10058200
