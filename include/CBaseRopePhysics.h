@@ -16,6 +16,7 @@ class CBaseRopePhysics
 public:
 	virtual void vfunc0(CRopeNode *pNodes, int iNode, Vector *pAccel);	// GetNodeForces
 	virtual void vfunc1(CRopeNode *pNodes, int nNodes);	// ApplyConstraints
+	void sub_100027c5(CRopeNode *pNodes, int nNodes);	// CBaseRopePhysics::vfunc1 (stub 0x100027c5), called directly by the subclasses
 
 	int m_n04;
 	CRopeNode *m_pNodes;	// 0x08
