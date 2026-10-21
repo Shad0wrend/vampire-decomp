@@ -12,4 +12,5 @@ public:
 	CUnknown102029c0 **m_pData;	// 0x000c
 
 	void sub_10202c80();	// deletes every record and the pointer array, then clears the count and the first two fields
+	int sub_10203020(const char *pszName);	// the id (first dword) of the record whose name (+4) matches case-insensitively, -1 when there is none
 };
