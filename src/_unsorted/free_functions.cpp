@@ -6706,6 +6706,42 @@ void sub_1005d830(void *pFilter, float delay, int nPoints, Vector *pPoints)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005dcc0 size=0x16f
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+void sub_10003012();
+
+extern SendTable g_106c04ec;
+extern const char *g_10541a84;
+
+// TARGET: sub_1005dcc0
+int sub_1005dcc0()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000c14e("m_vecOrigin", 0xc, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_1000c14e("m_vecDirection", 0x18, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_10007bfd("r", 0x2c, 4, 8, 1, 0, 0),
+		sub_10007bfd("g", 0x30, 4, 8, 1, 0, 0),
+		sub_10007bfd("b", 0x34, 4, 8, 1, 0, 0),
+		sub_10007bfd("a", 0x38, 4, 8, 1, 0, 0),
+		sub_10007bfd("m_nSprayModel", 0x24, 4, 0xb, 0, 0, 0),
+		sub_10007bfd("m_nDropModel", 0x28, 4, 0xb, 0, 0, 0),
+		sub_10007bfd("m_nSize", 0x3c, 4, 8, 1, 0, 0),
+	};
+	g_106c04ec.sub_1000e8fe(props + 1, 9, g_10541a84);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005e5c0 size=0x80
 #include "CTEBloodStream.h"
 extern CTEBloodStream g_106c0cc4;

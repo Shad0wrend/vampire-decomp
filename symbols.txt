@@ -2563,6 +2563,7 @@
 0x1000b875 func   ?sub_100955c0@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_100955c0
 0x1000b87a func   ?vfunc326@CBasePlayer@@UAE_NHPAVCBaseEntity@@@Z CBasePlayer::vfunc326
 0x1000b87f func   _prop_model_state prop_model_state
+0x1000b88e func   ?sub_1005dcc0@@YAHXZ sub_1005dcc0
 0x1000b898 func   ?sub_10340bd0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10340bd0
 0x1000b89d func   ?vfunc5@CPhysicsSpring@@UAEPAV1@I@Z CPhysicsSpring::vfunc5
 0x1000b8bb func   ?vfunc0@ConCommandBase@@QAEPAV1@I@Z ConCommandBase::vfunc0
