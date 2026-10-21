@@ -35,6 +35,8 @@ public:
 	virtual void vfunc266(int unused, const char *pszArgs);	// parses "automate <Cancel|Resume> <seconds>" arguments into the automation fields
 	SCENE_V(267) SCENE_V(268)
 	void sub_1000b1ef();	// as in CPhysForce (transplant)
+	void sub_10083a30(const char *pszScene);	// stub 0x100106f9, called directly by vfunc104 with the scene file name at +0x450 ("" when unset)
+	void sub_10080cb0(int a);	// stub 0x1001163f, called directly by vfunc104 with the dword at +0x4bc
 
 	char m_pad0004[0x4ac - 4];
 	char m_bAutomateTimed;	// 0x4ac: set when a positive time was parsed
