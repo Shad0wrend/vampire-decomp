@@ -706,6 +706,7 @@
 0x10004174 func   ?sub_103cc9b0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc9b0
 0x10004188 func   ?sub_102b4540@@YIDPAVCAI_BaseNPCTroika@@HPAUSOtherEntity@@@Z sub_102b4540
 0x100041c4 func   ??1CUnknown101f4120@@QAE@XZ CUnknown101f4120::~CUnknown101f4120
+0x100041ce func   ?sub_101c9b60@CSquadSetter@@QAEXH@Z CSquadSetter::sub_101c9b60
 0x100041dd func   ?sub_101f63b0@@YGPBDPBD@Z sub_101f63b0
 0x100041e2 func   ?sub_101f9610@@YAXH@Z sub_101f9610
 0x100041f1 func   ?sub_102efd50@CAI_Navigator@@QAE_NXZ CAI_Navigator::sub_102efd50

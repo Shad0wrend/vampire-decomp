@@ -34883,6 +34883,65 @@ extern "C" GP *trigger_autosave()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9b60 size=0xe9
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CBaseEntity_ext.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct CSquadSetNPC : public CBaseEntity
+{
+	void sub_102781e0(int squad);	// stub 0x10009912
+};
+
+struct CSquadSetEnt
+{
+	char m_pad0000[0x94];
+	CSquadSetNPC *m_pNPC;
+};
+
+struct CSquadSetter : public CEntityVSlots
+{
+	char m_pad0004[0x450 - 4];
+	int m_nMode;
+	const char *m_pszName;
+	int m_nSquad;
+	float m_flRadius;
+	void sub_101c9b60(int unused);
+};
+
+void CSquadSetter::sub_101c9b60(int unused)
+{
+	for (CSquadSetEnt *pEnt = (CSquadSetEnt *)g_106eb5d8.sub_100f79b0(0, (const float *)slot220(), m_flRadius); pEnt; pEnt = (CSquadSetEnt *)g_106eb5d8.sub_100f79b0((CBaseEntity *)pEnt, (const float *)slot220(), m_flRadius)) {
+		CSquadSetNPC *pNPC = pEnt->m_pNPC;
+		if (pNPC) {
+			switch (m_nMode) {
+			case 0:
+				if (_strcmpi(pNPC->m_name26c ? pNPC->m_name26c : g_106b8540, m_pszName ? m_pszName : g_106b8540))
+					continue;
+				break;
+			case 1: {
+				const char *b = m_pszName ? m_pszName : g_106b8540;
+				const char *a = pNPC->sub_1009f200();
+				if (_strcmpi(a, b))
+					continue;
+				break;
+			}
+			case 2:
+				if (_strcmpi(*(const char **)((char *)pNPC + 0x5db0) ? *(const char **)((char *)pNPC + 0x5db0) : g_106b8540, m_pszName ? m_pszName : g_106b8540))
+					continue;
+				break;
+			}
+			pNPC->sub_102781e0(m_nSquad);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9cf0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
