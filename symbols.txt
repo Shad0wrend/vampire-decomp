@@ -4118,6 +4118,7 @@
 0x100124c7 func   _item_g_badlucktalisman item_g_badlucktalisman
 0x100124d6 func   ?vfunc35@CMultiplayRules@@UAEXPAVCBaseEntity@@@Z CMultiplayRules::vfunc35
 0x100124ea func   ?sub_103be090@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be090
+0x10012503 func   ?sub_101618e0@CBasePlayer@@QAEXHH@Z CBasePlayer::sub_101618e0
 0x10012517 func   ?sub_10046930@CUtlRBTree36@@QBEGPBX@Z CUtlRBTree36::sub_10046930
 0x1001251c func   ?sub_103b3c10@@YADXZ sub_103b3c10
 0x10012526 func   ?sub_1013a030@@YAXPAUV3@@0@Z sub_1013a030

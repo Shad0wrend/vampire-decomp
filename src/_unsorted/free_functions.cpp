@@ -27162,6 +27162,77 @@ CBaseEntity *CBasePlayer::sub_101618a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101618e0 size=0x135
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+extern char g_10015b68[];	// think function stub
+
+struct GlobalVarsClock
+{
+	char m_pad0000[0xc];
+	float m_flCurTime;
+};
+
+extern GlobalVarsClock *g_1070b228;
+
+struct PlayerMoveHelper
+{
+	void sub_100b2770(const float *pVec);	// stub 0x1000489a
+};
+
+struct PlayerStateBlock48 { int d[0x30]; };
+struct PlayerStateBlock21 { int d[0x15]; };
+
+static inline bool TestBit(unsigned int value, int bit)
+{
+	return ((value >> bit) & 1) != 0;
+}
+
+static inline CGlobalEntityList_Ent *LookupEntity(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13))
+			return s->m_pEntity;
+	}
+	return 0;
+}
+
+void CBasePlayer::sub_101618e0(int a, int b)
+{
+	char bCopyState = (char)a;
+	char bMove = (char)b;
+	CBaseEntity *pEnt = (CBaseEntity *)LookupEntity(*(unsigned int *)((char *)this + 0x1db0));
+	if (pEnt) {
+		if (bCopyState) {
+			char *pChar = *(char **)((char *)pEnt + 0x98);
+			if (pChar) {
+				*(int *)((char *)this + 0x6f0) = *(int *)(pChar + 0x6f0);
+				*(int *)((char *)this + 0x174) = *(int *)(pChar + 0x174);
+				*(int *)((char *)this + 0x6f8) = *(int *)(pChar + 0x6f8);
+				*(int *)((char *)this + 0x6f4) = *(int *)(pChar + 0x6f4);
+				*(PlayerStateBlock48 *)((char *)this + 0x734) = *(PlayerStateBlock48 *)(pChar + 0x734);
+				*(PlayerStateBlock21 *)((char *)this + 0x7f4) = *(PlayerStateBlock21 *)(pChar + 0x7f4);
+			}
+		}
+		if (bMove) {
+			((CEntityVSlots *)this)->slot64((const float *)((CEntityVSlots *)pEnt)->slot219());
+			if (TestBit(pEnt->m_flags268, 12))
+				pEnt->sub_100b1d10();
+			((PlayerMoveHelper *)this)->sub_100b2770((const float *)((char *)pEnt + 0x3bc));
+			((CEntityVSlots *)this)->slot62((const float *)((CEntityVSlots *)pEnt)->slot217());
+		}
+		pEnt->sub_100ac4e0((int)g_10015b68, 0, 0);
+		*(float *)((char *)pEnt + 0x17c) = g_1070b228->m_flCurTime + 0.01;
+		*(unsigned int *)((char *)this + 0x1db0) = 0xffffffff;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161ed0 size=0x2d
 #include "CBasePlayer.h"
 
