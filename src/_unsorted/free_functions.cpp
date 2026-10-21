@@ -48787,6 +48787,43 @@ void sub_102cc900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ccb80 size=0x6e
+struct DynLinkX {
+	char pad[0x450];
+	DynLinkX *m_pNext;	// 0x450
+	int m_iStart;	// 0x454
+	int m_iEnd;	// 0x458
+	bool sub_10011d06();
+};
+struct StringTableX { char pad[0xc]; int *m_pItems; };
+struct WorldX { char pad[0x454]; StringTableX *m_pTable; };
+
+extern DynLinkX *g_1092541c;
+extern WorldX *g_10934088;
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+int __cdecl sub_100f4410(int a, int b, int c);
+void __cdecl sub_10014614(DynLinkX *p);
+
+void sub_102ccb80()
+{
+	DynLinkX *p = g_1092541c;
+	if (p) {
+		void (__cdecl *pfnMsg)(const char *, ...) = g_109f3630;
+		do {
+			if (!p->sub_10011d06()) {
+				int *items = g_10934088->m_pTable->m_pItems;
+				int a = items[p->m_iStart];
+				int b = items[p->m_iEnd];
+				if (sub_100f4410(a, b, 0) == 2)
+					pfnMsg("Worldcraft failed in PurgeDynamicLinks...\n");
+				sub_10014614(p);
+			}
+			p = p->m_pNext;
+		} while (p);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ccce0 size=0xe2
 #include "CAI_DynamicLink.h"
 struct SLink { int pad0; int src; int dest; char pad[0x58]; unsigned int flags; };
