@@ -55,6 +55,42 @@ void CBaseTerminal::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10218220 size=0x69
+#include "CBaseTerminal.h"
+#include "CAI_BaseNPCTroika.h"
+void __fastcall sub_1015ef60(char *p);
+#define PV_V(n) virtual void v##n();
+struct CNotifierX {
+    PV_V(0) PV_V(1) PV_V(2) PV_V(3) PV_V(4)
+    virtual void vfunc5(int a, int b);
+};
+extern CNotifierX *g_1070b248;
+#define PV_V10(p) PV_V(p##0) PV_V(p##1) PV_V(p##2) PV_V(p##3) PV_V(p##4) PV_V(p##5) PV_V(p##6) PV_V(p##7) PV_V(p##8) PV_V(p##9)
+struct CEngineX {
+    PV_V10(0) PV_V10(1) PV_V10(2)
+    PV_V(30) PV_V(31) PV_V(32) PV_V(33) PV_V(34)
+    virtual int vfunc35(int edict);
+};
+extern CEngineX *g_1070b22c;
+struct CTerminalHelperX {
+    void sub_10218820(int a, int b);
+    void sub_1020adc0(void *pPlayer);
+};
+
+// TARGET: CBaseTerminal::vfunc42
+void CBaseTerminal::vfunc42(void *pPlayer)
+{
+    ((CTerminalHelperX *)this)->sub_10218820(2, 0);
+    sub_1015ef60((char *)pPlayer);
+    ((CAI_BaseNPCTroika *)pPlayer)->sub_101815b0(1);
+    ((CAI_BaseNPCTroika *)pPlayer)->sub_101815b0(8);
+    int edict = *(int *)((char *)this + 0x2e0);
+    *((char *)this + 0x80d) = 0;
+    g_1070b248->vfunc5(g_1070b22c->vfunc35(edict), 0);
+    ((CTerminalHelperX *)this)->sub_1020adc0(pPlayer);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10219f10 size=0x6d
 #include "CBaseTerminal.h"
 
