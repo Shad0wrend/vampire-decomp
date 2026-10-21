@@ -2,6 +2,9 @@
 // Layout is declared flat (vptr and base members are padding) until the bases are recovered.
 #pragma once
 
+class CBaseEntity;
+class CItemGKeyring;
+
 class CItemContainerLock
 {
 public:
@@ -9,6 +12,8 @@ public:
 	int m_unk780;
 	char pad784[0x80c - 0x784];
 	unsigned int m_hContainer;	// 0x80c: EHANDLE to the container this lock is attached to
+	CItemGKeyring *m_pKeyring;	// 0x810: the keyring item the lock was made for (a static default object when null)
+	char m_bGiveKeyring;	// 0x814
 
 	void vfunc275();
 	void vfunc103();	// base vfunc103, then sets bit 0x40 in the flags at +0x19c
@@ -17,4 +22,5 @@ public:
 	int vfunc34(int a);	// slot 34 (plain member): 2 while the attached container answers sub_100eef10, else 3 when sub_10224100 fails, else 2 + (sub_10224910(a) != 0)
 	bool sub_10224100();	// stub 0x10001d2f
 	bool sub_10224910(int a);	// stub 0x1000ffa1
+	void sub_10224950(CBaseEntity *pPlayer);	// a player opens the lock: tells the player's hud about the keyring (messages 0x13 / 0x14), state 3, slot 274, and tells the container who it is used by and runs its slot 242
 };
