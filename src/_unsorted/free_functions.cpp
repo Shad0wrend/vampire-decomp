@@ -24754,6 +24754,41 @@ extern "C" CBaseEntity *func_areaportalwindow()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010ce30 size=0x10c
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+void sub_10009539();
+void sub_10246300();
+
+extern SendTable g_107098c8;
+extern SendTable *g_1055282c;
+extern const char *g_1056e15c;
+
+// TARGET: sub_1010ce30
+int sub_1010ce30()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1055282c, (void *)sub_10009539),
+		sub_10006cc1("m_flFadeDist", 0x45c, 4, 0, 4, 0.0f, -121121.121094f, (void *)sub_10246300),
+		sub_10006cc1("m_flFadeStartDist", 0x458, 4, 0, 4, 0.0f, -121121.121094f, (void *)sub_10246300),
+		sub_10006cc1("m_flTranslucencyLimit", 0x460, 4, 0, 4, 0.0f, -121121.121094f, (void *)sub_10246300),
+		sub_10007bfd("m_iBackgroundModelIndex", 0x468, 4, 0xb, 0, 0, 0),
+	};
+	g_107098c8.sub_1000e8fe(props + 1, 5, g_1056e15c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010d4b0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
