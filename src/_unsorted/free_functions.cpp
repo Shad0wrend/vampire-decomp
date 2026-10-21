@@ -57917,6 +57917,15 @@ void sub_10246300(int unused, int *src, int *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10246320 size=0x77
+void sub_10246320(int unused, const float *pIn, float *pOut)
+{
+	pOut[0] = (float)(unsigned short)(int)(pIn[0] * 182.04445f) * 0.005493164f;
+	pOut[1] = (float)(unsigned short)(int)(pIn[1] * 182.04445f) * 0.005493164f;
+	pOut[2] = (float)(unsigned short)(int)(pIn[2] * 182.04445f) * 0.005493164f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246430 size=0xd
 void sub_10246430(int unused, int *src, int *dst)
 {
