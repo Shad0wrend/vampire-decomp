@@ -3115,6 +3115,7 @@
 0x1000e237 func   _npc_VMercurio npc_VMercurio
 0x1000e24b func   ?sub_100be040@CUnknown100be040@@QAEXH@Z CUnknown100be040::sub_100be040
 0x1000e250 func   _item_g_vampyr_apocrypha item_g_vampyr_apocrypha
+0x1000e273 func   ?sub_1004ff40@@YAPAVCBaseEntity@@PAVCBreakableSlots@@@Z sub_1004ff40
 0x1000e27d func   ?sub_100acef0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100acef0
 0x1000e282 func   ?sub_10041c30@@YA_NPAH0@Z sub_10041c30
 0x1000e287 func   ?vfunc241@CNPC_VTzimisce@@UAEXPADPAH@Z CNPC_VTzimisce::vfunc241

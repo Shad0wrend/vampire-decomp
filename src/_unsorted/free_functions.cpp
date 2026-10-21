@@ -5458,6 +5458,74 @@ bool sub_1004feb0(CBaseEntity *pEnt, CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ff40 size=0x10d
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long lDelta, void *pSrcType, void *pTargetType, int isReference);
+extern char g_10538764[];	// RTTI type descriptor of CBaseEntity
+extern char g_1053dd50[];	// RTTI type descriptor of CSimplePhysicsProp
+extern char g_1053dd10[];	// RTTI type descriptor of CBaseAnimating
+extern char g_1053dcd4[];	// "simple_physics_brush"
+extern char g_1053dd78[];	// "simple_physics_prop"
+extern char g_1053dd90[];	// "model"
+
+CBaseEntity *sub_10136580(const char *pszClassname);	// CreateEntityByName
+bool sub_1004feb0(CBaseEntity *pBreakable, CBaseEntity *pNew);
+
+#define D(x) virtual void x();
+#define T(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+
+class CBreakableSlots
+{
+public:
+	D(s0) D(s1) D(s2) D(s3) D(s4) D(s5) D(s6) D(s7)
+	virtual int vfunc8();
+	virtual const char **vfunc9(int *pOut);
+	T(a1) T(a2) T(a3) T(a4) T(a5) T(a6) T(a7) T(a8) T(a9)
+	D(s100) D(s101) D(s102)
+	virtual void vfunc103();
+	D(s104) D(s105) D(s106) D(s107) D(s108) D(s109)
+	virtual bool vfunc110(const char *pszKey, const char *pszValue);
+	D(s111) D(s112) D(s113) D(s114) D(s115) D(s116) D(s117) D(s118) D(s119)
+	T(b2) T(b3) T(b4) T(b5) T(b6) T(b7) T(b8) T(b9) T(c0)
+	D(s210) D(s211) D(s212) D(s213) D(s214) D(s215)
+	virtual void vfunc216(const float *pOrigin);
+	virtual float *vfunc217();
+	virtual void vfunc218(const float *pAngles);
+	virtual float *vfunc219();
+};
+
+CBaseEntity *sub_1004ff40(CBreakableSlots *pBreakable)
+{
+	CBreakableSlots *pNew;
+	int nModelIndex = pBreakable->vfunc8();
+	if (g_1070b22c->vfunc21(nModelIndex) == 1) {
+		pNew = (CBreakableSlots *)sub_10136580(g_1053dcd4);
+	} else {
+		pNew = (CBreakableSlots *)sub_10136580(g_1053dd78);
+		void *pProp = __RTDynamicCast(pNew, 0, g_10538764, g_1053dd50, 0);
+		if (pProp) {
+			void *pAnim = __RTDynamicCast(pBreakable, 0, g_10538764, g_1053dd10, 0);
+			if (pAnim)
+				*(int *)((char *)pProp + 0x670) = *(int *)((char *)pAnim + 0x670);
+		}
+	}
+	int nTemp;
+	const char *pszModel = *pBreakable->vfunc9(&nTemp);
+	pNew->vfunc110(g_1053dd90, pszModel ? pszModel : g_106b8540);
+	pNew->vfunc216(pBreakable->vfunc217());
+	pNew->vfunc218(pBreakable->vfunc219());
+	pNew->vfunc103();
+	*(unsigned int *)((char *)pNew + 0x19c) |= 0xa0;
+	if (!sub_1004feb0((CBaseEntity *)pBreakable, (CBaseEntity *)pNew))
+		((CBaseEntity *)pNew)->sub_100a5ea0(6, 0, 0, 0);
+	return (CBaseEntity *)pNew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100500a0 size=0x43
 #include "CPhysConvert.h"
 void *sub_100aa720(int size);
