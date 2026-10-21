@@ -96,4 +96,8 @@ public:
 	void *sub_103105d0(int type);	// the record of the given type closest to the NPC's ear position (a record owned by the NPC's slot 167 entity wins at once); walks the list with sub_10310440 / sub_10310480
 	void *sub_10310440(int *pIter);	// first record of the list (stub 0x10001f69); pIter receives the iteration state
 	void *sub_10310480(int *pIter);	// next record (stub 0x1001228d)
+	int sub_10310130(int radius);	// at most every m_timer70 interval: counts the entities of the global list at 0x1090fe10 within radius of the NPC's origin that pass sub_1030ffa0, remembers the count in the vector at +0x34 (sub_1030fe70); returns the last count
+	void sub_1030fe50();	// stub 0x10003305, run before the count
+	void sub_1030fe70(int count, CAI_SensesVec *pVec);	// stub 0x100136a6, hands the count to the vector
+	char sub_1030ffa0(void *pEnt);	// stub 0x1000ae6b
 };
