@@ -72303,6 +72303,39 @@ void CAI_CsActList::sub_102ca2a0(int nType, CBaseEntity *pSource, float x, float
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ca460 size=0x170
+#include "CUnknown102ca630.h"
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+#include "ConVar.h"
+
+struct GlobalVarsX { int pad0[3]; float curtime; };
+extern GlobalVarsX *g_1070b228;
+extern ConVar *g_107258dc;
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+void CUnknown102ca630::sub_102ca460(CUnknown102ca630Rec *pRec)
+{
+	if (!g_107258dc->vfunc1() && g_107258dc->m_nValue) {
+		const char *pszType = "Criminal";
+		if (pRec->m_nType == 2)
+			pszType = "Supernatural";
+		const char *pszOffender = EHandle_Get(pRec->m_hEnt)
+			? ((CBaseEntity *)EHandle_Get(pRec->m_hEnt))->sub_100ab4f0() : "Unknown";
+		const char *pszOwner = EHandle_Get(pRec->m_hOwner)
+			? ((CBaseEntity *)EHandle_Get(pRec->m_hOwner))->sub_100ab4f0() : "Unknown";
+		DevMsg("CSActs:    %6.1f - External %s act level %d removed from (%f, %f, %f) (offender - %s) (owner - %s)\n",
+			(double)g_1070b228->curtime, pszType, pRec->m_nLevel,
+			(double)pRec->m_vecPos[0], (double)pRec->m_vecPos[1], (double)pRec->m_vecPos[2],
+			pszOwner, pszOffender);
+	}
+	m_nRecs--;
+	CUnknown102ca630Rec *pLast = &m_recs[0] + m_nRecs;
+	if (pRec != pLast)
+		pRec->sub_102c9da0(pLast);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ca630 size=0x6b
 #include "CUnknown102ca630.h"
 
