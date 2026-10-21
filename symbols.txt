@@ -1182,6 +1182,7 @@
 0x10005a83 func   ?vfunc5@CBaseProp@@QAEPAV1@I@Z CBaseProp::vfunc5
 0x10005a97 func   ?sub_100b4910@UtlMem@@QAEXXZ UtlMem::sub_100b4910
 0x10005a9c func   ?sub_1032ead0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1032ead0
+0x10005aa1 func   ?vfunc603@CAI_BaseNPCTroika@@UAEMPAM0@Z CAI_BaseNPCTroika::vfunc603
 0x10005ab0 func   ?sub_10206300@@YIPAHPAHHH@Z sub_10206300
 0x10005add func   ?sub_103e1680@@YAMXZ sub_103e1680
 0x10005ae7 func   ??0CWeaponMelee_TzimisceMelee@@QAE@XZ CWeaponMelee_TzimisceMelee::CWeaponMelee_TzimisceMelee

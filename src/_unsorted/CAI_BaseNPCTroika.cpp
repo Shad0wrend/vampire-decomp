@@ -1362,6 +1362,32 @@ char CAI_BaseNPCTroika::sub_102b57c0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b59e0 size=0xf1
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+// TARGET: CAI_BaseNPCTroika::vfunc603
+float CAI_BaseNPCTroika::vfunc603(float *pCur, float *pTarget)
+{
+	if (*pTarget + 32.0f < *pCur) {
+		if (g_1070b244->vfunc2(0, 1))
+			return g_1070b244->vfunc1(30.0f, 45.0f);
+		return g_1070b244->vfunc1(-30.0f, -45.0f);
+	}
+	if (*pTarget - 32.0f > *pCur) {
+		*pCur = *pTarget;
+		if (g_1070b244->vfunc2(0, 1))
+			return g_1070b244->vfunc1(170.0f, 179.0f);
+		return g_1070b244->vfunc1(-170.0f, -179.0f);
+	}
+	if (g_1070b244->vfunc2(0, 1))
+		return g_1070b244->vfunc1(80.0f, 120.0f);
+	return g_1070b244->vfunc1(-80.0f, -120.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b6b50 size=0xaa
 #include "CAI_BaseNPCTroika.h"
 
