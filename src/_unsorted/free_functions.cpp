@@ -33074,6 +33074,51 @@ QAngle sub_101384e0(const QAngle &a, const QAngle &b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138630 size=0xb2
+#include "matrix3x4_t.h"
+
+namespace block_10138630 {
+	void sub_10138600(const matrix3x4_t &in, matrix3x4_t &out)
+	{
+		out = in;
+	}
+}
+using namespace block_10138630;
+void sub_10005394(const matrix3x4_t &in, matrix3x4_t &out);
+
+inline float Dot3(const float *a, const float *b)
+{
+	return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+}
+
+// TARGET: sub_10138630
+void sub_10138630(const matrix3x4_t &in, matrix3x4_t &out)
+{
+	if (&in == &out) {
+		matrix3x4_t in2;
+		sub_10138600(in, in2);
+		sub_10005394(in2, out);
+		return;
+	}
+	out.m_flMatVal[0][0] = in.m_flMatVal[0][0];
+	out.m_flMatVal[0][1] = in.m_flMatVal[1][0];
+	out.m_flMatVal[0][2] = in.m_flMatVal[2][0];
+	out.m_flMatVal[1][0] = in.m_flMatVal[0][1];
+	out.m_flMatVal[1][1] = in.m_flMatVal[1][1];
+	out.m_flMatVal[1][2] = in.m_flMatVal[2][1];
+	out.m_flMatVal[2][0] = in.m_flMatVal[0][2];
+	out.m_flMatVal[2][1] = in.m_flMatVal[1][2];
+	out.m_flMatVal[2][2] = in.m_flMatVal[2][2];
+	float tmp[3];
+	tmp[0] = in.m_flMatVal[0][3];
+	tmp[1] = in.m_flMatVal[1][3];
+	tmp[2] = in.m_flMatVal[2][3];
+	out.m_flMatVal[0][3] = -Dot3(tmp, out.m_flMatVal[0]);
+	out.m_flMatVal[1][3] = -Dot3(tmp, out.m_flMatVal[1]);
+	out.m_flMatVal[2][3] = -Dot3(tmp, out.m_flMatVal[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101388c0 size=0x10
 int sub_101388c0(int x)
 {
