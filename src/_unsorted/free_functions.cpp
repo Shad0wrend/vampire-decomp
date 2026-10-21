@@ -30396,6 +30396,31 @@ void CBloodSplat::sub_101719d0(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10172670 size=0x74
+#include "CEntityVSlots.h"
+
+int sub_10172170(CEntityVSlots *pEnt, int a);
+void sub_10139610(void *pFrom, Vector *pOut, int a, int b);
+
+struct CUnknown106eb5d8
+{
+	void sub_100f8030(const Vector *pOrigin, const Vector *pOther, float flScale, int a);
+};
+extern CUnknown106eb5d8 g_106eb5d8;
+
+// TARGET: sub_10172670
+void sub_10172670(CEntityVSlots *pEnt, int a)
+{
+	if (!sub_10172170(pEnt, a))
+	{
+		Vector vecOther;
+		sub_10139610((char *)pEnt + 0x206c, &vecOther, 0, 0);
+		Vector vecOrigin = Vector(pEnt->slot192());
+		g_106eb5d8.sub_100f8030(&vecOrigin, &vecOther, 0.95f, a);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10172710 size=0x6c
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"

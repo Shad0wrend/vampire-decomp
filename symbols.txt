@@ -1055,6 +1055,7 @@
 0x10005588 func   ?sub_103d68d0@CNPC_VWerewolf@@QAEPAUCNPC_VWerewolfVec3@@PAU2@PAX@Z CNPC_VWerewolf::sub_103d68d0
 0x1000559c func   ?sub_103ff480@@YAHXZ sub_103ff480
 0x100055a1 func   ?sub_103eec60@CUnknown103eec60@@QAEXD@Z CUnknown103eec60::sub_103eec60
+0x100055ab func   ?sub_10172670@@YAXPAVCEntityVSlots@@H@Z sub_10172670
 0x100055bf func   _env_physexplosion env_physexplosion
 0x100055c9 func   _info_node_bach_teleport_1 info_node_bach_teleport_1
 0x100055d8 func   _info_node_bach_teleport_2 info_node_bach_teleport_2
