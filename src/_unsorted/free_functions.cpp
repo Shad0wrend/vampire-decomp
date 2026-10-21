@@ -8261,6 +8261,46 @@ void __fastcall sub_1006fe00(FollowObj *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100705d0 size=0x85
+#include "CBaseCineCam.h"
+#include "CBaseEntity.h"
+
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+CBaseCineCam *sub_100a99d0(const char *pszClass, const float *pOrigin, const float *pAngles, void *pOwner);
+void sub_101cd940(void *pEntity);
+
+struct CCineCamView
+{
+	char m_pad0000[0x204];
+	unsigned int m_spawnflags;
+};
+
+// TARGET: sub_100705d0
+CBaseCineCam *sub_100705d0(CBaseEntity *pTarget)
+{
+	CBaseCineCam *pCam = sub_100a99d0("camera_cinematic", g_1070d1b0, g_1070d9d0, 0);
+	if (pCam)
+	{
+		((CCineCamView *)pCam)->m_spawnflags |= 4;
+		if (pCam->sub_1006e130("Follow", 3, 0))
+		{
+			if (pTarget)
+				pCam->m_hShot610[0] = *pTarget->vfunc1();
+			else
+				pCam->m_hShot610[0] = 0xffffffff;
+			pCam->sub_1006e8e0();
+		}
+		else
+		{
+			sub_101cd940(pCam);
+			return 0;
+		}
+	}
+	return pCam;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071100 size=0xbd
 #include "SendProp.h"
 
