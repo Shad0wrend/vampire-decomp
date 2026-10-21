@@ -1,18 +1,19 @@
 // CBroadcastRecipientFilter (RTTI .?AVCBroadcastRecipientFilter@@, vtable 0x1044ba34): a recipient filter holding every player.
 // Base CRecipientFilter at +0 (flat, see CRecipientFilter.h); its constructor is the base constructor 0x1019ce00 followed
 // by AddAllPlayers (0x1019cff0), both inlined where a function builds one on the stack. Its destructor is the inlined
-// purge of the recipient vector (no vtable store): CRecipientFilterPurger stands for the destructor of that vector member.
+// purge of the recipient vector (no vtable store): CRecipientFilterPurger stands for the destructor of that vector member
+// (VC6 places the empty base after the polymorphic one, in the tail padding).
 #pragma once
 
 #include "CRecipientFilter.h"
 
 extern void (*g_109f3624)(void *);	// Plat_Free
 
-struct CRecipientFilterPurger	// empty first base at +0, so that its destructor runs on the whole filter
+struct CRecipientFilterPurger	// empty base whose destructor runs on the whole filter
 {
 	~CRecipientFilterPurger()
 	{
-		CRecipientFilter *p = (CRecipientFilter *)this;
+		CRecipientFilter *p = (CRecipientFilter *)((char *)this - sizeof(CRecipientFilter));
 		void (*pfnFree)(void *) = g_109f3624;
 		p->m_size = 0;
 		if (p->m_growSize != -1) {
