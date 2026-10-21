@@ -1,6 +1,41 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10211160 size=0x6c
+#include "CTriggerBombSite.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+struct CTouchList568 {
+    void sub_10010794(void *pOther, void *pBombSite, int a);
+};
+struct CBombSitePlayer {
+    char m_pad[0x1cb8];
+    unsigned int m_hBombSite;
+};
+struct CTriggerBombSiteUnit : CTriggerBombSite {
+    char sub_10007d15(void *pOther);
+};
+
+void CTriggerBombSite::vfunc176(void *pOther)
+{
+    if (((CTriggerBombSiteUnit *)this)->sub_10007d15(pOther))
+        ((CTouchList568 *)((char *)this + 0x568))->sub_10010794(pOther, this, 0);
+    CBombSitePlayer *pPlayer = *(CBombSitePlayer **)((char *)pOther + 0xa8);
+    if (pPlayer) {
+        unsigned int h = pPlayer->m_hBombSite;
+        CGlobalEntityList_Ent *pEnt;
+        if (h == 0xffffffff)
+            pEnt = 0;
+        else {
+            CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+            pEnt = pSlot->m_Serial == (int)(h >> 13) ? pSlot->m_pEntity : 0;
+        }
+        if ((void *)pEnt == (void *)this)
+            pPlayer->m_hBombSite = 0xffffffff;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211280 size=0xd1
 #include "CTriggerBombSite.h"
 
