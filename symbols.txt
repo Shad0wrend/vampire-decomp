@@ -3473,6 +3473,7 @@
 0x10010113 func   _npc_VSheriffMan npc_VSheriffMan
 0x10010118 func   ?sub_103f9dd0@@YAHXZ sub_103f9dd0
 0x1001011d func   ?vfunc5@CPhysConstraintSystem@@UAEPAV1@I@Z CPhysConstraintSystem::vfunc5
+0x10010122 func   ?vfunc241@CGibShooter@@QAEPAVCGib@@XZ CGibShooter::vfunc241
 0x10010140 func   ?sub_1024a980@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1024a980
 0x1001014a func   ?sub_10334790@CBaseCombatCharacter@@QAEHPBD@Z CBaseCombatCharacter::sub_10334790
 0x10010163 func   ?sub_1007ee00@@YIXPAH@Z sub_1007ee00

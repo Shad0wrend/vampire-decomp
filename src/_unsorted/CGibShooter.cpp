@@ -59,6 +59,43 @@ void CGibShooter::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f48f0 size=0xbe
+#include "CGibShooter.h"
+#include "CGib.h"
+
+struct CGibCvar { virtual void v0(); virtual bool vfunc1(); char m_pad[0x28]; int m_nValue; };
+struct CGibCvarRef { char m_pad[4]; CGibCvar *m_pCvar; };
+struct CGibCvarMgr { virtual void v0(); virtual void v1(); virtual CGibCvarRef *vfunc2(const char *name); };
+struct CGibEngine { virtual void v0(); virtual void v1(); virtual int vfunc2(int a, int b); };
+
+extern CGibCvarMgr *g_1070b234;
+extern CGibEngine *g_1070b244;
+extern void (__cdecl *g_109f362c)(const char *fmt, ...);
+extern void (__cdecl *g_109f3658)(int level, const char *fmt, ...);
+extern char g_10538764[];
+extern char g_10566074[];
+extern "C" void *__cdecl __RTDynamicCast(void *inptr, long vfdelta, void *srcType, void *targetType, int isReference);
+CBaseEntity *sub_10002e32(const char *classname);
+
+CGib *CGibShooter::vfunc241()
+{
+	CGibCvarRef *pRef = g_1070b234->vfunc2("violence_hgibs");
+	if (pRef) {
+		if (pRef->m_pCvar->vfunc1() || pRef->m_pCvar->m_nValue == 0)
+			return 0;
+	}
+	CGib *pGib = (CGib *)__RTDynamicCast(sub_10002e32("gib"), 0, g_10538764, g_10566074, 0);
+	if (!pGib)
+		g_109f362c("classname %s used to create wrong class type\n");
+	pGib->sub_1012b080("models/gibs/hgibs.mdl");
+	pGib->m_n730 = 0xf7;
+	if (m_nBodies <= 1)
+		g_109f3658(2, "GibShooter Body is <= 1!\n");
+	pGib->m_nBody = g_1070b244->vfunc2(1, m_nBodies - 1);
+	return pGib;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5aa0 size=0x1e
 #include "CGibShooter.h"
 
