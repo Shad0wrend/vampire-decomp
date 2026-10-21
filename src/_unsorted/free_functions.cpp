@@ -27862,6 +27862,38 @@ int CUnknown101346e0::sub_101346e0(int steps)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134980 size=0x7d
+#include "CBaseEntity.h"
+
+void *sub_100aa720(int size);
+extern void *vt_104475c4[];
+extern void *vt_104688c4[];
+extern char g_10578d0c[];
+void __fastcall sub_10002ddd(void *pThis);
+
+// TARGET: logic_compare
+extern "C" CBaseEntity *logic_compare()
+{
+	void *mem = sub_100aa720(0x4b8);
+	CBaseEntity *p;
+	if (mem)
+	{
+		p = (CBaseEntity *)mem;
+		p->sub_1009d980(0);
+		*(void ***)p = vt_104475c4;
+		sub_10002ddd((char *)p + 0x458);
+		sub_10002ddd((char *)p + 0x470);
+		sub_10002ddd((char *)p + 0x488);
+		sub_10002ddd((char *)p + 0x4a0);
+		*(void ***)p = vt_104688c4;
+	}
+	else
+		p = 0;
+	p->vfunc106(g_10578d0c);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134a80 size=0x160
 struct ISaveRestoreOps;
 struct datamap_t;
