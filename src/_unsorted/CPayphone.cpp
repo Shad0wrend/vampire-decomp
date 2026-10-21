@@ -37,6 +37,77 @@ void CPayphone::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aabf0 size=0xcd
+#include "CPayphone.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CGlobalVars_101aabf0
+{
+	char m_pad0000[0xc];
+	float curtime;	// 0x0c
+};
+extern CGlobalVars_101aabf0 *g_1070b228;
+
+// the entity vtable up to slot 250
+struct CPayphoneSlots250
+{
+	CAI_NPC_V(0) CAI_NPC_V(1) CAI_NPC_V(2) CAI_NPC_V(3) CAI_NPC_V(4) CAI_NPC_V(5) CAI_NPC_V(6) CAI_NPC_V(7) CAI_NPC_V(8) CAI_NPC_V(9)
+	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9)
+	CAI_NPC_V10(10) CAI_NPC_V10(11) CAI_NPC_V10(12) CAI_NPC_V10(13) CAI_NPC_V10(14) CAI_NPC_V10(15) CAI_NPC_V10(16) CAI_NPC_V10(17) CAI_NPC_V10(18) CAI_NPC_V10(19)
+	CAI_NPC_V10(20) CAI_NPC_V10(21) CAI_NPC_V10(22) CAI_NPC_V10(23) CAI_NPC_V10(24)
+	virtual float vfunc250(int a);
+};
+
+// the NPC the payphone listens to (an entity whose activity / sequence state is copied)
+struct CPayphoneTarget
+{
+	char m_pad0000[0x6f8];
+	int m_n6f8;	// 0x6f8
+	char m_pad06fc[0xff0 - 0x6fc];
+	int m_nActivity;	// 0xff0
+};
+
+struct CPayphoneHandle
+{
+	unsigned int m_Index;
+
+	CPayphoneTarget *Get() const
+	{
+		if (m_Index != -1) {
+			CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[m_Index & 0x1fff];
+			if (pSlot->m_Serial == (int)(m_Index >> 13))
+				return (CPayphoneTarget *)pSlot->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+#define F(T, off) (*(T *)((char *)this + off))
+
+void CPayphone::vfunc431()
+{
+	((CPayphoneSlots250 *)this)->vfunc250(0);
+	CPayphoneTarget *pTarget = ((CPayphoneHandle *)((char *)this + 0xfe8))->Get();
+	if (pTarget) {
+		sub_102c1400();
+		int nActivity = pTarget->m_nActivity;
+		if (nActivity != F(int, 0xff0)) {
+			sub_10272650(nActivity);
+			F(int, 0x6f0) = sub_1008dc40(nActivity, -1);
+			sub_10090950();
+		}
+		F(int, 0x6f8) = pTarget->m_n6f8;
+		F(float, 0x17c) = g_1070b228->curtime + 0.01f;
+	} else {
+		if (sub_1000b005())
+			sub_102c1400();
+		sub_10272650(1);
+		F(float, 0x17c) = g_1070b228->curtime + 0.25f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aaee0 size=0x77
 #include "CPayphone.h"
 

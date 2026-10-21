@@ -2634,6 +2634,7 @@
 0x1000b7df func   _info_node_chang_column info_node_chang_column
 0x1000b7f8 func   ?sub_10072bf0@CUnknown10072f10@@QAEPAV1@PBV1@@Z CUnknown10072f10::sub_10072bf0
 0x1000b811 func   ?sub_1031a0e0@@YAXPAUCChainNodeStub@@0@Z sub_1031a0e0
+0x1000b81b func   ?vfunc431@CPayphone@@QAEXXZ CPayphone::vfunc431
 0x1000b839 func   ?sub_101d6d50@S101d6d50@@QAEXXZ S101d6d50::sub_101d6d50
 0x1000b843 func   ?sub_100a8220@CUnknown100a8220@@QAEIXZ CUnknown100a8220::sub_100a8220
 0x1000b84d func   ?sub_101312f0@CUnk101312f0@@QAEXPAH@Z CUnk101312f0::sub_101312f0
