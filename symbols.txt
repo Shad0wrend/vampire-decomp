@@ -1538,6 +1538,7 @@
 0x10007752 func   ?sub_10245f50@SConVar@@QAEXH@Z SConVar::sub_10245f50
 0x1000775c func   ?sub_104281f0@@YAHHHHHH@Z sub_104281f0
 0x10007766 func   ?vfunc103@CPropSlashable@@UAEXXZ CPropSlashable::vfunc103
+0x1000777f func   ?vfunc174@CRagdollPropSpecial@@UAEXPAVCBaseEntity@@@Z CRagdollPropSpecial::vfunc174
 0x100077a2 func   ?vfunc495@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc495
 0x100077c0 func   ?sub_104047d0@@YAHXZ sub_104047d0
 0x100077de func   ?sub_10196bb0@@YAPAXXZ sub_10196bb0
