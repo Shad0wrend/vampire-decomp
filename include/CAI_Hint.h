@@ -136,4 +136,19 @@ public:
 	virtual void vfunc118();
 	virtual void vfunc119();
 	void sub_10005e98();	// as in CPhysForce (transplant)
+
+	char m_pad0004[0x4f8];
+	CAI_HintItem m_items4fc[8];
+	CAI_HintItem m_item5bc;
+	char m_pad05d4[4];
+	CAI_Hint *m_pNext;	// +0x5d8: previous head of the global hint list
+	char m_pad05dc[4];
+	int m_n5e0;
+	char m_pad05e4[8];
+	int m_n5ec;
+	char m_pad05f0[4];
+	CAI_HintItem m_item5f4;
+
+	void sub_1009d980(int a);	// entity base constructor
+	CAI_Hint *sub_102d2e30();
 };
