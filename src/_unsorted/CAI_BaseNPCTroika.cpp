@@ -1116,6 +1116,60 @@ char CAI_BaseNPCTroika::sub_102b57c0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b6b50 size=0xaa
+#include "CAI_BaseNPCTroika.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CTroikaSlotsX
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV100(1) PV100(2) PV100(3) PV100(4)
+	PV10(50) PV10(51) PV10(52) PV10(53) PV10(54) PV10(55)
+	PV(560) PV(561) PV(562) PV(563) PV(564) PV(565)
+	virtual bool vfunc566(CBaseEntity *pHint);
+};
+
+struct CRandomX
+{
+	virtual void v0();
+	virtual float vfunc1(float flMin, float flMax);
+};
+
+struct CGlobalVars1070b228
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+
+struct CWeaponRangeX
+{
+	char m_pad0000[0x8c0];
+	float m_fl8c0;
+};
+
+extern CGlobalVars1070b228 *g_1070b228;
+extern CRandomX *g_1070b244;
+int __cdecl sub_102d2980(CAI_BaseNPCTroika *pNPC, int a, int b, float c, int d, int e);
+
+// TARGET: CAI_BaseNPCTroika::vfunc609
+int CAI_BaseNPCTroika::vfunc609(char bForce)
+{
+	if (m_p6444 && ((CTroikaSlotsX *)this)->vfunc566(m_p6444))
+		return (int)m_p6444;
+	if (!bForce && !(g_1070b228->curtime >= m_f6440))
+		return 0;
+	m_f6440 = g_1070b244->vfunc1(2.0f, 2.5f) + g_1070b228->curtime;
+	float range = 1024.0f;
+	if (sub_10007e19())
+		range = ((CWeaponRangeX *)sub_10007e19())->m_fl8c0;
+	return ::sub_102d2980(this, 8, 0x10, range, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf6e0 size=0x68
 #include "CAI_BaseNPCTroika.h"
 
