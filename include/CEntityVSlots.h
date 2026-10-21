@@ -1,4 +1,4 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 62, 64, 86, 94, 107, 118, 122, 158, 161, 167, 173,
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 42, 62, 64, 86, 94, 107, 118, 122, 158, 161, 167, 173,
 // 202, 212, 216, 217 / 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 274, 346, 360, 381 and 457 of an entity class that does not model its vtable.
 #pragma once
 
@@ -12,7 +12,11 @@ class CEntityVSlots
 {
 public:
 	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
-	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5)
+	EVS10(1) EVS10(2) EVS10(3)
+	EVS(40) EVS(41)
+	virtual void slot42(CEntityVSlots *pEntity);	// takes an entity (CFuncMonitor::vfunc77 hands it the camera)
+	EVS(43) EVS(44) EVS(45) EVS(46) EVS(47) EVS(48) EVS(49)
+	EVS10(5)
 	EVS(60) EVS(61)
 	virtual void slot62(const float *pOrigin);	// "SetAbsOrigin"-like
 	EVS(63)
