@@ -67301,6 +67301,38 @@ Helper1030f680 *Helper1030f680::sub_1030f680(const char *s, int v1, int v2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030f940 size=0x85
+#include "CUnknown1030f940.h"
+
+struct CGlobalVarsView {
+	char m_pad[0xc];
+	float m_flCurTime;
+};
+extern CGlobalVarsView *g_1070b228;
+
+int sub_101bb0f0();
+CUnknown1030f940Rec *sub_101bb150(int index);
+
+void CUnknown1030f940::sub_1030f940()
+{
+	m_iHead = -1;
+	unsigned int mask = m_pNpc->vfunc473();
+	if (mask) {
+		int index = sub_101bb0f0();
+		while (index != -1) {
+			CUnknown1030f940Rec *pRec = sub_101bb150(index);
+			if (pRec && (pRec->m_nMask & mask) && sub_1030f7b0(pRec)) {
+				pRec->m_iPrev = m_iHead;
+				m_iHead = index;
+			}
+			index = pRec->m_iNext;
+		}
+	}
+	m_pNpc->vfunc470();
+	m_flLastUpdate = g_1070b228->m_flCurTime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fa00 size=0x75
 #include "CAI_Senses.h"
 #include "CEntityVSlots.h"
