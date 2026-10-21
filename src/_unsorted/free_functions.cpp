@@ -44955,6 +44955,48 @@ int CUnknown10205030::sub_10205030(int param)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205100 size=0xfa
+#include "CUnknown10204e90.h"
+#include "CVStatList_t.h"
+
+int sub_10202780(int kind);
+
+struct CTraitEffectSet {
+	CVStatCost_t *sub_101f9e80(int kind, int index);	// stub 0x1000484f
+};
+
+int CUnknown10204e90::sub_10205100(void *pCharacter)
+{
+	int nIndex = m_nIndex;
+	CVStatListSet *pSet = CVStatListSet::Of(pCharacter);
+	CVStatList_t *pList = pSet->Find(sub_10202780(m_nKind));
+	int nBase = pList->sub_10200ca0(nIndex);
+	int nValue = sub_10204e90((int)pCharacter);
+	if (m_nIndex != -1) {
+		switch (m_nKind) {
+		case 0:
+		case 1:
+		case 2: {
+			CVStatCost_t *pCost = ((CTraitEffectSet *)((char *)pCharacter + 0x13dc))->sub_101f9e80(m_nKind, m_nIndex);
+			return sub_10204d30(pCost, nValue, nBase);
+		}
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+			break;
+		default:
+			return 30000;
+		}
+		return 30000;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102056d0 size=0x9
 struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
