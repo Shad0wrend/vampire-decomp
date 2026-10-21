@@ -16,6 +16,7 @@ public:
 	virtual CGameRules *vfunc0(unsigned int flags);	// scalar deleting destructor
 	virtual char vfunc19(CBaseEntity *pPlayer, CBaseEntity *pWeapon);	// "FShouldSwitchWeapon": the player can switch to the weapon (CanSwitchTo, team test) and it outweighs the active weapon (slot 345), true without an active weapon
 	virtual CBaseEntity *vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurrentWeapon);	// "GetNextBestWeapon": over the player's 0xe0 weapon slots, the first owned weapon that has the same weight as pCurrentWeapon and is usable, else the usable one with the highest weight above the weight of the best so far; null when pCurrentWeapon cannot be switched from
+	virtual void vfunc28(void *pEdict);	// "ClientDisconnected": the player behind the edict fires game_playerleave, logs "<name><userid>" disconnected and is removed (slot 442(1)); clears the byte at +0x22dc
 	virtual float vfunc30(int a);
 	virtual void vfunc35(CBaseEntity *pPlayer);	// "EquipPlayer": every game_player_equip entity equips the player (slot 175); without one gives weapon_crowbar, weapon_9mmhandgun and 0x44 SmallRound
 	virtual float vfunc38(int a);
