@@ -346,6 +346,7 @@
 0x10002748 func   ?vfunc12@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc12
 0x1000274d func   ?sub_1027fbf0@CUnknown1027fbf0@@QAEPAU1@XZ CUnknown1027fbf0::sub_1027fbf0
 0x1000275c func   _scripted_sequence scripted_sequence
+0x10002770 func   ?sub_1018f750@CBreakableProp@@QAEXPAUinputdata_t@@@Z CBreakableProp::sub_1018f750
 0x10002784 func   ?sub_101030e0@CUnknown101030e0@@QAEXH@Z CUnknown101030e0::sub_101030e0
 0x10002789 func   _npc_VAsianVampire npc_VAsianVampire
 0x100027a2 func   ?sub_10359ba0@@YIXPAH@Z sub_10359ba0

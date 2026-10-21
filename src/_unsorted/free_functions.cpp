@@ -32903,6 +32903,43 @@ void CUnknown1018f700::sub_1018f700(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f750 size=0x77
+#include "CBreakableProp.h"
+#include "inputdata_t.h"
+#include "COutputEvent.h"
+
+#define S4(n) virtual void s##n##a(); virtual void s##n##b(); virtual void s##n##c(); virtual void s##n##d();
+#define S16(n) S4(n##0) S4(n##1) S4(n##2) S4(n##3)
+#define S64(n) S16(n##0) S16(n##1) S16(n##2) S16(n##3)
+struct CSlotView266
+{
+	S64(a) S64(b) S64(c) S64(d)
+	virtual void s256a(); virtual void s256b(); virtual void s256c(); virtual void s256d();
+	virtual void s260a(); virtual void s260b(); virtual void s260c(); virtual void s260d();
+	virtual void s264a(); virtual void s264b();
+	virtual void slot266(void *pActivator);
+};
+
+struct CBreakablePropView
+{
+	char m_pad0000[0x748];
+	COutputEvent m_OnHealthChanged;
+};
+
+// TARGET: CBreakableProp::sub_1018f750
+void CBreakableProp::sub_1018f750(inputdata_t *pInput)
+{
+	CBreakablePropView *v = (CBreakablePropView *)this;
+	m_iHealth += pInput->value.fieldType == 4 ? pInput->value.iValue : 0;
+	void *pActivator = pInput->pActivator;
+	int nHealth = m_iHealth;
+	((CVariantCopy *)&v->m_OnHealthChanged)->sub_1000b320(4, &nHealth);
+	v->m_OnHealthChanged.sub_100cd300(*(CVariantCopy *)&v->m_OnHealthChanged, pActivator, (void *)this, 0);
+	if (m_iHealth <= 0)
+		((CSlotView266 *)this)->slot266(pInput->pActivator);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f960 size=0x6d
 #include "CUnknown1018f960.h"
 #include "COutputEvent.h"
