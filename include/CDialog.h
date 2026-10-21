@@ -50,4 +50,7 @@ public:
 	void sub_100e4780();	// "CDialog::NPCNotifyDoneTalking": scope trace, runs the pending NPC event script, then with a table: sub_100e4bd0(0) when the goodbye flag (bit 5 of +0x2810) is set, else sub_100e5240() when the menu flag (bit 4) is set
 	void sub_100e4bd0(int a);	// stub 0x1000a448
 	void sub_100e5240();	// stub 0x1000efac
+	DialogLine *sub_100e19f0(int index);	// stub 0x1000154b: the line of that index in the table
+	const char *sub_100e1580(DialogLine *pLine);	// stub 0x1000c676: the line's text for the speaker's clan, null when it has none
+	const char *sub_100e1ad0(int index);	// "CDialog::get_display_text": scope trace, null without the line or a live NPC; else the line's clan text, or the plain text (+4) / the alternative (+8) picked by the NPC's flag
 };
