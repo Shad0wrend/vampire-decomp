@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CNPC_VHuman.h"
+#include "COutputEvent.h"
 
 class CNPC_VAndreiBlood : public CNPC_VHuman
 {
@@ -19,6 +20,7 @@ public:
 	void sub_10015839(int a);	// slot 616 implementation shared with CAI_BaseNPCTroika
 	virtual CAI_BaseNPC *vfunc5(unsigned int flags);	// as in CPhysForce (transplant); VC6 has no covariant returns
 	void sub_10004110();	// as in CPhysForce (transplant)
+	void sub_1035cd00();	// destructor body (stub 0x10004110): scope trace "CNPC_VAndreiBlood::Destructor", vtables, releases the two entities behind the handles at +0x66e0 / +0x66e4, the output at +0x6664, then the Troika destructor body
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void vfunc420();	// "CNPC_VAndreiBlood::NPCInit": scope trace, the CNPC_VVampireBoss version, then copies the global vector at 0x1070d1b0 to +0x66c0
 	void sub_103c5840();	// CNPC_VVampireBoss::vfunc420, called directly
@@ -33,7 +35,9 @@ public:
 	void sub_103c4ef0();	// CNPC_VVampire::vfunc103 (stub 0x10014876), called directly
 	void sub_1035e950();	// stub 0x1000a6f0, called by Spawn last
 
-	char m_pad65c0[0x66b8 - 0x65c0];
+	char m_pad65c0[0x6664 - 0x65c0];
+	COutputEvent m_Output6664;
+	char m_pad667c[0x66b8 - 0x667c];
 	int m_n66b8;
 	int m_n66bc;
 	char m_pad66c0[0x66cc - 0x66c0];
@@ -45,4 +49,7 @@ public:
 	char m_b66d4;
 	char m_pad66d5[3];
 	int m_n66d8;
+	char m_pad66dc[4];
+	unsigned int m_h66e0;
+	unsigned int m_h66e4;
 };
