@@ -28,4 +28,5 @@ public:
 	CAI_LocalNavigator *vfunc0(unsigned int flags);
 	void sub_10012d73();
 	void sub_102ddb30();	// destructor body: frees the data object at +0x18 and resets the vtable pointers
+	void sub_102ddc00(void *pMovementSink);	// "CAI_LocalNavigator::Init" (stub 0x10012878): takes the navigator's movement sink (its secondary base at +0x10)
 };
