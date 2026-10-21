@@ -13,7 +13,12 @@ public:
 class CTraitEffectTable	// the table behind the global at 0x1074df78
 {
 public:
-	struct Entry { char m_pad[8]; const char *m_pszName; };	// the name is at +8
+	struct Entry
+	{
+		char m_pad[8];
+		const char *m_pszName;	// 0x08
+		const char **NameRef() { return &m_pszName; }
+	};
 	Entry *sub_101f8480(int id);	// stub 0x1000c5d1: the entry of a trait effect id
 };
 
@@ -22,8 +27,7 @@ class CUnknown101dff00
 public:
 	char m_pad0000[4];
 	const char *m_pszName;	// 0x04
-	CUnknown101df000 m_Action0;	// 0x08 (the five records are 0xac bytes apart)
-	char m_pad00b4[0x364 - 0x08 - sizeof(CUnknown101df000)];
+	char m_pad0008[0x364 - 0x08];	// five 0xac byte CUnknown101df000 records at +0x08, +0xb4, +0x160, +0x20c, +0x2b8
 	char m_RangeStorage[8];	// 0x364: a Range (min, max)
 	int m_nTraitEffect;	// 0x36c, -1 when none
 
