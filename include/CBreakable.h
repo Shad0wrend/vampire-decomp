@@ -14,9 +14,14 @@ public:
 	void sub_1010db90(inputdata_t *pInput);	// "CBreakable::InputAddHealth": like InputSetHealth, but the integer value of the input is added to the health
 	bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 "CBreakable::KeyValue", declared as a plain member: "material" (0..9, else 1) goes to +0x454, "gibmodel" to +0x460 (as a pooled string); "deadmodel", "shards" and "lip" are accepted and ignored; everything else goes to CBaseEntity::KeyValue
 	void sub_1010d6a0();	// slot 103 "CBreakable::Spawn" (stub 0x1000a10f), called directly by CPushable::Spawn
+	void sub_1010dc50(inputdata_t &data);	// "CBreakable::InputHurt": the input's integer (0 for other types) is taken off the health at +0x210, the new health is set into the OnHealthChanged output at +0x484 which is fired (activator, this); a health of 0 or less breaks it
 
-	char m_pad0000[0x454];
+	char m_pad0000[0x210];
+	int m_iHealth;	// 0x210
+	char m_pad0214[0x454 - 0x214];
 	int m_nMaterial;	// 0x454
 	char m_pad0458[0x460 - 0x458];
 	int m_iszGibModel;	// 0x460
+	char m_pad0464[0x484 - 0x464];
+	char m_out0484[0x18];	// OnHealthChanged: a variant output (the variant value first, then the event)
 };
