@@ -32,7 +32,9 @@ public:
 	virtual void vfunc68(); virtual void vfunc69();
 	virtual void vfunc70(); virtual void vfunc71(); virtual void vfunc72(); virtual void vfunc73(); virtual void vfunc74();
 	virtual void vfunc75(int nValue);	// slot 75 (+0x12c): WriteByte
-	virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78(); virtual void vfunc79();
+	virtual void vfunc76(); virtual void vfunc77();
+	virtual void vfunc78(int nValue);	// slot 78 (+0x138): a message write taking one value
+	virtual void vfunc79();
 	virtual void vfunc80(); virtual void vfunc81(); virtual void vfunc82(); virtual void vfunc83();
 	virtual int vfunc84(int a);	// slot 84 (+0x150): Cmd_Argv (a char pointer)
 	virtual int vfunc85();	// slot 85 (+0x154): Cmd_Argc
