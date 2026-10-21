@@ -190,6 +190,39 @@ void CNPC_VGhoulCroucher::vfunc24(void *pVictim)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037bf60 size=0xe8
+#include "CNPC_VGhoulCroucher.h"
+#include "ScopeTrace.h"
+
+struct CGlobalVarsGC
+{
+    char pad[0xc];
+    float curtime;
+};
+
+extern CGlobalVarsGC *g_1070b228;
+
+static inline void *GetCharacter(CBaseEntity *pEnt)
+{
+    if (!pEnt)
+        return 0;
+    return *(void **)((char *)pEnt + 0xa8);
+}
+
+void CNPC_VGhoulCroucher::vfunc174(CBaseEntity *pOther)
+{
+    ScopeTrace trace("CNPC_VGhoulCroucher::StartTouch", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    sub_100a49d0(pOther);
+    void *pCharacter = GetCharacter(pOther);
+    if (pCharacter || *(void **)((char *)pOther + 0x94))
+        sub_1037b6e0((int)pOther);
+    if (m_b6665 && pCharacter && g_1070b228->curtime > m_flNext666c) {
+        m_flNext666c = g_1070b228->curtime + 5.0;
+        sub_1037c090(pCharacter, 5.0f);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037c1c0 size=0xe8
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
