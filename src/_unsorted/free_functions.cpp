@@ -41076,6 +41076,44 @@ int *sub_101c72f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7690 size=0xf9
+#include "CChangeLevel.h"
+#include "CGlobalEntityList.h"
+#include "ConVar.h"
+
+extern "C" int _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+extern CGlobalEntityList g_106eb5d8;
+extern void (*g_109f364c)(const char *pszFormat, ...);	// DevWarning
+ConVar *sub_10245660(const char *pszName);
+
+CBaseEntity *sub_101c7690(const char *pLandmarkName, CChangeLevel *pCaller)
+{
+	static ConVar *developer = sub_10245660("developer");
+	if (pLandmarkName) {
+		CBaseEntity *pLandmark = g_106eb5d8.sub_100f7770(0, pLandmarkName, 0, 0);
+		while (pLandmark) {
+			const char *pszClass = pLandmark->m_classname11c;
+			if (!pszClass)
+				pszClass = g_106b8540;
+			if (_strcmpi(pszClass, "info_landmark") == 0)
+				return pLandmark;
+			pLandmark = g_106eb5d8.sub_100f7770(pLandmark, pLandmarkName, 0, 0);
+		}
+	}
+	if (!pCaller) {
+		g_109f364c("Can't find landmark %s\n", pLandmarkName);
+		return 0;
+	}
+	g_109f364c("%s can't find landmark %s\n", pCaller->sub_1000b5cd(), pLandmarkName);
+	if (developer && developer->GetInt()) {
+		pCaller->vfunc67();
+		*(unsigned int *)((char *)pCaller + 0x224) |= 2;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c8850 size=0x43
 #include "CTriggerPush.h"
 void *sub_100aa720(int size);

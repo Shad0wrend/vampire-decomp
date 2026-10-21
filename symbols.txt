@@ -268,6 +268,7 @@
 0x1000211c func   _sheriff_teleport_bats sheriff_teleport_bats
 0x10002121 func   ?sub_10236a30@@YAHXZ sub_10236a30
 0x1000212b func   _item_k_shrekhub_three_key item_k_shrekhub_three_key
+0x10002149 func   ?sub_101c7690@@YAPAVCBaseEntity@@PBDPAVCChangeLevel@@@Z sub_101c7690
 0x10002153 func   _item_g_car_stereo item_g_car_stereo
 0x10002180 func   ?sub_103629d0@CNPC_VAsianVampire@@QAE_NPBMM@Z CNPC_VAsianVampire::sub_103629d0
 0x100021a8 func   ?sub_1022cfd0@UtlMem@@QAEXXZ UtlMem::sub_1022cfd0
