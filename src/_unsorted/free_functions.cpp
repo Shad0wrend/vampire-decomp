@@ -25675,6 +25675,58 @@ void CUnknown1014ca10::sub_1014ca10(unsigned char r, unsigned char g, unsigned c
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014cad0 size=0xd3
+#include "CUnknown1014cad0.h"
+
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CBurstEntity
+{
+	S100(a) S100(b) S10(c0)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+	virtual float *vfunc217();	// GetAbsOrigin
+	virtual void e0();
+	virtual float *vfunc219();	// GetAbsAngles
+};
+
+struct CBurstEffects
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void vfunc4(const float *pOrigin, const float *pDirection, float flSize, float flScale);
+};
+extern CBurstEffects *g_10566258;
+
+void sub_10139610(const float *pAngles, float *pForward, float *pRight, float *pUp);
+void sub_101cd940(CBaseEntity *pEntity);
+
+void CUnknown1014cad0::sub_1014cad0()
+{
+	int i = 0;
+	if (i < m_nRecords) {
+		unsigned int *pHandle = &m_hFirst;
+		do {
+			unsigned int h = *pHandle;
+			EntInfo *e;
+			if (h != 0xffffffff && (e = &g_10566458->m_entries[h & 0x1fff], e->m_serial == (int)(h >> 13)) && e->m_pEntity) {
+				CBurstEntity *pEnt = (CBurstEntity *)e->m_pEntity;
+				float vecForward[3];
+				sub_10139610(pEnt->vfunc219(), vecForward, 0, 0);
+				g_10566258->vfunc4(pEnt->vfunc217(), vecForward, 32.0f, 30.0f);
+				sub_101cd940((CBaseEntity *)pEnt);
+			}
+			i++;
+			pHandle += 5;
+		} while (i < m_nRecords);
+	}
+	m_nRecords = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ed40 size=0x43
 #include "CPhysicsAnimlink.h"
 void *sub_100aa720(int size);

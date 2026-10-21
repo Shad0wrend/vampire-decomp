@@ -463,6 +463,7 @@
 0x10003148 func   ?sub_10032fb0@S10032fb0@@QAEXH@Z S10032fb0::sub_10032fb0
 0x1000315c func   ?sub_10396dc0@CNPC_VMingXiao@@QAEHXZ CNPC_VMingXiao::sub_10396dc0
 0x10003161 func   ?sub_10325fa0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10325fa0
+0x1000316b func   ?sub_1014cad0@CUnknown1014cad0@@QAEXXZ CUnknown1014cad0::sub_1014cad0
 0x10003175 func   ?sub_10091740@CBaseAnimating@@QAEMXZ CBaseAnimating::sub_10091740
 0x10003193 func   ??0CDebugSaveRestoreOps@@QAE@XZ CDebugSaveRestoreOps::CDebugSaveRestoreOps
 0x100031a7 func   ?sub_1009c390@CBaseEntity@@QAEXHPBDPBHH@Z CBaseEntity::sub_1009c390
