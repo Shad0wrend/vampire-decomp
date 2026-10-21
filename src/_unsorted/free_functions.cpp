@@ -6424,6 +6424,42 @@ void sub_10069980(int pFilter, int delayBits, const float *pOrigin, const float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006a370 size=0x6c
+#include "CBaseEntity.h"
+#include "CUnknown1019d130.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+struct TEPartHudX {
+	char pad[0xc];
+	int m_nEntIndex;	// 0xc
+	int m_nModelIndex;	// 0x10
+	int m_nParam;	// 0x14
+	char m_bFlag;	// 0x18
+	void sub_10013435(CUnknown1019d130 *pFilter, int a);
+};
+extern TEPartHudX g_106c6b58;
+
+struct TERecipientX { CBaseEntity *sub_1015d680(int a); };
+
+void __cdecl sub_1006a370(CUnknown1019d130 *pFilter, int a, TERecipientX *pTarget, int c, char d, const char *pszModel)
+{
+	if (pTarget) {
+		CBaseEntity *pEnt = pTarget->sub_1015d680(0);
+		if (pEnt) {
+			int edict = pEnt->m_pEdict2e0;
+			g_106c6b58.m_nEntIndex = g_1070b22c->vfunc35(edict);
+			int model = (int)pszModel;
+			g_106c6b58.m_nModelIndex = g_1070b22c->vfunc17(model, 0);
+			g_106c6b58.m_nParam = c;
+			g_106c6b58.m_bFlag = d;
+			g_106c6b58.sub_10013435(pFilter, a);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006a7b0 size=0xe1
 #include "SendProp.h"
 
