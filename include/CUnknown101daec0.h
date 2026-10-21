@@ -8,7 +8,8 @@ public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual IKVNodeView *vfunc2(const char *name);	// sub-node by name
-	virtual void vfunc3(); virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7();
+	virtual IKVNodeView *vfunc3();	// next sibling node
+	virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7();
 	virtual void vfunc8(); virtual void vfunc9();
 	virtual int vfunc10(const char *key, int defaultValue);	// +0x28: integer value
 	virtual void vfunc11();
