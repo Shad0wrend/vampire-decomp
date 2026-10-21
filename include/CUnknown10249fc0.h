@@ -1,0 +1,32 @@
+// CUnknown10249fc0: a handle to a CUtlRBTree16 instance (its sentinel link lives at 0x1088ae24) that keeps a second
+// container at +0x18; real name not yet known.
+#pragma once
+
+#include "CUtlRBTree16.h"
+
+struct CUnknown10249fc0_Key	// a two byte value passed by value
+{
+	unsigned short m_v;
+};
+
+class CUnknown10249fc0_Sub
+{
+public:
+	int sub_1024b830(CUnknown10249fc0_Key key);	// stub 0x10002202
+};
+
+class CUnknown10249fc0_Tree : public CUtlRBTree16At<0x1088ae24>
+{
+public:
+	CUnknown10249fc0_Sub m_sub;	// 0x18
+
+	const unsigned short *sub_1024a2e0(unsigned short i);	// the data of node i (stub 0x10007ce3)
+};
+
+class CUnknown10249fc0
+{
+public:
+	CUnknown10249fc0_Tree *m_pTree;	// 0x00
+
+	int sub_10249fc0(unsigned short i);	// 0 when the node's first link is its own index (or i is invalid), else the sub container's answer for the node's data
+};
