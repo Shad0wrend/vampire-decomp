@@ -20,3 +20,4 @@
 	void sub_10178590(Vector vecPos);	// stub 0x1000c79d (function 0x10178590): takes a position by value
 	void sub_101815b0(unsigned int flags);	// stub 0x10008562 (function 0x101815b0): clears the flag bits in the word at +0x1d60
 	CBaseEntity *sub_10161d20();	// resolves the placeholder entity of the handle at +0x1da4 (looked up through the "npc_VPlaceholder" object's link when stale) and, when found, places it at the player: origin / angles, owner, model name, sub_101d1280, the sub-object at +0x270 (slots 1 / 2) handed to sub_10011432, sub_10008c5b, flag bits 0x60 at +0x19c, slot 614; returns it
+	void sub_1017e760(int level);	// "Celerity %d" step: with level above 1 and a vector pair at +0x3c8 / +0x3d4 whose squared lengths are above 0 / 12, lowers the scrambled value of sub_1017df50 by one level
