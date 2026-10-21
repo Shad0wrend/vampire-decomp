@@ -2711,6 +2711,7 @@
 0x1000bc6c func   ?vfunc5@CNPC_VPlayerController@@QAEPAV1@I@Z CNPC_VPlayerController::vfunc5
 0x1000bc85 func   ?vfunc408@CNPC_VMingXiao@@QAEPBDH@Z CNPC_VMingXiao::vfunc408
 0x1000bc9e func   ?sub_1030fd20@S1030fc90@@QAEPAXPAI@Z S1030fc90::sub_1030fd20
+0x1000bcad func   ?vfunc431@CNPC_VGhoulCroucher@@QAEXXZ CNPC_VGhoulCroucher::vfunc431
 0x1000bcbc func   ?vfunc349@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::vfunc349
 0x1000bccb func   ?sub_1022a200@CSoundScheme@@QAEXXZ CSoundScheme::sub_1022a200
 0x1000bcd5 func   ?sub_101d72a0@List@@QAEHPBD@Z List::sub_101d72a0

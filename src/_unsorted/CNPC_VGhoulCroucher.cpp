@@ -131,6 +131,37 @@ void CNPC_VGhoulCroucher::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b3f0 size=0xca
+#include "CNPC_VGhoulCroucher.h"
+#include "CEnvParticle.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+float sub_101beed0(float flValue, float flMin, float flMax);
+
+static inline CEnvParticle *GetEmitter(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13))
+			return (CEnvParticle *)pSlot->m_pEntity;
+	}
+	return 0;
+}
+
+// TARGET: CNPC_VGhoulCroucher::vfunc431
+void CNPC_VGhoulCroucher::vfunc431()
+{
+	sub_10292de0();
+	if (m_b6665 && GetEmitter(m_h6670)) {
+		float flScale = 1.0f - sub_101beed0(m_fl6264, 200.0f, 600.0f);
+		if (flScale < 0.1)
+			flScale = 0.1f;
+		GetEmitter(m_h6670)->sub_100fb980(flScale);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037b9f0 size=0xc6
 #include "CNPC_VGhoulCroucher.h"
 #include "CEntityVSlots.h"
