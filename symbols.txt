@@ -250,6 +250,7 @@
 0x10001f82 func   ?vfunc350@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::vfunc350
 0x10001f9b func   _item_k_leopold_int_key item_k_leopold_int_key
 0x10001faa func   ?vfunc5@CWindowPane@@QAEPAV1@I@Z CWindowPane::vfunc5
+0x10001fbe func   ?sub_1013abc0@@YAXABVQuaternion@@0MAAV1@@Z sub_1013abc0
 0x10001fd7 func   ?vfunc62@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc62
 0x10001ff0 func   ?sub_102c6d40@UtlMem@@QAEXXZ UtlMem::sub_102c6d40
 0x10001ffa func   _item_d_holy_light item_d_holy_light
