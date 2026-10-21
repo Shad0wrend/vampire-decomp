@@ -10281,6 +10281,45 @@ void *CUnknown1007a2c0::sub_1007a2c0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007b7b0 size=0x17a
+#include "CUnknown1007b7b0.h"
+#include "CUnknown1007bb30.h"
+#include "CUnknown100732b0.h"
+
+struct S10072d60 { void sub_10072d60(const char *pszName); };
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl atoi(const char *);
+extern char g_10547b78[];
+extern char g_10547b64[];
+
+CUnknown1007a060Elem *CUnknown1007b7b0::sub_1007b7b0()
+{
+	CUnknown1007a060Elem *pElem = ((CUnknown1007a060 *)this)->sub_1007a060();
+	m_pReader->vfunc1(0);
+	((S10072d60 *)pElem)->sub_10072d60(m_pReader->vfunc0());
+	m_pReader->vfunc1(1);
+	if (_strcmpi(m_pReader->vfunc0(), g_10547b78))
+		m_pReader->vfunc3("expecting {");
+	while (1) {
+		m_pReader->vfunc1(1);
+		if (!_strcmpi(m_pReader->vfunc0(), g_10547b64))
+			break;
+		if (!_strcmpi(m_pReader->vfunc0(), "channel"))
+			sub_1007bbc0(pElem);
+		else if (!_strcmpi(m_pReader->vfunc0(), "faceposermodel"))
+			sub_1007baf0(pElem);
+		else if (!_strcmpi(m_pReader->vfunc0(), "bonerename"))
+			((CUnknown1007bb30 *)this)->sub_1007bb30((CUnknown1007bb30Dest *)pElem);
+		else if (!_strcmpi(m_pReader->vfunc0(), "active")) {
+			m_pReader->vfunc1(1);
+			((CUnknown100732b0 *)pElem)->sub_100732b0(atoi(m_pReader->vfunc0()) != 0);
+		} else
+			m_pReader->vfunc3("expecting channel got %s\n", m_pReader->vfunc0());
+	}
+	return pElem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b9b0 size=0x19
 struct S1007b9b0 {
 	char m_pad[0xac];
