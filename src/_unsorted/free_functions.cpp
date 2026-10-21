@@ -1613,6 +1613,67 @@ bool sub_10031c70(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032180 size=0x18a
+#include "ConVar.h"
+#include "Vector.h"
+
+#define V(n) virtual void v##n();
+#define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
+
+struct PhysObj_t {
+	V(0)
+	virtual char IsAsleep();
+	V(2) V(3) V(4) V(5) V(6) V(7) V(8) V(9)
+	V(10) V(11)
+	virtual float GetMass();
+	V(13) V(14) V(15) V(16) V(17) V(18) V(19)
+	V10(2) V10(3) V10(4) V10(5) V10(6)
+	virtual float GetEnergy();
+};
+
+struct PhysPoint_t {
+	V(0)
+	virtual void GetPosition(Vector *pOut);
+};
+
+struct ImpactEvent_t {
+	PhysObj_t *pObjects[2];
+	char pad08[0x10];
+	float flSpeed;
+	PhysPoint_t *pPoint;
+};
+
+extern ConVar *g_106b890c;
+extern ConVar *g_106b897c;
+extern ConVar *g_106b88ac;
+extern float g_104454c4;
+extern float g_1044913c;
+void sub_1000c1b7(Vector *pCenter, float flAmplitude, float flFrequency, float flDuration, float flRadius, int command, int airShake);
+
+void sub_10032180(ImpactEvent_t *pEvent, int index)
+{
+	int other = (index == 0);
+	float flMass = pEvent->pObjects[index]->GetMass();
+	if (pEvent->pObjects[index]->GetEnergy() != g_104454c4)
+		flMass = pEvent->pObjects[index]->GetEnergy();
+	if (flMass >= g_1044913c && pEvent->pObjects[other]->IsAsleep()) {
+		if (flMass > 2000.0f)
+			flMass = 2000.0f;
+		else if (flMass < g_1044913c)
+			flMass = g_1044913c;
+		if (pEvent->flSpeed > 30.0f) {
+			Vector vecPos;
+			pEvent->pPoint->GetPosition(&vecPos);
+			flMass = flMass * pEvent->flSpeed;
+			float flAmplitude = (g_106b890c->vfunc1() ? g_104454c4 : g_106b890c->m_fValue) / (g_1044913c * 30.0f) * flMass;
+			float flDuration = g_106b897c->vfunc1() ? 0.0f : g_106b897c->m_fValue;
+			float flFrequency = g_106b88ac->vfunc1() ? 0.0f : g_106b88ac->m_fValue;
+			sub_1000c1b7(&vecPos, flAmplitude, flFrequency, flDuration, flAmplitude * 60.0f, 0, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032660 size=0x8f
 #include "CCollisionEvent.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
