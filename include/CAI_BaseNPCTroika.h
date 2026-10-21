@@ -121,6 +121,8 @@ public:
 	int sub_102a0ed0(int a, int b, int c, int d);	// "CAI_BaseNPCTroika::CanStandAt" worker (unmatched, score 11): scope trace (entity name), sets the byte at +0x63da around the call sub_102e7270(a, b, c, d, 0, 0) of the object at +0x5d40 and returns its result
 	void sub_101a72b0(int unused);	// when the NPC behind the handle at +0x5ce4 (its object at +0x94) is in state 0 or 2 and accepts slot 585(1) on its slot 482, runs slot 583; with no such NPC runs the think setter (stub 0x1000556f) and stamps the next think; always stamps curtime + 1000000 at +0x5f74
 	int sub_102b6fe0(int a);	// scope-less schedule selection: with condition 0x48 (or else 0x3a) set, schedule 0xe9 (after slot 601(a) when the byte at +0x6078 is set) while slot 308 holds, else 0xcd (0xce); records the source file / line at +0x1b30 / +0x1b34; 0 without either condition
+	void sub_102b52a0(char bClearTarget, char bDead);	// resets the target (sub_10279a50(0), sub_10279b70(0)), clears bits of the flags at +0x5d8c, flushes the pending queue of slot 541; with bDead stamps the source line at +0x1b3c / +0x1b40 and sets the state +0x5cc4 to 1
+	void sub_1000dc38();	// stub 0x1000dc38 for 0x10273760, run by sub_102b52a0 when its first argument is set
 
 	char m_pad0004[0x14bc - 4];
 	unsigned int m_flags14bc;
