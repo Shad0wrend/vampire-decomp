@@ -297,6 +297,7 @@
 0x10002423 func   _prop_slashable prop_slashable
 0x10002428 func   ?sub_10097bd0@CBaseTransmitProxy@@QAEXXZ CBaseTransmitProxy::sub_10097bd0
 0x1000242d func   ?sub_10057a30@@YAXPAX@Z sub_10057a30
+0x10002437 func   ?sub_100cc130@CUnknown100cc130@@QAEXPAUinputdata_t@@@Z CUnknown100cc130::sub_100cc130
 0x1000243c func   ?vfunc2@CMoveHelperServer@@UAE_NPBXPBM@Z CMoveHelperServer::vfunc2
 0x1000244b func   ?sub_104014c0@@YAHXZ sub_104014c0
 0x10002455 func   ?sub_102a9690@CUnknown102a9690@@QAEXH@Z CUnknown102a9690::sub_102a9690

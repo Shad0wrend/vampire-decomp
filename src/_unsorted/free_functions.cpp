@@ -19445,6 +19445,33 @@ int *sub_100cb670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc130 size=0x6a
+#include "CUnknown100cc130.h"
+
+struct CGlobalVarsView {
+	char m_pad[0x14];
+	int m_nMaxClients;
+};
+extern CGlobalVarsView *g_1070b228;
+
+struct CPlayerView {
+	CUnknown100cc130 *sub_1017d630();
+	void sub_1017d6d0(float f);
+};
+CPlayerView *sub_101cd9e0(int index);
+
+void CUnknown100cc130::sub_100cc130(inputdata_t *pData)
+{
+	for (int i = 1; i <= g_1070b228->m_nMaxClients; i++) {
+		CPlayerView *pPlayer = sub_101cd9e0(i);
+		if (pPlayer && pPlayer->sub_1017d630() == this) {
+			float f = pData->value.fieldType == 1 ? pData->value.flValue : 0;
+			pPlayer->sub_1017d6d0(f);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc360 size=0x9e
 #include "CCameraTrack.h"
 #include "CUnknown1070b22c.h"
