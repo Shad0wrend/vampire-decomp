@@ -2664,6 +2664,52 @@ void CBaseEntity::sub_1003d300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003d640 size=0xe7
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CBaseEntity_ext.h"
+
+extern CGlobalEntityList *g_10566458;
+struct EHandleP {
+	unsigned int m_Index;
+	CBaseEntity *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			CGlobalEntityList_Slot *t = g_10566458->m_Slots;
+			return (t[m_Index & 0x1fff].m_Serial == (int)(m_Index >> 13)) ? (CBaseEntity *)t[m_Index & 0x1fff].m_pEntity : 0;
+		}
+		return 0;
+	}
+};
+struct CTouchLinkP {
+	EHandleP m_hEntity;
+	int m_a;
+	CTouchLinkP *m_pNext;
+	CTouchLinkP *m_pPrev;
+};
+void sub_1003d770(CBaseEntity *pEnt, CTouchLinkP *pLink);
+
+// TARGET: sub_1003d640
+void sub_1003d640(CBaseEntity *pOther, CBaseEntity *pThis)
+{
+	ScopeTrace trace("CBaseEntity::PhysicsNotifyOtherOfUntouch", g_106b8540);
+	if (pThis) {
+		CTouchLinkP *root = (CTouchLinkP *)pThis->sub_1003cd50(1);
+		if (root) {
+			for (CTouchLinkP *link = root->m_pNext; link != root; link = link->m_pNext) {
+				if (link->m_hEntity.Get() == pOther) {
+					sub_1003d770(pThis, link);
+					if (root->m_pNext == root && root->m_pPrev == root)
+						pThis->sub_1003d130(1);
+					return;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003d770 size=0x125
 #include "CCineNPCSlots.h"
 #include "CGlobalEntityList.h"
