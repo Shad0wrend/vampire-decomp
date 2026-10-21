@@ -129,6 +129,7 @@ public:
 	bool sub_102edbb0(const Vector *pPosition, float flDistance, int c, Vector *pOut);	// as sub_102edae0, asking the pathfinder's A* search (sub_10301010)
 	bool sub_102edc80(const Vector *pPosition, float flDistance, int c, int d, Vector *pOut, int e);	// as sub_102edae0 with the five argument node search (sub_10301720); pOut is the fifth argument
 	bool sub_102edd50(const Vector *pPosition, float flDistance, int c, int d, int e, Vector *pOut, int f);	// as sub_102edae0 with the six argument node search (sub_10302320); pOut is the sixth argument
+	bool sub_102ed9c0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, Vector *pOut);	// as sub_102edae0 with the seven argument node search (sub_10302e50); pOut is the eighth argument
 	Vector *sub_102ee9c0(Vector *pOut, int index);	// the position of graph node `index` (stub 0x10008869)
 
 	int m_i14;
