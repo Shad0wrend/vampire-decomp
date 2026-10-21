@@ -61283,6 +61283,20 @@ void CUnknown1023df30::sub_1023df30(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023e1c0 size=0x64
+struct CTarget { void sub_10006690(float f); };
+struct CParam { int pad0[2]; float value; int pad1[3]; int type; };
+CTarget *sub_1000aa0b();
+void __stdcall sub_1023e1c0(CParam *p)
+{
+    CTarget *t = sub_1000aa0b();
+    if (t) {
+        float v = (p->type == 1) ? p->value : 0.0f;
+        t->sub_10006690((v > 1.0) ? 1.0 : ((v < 0.0) ? 0.0 : v));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023e4b0 size=0x184
 #include "CGlobalEntityList.h"
 
