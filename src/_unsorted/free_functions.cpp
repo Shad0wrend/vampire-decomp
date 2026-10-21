@@ -6216,6 +6216,41 @@ CTEBeamEntPoint *CTEBeamEntPoint::sub_1005ac10(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005aff0 size=0xfc
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+void sub_10009539();
+void sub_10003012();
+
+extern SendTable g_106bf330;
+extern SendTable *g_105409b0;
+extern const char *g_10540c34;
+
+// TARGET: sub_1005aff0
+int sub_1005aff0()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_105409b0, (void *)sub_10009539),
+		sub_10007bfd("m_nStartEntity", 0x44, 4, 0x18, 1, 0, 0),
+		sub_10007bfd("m_nEndEntity", 0x54, 4, 0x18, 1, 0, 0),
+		sub_1000c14e("m_vecStartPoint", 0x48, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_1000c14e("m_vecEndPoint", 0x58, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+	};
+	g_106bf330.sub_1000e8fe(props + 1, 5, g_10540c34);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005b1e0 size=0x125
 struct TEVec3 { int x, y, z; };
 struct TEBeamEntPointData {

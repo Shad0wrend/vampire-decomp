@@ -4253,6 +4253,7 @@
 0x100128a5 func   ?sub_100b2010@CBaseEntity@@QAEXPBMPAM@Z CBaseEntity::sub_100b2010
 0x100128aa func   ?sub_1033d700@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d700
 0x100128cd func   ?sub_1009d6a0@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d6a0
+0x100128dc func   ?sub_1005aff0@@YAHXZ sub_1005aff0
 0x100128eb func   ?sub_10349710@melee_dice_roll_result@@QAEXHHPAH@Z melee_dice_roll_result::sub_10349710
 0x100128f0 func   ?vfunc5@CNPC_VMalkavian@@QAEPAV1@I@Z CNPC_VMalkavian::vfunc5
 0x100128f5 func   ?sub_101c3a70@@YAPAXPAX@Z sub_101c3a70
