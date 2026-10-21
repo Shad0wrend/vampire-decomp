@@ -19,11 +19,18 @@ public:
 	char m_pad0814[0x82c - 0x814];
 	CUnknown10217f50Quad m_quad;	// 0x82c: cleared at the end of the request
 	char m_b083c;	// 0x83c
+	char m_pad083d[0x9c8 - 0x83d];
+	const char **m_ppLines;	// 0x9c8: the text lines of the current screen
+	char m_pad09cc[0x9d4 - 0x9cc];
+	int m_nLines;	// 0x9d4
 
 	void sub_10218820(int a, int b);	// called with (2, 0) (stub 0x1000c77f)
 	void sub_10217f50(char value, const char *pszCommand);	// stores value at +0x83c after sub_10218820(2, 0), then picks slot 275 / 276 / 277 from the command ("quit" prefix, or the current screen name from slot 274), and clears the four dwords at +0x82c
 	void sub_10217ac0(const char *pszFormat, ...);	// prints a formatted string to the screen (stub 0x10013f98)
 	void sub_1021b330(const char *pszText, int column);	// prints a boxed line: '|' borders over a width-3 blank line (40 byte buffer), the text copied in at `column` (at most 0x28 - column characters), followed by a newline
 	const char *sub_10219400(int index);	// the screen text with that index (stub 0x1000bde8): the "Hacking Strings" table entry, else a built-in STRING_* name, "Unrecognized Command" for an unknown index
-	void sub_1021b140(const char *pszText);	// stub 0x10013aac: starts a new screen page with the text
+	void sub_1021b140(const char *pszText);	// stub 0x10013aac: starts a new screen page with the text (centred), or the text lines of the screen
+	void sub_10218ec0(int a, int b);	// stub 0x10002ce8, called with (1, 1) at the start of a page
+	void sub_10218db0();	// stub 0x10005812, called at the start of a page
+	void sub_1021b2b0();	// stub 0x100026fd, prints the border line of a page
 };
