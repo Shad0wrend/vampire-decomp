@@ -16,3 +16,6 @@
 	void sub_10280fb0();	// CAI_BaseNPC::vfunc453 (stub 0x1000611d), called directly by vfunc453
 	void sub_10269eb0(int condition);	// stub 0x100123f5, called directly by vfunc453
 	void sub_10269f30(int task);	// stub 0x1000c39c, called directly by vfunc453
+	virtual bool vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d);	// slot 201 override: false for no entity; with the global flag byte 0x10924fba set (or 0x10924fb9 set and the entity having an object at +0xa8) stores 0 in *pOut and returns false; else slot 594(pEnt, a, 0, 0) must accept, the \"Dominate_BrainWipe\" discipline bit (sub_1033d2f0) must be clear, then CBaseEntity::vfunc201
+	bool sub_100a6fa0(CBaseEntity *pEnt, int a, int *pOut, int d);	// CBaseEntity::vfunc201 (stub 0x10001b63), called directly
+	char sub_1033d2f0(unsigned int discipline);	// CBaseCombatCharacter member (stub 0x1000d3d7), called directly
