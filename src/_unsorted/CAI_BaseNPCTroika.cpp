@@ -880,6 +880,49 @@ int CAI_BaseNPCTroika::vfunc569(CBaseEntity *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10299700 size=0x158
+#include "CAI_BaseNPCTroika.h"
+#include "CRestore.h"
+
+struct CTimerSub
+{
+	void sub_101b9860();
+};
+extern void sub_1009d960(float *, int);
+
+int CAI_BaseNPCTroika::vfunc127(CRestore *pRestore)
+{
+	int result = CAI_BaseNPC::vfunc127(pRestore);
+	char bFlag;
+	pRestore->vfunc17(&bFlag, 1, 0);
+	if (bFlag) {
+		pRestore->vfunc15((int *)((char *)this + 0x6310), 1, 0);
+		pRestore->vfunc15((int *)((char *)this + 0x6314), 1, 0);
+	}
+	sub_1009d960((float *)((char *)this + 0x607c), 3);
+	sub_1009d960((float *)((char *)this + 0x6084), 2);
+	sub_1009d960((float *)((char *)this + 0x6274), 2);
+	sub_1009d960((float *)((char *)this + 0x62cc), 3);
+	sub_1009d960((float *)((char *)this + 0x62d0), 3);
+	sub_1009d960((float *)((char *)this + 0x62d4), 3);
+	sub_1009d960((float *)((char *)this + 0x632c), 3);
+	sub_1009d960((float *)((char *)this + 0x63d4), 2);
+	sub_1009d960((float *)((char *)this + 0x63dc), 2);
+	sub_1009d960((float *)((char *)this + 0x6458), 4);
+	sub_1009d960((float *)((char *)this + 0x657c), 4);
+	((CTimerSub *)((char *)this + 0x60b0))->sub_101b9860();
+	((CTimerSub *)((char *)this + 0x60dc))->sub_101b9860();
+	((CTimerSub *)((char *)this + 0x6108))->sub_101b9860();
+	((CTimerSub *)((char *)this + 0x6134))->sub_101b9860();
+	((CTimerSub *)((char *)this + 0x6160))->sub_101b9860();
+	((CTimerSub *)((char *)this + 0x618c))->sub_101b9860();
+	((CTimerSub *)((char *)this + 0x61b8))->sub_101b9860();
+	((CTimerSub *)((char *)this + 0x61e4))->sub_101b9860();
+	((CTimerSub *)((char *)this + 0x6210))->sub_101b9860();
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029b180 size=0xce
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseAnimating.h"
