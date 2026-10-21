@@ -5018,6 +5018,7 @@
 0x10014d8a func   ?sub_1042ffe0@@YAII@Z sub_1042ffe0
 0x10014d99 func   ?sub_10247030@@YA?AVSendProp@@PBD0@Z sub_10247030
 0x10014dd5 func   _item_w_remington_m_700 item_w_remington_m_700
+0x10014dee func   ?sub_10304020@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@HPBMHHHHHHHH@Z CAI_Pathfinder::sub_10304020
 0x10014e0c func   ?vfunc5@CPointExplosion@@QAEPAV1@I@Z CPointExplosion::vfunc5
 0x10014e2f func   ?vfunc5@CWeaponRanged@@UAEPAV1@I@Z CWeaponRanged::vfunc5
 0x10014e34 func   ?sub_101931c0@@YAPAHXZ sub_101931c0

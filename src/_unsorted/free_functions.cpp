@@ -68644,6 +68644,23 @@ bool CAI_Pathfinder::sub_102fce80(int moveType, CAI_PathfinderLink *pLink)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10304020 size=0xc6
+#include "CAI_Pathfinder.h"
+#include "CAI_Waypoint.h"
+
+// TARGET: CAI_Pathfinder::sub_10304020
+CAI_Waypoint *CAI_Pathfinder::sub_10304020(int a1, const float *pEndPosition, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+{
+	float vecApex[3];
+	if (!sub_103059d0(a8, a1, (int)pEndPosition, a7, a3, vecApex, a9, a10))
+		return 0;
+	CAI_Waypoint *pEnd = new CAI_Waypoint(pEndPosition, a6, a8, a4, a5);
+	CAI_Waypoint *pApex = new CAI_Waypoint(vecApex, 0, a8, 1, -1);
+	pApex->SetNext(pEnd);
+	return pApex;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103058c0 size=0xc6
 #include "CAI_Pathfinder.h"
 
