@@ -3447,6 +3447,7 @@
 0x100108cf func   _item_g_sewerbook_1 item_g_sewerbook_1
 0x100108d9 func   ?sub_1016e650@@YAXXZ sub_1016e650
 0x100108fc func   ?sub_101a59f0@CUnknown101a59f0@@QAEXH@Z CUnknown101a59f0::sub_101a59f0
+0x1001091f func   ?sub_100e4780@CDialog@@QAEXXZ CDialog::sub_100e4780
 0x10010924 func   ?sub_102dfd90@CUnknown102dfd90@@QAEXPAVCBaseEntity@@@Z CUnknown102dfd90::sub_102dfd90
 0x10010929 func   ?sub_103e8570@@YAHXZ sub_103e8570
 0x1001092e func   ?sub_101b20b0@UtlMem@@QAEXXZ UtlMem::sub_101b20b0

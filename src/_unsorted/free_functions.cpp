@@ -18361,6 +18361,28 @@ char *CUnknown100e3400::sub_100e3400(int line, char col, const char *ext, bool i
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e4780 size=0x8f
+#include "CDialog.h"
+#include "ScopeTrace.h"
+
+// TARGET: CDialog::sub_100e4780
+void CDialog::sub_100e4780()
+{
+	ScopeTrace trace("CDialog::NPCNotifyDoneTalking", g_106b8540);
+	sub_100e5c70();
+	if (m_pTable)
+	{
+		if (m_nStateFlags & 0x20)
+		{
+			sub_100e4bd0(0);
+			return;
+		}
+		if (m_nStateFlags & 0x10)
+			sub_100e5240();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e4840 size=0x119
 #include "CDialog.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
