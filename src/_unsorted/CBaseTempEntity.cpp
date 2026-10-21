@@ -13,3 +13,23 @@ CBaseTempEntity *CBaseTempEntity::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100508c0 size=0xbd
+#include "CBaseTempEntity.h"
+#include "CBroadcastRecipientFilter.h"
+
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_10005ab5(const Vector &start, float flScale, const Vector &direction, Vector &dest);
+
+void CBaseTempEntity::vfunc3(const Vector &origin, const QAngle &angles)
+{
+	Msg("%s\n", m_pszName);
+	Vector forward;
+	sub_10139610(&angles, &forward, 0, 0);
+	Vector vecEnd;
+	sub_10005ab5(origin, 20.0f, forward, vecEnd);
+	CBroadcastRecipientFilter filter;
+	vfunc4(filter, 0.0f);
+}
+// END FUNCTION
