@@ -29878,6 +29878,18 @@ void sub_1013bb40(const Vector &p1, const Vector &p2, const Vector &p3, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013c940 size=0x88
+// TARGET: sub_1013c940
+float sub_1013c940(const Vector &P, const Vector &vLineA, const Vector &vLineB, Vector &vDir)
+{
+    VectorSubtract(vLineB, vLineA, vDir);
+    float div = DotProduct(vDir, vDir);
+    if (div < 0.00001f)
+        return 0;
+    return (DotProduct(vDir, P) - DotProduct(vDir, vLineA)) / div;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d0e0 size=0x18d
 #include "Vector.h"
 
