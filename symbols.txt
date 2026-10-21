@@ -696,6 +696,7 @@
 0x10003d73 func   ?sub_1018bfe0@@YAHXZ sub_1018bfe0
 0x10003d78 func   ?sub_10402230@@YAHXZ sub_10402230
 0x10003d8c func   ?vfunc5@CWeaponMelee_MingXiaoTentacle@@QAEPAV1@I@Z CWeaponMelee_MingXiaoTentacle::vfunc5
+0x10003d91 func   ?sub_102517e0@CBaseCombatWeapon@@QAEPAHXZ CBaseCombatWeapon::sub_102517e0
 0x10003d9b func   ?sub_10335a70@CBaseCombatCharacter@@QAE_NPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10335a70
 0x10003da0 func   _item_g_keyring item_g_keyring
 0x10003dbe func   ?vfunc5@CNPC_VPedestrian@@QAEPAV1@I@Z CNPC_VPedestrian::vfunc5

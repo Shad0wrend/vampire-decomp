@@ -57756,6 +57756,59 @@ void CBaseCombatWeapon::sub_10250c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102517e0 size=0xb4
+#include "CVDmg_t.h"
+
+struct CRollRecord_102517e0
+{
+	void sub_102518f0(void *pSource);	// stub 0x1000c3e7
+	void sub_1025b610();	// stub 0x1000a781
+};
+
+struct CRollSlot_102517e0	// one 0xec84 byte roll slot of the owner object (from +0x238e0)
+{
+	char m_pad0000[0x104];
+	int m_id;	// 0x104
+	char m_pad0108[0x260 - 0x108];
+	int m_n260;	// 0x260 (+0x23b40 of the owner)
+	char m_pad0264[0xec84 - 0x264];
+};
+
+struct CWeaponOwner
+{
+	char m_pad0000[0x238e0];
+	CRollSlot_102517e0 m_slots[3];	// 0x238e0
+};
+
+extern CRollRecord_102517e0 g_1088af38;
+extern int g_1088b040;
+extern int g_1088b198;
+
+struct CVDmgDefault_102517e0
+{
+	static CVDmg_t *Get()
+	{
+		static CVDmg_t s_default;
+		return &s_default;
+	}
+};
+
+int *CBaseCombatWeapon::sub_102517e0()
+{
+	CVDmgDefault_102517e0::Get();
+	CWeaponOwner *pOwner = sub_102517b0();
+	for (int i = 0; i < 3; i++) {
+		if (pOwner->m_slots[i].m_id == *(int *)((char *)this + 0x848))
+			return (int *)&pOwner->m_slots[i];
+	}
+	g_1088af38.sub_102518f0(&sub_102517b0()->m_slots[0]);
+	g_1088af38.sub_1025b610();
+	g_1088b040 = 0;
+	g_1088b198 = pOwner->m_slots[0].m_n260;
+	return (int *)&g_1088af38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252120 size=0x97
 char *__fastcall sub_10010ea6(CBaseCombatWeapon *p);
 char *__fastcall sub_10008b20(CBaseCombatWeapon *p);
