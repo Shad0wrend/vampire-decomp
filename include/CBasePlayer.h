@@ -68,7 +68,9 @@ public:
 	CBP_V10(sa0) CBP_V10(sa1) CBP_V10(sa2) CBP_V10(sa3) CBP_V10(sa4) CBP_V10(sa5) CBP_V1(sa6) CBP_V1(sa7) CBP_V1(sa8) CBP_V1(sa9)
 	virtual void vfunc64(float *pVec);
 	// slots 65..220
-	CBP_V100(sb) CBP_V10(sc0) CBP_V10(sc1) CBP_V10(sc2) CBP_V10(sc3) CBP_V10(sc4) CBP_V1(sd0) CBP_V1(sd1)
+	CBP_V100(sb) CBP_V10(sc0) CBP_V10(sc1) CBP_V1(sc20) CBP_V1(sc21) CBP_V1(sc22) CBP_V1(sc23) CBP_V1(sc24) CBP_V1(sc25) CBP_V1(sc26)
+	virtual Vector vfunc192();	// \"EyePosition\"-like getter returning the vector by value (hidden pointer, ret 4)
+	CBP_V1(sc28) CBP_V1(sc29) CBP_V10(sc3) CBP_V10(sc4) CBP_V1(sd0) CBP_V1(sd1)
 	virtual int vfunc217(const void *pName, int a);
 	CBP_V1(sd3) CBP_V1(sd4)
 	virtual float *vfunc220();	// "CBaseEntity::GetOrigin"
@@ -152,7 +154,9 @@ public:
 	char m_pad1EC1[0x2018 - 0x1ec1];	// 0x1EC1 .. 0x2017
 	int m_aSlotType2018[10];	// 0x2018: kind of each of the ten command slots (0 = unused)
 	int m_aSlotValue2040[10];	// 0x2040: value of each command slot (a name hash or packed range)
-	char m_pad2068[0x20a8 - 0x2068];	// 0x2068 .. 0x20A7
+	char m_pad2068[4];	// 0x2068 .. 0x206B
+	Vector m_vec206c;	// 0x206C: the view angles / target vector (stored by sub_10167030)
+	char m_pad2078[0x20a8 - 0x2078];	// 0x2078 .. 0x20A7
 	char m_b20A8;
 	char m_pad20A9[0x4b];	// 0x20A9 .. 0x20F3
 	char m_b20F4;	// vehicle active flag
