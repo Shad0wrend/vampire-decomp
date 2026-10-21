@@ -4808,6 +4808,7 @@
 0x10012f49 func   ?sub_101273e0@@YAPBDH@Z sub_101273e0
 0x10012f4e func   ?sub_1030f480@CUnknown1030f480@@QAEXXZ CUnknown1030f480::sub_1030f480
 0x10012f5d func   ?vfunc432@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc432
+0x10012f62 func   ?sub_1015f8b0@CBasePlayerUnit@@QAEXMD@Z CBasePlayerUnit::sub_1015f8b0
 0x10012fa3 func   _item_p_occult_heal_rate item_p_occult_heal_rate
 0x10012fc6 func   ?vfunc5@CItemGIdolDragon@@QAEPAV1@I@Z CItemGIdolDragon::vfunc5
 0x10012fcb func   ?sub_10246ef0@@YA?AVSendProp@@HHPBDH@Z sub_10246ef0

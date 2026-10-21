@@ -34526,6 +34526,36 @@ void CBaseCombatCharacter::sub_1015f510(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f8b0 size=0xeb
+#include "CBasePlayer.h"
+#include "CVStatList_t.h"
+
+struct CMsgPlayerView;
+void sub_101cebc0(CMsgPlayerView *pPlayer, int a, int b);
+
+struct CBasePlayerUnit : CBasePlayer
+{
+	void sub_1015f8b0(float flAmount, char bFlag);
+};
+
+// TARGET: CBasePlayerUnit::sub_1015f8b0
+void CBasePlayerUnit::sub_1015f8b0(float flAmount, char bFlag)
+{
+	float *pTotal = (float *)((char *)this + 0x19f8);
+	float *pPartial = (float *)((char *)this + 0x19fc);
+	*pTotal = flAmount + *pTotal;
+	*pPartial = flAmount + *pPartial;
+	if (*pPartial >= 100.0f)
+	{
+		int n = (int)(*pPartial * 0.01f);
+		*pPartial = *pPartial - n * 100.0f;
+		CVStatListSet::Of(this)->Find(0)->sub_10200fc0(0x22, n);
+		if (bFlag && n > 0)
+			sub_101cebc0((CMsgPlayerView *)this, 9, n);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160680 size=0xd
 extern float g_10725c9c;
 // TARGET: CUnknown10160680::sub_10160680
