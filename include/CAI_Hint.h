@@ -4,6 +4,14 @@
 // vtable (the slots up to 119 are declared so far).
 #pragma once
 
+// 0x18-byte member objects of CAI_Hint, initialised by sub_100cd2a0.
+struct CAI_HintItem
+{
+	char m_pad[0x18];
+
+	void sub_100cd2a0();
+};
+
 class CAI_Hint
 {
 public:
