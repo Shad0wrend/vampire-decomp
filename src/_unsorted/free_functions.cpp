@@ -34926,6 +34926,32 @@ int sub_101bb220(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb650 size=0x75
+extern "C" double fabs(double);
+extern float g_104454c4;
+extern double g_104493d0;
+void __stdcall sub_10010d11(float);
+struct CFloatUnit {
+    float a, b, c;
+    char d;
+    void sub_101bb650(float x, float y);
+};
+// TARGET: CFloatUnit::sub_101bb650
+void CFloatUnit::sub_101bb650(float x, float y)
+{
+    float diff = x - a;
+    if (diff != g_104454c4 && y > g_104454c4) {
+        b = x;
+        double r = fabs(diff / y);
+        c = (g_104493d0 > r) ? g_104493d0 : r;
+        return;
+    }
+    if (x != a)
+        d = 1;
+    sub_10010d11(x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbd10 size=0x9e
 #include "CUnknown101bbd10.h"
 #include "CGlobalEntityList.h"
