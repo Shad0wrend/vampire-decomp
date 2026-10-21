@@ -8321,6 +8321,63 @@ void CUnknown10076af0::sub_10076af0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076c30 size=0x119
+#include "CUnknown10076da0.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, unsigned long size);
+
+struct EntryVecOps
+{
+	static void Grow(CUnknown10076da0 *v, int num)
+	{
+		if (v->m_nGrow == -1)
+			return;
+		int nAllocationRequested = v->m_nAlloc + num;
+		if (v->m_nAlloc < nAllocationRequested) {
+			int n = v->m_nAlloc;
+			do {
+				if (n != 0) {
+					if (v->m_nGrow)
+						n += v->m_nGrow;
+					else
+						n += n;
+				} else {
+					n = 1;
+				}
+			} while (n < nAllocationRequested);
+			v->m_nAlloc = n;
+		}
+		if (v->m_pEntries)
+			v->m_pEntries = (CUnknown10076da0Entry *)Plat_Realloc(v->m_pEntries, v->m_nAlloc * sizeof(CUnknown10076da0Entry));
+		else
+			v->m_pEntries = (CUnknown10076da0Entry *)Plat_Alloc(v->m_nAlloc * sizeof(CUnknown10076da0Entry));
+	}
+	static void GrowVector(CUnknown10076da0 *v, int num)
+	{
+		if (v->m_nEntries + num > v->m_nAlloc)
+			Grow(v, v->m_nEntries + num - v->m_nAlloc);
+		v->m_nEntries += num;
+		v->m_pElements = v->m_pEntries;
+	}
+};
+
+void CUnknown10076da0::sub_10076c30(int a, int b)
+{
+	CUnknown10076da0Entry tmp;
+	tmp.sub_10073810(this, a, b);
+	int elem = m_nEntries;
+	EntryVecOps::GrowVector(this, 1);
+	int numToMove = m_nEntries - elem - 1;
+	if (numToMove > 0)
+		memmove(&m_pEntries[elem + 1], &m_pEntries[elem], numToMove * sizeof(CUnknown10076da0Entry));
+	CUnknown10076da0Entry *pNew = &m_pEntries[elem];
+	if (pNew)
+		pNew->sub_10073850(&tmp);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076da0 size=0x9d
 #include "CUnknown10076da0.h"
 
