@@ -26377,6 +26377,75 @@ int *sub_1014ee10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f210 size=0x111
+#include "CBaseAnimating.h"
+#include "CPhysicsAnimlink.h"
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SPhysObject
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual CBaseEntity *vfunc6();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual float vfunc12();
+	virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	PV10(a2) PV10(a3) PV10(a4) PV10(a5)
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68();
+	virtual void vfunc69(float fValue);
+};
+struct SShadowController
+{
+	virtual void v0(); virtual void v1();
+	virtual void vfunc2(float a, float b);
+};
+struct SPhysEnvironment
+{
+	PV10(a0) PV10(a1) PV10(a2)
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual SShadowController *vfunc35(SPhysObject *pObject, int a, int b);
+};
+struct SAnimlinkSub
+{
+	void sub_1014ebd0(CPhysicsAnimlink *pOwner, CBaseAnimating *pAnimating, CBaseEntity *pEntity);	// stub 0x100042ff
+};
+struct SGlobalVarsAL
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern SPhysEnvironment *g_10723940;
+extern SGlobalVarsAL *g_1070b228;
+void sub_10139b50(int a, int b, float *pMatrix);
+void sub_100157bc();
+void CPhysicsAnimlink::sub_1014f210(CBaseAnimating *pAnimating, int nBone, void *pPhysObject, int a, int b)
+{
+	SPhysObject *pObj = (SPhysObject *)pPhysObject;
+	pAnimating->sub_1008bb70(pObj->vfunc6());
+	((SAnimlinkSub *)((char *)this + 0x4c8))->sub_1014ebd0(this, pAnimating, pObj->vfunc6());
+	if (pAnimating)
+		*(unsigned int *)((char *)this + 0x478) = *pAnimating->vfunc1();
+	else
+		*(unsigned int *)((char *)this + 0x478) = 0xffffffff;
+	*(SPhysObject **)((char *)this + 0x4c4) = pObj;
+	*(int *)((char *)this + 0x47c) = nBone;
+	pObj->vfunc69(pObj->vfunc12());
+	SShadowController *pShadow = g_10723940->vfunc35(pObj, 0, 0);
+	*(SShadowController **)((char *)this + 0x4c0) = pShadow;
+	if (pShadow)
+		pShadow->vfunc2(100000000.0f, 100000000.0f);
+	float matrix[12];
+	sub_10139b50(b, a, matrix);
+	float *pDest = (float *)((char *)this + 0x480);
+	for (int i = 0; i < 12; i++)
+		pDest[i] = matrix[i];
+	pDest[12] = 0;
+	pDest[13] = 0;
+	pDest[14] = 0;
+	pDest[15] = 1.0f;
+	sub_100ac4e0((int)sub_100157bc, 0, 0);
+	*(float *)((char *)this + 0x17c) = g_1070b228->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150e50 size=0x12
 struct CVirtSlots2 {
     virtual void vfunc0();
