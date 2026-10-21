@@ -284,6 +284,7 @@
 0x10002149 func   ?sub_101c7690@@YAPAVCBaseEntity@@PBDPAVCChangeLevel@@@Z sub_101c7690
 0x10002153 func   _item_g_car_stereo item_g_car_stereo
 0x10002180 func   ?sub_103629d0@CNPC_VAsianVampire@@QAE_NPBMM@Z CNPC_VAsianVampire::sub_103629d0
+0x1000218a func   ?sub_10237570@CWeaponRanged@@QAE_NHPAM0@Z CWeaponRanged::sub_10237570
 0x100021a8 func   ?sub_1022cfd0@UtlMem@@QAEXXZ UtlMem::sub_1022cfd0
 0x100021ad func   _trigger_fog trigger_fog
 0x100021c6 func   ?sub_101fc6a0@CVStatCost_t@@QAEXXZ CVStatCost_t::sub_101fc6a0

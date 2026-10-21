@@ -64441,6 +64441,67 @@ extern "C" GP *item_w_tzimisce2_head()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10237570 size=0x127
+#include "CWeaponRanged.h"
+#include "CBaseAnimating.h"
+#include "CEHandleGet.h"
+
+#define PV(n) virtual void s##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct FingerChar_t {
+	PV100(a) PV100(b)
+	PV10(c0) PV10(c1) PV10(c2) PV10(c3) PV10(c4)
+	PV(c50) PV(c51) PV(c52) PV(c53) PV(c54) PV(c55)
+	virtual void vfunc256(int bone, float *pMatrix);
+	char pad[0x174 - 4];
+};
+
+struct FingerAnim_t : public FingerChar_t {
+	int sub_10092550(const char *pszName);
+};
+
+struct FingerEnt_t {
+	char pad[0x9c];
+	FingerAnim_t *pChar;
+};
+
+struct FingerWeaponView_t {
+	char pad[0x37c];
+	unsigned int hAim;
+};
+
+void sub_10138df0(float *pIn1, float *pIn2, float *pOut);
+void sub_10137ed0(float *pMatrix, float *pOrigin);
+void sub_10138720(float *pMatrix, int n, float *pAngles);
+
+bool CWeaponRanged::sub_10237570(int a, float *pAngles, float *pOrigin)
+{
+	FingerEnt_t *pEnt = (FingerEnt_t *)EHandle_Get(((FingerWeaponView_t *)this)->hAim);
+	if (pEnt) {
+		FingerAnim_t *pChar = pEnt->pChar;
+		if (pChar) {
+			int nBone = pChar->sub_10092550("Bip01 L Finger01");
+			if (nBone >= 0) {
+				float matBone[12];
+				pChar->vfunc256(nBone, matBone);
+				float matZero[12];
+				matZero[0] = 0; matZero[1] = 0; matZero[2] = 0; matZero[3] = 0;
+				matZero[4] = 0; matZero[5] = 0; matZero[6] = 0; matZero[7] = 0;
+				matZero[8] = 0; matZero[9] = 0; matZero[10] = 0; matZero[11] = 0;
+				float matOut[12];
+				sub_10138df0(matBone, matZero, matOut);
+				sub_10137ed0(matOut, pOrigin);
+				sub_10138720(matOut, 3, pAngles);
+				return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10237860 size=0x72
 #include "SendProp.h"
 
