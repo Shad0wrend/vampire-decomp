@@ -23724,6 +23724,79 @@ int sub_100fafa0(CBaseEntity *pEnt, int type, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fb1f0 size=0x17c
+#include "CEnvParticle.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b22c.h"
+
+extern CGlobalEntityList *g_10566458;
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_106b8540[];
+
+struct CHandleX {
+    unsigned int m_Index;
+    CBaseEntity *Get() const
+    {
+        if (m_Index != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_Index & 0x1fff];
+            if (s->m_Serial == (int)(m_Index >> 13))
+                return (CBaseEntity *)s->m_pEntity;
+        }
+        return 0;
+    }
+};
+
+#define D(n) virtual void n();
+#define D10(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+struct CEntitySlotsX {
+    D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D(b60) D(b61) D(b62)
+    virtual void vfunc63(int a, int b, int c);
+};
+
+struct CBaseEntityX : CBaseEntity {
+    void sub_100a0670(CBaseEntity *pParent, int nAttachment);
+};
+
+struct SStudioAttachment
+{
+    int m_nNameIndex;
+    char m_pad04[0xa0 - 4];
+};
+
+struct SStudioHdr
+{
+    char m_pad0000[0xf0];
+    int m_nAttachments;	// 0xf0
+    int m_nAttachmentIndex;	// 0xf4
+};
+
+int *sub_1042bff0(CBaseEntity **ppEnt, const char *pszName);
+
+void CEnvParticle::sub_100fb1f0(CBaseEntity *pEnt, int nType, int nAttachment)
+{
+    ((CBaseEntityX *)this)->sub_100a0670(pEnt, 0);
+    *(int *)((char *)this + 0x458) = nType;
+    ((CBaseEntity *)this)->vfunc93(0xb, 0);
+    ((CBaseEntity *)this)->sub_1009ee80(((CHandleX *)&m_hAttachEntity)->Get());
+    ((CEntitySlotsX *)this)->vfunc63(0, 0, 0);
+    *(int *)((char *)this + 0x460) = nAttachment;
+    if (nAttachment > 0 && *(int *)((char *)this + 0x458) > 0) {
+        CBaseEntity *pAim = ((CHandleX *)((char *)this + 0x37c))->Get();
+        if (g_1070b22c->vfunc21(pAim->vfunc8()) == 3) {
+            pAim = ((CHandleX *)((char *)this + 0x37c))->Get();
+            SStudioHdr *pHdr = (SStudioHdr *)g_1070b22c->vfunc18(pAim->vfunc8());
+            if (pHdr && nAttachment < pHdr->m_nAttachments) {
+                SStudioAttachment *pAtt = (SStudioAttachment *)((char *)pHdr + pHdr->m_nAttachmentIndex) + nAttachment;
+                *(int *)((char *)this + 0x45c) = *sub_1042bff0(&pEnt, (char *)pAtt + pAtt->m_nNameIndex);
+                return;
+            }
+        }
+    }
+    *(int *)((char *)this + 0x45c) = *sub_1042bff0(&pEnt, g_106b8540);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fb850 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
