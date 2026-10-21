@@ -2,6 +2,8 @@
 // real name not yet known.
 #pragma once
 
+#include "CVariantCopy.h"
+
 struct CUnknown100cdba0Data
 {
 	int m_f0;
@@ -24,4 +26,5 @@ public:
 	CUnknown100cdba0Node *m_pHead;	// 0x00
 
 	void sub_100cdba0(CUnknown100cdba0Data data, int key);	// sets the payload of the node with this key, adding a new node at the head when absent
+	void sub_100cdba0(CVariantCopy data, int key);	// the same function called with a variant record copy (the caller builds it with the variant copy constructor)
 };
