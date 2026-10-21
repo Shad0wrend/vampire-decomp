@@ -40812,6 +40812,30 @@ int CVStatInfoList_t::sub_101ffdf0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10200730 size=0x8a
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+
+struct CStatInfoRec
+{
+	int sub_10205840();
+};
+
+struct CStatInfoTable
+{
+	char *sub_10200370(int index);
+};
+
+void CVStatList_t::sub_10200730()
+{
+	ScopeTrace trace("CVStatList_t::Init", g_106b8540);
+	for (int i = 0; i < m_field04; i++) {
+		CStatInfoRec *rec = (CStatInfoRec *)((CStatInfoTable *)m_field0c)->sub_10200370(i);
+		sub_102008e0(i, ((CStatInfoRec *)((char *)rec + 0x9c))->sub_10205840());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102007f0 size=0x87
 #include "CVStatList_t.h"
 
