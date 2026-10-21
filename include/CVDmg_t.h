@@ -15,6 +15,7 @@ struct CVDmgBlock16_t
 	void sub_10204270();	// reset: m_a = m_b = -1, m_d = 1 (stub 0x10010573)
 	void sub_102042a0(int a, int b);	// stores a / b in the first two fields and sets m_d to 1 (stub 0x10014290)
 	int sub_10204900(void *pCharacter);	// the value this block names for the character (a stat, a feat, ...; stub 0x10013cc8), 0 for an empty block or no character
+	int sub_10204ad0(void *pCharacter);	// the part of sub_10204900 for a feat block (kind 4), without the null character test: the feat record of the id (m_b) answers for the character; 0 for other kinds or an empty block
 };
 
 class CVDmg_t
