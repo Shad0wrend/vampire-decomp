@@ -2403,6 +2403,7 @@
 0x1000a9c0 func   _camera_keyframe camera_keyframe
 0x1000a9c5 func   _item_g_idol_crane item_g_idol_crane
 0x1000a9ca func   ?sub_1010dc50@CBreakable@@QAEXAAUinputdata_t@@@Z CBreakable::sub_1010dc50
+0x1000a9d9 func   ?sub_101f9ff0@CUnknown101f9c70@@QAEXHHHH@Z CUnknown101f9c70::sub_101f9ff0
 0x1000a9f7 func   ?sub_10197510@@YAPAHHH@Z sub_10197510
 0x1000aa42 func   ?sub_100b0ad0@@YAXXZ sub_100b0ad0
 0x1000aa56 func   ?sub_102b57c0@CAI_BaseNPCTroika@@QAEDH@Z CAI_BaseNPCTroika::sub_102b57c0

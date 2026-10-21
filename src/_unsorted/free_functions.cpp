@@ -47485,6 +47485,25 @@ int CUnknown101f9c70::sub_101f9c70(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9ff0 size=0xb5
+#include "ScopeTrace.h"
+#include "CUnknown101f9c70.h"
+#include "CUnknown101f0e50.h"
+#include "CVTraitEffectGroup_t.h"
+#include "CVModInfo_t.h"
+
+extern CUnknown101f0e50 g_1074df78;
+
+// TARGET: CUnknown101f9c70::sub_101f9ff0
+void CUnknown101f9c70::sub_101f9ff0(int a, int b, int c, int d)
+{
+	ScopeTrace trace("CVTraitEffectList_t::Effect_ModInfo", g_106b8540);
+	CVModInfo_t info(b, c, 0);
+	for (int i = 0; i < m_count; i++)
+		g_1074df78.sub_101f8480(m_items[i])->sub_101f7690(a, &info, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fa0e0 size=0x80
 #include <stdio.h>
 #include "CUnknown101fa0e0.h"
