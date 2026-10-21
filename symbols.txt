@@ -3816,6 +3816,7 @@
 0x1000f7bd func   ?sub_1005f380@@YAHXZ sub_1005f380
 0x1000f7f4 func   _item_i_written item_i_written
 0x1000f7f9 func   ?sub_103d0780@@YIHPAD@Z sub_103d0780
+0x1000f808 func   ?sub_10060f20@@YAHXZ sub_10060f20
 0x1000f826 func   ?sub_102dad60@CUnknown102db470Node@@QAE_NPAVCUnknown102db470@@PAM1@Z CUnknown102db470Node::sub_102dad60
 0x1000f83f func   ?vfunc546@CNPC_VWolfMorph@@QAEHH@Z CNPC_VWolfMorph::vfunc546
 0x1000f858 func   ?sub_10027960@CPhysForce@@QAEXXZ CPhysForce::sub_10027960

@@ -7385,6 +7385,47 @@ void sub_10060ac0(int a, int b, const int *mins, const int *maxs, int p5, int p6
 }
 // END FUNCTION
 
+// FUNCTION: 0x10060f20 size=0x17a
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropVector
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropFloat
+void sub_10009539();
+void sub_10003012();
+void sub_10006aeb();
+
+extern SendTable g_106c2398;
+extern SendTable *g_1053dfa8;
+
+// TARGET: sub_10060f20
+int sub_10060f20()
+{
+	static const char *pTableName = "DT_TEDynamicLight";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_1000c14e("m_vecOrigin", 0xc, 0xc, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+		sub_10007bfd("r", 0x1c, 4, 8, 1, 0, 0),
+		sub_10007bfd("g", 0x20, 4, 8, 1, 0, 0),
+		sub_10007bfd("b", 0x24, 4, 8, 1, 0, 0),
+		sub_10007bfd("exponent", 0x28, 4, 8, 0, 0, 0),
+		sub_10006cc1("m_fRadius", 0x18, 4, 8, 0x10, 0.0f, 2560.0f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fTime", 0x2c, 4, 8, 8, 0.0f, 25.6f, (void *)sub_10006aeb),
+		sub_10006cc1("m_fDecay", 0x30, 4, 8, 8, 0.0f, 2560.0f, (void *)sub_10006aeb),
+	};
+	g_106c2398.sub_1000e8fe(props + 1, 9, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100611b0 size=0x76
 struct SDynLight {
 	int m_vt;
