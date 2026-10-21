@@ -87714,6 +87714,45 @@ char sub_103adc00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b1300 size=0x11c
+#include "CNPC_VAsianVampire.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+extern float g_104c614c;
+
+struct SJumpView
+{
+	char m_pad0000[0x649c];
+	Vector m_vecJumpStart;	// 0x649c
+	Vector m_vecJumpEnd;	// 0x64a8
+	float m_flJumpHeight;	// 0x64b4
+};
+
+struct CNPC_VAsianVampireUnit : CNPC_VAsianVampire
+{
+	void sub_103b1300(void *pHint);	// "CNPC_VSheriffMan::SetupJump"
+	void sub_102c4e80();	// stub 0x10011a31, called directly
+};
+
+void CNPC_VAsianVampireUnit::sub_103b1300(void *pHint)
+{
+	ScopeTrace trace("CNPC_VSheriffMan::SetupJump", g_106b8540);
+	if (pHint) {
+		SJumpView *pView = (SJumpView *)this;
+		CEntityVSlots *pThis = (CEntityVSlots *)this;
+		pView->m_vecJumpStart = *pThis->slot217();
+		pView->m_vecJumpEnd = *((CEntityVSlots *)m_pHint5ddc)->slot217();
+		float flZ = ((CEntityVSlots *)m_pHint5ddc)->slot217()->z;
+		if (pThis->slot217()->z > flZ)
+			flZ = pThis->slot217()->z;
+		float flDiff = flZ - pThis->slot217()->z;
+		pView->m_flJumpHeight = g_104c614c + flDiff;
+		sub_102c4e80();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1470 size=0x7b
 #include "CNPC_VSheriffMan.h"
 extern char g_106b8540[];
