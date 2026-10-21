@@ -36871,6 +36871,22 @@ void CBasePlayer::sub_1017e5f0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017e760 size=0xa1
+struct PlayerView1017e760 {
+	char pad[0x3c8];
+	Vector m_vec3c8;
+	Vector m_vec3d4;
+};
+const char *sub_101d3730(const char *fmt, int n);
+
+void CBasePlayer::sub_1017e760(int level)
+{
+	PlayerView1017e760 *p = (PlayerView1017e760 *)this;
+	if (level > 1 && (p->m_vec3d4.LengthSqr() > 12.0f || p->m_vec3c8.LengthSqr() > 0.0f))
+		sub_1017df50(level - 1, 0.5f, sub_101d3730("Celerity %d", level));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017e840 size=0x8c
 void __stdcall sub_10004237(int a, float b, const char *name);
 
