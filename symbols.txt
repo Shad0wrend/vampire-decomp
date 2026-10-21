@@ -2577,6 +2577,7 @@
 0x1000be10 func   ?vfunc420@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc420
 0x1000be1a func   _vampire_skill vampire_skill
 0x1000be29 func   ?vfunc113@CFuncAreaPortalWindow@@UAEXXZ CFuncAreaPortalWindow::vfunc113
+0x1000be2e func   ?vfunc125@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc125
 0x1000be4c func   ?sub_103d3220@CNPC_VWerewolf@@QAEHPAX@Z CNPC_VWerewolf::sub_103d3220
 0x1000be5b func   _prop_ragdoll_special prop_ragdoll_special
 0x1000be79 func   ?sub_101e1010@Loader@@QAE_NPBD@Z Loader::sub_101e1010

@@ -1786,6 +1786,36 @@ void CBaseCombatCharacter::vfunc306(CBaseCombatCharacter *pTarget, char bUseEyes
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033e7e0 size=0x121
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+void sub_10143b70(const float *pos, const float *mins, const float *maxs, int a, int r, int b, int c, float duration);
+
+typedef float *(__fastcall *GetAbsOriginFn)(CBaseCombatCharacter *pThis);
+
+void CBaseCombatCharacter::vfunc125()
+{
+	ScopeTrace trace("CBaseCombatCharacter::DrawMuzzleOverlay", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	void *pWeapon = sub_1032e7b0();
+	if (pWeapon) {
+		float *p = ((GetAbsOriginFn)(*(void ***)this)[217])(this);
+		float pos[3];
+		pos[0] = p[0];
+		pos[1] = p[1];
+		pos[2] = p[2];
+		float ang[3];
+		int r = 0;
+		if ((char)((CBaseAnimating *)pWeapon)->sub_10092e20((int)"muzzleflash", (int)pos, (int)ang))
+			r = 0xff;
+		float mins[3] = { -3.0f, -3.0f, -3.0f };
+		float maxs[3] = { 3.0f, 3.0f, 3.0f };
+		sub_10143b70(pos, mins, maxs, 0xff, r, 0, 1, 0.3f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103404f0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
