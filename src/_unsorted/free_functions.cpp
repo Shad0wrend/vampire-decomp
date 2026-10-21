@@ -19295,6 +19295,27 @@ float __stdcall sub_100f3860(const S100f3860 *a, const S100f3860 *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3dd0 size=0x6d
+#include "CRotDoor.h"
+#include "Vector.h"
+
+void __cdecl sub_10003d4b(Vector *pIn, Vector *pOut);
+
+void CRotDoor::sub_100f3dd0(const float *pDir)
+{
+	Vector dir = *(const Vector *)pDir;
+	if (m_flags204 & 0x40)
+		dir.x = 0;
+	else if (m_flags204 & 0x80)
+		dir.y = 0;
+	else
+		dir.z = 0;
+	Vector angles;
+	sub_10003d4b(&dir, &angles);
+	sub_10003044((float *)&angles);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4140 size=0x3e
 extern "C" __declspec(dllimport) int Q_snprintf(char *buf, int size, const char *fmt, ...);
 void __cdecl sub_100f4490(char *cmd, int a);
