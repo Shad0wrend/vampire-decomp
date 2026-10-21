@@ -22,9 +22,9 @@ public:
 	void SetVector3D(const Vector &val)
 	{
 		float *pf = (float *)this;
-		pf[0] = val.x;
-		pf[1] = val.y;
-		pf[2] = val.z;
+		pf[0] = val[0];
+		pf[1] = val[1];
+		pf[2] = val[2];
 		((CVariantCopy *)this)->m_fieldType = 3;
 	}
 
