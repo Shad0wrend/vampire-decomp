@@ -3,6 +3,8 @@
 // virtuals below carries no meaning.
 #pragma once
 
+#include "Vector.h"
+
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
 struct CNPC_VHengeyokaiTimer
@@ -52,6 +54,8 @@ struct CNPC_VHengeyokaiEvent
 	int m_type;
 };
 
+class CBaseEntity;
+
 class CNPC_VHengeyokai
 {
 public:
@@ -63,7 +67,9 @@ public:
 	char m_pad0674[0x6664 - 0x674];
 	unsigned int m_h6664;	// 0x6664: entity handle (the target of the bone attack)
 	int m_n6668;	// 0x6668: index of the bone name used by the attack
-	char m_pad666c[0x6694 - 0x666c];
+	char m_pad666c[0x6684 - 0x666c];
+	Vector m_vecBonePos;	// 0x6684: position of the chosen bone
+	char m_pad6690[0x6694 - 0x6690];
 	char m_b6694;	// 0x6694
 	char m_pad6695[0x66a4 - 0x6695];
 	CNPC_VHengeyokaiTimerVec m_Timers;	// 0x66a4
@@ -88,4 +94,5 @@ public:
 	void sub_100076bc(CNPC_VHengeyokaiEvent *pEvent);	// CNPC_VHuman::vfunc259, called directly
 	void sub_10382670(void *pEnt, const char *pszBone);	// stub 0x100148ad
 	void sub_10382400(void *pEnt);	// stub 0x10012319
+	bool sub_10381e90(CBaseEntity *pEnt);	// picks the bone of the ragdoll pEnt (bone name table at 0x1063bd88) closest to this NPC (within 1025 units) into +0x6684 / +0x6668; true when one was found (any ragdoll-less entity: this NPC's own origin and bone 0)
 };
