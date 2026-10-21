@@ -45,6 +45,8 @@ public:
 	void sub_1024f030(int *event, void *other);	// CBaseCombatWeapon::vfunc370, called directly (stub 0x10009f02)
 	void *sub_10252240();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale; stub 0x100011f4)
 	void *sub_10252290();	// CBaseCombatWeapon::sub_10252290: resolves the owner handle at +0x88c (0 when stale; stub 0x1000411a)
+	void *sub_102521f0();	// same as sub_10252240 (stub 0x10014fab)
+	void *sub_102517b0();	// CBaseCombatWeapon::sub_102517b0: the weapon's owner (player) object (stub 0x10010ea6)
 	char sub_10253b70(int a);	// stub 0x1000c37e
-	void sub_10239d80();	// stub 0x10003814
+	void sub_10239d80();	// "CWeaponRanged::...": steps the counter at +0x914 through the owner's list (count at +0x4fe84, entries at +0x4fe70) and, for the character object at +0xa8 of the owner entity, sets the flag byte (CFlagSet10174550) and starts slot 333 (4 when the entry is empty, else 9); stores the entry at +0x1e78 of the character (stub 0x10003814)
 };
