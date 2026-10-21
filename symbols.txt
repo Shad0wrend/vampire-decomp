@@ -3695,6 +3695,7 @@
 0x1001164e func   ?sub_1032e9f0@CBaseCombatCharacter@@QAEXHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1032e9f0
 0x10011653 func   ?sub_10222210@CExperienceTable@@QAEXXZ CExperienceTable::sub_10222210
 0x1001166c func   ?sub_102349e0@@YAHXZ sub_102349e0
+0x10011671 func   ?sub_10044f60@CUtlMap16@@QAEXII@Z CUtlMap16::sub_10044f60
 0x10011676 func   ?sub_10031bd0@@YA_NPAX@Z sub_10031bd0
 0x10011699 func   ?sub_104300d0@@YAII@Z sub_104300d0
 0x1001169e func   ?vfunc546@CNPC_VToreador@@QAEHH@Z CNPC_VToreador::vfunc546
