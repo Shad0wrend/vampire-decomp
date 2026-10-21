@@ -87257,6 +87257,40 @@ extern "C" CBaseEntity *viewmodel()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042bcc0 size=0x160
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+void sub_10246300();
+extern SendTable g_109ee974;
+extern const char *g_106ad6d4;
+
+// TARGET: sub_1042bcc0
+int sub_1042bcc0()
+{
+    static SendProp g_SendProps[] = {
+        sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+        sub_10246af0("m_nModelIndex", 0x1a4, 4, 0xb, 0, 0, 0),
+        sub_10246af0("m_nBody", 0x67c, 4, 8, 0, 0, 0),
+        sub_10246af0("m_nSkin", 0x670, 4, 10, 0, 0, 0),
+        sub_10246af0("m_nSequence", 0x6f0, 4, 0xb, 1, 0, 0),
+        sub_10246af0("m_nViewModelIndex", 0x730, 4, 1, 1, 0, 0),
+        sub_10246510("m_flPlaybackRate", 0x6f4, 4, 8, 0x10, -4.0f, 12.0f, (void *)sub_10246300),
+        sub_10246af0("m_fEffects", 0x19c, 4, 10, 1, 0, 0),
+        sub_10246af0("m_nAnimationParity", 0x740, 4, 3, 1, 0, 0),
+    };
+    g_109ee974.sub_10247240(g_SendProps + 1, 8, g_106ad6d4);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c310 size=0xcb
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(int);
