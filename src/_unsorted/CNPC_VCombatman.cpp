@@ -27,3 +27,29 @@ int CNPC_VCombatman::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093abb0.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x10370230 size=0x9d
+#include "CNPC_VCombatman.h"
+#define F(T, off) (*(T *)((char *)this + off))
+int CNPC_VCombatman::vfunc438()
+{
+	F(int, 0x1b2c) = 0xb;
+	if ((F(unsigned int, 0x14b8) & 2) == 2) {
+		F(unsigned int, 0x14b8) &= 0xfffffffd;
+		return 0xf1;
+	}
+	switch (F(int, 0x5cc0)) {
+	case 1:
+		break;
+	default:
+		return sub_10015ad2();
+	}
+	if (F(CNPC_VCombatmanTarget *, 0x5d34)->sub_100037e2() != 8 && F(int, 0x62ec) == 0)
+		return 0xff;
+	if (sub_1001482b(0x13))
+		return 0x102;
+	if (sub_1001482b(0x10))
+		return 0x106;
+	return (sub_1001482b(0x11) ? 5 : 0) + 0x100;
+}
+// END FUNCTION
