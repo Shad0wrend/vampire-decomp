@@ -52525,6 +52525,43 @@ void CPropModelState::sub_102168a0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10216aa0 size=0xd6
+#include "CPropModelState.h"
+
+extern void (__cdecl *g_109f364c)(const char *fmt, ...);	// DevWarning
+extern int (__cdecl *g_109f3868)(int nMin, int nMax);	// RandomInt
+extern char g_106b8540[];
+extern int g_1074f14c;
+extern int g_1074f150;
+
+struct CModelStateSoundsX	// the sound object at 0x1073dc00
+{
+	void sub_101f5950(CBaseEntity *pEnt, int nSound, int nChannel, float flVolume, float flPitch);	// stub 0x100119fa
+};
+extern CModelStateSoundsX g_1073dc00;
+
+void CPropModelState::sub_10216aa0(int index, void *pActivator)
+{
+	if (index < 0 || index > m_nStates) {
+		g_109f364c("Unable to set %s to state %d!!\n", sub_100ab4f0(), index);
+		return;
+	}
+	m_OnState[index].sub_100cd660(pActivator, this, 0);
+	const char *pszModel = m_pStateModels[index];
+	if (!pszModel)
+		pszModel = g_106b8540;
+	vfunc105(pszModel);
+	char *pHeader = sub_100952d0(-1);
+	if (pHeader)
+		sub_100adf10((const float *)(pHeader + 0xb4), (const float *)(pHeader + 0xc0));
+	m_iState = index;
+	if (g_109f3868(0, 1))
+		g_1073dc00.sub_101f5950(this, g_1074f14c, 2, 1.0f, 1.25f);
+	else
+		g_1073dc00.sub_101f5950(this, g_1074f150, 2, 1.0f, 1.25f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216c20 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
