@@ -65720,6 +65720,39 @@ void sub_102414f0(int a, int b, const Vector *pOrigin, const Vector *pAngles, co
 }
 // END FUNCTION
 
+// FUNCTION: 0x10242220 size=0x113
+#include "Vector.h"
+
+struct CObjX { char pad[0xc]; char pad2[0x24]; };
+struct matrix3x4_t { float m[12]; };
+
+extern Vector g_1070d9d0;
+void sub_10007fd1(CObjX *, const Vector *, const Vector *, int, int);
+void sub_102414f0(CObjX *, CObjX *, const Vector *, const Vector *, const Vector *, const Vector *, int, int);
+void sub_1000a786(const Vector *, const Vector *, matrix3x4_t *);
+void sub_1000387d(CObjX *, matrix3x4_t *, const Vector *, const Vector *, int, int);
+
+struct CObjY { char pad[0x30]; char flag; };
+
+void sub_10242220(CObjY *p, const Vector *a1, const Vector *a2, const Vector *a3, const Vector *a4, int a5, int a6)
+{
+    if (*a2 == g_1070d9d0) {
+        Vector vA, vB;
+        VectorAdd(*a1, *a3, vA);
+        VectorAdd(*a1, *a4, vB);
+        sub_10007fd1((CObjX *)p, &vA, &vB, a5, a6);
+        return;
+    }
+    if (p->flag) {
+        sub_102414f0((CObjX *)p, (CObjX *)((char *)p + 0xc), a1, a2, a3, a4, a5, a6);
+        return;
+    }
+    matrix3x4_t m;
+    sub_1000a786(a2, a1, &m);
+    sub_1000387d((CObjX *)p, &m, a3, a4, a5, a6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10242390 size=0x6f
 #include <math.h>
 void sub_10242390(const float *v, float *out)
