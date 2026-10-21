@@ -52348,6 +52348,36 @@ void Holder::sub_1028eb30(int a, Vec3* v, HandleObj* h, char c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028fb70 size=0xd1
+#include "CUnknown1028fb70.h"
+
+struct CInspectStatLevels { float sub_1006caa0(int level); };	// stub 0x1000c874
+struct CInspectStatOwner
+{
+	int sub_1006cf30(const char *pszName);	// stub 0x1000fb46: the id of the stat of that name
+	CInspectStatLevels *sub_1006cff0(int id);	// the stat of the id
+};
+extern CInspectStatOwner g_106c7c34;
+
+void CUnknown1028fb70::sub_1028fb70()
+{
+	if (m_flVisionOverride == -1.0f) {
+		static int s_nVisionStat = g_106c7c34.sub_1006cf30("Inspection_Vision_Distances");
+		CInspectStatLevels *pStat = g_106c7c34.sub_1006cff0(s_nVisionStat);
+		m_flVisionDistance = pStat->sub_1006caa0(m_nLevel);
+	} else {
+		m_flVisionDistance = m_flVisionOverride;
+	}
+	if (m_flHearingOverride == -1.0f) {
+		static int s_nHearingStat = g_106c7c34.sub_1006cf30("Inspection_Hearing_Scalars");
+		CInspectStatLevels *pStat = g_106c7c34.sub_1006cff0(s_nHearingStat);
+		m_flHearingScalar = pStat->sub_1006caa0(m_nLevel);
+	} else {
+		m_flHearingScalar = m_flHearingOverride;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293d70 size=0x10
 void __fastcall sub_10293d70(int *p)
 {
