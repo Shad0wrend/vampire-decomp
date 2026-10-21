@@ -30,6 +30,7 @@ public:
 	void sub_101e4fe0(CVFeatKV *pKV);	// loads the feat from its key: Name, InternalName, HelpText and the Disabled flag; Msg when there is no key
 	int sub_101e5b30(void *pCharacter);	// the sum over the effects of kind 0 / 1 of the multiplier-scaled value of the effect's stat in the character's stat list of that kind (0 without a character)
 	int sub_101e5e10(void *pEntity);	// the feat's value for an entity (stub 0x10015537), used for the dice roll bonus
+	int sub_101e56e0(void *pEntity);	// the feat's value for an entity (stub 0x1000f03d)
 };
 
 // The game's one feat lookup: the global vector of feats (count 0x10739d20, elements 0x10739d24) searched by id (+0); its
