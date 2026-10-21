@@ -9,6 +9,8 @@ public:
 	CNPCMaker_Zombie *sub_1034ca80();
 	void vfunc103();	// slot 103 "Spawn": like CNPCMaker::vfunc103, with a randomised first think and the five counters at +0x6348 set to 999999
 	void sub_1034d2d0();	// schedules the next think like CNPCMaker::sub_1034bbf0
+	char vfunc618(char bForce);	// slot 618: true when forced; else CNPCMaker::vfunc618(0) unless the player (sub_101cda50) is farther than 0.9 * the Manhattan distance limit at +0x76d8
+	char sub_1034b580(char a);	// CNPCMaker::vfunc618 (stub 0x1000ae4d), called directly
 
 	char m_pad03e0[0x6348 - 0x3e0];
 	int m_nCounters[5];	// 0x6348
@@ -23,4 +25,6 @@ public:
 	char m_pad66c1;
 	char m_b66c2;	// 0x66c2
 	char m_b66c3;	// 0x66c3
+	char m_pad66c4[0x76d8 - 0x66c4];
+	float m_flRange;	// 0x76d8
 };
