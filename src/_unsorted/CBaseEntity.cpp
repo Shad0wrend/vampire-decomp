@@ -253,6 +253,28 @@ void CBaseEntity::vfunc13(const char *classname)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009af40 size=0xc0
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+void CBaseEntity::sub_1009af40(const float *pExtents)
+{
+	ScopeTrace trace("CBaseEntity::SetAttackExtents", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+	if (!pCollision) {
+		g_109f3630("WARNING: Trying to set attack extents for %s which has no collision property.\n", sub_100ab4f0());
+		return;
+	}
+	pCollision->sub_100dc220((int)pExtents);
+	float *pDest = (float *)((char *)this + 0x50);
+	pDest[0] = pExtents[0];
+	pDest[1] = pExtents[1];
+	pDest[2] = pExtents[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009b030 size=0x1e
 #include "CBaseEntity.h"
 

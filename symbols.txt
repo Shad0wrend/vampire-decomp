@@ -1892,6 +1892,7 @@
 0x1000942b func   _debug_entity debug_entity
 0x10009435 func   ?sub_1009a0c0@@YAXPAUTEnt@@HPAH@Z sub_1009a0c0
 0x1000943f func   ?sub_103f5220@@YAHXZ sub_103f5220
+0x10009458 func   ?sub_1009af40@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_1009af40
 0x10009467 func   ?sub_100b1380@@YI_NPAD@Z sub_100b1380
 0x1000947b func   _item_g_milligans_businesscard item_g_milligans_businesscard
 0x1000948f func   ?sub_100f5fc0@SFilter@@QAEPAU1@E@Z SFilter::sub_100f5fc0
