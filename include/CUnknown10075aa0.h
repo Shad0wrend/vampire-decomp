@@ -2,6 +2,8 @@
 // Only the fields the recovered code touches are declared.
 #pragma once
 
+class CUnknown10077990;
+
 struct CUnknown10075aa0Vec	// a five dword vector (memory, allocation count, grow size, size, element pointer)
 {
 	int m_pMemory;
@@ -55,4 +57,5 @@ public:
 	void sub_10075aa0(int arg);	// base constructor body: clears the fields, then sub_10076f10(0, 0, 0), stores arg at +0x330
 	void sub_10076f10(char c, const char *a, const char *b);	// stores c at +0x1b1 and copies the strings (the empty string for null) to +0x1b2 / +0x232 (stub 0x1000e822)
 	float sub_10076b30();	// the event's remaining length: 0.0f unless it has a time range (stub 0x10014835)
+	void sub_100754e0(CUnknown10077990 *pSource);	// copies the data of pSource into this event (stub 0x10014637)
 };
