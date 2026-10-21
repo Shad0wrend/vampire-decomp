@@ -45237,6 +45237,71 @@ void CBaseToggle::sub_101c1bc0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1e50 size=0x175
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "ConVar.h"
+#include "Vector.h"
+
+#define SLA(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLB(p) SLA(p##0) SLA(p##1) SLA(p##2) SLA(p##3) SLA(p##4) SLA(p##5) SLA(p##6) SLA(p##7) SLA(p##8) SLA(p##9)
+struct EntVT101c1e50 {
+	SLB(a) SLA(b0) SLA(b1) SLA(b2) SLA(b3) SLA(b4) SLA(b5) SLA(b6) SLA(b7) SLA(b8)
+	virtual void s190(); virtual void s191(); virtual void s192();
+	virtual Vector *a193(Vector *pOut);
+};
+struct RayLocal101c1e50
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_Extents;
+	Vector m_StartOffset;
+	char m_IsRay;
+	char m_IsSwept;
+	char m_b32;
+	char m_b33;
+	int m_n34;
+};
+extern CUnknown1070b254 *g_1070b254;
+extern ConVar *g_10738964;
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int noDepth, float duration);
+
+inline int NonZero(float f)
+{
+	return f != 0;
+}
+
+char sub_101c1e50(EntVT101c1e50 *pEntA, EntVT101c1e50 *pEntB)
+{
+	Vector posA;
+	RayLocal101c1e50 ray;
+	Vector posB;
+	pEntA->a193(&posA);
+	pEntB->a193(&posB);
+
+	VectorSubtract(posB, posA, ray.m_Delta);
+	int bSwept = NonZero(ray.m_Delta.LengthSqr());
+	ray.m_IsSwept = bSwept;
+	VectorClear(ray.m_StartOffset);
+	ray.m_IsRay = 1;
+	VectorClear(ray.m_Extents);
+	VectorCopy(posA, ray.m_Start);
+	ray.m_b32 = 0;
+	ray.m_n34 = 0;
+	ray.m_b33 = 0;
+
+	CTraceFilterSimple filter(pEntA, 0);
+	CGameTrace trace;
+	g_1070b254->vfunc4((Ray_t *)&ray, 0x28040b1, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+	if (!g_10738964->vfunc1() && g_10738964->m_nValue)
+		sub_10146570(trace.m_startpos, trace.m_endpos, 0xff, 0, 0, 1, -1.0f);
+	return trace.m_fraction == 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2200 size=0x121
 #include "SendProp.h"
 
