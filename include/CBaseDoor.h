@@ -30,6 +30,7 @@ public:
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
 	void sub_100f11b0();	// the door reached the open position (state 1): installs the touch function, fires the output at +0x5dc (flag 1 of +0x204 set) or +0x5c4 with the activator of the handle at +0x53c, closes the area portals (sub_100efbf0(0)) and runs slot 249
 	void sub_100ee4e0(int a, int b);	// stdcall helper called first with the global at 0x106eb3dc and 0 (stub 0x1000ae20)
+	void sub_100f0860();	// the door reached the closed position (state 0): clears the byte at +0x655, installs the touch function (flag 0x20 of +0x204 with 0x400) or schedules the auto-return think (curtime + the wait at +0x500; -1.0f stays -1.0f), tells the AI of the activator (the dword at +0x94 of the entity behind the handle at +0x53c) to forget the door, clears +0x640, fires the output at +0x5c4 (flag 1) or +0x5dc with the activator, and runs slot 249
 
 	char m_pad03e0[0x4a4 - 0x3e0];
 	CDoorEventList m_items4a4[2];	// +0x4a4, +0x4bc
