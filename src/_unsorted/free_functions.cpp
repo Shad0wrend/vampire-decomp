@@ -10257,6 +10257,33 @@ void sub_100892e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10089c60 size=0x105
+#include "CBaseAnimating.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+struct CTrailHelper : CBaseAnimating { const char *sub_1000b5cd(); };
+int sub_101193b0();
+char *sub_100d2070(int a, int b, char *c);
+extern "C" double atof(const char *);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+void sub_10089c60()
+{
+    int a = sub_101193b0();
+    int b = (int)g_1070b22c->vfunc84(2);
+    char *p = sub_100d2070(a, b, 0);
+    float f = (atof(g_1070b22c->vfunc84(1)) > 10.0) ? 10.0 : (atof(g_1070b22c->vfunc84(1)) < 0.0) ? 0.0 : atof(g_1070b22c->vfunc84(1));
+    while (p) {
+        CTrailHelper *e = *(CTrailHelper **)(p + 0x98);
+        if (e) {
+            e->sub_1008d230(f);
+            DevMsg("%s - Motion trail set to %f\n", e->sub_1000b5cd(), (double)e->sub_1008d190());
+        }
+        p = sub_100d2070(a, b, p);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008a6d0 size=0x64
 #include "CUnknown1070b22c.h"
 
