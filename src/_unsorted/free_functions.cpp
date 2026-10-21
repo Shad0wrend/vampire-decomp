@@ -45978,6 +45978,53 @@ bool TInfo::sub_101fdf40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fe8b0 size=0x13a
+#include "CVStatInfo_t.h"
+#include "CVStatValue_t.h"
+#include "CVStatCost_t.h"
+#include "CVStatActionList_t.h"
+#include "ScopeTrace.h"
+
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+
+struct SStatValueRecord	// a 0x14 byte value record
+{
+	CVStatValue_t m_value;
+	char m_pad[0x14 - sizeof(CVStatValue_t)];
+};
+
+struct SStatDependencyList
+{
+	void sub_10205f70(CVStatKV *pKV, const char *pszName);	// stub 0x1000bed3
+};
+
+void CVStatInfo_t::sub_101fe8b0(CVStatKV *pKV, void *pDefaults)
+{
+	ScopeTrace trace("CVStatInfo_t::PostLoad", g_106b8540);
+	if (pKV) {
+		SStatValueRecord *pMin = (SStatValueRecord *)((char *)this + 0x4c);
+		pMin->m_value.sub_10205960(pKV, "Min");
+		((SStatValueRecord *)((char *)this + 0x60))->m_value.sub_10205960(pKV, "Max");
+		SStatValueRecord *pMinSell = (SStatValueRecord *)((char *)this + 0x74);
+		pMinSell->m_value.sub_10205960(pKV, "MinSell");
+		if (pMinSell->m_value.m_nType == -1)
+			*pMinSell = *pMin;
+		SStatValueRecord *pMaxBuy = (SStatValueRecord *)((char *)this + 0x88);
+		pMaxBuy->m_value.sub_10205960(pKV, "MaxBuy");
+		if (pMaxBuy->m_value.m_nType == -1)
+			*pMaxBuy = *(SStatValueRecord *)((char *)this + 0x60);
+		((SStatValueRecord *)((char *)this + 0x9c))->m_value.sub_10205960(pKV, "Default");
+		((CVStatActionList_t *)((char *)this + 0x10c))->sub_101fd7e0(pKV);
+		((SStatDependencyList *)((char *)this + 0x120))->sub_10205f70(pKV, "IncPredependency");
+		CVStatCost_t *pCost = (CVStatCost_t *)((char *)this + 0xb0);
+		if (!pCost->sub_101fc220(pKV))
+			*pCost = *(CVStatCost_t *)((char *)pDefaults + 0x30);
+	} else {
+		Msg("Unable to load CVStatInfo_t data\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fead0 size=0x93
 #include "CVStatInfo_t.h"
 
