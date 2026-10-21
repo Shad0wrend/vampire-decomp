@@ -57367,6 +57367,99 @@ void sub_10230280(R *out, int name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230320 size=0x11d
+extern int g_107510b4;
+typedef void (*PFN)();
+
+void sub_10230490();
+void sub_10230280();
+void sub_1022eb60();
+void sub_100122a6();
+void sub_10013a02();
+void sub_10011fae();
+void sub_10015d43();
+void sub_10015447();
+void sub_10013476();
+void sub_10007e1e();
+void sub_1000b7fd();
+void sub_1021fb50();
+void sub_1000a385();
+void sub_10006f3c();
+void sub_1000c7a2();
+void sub_1000da6c();
+void sub_100034e5();
+void sub_1000abe6();
+void sub_10013679();
+void sub_1020a5c0();
+void sub_100096a1();
+void sub_1000d7ec();
+void sub_1000dc33();
+
+void sub_10203e30(PFN);
+void sub_10204550(PFN);
+void sub_101fc8d0(PFN);
+void sub_101fd8c0(PFN);
+void sub_101fd010(PFN);
+void sub_101fd090(PFN);
+void sub_101eaa40(PFN);
+void sub_101eaa60(PFN);
+void sub_101eaa80(PFN);
+void sub_101eaaa0(PFN);
+void sub_101eaac0(PFN);
+void sub_101eaae0(PFN);
+void sub_101eab00(PFN);
+void sub_101eab20(PFN);
+void sub_101eab40(PFN);
+void sub_101eab60(PFN);
+void sub_101f9590(PFN);
+void sub_101fb180(PFN);
+void sub_101fb2c0(PFN);
+void sub_101d8890(PFN);
+void sub_101e94b0(PFN);
+void sub_101eddb0(PFN);
+void sub_101eddd0(PFN);
+void sub_10203990();
+
+struct S10750d74 { void sub_10228020(); };
+struct S1072bc20 { void sub_101af9d0(); };
+extern S10750d74 g_10750d74;
+extern S1072bc20 g_1072bc20;
+
+// TARGET: sub_10230320
+void sub_10230320()
+{
+    if (g_107510b4 == 0) {
+        sub_10203e30(sub_10230490);
+        sub_10204550(sub_10230280);
+        sub_101fc8d0(sub_1022eb60);
+        sub_101fd8c0(sub_100122a6);
+        sub_101fd010(sub_10013a02);
+        sub_101fd090(sub_10011fae);
+        sub_101eaa40(sub_10015d43);
+        sub_101eaa60(sub_10015447);
+        sub_101eaa80(sub_10013476);
+        sub_101eaaa0(sub_10007e1e);
+        sub_101eaac0(sub_1000b7fd);
+        sub_101eaae0(sub_1021fb50);
+        sub_101eab00(sub_1000a385);
+        sub_101eab20(sub_10006f3c);
+        sub_101eab40(sub_1000c7a2);
+        sub_101eab60(sub_1000da6c);
+        sub_101f9590(sub_100034e5);
+        sub_101fb180(sub_1000abe6);
+        sub_101fb2c0(sub_10013679);
+        sub_101d8890(sub_1020a5c0);
+        sub_101e94b0(sub_100096a1);
+        sub_101eddb0(sub_1000d7ec);
+        sub_101eddd0(sub_1000dc33);
+        sub_10203990();
+        g_10750d74.sub_10228020();
+        g_1072bc20.sub_101af9d0();
+        g_107510b4 = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230700 size=0x1e
 #include "StatDefault.h"
 
