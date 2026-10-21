@@ -39473,6 +39473,32 @@ extern "C" CBaseEntity *security_camera()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020bf00 size=0x6a
+#include "CSecCamera.h"
+#include "CBaseVampireSkillEntity.h"
+extern int vt_10485df4[];
+void __fastcall sub_1008b490(char *p);
+
+// TARGET: CSecCamera::sub_1020bf00
+CSecCamera *CSecCamera::sub_1020bf00()
+{
+    ((CBaseVampireSkillEntity *)this)->sub_1018f1c0();
+    ((CVampireSkillItem *)((char *)this + 0x7dc))->sub_100cd2a0();
+    ((CVampireSkillItem *)((char *)this + 0x7f4))->sub_100cd2a0();
+    ((CVampireSkillItem *)((char *)this + 0x80c))->sub_100cd2a0();
+    *(void **)this = vt_10485df4;
+    *(float *)((char *)this + 0x7c0) = 1.5f;
+    *(int *)((char *)this + 0x7c4) = 0;
+    *(int *)((char *)this + 0x7c8) = 0;
+    *(int *)((char *)this + 0x7cc) = 0;
+    *(int *)((char *)this + 0x7d0) = 0;
+    *(int *)((char *)this + 0x670) = 0;
+    *((char *)this + 0x7d8) = 0;
+    sub_1008b490((char *)this);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020d0e0 size=0x43
 #include "CPropSwitch.h"
 void *sub_100aa720(int size);
