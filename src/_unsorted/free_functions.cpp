@@ -69764,6 +69764,24 @@ void CNPC_VWerewolf::sub_103d99a0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d9f90 size=0xc5
+#include "ScopeTrace.h"
+extern CNPC_VWerewolfVec3 g_1070d1b0;
+
+void CNPC_VWerewolf::sub_103d9f90()
+{
+	ScopeTrace trace("CNPC_VWerewolf::SnapToAnimationPoint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_1008eec0("Bip01", 1, 1);
+	sub_10273180(0);
+	m_vSnap66dc.x = g_1070d1b0.x;
+	m_vSnap66dc.y = g_1070d1b0.y;
+	m_vSnap66dc.z = g_1070d1b0.z;
+	m_b66a8 = 0;
+	m_n6708 = -1;
+	m_n670c = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103da0a0 size=0x132
 #include "CNPC_VWerewolf.h"
 #include "CWerewolfEnemySlots.h"
