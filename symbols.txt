@@ -3479,6 +3479,7 @@
 0x10011040 func   ?sub_103b30c0@@YADXZ sub_103b30c0
 0x1001105e func   ?sub_1039ede0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_1039ede0
 0x10011063 func   ?sub_101a3380@@YG_NPAUVEnt@@H@Z sub_101a3380
+0x10011077 func   ?sub_100d2290@@YAXPBD@Z sub_100d2290
 0x10011090 func   ?sub_102f7c00@@YAIHID@Z sub_102f7c00
 0x100110a4 func   ?sub_101c3bb0@@YA?AUVec3@@XZ sub_101c3bb0
 0x100110a9 func   ?sub_101cf620@@YAXXZ sub_101cf620

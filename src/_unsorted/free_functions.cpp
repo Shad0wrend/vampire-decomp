@@ -17132,6 +17132,28 @@ void CUnknown106b89bc::sub_100d13d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2290 size=0x70
+#include "CGlobalEntityList.h"
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+void sub_101cd940(CBaseEntity *pEnt);
+
+void sub_100d2290(const char *pszTarget)
+{
+    DevMsg(2, "KillTarget: %s\n", pszTarget);
+    CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, pszTarget, 0, 0);
+    while (pEnt) {
+        sub_101cd940(pEnt);
+        const char *pszClass = pEnt->m_classname11c;
+        if (!pszClass)
+            pszClass = g_106b8540;
+        DevMsg(2, "killing %s\n", pszClass);
+        pEnt = g_106eb5d8.sub_100f7770(pEnt, pszTarget, 0, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d23a0 size=0xc5
 #include "CUnknown1070b22c.h"
 
