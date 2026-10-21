@@ -84,3 +84,39 @@ void CCollisionProperty::vfunc5()
 	m_pOuter->vfunc100();
 }
 // END FUNCTION
+
+// FUNCTION: 0x100ddae0 size=0xb7
+#include "CCollisionProperty.h"
+
+#define CV(n) virtual void s##n();
+struct CollView {
+	CV(0) CV(1) CV(2) CV(3) CV(4) CV(5) CV(6) CV(7)
+	virtual Vector *s8();
+};
+
+inline bool IsDirtySurround(const CBaseEntity *pEnt)
+{
+	return (pEnt->m_flags268 >> 14) & 1;
+}
+
+inline void ClearDirtySurround(CBaseEntity *pEnt)
+{
+	pEnt->m_flags268 &= ~0x4000;
+}
+
+void CCollisionProperty::vfunc15(Vector *pMins, Vector *pMaxs)
+{
+	const Vector &origin = *((CollView *)this)->s8();
+	if (IsDirtySurround(m_pOuter)) {
+		ClearDirtySurround(m_pOuter);
+		sub_100dd780(pMins, pMaxs);
+		VectorSubtract(*pMins, origin, m_vecSurroundingMins);
+		VectorSubtract(*pMaxs, origin, m_vecSurroundingMaxs);
+		return;
+	}
+	VectorAdd(origin, m_vecSurroundingMins, *pMins);
+	pMaxs->x = m_vecSurroundingMaxs.x + origin.x;
+	pMaxs->y = m_vecSurroundingMaxs.y + origin.y;
+	pMaxs->z = m_vecSurroundingMaxs.z + origin.z;
+}
+// END FUNCTION

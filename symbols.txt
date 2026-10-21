@@ -1559,6 +1559,7 @@
 0x10006fa5 func   ?sub_1027ffe0@@YAXXZ sub_1027ffe0
 0x10006faa func   ?vfunc223@CRotDoor@@QAE_NXZ CRotDoor::vfunc223
 0x10006fd7 func   ?sub_102ee250@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102ee250
+0x10006fe6 func   ?vfunc15@CCollisionProperty@@UAEXPAVVector@@0@Z CCollisionProperty::vfunc15
 0x10006feb func   ?vfunc70@CGameRules@@UAEPBDH@Z CGameRules::vfunc70
 0x10006ff0 func   ?sub_100ad6e0@@YIHPAD@Z sub_100ad6e0
 0x10006ff5 func   _phys_thruster phys_thruster
