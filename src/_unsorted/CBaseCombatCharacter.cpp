@@ -126,6 +126,18 @@ void CBaseCombatCharacter::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10323b60 size=0x84
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CBaseCombatCharacter::vfunc130
+void CBaseCombatCharacter::vfunc130(int a)
+{
+	sub_1008df10(a);
+	if (CVStatListSet::Of(this)->Find(3)->sub_10010609(10) > 0)
+		sub_10323370();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323c20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
