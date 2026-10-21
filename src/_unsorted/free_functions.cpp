@@ -22153,6 +22153,27 @@ void sub_100d7f20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d94a0 size=0x118
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CVStatInfo_t.h"
+#include "CUnknown1074e098.h"
+
+extern CUnknown1074e098 g_1074e098;
+bool sub_100d9220(CBaseCombatCharacter *pChar, int stat, int a, int b);
+
+bool sub_100d94a0(CBaseCombatCharacter *pChar, int stat)
+{
+	if (((CVStatInfo_t *)g_1074e098.sub_10200370(stat))->sub_101fec30()) {
+		if (CVStatListSet::Of(pChar)->Find(0)->sub_10200ea0(0xc)) {
+			int nValue = CVStatListSet::Of(pChar)->Find(3)->sub_10010609(stat);
+			return sub_100d9220(pChar, stat, nValue, nValue);
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9c50 size=0x9d
 #include <string.h>
 #include "CUnknown101d5bd0.h"
