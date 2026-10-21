@@ -1182,6 +1182,7 @@
 0x1000648d func   ??1SendProp@@UAE@XZ SendProp::~SendProp
 0x1000649c func   ?vfunc546@CNPC_VMalkavian@@QAEHH@Z CNPC_VMalkavian::vfunc546
 0x100064a1 func   ?sub_1042fdb0@@YAXXZ sub_1042fdb0
+0x100064bf func   ?vfunc11@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHMHMHHHHH@Z CTempEntsSystem::vfunc11
 0x100064ce func   ?sub_100bc5c0@CUnknown100bc5c0@@QAEXH@Z CUnknown100bc5c0::sub_100bc5c0
 0x100064e2 func   ?vfunc4@CTEBeamLaser@@UAEXHH@Z CTEBeamLaser::vfunc4
 0x100064f1 func   ?sub_1009a030@@YAXPAUTEnt@@HPAH@Z sub_1009a030
