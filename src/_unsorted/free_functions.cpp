@@ -11687,6 +11687,24 @@ void __cdecl sub_1007c1c0(void *pFile, int nIndent, CUnknown10078540 *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ce20 size=0x65
+#include "CUnknown1007ce20.h"
+
+float CUnknown1007ce20::sub_1007ce20()
+{
+	float flMin = 0.0f;
+	for (int i = 0; i < m_size; i++) {
+		CUnknown10075aa0 *pEvent = m_pMemory[i];
+		float flTime = pEvent->sub_10075e70();
+		if (pEvent->sub_10075b70() == 5)
+			flTime -= m_f98;
+		if (flTime < flMin)
+			flMin = flTime;
+	}
+	return flMin;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfc0 size=0xa
 struct CUnknown1007dfc0 { char p[0x78]; int a; void sub_1007dfc0(int v); };
 // TARGET: CUnknown1007dfc0::sub_1007dfc0
