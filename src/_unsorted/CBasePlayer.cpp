@@ -283,6 +283,70 @@ bool CBasePlayerUnit::sub_10160d00(int a, melee_dice_roll_result *pRoll, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161200 size=0x12b
+struct CGlobalVarsView {
+	char m_pad0000[0xc];
+	float curtime;	// 0xc
+};
+extern CGlobalVarsView *g_1070b228;
+
+struct CSequenceDescView {
+	char m_pad0000[0x2f8];
+	float m_f2f8;
+};
+
+struct CBasePlayerActView {
+	char m_pad0000[0x6f0];
+	int m_nSequence;	// 0x6f0
+	int m_n06f4;
+	float m_flCycle;	// 0x6f8
+	char m_pad06fc[0xff0 - 0x6fc];
+	int m_nActivity;	// 0xff0
+};
+
+// TARGET: CBasePlayer::vfunc412
+bool CBasePlayer::vfunc412()
+{
+	CBasePlayerActView *p = (CBasePlayerActView *)this;
+	int act = p->m_nActivity;
+	if (act == 0x1152 || act == 0x1153 || act == 0x52 || act == 0x1156) {
+		if (g_1070b228->curtime < m_f1564)
+			return true;
+	} else if (p->m_nSequence >= 0) {
+		if (p->m_flCycle >= 1.0f)
+			return false;
+		if (act == 0x4b) {
+			CSequenceDescView *pDesc = (CSequenceDescView *)sub_1008d990(p->m_nSequence);
+			if (pDesc) {
+				if (p->m_flCycle < pDesc->m_f2f8)
+					return true;
+			}
+		} else {
+			if (act == 0x4c)
+				return true;
+			if (act == 0x4d)
+				return true;
+			if (act == 0x4e)
+				return true;
+			if (act == 0xfa4)
+				return true;
+		}
+		if (sub_10344da0(act))
+			return true;
+		if (p->m_flCycle < 0.8f) {
+			if (sub_10161380())
+				return true;
+		}
+		if (act == 0x1065)
+			return true;
+		if (act == 0x1066)
+			return true;
+		return (char)(act == 0x1067);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163630 size=0xd9
 #include "CBasePlayer.h"
 #define GV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
