@@ -15878,6 +15878,32 @@ void CBaseEntity::sub_100a0b20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1250 size=0xd0
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct S100a1250Info
+{
+    char m_pad0000[0x2c];
+    CEntityVSlots *m_pAttacker;
+    float m_flDamage;
+    char m_pad0034[0x4c - 0x34];
+
+    void ScaleDamage(float flScaleAmount) { m_flDamage *= flScaleAmount; }
+};
+
+// TARGET: CBaseEntity::sub_100a1250
+int CBaseEntity::sub_100a1250(const void *pDamageInfo)
+{
+    ScopeTrace trace("CBaseEntity::TakeDamage", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    S100a1250Info info = *(const S100a1250Info *)pDamageInfo;
+    if (info.m_pAttacker)
+        info.ScaleDamage(info.m_pAttacker->slot203());
+    info.ScaleDamage(((CEntityVSlots *)this)->slot204());
+    return ((CEntityVSlots *)this)->slot142(&info);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a4930 size=0x7a
 #include "CBaseEntity.h"
 
