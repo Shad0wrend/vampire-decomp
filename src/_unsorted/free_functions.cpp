@@ -29909,6 +29909,55 @@ void CBreakable::sub_1010ddc0(void *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e620 size=0xef
+#include "CBreakable.h"
+#include "CCollisionProperty.h"
+
+#define SLA(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLB(p) SLA(p##0) SLA(p##1) SLA(p##2) SLA(p##3) SLA(p##4) SLA(p##5) SLA(p##6) SLA(p##7) SLA(p##8) SLA(p##9)
+struct EntVT1010e620 {
+	SLB(a) SLB(b)
+	virtual void s200(); virtual void s201(); virtual void s202(); virtual void s203();
+	virtual void s204(); virtual void s205(); virtual void s206(); virtual void s207();
+	virtual void a208(EntVT1010e620 *pEnt);
+	virtual void s209(); virtual void s210(); virtual void s211(); virtual void s212(); virtual void s213();
+	virtual float *a214();
+	void sub_100b3640(unsigned int flags);
+};
+
+struct BreakableView1010e620 {
+	char pad[0x270];
+	CCollisionProperty m_collision;
+};
+int sub_10003f35(EntVT1010e620 **pOut, int nMax, float *pA, float *pB, int a, int b);
+
+void CBreakable::sub_1010e620()
+{
+	EntVT1010e620 *apEnts[256];
+	float vA[3];
+	float vB[3];
+	float flMax;
+	EntVT1010e620 *self = (EntVT1010e620 *)this;
+	flMax = self->a214()[0];
+	if (flMax < self->a214()[1])
+		flMax = self->a214()[1];
+	if (flMax < self->a214()[2])
+		flMax = self->a214()[2];
+	CCollisionProperty *col = &((BreakableView1010e620 *)this)->m_collision;
+	col->sub_100dcd90(&col->m_vecMins.x, &col->m_vecMaxs.x, vA, vB);
+	vA[2] = vB[2] - 1.0f;
+	vB[2] = vB[2] + 8.0f;
+	int n = sub_10003f35(apEnts, 256, vA, vB, 1, 0);
+	if (n != 0) {
+		for (int i = 0; i < n; i++) {
+			apEnts[i]->sub_100b3640(1);
+			apEnts[i]->a208(0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f4e0 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1010f4e0(void **p) { ((Fn *)*p)[241](p); }
