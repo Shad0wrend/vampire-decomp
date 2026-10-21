@@ -65,4 +65,6 @@ public:
 	bool sub_101a1140(int a, void *pData, void *pBase, typedescription_t *pField);	// "CSave::WriteField": dispatches on the field type (0xb..0x13) to the matching write slot, "Bad field type" warning otherwise
 	CSave *sub_1019f870(void *pBuffer);	// the CSave constructor (the stub at 0x10009bf6): vtable, +0x18 = pBuffer, +0x1c = pBuffer + 0x18 (0 for null), room for 0x20 elements in the char vector at +4
 	void sub_1016f0f0(const char *pszName, char *pData, int size);	// writes the size byte string pData under pszName (stub 0x100139b7)
+	bool sub_1019fe10(void *pData, typedescription_t *pField);	// "CSave::IsFieldNonEmpty"-like (recursive, stub 0x10015aaf): whether the field holds data that has to be saved: embedded structures (type 9) are checked field by field, custom fields (type 10) ask their save/restore ops (slot 2), everything else is tested for all-zero bytes (sub_101a0570)
+	int sub_101a0570(const void *pData, int nBytes);	// whether the bytes are all zero (stub 0x100041d8)
 };
