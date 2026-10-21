@@ -11,8 +11,10 @@ struct CVDmgBlock16_t
 	int m_a, m_b, m_c, m_d;
 
 	CVDmgBlock16_t();	// calls sub_10204270 (stub 0x10004b7e, body at 0x10205380)
+	CVDmgBlock16_t(int a, int b);	// calls sub_102042a0(a, b) (0x102053a0, stub 0x10004561)
 	void sub_10204270();	// reset: m_a = m_b = -1, m_d = 1 (stub 0x10010573)
 	void sub_102042a0(int a, int b);	// stores a / b in the first two fields and sets m_d to 1 (stub 0x10014290)
+	int sub_10204900(void *pCharacter);	// the value this block names for the character (a stat, a feat, ...; stub 0x10013cc8), 0 for an empty block or no character
 };
 
 class CVDmg_t
