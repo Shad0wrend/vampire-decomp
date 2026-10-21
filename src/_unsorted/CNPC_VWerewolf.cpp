@@ -199,6 +199,30 @@ void CNPC_VWerewolf::vfunc141(CUnknown101c2a50 *pInfo, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cccc0 size=0xaf
+#include "CNPC_VWerewolf.h"
+#include "CUnknown101c2a50.h"
+#include "ScopeTrace.h"
+
+struct CTakeDamageInfoX
+{
+	int m_data[19];
+};
+
+void *__fastcall sub_101c2690(void *pInfo);
+
+// TARGET: CNPC_VWerewolf::vfunc142
+int CNPC_VWerewolf::vfunc142(CUnknown101c2a50 *pInfo)
+{
+	ScopeTrace trace("CNPC_VWerewolf::OnTakeDamage", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CTakeDamageInfoX info;
+	sub_101c2690(&info);
+	info = *(CTakeDamageInfoX *)pInfo;
+	((CUnknown101c2a50 *)&info)->sub_101c2a50(0);
+	return sub_102bed30(pInfo);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d0640 size=0xfc
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
