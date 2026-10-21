@@ -15,7 +15,7 @@ public:
 	float m_f08c4;
 	char m_pad08c8[0x910 - 0x8c8];
 	int m_n0910;
-	void vfunc367(int a, int b, int c);	// slot 367: its own (0x103e8ad0)
+	int vfunc367(int a, float b, float c);	// slot 367: its own (0x103e8ad0)
 	void vfunc370(int *event, CBaseCombatWeapon *other);	// slot 370: its own (0x103e8be0)
 	CBaseCombatWeapon *vfunc5(unsigned int flags);	// as in CPhysForce (transplant); VC6 has no covariant returns
 };
