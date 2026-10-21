@@ -34102,6 +34102,24 @@ void CUnknown101dddb0::sub_101dddb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101df260 size=0x66
+#include "S101df260.h"
+
+S101df260 *S101df260::sub_101df260(int a)
+{
+	m_items[0].sub_101ddec0();
+	m_items[1].sub_101ddec0();
+	m_items[2].sub_101ddec0();
+	m_items[3].sub_101ddec0();
+	m_items[4].sub_101ddec0();
+	m_obj364.sub_101dda30();
+	m_n36c = -1;
+	m_n00 = a;
+	m_b371 = m_b370 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101df8d0 size=0xe9
 struct Vec3X { int x, y, z; };
 struct ItemVecX {
