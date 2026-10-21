@@ -23,11 +23,12 @@ public:
 	void sub_100b5ce0();	// slot 276 override: toggles the int at +0x854
 	void vfunc287(CBaseFlexItemObject *pObject);	// slot 287: removes the item of the vector at +0xa58 that refers to pObject (calls its sub_100029c8, clears the item and shifts the following ones down)
 	void vfunc285(int nKey);	// slot 285: clears the item vector when nKey is 0, else removes every item whose second field (+4) equals nKey, like slot 287
+	float vfunc281(int index);	// slot 281 "GetFlexWeight"-like: the flex controller index's value at +0x858 scaled from 0..1 into the controller's range (its two floats at +0xc / +0x10), 0.0f for an index outside the model's controllers
 
 	char m_pad03e0[0x848 - 0x3e0];
 	float m_vec848[3];
 	int m_toggle854;
-	char m_pad858[0xa58 - 0x858];
+	float m_flFlexWeight[(0xa58 - 0x858) / 4];	// 0x858
 	CBaseFlexItem *m_pItems;	// 0xa58
 	int m_nItemsAlloc;
 	int m_nItemsGrow;
