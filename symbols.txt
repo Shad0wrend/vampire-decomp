@@ -2191,6 +2191,7 @@
 0x1000999e func   ?sub_103d6280@CNPC_VWerewolf@@QAEXPAX@Z CNPC_VWerewolf::sub_103d6280
 0x100099a8 func   ?sub_10430280@@YAII@Z sub_10430280
 0x100099d0 func   _item_g_pisha_fetish item_g_pisha_fetish
+0x100099df func   ?sub_100d2eb0@@YAXXZ sub_100d2eb0
 0x100099f8 func   ?sub_100d13d0@CUnknown106b89bc@@QAEXPAVCBaseEntity@@@Z CUnknown106b89bc::sub_100d13d0
 0x10009a0c func   ?sub_101317d0@CToggleRelayUnit@@QAEXXZ CToggleRelayUnit::sub_101317d0
 0x10009a16 func   ?sub_10248850@CUnknown10248850@@QAEXH@Z CUnknown10248850::sub_10248850

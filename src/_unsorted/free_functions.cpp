@@ -21005,6 +21005,47 @@ void sub_100d2d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2eb0 size=0x104
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+#include <string.h>
+
+struct S100d2eb0Owner
+{
+	char m_pad[0xa8];
+	CBaseEntity *m_pEnt;
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_106e7c00[256];
+S100d2eb0Owner *sub_101193b0();
+void sub_101cf390(CBaseEntity *pEnt, const float *mins, const float *maxs);
+void sub_101cf600(CBaseEntity *pEnt);
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+
+// TARGET: sub_100d2eb0
+void sub_100d2eb0()
+{
+	S100d2eb0Owner *pOwner = sub_101193b0();
+	if (!pOwner)
+		return;
+	CBaseEntity *pEnt = pOwner->m_pEnt;
+	if (!pEnt)
+		return;
+	if (g_1070b22c->vfunc85() != 2)
+		return;
+	Q_strncpy(g_106e7c00, "models/", 256);
+	strcat(g_106e7c00, g_1070b22c->vfunc84(1));
+	strcat(g_106e7c00, ".mdl");
+	pEnt->vfunc105(g_106e7c00);
+	Vector mins, maxs;
+	maxs.Init(16.0f, 16.0f, 72.0f);
+	mins.Init(-16.0f, -16.0f, 0.0f);
+	sub_101cf390(pEnt, &mins.x, &maxs.x);
+	sub_101cf600(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d30a0 size=0x1c
 #include "CUnknown100d30a0.h"
 
