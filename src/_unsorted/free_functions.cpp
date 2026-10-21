@@ -15919,6 +15919,29 @@ void CBaseEntity::sub_100a0420(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a04e0 size=0x13b
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);
+
+// TARGET: CBaseEntity::sub_100a04e0
+void CBaseEntity::sub_100a04e0(const char *pszParentName, CBaseEntity *pActivator)
+{
+    ScopeTrace trace("CBaseEntity::SetParent", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    CBaseEntity *pParent = g_106eb5d8.sub_100f7770(0, pszParentName ? pszParentName : "", pActivator, 0);
+    if (pszParentName && !pParent) {
+        g_109f3628("Entity %s(%s) has bad parent %s\n", m_classname11c ? m_classname11c : "", sub_100ab4f0(), pszParentName);
+        return;
+    }
+    if (g_106eb5d8.sub_100f7770(pParent, pszParentName ? pszParentName : "", pActivator, 0)) {
+        g_109f3628("Entity %s(%s) has ambigious parent %s\n", m_classname11c ? m_classname11c : "", sub_100ab4f0(), pszParentName ? pszParentName : "");
+    }
+    sub_100a0670(pParent, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a0b20 size=0x7b
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
