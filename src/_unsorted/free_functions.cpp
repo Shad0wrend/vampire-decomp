@@ -37208,6 +37208,26 @@ S9 *S9::sub_101f4f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f5150 size=0x8c
+#include "CUnknown101f5150.h"
+bool CUnknown101f5150::sub_101f5150(const char *pszName)
+{
+    CUnknown101f40f0 **pNew = (CUnknown101f40f0 **)operator new(m_nCount * 4 + 4);
+    if (m_nCount > 0) {
+        for (int i = 0; i < m_nCount; i++)
+            pNew[i] = m_pItems[i];
+        operator delete(m_pItems);
+    }
+    m_pItems = pNew;
+    CUnknown101f40f0 *p = (CUnknown101f40f0 *)operator new(0x34);
+    p = p ? p->sub_101f40f0() : 0;
+    m_pItems[m_nCount] = p;
+    m_pItems[m_nCount]->sub_101f4170(this, pszName);
+    m_nCount++;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5d60 size=0xd
 extern char g_106b8540[];
 // TARGET: CUnknown101f5d60::sub_101f5d60
