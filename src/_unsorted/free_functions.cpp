@@ -17377,6 +17377,27 @@ int Queue::sub_100cfd00(SaveX *save)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cfda0 size=0xa2
+#include "CEventQueue.h"
+
+extern int g_1055dc74[];	// the field table of the queue
+extern int g_1055dca0[];	// the field table of a PEvent
+
+int CEventQueue::sub_100cfda0(IEQRestore *pRestore)
+{
+	sub_100cdda0();
+	CEQEvent ev;
+	if (!pRestore->ReadFields("EventQueue", this, 0, g_1055dc74, 1))
+		return 0;
+	for (int i = 0; i < m_nEvents; i++) {
+		if (!pRestore->ReadFields("PEvent", &ev, 0, g_1055dca0, 0xc))
+			return 0;
+		sub_100ce1c0(&ev);
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d13d0 size=0xab
 #include "CUnknown106b89bc.h"
 #include "CGlobalEntityList.h"
