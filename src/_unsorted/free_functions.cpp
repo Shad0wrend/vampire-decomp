@@ -19236,6 +19236,55 @@ void CUnknown100f0120::sub_100f0120(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0170 size=0x73
+#define OV(n) virtual void v##n();
+#define OV10(p) OV(p##0) OV(p##1) OV(p##2) OV(p##3) OV(p##4) OV(p##5) OV(p##6) OV(p##7) OV(p##8) OV(p##9)
+
+struct CTargetObj {
+	virtual void v0();
+	virtual unsigned int *v1();
+	char m_pad04[0x9c - 4];
+	int m_n9c;
+};
+
+struct CTargetHolder {
+	OV(0) OV(1) OV(2) OV(3) OV(4) OV(5) OV(6) OV(7) OV(8) OV(9)
+	OV10(1) OV10(2) OV10(3) OV10(4) OV10(5) OV10(6) OV10(7) OV10(8) OV10(9)
+	OV10(10) OV10(11) OV10(12) OV10(13) OV10(14) OV10(15) OV10(16) OV10(17) OV10(18) OV10(19)
+	OV10(20) OV10(21) OV10(22) OV10(23)
+	OV(240) OV(241) OV(242)
+	virtual void v243(int a, int b);
+	char m_pad0004[0x4f8 - 4];
+	int m_n4f8;
+	char m_pad4fc[0x53c - 0x4fc];
+	unsigned int m_hTarget;
+	char m_pad540[0x60c - 0x540];
+	char m_sub60c[4];
+
+	char sub_100eec70(int a);
+	void sub_100f0170(CTargetObj **ppObj);
+};
+
+struct CTargetSub {
+	void sub_100cd660(CTargetObj *pObj, CTargetHolder *pHolder, int c);
+};
+
+void CTargetHolder::sub_100f0170(CTargetObj **ppObj)
+{
+	if (m_n4f8) {
+		CTargetObj *pObj = *ppObj;
+		if (!sub_100eec70(pObj ? pObj->m_n9c : 0)) {
+			if (pObj)
+				m_hTarget = *pObj->v1();
+			else
+				m_hTarget = (unsigned int)-1;
+			((CTargetSub *)m_sub60c)->sub_100cd660(*ppObj, this, 0);
+			v243(1, 1);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0210 size=0x80
 #include "CBaseDoor.h"
 #include "CEntityVSlots.h"

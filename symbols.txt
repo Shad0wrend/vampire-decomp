@@ -2123,6 +2123,7 @@
 0x1000ac3b func   ?sub_103adb00@@YAPAHXZ sub_103adb00
 0x1000ac45 func   ?sub_103f59f0@@YAHXZ sub_103f59f0
 0x1000ac4a func   ?sub_102034a0@@YAPBDH@Z sub_102034a0
+0x1000ac4f func   ?sub_100f0170@CTargetHolder@@QAEXPAPAUCTargetObj@@@Z CTargetHolder::sub_100f0170
 0x1000ac72 func   ?sub_1005b1e0@@YAXHHHPAUTEVec3@@H0HHHHHHHHHHHHHH@Z sub_1005b1e0
 0x1000ac95 func   _keyframe_rope keyframe_rope
 0x1000ac9f func   ?vfunc1@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAX@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc1
