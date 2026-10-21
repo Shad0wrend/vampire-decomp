@@ -75,7 +75,7 @@ public:
 	virtual void vfunc308(int a, int b);	// pushes a to the first and b to the second view model of the weapon (owner's player object at +0xa8 needed): sequence from slot 342, slot 266 / 265, and the player's field +0x1488 copied to +0x6f4 of each
 	virtual bool vfunc309();	// true when gpGlobals->curtime is past the time at +0x894
 	virtual void vfunc310(float time);	// "SetNextAttack"-like: stores time at +0x894 of this weapon (just this one without an owner), of the owner's active weapon and of the weapon behind the owner's handle at +0x1c64
-	CBCW_V(311)
+	virtual float vfunc311();	// the weapon's next-attack time (as read by sub_10254b00)
 	virtual char vfunc312();	// asked by sub_10253b70 (whether the weapon may be used)
 	CBCW_V(313) CBCW_V(314)
 	virtual bool vfunc315();
@@ -124,6 +124,7 @@ public:
 	CWeaponRollValue sub_102563f0(CUnknown101d8a70 *pRecordOut, int n);	// like sub_10256350 for the roll n: also copies the roll result record to pRecordOut when that is set
 	void sub_10255c30(void *pKeys);	// looks the first space separated word of the key's string up in the global name table (0x1073a330) and stores the id of the matching record (-1 when none) at +0x24d0 of the owner object
 	bool sub_100ab020(int a, void *pEdict, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly by vfunc86
+	bool sub_10254b00(int a);	// "can start the reload": false without an owner, without ammo (owner ammo count of the type at +0x744, unless the byte +0x89a is set) or while the owner's info block has +0x4fee8 set; with something to load starts it (sub_10254cd0(a), slot 333(10, 3, 0, 0, 0, 0), byte +0x898 = 1) and returns true, else re-arms the next attack time (slot 311 + a constant) once the pending flags are set
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
