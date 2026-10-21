@@ -1955,6 +1955,7 @@
 0x10008b16 func   ?sub_10199e20@@YAXXZ sub_10199e20
 0x10008b3e func   ?vfunc5@CWeaponIArmor_Lt_Cloth@@QAEPAV1@I@Z CWeaponIArmor_Lt_Cloth::vfunc5
 0x10008b5c func   ?sub_101151a0@CUnknown101151a0@@QAEIXZ CUnknown101151a0::sub_101151a0
+0x10008b61 func   ?sub_100673c0@@YAHXZ sub_100673c0
 0x10008b66 func   ?sub_103ebe20@@YAHXZ sub_103ebe20
 0x10008b7a func   ?sub_101e9640@CUnknown101e98c0Item@@QAE_NPAUCDataNode@@@Z CUnknown101e98c0Item::sub_101e9640
 0x10008b84 func   ?sub_100b3700@CBaseEntity@@QAEHXZ CBaseEntity::sub_100b3700

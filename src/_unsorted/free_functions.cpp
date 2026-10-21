@@ -7603,6 +7603,42 @@ int sub_10066e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100673c0 size=0xfc
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246700(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246dc0(const char *name, int offset, int pTable, void *proxy);
+void sub_10009539();
+void sub_10006aeb();
+void sub_10003012();
+extern SendTable g_106c5388;
+extern const char *g_10544a4c;
+extern int g_1053dfa8;
+
+// TARGET: sub_100673c0
+int sub_100673c0()
+{
+	static SendProp g_SendProps[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_10246700("m_vecOrigin", 0xc, 12, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+		sub_10246af0("m_nModelIndex", 0x18, 4, 11, 0, 0, 0),
+		sub_10246510("m_fScale", 0x1c, 4, 8, 8, 0.0f, 25.6f, (void *)sub_10006aeb),
+		sub_10246af0("m_nFrameRate", 0x20, 4, 8, 1, 0, 0),
+	};
+	g_106c5388.sub_10247240(g_SendProps + 1, 5, g_10544a4c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100679a0 size=0xd5
 #include "SendProp.h"
 
