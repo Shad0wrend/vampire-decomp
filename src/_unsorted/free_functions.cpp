@@ -11385,6 +11385,55 @@ void sub_10085070(int *dst, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10085480 size=0x116
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "CUnknown1070b22c.h"
+
+struct S10085480Ent
+{
+	char m_pad[0x94];
+	void *m_p94;
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+extern unsigned int g_10925444;
+void *sub_101193b0();
+CBaseEntity *sub_100d2070(void *pPlayer, const char *pszName, void *pStart);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+static inline CBaseEntity *FindByName(void *pPlayer, const char *pszName)
+{
+	return sub_100d2070(pPlayer, pszName, 0);
+}
+
+// TARGET: sub_10085480
+void sub_10085480()
+{
+	void *pPlayer = sub_101193b0();
+	CBaseEntity *pEnt = FindByName(pPlayer, g_1070b22c->vfunc84(1));
+	if (pEnt && ((S10085480Ent *)pEnt)->m_p94) {
+		unsigned int hOld = g_10925444;
+		g_10925444 = *pEnt->vfunc1();
+		const char *pszOld;
+		if (EHandle_Get(hOld) == 0)
+			pszOld = "*UNKNOWN*";
+		else
+			pszOld = ((CBaseEntity *)EHandle_Get(hOld))->sub_100ab4f0();
+		DevMsg("Changing hint ent to %s from %s\n", pEnt->sub_100ab4f0(), pszOld);
+		return;
+	}
+	unsigned int hOld = g_10925444;
+	g_10925444 = 0xffffffff;
+	const char *pszOld;
+	if (EHandle_Get(hOld) == 0)
+		pszOld = "*UNKNOWN*";
+	else
+		pszOld = ((CBaseEntity *)EHandle_Get(hOld))->sub_100ab4f0();
+	DevMsg("Clearing hint ent to *UNKNOWN* from %s\n", pszOld);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100855f0 size=0x1c
 extern char g_1054970c[];
 extern int g_10552810;
