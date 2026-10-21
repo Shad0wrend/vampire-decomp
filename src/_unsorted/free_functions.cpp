@@ -65573,6 +65573,30 @@ bool sub_10240670(const Vector &a, const Vector &b, BoxObj *obj, float margin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102414f0 size=0xe7
+#include "Vector.h"
+
+extern Vector g_1070d9d0;
+void sub_10139b50(const Vector *pAngles, const Vector *pOrigin, float *pMatrix);
+void sub_10240cb0(int a, int b, const Vector *pMins, const Vector *pMaxs, int c, int d);
+void sub_10241100(int a, int b, const float *pMatrix, const Vector *pMins, const Vector *pMaxs, int c, int d);
+
+void sub_102414f0(int a, int b, const Vector *pOrigin, const Vector *pAngles, const Vector *pMins, const Vector *pMaxs, int c, int d)
+{
+	if (*pAngles == g_1070d9d0) {
+		Vector vecMins;
+		Vector vecMaxs;
+		VectorAdd(*pOrigin, *pMins, vecMins);
+		VectorAdd(*pOrigin, *pMaxs, vecMaxs);
+		sub_10240cb0(a, b, &vecMins, &vecMaxs, c, d);
+	} else {
+		float matrix[12];
+		sub_10139b50(pAngles, pOrigin, matrix);
+		sub_10241100(a, b, matrix, pMins, pMaxs, c, d);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10242390 size=0x6f
 #include <math.h>
 void sub_10242390(const float *v, float *out)
