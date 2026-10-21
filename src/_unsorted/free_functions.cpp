@@ -43223,6 +43223,35 @@ CRecListUnit *CRecListUnit::sub_101dcb80(const CRecListUnit *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dce30 size=0xac
+#include "CUnknown101dce30.h"
+
+bool CUnknown101dce30::sub_101dce30(CUnknown101dc5a0Keys *pKeys, const char *pszName)
+{
+	if (pKeys) {
+		CUnknown101dc5a0Keys *pBlock = pKeys->vfunc2(pszName);
+		if (pBlock) {
+			CUnknown101dc5a0Keys *p;
+			for (p = pBlock->vfunc2("Particle_ThirdPerson"); p; p = p->vfunc3()) {
+				CUnknown101dcc80Record *pRecord = m_particles.sub_101dcc80();
+				pRecord->m_nSlot = 0;
+				if (!sub_101dcf10(p, pRecord))
+					return false;
+			}
+			for (p = pBlock->vfunc2("Particle_FirstPerson"); p; p = p->vfunc3()) {
+				CUnknown101dcc80Record *pRecord = m_particles.sub_101dcc80();
+				pRecord->m_nSlot = 1;
+				if (!sub_101dcf10(p, pRecord))
+					return false;
+			}
+			m_sounds.sub_101dc5a0(pBlock);
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd3c0 size=0x90
 #include "CUnknown101e0f00.h"
 
