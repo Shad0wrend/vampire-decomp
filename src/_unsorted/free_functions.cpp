@@ -45842,6 +45842,58 @@ void CUnknown101ecb10::sub_101ecb10(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ecb90 size=0xd0
+#include "CUnknown109f08c0.h"
+#include "CUnknown101daec0.h"
+
+struct CIdRet_101ecb90	// a value returned through a hidden pointer (a class with a constructor)
+{
+	int m_n;
+	CIdRet_101ecb90() {}
+};
+struct CNameRet_101ecb90
+{
+	int m_n;
+	CNameRet_101ecb90() {}
+};
+CIdRet_101ecb90 sub_102038e0(IKVNodeView *pKV, const char *pszKey);
+CNameRet_101ecb90 sub_10203920(IKVNodeView *pKV);
+const char *sub_10203d60(const char *psz);	// copies into a ring buffer and lowercases
+void sub_1025b740(const char *pszName, unsigned int *pMask);
+
+// the key block as the flag loops see it: slot 6 finds a child by name, slot 7 the next one
+struct CKeys_101ecb90
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4(); virtual void vfunc5();
+	virtual CKeys_101ecb90 *vfunc6(const char *pszName);
+	virtual CKeys_101ecb90 *vfunc7();
+	virtual void vfunc8(); virtual void vfunc9(); virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12();
+	virtual const char *vfunc13(const char *pszKey, const char *pszDefault);
+};
+
+#define F(T, off) (*(T *)((char *)this + off))
+
+char CUnknown109f08c0::sub_101ecb90(IKVNodeView *pKV)
+{
+	if (pKV) {
+		m_unk4 = sub_102038e0(pKV, "InternalName").m_n;
+		m_pszName = (const char *)sub_10203920(pKV).m_n;
+		CKeys_101ecb90 *pKey = ((CKeys_101ecb90 *)pKV)->vfunc6("ExcludedFlag");
+		while (pKey) {
+			sub_1025b740(sub_10203d60(pKey->vfunc13(0, g_106b8540)), &F(unsigned int, 0xc));
+			pKey = pKey->vfunc7();
+		}
+		pKey = ((CKeys_101ecb90 *)pKV)->vfunc6("RequiredFlag");
+		while (pKey) {
+			sub_1025b740(sub_10203d60(pKey->vfunc13(0, g_106b8540)), &F(unsigned int, 0x10));
+			pKey = pKey->vfunc7();
+		}
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eccd0 size=0xcb
 #include "CUnknown101eccd0.h"
 extern char g_106b8540[];

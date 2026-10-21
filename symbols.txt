@@ -2132,6 +2132,7 @@
 0x10009796 func   ?vfunc213@CBaseEntity@@QAEXPBM@Z CBaseEntity::vfunc213
 0x1000979b func   ?sub_100cd870@COutputEvent@@QAEHPAVCRestore@@H@Z COutputEvent::sub_100cd870
 0x100097a5 func   ?sub_10360560@@YADXZ sub_10360560
+0x100097aa func   ?sub_101ecb90@CUnknown109f08c0@@QAEDPAVIKVNodeView@@@Z CUnknown109f08c0::sub_101ecb90
 0x100097b9 func   _trigger_werewolf_zone trigger_werewolf_zone
 0x100097c3 func   _hud_image hud_image
 0x100097cd func   ?sub_1018e790@@YAXPAVCBaseEntity@@PBD@Z sub_1018e790
