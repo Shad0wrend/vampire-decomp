@@ -7637,6 +7637,38 @@ void __fastcall sub_1006fe00(FollowObj *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071100 size=0xbd
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246dc0(const char *name, int offset, int pTable, void *proxy);
+void sub_10009539();
+void sub_10246300();
+extern SendTable g_106c7c54;
+extern const char *g_1054693c;
+extern int g_1054d524;
+
+// TARGET: sub_10071100
+int sub_10071100()
+{
+    static SendProp g_SendProps[] = {
+        sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+        sub_10246dc0("baseclass", 0, g_1054d524, (void *)sub_10009539),
+        sub_10246af0("m_bShouldDraw", 0x828, 1, 1, 1, 0, 0),
+        sub_10246510("m_flOverrideFOV", 0x82c, 4, 0x10, 0x10, 0.0f, -121121.121121f, (void *)sub_10246300),
+    };
+    g_106c7c54.sub_10247240(g_SendProps + 1, 3, g_1054693c);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071220 size=0x6b
 #include "CCameraAnimated.h"
 extern void *vt_1044eb14[];
