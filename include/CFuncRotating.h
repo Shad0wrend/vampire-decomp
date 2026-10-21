@@ -14,7 +14,12 @@ public:
 	int vfunc124();	// "DrawDebugTextOverlays": the base's line offset, plus one line ("Speed cur (target)": floats at +0x164 and +0x45c through sub_100c0900) when the text overlay bit (byte at +0x224) is set
 	virtual void vfunc104();	// slot 104 "CFuncRotating::Precache": precaches the running noise (name at +0x468) when it is set, and with non-zero angles (+0x3c8) schedules the move done function 1.5 seconds on
 	void sub_100c0690();	// the move done function installed by Precache (stub 0x1000b884)
+	bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 "CFuncRotating::KeyValue": "fanfriction" (percent) and "Volume" (tenths, clamped to 0..1), else CBaseEntity::vfunc110
 
-	char m_pad03e0[0x468 - sizeof(CBaseEntity)];
+	char m_pad03e0[0x450 - sizeof(CBaseEntity)];
+	float m_flFanFriction;	// 0x450
+	char m_pad0454[4];
+	float m_flVolume;	// 0x458
+	char m_pad045c[0x468 - 0x45c];
 	const char *m_pszNoiseRunning;	// 0x468
 };
