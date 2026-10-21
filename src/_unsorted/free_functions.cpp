@@ -52351,6 +52351,58 @@ CSecCamera *CSecCamera::sub_1020bf00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020c3d0 size=0xe0
+#include "CSecCamera.h"
+
+struct CGlobalVarsStub
+{
+	char pad[0xc];
+	float m_flCurTime;
+};
+
+extern CGlobalVarsStub *g_1070b228;
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+// TARGET: CSecCamera::sub_1020c3d0
+void CSecCamera::sub_1020c3d0()
+{
+	if (!(m_flNextStateTime7a0 > g_1070b228->m_flCurTime)) {
+		switch (m_nState79c) {
+		case 0:
+			sub_1020c4f0(2);
+			return;
+		case 1:
+			sub_1020c4f0(3);
+			return;
+		case 2:
+			m_Output7f4.sub_100cd660(this, this, 0);
+		case 8:
+			sub_1020c4f0(1);
+			return;
+		case 3:
+			m_Output80c.sub_100cd660(this, this, 0);
+			sub_1020c4f0(0);
+			return;
+		case 4:
+			if (sub_1020cd30())
+				sub_1020c4f0(6);
+			else
+				sub_1020c4f0(5);
+			return;
+		case 5:
+			sub_1020c4f0(8);
+			return;
+		case 6:
+		case 7:
+			break;
+		default:
+			DevMsg("Security Camera has unrecognized state!");
+			m_b77c = 0;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020c890 size=0xc3
 #include "CSecCamera.h"
 #include "CBroadcastRecipientFilter.h"
