@@ -1090,6 +1090,7 @@
 0x100060be func   ?vfunc494@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc494
 0x100060f5 func   ?sub_102db740@CAI_InterestingPlaceConverstation@@QAEXH@Z CAI_InterestingPlaceConverstation::sub_102db740
 0x100060ff func   ?vfunc3@CGameMovement@@QAEPAMDH@Z CGameMovement::vfunc3
+0x10006131 func   ?vfunc3@CTEKillPlayerAttachments@@UAEXPBM0@Z CTEKillPlayerAttachments::vfunc3
 0x1000614a func   ?vfunc431@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc431
 0x10006159 func   ?sub_100f5600@CUnknown100f5600@@QAEXM@Z CUnknown100f5600::sub_100f5600
 0x10006172 func   ?sub_101e8780@S@@QAEXPAUP@@@Z S::sub_101e8780
