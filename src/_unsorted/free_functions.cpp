@@ -62867,6 +62867,53 @@ CBaseEntity *CAI_BaseNPC::sub_102729d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102792b0 size=0x114
+#include "CAI_BaseNPC.h"
+#include "CBaseAnimating.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+struct SGlobalVars
+{
+	char pad[0xc];
+	float curtime;
+};
+extern SGlobalVars *g_1070b228;
+extern float g_1070d1b0[3];
+void sub_101cf390(CBaseEntity *pEnt, const float *a, const float *b);
+void sub_1000b1d6();
+
+struct SNpcDeathView
+{
+	char pad0[0x26c];
+	const char *name26c;
+	CCollisionProperty collision;
+};
+
+void CAI_BaseNPC::sub_102792b0()
+{
+	CBaseAnimating *pAnim = (CBaseAnimating *)this;
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	pAnim->sub_10095be0();
+	{
+		ScopeTrace trace("CBaseEntity::RemoveSolidFlags", this ? (((SNpcDeathView *)this)->name26c ? ((SNpcDeathView *)this)->name26c : g_106b8540) : g_105387dc);
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+		pCol->sub_100dc580(pCol->m_usSolidFlags & ~4);
+	}
+	pEnt->vfunc93(6, 0);
+	*(int *)((char *)this + 0x6f8) = 0;
+	pAnim->sub_10090950();
+	*(int *)((char *)this + 0x6f4) = 0;
+	*(int *)((char *)this + 0x208) = *(int *)((char *)this + 0x210);
+	*(int *)((char *)this + 0x200) = 2;
+	sub_101cf390(pEnt, g_1070d1b0, g_1070d1b0);
+	pEnt->sub_100b3b00();
+	sub_10265a40();
+	pEnt->sub_100ac4e0((int)sub_1000b1d6, 0, 0);
+	*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279a50 size=0xd5
 #include "CAI_BaseNPC.h"
 #include "CGlobalEntityList.h"
