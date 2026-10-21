@@ -633,6 +633,7 @@
 0x10003724 func   ?vfunc5@CItemGRingSilver@@QAEPAV1@I@Z CItemGRingSilver::vfunc5
 0x1000373d func   _item_w_unarmed item_w_unarmed
 0x10003779 func   ?sub_10397c70@CNPC_VMingXiao@@QAEPAVCNPC_VMingXiaoTentacle@@PAV2@@Z CNPC_VMingXiao::sub_10397c70
+0x10003783 func   ?sub_104289a0@@YAHPBX0PAUCTimeTableHit@@MMH@Z sub_104289a0
 0x10003788 func   ?vfunc438@CNPC_VScurrying@@QAEHXZ CNPC_VScurrying::vfunc438
 0x100037a1 func   ?vfunc348@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc348
 0x100037a6 func   ?sub_10105870@CExpressionTable@@QAEHHH@Z CExpressionTable::sub_10105870

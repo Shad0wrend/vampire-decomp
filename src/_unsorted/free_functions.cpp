@@ -99719,6 +99719,86 @@ void sub_10428690(CStudioHdrRaw *pStudioHdr, int iSequence, float *pPoseParamete
 }
 // END FUNCTION
 
+// FUNCTION: 0x104289a0 size=0xe1
+struct CTimeTableRec
+{
+	float m_flTime;	// 0x00
+	int m_nPriority;	// 0x04
+	int m_n08;
+	char m_data0c[0x4c - 0x0c];
+};
+
+struct CTimeTable
+{
+	int m_n00;
+	int m_n04;
+	unsigned char m_nFlags;	// 0x08
+	char m_pad09[0x14 - 9];
+	int m_nCount;	// 0x14
+	int m_nOffset;	// 0x18
+};
+
+struct CTimeTableHit
+{
+	int m_nPriority;	// 0x00
+	char *m_pData;	// 0x04
+	float m_flTime;	// 0x08
+	float m_flStamp;	// 0x0c
+	int m_nUsed;	// 0x10
+};
+
+struct CTimeTableGlobals
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+
+extern CTimeTableGlobals *g_1070b228;
+CTimeTable *sub_100c7480(const void *a, const void *b);
+
+// TARGET: sub_104289a0
+int sub_104289a0(const void *a, const void *b, CTimeTableHit *pOut, float flFrom, float flTo, int iStart)
+{
+	if (pOut)
+	{
+		CTimeTable *pTable = sub_100c7480(a, b);
+		if (pTable && pTable->m_nCount && iStart <= pTable->m_nCount)
+		{
+			int nCount = pTable->m_nCount;
+			CTimeTableRec *pRecs = (CTimeTableRec *)((char *)pTable + pTable->m_nOffset);
+			if (iStart < nCount)
+			{
+				CTimeTableRec *pRec = &pRecs[iStart];
+				do
+				{
+					if (pRec->m_nPriority < 5000)
+					{
+						if (pRec->m_flTime >= flFrom)
+						{
+							if (pRec->m_flTime < flTo)
+								goto hit;
+						}
+						if ((pTable->m_nFlags & 1) && flTo >= 1.0f && pRec->m_flTime < flTo - 1.0f)
+						{
+hit:
+							pOut->m_nUsed = 0;
+							pOut->m_flTime = pRecs[iStart].m_flTime;
+							pOut->m_flStamp = g_1070b228->curtime;
+							pOut->m_nPriority = pRecs[iStart].m_nPriority;
+							pOut->m_pData = pRecs[iStart].m_data0c;
+							return iStart + 1;
+						}
+					}
+					iStart++;
+					pRec++;
+				} while (iStart < nCount);
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428ad0 size=0x13d
 struct CStudioHdr;
 char *sub_100c7560(CStudioHdr *pStudioHdr, int iSequence, CStudioHdr **ppOwner);
