@@ -2201,6 +2201,7 @@
 0x100097dc func   ?vfunc103@CPhysicsCannister@@QAEXXZ CPhysicsCannister::vfunc103
 0x100097e1 func   ?sub_1030c600@@YGHPBD@Z sub_1030c600
 0x10009804 func   ?sub_104001f0@@YAHXZ sub_104001f0
+0x1000984a func   ?sub_101f66c0@@YAXXZ sub_101f66c0
 0x10009881 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>::vfunc3
 0x10009886 func   ?sub_103adc00@@YADXZ sub_103adc00
 0x10009890 func   ?vfunc567@CAI_BaseNPC@@UAEHH@Z CAI_BaseNPC::vfunc567

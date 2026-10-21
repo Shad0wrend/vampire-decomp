@@ -50247,6 +50247,64 @@ const char *__stdcall sub_101f63b0(const char *szName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f66c0 size=0x14f
+#include "CUnknown101f5050.h"
+#include "CUnknown101f5150.h"
+
+struct CSoundTableC
+{
+	void sub_101f5e80();
+};
+
+extern CUnknown101f5050 g_1073dc28;
+extern CUnknown101f5050 g_1073dbd4;
+extern CSoundTableC g_1073dd58;
+extern CUnknown101f5050 g_1074b308;
+extern CUnknown101f5050 g_1073dc00;
+extern CUnknown101f5050 g_1074b330;
+
+// TARGET: sub_101f66c0
+void sub_101f66c0()
+{
+	g_1073dc28.sub_101f5050();
+	g_1073dbd4.sub_101f5050();
+	g_1073dd58.sub_101f5e80();
+	g_1074b308.sub_101f5050();
+	g_1073dc00.sub_101f5050();
+	g_1074b330.sub_101f5050();
+
+	CUnknown101f5150 *pChar = (CUnknown101f5150 *)&g_1073dc28;
+	pChar->sub_101f5120("SndScheme_Char");
+	pChar->sub_101f5150("Female");
+	pChar->sub_101f5150("Male");
+	pChar->sub_101f5150("Monster");
+	pChar->sub_101f5150("Animal");
+	pChar->sub_101f5210();
+
+	CUnknown101f5150 *pWpn = (CUnknown101f5150 *)&g_1073dbd4;
+	pWpn->sub_101f5120("SndScheme_Wpn");
+	pWpn->sub_101f5150("Melee");
+	pWpn->sub_101f5150("Ranged");
+	pWpn->sub_101f5150("Ejection");
+	pWpn->sub_101f5210();
+
+	CUnknown101f5150 *pOpenable = (CUnknown101f5150 *)&g_1074b308;
+	pOpenable->sub_101f5120("SndScheme_Openable");
+	pOpenable->sub_101f5150("Openable");
+	pOpenable->sub_101f5210();
+
+	CUnknown101f5150 *pSwitch = (CUnknown101f5150 *)&g_1073dc00;
+	pSwitch->sub_101f5120("SndScheme_Switch");
+	pSwitch->sub_101f5150("Switches");
+	pSwitch->sub_101f5210();
+
+	CUnknown101f5150 *pComputer = (CUnknown101f5150 *)&g_1074b330;
+	pComputer->sub_101f5120("SndScheme_Computer");
+	pComputer->sub_101f5150("Computers");
+	pComputer->sub_101f5210();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f6b90 size=0x7b
 #include "CVTraitEffect_t.h"
 #include "CVTSDependencySaveRestoreDataOps.h"
