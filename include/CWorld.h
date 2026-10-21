@@ -12,6 +12,7 @@ public:
 class CWorld : public CBaseEntity
 {
 public:
+	CWorld();	// the constructor (0x1023b840): CBaseEntity body, vftable, engine edict 0 attached, world flags, solid BSP / move type none
 	virtual void vfunc113();	// "CWorld::Activate"-like: CBaseEntity::vfunc113, caches sv_cheats in the global 0x10752e9c, clamps the value at +0x49c to 0..2 and, when that changed it, refreshes every player (sub_10170750) and flags the entity (+0x1b1); resets the globals 0x109247e0 / 0x109247e4 to -1 and 0x10924fb8 to 0
 	virtual void vfunc130(int a);
 	CWorld *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
@@ -24,6 +25,12 @@ public:
 	float m_flWaveHeight;	// 0x045c
 	float m_vecWorldMins[3];	// 0x0460
 	float m_vecWorldMaxs[3];	// 0x046c
-	char m_pad0478[0x49c - 0x478];
+	char m_pad0478[4];	// 0x0478
+	char m_bColdWorld;	// 0x047c
+	char m_pad047d[0x49c - 0x47d];
 	int m_n49c;	// 0x049c: 0..2
+	char m_pad04a0[0x518 - 0x4a0];
+	int m_n518;	// 0x0518
+	float m_f51c;	// 0x051c
+	float m_f520;	// 0x0520
 };
