@@ -19756,6 +19756,33 @@ void __fastcall sub_100c8a00(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9560 size=0xcc
+#include "CBaseButton.h"
+#include "CBaseToggle.h"
+#include "CUnknown1073dc00.h"
+#include "CEHandleGet.h"
+
+extern CUnknown1073dc00 g_1073dc00;
+extern int g_106e6f78;
+
+// TARGET: CBaseButton::sub_100c9560
+void CBaseButton::sub_100c9560()
+{
+	if (!m_b5c4) {
+		if (!((unsigned char)(m_flags204 >> 13) & 1))
+			g_1073dc00.sub_101f5950((CBaseEntity *)this, g_106e6f78, 2, 1.0f, 1.25f);
+		if (m_flags204 & 1)
+			m_Output590.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0);
+		m_nState4f8 = 2;
+		m_pfnThink114 = sub_100c96a0;
+		if (!m_b55d)
+			((CBaseToggle *)this)->sub_101c1520(&m_vec514, m_flSpeed164);
+		else
+			((CBaseToggle *)this)->sub_101c17e0(&m_vec52c, *(int *)&m_flSpeed164);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c96a0 size=0xd7
 #include "CBaseEntity.h"
 #include "CCameraTrack.h"
