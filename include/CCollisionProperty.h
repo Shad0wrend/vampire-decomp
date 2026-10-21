@@ -10,13 +10,13 @@ public:
 	virtual void vfunc0();
 	virtual float *vfunc1();	// OBBMins: pointer to the three floats of the local mins
 	virtual float *vfunc2();	// OBBMaxs: pointer to the three floats of the local maxs
-	virtual void vfunc3();
+	virtual void vfunc3(Vector *pMins, Vector *pMaxs);	// WorldSpaceTriggerBounds
 	virtual void vfunc4();
 	virtual void vfunc5();
 	virtual int vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();	// GetCollisionOrigin: returns the pointer to the three floats of the world origin (declared void: vfunc8 is matched that way)
-	virtual void vfunc9();
+	virtual float *vfunc9();	// GetCollisionAngles: pointer to the three floats of the world angles
 	virtual float *vfunc10();	// CollisionToWorldTransform: the matrix3x4_t (12 floats) of the collision space
 	virtual void vfunc11();
 	virtual void vfunc12();
