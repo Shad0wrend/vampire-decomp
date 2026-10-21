@@ -30,6 +30,34 @@ int CNPC_VTzimisce::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b91d0 size=0x71
+#include "CNPC_VTzimisce.h"
+#include "CNPC_VBaseBoss.h"
+
+struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
+extern CGlobalVarsX *g_1070b228;
+
+struct CTzimisceState {
+	char m_pad6689[0x6689];
+};
+
+void CNPC_VTzimisce::vfunc420()
+{
+	((CNPC_VBaseBoss *)this)->CNPC_VBaseBoss::vfunc420();
+	*((char *)this + 0x6689) = 1;
+	*(int *)((char *)this + 0x668c) = 0;
+	sub_103b9f50(0);
+	*(int *)((char *)this + 0x66b8) = 0;
+	*((char *)this + 0x66bc) = 0;
+	float *t1 = (float *)((char *)this + 0x66ac);
+	float *t2 = (float *)((char *)this + 0x66b0);
+	*t1 = g_1070b228->m_curtime + 3.0f;
+	*t2 = g_1070b228->m_curtime + 3.0f;
+	*(int *)((char *)this + 0x6670) = -1;
+	sub_102c43b0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b92a0 size=0x8f
 #include "CNPC_VTzimisce.h"
 extern CNPC_VTzimisceConVar *g_1093cf94;
