@@ -1,6 +1,33 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103a9400 size=0xf1
+#include "CNPC_VSabbatLeader.h"
+#include "ScopeTrace.h"
+
+// TARGET: CNPC_VSabbatLeader::vfunc448
+void CNPC_VSabbatLeader::vfunc448(int a)
+{
+    ScopeTrace trace("CNPC_VSabbatLeader::TaskFail", g_106b8540);
+    if (a >= 0xc && a <= 0xf) {
+        m_nFailureCount++;
+        if ((float)m_nFailureCount >= 6.0f) {
+            if (sub_103a9d00()) {
+                m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VSabbatLeader.cpp";
+                m_nLine1b34 = 0x3f4;
+                sub_102ae750(0x161, 0);
+                return;
+            }
+            m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VSabbatLeader.cpp";
+            m_nLine1b34 = 0x3f9;
+            sub_102ae750(0x160, 0);
+            return;
+        }
+    }
+    sub_1029adb0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a9e70 size=0x105
 #include "CBaseEntity.h"
 #include "CNPC_VSabbatLeader.h"
