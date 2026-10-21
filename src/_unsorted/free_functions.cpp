@@ -15042,6 +15042,74 @@ bool CBaseEntity::sub_100a5ad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5bb0 size=0x167
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+
+#define ES10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+// The entity's virtual table up to slot 219: slots 8, 92, 217 and 219 are used here.
+struct CStaticSlots
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7();
+	virtual int vfunc8();
+	virtual void a9();
+	ES10(b) ES10(c) ES10(d) ES10(e) ES10(f) ES10(g) ES10(h) ES10(i)
+	virtual void o0(); virtual void o1();
+	virtual int vfunc92();
+	ES10(p) ES10(q) ES10(r) ES10(s) ES10(t) ES10(u) ES10(x) ES10(y) ES10(z) ES10(aa) ES10(ab) ES10(ac)
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual float *vfunc217();
+	virtual void w0();
+	virtual float *vfunc219();
+};
+
+struct CBaseEntityUnit : CBaseEntity
+{
+	void *sub_100a6150(int a, int b, int c);	// stub 0x10004b92
+};
+
+inline bool IsHandleValid(unsigned int index)
+{
+    if (index == 0xffffffff)
+        return false;
+    CGlobalEntityList_Slot *e = &g_10566458->m_Slots[index & 0x1fff];
+    return e->m_Serial == (index >> 13) && e->m_pEntity != 0;
+}
+
+void *sub_100a5d80(CBaseEntity *pEnt, const float *mins, const float *maxs, const float *origin, int a);
+void *sub_1002e580(CBaseEntity *pEnt, int modelIndex, const float *origin, const float *angles);	// stub 0x100087ec
+
+// TARGET: CBaseEntity::sub_100a5bb0
+void *CBaseEntity::sub_100a5bb0()
+{
+    ScopeTrace trace("CBaseEntity::VPhysicsInitStatic", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    if (!sub_100a5ad0())
+        return 0;
+    if (IsHandleValid(*(unsigned int *)((char *)this + 0x25c)))
+        return ((CBaseEntityUnit *)this)->sub_100a6150(0, 0, 0);
+    CStaticSlots *slots = (CStaticSlots *)this;
+    if (!slots->vfunc92())
+        return 0;
+    void *pObject;
+    if (slots->vfunc92() == 2) {
+        CCollisionProperty *coll = (CCollisionProperty *)((char *)this + 0x270);
+        float *pMaxs = coll->vfunc2();
+        float *pMins = coll->vfunc1();
+        pObject = sub_100a5d80(this, pMins, pMaxs, slots->vfunc217(), 1);
+    } else {
+        pObject = sub_1002e580(this, slots->vfunc8(), slots->vfunc217(), slots->vfunc219());
+    }
+    sub_100a6490((int)pObject);
+    return pObject;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5d80 size=0xe0
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
