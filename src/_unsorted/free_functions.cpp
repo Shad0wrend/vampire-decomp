@@ -94673,6 +94673,62 @@ void CWeaponThrown_Chang_Energy_Ball::sub_103f00c0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f0200 size=0x17d
+#include "CWeaponThrown_Chang_Energy_Ball.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct BallEntity_t : public CEntityVSlots {
+	char pad04[0x1fc - sizeof(CEntityVSlots)];
+	int nTakeDamage;
+	char pad200[0x26c - 0x200];
+	const char *pszName;
+	char pad270[0x2b0 - 0x270];
+	int nCollision;
+	unsigned char bFlags;
+};
+
+struct BallQuery_t {
+	int m_listIndex;
+	int m_listCount;
+	BallEntity_t *m_pList[256];
+	BallQuery_t *sub_1000bc30(const Vector *pCenter, float flRadius, int a, int b);
+};
+
+extern float g_104e15f8;
+int __fastcall sub_101ccd40(int *pQuery);
+
+CBaseEntity *CWeaponThrown_Chang_Energy_Ball::sub_103f0200()
+{
+	Vector vecOrigin = *((CEntityVSlots *)this)->slot217();
+	float flBest = 3.4028235e+38f;
+	BallEntity_t *pBest = 0;
+	BallQuery_t query;
+	query.sub_1000bc30(&vecOrigin, g_104e15f8, 0, 0);
+	for (BallEntity_t *pEnt = (BallEntity_t *)sub_101ccd40((int *)&query); pEnt; pEnt = (BallEntity_t *)sub_101ccd40((int *)&query)) {
+		if (pEnt->nTakeDamage) {
+			bool bSolid;
+			{
+				ScopeTrace trace("CBaseEntity::IsSolid", pEnt->pszName ? pEnt->pszName : g_106b8540);
+				if (pEnt->nCollision && !(pEnt->bFlags & 4))
+					bSolid = true;
+				else
+					bSolid = false;
+			}
+			if (bSolid && sub_103f01b0((CBaseEntity *)pEnt)) {
+				float flDist = (*pEnt->slot217() - vecOrigin).LengthSqr();
+				if (flDist < flBest) {
+					flBest = flDist;
+					pBest = pEnt;
+				}
+			}
+		}
+		query.m_listIndex++;
+	}
+	return (CBaseEntity *)pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f04f0 size=0xd
 CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
 {
