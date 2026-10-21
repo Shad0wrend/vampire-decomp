@@ -2881,6 +2881,7 @@
 0x1000c446 func   ?sub_100aa5c0@CBaseEntity@@QAEHPAVCRestore@@H@Z CBaseEntity::sub_100aa5c0
 0x1000c464 func   ?sub_100aaf30@CBaseEntity@@QAEXXZ CBaseEntity::sub_100aaf30
 0x1000c46e func   ?sub_10325b20@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325b20
+0x1000c473 func   ?sub_102256f0@CBaseVampireSkillEntity@@QAEXPBD@Z CBaseVampireSkillEntity::sub_102256f0
 0x1000c482 func   ?sub_1042ff00@@YAXXZ sub_1042ff00
 0x1000c48c func   ?sub_101f5f00@CUnknown101f5f00@@QAEXHHH@Z CUnknown101f5f00::sub_101f5f00
 0x1000c496 func   ?sub_1024b150@@YA_NPBUSym@@0@Z sub_1024b150

@@ -55340,6 +55340,41 @@ void CItemContainerLock::sub_10224950(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102256f0 size=0xf3
+#include "CBaseVampireSkillEntity.h"
+#include "CBaseDoor.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+
+extern "C" void *__RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pDestType, int isReference);
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_105652c8[];	// type descriptor of CBaseDoor
+extern char g_106b8540[];
+extern CGlobalEntityList g_106eb5d8;
+extern void (*g_109f364c)(const char *pszFormat, ...);	// DevWarning
+void sub_101cd940(CBaseVampireSkillEntity *pEnt);
+
+void CBaseVampireSkillEntity::sub_102256f0(const char *pszDoorName)
+{
+	if (!pszDoorName)
+		pszDoorName = g_106b8540;
+	CBaseDoor *pDoor = (CBaseDoor *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, pszDoorName, 0, 0), 0, g_10538764, g_105652c8, 0);
+	if (pDoor)
+		m_hAttached = *pDoor->vfunc1();
+	else
+		m_hAttached = 0xffffffff;
+	if (!EHandle_Get(m_hAttached)) {
+		const char *pszClassname = *(const char **)((char *)this + 0x124);
+		if (!pszClassname)
+			pszClassname = g_106b8540;
+		g_109f364c("%s attached to non-existent door: %s, removing", sub_1000b5cd(), pszClassname);
+		sub_101cd940(this);
+		return;
+	}
+	((CBaseDoor *)EHandle_Get(m_hAttached))->sub_100ee630((CBaseEntity *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10225830 size=0x43
 #include "CPropDoorknob.h"
 void *sub_100aa720(int size);
