@@ -16,6 +16,7 @@ public:
 	void sub_1010d6a0();	// slot 103 "CBreakable::Spawn" (stub 0x1000a10f), called directly by CPushable::Spawn
 	void sub_1010dc50(inputdata_t &data);	// "CBreakable::InputHurt": the input's integer (0 for other types) is taken off the health at +0x210, the new health is set into the OnHealthChanged output at +0x484 which is fired (activator, this); a health of 0 or less breaks it
 	void vfunc104();	// slot 104 "CBreakable::Precache" (plain member): the gib model of the material (+0x454) or the mapper's gib model (+0x460), precached through the engine, its index stored at +0x45c
+	void sub_1010e620();	// frees the entities standing on top of the breakable: the box over the collision bounds (top 1 unit lower, 8 units higher) is queried (sub_101cca80, at most 256 entities), each found entity gets RemoveFlag(1) and SetGroundEntity(0)
 
 	char m_pad0000[0x210];
 	int m_iHealth;	// 0x210
