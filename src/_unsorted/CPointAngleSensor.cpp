@@ -1,6 +1,47 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1018cdf0 size=0xe2
+#include "CPointAngleSensor.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern CGlobalEntityList *g_10566458;
+extern char g_106b8540[];
+
+#define STRING(x) ((x) ? (x) : g_106b8540)
+
+static inline CBaseEntity *LookupHandle(const unsigned int *pHandle)
+{
+    if (*pHandle == 0xffffffff)
+        return 0;
+    CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[*pHandle & 0x1fff];
+    if (pSlot->m_Serial == (int)(*pHandle >> 13))
+        return (CBaseEntity *)pSlot->m_pEntity;
+    return 0;
+}
+
+void CPointAngleSensor::vfunc113()
+{
+    CBaseEntity::vfunc113();
+    if (!LookupHandle(&m_hTargetEntity)) {
+        const char *pszName = *(const char **)((char *)this + 0x20c);
+        CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, STRING(pszName), 0, 0);
+        if (pEnt)
+            m_hTargetEntity = *pEnt->vfunc1();
+        else
+            m_hTargetEntity = 0xffffffff;
+    }
+    if (!LookupHandle(&m_hLookAtEntity)) {
+        const char *pszName = *(const char **)((char *)this + 0x450);
+        CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, STRING(pszName), 0, 0);
+        if (pEnt)
+            m_hLookAtEntity = *pEnt->vfunc1();
+        else
+            m_hLookAtEntity = 0xffffffff;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018d2f0 size=0x35
 #include "CPointAngleSensor.h"
 
