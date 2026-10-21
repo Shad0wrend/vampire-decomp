@@ -13,4 +13,7 @@ public:
 	CNPC_VBach *sub_10362c10();	// as in CKeepUpright (transplant)
 	void vfunc104();	// slot 104 "Precache": the base Precache, three weapon items and the boss sounds
 	void sub_100013f7();	// CNPC_VHuman::vfunc104 (Precache), called directly
+	void vfunc432(int arg);	// slot 432: when the byte at +0x66a5 is set and its time at +0x6684 has passed, clears stat 0xd of the stat list with id 3 (shared default list when absent) and the byte; then CNPC_VHuman::vfunc432
+	void sub_10279a50(int a);	// CAI_BaseNPC::sub_10279a50 (stub 0x1000b974), called directly
+	void sub_10385a10(int arg);	// CNPC_VHuman::vfunc432 (stub 0x1000698d), called directly
 };
