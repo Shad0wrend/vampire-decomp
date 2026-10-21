@@ -12,6 +12,18 @@ struct CAI_StandoffBehaviorOuter
 	CAI_Hint *m_pHintNode;	// 0x5ddc: the hint node the NPC has locked
 	char pad2[4];
 	float m_unk5de4;
+
+	// CAI_BaseNPC::ClearHintNode, inlined by its callers
+	void ClearHintNode(float reuseDelay)
+	{
+		if (m_pHintNode) {
+			if (m_pHintNode->sub_102d14c0()) {
+				if (m_pHintNode->sub_102d1450(this))
+					m_pHintNode->sub_102d1420(reuseDelay);
+			}
+			m_pHintNode = 0;
+		}
+	}
 };
 
 // CAI_BehaviorBase (RTTI .?AVCAI_BehaviorBase@@): the behaviours' common base; only the type is needed (source type of
