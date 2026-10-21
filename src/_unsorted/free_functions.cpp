@@ -30840,6 +30840,37 @@ void CCineNPC::sub_101a77a0(void *pNpc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8070 size=0x8b
+#include "CCineNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+
+extern char g_106b8540[];
+struct CGlobalVarsLike { char pad[0xc]; float curtime; };
+extern CGlobalVarsLike *g_1070b228;
+extern void (*g_109f3650)(int, const char *, ...);
+struct DebugNameView { const char *sub_100ab4f0(); };
+
+void CCineNPC::sub_101a8070()
+{
+	if (sub_101a7760()) {
+		*((char *)this + 0x5f91) = 0;
+		((CAI_BaseNPCTroika *)this)->vfunc583();
+		const char *pszTarget = m_pszTarget5f54;
+		if (!pszTarget)
+			pszTarget = g_106b8540;
+		g_109f3650(2, "script \"%s\" using NPC \"%s\"\n", ((DebugNameView *)this)->sub_100ab4f0(), pszTarget);
+		return;
+	}
+	sub_101a8c30();
+	const char *pszTarget = m_pszTarget5f54;
+	if (!pszTarget)
+		pszTarget = g_106b8540;
+	g_109f3650(2, "script \"%s\" can't find NPC \"%s\"\n", ((DebugNameView *)this)->sub_100ab4f0(), pszTarget);
+	*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 1.0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8ac0 size=0x116
 #include "CBaseEntity.h"
 #include "CCineNPC.h"
