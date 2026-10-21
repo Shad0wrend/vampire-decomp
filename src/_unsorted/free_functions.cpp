@@ -63671,6 +63671,38 @@ void CAI_BaseNPC::sub_10357110(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103580d0 size=0xaf
+#include "CNPC_Crow.h"
+
+void CNPC_Crow::sub_103580d0(int mode)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	if (mode == 1) {
+		pEnt->sub_100b3640(1);
+		pEnt->sub_100b3580(0x400);
+		sub_1027d9b0(2);
+		sub_1026dc30(1);
+		sub_1026dc00(4);
+		pEnt->vfunc93(4, 0);
+		pEnt->sub_100b3b00();
+	} else if (mode == 0) {
+		pEnt->sub_100b3640(0x400);
+		sub_1027d9b0(0);
+		sub_1026dc30(4);
+		sub_1026dc00(1);
+		pEnt->vfunc93(4, 0);
+		pEnt->sub_100b3b00();
+	} else {
+		pEnt->sub_100b3640(0x400);
+		sub_1027d9b0(0);
+		sub_1026dc30(4);
+		sub_1026dc00(1);
+		pEnt->vfunc93(4, 0);
+		pEnt->sub_100b3b00();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10359190 size=0x33
 void sub_1000b15e();
 void sub_1000215d();
