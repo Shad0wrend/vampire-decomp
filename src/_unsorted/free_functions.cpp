@@ -25844,6 +25844,23 @@ void CBreakable::sub_1010db90(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010dc50 size=0x74
+#include "CBreakable.h"
+#include "inputdata_t.h"
+#include "COutputEvent.h"
+
+void CBreakable::sub_1010dc50(inputdata_t &data)
+{
+	m_iHealth -= data.value.fieldType == 4 ? data.value.iValue : 0;
+	void *pActivator = data.pActivator;
+	int value = m_iHealth;
+	((CVariantCopy *)m_out0484)->sub_1000b320(4, &value);
+	((COutputEvent *)m_out0484)->sub_100cd300(*(CVariantCopy *)m_out0484, pActivator, this, 0.0f);
+	if (m_iHealth <= 0)
+		sub_1010ddc0(data.pActivator);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010dcf0 size=0x6a
 #include "CBreakable.h"
 #include "inputdata_t.h"
