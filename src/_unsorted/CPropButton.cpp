@@ -36,3 +36,25 @@ void CPropButton::vfunc103()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10215a30 size=0x7f
+#include "CPropButton.h"
+#include "CUnknown1073dc00.h"
+
+extern CUnknown1073dc00 g_1073dc00;
+extern int g_1074f148;
+
+void CPropButton::vfunc265(void *pActivator, void *pCaller, int useType, float value)
+{
+	if (!m_bLocked) {
+		m_OnPressed.sub_100cd660(pActivator, this, 0);
+		if (m_nPosition >= m_nPositions)
+			sub_10215ad0(0, pActivator);
+		else
+			sub_10215ad0(m_nPosition + 1, pActivator);
+		return;
+	}
+	m_OnLocked.sub_100cd660(pActivator, this, 0);
+	g_1073dc00.sub_101f5950(this, g_1074f148, 2, 1.0f, 1.25f);
+}
+// END FUNCTION
