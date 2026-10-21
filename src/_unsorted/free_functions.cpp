@@ -83955,6 +83955,37 @@ bool CChangBrosUnit::sub_1036cab0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036cbd0 size=0xc4
+#include "CNPC_VChangBros.h"
+#include "ScopeTrace.h"
+
+struct TimeObjC {
+	char m_pad[0xc];
+	float m_flCurTime;
+};
+extern TimeObjC *g_1070b228;
+extern float g_104ada48;
+
+struct BrosView {
+	char m_pad[0x66ec];
+	float m_flTick;
+};
+
+bool CNPC_VChangBros::sub_1036cbd0()
+{
+	ScopeTrace trace("CNPC_VChangBros::CheckForUnited", g_106b8540);
+	CNPC_VChangBros *pOther = sub_1036e2f0();
+	if (pOther && g_1070b228->m_flCurTime >= (g_104ada48 + ((BrosView *)this)->m_flTick)) {
+		if (!(sub_103c6830() >= 0.5f)) {
+			if (!(pOther->sub_103c6830() >= 0.5f))
+				return false;
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036d100 size=0x9c
 #include "CNPC_VChangBros.h"
 

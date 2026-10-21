@@ -3364,6 +3364,7 @@
 0x1000da2b func   ?sub_101bf6a0@CUtlRBTree12@@QAEHH@Z CUtlRBTree12::sub_101bf6a0
 0x1000da49 func   ?vfunc370@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc370
 0x1000da58 func   _aiscripted_schedule aiscripted_schedule
+0x1000da67 func   ?sub_1036cbd0@CNPC_VChangBros@@QAE_NXZ CNPC_VChangBros::sub_1036cbd0
 0x1000da76 func   ?sub_1003e4b0@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1003e4b0
 0x1000dac1 func   ?sub_100a04e0@CBaseEntity@@QAEXPBDPAV1@@Z CBaseEntity::sub_100a04e0
 0x1000dac6 func   ?sub_101ebe60@CUnknown101ebe60@@QAEXHH@Z CUnknown101ebe60::sub_101ebe60
