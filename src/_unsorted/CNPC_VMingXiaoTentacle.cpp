@@ -85,3 +85,45 @@ void CTentacleUnit::sub_1039e800(int arg)
         ((CBasePlayerCall *)pPlayer)->sub_10001a78(this, arg);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1039ec10 size=0x94
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CEntityVSlots.h"
+
+struct CGlobalVarsView {
+	char m_pad0000[0xc];
+	float curtime;	// 0xc
+};
+extern CGlobalVarsView *g_1070b228;
+
+struct CDevFlagObject {
+	virtual void v0();
+	virtual void v1();
+};
+extern CDevFlagObject *g_10924a6c;
+
+struct CTentacleTimes {
+	char m_pad0000[0x6268];
+	float m_f6268;	// 0x6268
+	char m_pad626c[0x6674 - 0x626c];
+	float m_flTime6674;	// 0x6674
+	float m_flTime6678;	// 0x6678
+};
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc433
+void CNPC_VMingXiaoTentacle::vfunc433()
+{
+	CTentacleTimes *p = (CTentacleTimes *)this;
+	sub_10269b50(0x77);
+	sub_10269b50(0x79);
+	sub_102b27f0();
+	if (((CEntityVSlots *)this)->slot167() != 0 && g_1070b228->curtime >= p->m_flTime6678 && p->m_f6268 <= 256.0f) {
+		g_10924a6c->v1();
+		sub_10269a20(0x77);
+	}
+	if (g_1070b228->curtime >= p->m_flTime6674) {
+		g_10924a6c->v1();
+		sub_10269a20(0x79);
+	}
+}
+// END FUNCTION
