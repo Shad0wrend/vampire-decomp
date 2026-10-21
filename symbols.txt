@@ -4583,6 +4583,7 @@
 0x10013e17 func   ?sub_10192a30@@YAPAHXZ sub_10192a30
 0x10013e35 func   ??0StatDefault3@@QAE@H@Z StatDefault3::StatDefault3
 0x10013e3a func   ?sub_101d8a70@CUnknown101d8a70@@QAEPAXPAX@Z CUnknown101d8a70::sub_101d8a70
+0x10013e44 func   ?sub_101d1530@CUnknown101d1460@@QAEXPAVCBaseEntity@@H@Z CUnknown101d1460::sub_101d1530
 0x10013e49 func   ?vfunc392@CBaseCombatCharacter@@QAEHPAX@Z CBaseCombatCharacter::vfunc392
 0x10013e6c func   ?sub_1022eb60@@YAXPAUTStat@@PBD@Z sub_1022eb60
 0x10013e7b func   ?sub_103fd440@@YAHXZ sub_103fd440

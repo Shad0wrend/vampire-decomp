@@ -37601,6 +37601,45 @@ void CUnknown101d1460::sub_101d1460(int edict)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d1530 size=0x90
+#include "CUnknown101d1460.h"
+#include "CBaseAnimating.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SEnt {
+	S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+	S10(b0) S10(b1) S10(b2)
+	virtual void n0(); virtual void n1(); virtual void n2(); virtual void n3(); virtual void n4(); virtual void n5(); virtual void n6();
+	virtual CBaseAnimating *vfunc137();
+	S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5) S10(c6)
+	virtual void q0(); virtual void q1(); virtual void q2(); virtual void q3(); virtual void q4(); virtual void q5(); virtual void q6(); virtual void q7(); virtual void q8();
+	virtual float *vfunc217();
+	virtual void r0();
+	virtual float *vfunc219();
+};
+
+CUnknown101d1460 *sub_1024c630(CUnknown101d1460 *pMatrix);
+
+void CUnknown101d1460::sub_101d1530(CBaseEntity *pEnt, int a)
+{
+	SEnt *p = (SEnt *)pEnt;
+	if (!p) {
+		CUnknown101d1460 identity;
+		sub_1024cef0(sub_1024c630(&identity));
+		return;
+	}
+	if (a) {
+		CBaseAnimating *pAnim = p->vfunc137();
+		if (pAnim) {
+			float origin[3], angles[3];
+			if (pAnim->sub_10092ef0(a, origin, angles))
+				sub_1024ddf0(origin, angles);
+		}
+	}
+	sub_1024ddf0(p->vfunc217(), p->vfunc219());
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d1800 size=0x108
 #include "CUnknown1070b22c.h"
 
