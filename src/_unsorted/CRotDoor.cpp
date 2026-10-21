@@ -84,3 +84,27 @@ bool CRotDoor::vfunc223()
 	return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100f4080 size=0x8e
+#include "CRotDoor.h"
+
+void __cdecl sub_100aa7b0(void *p);
+
+CRotDoor *CRotDoor::vfunc5(unsigned char flags)
+{
+	m_items564[7].sub_100cd2d0();
+	m_items564[6].sub_100cd2d0();
+	m_items564[5].sub_100cd2d0();
+	m_items564[4].sub_100cd2d0();
+	m_items564[3].sub_100cd2d0();
+	m_items564[2].sub_100cd2d0();
+	m_items564[1].sub_100cd2d0();
+	m_items564[0].sub_100cd2d0();
+	m_items4a4[1].sub_100cd2d0();
+	m_items4a4[0].sub_100cd2d0();
+	sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
