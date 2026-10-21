@@ -3454,6 +3454,7 @@
 0x1000e192 func   ?vfunc5@CWeaponMelee_SeveredArm@@QAEPAV1@I@Z CWeaponMelee_SeveredArm::vfunc5
 0x1000e19c func   ?sub_10196a40@@YAPAUSPyObject@@PAU1@0@Z sub_10196a40
 0x1000e1a6 func   ?sub_101fead0@CVStatInfo_t@@QAE_NXZ CVStatInfo_t::sub_101fead0
+0x1000e1bf func   ?sub_10070690@@YAPAVCBaseCineCam@@PAX@Z sub_10070690
 0x1000e1c4 func   ?vfunc1@CRelationshipSaveDataOps@@UAEXPAX0@Z CRelationshipSaveDataOps::vfunc1
 0x1000e1d8 func   ?sub_103c3e10@TzimisceView@@QAEHH@Z TzimisceView::sub_103c3e10
 0x1000e1dd func   ?sub_10202270@@YAPBDH@Z sub_10202270

@@ -9135,6 +9135,32 @@ CBaseCineCam *sub_100705d0(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10070690 size=0x69
+#include "CBaseCineCam.h"
+
+CBaseEntity *sub_100a99d0(const char *pszClassname, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
+void sub_101cd940(CBaseEntity *pEnt);
+extern Vector g_1070d1b0;
+extern Vector g_1070d9d0;
+
+// TARGET: sub_10070690
+CBaseCineCam *sub_10070690(void *pOwner)
+{
+	CBaseCineCam *pCam = (CBaseCineCam *)sub_100a99d0("camera_cinematic", &g_1070d1b0.x, &g_1070d9d0.x, 0);
+	if (pCam) {
+		((CBaseEntity *)pCam)->m_flags204 |= 4;
+		if (pCam->sub_1006e130("Animated", 4, 0)) {
+			pCam->sub_1006ef50(pOwner, 0);
+			pCam->sub_1006e8e0();
+		} else {
+			sub_101cd940((CBaseEntity *)pCam);
+			return 0;
+		}
+	}
+	return pCam;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071100 size=0xbd
 #include "SendProp.h"
 
