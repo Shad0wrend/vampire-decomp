@@ -17285,6 +17285,32 @@ int sub_100d2c30(const char *pszInput, char *pszOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2d80 size=0x7b
+#include <stdlib.h>
+#include "CUnknown1070b22c.h"
+struct CFovPlayerData { char pad[0x1e78]; int m_iFOV; };
+struct CFovLocalPlayer { char pad[0xa8]; CFovPlayerData *m_pData; };
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_10752e9c;
+CFovLocalPlayer *sub_101193b0();
+char *sub_101cf720(const char *fmt, ...);
+void sub_101ce620(CFovPlayerData *pPlayer, int type, const char *pszText, int a, int b, int c, int d);
+void sub_100d2d80()
+{
+	CFovLocalPlayer *pLocal = sub_101193b0();
+	if (pLocal) {
+		CFovPlayerData *pData = pLocal->m_pData;
+		if (pData && g_10752e9c) {
+			if (g_1070b22c->vfunc85() > 1) {
+				pData->m_iFOV = atoi(g_1070b22c->vfunc84(1));
+			} else {
+				sub_101ce620(pData, 2, sub_101cf720("\"fov\" is \"%d\"\n", pData->m_iFOV), 0, 0, 0, 0);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d30a0 size=0x1c
 #include "CUnknown100d30a0.h"
 
