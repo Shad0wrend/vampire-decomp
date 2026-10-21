@@ -4,11 +4,18 @@
 
 #include "CBaseCombatCharacter.h"
 
+struct CUnknown101e56e0Name	// the name holder at +4 of a record (read through its address)
+{
+	const char *m_psz;
+	const char *Get() { return m_psz; }
+};
+
 class CUnknown101e56e0
 {
 public:
 	int m_id;	// 0x00
-	char m_pad0004[0x0c];
+	CUnknown101e56e0Name m_Name;	// 0x04
+	char m_pad0008[0x08];
 	int m_nKind;	// 0x10
 
 	CUnknown101e56e0(int id) { sub_101e4f30(id); }	// constructor (stub 0x1001246d), the one of the shared default record
