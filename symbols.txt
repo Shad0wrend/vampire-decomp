@@ -200,6 +200,7 @@
 0x10001dc0 func   _npc_TestBaseHumanoid npc_TestBaseHumanoid
 0x10001dc5 func   ?sub_10185310@CUtlVector52@@QAEXH@Z CUtlVector52::sub_10185310
 0x10001dd9 func   ?sub_1007e5a0@CUnknown1007e5a0@@QAEXM@Z CUnknown1007e5a0::sub_1007e5a0
+0x10001dde func   ?vfunc3@CTEBeamRing@@UAEXHH@Z CTEBeamRing::vfunc3
 0x10001df2 func   ?vfunc8@CCheckClient@@QAEPAV1@I@Z CCheckClient::vfunc8
 0x10001dfc func   ?sub_102d2f30@@YAPAVCEntityVSlots@@HHHH@Z sub_102d2f30
 0x10001e0b func   ?sub_10031340@CCollisionEventUnit@@QAEHPAUCPhysObjX@@PAM1D@Z CCollisionEventUnit::sub_10031340
