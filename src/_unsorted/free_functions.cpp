@@ -67680,6 +67680,26 @@ void CUnk102da7c0::sub_102da7c0(void *pEnt, char bTrack, char bFire)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102da9e0 size=0xa1
+#include "CUnknown102d9ed0.h"
+
+PlaceRecord_t *CUnknown102d9ed0::sub_102da9e0(const Vector *pPos, const Vector *pMaxOffset, const Vector *pMinOffset)
+{
+	for (int i = 0; i < m_nPlaces; i += 1) {
+		PlaceRecord_t *pPlace = &m_pPlaces[i];
+		if (pPlace->m_bUsed
+			&& pPlace->m_vecMin.x <= pPos->x + pMinOffset->x
+			&& (pMinOffset->y + pPos->y) >= pPlace->m_vecMin.y
+			&& (pMinOffset->z + pPos->z) >= pPlace->m_vecMin.z
+			&& pPos->x + pMaxOffset->x <= pPlace->m_vecMax.x
+			&& pMaxOffset->x + pPos->y <= pPlace->m_vecMax.y
+			&& pMaxOffset->x + pPos->z <= pPlace->m_vecMax.z)
+			return pPlace;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db420 size=0xa
 void CUnknown102db420::sub_102db420(int unused)
 {

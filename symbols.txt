@@ -1307,6 +1307,7 @@
 0x1000634d func   ?sub_102eb170@@YA_NH@Z sub_102eb170
 0x10006357 func   ?sub_101dbe30@CUnknown101dbe30@@QAE_NPAX@Z CUnknown101dbe30::sub_101dbe30
 0x10006361 func   ?vfunc5@CItemGCarStereo@@QAEPAV1@I@Z CItemGCarStereo::vfunc5
+0x10006366 func   ?sub_102da9e0@CUnknown102d9ed0@@QAEPAUPlaceRecord_t@@PBVVector@@00@Z CUnknown102d9ed0::sub_102da9e0
 0x1000636b func   ?sub_10032f00@UtlVec8@@QAEXHH@Z UtlVec8::sub_10032f00
 0x10006389 func   ?sub_10387800@@YADXZ sub_10387800
 0x1000638e func   ?sub_1022d1e0@@YAXPAUCBlock4k@@PBU1@@Z sub_1022d1e0
