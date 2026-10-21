@@ -34012,6 +34012,79 @@ void UtlMem::sub_101b6b90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6bd0 size=0x134
+#include "CUtlRBTree232.h"
+#include "CUnknown101b30d0.h"
+
+extern void *(__cdecl *g_109f3638)(void *, int);
+extern void *(__cdecl *g_109f3634)(int);
+
+struct CRBMemX
+{
+	void *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+
+	void Grow(int num)
+	{
+		if (m_nGrowSize == -1)
+			return;
+		int nAllocationRequested = m_nAllocationCount + num;
+		int a = m_nAllocationCount;
+		if (a < nAllocationRequested) {
+			do {
+				if (a != 0) {
+					if (m_nGrowSize != 0)
+						a += m_nGrowSize;
+					else
+						a += a;
+				} else
+					a = 1;
+			} while (a < nAllocationRequested);
+			m_nAllocationCount = a;
+		}
+		if (m_pMemory)
+			m_pMemory = g_109f3638(m_pMemory, m_nAllocationCount * 232);
+		else
+			m_pMemory = g_109f3634(m_nAllocationCount * 232);
+	}
+};
+
+// TARGET: CUtlRBTree232::sub_101b6bd0
+int CUtlRBTree232::sub_101b6bd0(int parent, bool leftchild)
+{
+	int elem;
+	if (m_FirstFree == -1) {
+		if (m_nAllocationCount == m_TotalElements)
+			((CRBMemX *)&m_pElements)->Grow(1);
+		elem = m_TotalElements++;
+	} else {
+		elem = m_FirstFree;
+		m_FirstFree = sub_101b78f0(m_FirstFree).m_Right;
+	}
+	char *pData = m_pElements[elem].m_Data;
+	if (pData) {
+		*(unsigned short *)pData = 0xffff;
+		((CUnknown101b30d0 *)(pData + 0xc))->sub_101b30d0();
+	}
+	Links_t &links = m_pElements[elem].m_Links;
+	links.m_Parent = parent;
+	links.m_Right = -1;
+	links.m_Left = -1;
+	links.m_Tag = 0;
+	if (parent != -1) {
+		if (leftchild)
+			m_pElements[parent].m_Links.m_Left = elem;
+		else
+			m_pElements[parent].m_Links.m_Right = elem;
+	} else
+		m_Root = elem;
+	sub_101b7f70(elem);
+	++m_NumElements;
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6d60 size=0xf9
 #include "CUtlRBTree232.h"
 
