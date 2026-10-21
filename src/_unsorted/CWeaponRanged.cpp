@@ -206,3 +206,56 @@ void CWeaponRanged::vfunc319()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10239710 size=0x73
+#include "CWeaponRanged.h"
+
+struct COwnerChar
+{
+	char m_pad0000[0x2088];
+	unsigned int m_f2088;
+	unsigned int m_f208c;
+};
+
+struct COwnerObj
+{
+	char m_pad0000[0xa8];
+	COwnerChar *m_pChar;
+};
+
+struct CRollRecord
+{
+	char m_pad0000[0x10c];
+	int m_nAmmoSlot;
+};
+
+struct CWeaponView	// the fields of the weapon at their real offsets
+{
+	char m_pad0000[0x74c];
+	int m_aClip[2];	// 0x74c
+	char m_pad0754[0x898 - 0x754];
+	char m_b898;
+	char m_b899;
+	char m_pad089a[0x8c8 - 0x89a];
+	char m_b8c8;
+};
+
+void CWeaponRanged::vfunc320()
+{
+	CWeaponView *w = (CWeaponView *)this;
+	COwnerObj *pOwner = (COwnerObj *)sub_102521f0();
+	if (!pOwner)
+		return;
+	COwnerChar *pChar = pOwner->m_pChar;
+	if (!pChar)
+		return;
+	if (w->m_b898 && w->m_b8c8 && ((pChar->m_f208c | pChar->m_f2088) & 0x801)) {
+		CRollRecord *pRoll = (CRollRecord *)sub_102517e0();
+		if (w->m_aClip[pRoll->m_nAmmoSlot] > 0) {
+			w->m_b899 = 1;
+			vfunc319();
+		}
+	}
+	sub_10254250();
+}
+// END FUNCTION

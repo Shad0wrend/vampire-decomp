@@ -2746,6 +2746,7 @@
 0x1000c220 func   ?vfunc340@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc340
 0x1000c23e func   ?sub_101cf720@@YAPADPBDZZ sub_101cf720
 0x1000c248 func   ?sub_1021e6c0@@YIXPAUMem@@HH@Z sub_1021e6c0
+0x1000c266 func   ?vfunc320@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc320
 0x1000c26b func   ?sub_103d0db0@CNPC_VWerewolf@@QAEHUCNPC_VWerewolfVec3@@0@Z CNPC_VWerewolf::sub_103d0db0
 0x1000c2ac func   ?sub_1007ee40@@YIXPAH@Z sub_1007ee40
 0x1000c2bb func   ?sub_10232520@@YIXPAHHH@Z sub_10232520
