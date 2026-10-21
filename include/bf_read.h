@@ -68,4 +68,6 @@ public:
 	unsigned int sub_100be4b0(int numbits);	// "PeekUBitLong": reads numbits bits one at a time from a saved copy of the reader, restores the reader, returns the value
 	float sub_100be770();	// "ReadBitCoord" (stub 0x10006d1b): the float in ST0
 	void sub_100bea10(Vector &fa);	// "ReadBitVec3Coord": clears fa, reads the three presence flags, then ReadBitCoord for each component whose flag is set
+	bool sub_100bf180(int iBit);	// "Seek" (stub 0x1001477c): sets the current bit; out of range (negative or past the end) sets the overflow flag, parks at the end and answers false
+	void sub_100bf1c0(int iStart, int nBits);	// removes nBits bits at iStart: the bits behind them are moved down through a bf_write at iStart, then the size shrinks by nBits and the position goes back to iStart
 };
