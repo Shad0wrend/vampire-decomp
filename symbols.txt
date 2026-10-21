@@ -5177,6 +5177,7 @@
 0x100154b0 func   ?sub_100784b0@CUnknown10077730@@QAEXM@Z CUnknown10077730::sub_100784b0
 0x100154d3 func   ?sub_10209ac0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10209ac0
 0x100154d8 func   ?sub_1036ec40@@YADXZ sub_1036ec40
+0x100154dd func   ?vfunc175@CPlatTrigger@@QAEXPAVCBaseEntity@@@Z CPlatTrigger::vfunc175
 0x100154e2 func   ?sub_100b03b0@@YAXXZ sub_100b03b0
 0x100154fb func   ?sub_1023b3a0@@YAXPAUCStateHolder@@@Z sub_1023b3a0
 0x1001552d func   ?sub_1027be60@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1027be60
