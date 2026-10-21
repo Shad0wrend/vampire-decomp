@@ -4,7 +4,8 @@
 
 struct CBaseFlexItemObject	// the object an item at +0xa58 refers to
 {
-	void sub_100029c8();	// called through the stub at 0x100029c8 when the item is removed
+	int sub_100029c8();	// the object's type (the dword at +0; stub 0x100029c8 for 0x10075b70)
+	bool sub_1000695b();	// whether the float at +0x188 is set, i.e. not -1.0f (stub 0x1000695b for 0x10075f30)
 };
 
 struct CBaseFlexItem	// 0x1c byte element
