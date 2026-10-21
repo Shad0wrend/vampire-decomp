@@ -3187,6 +3187,7 @@
 0x1000f7f9 func   ?sub_103d0780@@YIHPAD@Z sub_103d0780
 0x1000f83f func   ?vfunc546@CNPC_VWolfMorph@@QAEHH@Z CNPC_VWolfMorph::vfunc546
 0x1000f867 func   ?sub_1012ee70@InterfaceReg@@QAEPAV1@PAXPBD@Z InterfaceReg::sub_1012ee70
+0x1000f876 func   ?sub_1020f990@CLogicVisible@@QAEPAV1@XZ CLogicVisible::sub_1020f990
 0x1000f87b func   ?vfunc130@CEnvPlayerSurfaceTrigger@@QAEXH@Z CEnvPlayerSurfaceTrigger::vfunc130
 0x1000f88a func   _playerevents playerevents
 0x1000f88f func   ?sub_100fbc20@CBaseEntity@@QAEXXZ CBaseEntity::sub_100fbc20

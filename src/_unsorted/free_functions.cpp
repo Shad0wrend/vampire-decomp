@@ -40135,6 +40135,46 @@ int *sub_1020f8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020f990 size=0x75
+#include "CLogicVisible.h"
+extern void *vt_1044b584[];
+extern void *vt_104875ac[];
+struct CLogicVisibleSub { void sub_10002ddd(); };
+struct CLogicVisibleUnit : CLogicVisible {
+    CBaseEntity *sub_100090fc(int a);
+    char m_pad0004[0x45c - sizeof(CBaseEntity)];
+    CLogicVisibleSub m_s45c;
+    char m_pad45d[0x474 - 0x45d];
+    CLogicVisibleSub m_s474;
+    char m_pad475[0x48c - 0x475];
+    int m_f48c, m_f490, m_f494, m_f498, m_f49c, m_f4a0, m_f4a4, m_f4a8, m_f4ac, m_f4b0;
+    char m_pad4b4;
+    char m_b4b5;
+};
+
+CLogicVisible *CLogicVisible::sub_1020f990()
+{
+    CLogicVisibleUnit *u = (CLogicVisibleUnit *)this;
+    u->sub_100090fc(0);
+    *(void ***)this = vt_1044b584;
+    u->m_s45c.sub_10002ddd();
+    u->m_s474.sub_10002ddd();
+    u->m_f48c = 0;
+    u->m_f490 = 0;
+    u->m_f494 = 0;
+    u->m_f498 = 0;
+    u->m_f49c = 0;
+    u->m_f4a0 = 0;
+    u->m_f4a4 = 0;
+    u->m_f4a8 = 0;
+    u->m_f4ac = 0;
+    u->m_f4b0 = 0;
+    *(void ***)this = vt_104875ac;
+    u->m_b4b5 = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102106c0 size=0x43
 #include "CTriggerPlayerActivityLevel.h"
 void *sub_100aa720(int size);
