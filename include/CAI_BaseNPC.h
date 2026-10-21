@@ -63,7 +63,9 @@ public:
 	CAI_NPC_V10(32) CAI_NPC_V10(33) CAI_NPC_V10(34)
 	CAI_NPC_V(350) CAI_NPC_V(351) CAI_NPC_V(352) CAI_NPC_V(353) CAI_NPC_V(354) CAI_NPC_V(355) CAI_NPC_V(356) CAI_NPC_V(357) CAI_NPC_V(358)
 	virtual int vfunc359(CBaseEntity *pEnt);	// "GetCombatState"-like (see the Troika override)
-	CAI_NPC_V10(36)
+	CAI_NPC_V(360) CAI_NPC_V(361) CAI_NPC_V(362) CAI_NPC_V(363)
+	virtual bool vfunc364(const float *pPosition);	// asked about a look position (true accepts it; the "FInViewCone"-like test)
+	CAI_NPC_V(365) CAI_NPC_V(366) CAI_NPC_V(367) CAI_NPC_V(368) CAI_NPC_V(369)
 	CAI_NPC_V(370) CAI_NPC_V(371) CAI_NPC_V(372) CAI_NPC_V(373) CAI_NPC_V(374)
 	virtual int vfunc375(int act);	// TranslateActivity step 1: the activity the NPC wants for act
 	virtual int vfunc376(int act);	// the next activity of the fallback chain
@@ -138,9 +140,7 @@ public:
 	CAI_NPC_V(546) CAI_NPC_V(547) CAI_NPC_V(548) CAI_NPC_V(549)
 	CAI_NPC_V(550) CAI_NPC_V(551)
 	virtual unsigned int vfunc552();
-	CAI_NPC_V(553) CAI_NPC_V(554) CAI_NPC_V(555)
-	virtual bool vfunc556(const float *pPosition);	// asked about a look position (true accepts it)
-	CAI_NPC_V(557) CAI_NPC_V(558)
+	CAI_NPC_V(553) CAI_NPC_V(554) CAI_NPC_V(555) CAI_NPC_V(556) CAI_NPC_V(557) CAI_NPC_V(558)
 	virtual CBaseEntity *vfunc559(const char *pszName);	// slot 559: the entity of that name (asked by the follow-target setter)
 	virtual void vfunc560();	// slot 560: sets the conditions 0x4f..0x52, 0x2e, 0x2f and 0x62..0x66 (sub_10269b50 each)
 	CAI_NPC_V(561) CAI_NPC_V(562)
