@@ -1,6 +1,31 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10384760 size=0x64
+#include "CNPC_VHuman.h"
+struct CUnknown1027d990 { int sub_1027d990(); };
+inline void VSub(const Vector &a, const Vector &b, Vector &r)
+{
+    r.x = a.x - b.x;
+    r.y = a.y - b.y;
+    r.z = a.z - b.z;
+}
+// TARGET: CNPC_VHuman::vfunc563
+void CNPC_VHuman::vfunc563(CEntityVSlots *pEnt, Vector *pVec, int a, int b)
+{
+    if (((CUnknown1027d990 *)this)->sub_1027d990() == 2) {
+        Vector *pOrigin = pEnt->slot217();
+        Vector tmp;
+        Vector *pOther = pEnt->slot193(&tmp);
+        Vector d;
+        VSub(*pOther, *pOrigin, d);
+        pVec->x += d.x;
+        pVec->y += d.y;
+        pVec->z += d.z;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103858b0 size=0x108
 #include "CNPC_VHuman.h"
 

@@ -2609,6 +2609,7 @@
 0x1000b659 func   ?sub_10233a10@@YAXH@Z sub_10233a10
 0x1000b672 func   ?sub_1033c9c0@@YIHPAD@Z sub_1033c9c0
 0x1000b67c func   ?sub_1020e060@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e060
+0x1000b68b func   ?vfunc563@CNPC_VHuman@@QAEXPAVCEntityVSlots@@PAVVector@@HH@Z CNPC_VHuman::vfunc563
 0x1000b6a4 func   _env_sprite env_sprite
 0x1000b6b3 func   ?sub_1033d9d0@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1033d9d0
 0x1000b6b8 func   ?sub_101fb3e0@CVDmg_t@@QAEXI@Z CVDmg_t::sub_101fb3e0
