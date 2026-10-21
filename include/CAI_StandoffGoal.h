@@ -6,6 +6,7 @@
 #include "CAI_StandoffBehavior.h"
 
 class CAI_BaseNPC;
+struct inputdata_t;
 
 class CAI_StandoffGoal : public CAI_GoalEntity
 {
@@ -19,4 +20,5 @@ public:
 	void vfunc243(int a);	// slot 243 override: the same aggressiveness check, then CAI_GoalEntity::sub_102cdb70(a)
 	void vfunc244(CAI_BaseNPC *pActor);	// slot 244: like vfunc245 but sets the behaviour's flag at +0x19 and its byte at +0x1a from bit 0 of the byte at +0x204
 	void vfunc245(CAI_BaseNPC *pActor);	// slot 245: finds the actor's CAI_StandoffBehavior (slots 456/457 list the behaviours), clears its flag at +0x19 and gives it the parameter block of the aggressiveness
+	void sub_102c8280(inputdata_t *pInput);	// input "SetAggressiveness": takes the integer of the input (0 unless it is one), clamps it like vfunc241, refreshes the actors like CAI_GoalEntity::vfunc241 and hands every actor's standoff behaviour the parameter block
 };
