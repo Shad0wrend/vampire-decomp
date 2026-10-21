@@ -957,6 +957,7 @@
 0x10005619 func   ?vfunc5@CNPC_VHumanCombatPatrol@@QAEPAV1@I@Z CNPC_VHumanCombatPatrol::vfunc5
 0x10005623 func   ?vfunc2@CPhysicsAnimlinkEntityDeleteProxy@@QAEPAV1@I@Z CPhysicsAnimlinkEntityDeleteProxy::vfunc2
 0x1000562d func   ?vfunc5@CEnvFireSource@@QAEPAV1@I@Z CEnvFireSource::vfunc5
+0x10005632 func   ?sub_10204ad0@CVDmgBlock16_t@@QAEHPAX@Z CVDmgBlock16_t::sub_10204ad0
 0x10005655 func   ?sub_102dce30@UtlVec8@@QAEXHH@Z UtlVec8::sub_102dce30
 0x10005682 func   ?sub_103e6500@@YAHXZ sub_103e6500
 0x1000568c func   ?sub_102e0090@CUnknown102e0090@@QAEHPAX@Z CUnknown102e0090::sub_102e0090

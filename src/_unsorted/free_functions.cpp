@@ -41235,6 +41235,33 @@ void CUnknown102047d0::sub_102047d0(const char *pszName, int *pGender, int *pVal
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204ad0 size=0x9e
+#include "CVDmg_t.h"
+#include "CUnknown101e56e0.h"
+
+int CVDmgBlock16_t::sub_10204ad0(void *pCharacter)
+{
+	if (m_b != -1) {
+		switch (m_a) {
+		case 0:
+		case 1:
+		case 2:
+		case 3:
+			return 0;
+		case 4:
+			return CUnknown101e56e0Table::Find(m_b)->sub_101e5b30(pCharacter);
+		case 5:
+		case 6:
+		case 7:
+		case 8:
+		case 9:
+			return 0;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204c60 size=0x9c
 #include "CUnknown10204c60.h"
 #include "CUnknown10205ba0.h"
