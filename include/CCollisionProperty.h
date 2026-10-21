@@ -68,4 +68,6 @@ public:
 	Vector *sub_104103c0(const Vector &in, Vector *pResult);	// "CCollisionProperty::CollisionToWorldSpace": the entity-space bounds (solid type neither 0 nor 2, flag bit 7 clear) with non-zero angles go through the collision transform (VectorTransform), else collision origin + in
 	float *sub_100dcc20(const float *pPoint, float *pOut);	// "CCollisionProperty::WorldToNormalizedSpace" (plain member): the point in collision space (entity-space bounds with non-zero angles go through the inverse collision transform, else the point minus the collision origin), normalised by the bounds (sub_100dc9f0); returns pOut
 	float sub_100dd2e0(const float *pDir);	// "CCollisionProperty::SupportMapping"-like: the origin dotted with pDir plus, per axis of pDir taken into collision space (entity-space bounds with non-zero angles go through the inverse transform), the local mins (negative component) or maxs times that component
+	void sub_100dc9a0(const Vector &in, Vector &out);	// "CCollisionProperty::NormalizedToCollisionSpace" (stub 0x10003715): the normalised point scaled into the bounds
+	Vector *sub_100dcb30(const Vector &in, Vector *pResult);	// "CCollisionProperty::NormalizedToWorldSpace": sub_100dc9a0, then like sub_104103c0 (collision transform for entity-space bounds with non-zero angles, else collision origin + local)
 };
