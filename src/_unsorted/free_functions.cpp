@@ -17750,6 +17750,27 @@ void sub_100d3bc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3d20 size=0xa6
+#include "CVStatList_t.h"
+#include "CUnknown1070b22c.h"
+
+extern char *sub_10008d8c();
+extern int sub_10431447(const char *);
+extern CUnknown1070b22c *g_1070b22c;
+
+void sub_100d3d20()
+{
+	char *p = sub_10008d8c();
+	if (!p)
+		return;
+	void *pChar = *(void **)(p + 0xa8);
+	if (!pChar)
+		return;
+	int value = sub_10431447(g_1070b22c->vfunc84(1));
+	CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(0x22, value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d46c0 size=0x95
 #include "CVStatList_t.h"
 
