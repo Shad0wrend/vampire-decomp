@@ -25526,6 +25526,29 @@ void CFlagSet10174550::sub_10174550(bool v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174c10 size=0x94
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "Vector.h"
+
+struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
+extern CGlobalVarsX *g_1070b228;
+struct CDebugX { char m_pad[0x460]; int m_flag; };
+extern CDebugX *g_1072c464;
+void sub_101cee20(float size, Vector origin, Vector angles, int flags);
+
+typedef float *(__fastcall *PFN_GetVec)(void *);
+
+void CBaseCombatCharacter::sub_10174c10()
+{
+    if (g_1072c464->m_flag)
+        sub_101cee20(5.0f, *(Vector *)((PFN_GetVec)(*(void ***)this)[217])(this), *(Vector *)((PFN_GetVec)(*(void ***)this)[219])(this), 0);
+    CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e7b0();
+    if (g_1070b228->m_curtime > *(float *)((char *)this + 0x1564) && pWeapon)
+        pWeapon->vfunc318();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174f80 size=0x18e
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"

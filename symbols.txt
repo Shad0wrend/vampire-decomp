@@ -1955,6 +1955,7 @@
 0x10009cd7 func   ?vfunc5@CItemContainerLock@@QAEPAV1@I@Z CItemContainerLock::vfunc5
 0x10009cdc func   _phys_slideconstraint phys_slideconstraint
 0x10009ceb func   ?vfunc5@CWeaponMelee_SabbatLeaderAttack@@QAEPAV1@I@Z CWeaponMelee_SabbatLeaderAttack::vfunc5
+0x10009cf0 func   ?sub_10174c10@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10174c10
 0x10009cf5 func   ?vfunc5@CFilterInventory@@QAEPAV1@I@Z CFilterInventory::vfunc5
 0x10009d0e func   ?sub_100ac9f0@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100ac9f0
 0x10009d13 func   ?sub_1002af90@CPhysConstraint@@QAEXH@Z CPhysConstraint::sub_1002af90
