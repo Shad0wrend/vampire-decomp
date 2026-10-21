@@ -9,4 +9,5 @@ public:
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VCombatman *sub_1036fad0();	// as in CKeepUpright (transplant)
+	int vfunc438();	// slot 438 (TranslateSchedule-like): see the body
 };
