@@ -72145,6 +72145,32 @@ void sub_10307e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10309120 size=0xd0
+extern float g_104454c4;
+
+void __stdcall sub_10309120(float flAngle, float flStep, int nCount, float *pFirst, float *pLast)
+{
+	if (nCount != 0) {
+		float flSign = (float)(nCount > 0 ? 1 : -1);
+		flAngle = nCount * flStep + flAngle;
+		*pLast = flAngle;
+		if (flAngle < g_104454c4)
+			*pLast = flAngle + 360.0f;
+		else if (flAngle >= 360.0f)
+			*pLast = flAngle - 360.0f;
+		float flStart = *pLast - flSign * flStep * 0.5;
+		*pFirst = flStart;
+		if (flStart < g_104454c4)
+			*pFirst = flStart + 360.0f;
+		else if (flStart >= 360.0f)
+			*pFirst = flStart - 360.0f;
+	} else {
+		*pFirst = flAngle;
+		*pLast = flAngle;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10309e80 size=0xa5
 #include "CUnknown1030a6e0.h"
 #include "Vector.h"

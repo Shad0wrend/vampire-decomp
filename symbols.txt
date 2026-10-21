@@ -1956,6 +1956,7 @@
 0x100089ef func   ?sub_10344c80@CUnknown10344c80@@QAEHH@Z CUnknown10344c80::sub_10344c80
 0x100089f4 func   _func_breakable func_breakable
 0x10008a26 func   ?sub_10404520@@YAHXZ sub_10404520
+0x10008a2b func   ?sub_10309120@@YGXMMHPAM0@Z sub_10309120
 0x10008a49 func   ?sub_10078dd0@CUtlVector140@@QAEXH@Z CUtlVector140::sub_10078dd0
 0x10008a58 func   ?vfunc5@COccultDodge@@QAEPAV1@I@Z COccultDodge::vfunc5
 0x10008a76 func   ?vfunc5@COccultLockpicking@@QAEPAV1@I@Z COccultLockpicking::vfunc5
