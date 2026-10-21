@@ -72186,6 +72186,67 @@ int *__fastcall sub_102c9d20(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ca2a0 size=0x15f
+#include "CBaseEntity.h"
+#include "CAI_CsActList.h"
+#include "ConVar.h"
+
+struct CSActEntry_t {
+	int nType;
+	unsigned int hSource;
+	Vector vecPos;
+	int nLevel;
+	float flDuration18;
+	unsigned int hOffender;
+	unsigned int hOwner;
+	char bExternal;
+	void sub_102c9d70(float flDuration);
+};
+
+struct CSActGlobals_t {
+	char pad[0xc];
+	float curtime;
+};
+
+extern ConVar *g_107258dc;
+extern CSActGlobals_t *g_1070b228;
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+void CAI_CsActList::sub_102ca2a0(int nType, CBaseEntity *pSource, float x, float y, float z, int nLevel, float flDuration, CBaseEntity *pOffender, CBaseEntity *pOwner, char bExternal)
+{
+	if (m_nActs < 0x40) {
+		CSActEntry_t *pAct = (CSActEntry_t *)&m_acts[m_nActs];
+		pAct->nType = nType;
+		if (pSource)
+			pAct->hSource = *pSource->vfunc1();
+		else
+			pAct->hSource = 0xffffffff;
+		pAct->vecPos.Init(x, y, z);
+		pAct->nLevel = nLevel;
+		pAct->sub_102c9d70(flDuration);
+		if (pOffender)
+			pAct->hOffender = *pOffender->vfunc1();
+		else
+			pAct->hOffender = 0xffffffff;
+		if (pOwner)
+			pAct->hOwner = *pOwner->vfunc1();
+		else
+			pAct->hOwner = 0xffffffff;
+		pAct->bExternal = bExternal;
+		if (!g_107258dc->vfunc1() && g_107258dc->m_nValue) {
+			const char *pszType = "Criminal";
+			if (nType == 2)
+				pszType = "Supernatural";
+			const char *pszOwner = pOwner ? pOwner->sub_100ab4f0() : "Unknown";
+			const char *pszOffender = pOffender ? pOffender->sub_100ab4f0() : "Unknown";
+			DevMsg("CSActs:    %6.1f - External %s act level %d added at (%f, %f, %f) for %f sec (offender - %s) (owner - %s)\n",
+				(double)g_1070b228->curtime, pszType, nLevel, (double)x, (double)y, (double)z, (double)flDuration, pszOffender, pszOwner);
+		}
+		m_nActs++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ca630 size=0x6b
 #include "CUnknown102ca630.h"
 
