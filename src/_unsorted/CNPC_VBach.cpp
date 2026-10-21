@@ -47,6 +47,42 @@ void CNPC_VBach::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363850 size=0xb8
+#include "CNPC_VBach.h"
+
+void CNPC_VBach::vfunc103()
+{
+	sub_1026dc00(0x200000);
+	sub_1026dc30(1);
+	sub_103c4ef0();
+	m_b66a1 = 1;
+	m_b66a2 = 0;
+	m_b66a3 = 0;
+	m_b66a5 = 0;
+	m_n6684 = 0;
+	m_n6688 = 0;
+	m_n668c = 0;
+	m_n6690 = 0;
+	m_n6694 = 0;
+	m_n5db4 = 0;
+	m_n6698 = 0;
+	m_n669c = 0;
+	m_b66a4 = 0;
+	m_b66a6 = 0;
+	m_n6674 = 0;
+	m_n6670 = 0;
+	m_n6678 = 0;
+	m_n6664 = 0;
+	m_n6668 = 0;
+	m_n666c = 0;
+	m_b66a0 = 0;
+	m_n667c = 0;
+	m_b66a7 = 0;
+	m_n6680 = 0;
+	m_b66a8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10363b60 size=0xba
 #include "CBaseEntity.h"
 #include "CNPC_VBach.h"
