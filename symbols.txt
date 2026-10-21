@@ -191,6 +191,7 @@
 0x10001bae func   ?vfunc546@CNPC_VTaxiDriver@@QAEHH@Z CNPC_VTaxiDriver::vfunc546
 0x10001bb8 func   ?sub_10093b10@CBaseAnimating@@QAEXHH@Z CBaseAnimating::sub_10093b10
 0x10001bcc func   ?sub_1004feb0@@YA_NPAVCBaseEntity@@0@Z sub_1004feb0
+0x10001bd6 func   ?vfunc124@CAI_Hint@@UAEHXZ CAI_Hint::vfunc124
 0x10001bea func   ?sub_102d8bc0@CUnknown102d8bc0@@QAEMXZ CUnknown102d8bc0::sub_102d8bc0
 0x10001bf9 func   ?vfunc2@CTEExplosiveGunshotDecal@@UAEPAV1@I@Z CTEExplosiveGunshotDecal::vfunc2
 0x10001c17 func   ?sub_101b6a50@UtlVec8@@QAEXH@Z UtlVec8::sub_101b6a50
