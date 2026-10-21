@@ -8282,6 +8282,45 @@ bool CBaseCineCam::sub_1006d9d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006e770 size=0xb0
+#include "CBaseCineCam.h"
+
+struct CGlobalVarsC { char pad[0xc]; float curtime; };
+extern CGlobalVarsC *g_1070b228;
+void sub_100079eb();
+void sub_1000f68c();
+void sub_1006fe00();
+void sub_1000362f();
+void sub_100034ef();
+
+// TARGET: CBaseCineCam::sub_1006e770
+void CBaseCineCam::sub_1006e770()
+{
+    switch (m_nState638) {
+    case 0:
+        ((CBaseEntity *)this)->sub_100ac4e0(0, 0, 0);
+        break;
+    case 1:
+        ((CBaseEntity *)this)->sub_100ac4e0((int)sub_100079eb, 0, 0);
+        break;
+    case 2:
+        ((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000f68c, 0, 0);
+        break;
+    case 3:
+        ((CBaseEntity *)this)->sub_100ac4e0((int)sub_1006fe00, 0, 0);
+        break;
+    case 4:
+        ((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000362f, 0, 0);
+        break;
+    default:
+        if (m_flTime55c > 0 && m_flTime55c < g_1070b228->curtime)
+            ((CBaseEntity *)this)->sub_100ac4e0((int)sub_100034ef, 0, 0);
+        break;
+    }
+    m_flNextThink17c = g_1070b228->curtime + 0.04166f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006e890 size=0xe
 bool CUnknown1006e890::sub_1006e890()
 {

@@ -3401,6 +3401,7 @@
 0x1000e287 func   ?vfunc241@CNPC_VTzimisce@@UAEXPADPAH@Z CNPC_VTzimisce::vfunc241
 0x1000e291 func   ?vfunc5@CItemGJumblesFlyer@@QAEPAV1@I@Z CItemGJumblesFlyer::vfunc5
 0x1000e296 func   _func_physbox func_physbox
+0x1000e2a5 func   ?sub_1006e770@CBaseCineCam@@QAEXXZ CBaseCineCam::sub_1006e770
 0x1000e2af func   ?sub_1015ff40@CBasePlayer@@QAE_NXZ CBasePlayer::sub_1015ff40
 0x1000e2b9 func   ?sub_10382b30@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::sub_10382b30
 0x1000e2be func   ?vfunc418@CAI_BaseNPC@@UAEMM@Z CAI_BaseNPC::vfunc418
