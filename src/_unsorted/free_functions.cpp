@@ -77343,6 +77343,75 @@ void CUnknown102f09a0::sub_102f09a0(CAI_Waypoint *pWaypoint, const float *pPosit
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f13d0 size=0xeb
+#include "CAI_Navigator.h"
+#include "CUnknown1027d990.h"
+
+struct NavLink_t {
+	char pad[0x2c];
+	int n2c;
+};
+
+struct NavWp_t {
+	char pad[0x28];
+	unsigned char bFlags;
+	char pad29[3];
+	int n2c;
+	NavLink_t *pLink;
+};
+
+struct NavTimerView_t {
+	char pad[0x24];
+	NavWp_t *pWp;
+};
+
+struct NavSelfView_t {
+	char pad[0x30];
+	NavTimerView_t *pRoute;
+	char pad34[0x38 - 0x34];
+	float flNext;
+	float flArg;
+};
+
+struct NavGlobals_t {
+	char pad[0xc];
+	float curtime;
+};
+
+extern NavGlobals_t *g_1070b228;
+extern float g_1049d988;
+
+bool CAI_Navigator::sub_102f13d0(unsigned char bArg)
+{
+	NavSelfView_t *pView = (NavSelfView_t *)this;
+	pView->flArg = (float)bArg;
+	int nState = ((CUnknown1027d990 *)m_pOuter)->sub_1027d990();
+	if (nState == 0 || nState == 2) {
+		NavWp_t *pWp = pView->pRoute->pWp;
+		if (pWp) {
+			NavLink_t *pLink = pWp->pLink;
+			if (pLink && pWp->n2c == pLink->n2c && !(pWp->bFlags & 0x2a)) {
+				char bDone = 0;
+				if (pView->flArg != 0.0f || pView->flNext <= g_1070b228->curtime) {
+					pView->flNext = g_1049d988 + g_1070b228->curtime;
+					if (sub_102f0e80(&bDone))
+						return true;
+					if (bDone)
+						return false;
+					if (sub_102f0fe0(&bDone))
+						return true;
+					if (bDone)
+						return false;
+				}
+				if (sub_102f13a0(&bDone))
+					return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1690 size=0x168
 #include "CUnknown102ee120.h"
 extern "C" void *memset(void *, int, unsigned int);
