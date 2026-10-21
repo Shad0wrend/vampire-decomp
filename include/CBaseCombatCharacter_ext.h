@@ -72,3 +72,4 @@
 	virtual int vfunc34(int pOther);	// slot 34 "CBaseCombatCharacter::GetHighlight...": scope trace (entity name), pOther (a character) holding a weapon (sub_1032e7b0) that is not disabled (slot 267), whose info block has bit 1 at +0x242c and whose owner (slot 285) is this entity: 6, else 0; takes the character pointer as a stack argument
 	char sub_103261f0(Vector pos, float flScale, int a);	// FInViewCone variant used while the global at 0x10936f74 holds the value 2 (stub 0x1000556a)
 	char sub_103264d0(Vector pos, float flScale, int a);	// the default FInViewCone variant (stub 0x100072a7)
+	char vfunc363(CBaseEntity *pTarget);	// slot 363 "CBaseCombatCharacter::FInViewCone" (entity version): scope trace (entity name), pTarget's center (slot 192) and its scale (slot 29, asked with the field at +0x1574) go to sub_103261f0 (with that field) while the global at 0x10936f74 holds 2 and its slot 1 is false, else to sub_103264d0
