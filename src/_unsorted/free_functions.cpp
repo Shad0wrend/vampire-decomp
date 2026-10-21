@@ -24588,6 +24588,45 @@ void sub_10101100(float *pDuration, unsigned char *pColor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101a90 size=0x78
+#include "CEnvLaser.h"
+#include "Vector.h"
+
+struct CGlobalVarsView
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+
+struct CEnvLaserView
+{
+	char m_pad0000[0x454];
+	float m_flLastTime;
+	char m_pad0458[0x4d8 - 0x458];
+	Vector m_vecEnd;
+	char m_pad04e4[0x4f8 - 0x4e4];
+	void *m_pSprite;
+};
+
+void sub_101cf5c0(void *pSprite, const Vector *pPos, int a);
+
+// TARGET: CEnvLaser::sub_10101a90
+void CEnvLaser::sub_10101a90(void *pTrace)
+{
+	CEnvLaserView *v = (CEnvLaserView *)this;
+	const Vector *pEnd = (const Vector *)((char *)pTrace + 0xc);
+	v->m_vecEnd = *pEnd;
+	if (v->m_pSprite)
+		sub_101cf5c0(v->m_pSprite, pEnd, 0);
+	if (g_1070b228->curtime >= v->m_flLastTime + 0.1)
+	{
+		sub_100bbef0(pTrace);
+		sub_100bbe70(sub_100bb270(), (const float *)pEnd);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101e30 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
