@@ -14,7 +14,11 @@ public:
 	CTW_V(100) CTW_V(101) CTW_V(102)
 	virtual void vfunc103();	// slot 103 "CTriggerWind::Spawn": remembers the wind (engine slot 39 of the angles at +0x5e0), the yaw of GetAngles() as an int at +0x5c0, then the base spawn, copies +0x5b0 to +0x5b8 and +0x5c0 to +0x5c8, sets a think function and the next think time to the current time
 	CTW_V(104) CTW_V(105) CTW_V(106) CTW_V(107) CTW_V(108) CTW_V(109)
-	CTW_V10(11) CTW_V10(12) CTW_V10(13) CTW_V10(14) CTW_V10(15) CTW_V10(16) CTW_V10(17) CTW_V10(18) CTW_V10(19)
+	CTW_V10(11)
+	CTW_V(120) CTW_V(121) CTW_V(122) CTW_V(123)
+	virtual int vfunc124();	// slot 124 "CTriggerWind::DrawDebugTextOverlays": the base overlays (sub_101c4f40), then with the text bit (bit 0 of the debug overlays at +0x224) "Dir: %i (%i)" and "Speed: %i (%i)" lines; returns the next line
+	CTW_V(125) CTW_V(126) CTW_V(127) CTW_V(128) CTW_V(129)
+	CTW_V10(13) CTW_V10(14) CTW_V10(15) CTW_V10(16) CTW_V10(17) CTW_V10(18) CTW_V10(19)
 	CTW_V10(20) CTW_V10(21)
 	CTW_V(220)
 	virtual float *vfunc221();	// "GetAngles"
@@ -22,8 +26,6 @@ public:
 	void sub_100b3b00();	// CBaseEntity::sub_100b3b00, called directly
 	void sub_101c6860();	// CTriggerMultiple::vfunc103, called directly (stub 0x100048ef)
 	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
-	int vfunc124_impl_placeholder();	// unused placeholder keeping this header's method list stable
-	int sub_101caee0();	// "CTriggerWind::DrawDebugTextOverlays" (slot 124, declared as a plain member because the placeholder slot above is void): the base overlays, then with the text bit (bit 0 of the debug overlays at +0x224) "Dir: %i (%i)" / "Speed: %i (%i)" lines; returns the next line
 	int sub_101c4f40();	// CBaseTrigger::vfunc124 (stub 0x100104e2), called directly
 
 	char m_pad0004[0x5b0 - 4];
