@@ -2,6 +2,7 @@
 // only what matched code needs, as plain members.
 #pragma once
 #include "CBaseEntity.h"
+#include "COutputEvent.h"
 
 struct inputdata_t;
 
@@ -15,9 +16,14 @@ public:
 	void sub_1018df70();	// CBaseProp::vfunc103 (stub 0x10011793), called directly
 	void sub_10260a50(int a);	// called through the stub at 0x1000d0b2
 	char *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 (stub 0x10013d8b): the studio header of the model (null when there is none)
+	void vfunc265(void *pActivator, void *pCaller, int useType, float value);	// slot 265 "CPropModelState::Use" (plain member): locked (byte at +0x734): fires the locked output (+0x778) and plays the locked sound; else fires the pressed output (+0x760) and steps to the next state (wrapping to 0 after the last)
 
-	char m_pad03e0[0x738 - 0x3e0];
+	char m_pad03e0[0x734 - 0x3e0];
+	char m_bLocked;	// 0x734
+	char m_pad0735[3];
 	int m_iState;	// 0x738: current state, clamped to the state count
 	int m_nStates;	// 0x73c
 	const char *m_pStateModels[8];	// 0x740: [0] is the entity's own model name (+0x388)
+	COutputEvent m_OnPressed;	// 0x760
+	COutputEvent m_OnLocked;	// 0x778
 };
