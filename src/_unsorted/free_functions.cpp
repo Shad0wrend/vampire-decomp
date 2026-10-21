@@ -40765,6 +40765,36 @@ const char *CVStatList_t::sub_102013a0(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10201470 size=0x97
+#include "CVStatList_t.h"
+#include "CUnknown10205030.h"
+#include "ScopeTrace.h"
+
+namespace block_10201470 {
+struct CVStatListUnit : CVStatList_t
+{
+	char sub_102008b0(int stat);
+};
+
+char CVStatListUnit::sub_102008b0(int stat)
+{
+	if (stat >= 0 && stat < m_field04)
+		return 1;
+	return 0;
+}
+}
+using namespace block_10201470;
+
+// TARGET: CVStatList_t::sub_10201470
+const char *CVStatList_t::sub_10201470(int stat)
+{
+	ScopeTrace trace("CVStatList_t::GetValueName", g_106b8540);
+	if (((CVStatListUnit *)this)->sub_102008b0(stat))
+		return ((CUnknown10200370 *)m_field0c)->sub_10200370(stat, sub_10010609(stat))->sub_101fdda0();
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102017b0 size=0x89
 #include "CVStatList_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
