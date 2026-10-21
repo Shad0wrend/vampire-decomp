@@ -4764,6 +4764,7 @@
 0x10015645 func   ?sub_10031520@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10031520
 0x1001564f func   ?sub_101e9290@CBloodAmountUnit@@QAEHPAXH@Z CBloodAmountUnit::sub_101e9290
 0x10015654 func   ?sub_101c4580@@YI_NPAXHPAUIFile101c4580@@PBD@Z sub_101c4580
+0x1001566d func   ?sub_1019c6f0@@YAXPAUCRagdollBones@@PAUCBoneSetBase@@1H@Z sub_1019c6f0
 0x1001567c func   ?vfunc503@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc503
 0x10015695 func   ?sub_10054400@@YAXXZ sub_10054400
 0x100156a4 func   ?vfunc5@CItemGRingGold@@QAEPAV1@I@Z CItemGRingGold::vfunc5
