@@ -36,3 +36,40 @@ int CTzimisceScheduleUnit::sub_103bcb60(int unused)
     return pTarget->sub_100102b2(nClass);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103bcc00 size=0x88
+#include "CNPC_VTzimisce.h"
+
+extern char g_1065c7e0[];
+
+struct CNPC_VTzimisceView
+{
+	char m_pad0000[0x568];
+	char m_bFlag568;
+	char m_pad0569[0x1b30 - 0x569];
+	const char *m_pszFile;
+	int m_nLine;
+	char m_pad1b38[0x5d8c - 0x1b38];
+	unsigned int m_nFlags5d8c;
+};
+
+// TARGET: CNPC_VTzimisce::sub_103bcc00
+int CNPC_VTzimisce::sub_103bcc00(int a)
+{
+	CNPC_VTzimisceView *v = (CNPC_VTzimisceView *)this;
+	if (!v->m_bFlag568 && (sub_10269d30(10) || sub_10269d30(13)))
+	{
+		v->m_pszFile = g_1065c7e0;
+		v->m_nLine = 0xbd6;
+		return 0x174;
+	}
+	if (sub_10269aa0(0x5d))
+	{
+		v->m_pszFile = g_1065c7e0;
+		v->m_nLine = 0xbde;
+		v->m_nFlags5d8c &= 0xbfffffff;
+		return 0x170;
+	}
+	return sub_103bc820();
+}
+// END FUNCTION
