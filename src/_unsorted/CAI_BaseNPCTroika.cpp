@@ -1545,6 +1545,42 @@ float CAI_BaseNPCTroika::vfunc418(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bff20 size=0xb6
+#include "CEHandleGet.h"
+#include "CUnknown1070b244.h"
+
+struct TroikaView102bff20 {
+	char pad0[0x5d6c];
+	float m_f5d6c;
+	char pad1[0x6264 - 0x5d70];
+	float m_f6264;
+	char pad2[0x64d8 - 0x6268];
+	float m_f64d8;
+	float m_f64dc;
+	char pad3[0x6570 - 0x64e0];
+	float m_f6570;
+};
+extern CUnknown1070b244 *g_1070b244;
+struct GlobalVarsX { int pad0[3]; float curtime; };
+extern GlobalVarsX *g_1070b228;
+
+void CAI_BaseNPCTroika::vfunc333(float flInterval)
+{
+	TroikaView102bff20 *p = (TroikaView102bff20 *)this;
+	if (512.0f > p->m_f6264) {
+		p->m_f6570 -= flInterval;
+		if (p->m_f6570 < 0.0f) {
+			vfunc276();
+			p->m_f6570 = g_1070b244->vfunc1(p->m_f64d8, p->m_f64dc);
+		}
+	}
+	if (EHandle_Get(m_hfe8) != 0)
+		p->m_f5d6c = g_1070b228->curtime + 2.0f;
+	sub_102c0010(flInterval);
+	sub_1026b810(flInterval);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c12a0 size=0x10b
 #include "CUnknown100ecee0.h"
 
