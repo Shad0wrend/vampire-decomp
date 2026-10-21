@@ -27934,6 +27934,35 @@ PyObj *sub_10196c50(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196de0 size=0x8c
+#include "CGlobalEntityList.h"
+
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(void *args, const char *format, ...);
+__declspec(dllimport) void *PyList_New(int size);
+__declspec(dllimport) int PyList_Append(void *list, void *item);
+}
+extern CGlobalEntityList g_106eb5d8;
+void *sub_101966a0(CBaseEntity *pEntity);
+
+void *sub_10196de0(void *self, void *args)
+{
+	char *pszClassname = 0;
+	if (PyArg_ParseTuple(args, "s", &pszClassname)) {
+		void *pList = PyList_New(0);
+		if (pList) {
+			for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7380(0, pszClassname); pEnt; pEnt = g_106eb5d8.sub_100f7380(pEnt, pszClassname)) {
+				void *pObject = sub_101966a0(pEnt);
+				if (pObject)
+					PyList_Append(pList, pObject);
+			}
+			return pList;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196ea0 size=0x68
 struct SPyObj { int refcnt; void **type; };
 struct SSink { void sub_1000769e(SPyObj *a, int b, int c); };
