@@ -1747,6 +1747,44 @@ void CBaseEntity::vfunc105(const char *pszModel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ad550 size=0x13a
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+void sub_10139610(const float *angles, float *forward, float *right, float *up);
+extern float g_1070d9d0[3];
+extern float g_104454c4;
+
+// TARGET: CBaseEntity::vfunc171
+void CBaseEntity::vfunc171()
+{
+	ScopeTrace trace("CBaseEntity::SetMovedir", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	float *ang = (float *)((CEntityVSlots *)this)->slot221();
+	if (g_104454c4 == ang[0] && ang[1] == -1.0f && g_104454c4 == ang[2])
+	{
+		m_vecMovedir[0] = 0.0f;
+		m_vecMovedir[1] = 0.0f;
+		m_vecMovedir[2] = 1.0f;
+	}
+	else
+	{
+		ang = (float *)((CEntityVSlots *)this)->slot221();
+		if (g_104454c4 == ang[0] && ang[1] == -2.0f && g_104454c4 == ang[2])
+		{
+			m_vecMovedir[0] = 0.0f;
+			m_vecMovedir[1] = 0.0f;
+			m_vecMovedir[2] = -1.0f;
+		}
+		else
+		{
+			sub_10139610((float *)((CEntityVSlots *)this)->slot221(), m_vecMovedir, 0, 0);
+		}
+	}
+	vfunc64(g_1070d9d0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ad6e0 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
