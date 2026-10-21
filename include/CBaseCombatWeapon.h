@@ -111,7 +111,8 @@ public:
 	virtual CWeaponActivityRecord *vfunc362();	// the weapon's activity translation table
 	virtual int vfunc363();	// the number of records of that table
 	virtual void vfunc364(int a, int b, int c);
-	CBCW_V(365) CBCW_V(366)
+	virtual int vfunc365(int a, float b, float c);	// the activity-like index for a shot: 0x40 without a loaded clip (+0x74c), 8 below the minimum range, 0x5f below the float at +0x8b8, 0x60 above the one at +0x8c0, 0x61 for a small b, else 0x4f when sub_10252410(0) holds
+	CBCW_V(366)
 	virtual int vfunc367(int a, float b, float c);	// CWeaponMelee: forwards to sub_103ea7e0 with the constant 0x4b
 	CBCW_V(368) CBCW_V(369)
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other);
@@ -137,6 +138,7 @@ public:
 	bool sub_100ab020(int a, void *pEdict, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly by vfunc86
 	bool sub_10254b00(int a);	// "can start the reload": false without an owner, without ammo (owner ammo count of the type at +0x744, unless the byte +0x89a is set) or while the owner's info block has +0x4fee8 set; with something to load starts it (sub_10254cd0(a), slot 333(10, 3, 0, 0, 0, 0), byte +0x898 = 1) and returns true, else re-arms the next attack time (slot 311 + a constant) once the pending flags are set
 	char sub_102525e0(CBaseCombatCharacter *pOwner);	// true when the global ammo table is available and its entry for the ammo type at +0x744 equals the ammo count the owner (pOwner, else the weapon's owner character) holds of that type; false without an ammo type, owner or table
+	char sub_10252410(int a);	// stub 0x10008341, called directly by vfunc365 with 0
 
 #include "CBaseCombatWeapon_ext.h"
 
