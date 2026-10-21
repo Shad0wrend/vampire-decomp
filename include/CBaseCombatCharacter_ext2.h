@@ -73,3 +73,5 @@
 	void sub_1032f770(int hitbox, float a, float b);	// stub 0x1000596b, called directly by CC_Burn_Hitboxes with (hitbox index, 8.0f, 2.0f)
 	void sub_1033be10(struct inputdata_t &data);	// "CBaseCombatCharacter::BloodHealIn(put)": scope trace (entity name); for an integer input above zero, sub_1033bf50(1) and, for more than one and a positive BloodHealD... value (sub_1033b980), fires the "BloodHeal" input at this entity with the value minus one
 	void sub_1033bf50(int a);	// stub 0x1000e7e1, run first by the BloodHeal input handler
+	void sub_102c3580(struct inputdata_t &data);	// "CBaseCombatCharacter::InputSetFrenzyRate"-like (slot of the input table): the input's float (0 when it is not a float) picks the animation rate state at +0x1484 (exactly 1.0f or -1.0f: 0 and rate -1.0f; at least 1.0f: 3; else 0 with the rate clamped up to 0.001f), then CBaseAnimating::sub_1008d230(rate) as a tail call
+	void sub_1008d230(float flRate);	// CBaseAnimating::SetPlaybackAndSpeed (stub 0x10012080), called directly
