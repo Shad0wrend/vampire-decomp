@@ -11372,6 +11372,71 @@ void sub_10089430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10089550 size=0xb0
+#include "IVEngineServer.h"
+#include "CGlobalEntityList.h"
+extern "C" int __cdecl atoi(const char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+extern CGlobalEntityList *g_10566458;
+extern IVEngineServer *g_1070b22c;
+class CBasePlayer;
+
+struct CCmd10089550_Brain
+{
+	void sub_102c0f70(int a, int b);
+};
+struct CCmd10089550_Ent
+{
+	char m_pad0000[0x98];
+	CCmd10089550_Brain *m_pBrain;	// 0x98
+};
+struct CCmd10089550_Player
+{
+	char m_pad0000[0xfe8];
+	unsigned int m_hTarget;	// 0xfe8
+};
+
+CCmd10089550_Player *sub_101193b0();
+CCmd10089550_Ent *sub_10172710(CBasePlayer *pPlayer);
+
+static inline void *LookupEntity(const unsigned int &rh)
+{
+	if (rh == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[rh & 0x1fff];
+	if (pSlot->m_Serial == (int)(rh >> 13))
+		return pSlot->m_pEntity;
+	return 0;
+}
+
+static inline void *HandleGetBase(const unsigned int &rh)
+{
+	return LookupEntity(rh);
+}
+
+static inline CCmd10089550_Ent *HandleGet(const unsigned int &rh)
+{
+	return (CCmd10089550_Ent *)HandleGetBase(rh);
+}
+
+// TARGET: sub_10089550
+void sub_10089550()
+{
+	CCmd10089550_Ent *pEnt = HandleGet(sub_101193b0()->m_hTarget);
+	if (!pEnt)
+		pEnt = sub_10172710((CBasePlayer *)sub_101193b0());
+	int nArg1 = g_1070b22c->vfunc84(1);
+	const char *pszArg2 = (const char *)g_1070b22c->vfunc84(2);
+	if (!pszArg2 || !strlen(pszArg2))
+		pszArg2 = "1";
+	if (nArg1 && pEnt) {
+		CCmd10089550_Brain *pBrain = pEnt->m_pBrain;
+		if (pBrain)
+			pBrain->sub_102c0f70(nArg1, atoi(pszArg2));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10089ac0 size=0xcb
 #include "IVEngineServer.h"
 extern "C" int __cdecl atoi(const char *);
