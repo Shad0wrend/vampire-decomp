@@ -18972,6 +18972,62 @@ int CBaseEntity::sub_100b1a00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1d10 size=0x15d
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+
+struct EntView100b1d10 {
+	char pad0[0x130];
+	float m_matrix[12];
+	char pad1[0x25c - 0x160];
+	unsigned int m_hMoveParent;
+	char pad2[0x268 - 0x260];
+	unsigned int m_flags;
+	char pad3[0x3bc - 0x26c];
+	Vector m_vecAbsVelocity;
+	char pad4[0x3d4 - 0x3c8];
+	Vector m_vecVelocity;
+};
+struct CBaseEntityStub100b1d10 : CBaseEntity
+{
+	void sub_1000d486();
+};
+void sub_101381b0(const float *in, const float *matrix, float *out);
+
+inline bool EFlagBit(unsigned int flags, int bit)
+{
+	return ((flags >> bit) & 1) != 0;
+}
+
+inline void VecAdd(const float *a, const float *b, float *c)
+{
+	c[0] = a[0] + b[0];
+	c[1] = a[1] + b[1];
+	c[2] = a[2] + b[2];
+}
+
+void CBaseEntity::sub_100b1d10()
+{
+	ScopeTrace trace("CBaseEntity::CalcAbsoluteVelocity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	EntView100b1d10 *e = (EntView100b1d10 *)this;
+	if (EFlagBit(e->m_flags, 12)) {
+		e->m_flags &= ~0x1000;
+		EntView100b1d10 *pParent = (EntView100b1d10 *)EHandle_Get(e->m_hMoveParent);
+		if (!pParent) {
+			e->m_vecAbsVelocity = e->m_vecVelocity;
+			return;
+		}
+		if (EFlagBit(pParent->m_flags, 11))
+			((CBaseEntity *)pParent)->vfunc98();
+		float *pAbs = &e->m_vecAbsVelocity.x;
+		sub_101381b0(&e->m_vecVelocity.x, pParent->m_matrix, pAbs);
+		if (EFlagBit(pParent->m_flags, 12))
+			((CBaseEntityStub100b1d10 *)pParent)->sub_1000d486();
+		VecAdd(pAbs, &pParent->m_vecAbsVelocity.x, pAbs);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b1ed0 size=0xf9
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
