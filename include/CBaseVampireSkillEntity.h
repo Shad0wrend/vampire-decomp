@@ -22,6 +22,7 @@ public:
 	int m_unk78c;
 	int m_n790;
 	CVampireSkillItem m_items794[5];	// 0x794 .. 0x80c
+	unsigned int m_hAttached;	// 0x80c: handle of the entity (door, container) this skill entity is attached to
 
 	int sub_1020b000(CBaseEntity *pPlayer);
 	void vfunc269(int a);	// bumps the count at +0x78c, forwards a to the helper at +0x7c4 (stub 0x10010794) with this, then reports a "botched" message through the global when the entity at 0x1074f04c fails slot 1 and has a non-zero field at +0x2c
@@ -35,4 +36,6 @@ public:
 	CBaseVampireSkillEntity *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
 	void sub_1018f1c0();	// base class constructor body (stub 0x100039bd)
 	CBaseVampireSkillEntity *sub_1020aa70();	// "CBaseVampireSkillEntity::CBaseVampireSkillEntity" body: base constructor, the five member objects, vftable, +0x780 / +0x784 = 1, +0x790 = 0; returns this
+	void sub_102256f0(const char *pszDoorName);	// finds the door (CBaseDoor) of that name, stores its handle at +0x80c (-1 when none) and hands this knob to it (CBaseDoor::AddDoorknob); a missing door is warned about ("attached to non-existent door") and this entity removed (stub of the two door skill entities' slot 113)
+	const char *sub_1000b5cd(const char *pszClassname);	// CBaseEntity::sub_100ab4f0 (stub 0x1000b5cd): the debug name text
 };
