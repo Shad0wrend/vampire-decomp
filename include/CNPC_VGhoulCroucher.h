@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+#include "COutputEvent.h"
+
 class CNPC_VGhoulCroucher : public CBaseEntity
 {
 public:
@@ -12,7 +14,9 @@ public:
 	char vfunc615();	// slot 615 "CNPC_VGhoulCroucher::CanBeSetOnFire": scope trace (entity name), false when the byte at +0x6665 is set, else CAI_BaseNPCTroika::vfunc615
 	char sub_1000c5db();	// CAI_BaseNPCTroika::vfunc615 (stub 0x1000c5db), called directly
 	int vfunc390(void *pInfo);	// slot 390 "CNPC_VGhoulCroucher::OnTakeDamage_Alive": scope trace (entity name), sub_1037b6e0(the dword at +0x2c of pInfo), sets the byte at +0x6667, then CNPC_VHuman::vfunc390
-	void sub_1037b6e0(int a);	// called through the stub at 0x1000a2e5
+	void sub_1037b6e0(int a);	// "CNPC_VGhoulCroucher::OnDisturbed" (called through the stub at 0x1000a2e5): scope trace (entity name); the first time (byte +0x6666 clear) marks it, stores the handle of the disturbing entity's object (+0xa8, else sub_10293a80) at +0x628c, fires the output at +0x668c (with such an object) or +0x6674 for the entity, and records the relationship of the entity behind the handle (sub_10332ca0(ent, 1, 10))
+	float sub_10293a80();	// CAI_BaseNPCTroika member (stub 0x1000d1e3): the result is not used here
+	void sub_10332ca0(CBaseEntity *pEnt, int a, int b);	// "CBaseCombatCharacter::AddEntityRelationship" (stub 0x10005849), called directly
 	int sub_10001b45(void *pInfo);	// CNPC_VHuman::vfunc390 (stub 0x10001b45), called directly
 	char vfunc294(int a);	// slot 294 "CNPC_VGhoulCroucher::IsValidStealthKillTarget": scope trace (entity name), true when the free getter sub_1037bb20 (byte at +0x6666) is zero, else CAI_BaseNPCTroika::vfunc294(a)
 	char sub_1000c081(int a);	// CAI_BaseNPCTroika::vfunc294 (stub 0x1000c081), called directly
@@ -63,7 +67,9 @@ public:
 	int m_n5dec;	// +0x5dec
 	char m_pad5df0[0x6264 - 0x5df0];
 	float m_fl6264;	// +0x6264
-	char m_pad6268[0x6348 - 0x6268];
+	char m_pad6268[0x628c - 0x6268];
+	unsigned int m_h628c;	// +0x628c: handle of the entity that disturbed the NPC
+	char m_pad6290[0x6348 - 0x6290];
 	int m_n6348[5];	// +0x6348: five distances, 999999 at spawn
 	char m_pad635c[0x6664 - 0x635c];
 	char m_b6664;	// +0x6664: stalker variant
@@ -73,4 +79,6 @@ public:
 	int m_n6668;	// +0x6668: random 0..3
 	float m_flNext666c;	// +0x666c
 	unsigned int m_h6670;	// +0x6670: entity handle
+	COutputEvent m_Out6674;	// +0x6674
+	COutputEvent m_Out668c;	// +0x668c
 };
