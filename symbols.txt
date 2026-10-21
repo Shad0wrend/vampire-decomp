@@ -55,6 +55,7 @@
 0x10001410 func   ?vfunc241@CBaseParticleEntity@@QAE_NHPAUCParticleTransmitInfo_t@@HH@Z CBaseParticleEntity::vfunc241
 0x10001429 func   ?sub_10091230@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10091230
 0x1000143d func   ?sub_10096490@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_10096490
+0x10001447 func   ?vfunc113@CPropSwitch@@UAEXXZ CPropSwitch::vfunc113
 0x10001451 func   ?vfunc2@CGameMovement@@UAEPAMDH@Z CGameMovement::vfunc2
 0x10001456 func   _logic_pythoncheck logic_pythoncheck
 0x10001492 func   ?vfunc546@CNPC_VHumanCombatPatrol@@QAEHH@Z CNPC_VHumanCombatPatrol::vfunc546
