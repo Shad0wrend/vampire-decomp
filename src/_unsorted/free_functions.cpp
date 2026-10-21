@@ -24756,6 +24756,33 @@ void CBloodSplat::sub_101719d0(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101727a0 size=0x64
+#include "Vector.h"
+#include "QAngle.h"
+#define PV_V(n) virtual void v##n();
+#define PV_V10(p) PV_V(p##0) PV_V(p##1) PV_V(p##2) PV_V(p##3) PV_V(p##4) PV_V(p##5) PV_V(p##6) PV_V(p##7) PV_V(p##8) PV_V(p##9)
+struct CPlayerVecSlotsX {
+    PV_V10(0) PV_V10(1) PV_V10(2) PV_V10(3) PV_V10(4) PV_V10(5) PV_V10(6) PV_V10(7) PV_V10(8) PV_V10(9)
+    PV_V10(10) PV_V10(11) PV_V10(12) PV_V10(13) PV_V10(14) PV_V10(15) PV_V10(16) PV_V10(17) PV_V10(18)
+    PV_V(190) PV_V(191) PV_V(192)
+    virtual Vector vfunc193();
+    char m_pad0004[0x206c - 4];
+    QAngle m_angles206c;
+};
+void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_102f6d80(const Vector *pCenter, const Vector *pForward, float flScale, int arg);
+
+// TARGET: sub_101727a0
+void sub_101727a0(CPlayerVecSlotsX *pPlayer, int arg)
+{
+    Vector forward;
+    Vector center;
+    sub_10139610(&pPlayer->m_angles206c, &forward, 0, 0);
+    center = pPlayer->vfunc193();
+    sub_102f6d80(&center, &forward, 0.9f, arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174550 size=0x12
 struct CFlagSet10174550 {
     char pad0[0x1f14];
