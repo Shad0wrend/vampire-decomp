@@ -21,3 +21,5 @@
 	char sub_1033d2f0(unsigned int discipline);	// CBaseCombatCharacter member (stub 0x1000d3d7), called directly
 	void sub_1027c1f0();	// CAI_BaseNPC member (stub 0x1000e967): the NPC reacts to the debug "all NPCs" command: condition 0x75 / 0x76 by whether its target (+0x5c38) is the player's, slot 93, resets the look target
 	bool vfunc295(CBaseCombatCharacter *pOther);	// slot 295 (plain member): whether this NPC may feed on / attack pOther: both alive, not unconscious, not busy with disciplines, no frenzy and the other not hidden, slot 404 neither 1 nor 2
+	void vfunc610(int emotion);	// slot 610 (plain member): picks the expression pair (+0x10b4 / +0x64d0) and the weight (+0x10b8) of an emotion: Fear / Fear_NoDeform (8, 10), Anger / Anger_No_Deform (2 with weight 1.0, 3 / 0xb / 0xe with 0.5), else the values of the table at 0x10924980 for the index at +0x64d4
+	int sub_10106a40(const char *pszName);	// "CBaseCombatCharacter::LookupExpression" (stub 0x1000d0a3), called directly
