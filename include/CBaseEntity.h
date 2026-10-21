@@ -214,7 +214,11 @@ public:
 	void (CBaseEntity::*m_pfn0114)();
 	void (CBaseEntity::*m_pfnThink)();
 	const char *m_classname11c;
-	char m_pad0120[0x98];
+	char m_pad0120[0x17c - 0x120];
+	float m_flNextThink;	// 0x017c
+	char m_pad0180[0x19c - 0x180];
+	unsigned int m_nEffectFlags;	// 0x019c: bit 4 / bit 6 are set by the scene and beam code
+	char m_pad01a0[0x1b8 - 0x1a0];
 	CBaseEntityThinkContext *m_pThinkContexts;	// 0x01b8
 	int m_nThinkContextsAlloc;	// 0x01bc
 	int m_pad01c0;
