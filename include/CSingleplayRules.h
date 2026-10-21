@@ -6,6 +6,7 @@
 class CSingleplayRules : public CGameRules
 {
 public:
+	virtual CBaseEntity *vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurrentWeapon);	// "GetNextBestWeapon": over the player's 0xe0 weapon slots, the usable owned weapon with the highest weight (pCurrentWeapon is not looked at), null when there is none
 	virtual float vfunc38(int a);
 	virtual int vfunc43(int a, int b);
 	virtual int vfunc48(int index);
