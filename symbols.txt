@@ -500,6 +500,7 @@
 0x10002f36 func   ?sub_1012f100@@YAXPAX@Z sub_1012f100
 0x10002f5e func   ?vfunc113@CEnvMicrophone@@UAEXXZ CEnvMicrophone::vfunc113
 0x10002f95 func   ?sub_101fc950@TStat@@QAEXHH@Z TStat::sub_101fc950
+0x10002fc7 func   ?vfunc226@CPhysBox@@QAEXH@Z CPhysBox::vfunc226
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
 0x10002fdb func   ?sub_1009ad70@@YIPADPAD@Z sub_1009ad70
 0x10002ff4 func   ?sub_101fee50@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101fee50

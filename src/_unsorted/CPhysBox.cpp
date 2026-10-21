@@ -97,6 +97,38 @@ bool CPhysBox::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e7c0 size=0xa5
+#include "CPhysBox.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+void sub_101c0b80(const char *name, CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);
+
+// TARGET: CPhysBox::vfunc226
+void CPhysBox::vfunc226(int a)
+{
+	if (*((char *)this + 0x4c8))
+	{
+		*((char *)this + 0x1b1) = 1;
+		CBaseEntity::vfunc226(a);
+		if (m_flags204 & 1)
+		{
+			const float *pos = ((CEntityVSlots *)this)->slot220()->Base();
+			const float *old = (const float *)((char *)this + 0x458);
+			if (old[0] != pos[0] || old[1] != pos[1] || old[2] != pos[2])
+			{
+				((CPhysBoxHelper498 *)((char *)this + 0x480))->sub_10010794((int)this, this, 0);
+				const char *name = *(const char **)((char *)this + 0x20c);
+				if (!name)
+					name = g_106b8540;
+				sub_101c0b80(name, this, this, 3, 0);
+				m_flags204 &= ~1;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e910 size=0x16
 #include "CPhysBox.h"
 
