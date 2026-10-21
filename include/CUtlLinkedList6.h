@@ -23,4 +23,5 @@ public:
 	CUtlLinkedList6Node *m_pElements;	// 0x18 (debug pointer)
 
 	unsigned short sub_100fa470(bool multilist);	// "CUtlLinkedList::AllocInternal"
+	void sub_100fa3a0(unsigned short i);	// the per-node bookkeeping run after AllocInternal (stub 0x100139a8)
 };
