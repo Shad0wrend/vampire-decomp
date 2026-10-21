@@ -1204,6 +1204,76 @@ int CCollisionEvent::sub_10031270(int inflictor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10031340 size=0x175
+#include "CCollisionEvent.h"
+#include "CUtlVector32.h"
+#include "UtlVec32.h"
+#include "ScopeTrace.h"
+#define PV_V(n) virtual void v##n();
+#define PV_V10(p) PV_V(p##0) PV_V(p##1) PV_V(p##2) PV_V(p##3) PV_V(p##4) PV_V(p##5) PV_V(p##6) PV_V(p##7) PV_V(p##8) PV_V(p##9)
+struct CPhysEntX {
+    PV_V10(0) PV_V10(1) PV_V10(2) PV_V10(3) PV_V10(4) PV_V10(5) PV_V10(6) PV_V10(7) PV_V10(8) PV_V10(9)
+    PV_V10(10) PV_V10(11) PV_V10(12) PV_V10(13) PV_V10(14) PV_V10(15) PV_V10(16) PV_V10(17) PV_V10(18) PV_V10(19)
+    PV_V10(20) PV_V10(21) PV_V10(22)
+    PV_V(230) PV_V(231) PV_V(232)
+    virtual int vfunc233(struct CPhysObjX **pList, int maxObjects);
+};
+struct CPhysObjX {
+    PV_V(0) PV_V(1) PV_V(2) PV_V(3) PV_V(4) PV_V(5)
+    virtual CPhysEntX *vfunc6();
+    PV_V10(7) PV_V(17) PV_V(18) PV_V(19)
+    PV_V10(2) PV_V10(3)
+    virtual void vfunc40(float *pos, float *ang);
+};
+struct CInflictorRecX {
+    CPhysObjX *m_pObj;	// 0x00
+    float m_pos[3];	// 0x04
+    float m_ang[3];	// 0x10
+    short m_nLink;	// 0x1c
+    short m_nZero;	// 0x1e
+};
+struct CCollisionEventUnit : CCollisionEvent {
+    int sub_10031340(CPhysObjX *pObj, float *pos, float *ang, char bRecurse);
+    int sub_10001e0b(CPhysObjX *pObj, float *pos, float *ang, char bRecurse);	// stub of sub_10031340
+};
+
+// TARGET: CCollisionEventUnit::sub_10031340
+int CCollisionEventUnit::sub_10031340(CPhysObjX *pObj, float *pos, float *ang, char bRecurse)
+{
+    ScopeTrace trace("CCollisionEvent::AddDamageInflictor", g_106b8540);
+    UtlVec32 *v = (UtlVec32 *)((char *)this + 0x100);
+    int idx = v->m_Size;
+    ((CUtlVector32 *)v)->sub_10032c60(1);
+    v->sub_10032d20(idx, 1);
+    CInflictorRecX *e = (CInflictorRecX *)(v->m_pMemory + idx * 32);
+    e->m_pObj = pObj;
+    e->m_pos[0] = pos[0]; e->m_pos[1] = pos[1]; e->m_pos[2] = pos[2];
+    e->m_ang[0] = ang[0]; e->m_ang[1] = ang[1]; e->m_ang[2] = ang[2];
+    e->m_nZero = 0;
+    e->m_nLink = -1;
+    if (bRecurse) {
+        CPhysEntX *pEnt = pObj->vfunc6();
+        if (pEnt) {
+            CPhysObjX *objs[0x40];
+            int n = pEnt->vfunc233(objs, 0x40);
+            if (n > 1) {
+                int prev = idx;
+                for (int j = 0; j < n; j++) {
+                    if (objs[j] != pObj) {
+                        float p[3], a[3];
+                        objs[j]->vfunc40(p, a);
+                        int r = sub_10001e0b(objs[j], p, a, 0);
+                        ((CInflictorRecX *)(v->m_pMemory + prev * 32))->m_nLink = (short)r;
+                        prev = r;
+                    }
+                }
+            }
+        }
+    }
+    return idx;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031520 size=0x76
 #include "CCollisionEvent.h"
 
