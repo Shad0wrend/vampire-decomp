@@ -2719,6 +2719,7 @@
 0x1000c090 func   ?vfunc241@CFilterInventory@@QAE_NPAVCBaseEntity@@@Z CFilterInventory::vfunc241
 0x1000c09a func   ?vfunc214@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc214
 0x1000c0b8 func   ?vfunc0@CChoreoEventCallback@@UAEXMHH@Z CChoreoEventCallback::vfunc0
+0x1000c0bd func   ?sub_103f4780@@YAXPAVCEntityVSlots@@H@Z sub_103f4780
 0x1000c0c2 func   ??1CVStatActionPart@@QAE@XZ CVStatActionPart::~CVStatActionPart
 0x1000c0cc func   ?sub_10221a00@QuestJournal@@QAEHPBD@Z QuestJournal::sub_10221a00
 0x1000c0d6 func   ?sub_103cab50@@YIHPAD@Z sub_103cab50

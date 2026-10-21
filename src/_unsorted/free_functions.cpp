@@ -81594,6 +81594,31 @@ extern "C" CWeaponIArmor_Hvy_Cloth* item_a_body_armor()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4780 size=0x6f
+#include "CEntityVSlots.h"
+
+int sub_103f44c0(CEntityVSlots *pEnt, int a);
+void sub_10139610(void *pFrom, Vector *pOut, int a, int b);
+
+struct CUnknown106eb5d8
+{
+	void sub_100f8030(const Vector *pOrigin, const Vector *pOther, float flScale, int a);
+};
+extern CUnknown106eb5d8 g_106eb5d8;
+
+// TARGET: sub_103f4780
+void sub_103f4780(CEntityVSlots *pEnt, int a)
+{
+	if (!sub_103f44c0(pEnt, a))
+	{
+		Vector vecOther;
+		sub_10139610((char *)pEnt + 0x206c, &vecOther, 0, 0);
+		Vector vecOrigin = *pEnt->slot220();
+		g_106eb5d8.sub_100f8030(&vecOrigin, &vecOther, 0.95f, a);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4bf0 size=0x72
 #include "SendProp.h"
 
