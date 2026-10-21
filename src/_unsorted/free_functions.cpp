@@ -43170,6 +43170,60 @@ int *CUnknown101f7b20::sub_101f7b20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f7bb0 size=0xd0
+#include "CUnknown101f7bb0.h"
+#include "CUnknown101f7b20.h"
+#include "CUnknown101f7960.h"
+
+struct CReactionKV
+{
+	virtual void v0(); virtual void v1();
+	virtual CReactionKV *FindKey(const char *name);	// slot 2
+	virtual CReactionKV *GetNextKey();	// slot 3
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12();
+	virtual const char *GetString(const char *name, const char *def);	// slot 13
+};
+
+struct CReactionItem { void sub_101f73b0(CReactionKV *pGroup, int id); };
+struct CReactionNames { int sub_101f8410(const char *name); };
+
+extern CReactionNames g_1074df78;
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);
+extern char g_106b8540[];
+int *sub_102038e0(int *pOut, CReactionKV *pData, const char *name);
+
+bool CUnknown101f7bb0::sub_101f7bb0(void *pData)
+{
+	CReactionKV *pKV = (CReactionKV *)pData;
+	if (pKV) {
+		const char *pszName = pKV->GetString("InternalName", g_106b8540);
+		int id = g_1074df78.sub_101f8410(pszName);
+		if (id == -1) {
+			int *pSlot = ((CUnknown101f7b20 *)this)->sub_101f7b20();
+			if (pSlot) {
+				int tmp;
+				*pSlot = *sub_102038e0(&tmp, pKV, "InternalName");
+			}
+			id = g_1074df78.sub_101f8410(pszName);
+		}
+		CReactionKV *pGroup = pKV->FindKey("TraitEffectGroup");
+		while (pGroup) {
+			CReactionItem *pItem = (CReactionItem *)((CUnknown101f7960 *)this)->sub_101f7960();
+			if (!pItem) {
+				g_109f3628("Unable to parse data file TraitEffectInfoList.  Memory allocation ERROR!\n");
+				return false;
+			}
+			pItem->sub_101f73b0(pGroup, id);
+			pGroup = pGroup->GetNextKey();
+		}
+		return true;
+	}
+	g_109f3628("Unable to parse data file for TraitEffectInfoList.\n");
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f81c0 size=0x9f
 #include <stdio.h>
 #include "FileSystemViews.h"
