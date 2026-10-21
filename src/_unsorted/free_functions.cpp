@@ -44542,6 +44542,44 @@ void CUnknown10217f50::sub_1021b330(const char *pszText, int column)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021bec0 size=0xca
+#include <string.h>
+#include "CUnknown1021bec0.h"
+
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+	EntInfo *e;
+	return (h != 0xffffffff && (e = &g_10566458->m_entries[h & 0x1fff], e->m_serial == (int)(h >> 13))) ? e->m_pEntity : 0;
+}
+
+struct CDepConVar { virtual void v0(); virtual bool vfunc1(); char m_pad[0x28]; int m_nValue; };
+extern CDepConVar *g_1074f714;
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+int sub_100ea2d0(const char *pszExpression, CBaseEntity *pEntity, CBaseEntity *pSelf, int a, int b);
+
+bool CUnknown1021bec0::sub_1021bec0(const char *pszExpression)
+{
+	if (!((strlen(pszExpression) == 0) | (pszExpression == 0))) {
+		CBaseEntity *pEnt = ResolveHandle(*(unsigned int *)((char *)this + 0x8c));
+		int bResult = sub_100ea2d0(pszExpression, pEnt, this, 0x102, 0);
+		if (!g_1074f714->vfunc1() && g_1074f714->m_nValue) {
+			if (!bResult) {
+				g_109f3630("%s FAILED dependency [%s]\n", sub_100ab4f0(), pszExpression);
+				return false;
+			}
+			g_109f3630("%s PASSED dependency [%s]\n", sub_100ab4f0(), pszExpression);
+		}
+		if (!bResult)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d730 size=0x103
 struct ISaveRestoreOps;
 struct datamap_t;
