@@ -12052,6 +12052,27 @@ char CBaseAnimating::sub_100931d0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100932a0 size=0xc7
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+void sub_10137ed0(const float *matrix, float *pOrigin);
+void sub_10138720(const float *matrix, int a, float *pAngles);
+
+// TARGET: CBaseAnimating::sub_100932a0
+char CBaseAnimating::sub_100932a0(int attachment, int b, int c)
+{
+    float matrix[12];
+    ScopeTrace trace("CBaseAnimating::GetAttachmentLocal02", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    if (sub_100933b0(attachment, matrix)) {
+        sub_10137ed0(matrix, (float *)c);
+        sub_10138720(matrix, 3, (float *)b);
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100933b0 size=0xea
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
