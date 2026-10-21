@@ -18,5 +18,6 @@ public:
 	virtual void vfunc202(CBaseEntity *pOwner);	// SetOwnerEntity
 
 	void sub_10190fa0();	// detaches the prop: clears the aim entity, the owner and the parent, adds solid flag 4 (inlined AddSolidFlags with scope trace), then slot 93(0, 0), slot 66() and sub_100b3b00()
-	void sub_10191170(const char *pszParentName);	// attaches the prop to the entity of that name (stub 0x10004fbb), called by the creation helper
+	void sub_10191170(CBaseEntity *pParent);	// attaches the prop to the entity pParent (stub 0x10004fbb), called by the creation helper: slot 67(), SetAimEnt, SetParent, SetOwnerEntity, slot 93(0xb, 0), sub_100b3b00(); without a parent warns "%s could not find entity to attach to, deleting..." and removes itself
+	void sub_100a0670(CBaseEntity *pParent, int iAttachment);	// "CBaseEntity::SetParent" (stub 0x10005650)
 };
