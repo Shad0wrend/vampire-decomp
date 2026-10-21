@@ -55,3 +55,42 @@ void CNPC_VHumanCombatant::vfunc420()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x103872d0 size=0x67
+#include "CBaseEntity.h"
+#include "CNPC_VHumanCombatant.h"
+
+typedef int (__fastcall *WeaponFlagsFn)(void *pWeapon, void **vt);
+typedef int (__fastcall *DecideFn)(void *pThis, void **vt, unsigned int flags);
+
+int CNPC_VHumanCombatant::vfunc438()
+{
+	*(int *)((char *)this + 0x1b2c) = 0x15;
+	switch (*(int *)((char *)this + 0x5cc0)) {
+	case 2: {
+		*((char *)this + 0x5b80) = 0;
+		unsigned int flags;
+		if (sub_1032e7b0()) {
+			void *pWeapon = sub_1032e7b0();
+			void **wvt = *(void ***)pWeapon;
+			flags = ((WeaponFlagsFn)wvt[360])(pWeapon, wvt);
+		} else {
+			flags = 0;
+		}
+		void **vt = *(void ***)this;
+		int r;
+		if (flags & 0x18000) {
+			r = ((DecideFn)vt[604])(this, vt, flags);
+			if (r)
+				return r;
+		} else {
+			r = ((DecideFn)vt[605])(this, vt, flags);
+			if (r)
+				return r;
+		}
+		break;
+	}
+	}
+	return sub_10015ad2();
+}
+// END FUNCTION

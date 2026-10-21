@@ -2166,6 +2166,7 @@
 0x1000b0eb func   ?sub_10157ca0@CRagdollPropSpecial@@QAEXPAVCBaseEntity@@@Z CRagdollPropSpecial::sub_10157ca0
 0x1000b0ff func   ?vfunc585@CCineNPC@@UAE_NXZ CCineNPC::vfunc585
 0x1000b104 func   ?vfunc14@CMoveHelperServer@@UAEPAV1@I@Z CMoveHelperServer::vfunc14
+0x1000b10e func   ?vfunc438@CNPC_VHumanCombatant@@QAEHXZ CNPC_VHumanCombatant::vfunc438
 0x1000b136 func   ?sub_1039ae10@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_1039ae10
 0x1000b140 func   _camera_animated camera_animated
 0x1000b14f func   ?vfunc103@CTriggerWind@@UAEXXZ CTriggerWind::vfunc103
