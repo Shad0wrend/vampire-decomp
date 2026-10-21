@@ -16612,6 +16612,24 @@ void sub_100ae7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aeb50 size=0x6e
+#include "ScopeTrace.h"
+
+class CBasePlayer;
+class CBaseEntity;
+CBasePlayer *__cdecl sub_101193b0();
+CBaseEntity *__cdecl sub_10172710(CBasePlayer *pPlayer);
+void __cdecl sub_10119900(CBaseEntity *pEnt);
+
+void sub_100aeb50()
+{
+	ScopeTrace trace("CC_Ent_ToggleDebugStats", g_106b8540);
+	CBaseEntity *pEnt = sub_10172710(sub_101193b0());
+	if (pEnt)
+		sub_10119900(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aec70 size=0x77
 #include "IVEngineServer.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

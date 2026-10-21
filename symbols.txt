@@ -105,6 +105,7 @@
 0x10001744 func   ?vfunc5@CItemGIdolCat@@QAEPAV1@I@Z CItemGIdolCat::vfunc5
 0x10001753 func   _filter_activator_mass filter_activator_mass
 0x10001758 func   ?sub_103d3a40@CBaseEntity@@QAE_NPBD@Z CBaseEntity::sub_103d3a40
+0x10001762 func   ?sub_100aeb50@@YAXXZ sub_100aeb50
 0x10001776 func   ?vfunc5@CHudEntity@@QAEPAV1@I@Z CHudEntity::vfunc5
 0x1000177b func   ?sub_10376ba0@CNPC_VFrenzyShadow@@QAE_NH@Z CNPC_VFrenzyShadow::sub_10376ba0
 0x10001785 func   ?vfunc5@CBaseFire@@UAEPAV1@I@Z CBaseFire::vfunc5
