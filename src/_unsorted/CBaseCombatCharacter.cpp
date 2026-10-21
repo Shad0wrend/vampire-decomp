@@ -797,6 +797,40 @@ int CBaseCombatCharacter::vfunc348()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10330020 size=0x75
+#include "CBaseCombatCharacter.h"
+struct CGlobalsView { char m_pad[0xc]; float curtime; };
+extern CGlobalsView *g_1070b228;
+extern char g_10937cf2;
+struct CDisciplineEntry {
+    char m_pad[0x2c];
+    float m_flDuration;
+};
+struct CDisciplineMgrView {
+    int sub_101e1250(int a, int b);
+    CDisciplineEntry *sub_101e11c0(int index);
+};
+extern CDisciplineMgrView g_10739a4c;
+
+bool CBaseCombatCharacter::vfunc334(int a, int b)
+{
+    if (m_field146c > 0)
+        return false;
+    g_10937cf2 = 0;
+    int nIndex = g_10739a4c.sub_101e1250(a, b);
+    if (nIndex != -1) {
+        CDisciplineEntry *pEntry = g_10739a4c.sub_101e11c0(nIndex);
+        float flElapsed = g_1070b228->curtime - ((float *)((char *)this + 0xec0))[nIndex];
+        float flDuration = pEntry->m_flDuration;
+        if (flElapsed < flDuration) {
+            g_10937cf2 = 1;
+            return false;
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103315e0 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
