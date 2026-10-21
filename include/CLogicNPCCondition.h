@@ -19,6 +19,6 @@ public:
 	int m_nCondition;	// +0x48c: the condition id (not positive when the name was invalid)
 
 	CBaseEntity *sub_10135720();	// resolves the cached handle at +0x488, searching the entity by name when it is stale
-	const char *sub_1000b5cd(const char *pszName);	// stub 0x1000b5cd (CBaseEntity::GetDebugName-like, called with the name text)
+	const char *sub_1000b5cd(const char *pszName, ...);	// stub 0x1000b5cd (CBaseEntity::GetDebugName-like; the caller pops its arguments)
 	bool sub_10135840();	// tests the condition on the target NPC; warns when the condition is invalid or the NPC is missing
 };
