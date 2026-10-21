@@ -7420,6 +7420,43 @@ int sub_100657e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100660a0 size=0x100
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+void sub_10009539();
+void sub_10003012();
+void sub_10246300();
+
+extern SendTable g_106c4c0c;
+extern SendTable *g_1053dfa8;
+extern const char *g_10544464;
+
+// TARGET: sub_100660a0
+int sub_100660a0()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_1000c14e("m_vecOrigin", 0xc, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_1000c14e("m_vecAngles", 0x18, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_10006cc1("m_flScale", 0x24, 4, -1, 4, 0.0f, -121121.121094f, (void *)sub_10246300),
+		sub_10007bfd("m_nType", 0x28, 4, 0x20, 1, 0, 0),
+	};
+	g_106c4c0c.sub_1000e8fe(props + 1, 5, g_10544464);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10066820 size=0xf0
 #include "SendProp.h"
 
