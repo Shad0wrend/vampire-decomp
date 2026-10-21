@@ -4,10 +4,19 @@
 
 #include "CVDmg_t.h"
 
+extern char g_106b8540[];	// the empty string
+
+struct CUnknown101e7c50Name	// a name slot: the string pointer, "" when it is null
+{
+	const char *m_psz;
+
+	const char *Get() const { return m_psz ? m_psz : g_106b8540; }
+};
+
 struct CUnknown101e7c50Entry
 {
 	int m_id;	// 0x00
-	const char *m_pszName;	// 0x04
+	CUnknown101e7c50Name m_name;	// 0x04
 };
 
 class CUnknown101e7c50
