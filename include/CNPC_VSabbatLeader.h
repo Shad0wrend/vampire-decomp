@@ -21,7 +21,8 @@ public:
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
 	char pad10e8[0x1b2c - 0x10e8];
 	int m_n1b2c;	// +0x1b2c
-	char pad1b30[0x1b38 - 0x1b30];
+	const char *m_pszFile1b30;	// +0x1b30: source file stamp
+	int m_nLine1b34;	// +0x1b34: source line stamp
 	int m_n1b38;	// +0x1b38: set to 0x1f by SelectIdealState
 	char pad1b3c[0x5cc0 - 0x1b3c];
 	int m_nState5cc0;	// +0x5cc0
@@ -74,4 +75,7 @@ public:
 	void vfunc103();	// "CNPC_VSabbatLeader::Spawn" (slot 103 override): scope trace, solid flags 0x209000, the name "VampireSabbatLeader" at +0x10e4, then CNPC_VVampire::vfunc103
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x209000
 	void sub_10014876();	// CNPC_VVampire::vfunc103 (stub 0x10014876), called directly
+	void sub_103aa3b0();	// "CNPC_VSabbatLeader::StartTransformation": scope trace, sets the byte at +0x66b8, sub_10332aa0(1, 1, 10), stamps the source file / line at +0x1b30 / +0x1b34 and runs sub_102ae750(0x163, 0)
+	void sub_10332aa0(int classId, int disposition, int priority);	// "CBaseCombatCharacter::AddClassRelationship" (stub 0x10013cf5), called directly
+	void sub_102ae750(int schedule, int a);	// CAI_BaseNPCTroika member (stub 0x1000198d), called directly
 };
