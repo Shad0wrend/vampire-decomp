@@ -13,11 +13,15 @@ public:
 class CTraitEffectTable	// the table behind the global at 0x1074df78
 {
 public:
+	struct Name	// the name holder at +8 of an entry (read through its address)
+	{
+		const char *m_psz;
+		const char *Get() { return m_psz; }
+	};
 	struct Entry
 	{
 		char m_pad[8];
-		const char *m_pszName;	// 0x08
-		const char **NameRef() { return &m_pszName; }
+		Name m_Name;	// 0x08
 	};
 	Entry *sub_101f8480(int id);	// stub 0x1000c5d1: the entry of a trait effect id
 };
