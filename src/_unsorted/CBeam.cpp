@@ -41,3 +41,35 @@ void CBeam::vfunc103()
     vfunc104();
 }
 // END FUNCTION
+
+// FUNCTION: 0x100baf00 size=0x8e
+#include "CBeam.h"
+extern CGlobalEntityList *g_10566458;
+
+struct CHandleX {
+    unsigned int m_Index;
+    CBaseEntity *Get() const
+    {
+        if (m_Index != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_Index & 0x1fff];
+            if (s->m_Serial == (int)(m_Index >> 13))
+                return (CBaseEntity *)s->m_pEntity;
+        }
+        return 0;
+    }
+};
+
+struct CBeamH : CBeam {
+    CHandleX m_hAttach;
+    void Run();
+};
+
+void CBeam::vfunc104()
+{
+    if (vfunc97())
+        sub_100bafc0(vfunc97());
+    CBeamH *p = (CBeamH *)this;
+    if (p->m_hAttach.Get() != 0)
+        sub_100bb030(p->m_hAttach.Get());
+}
+// END FUNCTION

@@ -4531,6 +4531,7 @@
 0x10015735 func   ?vfunc1@CGlobalEntityList@@UAEXHH@Z CGlobalEntityList::vfunc1
 0x1001573a func   ?sub_102237e0@CUnknown102237e0@@QAEXH@Z CUnknown102237e0::sub_102237e0
 0x1001573f func   ?vfunc3@?$CUtlVectorDataOps@UCAI_InterestTarget@@$08@@UAEHPAX@Z CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc3
+0x10015749 func   ?vfunc104@CBeam@@UAEXXZ CBeam::vfunc104
 0x10015758 func   ?sub_10184360@@YIXPAH@Z sub_10184360
 0x10015767 func   ?sub_100a9ab0@@YAPAVCEntityVSlots@@PBDPBM1PAV1@@Z sub_100a9ab0
 0x1001576c func   ?vfunc104@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc104
