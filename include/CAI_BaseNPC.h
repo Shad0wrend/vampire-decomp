@@ -231,4 +231,8 @@ public:
 	char sub_10266b10(int a, int b, float f);	// stub 0x10013c32, called by slot 562 with (a, b, 0.92f)
 	void sub_102792b0();	// NPC death setup: CBaseAnimating::InitBoneControllers, RemoveSolidFlags(4) (inlined scope trace), move type 6 (slot 93), ResetSequenceInfo with the playback rate +0x6f4 cleared, +0x6f8 cleared, health +0x208 = +0x210, take-damage mode +0x200 = 2, sub_101cf390(this, zero, zero), sub_100b3b00(), sub_10265a40(), ThinkSet(stub 0x1000b1d6, 0, 0), next think = curtime + a constant
 	void sub_10265a40();	// stub 0x10011644: halves the health (+0x208 / 2 into +0x210), take-damage mode +0x1fc = 2, +0x208 = 5, then slot 93(6, 0)
+	void sub_10274ca0();	// eye offset setup: the model's eye position (via sub_100952d0(-1)) into the vector at +0x5d60; when it is still zero warns "has no eye offset in .qc" and uses (collision maxs + mins) * 0.75; then stores it as the view offset (sub_1009f380)
+	void *sub_100952d0(int a);	// CBaseAnimating::GetModelPtr (stub 0x10013d8b), called directly
+	const char *sub_1009f200();	// CBaseEntity::GetDebugName (stub 0x1000ea11), called directly
+	void sub_1009f380(const Vector *pVec);	// CBaseEntity view offset setter (+0x184 vector), called directly
 };
