@@ -16820,6 +16820,37 @@ void sub_100c2bd0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c32e0 size=0xde
+struct CBoneVecX {
+	float x, y, z;
+	~CBoneVecX() {}
+};
+struct CBoneQuatX {
+	float x, y, z, w;
+	~CBoneQuatX() {}
+};
+
+void sub_100c25c0(char *pStudioHdr, CBoneVecX *pos, CBoneQuatX *q, int sequence, int cycle, int a6, int a7);
+void sub_100c13a0(char *pStudioHdr, void *a2, void *a3, int sequence, CBoneQuatX *q2, CBoneVecX *pos2, float flWeight, int a8, int a9, int a10);
+
+void sub_100c32e0(char *pStudioHdr, void *pos, void *q, int a4, int a5)
+{
+	if (*(unsigned int *)(pStudioHdr + 0xe4) & 0x200) {
+		static CBoneQuatX q2[350];
+		static CBoneVecX pos2[350];
+		for (int i = 0; i < *(int *)(pStudioHdr + 0x110); i++) {
+			int k = i;
+			if (k < 0)
+				k = 0;
+			if (*(unsigned char *)(*(int *)(pStudioHdr + 0x114) + k * 0x2fc + 8 + (int)pStudioHdr) & 8) {
+				sub_100c25c0(pStudioHdr, pos2, q2, i, 0, a4, a5);
+				sub_100c13a0(pStudioHdr, q, pos, i, q2, pos2, 1.0f, a5, 0, 0);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c40e0 size=0x54
 struct Elem_100c40e0 { char pad[0x88]; unsigned char flags; char pad2[3]; int type; char pad3[0xa0-0x90]; };
 struct Base_100c40e0 { char pad[0xf4]; int offset; };
