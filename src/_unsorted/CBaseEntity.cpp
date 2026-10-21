@@ -577,6 +577,32 @@ void CBaseEntity::vfunc125()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a02b0 size=0x115
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+void sub_101434b0(int entIndex, int line, const char *pszText, int duration, int r, int g, int b, int a);
+
+int CBaseEntity::vfunc124()
+{
+	ScopeTrace trace("CBaseEntity::DrawDebugTextOverlays", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int nText = 1;
+	if (m_pad0224[0] & 1) {
+		char szBuf[0x200];
+		int pEdict = m_pEdict2e0;
+		int nIndex = g_1070b22c->vfunc35(pEdict);
+		Q_snprintf(szBuf, sizeof(szBuf), "(%d) Name: %s (%s)", nIndex, sub_100ab4f0(), sub_1009f200());
+		pEdict = m_pEdict2e0;
+		sub_101434b0(g_1070b22c->vfunc35(pEdict), 1, szBuf, 0, 255, 255, 255, 255);
+		nText = 2;
+	}
+	return nText;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a0d20 size=0xd7
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
