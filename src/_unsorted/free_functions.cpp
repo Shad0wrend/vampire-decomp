@@ -44733,6 +44733,35 @@ char CBaseCombatWeapon::sub_10257200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258290 size=0x68
+#include "ConVar.h"
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CLethalUnit {
+    S100(a0) S100(a1) S100(a2)
+    S10(a30) S10(a31) S10(a32) S10(a33)
+    virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7();
+    virtual const char *Name();
+    int sub_1000a2e0();
+    int sub_100136d8(int pOther);
+    int sub_10258290(int pOther);
+};
+extern ConVar *g_1074f04c;
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+int CLethalUnit::sub_10258290(int pOther)
+{
+    int a = sub_1000a2e0();
+    int b = sub_100136d8(pOther);
+    int sum = b + a;
+    if (sum < 0)
+        sum = 0;
+    if (!g_1074f04c->vfunc1() && g_1074f04c->m_nValue)
+        DevMsg("Total Lethality for %s: Base Lethality (%d) + Feat Adjustment (%d) = Total (%d)\n", Name(), a, b, sum);
+    return sum;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258500 size=0xc
 extern const char *g_105c6388[];
 const char *sub_10258500(int index)
