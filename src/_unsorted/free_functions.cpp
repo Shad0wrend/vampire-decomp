@@ -30152,6 +30152,58 @@ void CGameMovement::sub_10122590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123e20 size=0xdc
+#include "CGameMovement.h"
+
+struct MoveData {
+	char m_pad0000[0x3b0];
+	Vector m_vecBase;
+	char m_pad3bc[0x3ec - 0x3bc];
+	float m_flScale;
+	char m_pad3f0[0x2314 - 0x3f0];
+	float m_flWaterJump;
+};
+
+struct PlayerData {
+	char m_pad[0x48];
+	float m_flValue48;
+};
+
+struct GravityObj {
+	virtual void v0();
+	virtual bool IsZero();
+	char m_pad[0x24];
+	float m_flValue;
+};
+
+struct TimeObj {
+	char m_pad[0x10];
+	float m_flFrameTime;
+};
+
+extern GravityObj *g_109ef2d4;
+extern TimeObj *g_1070b228;
+
+void CGameMovement::sub_10123e20()
+{
+	if (((MoveData *)m_pMove)->m_flWaterJump == 0.0f) {
+		float flScale;
+		if (((MoveData *)m_pMove)->m_flScale != 0.0f)
+			flScale = ((MoveData *)m_pMove)->m_flScale;
+		else
+			flScale = 1.0f;
+		float *pVal = &((PlayerData *)m_pPlayer)->m_flValue48;
+		float flGrav = g_109ef2d4->IsZero() ? 0.0f : g_109ef2d4->m_flValue;
+		*pVal = *pVal - flGrav * g_1070b228->m_flFrameTime * flScale;
+		((PlayerData *)m_pPlayer)->m_flValue48 = ((MoveData *)m_pMove)->m_vecBase.z * g_1070b228->m_flFrameTime + ((PlayerData *)m_pPlayer)->m_flValue48;
+		Vector v = ((MoveData *)m_pMove)->m_vecBase;
+		v.z = 0.0f;
+		((MoveData *)m_pMove)->m_vecBase = v;
+		sub_10004ebc();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124120 size=0xa5
 #include "CGameMovement.h"
 

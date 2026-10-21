@@ -3620,6 +3620,7 @@
 0x1000e94e func   ?vfunc491@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc491
 0x1000e962 func   ?vfunc546@CNPC_VVampire@@QAEHH@Z CNPC_VVampire::vfunc546
 0x1000e971 func   ?sub_10146a80@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10146a80
+0x1000e976 func   ?sub_10123e20@CGameMovement@@QAEXXZ CGameMovement::sub_10123e20
 0x1000e97b func   ?vfunc5@COccultPresence@@QAEPAV1@I@Z COccultPresence::vfunc5
 0x1000e985 func   ?sub_101c2c60@@YAXXZ sub_101c2c60
 0x1000e98a func   ?vfunc288@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc288
