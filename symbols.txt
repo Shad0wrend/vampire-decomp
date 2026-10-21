@@ -512,6 +512,7 @@
 0x100035e9 func   ?vfunc104@CEnvSpark@@UAEXXZ CEnvSpark::vfunc104
 0x100035f8 func   _trigger_once trigger_once
 0x100035fd func   ?sub_1027f940@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_1027f940
+0x10003607 func   ?vfunc103@CPropPadlock@@UAEXXZ CPropPadlock::vfunc103
 0x1000360c func   ?sub_10047160@@YAXPAUE8@@PBU1@@Z sub_10047160
 0x1000361b func   ?sub_10081890@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10081890
 0x10003620 func   ?sub_100b3580@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3580

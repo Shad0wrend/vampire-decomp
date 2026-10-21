@@ -32,6 +32,28 @@ CPropPadlock *CPropPadlock::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10225db0 size=0x10e
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+#include "CPropPadlock.h"
+
+void CPropPadlock::vfunc103()
+{
+	sub_1020ab90();
+	*(int *)((char *)this + 0x19c) = 0xa0;
+	sub_100b3640(0x40000);
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(2);
+	}
+	{
+		ScopeTrace trace("CBaseEntity::SetSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc580(8);
+	}
+	sub_100b3b00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102260f0 size=0x7b
 #include "CBaseEntity.h"
 #include "CPropPadlock.h"
