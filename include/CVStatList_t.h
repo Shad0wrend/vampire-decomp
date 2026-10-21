@@ -26,6 +26,7 @@ public:
 	void sub_102008e0(int stat, int value);	// stat setter taking (stat, value) (stub 0x10011e46)
 	int sub_10200b10(int stat);	// the upper limit of the stat (stub 0x10005cc7)
 	void sub_10200be0(int stat, int value);	// "CVStatList_t::Set": scope trace, stores value (clamped to sub_10200b10(stat)) in the base value array behind m_field08 when the stat is valid
+	void sub_10200a70(int stat, int source);	// "CVStatList_t::SetBaseToStatValue": scope trace, sets the stat to the value of the stat `source` (sub_10010609)
 };
 
 // The stat lists of a character: the object at +0x13a8 of a CBaseCombatCharacter (its CUtlVector of lists at +0x8:
