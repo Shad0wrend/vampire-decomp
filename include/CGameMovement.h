@@ -47,4 +47,5 @@ public:
 	void sub_1011f6e0();	// copies the player's +0x24 to +0x28 and the move data's +0x3e0 / +0x3e4 to the player's +0xc8 / +0xcc
 	void sub_10120f30();	// when the move data's +0x2314 is zero, subtracts 0.5 * frame time * (global 0x109ef2d4 value) * (move +0x3ec or 1) from the player's +0x48, then runs sub_10004ebc
 	void sub_10004ebc();
+	int sub_10124120(Vector &in, Vector &normal, Vector &out, float overbounce);	// "CGameMovement::ClipVelocity": blocked flags (1 for a floor normal with z > 0, 2 for a step normal with z == 0); out = in - normal * (in . normal * overbounce), components within +-0.1 are zeroed
 };
