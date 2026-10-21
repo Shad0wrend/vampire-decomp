@@ -10,3 +10,4 @@
 	bool sub_102aaa60(int unused);	// task start (called by RunTask, takes one unused stack argument): stamps curtime at +0x5d9c, then by the type at +0x5dc of the hint entity (+0x5ddc): 100 -> activity 0x1114, 101 -> 0x110f, 0x27d8 -> 0x111f / 0x1120 (byte +0x63fd), each only when sub_102b5de0() agrees (else false); other hints or none: false while condition 99 holds, else activity 0x19; true when an activity was started
 	bool sub_102b5de0();	// stub 0x10006aa5, asked before the hint activities
 	void sub_10289ee0(int activity);	// stub 0x10014524: starts the activity
+	int sub_102b9060();	// stub 0x10007d56: the second schedule pick of the "SelectSchedule" of the animal NPCs (called after sub_102b8a60 found none)
