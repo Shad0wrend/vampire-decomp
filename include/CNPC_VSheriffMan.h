@@ -51,6 +51,8 @@ public:
 	void sub_103b1680(int *pA, int *pB);	// "CNPC_VSheriffMan::CategorizeHeight...": scope trace (no entity name), clears both outputs; when the entity behind the handle at +0x628c resolves, hands the third dword of slot 217 of it (with pA) and of this (with pB) to sub_103b1790
 	void sub_103b1790(int height);	// height classification worker (stub 0x1000b929)
 	void vfunc432(int arg);	// "CNPC_VSheriffMan::RunAI": scope trace (no entity name), starts the transform unless it was already started, then the base implementation
-	void sub_103b1510();	// starts the transform (stub 0x10012431)
+	void sub_103b1510();	// "CNPC_VSheriffMan::CacheFloorHeights": scope trace (no entity name), caches the floor heights of the two reference entities (the third dword of their slot 217 vectors) at +0x66e8 / +0x66ec and sets the cached byte at +0x66e7 (stub 0x10012431)
 	void sub_10385a10(int arg);	// CNPC_VHuman::vfunc432 (RunAI), called directly through the stub at 0x1000698d
+	CEntityVSlots *sub_103b0930();	// the first reference entity (stub 0x1000c257)
+	CEntityVSlots *sub_103b0ab0(int a);	// the second reference entity (stub 0x10006e74)
 };
