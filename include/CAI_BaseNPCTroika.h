@@ -73,6 +73,9 @@ public:
 	int vfunc611();	// slot 611: picks one of the table values (index at +0x64c8) for the NPC through CUnknown100ecee0::sub_100ecee0, with random switches (flags at +0x64e0 / +0x64e1, time at +0x64e4); falls back to the dword at +0x6f0 for -1
 	int sub_102c1230();	// called through the stub at 0x1000d4cc by vfunc611
 
+	void vfunc17(const char *pszFormat, int arg);	// slot 17 (declared as a plain member: the base's slot 17 is a placeholder): formats the message with sub_10004011 into a 512 byte buffer; with the debug flag at 0x10920534 set, passes a copy of the format to sub_1027ee20, else DevMsg's the formatted text
+	void sub_10004011(const char *pszFormat, int arg, char *pOut, int nOut);	// message formatter (stub of 0x1028d990), called directly
+
 	void sub_102950c0();	// plays the "Alarmed_Loop" sound
 	void sub_10295180();	// plays the "Animal_Kened" sound
 	void sub_10295240();	// plays the "Warning_Loop" sound
