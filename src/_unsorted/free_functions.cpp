@@ -72636,6 +72636,36 @@ CNPC_VWerewolfVec3 CNPC_VWerewolf::sub_103d6650(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d6770 size=0x10f
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CNPC_VWerewolf.h"
+
+__declspec(dllimport) void DevWarning(const char *pszFormat, ...);
+
+CNPC_VWerewolfVec3 *CNPC_VWerewolf::sub_103d6770(CNPC_VWerewolfVec3 *pOut, void *pHint)
+{
+	ScopeTrace trace("CNPC_VWerewolf::GetHintGroundpoint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int nRecords = *(int *)((char *)this + 0x6720);
+	int i = 0;
+	if (nRecords > 0) {
+		char *pRecords = *(char **)((char *)this + 0x6714);
+		do {
+			if (pHint == *(void **)(pRecords + i * 0x48 + 4)) {
+				*pOut = *(const CNPC_VWerewolfVec3 *)(pRecords + i * 0x48 + 8);
+				return pOut;
+			}
+			i++;
+		} while (i < nRecords);
+	}
+	DevWarning("Werewolf did not find the hint: %s\n", ((CBaseEntity *)pHint)->sub_100ab4f0());
+	const CNPC_VWerewolfVec3 *pOrigin = (const CNPC_VWerewolfVec3 *)((CEntityVSlots *)pHint)->slot217();
+	sub_103d6a40(pOut, *pOrigin);
+	return pOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d7090 size=0x12f
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
