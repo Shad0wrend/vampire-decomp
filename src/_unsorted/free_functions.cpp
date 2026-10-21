@@ -44304,6 +44304,39 @@ void CUnknown10248850::sub_10248850(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248870 size=0x70
+struct CLinkNode1c {
+    char m_pad[0x10];
+    CLinkNode1c *m_pNext;
+    char m_pad14[8];
+    CLinkNode1c *sub_1000e363(int a);
+    CLinkNode1c *sub_1000fa65();
+    void sub_10248a50(CLinkNode1c *pNext);
+};
+struct CLinkList {
+    char m_pad[0x14];
+    CLinkNode1c *m_pHead;
+    CLinkNode1c *sub_10248870(int a);
+};
+
+CLinkNode1c *CLinkList::sub_10248870(int a)
+{
+    void *mem = operator new(0x1c);
+    CLinkNode1c *pNode = mem ? ((CLinkNode1c *)mem)->sub_1000e363(a) : 0;
+    CLinkNode1c *p = m_pHead;
+    if (!p) {
+        m_pHead = pNode;
+        pNode->m_pNext = p;
+        return pNode;
+    }
+    while (p->sub_1000fa65())
+        p = p->sub_1000fa65();
+    p->sub_10248a50(pNode);
+    pNode->m_pNext = 0;
+    return pNode;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248980 size=0x9
 struct CUnknown10248980 { int p[5]; int a; char sub_10248980(); };
 // TARGET: CUnknown10248980::sub_10248980

@@ -829,6 +829,7 @@
 0x10004ec1 func   ?sub_1008dd30@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008dd30
 0x10004ec6 func   ?vfunc69@CNPC_VWerewolf@@QAEDPAX@Z CNPC_VWerewolf::vfunc69
 0x10004ed5 func   ?sub_104273f0@S104273f0@@QAEXH@Z S104273f0::sub_104273f0
+0x10004eee func   ?sub_10248870@CLinkList@@QAEPAUCLinkNode1c@@H@Z CLinkList::sub_10248870
 0x10004efd func   ?sub_1007e000@S1007e050@@QAEXH@Z S1007e050::sub_1007e000
 0x10004f1b func   ?sub_1035b2b0@@YAXXZ sub_1035b2b0
 0x10004f2a func   ?sub_1042da80@CUnknown1042da80@@QAEXH@Z CUnknown1042da80::sub_1042da80
