@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100bacc0 size=0x90
+#include "CBeam.h"
+#include "TempVector.h"
+
+Vector *CBeam::vfunc215()
+{
+	Vector &vec = AllocTempVector();
+	VectorAdd(*(Vector *)sub_100bb270(), *(Vector *)sub_100bb440(), vec);
+	vec *= 0.5f;
+	return &vec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bad80 size=0x1e
 #include "CBeam.h"
 
