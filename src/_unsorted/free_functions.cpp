@@ -57848,6 +57848,22 @@ void CBaseCombatWeapon::sub_10255c30(void *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10255cf0 size=0xa6
+#include "CWeaponOwner.h"
+#include "CEntryZ.h"
+
+extern void (__cdecl *g_109f3650)(int level, const char *fmt, ...);
+
+int CBaseCombatWeapon::sub_10255cf0()
+{
+	if (sub_102517b0()->m_nSection24d0 == -1) {
+		g_109f3650(2, "Bad inventory section for '%s'\n", sub_102517b0()->m_szName);
+		return 0;
+	}
+	return FindEntryZ(sub_102517b0()->m_nSection24d0)->sub_101eb190();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10256200 size=0xb
 unsigned char __fastcall sub_10256200(unsigned char *self)
 {
