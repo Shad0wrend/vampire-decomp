@@ -15,6 +15,7 @@ struct CAI_CondOwner
 {
 	char m_pad0000[0x30];
 	CAI_CondTable m_table;	// 0x30
+	int sub_102ea280(int schedule);	// translates a global schedule id to the local one, -1 when unknown (stub 0x100102b2)
 };
 
 struct CAI_NamedThing	// one of the three global objects an NPC can be bound to by name
@@ -132,6 +133,7 @@ public:
 	int sub_10007e19();	// CBaseCombatCharacter member (the stub at 0x10007e19 for 0x1032e7b0): the active weapon
 	void sub_102b2730();	// part of GatherConditions: with no pending count (+0x5bb0) and a squad (+0x5da4), when the enemy (slot 168) was last seen long enough ago sets the task 0x31 (then 0x32 when condition 0x4a is set); then asks condition 0x46
 	void sub_10332ca0(CBaseEntity *pEnt, int a, int b);	// "CBaseCombatCharacter::AddEntityRelationship" (stub 0x10005849), called directly
+	int sub_102c47e0(const char *pszName, const char *pszCaller);	// "LookupSchedule": the local id of the schedule pszName (also tried as "SCHED_<name>"), -1 with an error message naming pszCaller when it is unknown
 
 	char m_pad0004[0x14bc - 4];
 	unsigned int m_flags14bc;
