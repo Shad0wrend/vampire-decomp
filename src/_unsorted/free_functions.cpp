@@ -16910,6 +16910,34 @@ extern "C" CBaseEntity *beam()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba470 size=0x90
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_10002c7f(const char *pVarName, int offset, int sizeofVar);	// SendPropPredictableId
+
+extern SendTable g_106d16d4;
+
+// TARGET: sub_100ba470
+int sub_100ba470()
+{
+	static const char *pTableName = "DT_BeamPredictableId";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10002c7f("m_PredictableID", 0x1a8, 4),
+		sub_10007bfd("m_bIsPlayerSimulated", 0x43c, 1, 1, 1, 0, 0),
+	};
+	g_106d16d4.sub_1000e8fe(props + 1, 2, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb0b0 size=0x9e
 #include "CBeam.h"
 extern CGlobalEntityList *g_10566458;

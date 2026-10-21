@@ -4852,6 +4852,7 @@
 0x10015195 func   ?sub_10335950@CBaseCombatCharacter@@QAEPAXPBD@Z CBaseCombatCharacter::sub_10335950
 0x1001519f func   ?vfunc249@CBaseAnimating@@QAEMXZ CBaseAnimating::vfunc249
 0x100151b8 func   ?sub_1032d890@CBaseCombatCharacter@@QAEPAXPBDH@Z CBaseCombatCharacter::sub_1032d890
+0x100151c7 func   ?sub_100ba470@@YAHXZ sub_100ba470
 0x100151d6 func   _func_areaportal func_areaportal
 0x100151e0 func   _logic_case logic_case
 0x100151e5 func   ?sub_10250830@CUnknown10250830@@QAEXG@Z CUnknown10250830::sub_10250830
