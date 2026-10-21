@@ -209,6 +209,7 @@
 0x10001d16 func   ??1CMeasureSectionInstance@@QAE@XZ CMeasureSectionInstance::~CMeasureSectionInstance
 0x10001d2a func   ?sub_101916f0@CHolderPtr36c@@QAEXH@Z CHolderPtr36c::sub_101916f0
 0x10001d43 func   _npc_VZombie npc_VZombie
+0x10001d52 func   ?vfunc276@CPropHacking@@QAEXXZ CPropHacking::vfunc276
 0x10001d61 func   ?sub_10201980@CVStatList_t@@QAEHXZ CVStatList_t::sub_10201980
 0x10001d6b func   ?vfunc335@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc335
 0x10001d70 func   ?sub_1039e800@CTentacleUnit@@QAEXH@Z CTentacleUnit::sub_1039e800
