@@ -35,6 +35,7 @@ public:
 	void (*m_fnChangeCallback)(ConVar *pVar, const char *pOldString);	// 0x0040
 	void sub_100108bb();	// as in CDataObjectAccessSystem (transplant)
 	void sub_102455c0(const char *pName, const char *pHelpString, int flags);	// ConCommandBase::Create, called directly (stub 0x1000de4f)
+	void sub_10246160(int nValue);	// slot 4's implementation as called directly with an integer ("ConVar::SetValue( int )", stub 0x1000c5cc)
 
 	int GetInt() { return m_pParent->vfunc1() ? 0 : m_pParent->m_nValue; }
 	bool GetBool() { return GetInt() != 0; }
