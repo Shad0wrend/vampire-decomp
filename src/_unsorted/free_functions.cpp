@@ -11608,6 +11608,39 @@ CUnknown10098810 *CUnknown10098810::sub_10098810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100991b0 size=0x72
+#include "CBaseAnimatingOverlay.h"
+
+#define OV(n) virtual void v##n();
+#define OV10(p) OV(p##0) OV(p##1) OV(p##2) OV(p##3) OV(p##4) OV(p##5) OV(p##6) OV(p##7) OV(p##8) OV(p##9)
+struct COverlayVSlots2 {
+	OV(0) OV(1) OV(2) OV(3) OV(4) OV(5) OV(6) OV(7) OV(8) OV(9)
+	OV10(1) OV10(2) OV10(3) OV10(4) OV10(5) OV10(6) OV10(7) OV10(8) OV10(9)
+	OV10(10) OV10(11) OV10(12) OV10(13) OV10(14) OV10(15) OV10(16) OV10(17) OV10(18) OV10(19)
+	OV10(20) OV10(21) OV10(22) OV10(23) OV10(24) OV10(25) OV10(26)
+	virtual char v270(int activity);
+	virtual int v271(int activity);
+};
+
+extern void (*g_109f3630)(const char *fmt, ...);
+const char *sub_1025d730(int activity);
+
+int CBaseAnimatingOverlay::sub_100991b0(int activity, int b)
+{
+	if (((COverlayVSlots2 *)this)->v270(activity))
+		return ((COverlayVSlots2 *)this)->v271(activity);
+	int sequence = sub_1008dc40(activity, -1);
+	if (sequence <= 0) {
+		g_109f3630("CBaseAnimatingOverlay::AddGesture:  model missing activity %s\n", sub_1025d730(activity));
+		return -1;
+	}
+	int layer = sub_100990f0(sequence, b);
+	if (layer != -1)
+		m_Layers[layer].m_n20 = activity;
+	return layer;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099ca0 size=0x76
 struct TraceEnt { const char *a; const char *b; const char *c; };
 struct AnimEnt { char pad[0x174]; float m_animtime; };
