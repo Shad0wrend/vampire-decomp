@@ -38,7 +38,9 @@ public:
 	virtual float *vfunc10();	// "CCollisionProperty::CollisionToWorldTransform": one of four rotating static matrices; the outer entity's own transform when the bounds are in entity space, else identity with the origin as column 3
 	virtual int vfunc14();
 
-	char m_04[0x3c - 0x04];
+	Vector m_vecMins;	// 0x04
+	Vector m_vecMaxs;	// 0x10
+	char m_1c[0x3c - 0x1c];
 	// The entity the collision property belongs to; several slots just forward to it.
 	CBaseEntity *m_pOuter;
 	int m_nSolidType;	// 0x40
@@ -56,4 +58,5 @@ public:
 	void sub_100dc220(int a);	// partition update: with the partition object at 0x1070b24c (DevMsg "partition not initialized" otherwise) makes sure the handle at +0x46 exists (sub_100ddd90, stub 0x10014092; DevMsg "m_Partition failed to initialize" when it still does not) and calls slot 0 of the partition object with (handle, a)
 	void sub_100ddd90();	// creates the partition handle (stub 0x10014092)
 	void sub_100dcd90(const float *pMins, const float *pMaxs, float *pOutA, float *pOutB);	// world-space bounds of the box (pMins, pMaxs) (stub 0x100053fd); the two results are written to the last two arguments
+	void sub_100dd630(Vector *pOutMins, Vector *pOutMaxs);	// the bounds as stored (solid type 0 / 2 or flag bit 7), else the symmetric box that holds them: per axis the larger absolute value of mins / maxs, negated for the mins
 };
