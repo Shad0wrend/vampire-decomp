@@ -51478,6 +51478,42 @@ char __fastcall sub_102ef0e0(void *self, int unused, Info102ef0e0 *pInfo, float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x102efd50 size=0x68
+#include "CAI_Navigator.h"
+
+struct NavMotorX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void vfunc5(); virtual void v6(); virtual void v7();
+	virtual void vfunc8();
+};
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+bool CAI_Navigator::sub_102efd50()
+{
+	int status = m_p30->sub_1030bc00();
+	int type = m_i18;
+	if (status == 0) {
+		if (type != 0) {
+			g_109f3630("Warning: NPC appears to have wrong nav type in CAI_Navigator::MoveGround()\n");
+			switch (type) {
+			case 1:
+				((NavMotorX *)m_i20)->vfunc8();
+				break;
+			case 3:
+				((NavMotorX *)m_i20)->vfunc5();
+				break;
+			}
+			sub_10008832(0);
+		}
+	} else if (status == 2 && type != 2) {
+		return false;
+	}
+	sub_100053b7(0);
+	*((char *)this + 0x51) = 0;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1690 size=0x168
 #include "CUnknown102ee120.h"
 extern "C" void *memset(void *, int, unsigned int);
