@@ -16,6 +16,36 @@ CPropSign *CPropSign::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211b40 size=0xd2
+#include "CPropSign.h"
+#include "ScopeTrace.h"
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CPropSignSlotsX {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8)
+	SV(90) SV(91) SV(92)
+	virtual void s93(int moveType, int moveCollide);
+};
+
+void CPropSign::vfunc103()
+{
+	sub_1018df70();
+	char *pStudioHdr = (char *)sub_100952d0(-1);
+	if (pStudioHdr) {
+		((CPropSignSlotsX *)this)->s93(0, 0);
+		{
+			ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+			m_Collision.sub_100dc480(3);
+		}
+		sub_100adf10((float *)(pStudioHdr + 0xb4), (float *)(pStudioHdr + 0xc0));
+		sub_100aaa40(1);
+		m_Collision.sub_100ddd90();
+		sub_100b3b00();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211c60 size=0x7f
 #include "CPropSign.h"
 struct Sub { void *pEnt; unsigned int serial; };

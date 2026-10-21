@@ -1563,6 +1563,7 @@
 0x10007c84 func   ?vfunc5@CSimplePhysicsBrush@@UAEPAV1@I@Z CSimplePhysicsBrush::vfunc5
 0x10007c89 func   ?sub_102df210@@YG_NPAPAH@Z sub_102df210
 0x10007c8e func   ?vfunc600@CNPC_VTzimisceRunner@@QAE_NPAX@Z CNPC_VTzimisceRunner::vfunc600
+0x10007c98 func   ?vfunc103@CPropSign@@QAEXXZ CPropSign::vfunc103
 0x10007ca7 func   ?sub_101c1b60@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1b60
 0x10007cde func   _player player
 0x10007cfc func   ?sub_101388c0@@YAHH@Z sub_101388c0
