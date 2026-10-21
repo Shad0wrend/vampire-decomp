@@ -62,3 +62,4 @@
 	void sub_103387a0(int value);	// "CBaseCombatCharacter::AbilityBonus": scope trace (entity name), hands value to the stat list with id 1 (shared default list when absent; sub_10200d60), then slot 93-ish call sub_100138c2(object at +0xa8, 0x19, 0) when that object is set
 	int sub_1033d9d0(CBaseEntity *pOther);	// "CBaseCombatCharacter::GetSpecialDamageModifier": scope trace (entity name), 0 without pOther or misc flag 0x200; else the highest weapon-info level (dword at +0x5eb40) over this character's weapons whose info name (+0x5eb20) equals pOther's classname
 	char sub_1033d9b0();	// HasMiscFlag(0x200) (stub 0x1000281f), called directly
+	virtual void vfunc125();	// slot 125 "CBaseCombatCharacter::DrawMuzzleOverlay": scope trace (entity name), with an active weapon (sub_1032e7b0): the position of its "muzzleflash" attachment (CBaseAnimating::sub_10092e20) is drawn as a 3.0f box (sub_10143b70), red (0xff) when the attachment exists
