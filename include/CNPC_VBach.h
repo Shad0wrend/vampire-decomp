@@ -16,4 +16,12 @@ public:
 	void vfunc432(int arg);	// slot 432: when the byte at +0x66a5 is set and its time at +0x6684 has passed, clears stat 0xd of the stat list with id 3 (shared default list when absent) and the byte; then CNPC_VHuman::vfunc432
 	void sub_10279a50(int a);	// CAI_BaseNPC::sub_10279a50 (stub 0x1000b974), called directly
 	void sub_10385a10(int arg);	// CNPC_VHuman::vfunc432 (stub 0x1000698d), called directly
+	int vfunc440(int schedule);	// slot 440 "TranslateSchedule": schedules 0x17 / 0xed / 0x15f become 0x15f (0x160 when the active weapon is the katana with a sequence for 0x10 and condition 0x2c is clear) while the byte at +0x66a7 is clear, 0xb1 / 0xef become 0x15f, 0xdc becomes 0x15e, everything else goes to CNPC_VHuman::vfunc440
+	int sub_103851c0(int schedule);	// CNPC_VHuman::vfunc440 (stub 0x10005e20), called directly
+	CBaseEntity *sub_10007e19();	// CBaseCombatCharacter member (the stub at 0x10007e19 for 0x1032e7b0): the active weapon, called directly
+	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence (stub 0x100125c1), called directly
+	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
+
+	char m_pad03e0[0x66a7 - 0x3e0];
+	char m_b66a7;	// 0x66a7
 };
