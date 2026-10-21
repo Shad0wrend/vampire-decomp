@@ -4,6 +4,8 @@
 // vtable (0x1046af0c) and the member offsets.
 #pragma once
 
+class CBaseEntity;
+
 class CMoveHelperServer
 {
 public:
@@ -14,7 +16,7 @@ public:
 	virtual void vfunc4();
 	virtual void vfunc5();
 	virtual void vfunc6();
-	virtual void vfunc7();
+	virtual bool vfunc7();	// "CMoveHelperServer::PlayerFallingDamage": hurts the host by the game rules' fall damage (slot 30 of the rules); always true
 	virtual void vfunc8();
 	virtual void vfunc9();
 	virtual void vfunc10();
@@ -25,7 +27,8 @@ public:
 	virtual void vfunc15();
 	virtual void vfunc16();
 
-	char m_pad04[0x10];
+	CBaseEntity *m_pHost;	// 0x04
+	char m_pad08[0xc];
 	int m_nTouchCount;
 	void sub_1000185c();	// as in CDataObjectAccessSystem (transplant)
 };
