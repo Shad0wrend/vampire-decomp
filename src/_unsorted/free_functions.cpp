@@ -87364,6 +87364,54 @@ void CNPC_VMingXiao::sub_10397930(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10397a50 size=0xb9
+#include "CNPC_VMingXiao.h"
+#include "CUnknown10739d08.h"
+#include "CEHandleGet.h"
+
+extern CUnknown10739d08 g_10739d08;
+extern float g_104454c4;
+
+struct TimeObjC {
+	char m_pad[0xc];
+	float m_flCurTime;
+};
+extern TimeObjC *g_1070b228;
+
+struct TentView {
+	char m_pad[0x6674];
+	int m_nIndex;
+};
+
+struct TuneBlock64
+{
+	char m_pad0000[0x64];
+	float m_flBase;	// 0x64
+	float m_flStep;	// 0x68
+};
+
+inline TuneBlock64 *Tune64()
+{
+	return (TuneBlock64 *)g_10739d08.sub_101e8da0();
+}
+
+void CNPC_VMingXiao::sub_10397a50(void *pTentacle)
+{
+	TentView *pTent = (TentView *)pTentacle;
+	if (pTent) {
+		double dBase = Tune64()->m_flBase;
+		float flBase = (float)dBase;
+		double dStep = Tune64()->m_flStep;
+		float flTime = (float)dStep * (6 - m_n670c) + flBase;
+		if (!(flTime > g_104454c4))
+			flTime = g_104454c4;
+		m_flTime66a4 = flTime + g_1070b228->m_flCurTime;
+		if ((TentView *)EHandle_Get((unsigned int &)m_hSlotNew[pTent->m_nIndex]) == pTent)
+			sub_10397930(pTent->m_nIndex);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10397b40 size=0xe1
 #include "CNPC_VMingXiao.h"
 struct EntInfo { void *ent; int serial; int pad; };
