@@ -2101,6 +2101,31 @@ float *CBaseEntity::vfunc214()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2be0 size=0xdd
+#include "ScopeTrace.h"
+
+struct EntView100b2be0 {
+	char pad0[0x1b1];
+	char m_b1b1;
+	char pad1[0x41c - 0x1b2];
+	float m_org[3];
+};
+
+void CBaseEntity::vfunc62(const float *pOrigin)
+{
+	ScopeTrace trace("CBaseEntity::SetOrigin", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	EntView100b2be0 *p = (EntView100b2be0 *)this;
+	if (pOrigin[0] != p->m_org[0] || pOrigin[1] != p->m_org[1] || pOrigin[2] != p->m_org[2]) {
+		sub_100b5340(0x10800, 0);
+		sub_100b52a0();
+		p->m_org[0] = pOrigin[0];
+		p->m_org[1] = pOrigin[1];
+		p->m_org[2] = pOrigin[2];
+		p->m_b1b1 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2d00 size=0xe7
 #include "ScopeTrace.h"
 
