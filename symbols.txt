@@ -4237,6 +4237,7 @@
 0x10012b57 func   ?sub_101f18f0@CUnknown101f0e50@@QAE_NH@Z CUnknown101f0e50::sub_101f18f0
 0x10012b61 func   ?sub_1033c900@CBaseCombatCharacter@@QAE_NI@Z CBaseCombatCharacter::sub_1033c900
 0x10012b7f func   ?sub_102cdb70@CAI_GoalEntity@@QAEXH@Z CAI_GoalEntity::sub_102cdb70
+0x10012b84 func   ?sub_1013b0d0@@YAXABUQ@@PAM@Z sub_1013b0d0
 0x10012b9d func   ?sub_10248a50@CUnknown10248a50@@QAEXH@Z CUnknown10248a50::sub_10248a50
 0x10012bac func   ?sub_102cd3b0@CAI_GoalEntity@@QAEXXZ CAI_GoalEntity::sub_102cd3b0
 0x10012bb6 func   ?vfunc103@CFunc_LOD@@UAEXXZ CFunc_LOD::vfunc103
