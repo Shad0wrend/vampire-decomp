@@ -30,8 +30,8 @@ struct CEQEvent	// a "PEvent" record as the queue restores it (0x50 bytes); the 
 		m_hActivator = -1;
 		m_hCaller = -1;
 		m_hTarget = -1;
-		m_hVariant = -1;
 		m_n20 = 0;
+		m_hVariant = -1;
 		m_n30 = 0;
 	}
 };
