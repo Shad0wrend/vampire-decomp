@@ -30,7 +30,7 @@ public:
 	virtual void vfunc16();
 	virtual void vfunc17();
 	virtual void vfunc18();
-	virtual bool vfunc19(CBaseEntity *pPlayer, CBaseEntity *pWeapon);	// "FShouldSwitchWeapon": whether the player should switch to pWeapon on pickup
+	virtual char vfunc19(CBaseEntity *pPlayer, CBaseEntity *pWeapon);	// "FShouldSwitchWeapon": whether the player should switch to pWeapon on pickup
 	virtual CBaseEntity *vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurrentWeapon);	// "GetNextBestWeapon"
 	virtual void vfunc21();
 	virtual void vfunc22();
