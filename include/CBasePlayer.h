@@ -132,7 +132,12 @@ public:
 	float m_f1564;
 	char m_pad1568[0x48e];	// 0x1568 .. 0x19F5
 	bool m_b19F6;
-	char m_pad19F7[0x2E1];	// 0x19F7 .. 0x1CD7
+	char m_pad19F7[0x1b70 - 0x19f7];	// 0x19F7 .. 0x1B6F
+	int m_nRangeStart1B70;	// 0x1B70: low half of the value of the selected command slot (type 1)
+	char m_bFlag1B74;	// 0x1B74
+	char m_pad1B75[3];
+	int m_nRangeEnd1B78;	// 0x1B78: high half of that value, minus one
+	char m_pad1B7C[0x1cd8 - 0x1b7c];	// 0x1B7C .. 0x1CD7
 	unsigned int m_nCriminalLevelEnc;	// 0x1CD8, scrambled by the xor/and/add mask chain
 	char m_pad1CDC[0x128];	// 0x1CDC .. 0x1E03
 	unsigned int m_hEnt1E04;	// entity handle
@@ -144,7 +149,10 @@ public:
 	int m_nUseEdictIndex1EB8;	// engine index of the entity to notify (0 = none)
 	char m_pad1EBC[4];	// 0x1EBC .. 0x1EBF
 	char m_bNotifyUse1EC0;
-	char m_pad1EC1[0x20a8 - 0x1ec1];	// 0x1EC1 .. 0x20A7
+	char m_pad1EC1[0x2018 - 0x1ec1];	// 0x1EC1 .. 0x2017
+	int m_aSlotType2018[10];	// 0x2018: kind of each of the ten command slots (0 = unused)
+	int m_aSlotValue2040[10];	// 0x2040: value of each command slot (a name hash or packed range)
+	char m_pad2068[0x20a8 - 0x2068];	// 0x2068 .. 0x20A7
 	char m_b20A8;
 	char m_pad20A9[0x4b];	// 0x20A9 .. 0x20F3
 	char m_b20F4;	// vehicle active flag
