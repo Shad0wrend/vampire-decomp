@@ -198,4 +198,7 @@ public:
 	void sub_102727d0();	// "CAI_BaseNPC::MaintainActivity": scope trace (entity name); when slot 466 allows it and the ideal activity (+0xff0) differs from the current one (+0xfec) or the sequence (+0x6f0) from +0x5ccc: for activity 2 only sub_102726a0 when the byte at +0x65c is set, else sub_10272130(ideal, +0x5ccc, +0x5cd0, +0x5cd4) then sub_102726a0
 	void sub_102726a0();	// stub 0x10008efe, called directly
 	void sub_10272130(int act, int *pSeq, int *pA, int *pB);	// stub 0x1000faa6, called directly
+	bool sub_10280a50();	// "CAI_BaseNPC::AutoMovement": scope trace (entity name), slot 250(0), the studio worker sub_10094b70 (stub 0x10008d64) fills a movement delta from the frame times at +0x170 / +0x174; true when slot 94 (move type) is 4, the entity flags lack 0x400 and the motor (+0x5d44) accepts the move toward the focus entity (sub_102729d0)
+	int sub_100b3700();	// CBaseEntity::GetFlags (stub 0x10008b84), called directly
+	float sub_10094b70(float flInterval, char *pbOut, void *pvecOut, int *pnOut);	// stub 0x10008d64, called directly
 };
