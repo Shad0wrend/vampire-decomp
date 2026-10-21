@@ -23766,6 +23766,58 @@ int *sub_1010be40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c780 size=0x124
+#include "CFuncAreaPortalBase.h"
+#include "CUtlLinkedList8.h"
+
+extern "C" __declspec(dllimport) void __cdecl Error(const char *fmt, ...);
+
+struct CAreaPortalCtorBase { void sub_1009d980(int bInit); };
+struct CMem8fX { void sub_1010cbc0(int num); };
+extern int vt_1045e41c[];
+extern CUtlLinkedList8 g_10709680;
+
+// TARGET: sub_1010c780
+CFuncAreaPortalBase *__fastcall sub_1010c780(CFuncAreaPortalBase *p)
+{
+	((CAreaPortalCtorBase *)p)->sub_1009d980(0);
+	*(int **)p = vt_1045e41c;
+	*(int *)((char *)p + 0x450) = -1;
+
+	unsigned short i;
+	if (g_10709680.m_FirstFree == 0xffff) {
+		if (g_10709680.m_NumAlloced == g_10709680.m_allocationCount)
+			((CMem8fX *)&g_10709680)->sub_1010cbc0(1);
+		i = g_10709680.m_NumAlloced;
+		g_10709680.m_NumAlloced++;
+		if (i == 0xffff)
+			Error("CUtlLinkedList overflow!\n");
+	} else {
+		i = g_10709680.m_FirstFree;
+		g_10709680.m_FirstFree = g_10709680.m_pMemory[g_10709680.m_FirstFree].m_Next;
+	}
+	g_10709680.m_pMemory[i].m_Previous = i;
+	g_10709680.m_pMemory[i].m_Next = i;
+	*(CUtlLinkedList8Node **)((char *)&g_10709680 + 0x18) = g_10709680.m_pMemory;
+	g_10709680.sub_1010cb00(i);
+	CUtlLinkedList8Node &node = g_10709680.m_pMemory[i];
+	node.m_Next = 0xffff;
+	node.m_Previous = g_10709680.m_Tail;
+	g_10709680.m_Tail = i;
+	if (node.m_Previous == 0xffff)
+		g_10709680.m_Head = i;
+	else
+		g_10709680.m_pMemory[node.m_Previous].m_Next = i;
+	CUtlLinkedList8Node *pNode = g_10709680.m_pMemory;
+	g_10709680.m_ElementCount++;
+	pNode += i;
+	if (pNode)
+		pNode->m_Data = (int)p;
+	p->m_nPortalSlot = i;
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c930 size=0xb9
 #include "CFuncAreaPortalBase.h"
 #include "CUtlLinkedList8.h"
