@@ -63430,6 +63430,53 @@ void CUnknown1030fe50::sub_1030fe70(int count, CUtlVector4 *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030fff0 size=0xf5
+#include "CUnknown1030fe50.h"
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct EntView
+{
+	S100(a) S100(b)
+	S10(c)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+	virtual float *vfunc217();
+	virtual void x218(); virtual void x219();
+	virtual float *vfunc220();
+};
+struct GlobalVars_t { char pad0[0xc]; float curtime; int pad10; int maxClients; };
+extern GlobalVars_t *g_1070b228;
+extern const double g_10497530;
+EntView *sub_101cd9e0(int index);
+
+int CUnknown1030fe50::sub_1030fff0(int radius)
+{
+	int count = 0;
+	if (g_1070b228->curtime - m_flNextTime > g_10497530)
+	{
+		m_flNextTime = m_flInterval + g_1070b228->curtime;
+		sub_1030fe50();
+		float rsq = (float)(radius * radius);
+		float *pOrigin = ((EntView *)m_pOwner)->vfunc220();
+		for (int i = 1; i <= g_1070b228->maxClients; i++)
+		{
+			EntView *pEnt = sub_101cd9e0(i);
+			if (pEnt)
+			{
+				float *p = pEnt->vfunc217();
+				float dx = pOrigin[0] - p[0];
+				float dy = pOrigin[1] - p[1];
+				float dz = pOrigin[2] - p[2];
+				if (dx * dx + dy * dy + dz * dz < rsq && sub_1030ffa0(pEnt))
+					count++;
+			}
+		}
+		sub_1030fe70(count, (CUtlVector4 *)m_vec20);
+		return count;
+	}
+	return m_nCount;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103109a0 size=0xb7
 #include "CUtlVector4.h"
 #include "UtlMem.h"
