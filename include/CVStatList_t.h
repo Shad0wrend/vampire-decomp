@@ -31,6 +31,7 @@ public:
 	const char *sub_10201a40(int stat, int arg);	// the text line of the stat for the dump (stub 0x10009214)
 	const char *sub_102013a0(int stat);	// "CVStatList_t::GetBaseValueName": scope trace, the name of the entry the base value of the stat selects in the stat's table (info object at +0xc), "" when the stat is invalid
 	const char *sub_10201470(int stat);	// "CVStatList_t::GetValueName": like sub_102013a0 but selects by the full stat value sub_10010609
+	bool sub_10200ea0(int stat);	// "CVStatList_t::DecBase": scope trace, when the stat is valid and its base value is above the stat's minimum (value record of the info object at +0xc, evaluated for the owner entity of the object at +0) lowers it by one, tells the info's action list (+0x10c) about the change and returns true; else false (stub 0x1000ffb0 etc.)
 };
 
 // The stat lists of a character: the object at +0x13a8 of a CBaseCombatCharacter (its CUtlVector of lists at +0x8:
