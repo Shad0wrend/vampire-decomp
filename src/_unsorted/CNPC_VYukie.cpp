@@ -94,3 +94,29 @@ char CNPC_VYukie::vfunc600(int unused)
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103dda10 size=0x67
+#include "CNPC_VYukie.h"
+#include "CEntityVSlots.h"
+struct CGlobalVarsY { char pad[0xc]; float curtime; };
+extern CGlobalVarsY *g_1070b228;
+struct CGameRulesY { virtual void vfunc0(); virtual char vfunc1(); char pad[0x24]; float f28; };
+extern CGameRulesY *g_10924a1c;
+extern float g_1044f02c;
+struct YukieView { char pad[0x6074]; float m_fNextTime; char pad2[0x6268 - 0x6078]; float m_fTime2; };
+// TARGET: CNPC_VYukie::vfunc602
+char CNPC_VYukie::vfunc602()
+{
+    YukieView *v = (YukieView *)this;
+    if (((CEntityVSlots *)this)->slot308()) {
+        if (g_1070b228->curtime >= v->m_fNextTime)
+            return 1;
+    } else {
+        double f = g_10924a1c->vfunc1() ? 0.0f : g_10924a1c->f28;
+        float p = (float)((f + f) * g_1044f02c);
+        if (p <= v->m_fTime2)
+            return 1;
+    }
+    return 0;
+}
+// END FUNCTION
