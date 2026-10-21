@@ -3801,6 +3801,7 @@
 0x100113dd func   ??0CUnknown1007a060Elem@@QAE@XZ CUnknown1007a060Elem::CUnknown1007a060Elem
 0x100113ec func   ?sub_1012f190@@YAHH@Z sub_1012f190
 0x10011414 func   ?sub_1012d720@CHudTimer@@QAEXXZ CHudTimer::sub_1012d720
+0x1001141e func   ?sub_100bf480@CBitString@@QAEXH@Z CBitString::sub_100bf480
 0x10011428 func   ?vfunc2@CTEWorldDecal@@UAEPAV1@I@Z CTEWorldDecal::vfunc2
 0x1001144b func   ?vfunc5@CStripWeapons@@QAEPAV1@I@Z CStripWeapons::vfunc5
 0x10011450 func   ?sub_100602e0@@YAXHHPBH0HHHH@Z sub_100602e0

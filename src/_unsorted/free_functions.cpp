@@ -16759,6 +16759,35 @@ bool CUnknown100bf030::sub_100bf030(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf480 size=0xe7
+#include "CBitString.h"
+
+extern int g_1055b298[];
+
+void CBitString::sub_100bf480(int nBits)
+{
+    int nNewDwords = (nBits + 31) / 32;
+    if (nNewDwords != m_nDwords) {
+        if (m_pData != 0) {
+            sub_100bf600(nNewDwords);
+            if (nBits >= m_nBits) {
+                m_pData[m_nDwords - 1] &= ~g_1055b298[m_nBits % 32];
+                memset(m_pData + m_nDwords, 0, (nNewDwords - m_nDwords) * 4);
+            }
+        } else {
+            sub_100bf5b0(nNewDwords);
+            memset(m_pData, 0, nNewDwords * 4);
+        }
+        m_nDwords = nNewDwords;
+        m_nBits = nBits;
+    } else {
+        if (nBits >= m_nBits)
+            m_pData[m_nDwords - 1] &= ~g_1055b298[m_nBits % 32];
+        m_nBits = nBits;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c08d0 size=0x13
 struct CFloatPair3f4 {
     char pad_0000[0x3f4];
