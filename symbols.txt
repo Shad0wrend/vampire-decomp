@@ -909,6 +909,7 @@
 0x10004ab6 func   ?sub_101e4150@CUnknown101e4150@@QAEXPAUCUnknown101e4150Char@@@Z CUnknown101e4150::sub_101e4150
 0x10004abb func   ?vfunc5@CBreakable@@QAEPAV1@I@Z CBreakable::vfunc5
 0x10004ac0 func   _item_g_guy_magazine item_g_guy_magazine
+0x10004ae8 func   ?sub_10139f90@@YA_NABVVector@@M00@Z sub_10139f90
 0x10004b01 func   ?vfunc546@CNPC_Crow@@QAEHH@Z CNPC_Crow::vfunc546
 0x10004b0b func   ?sub_102f46d0@CUnknown102f46d0@@QAE?AVVector@@PAXH@Z CUnknown102f46d0::sub_102f46d0
 0x10004b10 func   ?sub_1017bf10@CBasePlayer@@QAEXH@Z CBasePlayer::sub_1017bf10

@@ -29369,6 +29369,26 @@ int sub_101388c0(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139f90 size=0x71
+#include "Vector.h"
+
+// TARGET: sub_10139f90
+bool sub_10139f90(const Vector &center, float radius, const Vector &mins, const Vector &maxs)
+{
+	float dist = 0.0f;
+	for (int i = 0; i < 3; i++) {
+		if (center[i] < mins[i]) {
+			float d = center[i] - mins[i];
+			dist += d * d;
+		} else if (center[i] > maxs[i]) {
+			float d = center[i] - maxs[i];
+			dist += d * d;
+		}
+	}
+	return dist <= radius * radius;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a030 size=0x23
 struct V3 {
 	float x, y, z;
