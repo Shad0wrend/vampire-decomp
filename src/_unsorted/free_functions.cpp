@@ -30110,6 +30110,38 @@ int sub_10156810()
 void __fastcall sub_10156d30(char *p) { p[0x105c] = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x10157260 size=0xc0
+#include "CRagdollProp.h"
+#include "CEntityVSlots.h"
+
+extern Vector g_1070d9d0;	// vec3_angle
+
+struct CMat3x4Y
+{
+	float m[3][4];
+};
+
+struct CRagdollAttachUnit : CRagdollProp
+{
+	void sub_10097310(CBaseEntity *pOther);	// CopyAnimationDataFrom (stub 0x100107e4)
+	void sub_10155380();	// stub 0x10007991
+	void sub_10156e10(void *pAttached, const Vector &vecForce, int forceBone, void *pPrevBones, void *pBones, float dt, int collisionGroup, void *pParent, int boneAttach, const Vector &boneOrigin, int parentBoneAttach, const Vector &originParent);	// InitRagdollAttached (stub 0x10008aee)
+};
+
+CBaseEntity *sub_100a9ab0(const char *pszClassname, const Vector *pOrigin, const Vector *pAngles, CBaseEntity *pOwner);
+
+CRagdollProp *sub_10157260(CRagdollProp *pAnimating, const Vector &vecForce, int forceBone, int collisionGroup, void *pAttached, void *pParentEntity, int boneAttach, const Vector &originAttached, int parentBoneAttach, const Vector &boneOrigin)
+{
+	CRagdollAttachUnit *pRagdoll = (CRagdollAttachUnit *)sub_100a9ab0("prop_ragdoll_attached", ((CEntityVSlots *)pAnimating)->slot217(), &g_1070d9d0, 0);
+	pRagdoll->sub_10097310(pAnimating);
+	pRagdoll->sub_10155380();
+	CMat3x4Y pBoneToWorld[350];
+	pAnimating->vfunc257(pBoneToWorld, 0xfffc);
+	pRagdoll->sub_10156e10(pAttached, vecForce, forceBone, pBoneToWorld, pBoneToWorld, 0.1f, collisionGroup, pParentEntity, boneAttach, boneOrigin, parentBoneAttach, originAttached);
+	return pRagdoll;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157890 size=0xd
 #include "CUnknown101578b0.h"
 

@@ -2960,6 +2960,7 @@
 0x1000cbf3 func   ?sub_100bdd20@bf_write@@QAEXI@Z bf_write::sub_100bdd20
 0x1000cbf8 func   ?vfunc86@CEnvParticle@@QAEDHHHHH@Z CEnvParticle::vfunc86
 0x1000cc02 func   ?sub_10080750@CUnknown10080750@@QAEXH@Z CUnknown10080750::sub_10080750
+0x1000cc07 func   ?sub_10157260@@YAPAVCRagdollProp@@PAV1@ABVVector@@HHPAX2H1H1@Z sub_10157260
 0x1000cc16 func   ?vfunc367@CWeaponMelee@@UAEXHHH@Z CWeaponMelee::vfunc367
 0x1000cc43 func   ?sub_1006c0a0@CUnknown1006bea0@@QAEXPAD@Z CUnknown1006bea0::sub_1006c0a0
 0x1000cc5c func   ?vfunc0@CVoiceGameMgr@@QAEPAV1@I@Z CVoiceGameMgr::vfunc0
