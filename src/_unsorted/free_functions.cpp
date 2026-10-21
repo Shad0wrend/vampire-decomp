@@ -27842,6 +27842,23 @@ void sub_1013b0d0(const Q &q, float *m)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013bb40 size=0x17c
+void sub_1000cfb3(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, float t, Vector &output);
+
+// TARGET: sub_1013bb40
+void sub_1013bb40(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, float t, Vector &output)
+{
+    float dt = (p3 - p2).Length();
+    Vector d1 = p1 - p2;
+    Vector d2 = p4 - p3;
+    VectorNormalize(d1);
+    VectorNormalize(d2);
+    d1 = d1 * dt + p2;
+    d2 = d2 * dt + p3;
+    sub_1000cfb3(d1, p2, p3, d2, t, output);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d900 size=0x72
 extern int g_10579690[4][2][3];
 bool sub_1013d900(int a, int b, int c, int *out)
