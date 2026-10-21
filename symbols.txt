@@ -1226,6 +1226,7 @@
 0x1000628f func   ?sub_10430320@@YAII@Z sub_10430320
 0x10006299 func   ?sub_1042fde0@@YAII@Z sub_1042fde0
 0x1000629e func   ?vfunc546@CNPC_VCamera@@QAEHH@Z CNPC_VCamera::vfunc546
+0x100062e9 func   ?sub_10097e50@@YAHXZ sub_10097e50
 0x10006339 func   ?vfunc367@CBaseCombatCharacter@@QAE?AVQAngle@@XZ CBaseCombatCharacter::vfunc367
 0x10006348 func   ?sub_1022c860@CPropRadio@@QAEXPAUinputdata_t@@@Z CPropRadio::sub_1022c860
 0x1000634d func   ?sub_102eb170@@YA_NH@Z sub_102eb170

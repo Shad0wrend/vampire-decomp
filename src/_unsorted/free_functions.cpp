@@ -13254,6 +13254,36 @@ void CBaseTransmitProxy::sub_10097bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097e50 size=0xea
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+void sub_10246300();
+extern SendTable g_106ce614;
+extern const char *g_1055165c;
+
+// TARGET: sub_10097e50
+int sub_10097e50()
+{
+    static SendProp g_SendProps[] = {
+        sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+        sub_10246af0("sequence", 8, 4, 8, 1, 0, 0),
+        sub_10246510("cycle", 0xc, 4, 10, 8, 0.0f, 1.0f, (void *)sub_10246300),
+        sub_10246510("playbackrate", 0x10, 4, 8, 0x10, -4.0f, 18.0f, (void *)sub_10246300),
+        sub_10246510("weight", 0x14, 4, 8, 0, 0.0f, 1.0f, (void *)sub_10246300),
+    };
+    g_106ce614.sub_10247240(g_SendProps + 1, 4, g_1055165c);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098810 size=0xb
 CUnknown10098810 *CUnknown10098810::sub_10098810()
 {
