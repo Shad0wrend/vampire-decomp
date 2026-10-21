@@ -56062,6 +56062,45 @@ char CAI_BaseNPCTroika::sub_102a9ec0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102aab70 size=0x126
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Motor.h"
+#include "CUnknown102e0150.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+static inline CGlobalEntityList_Ent *LookupEntity(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13))
+			return s->m_pEntity;
+	}
+	return 0;
+}
+
+void CAI_BaseNPCTroika::sub_102aab70(int unused)
+{
+	Vector vecPos;
+	if (m_flags14bc & 0x10) {
+		if (vfunc167()) {
+			vfunc541()->sub_102dfed0(&vecPos, (CBaseEntity *)vfunc167());
+			if (!vfunc364((const float *)&vecPos))
+				(*(CAI_Motor **)((char *)this + 0x5d44))->sub_102e20b0((const float *)&vecPos, -2.0f);
+		}
+	} else if (m_flags14bc & 0x20) {
+		if (LookupEntity(*(volatile unsigned int *)((char *)this + 0x5ce4))) {
+			Vector *pOrigin = ((CEntityVSlots *)LookupEntity(*(unsigned int *)((char *)this + 0x5ce4)))->slot217();
+			vecPos = *pOrigin;
+			if (!vfunc364((const float *)&vecPos))
+				(*(CAI_Motor **)((char *)this + 0x5d44))->sub_102e20b0((const float *)&vecPos, -2.0f);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ae7f0 size=0xd
 void CUnknown102b5dc0::sub_102ae7f0(int value)
 {

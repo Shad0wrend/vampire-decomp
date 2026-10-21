@@ -4133,6 +4133,7 @@
 0x100125f3 func   ?vfunc5@CWeaponMelee_WerewolfAttacks@@QAEPAV1@I@Z CWeaponMelee_WerewolfAttacks::vfunc5
 0x10012607 func   ?vfunc103@CFlameCluster@@UAEXXZ CFlameCluster::vfunc103
 0x1001260c func   ?sub_101f6b90@CVTraitEffect_t@@QAEXPAUCVStatKV@@@Z CVTraitEffect_t::sub_101f6b90
+0x1001262f func   ?sub_102aab70@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_102aab70
 0x1001263e func   ?vfunc5@CItemGDrugsPerscriptionBottle@@QAEPAV1@I@Z CItemGDrugsPerscriptionBottle::vfunc5
 0x10012648 func   ?vfunc10@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHMHMHHHHH@Z CTempEntsSystem::vfunc10
 0x1001264d func   ?sub_103ff1d0@@YAHXZ sub_103ff1d0
