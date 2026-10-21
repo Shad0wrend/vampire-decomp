@@ -25474,6 +25474,33 @@ void CBasePlayer::sub_1017ec40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f650 size=0x6b
+#include "CNPC_VCop.h"
+#include "ConVar.h"
+struct CGlobalsView { char m_pad[0xc]; float curtime; };
+extern CGlobalsView *g_1070b228;
+extern ConVar *g_107258dc;
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+void sub_10008cdd(void *pNpc);
+
+struct CNPC_VCopUnit : CNPC_VCop {
+    void sub_1017f980();
+    void sub_1017f650();
+};
+
+void CNPC_VCopUnit::sub_1017f650()
+{
+    int *pPursuit = (int *)((char *)this + 0x1d10);
+    if (*pPursuit == 0) {
+        sub_10008cdd(this);
+        sub_1017f980();
+    }
+    ++*pPursuit;
+    if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
+        DevMsg("CSActs:    %6.1f - OnCopPursuitStart - %d in pursuit\n", g_1070b228->curtime, *pPursuit);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101800e0 size=0xe
 #include "CUnknown101800e0.h"
 // TARGET: CUnknown101800e0::sub_101800e0
