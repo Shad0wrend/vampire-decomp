@@ -61127,6 +61127,41 @@ CBaseEntity *CUnknown103160c0::sub_103160c0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103161a0 size=0xec
+#include "CUnknown103160c0.h"
+#include "CAI_BaseNPC.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+extern void (*g_109f3630)(const char *, ...);
+extern char g_10614f4c[];
+struct CSquadHook { virtual void vfunc0(); virtual void vfunc1(); };
+extern CSquadHook *g_10924a6c;
+void CUnknown103160c0::sub_103161a0(int pEnemy)
+{
+	if (!pEnemy) {
+		g_109f3630(g_10614f4c);
+		return;
+	}
+	for (int i = 0; i < m_nMembers; i++) {
+		unsigned int h = m_hMembers[i];
+		if (h == 0xffffffff)
+			continue;
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial != (int)(h >> 13))
+			continue;
+		CAI_BaseNPC *pNPC = (CAI_BaseNPC *)s->m_pEntity;
+		if (!pNPC)
+			continue;
+		if (*(int *)((char *)pNPC + 0x5bb0) <= 0 && pNPC->vfunc167() != pEnemy && !pNPC->sub_10269aa0(0x46) && (char *)pNPC->vfunc541() == (char *)this + 8) {
+			pNPC->sub_10279a50(pEnemy);
+			*(int *)((char *)pNPC + 0x5d9c) = 0;
+			g_10924a6c->vfunc1();
+			pNPC->sub_10269a20(0x54);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316320 size=0x90
 #include "CUnknown10316320.h"
 
