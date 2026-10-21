@@ -2,11 +2,15 @@
 // modelled yet; the layout below is what decompiled code needs, and the vtable slots before it are placeholders.
 #pragma once
 
+#include "CAI_Hint.h"
+
 struct CAI_StandoffBehaviorOuter
 {
 	char pad0[0x1fc];
 	int m_unk1fc;
-	char pad1[0x5de4 - 0x200];
+	char pad1[0x5ddc - 0x200];
+	CAI_Hint *m_pHintNode;	// 0x5ddc: the hint node the NPC has locked
+	char pad2[4];
 	float m_unk5de4;
 };
 
