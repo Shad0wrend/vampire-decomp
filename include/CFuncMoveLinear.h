@@ -37,13 +37,16 @@ public:
 	void sub_10116570(Vector vecPosition, float flSpeed);	// "CFuncMoveLinear::MoveTo" (stub 0x1000c7c5): starts the movement towards vecPosition at flSpeed
 	void sub_101171a0(inputdata_t &inputdata);	// "CFuncMoveLinear::InputOpen"-like: moves to the position at +0x514 at the speed at +0x164 unless the local origin (slot 220) is already there
 	void sub_10117230(inputdata_t &inputdata);	// "CFuncMoveLinear::InputClose"-like: the same for the position at +0x508
+	void sub_10116ff0(inputdata_t &inputdata);	// "CFuncMoveLinear::InputToggle": at the position at +0x514 moves to the one at +0x508; else (at +0x508, or with the final destination at +0x540 equal to it) moves to the one at +0x514; always at the speed at +0x164
 
 	char m_pad0004[0x164 - 4];
 	float m_flSpeed;	// 0x164
 	char m_pad0168[0x508 - 0x168];
 	Vector m_vecPosition1;	// 0x508
 	Vector m_vecPosition2;	// 0x514
-	char m_pad0520[0x55c - 0x520];
+	char m_pad0520[0x540 - 0x520];
+	Vector m_vecFinalDest;	// 0x540
+	char m_pad054c[0x55c - 0x54c];
 	const char *m_str55c;
 	const char *m_str560;
 	int m_field564;
