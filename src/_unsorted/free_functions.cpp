@@ -11372,6 +11372,45 @@ void sub_10089430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10089ac0 size=0xcb
+#include "IVEngineServer.h"
+extern "C" int __cdecl atoi(const char *);
+__declspec(dllimport) void DevMsg(const char *, ...);
+extern IVEngineServer *g_1070b22c;
+
+struct CCmd10089ac0_Brain
+{
+	char m_pad0000[0x1484];
+	int m_nMotionTrail;	// 0x1484
+	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd)
+};
+struct CCmd10089ac0_Ent
+{
+	char m_pad0000[0x98];
+	CCmd10089ac0_Brain *m_pBrain;	// 0x98
+};
+
+void *sub_101193b0();
+CCmd10089ac0_Ent *sub_100d2070(void *pStart, int pszName, CCmd10089ac0_Ent *pPrev);
+
+#define clamp(val, minVal, maxVal) (((val) > (maxVal)) ? (maxVal) : (((val) < (minVal)) ? (minVal) : (val)))
+
+void sub_10089ac0()
+{
+	void *pStart = sub_101193b0();
+	int pszName = g_1070b22c->vfunc84(2);
+	CCmd10089ac0_Ent *pEnt = sub_100d2070(pStart, pszName, 0);
+	int nValue = clamp(atoi((const char *)g_1070b22c->vfunc84(1)), 0, 5);
+	for (; pEnt; pEnt = sub_100d2070(pStart, pszName, pEnt)) {
+		CCmd10089ac0_Brain *pBrain = pEnt->m_pBrain;
+		if (pBrain) {
+			pBrain->m_nMotionTrail = nValue;
+			DevMsg("%s - Motion trail set to %d\n", pBrain->sub_1000b5cd(), nValue);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10089c60 size=0x105
 #include "CBaseAnimating.h"
 #include "CUnknown1070b22c.h"
