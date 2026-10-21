@@ -24768,6 +24768,65 @@ void CFlagSet10174550::sub_10174550(bool v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174f80 size=0x18e
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+#define PV_V(n) virtual void v##n();
+#define PV_V10(p) PV_V(p##0) PV_V(p##1) PV_V(p##2) PV_V(p##3) PV_V(p##4) PV_V(p##5) PV_V(p##6) PV_V(p##7) PV_V(p##8) PV_V(p##9)
+struct CPlayerSlotsX {
+    PV_V10(0) PV_V10(1) PV_V10(2) PV_V10(3) PV_V10(4) PV_V10(5) PV_V10(6) PV_V10(7) PV_V10(8) PV_V10(9)
+    PV_V10(10) PV_V10(11) PV_V10(12) PV_V10(13) PV_V10(14)
+    PV_V(150) PV_V(151) PV_V(152) PV_V(153) PV_V(154) PV_V(155) PV_V(156) PV_V(157)
+    virtual bool vfunc158();
+};
+struct CGlobalObjX {
+    char m_pad[0x4ac];
+    int m_n4ac;
+};
+CGlobalObjX *sub_1023bd00();
+static inline bool HandleValid(unsigned int h)
+{
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+        if (s->m_Serial == (int)(h >> 13) && s->m_pEntity)
+            return true;
+    }
+    return false;
+}
+struct CPlayerUnit : CBasePlayer {
+    char sub_10175180();
+    int sub_10174f80();
+};
+
+// TARGET: CPlayerUnit::sub_10174f80
+int CPlayerUnit::sub_10174f80()
+{
+    if (HandleValid(*(unsigned int *)((char *)this + 0xfe8)))
+        return 2;
+    if (*(int *)((char *)this + 0x153c) != -1 && HandleValid(*(unsigned int *)((char *)this + 0x1538)))
+        return 3;
+    if (HandleValid(*(unsigned int *)((char *)this + 0x1040)))
+        return 4;
+    if (sub_10175180())
+        return 7;
+    if (HandleValid(*(unsigned int *)((char *)this + 0x19c0)))
+        return 6;
+    if (HandleValid(*(unsigned int *)((char *)this + 0x19cc)))
+        return 6;
+    if (sub_1000306c())
+        return 6;
+    if (sub_101618a0())
+        return 6;
+    if (m_nUseEdictIndex1EB8)
+        return 1;
+    if (sub_1023bd00() && sub_1023bd00()->m_n4ac)
+        return 1;
+    return ((CPlayerSlotsX *)this)->vfunc158() ? 0 : 5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10175180 size=0x74
 #define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define HUN(p) TEN(p##0) TEN(p##1) TEN(p##2) TEN(p##3) TEN(p##4) TEN(p##5) TEN(p##6) TEN(p##7) TEN(p##8) TEN(p##9)
