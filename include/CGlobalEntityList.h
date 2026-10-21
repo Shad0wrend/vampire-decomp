@@ -62,6 +62,7 @@ public:
 	CBaseEntity *sub_100290c0(const unsigned int *pHandle);	// "CBaseEntityList::LookupEntity" (stub 0x10009c8c): the entity behind the handle, 0 when the handle is invalid or stale
 	CBaseEntity *sub_100f79b0(CBaseEntity *pStart, const float *pCenter, float flRadius);	// "CGlobalEntityList::FindEntityInSphere" (stub 0x10013bbf)
 	CBaseEntity *sub_100f81f0(const Vector *pOrigin, const Vector *pDir, float flThreshold);	// "CGlobalEntityList::FindEntityInCone"-like: the live entity with a world edict (not worldspawn / soundent) whose direction from pOrigin lines up best with pDir (dot product at least flThreshold), 0 when none (stub 0x10007059)
+	CBaseEntity *sub_100f8420(CBaseEntity *pCurrent);	// the next entity after pCurrent (the first one when null) that has an edict (+0x98 object) with the byte at +0x1480 set and fails sub_100b5190 (stub 0x1000f9ca)
 	void sub_100f6ec0();	// "CGlobalEntityList::Clear": sets the byte at +0x18044, removes every live entity (UTIL_Remove through the list from its head), runs sub_100f6ce0, purges a global vector (0x10703668), resets two globals and the counters at +0x1803c / +0x18040 and the byte
 	void sub_100f6ce0();	// stub 0x10007478
 };
