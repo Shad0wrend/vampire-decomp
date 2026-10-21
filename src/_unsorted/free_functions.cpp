@@ -37487,6 +37487,58 @@ void sub_101802e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101807d0 size=0x123
+#include "CUnknown1070b22c.h"
+#include "CEntityVSlots.h"
+
+extern "C" double atof(const char *);
+extern "C" int atoi(const char *);
+
+#define PV(n) virtual void s##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct HurtTarget_t {
+	PV100(a) PV100(b) PV100(c)
+	PV10(d0) PV10(d1) PV10(d2) PV10(d3)
+	PV(d40) PV(d41) PV(d42)
+	virtual void vfunc343(float a, float b, int n);
+};
+
+struct HurtEntity_t : public CEntityVSlots {
+	char pad[0x9c - sizeof(CEntityVSlots)];
+	HurtTarget_t *pTarget;
+};
+
+struct EntQuery_t {
+	int m_listIndex;
+	int m_listCount;
+	HurtEntity_t *m_pList[256];
+	EntQuery_t *sub_1000bc30(const Vector *pCenter, float flRadius, int a, int b);
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+HurtEntity_t *sub_101193b0();
+int __fastcall sub_101ccd40(int *pQuery);
+
+void sub_101807d0()
+{
+	HurtEntity_t *pPlayer = sub_101193b0();
+	float flA = (float)atof(g_1070b22c->vfunc84(1));
+	float flB = (float)atof(g_1070b22c->vfunc84(2));
+	int nMode = atoi(g_1070b22c->vfunc84(3));
+	if (pPlayer && flA > 0.0f && flB > 0.0f && nMode >= 0 && nMode < 3) {
+		EntQuery_t query;
+		query.sub_1000bc30(pPlayer->slot220(), 4096.0f, 0, 0);
+		for (HurtEntity_t *pEnt = (HurtEntity_t *)sub_101ccd40((int *)&query); pEnt; pEnt = (HurtEntity_t *)sub_101ccd40((int *)&query)) {
+			if (pEnt->pTarget && pEnt->slot158())
+				pEnt->pTarget->vfunc343(flA, flB, nMode);
+			query.m_listIndex++;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10180af0 size=0x139
 #include <string.h>
 #include "CGlobalEntityList.h"
