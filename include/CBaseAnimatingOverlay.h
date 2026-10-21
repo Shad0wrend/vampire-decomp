@@ -32,6 +32,7 @@ public:
 	int sub_1008dc40(int activity, int b);	// CBaseAnimating::sub_1008dc40 (stub 0x100125c1): "SelectWeightedSequence", called directly
 	int sub_100990f0(int sequence, int b);	// "CBaseAnimatingOverlay::AddGestureSequence": slot 272 picks a free layer, slot 268 starts it; returns the layer or -1
 	int sub_100991b0(int activity, int b);	// "CBaseAnimatingOverlay::AddGesture": slot 270(activity) true: slot 271(activity); else selects a sequence for the activity (DevMsg "model missing activity" and -1 when there is none), AddGestureSequence and records the activity in the layer
+	void vfunc255(void *pPos, void *pQ, int mask);	// slot 255 "CBaseAnimatingOverlay::GetSkeleton": the base pose (sequence +0x6f0, cycle +0x6f8, pose parameters +0x690), then each of the first four layers with a positive weight is posed into local bone arrays and slerped in (SlerpBones), then the pose / controller workers
 
 	char m_pad0000[0x738];
 	CAnimationLayer m_Layers[15];	// 0x738
