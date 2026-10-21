@@ -82,7 +82,10 @@ public:
 	CBP_V1(sf05) CBP_V1(sf06) CBP_V1(sf07) CBP_V1(sf08) CBP_V1(sf09)
 	CBP_V10(sf1) CBP_V10(sf2) CBP_V10(sf3) CBP_V10(sf4) CBP_V10(sf5)
 	virtual bool vfunc382(CBaseCombatWeapon *pWeapon);	// slot 382 "Weapon_CanUse": true unless the weapon is of the two type flags 0x18000 and the player already owns a weapon of its class, then the player object at +0xa8 is sent message 0x4e with the weapon owner's text and false is returned
-	CBP_V1(sf61) CBP_V1(sf62) CBP_V1(sf63) CBP_V1(sf64) CBP_V1(sf65) CBP_V1(sf66) CBP_V1(sf67) CBP_V1(sf68) CBP_V1(sf69)
+	virtual void vfunc383(CBaseEntity *pWeapon, char bNoSwitch);	// slot 383 "Weapon_Equip": CBaseCombatCharacter::vfunc383, and (unless bNoSwitch) a new holder entity for the weapon's class (handle at +0x1c64) plus the game rules' FShouldSwitchWeapon / slot 388 switch
+	CBP_V1(sf62) CBP_V1(sf63) CBP_V1(sf64) CBP_V1(sf65)
+	virtual void vfunc388(CBaseEntity *pWeapon, int a);	// slot 388: switches to the given weapon
+	CBP_V1(sf67) CBP_V1(sf68) CBP_V1(sf69)
 	CBP_V10(sf7) CBP_V1(sg0)
 	virtual void vfunc403();
 	CBP_V1(sh0) CBP_V1(sh1) CBP_V1(sh2)
@@ -208,4 +211,6 @@ public:
 	void sub_10167030(Vector vecOrigin, Vector vecTarget);	// teleports / places the player: flag bit 5 at +0x20f0, the spawn angles global copied to +0x184, vecTarget (after slot 64 adjusted it) stored at +0x206c, +0x207c = 1, solid flag 4 added, take damage 0, move type 0, model index 0, then sub_101cf5c0(this, &vecOrigin, 0)
 	void vfunc103();	// slot 103 (declared as a plain member; the CHL2_Player override calls it): slot 407, sub_1015ef00, SetSolid(0) (inlined scope trace), move type (9, 0), sub_101cf600(this), RemoveFlag(1), then slot 457("item_w_fists", 0)
 	void sub_1017d460(CBaseEntity *pEnt, int a);	// stub 0x100051d2, called by CBaseCombatCharacter::SetAsCameraTarget(this, 0) for every connected player
+	void *sub_1032e120(const char *pszName);	// CBaseCombatCharacter::Weapon_Create (stub 0x1000b0b4), called directly
+	void sub_1032d380(CBaseEntity *pWeapon, char bNoSwitch);	// CBaseCombatCharacter::vfunc383 (stub 0x100032b0), called directly
 };
