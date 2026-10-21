@@ -30,6 +30,8 @@ public:
 	char m_b66e5;	// +0x66e5
 	char m_bAttacking;	// +0x66e6
 	char m_bTransformed;	// +0x66e7: set once the transform has been started
+	float m_flFloorHeightA;	// +0x66e8: cached floor height of the first reference entity
+	float m_flFloorHeightB;	// +0x66ec: cached floor height of the second reference entity
 
 	int sub_10005e20(int a);
 	int vfunc440(int a);
@@ -58,7 +60,7 @@ public:
 	void sub_103b0560();	// "CNPC_VSheriffMan::KillTeleportBats": scope trace (no entity name), removes the entity behind the handle at +0x66d0 (when it resolves), then clears the handle
 	void sub_103b03b0();	// "CNPC_VSheriffMan::SpawnTeleportBats": scope trace (no entity name), finds or creates the "sheriff_teleport_bats" entity (handle at +0x66d0), places it at this entity's origin, spawns it and, with a target at +0x5ddc, hands it the target's origin plus two offset vectors
 	void sub_103b1680(int *pA, int *pB);	// "CNPC_VSheriffMan::CategorizeHeight...": scope trace (no entity name), clears both outputs; when the entity behind the handle at +0x628c resolves, hands the third dword of slot 217 of it (with pA) and of this (with pB) to sub_103b1790
-	void sub_103b1790(int height);	// height classification worker (stub 0x1000b929)
+	void sub_103b1790(float flHeight, int *pOut);	// "CNPC_VSheriffMan::CategorizeHeight": scope trace (no entity name), *pOut = 1 when flHeight is at least as close to the second cached floor height (+0x66ec) as to the first (+0x66e8), else 0 (stub 0x1000b929)
 	void vfunc432(int arg);	// "CNPC_VSheriffMan::RunAI": scope trace (no entity name), starts the transform unless it was already started, then the base implementation
 	void sub_103b1510();	// "CNPC_VSheriffMan::CacheFloorHeights": scope trace (no entity name), caches the floor heights of the two reference entities (the third dword of their slot 217 vectors) at +0x66e8 / +0x66ec and sets the cached byte at +0x66e7 (stub 0x10012431)
 	void sub_10385a10(int arg);	// CNPC_VHuman::vfunc432 (RunAI), called directly through the stub at 0x1000698d
