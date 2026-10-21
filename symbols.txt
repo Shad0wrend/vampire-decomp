@@ -3044,6 +3044,7 @@
 0x1000eb06 func   ?sub_104004a0@@YAHXZ sub_104004a0
 0x1000eb1a func   ?sub_100ae150@CBaseEntity@@QAEXXZ CBaseEntity::sub_100ae150
 0x1000eb24 func   ?vfunc546@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::vfunc546
+0x1000eb3d func   ?sub_103aa3b0@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::sub_103aa3b0
 0x1000eb56 func   _env_wind env_wind
 0x1000eb5b func   _env_fade env_fade
 0x1000eb65 func   ?sub_102a9dc0@Obj@@QAEPAU1@HPAUVec3@@HHHHHH@Z Obj::sub_102a9dc0

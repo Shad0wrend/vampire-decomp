@@ -51,3 +51,18 @@ bool CNPC_VSabbatLeader::sub_103a9e70()
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103aa3b0 size=0x92
+#include "CNPC_VSabbatLeader.h"
+#include "ScopeTrace.h"
+
+void CNPC_VSabbatLeader::sub_103aa3b0(int unused)
+{
+    ScopeTrace st("CNPC_VSabbatLeader::StartTransformation", g_106b8540);
+    m_b66b8 = 1;
+    sub_10332aa0(1, 1, 10);
+    m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VSabbatLeader.cpp";
+    m_nLine1b34 = 0x549;
+    sub_102ae750(0x163, 0);
+}
+// END FUNCTION
