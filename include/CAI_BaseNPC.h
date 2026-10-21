@@ -42,7 +42,7 @@ public:
 	virtual Vector vfunc192();	// returns a vector by value (hidden result pointer)
 	CAI_NPC_V(193) CAI_NPC_V(194) CAI_NPC_V(195) CAI_NPC_V(196) CAI_NPC_V(197) CAI_NPC_V(198) CAI_NPC_V(199)
 	CAI_NPC_V(200)
-	virtual bool vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d);	// \"CBaseEntity::...\" check whether the NPC may act on pEnt (CBaseEntity::vfunc201 = sub_100a6fa0 at the end of the Troika override)
+	virtual bool vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d);	// check whether the NPC may act on pEnt (CBaseEntity::vfunc201 = sub_100a6fa0 at the end of the Troika override)
 	CAI_NPC_V(202) CAI_NPC_V(203) CAI_NPC_V(204) CAI_NPC_V(205) CAI_NPC_V(206) CAI_NPC_V(207)
 	virtual void vfunc208(int a);	// takes one argument (0 from AI_BaseNPC_Schedule's failure path)
 	CAI_NPC_V(209)
@@ -149,7 +149,9 @@ public:
 	CAI_NPC_V(550) CAI_NPC_V(551)
 	virtual unsigned int vfunc552();
 	virtual int vfunc553(float a, float b);	// slot 553: an activity picked by the float b (< 100: 8, < 200: 0x5f, > 1024: 0x60) else 0x4f / 0x61 by the float a against 0.5
-	CAI_NPC_V(554) CAI_NPC_V(555) CAI_NPC_V(556) CAI_NPC_V(557) CAI_NPC_V(558)
+	CAI_NPC_V(554) CAI_NPC_V(555)
+	virtual int vfunc556(float a, float b);	// slot 556: an activity picked by the float b (> 180: 9, > 64: 0x60) else 0 / 0x52 by the float a against 0.7 and the focus entity's object (slot 327)
+	CAI_NPC_V(557) CAI_NPC_V(558)
 	virtual CBaseEntity *vfunc559(const char *pszName);	// slot 559: the entity of that name (asked by the follow-target setter)
 	virtual void vfunc560();	// slot 560: sets the conditions 0x4f..0x52, 0x2e, 0x2f and 0x62..0x66 (sub_10269b50 each)
 	CAI_NPC_V(561)
