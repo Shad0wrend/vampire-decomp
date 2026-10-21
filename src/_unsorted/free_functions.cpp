@@ -8361,6 +8361,38 @@ CCameraAnimatedUnit *CCameraAnimatedUnit::sub_10071220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071770 size=0x9c
+#include "CBaseAnimating.h"
+struct CUnk_Globals { char pad[0xc]; float curtime; };
+extern CUnk_Globals *g_1070b228;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+struct CUnk10071770Sub {
+    void sub_10010794(int a, void *b, int c);
+};
+struct CUnk10071770View : CBaseAnimating {
+    void sub_10071770(const char *label);
+    void sub_100117b1();
+    const char *sub_1000b5cd();
+};
+void sub_100032dd();
+void CUnk10071770View::sub_10071770(const char *label)
+{
+    int seq = sub_1008f7b0(label);
+    if (seq > -1) {
+        *(int *)((char *)this + 0x6f0) = seq;
+        *(int *)((char *)this + 0x6f8) = 0;
+        sub_100117b1();
+        ((CUnk10071770Sub *)((char *)this + 0x7f8))->sub_10010794(0, this, 0);
+        sub_100ac4e0((int)sub_100032dd, 0, 0);
+        *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
+        *(float *)((char *)this + 0x170) = *(float *)((char *)this + 0x174) = g_1070b228->curtime;
+    } else {
+        Msg("%s no sequence named:%s\n", sub_1000b5cd(), label);
+        *(int *)((char *)this + 0x6f0) = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071840 size=0x7f
 #define V1(p) virtual void p();
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \

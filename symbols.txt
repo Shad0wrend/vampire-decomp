@@ -813,6 +813,7 @@
 0x100044c1 func   ?sub_1007ec20@CUnknown1007ec20@@QAEXPAVCUnknown1007ec20_Reader@@HHH@Z CUnknown1007ec20::sub_1007ec20
 0x100044c6 func   ?vfunc2@CTEFizz@@UAEPAV1@I@Z CTEFizz::vfunc2
 0x100044cb func   ?sub_10332610@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10332610
+0x100044d0 func   ?sub_10071770@CUnk10071770View@@QAEXPBD@Z CUnk10071770View::sub_10071770
 0x100044ee func   ?sub_101c72f0@@YAPAHXZ sub_101c72f0
 0x100044f8 func   ?sub_102e0a60@CUnknown102e0a60@@QAEXH@Z CUnknown102e0a60::sub_102e0a60
 0x1000450c func   ?vfunc546@CNPC_VSabbatGunman@@QAEHH@Z CNPC_VSabbatGunman::vfunc546
