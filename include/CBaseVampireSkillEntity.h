@@ -29,6 +29,8 @@ public:
 	void vfunc103();
 	void vfunc42(void *pEntity);	// slot 42: CBaseEntity::vfunc42, then (skill kind +0x784 1 or 2) stores the entity's value of the feat with that id (CVFeatSet::Find) at +0x790
 	void sub_100a5030(void *pEntity);	// CBaseEntity::vfunc42 (stub 0x10010e60), called directly
+	void vfunc39(void *pEntity);	// slot 39: CBaseEntity::vfunc39, stamps the time at +0x788 and, when the entity's value of the feat of the skill kind (+0x784 1 or 2) exceeds the one at +0x790, runs slot 272
+	void sub_100a4fe0(void *pEntity);	// CBaseEntity::vfunc39 (stub 0x10015262), called directly
 	void sub_10012eef();	// CBreakableProp::vfunc103 (non-virtual base call)
 	CBaseVampireSkillEntity *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
 	void sub_1018f1c0();	// base class constructor body (stub 0x100039bd)
