@@ -4510,6 +4510,7 @@
 0x100144cf func   _item_w_chang_ghost item_w_chang_ghost
 0x100144d9 func   ?sub_10339c10@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10339c10
 0x100144de func   ?vfunc243@CBaseTrigger@@QAEXI@Z CBaseTrigger::vfunc243
+0x100144ed func   ?sub_102801e0@CAI_BaseNPC@@QAEXHPAVCBaseEntity@@H@Z CAI_BaseNPC::sub_102801e0
 0x1001450b func   ?sub_1025db50@@YIDPAH@Z sub_1025db50
 0x10014510 func   ?sub_10032a40@@YIXPAH@Z sub_10032a40
 0x1001451f func   ?sub_10050170@@YAPAHXZ sub_10050170

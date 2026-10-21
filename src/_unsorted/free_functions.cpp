@@ -52211,6 +52211,86 @@ void sub_1027ffe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102801e0 size=0xd5
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CUnknown102ee120.h"
+extern int g_10923a2c, g_10934060, g_10934064, g_10934068;
+extern float g_1049a154;
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CNpcSlots563X {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21) SV10(22) SV10(23) SV10(24) SV10(25) SV10(26) SV10(27) SV10(28) SV10(29)
+	SV10(30) SV10(31) SV10(32) SV10(33) SV10(34) SV10(35) SV10(36) SV10(37) SV10(38) SV10(39)
+	SV10(40) SV10(41) SV10(42) SV10(43) SV10(44) SV10(45) SV10(46) SV10(47) SV10(48) SV10(49)
+	SV10(50) SV10(51) SV10(52) SV10(53) SV10(54) SV10(55)
+	SV(560) SV(561) SV(562)
+	virtual void s563(CBaseEntity *pEnt, float *pDest, void *pParams, int *pA);
+};
+
+struct CEntityOriginSlotsX {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20)
+	SV10(21)
+	virtual float *s220();
+};
+
+struct CNavGoalX {
+	int m_type;
+	float m_vecDest[3];
+	int m_n10;
+	int m_n14;
+	int m_n18;
+	int m_n1c;
+};
+
+struct CNavParamsX {
+	float m_f00;
+	int m_n04;
+	int m_n08;
+	int m_n0c;
+	int m_n10;
+	int m_n14;
+	int m_n18;
+	int m_n1c;
+
+	CNavParamsX(float flTolerance)
+	{
+		m_f00 = flTolerance;
+		m_n04 = 1;
+		m_n08 = g_10923a2c;
+		m_n0c = g_10934060;
+		m_n10 = g_10934064;
+		m_n14 = g_10934068;
+		m_n18 = 0;
+		m_n1c = 0;
+	}
+};
+
+void CAI_BaseNPC::sub_102801e0(int a, CBaseEntity *pEnt, int c)
+{
+	sub_10280de0(a);
+	*(CBaseEntity **)((char *)this + 0x5de8) = pEnt;
+	float *pOrigin = ((CEntityOriginSlotsX *)pEnt)->s220();
+	CNavGoalX goal;
+	goal.m_type = 3;
+	goal.m_vecDest[0] = pOrigin[0];
+	goal.m_vecDest[1] = pOrigin[1];
+	goal.m_vecDest[2] = pOrigin[2];
+	goal.m_n10 = -1;
+	goal.m_n14 = c;
+	goal.m_n18 = -1;
+	goal.m_n1c = -1;
+	CNavParamsX params(g_1049a154);
+	((CNpcSlots563X *)this)->s563(pEnt, goal.m_vecDest, &params, &a);
+	(*(CUnknown102ee120 **)((char *)this + 0x5d34))->sub_102ecd20(&goal, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280d10 size=0xc
 bool CUnknown10280d10::sub_10280d10()
 {
