@@ -1174,6 +1174,101 @@ void CCollisionEvent::sub_10030d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10031070 size=0x189
+#include "CCollisionEvent.h"
+#include "CUtlVector88.h"
+#include "ScopeTrace.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+
+struct CPhysObjX
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV10(1) PV10(2) PV10(3) PV10(4)
+	PV(50) PV(51)
+	virtual bool vfunc52();
+};
+
+struct CCollisionEventUnit : CCollisionEvent
+{
+	int sub_10031340(CPhysObjX *pObject, float *pPos, float *pVel, char bRecurse);
+};
+
+struct Mem;
+void __fastcall sub_100330d0(Mem *pMem, int num, int num2);
+void *__fastcall sub_101c2690(void *pInfo);
+
+struct CDmgVecX : CUtlVector88
+{
+	char *m_pElements;
+};
+struct CDmgSrcX
+{
+	int d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17;
+	char b0, b1, b2;
+
+	void Copy(const CDmgSrcX *s)
+	{
+		d0 = s->d0;
+		d1 = s->d1;
+		d2 = s->d2;
+		d3 = s->d3;
+		d4 = s->d4;
+		d5 = s->d5;
+		d6 = s->d6;
+		d7 = s->d7;
+		d8 = s->d8;
+		d9 = s->d9;
+		d10 = s->d10;
+		d11 = s->d11;
+		d12 = s->d12;
+		d13 = s->d13;
+		d14 = s->d14;
+		d15 = s->d15;
+		d16 = s->d16;
+		d17 = s->d17;
+		b0 = s->b0;
+		b1 = s->b1;
+		b2 = s->b2;
+	}
+};
+struct CDmgEventX
+{
+	int m_pEntity;
+	int m_unused;
+	CDmgSrcX m_info;
+	char m_bFlag;
+};
+
+// TARGET: CCollisionEvent::sub_10031070
+void CCollisionEvent::sub_10031070(int a, void *pData, int pObject, char bFlag, void *pExtra1, void *pExtra2)
+{
+	ScopeTrace trace("CCollisionEvent::AddDamageEvent", g_106b8540);
+	int elem = m_nDamageEvents;
+	CDmgVecX *pVec = (CDmgVecX *)&m_pDamageEvents;
+	if (elem + 1 > pVec->m_allocationCount)
+		sub_100330d0((Mem *)pVec, elem - pVec->m_allocationCount + 1, elem - pVec->m_allocationCount + 1);
+	pVec->m_size++;
+	pVec->m_pElements = pVec->m_pMemory;
+	pVec->sub_10032bb0(elem, 1);
+	CDmgEventX *pNew = (CDmgEventX *)(pVec->m_pMemory + elem * 88);
+	if (pNew)
+		sub_101c2690(&pNew->m_info);
+	CDmgEventX *pEvent = (CDmgEventX *)(pVec->m_pMemory + elem * 88);
+	pEvent->m_pEntity = a;
+	pEvent->m_info.Copy((const CDmgSrcX *)pData);
+	pEvent->m_unused = pObject;
+	pEvent->m_bFlag = bFlag;
+	if (!pObject || !((CPhysObjX *)pObject)->vfunc52())
+		pEvent->m_bFlag = 0;
+	if (pEvent->m_bFlag) {
+		if (sub_10031270(pObject) < 0)
+			((CCollisionEventUnit *)this)->sub_10031340((CPhysObjX *)pObject, (float *)pExtra1, (float *)pExtra2, 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031270 size=0x92
 #include "CCollisionEvent.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
