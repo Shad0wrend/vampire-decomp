@@ -17115,6 +17115,34 @@ void sub_100b0c00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b0df0 size=0xa4
+#include "IVEngineServer.h"
+#include "ScopeTrace.h"
+struct CUnk100b0df0_Target
+{
+	void sub_1027efb0();	// stub 0x10007829
+};
+struct CUnk100b0df0_Ent
+{
+	char m_pad0000[0x94];
+	CUnk100b0df0_Target *m_pTarget;	// 0x94
+};
+extern IVEngineServer *g_1070b22c;
+void *sub_101193b0();
+CUnk100b0df0_Ent *sub_100d2070(void *pStart, int pszName, CUnk100b0df0_Ent *pPrev);
+
+void sub_100b0df0()
+{
+	ScopeTrace trace("CC_Ent_Trace_Dump_Buffer", g_106b8540);
+	void *pStart = sub_101193b0();
+	int pszName = g_1070b22c->vfunc84(1);
+	for (CUnk100b0df0_Ent *pEnt = sub_100d2070(pStart, pszName, 0); pEnt; pEnt = sub_100d2070(pStart, pszName, pEnt)) {
+		if (pEnt->m_pTarget)
+			pEnt->m_pTarget->sub_1027efb0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b0f60 size=0x7a
 #include "IVEngineServer.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
