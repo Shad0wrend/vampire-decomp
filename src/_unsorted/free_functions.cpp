@@ -21081,6 +21081,38 @@ void sub_100c2bd0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c2f30 size=0x103
+#include "matrix3x4_t.h"
+#include "QAngle.h"
+
+void sub_10137ed0(const matrix3x4_t &matrix, QAngle &angles);
+void sub_10138720(const matrix3x4_t &matrix, int column, Vector &out);
+void sub_1013d7a0(const QAngle &a0, const QAngle &a1, Vector &axis, float &angle);
+
+void sub_100c2f30(Vector &velocity, Vector &angVelocity, const matrix3x4_t &prev, const matrix3x4_t &cur, float dt)
+{
+	float scale = 1.0f;
+	if (dt > 0.0f)
+		scale = 1.0 / dt;
+
+	QAngle prevAngles;
+	Vector prevOrigin;
+	sub_10137ed0(prev, prevAngles);
+	sub_10138720(prev, 3, prevOrigin);
+
+	QAngle curAngles;
+	Vector curOrigin;
+	sub_10137ed0(cur, curAngles);
+	sub_10138720(cur, 3, curOrigin);
+
+	velocity = (curOrigin - prevOrigin) * scale;
+
+	Vector axis;
+	sub_1013d7a0(prevAngles, curAngles, axis, dt);
+	angVelocity = axis * (dt = (dt + 0.0f) * scale);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c30b0 size=0x13a
 #include "matrix3x4_t.h"
 #include "Quaternion.h"
