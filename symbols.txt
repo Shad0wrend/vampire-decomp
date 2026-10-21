@@ -2715,6 +2715,7 @@
 0x1000ca9a func   ?sub_101b1880@@YAXHHPBD@Z sub_101b1880
 0x1000caae func   ?sub_1033e2b0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_1033e2b0
 0x1000cab3 func   _events_player events_player
+0x1000cad1 func   ?vfunc284@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc284
 0x1000cadb func   ?vfunc5@CItemGCashBox@@QAEPAV1@I@Z CItemGCashBox::vfunc5
 0x1000caea func   ?sub_102c6e90@@YIXPAV?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@@Z sub_102c6e90
 0x1000caf4 func   ?sub_1002e970@@YAPAXHHHPAD@Z sub_1002e970

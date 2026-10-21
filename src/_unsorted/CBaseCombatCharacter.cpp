@@ -30,6 +30,26 @@ float CBaseCombatCharacter::vfunc344()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105f30 size=0xd5
+#include "CBaseCombatCharacter.h"
+#include "CBaseFlex.h"
+#include "ScopeTrace.h"
+
+void CBaseCombatCharacter::vfunc284()
+{
+	ScopeTrace trace("CBaseCombatCharacter::AddSceneExpressions", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int nItems = *(int *)((char *)this + 0xa64);
+	for (int i = 0; i < nItems; i++) {
+		CBaseFlexItem *pItem = (CBaseFlexItem *)(*(char **)((char *)this + 0xa58) + i * 0x1c);
+		CBaseFlexItemObject *pObject = pItem->m_pObject;
+		if (pObject->sub_100029c8() == 10 && pObject->sub_1000695b())
+			vfunc289(pItem);
+		pItem->m_b08 = 1;
+		nItems = *(int *)((char *)this + 0xa64);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107120 size=0x134
 #include "CBaseCombatCharacter.h"
 
