@@ -28,6 +28,9 @@ public:
 	char sub_101a7760();	// stub 0x1000db93 for 0x101a7600 then (flag bit 10 of +0x204) remembers the NPC as the search start (+0x5f98) and hands it to CAI_BaseNPC::sub_10279cc0; true when an NPC was found
 	void sub_101a8070();	// "StartScript"-like (scripted.cpp): when sub_101a7760 finds an NPC clears the byte at +0x5f91, runs slot 583 and prints DevMsg(2, "script \"%s\" using NPC \"%s\"\n"); else cancels the script (sub_101a8c30), prints DevMsg(2, "script \"%s\" can't find NPC \"%s\"\n") and retries one second later (next think at +0x17c)
 	void vfunc459();	// slot 459 (declared as a plain member): unless sub_101a8930() holds, clears twelve NPC conditions (and the byte at +0x5b80) of the NPC (object at +0x94) of the entity behind the handle at +0x5ce4
+	void sub_101a7390(int unused);	// "BeginSequence" (takes one unused stack argument): warns when called before the next think (+0x17c) was reached and pushes the time at +0x5f74 out; else, when sub_101a7760 finds an NPC whose NPC object (state +0x5d70 0 or 2) accepts slot 585(1) on its slot 482, runs slot 583; with no NPC behind the handle at +0x5ce4 arms the think function sub_101a8070 and stamps the current time as the next think
+	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd), called directly
+	int sub_100ac4e0(void *pFunc, int a, int b);	// CBaseEntity::ThinkSet (stub 0x10007fe5), called directly
 
 	char m_pad0004[0x204 - 4];
 	unsigned int m_flags204;	// 0x204
