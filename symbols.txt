@@ -1833,6 +1833,7 @@
 0x10007e41 func   ?sub_101d0680@@YA?AVVector@@ABV1@0@Z sub_101d0680
 0x10007e64 func   _phys_hinge phys_hinge
 0x10007e73 func   ?sub_103411c0@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_103411c0
+0x10007e78 func   ?sub_10160560@CBasePlayer@@QAEXXZ CBasePlayer::sub_10160560
 0x10007e7d func   ?vfunc2@CTETextMessage@@UAEPAV1@I@Z CTETextMessage::vfunc2
 0x10007e8c func   ?vfunc5@CBaseAnimatingOverlay@@QAEPAV1@I@Z CBaseAnimatingOverlay::vfunc5
 0x10007e9b func   ?sub_10196f30@@YAPAXPAX0@Z sub_10196f30

@@ -35470,6 +35470,50 @@ void CBasePlayerUnit::sub_1015f9e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160560 size=0xe0
+#include "CBasePlayer.h"
+#include "CBaseCombatWeapon.h"
+
+struct WeaponInfoView_t {
+	char pad0[0x3cc];
+	int n3cc;
+	int n3d0;
+	int n3d4;
+	char pad3d8[0x400 - 0x3d8];
+	float f400;
+};
+
+struct PlayerMeterView_t {
+	char pad0[0x1ddc];
+	float f1ddc;
+};
+
+extern float g_1046fb0c;
+
+void CBasePlayer::sub_10160560()
+{
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e7b0();
+	if (pWeapon && (pWeapon->vfunc360() & 0x6000)) {
+		PlayerMeterView_t *pView = (PlayerMeterView_t *)this;
+		float flFrac = sub_10346070() * 0.1f;
+		float flA = (float)((WeaponInfoView_t *)pWeapon->sub_102517e0())->n3d0;
+		float flB = (float)((WeaponInfoView_t *)pWeapon->sub_102517e0())->n3d4;
+		float flT = (flA - flB) * flFrac + flB;
+		float flU = flT - (float)((WeaponInfoView_t *)pWeapon->sub_102517e0())->n3cc;
+		float flValue = flU * ((WeaponInfoView_t *)pWeapon->sub_102517e0())->f400 + pView->f1ddc;
+		pView->f1ddc = flValue;
+		if (flValue > g_1046fb0c) {
+			flValue = g_1046fb0c;
+			pView->f1ddc = flValue;
+			return;
+		}
+		if (flValue < 0.0f)
+			flValue = 0.0f;
+		pView->f1ddc = flValue;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160680 size=0xd
 extern float g_10725c9c;
 // TARGET: CUnknown10160680::sub_10160680
