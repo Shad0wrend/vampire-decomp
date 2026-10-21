@@ -63178,6 +63178,50 @@ extern "C" CBaseEntity *npc_maker_zombie()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034cf20 size=0xb0
+#include "CNPCMaker.h"
+#include "CGlobalEntityList.h"
+
+struct COwnerView
+{
+	char pad[0x254];
+	unsigned int m_hTarget254;
+	void sub_103e0980(int a);
+};
+struct CEntView
+{
+	char pad[0x98];
+	COwnerView *m_pOwner98;
+};
+
+extern char g_106b8540[];
+extern CGlobalEntityList *g_10566458;
+extern CGlobalEntityList g_106eb5d8;
+
+void CNPCMaker::sub_1034cf20(int a, char bNotify)
+{
+	*(int *)((char *)this + 0x76d0) = a;
+	if (bNotify) {
+		const char *pszName = *(const char **)((char *)this + 0x66bc);
+		if (!pszName)
+			pszName = g_106b8540;
+		for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, pszName, 0, 0); pEnt; pEnt = g_106eb5d8.sub_100f7770(pEnt, pszName, 0, 0)) {
+			COwnerView *pOwner = ((CEntView *)pEnt)->m_pOwner98;
+			if (pOwner) {
+				unsigned int h = pOwner->m_hTarget254;
+				CGlobalEntityList_Slot *slot;
+				CGlobalEntityList_Ent *pTarget = (h != 0xffffffff && (slot = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13)) ? slot->m_pEntity : 0;
+				if ((CNPCMaker *)pTarget == this)
+					pOwner->sub_103e0980(a);
+			}
+			pszName = *(const char **)((char *)this + 0x66bc);
+			if (!pszName)
+				pszName = g_106b8540;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d490 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
