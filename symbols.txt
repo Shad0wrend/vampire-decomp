@@ -1951,6 +1951,7 @@
 0x1000866b func   ?vfunc223@CFuncKeyframedMover@@QAE_NXZ CFuncKeyframedMover::vfunc223
 0x10008684 func   ?vfunc5@CFuncAreaPortalBase@@QAEPAV1@I@Z CFuncAreaPortalBase::vfunc5
 0x1000868e func   ?sub_1007ecf0@CUnknown1007ecf0@@QAEXD@Z CUnknown1007ecf0::sub_1007ecf0
+0x10008693 func   ?sub_100becc0@bf_read@@QAEXAAVVector@@@Z bf_read::sub_100becc0
 0x10008698 func   _item_w_chang_claw item_w_chang_claw
 0x1000869d func   _npc_VBach npc_VBach
 0x100086c0 func   ?sub_102e0150@CUnknown102e0150@@QAEMPAX@Z CUnknown102e0150::sub_102e0150
