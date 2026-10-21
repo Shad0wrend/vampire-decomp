@@ -1773,6 +1773,7 @@
 0x10008558 func   _npc_VHumanCombatPatrol npc_VHumanCombatPatrol
 0x10008562 func   ?sub_101815b0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_101815b0
 0x10008571 func   ?sub_102d74c0@@YAPAUCEnt5f44@@XZ sub_102d74c0
+0x100085a8 func   ?sub_1003d490@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003d490
 0x100085ad func   _game_sign game_sign
 0x100085b2 func   ?vfunc28@CRestore@@UAEHPAPAVCBaseEntity@@HH@Z CRestore::vfunc28
 0x100085bc func   ?sub_102f45f0@CUnknown102f45f0@@QAEXPBUCachedPos_t@@HH@Z CUnknown102f45f0::sub_102f45f0

@@ -2755,6 +2755,56 @@ void CBaseEntity::sub_1003d300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003d490 size=0x146
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+struct STouchLink
+{
+	unsigned int m_handle;
+	int m_stamp;
+	STouchLink *m_pNext;
+	STouchLink *m_pPrev;
+};
+
+extern CGlobalEntityList *g_10566458;
+void sub_1003d640(CBaseEntity *pThis, CBaseEntity *pOther);
+void sub_1003d770(CBaseEntity *pThis, STouchLink *pLink);
+
+inline CBaseEntity *LookupEnt(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13))
+			return (CBaseEntity *)pSlot->m_pEntity;
+	}
+	return 0;
+}
+
+void CBaseEntity::sub_1003d490()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsCheckForEntityUntouch", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	STouchLink *pRoot = (STouchLink *)sub_1003cd50(1);
+	if (pRoot) {
+		STouchLink *pLink = pRoot->m_pNext;
+		while (pLink != pRoot) {
+			STouchLink *pNext = pLink->m_pNext;
+			if (pLink->m_stamp == -1) {
+				sub_1003daa0(LookupEnt(pLink->m_handle));
+			} else if (pLink->m_stamp != *(int *)((char *)this + 0x1ac)) {
+				sub_1003d640(this, LookupEnt(pLink->m_handle));
+				sub_1003d770(this, pLink);
+			}
+			pLink = pNext;
+		}
+		if (pRoot->m_pNext == pRoot && pRoot->m_pPrev == pRoot)
+			sub_1003d130(1);
+	}
+	vfunc6(false);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003d640 size=0xe7
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
