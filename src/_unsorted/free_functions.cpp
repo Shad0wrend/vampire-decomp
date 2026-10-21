@@ -24385,6 +24385,51 @@ float *CUnknown100dc9f0::sub_100dc9f0(const float *pPoint, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dcb30 size=0xb5
+#include "CCollisionProperty.h"
+#include "matrix3x4_t.h"
+extern Vector g_1070d9d0;
+void sub_100087ba(const float *in, const float *mat, float *out);
+struct CCollisionOriginView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual float *GetCollisionOrigin();
+};
+
+namespace block_100dc9a0 {
+struct CCollisionPropertyUnit : CCollisionProperty {
+	void sub_100dc9a0(const Vector &in, Vector &out);
+};
+void CCollisionPropertyUnit::sub_100dc9a0(const Vector &in, Vector &out)
+{
+	out.x = (m_vecMaxs.x - m_vecMins.x) * in.x + m_vecMins.x;
+	out.y = (m_vecMaxs.y - m_vecMins.y) * in.y + m_vecMins.y;
+	out.z = (m_vecMaxs.z - m_vecMins.z) * in.z + m_vecMins.z;
+}
+}
+using namespace block_100dc9a0;
+
+// TARGET: CCollisionProperty::sub_100dcb30
+Vector *CCollisionProperty::sub_100dcb30(const Vector &in, Vector *pResult)
+{
+	Vector local;
+	((CCollisionPropertyUnit *)this)->sub_100dc9a0(in, local);
+	if (!(m_usSolidFlags & 0x80) && m_nSolidType != 2 && m_nSolidType != 0) {
+		float *ang = vfunc9(0);
+		if (g_1070d9d0.x != ang[0] || g_1070d9d0.y != ang[1] || g_1070d9d0.z != ang[2]) {
+			float *mat = vfunc10();
+			sub_100087ba(&local.x, mat, &pResult->x);
+			return pResult;
+		}
+	}
+	float *org = ((CCollisionOriginView *)this)->GetCollisionOrigin();
+	pResult->x = local.x + org[0];
+	pResult->y = local.y + org[1];
+	pResult->z = local.z + org[2];
+	return pResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dcc20 size=0xb0
 #include "CCollisionProperty.h"
 #include "CUnknown100dc9f0.h"
