@@ -29,6 +29,8 @@ struct CBaseEntityThinkContext	// 16 byte element of the think context vector at
 class CBaseEntity
 {
 public:
+	CBaseEntity(char bAddAsDefault);	// "CBaseEntity::CBaseEntity" (0x1009d980, stub 0x100090fc): the entity base constructor; a derived constructor calls it first and stores its vftable afterwards
+
 	// The head of the (269 slot) virtual table; declare further slots as code needs them,
 	// keeping the slot numbers right.
 	virtual void vfunc0();
