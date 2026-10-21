@@ -4763,6 +4763,7 @@
 0x10012bb6 func   ?vfunc103@CFunc_LOD@@UAEXXZ CFunc_LOD::vfunc103
 0x10012bc5 func   ?vfunc318@CBasePlayer@@UAE_NHPAUmelee_dice_roll_result@@H@Z CBasePlayer::vfunc318
 0x10012bd4 func   _info_node_chang_jumpbase info_node_chang_jumpbase
+0x10012be8 func   ?sub_1016bb50@CBasePlayerUnit@@QAEHXZ CBasePlayerUnit::sub_1016bb50
 0x10012bf2 func   ?sub_10091c80@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10091c80
 0x10012bfc func   ?vfunc19@CMultiplayRules@@UAEDPAVCBaseEntity@@0@Z CMultiplayRules::vfunc19
 0x10012c10 func   ?sub_1010a370@CFire@@QAEXHM@Z CFire::sub_1010a370

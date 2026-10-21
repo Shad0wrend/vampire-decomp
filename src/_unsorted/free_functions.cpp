@@ -35598,6 +35598,57 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016bb50 size=0x18f
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+
+extern float g_104454c4;
+
+struct CBasePlayerUnit : CBasePlayer
+{
+	int sub_1016bb50();
+	char sub_101664d0();
+	char sub_1033b7c0();
+	char sub_10160ec0();
+	int sub_100b3700();
+};
+
+#define FLD(type, off) (*(type *)((char *)this + (off)))
+
+int CBasePlayerUnit::sub_1016bb50()
+{
+	if (FLD(char, 0x1cb0) && FLD(int, 0x1cb4) != 0xc)
+		FLD(char, 0x1cb0) = 0;
+	if (sub_101664d0())
+		return 0xb;
+	if (FLD(int, 0x1db4) > 0 && FLD(int, 0x3e0) == 0)
+		return 2;
+	if (FLD(char, 0x1cb0))
+		return FLD(int, 0x1cb4);
+	if ((FLD(char, 0x14aa) && FLD(char, 0x14a8)) || sub_1033b7c0())
+		return 7;
+	if (EHandle_Get(FLD(unsigned int, 0x1040)))
+		return 10;
+	if (FLD(int, 0x3e0) > 1)
+	{
+		if (FLD(int, 0x3e0) >= 3 || !(sub_100b3700() & 1))
+			return 9;
+	}
+	if (sub_10160ec0())
+		return 0xd;
+	if (FLD(float, 0x3d4) == g_104454c4 && FLD(float, 0x3d8) == g_104454c4)
+		return 0;
+	if (FLD(float, 0x3d4) != g_104454c4 || FLD(float, 0x3d8) != g_104454c4)
+	{
+		if (sub_100b3700() & 1)
+			return 1;
+	}
+	if (EHandle_Get(FLD(unsigned int, 0x1538)) && FLD(int, 0x153c) == 0)
+		return 8;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016bd50 size=0x89
 #include "CBasePlayer.h"
 #include "CBaseAnimating.h"
