@@ -5,6 +5,8 @@
 // workers do not overwrite each other's edits of this large file.
 #pragma once
 
+#include "Vector.h"
+
 class CRestore;
 class CEntityMapData;
 struct inputdata_t;
