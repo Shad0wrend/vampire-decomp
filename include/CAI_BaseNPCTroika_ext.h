@@ -4,3 +4,4 @@
 	void vfunc532(int a);	// slot 532 (plain member): by a (1, 2, 4, 8) and the scripted-action state at +0x644c (1..4) ends the alternate action: slot 448(0xe) with the handle at +0x5d24 and the byte at +0x5d30 cleared, or the navigator at +0x5d34 decides (sub_102ee2e0) to run sub_102bf7e0; clears the state; then CAI_BaseNPC::vfunc532(a)
 	void sub_1027e0f0(int a);	// CAI_BaseNPC::vfunc532 (stub 0x10011d7e), called directly
 	void sub_102bf7e0();	// stub 0x100151ae, run by the alternate action end
+	int sub_1029f370(const char *pszName);	// "LookupSchedule" (local id of a schedule by name): the global id of the name, else of "SCHED_<name>", else of "SCHED_TROIKA_<name>" (DevMsg "Could not find schedule" and 0 when none), translated to the local id through slot 580 (DevMsg "Could not convert schedule" and 0 when unknown)
