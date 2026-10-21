@@ -49432,6 +49432,26 @@ SendProp sub_10246ca0(const char *pszVarName, int a2, int a3, int a4, int a5)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10246dc0 size=0xe4
+#include "SendProp.h"
+
+void sub_10009539();
+void sub_10011cac();
+
+SendProp sub_10246dc0(const char *pVarName, int a, int b, void *pProxy)
+{
+    SendProp ret;
+    ret.m_n08 = 5;
+    ret.m_pszVarName = pVarName;
+    ret.m_n4c = a;
+    ret.m_n48 = b;
+    ret.m_n44 = (int)pProxy;
+    if (pProxy == (void *)sub_10009539 || pProxy == (void *)sub_10011cac)
+        ret.m_nFlags = 0x200;
+    return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246ef0 size=0xdf
 #include "SendProp.h"
 
