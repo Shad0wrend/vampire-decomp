@@ -2057,6 +2057,7 @@
 0x10009737 func   ?sub_10046ba0@CUtlVector56@@QAEHH@Z CUtlVector56::sub_10046ba0
 0x1000973c func   ?sub_100eb420@CUnknown100eb420@@QAE_NXZ CUnknown100eb420::sub_100eb420
 0x1000975a func   ?vfunc0@CTraceFilterValidForDecal@CDecal@@UAE_NPAXH@Z CDecal::CTraceFilterValidForDecal::vfunc0
+0x1000975f func   ?vfunc103@CPayphone@@UAEXXZ CPayphone::vfunc103
 0x10009764 func   ?sub_100c98e0@@YIXPAD@Z sub_100c98e0
 0x1000976e func   ?sub_10140bd0@CScaleFields10140bd0@@QAEMMM@Z CScaleFields10140bd0::sub_10140bd0
 0x10009778 func   _mover_keyframe mover_keyframe
