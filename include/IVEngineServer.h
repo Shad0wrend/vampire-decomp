@@ -30,8 +30,10 @@ public:
 	virtual void vfunc66();	// slot 66 (+0x108): MessageEnd
 	virtual void vfunc67(int nValue);	// slot 67 (+0x10c): a message write taking one value
 	virtual void vfunc68(); virtual void vfunc69();
-	virtual void vfunc70(); virtual void vfunc71(int nValue);	// slot 71 (+0x11c): a message write taking one value
-	virtual void vfunc72(); virtual void vfunc73(); virtual void vfunc74();
+	virtual void vfunc70();
+	virtual void vfunc71(int nValue);	// slot 71 (+0x11c): a message write taking one value
+	virtual void vfunc72(float flValue);	// slot 72 (+0x120): a message write taking a float
+	virtual void vfunc73(); virtual void vfunc74();
 	virtual void vfunc75(int nValue);	// slot 75 (+0x12c): WriteByte
 	virtual void vfunc76(); virtual void vfunc77();
 	virtual void vfunc78(int nValue);	// slot 78 (+0x138): a message write taking one value
