@@ -72866,6 +72866,39 @@ char sub_103c51c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c63c0 size=0x14d
+#include "CNPC_VVampireBoss.h"
+#include "CVStatList_t.h"
+#include "COutputEvent.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+struct CGlobalVarsTime { int pad0[3]; float curtime; };
+extern CGlobalVarsTime *g_1070b228;
+extern CGlobalEntityList *g_10566458;
+extern float g_104ce8bc;
+extern char g_10538764[];
+extern char g_1062a654[];
+
+void CNPC_VVampireBoss::sub_103c63c0()
+{
+	ScopeTrace trace("CNPC_VVampireBoss::WaitForTransformation", g_106b8540);
+	if (g_104ce8bc + *(float *)((char *)this + 0x1560) < g_1070b228->curtime) {
+		CVStatListSet::Of(this)->Find(0)->sub_10200be0(0xf, 0);
+		unsigned int h = *(unsigned int *)((char *)this + 0x66b0);
+		if (h != 0xffffffff) {
+			CGlobalEntityList_Slot *slot = &g_10566458->m_Slots[h & 0x1fff];
+			if (slot->m_Serial == (int)(h >> 13) && slot->m_pEntity) {
+				void *p = __RTDynamicCast(slot->m_pEntity, 0, g_10538764, g_1062a654, 0);
+				if (p)
+					((COutputEvent *)((char *)p + 0x6664))->sub_100cd660(this, this, 0);
+			}
+		}
+		sub_1000ac68(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c6a90 size=0xa5
 #include "CNPC_VVampireBoss.h"
 
