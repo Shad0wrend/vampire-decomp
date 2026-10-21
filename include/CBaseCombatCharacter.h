@@ -8,6 +8,7 @@
 #include "QAngle.h"
 
 struct inputdata_t;
+struct CBaseFlexItem;
 
 #define CBCC_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -37,7 +38,12 @@ public:
 	virtual int vfunc254(int a, int b, int c);
 	// Placeholder slots 255..373.
 	virtual void c255(); virtual void c256(); virtual void c257(); virtual void c258(); virtual void c259();
-	CBCC_SLOTS10(c26) CBCC_SLOTS10(c27) CBCC_SLOTS10(c28) CBCC_SLOTS10(c29) CBCC_SLOTS10(c30) CBCC_SLOTS10(c31)
+	CBCC_SLOTS10(c26) CBCC_SLOTS10(c27)
+	virtual void c280(); virtual void c281(); virtual void c282(); virtual void c283();
+	virtual void vfunc284();	// "CBaseCombatCharacter::AddSceneEx...": scope trace (entity name), runs every queued scene item of the vector at +0xa58 (0x1c byte elements, count at +0xa64): a type 10 item whose object is set goes to slot 289, then the item is marked handled (byte +8)
+	virtual void c285(); virtual void c286(); virtual void c287(); virtual void c288();
+	virtual void vfunc289(CBaseFlexItem *pItem);	// slot 289: starts a queued scene item
+	CBCC_SLOTS10(c29) CBCC_SLOTS10(c30) CBCC_SLOTS10(c31)
 	CBCC_SLOTS10(c32) CBCC_SLOTS10(c33) CBCC_SLOTS10(c34) CBCC_SLOTS10(c35) CBCC_SLOTS10(c36)
 	virtual void c370(); virtual void c371(); virtual void c372(); virtual void c373();
 	virtual int vfunc374(int count, int ammoIndex, int unused);	// slot 374 "CBaseCombatCharacter::GiveAmmo" by index
