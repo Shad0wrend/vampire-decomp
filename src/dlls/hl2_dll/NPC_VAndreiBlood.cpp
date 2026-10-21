@@ -20,3 +20,20 @@ void CNPC_VAndreiBlood::vfunc113()
 	sub_102ae750(0x6b, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1035dd00 size=0x9c
+#include "CNPC_VAndreiBlood.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+void CNPC_VAndreiBlood::sub_1035dd00(inputdata_t *pInput)
+{
+    ScopeTrace st("CNPC_VAndreiBlood::InputTriggerCombat", g_106b8540);
+    *((char *)this + 0x66cc) = 1;
+    ((CBaseCombatCharacter *)this)->sub_10332aa0(1, 1, 10);
+    vfunc461();
+    *(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAndreiBlood.cpp";
+    *(int *)((char *)this + 0x1b34) = 0x1da;
+    sub_102ae750(0x15c, 0);
+}
+// END FUNCTION
