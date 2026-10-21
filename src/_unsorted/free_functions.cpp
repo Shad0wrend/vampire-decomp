@@ -11654,6 +11654,53 @@ void __fastcall sub_10081eb0(CSlots *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100821f0 size=0x169
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "CUnknown1007a2c0.h"
+
+extern "C" void *__cdecl __RTDynamicCast(void *inptr, long VfDelta, void *SrcType, void *TargetType, int isReference);
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_1053dd10[];	// type descriptor of CBaseAnimating
+
+struct CSceneElementX
+{
+	char *sub_10072d90();	// the element's name (this + 0x14), stub 0x10008a99
+};
+
+void CSceneEntity::sub_100821f0(int mode)
+{
+	if (mode) {
+		for (int i = 0; i < ((CUnknown1007a2c0 *)m_pScene4bc)->sub_1007a2a0(); i++) {
+			CSceneElementX *pElement = (CSceneElementX *)((CUnknown1007a2c0 *)m_pScene4bc)->sub_1007a2c0(i);
+			if (pElement) {
+				CBaseEntity *pEnt = vfunc268(pElement->sub_10072d90(), 0);
+				if (pEnt) {
+					CBaseAnimating *pAnim = (CBaseAnimating *)__RTDynamicCast(pEnt, 0, g_10538764, g_1053dd10, 0);
+					if (pAnim) {
+						if (mode == 1) {
+							((CEntityVSlots *)pEnt)->slot216(((CEntityVSlots *)this)->slot217());
+							((CEntityVSlots *)pEnt)->slot218(((CEntityVSlots *)this)->slot219());
+							*(unsigned int *)((char *)pEnt + 0x19c) |= 0x10;
+							pAnim->sub_10090bc0(0x10);
+						} else if (mode == 2) {
+							Vector vOrigin = *(Vector *)((char *)pElement + 0x17c);
+							((CEntityVSlots *)pEnt)->slot216(&vOrigin);
+							Vector vAngles = *(Vector *)((char *)pElement + 0x188);
+							((CEntityVSlots *)pEnt)->slot218(&vAngles);
+							*(unsigned int *)((char *)pEnt + 0x19c) |= 0x10;
+							pAnim->sub_10090bc0(0x10);
+						} else if (mode == 3) {
+							pAnim->sub_1008eec0("bip01", 1, 1);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100828d0 size=0xcc
 #define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();

@@ -4826,6 +4826,7 @@
 0x100136b0 func   ??0CRopeSimBase@@QAE@PAXH0@Z CRopeSimBase::CRopeSimBase
 0x100136b5 func   ?sub_101f0270@@YIPAHPAHHH@Z sub_101f0270
 0x100136c4 func   ?sub_1025e140@@YIXPAUMem4@@HH@Z sub_1025e140
+0x100136ce func   ?sub_100821f0@CSceneEntity@@QAEXH@Z CSceneEntity::sub_100821f0
 0x100136d3 func   ?vfunc104@CNPC_VTest@@UAEXXZ CNPC_VTest::vfunc104
 0x100136f1 func   _item_w_ithaca_m_37 item_w_ithaca_m_37
 0x10013700 func   ?sub_10323210@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10323210
