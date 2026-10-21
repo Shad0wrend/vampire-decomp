@@ -2644,6 +2644,7 @@
 0x1000d085 func   ?vfunc502@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc502
 0x1000d08a func   ?sub_1009b2c0@CBaseEntity@@QAEXHH@Z CBaseEntity::sub_1009b2c0
 0x1000d0a3 func   ?sub_10106a40@@YIHPAVCBaseAnimating@@HH@Z sub_10106a40
+0x1000d0b7 func   ?sub_10135840@CLogicNPCCondition@@QAE_NXZ CLogicNPCCondition::sub_10135840
 0x1000d0bc func   ?sub_100e1880@CDialog@@QAEPADH@Z CDialog::sub_100e1880
 0x1000d0c1 func   ?vfunc491@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc491
 0x1000d0d5 func   ?vfunc5@CTEBreakModel@@QAEXXZ CTEBreakModel::vfunc5

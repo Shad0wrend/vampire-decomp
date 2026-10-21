@@ -23270,6 +23270,31 @@ CBaseEntity *CLogicNPCCondition::sub_10135720()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135840 size=0x7c
+#include "CLogicNPCCondition.h"
+#include "CAI_BaseNPC.h"
+
+extern void (*g_109f364c)(const char *fmt, ...);
+extern char g_106b8540[];
+
+// TARGET: CLogicNPCCondition::sub_10135840
+bool CLogicNPCCondition::sub_10135840()
+{
+	if (m_nCondition <= 0)
+	{
+		g_109f364c("%s has invalid condition %s!\n", sub_1000b5cd(), m_name450 ? m_name450 : g_106b8540);
+		return false;
+	}
+	CBaseEntity *pNPC = sub_10135720();
+	if (!pNPC)
+	{
+		g_109f364c("%s was unable to find target NPC: %s\n", sub_1000b5cd(), m_name454 ? m_name454 : g_106b8540);
+		return false;
+	}
+	return ((CAI_BaseNPC *)pNPC)->sub_10269aa0(m_nCondition);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135a20 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
