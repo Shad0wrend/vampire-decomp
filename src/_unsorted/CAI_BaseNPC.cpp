@@ -923,6 +923,66 @@ unsigned int CAI_BaseNPC::vfunc423()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10289d10 size=0x167
+#include "CAI_BaseNPC.h"
+#include "CAI_Motor.h"
+#include <math.h>
+
+struct SNPCTurnView
+{
+	char m_pad0000[0x5d44];
+	CAI_Motor *m_pMotor;	// 0x5d44
+	char m_pad5d48[0x5d8c - 0x5d48];
+	unsigned int m_nFlags;	// 0x5d8c
+};
+
+struct CAI_BaseNPCUnit : CAI_BaseNPC
+{
+	void sub_10289d10();	// "CAI_BaseNPC::TurnActivity"-like: picks the turn activity by the yaw difference to the ideal yaw
+	void sub_10272650(int activity);	// sets the ideal activity (stub 0x100097d2)
+};
+
+void CAI_BaseNPCUnit::sub_10289d10()
+{
+	SNPCTurnView *pView = (SNPCTurnView *)this;
+	float flYaw = pView->m_pMotor->sub_102e1f90();
+	if (flYaw <= -80.0f && flYaw >= -100.0f) {
+		if (sub_1008dc40(0xa2, -1) != -1) {
+			pView->m_nFlags |= 0x2000;
+			sub_10272650(0xa2);
+			return;
+		}
+	}
+	if (flYaw >= 80.0f && flYaw <= 100.0f) {
+		if (sub_1008dc40(0xa1, -1) != -1) {
+			pView->m_nFlags |= 0x2000;
+			sub_10272650(0xa1);
+			return;
+		}
+	}
+	if (fabs(flYaw) >= 160.0) {
+		if (sub_1008dc40(0x9d, -1) != -1) {
+			pView->m_nFlags |= 0x2000;
+			sub_10272650(0x9d);
+			return;
+		}
+	}
+	if (flYaw <= -45.0f) {
+		if (sub_1008dc40(0x3c, -1) != -1) {
+			sub_10272650(0x3c);
+			return;
+		}
+	}
+	if (flYaw >= 45.0f) {
+		if (sub_1008dc40(0x3b, -1) != -1) {
+			sub_10272650(0x3b);
+			return;
+		}
+	}
+	sub_10272650(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10289f20 size=0x8e
 #include "CAI_BaseNPC.h"
 #include "CUnknown1027d990.h"
