@@ -18252,6 +18252,33 @@ void CDialog::sub_100e0a40(const char *pszSound)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e15c0 size=0x82
+#include "CDialog.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+extern unsigned char g_10454660[];
+extern unsigned char g_1045466c[];
+char __cdecl sub_100df030(DialogLine *pLine);
+
+char CDialog::sub_100e15c0(DialogLine *pLine, char bExtended)
+{
+	int clan = sub_100e65d0();
+	if (clan != -1 && *(int *)((char *)pLine + 0x18 + clan * 4) != 0) {
+		if (bExtended)
+			return g_10454660[clan];
+		return g_1045466c[clan];
+	}
+	CGlobalEntityList_Slot *pSlot;
+	CBaseCombatCharacter *pNpc = (m_hNPC != 0xffffffff && (pSlot = &g_10566458->m_Slots[m_hNPC & 0x1fff], pSlot->m_Serial == (int)(m_hNPC >> 13)))
+		? (CBaseCombatCharacter *)pSlot->m_pEntity : 0;
+	if (pNpc->sub_10336920() || !sub_100df030(pLine))
+		return 0x45;
+	return 0x46;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1880 size=0x11a
 #include "CDialog.h"
 #include "ScopeTrace.h"
