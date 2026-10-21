@@ -1464,6 +1464,7 @@
 0x10006a19 func   ?vfunc32@CPhysicsPropContested@@UAE_NH@Z CPhysicsPropContested::vfunc32
 0x10006a46 func   ?sub_101251b0@CHolderOuter8@@QAE_NXZ CHolderOuter8::sub_101251b0
 0x10006a4b func   ?sub_1008de20@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008de20
+0x10006a5f func   ?sub_100b2f50@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_100b2f50
 0x10006a78 func   ?sub_102729d0@CAI_BaseNPC@@QAEPAVCBaseEntity@@XZ CAI_BaseNPC::sub_102729d0
 0x10006a7d func   _func_lod func_lod
 0x10006a82 func   ?sub_100fdce0@CUnknown100fdce0@@QAEXH@Z CUnknown100fdce0::sub_100fdce0
