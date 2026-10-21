@@ -16889,6 +16889,28 @@ void sub_100b0850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b0980 size=0x86
+#include "ScopeTrace.h"
+#include "CTakeDamageInfo.h"
+
+struct CDamageTarget
+{
+	int sub_100a1250(CTakeDamageInfo *pInfo);	// TakeDamage (stub 0x1000ad5d)
+};
+
+CDamageTarget *__cdecl sub_101193b0();
+
+void sub_100b0980()
+{
+	ScopeTrace trace("CC_ENT_TakeDamageSelf", g_106b8540);
+	CDamageTarget *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		CTakeDamageInfo info;
+		pPlayer->sub_100a1250(info.sub_101c26d0(pPlayer, pPlayer, 5.0f, 0, 0, 0, -1));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b0ad0 size=0x7a
 #include "IVEngineServer.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

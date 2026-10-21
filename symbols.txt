@@ -3476,6 +3476,7 @@
 0x1000ef25 func   ?vfunc309@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc309
 0x1000ef2f func   ?vfunc274@CPropPadlock@@QAEXXZ CPropPadlock::vfunc274
 0x1000ef34 func   ?vfunc41@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc41
+0x1000ef39 func   ?sub_100b0980@@YAXXZ sub_100b0980
 0x1000ef4d func   ?sub_102e7e20@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e7e20
 0x1000ef52 func   ?sub_10074a30@CUnknown10074a30@@QAEXD@Z CUnknown10074a30::sub_10074a30
 0x1000ef7a func   _item_g_warrens4_passkey item_g_warrens4_passkey
