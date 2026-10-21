@@ -76,6 +76,42 @@ void CCollisionEvent::vfunc0(void *pEventArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100315c0 size=0xe5
+#include "CCollisionEvent.h"
+#include "ScopeTrace.h"
+
+struct CVec3 { float x, y, z; };
+
+struct IPhysObjUnit
+{
+    virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+    virtual void *GetGameData();
+};
+
+struct IPhysCollisionDataUnit
+{
+    virtual void GetSurfaceNormal(CVec3 &v);
+    virtual void GetContactPoint(CVec3 &v);
+};
+
+void CCollisionEvent::vfunc3(void *pObject1, void *pObject2, void *pData)
+{
+    ScopeTrace trace("CCollisionEvent::StartTouch", g_106b8540);
+    void *pEntity1 = ((IPhysObjUnit *)pObject1)->GetGameData();
+    void *pEntity2 = ((IPhysObjUnit *)pObject2)->GetGameData();
+    if (pEntity1 && pEntity2) {
+        CVec3 vecA, vecB;
+        ((IPhysCollisionDataUnit *)pData)->GetContactPoint(vecB);
+        ((IPhysCollisionDataUnit *)pData)->GetSurfaceNormal(vecA);
+        if (!*((char *)this + 0x13c)) {
+            sub_10030ba0(pEntity1, pEntity2, &vecB, &vecA);
+            return;
+        }
+        sub_10030f30(pEntity1, pEntity2, 0, &vecB, &vecA);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100316f0 size=0xd9
 #include "CCollisionEvent.h"
 #include "ScopeTrace.h"
