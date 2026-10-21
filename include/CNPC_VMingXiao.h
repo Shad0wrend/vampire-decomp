@@ -47,8 +47,19 @@ public:
 	void sub_10395750(int a, CTakeDamageInfo *pInfo, void *pWeapon);	// stub 0x10008170
 	float vfunc603(float *pCurrent, float *pTarget);	// slot 603: picks a random turn angle (global random stream 0x1070b244, slot 1 RandomFloat) from how far *pCurrent is from *pTarget (32.0f window): within it +-30; below it *pCurrent follows the target and a coin flip (slot 2) picks 170..179 or -170..-179; above it a coin flip picks 80..120 or -80..-120
 	void sub_10398890(const float *pOrigin, int nMode, Vector *pOutPoint, Vector *pOutAxis);	// the tip trace points: pOutPoint = the origin + the vector at +0x6290 scaled, plus (mode 4) or minus the vector at +0x629c scaled; pOutAxis = the vector at +0x6290
+	void sub_10397930(int index);	// resets tentacle slot [index]: clears the handle (+0x66a8) and flag (+0x6684) and the new-tentacle handle (+0x668c), copies a float of the global 0x10739d08 object to +0x66dc, stamps curtime + 10.0f / + 1.0f at +0x66c4 / +0x66f4, then starts the gesture 0x1124 + index (AddGesture)
 
 	char m_pad03e0[0x6290 - 0x3e0];
 	Vector m_vecAxis6290;	// +0x6290
 	Vector m_vecExtent629c;	// +0x629c
+	char m_pad62a8[0x6684 - 0x62a8];
+	char m_bSlotFlag[6];	// +0x6684
+	char m_pad668a[2];
+	int m_hSlotNew[6];	// +0x668c
+	float m_flTime66a4;	// +0x66a4
+	int m_hSlotOld[6];	// +0x66a8
+	char m_pad66c0[4];
+	float m_flSlotTimeA[6];	// +0x66c4
+	float m_flSlotValue[6];	// +0x66dc
+	float m_flSlotTimeB[6];	// +0x66f4
 };
