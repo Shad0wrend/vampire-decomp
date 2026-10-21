@@ -131,6 +131,9 @@ public:
 	bool sub_102edd50(const Vector *pPosition, float flDistance, int c, int d, int e, Vector *pOut, int f);	// as sub_102edae0 with the six argument node search (sub_10302320); pOut is the sixth argument
 	bool sub_102ed9c0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, Vector *pOut);	// as sub_102edae0 with the seven argument node search (sub_10302e50); pOut is the eighth argument
 	Vector *sub_102ee9c0(Vector *pOut, int index);	// the position of graph node `index` (stub 0x10008869)
+	bool sub_102ed540(float flMin, float flMax, int c);	// up to 5 tries: a random distance in [flMin, flMax] (re-rolled each try) along a random heading, handed to sub_102ed610 with flMin; the first success wins; else sub_102ed940(1.0f, vec3_origin, c)
+	bool sub_102ed610(const Vector *pDir, float flDist, float flMax, int c);	// stub 0x10005ad3: tries the point flDist along pDir from the owner's origin
+	bool sub_102ed940(float f, const Vector *pVec, int c);	// stub 0x10007afe: refreshes the stamps of this and of the pathfinder, then hands the owner's origin on
 
 	int m_i14;
 	int m_i18;
