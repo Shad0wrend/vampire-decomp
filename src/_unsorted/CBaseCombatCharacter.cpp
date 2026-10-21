@@ -1,6 +1,37 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10053e20 size=0x127
+#include "ScopeTrace.h"
+struct GlobalVarsView {
+    char pad[0xc];
+    float curtime;
+};
+extern GlobalVarsView *g_1070b228;
+struct ShakyFields {
+    char pad[0x1044];
+    int m_nStamp;
+    float m_flTime;
+    int m_n104c;
+    float m_flAmount;
+};
+void __fastcall sub_10053e20(CBaseEntity *self, int unused, float flDelay, float flAmount, int stamp)
+{
+    ScopeTrace trace("CBaseCombatCharacter::SetShakyHands", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+    ShakyFields *p = (ShakyFields *)self;
+    if (stamp >= p->m_nStamp) {
+        p->m_nStamp = stamp;
+        p->m_flTime = flDelay + g_1070b228->curtime;
+        p->m_flAmount = flAmount > 1.0f ? 1.0f : (flAmount < 0.0f ? 0.0f : flAmount);
+    } else if (stamp == -1) {
+        p->m_nStamp = -1;
+        p->m_flTime = 0.0f;
+        p->m_flAmount = 0.0f;
+        p->m_n104c = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10053fa0 size=0x8f
 #include "CBaseCombatCharacter.h"
 
