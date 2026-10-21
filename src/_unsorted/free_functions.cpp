@@ -49953,6 +49953,43 @@ extern "C" CBaseEntity *events_world()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023db70 size=0x102
+#include "CBaseEntity.h"
+#include "COutputEvent.h"
+#include "CWorldEvents.h"
+
+extern char vt_10496acc[];
+extern int g_107532ec;
+
+void CWorldEvents::sub_1023db70()
+{
+	*(char **)this = vt_10496acc;
+	g_107532ec = 0;
+	((COutputEvent *)((char *)this + 0x630))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x618))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x600))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x5e8))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x5d0))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x5b8))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x5a0))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x588))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x570))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x558))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x540))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x528))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x510))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x4f8))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x4e0))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x4c8))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x4b0))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x498))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x480))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x468))->sub_100cd2d0();
+	((COutputEvent *)((char *)this + 0x450))->sub_100cd2d0();
+	sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023df30 size=0x83
 #include "CUnknown1023df30.h"
 #include "inputdata_t.h"
