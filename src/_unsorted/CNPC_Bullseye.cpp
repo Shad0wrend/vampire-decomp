@@ -16,6 +16,28 @@ CNPC_Bullseye *CNPC_Bullseye::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356b50 size=0xa9
+#include "CBaseEntity.h"
+#include "CNPC_Bullseye.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+extern char g_1070d1b0[];
+extern void sub_101cf390(CNPC_Bullseye *, void *, void *);
+
+void CNPC_Bullseye::vfunc144(int a)
+{
+	sub_10006f32(a);
+	vfunc93(0, 0);
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		CCollisionProperty *pColl = (CCollisionProperty *)((char *)this + 0x270);
+		pColl->sub_100dc580(pColl->m_usSolidFlags | 4);
+	}
+	sub_101cf390(this, g_1070d1b0, g_1070d1b0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356f60 size=0x6e
 #include "CNPC_Bullseye.h"
 
