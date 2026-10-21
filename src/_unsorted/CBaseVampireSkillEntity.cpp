@@ -50,6 +50,20 @@ void CBaseVampireSkillEntity::vfunc272()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020adc0 size=0xae
+#include "CBaseVampireSkillEntity.h"
+#include "CVFeat_t.h"
+
+void CBaseVampireSkillEntity::vfunc42(void *pEntity)
+{
+	sub_100a5030(pEntity);
+	if (m_n784 == 1)
+		m_n790 = CVFeatSet::Find(0)->sub_101e56e0(pEntity);
+	else if (m_n784 == 2)
+		m_n790 = CVFeatSet::Find(2)->sub_101e56e0(pEntity);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b1f0 size=0x58
 #include "CBaseVampireSkillEntity.h"
 
