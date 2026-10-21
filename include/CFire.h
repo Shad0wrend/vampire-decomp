@@ -10,4 +10,5 @@ public:
 	void vfunc180();
 	void sub_1010b3c0();
 	void sub_1010b5c0(float flHeat, int bInstant);	// adds heat to the fire (stub 0x10008a03)
+	void sub_1010a370(int a, float b);	// creates the "firesmoke" entity of this fire (called with the field at +0x458 and a size float; the fields at +0x450 / +0x458 are modelled by the views of the sources)
 };
