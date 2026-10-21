@@ -24,7 +24,8 @@ public:
 	virtual void vfunc165(); virtual void vfunc166(); virtual void vfunc167(); virtual void vfunc168x(); virtual void vfunc169();
 	virtual void vfunc170(); virtual void vfunc171(); virtual void vfunc172(); virtual void vfunc173(); virtual void vfunc174();
 	virtual void vfunc175(); virtual void vfunc176(); virtual void vfunc177(); virtual void vfunc178(); virtual void vfunc179();
-	virtual void vfunc180(); virtual void vfunc181(); virtual void vfunc182(); virtual void vfunc183(); virtual void vfunc184();
+	virtual void vfunc180(); virtual void vfunc181(const float *pPosition, const float *pAngles, const float *pVelocity);	// slot 181 "CRagdollProp::Teleport": moves the ragdoll bodies along with the entity: remembers the inverse of the root body's matrix, runs the base Teleport (sub_100ada20), and carries every other body to the new transform
+	virtual void vfunc182(); virtual void vfunc183(); virtual void vfunc184();
 	virtual void vfunc185(); virtual void vfunc186(); virtual void vfunc187(); virtual void vfunc188(); virtual void vfunc189();
 	virtual void vfunc190(); virtual void vfunc191(); virtual void vfunc192(); virtual void vfunc193(); virtual void vfunc194x();
 	virtual void vfunc195x(); virtual void vfunc196(); virtual void vfunc197(); virtual void vfunc198(); virtual void vfunc199();
@@ -52,4 +53,5 @@ public:
 	void sub_10014317();	// as in CPhysForce (transplant)
 	void sub_101563b0(int index, int unused);	// stores the origin/angles of body `index` at +0x2a0 / +0x2fa (dwords); index 0 also calls slot 216 and PhysicsTouchTriggers
 	CRagdollProp *sub_101550d0();	// as in CKeepUpright (transplant)
+	void sub_100ada20(const float *pPosition, const float *pAngles, const float *pVelocity);	// CBaseEntity::Teleport (slot 181, stub 0x10012cf1), called directly
 };
