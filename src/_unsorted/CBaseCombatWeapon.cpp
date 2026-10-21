@@ -157,6 +157,54 @@ CBaseCombatWeapon *CBaseCombatWeapon::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10250ce0 size=0x15c
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+struct SWeaponWorker {
+	void sub_1024f840();
+};
+
+extern int g_105c57d0;
+
+void CBaseCombatWeapon::vfunc103()
+{
+	*(int *)((char *)this + 0x738) = g_105c57d0;
+	g_105c57d0++;
+	*(int *)((char *)this + 0x73c) = 0xff;
+	vfunc104();
+	{
+		const char *entName = *(const char **)((char *)this + 0x26c);
+		ScopeTrace trace("CBaseEntity::SetSolid", entName ? entName : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(2);
+	}
+	*(int *)((char *)this + 0x8a4) = 0;
+	*(int *)((char *)this + 0x8b0) = 0;
+	*(int *)((char *)this + 0x890) = 0;
+	int *pClip = (int *)((char *)this + 0x74c);
+	for (int i = 0; i < 2; i++, pClip++) {
+		if (vfunc277(i)) {
+			if (sub_102517b0()) {
+				if (*pClip < *(int *)((char *)sub_102517b0() + 0x2668))
+					*pClip = *(int *)((char *)sub_102517b0() + 0x2668);
+			} else {
+				*pClip = 0;
+			}
+		} else {
+			*pClip = -1;
+		}
+	}
+	vfunc105((const char *)vfunc343());
+	((SWeaponWorker *)this)->sub_1024f840();
+	((CBaseEntity *)this)->sub_100aaa40(1);
+	*(int *)((char *)this + 0x1fc) = 1;
+	*(int *)((char *)this + 0x854) = -1;
+	*(unsigned int *)((char *)this + 0x268) &= 0xfffbffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102526c0 size=0x1d
 #include "CBaseCombatWeapon.h"
 
