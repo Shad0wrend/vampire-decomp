@@ -10916,6 +10916,36 @@ void CBaseAnimating::sub_10092610(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100926e0 size=0xcb
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CAnimatingSlotsX {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21) SV10(22) SV10(23) SV10(24)
+	SV(250) SV(251) SV(252) SV(253) SV(254) SV(255)
+	virtual void s256(int bone, float *pMatrix);
+};
+
+void sub_10137ed0(float *pMatrix, int c);
+void sub_10138720(float *pMatrix, int n, int b);
+
+void CBaseAnimating::sub_100926e0(int bone, int b, int c)
+{
+	ScopeTrace trace("CBaseAnimating::GetBonePosition02", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char *pStudioHdr = (char *)sub_100952d0(-1);
+	if (pStudioHdr && bone >= 0 && bone < *(int *)(pStudioHdr + 0xf0)) {
+		float matrix[12];
+		((CAnimatingSlotsX *)this)->s256(bone, matrix);
+		sub_10137ed0(matrix, c);
+		sub_10138720(matrix, 3, b);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10092c90 size=0x8e
 #include "CBaseAnimating.h"
 
