@@ -9428,6 +9428,30 @@ CCameraAnimatedUnit *CCameraAnimatedUnit::sub_10071220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071660 size=0xc5
+#include "CUnk10071840.h"
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+
+CBasePlayer *sub_1000ac8b(int index);
+void sub_10014614(CBaseEntity *pEnt);
+
+void CUnk10071840::sub_10071660()
+{
+	m_out810.sub_100cd660(0, this, 0.0f);
+	if (EHandle_Get(m_hTarget) != 0)
+		sub_10014614((CBaseEntity *)EHandle_Get(m_hTarget));
+	sub_100a8060();
+	sub_100b3580(0x40000);
+	m_n6f0 = 0;
+	m_n6f8 = 0;
+	sub_10090950();
+	CBasePlayer *pPlayer = sub_1000ac8b(1);
+	if (pPlayer && (m_flags204 & 1))
+		pPlayer->sub_1015ef60();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071770 size=0x9c
 #include "CBaseAnimating.h"
 struct CUnk_Globals { char pad[0xc]; float curtime; };
