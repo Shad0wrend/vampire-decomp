@@ -157,6 +157,25 @@ void CBaseCombatCharacter::sub_10324430(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103250d0 size=0xb6
+#include "CBaseCombatCharacter.h"
+#include "CAI_BaseNPC.h"
+#include "ScopeTrace.h"
+
+void CBaseCombatCharacter::vfunc311(int a, int b, int c)
+{
+	ScopeTrace trace("CBaseCombatCharacter::ForcePreTranslatedSequenceAndActivity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (c >= 0) {
+		*(int *)((char *)this + 0xff0) = a;
+		*(int *)((char *)this + 0xff4) = b;
+		((CAI_BaseNPC *)this)->sub_10260a50(c);
+		*(float *)((char *)this + 0x6f8) = 0;
+		sub_10090950();
+		*(int *)((char *)this + 0x6f4) = *(int *)((char *)this + 0x1488);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103251c0 size=0xff
 #include "CBaseAnimating.h"
 
