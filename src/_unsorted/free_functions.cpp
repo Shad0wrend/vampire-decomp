@@ -6742,6 +6742,43 @@ int sub_1005dcc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005e330 size=0x17b
+#include "SendProp.h"
+
+struct SSendTableObj
+{
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pszName);	// stub 0x1000e8fe
+};
+
+SendProp sub_10246af0(const char *pszName, int nOffset, int nSize, int nBits, int nFlags, int nExtra, void *pProxy);
+SendProp sub_10246dc0(const char *pszName, int nOffset, int pTable, void *pProxy);
+SendProp sub_10246510(const char *pszName, int nOffset, int nSize, int nBits, int nFlags, float flLow, float flHigh, void *pProxy);
+void sub_10009539();
+void sub_10246300();
+
+extern int g_1059cb88;
+extern const char *g_10541ccc;
+extern SSendTableObj g_106c0d18;
+
+int sub_1005e330()
+{
+	static SendProp props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1059cb88, (void *)sub_10009539),
+		sub_10246510("m_vecDirection[0]", 0x18, 4, 11, 0, -10.0f, 10.0f, (void *)sub_10246300),
+		sub_10246510("m_vecDirection[1]", 0x1c, 4, 11, 0, -10.0f, 10.0f, (void *)sub_10246300),
+		sub_10246510("m_vecDirection[2]", 0x20, 4, 11, 0, -10.0f, 10.0f, (void *)sub_10246300),
+		sub_10246af0("r", 0x24, 4, 8, 1, 0, 0),
+		sub_10246af0("g", 0x28, 4, 8, 1, 0, 0),
+		sub_10246af0("b", 0x2c, 4, 8, 1, 0, 0),
+		sub_10246af0("a", 0x30, 4, 8, 1, 0, 0),
+		sub_10246af0("m_nAmount", 0x34, 4, 8, 1, 0, 0),
+	};
+	g_106c0d18.sub_1000e8fe(props + 1, 9, g_10541ccc);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005e5c0 size=0x80
 #include "CTEBloodStream.h"
 extern CTEBloodStream g_106c0cc4;
