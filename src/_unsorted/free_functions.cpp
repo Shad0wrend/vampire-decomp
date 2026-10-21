@@ -33857,6 +33857,72 @@ void sub_101d0570(int *pVector, int count, const char *pString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d1280 size=0xe0
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+struct CSpawnRecord
+{
+	char pad0[0x40];
+	char m_szMap[0x20];
+	int m_pad60;
+};
+
+struct CSpawnTable
+{
+	CSpawnRecord *sub_10057800(const char *name);
+	void sub_10057740(const char *name, const char *map, int flag);
+};
+
+struct CGlobalVarsLike { char pad[0x24]; const char *mapname; };
+
+extern CGlobalEntityList *g_10566458;
+extern CSpawnTable g_106be530;
+extern CGlobalVarsLike *g_1070b228;
+extern char g_106b8540[];
+extern int sub_1043e780(const char *, const char *);
+
+#define CLASSNAME(e) (*(const char **)((char *)(e) + 0x120))
+
+static inline bool HandleValid(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return false;
+	CGlobalEntityList_Slot *slot = &g_10566458->m_Slots[h & 0x1fff];
+	return slot->m_Serial == (int)(h >> 13) && slot->m_pEntity;
+}
+
+int sub_101d1280(CBaseEntity *pEnt)
+{
+	if (pEnt) {
+		unsigned int h = *pEnt->vfunc1();
+		pEnt->vfunc103();
+		if (!HandleValid(h) || (char)pEnt->vfunc116())
+			return -1;
+		pEnt->sub_100aaf30();
+		if (CLASSNAME(pEnt)) {
+			CSpawnRecord *rec = g_106be530.sub_10057800(CLASSNAME(pEnt));
+			if (rec) {
+				if (rec->m_pad60 == 2)
+					return -1;
+				const char *map = g_1070b228->mapname;
+				if (!map)
+					map = g_106b8540;
+				if (sub_1043e780(map, rec->m_szMap)) {
+					pEnt->sub_100a8060();
+					pEnt->sub_100b3b00();
+					return 0;
+				}
+			} else {
+				g_106be530.sub_10057740(CLASSNAME(pEnt), g_1070b228->mapname, 1);
+			}
+		}
+		pEnt->sub_100b3b00();
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d13a0 size=0x89
 struct V3 { float x, y, z; };
 struct TEnt {
