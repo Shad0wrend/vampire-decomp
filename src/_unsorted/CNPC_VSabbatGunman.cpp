@@ -27,3 +27,36 @@ int CNPC_VSabbatGunman::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093c1d8.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x103a56f0 size=0xa0
+#include "CNPC_VSabbatGunman.h"
+#include "CBaseAnimating.h"
+#include "ConVar.h"
+
+extern ConVar *g_1093c104;
+extern ConVar *g_1093c14c;
+extern ConVar *g_1093c1f4;
+extern float g_104454c4;
+
+struct GunmanView {
+	char m_pad[0x654];
+	float m_flTime;
+	char m_pad658[0x1484 - 0x658];
+	int m_nValue;
+};
+
+void CNPC_VSabbatGunman::vfunc465(int a)
+{
+	GunmanView *g = (GunmanView *)this;
+	float flLimit = g_1093c104->vfunc1() ? 0.0f : g_1093c104->m_fValue;
+	if (g->m_flTime > flLimit) {
+		g->m_nValue = g_1093c14c->vfunc1() ? 0 : g_1093c14c->m_nValue;
+		double d = g_1093c1f4->vfunc1() ? g_104454c4 : g_1093c1f4->m_fValue;
+		((CBaseAnimating *)this)->sub_1008d230((float)d);
+	} else {
+		g->m_nValue = 0;
+		((CBaseAnimating *)this)->sub_1008d230(-1.0f);
+	}
+	sub_10295a60(a);
+}
+// END FUNCTION

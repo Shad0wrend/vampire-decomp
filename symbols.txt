@@ -700,6 +700,7 @@
 0x10003b84 func   ?sub_10223030@@YAPAHXZ sub_10223030
 0x10003b89 func   ?vfunc15@CGameRules@@UAEXXZ CGameRules::vfunc15
 0x10003b8e func   ?sub_101bdeb0@CMem4d_t@@QAEXH@Z CMem4d_t::sub_101bdeb0
+0x10003b93 func   ?vfunc465@CNPC_VSabbatGunman@@UAEXH@Z CNPC_VSabbatGunman::vfunc465
 0x10003ba2 func   ?sub_103661d0@@YIXPADHH@Z sub_103661d0
 0x10003ba7 func   ?sub_101836d0@CBasePlayer@@QAEXPAX@Z CBasePlayer::sub_101836d0
 0x10003bb1 func   ?vfunc269@CBaseVampireSkillEntity@@QAEXH@Z CBaseVampireSkillEntity::vfunc269
