@@ -26448,6 +26448,31 @@ CBaseEntity * __stdcall sub_100f7d50(const char *name, const Vector &vecSrc, flo
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7e30 size=0xbf
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+CBaseEntity * __stdcall sub_100f7e30(CBaseEntity *pStart, const char *szName, const Vector *pCenter, float flRadius)
+{
+	float flRadiusSqr = flRadius * flRadius;
+	if (flRadiusSqr == 0.0f)
+		return g_106eb5d8.sub_100f7380(pStart, szName);
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7380(pStart, szName);
+	while (pEnt) {
+		if (pEnt->m_pEdict2e0) {
+			Vector *pOrigin = ((CEntityVSlots *)pEnt)->slot217();
+			if (flRadiusSqr > pOrigin->DistToSqr(*pCenter))
+				return pEnt;
+		}
+		pEnt = g_106eb5d8.sub_100f7380(pEnt, szName);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8580 size=0xa6
 #include "CGlobalEntityList.h"
 #include "Vector.h"
