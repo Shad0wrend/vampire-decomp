@@ -26977,6 +26977,41 @@ extern "C" GP *func_dustcloud()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114260 size=0xe5
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246700(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246dc0(const char *name, int offset, int pTable, void *proxy);
+void sub_10009539();
+void sub_10006aeb();
+void sub_10003012();
+extern SendTable g_1070a4d4;
+extern const char *g_1056fd20;
+extern int g_1059cb88;
+
+// TARGET: sub_10114260
+int sub_10114260()
+{
+	static SendProp g_SendProps[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1059cb88, (void *)sub_10009539),
+		sub_10246510("m_flSize", 0x18, 4, -1, 4, 0.0f, -121121.121121f, (void *)sub_10006aeb),
+		sub_10246510("m_flSpeed", 0x1c, 4, -1, 4, 0.0f, -121121.121121f, (void *)sub_10006aeb),
+		sub_10246700("m_vecDirection", 0x20, 12, 32, 4, 0.0f, -121121.121121f, (void *)sub_10003012),
+	};
+	g_1070a4d4.sub_10247240(g_SendProps + 1, 4, g_1056fd20);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114820 size=0x9b
 #include "SendProp.h"
 

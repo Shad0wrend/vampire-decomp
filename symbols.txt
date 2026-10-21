@@ -2700,6 +2700,7 @@
 0x1000ba87 func   _grenade grenade
 0x1000ba8c func   ?vfunc5@CResearchBook_HG_FIRE@@QAEPAV1@I@Z CResearchBook_HG_FIRE::vfunc5
 0x1000ba9b func   _item_g_gargoyle_book item_g_gargoyle_book
+0x1000baa5 func   ?sub_10114260@@YAHXZ sub_10114260
 0x1000baaf func   ?vfunc3@CTEFizz@@UAEXPBM0@Z CTEFizz::vfunc3
 0x1000bab4 func   ?vfunc390@CNPC_VMingXiao@@QAEXPAUCTakeDamageInfo@@@Z CNPC_VMingXiao::vfunc390
 0x1000bab9 func   ?sub_102e2b60@CUtlVector36@@QAEXH@Z CUtlVector36::sub_102e2b60
