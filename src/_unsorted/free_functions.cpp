@@ -32763,6 +32763,42 @@ StatDefault3 *CStatDefault3List::sub_101d5e80(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6220 size=0x64
+#include "CVStatAction_t.h"
+struct CPartHolderX {
+    char m_pad0000[0x18];
+    CVStatActionPart m_part;	// 0x18
+};
+struct CPartListUnit2 {
+    char m_pad0000[0x14];
+    int m_n14;	// 0x14
+    char m_pad0018[0x20 - 0x18];
+    int m_n20;	// 0x20
+    int m_nItems;	// 0x24
+    CPartHolderX **m_ppItems;	// 0x28
+    void sub_101d6400();
+    void sub_101d6220();
+};
+
+// TARGET: CPartListUnit2::sub_101d6220
+void CPartListUnit2::sub_101d6220()
+{
+    sub_101d6400();
+    if (m_ppItems) {
+        for (int i = 0; i < m_nItems; i++) {
+            if (m_ppItems[i])
+                delete m_ppItems[i];
+            m_ppItems[i] = 0;
+        }
+        delete m_ppItems;
+        m_ppItems = 0;
+    }
+    m_n14 = 0;
+    m_nItems = 0;
+    m_n20 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d62d0 size=0xec
 #include "CUnknown101d62d0.h"
 
