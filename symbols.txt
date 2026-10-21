@@ -4251,6 +4251,7 @@
 0x10012a8f func   ?sub_10078fd0@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_10078fd0
 0x10012a9e func   ?vfunc569@CAI_BaseNPCTroika@@UAEHPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc569
 0x10012ab7 func   ?sub_101f9650@@YAXH@Z sub_101f9650
+0x10012ac1 func   ?sub_103d2810@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::sub_103d2810
 0x10012ac6 func   ?sub_102c62f0@@YGII@Z sub_102c62f0
 0x10012ad5 func   ?sub_1018c600@@YAXXZ sub_1018c600
 0x10012ada func   ?sub_10090b20@@YIXPAD@Z sub_10090b20

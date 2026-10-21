@@ -74643,6 +74643,55 @@ void CNPC_VWerewolf::sub_103d1ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d2810 size=0x184
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+// The werewolf's vtable out to slot 617, to call slots 220 and 617.
+struct CWerewolfSlots
+{
+	V100(a) V100(b) V10(c0) V10(c1)
+	virtual float *slot220();
+	V100(d) V100(e) V100(f) V10(g0) V10(g1) V10(g2) V10(g3) V10(g4) V10(g5) V10(g6) V10(g7) V10(g8)
+	virtual void h0(); virtual void h1(); virtual void h2(); virtual void h3(); virtual void h4(); virtual void h5();
+	virtual bool slot617(CNPC_VWerewolfVec3 a, int b, int c, CNPC_VWerewolfVec3 d);
+};
+
+struct CWerewolfTimerGlobal
+{
+	virtual void v0();
+	virtual bool v1();
+	char pad[0x28 - 4];
+	float m_f28;
+};
+
+extern CWerewolfTimerGlobal *g_1093d574;
+extern float g_104454c4;
+extern CNPC_VWerewolfVec3 g_1070d1b0;
+
+bool CNPC_VWerewolf::sub_103d2810(void *pHint)
+{
+	ScopeTrace trace("CNPC_VWerewolf::IsImperativeRandomMoveHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (*(int *)((char *)pHint + 0x5dc) == 0x3aa8) {
+		float t = g_1093d574->v1() ? g_104454c4 : g_1093d574->m_f28;
+		if (t < *(float *)((char *)this + 0x6264)) {
+			if (!((CWerewolfSlots *)this)->slot617(sub_103d6650(pHint), 1, 0, g_1070d1b0)) {
+				CNPC_VWerewolfVec3 tmp;
+				CNPC_VWerewolfVec3 *pGround = sub_103d6770(&tmp, pHint);
+				CNPC_VWerewolfVec3 *pOrigin = (CNPC_VWerewolfVec3 *)((CWerewolfSlots *)this)->slot220();
+				if ((char)sub_103d0db0(*pOrigin, *pGround))
+					return true;
+			}
+		}
+	}
+	return sub_103d2070(pHint);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d3220 size=0xf6
 #include "CNPC_VWerewolf.h"
 struct TraceEntry { const char *a, *b, *c; };
