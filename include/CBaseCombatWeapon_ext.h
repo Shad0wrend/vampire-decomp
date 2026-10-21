@@ -6,3 +6,5 @@
 	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence (stub 0x100125c1), called directly on the weapon
 	void sub_10090950();	// CBaseAnimating member (stub 0x100117b1), called directly
 	float sub_10091080(int sequence);	// CBaseAnimating::SequenceDuration (stub 0x10009813), called directly
+	void sub_10095030(const char *pszName);	// CBaseAnimating::vfunc105 (stub 0x10005100), called directly by vfunc105
+	void sub_100adf10(const float *mins, const float *maxs);	// CBaseEntity::SetSize (stub 0x100115e0), called directly
