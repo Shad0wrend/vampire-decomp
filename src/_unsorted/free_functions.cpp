@@ -59503,6 +59503,34 @@ bool CAI_BaseNPCTroika::sub_1028e360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e790 size=0x7e
+#include "CAI_BaseNPC.h"
+#include "CUnknown102dc2c0.h"
+
+struct CAI_BaseNPCView
+{
+	char m_pad0000[0x5ce4];
+	CUnknown102dc2c0Handle m_hFocus;
+	char m_pad5ce8[0x62cc - 0x5ce8];
+	int m_Pos48[1];
+	int m_Pos49[1];
+};
+
+// TARGET: CAI_BaseNPC::sub_1028e790
+void CAI_BaseNPC::sub_1028e790()
+{
+	CAI_BaseNPCView *v = (CAI_BaseNPCView *)this;
+	if (vfunc167())
+	{
+		sub_1028e700(0x48, v->m_Pos48);
+		if (!sub_10269aa0(0x48))
+			sub_10270180((void *)vfunc167(), 0);
+	}
+	if (v->m_hFocus.Get())
+		sub_1028e700(0x49, v->m_Pos49);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e8b0 size=0x6a
 #include "CAI_BaseNPCTroika.h"
 
