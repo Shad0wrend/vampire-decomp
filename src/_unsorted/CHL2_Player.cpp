@@ -137,3 +137,32 @@ void CHL2_Player::vfunc472()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10352cd0 size=0x77
+#include "CHL2_Player.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CGameRulesView {
+	S10(a0) S10(a1)
+	virtual int vfunc20(void *pPlayer, void *pWeapon);
+};
+extern CGameRulesView *g_1070ba0c;
+
+struct CHL2WeaponView {
+	char sub_10253b40(int a);
+};
+
+int CHL2_Player::vfunc374(int count, int ammoIndex, int unused)
+{
+	bool bNoAmmo = false;
+	CHL2WeaponView *pWeapon = (CHL2WeaponView *)sub_1032e7b0();
+	if (pWeapon && pWeapon->sub_10253b40(0) && sub_103346c0(ammoIndex) == 0)
+		bNoAmmo = true;
+	int result = sub_10334180(count, ammoIndex, unused);
+	if (bNoAmmo && g_1070ba0c->vfunc20(this, pWeapon))
+		sub_10334860(sub_1032e7b0());
+	return result;
+}
+// END FUNCTION

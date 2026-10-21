@@ -422,6 +422,7 @@
 0x10002c02 func   ?sub_1018e2a0@CUnknown1018e2a0@@QAEXPAVCBaseEntity@@@Z CUnknown1018e2a0::sub_1018e2a0
 0x10002c52 func   ?vfunc472@CHL2_Player@@UAEXXZ CHL2_Player::vfunc472
 0x10002c5c func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc1
+0x10002c66 func   ?vfunc374@CHL2_Player@@UAEHHHH@Z CHL2_Player::vfunc374
 0x10002c7a func   _info_player_start info_player_start
 0x10002c84 func   ?sub_1042fc90@@YAII@Z sub_1042fc90
 0x10002c93 func   ?vfunc5@CFunc_DustMotes@@QAEPAV1@I@Z CFunc_DustMotes::vfunc5
