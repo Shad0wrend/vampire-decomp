@@ -48312,6 +48312,47 @@ void CVFeat_t::sub_101e4fe0(CVFeatKV *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e5e60 size=0x174
+#include "CUnknown101e56e0.h"
+#include "CUnknown102043a0.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+void sub_10203dd0(const char *pszText);
+
+void CUnknown101e56e0::sub_101e5e60(CBaseCombatCharacter *pCharacter)
+{
+	if (pCharacter) {
+		char szBuf[128];
+		CUnknown102043a0 *pEntry = (CUnknown102043a0 *)m_pTable20;
+		sprintf(szBuf, "%s<%d> ( ", m_pszName14 ? m_pszName14 : g_106b8540, m_n18);
+		int i;
+		for (i = 0; i < m_nCount1c; i++, pEntry = (CUnknown102043a0 *)((char *)pEntry + 0x10)) {
+			int nLen = strlen(szBuf);
+			if (i < m_nCount1c - 1 || m_nCount24 > 0)
+				sprintf(szBuf + nLen, "%s + ", pEntry->sub_102043a0());
+			else
+				sprintf(szBuf + nLen, "%s ", pEntry->sub_102043a0());
+		}
+		pEntry = (CUnknown102043a0 *)m_pTable28;
+		for (i = 0; i < m_nCount24; i++, pEntry = (CUnknown102043a0 *)((char *)pEntry + 0x10)) {
+			int nLen = strlen(szBuf);
+			if (i < m_nCount24 - 1)
+				sprintf(szBuf + nLen, "<%s> + ", pEntry->sub_102043a0());
+			else
+				sprintf(szBuf + nLen, "<%s> ", pEntry->sub_102043a0());
+		}
+		int nLen = strlen(szBuf);
+		if (m_nCount24 == 0)
+			sprintf(szBuf + nLen, "):\t%d\n", sub_101e56e0(pCharacter));
+		else
+			sprintf(szBuf + nLen, "):\t%d + <%d>\n", sub_101e56e0(pCharacter), sub_101e5b30(pCharacter));
+		sub_10203dd0(szBuf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e7c50 size=0x8e
 #include "CUnknown101e7c50.h"
 

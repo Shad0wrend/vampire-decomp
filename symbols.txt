@@ -1725,6 +1725,7 @@
 0x10007a86 func   _item_w_glock_17c item_w_glock_17c
 0x10007a9a func   ?sub_104087d0@@YAHXZ sub_104087d0
 0x10007a9f func   ?sub_102e0900@CAI_Motor@@QAEPAV1@H@Z CAI_Motor::sub_102e0900
+0x10007aa4 func   ?sub_101e5e60@CUnknown101e56e0@@QAEXPAVCBaseCombatCharacter@@@Z CUnknown101e56e0::sub_101e5e60
 0x10007ac7 func   ?vfunc623@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc623
 0x10007acc func   ?sub_102e27b0@@YIMPAD@Z sub_102e27b0
 0x10007ad6 func   ?vfunc119@CBaseEntity@@UAEXXZ CBaseEntity::vfunc119
