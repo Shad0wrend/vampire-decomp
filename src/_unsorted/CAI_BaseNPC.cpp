@@ -461,6 +461,29 @@ float CAI_BaseNPC::vfunc520(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279d00 size=0xa0
+#include "CAI_BaseNPC.h"
+#include "CUnknown102e0150.h"
+
+typedef char (__fastcall *PFN_Char)(void *);
+
+static inline char CallSlot158(void *p)
+{
+    return ((PFN_Char)(*(void ***)p)[158])(p);
+}
+
+bool CAI_BaseNPC::vfunc480()
+{
+    if ((*(unsigned int *)((char *)this + 0x14bc) & 0x10000) != 0x10000) {
+        return !vfunc167()
+            || !CallSlot158((void *)vfunc167())
+            || vfunc541()->sub_102e0210(vfunc167())
+            || sub_10269aa0(0x43) || sub_10269aa0(0x45) || sub_10269aa0(0x5b) || sub_10269aa0(0x58);
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027a400 size=0xd
 struct NpcFlags204 { char pad[0x204]; unsigned int m; };
 unsigned int CAI_BaseNPC::vfunc552()

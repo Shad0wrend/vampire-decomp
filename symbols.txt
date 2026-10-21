@@ -633,6 +633,7 @@
 0x10003ec2 func   ?vfunc5@CGeneric_NPC_bathack@@QAEPAV1@I@Z CGeneric_NPC_bathack::vfunc5
 0x10003edb func   ?sub_10235060@@YAHXZ sub_10235060
 0x10003ee5 func   ?sub_101e1650@CUnknown101e1650@@QAEHPAVCBaseCombatCharacter@@H@Z CUnknown101e1650::sub_101e1650
+0x10003eef func   ?vfunc480@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc480
 0x10003ef4 func   ?vfunc319@CWeaponLockpick@@UAEXXZ CWeaponLockpick::vfunc319
 0x10003efe func   ?sub_10259120@@YA_NPAUSKeyValues@@PADPBD@Z sub_10259120
 0x10003f3f func   ?sub_100cd940@@YIHPAUCListNode100cd940@@@Z sub_100cd940
