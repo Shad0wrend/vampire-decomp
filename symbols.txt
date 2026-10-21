@@ -1244,6 +1244,7 @@
 0x100067fd func   ?sub_10054ad0@CUtlRBTreeInsert24@@QAEXPBXPAHPA_N@Z CUtlRBTreeInsert24::sub_10054ad0
 0x10006807 func   ?sub_1015f100@S@@QAEXPAUinputdata_t@@@Z S::sub_1015f100
 0x10006811 func   ?sub_102ee120@CUnknown102ee120@@QAEXHHH@Z CUnknown102ee120::sub_102ee120
+0x10006816 func   ?vfunc308@CBaseCombatWeapon@@UAEXHH@Z CBaseCombatWeapon::vfunc308
 0x10006820 func   ?vfunc5@CFuncIllusionary@@QAEPAV1@I@Z CFuncIllusionary::vfunc5
 0x1000683e func   _item_g_ghost_pendant item_g_ghost_pendant
 0x10006870 func   ?sub_1036fc00@@YADXZ sub_1036fc00

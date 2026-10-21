@@ -235,6 +235,49 @@ void CBaseCombatWeapon::vfunc306(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102532a0 size=0xb9
+#include "CBaseCombatWeapon.h"
+
+#define VV1(n) virtual void vv##n();
+#define VV10(p) VV1(p##0) VV1(p##1) VV1(p##2) VV1(p##3) VV1(p##4) VV1(p##5) VV1(p##6) VV1(p##7) VV1(p##8) VV1(p##9)
+#define VV100(p) VV10(p##0) VV10(p##1) VV10(p##2) VV10(p##3) VV10(p##4) VV10(p##5) VV10(p##6) VV10(p##7) VV10(p##8) VV10(p##9)
+
+struct CViewModelView	// a view model entity: slots 265 / 266 and the field the weapon fills
+{
+	VV100(a) VV100(b) VV10(c0) VV10(c1) VV10(c2) VV10(c3) VV10(c4) VV10(c5) VV1(d0) VV1(d1) VV1(d2) VV1(d3) VV1(d4)
+	virtual void slot265(int value);
+	virtual void slot266(int value);
+
+	char m_pad0004[0x6f4 - 4];
+	int m_n6f4;
+
+	void *sub_100952d0(int model);
+};
+
+void CBaseCombatWeapon::vfunc308(int a, int b)
+{
+	if (sub_102521f0()) {
+		char *pOwner = (char *)sub_102521f0();
+		if (pOwner) {
+			CBasePlayer *pPlayer = *(CBasePlayer **)(pOwner + 0xa8);
+			if (pPlayer) {
+				CViewModelView *pFirst = (CViewModelView *)pPlayer->sub_1015d680(*(unsigned int *)((char *)this + 0x890));
+				if (pFirst) {
+					pFirst->slot266(vfunc342(*(int *)((char *)this + 0x890)));
+					pFirst->slot265(a);
+					pFirst->m_n6f4 = *(int *)((char *)pPlayer + 0x1488);
+				}
+				CViewModelView *pSecond = (CViewModelView *)pPlayer->sub_1015d680(1);
+				if (pSecond && pSecond->sub_100952d0(-1)) {
+					pSecond->slot265(b);
+					pSecond->m_n6f4 = *(int *)((char *)pPlayer + 0x1488);
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253ab0 size=0x6d
 #include "CBaseCombatCharacter.h"
 
