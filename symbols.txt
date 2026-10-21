@@ -3955,6 +3955,7 @@
 0x10010c2b func   ?sub_100f0320@@YIXPAD@Z sub_100f0320
 0x10010c4e func   ?sub_10204550@@YAXH@Z sub_10204550
 0x10010c62 func   ?sub_10031c70@@YA_NPAVCBaseEntity@@@Z sub_10031c70
+0x10010c67 func   ?vfunc29@CMultiplayRules@@UAEXPAX@Z CMultiplayRules::vfunc29
 0x10010c7b func   ?vfunc5@CItemGGuyMagazine@@QAEPAV1@I@Z CItemGGuyMagazine::vfunc5
 0x10010cad func   ?vfunc104@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc104
 0x10010cb2 func   ?vfunc444@CNPC_VGhoulCroucher@@QAEXPAX@Z CNPC_VGhoulCroucher::vfunc444

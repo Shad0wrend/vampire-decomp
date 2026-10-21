@@ -116,6 +116,24 @@ CBaseEntity *CMultiplayRules::vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurren
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141580 size=0xb4
+#include "CMultiplayRules.h"
+#include "CSingleUserRecipientFilter.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+extern int g_10726038;
+
+void CMultiplayRules::vfunc29(void *pPlayer)
+{
+	CSingleUserRecipientFilter filter(pPlayer);
+	filter.sub_1019cf50();
+	g_1070b22c->vfunc65(&filter, g_10726038);
+	g_1070b22c->vfunc67(0);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141820 size=0xd6
 #include "ScopeTrace.h"
 #include "IVEngineServer.h"
