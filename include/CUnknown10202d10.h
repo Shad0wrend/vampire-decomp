@@ -13,4 +13,6 @@ public:
 	CUnknown102029c0 **m_ppRecords;	// 0x000c
 
 	CUnknown102029c0 *sub_10202d10();	// appends a slot (growing the array by four when it is full) and returns its record, created on first use
+	bool sub_10202ef0(int id);	// removes the record with that id (the last record takes its place; the array is freed with the last one); false when there is none
+	int sub_10203110(int id);	// the index of the record with that id, -1 when there is none (stub 0x1000777a)
 };
