@@ -3594,6 +3594,7 @@
 0x1000f588 func   ?sub_1003c450@@YIXPAPAX@Z sub_1003c450
 0x1000f58d func   ?sub_100f9860@UtlVec8@@QAEXHH@Z UtlVec8::sub_100f9860
 0x1000f592 func   ?sub_103e1930@@YG_NPAHH@Z sub_103e1930
+0x1000f5a1 func   ?sub_101e3400@CUnknown101e0f00@@QAEXPAX0HH@Z CUnknown101e0f00::sub_101e3400
 0x1000f5a6 func   ?sub_10057ac0@@YAXPAX@Z sub_10057ac0
 0x1000f5ab func   ?sub_100aa9a0@@YI_NPAVCBaseEntity@@HHHH@Z sub_100aa9a0
 0x1000f5bf func   ?sub_10200730@CVStatList_t@@QAEXXZ CVStatList_t::sub_10200730

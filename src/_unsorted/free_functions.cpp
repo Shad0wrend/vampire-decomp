@@ -43635,6 +43635,30 @@ struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x101e3400 size=0x8e
+#include "CUnknown101e0f00.h"
+
+void *sub_10430b64(void *pObject, long vfDelta, void *pSrcType, void *pTargetType, int isReference);
+extern char g_10560638[];
+extern char g_1058ce30[];
+
+void CUnknown101e0f00::sub_101e3400(void *pSource, void *pTarget, int a, int b)
+{
+	if (pSource) {
+		int index = sub_101e1250(a, b);
+		if (index != -1) {
+			CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[index];
+			if (sub_101e1a60(pEntry, pSource, pSource, pTarget, 1)) {
+				sub_101e3730(pSource, pTarget, pEntry->m_nMask, -1);
+				return;
+			}
+			if (sub_10430b64(pTarget, 0, g_10560638, g_1058ce30, 0))
+				sub_101e3730(pSource, pTarget, pEntry->m_nMask, -1);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3910 size=0x77
 #include "CUnknown101e0f00.h"
 #include "ScopeTrace.h"
