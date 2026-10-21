@@ -50,7 +50,8 @@ public:
 	virtual void vfunc49(); virtual void vfunc50(); virtual void vfunc51(); virtual void vfunc52(); virtual void vfunc53();
 	virtual void vfunc54(); virtual void vfunc55(); virtual void vfunc56(); virtual void vfunc57(); virtual void vfunc58();
 	virtual void vfunc59(); virtual void vfunc60(); virtual void vfunc61(); virtual void vfunc62(); virtual void vfunc63();
-	virtual void vfunc64(); virtual void vfunc65(); virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68();
+	virtual void vfunc64(const float *angles);	// "CBaseEntity::SetAngles": scope trace (entity name), when the three floats differ from the ones at +0x428 runs three helpers (0x800, 0x3000), stores them and sets the byte at +0x1b1
+	virtual void vfunc65(); virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68();
 	virtual void vfunc69(); virtual bool vfunc70(); virtual void vfunc71(); virtual void vfunc72(); virtual void vfunc73();
 	virtual void vfunc74(); virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
 	virtual void vfunc79(); virtual void vfunc80(); virtual void vfunc81(); virtual datamap_t *vfunc82(); virtual void vfunc83();	// slot 82 "GetDataDescMap": the entity class's datamap
