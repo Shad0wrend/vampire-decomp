@@ -74515,6 +74515,34 @@ void CUnknown1030a6e0::sub_10309f60(const Vector *pPos, float flUnused, Vector *
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030a650 size=0x6d
+#include "CAI_Navigator.h"
+
+struct HullInfoX
+{
+	char pad[8];
+	int m_nHull;	// 0x08
+	int GetHull() { return m_nHull; }
+};
+struct OwnerNavX
+{
+	char pad[0x5d40];
+	HullInfoX *m_pHull;	// 0x5d40
+	int GetHullType() { return m_pHull->GetHull(); }
+};
+float sub_102d61b0(int hull);
+
+float CAI_Navigator::sub_1030a650(float flValue)
+{
+	float flTwice = flValue + flValue;
+	if (flTwice < sub_102d61b0(((OwnerNavX *)m_pOuter)->GetHullType()))
+		return sub_102d61b0(((OwnerNavX *)m_pOuter)->GetHullType());
+	if (flTwice > 120.0f)
+		return 120.0f;
+	return flTwice;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b100 size=0x98
 #include "CUtlVector280.h"
 
