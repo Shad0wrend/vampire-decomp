@@ -28603,6 +28603,34 @@ PyObject *sub_10199100(PyObject *self, PyObject *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10199800 size=0x88
+struct CQuestPlayer { void sub_1017cc20(const char *pszQuest, int nState); };
+CQuestPlayer *sub_101cd9e0(int index);
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(void *args, const char *format, ...);
+__declspec(dllimport) void *PyErr_Occurred(void);
+__declspec(dllimport) void PyErr_SetString(void *exception, const char *message);
+__declspec(dllimport) extern void *PyExc_AttributeError;
+}
+extern int *g_109f3748;
+
+void *sub_10199800(void *self, void *args)
+{
+	CQuestPlayer *pPlayer = sub_101cd9e0(1);
+	void *pSelf = 0;
+	int nState;
+	char *pszQuest;
+	if (!PyArg_ParseTuple(args, "Osi", &pSelf, &pszQuest, &nState)) {
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_AttributeError, "bad args to SetQuest()");
+		return 0;
+	}
+	pPlayer->sub_1017cc20(pszQuest, nState);
+	(*g_109f3748)++;
+	return g_109f3748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199990 size=0xad
 extern int (*g_109f37a0)(int, const char *, ...);
 extern int (*g_109f377c)();
