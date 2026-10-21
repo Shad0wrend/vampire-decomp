@@ -28,6 +28,7 @@ public:
 	void sub_10200be0(int stat, int value);	// "CVStatList_t::Set": scope trace, stores value (clamped to sub_10200b10(stat)) in the base value array behind m_field08 when the stat is valid
 	void sub_10200a70(int stat, int source);	// "CVStatList_t::SetBaseToStatValue": scope trace, sets the stat to the value of the stat `source` (sub_10010609)
 	void sub_102009b0(int stat);	// "CVStatList_t::SetBaseToDefault": scope trace, when the stat is valid sets it to the default value of its info record (the +0x0 object's entity value as argument)
+	const char *sub_10201a40(int stat, int arg);	// the text line of the stat for the dump (stub 0x10009214)
 };
 
 // The stat lists of a character: the object at +0x13a8 of a CBaseCombatCharacter (its CUtlVector of lists at +0x8:
