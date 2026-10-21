@@ -3,6 +3,7 @@
 
 #include "CUnknown101da960.h"
 #include "CUnknown101daf60.h"
+#include "CUnknown101daec0.h"
 
 struct S6;
 
@@ -12,6 +13,7 @@ struct CUnknown101db210Sub	// the object at +0x38; its count at +4 says whether 
 	int m_nCount;
 
 	int sub_101db870(int a, int b);	// the sub-table pick (stub 0x1000483b), -1 when nothing is picked
+	void sub_101db630(IKVNodeView *pKV, void *pFilter);	// loads the sub-table from the node (stub 0x1000394a)
 };
 
 class CUnknown101db210
@@ -30,4 +32,6 @@ public:
 	S6 *sub_101db210();	// grows by one slot and returns the (lazily created) item
 	void sub_101db560();	// "Affects_Table" Debug_Display: prints the id, the filter, the first entry and every item
 	int sub_101db430(int a, int b);	// picks the value of an item by a 0..100 roll over the item weights (honouring the per-stamp count limits), else the sub-table's pick, else the first item's value (or the default of the embedded entry at +0x18)
+	void sub_101db350();	// frees the item array and the sub-table (stub 0x10012404)
+	bool sub_101db0d0(IKVNodeView *pKV, const int *pFilter);	// loads the table from a node: filter (4 dwords copied to +4, then the "Affects" filters), "Default_Mapping" entry, every "Mapping" item, the sub-table; warns when the chances do not add up to 100
 };
