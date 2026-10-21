@@ -3255,6 +3255,7 @@
 0x1000dbc0 func   ?sub_103a3ba0@@YADXZ sub_103a3ba0
 0x1000dbc5 func   _trigger_proximity trigger_proximity
 0x1000dbca func   ?sub_10102410@@YAPAHXZ sub_10102410
+0x1000dbcf func   ?vfunc201@CAI_BaseNPCTroika@@UAE_NPAVCBaseEntity@@HPAHH@Z CAI_BaseNPCTroika::vfunc201
 0x1000dbd4 func   ?sub_100ac810@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100ac810
 0x1000dbed func   ?sub_1011a710@@YAXD@Z sub_1011a710
 0x1000dc06 func   ?sub_1042fe90@@YAII@Z sub_1042fe90

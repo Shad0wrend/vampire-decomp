@@ -1227,6 +1227,53 @@ char __fastcall sub_102b4540(CAI_BaseNPCTroika *self, int unused, SOtherEntity *
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4630 size=0xe8
+#include "CAI_BaseNPCTroika.h"
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+struct CSlot594View
+{
+	SV100(a) SV100(b) SV100(c) SV100(d) SV100(e)
+	SV10(f0) SV10(f1) SV10(f2) SV10(f3) SV10(f4) SV10(f5) SV10(f6) SV10(f7) SV10(f8)
+	SV(f90) SV(f91) SV(f92) SV(f93)
+	virtual char s594(CBaseEntity *pEnt, int a, int b, int c);
+};
+
+struct CNameTable
+{
+	unsigned int sub_101e1590(const char *pszName);
+	unsigned int sub_101e1870(unsigned int id);
+};
+extern CNameTable g_10739a4c;
+extern char g_10924fba;
+extern char g_10924fb9;
+
+// TARGET: CAI_BaseNPCTroika::vfunc201
+bool CAI_BaseNPCTroika::vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d)
+{
+    static unsigned int s_nBrainWipe = g_10739a4c.sub_101e1870(g_10739a4c.sub_101e1590("Dominate_BrainWipe"));
+    if (!pEnt)
+        return false;
+    if (g_10924fba) {
+        if (pOut)
+            *pOut = 0;
+        return false;
+    }
+    if (g_10924fb9 && *(int *)((int)pEnt + 0xa8)) {
+        if (pOut)
+            *pOut = 0;
+        return false;
+    }
+    if (!((CSlot594View *)this)->s594(pEnt, a, 0, 0))
+        return false;
+    if (sub_1033d2f0(s_nBrainWipe))
+        return false;
+    if (sub_100a6fa0(pEnt, a, pOut, d)) return true; return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b57c0 size=0x8d
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatWeapon.h"
