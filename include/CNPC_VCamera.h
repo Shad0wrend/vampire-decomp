@@ -7,7 +7,9 @@ class CNPC_VCamera
 public:
 	virtual int vfunc461();
 
-	char pad0004[0x14bc - 4];
+	char pad0004[0x17c - 4];
+	float m_flNextThink;	// 0x17c
+	char pad0180[0x14bc - 0x180];
 	unsigned int m_flags14bc;
 	char pad14c0[0x1b2c - 0x14c0];
 	int m_n1b2c;
@@ -15,13 +17,18 @@ public:
 	int m_n1b38;
 	const char *m_p1b3c;
 	int m_n1b40;
-	char pad1b44[0x5bb0 - 0x1b44];
+	char pad1b44[0x5b55 - 0x1b44];
+	char m_b5b55;	// 0x5b55: one-shot flag (cleared by the think)
+	char pad5b56[0x5bb0 - 0x5b56];
 	int m_n5bb0;
 	char pad5bb4[0x5cc4 - 0x5bb4];
 	int m_n5cc4;
 	char pad5cc8[0x5da4 - 0x5cc8];
 	void *m_p5da4;
 	void *m_p5da8;
+	char pad5dac[0x6244 - 0x5dac];
+	float m_flCur6244[4];	// 0x6244: four timestamps
+	float m_flPrev6254[4];	// 0x6254: the previous four
 
 	int sub_10368f20();
 	CNPC_VCamera *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
@@ -31,4 +38,9 @@ public:
 	int vfunc545();	// slot 545 (0x884)
 	int vfunc460();	// slot 460 "SelectIdealState": with no pending count (+0x5bb0) and a squad (+0x5da4) that has condition 0x54 or the flag 0x2000, clears flag bits 0x80002000 and tells the squad about the enemy (slot 167); records the source line and returns the ideal state 3
 	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
+	void vfunc431();	// slot 431 "NPCThink" (plain member): clears the one-shot byte (+0x5b55, sub_1027efb0), and unless sub_1029f2e0() holds runs sub_1026a0f0(); when sub_1026c3d0() holds it runs slot 432(0), keeps the four timestamps at +0x6244 as the previous ones and stamps them and the next think with curtime + 0.2, else (without the global flag 0x1093408c) schedules the next think 0.1 seconds ahead
+	void sub_1027efb0();	// stub 0x10007829, called directly
+	char sub_1029f2e0();	// stub 0x1000347c, called directly
+	void sub_1026a0f0();	// CAI_BaseNPCUnit::sub_1026a0f0 (stub 0x100056fa), called directly
+	char sub_1026c3d0();	// stub 0x100155d7, called directly
 };
