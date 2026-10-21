@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
 
 class CNPC_VHuman : public CAI_BaseNPCTroika
 {
@@ -20,4 +21,6 @@ public:
 	virtual char vfunc600(int unused);
 	// Slot 463 implementation (stub 0x10011234, function 0x10384720), called directly by the Guard override; two arguments.
 	void sub_10384720(int a, int b);
+	// Slot 563 implementation (function 0x10384760): adds the offset between two position getters of pEnt to pVec.
+	void vfunc563(CEntityVSlots *pEnt, Vector *pVec, int a, int b);
 };
