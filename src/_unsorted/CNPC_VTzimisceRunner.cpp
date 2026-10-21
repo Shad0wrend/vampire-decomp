@@ -38,6 +38,39 @@ void CNPC_VTzimisceRunner::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3870 size=0xc0
+#include "CNPC_VTzimisceRunner.h"
+#include "CAI_Motor.h"
+#include "CEntityVSlots.h"
+
+struct GlobalVarsView
+{
+	char m_pad0000[0xc];
+	float curtime;	// 0x0c
+};
+extern GlobalVarsView *g_1070b228;
+void __fastcall sub_102e0b40(float *pMotor);
+
+// TARGET: CNPC_VTzimisceRunner::vfunc444
+void CNPC_VTzimisceRunner::vfunc444(int *pTask)
+{
+	if (*pTask < 0x122 || *pTask > 0x124) {
+		sub_102aacf0(pTask);
+		return;
+	}
+	sub_10280a50();
+	if (((CEntityVSlots *)this)->slot167()) {
+		sub_102e0b40((float *)m_pMotor);
+		Vector vecPos = *((CEntityVSlots *)((CEntityVSlots *)this)->slot167())->slot217();
+		m_pMotor->sub_102e20b0(&vecPos.x, -1.0f);
+	}
+	if (g_1070b228->curtime >= m_flTime5db4) {
+		m_n63ec = 0;
+		sub_10273e80(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3960 size=0x58
 #include "CNPC_VTzimisceRunner.h"
 
