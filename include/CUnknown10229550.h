@@ -4,13 +4,14 @@
 
 struct CUnknown10229550Item
 {
-	char m_bActive;	// 0x00
+	char m_bActive;	// 0x00: first character of the name (0x40 bytes) of the sound
 	char m_pad01[0x40 - 1];
-	int m_n40;	// 0x40, cleared when the item is queued
+	int m_n40;	// 0x40, cleared when the item is queued (the volume's bits when set)
 	char m_pad44[4];
 	float m_f48;	// 0x48
 	float m_f4c;	// 0x4c, set to m_f48 divided by the argument
-	char m_pad50[0x58 - 0x50];
+	int m_n50;	// 0x50
+	int m_n54;	// 0x54
 };
 
 class CUnknown10229550
@@ -24,4 +25,6 @@ public:
 	CUnknown10229550Item *m_pElements;	// 0x184
 
 	void sub_10229550(CUnknown10229550Item *pItem, float flScale);	// when the item is active: stores m_f48 / flScale in m_f4c, appends a copy of the item to the vector and clears the original
+	void sub_10229430(const char *pszName, float flVolume, int a, float flTime, CUnknown10229550Item *pItem);	// stub 0x10006663: no name or no volume queues the item away (sub_10229550); the same name just refreshes the item, another one queues the old item away and takes over the name, volume, fade rate (volume / flTime) and the value of sub_102297a0
+	int sub_102297a0();	// stub 0x10007b58
 };
