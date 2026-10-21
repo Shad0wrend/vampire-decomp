@@ -18464,6 +18464,55 @@ void Rec64::sub_100dc300(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc480 size=0xa9
+#include "CCollisionProperty.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CPhysicsObjectView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void vfunc25();
+};
+
+struct CHandleView
+{
+	unsigned int m_Index;
+
+	CGlobalEntityList_Ent *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[m_Index & 0x1fff];
+			if (pSlot->m_Serial == (int)(m_Index >> 13))
+				return pSlot->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+void CCollisionProperty::sub_100dc480(int solid)
+{
+	if (m_nSolidType == solid)
+		return;
+	char bWasSolid = IsSolid();
+	sub_100dda20();
+	if (solid == 1 && ((CHandleView *)((char *)m_pOuter + 0x25c))->Get())
+		solid = 6;
+	m_nSolidType = solid;
+	CPhysicsObjectView *pPhys = (CPhysicsObjectView *)m_pOuter->m_obj36c;
+	if (pPhys)
+		pPhys->vfunc25();
+	sub_100ddc40();
+	if (bWasSolid != (char)IsSolid())
+		sub_100dc430();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc580 size=0x6a
 #include "CUnknown100dda50.h"
 struct CPhysObj36c {
