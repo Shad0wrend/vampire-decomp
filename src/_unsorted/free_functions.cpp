@@ -62354,6 +62354,35 @@ extern "C" CBaseEntity *npc_VScurrying()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103abb00 size=0x78
+#include "CNPC_VScurrying.h"
+extern void *vt_104c4944[];
+extern void *vt_104c4918[];
+struct CScurryingSub { void sub_10012ecc(); };
+struct CNPC_VScurryingUnit : CNPC_VScurrying {
+    void sub_1001182e();
+};
+
+CNPC_VScurrying *CNPC_VScurrying::sub_103abb00()
+{
+    char *p = (char *)this;
+    ((CNPC_VScurryingUnit *)this)->sub_1001182e();
+    ((CScurryingSub *)(p + 0x6674))->sub_10012ecc();
+    *(int *)(p + 0x667c) = -1;
+    *(int *)(p + 0x1568) = 0x13;
+    *(int *)(p + 0x156c) = 0x13;
+    *(void ***)this = vt_104c4944;
+    *(char *)(p + 0x6694) = 1;
+    *(char *)(p + 0x6695) = 1;
+    *(void ***)(p + 0x19b0) = vt_104c4918;
+    *(int *)(p + 0x6678) = 0;
+    *(float *)(p + 0x6690) = 256.0f;
+    *(float *)(p + 0x6698) = 128.0f;
+    *(float *)(p + 0x669c) = 5.0f;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103abc90 size=0x33
 void sub_10001564();
 void sub_10003792();
