@@ -50,6 +50,7 @@ public:
 	void sub_10083a30(const char *pszScene);	// stub 0x100106f9, called directly by vfunc104 with the scene file name at +0x450 ("" when unset)
 	void sub_10080cb0(int a);	// stub 0x1001163f, called directly by vfunc104 with the dword at +0x4bc
 	void sub_10082d20();	// stub 0x1000ee71 (called first by slot 245 while the scene plays)
+	CSceneEntity *sub_10080830();	// the constructor body (stub of the three scene entity classes' constructors): CBaseEntity constructor, the logical entity fields (-1 at +0x46c..+0x47c), the sub-object at +0x4c0, the seven outputs at +0x4cc..+0x55c, the vtable, the scene state, the "snd_mixahead" console variable at +0x4c8
 
 	char m_pad0004[0x10c - 4];
 	unsigned int m_hPlayer10c;	// 0x10c: entity handle of the scene's player
