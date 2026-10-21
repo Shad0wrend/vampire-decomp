@@ -137,7 +137,7 @@ public:
 	CAI_NPC_V(553) CAI_NPC_V(554) CAI_NPC_V(555) CAI_NPC_V(556) CAI_NPC_V(557) CAI_NPC_V(558) CAI_NPC_V(559)
 	virtual void vfunc560();	// slot 560: sets the conditions 0x4f..0x52, 0x2e, 0x2f and 0x62..0x66 (sub_10269b50 each)
 	CAI_NPC_V(561) CAI_NPC_V(562)
-	virtual void vfunc563(CBaseEntity *pEnt, const void *pGoal, const void *pParams);	// slot 563: takes the entity, a vector (the goal's destination) and a movement parameter block (8 dwords)
+	virtual void vfunc563(CBaseEntity *pEnt, const void *pGoal, const void *pParams, const void *pExtra);	// slot 563: takes the entity, a vector (the goal's destination), a movement parameter block (8 dwords) and the address of a stack value
 	CAI_NPC_V(564) CAI_NPC_V(565) CAI_NPC_V(566)
 	virtual int vfunc567(int unused);
 	virtual float vfunc568(int a);
@@ -187,6 +187,6 @@ public:
 	void sub_102695d0();	// scope trace (entity name), makes the entity fully visible when its field at +0x16c is 0 (alpha byte +0x1a3 = 0xff, field = 2), AddSolidFlags(4) on the collision property at +0x270 (inlined scope trace), sub_100b2f50(zero vector), sub_100b3b00(), next think = curtime + 10.0, ThinkSet(think stub 0x100152b2, 0, 0)
 	void sub_1027dd10(CBaseEntity *pEnt);	// run when the NPC stops caring about pEnt: only while slot 158 holds and pEnt is set; when it is the entity of the handle at +0x5d24 slot 532(1); lets the object at +0x5d34 finish (sub_102ee2c0 when sub_102ee2e0 holds), sets the byte at +0x1a40, runs slot 528, and clears the state at +0x644c (1 or 2) of the object at +0x98
 	void sub_1027be60();	// level transition cleanup (called by OnRestore): lets the navigator at +0x5d34 finish (sub_102ee270), sub_10280d30, clears +0xfec, clears the six condition dwords at +0x5c5c unless slot 167 holds, and strips a scripted sequence entity that is gone from a state 4 NPC (SetState(1), DevMsg "Scripted Sequence stripped on level transition for %s")
-	void sub_102800c0(int a, CBaseEntity *pEnt, int c);	// starts a move to pEnt's origin: sub_10280de0(a), remembers pEnt at +0x5de8, then slot 563(pEnt, goal.dest, params) with a type 4 goal at pEnt's slot 217 origin and a 128 unit tolerance block, and hands the goal to the navigator at +0x5d34 (sub_102ecd20, stub 0x1000ce64); takes three stack arguments
+	void sub_102800c0(int a, CBaseEntity *pEnt, int c);	// starts a move to pEnt's origin: sub_10280de0(a), remembers pEnt at +0x5de8, then slot 563(pEnt, goal.dest, params, &a) with a type 4 goal at pEnt's slot 217 origin and a 128 unit tolerance block, and hands the goal to the navigator at +0x5d34 (sub_102ecd20, stub 0x1000ce64); takes three stack arguments
 	void sub_10280de0(int a);	// stub 0x1000c27a, called directly
 };
