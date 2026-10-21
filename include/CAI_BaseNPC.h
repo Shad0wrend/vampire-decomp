@@ -33,7 +33,8 @@ public:
 	CAI_NPC_V10(15)
 	CAI_NPC_V(160) CAI_NPC_V(161) CAI_NPC_V(162) CAI_NPC_V(163) CAI_NPC_V(164) CAI_NPC_V(165) CAI_NPC_V(166)
 	virtual int vfunc167();	// the NPC's squad/classification id (compared between a squad member and its leader)
-	CAI_NPC_V(168) CAI_NPC_V(169)
+	virtual CBaseEntity *vfunc168();	// the entity the NPC is after (its enemy); 0 when none
+	CAI_NPC_V(169)
 	CAI_NPC_V10(17) CAI_NPC_V10(18)
 	CAI_NPC_V(190) CAI_NPC_V(191)
 	virtual Vector vfunc192();	// returns a vector by value (hidden result pointer)
@@ -125,7 +126,7 @@ public:
 	CAI_NPC_V(521) CAI_NPC_V(522) CAI_NPC_V(523) CAI_NPC_V(524) CAI_NPC_V(525) CAI_NPC_V(526) CAI_NPC_V(527) CAI_NPC_V(528) CAI_NPC_V(529)
 	CAI_NPC_V10(53)
 	CAI_NPC_V(540)
-	virtual CUnknown102dfc10 *vfunc541(const char *pszMessage);	// the queue of pending records (CUnknown102dfc10) of the NPC; the argument is the "file(line) :" text of the caller
+	virtual CUnknown102dfc10 *vfunc541(const void *pKey);	// the queue / memory object the NPC keeps for pKey (a "file(line) :" text or an enemy)
 	virtual void vfunc542();
 	CAI_NPC_V(543) CAI_NPC_V(544)
 	virtual bool vfunc545();	// finds the squad (+0x5da4) from the name at +0x5da8 when the class flags ask for one; true when it has one
