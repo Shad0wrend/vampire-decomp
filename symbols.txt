@@ -2343,6 +2343,7 @@
 0x1000ae57 func   ?vfunc0@CAI_Navigator@@UAEPAV1@I@Z CAI_Navigator::vfunc0
 0x1000ae61 func   ?sub_1020b020@CUnknown1020b020@@QAEHH@Z CUnknown1020b020::sub_1020b020
 0x1000ae75 func   ?sub_10032c60@CUtlVector32@@QAEXH@Z CUtlVector32::sub_10032c60
+0x1000ae7f func   ?sub_101434b0@@YAXHHPBDHHHHH@Z sub_101434b0
 0x1000aea7 func   ?vfunc5@CFuncPlat@@UAEPAV1@I@Z CFuncPlat::vfunc5
 0x1000aeb6 func   ?sub_10042640@UtlMem@@QAEXXZ UtlMem::sub_10042640
 0x1000aee3 func   _item_k_hitman_ji_key item_k_hitman_ji_key

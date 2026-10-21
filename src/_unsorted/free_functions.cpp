@@ -26279,6 +26279,28 @@ void sub_10142af0(int a, int b, int c, int d, int e, int f, int g, int h, int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101434b0 size=0x128
+#include "CBroadcastRecipientFilter.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+void sub_101434b0(int entIndex, int lineOffset, const char *pszText, int duration, int r, int g, int b, int a)
+{
+	CBroadcastRecipientFilter filter;
+	g_1070b22c->vfunc65(&filter, 0x2e);
+	g_1070b22c->vfunc69(entIndex);
+	g_1070b22c->vfunc69(lineOffset);
+	g_1070b22c->vfunc72(duration);
+	g_1070b22c->vfunc69(r);
+	g_1070b22c->vfunc69(g);
+	g_1070b22c->vfunc69(b);
+	g_1070b22c->vfunc69(a);
+	g_1070b22c->vfunc78(pszText);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101466e0 size=0xe
 #include "CUnknown101466e0.h"
 // TARGET: CUnknown101466e0::sub_101466e0
