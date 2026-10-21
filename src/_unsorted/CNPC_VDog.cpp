@@ -78,6 +78,65 @@ l30:
 }
 // END FUNCTION
 
+// FUNCTION: 0x103742d0 size=0x80
+#include "CBaseEntity.h"
+#include "CNPC_VDog.h"
+
+struct DogSchedObj_t {
+	int n00;
+	int nSchedule;
+};
+
+struct DogView_t {
+	char pad0[0x1b2c];
+	int n1b2c;
+	char pad1b30[0x5b80 - 0x1b30];
+	char b5b80;
+	char pad5b81[0x5cc0 - 0x5b81];
+	int nState;
+	char pad5cc4[0x6590 - 0x5cc4];
+	DogSchedObj_t *pSched;
+};
+
+struct DogView2_t {
+	char pad[0x63d9];
+	char b63d9;
+};
+
+int CNPC_VDog::vfunc438()
+{
+	DogView_t *pView = (DogView_t *)this;
+	pView->n1b2c = 0xd;
+	if (sub_10014df8(0x7b)) {
+		sub_10015839(0x7b);
+		return 0x166;
+	}
+	switch (pView->nState) {
+	case 1:
+		if (pView->pSched)
+			return pView->pSched->nSchedule;
+		if (((DogView2_t *)this)->b63d9) {
+			if (sub_1001482b(0x7d))
+				return 0x167;
+		} else {
+			return 0x164;
+		}
+		break;
+	case 2:
+		pView->b5b80 = 0;
+		break;
+	case 3:
+		if (sub_1001482b(0x7d))
+			return 0x167;
+		break;
+	}
+	int nSchedule = CNPC_VAnimal::vfunc438();
+	if (nSchedule == 0x6b)
+		return 0x164;
+	return nSchedule;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103747e0 size=0xa4
 #include "CNPC_VDog.h"
 
