@@ -3285,6 +3285,7 @@
 0x1000fd03 func   ?sub_101c4790@CUnknown101c4790@@QAEPAU1@H@Z CUnknown101c4790::sub_101c4790
 0x1000fd0d func   ?sub_102c6590@CUnknown102c6590@@QAEPAHH@Z CUnknown102c6590::sub_102c6590
 0x1000fd30 func   ?vfunc2@CNotifyList@@UAEXPAVCBaseEntity@@PBD@Z CNotifyList::vfunc2
+0x1000fd53 func   ?sub_102b2730@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102b2730
 0x1000fd58 func   ?vfunc5@CFilterClass@@QAEPAV1@I@Z CFilterClass::vfunc5
 0x1000fd5d func   ?sub_101f5d80@CUnknown101f5d80@@QAEXXZ CUnknown101f5d80::sub_101f5d80
 0x1000fd71 func   ?sub_1042d700@@YIIPAI@Z sub_1042d700

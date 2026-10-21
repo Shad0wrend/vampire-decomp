@@ -49147,6 +49147,51 @@ int CAI_BaseNPCTroika::sub_102b11c0(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b2730 size=0x8c
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown102e0150.h"
+
+struct CGlobalVarsView
+{
+	char m_pad0000[0xc];
+	float m_flCurTime;	// 0x0c
+};
+
+struct CAIRandomView
+{
+	virtual void v0();
+	virtual void v1();
+};
+
+extern CGlobalVarsView *g_1070b228;
+extern CAIRandomView *g_10924a6c;
+extern float g_10451ab4;
+
+// TARGET: CAI_BaseNPCTroika::sub_102b2730
+void CAI_BaseNPCTroika::sub_102b2730()
+{
+	char *p = (char *)this;
+	if (*(int *)(p + 0x5bb0) <= 0 && *(int *)(p + 0x5da4) != 0)
+	{
+		CBaseEntity *pEnemy = vfunc168();
+		if (pEnemy)
+		{
+			if (vfunc541()->sub_102e0150(pEnemy) + g_10451ab4 >= g_1070b228->m_flCurTime)
+			{
+				g_10924a6c->v1();
+				sub_10269a20(0x31);
+				if (sub_10269aa0(0x4a))
+				{
+					g_10924a6c->v1();
+					sub_10269a20(0x32);
+				}
+			}
+		}
+		sub_10269aa0(0x46);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5dc0 size=0xd
 void CUnknown102b5dc0::sub_102b5dc0(int value)
 {
