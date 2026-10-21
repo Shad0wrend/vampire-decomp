@@ -4270,6 +4270,7 @@
 0x10012341 func   ?vfunc5@CTestTraceline@@UAEPAV1@I@Z CTestTraceline::vfunc5
 0x1001235a func   ?sub_10252450@CUnknown10252450@@QAEMH@Z CUnknown10252450::sub_10252450
 0x10012369 func   ?vfunc490@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc490
+0x10012391 func   ?sub_10239e70@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_10239e70
 0x10012396 func   ?sub_10201470@CVStatList_t@@QAEPBDH@Z CVStatList_t::sub_10201470
 0x100123aa func   ?sub_1017c830@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017c830
 0x100123b9 func   ?sub_101dc410@CItemVec@@QAEXPBU1@@Z CItemVec::sub_101dc410

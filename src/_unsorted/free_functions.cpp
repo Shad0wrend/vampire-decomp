@@ -55089,6 +55089,51 @@ void CWeaponRanged::sub_10239d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10239e70 size=0x89
+#include "CWeaponRanged.h"
+#include "CEntityVSlots.h"
+
+struct CWeaponRangedView
+{
+	char m_pad0000[0x74c];
+	int m_nClip[2];
+};
+
+struct CWeaponRangedRoll
+{
+	char m_pad0000[0x10c];
+	int m_iSlot;
+};
+
+struct CTuningConVar
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+extern CTuningConVar *g_1088aef4;
+
+void sub_101cd940(void *pEntity);
+
+// TARGET: CWeaponRanged::sub_10239e70
+void CWeaponRanged::sub_10239e70()
+{
+	CWeaponRangedView *v = (CWeaponRangedView *)this;
+	CWeaponRangedRoll *pRoll = (CWeaponRangedRoll *)sub_102517e0();
+	CEntityVSlots *pChar = (CEntityVSlots *)sub_10252240();
+	vfunc307(0xb9);
+	sub_10239f30(pChar);
+	if (g_1088aef4->vfunc1() || g_1088aef4->m_n2c < 2)
+		v->m_nClip[pRoll->m_iSlot]--;
+	if (v->m_nClip[pRoll->m_iSlot] < 1)
+	{
+		pChar->slot385((CEntityVSlots *)this, 0, 0);
+		sub_101cd940(this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ae40 size=0x43
 #include "CWorld.h"
 void *sub_100aa720(int size);
