@@ -38962,6 +38962,35 @@ float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bedb0 size=0xd7
+#include "CStealthKillRules.h"
+#include "ScopeTrace.h"
+
+__declspec(dllimport) void __cdecl Warning(const char *pMsg, ...);
+
+struct CSKRKeyValues	// a KeyValues block
+{
+	CSKRKeyValues *sub_102489a0(const char *pszName, int bCreate);	// FindKey (stub 0x1001569a)
+	float sub_10248c60(const char *pszName, float flDefault);	// GetFloat (stub 0x10009a9d)
+};
+
+const char *__cdecl sub_101d3730(const char *pszFormat, ...);	// UTIL_VarArgs (stub 0x100067f3)
+
+void CStealthKillRules::sub_101bedb0(CSKRKeyValues *pKeys, const char *pszName, float *pTable)
+{
+	ScopeTrace trace("CStealthKillRules::LoadKey", g_106b8540);
+	CSKRKeyValues *pKey = pKeys->sub_102489a0(pszName, 0);
+	if (pKey) {
+		float flPrev = 0;
+		for (int i = 0; i < 20; i++) {
+			flPrev = pTable[i] = pKey->sub_10248c60(sub_101d3730("%d", i + 1), flPrev);
+		}
+		return;
+	}
+	Warning("%s needs key values for '%s'!!\n", "vdata/System/StealthKillRules.txt", pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf6a0 size=0x15b
 #include "CUtlRBTree12.h"
 
