@@ -130,6 +130,42 @@ int CAI_BaseNPC::vfunc553(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026da90 size=0x7f
+#include "CAI_BaseNPC.h"
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+struct CSlot327View
+{
+	SV100(a) SV100(b) SV100(c) SV10(d0) SV10(d1)
+	SV(d20) SV(d21) SV(d22) SV(d23) SV(d24) SV(d25) SV(d26)
+	virtual char s327();
+};
+
+// TARGET: CAI_BaseNPC::vfunc556
+int CAI_BaseNPC::vfunc556(float a, float b)
+{
+    int pFocus = vfunc167();
+    CSlot327View *pObj;
+    if (pFocus == 0)
+        pObj = 0;
+    else
+        pObj = *(CSlot327View **)(pFocus + 0x9c);
+    if (b > 180.0f)
+        return 9;
+    if (b > 64.0f)
+        return 0x60;
+    if (a < 0.7)
+        return 0;
+    if (pObj) {
+        if (!pObj->s327())
+            return 0;
+    }
+    return 0x52;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026db30 size=0x9e
 struct ScopeTraceEntry_t
 {
