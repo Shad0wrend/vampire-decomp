@@ -37,6 +37,77 @@ CPhysicsProp *CPhysicsProp::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191510 size=0x17a
+#include "CPhysicsProp.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+__declspec(dllimport) void Warning(const char *fmt, ...);
+extern float g_104454c4;
+void sub_1002e0a0(void *pObj, int a);
+
+struct CPhysObjView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void SetValue(float f);
+	virtual float GetValue();
+};
+
+struct CPhysObjView2
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10();
+	virtual void SetValue(int f);
+};
+
+struct CByteArg { char b; };
+
+struct CPhysicsPropUnit : CPhysicsProp
+{
+	CPhysObjView *sub_100a5ea0(int a, int b, CByteArg c, int d);
+};
+
+#define FLD(type, off) (*(type *)((char *)this + (off)))
+
+// TARGET: CPhysicsProp::vfunc223
+bool CPhysicsProp::vfunc223()
+{
+	CPhysicsPropUnit *self = (CPhysicsPropUnit *)this;
+	CByteArg flag;
+	flag.b = FLD(char, 0x204) & 1;
+	CPhysObjView *pObj = self->sub_100a5ea0(6, 0, flag, 0);
+	if (!pObj)
+	{
+		{
+			ScopeTrace trace("CBaseEntity::SetSolid", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+			((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+		}
+		vfunc93(0, 0);
+		int out;
+		const char **pName = vfunc9(&out);
+		Warning("ERROR!: Can't create physics object for %s\n", *pName ? *pName : g_106b8540);
+		sub_100b3b00();
+		return true;
+	}
+	if (FLD(int, 0x784) == 1)
+		sub_1002e0a0(pObj, 1);
+	if (FLD(float, 0x77c) > g_104454c4)
+	{
+		double v = pObj->GetValue() * FLD(float, 0x77c);
+		if (v > 1000000.0)
+			v = 1000000.0;
+		else if (v < 0.5)
+			v = 0.5;
+		float f = (float)v;
+		pObj->SetValue(f);
+	}
+	if (FLD(float, 0x780) > g_104454c4)
+		((CPhysObjView2 *)FLD(int, 0x36c))->SetValue(FLD(int, 0x780));
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101917c0 size=0x1f
 #include "CPhysicsProp.h"
 
