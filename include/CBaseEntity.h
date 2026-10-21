@@ -247,7 +247,8 @@ public:
 	unsigned int m_hOwner364;	// owner entity handle
 	int m_field368;
 	int m_obj36c;	// physics object (pointer)
-	char m_pad0370[0x64];
+	char m_pad0370[0x58];
+	float m_angVel3c8[3];	// 0x03c8: the angular velocity SimulateAngles integrates
 	float m_vel3d4[3];
 	void vfunc212(int set);	// as in CBaseAnimating (transplant)
 };
