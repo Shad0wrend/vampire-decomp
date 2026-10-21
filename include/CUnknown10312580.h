@@ -12,4 +12,5 @@ public:
 	const char *m_pTreeName;	// +0x2c
 
 	float sub_10312580(int key);	// the float stored for key, or -1.0f
+	void sub_10312930(int key);	// removes the node whose key equals key (searching with the value -1.0f), if there is one
 };
