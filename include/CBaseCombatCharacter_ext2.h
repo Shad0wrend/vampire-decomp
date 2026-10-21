@@ -55,3 +55,7 @@
 	void sub_103228c0();	// "CBaseCombatCharacter::UpdateOccult...": scope trace (entity name), for every weapon (count sub_1032e890, GetWeapon) whose info block (sub_102517b0) has a non-zero dword at +0x4fec0, ORs the dword at +0x4fed0 into the occult power flags at +0xe38
 	int sub_1032e890();	// "CBaseCombatCharacter::GetWeaponCount"-like (stub 0x1000bbe0)
 	void vfunc300(int a, int b, int c);	// slot 300 "CBaseCombatCharacter::Event_Took...": scope trace (entity name), with bit 2 of the occult power flags (+0xe38) set hands its first argument to sub_103f9160 of every weapon whose slot 348 name is "item_p_occult_regen"; takes three stack arguments
+	void sub_103281b0(int boneName, char bSetOrigin, char bSetAngles);	// "CBaseCombatCharacter::MoveToBone": scope trace (entity name), CBaseAnimating::BlendTransformWithNextSequenceChange, then for a valid bone (LookupBone >= 0) takes its position / angles (GetBonePosition02) and sets the origin (slot 62) and the yaw (slot 65 with the current pitch / roll) as asked
+	void sub_100976e0();	// CBaseAnimating::BlendTransformWithNextSequenceChange (stub 0x1000b9b5), called directly
+	int sub_10092550(int a);	// CBaseAnimating::LookupBone (stub 0x10002c0c), called directly
+	void sub_100926e0(int bone, float *pPos, float *pAngles);	// CBaseAnimating::GetBonePosition02 (stub 0x1000268a), called directly
