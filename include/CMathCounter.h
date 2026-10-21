@@ -8,6 +8,7 @@ class CMathCounter : public CLogicalEntity
 {
 public:
 	virtual void vfunc103();	// slot 103 "CMathCounter::Spawn": orders the min / max (+0x450 / +0x454) and, unless both are zero, clamps the output value (+0x45c) into that range and stores it back (variant_t::sub_100d0390(1, &value))
+	void sub_10134d30(void *pActivator, float flNewValue);	// "CMathCounter::UpdateOutValue": a value equal to the maximum (+0x454) fires the output at +0x470; any other value fires the output at +0x488, then the one at +0x4a0 when it is above the maximum, else the one at +0x458 (each output gets the value as a float variant)
 
 	char m_pad0004[0x450 - 4];
 	float m_flMin;	// 0x450
