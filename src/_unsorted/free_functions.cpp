@@ -65089,6 +65089,27 @@ void sub_10243630(const Vector &origin, const Vector &angles, const Vector &mins
 }
 // END FUNCTION
 
+// FUNCTION: 0x10243700 size=0x9c
+#include "matrix3x4_t.h"
+#include "Vector.h"
+
+void sub_10139d70(const Vector &angles, matrix3x4_t &matrix);
+void sub_101381b0(const Vector &in, const matrix3x4_t &matrix, Vector &out);
+void sub_10138760(const Vector &in, int column, matrix3x4_t &matrix);
+
+void sub_10243700(const Vector &origin, const Vector &angles, const Vector &mins, const Vector &maxs, matrix3x4_t &matrix)
+{
+	Vector vecRotated;
+	Vector vecCenter;
+	VectorAdd(mins, maxs, vecCenter);
+	VectorScale(vecCenter, -0.5f, vecCenter);
+	sub_10139d70(angles, matrix);
+	sub_101381b0(origin, matrix, vecRotated);
+	vecCenter -= vecRotated;
+	sub_10138760(vecCenter, 3, matrix);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245770 size=0x10
 struct CFlagHolder245770 {
     char pad[4];
