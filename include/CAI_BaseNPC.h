@@ -88,11 +88,14 @@ public:
 	virtual int vfunc437();	// "SelectFailSchedule"-like (AI_BaseNPC_Schedule.cpp): returns a schedule id picked from the failure conditions
 	virtual int vfunc438();	// "SelectSchedule": returns the schedule id
 	CAI_NPC_V(439)
-	CAI_NPC_V(440) CAI_NPC_V(441) CAI_NPC_V(442) CAI_NPC_V(443) CAI_NPC_V(444) CAI_NPC_V(445) CAI_NPC_V(446)
+	CAI_NPC_V(440) CAI_NPC_V(441) CAI_NPC_V(442) CAI_NPC_V(443) CAI_NPC_V(444) CAI_NPC_V(445)
+	virtual void vfunc446(int condition);	// "SetCondition" with translation: ids below 1000000000 (and -1) go through the condition table of slot 580 first; a missing schedule warns "ERROR: %s missing schedule" and sets condition 1
 	virtual int vfunc447(int a);	// classification of a (the dword at +0x1c of the object at +0x5c38); 0x12f is the special case of vfunc509
 	virtual void vfunc448(int a);	// "CAI_BaseNPC::TaskFail": remembers the failure code (+0x5c50), name text (+0x5f30) and failing task (+0x5c38 -> +0x5f38) unless the AI system is paused, clears +0x1a40, then sub_10269a20(0x5c)
 	virtual int vfunc449(int a);	// returns a task/schedule id for the argument (used by PrintTask)
-	CAI_NPC_V10(45)
+	CAI_NPC_V(450)
+	virtual const char *vfunc451();	// the NPC's name text (used in warnings)
+	CAI_NPC_V(452) CAI_NPC_V(453) CAI_NPC_V(454) CAI_NPC_V(455) CAI_NPC_V(456) CAI_NPC_V(457) CAI_NPC_V(458) CAI_NPC_V(459)
 	virtual int vfunc460();	// SelectIdealState helper: the NPC's current state, 0 when unset
 	virtual int vfunc461();	// SelectIdealState
 	CAI_NPC_V(462)
