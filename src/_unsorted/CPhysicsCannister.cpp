@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1014fae0 size=0x67
+#include "CPhysicsCannister.h"
+#include "CCollisionProperty.h"
+
+bool sub_102404e0(const float *a, const float *b, const float *c, const float *d, int e);
+
+// TARGET: CPhysicsCannister::vfunc99
+bool CPhysicsCannister::vfunc99(const float *pRay, int b, int c)
+{
+    float vA[3];
+    float vB[3];
+    CCollisionProperty *prop = (CCollisionProperty *)((char *)this + 0x270);
+    prop->sub_100dcd90((const float *)((char *)prop + 4), (const float *)((char *)prop + 0x10), vB, vA);
+    bool hit = sub_102404e0(vB, vA, pRay, pRay + 3, 0);
+    if (!hit)
+        return hit;
+    return sub_100956e0(pRay, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150380 size=0x120
 #include "CPhysicsCannister.h"
 #include "CBaseCombatCharacter.h"
