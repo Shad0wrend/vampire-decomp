@@ -24192,6 +24192,37 @@ char CDialog::sub_100e15c0(DialogLine *pLine, char bExtended)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1680 size=0x186
+#include <string.h>
+#include "ScopeTrace.h"
+#include "CDialog.h"
+#include "CEHandleGet.h"
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) char *Q_strcat(char *pDest, const char *pSrc);
+char *sub_101d3730(const char *pFormat, ...);
+int sub_100df0b0(int a);
+extern char g_106ea558[0x104];
+char *CDialog::sub_100e1680(int index, const char *pszExtension, char bCreate)
+{
+    ScopeTrace trace("CDialog::generate_speech_filename", g_106b8540);
+    DialogLine *pLine = sub_100e19f0(index);
+    if (pLine == 0 || EHandle_Get(m_hNPC) == 0)
+        return 0;
+    if (sub_100df0b0(*(int *)((char *)pLine + 4)) == 0)
+        return sub_101d3730("sound/character/dlg/ellipses.%s", pszExtension);
+    char cClan = sub_100e15c0(pLine, 0);
+    if (bCreate)
+        Q_snprintf(g_106ea558, 0x104, "*sound/character/%s", m_pTable);
+    else
+        Q_snprintf(g_106ea558, 0x104, "sound/character/%s", m_pTable);
+    g_106ea558[strlen(g_106ea558) - 4] = 0;
+    char szLine[64];
+    Q_snprintf(szLine, 0x40, "/line%d_col_%c.%s", index, cClan, pszExtension);
+    Q_strcat(g_106ea558, szLine);
+    return g_106ea558;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1880 size=0x11a
 #include "CDialog.h"
 #include "ScopeTrace.h"
