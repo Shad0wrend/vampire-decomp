@@ -4522,6 +4522,7 @@
 0x100150af func   ?sub_10215910@CUnknown10215910@@QAEXH@Z CUnknown10215910::sub_10215910
 0x100150b9 func   ?vfunc141@CBatSwarm@@QAEXPAHHPAX@Z CBatSwarm::vfunc141
 0x100150c8 func   ?sub_102edbb0@CAI_Navigator@@QAE_NPBVVector@@MHPAV2@@Z CAI_Navigator::sub_102edbb0
+0x100150ff func   ?vfunc545@CNPC_VCamera@@QAEHXZ CNPC_VCamera::vfunc545
 0x10015109 func   ?sub_103ec130@@YAHXZ sub_103ec130
 0x10015113 func   ?sub_1036e400@CNPC_VChangBros@@QAEXXZ CNPC_VChangBros::sub_1036e400
 0x1001514a func   ?sub_100b3b00@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3b00

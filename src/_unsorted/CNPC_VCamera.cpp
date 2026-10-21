@@ -45,3 +45,38 @@ int CNPC_VCamera::vfunc438()
 	return 0x156;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10369bd0 size=0xa5
+#include "CNPC_VCamera.h"
+class CBaseEntity;
+#include "CUnknown103158f0.h"
+extern void (*g_109f3650)(int level, const char *fmt, ...);
+int __fastcall sub_1009f200(void *p);
+void *sub_10008ee5(void *h);
+void *sub_10015bc7(void *e, void *h);
+
+typedef unsigned int (__fastcall *FlagsFn)(void *);
+typedef void (__fastcall *VoidFn)(void *);
+
+// TARGET: CNPC_VCamera::vfunc545
+int CNPC_VCamera::vfunc545()
+{
+    if (m_p5da4 == 0) {
+        unsigned int f = ((FlagsFn)(*(void ***)this)[0x804 / 4])(this);
+        if (f & 0x4000000) {
+            if (*(void * volatile *)&m_p5da8 == 0) {
+                g_109f3650(2, "WARNING: Found %s that isn't in a squad\n", sub_1009f200(this));
+                return m_p5da4 != 0;
+            }
+            m_p5da4 = sub_10008ee5(m_p5da8);
+            if (m_p5da4 == 0) {
+                m_p5da4 = sub_10015bc7(this, m_p5da8);
+                if (m_p5da4 != 0)
+                    ((CUnknown103158f0 *)m_p5da4)->sub_103158f0((CBaseEntity *)this);
+            }
+            ((VoidFn)(*(void ***)this)[0x878 / 4])(this);
+        }
+    }
+    return m_p5da4 != 0;
+}
+// END FUNCTION
