@@ -205,6 +205,30 @@ void CBaseCombatWeapon::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252090 size=0x67
+#include "CBaseCombatWeapon.h"
+
+char * __fastcall sub_10251d30(CBaseCombatWeapon *pThis);
+
+// TARGET: CBaseCombatWeapon::vfunc347
+int CBaseCombatWeapon::vfunc347(int a)
+{
+	switch (a)
+	{
+	case 21:
+	case 22:
+	case 23:
+	case 24:
+		return *(int *)((char *)sub_102517b0() + a * 4 + 0x5eab8);
+	case 10:
+	case 11:
+		return *(int *)(sub_10251d30(this) + a * 4 + 0x108d8);
+	default:
+		return *(int *)((char *)sub_102517e0() + a * 4 + 0xebd0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102526c0 size=0x1d
 #include "CBaseCombatWeapon.h"
 
