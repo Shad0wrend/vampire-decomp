@@ -157,6 +157,8 @@ public:
 	float m_f22B0;
 	char m_pad22B4[0x23bc - 0x22b4];	// 0x22B4 .. 0x23BB
 	CBasePlayerHandleVec m_SimulationList;	// 0x23BC (count at +0x23C8)
+	char m_pad23D0[0x245c - 0x23d0];	// 0x23D0 .. 0x245B
+	void *m_pInventory;	// 0x245C: the 5-dword inventory object (created by sub_101835e0)
 
 	void sub_10177120();
 	void sub_101835e0();	// "CBasePlayer::Inventory_CreateKey": scope trace (entity name), then allocates the 5-dword inventory object at +0x245c when it is not there yet
@@ -216,5 +218,4 @@ public:
 	void sub_1032d380(CBaseEntity *pWeapon, char bNoSwitch);	// CBaseCombatCharacter::vfunc383 (stub 0x100032b0), called directly
 	void *sub_10335950(const char *pszName);	// CBaseCombatCharacter::Inventory_FindWeapon (stub 0x10015195): the carried weapon whose classname matches, 0 when none; called directly
 	void sub_101784c0(CBaseEntity *pOther);	// adds the keyring item the player carries to the inventory object at +0x245c: lets the keyring look at pOther, creates the inventory when needed, hands it the loose keys and copies the keyring's records into it
-	char m_pad22B8Inv[0x245c - 0x22b8];
 };
