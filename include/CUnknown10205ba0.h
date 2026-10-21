@@ -10,4 +10,5 @@ public:
 	int m_value;	// 0x04: the number, the stat id or the sub-object
 
 	const char *sub_10205ba0(CUnknown10204bf0 *pNames);	// the text form of the value; numbers go through pNames when it is set, else "%d"
+	int sub_10205840();	// evaluates the value (stub 0x10004e85): the number itself, the sub-object's result, the stat's value, 0 for a function, -1 for anything else
 };
