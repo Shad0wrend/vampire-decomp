@@ -5,6 +5,6 @@
 class CUnknown101b3830
 {
 public:
-	void sub_101b3770(const char *pszName, int nGender);	// stub 0x10005826: registers one model name (gender 0 = neutral, 1 = male, 2 = female) for the first argument's key
+	void sub_101b3770(int nKey, const char *pszName, int nGender);	// stub 0x10005826: registers one model name (gender 0 = neutral, 1 = male, 2 = female) for the key
 	void sub_101b3830(int nKey, const char *pszName);	// registers the name, expanding "_gender" into the male and female variants
 };
