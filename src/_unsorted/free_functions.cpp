@@ -49871,6 +49871,39 @@ const char *CVStatList_t::sub_10201470(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10201590 size=0xc5
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CVStatActionList_t.h"
+#include "CUnknown10202060.h"
+
+namespace block_10201590 {
+struct CVStatListUnit : CVStatList_t
+{
+	char sub_102008b0(int stat);
+};
+
+char CVStatListUnit::sub_102008b0(int stat)
+{
+	return stat >= 0 && stat < m_field04;
+}
+}
+using namespace block_10201590;
+
+// TARGET: CVStatList_t::sub_10201590
+void CVStatList_t::sub_10201590(int stat)
+{
+	ScopeTrace trace("CVStatList_t::SetMin", g_106b8540);
+	if (((CVStatListUnit *)this)->sub_102008b0(stat)) {
+		int nOld = sub_10010609(stat);
+		int nMin = ((CVStatInfoList_t *)m_field0c)->sub_10200370(stat)->sub_101ff010(((CUnknown10202060 *)m_pad0000)->sub_10202060());
+		(*(int **)m_field08)[stat] = (*(int **)m_field08)[stat] + (nMin - nOld);
+		((CVStatActionList_t *)((char *)((CVStatInfoList_t *)m_field0c)->sub_10200370(stat) + 0x10c))->sub_101fd940((void *)((CUnknown10202060 *)m_pad0000)->sub_10202060(), nOld, nMin);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102016a0 size=0xc5
 #include "ScopeTrace.h"
 #include "CVStatList_t.h"
