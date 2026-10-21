@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+#include "CTakeDamageInfo.h"
+
 class CNPC_VMingXiaoTentacle;
 
 class CNPC_VMingXiao : public CBaseEntity
@@ -39,4 +41,8 @@ public:
 	void sub_10397380(CNPC_VMingXiaoTentacle *pTentacle);	// stub 0x1000394f, called with the new tentacle
 	bool vfunc100(int a, int b, int c);	// slot 100 "CNPC_VMingXiao::TestHitboxes": scope trace (entity name or "NULL_ENTITY"), false without a studio header, without the flag byte at +0x6678 or with fewer than 7 hitbox sets; otherwise true after the first hitbox set (0, then 1..6 whose availability test sub_10398000 passes) that sub_10399ef0 accepts
 	bool sub_10399ef0(int a, int b, int c, void *pHdr, void *pSet, int pCache);	// the per-set hitbox test (stdcall, 6 arguments; the caller loads ecx with this)
+	void vfunc390(CTakeDamageInfo *pInfo);	// slot 390 "OnTakeDamage"-like (declared as a plain member): the Troika base, but when sub_10398870() is clear the record is first copied and passed through sub_10395650 / sub_10395750 keyed by the attacker's weapon
+	char sub_10398870();	// stub 0x10012f26
+	void sub_102beda0(CTakeDamageInfo *pInfo);	// CAI_BaseNPCTroika::vfunc390, called directly (stub 0x10012611)
+	void sub_10395750(int a, CTakeDamageInfo *pInfo, void *pWeapon);	// stub 0x10008170
 };
