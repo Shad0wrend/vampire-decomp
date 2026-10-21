@@ -5,6 +5,7 @@
 #pragma once
 
 class CBaseEntity;
+class CBaseCombatWeapon;
 class CBasePlayer;
 struct inputdata_t;
 
@@ -77,7 +78,10 @@ public:
 	CBP_V1(sf00) CBP_V1(sf01) CBP_V1(sf02) CBP_V1(sf03)
 	virtual bool vfunc326(int a, CBaseEntity *pOther);	// slot 326: when the active weapon's type flags (slot 360) have bit 13 or 14, false unless pOther is set and its character template (default stat item) has the byte at +0xa0; else CBaseCombatCharacter::vfunc326(a, pOther)
 	CBP_V1(sf05) CBP_V1(sf06) CBP_V1(sf07) CBP_V1(sf08) CBP_V1(sf09)
-	CBP_V10(sf1) CBP_V10(sf2) CBP_V10(sf3) CBP_V10(sf4) CBP_V10(sf5) CBP_V10(sf6) CBP_V10(sf7) CBP_V1(sg0)
+	CBP_V10(sf1) CBP_V10(sf2) CBP_V10(sf3) CBP_V10(sf4) CBP_V10(sf5)
+	virtual bool vfunc382(CBaseCombatWeapon *pWeapon);	// slot 382 "Weapon_CanUse": true unless the weapon is of the two type flags 0x18000 and the player already owns a weapon of its class, then the player object at +0xa8 is sent message 0x4e with the weapon owner's text and false is returned
+	CBP_V1(sf61) CBP_V1(sf62) CBP_V1(sf63) CBP_V1(sf64) CBP_V1(sf65) CBP_V1(sf66) CBP_V1(sf67) CBP_V1(sf68) CBP_V1(sf69)
+	CBP_V10(sf7) CBP_V1(sg0)
 	virtual void vfunc403();
 	CBP_V1(sh0) CBP_V1(sh1) CBP_V1(sh2)
 	virtual void vfunc407();
