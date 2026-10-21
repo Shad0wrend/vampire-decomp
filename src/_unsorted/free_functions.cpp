@@ -78001,6 +78001,38 @@ char sub_1037a8a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037aea0 size=0xd0
+#include "CNPC_VGhoulCroucher.h"
+#include "CBaseVampireSkillEntity.h"
+#include "ScopeTrace.h"
+
+struct CGhoulSubObject_1037aea0	// the object at +0x66a4
+{
+	CGhoulSubObject_1037aea0 *sub_1037a880();	// stub 0x1000c243: constructor
+};
+
+extern int vt_104b50ac[];	// CNPC_VGhoulCroucher::vftable (primary)
+extern int vt_104b507c[];	// CNPC_VGhoulCroucher::vftable (CAI_DefMovementSink base at +0x19b0)
+
+CNPC_VGhoulCroucher *CNPC_VGhoulCroucher::sub_1037aea0()
+{
+	sub_10386aa0();
+	m_h6670 = -1;
+	((CVampireSkillItem *)((char *)this + 0x6674))->sub_100cd2a0();
+	((CVampireSkillItem *)((char *)this + 0x668c))->sub_100cd2a0();
+	((CGhoulSubObject_1037aea0 *)((char *)this + 0x66a4))->sub_1037a880();
+	*(int **)this = vt_104b50ac;
+	m_nVtable19b0 = (int)vt_104b507c;
+	ScopeTrace trace("CNPC_VGhoulCroucher::CNPC_VGhoulCroucher", m_name26c ? m_name26c : g_106b8540);
+	m_b6664 = 0;
+	m_b6666 = 0;
+	m_b6667 = 0;
+	m_b6665 = 0;
+	m_flNext666c = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037bb20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
