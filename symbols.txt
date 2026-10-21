@@ -4,6 +4,7 @@
 0x10001046 func   ?vfunc2@CTEGlowSprite@@UAEPAV1@I@Z CTEGlowSprite::vfunc2
 0x1000104b func   ?sub_103abb00@CNPC_VScurrying@@QAEPAV1@XZ CNPC_VScurrying::sub_103abb00
 0x10001050 func   ?vfunc438@CNPC_VYukie@@QAEHXZ CNPC_VYukie::vfunc438
+0x10001064 func   ?vfunc241@CEnvShooter@@QAEPAVCGib@@XZ CEnvShooter::vfunc241
 0x1000106e func   ?sub_10131490@@YAPAHXZ sub_10131490
 0x10001078 func   ?sub_101be1d0@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101be1d0
 0x10001082 func   _trigger_brush trigger_brush
