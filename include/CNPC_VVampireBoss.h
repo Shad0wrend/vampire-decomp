@@ -1,8 +1,11 @@
 // CNPC_VVampireBoss: vampire boss NPC. Only the members and slots that decompiled code needs are declared (slots as plain members).
 #pragma once
 
+#include "Vector.h"
+
 struct inputdata_t;
 class CBaseEntity;
+class CEntityVSlots;
 
 class CNPC_VVampireBoss
 {
@@ -49,4 +52,6 @@ public:
 	void sub_10014c22();	// stub 0x10014c22 for 0x103c6a00
 	bool sub_103c59d0(int a, int b);	// "CNPC_VVampireBoss::SelectHintNode": scope trace (no entity name), finds a node near (a, b) within 5000 units (sub_102d1af0 through the stub 0x1000633e) and stores it at +0x5ddc; on success sub_1000ac68(0) and true, else stamps the source line 0xd1 and fails through slot 448(4)
 	void sub_1000ac68(int a);	// stub for 0x10273e80, called directly
+	void sub_103c6570(CEntityVSlots *pHint, const Vector *pPoint);	// "CNPC_VVampireBoss::DistToHintCenterLine2D_2": scope trace, the hint's origin with z = 0 and its facing direction (AngleVectors of slot 219, z = 0, normalised) are handed with pPoint to sub_103c6680 (the distance of the point to the hint's centre line)
+	void sub_103c6680(const Vector *pOrigin, const Vector *pDirection, const Vector *pPoint);	// "CNPC_VVampireBoss::DistToHintCenterLine2D": the 2D distance of pPoint to the line (stub 0x1000314d)
 };
