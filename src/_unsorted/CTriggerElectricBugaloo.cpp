@@ -1,6 +1,28 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102313f0 size=0x6c
+#include "CCameraTrack.h"
+#include "CTriggerElectricBugaloo.h"
+
+struct EntInfo { void *ent; int serial; int pad; };
+extern char *g_10566458;
+
+void CTriggerElectricBugaloo::vfunc176(void *pOther)
+{
+	if (sub_10007d15(pOther))
+		((CCameraTrackMember *)((char *)this + 0x568))->sub_10010794((CCameraTrack *)pOther, (CCameraTrack *)this, 0);
+	char *pPlayer = *(char **)((char *)pOther + 0xa8);
+	if (pPlayer) {
+		unsigned int h = *(unsigned int *)(pPlayer + 0x1cbc);
+		EntInfo *e;
+		void *pEnt = (h != 0xffffffff && (e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff), e->serial == (h >> 13))) ? e->ent : 0;
+		if (pEnt == this)
+			*(unsigned int *)(pPlayer + 0x1cbc) = 0xffffffff;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231520 size=0xd1
 #include "CTriggerElectricBugaloo.h"
 
