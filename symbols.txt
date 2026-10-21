@@ -2491,6 +2491,7 @@
 0x1000a853 func   ?sub_102cc7e0@@YIXPAH@Z sub_102cc7e0
 0x1000a867 func   ?sub_102886f0@CUnknown102886f0@@QAEXH@Z CUnknown102886f0::sub_102886f0
 0x1000a871 func   ?sub_102ca6c0@Obj@@QAEXPAUEntX@@0@Z Obj::sub_102ca6c0
+0x1000a87b func   ?sub_103a5be0@CNPC_VSabbatLeaderCtor@@QAEPAVCNPC_VSabbatLeader@@XZ CNPC_VSabbatLeaderCtor::sub_103a5be0
 0x1000a88a func   ?vfunc50@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::vfunc50
 0x1000a899 func   _npc_VSabbatGunman npc_VSabbatGunman
 0x1000a89e func   ?sub_10185880@@YIXPAUMem@@HH@Z sub_10185880

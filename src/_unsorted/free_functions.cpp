@@ -85607,6 +85607,50 @@ char sub_103a5190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a5be0 size=0x72
+#include "CNPC_VSabbatLeader.h"
+extern void *vt_104a7b94[];
+extern void *vt_104a7b68[];
+extern void *vt_104c3d64[];
+extern void *vt_104c3d34[];
+struct CSabbatSub1 { void sub_10002ddd(); };
+struct CSabbatSub2 { void sub_100044d5(); };
+struct CSabbatSub3 { void sub_1000a583(); };
+struct CSabbatFields {
+    char m_pad[0x19b0];
+    void **m_vt19b0;
+    char m_pad19b4[0x66a0 - 0x19b4];
+    int m_h66a0[4];
+    int m_h66b0;
+};
+struct CNPC_VSabbatLeaderUnit : CNPC_VSabbatLeader {
+    void sub_1000425a();
+};
+
+struct CNPC_VSabbatLeaderCtor : CNPC_VSabbatLeader {
+    CNPC_VSabbatLeader *sub_103a5be0();
+};
+
+CNPC_VSabbatLeader *CNPC_VSabbatLeaderCtor::sub_103a5be0()
+{
+    char *p = (char *)this;
+    CSabbatFields *f = (CSabbatFields *)this;
+    ((CNPC_VSabbatLeaderUnit *)this)->sub_1000425a();
+    ((CSabbatSub1 *)(p + 0x6664))->sub_10002ddd();
+    int i;
+    for (i = 0; i < 4; i++)
+        f->m_h66a0[i] = -1;
+    f->m_h66b0 = -1;
+    ((CSabbatSub2 *)(p + 0x66b4))->sub_100044d5();
+    *(void ***)this = vt_104a7b94;
+    f->m_vt19b0 = vt_104a7b68;
+    ((CSabbatSub3 *)(p + 0x66e6))->sub_1000a583();
+    *(void ***)this = vt_104c3d64;
+    f->m_vt19b0 = vt_104c3d34;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a5da0 size=0x33
 void sub_1000831e();
 void sub_1000c5a9();
