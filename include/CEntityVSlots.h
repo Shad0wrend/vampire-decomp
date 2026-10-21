@@ -54,7 +54,7 @@ public:
 	EVS(174) EVS(175) EVS(176) EVS(177) EVS(178) EVS(179)
 	EVS10(18)
 	EVS(190) EVS(191) EVS(192) EVS(193)
-	virtual Vector *slot194();	// a position (three floats)
+	virtual Vector *slot194();	// the entity's local angles
 	EVS(195) EVS(196) EVS(197) EVS(198) EVS(199)
 	EVS(200) EVS(201)
 	virtual void slot202(CEntityVSlots *pOwner);	// "SetOwnerEntity"
