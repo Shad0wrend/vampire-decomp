@@ -33656,6 +33656,59 @@ CUnknown1070b22c_Edict *sub_101d1800(ViewerEntity *pViewer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2460 size=0x9a
+#include "CRecipientFilter.h"
+
+extern "C" __declspec(dllimport) void Plat_Free(void *p);
+extern char vt_104470dc[];
+
+struct CVecD {
+    int *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    int *m_pElements;
+
+    void MemPurge()
+    {
+        if (m_growSize != -1) {
+            if (m_pMemory) {
+                Plat_Free(m_pMemory);
+                m_pMemory = 0;
+            }
+            m_allocationCount = 0;
+        }
+    }
+    void Destroy()
+    {
+        m_size = 0;
+        MemPurge();
+        m_pElements = m_pMemory;
+        MemPurge();
+    }
+};
+
+#define D(n) virtual void n();
+#define D10(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+struct CEngineX {
+    D10(a0) D10(a1) D10(a2) D10(a3)
+    D(b40) D(b41)
+    virtual void vfunc42(CRecipientFilter *pFilter, int a, const float *pOrigin, int b, float c, int d);
+};
+extern CEngineX *g_10540528;
+
+void sub_101d2460(const float *pOrigin, int a, int b, int c)
+{
+    char buf[0x2c];
+    CRecipientFilter *pFilter = (CRecipientFilter *)buf;
+    pFilter->sub_1019ce00();
+    *(void **)buf = vt_104470dc;
+    pFilter->sub_1019d280(pOrigin);
+    g_10540528->vfunc42(pFilter, 0, pOrigin, a, (float)b, c);
+    ((CVecD *)(buf + 8))->Destroy();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d26b0 size=0x9b
 #include "CRestore.h"
 #include "Vector.h"

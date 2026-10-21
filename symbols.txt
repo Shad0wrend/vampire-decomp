@@ -1933,6 +1933,7 @@
 0x10009a75 func   ?sub_102a15c0@@YI_NPAUN@@@Z sub_102a15c0
 0x10009a7f func   ?sub_1004e910@CPhysBox@@QAEXH@Z CPhysBox::sub_1004e910
 0x10009a8e func   ?vfunc546@CNPC_VFrenzyShadow@@QAEHH@Z CNPC_VFrenzyShadow::vfunc546
+0x10009a98 func   ?sub_101d2460@@YAXPBMHHH@Z sub_101d2460
 0x10009aac func   ?sub_100828d0@@YAXXZ sub_100828d0
 0x10009ab1 func   ?sub_101fc0d0@CVStatCost_t@@QAEXXZ CVStatCost_t::sub_101fc0d0
 0x10009ab6 func   ?sub_10185790@@YIXPAH@Z sub_10185790
