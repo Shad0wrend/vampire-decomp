@@ -37650,6 +37650,57 @@ void CBasePlayer::sub_1017f170(void *pSpawnerVoid)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f2a0 size=0xa9
+struct CMsgPlayerView;
+void sub_101cebc0(CMsgPlayerView *pPlayer, int a, int b);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+struct CGlobalVarsView {
+	char m_pad0000[0xc];
+	float curtime;	// 0xc
+};
+extern CGlobalVarsView *g_1070b228;
+
+struct CCSActsFlag {	// a console variable: slot 1 tells whether it is unset
+	virtual void v0();
+	virtual char IsDefault();
+	char m_pad[0x28];
+	int m_nValue2c;
+};
+extern CCSActsFlag *g_107258dc;
+
+struct CLocalPlayerView {
+	char m_pad0000[0x49c];
+	int m_n49c;
+};
+CLocalPlayerView *sub_1023bd00();	// the local player object (returns the global at 0x107532e8)
+
+struct CWitnessView {
+	char m_pad0000[0x63a4];
+	float m_flTime63a4;
+};
+
+// TARGET: CBasePlayer::sub_1017f2a0
+void CBasePlayer::sub_1017f2a0(int priority, CBaseEntity *pEntity, const Vector *pPos)
+{
+	if (!g_107258dc->IsDefault() && g_107258dc->m_nValue2c) {
+		const char *pszName;
+		if (pEntity) {
+			((CWitnessView *)pEntity)->m_flTime63a4 = g_1070b228->curtime + 20.0f;
+			pszName = pEntity->sub_100ab4f0();
+		} else {
+			pszName = "**UNKNOWN**";
+		}
+		DevMsg("CSActs:    %6.1f - Criminal act witnessed by %s at %f\n", (double)g_1070b228->curtime, pszName, (double)g_1070b228->curtime);
+	}
+	CLocalPlayerView *pLocal = sub_1023bd00();
+	if (pLocal && pLocal->m_n49c) {
+		sub_101cebc0((CMsgPlayerView *)this, 5, 0);
+		sub_1017ed00(priority, pEntity, pPos);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f650 size=0x6b
 #include "CNPC_VCop.h"
 #include "ConVar.h"
