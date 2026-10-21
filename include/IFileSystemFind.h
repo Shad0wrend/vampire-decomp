@@ -1,6 +1,6 @@
 // IFileSystemFind: the engine's file system object (global pointer at 0x1070b238), seen through the slots the
-// decompiled code uses: slot 16 asks whether a find result is a directory, slots 22 / 23 / 25 are
-// FindFirst / FindNext / FindClose. Every other slot is a placeholder that keeps the numbering.
+// decompiled code uses: slot 16 asks whether a find result is a directory, slots 22 / 23 / 24 / 25 are
+// FindFirst / FindNext / FindIsDirectory / FindClose. Every other slot is a placeholder that keeps the numbering.
 #pragma once
 
 #define IFSF_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -16,6 +16,6 @@ public:
 	virtual void a17(); virtual void a18(); virtual void a19(); virtual void a20(); virtual void a21();
 	virtual const char *vfunc22(const char *pszWildcard, int *pHandle);	// FindFirst: the first file name, 0 when there is none
 	virtual const char *vfunc23(int hFind);	// FindNext
-	virtual void a24();
+	virtual bool vfunc24(int hFind);	// FindIsDirectory: whether the current find result is a directory
 	virtual void vfunc25(int hFind);	// FindClose
 };
