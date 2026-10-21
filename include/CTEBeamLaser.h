@@ -7,7 +7,7 @@ public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual CTEBeamLaser *vfunc2(unsigned int flags);	// scalar deleting destructor
-	virtual void vfunc3();
+	virtual void vfunc3(int a, int b);	// "CTEBeamLaser::Test": fills the fields with test values and fires it to a broadcast recipient filter (the two stack arguments are unused)
 	virtual void vfunc4(int pFilter, int delay);	// "CTEBeamLaser::Create": fires the temp entity with the fields below to the recipient filter
 
 	void sub_100051c8();	// destructor body
