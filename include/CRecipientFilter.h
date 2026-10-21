@@ -4,6 +4,7 @@
 class CRecipientFilter
 {
 public:
+	CRecipientFilter();	// the constructor (0x1019ce00, stub 0x100035d5), used by derived constructors; sub_1019ce00 is the same function called directly
 	virtual CRecipientFilter *vfunc0(unsigned char flags);	// scalar deleting destructor
 	virtual void vfunc1();
 	virtual void vfunc2();
@@ -26,5 +27,6 @@ public:
 	bool sub_101bd010(void *pPlayer);	// "CRecipientFilter::AddRecipient": the player's client index (engine slot 35 of the edict at +0x2e0) is appended unless negative or already present
 	void sub_1019d040(void *pPlayer);	// "CRecipientFilter::AddRecipient" (variant with prediction rules): skips the suppressed host when the byte at +0x28 is set, then appends the client index unless already present
 	void sub_1019ce00();	// the constructor body (stub 0x100035d5)
+	void sub_1019cff0();	// "CRecipientFilter::AddAllPlayers" (stub 0x1000d9f9)
 	void sub_1019d280(const float *pOrigin);	// "CRecipientFilter::AddRecipientsByPAS" (stub 0x10004caa): adds the players that can hear the origin
 };
