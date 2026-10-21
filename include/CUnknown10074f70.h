@@ -21,9 +21,9 @@ public:
 class CUnknown10074f70
 {
 public:
-	// the first two are cdecl members (this in ecx, the caller pops the arguments)
-	void __cdecl sub_10074bf0(char *pBuf);	// stub 0x10009ea3, fills the buffer with the event name
-	int __cdecl sub_10075b70(char *pBuf, const char *pszName);	// stub 0x100029c8
+	// the first two clean up their arguments in the caller (this in ecx): variadic members
+	void sub_10074bf0(char *pBuf, ...);	// stub 0x10009ea3, fills the buffer with the event name
+	int sub_10075b70(char *pBuf, const char *pszName, ...);	// stub 0x100029c8
 	double sub_10075e70(int a);	// stub 0x100154e7, returns a double in st0
 
 	void sub_10074f70(CUnknown10074f70_Actor *pActor);	// traces "Processing choreo event at %5.2f" with the actor name
