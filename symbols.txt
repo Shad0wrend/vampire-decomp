@@ -3512,6 +3512,7 @@
 0x100109f1 func   ?sub_101b50f0@CSoundEmitterSystemBase@@QAEXPBD@Z CSoundEmitterSystemBase::sub_101b50f0
 0x10010a0a func   _phys_constraint phys_constraint
 0x10010a14 func   _prop_keypad prop_keypad
+0x10010a6e func   ?sub_10337bd0@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::sub_10337bd0
 0x10010a87 func   ?vfunc103@CNPCMaker_Zombie@@UAEXXZ CNPCMaker_Zombie::vfunc103
 0x10010a9b func   ?sub_101bd940@@YIXPAD@Z sub_101bd940
 0x10010aaa func   ?sub_100b7130@@YIXPAUMem4@@HH@Z sub_100b7130
