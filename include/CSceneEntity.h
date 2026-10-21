@@ -29,7 +29,8 @@ public:
 	virtual void vfunc248(float a, int b, int c);
 	virtual void vfunc249(float a, int b, int c);
 	virtual void vfunc250(float a, int b, int c);
-	SCENE_V(251) SCENE_V(252) SCENE_V(253) SCENE_V(254) SCENE_V(255) SCENE_V(256) SCENE_V(257) SCENE_V(258) SCENE_V(259)
+	SCENE_V(251) SCENE_V(252) SCENE_V(253) SCENE_V(254) SCENE_V(255) SCENE_V(256) SCENE_V(257) SCENE_V(258)
+	virtual void vfunc259(int unused, void *pEvent, const char *pszTarget);	// slot 259: for the actor of the scene event (object at +0x94 of pEvent) and the entity named pszTarget: sets the actor's move type (4, 0), copies the target's slot 192 vector to +0x5db8 and its slot 219 vector to +0x5dc4 of the actor, runs the actor's sub_10280de0(0x39) and stamps curtime at +0x5cf0
 	SCENE_V(260) SCENE_V(261) SCENE_V(262) SCENE_V(263) SCENE_V(264) SCENE_V(265)
 	virtual void vfunc266(int unused, const char *pszArgs);	// parses "automate <Cancel|Resume> <seconds>" arguments into the automation fields
 	SCENE_V(267) SCENE_V(268)
