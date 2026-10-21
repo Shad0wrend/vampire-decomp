@@ -127,6 +127,7 @@ public:
 	void sub_102ed390(int a1, int a2, int a3, int a4, int a5, int a6, int a7);	// asks the owner (slot 220) with the route's value at +0x28, then stores the answer in the route
 	bool sub_102edae0(const Vector *pPosition, float flDistance, int c, Vector *pOut);	// "FindBackAwayPoint": refreshes the stamps of this and of the pathfinder (the owner's object at +0x5d3c), asks the pathfinder for a node to back away to and, when there is one, copies the node's position to pOut and succeeds
 	bool sub_102edbb0(const Vector *pPosition, float flDistance, int c, Vector *pOut);	// as sub_102edae0, asking the pathfinder's A* search (sub_10301010)
+	bool sub_102edc80(const Vector *pPosition, float flDistance, int c, int d, Vector *pOut, int e);	// as sub_102edae0 with the five argument node search (sub_10301720); pOut is the fifth argument
 	Vector *sub_102ee9c0(Vector *pOut, int index);	// the position of graph node `index` (stub 0x10008869)
 
 	int m_i14;
