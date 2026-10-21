@@ -28,7 +28,8 @@ public:
 	virtual void vfunc60(); virtual void vfunc61(); virtual void vfunc62(); virtual void vfunc63(); virtual void vfunc64();
 	virtual void vfunc65(void *pFilter, int nMessage);	// slot 65 (+0x104): UserMessageBegin
 	virtual void vfunc66();	// slot 66 (+0x108): MessageEnd
-	virtual void vfunc67(); virtual void vfunc68(); virtual void vfunc69();
+	virtual void vfunc67(int nValue);	// slot 67 (+0x10c): a message write taking one value
+	virtual void vfunc68(); virtual void vfunc69();
 	virtual void vfunc70(); virtual void vfunc71(); virtual void vfunc72(); virtual void vfunc73(); virtual void vfunc74();
 	virtual void vfunc75(int nValue);	// slot 75 (+0x12c): WriteByte
 	virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78(); virtual void vfunc79();
