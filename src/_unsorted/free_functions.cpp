@@ -6102,6 +6102,35 @@ void CUnknown10058220::sub_10058220(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005a1a0 size=0xa2
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_10246700(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, int varProxy);	// SendPropVector
+void sub_10003012();
+
+extern SendTable g_106beb2c;
+
+// TARGET: sub_1005a1a0
+int sub_1005a1a0()
+{
+	static const char *pTableName = "DT_TEMetalSparks";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246700("m_vecPos", 12, 12, -1, 2, 0.0f, -121121.121212f, (int)sub_10003012),
+		sub_10246700("m_vecDir", 24, 12, -1, 2, 0.0f, -121121.121212f, (int)sub_10003012),
+	};
+	g_106beb2c.sub_1000e8fe(props + 1, 2, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005a330 size=0x4f
 extern CTEMetalSparks g_106beadc;
 
