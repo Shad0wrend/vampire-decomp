@@ -1579,6 +1579,7 @@
 0x10007969 func   ?vfunc103@CItemContainerOneItemFiltered@@UAEXXZ CItemContainerOneItemFiltered::vfunc103
 0x10007978 func   ?sub_101d3080@@YA_NPAUHandleEntLike@@H@Z sub_101d3080
 0x100079a5 func   _item_w_colt_anaconda item_w_colt_anaconda
+0x100079be func   ?sub_103a9d90@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103a9d90
 0x100079c3 func   ?vfunc438@CNPC_VAndreiBlood@@UAEHXZ CNPC_VAndreiBlood::vfunc438
 0x100079c8 func   ?vfunc48@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc48
 0x100079e1 func   ?vfunc32@CTriggerBombSite@@QAE_NPAX@Z CTriggerBombSite::vfunc32

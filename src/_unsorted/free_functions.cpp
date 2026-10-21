@@ -73389,6 +73389,25 @@ char sub_103a5da0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a9d90 size=0xa5
+#include "CNPC_VSabbatLeader.h"
+#include "ScopeTrace.h"
+
+extern float g_104c3cc8;
+extern float g_104c3cc4;
+
+// TARGET: CNPC_VSabbatLeader::sub_103a9d90
+bool CNPC_VSabbatLeader::sub_103a9d90()
+{
+    ScopeTrace trace("CNPC_VSabbatLeader::CheckForJumpCondition", g_106b8540);
+    if (sub_103c67f0(g_104c3cc8))
+        return true;
+    if (sub_103c6a20() >= g_104c3cc4)
+        return true;
+    return sub_103aabc0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103aa960 size=0xd4
 #include "ScopeTrace.h"
 #include "CNPC_VSabbatLeader.h"
