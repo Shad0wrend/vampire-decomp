@@ -36582,6 +36582,64 @@ float __stdcall sub_1017deb0(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017df50 size=0x18f
+#include "CBasePlayer.h"
+#include "ConVar.h"
+
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+struct CWeaponGlobals
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern CWeaponGlobals *g_1070b228;
+extern ConVar g_10724ff8;
+extern ConVar *g_107258dc;
+extern char g_106b8540[];
+
+struct CBasePlayerUnit : CBasePlayer
+{
+	float sub_1017deb0(int a, float b);
+	void sub_1017df50(int level, float time, const char *pszReason);
+};
+
+#define FLD(type, off) (*(type *)((char *)this + (off)))
+
+// TARGET: CBasePlayer::sub_1017df50
+void CBasePlayer::sub_1017df50(int level, float time, const char *pszReason)
+{
+	CBasePlayerUnit *self = (CBasePlayerUnit *)this;
+	if (!pszReason)
+		pszReason = g_106b8540;
+	g_10724ff8.sub_10246160(-1);
+	if (level == 0)
+	{
+		if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
+			DevMsg("CSActs:    %6.1f - Supernatural level %d -> 0 (act - %s)\n", g_1070b228->curtime, FLD(int, 0x1ccc), pszReason);
+		FLD(int, 0x1ccc) = 0;
+		FLD(float, 0x1ce4) = -1.0f;
+		return;
+	}
+	float t;
+	if (level > FLD(int, 0x1ccc))
+	{
+		t = self->sub_1017deb0(FLD(int, 0x1ccc), time);
+		if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
+			DevMsg("CSActs:    %6.1f - Supernatural level %d -> %d (%f sec) (act - %s)\n", g_1070b228->curtime, FLD(int, 0x1ccc), level, t, pszReason);
+		FLD(int, 0x1ccc) = level;
+		FLD(float, 0x1ce4) = t + g_1070b228->curtime;
+	}
+	else
+	{
+		t = self->sub_1017deb0(FLD(int, 0x1ccc), time);
+		if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
+			DevMsg("CSActs:    %6.1f - Supernatural level %d -> %d (refresh %f sec) (act - %s)\n", g_1070b228->curtime, FLD(int, 0x1ccc), level, t, pszReason);
+		FLD(float, 0x1ce4) = t + g_1070b228->curtime;
+	}
+	FLD(int, 0x1cec)++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017e560 size=0x68
 #include "CBasePlayer.h"
 #include "inputdata_t.h"
