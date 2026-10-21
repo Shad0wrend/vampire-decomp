@@ -31548,6 +31548,49 @@ struct CUnknown101c2b10 { char p[0x4a]; char a; void sub_101c2b10(char v); };
 void CUnknown101c2b10::sub_101c2b10(char v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101c2c60 size=0x85
+#include "CVDmg_t.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+extern unsigned int g_1072cb5c;
+extern CVDmg_t *g_1072cb10;
+
+struct CDmgTargetEnt {
+	void sub_1000ad5d(CVDmg_t **ppDmg);
+};
+
+void sub_10001a6e();
+
+inline CGlobalEntityList_Ent *LookupEntity(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+	if (pSlot->m_Serial != (int)(h >> 13))
+		return 0;
+	return pSlot->m_pEntity;
+}
+
+// TARGET: sub_101c2c60
+void sub_101c2c60()
+{
+	if (!LookupEntity(g_1072cb5c))
+	{
+		if (g_1072cb10)
+			g_1072cb10->sub_101faa70();
+	}
+	else
+	{
+		unsigned int h = g_1072cb5c;
+		CGlobalEntityList_Slot *pSlot;
+		CGlobalEntityList_Ent *pEnt = (h != 0xffffffff && (pSlot = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13)) ? pSlot->m_pEntity : 0;
+		((CDmgTargetEnt *)pEnt)->sub_1000ad5d(&g_1072cb10);
+		sub_10001a6e();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c30c0 size=0x98
 #include "SendProp.h"
 
