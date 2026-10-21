@@ -138,6 +138,21 @@ void CBaseCombatWeapon::vfunc306(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253ab0 size=0x6d
+#include "CBaseCombatCharacter.h"
+
+bool CBaseCombatWeapon::vfunc280(int a)
+{
+	if (!sub_10253b40(a))
+		return true;
+	if (vfunc277(a) && *(int *)((char *)this + a * 4 + 0x74c) > 0)
+		return true;
+	if (sub_102521f0() && ((CBaseCombatCharacter *)sub_102521f0())->sub_103346c0(*(int *)((char *)this + a * 4 + 0x744)) > 0)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10255030 size=0x8
 #include "CBaseCombatWeapon.h"
 
