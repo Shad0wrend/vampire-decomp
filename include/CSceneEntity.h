@@ -45,6 +45,11 @@ struct CSceneEvent	// a scene event; only what the actor checks need
 	int sub_100029c8();	// the event's type (stub 0x100029c8)
 };
 
+struct CSceneEntityScene	// the scene object at +0x4bc
+{
+	char sub_1007d190();	// whether the scene is finished (stub 0x10014128)
+};
+
 class CSceneEntity
 {
 public:
@@ -84,6 +89,7 @@ public:
 	void sub_10082d20();	// stub 0x1000ee71 (called first by slot 245 while the scene plays)
 	CSceneEntity *sub_10080830();	// the constructor body (stub of the three scene entity classes' constructors): CBaseEntity constructor, the logical entity fields (-1 at +0x46c..+0x47c), the sub-object at +0x4c0, the seven outputs at +0x4cc..+0x55c, the vtable, the scene state, the "snd_mixahead" console variable at +0x4c8
 	void sub_100821f0(int mode);	// moves every actor entity of the scene (the elements of the object at +0x4bc, entity by name = element + 0x14) according to mode: 1 = to this entity's origin / angles, 2 = to the element's stored origin (+0x17c) / angles (+0x188), 3 = bone match "bip01"; marks the entity (+0x19c bit 4) and updates the CBaseAnimating
+	float sub_100ac720(const char *context);	// "CBaseEntity::GetLastThink" (stub 0x1000c8ba), called directly
 
 	char m_pad0004[0x10c - 4];
 	unsigned int m_hPlayer10c;	// 0x10c: entity handle of the scene's player
