@@ -50585,6 +50585,82 @@ void __fastcall sub_1027d9b0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027dd10 size=0xb3
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CHandleView
+{
+	unsigned int m_Index;
+
+	CGlobalEntityList_Ent *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[m_Index & 0x1fff];
+			if (pSlot->m_Serial == (int)(m_Index >> 13))
+				return pSlot->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+struct CNavigatorView
+{
+	bool sub_102ee2e0();
+	void sub_102ee2c0();
+};
+
+struct CNpcAIView
+{
+	char m_pad0000[0x644c];
+	int m_nState;
+};
+
+#define NV1(n) virtual void nv##n();
+#define NV10(p) NV1(p##0) NV1(p##1) NV1(p##2) NV1(p##3) NV1(p##4) NV1(p##5) NV1(p##6) NV1(p##7) NV1(p##8) NV1(p##9)
+#define NV100(p) NV10(p##0) NV10(p##1) NV10(p##2) NV10(p##3) NV10(p##4) NV10(p##5) NV10(p##6) NV10(p##7) NV10(p##8) NV10(p##9)
+
+struct CAI_BaseNPCStopView
+{
+	NV100(a) NV10(b0) NV10(b1) NV10(b2) NV10(b3) NV10(b4)
+	NV1(b50) NV1(b51) NV1(b52) NV1(b53) NV1(b54) NV1(b55) NV1(b56) NV1(b57)
+	virtual bool slot158();
+	NV100(c) NV100(d) NV100(e) NV10(f0) NV10(f1) NV10(f2) NV10(f3) NV10(f4) NV10(f5)
+	NV1(g0) NV1(g1) NV1(g2) NV1(g3) NV1(g4) NV1(g5) NV1(g6) NV1(g7) NV1(g8)
+	virtual void slot528();
+	NV1(h0) NV1(h1) NV1(h2)
+	virtual void slot532(int value);
+
+	char m_pad0004[0x98 - 4];
+	CNpcAIView *m_pAI;
+	char m_pad009c[0x1a40 - 0x9c];
+	char m_bFlag1a40;
+	char m_pad1a41[0x5d24 - 0x1a41];
+	CHandleView m_hTarget;
+	char m_pad5d28[0x5d34 - 0x5d28];
+	CNavigatorView *m_pNavigator;
+};
+
+void CAI_BaseNPC::sub_1027dd10(CBaseEntity *pEnt)
+{
+	CAI_BaseNPCStopView *p = (CAI_BaseNPCStopView *)this;
+	if (!p->slot158())
+		return;
+	if (pEnt) {
+		if ((void *)pEnt == p->m_hTarget.Get())
+			p->slot532(1);
+		if (p->m_pNavigator->sub_102ee2e0())
+			p->m_pNavigator->sub_102ee2c0();
+		p->m_bFlag1a40 = 1;
+		p->slot528();
+		CNpcAIView *pAI = p->m_pAI;
+		if (pAI && (pAI->m_nState == 1 || pAI->m_nState == 2))
+			pAI->m_nState = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027e590 size=0x93
 #include "CBaseEntity.h"
 extern "C" int _vsnprintf(char *, unsigned int, const char *, char *);

@@ -4306,6 +4306,7 @@
 0x10013bf1 func   ?sub_1028ae60@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1028ae60
 0x10013bfb func   ?vfunc546@CNPC_VNosferatu@@QAEHH@Z CNPC_VNosferatu::vfunc546
 0x10013c00 func   ?sub_100aaa40@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100aaa40
+0x10013c19 func   ?sub_1027dd10@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_1027dd10
 0x10013c28 func   ?sub_100fa690@@YIXPAUCSlots@@HH@Z sub_100fa690
 0x10013c50 func   ?vfunc5@CWeaponMelee_Baton@@QAEPAV1@I@Z CWeaponMelee_Baton::vfunc5
 0x10013c55 func   ?vfunc86@CInspectionBrush@@QAEDHPAUCInspectionBrushEdict@@HHH@Z CInspectionBrush::vfunc86
