@@ -3505,6 +3505,7 @@
 0x1001064a func   ?sub_101857f0@UtlMem8@@QAEXH@Z UtlMem8::sub_101857f0
 0x1001064f func   ?sub_100df7b0@@YA_NXZ sub_100df7b0
 0x10010663 func   ?sub_10237ce0@@YAXXZ sub_10237ce0
+0x1001066d func   ?sub_101ff190@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff190
 0x10010690 func   ?vfunc622@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc622
 0x100106ae func   ?sub_101ed9e0@CUnknown101ed9e0@@QAEPAV1@H@Z CUnknown101ed9e0::sub_101ed9e0
 0x100106d1 func   ??0CAI_Navigator@@QAE@H@Z CAI_Navigator::CAI_Navigator
