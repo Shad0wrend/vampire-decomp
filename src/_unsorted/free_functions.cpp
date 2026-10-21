@@ -79869,6 +79869,32 @@ unsigned char __fastcall sub_1038f640(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038f660 size=0xe9
+#include "CNPC_VManBat.h"
+#include "CRagdollPropSpecial.h"
+#include "CEHandleGet.h"
+
+extern "C" void *__RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pDestType, int isReference);
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_1057fff0[];	// type descriptor of CRagdollPropSpecial
+char __fastcall sub_1038f640(char *pNPC);
+void sub_101cd970(CBaseEntity *pEnt);
+
+void CNPC_VManBat::sub_1038f660()
+{
+	if (sub_1038f640((char *)this)) {
+		CRagdollPropSpecial *pRagdoll = (CRagdollPropSpecial *)__RTDynamicCast(EHandle_Get(m_h668c), 0, g_10538764, g_1057fff0, 0);
+		if (pRagdoll)
+			pRagdoll->sub_101578d0(m_b6694);
+		m_h668c = 0xffffffff;
+		if (EHandle_Get(m_h6690))
+			sub_101cd970((CBaseEntity *)EHandle_Get(m_h6690));
+		m_h6690 = 0xffffffff;
+		sub_1038f600(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038fc80 size=0x8f
 #include "CNPC_VManBat.h"
 #include "CBaseCombatCharacter.h"
