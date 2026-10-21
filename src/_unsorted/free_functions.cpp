@@ -59670,6 +59670,46 @@ extern "C" CBaseEntity *npc_bullseye()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103566a0 size=0x7b
+#include "CBaseEntity.h"
+#include "CNPC_Bullseye.h"
+
+struct CBullseyeGlobals {
+	virtual void v0();
+	virtual bool v1();
+	char m_pad[0x28 - 4];
+	float m_f28;
+};
+
+extern CBullseyeGlobals *g_1093a01c;
+extern float g_104454c4;
+extern void *vt_104a374c[];
+extern void *vt_104a371c[];
+void __fastcall sub_10006659(CNPC_Bullseye *p);
+void __fastcall sub_10002ddd(void *p);
+
+// TARGET: CNPC_Bullseye::sub_103566a0
+CNPC_Bullseye *CNPC_Bullseye::sub_103566a0()
+{
+	char *p = (char *)this;
+	sub_10006659(this);
+	*(int *)(p + 0x5f44) = -1;
+	sub_10002ddd(p + 0x5f48);
+	sub_10002ddd(p + 0x5f60);
+	*(void ***)p = vt_104a374c;
+	*(void ***)(p + 0x19b0) = vt_104a371c;
+	m_nTakeDamage = 2;
+	float f;
+	if (g_1093a01c->v1())
+		f = g_104454c4;
+	else
+		f = g_1093a01c->m_f28;
+	m_iHealth = (int)f;
+	*(int *)(p + 0x5f44) = -1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357110 size=0x2a
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
