@@ -1686,6 +1686,7 @@
 0x10007897 func   ?sub_103c49d0@@YADXZ sub_103c49d0
 0x100078a6 func   _vgui_screen vgui_screen
 0x100078dd func   ?vfunc5@CPointTarget@@QAEPAV1@I@Z CPointTarget::vfunc5
+0x100078e2 func   ?sub_10106e20@@YIMPAVCBaseEntity@@HMPAUExprCurve@@@Z sub_10106e20
 0x100078f1 func   ?sub_100904a0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_100904a0
 0x10007900 func   ?sub_102885d0@@YIXPAX@Z sub_102885d0
 0x10007905 func   ?sub_10258290@CLethalUnit@@QAEHH@Z CLethalUnit::sub_10258290

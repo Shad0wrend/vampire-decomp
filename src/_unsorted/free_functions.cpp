@@ -27244,6 +27244,34 @@ void CBaseCombatCharacter::sub_10106b30(const char *pszName, char *pDest, int si
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106e20 size=0x114
+#include "ScopeTrace.h"
+struct ExprCurve {
+    int pad0;
+    float a, b, c, d, e;
+};
+float __fastcall sub_10106e20(CBaseEntity *self, int unused, float t, ExprCurve *p)
+{
+    ScopeTrace trace("CBaseCombatCharacter::CalcExpressionIntensity", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+    float lo = p->b - p->d;
+    float hi = p->a + p->c;
+    float r = 0.0f;
+    if (t > hi && t < lo)
+        return p->e;
+    float f;
+    if (t < hi) {
+        f = (t - p->a) / p->c;
+        float f3 = f * f * f;
+        r = (3.0f * f * f - (f3 + f3)) * p->e;
+    } else if (t > lo) {
+        f = (p->b - t) / p->d;
+        float f3 = f * f * f;
+        r = (3.0f * f * f - (f3 + f3)) * p->e;
+    }
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106f90 size=0x81
 #include "CBaseCombatCharacter.h"
 #include "CExpressionTable.h"
