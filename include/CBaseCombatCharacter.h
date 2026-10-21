@@ -70,6 +70,7 @@ public:
 	void sub_1033c830(unsigned int flags);	// "CBaseCombatCharacter::ToggleMiscFlag": scope trace (entity name), clears flags in +0xfe4 when any are set, else sets them
 	bool sub_1033c900(unsigned int flags);	// "CBaseCombatCharacter::HasMiscFlag": scope trace (entity name), (flags & +0xfe4) != 0
 	bool sub_1033ce10(unsigned int low, unsigned int high);	// "CBaseCombatCharacter::HasDisciplineEffects": scope trace (entity name), (low & +0xeb0) != 0 or (+0xeb4 & high & 0x7fffffff) != 0
+	void sub_1033cfb0(unsigned int flag, float duration, CBaseEntity *pSource, unsigned int extra);	// "CBaseCombatCharacter::AddDiscFlag": scope trace (entity name), when the flag is not yet in the mask at +0xeb0 / +0xeb4 sets it, stores the expiry time at +0xec0 + index*4 and appends a 16 byte record (flag, source handle, extra, source dword at +0xfb0) to the vector at +0xfb4
 	bool sub_10341aa0();	// "CBaseCombatCharacter::IsUnconscious": scope trace (entity name), then bit 0 of the byte at +0xfe4
 	void sub_10341b60(char unconscious);	// "CBaseCombatCharacter::SetUnconscious": scope trace (entity name), sets or clears bit 0 of +0xfe4
 	void sub_10322800(unsigned int flags, int a);	// "CBaseCombatCharacter::SetOccultPowerFlag": scope trace, ors flags into the dword at +0xe38
