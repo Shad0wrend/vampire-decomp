@@ -30384,6 +30384,39 @@ int CGameMovement::sub_10125200(const Vector &point)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10126e20 size=0xf4
+#include "CGameMovement.h"
+
+struct MoveV {
+	char m_pad0000[0x184];
+	Vector m_vecViewOffset;
+	char m_pad0190[0x1edc - 0x190];
+	char m_bFlag;
+
+	void sub_1009f380(const Vector *pOffset);
+};
+
+struct SlotView {
+	virtual void s0();
+	virtual void s1();
+	virtual float *Slot2(char flag, char b);
+	virtual void s3();
+	virtual float *Slot4(char flag, char b);
+};
+
+void CGameMovement::sub_10126e20(float flDuckFraction)
+{
+	Vector vDuckMins = *(Vector *)((SlotView *)this)->Slot2(1, ((MoveV *)m_pMove)->m_bFlag);
+	Vector vStandMins = *(Vector *)((SlotView *)this)->Slot2(0, ((MoveV *)m_pMove)->m_bFlag);
+	Vector vDuckView = *(Vector *)((SlotView *)this)->Slot4(1, ((MoveV *)m_pMove)->m_bFlag);
+	Vector vStandView = *(Vector *)((SlotView *)this)->Slot4(0, ((MoveV *)m_pMove)->m_bFlag);
+	float flMore = vDuckMins.z - vStandMins.z;
+	Vector vecOffset = ((MoveV *)m_pMove)->m_vecViewOffset;
+	vecOffset.z = ((1.0f - flDuckFraction) * vStandView.z) + ((vDuckView.z - flMore) * flDuckFraction);
+	((MoveV *)m_pMove)->sub_1009f380(&vecOffset);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101273e0 size=0x8c
 const char *sub_101273e0(int state)
 {
