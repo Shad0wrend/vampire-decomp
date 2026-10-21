@@ -205,6 +205,42 @@ bool CBasePlayer::sub_1015ff40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160bc0 size=0xfc
+#include "CBasePlayer.h"
+#include "melee_dice_roll_result.h"
+#include "CUnknown10349590.h"
+#include "CUnknown103498b0.h"
+#include "CVStatList_t.h"
+
+struct PlayerGlobals {
+	char pad[0xc];
+	float curtime;
+};
+extern PlayerGlobals *g_1070b228;
+extern float g_1046fafc;
+extern float g_1046fb00;
+
+bool CBasePlayer::vfunc318(int a, melee_dice_roll_result *pRoll, int c)
+{
+	if (!pRoll)
+		return false;
+	int nActivity = 0x52;
+	float flTime = g_1046fafc;
+	if (((CUnknown10349590 *)pRoll)->sub_10349590()) {
+		CVStatList_t *pList = CVStatListSet::Of(this)->Find(0);
+		pRoll->sub_10349710((int)this, pList->sub_10010609(2), (int *)c);
+		if (((CUnknown103498b0 *)pRoll)->sub_103498b0() == 3) {
+			nActivity = 0x1156;
+			flTime = g_1046fb00;
+		}
+	}
+	sub_101644f0(nActivity, -1, 1);
+	*(int *)((char *)this + 0x6f4) = *(int *)((char *)this + 0x1488);
+	m_f1564 = flTime + g_1070b228->curtime;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163630 size=0xd9
 #include "CBasePlayer.h"
 #define GV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
