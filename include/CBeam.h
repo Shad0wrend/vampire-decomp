@@ -10,6 +10,7 @@ public:
 	virtual void vfunc87(void *pCheckTransmitInfo);	// "CBeam::SetTransmit"-like: unless the info's bit for this edict is set, base SetTransmit, then the same call on each of the ten attached entities (handles from +0x468)
 	virtual void vfunc103();	// slot 103: move type none (slot 93(0, 0)), scope-traced SetSolid(0) on the collision property at +0x270, the dword at +0x16c = 2, then slot 104
 	virtual void vfunc104();	// slot 104: hands the owner entity (slot 97) to sub_100bafc0, then the entity of the handle at +0x4e4 to sub_100bb030
+	virtual int vfunc124();	// "CBeam::DrawDebugTextOverlays": the base lines, then (text overlay bit 0 of the byte at +0x224) the "start:" and "end  :" lines
 	void sub_1000cb8a();
 	CBeam *sub_100bac50();	// as in CKeepUpright (transplant)
 	float *sub_100bb270();	// "CBeam::GetEndPos"-like: when the beam end is an entity (type 2 in the low nibble of +0x464, handle at +0x468) with a valid edict, tail calls slot 217 of that entity (via CBaseEntity::Instance), else of this
