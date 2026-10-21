@@ -142,6 +142,7 @@
 0x10001979 func   ?sub_10295240@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_10295240
 0x1000199c func   _info_constraint_anchor info_constraint_anchor
 0x100019a1 func   _npc_VNewscaster npc_VNewscaster
+0x100019a6 func   ?vfunc103@CPropButton@@UAEXXZ CPropButton::vfunc103
 0x100019c9 func   ?vfunc5@CPropDoorknobElectronic@@QAEPAV1@I@Z CPropDoorknobElectronic::vfunc5
 0x100019d8 func   ?sub_100ddf40@CUnknown100ddf40@@QAEPAHH@Z CUnknown100ddf40::sub_100ddf40
 0x100019dd func   ?sub_1005ed80@@YAXPAXHPBM11HHHHH@Z sub_1005ed80
