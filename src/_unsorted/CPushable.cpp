@@ -27,6 +27,39 @@ CPushable *CPushable::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f290 size=0xdc
+#include "CPushable.h"
+#include "CBreakable.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+static inline bool SpawnFlagBit7(const unsigned int *pFlags)
+{
+    return ((*pFlags >> 7) & 1) != 0;
+}
+
+void CPushable::vfunc103()
+{
+    if (SpawnFlagBit7((unsigned int *)((char *)this + 0x204))) {
+        ((CBreakable *)this)->sub_1010d6a0();
+        return;
+    }
+    *(unsigned int *)((char *)this + 0x4c) |= 0x2000;
+    ((CEntityVSlots *)this)->slot104();
+    {
+        const char *pszName = *(const char **)((char *)this + 0x26c);
+        ScopeTrace trace("CBaseEntity::SetSolid", pszName ? pszName : g_106b8540);
+        ((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(6);
+    }
+    ((CEntityVSlots *)this)->slot93(8, 0);
+    int nDummy;
+    const char *pszModel = *((CEntityVSlots *)this)->slot9(&nDummy);
+    ((CEntityVSlots *)this)->slot105(pszModel ? pszModel : g_106b8540);
+    ((CEntityVSlots *)this)->slot223();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f4c0 size=0x9
 int CPushable::vfunc35(int a) { return m_field4a8; }
 // END FUNCTION
