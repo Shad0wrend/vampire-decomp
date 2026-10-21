@@ -43549,6 +43549,72 @@ int *sub_101a9bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9fa0 size=0x100
+#include "CUnknown101aa210.h"
+#include "CEHandleGet.h"
+#include "COutputEvent.h"
+
+struct CGlobalVarsView {
+	char m_pad0000[0xc];
+	float curtime;	// 0xc
+};
+extern CGlobalVarsView *g_1070b228;
+extern float g_104454c4;	// 0.0f
+
+#define ES1(n) virtual void s##n();
+#define ES10(p) ES1(p##0) ES1(p##1) ES1(p##2) ES1(p##3) ES1(p##4) ES1(p##5) ES1(p##6) ES1(p##7) ES1(p##8) ES1(p##9)
+struct CEngineSlots57 {	// the engine interface up to slot 57
+	ES10(0) ES10(1) ES10(2) ES10(3) ES10(4)
+	ES1(50) ES1(51) ES1(52) ES1(53) ES1(54) ES1(55) ES1(56)
+	virtual float vfunc57(int key);	// slot 57: the duration of a line
+};
+extern CEngineSlots57 *g_1070b22c;
+
+struct CActorBindView {
+	char m_pad0000[0x10c];
+	unsigned int m_h10c;	// 0x10c: entity handle
+	char m_pad0110[0x17c - 0x110];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x204 - 0x180];
+	unsigned int m_flags204;	// 0x204
+	char m_pad0208[0x45c - 0x208];
+	float m_flPause45c;	// 0x45c
+	float m_flDelay460;	// 0x460
+	char m_pad0464[0x470 - 0x464];
+	char m_b470;	// 0x470
+	char m_pad0471[0x494 - 0x471];
+	COutputEvent m_Out494;	// 0x494
+
+	int sub_100ac4e0(int func, int thinkTime, const char *szContext);
+};
+
+void sub_101cd940(void *pEntity);
+void sub_10003297();	// the think function (stub)
+
+// TARGET: CUnknown101aa210::sub_101a9fa0
+void CUnknown101aa210::sub_101a9fa0()
+{
+	CActorBindView *p = (CActorBindView *)this;
+	void *pNPC = sub_101aa210();
+	if (pNPC) {
+		int key = sub_101aa390(pNPC);
+		float flDuration = g_1070b22c->vfunc57(key);
+		CGlobalEntityList_Ent *pEnt = EHandle_Get(p->m_h10c);
+		p->m_Out494.sub_100cd660(pEnt, this, flDuration + p->m_flDelay460);
+		if (p->m_flags204 & 1)
+			sub_101cd940(this);
+		flDuration = flDuration + p->m_flPause45c + 0.1;
+		if (flDuration < g_104454c4)
+			flDuration = 0.0f;
+		p->sub_100ac4e0((int)sub_10003297, 0, 0);
+		p->m_flNextThink = g_1070b228->curtime + p->m_flDelay460 + flDuration;
+		p->m_b470 = 0;
+	} else {
+		p->m_flNextThink = p->m_flDelay460 + g_1070b228->curtime + 0.5;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa210 size=0x127
 #include "CUnknown101aa210.h"
 #include "CGlobalEntityList.h"
