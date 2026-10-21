@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 9, 42, 62, 64, 86, 94, 105, 107, 118, 122, 158, 161, 167, 173,
-// 194, 202, 212, 216, 217 / 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 270, 274, 306, 346, 360, 381, 448 and 457 of an entity class that does not model its vtable.
+// 194, 202, 212, 216, 217 / 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 346, 360, 381, 448 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -82,12 +82,17 @@ public:
 	virtual void slot260(int index, float value);	// "SetPoseParameter" by index
 	EVS(261)
 	virtual char slot262(int attachment, void *pMatrix);	// animating: "GetAttachment" into a 3x4 matrix, a boolean answer in al
-	EVS(263) EVS(264) EVS(265) EVS(266) EVS(267) EVS(268) EVS(269)
+	EVS(263) EVS(264) EVS(265) EVS(266)
+	virtual char slot267();	// weapon: a boolean answer in al
+	EVS(268) EVS(269)
 	virtual void slot270(void *pTrace, int a);	// weapon: takes a trace result and a flag (the dog's bite shot)
 	EVS(271) EVS(272) EVS(273)
 	virtual const char *slot274();	// terminal: the name of the current screen / script
 	EVS(275) EVS(276) EVS(277) EVS(278) EVS(279)
-	EVS10(28) EVS10(29)
+	EVS(280) EVS(281) EVS(282) EVS(283) EVS(284)
+	virtual int slot285();	// weapon: its owner (a character pointer)
+	EVS(286) EVS(287) EVS(288) EVS(289)
+	EVS10(29)
 	EVS(300) EVS(301) EVS(302) EVS(303) EVS(304) EVS(305)
 	virtual void slot306(int a, int b);	// NPC: takes two arguments (the scripted-sequence cleanup passes its argument and 0)
 	EVS(307) EVS(308) EVS(309)
