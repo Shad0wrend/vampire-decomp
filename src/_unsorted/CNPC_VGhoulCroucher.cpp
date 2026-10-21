@@ -162,6 +162,37 @@ void CNPC_VGhoulCroucher::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b570 size=0x120
+#include "CNPC_VGhoulCroucher.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "CUnknown103160c0.h"
+
+struct CDebugHook { virtual void vfunc0(); virtual void vfunc1(); };
+extern CDebugHook *g_10924a6c;
+
+void CNPC_VGhoulCroucher::vfunc433()
+{
+    ScopeTrace trace("CNPC_VGhoulCroucher::GatherConditions", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    if (!m_b6666) {
+        if (sub_10269aa0(0x54)) {
+            sub_1037b6e0((int)this);
+            return;
+        }
+    }
+    if (m_b6666) {
+        sub_102b27f0();
+        if (sub_10269aa0(0x54) && m_n5bb0 <= 0 && m_n5da4 && ((CEntityVSlots *)this)->slot167()) {
+            CUnknown103160c0 *pSquad = (CUnknown103160c0 *)(m_n5bb0 <= 0 ? m_n5da4 : 0);
+            pSquad->sub_103161a0(((CEntityVSlots *)this)->slot167());
+        }
+    } else {
+        g_10924a6c->vfunc1();
+        sub_10269a20(0x79);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037b8b0 size=0xfa
 #include "CNPC_VGhoulCroucher.h"
 #include "ScopeTrace.h"
