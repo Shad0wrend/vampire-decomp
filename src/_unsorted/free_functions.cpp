@@ -52580,6 +52580,32 @@ void CPropHacking::sub_1021a3d0(CSave *pSave)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021b030 size=0xcd
+#include "CPropHacking.h"
+#include "CUnknown10217f50.h"
+
+extern "C" unsigned int __cdecl strlen(const char *);
+
+void CPropHacking::sub_1021b030()
+{
+	CUnknown10217f50 *pTerminal = (CUnknown10217f50 *)this;
+	pTerminal->sub_1021b140(pTerminal->sub_10219400(0x14));
+	const char *psz = pTerminal->sub_10219400(8);
+	if (psz && strlen(psz))
+		pTerminal->sub_10217ac0("\n%s\n", psz);
+	psz = pTerminal->sub_10219400(9);
+	if (psz && strlen(psz))
+		pTerminal->sub_10217ac0("\n%s\n", psz);
+	psz = pTerminal->sub_10219400(10);
+	if (psz && strlen(psz))
+		pTerminal->sub_10217ac0("\n%s\n", psz);
+	psz = pTerminal->sub_10219400(11);
+	if (psz && strlen(psz))
+		pTerminal->sub_10217ac0("\n%s\n", psz);
+	m_b09ec = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021b330 size=0xa2
 #include "CUnknown10217f50.h"
 #include <string.h>
