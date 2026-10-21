@@ -732,6 +732,7 @@
 0x10004156 func   ?sub_103234a0@@YIXPAVCBaseCombatCharacter@@@Z sub_103234a0
 0x10004174 func   ?sub_103cc9b0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc9b0
 0x10004188 func   ?sub_102b4540@@YIDPAVCAI_BaseNPCTroika@@HPAUSOtherEntity@@@Z sub_102b4540
+0x10004197 func   ?vfunc4@CTEExplosiveGunshotDecal@@QAEXPAXH@Z CTEExplosiveGunshotDecal::vfunc4
 0x100041a6 func   ?sub_1008a8b0@@YAHXZ sub_1008a8b0
 0x100041c4 func   ??1CUnknown101f4120@@QAE@XZ CUnknown101f4120::~CUnknown101f4120
 0x100041ce func   ?sub_101c9b60@CSquadSetter@@QAEXH@Z CSquadSetter::sub_101c9b60
