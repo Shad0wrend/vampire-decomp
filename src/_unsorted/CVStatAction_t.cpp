@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101fc760 size=0x9c
+#include "CVStatAction_t.h"
+#include "ScopeTrace.h"
+
+CVStatAction_t::CVStatAction_t(int a, int b)
+{
+	ScopeTrace trace("CVStatAction_t::CVStatAction_t", g_106b8540);
+	m_pad0000 = 0;
+	m_pad0004 = 0;
+	m_nMin = -1;
+	m_nMax = 999999;
+	m_pData = (void *)-1;
+	m_a50 = a;
+	m_b54 = b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fc830 size=0x7f
 #include "CVStatAction_t.h"
 extern char g_106b8540[];
