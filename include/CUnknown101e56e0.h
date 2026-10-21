@@ -4,15 +4,21 @@
 
 #include "CBaseCombatCharacter.h"
 
+extern char g_106b8540[];	// the empty string
+
 struct CUnknown101e56e0Id	// the record's id (first base, at +0)
 {
 	int m_id;
 };
 
-struct CUnknown101e56e0Name	// the record's name holder (second base, at +4; reached through the adjusted address)
+// The record's name holder (second base, at +4). Get() returns "" for a null name; the game's code reads it through the
+// adjusted address (add eax, 4; mov eax, [eax]), which is what an inline Get() on the second base gives: write
+// `g_10739d24[i]->Get()` and loops that return from inside (see 0x101eb050: a separate inline FindXxx helper with an
+// early `return` and a final `return -1`, which also explains late `push ebx` and duplicated epilogues).
+struct CUnknown101e56e0Name
 {
 	const char *m_psz;
-	const char *Get() { return m_psz; }
+	const char *Get() { return m_psz ? m_psz : g_106b8540; }
 };
 
 class CUnknown101e56e0 : public CUnknown101e56e0Id, public CUnknown101e56e0Name
