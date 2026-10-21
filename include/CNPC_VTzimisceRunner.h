@@ -3,7 +3,7 @@
 // virtual below is not its real slot (599).
 #pragma once
 
-#include "CAI_Motor.h"
+class CAI_Motor;
 
 class CNPC_VTzimisceRunner
 {
@@ -20,10 +20,10 @@ public:
 	void sub_10012855(int flags);	// sets the solid flags, called directly
 	void sub_1009b060(const float *pSize);	// stub 0x10001a50, called directly with a three-float vector
 	void sub_100b3900(unsigned int flags);	// CBaseEntity::RemoveFlag2 (stub 0x1000df44), called directly
-	void vfunc444(int *pEvent);	// slot 444 (plain member): for the animation events 0x122..0x124 AutoMovement, then (with a slot 167 target) the motor's look target is reset and pointed at the target's position, and when the time at +0x5db4 has passed the byte at +0x63ec is cleared and sub_10273e80(0) runs; other events go to CAI_BaseNPCTroika::vfunc444
+	void vfunc444(int *pEvent);	// slot 444
 	void sub_102aacf0(int *pEvent);	// CAI_BaseNPCTroika::vfunc444 (stub 0x10015c2b), called directly
-	bool sub_10280a50();	// CAI_BaseNPC::sub_10280a50 (AutoMovement, stub 0x1000cf6d), called directly
-	void sub_10273e80(char flag);	// CAI_BaseNPC::sub_10273e80 (stub 0x1000ac68), called directly
+	bool sub_10280a50();	// CAI_BaseNPC::AutoMovement (stub 0x1000cf6d), called directly
+	void sub_10273e80(int a);	// CAI_BaseNPC member (stub 0x1000ac68), called directly
 
 	char pad4[0xfe0 - 4];
 	char m_b0fe0;	// +0xfe0
