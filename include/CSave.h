@@ -11,7 +11,7 @@ public:
 	virtual int vfunc0();	// current position
 	virtual void vfunc1(int pos);	// seek
 	virtual void vfunc2();
-	virtual void vfunc3(int a, int b, int c, int d, int e);	// stub 0x1000b258
+	virtual void vfunc3(int a, int b, int c, int d, int e);	// stub 0x1000b258 (the \"WriteFields\" worker 0x101a0260, which returns 1)
 	virtual void vfunc4();
 	virtual void vfunc5(const void *p);	// pushes the current position on the section stack (vector at +4) after sub_101a05f0(p, 0)
 	virtual void vfunc6();	// pops the section stack, writes the section size
@@ -67,4 +67,7 @@ public:
 	void sub_1016f0f0(const char *pszName, char *pData, int size);	// writes the size byte string pData under pszName (stub 0x100139b7)
 	bool sub_1019fe10(void *pData, typedescription_t *pField);	// "CSave::IsFieldNonEmpty"-like (recursive, stub 0x10015aaf): whether the field holds data that has to be saved: embedded structures (type 9) are checked field by field, custom fields (type 10) ask their save/restore ops (slot 2), everything else is tested for all-zero bytes (sub_101a0570)
 	int sub_101a0570(const void *pData, int nBytes);	// whether the bytes are all zero (stub 0x100041d8)
+	int sub_101a01f0(const void *pBaseData, typedescription_t *pFields, int nFields);	// the number of fields that have to be saved (stub 0x100143da)
+	bool sub_101a01c0(const char *pszName, void *pData, void *pRootMap, typedescription_t *pField);	// writes one field (stub 0x1000b0fa); false when it failed
+	int sub_101a0260(const char *pszName, const void *pBaseData, void *pRootMap, typedescription_t *pFields, int nFields);	// "CSave::WriteFields" (the body of slot 3, which returns 1): writes the number of fields to save, then every field that is not empty
 };
