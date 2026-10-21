@@ -1,4 +1,4 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 13, 17, 18, 20, 21, 26, 30, 31, 32, 35, 38, 47, 49, 58, 59, 61, 62, 65, 66, 69, 72, 78, 82, 84, 85, 101, 102, 105 and 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 13, 17, 18, 20, 21, 26, 30, 31, 32, 35, 38, 47, 49, 58, 59, 61, 62, 65 to 67, 69, 72, 78, 82, 84, 85, 101, 102, 105 and 119 to 122 are known.
 // Slot 13 takes a resource name and a preload flag (precaches a sound / resource).
 // Slot 17 is PrecacheModel(name, preload) and returns the model index.
 // Slot 18 returns the studio header of a model index (0 when there is none), slot 21 the type of a model index (3 = studio).
@@ -11,7 +11,7 @@
 // Slot 58 is GetVCollide(modelIndex): the collision data of a model (a solid count, then the array of solids), 0 when there is none.
 // Slot 61 is ClientCommand(edict, fmt, ...): a variadic (cdecl) slot, the object is pushed as the first argument.
 // Slot 62 is LightStyle(style, pattern).
-// Slot 65 is UserMessageBegin(filter, message type), slot 66 MessageEnd; the message body is written with slot 69 (an integer field), slot 72 (a float, passed as its raw dword) and slot 78 (a string).
+// Slot 65 is UserMessageBegin(filter, message type), slot 66 MessageEnd; the message body is written with slot 67 (one integer, a byte), slot 69 (an integer field), slot 72 (a float, passed as its raw dword) and slot 78 (a string).
 // Slot 101 takes one dword (the index of an entity) and returns nothing used.
 // Slot 102 is SetAreaPortalState(portalKey, isOpen); slot 113 is GetAreaPortalPlane(viewOrigin, portalKey, pPlane): fills a plane (normal, dist) and answers whether the portal has one.
 // Slot 119 takes a flag and returns a time value in ST0; slot 120 returns a dword in EAX.
@@ -50,7 +50,7 @@ public:
 	virtual void a60(); virtual void vfunc61(int edict, const char *pszFormat, ...);
 	virtual void vfunc62(int style, const char *pszPattern);
 	virtual void a63(); virtual void a64();
-	virtual void vfunc65(CRecipientFilter *pFilter, int msgType); virtual void vfunc66(); virtual void a67(); virtual void a68(); virtual void vfunc69(int value);
+	virtual void vfunc65(CRecipientFilter *pFilter, int msgType); virtual void vfunc66(); virtual void vfunc67(int value); virtual void a68(); virtual void vfunc69(int value);
 	virtual void a70(); virtual void a71(); virtual void vfunc72(int value); virtual void a73(); virtual void a74();
 	virtual void a75(); virtual void a76(); virtual void a77(); virtual void vfunc78(const char *pszValue); virtual void a79();
 	virtual void a80(); virtual void a81();
