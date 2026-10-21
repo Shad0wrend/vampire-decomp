@@ -218,4 +218,5 @@ public:
 	void sub_1028e700(int kind, int *pPosition);	// stub 0x1001596f, called directly
 	void sub_10270180(void *pObject, int a);	// stub 0x10006217, called directly
 	void sub_1027d8d0(CBaseEntity *pEnt);	// run for an entity that moves faster than 50 units (|vx| + |vy| of its velocity at +0x3bc / +0x3c0): asks the dev flag object (slot 1), sets condition 0x74, resets the motor's (+0x5d44) look state (sub_102e0b40) and hands it pEnt's slot 220 position (sub_102e2020)
+	CBaseEntity *sub_1027a310(const char *pszItemName, Vector vecPos, Vector vecAng);	// "CAI_BaseNPC::DropItem": DevMsg "DropItem() - No item name!" for no name; creates the item entity at vecPos / vecAng (sub_100a99d0), clears its parent when it has one (bit 12 of the flags at +0x268), gives it this NPC's velocity (+0x3bc), then a random 0..100 impulse; null with a DevMsg when the item cannot be created
 };
