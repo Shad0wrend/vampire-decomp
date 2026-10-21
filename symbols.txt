@@ -357,6 +357,7 @@
 0x10002a45 func   ?sub_100e5690@CDialog@@QAEHPAUCDialogEntry_t@@@Z CDialog::sub_100e5690
 0x10002a4a func   ?sub_1006cc20@Dump@@QAEXXZ Dump::sub_1006cc20
 0x10002a5e func   ?sub_10045de0@CUtlRBTree36@@QAEGPBH@Z CUtlRBTree36::sub_10045de0
+0x10002a72 func   ?sub_102013a0@CVStatList_t@@QAEPBDH@Z CVStatList_t::sub_102013a0
 0x10002ac7 func   ?vfunc5@CInspectionBrush@@QAEPAV1@I@Z CInspectionBrush::vfunc5
 0x10002acc func   ?vfunc404@CNPC_VNewscaster@@UAEHH@Z CNPC_VNewscaster::vfunc404
 0x10002adb func   ?vfunc19@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::vfunc19
