@@ -78274,6 +78274,42 @@ void CPlayerPickupController::sub_1040d0a0(char bThrow)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040dcf0 size=0xb3
+#include "CBaseEntity.h"
+#include "CBaseCombatWeapon.h"
+
+struct DmgInfoRaw
+{
+	int w[19];
+};
+
+struct CGlobalVarsLike { char pad[0xc]; float curtime; };
+extern CGlobalVarsLike *g_1070b228;
+extern void __fastcall sub_101c2690(DmgInfoRaw *);
+extern void sub_101c2c60();
+
+void CBaseCombatWeapon::sub_1040dcf0(CBaseEntity *pVictim, const float *pDir, void *pTrace)
+{
+	DmgInfoRaw info;
+	sub_101c2690(&info);
+	info.w[11] = (int)sub_102521f0();
+	info.w[10] = (int)this;
+	*(float *)&info.w[12] = 1.0f;
+	info.w[4] = ((const int *)pDir)[0];
+	info.w[5] = ((const int *)pDir)[1];
+	info.w[6] = ((const int *)pDir)[2];
+	info.w[7] = ((const int *)pTrace)[3];
+	info.w[8] = ((const int *)pTrace)[4];
+	info.w[14] = 0x20000001;
+	info.w[9] = ((const int *)pTrace)[5];
+	pVictim->sub_100a7d00((int)&info, (int)pDir, (int)pTrace);
+	sub_101c2c60();
+	vfunc307(0xc0);
+	*(float *)((char *)this + 0x924) = g_1070b228->curtime + 0.5f;
+	*(float *)((char *)this + 0x918) = g_1070b228->curtime + 0.25f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104110d0 size=0x6d
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 #define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
