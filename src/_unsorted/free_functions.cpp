@@ -57299,6 +57299,24 @@ bool CBaseCombatCharacter::sub_10335a70(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10335de0 size=0x8f
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+struct CWieldWeapon { void sub_102562b0(); };
+struct CWieldManager { void sub_10207dd0(CBaseCombatCharacter *pChar, int a); };
+extern CWieldManager g_1074f028;
+
+void CBaseCombatCharacter::sub_10335de0(CBaseEntity *pWeapon)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Inventory_Wield", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pWeapon) {
+		((CWieldWeapon *)pWeapon)->sub_102562b0();
+		g_1074f028.sub_10207dd0(this, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103360a0 size=0xa0
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;

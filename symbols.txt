@@ -2029,6 +2029,7 @@
 0x1000a240 func   ?vfunc516@CGeneric_NPC@@UAEMXZ CGeneric_NPC::vfunc516
 0x1000a24f func   ?sub_10030720@CCollisionEvent@@QAEPAUCFrictionEntry_t@@H@Z CCollisionEvent::sub_10030720
 0x1000a268 func   ?sub_10072f10@CUnknown10072f10@@QAEXH@Z CUnknown10072f10::sub_10072f10
+0x1000a27c func   ?sub_10335de0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10335de0
 0x1000a281 func   ?sub_1021e3e0@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e3e0
 0x1000a290 func   ?vfunc2@CTEBeamRingPoint@@UAEPAV1@I@Z CTEBeamRingPoint::vfunc2
 0x1000a29a func   ?sub_10427790@CUnknown10427700@@QAEXPBDHH000@Z CUnknown10427700::sub_10427790
