@@ -2,6 +2,11 @@
 // only what matched code needs, as plain members (no vtable pointer is declared, so offsets start at 0).
 #pragma once
 
+struct CBombState	// one byte passed by value (the game builds it in a stack slot and pushes the whole dword)
+{
+	char m_c;
+};
+
 class CTriggerBombSite
 {
 public:
@@ -12,7 +17,7 @@ public:
 	void vfunc176(void *pOther);	// slot 176 (EndTouch): lets the toucher's trigger list at +0x568 handle it, then clears the player's bomb site handle (+0x1cb8) when it resolves to this entity
 	void sub_10211870(void *pSender, void *pParam);	// called through the stub at 0x1000d913 with the owner object and the argument by CUnknown103f6a20::sub_103f6a20
 	void sub_102116c0(void *pOther);	// stub 0x10005385
-	void sub_10211550(void *pOther, char cState);	// stub 0x1000fbe6
+	void sub_10211550(void *pOther, CBombState state);	// stub 0x1000fbe6
 
 	char m_pad0000[0x8c];
 	unsigned int m_hOwner008c;	// 0x008c
