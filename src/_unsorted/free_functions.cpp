@@ -30079,6 +30079,31 @@ void sub_1013a9f0(const Quaternion &p, const Quaternion &q, Quaternion &qt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013add0 size=0xa9
+#include <math.h>
+
+// TARGET: sub_1013add0
+void sub_1013add0(const float *p, float t, float *q)
+{
+    float r;
+    float sinom = sqrt(p[0] * p[0] + p[1] * p[1] + p[2] * p[2]);
+    sinom = sinom < 1.0f ? sinom : 1.0f;
+    float sinsom = sin(asin(sinom) * t);
+    t = sinsom / (sinom + 1.192092896e-07f);
+    q[0] = p[0] * t;
+    q[1] = p[1] * t;
+    q[2] = p[2] * t;
+    r = 1.0f - sinsom * sinsom;
+    if (r < 0.0f)
+        r = 0.0f;
+    r = sqrt(r);
+    if (p[3] < 0)
+        q[3] = -r;
+    else
+        q[3] = r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013b0d0 size=0xdb
 struct Q { float x, y, z, w; };
 void sub_1013b0d0(const Q &q, float *m)
