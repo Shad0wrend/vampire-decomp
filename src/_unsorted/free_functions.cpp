@@ -37551,6 +37551,64 @@ void *sub_10198150(void *self, void *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198310 size=0x146
+#include "CUnknown101e0f00.h"
+
+struct PyObj { int ob_refcnt; };
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(void *args, const char *fmt, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred(void);
+__declspec(dllimport) void PyErr_SetString(PyObj *exc, const char *msg);
+__declspec(dllimport) extern PyObj *PyExc_AttributeError;
+__declspec(dllimport) extern PyObj _Py_NoneStruct;
+}
+struct CPyCombatChar { char pad[0x9c]; void *m_pChar; };
+CPyCombatChar *sub_10196780(PyObj *obj);
+char *sub_101d3730(const char *fmt, ...);
+extern CUnknown101e0f00 g_10739a4c;
+
+// TARGET: sub_10198310
+PyObj *sub_10198310(void *self, void *args)
+{
+	PyObj *pSource = 0;
+	PyObj *pTarget = 0;
+	char *pszName = 0;
+	if (!PyArg_ParseTuple(args, "OOs", &pSource, &pTarget, &pszName)) {
+		if (!PyErr_Occurred()) {
+			PyErr_SetString(PyExc_AttributeError, "bad args to DialogDiscipline()");
+			return 0;
+		}
+		return 0;
+	}
+	void *pSrc;
+	CPyCombatChar *pA = sub_10196780(pSource);
+	if (pA == 0)
+		pSrc = 0;
+	else
+		pSrc = pA->m_pChar;
+	void *pTgt;
+	CPyCombatChar *pB = sub_10196780(pTarget);
+	if (pB == 0)
+		pTgt = 0;
+	else
+		pTgt = pB->m_pChar;
+	if (pSrc && pTgt && pszName) {
+		int id = g_10739a4c.sub_101e12f0(pszName);
+		if (id) {
+			g_10739a4c.sub_101e3380(pSrc, pTgt, id);
+			_Py_NoneStruct.ob_refcnt++;
+			return &_Py_NoneStruct;
+		}
+		PyErr_SetString(PyExc_AttributeError, sub_101d3730("Invalid discipline name: %s", pszName));
+		_Py_NoneStruct.ob_refcnt++;
+		return &_Py_NoneStruct;
+	}
+	if (!PyErr_Occurred())
+		PyErr_SetString(PyExc_AttributeError, "DialogDiscipline needs to be called by a conbat character, with a combat character as the target, and the name of a discipline as the 2nd argument.");
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101984c0 size=0x130
 struct PyObj { int m_refcnt; };
 
