@@ -12672,6 +12672,41 @@ void sub_100881c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088380 size=0xe5
+#include "CUnknown1028fb70.h"
+#include "CUnknown1070b22c.h"
+
+extern "C" double atof(const char *);
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+struct VisionEntView_t {
+	char pad[0x98];
+	CUnknown1028fb70 *pNPC;
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+extern double g_1044fab0;
+void *sub_101193b0();
+VisionEntView_t *sub_100d2070(void *pPlayer, const char *pszName, VisionEntView_t *pStart);
+
+void sub_10088380()
+{
+	void *pPlayer = sub_101193b0();
+	const char *pszName = g_1070b22c->vfunc84(2);
+	VisionEntView_t *pEnt = sub_100d2070(pPlayer, pszName, 0);
+	float flScalar = (atof(g_1070b22c->vfunc84(1)) > g_1044fab0) ? atof(g_1070b22c->vfunc84(1)) : g_1044fab0;
+	while (pEnt) {
+		CUnknown1028fb70 *pNPC = pEnt->pNPC;
+		if (pNPC) {
+			pNPC->m_flHearingOverride = flScalar;
+			pNPC->sub_1028fb70();
+			DevMsg("%s - New vision dist = %f.  New hearing sensitivty = %f\n", pNPC->sub_100ab4f0(), (double)pNPC->m_flVisionDistance, (double)pNPC->m_flHearingScalar);
+		}
+		pEnt = sub_100d2070(pPlayer, pszName, pEnt);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088890 size=0x66
 #include "CBaseEntity.h"
 
