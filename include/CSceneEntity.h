@@ -7,6 +7,14 @@
 #define SCENE_V(n) virtual void vfunc##n();
 #define SCENE_V10(p) SCENE_V(p##0) SCENE_V(p##1) SCENE_V(p##2) SCENE_V(p##3) SCENE_V(p##4) SCENE_V(p##5) SCENE_V(p##6) SCENE_V(p##7) SCENE_V(p##8) SCENE_V(p##9)
 
+class CSceneOutputList	// the output at +0x4fc (an event list); only the add call is known
+{
+public:
+	char m_pad0000[0x18];
+
+	void sub_100cd660(void *pEnt, void *pSource, int a);	// stub 0x10010794
+};
+
 class CSceneEntity
 {
 public:
@@ -41,11 +49,22 @@ public:
 	void sub_10082b80();	// slot 245 (function 0x10082b80, stub 0x1000b97e), called directly by the destructor body while the scene plays
 	void sub_10083a30(const char *pszScene);	// stub 0x100106f9, called directly by vfunc104 with the scene file name at +0x450 ("" when unset)
 	void sub_10080cb0(int a);	// stub 0x1001163f, called directly by vfunc104 with the dword at +0x4bc
+	void sub_10082d20();	// stub 0x1000ee71 (called first by slot 245 while the scene plays)
 
-	char m_pad0004[0x4ac - 4];
+	char m_pad0004[0x10c - 4];
+	unsigned int m_hPlayer10c;	// 0x10c: entity handle of the scene's player
+	char m_pad0110[0x498 - 0x110];
+	char m_bPlaying498;	// 0x498
+	char m_bPlaying499;	// 0x499
+	char m_pad049a[0x4ac - 0x49a];
 	char m_bAutomateTimed;	// 0x4ac: set when a positive time was parsed
 	char m_pad04ad[3];
 	int m_nAutomateType;	// 0x4b0: 1 = Cancel, 2 = Resume
 	float m_flAutomateTime;	// 0x4b4
 	int m_nAutomateField;	// 0x4b8
+	void *m_pScene4bc;	// 0x4bc
+	char m_pad04c0[0x4fc - 0x4c0];
+	CSceneOutputList m_list4fc;	// 0x4fc
+	char m_pad0514[0x57e - 0x514];
+	char m_b57e;	// 0x57e
 };
