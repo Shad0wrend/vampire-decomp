@@ -40470,6 +40470,34 @@ void CPropSwitchUnit::sub_1020dce0(char on)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020df00 size=0x85
+#include "CPropSwitch.h"
+
+struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
+extern CGlobalVarsX *g_1070b228;
+void sub_100080b7();	// think function
+
+float CPropSwitch::sub_1020df00(int sequence)
+{
+	int *pSequence = (int *)((char *)this + 0x6f0);
+	if (sequence > -1) {
+		*pSequence = sequence;
+		sub_10090950();
+		*(int *)((char *)this + 0x6f8) = 0;
+		*(float *)((char *)this + 0x174) = g_1070b228->m_curtime;
+		sub_100b3640(0x40000);
+	} else {
+		*pSequence = 0;
+	}
+	sub_1009d1e0();
+	sub_100ac4e0((int)sub_100080b7, 0, 0);
+	float *pNextThink = (float *)((char *)this + 0x17c);
+	int seq = *pSequence;
+	*pNextThink = g_1070b228->m_curtime + 0.05;
+	return sub_10091080(seq);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e060 size=0xa
 void CUnknown1020e060::sub_1020e060(int unused)
 {
