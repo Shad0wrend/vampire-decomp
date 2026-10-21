@@ -5,7 +5,7 @@
 class CUnknown10936b68
 {
 public:
-	void sub_1030f300(int value);
+	int sub_1030f300(int value);
 };
 
 // The record slot 580 of CAI_BaseNPC returns: the first dword is the schedule id (-1 = missing).
