@@ -15524,6 +15524,86 @@ CUnknown10098810 *CUnknown10098810::sub_10098810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098cd0 size=0x17c
+#include "CBaseAnimating.h"
+#include "CBaseAnimatingOverlay.h"
+#include "CEntityVSlots.h"
+
+struct OptBuf_t { char c[64]; };
+
+struct AnimEvent_t {
+	int event;
+	char *options;
+	float cycle;
+	float eventtime;
+	CBaseAnimating *pSource;
+	OptBuf_t optionBuf;
+};
+
+struct SeqEvent_t {
+	float cycle;
+	int event;
+	int type;
+	OptBuf_t options;
+};
+
+struct SeqDesc_t {
+	char pad0[8];
+	int flags;
+	char pad1[8];
+	int numevents;
+	int eventindex;
+};
+
+struct LayerView {
+	int pad0;
+	int finished;
+	int sequence;
+	float cycle;
+	float rate;
+	char pad14[0x18];
+	float lastCycle;
+};
+
+struct EntView {
+	char pad[0x174];
+	float animTime;
+	char pad2[0xac];
+	unsigned int field224;
+};
+
+void CAnimationLayerAdvance::sub_10098cd0(int unused, void *pListener, void *pEntity)
+{
+	LayerView *layer = (LayerView *)this;
+	CBaseAnimating *pAnim = (CBaseAnimating *)pEntity;
+	float flCycleRate = pAnim->sub_10091230(layer->sequence) * layer->rate;
+	float flLast = layer->lastCycle;
+	float flNew = flCycleRate * 0.1f + layer->cycle;
+	layer->finished = 0;
+	layer->lastCycle = flNew;
+	SeqDesc_t *pSeq = (SeqDesc_t *)pAnim->sub_1008d990(layer->sequence);
+	if (pSeq) {
+		AnimEvent_t ev;
+		for (int i = 0; i < pSeq->numevents; i++) {
+			SeqEvent_t *pe = (SeqEvent_t *)((char *)pSeq + pSeq->eventindex + i * 0x4c);
+			if (pe->event < 5000
+				&& ((pe->cycle >= flLast && pe->cycle < flNew)
+					|| ((pSeq->flags & 1) && flNew >= 1.0f && pe->cycle < flNew - 1.0f))) {
+				ev.pSource = pAnim;
+				ev.cycle = pe->cycle;
+				ev.eventtime = (ev.cycle - layer->cycle) / flCycleRate + ((EntView *)pEntity)->animTime;
+				ev.event = pe->event;
+				ev.optionBuf = pe->options;
+				ev.options = ev.optionBuf.c;
+				if (((EntView *)pEntity)->field224 & 0x80000000)
+					pAnim->sub_1008cfc0(pAnim->sub_100ab4f0(), &ev);
+				((CEntityVSlots *)pListener)->slot259(&ev);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100991b0 size=0x72
 #include "CBaseAnimatingOverlay.h"
 
