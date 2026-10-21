@@ -41299,6 +41299,26 @@ void sub_101cf620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf680 size=0x74
+#include <math.h>
+// TARGET: sub_101cf680
+void sub_101cf680(Vector &direction, float epsilon)
+{
+    float proj = 1.0f - epsilon;
+    for (int i = 0; i < 3; i++) {
+        if (fabs(direction[i]) > proj) {
+            if (direction[i] < 0)
+                direction[i] = -1.0f;
+            else
+                direction[i] = 1.0f;
+            direction[(i + 1) % 3] = 0;
+            direction[(i + 2) % 3] = 0;
+            return;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf720 size=0x7b
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;

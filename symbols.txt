@@ -5287,6 +5287,7 @@
 0x10015bcc func   ?sub_103239a0@CBaseCombatCharacter@@QAEFPBD@Z CBaseCombatCharacter::sub_103239a0
 0x10015bd6 func   ?vfunc2@CTEBSPDecal@@UAEPAV1@I@Z CTEBSPDecal::vfunc2
 0x10015be5 func   ?sub_101e3f50@CStatusFlagList@@QAE_NPAUCStatusTarget@@@Z CStatusFlagList::sub_101e3f50
+0x10015bea func   ?sub_101cf680@@YAXAAVVector@@M@Z sub_101cf680
 0x10015bf4 func   ?sub_10055520@CUtlRBTree24@@QBEABULinks_t@1@H@Z CUtlRBTree24::sub_10055520
 0x10015c03 func   ?sub_10074820@CFlexAnimationTrack@@QAEXH@Z CFlexAnimationTrack::sub_10074820
 0x10015c1c func   ?sub_103f6ab0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_103f6ab0
