@@ -432,6 +432,7 @@
 0x10002f22 func   ?vfunc0@CAI_RatLocalNavigator@@QAEPAV1@I@Z CAI_RatLocalNavigator::vfunc0
 0x10002f31 func   ?sub_101bc750@CUnknown101bc750@@QAEXH@Z CUnknown101bc750::sub_101bc750
 0x10002f36 func   ?sub_1012f100@@YAXPAX@Z sub_1012f100
+0x10002f5e func   ?vfunc113@CEnvMicrophone@@UAEXXZ CEnvMicrophone::vfunc113
 0x10002f95 func   ?sub_101fc950@TStat@@QAEXHH@Z TStat::sub_101fc950
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
 0x10002fdb func   ?sub_1009ad70@@YIPADPAD@Z sub_1009ad70
