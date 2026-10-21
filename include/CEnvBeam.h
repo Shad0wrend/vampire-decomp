@@ -2,7 +2,9 @@
 // only what matched code needs, as plain members.
 #pragma once
 
-class CEnvBeam : public CBaseEntity
+#include "CBeam.h"
+
+class CEnvBeam : public CBeam
 {
 public:
 	CEnvBeam *vfunc5(unsigned int flags);
@@ -12,7 +14,6 @@ public:
 	void sub_10015749();	// CBeam::vfunc104 (stub 0x10015749), called directly
 	void sub_100fef50();	// "CEnvBeam::TurnOn": sets the active flag (+0x4f4); a lasting beam (life +0x500 is 0, spawn flag 8 clear) is shown (effect bit 6 cleared), relinked between its ends (CBeam::sub_100bbe70) and thinks BeamUpdateThink, else it thinks TriggerThink
 	void vfunc103();	// slot 103 "CEnvBeam::Spawn": without a sprite name (+0x518) the entity removes itself (think 0x10015b68), else CBeam::vfunc103 (stub 0x1001553c), the widths (+0x4b8 / +0x4bc) from the bolt width (+0x504), the beam thinks BeamUpdateThink / TriggerThink according to its life (+0x500) and spawn flags, and the start position (+0x4e8) is taken from slot 217 unless the byte at +0x5a8 is set
-	void sub_1001553c();	// CBeam::vfunc103 (stub 0x1001553c), called directly
 
 	char m_pad04e4[4];
 	float m_vecSavedPos[3];	// 0x4e8
