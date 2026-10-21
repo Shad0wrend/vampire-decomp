@@ -161,3 +161,46 @@ void CBaseDoor::vfunc246(int a, int* b, int c)
 	b[6] = -1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100f1340 size=0x107
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+struct S100f1340Ai
+{
+	void sub_1027de00(CBaseDoor *pDoor);
+	void sub_1027dfb0(CBaseDoor *pDoor);
+};
+
+struct S100f1340Ent
+{
+	char m_pad[0x94];
+	S100f1340Ai *m_pAi;
+};
+
+void CBaseDoor::vfunc177(CBaseEntity *pOther)
+{
+	ScopeTrace trace("CBaseDoor::StartBlocked", g_106b8540);
+	if (m_nState4f8 == 3) {
+		m_items564[0].sub_100cd660(pOther, this, 0);
+		return;
+	}
+	S100f1340Ent *pActivator = (S100f1340Ent *)EHandle_Get(m_hActivator53c);
+	if (pActivator) {
+		S100f1340Ai *pAi = pActivator->m_pAi;
+		if (pAi) {
+			sub_100f0e90(2);
+			pAi->sub_1027de00(this);
+		}
+	}
+	S100f1340Ent *pEnt = (S100f1340Ent *)pOther;
+	if (pEnt) {
+		S100f1340Ai *pAi = pEnt->m_pAi;
+		if (pAi) {
+			sub_100f0e90(0x80);
+			pAi->sub_1027dfb0(this);
+		}
+	}
+	m_items564[1].sub_100cd660(pOther, this, 0);
+}
+// END FUNCTION
