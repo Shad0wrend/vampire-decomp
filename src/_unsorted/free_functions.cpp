@@ -34459,6 +34459,45 @@ void CBaseTrigger::sub_101c4dd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5460 size=0xe2
+#include "CBaseTrigger.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CFilterSlotsX {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21) SV10(22) SV10(23)
+	SV(240)
+	virtual bool s241(CBaseEntity *pOther);
+};
+
+static inline CFilterSlotsX *ResolveFilter(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *slot = &g_10566458->m_Slots[h & 0x1fff];
+		if (slot->m_Serial == (int)(h >> 13))
+			return (CFilterSlotsX *)slot->m_pEntity;
+	}
+	return 0;
+}
+
+bool CBaseTrigger::sub_101c5460(CBaseEntity *pOther)
+{
+	if (((m_flags204 & 1) && (pOther->sub_100b3700() & 0x80))
+		|| ((m_flags204 & 2) && (pOther->sub_100b3700() & 0x2000))
+		|| ((m_flags204 & 4) && sub_101c53d0(pOther))
+		|| ((m_flags204 & 8) && sub_101c5420(pOther))) {
+		if (!ResolveFilter(*(volatile unsigned int *)&m_i564))
+			return true;
+		return ResolveFilter(*(volatile unsigned int *)&m_i564)->s241(pOther);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5c30 size=0x43
 #include "CTriggerHurt.h"
 void *sub_100aa720(int size);
