@@ -145,6 +145,7 @@ public:
 	void sub_10107050(int a);	// CBaseCombatCharacter member (stub 0x1000fdd0), called directly
 	bool sub_102c44e0(const char *pszName);	// sets the follow target: the entity of that name (slot 559) is stored as the handle at +0x647c (-1 when none); false (handle cleared) when it is invalid or this NPC itself, or a squad member that is not allowed; else resets the target (sub_102b52a0(0, 0)), sets flags 0x3008 at +0x5b84 and returns true
 	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd), called directly
+	void sub_102aab70(int unused);	// looks the NPC's target toward a position: with flag 0x10 of +0x14bc and an enemy (slot 167) the position slot 541 gives for it, with flag 0x20 and the entity of the handle at +0x5ce4 that entity's origin (slot 217); when slot 556 does not accept the position it is handed to the motor (+0x5d44) as a facing target with weight -2.0f; takes one unused stack argument
 
 	char m_pad0004[0x204 - 4];
 	unsigned int m_flags204;
