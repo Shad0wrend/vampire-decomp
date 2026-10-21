@@ -17,6 +17,34 @@ public:
 	void sub_100cd660(void *pEnt, void *pSource, int a);	// stub 0x10010794
 };
 
+struct CSceneEventActor	// the actor record an event names
+{
+	const char *sub_10008a99();	// the actor's name (stub 0x10008a99)
+};
+
+struct CSceneEventNav	// the navigator at +0x5d34 of an actor NPC
+{
+	char sub_10012963();	// stub 0x10012963
+};
+
+struct CSceneEventNPC	// the NPC object at +0x94 of an actor entity
+{
+	char m_pad0000[0x5d34];
+	CSceneEventNav *m_pNav5d34;	// 0x5d34
+};
+
+struct CSceneEventActorEnt	// the entity a scene actor name resolves to
+{
+	char m_pad0000[0x94];
+	CSceneEventNPC *m_pNPC94;	// 0x94
+};
+
+struct CSceneEvent	// a scene event; only what the actor checks need
+{
+	CSceneEventActor *sub_10001b5e();	// the event's actor (stub 0x10001b5e)
+	int sub_100029c8();	// the event's type (stub 0x100029c8)
+};
+
 class CSceneEntity
 {
 public:
@@ -39,12 +67,13 @@ public:
 	virtual void vfunc248(float a, int b, int c);
 	virtual void vfunc249(float a, int b, int c);
 	virtual void vfunc250(float a, int b, int c);
-	SCENE_V(251) SCENE_V(252) SCENE_V(253) SCENE_V(254) SCENE_V(255) SCENE_V(256) SCENE_V(257) SCENE_V(258)
+	virtual char vfunc251(CSceneEvent *pEvent, int a, int b);	// slot 251: resolves the actor of the event through slot 267 (Warning "CSceneEntity unable find actor" and true when it is unknown); false when the event is of type 4 and the actor's NPC (+0x94) has its navigator (+0x5d34) answering sub_10012963, else true
+	SCENE_V(252) SCENE_V(253) SCENE_V(254) SCENE_V(255) SCENE_V(256) SCENE_V(257) SCENE_V(258)
 	virtual void vfunc259(int unused, void *pEvent, const char *pszTarget);	// slot 259: for the actor of the scene event (object at +0x94 of pEvent) and the entity named pszTarget: sets the actor's move type (4, 0), copies the target's slot 192 vector to +0x5db8 and its slot 219 vector to +0x5dc4 of the actor, runs the actor's sub_10280de0(0x39) and stamps curtime at +0x5cf0
 	virtual void vfunc260(int unused, void *pEvent, const char *pszSound, int a4, int a5);	// slot 260: for the actor of the scene event (pointer at +0x98 of pEvent): builds "sound/<name>.mp3" and "*<name>" sound names, makes the actor's entity of this scene's player (sub_10081890) its target, and hands "*<name>" to the actor's sub_102c0520(name, a5, byte at this+0x57f)
 	SCENE_V(261) SCENE_V(262) SCENE_V(263) SCENE_V(264) SCENE_V(265)
 	virtual void vfunc266(int unused, const char *pszArgs);	// parses "automate <Cancel|Resume> <seconds>" arguments into the automation fields
-	virtual void vfunc267();
+	virtual CSceneEventActorEnt *vfunc267(const char *pszName);	// slot 267: the actor entity of that name, null when there is none (called by slot 251)
 	virtual CBaseEntity *vfunc268(const char *pszName, int a);	// slot 268: the entity of that name (the scene's actor lookup), null when there is none
 	void sub_1000b1ef();	// as in CPhysForce (transplant)
 	void sub_1000cb8a();	// the base class destructor body, tail called by sub_100809f0
