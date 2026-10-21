@@ -29972,6 +29972,38 @@ void sub_10189660(CBaseEntity *ent, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018bfe0 size=0x102
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_10012fcb(int a, int b, const char *pVarName, int c);
+
+extern SendTable g_1072ad00;
+extern const char *g_1058bbc8;
+
+// TARGET: sub_1018bfe0
+int sub_1018bfe0()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10007bfd("m_nTargetModel", 4, 4, 10, 1, 0, 0),
+		sub_10007bfd("m_nSpreadLModel", 8, 4, 10, 1, 0, 0),
+		sub_10007bfd("m_nSpreadRModel", 0xc, 4, 10, 1, 0, 0),
+		sub_10007bfd("m_nDeadFlag", 0x10, 4, 4, 1, 0, 0),
+		sub_10007bfd("m_chAreaBits[0]", 0x14, 1, 8, 1, 0, 0),
+		sub_10012fcb(0x20, 1, "m_chAreaBits", 0),
+	};
+	g_1072ad00.sub_1000e8fe(props + 1, 6, g_1058bbc8);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c1b0 size=0x43
 #include "CPointCamera.h"
 void *sub_100aa720(int size);
