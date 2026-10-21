@@ -54,6 +54,6 @@ public:
 	int sub_100cfda0(IEQRestore *pRestore);	// restores the queue: empties it, reads the "EventQueue" table and then one "PEvent" record per queued event; 0 when a read fails
 	void sub_100ce210(CEQEvent *pEvent);	// inserts a built event into the queue (stub 0x1000f074)
 	void sub_100cddf0(const char *pszTarget, const char *pszTargetInput, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, int nExtra);	// "CEventQueue::AddEvent": builds a 0x50 byte event (fire time = curtime + delay, the two names or null when empty, the entity handles of activator / caller or -1, the variant, the output id and one more dword) and inserts it (takes 12 stack dwords)
-	void sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, void *pExtra);	// "CEventQueue::AddEvent" for an entity target (stub 0x1000cad6; takes 12 stack dwords)
+	void sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, float flExtra);	// "CEventQueue::AddEvent" for an entity target (stub 0x1000cad6; takes 12 stack dwords)
 	void sub_100ce040(CBaseEntity *pTarget, const char *pszAction, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID);	// "CEventQueue::AddEvent" without a value: an empty variant
 };
