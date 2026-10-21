@@ -2051,6 +2051,7 @@
 0x100090cf func   _logic_relay logic_relay
 0x100090d4 func   ?vfunc5@CWeaponMelee_FireAxe@@QAEPAV1@I@Z CWeaponMelee_FireAxe::vfunc5
 0x100090d9 func   ?sub_10256250@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10256250
+0x100090fc func   ??0CBaseEntity@@QAE@D@Z CBaseEntity::CBaseEntity
 0x100090fc func   ??0CConstraintAnchorBase@@QAE@H@Z CConstraintAnchorBase::CConstraintAnchorBase
 0x1000911a func   ?sub_10256200@@YIEPAE@Z sub_10256200
 0x1000911f func   ?sub_1028b190@CUnknown1028b190@@QAEXPAX@Z CUnknown1028b190::sub_1028b190
