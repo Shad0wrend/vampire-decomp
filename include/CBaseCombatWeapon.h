@@ -54,7 +54,7 @@ public:
 	CBCW_V(270) CBCW_V(271)
 	virtual char *vfunc272();
 	virtual char *vfunc273();
-	CBCW_V(274) CBCW_V(275) CBCW_V(276)
+	CBCW_V(274) virtual int vfunc275(int a); CBCW_V(276)
 	virtual bool vfunc277(int a);	// asked by vfunc280 with the ammo slot index
 	virtual float vfunc278();	// CWeaponGravityGun: the pull strength of the held object (the owner's stat 0x1a divided by the physics object's mass), -1.0f without one
 	CBCW_V(279)
@@ -81,7 +81,8 @@ public:
 	virtual bool vfunc315();
 	virtual char vfunc316(int a);
 	CBCW_V(317) CBCW_V(318) CBCW_V(319)
-	CBCW_V(320) CBCW_V(321) CBCW_V(322) CBCW_V(323) CBCW_V(324) CBCW_V(325) CBCW_V(326) CBCW_V(327)
+	CBCW_V(320) CBCW_V(321) CBCW_V(322) virtual void vfunc323();	// "FinishReload": with an owner (sub_102521f0): a pending reload (byte at +0x8c8) is cancelled through sub_10254cd0(0xc3); else for both ammo slots the clip (+0x74c + i * 4) is refilled from the owner's ammo count (not above slot 275's capacity); then clears the bytes at +0x898 / +0x899 / +0x89a
+	CBCW_V(324) CBCW_V(325) CBCW_V(326) CBCW_V(327)
 	virtual int vfunc328();
 	CBCW_V(329) CBCW_V(330) CBCW_V(331) CBCW_V(332)
 	virtual void vfunc333(int a, int b, int c, int d, int e, int f);
@@ -112,6 +113,7 @@ public:
 	CWeaponOwner *sub_10252290();	// resolves the owner handle at +0x88c (0 when stale)
 	void *sub_102521f0();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale)
 	int sub_10252240();	// same as sub_102521f0 (stub 0x100011f4)
+	void sub_10254cd0(int a);	// stub 0x100074f5
 	void sub_1024edc0();	// prints the weapon's activity translation table (base activity, weapon activity, required) with Msg
 	bool sub_10253b40(int a);	// true when the ammo type at +0x744 + a * 4 is not negative
 	bool sub_10253b70(int a, int b, int c, int d);	// slot 315 worker: when slot 312 allows and the owner (sub_102521f0) exists: with an AI object at owner+0xa8 hands it d and stores c at +0x854, else stores -1 there and arms the timer at owner+0x1564 (curtime + const); clears bit 6 of +0x19c and starts slot 333 with 0xe (AI object) or 0xf; returns true
