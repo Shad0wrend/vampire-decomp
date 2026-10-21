@@ -826,6 +826,7 @@
 0x10004d4a func   ?sub_100c7560@@YAPADPAUCStudioHdr@@HPAPAU1@@Z sub_100c7560
 0x10004d86 func   ?sub_10032d20@UtlVec32@@QAEXHH@Z UtlVec32::sub_10032d20
 0x10004d90 func   ?sub_1022c180@@YIHPADHH@Z sub_1022c180
+0x10004dae func   ?sub_104285d0@@YAXPAUStudioHdr@@HPAM1@Z sub_104285d0
 0x10004dea func   ?vfunc423@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc423
 0x10004def func   ?sub_102a99a0@CUnknown102a9750@@QAEXD@Z CUnknown102a9750::sub_102a99a0
 0x10004e08 func   ?sub_101d13a0@@YAIPAUTEnt@@@Z sub_101d13a0
