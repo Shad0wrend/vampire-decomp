@@ -14,6 +14,7 @@ class CWeaponMelee : public CBaseCombatWeapon
 {
 public:
 	CWeaponMelee();
+	bool vfunc283(CBaseEntity *pTarget);	// slot 283: its own (0x103ea6d0), true when pTarget answers slot 158, the weapon has an owner other than pTarget and the owner's centre (slot 192) is within the melee range of pTarget's
 	bool vfunc315();	// when the weapon has an owner: plays the swing, picks a sound name by the owner state (slots 272 / 273), and queries the animation (slots 342, 343, 344)
 	void vfunc327();	// slot 327: its own (0x103eae00)
 	void vfunc367(int a, int b, int c);	// forwards to sub_103ea7e0 with the constant 0x4b
