@@ -36493,6 +36493,40 @@ void CBaseToggle::sub_101c1bc0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2200 size=0x121
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_10246700(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, int varProxy);	// SendPropVector
+void sub_10003012();
+void sub_1001303e();
+
+extern SendTable g_1072c81c;
+
+// TARGET: sub_101c2200
+int sub_101c2200()
+{
+	static const char *pTableName = "DT_Sun";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10007bfd("m_clrRender", 0x1a0, 4, 32, 1, 0, (void *)sub_1001303e),
+		sub_10246700("m_vDirection", 0x450, 12, 0, 32, 0.0f, -121121.121212f, (int)sub_10003012),
+		sub_10007bfd("m_nLayers", 0x45c, 4, 3, 1, 0, 0),
+		sub_10007bfd("m_bOn", 0x468, 4, 1, 1, 0, 0),
+		sub_10007bfd("m_HorzSize", 0x460, 4, 10, 1, 0, 0),
+		sub_10007bfd("m_VertSize", 0x464, 4, 10, 1, 0, 0),
+	};
+	g_1072c81c.sub_1000e8fe(props + 1, 6, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c23b0 size=0x43
 #include "CSun.h"
 void *sub_100aa720(int size);

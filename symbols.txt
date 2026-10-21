@@ -3818,6 +3818,7 @@
 0x10010b13 func   ?sub_10097000@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10097000
 0x10010b18 func   ?sub_10093be0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10093be0
 0x10010b22 func   ?vfunc566@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::vfunc566
+0x10010b31 func   ?sub_101c2200@@YAHXZ sub_101c2200
 0x10010b45 func   ?sub_10356550@@YAPAHXZ sub_10356550
 0x10010b4a func   ?vfunc245@CAI_StandoffGoal@@QAEXPAVCAI_BaseNPC@@@Z CAI_StandoffGoal::vfunc245
 0x10010b5e func   ?vfunc0@CGameRules@@UAEPAV1@I@Z CGameRules::vfunc0
