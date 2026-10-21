@@ -30,6 +30,7 @@ public:
 	void sub_102009b0(int stat);	// "CVStatList_t::SetBaseToDefault": scope trace, when the stat is valid sets it to the default value of its info record (the +0x0 object's entity value as argument)
 	const char *sub_10201a40(int stat, int arg);	// the text line of the stat for the dump (stub 0x10009214)
 	const char *sub_102013a0(int stat);	// "CVStatList_t::GetBaseValueName": scope trace, the name of the entry the base value of the stat selects in the stat's table (info object at +0xc), "" when the stat is invalid
+	const char *sub_10201470(int stat);	// "CVStatList_t::GetValueName": like sub_102013a0 but selects by the full stat value sub_10010609
 };
 
 // The stat lists of a character: the object at +0x13a8 of a CBaseCombatCharacter (its CUtlVector of lists at +0x8:
