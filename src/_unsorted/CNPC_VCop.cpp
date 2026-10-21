@@ -70,6 +70,45 @@ void CNPC_VCop::vfunc442(int *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10372b70 size=0xaa
+#include "CNPC_VCop.h"
+extern unsigned int g_1093ac3c;
+extern float g_1093aca8;
+extern CGlobalEntityList *g_10566458;
+struct CGlobalVars_10372b70
+{
+	char m_pad0000[0xc];
+	float curtime;	// 0x0c
+};
+extern CGlobalVars_10372b70 *g_1070b228;
+
+static inline CGlobalEntityList_Ent *LookupHandle(unsigned int h)
+{
+	if (h != -1) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13))
+			return pSlot->m_pEntity;
+	}
+	return 0;
+}
+
+int CNPC_VCop::vfunc404(CNPC_VCopTarget *pEnt)
+{
+	if (!pEnt)
+		return 0;
+	if ((void *)pEnt == (void *)LookupHandle(g_1093ac3c) && g_1070b228->curtime < g_1093aca8)
+		return 1;
+	CNPC_VCopPlayer *pPlayer = pEnt->m_pPlayer;
+	if (pPlayer) {
+		if (pPlayer->sub_1017f8d0())
+			return 1;
+		if (pPlayer->sub_1017f770() > 0)
+			return 1;
+	}
+	return sub_10299da0(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372cc0 size=0xc9
 #include "CNPC_VCop.h"
 
