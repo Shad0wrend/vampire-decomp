@@ -5031,6 +5031,7 @@
 0x10014bb4 func   ?sub_103f5cf0@@YAHXZ sub_103f5cf0
 0x10014bcd func   ?vfunc228@CBaseEntity@@QAEXHH@Z CBaseEntity::vfunc228
 0x10014bd7 func   ?sub_101857b0@UtlMem@@QAEXXZ UtlMem::sub_101857b0
+0x10014bdc func   ?sub_10240250@@YA_NABVVector@@000@Z sub_10240250
 0x10014be1 func   ?sub_100464f0@S100464f0@@QAEPAU1@HHH@Z S100464f0::sub_100464f0
 0x10014bf5 func   ?sub_10184380@@YIXPAH@Z sub_10184380
 0x10014c04 func   ?sub_1038fc80@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038fc80
