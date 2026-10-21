@@ -4349,6 +4349,7 @@
 0x100141ff func   ?vfunc5@CAmbientGeneric@@QAEPAV1@I@Z CAmbientGeneric::vfunc5
 0x1001421d func   ?vfunc5@CPushable@@UAEPAV1@I@Z CPushable::vfunc5
 0x1001422c func   ?vfunc5@CItemGLillyPhoto@@QAEPAV1@I@Z CItemGLillyPhoto::vfunc5
+0x10014254 func   ?vfunc257@CRagdollProp@@UAEXPAXH@Z CRagdollProp::vfunc257
 0x10014259 func   ?vfunc130@CWorld@@UAEXH@Z CWorld::vfunc130
 0x10014263 func   ?vfunc319@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc319
 0x10014268 func   _logic_multicompare logic_multicompare
