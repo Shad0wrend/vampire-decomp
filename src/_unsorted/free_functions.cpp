@@ -29087,6 +29087,17 @@ extern "C" CBaseEntity *momentary_door()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101171a0 size=0x6d
+#include "CFuncMoveLinear.h"
+#include "CEntityVSlots.h"
+
+void CFuncMoveLinear::sub_101171a0(inputdata_t &inputdata)
+{
+	if (*((CEntityVSlots *)this)->slot220() != m_vecPosition2)
+		sub_10116570(m_vecPosition2, m_flSpeed);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101172c0 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
