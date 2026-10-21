@@ -25,7 +25,7 @@ public:
 	virtual void vfunc45(); virtual void vfunc46(); virtual void vfunc47(); virtual void vfunc48(); virtual void vfunc49();
 	virtual void vfunc50(); virtual void vfunc51(); virtual void vfunc52(); virtual void vfunc53(); virtual void vfunc54();
 	virtual void vfunc55(); virtual void vfunc56(); virtual void vfunc57(); virtual void vfunc58(); virtual void vfunc59();
-	virtual void vfunc60(); virtual void vfunc61(void *pEdict, const char *pszFormat, ...);	// slot 61 (+0xf4): ClientCommand (a variadic member: the caller pushes this and pops everything)
+	virtual void vfunc60(); virtual void __cdecl vfunc61(void *pEdict, const char *pszFormat, ...);	// slot 61 (+0xf4): ClientCommand (a cdecl member: the caller pushes this first and pops everything)
 	virtual void vfunc62(); virtual void vfunc63(); virtual void vfunc64();
 	virtual void vfunc65(void *pFilter, int nMessage);	// slot 65 (+0x104): UserMessageBegin
 	virtual void vfunc66();	// slot 66 (+0x108): MessageEnd
