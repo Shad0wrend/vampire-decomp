@@ -15,4 +15,5 @@ public:
 	void vfunc453();	// as in CNPC_VAndreiBlood (transplant)
 	void sub_102ad140();	// as in CNPC_VAndreiBlood (transplant)
 	void sub_100123f5(int a);	// as in CNPC_VAndreiBlood (transplant)
+	CNPC_VTzimisceHeadClaw *sub_103c1220();	// constructor
 };
