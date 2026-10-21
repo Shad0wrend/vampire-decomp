@@ -4,13 +4,6 @@
 
 #include "Vector.h"
 
-struct CUnknown102ffbd0Arg	// the one dword value object the step object's constructor takes by value
-{
-	int m_n;
-
-	CUnknown102ffbd0Arg(int n) { m_n = n; }
-};
-
 struct CUnknown102ffbd0Item	// an entry of the step list
 {
 	char m_pad0000[0x6c];
@@ -40,7 +33,7 @@ struct CUnknown102ffbd0Outer
 struct CUnknown102ffbd0Obj	// the 0x38 byte step object
 {
 	char m_pad0000[0x38];
-	CUnknown102ffbd0Obj *sub_10319df0(Vector *pPos, CUnknown102ffbd0Arg arg, int nMode, int b, int c);	// constructor (stub 0x100021da): returns this
+	CUnknown102ffbd0Obj *sub_10319df0(Vector *pPos, int a, int nMode, int b, int c);	// constructor (stub 0x100021da): returns this
 };
 
 struct CUnknown102ffbd0Pool	// the fixed size allocator at 0x10936c84
