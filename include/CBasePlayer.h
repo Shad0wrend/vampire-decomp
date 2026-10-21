@@ -89,7 +89,8 @@ public:
 	// slots 409..447
 	CBP_V1(si0a) CBP_V1(si0b) CBP_V1(si0c)
 	virtual bool vfunc412();
-	CBP_V1(si0e) CBP_V1(si0f) CBP_V1(si0g) CBP_V1(si0h) CBP_V1(si0i) CBP_V1(si0j)
+	CBP_V1(si0e) CBP_V1(si0f) CBP_V1(si0g) CBP_V1(si0h) CBP_V1(si0i)
+	virtual char vfunc418(int unused);	// slot 418: runs sub_101644f0(-1, 0, 0), then steps the activity at +0xff0 (0xf49 -> 0xf52 when the entity of the handle at +0xfe8 is gone; with the byte at +0x65c set 0xf40 -> 0xf49), true while it is 0xf52
 	CBP_V10(si1) CBP_V10(si2) CBP_V1(sj0) CBP_V1(sj1)
 	virtual void vfunc441();	// slot 441: collects the player's weapons (or ammo types) the game rules (global 0x1070ba0c, slots 61 / 62) ask for into a local list, then slot 442(1)
 	virtual void vfunc442(int a);
@@ -195,4 +196,6 @@ public:
 	void sub_1017c6d0();	// notifies the entity of the engine index at +0x1eb8 (when flagged by the byte at +0x1ec0): clears the flag, slot 118 (AcceptInput) with a variant of type 5; always clears the index
 	void sub_101816c0(const char *pszName);	// slot 103 helper: runs slot 457(pszName, 0), clears the float at +0x1564 and, with an active weapon, runs its slot 310(0), clears its field at +0x854, lets the entity of its handle at +0x890 (sub_1015d680) run slot 266 when the weapon's slot 342 text is empty, then the weapon's slot 321
 	CBaseEntity *sub_1015d680(unsigned int hEntity);	// resolves an entity handle (stub 0x10013d09)
+	void sub_101644f0(int a, int b, int c);	// stub 0x1000f74f for 0x101644f0 (run first by slot 418 with -1, 0, 0)
+	void sub_1032a100(int activity);	// CBaseCombatCharacter member (stub 0x10002626): switches the activity
 };
