@@ -14,6 +14,59 @@ CMoveHelperServer *CMoveHelperServer::vfunc14(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013eee0 size=0x139
+#include "CBaseEntity.h"
+#include "CBaseEntitySlots.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+extern CGlobalEntityList g_106eb5d8;
+extern CUnknown1070b22c *g_1070b22c;
+struct EdictY { char pad[0x24]; const char *x; };
+extern EdictY *g_1070b228;
+extern char g_1057a19c[];
+struct EntA { virtual void v0(); virtual void v1(); virtual void v2(); virtual EntA *v3(); virtual CUnknown1070b22c_Edict *v4(); };
+struct EntB { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+  virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual const char **v9(unsigned int *o); };
+struct CBX : CBaseEntity { const char *sub_100ab4f0(); };
+struct PrivV { char pad[0x40]; EntA *p; };
+
+// TARGET: sub_1013eee0
+const char *__stdcall sub_1013eee0(unsigned int handle)
+{
+    *(volatile unsigned int *)&handle = handle;
+    EntA *e = (EntA *)g_106eb5d8.sub_100290c0(&handle);
+    CUnknown1070b22c_Edict *ed;
+    if (e)
+        ed = e->v3()->v4();
+    else
+        ed = 0;
+    CBX *p;
+    CUnknown1070b22c_Edict *ed2 = ed;
+    g_109f3620[*g_109f3680].name = "CBaseEntity::Instance";
+    g_109f3620[*g_109f3680].file = g_106b8540;
+    g_109f3620[*g_109f3680].line = g_106b8540;
+    (*g_109f3680)++;
+    if ((ed2 || (ed2 = g_1070b22c->vfunc38(0))) && ((PrivV *)ed2)->p)
+        p = (CBX *)((PrivV *)ed2)->p->v4();
+    else
+        p = 0;
+    (*g_109f3680)--;
+    if (!g_1070b22c->vfunc35((int)ed)) {
+        if (g_1070b228->x)
+            return g_1070b228->x;
+        return g_106b8540;
+    }
+    if (p->sub_1009f200())
+        return p->sub_100ab4f0();
+    if (p && *((EntB *)p)->v9(&handle)) {
+        const char *s = *((EntB *)p)->v9(&handle);
+        return s ? s : g_106b8540;
+    }
+    return g_1057a19c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f070 size=0x8
 #include "CMoveHelperServer.h"
 
