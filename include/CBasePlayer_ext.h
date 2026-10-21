@@ -1,0 +1,3 @@
+	int vfunc126(int a);	// slot 126 (plain member): the three save-state arrays (+0x1ce0 / +0x1ce4 / +0x1cf8) are prepared, the flag bytes at +0x1dc0 / +0x1dc8 and the timer at +0x1564 updated, the field at +0x1e24 created when empty, then CBaseCombatCharacter::vfunc126(a), the arrays handed back and a final cleanup of a
+	int sub_10348980(int a);	// CBaseCombatCharacter::vfunc126 (stub 0x1000e534), called directly
+	void sub_1016fa90();	// stub 0x10008e77, run when the field at +0x1e24 had to be created
