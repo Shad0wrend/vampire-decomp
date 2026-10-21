@@ -3130,6 +3130,7 @@
 0x1000d0fd func   ?vfunc1@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc1
 0x1000d10c func   ?sub_102cefc0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102cefc0
 0x1000d116 func   ?sub_10280e50@CAI_BaseNPC@@QAEXPAX@Z CAI_BaseNPC::sub_10280e50
+0x1000d12f func   ?sub_10138ba0@@YAXABVVector@@AAVQAngle@@@Z sub_10138ba0
 0x1000d134 func   ?vfunc621@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc621
 0x1000d139 func   ??1QuestJournal@@QAE@XZ QuestJournal::~QuestJournal
 0x1000d13e func   ?sub_101fd7e0@CVStatActionList_t@@QAE_NPAX@Z CVStatActionList_t::sub_101fd7e0

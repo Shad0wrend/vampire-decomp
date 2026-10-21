@@ -30451,6 +30451,38 @@ int sub_101388c0(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138ba0 size=0xd5
+#include <math.h>
+#include "QAngle.h"
+#pragma intrinsic(atan2, sqrt)
+
+extern float g_104454c4;
+
+// TARGET: sub_10138ba0
+void sub_10138ba0(const Vector &forward, QAngle &angles)
+{
+    float tmp, yaw, pitch;
+    if (forward.y == g_104454c4 && forward.x == g_104454c4) {
+        yaw = 0;
+        if (forward.z > g_104454c4)
+            pitch = 270;
+        else
+            pitch = 90;
+    } else {
+        yaw = (float)(atan2(forward.y, forward.x) * (180.0 / 3.14159265358979323846));
+        if (yaw < g_104454c4)
+            yaw += 360;
+        tmp = (float)sqrt(forward.x * forward.x + forward.y * forward.y);
+        pitch = (float)(atan2(-forward.z, tmp) * (180.0 / 3.14159265358979323846));
+        if (pitch < g_104454c4)
+            pitch += 360;
+    }
+    angles.x = pitch;
+    angles.y = yaw;
+    angles.z = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139550 size=0x8a
 #include "Vector.h"
 #include "QAngle.h"
