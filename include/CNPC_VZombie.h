@@ -23,4 +23,8 @@ public:
 	void sub_103e0a00();	// "CNPC_VZombie::UpdateEnemyTarget"-like (called by vfunc431): with an enemy (slot 167) that has a character (+0x9c): a character that fails CBaseCombatCharacter::sub_10146a80 gets slot 544 (character, its slot 217 position), one that passes goes through slot 541 / sub_102dfa20 and then sub_10279c20(); without an enemy the entity behind the handle at +0x628c is used the same way (sub_10279a50 for a passing character, slot 596 otherwise)
 	void sub_10279a50(CBaseEntity *pEnt);	// CAI_BaseNPC::sub_10279a50 (stub 0x1000b974), called directly
 	void sub_10279c20();	// stub 0x10003422, called directly
+	bool vfunc510();	// slot 510 "CNPC_VZombie::...": sets the dword at +0x10e8 to 9, then true (via CAI_BaseNPC::vfunc510) only for a calm zombie with a live enemy (handle +0x628c) that has no dialog partner and whose float at +0x6264 does not exceed the "Float Sound Info" stat 3
+	char sub_1000b005();	// CAI_BaseNPCTroika::sub_102c1170 (stub 0x1000b005), called directly
+	char sub_1000b212();	// CBaseCombatCharacter::sub_10341aa0 (stub 0x1000b212), called directly
+	bool sub_10005f97();	// CAI_BaseNPC::vfunc510 (stub 0x10005f97), tail called
 };
