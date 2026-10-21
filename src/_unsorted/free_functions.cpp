@@ -8704,6 +8704,30 @@ void CUnknown1007e5a0::sub_1007e5a0(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ec20 size=0x98
+#include "CUnknown1007ec20.h"
+#include <string.h>
+
+void CUnknown1007ec20::sub_1007ec20(CUnknown1007ec20_Reader *pReader, int a, int b, int c)
+{
+    m_pReader = pReader;
+    while (1) {
+        if (!m_pReader->vfunc1(true))
+            goto done;
+        if (strlen(m_pReader->vfunc0()) == 0)
+            goto done;
+        if (_strcmpi(m_pReader->vfunc0(), "event") == 0) {
+            sub_1007ab40(a, b, c);
+            continue;
+        }
+        m_pReader->vfunc3("unexpected token %s\n", m_pReader->vfunc0());
+        goto done;
+    }
+done:
+    sub_1007e5f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ecf0 size=0xd
 void CUnknown1007ecf0::sub_1007ecf0(char value)
 {

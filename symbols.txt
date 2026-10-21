@@ -727,6 +727,7 @@
 0x10004471 func   ?sub_10093a40@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10093a40
 0x100044ad func   ?sub_101f3060@@YIXPAD@Z sub_101f3060
 0x100044b2 func   _trigger_changelevel trigger_changelevel
+0x100044c1 func   ?sub_1007ec20@CUnknown1007ec20@@QAEXPAVCUnknown1007ec20_Reader@@HHH@Z CUnknown1007ec20::sub_1007ec20
 0x100044c6 func   ?vfunc2@CTEFizz@@UAEPAV1@I@Z CTEFizz::vfunc2
 0x100044cb func   ?sub_10332610@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10332610
 0x100044ee func   ?sub_101c72f0@@YAPAHXZ sub_101c72f0
