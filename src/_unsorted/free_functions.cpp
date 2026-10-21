@@ -76918,6 +76918,41 @@ void CUnknown103e2470::sub_103e2470(CFlameEvent_t *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e2840 size=0x108
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+void sub_10009539();
+void sub_10003012();
+
+extern SendTable g_1094072c;
+extern SendTable *g_105c5bc0;
+extern const char *g_10665dfc;
+
+// TARGET: sub_103e2840
+int sub_103e2840()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_105c5bc0, (void *)sub_10009539),
+		sub_1000c14e("m_LastLinkSpawn.position", 0x14dc, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_1000c14e("m_LastLinkSpawn.velocity", 0x14e8, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_10007bfd("m_nLastLinkFrame", 0x1514, 4, -1, 1, 0, 0),
+		sub_10007bfd("m_bIsFiring", 0x1518, 1, 1, 1, 0, 0),
+	};
+	g_1094072c.sub_1000e8fe(props + 1, 5, g_10665dfc);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3490 size=0xa6
 #include "CWeaponRanged_FlameThrower.h"
 
