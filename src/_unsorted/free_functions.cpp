@@ -20286,6 +20286,60 @@ void __stdcall sub_100ce8a0(const char *code)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cf080 size=0xb0
+#include "CEventQueue.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CEQRunArgs	// 16 byte local the event's block is copied into
+{
+	int m_data[4];
+	void sub_10230ed0();	// stub 0x1001067c: constructor body
+	void sub_10230f90(const void *pBlock);	// stub 0x10014790: copies the event's block
+};
+
+void sub_10230910(CEQRunArgs *pArgs, CBaseEntity *pTarget, int value, int a);	// stub 0x1000736a
+
+static inline CBaseEntity *EQLookup(const int &r)
+{
+	unsigned int h = r;
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13))
+			return (CBaseEntity *)s->m_pEntity;
+	}
+	return 0;
+}
+
+void CEventQueue::sub_100cf080()
+{
+	CEQEvent *pEvent = m_pHead;
+	if (pEvent) {
+		do {
+			if (pEvent->m_n34 == 2) {
+				CEQRunArgs args;
+				args.sub_10230ed0();
+				args.sub_10230f90(pEvent->m_block40);
+				int value = pEvent->m_n30 == 4 ? pEvent->m_n20 : 0;
+				sub_10230910(&args, EQLookup(pEvent->m_hTarget), value, 0);
+				CEQEvent *p = (CEQEvent *)this;
+				do {
+					if (p->m_pNext == pEvent) {
+						p->m_pNext = pEvent->m_pNext;
+						delete pEvent;
+					}
+					p = p->m_pNext;
+				} while (p);
+				pEvent = m_pHead;
+			} else {
+				pEvent = pEvent->m_pNext;
+			}
+		} while (pEvent);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cfd00 size=0x77
 struct SaveX {
     virtual void v0();
