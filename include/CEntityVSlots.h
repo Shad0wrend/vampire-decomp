@@ -65,8 +65,8 @@ public:
 	EVS(195) EVS(196) EVS(197) EVS(198) EVS(199)
 	EVS(200) EVS(201)
 	virtual void slot202(CEntityVSlots *pOwner);	// "SetOwnerEntity"
-	virtual float slot203();	// "GetAttackDamageScale"
-	virtual float slot204();	// "GetReceivedDamageScale"
+	virtual double slot203();	// "GetAttackDamageScale" (the value stays on the FPU stack, the caller multiplies it with a float)
+	virtual double slot204();	// "GetReceivedDamageScale"
 	EVS(205) EVS(206) EVS(207) EVS(208) EVS(209)
 	EVS(210) EVS(211)
 	virtual void slot212(int set);
