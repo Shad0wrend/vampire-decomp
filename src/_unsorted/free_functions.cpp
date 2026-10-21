@@ -33937,6 +33937,39 @@ void sub_101802e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180af0 size=0x139
+#include <string.h>
+#include "CGlobalEntityList.h"
+#include "ConVar.h"
+
+extern CGlobalEntityList g_106eb5d8;
+void sub_101cd940(CBaseEntity *pEnt);
+ConVar *sub_10245660(const char *pszName);
+
+// TARGET: sub_10180af0
+void sub_10180af0()
+{
+    CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0);
+    while (pEnt) {
+        const char *pszClass = pEnt->m_classname11c ? pEnt->m_classname11c : "";
+        if (!_stricmp(pszClass, "env_sprite")
+            || !_stricmp(pEnt->m_classname11c ? pEnt->m_classname11c : "", "env_particle")
+            || !_stricmp(pEnt->m_classname11c ? pEnt->m_classname11c : "", "func_dustmotes")
+            || !_stricmp(pEnt->m_classname11c ? pEnt->m_classname11c : "", "func_particle")
+            || !_stricmp(pEnt->m_classname11c ? pEnt->m_classname11c : "", "keyframe_rope")
+            || !_stricmp(pEnt->m_classname11c ? pEnt->m_classname11c : "", "move_rope"))
+            sub_101cd940(pEnt);
+        pEnt = g_106eb5d8.sub_100f7060(pEnt);
+    }
+    ConVar *pVar = sub_10245660("r_cloth");
+    if (pVar)
+        pVar->vfunc4(0);
+    pVar = sub_10245660("r_shadows");
+    if (pVar)
+        pVar->vfunc4(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10180d10 size=0x9a
 #include "CGlobalEntityList.h"
 #include "CUnknown1070b22c.h"
