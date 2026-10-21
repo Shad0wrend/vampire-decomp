@@ -28978,6 +28978,32 @@ int *sub_10133450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101337a0 size=0x91
+#include "CUnknown101337a0.h"
+
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *pMsg, ...);
+
+inline float VariantFloat(const variant_t &v)
+{
+	return v.fieldType == 1 ? v.flValue : 0.0f;
+}
+
+// TARGET: CUnknown101337a0::sub_101337a0
+void CUnknown101337a0::sub_101337a0(inputdata_t &data)
+{
+	inputdata_t &in = data;
+	if (VariantFloat(in.value) != 0.0f) {
+		float flNew = m_flValue;
+		flNew /= VariantFloat(in.value);
+		sub_10133950(in.pActivator, flNew);
+	} else {
+		DevMsg(1, "LEVEL DESIGN ERROR: Divide by zero in math_value\n");
+		float flNew = m_flValue;
+		sub_10133950(in.pActivator, flNew);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133ac0 size=0x78
 void *sub_1000db89(int);
 extern int vt_104475c4;
