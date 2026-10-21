@@ -29,4 +29,5 @@ public:
 	void sub_1019ce00();	// the constructor body (stub 0x100035d5)
 	void sub_1019cff0();	// "CRecipientFilter::AddAllPlayers" (stub 0x1000d9f9)
 	void sub_1019d280(const float *pOrigin);	// "CRecipientFilter::AddRecipientsByPAS" (stub 0x10004caa): adds the players that can hear the origin
+	void sub_1019d210(const float *pOrigin);	// "CRecipientFilter::AddRecipientsByPVS" (stub 0x100043db): adds the players that can see the origin
 };
