@@ -18,6 +18,7 @@ public:
 	CFuncMonitor *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 	void sub_101150f0(const char *szName);	// slot 113 helper: finds the entity of that name, keeps it at +0x45c when it is a CPointCamera (else null) and its edict index (engine slot 35) at +0x458 (0 without a camera)
-	void vfunc180();	// slot 180 (Deactivate-like): lets the monitor stop watching the camera it is bound to (slot 42 of this with the camera entity), clears the handle, then the base implementation
-	void sub_1000cb94();	// CBaseEntity::vfunc180, called directly
+	void vfunc77();	// slot 77: unless the flag byte (sub_10014da8) is set, hands the camera to slot 42 and forgets it; then CBaseEntity::vfunc77
+	bool sub_10014da8();	// stub 0x10014da8: the byte at +0xf4
+	void sub_100011cc();	// CBaseEntity::vfunc77, called directly (stub 0x100011cc)
 };
