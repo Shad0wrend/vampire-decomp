@@ -20,4 +20,5 @@ public:
 	int vfunc460();	// slot 460 (declared as a plain member): conditions 0x78 / 0x7e run the state change helper and answer the state at +0x5cc4; 0x79 forces state 3, 0x7c leaves state 3 for state 1 (both stamp the source line), then the Troika base
 	char sub_10014df8(int condition);	// "HasCondition" (the stub at 0x10014df8 for CAI_BaseNPC::sub_10269aa0), called directly
 	int sub_1000cc34();	// CAI_BaseNPCTroika::vfunc460 (stub 0x1000cc34), tail called
+	float vfunc516();	// slot 516 (declared as a plain member): the dog's movement speed: the moving state (flag 0x2000 at +0x5d8c) uses |slot 242| times a convar value (at least 1.0f); the flag 0x8000000 at +0x14b8 gives 45.0f; else by the activity (+0xfec) 30.0f, 40.0f, a convar value or 45.0f
 };
