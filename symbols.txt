@@ -4262,6 +4262,7 @@
 0x10013d0e func   ??0CVariantCopy@@QAE@ABU0@@Z CVariantCopy::CVariantCopy
 0x10013d18 func   ?sub_100b04d0@@YAXXZ sub_100b04d0
 0x10013d1d func   ?vfunc4@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc4
+0x10013d36 func   ??0CVTraitEffect_t@@QAE@XZ CVTraitEffect_t::CVTraitEffect_t
 0x10013d4f func   ?sub_102a95e0@CUnknown102a95e0@@QAEPAHH@Z CUnknown102a95e0::sub_102a95e0
 0x10013d54 func   ?sub_101ddb40@Range@@QAEXPBD@Z Range::sub_101ddb40
 0x10013d5e func   ?sub_10341120@@YIHPAD@Z sub_10341120
