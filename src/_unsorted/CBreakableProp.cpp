@@ -124,3 +124,25 @@ bool CBreakablePropFields1018fe50::sub_1018fe50(int a)
     return field1fc == 2;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1018fec0 size=0x77
+#include "CBreakableProp.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern int (__cdecl *g_109f388c)(char *buffer, int count, const char *format, ...);
+void __cdecl sub_101434b0(int entIndex, int lineOffset, const char *text, int duration, int r, int g, int b, int a);
+
+int CBreakableProp::vfunc124()
+{
+	int lineOffset = sub_10096100();
+	if (m_fTextOverlayFlags & 1) {
+		char text[32];
+		g_109f388c(text, 32, "Health: %d", m_iHealth);
+		int edict = m_pEdict;
+		sub_101434b0(g_1070b22c->vfunc35(edict), lineOffset, text, 0, 255, 255, 255, 255);
+		lineOffset++;
+	}
+	return lineOffset;
+}
+// END FUNCTION

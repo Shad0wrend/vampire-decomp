@@ -4089,6 +4089,7 @@
 0x10013a93 func   ?sub_10078f20@CUtlVector136@@QAEXHH@Z CUtlVector136::sub_10078f20
 0x10013a98 func   ?vfunc5@CWeaponMelee_BaseballBat@@QAEPAV1@I@Z CWeaponMelee_BaseballBat::vfunc5
 0x10013aa7 func   ?sub_10380470@CUnk10380470@@QAE_NXZ CUnk10380470::sub_10380470
+0x10013ab1 func   ?vfunc124@CBreakableProp@@QAEHXZ CBreakableProp::vfunc124
 0x10013aca func   ?sub_103a9e70@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103a9e70
 0x10013ae8 func   ?vfunc15@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHH@Z CTempEntsSystem::vfunc15
 0x10013b1a func   ??1CUnknown109f08c0@@QAE@XZ CUnknown109f08c0::~CUnknown109f08c0
