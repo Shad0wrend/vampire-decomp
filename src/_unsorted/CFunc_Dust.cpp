@@ -16,6 +16,45 @@ CFunc_Dust *CFunc_Dust::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113d10 size=0xf5
+#include "CFunc_Dust.h"
+#include "CUnknown101466e0.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+struct CFuncDustFields
+{
+	char m_pad0000[0x1b0];
+	CUnknown101466e0 m_b1b0;
+	char m_b1b1;
+	char m_pad01b2[0x26c - 0x1b2];
+	const char *m_name26c;
+	char m_pad0270[0x470 - 0x270];
+	const char *m_isz470;
+};
+
+// TARGET: CFunc_Dust::vfunc103
+void CFunc_Dust::vfunc103()
+{
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	CFuncDustFields *pFields = (CFuncDustFields *)this;
+	int local;
+	const char *model = *pEnt->vfunc9(&local);
+	pEnt->vfunc105(model ? model : g_106b8540);
+	const char *isz = pFields->m_isz470 ? pFields->m_isz470 : g_106b8540;
+	if (strlen(isz) == 0)
+		pFields->m_isz470 = ("materials/particle/sparkles.vmt")[0] ? "materials/particle/sparkles.vmt" : 0;
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", pFields->m_name26c ? pFields->m_name26c : g_106b8540);
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+		pCol->sub_100dc580(pCol->m_usSolidFlags | 0x20);
+	}
+	pFields->m_b1b0.sub_101466e0(1);
+	pFields->m_b1b1 = 1;
+	pEnt->CBaseEntity::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113e70 size=0xca
 #include "CFunc_Dust.h"
 
