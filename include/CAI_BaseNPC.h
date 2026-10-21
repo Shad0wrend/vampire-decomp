@@ -227,4 +227,6 @@ public:
 	void sub_1027d8d0(CBaseEntity *pEnt);	// run for an entity that moves faster than 50 units (|vx| + |vy| of its velocity at +0x3bc / +0x3c0): asks the dev flag object (slot 1), sets condition 0x74, resets the motor's (+0x5d44) look state (sub_102e0b40) and hands it pEnt's slot 220 position (sub_102e2020)
 	CBaseEntity *sub_1027a310(const char *pszItemName, Vector vecPos, Vector vecAng);	// "CAI_BaseNPC::DropItem": DevMsg "DropItem() - No item name!" for no name; creates the item entity at vecPos / vecAng (sub_100a99d0), clears its parent when it has one (bit 12 of the flags at +0x268), gives it this NPC's velocity (+0x3bc), then a random 0..100 impulse; null with a DevMsg when the item cannot be created
 	char sub_10266b10(int a, int b, float f);	// stub 0x10013c32, called by slot 562 with (a, b, 0.92f)
+	void sub_102792b0();	// NPC death setup: CBaseAnimating::InitBoneControllers, RemoveSolidFlags(4) (inlined scope trace), move type 6 (slot 93), ResetSequenceInfo with the playback rate +0x6f4 cleared, +0x6f8 cleared, health +0x208 = +0x210, take-damage mode +0x200 = 2, sub_101cf390(this, zero, zero), sub_100b3b00(), sub_10265a40(), ThinkSet(stub 0x1000b1d6, 0, 0), next think = curtime + a constant
+	void sub_10265a40();	// stub 0x10011644: halves the health (+0x208 / 2 into +0x210), take-damage mode +0x1fc = 2, +0x208 = 5, then slot 93(6, 0)
 };
