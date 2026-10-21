@@ -8,4 +8,5 @@ public:
 	int m_items[1];
 
 	int sub_101f9c70(int a, int b, int c);
+	void sub_101f9ff0(int a, int b, int c, int d);	// "CVTraitEffectList_t::Effect_ModInfo": scope trace, builds a CVModInfo_t(b, c, 0) and hands (a, info, d) to the effect group of every item
 };
