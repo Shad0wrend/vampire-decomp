@@ -19095,6 +19095,40 @@ float *CBaseEntity::sub_100b2150(float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2aa0 size=0xf3
+#include "ScopeTrace.h"
+
+extern Vector g_1070d1b0;
+
+struct CBaseEntityVelView {
+	char m_pad0000[0x3bc];
+	Vector m_vecAbsVelocity;
+};
+
+static inline bool Bit12(unsigned int flags)
+{
+	unsigned int f = flags;
+	f >>= 12;
+	return (f & 1) != 0;
+}
+
+void CBaseEntity::sub_100b2aa0(const Vector &inVecImpulse)
+{
+	ScopeTrace st("CBaseEntity::ApplyAbsVelocityImpulse", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (inVecImpulse != g_1070d1b0) {
+		if (Bit12(m_flags268))
+			sub_100b1d10();
+		const Vector &vel = ((CBaseEntityVelView *)this)->m_vecAbsVelocity;
+		Vector vecResult;
+		vecResult.x = inVecImpulse.x;
+		vecResult.x += vel.x;
+		vecResult.y = vel.y + inVecImpulse.y;
+		vecResult.z = vel.z + inVecImpulse.z;
+		sub_100b2770(vecResult);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2e30 size=0xd6
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
