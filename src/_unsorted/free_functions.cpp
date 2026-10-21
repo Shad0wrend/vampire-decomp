@@ -57602,6 +57602,56 @@ void CAI_BaseNPC::sub_10252470(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102525e0 size=0xa2
+#include "CBaseCombatWeapon.h"
+#include "CBaseCombatCharacter.h"
+#include "CWeaponOwner.h"
+
+#define AD_V(n) virtual void v##n();
+#define AD_V10(p) AD_V(p##0) AD_V(p##1) AD_V(p##2) AD_V(p##3) AD_V(p##4) AD_V(p##5) AD_V(p##6) AD_V(p##7) AD_V(p##8) AD_V(p##9)
+
+struct CAmmoRecord
+{
+	int sub_1000a37b();
+};
+
+struct CAmmoDefsCheck
+{
+	AD_V10(0) AD_V10(1) AD_V10(2) AD_V10(3) AD_V10(4)
+	AD_V(50) AD_V(51) AD_V(52) AD_V(53) AD_V(54)
+	virtual void *v55();
+};
+
+struct CAmmoDefsLookup
+{
+	AD_V10(0) AD_V10(1) AD_V10(2) AD_V10(3) AD_V10(4)
+	AD_V(50) AD_V(51) AD_V(52) AD_V(53) AD_V(54)
+	virtual CAmmoRecord *v55(int type);
+};
+
+extern CAmmoDefsCheck *g_1070ba0c;
+
+char CBaseCombatWeapon::sub_102525e0(CBaseCombatCharacter *pOwner)
+{
+	int type = m_nAmmoType;
+	if (type < 0)
+		return false;
+	if (!sub_102517b0())
+		return false;
+	if (!&sub_102517b0()->m_n2668)
+		return false;
+	if (!g_1070ba0c->v55())
+		return false;
+	if (!pOwner) {
+		pOwner = (CBaseCombatCharacter *)sub_102521f0();
+		if (!pOwner)
+			return false;
+	}
+	int n = ((CAmmoDefsLookup *)g_1070ba0c)->v55(type)->sub_1000a37b();
+	return n == pOwner->sub_103346c0(type);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253b70 size=0xa6
 #include "CBaseCombatWeapon.h"
 
