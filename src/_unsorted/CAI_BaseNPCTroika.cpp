@@ -1170,6 +1170,59 @@ void CAI_BaseNPCTroika::vfunc453()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102adfe0 size=0x101
+#include "CAI_BaseNPCTroika.h"
+
+struct CExprSets
+{
+	int sub_100ec360(int index, void *pNpc);
+	int sub_100ec2e0(int index, void *pNpc);
+	float sub_100ec3d0(int index);
+};
+extern CExprSets g_10924980;
+
+struct CTroikaExprView
+{
+	char m_pad0[0x10b4];
+	int m_nExpression10b4;
+	float m_flWeight10b8;
+	char m_pad10bc[0x64d0 - 0x10bc];
+	int m_nExpression64d0;
+	int m_nIndex64d4;
+};
+
+// TARGET: CAI_BaseNPCTroika::vfunc610
+void CAI_BaseNPCTroika::vfunc610(int emotion)
+{
+    CTroikaExprView *p = (CTroikaExprView *)this;
+    switch (emotion) {
+    case 8:
+    case 10:
+        p->m_nExpression10b4 = sub_10106a40("Fear");
+        p->m_nExpression64d0 = sub_10106a40("Fear_NoDeform");
+        p->m_flWeight10b8 = 1.0f;
+        return;
+    case 3:
+    case 0xb:
+    case 0xe:
+        p->m_nExpression10b4 = sub_10106a40("Anger");
+        p->m_nExpression64d0 = sub_10106a40("Anger_No Deform");
+        p->m_flWeight10b8 = 0.5f;
+        return;
+    case 2:
+        p->m_nExpression10b4 = sub_10106a40("Anger");
+        p->m_nExpression64d0 = sub_10106a40("Anger_No Deform");
+        p->m_flWeight10b8 = 1.0f;
+        return;
+    default:
+        p->m_nExpression10b4 = g_10924980.sub_100ec360(p->m_nIndex64d4, this);
+        p->m_nExpression64d0 = g_10924980.sub_100ec2e0(p->m_nIndex64d4, this);
+        p->m_flWeight10b8 = g_10924980.sub_100ec3d0(p->m_nIndex64d4);
+        return;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4540 size=0xb4
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"

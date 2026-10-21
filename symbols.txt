@@ -3742,6 +3742,7 @@
 0x1000f867 func   ?sub_1012ee70@InterfaceReg@@QAEPAV1@PAXPBD@Z InterfaceReg::sub_1012ee70
 0x1000f876 func   ?sub_1020f990@CLogicVisible@@QAEPAV1@XZ CLogicVisible::sub_1020f990
 0x1000f87b func   ?vfunc130@CEnvPlayerSurfaceTrigger@@QAEXH@Z CEnvPlayerSurfaceTrigger::vfunc130
+0x1000f880 func   ?vfunc610@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc610
 0x1000f88a func   _playerevents playerevents
 0x1000f88f func   ?sub_100fbc20@CBaseEntity@@QAEXXZ CBaseEntity::sub_100fbc20
 0x1000f899 func   ?vfunc5@COccultHacking@@QAEPAV1@I@Z COccultHacking::vfunc5
