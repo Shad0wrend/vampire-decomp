@@ -1,0 +1,38 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "vampire.h"
+
+// FUNCTION: 0x103bcb60 size=0x76
+#include "CNPC_VTzimisce.h"
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CTzimisceScheduleTarget {
+    int sub_100102b2(int a);
+};
+struct CTzimisceSlot580View {
+    S100(a0) S100(a1) S100(a2) S100(a3) S100(a4)
+    S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7)
+    virtual CTzimisceScheduleTarget *vfunc580();
+};
+struct CTzimisceScheduleUnit : CNPC_VTzimisce {
+    bool sub_10014df8(int condition);
+    int sub_103bcb60(int unused);
+};
+
+int CTzimisceScheduleUnit::sub_103bcb60(int unused)
+{
+    char *p = (char *)this;
+    if (sub_10014df8(0x48)) {
+        *(const char **)(p + 0x1b30) = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+        *(int *)(p + 0x1b34) = 0xb93;
+        return 0x171;
+    }
+    if (sub_10014df8(0x5d)) {
+        *(const char **)(p + 0x1b30) = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+        *(int *)(p + 0x1b34) = 0xb98;
+        return 0x170;
+    }
+    int nClass = *(int *)(*(int *)(p + 0x5c38) + 0x1c);
+    CTzimisceScheduleTarget *pTarget = ((CTzimisceSlot580View *)this)->vfunc580();
+    return pTarget->sub_100102b2(nClass);
+}
+// END FUNCTION
