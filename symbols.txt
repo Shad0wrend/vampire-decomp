@@ -1431,6 +1431,7 @@
 0x10006f5a func   _item_w_torch item_w_torch
 0x10006f5f func   ?vfunc123@CNPC_VMingXiao@@UAEXXZ CNPC_VMingXiao::vfunc123
 0x10006f6e func   ?sub_101e8250@COwner@@QAEIH@Z COwner::sub_101e8250
+0x10006f73 func   ?sub_100544f0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_100544f0
 0x10006f78 func   ?sub_103f2de0@@YAHXZ sub_103f2de0
 0x10006f82 func   ?sub_100fb850@S100fb850@@QAEXAAUinputdata_t@@@Z S100fb850::sub_100fb850
 0x10006f96 func   ?sub_10335ea0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10335ea0

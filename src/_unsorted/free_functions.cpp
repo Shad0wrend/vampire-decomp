@@ -5871,6 +5871,67 @@ void sub_10054400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100544f0 size=0x154
+#include "CBaseCombatCharacter.h"
+#include "CDisciplineParticle.h"
+#include "CBasePlayer.h"
+#include "ScopeTrace.h"
+
+struct SStrHolder {
+	char sub_100eb3d0();
+};
+
+extern CDisciplineParticleParams g_1053e4c8[];
+
+void CBaseCombatCharacter::sub_100544f0(int which)
+{
+	ScopeTrace trace("CBaseCombatCharacter::CreateSecondaryDiscParticles", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	bool bAttach = false;
+	int state = -1;
+	int flag = 0;
+	CDisciplineParticleParams *pParams;
+	CDisciplineParticle *pParticle;
+	switch (which) {
+	case 0:
+		state = 7;
+		flag = 4;
+		bAttach = true;
+		break;
+	case 1:
+		flag = 4;
+		bAttach = true;
+		state = 12;
+		break;
+	case 2:
+		flag = 8;
+		state = 12;
+		break;
+	case 4:
+		break;
+	default:
+		return;
+	}
+	sub_1033c6b0(flag);
+	if (bAttach) {
+		CBasePlayer *pPlayer = *(CBasePlayer **)((char *)this + 0xa8);
+		CBaseEntity *pEnt;
+		if (!pPlayer || (pEnt = pPlayer->sub_1015d680(0)) == 0 || (pParams = &g_1053e4c8[which]) == 0
+			|| !((SStrHolder *)pParams)->sub_100eb3d0())
+			return;
+		pParticle = CDisciplineParticle::sub_10050b90(pParams, (int)this, state, (int)pEnt, 0);
+		if (pParticle)
+			((CBaseEntity *)pParticle)->sub_100fbbb0(5.0f);
+	} else {
+		pParams = &g_1053e4c8[which];
+		if (pParams == 0 || !((SStrHolder *)pParams)->sub_100eb3d0())
+			return;
+		pParticle = CDisciplineParticle::sub_10050b90(pParams, (int)this, state, 0, 0);
+		if (pParticle)
+			((CBaseEntity *)pParticle)->sub_100fbbb0(5.0f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054ad0 size=0xf0
 #include "CUtlRBTreeInsert24.h"
 
