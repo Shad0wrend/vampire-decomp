@@ -18420,6 +18420,45 @@ void sub_100dc140(int *p, int unused, int *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc220 size=0xaa
+#include "CCollisionProperty.h"
+
+struct CPartitionObj
+{
+	virtual void v0(unsigned short handle, int a);
+};
+struct DebugNameView { const char *sub_100ab4f0(); };
+
+extern CPartitionObj *g_1070b24c;
+extern char g_105477a4[];
+extern void (*g_109f3630)(const char *, ...);
+
+static inline const char *OuterName(CBaseEntity *pOuter)
+{
+	if (pOuter)
+		return ((DebugNameView *)pOuter)->sub_100ab4f0();
+	return g_105477a4;
+}
+
+void CCollisionProperty::sub_100dc220(int a)
+{
+	if (!g_1070b24c) {
+		g_109f3630("ERROR: partition not initialized when %s needed it.\n", OuterName(m_pOuter));
+		return;
+	}
+	unsigned short handle = m_hPartition;
+	if (handle == 0xffff) {
+		sub_100ddd90();
+		handle = m_hPartition;
+		if (handle == 0xffff) {
+			g_109f3630("ERROR: m_Partition failed to initialized for %s.\n", OuterName(m_pOuter));
+			return;
+		}
+	}
+	g_1070b24c->v0(handle, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc300 size=0x76
 extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
 struct Rec64 {
