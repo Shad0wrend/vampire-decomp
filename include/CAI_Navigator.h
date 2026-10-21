@@ -99,6 +99,7 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 	int m_i60;
 
 	void sub_1030bb30();	// resets the route: deletes the waypoint, vectors to vec3_origin (0x1070d1b0), flags and counters to 0 (+0x2c = 1, +0x30 = -1)
+	int sub_1030bc00();	// the route's move status (stub 0x1000f240): 0 when it has none, 2 for a finished one
 };
 
 class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
@@ -115,6 +116,9 @@ public:
 	virtual void vfunc20();
 	void sub_10011c98();	// as in CDataObjectAccessSystem (transplant)
 	void sub_102f1fa0(float flDelay, CAI_NavSource *pSource);	// finds the record of the route's waypoint (provider list at +0x2c), sets bit 0 of its flags, its time to curtime + flDelay and its handle from pSource (-1 without)
+	bool sub_102efd50();	// "MoveGround"-like step: with no route status warns about a wrong nav type for types 1 / 3 (telling the motor at +0x20 slot 8 / 5) and stops (sub_102eeba0(0)); a finished status (2) with another nav type than 2 fails; else clears the pending move (sub_102f13d0(0), byte +0x51) and succeeds
+	void sub_10008832(int a);	// CUnknown102eeba0::sub_102eeba0 (stub 0x10008832), called with this
+	void sub_100053b7(int a);	// stub of 0x102f13d0
 
 	int m_i14;
 	int m_i18;
