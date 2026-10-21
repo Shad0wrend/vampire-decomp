@@ -9,7 +9,7 @@
 class CBaseEntity;
 class CAI_Motor;
 class CRestore;
-class CUnknown102dfc10;
+class CUnknown102e0150;
 
 #define CAI_NPC_V(n) virtual void vfunc##n();
 #define CAI_NPC_V10(p) CAI_NPC_V(p##0) CAI_NPC_V(p##1) CAI_NPC_V(p##2) CAI_NPC_V(p##3) CAI_NPC_V(p##4) CAI_NPC_V(p##5) CAI_NPC_V(p##6) CAI_NPC_V(p##7) CAI_NPC_V(p##8) CAI_NPC_V(p##9)
@@ -126,7 +126,7 @@ public:
 	CAI_NPC_V(521) CAI_NPC_V(522) CAI_NPC_V(523) CAI_NPC_V(524) CAI_NPC_V(525) CAI_NPC_V(526) CAI_NPC_V(527) CAI_NPC_V(528) CAI_NPC_V(529)
 	CAI_NPC_V10(53)
 	CAI_NPC_V(540)
-	virtual CUnknown102dfc10 *vfunc541(const void *pKey);	// the queue / memory object the NPC keeps for pKey (a "file(line) :" text or an enemy)
+	virtual CUnknown102e0150 *vfunc541();	// the NPC's memory list (the same object type as CUnknown102dfc10: nodes at +0xc linked through +0x38)
 	virtual void vfunc542();
 	CAI_NPC_V(543) CAI_NPC_V(544)
 	virtual bool vfunc545();	// finds the squad (+0x5da4) from the name at +0x5da8 when the class flags ask for one; true when it has one
