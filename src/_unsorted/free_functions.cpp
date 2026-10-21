@@ -64131,6 +64131,18 @@ void CBaseCombatCharacter::sub_10338440(const int *pStat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103387a0 size=0xf9
+#include "ScopeTrace.h"
+void sub_100138c2(void *p, int a, int b);
+void CBaseCombatCharacter::sub_103387a0(int value)
+{
+	ScopeTrace trace("CBaseCombatCharacter::AbilityBonus", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CVStatListSet::Of(this)->Find(1)->sub_10200d60(value);
+	if (*(void **)((char *)this + 0xa8))
+		sub_100138c2(*(void **)((char *)this + 0xa8), 0x19, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10338950 size=0x150
 #include "ScopeTrace.h"
 char CBaseCombatCharacter::sub_10338950()
