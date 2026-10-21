@@ -51,6 +51,30 @@ CHL2_Player *CHL2_Player::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10351390 size=0x73
+#include "CHL2_Player.h"
+#include "CBasePlayer.h"
+#include "CUnknown1015ef20.h"
+
+void CHL2_Player::vfunc103()
+{
+	*((char *)this + 0x2544) = 0;
+	int flags;
+	if (((CUnknown1015ef20 *)this)->sub_1015eec0() && !sub_1015ef80()) {
+		vfunc408();
+		flags = *(int *)((char *)this + 0x19c) & ~0x20;
+	} else {
+		vfunc407();
+		flags = *(int *)((char *)this + 0x19c) | 0x20;
+	}
+	*(int *)((char *)this + 0x19c) = flags;
+	sub_1016d260();
+	*(int *)((char *)this + 0x1c6c) = 0;
+	if (vfunc406())
+		((CBasePlayer *)this)->vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10351430 size=0xa3
 #include "CHL2_Player.h"
 
