@@ -51500,6 +51500,43 @@ void __stdcall sub_10230700(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231970 size=0x147
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+void sub_10009539();
+void sub_10006aeb();
+
+extern SendTable g_10751464;
+extern SendTable *g_1055282c;
+extern const char *g_105b5c3c;
+
+// TARGET: sub_10231970
+int sub_10231970()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1055282c, (void *)sub_10009539),
+		sub_10006cc1("m_flWidth", 0x450, 4, 0, 4, 0.0f, -121121.121094f, (void *)sub_10006aeb),
+		sub_10006cc1("m_flHeight", 0x454, 4, 0, 4, 0.0f, -121121.121094f, (void *)sub_10006aeb),
+		sub_10007bfd("m_nAttachmentIndex", 0x45c, 4, 5, 1, 0, 0),
+		sub_10007bfd("m_nPanelName", 0x458, 4, 8, 1, 0, 0),
+		sub_10007bfd("m_fScreenFlags", 0x464, 4, 2, 1, 0, 0),
+		sub_10007bfd("m_nOverlayMaterial", 0x460, 4, 0xa, 1, 0, 0),
+	};
+	g_10751464.sub_1000e8fe(props + 1, 7, g_105b5c3c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231e60 size=0xa
 unsigned int __fastcall sub_10231e60(char *self)
 {
