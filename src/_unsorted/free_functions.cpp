@@ -33282,6 +33282,44 @@ void CUnknown10185a30::sub_10185a30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101871f0 size=0x69
+struct CGlobalVarsStub
+{
+	char pad[0xc];
+	float m_flValue;
+};
+
+#define PV1(p) virtual void p();
+#define PV10(p) PV1(p##0) PV1(p##1) PV1(p##2) PV1(p##3) PV1(p##4) PV1(p##5) PV1(p##6) PV1(p##7) PV1(p##8) PV1(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CPlayerTimeStub
+{
+	PV100(pa)
+	PV10(pb) PV10(pc) PV10(pd) PV1(pe0) PV1(pe1) PV1(pe2) PV1(pe3)
+	virtual void vfunc134();
+	char pad[0x17c - 4];
+	float m_flPending;
+	char pad2[0x2358 - 0x180];
+	float m_flTime;
+};
+
+extern CGlobalVarsStub *g_1070b228;
+
+// TARGET: sub_101871f0
+void __stdcall sub_101871f0(CPlayerTimeStub *pPlayer, double dt)
+{
+	float f = pPlayer->m_flPending;
+	if (!(f <= 0.0) && !(pPlayer->m_flTime + dt < f)) {
+		if (pPlayer->m_flTime + 0.0 > f)
+			f = pPlayer->m_flTime;
+		g_1070b228->m_flValue = f;
+		pPlayer->m_flPending = 0;
+		pPlayer->vfunc134();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101878d0 size=0x8c
 struct SServerUnknown
 {
