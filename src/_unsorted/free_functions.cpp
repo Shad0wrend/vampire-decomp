@@ -12279,6 +12279,34 @@ void sub_10087fb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088890 size=0x66
+#include "CBaseEntity.h"
+
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+int sub_101bb310(int a);
+CBaseEntity *sub_101193b0();
+void sub_101bb2e0(int a);
+void sub_101bb2b0(int a);
+extern unsigned int g_1072c440;
+
+void sub_10088890()
+{
+	if (sub_101bb310(0x10)) {
+		CBaseEntity *pEnt = sub_101193b0();
+		if (pEnt)
+			g_1072c440 = *pEnt->vfunc1();
+		else
+			g_1072c440 = 0xffffffff;
+		sub_101bb2e0(1);
+		sub_101bb2b0(2);
+		DevMsg("SoundShow enabled (Ent mode)\n");
+		DevMsg("SoundShow displaying npc's deaf zones\n");
+		return;
+	}
+	DevMsg("SoundShow displaying npc's deaf zones\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088a80 size=0x10
 extern bool g_10924fbb;
 
