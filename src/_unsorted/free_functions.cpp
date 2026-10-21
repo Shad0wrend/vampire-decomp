@@ -33092,6 +33092,56 @@ void __fastcall sub_101bc000(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc020 size=0xd9
+#include "CUnknown101bc140.h"
+#include "CGlobalEntityList.h"
+
+#define SPD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CEngineServerSP
+{
+public:
+    SPD10(a) SPD10(b) SPD10(c)
+    virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+    virtual int IndexOfEdict(int pEdict);
+};
+
+extern CGlobalEntityList *g_10566458;
+extern CEngineServerSP *g_1070b22c;
+extern char g_106b8540[];
+
+void sub_100126cf(void *pFilter, int nEntIndex, int nChannel, const char *pszSample, float flVolume, int nSoundLevel, int nFlags, int nPitch, int a, int b, int c);
+
+static inline CBaseEntity *LookupHandle(const unsigned int *pHandle)
+{
+    if (*pHandle == 0xffffffff)
+        return 0;
+    CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[*pHandle & 0x1fff];
+    if (pSlot->m_Serial == (int)(*pHandle >> 13))
+        return (CBaseEntity *)pSlot->m_pEntity;
+    return 0;
+}
+
+#define STRING(x) ((x) ? (x) : g_106b8540)
+
+void CUnknown101bc140::sub_101bc020()
+{
+    m_n38 = 0;
+    if (m_nFlags & 1) {
+        float flVolume = m_flVolume;
+        const char *pszSample = STRING(m_pszSample);
+        int nEntIndex;
+        if (LookupHandle(&m_hEntity)) {
+            int pEdict = *(int *)((char *)LookupHandle(&m_hEntity) + 0x2e0);
+            nEntIndex = g_1070b22c->IndexOfEdict(pEdict);
+        } else
+            nEntIndex = -1;
+        sub_100126cf(m_Filter, nEntIndex, m_nChannel, pszSample, sub_101bbcf0(), m_nSoundLevel, 1, (int)flVolume, 0, 0, 0);
+    }
+    m_pEmitter = (void *)1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc140 size=0xd5
 #include "CUnknown101bc140.h"
 #include "IVEngineServer.h"

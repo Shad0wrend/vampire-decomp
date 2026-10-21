@@ -3202,6 +3202,7 @@
 0x1000eb5b func   _env_fade env_fade
 0x1000eb65 func   ?sub_102a9dc0@Obj@@QAEPAU1@HPAUVec3@@HHHHHH@Z Obj::sub_102a9dc0
 0x1000eb6a func   _env_fire env_fire
+0x1000eb74 func   ?sub_101bc020@CUnknown101bc140@@QAEXXZ CUnknown101bc140::sub_101bc020
 0x1000eb7e func   _env_beam env_beam
 0x1000eb83 func   ?vfunc390@CNPC_VGhoulCroucher@@QAEHPAX@Z CNPC_VGhoulCroucher::vfunc390
 0x1000eb88 func   ?sub_10047840@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10047840
