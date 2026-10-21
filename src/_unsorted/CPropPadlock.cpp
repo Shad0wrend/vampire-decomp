@@ -54,6 +54,55 @@ void CPropPadlock::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10225f60 size=0x139
+#include "CBaseEntity.h"
+#include "CPropPadlock.h"
+#include "CUnknown100ee750.h"
+#include "CCollisionProperty.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+struct SGlobals {
+	char pad[0xc];
+	float curtime;
+};
+struct SPadlockWorker {
+	void sub_10090950();
+};
+
+extern CGlobalEntityList *g_10566458;
+extern SGlobals *g_1070b228;
+extern float g_104492a4;
+void sub_10011667();
+
+static __forceinline CUnknown100ee750 *HandleGet(unsigned int h)
+{
+	CGlobalEntityList_Slot *pSlot;
+	if (h == (unsigned int)-1 || (pSlot = &g_10566458->m_Slots[h & 0x1fff], pSlot->m_Serial != (int)(h >> 13)))
+		return 0;
+	return (CUnknown100ee750 *)pSlot->m_pEntity;
+}
+
+void CPropPadlock::vfunc274()
+{
+	volatile unsigned int *ph = (volatile unsigned int *)((char *)this + 0x80c);
+	if (HandleGet(*ph))
+		HandleGet(*ph)->sub_100ee750(this);
+	sub_100a0b20();
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(6);
+	}
+	vfunc93(7, 0);
+	*(int *)((char *)this + 0x6f0) = 1;
+	((SPadlockWorker *)this)->sub_10090950();
+	sub_100a5ea0(6, 0, 0, 0);
+	sub_100ac4e0((int)sub_10011667, 0, 0);
+	float t = g_1070b228->curtime;
+	*(float *)((char *)this + 0x17c) = t + g_104492a4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102260f0 size=0x7b
 #include "CBaseEntity.h"
 #include "CPropPadlock.h"
