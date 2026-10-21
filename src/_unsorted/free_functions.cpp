@@ -81120,6 +81120,67 @@ void sub_104121d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10412260 size=0xf4
+#include "UtlVec8.h"
+
+extern "C" __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+
+struct ActMem {
+	void sub_104273f0(int num);	// CUtlMemory::Grow
+};
+struct ActEntry {
+	int m_iActivity;
+	short m_StringKey;
+	char m_bPrivate;
+};
+struct ActName {
+	char m_szName[0x40];
+	int m_iEntry;
+};
+struct ActPool {
+	short sub_10010c03(const char *pName, int index);	// AddString
+	const char *sub_10005d35(int key);	// GetString
+};
+struct ActVec : public UtlVec8 {
+	UtlVec8Elem &Element(int i) { return ((UtlVec8Elem *)m_pMemory)[i]; }
+	int InsertBefore(int elem)
+	{
+		if (m_Size + 1 > m_allocationCount)
+			((ActMem *)this)->sub_104273f0(m_Size + 1 - m_allocationCount);
+		m_Size++;
+		m_pElements = (UtlVec8Elem *)m_pMemory;
+		int numToMove = m_Size - elem - 1;
+		if (numToMove > 0)
+			memmove(&Element(elem + 1), &Element(elem), numToMove * 8);
+		return elem;
+	}
+};
+
+extern ActVec g_109d3010;
+extern int g_109d3080;
+extern ActPool g_1094afe0;
+extern ActName g_1094afe8[0x2000];
+
+ActEntry *sub_10412260(const char *pName, int iActivityIndex, bool isPrivate)
+{
+	int elem = g_109d3010.InsertBefore(g_109d3010.m_Size);
+	ActEntry *pEntry = (ActEntry *)&g_109d3010.Element(elem);
+	pEntry->m_iActivity = iActivityIndex;
+	pEntry->m_StringKey = g_1094afe0.sub_10010c03(pName, elem);
+	pEntry->m_bPrivate = isPrivate;
+	if (iActivityIndex > g_109d3080)
+		g_109d3080 = iActivityIndex;
+	int last = g_109d3010.m_Size - 1;
+	UtlVec8Elem entry = g_109d3010.Element(last);
+	if (iActivityIndex < 0x2000) {
+		Q_strncpy(g_1094afe8[iActivityIndex].m_szName, g_1094afe0.sub_10005d35(entry.b), 0x3f);
+		g_1094afe8[iActivityIndex].m_szName[0x3f] = 0;
+		g_1094afe8[iActivityIndex].m_iEntry = last;
+	}
+	return pEntry;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10412590 size=0xcb
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(int);
