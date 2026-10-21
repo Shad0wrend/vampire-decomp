@@ -77135,6 +77135,37 @@ char sub_1035c3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035cd00 size=0x156
+#include "CNPC_VAndreiBlood.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+
+extern void *vt_104a6fc4[];
+extern void *vt_104a6f94[];
+void sub_101cd940(CGlobalEntityList_Ent *pEnt);
+void __fastcall sub_1028d610(CAI_BaseNPCTroika *pNPC);
+
+// TARGET: CNPC_VAndreiBlood::sub_1035cd00
+void CNPC_VAndreiBlood::sub_1035cd00()
+{
+	*(void ***)this = vt_104a6fc4;
+	*(void ***)((char *)this + 0x19b0) = vt_104a6f94;
+	{
+		ScopeTrace trace("CNPC_VAndreiBlood::Destructor", g_106b8540);
+		if (EHandle_Get(m_h66e0)) {
+			sub_101cd940(EHandle_Get(m_h66e0));
+			m_h66e0 = 0xffffffff;
+		}
+		if (EHandle_Get(m_h66e4)) {
+			sub_101cd940(EHandle_Get(m_h66e4));
+			m_h66e4 = 0xffffffff;
+		}
+	}
+	m_Output6664.sub_100cd2d0();
+	sub_1028d610(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035e5f0 size=0xa5
 #include "CNPC_VAndreiBlood.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

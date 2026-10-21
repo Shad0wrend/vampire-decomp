@@ -754,6 +754,7 @@
 0x100040d9 func   ?sub_10337860@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10337860
 0x100040e3 func   ?vfunc3@CEntitySaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CEntitySaveRestoreBlockHandler::vfunc3
 0x100040f7 func   ?sub_1042fc30@@YAII@Z sub_1042fc30
+0x10004110 func   ?sub_1035cd00@CNPC_VAndreiBlood@@QAEXXZ CNPC_VAndreiBlood::sub_1035cd00
 0x10004129 func   ?vfunc30@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc30
 0x1000412e func   ?sub_103ceb60@CNPC_VWerewolf@@QAEPBDPAX@Z CNPC_VWerewolf::sub_103ceb60
 0x10004138 func   ?sub_101a77a0@CCineNPC@@QAEXPAX@Z CCineNPC::sub_101a77a0
