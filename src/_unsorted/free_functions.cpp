@@ -9237,6 +9237,42 @@ void sub_10088fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008a6d0 size=0x64
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+void *sub_101193b0();
+void *sub_100d2070(void *pList, const char *pszName, void *pStart);
+
+#define D(x) virtual void x();
+#define T(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+
+struct CPlayerSlots246
+{
+	H(a0) H(b0) T(c0) T(c1) T(c2) T(c3) D(d0) D(d1) D(d2) D(d3) D(d4) D(d5)
+	virtual void slot246(int a, float *pOut, int b);
+};
+
+struct CFoundEntity
+{
+	char m_pad[0xa4];
+	CPlayerSlots246 *m_pObject;	// 0xa4
+};
+
+void sub_1008a6d0()
+{
+	float vOut[7];
+	void *pList = sub_101193b0();
+	const char *pszName = g_1070b22c->vfunc84(1);
+	for (CFoundEntity *pEnt = (CFoundEntity *)sub_100d2070(pList, pszName, 0); pEnt; pEnt = (CFoundEntity *)sub_100d2070(pList, pszName, pEnt)) {
+		if (pEnt->m_pObject)
+			pEnt->m_pObject->slot246(0, vOut, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b490 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
