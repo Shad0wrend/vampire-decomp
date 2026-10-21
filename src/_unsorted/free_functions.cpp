@@ -10961,6 +10961,27 @@ int CBaseAnimating::sub_10092e20(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10092ef0 size=0xca
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+void sub_10137ed0(float *pMatrix, float *pOut);
+void sub_10138720(float *pMatrix, int nType, float *pOut);
+
+bool CBaseAnimating::sub_10092ef0(int attachment, float *pOrigin, float *pAngles)
+{
+    ScopeTrace trace("CBaseAnimating::GetAttachment02", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    float matrix[12];
+    if (((CEntityVSlots *)this)->slot262(attachment, matrix)) {
+        sub_10137ed0(matrix, pAngles);
+        sub_10138720(matrix, 3, pOrigin);
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100931d0 size=0x94
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
