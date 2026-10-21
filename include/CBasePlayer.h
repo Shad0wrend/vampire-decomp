@@ -4,6 +4,8 @@
 // slots up to slot 468 (the ones the code calls are typed).
 #pragma once
 
+#include "Vector.h"
+
 class CBaseEntity;
 class CBaseCombatWeapon;
 class CBasePlayer;
@@ -203,4 +205,5 @@ public:
 	void sub_1032ead0();	// CBaseCombatCharacter member (stub 0x10005a9c), called directly
 	void sub_103345d0();	// CZeroFields103345d0::sub_103345d0 (stub 0x10015000), called directly
 	CBaseEntity *sub_10163f70();	// the player's hud fire emitter: the entity of the handle at +0x1d64, or a new "DMGFX_hud_fire_emitter" (env_particle) attached to the entity sub_1015d680(0) resolves, whose handle is stored again (cleared when none could be made)
+	void sub_10167030(Vector vecOrigin, Vector vecTarget);	// teleports / places the player: flag bit 5 at +0x20f0, the spawn angles global copied to +0x184, vecTarget (after slot 64 adjusted it) stored at +0x206c, +0x207c = 1, solid flag 4 added, take damage 0, move type 0, model index 0, then sub_101cf5c0(this, &vecOrigin, 0)
 };
