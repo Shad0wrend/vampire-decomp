@@ -116,6 +116,64 @@ CBaseEntity *CMultiplayRules::vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurren
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141820 size=0xd6
+#include "ScopeTrace.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+void sub_101c0b80(const char *pszTarget, void *pActivator, void *pCaller, int useType, int value);
+void sub_101d10e0(const char *pszFormat, const char *pszName, int nUserId);
+
+struct CMPUnknown
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual struct CMPPlayer *vfunc4();
+};
+
+struct CMPEdict
+{
+	char m_pad0000[0x40];
+	CMPUnknown *m_pUnk;
+};
+
+struct CMPPlayer
+{
+	virtual void v0();
+	char m_pad0004[0x2dc];
+	int m_nEdictIndex;
+	char m_pad02e4[0x2078 - 0x2e4];
+	const char *m_pszNetName;
+	char m_pad207c[0x22dc - 0x207c];
+	char m_bFlag22dc;
+};
+
+void CMultiplayRules::vfunc28(void *pEdict)
+{
+	if (!pEdict)
+		return;
+	CMPPlayer *pPlayer;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		CMPUnknown *pUnk = ((CMPEdict *)pEdict)->m_pUnk;
+		pPlayer = pUnk ? pUnk->vfunc4() : 0;
+	}
+	if (pPlayer) {
+		sub_101c0b80("game_playerleave", pPlayer, pPlayer, 3, 0);
+		const char *pszName = g_106b8540;
+		const char *pszNet = pPlayer->m_pszNetName;
+		int nIndex = pPlayer->m_nEdictIndex;
+		if (pszNet)
+			pszName = pszNet;
+		sub_101d10e0("\"%s<%i>\" disconnected\n", pszName, g_1070b22c->vfunc34(nIndex));
+		((CBasePlayer *)pPlayer)->vfunc442(1);
+	}
+	pPlayer->m_bFlag22dc = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141940 size=0x9
 extern float g_104454c0;
 float CMultiplayRules::vfunc30(int a) { return g_104454c0; }
