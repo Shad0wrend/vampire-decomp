@@ -4582,6 +4582,7 @@
 0x1001576c func   ?vfunc104@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc104
 0x10015771 func   ??0CFunc_LOD@@QAE@XZ CFunc_LOD::CFunc_LOD
 0x10015780 func   ?vfunc359@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc359
+0x1001578a func   ?vfunc460@CNPC_VDog@@QAEHXZ CNPC_VDog::vfunc460
 0x100157a8 func   ?sub_10404a80@@YAHXZ sub_10404a80
 0x100157c1 func   ?sub_1009edc0@CBaseEntity@@QAEXPBM0@Z CBaseEntity::sub_1009edc0
 0x100157c6 func   _item_container_animated item_container_animated

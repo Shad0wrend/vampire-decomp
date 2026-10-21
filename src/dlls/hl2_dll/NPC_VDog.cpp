@@ -1,6 +1,31 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10374d80 size=0x99
+#include "CNPC_VDog.h"
+
+#define VDOG_INT(off) (*(int *)((char *)this + (off)))
+#define VDOG_FILE "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VDog.cpp"
+
+int CNPC_VDog::vfunc460()
+{
+	if (sub_10014df8(0x78) || sub_10014df8(0x7e)) {
+		sub_10374e50();
+		return VDOG_INT(0x5cc4);
+	}
+	if (sub_10014df8(0x79)) {
+		VDOG_INT(0x1b40) = 0x517;
+		VDOG_INT(0x5cc4) = 3;
+		*(const char **)((char *)this + 0x1b3c) = VDOG_FILE;
+	} else if (sub_10014df8(0x7c) && VDOG_INT(0x5cc4) == 3) {
+		VDOG_INT(0x1b40) = 0x51d;
+		VDOG_INT(0x5cc4) = 1;
+		*(const char **)((char *)this + 0x1b3c) = VDOG_FILE;
+	}
+	return sub_1000cc34();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10374e50 size=0xb9
 #include "CBaseEntity.h"
 #include "CNPC_VDog.h"
