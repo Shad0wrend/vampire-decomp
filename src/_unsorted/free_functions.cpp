@@ -7205,6 +7205,32 @@ void UtlMem5::sub_100732f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073410 size=0xa3
+#include "CUnknown100735a0.h"
+#include "CUnknown10075aa0.h"
+#include "CUnknown10076670.h"
+#include "CUnknown10077990.h"
+
+CUnknown100735a0 *CUnknown100735a0::sub_10073410(const CUnknown100735a0 *pOther)
+{
+    m_b98 = pOther->m_b98;
+    const char *pSrc = pOther->m_szName;
+    char *pDst = m_szName;
+    while ((*pDst++ = *pSrc++) != 0)
+        ;
+    for (int i = 0; i < pOther->m_size; i++) {
+        CUnknown10077990 *pSource = (CUnknown10077990 *)pOther->m_pMemory[i];
+        CUnknown10075aa0 *pEvent = (CUnknown10075aa0 *)operator new(0x340);
+        pEvent = pEvent ? pEvent->sub_10075040(pSource->sub_10077990()) : 0;
+        pEvent->sub_100754e0(pSource);
+        sub_100735a0((int)pEvent);
+        ((CUnknown10076670 *)pEvent)->sub_100766b0((int)this);
+        ((CUnknown10076670 *)pEvent)->sub_10076670(m_i00);
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100734f0 size=0x16
 struct S100734f0 {
 	char m_pad[0x4];

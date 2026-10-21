@@ -3561,6 +3561,7 @@
 0x10010d0c func   ?sub_100dda50@CUnknown100dda50@@QAEDXZ CUnknown100dda50::sub_100dda50
 0x10010d48 func   ?vfunc127@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc127
 0x10010d4d func   ?sub_101b72e0@CMem8_t@@QAEXH@Z CMem8_t::sub_101b72e0
+0x10010d52 func   ?sub_10073410@CUnknown100735a0@@QAEPAV1@PBV1@@Z CUnknown100735a0::sub_10073410
 0x10010d57 func   ?vfunc311@CAI_BaseNPC@@UAEXHHH@Z CAI_BaseNPC::vfunc311
 0x10010d5c func   ??0CEnvLaser@@QAE@XZ CEnvLaser::CEnvLaser
 0x10010d7f func   ?sub_101db7e0@S101db7e0@@QAEXXZ S101db7e0::sub_101db7e0
