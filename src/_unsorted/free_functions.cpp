@@ -55679,6 +55679,45 @@ const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c44e0 size=0x107
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CAI_BaseNPCTroika.h"
+
+extern CGlobalEntityList *g_10566458;
+extern "C" __declspec(dllimport) void Error(const char *pszFormat, ...);
+
+bool CAI_BaseNPCTroika::sub_102c44e0(const char *pszName)
+{
+	CBaseEntity *pEnt = vfunc559(pszName);
+	volatile unsigned int *pHandle = (volatile unsigned int *)((char *)this + 0x647c);
+	if (pEnt)
+		*pHandle = *pEnt->vfunc1();
+	else
+		*pHandle = 0xffffffff;
+	unsigned int h = *pHandle;
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *t = g_10566458->m_Slots;
+		if (t[h & 0x1fff].m_Serial == (int)(h >> 13) && t[h & 0x1fff].m_pEntity) {
+			unsigned int h2 = *pHandle;
+			void *pTarget = (h2 != 0xffffffff && t[h2 & 0x1fff].m_Serial == (int)(h2 >> 13)) ? (void *)t[h2 & 0x1fff].m_pEntity : 0;
+			if (pTarget != this) {
+				if (*(int *)((char *)this + 0x5bb0) <= 0 && *(int *)((char *)this + 0x5da4)) {
+					*pHandle = 0xffffffff;
+					Error("%s - Followers can not be in squads.  This functionality not implemented.", sub_1000b5cd());
+					return false;
+				}
+				sub_102b52a0(0, 0);
+				*(unsigned int *)((char *)this + 0x5b84) |= 0x3008;
+				return true;
+			}
+		}
+	}
+	*pHandle = 0xffffffff;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c47e0 size=0x99
 #include "CAI_BaseNPCTroika.h"
 #include <stdio.h>
