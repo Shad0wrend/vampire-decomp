@@ -13,4 +13,13 @@ public:
 	void vfunc265();	// slot 265: when the health (+0x210) is 5 and both list nodes (+0x730, +0x748) are empty, sets the health to 0 and warns ("HACK DESTRUCTABLE PROP HEALTH HACK", "Setting entity %-4d's health to 0")
 	const char *sub_1009f200();	// CBaseEntity::GetClassname
 	const char *sub_100ab4f0();	// the entity's name for debug output (stub 0x1000b5cd)
+	int vfunc124();	// slot 124 "DrawDebugTextOverlays": the base's line offset, plus one line "Health: %d" when the text overlay bit (bit 0 of +0x224) is set
+	int sub_10096100();	// CBaseAnimating::vfunc124 (stub 0x10007d97), called directly
+
+	char m_pad0000[0x210];
+	int m_iHealth;	// 0x210
+	char m_pad0214[0x224 - 0x214];
+	unsigned char m_fTextOverlayFlags;	// 0x224
+	char m_pad0225[0x2e0 - 0x225];
+	int m_pEdict;	// 0x2e0
 };
