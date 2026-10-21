@@ -1,5 +1,6 @@
 // CPositionInterpolator_Rope (RTTI .?AVCPositionInterpolator_Rope@@): rope position interpolator, base IPositionInterpolator.
 #pragma once
+#include "CUnknown102496a0.h"
 
 class IPositionInterpolator
 {
@@ -12,13 +13,40 @@ public:
 	int m_unk0004;
 };
 
+// RTTI .?AVCSimplePhysics@@ with its nested helper interface (vtable 0x10497520): the first base of the rope simulation.
+class CSimplePhysics
+{
+public:
+	class IHelper
+	{
+	public:
+		virtual void vfunc0() = 0;
+	};
+};
+
+struct CRopeNode	// 0x24 byte simulation node
+{
+	int m_n[9];
+};
+
 // base of CRopePhysics<10>, constructed out of line (0x100136b0): nodes, node count, springs
-class CRopeSimBase
+// (RTTI name CBaseRopePhysics, vtable 0x10497510)
+class CRopeSimBase : public CSimplePhysics::IHelper
 {
 public:
 	CRopeSimBase(void *pNodes, int nNodes, void *pSprings);
 	virtual void vfunc0();
-	char m_pad0004[0x34];
+	int m_n04;
+	CRopeNode *m_pNodes;	// 0x08
+	int m_nNodes;	// 0x0c
+	void **m_pSprings;	// 0x10
+	float m_f14;
+	float m_f18;
+	char m_pad001c[4];
+	CUnknown102496a0 m_timer;	// 0x20
+
+	void sub_10249390();	// sets the timer's interval to 0.02 s
+	void sub_10249340(int nNodes);	// links the nodes into springs
 };
 
 // RTTI .?AV?$CRopePhysics@$09@@, the member at +8 of CPositionInterpolator_Rope
