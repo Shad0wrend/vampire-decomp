@@ -65,6 +65,49 @@ void CAI_BaseNPCTroika::vfunc432(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10290570 size=0xb4
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Navigator.h"
+#include "CEntityVSlots.h"
+
+// TARGET: CAI_BaseNPCTroika::vfunc532
+void CAI_BaseNPCTroika::vfunc532(int a)
+{
+	switch (a) {
+	case 1:
+		if (m_n644c <= 0)
+			break;
+		if (m_n644c > 4)
+			break;
+		goto check;
+	case 2:
+	case 4:
+		if (m_n644c != 4)
+			break;
+		((CEntityVSlots *)this)->slot448(0xe);
+		m_h5d24 = 0xffffffff;
+		m_b5d30 = 0;
+		goto clear;
+	default:
+		break;
+	case 8:
+		if (m_n644c <= 0)
+			break;
+		if (m_n644c <= 3)
+			goto clear;
+		if (m_n644c != 4)
+			break;
+	check:
+		if (((CAI_Navigator *)m_p5d34)->sub_102ee2e0())
+			sub_102bf7e0();
+	clear:
+		m_n644c = 0;
+		break;
+	}
+	sub_1027e0f0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293ec0 size=0x8a
 #include "CAI_BaseNPCTroika.h"
 
