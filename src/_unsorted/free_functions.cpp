@@ -35085,6 +35085,32 @@ void CNPC_VCopUnit::sub_1017f650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017faa0 size=0x65
+struct CMsgPlayerView;
+struct CPlayerLookup { char pad[0x49c]; int m_nState; };
+extern int sub_10007ee6();
+extern char sub_1000ae3e();
+extern CPlayerLookup *sub_1000aa0b();
+extern void sub_101cebc0(CMsgPlayerView *pPlayer, int id, int arg);
+
+void __fastcall sub_1017faa0(CMsgPlayerView *pPlayer)
+{
+    if (sub_10007ee6() || sub_1000ae3e()) {
+        sub_101cebc0(pPlayer, 0x31, 0);
+        return;
+    }
+    CPlayerLookup *p = sub_1000aa0b();
+    if (p == 0)
+        return;
+    if (p->m_nState == 0)
+        sub_101cebc0(pPlayer, 0x32, 0);
+    else if (p->m_nState == 1)
+        sub_101cebc0(pPlayer, 0x33, 0);
+    else
+        sub_101cebc0(pPlayer, 0x34, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101800e0 size=0xe
 #include "CUnknown101800e0.h"
 // TARGET: CUnknown101800e0::sub_101800e0

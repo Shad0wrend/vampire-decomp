@@ -2380,6 +2380,7 @@
 0x1000a1af func   ?vfunc5@CTESprite@@UAEXXZ CTESprite::vfunc5
 0x1000a1b4 func   ?sub_1034d620@CUnknown1034d620@@QAEXXZ CUnknown1034d620::sub_1034d620
 0x1000a1b9 func   ??0CWorld@@QAE@XZ CWorld::CWorld
+0x1000a1d2 func   ?sub_1017faa0@@YIXPAUCMsgPlayerView@@@Z sub_1017faa0
 0x1000a1d7 func   ?sub_100740f0@CUnknown100740f0@@QAEXD@Z CUnknown100740f0::sub_100740f0
 0x1000a1e6 func   ?sub_102a97a0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97a0
 0x1000a1f5 func   ?sub_10105a60@CUnknown10105a60@@QAEXPAMPBM1MH@Z CUnknown10105a60::sub_10105a60
