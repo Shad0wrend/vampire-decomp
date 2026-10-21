@@ -32355,6 +32355,25 @@ float sub_1013c940(const Vector &P, const Vector &vLineA, const Vector &vLineB, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013cb80 size=0x85
+#include "Vector.h"
+float sub_1013c940(const Vector &a, const Vector &b, const Vector &c, Vector &out);
+void sub_1013cb80(const Vector &a, const Vector &b, const Vector &c, Vector &out, float *pT)
+{
+	Vector d;
+	float t = sub_1013c940(a, b, c, d);
+	if (t > 1.0f)
+		t = 1.0f;
+	else if (t < 0.0f)
+		t = 0.0f;
+	if (pT)
+		*pT = t;
+	out.x = d.x * t + b.x;
+	out.y = d.y * t + b.y;
+	out.z = d.z * t + b.z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013cf40 size=0x79
 float sub_10007090(const float *a, const float *b, const float *c, float *dir);
 
