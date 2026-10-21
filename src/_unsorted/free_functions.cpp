@@ -59360,6 +59360,31 @@ int CBaseCombatCharacter::sub_10337860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10337980 size=0xa7
+#include "CBaseCombatCharacter.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+struct CUnk1074f894 { void sub_1021e750(int a, CBaseEntity *p); void sub_1000b79e(int a, CBaseEntity *p); };
+extern CUnk1074f894 g_1074f894;
+
+void __fastcall sub_10337980(CBaseCombatCharacter *self, int, int idx)
+{
+	const char *name = self ? (self->m_name26c ? self->m_name26c : g_106b8540) : "NULL ENTITY";
+	g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::SetVHistory";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	(*g_109f3680)++;
+	if (self->m_field13a0 != -1)
+		g_1074f894.sub_1000b79e(self->m_field13a0, self);
+	self->m_field13a0 = idx;
+	if (idx != -1)
+		g_1074f894.sub_1021e750(idx, self);
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10337a60 size=0x79
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };

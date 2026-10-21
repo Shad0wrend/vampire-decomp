@@ -876,6 +876,7 @@
 0x10004fe8 func   ?vfunc5@CWeaponMelee_Tzimisce3Claw@@QAEPAV1@I@Z CWeaponMelee_Tzimisce3Claw::vfunc5
 0x1000500b func   ?sub_100fafa0@@YAHPAVCBaseEntity@@HPBD@Z sub_100fafa0
 0x1000501a func   ?sub_101ecae0@CUnknown101ecae0@@QAEXH@Z CUnknown101ecae0::sub_101ecae0
+0x10005024 func   ?sub_10337980@@YIXPAVCBaseCombatCharacter@@HH@Z sub_10337980
 0x1000502e func   ?sub_10202140@@YAXXZ sub_10202140
 0x1000503d func   ?sub_1040c430@CUnknown1040cb60@@QAEPAVVector@@PAV2@PBV2@PAVCBaseEntity@@@Z CUnknown1040cb60::sub_1040c430
 0x1000506f func   ?vfunc546@CNPC_VSabbatLeader@@QAEHH@Z CNPC_VSabbatLeader::vfunc546
