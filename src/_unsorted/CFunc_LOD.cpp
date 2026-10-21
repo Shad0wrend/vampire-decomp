@@ -9,6 +9,43 @@ CFunc_LOD::CFunc_LOD() : CConstraintAnchorBase(0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114ac0 size=0xb4
+#include "CFunc_LOD.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CFuncLODSlotsX
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV100(1)
+	PV10(20) PV10(21)
+	PV(220) PV(221) PV(222)
+	virtual void vfunc223();
+};
+
+// TARGET: CFunc_LOD::vfunc103
+void CFunc_LOD::vfunc103()
+{
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	int local;
+	const char *model = *pEnt->vfunc9(&local);
+	pEnt->vfunc105(model ? model : g_106b8540);
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", pEnt->m_name26c ? pEnt->m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(1);
+	}
+	pEnt->sub_100b3b00();
+	pEnt->CBaseEntity::vfunc103();
+	((CFuncLODSlotsX *)this)->vfunc223();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114bf0 size=0xcd
 #include "CFunc_LOD.h"
 #include "CBaseEntity.h"
