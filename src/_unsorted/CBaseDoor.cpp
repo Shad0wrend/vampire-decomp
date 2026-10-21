@@ -155,6 +155,37 @@ void CBaseDoor::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eff90 size=0xc7
+#include <math.h>
+#include "CEntityVSlots.h"
+#pragma intrinsic(fabs)
+
+static inline float FloatMakePositive(float f)
+{
+    return (float)fabs(f);
+}
+
+static inline bool VectorsAreEqual(const Vector &src1, const Vector &src2, float tolerance)
+{
+    if (FloatMakePositive(src1.x - src2.x) > tolerance)
+        return false;
+    if (FloatMakePositive(src1.y - src2.y) > tolerance)
+        return false;
+    return FloatMakePositive(src1.z - src2.z) <= tolerance;
+}
+
+// TARGET: CBaseDoor::vfunc248
+void CBaseDoor::vfunc248()
+{
+    if (VectorsAreEqual(m_vecPosition508, *((CEntityVSlots *)this)->slot220(), 0.001f)) {
+        m_nState4f8 = 1;
+        return;
+    }
+    if (VectorsAreEqual(m_vecPosition514, *((CEntityVSlots *)this)->slot220(), 0.001f))
+        m_nState4f8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0ef0 size=0xe
 void CBaseDoor::vfunc246(int a, int* b, int c)
 {

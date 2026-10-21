@@ -4781,6 +4781,7 @@
 0x10013750 func   ?sub_1014c130@CWeaponGravityGun@@QAEXXZ CWeaponGravityGun::sub_1014c130
 0x1001375a func   ?vfunc546@CNPC_VTzimisceHeadClaw@@QAEHH@Z CNPC_VTzimisceHeadClaw::vfunc546
 0x1001375f func   ?vfunc611@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::vfunc611
+0x10013764 func   ?vfunc248@CBaseDoor@@QAEXXZ CBaseDoor::vfunc248
 0x1001376e func   _item_k_oceanhouse_basement_key item_k_oceanhouse_basement_key
 0x10013773 func   ?sub_10185100@UtlMem@@QAEXXZ UtlMem::sub_10185100
 0x10013778 func   ??0StatDefault2@@QAE@H@Z StatDefault2::StatDefault2
