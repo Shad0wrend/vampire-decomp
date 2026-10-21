@@ -19,6 +19,7 @@ public:
 	void sub_100bbb10(int nEnts, CBaseEntity **ppEnts, int *pAttach);	// "CBeam::SplineInit"-like: Msg when nEnts < 2 or > 10, type bits = 4, stores the entity handles (+0x468, -1 for null) and attachments (+0x490) of the first nEnts, count at +0x45c, then sub_100bbbf0
 	void sub_100bafc0(CBaseEntity *pEnt);	// called through the stub at 0x10002568
 	void sub_100bb030(CBaseEntity *pEnt);	// called through the stub at 0x1000cdc4
+	void sub_100bb0b0(const float *pPos);	// "CBeam::SetAbsStartPos"-like: without a (live) move parent at +0x25c hands pPos to slot 62; else brings the world position into the parent's space first (recalculating the absolute transform when dirty)
 
 	char m_pad03e0[0x45c - 0x3e0];
 	int m_nNumBeamEnts;	// 0x45c
