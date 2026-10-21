@@ -16,5 +16,5 @@ public:
 	char m_pad0680[0x730 - 0x680];
 	int m_n730;	// 0x730
 	char m_pad0734[8];
-	int m_n73c;	// 0x73c
+	float m_flLife73c;	// 0x73c
 };
