@@ -1,3 +1,2 @@
 	bool sub_1027e140(const Vector *pMove, int mask);	// "TryMove": traces from the absolute origin (slot 217) by pMove with mask (sub_101cd110); with the whole way free (and, for entities with flag bit 11, a point contents check at the end point) moves there (slot 216), runs PhysicsTouchTriggers(0) and returns true
 	void sub_100a53d0(int a);	// CBaseEntity::PhysicsTouchTriggers (stub 0x10005bcd), called directly
-	virtual void vfunc216(const Vector *pOrigin);	// "CBaseEntity::SetAbsOrigin"
