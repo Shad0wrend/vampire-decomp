@@ -21469,6 +21469,57 @@ void sub_100dad50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100db0b0 size=0xc3
+#include "CBaseAnimating.h"
+#include "ConVar.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+extern char g_106b8540[];
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);	// DevMsg
+
+struct CCvarX	// the console variable system at 0x1070b234
+{
+	virtual void v0();
+	virtual void v1();
+	virtual ConVar *FindVar(const char *pszName);
+};
+extern CCvarX *g_1070b234;
+
+struct CCommandPlayerX	// the player behind the command
+{
+	char m_pad0000[0xa8];
+	void *m_pObject;	// 0xa8
+};
+
+CCommandPlayerX *sub_101193b0();	// stub 0x10008d8c: the player that ran the command
+CBaseAnimating *sub_100db920(void *pObject, const char *pszName);
+void sub_10429080(void *pModel, int a);	// stub 0x100057a4
+
+void sub_100db0b0()
+{
+	CCommandPlayerX *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		void *pObject = pPlayer->m_pObject;
+		if (pObject) {
+			CBaseAnimating *pAnimating;
+			if (!g_1070b22c->vfunc85())
+				pAnimating = sub_100db920(pObject, g_106b8540);
+			else
+				pAnimating = sub_100db920(pObject, (const char *)g_1070b22c->vfunc84(1));
+			if (pAnimating) {
+				static ConVar *s_pVar = g_1070b234->FindVar("debug_dump_anim_seq_list");
+				if (s_pVar) {
+					if (!s_pVar->GetBool())
+						g_109f3630("You need to set debug_dump_anim_seq_list to 1 before using this command.\n");
+					sub_10429080(pAnimating->sub_100952d0(-1), 0);
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db3f0 size=0x8
 extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
