@@ -50185,6 +50185,51 @@ void sub_102399b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10239b60 size=0x11c
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *, ...);
+extern "C" int __cdecl atoi(const char *);
+extern "C" double __cdecl atof(const char *);
+extern char g_105c2184[];
+struct Vec3S { float x, y, z; Vec3S() {} };
+#define SV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SShakePlayer
+{
+	SV10(a0) SV10(a1) SV10(a2) SV10(a3) SV10(a4) SV10(a5) SV10(a6) SV10(a7) SV10(a8) SV10(a9)
+	SV10(b0) SV10(b1) SV10(b2) SV10(b3) SV10(b4) SV10(b5) SV10(b6) SV10(b7) SV10(b8)
+	virtual void s190(); virtual void s191();
+	virtual Vec3S vfunc192();
+};
+SShakePlayer *sub_101193b0();
+void sub_101cdba0(const Vec3S &vecCenter, float flAmplitude, float flFrequency, float flDuration, float flRadius, int nCommand, char bAirShake);
+void sub_10239b60()
+{
+	float flAmplitude = 1.0f;
+	float flFrequency = 1.0f;
+	float flDuration = 0.2f;
+	int nFlags = 0;
+	SShakePlayer *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		switch (g_1070b22c->vfunc85()) {
+		case 5:
+			nFlags = atoi(g_1070b22c->vfunc84(4));
+		case 4:
+			flDuration = (float)atof(g_1070b22c->vfunc84(3));
+		case 3:
+			flFrequency = (float)atof(g_1070b22c->vfunc84(2));
+		case 2:
+			flAmplitude = (float)atof(g_1070b22c->vfunc84(1));
+		case 1:
+			sub_101cdba0(pPlayer->vfunc192(), flAmplitude, flFrequency, flDuration, 1.0f, nFlags, 1);
+			return;
+		default:
+			Msg(g_105c2184);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10239d80 size=0xb2
 #include "CWeaponRanged.h"
 
