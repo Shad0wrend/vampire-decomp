@@ -9036,6 +9036,33 @@ void CFlexAnimationTrack::sub_10074b10(int nList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10074f70 size=0x9f
+#include "CUnknown10074f70.h"
+extern CUnknown10074f70_Global *g_106c851c;
+extern char g_106b8540[];
+int sub_10431c2f(char *, const char *, ...);
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+
+void CUnknown10074f70::sub_10074f70(CUnknown10074f70_Actor *pActor)
+{
+	if (!g_106c851c->vfunc1() && g_106c851c->m_n2c) {
+		char szName[256];
+		char szMsg[256];
+		const char *pszActor;
+		sub_10074bf0(szName);
+		if (pActor) {
+			pszActor = pActor->m_pszName;
+			if (!pszActor)
+				pszActor = g_106b8540;
+		} else {
+			pszActor = "NULL_ENTITY";
+		}
+		sub_10431c2f(szMsg, "Processing choreo event at %5.2f %d( %s ) actor %s", sub_10075e70(), sub_10075b70(), szName, pszActor);
+		Msg("%s\n", szMsg);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075040 size=0xae
 #include "CUnknown10075aa0.h"
 
