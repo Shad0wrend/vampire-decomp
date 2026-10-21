@@ -41555,6 +41555,55 @@ void CUnknown101ec6f0::sub_101ec6f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ec7c0 size=0xf9
+#include "CUnknown101ec7c0.h"
+#include "CUnknown101ec4f0.h"
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *, ...);
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern char g_105a47cc[];
+extern char g_105a0f80[];
+extern char g_105a14ac[];
+extern char g_105982ec[];
+extern char g_105a477c[];
+extern void *g_1070b238;
+struct SDataFileBase { virtual void v0(); virtual void Close(); };
+struct SDataFile : virtual SDataFileBase { virtual void v2(); };
+SDataFile *sub_1000a119(const char *path, void *fs);
+bool CUnknown101ec7c0::sub_101ec7c0()
+{
+	char buf[128];
+	volatile bool bOk = true;
+	if (m_pRecords) {
+		for (int i = 0; i < m_nRecords; i++) {
+			CUnknown101ec4f0 *p = m_pRecords[i];
+			if (p) {
+				p->~CUnknown101ec4f0();
+				operator delete(p);
+			}
+			m_pRecords[i] = 0;
+		}
+		operator delete(m_pRecords);
+		m_pRecords = 0;
+	}
+	m_n04 = 0;
+	m_nRecords = 0;
+	m_n10 = 0;
+	sprintf(buf, g_105a14ac, g_105a0f80, g_105a47cc);
+	SDataFile *pFile = sub_1000a119(buf, g_1070b238);
+	if (pFile) {
+		bool bRet = false;
+		if (!sub_101ec900(pFile))
+			Msg(g_105982ec, buf);
+		else
+			bRet = bOk;
+		pFile->Close();
+		return bRet;
+	}
+	Msg(g_105a477c, buf);
+	return bOk;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ecae0 size=0x17
 #include "CUnknown101ecae0.h"
 extern void (__cdecl *g_1073a3a8)(CUnknown101ecae0 *, int);

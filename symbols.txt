@@ -2215,6 +2215,7 @@
 0x1000a3b7 func   ?sub_100fdd50@UtlMem7@@QAEXH@Z UtlMem7::sub_100fdd50
 0x1000a3c6 func   ?sub_101eab00@@YAXH@Z sub_101eab00
 0x1000a3d0 func   ?sub_10341030@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10341030
+0x1000a3df func   ?sub_101ec7c0@CUnknown101ec7c0@@QAE_NXZ CUnknown101ec7c0::sub_101ec7c0
 0x1000a3e4 func   ?sub_10403250@@YAHXZ sub_10403250
 0x1000a3e9 func   ?sub_10402fa0@@YAHXZ sub_10402fa0
 0x1000a3f3 func   ??0CRestore@@QAE@PAX@Z CRestore::CRestore
