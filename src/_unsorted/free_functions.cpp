@@ -54718,6 +54718,73 @@ extern "C" CBaseEntity *worldspawn()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b3a0 size=0x82
+struct CGlobalVarsView
+{
+	char m_pad0000[0x14];
+	int m_nMaxClients;
+};
+extern CGlobalVarsView *g_1070b228;
+
+struct CPlayerLike
+{
+	void sub_10170750();	// stub 0x10010a73
+};
+
+struct CStateEntity
+{
+	char m_pad0000[0x1b1];
+	char m_bChanged;
+	char m_pad01b2[0x49c - 0x1b2];
+	int m_nState;
+};
+
+struct CStateSource
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad0004[0x2c - 4];
+	int m_nLevel;
+};
+
+struct CStateHolder
+{
+	char m_pad0000[4];
+	CStateSource *m_pSource;
+};
+
+CStateEntity *sub_1023bd00();
+CPlayerLike *sub_101cd9e0(int index);
+
+// TARGET: sub_1023b3a0
+void sub_1023b3a0(CStateHolder *pHolder)
+{
+	CStateEntity *pEnt = sub_1023bd00();
+	if (!pEnt)
+		return;
+	int n;
+	if (pHolder->m_pSource->vfunc1())
+		n = 0;
+	else
+		n = pHolder->m_pSource->m_nLevel;
+	if (n > 2)
+		n = 2;
+	else
+		n = n < 0 ? 0 : n;
+	if (n != pEnt->m_nState)
+	{
+		pEnt->m_nState = n;
+		for (int i = 1; i <= g_1070b228->m_nMaxClients; i++)
+		{
+			CPlayerLike *pPlayer = sub_101cd9e0(i);
+			if (pPlayer)
+				pPlayer->sub_10170750();
+		}
+		pEnt->m_bChanged = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023cde0 size=0xed
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
     virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();

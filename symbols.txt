@@ -5036,6 +5036,7 @@
 0x100154d3 func   ?sub_10209ac0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10209ac0
 0x100154d8 func   ?sub_1036ec40@@YADXZ sub_1036ec40
 0x100154e2 func   ?sub_100b03b0@@YAXXZ sub_100b03b0
+0x100154fb func   ?sub_1023b3a0@@YAXPAUCStateHolder@@@Z sub_1023b3a0
 0x1001552d func   ?sub_1027be60@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1027be60
 0x1001553c func   ?vfunc103@CBeam@@UAEXXZ CBeam::vfunc103
 0x10015541 func   ?sub_101dcb80@CRecListUnit@@QAEPAU1@PBU1@@Z CRecListUnit::sub_101dcb80
