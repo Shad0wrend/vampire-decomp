@@ -51,4 +51,5 @@ public:
 	void sub_10253ea0();	// CBaseCombatWeapon::vfunc319, called directly (stub 0x10009048)
 	char sub_10253b70(int a);	// stub 0x1000c37e
 	void sub_10239d80();	// "CWeaponRanged::...": steps the counter at +0x914 through the owner's list (count at +0x4fe84, entries at +0x4fe70) and, for the character object at +0xa8 of the owner entity, sets the flag byte (CFlagSet10174550) and starts slot 333 (4 when the entry is empty, else 9); stores the entry at +0x1e78 of the character (stub 0x10003814)
+	void sub_10254250();	// CBaseCombatWeapon::vfunc320, called directly (stub 0x1000668b)
 };
