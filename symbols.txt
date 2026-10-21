@@ -2247,6 +2247,7 @@
 0x1000ab8c func   ?sub_10090bc0@CBaseAnimating@@QAEXI@Z CBaseAnimating::sub_10090bc0
 0x1000ab91 func   ?sub_103d7620@CNPC_VWerewolf@@QAEPAXH@Z CNPC_VWerewolf::sub_103d7620
 0x1000abaa func   ?sub_100dbc60@CUnknown100dbc60@@QAEXPAVCBaseEntity@@@Z CUnknown100dbc60::sub_100dbc60
+0x1000abd7 func   ?vfunc3@CTEBeamLaser@@UAEXHH@Z CTEBeamLaser::vfunc3
 0x1000ac22 func   ?vfunc590@CAI_BaseNPCTroika@@UAEDXZ CAI_BaseNPCTroika::vfunc590
 0x1000ac3b func   ?sub_103adb00@@YAPAHXZ sub_103adb00
 0x1000ac45 func   ?sub_103f59f0@@YAHXZ sub_103f59f0
