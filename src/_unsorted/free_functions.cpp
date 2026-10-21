@@ -73847,6 +73847,36 @@ unsigned int sub_10300700(CAI_BaseNPC *pNPC, const float *pPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10300e60 size=0x14f
+#include "CUnknown10300e60.h"
+
+// TARGET: CUnknown10300e60::sub_10300e60
+bool CUnknown10300e60::sub_10300e60(Vector vecMins, Vector vecMaxs, Vector vecPoint1, Vector vecPoint2)
+{
+	float flMinZ = (vecPoint1.z < vecPoint2.z) ? vecPoint1.z : vecPoint2.z;
+	float flMinY = (vecPoint1.y < vecPoint2.y) ? vecPoint1.y : vecPoint2.y;
+	float flMinX = (vecPoint1.x < vecPoint2.x) ? vecPoint1.x : vecPoint2.x;
+	float flMaxZ = (vecPoint1.z > vecPoint2.z) ? vecPoint1.z : vecPoint2.z;
+	float flMaxY = (vecPoint1.y > vecPoint2.y) ? vecPoint1.y : vecPoint2.y;
+	float *pMaxX = &vecPoint1.x;
+	float flMaxX = (vecPoint1.x > vecPoint2.x) ? vecPoint1.x : vecPoint2.x;
+	*pMaxX = flMaxX;
+	if (flMinX > vecMaxs.x)
+		return false;
+	if (*pMaxX < vecMins.x)
+		return false;
+	if (flMinY > vecMaxs.y)
+		return false;
+	if (flMaxY < vecMins.y)
+		return false;
+	if (flMinZ > vecMaxs.z)
+		return false;
+	if (flMaxZ < vecMins.z)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10303740 size=0xcb
 #include "CAI_Pathfinder.h"
 
