@@ -2545,6 +2545,7 @@
 0x1000b212 func   ?sub_10341aa0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10341aa0
 0x1000b21c func   ?sub_10232cb0@@YA_NXZ sub_10232cb0
 0x1000b22b func   ?vfunc134@CBloodSplat@@QAEXXZ CBloodSplat::vfunc134
+0x1000b23f func   ?sub_1013b300@@YAXABVVector@@MAAUQuaternion@@@Z sub_1013b300
 0x1000b249 func   ?sub_10338440@CBaseCombatCharacter@@QAEXPBH@Z CBaseCombatCharacter::sub_10338440
 0x1000b24e func   ?sub_10136470@@YIXPADHH@Z sub_10136470
 0x1000b258 func   ?vfunc3@CSave@@UAEHHHHHH@Z CSave::vfunc3

@@ -29411,6 +29411,39 @@ void sub_1013b0d0(const Q &q, float *m)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013b300 size=0x68
+#include "Vector.h"
+
+struct Quaternion
+{
+	float x, y, z, w;
+};
+
+inline void SinCos(float radians, float *sine, float *cosine)
+{
+	__asm {
+		fld dword ptr [radians]
+		fsincos
+		mov edx, dword ptr [cosine]
+		mov eax, dword ptr [sine]
+		fstp dword ptr [edx]
+		fstp dword ptr [eax]
+	}
+}
+
+// TARGET: sub_1013b300
+void sub_1013b300(const Vector &axis, float angle, Quaternion &q)
+{
+	float ca;
+	float rad = angle * 0.017453292f;
+	SinCos(rad * 0.5f, &angle, &ca);
+	q.x = axis.x * angle;
+	q.y = axis.y * angle;
+	q.z = axis.z * angle;
+	q.w = ca;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013bb40 size=0x17c
 void sub_1000cfb3(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, float t, Vector &output);
 
