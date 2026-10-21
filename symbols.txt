@@ -4027,6 +4027,7 @@
 0x100127e2 func   ?vfunc35@CPushable@@UAEHH@Z CPushable::vfunc35
 0x10012805 func   ?sub_1030b7c0@CUnknown1030bc20@@QAEPAUCUnknown1030bc20_Record@@XZ CUnknown1030bc20::sub_1030b7c0
 0x10012814 func   ?sub_1008fe80@CBaseAnimating@@QAEPBDH@Z CBaseAnimating::sub_1008fe80
+0x1001281e func   ?sub_1020c890@CSecCamera@@QAEXXZ CSecCamera::sub_1020c890
 0x10012828 func   ?vfunc5@CBreakableProp@@QAEPAV1@I@Z CBreakableProp::vfunc5
 0x1001282d func   ?sub_101d62d0@CUnknown101d62d0@@QAEPAUCUnknown101d62d0Record@@XZ CUnknown101d62d0::sub_101d62d0
 0x10012837 func   ?sub_100efae0@CBaseDoor@@QAEXPAVCBaseEntity@@@Z CBaseDoor::sub_100efae0

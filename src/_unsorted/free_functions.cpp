@@ -43588,6 +43588,69 @@ CSecCamera *CSecCamera::sub_1020bf00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020c890 size=0xc3
+#include "CSecCamera.h"
+#include "CBroadcastRecipientFilter.h"
+
+#define SEC_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CSecCamEngine
+{
+	SEC_SLOTS10(a0) SEC_SLOTS10(a1) SEC_SLOTS10(a2)
+	virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34();
+	virtual int vfunc35(int edict);	// IndexOfEdict
+};
+struct CSecCamSound	// the engine sound object
+{
+	SEC_SLOTS10(a0)
+	virtual void a10();
+	virtual void vfunc11(CRecipientFilter *pFilter, int nEntIndex, int nChannel, int a, int b, int nLevel, int nPitch, int c, int d, int e, int f);	// EmitSound
+};
+
+struct CSecCamPurger	// empty base: the inlined purge of the filter's recipient vector
+{
+	~CSecCamPurger()
+	{
+		CRecipientFilter *p = (CRecipientFilter *)this;
+		void (*pfnFree)(void *) = g_109f3624;
+		p->m_size = 0;
+		if (p->m_growSize != -1) {
+			if (p->m_pMemory) {
+				pfnFree(p->m_pMemory);
+				p->m_pMemory = 0;
+			}
+			p->m_allocCount = 0;
+		}
+		p->m_pElements = p->m_pMemory;
+		if (p->m_growSize != -1 && p->m_pMemory)
+			pfnFree(p->m_pMemory);
+	}
+};
+
+struct CSecCamFilter : CSecCamPurger	// a plain CRecipientFilter on the stack: base constructor, AddAllPlayers, inlined purge
+{
+	CRecipientFilter m_Filter;
+};
+
+extern CSecCamEngine *g_1070b22c;
+extern CSecCamSound *g_1070b248;
+
+static inline int IndexOfEdict(int edict)
+{
+	return g_1070b22c->vfunc35(edict);
+}
+
+void CSecCamera::sub_1020c890()
+{
+	if (*(int *)((char *)this + 0x7d4)) {
+		CSecCamFilter filter;
+		filter.m_Filter.sub_1019cff0();
+		g_1070b248->vfunc11(&filter.m_Filter, IndexOfEdict(m_pEdict2e0), 3, 0, 0, 0xa4, 100, 0, 0, 1, 0);
+		*(int *)((char *)this + 0x7d4) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020d0e0 size=0x43
 #include "CPropSwitch.h"
 void *sub_100aa720(int size);
