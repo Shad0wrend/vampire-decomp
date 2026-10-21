@@ -74236,6 +74236,42 @@ void CUnknownEmbed102e1cf0::sub_102e1cf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e1e20 size=0x11b
+#include "CAI_Motor.h"
+#include "CEntityVSlots.h"
+
+struct CMotorGlobals
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern CMotorGlobals *g_1070b228;
+extern float g_104454c4;
+float sub_102e1d10(float flSpeed, float flCurrent, float flIdeal, float flScale);
+
+#define OUTER ((CEntityVSlots *)m_pOuter)
+
+// TARGET: CAI_Motor::sub_102e1e20
+void CAI_Motor::sub_102e1e20(int yawSpeed)
+{
+	if (yawSpeed == -1)
+		yawSpeed = (int)*(float *)&m_38;
+	float current = (unsigned short)(int)(OUTER->slot221()->y * 182.04445f) * 0.0054931640625f;
+	float ideal = (unsigned short)(int)(m_34 * 182.04445f) * 0.0054931640625f;
+	if (*(float *)&m_2c < g_104454c4)
+		*(float *)&m_2c = g_1070b228->curtime - 0.1;
+	CMotorGlobals *pGlobals = g_1070b228;
+	float newYaw = sub_102e1d10((float)yawSpeed * 10.0, current, ideal, pGlobals->curtime - *(float *)&m_2c);
+	*(float *)&m_2c = pGlobals->curtime;
+	if (newYaw != current)
+	{
+		Vector angles = *(Vector *)OUTER->slot221();
+		angles.y = newYaw;
+		OUTER->slot64(&angles.x);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e1f90 size=0x6b
 #include "CAI_Motor.h"
 
