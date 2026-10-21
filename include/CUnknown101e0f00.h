@@ -4,6 +4,8 @@
 #include "CUnknown101dbc60.h"
 #include "CUnknown101dd910.h"
 
+class CBasePlayer;
+
 struct CUnknown101e0f00SrcA	// an element of the first list of a source description
 {
 	void sub_101dc8a0();	// Debug_Display (stub 0x10003143)
@@ -56,7 +58,8 @@ struct CUnknown101e0f00Entry	// one targeted discipline
 	const char *m_pszTgtHighlightParticle;	// 0x1c
 	int m_nBaseCost;	// 0x20
 	char m_bOvert;	// 0x24
-	char m_pad0025[0x2c - 0x25];
+	char m_pad0025[0x28 - 0x25];
+	int m_n28;	// 0x28: the level handed to the player's sub_1017df50
 	float m_flRecoveryTime;	// 0x2c
 	char m_b30;
 	char m_b31;
@@ -95,4 +98,5 @@ public:
 	char sub_101e1a60(CUnknown101e0f00Entry *pEntry, void *pSource, void *pSource2, void *pTarget, int flag);	// whether the entry applies to the source / target pair (stub 0x1000b956)
 	void sub_101e3730(void *pSource, void *pTarget, unsigned int mask, int flag);	// applies the entry's effect (stub 0x1000ae07)
 	void sub_101e3400(void *pSource, void *pTarget, int a, int b);	// "ActivateEffect" by reference: finds the entry, applies it to the target when sub_101e1a60 accepts the pair or the target is a CNPC_VPlayerController (dynamic cast of a CBaseCombatCharacter)
+	void sub_101e4220(CBasePlayer *pPlayer);	// "CVTgt_DisciplineFXMgr_t::UpdateSupernaturalLevel": when the player's default stat list has a positive stat 0x19, hands the level of the "Thaumaturgy_Bloodshield" entry to the player's sub_1017df50 (time -1.0f)
 };
