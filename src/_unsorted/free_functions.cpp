@@ -29484,6 +29484,51 @@ PyObject *sub_10199100(PyObject *self, PyObject *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101993c0 size=0x10e
+struct PyObj;
+struct CBasePlayerUnit
+{
+	void sub_1017c600(CBaseEntity *pEnt, char bLoot, int a, int b, int c);
+};
+extern "C" __declspec(dllimport) int PyArg_ParseTuple(PyObj *, const char *, ...);
+extern "C" __declspec(dllimport) void PyErr_Clear();
+extern "C" __declspec(dllimport) void *PyErr_Occurred();
+extern "C" __declspec(dllimport) void PyErr_SetString(void *, const char *);
+extern "C" __declspec(dllimport) void *PyExc_AttributeError;
+extern "C" __declspec(dllimport) int _Py_NoneStruct;
+extern void *sub_10196780(PyObj *);
+extern CBasePlayerUnit *sub_101cd9e0(int);
+
+int *sub_101993c0(void *self, PyObj *args)
+{
+	CBasePlayerUnit *pUnit = sub_101cd9e0(1);
+	PyObj *pObj = 0;
+	int c = 0;
+	int b;
+	int a;
+	if (!PyArg_ParseTuple(args, "Oiii", &pObj, &a, &b, &c)) {
+		PyErr_Clear();
+		if (!PyArg_ParseTuple(args, "Oii", &pObj, &a, &b)) {
+			if (!PyErr_Occurred())
+				PyErr_SetString(PyExc_AttributeError, "bad args to StartBarter()");
+			return 0;
+		}
+	}
+	void *pEnt = sub_10196780(pObj);
+	CBaseEntity *pChar = 0;
+	if (pEnt)
+		pChar = *(CBaseEntity **)((char *)pEnt + 0x9c);
+	if (!pChar) {
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_AttributeError, "invalid combat character");
+		return 0;
+	}
+	pUnit->sub_1017c600(pChar, 0, a, b, c);
+	_Py_NoneStruct++;
+	return &_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199800 size=0x88
 struct CQuestPlayer { void sub_1017cc20(const char *pszQuest, int nState); };
 CQuestPlayer *sub_101cd9e0(int index);
