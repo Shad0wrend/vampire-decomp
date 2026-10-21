@@ -51806,6 +51806,26 @@ bool sub_102404e0(const Vec3 &mins, const Vec3 &maxs, const Vec3 &start, const V
 }
 // END FUNCTION
 
+// FUNCTION: 0x10242390 size=0x6f
+#include <math.h>
+void sub_10242390(const float *v, float *out)
+{
+    out[0] = 0;
+    out[1] = 1.0f;
+    float ax = fabsf(v[0]);
+    float ay = fabsf(v[1]);
+    if (ax > ay) {
+        if (ax > fabsf(v[2])) {
+            out[0] = 1.0f;
+            out[1] = 2.0f;
+        }
+    } else if (fabsf(v[2]) < ay) {
+        out[0] = 0;
+        out[1] = 2.0f;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245770 size=0x10
 struct CFlagHolder245770 {
     char pad[4];

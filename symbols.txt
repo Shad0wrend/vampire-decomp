@@ -2820,6 +2820,7 @@
 0x1000cc5c func   ?vfunc0@CVoiceGameMgr@@QAEPAV1@I@Z CVoiceGameMgr::vfunc0
 0x1000cc7f func   ?sub_10227410@CUnknown10227410@@QAEXH@Z CUnknown10227410::sub_10227410
 0x1000cca7 func   ?sub_103aa960@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::sub_103aa960
+0x1000ccac func   ?sub_10242390@@YAXPBMPAM@Z sub_10242390
 0x1000ccd9 func   ?sub_10200be0@CVStatList_t@@QAEXHH@Z CVStatList_t::sub_10200be0
 0x1000ccde func   _item_w_werewolf_attacks item_w_werewolf_attacks
 0x1000cce8 func   ?sub_10189660@@YAXPAVCBaseEntity@@HH@Z sub_10189660
