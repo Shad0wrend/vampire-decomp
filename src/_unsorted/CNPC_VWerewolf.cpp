@@ -335,6 +335,22 @@ void CNPC_VWerewolf::vfunc516()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d5050 size=0xa4
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+void sub_10008f44(CNPC_VWerewolf *pEnt, int a, int b, int c, int d, int e);
+
+void CNPC_VWerewolf::vfunc620()
+{
+	ScopeTrace trace("CNPC_VWerewolf::DrawBBoxOverlay", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!sub_103cf5f0()) {
+		sub_10008f44(this, 0x32, 0xff, 0x32, 0, 0);
+		return;
+	}
+	sub_1009f4e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d5f60 size=0x7e
 #include "CNPC_VWerewolf.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };

@@ -3030,6 +3030,7 @@
 0x1000d175 func   _item_k_shrekhub_one_key item_k_shrekhub_one_key
 0x1000d18e func   ?sub_10097b00@CUtlMemory60@@QAEPAU1@HH@Z CUtlMemory60::sub_10097b00
 0x1000d1a2 func   ?sub_10405540@@YAHXZ sub_10405540
+0x1000d1a7 func   ?vfunc620@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc620
 0x1000d1c0 func   ?vfunc545@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc545
 0x1000d1c5 func   ?sub_1013bb40@@YAXABVVector@@000MAAV1@@Z sub_1013bb40
 0x1000d1ca func   ?sub_103217d0@@YAHXZ sub_103217d0
