@@ -313,6 +313,46 @@ void CBaseAnimating::vfunc257(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095a20 size=0x159
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+struct SPhysicsProps
+{
+	virtual void s0(); virtual void s1(); virtual void s2();
+	virtual short GetSurfaceIndex(void *pName);
+};
+
+extern SPhysicsProps *g_10723944;
+void sub_100c4600(void *pBoneData, int pCache, void *pHdr, void *pSet);
+char sub_100c4d50(int a, void *pHdr, void *pSet, void *pBoneData, int b, char *pTrace);
+
+bool CBaseAnimating::vfunc100(int a, int b, char *pTrace)
+{
+	ScopeTrace trace("CBaseAnimating::TestHitboxes", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char *pHdr = (char *)sub_100952d0(-1);
+	if (pHdr) {
+		char *pSet = pHdr + *(int *)(pHdr + 0x104) + *(int *)((char *)this + 0x680) * 12;
+		if (pSet && *(int *)(pSet + 4)) {
+			char boneData[1400];
+			int pCache = sub_10095460();
+			sub_100c4600(boneData, pCache, pHdr, pSet);
+			if (sub_100c4d50(a, pHdr, pSet, boneData, b, pTrace)) {
+				int iBone = *(int *)(pSet + *(int *)(pSet + 8) + *(int *)(pTrace + 0x50) * 0x20);
+				int iBones = *(int *)(pHdr + 0xf4);
+				*(const char **)(pTrace + 0x3c) = "**studio**";
+				*(short *)(pTrace + 0x42) = (short)0x8000;
+				SPhysicsProps *pProps = g_10723944;
+				char *pBone = pHdr + iBone * 0xa0 + iBones;
+				*(short *)(pTrace + 0x40) = pProps->GetSurfaceIndex(pBone + *(int *)(pBone + 0x98));
+			}
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095fe0 size=0xdb
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
