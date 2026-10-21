@@ -2734,6 +2734,7 @@
 0x1000c045 func   _events_world events_world
 0x1000c04a func   ?vfunc5@CTriggerHurt@@QAEPAV1@I@Z CTriggerHurt::vfunc5
 0x1000c04f func   ?sub_100aac30@@YIHPAD@Z sub_100aac30
+0x1000c059 func   ?sub_101fa180@CUnknown101fa0e0@@QAEXPAX@Z CUnknown101fa0e0::sub_101fa180
 0x1000c072 func   _item_g_mercurio_journal item_g_mercurio_journal
 0x1000c090 func   ?vfunc241@CFilterInventory@@QAE_NPAVCBaseEntity@@@Z CFilterInventory::vfunc241
 0x1000c09a func   ?vfunc214@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc214

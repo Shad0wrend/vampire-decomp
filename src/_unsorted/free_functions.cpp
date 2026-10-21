@@ -46983,6 +46983,39 @@ void CUnknown101fa0e0::sub_101fa0e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fa180 size=0x8c
+#include "CUnknown101fa0e0.h"
+
+int sub_10431c2f(char *, const char *, ...);
+void sub_10203df0(void *pFile, const char *psz);
+
+struct CTraitListEntry2 {
+	void sub_101f77f0(void *pFile);
+};
+
+struct CIdTable2 {
+	CTraitListEntry2 *sub_101f8480(int id);
+};
+extern CIdTable2 g_1074df78;
+extern const char *g_1074df88;
+extern char g_106b8540[];
+extern char g_10547e40[];
+
+void CUnknown101fa0e0::sub_101fa180(void *pFile)
+{
+	char buf[128];
+	if (pFile) {
+		sub_10431c2f(buf, "\n   %s:\n\n", g_1074df88 ? g_1074df88 : g_106b8540);
+		sub_10203df0(pFile, buf);
+		if (m_count > 0) {
+			for (int i = 0; i < m_count; i++)
+				g_1074df78.sub_101f8480(m_ids[i])->sub_101f77f0(pFile);
+		}
+		sub_10203df0(pFile, g_10547e40);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fa700 size=0xc1
 #include "CVDmg_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
