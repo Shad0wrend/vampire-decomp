@@ -61,3 +61,48 @@ void CWorld::vfunc241(void *pSource, int nSound, int unused1, int unused2)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1023bc20 size=0xae
+#include "CWorld.h"
+#include "ConVar.h"
+
+struct CCvar_1023bc20
+{
+	virtual void v0();
+	virtual void v1();
+	virtual ConVar *FindVar(const char *pszName);
+};
+struct CGlobalVars_1023bc20
+{
+	char m_pad0000[0x14];
+	int maxClients;	// 0x14
+};
+extern CCvar_1023bc20 *g_1070b234;
+extern CGlobalVars_1023bc20 *g_1070b228;
+extern int g_10752e9c;
+extern int g_109247e0;
+extern char g_10924fb8;
+extern int g_109247e4;
+CWorldPlayer *sub_101cd9e0(int index);
+
+void CWorld::vfunc113()
+{
+	CBaseEntity::vfunc113();
+	ConVar *pCheats = g_1070b234->FindVar("sv_cheats");
+	int nCheats = pCheats ? pCheats->GetInt() : 0;
+	g_10752e9c = nCheats;
+	int n = m_n49c > 2 ? 2 : (m_n49c < 0 ? 0 : m_n49c);
+	if (n != m_n49c) {
+		m_n49c = n;
+		for (int i = 1; i <= g_1070b228->maxClients; i++) {
+			CWorldPlayer *pPlayer = sub_101cd9e0(i);
+			if (pPlayer)
+				pPlayer->sub_10170750();
+		}
+		*((char *)this + 0x1b1) = 1;
+	}
+	g_109247e0 = -1;
+	g_10924fb8 = 0;
+	g_109247e4 = -1;
+}
+// END FUNCTION
