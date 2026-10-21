@@ -4395,6 +4395,7 @@
 0x10011829 func   _item_g_jumbles_flyer item_g_jumbles_flyer
 0x10011833 func   ?vfunc14@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHHHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc14
 0x10011838 func   ?sub_10382970@CUnknown10382970@@QAEXH@Z CUnknown10382970::sub_10382970
+0x10011847 func   ?sub_1027e140@CAI_BaseNPCUnit@@QAEHPBVVector@@H@Z CAI_BaseNPCUnit::sub_1027e140
 0x10011851 func   ?sub_103c63c0@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c63c0
 0x1001185b func   ?vfunc173@CMomentaryRotButton@@QAEXHHHH@Z CMomentaryRotButton::vfunc173
 0x10011865 func   _path_corner path_corner

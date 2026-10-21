@@ -67086,6 +67086,39 @@ void CAI_BaseNPC::sub_1027dd10(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027e140 size=0xc2
+#include "CAI_BaseNPC.h"
+#include "CEntityVSlots.h"
+#include "CUnknown1070b254.h"
+#include "CGameTrace.h"
+
+extern CUnknown1070b254 *g_1070b254;
+void sub_101cd110(CAI_BaseNPC *pEnt, const Vector *pStart, const Vector *pEnd, int mask, CGameTrace *pTrace);
+
+struct CAI_BaseNPCUnit : CAI_BaseNPC
+{
+	int sub_1027e140(const Vector *pMove, int mask);
+	void sub_100a53d0(int a);	// CBaseEntity::PhysicsTouchTriggers (stub 0x10005bcd), called directly
+};
+
+int CAI_BaseNPCUnit::sub_1027e140(const Vector *pMove, int mask)
+{
+	Vector start = *(Vector *)vfunc217();
+	Vector end;
+	VectorAdd(start, *pMove, end);
+	CGameTrace tr;
+	sub_101cd110(this, &start, &end, mask, &tr);
+	if (tr.m_fraction == 1.0f) {
+		if (!(sub_100b3700() & 0x800) || g_1070b254->vfunc0(tr.m_endpos, 0)) {
+			((CEntityVSlots *)this)->slot216((Vector *)tr.m_endpos);
+			sub_100a53d0(0);
+			return 1;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027e590 size=0x93
 #include "CBaseEntity.h"
 extern "C" int _vsnprintf(char *, unsigned int, const char *, char *);
