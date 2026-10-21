@@ -11,7 +11,7 @@ public:
 	int m_n08;
 	int m_n0c;
 	int m_n10;
-	int m_n14;
+	float m_n14;	// 0x14: the low value of a float prop
 	float m_n18;	// 0x18: the high value of a float prop (360.0f for an angle)
 	int m_n1c;
 	int m_n20;
