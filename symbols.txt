@@ -844,6 +844,7 @@
 0x1000478c func   ?vfunc1@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc1
 0x10004791 func   ?sub_102cdd10@CUtlRBTree12@@QBEGPBX@Z CUtlRBTree12::sub_102cdd10
 0x100047aa func   ?sub_10032b00@@YIXPAH@Z sub_10032b00
+0x100047af func   ?vfunc5@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc5
 0x100047be func   ?vfunc103@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc103
 0x100047c3 func   _item_w_tzimisce2_head item_w_tzimisce2_head
 0x1000482c func   _item_w_tzimisce2_claw item_w_tzimisce2_claw
