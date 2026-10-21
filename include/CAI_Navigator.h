@@ -125,6 +125,7 @@ public:
 	int sub_102ecc00();	// the dword at +0x5d3c of the owner (stub 0x10013011)
 	void sub_102ee6a0();	// stub 0x10012963
 	int sub_102ee620();	// stub 0x100037e2: the navigation type (8 is the one the Moleman / Combatman schedule selection waits for)
+	char sub_102ee2e0();	// stub 0x10009c23: whether the navigator is busy with a move that the alternate-action end has to stop
 	void sub_102ed390(int a1, int a2, int a3, int a4, int a5, int a6, int a7);	// asks the owner (slot 220) with the route's value at +0x28, then stores the answer in the route
 	bool sub_102edae0(const Vector *pPosition, float flDistance, int c, Vector *pOut);	// "FindBackAwayPoint": refreshes the stamps of this and of the pathfinder (the owner's object at +0x5d3c), asks the pathfinder for a node to back away to and, when there is one, copies the node's position to pOut and succeeds
 	bool sub_102edbb0(const Vector *pPosition, float flDistance, int c, Vector *pOut);	// as sub_102edae0, asking the pathfinder's A* search (sub_10301010)
