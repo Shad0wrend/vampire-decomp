@@ -7,6 +7,7 @@
 struct CWeaponHolder_t;
 struct CWeaponOwner;
 class CUnknown101d8a70;
+class CBaseEntity;
 
 struct CWeaponActivityRecord	// 12 byte entry of a weapon's activity translation table
 {
@@ -31,12 +32,22 @@ public:
 	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
 	virtual CBaseCombatWeapon *vfunc5(unsigned int flags); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	// slots 10..279
-	CBCW_V10(1) CBCW_V10(2) CBCW_V10(3) CBCW_V10(4) CBCW_V10(5) CBCW_V10(6) CBCW_V10(7) CBCW_V10(8) CBCW_V10(9)
+	CBCW_V10(1) CBCW_V10(2) CBCW_V10(3) CBCW_V10(4) CBCW_V10(5) CBCW_V10(6) CBCW_V10(7) CBCW_V10(8)
+	CBCW_V(90) CBCW_V(91) CBCW_V(92) CBCW_V(93) CBCW_V(94) CBCW_V(95) CBCW_V(96)
+	virtual CBaseEntity *vfunc97();	// "GetOwnerEntity"
+	CBCW_V(98) CBCW_V(99)
 	CBCW_V(100) CBCW_V(101) CBCW_V(102) CBCW_V(103) CBCW_V(104)
 	virtual void vfunc105(const char *pszName);
 	CBCW_V(106) CBCW_V(107) CBCW_V(108) CBCW_V(109)
-	CBCW_V10(11) CBCW_V10(12) CBCW_V10(13) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16) CBCW_V10(17) CBCW_V10(18) CBCW_V10(19)
-	CBCW_V10(20) CBCW_V10(21) CBCW_V10(22) CBCW_V10(23) CBCW_V10(24) CBCW_V10(25) CBCW_V10(26)
+	CBCW_V10(11) CBCW_V10(12) CBCW_V10(13) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16) CBCW_V10(17)
+	CBCW_V(180) CBCW_V(181) CBCW_V(182) CBCW_V(183) CBCW_V(184) CBCW_V(185) CBCW_V(186)
+	virtual CBaseEntity *vfunc187();	// "CBaseCombatWeapon::Respawn": creates a new entity of the weapon's class at the game rules' respawn spot
+	CBCW_V(188) CBCW_V(189)
+	CBCW_V10(19)
+	CBCW_V10(20) CBCW_V10(21)
+	CBCW_V(220) virtual float *vfunc221();	// "GetAngles"
+	CBCW_V(222) CBCW_V(223) CBCW_V(224) CBCW_V(225) CBCW_V(226) CBCW_V(227) CBCW_V(228) CBCW_V(229)
+	CBCW_V10(23) CBCW_V10(24) CBCW_V10(25) CBCW_V10(26)
 	CBCW_V(270) CBCW_V(271)
 	virtual char *vfunc272();
 	virtual char *vfunc273();
