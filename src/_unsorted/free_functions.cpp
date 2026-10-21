@@ -18767,6 +18767,66 @@ void sub_100d7210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d7c40 size=0xea
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" int atoi(const char *);
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+
+struct CMPEquipPlayer;
+
+struct CMPEquipSub
+{
+	void sub_1017aa40(CMPEquipPlayer *pPlayer);
+};
+
+struct CMPEquipPlayer
+{
+	char m_pad0000[0x2e0];
+	int m_nEdict;
+	char m_pad02e4[0x1a1c - 0x2e4];
+	CMPEquipSub m_sub;
+	int m_nFirst;
+	int m_nRest[11];
+	char m_pad1a50[0x2078 - 0x1a50];
+	const char *m_pszName;
+};
+
+struct CMPEquipEnt
+{
+	char m_pad0000[0xa8];
+	CMPEquipPlayer *m_pPlayer;
+};
+
+CMPEquipEnt *sub_101193b0();
+
+void sub_100d7c40()
+{
+	CMPEquipEnt *pEnt = sub_101193b0();
+	if (pEnt) {
+		CMPEquipPlayer *pPlayer = pEnt->m_pPlayer;
+		if (pPlayer) {
+			int nArgs = g_1070b22c->vfunc85();
+			if (nArgs > 1) {
+				pPlayer->m_nFirst = atoi(g_1070b22c->vfunc84(1));
+				int i;
+				for (i = 2; i < nArgs; i++)
+					pPlayer->m_nRest[i - 2] = atoi(g_1070b22c->vfunc84(i));
+				i -= 2;
+				for (; i < 11; i++)
+					pPlayer->m_nRest[i] = -1;
+				const char *pszName = pPlayer->m_pszName ? pPlayer->m_pszName : g_106b8540;
+				int edict = pPlayer->m_nEdict;
+				DevMsg("\nMP_Equip ( APPLY ): %d: %s\n", g_1070b22c->vfunc35(edict), pszName);
+				pPlayer->m_sub.sub_1017aa40(pPlayer);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7e00 size=0x70
 #include <stdio.h>
 #include "CUnknown101eb820.h"
