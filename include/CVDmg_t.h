@@ -14,8 +14,18 @@ struct CVDmgBlock16_t
 	CVDmgBlock16_t(int a, int b);	// calls sub_102042a0(a, b) (0x102053a0, stub 0x10004561)
 	void sub_10204270();	// reset: m_a = m_b = -1, m_d = 1 (stub 0x10010573)
 	void sub_102042a0(int a, int b);	// stores a / b in the first two fields and sets m_d to 1 (stub 0x10014290)
+	bool sub_10204250();	// whether the block is empty (stub 0x100051f0)
 	int sub_10204900(void *pCharacter);	// the value this block names for the character (a stat, a feat, ...; stub 0x10013cc8), 0 for an empty block or no character
 	int sub_10204ad0(void *pCharacter);	// the part of sub_10204900 for a feat block (kind 4), without the null character test: the feat record of the id (m_b) answers for the character; 0 for other kinds or an empty block
+};
+
+// The entity handed to CVDmg_t::SetSrc (class not known): its character at +0x9c and its edict at +0x2e0.
+struct CVDmgSource_t
+{
+	char m_pad0000[0x9c];
+	void *m_pCharacter;	// 0x9c
+	char m_pad00a0[0x2e0 - 0xa0];
+	int m_pEdict;	// 0x2e0
 };
 
 class CVDmg_t
@@ -39,4 +49,5 @@ public:
 	bool sub_101fb340(int target);	// "CVDmg_t::EvadeCheck": forwards to the global evade callback
 	void sub_101fa700(CVDmg_t *pOther);	// "CVDmg_t::Copy": scope trace, copies the fields 0x00..0x34 and 0x40 of pOther (blocks of 20, 16 and 16 bytes, then two dwords)
 	void sub_101fa810();	// "CVDmg_t::Null": scope trace, resets the fields (the two 16 byte blocks at +0x14 / +0x24 through sub_10204270)
+	void sub_101fa960(CVDmgSource_t *pSource);	// "CVDmg_t::SetSrc": scope trace; removes the first block's value for the old source from the field at +0x4, stores the new source's edict index (IndexOfEdict) at +0x34 (0 for no source) and adds the block's value for the new source
 };
