@@ -81142,6 +81142,37 @@ int sub_103ee100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee660 size=0x70
+#include "CWeaponThrown_Grenade_Frag.h"
+
+struct CGlobalVarsFrag {
+	char m_pad[0xc];
+	float m_flCurTime;
+};
+extern CGlobalVarsFrag *g_1070b228;
+void sub_1000c98c();
+
+struct CFragOwnerObj {
+	char m_pad[0xa8];
+	void *m_pAI;
+};
+
+bool CWeaponThrown_Grenade_Frag::sub_103ee660()
+{
+	if (g_1070b228->m_flCurTime > m_flTimer91c) {
+		m_bFinished930 = 1;
+		sub_103ed200();
+		CFragOwnerObj *pOwner = (CFragOwnerObj *)sub_102521f0();
+		if (pOwner && pOwner->m_pAI)
+			sub_103ed830(pOwner->m_pAI);
+		sub_100ac4e0((void *)sub_1000c98c, 0, 0);
+		m_flNextThink17c = g_1070b228->m_flCurTime + 0.2f;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eec60 size=0xd
 void CUnknown103eec60::sub_103eec60(char value)
 {

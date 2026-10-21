@@ -3998,6 +3998,7 @@
 0x10011383 func   ?sub_1024b230@@YA_NPBUStrRef@@0@Z sub_1024b230
 0x10011388 func   ?sub_10274aa0@CAI_BaseNPC@@QAEHPAX@Z CAI_BaseNPC::sub_10274aa0
 0x10011392 func   ?sub_1021e540@UtlMem@@QAEXXZ UtlMem::sub_1021e540
+0x10011397 func   ?sub_103ee660@CWeaponThrown_Grenade_Frag@@QAE_NXZ CWeaponThrown_Grenade_Frag::sub_103ee660
 0x1001139c func   ?sub_1004d140@CPhysicsSpring@@QAEXPAUinputdata_t@@@Z CPhysicsSpring::sub_1004d140
 0x100113ce func   _trigger_electric_bugaloo trigger_electric_bugaloo
 0x100113d3 func   _npc_VChangBrosBlade npc_VChangBrosBlade
