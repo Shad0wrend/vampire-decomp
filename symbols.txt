@@ -1606,6 +1606,7 @@
 0x100085d0 func   ?sub_101664d0@@YI_NPAUCVirtSlots94@@@Z sub_101664d0
 0x100085e4 func   ?vfunc481@CHL2_Player@@UAEMXZ CHL2_Player::vfunc481
 0x100085f3 func   ?sub_1028eb30@Holder@@QAEXHPAUVec3@@PAUHandleObj@@D@Z Holder::sub_1028eb30
+0x10008607 func   ?vfunc103@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::vfunc103
 0x1000860c func   ?vfunc448@CNPC_VMingXiao@@QAEXH@Z CNPC_VMingXiao::vfunc448
 0x10008620 func   ?sub_1029ca30@@YGMM@Z sub_1029ca30
 0x1000862a func   ?vfunc5@CAI_InterestingPlaceConverstation@@QAEPAV1@E@Z CAI_InterestingPlaceConverstation::vfunc5

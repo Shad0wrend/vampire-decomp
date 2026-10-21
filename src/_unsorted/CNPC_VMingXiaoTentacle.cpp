@@ -28,6 +28,33 @@ int CNPC_VMingXiaoTentacle::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039c380 size=0x86
+#include "CNPC_VMingXiaoTentacle.h"
+struct CGlobalVarsTime { char pad[0xc]; float curtime; };
+extern CGlobalVarsTime *g_1070b228;
+extern float g_10454110;
+void CNPC_VMingXiaoTentacle::vfunc103()
+{
+	sub_10012855(0x4000000);
+	sub_10012855(0x200000);
+	sub_1000303a();
+	sub_100153a7(0x80000);
+	m_n6670 = 0;
+	m_b63d8 = 1;
+	m_n6674 = 0;
+	m_n6678 = 0;
+	m_n667c = 0;
+	m_n6680 = 0;
+	float now = g_1070b228->curtime;
+	float t = now + g_10454110;
+	m_b6688 = 1;
+	m_b6698 = 0;
+	m_b6699 = 0;
+	m_flTimer6684 = t;
+	sub_1000df44(4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039de00 size=0xd
 struct TentacleField1b2c { char pad[0x1b2c]; int m; };
 int CNPC_VMingXiaoTentacle::vfunc437()
