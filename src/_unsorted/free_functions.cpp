@@ -30426,6 +30426,91 @@ int CUnknown10182810::sub_10182810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101828b0 size=0x178
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+#define TV(n) virtual void v##n();
+#define TV10(p) TV(p##0) TV(p##1) TV(p##2) TV(p##3) TV(p##4) TV(p##5) TV(p##6) TV(p##7) TV(p##8) TV(p##9)
+
+struct STarget
+{
+	TV(0)
+	virtual unsigned int *vfunc1();
+	TV(2) TV(3) TV(4) TV(5) TV(6) TV(7) TV(8) TV(9)
+	TV10(1) TV10(2) TV10(3) TV10(4) TV10(5) TV10(6) TV10(7) TV10(8) TV10(9) TV10(10) TV10(11) TV10(12) TV10(13) TV10(14)
+	TV(150) TV(151) TV(152) TV(153) TV(154) TV(155) TV(156) TV(157)
+	virtual bool vfunc158();
+	TV(159)
+	TV10(16) TV10(17) TV10(18) TV10(19) TV10(20) TV10(21) TV10(22) TV10(23) TV10(24) TV10(25) TV10(26) TV10(27) TV10(28)
+	TV(290) TV(291) TV(292)
+	virtual int vfunc293();
+	TV(294) TV(295) TV(296) TV(297) TV(298) TV(299)
+	TV10(30) TV10(31) TV10(32) TV10(33) TV10(34) TV10(35) TV10(36) TV10(37) TV10(38) TV10(39)
+	TV(400) TV(401) TV(402) TV(403)
+	virtual int vfunc404(CAI_BaseNPC *pNPC);
+
+	int sub_100952d0(int a);	// stub 0x10013d8b
+	char sub_100b5190();	// stub 0x10014da8
+
+	char m_pad0004[0x19c - 4];
+	unsigned char m_flags19c;
+};
+
+struct SBest
+{
+	char m_pad0000[0x1cc0];
+	unsigned int m_hBest;	// 0x1cc0
+	float m_flScore;	// 0x1cc4
+	int m_nStamp;	// 0x1cc8
+
+	void Reset()
+	{
+		m_hBest = 0xffffffff;
+		m_flScore = 99999.9f;
+		m_nStamp = 0;
+	}
+};
+
+void CAI_BaseNPC::sub_101828b0(CBaseEntity *pEnt, float flScore)
+{
+	SBest *p = (SBest *)this;
+	STarget *pTarget = (STarget *)pEnt;
+	STarget *pCur;
+	unsigned int h = p->m_hBest;
+	if (h == 0xffffffff)
+		pCur = 0;
+	else {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13))
+			pCur = (STarget *)pSlot->m_pEntity;
+		else
+			pCur = 0;
+	}
+	if (!pCur)
+		p->Reset();
+	if (pCur != pTarget) {
+		if (pCur && !pCur->vfunc158())
+			p->Reset();
+		if (flScore < p->m_flScore) {
+			if (pTarget->vfunc158() && !(pTarget->m_flags19c & 0x40) && pTarget->sub_100952d0(-1)
+				&& pTarget->vfunc404(this) == 1 && pTarget->vfunc293() != (int)this && !pTarget->sub_100b5190()) {
+				p->m_hBest = *pTarget->vfunc1();
+				p->m_flScore = flScore;
+				p->m_nStamp = sub_10182a90();
+			}
+		}
+	} else {
+		if (pTarget->vfunc158()) {
+			p->m_flScore = flScore;
+			p->m_nStamp = sub_10182a90();
+		} else
+			p->Reset();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182c40 size=0xe6
 #include "CAI_BaseNPC.h"
 struct Globals { char pad[0xc]; float curtime; };
