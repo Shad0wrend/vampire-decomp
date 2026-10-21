@@ -49628,6 +49628,44 @@ struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10205840 size=0x7c
+#include "CVDmg_t.h"
+#include "CUnknown10204c60.h"
+
+struct CStatRecord
+{
+	int sub_1006c9d0();	// stub 0x1000d102
+};
+
+struct CStatOwner
+{
+	CStatRecord *sub_1006cff0(int index, int a);	// stub 0x100038be
+};
+extern CStatOwner g_106c7c34;
+
+// TARGET: CVDmgBlock16_t::sub_10205840
+int CVDmgBlock16_t::sub_10205840()
+{
+	switch (m_a)
+	{
+	case 0:
+		return m_b;
+	case 1:
+	{
+		CVDmgBlock16_t block;
+		block.sub_10205400(&m_b);
+		return ((CUnknown10204c60 *)&block)->sub_10204c60();
+	}
+	case 2:
+		return g_106c7c34.sub_1006cff0(m_b, 0)->sub_1006c9d0();
+	case 3:
+		return 0;
+	default:
+		return -1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205ba0 size=0x98
 #include "CUnknown10205ba0.h"
 #include "CUnknown102043a0.h"

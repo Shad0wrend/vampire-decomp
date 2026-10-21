@@ -942,6 +942,7 @@
 0x10004e62 func   ?vfunc141@CNPC_VWerewolf@@QAEXPAUCUnknown101c2a50@@HH@Z CNPC_VWerewolf::vfunc141
 0x10004e6c func   ?vfunc103@CBaseViewModel@@UAEXXZ CBaseViewModel::vfunc103
 0x10004e80 func   ?sub_101fb680@CVDmg_t@@QAEPADXZ CVDmg_t::sub_101fb680
+0x10004e85 func   ?sub_10205840@CVDmgBlock16_t@@QAEHXZ CVDmgBlock16_t::sub_10205840
 0x10004e94 func   ?vfunc2@CTEExplosion@@UAEPAV1@I@Z CTEExplosion::vfunc2
 0x10004e99 func   ?sub_10428e60@@YAIPAD@Z sub_10428e60
 0x10004e9e func   ?sub_1022d260@CUnknown1022d260@@QAEXH@Z CUnknown1022d260::sub_1022d260
