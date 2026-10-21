@@ -33,7 +33,8 @@ public:
 	CBCW_V(270) CBCW_V(271)
 	virtual char *vfunc272();
 	virtual char *vfunc273();
-	CBCW_V(274) CBCW_V(275) CBCW_V(276) CBCW_V(277)
+	CBCW_V(274) CBCW_V(275) CBCW_V(276)
+	virtual bool vfunc277(int a);	// asked by vfunc280 with the ammo slot index
 	virtual float vfunc278();	// CWeaponGravityGun: the pull strength of the held object (the owner's stat 0x1a divided by the physics object's mass), -1.0f without one
 	CBCW_V(279)
 	// slots 280..371
@@ -85,6 +86,7 @@ public:
 	CWeaponOwner *sub_10252290();	// resolves the owner handle at +0x88c (0 when stale)
 	void *sub_102521f0();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale)
 	void sub_1024edc0();	// prints the weapon's activity translation table (base activity, weapon activity, required) with Msg
+	bool sub_10253b40(int a);	// true when the ammo type at +0x744 + a * 4 is not negative
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
