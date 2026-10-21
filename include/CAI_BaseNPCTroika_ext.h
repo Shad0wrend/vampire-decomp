@@ -1,1 +1,4 @@
 	void sub_1029ef80(inputdata_t *pInput);	// input handler: when the player's dialog partner (handle at player+0xfe8) is gone, this NPC is not busy with a discipline and flag bit 28 of +0x14bc is clear: stores the input's float (0 when it is not a float) at +0x5bac, sub_1000e4d5, slot 614, sets the byte at +0x6495, stamps the source file / line 0x2677 at +0x1b30 / +0x1b34 and starts schedule 0x6d (sub_102ae750)
+	void vfunc532(int a);	// slot 532 (plain member): by a (1, 2, 4, 8) and the scripted-action state at +0x644c (1..4) ends the alternate action: slot 448(0xe) with the handle at +0x5d24 and the byte at +0x5d30 cleared, or the navigator at +0x5d34 decides (sub_102ee2e0) to run sub_102bf7e0; clears the state; then CAI_BaseNPC::vfunc532(a)
+	void sub_1027e0f0(int a);	// CAI_BaseNPC::vfunc532 (stub 0x10011d7e), called directly
+	void sub_102bf7e0();	// stub 0x100151ae, run by the alternate action end
