@@ -71,3 +71,5 @@
 	virtual void vfunc130(int a);	// slot 130 "CBaseCombatCharacter::OnRestore": CBaseAnimating::vfunc130, then, when the presence-list stat (stat 10 of the stat list with id 3, the shared default list when absent) is positive, sub_10323370()
 	void sub_1008df10(int a);	// CBaseAnimating::vfunc130 (stub 0x10009e6c), called directly
 	void sub_1032f770(int hitbox, float a, float b);	// stub 0x1000596b, called directly by CC_Burn_Hitboxes with (hitbox index, 8.0f, 2.0f)
+	void sub_1033be10(struct inputdata_t &data);	// "CBaseCombatCharacter::BloodHealIn(put)": scope trace (entity name); for an integer input above zero, sub_1033bf50(1) and, for more than one and a positive BloodHealD... value (sub_1033b980), fires the "BloodHeal" input at this entity with the value minus one
+	void sub_1033bf50(int a);	// stub 0x1000e7e1, run first by the BloodHeal input handler
