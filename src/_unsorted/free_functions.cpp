@@ -23384,6 +23384,24 @@ CBaseEntity *__stdcall sub_10141b10(CBaseEntity *a, CBaseEntity *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142af0 size=0x64
+struct CAnglesPlain
+{
+	float x, y, z;
+};
+extern CAnglesPlain g_1070d9d0;
+
+float sub_1000612c(int a);
+void sub_10004093(int a, int b, int c, CAnglesPlain *pAngles, int e, int f, int g, int h, int i);
+
+void sub_10142af0(int a, int b, int c, int d, int e, int f, int g, int h, int i)
+{
+	CAnglesPlain angles = g_1070d9d0;
+	angles.y = sub_1000612c(d);
+	sub_10004093(a, b, c, &angles, e, f, g, h, i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101466e0 size=0xe
 #include "CUnknown101466e0.h"
 // TARGET: CUnknown101466e0::sub_101466e0
