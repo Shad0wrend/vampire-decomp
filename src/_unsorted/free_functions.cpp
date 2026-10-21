@@ -29124,6 +29124,26 @@ void CFuncMoveLinear::sub_101171a0(inputdata_t &inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117230 size=0x6d
+#include "CEntityVSlots.h"
+
+struct CEnt10117230 : CEntityVSlots {
+	char m_pad0004[0x164 - 4];
+	int m_n164;
+	char m_pad0168[0x508 - 0x168];
+	Vector m_vec508;
+	void sub_1000c7c5(Vector v, int n);
+	void sub_10117230(int unused);
+};
+
+// TARGET: CEnt10117230::sub_10117230
+void CEnt10117230::sub_10117230(int unused)
+{
+	if (*slot220() != m_vec508)
+		sub_1000c7c5(m_vec508, m_n164);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101172c0 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 

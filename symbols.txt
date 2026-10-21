@@ -1574,6 +1574,7 @@
 0x10007112 func   ?sub_101ec6f0@CUnknown101ec6f0@@QAEXXZ CUnknown101ec6f0::sub_101ec6f0
 0x10007130 func   _item_p_research_lg_firearms item_p_research_lg_firearms
 0x10007135 func   ?sub_1018f960@CUnknown1018f960@@QAEXAAUinputdata_t@@@Z CUnknown1018f960::sub_1018f960
+0x1000713a func   ?sub_10117230@CEnt10117230@@QAEXH@Z CEnt10117230::sub_10117230
 0x1000714e func   ?sub_10377160@@YADXZ sub_10377160
 0x10007153 func   ?sub_100b0f60@@YAXXZ sub_100b0f60
 0x1000715d func   ?sub_100dec20@CUnknown100dec20@@QAEXH@Z CUnknown100dec20::sub_100dec20
