@@ -4,8 +4,31 @@
 #include "CUnknown101dbc60.h"
 #include "CUnknown101dd910.h"
 
+struct CUnknown101e0f00SrcA	// an element of the first list of a source description
+{
+	void sub_101dc8a0();	// Debug_Display (stub 0x10003143)
+};
+
+struct CUnknown101e0f00SrcB	// an element of the second list of a source description
+{
+	void sub_101dc150();	// Debug_Display (stub 0x10006ece)
+};
+
+struct CUnknown101e0f00SrcSub	// the object at +0xc of a source description
+{
+	char sub_101dc750();	// whether it holds a value (stub 0x10011bc6)
+};
+
 struct CUnknown101e0f00Src	// the 0x1c byte source descriptions at +0xa4 / +0xc0 of an entry
 {
+	int m_n0000;
+	int m_nA;	// 0x04
+	CUnknown101e0f00SrcA **m_ppA;	// 0x08
+	CUnknown101e0f00SrcSub m_sub;	// 0x0c (its size is 8)
+	char m_pad000d[0x14 - 0xd];
+	int m_nB;	// 0x14
+	CUnknown101e0f00SrcB **m_ppB;	// 0x18
+
 	void sub_101dd3c0(const char *pszLabel);	// Debug_Display with the label (stub 0x10015d66)
 	void sub_101dcb20();	// the constructor body (stub 0x10002036)
 };
