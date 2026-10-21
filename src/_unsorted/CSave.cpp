@@ -60,6 +60,32 @@ void CSave::vfunc7(int a, int b, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0260 size=0x8a
+#include "CSave.h"
+
+struct CFieldView	// the 0x2c byte typedescription_t, only the offset
+{
+	char m_pad0000[8];
+	int m_nOffset;
+	char m_pad000c[0x2c - 0xc];
+};
+
+int CSave::vfunc3(int a, int b, int c, int d, int e)
+{
+	int nFieldsToSave = sub_101a01f0((const void *)b, (typedescription_t *)d, e);
+	vfunc9((const char *)a, &nFieldsToSave, 1);
+	for (int i = 0; i < e; i++, d += 0x2c) {
+		CFieldView *pField = (CFieldView *)d;
+		void *pData = (char *)b + pField->m_nOffset;
+		if (!sub_1019fe10(pData, (typedescription_t *)pField))
+			continue;
+		if (!sub_101a01c0((const char *)a, pData, (void *)c, (typedescription_t *)pField))
+			break;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0390 size=0xb9
 #include "CSave.h"
 #include "CUtlVector4.h"
