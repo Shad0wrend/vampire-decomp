@@ -1,15 +1,9 @@
 // CBaseDoor: door entity family. Only slots that decompiled code needs are declared, as plain members.
 #pragma once
 
+#include "CDoorEventList.h"
+
 struct inputdata_t;
-
-// 0x18-byte member objects of CBaseDoor (event lists), released by sub_100cd2d0.
-struct CBaseDoorItem
-{
-	char m_pad[0x18];
-
-	void sub_100cd2d0();
-};
 
 class CBaseDoor : public CBaseEntity
 {
@@ -35,9 +29,9 @@ public:
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
 
 	char m_pad03e0[0x4a4 - 0x3e0];
-	CBaseDoorItem m_items4a4[2];	// +0x4a4, +0x4bc
+	CDoorEventList m_items4a4[2];	// +0x4a4, +0x4bc
 	char m_pad04d4[0x564 - 0x4d4];
-	CBaseDoorItem m_items564[8];	// +0x564 .. +0x60c (the lists at +0x5dc / +0x60c are two of them)
+	CDoorEventList m_items564[8];	// +0x564 .. +0x60c (the lists at +0x5dc / +0x60c are two of them)
 	char m_pad0624[0x628 - 0x624];
 	unsigned int m_hDoorknob0;	// +0x628
 	unsigned int m_hDoorknob1;	// +0x62c
