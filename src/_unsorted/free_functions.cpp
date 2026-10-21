@@ -34354,6 +34354,41 @@ void sub_101c31f0(unsigned char type, int *v1, int *v2, unsigned short s, int f,
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c3a70 size=0xf6
+#include "ScopeTrace.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_10543c6c[];
+extern char g_10538764[];
+extern char g_1055e9bc[];
+struct Vec3 { float x, y, z; Vec3() {} };
+Vec3 sub_101c3bb0();
+void sub_1000f493(void *dst, void *src);
+void sub_100043cc(void *p, const Vec3 &vec, int flag);
+struct SEntityUnk { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void *vfunc4(); };
+inline void *Instance(CUnknown1070b22c_Edict *edict)
+{
+	ScopeTrace trace(g_10543c6c, g_106b8540);
+	if (!edict)
+		edict = g_1070b22c->vfunc38(0);
+	SEntityUnk *pUnk;
+	return (edict && (pUnk = *(SEntityUnk **)((char *)edict + 0x40)) != 0) ? pUnk->vfunc4() : 0;
+}
+void *sub_101c3a70(void *p)
+{
+	if (p) {
+		void *ent = Instance(g_1070b22c->vfunc38(1));
+		char *player = (char *)__RTDynamicCast(ent, 0, g_10538764, g_1055e9bc, 0);
+		if (player) {
+			Vec3 tmp;
+			sub_1000f493(player + 0x206c, &tmp);
+			sub_100043cc(p, sub_101c3bb0(), 0);
+		}
+	}
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c3bb0 size=0xaf
 struct Vec3 {
 	float x, y, z;
