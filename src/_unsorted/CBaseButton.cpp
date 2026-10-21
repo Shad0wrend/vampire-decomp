@@ -39,3 +39,44 @@ bool CBaseButton::sub_100c8990(int a)
 	return vfunc35(a) != 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100c8b80 size=0x175
+#include "CEHandleGet.h"
+
+struct CButtonAttackerView {
+	virtual void v0();
+	virtual unsigned int *GetRefEHandle();
+};
+
+struct CButtonDamageInfoView {
+	char m_pad0000[0x2c];
+	CButtonAttackerView *m_pAttacker;
+};
+
+// TARGET: CBaseButton::vfunc142
+int CBaseButton::vfunc142(void *pInfo)
+{
+	CButtonDamageInfoView *pDamage = (CButtonDamageInfoView *)pInfo;
+	m_Output560.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0.0f);
+	if ((m_flags204 & 0x200) || m_nHealth210) {
+		int state = sub_100c93b0();
+		if (state) {
+			if (pDamage->m_pAttacker)
+				m_hActivator53c = *pDamage->m_pAttacker->GetRefEHandle();
+			else
+				m_hActivator53c = 0xffffffff;
+			if (EHandle_Get(m_hActivator53c) && !m_b5c4) {
+				m_pfnTouch1ec = 0;
+				if (state == 2) {
+					m_Output578.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0.0f);
+					sub_100c97c0();
+					return 0;
+				}
+				m_Output578.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0.0f);
+				sub_100c9560();
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
