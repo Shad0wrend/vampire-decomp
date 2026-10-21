@@ -27689,6 +27689,39 @@ int *sub_10133450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133ac0 size=0x78
+void *sub_1000db89(int);
+extern int vt_104475c4;
+extern int vt_10467fa4;
+extern char g_10578974[];
+struct SubItem { char m_pad[0x18]; void sub_10002ddd(); };
+#define V10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct GP {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	virtual void k0(); virtual void k1(); virtual void k2(); virtual void k3(); virtual void k4(); virtual void k5();
+	virtual void name(const char *s);
+	void sub_100090fc(int a);
+};
+// TARGET: logic_case
+extern "C" GP *logic_case()
+{
+	GP *p = (GP *)sub_1000db89(0x628);
+	if (p) {
+		p->sub_100090fc(0);
+		*(int **)p = &vt_104475c4;
+		SubItem *pItems = (SubItem *)((char *)p + 0x490);
+		for (int i = 0; i < 16; i++)
+			pItems[i].sub_10002ddd();
+		((SubItem *)((char *)p + 0x610))->sub_10002ddd();
+		*(int **)p = &vt_10467fa4;
+	} else {
+		p = 0;
+	}
+	p->name(g_10578974);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134420 size=0x9a
 #include "CUnknown101346e0.h"
 #include "COutputEvent.h"
