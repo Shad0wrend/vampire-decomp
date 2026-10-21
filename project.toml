@@ -13,3 +13,4 @@ timeout_s = 30
 [agents]
 claim_expiry_min = 30
 max_attempts_per_claim = 20
+vector_calls = [0x10579660, 0x1057966c]  # pfSqrt, pfVectorNormalize: Vector math (claim order)
