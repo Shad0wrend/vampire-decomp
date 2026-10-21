@@ -32788,6 +32788,48 @@ extern "C" CBaseEntity *prop_mover()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192940 size=0x6f
+#include "CBaseEntity.h"
+#include "CUnknown101466e0.h"
+
+void *sub_100aa720(int size);
+extern void *vt_10474c44[];
+extern void *vt_1047568c[];
+extern char g_1058f230[];
+void __fastcall sub_100039bd(void *pThis);
+void __fastcall sub_10002ddd(void *pThis);
+
+struct CPhysPropContestedView
+{
+	char m_pad0000[0x4c];
+	unsigned int m_nFlags4c;
+	char m_pad0050[0x1b0 - 0x50];
+	CUnknown101466e0 m_Flag1b0;
+};
+
+// TARGET: prop_physics_contested
+extern "C" CBaseEntity *prop_physics_contested()
+{
+	void *mem = sub_100aa720(0x7b4);
+	CBaseEntity *p;
+	if (mem)
+	{
+		p = (CBaseEntity *)mem;
+		CPhysPropContestedView *v = (CPhysPropContestedView *)mem;
+		sub_100039bd(p);
+		*(void ***)p = vt_10474c44;
+		v->m_Flag1b0.sub_101466e0(1);
+		v->m_nFlags4c |= 4;
+		sub_10002ddd((char *)p + 0x790);
+		*(void ***)p = vt_1047568c;
+	}
+	else
+		p = 0;
+	p->vfunc106(g_1058f230);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192a30 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
