@@ -29790,6 +29790,28 @@ void sub_1013a7e0(const Vector &in, float yaw, Vector &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a9f0 size=0x82
+#include "Quaternion.h"
+
+void sub_1013a9f0(const Quaternion &p, const Quaternion &q, Quaternion &qt)
+{
+	int i;
+	float a = 0;
+	float b = 0;
+	for (i = 0; i < 4; i++) {
+		a += (p[i] - q[i]) * (p[i] - q[i]);
+		b += (p[i] + q[i]) * (p[i] + q[i]);
+	}
+	if (a > b) {
+		for (i = 0; i < 4; i++)
+			qt[i] = -q[i];
+	} else if (&qt != &q) {
+		for (i = 0; i < 4; i++)
+			qt[i] = q[i];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013b0d0 size=0xdb
 struct Q { float x, y, z, w; };
 void sub_1013b0d0(const Q &q, float *m)
