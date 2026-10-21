@@ -123,6 +123,8 @@ public:
 	int sub_102b6fe0(int a);	// scope-less schedule selection: with condition 0x48 (or else 0x3a) set, schedule 0xe9 (after slot 601(a) when the byte at +0x6078 is set) while slot 308 holds, else 0xcd (0xce); records the source file / line at +0x1b30 / +0x1b34; 0 without either condition
 	void sub_102b52a0(char bClearTarget, char bDead);	// resets the target (sub_10279a50(0), sub_10279b70(0)), clears bits of the flags at +0x5d8c, flushes the pending queue of slot 541; with bDead stamps the source line at +0x1b3c / +0x1b40 and sets the state +0x5cc4 to 1
 	void sub_1000dc38();	// stub 0x1000dc38 for 0x10273760, run by sub_102b52a0 when its first argument is set
+	char sub_1029fcf0(int a, CBaseEntity *pEnt, int b);	// slot 318: false without pEnt or when sub_1028a190 refuses; else (by pEnt's kind == 3) picks schedule 0xd8 / 0xd7, stamps the source file / line at +0x1b30 / +0x1b34, runs sub_102ae750(schedule, 0) and arms the timer at +0x1564 with curtime + a constant; true
+	void sub_102ae750(int schedule, int a);	// stub 0x1000198d
 
 	char m_pad0004[0x14bc - 4];
 	unsigned int m_flags14bc;
