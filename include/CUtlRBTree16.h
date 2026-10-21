@@ -41,6 +41,7 @@ public:
 	unsigned short sub_1024a310();	// "CUtlRBTree::NewNode": takes the free list head or grows the node memory (first allocation 2 elements)
 	unsigned short sub_103134b0();	// same as sub_1024a310 (another instance)
 	const unsigned short *sub_10313aa0(unsigned short i) const;	// address of the left child index of node i (stub 0x10012189), called by the lookup at 0x10312580
+	void sub_10313b20(unsigned short i);	// "CUtlRBTree::RemoveNode" (stub 0x10008e04): unlinks node i and rebalances
 };
 
 // The game has one CUtlRBTree<T, I> per element type T; CUtlRBTree16 stands for every instance with 16-byte nodes.
