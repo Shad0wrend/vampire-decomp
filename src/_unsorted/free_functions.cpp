@@ -25122,6 +25122,33 @@ bool sub_1012ca50(Ent *target, Ent *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012cdd0 size=0x7b
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+void sub_10246300();
+extern SendTable g_1070ba68;
+extern const char *g_10573708;
+
+// TARGET: sub_1012cdd0
+int sub_1012cdd0()
+{
+    static SendProp g_SendProps[] = {
+        sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+        sub_10246510("m_flSuitPower", 0, 4, 10, 0x11, 0.0f, 100.0f, (void *)sub_10246300),
+    };
+    g_1070ba68.sub_10247240(g_SendProps + 1, 1, g_10573708);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cf10 size=0x9
 CUnknown1012cf10 *CUnknown1012cf10::sub_1012cf10()
 {
