@@ -1179,6 +1179,7 @@
 0x10005ef2 func   ?sub_1005a510@@YAHXZ sub_1005a510
 0x10005f01 func   ?vfunc5@CItemGRing03@@QAEPAV1@I@Z CItemGRing03::vfunc5
 0x10005f0b func   ?vfunc432@CNPC_VBach@@QAEXH@Z CNPC_VBach::vfunc432
+0x10005f1f func   ?sub_1006ac90@@YAHXZ sub_1006ac90
 0x10005f47 func   ?sub_10094370@CFakeEnt@@QAEHH@Z CFakeEnt::sub_10094370
 0x10005f4c func   _info_node_shoot_at info_node_shoot_at
 0x10005f65 func   ?vfunc8@CAI_SystemHook@@QAEPAV1@I@Z CAI_SystemHook::vfunc8

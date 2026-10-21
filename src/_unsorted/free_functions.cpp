@@ -7504,6 +7504,42 @@ int sub_1006a7b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006ac90 size=0x11a
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10246700(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, int varProxy);	// SendPropVector
+void sub_10009539();
+void sub_10003012();
+
+extern SendTable g_106c71f0;
+extern SendTable *g_1053dfa8;
+
+// TARGET: sub_1006ac90
+int sub_1006ac90()
+{
+	static const char *pTableName = "DT_TEUserTracer";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_10246700("m_vecStart", 12, 12, -1, 2, 0.0f, -121121.121212f, (int)sub_10003012),
+		sub_10246700("m_vecEnd", 24, 12, -1, 2, 0.0f, -121121.121212f, (int)sub_10003012),
+		sub_10007bfd("m_iVelocity", 0x24, 4, 16, 1, 0, 0),
+		sub_10007bfd("m_bWhiz", 0x28, 1, 1, 1, 0, 0),
+		sub_10007bfd("m_iType", 0x2c, 4, 32, 1, 0, 0),
+	};
+	g_106c71f0.sub_1000e8fe(props + 1, 6, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006aeb0 size=0x6c
 #include "CTEUserTracer.h"
 
