@@ -40776,6 +40776,47 @@ struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10205ba0 size=0x98
+#include "CUnknown10205ba0.h"
+#include "CUnknown102043a0.h"
+#include "CUnknown10204bf0.h"
+#include "StatDefault.h"
+#include "ScopeTrace.h"
+
+struct StatOwner {
+    StatDefault *sub_1006cff0(int id);
+};
+extern StatOwner g_106c7c34;
+extern int (__cdecl *g_109f388c)(char *buf, int size, const char *fmt, ...);
+extern char g_1074eed0[];
+
+const char *CUnknown10205ba0::sub_10205ba0(CUnknown10204bf0 *pNames)
+{
+    if (m_type == -1)
+        return "<ERROR>";
+    switch (m_type) {
+    case 0:
+        if (pNames == 0) {
+            g_109f388c(g_1074eed0, 0x80, "%d", m_value);
+            return g_1074eed0;
+        }
+        return pNames->sub_10204bf0(m_value);
+    case 1:
+        return ((CUnknown102043a0 *)&m_value)->sub_102043a0();
+    case 2: {
+        const char **ppsz = (const char **)&g_106c7c34.sub_1006cff0(m_value)->a[2];
+        if (*ppsz == 0)
+            return g_106b8540;
+        return *ppsz;
+    }
+    case 3:
+        return "<Function>";
+    default:
+        return "<ERROR>";
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206300 size=0xb
 int * __fastcall sub_10206300(int *self, int, int value)
 {
