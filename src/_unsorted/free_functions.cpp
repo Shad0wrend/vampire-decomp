@@ -36817,6 +36817,24 @@ void sub_101d0570(int *pVector, int count, const char *pString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0ce0 size=0x146
+#include "CBroadcastRecipientFilter.h"
+
+struct TEVirtual
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void slot8(CRecipientFilter *filter, int a, int b, int c, int d, int e, int f, int g, int h, float i, float j, int k, float l, int m, int n, int o, int p, int q);
+};
+
+extern TEVirtual *g_10540528;
+
+void sub_101d0ce0(int p1, int p2, int p3, int p4, unsigned char p5, unsigned char p6, int p7, unsigned char p8, unsigned char p9, unsigned char p10, unsigned char p11, unsigned char p12, unsigned char p13, unsigned char p14, unsigned char p15, unsigned char p16)
+{
+	CBroadcastRecipientFilter filter;
+	g_10540528->slot8(&filter, 0, p1, p2, p3, p4, p5, p6, p7, (float)p8, (float)p9, p10, (float)p11, p12, p13, p14, p15, p16);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d1280 size=0xe0
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
