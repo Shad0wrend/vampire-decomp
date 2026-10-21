@@ -1,4 +1,4 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..605, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 142, 143, 158, 161, 162, 167, 173,
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..605, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 116, 118, 122, 142, 143, 158, 161, 162, 167, 173,
 // 192, 193, 194, 198, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 316, 346, 360, 371, 376, 381, 385, 404, 426, 427, 448, 457, 601 and 605 of an entity class that does not model its vtable.
 #pragma once
 
@@ -36,7 +36,9 @@ public:
 	EVS(106)
 	virtual void slot107(const float *pData);	// takes a pointer to a small block (a "ParseMapData"-like slot)
 	EVS(108) EVS(109)
-	EVS(110) EVS(111) EVS(112) EVS(113) EVS(114) EVS(115) EVS(116) EVS(117)
+	EVS(110) EVS(111) EVS(112) EVS(113) EVS(114) EVS(115)
+	virtual char slot116();	// "IsMarkedForDeletion"-like: a boolean answer in al (CBaseEntity::vfunc116 is declared int there)
+	EVS(117)
 	virtual void slot118(const char *pszInput, CEntityVSlots *pActivator, CEntityVSlots *pCaller, CVariantCopy value, int outputID);	// "AcceptInput"
 	EVS(119)
 	EVS(120) EVS(121)
