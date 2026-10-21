@@ -52415,6 +52415,88 @@ void CUnknown102becb0::sub_102becb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c0bb0 size=0xb8
+#include "CAI_BaseNPCTroika.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+
+struct CGlobalNpcHook	// the object at 0x1070b248
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void slot6(int index, int value);
+};
+
+struct CGlobalVarsView
+{
+	int m_n00;
+	int m_n04;
+	int m_n08;
+	int m_nCurtime;
+};
+
+extern CGlobalNpcHook *g_1070b248;
+extern CGlobalVarsView *g_1070b228;
+
+#define TV1(n) virtual void tv##n();
+#define TV10(p) TV1(p##0) TV1(p##1) TV1(p##2) TV1(p##3) TV1(p##4) TV1(p##5) TV1(p##6) TV1(p##7) TV1(p##8) TV1(p##9)
+#define TV100(p) TV10(p##0) TV10(p##1) TV10(p##2) TV10(p##3) TV10(p##4) TV10(p##5) TV10(p##6) TV10(p##7) TV10(p##8) TV10(p##9)
+
+struct CTroikaLookView
+{
+	TV100(a) TV100(b) TV10(c0) TV10(c1) TV10(c2) TV10(c3) TV10(c4) TV10(c5) TV10(c6) TV1(c70) TV1(c71) TV1(c72) TV1(c73) TV1(c74)
+	virtual void slot275();
+	TV100(d) TV100(e) TV100(f) TV10(g0) TV10(g1) TV10(g2) TV1(g30) TV1(g31) TV1(g32) TV1(g33) TV1(g34)
+	virtual int slot611();
+	TV1(h0)
+	virtual bool slot613();
+
+	char m_pad0004[0x174 - 4];
+	int m_nTime174;
+	char m_pad0178[0x2e0 - 0x178];
+	int m_pEdict;
+	char m_pad02e4[0x6f0 - 0x2e4];
+	int m_nSequence;
+	char m_pad06f4[4];
+	int m_n6f8;
+	char m_pad06fc[0xfec - 0x6fc];
+	int m_nState;
+	int m_nIdealState;
+	char m_pad0ff4[0x5ccc - 0xff4];
+	int m_n5ccc;
+	char m_pad5cd0[0x6080 - 0x5cd0];
+	char m_b6080;
+
+	void sub_10090950();
+	void sub_101063a0();
+	void sub_102c0ca0();
+};
+
+void CAI_BaseNPCTroika::sub_102c0bb0()
+{
+	CTroikaLookView *p = (CTroikaLookView *)this;
+	int nEdict = p->m_pEdict;
+	g_1070b248->slot6(g_1070b22c->vfunc35(nEdict), 5);
+	p->slot275();
+	p->sub_101063a0();
+	p->sub_102c0ca0();
+	if (p->slot613() && p->m_nState != 0xf1) {
+		int nSeq = p->slot611();
+		if (nSeq > -1) {
+			p->m_nIdealState = 0xf1;
+			p->m_n5ccc = nSeq;
+			if (!p->m_b6080) {
+				p->m_nSequence = nSeq;
+				p->m_n6f8 = 0;
+				p->m_nTime174 = g_1070b228->m_nCurtime;
+				p->m_nState = 0xf1;
+				p->sub_10090950();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c1170 size=0x85
 #include "CAI_BaseNPCTroika.h"
 

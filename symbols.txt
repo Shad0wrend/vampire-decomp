@@ -3192,6 +3192,7 @@
 0x1000ecb9 func   _env_player_surface_trigger env_player_surface_trigger
 0x1000ecbe func   ?sub_1022cf90@UtlMem@@QAEXXZ UtlMem::sub_1022cf90
 0x1000ecc8 func   _npc_VPedestrian npc_VPedestrian
+0x1000ece6 func   ?sub_102c0bb0@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102c0bb0
 0x1000eceb func   ?sub_101daa10@CAffectsUnit@@QAEDPAVIKVNodeView@@@Z CAffectsUnit::sub_101daa10
 0x1000ed0e func   ?vfunc5@CPhysPulley@@UAEPAV1@I@Z CPhysPulley::vfunc5
 0x1000ed13 func   ?vfunc431@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc431
