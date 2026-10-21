@@ -26,9 +26,11 @@ public:
 	unsigned int m_nStateFlags;	// 0x2810: bit 4 = a choice menu is pending, bit 5 = a goodbye is pending
 	char m_pad2814[0x2830 - 0x2814];
 	int m_nChoices;	// 0x2830: number of player choices
-	char m_pad2834[4];
+	int m_nResponses;	// 0x2834: number of player responses filled into the packet
 	int m_aChoices[1];	// 0x2838: the dialog entry key of each player choice
-	char m_pad283c[0x33ad - 0x283c];
+	char m_pad283c[0x30e9 - 0x283c];
+	char m_bNoReply;	// 0x30e9: set when a response could not be built
+	char m_pad30ea[0x33ad - 0x30ea];
 	char m_szWhisper[1];	// 0x33ad: the pending whisper text (empty when none)
 
 	int sub_100e5690(CDialogEntry_t *pEntry);	// "CDialog::get": scope trace, bsearch for the entry matching *pEntry in the table; copies the found entry over *pEntry and returns 1, else 0
@@ -53,4 +55,8 @@ public:
 	DialogLine *sub_100e19f0(int index);	// stub 0x1000154b: the line of that index in the table
 	const char *sub_100e1580(DialogLine *pLine);	// stub 0x1000c676: the line's text for the speaker's clan, null when it has none
 	const char *sub_100e1ad0(int index);	// "CDialog::get_display_text": scope trace, null without the line or a live NPC; else the line's clan text, or the plain text (+4) / the alternative (+8) picked by the NPC's flag
+	void sub_100e7da0(char *pPacket);	// "CDialog::fill_packet": scope trace, clears the first byte of the four 0x800 byte lines of the packet (from +0x804) and Init's the four dependency records at +0x2848 (0x228 bytes each), then builds the player responses; without any valid reply writes "I do not have a valid reply." into the first line
+	int sub_100e8100(char *pPacket);	// stub 0x1001521c: builds the packet's line from the table, non-zero on success
+	int sub_100e82d0(int *pChoices);	// stub 0x10014858: collects the player choices into the array, returns their count
+	int sub_100e8520(int nKey, int nSlot, char *pPacket);	// stub 0x10001fe1: builds response nSlot for the choice key into the packet; -1 failed (no reply), 0 skipped, 1 and above filled
 };
