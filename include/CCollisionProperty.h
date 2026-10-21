@@ -43,6 +43,7 @@ public:
 	CBaseEntity *m_pOuter;
 	int m_nSolidType;	// 0x40
 	unsigned short m_usSolidFlags;	// 0x44
+	unsigned short m_hPartition;	// 0x46: the spatial partition handle, 0xffff while not inserted
 
 	void sub_100dc480(int solid);	// "CCollisionProperty::SetSolid" (called through the stub at 0x1000428c): remembers whether the property was solid, runs sub_100dda20, turns SOLID_BBOX into 6 when the outer entity's handle at +0x25c resolves, stores the type, tells the outer entity's physics object (+0x36c, slot 25), runs sub_100ddc40 and, when the solidity changed, sub_100dc430
 	void sub_100dc770(const float *mins, const float *maxs);	// "CCollisionProperty::SetCollisionBounds" (called through the stub at 0x100123c3)
@@ -52,4 +53,6 @@ public:
 	void sub_100ddc40();	// stub 0x10001906, called by SetSolid after the type changed
 	void sub_100dc430();	// stub 0x1000c1e4, called by SetSolid when the solidity changed
 	int IsSolid() const { return m_nSolidType != 0 && !(m_usSolidFlags & 4); }	// the solid type is set and the not-solid flag (bit 2) is clear
+	void sub_100dc220(int a);	// partition update: with the partition object at 0x1070b24c (DevMsg "partition not initialized" otherwise) makes sure the handle at +0x46 exists (sub_100ddd90, stub 0x10014092; DevMsg "m_Partition failed to initialize" when it still does not) and calls slot 0 of the partition object with (handle, a)
+	void sub_100ddd90();	// creates the partition handle (stub 0x10014092)
 };
