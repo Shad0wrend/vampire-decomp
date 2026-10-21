@@ -3233,6 +3233,7 @@
 0x1000d535 func   ?vfunc359@CAI_BaseNPCTroika@@UAEHPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc359
 0x1000d553 func   ?vfunc13@CServerGameDLL@@UAEXPAXHHHHH@Z CServerGameDLL::vfunc13
 0x1000d558 func   ?sub_10075c70@S10075c70@@QAEXPBD@Z S10075c70::sub_10075c70
+0x1000d562 func   ?sub_103cf5f0@CNPC_VWerewolf@@QAE_NXZ CNPC_VWerewolf::sub_103cf5f0
 0x1000d567 func   ?vfunc5@CNPC_VNosferatu@@QAEPAV1@I@Z CNPC_VNosferatu::vfunc5
 0x1000d56c func   ?vfunc8@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc8
 0x1000d58f func   ?sub_10064df0@@YAXPAXHPAH1HHHHDHHH@Z sub_10064df0

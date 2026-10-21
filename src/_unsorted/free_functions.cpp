@@ -85866,6 +85866,35 @@ const char *CNPC_VWerewolf::sub_103ceb60(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cf5f0 size=0x124
+#include "ScopeTrace.h"
+#include "ConVar.h"
+
+struct CGlobalVarsWW
+{
+	char pad[0xc];
+	float curtime;
+};
+extern CGlobalVarsWW *g_1070b228;
+extern ConVar *g_1093f8ec;
+extern ConVar *g_1093d574;
+extern float g_104454c4;
+
+bool CNPC_VWerewolf::sub_103cf5f0()
+{
+	ScopeTrace trace("CNPC_VWerewolf::ShouldPursueEnemy", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if ((m_nFlags66e8 & 4) != 4) {
+		float flElapsed = g_104454c4 > (g_1070b228->curtime - *(float *)((char *)this + 0x66ec)) ? 0.0f : (g_1070b228->curtime - *(float *)((char *)this + 0x66ec));
+		if (flElapsed > (g_1093f8ec->vfunc1() ? g_104454c4 : g_1093f8ec->m_fValue)) {
+			float flMax = g_1093d574->vfunc1() ? g_104454c4 : g_1093d574->m_fValue;
+			if (flMax < *(float *)((char *)this + 0x6264))
+				return false;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d0bf0 size=0x152
 #include "CNPC_VWerewolf.h"
 #include "CGlobalEntityList.h"
