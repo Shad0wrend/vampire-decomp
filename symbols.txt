@@ -312,6 +312,7 @@
 0x100026e9 func   ?sub_1011d490@@YIXPAXHH@Z sub_1011d490
 0x10002702 func   ?sub_101b7120@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_101b7120
 0x10002716 func   ?sub_100df010@@YA_NPAUS100df010@@@Z sub_100df010
+0x10002734 func   ??0CUnknown101f0960@@QAE@XZ CUnknown101f0960::CUnknown101f0960
 0x10002739 func   ?sub_100791a0@@YIXPAUMem4@@HH@Z sub_100791a0
 0x10002743 func   ?sub_1024c000@UtlVec8@@QAEXHH@Z UtlVec8::sub_1024c000
 0x10002748 func   ?vfunc12@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc12
