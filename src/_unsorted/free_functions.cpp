@@ -67316,6 +67316,27 @@ int CUnknown10316320::sub_10316320(int a, int b, void *pExcept)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316560 size=0x6f
+#include "CUnknown103164c0.h"
+
+CUnknown103164c0 *CUnknown103164c0::sub_10316560()
+{
+	m_base.sub_102e06f0();
+	for (int i = 0; i < 16; i++)
+		m_hMembers[i] = 0xffffffff;
+	CBitString *p = &m_bits;
+	p->m_nBits = 0x20;
+	p->m_nDwords = 1;
+	p->m_pData = 0;
+	p->sub_100bf5b0(1);
+	if (p->m_pData)
+		memset(p->m_pData, 0, p->m_nDwords * 4);
+	m_n70 = -1;
+	sub_103165f0(CSquadName());
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103167f0 size=0x72
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 struct Ent {
