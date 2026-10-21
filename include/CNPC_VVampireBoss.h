@@ -43,6 +43,7 @@ public:
 	void vfunc444(int *pTask);	// slot 444 "CNPC_VVampireBoss::RunTask": scope trace (no entity name), task 0x14d goes to sub_10011851, every other task to the base implementation
 	void sub_10011928(int *pTask);	// CNPC_VHuman::vfunc444 (RunTask), called directly (stub 0x10011928)
 	void sub_10011851();	// the handler of task 0x14d (stub 0x10011851 for 0x103c63c0)
+	void sub_103c63c0();	// "CNPC_VVampireBoss::WaitForTransformation": scope trace (no entity name), once the time at +0x1560 plus a delay has passed sets stat 0xf of the first stat list to 0 and fires the output at +0x6664 of the partner boss behind the handle at +0x66b0, then sub_1000ac68(0)
 	void vfunc420();	// slot 420 "CNPC_VVampireBoss::NPCInit": scope trace (no entity name), the Troika version, clears the monster model name (+0x6680) and the body emitter names, sets the default NPC name (+0x6694) and the flag byte +0x6498, runs sub_10014c22 and sets +0x64b8 = 1.0f
 	void sub_1000c531();	// CAI_BaseNPCTroika::vfunc420 (stub 0x1000c531), called directly
 	void sub_10014c22();	// stub 0x10014c22 for 0x103c6a00
