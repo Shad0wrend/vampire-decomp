@@ -50640,6 +50640,40 @@ const char *CUnknown10205ba0::sub_10205ba0(CUnknown10204bf0 *pNames)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205e60 size=0xac
+#include "CUnknown10205e60.h"
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+
+char CUnknown10205e60::sub_10205e60(void *pCharacter)
+{
+	if (!m_stat.sub_10204250()) {
+		int nStat = m_stat.sub_10204900(pCharacter);
+		switch (m_nOperator) {
+		case 0:
+			if (nStat == m_value.sub_10205730(pCharacter))
+				return 1;
+			break;
+		case 1:
+			if (nStat != m_value.sub_10205730(pCharacter))
+				return 1;
+			break;
+		case 2:
+			if (nStat > m_value.sub_10205730(pCharacter))
+				return 1;
+			break;
+		case 3:
+			if (nStat < m_value.sub_10205730(pCharacter))
+				return 1;
+			break;
+		default:
+			Msg("Bad TraitDependencyValue Type\n");
+		}
+		return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206300 size=0xb
 int * __fastcall sub_10206300(int *self, int, int value)
 {
