@@ -83546,6 +83546,81 @@ CBaseEntity *CUnknown10411630::sub_10411630(float arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10411f90 size=0x147
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+struct ActivityInfo
+{
+	unsigned short m_nIndex;
+	char m_bPrivate;
+	char m_pad;
+};
+
+struct ActivityEntry
+{
+	int m_nId;
+	ActivityInfo m_info;
+};
+
+struct ActivityStringPool
+{
+	const char *sub_10249fc0(ActivityInfo info);
+	void sub_10249940();
+};
+
+struct ActivityList
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad04[0x28];
+	int m_f2c;
+};
+
+extern ActivityList *g_109d302c;
+extern int g_109d301c;
+extern ActivityEntry *g_109d3010;
+extern ActivityStringPool g_1094afe0;
+extern const char g_10547e40[];	// "\n"
+
+void sub_10411f90()
+{
+	if (!g_109d302c->vfunc1() && g_109d302c->m_f2c) {
+		int n = g_109d301c;
+		DevMsg("// *******************************************************\n");
+		DevMsg("// *******************************************************\n");
+		DevMsg("// ***    DUMPING ACTIVITY LIST\n");
+		DevMsg("// **\n");
+		DevMsg("// *\n");
+		DevMsg(g_10547e40);
+		DevMsg("///////////////////////\n");
+		DevMsg("// Begin Activity list:\n");
+		DevMsg(g_10547e40);
+		for (int i = 0; i < n; i++) {
+			ActivityEntry e = g_109d3010[i];
+			const char *pszVis = e.m_info.m_bPrivate ? "private" : "public";
+			DevMsg("%3d - %3d - %-40s - %s\n", i, e.m_nId, g_1094afe0.sub_10249fc0(e.m_info), pszVis);
+		}
+		DevMsg(g_10547e40);
+		DevMsg("// End String pool:\n");
+		DevMsg("///////////////////////\n");
+		DevMsg(g_10547e40);
+		DevMsg("///////////////////////\n");
+		DevMsg("// Begin String pool:\n");
+		DevMsg(g_10547e40);
+		g_1094afe0.sub_10249940();
+		DevMsg(g_10547e40);
+		DevMsg("// End String pool:\n");
+		DevMsg("///////////////////////\n");
+		DevMsg(g_10547e40);
+		DevMsg("// *\n");
+		DevMsg("// **\n");
+		DevMsg("// ***    DONE DUMPING ACTIVITY LIST\n");
+		DevMsg("// *******************************************************\n");
+		DevMsg("// *******************************************************\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x104121d0 size=0xb
 extern int g_109d3080;
 void sub_104121d0()
