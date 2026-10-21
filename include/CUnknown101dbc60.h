@@ -21,4 +21,5 @@ public:
 	char m_tail[4];	// 0x24: a CUnknown101dbc60Tail
 
 	void sub_101dbc60();	// Debug_Display: prints the range, source, affects, radii, the filter and the tail with Msg
+	void sub_101db960();	// the constructor body (stub 0x10005e16)
 };
