@@ -15,4 +15,5 @@ public:
 	int sub_10204d30(CVStatCost_t *pCost, int nValue, int nBase);	// cost computation worker (stub 0x10014ec0)
 	int sub_10204900(void *pCharacter);	// the character's current value of the referenced stat (stub 0x10013cc8)
 	const char *sub_102043a0();	// the stat's name text for the log (stub 0x10001af0)
+	char sub_10204250();	// whether the reference is empty / always satisfied (stub 0x100051f0)
 };
