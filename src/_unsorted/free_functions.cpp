@@ -86415,6 +86415,43 @@ float CNPC_VChangBros::sub_1036dc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036e160 size=0x13e
+#include "CNPC_VChangBros.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include <math.h>
+
+struct ChangJumpView_t {
+	char pad[0x5ddc];
+	CEntityVSlots *pEnemy;
+	char pad5de0[0x649c - 0x5de0];
+	Vector vecStart;
+	Vector vecTarget;
+	float flHeight;
+};
+
+extern float g_104ada3c;
+
+void CNPC_VChangBros::sub_1036e160(int bSetup)
+{
+	ScopeTrace trace("CNPC_VChangBros::SetupSuperJump", g_106b8540);
+	if (bSetup) {
+		ChangJumpView_t *pView = (ChangJumpView_t *)this;
+		CEntityVSlots *pSlots = (CEntityVSlots *)this;
+		pView->vecStart = *pSlots->slot217();
+		pView->vecTarget = *pView->pEnemy->slot217();
+		float flZ = pView->pEnemy->slot217()->z;
+		if (pSlots->slot217()->z > flZ)
+			flZ = pSlots->slot217()->z;
+		float flDiff = flZ - pSlots->slot217()->z;
+		float flAbs = (float)fabs(flDiff);
+		pView->flHeight = ((flAbs <= g_104ada3c) ? 150.0f : 50.0f) + flDiff;
+		sub_10269b50(0x7b);
+		sub_102c4e80();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036e2f0 size=0xc7
 #include "CNPC_VChangBros.h"
 #include "CUnknown103160c0.h"
