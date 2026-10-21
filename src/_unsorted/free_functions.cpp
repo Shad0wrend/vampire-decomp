@@ -47253,6 +47253,32 @@ extern "C" CBaseEntity *debug_entity()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020a0a0 size=0x9d
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+CEntityVSlots *sub_100a9ab0(const char *pszClassname, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
+int sub_101d1280(CBaseEntity *pEntity);
+int *sub_1042bff0(int *pOut, const char *psz);
+void sub_101cf390(CBaseEntity *pEntity, const float *pMins, const float *pMaxs);
+
+// TARGET: sub_1020a0a0
+CBaseEntity *sub_1020a0a0(const char *pszName, const float *pOrigin, const float *pAngles)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)sub_100a9ab0("debug_entity", pOrigin, pAngles, 0);
+	if (pEnt) {
+		int pooled;
+		pEnt->sub_100a0420((const char *)*sub_1042bff0(&pooled, pszName));
+		sub_101d1280(pEnt);
+		float maxs[3] = { 8.0f, 8.0f, 8.0f };
+		float mins[3] = { -8.0f, -8.0f, 0.0f };
+		sub_101cf390(pEnt, mins, maxs);
+		*(unsigned int *)((char *)pEnt + 0x224) |= 0xd;
+	}
+	return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020a240 size=0x14f
 #include "CUnknown1020a240.h"
 
