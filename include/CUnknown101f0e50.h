@@ -32,4 +32,5 @@ public:
 	CVTraitEffectGroup_t *sub_101f8480(int index);	// the entry of the pointer array (+0x8) for a valid index, else the function-local static default entry (stub 0x1000c5d1)
 	void sub_101f9af0(CTraitOwnerX *pOwner, const char *pszName);	// stub 0x1000181b: applies a named trait of the entry to the owner
 	void sub_101f8510(CTraitOwnerX *pOwner, int index);	// walks the effects of the entry for index: kind 5 effects are removed from the owner's applied list (+0x1460, sub_101f1c70), kind 6 effects are handed to sub_101f9af0 with their name ("" when none)
+	void sub_101f8e20(CTraitOwnerX *pOwner, int index);	// the same walk written with ascending loops over each effect's count (+0x14)
 };
