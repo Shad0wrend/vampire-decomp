@@ -957,6 +957,7 @@
 0x10005024 func   ?sub_10337980@@YIXPAVCBaseCombatCharacter@@HH@Z sub_10337980
 0x1000502e func   ?sub_10202140@@YAXXZ sub_10202140
 0x1000503d func   ?sub_1040c430@CUnknown1040cb60@@QAEPAVVector@@PAV2@PBV2@PAVCBaseEntity@@@Z CUnknown1040cb60::sub_1040c430
+0x1000504c func   ??0CBaseEntityList@@QAE@XZ CBaseEntityList::CBaseEntityList
 0x1000506f func   ?vfunc546@CNPC_VSabbatLeader@@QAEHH@Z CNPC_VSabbatLeader::vfunc546
 0x10005074 func   ?vfunc5@CSun@@QAEPAV1@I@Z CSun::vfunc5
 0x10005088 func   ?sub_103ca390@CHintData_WW@@QAEXH@Z CHintData_WW::sub_103ca390
