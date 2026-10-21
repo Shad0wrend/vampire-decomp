@@ -76111,6 +76111,37 @@ bool CUnknown10300e60::sub_10300e60(Vector vecMins, Vector vecMaxs, Vector vecPo
 }
 // END FUNCTION
 
+// FUNCTION: 0x103021b0 size=0x111
+#include "Vector.h"
+#include "Ray_t.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "CGameTrace.h"
+
+extern CUnknown1070b254 *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int bNoDepthTest, float flDuration);
+
+void sub_103021b0(const Vector &start, const Vector &end, unsigned int fMask, CTraceFilterNoCharacterCollide *pFilter, CGameTrace *pTrace)
+{
+	Ray_t ray;
+	VectorSubtract(end, start, *(Vector *)ray.m_Delta);
+	int bSwept = ((Vector *)ray.m_Delta)->LengthSqr() != 0.0f;
+	*(char *)&ray.m_IsSwept = bSwept;
+	VectorClear(*(Vector *)ray.m_StartOffset);
+	ray.m_IsRay = true;
+	VectorClear(*(Vector *)ray.m_Extents);
+	VectorCopy(start, *(Vector *)ray.m_Start);
+	ray.m_b32 = 0;
+	ray.m_n34 = 0;
+	ray.m_b33 = 0;
+	g_1070b254->vfunc4(&ray, fMask, pFilter, pTrace);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((float *)pTrace, (float *)pTrace + 3, 0xff, 0, 0, 1, -1.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10303740 size=0xcb
 #include "CAI_Pathfinder.h"
 

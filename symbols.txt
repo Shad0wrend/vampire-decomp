@@ -629,6 +629,7 @@
 0x100036d4 func   ?vfunc197@CBaseEntity@@QAEHHHHH@Z CBaseEntity::vfunc197
 0x100036d9 func   _trigger_look trigger_look
 0x100036f2 func   ?sub_1008cfc0@CBaseAnimating@@QAEXHPAX@Z CBaseAnimating::sub_1008cfc0
+0x100036fc func   ?sub_103021b0@@YAXABVVector@@0IPAVCTraceFilterNoCharacterCollide@@PAUCGameTrace@@@Z sub_103021b0
 0x1000370b func   ?vfunc5@CItemGRingSerialKiller1@@QAEPAV1@I@Z CItemGRingSerialKiller1::vfunc5
 0x1000371a func   ?sub_1030b2f0@CUnknown1030b2f0@@QAEXH@Z CUnknown1030b2f0::sub_1030b2f0
 0x10003724 func   ?vfunc5@CItemGRingSilver@@QAEPAV1@I@Z CItemGRingSilver::vfunc5
