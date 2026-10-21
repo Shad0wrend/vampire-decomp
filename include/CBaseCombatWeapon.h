@@ -100,6 +100,7 @@ public:
 	virtual void vfunc370(int *event, CBaseCombatWeapon *other);
 	virtual void vfunc371();
 	void sub_102507b0();
+	void sub_10250c50();	// the destructor body (called by vfunc5): vtable, releases the object at +0x8dc through the global at 0x10723940 (slot 23), sub_10250560(this), destroys the two lists at +0x8f8 / +0x8e0 (sub_100cd2d0) and the three 0x44 byte CVDmg_t records at +0x77c (sub_101fa680, last first), then the CBaseAnimating destructor body
 	CWeaponOwner *sub_102517b0();	// the weapon's owner (player) object
 	int *sub_102517e0();	// the weapon's current roll slot index (static fallback record when none matches)
 	CWeaponOwner *sub_10252290();	// resolves the owner handle at +0x88c (0 when stale)
