@@ -14,6 +14,12 @@ struct CWeaponActivityRecord	// 12 byte entry of a weapon's activity translation
 	char m_required;
 };
 
+struct CWeaponRollValue	// a roll result value; has a constructor, so functions return it through a hidden pointer
+{
+	int m_value;
+	CWeaponRollValue() : m_value(0) {}
+};
+
 #define CBCW_V(n) virtual void vfunc##n();
 #define CBCW_V10(p) CBCW_V(p##0) CBCW_V(p##1) CBCW_V(p##2) CBCW_V(p##3) CBCW_V(p##4) CBCW_V(p##5) CBCW_V(p##6) CBCW_V(p##7) CBCW_V(p##8) CBCW_V(p##9)
 
@@ -89,7 +95,7 @@ public:
 	int sub_10252240();	// same as sub_102521f0 (stub 0x100011f4)
 	void sub_1024edc0();	// prints the weapon's activity translation table (base activity, weapon activity, required) with Msg
 	bool sub_10253b40(int a);	// true when the ammo type at +0x744 + a * 4 is not negative
-	int *sub_10256350(int *pOut);	// builds the roll result record (owner, this, the 16 byte record of the current roll slot at +0x7a0, 6) and stores its printed value in *pOut
+	CWeaponRollValue sub_10256350();	// builds the roll result record (owner, this, the 16 byte record of the current roll slot at +0x7a0, 6) and returns its printed value
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
