@@ -1,5 +1,6 @@
-// CEventQueue: the global queue of delayed entity outputs (the "EventQueue" block of a save game); the count of the
-// queued events is at +0x50. Real layout only partly known.
+// CEventQueue: the global queue of delayed entity outputs (the "EventQueue" block of a save game); the head of the
+// queued events is at +0x38 (the queue starts with an embedded event record whose next pointer it is), the count of
+// the queued events is at +0x50. Real layout only partly known.
 #pragma once
 
 #include "CVariantCopy.h"
@@ -21,7 +22,7 @@ struct CEQEvent	// a "PEvent" record as the queue restores it (0x50 bytes); the 
 	int m_hVariant;	// 0x2c
 	int m_n30;	// 0x30
 	int m_n34;	// 0x34
-	char m_pad0038[4];
+	CEQEvent *m_pNext;	// 0x38
 	int m_n3c;	// 0x3c
 	char m_block40[0x50 - 0x40];	// 0x40: a CVDmgBlock16_t, reset after the other fields are set
 
@@ -46,7 +47,9 @@ public:
 class CEventQueue
 {
 public:
-	char m_pad0000[0x50];
+	char m_pad0000[0x38];
+	CEQEvent *m_pHead;	// 0x38
+	char m_pad003c[0x50 - 0x3c];
 	int m_nEvents;	// 0x50
 
 	void sub_100cdda0();	// empties the queue (stub 0x1000fc81)
@@ -56,4 +59,5 @@ public:
 	void sub_100cddf0(const char *pszTarget, const char *pszTargetInput, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, int nExtra);	// "CEventQueue::AddEvent": builds a 0x50 byte event (fire time = curtime + delay, the two names or null when empty, the entity handles of activator / caller or -1, the variant, the output id and one more dword) and inserts it (takes 12 stack dwords)
 	void sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, int nExtra);	// "CEventQueue::AddEvent" for an entity target (stub 0x1000cad6; takes 12 stack dwords)
 	void sub_100ce040(CBaseEntity *pTarget, const char *pszAction, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID);	// "CEventQueue::AddEvent" without a value: an empty variant
+	void sub_100cf080();	// runs and removes every queued event whose kind (+0x34) is 2: hands its block (+0x40), the entity of its target handle (+0x18) and its value (+0x20, only for kind 4 at +0x30) to sub_10230910, then unlinks and frees it (stub 0x1000fd3a is the global queue's wrapper)
 };
