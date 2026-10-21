@@ -313,6 +313,25 @@ void CBaseAnimating::vfunc257(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095fe0 size=0xdb
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+void sub_100c32e0(char *pHdr, void *pPos, void *pAng, int pPoseParams, int mask);
+void sub_100c2ce0(char *pHdr, void *pPos, void *pAng, int pControllers, int mask);
+
+void CBaseAnimating::vfunc255(void *pPos, void *pAng, int mask)
+{
+	ScopeTrace trace("CBaseAnimating::GetSkeleton", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char *pHdr = (char *)sub_100952d0(-1);
+	if (pHdr) {
+		sub_1008e770(pPos, pAng, *(int *)((char *)this + 0x6f0), *(int *)((char *)this + 0x6f8), (float *)((char *)this + 0x690), mask);
+		sub_100c32e0(pHdr, pPos, pAng, (int)((char *)this + 0x690), mask);
+		sub_100c2ce0(pHdr, pPos, pAng, (int)((char *)this + 0x6fc), mask);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096980 size=0x163
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"

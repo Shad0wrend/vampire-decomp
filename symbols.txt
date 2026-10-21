@@ -2740,6 +2740,7 @@
 0x1000c568 func   ?sub_103eee60@CUnknown103eee60@@QAEXXZ CUnknown103eee60::sub_103eee60
 0x1000c572 func   ?vfunc104@CAmbientGeneric@@QAEXXZ CAmbientGeneric::vfunc104
 0x1000c581 func   ?sub_1042c310@@YAXH@Z sub_1042c310
+0x1000c58b func   ?vfunc255@CBaseAnimating@@QAEXPAX0H@Z CBaseAnimating::vfunc255
 0x1000c59a func   ?sub_1004ae60@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004ae60
 0x1000c5b3 func   ?sub_1021e320@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e320
 0x1000c5b8 func   ?sub_10107550@Mem400@@QAEXH@Z Mem400::sub_10107550
