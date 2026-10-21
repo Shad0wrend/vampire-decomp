@@ -490,6 +490,52 @@ char CNPC_VWerewolf::vfunc69(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d9e00 size=0x140
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct SDifficulty {
+	virtual void s0();
+	virtual char s1();
+	char pad[0x24];
+	float m28;
+};
+extern SDifficulty *g_1093d52c;
+
+struct SEntNameView
+{
+	char m_pad0000[0x26c];
+	const char *m_name26c;
+	char m_pad0270[0x6320 - 0x270];
+	float m_f6320;
+};
+
+struct CNPC_VWerewolfUnit : CAI_BaseNPCTroika
+{
+	void sub_103d9e00(CEntityVSlots *pEnt, Vector *pGoal, float *pOut, float *pExtra);	// "CNPC_VWerewolf::TranslateEnemyChasePosition"
+	int sub_1027d990();	// the ideal state (stub 0x100023a1)
+	void sub_102c3b50(CEntityVSlots *pEnt, Vector vecGoal, Vector *pGoal, float *pExtra);	// stub 0x100041d3
+};
+
+void CNPC_VWerewolfUnit::sub_103d9e00(CEntityVSlots *pEnt, Vector *pGoal, float *pOut, float *pExtra)
+{
+	SEntNameView *pView = (SEntNameView *)this;
+	ScopeTrace trace("CNPC_VWerewolf::TranslateEnemyChasePosition", this ? (pView->m_name26c ? pView->m_name26c : g_106b8540) : g_105387dc);
+	if (sub_1027d990() == 2) {
+		Vector *pOrigin = pEnt->slot217();
+		Vector vecTemp;
+		Vector *pCenter = pEnt->slot193(&vecTemp);
+		*pGoal += *pCenter - *pOrigin;
+	} else {
+		*pExtra = pView->m_f6320;
+		*pExtra = (g_1093d52c->s1() ? 0.0f : g_1093d52c->m28) + *pExtra;
+		sub_102c3b50(pEnt, *pGoal, pGoal, pExtra);
+		*pOut = *pExtra;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103da230 size=0x11b
 #include "CNPC_VWerewolf.h"
 #include "CWerewolfSlots.h"
