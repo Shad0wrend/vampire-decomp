@@ -101,3 +101,31 @@ void CGameMovement::vfunc1(void *pMove, void *pPlayer)
     g_1070b228->m_f10 = saved;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101212e0 size=0x98
+#include "CGameMovement.h"
+
+struct CGlobalVarsStub
+{
+	char pad[0x10];
+	float m_flFrameTime;
+};
+extern CGlobalVarsStub *g_1070b228;
+
+#define MOVE_VELOCITY (*(Vector *)((char *)m_pPlayer + 0x40))
+
+// TARGET: CGameMovement::vfunc10
+void CGameMovement::vfunc10(Vector &wishdir, float wishspeed, float accel)
+{
+	if (!vfunc9())
+		return;
+	float addspeed = wishspeed - MOVE_VELOCITY.Dot(wishdir);
+	if (addspeed <= 0)
+		return;
+	float accelspeed = g_1070b228->m_flFrameTime * m_fieldA0 * wishspeed * accel;
+	if (accelspeed > addspeed)
+		accelspeed = addspeed;
+	for (int i = 0; i < 3; i++)
+		MOVE_VELOCITY[i] += accelspeed * wishdir[i];
+}
+// END FUNCTION
