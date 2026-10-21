@@ -8145,6 +8145,111 @@ CUnknown10075aa0 *CUnknown10075aa0::sub_10075230(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075350 size=0x136
+#include "CUnknown10075aa0.h"
+#include "UtlMem.h"
+
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+
+void __fastcall sub_10078b10(int *p);
+void __fastcall sub_10078b70(int *p);
+void __fastcall sub_10078bd0(int *p);
+void __fastcall sub_10078c30(int *p);
+
+class CUnknown100799b0
+{
+public:
+	void sub_100799b0();
+};
+
+struct VecBase : CUnknown10075aa0Vec
+{
+	void PurgeMemory()
+	{
+		m_pElements = m_pMemory;
+		if (m_growSize != -1) {
+			if (m_pMemory) {
+				Plat_Free((void *)m_pMemory);
+				m_pMemory = 0;
+			}
+			m_allocationCount = 0;
+		}
+	}
+};
+
+struct Vec19c : VecBase
+{
+	~Vec19c()
+	{
+		sub_10078b10((int *)this);
+		((UtlMem *)this)->sub_10078b30();
+		PurgeMemory();
+	}
+};
+
+struct Vec2bc : VecBase
+{
+	~Vec2bc()
+	{
+		sub_10078b70((int *)this);
+		((UtlMem *)this)->sub_10078b90();
+		PurgeMemory();
+	}
+};
+
+struct Vec2d0 : VecBase
+{
+	~Vec2d0()
+	{
+		sub_10078bd0((int *)this);
+		((UtlMem *)this)->sub_10078bf0();
+		PurgeMemory();
+	}
+};
+
+struct Vec2e4 : VecBase
+{
+	~Vec2e4()
+	{
+		sub_10078c30((int *)this);
+		((UtlMem *)this)->sub_10078c50();
+		PurgeMemory();
+	}
+};
+
+struct Vec30c : VecBase
+{
+	~Vec30c()
+	{
+		m_size = 0;
+		((UtlMem *)this)->sub_10078f90();
+		PurgeMemory();
+	}
+};
+
+struct Members
+{
+	char pad0[0x19c];
+	Vec19c v19c;
+	char pad1[0x2bc - 0x19c - sizeof(Vec19c)];
+	Vec2bc v2bc;
+	Vec2d0 v2d0;
+	Vec2e4 v2e4[2];
+	Vec30c v30c;
+};
+
+void CUnknown10075aa0::sub_10075350()
+{
+	sub_10077650();
+	CUnknown100799b0 *pObject = (CUnknown100799b0 *)m_i324;
+	if (pObject) {
+		pObject->sub_100799b0();
+		operator delete(pObject);
+	}
+	((Members *)this)->~Members();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075aa0 size=0x97
 #include "CUnknown10075aa0.h"
 

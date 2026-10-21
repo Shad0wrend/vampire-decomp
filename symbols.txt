@@ -4049,6 +4049,7 @@
 0x10012003 func   _math_colorblend math_colorblend
 0x10012008 func   _flame_cluster flame_cluster
 0x10012017 func   _info_node_link info_node_link
+0x10012026 func   ?sub_10075350@CUnknown10075aa0@@QAEXXZ CUnknown10075aa0::sub_10075350
 0x1001202b func   ?sub_100a6490@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a6490
 0x10012058 func   ?vfunc5@CAuspexAura@@QAEPAV1@I@Z CAuspexAura::vfunc5
 0x1001205d func   ?sub_10381c80@@YIEPAD@Z sub_10381c80
