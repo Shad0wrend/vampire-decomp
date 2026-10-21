@@ -1388,6 +1388,7 @@
 0x10006834 func   ?sub_10312930@CUnknown10312580@@QAEXH@Z CUnknown10312580::sub_10312930
 0x1000683e func   _item_g_ghost_pendant item_g_ghost_pendant
 0x10006870 func   ?sub_1036fc00@@YADXZ sub_1036fc00
+0x1000688e func   ?sub_102d8e50@CUnknown102d9040@@QAEXPBMHMM@Z CUnknown102d9040::sub_102d8e50
 0x10006893 func   ?sub_10062c30@@YAHXZ sub_10062c30
 0x10006898 func   ?vfunc113@CMoverKeyFrame@@UAEXXZ CMoverKeyFrame::vfunc113
 0x1000689d func   ?sub_10209a20@CItemContainer@@QAEPAXXZ CItemContainer::sub_10209a20

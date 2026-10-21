@@ -67335,6 +67335,29 @@ SVec3 *CUnknown102d8a90::sub_102d8a90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d8e50 size=0x93
+#include "CUnknown102d9040.h"
+#include "Vector.h"
+#include <string.h>
+
+// TARGET: CUnknown102d9040::sub_102d8e50
+void CUnknown102d9040::sub_102d8e50(const float *vec, int arg4, float duration, float amount)
+{
+	int i;
+	for (i = 0; i < m_nSize; i++) {
+		CUnknown102d9040Entry *pEntry = &((CUnknown102d9040Entry *)m_pMemory)[i];
+		if (*(Vector *)pEntry->m_vec == *(const Vector *)vec) {
+			int nMove = m_nSize - i - 1;
+			if (nMove > 0)
+				memmove(&((CUnknown102d9040Entry *)m_pMemory)[i], &((CUnknown102d9040Entry *)m_pMemory)[i + 1], nMove * sizeof(CUnknown102d9040Entry));
+			m_nSize--;
+			break;
+		}
+	}
+	sub_102d9040(1, 0, vec, arg4, duration, amount);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d9040 size=0xcf
 #include "CUnknown102d9040.h"
 
