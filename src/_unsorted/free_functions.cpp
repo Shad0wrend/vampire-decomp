@@ -39198,6 +39198,50 @@ extern "C" GP *trigger_once()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6b00 size=0x84
+#include "CBaseEntity.h"
+
+extern void *vt_1047d08c[];
+extern void *vt_1047e3a4[];
+extern char g_1059f844[];
+void *sub_100aa720(int size);
+
+struct COutputCtor {
+	char m_data[0x18];
+	void sub_100cd2a0();
+};
+
+struct CTriggerLookView : CBaseEntity {
+	void sub_101c0e20();
+	char m_padView[0x564 - 0x3e0];
+	int m_h564;
+	COutputCtor m_out568;
+	COutputCtor m_out580;
+	COutputCtor m_out598;
+	int m_h5b0;
+};
+
+extern "C" CBaseEntity *trigger_look()
+{
+	CTriggerLookView *p = (CTriggerLookView *)sub_100aa720(0x5c4);
+	CBaseEntity *e;
+	if (p) {
+		p->sub_101c0e20();
+		p->m_h564 = -1;
+		p->m_out568.sub_100cd2a0();
+		p->m_out580.sub_100cd2a0();
+		*(void ***)p = vt_1047d08c;
+		p->m_out598.sub_100cd2a0();
+		p->m_h5b0 = -1;
+		*(void ***)p = vt_1047e3a4;
+		e = p;
+	} else
+		e = 0;
+	e->vfunc106(g_1059f844);
+	return e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c71f0 size=0x7a
 void *sub_1000db89(int);
 struct GP;
