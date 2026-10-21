@@ -60,4 +60,5 @@ public:
 	void sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, int nExtra);	// "CEventQueue::AddEvent" for an entity target (stub 0x1000cad6; takes 12 stack dwords)
 	void sub_100ce040(CBaseEntity *pTarget, const char *pszAction, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID);	// "CEventQueue::AddEvent" without a value: an empty variant
 	void sub_100cf080();	// runs and removes every queued event whose kind (+0x34) is 2: hands its block (+0x40), the entity of its target handle (+0x18) and its value (+0x20, only for kind 4 at +0x30) to sub_10230910, then unlinks and frees it (stub 0x1000fd3a is the global queue's wrapper)
+	void sub_100ce0d0(int a, float fireDelay, int nOutputID);	// builds a kind 1 event (the first argument at +0x1c, an empty variant, fire time = curtime + delay, the output id at +0x14) and inserts it
 };
