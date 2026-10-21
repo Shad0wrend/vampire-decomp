@@ -10,6 +10,26 @@ struct CAI_StandoffBehaviorOuter
 	float m_unk5de4;
 };
 
+// CAI_BehaviorBase (RTTI .?AVCAI_BehaviorBase@@): the behaviours' common base; only the type is needed (source type of
+// the dynamic_cast to a concrete behaviour).
+class CAI_BehaviorBase
+{
+public:
+	virtual void vfunc0();
+};
+
+// The 28-byte standoff parameter block (copied by value into the behaviour at +0x20).
+struct CStandoffParams
+{
+	int m_unk0;
+	int m_unk4;
+	float m_flMin;	// 8
+	float m_flMax;	// 0xc
+	int m_unk10;
+	int m_unk14;
+	int m_unk18;
+};
+
 class CAI_StandoffBehavior
 {
 public:
@@ -40,4 +60,6 @@ public:
 
 	CAI_StandoffBehavior *sub_102c7100();	// constructor body (base constructors inlined)
 	int sub_102c6f70(int a);	// tail call: slot 2 of the object at +0x14 (a base behaviour's default, stub 0x1000fa83)
+	void sub_102c7360(char a);	// stores the byte at +0x19 when it changes, then runs sub_102c6ff0 (stub 0x1000d3be)
+	void sub_102c73b0(const CStandoffParams *p);	// copies the block to +0x20 and sets +0x3c = -1, +0x40 = p->m_flMin, +0x44 = p->m_flMax (stub 0x10010b54)
 };
