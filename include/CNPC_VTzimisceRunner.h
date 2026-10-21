@@ -3,6 +3,8 @@
 // virtual below is not its real slot (599).
 #pragma once
 
+class CAI_Motor;
+
 class CNPC_VTzimisceRunner
 {
 public:
@@ -13,4 +15,15 @@ public:
 	int sub_10295750(int act);	// CAI_BaseNPCTroika::vfunc310, called directly
 	void vfunc104();	// "CNPC_VTzimisceRunner::Precache": the base precache, then every footstep / breath / exertion sound of the runner and the claw weapon
 	void sub_100097b4();	// CAI_BaseNPCTroika::vfunc104 (Precache), called directly
+	void vfunc444(int *pTask);	// slot 444 "RunTask" (plain member): tasks 0x122..0x124 run AutoMovement, keep the motor looking at the position of the slot 167 object (facing target, weight -1.0f) until the time at +0x5db4 has passed, then clear +0x63ec and call sub_10273e80(0); other tasks go to CAI_BaseNPCTroika::vfunc444
+	bool sub_10280a50();	// CAI_BaseNPC::AutoMovement (stub 0x1000cf6d), called directly
+	void sub_102aacf0(int *pTask);	// CAI_BaseNPCTroika::vfunc444 (stub 0x10015c2b), called directly
+	void sub_10273e80(int a);	// called through the stub at 0x1000ac68
+
+	char m_pad0004[0x5d44 - 4];
+	CAI_Motor *m_pMotor;	// +0x5d44
+	char m_pad5d48[0x5db4 - 0x5d48];
+	float m_flTime5db4;	// +0x5db4
+	char m_pad5db8[0x63ec - 0x5db8];
+	int m_n63ec;	// +0x63ec
 };
