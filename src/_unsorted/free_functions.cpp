@@ -51774,6 +51774,38 @@ void sub_1023f060(unsigned int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102404e0 size=0x140
+#include <math.h>
+extern float g_104454c0;
+extern float g_104454c4;
+struct Vec3 {
+    float x, y, z;
+    float operator[](int i) const { return ((float *)this)[i]; }
+};
+bool sub_102404e0(const Vec3 &mins, const Vec3 &maxs, const Vec3 &start, const Vec3 &delta, float tol)
+{
+    float tmin = -3.402823466e+38f;
+    float tmax = 3.402823466e+38f;
+    for (int i = 0; i < 3; i++) {
+        if (fabs(delta[i]) < 1e-8) {
+            if (start[i] < mins[i] - tol) return false;
+            if (start[i] > maxs[i] + tol) return false;
+        } else {
+            float inv = g_104454c0 / delta[i];
+            float t1 = (mins[i] - tol - start[i]) * inv;
+            float t2 = (maxs[i] + tol - start[i]) * inv;
+            if (t1 > t2) { float t = t1; t1 = t2; t2 = t; }
+            if (t1 > tmin) tmin = t1;
+            if (t2 < tmax) tmax = t2;
+            if (tmin > tmax) return false;
+            if (tmax < g_104454c4) return false;
+            if (tmin > g_104454c0) return false;
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245770 size=0x10
 struct CFlagHolder245770 {
     char pad[4];

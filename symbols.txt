@@ -3943,6 +3943,7 @@
 0x100117e3 func   ?sub_1007a2c0@CUnknown1007a2c0@@QAEPAXH@Z CUnknown1007a2c0::sub_1007a2c0
 0x100117ed func   ?sub_1035dd00@CNPC_VAndreiBlood@@QAEXPAUinputdata_t@@@Z CNPC_VAndreiBlood::sub_1035dd00
 0x100117f7 func   ?vfunc5@CItemGWarrLedger1@@QAEPAV1@I@Z CItemGWarrLedger1::vfunc5
+0x1001180b func   ?sub_102404e0@@YA_NABUVec3@@000M@Z sub_102404e0
 0x10011824 func   ?sub_101e8f20@CUnknown101e8f20@@QAEHPAVCBaseCombatCharacter@@@Z CUnknown101e8f20::sub_101e8f20
 0x10011829 func   _item_g_jumbles_flyer item_g_jumbles_flyer
 0x10011833 func   ?vfunc14@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHHHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc14
