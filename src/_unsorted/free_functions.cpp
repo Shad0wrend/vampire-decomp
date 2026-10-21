@@ -41189,6 +41189,29 @@ void CVDmg_t::sub_101fb3e0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fb680 size=0xd8
+#include <stdio.h>
+#include "ScopeTrace.h"
+#include "CVDmg_t.h"
+
+extern char g_1074e2ec[];
+
+char *CVDmg_t::sub_101fb680()
+{
+	ScopeTrace trace("CVDmg_t::ToShortStr", g_106b8540);
+	if (m_pad0000 != -1) {
+		if (!m_block14.sub_10204250()) {
+			sprintf(g_1074e2ec, " %s %d", m_block14.sub_102043a0(), m_field04);
+			return g_1074e2ec;
+		}
+		sprintf(g_1074e2ec, " %d", m_field04);
+		return g_1074e2ec;
+	}
+	g_1074e2ec[0] = 0;
+	return g_1074e2ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fb7a0 size=0x6d
 #include "CVStatCost_t.h"
 
