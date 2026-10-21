@@ -3678,6 +3678,7 @@
 0x1000f45c func   ?vfunc5@CCameraAnimated@@QAEPAV1@E@Z CCameraAnimated::vfunc5
 0x1000f466 func   ?sub_1030ca70@S1030ca70@@QAEHPBD@Z S1030ca70::sub_1030ca70
 0x1000f47f func   ?sub_100dc300@Rec64@@QAEXH@Z Rec64::sub_100dc300
+0x1000f493 func   ?sub_10139550@@YAXABVQAngle@@PAVVector@@@Z sub_10139550
 0x1000f4b6 func   ?sub_103c7010@CNPC_VVampireBoss@@QAEPAVCBaseEntity@@HPBD@Z CNPC_VVampireBoss::sub_103c7010
 0x1000f4c5 func   ?sub_101e4a90@CUnknown101e4a90@@QAEXXZ CUnknown101e4a90::sub_101e4a90
 0x1000f4ca func   ?vfunc62@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc62
