@@ -1832,6 +1832,7 @@
 0x10008210 func   ?sub_103a6ef0@CNPC_VSabbatLeader@@QAEHXZ CNPC_VSabbatLeader::sub_103a6ef0
 0x10008215 func   ?vfunc144@CNPC_Bullseye@@QAEXH@Z CNPC_Bullseye::vfunc144
 0x1000821a func   ?sub_100f97d0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100f97d0
+0x1000821f func   ?sub_1005f9a0@@YAHXZ sub_1005f9a0
 0x10008224 func   ?sub_10374e50@CNPC_VDog@@QAEXXZ CNPC_VDog::sub_10374e50
 0x1000823d func   ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ CUnknown102d9150::sub_102d9150
 0x1000824c func   ?vfunc5@CItemGWarrens4Passkey@@QAEPAV1@I@Z CItemGWarrens4Passkey::vfunc5

@@ -7048,6 +7048,45 @@ int sub_1005f380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f9a0 size=0x147
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropVector
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropFloat
+void sub_10009539();
+void sub_10003012();
+void sub_10006aeb();
+
+extern SendTable g_106c17e8;
+extern SendTable *g_1053dfa8;
+
+// TARGET: sub_1005f9a0
+int sub_1005f9a0()
+{
+	static const char *pTableName = "DT_TEBubbles";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_1000c14e("m_vecMins", 0xc, 0xc, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+		sub_1000c14e("m_vecMaxs", 0x18, 0xc, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+		sub_10007bfd("m_nModelIndex", 0x28, 4, 0xb, 0, 0, 0),
+		sub_10006cc1("m_fHeight", 0x24, 4, 0x11, 0, -16384.0f, 16384.0f, (void *)sub_10006aeb),
+		sub_10007bfd("m_nCount", 0x2c, 4, 8, 1, 0, 0),
+		sub_10006cc1("m_fSpeed", 0x30, 4, 0x11, 0, -16384.0f, 16384.0f, (void *)sub_10006aeb),
+	};
+	g_106c17e8.sub_1000e8fe(props + 1, 7, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005fc00 size=0x76
 #include "CTEBubbles.h"
 
