@@ -9,4 +9,5 @@ public:
 	CFire *sub_10109990();	// as in CKeepUpright (transplant)
 	void vfunc180();
 	void sub_1010b3c0();
+	void sub_1010b5c0(float flHeat, int bInstant);	// adds heat to the fire (stub 0x10008a03)
 };
