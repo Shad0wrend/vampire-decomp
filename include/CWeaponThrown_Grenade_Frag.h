@@ -12,8 +12,14 @@ class CWeaponThrown_Grenade_Frag
 {
 public:
 	virtual void vfunc266();
-	char pad_04[0x918 - 4];
+	char pad_04[0x17c - 4];
+	float m_flNextThink17c;
+	char pad_180[0x918 - 0x180];
 	bool m_bFlag918;
+	char pad_919[3];
+	float m_flTimer91c;
+	char pad_920[0x930 - 0x920];
+	char m_bFinished930;
 	CWeaponThrown_Grenade_Frag *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10013a57();	// as in CPhysForce (transplant)
 	bool vfunc325();	// slot 325 (declared as a plain member, the slots are not modelled here): with a live owner that still has ammo of the roll's ammo type, clears the field at +0x920, tells the owner (slot 449 with 0xe, 0), plays slot 307(0xc2), stamps the time at +0x730 and starts slot 333(10, 1, 0, 0, 0, 0); false without
@@ -23,4 +29,8 @@ public:
 	void vfunc265();	// slot 265 (plain member): the grenade's think state machine (state at +0x920, time at +0x924, finished byte at +0x930): state 3 after 0.3 seconds goes to 5 and plays a sound on the owner's character (0xef9, or 0xefb when +0x86c is set); state 1 goes to 3 and schedules the next think 0.3 seconds after the time
 	void *sub_102521f0();	// CBaseCombatWeapon member (stub 0x10014fab): the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale)
 	int *sub_102517e0();	// CBaseCombatWeapon member (stub 0x10003d91): the weapon's current roll slot record
+	bool sub_103ee660();	// the fuse step: once the time at +0x91c has passed, sets the finished byte, runs sub_103ed200, hands the owner's object (+0xa8) to sub_103ed830, sets the think function and the next think 0.2 seconds ahead; false before that
+	void sub_103ed200();	// stub 0x1000d5f3
+	void sub_103ed830(void *pObject);	// stub 0x1000c734
+	void sub_100ac4e0(void *pFunc, int a, int b);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
 };
