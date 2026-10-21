@@ -248,6 +248,38 @@ void CNPC_VTzimisce::vfunc627()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ba640 size=0xf9
+#include "CNPC_VTzimisce.h"
+#include "CUnknown1027d990.h"
+#include "CEntityVSlots.h"
+
+struct ZimisceView_t {
+	char pad0[0x654];
+	int n654;
+	char pad658[0x6320 - 0x658];
+	int n6320;
+};
+
+void CNPC_VTzimisce::sub_103ba640(void *pEnt, Vector *pVec, int *pFlag, int *pOut)
+{
+	Vector vecResult;
+	if (((CUnknown1027d990 *)this)->sub_1027d990() == 2) {
+		CEntityVSlots *pSlots = (CEntityVSlots *)pEnt;
+		Vector *pA = pSlots->slot217();
+		Vector *pB = pSlots->slot193(&vecResult);
+		*pVec += *pB - *pA;
+		return;
+	}
+	ZimisceView_t *pView = (ZimisceView_t *)this;
+	*pOut = pView->n6320;
+	sub_102c3b50(pEnt, *pVec, pVec, pOut);
+	*pFlag = *pOut;
+	Vector *pOrigin = ((CEntityVSlots *)this)->slot220();
+	sub_102c36d0(*pOrigin, pEnt, pView->n654, pVec, &vecResult);
+	*pVec = vecResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bdd10 size=0xe8
 #include "CNPC_VTzimisce.h"
 
