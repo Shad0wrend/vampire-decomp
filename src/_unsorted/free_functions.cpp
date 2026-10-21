@@ -30109,6 +30109,26 @@ void CBloodSplat::sub_101719d0(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10172710 size=0x6c
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+void __cdecl sub_10139610(const Vector *angles, Vector *forward, Vector *right, Vector *up);
+int __cdecl sub_10172410(CBasePlayer *pPlayer);
+
+void __cdecl sub_10172710(CBasePlayer *pPlayer)
+{
+	if (!sub_10172410(pPlayer)) {
+		Vector forward;
+		sub_10139610(&pPlayer->m_vec206c, &forward, 0, 0);
+		Vector origin;
+		origin = pPlayer->vfunc192();
+		g_106eb5d8.sub_100f81f0(&origin, &forward, 0.95f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101727a0 size=0x64
 #include "Vector.h"
 #include "QAngle.h"
