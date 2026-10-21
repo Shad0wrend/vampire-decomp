@@ -6,11 +6,15 @@ class CBaseEntity;
 class CNPC_VManBat
 {
 public:
-	char m_pad0000[0x6670];
+	char m_pad0000[0x628c];
+	unsigned int m_h628c;	// entity handle of the bat's target
+	char m_pad6290[0x6670 - 0x6290];
 	unsigned int m_n6670;
 	int m_n6674;
 	char m_pad6678[0x6684 - 0x6678];
 	float m_f6684;
+	char m_pad6688[0x66b0 - 0x6688];
+	char m_b66b0;	// set once the minions have been told about the target
 
 	bool sub_1038f290();
 	CNPC_VManBat *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
@@ -23,4 +27,5 @@ public:
 	void vfunc104();	// "Precache": the Human precache, the man-bat models / sounds / emitters (tables of names at 0x10640ce0, 0x10640d10, 0x10640d1c, 0x10640d28), the sheriff teleport emitter and the claw weapon
 	void sub_100013f7();	// CNPC_VHuman::vfunc104 (jump stub), called directly
 	void sub_1038c170(int nMode);	// switches between the grounded (1: flag 0x400 set, state 2) and the flying (other: flag cleared, state 0) setup, then slot 93(4, 0)
+	void sub_1038fc80();	// tells every living \"ManBat_Minion\" NPC without a target about the bat's target (once; sets the flag at +0x66b0)
 };
