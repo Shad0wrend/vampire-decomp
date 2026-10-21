@@ -74,7 +74,10 @@ public:
 	CBP_V1(se90) CBP_V1(se91) CBP_V1(se92) CBP_V1(se93)
 	virtual void vfunc316(CGlobalEntityList_Ent *pEnt, int a, int b);	// slot 316: with an entity: unless the entity of the handle at +0x1c58 is live, answers slot 158 and differs from pEnt, takes over pEnt's handle into +0x1c5c / +0x1c60 while the activity at +0xff0 is 1 or 5 and sub_1015fd50() is -1
 	CBP_V1(se95) CBP_V1(se96) CBP_V1(se97) CBP_V1(se98) CBP_V1(se99)
-	CBP_V10(sf0) CBP_V10(sf1) CBP_V10(sf2) CBP_V10(sf3) CBP_V10(sf4) CBP_V10(sf5) CBP_V10(sf6) CBP_V10(sf7) CBP_V1(sg0)
+	CBP_V1(sf00) CBP_V1(sf01) CBP_V1(sf02) CBP_V1(sf03)
+	virtual bool vfunc326(int a, CBaseEntity *pOther);	// slot 326: when the active weapon's type flags (slot 360) have bit 13 or 14, false unless pOther is set and its character template (default stat item) has the byte at +0xa0; else CBaseCombatCharacter::vfunc326(a, pOther)
+	CBP_V1(sf05) CBP_V1(sf06) CBP_V1(sf07) CBP_V1(sf08) CBP_V1(sf09)
+	CBP_V10(sf1) CBP_V10(sf2) CBP_V10(sf3) CBP_V10(sf4) CBP_V10(sf5) CBP_V10(sf6) CBP_V10(sf7) CBP_V1(sg0)
 	virtual void vfunc403();
 	CBP_V1(sh0) CBP_V1(sh1) CBP_V1(sh2)
 	virtual void vfunc407();
