@@ -42275,6 +42275,32 @@ void Range::sub_101ddb40(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ddc30 size=0x74
+#include "CUnknown101ddc30.h"
+
+extern char g_106b8540[];
+void sub_10203950(CUnknown101ddc30Kv **ppOut, CUnknown101ddc30Kv *pKV, const char *pszName);
+int sub_101db9c0(const char *psz);
+int sub_101dba70(const char *psz);
+
+bool CUnknown101ddc30::sub_101ddc30(CUnknown101ddc30Kv *pKV)
+{
+	if (pKV) {
+		CUnknown101ddc30Kv *pSub;
+		sub_10203950(&pSub, pKV, "DisciplineFX");
+		if (pSub)
+			m_pKv = pSub;
+		const char *psz = pKV->vfunc13("Source", g_106b8540);
+		if (*psz)
+			m_nSource = sub_101db9c0(psz);
+		psz = pKV->vfunc13("Affects", g_106b8540);
+		if (*psz)
+			m_nAffects = sub_101dba70(psz);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dddb0 size=0xc7
 #include "CUnknown101dddb0.h"
 extern "C" __declspec(dllimport) int Q_snprintf(char *dest, int maxLen, const char *fmt, ...);
