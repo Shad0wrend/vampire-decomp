@@ -20256,6 +20256,34 @@ void CUnknown100cdba0::sub_100cdba0(CUnknown100cdba0Data data, int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce210 size=0x79
+#include "CEventQueue.h"
+
+struct EventGlobals {
+	char pad[0xc];
+	float curtime;
+};
+extern EventGlobals *g_1070b228;
+extern float g_106e70e4;
+extern float g_106e70ec;
+
+void CEventQueue::sub_100ce210(CEQEvent *pEvent)
+{
+	if (g_1070b228->curtime < g_106e70e4) {
+		pEvent->m_flFireTime = pEvent->m_flFireTime + ((g_106e70e4 - g_1070b228->curtime) + 0.005);
+	}
+	CEQEvent *pCurrent = (CEQEvent *)this;
+	while (pCurrent->m_pNext && !(pCurrent->m_pNext->m_flFireTime > pEvent->m_flFireTime))
+		pCurrent = pCurrent->m_pNext;
+	if (pEvent->m_pRefCount)
+		(*pEvent->m_pRefCount)++;
+	pEvent->m_pNext = pCurrent->m_pNext;
+	pCurrent->m_pNext = pEvent;
+	g_106e70ec = pEvent->m_flFireTime;
+	g_106e70e4 = g_1070b228->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce3c0 size=0x64
 struct Node_t { char pad[0x38]; Node_t *next; };
 struct CList_t {
