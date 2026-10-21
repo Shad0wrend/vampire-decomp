@@ -36,6 +36,59 @@ CGameRules *CMultiplayRules::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141150 size=0x13a
+#include "CMultiplayRules.h"
+#include "ConVar.h"
+
+struct GlobalVarsX { int pad0[3]; float curtime; int pad1; int maxClients; };
+extern GlobalVarsX *g_1070b228;
+extern char g_1070ba2c;
+extern ConVar *g_1070ae7c;
+extern ConVar *g_1070aa8c;
+
+struct PlayerView10141150 {
+	char pad[0x22bc];
+	int m_nFrags;
+};
+PlayerView10141150 *sub_1000ac8b(int index);
+
+struct RulesView10141150 {
+	char pad[8];
+	float m_f08;
+	char m_b0c;
+};
+
+void CMultiplayRules::vfunc16()
+{
+	sub_10128f50();
+	RulesView10141150 *r = (RulesView10141150 *)this;
+	if (g_1070ba2c) {
+		if (r->m_f08 < g_1070b228->curtime && (r->m_b0c || r->m_f08 + 120.0f < g_1070b228->curtime))
+			vfunc79();
+	} else {
+		float flTimeLimit = (g_1070ae7c->vfunc1() ? 0.0f : g_1070ae7c->m_fValue) * 60.0f;
+		float flFragLimit;
+		if (g_1070aa8c->vfunc1())
+			flFragLimit = 0.0f;
+		else
+			flFragLimit = g_1070aa8c->m_fValue;
+		if (flTimeLimit != 0.0f && g_1070b228->curtime >= flTimeLimit) {
+			vfunc80();
+			return;
+		}
+		if (flFragLimit != 0.0f) {
+			for (int i = 1; i <= g_1070b228->maxClients; i++) {
+				PlayerView10141150 *p = sub_1000ac8b(i);
+				if (p && (float)p->m_nFrags >= flFragLimit) {
+					vfunc80();
+					return;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141320 size=0x11
 extern char *g_1070b228;
 

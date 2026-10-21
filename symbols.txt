@@ -4711,6 +4711,7 @@
 0x100126d9 func   ?sub_10115980@@YAXPAUSHandleOwner@@@Z sub_10115980
 0x100126de func   ?sub_10097110@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10097110
 0x100126e3 func   ?sub_1002ab80@TFilterX@@QAEPAU1@E@Z TFilterX::sub_1002ab80
+0x1001271a func   ?vfunc16@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc16
 0x10012729 func   ?sub_1022d410@@YIXPAUMem256@@HH@Z sub_1022d410
 0x10012751 func   ?sub_100d51b0@@YAXXZ sub_100d51b0
 0x10012756 func   ?sub_10137ed0@@YAXABUmatrix3x4_t@@AAVQAngle@@@Z sub_10137ed0
