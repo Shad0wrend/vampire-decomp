@@ -32,7 +32,10 @@ public:
 	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
 	virtual CBaseCombatWeapon *vfunc5(unsigned int flags); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	// slots 10..279
-	CBCW_V10(1) CBCW_V10(2) CBCW_V10(3) CBCW_V10(4) CBCW_V10(5) CBCW_V10(6) CBCW_V10(7) CBCW_V10(8)
+	CBCW_V10(1) CBCW_V10(2) CBCW_V10(3) CBCW_V10(4) CBCW_V10(5) CBCW_V10(6) CBCW_V10(7)
+	CBCW_V(80) CBCW_V(81) CBCW_V(82) CBCW_V(83) CBCW_V(84) CBCW_V(85)
+	virtual bool vfunc86(int a, void *pEdict, int c, int d, int e);	// "ShouldTransmit"-like (CBaseEntity::vfunc86 for a weapon): true while the force-transmit time at +0x90 is in the future or the viewer is the owner's player / the player using the owner; false for a transmit decision on the owner's team states 0 / 1 (+0x8b0); else the entity version
+	CBCW_V(87) CBCW_V(88) CBCW_V(89)
 	CBCW_V(90) CBCW_V(91) CBCW_V(92) CBCW_V(93) CBCW_V(94) CBCW_V(95) CBCW_V(96)
 	virtual CBaseEntity *vfunc97();	// "GetOwnerEntity"
 	CBCW_V(98) CBCW_V(99)
@@ -116,6 +119,7 @@ public:
 	CWeaponRollValue sub_10256350();	// builds the roll result record (owner, this, the 16 byte record of the current roll slot at +0x7a0, 6) and returns its printed value
 	CWeaponRollValue sub_102563f0(CUnknown101d8a70 *pRecordOut, int n);	// like sub_10256350 for the roll n: also copies the roll result record to pRecordOut when that is set
 	void sub_10255c30(void *pKeys);	// looks the first space separated word of the key's string up in the global name table (0x1073a330) and stores the id of the matching record (-1 when none) at +0x24d0 of the owner object
+	bool sub_100ab020(int a, void *pEdict, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly by vfunc86
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
