@@ -20,6 +20,7 @@ public:
 	unsigned int m_hTeleportBats;	// +0x66d0: entity handle of the teleport bats
 	char pad66d4[0x66e6 - 0x66d4];
 	char m_bAttacking;	// +0x66e6
+	char m_bTransformed;	// +0x66e7: set once the transform has been started
 
 	int sub_10005e20(int a);
 	int vfunc440(int a);
@@ -49,4 +50,7 @@ public:
 	void sub_103b03b0();	// "CNPC_VSheriffMan::SpawnTeleportBats": scope trace (no entity name), finds or creates the "sheriff_teleport_bats" entity (handle at +0x66d0), places it at this entity's origin, spawns it and, with a target at +0x5ddc, hands it the target's origin plus two offset vectors
 	void sub_103b1680(int *pA, int *pB);	// "CNPC_VSheriffMan::CategorizeHeight...": scope trace (no entity name), clears both outputs; when the entity behind the handle at +0x628c resolves, hands the third dword of slot 217 of it (with pA) and of this (with pB) to sub_103b1790
 	void sub_103b1790(int height);	// height classification worker (stub 0x1000b929)
+	void vfunc432(int arg);	// "CNPC_VSheriffMan::RunAI": scope trace (no entity name), starts the transform unless it was already started, then the base implementation
+	void sub_103b1510();	// starts the transform (stub 0x10012431)
+	void sub_10385a10(int arg);	// CNPC_VHuman::vfunc432 (RunAI), called directly through the stub at 0x1000698d
 };
