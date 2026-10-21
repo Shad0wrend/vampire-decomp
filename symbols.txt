@@ -2498,6 +2498,7 @@
 0x1000c7de func   ?sub_10265970@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_10265970
 0x1000c7ed func   ?sub_10345de0@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10345de0
 0x1000c801 func   ?vfunc2@CTEFootprintDecal@@UAEPAV1@I@Z CTEFootprintDecal::vfunc2
+0x1000c80b func   ?sub_101d2a20@@YA?AVVector@@HHMM@Z sub_101d2a20
 0x1000c81f func   _item_k_tatoo_parlor_key item_k_tatoo_parlor_key
 0x1000c824 func   ?sub_101a8cf0@@YIXPAVCBaseEntity@@HH@Z sub_101a8cf0
 0x1000c829 func   ?sub_1003cc80@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1003cc80

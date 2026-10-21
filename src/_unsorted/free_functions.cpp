@@ -32593,6 +32593,23 @@ long sub_101d2850(const char *code, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2a20 size=0x70
+#include "Vector.h"
+int sub_10002b2b(int a, int b);
+int sub_101d2960(int a);
+extern void (__cdecl *g_109f3844)(int seed);
+extern float (__cdecl *g_109f385c)(float lo, float hi);
+Vector sub_101d2a20(int a, int b, float lo, float hi)
+{
+	Vector v;
+	g_109f3844(sub_101d2960(sub_10002b2b(a, b)));
+	v.x = g_109f385c(lo, hi);
+	v.y = g_109f385c(lo, hi);
+	v.z = g_109f385c(lo, hi);
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2fc0 size=0x88
 #define Q10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
