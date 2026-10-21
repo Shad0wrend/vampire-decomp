@@ -10,6 +10,7 @@ class CBaseDoor : public CBaseEntity
 public:
 	void vfunc71();
 	void vfunc104();	// slot 104: calls slot 71, then sub_100eecf0
+	virtual void vfunc113();	// "CBaseDoor::Activate": base Activate, updates the area portals for a door at rest (state 0 opens them, 1 closes them), then looks up the two entities named at +0x634 / +0x63c and stores their handles at +0x630 (-1 when none) / +0x638 (unchanged when none)
 	void vfunc246(int a, int* b, int c);
 	char sub_100eecf0();	// true (and the flag byte at +0x624 set) when one of the two event lists at +0x5dc / +0x60c has an entry named "ChangeNow"
 	void sub_100ee810();	// scope-less: for each of the two entity handles at +0x628 and +0x62c that resolve, calls sub_10224170 on the entity with a zeroed inputdata_t (value -1 handle), and for the second also again when it still resolves
@@ -30,9 +31,15 @@ public:
 
 	char m_pad03e0[0x4a4 - 0x3e0];
 	CDoorEventList m_items4a4[2];	// +0x4a4, +0x4bc
-	char m_pad04d4[0x564 - 0x4d4];
+	char m_pad04d4[0x4f8 - 0x4d4];
+	int m_nState4f8;	// +0x4f8: door state (0 closed at rest, 1 open at rest, 2 / 3 moving)
+	char m_pad04fc[0x564 - 0x4fc];
 	CDoorEventList m_items564[8];	// +0x564 .. +0x60c (the lists at +0x5dc / +0x60c are two of them)
 	char m_pad0624[0x628 - 0x624];
 	unsigned int m_hDoorknob0;	// +0x628
 	unsigned int m_hDoorknob1;	// +0x62c
+	unsigned int m_hLinked630;	// +0x630
+	const char *m_pszLinked634;	// +0x634
+	unsigned int m_hLinked638;	// +0x638
+	const char *m_pszLinked63c;	// +0x63c
 };
