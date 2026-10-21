@@ -28,7 +28,9 @@ public:
 	int m_nIdealState;	// +0x1b38
 	char pad1b3c[0x5ddc - 0x1b3c];
 	void *m_pHint5ddc;	// +0x5ddc: the hint node the NPC is working on
-	char pad5de0[0x628c - 0x5de0];
+	char pad5de0[0x6078 - 0x5de0];
+	char m_b6078;	// +0x6078
+	char pad6079[0x628c - 0x6079];
 	unsigned int m_hJumpTarget;	// +0x628c, entity handle
 	char pad6290[0x64b8 - 0x6290];
 	float m_flRestoredTime;	// +0x64b8: reset to a constant by Restore
@@ -40,6 +42,9 @@ public:
 	float m_flStationaryTime;	// +0x66d8
 
 	bool sub_10362670();	// "CNPC_VAsianVampire::StationaryFor...": curtime - m_flStationaryTime >= constant
+	int vfunc438();	// slot 438 "CNPC_VAsianVampire::SelectSchedule"
+	int sub_10015ad2();	// CNPC_VHuman::vfunc438, called directly
+	bool sub_1000fe3e();	// stub of 0x10362730
 	void vfunc619(int arg);
 	void sub_1000c27a(int arg);
 	void vfunc103();	// "CNPC_VAsianVampire::Spawn": scope trace around the base spawn
