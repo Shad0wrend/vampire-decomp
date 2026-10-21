@@ -48,6 +48,49 @@ void CNPC_VMingXiao::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10392c40 size=0xf9
+#include "CNPC_VMingXiao.h"
+#include "CUnknown1027d990.h"
+
+#define SLA(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLB(p) SLA(p##0) SLA(p##1) SLA(p##2) SLA(p##3) SLA(p##4) SLA(p##5) SLA(p##6) SLA(p##7) SLA(p##8) SLA(p##9)
+struct EntVT10392c40 {
+	SLB(a) SLA(b0) SLA(b1) SLA(b2) SLA(b3) SLA(b4) SLA(b5) SLA(b6) SLA(b7) SLA(b8)
+	virtual void s190(); virtual void s191(); virtual void s192();
+	virtual Vector *a193(Vector *pOut);
+	SLA(c0) SLA(c1)
+	virtual void s214(); virtual void s215(); virtual void s216();
+	virtual float *a217();
+	virtual void s218(); virtual void s219();
+	virtual float *a220();
+};
+struct NpcView10392c40 {
+	char pad0[0x654];
+	int m_n654;
+	char pad1[0x6320 - 0x658];
+	int m_n6320;
+};
+
+void CNPC_VMingXiao::vfunc563(CBaseEntity *pEnt, Vector *pPos, int *pOut1, int *pOut2)
+{
+	Vector out;
+	if (((CUnknown1027d990 *)this)->sub_1027d990() == 2) {
+		EntVT10392c40 *e = (EntVT10392c40 *)pEnt;
+		const Vector *org = (const Vector *)e->a217();
+		*pPos += *e->a193(&out) - *org;
+		return;
+	}
+	NpcView10392c40 *v = (NpcView10392c40 *)this;
+	*pOut2 = v->m_n6320;
+	sub_102c3b50(pEnt, *pPos, pPos, pOut2);
+	*pOut1 = *pOut2;
+	const Vector *origin = (const Vector *)((EntVT10392c40 *)this)->a220();
+	sub_102c36d0(*origin, pEnt, v->m_n654, pPos, &out);
+	*pPos = out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10394090 size=0x6c
 #include "CNPC_VMingXiao.h"
 struct CUnknown102e0a60 { void sub_102e0a60(int); };
