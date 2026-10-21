@@ -3636,6 +3636,7 @@
 0x1001169e func   ?vfunc546@CNPC_VToreador@@QAEHH@Z CNPC_VToreador::vfunc546
 0x100116a8 func   ?sub_1011d6a0@S1011d6a0@@QAEXH@Z S1011d6a0::sub_1011d6a0
 0x100116c6 func   ?sub_100466d0@S100466d0@@QAEPAU1@HHH@Z S100466d0::sub_100466d0
+0x100116ee func   ?vfunc1@CPhysicsAnimlinkEntityDeleteProxy@@QAEXPAVCBaseEntity@@@Z CPhysicsAnimlinkEntityDeleteProxy::vfunc1
 0x100116f8 func   ?sub_10033aa0@CBaseEntity@@QAEXPAM00@Z CBaseEntity::sub_10033aa0
 0x10011702 func   ?sub_103e4640@@YAHXZ sub_103e4640
 0x1001170c func   ?sub_101976b0@@YAPAUPyObj@@PAU1@0@Z sub_101976b0

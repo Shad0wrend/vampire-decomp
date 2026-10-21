@@ -13,3 +13,33 @@ CPhysicsAnimlinkEntityDeleteProxy *CPhysicsAnimlinkEntityDeleteProxy::vfunc2(uns
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1014ec70 size=0x93
+#include "CPhysicsAnimlinkEntityDeleteProxy.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+void __fastcall sub_1000460b(void *pAnimlink);	// stub 0x1000460b for 0x1014f380
+void sub_10014614(void *pEntity);	// stub 0x10014614 for 0x101cd940
+
+inline CGlobalEntityList_Ent *LookupEntity(unsigned int h)
+{
+	CGlobalEntityList_Slot *pSlot;
+	return (h != 0xffffffff && (pSlot = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13)) ? pSlot->m_pEntity : 0;
+}
+
+// TARGET: CPhysicsAnimlinkEntityDeleteProxy::vfunc1
+void CPhysicsAnimlinkEntityDeleteProxy::vfunc1(CBaseEntity *pEntity)
+{
+	if ((CGlobalEntityList_Ent *)pEntity == LookupEntity(m_hEntityA))
+	{
+		sub_1000460b(m_pAnimlink);
+		sub_10014614(m_pAnimlink);
+	}
+	if ((CGlobalEntityList_Ent *)pEntity == LookupEntity(m_hEntityB))
+	{
+		sub_1000460b(m_pAnimlink);
+		sub_10014614(m_pAnimlink);
+	}
+}
+// END FUNCTION
