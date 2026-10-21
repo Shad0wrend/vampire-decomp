@@ -545,6 +545,7 @@
 0x10003292 func   ?vfunc220@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc220
 0x100032b5 func   ?vfunc5@CItemGPishaBook@@QAEPAV1@I@Z CItemGPishaBook::vfunc5
 0x100032dd func   ?sub_10071840@CUnk10071840@@QAEXXZ CUnk10071840::sub_10071840
+0x100032e2 func   ?sub_10105cb0@@YIXPAVCBaseEntity@@HPAMPBM2MH@Z sub_10105cb0
 0x100032f6 func   ?vfunc5@CEntityFlame@@QAEPAV1@I@Z CEntityFlame::vfunc5
 0x10003305 func   ?sub_1030fe50@CUnknown1030fe50@@QAEXXZ CUnknown1030fe50::sub_1030fe50
 0x10003319 func   ?sub_100beba0@bf_read@@QAEMXZ bf_read::sub_100beba0

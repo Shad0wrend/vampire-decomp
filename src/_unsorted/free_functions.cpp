@@ -27093,6 +27093,29 @@ void __fastcall sub_10105b90(CBaseCombatCharacter *pThis, int, float *pOut, cons
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105cb0 size=0x115
+#include "ScopeTrace.h"
+void __fastcall sub_10105cb0(CBaseEntity *self, int unused, float *out, const float *cur, const float *target, float rate, int n)
+{
+    ScopeTrace trace("CBaseCombatCharacter::AddFlexweights", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+    if (rate < 0.0f)
+        rate = 0.0f;
+    else if (rate > 1.0f)
+        rate = 1.0f;
+    for (int i = 0; i < n; i++) {
+        if (cur[i] < target[i]) {
+            out[i] = rate * target[i] + cur[i];
+            if (out[i] > target[i])
+                out[i] = target[i];
+        } else if (cur[i] > target[i]) {
+            out[i] = cur[i] - rate * target[i];
+            if (out[i] < target[i])
+                out[i] = target[i];
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105e20 size=0xcd
 extern int *g_109f3680;
 extern const char **g_109f3620;
