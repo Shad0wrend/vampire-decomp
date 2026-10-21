@@ -55,6 +55,30 @@ void CNPC_VAndreiBlood::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035cc20 size=0xb0
+#include "CNPC_VAndreiBlood.h"
+#include "ScopeTrace.h"
+
+struct CGlobalVarsTime { char m_pad[0xc]; float curtime; };
+extern CGlobalVarsTime *g_1070b228;
+
+void CNPC_VAndreiBlood::vfunc103()
+{
+	ScopeTrace trace("CNPC_VAndreiBlood::Spawn", g_106b8540);
+	sub_1026dc00(0x200000);
+	sub_103c4ef0();
+	m_n66b8 = 0;
+	m_n66bc = 0;
+	m_b66cc = 0;
+	m_b66cd = 0;
+	m_b66ce = 0;
+	m_f66d0 = g_1070b228->curtime;
+	m_b66d4 = 1;
+	m_n66d8 = 0;
+	sub_1035e950();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035cec0 size=0x81
 #include "CNPC_VAndreiBlood.h"
 struct ScopeEnt { const char *name; const char *file; const char *file2; };

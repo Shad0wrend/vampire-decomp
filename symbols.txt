@@ -5033,6 +5033,7 @@
 0x1001514f func   ?vfunc5@CAI_TestHull@@QAEPAV1@I@Z CAI_TestHull::vfunc5
 0x1001515e func   ?sub_10091310@CBaseAnimating@@QAEMHH@Z CBaseAnimating::sub_10091310
 0x1001516d func   ?sub_10184f90@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_10184f90
+0x10015172 func   ?vfunc103@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc103
 0x10015195 func   ?sub_10335950@CBaseCombatCharacter@@QAEPAXPBD@Z CBaseCombatCharacter::sub_10335950
 0x1001519f func   ?vfunc249@CBaseAnimating@@QAEMXZ CBaseAnimating::vfunc249
 0x100151b8 func   ?sub_1032d890@CBaseCombatCharacter@@QAEPAXPBDH@Z CBaseCombatCharacter::sub_1032d890
