@@ -15,4 +15,6 @@ public:
 	void sub_10349d50(int num);	// same shape as sub_1003c220
 	void sub_10349ec0(int num);	// same shape as sub_1003c220
 	void sub_10349f80(int a, int b);	// stub 0x1000bb63: called with (0, num) right after the grow
+
+	char *Element(int i) { return m_pMemory + i * 16; }	// operator[] for the 16 byte elements
 };
