@@ -89,3 +89,43 @@ char CNPC_VHuman::vfunc600(int unused)
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10385d70 size=0x9d
+#include "CNPC_VHuman.h"
+
+struct CHumanTimeScale
+{
+	virtual void slot0();
+	virtual char slot1();
+	char m_pad0004[0x24];
+	float m_f28;
+};
+struct CHumanGlobals
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern CHumanTimeScale *g_10924a1c;
+extern CHumanGlobals *g_1070b228;
+extern float g_104454c4;
+char __fastcall sub_1025db50(int *p);
+
+// TARGET: CNPC_VHuman::vfunc602
+char CNPC_VHuman::vfunc602()
+{
+	if ((m_flags5b84 & 2) == 2 || vfunc293())
+		return 0;
+	if (((CEntityVSlots *)this)->slot308())
+	{
+		if (g_1070b228->curtime >= m_f6074)
+			return 1;
+	}
+	else
+	{
+		double x = g_10924a1c->slot1() ? g_104454c4 : g_10924a1c->m_f28;
+		if ((float)(x + x) <= m_f6268 && !sub_1025db50(*(int **)((char *)this + 0x65e8)))
+			return 1;
+	}
+	return (*(CAI_NamedThing **)((char *)this + 0x65e8))->sub_1025de90(this);
+}
+// END FUNCTION

@@ -2594,6 +2594,7 @@
 0x1000add0 func   ??1CUnknown10248a50@@QAE@XZ CUnknown10248a50::~CUnknown10248a50
 0x1000add5 func   ?vfunc32@CFuncMonitor@@QAE_NPAX@Z CFuncMonitor::vfunc32
 0x1000adda func   _logic_proximity logic_proximity
+0x1000adee func   ?vfunc602@CNPC_VHuman@@UAEDXZ CNPC_VHuman::vfunc602
 0x1000adf3 func   ?vfunc375@CNPC_VWolfMorph@@UAEHH@Z CNPC_VWolfMorph::vfunc375
 0x1000adfd func   ?vfunc5@CPhysFixed@@UAEPAV1@I@Z CPhysFixed::vfunc5
 0x1000ae02 func   ?sub_101eaa40@@YAXH@Z sub_101eaa40
