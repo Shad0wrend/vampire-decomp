@@ -427,6 +427,44 @@ float *CBasePlayer::vfunc367(float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177210 size=0x73
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+extern char g_106b8540[];
+void sub_101cecf0(void *pPlayerObject, int message, void *pData);
+
+struct CWeaponNameObject {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual const char *GetName();
+};
+struct CWeaponNameSource {
+    virtual void v0(); virtual void v1(); virtual void v2();
+    virtual CWeaponNameObject *GetObject();
+};
+struct CWeaponEdictView {
+    char m_pad[0x40];
+    CWeaponNameSource *m_pSource;
+};
+
+bool CBasePlayer::vfunc382(CBaseCombatWeapon *pWeapon)
+{
+    if (pWeapon->vfunc360() & 0x18000) {
+        CWeaponEdictView *pEdict = *(CWeaponEdictView **)((char *)pWeapon + 0x2e0);
+        const char *pszName;
+        if (!pEdict->m_pSource)
+            pszName = g_106b8540;
+        else
+            pszName = pEdict->m_pSource->GetObject()->GetName();
+        if (((CBaseCombatCharacter *)this)->sub_1032d890(pszName, 0)) {
+            void *pPlayerObject = *(void **)((char *)this + 0xa8);
+            sub_101cecf0(pPlayerObject, 0x4e, (char *)pWeapon->sub_102517b0() + 0x88);
+            return false;
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017be50 size=0x8f
 int sub_1002dfe0(int a, int b);
 
