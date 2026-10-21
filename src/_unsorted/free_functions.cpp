@@ -11832,6 +11832,33 @@ void sub_1009a0c0(TEnt *ent, int unused, int *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009a370 size=0x7d
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+void sub_10099ca0();
+
+extern SendTable g_106cfe98;
+
+// TARGET: sub_1009a370
+int sub_1009a370()
+{
+	static const char *pTableName = "DT_AnimTimeMustBeFirst";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10007bfd("m_flAnimTime", 0x174, 4, 8, 1, 0, (void *)sub_10099ca0),
+	};
+	g_106cfe98.sub_1000e8fe(props + 1, 1, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ab70 size=0xa1
 #include "CBaseEntity.h"
 #include "CUnknown1070b22c.h"
