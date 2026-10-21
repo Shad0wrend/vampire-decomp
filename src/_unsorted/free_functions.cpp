@@ -48483,6 +48483,75 @@ bool CHistoryList::sub_101e9b60(const char *pszFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9c50 size=0x167
+#include <stdio.h>
+#include "CUnknown101e98c0.h"
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CFileSys {
+    V10(a) V10(b)
+    virtual void c0(); virtual void c1();
+    virtual const char *FindFirst(const char *pattern, int *pHandle);
+    virtual const char *FindNext(int handle);
+    virtual void c4();
+    virtual void FindClose(int handle);
+};
+extern CFileSys *g_1070b238;
+struct CKVBase {
+    virtual void v0();
+    virtual void Release();
+};
+struct CKVFile : CDataNode, virtual CKVBase {
+};
+CKVFile *sub_1000a119(const char *pszPath, CFileSys *pFileSys);
+int *sub_1000c162(int *pOut, CDataNode *pNode);
+int *sub_1000282e(int *pOut, CDataNode *pNode, const char *pszName);
+
+struct HOwner : CUnknown101e98c0
+{
+    int m_n0c;
+    int m_n10;
+    char sub_101e9a80(const char *pszPath);
+    void sub_101e9c50();
+};
+
+// TARGET: HOwner::sub_101e9c50
+void HOwner::sub_101e9c50()
+{
+    int handle;
+    int buf;
+    char path[0x80];
+    char path2[0x104];
+    sub_101e98c0();
+    sprintf(path, "%s%s.txt", "vdata\\system\\", "history");
+    CKVFile *pFile = sub_1000a119(path, g_1070b238);
+    if (pFile) {
+        CDataNode *pGeneral = pFile->v2("General");
+        if (pGeneral) {
+            m_n10 = *sub_1000c162(&buf, pGeneral);
+            m_n0c = *sub_1000282e(&buf, pGeneral, "InternalName");
+        }
+        ((CKVBase *)pFile)->Release();
+        if (g_1070b238->FindFirst("vdata\\system\\Histories*.txt", &handle)) {
+            int n = 1;
+            while (g_1070b238->FindNext(handle))
+                n++;
+            g_1070b238->FindClose(handle);
+            if (n > 0) {
+                for (int i = 0; i < n; i++) {
+                    sprintf(path2, "%sHistories%03d.txt", "vdata\\system\\", i);
+                    if (!sub_101e9a80(path2))
+                        Msg("Unable to open History List data file for: %s\n", path2);
+                }
+            }
+        }
+    } else {
+        Msg("Unable to load TraitEffect data for: %s\n", path);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9e20 size=0xc0
 #include "CHistoryList.h"
 #include "FileSystemViews.h"
