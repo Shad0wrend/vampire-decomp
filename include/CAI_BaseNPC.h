@@ -11,6 +11,7 @@ class CAI_Motor;
 class CAI_Senses;
 class CRestore;
 class CUnknown102e0150;
+class CAI_BehaviorBase;
 
 #define CAI_NPC_V(n) virtual void vfunc##n();
 #define CAI_NPC_V10(p) CAI_NPC_V(p##0) CAI_NPC_V(p##1) CAI_NPC_V(p##2) CAI_NPC_V(p##3) CAI_NPC_V(p##4) CAI_NPC_V(p##5) CAI_NPC_V(p##6) CAI_NPC_V(p##7) CAI_NPC_V(p##8) CAI_NPC_V(p##9)
@@ -104,7 +105,10 @@ public:
 	virtual int vfunc449(int a);	// returns a task/schedule id for the argument (used by PrintTask)
 	CAI_NPC_V(450)
 	virtual const char *vfunc451();	// the NPC's name text (used in warnings)
-	CAI_NPC_V(452) CAI_NPC_V(453) CAI_NPC_V(454) CAI_NPC_V(455) CAI_NPC_V(456) CAI_NPC_V(457) CAI_NPC_V(458) CAI_NPC_V(459)
+	CAI_NPC_V(452) CAI_NPC_V(453) CAI_NPC_V(454) CAI_NPC_V(455)
+	virtual CAI_BehaviorBase **vfunc456();	// the list of the NPC's behaviours (CAI_StandoffGoal walks it with slot 457)
+	virtual int vfunc457();	// the number of behaviours in that list
+	CAI_NPC_V(458) CAI_NPC_V(459)
 	virtual int vfunc460();	// SelectIdealState helper: the NPC's current state, 0 when unset
 	virtual int vfunc461();	// SelectIdealState
 	CAI_NPC_V(462)
