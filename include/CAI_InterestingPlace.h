@@ -17,7 +17,7 @@ public:
 	CAI_InterestingPlace *sub_102d99d0();	// as in CKeepUpright (transplant)
 
 	char m_pad03e0[0x544 - 0x3e0];
-	const char *m_pszTypeName;	// 0x544
+	const char * volatile m_pszTypeName;	// 0x544: re-read at every use
 	int m_pType;	// 0x548: the place type record, found by name
 	char m_pad054c[0x574 - 0x54c];
 	int m_nGroup;	// 0x574: 1..32 on load, then a single bit mask
