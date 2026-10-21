@@ -63219,6 +63219,40 @@ char sub_103c0be0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1220 size=0x7d
+#include "CNPC_VTzimisceHeadClaw.h"
+
+extern void *vt_104bd2cc[];
+extern void *vt_104bd2a0[];
+extern void *vt_104cc564[];
+extern void *vt_104cc538[];
+void __fastcall sub_100157df(CNPC_VTzimisceHeadClaw *p);
+void __fastcall sub_10013f7a(void *p);
+
+// TARGET: CNPC_VTzimisceHeadClaw::sub_103c1220
+CNPC_VTzimisceHeadClaw *CNPC_VTzimisceHeadClaw::sub_103c1220()
+{
+	char *p = (char *)this;
+	sub_100157df(this);
+	*(int *)(p + 0x665c) = 0;
+	*(int *)(p + 0x6660) = 0;
+	*(int *)(p + 0x6664) = 0;
+	*(int *)(p + 0x6668) = 0;
+	*(int *)(p + 0x666c) = 0;
+	*(void ***)p = vt_104bd2cc;
+	*(void ***)(p + 0x19b0) = vt_104bd2a0;
+	sub_10013f7a(p + 0x6670);
+	*(volatile int *)(p + 0x6674) = -1;
+	*(volatile int *)(p + 0x667c) = -1;
+	*(volatile int *)(p + 0x6680) = -1;
+	*(volatile int *)(p + 0x1568) = 0xb;
+	*(volatile int *)(p + 0x156c) = 0xb;
+	*(void ** volatile *)p = vt_104cc564;
+	*(void ** volatile *)(p + 0x19b0) = vt_104cc538;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c29b0 size=0x33
 void sub_10014d7b();
 void sub_1000dfbc();
