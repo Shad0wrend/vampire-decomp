@@ -72,7 +72,9 @@ public:
 	CAI_NPC_V(377) CAI_NPC_V(378) CAI_NPC_V(379)
 	CAI_NPC_V(380)
 	virtual int vfunc381(int act);	// resolves an activity to the sequence/activity the model really has
-	CAI_NPC_V(382) CAI_NPC_V(383) CAI_NPC_V(384) CAI_NPC_V(385) CAI_NPC_V(386) CAI_NPC_V(387) CAI_NPC_V(388) CAI_NPC_V(389)
+	CAI_NPC_V(382)
+	virtual void vfunc383(void *pWeapon, int a);	// "Weapon_Equip"-like: equips the given weapon (the Spawn of the NPCs equips the weapon named by the field at +0x5dec)
+	CAI_NPC_V(384) CAI_NPC_V(385) CAI_NPC_V(386) CAI_NPC_V(387) CAI_NPC_V(388) CAI_NPC_V(389)
 	CAI_NPC_V10(39)
 	CAI_NPC_V(400) CAI_NPC_V(401) CAI_NPC_V(402) CAI_NPC_V(403)
 	virtual int vfunc404(CBaseEntity *pEnt);	// classification of pEnt (vfunc468 treats 1 and 2 as true)
@@ -203,4 +205,6 @@ public:
 	bool sub_10280a50();	// "CAI_BaseNPC::AutoMovement": scope trace (entity name), slot 250(0), the studio worker sub_10094b70 (stub 0x10008d64) fills a movement delta from the frame times at +0x170 / +0x174; true when slot 94 (move type) is 4, the entity flags lack 0x400 and the motor (+0x5d44) accepts the move toward the focus entity (sub_102729d0)
 	int sub_100b3700();	// CBaseEntity::GetFlags (stub 0x10008b84), called directly
 	float sub_10094b70(float flInterval, char *pbOut, void *pvecOut, int *pnOut);	// stub 0x10008d64, called directly
+	void sub_10323a90();	// CBaseCombatCharacter::vfunc103 (stub 0x1001374b), called directly
+	void *sub_1032e120(const char *pszName);	// CBaseCombatCharacter::Weapon_Create (stub 0x1000b0b4), called directly
 };
