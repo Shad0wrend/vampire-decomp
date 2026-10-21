@@ -528,6 +528,7 @@
 0x10003620 func   ?sub_100b3580@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3580
 0x10003634 func   ?vfunc119@CTriggerWWZone@@UAEXXZ CTriggerWWZone::vfunc119
 0x1000363e func   ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ CUnknown100a1d20::sub_100a1d20
+0x1000364d func   ?sub_101f3690@CUnknown101f35c0@@QAEXHPAVCUnknown101f3d80@@HH@Z CUnknown101f35c0::sub_101f3690
 0x10003652 func   ?vfunc191@CRagdollPropSpecial@@UAEXH@Z CRagdollPropSpecial::vfunc191
 0x10003657 func   _trigger_wind trigger_wind
 0x10003698 func   ?sub_100903e0@CBaseAnimating@@QAEDXZ CBaseAnimating::sub_100903e0
