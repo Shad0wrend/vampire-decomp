@@ -50742,6 +50742,51 @@ extern "C" CBaseEntity *trigger_discipline_context()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210ec0 size=0x85
+#include "CBaseEntity.h"
+
+extern void *vt_1047d08c[];
+extern void *vt_104883bc[];
+extern char g_105ae854[];
+void *sub_100aa720(int size);
+
+struct COutputCtor {
+	char m_data[0x18];
+	void sub_100cd2a0();
+};
+
+struct CTriggerBombSiteView : CBaseEntity {
+	void sub_101c0e20();
+	char m_padView[0x564 - 0x3e0];
+	int m_h564;
+	COutputCtor m_out568;
+	COutputCtor m_out580;
+	char m_pad598[0x5a0 - 0x598];
+	COutputCtor m_out5a0;
+	COutputCtor m_out5b8;
+};
+
+extern "C" CBaseEntity *trigger_bomb_site()
+{
+	CTriggerBombSiteView *p = (CTriggerBombSiteView *)sub_100aa720(0x5d0);
+	CBaseEntity *e;
+	if (p) {
+		p->sub_101c0e20();
+		p->m_h564 = -1;
+		p->m_out568.sub_100cd2a0();
+		p->m_out580.sub_100cd2a0();
+		*(void ***)p = vt_1047d08c;
+		p->m_out5a0.sub_100cd2a0();
+		p->m_out5b8.sub_100cd2a0();
+		*(void ***)p = vt_104883bc;
+		e = p;
+	} else
+		e = 0;
+	e->vfunc106(g_105ae854);
+	return e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210fe0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
