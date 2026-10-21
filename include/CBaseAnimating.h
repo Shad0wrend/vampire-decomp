@@ -102,6 +102,7 @@ public:
 	void sub_10091f10(const char *name, float value);	// slot 261 "CBaseAnimating::SetPoseParameter01": scope trace (entity name), then slot 260(LookupPoseParameter(name), value)
 	void vfunc103();	// slot 103 "CBaseAnimating::Spawn": scope trace (entity name), CBaseEntity::vfunc103, then initialises the three 4-dword arrays at +0x574 (-2), +0x584 and +0x594 (0)
 	void vfunc130(int a);	// slot 130 "CBaseAnimating::OnRestore": scope trace (entity name), restores the bone controller / pose data (sub_100c7be0 for the two models) when the handle at +0x5b8 resolves, else slot 246(); clears +0x648/+0x64c when the handle at +0x63c is stale; then CBaseEntity::vfunc130(a)
+	bool vfunc262(int iAttachment, float *pMatrix);	// slot 262 "CBaseAnimating::GetAttachment03": scope trace (entity name); false for no studio header or an attachment outside 1..count (dword +0x148, 0x3c byte records at +0x14c); else asks slot 256 (the owner's character at +0x9c when the aim entity handle at +0x37c resolves and it knows the bone named by the attachment's bone record, otherwise this entity) for the bone matrix and converts it with the attachment's local matrix (+0xc) into pMatrix; true
 
 #include "CBaseAnimating_ext.h"
 };
