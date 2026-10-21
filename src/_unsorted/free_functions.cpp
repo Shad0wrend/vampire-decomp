@@ -59405,6 +59405,68 @@ void CAI_BaseNPC::sub_10279cc0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027d8d0 size=0x90
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include <math.h>
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CSlot220Ent {
+	S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+	S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8) S10(b9)
+	S10(c0) S10(c1)
+	virtual float *vfunc220(int a);
+};
+
+struct CNpcMotorView {
+	void sub_102e0b40();
+	void sub_102e2020(float *pPos);
+};
+
+struct CNpcMotorHolder {
+	char m_pad[0x5d44];
+	CNpcMotorView *m_pMotor;
+};
+
+struct CEntVelView {
+	char m_pad[0x3bc];
+	float m_vx;
+	float m_vy;
+};
+
+struct CDevFlagObj {
+	virtual void v0();
+	virtual bool vfunc1();
+};
+extern CDevFlagObj *g_10924a6c;
+
+static inline bool EntDirtyBit(CBaseEntity *pEnt)
+{
+	unsigned int f = pEnt->m_flags268;
+	return (f >> 12) & 1;
+}
+
+static inline float AbsF(float f) { return (float)fabs(f); }
+
+void CAI_BaseNPC::sub_1027d8d0(CBaseEntity *pEnt)
+{
+	if (EntDirtyBit(pEnt))
+		pEnt->sub_100b1d10();
+	if (EntDirtyBit(pEnt))
+		pEnt->sub_100b1d10();
+	CEntVelView *v = (CEntVelView *)pEnt;
+	if (AbsF(v->m_vx) + AbsF(v->m_vy) > 50.0f) {
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x74);
+		((CNpcMotorHolder *)this)->m_pMotor->sub_102e0b40();
+		CNpcMotorView *pMotor = ((CNpcMotorHolder *)this)->m_pMotor;
+		pMotor->sub_102e2020(((CSlot220Ent *)pEnt)->vfunc220(0));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d990 size=0xa
 struct CUnknown1027d990Sub { int p[6]; int a; };
 struct CUnknown1027d990 { char p[0x5d34]; CUnknown1027d990Sub *m; int sub_1027d990(); };
