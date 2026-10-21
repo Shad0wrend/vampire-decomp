@@ -869,6 +869,7 @@
 0x10004bc4 func   ?sub_101d6470@CLevelLoader@@QAE_NPAUKVNode@@H@Z CLevelLoader::sub_101d6470
 0x10004bce func   ?vfunc295@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::vfunc295
 0x10004c00 func   ?sub_10249450@CUnknown10249450@@QAEXH@Z CUnknown10249450::sub_10249450
+0x10004c1e func   ?vfunc181@CRagdollProp@@UAEXPBM00@Z CRagdollProp::vfunc181
 0x10004c2d func   ?vfunc3@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc3
 0x10004c37 func   ?sub_103c0be0@@YADXZ sub_103c0be0
 0x10004c3c func   ?sub_1008b3c0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_1008b3c0

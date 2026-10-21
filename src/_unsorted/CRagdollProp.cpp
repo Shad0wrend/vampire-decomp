@@ -92,3 +92,64 @@ void CRagdollProp::vfunc257(void *pMatrices, int unused)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10155e40 size=0x11a
+#include "CRagdollProp.h"
+
+struct Matrix3x4 { float m[12]; };
+
+struct RagdollPhysObj
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29();
+	virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33(); virtual void s34(); virtual void s35();
+	virtual void SetPositionMatrix(const Matrix3x4 *pMatrix, int bTeleport);
+	virtual void s37();
+	virtual void GetPositionMatrix(Matrix3x4 *pMatrix);
+};
+
+void sub_10138630(const Matrix3x4 *pIn, Matrix3x4 *pOut);
+void sub_10138df0(const Matrix3x4 *pIn1, const Matrix3x4 *pIn2, Matrix3x4 *pOut);
+
+struct RagdollEntry
+{
+	RagdollPhysObj *m_pObject;
+	char m_pad04[0x14];
+};
+
+static inline bool TestBit(unsigned int value, int bit)
+{
+	return ((value >> bit) & 1) != 0;
+}
+
+void CRagdollProp::vfunc181(const float *pPosition, const float *pAngles, const float *pVelocity)
+{
+	Matrix3x4 newMatrix;
+	Matrix3x4 startMatrixInv;
+	Matrix3x4 xform;
+	Matrix3x4 startMatrix;
+	RagdollEntry *pList = (RagdollEntry *)((char *)this + 0x744);
+	pList[0].m_pObject->GetPositionMatrix(&startMatrix);
+	sub_10138630(&startMatrix, &startMatrixInv);
+	sub_100a68f0((int)pList[0].m_pObject);
+	sub_100ada20(pPosition, pAngles, pVelocity);
+	if (TestBit(m_flags268, 11))
+		vfunc98();
+	sub_10138df0((const Matrix3x4 *)((char *)this + 0x130), &startMatrixInv, &xform);
+	sub_101563b0((int)pList[0].m_pObject, 0);
+	int i = 1;
+	if (*(int *)((char *)this + 0x730) > i) {
+		RagdollEntry *pEntry = &pList[1];
+		do {
+			Matrix3x4 matrix;
+			pEntry->m_pObject->GetPositionMatrix(&matrix);
+			sub_10138df0(&xform, &matrix, &newMatrix);
+			pEntry->m_pObject->SetPositionMatrix(&newMatrix, 1);
+			sub_101563b0((int)pEntry->m_pObject, i);
+			i++;
+			pEntry++;
+		} while (i < *(int *)((char *)this + 0x730));
+	}
+}
+// END FUNCTION
