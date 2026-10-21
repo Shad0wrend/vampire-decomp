@@ -2279,6 +2279,7 @@
 0x1000b3d9 func   ?sub_101e8640@S@@QAEXPAUP@@@Z S::sub_101e8640
 0x1000b3de func   _func_door func_door
 0x1000b3f2 func   ?sub_10131a40@@YAPAHXZ sub_10131a40
+0x1000b406 func   ?sub_10346220@CBaseCombatCharacter@@QAEMXZ CBaseCombatCharacter::sub_10346220
 0x1000b40b func   _logic_visibility_test logic_visibility_test
 0x1000b41f func   ?sub_10136ce0@@YAPBDPBDPAD0@Z sub_10136ce0
 0x1000b433 func   ??0CExpressionTable@@QAE@XZ CExpressionTable::CExpressionTable

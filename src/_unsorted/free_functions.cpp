@@ -60161,6 +60161,21 @@ int CBaseCombatCharacter::sub_10345f10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10346220 size=0x98
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CVDmg_t.h"
+#include "ScopeTrace.h"
+
+// TARGET: CBaseCombatCharacter::sub_10346220
+float CBaseCombatCharacter::sub_10346220()
+{
+	ScopeTrace trace("CBaseCombatCharacter::GetRawDefenseValue", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CVDmgBlock16_t block(4, 0xc);
+	return (float)block.sub_10204900(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10346760 size=0x94
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
