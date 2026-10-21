@@ -74547,6 +74547,46 @@ int *sub_1040cef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040d0a0 size=0x91
+#include "CPlayerPickupController.h"
+#include "CGlobalEntityList.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CPickupWeapon
+{
+	S100(a) S100(b) S100(c)
+	S10(d0)
+	virtual void d20(); virtual void d21(); virtual void d22(); virtual void d23(); virtual void d24();
+	virtual void vfunc315();
+};
+
+extern CGlobalEntityList *g_10566458;
+void sub_101895d0(CBaseEntity *pEnt, int a, int b);
+CPickupWeapon *__fastcall sub_1032e7b0(CBaseCombatCharacter *pPlayer);
+
+void CPlayerPickupController::sub_1040d0a0(char bThrow)
+{
+	CBaseEntity *pObject;
+	unsigned int h = m_Carry.m_hEntity;
+	CGlobalEntityList_Slot *pSlot;
+	if (h != -1 && (pSlot = &g_10566458->m_Slots[h & 0x1fff], pSlot->m_Serial == (int)(h >> 13)))
+		pObject = (CBaseEntity *)pSlot->m_pEntity;
+	else
+		pObject = 0;
+	m_Carry.sub_1040cb60();
+	if (pObject)
+		sub_101895d0(pObject, (int)m_pPlayer, bThrow != 0);
+	if (m_pPlayer) {
+		if (sub_1032e7b0(m_pPlayer))
+			sub_1032e7b0(m_pPlayer)->vfunc315();
+	}
+	sub_100ae150();
+}
+// END FUNCTION
+
 // FUNCTION: 0x104110d0 size=0x6d
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 #define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
