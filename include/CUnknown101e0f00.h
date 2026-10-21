@@ -57,4 +57,5 @@ public:
 	void sub_101e4380(const char *pszName);	// "Targeted Discipline Manager" Debug_Display: without a name lists every entry (index, name, base cost), with the name of an entry (or "ALL") displays that entry (every entry)
 	int sub_101e12a0(int id);	// the index of the entry of the discipline id, -1 when none (stub 0x10007df1)
 	void sub_101e3910(int a, int b, int c, int d);	// "CallbackHit": looks the entry of discipline c up, logs "Discipline<%s> CallbackHit", runs the entry's tail callback worker with (d, a, b, c | 0x80000000) while the global current entry (0x10739a74) points at the entry
+	unsigned int sub_101e1870(unsigned int id);	// id | 0x80000000, called with this in ecx (the game's member form of the free function)
 };
