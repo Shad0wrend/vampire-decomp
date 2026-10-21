@@ -7,6 +7,8 @@
 #include "Vector.h"
 #include "COutputEvent.h"
 
+class CBaseEntity;
+
 class CBaseButton
 {
 public:
@@ -90,6 +92,8 @@ public:
 	void sub_100c98e0();	// the think function set by sub_100c97c0 (stub 0x10009764)
 	void sub_100c9560();	// the button is pressed: plays the sound table entry 0x106e6f78 unless bit 13 of the flags is set, fires the output at +0x590 for the activator (when flag 0x1 is set), state 2, think function sub_100c96a0 and moves to position 2 (linear) or angle 2 (rotating, byte +0x55d); nothing while the byte at +0x5c4 is set
 	void sub_100c96a0();	// the think function set by sub_100c9560 (stub 0x10008f30)
+	void sub_100c9250(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// \"CBaseButton::ButtonUse\"-like: unless locked / moving (state 2 or 3) or the byte at +0x5c4 is set and the use filter passes the activator (sub_100a7bd0): remembers the activator handle at +0x53c; in state 0 (flag 0x20 set) fires the output at +0x578 and presses (sub_100c97c0), in any other state fires it and calls sub_100c9560
+	bool sub_100a7bd0(CBaseEntity *pActivator);	// CBaseEntity::PassesUseFilter (stub 0x10001032), called directly
 
 	char m_pad0004[0x114 - 4];
 	void (CBaseButton::*m_pfnThink114)();	// 0x114
@@ -108,7 +112,8 @@ public:
 	unsigned int m_hActivator53c;	// 0x53c: entity handle of the activator
 	char m_pad0540[0x55d - 0x540];
 	char m_b55d;	// 0x55d
-	char m_pad055e[0x590 - 0x55e];
+	char m_pad055e[0x578 - 0x55e];
+	COutputEvent m_Output578;	// 0x578
 	COutputEvent m_Output590;	// 0x590
 	COutputEvent m_Output5a8;	// 0x5a8
 	int m_n5c0;	// 0x5c0
