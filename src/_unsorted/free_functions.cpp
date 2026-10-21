@@ -58357,6 +58357,91 @@ void CWorldEvents::sub_1023db70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023ddd0 size=0x104
+#include "CUnknown1023ddd0.h"
+#include "inputdata_t.h"
+
+struct S1023ddd0World
+{
+	char m_pad[0x1b1];
+	char m_b1b1;
+	char m_pad1b2[0x49c - 0x1b2];
+	int m_nAreaType;
+};
+
+struct S1023ddd0Player
+{
+	void sub_10170750();
+};
+
+struct S107258dc
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad[0x2c - 4];
+	int m_n2c;
+};
+
+struct S1070b228
+{
+	char m_pad[0xc];
+	float curtime;
+	char m_pad10[4];
+	int maxClients;
+};
+
+extern S107258dc *g_107258dc;
+extern S1070b228 *g_1070b228;
+S1023ddd0World *sub_1023bd00();
+S1023ddd0Player *sub_101cd9e0(int index);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+static inline int Variant_Int(const variant_t &v)
+{
+	return v.fieldType == 4 ? v.iValue : 0;
+}
+
+void CUnknown1023ddd0::sub_1023ddd0(inputdata_t *inputdata)
+{
+	S1023ddd0World *pWorld = sub_1023bd00();
+	if (!pWorld)
+		return;
+	int n;
+	if (Variant_Int(inputdata->value) > 2)
+		n = 2;
+	else if (Variant_Int(inputdata->value) >= 0)
+		n = Variant_Int(inputdata->value);
+	else
+		n = 0;
+	if (!g_107258dc->vfunc1() && g_107258dc->m_n2c) {
+		const char *pszName = "ERROR!!!!!";
+		if (n == 0)
+			pszName = "combat";
+		else if (n == 1)
+			pszName = "safe";
+		else if (n == 2)
+			pszName = "elysium";
+		DevMsg("CSActs:    %6.1f - Setting World Area Type = %d %s\n", (double)g_1070b228->curtime, n, pszName);
+	}
+	int area;
+	if (n > 2)
+		area = 2;
+	else if (n < 0)
+		area = 0;
+	else
+		area = n;
+	if (area != pWorld->m_nAreaType) {
+		pWorld->m_nAreaType = area;
+		for (int i = 1; i <= g_1070b228->maxClients; i++) {
+			S1023ddd0Player *pPlayer = sub_101cd9e0(i);
+			if (pPlayer)
+				pPlayer->sub_10170750();
+		}
+		pWorld->m_b1b1 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023df30 size=0x83
 #include "CUnknown1023df30.h"
 #include "inputdata_t.h"
