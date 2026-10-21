@@ -6691,6 +6691,35 @@ CTEEnergySplash *CTEEnergySplash::sub_10061250(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100615e0 size=0xc4
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246700(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+void sub_10003012();
+extern SendTable g_106c24b0;
+extern const char *g_10542bdc;
+
+// TARGET: sub_100615e0
+int sub_100615e0()
+{
+    static SendProp g_SendProps[] = {
+        sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+        sub_10246700("m_vecPos", 0xc, 12, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+        sub_10246700("m_vecDir", 0x18, 12, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+        sub_10246af0("m_bExplosive", 0x24, 1, 1, 1, 0, 0),
+    };
+    g_106c24b0.sub_10247240(g_SendProps + 1, 3, g_10542bdc);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10061e80 size=0xb7
 #include "CTEExplosion.h"
 
