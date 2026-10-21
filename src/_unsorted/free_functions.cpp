@@ -2147,6 +2147,37 @@ bool CPhysicsMovedEntities::sub_10033740(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033820 size=0x136
+#include "CPhysicsMovedEntities.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct CPhysicsMovedEntitiesUnit : CPhysicsMovedEntities
+{
+	void sub_10033820(char bRestoreAngles, const Vector *pAngleOffset);	// "CPhysicsMovedEntities::RestoreEntities"
+};
+
+void CPhysicsMovedEntitiesUnit::sub_10033820(char bRestoreAngles, const Vector *pAngleOffset)
+{
+	ScopeTrace trace("CPhysicsMovedEntities::RestoreEntities", g_106b8540);
+	for (int i = 0; i < m_nCount; i++) {
+		((CEntityVSlots *)m_Records[i].m_pEntity)->slot62(m_Records[i].m_vecOrigin);
+		if (bRestoreAngles && pAngleOffset) {
+			if (*(int *)((char *)m_Records[i].m_pEntity + 0xa8)) {
+				Vector vecAngVel = *(Vector *)m_Records[i].m_pEntity->m_angVel3c8;
+				vecAngVel.y = 0.0f;
+				m_Records[i].m_pEntity->sub_100b2f50(&vecAngVel.x);
+			} else {
+				Vector vecAngles = *((CEntityVSlots *)m_Records[i].m_pEntity)->slot221();
+				vecAngles -= *pAngleOffset;
+				((CEntityVSlots *)m_Records[i].m_pEntity)->slot64(&vecAngles.x);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033aa0 size=0xad
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
