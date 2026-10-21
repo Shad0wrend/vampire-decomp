@@ -20296,6 +20296,59 @@ void __fastcall sub_100f0f30(CSlots *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f11b0 size=0xb2
+#include "CBaseDoor.h"
+#include "COutputEvent.h"
+#include "CGlobalEntityList.h"
+
+extern int g_106eb3dc;
+extern CGlobalEntityList *g_10566458;
+
+struct CHandleView
+{
+	unsigned int m_Index;
+
+	CGlobalEntityList_Ent *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[m_Index & 0x1fff];
+			if (pSlot->m_Serial == (int)(m_Index >> 13))
+				return pSlot->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+#define DV1(n) virtual void dv##n();
+#define DV10(p) DV1(p##0) DV1(p##1) DV1(p##2) DV1(p##3) DV1(p##4) DV1(p##5) DV1(p##6) DV1(p##7) DV1(p##8) DV1(p##9)
+#define DV100(p) DV10(p##0) DV10(p##1) DV10(p##2) DV10(p##3) DV10(p##4) DV10(p##5) DV10(p##6) DV10(p##7) DV10(p##8) DV10(p##9)
+
+struct CDoorSlotView
+{
+	DV100(a) DV100(b) DV10(c0) DV10(c1) DV10(c2) DV10(c3) DV1(d0) DV1(d1) DV1(d2) DV1(d3) DV1(d4) DV1(d5) DV1(d6) DV1(d7) DV1(d8)
+	virtual void slot249();
+};
+
+void CBaseDoor::sub_100f11b0()
+{
+	sub_100ee4e0(g_106eb3dc, 0);
+	m_nState4f8 = 1;
+	m_pfnTouch = (void (CBaseEntity::*)(CBaseEntity *))&CBaseDoor::sub_10012837;
+	CGlobalEntityList_Ent *pActivator;
+	COutputEvent *pOutput;
+	if (m_flags204 & 1) {
+		pActivator = ((CHandleView *)((char *)this + 0x53c))->Get();
+		pOutput = (COutputEvent *)&m_items564[5];
+	} else {
+		pActivator = ((CHandleView *)((char *)this + 0x53c))->Get();
+		pOutput = (COutputEvent *)&m_items564[4];
+	}
+	pOutput->sub_100cd660(pActivator, this, 0);
+	sub_100efbf0(0);
+	((CDoorSlotView *)this)->slot249();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f12a0 size=0x72
 #include "CBaseDoor.h"
 #include "CGlobalEntityList.h"

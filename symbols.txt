@@ -1093,6 +1093,7 @@
 0x10005d9e func   ?sub_10083960@CUnknown10083960@@QAEXH@Z CUnknown10083960::sub_10083960
 0x10005dbc func   ?sub_10336f20@CBaseCombatCharacter@@QAEPAXXZ CBaseCombatCharacter::sub_10336f20
 0x10005dc1 func   ?sub_10264300@@YAXPAUCBlock4k@@PBU1@@Z sub_10264300
+0x10005ddf func   ?sub_100f11b0@CBaseDoor@@QAEXXZ CBaseDoor::sub_100f11b0
 0x10005de9 func   ?sub_10201870@CVStatListUnit@@QAEPAVCVStatInfo_t@@H@Z CVStatListUnit::sub_10201870
 0x10005dfd func   _prop_sign prop_sign
 0x10005e02 func   ?sub_10107aa0@CFilterMultiple@@QAE_NPAVCBaseEntity@@@Z CFilterMultiple::sub_10107aa0
