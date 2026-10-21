@@ -2611,6 +2611,7 @@
 0x1000af51 func   ?vfunc5@CLogicBranch@@QAEPAV1@I@Z CLogicBranch::vfunc5
 0x1000af60 func   ?sub_101d1460@CUnknown101d1460@@QAEXH@Z CUnknown101d1460::sub_101d1460
 0x1000af65 func   ?sub_1037e9b0@@YADXZ sub_1037e9b0
+0x1000af6f func   ?sub_101364e0@CLogicRelay@@QAEXPAUinputdata_t@@@Z CLogicRelay::sub_101364e0
 0x1000af79 func   ?sub_10042d00@CMem8c_t@@QAEXH@Z CMem8c_t::sub_10042d00
 0x1000af92 func   ?sub_10249160@CUnknown10249160@@QAEXHH@Z CUnknown10249160::sub_10249160
 0x1000afa6 func   ?sub_102c9d20@@YIPAHPAH@Z sub_102c9d20

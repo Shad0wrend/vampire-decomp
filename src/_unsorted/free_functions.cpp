@@ -31664,6 +31664,35 @@ void __fastcall sub_10136490(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101364e0 size=0x7c
+#include "CLogicRelay.h"
+#include "CEventQueue.h"
+#include "inputdata_t.h"
+
+extern CEventQueue g_106e7050;
+void sub_10014614(CBaseEntity *pEnt);
+
+struct CLogicRelayFields {
+	char m_pad[0x204];
+	unsigned int m_spawnflags;
+};
+
+void CLogicRelay::sub_101364e0(inputdata_t *pInputData)
+{
+	if (!m_bDisabled && !m_bWaitForRefire) {
+		m_OnTrigger.sub_100cd660(pInputData->pActivator, this, 0);
+		if (((CLogicRelayFields *)this)->m_spawnflags & 1) {
+			sub_10014614(this);
+			return;
+		}
+		if (!(((CLogicRelayFields *)this)->m_spawnflags & 2)) {
+			m_bWaitForRefire = 1;
+			g_106e7050.sub_100ce040(this, "EnableRefire", m_OnTrigger.sub_100cd260() + 0.001, this, this, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136910 size=0xd2
 #include "CGlobalEntityList.h"
 #include <string.h>
