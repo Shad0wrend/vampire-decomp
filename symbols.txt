@@ -3078,6 +3078,7 @@
 0x1000d297 func   _item_p_research_hg_melee item_p_research_hg_melee
 0x1000d2b0 func   ?vfunc14@CSave@@UAE_NPBXH@Z CSave::vfunc14
 0x1000d2b5 func   ?sub_100ee750@CUnknown100ee750@@QAEXPAX@Z CUnknown100ee750::sub_100ee750
+0x1000d2c9 func   ?vfunc39@CBaseVampireSkillEntity@@QAEXPAX@Z CBaseVampireSkillEntity::vfunc39
 0x1000d2d3 func   ?sub_1027e590@@YAXPAVCBaseEntity@@PBDZZ sub_1027e590
 0x1000d2dd func   ?sub_101f25d0@@YIHPAD@Z sub_101f25d0
 0x1000d2e2 func   ?sub_10160680@CUnknown10160680@@QAEMXZ CUnknown10160680::sub_10160680
