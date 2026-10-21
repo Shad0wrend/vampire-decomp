@@ -1570,6 +1570,7 @@
 0x10008382 func   ?vfunc103@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc103
 0x100083a0 func   ?sub_10041b40@@YA_NPAH0@Z sub_10041b40
 0x100083b9 func   ?sub_100a5ad0@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100a5ad0
+0x100083c3 func   ?sub_10200a70@CVStatList_t@@QAEXHH@Z CVStatList_t::sub_10200a70
 0x100083dc func   ?sub_100eb400@@YIXPAH@Z sub_100eb400
 0x1000840e func   ?sub_103f3d70@@YAHXZ sub_103f3d70
 0x10008413 func   ?vfunc404@CNPC_VPlayerController@@QAEHPAX@Z CNPC_VPlayerController::vfunc404
