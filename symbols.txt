@@ -2475,6 +2475,7 @@
 0x1000ace0 func   _prop_doorknob_electronic prop_doorknob_electronic
 0x1000ace5 func   ?vfunc5@CGravityPellet@@QAEPAV1@I@Z CGravityPellet::vfunc5
 0x1000acf4 func   ?sub_1032aa40@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1032aa40
+0x1000ad03 func   ?sub_101710b0@CBasePlayer@@QAEXPBVVector@@@Z CBasePlayer::sub_101710b0
 0x1000ad21 func   ?sub_100c8350@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100c8350
 0x1000ad44 func   ?sub_1012f2b0@@YAHPBD@Z sub_1012f2b0
 0x1000ad58 func   ?vfunc268@CBaseAnimatingOverlay@@QAEXHHHD@Z CBaseAnimatingOverlay::vfunc268

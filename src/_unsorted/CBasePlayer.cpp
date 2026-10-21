@@ -569,6 +569,29 @@ bool CBasePlayer::vfunc326(int a, CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101710b0 size=0x75
+#include "CBasePlayer.h"
+
+struct CUnk10725de4
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char pad[0x2c - 4];
+	int m_n2c;
+};
+
+extern CUnk10725de4 *g_10725de4;
+
+// TARGET: CBasePlayer::sub_101710b0
+void CBasePlayer::sub_101710b0(const Vector *pImpulse)
+{
+	if (g_10725de4->vfunc1() || g_10725de4->m_n2c == 0) {
+		Vector *pVel = (Vector *)((char *)this + 0x1f08);
+		*pVel += *pImpulse * 20.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10173ed0 size=0x87
 #include "CBasePlayer.h"
 #include "CUnknown1070b22c.h"
