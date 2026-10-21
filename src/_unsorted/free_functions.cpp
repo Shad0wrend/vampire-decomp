@@ -51148,6 +51148,38 @@ int CVStatList_t::sub_10200ca0(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10200d60 size=0xfe
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CVStatActionList_t.h"
+#include "CUnknown10202060.h"
+#include "ScopeTrace.h"
+
+struct CVStatDepList	// the list of the stat's "IncPredependency" records at +0x120 of a stat info
+{
+	char sub_10013ce1(int nOwnerValue);	// whether the owner meets the predependencies (stub 0x10013ce1)
+};
+
+#define STAT_OWNER ((CUnknown10202060 *)m_pad0000)
+#define STAT_INFO(s) (((CVStatInfoList_t *)m_field0c)->sub_10200370(s))
+
+char CVStatList_t::sub_10200d60(int stat)
+{
+	ScopeTrace trace("CVStatList_t::IncBase", g_106b8540);
+	if (sub_102008b0(stat)) {
+		int nBase = (*(int **)m_field08)[stat];
+		if (((CVStatDepList *)((char *)STAT_INFO(stat) + 0x120))->sub_10013ce1(STAT_OWNER->sub_10202060())
+			&& nBase < STAT_INFO(stat)->sub_101ff060(STAT_OWNER->sub_10202060())) {
+			int nNew = nBase + 1;
+			((CVStatActionList_t *)((char *)STAT_INFO(stat) + 0x10c))->sub_101fd940((void *)STAT_OWNER->sub_10202060(), nBase, nNew);
+			(*(int **)m_field08)[stat] = nNew;
+			return 1;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10200ea0 size=0xd8
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
