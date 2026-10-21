@@ -7076,6 +7076,39 @@ int sub_10069ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006a190 size=0xe8
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+void sub_10009539();
+
+extern SendTable g_106c6d98;
+extern SendTable *g_1053dfa8;
+extern const char *g_1054567c;
+
+// TARGET: sub_1006a190
+int sub_1006a190()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_10007bfd("m_nParticle", 0x10, 4, 10, 1, 0, 0),
+		sub_10007bfd("m_nAttachType", 0x14, 4, 5, 1, 0, 0),
+		sub_10007bfd("m_bDrawThird", 0x18, 1, 1, 1, 0, 0),
+		sub_10007bfd("m_idxParent", 0xc, 4, 0x10, 1, 0, 0),
+	};
+	g_106c6d98.sub_1000e8fe(props + 1, 5, g_1054567c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006a370 size=0x6c
 #include "CBaseEntity.h"
 #include "CUnknown1019d130.h"
