@@ -58190,6 +58190,42 @@ int S1033d380::sub_1033d380(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d580 size=0x8d
+#include "CBaseCombatCharacter.h"
+
+struct CDangerRecord {
+	char m_pad0000[0x9b];
+	char m_b9b;
+	char m_b9c;
+	char m_pad009d[0x49c - 0x9d];
+	int m_nType;	// 0x49c
+};
+
+struct CDangerTable {
+	CDangerRecord *sub_101d5f10(CBaseCombatCharacter *pChar);	// stub 0x100040b1
+};
+extern CDangerTable g_10738d10;
+CDangerRecord *sub_1023bd00();
+
+char CBaseCombatCharacter::sub_1033d580(int unused)
+{
+	CDangerRecord *pRec = g_10738d10.sub_101d5f10(this);
+	if (pRec->m_b9b)
+		return 1;
+	if (!pRec->m_b9c && !sub_10337ff0() && !sub_103380d0() && !sub_1033c900(0x800)
+		&& !*(int *)((char *)this + 0xa8) && !*(int *)((char *)this + 0xac)) {
+		CDangerRecord *pEnemy = sub_1023bd00();
+		if (pEnemy) {
+			if (pEnemy->m_nType == 1)
+				return 1;
+			if (pEnemy->m_nType == 2)
+				return 1;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d640 size=0x8f
 #include "inputdata_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
