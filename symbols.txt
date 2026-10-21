@@ -1431,6 +1431,7 @@
 0x10007536 func   ?sub_103e88b0@@YAHXZ sub_103e88b0
 0x10007545 func   ?sub_101d83a0@CUnknown101d82d0@@QAEXPBD@Z CUnknown101d82d0::sub_101d83a0
 0x1000754a func   ?sub_10078b30@UtlMem@@QAEXXZ UtlMem::sub_10078b30
+0x1000754f func   ?vfunc491@CNPC_VTzimisce@@QAEXXZ CNPC_VTzimisce::vfunc491
 0x10007554 func   ?sub_101fed90@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101fed90
 0x10007559 func   ?sub_100428c0@UtlMem@@QAEXXZ UtlMem::sub_100428c0
 0x10007572 func   ?sub_100509b0@SFilter@@QAEPAU1@E@Z SFilter::sub_100509b0

@@ -110,6 +110,28 @@ void CNPC_VTzimisce::vfunc618()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9500 size=0xab
+#include "CNPC_VTzimisce.h"
+
+extern CNPC_VTzimisceConVar *g_1093cf94;
+extern CNPC_VTzimisceConVar *g_1093cfdc;
+extern CNPC_VTzimisceConVar *g_1093cebc;
+void __cdecl sub_101aeb60(int edict, const char *pszEvent, float f, int b, int c, int a);
+
+// TARGET: CNPC_VTzimisce::vfunc491
+void CNPC_VTzimisce::vfunc491()
+{
+	if (vfunc486()) {
+		int a = g_1093cf94->vfunc1() ? 0 : g_1093cf94->m_n2c;
+		int b = g_1093cfdc->vfunc1() ? 0 : g_1093cfdc->m_n2c;
+		float f = g_1093cebc->vfunc1() ? 0.0f : g_1093cebc->m_f28;
+		sub_101aeb60(m_n02e0, "SPI_TAKE_DAMAGE", f, b, 0, a);
+		v487();
+	}
+	sub_103b9f90(1, 1.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b9980 size=0x92
 #include "CNPC_VTzimisce.h"
 extern CNPC_VTzimisceConVar *g_1093cf94;
