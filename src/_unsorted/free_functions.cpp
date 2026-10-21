@@ -6107,6 +6107,29 @@ CTEFizz *CTEFizz::sub_10061f70(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062f30 size=0x79
+#include "CTEFootprintDecal.h"
+#include "CUnknown1019d130.h"
+
+extern CTEFootprintDecal g_106c2fac;
+extern float (__fastcall *g_1057966c)(CTEFootprintVec3 *pVec);
+
+void sub_10062f30(CUnknown1019d130 *filter, float delay, const CTEFootprintVec3 *origin, const CTEFootprintVec3 *right, int entity, int index, unsigned char materialType)
+{
+	g_106c2fac.m_vecOrigin.x = origin->x;
+	g_106c2fac.m_vecOrigin.y = origin->y;
+	g_106c2fac.m_vecOrigin.z = origin->z;
+	g_106c2fac.m_vecDirection.x = right->x;
+	g_106c2fac.m_vecDirection.y = right->y;
+	g_106c2fac.m_vecDirection.z = right->z;
+	g_106c2fac.m_nEntity = entity;
+	g_106c2fac.m_nIndex = index;
+	g_106c2fac.m_chMaterialType = materialType;
+	g_1057966c(&g_106c2fac.m_vecDirection);
+	g_106c2fac.sub_10062ee0(filter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10063880 size=0xea
 #include "CTEShatterSurface.h"
 

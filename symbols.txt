@@ -1971,6 +1971,7 @@
 0x10009f52 func   ?sub_10325c10@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325c10
 0x10009f57 func   ?sub_10245770@CFlagHolder245770@@QAE_NI@Z CFlagHolder245770::sub_10245770
 0x10009f7a func   ?sub_1007bb30@CUnknown1007bb30@@QAEXPAVCUnknown1007bb30Dest@@@Z CUnknown1007bb30::sub_1007bb30
+0x10009f89 func   ?sub_10062f30@@YAXPAVCUnknown1019d130@@MPBUCTEFootprintVec3@@1HHE@Z sub_10062f30
 0x10009fb1 func   ?sub_1006ee10@CUnk1006ee10@@QAEHH@Z CUnk1006ee10::sub_1006ee10
 0x10009fb6 func   ?sub_103f9ad0@@YAHXZ sub_103f9ad0
 0x10009fbb func   ?sub_101d0570@@YAXPAHHPBD@Z sub_101d0570
