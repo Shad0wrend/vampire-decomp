@@ -52,4 +52,7 @@ public:
 	int sub_10005e20(int schedule);	// CNPC_VHuman::vfunc440, called directly
 	void vfunc420();	// slot 420 "CNPC_VAsianVampire::NPCInit": scope trace, the CNPC_VVampireBoss init, stores the current origin (slot 217) in both stored hint positions and in the stationary position (+0x66dc), clears the ring index (+0x66d0), +0x5ddc and the flag byte +0x66d4, stamps the tick at +0x66d8, sets the byte +0x66e8 and the float at +0x64b8
 	void sub_10013e85();	// CNPC_VVampireBoss::vfunc420, called directly
+	void vfunc432(int arg);	// slot 432 "CNPC_VAsianVampire::RunAI": scope trace, sub_10005673(), then CNPC_VHuman::vfunc432(arg)
+	void sub_10005673();	// the Asian vampire's per-tick update (stub of 0x10362540), called with this
+	void sub_1000698d(int arg);	// CNPC_VHuman::vfunc432, called directly
 };
