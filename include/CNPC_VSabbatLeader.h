@@ -33,7 +33,8 @@ public:
 	unsigned int m_hPlayer;	// +0x628c: entity handle of the tracked player
 	char pad6290[0x66b8 - 0x6290];
 	char m_b66b8;	// +0x66b8
-	char pad66b9[0x66c0 - 0x66b9];
+	char pad66b9[0x66bc - 0x66b9];
+	int m_nFailureCount;	// +0x66bc: counts the task failures of types 0xc..0xf
 	int m_nFailureType;
 	int m_n66c4;	// +0x66c4: last health seen by UpdateBloodSplash
 	float m_f66c8;	// +0x66c8: time of last splash
@@ -45,7 +46,7 @@ public:
 	void sub_1000b8a2(int arg);
 	int sub_103aa480(int arg);
 	int sub_10001b45(int arg);
-	void sub_103a9d00();	// FlipFailureType
+	int sub_103a9d00();	// FlipFailureType
 	int sub_103a7390(int schedule);	// "TranslateSchedule" (slot 440 override): schedules 0xe5/0xe6 map to 0x15f, else the CNPC_VHuman version
 	char sub_103a9340(CNPC_VSabbatLeaderHint *pHint);	// "FValidateHintType": hint type in [0x3e80, 0x3e85]
 	void vfunc619(int arg);	// slot 619, not modelled as virtual yet
@@ -88,4 +89,6 @@ public:
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
 	void sub_10269a20(int condition);	// "SetCondition" (stub 0x100041b0)
 	void sub_10269b50(int condition);	// "ClearCondition" (stub 0x10015839)
+	void vfunc448(int a);	// "CNPC_VSabbatLeader::TaskFail" (slot 448 override): scope trace (no entity name); for the failure codes 0xc..0xf counts them at +0x66bc and from the sixth on flips the failure type (sub_103a9d00) and starts schedule 0x161 (line 0x3f4) or 0x160 (line 0x3f9); else CAI_BaseNPCTroika::vfunc448
+	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
 };
