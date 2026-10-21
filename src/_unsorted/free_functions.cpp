@@ -38375,6 +38375,43 @@ void __fastcall sub_10001807(char *p);
 void __fastcall sub_101f3070(char *p) { sub_10001807(p - *(int *)(p - 4)); }
 // END FUNCTION
 
+// FUNCTION: 0x101f3810 size=0x156
+#include "CUnknown101f3d80.h"
+#include "IFileSystemFind.h"
+#include <stdio.h>
+#include <string.h>
+
+extern IFileSystemFind *g_1070b238;
+
+// TARGET: CUnknown101f3d80::sub_101f3810
+bool CUnknown101f3d80::sub_101f3810()
+{
+	int hFind = -1;
+	char szPath[260];
+	char szPattern[260];
+	sprintf(szPattern, "sound\\%s\\*.*", m_pszDir);
+	const char *pFound = g_1070b238->vfunc22(szPattern, &hFind);
+	while (pFound) {
+		if (!g_1070b238->vfunc24(hFind)) {
+			sprintf(szPath, "%s\\%s", m_pszDir, pFound);
+			sub_101f3d00((int)szPath, (int)pFound);
+		}
+		pFound = g_1070b238->vfunc23(hFind);
+	}
+	g_1070b238->vfunc25(hFind);
+	pFound = g_1070b238->vfunc22(szPattern, &hFind);
+	while (pFound) {
+		if (g_1070b238->vfunc24(hFind) && strcmp(pFound, ".") && strcmp(pFound, "..")) {
+			sprintf(szPath, "%s\\%s", m_pszDir, pFound);
+			sub_101f3d80((int)szPath, (int)pFound);
+		}
+		pFound = g_1070b238->vfunc23(hFind);
+	}
+	g_1070b238->vfunc25(hFind);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f3d80 size=0x93
 #include "CUnknown101f3d80.h"
 void CUnknown101f3d80::sub_101f3d80(int a, int b)
