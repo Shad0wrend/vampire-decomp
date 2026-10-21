@@ -1,6 +1,56 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ee510 size=0xdb
+#include "CBaseEntity.h"
+struct SGlobals { int pad[3]; float curtime; };
+extern SGlobals *g_1070b228;
+void sub_1000dcd8();
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct SSlots
+{
+	V100(a) V100(b) V100(c)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+	virtual void s307(int a);
+	virtual void d8(); virtual void d9();
+	V100(e)
+	V10(f0) V10(f1) V10(f2)
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4();
+	virtual void g5(); virtual void g6(); virtual void g7(); virtual void g8();
+	virtual void s449(int a, int b);
+};
+
+// TARGET: CWeaponThrown_Grenade_Frag::vfunc326
+void CWeaponThrown_Grenade_Frag::vfunc326()
+{
+	char *self = (char *)this;
+	if (sub_103ee8f0()) {
+		*(char *)(self + 0x930) = 0;
+		*(float *)(self + 0x924) = g_1070b228->curtime;
+		*(int *)(self + 0x920) = 1;
+		char *owner = (char *)sub_102521f0();
+		if (owner) {
+			SSlots *sub = *(SSlots **)(owner + 0xa8);
+			if (sub)
+				sub->s449(5, 0);
+		}
+		*(float *)(self + 0x91c) = g_1070b228->curtime + 3.3f;
+		((SSlots *)this)->s307(0xb8);
+		return;
+	}
+	if (*(int *)(self + 0x920) == 1 && (*(float *)((int)self + 0x924) + 0.3f) < g_1070b228->curtime) {
+		*(int *)(self + 0x920) = 3;
+		*(float *)(self + 0x91c) = 3.0f + g_1070b228->curtime;
+		((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000dcd8, 0, 0);
+		*(float *)((int)self + 0x17c) = g_1070b228->curtime + 1.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee990 size=0xb4
 #include "CWeaponThrown_Grenade_Frag.h"
 #include "CBaseEntity.h"
