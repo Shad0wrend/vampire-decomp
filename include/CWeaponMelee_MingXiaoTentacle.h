@@ -8,4 +8,5 @@ public:
 	CWeaponMelee_MingXiaoTentacle *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	CWeaponMelee_MingXiaoTentacle *sub_103ec870();	// as in CKeepUpright (transplant)
+	int vfunc367(int a, float b, float c);	// slot 367: its own (0x103ec910)
 };
