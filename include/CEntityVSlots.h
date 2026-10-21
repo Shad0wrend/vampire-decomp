@@ -1,4 +1,4 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..601, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 142, 158, 161, 162, 167, 173,
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..601, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 142, 143, 158, 161, 162, 167, 173,
 // 192, 193, 194, 198, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 316, 346, 360, 371, 376, 381, 385, 404, 426, 448, 457 and 601 of an entity class that does not model its vtable.
 #pragma once
 
@@ -45,7 +45,8 @@ public:
 	EVS10(13)
 	EVS(140) EVS(141)
 	virtual int slot142(const void *pInfo);	// "OnTakeDamage": takes the damage info record, answers an int
-	EVS(143) EVS(144) EVS(145) EVS(146) EVS(147) EVS(148) EVS(149)
+	virtual int slot143(float flHealth, int bitsDamageType);	// "TakeHealth"
+	EVS(144) EVS(145) EVS(146) EVS(147) EVS(148) EVS(149)
 	EVS(150) EVS(151) EVS(152) EVS(153) EVS(154) EVS(155) EVS(156) EVS(157)
 	virtual char slot158();
 	EVS(159) EVS(160)
