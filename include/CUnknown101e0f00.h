@@ -68,4 +68,8 @@ public:
 	int sub_101e12a0(int id);	// the index of the entry of the discipline id, -1 when none (stub 0x10007df1)
 	void sub_101e3910(int a, int b, int c, int d);	// "CallbackHit": looks the entry of discipline c up, logs "Discipline<%s> CallbackHit", runs the entry's tail callback worker with (d, a, b, c | 0x80000000) while the global current entry (0x10739a74) points at the entry
 	unsigned int sub_101e1870(unsigned int id);	// id | 0x80000000, called with this in ecx (the game's member form of the free function)
+	int sub_101e1250(int a, int b);	// the index of the entry for a discipline reference (stub 0x100142a4), -1 when none
+	char sub_101e1a60(CUnknown101e0f00Entry *pEntry, void *pSource, void *pSource2, void *pTarget, int flag);	// whether the entry applies to the source / target pair (stub 0x1000b956)
+	void sub_101e3730(void *pSource, void *pTarget, unsigned int mask, int flag);	// applies the entry's effect (stub 0x1000ae07)
+	void sub_101e3400(void *pSource, void *pTarget, int a, int b);	// "ActivateEffect" by reference: finds the entry, applies it to the target when sub_101e1a60 accepts the pair or the target is a CNPC_VPlayerController (dynamic cast of a CBaseCombatCharacter)
 };
