@@ -47,6 +47,57 @@ void CNPC_VHengeyokai::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037fb60 size=0xf3
+#include "CNPC_VHengeyokai.h"
+#include "CEHandleGet.h"
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+struct HengeSlots {
+	SV100(0)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15)
+	SV(160) SV(161) SV(162) SV(163) SV(164) SV(165) SV(166)
+	virtual void *s167();
+	SV(168) SV(169)
+	SV10(17) SV10(18) SV10(19) SV10(20) SV10(21)
+	virtual float *s220();
+	SV(221) SV(222) SV(223) SV(224) SV(225) SV(226) SV(227) SV(228) SV(229)
+	SV10(23) SV10(24) SV10(25) SV10(26) SV10(27) SV10(28) SV10(29)
+	SV100(3) SV100(4) SV100(5)
+	SV10(60) SV(610) SV(611) SV(612) SV(613) SV(614) SV(615) SV(616)
+	virtual void s617();
+};
+
+char __fastcall sub_10381c80(char *pNPC);
+extern const char *g_1063bd88[];
+void sub_101cdba0(float *pOrigin, float a, float b, float c, float d, int e, int f);
+
+void CNPC_VHengeyokai::vfunc259(CNPC_VHengeyokaiEvent *pEvent)
+{
+	switch (pEvent->m_type) {
+	case 0x7f8:
+		if (!sub_10381c80((char *)this))
+			sub_10382670(EHandle_Get(m_h6664), g_1063bd88[m_n6668]);
+		break;
+	case 0x802:
+	case 0x803:
+		if (m_b6694) {
+			sub_101cdba0(((HengeSlots *)this)->s220(), 2.0f, 0.2f, 0.2f, 1024.0f, 0, 0);
+			((HengeSlots *)this)->s617();
+		}
+		break;
+	case 0xbbd:
+		if (sub_10381c80((char *)this))
+			sub_10382400(((HengeSlots *)this)->s167());
+		break;
+	default:
+		sub_100076bc(pEvent);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037ffa0 size=0x110
 #include "CNPC_VHengeyokai.h"
 
