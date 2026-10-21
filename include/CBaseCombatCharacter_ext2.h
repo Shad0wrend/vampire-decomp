@@ -46,3 +46,4 @@
 	void sub_10174c10();	// debug-draws the axes (origin slot 217, angles slot 219, size 5.0f) when the global at 0x1072c464 has its flag at +0x460, then asks the active weapon (sub_1032e7b0) for its slot 318 once the time at +0x1564 has passed
 	float sub_10346220();	// "CBaseCombatCharacter::GetRawDefenseValue": scope trace (entity name), the value of the block (4, 0xc) for this character as a float
 	int sub_10337b00(int a);	// looks up the "Attribute Order Lookups" table of the global at 0x106c7c34 and returns its entry for a + 3 * (the value of stat 0 of the active stat list)
+	int sub_10337bd0(int a);	// as sub_10337b00, for the "Ability Order Lookups" table
