@@ -4429,6 +4429,7 @@
 0x10013ab1 func   ?vfunc124@CBreakableProp@@QAEHXZ CBreakableProp::vfunc124
 0x10013aca func   ?sub_103a9e70@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103a9e70
 0x10013ae8 func   ?vfunc15@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHH@Z CTempEntsSystem::vfunc15
+0x10013b01 func   ?sub_10095460@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10095460
 0x10013b1a func   ??1CUnknown109f08c0@@QAE@XZ CUnknown109f08c0::~CUnknown109f08c0
 0x10013b2e func   ?sub_101d1280@@YAHPAVCBaseEntity@@@Z sub_101d1280
 0x10013b79 func   ?sub_100a9470@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9470

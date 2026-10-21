@@ -11820,6 +11820,41 @@ void *CBaseAnimating::sub_100952d0(int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095460 size=0x109
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+extern char g_10550100[];
+#define BV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SBoneView
+{
+	BV10(a0) BV10(a1) BV10(a2) BV10(a3) BV10(a4) BV10(a5) BV10(a6) BV10(a7) BV10(a8) BV10(a9)
+	BV10(b0) BV10(b1) BV10(b2) BV10(b3) BV10(b4) BV10(b5) BV10(b6) BV10(b7) BV10(b8) BV10(b9)
+	BV10(c0)
+	virtual void s210(); virtual void s211(); virtual void s212(); virtual void s213(); virtual void s214(); virtual void s215(); virtual void s216();
+	virtual float *vfunc217();
+	virtual void s218();
+	virtual float *vfunc219();
+	BV10(d2) BV10(d3) BV10(d4)
+	virtual void s250(); virtual void s251(); virtual void s252(); virtual void s253(); virtual void s254(); virtual void s255(); virtual void s256();
+	virtual void vfunc257(void *pBuffer, int nMask);
+};
+int sub_100c46c0(void *pHdr, int sequence, int cycle, float *pAngles, float *pOrigin, int nMask);
+int sub_100c47d0(void *pHdr, int sequence, int cycle, float *pAngles, float *pOrigin, int nMask, void *pBuffer);
+int CBaseAnimating::sub_10095460()
+{
+	char buf[0x41a0];
+	SBoneView *pView = (SBoneView *)this;
+	ScopeTrace trace(g_10550100, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	void *pHdr = sub_100952d0(-1);
+	int r = sub_100c46c0(pHdr, *(int *)((char *)this + 0x6f0), *(int *)((char *)this + 0x174), pView->vfunc219(), pView->vfunc217(), 12);
+	if (!r) {
+		pView->vfunc257(buf, 12);
+		return sub_100c47d0(pHdr, *(int *)((char *)this + 0x6f0), *(int *)((char *)this + 0x174), pView->vfunc219(), pView->vfunc217(), 12, buf);
+	}
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100955c0 size=0xd6
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
