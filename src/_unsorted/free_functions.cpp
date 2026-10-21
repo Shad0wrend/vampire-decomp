@@ -39972,6 +39972,56 @@ void CVTraitEffectGroup_t::sub_101f73f0(CVStatKV *pKV)
 bool __fastcall sub_101f74e0(int *p) { bool r = p[3] != -1; return r; }
 // END FUNCTION
 
+// FUNCTION: 0x101f76e0 size=0xc3
+extern "C" int sprintf(char *, const char *, ...);
+extern void (__cdecl *g_109f3650)(int level, const char *fmt, ...);
+extern char g_106b8540[];
+extern char g_10547e40[];
+
+struct CDebugListElem
+{
+	char m_pad0000[0x44];
+	void sub_101f6eb0();
+};
+
+struct CDebugNameList
+{
+	const char *sub_101f8290(int id);
+};
+extern CDebugNameList g_1074df78;
+
+struct CDebugListEntry
+{
+	char m_pad0000[8];
+	const char *m_pszName;
+	int m_id;
+	int m_nElems;
+	CDebugListElem *m_pElems;
+	void sub_101f76e0();
+};
+
+void CDebugListEntry::sub_101f76e0()
+{
+	char szLine[128];
+	sprintf(szLine, "[%s]\t\t\t{%s}\t", g_1074df78.sub_101f8290(m_id), m_pszName ? m_pszName : g_106b8540);
+	void (__cdecl *pDevMsg)(int, const char *, ...) = g_109f3650;
+	pDevMsg(1, szLine);
+	if (m_id != -1)
+	{
+		if (m_nElems > 0)
+		{
+			for (int i = 0; i < m_nElems; i++)
+				m_pElems[i].sub_101f6eb0();
+		}
+		else
+			pDevMsg(1, "\t\t\t( <ERROR> )");
+		pDevMsg(1, g_10547e40);
+	}
+	else
+		pDevMsg(1, "\t\t\t( <ERROR> )");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f7960 size=0xeb
 #include "CUnknown101f7960.h"
 
