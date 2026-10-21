@@ -2398,6 +2398,7 @@
 0x1000ba87 func   _grenade grenade
 0x1000ba8c func   ?vfunc5@CResearchBook_HG_FIRE@@QAEPAV1@I@Z CResearchBook_HG_FIRE::vfunc5
 0x1000ba9b func   _item_g_gargoyle_book item_g_gargoyle_book
+0x1000baaf func   ?vfunc3@CTEFizz@@UAEXPBM0@Z CTEFizz::vfunc3
 0x1000bab9 func   ?sub_102e2b60@CUtlVector36@@QAEXH@Z CUtlVector36::sub_102e2b60
 0x1000babe func   ?sub_10180220@@YAXXZ sub_10180220
 0x1000bac3 func   ?sub_10430170@@YAII@Z sub_10430170

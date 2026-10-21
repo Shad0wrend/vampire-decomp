@@ -14,6 +14,24 @@ CTEFizz *CTEFizz::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062000 size=0xa2
+#include "CTEFizz.h"
+#include "CBroadcastRecipientFilter.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+extern char g_10543094[];	// "sprites/bubble.vmt"
+
+void CTEFizz::vfunc3(const float *pOrigin, const float *pAngles)
+{
+	m_nModelIndex = g_1070b22c->vfunc13(g_10543094, 0);
+	m_nDensity = 200;
+	m_nCurrent = 1;
+	CBroadcastRecipientFilter filter;
+	vfunc4(filter, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100620e0 size=0x13
 #include "CTEFizz.h"
 struct IEnginePrecache {
