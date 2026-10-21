@@ -58209,6 +58209,21 @@ bool sub_10240250(const Vector &boxMin1, const Vector &boxMax1, const Vector &bo
 }
 // END FUNCTION
 
+// FUNCTION: 0x102402f0 size=0x85
+#include "Vector.h"
+#include <math.h>
+
+bool sub_102402f0(const Vector &boxCenter1, const Vector &boxHalfDiagonal1, const Vector &boxCenter2, const Vector &boxHalfDiagonal2)
+{
+	Vector vecDelta, vecSize;
+	VectorSubtract(boxCenter1, boxCenter2, vecDelta);
+	VectorAdd(boxHalfDiagonal1, boxHalfDiagonal2, vecSize);
+	return ((float)fabs(vecDelta[0]) <= vecSize[0] &&
+			(float)fabs(vecDelta[1]) <= vecSize[1] &&
+			(float)fabs(vecDelta[2]) <= vecSize[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102404e0 size=0x140
 #include <math.h>
 extern float g_104454c0;
