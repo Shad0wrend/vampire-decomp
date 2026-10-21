@@ -134,6 +134,9 @@ public:
 	void sub_103d99a0(inputdata_t *pInput);	// "CNPC_VWerewolf::InputToggleDoorState": scope trace (entity name), stores the integer input clamped to 0..3 at +0x6680 (0 when the input is not an integer)
 	void vfunc465(const char *msg);	// slot 465, scope-traced wrapper
 	void vfunc516();	// slot 516 "CNPC_VWerewolf::MaxYawSpeed": scope trace (entity name), then the base implementation
+	void vfunc620();	// slot 620 "CNPC_VWerewolf::DrawBBoxOverlay": scope trace (entity name), the base overlay (sub_1009f4e0) when sub_103cf5f0 answers true, else the box overlay helper 0x10008f44 (green, 50 / 255 / 50)
+	bool sub_103cf5f0();	// stub 0x1000d562
+	void sub_1009f4e0();	// stub 0x10005164, the base DrawBBoxOverlay
 	bool vfunc566(void *pHint);	// slot 566 "CNPC_VWerewolf::FValidateHintType": scope trace (entity name), true when the hint type at +0x5dc is in 0x3a98..0x3aaa but not 0x3a9f
 	int sub_103d3220(void *pHint);	// "CNPC_VWerewolf::GetHintTeleportPriority": scope trace (entity name), maps the hint type at +0x5dc of pHint to a priority (0x3a98 -> 1, 0x3a99 -> 2, 0x3a9a/0x3a9b -> 3, 0x3a9f -> 4, else 0)
 	char vfunc68(void *pOther);	// slot 68 "CNPC_VWerewolf::ShouldIgnoreCollision": scope trace (entity name); true when bit 1/2/4 of the byte at +0x4c of pOther is set or bit 3 of its GetFlags2, else CAI_BaseNPCTroika::vfunc68(pOther)
