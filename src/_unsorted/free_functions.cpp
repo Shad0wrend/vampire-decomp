@@ -59345,6 +59345,39 @@ void sub_1023f060(unsigned int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023fd00 size=0xc4
+#include "Vector.h"
+
+extern float g_104454c4;
+
+bool sub_1023fd00(const Vector &boxMin, const Vector &boxMax, const Vector &center, float radius)
+{
+	float dmin = g_104454c4;
+	if (center[0] < boxMin[0]) {
+		float flDelta = center[0] - boxMin[0];
+		dmin = flDelta * flDelta;
+	} else if (center[0] > boxMax[0]) {
+		float flDelta = boxMax[0] - center[0];
+		dmin = flDelta * flDelta;
+	}
+	if (center[1] < boxMin[1]) {
+		float flDelta = center[1] - boxMin[1];
+		dmin += flDelta * flDelta;
+	} else if (center[1] > boxMax[1]) {
+		float flDelta = boxMax[1] - center[1];
+		dmin += flDelta * flDelta;
+	}
+	if (center[2] < boxMin[2]) {
+		float flDelta = center[2] - boxMin[2];
+		dmin += flDelta * flDelta;
+	} else if (center[2] > boxMax[2]) {
+		float flDelta = boxMax[2] - center[2];
+		dmin += flDelta * flDelta;
+	}
+	return dmin < radius * radius;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023fe10 size=0x8f
 #include "Vector.h"
 #include <math.h>

@@ -3745,6 +3745,7 @@
 0x1000f687 func   ?sub_100fdf40@CUnknown100fde30@@QAEXXZ CUnknown100fde30::sub_100fdf40
 0x1000f6a5 func   ?vfunc266@CVampireProjectile@@UAEXPAVCBaseEntity@@@Z CVampireProjectile::vfunc266
 0x1000f6af func   ?vfunc61@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc61
+0x1000f6b4 func   ?sub_1023fd00@@YA_NABVVector@@00M@Z sub_1023fd00
 0x1000f6c8 func   _npc_VWolfMorph npc_VWolfMorph
 0x1000f6d2 func   ?vfunc5@CItemGWerewolfBlood@@QAEPAV1@I@Z CItemGWerewolfBlood::vfunc5
 0x1000f6fa func   ?sub_100cdba0@CUnknown100cdba0@@QAEXUCUnknown100cdba0Data@@H@Z CUnknown100cdba0::sub_100cdba0
