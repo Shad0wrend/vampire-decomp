@@ -6650,6 +6650,38 @@ CTEFizz *CTEFizz::sub_10061f70(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100622d0 size=0xcd
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+void sub_10009539();
+
+extern SendTable g_106c2d00;
+extern SendTable *g_1053dfa8;
+extern const char *g_10543024;
+
+// TARGET: sub_100622d0
+int sub_100622d0()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_10007bfd("m_nEntity", 0xc, 4, 0xb, 1, 0, 0),
+		sub_10007bfd("m_nModelIndex", 0x10, 4, 0xb, 0, 0, 0),
+		sub_10007bfd("m_nDensity", 0x14, 4, 8, 1, 0, 0),
+	};
+	g_106c2d00.sub_1000e8fe(props + 1, 4, g_10543024);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062f30 size=0x79
 #include "CTEFootprintDecal.h"
 #include "CUnknown1019d130.h"

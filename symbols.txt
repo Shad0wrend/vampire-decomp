@@ -1706,6 +1706,7 @@
 0x1000823d func   ?sub_102d9150@CUnknown102d9150@@QAEPAV1@XZ CUnknown102d9150::sub_102d9150
 0x1000824c func   ?vfunc5@CItemGWarrens4Passkey@@QAEPAV1@I@Z CItemGWarrens4Passkey::vfunc5
 0x1000826a func   ?sub_100295d0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295d0
+0x1000826f func   ?sub_100622d0@@YAHXZ sub_100622d0
 0x10008279 func   ?sub_10406ac0@@YAHXZ sub_10406ac0
 0x10008292 func   ?vfunc5@CAI_InterestingPlace@@QAEPAV1@I@Z CAI_InterestingPlace::vfunc5
 0x1000829c func   ?sub_102a9600@CUnknown102a9600@@QAEMH@Z CUnknown102a9600::sub_102a9600
