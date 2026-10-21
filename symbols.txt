@@ -4861,6 +4861,7 @@
 0x10014e57 func   ?sub_101d5e80@CStatDefault3List@@QAEPAUStatDefault3@@H@Z CStatDefault3List::sub_101d5e80
 0x10014e5c func   ?sub_1040dc70@@YIDPAD@Z sub_1040dc70
 0x10014e66 func   ?vfunc546@CNPC_VCombatman@@QAEHH@Z CNPC_VCombatman::vfunc546
+0x10014e7f func   ?vfunc421@CBasePlayer@@UAEDH@Z CBasePlayer::vfunc421
 0x10014ed4 func   ?sub_101b40a0@@YGPADPADH@Z sub_101b40a0
 0x10014ed9 func   ?sub_10198640@@YAPAUPyObj@@PAU1@0@Z sub_10198640
 0x10014eed func   _item_g_warr_clipboard item_g_warr_clipboard

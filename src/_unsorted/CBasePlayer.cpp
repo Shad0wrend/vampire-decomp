@@ -373,6 +373,72 @@ char CBasePlayer::vfunc418(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10165d90 size=0x13d
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+#include "CVDmg_t.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+#define CS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define CS100(p) CS10(p##0) CS10(p##1) CS10(p##2) CS10(p##3) CS10(p##4) CS10(p##5) CS10(p##6) CS10(p##7) CS10(p##8) CS10(p##9)
+
+struct CDamageInfoLocal
+{
+	char m_data[0x4c];
+	void sub_101c26d0(CBasePlayer *pInflictor, CBasePlayer *pAttacker, float flDamage, int bitsDamageType, int forceCustom, CVDmg_t *pDmg, int a);	// stub 0x10009656
+};
+
+// The stat holder's virtual table up to slot 403: slots 144 and 403 are used.
+struct CStatHolderSlots
+{
+	CS100(a) CS10(b0) CS10(b1) CS10(b2) CS10(b3)
+	virtual void b40(); virtual void b41(); virtual void b42(); virtual void b43();
+	virtual void vfunc144(CDamageInfoLocal *pInfo);
+	CS100(c) CS100(d) CS10(e0) CS10(e1) CS10(e2) CS10(e3) CS10(e4)
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5(); virtual void f6(); virtual void f7();
+	virtual void vfunc403();
+};
+
+struct CStatHolderHandle
+{
+	unsigned int m_Index;
+	CBaseCombatCharacter *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		CGlobalEntityList_Slot *e = &g_10566458->m_Slots[m_Index & 0x1fff];
+		return e->m_Serial == (m_Index >> 13) ? (CBaseCombatCharacter *)e->m_pEntity : 0;
+	}
+};
+
+// TARGET: CBasePlayer::vfunc421
+char CBasePlayer::vfunc421(int unused)
+{
+    if (*(char *)((char *)this + 0x65c)) {
+        if (m_n153C != -1) {
+            CBaseCombatCharacter *pChar = ((CStatHolderHandle *)&m_h1538)->Get();
+            if (pChar) {
+                CVDmg_t dmg;
+                dmg.sub_101fa960((CVDmgSource_t *)this);
+                dmg.m_field04 = 1;
+                dmg.m_field0c = 1;
+                CDamageInfoLocal info;
+                info.sub_101c26d0(this, this, 1.0f, 0, 0, &dmg, -1);
+                pChar->GetActiveStatList()->sub_10200a70(0xf, 0x11);
+                ((CStatHolderSlots *)pChar)->vfunc144(&info);
+                ((CStatHolderSlots *)pChar)->vfunc403();
+                dmg.sub_101fa680();
+            }
+        }
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168e10 size=0x32
 #include "CBasePlayer.h"
 
