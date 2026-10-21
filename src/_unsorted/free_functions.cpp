@@ -23397,6 +23397,46 @@ int *sub_10133450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134420 size=0x9a
+#include "CUnknown101346e0.h"
+#include "COutputEvent.h"
+#include "inputdata_t.h"
+
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+
+struct CListNode100cd940;
+int __fastcall sub_100cd940(CListNode100cd940 *pOutput);
+
+struct CRandomStream
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int RandomInt(int lo, int hi);
+};
+
+extern CRandomStream *g_1070b244;
+extern void (__cdecl *g_109f3650)(int level, const char *fmt, ...);
+
+void CUnknown101346e0::sub_10134420(inputdata_t *pInput)
+{
+	int anValid[16];
+	memset(anValid, 0, sizeof(anValid));
+	int nValid = 0;
+	for (int i = 0; i < 16; i++) {
+		if (sub_100cd940((CListNode100cd940 *)((char *)this + 0x490 + i * 0x18)) > 0)
+			anValid[nValid++] = i;
+	}
+	if (nValid > 0) {
+		int nWhich = anValid[g_1070b244->RandomInt(0, nValid - 1)];
+		if (nWhich < 16)
+			((COutputEvent *)((char *)this + 0x490 + nWhich * 0x18))->sub_100cd660(pInput->pActivator, this, 0);
+	} else {
+		g_109f3650(1, "Firing PickRandom input on logic_case %s with no cases set up\n", sub_100ab4f0());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101346e0 size=0x7f
 #include "CUnknown101346e0.h"
 
