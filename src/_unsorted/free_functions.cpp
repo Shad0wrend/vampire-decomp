@@ -37238,6 +37238,25 @@ void __fastcall sub_10001807(char *p);
 void __fastcall sub_101f3070(char *p) { sub_10001807(p - *(int *)(p - 4)); }
 // END FUNCTION
 
+// FUNCTION: 0x101f3d80 size=0x93
+#include "CUnknown101f3d80.h"
+void CUnknown101f3d80::sub_101f3d80(int a, int b)
+{
+    CUnknown101f35c0 **pNew = (CUnknown101f35c0 **)operator new(m_nCount * 4 + 4);
+    if (m_nCount > 0) {
+        for (int i = 0; i < m_nCount; i++)
+            pNew[i] = m_pItems[i];
+        operator delete(m_pItems);
+    }
+    m_pItems = pNew;
+    CUnknown101f35c0 *p = (CUnknown101f35c0 *)operator new(0x24);
+    p = p ? p->sub_101f35c0() : 0;
+    m_pItems[m_nCount] = p;
+    m_pItems[m_nCount]->sub_101f3690(m_n04, this, a, b);
+    m_nCount++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4280 size=0x8
 int __fastcall sub_101f4280(int *p) { return (*p)++; }
 // END FUNCTION

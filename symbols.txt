@@ -1791,6 +1791,7 @@
 0x100091dd func   ?sub_10335f60@@YI_NPADHHH@Z sub_10335f60
 0x100091e2 func   ?vfunc31@CRestore@@UAEHPAHHH@Z CRestore::vfunc31
 0x100091ec func   ?sub_10312580@CUnknown10312580@@QAEMH@Z CUnknown10312580::sub_10312580
+0x100091f1 func   ?sub_101f3d80@CUnknown101f3d80@@QAEXHH@Z CUnknown101f3d80::sub_101f3d80
 0x10009200 func   ?sub_10345980@CBaseCombatCharacter@@QAEPADPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10345980
 0x1000920f func   ?sub_101fbb60@CVStatSubCost_t@@QAEHH@Z CVStatSubCost_t::sub_101fbb60
 0x10009228 func   ?sub_101eab20@@YAXH@Z sub_101eab20
