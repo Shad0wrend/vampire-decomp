@@ -24,6 +24,7 @@ struct CAI_NamedThing	// one of the three global objects an NPC can be bound to 
 {
 	const char *sub_1025e120();	// the name (stub 0x1000f579)
 	char sub_1025dca0(CAI_BaseNPCTroika *pNPC, int a);	// whether the NPC may use this named thing (stub 0x10015564)
+	char sub_1025de90(CAI_BaseNPCTroika *pNPC);	// stub 0x1000d634, run by slot 602 when the NPC may not simply carry on
 };
 
 class CAI_BaseNPCTroika : public CAI_BaseNPC
@@ -54,7 +55,7 @@ public:
 	virtual void vfunc596(); virtual void vfunc597(); virtual void vfunc598(CBaseEntity *pEnt);	// slot 598: forgets pEnt (sub_10332ca0(pEnt, 4, 0), clears the focus / target when it is pEnt, drops its record from the memory list of slot 541)
 	virtual void vfunc599(); virtual char vfunc600(int unused);	// slot 600: see sub_102b57c0
 	virtual void vfunc601(int a);	// slot 601: takes one argument
-	virtual void vfunc602(); virtual float vfunc603(float *pCur, float *pTarget);	// slot 603: random yaw offset picked by where *pCur lies relative to *pTarget (+-32.0f); see the definition
+	virtual char vfunc602(); virtual float vfunc603(float *pCur, float *pTarget);	// slot 602: true when the NPC may carry on (flags +0x5b84 bit 1 clear, slot 293 zero), see CNPC_VHuman::vfunc602; slot 603: random yaw offset picked by where *pCur lies relative to *pTarget (+-32.0f); see the definition
 	virtual void vfunc604(); virtual void vfunc605(); virtual void vfunc606(); virtual void vfunc607();
 	virtual bool vfunc608(const char *pszName);	// slot 608: binds the NPC to the first of the three global named objects whose name equals pszName (case-sensitive; false for null / empty / no match), stores it at +0x65e8 and its name (null when empty) at +0x65ec
 
@@ -175,7 +176,9 @@ public:
 	unsigned int m_flags14bc;
 	char m_pad14c0[0x1590 - 0x14c0];
 	char m_b1590;
-	char m_pad1591[0x5bc4 - 0x1591];
+	char m_pad1591[0x5b84 - 0x1591];
+	unsigned int m_flags5b84;	// 0x5b84: bit 1 keeps the NPC from carrying on (slot 602)
+	char m_pad5b88[0x5bc4 - 0x5b88];
 	char m_b5bc4;
 	char m_pad5bc5[0x5d24 - 0x5bc5];
 	unsigned int m_h5d24;
@@ -187,12 +190,16 @@ public:
 	unsigned int m_h5d74;
 	char m_pad5d78[0x6010 - 0x5d78];
 	unsigned int m_h6010;
-	char m_pad6014[0x6084 - 0x6014];
+	char m_pad6014[0x6074 - 0x6014];
+	float m_f6074;	// 0x6074: the next time slot 600 may ask again
+	char m_pad6078[0x6084 - 0x6078];
 	float m_f6084;
 	unsigned int m_h6088;
 	unsigned int m_h608c;
 	float m_v6090[3];
-	char m_pad609c[0x630c - 0x609c];
+	char m_pad609c[0x6268 - 0x609c];
+	float m_f6268;	// 0x6268
+	char m_pad626c[0x630c - 0x626c];
 	char *m_p630c;	// 0x630c: an object with a flag dword at +0x64
 	char m_pad6310[0x6318 - 0x6310];
 	float m_f6318;	// 0x6318
