@@ -68209,6 +68209,56 @@ void sub_102f65b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f6690 size=0xce
+#include "CAI_NetworkManager.h"
+
+__declspec(dllimport) void __cdecl Warning(const char *pMsg, ...);
+
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long nVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+extern char g_10538764[];	// the type descriptor of CBaseEntity
+extern char g_10610570[];	// the type descriptor of CAI_NetworkManager
+
+struct CGlobalVarsMap	// gpGlobals
+{
+	char m_pad0000[0xc];
+	float curtime;	// 0x0c
+	char m_pad0010[0x24 - 0x10];
+	const char *mapname;	// 0x24
+};
+extern CGlobalVarsMap *g_1070b228;
+extern CAI_NetworkManager *g_10934088;
+extern void *g_1093407c;
+extern int g_10926a3c;
+extern char g_106b8540[];
+
+void sub_102f9900();
+CBaseEntity *sub_10136580(const char *pszClassname);
+const char **sub_1042bff0(const char **pOut, const char *psz);
+bool sub_102f67a0(const char *pszMapName);
+void sub_1000f443();	// the think function of the network manager (stub)
+
+void sub_102f6690()
+{
+	sub_102f9900();
+	CAI_NetworkManager *pNetwork = (CAI_NetworkManager *)__RTDynamicCast(sub_10136580("ai_network"), 0, g_10538764, g_10610570, 0);
+	if (!pNetwork)
+		Warning("classname %s used to create wrong class type\n");
+	const char *pszTmp;
+	g_10934088 = pNetwork;
+	g_1093407c = (char *)pNetwork + 0x458;
+	pNetwork->sub_100a0420(*sub_1042bff0(&pszTmp, "BigNet"));
+	pNetwork->vfunc103();
+	const char *pszMap = g_1070b228->mapname;
+	if (!pszMap)
+		pszMap = g_106b8540;
+	if (sub_102f67a0(pszMap))
+		pNetwork->sub_102f5bd0();
+	g_10926a3c = 0;
+	pNetwork->sub_100ac4e0((int)sub_1000f443, 0, 0);
+	*(float *)((char *)pNetwork + 0x17c) = g_1070b228->curtime + 0.8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f67a0 size=0x171
 extern "C" char *strcat(char *, const char *);
 #pragma intrinsic(strcat)
