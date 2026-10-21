@@ -24339,6 +24339,72 @@ void S::sub_101153a0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115980 size=0x117
+// TARGET: ?sub_10115980@@YAXPAUSHandleOwner@@@Z
+#include "CUnknown101151a0.h"
+#include "CUnknown1018c4d0.h"
+#include "CUnknown1070b22c.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+extern CUnknown1070b22c *g_1070b22c;
+extern unsigned int *g_1070a870;
+extern int g_1070a87c;
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+char sub_101d1a90(int pArg, CUnknown101151a0 *pEntity);
+struct SHandleOwner
+{
+	char m_pad0000[0x40];
+	int m_pArg;	// 0x40
+	char m_bHasArg;	// 0x44
+};
+
+namespace block_10115980 {
+struct CUnknown101151a0Unit : CUnknown101151a0
+{
+	unsigned int sub_101151a0();
+};
+unsigned int CUnknown101151a0Unit::sub_101151a0()
+{
+	return *(unsigned int *)((char *)this + 0x204) & 1;
+}
+}
+using namespace block_10115980;
+
+inline CUnknown101151a0 *HandleGet(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13))
+			return (CUnknown101151a0 *)s->m_pEntity;
+	}
+	return 0;
+}
+
+void sub_10115980(SHandleOwner *pOwner)
+{
+	for (int i = 0; i < g_1070a87c; ) {
+		unsigned int *pArr = g_1070a870;
+		unsigned int *pHandle = &pArr[i];
+		if (!HandleGet(pArr[i])) {
+			int n = g_1070a87c - i - 1;
+			if (n > 0)
+				memmove(pHandle, &pArr[i + 1], n * 4);
+			g_1070a87c--;
+		} else {
+			CUnknown101151a0 *pEnt = HandleGet(*pHandle);
+			if ((char)((CUnknown101151a0Unit *)pEnt)->sub_101151a0() || (pEnt->vfunc241() && sub_101d1a90(pOwner->m_bHasArg ? pOwner->m_pArg : 0, pEnt))) {
+				CUnknown101151a0 *pLinked = pEnt->sub_10115180();
+				if (pLinked) {
+					g_1070b22c->vfunc101(pLinked->vfunc217());
+					((CUnknown1018c4d0 *)pLinked)->sub_1018c4d0(1);
+				}
+			}
+			i++;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101172c0 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
