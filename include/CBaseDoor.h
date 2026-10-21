@@ -3,6 +3,14 @@
 
 struct inputdata_t;
 
+// 0x18-byte member objects of CBaseDoor (event lists), released by sub_100cd2d0.
+struct CBaseDoorItem
+{
+	char m_pad[0x18];
+
+	void sub_100cd2d0();
+};
+
 class CBaseDoor : public CBaseEntity
 {
 public:
@@ -23,8 +31,14 @@ public:
 	void sub_100ee630(CBaseEntity *pKnob);	// "CBaseDoor::AddDoorknob": stores the knob's handle in the first free doorknob slot (+0x628, then +0x62c; warns "Door %s already has 2 doorknobs!" when both are taken), installs the use function at +0x1f0 and sets flag 0x100 / clears 0x400 in +0x204
 	void sub_100eef50(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// the use function installed by AddDoorknob (stub 0x1000f010)
 	const char *sub_100ab4f0();	// debug name of the entity (stub 0x1000b5cd)
+	CBaseDoor *vfunc5(unsigned char flags);	// scalar deleting destructor: releases the ten event lists, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
+	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
 
-	char m_pad03e0[0x628 - 0x3e0];
+	char m_pad03e0[0x4a4 - 0x3e0];
+	CBaseDoorItem m_items4a4[2];	// +0x4a4, +0x4bc
+	char m_pad04d4[0x564 - 0x4d4];
+	CBaseDoorItem m_items564[8];	// +0x564 .. +0x60c (the lists at +0x5dc / +0x60c are two of them)
+	char m_pad0624[0x628 - 0x624];
 	unsigned int m_hDoorknob0;	// +0x628
 	unsigned int m_hDoorknob1;	// +0x62c
 };
