@@ -5100,6 +5100,7 @@
 0x100148c1 func   ?vfunc5@CItemGMercurioJournal@@QAEPAV1@I@Z CItemGMercurioJournal::vfunc5
 0x100148c6 func   ?vfunc600@CNPC_VYukie@@QAEDH@Z CNPC_VYukie::vfunc600
 0x100148fd func   ?vfunc5@CWeaponRanged_Pistol_Thirtyeight@@QAEPAV1@I@Z CWeaponRanged_Pistol_Thirtyeight::vfunc5
+0x1001490c func   ?sub_10202460@@YAPBDPAUCVDmgBlock16_t@@H@Z sub_10202460
 0x10014911 func   _info_node_bach_run_1 info_node_bach_run_1
 0x1001491b func   _info_node_bach_run_2 info_node_bach_run_2
 0x1001492f func   ?sub_101d90c0@CUnknown101d90c0@@QAE_NPAVCUnknown101d90c0_Section@@@Z CUnknown101d90c0::sub_101d90c0

@@ -53106,6 +53106,45 @@ error:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202460 size=0x13c
+#include "CVDmg_t.h"
+#include "CVStatInfo_t.h"
+#include "CUnknown1074e098.h"
+#include "ScopeTrace.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+
+extern CUnknown1074e098 g_1074e658;
+extern CUnknown1074e098 g_1074e4f0;
+extern CUnknown1074e098 g_1074e098;
+extern CUnknown1074e098 g_1074e5f8;
+extern char g_1074e320[];
+
+const char *sub_10202460(CVDmgBlock16_t *pBlock, int value)
+{
+	ScopeTrace trace("vampStats_DepSubValueToStr", g_106b8540);
+	int nIndex;
+	if (!pBlock->sub_10204250()) {
+		switch (pBlock->m_a) {
+		case 0:
+			nIndex = pBlock->m_b;
+			return ((CVStatInfo_t *)g_1074e658.sub_10200370(nIndex))->sub_101fdda0(value);
+		case 1:
+			nIndex = pBlock->m_b;
+			return ((CVStatInfo_t *)g_1074e4f0.sub_10200370(nIndex))->sub_101fdda0(value);
+		case 2:
+			nIndex = pBlock->m_b;
+			return ((CVStatInfo_t *)g_1074e098.sub_10200370(nIndex))->sub_101fdda0(value);
+		case 3:
+			nIndex = pBlock->m_b;
+			return ((CVStatInfo_t *)g_1074e5f8.sub_10200370(nIndex))->sub_101fdda0(value);
+		}
+	}
+	sprintf(g_1074e320, "%d", value);
+	return g_1074e320;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202760 size=0xc
 extern int g_105a6fc8[];
 int sub_10202760(int index)
