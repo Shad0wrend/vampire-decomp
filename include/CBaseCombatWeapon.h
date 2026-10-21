@@ -86,7 +86,8 @@ public:
 	virtual int vfunc328();
 	CBCW_V(329) CBCW_V(330) CBCW_V(331) CBCW_V(332)
 	virtual void vfunc333(int a, int b, int c, int d, int e, int f);
-	CBCW_V(334) CBCW_V(335) CBCW_V(336)
+	virtual void vfunc334(int a, int b);	// walks the slot 347(a) records (sub_10252120(a, i)) and tells the sound/overlay object at 0x1070b248 about each: with the record flag (+0x90) set only when the owner exists (type 6), else with b, for the owner's or the weapon's edict
+	CBCW_V(335) CBCW_V(336)
 	virtual float vfunc337(int a, int b);
 	virtual void vfunc338(int a, int b);	// "CBaseCombatWeapon::Weapon_SetActivity"-like: called by CBaseCombatCharacter::Weapon_SetActivity with its two arguments
 	CBCW_V(339)
@@ -95,7 +96,7 @@ public:
 	virtual int vfunc343();
 	virtual int vfunc344();	// the owner object (sub_102517b0) + 0x2408
 	virtual int vfunc345();	// the weapon's weight (compared by CMultiplayRules::vfunc19)
-	CBCW_V(346) CBCW_V(347) CBCW_V(348) CBCW_V(349)
+	CBCW_V(346) virtual int vfunc347(int a); CBCW_V(348) CBCW_V(349)
 	CBCW_V10(35) virtual unsigned int vfunc360();	// the weapon's type flags (bits 13 and 14 mark ranged weapons)
 	CBCW_V(361)
 	virtual CWeaponActivityRecord *vfunc362();	// the weapon's activity translation table
@@ -113,6 +114,7 @@ public:
 	CWeaponOwner *sub_10252290();	// resolves the owner handle at +0x88c (0 when stale)
 	void *sub_102521f0();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale)
 	int sub_10252240();	// same as sub_102521f0 (stub 0x100011f4)
+	char *sub_10252120(int a, int index);	// stub 0x1000aaba: the record `index` of the list slot 347(a) counts
 	void sub_10254cd0(int a);	// stub 0x100074f5
 	void sub_1024edc0();	// prints the weapon's activity translation table (base activity, weapon activity, required) with Msg
 	bool sub_10253b40(int a);	// true when the ammo type at +0x744 + a * 4 is not negative
