@@ -41137,6 +41137,57 @@ void CUnknown102047d0::sub_102047d0(const char *pszName, int *pGender, int *pVal
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204c60 size=0x9c
+#include "CUnknown10204c60.h"
+#include "CUnknown10205ba0.h"
+#include "CVStatInfoList_t.h"
+
+struct CVStatInfoViewX {
+    char m_pad[0x9c];
+    CUnknown10205ba0 m_value;
+};
+
+extern CVStatInfoList_t g_1074e658;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e098;
+extern CVStatInfoList_t g_1074e5f8;
+
+static inline int EvalIn(CVStatInfoList_t &list, int idx)
+{
+    CVStatInfoViewX *pInfo = (CVStatInfoViewX *)list.sub_10200370(idx);
+    return pInfo->m_value.sub_10205840();
+}
+
+int CUnknown10204c60::sub_10204c60()
+{
+    if (m_index == -1)
+        return 0;
+    switch (m_type) {
+    case 0:
+        return EvalIn(g_1074e658, m_index);
+    case 1:
+        return EvalIn(g_1074e4f0, m_index);
+    case 2:
+        return EvalIn(g_1074e098, m_index);
+    case 3:
+        return EvalIn(g_1074e5f8, m_index);
+    case 4:
+        return 0;
+    case 5:
+        return 0;
+    case 6:
+        return 0;
+    case 7:
+        return 0;
+    case 8:
+        return 0;
+    case 9:
+        return 0;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204e90 size=0x94
 #include "CUnknown10204e90.h"
 
