@@ -9,5 +9,5 @@ public:
 	CSecCamera *sub_1020bf00();
 	void vfunc104();	// slot 104 (Precache): precaches the four model names at +0x7c4 / +0x7c8 / +0x7cc / +0x7d0 when set, then CBreakableProp::vfunc104
 	void sub_1000978c();	// CBreakableProp::vfunc104, called directly (tail call)
-	void sub_1020c890();	// when the sound pointer at +0x7d4 is set: asks the engine for an emitted sound id (engine slot 35 with this entity's edict), hands it with a broadcast filter to the sound system (global 0x1070b248, slot 11) and clears the pointer
+	void sub_1020c890();	// when the sound pointer at +0x7d4 is set: has the engine sound object (global 0x1070b248, slot 11, EmitSound with 11 arguments) play to a broadcast recipient filter (every player) on this entity's engine index (IndexOfEdict, engine slot 35), then clears the pointer
 };
