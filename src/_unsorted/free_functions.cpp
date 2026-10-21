@@ -69564,6 +69564,19 @@ bool CAI_Pathfinder::sub_102fce80(int moveType, CAI_PathfinderLink *pLink)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103000a0 size=0x75
+#include "Vector.h"
+
+// TARGET: sub_103000a0
+void __stdcall sub_103000a0(const Vector &a, const Vector &b, float num, float den, Vector &out)
+{
+	out = b - a;
+	float s = num / den;
+	VectorScale(out, s, out);
+	VectorAdd(out, a, out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10303740 size=0xcb
 #include "CAI_Pathfinder.h"
 
