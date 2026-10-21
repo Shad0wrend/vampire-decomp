@@ -4874,6 +4874,7 @@
 0x10015406 func   _trigger_autosave trigger_autosave
 0x1001540b func   ?sub_10194e40@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_10194e40
 0x10015415 func   ?sub_10092190@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10092190
+0x1001541a func   ?vfunc264@CBaseAnimating@@QAEXXZ CBaseAnimating::vfunc264
 0x10015433 func   ?vfunc4@CTEBeamRing@@UAEXHH@Z CTEBeamRing::vfunc4
 0x1001543d func   ?vfunc5@CRevertSaved@@QAEPAV1@I@Z CRevertSaved::vfunc5
 0x1001544c func   ?sub_100de930@CUnknown100de930@@QAEXXZ CUnknown100de930::sub_100de930

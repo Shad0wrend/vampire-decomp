@@ -312,3 +312,29 @@ void CBaseAnimating::vfunc257(int a, int b)
 	sub_100142f4(hdr, s->slot219(), s->slot217(), out, buf, -1, a, bits);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10096980 size=0x163
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+extern float g_106cc010[][3];
+void sub_10142b80(float *pos, float *mins, float *maxs, float *angles, int r, int g, int b, int a, int duration);
+
+void CBaseAnimating::vfunc264()
+{
+	ScopeTrace trace("CBaseAnimating::DrawServerHitboxes", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char *pStudioHdr = (char *)sub_100952d0(-1);
+	if (pStudioHdr) {
+		char *pSet = pStudioHdr + *(int *)(pStudioHdr + 0x104) + *(int *)((char *)this + 0x680) * 12;
+		if (pSet && 0 < *(int *)(pSet + 4)) {
+			{ int i = 0; while (i < *(int *)(pSet + 4)) { float pos[3];
+				float angles[3];
+				char *pBox = pSet + *(int *)(pSet + 8) + i * 0x20;
+				int c;
+				sub_100926e0(*(int *)pBox, (int)pos, (int)angles); c = *(int *)(pBox + 4) % 8;
+				sub_10142b80(pos, (float *)(pBox + 8), (float *)(pBox + 0x14), angles,
+					(int)(*(c + g_106cc010)[0] * 255.0f), (int)(g_106cc010[c][1] * 255.0f), (int)(*(2 + *(g_106cc010 + c)) * 255.0f), 0, 0); ++i; } }
+		}
+	}
+}
+// END FUNCTION
