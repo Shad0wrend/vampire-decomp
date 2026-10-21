@@ -27800,6 +27800,39 @@ SPyObj *sub_10196ea0(void *self, void *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10197050 size=0x80
+#include "CEntityVSlots.h"
+#include "Vector.h"
+
+struct PyObject;
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObject *args, const char *format, ...);
+__declspec(dllimport) void PyErr_Print();
+}
+
+Vector *sub_10003f6c(Vector *ret, PyObject *tuple);	// stub 0x10003f6c: PyTuple_AsVector
+PyObject *sub_100065fa(CEntityVSlots *pEnt);	// stub 0x100065fa: wraps the entity in its Python instance
+CEntityVSlots *sub_100a9ab0(const char *pszClassname, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
+
+// TARGET: sub_10197050
+PyObject *sub_10197050(PyObject *self, char *args)
+{
+	PyObject *pOrigin = 0;
+	PyObject *pAngles = 0;
+	PyObject *pResult = 0;
+	if (PyArg_ParseTuple((PyObject *)args, "sOO", &args, &pOrigin, &pAngles))
+	{
+		Vector angles;
+		Vector origin;
+		const float *pAng = (const float *)sub_10003f6c(&angles, pAngles);
+		pResult = sub_100065fa(sub_100a9ab0(args, (const float *)sub_10003f6c(&origin, pOrigin), pAng, 0));
+	}
+	else
+		PyErr_Print();
+	return pResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101970f0 size=0x8e
 struct PyObj;
 extern "C" __declspec(dllimport) int PyArg_ParseTuple(PyObj *, const char *, ...);
