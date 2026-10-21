@@ -31,6 +31,7 @@ public:
 	int sub_10395650(int a, void *pWeapon);	// maps the weapon (flags from its slot 360 have bit 15 or 16) through sub_103952b0(a), else the state at +0x1594 to a small code via a jump table (1 -> -2, 4 -> 1, 5 -> 0, 6 -> 5, 7 -> 4, 8 -> 3, 9 -> 2, everything else -1)
 	int sub_103954e0(int a, void *pWeapon);	// like sub_10395650, but each state falls through a chain of availability tests (sub_10398000 / stub 0x10001802): 4 -> 1, 3, 5; 5 -> 0, 2, 4; 9 -> 2, 4; 8 -> 3, 5; 6 -> 5; 7 -> 4; 1 -> -2; -1 when a test fails at the end of the chain
 	char sub_10398000(int code);	// availability test of a result code (stub 0x10001802)
+	float sub_103986b0();	// average of the four limb weights (g_1046bad0 for codes 0 and 1, g_10462b84 for 2 and 3) over the available codes (sub_10398000), g_10462b84 when none is
 	int sub_103952b0(int a);	// called through the stub at 0x10012f85
 	int vfunc376(int act);	// slot 376 "CNPC_VMingXiao::TranslateActivity": 0x3d -> 0x3b, 0x3e -> 0x3c, 0x9f -> 0x9d, 0xa0 -> 0x9e, 0xa3 -> 0xa1, 0xa4 -> 0xa2, else the Troika base
 	int sub_1000fb14(int act);	// CAI_BaseNPCTroika::vfunc376, called directly
