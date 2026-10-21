@@ -98504,6 +98504,23 @@ void __fastcall sub_1042edb0(FadeEntView *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ee50 size=0x66
+#include "CUnknown1042e8c0.h"
+#include <math.h>
+
+// TARGET: CUnknown1042e8c0::sub_1042ee50
+void CUnknown1042e8c0::sub_1042ee50(float frames)
+{
+	m_flFrame += frames;
+	if (m_flFrame > m_flMaxFrame) {
+		if (m_flags204 & 2)
+			sub_1042ef40();
+		else if (m_flMaxFrame > 0)
+			m_flFrame = fmod(m_flFrame, m_flMaxFrame);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042fb20 size=0x22
 extern int g_106af554;
 extern int g_106af5dc;
