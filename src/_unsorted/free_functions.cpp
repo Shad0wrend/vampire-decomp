@@ -69423,6 +69423,42 @@ void CHintData_WW::sub_103ca390(int hint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cade0 size=0xcc
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+extern int g_10538764, g_10570e40;
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CEntitySlots251X {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21) SV10(22) SV10(23) SV10(24)
+	virtual void s250();
+	virtual void s251();
+};
+
+void CNPC_VWerewolf::sub_103cade0()
+{
+	CBaseEntity *pZone = g_106eb5d8.sub_100f7380(0, "trigger_werewolf_zone");
+	while (pZone) {
+		((CEntitySlots251X *)pZone)->s251();
+		pZone = g_106eb5d8.sub_100f7380(pZone, "trigger_werewolf_zone");
+	}
+	CBaseEntity *pDoor1 = (CBaseEntity *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, "rotdoor1", (CBaseEntity *)this, (CBaseEntity *)this), 0, &g_10538764, &g_10570e40, 0);
+	if (pDoor1)
+		m_hRotDoor1 = *pDoor1->vfunc1();
+	else
+		m_hRotDoor1 = -1;
+	CBaseEntity *pDoor2 = (CBaseEntity *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, "rotdoor2", (CBaseEntity *)this, (CBaseEntity *)this), 0, &g_10538764, &g_10570e40, 0);
+	if (pDoor2)
+		m_hRotDoor2 = *pDoor2->vfunc1();
+	else
+		m_hRotDoor2 = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ceb60 size=0x120
 #include "CNPC_VWerewolf.h"
 

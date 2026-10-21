@@ -475,6 +475,7 @@
 0x10003206 func   ?sub_1021e180@UtlMem@@QAEXXZ UtlMem::sub_1021e180
 0x10003215 func   _func_dustmotes func_dustmotes
 0x10003229 func   ?sub_100a0420@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_100a0420
+0x1000324c func   ?sub_103cade0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cade0
 0x10003256 func   ?sub_103fa3d0@@YAHXZ sub_103fa3d0
 0x1000326f func   ?sub_100ac610@@YIXPAVCBaseEntity@@HMPBD@Z sub_100ac610
 0x10003288 func   ?vfunc0@CTraceFilterNav@@QAE_NPAXH@Z CTraceFilterNav::vfunc0
