@@ -16,7 +16,7 @@ public:
 	virtual int vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();	// GetCollisionOrigin: returns the pointer to the three floats of the world origin (declared void: vfunc8 is matched that way)
-	virtual float *vfunc9();	// GetCollisionAngles: pointer to the three floats of the world angles
+	virtual float *vfunc9(int a);	// GetCollisionAngles: pointer to the three floats of the world angles (takes one stack argument, 0 at the known call)
 	virtual float *vfunc10();	// CollisionToWorldTransform: the matrix3x4_t (12 floats) of the collision space
 	virtual void vfunc11();
 	virtual void vfunc12();
@@ -66,4 +66,5 @@ public:
 	void sub_100dd450(Vector *pMins, Vector *pMaxs);	// "CCollisionProperty::WorldSpaceSurroundingBounds"-like: the world bounds of the outer entity (from its physics object, slot 49 of it through the global at 0x1072393c slot 18, else the collision origin twice), grown by the trigger bounds (slot 3) when bit 8 of the solid flags is set
 	void sub_100dd780(Vector *pMins, Vector *pMaxs);	// stub 0x10012c9c: recomputes the surrounding bounds, called by slot 15 when the dirty flag is set
 	Vector *sub_104103c0(const Vector &in, Vector *pResult);	// "CCollisionProperty::CollisionToWorldSpace": the entity-space bounds (solid type neither 0 nor 2, flag bit 7 clear) with non-zero angles go through the collision transform (VectorTransform), else collision origin + in
+	float *sub_100dcc20(const float *pPoint, float *pOut);	// "CCollisionProperty::WorldToNormalizedSpace" (plain member): the point in collision space (entity-space bounds with non-zero angles go through the inverse collision transform, else the point minus the collision origin), normalised by the bounds (sub_100dc9f0); returns pOut
 };
