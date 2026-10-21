@@ -96,6 +96,7 @@ public:
 	void sub_100c8a20(CBaseEntity *pOther);	// \"CBaseButton::ButtonTouch\"-like: unless moving (state 2 or 3) or the byte at +0x5c4 is set and the use filter passes the stored activator (+0x53c): clears the touch function at +0x1ec, fires the output at +0x578 for the activator; state 0 -> sub_100c97c0, else sub_100c9560
 	void sub_100c9430(CBaseEntity *pOther);	// the touch function variant for a toucher that has the field at +0xa8 (or, with the byte at +0x5c5 set, bit 2 of the flags at +0x4c): remembers its handle as the activator (+0x53c), then like sub_100c8a20 without the use filter, using the state from sub_100c93b0
 	int sub_100c93b0();	// the button's current state (stub 0x10008aa8), called directly
+	int vfunc142(void *pInfo);	// slot 142 \"CBaseButton::OnTakeDamage\": fires the damage output (+0x560) for the activator; for a damageable button (flag 0x200 at +0x204 or health at +0x210) in a usable state takes the attacker (the entity at +0x2c of the damage info) as the new activator and presses it like sub_100c9430; always 0
 	bool sub_100a7bd0(CBaseEntity *pActivator);	// CBaseEntity::PassesUseFilter (stub 0x10001032), called directly
 
 	char m_pad0004[0x114 - 4];
@@ -106,7 +107,9 @@ public:
 	void *m_pfnTouch1ec;	// 0x1ec
 	char m_pad01f0[0x204 - 0x1f0];
 	unsigned int m_flags204;	// 0x204
-	char m_pad0208[0x4f8 - 0x208];
+	char m_pad0208[8];
+	int m_nHealth210;	// 0x210
+	char m_pad0214[0x4f8 - 0x214];
 	int m_nState4f8;	// 0x4f8
 	char m_pad04fc[0x508 - 0x4fc];
 	Vector m_vec508;	// 0x508
@@ -117,7 +120,8 @@ public:
 	unsigned int m_hActivator53c;	// 0x53c: entity handle of the activator
 	char m_pad0540[0x55d - 0x540];
 	char m_b55d;	// 0x55d
-	char m_pad055e[0x578 - 0x55e];
+	char m_pad055e[0x560 - 0x55e];
+	COutputEvent m_Output560;	// 0x560
 	COutputEvent m_Output578;	// 0x578
 	COutputEvent m_Output590;	// 0x590
 	COutputEvent m_Output5a8;	// 0x5a8
