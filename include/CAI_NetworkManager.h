@@ -9,4 +9,5 @@ public:
 	void sub_100107a3();
 	CAI_NetworkManager *sub_102f4fe0();	// as in CKeepUpright (transplant)
 	virtual void vfunc103();	// slot 103: scope traced SetSolid(0) inlined, then slot 93(0, 0)
+	void sub_102f5bd0();	// stub 0x1000fede: loads the node graph of the current map (called by InitializeAINetworks when the map has one)
 };
