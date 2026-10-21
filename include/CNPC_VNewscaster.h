@@ -61,6 +61,9 @@ class CNPC_VNewscaster
 {
 public:
 	virtual int vfunc404(int unused);
+	virtual int vfunc124();	// slot 124 "CNPC_VNewscaster::DrawDebugTextOverlays": scope trace (entity name), the Troika version's line count, plus sub_103a0ff0 of it while bit 0 of the byte at +0x224 is set (the position of this virtual is not its real slot)
+	int sub_1029d4e0();	// CAI_BaseNPCTroika::vfunc124, called directly (stub 0x10006f64)
+	int sub_103a0ff0(int nLines);	// the extra lines of the newscaster's own text (stub 0x10003bbb)
 
 	void sub_103a0d50();	// frees and removes every entry of both lists, then clears the byte at +0x6690
 	void sub_103a0420();	// slot 420 "CNPC_VNewscaster::...Reset": base slot 420 (sub_1000c531), then resets the counters at +0x6338..+0x6368 (999999 limits, scrambled value of sub_10009408(0) at +0x6364) and clears the flags
@@ -68,7 +71,11 @@ public:
 	CNPC_VNewscaster *vfunc5(unsigned int flags);	// scalar deleting destructor: destructs both lists (B, then A), the base (sub_1028d610), and frees the object when bit 0 of flags is set
 	void sub_1028d610();	// base class destructor body (stub 0x100123af)
 
-	char m_pad0004[0x1480 - 4];
+	char m_pad0004[0x224 - 4];
+	char m_bFlags224;	// 0x224: bit 0 asks for the extra overlay lines
+	char m_pad0225[0x26c - 0x225];
+	const char *m_name26c;	// 0x26c: the entity name
+	char m_pad0270[0x1480 - 0x270];
 	char m_bFlag1480;
 	char m_pad1481[0x5b84 - 0x1481];
 	int m_n5b84;
