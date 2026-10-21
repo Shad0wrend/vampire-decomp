@@ -4372,6 +4372,7 @@
 0x100154d8 func   ?sub_1036ec40@@YADXZ sub_1036ec40
 0x100154e2 func   ?sub_100b03b0@@YAXXZ sub_100b03b0
 0x1001553c func   ?vfunc103@CBeam@@UAEXXZ CBeam::vfunc103
+0x10015541 func   ?sub_101dcb80@CRecListUnit@@QAEPAU1@PBU1@@Z CRecListUnit::sub_101dcb80
 0x10015546 func   ?sub_10032660@@YAXPAX0PAHH@Z sub_10032660
 0x10015555 func   ?vfunc49@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc49
 0x1001555f func   ?vfunc71@CPropRadio@@UAEXXZ CPropRadio::vfunc71

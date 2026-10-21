@@ -33985,6 +33985,49 @@ void CUnknown101dc790::sub_101dc790(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dcb80 size=0x64
+struct CItemVec {
+    int m_growBy;
+    int m_allocationCount;
+    int m_count;
+    void **m_pItems;
+    void sub_101dc410(const CItemVec *pOther);
+};
+namespace block_101dc1c0 {
+    struct CItemVecInit : CItemVec { CItemVecInit *sub_101dc1c0(); };
+    CItemVecInit *CItemVecInit::sub_101dc1c0()
+    {
+        m_growBy = 1;
+        m_allocationCount = 0;
+        m_count = 0;
+        m_pItems = 0;
+        return this;
+    }
+}
+using namespace block_101dc1c0;
+struct CRecX {
+    int d[11];
+};
+struct CRecListUnit {
+    int m_pad0;
+    int m_count;	// 0x04
+    CRecX **m_pItems;	// 0x08
+    CItemVec m_names;	// 0x0c
+    CRecX *sub_101dcc80();
+    CRecListUnit *sub_101dcb80(const CRecListUnit *pOther);
+};
+
+// TARGET: CRecListUnit::sub_101dcb80
+CRecListUnit *CRecListUnit::sub_101dcb80(const CRecListUnit *pOther)
+{
+    ((CItemVecInit *)&m_names)->sub_101dc1c0();
+    m_names.sub_101dc410(&pOther->m_names);
+    for (int i = 0; i < pOther->m_count; i++)
+        *sub_101dcc80() = *pOther->m_pItems[i];
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd910 size=0xde
 #include "CUnknown101dd910.h"
 #include "ScopeTrace.h"
