@@ -69188,6 +69188,50 @@ void CUnknown102becb0::sub_102becb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf5d0 size=0xc4
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+
+struct CAI_BaseNPCTroikaUnit : CAI_BaseNPCTroika
+{
+	void sub_102bf5d0(CBaseEntity *pEnt);
+	void sub_102bf560(CBaseEntity *pEnt);
+};
+
+// TARGET: CAI_BaseNPCTroikaUnit::sub_102bf5d0
+void CAI_BaseNPCTroikaUnit::sub_102bf5d0(CBaseEntity *pEnt)
+{
+	if (pEnt == 0)
+		return;
+	switch (*(int *)((char *)this + 0x5cc0))
+	{
+	case 1:
+	case 3:
+	case 0xb:
+		break;
+	default:
+		return;
+	}
+	if (*(int *)((char *)pEnt + 0x9c) == 0)
+		return;
+	if (vfunc404(pEnt) == 3)
+		return;
+	const Vector &a = *((CEntityVSlots *)pEnt)->slot217();
+	const Vector &b = *((CEntityVSlots *)this)->slot217();
+	float dx = b.x - a.x;
+	float dy = b.y - a.y;
+	float dz = b.z - a.z;
+	if (dx * dx + dy * dy + dz * dz < 22500.0f)
+	{
+		sub_102bf560(pEnt);
+	}
+	else if (vfunc201(pEnt, 0x2804091, 0, 0) && vfunc363(pEnt))
+	{
+		sub_102bf560(pEnt);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bfe10 size=0xca
 #include "CAI_BaseNPCTroika.h"
 

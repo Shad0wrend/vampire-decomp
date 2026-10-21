@@ -3546,6 +3546,7 @@
 0x1000e507 func   ?vfunc546@CNPC_VSheriffSwarm@@QAEHH@Z CNPC_VSheriffSwarm::vfunc546
 0x1000e511 func   ?sub_103d7090@CWerewolfUnit@@QAEPAUCForwardHintX@@PAU2@@Z CWerewolfUnit::sub_103d7090
 0x1000e520 func   ?vfunc5@CVGuiScreen@@QAEPAV1@I@Z CVGuiScreen::vfunc5
+0x1000e52f func   ?sub_102bf5d0@CAI_BaseNPCTroikaUnit@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroikaUnit::sub_102bf5d0
 0x1000e534 func   ?vfunc126@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc126
 0x1000e552 func   ?sub_1035e5f0@CNPC_VAndreiBlood@@QAEXXZ CNPC_VAndreiBlood::sub_1035e5f0
 0x1000e561 func   ?sub_101db560@CUnknown101db210@@QAEXXZ CUnknown101db210::sub_101db560
