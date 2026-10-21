@@ -40131,6 +40131,53 @@ bool CUnknown101f0e50::sub_101f82d0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f8510 size=0xc6
+#include "CUnknown101f0e50.h"
+extern char g_106b8540[];
+
+struct CTraitEffectRecX
+{
+	int m_nKind;	// 0x00
+	const char *m_pszName;	// 0x04
+	char m_pad08[0x14 - 8];
+	int m_nCount;	// 0x14
+	char m_pad18[0x44 - 0x18];
+};
+
+struct CTraitEffectGroupX
+{
+	char m_pad00[0x10];
+	int m_nEffects;
+	CTraitEffectRecX *m_pEffects;
+};
+
+void CUnknown101f0e50::sub_101f8510(CTraitOwnerX *pOwner, int index)
+{
+	if (pOwner) {
+		CTraitEffectGroupX *pGroup = (CTraitEffectGroupX *)sub_101f8480(index);
+		for (int i = 0; i < pGroup->m_nEffects; i++) {
+			CTraitEffectRecX *pEffect = &pGroup->m_pEffects[i];
+			switch (pEffect->m_nKind) {
+			case 5: {
+				if (pEffect->m_nCount <= 0) {
+					for (int j = -pEffect->m_nCount; j >= 0; j--)
+						pOwner->m_Applied.sub_101f1c70((int)pEffect->m_pszName);
+				}
+				break;
+			}
+			case 6: {
+				if (pEffect->m_nCount <= 0) {
+					for (int k = -pEffect->m_nCount; k >= 0; k--)
+						sub_101f9af0(pOwner, pEffect->m_pszName ? pEffect->m_pszName : g_106b8540);
+				}
+				break;
+			}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9550 size=0xa
 extern int g_1074e008;
 void sub_101f9550(int value)

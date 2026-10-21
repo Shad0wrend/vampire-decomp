@@ -2477,6 +2477,7 @@
 0x1000bbcc func   ?vfunc5@CItemGVVPhoto@@QAEPAV1@I@Z CItemGVVPhoto::vfunc5
 0x1000bbea func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UMAP_ACCESS@@V?$CUtlMemory@UMAP_ACCESS@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>::vfunc3
 0x1000bbef func   ?vfunc5@CItemGDrugsPillBottle@@QAEPAV1@I@Z CItemGDrugsPillBottle::vfunc5
+0x1000bbf4 func   ?sub_101f8510@CUnknown101f0e50@@QAEXPAVCTraitOwnerX@@H@Z CUnknown101f0e50::sub_101f8510
 0x1000bbf9 func   ?sub_10135570@@YAPAHXZ sub_10135570
 0x1000bc08 func   ?vfunc103@CNPC_VHumanCombatant@@UAEXXZ CNPC_VHumanCombatant::vfunc103
 0x1000bc0d func   ?sub_101cdac0@@YAXHHPBDHHIH@Z sub_101cdac0
