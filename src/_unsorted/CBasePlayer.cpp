@@ -289,6 +289,60 @@ int CBasePlayer::sub_101647a0(int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101654e0 size=0x93
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CActivityArg	// a one dword activity wrapper with an inline constructor
+{
+	int m_nActivity;
+	CActivityArg(int n) { m_nActivity = n; }
+};
+
+struct CPlayerActView	// the player's slot-style SetActivity member taking the wrapper
+{
+	void sub_1032a100(CActivityArg act);
+};
+
+inline CGlobalEntityList_Ent *LookupEntity(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+	if (pSlot->m_Serial != (int)(h >> 13))
+		return 0;
+	return pSlot->m_pEntity;
+}
+
+char CBasePlayer::vfunc418(int unused)
+{
+	char *p = (char *)this;
+	sub_101644f0(-1, 0, 0);
+	int nActivity = *(int *)(p + 0xff0);
+	if (nActivity == 0xf49)
+	{
+		if (!LookupEntity(*(unsigned int *)(p + 0xfe8)))
+		{
+			((CPlayerActView *)this)->sub_1032a100(CActivityArg(0xf52));
+			return 0;
+		}
+	}
+	if (*(char *)(p + 0x65c))
+	{
+		if (nActivity == 0xf40)
+		{
+			((CPlayerActView *)this)->sub_1032a100(CActivityArg(0xf49));
+			return 0;
+		}
+		if (nActivity == 0xf52)
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168e10 size=0x32
 #include "CBasePlayer.h"
 
