@@ -19890,6 +19890,65 @@ extern "C" CBaseEntity *func_door()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee2b0 size=0xaf
+#include "CBaseDoor.h"
+
+extern int vt_104546d4[];
+
+struct COutputCtorView
+{
+	char m_data[0x18];
+
+	void sub_100cd2a0();
+};
+
+struct CBaseDoorCtorView
+{
+	int m_pVtable;
+	char m_pad0004[0xa4 - 4];
+	CBaseDoorCtorView *m_pSelf;
+	char m_pad00a8[0x564 - 0xa8];
+	COutputCtorView m_Outputs[8];
+	char m_b624;
+	char m_pad0625[3];
+	int m_hDoorknob[2];
+	int m_hLinked630;
+	int m_pszLinked634;
+	int m_hLinked638;
+	char m_pad063c[0x64c - 0x63c];
+	int m_n64c;
+	int m_n650;
+	char m_b654;
+
+	void sub_101c0e20();
+};
+
+CBaseDoor *CBaseDoor::sub_100ee2b0()
+{
+	CBaseDoorCtorView *p = (CBaseDoorCtorView *)this;
+	p->sub_101c0e20();
+	p->m_Outputs[0].sub_100cd2a0();
+	p->m_Outputs[1].sub_100cd2a0();
+	p->m_Outputs[2].sub_100cd2a0();
+	p->m_Outputs[3].sub_100cd2a0();
+	p->m_Outputs[4].sub_100cd2a0();
+	p->m_Outputs[5].sub_100cd2a0();
+	p->m_Outputs[6].sub_100cd2a0();
+	p->m_Outputs[7].sub_100cd2a0();
+	for (int i = 0; i < 2; i++)
+		p->m_hDoorknob[i] = -1;
+	p->m_hLinked630 = -1;
+	p->m_hLinked638 = -1;
+	p->m_pVtable = (int)vt_104546d4;
+	p->m_n64c = 10;
+	p->m_n650 = 3;
+	p->m_pSelf = p;
+	p->m_b654 = 1;
+	p->m_b624 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee630 size=0xd8
 #include "CBaseEntity.h"
 #include "CBaseDoor.h"
