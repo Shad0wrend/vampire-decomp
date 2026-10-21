@@ -35091,6 +35091,76 @@ void CUnknown101e3cf0::sub_101e3cf0(CUnknown101e3cfObj *obj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3f50 size=0x75
+struct CStatusTarget {
+	char m_pad0000[0xeb4];
+	unsigned int m_nFlags;
+};
+
+struct CStatusEntry {
+	char m_pad0000[0xc];
+	unsigned int m_nMask;	// 0x0c
+	int m_nType;	// 0x10
+};
+
+struct CStatusFlagList {
+	int m_pad0000;
+	int m_nCount;	// 0x04
+	CStatusEntry **m_ppEntries;	// 0x08
+
+	unsigned int sub_101e1610(int type);
+	unsigned int sub_101e1520(int type, int index);
+	bool sub_101e3f50(CStatusTarget *pTarget);
+};
+
+namespace block_101e1520 {
+struct CStatusFlagListUnit : CStatusFlagList {
+	unsigned int sub_101e1610(int type);
+	unsigned int sub_101e1520(int type, int index);
+};
+
+unsigned int CStatusFlagListUnit::sub_101e1610(int type)
+{
+	unsigned int result = 0;
+	for (int i = 0; i < m_nCount; i++) {
+		CStatusEntry *e = m_ppEntries[i];
+		if (e->m_nType == type)
+			result |= e->m_nMask;
+	}
+	return result;
+}
+
+unsigned int CStatusFlagListUnit::sub_101e1520(int type, int index)
+{
+	for (int i = 0; i < m_nCount; i++) {
+		if (m_ppEntries[i]->m_nType == type) {
+			if (i + index < m_nCount)
+				return m_ppEntries[i + index]->m_nMask;
+			return 0;
+		}
+	}
+	return 0;
+}
+}
+using namespace block_101e1520;
+
+// TARGET: CStatusFlagList::sub_101e3f50
+bool CStatusFlagList::sub_101e3f50(CStatusTarget *pTarget)
+{
+	static unsigned int s_mask = ((CStatusFlagListUnit *)this)->sub_101e1610(10);
+	static unsigned int s_first = ((CStatusFlagListUnit *)this)->sub_101e1520(10, 0);
+	if (s_mask & pTarget->m_nFlags) {
+		unsigned int bits = s_first;
+		for (int i = 0; i < 5; i++) {
+			if (bits & pTarget->m_nFlags)
+				return true;
+			bits *= 2;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e48b0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
