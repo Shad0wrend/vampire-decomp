@@ -20750,6 +20750,28 @@ Rec *sub_100c47d0(Src *src, int b, int c, Vector *v1, Vector *v2, unsigned flags
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5600 size=0x71
+struct S100c5600 { int pad[3]; int m_n; };
+
+void sub_1001435d(int a, int b, int c, S100c5600 **pEntries, float *pWeights);
+
+// TARGET: sub_100c5600
+int sub_100c5600(int a, int b, int c)
+{
+	float w[4];
+	S100c5600 *p[4];
+	sub_1001435d(a, b, c, p, w);
+	float sum = 0.0f;
+	for (int i = 0; i < 4; i++) {
+		if (w[i] > 0.0f)
+			sum += p[i]->m_n * w[i];
+	}
+	if (sum > 1.0f)
+		sum -= 1.0f;
+	return (int)sum;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6280 size=0xa0
 #include <string.h>
 struct SModelLoader {
