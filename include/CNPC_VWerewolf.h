@@ -146,8 +146,8 @@ public:
 	void sub_103cca80();	// slot 305 "CNPC_VWerewolf::RemoveBaseFightingItems": scope trace (entity name), when bit 4 of the misc flags is set removes the "item_w_werewolf_attacks" weapon (sub_1021fee0(this, name)) and clears that bit
 	void vfunc141(CUnknown101c2a50 *pInfo, int b, int c);	// slot 141 "CNPC_VWerewolf::TraceAttack": scope trace (entity name), clears the dword at +0x44 of pInfo, then the base implementation
 	void sub_10015b13(CUnknown101c2a50 *pInfo, int b, int c);	// CAI_BaseNPC::vfunc141 (stub 0x10015b13), called directly
-	void vfunc142(CUnknown101c2a50 *pInfo);	// slot 142 "CNPC_VWerewolf::OnTakeDamage": scope trace (entity name), builds a local copy of the damage info (0x4c bytes) and clears its dword at +0x44 (never used afterwards), then the base implementation with the original info
-	void sub_102bed30(CUnknown101c2a50 *pInfo);	// CAI_BaseNPCTroika::vfunc142 (stub 0x10004647), called directly
+	int vfunc142(CUnknown101c2a50 *pInfo);	// slot 142 "CNPC_VWerewolf::OnTakeDamage": scope trace (entity name), builds a local copy of the damage info (0x4c bytes) and clears its dword at +0x44 (never used afterwards), then returns the base implementation's result for the original info
+	int sub_102bed30(CUnknown101c2a50 *pInfo);	// CAI_BaseNPCTroika::vfunc142 (stub 0x10004647), called directly
 	void sub_103d45c0(CNPC_VWerewolfHint66b0 *pHint);	// "CNPC_VWerewolf::SetTeleportHint": scope trace (entity name), clears the current hint (sub_103d4760) when set, resets the byte at +0x66c8, stores pHint at +0x66b0
 	void *sub_10335950(const char *pszClassname);	// CBaseCombatCharacter "Weapon_OwnsThisType"-like lookup by classname (stub 0x10015195), called directly
 	void sub_1033c6b0(unsigned int flags);	// CBaseCombatCharacter "AddMiscFlag" (stub 0x100153a7), called directly
