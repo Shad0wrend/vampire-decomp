@@ -71,7 +71,9 @@ public:
 	virtual void vfunc307(int value);
 	CBCW_V(308)
 	virtual bool vfunc309();	// true when gpGlobals->curtime is past the time at +0x894
-	CBCW_V(310) CBCW_V(311) CBCW_V(312) CBCW_V(313) CBCW_V(314)
+	CBCW_V(310) CBCW_V(311)
+	virtual char vfunc312();	// asked by sub_10253b70 (whether the weapon may be used)
+	CBCW_V(313) CBCW_V(314)
 	virtual bool vfunc315();
 	virtual char vfunc316(int a);
 	CBCW_V(317) CBCW_V(318) CBCW_V(319)
@@ -108,6 +110,7 @@ public:
 	int sub_10252240();	// same as sub_102521f0 (stub 0x100011f4)
 	void sub_1024edc0();	// prints the weapon's activity translation table (base activity, weapon activity, required) with Msg
 	bool sub_10253b40(int a);	// true when the ammo type at +0x744 + a * 4 is not negative
+	bool sub_10253b70(int a, int b, int c, int d);	// slot 315 worker: when slot 312 allows and the owner (sub_102521f0) exists: with an AI object at owner+0xa8 hands it d and stores c at +0x854, else stores -1 there and arms the timer at owner+0x1564 (curtime + const); clears bit 6 of +0x19c and starts slot 333 with 0xe (AI object) or 0xf; returns true
 	CWeaponRollValue sub_10256350();	// builds the roll result record (owner, this, the 16 byte record of the current roll slot at +0x7a0, 6) and returns its printed value
 	CWeaponRollValue sub_102563f0(CUnknown101d8a70 *pRecordOut, int n);	// like sub_10256350 for the roll n: also copies the roll result record to pRecordOut when that is set
 	void sub_10255c30(void *pKeys);	// looks the first space separated word of the key's string up in the global name table (0x1073a330) and stores the id of the matching record (-1 when none) at +0x24d0 of the owner object
