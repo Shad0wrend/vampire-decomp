@@ -21682,6 +21682,27 @@ extern "C" CBaseEntity *momentary_rot_button()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca630 size=0xa9
+#include "CMomentaryRotButton.h"
+
+float sub_101c1af0(int flags, float *a, float *b);
+extern float g_104454c4;
+
+// TARGET: CMomentaryRotButton::sub_100ca630
+float CMomentaryRotButton::sub_100ca630(float *pAngles)
+{
+	float sign = 1.0f;
+	if (m_vecMoveDir[0] < g_104454c4 || m_vecMoveDir[1] < g_104454c4 || m_vecMoveDir[2] < g_104454c4)
+		sign = -1.0f;
+	float v = sign / m_flRange4fc * sub_101c1af0(m_nSpawnFlags204, pAngles, (float *)((char *)this + 0x5e0));
+	if (v > 1.0f)
+		return 1.0f;
+	if (v < g_104454c4)
+		v = g_104454c4;
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb670 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
