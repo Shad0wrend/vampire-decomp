@@ -51490,6 +51490,80 @@ extern "C" CBaseEntity *vampireprojectile()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee5a0 size=0x11f
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+
+extern CGlobalEntityList *g_10566458;
+extern float g_104454c4;
+struct SGlobalVars { char pad[0xc]; float curtime; float frametime; };
+extern SGlobalVars *g_1070b228;
+
+#define EV(n) virtual void s##n();
+#define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
+struct CThinkVirtView
+{
+	EV10(0) EV10(1) EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8) EV10(9)
+	EV10(10) EV10(11) EV10(12) EV10(13) EV10(14) EV10(15) EV10(16) EV10(17) EV10(18) EV10(19)
+	EV10(20) EV10(21) EV10(22) EV10(23) EV10(24)
+	virtual double s250(int a);
+	EV(251) EV(252) EV(253) EV(254) EV(255) EV(256) EV(257) EV(258) EV(259)
+	EV(260) EV(261) EV(262) EV(263) EV(264) EV(265) EV(266) EV(267)
+	virtual void s268();
+};
+
+struct CThinkUnit
+{
+	char m_pad0000[0x168];
+	int m_n0168;
+	char m_pad016c[0x17c - 0x16c];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x6f4 - 0x180];
+	float m_f06f4;
+	char m_pad06f8[0x730 - 0x6f8];
+	unsigned int m_hTarget;	// 0x730
+	char m_pad0734[4];
+	float m_f0738;
+	char m_pad073c[0x758 - 0x73c];
+	char m_b0758;
+	char m_pad0759[0x8a4 - 0x759];
+	char m_b08a4;
+
+	void sub_101ee5a0();
+	void sub_101ee7d0();	// stub 0x10003be3
+};
+
+void CThinkUnit::sub_101ee5a0()
+{
+	if (!m_b0758 && !m_b08a4) {
+		((CThinkVirtView *)this)->s250(0);
+		m_flNextThink = g_1070b228->curtime + 0.03;
+	} else {
+		m_f06f4 = 0;
+		m_flNextThink = g_1070b228->curtime + 0.03;
+		if (m_b08a4) {
+			float flNow = g_1070b228->frametime + g_1070b228->curtime;
+			if (m_f0738 != g_104454c4) {
+				if (flNow > m_f0738 - 5.0f && m_n0168 != 5)
+					m_n0168 = 5;
+				if (m_f0738 < flNow) {
+					sub_101ee7d0();
+					return;
+				}
+			}
+			unsigned int h = m_hTarget;
+			CGlobalEntityList_Slot *s;
+			if (h == 0xffffffff || (s = &g_10566458->m_Slots[h & 0x1fff], s->m_Serial != (int)(h >> 13)) || !s->m_pEntity
+				|| !*(int *)((char *)s->m_pEntity + 0x9c) || !((CEntityVSlots *)s->m_pEntity)->slot158()) {
+				sub_101ee7d0();
+				return;
+			}
+		}
+	}
+	((CThinkVirtView *)this)->s268();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ef900 size=0xe7
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
