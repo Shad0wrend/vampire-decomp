@@ -194,4 +194,6 @@ public:
 	void sub_100b3840(unsigned int flags);	// CBaseEntity::AddFlag2 (stub 0x100027bb), called directly
 	void vfunc561(int a, int b);	// slot 561 "CNPC_VWerewolf::GatherAttackConditions": scope trace (entity name); when the attack state bits (+0x66e8: 4 or 0x100) are set and the target (slot 167) is more than 40 units above or below this entity (slot 217 heights) sets conditions 0x51 and 0x52 and stops, else the CAI_BaseNPC implementation
 	void sub_1026dd10(int a, int b);	// CAI_BaseNPC::vfunc561 (stub 0x1000ca4f), called directly
+	bool sub_103d2810(void *pHint);	// "CNPC_VWerewolf::IsImperativeRandom"-like (trace name ...IsImperativeRand...): scope trace (entity name); for a hint of type 0x3aa8 whose time check against the global at 0x1093d574 passes and that HasPath / slot 617 accept, true; else sub_103d2070(pHint)
+	char sub_103d2070(void *pHint);	// the fallback of sub_103d2810 (stub 0x10005911)
 };
