@@ -1953,6 +1953,7 @@
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
 0x10008e31 func   ?sub_101ffdf0@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffdf0
 0x10008e40 func   ?sub_101bde70@UtlMem@@QAEXXZ UtlMem::sub_101bde70
+0x10008e59 func   ?sub_103bca20@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bca20
 0x10008e72 func   ?sub_10109840@@YAPAHXZ sub_10109840
 0x10008e8b func   ?vfunc1@PyServerSystem@@UAEXXZ PyServerSystem::vfunc1
 0x10008e90 func   ?sub_100fc7a0@@YAHXZ sub_100fc7a0

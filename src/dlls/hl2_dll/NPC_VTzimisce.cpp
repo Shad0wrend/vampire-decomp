@@ -1,6 +1,37 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103bca20 size=0x97
+#include "CNPC_VTzimisce.h"
+
+struct CScheduleStamp	// the source file / line the schedule selection records
+{
+	char m_pad0000[0x1b30];
+	const char *m_pszFile;	// 0x1b30
+	int m_nLine;	// 0x1b34
+};
+
+int CNPC_VTzimisce::sub_103bca20(int unused)
+{
+	CScheduleStamp *pStamp = (CScheduleStamp *)this;
+	if (sub_10269d30(0xc)) {
+		pStamp->m_nLine = 0xb66;
+		pStamp->m_pszFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+		return 0x173;
+	}
+	if (sub_10269d30(10) || sub_10269d30(0xd)) {
+		pStamp->m_nLine = 0xb6a;
+		pStamp->m_pszFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+		return 0x174;
+	}
+	if (sub_10269aa0(0x5d))
+		return sub_103bc820();
+	pStamp->m_nLine = 0xb7c;
+	pStamp->m_pszFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+	return 0x170;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bcb60 size=0x76
 #include "CNPC_VTzimisce.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
