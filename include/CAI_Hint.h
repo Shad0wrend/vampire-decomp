@@ -151,4 +151,7 @@ public:
 
 	void sub_1009d980(int a);	// entity base constructor
 	CAI_Hint *sub_102d2e30();
+	char sub_102d14c0();	// "IsLocked": a lock owner is set, or the lock timeout at +0x5ec is still in the future, or the owner handle at +0x5e0 resolves (stub 0x1000cc39)
+	char sub_102d1450(void *pOwner);	// "IsLockedBy" (stub 0x10010154)
+	void sub_102d1420(float delay);	// "Unlock" (stub 0x10013d68)
 };
