@@ -55782,6 +55782,27 @@ void sub_10307e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10309e80 size=0xa5
+#include "CUnknown1030a6e0.h"
+#include "Vector.h"
+
+void sub_10139500(const Vector *pStart, float flScale, const Vector *pDir, Vector *pDest);
+void sub_10142e90(const Vector *pStart, const Vector *pEnd, int r, int g, int b, int bNoDepth, float flDuration);
+
+void CUnknown1030a6e0::sub_10309e80(const Vector *pDirA, const Vector *pDirB)
+{
+	if (*(unsigned int *)((char *)m_pOuter + 0x224) & 0x4000000) {
+		Vector vOrigin = m_pOuter->vfunc192();
+		Vector vEndA;
+		Vector vEndB;
+		sub_10139500(&vOrigin, 20.0f, pDirA, &vEndA);
+		sub_10139500(&vOrigin, 20.0f, pDirB, &vEndB);
+		sub_10142e90(&vOrigin, &vEndA, 255, 255, 255, 1, 0.1f);
+		sub_10142e90(&vOrigin, &vEndB, 255, 255, 0, 1, 0.1f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b100 size=0x98
 #include "CUtlVector280.h"
 

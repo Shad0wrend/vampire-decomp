@@ -2639,6 +2639,7 @@
 0x1000cb26 func   ?sub_10033160@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10033160
 0x1000cb35 func   ?sub_1033d580@CBaseCombatCharacter@@QAEDH@Z CBaseCombatCharacter::sub_1033d580
 0x1000cb3f func   ?sub_101a1140@CSave@@QAE_NHPAX0PAUtypedescription_t@@@Z CSave::sub_101a1140
+0x1000cb49 func   ?sub_10309e80@CUnknown1030a6e0@@QAEXPBVVector@@0@Z CUnknown1030a6e0::sub_10309e80
 0x1000cb53 func   ?vfunc119@CAI_Hint@@UAEXXZ CAI_Hint::vfunc119
 0x1000cb5d func   ?vfunc427@CAI_BaseNPC@@UAEPAVCAI_Motor@@XZ CAI_BaseNPC::vfunc427
 0x1000cb62 func   ?sub_101d26b0@@YAXVVector@@HHHHH@Z sub_101d26b0
