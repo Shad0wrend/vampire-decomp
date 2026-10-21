@@ -4945,6 +4945,7 @@
 0x100143c6 func   ?sub_1029ea40@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029ea40
 0x10014402 func   _env_particle env_particle
 0x1001440c func   ?sub_10055ec0@UtlMem@@QAEXH@Z UtlMem::sub_10055ec0
+0x10014411 func   ?vfunc442@CNPC_VGhoulCroucher@@QAEXPAH@Z CNPC_VGhoulCroucher::vfunc442
 0x10014416 func   _prop_dynamic_ornament prop_dynamic_ornament
 0x10014420 func   ?sub_1025c9d0@CUtlRBTreeBig@@QAEXPBXAAGAA_N@Z CUtlRBTreeBig::sub_1025c9d0
 0x1001442a func   ?sub_10401210@@YAHXZ sub_10401210

@@ -162,6 +162,57 @@ void CNPC_VGhoulCroucher::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b8b0 size=0xfa
+#include "CNPC_VGhoulCroucher.h"
+#include "ScopeTrace.h"
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+struct CroucherSlots {
+	SV100(0) SV100(1) SV100(2) SV100(3)
+	SV10(40) SV10(41) SV10(42) SV10(43)
+	SV(440) SV(441) SV(442) SV(443) SV(444) SV(445) SV(446) SV(447)
+	virtual void s448(int a);
+};
+
+extern int g_1063abcc[];
+extern int g_1063abdc[];
+
+namespace block_1037b8b0 {
+struct CCrouchUnit : CNPC_VGhoulCroucher {
+	int sub_1037b870();
+	int sub_1037b890();
+};
+int CCrouchUnit::sub_1037b870() { return g_1063abcc[m_n6668]; }
+int CCrouchUnit::sub_1037b890() { return g_1063abdc[m_n6668]; }
+}
+using namespace block_1037b8b0;
+
+// TARGET: CNPC_VGhoulCroucher::vfunc442
+void CNPC_VGhoulCroucher::vfunc442(int *pTask)
+{
+	ScopeTrace trace("CNPC_VGhoulCroucher::StartTask", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	switch (*pTask) {
+	case 0x14a:
+		sub_10014524(((CCrouchUnit *)this)->sub_1037b870());
+		if (m_nActivityff0 != ((CCrouchUnit *)this)->sub_1037b870())
+			((CroucherSlots *)this)->s448(0x15);
+		break;
+	case 0x14b:
+		sub_10014524(((CCrouchUnit *)this)->sub_1037b890());
+		if (m_nActivityff0 != ((CCrouchUnit *)this)->sub_1037b890()) {
+			m_b6667 = 1;
+			((CroucherSlots *)this)->s448(0x15);
+		}
+		break;
+	default:
+		sub_1000a0c9(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037b9f0 size=0xc6
 #include "CNPC_VGhoulCroucher.h"
 #include "CEntityVSlots.h"
