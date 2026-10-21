@@ -3918,6 +3918,7 @@
 0x10011aa9 func   ?vfunc14@CServerNetworkProperty@@UAEPAV1@I@Z CServerNetworkProperty::vfunc14
 0x10011aae func   ?vfunc316@CWeaponGravityGun@@UAEDH@Z CWeaponGravityGun::vfunc316
 0x10011ac2 func   ?vfunc5@CWeaponMelee_TireIron@@QAEPAV1@I@Z CWeaponMelee_TireIron::vfunc5
+0x10011acc func   ?sub_10246870@@YA?AVSendProp@@PBDHHHHH@Z sub_10246870
 0x10011ad1 func   ?vfunc5@CDynamicProp@@UAEPAV1@I@Z CDynamicProp::vfunc5
 0x10011ae0 func   ?sub_10221e50@QuestJournal@@QAEPADH@Z QuestJournal::sub_10221e50
 0x10011aea func   ?vfunc5@CItemGDriversLicenseGimble@@QAEPAV1@I@Z CItemGDriversLicenseGimble::vfunc5
