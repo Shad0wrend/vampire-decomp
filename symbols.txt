@@ -2645,6 +2645,7 @@
 0x1000c83d func   ?sub_103377a0@CBCCUnit@@QAEHXZ CBCCUnit::sub_103377a0
 0x1000c84c func   ?sub_10246470@@YAXHPAGPAI@Z sub_10246470
 0x1000c85b func   ?sub_102c6cf0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102c6cf0
+0x1000c86a func   ?vfunc103@CBasePlayer@@QAEXXZ CBasePlayer::vfunc103
 0x1000c897 func   ?sub_10270290@CUnknown10270290@@QAEXH@Z CUnknown10270290::sub_10270290
 0x1000c8b5 func   ?sub_103380d0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_103380d0
 0x1000c8ba func   ?sub_100ac720@CBaseEntity@@QAEMPBD@Z CBaseEntity::sub_100ac720
