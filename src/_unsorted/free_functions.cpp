@@ -20666,6 +20666,43 @@ void sub_100d3d20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4160 size=0xa4
+#include "CVStatList_t.h"
+extern "C" int sprintf(char *, const char *, ...);
+extern char g_106b8540[];
+void sub_100045ed(void *pOut, const char *pszText);
+
+struct StatNameView
+{
+	const char *m_psz;
+	const char *Get() const { return m_psz ? m_psz : g_106b8540; }
+};
+
+struct StatInfoView
+{
+	int m_pad00;
+	int m_nStats;	// 0x04
+	char m_pad08[0x24 - 8];
+	StatNameView m_name;	// 0x24
+};
+
+// TARGET: sub_100d4160
+void sub_100d4160(void *pOut, CVStatList_t *pList, int nMin, int nArg)
+{
+	char szLine[128];
+	if (pOut) {
+		sprintf(szLine, "\n   %s:\n\n", ((StatInfoView *)pList->m_field0c)->m_name.Get());
+		sub_100045ed(pOut, szLine);
+		for (int i = 0; i < ((StatInfoView *)pList->m_field0c)->m_nStats; i++) {
+			int nValue = pList->sub_10010609(i);
+			pList->sub_10200ca0(i);
+			if (nValue >= nMin)
+				sub_100045ed(pOut, pList->sub_10201a40(i, nArg));
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d46c0 size=0x95
 #include "CVStatList_t.h"
 
