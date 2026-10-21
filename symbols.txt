@@ -596,6 +596,7 @@
 0x10003800 func   ?vfunc5@CBeam@@QAEPAV1@I@Z CBeam::vfunc5
 0x1000380a func   ?sub_102dcd30@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_102dcd30
 0x10003814 func   ?sub_10239d80@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_10239d80
+0x1000382d func   ?vfunc341@CItemKeyGeneric@@QAEXPAVCBaseCombatCharacter@@@Z CItemKeyGeneric::vfunc341
 0x10003850 func   ?vfunc500@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc500
 0x10003878 func   ?vfunc458@CBasePlayer@@UAEXXZ CBasePlayer::vfunc458
 0x10003891 func   ?vfunc5@CNPC_VTremere@@QAEPAV1@I@Z CNPC_VTremere::vfunc5
