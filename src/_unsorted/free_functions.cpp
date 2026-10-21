@@ -12842,6 +12842,78 @@ void sub_10089550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100896c0 size=0xcb
+#include "CBaseAnimating.h"
+#include "CEHandleGet.h"
+#include "CUnknown1070b22c.h"
+
+extern "C" int atoi(const char *);
+
+struct DlgNPC_t {
+	char pad[0x174];
+	float flAnimTime;
+	char pad178[0x6f0 - 0x178];
+	int nSequence;
+	char pad6f4[4];
+	int n6f8;
+	char pad6fc[0x64c8 - 0x6fc];
+	int n64c8;
+	int sub_102c1230();
+};
+
+struct DlgGlobal_t {
+	int sub_100ecfc0(DlgNPC_t *pNPC, int a, int b);
+};
+
+struct DlgPlayerView_t {
+	char pad[0xfe8];
+	unsigned int hPartner;
+};
+
+struct DlgEntView_t {
+	char pad[0x98];
+	DlgNPC_t *pNPC;
+};
+
+struct DlgGlobals_t {
+	char pad[0xc];
+	float curtime;
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+extern DlgGlobal_t g_10924980;
+extern DlgGlobals_t *g_1070b228;
+DlgPlayerView_t *sub_101193b0();
+DlgEntView_t *sub_10172710(DlgPlayerView_t *pPlayer);
+
+void sub_100896c0()
+{
+	DlgEntView_t *pEnt = (DlgEntView_t *)EHandle_Get(sub_101193b0()->hPartner);
+	if (!pEnt)
+		pEnt = sub_10172710(sub_101193b0());
+	int nIndex = atoi(g_1070b22c->vfunc84(1));
+	if (pEnt) {
+		DlgNPC_t *pNPC = pEnt->pNPC;
+		if (pNPC) {
+			int nSequence;
+			if (nIndex > 1) {
+				nIndex--;
+				nSequence = g_10924980.sub_100ecfc0(pNPC, pNPC->n64c8, nIndex);
+				pNPC->n64c8 = nIndex;
+			} else {
+				nSequence = pNPC->sub_102c1230();
+			}
+			if (nSequence > -1) {
+				pNPC->nSequence = nSequence;
+				pNPC->n6f8 = 0;
+				pNPC->flAnimTime = g_1070b228->curtime;
+				((CBaseAnimating *)pNPC)->sub_10090950();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10089ac0 size=0xcb
 #include "IVEngineServer.h"
 extern "C" int __cdecl atoi(const char *);
