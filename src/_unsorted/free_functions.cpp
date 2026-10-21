@@ -11222,6 +11222,26 @@ int CFakeEnt::sub_10094370(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094410 size=0xc8
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);
+const char *sub_10412550(int iActivity);
+
+void CBaseAnimating::sub_10094410(int iActivity)
+{
+	ScopeTrace trace("CBaseAnimating::ReportMissingActivity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int tmp;
+	const char *pszModel = *vfunc9(&tmp);
+	if (!pszModel)
+		pszModel = g_106b8540;
+	const char *pszClass = m_classname11c;
+	if (!pszClass)
+		pszClass = g_106b8540;
+	g_109f3628("%s(%s) has no sequence for act:%s (%s)\n", sub_100ab4f0(), pszClass, sub_10412550(iActivity), pszModel);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094520 size=0x8e
 #include "CBaseAnimating.h"
 
