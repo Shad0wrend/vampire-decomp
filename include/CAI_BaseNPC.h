@@ -81,7 +81,8 @@ public:
 	virtual float vfunc418(float a);	// float lookup keyed by magic values (-1000005..-1000008 in the Troika override), else the base value
 	CAI_NPC_V(419) CAI_NPC_V(420) CAI_NPC_V(421) CAI_NPC_V(422)
 	virtual unsigned int vfunc423();
-	CAI_NPC_V(424) CAI_NPC_V(425) CAI_NPC_V(426)
+	virtual bool vfunc424();	// "CAI_BaseNPC::CreateComponents": asks slots 425 (senses, +0x5cdc), 427 (motor, +0x5d44), 428 (local navigator, +0x5d38), 426 (move probe, +0x5d40), 429 (navigator, +0x5d34) and 430 (pathfinder, +0x5d3c) for a component each and gives up (false) at the first that is missing; then points the components at each other (motor <- local navigator <- navigator, the navigator's slot 3 gets the global at 0x1093407c)
+	CAI_NPC_V(425) CAI_NPC_V(426)
 	virtual CAI_Motor *vfunc427();	// creates the NPC's motor (operator new, then CAI_Motor::sub_102e0900(this))
 	CAI_NPC_V(428) CAI_NPC_V(429)
 	CAI_NPC_V(430) CAI_NPC_V(431) CAI_NPC_V(432) CAI_NPC_V(433) CAI_NPC_V(434)
