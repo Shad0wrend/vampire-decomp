@@ -48832,6 +48832,22 @@ void sub_102464b0(int a, int b, int *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10246ca0 size=0xd5
+#include "SendProp.h"
+
+SendProp sub_10246ca0(const char *pszVarName, int a2, int a3, int a4, int a5)
+{
+	SendProp ret;
+	ret.m_pszVarName = pszVarName;
+	ret.m_n4c = a2;
+	ret.m_n10 = a3;
+	ret.m_n08 = 3;
+	ret.m_nFlags = a4;
+	ret.m_n40 = a5;
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247030 size=0xc2
 #include "SendProp.h"
 
