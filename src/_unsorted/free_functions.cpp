@@ -78840,6 +78840,40 @@ void CUtlMemory12::sub_103dc520(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dc6c0 size=0x6e
+#include "CBaseEntity.h"
+
+void *sub_100aa720(int size);
+extern void *vt_104b2d4c[];
+extern void *vt_104b2d1c[];
+extern void *vt_104d05a4[];
+extern void *vt_104d0574[];
+extern char g_105a6be0[];
+void __fastcall sub_1000425a(void *pThis);
+void __fastcall sub_100104dd(void *pThis);
+
+// TARGET: npc_VWolfMorph
+extern "C" CBaseEntity *npc_VWolfMorph()
+{
+	void *mem = sub_100aa720(0x6670);
+	CBaseEntity *p;
+	if (mem)
+	{
+		p = (CBaseEntity *)mem;
+		sub_1000425a(p);
+		*(void ***)p = vt_104b2d4c;
+		*(void ***)((char *)p + 0x19b0) = vt_104b2d1c;
+		sub_100104dd((char *)p + 0x666c);
+		*(void ***)p = vt_104d05a4;
+		*(void ***)((char *)p + 0x19b0) = vt_104d0574;
+	}
+	else
+		p = 0;
+	p->vfunc106(g_105a6be0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dc8a0 size=0x33
 void sub_10007897();
 void sub_10007af9();
