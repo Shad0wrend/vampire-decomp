@@ -1875,6 +1875,7 @@
 0x1000970f func   ?vfunc5@CEnvShake@@QAEPAV1@I@Z CEnvShake::vfunc5
 0x10009714 func   ?vfunc3@CThinkContextsSaveDataOps@@UAEXPAX@Z CThinkContextsSaveDataOps::vfunc3
 0x10009728 func   ?sub_101172c0@S101172c0@@QAEXAAUinputdata_t@@@Z S101172c0::sub_101172c0
+0x1000972d func   ?sub_1039aa20@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_1039aa20
 0x10009732 func   ?sub_10330ce0@CUnknown10330ce0@@QAEXD@Z CUnknown10330ce0::sub_10330ce0
 0x10009737 func   ?sub_10046ba0@CUtlVector56@@QAEHH@Z CUtlVector56::sub_10046ba0
 0x1000973c func   ?sub_100eb420@CUnknown100eb420@@QAE_NXZ CUnknown100eb420::sub_100eb420

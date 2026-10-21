@@ -63512,6 +63512,26 @@ void __fastcall sub_10399c70(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039aa20 size=0x98
+#include "CNPC_VMingXiao.h"
+#include "CBaseCombatCharacter.h"
+#include "CAI_BaseNPC.h"
+
+struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
+extern CGlobalVarsX *g_1070b228;
+extern float g_10452dc4;
+
+void CNPC_VMingXiao::sub_1039aa20()
+{
+    float t = *(float *)((char *)this + 0x1560);
+    t += g_10452dc4;
+    if (g_1070b228->m_curtime > t) {
+        ((CBaseCombatCharacter *)this)->GetActiveStatList()->sub_10200be0(0xf, 0);
+        ((CAI_BaseNPC *)this)->sub_10273e80(0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039aaf0 size=0xd
 // TARGET: CUnknown1039aaf0::sub_1039aaf0
 void CUnknown1039aaf0::sub_1039aaf0(char value)
