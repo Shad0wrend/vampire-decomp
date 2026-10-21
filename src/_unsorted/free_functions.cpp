@@ -17998,6 +17998,43 @@ void __fastcall sub_100ad100(CBaseEntity *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ad320 size=0xf2
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+void sub_10138720(const float *pMatrix, int column, float *pOut);
+
+static inline bool TestBit(unsigned int value, int bit)
+{
+	return ((value >> bit) & 1) != 0;
+}
+
+struct CBaseEntityVectorsUnit : CBaseEntity
+{
+	void sub_100ad320(float *pForward, float *pRight, float *pUp);
+};
+
+// TARGET: CBaseEntityVectorsUnit::sub_100ad320
+void CBaseEntityVectorsUnit::sub_100ad320(float *pForward, float *pRight, float *pUp)
+{
+	ScopeTrace trace("CBaseEntity::GetVectors", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (TestBit(m_flags268, 11))
+		vfunc98();
+	const float *pMatrix = (const float *)((char *)this + 0x130);
+	if (pForward != 0)
+		sub_10138720(pMatrix, 0, pForward);
+	if (pRight != 0)
+	{
+		sub_10138720(pMatrix, 1, pRight);
+		pRight[0] = pRight[0] * -1.0f;
+		pRight[1] = pRight[1] * -1.0f;
+		pRight[2] = pRight[2] * -1.0f;
+	}
+	if (pUp != 0)
+		sub_10138720(pMatrix, 2, pUp);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100adf10 size=0x8a
 #include "CBaseEntity.h"
 
