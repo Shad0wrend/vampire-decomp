@@ -23,6 +23,7 @@ public:
 	void sub_1036e400();	// "CNPC_VChangBros::StoreArenaCenter": scope trace, stores the origin of the first type 0x4651 entity at +0x66dc and sets the flag at +0x66e8
 	bool sub_1036e820();	// "CNPC_VChangBros::ReadyForUnited": scope trace, true while the current schedule is 0x15a or 0x15b
 	bool sub_1036cbd0();	// "CNPC_VChangBros::CheckForUnited": scope trace; true when the other brother exists, the tick at +0x66ec plus 30.0f is not after the current time (+0xc of the global 0x1070b228) and not both brothers' sub_103c6830 values are below 0.5f
+	bool sub_1036c8d0();	// "CNPC_VChangBros::CheckForJumpAttack": scope trace (no entity name); in mode 0 (+0x66b8) with the enemy (handle +0x628c) and this brother both not in brother state 4 and the jump timer (+0x66cc) older than 5 seconds: true when alone (the counter +0x5bb0 positive or no squad at +0x5da4) or when no other brother of the squad jumped within the last 5 seconds
 	float sub_103c6830();	// CNPC_VVampireBoss member (stub 0x10002b58), a float value compared with 0.5f
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x209000
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
