@@ -2304,6 +2304,46 @@ int CBaseEntity::vfunc196(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4c30 size=0x13c
+#include "CCollisionProperty.h"
+#include "TempVector.h"
+
+extern float g_1070d9d0;
+extern float g_1070d9d4;
+extern float g_1070d9d8;
+
+void sub_10137fe0(const float *pIn, float *pMatrix, float *pOut);
+
+inline void VectorTransform(const Vector &in1, float *pMatrix, Vector &out)
+{
+	sub_10137fe0(&in1.x, pMatrix, &out.x);
+}
+
+struct CollView {
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3();
+	virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7();
+	virtual Vector *GetOrigin();
+};
+
+float * __fastcall sub_100b4c30(CBaseEntity *pThis)
+{
+	CCollisionProperty *pCol = (CCollisionProperty *)((char *)pThis + 0x270);
+	Vector &vecResult = AllocTempVector();
+	Vector &vecCenter = AllocTempVector();
+	vecCenter.x = (pCol->m_vecMaxs.x - pCol->m_vecMins.x) * 0.5f + pCol->m_vecMins.x;
+	vecCenter.y = (pCol->m_vecMaxs.y - pCol->m_vecMins.y) * 0.5f + pCol->m_vecMins.y;
+	vecCenter.z = (pCol->m_vecMaxs.z - pCol->m_vecMins.z) * 0.5f + pCol->m_vecMins.z;
+	float *pAngles;
+	if (!(pCol->m_usSolidFlags & 0x80) && pCol->m_nSolidType != 2 && pCol->m_nSolidType != 0
+		&& ((pAngles = pCol->vfunc9(0)), (g_1070d9d0 != pAngles[0] || g_1070d9d4 != pAngles[1] || g_1070d9d8 != pAngles[2]))) {
+		VectorTransform(vecCenter, pCol->vfunc10(), vecResult);
+		return &vecResult.x;
+	}
+	VectorAdd(*((CollView *)pCol)->GetOrigin(), vecCenter, vecResult);
+	return &vecResult.x;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4dc0 size=0xe
 // TARGET: CBaseEntity::vfunc158
 bool CBaseEntity::vfunc158()
