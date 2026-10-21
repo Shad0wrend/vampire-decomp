@@ -3491,6 +3491,7 @@
 0x1000f673 func   ?sub_103c7150@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c7150
 0x1000f682 func   ?vfunc63@CMultiplayRules@@UAEPBDH@Z CMultiplayRules::vfunc63
 0x1000f687 func   ?sub_100fdf40@CUnknown100fde30@@QAEXXZ CUnknown100fde30::sub_100fdf40
+0x1000f6a5 func   ?vfunc266@CVampireProjectile@@UAEXPAVCBaseEntity@@@Z CVampireProjectile::vfunc266
 0x1000f6af func   ?vfunc61@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc61
 0x1000f6c8 func   _npc_VWolfMorph npc_VWolfMorph
 0x1000f6d2 func   ?vfunc5@CItemGWerewolfBlood@@QAEPAV1@I@Z CItemGWerewolfBlood::vfunc5
