@@ -53,7 +53,7 @@ public:
 	virtual void vfunc4(void *pSound);	// "CommandClear"
 	virtual void vfunc5(void *pSound);
 	virtual CUnknown101bc140 *vfunc6(void *pFilter, CSoundEntHandle hEntity, int nChannel, const char *pszSample, int nSoundLevel);	// "SoundCreate" with a channel and a sound level: a new sound (0x6c bytes from the sound pool, fields cleared, entity handle -1), the entity index turned into an entity handle and resolved, then set up for the filter, the entity, the channel, the sample and the level
-	virtual CUnknown101bc140 *vfunc7(void *pFilter, CSoundEntHandle hEntity, int nChannel, const char *pszSample, float flAttenuation);	// "SoundCreate" with an attenuation: like slot 6 with the sound level 50 + 20 / flAttenuation (0 for an attenuation of 0)
+	virtual CUnknown101bc140 *vfunc7(void *pFilter, unsigned int nEntIndex, int nChannel, const char *pszSample, float flAttenuation);	// "SoundCreate" with an attenuation: like slot 6 with the sound level 50 + 20 / flAttenuation (0 for an attenuation of 0); the entity index argument is turned into an entity handle in place
 	virtual CUnknown101bc140 *vfunc8(void *pFilter, int nEntIndex, const char *pszSample);	// "SoundCreate": a new sound (0x6c bytes from the sound pool) set up for the filter, the entity of that index, channel 0, the sample and sound level 0x4b
 	virtual void vfunc9(void *pSound);	// "SoundDestroy": stops the sound (slot 5), tears down its recipient vector (+0x4c), resets its recipient filter vtable (+0x44) and hands it back to the sound pool
 	virtual void vfunc10();
