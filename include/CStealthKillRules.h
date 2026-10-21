@@ -2,6 +2,7 @@
 #pragma once
 
 class CBaseEntity;
+struct CSKRKeyValues;
 
 class CStealthKillRules
 {
@@ -20,4 +21,5 @@ public:
 	void sub_101be0e0();	// "CStealthKillRules::FlushTable": scope trace, clears the four tables and sets the defaults (1, 10, 0, 3.0f, range 70.0f)
 	void sub_101bebf0();	// called through the stub at 0x1000d625 by InitTable after FlushTable
 	void sub_101be020();	// "CStealthKillRules::InitTable": scope trace, FlushTable, sub_101bebf0, then fills the float table at +0x50 with cos(table at +0x00 [i] * constants)
+	void sub_101bedb0(CSKRKeyValues *pKeys, const char *pszName, float *pTable);	// "CStealthKillRules::LoadKey": scope trace; reads the 20 floats "1".."20" of the sub key pszName into pTable (each defaulting to the previous one, the first to 0); Warning "%s needs key values for '%s'!!" when the key is missing
 };
