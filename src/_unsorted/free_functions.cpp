@@ -7209,6 +7209,71 @@ int sub_10064ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064df0 size=0x164
+#include "CBaseEntity.h"
+#include "CTEExplosiveGunshotDecal.h"
+#include "ScopeTrace.h"
+
+#define V virtual void
+#define S10(p) V p##0(); V p##1(); V p##2(); V p##3(); V p##4(); V p##5(); V p##6(); V p##7(); V p##8(); V p##9();
+struct SUnknownObj {
+	V a0(); V a1(); V a2(); V a3();
+	virtual CBaseEntity *vfunc4();
+};
+struct SEdict {
+	char m_pad0000[0x40];
+	SUnknownObj *m_pUnk;	// 0x40
+};
+struct SEngine {
+	S10(a0) S10(a1) S10(a2)
+	V b0(); V b1(); V b2(); V b3(); V b4(); V b5(); V b6(); V b7();
+	virtual SEdict *vfunc38(int index);
+};
+struct SChar {
+	char sub_10330220();
+};
+
+extern SEngine *g_1070b22c;
+extern CTEExplosiveGunshotDecal g_106c41e8;
+extern unsigned int g_106c4380;
+
+void sub_10064df0(void *pFilter, int delay, int *pA, int *pB, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12)
+{
+	CTEExplosiveGunshotDecal &te = g_106c41e8;
+	((int *)te.m_vecA)[0] = pA[0];
+	((int *)te.m_vecA)[1] = pA[1];
+	((int *)te.m_vecA)[2] = pA[2];
+	((int *)te.m_vecB)[0] = pB[0];
+	((int *)te.m_vecB)[1] = pB[1];
+	((int *)te.m_vecB)[2] = pB[2];
+	te.m_n24 = a5;
+	te.m_n28 = a6;
+	te.m_n2c = a7;
+	te.m_n30 = a8;
+	te.m_b34 = a9;
+	te.m_n3c = a10;
+	te.m_n44 = a12;
+	te.m_n40 = a11;
+	te.m_n48 = 0;
+	CBaseEntity *pEnt;
+	SEdict *pEdict = g_1070b22c->vfunc38(a5);
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if (!pEdict)
+			pEdict = g_1070b22c->vfunc38(0);
+		if (pEdict && pEdict->m_pUnk)
+			pEnt = pEdict->m_pUnk->vfunc4();
+		else
+			pEnt = 0;
+	}
+	if (pEnt && *(SChar **)((char *)pEnt + 0x9c)) {
+		if ((*(SChar **)((char *)pEnt + 0x9c))->sub_10330220())
+			g_106c4380 |= 1;
+	}
+	te.vfunc4(pFilter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065250 size=0xe1
 #include "SendProp.h"
 

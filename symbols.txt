@@ -3024,6 +3024,7 @@
 0x1000d558 func   ?sub_10075c70@S10075c70@@QAEXPBD@Z S10075c70::sub_10075c70
 0x1000d567 func   ?vfunc5@CNPC_VNosferatu@@QAEPAV1@I@Z CNPC_VNosferatu::vfunc5
 0x1000d56c func   ?vfunc8@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc8
+0x1000d58f func   ?sub_10064df0@@YAXPAXHPAH1HHHHDHHH@Z sub_10064df0
 0x1000d594 func   ?sub_103c8e20@@YADXZ sub_103c8e20
 0x1000d599 func   _npc_VGuard1 npc_VGuard1
 0x1000d5b2 func   ?sub_103b1d10@@YADXZ sub_103b1d10
