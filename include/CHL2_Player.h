@@ -34,7 +34,11 @@ public:
 	virtual void pb04(); virtual void pb05(); virtual void pb06(); virtual void pb07(); virtual void pb08(); virtual void pb09();	// slots 104..109
 	CHL2_V10(pb1) CHL2_V10(pb2) CHL2_V10(pb3) CHL2_V10(pb4) CHL2_V10(pb5) CHL2_V10(pb6) CHL2_V10(pb7) CHL2_V10(pb8) CHL2_V10(pb9)	// slots 110..199
 	CHL2_V100(pc) CHL2_V100(pd)	// slots 200..399
-	CHL2_V10(pe0) CHL2_V10(pe1) CHL2_V10(pe2) CHL2_V10(pe3)	// slots 400..439
+	virtual void pe00(); virtual void pe01(); virtual void pe02(); virtual void pe03(); virtual void pe04(); virtual void pe05();	// slots 400..405
+	virtual bool vfunc406();	// slot 406: answers whether the base spawn continues (see vfunc103)
+	virtual void vfunc407(); virtual void vfunc408();	// slots 407 / 408
+	virtual void pe09();	// slot 409
+	CHL2_V10(pe1) CHL2_V10(pe2) CHL2_V10(pe3)	// slots 410..439
 	virtual void vfunc440(); virtual void vfunc441(); virtual void vfunc442(); virtual void vfunc443(); virtual void vfunc444();
 	virtual int vfunc445(); virtual void vfunc446(); virtual void vfunc447(); virtual void vfunc448(); virtual void vfunc449();
 	virtual void vfunc450(); virtual void vfunc451(); virtual void vfunc452();
@@ -63,5 +67,4 @@ public:
 	void sub_100140f1();	// as in CPhysForce (transplant)
 	void sub_1016d260();	// the player base's slot 103 (stub 0x10002f9f), called directly
 	bool sub_1015ef80();	// stub 0x100157a3, called directly by Spawn
-	bool Slot406();	// calls slot 406 (placeholder pe06) as a bool-returning slot, see CHL2_Player_Slot406.h
 };
