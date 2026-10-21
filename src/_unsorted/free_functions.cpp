@@ -28516,6 +28516,35 @@ int *sub_10100ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10100f90 size=0xa4
+#include "CEnvShake.h"
+#include "CEntityVSlots.h"
+#include "inputdata_t.h"
+
+void sub_101ce210(const float *pCenter, float flAmplitude, float flFrequency, int command);
+void sub_101ce290(CEntityVSlots *pEntity, const float *pCenter, float flAmplitude, float flFrequency, int command);
+
+// TARGET: CEnvShake::sub_10100f90
+void CEnvShake::sub_10100f90(inputdata_t &inputdata)
+{
+	int command = 0;
+	if (!(m_flags204 & 1)) {
+		command = 2;
+		if (m_flags204 & 8)
+			command = 0x22;
+	}
+	if (m_flags204 & 2)
+		command |= 4;
+	if (m_flags204 & 4) {
+		if (((CEntityVSlots *)inputdata.pActivator)->slot162())
+			sub_101ce290((CEntityVSlots *)inputdata.pActivator, (const float *)((char *)this + 0x1a0), Amplitude(), Frequency(), command);
+	} else {
+		sub_101ce210((const float *)((char *)this + 0x1a0), Amplitude(), Frequency(), command);
+	}
+	m_Output458.sub_100cd660(inputdata.pActivator, this, 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101100 size=0xe5
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
     virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
