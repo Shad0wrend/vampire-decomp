@@ -40,7 +40,7 @@ public:
 	virtual void vfunc25();
 	virtual void vfunc26();
 	virtual void vfunc27();
-	virtual void vfunc28();
+	virtual void vfunc28(void *pEdict);	// "ClientDisconnected": the edict of the leaving player
 	virtual void vfunc29();
 	virtual float vfunc30(int a);
 	virtual void vfunc31();
