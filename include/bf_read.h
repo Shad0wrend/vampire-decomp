@@ -60,6 +60,16 @@ public:
 		return 0;
 	}
 
+	// ReadOneBit as ReadBitVec3Normal inlines it: the bit read itself is the out-of-line sub_100bedf0.
+	int ReadOneBitCall()
+	{
+		if ((m_iCurBit + 1) > m_nDataBits)
+			m_bOverflow = true;
+		if (!m_bOverflow)
+			return sub_100bedf0();
+		return 0;
+	}
+
 	float sub_100be3d0(int numbits);	// "ReadBitAngle": ReadUBitLong(numbits) scaled to 360 degrees
 	float sub_100beba0();	// "ReadBitNormal": sign bit, then 11 fractional bits scaled by 1/2047
 	int sub_100be590(int numbits);	// "ReadSBitLong": ReadUBitLong(numbits - 1), minus 1 << (numbits - 1) when the sign bit is set
@@ -70,4 +80,6 @@ public:
 	void sub_100bea10(Vector &fa);	// "ReadBitVec3Coord": clears fa, reads the three presence flags, then ReadBitCoord for each component whose flag is set
 	bool sub_100bf180(int iBit);	// "Seek" (stub 0x1001477c): sets the current bit; out of range (negative or past the end) sets the overflow flag, parks at the end and answers false
 	void sub_100bf1c0(int iStart, int nBits);	// removes nBits bits at iStart: the bits behind them are moved down through a bf_write at iStart, then the size shrinks by nBits and the position goes back to iStart
+	int sub_100bedf0();	// the unchecked single bit read (stub 0x10013791), called by the checked reads of ReadBitVec3Normal
+	void sub_100becc0(Vector &fa);	// "ReadBitVec3Normal": x / y flag bits, ReadBitNormal for each set one (else 0), the z sign bit, z = sqrt(1 - x*x - y*y) (0 when the sum reaches 1), negated by the sign bit
 };
