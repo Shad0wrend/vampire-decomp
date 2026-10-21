@@ -1,2 +1,3 @@
 	int sub_100936e0(int sequence, int a, int b);	// CBaseAnimating member (stub 0x1000af01): looks the sequence up for the activity values, -1 when there is none
 	int vfunc553(float a, float b);	// slot 553: an activity picked by the float b (< 100: 8, < 200: 0x5f, > 1024: 0x60) else 0x4f / 0x61 by the float a against 0.5
+	bool vfunc530(CBaseEntity *pEnt);	// slot 530 (plain member): walks the 20 byte records of the list at +0x5d48 (count +0x5d54; handle, expiry time, position) from the back: stale handles are dropped (the last record moved over them), the record of pEnt is kept (true) while its expiry is not passed and pEnt is within 120 units of the stored position, else dropped (false); false when pEnt has no record
