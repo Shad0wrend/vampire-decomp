@@ -1473,6 +1473,7 @@
 0x10007027 func   ?vfunc546@CNPC_VStalker@@QAEHH@Z CNPC_VStalker::vfunc546
 0x1000702c func   ?sub_1030d650@@YGHPBD@Z sub_1030d650
 0x10007036 func   _item_g_stake item_g_stake
+0x1000704f func   ?vfunc432@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc432
 0x1000705e func   ?sub_10246ca0@@YA?AVSendProp@@PBDHHHH@Z sub_10246ca0
 0x1000707c func   ?vfunc5@CBaseButton@@UAEPAV1@I@Z CBaseButton::vfunc5
 0x10007086 func   ?sub_101ebff0@CKeyHolder@@QAEXXZ CKeyHolder::sub_101ebff0

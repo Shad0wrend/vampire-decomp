@@ -49,6 +49,22 @@ char CAI_BaseNPCTroika::vfunc587(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028fcc0 size=0x8d
+#include "ScopeTrace.h"
+#include "CAI_BaseNPCTroika.h"
+
+void sub_102a0d20();
+
+void CAI_BaseNPCTroika::vfunc432(int a)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	ScopeTrace trace("CAI_BaseNPCTroika::RunAI", pEnt ? (pEnt->m_name26c ? pEnt->m_name26c : g_106b8540) : g_105387dc);
+	sub_1028fc90();
+	sub_102a0d20();
+	sub_1026f110(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293ec0 size=0x8a
 #include "CAI_BaseNPCTroika.h"
 
