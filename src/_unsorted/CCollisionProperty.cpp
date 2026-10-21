@@ -23,6 +23,37 @@ void CCollisionProperty::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc680 size=0x96
+#include "CCollisionProperty.h"
+
+struct matrix3x4_t {
+    float m[12];
+    ~matrix3x4_t() {}
+};
+
+void sub_10139a90(float *pMat);
+void sub_10138760(const float *pVec, int col, float *pMat);
+typedef float *(__fastcall *PFN_GetVec)(void *);
+extern int g_106e853c;
+
+float *CCollisionProperty::vfunc10()
+{
+    static matrix3x4_t s_Matrix[4];
+    float *pMat = s_Matrix[g_106e853c].m;
+    g_106e853c = (g_106e853c + 1) & 3;
+    if (!(m_usSolidFlags & 0x80) && m_nSolidType != 2 && m_nSolidType != 0) {
+        CBaseEntity *pOuter = m_pOuter;
+        unsigned char nBits = (unsigned char)(*(unsigned int *)((char *)pOuter + 0x268) >> 11);
+        if (nBits & 1)
+            pOuter->vfunc98();
+        return (float *)((char *)pOuter + 0x130);
+    }
+    sub_10139a90(pMat);
+    sub_10138760(((PFN_GetVec)(*(void ***)this)[8])(this), 3, pMat);
+    return pMat;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc920 size=0x8
 // TARGET: CCollisionProperty::vfunc6
 int CCollisionProperty::vfunc6()
