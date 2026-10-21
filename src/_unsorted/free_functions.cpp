@@ -23795,6 +23795,45 @@ int sub_100d6560(const char *pszIn, char *pszOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6680 size=0xc2
+#include "CBaseCombatCharacter.h"
+#include "CStatDefault3List.h"
+#include "CUnknown1070b22c.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+struct CmdClientView_t {
+	char pad[0xa8];
+	CBaseCombatCharacter *pChar;
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CStatDefault3List g_10738d10;
+CmdClientView_t *sub_101193b0();
+void sub_101ce620(void *pPlayer, int nType, const char *pszText, const char *p1, const char *p2, const char *p3, const char *p4);
+
+void sub_100d6680()
+{
+	char szBuf[128];
+	CmdClientView_t *pClient = sub_101193b0();
+	if (pClient && pClient->pChar) {
+		CBaseCombatCharacter *pChar = pClient->pChar;
+		int nCurrent = pChar->sub_10337860();
+		if (g_1070b22c->vfunc85() == 1) {
+			for (int i = 0; i < g_10738d10.m_count; i++) {
+				if (nCurrent != i)
+					sprintf(szBuf, "(%d): %s\n", i, g_10738d10.sub_101d5e00(i));
+				else
+					sprintf(szBuf, "(%d): [%s]\n", i, g_10738d10.sub_101d5e00(i));
+				sub_101ce620(pChar, 2, szBuf, 0, 0, 0, 0);
+			}
+		} else {
+			g_10738d10.sub_101d5e80(nCurrent)->sub_101d4fd0();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6820 size=0x51
 #define V(n) virtual void v##n();
 #define V10(n) V(n##0) V(n##1) V(n##2) V(n##3) V(n##4) V(n##5) V(n##6) V(n##7) V(n##8) V(n##9)
