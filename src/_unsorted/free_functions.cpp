@@ -17554,6 +17554,42 @@ void Rec64::sub_100dc300(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc580 size=0x6a
+#include "CUnknown100dda50.h"
+struct CPhysObj36c {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+    virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+    virtual void OnStateChanged();
+};
+struct CFlagsUnit : CUnknown100dda50 {
+    void sub_100dda20();
+    void sub_100dc430();
+    void sub_100dc580(unsigned short flags);
+};
+
+void CFlagsUnit::sub_100dc580(unsigned short flags)
+{
+    unsigned int old = m_flags44;
+    m_flags44 = flags;
+    if (old != flags) {
+        if ((flags ^ old) & 0x180)
+            sub_100dda20();
+        if (((unsigned char)m_flags44 & 4) != (old & 4)) {
+            CPhysObj36c *p = (CPhysObj36c *)m_pOwner->m_unk36c;
+            if (p)
+                p->OnStateChanged();
+        }
+        if (((unsigned char)m_flags44 & 0xc) != (old & 0xc)) {
+            sub_100ddc40();
+            sub_100dc430();
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dcd00 size=0x6d
 #include "CUnknown100dcd00.h"
 
