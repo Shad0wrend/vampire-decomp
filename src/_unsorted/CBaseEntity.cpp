@@ -607,6 +607,37 @@ int CBaseEntity::vfunc143(float flHealth, int bitsDamageType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1360 size=0xcb
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+struct CDamageModifier
+{
+    bool sub_100deb30();
+    float sub_100deab0();
+};
+
+struct CModifierNode
+{
+    CDamageModifier *m_pModifier;
+    int m_nPrev;
+    int m_nNext;
+};
+
+#define MOD_NODE(self, i) ((*(CModifierNode **)((char *)(self) + 0x230))[i])
+
+float CBaseEntity::vfunc203()
+{
+    ScopeTrace trace("CBaseEntity::GetAttackDamageScale", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    float flScale = 1.0f;
+    for (int i = *(int *)((char *)this + 0x23c); i != -1; i = MOD_NODE(this, i).m_nNext) {
+        if (!MOD_NODE(this, i).m_pModifier->sub_100deb30())
+            flScale *= MOD_NODE(this, i).m_pModifier->sub_100deab0();
+    }
+    return flScale;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1a70 size=0x94
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
