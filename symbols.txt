@@ -1704,6 +1704,7 @@
 0x10007ffe func   _item_k_clinic_stairs_key item_k_clinic_stairs_key
 0x1000800d func   ?sub_103fbbd0@@YAHXZ sub_103fbbd0
 0x10008012 func   ?sub_10388150@@YADXZ sub_10388150
+0x10008021 func   ?vfunc316@CDisciplineWeapon@@UAEDH@Z CDisciplineWeapon::vfunc316
 0x10008030 func   _info_node_sabbat_nojump info_node_sabbat_nojump
 0x10008035 func   ?sub_101e94b0@@YAXH@Z sub_101e94b0
 0x1000803a func   ?sub_103fcbe0@@YAHXZ sub_103fcbe0
