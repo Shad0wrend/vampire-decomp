@@ -61977,6 +61977,45 @@ float CUnknown10312580::sub_10312580(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312930 size=0x113
+#include "CUnknown10312580.h"
+
+extern const char *g_109f075c;
+
+struct SRBSearch {
+	int m_nKey;
+	float m_flValue;
+};
+
+void CUnknown10312580::sub_10312930(int key)
+{
+	CUtlRBTree16At<0x10936c54UL> *tree = (CUtlRBTree16At<0x10936c54UL> *)&m_Tree;
+	SRBSearch search;
+	search.m_nKey = key;
+	const char *pszName = *(const char **)((char *)tree + 0x18);
+	search.m_flValue = -1.0f;
+	if (pszName)
+		g_109f075c = pszName;
+	unsigned short i = tree->m_Root;
+	while (i != tree->InvalidIndex()) {
+		if (tree->m_LessFunc(&search, tree->m_pElements[i].m_Data)) {
+			i = *tree->sub_10313aa0(i);
+		} else if (tree->m_LessFunc(tree->m_pElements[i].m_Data, &search)) {
+			i = tree->Links(i).m_Right;
+		} else {
+			if (i == tree->InvalidIndex())
+				return;
+			tree->sub_10313b20(i);
+			tree->m_pElements[i].m_Links.m_Left = i;
+			tree->m_pElements[i].m_Links.m_Right = tree->m_FirstFree;
+			tree->m_NumElements--;
+			tree->m_FirstFree = i;
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312b20 size=0x12
 void __fastcall sub_10312b20(char *p)
 {

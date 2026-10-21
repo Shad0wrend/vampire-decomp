@@ -1286,6 +1286,7 @@
 0x10006811 func   ?sub_102ee120@CUnknown102ee120@@QAEXHHH@Z CUnknown102ee120::sub_102ee120
 0x10006816 func   ?vfunc308@CBaseCombatWeapon@@UAEXHH@Z CBaseCombatWeapon::vfunc308
 0x10006820 func   ?vfunc5@CFuncIllusionary@@QAEPAV1@I@Z CFuncIllusionary::vfunc5
+0x10006834 func   ?sub_10312930@CUnknown10312580@@QAEXH@Z CUnknown10312580::sub_10312930
 0x1000683e func   _item_g_ghost_pendant item_g_ghost_pendant
 0x10006870 func   ?sub_1036fc00@@YADXZ sub_1036fc00
 0x10006898 func   ?vfunc113@CMoverKeyFrame@@UAEXXZ CMoverKeyFrame::vfunc113
