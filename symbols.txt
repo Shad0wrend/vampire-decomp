@@ -3448,6 +3448,7 @@
 0x100108b1 func   ?sub_10049da0@@YIXPAUMem@@HH@Z sub_10049da0
 0x100108b6 func   ?sub_102480f0@CUnknown10248a50@@QAE_NPBDPAUIFileSys@@0_N@Z CUnknown10248a50::sub_102480f0
 0x100108c0 func   _point_teleport point_teleport
+0x100108c5 func   ?sub_100d3a50@@YAXXZ sub_100d3a50
 0x100108cf func   _item_g_sewerbook_1 item_g_sewerbook_1
 0x100108d9 func   ?sub_1016e650@@YAXXZ sub_1016e650
 0x100108fc func   ?sub_101a59f0@CUnknown101a59f0@@QAEXH@Z CUnknown101a59f0::sub_101a59f0

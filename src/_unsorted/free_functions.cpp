@@ -17375,6 +17375,51 @@ void sub_100d30a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3a50 size=0x91
+#include "CBaseEntity.h"
+#include "ConVar.h"
+
+struct ICvarView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual ConVar *vfunc2(const char *pszName);	// FindVar
+};
+
+struct CGlobalVarsView
+{
+	char m_pad0000[0x30];
+	char m_bFlag30;	// 0x30
+};
+
+extern ICvarView *g_1070b234;
+extern CGlobalVarsView *g_1070b228;
+CBaseEntity *sub_101193b0();
+void sub_101ce620(CBaseEntity *pPlayer, int dest, const char *pszMsg, int a, int b, int c, int d);
+
+// TARGET: sub_100d3a50
+void sub_100d3a50()
+{
+	ConVar *pCheats = g_1070b234->vfunc2("sv_cheats");
+	if (pCheats && pCheats->GetBool())
+	{
+		CBaseEntity *pCaller = sub_101193b0();
+		if (pCaller)
+		{
+			CBaseEntity *pPlayer = *(CBaseEntity **)((char *)pCaller + 0xa8);
+			if (pPlayer && !g_1070b228->m_bFlag30)
+			{
+				pPlayer->sub_100b3b90(0x4000);
+				if (!(pPlayer->sub_100b3700() & 0x4000))
+					sub_101ce620(pPlayer, 2, "godmode OFF\n", 0, 0, 0, 0);
+				else
+					sub_101ce620(pPlayer, 2, "godmode ON\n", 0, 0, 0, 0);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3bc0 size=0x90
 #include "CBaseEntity.h"
 #include "ConVar.h"
