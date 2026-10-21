@@ -72872,6 +72872,47 @@ void CNPCMaker::sub_1034cf20(int a, char bNotify)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034d370 size=0x74
+#include "CAI_BaseNPC.h"
+
+extern void *vt_104a1794[];
+extern void *vt_104a1768[];
+extern char g_10625c30[];
+void *sub_100aa720(int size);
+
+struct COutputCtor {
+	void sub_100cd2a0();
+};
+
+struct CScriptedTargetView : CAI_BaseNPC {
+	void sub_1027c300();
+	char m_padView[0x5f6c - sizeof(CAI_BaseNPC)];
+	COutputCtor m_out5f6c;
+	char m_pad5f6d[0x5f84 - 0x5f6d];
+	COutputCtor m_out5f84;
+	char m_pad5f85[0x5f9c - 0x5f85];
+	COutputCtor m_out5f9c;
+};
+
+extern "C" CBaseEntity *scripted_target()
+{
+	CScriptedTargetView *p = (CScriptedTargetView *)sub_100aa720(0x5fb4);
+	CBaseEntity *e;
+	if (p) {
+		p->sub_1027c300();
+		p->m_out5f6c.sub_100cd2a0();
+		p->m_out5f84.sub_100cd2a0();
+		p->m_out5f9c.sub_100cd2a0();
+		*(void ***)p = vt_104a1794;
+		*(void ***)((char *)p + 0x19b0) = vt_104a1768;
+		e = (CBaseEntity *)p;
+	} else
+		e = 0;
+	e->vfunc106(g_10625c30);
+	return e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d490 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
