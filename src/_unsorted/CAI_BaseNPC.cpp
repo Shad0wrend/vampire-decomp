@@ -571,6 +571,66 @@ CAI_BaseNPC *CAI_BaseNPC::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027cae0 size=0xe7
+#include "CAI_BaseNPC.h"
+#include "CAI_Motor.h"
+#include "CAI_LocalNavigator.h"
+extern void *g_1093407c;
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CNpcComponentSlotsX {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21) SV10(22) SV10(23) SV10(24) SV10(25) SV10(26) SV10(27) SV10(28) SV10(29)
+	SV10(30) SV10(31) SV10(32) SV10(33) SV10(34) SV10(35) SV10(36) SV10(37) SV10(38) SV10(39)
+	SV10(40) SV10(41)
+	SV(420) SV(421) SV(422) SV(423) SV(424)
+	virtual void *s425();
+	virtual void *s426();
+	virtual void *s427();
+	virtual void *s428();
+	virtual void *s429();
+	virtual void *s430();
+};
+
+struct CNavigatorSlotsX {
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void s3(void *pNet);
+};
+
+bool CAI_BaseNPC::vfunc424()
+{
+	CNpcComponentSlotsX *pSlots = (CNpcComponentSlotsX *)this;
+	char *pSelf = (char *)this;
+	*(void **)(pSelf + 0x5cdc) = pSlots->s425();
+	if (!*(void **)(pSelf + 0x5cdc))
+		return false;
+	*(void **)(pSelf + 0x5d44) = pSlots->s427();
+	if (!*(void **)(pSelf + 0x5d44))
+		return false;
+	*(void **)(pSelf + 0x5d38) = pSlots->s428();
+	if (!*(void **)(pSelf + 0x5d38))
+		return false;
+	*(void **)(pSelf + 0x5d40) = pSlots->s426();
+	if (!*(void **)(pSelf + 0x5d40))
+		return false;
+	*(void **)(pSelf + 0x5d34) = pSlots->s429();
+	if (!*(void **)(pSelf + 0x5d34))
+		return false;
+	*(void **)(pSelf + 0x5d3c) = pSlots->s430();
+	if (!*(void **)(pSelf + 0x5d3c))
+		return false;
+	*(void **)(pSelf + 0x5cf8) = this;
+	char *pLocalNav = *(char **)(pSelf + 0x5d38);
+	((CAI_Motor *)*(void **)(pSelf + 0x5d44))->sub_102e0ba0(pLocalNav ? pLocalNav + 0x10 : 0);
+	char *pNav = *(char **)(pSelf + 0x5d34);
+	((CAI_LocalNavigator *)*(void **)(pSelf + 0x5d38))->sub_102ddc00(pNav ? pNav + 0x10 : 0);
+	((CNavigatorSlotsX *)*(void **)(pSelf + 0x5d34))->s3(g_1093407c);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027cec0 size=0x1f
 #include "CAI_Motor.h"
 CAI_Motor *CAI_BaseNPC::vfunc427()
