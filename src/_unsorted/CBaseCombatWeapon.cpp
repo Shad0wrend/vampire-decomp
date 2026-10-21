@@ -568,6 +568,32 @@ void CBaseCombatWeapon::vfunc327()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10256560 size=0xda
+#include "CCollisionProperty.h"
+
+struct WeaponView10256560 {
+	char pad[0x270];
+	CCollisionProperty m_collision;
+};
+
+void CBaseCombatWeapon::vfunc105(const char *pszName)
+{
+	if (sub_102521f0() == 0) {
+		WeaponView10256560 *p = (WeaponView10256560 *)this;
+		Vector mins = *(Vector *)p->m_collision.vfunc1();
+		Vector maxs = *(Vector *)p->m_collision.vfunc2();
+		for (int i = 0; i < 3; i++) {
+			mins[i] = (-8.0f < mins[i]) ? -8.0f : mins[i];
+			maxs[i] = (8.0f > maxs[i]) ? 8.0f : maxs[i];
+		}
+		sub_10095030(pszName);
+		sub_100adf10(&mins.x, &maxs.x);
+	} else {
+		sub_10095030(pszName);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257230 size=0xe
 bool CBaseCombatWeapon::vfunc303()
 {
