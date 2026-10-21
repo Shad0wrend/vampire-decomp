@@ -7,6 +7,7 @@
 #include "Vector.h"
 
 class CBaseEntity;
+struct CMPDamageInfo;
 
 class CGameRules
 {
@@ -55,8 +56,8 @@ public:
 	virtual void vfunc41();
 	virtual void vfunc42();
 	virtual int vfunc43(int a, int b);
-	virtual void vfunc44();
-	virtual void vfunc45();
+	virtual void vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "PlayerKilled"
+	virtual void vfunc45(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "DeathNotice"
 	virtual void vfunc46();
 	virtual char vfunc47(CBaseEntity *pPlayer, CBaseEntity *pItem);	// "CanHavePlayerItem"
 	virtual int vfunc48(int index);
