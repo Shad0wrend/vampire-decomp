@@ -3928,6 +3928,7 @@
 0x10012dd2 func   ?sub_102a1620@@YI_NPAUN@@@Z sub_102a1620
 0x10012ddc func   ?sub_10042a80@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_10042a80
 0x10012df0 func   _item_g_lockpick item_g_lockpick
+0x10012dff func   ?vfunc113@CTriggerWWZone@@UAEXXZ CTriggerWWZone::vfunc113
 0x10012e04 func   ?sub_101466e0@CUnknown101466e0@@QAEXD@Z CUnknown101466e0::sub_101466e0
 0x10012e18 func   _item_w_mac_10 item_w_mac_10
 0x10012e22 func   _info_node_air_hint info_node_air_hint

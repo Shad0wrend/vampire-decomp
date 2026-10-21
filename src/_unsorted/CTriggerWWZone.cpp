@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103da540 size=0x7e
+#include "CTriggerWWZone.h"
+#include "ScopeTrace.h"
+void CTriggerWWZone::vfunc113()
+{
+	ScopeTrace trace("CTriggerWWZone::Activate", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_100113a6();
+	sub_1000dfd0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103da660 size=0x9b
 #include "ScopeTrace.h"
 #include "CBaseTrigger.h"
