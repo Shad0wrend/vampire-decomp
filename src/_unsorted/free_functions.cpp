@@ -20305,6 +20305,41 @@ void CBaseEntity::sub_100fbc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fbc90 size=0x8a
+#include "CEntityVSlots.h"
+#include "CEnvParticle.h"
+#include "CUnknown1070b22c.h"
+struct CParticleString { int m_i; };
+struct CGlobalVarsTime { char pad[0xc]; float curtime; };
+extern CGlobalVarsTime *g_1070b228;
+extern CUnknown1070b22c *g_1070b22c;
+extern float g_104454c4;
+CEntityVSlots *sub_100a9ab0(const char *pszClass, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
+CParticleString *sub_1042bff0(CParticleString *pScratch, const char *psz);
+void sub_101d1280(CEntityVSlots *pEnt);
+struct CParticleEnt : CEntityVSlots
+{
+	char pad[0x450 - 4];
+	void sub_100ac4e0(void (CParticleEnt::*pfnThink)(), float flThinkTime, const char *szContext);
+	void sub_101c0b10();
+};
+CEntityVSlots *sub_100fbc90(const char *pszEffect, const float *pOrigin, const float *pAngles, float flLifetime)
+{
+	CEntityVSlots *pEnt = sub_100a9ab0("env_particle", pOrigin, pAngles, 0);
+	if (pEnt) {
+		CParticleString scratch;
+		g_1070b22c->vfunc17((int)pszEffect, 1);
+		((CEnvParticle *)pEnt)->m_iszParticleName = sub_1042bff0(&scratch, pszEffect)->m_i;
+		sub_101d1280(pEnt);
+		if (flLifetime > g_104454c4) {
+			((CParticleEnt *)pEnt)->sub_100ac4e0(&CParticleEnt::sub_101c0b10, 0, 0);
+			*(float *)((char *)pEnt + 0x17c) = flLifetime + g_1070b228->curtime;
+		}
+	}
+	return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbef0 size=0x49
 void *sub_1000db89(int);
 struct GP;
