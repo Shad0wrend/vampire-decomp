@@ -3833,6 +3833,7 @@
 0x10010212 func   ?sub_100916a0@@YIMPAD@Z sub_100916a0
 0x10010217 func   ?vfunc233@CBaseEntity@@QAEHPAHH@Z CBaseEntity::vfunc233
 0x10010226 func   ?sub_100697a0@@YAHXZ sub_100697a0
+0x10010244 func   ?sub_10199240@@YAPAUPyObj@@PAU1@0@Z sub_10199240
 0x10010253 func   ?sub_10315ec0@CUnknown10315ec0@@QAE_NPAUCUnknown10315ec0Ent@@@Z CUnknown10315ec0::sub_10315ec0
 0x10010267 func   ?sub_10216830@@YIXPADHH@Z sub_10216830
 0x10010276 func   ?sub_101d5c40@List@@QAEHPBD@Z List::sub_101d5c40

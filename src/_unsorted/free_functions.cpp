@@ -35727,6 +35727,67 @@ PyObject *sub_10199100(PyObject *self, PyObject *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10199240 size=0x127
+#include "CEntityVSlots.h"
+struct PyObj { int ob_refcnt; PyObj *ob_type; };
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObj *args, const char *fmt, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred();
+__declspec(dllimport) void PyErr_SetString(PyObj *exc, const char *msg);
+__declspec(dllimport) extern PyObj *PyExc_AttributeError;
+__declspec(dllimport) extern PyObj _Py_NoneStruct;
+}
+void *sub_10196780(PyObj *obj);
+void __fastcall sub_1024f7b0(void *pItem);
+
+// TARGET: sub_10199240
+PyObj *sub_10199240(PyObj *self, PyObj *args)
+{
+    const char *pszName = 0;
+    PyObj *pObj = 0;
+    if (!PyArg_ParseTuple(args, "Os", &pObj, &pszName)) {
+        if (!PyErr_Occurred()) {
+            PyErr_SetString(PyExc_AttributeError, "bad args to RemoveItem()");
+            return 0;
+        }
+    } else {
+        void *pEnt = sub_10196780(pObj);
+        CBaseCombatCharacter *pChar;
+        if (pEnt == 0)
+            pChar = 0;
+        else
+            pChar = *(CBaseCombatCharacter **)((char *)pEnt + 0x9c);
+        if (!pszName) {
+            if (!PyErr_Occurred()) {
+                PyErr_SetString(PyExc_AttributeError, "invalid item name");
+                return 0;
+            }
+        } else if (!pChar) {
+            if (!PyErr_Occurred())
+                PyErr_SetString(PyExc_AttributeError, "invalid combat character");
+        } else {
+            CEntityVSlots *pItem = (CEntityVSlots *)pChar->sub_10335950(pszName);
+            if (pItem) {
+                int *pCount = (int *)((char *)pItem + 0x8d0);
+                if (pItem->slot371() && *pCount > 1) {
+                    *pCount = *pCount - 1;
+                } else {
+                    pChar->sub_10335470(pItem);
+                    sub_1024f7b0(pItem);
+                }
+            } else {
+                CBasePlayer *pPlayer = *(CBasePlayer **)((char *)pChar + 0xa8);
+                if (pPlayer)
+                    pPlayer->sub_101784c0((CBaseEntity *)pszName);
+            }
+            _Py_NoneStruct.ob_refcnt++;
+            return &_Py_NoneStruct;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101993c0 size=0x10e
 struct PyObj;
 struct CBasePlayerUnit
