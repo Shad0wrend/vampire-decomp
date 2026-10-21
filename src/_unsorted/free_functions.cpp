@@ -28338,6 +28338,36 @@ PyObj *sub_10196c50(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196d10 size=0x9a
+#include "CGlobalEntityList.h"
+
+extern "C" __declspec(dllimport) int __cdecl PyArg_ParseTuple(void *pArgs, const char *pszFormat, ...);
+extern "C" __declspec(dllimport) void *__cdecl PyList_New(int nSize);
+extern "C" __declspec(dllimport) int __cdecl PyList_Append(void *pList, void *pItem);
+extern "C" __declspec(dllimport) void __cdecl PyErr_Print();
+extern CGlobalEntityList g_106eb5d8;
+void *sub_101966a0(CBaseEntity *pEnt);
+
+void *sub_10196d10(void *pSelf, void *pArgs)
+{
+	const char *pszName = 0;
+	if (PyArg_ParseTuple(pArgs, "s", &pszName)) {
+		void *pList = PyList_New(0);
+		if (pList) {
+			for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, pszName, 0, 0); pEnt; pEnt = g_106eb5d8.sub_100f7770(pEnt, pszName, 0, 0)) {
+				void *pObject = sub_101966a0(pEnt);
+				if (pObject)
+					PyList_Append(pList, pObject);
+			}
+			return pList;
+		}
+	} else {
+		PyErr_Print();
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196de0 size=0x8c
 #include "CGlobalEntityList.h"
 
