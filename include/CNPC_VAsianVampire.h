@@ -24,7 +24,9 @@ public:
 	float m_flNextThink;	// +0x17c
 	char pad180[0xfec - 0x180];
 	int m_nIdealActivity;	// +0xfec
-	char padff0[0x1b38 - 0xff0];
+	char padff0[0x1b2c - 0xff0];
+	int m_n1b2c;	// +0x1b2c: set to 6 by SelectSchedule
+	char pad1b30[0x1b38 - 0x1b30];
 	int m_nIdealState;	// +0x1b38
 	char pad1b3c[0x5ddc - 0x1b3c];
 	void *m_pHint5ddc;	// +0x5ddc: the hint node the NPC is working on
