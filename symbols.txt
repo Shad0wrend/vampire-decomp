@@ -3431,6 +3431,7 @@
 0x1000dd2d func   ?sub_103d9f90@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d9f90
 0x1000dd37 func   ?sub_101d7ec0@CClanNames@@QAEHPBDPAH@Z CClanNames::sub_101d7ec0
 0x1000dd4b func   ?sub_100b5b00@CBaseFlex@@QAEXPBM@Z CBaseFlex::sub_100b5b00
+0x1000dd5a func   ?sub_10385ab0@CNPC_VHumanUnit@@QAEDH@Z CNPC_VHumanUnit::sub_10385ab0
 0x1000dd5f func   ?sub_1019c950@@YAXPAH@Z sub_1019c950
 0x1000dd69 func   ?sub_10359de0@@YADXZ sub_10359de0
 0x1000dd78 func   ?sub_1013cf40@@YAXPBM00PAM1@Z sub_1013cf40

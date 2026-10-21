@@ -55,6 +55,78 @@ int CNPC_VHuman::vfunc376(int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10385ab0 size=0x12c
+#include "CNPC_VHuman.h"
+#include "CUnknown1025ddd0.h"
+#include "CUnknown1070b244.h"
+
+struct SGlobalVars { char pad[0xc]; float curtime; };
+extern SGlobalVars *g_1070b228;
+extern CUnknown1070b244 *g_1070b244;
+
+struct SDifficulty {
+	virtual void s0();
+	virtual char s1();
+	char pad[0x24];
+	float m28;
+};
+extern SDifficulty *g_10924a1c;
+
+struct SNotifyObj {
+	virtual void s0();
+	virtual void s1();
+};
+extern SNotifyObj *g_10924edc;
+
+struct SHumanView
+{
+	char m_pad0000[0x5b84];
+	unsigned int m_flags5b84;
+	char m_pad5b88[0x6070 - 0x5b88];
+	float m_f6070;
+	float m_f6074;
+	char m_b6078;
+	char m_pad6079[0x6268 - 0x6079];
+	float m_f6268;
+	float m_f626c;
+	char m_pad6270[0x65e8 - 0x6270];
+	CUnknown1025ddd0 *m_pGroup;
+};
+
+struct CNPC_VHumanUnit : CNPC_VHuman
+{
+	char sub_10385ab0(int unused);	// "CNPC_VHuman::vfunc599"
+};
+
+char CNPC_VHumanUnit::sub_10385ab0(int unused)
+{
+	SHumanView *pView = (SHumanView *)this;
+	if ((pView->m_flags5b84 & 2) == 2 || vfunc293() != 0) {
+		pView->m_b6078 = 1;
+		return 1;
+	}
+	if (g_1070b228->curtime >= pView->m_f6070) {
+		bool bOK = true;
+		double f = g_10924a1c->s1() ? 0.0f : g_10924a1c->m28;
+		if ((float)(f + f) < pView->m_f6268 && vfunc308())
+			bOK = false;
+		if (!(pView->m_f626c > 64.0f && sub_10014df8(0x59))) {
+			if (bOK) {
+				pView->m_pGroup->sub_1025db70((CBaseEntity *)this);
+				if ((pView->m_flags5b84 & 0x1000) == 0x1000 || pView->m_pGroup->sub_1025db70((CBaseEntity *)this)) {
+					pView->m_b6078 = 1;
+					pView->m_f6074 = g_1070b244->vfunc1(7.5f, 15.0f) + g_1070b228->curtime;
+					g_10924edc->s1();
+					return 1;
+				}
+			}
+		}
+	}
+	pView->m_b6078 = 0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10385c30 size=0x8d
 #include "CNPC_VHuman.h"
 #include "CBaseCombatWeapon.h"
