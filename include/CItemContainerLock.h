@@ -4,6 +4,7 @@
 
 class CBaseEntity;
 class CItemGKeyring;
+struct inputdata_t;
 
 class CItemContainerLock
 {
@@ -23,4 +24,5 @@ public:
 	bool sub_10224100();	// stub 0x10001d2f
 	bool sub_10224910(int a);	// stub 0x1000ffa1
 	void sub_10224950(CBaseEntity *pPlayer);	// a player opens the lock: tells the player's hud about the keyring (messages 0x13 / 0x14), state 3, slot 274, and tells the container who it is used by and runs its slot 242
+	void sub_102241f0(inputdata_t *pInput);	// input handler: with the lock open (sub_10224100 false) and the container alive: when the container answers sub_100eef10 sends message 0x4d to the activator's player object (+0xa8), else remembers the activator's handle at +0x53c of the container and runs the container's slot 242
 };
