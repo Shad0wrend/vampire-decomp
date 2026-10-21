@@ -631,6 +631,18 @@ bool CAI_BaseNPC::vfunc424()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027cc10 size=0xf8
+#include "CAI_BaseNPC.h"
+#include "CAI_Senses.h"
+
+CAI_Senses *CAI_BaseNPC::vfunc425()
+{
+	CAI_Senses *pSenses = new CAI_Senses;
+	pSenses->m_pOuter = this;
+	return pSenses;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027cec0 size=0x1f
 #include "CAI_Motor.h"
 CAI_Motor *CAI_BaseNPC::vfunc427()
