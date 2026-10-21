@@ -54,7 +54,8 @@ public:
 	virtual void vfunc596(); virtual void vfunc597(); virtual void vfunc598(CBaseEntity *pEnt);	// slot 598: forgets pEnt (sub_10332ca0(pEnt, 4, 0), clears the focus / target when it is pEnt, drops its record from the memory list of slot 541)
 	virtual void vfunc599(); virtual char vfunc600(int unused);	// slot 600: see sub_102b57c0
 	virtual void vfunc601(int a);	// slot 601: takes one argument
-	virtual void vfunc602(); virtual void vfunc603(); virtual void vfunc604(); virtual void vfunc605(); virtual void vfunc606(); virtual void vfunc607();
+	virtual void vfunc602(); virtual float vfunc603(float *pCur, float *pTarget);	// slot 603: random yaw offset picked by where *pCur lies relative to *pTarget (+-32.0f); see the definition
+	virtual void vfunc604(); virtual void vfunc605(); virtual void vfunc606(); virtual void vfunc607();
 	virtual bool vfunc608(const char *pszName);	// slot 608: binds the NPC to the first of the three global named objects whose name equals pszName (case-sensitive; false for null / empty / no match), stores it at +0x65e8 and its name (null when empty) at +0x65ec
 
 	void vfunc488();	// slot 488: plays the "Death" sound
