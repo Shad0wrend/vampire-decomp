@@ -60508,6 +60508,28 @@ void CUnknown10330ce0::sub_10330ce0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103322e0 size=0xbd
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+
+struct CGlobalVarsStub { char pad[0x14]; int maxClients; };
+extern CGlobalVarsStub *g_1070b228;
+CBasePlayer *sub_1000ac8b(int index);
+
+void CBaseCombatCharacter::sub_103322e0(int a, int b)
+{
+	ScopeTrace trace("CBaseCombatCharacter::SetAsCameraTarget", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	m_b10d4 = (char)a;
+	*(int *)((char *)this + 0x10d0) = b;
+	for (int i = 1; i <= g_1070b228->maxClients; i++) {
+		CBasePlayer *pPlayer = sub_1000ac8b(i);
+		if (pPlayer)
+			pPlayer->sub_1017d460((CBaseEntity *)this, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103323d0 size=0x9b
 #include "CUnknown103323d0.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
