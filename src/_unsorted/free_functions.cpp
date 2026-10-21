@@ -8710,6 +8710,40 @@ StatDefault *StatOwner::sub_1006cff0(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006d2f0 size=0x175
+#include "SendProp.h"
+
+struct SendTable
+{
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// SendTable::Init (stub 0x1000e8fe)
+};
+extern SendTable g_106c7f68;
+extern const char *g_105463a4;
+
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int a, void *varProxy);
+SendProp sub_10246700(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, int varProxy);
+SendProp sub_10246510(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, int varProxy);
+void sub_10003012();
+void sub_10246300();
+
+int sub_1006d2f0()
+{
+	static SendProp props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246af0("m_ShotIndex", 0x630, 4, 8, 1, 0, 0),
+		sub_10246af0("CamMode", 0x638, 4, 4, 1, 0, 0),
+		sub_10246af0("m_bDrawPlayer", 0x640, 1, 1, 1, 0, 0),
+		sub_10246700("m_vecCamOrigin", 0x5ec, 0xc, -1, 4, 0.0f, -121121.121094f, (int)sub_10003012),
+		sub_10246700("m_vecCamTarget", 0x5f8, 0xc, -1, 4, 0.0f, -121121.121094f, (int)sub_10003012),
+		sub_10246700("m_angCamAngles", 0x604, 0xc, -1, 4, 0.0f, -121121.121094f, (int)sub_10003012),
+		sub_10246510("m_flFOV", 0x634, 4, -1, 4, 0.0f, -121121.121094f, (int)sub_10246300),
+		sub_10246af0("m_nClientResetFrame", 0x63c, 4, -1, 1, 0, 0),
+	};
+	g_106c7f68.sub_1000e8fe(&props[1], 8, g_105463a4);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006d9d0 size=0xfb
 struct EntInfo { void *pEnt; unsigned int serial; int pad; };
 struct EntTable { int pad; EntInfo info[1]; };
