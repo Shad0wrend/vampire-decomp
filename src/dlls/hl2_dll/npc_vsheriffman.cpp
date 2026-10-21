@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103aebd0 size=0x79
+#include "CNPC_VSheriffMan.h"
+#include "ScopeTrace.h"
+void CNPC_VSheriffMan::vfunc432(int arg)
+{
+	ScopeTrace trace("CNPC_VSheriffMan::RunAI", g_106b8540);
+	if (!m_bTransformed)
+		sub_103b1510();
+	sub_10385a10(arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103af8d0 size=0x64
 #include "CNPC_VSheriffMan.h"
 struct ScopeEnt { const char* a; const void* b; const void* c; };
