@@ -3760,6 +3760,7 @@
 0x10012229 func   ?vfunc14@CServerGameDLL@@UAEXPAXHHHHH@Z CServerGameDLL::vfunc14
 0x10012233 func   ?vfunc19@CServerGameDLL@@UAEXPAX@Z CServerGameDLL::vfunc19
 0x10012242 func   ?vfunc125@CBaseEntity@@UAEXXZ CBaseEntity::vfunc125
+0x10012260 func   ?sub_1033e960@@YAXXZ sub_1033e960
 0x1001226a func   ?sub_10041c80@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_10041c80
 0x10012292 func   ?vfunc568@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc568
 0x100122a1 func   _item_k_empire_jezebel_key item_k_empire_jezebel_key

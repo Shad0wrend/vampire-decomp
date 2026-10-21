@@ -57735,6 +57735,25 @@ bool CBaseCombatCharacter::sub_1033e2b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033e960 size=0x7c
+#include "ScopeTrace.h"
+struct CFrenzyPlayerData { char pad[0x146c]; int m_nField146c; void sub_1033eb60(int a); };
+struct CFrenzyLocalPlayer { char pad[0xa8]; CFrenzyPlayerData *m_pData; };
+CFrenzyLocalPlayer *sub_101193b0();
+void sub_1033e960()
+{
+	ScopeTrace trace("CC_FrenzyPlayer", g_106b8540);
+	CFrenzyLocalPlayer *pLocal = sub_101193b0();
+	if (pLocal) {
+		CFrenzyPlayerData *pData = pLocal->m_pData;
+		if (pData) {
+			pData->m_nField146c = 0;
+			pData->sub_1033eb60(99999);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033ea90 size=0x99
 #include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
