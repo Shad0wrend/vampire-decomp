@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 9, 42, 62, 64, 86, 94, 105, 107, 118, 122, 158, 161, 167, 173,
-// 202, 212, 216, 217 / 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 270, 274, 346, 360, 381 and 457 of an entity class that does not model its vtable.
+// 194, 202, 212, 216, 217 / 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 270, 274, 346, 360, 381 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -52,7 +52,10 @@ public:
 	EVS(170) EVS(171) EVS(172)
 	virtual void slot173(CEntityVSlots *pActivator, CEntityVSlots *pCaller, int useType, int value);	// "Use"
 	EVS(174) EVS(175) EVS(176) EVS(177) EVS(178) EVS(179)
-	EVS10(18) EVS10(19)
+	EVS10(18)
+	EVS(190) EVS(191) EVS(192) EVS(193)
+	virtual Vector *slot194();	// a position (three floats)
+	EVS(195) EVS(196) EVS(197) EVS(198) EVS(199)
 	EVS(200) EVS(201)
 	virtual void slot202(CEntityVSlots *pOwner);	// "SetOwnerEntity"
 	EVS(203) EVS(204) EVS(205) EVS(206) EVS(207) EVS(208) EVS(209)
