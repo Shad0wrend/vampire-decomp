@@ -12,7 +12,7 @@ public:
 	virtual void v0();
 	virtual unsigned int *v1();	// the entity's handle
 	virtual void v2();
-	virtual void v3();
+	virtual CBaseEntity *v3();	// GetBaseEntity
 	virtual CBaseEntity *vfunc4();
 };
 
@@ -41,13 +41,14 @@ public:
 	int m_nNodeAlloc;	// 0x18008
 	int m_nNodeGrow;	// 0x1800c
 	unsigned short m_Head;	// 0x18010
-	char m_pad18012[0x18040 - 0x18012];
-	int m_iNumEnts;
+	char m_pad18012[0x1803c - 0x18012];
+	int m_n1803c;
+	int m_iNumEnts;	// 0x18040
+	char m_b18044;
 
 	CBaseEntity *sub_100f7060(CBaseEntity *pCurrent);	// "CGlobalEntityList::NextEnt": the first entity's slot-4 result when pCurrent is null, else the first non-null slot-4 result after pCurrent in the list
 	CBaseEntity *sub_100f7770(CBaseEntity *pStart, const char *szName, CBaseEntity *pSearching, CBaseEntity *pActivator);	// "CGlobalEntityList::FindEntityByName" (called through the stub at 0x1000b4b5)
 	CBaseEntity *sub_100f7380(CBaseEntity *pStart, const char *pszClassname);	// "CGlobalEntityList::FindEntityByClassname": the first entity after pStart (the first one when null) whose classname matches
-	CBaseEntity *sub_100f7930(CBaseEntity *pStart, const char *szTarget);	// "CGlobalEntityList::FindEntityByTarget" (stub 0x1000e665): the first entity after pStart whose target name (+0x20c) is set and equals szTarget, case-insensitive
 	CGlobalEntityList_Ent *sub_100f7b20(const char *pszClass, const char *pszName, int pStart, void *pSearching, int pActivator);	// a name search variant (stub 0x10009b8d); the entity found, or 0
 	CBaseEntity *sub_100f7890(CBaseEntity *pStart, const char *szName);	// the first entity after pStart that has an edict and whose name (slot 9) equals szName, case-insensitive
 	void sub_100f6e40(void *pList);	// handles a list of pending entities (the object at pList, a CUtlVector behind a leading dword); stub 0x10011de7
@@ -56,4 +57,6 @@ public:
 	void sub_100f9fc0(void *pEnt, int a, int index, int b);	// stub 0x1000e98f
 	CBaseEntity *sub_100290c0(const unsigned int *pHandle);	// "CBaseEntityList::LookupEntity" (stub 0x10009c8c): the entity behind the handle, 0 when the handle is invalid or stale
 	CBaseEntity *sub_100f79b0(CBaseEntity *pStart, const float *pCenter, float flRadius);	// "CGlobalEntityList::FindEntityInSphere" (stub 0x10013bbf)
+	void sub_100f6ec0();	// "CGlobalEntityList::Clear": sets the byte at +0x18044, removes every live entity (UTIL_Remove through the list from its head), runs sub_100f6ce0, purges a global vector (0x10703668), resets two globals and the counters at +0x1803c / +0x18040 and the byte
+	void sub_100f6ce0();	// stub 0x10007478
 };
