@@ -166,6 +166,33 @@ void CBaseCombatWeapon::vfunc364(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024f670 size=0x89
+#include "CBaseCombatWeapon.h"
+struct CWeaponRangeView {
+	char m_pad0000[0x74c];
+	int m_nClip;
+	char m_pad0750[0x8b8 - 0x750];
+	float m_flMinRange;
+	char m_pad08bc[4];
+	float m_flMaxRange;
+};
+int CBaseCombatWeapon::vfunc365(int a, float b, float c)
+{
+	CWeaponRangeView *pView = (CWeaponRangeView *)this;
+	if (pView->m_nClip <= 0)
+		return 0x40;
+	if (c < 100.0f)
+		return 8;
+	if (c < pView->m_flMinRange)
+		return 0x5f;
+	if (c > pView->m_flMaxRange)
+		return 0x60;
+	if (b < 0.5)
+		return 0x61;
+	return sub_10252410(0) ? 0x4f : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f790 size=0x8
 #include "CBaseCombatWeapon.h"
 
