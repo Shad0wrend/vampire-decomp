@@ -37,4 +37,6 @@ public:
 	int sub_101b2f60(const char *pszName);	// index of the sound record (0xe8 bytes each, table at +0x54) named pszName, -1 when unknown
 	char sub_101b31a0(int index);	// true when index is within the sound record count at +0x64
 	void sub_101b50f0(const char *pszName);	// flags the sound record and its script file (record dword +0x18, flag table at +0x9c, 0x82 bytes each) as changed; DevWarning when there is no such sound
+	int sub_101b3220();	// "GetSoundCount" (stub 0x100070a9)
+	const char *sub_101b31d0(int index);	// "GetSoundName" (stub 0x1000e732): the name of the sound record, null when the index is invalid
 };
