@@ -3362,6 +3362,28 @@ void CBaseEntity::sub_1003f810(float flFrameTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040220 size=0x114
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+
+void CBaseEntity::sub_10040220()
+{
+	ScopeTrace trace("CBaseEntity::UpdateBaseVelocity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (sub_100b3700() & 1) {
+		CBaseEntity *pGround = (CBaseEntity *)((CEntityVSlots *)this)->slot209();
+		if (pGround && (pGround->sub_100b3700() & 0x1000)) {
+			Vector vecBaseVelocity;
+			((CEntityVSlots *)pGround)->slot210(&vecBaseVelocity);
+			Vector *pBaseVel = (Vector *)((char *)this + 0x3b0);
+			if (sub_100b3700() & 0x800000)
+				vecBaseVelocity += *pBaseVel;
+			sub_100b3580(0x800000);
+			*pBaseVel = vecBaseVelocity;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041b40 size=0x16
 bool sub_10041b40(int *a, int *b)
 {
