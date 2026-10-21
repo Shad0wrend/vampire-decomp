@@ -3015,6 +3015,7 @@
 0x1000d616 func   ?sub_102a98e0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a98e0
 0x1000d639 func   ?sub_102f95d0@CUnknown102f95d0@@QAEXH@Z CUnknown102f95d0::sub_102f95d0
 0x1000d63e func   ?vfunc103@CPhysConstraint@@UAEXXZ CPhysConstraint::vfunc103
+0x1000d648 func   ?sub_100b8520@@YAHXZ sub_100b8520
 0x1000d64d func   ?sub_10428690@@YAXPAUCStudioHdrRaw@@HPAMM@Z sub_10428690
 0x1000d652 func   ?vfunc5@CBaseGrenade@@QAEPAV1@I@Z CBaseGrenade::vfunc5
 0x1000d657 func   ?vfunc5@CWeaponMelee_AVampBlade@@QAEPAV1@I@Z CWeaponMelee_AVampBlade::vfunc5

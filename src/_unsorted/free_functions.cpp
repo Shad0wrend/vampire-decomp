@@ -17186,6 +17186,42 @@ void CUnknown100b7c60::sub_100b7c60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b8520 size=0x117
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246700(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246dc0(const char *name, int offset, int pTable, void *proxy);
+SendProp sub_10246ef0(int nElements, int elementSize, const char *name, int extra);
+void sub_10009539();
+void sub_10003012();
+extern SendTable g_106d0874;
+extern const char *g_1055a5b4;
+extern int g_1054d524;
+
+// TARGET: sub_100b8520
+int sub_100b8520()
+{
+    static SendProp g_SendProps[] = {
+        sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+        sub_10246dc0("baseclass", 0, g_1054d524, (void *)sub_10009539),
+        sub_10246af0("m_BatDrawnBits", 0x730, 4, 0x20, 1, 0, 0),
+        sub_10246700("m_vecBatPosition[0]", 0x8d8, 12, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+        sub_10246ef0(0x20, 12, "m_vecBatPosition", 0),
+        sub_10246700("m_vecBatVelocity[0]", 0xa58, 12, 10, 0, -600.0f, 600.0f, (void *)sub_10003012),
+        sub_10246ef0(0x20, 12, "m_vecBatVelocity", 0),
+    };
+    g_106d0874.sub_10247240(g_SendProps + 1, 6, g_1055a5b4);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b86c0 size=0x43
 #include "CBatSwarm.h"
 void *sub_100aa720(int size);
