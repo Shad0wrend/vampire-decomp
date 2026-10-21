@@ -3519,6 +3519,7 @@
 0x1000f2a9 func   ?vfunc546@CNPC_VCop@@QAEHH@Z CNPC_VCop::vfunc546
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
 0x1000f2cc func   ?sub_100ea0d0@@YI_NPAUHandlePairHolder@@HPADH@Z sub_100ea0d0
+0x1000f2d6 func   ?sub_10074160@CUnknown10074070@@QAEPAMHH@Z CUnknown10074070::sub_10074160
 0x1000f2ea func   ?vfunc5@CResearchBook_MG_BRAWL@@QAEPAV1@I@Z CResearchBook_MG_BRAWL::vfunc5
 0x1000f2fe func   ?vfunc418@CAI_BaseNPCTroika@@UAEMM@Z CAI_BaseNPCTroika::vfunc418
 0x1000f303 func   ?vfunc5@CRagdollProp@@QAEPAV1@I@Z CRagdollProp::vfunc5

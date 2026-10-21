@@ -8851,6 +8851,51 @@ struct CUnknown100740f0 { int p[2]; char a; void sub_100740f0(char v); };
 void CUnknown100740f0::sub_100740f0(char v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10074160 size=0x70
+#include "CUnknown10074070.h"
+
+extern float g_106c855c[2];
+extern float g_106c83f0[2];
+
+struct CObj4c
+{
+	float sub_10076b30();
+};
+
+struct CView4c
+{
+	char m_pad0000[0x4c];
+	CObj4c *m_p4c;
+};
+
+namespace block_10074160 {
+struct CRecUnit : CUnknown10074070
+{
+	int sub_10074070(int index);
+};
+
+int CRecUnit::sub_10074070(int index)
+{
+	return m_records[index].m_value;
+}
+}
+using namespace block_10074160;
+
+// TARGET: CUnknown10074070::sub_10074160
+float *CUnknown10074070::sub_10074160(int index, int b)
+{
+	g_106c855c[1] = 0;
+	g_106c855c[0] = sub_10074110(b);
+	g_106c83f0[1] = ((CView4c *)this)->m_p4c->sub_10076b30();
+	g_106c83f0[0] = sub_10074110(b);
+	if (index < 0)
+		return g_106c855c;
+	if (index >= ((CRecUnit *)this)->sub_10074070(b))
+		return g_106c83f0;
+	return sub_10074090(index, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074820 size=0x10e
 #include "CFlexAnimationTrack.h"
 
