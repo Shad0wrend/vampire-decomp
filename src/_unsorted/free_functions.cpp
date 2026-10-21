@@ -75840,6 +75840,36 @@ void CUnknown1040cb60::sub_1040bfc0(const float *a, const float *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040c430 size=0xa0
+#include "CUnknown1040cb60.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+void sub_10139b90(const Vector &angles, float *pMatrix);
+void sub_101384e0(Vector *pOut, const Vector *pIn, const float *pMatrix);
+
+static inline bool TestBit(unsigned int value, int bit)
+{
+	return ((value >> bit) & 1) != 0;
+}
+
+Vector *CUnknown1040cb60::sub_1040c430(Vector *pOut, const Vector *pIn, CBaseEntity *pEnt)
+{
+	if (m_bFlag45) {
+		float matrix[12];
+		Vector v = *((CEntityVSlots *)pEnt)->slot194();
+		v.x = 0;
+		sub_10139b90(v, matrix);
+		sub_101384e0(pOut, pIn, matrix);
+		return pOut;
+	}
+	if (TestBit(pEnt->m_flags268, 11))
+		pEnt->vfunc98();
+	sub_101384e0(pOut, pIn, (const float *)((char *)pEnt + 0x130));
+	return pOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040cce0 size=0x91
 #include "CUnknown1040cce0.h"
 
