@@ -2,6 +2,8 @@
 // Only the vtable slots that decompiled code needs are given their real names,
 // the others are placeholders that keep the slot indices of the game's primary
 // vtable. The vtable has 372 slots.
+// New method declarations can go into CBaseCombatWeapon_ext.h (included at the end of the method list) so that
+// workers do not overwrite each other's edits of this large file.
 #pragma once
 
 #include "Vector.h"
@@ -135,6 +137,8 @@ public:
 	bool sub_100ab020(int a, void *pEdict, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly by vfunc86
 	bool sub_10254b00(int a);	// "can start the reload": false without an owner, without ammo (owner ammo count of the type at +0x744, unless the byte +0x89a is set) or while the owner's info block has +0x4fee8 set; with something to load starts it (sub_10254cd0(a), slot 333(10, 3, 0, 0, 0, 0), byte +0x898 = 1) and returns true, else re-arms the next attack time (slot 311 + a constant) once the pending flags are set
 	char sub_102525e0(CBaseCombatCharacter *pOwner);	// true when the global ammo table is available and its entry for the ammo type at +0x744 equals the ammo count the owner (pOwner, else the weapon's owner character) holds of that type; false without an ammo type, owner or table
+
+#include "CBaseCombatWeapon_ext.h"
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
