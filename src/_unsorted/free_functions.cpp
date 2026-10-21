@@ -45201,6 +45201,25 @@ char CBaseCombatWeapon::sub_10256250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10256350 size=0x73
+#include "CUnknown101d8a70.h"
+
+struct CRollRecord { int a, b, c, d; };
+
+CWeaponRollValue CBaseCombatWeapon::sub_10256350()
+{
+	int *pSlot = sub_102517e0();
+	CRollRecord *pSrc = (CRollRecord *)((char *)this + *pSlot * 0x44 + 0x7a0);
+	CRollRecord rec = *pSrc;
+	CUnknown101d8a70 result;
+	result.sub_101d8820(sub_10252240(), this, &rec, 6);
+	int value;
+	CWeaponRollValue *p = (CWeaponRollValue *)result.sub_101d8a70(&value);
+	CWeaponRollValue ret = *p;
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102567b0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;

@@ -3464,6 +3464,7 @@
 0x10010e3d func   ?sub_100ae7e0@@YAXXZ sub_100ae7e0
 0x10010e42 func   ?sub_10072d60@S10072d60@@QAEXPBD@Z S10072d60::sub_10072d60
 0x10010e4c func   ?vfunc5@CWeaponThrown_Chang_Ghost@@QAEPAV1@I@Z CWeaponThrown_Chang_Ghost::vfunc5
+0x10010e92 func   ?sub_10256350@CBaseCombatWeapon@@QAE?AUCWeaponRollValue@@XZ CBaseCombatWeapon::sub_10256350
 0x10010edd func   ?sub_10258b00@@YAXPAVCUnknown10258b00@@@Z sub_10258b00
 0x10010efb func   ?sub_1010be40@@YAPAHXZ sub_1010be40
 0x10010f14 func   _beam beam
