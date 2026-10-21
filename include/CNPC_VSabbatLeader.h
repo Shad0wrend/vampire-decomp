@@ -84,4 +84,8 @@ public:
 	bool sub_103a9d90();	// "CNPC_VSabbatLeader::CheckForJump": scope trace (no entity name), true when sub_103c67f0(constant) holds or sub_103c6a20() is not below a constant, else sub_103aabc0()
 	bool sub_103c67f0(float flValue);	// stub 0x1000fe11, called by CheckForJump with a constant
 	float sub_103c6a20();	// stub 0x100010d2, a measure returned in ST0
+	void vfunc433();	// "CNPC_VSabbatLeader::GatherConditions" (slot 433 override): scope trace, CAI_BaseNPCTroika::vfunc433, on a jump (CheckForJump) the global object 0x10924a6c is asked (slot 1) and condition 0x79 is set; conditions 0xf, 0xc and 0xe are cleared
+	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
+	void sub_10269a20(int condition);	// "SetCondition" (stub 0x100041b0)
+	void sub_10269b50(int condition);	// "ClearCondition" (stub 0x10015839)
 };
