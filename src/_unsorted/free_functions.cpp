@@ -48648,6 +48648,27 @@ void CUnknown101e0f00::sub_101e3400(void *pSource, void *pTarget, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e34c0 size=0x78
+#include "CUnknown101e0f00.h"
+
+// TARGET: CUnknown101e0f00::sub_101e34c0
+void CUnknown101e0f00::sub_101e34c0(void *pSource, void *pTarget, int a, int b)
+{
+	if (!pSource)
+		return;
+	int index = sub_101e1250(a, b);
+	if (index == -1)
+		return;
+	CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[index];
+	if (sub_101e1a60(pEntry, pSource, pSource, pTarget, 1)) {
+		sub_101e3730(pSource, pTarget, pEntry->m_nMask, -1);
+		return;
+	}
+	if (sub_101e22b0())
+		sub_101e3be0(pTarget, pEntry->m_nMask);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3910 size=0x77
 #include "CUnknown101e0f00.h"
 #include "ScopeTrace.h"

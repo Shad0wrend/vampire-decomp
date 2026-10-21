@@ -1214,6 +1214,7 @@
 0x10005b0f func   ?sub_10312f70@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_10312f70
 0x10005b14 func   ?vfunc440@CNPC_VGargoyle@@QAEHH@Z CNPC_VGargoyle::vfunc440
 0x10005b23 func   ?sub_101f2ae0@@YGXPAX@Z sub_101f2ae0
+0x10005b28 func   ?sub_101e34c0@CUnknown101e0f00@@QAEXPAX0HH@Z CUnknown101e0f00::sub_101e34c0
 0x10005b32 func   _dynamic_prop dynamic_prop
 0x10005b37 func   ?vfunc5@CCorpse@@QAEPAV1@I@Z CCorpse::vfunc5
 0x10005b4b func   ?sub_100a93d0@@YI_NPAD@Z sub_100a93d0
