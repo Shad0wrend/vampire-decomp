@@ -80654,6 +80654,36 @@ extern "C" CBaseEntity *flame_cluster()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e2000 size=0x8e
+#include "CFlameCluster.h"
+#include "CVDmg_t.h"
+#include "CUnknown101c26d0.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+// TARGET: CFlameCluster::sub_103e2000
+void CFlameCluster::sub_103e2000(CBaseEntity *pEntity, int index)
+{
+	CVDmg_t dmg;
+	dmg.sub_101fa8d0(2, 8, 1);
+	CBaseEntity *pOwner;
+	unsigned int h = m_hOwner;
+	if (h != (unsigned int)-1) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13))
+			pOwner = (CBaseEntity *)pSlot->m_pEntity;
+		else
+			pOwner = 0;
+	} else
+		pOwner = 0;
+	CUnknown101c26d0 info;
+	info.sub_101c26d0(this, pOwner, 1.0f, 8, 0, (int)&dmg, -1);
+	pEntity->sub_100a1250(&info);
+	dmg.sub_101fa680();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e2470 size=0xe1
 #include "CUnknown103e2470.h"
 #include "Mem1c.h"
