@@ -150,6 +150,29 @@ void CNPC_VMingXiao::vfunc390(CTakeDamageInfo *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395e70 size=0xcd
+#include "CNPC_VMingXiao.h"
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+// TARGET: CNPC_VMingXiao::vfunc603
+float CNPC_VMingXiao::vfunc603(float *pCurrent, float *pTarget)
+{
+    if (*pTarget + 32.0f < *pCurrent)
+        return g_1070b244->vfunc1(-30.0f, 30.0f);
+    if (*pCurrent < *pTarget - 32.0f) {
+        *pCurrent = *pTarget;
+        if (g_1070b244->vfunc2(0, 1))
+            return g_1070b244->vfunc1(170.0f, 179.0f);
+        return g_1070b244->vfunc1(-170.0f, -179.0f);
+    }
+    if (g_1070b244->vfunc2(0, 1))
+        return g_1070b244->vfunc1(80.0f, 120.0f);
+    return g_1070b244->vfunc1(-80.0f, -120.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10396fd0 size=0x18
 #include "CNPC_VMingXiao.h"
 

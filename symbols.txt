@@ -962,6 +962,7 @@
 0x10004cc3 func   ?sub_10136330@@YAPAHXZ sub_10136330
 0x10004cd2 func   ?sub_103bcc00@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bcc00
 0x10004ceb func   ?vfunc5@CItemGDrugsMorphineBottle@@QAEPAV1@I@Z CItemGDrugsMorphineBottle::vfunc5
+0x10004cf0 func   ?vfunc603@CNPC_VMingXiao@@QAEMPAM0@Z CNPC_VMingXiao::vfunc603
 0x10004d18 func   ?sub_102a1470@@YIHPAUN@@@Z sub_102a1470
 0x10004d2c func   ?sub_1022b480@S1022b480@@QAEXAAUinputdata_t@@@Z S1022b480::sub_1022b480
 0x10004d36 func   ?vfunc103@CChangeLevel@@UAEXXZ CChangeLevel::vfunc103
