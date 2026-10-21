@@ -29756,6 +29756,25 @@ char CCineNPC::sub_101a8ac0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8c30 size=0x82
+#include "CCineNPC.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+void sub_101a7170(CCineNPC *pScript);
+void CCineNPC::sub_101a8c30()
+{
+	DevMsg(2, "Cancelling script: %s\n", m_pszScript5f48 ? m_pszScript5f48 : g_106b8540);
+	if (!m_pszName26c) {
+		sub_101a7170(this);
+		return;
+	}
+	for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, m_pszName26c, 0, 0); pEnt; pEnt = g_106eb5d8.sub_100f7770(pEnt, m_pszName26c ? m_pszName26c : g_106b8540, 0, 0))
+		sub_101a7170((CCineNPC *)pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8cf0 size=0xc0
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"

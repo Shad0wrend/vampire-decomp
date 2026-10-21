@@ -3121,6 +3121,7 @@
 0x1000f178 func   ??0CHL2_PlayerBase@@QAE@XZ CHL2_PlayerBase::CHL2_PlayerBase
 0x1000f17d func   _item_g_vv_photo item_g_vv_photo
 0x1000f182 func   _info_player_deathmatch info_player_deathmatch
+0x1000f187 func   ?sub_101a8c30@CCineNPC@@QAEXXZ CCineNPC::sub_101a8c30
 0x1000f1aa func   _item_p_research_lg_computers item_p_research_lg_computers
 0x1000f1b9 func   ?sub_101859a0@S101859a0@@QAEXH@Z S101859a0::sub_101859a0
 0x1000f1d2 func   ?sub_10073f40@CUnknown10073f40@@QAEXH@Z CUnknown10073f40::sub_10073f40
