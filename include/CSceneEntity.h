@@ -67,7 +67,7 @@ public:
 	virtual void vfunc248(float a, int b, int c);
 	virtual void vfunc249(float a, int b, int c);
 	virtual void vfunc250(float a, int b, int c);
-	virtual char vfunc251(CSceneEvent *pEvent, int a, int b);	// slot 251: resolves the actor of the event through slot 267 (Warning "CSceneEntity unable find actor" and true when it is unknown); false when the event is of type 4 and the actor's NPC (+0x94) has its navigator (+0x5d34) answering sub_10012963, else true
+	virtual char vfunc251(float a, int b, CSceneEvent *pEvent);	// slot 251: resolves the actor of the event through slot 267 (Warning "CSceneEntity unable find actor" and true when it is unknown); false when the event is of type 4 and the actor's NPC (+0x94) has its navigator (+0x5d34) answering sub_10012963, else true
 	SCENE_V(252) SCENE_V(253) SCENE_V(254) SCENE_V(255) SCENE_V(256) SCENE_V(257) SCENE_V(258)
 	virtual void vfunc259(int unused, void *pEvent, const char *pszTarget);	// slot 259: for the actor of the scene event (object at +0x94 of pEvent) and the entity named pszTarget: sets the actor's move type (4, 0), copies the target's slot 192 vector to +0x5db8 and its slot 219 vector to +0x5dc4 of the actor, runs the actor's sub_10280de0(0x39) and stamps curtime at +0x5cf0
 	virtual void vfunc260(int unused, void *pEvent, const char *pszSound, int a4, int a5);	// slot 260: for the actor of the scene event (pointer at +0x98 of pEvent): builds "sound/<name>.mp3" and "*<name>" sound names, makes the actor's entity of this scene's player (sub_10081890) its target, and hands "*<name>" to the actor's sub_102c0520(name, a5, byte at this+0x57f)
