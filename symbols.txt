@@ -4926,6 +4926,7 @@
 0x10014bd7 func   ?sub_101857b0@UtlMem@@QAEXXZ UtlMem::sub_101857b0
 0x10014be1 func   ?sub_100464f0@S100464f0@@QAEPAU1@HHH@Z S100464f0::sub_100464f0
 0x10014bf5 func   ?sub_10184380@@YIXPAH@Z sub_10184380
+0x10014c04 func   ?sub_1038fc80@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038fc80
 0x10014c09 func   ?sub_1023db70@CWorldEvents@@QAEXXZ CWorldEvents::sub_1023db70
 0x10014c1d func   ?sub_100ce810@@YGEPAUEv_t@@PAXPAH@Z sub_100ce810
 0x10014c40 func   ?vfunc103@CMessage@@UAEXXZ CMessage::vfunc103

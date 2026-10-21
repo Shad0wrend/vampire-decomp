@@ -76809,6 +76809,53 @@ unsigned char __fastcall sub_1038f640(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038fc80 size=0x8f
+#include "CNPC_VManBat.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern CGlobalEntityList *g_10566458;
+
+struct CMinionView
+{
+	char m_pad0000[0x5bb0];
+	int m_nCount;	// 0x5bb0
+	void sub_10332ca0(void *pOwner, int a, int b);	// stub 0x10005849
+	void sub_1026d050();	// stub 0x1000c153
+};
+
+struct CHandleLookup
+{
+	static CGlobalEntityList_Ent *Get(unsigned int h)
+	{
+		if (h != 0xffffffff) {
+			CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+			if (s->m_Serial == (int)(h >> 13))
+				return s->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+void CNPC_VManBat::sub_1038fc80()
+{
+	CBaseEntity *pMinion = 0;
+	if (!m_b66b0) {
+		while (1) {
+			pMinion = g_106eb5d8.sub_100f7770(pMinion, "ManBat_Minion", 0, 0);
+			if (pMinion == 0)
+				break;
+			if (((CBaseCombatCharacter *)pMinion)->vfunc158() && ((CMinionView *)pMinion)->m_nCount <= 0) {
+				((CMinionView *)pMinion)->sub_10332ca0(CHandleLookup::Get(m_h628c), 2, 10);
+				((CMinionView *)pMinion)->sub_1026d050();
+			}
+		}
+		m_b66b0 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10390040 size=0x8
 void __fastcall sub_10390040(char *p) { p[0x66b8] = 0; }
 // END FUNCTION
