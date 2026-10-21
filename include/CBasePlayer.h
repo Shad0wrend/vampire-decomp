@@ -177,6 +177,7 @@ public:
 	CBaseEntity *sub_10270ae0();	// provisional, like sub_1015dc60 (transplant)
 	CBaseEntity *sub_102a9960();	// provisional, like sub_1015dc60 (transplant)
 	CBaseEntity *sub_1039ede0();	// provisional, like sub_1015dc60 (transplant)
+	void sub_101836d0(void *pKeyring);	// "CBasePlayer::Inventory_AddLooseKeys": scope trace (entity name); with a keyring: hands every key item (CItemKeyGeneric among the weapon slots 0..0xdf) to keyring->sub_10407c40(its entity's classname, owner object text at +0x88), then removes the key items (sub_101cd940) until a pass finds none
 	void sub_1016f0f0(const char *name, const void *data, int unused);	// "CBasePlayer::StoreGlobalEmailFlags": scope trace (entity name), finds the 0x240 byte record at [+0x1e28] (count at +0x1e34) whose name matches (Q_strncmp over the longer length) and copies 0x200 bytes to record+0x40, else DevWarning("Could not save email for terminal: %s\n"); the third stack argument is not used
 	void sub_1017e150(int level, float time, const char *pszReason);	// "CBasePlayer::SetCriminalLevel"-like setter of the scrambled value at +0x1cd8 (called through the stub at 0x1000fa33)
 	void sub_1017e560(inputdata_t *pData);	// input handler: the input's integer (0 unless its type is 4) clamped to 0..5, passed to sub_1017e150(level, -1.0f, "Input")
