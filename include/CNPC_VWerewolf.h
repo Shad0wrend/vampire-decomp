@@ -113,7 +113,8 @@ public:
 	char m_b66c8;	// 0x66c8
 	char pad66c9[0x66dc - 0x66c9];
 	CNPC_VWerewolfVec3 m_vSnap66dc;	// 0x66dc: set from the global vector at 0x1070d1b0 by SnapToAnimationPoint
-	char pad66e8[0x66f8 - 0x66e8];
+	unsigned int m_nFlags66e8;	// 0x66e8: attack state bits (4 and 0x100 make GatherAttackConditions compare heights)
+	char pad66ec[0x66f8 - 0x66ec];
 	float m_flNodeTime;	// 0x66f8: time stamp of the cached node
 	void *m_pNode;	// 0x66fc: cached nearest node
 	char pad6700[0x6708 - 0x6700];
@@ -189,4 +190,6 @@ public:
 	void sub_100b3580(unsigned int flags);	// CBaseEntity::AddFlag (stub 0x10003620), called directly
 	void sub_100b3900(unsigned int flags);	// CBaseEntity::RemoveFlag2 (stub 0x1000df44), called directly
 	void sub_100b3840(unsigned int flags);	// CBaseEntity::AddFlag2 (stub 0x100027bb), called directly
+	void vfunc561(int a, int b);	// slot 561 "CNPC_VWerewolf::GatherAttackConditions": scope trace (entity name); when the attack state bits (+0x66e8: 4 or 0x100) are set and the target (slot 167) is more than 40 units above or below this entity (slot 217 heights) sets conditions 0x51 and 0x52 and stops, else the CAI_BaseNPC implementation
+	void sub_1026dd10(int a, int b);	// CAI_BaseNPC::vfunc561 (stub 0x1000ca4f), called directly
 };
