@@ -21245,6 +21245,87 @@ void sub_100d5d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5f10 size=0xe0
+#include "CBasePlayer.h"
+#include <string.h>
+
+struct Holder;
+bool __fastcall sub_101681a0(Holder *pHolder);
+int sub_1023bd00();
+
+struct CPlayerHolder
+{
+	char pad[0xa8];
+	CBasePlayer *m_pPlayer;
+};
+CPlayerHolder *sub_101193b0();
+
+#define PV1(p) virtual void p();
+#define PV10(p) PV1(p##0) PV1(p##1) PV1(p##2) PV1(p##3) PV1(p##4) PV1(p##5) PV1(p##6) PV1(p##7) PV1(p##8) PV1(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CPlayerSlots459
+{
+	PV100(pa) PV100(pb) PV100(pc) PV100(pd)
+	PV10(pe) PV10(pf) PV10(pg) PV10(ph) PV10(pi)
+	PV1(pj0) PV1(pj1) PV1(pj2) PV1(pj3) PV1(pj4) PV1(pj5) PV1(pj6) PV1(pj7) PV1(pj8)
+	virtual void vfunc459(const char *pszName, int a);
+};
+
+struct CWeaponSlots348
+{
+	PV100(wa) PV100(wb) PV100(wc)
+	PV10(wd) PV10(we) PV10(wf) PV10(wg)
+	PV1(wh0) PV1(wh1) PV1(wh2) PV1(wh3) PV1(wh4) PV1(wh5) PV1(wh6) PV1(wh7)
+	virtual const char *vfunc348();
+};
+
+struct CEngineSlots85
+{
+	PV10(ea) PV10(eb) PV10(ec) PV10(ed) PV10(ee) PV10(ef) PV10(eg) PV10(eh)
+	PV1(ei0) PV1(ei1) PV1(ei2) PV1(ei3) PV1(ei4)
+	virtual int vfunc85();
+};
+
+extern CEngineSlots85 *g_1070b22c;
+extern char g_106e7e90;
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+// TARGET: sub_100d5f10
+void sub_100d5f10()
+{
+	sub_1023bd00();
+	CPlayerHolder *pHolder = sub_101193b0();
+	if (!pHolder)
+		return;
+	CBasePlayer *pPlayer = pHolder->m_pPlayer;
+	if (!pPlayer)
+		return;
+	CWeaponSlots348 *pWeapon = (CWeaponSlots348 *)pPlayer->sub_1032e7b0();
+	if (pWeapon && !_strcmpi(pWeapon->vfunc348(), "item_w_unarmed")) {
+		if (!g_106e7e90) {
+			if (g_1070b22c->vfunc85() == 1) {
+				if (sub_101681a0((Holder *)pPlayer))
+					return;
+				pPlayer->vfunc456();
+				return;
+			}
+			g_106e7e90 = 1;
+			return;
+		}
+		g_106e7e90 = 0;
+		return;
+	}
+	if (!pPlayer->sub_10335950("item_w_unarmed"))
+		((CPlayerSlots459 *)pPlayer)->vfunc459("item_w_unarmed", 0);
+	if (pPlayer->sub_10335950("item_w_unarmed")) {
+		pPlayer->vfunc457("item_w_unarmed", 0);
+		return;
+	}
+	DevMsg("Warning: Player does not have unarmed weapon!\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6560 size=0xa3
 #include "CStatDefault3List.h"
 #include "CUnknown101d5bd0.h"
