@@ -36,3 +36,6 @@
 	void sub_1029f5d0(void *pHolder);	// stub 0x10009638: releases a patrol path holder, called directly by vfunc180
 	void sub_1027ca30();	// CAI_BaseNPC::vfunc180 (stub 0x10005a47), called directly (tail jump) by vfunc180
 	virtual void vfunc563(CBaseEntity *pEnt, const void *pGoal, const void *pParams, const void *pExtra);	// slot 563 override: with the ideal state (sub_1027d990) 2, moves the vector pParams by the offset between the entity's slot 193 and slot 217 positions and stores in *pExtra the float sub_102d61b0 gives for the dword at +0x1568
+	void vfunc333(float flInterval);	// slot 333 (plain member): ticks the float at +0x6570 down by flInterval while the float at +0x6264 is below 512.0f, re-rolling it with the random stream when it runs out (slot 276 first), refreshes the next-think time at +0x5d6c while the dialog partner (+0xfe8) lives, then sub_102c0010 and CAI_BaseNPC::vfunc333
+	void sub_102c0010(float flInterval);	// stub 0x10005484, called directly by vfunc333
+	void sub_1026b810(float flInterval);	// CAI_BaseNPC::vfunc333 (stub 0x10011fb3), called directly by vfunc333
