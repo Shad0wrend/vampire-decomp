@@ -104,3 +104,50 @@ void CWeaponRanged::vfunc329()
 	vfunc328();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10239270 size=0xae
+#include "CWeaponRanged.h"
+
+#define WV1(n) virtual void wv##n();
+#define WV10(p) WV1(p##0) WV1(p##1) WV1(p##2) WV1(p##3) WV1(p##4) WV1(p##5) WV1(p##6) WV1(p##7) WV1(p##8) WV1(p##9)
+#define WV100(p) WV10(p##0) WV10(p##1) WV10(p##2) WV10(p##3) WV10(p##4) WV10(p##5) WV10(p##6) WV10(p##7) WV10(p##8) WV10(p##9)
+
+struct CWeaponRangedView	// the weapon's vtable up to slot 333, with the members the zoom toggle touches
+{
+	WV100(a) WV100(b) WV100(c)
+	WV1(d0) WV1(d1) WV1(d2) WV1(d3) WV1(d4) WV1(d5) WV1(d6)
+	virtual void slot307(int value);
+	WV1(e8) WV1(e9)
+	WV10(f0) WV10(f1) WV1(g0) WV1(g1) WV1(g2)
+	virtual void slot333(int a, int b, int c, int d, int e, int f);
+
+	char m_pad0004[0x84c - 4];
+	int m_n84c;
+	char m_pad0850[0x86c - 0x850];
+	int m_n86c;
+};
+
+extern int g_1088aee4;
+void sub_101cebc0(void *pOwner, int a, int b);
+
+void CWeaponRanged::vfunc374()
+{
+	CWeaponRangedView *p = (CWeaponRangedView *)this;
+	if (p->m_n86c == 0) {
+		p->slot307(0xe7);
+		p->m_n86c = 1;
+		p->slot333(8, 1, 0, 0, 0, 0);
+		p->m_n84c = 1;
+		g_1088aee4 = 1;
+	} else {
+		p->slot307(0xe6);
+		p->m_n86c = 0;
+		p->slot333(3, 1, 0, 0, 0, 0);
+		p->m_n84c = 0;
+		g_1088aee4 = 0;
+	}
+	void *pOwner = sub_10252290();
+	if (pOwner)
+		sub_101cebc0(pOwner, 0x1a, p->m_n86c);
+}
+// END FUNCTION
