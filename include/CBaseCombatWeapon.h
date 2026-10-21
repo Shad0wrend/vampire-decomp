@@ -98,7 +98,7 @@ public:
 	virtual void vfunc334(int a, int b);	// walks the slot 347(a) records (sub_10252120(a, i)) and tells the sound/overlay object at 0x1070b248 about each: with the record flag (+0x90) set only when the owner exists (type 6), else with b, for the owner's or the weapon's edict
 	CBCW_V(335) CBCW_V(336)
 	virtual float vfunc337(int a, int b);
-	virtual void vfunc338(int a, int b);	// "CBaseCombatWeapon::Weapon_SetActivity"-like: called by CBaseCombatCharacter::Weapon_SetActivity with its two arguments
+	virtual void vfunc338(int a, int b);	// "CBaseCombatWeapon::Weapon_SetActivity"-like: called by CBaseCombatCharacter::Weapon_SetActivity with its two arguments (b is a float's bits: the duration the sequence is stretched to)
 	CBCW_V(339)
 	CBCW_V(340) CBCW_V(341)
 	virtual int vfunc342(int a);	// the owner object (sub_102517b0) + 0x2188
@@ -144,7 +144,11 @@ public:
 
 	char m_pad004[0x2dc];
 	CWeaponHolder_t *m_pHolder; // 0x2e0
-	char m_pad2e4[0x744 - 0x2e4];
+	char m_pad2e4[0x6f0 - 0x2e4];
+	int m_nSequence;	// 0x6f0
+	float m_flPlaybackRate;	// 0x6f4
+	int m_n06f8;	// 0x6f8
+	char m_pad6fc[0x744 - 0x6fc];
 	int m_nAmmoType;	// 0x744
 	char m_pad748[0x88c - 0x748];
 	unsigned int m_hOwner; // 0x88c
