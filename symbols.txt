@@ -4615,6 +4615,7 @@
 0x10015113 func   ?sub_1036e400@CNPC_VChangBros@@QAEXXZ CNPC_VChangBros::sub_1036e400
 0x1001514a func   ?sub_100b3b00@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3b00
 0x1001514f func   ?vfunc5@CAI_TestHull@@QAEPAV1@I@Z CAI_TestHull::vfunc5
+0x1001515e func   ?sub_10091310@CBaseAnimating@@QAEMHH@Z CBaseAnimating::sub_10091310
 0x1001516d func   ?sub_10184f90@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_10184f90
 0x10015195 func   ?sub_10335950@CBaseCombatCharacter@@QAEPAXPBD@Z CBaseCombatCharacter::sub_10335950
 0x1001519f func   ?vfunc249@CBaseAnimating@@QAEMXZ CBaseAnimating::vfunc249

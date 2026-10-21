@@ -10708,6 +10708,21 @@ float CBaseAnimating::sub_10091230(int sequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10091310 size=0xba
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+extern float g_104454c4;
+
+float CBaseAnimating::sub_10091310(int sequence, int unused)
+{
+    ScopeTrace trace("CBaseAnimating::GetSequenceYawSpeed", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    float duration = sub_10091080(sequence);
+    if (duration > g_104454c4)
+        return sub_1008f8f0(sequence) / duration;
+    return g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091c80 size=0x6f
 #include "CBaseAnimating.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
