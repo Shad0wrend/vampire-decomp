@@ -41,6 +41,42 @@ void CBaseAnimatingOverlay::vfunc31(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098bb0 size=0x70
+#include "CBaseAnimatingOverlay.h"
+
+#define OV(n) virtual void v##n();
+#define OV10(p) OV(p##0) OV(p##1) OV(p##2) OV(p##3) OV(p##4) OV(p##5) OV(p##6) OV(p##7) OV(p##8) OV(p##9)
+struct COverlayVSlots {
+	OV(0) OV(1) OV(2) OV(3) OV(4) OV(5) OV(6) OV(7) OV(8) OV(9)
+	OV10(1) OV10(2) OV10(3) OV10(4) OV10(5) OV10(6) OV10(7) OV10(8) OV10(9)
+	OV10(10)
+	OV(110) OV(111)
+	virtual void v112(int layer, int activity);
+};
+
+extern float g_104454c4;
+
+float CBaseAnimatingOverlay::vfunc250(float a)
+{
+	float result = sub_1008f120(a);
+	int i = 0;
+	CAnimationLayer *layer = m_Layers;
+	do {
+		if (layer->m_f10 != g_104454c4) {
+			((CAnimationLayerAdvance *)((char *)layer - 4))->sub_10098830(result, this);
+			if (layer->m_n00 && layer->m_b24) {
+				int n = layer->m_n20;
+				layer->m_f10 = 0.0f;
+				((COverlayVSlots *)this)->v112(i, n);
+			}
+		}
+		i++;
+		layer++;
+	} while (i < 4);
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099020 size=0x98
 #include "CBaseAnimatingOverlay.h"
 
