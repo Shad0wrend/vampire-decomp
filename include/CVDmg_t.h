@@ -12,6 +12,7 @@ struct CVDmgBlock16_t
 
 	CVDmgBlock16_t();	// calls sub_10204270 (stub 0x10004b7e, body at 0x10205380)
 	void sub_10204270();	// reset: m_a = m_b = -1, m_d = 1 (stub 0x10010573)
+	void sub_102042a0(int a, int b);	// stores a / b in the first two fields and sets m_d to 1 (stub 0x10014290)
 };
 
 class CVDmg_t
