@@ -3627,6 +3627,7 @@
 0x1000fe93 func   ?vfunc546@CNPC_VMingXiaoTentacle@@QAEHH@Z CNPC_VMingXiaoTentacle::vfunc546
 0x1000feac func   ?vfunc5@CPlayerResource@@QAEPAV1@I@Z CPlayerResource::vfunc5
 0x1000febb func   _item_w_occultblade item_w_occultblade
+0x1000fec5 func   ?vfunc103@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc103
 0x1000feca func   ?sub_103d6650@CNPC_VWerewolf@@QAE?AUCNPC_VWerewolfVec3@@PAX@Z CNPC_VWerewolf::sub_103d6650
 0x1000fed4 func   ?sub_1010ce30@@YAHXZ sub_1010ce30
 0x1000fef2 func   ?vfunc507@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc507

@@ -51,6 +51,53 @@ void CGeneric_NPC_bathack::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035ae80 size=0x110
+#include "CBaseEntity.h"
+#include "CGeneric_NPC_bathack.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct SNpc {
+	S100(a) S100(b) S100(c) S100(d)
+	S10(e0) S10(e1)
+	virtual void vfunc420();
+	void sub_10273070(int a);
+	void sub_1026dc00(int a);
+};
+struct SCvar {
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad[0x28 - 4];
+	float m_f28;
+};
+
+extern SCvar *g_1093a284;
+extern float g_104454c4;
+
+void CGeneric_NPC_bathack::vfunc103()
+{
+	vfunc104();
+	vfunc105("models/bats.mdl");
+	*(int *)((char *)this + 0x1568) = 0;
+	*(int *)((char *)this + 0x156c) = 0;
+	((SNpc *)this)->sub_10273070(0);
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(2);
+	}
+	vfunc93(4, 0);
+	*(int *)((char *)this + 0x1570) = 0xf7;
+	*(int *)((char *)this + 0x19c) = 0;
+	m_iHealth = (int)(g_1093a284->vfunc1() ? g_104454c4 : g_1093a284->m_f28);
+	*(float *)((char *)this + 0x1574) = 0.2f;
+	*(int *)((char *)this + 0x5cc0) = 0;
+	((SNpc *)this)->sub_1026dc00(1);
+	((SNpc *)this)->vfunc420();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b080 size=0x2a
 #include "CGeneric_NPC_bathack.h"
 extern const float g_1044f00c;
