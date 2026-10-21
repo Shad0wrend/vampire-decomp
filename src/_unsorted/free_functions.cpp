@@ -52781,6 +52781,70 @@ void CAI_GoalEntity::sub_102cd3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cdb70 size=0xaa
+#include "CAI_GoalEntity.h"
+#include "CGlobalEntityList.h"
+
+#define GS1(n) virtual void gs##n();
+#define GS10(p) GS1(p##0) GS1(p##1) GS1(p##2) GS1(p##3) GS1(p##4) GS1(p##5) GS1(p##6) GS1(p##7) GS1(p##8) GS1(p##9)
+#define GS100(p) GS10(p##0) GS10(p##1) GS10(p##2) GS10(p##3) GS10(p##4) GS10(p##5) GS10(p##6) GS10(p##7) GS10(p##8) GS10(p##9)
+
+struct CGoalSlotView	// the goal entity's vtable up to slot 245
+{
+	GS100(a) GS100(b)
+	GS10(c0) GS10(c1) GS10(c2) GS10(c3)
+	GS1(d0) GS1(d1) GS1(d2) GS1(d3) GS1(d4)
+	virtual void slot245(void *pActor);
+};
+
+extern CGlobalEntityList *g_10566458;
+extern CGlobalEntityList g_106eb5d8;
+
+struct CHandleView
+{
+	unsigned int m_Index;
+
+	CGlobalEntityList_Ent *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[m_Index & 0x1fff];
+			if (pSlot->m_Serial == (int)(m_Index >> 13))
+				return pSlot->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+struct CGoalFlagsView
+{
+	char m_pad0000[0x468];
+	CHandleView *m_pActors;
+	int m_nActorsAllocation;
+	int m_nActorsGrowSize;
+	int m_nActors;
+	unsigned int *m_pActorsElements;
+	char m_pad047c[4];
+	unsigned int m_nFlags;
+};
+
+void CAI_GoalEntity::sub_102cdb70(int a)
+{
+	CGoalFlagsView *p = (CGoalFlagsView *)this;
+	if (p->m_nFlags & 1) {
+		if (!(p->m_nFlags & 2)) {
+			sub_102cd4a0();
+			p->m_nFlags |= 2;
+		} else {
+			sub_102cd3b0();
+		}
+		p->m_nFlags &= ~1;
+		for (int i = 0; i < p->m_nActors; i++)
+			((CGoalSlotView *)this)->slot245((p->m_pActors + i)->Get());
+		g_106eb5d8.sub_100f6e40((char *)this + 0x450);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cdd10 size=0x109
 #include "CUtlRBTree12.h"
 
