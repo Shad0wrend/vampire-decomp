@@ -13,6 +13,19 @@ int CNPC_VSabbatLeader::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a6c80 size=0x81
+#include "CNPC_VSabbatLeader.h"
+#include "ScopeTrace.h"
+
+void CNPC_VSabbatLeader::vfunc103()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::Spawn", g_106b8540);
+	sub_10012855(0x209000);
+	m_pszName10e4 = "VampireSabbatLeader"[0] ? "VampireSabbatLeader" : 0;
+	sub_10014876();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a6d40 size=0xf2
 #include "ScopeTrace.h"
 #include "CNPC_VSabbatLeader.h"
