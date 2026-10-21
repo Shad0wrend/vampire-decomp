@@ -43007,6 +43007,26 @@ struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x101e3910 size=0x77
+#include "CUnknown101e0f00.h"
+#include "ScopeTrace.h"
+
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *pMsg, ...);
+extern CUnknown101e0f00Entry *g_10739a74;
+
+void CUnknown101e0f00::sub_101e3910(int a, int b, int c, int d)
+{
+	int index = sub_101e12a0(c);
+	if (index != -1) {
+		CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[index];
+		g_10739a74 = pEntry;
+		DevMsg(3, "Discipline<%s> CallbackHit\n", pEntry->m_pszName ? pEntry->m_pszName : g_106b8540);
+		((CUnknown101e0f00Tail *)pEntry->m_tail)->sub_101e0410(d, a, b, sub_101e1870(c))->sub_101dfe20();
+		g_10739a74 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3cf0 size=0x59
 struct CUnknown101e3cfEnt {
     char m_pad0000[0x31];
