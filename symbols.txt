@@ -2749,6 +2749,7 @@
 0x1000d116 func   ?sub_10280e50@CAI_BaseNPC@@QAEXPAX@Z CAI_BaseNPC::sub_10280e50
 0x1000d134 func   ?vfunc621@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc621
 0x1000d139 func   ??1QuestJournal@@QAE@XZ QuestJournal::~QuestJournal
+0x1000d13e func   ?sub_101fd7e0@CVStatActionList_t@@QAE_NPAX@Z CVStatActionList_t::sub_101fd7e0
 0x1000d143 func   ?sub_1004ba20@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004ba20
 0x1000d148 func   ?sub_102f9300@@YAXPAHPBH@Z sub_102f9300
 0x1000d152 func   ?sub_102ce7f0@CUtlVector4@@QAEHHHPBH@Z CUtlVector4::sub_102ce7f0

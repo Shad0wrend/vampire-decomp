@@ -40419,6 +40419,32 @@ void CVStatActionList_t::sub_101fd540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fd7e0 size=0xa7
+#include "CVStatActionList_t.h"
+#include "CVStatAction_t.h"
+#include "ScopeTrace.h"
+
+struct CKVNode
+{
+	virtual void a0(); virtual void a1();
+	virtual CKVNode *v2(const char *name);
+	virtual CKVNode *v3();
+};
+
+bool CVStatActionList_t::sub_101fd7e0(void *pKeyValues)
+{
+	ScopeTrace trace("CVStatActionList_t::Load", g_106b8540);
+	if (pKeyValues) {
+		for (CKVNode *pKey = ((CKVNode *)pKeyValues)->v2("Action"); pKey; pKey = pKey->v3()) {
+			CVStatAction_t *pAction = sub_101fd630();
+			pAction->sub_101fc9e0(pKey);
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fd8c0 size=0x5f
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
