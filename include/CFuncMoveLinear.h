@@ -2,6 +2,10 @@
 // the ones we need are placeholders that keep the slot numbers right.
 #pragma once
 
+#include "Vector.h"
+
+struct inputdata_t;
+
 class CFuncMoveLinear
 {
 public:
@@ -30,8 +34,16 @@ public:
 	// Slot 223, declared as a plain member.
 	bool vfunc223();	// "CBaseEntity::IsSolidFlagSet" (slot 223): scope trace, reports when bit 2 of the byte at +0x2b4 is clear, returns true
 	void sub_100a6150(int a, int b, int c);	// reports a message
+	void sub_10116570(Vector vecPosition, float flSpeed);	// "CFuncMoveLinear::MoveTo" (stub 0x1000c7c5): starts the movement towards vecPosition at flSpeed
+	void sub_101171a0(inputdata_t &inputdata);	// "CFuncMoveLinear::InputOpen"-like: moves to the position at +0x514 at the speed at +0x164 unless the local origin (slot 220) is already there
+	void sub_10117230(inputdata_t &inputdata);	// "CFuncMoveLinear::InputClose"-like: the same for the position at +0x508
 
-	char m_pad[0x55c - 4];
+	char m_pad0004[0x164 - 4];
+	float m_flSpeed;	// 0x164
+	char m_pad0168[0x508 - 0x168];
+	Vector m_vecPosition1;	// 0x508
+	Vector m_vecPosition2;	// 0x514
+	char m_pad0520[0x55c - 0x520];
 	const char *m_str55c;
 	const char *m_str560;
 	int m_field564;
