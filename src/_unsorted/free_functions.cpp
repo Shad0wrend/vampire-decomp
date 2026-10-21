@@ -7873,6 +7873,45 @@ void sub_10068380(int a, int b, int *pos, int c, int d, int e, int f, int *dir, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068870 size=0x139
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropVector
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropFloat
+void sub_10009539();
+void sub_10003012();
+void sub_10006aeb();
+
+extern SendTable g_106c5d8c;
+extern SendTable *g_1053dfa8;
+
+// TARGET: sub_10068870
+int sub_10068870()
+{
+	static const char *pTableName = "DT_TESpriteSpray";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_1000c14e("m_vecOrigin", 0xc, 0xc, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+		sub_1000c14e("m_vecDirection", 0x18, 0xc, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+		sub_10007bfd("m_nModelIndex", 0x24, 4, 0xb, 0, 0, 0),
+		sub_10006cc1("m_fNoise", 0x2c, 4, 8, 8, 0.0f, 2.56f, (void *)sub_10006aeb),
+		sub_10007bfd("m_nSpeed", 0x28, 4, 8, 1, 0, 0),
+		sub_10007bfd("m_nCount", 0x30, 4, 8, 1, 0, 0),
+	};
+	g_106c5d8c.sub_1000e8fe(props + 1, 7, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068ab0 size=0x76
 #include "CTESpriteSpray.h"
 
