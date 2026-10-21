@@ -100,6 +100,42 @@ void CNPC_VAsianVampire::vfunc432(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103612e0 size=0x139
+#include "CNPC_VAsianVampire.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+// TARGET: CNPC_VAsianVampire::vfunc444
+void CNPC_VAsianVampire::vfunc444(const CVAsianVampireTask_t *pTask)
+{
+    ScopeTrace trace("CNPC_VAsianVampire::RunTask", g_106b8540);
+    switch (pTask->iTask) {
+    case 0x150:
+        sub_10005d17(m_pHint5ddc);
+        m_bTaskFailedJump = 0;
+        sub_1000ac68(0);
+        return;
+    case 0x13a: {
+        sub_10004edf(pTask);
+        if (m_nIdealActivity != 0x2d) {
+            Vector vec = *((CEntityVSlots *)this)->slot198();
+            if (vec.z <= 250.0f) {
+                sub_10014524(0x2d);
+                return;
+            }
+        }
+        break;
+    }
+    default:
+        sub_10004edf(pTask);
+        break;
+    case 0x151:
+    case 0x152:
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10361490 size=0x72
 #include "CNPC_VAsianVampire.h"
 
