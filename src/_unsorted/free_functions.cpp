@@ -81849,6 +81849,21 @@ void CNPC_VSheriffMan::sub_103b1470(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b1790 size=0x9c
+#include "CNPC_VSheriffMan.h"
+#include "ScopeTrace.h"
+#include <math.h>
+
+void CNPC_VSheriffMan::sub_103b1790(float flHeight, int *pOut)
+{
+	ScopeTrace trace("CNPC_VSheriffMan::CategorizeHeight", g_106b8540);
+	if ((float)fabs(flHeight - m_flFloorHeightA) < (float)fabs(flHeight - m_flFloorHeightB))
+		*pOut = 0;
+	else
+		*pOut = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b19d0 size=0x43
 #include "CBatSwarm_Teleport.h"
 void *sub_100aa720(int size);
