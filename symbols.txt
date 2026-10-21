@@ -1195,6 +1195,7 @@
 0x10006a91 func   ?sub_100c08d0@CFloatPair3f4@@QAEXXZ CFloatPair3f4::sub_100c08d0
 0x10006aa0 func   ?sub_10203190@StatOwner2@@QAEPAVCUnknown102029c0@@H@Z StatOwner2::sub_10203190
 0x10006aaf func   ?vfunc2@CTESprite@@UAEPAV1@I@Z CTESprite::vfunc2
+0x10006ad7 func   ?vfunc144@CGeneric_NPC@@UAEXH@Z CGeneric_NPC::vfunc144
 0x10006adc func   ?sub_101e9a80@HOwner@@QAEDPBD@Z HOwner::sub_101e9a80
 0x10006ae1 func   ?vfunc8@PyServerSystem@@UAEPAV1@I@Z PyServerSystem::vfunc8
 0x10006aeb func   ?sub_10246300@@YAXHPAH0@Z sub_10246300

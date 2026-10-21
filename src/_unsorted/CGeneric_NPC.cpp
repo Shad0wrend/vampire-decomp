@@ -30,3 +30,27 @@ float CGeneric_NPC::vfunc516()
     return g_1047a3ac;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1035a980 size=0x68
+#include "CGeneric_NPC.h"
+#include "Vector.h"
+
+typedef Vector *(__fastcall *OriginFn)(void *pThis, void **vt);
+extern float g_10449258;
+void __cdecl sub_100043cc(void *pEnt, Vector *pPos, int flag);
+
+void CGeneric_NPC::vfunc144(int a)
+{
+	sub_1000a62d(a);
+	void **vt = *(void ***)this;
+	Vector *p = ((OriginFn)vt[220])(this, vt);
+	Vector tmp;
+	tmp.z = p->z;
+	tmp.z += g_10449258;
+	tmp.x = p->x;
+	tmp.y = p->y;
+	Vector pos = tmp;
+	sub_100043cc(this, &pos, 0);
+	sub_10003472(0);
+}
+// END FUNCTION
