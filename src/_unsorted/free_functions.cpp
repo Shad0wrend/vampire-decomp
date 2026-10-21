@@ -29627,6 +29627,64 @@ SPyObj *sub_10196ea0(void *self, void *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196f30 size=0xdb
+#include <string.h>
+#include "CGlobalEntityList.h"
+
+extern "C" __declspec(dllimport) int __cdecl PyArg_ParseTuple(void *args, const char *fmt, ...);
+extern "C" __declspec(dllimport) void *__cdecl PyInt_FromLong(long value);
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CPyPlayer	// the local player entity
+{
+	S100(a) S100(b) S10(c0) S10(c1)
+	virtual float *vfunc220();	// GetOrigin
+};
+
+struct CPyNpcName { int m_pad; const char *m_pszName; };
+
+struct CPyNpc	// the NPC object of an entity
+{
+	S100(a) S100(b) S100(c)
+	S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5)
+	virtual void e0(); virtual void e1(); virtual void e2();
+	virtual char vfunc363(CPyPlayer *pPlayer);
+};
+
+struct CPyEntity { char m_pad[0x94]; CPyNpc *m_pNpc; };
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+CPyPlayer *sub_101cd9e0(int index);
+
+void *sub_10196f30(void *self, void *args)
+{
+	const char *pszName;
+	if (PyArg_ParseTuple(args, "s", &pszName)) {
+		CPyPlayer *pPlayer = sub_101cd9e0(1);
+		for (CPyEntity *pEnt = (CPyEntity *)g_106eb5d8.sub_100f79b0(0, pPlayer->vfunc220(), 4096.0f); pEnt; pEnt = (CPyEntity *)g_106eb5d8.sub_100f79b0((CBaseEntity *)pEnt, pPlayer->vfunc220(), 4096.0f)) {
+			CPyNpc *pNpc = pEnt->m_pNpc;
+			if (pNpc) {
+				CPyNpcName *pInfo;
+				if (*(int *)((char *)pNpc + 0x5bb0) <= 0)
+					pInfo = *(CPyNpcName **)((char *)pNpc + 0x5da4);
+				else
+					pInfo = 0;
+				const char *pszNpcName = pInfo->m_pszName;
+				if (pszNpcName == 0)
+					pszNpcName = g_106b8540;
+				if (!_strcmpi(pszNpcName, pszName) && pNpc->vfunc363(pPlayer))
+					return PyInt_FromLong(1);
+			}
+		}
+	}
+	return PyInt_FromLong(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197050 size=0x80
 #include "CEntityVSlots.h"
 #include "Vector.h"

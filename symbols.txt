@@ -1592,6 +1592,7 @@
 0x10007e73 func   ?sub_103411c0@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_103411c0
 0x10007e7d func   ?vfunc2@CTETextMessage@@UAEPAV1@I@Z CTETextMessage::vfunc2
 0x10007e8c func   ?vfunc5@CBaseAnimatingOverlay@@QAEPAV1@I@Z CBaseAnimatingOverlay::vfunc5
+0x10007e9b func   ?sub_10196f30@@YAPAXPAX0@Z sub_10196f30
 0x10007ea5 func   ?vfunc345@CBaseCombatCharacter@@QAEXPBDHH@Z CBaseCombatCharacter::vfunc345
 0x10007eaf func   ?vfunc5@CWeaponList@@UAEXXZ CWeaponList::vfunc5
 0x10007ec8 func   ?sub_10079100@@YIXPAUMem@@HH@Z sub_10079100
