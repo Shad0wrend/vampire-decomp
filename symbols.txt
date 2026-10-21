@@ -1406,6 +1406,7 @@
 0x10006893 func   ?sub_10062c30@@YAHXZ sub_10062c30
 0x10006898 func   ?vfunc113@CMoverKeyFrame@@UAEXXZ CMoverKeyFrame::vfunc113
 0x1000689d func   ?sub_10209a20@CItemContainer@@QAEPAXXZ CItemContainer::sub_10209a20
+0x100068a2 func   ?sub_1024cc90@@YA_NABUSPlane@@00AAVVector@@@Z sub_1024cc90
 0x100068a7 func   ?sub_101ebf30@CKeyHolder@@QAEPBDH@Z CKeyHolder::sub_101ebf30
 0x100068e8 func   ?sub_10290200@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10290200
 0x100068f2 func   ?sub_10035fd0@CPhysicsPushedEntities@@QAEXPAH@Z CPhysicsPushedEntities::sub_10035fd0
