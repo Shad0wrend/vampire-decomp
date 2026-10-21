@@ -1,4 +1,4 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 13, 17, 18, 20, 21, 26, 32, 35, 38, 47, 49, 59, 61, 62, 82, 84, 85, 105 and 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 13, 17, 18, 20, 21, 26, 32, 35, 38, 47, 49, 59, 61, 62, 82, 84, 85, 101, 105 and 119 to 122 are known.
 // Slot 13 takes a resource name and a preload flag (precaches a sound / resource).
 // Slot 17 is PrecacheModel(name, preload) and returns the model index.
 // Slot 18 returns the studio header of a model index (0 when there is none), slot 21 the type of a model index (3 = studio).
@@ -9,6 +9,7 @@
 // Slot 49 is EmitAmbientSound(entindex, pos, sample, volume, soundlevel, flags, pitch).
 // Slot 61 is ClientCommand(edict, fmt, ...): a variadic (cdecl) slot, the object is pushed as the first argument.
 // Slot 62 is LightStyle(style, pattern).
+// Slot 101 takes one dword (the index of an entity) and returns nothing used.
 // Slot 119 takes a flag and returns a time value in ST0; slot 120 returns a dword in EAX.
 // Slots 84 / 85 are the engine's command argument accessors (Cmd_Argv(index) / Cmd_Argc()).
 // Slot 82 registers a user message by name and size and returns its id.
@@ -53,7 +54,7 @@ public:
 	virtual int vfunc85();
 	virtual void a86(); virtual void a87(); virtual void a88(); virtual void a89();
 	U22C_SLOTS10(a9)
-	virtual void b00(); virtual void b01(); virtual void b02(); virtual void b03(); virtual void b04();
+	virtual void b00(); virtual void vfunc101(int index); virtual void b02(); virtual void b03(); virtual void b04();
 	virtual int vfunc105(int a, int b);
 	virtual void b06(); virtual void b07(); virtual void b08(); virtual void b09();
 	virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13(); virtual void b14();
