@@ -33840,6 +33840,43 @@ int CUnknown101d7380::sub_101d7380(const char *name, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d8190 size=0x7c
+#include <stdio.h>
+#include "CUnknown101d82d0.h"
+struct CNameRecord { int m_unk0; const char *m_pszText; int m_kind; };
+struct CNameRecords { CNameRecord *sub_101d8090(int index); };
+struct CNameTable { const char *sub_101d5e00(int index); };
+extern CNameRecords g_10739140;
+extern CNameTable g_10738d10;
+extern char g_107390c0[];
+extern char g_106b8540[];
+const char *CUnknown101d82d0_Elem::sub_101d8190()
+{
+	const char **ppsz;
+	switch (g_10739140.sub_101d8090(m_a)->m_kind) {
+	case 0:
+		if (m_b > -1) {
+			if (!(m_c & 1))
+				return g_10738d10.sub_101d5e00(m_b);
+			sprintf(g_107390c0, "!%s", g_10738d10.sub_101d5e00(m_b));
+			return g_107390c0;
+		}
+		break;
+	case 2:
+		ppsz = &g_10739140.sub_101d8090(m_a)->m_pszText;
+		if (*ppsz)
+			return *ppsz;
+		break;
+	case 1:
+		ppsz = &g_10739140.sub_101d8090(m_a)->m_pszText;
+		if (*ppsz)
+			return *ppsz;
+		break;
+	}
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d84e0 size=0x77
 #include <stdio.h>
 #include <string.h>
