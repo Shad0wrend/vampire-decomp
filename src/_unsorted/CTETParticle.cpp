@@ -13,3 +13,32 @@ CTETParticle *CTETParticle::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100694f0 size=0xbe
+#include "CTETParticle.h"
+#include "CBroadcastRecipientFilter.h"
+
+#define EV1(n) virtual void ev##n();
+#define EV10(p) EV1(p##0) EV1(p##1) EV1(p##2) EV1(p##3) EV1(p##4) EV1(p##5) EV1(p##6) EV1(p##7) EV1(p##8) EV1(p##9)
+
+struct IEngineResourceView	// the engine interface at 0x1070b22c, slot 17
+{
+	EV10(a) EV1(b0) EV1(b1) EV1(b2) EV1(b3) EV1(b4) EV1(b5) EV1(b6)
+	virtual char slot17(const char *pszName, int a);
+};
+
+extern IEngineResourceView *g_1070b22c;
+
+void CTETParticle::vfunc3(const float *pOrigin, const float *pAngles)
+{
+	m_vOrigin[0] = pOrigin[0];
+	m_vOrigin[1] = pOrigin[1];
+	m_vOrigin[2] = pOrigin[2];
+	m_vDirection[0] = pAngles[0];
+	m_vDirection[1] = pAngles[1];
+	m_vDirection[2] = pAngles[2];
+	m_bEntIndexFlag = g_1070b22c->slot17("impact_test", 0);
+	CBroadcastRecipientFilter filter;
+	vfunc4((int)&filter, 0);
+}
+// END FUNCTION
