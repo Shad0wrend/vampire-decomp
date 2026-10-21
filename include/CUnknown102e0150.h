@@ -4,10 +4,31 @@
 class CBaseEntity;
 class Vector;
 
+#define EMS_V(n) virtual void v##n();
+#define EMS_V10(p) EMS_V(p##0) EMS_V(p##1) EMS_V(p##2) EMS_V(p##3) EMS_V(p##4) EMS_V(p##5) EMS_V(p##6) EMS_V(p##7) EMS_V(p##8) EMS_V(p##9)
+
+struct CUnknown102e0150Sink	// the object at +0: the listener that is told which enemy the list is asked about; only slot 58 is typed
+{
+	EMS_V10(0) EMS_V10(1) EMS_V10(2) EMS_V10(3) EMS_V10(4)
+	EMS_V(50) EMS_V(51) EMS_V(52) EMS_V(53) EMS_V(54) EMS_V(55) EMS_V(56) EMS_V(57)
+	virtual void vfunc58(CBaseEntity *pEnemy);
+};
+
+#undef EMS_V10
+#undef EMS_V
+
+struct CUnknown102e0150HandleSink	// the object at +4, used instead of the one at +0 when the byte at +8 is set
+{
+	void sub_10316bc0(CBaseEntity *pEnemy);	// stub 0x10002e0a
+};
+
 class CUnknown102e0150
 {
 public:
-	char m_pad0[0xc];
+	CUnknown102e0150Sink *m_pSink;	// +0x00
+	CUnknown102e0150HandleSink *m_pHandleSink;	// +0x04
+	char m_bUseHandleSink;	// +0x08
+	char m_pad9[3];
 	void *m_pHead;	// +0x0c
 
 	float sub_102e0150(void *pEnemy);	// "LastTimeSeen": time stamp of the node of pEnemy, else that of the last default node, else a constant (with a warning)
