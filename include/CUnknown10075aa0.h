@@ -60,4 +60,6 @@ public:
 	void sub_100754e0(CUnknown10077990 *pSource);	// copies the data of pSource into this event (stub 0x10014637)
 	void sub_10075350();	// destructor body (the object itself is not freed): resets the event (sub_10077650), destroys and frees the object at +0x324, then purges the vectors at +0x30c, +0x2e4 (two), +0x2d0, +0x2bc and +0x19c
 	void sub_10077650();	// resets the event data (stub 0x10007f0e), run first by the destructor
+	float sub_10075e70();	// returns the float at +0x184 (stub 0x100154e7)
+	int sub_10075b70();	// returns the type at +0x00 (stub 0x100029c8)
 };
