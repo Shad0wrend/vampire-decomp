@@ -39516,6 +39516,52 @@ extern "C" GP *trigger_fog()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca6c0 size=0x84
+#include "CBaseEntity.h"
+
+extern void *vt_1047d08c[];
+extern void *vt_104812b4[];
+extern void *vt_10481770[];
+extern char g_1059fe2c[];
+void *sub_100aa720(int size);
+
+struct COutputCtor {
+	char m_data[0x18];
+	void sub_100cd2a0();
+};
+
+struct CTriggerWindView : CBaseEntity {
+	void sub_101c0e20();
+	char m_padView[0x564 - 0x3e0];
+	int m_h564;
+	COutputCtor m_out568;
+	COutputCtor m_out580;
+	COutputCtor m_out598;
+	char m_pad5b0[0x5e0 - 0x5b0];
+	void **m_pWindVtable;
+};
+
+extern "C" CBaseEntity *trigger_wind()
+{
+	CTriggerWindView *p = (CTriggerWindView *)sub_100aa720(0x5ec);
+	CBaseEntity *e;
+	if (p) {
+		p->sub_101c0e20();
+		p->m_h564 = -1;
+		p->m_out568.sub_100cd2a0();
+		p->m_out580.sub_100cd2a0();
+		*(void ***)p = vt_1047d08c;
+		p->m_out598.sub_100cd2a0();
+		p->m_pWindVtable = vt_10481770;
+		*(void ***)p = vt_104812b4;
+		e = p;
+	} else
+		e = 0;
+	e->vfunc106(g_1059fe2c);
+	return e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cb130 size=0xa1
 struct ISaveRestoreOps;
 struct datamap_t;
