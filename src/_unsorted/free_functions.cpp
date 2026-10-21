@@ -33696,6 +33696,47 @@ void sub_101d26b0(Vector origin, int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2780 size=0x9b
+#include "CRestore.h"
+#include "Vector.h"
+
+extern void *vt_10455e54[];
+void __fastcall sub_100035d5(void *pFilter);	// CRecipientFilter constructor (stub of 0x1019ce00)
+
+struct CPVSFilterTmp
+{
+	void **m_pVtbl;
+	char m_pad0004[4];
+	CRestoreVec m_vec;
+	char m_pad001c[0x2c - 0x1c];
+
+	void sub_100043db(const Vector *pOrigin);	// CPVSFilter::AddPVS-like (stub 0x100043db): adds the clients that see the origin
+};
+
+struct CTempEntsView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4(CPVSFilterTmp *pFilter, int a, int b, int c, int d, int e);
+};
+
+extern CTempEntsView *g_10540528;
+
+// TARGET: sub_101d2780
+void sub_101d2780(Vector origin, int a, int b, int c, int d, int e)
+{
+	char buf[sizeof(CPVSFilterTmp)];
+	CPVSFilterTmp *pFilter = (CPVSFilterTmp *)buf;
+	sub_100035d5(pFilter);
+	pFilter->m_pVtbl = vt_10455e54;
+	pFilter->sub_100043db(&origin);
+	g_10540528->v4(pFilter, e, b, c, d, a);
+	pFilter->m_vec.~CRestoreVec();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2850 size=0x99
 struct PyObject;
 struct PyTypeObject {

@@ -3242,6 +3242,7 @@
 0x1000f592 func   ?sub_103e1930@@YG_NPAHH@Z sub_103e1930
 0x1000f5a6 func   ?sub_10057ac0@@YAXPAX@Z sub_10057ac0
 0x1000f5ab func   ?sub_100aa9a0@@YI_NPAVCBaseEntity@@HHHH@Z sub_100aa9a0
+0x1000f5d8 func   ?sub_101d2780@@YAXVVector@@HHHHH@Z sub_101d2780
 0x1000f5e2 func   ?sub_10249960@@YIIPAPAD@Z sub_10249960
 0x1000f63c func   ?vfunc5@CAISound@@QAEPAV1@I@Z CAISound::vfunc5
 0x1000f641 func   ?vfunc2@CTEShatterSurface@@UAEPAV1@I@Z CTEShatterSurface::vfunc2
