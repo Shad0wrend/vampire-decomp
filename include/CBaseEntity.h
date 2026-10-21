@@ -59,7 +59,7 @@ public:
 	virtual void vfunc93(int moveType, int moveCollide);	// "CBaseEntity::SetMoveType": scope trace (entity name), on change stores both at +0x35c/+0x360 and calls slot 25 of the object at +0x36c
 	virtual void vfunc94(); virtual void vfunc95();
 	virtual int vfunc96();	// "CBaseEntity::GetAimEntEdict": scope trace (entity name), resolves the handle at +0x37c and returns that entity's edict at +0x2e0 (0 when it does not resolve)
-	virtual void vfunc97(); virtual void vfunc98();
+	virtual CBaseEntity *vfunc97(); virtual void vfunc98();	// slot 97 "CBaseEntity::GetOwnerEntity" (sub_100a9c90)
 	virtual bool vfunc99(int a, int b, int c); virtual void vfunc100(); virtual void vfunc101(); virtual void vfunc102(); virtual void vfunc103();
 	virtual void vfunc104(); virtual void vfunc105(const char *pszModel);	// slot 105 "CBaseEntity::SetModel": scope trace (entity name), warns when the model is not a brush model (engine slots 20 / 21), then sub_101cf4a0(this, pszModel) and sets the byte at +0x1b1
 	virtual void vfunc106(const char *classname); virtual void vfunc107(CEntityMapData *pMapData);	// slot 107 "CBaseEntity::ParseMapData": scope trace (entity name), feeds every key / value pair of the map data to slot 110 (KeyValue)
