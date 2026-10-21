@@ -57256,6 +57256,27 @@ void CBaseCombatWeapon::sub_10250c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252120 size=0x97
+char *__fastcall sub_10010ea6(CBaseCombatWeapon *p);
+char *__fastcall sub_10008b20(CBaseCombatWeapon *p);
+char *__fastcall sub_10003d91(CBaseCombatWeapon *p);
+char *CBaseCombatWeapon::sub_10252120(int a, int index)
+{
+    switch (a) {
+    case 21:
+    case 22:
+    case 23:
+    case 24:
+        return sub_10010ea6(this) + 0x50378 + (a * 16 + index) * 0x94;
+    case 10:
+    case 11:
+        return sub_10008b20(this) + 0x2198 + (a * 16 + index) * 0x94;
+    default:
+        return sub_10003d91(this) + 0x490 + (a * 16 + index) * 0x94;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252240 size=0x38
 #include "CAI_BaseNPCTroika.h"
 
