@@ -4287,6 +4287,7 @@
 0x10012391 func   ?sub_10239e70@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_10239e70
 0x10012396 func   ?sub_10201470@CVStatList_t@@QAEPBDH@Z CVStatList_t::sub_10201470
 0x100123aa func   ?sub_1017c830@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017c830
+0x100123af func   ?sub_1028d610@@YIXPAVCAI_BaseNPCTroika@@@Z sub_1028d610
 0x100123b9 func   ?sub_101dc410@CItemVec@@QAEXPBU1@@Z CItemVec::sub_101dc410
 0x100123dc func   ?sub_102007f0@CVStatList_t@@QAEXHPAHH@Z CVStatList_t::sub_102007f0
 0x100123fa func   ?sub_100afa60@@YAXXZ sub_100afa60

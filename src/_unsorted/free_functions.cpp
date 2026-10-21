@@ -60393,6 +60393,36 @@ void CUnknown1028b190::sub_1028b190(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028d610 size=0x9a
+#include "UtlMem.h"
+extern void *vt_1049a25c;
+extern void *vt_1049a22c;
+void __fastcall sub_100123a0(CAI_BaseNPCTroika *p);
+void __fastcall sub_102c6bd0(UtlMem *p);
+void __fastcall sub_10015708(void *p);
+void __fastcall sub_1000c9cd(CAI_BaseNPCTroika *p);
+void __fastcall sub_1028d610(CAI_BaseNPCTroika *p)
+{
+    *(void **)p = &vt_1049a25c;
+    *(void **)((char *)p + 0x19b0) = &vt_1049a22c;
+    sub_100123a0(p);
+    UtlMem *m = (UtlMem *)((char *)p + 0x65a8);
+    sub_102c6bd0(m);
+    m->sub_102c6bf0();
+    *(int **)((char *)m + 0x10) = m->m_pMemory;
+    m->sub_102c6bf0();
+    sub_10015708((char *)p + 0x5fec);
+    sub_10015708((char *)p + 0x5fd4);
+    sub_10015708((char *)p + 0x5fbc);
+    sub_10015708((char *)p + 0x5fa4);
+    sub_10015708((char *)p + 0x5f8c);
+    sub_10015708((char *)p + 0x5f74);
+    sub_10015708((char *)p + 0x5f5c);
+    sub_10015708((char *)p + 0x5f44);
+    sub_1000c9cd(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e360 size=0xd7
 #include "CAI_BaseNPCTroika.h"
 struct EntInfo { CBaseEntity *ent; int serial; int pad; };
