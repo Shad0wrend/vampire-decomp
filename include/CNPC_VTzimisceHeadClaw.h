@@ -16,4 +16,5 @@ public:
 	void sub_102ad140();	// as in CNPC_VAndreiBlood (transplant)
 	void sub_100123f5(int a);	// as in CNPC_VAndreiBlood (transplant)
 	CNPC_VTzimisceHeadClaw *sub_103c1220();	// constructor
+	void vfunc259(void *pEvent);	// "HandleAnimEvent" (slot 259 override; the position here is not its real slot): events 0x802 / 0x803 hand slot 619 a flag (1 / 0) after slot 220's result went to sub_101cdba0, the rest goes to CAI_BaseNPCTroika::vfunc259
 };
