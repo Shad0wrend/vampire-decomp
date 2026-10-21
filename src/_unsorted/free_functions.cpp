@@ -10914,6 +10914,43 @@ const char *CBaseAnimating::sub_1008ff50(int sequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10090020 size=0x10a
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+#include "StudioHdr.h"
+
+struct SeqDescActivity
+{
+	char m_pad00[0xc];
+	int m_nActivity;	// 0x0c
+};
+
+SeqDescActivity *sub_100c7480(StudioHdr *pHdr, int sequence);
+void sub_10427dc0(StudioHdr *pHdr);
+
+int CBaseAnimating::sub_10090020(int sequence)
+{
+	ScopeTrace trace("CBaseAnimating::GetSequenceActivity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	for (int i = -1; i < 2; i++) {
+		StudioHdr *pHdr = (StudioHdr *)sub_100952d0(i);
+		if (pHdr) {
+			SeqDescActivity *pDesc = sub_100c7480(pHdr, sequence);
+			if (pDesc) {
+				sub_10427dc0(pHdr);
+				return pDesc->m_nActivity;
+			}
+			int count;
+			if (pHdr->m_nIncludeModels)
+				count = pHdr->IncludeModel(pHdr->m_nIncludeModels - 1)->m_nBase + pHdr->IncludeModel(pHdr->m_nIncludeModels - 1)->m_nCount;
+			else
+				count = pHdr->m_nLocalSeq;
+			sequence -= count;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100903e0 size=0x82
 #include "CBaseAnimating.h"
 
