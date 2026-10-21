@@ -55036,6 +55036,45 @@ bool CBaseCombatWeapon::sub_10253b70(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10254b00 size=0x169
+#include "CBaseCombatWeapon.h"
+#include "CBaseCombatCharacter.h"
+
+extern double g_10449198;
+
+bool CBaseCombatWeapon::sub_10254b00(int a)
+{
+	CBaseCombatCharacter *pOwner = (CBaseCombatCharacter *)sub_10252240();
+	if (!pOwner)
+		return false;
+	int *pAmmo = (int *)((char *)this + 0x744);
+	if (pOwner->sub_103346c0(*pAmmo) <= 0 && !*((char *)this + 0x89a))
+		return false;
+	if (*(int *)((char *)sub_102517b0() + 0x4fee8) != 0)
+		return false;
+	char bAny = *((char *)this + 0x89a);
+	int off = 0;
+	for (int i = 0; off < 0x21278; i++, off += 0x1093c, pAmmo++) {
+		int *pRec = (int *)((char *)sub_102517b0() + off + 0x2668);
+		if (vfunc277(i)) {
+			int n = *pRec - pAmmo[2];
+			int r = (n < pOwner->sub_103346c0(*pAmmo)) ? n : pOwner->sub_103346c0(*pAmmo);
+			if (r != 0)
+				bAny = 1;
+		}
+	}
+	if (!bAny) {
+		if (*((char *)this + 0x898) && *((char *)this + 0x8c8))
+			vfunc310((float)(vfunc311() + g_10449198));
+		return false;
+	}
+	sub_10254cd0(a);
+	vfunc333(10, 3, 0, 0, 0, 0);
+	*((char *)this + 0x898) = 1;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10255c30 size=0x8b
 #include "CUnknown1073dc28.h"
 
