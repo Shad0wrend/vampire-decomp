@@ -64,4 +64,6 @@ public:
 	void sub_10036d40(char bFlag, int a);	// scope trace "CPhysicsPushedEntities::FinishPush" (the string names the per-push variant): sub_10036b10(), then on every moved entity, last to first: PhysicsTouchTriggers(&start origin), slot 232(0), PhysicsImpact(blocker, trace) when it has a blocker and, when bFlag is set, sub_10036bd0(entity, a)
 	void sub_10036bd0(CBaseEntity *pEnt, int a);	// called through the stub at 0x10004be7
 	void sub_10035df0(CBaseEntity *pEntity);	// "CPhysicsPushedEntities::AddEntity": scope trace, appends a moved-entity record for pEntity with its current absolute origin as the start origin
+	bool sub_10036900(const float *pRotation, const float *pOrigin);	// "CPhysicsPushedEntities::SpeculativelyCheckRotPush": scope trace, clears the blocking index, then computes the rotated move of every moved entity (sub_100360a0) and checks it, last to first; false (and the blocking index set) at the first one that is blocked
+	void sub_100360a0(CBaseEntity *pEntity, const float *pRotation, float *pMove, const float *pOrigin);	// computes the move of the entity for the rotation (stub 0x1001386d)
 };
