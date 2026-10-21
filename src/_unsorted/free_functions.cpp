@@ -32716,6 +32716,48 @@ extern "C" CBaseEntity *trigger_hurt()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6550 size=0xa1
+#include "CTriggerHurt.h"
+#include "CGlobalEntityList.h"
+
+struct CGlobalVarsRaw
+{
+	char m_pad0000[0x0c];
+	float m_curtime;
+};
+extern CGlobalVarsRaw *g_1070b228;
+extern CGlobalEntityList *g_10566458;
+
+struct CTouchNode
+{
+	unsigned int m_hEntity;
+	int m_pad04;
+	CTouchNode *m_pNext;
+};
+
+int CTriggerHurt::sub_101c6550(float flDamage)
+{
+	flDamage *= m_flDamage;
+	m_flLastDmgTime = g_1070b228->m_curtime;
+	int nHurt = 0;
+	m_i600 = 0;
+	CTouchNode *pRoot = (CTouchNode *)sub_1003cd50(1);
+	if (pRoot) {
+		for (CTouchNode *pLink = pRoot->m_pNext; pLink != pRoot; pLink = pLink->m_pNext) {
+			unsigned int h = pLink->m_hEntity;
+			if (h != 0xffffffff) {
+				CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+				if (s->m_Serial == (h >> 13) && s->m_pEntity) {
+					if (sub_101c5f40((CBaseEntity *)s->m_pEntity, flDamage))
+						nHurt++;
+				}
+			}
+		}
+	}
+	return nHurt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c66e0 size=0x7a
 void *sub_1000db89(int);
 struct GP;
