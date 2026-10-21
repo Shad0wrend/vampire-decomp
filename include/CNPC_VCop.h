@@ -26,6 +26,7 @@ public:
 	int vfunc404(CNPC_VCopTarget *pEnt);	// slot 404 "classification of pEnt": 1 for the entity of the global handle 0x1093ac3c while the time is before the global 0x1093aca8, and for entities whose player object answers sub_1017f8d0 / sub_1017f770 > 0, else CAI_BaseNPCTroika::vfunc404; 0 for no entity
 	int sub_10299da0(CNPC_VCopTarget *pEnt);	// CAI_BaseNPCTroika::vfunc404 (stub 0x10001adc), called directly
 	void vfunc598(CBaseEntity *pTarget);	// slot 598 (declared as a plain member): when pTarget is the entity of the handle at +0x628c: forgets it (relationship 4, no target at +0x6668, no enemy / no look target when they are pTarget), registers a "Player D_NU 10" note with the entity registry (slot 541); else CAI_BaseNPCTroika::vfunc598
+	void sub_10273790(const char *pszText, int a);	// CAI_BaseNPC member (stub 0x1000421e): prints / records a debug note
 
 	char m_pad03e0[0x628c - 0x3e0];
 	unsigned int m_h628c;	// 0x628c
