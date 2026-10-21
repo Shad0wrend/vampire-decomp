@@ -59871,6 +59871,38 @@ void CBaseCombatCharacter::sub_10322800(unsigned int flags, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103228c0 size=0xc7
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+struct CWeaponInfoBlock
+{
+    char pad0[0x4fec0];
+    int m_field4fec0;
+    char pad4fec4[0x4fed0 - 0x4fec4];
+    unsigned int m_flags4fed0;
+};
+
+struct CWeaponUnit
+{
+    CWeaponInfoBlock *sub_102517b0();
+};
+
+void CBaseCombatCharacter::sub_103228c0()
+{
+    ScopeTrace trace("CBaseCombatCharacter::UpdateOccultPowers", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    int i = 0;
+    if (sub_1032e890() > 0) {
+        do {
+            CWeaponUnit *pWeapon = (CWeaponUnit *)sub_1032e8b0(i);
+            if (pWeapon && pWeapon->sub_102517b0()->m_field4fec0)
+                *(unsigned int *)((char *)this + 0xe38) |= pWeapon->sub_102517b0()->m_flags4fed0;
+            i++;
+        } while (i < sub_1032e890());
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323210 size=0x79
 #include "CBaseCombatCharacter.h"
 
