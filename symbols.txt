@@ -2627,6 +2627,7 @@
 0x1000b564 func   ?sub_102ccb80@@YAXXZ sub_102ccb80
 0x1000b56e func   ?sub_1013eee0@@YGPBDI@Z sub_1013eee0
 0x1000b57d func   ?sub_101bedb0@CStealthKillRules@@QAEXPAUCSKRKeyValues@@PBDPAM@Z CStealthKillRules::sub_101bedb0
+0x1000b5aa func   ?sub_102e0a80@CAI_Motor@@QAEMM@Z CAI_Motor::sub_102e0a80
 0x1000b5d7 func   ?sub_101c2a70@CUnknown101c2a90@@QAEMXZ CUnknown101c2a90::sub_101c2a70
 0x1000b5f0 func   ?vfunc4@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc4
 0x1000b5f5 func   _item_g_idol_dragon item_g_idol_dragon

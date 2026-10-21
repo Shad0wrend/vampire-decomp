@@ -68244,6 +68244,30 @@ struct CUnknown102e0a60 { int p[7]; int a; void sub_102e0a60(int v); };
 void CUnknown102e0a60::sub_102e0a60(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x102e0a80 size=0x8c
+#include "CAI_Motor.h"
+
+// TARGET: CAI_Motor::sub_102e0a80
+float CAI_Motor::sub_102e0a80(float flIdealYaw)
+{
+    float flDiff = flIdealYaw - *(float *)&m_18;
+    if (flDiff > 180.0f)
+        flDiff -= 360.0f;
+    else if (flDiff <= -180.0f)
+        flDiff += 360.0f;
+    if (flDiff > *(float *)&m_1c)
+        flDiff = *(float *)&m_1c;
+    else if (flDiff < -*(float *)&m_1c)
+        flDiff = -*(float *)&m_1c;
+    float flResult = flDiff + *(float *)&m_18;
+    if (flResult < 0)
+        flResult += 360.0f;
+    if (flResult >= 360.0f)
+        flResult -= 360.0f;
+    return flResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0b40 size=0x8
 void __fastcall sub_102e0b40(float *p)
 {
