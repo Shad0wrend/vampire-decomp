@@ -2622,6 +2622,7 @@
 0x1000cb3f func   ?sub_101a1140@CSave@@QAE_NHPAX0PAUtypedescription_t@@@Z CSave::sub_101a1140
 0x1000cb53 func   ?vfunc119@CAI_Hint@@UAEXXZ CAI_Hint::vfunc119
 0x1000cb5d func   ?vfunc427@CAI_BaseNPC@@UAEPAVCAI_Motor@@XZ CAI_BaseNPC::vfunc427
+0x1000cb62 func   ?sub_101d26b0@@YAXVVector@@HHHHH@Z sub_101d26b0
 0x1000cb6c func   ?vfunc5@CDisciplineWeapon@@QAEPAV1@I@Z CDisciplineWeapon::vfunc5
 0x1000cb94 func   ?vfunc180@CBaseEntity@@QAEXXZ CBaseEntity::vfunc180
 0x1000cb9e func   ?sub_103f7330@@YAHXZ sub_103f7330
