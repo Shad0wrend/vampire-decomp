@@ -88,6 +88,44 @@ void CNPC_VAsianVampire::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10360eb0 size=0x146
+#include "CNPC_VAsianVampire.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+struct CGameSys1093a594
+{
+	virtual void v0();
+	virtual char v1();
+	char pad[0x2c - 4];
+	int m2c;
+};
+extern CGameSys1093a594 *g_1093a594;
+
+int CNPC_VAsianVampire::vfunc438()
+{
+	ScopeTrace trace("CNPC_VAsianVampire::SelectSchedule", g_106b8540);
+	m_n1b2c = 6;
+	CGlobalEntityList_Ent *pEnt = EHandle_Get(m_hJumpTarget);
+	if (pEnt != 0 && ((CEntityVSlots *)this)->slot404(pEnt) != 1)
+		return sub_10015ad2();
+	if (!g_1093a594->v1() && g_1093a594->m2c != 0)
+		return 0x15a;
+	if (m_bTaskFailedJump) {
+		if (m_b6078 != 0) {
+			CEntityVSlots *p = (CEntityVSlots *)this;
+			p->slot601(p->slot167());
+			return 0x15c;
+		}
+		return sub_10362430();
+	}
+	if (sub_10362670() || sub_1000fe3e())
+		return sub_10362430();
+	return sub_10015ad2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10361110 size=0x6f
 #include "ScopeTrace.h"
 #include "CNPC_VAsianVampire.h"
