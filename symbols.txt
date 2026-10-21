@@ -509,6 +509,7 @@
 0x100033cd func   ?vfunc416@CAI_BaseNPCTroika@@UAEXD@Z CAI_BaseNPCTroika::vfunc416
 0x100033d2 func   ?sub_10325f00@@YI_NPAVCBaseEntity@@@Z sub_10325f00
 0x100033dc func   ?vfunc5@CPhysBallSocket@@UAEPAV1@I@Z CPhysBallSocket::vfunc5
+0x100033e1 func   ?sub_102e8270@CUnknown102e83e0@@QAEXHH@Z CUnknown102e83e0::sub_102e8270
 0x100033e6 func   ?vfunc5@CCameraKeyFrame@@QAEPAV1@I@Z CCameraKeyFrame::vfunc5
 0x10003409 func   ?sub_100330d0@@YIXPAUMem@@HH@Z sub_100330d0
 0x10003427 func   _monster_generic monster_generic

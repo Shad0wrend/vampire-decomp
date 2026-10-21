@@ -59677,6 +59677,75 @@ void CUnknown102e12c0::sub_102e7e60()
 void __fastcall sub_102e8250(float *p) { p[6] = 3.402823466e+38f; }
 // END FUNCTION
 
+// FUNCTION: 0x102e8270 size=0x111
+#include "CUnknown102e83e0.h"
+#include "CBaseAnimating.h"
+
+struct WeaponInfoRecords
+{
+	char m_pad0000[0x3a4];
+	int m_n3a4;
+	int m_n3a8;
+};
+
+struct AutoLevelWeapon
+{
+	WeaponInfoRecords *sub_102517e0();
+};
+
+struct GlobalVarsTime
+{
+	char m_pad0000[0xc];
+	float m_flCurTime;
+};
+
+struct DrawHelperA
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int vfunc2(int a, int b);
+};
+
+struct DrawHelperB
+{
+	virtual void v0();
+	virtual void vfunc1();
+};
+
+extern GlobalVarsTime *g_1070b228;
+extern DrawHelperA *g_1070b244;
+extern DrawHelperB *g_10924ab4;
+void __fastcall sub_102e8250(float *p);
+
+void CUnknown102e83e0::sub_102e8270(int a, int b)
+{
+	if (4 != m_pOuter->vfunc464() && m_pOuter->sub_10007e19()) {
+		CAI_BaseNPC *pNPC = m_pOuter;
+		long act; act = pNPC->sub_10271ff0(0x11, 0);
+		if (0 <= ((CBaseAnimating *)pNPC)->sub_1008dd30(act, -1)) {
+			pNPC = m_pOuter;
+			act = pNPC->sub_10271ff0(0x15, 0);
+			if (0 <= ((CBaseAnimating *)pNPC)->sub_1008dd30(act, -1)) {
+				m_n1c = ((AutoLevelWeapon *)m_pOuter->sub_10007e19())->sub_102517e0()->m_n3a4;
+				WeaponInfoRecords *pInfo = ((AutoLevelWeapon *)m_pOuter->sub_10007e19())->sub_102517e0();
+				m_n20 = pInfo->m_n3a8;
+				m_n24 = a;
+				m_n28 = b;
+				AutoLevelWeapon *pWeapon = (AutoLevelWeapon *)m_pOuter->sub_10007e19();
+				long y; y = pWeapon->sub_102517e0()->m_n3a8;
+				int x; x = pWeapon->sub_102517e0()->m_n3a4;
+				m_n14 = g_1070b244->vfunc2(x, y);
+				m_f18 = g_1070b228->m_flCurTime + m_f2c;
+				g_10924ab4->vfunc1();
+				return;
+			}
+		}
+	}
+	g_10924ab4->vfunc1();
+	sub_102e8250((float *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e84a0 size=0x8d
 struct Globals { char pad[0xc]; float curtime; };
 extern Globals *g_1070b228;
