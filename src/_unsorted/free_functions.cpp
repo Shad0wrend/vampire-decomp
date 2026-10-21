@@ -31736,6 +31736,28 @@ void sub_10137ed0(const matrix3x4_t &matrix, QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101384e0 size=0x71
+#include "QAngle.h"
+#include "matrix3x4_t.h"
+
+void sub_10005394(const QAngle &angles, matrix3x4_t &mat);
+void sub_10012deb(const QAngle &angles, matrix3x4_t &mat);
+void sub_1000a01a(const matrix3x4_t &a, const matrix3x4_t &b, matrix3x4_t &out);
+void sub_10137ed0(const matrix3x4_t &mat, QAngle &angles);
+
+// TARGET: sub_101384e0
+QAngle sub_101384e0(const QAngle &a, const QAngle &b)
+{
+	QAngle out;
+	matrix3x4_t mA, mB, mC;
+	sub_10005394(b, mA);
+	sub_10012deb(a, mB);
+	sub_1000a01a(mA, mB, mC);
+	sub_10137ed0(mC, out);
+	return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101388c0 size=0x10
 int sub_101388c0(int x)
 {

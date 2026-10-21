@@ -3661,6 +3661,7 @@
 0x1000ed3b func   ?vfunc5@CSteamJet@@UAEPAV1@I@Z CSteamJet::vfunc5
 0x1000ed45 func   ?sub_100bb900@CBeam@@QAEXHPBM@Z CBeam::sub_100bb900
 0x1000ed68 func   ?sub_10045110@CUnknown10045110@@QAEXH@Z CUnknown10045110::sub_10045110
+0x1000ed7c func   ?sub_101384e0@@YA?AVQAngle@@ABV1@0@Z sub_101384e0
 0x1000ed95 func   ?sub_10248cd0@CKeyValuesX@@QAEPBDPBD0@Z CKeyValuesX::sub_10248cd0
 0x1000ed9a func   ?sub_102dd450@CUnknown102dd450@@QAE_NXZ CUnknown102dd450::sub_102dd450
 0x1000eda4 func   ?sub_100b3a60@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3a60
