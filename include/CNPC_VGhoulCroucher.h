@@ -34,6 +34,11 @@ public:
 	void sub_10006136(void *pVictim);	// CAI_BaseNPCTroika::vfunc24 (stub 0x10006136), called directly
 	void vfunc174(CBaseEntity *pOther);	// slot 174 "CNPC_VGhoulCroucher::StartTouch": scope trace (entity name), CBaseEntity::vfunc174(pOther); when pOther has the dword at +0xa8 or +0x94 sub_1037b6e0(pOther); then, as the burning variant (+0x6665) touching a character (+0xa8) and when the time at +0x666c has passed, pushes it ahead by a constant and calls sub_1037c090(that dword, 5.0f); declared as a plain member
 	void sub_100a49d0(CBaseEntity *pOther);	// CBaseEntity::vfunc174 (stub 0x10009caf), called directly
+	void vfunc420();	// slot 420 "CNPC_VWerewolf::NPCInit"-named: scope trace (entity name), the CNPC_VHumanCombatant version, Inventory_Destroy, gives the claws (item_w_claws_ghoul, stalker byte +0x6664 clear: item_w_knife), misc flag 0x10, and for the burning variant (+0x6665) spawns the fire emitter and stores its handle at +0x6670; then sub_10332aa0(1, 1, 10)
+	void sub_1000dcba();	// CNPC_VHumanCombatant::vfunc420 (stub 0x1000dcba), called directly
+	void sub_10334b10();	// CBaseCombatCharacter::Inventory_Destroy (stub 0x1000289c), called directly
+	void sub_1033c6b0(unsigned int flags);	// CBaseCombatCharacter::AddMiscFlag (stub 0x100153a7), called directly
+	void sub_10332aa0(int a, int b, int c);	// stub 0x10013cf5, called directly
 
 	char m_pad03e0[0x10e4 - 0x3e0];
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
