@@ -66573,6 +66573,61 @@ void CAI_BaseNPCTroika::sub_1029ea40(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029ed90 size=0x16c
+#include "CAI_BaseNPCTroika.h"
+#include "inputdata_t.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" char *strtok(char *, const char *);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *pMsg, ...);
+
+int sub_102d2900(CAI_BaseNPCTroika *pNPC, const char *pszName);
+
+struct CTroikaPatrolFields
+{
+	char m_pad0000[0x5cc0];
+	int m_nState;
+};
+
+static inline const char *VariantString(variant_t &v)
+{
+	return v.fieldType == 2 ? (v.iszValue ? v.iszValue : "") : v.sub_10008805();
+}
+
+// TARGET: CAI_BaseNPCTroika::sub_1029ed90
+void CAI_BaseNPCTroika::sub_1029ed90(inputdata_t *pInput)
+{
+	char szBuf[256];
+	int nodes[65];
+	if (((CTroikaPatrolFields *)this)->m_nState != 7) {
+		variant_t &v = pInput->value;
+		Q_strncpy(szBuf, VariantString(v), 256);
+		char *tok = strtok(szBuf, ", ");
+		if (!tok) {
+			char szMsg[256];
+			sprintf((char *)"ERROR: %s - Argument to InputFollowPatrolPath(%s) is in the wrong format.\nShould be 'NodeID1 [NodeID2 [NodeID3 [...]]]'\n", sub_1000b5cd(), VariantString(v));
+			DevMsg(1, szMsg);
+			return;
+		}
+		int n = 0;
+		do {
+			nodes[n] = sub_102d2900(this, tok);
+			if (nodes[n] == -1) {
+				char szMsg[256];
+				sprintf(szMsg, "ERROR: %s - Could not find node with id '%s' (in InputSetPatrolPath (%s))\n", sub_1000b5cd(), tok, VariantString(v));
+				DevMsg(1, szMsg);
+				return;
+			}
+			n++;
+			tok = strtok(0, ", ");
+		} while (tok);
+		nodes[n] = -1;
+		sub_1029f460((char *)this + 0x658c, 0, -1, 0, nodes, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f370 size=0xbc
 #include "CAI_BaseNPCTroika.h"
 
