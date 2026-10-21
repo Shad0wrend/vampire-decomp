@@ -1,6 +1,41 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10056a90 size=0xaf
+#include "CBaseEntity.h"
+#include "CDynamicLight.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+struct CLightSlots
+{
+	SL100(a0)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3();
+	virtual void v104();
+};
+
+extern char g_1070d1b0[];
+extern void sub_101cf390(CDynamicLight *, void *, void *);
+
+void CDynamicLight::vfunc103()
+{
+	((CLightSlots *)this)->v104();
+	{
+		const char *pszName = *(const char **)((char *)this + 0x26c);
+		ScopeTrace trace("CBaseEntity::SetSolid", pszName ? pszName : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+	*((char *)this + 0x453) = 1;
+	sub_101cf390(this, g_1070d1b0, g_1070d1b0);
+	((CBaseEntity *)this)->sub_100b3b00();
+	*(unsigned int *)((char *)this + 0x268) |= 0x80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056b70 size=0x1e
 #include "CDynamicLight.h"
 
