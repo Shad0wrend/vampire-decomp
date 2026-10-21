@@ -17,4 +17,5 @@ public:
 	void sub_101f6b90(CVStatKV *pKV);	// loads the effect from its key: Trait, then Modifier (a modifier string) or else a cost (kind 7, "Unable to Parse TraitEffect!" when that fails), then DisplayOverride
 	void sub_101f6a30(const char *pszModifier);	// parses a modifier string (stub 0x1000ea1b)
 	void sub_101f6eb0();	// "CVTraitEffect_t::Debug_Display": DevMsg of the effect: "\t\t\t( <ERROR> )" for an empty record, else the trait text with the kind's name and the value (kind 6: the modifier name, kind 7: the cost between "\t( " and " )")
+	const char *sub_101f7110(const char *pszName);	// "CVTraitEffect_t::GetDisplayString": "<ERROR>" for an empty record, else formats pszName (the trait text when null / empty) with the kind's name and the value into the shared buffer at 0x1074dea8 ("%s  %s  %d", kind 0 without a name and kind 9 / 10 with a percent sign, kind 7 "%s-%s", kind 6 also DevMsg's the text)
 };
