@@ -86455,6 +86455,30 @@ char CUnknown1042d9a0::sub_1042daa0(CUnknown1042d9a0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042eb80 size=0xdb
+#include "CSprite.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+CSprite *sub_10002b03(const char *pClassname, int a, int b);
+extern float g_1070d1b0[3];
+
+CSprite *sub_1042eb80(int a, int b, int c, int d, bool animate)
+{
+	CSprite *pSprite = sub_10002b03("env_sprite", a, b);
+	pSprite->sub_1042e9f0(c, d);
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", pSprite ? (pSprite->m_name26c ? pSprite->m_name26c : g_106b8540) : g_105387dc);
+		((CCollisionProperty *)((char *)pSprite + 0x270))->sub_100dc480(0);
+	}
+	pSprite->sub_100adf10(g_1070d1b0, g_1070d1b0);
+	pSprite->vfunc93(9, 0);
+	if (animate)
+		pSprite->sub_1042ef70();
+	return pSprite;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042fb20 size=0x22
 extern int g_106af554;
 extern int g_106af5dc;
