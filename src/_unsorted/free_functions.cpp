@@ -38685,6 +38685,31 @@ void CVTraitFields101f7380::sub_101f7380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f73f0 size=0xb5
+#include "CVTraitEffectGroup_t.h"
+struct CVStatKV
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual CVStatKV *vfunc2(const char *name);
+	virtual CVStatKV *vfunc3();
+};
+
+void CVTraitEffectGroup_t::sub_101f73f0(CVStatKV *pKV)
+{
+	for (CVStatKV *k = pKV->vfunc2("TraitEffect"); k; k = k->vfunc3())
+		m_nEffects++;
+	if (m_nEffects > 0) {
+		m_pEffects = new CVTraitEffect_t[m_nEffects];
+		CVStatKV *k = pKV->vfunc2("TraitEffect");
+		for (int i = 0; i < m_nEffects && k; i++) {
+			m_pEffects[i].sub_101f6b90(k);
+			k = k->vfunc3();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f74e0 size=0x8
 bool __fastcall sub_101f74e0(int *p) { bool r = p[3] != -1; return r; }
 // END FUNCTION
