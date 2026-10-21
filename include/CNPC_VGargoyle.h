@@ -22,6 +22,9 @@ public:
 	bool sub_10378ec0();	// finds the "pillar" entity named by slot 167()'s slot 220(), stores its handle at +0x667c (-1 when none) and returns whether the handle still resolves to a live entity
 	void vfunc104();	// slot 104 (Precache): CNPC_VHuman::vfunc104, then precaches the nine gargoyle gib models, the stomp / exert / roar2 sounds and the "item_w_gargoyle_fist" weapon
 	void sub_10384670();	// CNPC_VHuman::vfunc104 (stub 0x100013f7), called directly
+	int vfunc438();	// slot 438 "SelectSchedule" override: sets +0x1b2c = 0x11; schedule 0x15c (line 0x174) when the default stat list's stats 0xf and 0x11 are equal; in state 2 with an enemy that is not slot 530 and the navigator (+0x5d34) cannot reach (slot 217 origins) tries sub_10378f80(); else CNPC_VHuman::vfunc438
+	int sub_10378f80();	// called by SelectSchedule (stub 0x1000b4e2)
+	int sub_10384ee0();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), tail called
 
 	char m_pad0004[0x667c - 4];
 	int m_hPillar;	// 0x667c
