@@ -1,11 +1,20 @@
 // CUnknown101d7520: the "Auto-Level Manager" list (count at +4, array of entry pointers at +8); real name not yet known.
 #pragma once
 
+extern char g_106b8540[];	// empty string
+
+struct CUnknown101d7520Name	// a string holder; Get() yields "" for null
+{
+	const char *m_p;
+
+	const char *Get() const { return m_p ? m_p : g_106b8540; }
+};
+
 struct CUnknown101d7520Entry
 {
 	int m_unk0;
 	char m_pad0004[0x10 - 4];
-	const char *m_pName;	// 0x0010
+	CUnknown101d7520Name m_name;	// 0x0010
 
 	void sub_101d6af0();	// dumps the entry (stub 0x10015dca)
 };
