@@ -21,7 +21,7 @@ public:
 	CUnknown1028b190Entry m_entries[5];
 
 	void sub_1028b190(void *pCharacter);	// "...RecordHit"-like: for a character with the object at +0xa8 and a resolving handle (+0x6f0) bumps its record's count and time, or replaces the record with the oldest time by (handle, lowest count, now)
-	double sub_1028b420();	// the lowest count of the five records, returned on the FPU stack (stub 0x1000e912)
+	float sub_1028b420();	// the lowest count of the five records, returned on the FPU stack (stub 0x1000e912)
 	CUnknown1028b190Entry *sub_1028b460(int id);	// the record whose id is `id` (0 for a null id or no match) (stub 0x1000aae7)
 	int sub_1028b300(void *pCharacter);	// the character's count above the lowest one, while its record is younger than the console variable's time span (0x10924434); else 0
 };
