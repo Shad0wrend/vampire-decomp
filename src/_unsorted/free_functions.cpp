@@ -14722,6 +14722,42 @@ void CBaseEntity::sub_100ae150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ae1f0 size=0xe1
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);
+extern unsigned int g_1070ba38;
+CBaseEntity *sub_10172710(CBaseEntity *pPlayer);
+void sub_101c0b80(const char *pszTarget, CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value);
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CEntityUseSlotsX {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9) SV10(10)
+	SV(110) SV(111) SV(112) SV(113) SV(114) SV(115)
+	virtual char s116();
+	SV(117) SV(118) SV(119)
+	SV10(12) SV10(13) SV10(14) SV10(15) SV10(16)
+	SV(170) SV(171) SV(172)
+	virtual void s173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value);
+};
+
+void sub_100ae1f0(CBaseEntity *pActivator, const char *pszTarget)
+{
+	ScopeTrace trace("ConsoleFireTargets", g_106b8540);
+	if (_strcmpi(pszTarget, g_106b8540) == 0) {
+		CBaseEntity *pEnt = sub_10172710(pActivator);
+		if (pEnt && !((CEntityUseSlotsX *)pEnt)->s116()) {
+			g_109f3628("[%03d] Found: %s, firing\n", g_1070ba38 % 1000, pEnt->sub_100ab4f0());
+			((CEntityUseSlotsX *)pEnt)->s173(pActivator, pActivator, 3, 0);
+			return;
+		}
+	}
+	sub_101c0b80(pszTarget, pActivator, pActivator, 3, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ae320 size=0x77
 #include "IVEngineServer.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

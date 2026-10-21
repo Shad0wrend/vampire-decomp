@@ -361,6 +361,7 @@
 0x1000299b func   ?sub_1021e750@CUnknown1021e750@@QAEXHPAVCBaseEntity@@@Z CUnknown1021e750::sub_1021e750
 0x100029a0 func   _hud_counter hud_counter
 0x100029c3 func   ?vfunc280@CBaseCombatWeapon@@UAE_NH@Z CBaseCombatWeapon::vfunc280
+0x100029dc func   ?sub_100ae1f0@@YAXPAVCBaseEntity@@PBD@Z sub_100ae1f0
 0x100029e1 func   ?vfunc5@CNPC_VAndreiBlood@@UAEPAVCAI_BaseNPC@@I@Z CNPC_VAndreiBlood::vfunc5
 0x100029ff func   ?vfunc5@CLogicVisible@@QAEPAV1@I@Z CLogicVisible::vfunc5
 0x10002a09 func   ?sub_1013e800@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e800
