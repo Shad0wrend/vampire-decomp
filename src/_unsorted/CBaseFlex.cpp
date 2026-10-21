@@ -27,6 +27,37 @@ void CBaseFlex::sub_100b5b00(const float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5c50 size=0x69
+#include "CBaseFlex.h"
+#include "CBaseAnimating.h"
+
+extern float g_104454c4;
+
+struct FlexControllerHdr {
+	char m_pad[0x164];
+	int m_nControllerIndex;
+};
+struct FlexController {
+	char m_pad[0xc];
+	float m_flMin;
+	float m_flMax;
+};
+
+float CBaseFlex::vfunc281(int index)
+{
+	if (index >= 0 && index < ((CBaseAnimating *)this)->sub_10094520()) {
+		FlexControllerHdr *pHdr = (FlexControllerHdr *)((CBaseAnimating *)this)->sub_100952d0(-1);
+		if (pHdr) {
+			FlexController *pCtrl = (FlexController *)((char *)pHdr + pHdr->m_nControllerIndex + index * 0x14);
+			if (pCtrl->m_flMax != pCtrl->m_flMin)
+				return (pCtrl->m_flMax - pCtrl->m_flMin) * m_flFlexWeight[index] + pCtrl->m_flMin;
+			return m_flFlexWeight[index];
+		}
+	}
+	return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5ce0 size=0x14
 #include "CBaseFlex.h"
 
