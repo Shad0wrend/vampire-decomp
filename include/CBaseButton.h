@@ -93,13 +93,16 @@ public:
 	void sub_100c9560();	// the button is pressed: plays the sound table entry 0x106e6f78 unless bit 13 of the flags is set, fires the output at +0x590 for the activator (when flag 0x1 is set), state 2, think function sub_100c96a0 and moves to position 2 (linear) or angle 2 (rotating, byte +0x55d); nothing while the byte at +0x5c4 is set
 	void sub_100c96a0();	// the think function set by sub_100c9560 (stub 0x10008f30)
 	void sub_100c9250(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// \"CBaseButton::ButtonUse\"-like: unless locked / moving (state 2 or 3) or the byte at +0x5c4 is set and the use filter passes the activator (sub_100a7bd0): remembers the activator handle at +0x53c; in state 0 (flag 0x20 set) fires the output at +0x578 and presses (sub_100c97c0), in any other state fires it and calls sub_100c9560
+	void sub_100c8a20(CBaseEntity *pOther);	// \"CBaseButton::ButtonTouch\"-like: unless moving (state 2 or 3) or the byte at +0x5c4 is set and the use filter passes the stored activator (+0x53c): clears the touch function at +0x1ec, fires the output at +0x578 for the activator; state 0 -> sub_100c97c0, else sub_100c9560
 	bool sub_100a7bd0(CBaseEntity *pActivator);	// CBaseEntity::PassesUseFilter (stub 0x10001032), called directly
 
 	char m_pad0004[0x114 - 4];
 	void (CBaseButton::*m_pfnThink114)();	// 0x114
 	char m_pad0118[0x164 - 0x118];
 	float m_flSpeed164;	// 0x164
-	char m_pad0168[0x204 - 0x168];
+	char m_pad0168[0x1ec - 0x168];
+	void *m_pfnTouch1ec;	// 0x1ec
+	char m_pad01f0[0x204 - 0x1f0];
 	unsigned int m_flags204;	// 0x204
 	char m_pad0208[0x4f8 - 0x208];
 	int m_nState4f8;	// 0x4f8
