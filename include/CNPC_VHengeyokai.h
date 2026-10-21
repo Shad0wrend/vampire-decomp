@@ -71,4 +71,6 @@ public:
 	void sub_10383130();	// called through the stub at 0x1000ed6d
 	int vfunc124();	// slot 124 "DrawDebugTextOverlays": the base's line offset, plus one line with the NPC's name when the text overlay bit (bit 0 of +0x224) is set
 	int sub_10006f64();	// CAI_BaseNPCTroika::vfunc124 (stub 0x10006f64), called directly
+	void sub_10383470();	// once 2 seconds have passed since the time at +0x1560: zeroes the character's stat 0xf, sets the byte at +0x6694 and calls sub_10273e80(0)
+	void sub_10273e80(char flag);	// CAI_BaseNPC::sub_10273e80 (stub 0x1000ac68), called directly
 };
