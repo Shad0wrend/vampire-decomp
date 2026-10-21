@@ -68217,6 +68217,42 @@ bool CUnknown102ee120_x::sub_102f1690(HelperParams102f1690 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f1900 size=0xd2
+#include "CAI_Pathfinder.h"
+
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);	// DevMsg
+extern int g_106c994c;
+
+// TARGET: CAI_Pathfinder::sub_102f1900
+char CAI_Pathfinder::sub_102f1900(int nodeNum, unsigned int collisionMask)
+{
+	float vecPosition[3];
+	CAI_PathfinderNode *pNode;
+	if (!m_pNetwork) {
+		g_109f3630("CanFitAtNode() called with no network!\n");
+		return 0;
+	}
+	if (nodeNum >= 0 && nodeNum < m_pNetwork->m_nNodes) {
+		pNode = m_pNetwork->m_ppNodes[nodeNum];
+	} else {
+		g_106c994c++;
+		pNode = 0;
+	}
+	pNode->sub_102fb0d0(vecPosition, m_unk08);
+	if (pNode->m_nType == 2) {
+		CAI_MoveProbe *pProbe = m_pMoveProbe;
+		if (!pProbe->sub_102e7270(vecPosition, collisionMask, 0, 0, 0, 0))
+			return 0;
+	}
+	if (pNode->m_nType == 4 && (pNode->m_fFlags & 0x1d)) {
+		CAI_MoveProbe *pProbe = m_pMoveProbe;
+		if (!pProbe->sub_102e7270(vecPosition, collisionMask, 0, 0, 0, 0))
+			return 0;
+	}
+	return sub_102f1a20(vecPosition, collisionMask) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1fa0 size=0x90
 #include "CAI_Navigator.h"
 struct CGlobalVarsX { char pad[0xc]; float curtime; };
