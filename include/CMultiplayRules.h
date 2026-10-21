@@ -3,6 +3,13 @@
 
 #include "CGameRules.h"
 
+struct CMPDamageInfo	// the damage info handed to PlayerKilled / DeathNotice: the inflictor at +0x28, the attacker at +0x2c
+{
+	char m_pad0000[0x28];
+	CBaseEntity *m_pInflictor;	// 0x28
+	CBaseEntity *m_pAttacker;	// 0x2c
+};
+
 class CMultiplayRules : public CGameRules
 {
 public:
@@ -13,6 +20,7 @@ public:
 	virtual void vfunc35(CBaseEntity *pPlayer);	// "EquipPlayer": every game_player_equip entity equips the player (slot 175); without one gives weapon_crowbar, weapon_9mmhandgun and 0x44 SmallRound
 	virtual float vfunc38(int a);
 	virtual int vfunc43(int a, int b);
+	virtual void vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "PlayerKilled": DeathNotice (slot 45), counts the death and fires game_playerdie; credits the scorer (sub_10141b10) with the points of slot 43 and fires game_playerkill, or takes a point off a suicide
 	virtual char vfunc47(CBaseEntity *pPlayer, CBaseEntity *pItem);	// "CanHavePlayerItem": in a running multiplayer game with the item limit set, refuses an item (without the flag bit 3 of its slot 346) the player already owns in one of its 0xe0 weapon slots; everything else goes to CGameRules
 	virtual Vector vfunc51(CBaseEntity *pEnt);
 	virtual int vfunc61(int index);
@@ -26,4 +34,5 @@ public:
 	CMultiplayRules *sub_10140f60();	// "CMultiplayRules::CMultiplayRules" body: base constructor, vtable, sub_1000fcbd(), then runs the dedicated / listen server config file (exec <cvar string>) when its cvar is non-empty; returns this
 	void sub_101291f0();	// CGameRules constructor body (stub 0x10011d79)
 	void sub_1000fcbd();	// CMultiplayRules::vfunc15, called directly
+	CBaseEntity *sub_10141b10(CBaseEntity *pAttacker, CBaseEntity *pInflictor);	// the entity that scores for a kill: the attacker when it is a player (slot 138 == 1), else its scorer interface's answer, else the inflictor's (stub 0x100073b0)
 };
