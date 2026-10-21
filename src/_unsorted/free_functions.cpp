@@ -78380,6 +78380,50 @@ int CUnknown1030fe50::sub_1030fff0(int radius)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310130 size=0x10b
+#include "CAI_Senses.h"
+#include "CUnknown102652d0.h"
+
+#define SLA(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLB(p) SLA(p##0) SLA(p##1) SLA(p##2) SLA(p##3) SLA(p##4) SLA(p##5) SLA(p##6) SLA(p##7) SLA(p##8) SLA(p##9)
+struct EntVT10310130 {
+	SLB(a) SLB(b)
+	SLA(c0)
+	virtual void s210(); virtual void s211(); virtual void s212(); virtual void s213();
+	virtual void s214(); virtual void s215(); virtual void s216();
+	virtual const float *a217();
+	virtual void s218(); virtual void s219();
+	virtual const float *a220();
+};
+struct GlobalVarsX { int pad0[3]; float curtime; };
+extern GlobalVarsX *g_1070b228;
+extern CUnknown102652d0 g_1090fe10;
+
+int CAI_Senses::sub_10310130(int radius)
+{
+	int count = 0;
+	if (g_1070b228->curtime - m_timer70.m_flNext > -0.001) {
+		m_timer70.m_flNext = m_timer70.m_flInterval + g_1070b228->curtime;
+		sub_1030fe50();
+		float flRadiusSqr = (float)(radius * radius);
+		const float *pos = ((EntVT10310130 *)m_pOuter)->a220();
+		EntVT10310130 **ents = (EntVT10310130 **)g_1090fe10.sub_102652d0();
+		for (int i = 0; i < g_1090fe10.sub_102652f0(); i++) {
+			const float *o = ents[i]->a217();
+			float dx = pos[0] - o[0];
+			float dy = pos[1] - o[1];
+			float dz = pos[2] - o[2];
+			if (dx * dx + dy * dy + dz * dz < flRadiusSqr && sub_1030ffa0(ents[i]))
+				count++;
+		}
+		sub_1030fe70(count, &m_vec34);
+		return count;
+	}
+	return m_vec34.m_size;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103105d0 size=0xf1
 #include "CAI_Senses.h"
 #include "CEHandleGet.h"
