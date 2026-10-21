@@ -82,6 +82,53 @@ void CGenericSabbat_NPC::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035b700 size=0x132
+#include "CGenericSabbat_NPC.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+struct CSabbatGlobal
+{
+	virtual void v0();
+	virtual bool v1();
+	char pad[0x28 - 4];
+	float m_f28;
+};
+
+extern CSabbatGlobal *g_1093a36c;
+extern float g_104454c4;
+
+void CGenericSabbat_NPC::vfunc103()
+{
+	CEntityVSlots *pEnt = (CEntityVSlots *)this;
+	pEnt->slot104();
+	int tmp;
+	const char *pszModel = *pEnt->slot9(&tmp);
+	if (!pszModel)
+		pszModel = g_106b8540;
+	pEnt->slot105(pszModel);
+	*(int *)((char *)this + 0x1568) = 0;
+	*(int *)((char *)this + 0x156c) = 0;
+	sub_10273070(0);
+	{
+		const char *pszName = *(const char **)((char *)this + 0x26c);
+		ScopeTrace trace("CBaseEntity::SetSolid", pszName ? pszName : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(2);
+	}
+	pEnt->slot93(4, 0);
+	*(int *)((char *)this + 0x1570) = 0xf7;
+	*(int *)((char *)this + 0x19c) = 0;
+	float flHealth = g_1093a36c->v1() ? g_104454c4 : g_1093a36c->m_f28;
+	*(int *)((char *)this + 0x210) = (int)flHealth;
+	*(int *)((char *)this + 0x1574) = 0x3e4ccccd;
+	*(int *)((char *)this + 0x5cc0) = 0;
+	sub_1026dc00(1);
+	sub_1026dc00(0x800000);
+	pEnt->slot420();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035be80 size=0x2a
 #include "CGenericSabbat_NPC.h"
 extern const float g_1044f00c;
