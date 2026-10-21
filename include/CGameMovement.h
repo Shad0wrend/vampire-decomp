@@ -48,4 +48,5 @@ public:
 	void sub_10120f30();	// when the move data's +0x2314 is zero, subtracts 0.5 * frame time * (global 0x109ef2d4 value) * (move +0x3ec or 1) from the player's +0x48, then runs sub_10004ebc
 	void sub_10004ebc();
 	int sub_10124120(Vector &in, Vector &normal, Vector &out, float overbounce);	// "CGameMovement::ClipVelocity": blocked flags (1 for a floor normal with z > 0, 2 for a step normal with z == 0); out = in - normal * (in . normal * overbounce), components within +-0.1 are zeroed
+	void sub_1011ffe0();	// "CGameMovement::WaterJump": the water jump time at +0x2314 of the object at +8 is capped at 10000, counted down by frame time * 1000 and ends (cleared, flag 4 removed) when it runs out or the object at +8 has no value at +0x3e0; while it runs the velocity x / y (+0x40 / +0x44 of the object at +4) are set from the object at +8 (+0x2318 / +0x231c)
 };
