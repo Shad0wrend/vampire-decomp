@@ -32,7 +32,9 @@ public:
 	CHL2_V10(pe0) CHL2_V10(pe1) CHL2_V10(pe2) CHL2_V10(pe3)	// slots 400..439
 	virtual void vfunc440(); virtual void vfunc441(); virtual void vfunc442(); virtual void vfunc443(); virtual void vfunc444();
 	virtual int vfunc445(); virtual void vfunc446(); virtual void vfunc447(); virtual void vfunc448(); virtual void vfunc449();
-	virtual void vfunc450(); virtual void vfunc451(); virtual void vfunc452(); virtual void vfunc453(); virtual void vfunc454();
+	virtual void vfunc450(); virtual void vfunc451(); virtual void vfunc452();
+	virtual CBaseEntity *vfunc453();	// "GetPlayerSpawnSpot"-like: picks the next info_player_coop / info_player_start entity after the last spawn (global 0x107260ac), else the entity named like the map; warns when none
+	virtual void vfunc454();
 	virtual void vfunc455(); virtual void vfunc456(); virtual void vfunc457(); virtual void vfunc458(); virtual void vfunc459();
 	virtual void vfunc460(); virtual void vfunc461(); virtual void vfunc462(); virtual void vfunc463(); virtual void vfunc464();
 	virtual void vfunc465(); virtual void vfunc466(); virtual void vfunc467(); virtual void vfunc468(); virtual void vfunc469();
