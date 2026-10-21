@@ -19519,6 +19519,38 @@ extern "C" GP *func_rot_button()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca040 size=0x80
+#include "CBaseEntity.h"
+
+void *sub_100aa720(int size);
+extern void *vt_1045325c[];
+extern char g_1055cc08[];
+void __fastcall sub_1000d5ee(void *pThis);
+void __fastcall sub_10002ddd(void *pThis);
+
+// TARGET: momentary_rot_button
+extern "C" CBaseEntity *momentary_rot_button()
+{
+	void *mem = sub_100aa720(0x608);
+	CBaseEntity *p;
+	if (mem)
+	{
+		p = (CBaseEntity *)mem;
+		sub_1000d5ee(p);
+		sub_10002ddd((char *)p + 0x55c);
+		sub_10002ddd((char *)p + 0x574);
+		sub_10002ddd((char *)p + 0x58c);
+		sub_10002ddd((char *)p + 0x5a4);
+		sub_10002ddd((char *)p + 0x5bc);
+		*(void ***)p = vt_1045325c;
+	}
+	else
+		p = 0;
+	p->vfunc106(g_1055cc08);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb670 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
