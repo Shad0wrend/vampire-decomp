@@ -2269,6 +2269,7 @@
 0x1000abaa func   ?sub_100dbc60@CUnknown100dbc60@@QAEXPAVCBaseEntity@@@Z CUnknown100dbc60::sub_100dbc60
 0x1000abd7 func   ?vfunc3@CTEBeamLaser@@UAEXHH@Z CTEBeamLaser::vfunc3
 0x1000ac22 func   ?vfunc590@CAI_BaseNPCTroika@@UAEDXZ CAI_BaseNPCTroika::vfunc590
+0x1000ac36 func   ?vfunc3@CTEBeamRingPoint@@UAEXPBMH@Z CTEBeamRingPoint::vfunc3
 0x1000ac3b func   ?sub_103adb00@@YAPAHXZ sub_103adb00
 0x1000ac45 func   ?sub_103f59f0@@YAHXZ sub_103f59f0
 0x1000ac4a func   ?sub_102034a0@@YAPBDH@Z sub_102034a0
