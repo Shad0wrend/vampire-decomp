@@ -53238,6 +53238,35 @@ extern "C" GP *aitesthull()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d7640 size=0xbe
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+struct CEnt5f44 : CBaseEntity
+{
+	char m_pad5f44[0x5f44 - sizeof(CBaseEntity)];
+	char m_b5f44;
+};
+extern CEnt5f44 *g_10926a34;
+extern char g_1070d1b0[];
+void sub_101cf390(CBaseEntity *pEnt, char *a, char *b);
+
+// TARGET: sub_102d7640
+void sub_102d7640()
+{
+	g_10926a34->m_b5f44 = 0;
+	CBaseEntity *pEnt = g_10926a34;
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", pEnt ? (pEnt->m_name26c ? pEnt->m_name26c : g_106b8540) : g_105387dc);
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pEnt + 0x270);
+		pCol->sub_100dc580(pCol->m_usSolidFlags | 4);
+	}
+	sub_101cf390(g_10926a34, g_1070d1b0, g_1070d1b0);
+	g_10926a34->sub_100b3b00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d8a90 size=0x85
 #include "CUnknown102d8a90.h"
 
