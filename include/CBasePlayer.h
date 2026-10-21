@@ -70,7 +70,8 @@ public:
 	// slots 65..220
 	CBP_V100(sb) CBP_V10(sc0) CBP_V10(sc1) CBP_V10(sc2) CBP_V10(sc3) CBP_V10(sc4) CBP_V1(sd0) CBP_V1(sd1)
 	virtual int vfunc217(const void *pName, int a);
-	CBP_V1(sd3) CBP_V1(sd4) CBP_V1(sd5)
+	CBP_V1(sd3) CBP_V1(sd4)
+	virtual float *vfunc220();	// "CBaseEntity::GetOrigin"
 	virtual float *vfunc221();
 	// slots 222..402
 	CBP_V10(se0) CBP_V10(se1) CBP_V10(se2) CBP_V10(se3) CBP_V10(se4) CBP_V10(se5) CBP_V10(se6) CBP_V10(se7) CBP_V10(se8)
@@ -206,6 +207,7 @@ public:
 	void sub_1017c6d0();	// notifies the entity of the engine index at +0x1eb8 (when flagged by the byte at +0x1ec0): clears the flag, slot 118 (AcceptInput) with a variant of type 5; always clears the index
 	void sub_101816c0(const char *pszName);	// slot 103 helper: runs slot 457(pszName, 0), clears the float at +0x1564 and, with an active weapon, runs its slot 310(0), clears its field at +0x854, lets the entity of its handle at +0x890 (sub_1015d680) run slot 266 when the weapon's slot 342 text is empty, then the weapon's slot 321
 	CBaseEntity *sub_1015d680(unsigned int hEntity);	// resolves an entity handle (stub 0x10013d09)
+	void sub_1015d6d0(int index);	// "CBasePlayer::CreateViewModel": unless viewmodel number index already exists, creates a "viewmodel" entity, places it at the player's origin, owns it by the player, sets its index, spawns it (sub_101d1280), move type (11, 0), aim entity = the player, and stores its handle in the array at +0x2308 + index * 4
 	void sub_101644f0(int a, int b, int c);	// stub 0x1000f74f for 0x101644f0 (run first by slot 418 with -1, 0, 0)
 	void sub_1032a100(int activity);	// CBaseCombatCharacter member (stub 0x10002626): switches the activity
 	void sub_1032ead0();	// CBaseCombatCharacter member (stub 0x10005a9c), called directly
