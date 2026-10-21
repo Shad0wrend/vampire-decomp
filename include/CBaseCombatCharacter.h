@@ -110,6 +110,7 @@ public:
 	char sub_10334860(void *pCurrent);	// "CBaseCombatCharacter::SwitchToNextBestWeapon": scope trace (entity name), next = slot 20 of the global at 0x1070ba0c(this, pCurrent); when it is set and differs from pCurrent returns slot 388(next, 0), else false
 	void sub_1032e9f0(int index, CBaseEntity *pWeapon);	// "CBaseCombatCharacter::SetWeapon": scope trace (entity name), stores the weapon's handle in the array at +0x1624 (-1 for null)
 	void *sub_1032e8b0(int index);	// "CBaseCombatCharacter::GetWeapon": scope trace (entity name), the entity behind the handle at +0x1624 + index*4 when it resolves and its dword at +0x73c is not 0xff, else null
+	float sub_10346070();	// "CBaseCombatCharacter::GetRawAttackValue": scope trace (entity name), without an active weapon 0.0f; the global at 0x1093720c (slot 1 false and the float at +0x28 negative) selects the weapon's attack source value, else that float (0 when slot 1 is true)
 	void sub_103221b0(const char *msg);	// "CBaseCombatCharacter::DebugFeedTrace": scope trace (entity name), DevMsg("%f : Feeding - %s\n", gpGlobals->curtime, msg or "Feed Trace")
 	void sub_1032aa40();	// "CBaseCombatCharacter::Weapon_FrameUpdate": scope trace (entity name), when the active weapon handle at +0x19a4 resolves calls slot 369(this) on that weapon
 	void sub_1032e210(void *pEvent);	// "CBaseCombatCharacter::Weapon_HandleAnimEvent": scope trace (entity name), when the active weapon handle at +0x19a4 resolves calls slot 370(pEvent, this) on that weapon
