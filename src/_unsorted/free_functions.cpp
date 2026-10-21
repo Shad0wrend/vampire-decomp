@@ -32940,6 +32940,33 @@ void CBreakableProp::sub_1018f750(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f7f0 size=0x77
+#include "CUnknown1018f960.h"
+#include "COutputEvent.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CSlot266Ent {
+	S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+	S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8) S10(b9)
+	S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5)
+	virtual void a260(); virtual void a261(); virtual void a262(); virtual void a263(); virtual void a264(); virtual void a265();
+	virtual void vfunc266(void *pActivator);
+};
+
+void CUnknown1018f960::sub_1018f7f0(inputdata_t &data)
+{
+	m_iHealth -= data.value.fieldType == 4 ? data.value.iValue : 0;
+	void *pActivator = data.pActivator;
+	int value = m_iHealth;
+	((CVariantCopy *)m_out0748)->sub_1000b320(4, &value);
+	((COutputEvent *)m_out0748)->sub_100cd300(*(CVariantCopy *)m_out0748, pActivator, this, 0.0f);
+	if (m_iHealth <= 0)
+		((CSlot266Ent *)this)->vfunc266(data.pActivator);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f960 size=0x6d
 #include "CUnknown1018f960.h"
 #include "COutputEvent.h"
