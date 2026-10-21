@@ -19,8 +19,17 @@ public:
 	void sub_1000303a();	// CAI_BaseNPCTroika::vfunc103 (Spawn), called directly
 	void sub_100153a7(int flags);	// CBaseCombatCharacter member (stub of 0x1033c6b0), called directly
 	void sub_1000df44(unsigned int flags);	// CBaseEntity::RemoveFlag2 (stub of 0x100b3900), called directly
+	void sub_1039e970();	// starts the schedule of the tentacle state (+0x6670): 2 -> 0x16a, 3 -> 0x16a / 0x16c by the check of activity 0x1d, else after sub_1039f310 0x16b; each records the source file / line at +0x1b30 / +0x1b34; then take-damage mode 1 and the flag bytes at +0x6699 / +0x63d8
+	int sub_10295460(int a, int b);	// CAI_BaseNPCTroika member (stub 0x10009c14), called directly
+	void sub_102ae750(int schedule, int a);	// CAI_BaseNPCTroika member (stub 0x1000198d), called directly
+	void sub_1039f310();	// stub 0x100072ac
 
-	char m_pad0004[0x63d8 - 4];
+	char m_pad0004[0x200 - 4];
+	int m_nTakeDamage;	// 0x200
+	char m_pad0204[0x1b30 - 0x204];
+	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule selection
+	int m_nLine1b34;	// 0x1b34: its line
+	char m_pad1b38[0x63d8 - 0x1b38];
 	char m_b63d8;	// 0x63d8
 	char m_pad63d9[0x6664 - 0x63d9];
 	int m_nModelIndex6664;	// 0x6664: PrecacheModel result of the baby model
