@@ -39148,6 +39148,27 @@ void CUnknown1020a240::sub_1020a240(const char *text, int a, int b, int c, int d
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020aa70 size=0x64
+#include "CBaseVampireSkillEntity.h"
+
+extern int vt_104858cc[];
+
+CBaseVampireSkillEntity *CBaseVampireSkillEntity::sub_1020aa70()
+{
+	sub_1018f1c0();
+	m_items794[0].sub_100cd2a0();
+	m_items794[1].sub_100cd2a0();
+	m_items794[2].sub_100cd2a0();
+	m_items794[3].sub_100cd2a0();
+	m_items794[4].sub_100cd2a0();
+	*(int **)this = vt_104858cc;
+	m_n780 = 1;
+	m_n784 = 1;
+	m_n790 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b000 size=0x9
 int CBaseVampireSkillEntity::sub_1020b000(CBaseEntity *pPlayer)
 {
