@@ -43,4 +43,6 @@ public:
 	int sub_100e79f0(int pszText, int nKey, int nSize);	// copies a string field of a line (stub 0x10004de5)
 	char *sub_100e1680(int index, const char *pszExtension, int bCreate);	// builds the speech file name of line `index` for the extension (stub 0x10013ff2); with bCreate set it also records the name
 	char *sub_100e1880(int index);	// "CDialog::LookupSpeechFile": scope trace, the speech file of line `index` that exists in the file system, tried with three extensions (the last two are recorded), else null
+	int sub_100e65d0();	// "CDialog::clan_offset": the NPC's clan (handle at +4) as an index 0..6 (Brujah, Gangrel, Nosferatu, Toreador, Tremere, Ventrue, Malkavian), -1 when unknown (stub 0x1000aeed)
+	char sub_100e15c0(DialogLine *pLine, char bExtended);	// the line's text colour / marker character for the speaker's clan; 'E' (0x45) or 'F' (0x46) when the line has no text for the clan
 };
