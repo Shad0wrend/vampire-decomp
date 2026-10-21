@@ -51,6 +51,10 @@ public:
 	int sub_1000e20a();	// the activity of task 0x14b (the free getter at 0x1037b870)
 	int sub_100079b4();	// the activity of task 0x14a (the free getter at 0x1037b890)
 	void sub_10014524(int activity);	// CAI_BaseNPCTroika::sub_10289ee0 (stub 0x10014524): starts the activity
+	void vfunc433();	// slot 433 "CNPC_VGhoulCroucher::GatherConditions": scope trace (entity name); not yet disturbed (byte +0x6666 clear): when sub_10269aa0(0x54) holds it calls sub_1037b6e0(this) and leaves, else, still clear, runs the debug hook (g_10924a6c slot 1) and sub_10269a20(0x79); disturbed: the Troika version, then, with sub_10269aa0(0x54) and no positive counter at +0x5bb0 and an enemy (+0x5da4, slot 167), tells that squad object sub_103161a0(slot 167)
+	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
+	char sub_10269aa0(int a);	// stub 0x10014df8, a condition test, called with 0x54
+	void sub_10269a20(int a);	// stub 0x100041b0, called with 0x79
 
 	char m_pad03e0[0xff0 - 0x3e0];
 	int m_nActivityff0;	// +0xff0: the current activity
@@ -63,7 +67,11 @@ public:
 	char m_pad1a9c[0x1b30 - 0x1a9c];
 	const char *m_pszFile1b30;	// +0x1b30: source file of the last schedule selection
 	int m_nLine1b34;	// +0x1b34: its line
-	char m_pad1b38[0x5dec - 0x1b38];
+	char m_pad1b38[0x5bb0 - 0x1b38];
+	int m_n5bb0;	// +0x5bb0: counter
+	char m_pad5bb4[0x5da4 - 0x5bb4];
+	int m_n5da4;	// +0x5da4: the squad object / enemy pointer
+	char m_pad5da8[0x5dec - 0x5da8];
 	int m_n5dec;	// +0x5dec
 	char m_pad5df0[0x6264 - 0x5df0];
 	float m_fl6264;	// +0x6264
