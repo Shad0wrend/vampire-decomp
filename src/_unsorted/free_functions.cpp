@@ -16613,6 +16613,23 @@ char *sub_100c1870(SStudioHdr *hdr, int seq, SStudioHdr **ppOut, int count, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c2bd0 size=0xc7
+void sub_100c1f40(int a1, void *pB, void *pA, int a4, int a5, int a6, int a7);
+void sub_100c13a0(int a1, int a3, int a2, int a4, void *pA, void *pB, float flWeight, int a7, int a9, int a10);
+
+void sub_100c2bd0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, float flWeight)
+{
+	char bufA[0x15e0];
+	char bufB[0x1068];
+	if (flWeight > 1.0f)
+		flWeight = 1.0f;
+	else if (flWeight < 0.0f)
+		flWeight = 0.0f;
+	sub_100c1f40(a1, bufB, bufA, a4, a5, a6, a7);
+	sub_100c13a0(a1, a3, a2, a4, bufA, bufB, flWeight, a7, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c40e0 size=0x54
 struct Elem_100c40e0 { char pad[0x88]; unsigned char flags; char pad2[3]; int type; char pad3[0xa0-0x90]; };
 struct Base_100c40e0 { char pad[0xf4]; int offset; };
