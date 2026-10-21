@@ -4002,6 +4002,7 @@
 0x100112fc func   ?sub_102273b0@CUnknown102273b0@@QAEXH@Z CUnknown102273b0::sub_102273b0
 0x10011315 func   ?vfunc5@CTempEntTester@@UAEPAV1@I@Z CTempEntTester::vfunc5
 0x1001131f func   _item_g_bach_journal item_g_bach_journal
+0x10011329 func   ?sub_100d2b30@@YAXXZ sub_100d2b30
 0x10011338 func   _item_k_fu_cell_key item_k_fu_cell_key
 0x10011347 func   _npc_generic_bathack npc_generic_bathack
 0x1001134c func   ?sub_1027f1e0@@YGPBDH@Z sub_1027f1e0

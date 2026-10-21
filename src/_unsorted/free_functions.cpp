@@ -20164,6 +20164,55 @@ void sub_100d23a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2b30 size=0x7b
+#include "CBaseCombatCharacter.h"
+#include "IVEngineServer.h"
+#include "ScopeTrace.h"
+
+#define U1(n) virtual void u##n();
+#define U10(n) U1(n##0) U1(n##1) U1(n##2) U1(n##3) U1(n##4) U1(n##5) U1(n##6) U1(n##7) U1(n##8) U1(n##9)
+
+struct CCharSlots : CBaseCombatCharacter	// the slots after the modelled ones, up to 459
+{
+	U1(375) U1(376) U1(377) U1(378) U1(379)
+	U10(38) U10(39) U10(40) U10(41) U10(42) U10(43) U10(44)
+	U1(452) U1(453) U1(454) U1(455) U1(456) U1(457) U1(458)
+	virtual void vfunc459(const char *pszName, int a);	// slot 459 (+0x72c)
+};
+
+struct CCmdPlayer
+{
+	char m_pad0000[0xa8];
+	CBaseCombatCharacter *m_pChar;
+};
+
+struct CGiveWeapon
+{
+	void sub_10258620(int a);	// stub 0x1000519b
+};
+
+extern IVEngineServer *g_1070b22c;
+extern int g_10752e9c;
+CCmdPlayer *__cdecl sub_101193b0();
+void __cdecl sub_10002095(const char **ppOut, int arg);
+
+void sub_100d2b30()
+{
+	CCmdPlayer *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		CBaseCombatCharacter *pChar = pPlayer->m_pChar;
+		if (pChar && g_10752e9c) {
+			const char *pszName;
+			sub_10002095(&pszName, g_1070b22c->vfunc84(1));
+			((CCharSlots *)pChar)->vfunc459(pszName ? pszName : g_106b8540, 0);
+			CGiveWeapon *pWeapon = (CGiveWeapon *)pChar->sub_10335950(pszName ? pszName : g_106b8540);
+			if (pWeapon)
+				pWeapon->sub_10258620(0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2c30 size=0xc2
 #include "CUnknown1021e8e0.h"
 
