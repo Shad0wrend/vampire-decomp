@@ -15,4 +15,8 @@ public:
 	virtual void vfunc103();	// slot 103 "CPayphone::Spawn": CAI_BaseNPCTroika::vfunc103, next think curtime + constant, slot 93(0, 0), SetSolid(2) (inlined scope trace), health 80000, take-damage mode 0, AddFlag(0x10000), +0x6f0 / +0x6f8 cleared around sub_10090950(), AddSolidFlags(4) (inlined scope trace), RemoveFlag2(4), AddFlag2(0x10)
 	void sub_10298d30();	// CAI_BaseNPCTroika::vfunc103 (stub 0x1000303a), called directly
 	void sub_10090950();	// CBaseAnimating member (stub 0x100117b1), called directly
+	void vfunc431();	// slot 431 "think" (plain member): slot 250(0), then follows the NPC behind the handle at +0xfe8 (copies its activity / sequence state) or idles
+	void sub_102c1400();	// stub 0x100125bc
+	void sub_10272650(int a);	// CAI_BaseNPC member (stub 0x100097d2): sets the ideal activity
+	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence (stub 0x100125c1), called directly
 };
