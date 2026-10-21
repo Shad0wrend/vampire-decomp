@@ -13184,6 +13184,34 @@ int sub_1009a370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009a500 size=0x90
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_10002c7f(const char *pVarName, int offset, int sizeofVar);	// SendPropPredictableId
+
+extern SendTable g_106cf1d4;
+
+// TARGET: sub_1009a500
+int sub_1009a500()
+{
+	static const char *pTableName = "DT_PredictableId";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10002c7f("m_PredictableID", 0x1a8, 4),
+		sub_10007bfd("m_bIsPlayerSimulated", 0x43c, 1, 1, 1, 0, 0),
+	};
+	g_106cf1d4.sub_1000e8fe(props + 1, 2, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ab70 size=0xa1
 #include "CBaseEntity.h"
 #include "CUnknown1070b22c.h"
