@@ -3271,6 +3271,33 @@ void CBaseEntity::sub_1003eb50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003f810 size=0xc6
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+#define S_V1(p) virtual void p();
+#define S_V10(p) S_V1(p##0) S_V1(p##1) S_V1(p##2) S_V1(p##3) S_V1(p##4) S_V1(p##5) S_V1(p##6) S_V1(p##7) S_V1(p##8) S_V1(p##9)
+#define S_V100(p) S_V10(p##0) S_V10(p##1) S_V10(p##2) S_V10(p##3) S_V10(p##4) S_V10(p##5) S_V10(p##6) S_V10(p##7) S_V10(p##8) S_V10(p##9)
+
+struct S1003f810Slots	// the entity's vtable up to slot 221 (GetAngles)
+{
+	S_V100(sa) S_V100(sb) S_V10(sc) S_V10(sd)
+	S_V1(se)
+	virtual float *GetAngles();
+};
+
+void CBaseEntity::sub_1003f810(float flFrameTime)
+{
+	ScopeTrace trace("CBaseEntity::SimulateAngles", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	const float *pAngles = ((S1003f810Slots *)this)->GetAngles();
+	Vector vecNew;
+	vecNew.x = flFrameTime * m_angVel3c8[0] + pAngles[0];
+	vecNew.y = flFrameTime * m_angVel3c8[1] + pAngles[1];
+	vecNew.z = flFrameTime * m_angVel3c8[2] + pAngles[2];
+	vfunc64(&vecNew.x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041b40 size=0x16
 bool sub_10041b40(int *a, int *b)
 {

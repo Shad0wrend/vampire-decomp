@@ -1251,6 +1251,7 @@
 0x10005e89 func   ?sub_10136490@@YIXPADHH@Z sub_10136490
 0x10005e9d func   ?sub_100d1cc0@SFilter@@QAEPAU1@E@Z SFilter::sub_100d1cc0
 0x10005ea2 func   ?sub_1012cf90@@YGXH@Z sub_1012cf90
+0x10005ea7 func   ?sub_1003f810@CBaseEntity@@QAEXM@Z CBaseEntity::sub_1003f810
 0x10005eac func   ?sub_1008bc50@CBaseAnimating@@QAEXPAVCBaseEntity@@@Z CBaseAnimating::sub_1008bc50
 0x10005ee3 func   ?sub_102718e0@CUnknown102718e0@@QAEPAV1@PBV1@@Z CUnknown102718e0::sub_102718e0
 0x10005ef2 func   ?sub_1005a510@@YAHXZ sub_1005a510
