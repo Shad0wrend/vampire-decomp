@@ -48,6 +48,37 @@ int CAI_BaseNPCTroika::vfunc359(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029fcf0 size=0x89
+#include "CAI_BaseNPCTroika.h"
+
+struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
+extern CGlobalVarsX *g_1070b228;
+extern float g_1049a1c0;
+extern float g_1049a1c4;
+
+struct CTroikaKindObj { int sub_103498b0(); };
+
+char CAI_BaseNPCTroika::sub_1029fcf0(int a, CBaseEntity *pEnt, int b)
+{
+	if (!pEnt)
+		return 0;
+	if (!sub_1028a190())
+		return 0;
+	if (((CTroikaKindObj *)pEnt)->sub_103498b0() != 3) {
+		*(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		*(int *)((char *)this + 0x1b34) = 0x2939;
+		sub_102ae750(0xd7, 0);
+	} else {
+		*(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		*(int *)((char *)this + 0x1b34) = 0x2935;
+		sub_102ae750(0xd8, 0);
+	}
+	float fDelay = (g_1049a1c0 - g_1049a1c4) + g_1049a1c4;
+	*(float *)((char *)this + 0x1564) = fDelay + g_1070b228->m_curtime;
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b6fe0 size=0xe1
 #include "CBaseEntity.h"
 #include "CAI_BaseNPCTroika.h"

@@ -1401,6 +1401,7 @@
 0x1000765d func   _npc_maker npc_maker
 0x10007662 func   ?sub_100ddf60@CBaseEntity@@QAEXPBH@Z CBaseEntity::sub_100ddf60
 0x10007671 func   ?sub_10081eb0@@YIXPAUCSlots@@HH@Z sub_10081eb0
+0x10007676 func   ?sub_1029fcf0@CAI_BaseNPCTroika@@QAEDHPAVCBaseEntity@@H@Z CAI_BaseNPCTroika::sub_1029fcf0
 0x10007680 func   ?sub_10092e20@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::sub_10092e20
 0x100076a3 func   ?sub_100a98f0@CBaseEntity@@QAEHHH@Z CBaseEntity::sub_100a98f0
 0x100076b2 func   ?vfunc104@CBaseDoor@@UAEXXZ CBaseDoor::vfunc104
