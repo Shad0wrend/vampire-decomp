@@ -8,4 +8,5 @@ public:
 	const char *m_pszName;
 
 	const char *sub_10050860();
+	CUnknown10050860 *sub_10050880();	// stub 0x10005ed9: the next object of the list
 };
