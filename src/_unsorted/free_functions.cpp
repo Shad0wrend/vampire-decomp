@@ -21918,6 +21918,40 @@ void CBaseButton::sub_100c9250(CBaseEntity *pActivator, CBaseEntity *pCaller, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9430 size=0xec
+#include "CEHandleGet.h"
+
+struct CButtonToucherView {
+	virtual void v0();
+	virtual unsigned int *GetRefEHandle();
+	char m_pad0004[0x4c - 4];
+	unsigned int m_flags4c;
+	char m_pad0050[0xa8 - 0x50];
+	int m_fieldA8;
+	bool Bit2() const { unsigned int f = m_flags4c; f >>= 2; return (f & 1) != 0; }
+};
+
+// TARGET: CBaseButton::sub_100c9430
+void CBaseButton::sub_100c9430(CBaseEntity *pOther)
+{
+	CButtonToucherView *pTouch = (CButtonToucherView *)pOther;
+	if (pTouch->m_fieldA8 != 0 || (m_b5c5 && pTouch->Bit2())) {
+		m_hActivator53c = *pTouch->GetRefEHandle();
+		int state = sub_100c93b0();
+		if (state && !m_b5c4) {
+			m_pfnTouch1ec = 0;
+			if (state == 2) {
+				m_Output578.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0.0f);
+				sub_100c97c0();
+			} else {
+				m_Output578.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0.0f);
+				sub_100c9560();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9560 size=0xcc
 #include "CBaseButton.h"
 #include "CBaseToggle.h"
