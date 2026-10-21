@@ -26,4 +26,4 @@
 	char sub_10160ec0();	// stub 0x1001327d
 	float sub_10346070();	// "CBaseCombatCharacter::GetRawAttackValue" (stub 0x10009511), called directly
 	void sub_10160560();	// adds the active ranged weapon's current attack value (interpolated between its roll slot's values at +0x3d0 / +0x3d4, minus +0x3cc, times +0x400) to the meter at +0x1ddc, clamped to 0..99
-	void sub_10178660(char bCenter, CBaseEntity *pEnt);	// slot 306: hands sub_10178590 the entity's position: its centre (slot 192) when bCenter, else its camera position (the object at +0x98's worker, or slot 193) unless that is the zero vector, then the centre
+	void sub_10178660(CBaseEntity *pEnt, char bCenter);	// slot 306: hands sub_10178590 the entity's position: its centre (slot 192) when bCenter, else its camera position (the object at +0x98's worker, or slot 193) unless that is the zero vector, then the centre
