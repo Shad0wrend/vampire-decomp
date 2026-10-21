@@ -638,6 +638,36 @@ float CBaseEntity::vfunc203()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1470 size=0xcb
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+
+struct CDamageModifier
+{
+	bool sub_100deb30();	// is active
+	float sub_100deab0();	// the scale
+};
+
+struct CDamageModifierNode
+{
+	CDamageModifier *m_pModifier;
+	int m_pad4;
+	int m_iNext;
+};
+
+float CBaseEntity::vfunc204()
+{
+	ScopeTrace trace("CBaseEntity::GetReceivedDamageScale", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	float flScale = 1.0f;
+	CDamageModifierNode **ppNodes = (CDamageModifierNode **)((char *)this + 0x230);
+	for (int i = *(int *)((char *)this + 0x23c); i != -1; i = (*ppNodes)[i].m_iNext) {
+		if ((*ppNodes)[i].m_pModifier->sub_100deb30())
+			flScale *= (*ppNodes)[i].m_pModifier->sub_100deab0();
+	}
+	return flScale;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1a70 size=0x94
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;

@@ -3280,6 +3280,7 @@
 0x1000f0f6 func   ?sub_1021e410@@YIXPAH@Z sub_1021e410
 0x1000f100 func   ?sub_103ef070@@YAHXZ sub_103ef070
 0x1000f10f func   ?sub_10051a40@CDisciplineParticleUnit@@QAEXXZ CDisciplineParticleUnit::sub_10051a40
+0x1000f114 func   ?vfunc204@CBaseEntity@@QAEMXZ CBaseEntity::vfunc204
 0x1000f12d func   _item_w_sledgehammer item_w_sledgehammer
 0x1000f132 func   ?vfunc370@CWeaponRanged@@QAEXPAHPAX@Z CWeaponRanged::vfunc370
 0x1000f137 func   ?sub_10208e50@CUnknown10208e50@@QAEXPAUinputdata_t@@@Z CUnknown10208e50::sub_10208e50
