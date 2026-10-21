@@ -43686,6 +43686,41 @@ void sub_101ce2e0(PlayerSlots162 *pPlayer, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ce620 size=0x169
+#include "ScopeTrace.h"
+#include "CSingleUserRecipientFilter.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_1072604c;
+void sub_101ce620(void *pPlayer, int value, const char *s1, const char *s2, const char *s3, const char *s4, const char *s5)
+{
+    if (pPlayer) {
+        CSingleUserRecipientFilter filter(pPlayer);
+        filter.sub_1019cf50();
+        g_1070b22c->vfunc65(&filter, g_1072604c);
+        g_1070b22c->vfunc67(value);
+        g_1070b22c->vfunc78(s1);
+        if (s2)
+            g_1070b22c->vfunc78(s2);
+        else
+            g_1070b22c->vfunc78(g_106b8540);
+        if (s3)
+            g_1070b22c->vfunc78(s3);
+        else
+            g_1070b22c->vfunc78(g_106b8540);
+        if (s4)
+            g_1070b22c->vfunc78(s4);
+        else
+            g_1070b22c->vfunc78(g_106b8540);
+        if (s5)
+            g_1070b22c->vfunc78(s5);
+        else
+            g_1070b22c->vfunc78(g_106b8540);
+        g_1070b22c->vfunc66();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cea60 size=0xcf
 #include "IVEngineServer.h"
 #include "CSingleUserRecipientFilter.h"
