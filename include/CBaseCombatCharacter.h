@@ -117,6 +117,7 @@ public:
 	char *sub_10345980(CBaseEntity *pEnt);	// "CBaseCombatCharacter::GetMeleeDiceRolls": scope trace (entity name), finds the 16 byte record (array at +0xa88, count at +0xa94) whose leading handle resolves to pEnt; null when none
 	int sub_10345de0(CBaseEntity *pEnt);	// "CBaseCombatCharacter::GetNumAttackSuccesses": as GetMeleeDiceRolls, returns the second dword of the record (0 when none)
 	void sub_10323370();	// "CBaseCombatCharacter::AddToPresenceList": scope trace (entity name), appends this entity's handle (-1 when this is null) to the global vector of handles at 0x109370bc
+	void sub_10052030();	// "CBaseCombatCharacter::RemoveDisc...": scope trace (entity name), for every handle of the vector at +0x14c0 (size at +0x14cc): sets the entity's dword at +0x4b8 to -1 and removes it (sub_101cd940) or, with the byte at +0x4c5 set, delays its removal by SetNextThink(10.0f); clears the entry, then empties the vector (frees the memory unless the grow size at +0x14c8 is -1)
 
 	// Slots called directly so far; declared as plain members.
 	bool vfunc73(CBaseEntity *pOther);	// "CBaseCombatCharacter::CausesImpactDamage": scope trace, (pOther's flags at +0x434 & 0x20000000) != 0
