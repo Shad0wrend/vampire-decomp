@@ -4,6 +4,8 @@
 // the live entities, with its head index at +0x18010.
 #pragma once
 
+#include "CBaseHandle.h"
+
 class CBaseEntity;
 class Vector;
 
@@ -55,8 +57,8 @@ public:
 	CBaseEntity *sub_100f7890(CBaseEntity *pStart, const char *szName);	// the first entity after pStart that has an edict and whose name (slot 9) equals szName, case-insensitive
 	void sub_100f6e40(void *pList);	// handles a list of pending entities (the object at pList, a CUtlVector behind a leading dword); stub 0x10011de7
 	int sub_100f7040();	// the number of entity slots in use (stub 0x1000e4d0)
-	void *sub_100f9e20(void *pEnt, int a);	// "CBaseEntityList::AddNonNetworkableEntity"-like: errors when the list at +0x18020 (6 byte nodes) is empty, takes the entry at its head, unlinks and frees it and registers pEnt through sub_100f9fc0(pEnt, a, <the entry's data>, -1); returns pEnt
-	void sub_100f9fc0(void *pEnt, int a, int index, int b);	// stub 0x1000e98f
+	void *sub_100f9e20(void *pEnt, int a);	// "CBaseEntityList::AddNonNetworkableEntity"-like: errors when the list at +0x18020 (6 byte nodes) is empty, takes the entry at its head, unlinks and frees it and registers pEnt through sub_100f9fc0(pEnt, a, <the entry's data>, -1); returns pEnt (NB: the real signature of sub_100f9fc0 is below: its first stack argument is the hidden return slot of the CBaseHandle, so this one is AddNonNetworkableEntity(CBaseHandle *pRet, IHandleEntity *pEnt))
+	CBaseHandle sub_100f9fc0(CGlobalEntityList_Ent *pEnt, int slot, int forcedSerial);	// "CBaseEntityList::AddEntityAtSlot" (stub 0x1000e98f): stores pEnt (and the serial unless -1) in the slot, appends the slot to the live list, gives the entity its handle (slot 0), tells the list (slot 0: pEnt, handle) and returns the handle
 	CBaseEntity *sub_100290c0(const unsigned int *pHandle);	// "CBaseEntityList::LookupEntity" (stub 0x10009c8c): the entity behind the handle, 0 when the handle is invalid or stale
 	CBaseEntity *sub_100f79b0(CBaseEntity *pStart, const float *pCenter, float flRadius);	// "CGlobalEntityList::FindEntityInSphere" (stub 0x10013bbf)
 	CBaseEntity *sub_100f81f0(const Vector *pOrigin, const Vector *pDir, float flThreshold);	// "CGlobalEntityList::FindEntityInCone"-like: the live entity with a world edict (not worldspawn / soundent) whose direction from pOrigin lines up best with pDir (dot product at least flThreshold), 0 when none (stub 0x10007059)
