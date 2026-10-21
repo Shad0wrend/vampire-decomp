@@ -61,3 +61,4 @@
 	float vfunc203();	// slot 203 "CBaseEntity::GetAttackDamageScale": scope trace (entity name), the product of the modifiers of the list at +0x230 (head index +0x23c, 12 byte nodes with the next index at +8) that are not disabled
 	void sub_100a55b0(void *pPhysics);	// stub 0x1000d8be: the update of an entity whose move type is not simulated by vphysics (called by vfunc226 for move types 1 and 8)
 	void sub_100342c0();	// stub 0x10006456: run by vfunc226 after a vphysics update moved the entity
+	float vfunc204();	// slot 204 "CBaseEntity::GetReceivedDamageScale": scope trace (entity name), the product of the scales of the active modifiers in the same list (head index +0x23c, 12 byte nodes, next index at +8), 1.0f without any; declared as a plain member
