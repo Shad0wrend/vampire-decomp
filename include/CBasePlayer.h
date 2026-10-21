@@ -94,7 +94,9 @@ public:
 	CBP_V10(si1) CBP_V10(si2) CBP_V1(sj0) CBP_V1(sj1)
 	virtual void vfunc441();	// slot 441: collects the player's weapons (or ammo types) the game rules (global 0x1070ba0c, slots 61 / 62) ask for into a local list, then slot 442(1)
 	virtual void vfunc442(int a);
-	CBP_V1(sj4) CBP_V1(sj5) CBP_V1(sj6) CBP_V1(sj7) CBP_V1(sj8)
+	virtual void vfunc443(int a);
+	virtual void vfunc444();
+	CBP_V1(sj6) CBP_V1(sj7) CBP_V1(sj8)
 	virtual void vfunc448();
 	// slots 449..467
 	CBP_V1(sk0a)
@@ -198,4 +200,6 @@ public:
 	CBaseEntity *sub_1015d680(unsigned int hEntity);	// resolves an entity handle (stub 0x10013d09)
 	void sub_101644f0(int a, int b, int c);	// stub 0x1000f74f for 0x101644f0 (run first by slot 418 with -1, 0, 0)
 	void sub_1032a100(int activity);	// CBaseCombatCharacter member (stub 0x10002626): switches the activity
+	void sub_1032ead0();	// CBaseCombatCharacter member (stub 0x10005a9c), called directly
+	void sub_103345d0();	// CZeroFields103345d0::sub_103345d0 (stub 0x10015000), called directly
 };
