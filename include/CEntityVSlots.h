@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 9, 42, 62, 64, 86, 94, 105, 107, 118, 122, 158, 161, 167, 173,
-// 194, 202, 212, 216, 217 / 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 270, 274, 346, 360, 381, 448 and 457 of an entity class that does not model its vtable.
+// 194, 202, 212, 216, 217 / 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 270, 274, 306, 346, 360, 381, 448 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -86,7 +86,10 @@ public:
 	virtual const char *slot274();	// terminal: the name of the current screen / script
 	EVS(275) EVS(276) EVS(277) EVS(278) EVS(279)
 	EVS10(28) EVS10(29)
-	EVS10(30) EVS10(31) EVS10(32) EVS10(33)
+	EVS(300) EVS(301) EVS(302) EVS(303) EVS(304) EVS(305)
+	virtual void slot306(int a, int b);	// NPC: takes two arguments (the scripted-sequence cleanup passes its argument and 0)
+	EVS(307) EVS(308) EVS(309)
+	EVS10(31) EVS10(32) EVS10(33)
 	EVS(340) EVS(341) EVS(342) EVS(343) EVS(344) EVS(345)
 	virtual unsigned char slot346();	// weapon: a flag byte (bit 3 = may be held twice)
 	EVS(347) EVS(348) EVS(349)
