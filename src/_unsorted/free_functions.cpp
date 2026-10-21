@@ -32314,6 +32314,24 @@ float sub_1013c940(const Vector &P, const Vector &vLineA, const Vector &vLineB, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013cf40 size=0x79
+float sub_10007090(const float *a, const float *b, const float *c, float *dir);
+
+void sub_1013cf40(const float *a, const float *b, const float *c, float *out, float *pT)
+{
+	float dir[2];
+	float t = sub_10007090(a, b, c, dir);
+	if (t > 1.0f)
+		t = 1.0f;
+	else if (t < 0.0f)
+		t = 0.0f;
+	if (pT)
+		*pT = t;
+	out[0] = dir[0] * t + b[0];
+	out[1] = dir[1] * t + b[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d0e0 size=0x18d
 #include "Vector.h"
 
