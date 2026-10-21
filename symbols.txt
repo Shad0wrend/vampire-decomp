@@ -1387,6 +1387,7 @@
 0x10006947 func   ?sub_101df260@S101df260@@QAEPAU1@H@Z S101df260::sub_101df260
 0x10006956 func   ?vfunc20@CSingleplayRules@@UAEPAVCBaseEntity@@PAV2@0@Z CSingleplayRules::vfunc20
 0x10006965 func   ?vfunc2@CTEBeamLaser@@UAEPAV1@I@Z CTEBeamLaser::vfunc2
+0x1000696a func   ?sub_1034bbf0@CNPCMaker@@QAEXXZ CNPCMaker::sub_1034bbf0
 0x1000696f func   ?sub_100eb060@@YGII@Z sub_100eb060
 0x1000697e func   _npc_VTzimisceRunner npc_VTzimisceRunner
 0x10006992 func   ?sub_102d1220@CUnknown102d1220@@QAE_NHPBD@Z CUnknown102d1220::sub_102d1220
