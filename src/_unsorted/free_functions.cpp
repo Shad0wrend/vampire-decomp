@@ -29678,6 +29678,52 @@ void CUnknown1018e2a0::sub_1018e2a0(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e790 size=0x12e
+#include "CActivityCopyProp.h"
+#include "CBaseAnimating.h"
+#include "CUnknown1018e2a0.h"
+#include "CEntityVSlots.h"
+
+extern int g_1058d1ac;
+extern char g_106b8540[];
+extern char g_10538764[];
+extern char g_1058ed4c[];
+
+void sub_1018e910(CBaseEntity *pEnt);
+CEntityVSlots *sub_100a9ab0(const char *pszClassname, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
+int sub_101d1280(CBaseEntity *pEnt);
+void sub_1042bff0(unsigned int *pOut, const char *psz);
+void *sub_10430b64(void *p, long vfDelta, void *pSrcType, void *pTargetType, int isReference);
+
+// TARGET: sub_1018e790
+void sub_1018e790(CBaseEntity *pEnt, const char *pszActivity)
+{
+	if (pEnt) {
+		sub_1018e910(pEnt);
+		if (g_1058d1ac < 0 || g_1058d1ac > 5)
+			g_1058d1ac = 1;
+		for (int i = 0; i < g_1058d1ac; i++) {
+			Vector ang = *((CEntityVSlots *)pEnt)->slot219();
+			ang.y = (float)(360 / g_1058d1ac * i) + ang.y;
+			CEntityVSlots *pProp = sub_100a9ab0("activity_copy_prop", (const float *)((CEntityVSlots *)pEnt)->slot217(), &ang.x, 0);
+			if (pProp) {
+				((CBaseEntity *)pProp)->vfunc11(g_106b8540);
+				((CBaseEntity *)pProp)->vfunc13("activity_copy_prop");
+			}
+			CActivityCopyProp *pCopy = (CActivityCopyProp *)sub_10430b64(pProp, 0, g_10538764, g_1058ed4c, 0);
+			unsigned int str;
+			sub_1042bff0(&str, pszActivity);
+			((CEntityVSlots *)pCopy)->slot212(str);
+			sub_101d1280((CBaseEntity *)pProp);
+			((CUnknown1018e2a0 *)pCopy)->sub_1018e2a0(pEnt);
+			((CBaseAnimating *)pEnt)->sub_100976e0();
+			((CBaseAnimating *)pCopy)->sub_100976e0();
+		}
+	}
+	g_1058d1ac = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e910 size=0x84
 #include "CGlobalEntityList.h"
 #include "CActivityCopyProp.h"
