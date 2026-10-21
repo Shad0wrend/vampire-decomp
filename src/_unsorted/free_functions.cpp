@@ -29881,6 +29881,39 @@ void S101172c0::sub_101172c0(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10117310 size=0x106
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+struct CMoverUnit : CBaseEntity
+{
+	void sub_10117310(int unused);
+	void sub_10116570(Vector vecTarget, float flSpeed);
+
+	char m_pad03e0[0x508 - 0x3e0];
+	Vector m_vecA508;
+	Vector m_vecA514;
+	char m_pad0520[0x540 - 0x520];
+	Vector m_vecB540;
+};
+
+// TARGET: CMoverUnit::sub_10117310
+void CMoverUnit::sub_10117310(int unused)
+{
+	if (!(*((CEntityVSlots *)this)->slot220() == m_vecB540))
+	{
+		sub_10116570(m_vecB540, *(float *)((char *)this + 0x164));
+		return;
+	}
+	if (!(*((CEntityVSlots *)this)->slot220() == m_vecA508))
+	{
+		sub_10116570(m_vecA508, *(float *)((char *)this + 0x164));
+		return;
+	}
+	sub_10116570(m_vecA514, *(float *)((char *)this + 0x164));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119750 size=0x145
 extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);

@@ -2887,6 +2887,7 @@
 0x1000bd7a func   ?sub_100766f0@CUnknown100766f0@@QAEXH@Z CUnknown100766f0::sub_100766f0
 0x1000bd7f func   ??0CTraceFilterSimple@@QAE@PAXH@Z CTraceFilterSimple::CTraceFilterSimple
 0x1000bd89 func   ?sub_100e7630@CDialog@@QAEXPAX@Z CDialog::sub_100e7630
+0x1000bd93 func   ?sub_10117310@CMoverUnit@@QAEXH@Z CMoverUnit::sub_10117310
 0x1000bda2 func   ?vfunc71@CItemContainer@@QAEXXZ CItemContainer::vfunc71
 0x1000bda7 func   ?sub_102db670@@YAXXZ sub_102db670
 0x1000bdac func   ?sub_100adfd0@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100adfd0
