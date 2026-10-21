@@ -29,4 +29,5 @@ public:
 	char sub_100ab020(int a, int b, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly
 	void vfunc243(CBaseEntity *pEnt, int nType, const char *pszName);	// slot 243 "CEnvParticle::AttachToEntity": parents the particle to pEnt, stores the attachment type (+0x458) and name (+0x45c), sets move type 11, aims at the entity of the handle at +0x254, calls slot 63(0, 0, 0) and stores the attachment index sub_100fafa0(pEnt, nType, pszName) at +0x460
 	void sub_100fb1f0(CBaseEntity *pEnt, int nType, int nAttachment);	// like vfunc243 with the attachment index given: stores it at +0x460 and takes the attachment name (at +0x45c) from the studio header of the aim entity (handle at +0x37c), "" when there is none
+	void sub_100fb980(float flValue);	// stub 0x10007103: sets the emitter's scale / alpha (the burning ghoul fades its fire with its distance)
 };
