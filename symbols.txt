@@ -66,6 +66,7 @@
 0x100014b0 func   ?sub_1029b180@CAI_BaseNPCTroika@@QAE_NPAX@Z CAI_BaseNPCTroika::sub_1029b180
 0x100014d8 func   ?vfunc11@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc11
 0x100014e2 func   ?sub_102d1540@CAI_BaseNPCTroika@@QAE_NPAX@Z CAI_BaseNPCTroika::sub_102d1540
+0x100014f1 func   ?sub_100548b0@@YAXXZ sub_100548b0
 0x100014fb func   ?sub_10411160@CWeaponMelee@@QAEDPAVCBaseEntity@@D@Z CWeaponMelee::sub_10411160
 0x10001500 func   ?sub_1020df00@CPropSwitch@@QAEMH@Z CPropSwitch::sub_1020df00
 0x10001505 func   ?vfunc382@CBasePlayer@@UAE_NPAVCBaseCombatWeapon@@@Z CBasePlayer::vfunc382

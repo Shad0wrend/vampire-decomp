@@ -5977,6 +5977,47 @@ void CBaseCombatCharacter::sub_100544f0(int which)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100548b0 size=0x117
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CVDmg_t.h"
+#include "ScopeTrace.h"
+
+struct SPlayerView
+{
+	char pad[0xa8];
+	CBaseCombatCharacter *pChar;
+};
+
+SPlayerView *sub_101193b0();
+
+void sub_100548b0()
+{
+	ScopeTrace trace("CC_VTestBloodshieldSoak", g_106b8540);
+	SPlayerView *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		CBaseCombatCharacter *pChar = pPlayer->pChar;
+		if (pChar) {
+			CVStatList_t *pList = CVStatListSet::Of(pChar)->Find(2);
+			int nStat = pList->sub_10010609(0xc);
+			int nTimes;
+			if (nStat > 0)
+				nTimes = 5 - nStat;
+			else
+				nTimes = 6;
+			if (nTimes > 0) {
+				CVDmgBlock16_t block(2, 0xc);
+				do {
+					pChar->sub_10338440((const int *)&block);
+					nTimes--;
+				} while (nTimes != 0);
+			}
+			pChar->sub_100544f0(1);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10054ad0 size=0xf0
 #include "CUtlRBTreeInsert24.h"
 
