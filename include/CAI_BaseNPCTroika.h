@@ -154,10 +154,13 @@ public:
 	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd), called directly
 	void sub_102aab70(int unused);	// looks the NPC's target toward a position: with flag 0x10 of +0x14bc and an enemy (slot 167) the position slot 541 gives for it, with flag 0x20 and the entity of the handle at +0x5ce4 that entity's origin (slot 217); when slot 556 does not accept the position it is handed to the motor (+0x5d44) as a facing target with weight -2.0f; takes one unused stack argument
 	bool sub_10290200(int unused);	// task state 2 of the scripted-action runner (CAI_BaseNPCTroika::RunAlternateAction, state at +0x644c): after the base work, once curtime passed the time at +0x6450, when the entity of the handle at +0x5d24 is live runs slot 448(0xe) and clears the handle, the byte at +0x5d30 and the state; else lets the object at +0x5d34 decide (sub_102ee2e0) to run sub_102bf7e0, then slot 528 and clears the state; always true
+	void sub_102c0360();	// scripted-sequence end: when the entity of the handle at +0xfe8 resolves, clears the byte at +0x1590, hands (that entity, this, 0) to the sub-object at +0x5f5c (stub 0x10010794) and runs sub_10107050(0); then, unless the global at 0x109241fc says otherwise, clears the "entity_debug_stats" flag (slot 4 of the named object) and sub_10119900(0)
 
 	char m_pad0004[0x204 - 4];
 	unsigned int m_flags204;
-	char m_pad0208[0x14bc - 0x208];
+	char m_pad0208[0xfe8 - 0x208];
+	unsigned int m_hfe8;
+	char m_pad0fec[0x14bc - 0xfec];
 	unsigned int m_flags14bc;
 	char m_pad14c0[0x1590 - 0x14c0];
 	char m_b1590;
