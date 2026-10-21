@@ -111,6 +111,7 @@ public:
 	bool sub_10269df0(int condition);	// like sub_10269d30 but true when the bit is clear in the array at +0x5c5c and set in the one at +0x5c8c
 	bool sub_10269c70(int condition);	// translates the condition, false for an invalid one or without a target (+0x5c38), else true when its bit is set in the array at +0x5c74 or in the one at +0x5c8c
 	int sub_102b8c40();	// when state 0x4c or 0x4d is set: clears the byte at +0x5b80, copies the three dwords at +0x5b9c to +0x5dd0, stamps the source file name and line 0x5f8b at +0x1b30 / +0x1b34 and returns 0x8a, else 0
+	int sub_102b8a60();	// schedule pick by the conditions (3 -> 0x60, 1/5/0x26 -> 0x59..0x5e by flag bits 27 of +0x5d8c and 21 of +0x14b8, 2 -> 0x5d / 0x5f, 21 of +0x14b8 -> 0x5c), stamping the source file name and a line at +0x1b30 / +0x1b34 with each answer; 0 when none
 	int sub_10295590(int activity);	// slot 375 base implementation (NPC_TranslateActivity), called directly
 	void sub_1028e8b0(CBaseEntity *pEnt, int a);	// runs sub_1028e940(a) when pEnt is null-safe related to this NPC: this NPC has no slot 167 value, or pEnt is that value, or the object at pEnt+0x98 has the same slot 167 value
 	void sub_1028e940(int a);
