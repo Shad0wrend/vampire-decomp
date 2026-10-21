@@ -4,6 +4,7 @@
 #include "CAI_BaseNPC.h"
 
 struct inputdata_t;
+class CAI_BaseNPCTroika;
 
 struct CAI_CondTable
 {
@@ -19,6 +20,7 @@ struct CAI_CondOwner
 struct CAI_NamedThing	// one of the three global objects an NPC can be bound to by name
 {
 	const char *sub_1025e120();	// the name (stub 0x1000f579)
+	char sub_1025dca0(CAI_BaseNPCTroika *pNPC, int a);	// whether the NPC may use this named thing (stub 0x10015564)
 };
 
 class CAI_BaseNPCTroika : public CAI_BaseNPC
@@ -125,6 +127,8 @@ public:
 	void sub_1000dc38();	// stub 0x1000dc38 for 0x10273760, run by sub_102b52a0 when its first argument is set
 	char sub_1029fcf0(int a, CBaseEntity *pEnt, int b);	// slot 318: false without pEnt or when sub_1028a190 refuses; else (by pEnt's kind == 3) picks schedule 0xd8 / 0xd7, stamps the source file / line at +0x1b30 / +0x1b34, runs sub_102ae750(schedule, 0) and arms the timer at +0x1564 with curtime + a constant; true
 	void sub_102ae750(int schedule, int a);	// stub 0x1000198d
+	char sub_102b57c0(int unused);	// slot 600: when the active weapon (sub_10007e19) is a ranged one (type flags bits 15 / 16) and the flag byte at +0x6078 is clear, asks the named thing at +0x65e8 (sub_1025dca0); on yes sets the flag, stamps the next time at +0x6074 (curtime + random 7.5 .. 15.0), notifies the global at 0x10924edc and returns true; else clears the flag and returns false
+	int sub_10007e19();	// CBaseCombatCharacter member (the stub at 0x10007e19 for 0x1032e7b0): the active weapon
 
 	char m_pad0004[0x14bc - 4];
 	unsigned int m_flags14bc;
