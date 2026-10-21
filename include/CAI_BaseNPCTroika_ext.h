@@ -27,3 +27,4 @@
 	void sub_1033c6b0(unsigned int flags);	// "CBaseCombatCharacter::AddMiscFlag" (stub 0x100153a7), called directly
 	void sub_1026d050();	// stub 0x1000c153, called directly
 	void sub_10273790(const char *pszCommand, int a);	// stub 0x1000421e, called directly with a console style command
+	void sub_10295ab0(float flDelay);	// "CAI_BaseNPCTroika::ClearHintNode": scope trace (entity name); with a hint node (+0x5ddc) set: unlocks it (flDelay) when this NPC holds the lock, clears the node (+0x5ddc, +0x6404) and bit 13 of +0x14b8; DevMsg "WARNING: %s called ClearHintNode" when the hint's flags (+0x474) have none of 0x1f and the vector at +0x65d0 was unset (-1.0f), then resets that vector to -1.0f
