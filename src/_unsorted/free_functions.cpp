@@ -40561,6 +40561,46 @@ int CUnknown10204f60::sub_10204f60(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205030 size=0x94
+#include "CUnknown10205030.h"
+
+extern CUnknown10200370 g_1074e658;
+extern CUnknown10200370 g_1074e4f0;
+extern CUnknown10200370 g_1074e098;
+
+// TARGET: CUnknown10205030::sub_10205030
+int CUnknown10205030::sub_10205030(int param)
+{
+	if (m_nId != -1)
+	{
+		switch (m_nKind)
+		{
+		case 0:
+			return g_1074e658.sub_10200370(m_nId, param)->sub_101ff0b0();
+		case 1:
+			return g_1074e4f0.sub_10200370(m_nId, param)->sub_101ff0b0();
+		case 2:
+			return g_1074e098.sub_10200370(m_nId, param)->sub_101ff0b0();
+		case 3:
+			return 0;
+		case 4:
+			return 0;
+		case 5:
+			return 0;
+		case 6:
+			return 0;
+		case 7:
+			return 0;
+		case 8:
+			return 0;
+		case 9:
+			return 0;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102056d0 size=0x9
 struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
