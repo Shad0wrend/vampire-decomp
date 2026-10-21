@@ -34,4 +34,8 @@ public:
 	void vfunc420();	// "CNPC_VChangBros::NPCInit": scope trace (no entity name), the CNPC_VVampireBoss init, clears the teleport state at +0x66bc..+0x66d0 and the flag at +0x66e8, stamps the tick at +0x66ec, sets the float at +0x64b8 and the body emitter names (as in Restore)
 	void sub_10013e85();	// CNPC_VVampireBoss::vfunc420, called directly
 	void sub_103c6df0(int index, const char *name);	// CNPC_VVampireBoss::sub_103c6df0 (stub 0x10010fd7): sets body emitter name `index`
+	int sub_1036e580(int slot);	// stub 0x10011068: maps the value of slot 217 to a brother id
+	bool sub_1000e93f(int id);	// stub of sub_1036b6b0 (id in 1..2), called with this in ecx
+	bool vfunc530(CBaseEntity *pOther);	// "CNPC_VChangBros::IsUnreachable"-style check: scope trace, true for the pairing of brother ids, else the base
+	bool sub_102741e0(CBaseEntity *pOther);	// CAI_BaseNPC::vfunc530, called directly
 };
