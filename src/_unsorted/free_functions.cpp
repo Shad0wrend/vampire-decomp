@@ -38073,6 +38073,37 @@ unsigned int CAmbientGeneric::sub_101ac2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af880 size=0x86
+struct CGlobalVarsY { char pad[0xc]; float curtime; };
+extern CGlobalVarsY *g_1070b228;
+struct EntNextThink { char pad[0x17c]; float m_flNextThink; };
+
+static inline bool ShouldToggleY(int useType, int currentState)
+{
+    if (useType != 3) {
+        if ((currentState && useType == 1) || (!currentState && useType == 0))
+            return false;
+    }
+    return true;
+}
+
+// TARGET: sub_101af880
+void __fastcall sub_101af880(EntNextThink *pThis, int unusedEdx, void *pActivator, void *pCaller, int useType, float value)
+{
+    int state = pThis->m_flNextThink > 0.0;
+    if (ShouldToggleY(useType, state)) {
+        if (useType == 1)
+            pThis->m_flNextThink = g_1070b228->curtime + 0.1;
+        else if (useType == 0)
+            pThis->m_flNextThink = 0;
+        else if (state)
+            pThis->m_flNextThink = 0;
+        else
+            pThis->m_flNextThink = g_1070b228->curtime + 0.1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af9b0 size=0xa
 char * __fastcall sub_101af9b0(char *self)
 {

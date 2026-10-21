@@ -2225,6 +2225,7 @@
 0x10009c41 func   ?vfunc139@CNPCMaker@@QAEXPAVCBaseEntity@@@Z CNPCMaker::vfunc139
 0x10009c4b func   ?sub_101953d0@@YAPAHPAUPyObj@@PAX@Z sub_101953d0
 0x10009c5a func   ?vfunc5@CEnvBeam@@QAEPAV1@I@Z CEnvBeam::vfunc5
+0x10009c64 func   ?sub_101af880@@YIXPAUEntNextThink@@HPAX1HM@Z sub_101af880
 0x10009c69 func   ?sub_10065250@@YAHXZ sub_10065250
 0x10009c9b func   ?sub_102696f0@@YIXPAD@Z sub_102696f0
 0x10009ca0 func   ?vfunc546@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::vfunc546
