@@ -79,7 +79,7 @@ public:
 	virtual char vfunc312();	// asked by sub_10253b70 (whether the weapon may be used)
 	CBCW_V(313) CBCW_V(314)
 	virtual bool vfunc315();
-	virtual char vfunc316(int a);
+	virtual char vfunc316(int a);	// slot 316: clears the byte at +0x898, slot 307(0xde) when a is set, arms the owner's timer at +0x1564 (curtime + the active weapon's sequence duration) and starts slot 333 with 0x12 (owner AI object) or 0x13
 	CBCW_V(317) CBCW_V(318) CBCW_V(319)
 	CBCW_V(320) CBCW_V(321) CBCW_V(322) virtual void vfunc323();	// "FinishReload": with an owner (sub_102521f0): a pending reload (byte at +0x8c8) is cancelled through sub_10254cd0(0xc3); else for both ammo slots the clip (+0x74c + i * 4) is refilled from the owner's ammo count (not above slot 275's capacity); then clears the bytes at +0x898 / +0x899 / +0x89a
 	CBCW_V(324) CBCW_V(325) CBCW_V(326) CBCW_V(327)
@@ -116,6 +116,7 @@ public:
 	int sub_10252240();	// same as sub_102521f0 (stub 0x100011f4)
 	char *sub_10252120(int a, int index);	// stub 0x1000aaba: the record `index` of the list slot 347(a) counts
 	void sub_10254cd0(int a);	// stub 0x100074f5
+	int sub_100ac4e0(int a, int b, const char *pszContext);	// CBaseEntity::sub_100ac4e0 (ThinkSet), called directly on the weapon
 	void sub_1024edc0();	// prints the weapon's activity translation table (base activity, weapon activity, required) with Msg
 	bool sub_10253b40(int a);	// true when the ammo type at +0x744 + a * 4 is not negative
 	bool sub_10253b70(int a, int b, int c, int d);	// slot 315 worker: when slot 312 allows and the owner (sub_102521f0) exists: with an AI object at owner+0xa8 hands it d and stores c at +0x854, else stores -1 there and arms the timer at owner+0x1564 (curtime + const); clears bit 6 of +0x19c and starts slot 333 with 0xe (AI object) or 0xf; returns true
