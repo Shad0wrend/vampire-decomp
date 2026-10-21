@@ -15,8 +15,9 @@ public:
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13();
 	virtual int vfunc14(int a, int b, int c);
-	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
-	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23();
+	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17();
+	virtual int vfunc18(int condition);	// "SetCondition" with translation (like CAI_BaseNPC::vfunc446): 0 for an untranslatable id, else the result of the condition set
+	virtual void vfunc19(); virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23();
 	virtual char vfunc24(int a);
 	virtual char vfunc25(int a);
 
