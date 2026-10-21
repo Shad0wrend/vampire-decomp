@@ -43042,6 +43042,32 @@ const char *sub_101dbb00(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dbb20 size=0xb4
+#include "CUnknown101dbc60.h"
+#include "CUnknown101daec0.h"
+
+int sub_101db9c0(const char *pszName);
+int sub_101dba70(const char *pszName);
+
+char CUnknown101dbc60::sub_101dbb20(IKVNodeView *pKV)
+{
+	if (pKV) {
+		IKVNodeView *pAoE = pKV->vfunc2("AoE");
+		if (pAoE) {
+			m_nRange = pAoE->vfunc10("Range", 0);
+			m_iSource = sub_101db9c0(pAoE->vfunc13("Source", g_106b8540));
+			m_iAffects = sub_101dba70(pAoE->vfunc13("Affects", g_106b8540));
+			m_nMinRadius = pAoE->vfunc10("MinRadius", 0);
+			m_nMaxRadius = pAoE->vfunc10("MaxRadius", 0);
+			((CUnknown101dbc60Filter *)m_filter)->sub_101daa10(pAoE);
+			((CUnknown101dbc60Tail *)m_tail)->sub_101db630(pAoE, m_filter);
+		}
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dbc60 size=0x10e
 #include "CUnknown101dbc60.h"
 

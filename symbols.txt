@@ -3083,6 +3083,7 @@
 0x1000d3cd func   ?sub_10379e80@@YIXPAUE@@HH@Z sub_10379e80
 0x1000d3d2 func   ?sub_102353a0@@YAHXZ sub_102353a0
 0x1000d3dc func   ?sub_102a1420@@YIHPAUN@@@Z sub_102a1420
+0x1000d3e6 func   ?sub_101dbb20@CUnknown101dbc60@@QAEDPAVIKVNodeView@@@Z CUnknown101dbc60::sub_101dbb20
 0x1000d3eb func   _scripted_sentence scripted_sentence
 0x1000d413 func   ?sub_10382aa0@CNPC_VHengeyokai@@QAE_NH@Z CNPC_VHengeyokai::sub_10382aa0
 0x1000d418 func   _trigger_discipline_context trigger_discipline_context
