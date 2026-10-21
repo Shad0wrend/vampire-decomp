@@ -30,3 +30,58 @@ void CTriggerWWZone::vfunc119()
 	*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 1.0f;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103dbf50 size=0xb2
+#include "CTriggerWWZone.h"
+#include "CDoorEventList.h"
+
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
+void sub_100aa7b0(void *pEnt);
+
+struct CUtlMemoryView
+{
+	int *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+
+	void Purge()
+	{
+		if (m_nGrow != -1) {
+			if (m_pMemory) {
+				Plat_Free(m_pMemory);
+				m_pMemory = 0;
+			}
+			m_nAlloc = 0;
+		}
+	}
+	~CUtlMemoryView() { Purge(); }
+};
+
+struct CUtlVectorView
+{
+	CUtlMemoryView m_Memory;
+	int m_Size;
+	int *m_pElements;
+
+	void Purge()
+	{
+		m_Size = 0;
+		m_Memory.Purge();
+		m_pElements = m_Memory.m_pMemory;
+	}
+	~CUtlVectorView() { Purge(); }
+};
+
+CTriggerWWZone *CTriggerWWZone::vfunc5(unsigned char flags)
+{
+	((CUtlVectorView *)&m_pHandles)->~CUtlVectorView();
+	((CDoorEventList *)((char *)this + 0x580))->sub_100cd2d0();
+	((CDoorEventList *)((char *)this + 0x568))->sub_100cd2d0();
+	((CDoorEventList *)((char *)this + 0x4bc))->sub_100cd2d0();
+	((CDoorEventList *)((char *)this + 0x4a4))->sub_100cd2d0();
+	sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
