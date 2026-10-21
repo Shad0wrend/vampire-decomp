@@ -13,6 +13,66 @@ int CGeneric_NPC::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035a090 size=0x13e
+#include "CGeneric_NPC.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+#define V virtual void
+#define S10(p) V p##0(); V p##1(); V p##2(); V p##3(); V p##4(); V p##5(); V p##6(); V p##7(); V p##8(); V p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct SNpc {
+	V a0(); V a1(); V a2(); V a3(); V a4(); V a5(); V a6(); V a7(); V a8();
+	virtual const char **vfunc9(int *pOut);
+	S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) V b80(); V b81(); V b82();
+	virtual void vfunc93(int moveType, int moveCollide);
+	S10(c0) V c1();
+	virtual void vfunc105(const char *pszModel);
+	S100(d0) S100(d1) S100(d2) S10(e0) V e1(); V e2(); V e3(); V e4();
+	virtual void vfunc420();
+	void sub_10273070(int a);
+	void sub_1026dc00(int a);
+};
+struct SCvar {
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad[0x28 - 4];
+	float m_f28;
+};
+
+extern SCvar *g_1093a1f4;
+extern float g_104454c4;
+
+void CGeneric_NPC::vfunc103()
+{
+	SNpc *p = (SNpc *)this;
+	int nOut;
+	vfunc104();
+	const char *name = *p->vfunc9(&nOut);
+	if (!name)
+		name = g_106b8540;
+	p->vfunc105(name);
+	*(int *)((char *)this + 0x1568) = 0;
+	*(int *)((char *)this + 0x156c) = 0;
+	p->sub_10273070(0);
+	{
+		const char *entName = *(const char **)((char *)this + 0x26c);
+		ScopeTrace trace("CBaseEntity::SetSolid", entName ? entName : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(2);
+	}
+	p->vfunc93(4, 0);
+	*(int *)((char *)this + 0x1570) = 0xf7;
+	*(int *)((char *)this + 0x19c) = 0;
+	*(int *)((char *)this + 0x210) = (int)(g_1093a1f4->vfunc1() ? g_104454c4 : g_1093a1f4->m_f28);
+	*(float *)((char *)this + 0x1574) = 0.2f;
+	*(int *)((char *)this + 0x5cc0) = 0;
+	p->sub_1026dc00(1);
+	p->sub_1026dc00(0x200000);
+	p->sub_1026dc00(0x800000);
+	p->vfunc420();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a810 size=0x2a
 #include "CGeneric_NPC.h"
 extern const float g_1044f00c;
