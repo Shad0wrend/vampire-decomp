@@ -11699,6 +11699,44 @@ void sub_10086fb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087fb0 size=0x12a
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1028fb70.h"
+#include <stdlib.h>
+
+struct S10087fb0Ent
+{
+	char m_pad[0x98];
+	CUnknown1028fb70 *m_pNPC;
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+void *sub_101193b0();
+CBaseEntity *sub_100d2070(void *pPlayer, const char *pszName, void *pStart);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+// TARGET: sub_10087fb0
+void sub_10087fb0()
+{
+	void *pPlayer = sub_101193b0();
+	const char *pszName = g_1070b22c->vfunc84(2);
+	CBaseEntity *pEnt = sub_100d2070(pPlayer, pszName, 0);
+	float flLevel = (float)(atoi(g_1070b22c->vfunc84(1)) > 10 ? 10 : (atoi(g_1070b22c->vfunc84(1)) < 1 ? 1 : atoi(g_1070b22c->vfunc84(1))));
+	while (pEnt) {
+		CUnknown1028fb70 *pNPC = ((S10087fb0Ent *)pEnt)->m_pNPC;
+		if (pNPC) {
+			pNPC->m_flVisionOverride = -1.0f;
+			pNPC->m_flHearingOverride = -1.0f;
+			pNPC->m_nLevel = (int)flLevel;
+			pNPC->sub_1028fb70();
+			DevMsg("%s's perception set to %d.  New vision dist = %f.  New hearing sensitivty = %f\n", ((CBaseEntity *)pNPC)->sub_100ab4f0(), pNPC->m_nLevel, (double)pNPC->m_flVisionDistance, (double)pNPC->m_flHearingScalar);
+		}
+		pEnt = sub_100d2070(pPlayer, pszName, pEnt);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088a80 size=0x10
 extern bool g_10924fbb;
 
