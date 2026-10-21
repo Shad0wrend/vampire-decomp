@@ -202,3 +202,25 @@ void CGameMovement::vfunc18()
 	VectorSubtract(pPlayer->m_vecVelocity, ((CMoveView10122c30 *)m_pMove)->m_vecBase, pPlayer->m_vecVelocity);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10124200 size=0x8d
+#include "CGameMovement.h"
+#include <math.h>
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+
+// TARGET: CGameMovement::vfunc6
+float CGameMovement::vfunc6(const QAngle &angles, const Vector &vec, float scale, float threshold)
+{
+	Vector forward, right, up;
+	sub_10139610(angles, &forward, &right, &up);
+	int sign = -1;
+	float d = right.x * vec.x + right.y * vec.y + right.z * vec.z;
+	if (!(d < 0.0f))
+		sign = 1;
+	float s = (float)sign;
+	float a = fabs(d);
+	if (a < threshold)
+		return s * (a / threshold * scale);
+	return s * scale;
+}
+// END FUNCTION
