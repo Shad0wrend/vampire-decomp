@@ -36369,6 +36369,39 @@ bool CStatusFlagList::sub_101e3f50(CStatusTarget *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e4150 size=0x9c
+#include "CUnknown101e4150.h"
+#include "CUnknown10739d08.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CEngineServerView	// the engine's real slot 119 (a float getter)
+{
+	S100(a)
+	S10(b)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4();
+	virtual void c5(); virtual void c6(); virtual void c7(); virtual void c8();
+	virtual float vfunc119(int a);
+};
+
+extern CEngineServerView *g_1070b22c;
+extern CUnknown10739d08 g_10739d08;
+
+void CUnknown101e4150::sub_101e4150(CUnknown101e4150Char *pChar)
+{
+	static int s_nMask = sub_101e1590("Thaumaturgy_BloodShot") | sub_101e1590("Thaumaturgy_Blood_Salvo");
+	if (pChar->m_flSalvoStart != 0.0) {
+		float flElapsed = g_1070b22c->vfunc119(0) - pChar->m_flSalvoStart;
+		if (g_10739d08.sub_101e9020() < flElapsed) {
+			pChar->m_flSalvoStart = 0;
+			pChar->m_nSalvoCount++;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e48b0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);

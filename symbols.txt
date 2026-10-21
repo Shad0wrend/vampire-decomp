@@ -799,6 +799,7 @@
 0x10004a61 func   ?sub_103f8230@@YAHXZ sub_103f8230
 0x10004a75 func   ?sub_102d4160@UtlMem@@QAEXXZ UtlMem::sub_102d4160
 0x10004aac func   _player_pickup player_pickup
+0x10004ab6 func   ?sub_101e4150@CUnknown101e4150@@QAEXPAUCUnknown101e4150Char@@@Z CUnknown101e4150::sub_101e4150
 0x10004abb func   ?vfunc5@CBreakable@@QAEPAV1@I@Z CBreakable::vfunc5
 0x10004ac0 func   _item_g_guy_magazine item_g_guy_magazine
 0x10004b01 func   ?vfunc546@CNPC_Crow@@QAEHH@Z CNPC_Crow::vfunc546
