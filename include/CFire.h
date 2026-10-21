@@ -7,4 +7,6 @@ class CFire : public CBaseEntity
 public:
 	CFire *vfunc5(unsigned int flags);
 	CFire *sub_10109990();	// as in CKeepUpright (transplant)
+	void vfunc180();
+	void sub_1010b3c0();
 };
