@@ -39523,6 +39523,20 @@ void CVStatList_t::sub_102008e0(int stat, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102009b0 size=0x8f
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CUnknown10202060.h"
+#include "ScopeTrace.h"
+
+void CVStatList_t::sub_102009b0(int stat)
+{
+    ScopeTrace st("CVStatList_t::SetBaseToDefault", g_106b8540);
+    if (sub_102008b0(stat))
+        sub_102008e0(stat, ((CVStatInfoList_t *)m_field0c)->sub_10200370(stat)->sub_101ff270(((CUnknown10202060 *)m_pad0000)->sub_10202060()));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10200a70 size=0x75
 #include "CVStatList_t.h"
 #include "ScopeTrace.h"
