@@ -10,6 +10,7 @@ public:
 	void vfunc103();	// slot 103 "CNPCMaker::Spawn": SetSolid(0) (inlined scope trace), clears +0x66b0, slot 104, with the flag at +0x66c3 sets the flag at +0x66c2, then installs the think function (with the delay at +0x6664 unless the flag at +0x66c0 is set) and clears +0x66b8
 	void vfunc139(CBaseEntity *pEnt);	// slot 139 "ChildPostSpawn": marks the spawned entity (flag byte at +0x44c), counts it (+0x6660 when slot 158 says it is alive, else it is handed to the list at +0x6680), hands it to the list at +0x6698 when sub_1034b430() holds, and lowers the live count at +0x66b0 (not below 0)
 	char sub_1034b430();	// stub 0x10001afa
+	void sub_1034cf20(int a, char bNotify);	// stores a at +0x76d0 and, with bNotify, walks the entities named like the string at +0x66bc and hands a to the one (sub_103e0980) whose owner handle (+0x254 of the object at +0x98) resolves to this
 
 	char m_pad03e0[0x6664 - 0x3e0];
 	float m_flSpawnDelay;	// 0x6664
