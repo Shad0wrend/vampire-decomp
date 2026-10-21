@@ -2,6 +2,7 @@
 0x10001037 func   ?sub_1034b540@CUnknown1034b540@@QAEXH@Z CUnknown1034b540::sub_1034b540
 0x10001041 func   ?sub_102ae7f0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102ae7f0
 0x10001046 func   ?vfunc2@CTEGlowSprite@@UAEPAV1@I@Z CTEGlowSprite::vfunc2
+0x10001050 func   ?vfunc438@CNPC_VYukie@@QAEHXZ CNPC_VYukie::vfunc438
 0x1000106e func   ?sub_10131490@@YAPAHXZ sub_10131490
 0x10001078 func   ?sub_101be1d0@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101be1d0
 0x10001082 func   _trigger_brush trigger_brush

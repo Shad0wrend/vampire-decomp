@@ -28,6 +28,51 @@ int CNPC_VYukie::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd6b0 size=0x67
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CNPC_VYukie.h"
+
+#define D(x) virtual void x();
+#define T(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+
+struct CYukieSlots604
+{
+	H(a0) H(b0) H(c0) H(d0) H(e0) H(f0)
+	D(g0) D(g1) D(g2) D(g3)
+	virtual int slot604(unsigned int flags);
+	virtual int slot605(unsigned int flags);
+};
+
+int CNPC_VYukie::vfunc438()
+{
+	*(int *)((char *)this + 0x1b2c) = 0x2a;
+	switch (*(int *)((char *)this + 0x5cc0)) {
+	case 2: {
+		*((char *)this + 0x5b80) = 0;
+		unsigned int flags;
+		if (sub_1032e7b0())
+			flags = sub_1032e7b0()->slot360();
+		else
+			flags = 0;
+		int result;
+		if (flags & 0x18000) {
+			result = ((CYukieSlots604 *)this)->slot604(flags);
+			if (result)
+				return result;
+		} else {
+			result = ((CYukieSlots604 *)this)->slot605(flags);
+			if (result)
+				return result;
+		}
+		break;
+	}
+	}
+	return sub_103872d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd900 size=0x74
 #include "CNPC_VYukie.h"
 #include "CEntityVSlots.h"
