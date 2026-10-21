@@ -14,6 +14,7 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	int vfunc440(int schedule);	// slot 440 (TranslateSchedule) override: maps schedules 0x5b, 0xea, 0xdc, 0xdd to 0x15d..0x160, everything else goes to CNPC_VHuman::vfunc440
 	void vfunc24(CBaseEntity *pOther);	// slot 24 override: when the other entity is named "pillar" or "central_pillar" (NameMatches), calls slot 266 of it with this
+	void vfunc175(CBaseEntity *pOther);	// slot 175 (Touch) override: when the other entity is named "pillar" or "central_pillar" (NameMatches), damages it (CVDmg_t, one point, slot 142 of it) with this as the inflictor; then CBaseEntity::vfunc175
 	int vfunc390(void *pInfo);	// slot 390 (OnTakeDamage) override: clears the vulnerable flag at +0x6688 when the damage type has bit 26, tells the entity of the handle at +0x628c about it (sub_10005849(ent, 1, 10)), then CNPC_VHuman::vfunc390
 	void vfunc420();	// slot 420: calls CAI_BaseNPCTroika::vfunc420 (stub 0x1000c531), then resets the pillar handle, the flags at +0x6680..+0x6688 and the global at 0x109340d8 (set to 0xe)
 	int sub_10001b45(void *pInfo);	// CNPC_VHuman::vfunc390, called directly
