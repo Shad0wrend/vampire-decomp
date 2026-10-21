@@ -4788,6 +4788,7 @@
 0x10012fe4 func   _item_w_katana item_w_katana
 0x10012ff3 func   ?vfunc5@CBatSwarm_Teleport@@QAEPAV1@I@Z CBatSwarm_Teleport::vfunc5
 0x10012ffd func   ?vfunc103@CFuncBrush@@QAEXXZ CFuncBrush::vfunc103
+0x10013007 func   ?sub_1013bef0@@YAXABVVector@@000MAAV1@@Z sub_1013bef0
 0x10013011 func   ?sub_102ecc00@CUnknown102ecc00@@QAEHXZ CUnknown102ecc00::sub_102ecc00
 0x1001304d func   ?vfunc0@CAI_Motor@@UAEPAV1@I@Z CAI_Motor::vfunc0
 0x1001305c func   _item_g_wireless_camera_1 item_g_wireless_camera_1
