@@ -3235,6 +3235,7 @@
 0x1000f763 func   ?vfunc5@CBaseViewModel@@QAEPAV1@I@Z CBaseViewModel::vfunc5
 0x1000f768 func   ?vfunc20@CMultiplayRules@@UAEPAVCBaseEntity@@PAV2@0@Z CMultiplayRules::vfunc20
 0x1000f77c func   ?vfunc5@CItemMMoneyEnvelope@@QAEPAV1@I@Z CItemMMoneyEnvelope::vfunc5
+0x1000f790 func   ?vfunc460@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc460
 0x1000f79f func   ?sub_103f5ff0@@YAHXZ sub_103f5ff0
 0x1000f7b3 func   ?vfunc34@CPropSign@@UAE_NH@Z CPropSign::vfunc34
 0x1000f7f4 func   _item_i_written item_i_written

@@ -226,6 +226,38 @@ void CAI_BaseNPC::vfunc463(int a, int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026f590 size=0x96
+#include "CAI_BaseNPC.h"
+
+struct CAI_SquadView
+{
+	void sub_103161a0(int a);
+};
+
+#define NPC_INT(off) (*(int *)((char *)this + (off)))
+
+int CAI_BaseNPC::vfunc460()
+{
+	NPC_INT(0x1b38) = 1;
+	if (NPC_INT(0x5bb0) <= 0 && NPC_INT(0x5da4) != 0) {
+		switch (NPC_INT(0x5cc0)) {
+		case 1:
+		case 3:
+			if (sub_10269aa0(0x54) && vfunc167() != 0) {
+				char *pObj = *(char **)((char *)this + 0x98);
+				if (pObj) {
+					*(unsigned int *)(pObj + 0x14bc) |= 0x80002000;
+					return 0;
+				}
+				CAI_SquadView *pSquad = (NPC_INT(0x5bb0) <= 0) ? *(CAI_SquadView **)((char *)this + 0x5da4) : 0;
+				pSquad->sub_103161a0(vfunc167());
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10272400 size=0x6e
 #include "CAI_BaseNPC.h"
 
