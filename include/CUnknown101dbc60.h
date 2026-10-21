@@ -4,9 +4,17 @@
 
 #include "CUnknown101da960.h"
 
+class IKVNodeView;
+
 struct CUnknown101dbc60Tail	// the object at +0x24
 {
 	void sub_10004b1f();	// debug display (stub 0x10004b1f)
+	void sub_101db630(IKVNodeView *pKV, void *pFilter);	// loads the tail from the node (stub 0x1000394a)
+};
+
+struct CUnknown101dbc60Filter	// the filter list at +0x14 (a CUnknown101da960 with its bit set)
+{
+	char sub_101daa10(IKVNodeView *pKV);	// loads the filter from the node's "Affects Filters" child (stub 0x1000eceb)
 };
 
 class CUnknown101dbc60
@@ -22,4 +30,5 @@ public:
 
 	void sub_101dbc60();	// Debug_Display: prints the range, source, affects, radii, the filter and the tail with Msg
 	void sub_101db960();	// the constructor body (stub 0x10005e16)
+	char sub_101dbb20(IKVNodeView *pKV);	// loads the record from the "AoE" child of the node: Range, Source, Affects, MinRadius, MaxRadius, the filter and the tail; false for a null node
 };
