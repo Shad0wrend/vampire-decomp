@@ -70243,6 +70243,75 @@ bool CNPC_VMingXiao::sub_10397b40(void *pTentacle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10397c70 size=0x110
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CNPC_VMingXiao.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CMXVec3 {
+	float x, y, z;
+};
+
+#define D(x) virtual void x();
+#define T(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+
+class CMXTentacleSlots
+{
+public:
+	D(s0)
+	virtual unsigned int *vfunc1();
+	D(s2) D(s3) D(s4) D(s5) D(s6) D(s7) D(s8) D(s9)
+	T(a1) T(a2) T(a3) T(a4) T(a5) T(a6) T(a7) T(a8) T(a9)
+	H(h1)
+	T(c0)
+	D(s210) D(s211) D(s212) D(s213) D(s214) D(s215) D(s216)
+	virtual CMXVec3 *vfunc217();
+	virtual void vfunc218(const CMXVec3 *pAngles);
+	virtual CMXVec3 *vfunc219();
+	H(h2) H(h3) H(h4)
+	T(e5) T(e6) T(e7) T(e8) T(e9) T(f0) T(f1) T(f2) T(f3)
+	D(s610) D(s611) D(s612) D(s613)
+	virtual void vfunc614();
+};
+
+struct CMXSpawner {
+	CMXTentacleSlots *sub_10310cf0(CMXVec3 vOrigin);	// the NPC maker's tentacle spawn (stub 0x1000e863)
+};
+extern CMXSpawner g_1093bc54;
+
+CNPC_VMingXiaoTentacle *CNPC_VMingXiao::sub_10397c70(CNPC_VMingXiaoTentacle *pTentacle)
+{
+	if (!pTentacle)
+		return 0;
+	CMXTentacleSlots *pOld = (CMXTentacleSlots *)pTentacle;
+	int nIndex = *(int *)((char *)pTentacle + 0x6660);
+	unsigned int h = *(unsigned int *)((char *)this + nIndex * 4 + 0x66a8);
+	CGlobalEntityList_Slot *t = g_10566458->m_Slots;
+	void *pEnt = (h != 0xffffffff && t[h & 0x1fff].m_Serial == (int)(h >> 13)) ? (void *)t[h & 0x1fff].m_pEntity : 0;
+	if (pEnt != pTentacle)
+		return 0;
+	if (!*((char *)this + nIndex + 0x6684))
+		return 0;
+	CMXTentacleSlots *pNew = g_1093bc54.sub_10310cf0(*pOld->vfunc217());
+	if (pNew) {
+		*(unsigned int *)((char *)this + nIndex * 4 + 0x668c) = *pNew->vfunc1();
+		pNew->vfunc218(pOld->vfunc219());
+		*(int *)((char *)pNew + 0x6674) = nIndex;
+		if (this)
+			*(unsigned int *)((char *)pNew + 0x6670) = *vfunc1();
+		else
+			*(unsigned int *)((char *)pNew + 0x6670) = 0xffffffff;
+		*((char *)pNew + 0x6678) = 1;
+		pNew->vfunc614();
+		sub_10397380((CNPC_VMingXiaoTentacle *)pNew);
+	}
+	return (CNPC_VMingXiaoTentacle *)pNew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10397e00 size=0x64
 #include "CGlobalEntityList.h"
 #include "CNPC_VMingXiaoTentacle.h"
