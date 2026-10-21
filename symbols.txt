@@ -2615,6 +2615,7 @@
 0x1000ab5a func   ?sub_102d8a90@CUnknown102d8a90@@QAEPAUSVec3@@XZ CUnknown102d8a90::sub_102d8a90
 0x1000ab5f func   ?sub_1006a190@@YAHXZ sub_1006a190
 0x1000ab69 func   ?vfunc243@CAuspexAura@@QAEXPAVCBaseEntity@@HH@Z CAuspexAura::vfunc243
+0x1000ab82 func   ?sub_10074610@CUnknown10074a30@@QAEMMH@Z CUnknown10074a30::sub_10074610
 0x1000ab87 func   ?sub_102e7e60@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e7e60
 0x1000ab8c func   ?sub_10090bc0@CBaseAnimating@@QAEXI@Z CBaseAnimating::sub_10090bc0
 0x1000ab91 func   ?sub_103d7620@CNPC_VWerewolf@@QAEPAXH@Z CNPC_VWerewolf::sub_103d7620

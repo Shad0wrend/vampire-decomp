@@ -10035,6 +10035,27 @@ float *CUnknown10074070::sub_10074160(int index, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10074610 size=0x9f
+#include "CUnknown10074a30.h"
+
+float CUnknown10074a30::sub_10074610(float flValue, int nMode)
+{
+	float flWeight = sub_100745b0(flValue);
+	float flScale = 1.0f;
+	if (sub_10074a50()) {
+		flValue = sub_100745d0(flValue);
+		if (nMode == 0) {
+			if (flValue > 0.5f)
+				flScale = (1.0f - flValue + (1.0f - flValue));
+		} else if (nMode == 1) {
+			if (flValue < 0.5f)
+				flScale = flValue + flValue;
+		}
+	}
+	return flScale * flWeight;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074820 size=0x10e
 #include "CFlexAnimationTrack.h"
 
