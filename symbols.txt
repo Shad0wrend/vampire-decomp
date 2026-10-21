@@ -5021,6 +5021,7 @@
 0x10014add func   ?sub_1011a580@@YAXPAUSHandleHolder@@@Z sub_1011a580
 0x10014ae7 func   ?vfunc103@CAI_NetworkManager@@UAEXXZ CAI_NetworkManager::vfunc103
 0x10014aec func   ?vfunc5@CWeaponRanged_MingXiao_Spit@@QAEPAV1@I@Z CWeaponRanged_MingXiao_Spit::vfunc5
+0x10014b05 func   ?sub_101cf2f0@@YAXPAMH@Z sub_101cf2f0
 0x10014b0f func   ?vfunc180@CPropHaunted@@QAEXXZ CPropHaunted::vfunc180
 0x10014b1e func   ?sub_1021e4f0@UtlVec8@@QAEXHH@Z UtlVec8::sub_1021e4f0
 0x10014b23 func   ?vfunc103@CDynamicLight@@QAEXXZ CDynamicLight::vfunc103

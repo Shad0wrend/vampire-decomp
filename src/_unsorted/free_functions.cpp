@@ -41433,6 +41433,31 @@ void sub_101cf250(float *p, int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf2f0 size=0x78
+void sub_101cf2f0(float *pValue, int mode)
+{
+	switch (mode) {
+	case 1:
+	case 2:
+		if (*pValue >= 1e10f) {
+			*pValue = -1.0f;
+			return;
+		}
+		break;
+	case 3:
+		if (*pValue >= 1e10f) {
+			*pValue = 0.0f;
+			return;
+		}
+		break;
+	case 4:
+		if (*pValue >= 1e10f)
+			*pValue = 3.4028235e+38f;
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf620 size=0xd
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 
