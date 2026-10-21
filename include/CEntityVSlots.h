@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..601, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 142, 158, 161, 162, 167, 173,
-// 192, 193, 194, 198, 202, 203, 204, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 316, 346, 360, 371, 376, 381, 385, 404, 448, 457 and 601 of an entity class that does not model its vtable.
+// 192, 193, 194, 198, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 316, 346, 360, 371, 376, 381, 385, 404, 448, 457 and 601 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -69,8 +69,10 @@ public:
 	virtual void slot202(CEntityVSlots *pOwner);	// "SetOwnerEntity"
 	virtual double slot203();	// "GetAttackDamageScale" (the value stays on the FPU stack, the caller multiplies it with a float)
 	virtual double slot204();	// "GetReceivedDamageScale"
-	EVS(205) EVS(206) EVS(207) EVS(208) EVS(209)
-	EVS(210) EVS(211)
+	EVS(205) EVS(206) EVS(207) EVS(208)
+	virtual CEntityVSlots *slot209();	// "GetGroundEntity"
+	virtual void slot210(Vector *pOut);	// "GetGroundVelocityToApply": fills pOut
+	EVS(211)
 	virtual void slot212(int set);
 	virtual void slot213(const float *pSize);	// "SetSize"
 	virtual Vector *slot214();	// "GetSize": the entity's size (+0x38c)
