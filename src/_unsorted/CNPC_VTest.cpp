@@ -62,3 +62,27 @@ void CNPC_VTest::vfunc104()
 	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc104();
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b4f30 size=0x77
+#include "CNPC_VTest.h"
+struct CNPC_VTestUnit : CNPC_VTest {
+    bool sub_10014df8(int condition);
+    int sub_10015ad2();
+    int sub_103b4f30();
+};
+
+int CNPC_VTestUnit::sub_103b4f30()
+{
+    char *p = (char *)this;
+    *(int *)(p + 0x1b2c) = 0x23;
+    switch (*(int *)(p + 0x5cc0)) {
+    case 2:
+        return 0x158;
+    case 0xb:
+        if (sub_10014df8(0x6a) || sub_10014df8(0x6d) || sub_10014df8(0x6e) || sub_10014df8(0x70) || sub_10014df8(0x6f))
+            return 0x80;
+        return 0x15a;
+    }
+    return sub_10015ad2();
+}
+// END FUNCTION

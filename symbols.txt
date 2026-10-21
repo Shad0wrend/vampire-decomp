@@ -1500,6 +1500,7 @@
 0x10007f40 func   ?sub_101e98c0@CUnknown101e98c0@@QAEXXZ CUnknown101e98c0::sub_101e98c0
 0x10007f45 func   ?vfunc103@CWindowPane@@UAEXXZ CWindowPane::vfunc103
 0x10007f86 func   ?sub_102c29a0@CTroikaInputUnit@@QAEXPAUinputdata_t@@@Z CTroikaInputUnit::sub_102c29a0
+0x10007f9f func   ?sub_103b4f30@CNPC_VTestUnit@@QAEHXZ CNPC_VTestUnit::sub_103b4f30
 0x10007fa4 func   ?vfunc5@CSoundEnt@@QAEPAV1@I@Z CSoundEnt::vfunc5
 0x10007fb3 func   ?sub_1017e5f0@CBasePlayer@@QAEXPAUinputdata_t@@@Z CBasePlayer::sub_1017e5f0
 0x10007fb8 func   ?sub_102210f0@QuestJournal@@QAEXXZ QuestJournal::sub_102210f0
