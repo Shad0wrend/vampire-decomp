@@ -17,6 +17,7 @@ public:
 	void vfunc175(CBaseEntity *pOther);	// slot 175 (Touch) override: when the other entity is named "pillar" or "central_pillar" (NameMatches), damages it (CVDmg_t, one point, slot 142 of it) with this as the inflictor; then CBaseEntity::vfunc175
 	int vfunc390(void *pInfo);	// slot 390 (OnTakeDamage) override: clears the vulnerable flag at +0x6688 when the damage type has bit 26, tells the entity of the handle at +0x628c about it (sub_10005849(ent, 1, 10)), then CNPC_VHuman::vfunc390
 	void vfunc420();	// slot 420: calls CAI_BaseNPCTroika::vfunc420 (stub 0x1000c531), then resets the pillar handle, the flags at +0x6680..+0x6688 and the global at 0x109340d8 (set to 0xe)
+	void vfunc444(int *pTask);	// slot 444 override: task 0x31 -> (slot 572 unless bit 13 of +0x5d8c, sub_1000e6e7(-1) on the object at +0x5d44, sub_10010352), task 0x12f -> slot 251; when that answers true runs sub_1000ac68(0); other tasks CNPC_VHuman::vfunc444
 	int sub_10001b45(void *pInfo);	// CNPC_VHuman::vfunc390, called directly
 	void sub_10005849(CBaseEntity *pEnt, int a, int b);	// a CBaseCombatCharacter member (the stub at 0x10005849 for 0x10332ca0), called directly
 	bool sub_10378ec0();	// finds the "pillar" entity named by slot 167()'s slot 220(), stores its handle at +0x667c (-1 when none) and returns whether the handle still resolves to a live entity
@@ -25,8 +26,15 @@ public:
 	int vfunc438();	// slot 438 "SelectSchedule" override: sets +0x1b2c = 0x11; schedule 0x15c (line 0x174) when the default stat list's stats 0xf and 0x11 are equal; in state 2 with an enemy that is not slot 530 and the navigator (+0x5d34) cannot reach (slot 217 origins) tries sub_10378f80(); else CNPC_VHuman::vfunc438
 	int sub_10378f80();	// called by SelectSchedule (stub 0x1000b4e2)
 	int sub_10384ee0();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), tail called
+	char sub_10010352();	// stub 0x10010352, answers in al (end of the task 0x31 handling)
+	void sub_1000ac68(int a);	// stub 0x1000ac68, run when the task handling answers true
+	void sub_10011928(int *pTask);	// CNPC_VHuman::vfunc444 (stub 0x10011928), called directly
 
-	char m_pad0004[0x667c - 4];
+	char m_pad0004[0x5d44 - 4];
+	void *m_pObj5d44;	// 0x5d44
+	char m_pad5d48[0x5d8c - 0x5d48];
+	unsigned int m_nFlags5d8c;	// 0x5d8c
+	char m_pad5d90[0x667c - 0x5d90];
 	int m_hPillar;	// 0x667c
 	char m_pad6680[0x6688 - 0x6680];
 	int m_nVulnerable;	// 0x6688
