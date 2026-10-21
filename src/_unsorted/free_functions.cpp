@@ -20405,6 +20405,47 @@ void CFloatPair3f4::sub_100c08d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0b40 size=0x7e
+#include <math.h>
+
+struct SInput100c0b40 {
+	char m_pad0000[8];
+	float m_flValue;
+	char m_pad000c[0x18 - 0xc];
+	int m_nType;
+};
+
+struct CUnit100c0b40 {
+	char m_pad0000[0x460];
+	float m_flScale;
+	char m_pad0464[0x46c - 0x464];
+	char m_bNegative;
+	void sub_100c0970(float f);
+	void sub_100c0b40(SInput100c0b40 *p);
+};
+
+// TARGET: CUnit100c0b40::sub_100c0b40
+void CUnit100c0b40::sub_100c0b40(SInput100c0b40 *p)
+{
+	float v;
+	bool neg;
+	if (p->m_nType == 1) {
+		v = p->m_flValue;
+		neg = v < 0.0f;
+	} else {
+		v = 0.0f;
+		neg = false;
+	}
+	v = fabs(v);
+	m_bNegative = neg;
+	if (v > 1.0f)
+		v = 1.0f;
+	else if (v < 0.0f)
+		v = 0.0f;
+	sub_100c0970(v * m_flScale);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0c60 size=0xd
 void CUnknown100c0c60::sub_100c0c60(float value)
 {

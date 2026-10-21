@@ -2889,6 +2889,7 @@
 0x1000bf5a func   ?vfunc110@CFunc_Dust@@QAE_NPBD0@Z CFunc_Dust::vfunc110
 0x1000bf5f func   ?sub_1005fc00@@YAXHHPBH0HHHH@Z sub_1005fc00
 0x1000bf64 func   _logic_compare logic_compare
+0x1000bf73 func   ?sub_100c0b40@CUnit100c0b40@@QAEXPAUSInput100c0b40@@@Z CUnit100c0b40::sub_100c0b40
 0x1000bf87 func   ?sub_103426b0@@YAHPAUSTeamFilter@@PAD@Z sub_103426b0
 0x1000bf8c func   ?vfunc444@CNPC_VAsianVampire@@QAEXPBUCVAsianVampireTask_t@@@Z CNPC_VAsianVampire::vfunc444
 0x1000bfa0 func   ?sub_1033b7c0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_1033b7c0
