@@ -26,6 +26,36 @@ CNPC_VNewscaster *CNPC_VNewscaster::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a05b0 size=0x88
+#include "CNPC_VNewscaster.h"
+
+struct CGlobalVarsView {
+	char m_pad[0xc];
+	float m_flCurTime;
+};
+extern CGlobalVarsView *g_1070b228;
+
+struct CDevFlagObj {
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x2c - 4];
+	int m_n2c;
+};
+extern CDevFlagObj *g_1093be8c;
+
+void CNPC_VNewscaster::vfunc431()
+{
+	m_f624c = g_1070b228->m_flCurTime + 1.0f;
+	m_f6250 = g_1070b228->m_flCurTime + 1.0f;
+	m_f625c = g_1070b228->m_flCurTime;
+	m_f6260 = g_1070b228->m_flCurTime;
+	sub_10292de0();
+	sub_103a0670();
+	if (!g_1093be8c->vfunc1() && g_1093be8c->m_n2c && !(m_bFlags224 & 1))
+		sub_103a0ff0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1250 size=0x97
 #include "CNPC_VNewscaster.h"
 #include "ScopeTrace.h"
