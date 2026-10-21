@@ -77173,6 +77173,19 @@ int CUnknown10344c80::sub_10344c80(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10345890 size=0xb6
+#include "ScopeTrace.h"
+
+void sub_10345890(const float *a, const float *b, float frac, float *out)
+{
+	ScopeTrace trace("AngleInterp", g_106b8540);
+	for (int i = 0; i < 3; i++) {
+		unsigned short v = (unsigned short)((b[i] - a[i] + 180.0f) * (65536.0f / 360.0f));
+		out[i] = ((float)v * (360.0f / 65536.0f) - 180.0f) * frac + a[i];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10345980 size=0xe3
 struct SEntityEntry
 {
