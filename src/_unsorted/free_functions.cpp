@@ -53497,6 +53497,49 @@ extern "C" GP *aitesthull()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d74c0 size=0x12a
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+struct CEnt5f44 : CBaseEntity
+{
+	char m_pad5f44[0x5f44 - sizeof(CBaseEntity)];
+	char m_b5f44;
+};
+extern CEnt5f44 *g_10926a34;
+extern void (__cdecl *g_109f362c)(const char *fmt);
+extern void (__cdecl *g_109f3630)(const char *fmt);
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_1060b0e0[];	// type descriptor of CAI_TestHull
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long vfDelta, void *pSrcType, void *pTargetType, int isReference);
+CBaseEntity *sub_10136580(const char *classname);
+
+// TARGET: sub_102d74c0
+CEnt5f44 *sub_102d74c0()
+{
+	if (!g_10926a34) {
+		CBaseEntity *pHull = (CBaseEntity *)__RTDynamicCast(sub_10136580("aitesthull"), 0, g_10538764, g_1060b0e0, 0);
+		if (!pHull)
+			g_109f362c("classname %s used to create wrong class type\n");
+		g_10926a34 = (CEnt5f44 *)pHull;
+		pHull->vfunc103();
+		g_10926a34->sub_100b3580(0x2000);
+	}
+	if (g_10926a34->m_b5f44 == 1)
+		g_109f3630("WARNING: TestHull used and never returned!\n");
+	CBaseEntity *pEnt = g_10926a34;
+	{
+		ScopeTrace trace("CBaseEntity::RemoveSolidFlags", pEnt ? (pEnt->m_name26c ? pEnt->m_name26c : g_106b8540) : g_105387dc);
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pEnt + 0x270);
+		pCol->sub_100dc580(pCol->m_usSolidFlags & ~4);
+	}
+	g_10926a34->m_b5f44 = 1;
+	g_10926a34->sub_100b3b00();
+	return g_10926a34;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d7640 size=0xbe
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
