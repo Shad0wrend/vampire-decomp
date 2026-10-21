@@ -7966,6 +7966,46 @@ void sub_10067b70(CUnknown1019d130 *filter, float delay, const Vector *pos, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068110 size=0x15f
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropFloat
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropVector
+void sub_10009539();
+void sub_10003012();
+void sub_10006aeb();
+
+extern SendTable g_106c59b0;
+extern SendTable *g_1053dfa8;
+
+// TARGET: sub_10068110
+int sub_10068110()
+{
+	static const char *pTableName = "DT_TESprite";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_1000c14e("m_vecOrigin", 0xc, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_10007bfd("m_nModelIndex", 0x18, 4, 0xb, 0, 0, 0),
+		sub_10006cc1("m_fScale", 0x1c, 4, 8, 8, 0.0f, 25.6f, (void *)sub_10006aeb),
+		sub_10007bfd("m_nBrightness", 0x20, 4, 8, 1, 0, 0),
+		sub_10006cc1("m_flLife", 0x24, 4, 0, 4, 0.0f, -121121.121094f, (void *)sub_10006aeb),
+		sub_1000c14e("m_velocity", 0x28, 0xc, -1, 4, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_10007bfd("m_fadeout", 0x34, 1, 1, 1, 0, 0),
+	};
+	g_106c59b0.sub_1000e8fe(props + 1, 8, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068380 size=0x8b
 struct SpriteTE { void sub_1000b52d(int a, int b); };
 extern SpriteTE g_106c59e4;

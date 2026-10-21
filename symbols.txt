@@ -4902,6 +4902,7 @@
 0x10013b1a func   ??1CUnknown109f08c0@@QAE@XZ CUnknown109f08c0::~CUnknown109f08c0
 0x10013b2e func   ?sub_101d1280@@YAHPAVCBaseEntity@@@Z sub_101d1280
 0x10013b79 func   ?sub_100a9470@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9470
+0x10013b92 func   ?sub_10068110@@YAHXZ sub_10068110
 0x10013ba1 func   ?sub_100bb870@CBeam@@QAEXHPBM@Z CBeam::sub_100bb870
 0x10013ba6 func   ??0CVStatList_t@@QAE@H@Z CVStatList_t::CVStatList_t
 0x10013bba func   ?vfunc104@CPropHaunted@@UAEXXZ CPropHaunted::vfunc104
