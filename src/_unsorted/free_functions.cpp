@@ -57538,6 +57538,20 @@ void sub_1023f060(unsigned int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102400e0 size=0x71
+// TARGET: sub_102400e0
+bool sub_102400e0(const Vector *p, const Vector *mins, const Vector *maxs)
+{
+    if ((double)p->x > (double)maxs->x || (double)p->x < (double)mins->x)
+        return false;
+    if ((double)p->y > (double)maxs->y || (double)p->y < (double)mins->y)
+        return false;
+    if ((double)p->z > (double)maxs->z || (double)p->z < (double)mins->z)
+        return false;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102404e0 size=0x140
 #include <math.h>
 extern float g_104454c0;

@@ -3179,6 +3179,7 @@
 0x1000d747 func   ?sub_10348560@@YAXXZ sub_10348560
 0x1000d74c func   ?sub_101e3910@CUnknown101e0f00@@QAEXHHHH@Z CUnknown101e0f00::sub_101e3910
 0x1000d751 func   ?vfunc5@CNPC_VAnimal@@QAEPAV1@I@Z CNPC_VAnimal::vfunc5
+0x1000d76f func   ?sub_102400e0@@YA_NPBVVector@@00@Z sub_102400e0
 0x1000d779 func   ?sub_10339a90@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10339a90
 0x1000d783 func   ?sub_101dadd0@CUnknown101da960@@QAEXXZ CUnknown101da960::sub_101dadd0
 0x1000d7ab func   _item_w_gargoyle_fist item_w_gargoyle_fist
