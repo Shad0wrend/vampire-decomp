@@ -34,4 +34,7 @@ public:
 	CSoundEmitterSystemBase *sub_101b26c0();
 	CSoundEmitterSystemBase *sub_101b0200(unsigned char flags);	// slot 0, scalar deleting destructor: purges the lists at +0xb0, +0x70, +0x24 and the memory blocks at +0x9c, +0x54, +0x8; deletes this when bit 0 of flags is set
 	void sub_101b3770(void *pTable, const char *pszName, int value);	// interns pszName in the string table at +0xb0 and appends the 8 byte record (16 bit symbol, value) to the vector (memory at +0x20, size at +0x2c) of pTable
+	int sub_101b2f60(const char *pszName);	// index of the sound record (0xe8 bytes each, table at +0x54) named pszName, -1 when unknown
+	char sub_101b31a0(int index);	// true when index is within the sound record count at +0x64
+	void sub_101b50f0(const char *pszName);	// flags the sound record and its script file (record dword +0x18, flag table at +0x9c, 0x82 bytes each) as changed; DevWarning when there is no such sound
 };
