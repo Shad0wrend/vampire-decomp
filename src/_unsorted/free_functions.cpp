@@ -18753,6 +18753,23 @@ float *CBaseEntity::sub_100b2150(float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2e30 size=0xd6
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+void CBaseEntity::sub_100b2e30(const float *pVel)
+{
+	ScopeTrace trace("CBaseEntity::SetLocalVelocity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pVel[0] != m_vel3d4[0] || pVel[1] != m_vel3d4[1] || pVel[2] != m_vel3d4[2]) {
+		sub_100b5340(0x1000, 0);
+		m_vel3d4[0] = pVel[0];
+		m_vel3d4[1] = pVel[1];
+		m_vel3d4[2] = pVel[2];
+		*((char *)this + 0x1b1) = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3350 size=0xf9
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

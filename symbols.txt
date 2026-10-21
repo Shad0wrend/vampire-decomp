@@ -4920,6 +4920,7 @@
 0x1001370a func   ?sub_10079320@@YAXPAUSDumpOutput@@HPBDZZ sub_10079320
 0x1001370f func   ?sub_1040dcf0@CBaseCombatWeapon@@QAEXPAVCBaseEntity@@PBMPAX@Z CBaseCombatWeapon::sub_1040dcf0
 0x1001371e func   ?vfunc0@CTraceFilterHasThrowLOS@@UAE_NPAXH@Z CTraceFilterHasThrowLOS::vfunc0
+0x10013728 func   ?sub_100b2e30@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_100b2e30
 0x1001372d func   ?vfunc104@CNPC_VTzimisceRunner@@QAEXXZ CNPC_VTzimisceRunner::vfunc104
 0x1001373c func   ?sub_100b97e0@Obj@@QAEXPBUVec3@@MM@Z Obj::sub_100b97e0
 0x10013741 func   ?sub_100d6930@@YAXXZ sub_100d6930
