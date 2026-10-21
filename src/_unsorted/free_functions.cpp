@@ -32762,6 +32762,42 @@ CUnknown101d62d0Record *CUnknown101d62d0::sub_101d62d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d66a0 size=0x64
+#include "CVStatAction_t.h"
+struct CPartHolderX {
+    char m_pad0000[0x18];
+    CVStatActionPart m_part;	// 0x18
+};
+struct CPartListUnit {
+    char m_pad0000[0x1c];
+    int m_n1c;	// 0x1c
+    char m_pad0020[0x28 - 0x20];
+    int m_n28;	// 0x28
+    int m_nItems;	// 0x2c
+    CPartHolderX **m_ppItems;	// 0x30
+    void sub_101d6890();
+    void sub_101d66a0();
+};
+
+// TARGET: CPartListUnit::sub_101d66a0
+void CPartListUnit::sub_101d66a0()
+{
+    sub_101d6890();
+    if (m_ppItems) {
+        for (int i = 0; i < m_nItems; i++) {
+            if (m_ppItems[i])
+                delete m_ppItems[i];
+            m_ppItems[i] = 0;
+        }
+        delete m_ppItems;
+        m_ppItems = 0;
+    }
+    m_n1c = 0;
+    m_nItems = 0;
+    m_n28 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6750 size=0xf1
 #include "CUnknown101d6750.h"
 
