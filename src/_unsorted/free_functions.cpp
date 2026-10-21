@@ -28390,6 +28390,41 @@ void CEnvBeam::sub_100fef50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101006e0 size=0x125
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CGameTrace.h"
+#include "ConVar.h"
+
+extern CUnknown1070b254 *g_1070b254;
+extern ConVar *g_10738964;
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int bTest, float flDuration);
+
+void sub_101006e0(const float *pStart, const float *pEnd, unsigned int mask, void *pIgnore, int collisionGroup, CGameTrace *pTrace)
+{
+	Ray_t ray;
+	ray.m_Delta[0] = pEnd[0] - pStart[0];
+	ray.m_Delta[1] = pEnd[1] - pStart[1];
+	ray.m_Delta[2] = pEnd[2] - pStart[2];
+	int nSwept = (ray.m_Delta[0] * ray.m_Delta[0] + ray.m_Delta[1] * ray.m_Delta[1] + ray.m_Delta[2] * ray.m_Delta[2]) != 0.0f;
+	*(char *)&ray.m_IsSwept = (char)nSwept;
+	ray.m_Start[0] = pStart[0];
+	ray.m_Start[1] = pStart[1];
+	ray.m_StartOffset[0] = ray.m_StartOffset[1] = ray.m_StartOffset[2] = 0.0f;
+	ray.m_IsRay = true;
+	ray.m_Extents[0] = ray.m_Extents[1] = ray.m_Extents[2] = 0.0f;
+	ray.m_Start[2] = pStart[2];
+	ray.m_b32 = 0;
+	ray.m_n34 = 0;
+	ray.m_b33 = 0;
+	CTraceFilterSimple traceFilter(pIgnore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, pTrace);
+	if (!g_10738964->vfunc1() && g_10738964->m_nValue)
+		sub_10146570(pTrace->m_startpos, pTrace->m_endpos, 255, 0, 0, 1, -1.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100ef0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
