@@ -11143,6 +11143,38 @@ void sub_100892e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10089430 size=0x64
+#include "CBaseCombatCharacter.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+CBaseCombatCharacter *sub_101cd9e0(int a);
+void sub_10342470();
+
+struct CCmdTarget {
+	void sub_102c0520(const char *pszArg, int a, int b);
+};
+
+struct CCmdAI {
+	char m_pad[0x98];
+	CCmdTarget *m_pTarget;
+};
+
+struct CCmdChar {
+	char m_pad[0x94];
+	CCmdAI *m_pAI;
+};
+
+void sub_10089430()
+{
+	const char *pszArg = g_1070b22c->vfunc84(1);
+	CBaseCombatCharacter *pPlayer = sub_101cd9e0(1);
+	CCmdChar *p = (CCmdChar *)pPlayer->sub_10341c30((void *)sub_10342470, 0x44000000, 0.7f, 0, 0, 0x46004003);
+	if (pszArg && p && p->m_pAI && p->m_pAI->m_pTarget)
+		p->m_pAI->m_pTarget->sub_102c0520(pszArg, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10089c60 size=0x105
 #include "CBaseAnimating.h"
 #include "CUnknown1070b22c.h"

@@ -5161,6 +5161,7 @@
 0x1002fc30 func   ?sub_1002fc30@@YAXPAVCBaseEntity@@M@Z sub_1002fc30
 0x10036810 func   ?sub_10036810@@YAXPAUPhysEnt@@HHHH@Z sub_10036810
 0x100892e0 func   ?sub_100892e0@@YAXXZ sub_100892e0
+0x10089430 func   ?sub_10089430@@YAXXZ sub_10089430
 0x10089c60 func   ?sub_10089c60@@YAXXZ sub_10089c60
 0x1008a6d0 func   ?sub_1008a6d0@@YAXXZ sub_1008a6d0
 0x1009ab70 func   ?sub_1009ab70@@YAPAXPAVCBaseEntity@@PAXPAI@Z sub_1009ab70
