@@ -37756,6 +37756,27 @@ void CUnknown101f3d80::sub_101f3d80(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f41b0 size=0x9b
+#include "CUnknown101f40f0.h"
+#include <stdio.h>
+extern char g_106b8540[];
+
+void CUnknown101f40f0::sub_101f41b0()
+{
+    char szBuf[260];
+    int n = m_pParent->m_nCount;
+    m_pInts = (int *)operator new(n * 4);
+    for (int i = 0; i < n; i++)
+        m_pInts[i] = 1;
+    const char *pszName = m_pszName ? m_pszName : g_106b8540;
+    const char *const *ppParentName = &m_pParent->m_pszName;
+    const char *pszParent = *ppParentName ? *ppParentName : g_106b8540;
+    sprintf(szBuf, "%s\\%s", pszParent, pszName);
+    m_Inner.sub_101f3690((int)this, 0, (int)szBuf, (int)(m_pszName ? m_pszName : g_106b8540));
+    m_Inner.sub_101f37a0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4280 size=0x8
 int __fastcall sub_101f4280(int *p) { return (*p)++; }
 // END FUNCTION
