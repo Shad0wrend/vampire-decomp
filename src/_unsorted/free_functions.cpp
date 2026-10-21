@@ -33112,6 +33112,36 @@ CUnknown101b30d0 *CUnknown101b30d0::sub_101b30d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3830 size=0x10f
+#include "CUnknown101b3830.h"
+__declspec(dllimport) const char *Q_stristr(const char *, const char *);
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+extern char g_105994a8[];
+extern char g_10599498[];
+extern char g_105994a0[];
+extern char g_10599490[];
+void sub_101b3990(const char *pszName, int nPrefixLen, int nSkip, char *pPrefix, int nPrefixSize, char *pSuffix, int nSuffixSize);
+void CUnknown101b3830::sub_101b3830(int nKey, const char *pszName)
+{
+	const char *pMarker = Q_stristr(pszName, g_105994a8);
+	if (!pMarker) {
+		sub_101b3770(nKey, pszName, (int)pMarker);
+		return;
+	}
+	char prefix[256];
+	char suffix[256];
+	char out[256];
+	memset(prefix, 0, 256);
+	memset(suffix, 0, 256);
+	sub_101b3990(pszName, pMarker - pszName, 7, prefix, 256, suffix, 256);
+	Q_snprintf(out, 256, g_10599498, prefix, g_105994a0, suffix);
+	sub_101b3770(nKey, out, 1);
+	Q_snprintf(out, 256, g_10599498, prefix, g_10599490, suffix);
+	sub_101b3770(nKey, out, 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3a10 size=0x107
 #include "CUnknown101b3a10.h"
 
