@@ -21,6 +21,8 @@ public:
 	int sub_10295710(int act);	// CAI_BaseNPCTroika::vfunc376 (stub 0x1000fb14), called directly
 	// Slot 600 override: same as CAI_BaseNPCTroika::sub_102b57c0.
 	virtual char vfunc600(int unused);
+	// Slot 602 override: true when the NPC may carry on (not blocked by the flags at +0x5b84 / slot 293); without the named object check of the base.
+	virtual char vfunc602();
 	// Slot 463 implementation (stub 0x10011234, function 0x10384720), called directly by the Guard override; two arguments.
 	void sub_10384720(int a, int b);
 	// Slot 563 implementation (function 0x10384760): adds the offset between two position getters of pEnt to pVec.
