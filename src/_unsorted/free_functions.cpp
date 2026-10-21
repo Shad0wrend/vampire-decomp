@@ -55322,6 +55322,46 @@ void __fastcall sub_102ecce0(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ed9c0 size=0xa6
+#include "CAI_Navigator.h"
+
+struct CGlobalVarsView
+{
+	int m_n00;
+	int m_n04;
+};
+
+struct CAI_PathfinderView
+{
+	int m_pVtable;
+	int m_pOuter;
+	int m_i08;
+	int m_i0c;
+
+	int sub_10302e50(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+};
+
+extern CGlobalVarsView *g_1070b228;
+
+bool CAI_Navigator::sub_102ed9c0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, Vector *pOut)
+{
+	m_i08 = *(int *)(m_pOuter + 0x156c);
+	m_i0c = g_1070b228->m_n04;
+	CAI_PathfinderView *pPathfinder = (CAI_PathfinderView *)sub_102ecc00();
+	pPathfinder->m_i08 = *(int *)(pPathfinder->m_pOuter + 0x156c);
+	pPathfinder->m_i0c = g_1070b228->m_n04;
+	int node = ((CAI_PathfinderView *)sub_102ecc00())->sub_10302e50(a1, a2, a3, a4, a5, a6, a7);
+	if (node == -1)
+		return false;
+	Vector vecPos;
+	Vector *pNode = sub_102ee9c0(&vecPos, node);
+	pOut->x = pNode->x;
+	pOut->y = pNode->y;
+	pOut->z = pNode->z;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102edae0 size=0x92
 #include "CUnknown103008f0.h"
 
