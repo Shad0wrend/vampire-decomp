@@ -4144,6 +4144,7 @@
 0x10011833 func   ?vfunc14@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHHHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc14
 0x10011838 func   ?sub_10382970@CUnknown10382970@@QAEXH@Z CUnknown10382970::sub_10382970
 0x10011851 func   ?sub_103c63c0@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c63c0
+0x1001185b func   ?vfunc173@CMomentaryRotButton@@QAEXHHHH@Z CMomentaryRotButton::vfunc173
 0x10011865 func   _path_corner path_corner
 0x10011879 func   ?sub_101b6b90@UtlMem@@QAEXXZ UtlMem::sub_101b6b90
 0x1001187e func   ?sub_101941d0@CPropDestructableUnit@@QAEHXZ CPropDestructableUnit::sub_101941d0

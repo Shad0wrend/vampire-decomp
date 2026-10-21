@@ -1,6 +1,46 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100cabc0 size=0xbb
+#include "CMomentaryRotButton.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+
+struct GlobalVarsView
+{
+	char m_pad0000[0xc];
+	float curtime;	// 0x0c
+};
+extern GlobalVarsView *g_1070b228;
+extern CGlobalEntityList *g_10566458;
+void sub_1000a033();
+
+// TARGET: CMomentaryRotButton::vfunc173
+void CMomentaryRotButton::vfunc173(int a, int b, int c, int d)
+{
+	bool bFlag = false;
+	if (m_nUsed5d4 == 0) {
+		bFlag = true;
+		m_nDirection5d8 = -m_nDirection5d8;
+		unsigned int h = m_hEntity53c;
+		void *pEnt;
+		if (h == 0xffffffff) {
+			pEnt = 0;
+		} else {
+			CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+			pEnt = pSlot->m_Serial == (int)(h >> 13) ? pSlot->m_pEntity : 0;
+		}
+		m_Output574.sub_100cd660(pEnt, this, 0);
+	}
+	m_nUsed5d4 = 1;
+	float flAngle = sub_100ca630((float *)((CEntityVSlots *)this)->slot221());
+	sub_100cacb0(flAngle, bFlag);
+	((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000a033, 0, 0);
+	m_flNextThink = g_1070b228->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb4f0 size=0x6d
 #include "CMomentaryRotButton.h"
 
