@@ -15,7 +15,8 @@ public:
 	virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23(); virtual void vfunc24();
 	virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28(); virtual void vfunc29();
-	virtual void vfunc30(); virtual void vfunc31(); virtual void vfunc32(); virtual void vfunc33(); virtual void vfunc34();
+	virtual void vfunc30(); virtual void vfunc31(); virtual void vfunc32(); virtual void vfunc33();
+	virtual int vfunc34(int edictIndex);	// slot 34 (+0x88): the user id of the player behind the engine index
 	virtual int vfunc35(int a);	// slot 35 (+0x8c)
 	virtual void vfunc36(); virtual void vfunc37();
 	virtual void *vfunc38(int index);	// slot 38 (+0x98): PEntityOfEntIndex (the edict, whose IServerUnknown is at +0x40)
