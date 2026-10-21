@@ -21136,6 +21136,45 @@ extern "C" CBaseEntity *env_fire()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109990 size=0x6a
+#include "CFire.h"
+extern void *vt_1045d1c4[];
+struct CFireSub { void sub_10002ddd(); };
+struct CFireUnit : CFire {
+    CBaseEntity *sub_100090fc(int a);
+    char m_pad0004[0x450 - sizeof(CBaseEntity)];
+    int m_f450, m_f454, m_f458, m_f45c, m_f460, m_f464;
+    int m_pad468;
+    int m_f46c;
+    float m_f470;
+    char m_pad474[0x480 - 0x474];
+    int m_f480;
+    char m_pad484[0x494 - 0x484];
+    CFireSub m_s494;
+    char m_pad495[0x4ac - 0x495];
+    CFireSub m_s4ac;
+};
+
+CFire *CFire::sub_10109990()
+{
+    CFireUnit *u = (CFireUnit *)this;
+    u->sub_100090fc(0);
+    u->m_f450 = -1;
+    u->m_f454 = -1;
+    u->m_s494.sub_10002ddd();
+    u->m_s4ac.sub_10002ddd();
+    u->m_f45c = 0;
+    u->m_f480 = 0;
+    u->m_f460 = 0;
+    u->m_f464 = 0;
+    u->m_f458 = 0;
+    u->m_f46c = 0;
+    *(void ***)this = vt_1045d1c4;
+    u->m_f470 = 8.0f;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109da0 size=0xa
 void __fastcall sub_10109da0(char *self, int, int)
 {
