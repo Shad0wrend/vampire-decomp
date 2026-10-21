@@ -30976,6 +30976,51 @@ void sub_10138cc0(const S10138cc0Mat3 &in1, const S10138cc0Mat3 &in2, S10138cc0M
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138ff0 size=0x109
+#include <math.h>
+
+inline int Floor2Int(float a)
+{
+	int RetVal;
+	int CtrlwdHolder;
+	int CtrlwdSetter;
+	__asm
+	{
+		fld a
+		fnstcw CtrlwdHolder
+		movzx eax, CtrlwdHolder
+		and eax, 0xFFFFF3FF
+		or eax, 0x400
+		mov CtrlwdSetter, eax
+		fldcw CtrlwdSetter
+		fistp RetVal
+		fldcw CtrlwdHolder
+	}
+	return RetVal;
+}
+
+void sub_10138ff0(double a, double b, int *pQuot, int *pRem)
+{
+	int nQuot;
+	int nRem;
+	if (a >= 0.0) {
+		double q = floor(a / b);
+		nQuot = (int)q;
+		nRem = Floor2Int((float)(a - q * b));
+	} else {
+		double q = floor(-a / b);
+		nQuot = -(int)q;
+		nRem = Floor2Int((float)(-a - q * b));
+		if (nRem != 0) {
+			nQuot--;
+			nRem = (int)b - nRem;
+		}
+	}
+	*pQuot = nQuot;
+	*pRem = nRem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139550 size=0x8a
 #include "Vector.h"
 #include "QAngle.h"
