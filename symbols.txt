@@ -2366,6 +2366,7 @@
 0x1000bcd5 func   ?sub_101d72a0@List@@QAEHPBD@Z List::sub_101d72a0
 0x1000bcda func   ?sub_101b61a0@CUnknown101b61a0@@QAEAAV1@ABV1@@Z CUnknown101b61a0::sub_101b61a0
 0x1000bcdf func   _auspex_aura auspex_aura
+0x1000bcee func   ?vfunc18@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc18
 0x1000bd34 func   ?vfunc5@CResearchBook_HG_MELEE@@QAEPAV1@I@Z CResearchBook_HG_MELEE::vfunc5
 0x1000bd39 func   ?vfunc1@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc1
 0x1000bd48 func   ?sub_10390040@@YIXPAD@Z sub_10390040

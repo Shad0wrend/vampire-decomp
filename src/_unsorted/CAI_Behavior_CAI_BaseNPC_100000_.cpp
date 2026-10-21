@@ -17,6 +17,38 @@ void __fastcall sub_102c6e90(CAI_Behavior<CAI_BaseNPC, 100000> *behavior)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6eb0 size=0x76
+#include "CAI_Behavior.h"
+#include "CUnknown10936b68.h"
+extern CUnknown10936b68 g_10936b68;
+extern "C" __declspec(dllimport) void Warning(const char *fmt, ...);
+
+struct CAI_BehaviorView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual CAI_NPCScheduleRef *vfunc6();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual const char *vfunc19();
+};
+
+int CAI_Behavior<CAI_BaseNPC, 100000>::vfunc18(int condition)
+{
+	CAI_BehaviorView *pView = (CAI_BehaviorView *)this;
+	if (pView->vfunc6()->m_id == -1) {
+		Warning("ERROR: %s missing schedule!\n", pView->vfunc19());
+		return g_10936b68.sub_1030f300(1);
+	}
+	if (condition < 1000000000 || condition == -1) {
+		CAI_NPCScheduleRef *p = pView->vfunc6();
+		condition = p->sub_102ea2d0(condition);
+		if (condition == -1)
+			return 0;
+	}
+	return g_10936b68.sub_1030f300(condition);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6f70 size=0x8
 struct OuterStub;
 struct OuterStubVtbl { void (__fastcall *f[16])(OuterStub *); };
