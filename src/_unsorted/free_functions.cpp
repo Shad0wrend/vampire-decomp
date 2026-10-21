@@ -48163,6 +48163,19 @@ void sub_102464b0(int a, int b, int *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247030 size=0xc2
+#include "SendProp.h"
+
+SendProp sub_10247030(const char *pszDataTableName, const char *pszPropName)
+{
+	SendProp ret;
+	ret.m_nFlags = 0x40;
+	ret.m_pszExcludeDTName = pszDataTableName;
+	ret.m_pszVarName = pszPropName;
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247280 size=0x10b
 void sub_102473e0();
 extern char g_10753641;
