@@ -54,3 +54,4 @@
 	void sub_10346910(CBaseEntity *pTarget);	// "CBaseCombatCharacter::MeleeRollA...": stub 0x10009386, called directly with the owner of slot 167's object
 	void sub_103228c0();	// "CBaseCombatCharacter::UpdateOccult...": scope trace (entity name), for every weapon (count sub_1032e890, GetWeapon) whose info block (sub_102517b0) has a non-zero dword at +0x4fec0, ORs the dword at +0x4fed0 into the occult power flags at +0xe38
 	int sub_1032e890();	// "CBaseCombatCharacter::GetWeaponCount"-like (stub 0x1000bbe0)
+	void vfunc300(int a, int b, int c);	// slot 300 "CBaseCombatCharacter::Event_Took...": scope trace (entity name), with bit 2 of the occult power flags (+0xe38) set hands its first argument to sub_103f9160 of every weapon whose slot 348 name is "item_p_occult_regen"; takes three stack arguments
