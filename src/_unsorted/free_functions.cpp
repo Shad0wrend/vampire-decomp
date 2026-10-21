@@ -59972,6 +59972,18 @@ void CBaseCombatCharacter::sub_10338440(const int *pStat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10338950 size=0x150
+#include "ScopeTrace.h"
+char CBaseCombatCharacter::sub_10338950()
+{
+	ScopeTrace trace("CBaseCombatCharacter::IsBloodPoolFull", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int nMax = GetActiveStatList()->sub_10200b10(0xc);
+	if (nMax == GetActiveStatList()->sub_10010609(0xc))
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10338cb0 size=0xf1
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
