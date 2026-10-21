@@ -27030,6 +27030,40 @@ void CUnknown1018e2a0::sub_1018e2a0(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e910 size=0x84
+#include "CGlobalEntityList.h"
+#include "CActivityCopyProp.h"
+#include "CUnknown1018e2a0.h"
+extern CGlobalEntityList g_106eb5d8;
+extern CGlobalEntityList *g_10566458;
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_1058ed4c[];	// type descriptor of CActivityCopyProp
+extern "C" void *__RTDynamicCast(void *pObject, long nVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+void sub_101cd940(CBaseEntity *pEnt);
+void sub_1018e910(CBaseEntity *pTarget)
+{
+	CBaseEntity *pEnt = 0;
+	do {
+		pEnt = g_106eb5d8.sub_100f7380(pEnt, "activity_copy_prop");
+		CActivityCopyProp *pProp = (CActivityCopyProp *)__RTDynamicCast(pEnt, 0, g_10538764, g_1058ed4c, 0);
+		if (pProp) {
+			CGlobalEntityList_Ent *pCurrent;
+			unsigned int h = pProp->m_hTarget;
+			if (h != 0xffffffff) {
+				CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+				pCurrent = (pSlot->m_Serial == (int)(h >> 13)) ? pSlot->m_pEntity : 0;
+			} else {
+				pCurrent = 0;
+			}
+			if (pCurrent == (CGlobalEntityList_Ent *)pTarget) {
+				((CUnknown1018e2a0 *)pProp)->sub_1018e2a0(0);
+				sub_101cd940(pProp);
+			}
+		}
+	} while (pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e9d0 size=0xa
 extern int g_1058d1ac;
 // TARGET: sub_1018e9d0
