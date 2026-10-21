@@ -88869,6 +88869,27 @@ CBaseEntity *CBasePlayer::sub_1039ede0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039ee20 size=0x89
+#include "CNPC_VMingXiaoTentacle.h"
+#include "Vector.h"
+
+const float *sub_102d6100(int hull);
+const float *sub_102d6120(int hull);
+
+void CNPC_VMingXiaoTentacle::sub_1039ee20(void *pArg)
+{
+	Vector vecMaxs;
+	Vector vecMins;
+	vecMins = *(const Vector *)sub_102d6100(0xf);
+	vecMaxs = *(const Vector *)sub_102d6120(0xf);
+	vecMins.x = vecMins.x + vecMins.x;
+	vecMins.y = vecMins.y + vecMins.y;
+	vecMaxs.x = vecMaxs.x + vecMaxs.x;
+	vecMaxs.y = vecMaxs.y + vecMaxs.y;
+	sub_102a0fb0(pArg, 0x202400b, &vecMins.x, &vecMaxs.x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039f550 size=0x43
 #include "CNPC_VMoleman.h"
 void *sub_100aa720(int size);
