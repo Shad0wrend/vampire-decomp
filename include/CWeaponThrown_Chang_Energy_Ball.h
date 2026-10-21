@@ -11,7 +11,8 @@ public:
 	void sub_10013a57();
 	void vfunc104();	// "...::Precache": precaches the grenade particle systems, the tic sound and the relief models, then CBaseCombatWeapon::Precache
 	void sub_103f00c0(int unused);	// first call only (byte at +0x91c): tells the physics object, then swaps the nearest solid entity's model for a damaged relief (picked at random) and calls sub_103f0590
-	CBaseEntity *sub_103f0200();	// stub 0x10012409: finds the nearest solid entity that sub_103f01b0 accepts
+	CBaseEntity *sub_103f0200();	// stub 0x10012409: finds the nearest solid entity that sub_103f01b0 accepts, within the radius of the global at 0x104e15f8 around this weapon's origin
+	char sub_103f01b0(CBaseEntity *pEnt);	// stub 0x10014abf: whether the entity's name starts with "changcoffin"
 	void sub_103f0590();	// stub 0x1000eac5: with the entity behind the handle at +0x924, calls its slot 242 and SetNextThink(0.1f)
 	char m_pad0000[0x91c];
 	char m_b91c;	// 0x91c: done flag
