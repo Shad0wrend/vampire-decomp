@@ -68716,6 +68716,75 @@ bool CAI_Pathfinder::sub_102fce80(int moveType, CAI_PathfinderLink *pLink)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10303740 size=0xcb
+#include "CAI_Pathfinder.h"
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+class CAI_Waypoint
+{
+public:
+	char m_data[0x38];
+
+	CAI_Waypoint(const float *pPosition, int a2, int a3, int a4, int a5);
+};
+
+struct CPoolX	// the route waypoint pool at 0x10936c84
+{
+	void *sub_1013dc60(unsigned int nSize);	// stub 0x1000bbd6
+};
+extern CPoolX g_10936c84;
+
+struct CPFNodeX	// an AI network node
+{
+	char m_pad0000[0x70];
+	int m_nType;	// 0x70
+};
+
+struct CPFNetworkX	// the node list of the navigator
+{
+	int m_nNodes;	// 0x00
+	CPFNodeX **m_ppNodes;	// 0x04
+};
+
+struct CPFNavigatorX	// the NPC's navigator
+{
+	char m_pad0000[0x2c];
+	CPFNetworkX *m_pNetwork;	// 0x2c
+};
+
+struct CPFOuterX	// the NPC as the pathfinder sees it
+{
+	char m_pad0000[0x5d34];
+	CPFNavigatorX *m_pNavigator;	// 0x5d34
+	char m_pad5d38[8];
+	CAI_MoveProbe *m_pMoveProbe;	// 0x5d40
+};
+
+extern int g_106c994c;
+
+CAI_Waypoint *CAI_Pathfinder::sub_10303740(int navType, const float *vecStart, const float *vecEnd, const CBaseEntity *pTarget, int endFlags, int nodeID, int nodeTargetType, int flYaw, int a9)
+{
+	if (nodeID != -1) {
+		CPFNodeX *pNode;
+		CPFNetworkX *pNetwork = ((CPFOuterX *)m_pOuter)->m_pNavigator->m_pNetwork;
+		if (nodeID >= 0 && nodeID < pNetwork->m_nNodes) {
+			pNode = pNetwork->m_ppNodes[nodeID];
+		} else {
+			g_106c994c++;
+			pNode = 0;
+		}
+		if (pNode->m_nType != nodeTargetType)
+			return 0;
+	}
+	AIMoveTrace_t trace;
+	((CPFOuterX *)m_pOuter)->m_pMoveProbe->sub_102e6d70(navType, vecStart, vecEnd, 0x202400b, pTarget, 100.0f, 0, &trace, a9, 0);
+	if (trace.fStatus >= 0)
+		return new (g_10936c84.sub_1013dc60(0x38)) CAI_Waypoint(vecEnd, flYaw, navType, endFlags, nodeID);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10304020 size=0xc6
 #include "CAI_Pathfinder.h"
 #include "CAI_Waypoint.h"
