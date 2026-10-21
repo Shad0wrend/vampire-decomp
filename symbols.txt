@@ -849,6 +849,7 @@
 0x10004ceb func   ?vfunc5@CItemGDrugsMorphineBottle@@QAEPAV1@I@Z CItemGDrugsMorphineBottle::vfunc5
 0x10004d18 func   ?sub_102a1470@@YIHPAUN@@@Z sub_102a1470
 0x10004d2c func   ?sub_1022b480@S1022b480@@QAEXAAUinputdata_t@@@Z S1022b480::sub_1022b480
+0x10004d36 func   ?vfunc103@CChangeLevel@@UAEXXZ CChangeLevel::vfunc103
 0x10004d4a func   ?sub_100c7560@@YAPADPAUCStudioHdr@@HPAPAU1@@Z sub_100c7560
 0x10004d86 func   ?sub_10032d20@UtlVec32@@QAEXHH@Z UtlVec32::sub_10032d20
 0x10004d90 func   ?sub_1022c180@@YIHPADHH@Z sub_1022c180
