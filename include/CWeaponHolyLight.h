@@ -7,4 +7,5 @@ class CWeaponHolyLight
 public:
 	CWeaponHolyLight *vfunc5(unsigned int flags);
 	void sub_10013a57();
+	void vfunc326();	// slot 326 (declared as a plain member): with the weapon's owner and a positive level of the owner's stat list of type 3 for the stat at +0x910, stamps every kindred character around the owner with curtime + level ^ 1.43 at +0x13d4 (when later than the stamp it has), then CDisciplineWeapon::vfunc326
 };
