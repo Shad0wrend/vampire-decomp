@@ -38191,6 +38191,60 @@ char HOwner::sub_101e9a80(const char* name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9b60 size=0xb3
+#include "CHistoryList.h"
+
+struct CKVBase
+{
+	virtual void a0();
+	virtual void Release();
+};
+struct CKVNode
+{
+	virtual void a0(); virtual void a1();
+	virtual CKVNode *Find(const char *name);
+	virtual CKVNode *Next();
+};
+struct CKVRoot : virtual CKVBase
+{
+	virtual void r0(); virtual void r1();
+	virtual CKVNode *Find(const char *name);
+};
+struct CHistEntry
+{
+	void sub_101e9640(CKVNode *pNode);
+};
+
+extern void *g_1070b238;
+extern CKVRoot *sub_101f2e20(const char *, void *);
+extern void (*g_109f3628)(const char *, ...);
+
+bool CHistoryList::sub_101e9b60(const char *pszFile)
+{
+	CKVRoot *pRoot = sub_101f2e20(pszFile, g_1070b238);
+	if (!pRoot) {
+		g_109f3628("Unable to open history data file for: %s\n", pszFile);
+		return false;
+	}
+	CKVNode *pNode = pRoot->Find("HistoryData");
+	if (pNode) {
+		int i = 0;
+		do {
+			CHistEntry *pEntry = (*(CHistEntry ***)((char *)this + 8))[i++];
+			if (!pEntry) {
+				g_109f3628("Unable to parse history data file for: %s.  Memory allocation ERROR!\n", pszFile);
+				pRoot->Release();
+				return false;
+			}
+			pEntry->sub_101e9640(pNode);
+			pNode = pNode->Next();
+		} while (pNode);
+	}
+	pRoot->Release();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9e20 size=0xc0
 #include "CHistoryList.h"
 #include "FileSystemViews.h"
