@@ -4451,6 +4451,7 @@
 0x100122b0 func   ?vfunc27@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHH@Z CTempEntsSystem::vfunc27
 0x100122ba func   ??0CMeasureSectionInstance@@QAE@H@Z CMeasureSectionInstance::CMeasureSectionInstance
 0x100122bf func   ?sub_103ca2c0@CUnknown103ca2c0@@QAE_NH@Z CUnknown103ca2c0::sub_103ca2c0
+0x100122c9 func   ?sub_10105b90@@YIXPAVCBaseCombatCharacter@@HPAMPBM2MH@Z sub_10105b90
 0x100122d8 func   _func_elevator func_elevator
 0x100122e2 func   _trigger_inventory_check trigger_inventory_check
 0x100122e7 func   ?vfunc2@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc2

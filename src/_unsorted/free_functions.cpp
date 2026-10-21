@@ -26646,6 +26646,28 @@ int CExpressionTable::sub_10105870(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105b90 size=0xde
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+// TARGET: sub_10105b90
+void __fastcall sub_10105b90(CBaseCombatCharacter *pThis, int, float *pOut, const float *pTarget, const float *pCurrent, float flStep, int n)
+{
+    ScopeTrace trace("CBaseCombatCharacter::StepTowards", pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+    for (int i = 0; i < n; i++) {
+        if (pTarget[i] < pCurrent[i]) {
+            pOut[i] = flStep + pTarget[i];
+            if (pOut[i] > pCurrent[i])
+                pOut[i] = pCurrent[i];
+        } else if (pTarget[i] > pCurrent[i]) {
+            pOut[i] = pTarget[i] - flStep;
+            if (pOut[i] < pCurrent[i])
+                pOut[i] = pCurrent[i];
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105e20 size=0xcd
 extern int *g_109f3680;
 extern const char **g_109f3620;
