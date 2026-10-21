@@ -48341,6 +48341,55 @@ extern "C" CBaseEntity *prop_haunted()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102148f0 size=0xec
+#include "CUnknown102148f0.h"
+#include "CGlobalEntityList.h"
+
+struct CGlobalVarsView { char pad[0xc]; float curtime; };
+extern CGlobalVarsView *g_1070b228;
+extern CGlobalEntityList *g_10566458;
+void sub_10010bd1();
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+// The target entity: slot 242 and the SetNextThink stub are used.
+struct TargetSlots
+{
+	SL100(a) SL100(b) SL10(c0) SL10(c1) SL10(c2) SL10(c3)
+	virtual void d0(); virtual void d1();
+	virtual void vfunc242();
+	void sub_100fbbb0(float time);	// stub 0x1000fb23
+};
+
+struct TargetHandle
+{
+	unsigned int m_Index;
+	TargetSlots *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		CGlobalEntityList_Slot *e = &g_10566458->m_Slots[m_Index & 0x1fff];
+		return e->m_Serial == (m_Index >> 13) ? (TargetSlots *)e->m_pEntity : 0;
+	}
+};
+
+// TARGET: CUnknown102148f0::sub_102148f0
+void CUnknown102148f0::sub_102148f0()
+{
+    sub_10260a50(sub_1008f7b0("idle"));
+    sub_100ac4e0((void *)sub_10010bd1, 0, 0);
+    m_out804.sub_100cd660(this, this, 0);
+    m_flTime780 = g_1070b228->curtime;
+    if (((TargetHandle *)&m_hTarget)->Get() != 0) {
+        ((TargetHandle *)&m_hTarget)->Get()->vfunc242();
+        ((TargetHandle *)&m_hTarget)->Get()->sub_100fbbb0(5.0f);
+        m_hTarget = 0xffffffff;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10214d60 size=0x43
 #include "CPropButton.h"
 void *sub_100aa720(int size);
