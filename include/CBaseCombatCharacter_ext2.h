@@ -70,3 +70,4 @@
 	void sub_10329560();	// "CBaseCombatCharacter::EndGrapple": scope trace (entity name), when the dev flag object allows prints "%s EndGrapple with %s" (DebugFeedTrace), then ends the grapple on the grapple target (handle at +0x1538) and this through slot 380
 	virtual void vfunc130(int a);	// slot 130 "CBaseCombatCharacter::OnRestore": CBaseAnimating::vfunc130, then, when the presence-list stat (stat 10 of the stat list with id 3, the shared default list when absent) is positive, sub_10323370()
 	void sub_1008df10(int a);	// CBaseAnimating::vfunc130 (stub 0x10009e6c), called directly
+	void sub_1032f770(int hitbox, float a, float b);	// stub 0x1000596b, called directly by CC_Burn_Hitboxes with (hitbox index, 8.0f, 2.0f)
