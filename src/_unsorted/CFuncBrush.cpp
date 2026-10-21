@@ -1,6 +1,39 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1013dea0 size=0x16d
+#include "CFuncBrush.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+void CFuncBrush::vfunc103()
+{
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	CCollisionProperty *pColl;
+	pEnt->vfunc93(8, 0);
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", pEnt->m_name26c ? pEnt->m_name26c : g_106b8540);
+		pColl = (CCollisionProperty *)((char *)this + 0x270);
+		pColl->sub_100dc480(1);
+	}
+	if (*(int *)((char *)this + 0x450) == 1) {
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", pEnt->m_name26c ? pEnt->m_name26c : g_106b8540);
+		pColl->sub_100dc580(pColl->m_usSolidFlags | 4);
+	}
+	int tmp;
+	const char *pszModel = *pEnt->vfunc9(&tmp);
+	if (!pszModel)
+		pszModel = g_106b8540;
+	pEnt->vfunc105(pszModel);
+	if (*(int *)((char *)this + 0x454))
+		sub_1013e420();
+	if (!pEnt->m_name26c || !*(int *)((char *)this + 0x124))
+		pEnt->sub_100b3580(0x1000000);
+	pEnt->sub_100b3b00();
+	((CFuncBrushSlots *)this)->slot223();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ec30 size=0x1e
 #include "CFuncBrush.h"
 
