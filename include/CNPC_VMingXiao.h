@@ -5,6 +5,9 @@
 class CNPC_VMingXiao : public CBaseEntity
 {
 public:
+	virtual void vfunc104();	// Precache: the Troika base, the eleven Ming Xiao particle emitters, the move sound list, then the weapons item_w_mingxiao_melee / _tentacle / _spit
+	void sub_10298ad0();	// CAI_BaseNPCTroika::vfunc104 (stub 0x100097b4), called directly
+
 	int vfunc546(int arg);
 	int vfunc461();	// sets the task state at +0x5cc4 (and the source file/line markers at +0x1b3c/+0x1b40) from slots 158, 464 and 167
 	char vfunc69(void *pOther);	// as in CNPC_VHengeyokai (transplant)
