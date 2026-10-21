@@ -23,4 +23,5 @@ public:
 	float sub_101bbcf0();	// m_flPitchScale * m_flScale (stub 0x10007851)
 	void sub_101bc140();	// when the sound is set up and playing (bit 0 of the flags) emits it through the engine sound object (sub_101b14d0) from its entity
 	void sub_101bc020();	// clears +0x38; when bit 0 of the flags is set emits the sound through the engine (sub_100126cf: filter, entity index of the entity behind the handle at +0x30 or -1, channel, sample, volume = sub_101bbcf0(), sound level, 1, (int)m_flVolume, 0, 0, 0); then sets the dword at +0x3c to 1
+	void sub_101bbbf0(float flValue, int unused);	// member setter taking a value and a flag (stub 0x10014713), called by the controller
 };
