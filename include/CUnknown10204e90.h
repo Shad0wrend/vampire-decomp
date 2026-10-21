@@ -1,0 +1,14 @@
+// CUnknown10204e90: a reference to a stat record: a kind (0..2, picks one of the three global stat info lists) and an index
+// into that list (-1 = none); real name not yet known.
+#pragma once
+
+#include "CVStatInfoList_t.h"
+
+class CUnknown10204e90
+{
+public:
+	int m_nKind;	// 0x00
+	int m_nIndex;	// 0x04
+
+	int sub_10204e90(int arg);	// evaluates the referenced stat record for arg (0 without a valid reference)
+};
