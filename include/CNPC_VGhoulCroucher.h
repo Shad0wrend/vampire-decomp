@@ -7,7 +7,8 @@ class CNPC_VGhoulCroucher : public CBaseEntity
 public:
 	int vfunc546(int arg);
 	CNPC_VGhoulCroucher *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
-	CNPC_VGhoulCroucher *sub_1037aea0();	// as in CKeepUpright (transplant)
+	CNPC_VGhoulCroucher *sub_1037aea0();	// constructor: the CNPC_VHumanCombatant constructor body, the item objects at +0x6674 / +0x668c and the object at +0x66a4, both vtable pointers (+0 and +0x19b0), scope trace, the variant bytes cleared
+	void sub_10386aa0();	// CNPC_VHumanCombatant constructor body (stub 0x100037f6), called directly
 	char vfunc615();	// slot 615 "CNPC_VGhoulCroucher::CanBeSetOnFire": scope trace (entity name), false when the byte at +0x6665 is set, else CAI_BaseNPCTroika::vfunc615
 	char sub_1000c5db();	// CAI_BaseNPCTroika::vfunc615 (stub 0x1000c5db), called directly
 	int vfunc390(void *pInfo);	// slot 390 "CNPC_VGhoulCroucher::OnTakeDamage_Alive": scope trace (entity name), sub_1037b6e0(the dword at +0x2c of pInfo), sets the byte at +0x6667, then CNPC_VHuman::vfunc390
@@ -44,7 +45,9 @@ public:
 
 	char m_pad03e0[0x10e4 - 0x3e0];
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
-	char m_pad10e8[0x1a98 - 0x10e8];
+	char m_pad10e8[0x19b0 - 0x10e8];
+	int m_nVtable19b0;	// +0x19b0: vtable pointer of the second base (CAI_DefMovementSink)
+	char m_pad19b4[0x1a98 - 0x19b4];
 	int m_n1a98;	// +0x1a98
 	char m_pad1a9c[0x1b30 - 0x1a9c];
 	const char *m_pszFile1b30;	// +0x1b30: source file of the last schedule selection
