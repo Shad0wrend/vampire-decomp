@@ -11,7 +11,13 @@ public:
 	CPropModelState *sub_10216360();
 	void sub_102168a0(inputdata_t *pData);	// input handler: takes the input's integer (0 unless its type is 4) minus one, clamps it to [0, m_nStates - 1] and passes it with the activator to sub_10216aa0
 	void sub_10216aa0(int index, void *pActivator);
+	virtual void vfunc103();	// slot 103 "CPropModelState::Spawn": CBaseProp::vfunc103, clamps the state count (0..7) and the current state, sets the model of the current state (slot 105), flag 0x40000 and the +0x19c bits from bit 0 / bit 1 of +0x204, then with the studio header of sub_100952d0(-1): SetSolid(3) (inlined, scope trace), SetSize from the header hull (+0xb4 / +0xc0), SetCollisionGroup and the partition update
+	void sub_1018df70();	// CBaseProp::vfunc103 (stub 0x10011793), called directly
+	void sub_10260a50(int a);	// called through the stub at 0x1000d0b2
+	char *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 (stub 0x10013d8b): the studio header of the model (null when there is none)
 
-	char m_pad03e0[0x73c - 0x3e0];
+	char m_pad03e0[0x738 - 0x3e0];
+	int m_iState;	// 0x738: current state, clamped to the state count
 	int m_nStates;	// 0x73c
+	const char *m_pStateModels[8];	// 0x740: [0] is the entity's own model name (+0x388)
 };
