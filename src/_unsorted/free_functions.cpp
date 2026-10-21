@@ -7415,6 +7415,44 @@ void sub_10063880(int a, int b, const float *p3, const float *p4, const float *p
 }
 // END FUNCTION
 
+// FUNCTION: 0x10063d70 size=0x11e
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, int arg7, void *proxy);	// SendPropVector
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, float arg7, void *proxy);	// SendPropFloat
+void sub_10009539();
+void sub_10003012();
+void sub_10246300();
+
+extern SendTable g_106c39f8;
+extern SendTable *g_1053dfa8;
+
+// TARGET: sub_10063d70
+int sub_10063d70()
+{
+	static const char *pTableName = "DT_TEGlowSprite";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1053dfa8, (void *)sub_10009539),
+		sub_1000c14e("m_vecOrigin", 0xc, 0xc, -1, 2, 0, (int)0xc7ec9090, (void *)sub_10003012),
+		sub_10007bfd("m_nModelIndex", 0x18, 4, 0xb, 0, 0, 0),
+		sub_10006cc1("m_fScale", 0x1c, 4, 8, 8, 0, 25.6f, (void *)sub_10246300),
+		sub_10006cc1("m_fLife", 0x20, 4, 8, 8, 0, 25.6f, (void *)sub_10246300),
+		sub_10007bfd("m_nBrightness", 0x24, 4, 8, 1, 0, 0),
+	};
+	g_106c39f8.sub_1000e8fe(props + 1, 6, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064ca0 size=0x72
 #include "SendProp.h"
 
