@@ -31793,6 +31793,33 @@ void __fastcall sub_1012d4b0(S *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d740 size=0x97
+#include "CUnknown1012d740.h"
+
+struct TimerGlobals_t {
+	char pad[0xc];
+	float curtime;
+};
+
+extern TimerGlobals_t *g_1070b228;
+
+void CUnknown1012d740::sub_1012d740()
+{
+	float flNow = g_1070b228->curtime;
+	m_flTimeLeft = m_flTimeLeft - (flNow - m_flLastTime);
+	m_flLastTime = flNow;
+	if (m_flTimeLeft <= 0.0f) {
+		m_flTimeLeft = 0;
+		m_Output450.sub_100cd660(this, 0, 0);
+		sub_1012d550(0x82);
+		m_flNextThink = flNow + 0.01;
+		return;
+	}
+	sub_1012d5e0(m_nState488);
+	m_flNextThink = flNow + 0.01;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d8e0 size=0x43
 #include "CPropClockHand.h"
 void *sub_100aa720(int size);
