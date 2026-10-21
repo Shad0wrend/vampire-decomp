@@ -44,8 +44,11 @@ public:
 	int m_nSolidType;	// 0x40
 	unsigned short m_usSolidFlags;	// 0x44
 
-	void sub_100dc480(int solid);	// "CCollisionProperty::SetSolid" (called through the stub at 0x1000428c)
+	void sub_100dc480(int solid);	// "CCollisionProperty::SetSolid" (called through the stub at 0x1000428c): remembers whether the property was solid, runs sub_100dda20, turns SOLID_BBOX into 6 when the outer entity's handle at +0x25c resolves, stores the type, tells the outer entity's physics object (+0x36c, slot 25), runs sub_100ddc40 and, when the solidity changed, sub_100dc430
 	void sub_100dc770(const float *mins, const float *maxs);	// "CCollisionProperty::SetCollisionBounds" (called through the stub at 0x100123c3)
 	void sub_100dc580(int flags);	// "CCollisionProperty::SetSolidFlags" (called through the stub at 0x1000e9a8)
 	void sub_100ddd20();	// when the outer entity has an edict (engine slot 35) and bit 15 of its flags (+0x268) is clear, sets that bit and queues the entity with the global at 0x106e8144 (stub 0x1000c2e3)
+	void sub_100dda20();	// stub 0x100121f7, called by SetSolid before the type changes
+	void sub_100ddc40();	// stub 0x10001906, called by SetSolid after the type changed
+	void sub_100dc430();	// stub 0x1000c1e4, called by SetSolid when the solidity changed
 };
