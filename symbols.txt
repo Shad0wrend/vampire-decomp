@@ -3977,6 +3977,7 @@
 0x1001134c func   ?sub_1027f1e0@@YGPBDH@Z sub_1027f1e0
 0x10011356 func   ?vfunc1@CAI_CsActList@@UAEXPAUCsActRestoreIface@@@Z CAI_CsActList::vfunc1
 0x1001135b func   ?sub_101fa960@CVDmg_t@@QAEXPAUCVDmgSource_t@@@Z CVDmg_t::sub_101fa960
+0x10011365 func   ?vfunc113@CSun@@UAEXXZ CSun::vfunc113
 0x10011379 func   ?vfunc195@CBaseEntity@@QAEXXZ CBaseEntity::vfunc195
 0x10011383 func   ?sub_1024b230@@YA_NPBUStrRef@@0@Z sub_1024b230
 0x10011388 func   ?sub_10274aa0@CAI_BaseNPC@@QAEHPAX@Z CAI_BaseNPC::sub_10274aa0
