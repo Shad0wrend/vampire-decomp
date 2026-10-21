@@ -1,6 +1,30 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10194080 size=0xa8
+#include "CPropDestructable.h"
+#include "COutputEvent.h"
+
+void CPropDestructable::vfunc144(const CPropDestructableDamage *pInfo)
+{
+	CPropDestructableDamage info = *pInfo;
+	int nStages = *(int *)((char *)this + 0x77c);
+	if (*(int *)((char *)this + 0x784) == nStages) {
+		((COutputEvent *)((char *)this + 0x874))->sub_100cd660((void *)pInfo->m_data[10], this, 0);
+		if (*((char *)this + 0x790)) {
+			sub_10007c57(&info);
+			return;
+		}
+		m_nTakeDamage = 0;
+		m_flags204 &= ~0x2000;
+		m_field200 = 2;
+	} else {
+		sub_10193cc0(*(int *)((char *)this + 0x784) + 1, pInfo->m_data[11]);
+		m_iHealth = *(int *)((char *)this + 0x780);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101941d0 size=0x77
 #include "CPropDestructable.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
