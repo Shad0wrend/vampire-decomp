@@ -6,3 +6,4 @@
 	void sub_1000cb8a();	// the base class destructor body, tail called
 	void sub_1008d8b0(inputdata_t *pInput);	// "CBaseAnimating::InputSpawnTempParticle": scope trace (entity name), the input as a string (converted when it is not one) goes to the free function sub_100fce70(this, text)
 	void sub_1008fcd0(int sequence, float *pOut);	// "CBaseAnimating::GetSequenceLinearMotion": scope trace (entity name), over the models -1, 0, 1 finds the one whose sequence range holds the sequence and hands its header, the sequence relative to the model, the pose parameters at +0x690 and pOut to the studio worker sub_104285d0; DevWarning when none holds it
+	float sub_1008f8f0(int sequence);	// "CBaseAnimating::GetSequenceTurnYaw": as GetSequenceLinearMotion, the studio worker sub_10428690 fills two floats and the second is returned; the file-scope zero (0x104454c4) when no model holds the sequence
