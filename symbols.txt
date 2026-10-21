@@ -3793,6 +3793,7 @@
 0x1001123e func   ?sub_100fdcc0@@YIXPADHH@Z sub_100fdcc0
 0x10011243 func   ?sub_100ae090@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100ae090
 0x1001127a func   ?sub_10196780@@YAPAXPAUPyObj@@@Z sub_10196780
+0x10011289 func   ?sub_101f6eb0@CVTraitEffect_t@@QAEXXZ CVTraitEffect_t::sub_101f6eb0
 0x10011293 func   ?vfunc546@CNPC_VVentrue@@QAEHH@Z CNPC_VVentrue::vfunc546
 0x1001129d func   ?sub_1012f640@@YA?AUSFloatPair@@PBD@Z sub_1012f640
 0x100112c0 func   ?sub_10035a70@CBaseEntity@@QAE_NPAPAV1@@Z CBaseEntity::sub_10035a70

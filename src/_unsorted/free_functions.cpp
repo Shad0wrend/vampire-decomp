@@ -41269,6 +41269,46 @@ void CUnknown101f6c50::sub_101f6c50(CTraitStatBlock *pBlock)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f6eb0 size=0xf6
+#include "CVTraitEffect_t.h"
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *fmt, ...);
+extern const char *g_1074df94[];
+extern const char *g_1074dfac;
+const char *sub_102043a0();
+const char *sub_10202460(CVTraitEffect_t *pEffect, int nValue);
+extern char g_106b8540[];
+extern char g_105a693c[];
+
+void CVTraitEffect_t::sub_101f6eb0()
+{
+	char buf[128];
+	if (*(int *)this != -1) {
+		const char *pszTrait = sub_102043a0();
+		switch (m_nKind) {
+		case 6: {
+			const char *pszName = g_1074dfac ? g_1074dfac : g_106b8540;
+			sprintf(buf, "\t\t\t( %s  %s  %s )", pszTrait, pszName, sub_10202460(this, m_n14));
+			DevMsg(1, buf);
+			return;
+		}
+		case 7:
+			DevMsg(1, "\t( ");
+			m_cost.sub_101fc6a0();
+			DevMsg(1, g_105a693c);
+			return;
+		default: {
+			const char *pszName = g_1074df94[m_nKind] ? g_1074df94[m_nKind] : g_106b8540;
+			sprintf(buf, "\t\t\t( %s  %s  %d )", pszTrait, pszName, m_n14);
+			DevMsg(1, buf);
+			return;
+		}
+		}
+	}
+	DevMsg(1, "\t\t\t( <ERROR> )");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f7380 size=0x11
 extern int vt_10483be8[];
 
