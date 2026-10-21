@@ -588,6 +588,65 @@ bool CBasePlayer::vfunc382(CBaseCombatWeapon *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177900 size=0x141
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CGameRules.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+extern CGameRules *g_1070ba0c;
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct HolderSlots
+{
+	V100(a) V100(b)
+	V10(c0) V10(c1) V10(c2) V10(c3) V10(c4) V10(c5) V10(c6) V10(c7) V10(c8)
+	virtual void c90(); virtual void c91(); virtual void c92(); virtual void c93(); virtual void c94(); virtual void c95(); virtual void c96(); virtual void c97();
+	virtual void slot298(CBasePlayer *pOwner, int a);
+	virtual void c99();
+	V10(d0) V10(d1) V10(d2) V10(d3) V10(d4)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8();
+	virtual void slot359();
+};
+
+static inline CGlobalEntityList_Ent *LookupEntity(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13))
+			return s->m_pEntity;
+	}
+	return 0;
+}
+
+#define HOLDER_HANDLE (*(unsigned int *)((char *)this + 0x1c64))
+
+void CBasePlayer::vfunc383(CBaseEntity *pWeapon, char bNoSwitch)
+{
+	if (!bNoSwitch) {
+		if (LookupEntity(*(volatile unsigned int *)((char *)this + 0x1c64)))
+			((HolderSlots *)LookupEntity(HOLDER_HANDLE))->slot359();
+		void *pHolder = sub_1032e120(pWeapon->m_classname11c ? pWeapon->m_classname11c : g_106b8540);
+		if (pHolder)
+			HOLDER_HANDLE = *((CBaseEntity *)pHolder)->vfunc1();
+		else
+			HOLDER_HANDLE = 0xffffffff;
+		if (LookupEntity(*(volatile unsigned int *)((char *)this + 0x1c64)))
+			((HolderSlots *)LookupEntity(HOLDER_HANDLE))->slot298(this, 0);
+	}
+	sub_1032d380(pWeapon, bNoSwitch);
+	if (!bNoSwitch) {
+		if (g_1070ba0c->vfunc19((CBaseEntity *)this, pWeapon))
+			vfunc388(pWeapon, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017be50 size=0x8f
 int sub_1002dfe0(int a, int b);
 
