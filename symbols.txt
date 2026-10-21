@@ -2898,6 +2898,7 @@
 0x1000ce41 func   ?sub_101a9bd0@@YAPAHXZ sub_101a9bd0
 0x1000ce4b func   ?sub_10142af0@@YAXHHHHHHHHH@Z sub_10142af0
 0x1000ce5a func   ?sub_100d3d20@@YAXXZ sub_100d3d20
+0x1000ce6e func   ?sub_101f4ce0@CUnknown101f4c80@@QAE_NPAXPAVCUnknown101f5d60@@H@Z CUnknown101f4c80::sub_101f4ce0
 0x1000ce78 func   _trigger_impact trigger_impact
 0x1000ce82 func   ?sub_10327960@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10327960
 0x1000ce87 func   ?vfunc5@CWeaponMelee_Knife@@QAEPAV1@I@Z CWeaponMelee_Knife::vfunc5

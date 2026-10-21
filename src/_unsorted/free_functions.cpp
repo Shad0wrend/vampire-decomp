@@ -43923,6 +43923,74 @@ CUnknown101f4c80 *CUnknown101f4c80::sub_101f4c80(int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f4ce0 size=0x165
+#include "CUnknown101f4c80.h"
+#include "CUnknown101f5d60.h"
+#include "CUnknown101f5f00.h"
+
+extern "C" __declspec(dllimport) void DevWarning(int, const char *, ...);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct SSoundKV
+{
+	virtual const char *GetName();
+	virtual void v1(); virtual void v2(); virtual void v3();
+	virtual SSoundKV *GetFirstSubKey();
+	virtual SSoundKV *GetNextKey();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual int GetInt(const char *pszKey, int nDefault);
+	virtual void v11(); virtual void v12();
+	virtual const char *GetString(const char *pszKey, const char *pszDefault);
+};
+
+extern CUnknown101f5f00 g_1073dd58;
+int *sub_10203920(int *pOut, SSoundKV *pKV);
+int sub_10412520(const char *pszActivity);
+
+bool CUnknown101f4c80::sub_101f4ce0(void *pKVRaw, CUnknown101f5d60 *pOwner, int arg3)
+{
+	SSoundKV *pKV = (SSoundKV *)pKVRaw;
+	if (pKV) {
+		int tmp;
+		m_name.m_psz = m_folder.m_psz = (const char *)*sub_10203920(&tmp, pKV);
+		for (SSoundKV *p = pKV->GetFirstSubKey(); p; p = p->GetNextKey()) {
+			if (!_strcmpi(p->GetName(), "Activity")) {
+				const char *s = p->GetString(0, g_106b8540);
+				if (*s) {
+					if (sub_10412520(s) != -1)
+						m_unk0c++;
+					else
+						DevWarning(1, "Error: Sound Table Activity Lookup Failed: %s\n       Needs to be added to all_activities.inc\n       or removed from %s : %s\n", s, pOwner->sub_101f5d60(), m_folder.Get());
+				}
+			}
+			*(int *)((char *)this + 0x14) = pKV->GetInt("MaxRange", 3);
+		}
+		if (m_unk0c > 0) {
+			m_unk10 = (int)operator new(m_unk0c * 4);
+			SSoundKV *p = pKV->GetFirstSubKey();
+			if (p) {
+				int off = 0;
+				do {
+					if (!_strcmpi(p->GetName(), "Activity")) {
+						const char *s = p->GetString(0, g_106b8540);
+						if (*s) {
+							*(int *)(off + m_unk10) = sub_10412520(s);
+							if (*(int *)(off + m_unk10) != -1) {
+								g_1073dd58.sub_101f5f00((int)pOwner, *(int *)(off + m_unk10), arg3);
+								off += 4;
+							}
+						}
+					}
+					p = p->GetNextKey();
+				} while (p);
+			}
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4eb0 size=0x80
 extern void (*g_109f3650)(int, const char *);
 extern char g_106b8540[];
