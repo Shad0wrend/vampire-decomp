@@ -4,17 +4,20 @@
 
 #include "CBaseCombatCharacter.h"
 
-struct CUnknown101e56e0Name	// the name holder at +4 of a record (read through its address)
+struct CUnknown101e56e0Id	// the record's id (first base, at +0)
+{
+	int m_id;
+};
+
+struct CUnknown101e56e0Name	// the record's name holder (second base, at +4; reached through the adjusted address)
 {
 	const char *m_psz;
 	const char *Get() { return m_psz; }
 };
 
-class CUnknown101e56e0
+class CUnknown101e56e0 : public CUnknown101e56e0Id, public CUnknown101e56e0Name
 {
 public:
-	int m_id;	// 0x00
-	CUnknown101e56e0Name m_Name;	// 0x04
 	char m_pad0008[0x08];
 	int m_nKind;	// 0x10
 
