@@ -98443,6 +98443,40 @@ void CBaseCombatWeapon::sub_1040dcf0(CBaseEntity *pVictim, const float *pDir, vo
 }
 // END FUNCTION
 
+// FUNCTION: 0x104103c0 size=0x9b
+#include "CCollisionProperty.h"
+#include "matrix3x4_t.h"
+
+#define CV(n) virtual void s##n();
+struct CollView {
+	CV(0) CV(1) CV(2) CV(3) CV(4) CV(5) CV(6) CV(7)
+	virtual Vector *s8();
+	virtual Vector *s9(int a);
+	virtual matrix3x4_t *s10();
+};
+
+extern Vector g_1070d9d0;
+void sub_100087ba(const float *in1, const matrix3x4_t *in2, float *out);
+
+inline void VectorTransform(const Vector &in1, const matrix3x4_t &in2, Vector &out)
+{
+	sub_100087ba(&in1.x, &in2, &out.x);
+}
+
+Vector *CCollisionProperty::sub_104103c0(const Vector &in, Vector *pResult)
+{
+	CollView *pView = (CollView *)this;
+	if (!(m_usSolidFlags & 0x80) && m_nSolidType != 2 && m_nSolidType != 0 && *pView->s9(0) != g_1070d9d0)
+	{
+		VectorTransform(in, *pView->s10(), *pResult);
+		return pResult;
+	}
+	const Vector &origin = *pView->s8();
+	VectorAdd(origin, in, *pResult);
+	return pResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104106a0 size=0x95
 #include "CWeaponPhysCannon.h"
 #include "CGlobalEntityList.h"
