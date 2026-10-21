@@ -40230,6 +40230,39 @@ float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be930 size=0x10d
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CVFeat_t.h"
+#include "ScopeTrace.h"
+
+struct S101be930WeaponInfo
+{
+	int m_n0;
+	int m_nType;
+};
+
+extern float g_104454c0;
+
+float CStealthKillRules::sub_101be930(CBaseEntity *pEntity)
+{
+	ScopeTrace trace("CStealthKillRules::GetDeafZoneArcDot", g_106b8540);
+	CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pEntity;
+	void *pWeapon = pChar->sub_1032e7b0();
+	if (pWeapon) {
+		char *pBase = (char *)((CBaseCombatWeapon *)pWeapon)->sub_102517e0();
+		S101be930WeaponInfo &info = *(S101be930WeaponInfo *)(pBase + 0x1bc);
+		int id = info.m_nType;
+		if (id != 10)
+			id = 9;
+		int idx = CVFeatSet::Find(id)->sub_101e56e0(pEntity) - 1;
+		if (idx >= 0 && idx < 20)
+			return m_aTable1[idx];
+	}
+	return g_104454c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bea90 size=0x10c
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
