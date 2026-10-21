@@ -9,6 +9,23 @@ void CAI_BaseNPCTroika::vfunc416(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028d6e0 size=0x66
+#include "CAI_BaseNPCTroika.h"
+
+void CAI_BaseNPCTroika::vfunc180()
+{
+    sub_10295ab0(5.0f);
+    if (*(int *)((char *)this + 0x65e8) != 0)
+        vfunc601((int)this);
+    sub_102b53d0(0, "Leaving interesting place (UpdateOnRemove)");
+    if (sub_102c1170())
+        sub_102c0bb0();
+    sub_1029f5d0((char *)this + 0x658c);
+    sub_1029f5d0((char *)this + 0x6594);
+    sub_1027ca30();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028de90 size=0x7d
 #include "CAI_BaseNPCTroika.h"
 extern char g_10920534;
