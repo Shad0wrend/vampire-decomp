@@ -461,6 +461,54 @@ float CAI_BaseNPC::vfunc520(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279090 size=0x16e
+#include "CAI_BaseNPC.h"
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+
+extern "C" int __cdecl _strcmpi(const char *a, const char *b);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+CBasePlayer *sub_101cd9e0(int index);	// stub 0x1000ac8b
+extern CGlobalEntityList g_106eb5d8;
+extern int g_10920558;
+extern int g_1092055c;
+
+// TARGET: CAI_BaseNPC::vfunc559
+CBaseEntity *CAI_BaseNPC::vfunc559(const char *pszName)
+{
+    if (!_strcmpi(pszName, "!player"))
+        return (CBaseEntity *)sub_101cd9e0(1);
+    if (!_strcmpi(pszName, "!playercontroller")) {
+        CBasePlayer *pPlayer = sub_101cd9e0(1);
+        if (pPlayer)
+            return pPlayer->sub_101618a0();
+    } else if (!_strcmpi(pszName, "!enemy")) {
+        if (vfunc167())
+            return (CBaseEntity *)vfunc167();
+    } else if (_strcmpi(pszName, "!self") && _strcmpi(pszName, "!target1")) {
+        if (!_strcmpi(pszName, "!nearestfriend") || !_strcmpi(pszName, "!friend"))
+            return (CBaseEntity *)sub_101cd9e0(1);
+        if (!_strcmpi(pszName, "self")) {
+            if (++g_10920558 < 5) {
+                DevMsg("ERROR: \"self\" is no longer used, use \"!self\" in vcd instead!\n");
+                return (CBaseEntity *)this;
+            }
+        } else {
+            if (!_strcmpi(pszName, "Player")) {
+                if (++g_1092055c < 5)
+                    DevMsg("ERROR: \"player\" is no longer used, use \"!player\" in vcd instead!\n");
+                return (CBaseEntity *)sub_101cd9e0(1);
+            }
+            CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, pszName, 0, 0);
+            if (pEnt)
+                return pEnt;
+        }
+    }
+    return (CBaseEntity *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279d00 size=0xa0
 #include "CAI_BaseNPC.h"
 #include "CUnknown102e0150.h"
