@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CBaseEntity.h"
+#include "CDoorEventList.h"
 
 class CRotDoor : public CBaseEntity
 {
@@ -12,4 +13,11 @@ public:
 	void sub_100efae0(CBaseEntity *pOther);	// the door's touch function (called through the stub at 0x10012837)
 	void sub_100f3dd0(const float *pDir);	// takes the opening direction, zeroes the axis the spawn flags (0x40: x, 0x80: y, else z) say the door does not rotate about, converts it to angles (sub_10139970, stub 0x10003d4b) and hands them to sub_100f3e60 (stub 0x10003044)
 	void sub_10003044(float *pAngles);	// sub_100f3e60 (stub 0x10003044)
+	CRotDoor *vfunc5(unsigned char flags);	// scalar deleting destructor: releases the ten event lists, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
+	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
+
+	char m_pad03e0[0x4a4 - 0x3e0];
+	CDoorEventList m_items4a4[2];	// +0x4a4, +0x4bc
+	char m_pad04d4[0x564 - 0x4d4];
+	CDoorEventList m_items564[8];	// +0x564 .. +0x60c
 };
