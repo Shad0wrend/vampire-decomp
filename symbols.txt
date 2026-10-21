@@ -156,6 +156,7 @@
 0x10001a9b func   ?sub_10027a70@CUnknown10027a70@@QAEXXZ CUnknown10027a70::sub_10027a70
 0x10001aa0 func   ?vfunc291@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc291
 0x10001aaa func   ?sub_10428360@@YAHPADPBD@Z sub_10428360
+0x10001ab4 func   ?vfunc110@CEnvLaser@@QAE_NPBD0@Z CEnvLaser::vfunc110
 0x10001ab9 func   ?sub_10368f20@CNPC_VCamera@@QAEHXZ CNPC_VCamera::sub_10368f20
 0x10001acd func   ?sub_103b29a0@@YADXZ sub_103b29a0
 0x10001ad2 func   ?sub_1025d2b0@CUtlRBTreeBig@@QBE_NG@Z CUtlRBTreeBig::sub_1025d2b0
