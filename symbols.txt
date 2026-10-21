@@ -3692,6 +3692,7 @@
 0x1000f4ed func   ?vfunc191@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc191
 0x1000f501 func   ?sub_10258870@CUnknown10258870@@QAEXXZ CUnknown10258870::sub_10258870
 0x1000f506 func   ?sub_10217160@CUnknown10217160@@QAEXXZ CUnknown10217160::sub_10217160
+0x1000f50b func   ?sub_1004d590@@YADPAUEntSlot37@@ABVVector@@1@Z sub_1004d590
 0x1000f51a func   ?sub_101e0c30@CUnknown101e0c30@@QAEPAUS101e0520@@XZ CUnknown101e0c30::sub_101e0c30
 0x1000f51f func   _item_k_empire_mafia_key item_k_empire_mafia_key
 0x1000f55b func   ?vfunc103@CSimplePhysicsProp@@UAEXXZ CSimplePhysicsProp::vfunc103

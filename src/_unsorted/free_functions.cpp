@@ -5423,6 +5423,27 @@ void CPhysicsSpring::sub_1004d140(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d590 size=0x8f
+#include "Vector.h"
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct EntSlot37 {
+	SV10(0) SV10(1) SV10(2)
+	SV(30) SV(31) SV(32) SV(33) SV(34) SV(35) SV(36)
+	virtual void s37(Vector *pOut, int a);
+};
+
+char sub_1004d590(EntSlot37 *pEnt, const Vector &vecA, const Vector &vecB)
+{
+	Vector vecPos;
+	pEnt->s37(&vecPos, 0);
+	if (vecPos.DistToSqr(vecA) < vecPos.DistToSqr(vecB))
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004dcf0 size=0x72
 #include "SendProp.h"
 
