@@ -48,7 +48,11 @@ public:
 	virtual void t074(); virtual void t075(); virtual void t076(); virtual void t077(); virtual void t078(); virtual void t079();
 	VT_SLOTS10(t08) VT_SLOTS10(t09)
 	VT_SLOTS100(t1)
-	VT_SLOTS100(t2)
+	VT_SLOTS10(t20) VT_SLOTS10(t21) VT_SLOTS10(t22) VT_SLOTS10(t23) VT_SLOTS10(t24)
+	virtual void t250(); virtual void t251();
+	virtual void vfunc420();	// slot 420: base boss reset, then the state flag at +0x6689, the timers at +0x66ac / +0x66b0 (curtime + 3), the target handle at +0x6670 = -1
+	virtual void t253(); virtual void t254(); virtual void t255(); virtual void t256(); virtual void t257(); virtual void t258(); virtual void t259();
+	VT_SLOTS10(t26) VT_SLOTS10(t27) VT_SLOTS10(t28) VT_SLOTS10(t29)
 	VT_SLOTS10(t30)
 	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3();
 	virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7();
@@ -78,6 +82,8 @@ public:
 
 	void *sub_103bf580(void *pDefault);
 	void sub_103b9f90(int a, float b);
+	void sub_103b9f50(int a);
+	void sub_102c43b0(float delay);
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	char vfunc69(void *pOther);	// as in CNPC_VHengeyokai (transplant)
 	char sub_1029b180(void *pOther);	// as in CNPC_VHengeyokai (transplant)
@@ -85,4 +91,5 @@ public:
 	CNPC_VTzimisce *vfunc5(unsigned int flags);	// scalar deleting destructor: destructs the vectors at +0x6690 and +0x665c, the base (sub_1028d610), and frees the object when bit 0 of flags is set
 	void sub_1028d610();	// base class destructor body (stub 0x100123af)
 	void sub_1008c170(char *pszOut, int *pEvent);	// CBaseAnimating::vfunc241 (stub 0x10002793), called directly
+	void sub_1029a0b0();	// CNPC_VBaseBoss::vfunc420 (stub 0x100023dd), called directly
 };
