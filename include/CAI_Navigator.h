@@ -136,6 +136,7 @@ public:
 	bool sub_102ed540(float flMin, float flMax, int c);	// up to 5 tries: a random distance in [flMin, flMax] (re-rolled each try) along a random heading, handed to sub_102ed610 with flMin; the first success wins; else sub_102ed940(1.0f, vec3_origin, c)
 	bool sub_102ed610(const Vector *pDir, float flDist, float flMax, int c);	// stub 0x10005ad3: tries the point flDist along pDir from the owner's origin
 	bool sub_102ed940(float f, const Vector *pVec, int c);	// stub 0x10007afe: refreshes the stamps of this and of the pathfinder, then hands the owner's origin on
+	float sub_1030a650(float flValue);	// twice the argument clamped to [range of the owner's hull (object at owner +0x5d40, hull index at +8), 0x1049df84]
 
 	int m_i14;
 	int m_i18;
