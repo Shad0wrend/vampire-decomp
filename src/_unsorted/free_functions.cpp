@@ -30142,6 +30142,38 @@ eof:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137ed0 size=0xc4
+#include <math.h>
+#include "matrix3x4_t.h"
+#include "QAngle.h"
+#pragma intrinsic(atan2, sqrt)
+
+extern float g_10446758;
+
+// TARGET: sub_10137ed0
+void sub_10137ed0(const matrix3x4_t &matrix, QAngle &angles)
+{
+    float forward[3], left[3], up[3];
+    forward[0] = matrix.m_flMatVal[0][0];
+    forward[1] = matrix.m_flMatVal[1][0];
+    forward[2] = matrix.m_flMatVal[2][0];
+    left[0] = matrix.m_flMatVal[0][1];
+    left[1] = matrix.m_flMatVal[1][1];
+    left[2] = matrix.m_flMatVal[2][1];
+    up[2] = matrix.m_flMatVal[2][2];
+    float xyDist = sqrt(forward[0] * forward[0] + forward[1] * forward[1]);
+    if (xyDist > 0.001f) {
+        angles.y = atan2(forward[1], forward[0]) * g_10446758;
+        angles.x = atan2(-forward[2], xyDist) * g_10446758;
+        angles.z = atan2(left[2], up[2]) * g_10446758;
+    } else {
+        angles.z = 0;
+        angles.y = atan2(-left[0], left[1]) * g_10446758;
+        angles.x = atan2(-forward[2], xyDist) * g_10446758;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101388c0 size=0x10
 int sub_101388c0(int x)
 {
