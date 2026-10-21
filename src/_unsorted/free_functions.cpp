@@ -77869,6 +77869,54 @@ void CUnknown1030fe50::sub_1030fe70(int count, CUtlVector4 *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030ff10 size=0x64
+struct CWeaponGlobals
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern CWeaponGlobals *g_1070b228;
+
+#define OV(n) virtual void o##n();
+#define OV10(p) OV(p##0) OV(p##1) OV(p##2) OV(p##3) OV(p##4) OV(p##5) OV(p##6) OV(p##7) OV(p##8) OV(p##9)
+#define OV100(p) OV10(p##0) OV10(p##1) OV10(p##2) OV10(p##3) OV10(p##4) OV10(p##5) OV10(p##6) OV10(p##7) OV10(p##8) OV10(p##9)
+
+struct COwner469
+{
+	OV100(a) OV100(b) OV100(c) OV100(d)	// 0..399
+	OV10(f0) OV10(f1) OV10(f2) OV10(f3) OV10(f4) OV10(f5)	// 400..459
+	OV(g0) OV(g1) OV(g2) OV(g3) OV(g4) OV(g5) OV(g6) OV(g7) OV(g8)	// 460..468
+	virtual void slot469(int a);
+};
+
+struct CUnknown1030fe50Unit
+{
+	char m_pad0000[4];
+	COwner469 *m_pOwner;	// 0x04
+	char m_pad0008[0xc];
+	float m_flRadius;	// 0x14
+	float m_flTime;	// 0x18
+
+	void sub_1030ff10(int radius);
+	int sub_1030fff0(int radius);
+	void sub_10310130(int radius);
+	void sub_10310290(int radius);
+};
+
+void CUnknown1030fe50Unit::sub_1030ff10(int radius)
+{
+	if (m_flTime != g_1070b228->curtime || radius != m_flRadius)
+	{
+		sub_1030fff0(radius);
+		sub_10310130(radius);
+		sub_10310290(radius);
+		m_flRadius = (float)radius;
+		m_flTime = g_1070b228->curtime;
+	}
+	m_pOwner->slot469(radius);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fff0 size=0xf5
 #include "CUnknown1030fe50.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
