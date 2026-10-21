@@ -8861,6 +8861,69 @@ bool CBaseCineCam::sub_1006d9d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006e4c0 size=0x17a
+#include "CBaseCineCam.h"
+#include "CUtlVector4.h"
+#include "UtlVec8.h"
+#include "UtlMem.h"
+#include "CUnknown1070b244.h"
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+extern "C" __declspec(dllimport) void Plat_Free(void *pMem);
+extern CUnknown1070b244 *g_1070b244;
+
+bool CBaseCineCam::sub_1006e4c0(const char *pszPrefix, int unused)
+{
+	m_nState638 = 1;
+	CUtlVector4 shots;
+	shots.m_pMemory = 0;
+	shots.m_allocationCount = 0;
+	shots.m_growSize = 0;
+	shots.m_size = 0;
+	shots.m_pElements = 0;
+	int iShot = 1;
+	char szName[64];
+	do {
+		Q_snprintf(szName, 0x40, "%s_%d", pszPrefix, iShot);
+		if (sub_1006e130(szName, 1, 0)) {
+			sub_1006e8e0();
+			if (sub_1006d9d0() && sub_1006db10()) {
+				int elem = shots.m_size;
+				shots.sub_10071ae0(1);
+				((UtlVec8 *)&shots)->sub_10071ba0(elem, 1);
+				int *p = shots.m_pMemory + elem;
+				if (p)
+					*p = iShot;
+			}
+		}
+		iShot++;
+	} while (m_hShot630 != -1);
+	if (shots.m_size == 0) {
+		shots.m_size = 0;
+		((UtlMem *)&shots)->sub_1002cbd0();
+		shots.m_pElements = shots.m_pMemory;
+		((UtlMem *)&shots)->sub_1002cbd0();
+		return false;
+	}
+	Q_snprintf(szName, 0x40, "%s_%d", pszPrefix, shots.m_pMemory[g_1070b244->vfunc2(0, shots.m_size - 1)]);
+	sub_1006e130(szName, 1, 0);
+	Msg("CBaseCineCam::FindBestShot chose %s\n", szName);
+	shots.m_size = 0;
+	if (shots.m_growSize != -1) {
+		if (shots.m_pMemory) {
+			Plat_Free(shots.m_pMemory);
+			shots.m_pMemory = 0;
+		}
+		shots.m_allocationCount = 0;
+	}
+	shots.m_pElements = shots.m_pMemory;
+	if (shots.m_growSize != -1 && shots.m_pMemory)
+		Plat_Free(shots.m_pMemory);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006e770 size=0xb0
 #include "CBaseCineCam.h"
 
