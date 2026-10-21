@@ -27,6 +27,7 @@
 	void sub_1009edc0(const float *mins, const float *maxs);	// "CBaseEntity::SetCollisionBounds": scope trace (entity name), then the collision property at +0x270 SetCollisionBounds(mins, maxs)
 	void sub_100adf10(const float *mins, const float *maxs);	// "CBaseEntity::SetSize": scope trace (entity name), then sub_101cf390(this, mins, maxs)
 	void sub_100b5340(unsigned int addFlags, unsigned int propagateFlags);	// ors addFlags into +0x268, then walks the handle chain starting at +0x260 (next link at +0x264 of each entity) calling this function(addFlags | propagateFlags, 0) on each
+	void sub_100b52a0();	// marks the collision property at +0x270 dirty (sub_100ddd20), then walks the move-child handle chain (+0x260, next at +0x264) doing the same for each
 	void sub_100ddf60(const int *pData);	// copies the 14 dwords at pData into +0x450..+0x487, then sub_100ac4e0(0, 0, 0)
 	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// "CBaseEntity::ThinkSet" (called through the stub at 0x10007fe5): func is a think function pointer (BASEPTR bits), thinkTime a float's bits. Scope trace (entity name); without a context stores func as the think function (+0x118), else stores it (and a non-zero thinkTime) in the think context record of that name (registered when missing); returns func
 	void sub_100ac610(float time, const char *szContext);	// "CBaseEntity::SetNextThink" (stub 0x1000326f): scope trace (entity name), stores time as the next think time (+0x17c) or in the think context record of that name
