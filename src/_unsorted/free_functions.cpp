@@ -29459,6 +29459,34 @@ int *sub_101a5e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7170 size=0x78
+#include "CGlobalEntityList.h"
+#include "CCineNPC.h"
+extern CGlobalEntityList *g_10566458;
+struct CAI_BaseNPCUnit : CAI_BaseNPC { void sub_1027f270(int a); };
+void sub_101a7170(CCineNPC *pScript)
+{
+	char *p = (char *)pScript;
+	unsigned int flags = *(unsigned int *)(p + 0x4c);
+	bool bSet = (flags >> 12) & 1;
+	if (bSet) {
+		unsigned int h = *(unsigned int *)(p + 0x5ce4);
+		if (h != 0xffffffff) {
+			CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+			if (pSlot->m_Serial == (int)(h >> 13) && pSlot->m_pEntity) {
+				CAI_BaseNPCUnit *pNpc = *(CAI_BaseNPCUnit **)((char *)pSlot->m_pEntity + 0x94);
+				if (pNpc && *(int *)((char *)pNpc + 0x5cc0) == 4) {
+					pNpc->sub_1027f270(3);
+					*(int *)((char *)pNpc + 0x5d70) = 3;
+					pNpc->sub_1027d170();
+				}
+			}
+		}
+		*(int *)(p + 0x5f70) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a77a0 size=0xa2
 #include "CCineNPC.h"
 extern void (__cdecl *g_109f364c)(const char *fmt, ...);
