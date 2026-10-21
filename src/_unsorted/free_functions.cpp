@@ -45980,6 +45980,40 @@ void CAI_BaseNPC::sub_10252470(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10255c30 size=0x8b
+#include "CUnknown1073dc28.h"
+
+extern "C" char *__cdecl strtok(char *str, const char *delim);
+extern "C" int __cdecl _strcmpi(const char *a, const char *b);
+char *__cdecl sub_10203d60(void *pKeys);
+extern const char g_1054ca50[];	// " "
+
+struct CNameTableX
+{
+	int m_nCount;
+	CUnknown1073dc28Record **m_ppRecords;
+};
+extern CNameTableX g_1073a330;
+
+static __forceinline int FindNameId(const char *pszName)
+{
+	for (int i = 0; i < g_1073a330.m_nCount; i++) {
+		if (!_strcmpi(g_1073a330.m_ppRecords[i]->m_Name.Get(), pszName))
+			return g_1073a330.m_ppRecords[i]->m_nId;
+	}
+	return -1;
+}
+
+void CBaseCombatWeapon::sub_10255c30(void *pKeys)
+{
+	char *pszText = sub_10203d60(pKeys);
+	strtok(pszText, g_1054ca50);
+	int id = FindNameId(pszText);
+	*(int *)((char *)sub_102517b0() + 0x24d0) = id;
+	strtok(0, g_1054ca50);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10256200 size=0xb
 unsigned char __fastcall sub_10256200(unsigned char *self)
 {
