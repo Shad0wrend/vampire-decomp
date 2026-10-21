@@ -4967,6 +4967,7 @@
 0x1001443e func   _item_w_chang_blade item_w_chang_blade
 0x10014448 func   _env_dustpuff env_dustpuff
 0x1001444d func   ?sub_10345f10@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10345f10
+0x10014475 func   ?sub_10124120@CGameMovement@@QAEHAAVVector@@00M@Z CGameMovement::sub_10124120
 0x1001448e func   ?sub_1021b330@CUnknown10217f50@@QAEXPBDH@Z CUnknown10217f50::sub_1021b330
 0x10014493 func   ?vfunc441@CBasePlayer@@UAEXXZ CBasePlayer::vfunc441
 0x100144ac func   ?sub_1007f650@UtlMem@@QAEXXZ UtlMem::sub_1007f650

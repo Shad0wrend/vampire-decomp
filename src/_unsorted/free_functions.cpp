@@ -27809,6 +27809,34 @@ void CGameMovement::sub_10122590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10124120 size=0xa5
+#include "CGameMovement.h"
+
+// TARGET: CGameMovement::sub_10124120
+int CGameMovement::sub_10124120(Vector &in, Vector &normal, Vector &out, float overbounce)
+{
+    float backoff;
+    float change;
+    float angle;
+    int i, blocked;
+
+    angle = normal[2];
+    blocked = 0x00;
+    if (angle > 0)
+        blocked |= 0x01;
+    if (!angle)
+        blocked |= 0x02;
+    backoff = DotProduct(in, normal) * overbounce;
+    for (i = 0; i < 3; i++) {
+        change = normal[i] * backoff;
+        out[i] = in[i] - change;
+        if (out[i] > -0.1 && out[i] < 0.1)
+            out[i] = 0;
+    }
+    return blocked;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101251b0 size=0x12
 struct CHolderInner3e0 {
     char pad_0000[0x3e0];
