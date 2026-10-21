@@ -66773,6 +66773,30 @@ bool CBaseEntity::sub_103d3a40(const char *pszNameOrWildcard)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d44e0 size=0xae
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+
+struct CGlobal10924a6c
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+};
+extern CGlobal10924a6c *g_10924a6c;
+
+// TARGET: CNPC_VWerewolf::sub_103d44e0
+void CNPC_VWerewolf::sub_103d44e0(CNPC_VWerewolfHint66b0 *pHint, char flag)
+{
+	ScopeTrace trace("CNPC_VWerewolf::SetMoveHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (m_pHint66bc)
+		sub_103d4690();
+	m_b66c8 = flag;
+	m_pHint66bc = pHint;
+	g_10924a6c->vfunc1();
+	sub_10269a20(0x78);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d45c0 size=0x97
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;

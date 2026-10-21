@@ -32,6 +32,7 @@
 0x100012b2 func   ?sub_10055000@UtlVec8@@QAEXHH@Z UtlVec8::sub_10055000
 0x100012b7 func   ?sub_101f2500@CUnknown101f2500@@QAEDXZ CUnknown101f2500::sub_101f2500
 0x100012d5 func   ?sub_101b90a0@CUnknown101b90a0@@QAEXH@Z CUnknown101b90a0::sub_101b90a0
+0x100012df func   ?sub_103d44e0@CNPC_VWerewolf@@QAEXPAUCNPC_VWerewolfHint66b0@@D@Z CNPC_VWerewolf::sub_103d44e0
 0x10001307 func   ?sub_10032ec0@UtlMem@@QAEXXZ UtlMem::sub_10032ec0
 0x1000130c func   ?vfunc600@CNPC_VWerewolf@@UAE_NH@Z CNPC_VWerewolf::vfunc600
 0x10001311 func   ?sub_10348490@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::sub_10348490
