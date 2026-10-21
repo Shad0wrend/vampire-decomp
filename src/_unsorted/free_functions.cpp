@@ -22454,6 +22454,44 @@ int *sub_10131490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101317d0 size=0x64
+struct COutputX {
+    char m_pad[0x18];
+    void sub_100cd660(void *pActivator, void *pCaller, float flDelay);
+};
+struct CToggleRelayUnit {
+    char m_pad0000[0x204];
+    unsigned int m_spawnflags;	// 0x204
+    char m_pad0208[0x450 - 0x208];
+    COutputX m_OnTrigger;	// 0x450
+    COutputX m_OnTurnOn;	// 0x468
+    COutputX m_OnTurnOff;	// 0x480
+    int m_nDisabled;	// 0x498
+    char m_pad049c[4];
+    char m_bToggleState;	// 0x4a0
+    void sub_101316e0();
+    void sub_101317d0();
+};
+
+// TARGET: CToggleRelayUnit::sub_101317d0
+void CToggleRelayUnit::sub_101317d0()
+{
+    if (m_nDisabled)
+        return;
+    if (m_spawnflags & 1) {
+        if (m_bToggleState)
+            m_OnTurnOn.sub_100cd660(this, this, 0);
+        else
+            m_OnTurnOff.sub_100cd660(this, this, 0);
+        m_bToggleState = !m_bToggleState;
+        sub_101316e0();
+    } else {
+        m_OnTrigger.sub_100cd660(this, this, 0);
+        sub_101316e0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101318a0 size=0x8
 void sub_10002441();
 void __stdcall sub_101318a0(int) { sub_10002441(); }
