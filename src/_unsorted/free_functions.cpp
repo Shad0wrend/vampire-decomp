@@ -81504,6 +81504,41 @@ CNPC_VGhoulCroucher *CNPC_VGhoulCroucher::sub_1037aea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b6e0 size=0x132
+#include "CBaseEntity.h"
+#include "CNPC_VGhoulCroucher.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+struct S1037b6e0Ent
+{
+	char m_pad[0xa8];
+	CGlobalEntityList_Ent *m_pObject;
+};
+
+void CNPC_VGhoulCroucher::sub_1037b6e0(int a)
+{
+	ScopeTrace trace("CNPC_VGhoulCroucher::OnDisturbed", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!m_b6666) {
+		CBaseEntity *pOther = (CBaseEntity *)a;
+		COutputEvent *pOutput;
+		m_b6666 = 1;
+		m_b6667 = 0;
+		CGlobalEntityList_Ent *pObject = ((S1037b6e0Ent *)pOther)->m_pObject;
+		if (pObject) {
+			m_h628c = *pObject->v1();
+			pOutput = &m_Out668c;
+		} else {
+			sub_10293a80();
+			pOutput = &m_Out6674;
+		}
+		pOutput->sub_100cd660(pOther, this, 0);
+		if (EHandle_Get(m_h628c) != 0)
+			sub_10332ca0((CBaseEntity *)EHandle_Get(m_h628c), 1, 10);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037bb20 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;

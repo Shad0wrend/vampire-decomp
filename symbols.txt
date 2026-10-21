@@ -2367,6 +2367,7 @@
 0x1000a2a4 func   ?vfunc9@CSoundControllerImp@@UAEXPAX@Z CSoundControllerImp::vfunc9
 0x1000a2c2 func   ?sub_101f3070@@YIXPAD@Z sub_101f3070
 0x1000a2d6 func   ?sub_103322e0@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_103322e0
+0x1000a2e5 func   ?sub_1037b6e0@CNPC_VGhoulCroucher@@QAEXH@Z CNPC_VGhoulCroucher::sub_1037b6e0
 0x1000a2ea func   ?vfunc556@CAI_BaseNPC@@UAEHMM@Z CAI_BaseNPC::vfunc556
 0x1000a303 func   ?sub_100b7bc0@@YIXPAHH0@Z sub_100b7bc0
 0x1000a308 func   ?vfunc5@CItemGWirelessCamera1@@QAEPAV1@I@Z CItemGWirelessCamera1::vfunc5
