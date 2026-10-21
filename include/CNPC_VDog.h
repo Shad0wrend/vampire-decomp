@@ -19,6 +19,9 @@ public:
 	CEntityVSlots *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19), called directly
 	int vfunc460();	// slot 460 (declared as a plain member): conditions 0x78 / 0x7e run the state change helper and answer the state at +0x5cc4; 0x79 forces state 3, 0x7c leaves state 3 for state 1 (both stamp the source line), then the Troika base
 	char sub_10014df8(int condition);	// "HasCondition" (the stub at 0x10014df8 for CAI_BaseNPC::sub_10269aa0), called directly
+	char sub_1001482b(int condition);	// CAI_BaseNPC condition test (the stub for sub_10269d30), called directly
+	void sub_10015839(int condition);	// CAI_BaseNPC "SetCondition"-like (stub 0x10015839), called directly
 	int sub_1000cc34();	// CAI_BaseNPCTroika::vfunc460 (stub 0x1000cc34), tail called
 	float vfunc516();	// slot 516 (declared as a plain member): the dog's movement speed: the moving state (flag 0x2000 at +0x5d8c) uses |slot 242| times a convar value (at least 1.0f); the flag 0x8000000 at +0x14b8 gives 45.0f; else by the activity (+0xfec) 30.0f, 40.0f, a convar value or 45.0f
+	int vfunc438();	// slot 438 "SelectSchedule": +0x1b2c = 0xd; condition 0x7b (cleared again) gives schedule 0x166; the dog state (+0x5cc0): 1 uses the schedule of the object at +0x6590, else 0x164 without the byte +0x63d9; 1 / 3 give 0x167 while condition 0x7d holds; 2 clears the byte +0x5b80; else CNPC_VAnimal::vfunc438 (0x6b becomes 0x164)
 };
