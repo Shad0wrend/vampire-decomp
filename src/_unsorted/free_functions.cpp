@@ -39530,6 +39530,38 @@ extern "C" CBaseEntity *item_container_animated()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209ff0 size=0x6d
+void *sub_100aa720(int size);
+extern char g_105a9e64[];
+extern void *vt_1048543c[];
+
+struct CDebugEntityUnit : CBaseEntity {
+    CDebugEntityUnit *sub_100090fc(int a);
+    char m_pad[0x450 - sizeof(CBaseEntity)];
+    int m_f450, m_f454, m_f458, m_f45c, m_f460;
+};
+
+// TARGET: debug_entity
+extern "C" CBaseEntity *debug_entity()
+{
+    void *mem = sub_100aa720(0x464);
+    CDebugEntityUnit *p;
+    if (mem) {
+        p = (CDebugEntityUnit *)mem;
+        p->sub_100090fc(0);
+        p->m_f450 = 0;
+        p->m_f454 = 0;
+        p->m_f458 = 0;
+        p->m_f45c = 0;
+        p->m_f460 = 0;
+        *(void ***)p = vt_1048543c;
+    } else
+        p = 0;
+    p->vfunc106(g_105a9e64);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020a240 size=0x14f
 #include "CUnknown1020a240.h"
 
