@@ -2169,6 +2169,45 @@ void CBaseEntity::sub_10033aa0(float *a, float *b, float *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033de0 size=0x122
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct CThinkGlobals
+{
+	char m_pad0000[0xc];
+	float curtime;
+	float frametime;
+};
+extern CThinkGlobals *g_1070b228;
+extern float g_104454c4;
+
+struct CBaseEntityThinkUnit : CBaseEntity
+{
+	bool sub_10033de0(float *pNextThink, float *pLastThink, int thinkFunc);
+	void sub_10033b80(int thinkFunc);
+};
+
+// TARGET: CBaseEntityThinkUnit::sub_10033de0
+bool CBaseEntityThinkUnit::sub_10033de0(float *pNextThink, float *pLastThink, int thinkFunc)
+{
+	ScopeTrace trace("CBaseEntity::PhysicsRunSpecificThink", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	float thinktime = *pNextThink;
+	if (thinktime <= g_104454c4 || thinktime > g_1070b228->curtime + g_1070b228->frametime)
+		return true;
+	if (thinktime < g_1070b228->curtime)
+		thinktime = g_1070b228->curtime;
+	*pNextThink = 0;
+	float oldtime = g_1070b228->curtime;
+	g_1070b228->curtime = thinktime;
+	sub_10033b80(thinkFunc);
+	*pLastThink = thinktime;
+	g_1070b228->curtime = oldtime;
+	return ((CEntityVSlots *)this)->slot116() == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100353c0 size=0x93
 #include "CUnknown100353c0.h"
 
