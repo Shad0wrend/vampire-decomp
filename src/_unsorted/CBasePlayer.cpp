@@ -623,6 +623,73 @@ void CBasePlayer::vfunc149(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016af80 size=0xcb
+#include "CBasePlayer.h"
+
+struct PlayerCmdView_t {
+	char pad0[0x10];
+	int n10;
+	Vector vecAngles;
+	int n20;
+	int n24;
+	int n28;
+	unsigned char nByte2c;
+	char pad2d[3];
+	int n30;
+	char pad34[4];
+	char b38;
+};
+
+struct PlayerView_t {
+	char pad0[0x2128];
+	char b2128;
+	char pad2129[0x233c - 0x2129];
+	int n233c;
+	char pad2340[0x2358 - 0x2340];
+	float f2358;
+};
+
+void sub_10356430(CBasePlayer *pPlayer, void *pCmd, void *pHelper);
+
+void CBasePlayer::sub_1016af80(void *pCmd, void *pHelper)
+{
+	PlayerView_t *pView = (PlayerView_t *)this;
+	PlayerCmdView_t *cmd = (PlayerCmdView_t *)pCmd;
+	pView->b2128 = 0;
+	pView->n233c = cmd->nByte2c;
+	if (sub_100b3700() & 0x20) {
+		cmd->n10 = 0;
+		cmd->n20 = 0;
+		cmd->n24 = 0;
+		cmd->n28 = 0;
+		cmd->n30 = 0;
+		cmd->b38 = 0;
+		cmd->vecAngles = m_vec206c;
+	}
+	if (sub_10160ec0()) {
+		cmd->n20 = 0;
+		cmd->n24 = 0;
+	}
+	sub_10356430(this, pCmd, pHelper);
+	float flValue = pView->f2358 * 1000.0f + 0.5f;
+	int nRounded;
+	int cwOld;
+	int cwNew;
+	__asm {
+		fld flValue
+		fnstcw word ptr cwOld
+		movzx eax, byte ptr cwOld
+		and eax, 0xfffff3ff
+		or eax, 0x400
+		mov cwNew, eax
+		fldcw word ptr cwNew
+		fistp nRounded
+		fldcw word ptr cwOld
+	}
+	pView->f2358 = (float)nRounded * 0.001f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016eb20 size=0x6f
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
