@@ -180,6 +180,7 @@
 0x10001c1c func   ??0CWeaponRanged_FlameThrower@@QAE@XZ CWeaponRanged_FlameThrower::CWeaponRanged_FlameThrower
 0x10001c26 func   _npc_VSabbatLeader npc_VSabbatLeader
 0x10001c49 func   ?vfunc297@CBaseCombatWeapon@@UAEXH@Z CBaseCombatWeapon::vfunc297
+0x10001c4e func   ?sub_1005d690@@YAHXZ sub_1005d690
 0x10001c5d func   ?sub_10043320@@YIXPAUMem8@@HH@Z sub_10043320
 0x10001c71 func   ?sub_102d6210@@YAHH@Z sub_102d6210
 0x10001c85 func   ?sub_101b4900@@YGMPBD@Z sub_101b4900

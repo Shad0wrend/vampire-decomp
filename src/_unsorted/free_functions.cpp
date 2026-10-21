@@ -6436,6 +6436,37 @@ CTEBeamRingPoint *CTEBeamRingPoint::sub_1005cbc0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005d690 size=0xb2
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_10246700(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, int varProxy);	// SendPropVector
+SendProp sub_10246ef0(int elements, int elementStride, const char *pName, int arg);	// SendPropArray
+void sub_10003012();
+
+extern SendTable g_106c0444;
+
+// TARGET: sub_1005d690
+int sub_1005d690()
+{
+	static const char *pTableName = "DT_TEBeamSpline";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10007bfd("m_nPoints", 0xcc, 4, 5, 1, 0, 0),
+		sub_10246700("m_vecPoints[0]", 12, 12, -1, 2, 0.0f, -121121.121212f, (int)sub_10003012),
+		sub_10246ef0(16, 12, "m_vecPoints", 0),
+	};
+	g_106c0444.sub_1000e8fe(props + 1, 3, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d830 size=0x8f
 #include "CTEBeamSpline.h"
 extern CTEBeamSpline g_106c0358;
