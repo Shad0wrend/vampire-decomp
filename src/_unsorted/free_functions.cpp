@@ -48171,6 +48171,38 @@ void CAI_BaseNPC::sub_10252470(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253b70 size=0xa6
+#include "CBaseCombatWeapon.h"
+
+struct CGlobalVarsLike { char pad[0xc]; float curtime; };
+extern CGlobalVarsLike *g_1070b228;
+struct CWeaponAI { void sub_10170e80(int a); };
+
+bool CBaseCombatWeapon::sub_10253b70(int a, int b, int c, int d)
+{
+	if (!vfunc312())
+		return false;
+	char *pOwner = (char *)sub_102521f0();
+	if (!pOwner)
+		return false;
+	CWeaponAI *pAI = *(CWeaponAI **)(pOwner + 0xa8);
+	if (pAI) {
+		pAI->sub_10170e80(d);
+		*(int *)((char *)this + 0x854) = c;
+	} else {
+		*(int *)((char *)this + 0x854) = -1;
+		*(float *)(pOwner + 0x1564) = g_1070b228->curtime + 0.2f;
+	}
+	*(unsigned int *)((char *)this + 0x19c) &= 0xffffffbf;
+	if (pAI) {
+		vfunc333(0xe, 1, 0, 0, 0, 0);
+		return true;
+	}
+	vfunc333(0xf, 1, 0, 0, 0, 0);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10255c30 size=0x8b
 #include "CUnknown1073dc28.h"
 
