@@ -2015,6 +2015,31 @@ float *CBaseEntity::vfunc214()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2d00 size=0xe7
+#include "ScopeTrace.h"
+
+struct CBaseEntityUnit : CBaseEntity {
+	void sub_1000f05b(int a, int b);
+	void sub_10004ade();
+	void sub_1000e881();
+};
+
+void CBaseEntity::vfunc64(const float *angles)
+{
+	ScopeTrace trace("CBaseEntity::SetAngles", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	float *cur = (float *)((char *)this + 0x428);
+	if (angles[0] != cur[0] || angles[1] != cur[1] || angles[2] != cur[2]) {
+		((CBaseEntityUnit *)this)->sub_1000f05b(0x800, 0x3000);
+		((CBaseEntityUnit *)this)->sub_10004ade();
+		((CBaseEntityUnit *)this)->sub_1000e881();
+		cur[0] = angles[0];
+		cur[1] = angles[1];
+		cur[2] = angles[2];
+		*((char *)this + 0x1b1) = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3070 size=0x7b
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;

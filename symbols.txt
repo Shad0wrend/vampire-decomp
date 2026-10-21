@@ -2182,6 +2182,7 @@
 0x1000a1e6 func   ?sub_102a97a0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97a0
 0x1000a20e func   ?vfunc243@CPhysBox@@QAEXH@Z CPhysBox::vfunc243
 0x1000a213 func   ?vfunc370@CWeaponMelee@@UAEXPAHPAVCBaseCombatWeapon@@@Z CWeaponMelee::vfunc370
+0x1000a218 func   ?vfunc64@CBaseEntity@@UAEXPBM@Z CBaseEntity::vfunc64
 0x1000a231 func   ?vfunc5@CFuncParticle@@QAEPAV1@I@Z CFuncParticle::vfunc5
 0x1000a240 func   ?vfunc516@CGeneric_NPC@@UAEMXZ CGeneric_NPC::vfunc516
 0x1000a24f func   ?sub_10030720@CCollisionEvent@@QAEPAUCFrictionEntry_t@@H@Z CCollisionEvent::sub_10030720
