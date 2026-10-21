@@ -46483,6 +46483,45 @@ void CUnknown1020a240::sub_1020a240(const char *text, int a, int b, int c, int d
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020a5c0 size=0x141
+#include "CBaseEntity.h"
+#include "CVStatList_t.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+extern CUnknown1070b22c *g_1070b22c;
+struct EntA { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void *v4(); };
+struct PrivV { char pad[0x40]; EntA *p; };
+struct EntC { char pad[0x9c]; void *pChar; };
+struct ArgX { char pad[0x14]; int idx; char pad2[0x1c]; int f34; int f38; };
+struct StatObjX { int sub_101d9800(int stat); };
+extern StatObjX g_10739194;
+
+void sub_1020a5c0(ArgX *p)
+{
+    if (!p->idx)
+        return;
+    CUnknown1070b22c_Edict *ed = g_1070b22c->vfunc38(p->idx);
+    EntC *pEnt;
+    {
+        ScopeTrace t("CBaseEntity::Instance", g_106b8540);
+        if ((ed || (ed = g_1070b22c->vfunc38(0))) && ((PrivV *)ed)->p)
+            pEnt = (EntC *)((PrivV *)ed)->p->v4();
+        else
+            pEnt = 0;
+    }
+    void *pChar;
+    if (!pEnt)
+        pChar = 0;
+    else
+        pChar = pEnt->pChar;
+    int amount = g_10739194.sub_101d9800(CVStatListSet::Of(pChar)->Find(0)->sub_10010609(0xf));
+    p->f38 = amount;
+    p->f34 += amount;
+    if (p->f34 < 0)
+        p->f34 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020aa70 size=0x64
 #include "CBaseVampireSkillEntity.h"
 

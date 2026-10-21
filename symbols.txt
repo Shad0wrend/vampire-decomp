@@ -941,6 +941,7 @@
 0x100050c4 func   ?sub_101cfe10@@YAXPAXHH@Z sub_101cfe10
 0x100050e2 func   _item_p_research_mg_brawl item_p_research_mg_brawl
 0x1000510f func   ?vfunc5@CWeaponHolyLight@@QAEPAV1@I@Z CWeaponHolyLight::vfunc5
+0x10005114 func   ?sub_1020a5c0@@YAXPAUArgX@@@Z sub_1020a5c0
 0x10005123 func   ?vfunc619@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::vfunc619
 0x1000515a func   ?sub_100933b0@CBaseAnimating@@QAEDHPAM@Z CBaseAnimating::sub_100933b0
 0x1000515f func   ?vfunc5@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc5
