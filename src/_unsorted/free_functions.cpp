@@ -48773,6 +48773,50 @@ void sub_10267350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102695d0 size=0xd2
+#include "ScopeTrace.h"
+
+struct CEntFields102695d0
+{
+	char m_pad0000[0x16c];
+	int m_n16c;
+	char m_pad0170[0x17c - 0x170];
+	float m_flNextThink;
+	char m_pad0180[0x1a3 - 0x180];
+	unsigned char m_a1a3;
+	char m_pad01a4[0x26c - 0x1a4];
+	const char *m_name26c;
+};
+struct CGlobalVars1070b228
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern CGlobalVars1070b228 *g_1070b228;
+extern float g_1070d9d0[];
+void sub_100152b2();
+
+// TARGET: CAI_BaseNPC::sub_102695d0
+void CAI_BaseNPC::sub_102695d0()
+{
+	CEntFields102695d0 *pFields = (CEntFields102695d0 *)this;
+	CBaseEntity *pEnt = (CBaseEntity *)this;
+	if (pFields->m_n16c == 0) {
+		pFields->m_a1a3 = 0xff;
+		pFields->m_n16c = 2;
+	}
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", pFields->m_name26c ? pFields->m_name26c : g_106b8540);
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+		pCol->sub_100dc580(pCol->m_usSolidFlags | 4);
+	}
+	pEnt->sub_100b2f50(g_1070d9d0);
+	pEnt->sub_100b3b00();
+	pFields->m_flNextThink = g_1070b228->curtime + 10.0;
+	pEnt->sub_100ac4e0((int)sub_100152b2, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102696f0 size=0x8e
 struct Globals { char pad0[0xc]; float curtime; char pad1[4]; int maxclients; };
 extern Globals *g_1070b228;
