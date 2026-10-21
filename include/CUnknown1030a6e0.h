@@ -1,9 +1,11 @@
 // CUnknown1030a6e0: object with a list of 0x18-byte records (position, two ints, entity handle) at +0x3c
 // (memory at +0x3c, allocation count +0x40, grow size +0x44, size +0x48, elements pointer +0x4c); real name not yet known.
+// It belongs to an NPC (pointer at +4).
 #pragma once
 
 #include "CUnknown1030b2f0.h"
 #include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
@@ -55,8 +57,11 @@ struct RecVec1030a6e0
 class CUnknown1030a6e0
 {
 public:
-	char pad0[0x3c];
+	char pad0[4];
+	CAI_BaseNPC *m_pOuter;	// 0x04
+	char pad8[0x3c - 8];
 	RecVec1030a6e0 m_List;	// +0x3c
 
 	void sub_1030a6e0(const float *pos, int a, CBaseEntity *pEnt, int b);	// appends a record {*pos, a, b, handle of pEnt (-1 for null)} to the list (AddToTail inlined)
+	void sub_10309e80(const Vector *pDirA, const Vector *pDirB);	// debug draw: with bit 26 of the NPC's flags (+0x224) set, draws a white line from slot 192 of the NPC along pDirA (length 20) and a yellow one along pDirB, each for 0.1 s
 };
