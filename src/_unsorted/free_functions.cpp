@@ -40391,6 +40391,29 @@ void __fastcall sub_101fa8d0(CVDmg_t *self, int, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fa960 size=0xc7
+#include "CVDmg_t.h"
+#include "ScopeTrace.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+
+void CVDmg_t::sub_101fa960(CVDmgSource_t *pSource)
+{
+	ScopeTrace trace("CVDmg_t::SetSrc", g_106b8540);
+	if (pSource) {
+		if (!m_block14.sub_10204250())
+			m_field04 -= m_block14.sub_10204900(pSource->m_pCharacter);
+		m_field34 = g_1070b22c->vfunc35(pSource->m_pEdict);
+	} else {
+		m_field34 = 0;
+	}
+	if (!m_block14.sub_10204250()) {
+		void *pCharacter = pSource->m_pCharacter;
+		m_field04 += m_block14.sub_10204900(pCharacter);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101faa70 size=0x7b
 #include "CVDmg_t.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
