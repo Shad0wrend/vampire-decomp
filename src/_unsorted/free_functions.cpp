@@ -38308,6 +38308,46 @@ void CUnknown101dfb80::sub_101dfb80(int unused, CBaseEntity *pEnt, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dff00 size=0xf7
+#include "CUnknown101dff00.h"
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *, ...);
+extern char g_106b8540[];
+extern char g_105a29f0[];
+extern char g_105490b0[];
+extern char g_105a29d0[];
+extern char g_105a2898[];
+extern char g_105a29c4[];
+extern char g_105a29bc[];
+extern char g_105a29ac[];
+extern char g_105a299c[];
+extern char g_105a2984[];
+extern CTraitEffectTable g_1074df78;
+struct Range { void sub_101ddb40(const char *label); };
+void CUnknown101dff00::sub_101dff00()
+{
+	char buf[512];
+	const char *name = m_pszName;
+	if (!name)
+		name = g_106b8540;
+	Q_snprintf(buf, 512, g_105a29f0, name);
+	Msg(g_105490b0, buf);
+	if (m_nTraitEffect != -1) {
+		const char *effect = g_1074df78.sub_101f8480(m_nTraitEffect)->m_Name.Get();
+		if (!effect)
+			effect = g_106b8540;
+		Q_snprintf(buf, 512, g_105a29d0, effect, m_nTraitEffect);
+		Msg(g_105490b0, buf);
+	}
+	((Range *)((char *)this + 0x364))->sub_101ddb40(g_105a2898);
+	((CUnknown101df000 *)((char *)this + 0x8))->sub_101df000(g_105a29c4);
+	((CUnknown101df000 *)((char *)this + 0xb4))->sub_101df000(g_105a29bc);
+	((CUnknown101df000 *)((char *)this + 0x160))->sub_101df000(g_105a29ac);
+	((CUnknown101df000 *)((char *)this + 0x20c))->sub_101df000(g_105a299c);
+	((CUnknown101df000 *)((char *)this + 0x2b8))->sub_101df000(g_105a2984);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0040 size=0xd
 CUnknown101e0040* CUnknown101e0040::sub_101e0040()
 {
