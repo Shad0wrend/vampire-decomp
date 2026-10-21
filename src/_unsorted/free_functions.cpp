@@ -41802,6 +41802,37 @@ void sub_101cdac0(int entindex, int pos, const char *pszSample, int volume, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cde40 size=0x101
+#include "CSingleUserRecipientFilter.h"
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct EngineMsgSlots {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5)
+	SV(60) SV(61) SV(62) SV(63) SV(64)
+	virtual void UserMessageBegin(void *pFilter, int nMessage);	// slot 65
+	virtual void MessageEnd();	// slot 66
+	virtual void WriteByte(int n);	// slot 67
+	SV(68) SV(69) SV(70) SV(71)
+	virtual void WriteFloat(float f);	// slot 72
+};
+extern EngineMsgSlots *g_1070b22c;
+extern int g_1072600c;
+
+void sub_101cde40(void *pPlayer, float a, float b, float c, float d, int nByte)
+{
+	CSingleUserRecipientFilter filter(pPlayer);
+	filter.sub_1019cf50();
+	g_1070b22c->UserMessageBegin(&filter, g_1072600c);
+	g_1070b22c->WriteByte(nByte);
+	g_1070b22c->WriteFloat(a);
+	g_1070b22c->WriteFloat(b);
+	g_1070b22c->WriteFloat(c);
+	g_1070b22c->WriteFloat(d);
+	g_1070b22c->MessageEnd();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ce2e0 size=0xb4
 #include "CSingleUserRecipientFilter.h"
 #include "CEntityVSlots.h"
