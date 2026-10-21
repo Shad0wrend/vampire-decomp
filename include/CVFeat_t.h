@@ -1,0 +1,24 @@
+// CVFeat_t: one feat of the vampire feat list ("Unable to load VFeat data"); real layout only partly known.
+#pragma once
+
+struct CVFeatKV	// a KeyValues-like object (slot 10 = GetInt, slot 13 = GetString)
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual int GetInt(const char *pszKey, int nDefault);
+	virtual void v11(); virtual void v12();
+	virtual const char *GetString(const char *pszKey, const char *pszDefault);
+};
+
+class CVFeat_t
+{
+public:
+	int m_pad0000;
+	int m_iInternalName;	// 0x04
+	int m_iHelpText;	// 0x08
+	unsigned int m_flags;	// 0x0c: bit 0 = disabled
+	int m_pad0010;
+	int m_iName;	// 0x14
+
+	void sub_101e4fe0(CVFeatKV *pKV);	// loads the feat from its key: Name, InternalName, HelpText and the Disabled flag; Msg when there is no key
+};
