@@ -4,17 +4,16 @@
 
 #include "CVDmg_t.h"
 
-struct CUnknown101d88b0_Block	// a 16 byte roll block (kind, id, ?, multiplier) with an inline copy assignment
+struct CUnknown101d88b0_Block	// a 16 byte roll block (kind, id, ?, multiplier) with an inline copy
 {
 	int m_a, m_b, m_c, m_d;
 
-	CUnknown101d88b0_Block &operator=(const CUnknown101d88b0_Block &o)
+	void Copy(const CUnknown101d88b0_Block *pSrc)
 	{
-		m_a = o.m_a;
-		m_b = o.m_b;
-		m_c = o.m_c;
-		m_d = o.m_d;
-		return *this;
+		m_a = pSrc->m_a;
+		m_b = pSrc->m_b;
+		m_c = pSrc->m_c;
+		m_d = pSrc->m_d;
 	}
 };
 
