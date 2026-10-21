@@ -13,6 +13,23 @@ int CNPC_VVampireBoss::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c5840 size=0x91
+#include "CNPC_VVampireBoss.h"
+#include "ScopeTrace.h"
+
+void CNPC_VVampireBoss::vfunc420()
+{
+	ScopeTrace trace("CNPC_VVampireBoss::NPCInit", g_106b8540);
+	sub_1000c531();
+	m_pMonsterModelName = 0;
+	sub_103c6eb0();
+	m_pDefaultNPCName = "npc_VVampireBoss";
+	m_bFlag6498 = 0;
+	sub_10014c22();
+	m_f64b8 = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c5910 size=0x8c
 #include "CNPC_VVampireBoss.h"
 
