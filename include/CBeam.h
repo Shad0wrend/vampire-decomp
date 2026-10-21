@@ -11,8 +11,10 @@ public:
 	virtual void vfunc103();	// slot 103: move type none (slot 93(0, 0)), scope-traced SetSolid(0) on the collision property at +0x270, the dword at +0x16c = 2, then slot 104
 	virtual void vfunc104();	// slot 104: hands the owner entity (slot 97) to sub_100bafc0, then the entity of the handle at +0x4e4 to sub_100bb030
 	virtual int vfunc124();	// "CBeam::DrawDebugTextOverlays": the base lines, then (text overlay bit 0 of the byte at +0x224) the "start:" and "end  :" lines
+	Vector *vfunc215();	// slot 215 "CBeam::WorldSpaceCenter"-like: half the sum of the start (sub_100bb440) and end (sub_100bb270) positions, in a temporary vector
 	void sub_1000cb8a();
 	CBeam *sub_100bac50();	// as in CKeepUpright (transplant)
+	float *sub_100bb440();	// start position getter (stub 0x10005c45)
 	float *sub_100bb270();	// "CBeam::GetEndPos"-like: when the beam end is an entity (type 2 in the low nibble of +0x464, handle at +0x468) with a valid edict, tail calls slot 217 of that entity (via CBaseEntity::Instance), else of this
 	void sub_100bb870(int a, const float *pPos);	// "CBeam::PointsInit"-like: clears the type bits above 0xff0, two beam ents, slot 62(a), end position = pPos, clears the attachment entries, then sub_100bbbf0
 	void sub_100bb900(int a, const float *pPos);	// same as sub_100bb870 but sets the low type bits to 3
