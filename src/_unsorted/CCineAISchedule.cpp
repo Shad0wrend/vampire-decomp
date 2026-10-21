@@ -1,0 +1,65 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "vampire.h"
+
+// FUNCTION: 0x101a9790 size=0xe9
+#include "CCineAISchedule.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+extern CGlobalEntityList *g_10566458;
+
+#define W10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define W100(p) W10(p##0) W10(p##1) W10(p##2) W10(p##3) W10(p##4) W10(p##5) W10(p##6) W10(p##7) W10(p##8) W10(p##9)
+
+class CCineAIVSlots
+{
+public:
+    W100(a) W100(b) W100(c) W100(d) W100(e) W10(f0) W10(f1) W10(f2) W10(f3) W10(f4) W10(f5) W10(f6) W10(f7)
+    virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4(); virtual void g5();
+    virtual void vfunc586(CBaseEntity *pNPC);
+};
+
+struct CNPCAIUnit : public CBaseEntity
+{
+    void sub_1026d130();
+};
+
+static inline CBaseEntity *LookupHandle(const unsigned int *pHandle)
+{
+    if (*pHandle == 0xffffffff)
+        return 0;
+    CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[*pHandle & 0x1fff];
+    if (pSlot->m_Serial == (int)(*pHandle >> 13))
+        return (CBaseEntity *)pSlot->m_pEntity;
+    return 0;
+}
+
+void CCineAISchedule::vfunc583()
+{
+    CBaseEntity *pEnt = LookupHandle((unsigned int *)((char *)this + 0x5ce4));
+    if (pEnt) {
+        CNPCAIUnit *pNPC = *(CNPCAIUnit **)((char *)pEnt + 0x94);
+        if (pNPC) {
+            if (!*((char *)pNPC + 0x1b4c)) {
+                DevMsg("************************************************\n");
+                DevMsg("***  WARNING  **********************************\n");
+                DevMsg("   scripted sequence(%s)\n", ((CBaseEntity *)this)->sub_100ab4f0());
+                DevMsg("   is targeting an entity(%s)\n", pNPC->sub_100ab4f0());
+                DevMsg("   This can happen if it starts hidden and is\n");
+                DevMsg("   immediately put into a script without a delay.\n");
+                DevMsg("   If this is the case.  Put at least a .1 second\n");
+                DevMsg("   delay between ScriptUnhide and starting the\n");
+                DevMsg("   scripted sequence.\n");
+                DevMsg("   Otherwise, talk to a programmer.\n");
+                DevMsg("***  WARNING  **********************************\n");
+                DevMsg("************************************************\n");
+            }
+            if (!*((char *)this + 0x5f90))
+                pNPC->sub_1026d130();
+            ((CCineAIVSlots *)this)->vfunc586(pNPC);
+        }
+    }
+}
+// END FUNCTION
