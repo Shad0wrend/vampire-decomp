@@ -3469,6 +3469,7 @@
 0x1000e97b func   ?vfunc5@COccultPresence@@QAEPAV1@I@Z COccultPresence::vfunc5
 0x1000e985 func   ?sub_101c2c60@@YAXXZ sub_101c2c60
 0x1000e98a func   ?vfunc288@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc288
+0x1000e98f func   ?sub_100f9fc0@CGlobalEntityList@@QAE?AVCBaseHandle@@PAVCGlobalEntityList_Ent@@HH@Z CGlobalEntityList::sub_100f9fc0
 0x1000e999 func   ?sub_100b4650@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100b4650
 0x1000e9a8 func   ?sub_100dc580@CFlagsUnit@@QAEXG@Z CFlagsUnit::sub_100dc580
 0x1000e9b2 func   ?sub_1036e820@CNPC_VChangBros@@QAE_NXZ CNPC_VChangBros::sub_1036e820

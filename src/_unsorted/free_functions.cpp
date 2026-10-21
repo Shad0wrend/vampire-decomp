@@ -24723,6 +24723,54 @@ void CBaseEntityList::sub_100f9c40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f9fc0 size=0xe2
+#include "CGlobalEntityList.h"
+#include "CUtlLinkedList6.h"
+
+void __cdecl sub_100fa5d0(void *pDst, const void *pSrc);
+
+struct CEntRefView
+{
+	virtual void SetRefEHandle(const CBaseHandle &handle);
+};
+
+struct CGlobalListNotify
+{
+	virtual void OnAddEntity(CGlobalEntityList_Ent *pEnt, CBaseHandle handle);
+};
+
+// TARGET: CGlobalEntityList::sub_100f9fc0
+CBaseHandle CGlobalEntityList::sub_100f9fc0(CGlobalEntityList_Ent *pEnt, int slot, int forcedSerial)
+{
+	CGlobalEntityList_Slot *pSlot = &m_Slots[slot];
+	pSlot->m_pEntity = pEnt;
+	if (forcedSerial != -1)
+		pSlot->m_Serial = forcedSerial;
+
+	CUtlLinkedList6 *pList = (CUtlLinkedList6 *)&m_pNodes;
+	forcedSerial = slot;
+	unsigned short i = pList->sub_100fa470(false);
+	pList->sub_100fa3a0(i);
+	unsigned int off = (i & 0xffff) * 6;
+	CUtlLinkedList6Node *pNode = (CUtlLinkedList6Node *)((char *)pList->m_pMemory + off);
+	pNode->m_Next = 0xffff;
+	pNode->m_Previous = pList->m_Tail;
+	pList->m_Tail = i;
+	if (pNode->m_Previous == 0xffff)
+		pList->m_Head = i;
+	else
+		pList->m_pMemory[pNode->m_Previous].m_Next = i;
+	pList->m_ElementCount++;
+	sub_100fa5d0((char *)pList->m_pMemory + off, &forcedSerial);
+
+	pSlot->m_ListIndex = i;
+	CBaseHandle retVal(slot, pSlot->m_Serial);
+	((CEntRefView *)pEnt)->SetRefEHandle(retVal);
+	((CGlobalListNotify *)this)->OnAddEntity(pEnt, retVal);
+	return retVal;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fa600 size=0x68
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
