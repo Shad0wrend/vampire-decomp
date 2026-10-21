@@ -973,6 +973,7 @@
 0x10004bbf func   ?vfunc418@CBasePlayer@@UAEDH@Z CBasePlayer::vfunc418
 0x10004bc4 func   ?sub_101d6470@CLevelLoader@@QAE_NPAUKVNode@@H@Z CLevelLoader::sub_101d6470
 0x10004bce func   ?vfunc295@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::vfunc295
+0x10004be7 func   ?sub_10036bd0@CPhysicsPushedEntities@@QAEXPAVCBaseEntity@@H@Z CPhysicsPushedEntities::sub_10036bd0
 0x10004c00 func   ?sub_10249450@CUnknown10249450@@QAEXH@Z CUnknown10249450::sub_10249450
 0x10004c1e func   ?vfunc181@CRagdollProp@@UAEXPBM00@Z CRagdollProp::vfunc181
 0x10004c23 func   ?sub_103e17b0@@YAHVVector@@0PAV1@PAPAVCBaseEntity@@1PAH@Z sub_103e17b0

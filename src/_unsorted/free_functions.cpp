@@ -2406,6 +2406,48 @@ void CPhysicsPushedEntities::sub_10036b10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036bd0 size=0x11a
+#include "CPhysicsPushedEntities.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct SRotPushView
+{
+	char m_pad0000[0x6c];
+	Vector m_vecAMove;	// 0x6c
+};
+
+struct SPushedEntView
+{
+	char m_pad0000[0xa8];
+	int m_pPlayerObj;	// 0xa8
+	char m_pad00ac[0x3c8 - 0xac];
+	Vector m_vecLocalAngVel;	// 0x3c8
+	char m_pad03d4[0x207c - 0x3d4];
+	int m_nFixAngle;	// 0x207c
+	float m_flAngleChange;	// 0x2080
+};
+
+void CPhysicsPushedEntities::sub_10036bd0(CBaseEntity *pEnt, int a)
+{
+	ScopeTrace trace("CPhysicsPushedEntities::FinishRotPushedEntity", g_106b8540);
+	const SRotPushView *pRot = (const SRotPushView *)a;
+	SPushedEntView *pView = (SPushedEntView *)pEnt;
+	if (pView->m_pPlayerObj) {
+		Vector vecAngVel = pView->m_vecLocalAngVel;
+		vecAngVel[1] = pRot->m_vecAMove[1];
+		pEnt->sub_100b2f50(&vecAngVel.x);
+		pView->m_nFixAngle = 2;
+		pView->m_flAngleChange = pRot->m_vecAMove[1] + pView->m_flAngleChange;
+	} else {
+		Vector vecAngles = *((CEntityVSlots *)pEnt)->slot219();
+		vecAngles += pRot->m_vecAMove;
+		((CEntityVSlots *)pEnt)->slot218(&vecAngles);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036d40 size=0xd0
 #include "CPhysicsPushedEntities.h"
 #include "CEntityVSlots.h"
