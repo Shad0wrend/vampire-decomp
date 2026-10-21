@@ -1785,6 +1785,7 @@
 0x100082ec func   ?sub_101a5e10@@YAPAHXZ sub_101a5e10
 0x10008300 func   ?sub_101c2a50@CUnknown101c2a50@@QAEXH@Z CUnknown101c2a50::sub_101c2a50
 0x10008305 func   ?vfunc5@CItemGGarysFilm@@QAEPAV1@I@Z CItemGGarysFilm::vfunc5
+0x1000830a func   ?vfunc251@CTriggerCheckVolume@@UAEXH@Z CTriggerCheckVolume::vfunc251
 0x1000831e func   ?sub_103c51c0@@YADXZ sub_103c51c0
 0x10008328 func   _item_a_body_armor item_a_body_armor
 0x1000833c func   _bodyque bodyque
