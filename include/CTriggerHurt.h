@@ -12,6 +12,8 @@ public:
 	void sub_1000cb8a();	// destructor body of the base entity, called directly
 	int sub_101c6550(float flDeltaTime);	// "CTriggerHurt::HurtAllTouching": stamps the damage time (+0x59c) with curtime, empties the damaged list count (+0x600), then hurts every live entity of the touching list (data object type 1) with flDeltaTime * the damage (+0x598); returns how many were hurt
 	bool sub_101c5f40(CBaseEntity *pOther, float flDamage);	// "CTriggerHurt::HurtEntity": hurts pOther, true when it was
+	void vfunc176(CBaseEntity *pOther);	// slot 176 "CTriggerHurt::EndTouch": when pOther passes the trigger filters and is not yet in the damaged-entity vector (+0x5f4, size +0x600) hurts it once with half the damage-per-second (+0x598 * a constant); then CBaseTrigger::vfunc176
+	void sub_101c55d0(CBaseEntity *pOther);	// CBaseTrigger::vfunc176 (stub 0x1001346c), called directly
 
 	float m_flDamage;	// 0x598
 	float m_flLastDmgTime;	// 0x59c
