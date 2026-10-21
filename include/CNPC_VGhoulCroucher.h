@@ -42,6 +42,11 @@ public:
 	void sub_10332aa0(int a, int b, int c);	// stub 0x10013cf5, called directly
 	void vfunc431();	// slot 431 "NPCThink" (plain member): the Troika think, then, for the burning variant with a live fire emitter (handle +0x6670), the emitter's scale = 1 - remap(the float at +0x6264, 200, 600) (at least 0.1)
 	void sub_10292de0();	// CAI_BaseNPCTroika::vfunc431 (stub 0x10002a7c), called directly
+	void vfunc442(int *pTask);	// slot 442 "CNPC_VGhoulCroucher::StartTask": scope trace (entity name); task 0x14a: starts the activity sub_100079b4() and, unless the current activity (+0xff0) is it, slot 448(0x15); task 0x14b: the same with sub_1000e20a() and the byte at +0x6667 set; other tasks go to CNPC_VHumanCombatant::vfunc442
+	void sub_1000a0c9(int *pTask);	// CNPC_VHumanCombatant::vfunc442 (stub 0x1000a0c9), called directly
+	int sub_1000e20a();	// the activity of task 0x14b (the free getter at 0x1037b870)
+	int sub_100079b4();	// the activity of task 0x14a (the free getter at 0x1037b890)
+	void sub_10014524(int activity);	// CAI_BaseNPCTroika::sub_10289ee0 (stub 0x10014524): starts the activity
 
 	char m_pad03e0[0x10e4 - 0x3e0];
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
