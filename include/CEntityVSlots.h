@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 158, 161, 167, 173,
-// 192, 193, 194, 202, 212, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 346, 360, 381, 385, 448 and 457 of an entity class that does not model its vtable.
+// 192, 193, 194, 202, 212, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 346, 360, 371, 381, 385, 448 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -108,7 +108,9 @@ public:
 	EVS10(35)
 	virtual unsigned int slot360();	// weapon: its flag word (bits 0x18000 mark the special kinds)
 	EVS(361) EVS(362) EVS(363) EVS(364) EVS(365) EVS(366) EVS(367) EVS(368) EVS(369)
-	EVS10(37)
+	EVS(370)
+	virtual char slot371();	// item: a boolean answer in al (the item is stackable)
+	EVS(372) EVS(373) EVS(374) EVS(375) EVS(376) EVS(377) EVS(378) EVS(379)
 	EVS(380)
 	virtual int slot381(int a);	// character: "Weapon_TranslateActivity"
 	EVS(382) EVS(383) EVS(384)
