@@ -17563,6 +17563,40 @@ bool sub_100c40e0(Base_100c40e0 *p, int idx, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4160 size=0x171
+struct posedesc_t { int a; int flags; float start; float end; };
+extern posedesc_t *sub_100c4340(void *hdr, int index);
+extern double g_10452928, g_10449270, g_10452918, g_10452908, g_104528f8, g_10449280, g_10450570;
+extern float g_10450568, g_104454c4, g_104454c0, g_104492dc;
+
+float sub_100c4160(void *hdr, int index, float value, float *ctl)
+{
+    if (!hdr) return value;
+    posedesc_t *p = sub_100c4340(hdr, index);
+    if (!p) return value;
+    if (p->flags & 0x38) {
+        if (p->end < p->start) value = -value;
+        if (p->start + g_10452928 >= p->end) {
+            float mid = (p->end + p->start) * g_10449270;
+            if (value > mid + g_10452918) value = value - g_10450568;
+            if (value < mid - g_10452918) value = value + g_10450568;
+        } else {
+            if (value > g_10450568) {
+                value = value - (int)(g_10452908 * value) * g_10450570;
+            } else if (value < g_104454c4) {
+                value = value + (int)(g_104528f8 * value + g_10449280) * g_10450570;
+            }
+        }
+    }
+    *ctl = (value - p->start) / (p->end - p->start);
+    if (*ctl < g_104454c4) *ctl = 0;
+    else if (*ctl > g_104454c0) *ctl = 1.0f;
+    float r = (g_10449280 - *ctl) * p->start + p->end * *ctl;
+    if ((p->flags & 0x38) && p->end < p->start) r = r * g_104492dc;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6280 size=0xa0
 #include <string.h>
 struct SModelLoader {
