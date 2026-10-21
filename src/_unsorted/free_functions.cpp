@@ -5193,6 +5193,27 @@ CDisciplineParticle *CDisciplineParticle::sub_10050d90(int a1, int a2, int a3, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x10051a40 size=0x6d
+#include "CDisciplineParticle.h"
+#include "ScopeTrace.h"
+extern void *vt_1044ba64[];
+struct CDisciplineParticleUnit : CDisciplineParticle {
+    void sub_10051810();
+    void sub_100fae70();
+    void sub_10051a40();
+};
+
+void CDisciplineParticleUnit::sub_10051a40()
+{
+    *(void ***)this = vt_1044ba64;
+    {
+        ScopeTrace trace("CDisciplineParticle::~CDisciplineParticle", g_106b8540);
+        sub_10051810();
+    }
+    sub_100fae70();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10053df0 size=0x13
 bool sub_10053df0(const unsigned int *a, const unsigned int *b)
 {
