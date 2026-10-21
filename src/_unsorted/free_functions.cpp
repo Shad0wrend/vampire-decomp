@@ -39620,6 +39620,42 @@ void CUnknown1020e060::sub_1020e080(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e6b0 size=0x6c
+#include "CGameText.h"
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CGameTextActivator {
+    S100(a0) S10(a10) S10(a11) S10(a12) S10(a13) S10(a14) S10(a15)
+    virtual void b0(); virtual void b1();
+    virtual char IsPlayer();
+};
+extern const char g_106b8540[];
+void sub_1000286f(void *pParams, const char *pszMessage);
+void sub_1000f11e(void *pPlayer, void *pParams, const char *pszMessage);
+
+struct CGameTextUnit : CGameText {
+    void sub_1020e6b0(CGameTextActivator *pActivator);
+};
+
+void CGameTextUnit::sub_1020e6b0(CGameTextActivator *pActivator)
+{
+    char *pThis = (char *)this;
+    if (*(unsigned int *)(pThis + 0x204) & 1) {
+        const char *pszMessage = *(const char **)(pThis + 0x450);
+        if (!pszMessage)
+            pszMessage = g_106b8540;
+        sub_1000286f(pThis + 0x454, pszMessage);
+        return;
+    }
+    if (pActivator && pActivator->IsPlayer()) {
+        const char *pszMessage = *(const char **)(pThis + 0x450);
+        if (!pszMessage)
+            pszMessage = g_106b8540;
+        sub_1000f11e(pActivator, pThis + 0x454, pszMessage);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020f2c0 size=0xa
 void __fastcall sub_1020f2c0(char *self, int, int)
 {
