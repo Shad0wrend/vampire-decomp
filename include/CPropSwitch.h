@@ -7,6 +7,7 @@ class CPropSwitch : public CBaseEntity
 public:
 	virtual void vfunc113();	// slot 113 (Activate): after the base, finds the entity named by the string at +0x730 and, when it is a "prop_switch", keeps its handle at +0x740 (-1 when it is not a CPropSwitch); looks up the sequences "activate", "deactivate", "idle_on", "idle_off" into +0x7a8..+0x7b4 and starts the idle one (on when the byte at +0x7a5 is set)
 
+	virtual void vfunc103();	// slot 103 "CPropSwitch::Spawn": the CBaseProp spawn, effects 0xa0 (+0x19c), and unless spawn flag 0x8000 is set a bounding box solid (SOLID_BBOX, inlined scope trace "CBaseEntity::SetSolid") sized from the model header (+0xb4 / +0xc0), collision group 1, partition handle and sub_100b3b00; then the starts-on byte (+0x7a4, flag 0x4000) and the state (+0x670 / +0x7a5, flag 0x2000)
 	void vfunc104();
 	void sub_1018e0d0();
 	CPropSwitch *sub_1020d5f0();	// as in CKeepUpright (transplant)
@@ -17,4 +18,6 @@ public:
 	void sub_1020f330(inputdata_t *pInput);	// input handler: the integer input (0 for another type) minus one selects the state at +0x630; on a change zeroes the velocity, sets +0x3fc = -1.0f, moves the entity to (x at +0x800, y at +0x804, z from the table at +0x608[state]) and runs sub_100b3b00
 	void sub_100b2e30(const float *pVec);	// stub 0x10013728
 	int sub_1008f7b0(const char *pszName);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
+	void sub_1018df70();	// CBaseProp::vfunc103 (stub 0x10011793), called directly
+	void *sub_100952d0(int a);	// CBaseAnimating::GetModelPtr-like (stub 0x10013d8b), called directly
 };
