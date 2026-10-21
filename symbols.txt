@@ -4241,6 +4241,7 @@
 0x10011b08 func   ?sub_10319f10@CUnknown10319f10@@QAE_NXZ CUnknown10319f10::sub_10319f10
 0x10011b12 func   ?vfunc619@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc619
 0x10011b26 func   ?sub_103a1320@CUnknown103a1320@@QAEXH@Z CUnknown103a1320::sub_103a1320
+0x10011b35 func   ?vfunc453@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc453
 0x10011b3a func   _player_loadsaved player_loadsaved
 0x10011b44 func   ?vfunc252@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc252
 0x10011b53 func   ?sub_1030cb00@@YGHPBD@Z sub_1030cb00

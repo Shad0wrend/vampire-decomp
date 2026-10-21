@@ -1138,6 +1138,38 @@ void CAI_BaseNPCTroika::vfunc616()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ad140 size=0xe0
+#include "CAI_BaseNPCTroika.h"
+// TARGET: CAI_BaseNPCTroika::vfunc453
+void CAI_BaseNPCTroika::vfunc453()
+{
+    sub_10280fb0();
+    unsigned int flags14b8 = *(unsigned int *)((char *)this + 0x14b8);
+    if (!(flags14b8 & 0x4000080)) {
+        if (!sub_1033e2b0() && (m_flags14bc & 0x40000) != 0x40000) {
+            char *pHint = *(char **)((char *)this + 0x5ddc);
+            if (!pHint || *(int *)(pHint + 0x5dc) != 0x2774) {
+                sub_10269eb0(0x1e);
+                sub_10269eb0(0x1f);
+                sub_10269eb0(0x21);
+            }
+            if (!vfunc167()) {
+                if ((char)(*(unsigned int *)((char *)this + 0x5b64) >> 4) & 1)
+                    sub_10269eb0(0x72);
+                if ((char)(*(unsigned int *)((char *)this + 0x5b64) >> 5) & 1) {
+                    sub_10269eb0(0x20);
+                    sub_10269eb0(0x22);
+                }
+            }
+            if (~*(unsigned int *)((char *)this + 0x14b8) & 0x400)
+                sub_10269eb0(0x27);
+        }
+    }
+    if ((m_flags14bc & 0x40) == 0x40)
+        sub_10269f30(0x31);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4540 size=0xb4
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"
