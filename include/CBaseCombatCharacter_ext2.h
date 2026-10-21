@@ -52,6 +52,7 @@
 	void sub_10346ac0();	// "CBaseCombatCharacter::SendIncomingSwingNotice": scope trace (entity name), sub_10341c30(stub 0x10003585, the global at 0x1049e04c, 0.7f, 0, 0, 0x46004003), then sub_10346910(the dword at +0x9c of slot 167's object, 0 without one)
 	void *sub_10341c30(void *pfn, int a, float b, int c, int d, int e);	// stub 0x100080f8, called directly; returns an object pointer (the AI object holder) in EAX
 	void sub_10346910(CBaseEntity *pTarget);	// "CBaseCombatCharacter::MeleeRollA...": stub 0x10009386, called directly with the owner of slot 167's object
+	int sub_10346380(CBaseEntity *pTarget);	// "CBaseCombatCharacter::CalcAndStoreMeleeRoll...": stub 0x10003972, called directly; appends a 16 byte record (handle, lethality, defense, soak) for pTarget to the vector at +0xa88 and returns its index, -1 when there is no weapon / target
 	void sub_103228c0();	// "CBaseCombatCharacter::UpdateOccult...": scope trace (entity name), for every weapon (count sub_1032e890, GetWeapon) whose info block (sub_102517b0) has a non-zero dword at +0x4fec0, ORs the dword at +0x4fed0 into the occult power flags at +0xe38
 	int sub_1032e890();	// "CBaseCombatCharacter::GetWeaponCount"-like (stub 0x1000bbe0)
 	void vfunc300(int a, int b, int c);	// slot 300 "CBaseCombatCharacter::Event_Took...": scope trace (entity name), with bit 2 of the occult power flags (+0xe38) set hands its first argument to sub_103f9160 of every weapon whose slot 348 name is "item_p_occult_regen"; takes three stack arguments
