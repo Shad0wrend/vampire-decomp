@@ -27,7 +27,15 @@ public:
 	char *sub_1008d990(int sequence);	// CBaseAnimating::sub_1008d990 (stub 0x1000b4f6): the sequence description, 0 when invalid
 	void vfunc31(int a);	// slot 31 "CBaseAnimatingOverlay::DumpEntity"-like: 24 times the no-flinch byte (+0x730) and the record of the overlay layer (flags, finished, sequence, cycle, rate, weight, activity, auto kill) through the Dump helpers, then CBaseAnimating::vfunc31(a)
 	void sub_1008b530(int a);	// CBaseAnimating::vfunc31 (stub 0x10007144), called directly
+	float vfunc250(float a);	// slot 250: CBaseAnimating::vfunc250(a), then advances the first four overlay layers that have a rate and, once finished, calls slot 112(layer, activity)
+	float sub_1008f120(float a);	// CBaseAnimating::vfunc250 (stub 0x1000b32a), called directly
 
 	char m_pad0000[0x738];
 	CAnimationLayer m_Layers[15];	// 0x738
+};
+
+// Callee of vfunc250: advances a layer's cycle and fade weight. The game passes the address of the layer minus 4 as this.
+struct CAnimationLayerAdvance
+{
+	float sub_10098830(float dt, CBaseAnimatingOverlay *pEntity);
 };
