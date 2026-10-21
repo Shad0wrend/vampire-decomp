@@ -70,6 +70,9 @@ public:
 	void sub_1000c531();	// CAI_BaseNPCTroika::vfunc420, called directly
 	CNPC_VNewscaster *vfunc5(unsigned int flags);	// scalar deleting destructor: destructs both lists (B, then A), the base (sub_1028d610), and frees the object when bit 0 of flags is set
 	void sub_1028d610();	// base class destructor body (stub 0x100123af)
+	void vfunc431();	// slot 431 "CNPC_VNewscaster::...": stamps curtime + 1.0f at +0x624c / +0x6250 and curtime at +0x625c / +0x6260, runs the Troika version and sub_103a0670 and, when the dev flag object allows and bit 0 of +0x224 is clear, the extra overlay lines sub_103a0ff0(0) (the position of this virtual is not its real slot)
+	void sub_10292de0();	// CAI_BaseNPCTroika::vfunc431, called directly (stub 0x10002a7c)
+	void sub_103a0670();	// stub 0x10003ef9, called directly
 
 	char m_pad0004[0x224 - 4];
 	char m_bFlags224;	// 0x224: bit 0 asks for the extra overlay lines
@@ -81,7 +84,13 @@ public:
 	int m_n5b84;
 	char m_pad5b88[0x5cdc - 0x5b88];
 	CNewscasterSub5cdc *m_p5cdc;
-	char m_pad5ce0[0x6338 - 0x5ce0];
+	char m_pad5ce0[0x624c - 0x5ce0];
+	float m_f624c;
+	float m_f6250;
+	char m_pad6254[0x625c - 0x6254];
+	float m_f625c;
+	float m_f6260;
+	char m_pad6264[0x6338 - 0x6264];
 	int m_n6338;
 	int m_n633c;
 	char m_pad6340[0x6348 - 0x6340];
