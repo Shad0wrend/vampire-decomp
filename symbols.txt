@@ -4436,6 +4436,7 @@
 0x10012bd4 func   _info_node_chang_jumpbase info_node_chang_jumpbase
 0x10012bf2 func   ?sub_10091c80@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10091c80
 0x10012bfc func   ?vfunc19@CMultiplayRules@@UAEDPAVCBaseEntity@@0@Z CMultiplayRules::vfunc19
+0x10012c10 func   ?sub_1010a370@CFire@@QAEXHM@Z CFire::sub_1010a370
 0x10012c15 func   ?sub_10250560@@YAXH@Z sub_10250560
 0x10012c24 func   ?sub_103ec6f0@@YAHXZ sub_103ec6f0
 0x10012c29 func   ?vfunc323@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc323

@@ -25977,6 +25977,49 @@ void S10109e40::sub_10109e40(inputdata_t &in)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a370 size=0xa4
+#include "CFire.h"
+#include "CBaseFire.h"
+#include "CEntityVSlots.h"
+
+struct FireSmokeSlots
+{
+	EVS(0) virtual unsigned int *slot1(); EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS10(21) EVS10(22) EVS10(23)
+	EVS(240) EVS(241) EVS(242)
+	virtual void slot243(int on);
+};
+
+struct CFireView : CFire
+{
+	char m_pad03e0[0x450 - sizeof(CFire)];
+	unsigned int m_hSmoke450;
+	char m_pad0454[4];
+	int m_n458;
+};
+
+CBaseFire *sub_10002e32(const char *pszClassname);
+void sub_100043cc(CBaseFire *pEnt, Vector *pPosition, int a);
+
+// TARGET: CFire::sub_1010a370
+void CFire::sub_1010a370(int a, float b)
+{
+	CFireView *pThis = (CFireView *)this;
+	CBaseFire *pSmoke = sub_10002e32("_firesmoke");
+	pSmoke->sub_100575a0((~m_flags204 >> 1) & 1);
+	pSmoke->sub_100575e0((~m_flags204 >> 5) & 1);
+	pThis->m_n458 = 0;
+	m_nTakeDamage = 2;
+	sub_100043cc(pSmoke, ((CEntityVSlots *)this)->slot217(), 0);
+	((FireSmokeSlots *)pSmoke)->slot103();
+	pSmoke->sub_100a0670(this, 0);
+	((FireSmokeSlots *)pSmoke)->slot243(m_flags204 & 4);
+	pThis->m_hSmoke450 = *((FireSmokeSlots *)pSmoke)->slot1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010be40 size=0xaf
 struct ISaveRestoreOps;
 struct datamap_t;
