@@ -43,4 +43,5 @@ public:
 	const char *sub_101b31d0(int index);	// "GetSoundName" (stub 0x1000e732): the name of the sound record, null when the index is invalid
 	int sub_101b4cc0(const char *pszScript);	// the index of a script file in the manifest (stub 0x1000b113), -1 when it is not in it
 	void sub_101b2b30(const char *pszScript, UtlMem2 *pOut);	// "GetSoundIndexesForScript"-like: clears the output vector, then appends the index of every sound record whose script file is pszScript; DevWarning "Can't PrecacheSoundScript( '%s' ), file not in manifest '%s'" when the script is unknown
+	void sub_101b5180(const char *pszSound, const char *pszScript);	// "CSoundEmitterSystemBase::MoveSound": moves the sound record to another script file of the manifest (both script flags are marked changed); DevWarning for an unknown sound or a script file that is not in the manifest
 };
