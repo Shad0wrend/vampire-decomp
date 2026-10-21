@@ -7121,6 +7121,74 @@ void sub_10071cd0(float *out, const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10072bf0 size=0xe6
+#include "CUnknown10072f10.h"
+#include "CUnknown100735a0.h"
+
+struct CUnknown100737b0
+{
+	void sub_100737b0(int owner);
+};
+
+// TARGET: CUnknown10072f10::sub_10072bf0
+CUnknown10072f10 *CUnknown10072f10::sub_10072bf0(const CUnknown10072f10 *pOther)
+{
+	m_b178 = pOther->m_b178;
+	{
+		const char *s = pOther->m_sz14;
+		char *d = m_sz14;
+		char c;
+		do {
+			c = *s;
+			*d = c;
+			s++;
+			d++;
+		} while (c);
+	}
+	{
+		const char *s = pOther->m_sz94;
+		char *d = m_sz94;
+		char c;
+		do {
+			c = *s;
+			*d = c;
+			s++;
+			d++;
+		} while (c);
+	}
+	{
+		const char *s = pOther->m_sz114;
+		char *d = m_sz114;
+		char c;
+		do {
+			c = *s;
+			*d = c;
+			s++;
+			d++;
+		} while (c);
+	}
+	{
+		const char *s = pOther->m_sz13c;
+		char *d = m_sz13c;
+		char c;
+		do {
+			c = *s;
+			*d = c;
+			s++;
+			d++;
+		} while (c);
+	}
+	for (int i = 0; i < pOther->m_size; i++) {
+		CUnknown100735a0 *pSrc = (CUnknown100735a0 *)pOther->m_pMemory[i];
+		CUnknown100735a0 *pNew = new CUnknown100735a0;
+		((CUnknown100737b0 *)pNew)->sub_100737b0((int)this);
+		pNew->sub_10073410(pSrc);
+		sub_10072f10((int)pNew);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072d60 size=0x16
 struct S10072d60 {
 	char m_pad[0x14];
