@@ -18316,6 +18316,44 @@ void sub_100d51b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5360 size=0xd2
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+
+extern "C" int atoi(const char *);
+
+#define ECD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CEngineCmd
+{
+public:
+    ECD10(a) ECD10(b) ECD10(c) ECD10(d) ECD10(e) ECD10(f) ECD10(g) ECD10(h)
+    virtual void i0(); virtual void i1(); virtual void i2(); virtual void i3();
+    virtual const char *Argv(int n);
+    virtual int Argc();
+};
+
+extern CEngineCmd *g_1070b22c;
+CBaseEntity *sub_101193b0();
+void sub_100d51b0();
+
+void sub_100d5360()
+{
+    CBaseEntity *pPlayer = sub_101193b0();
+    if (!pPlayer)
+        return;
+    CBaseCombatCharacter *pChar = *(CBaseCombatCharacter **)((char *)pPlayer + 0xa8);
+    if (!pChar)
+        return;
+    if (pChar->sub_10337f30())
+        sub_100d51b0();
+    int nValue = 12;
+    if (g_1070b22c->Argc() == 2)
+        nValue = atoi(g_1070b22c->Argv(1));
+    CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(0xe, nValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5be0 size=0x77
 #include "IVEngineServer.h"
 #include "CEntityVSlots.h"
