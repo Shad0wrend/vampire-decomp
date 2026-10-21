@@ -9345,6 +9345,30 @@ void sub_10088fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100892e0 size=0x8b
+#include "CGlobalEntityList.h"
+#include "CAI_BaseNPC.h"
+extern CGlobalEntityList g_106eb5d8;
+extern int g_10538764, g_1054abdc;
+extern "C" void *__RTDynamicCast(void *, long, void *, void *, int);
+void sub_101cd940(CBaseEntity *);
+inline CBaseEntity *FindNPC(CBaseEntity *pEnt)
+{
+    while (pEnt) {
+        CBaseEntity *pNPC = (CBaseEntity *)__RTDynamicCast(pEnt, 0, &g_10538764, &g_1054abdc, 0);
+        if (pNPC)
+            return pNPC;
+        pEnt = g_106eb5d8.sub_100f7060(pEnt);
+    }
+    return 0;
+}
+void sub_100892e0()
+{
+    for (CBaseEntity *p = FindNPC(g_106eb5d8.sub_100f7060(0)); p; p = FindNPC(g_106eb5d8.sub_100f7060(p)))
+        sub_101cd940(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008a6d0 size=0x64
 #include "CUnknown1070b22c.h"
 
