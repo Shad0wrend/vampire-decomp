@@ -217,4 +217,5 @@ public:
 	void sub_1028e790();	// notes the position of the focus entities: with a slot 167 object hands the position at +0x62cc to sub_1028e700(0x48, ...) and, while the condition 0x48 is not set, sub_10270180(slot 167 object, 0); with a live entity in the handle at +0x5ce4 hands +0x62d0 to sub_1028e700(0x49, ...)
 	void sub_1028e700(int kind, int *pPosition);	// stub 0x1001596f, called directly
 	void sub_10270180(void *pObject, int a);	// stub 0x10006217, called directly
+	void sub_1027d8d0(CBaseEntity *pEnt);	// run for an entity that moves faster than 50 units (|vx| + |vy| of its velocity at +0x3bc / +0x3c0): asks the dev flag object (slot 1), sets condition 0x74, resets the motor's (+0x5d44) look state (sub_102e0b40) and hands it pEnt's slot 220 position (sub_102e2020)
 };
