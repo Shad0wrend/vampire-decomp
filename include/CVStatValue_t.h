@@ -2,6 +2,8 @@
 // 2 a lookup in the global stat owner, 3 a function pointer. Only what decompiled code needs.
 #pragma once
 
+struct CVStatKV;	// a KeyValues-like object (slot 2 = FindKey, slot 13 = GetString)
+
 class CVStatValue_t
 {
 public:
@@ -9,4 +11,5 @@ public:
 	int m_nValue;	// 0x0004
 
 	int sub_10205730(int arg);	// evaluates the value for arg (-1 for unknown types)
+	void sub_10205960(CVStatKV *pKV, const char *pszName);	// "CVStatValue_t::Load": parses the string of that key (default empty) into the record
 };
