@@ -72272,6 +72272,35 @@ void CNPC_VSabbatLeader::sub_103aaa80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103aabc0 size=0x12d
+#include "CNPC_VSabbatLeader.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+extern char g_1064f170[];
+extern float g_104c3ce0;
+
+bool CNPC_VSabbatLeader::sub_103aabc0()
+{
+    ScopeTrace trace(g_1064f170, g_106b8540);
+    unsigned int h = m_hPlayer;
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (h >> 13)) {
+            CBaseCombatCharacter *pPlayer = (CBaseCombatCharacter *)pSlot->m_pEntity;
+            if (pPlayer) {
+                int health = pPlayer->GetActiveStatList()->sub_10010609(0xf);
+                if ((float)(health - m_nPlayerHealth) >= g_104c3ce0)
+                    return true;
+            }
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ab110 size=0x10e
 #include "ScopeTrace.h"
 #include "CNPC_VSabbatLeader.h"

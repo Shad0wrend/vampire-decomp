@@ -1607,6 +1607,7 @@
 0x10007c8e func   ?vfunc600@CNPC_VTzimisceRunner@@QAE_NPAX@Z CNPC_VTzimisceRunner::vfunc600
 0x10007c98 func   ?vfunc103@CPropSign@@QAEXXZ CPropSign::vfunc103
 0x10007ca7 func   ?sub_101c1b60@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1b60
+0x10007cbb func   ?sub_103aabc0@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103aabc0
 0x10007cde func   _player player
 0x10007cfc func   ?sub_101388c0@@YAHH@Z sub_101388c0
 0x10007d15 func   ?sub_101c5460@CBaseTrigger@@QAE_NPAVCBaseEntity@@@Z CBaseTrigger::sub_101c5460
