@@ -19923,6 +19923,32 @@ void __fastcall sub_100c8a00(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9250 size=0x104
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+
+void CBaseButton::sub_100c9250(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value)
+{
+	if (m_nState4f8 != 2 && m_nState4f8 != 3 && !m_b5c4) {
+		if (sub_100a7bd0(pActivator)) {
+			if (pActivator)
+				m_hActivator53c = *pActivator->vfunc1();
+			else
+				m_hActivator53c = 0xffffffff;
+			if (m_nState4f8 == 0) {
+				if (m_flags204 & 0x20) {
+					m_Output578.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0);
+					sub_100c97c0();
+				}
+			} else {
+				m_Output578.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0);
+				sub_100c9560();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9560 size=0xcc
 #include "CBaseButton.h"
 #include "CBaseToggle.h"
