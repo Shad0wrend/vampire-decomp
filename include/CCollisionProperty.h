@@ -59,4 +59,5 @@ public:
 	void sub_100ddd90();	// creates the partition handle (stub 0x10014092)
 	void sub_100dcd90(const float *pMins, const float *pMaxs, float *pOutA, float *pOutB);	// world-space bounds of the box (pMins, pMaxs) (stub 0x100053fd); the two results are written to the last two arguments
 	void sub_100dd630(Vector *pOutMins, Vector *pOutMaxs);	// the bounds as stored (solid type 0 / 2 or flag bit 7), else the symmetric box that holds them: per axis the larger absolute value of mins / maxs, negated for the mins
+	void sub_100dd450(Vector *pMins, Vector *pMaxs);	// "CCollisionProperty::WorldSpaceSurroundingBounds"-like: the world bounds of the outer entity (from its physics object, slot 49 of it through the global at 0x1072393c slot 18, else the collision origin twice), grown by the trigger bounds (slot 3) when bit 8 of the solid flags is set
 };
