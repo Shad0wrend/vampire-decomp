@@ -23,4 +23,5 @@ public:
 	char m_pad8[8];
 	char m_unk10[4];
 	void sub_10004246();	// as in CDataObjectAccessSystem (transplant)
+	void sub_101ab5c0(void *pEdict);	// "CServerNetworkProperty::AttachEdict" (called through the stub at 0x100015eb): takes the engine's edict for the entity
 };
