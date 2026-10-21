@@ -33060,6 +33060,29 @@ void CHolderPtr36c::sub_10150e50(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151ae0 size=0x6b
+#include "matrix3x4_t.h"
+#include <math.h>
+
+void sub_10138720(const matrix3x4_t &mat, int iCol, Vector &out);
+
+int sub_10151ae0(const matrix3x4_t &mat, const Vector &dir)
+{
+	int iBest = 0;
+	float flBest = -1.0f;
+	for (int i = 0; i < 3; i++) {
+		Vector axis;
+		sub_10138720(mat, i, axis);
+		float flDot = fabs(DotProduct(axis, dir));
+		if (flDot > flBest) {
+			flBest = flDot;
+			iBest = i;
+		}
+	}
+	return iBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101521b0 size=0x43
 #include "CRagdollProp.h"
 void *sub_100aa720(int size);

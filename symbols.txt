@@ -5550,6 +5550,7 @@
 0x10101100 func   ?sub_10101100@@YAXPAMPAE@Z sub_10101100
 0x1012f340 func   ?sub_1012f340@@YAHPBD0@Z sub_1012f340
 0x10136910 func   ?sub_10136910@@YAHPAUParentEntityView@@@Z sub_10136910
+0x10151ae0 func   ?sub_10151ae0@@YAHABUmatrix3x4_t@@ABVVector@@@Z sub_10151ae0
 0x10195940 func   ?sub_10195940@@YA_NPAUDMEntity@@PBDPAPAUtypedescription_t@@PAH@Z sub_10195940
 0x1019b3d0 func   ?sub_1019b3d0@@YAPAHPAHPBD@Z sub_1019b3d0
 0x1019b570 func   ?sub_1019b570@@YAHPAUPyDataObj@@PBDPAUPyObj@@@Z sub_1019b570
