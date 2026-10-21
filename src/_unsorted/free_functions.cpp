@@ -76534,6 +76534,44 @@ void CNPCMaker::sub_1034cf20(int a, char bNotify)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034d2d0 size=0x74
+#include "CNPCMaker_Zombie.h"
+
+struct CGlobalVarsStub
+{
+	char pad[0xc];
+	float m_flCurTime;
+};
+
+#define MV1(p) virtual void p();
+#define MV10(p) MV1(p##0) MV1(p##1) MV1(p##2) MV1(p##3) MV1(p##4) MV1(p##5) MV1(p##6) MV1(p##7) MV1(p##8) MV1(p##9)
+#define MV100(p) MV10(p##0) MV10(p##1) MV10(p##2) MV10(p##3) MV10(p##4) MV10(p##5) MV10(p##6) MV10(p##7) MV10(p##8) MV10(p##9)
+
+struct CMakerVSlots
+{
+	MV100(ma) MV100(mb) MV100(mc) MV100(md) MV100(me) MV100(mf)
+	MV10(mg) MV1(mh0) MV1(mh1) MV1(mh2) MV1(mh3) MV1(mh4) MV1(mh5) MV1(mh6)
+	virtual int vfunc617(int a);
+};
+
+extern CGlobalVarsStub *g_1070b228;
+extern float (__cdecl *g_109f385c)(float flMin, float flMax);
+
+// TARGET: CNPCMaker_Zombie::sub_1034d2d0
+void CNPCMaker_Zombie::sub_1034d2d0()
+{
+	float *pNextThink = (float *)((char *)this + 0x17c);
+	if (!((CMakerVSlots *)this)->vfunc617(0)) {
+		if (m_n66b4 > 0 && m_n66b0 >= m_n66b4)
+			*pNextThink = m_flSpawnDelay + g_1070b228->m_flCurTime;
+		else
+			*pNextThink = g_109f385c(1.0f, 2.0f) + g_1070b228->m_flCurTime;
+	} else {
+		*pNextThink = m_flSpawnDelay + g_1070b228->m_flCurTime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d370 size=0x74
 #include "CAI_BaseNPC.h"
 
