@@ -333,6 +333,7 @@
 0x1000280b func   ?sub_103c9ed0@CHintData_WW@@QAEPAV1@PBV1@@Z CHintData_WW::sub_103c9ed0
 0x10002829 func   ?sub_102da600@CHolder@@QAEXPADDD@Z CHolder::sub_102da600
 0x10002847 func   ?vfunc546@CNPC_VHumanCombatant@@QAEHH@Z CNPC_VHumanCombatant::vfunc546
+0x10002856 func   ??0CUnknown103164c0@@QAE@PBD@Z CUnknown103164c0::CUnknown103164c0
 0x1000285b func   ?sub_101fd250@CVStatAction_t@@QAEPBDXZ CVStatAction_t::sub_101fd250
 0x10002865 func   ?sub_103fa0d0@@YAHXZ sub_103fa0d0
 0x10002874 func   ?sub_100a8fc0@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a8fc0
