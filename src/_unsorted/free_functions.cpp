@@ -41679,6 +41679,34 @@ void sub_101cebc0(CMsgPlayerView *pPlayer, int nValue1, int nValue2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cecf0 size=0xef
+#include "CSingleUserRecipientFilter.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+extern int g_10726084;
+
+struct CMsgPlayerView
+{
+	char pad[0x1e00];
+	char m_bFlag1e00;
+};
+
+// TARGET: sub_101cecf0
+void sub_101cecf0(CMsgPlayerView *pPlayer, int nValue1, int nValue2)
+{
+	if (pPlayer && !pPlayer->m_bFlag1e00) {
+		CSingleUserRecipientFilter filter(pPlayer);
+		filter.sub_1019cf50();
+		g_1070b22c->vfunc65(&filter, g_10726084);
+		g_1070b22c->vfunc67(1);
+		g_1070b22c->vfunc67(nValue1);
+		g_1070b22c->vfunc78(nValue2);
+		g_1070b22c->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cee20 size=0x96
 #include "Vector.h"
 #include "QAngle.h"
