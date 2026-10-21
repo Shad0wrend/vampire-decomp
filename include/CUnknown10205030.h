@@ -14,6 +14,7 @@ class CUnknown101ff0b0	// a table entry
 {
 public:
 	int sub_101ff0b0();	// stub 0x10007ecd
+	const char *sub_101fdda0();	// stub 0x1000c112: the entry's name
 };
 
 class CUnknown10205030
