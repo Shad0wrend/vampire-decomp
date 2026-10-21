@@ -49,3 +49,42 @@ void CItemContainerLock::vfunc103()
     *(unsigned int *)((char *)this + 0x19c) |= 0x40;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10226520 size=0x7b
+#include "CItemContainerLock.h"
+#include "CGlobalEntityList.h"
+
+void *sub_10430b64(void *pObject, long vfDelta, void *pSrcType, void *pTargetType, int isReference);
+extern char g_10538764[];
+extern char g_10560664[];
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+__declspec(dllimport) void DevWarning(const char *fmt, ...);
+void sub_10014614(void *pEnt);
+
+struct CContainerView {
+	void sub_10209ac0(void *pLock);
+};
+
+struct CLockView {
+	char m_pad[0x124];
+	const char *m_pszContainer;
+	const char *sub_100ab4f0();
+	void sub_10003e63();
+};
+
+void CItemContainerLock::vfunc113()
+{
+	CLockView *p = (CLockView *)this;
+	p->sub_10003e63();
+	const char *pszName = p->m_pszContainer ? p->m_pszContainer : g_106b8540;
+	CContainerView *pContainer = (CContainerView *)sub_10430b64(g_106eb5d8.sub_100f7770(0, pszName, 0, 0), 0, g_10538764, g_10560664, 0);
+	if (!pContainer) {
+		pszName = p->m_pszContainer ? p->m_pszContainer : g_106b8540;
+		DevWarning("%s attached to non-existent container: %s, removing", p->sub_100ab4f0(), pszName);
+		sub_10014614(this);
+		return;
+	}
+	pContainer->sub_10209ac0(this);
+}
+// END FUNCTION
