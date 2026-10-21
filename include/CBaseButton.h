@@ -88,6 +88,8 @@ public:
 	bool sub_100c8990(int a);	// slot 34: vfunc35(a) != 0
 	void sub_100c97c0();	// \"ButtonReturn\"-like: state 3, fires the output at +0x5a8 for the activator (when flag 0x1 is set), plays the sound table entry 0x106e6f7c unless bit 13 of the flags is set, think function sub_100c98e0, then moves to position 1 (linear) or angle 1 (rotating, byte +0x55d) at the speed at +0x164
 	void sub_100c98e0();	// the think function set by sub_100c97c0 (stub 0x10009764)
+	void sub_100c9560();	// the button is pressed: plays the sound table entry 0x106e6f78 unless bit 13 of the flags is set, fires the output at +0x590 for the activator (when flag 0x1 is set), state 2, think function sub_100c96a0 and moves to position 2 (linear) or angle 2 (rotating, byte +0x55d); nothing while the byte at +0x5c4 is set
+	void sub_100c96a0();	// the think function set by sub_100c9560 (stub 0x10008f30)
 
 	char m_pad0004[0x114 - 4];
 	void (CBaseButton::*m_pfnThink114)();	// 0x114
@@ -99,13 +101,16 @@ public:
 	int m_nState4f8;	// 0x4f8
 	char m_pad04fc[0x508 - 0x4fc];
 	Vector m_vec508;	// 0x508
-	char m_pad0514[0x520 - 0x514];
+	Vector m_vec514;	// 0x514
 	Vector m_vec520;	// 0x520
-	char m_pad052c[0x53c - 0x52c];
+	Vector m_vec52c;	// 0x52c
+	char m_pad0538[0x53c - 0x538];
 	unsigned int m_hActivator53c;	// 0x53c: entity handle of the activator
 	char m_pad0540[0x55d - 0x540];
 	char m_b55d;	// 0x55d
-	char m_pad055e[0x5a8 - 0x55e];
+	char m_pad055e[0x590 - 0x55e];
+	COutputEvent m_Output590;	// 0x590
 	COutputEvent m_Output5a8;	// 0x5a8
 	int m_n5c0;	// 0x5c0
+	char m_b5c4;	// 0x5c4
 };
