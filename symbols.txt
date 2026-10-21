@@ -747,6 +747,7 @@
 0x10003f85 func   ?sub_1002e0a0@@YAGPAUIPhysObj@@G@Z sub_1002e0a0
 0x10003f8a func   ?sub_10197050@@YAPAUPyObject@@PAU1@PAD@Z sub_10197050
 0x10003f94 func   _logic_case_toggle logic_case_toggle
+0x10003f99 func   ?vfunc259@CBaseAnimating@@QAEXPAX@Z CBaseAnimating::vfunc259
 0x10003f9e func   ?vfunc5@CResearchBook_HG_DODGE@@QAEPAV1@I@Z CResearchBook_HG_DODGE::vfunc5
 0x10003fa3 func   ?vfunc438@CNPC_VGargoyle@@QAEHXZ CNPC_VGargoyle::vfunc438
 0x10003fbc func   ?sub_103e61c0@@YAHXZ sub_103e61c0

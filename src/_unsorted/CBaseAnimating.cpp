@@ -220,6 +220,44 @@ float CBaseAnimating::vfunc249()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10091da0 size=0x11d
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *fmt, ...);
+extern "C" int atoi(const char *);
+
+struct SAnimEvent
+{
+	int event;
+	const char *options;
+};
+
+void CBaseAnimating::vfunc259(void *pEventIn)
+{
+	SAnimEvent *pEvent = (SAnimEvent *)pEventIn;
+	const char *pszOptions;
+	ScopeTrace trace("CBaseAnimating::HandleAnimEvent", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	switch (pEvent->event) {
+	case 0x816:
+		pszOptions = pEvent->options;
+		sub_100978c0(sub_10097980(pszOptions));
+		break;
+	case 0x817:
+		pszOptions = pEvent->options;
+		sub_100977f0(sub_10097980(pszOptions));
+		break;
+	case 0xfa5:
+		*(int *)((char *)this + 0x6f0) = sub_1008dc40(atoi(pEvent->options), -1);
+		sub_10090950();
+		break;
+	default:
+		DevWarning(2, "Unhandled animation event %d for %s\n", pEvent->event, sub_100ab4f0());
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091f10 size=0x93
 #include "CBaseAnimating.h"
 #include "CEntityVSlots.h"
