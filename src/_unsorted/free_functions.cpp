@@ -25634,6 +25634,30 @@ extern "C" GP *window_pane()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101128d0 size=0xf7
+#include "CBreakableSurface.h"
+void sub_10003d4b(Vector *, Vector *);
+void sub_10002310(Vector *, Vector *, Vector *, Vector *);
+
+static inline float DotX(const Vector &a, const Vector &b)
+{
+	return (b.x * a.x + a.y * b.y + a.z * b.z);
+}
+
+void CBreakableSurface::sub_101128d0(const Vector &vecPos, float *pX, float *pY)
+{
+	Vector vecDelta = vecPos - m_vecCorner;
+	Vector vecAng = -1.0f * m_vecAxis;
+	Vector vecDir;
+	Vector vecUp;
+	Vector vecTmp;
+	sub_10003d4b(&vecAng, &vecTmp);
+	sub_10002310(&vecTmp, 0, &vecDir, &vecUp);
+	*pX = DotX(vecDelta, vecDir) / m_flWidth;
+	*pY = DotProduct(vecDelta, vecUp) / m_flHeight;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113b30 size=0x43
 #include "CFunc_DustMotes.h"
 void *sub_100aa720(int size);

@@ -3253,6 +3253,7 @@
 0x1000e354 func   ?sub_100f4490@@YAHPBD_N@Z sub_100f4490
 0x1000e363 func   ??0CUnknown10248a50@@QAE@PBD@Z CUnknown10248a50::CUnknown10248a50
 0x1000e381 func   ?sub_102477c0@CUnknown102477c0@@QAEXXZ CUnknown102477c0::sub_102477c0
+0x1000e386 func   ?sub_101128d0@CBreakableSurface@@QAEXABVVector@@PAM1@Z CBreakableSurface::sub_101128d0
 0x1000e390 func   ?sub_101618a0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_101618a0
 0x1000e3bd func   ?sub_100e1ad0@CDialog@@QAEPBDH@Z CDialog::sub_100e1ad0
 0x1000e3c2 func   ?vfunc292@CWeaponLockpick@@UAEXH@Z CWeaponLockpick::vfunc292
