@@ -49313,6 +49313,25 @@ void CUnknown10227c90::sub_10227c90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102283a0 size=0x67
+float sub_102283a0(float cur, float target, float a, float b)
+{
+    float v;
+    if (cur > target) {
+        v = cur - a * b;
+        if (target > v)
+            return target;
+    } else if (cur < target) {
+        v = cur + a * b;
+        if (target < v)
+            return target;
+    } else {
+        v = target;
+    }
+    return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10229550 size=0x11c
 #include "CUnknown10229550.h"
 
