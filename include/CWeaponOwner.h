@@ -3,6 +3,9 @@
 
 struct CWeaponOwner
 {
-	char m_pad0000[0x2668];
+	char m_pad0000[0x88];
+	char m_szName[0x24d0 - 0x88];	// 0x88: the owner's text (name)
+	int m_nSection24d0;	// 0x24d0: key of the inventory section (-1 when unset)
+	char m_pad24d4[0x2668 - 0x24d4];
 	int m_n2668;	// 0x2668: first dword of a block of the owner's info; weapons test its address and read it
 };
