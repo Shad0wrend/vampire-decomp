@@ -1657,6 +1657,7 @@
 0x100089d1 func   ?vfunc5@CAI_DynamicLink@@QAEPAV1@I@Z CAI_DynamicLink::vfunc5
 0x100089db func   ?sub_103fb2d0@@YAHXZ sub_103fb2d0
 0x100089e5 func   ?vfunc498@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc498
+0x100089ea func   ?vfunc113@CSceneEntity@@UAEXXZ CSceneEntity::vfunc113
 0x100089ef func   ?sub_10344c80@CUnknown10344c80@@QAEHH@Z CUnknown10344c80::sub_10344c80
 0x100089f4 func   _func_breakable func_breakable
 0x10008a26 func   ?sub_10404520@@YAHXZ sub_10404520

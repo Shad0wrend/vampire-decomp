@@ -24,6 +24,38 @@ void CSceneEntity::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080f80 size=0x76
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+
+struct CSceneEntityUnit : CSceneEntity {
+    void sub_10001226();
+    void sub_10080f80();
+};
+
+void CSceneEntity::vfunc113()
+{
+    CSceneEntityUnit *u = (CSceneEntityUnit *)this;
+    u->sub_10001226();
+    unsigned int h = *(unsigned int *)((char *)this + 0x47c);
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (int)(h >> 13) && pSlot->m_pEntity)
+            return;
+    }
+    const char *pszName = *(const char **)((char *)this + 0x468);
+    if (!pszName)
+        pszName = g_106b8540;
+    CBaseEntity *pTarget = g_106eb5d8.sub_100f7770(0, pszName, 0, 0);
+    if (pTarget)
+        *(unsigned int *)((char *)this + 0x47c) = *pTarget->vfunc1();
+    else
+        *(unsigned int *)((char *)this + 0x47c) = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081210 size=0x113
 #include "IVEngineServerFull.h"
 
