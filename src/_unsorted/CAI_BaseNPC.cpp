@@ -130,6 +130,53 @@ int CAI_BaseNPC::vfunc553(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026d9a0 size=0xb7
+#include "CBaseEntity.h"
+
+#define SV1(n) virtual void f##n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct S555Focus
+{
+	SV100(a) SV100(b) SV100(c)
+	SV10(d) SV10(e)
+	SV1(f0) SV1(f1) SV1(f2) SV1(f3) SV1(f4) SV1(f5) SV1(f6)
+	virtual bool Check();
+};
+
+struct S555Owner
+{
+	char pad[0x9c];
+	S555Focus *pFocus;
+};
+
+int CAI_BaseNPC::vfunc555(float a, float b)
+{
+	S555Owner *pOwner = (S555Owner *)vfunc167();
+	S555Focus *pFocus;
+	if (pOwner == 0)
+		pFocus = 0;
+	else
+		pFocus = pOwner->pFocus;
+	if (b > 256.0f)
+		return 9;
+	if (b > 64.0f)
+		return 0x60;
+	if (a < 0.7)
+		return 0;
+	CBaseEntity *pEnt = (CBaseEntity *)vfunc167();
+	if (!pEnt)
+		return 0;
+	if (pFocus && !pFocus->Check())
+		return 0;
+	pEnt = (CBaseEntity *)vfunc167();
+	if (pEnt->sub_100b3700() & 1)
+		return 0x51;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026da90 size=0x7f
 #include "CAI_BaseNPC.h"
 
