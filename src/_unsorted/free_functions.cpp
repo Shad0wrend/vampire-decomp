@@ -15954,6 +15954,47 @@ void CBeam::sub_100bb0b0(const float *pPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb180 size=0xbc
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+
+void sub_10005394(float *a, float *b);
+void sub_100087ba(const float *in, float *m, float *out);
+
+static inline bool TestBit(unsigned int value, int bit)
+{
+	return ((value >> bit) & 1) != 0;
+}
+
+static inline CBaseEntity *ResolveHandle(unsigned int h)
+{
+	EntInfo *e;
+	return (h != 0xffffffff && (e = &g_10566458->m_entries[h & 0x1fff], e->m_serial == (int)(h >> 13))) ? e->m_pEntity : 0;
+}
+
+void CBaseEntity::sub_100bb180(const float *pLocal)
+{
+	float *pOut = (float *)((char *)this + 0x4d8);
+	CBaseEntity *pParent = ResolveHandle(*(unsigned int *)((char *)this + 0x25c));
+	if (!pParent) {
+		pOut[0] = pLocal[0];
+		pOut[1] = pLocal[1];
+		pOut[2] = pLocal[2];
+	} else {
+		float tmp[3];
+		float inv[12];
+		if (TestBit(m_flags268, 11))
+			vfunc98();
+		sub_10005394((float *)((char *)this + 0x130), inv);
+		sub_100087ba(pLocal, inv, tmp);
+		pOut[0] = tmp[0];
+		pOut[1] = tmp[1];
+		pOut[2] = tmp[2];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb270 size=0x16e
 #include "CGlobalEntityList.h"
 #include "CUnknown1070b22c.h"

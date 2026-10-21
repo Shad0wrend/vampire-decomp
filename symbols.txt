@@ -4498,6 +4498,7 @@
 0x10014777 func   ?sub_10379040@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_10379040
 0x1001478b func   ?sub_10202350@@YAPBDHH@Z sub_10202350
 0x10014795 func   ?vfunc5@CWeaponMelee_MingXiaoMelee@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee_MingXiaoMelee::vfunc5
+0x100147bd func   ?sub_100bb180@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_100bb180
 0x100147ef func   ?sub_1042daa0@CUnknown1042d9a0@@QAEDPAV1@@Z CUnknown1042d9a0::sub_1042daa0
 0x10014817 func   ?sub_103b1470@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::sub_103b1470
 0x1001483f func   ?sub_103326b0@CBaseCombatCharacter@@QAEXM@Z CBaseCombatCharacter::sub_103326b0
