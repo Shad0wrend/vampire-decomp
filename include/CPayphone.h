@@ -8,6 +8,7 @@ class CPayphone : public CBaseEntity
 {
 public:
 	CPayphone *vfunc5(unsigned int flags);
+	bool vfunc45(CBaseEntity *pOther, int a, int b, int c, int d, int e, int f, int g);	// slot 45: true when pOther is within the Manhattan distance of the position (slot 193) and the collision bounds (+0x270) of both are equal
 	void sub_100123af();
 	bool vfunc295(void *pOther);	// true when pOther is set and this NPC may start the phone interaction (a target at +0x128, no ignore state, not busy)
 	char sub_10014da8();	// stub of 0x100b5190
