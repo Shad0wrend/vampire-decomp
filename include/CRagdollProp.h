@@ -54,4 +54,6 @@ public:
 	void sub_101563b0(int index, int unused);	// stores the origin/angles of body `index` at +0x2a0 / +0x2fa (dwords); index 0 also calls slot 216 and PhysicsTouchTriggers
 	CRagdollProp *sub_101550d0();	// as in CKeepUpright (transplant)
 	void sub_100ada20(const float *pPosition, const float *pAngles, const float *pVelocity);	// CBaseEntity::Teleport (slot 181, stub 0x10012cf1), called directly
+	int vfunc124();	// slot 124 "CRagdollProp::DrawDebugTextOverlays": the base's line offset, plus one line ("Mass: %.2f kg / %.2f lb (%s)") when the text overlay bit (byte at +0x224) is set and the physics object at +0x36c exists
+	int sub_10096100();	// CBaseAnimating::vfunc124 (stub 0x10007d97), called directly
 };
