@@ -4679,6 +4679,7 @@
 0x10013e85 func   ?vfunc420@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::vfunc420
 0x10013e99 func   ?vfunc308@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::vfunc308
 0x10013ebc func   _item_k_museum_basement_key item_k_museum_basement_key
+0x10013ec1 func   ?vfunc103@CTempEntTester@@UAEXXZ CTempEntTester::vfunc103
 0x10013ed0 func   ?vfunc104@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc104
 0x10013edf func   ?sub_10194330@CUtlRBTree12@@QBEGPBX@Z CUtlRBTree12::sub_10194330
 0x10013f0c func   ?sub_102a1590@@YI_NPAUN@@@Z sub_102a1590

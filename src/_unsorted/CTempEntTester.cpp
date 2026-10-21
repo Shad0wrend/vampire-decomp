@@ -1,6 +1,47 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10056d70 size=0xab
+#include "CTempEntTester.h"
+
+struct CGlobalVarsView
+{
+	char pad[0xc];
+	float curtime;
+};
+
+extern CGlobalVarsView *g_1070b228;
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+extern "C" char *__cdecl _strlwr(char *);
+extern "C" char *__cdecl strstr(const char *, const char *);
+void sub_101cd940(CTempEntTester *pEnt);
+
+// TARGET: CTempEntTester::vfunc103
+void CTempEntTester::vfunc103()
+{
+	m_nFlags |= 0x40;
+	m_pObject = sub_100507c0();
+	if (m_pObject)
+	{
+		do
+		{
+			char szName[128];
+			Q_strncpy(szName, m_pObject->sub_10050860(), 0x80);
+			_strlwr(szName);
+			if (strstr(szName, m_szFilter))
+				break;
+			m_pObject = m_pObject->sub_10050880();
+		} while (m_pObject);
+	}
+	if (!m_pObject)
+	{
+		sub_101cd940(this);
+		return;
+	}
+	m_flNextThink = g_1070b228->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056ee0 size=0x1e
 #include "CTempEntTester.h"
 
