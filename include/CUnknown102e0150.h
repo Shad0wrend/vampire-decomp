@@ -14,4 +14,5 @@ public:
 	char sub_102e0210(int pEnemy);	// a test on the node of pEnemy (stub 0x10010433)
 	char sub_102df700(int a, int b, int c, int d);	// updates the list with (a, enemy, ...) (stub 0x1000d972)
 	void sub_102dfed0(Vector *pOut, CBaseEntity *pEnemy);	// "LastKnownPosition": the position of the node of pEnemy, else the last visible node's, else the global vector at 0x1070d1b0 (with a DevWarning); stub 0x10010613
+	void sub_102e0470(Vector *pOut, CBaseEntity *pEnemy);	// same lookup as sub_102dfed0 on the first three floats of the nodes (the position the enemy was last seen at)
 };
