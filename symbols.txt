@@ -930,6 +930,7 @@
 0x100050e2 func   _item_p_research_mg_brawl item_p_research_mg_brawl
 0x1000510f func   ?vfunc5@CWeaponHolyLight@@QAEPAV1@I@Z CWeaponHolyLight::vfunc5
 0x10005123 func   ?vfunc619@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::vfunc619
+0x1000515a func   ?sub_100933b0@CBaseAnimating@@QAEDHPAM@Z CBaseAnimating::sub_100933b0
 0x1000515f func   ?vfunc5@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc5
 0x10005173 func   ?sub_10043c40@CSaveBlockFields10043c40@@QAEXH@Z CSaveBlockFields10043c40::sub_10043c40
 0x10005178 func   _trigger_checkvolume trigger_checkvolume

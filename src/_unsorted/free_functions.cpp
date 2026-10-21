@@ -11197,6 +11197,38 @@ char CBaseAnimating::sub_100931d0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100933b0 size=0xea
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct CAnimatingAttachSlotsX {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21) SV10(22) SV10(23) SV10(24) SV10(25)
+	SV(260) SV(261)
+	virtual bool s262(int iAttachment, float *pMatrix);
+};
+
+void sub_10138630(const float *pIn, float *pOut);
+void sub_10138df0(const float *pA, const float *pB, float *pOut);
+
+char CBaseAnimating::sub_100933b0(int iAttachment, float *pAttachmentToLocal)
+{
+	ScopeTrace trace("CBaseAnimating::GetAttachmentLocal03", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	float attachmentToWorld[12];
+	float worldToEntity[12];
+	if (!((CAnimatingAttachSlotsX *)this)->s262(iAttachment, attachmentToWorld))
+		return 0;
+	if ((unsigned char)(m_flags268 >> 11) & 1)
+		vfunc98();
+	sub_10138630((float *)((char *)this + 0x130), worldToEntity);
+	sub_10138df0(worldToEntity, attachmentToWorld, pAttachmentToLocal);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100938a0 size=0x98
 #include "CBaseAnimating.h"
 
