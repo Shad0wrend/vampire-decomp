@@ -6,4 +6,9 @@ class CFilterFeat
 {
 public:
 	CFilterFeat *vfunc5(unsigned int flags);
+	bool vfunc241(char *pEntity);	// slot 241 "PassesFilter": false without an entity or its character object (+0x9c); else true when the character's cost for the feat named at +0x484 is at least the value at +0x488
+
+	char m_pad0000[0x484];
+	const char *m_pszFeat;	// 0x484
+	int m_nMinCost;	// 0x488
 };
