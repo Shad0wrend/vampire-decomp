@@ -1,6 +1,45 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100568a0 size=0x10e
+#include "CEntityVSlots.h"
+#include "CDynamicLight.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" double atof(const char *);
+extern "C" int atoi(const char *);
+
+void sub_101d0630(unsigned char *pColor, const char *pszValue);
+
+bool CDynamicLight::vfunc110(const char *szKeyName, const char *szValue)
+{
+	if (!_strcmpi(szKeyName, "_light")) {
+		sub_101d0630((unsigned char *)&szValue, szValue);
+		*((unsigned char *)this + 0x1a0) = ((unsigned char *)&szValue)[0];
+		*((unsigned char *)this + 0x1a1) = ((unsigned char *)&szValue)[1];
+		*((unsigned char *)this + 0x1a2) = ((unsigned char *)&szValue)[2];
+		return true;
+	}
+	if (!_strcmpi(szKeyName, "pitch")) {
+		*(float *)&szValue = (float)atof(szValue);
+		if (*(float *)&szValue != 0.0f) {
+			CEntityVSlots *pEnt = (CEntityVSlots *)this;
+			Vector *pAngles = pEnt->slot219();
+			Vector vecAngles = *pAngles;
+			vecAngles.x = -*(float *)&szValue;
+			pEnt->slot218(&vecAngles);
+			return true;
+		}
+	} else {
+		if (!_strcmpi(szKeyName, "spawnflags"))
+			*((unsigned char *)this + 0x450) = *((unsigned char *)this + 0x451) = (unsigned char)atoi(szValue);
+		else
+			return sub_1009e430(szKeyName, szValue);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056a90 size=0xaf
 #include "CBaseEntity.h"
 #include "CDynamicLight.h"
