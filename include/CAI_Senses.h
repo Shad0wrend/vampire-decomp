@@ -93,4 +93,7 @@ public:
 	}
 
 	char sub_1030fa00(CBaseEntity *pEnt);	// "CAI_Senses::ShouldSeeEntity": false for the NPC itself, an entity whose slot 158 fails, a flagged / spawn-flagged or hidden one, else the NPC's slot 468 (classification) answer
+	void *sub_103105d0(int type);	// the record of the given type closest to the NPC's ear position (a record owned by the NPC's slot 167 entity wins at once); walks the list with sub_10310440 / sub_10310480
+	void *sub_10310440(int *pIter);	// first record of the list (stub 0x10001f69); pIter receives the iteration state
+	void *sub_10310480(int *pIter);	// next record (stub 0x1001228d)
 };
