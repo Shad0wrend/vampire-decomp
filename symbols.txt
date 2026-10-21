@@ -5219,6 +5219,7 @@
 0x100159dd func   ?sub_1042b470@@YAHXZ sub_1042b470
 0x100159e7 func   ?vfunc301@CNPC_VPedestrian@@QAEXHH@Z CNPC_VPedestrian::vfunc301
 0x100159f6 func   ?sub_101fd010@@YAXH@Z sub_101fd010
+0x10015a00 func   ?sub_101cea60@@YAXHPAUCPlayerSlots162@@@Z sub_101cea60
 0x10015a05 func   ?vfunc5@CItemGEDanePrintReport@@QAEPAV1@I@Z CItemGEDanePrintReport::vfunc5
 0x10015a0f func   ?sub_101c4820@@YAXPAUCUnknown101c4760@@@Z sub_101c4820
 0x10015a14 func   ?sub_10158d80@CUnknown10158d80@@QAEXXZ CUnknown10158d80::sub_10158d80

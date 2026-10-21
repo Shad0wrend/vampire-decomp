@@ -40710,6 +40710,35 @@ void sub_101ce2e0(PlayerSlots162 *pPlayer, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cea60 size=0xcf
+#include "IVEngineServer.h"
+#include "CSingleUserRecipientFilter.h"
+
+extern IVEngineServer *g_1070b22c;
+extern int g_10726030;
+
+// the entity vtable up to slot 162
+struct CPlayerSlots162
+{
+	CAI_NPC_V(0) CAI_NPC_V(1) CAI_NPC_V(2) CAI_NPC_V(3) CAI_NPC_V(4) CAI_NPC_V(5) CAI_NPC_V(6) CAI_NPC_V(7) CAI_NPC_V(8) CAI_NPC_V(9)
+	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9)
+	CAI_NPC_V10(10) CAI_NPC_V10(11) CAI_NPC_V10(12) CAI_NPC_V10(13) CAI_NPC_V10(14) CAI_NPC_V10(15)
+	CAI_NPC_V(160) CAI_NPC_V(161)
+	virtual bool vfunc162();
+};
+
+void sub_101cea60(int nValue, CPlayerSlots162 *pPlayer)
+{
+	if (pPlayer && pPlayer->vfunc162()) {
+		CSingleUserRecipientFilter filter(pPlayer);
+		filter.sub_1019cf50();
+		g_1070b22c->vfunc65(&filter, g_10726030);
+		g_1070b22c->vfunc78(nValue);
+		g_1070b22c->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cee20 size=0x96
 #include "Vector.h"
 #include "QAngle.h"
