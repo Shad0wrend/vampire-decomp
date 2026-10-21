@@ -23,6 +23,5 @@ public:
 	void sub_10384720(int a, int b);
 	// Slot 563 implementation (function 0x10384760): adds the offset between two position getters of pEnt to pVec.
 	void vfunc563(CEntityVSlots *pEnt, Vector *pVec, int a, int b);
-	// Slot 461 (SelectIdealState) implementation (stub 0x10011225, function 0x103851e0), called directly (tail jump) by the combatants' override; declared as a plain member.
-	int vfunc461();
+	int sub_103851e0();	// slot 461 (SelectIdealState) implementation of the human NPCs (stub 0x10011225), called directly (tail jump) by the combatants' override
 };
