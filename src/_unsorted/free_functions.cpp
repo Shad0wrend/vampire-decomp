@@ -17823,6 +17823,41 @@ void sub_100d30a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d38d0 size=0xa9
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+struct Vec3 { float x, y, z; };
+
+struct COriginEnt
+{
+	SL100(a0) SL100(a1) SL10(a2) virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13(); virtual void b14(); virtual void b15();
+	virtual void v216(Vec3 *pOrigin);
+	virtual Vec3 *v217();
+};
+
+extern void sub_10139500(Vec3 *, float, const Vec3 *, Vec3 *);
+extern char sub_100d3860(COriginEnt *);
+
+int sub_100d38d0(COriginEnt *pEnt, const Vec3 *pDir, float flScale, Vec3 *pOut)
+{
+	for (int i = 0; i < 100; i++) {
+		Vec3 tmp = *pEnt->v217();
+		sub_10139500(&tmp, flScale, pDir, &tmp);
+		pEnt->v216(&tmp);
+		if (sub_100d3860(pEnt)) {
+			Vec3 *p = pEnt->v217();
+			pOut->x = p->x;
+			pOut->y = p->y;
+			pOut->z = p->z;
+			return 1;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3a50 size=0x91
 #include "CBaseEntity.h"
 #include "ConVar.h"
