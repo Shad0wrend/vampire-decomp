@@ -15,3 +15,24 @@ CFuncAreaPortalBase *CFuncAreaPortalBase::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010ca20 size=0xac
+#include "CFuncAreaPortalBase.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+bool CFuncAreaPortalBase::vfunc241(const float *pViewOrigin)
+{
+	if (m_nPortalKey == -1)
+		return false;
+	float plane[4];
+	if (!g_1070b22c->vfunc113(pViewOrigin, m_nPortalKey, plane))
+		return true;
+	bool bOpen = false;
+	if (plane[2] * pViewOrigin[2] + plane[1] * pViewOrigin[1] + plane[0] * pViewOrigin[0] - plane[3] + 80.0f > 0.0f)
+		bOpen = true;
+	g_1070b22c->vfunc102(m_nPortalKey, bOpen);
+	return bOpen;
+}
+// END FUNCTION
