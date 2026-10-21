@@ -33867,6 +33867,32 @@ int CUnknown101d7380::sub_101d7380(const char *name, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d76e0 size=0x80
+#include "CUnknown101d76e0.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+int CUnknown101d76e0::sub_101d76e0(void *pEnt)
+{
+	CGlobalEntityList_Ent *pCurrent;
+	if (m_hEntity != 0xffffffff) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[m_hEntity & 0x1fff];
+		pCurrent = (pSlot->m_Serial == (int)(m_hEntity >> 13)) ? pSlot->m_pEntity : 0;
+	} else {
+		pCurrent = 0;
+	}
+	if (pCurrent != pEnt)
+		return sub_101d7660(pEnt);
+	for (int i = m_iMatch + 1; i < m_nItems; i++) {
+		if (m_ppItems[i]->sub_101d6a50(pEnt)) {
+			m_iMatch = i;
+			return i;
+		}
+	}
+	m_iMatch = -1;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8190 size=0x7c
 #include <stdio.h>
 #include "CUnknown101d82d0.h"

@@ -4536,6 +4536,7 @@
 0x10015a05 func   ?vfunc5@CItemGEDanePrintReport@@QAEPAV1@I@Z CItemGEDanePrintReport::vfunc5
 0x10015a0f func   ?sub_101c4820@@YAXPAUCUnknown101c4760@@@Z sub_101c4820
 0x10015a14 func   ?sub_10158d80@CUnknown10158d80@@QAEXXZ CUnknown10158d80::sub_10158d80
+0x10015a1e func   ?sub_101d76e0@CUnknown101d76e0@@QAEHPAX@Z CUnknown101d76e0::sub_101d76e0
 0x10015a23 func   ?vfunc448@CNPC_VChangBros@@UAEXH@Z CNPC_VChangBros::vfunc448
 0x10015a2d func   ?sub_101802e0@@YAXXZ sub_101802e0
 0x10015a32 func   ?sub_1026f4d0@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_1026f4d0
