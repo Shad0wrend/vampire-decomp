@@ -4,6 +4,7 @@
 // that keep the slot indices of the game's primary vtable (0x1045293c).
 #pragma once
 
+#include "Vector.h"
 #include "COutputEvent.h"
 
 class CBaseButton
@@ -85,25 +86,26 @@ public:
 
 	void sub_1000cb8a();	// destructor body (the CBaseToggle/CBaseEntity part)
 	bool sub_100c8990(int a);	// slot 34: vfunc35(a) != 0
-	void sub_100c9560();	// the button is pressed: plays the sound, fires the output at +0x590 (activator: the entity of the handle at +0x53c), state 2, think function sub_100c96a0 and moves to position 1 (or turns to angle 1 when the byte at +0x55d is set)
+	void sub_100c97c0();	// \"ButtonReturn\"-like: state 3, fires the output at +0x5a8 for the activator (when flag 0x1 is set), plays the sound table entry 0x106e6f7c unless bit 13 of the flags is set, think function sub_100c98e0, then moves to position 1 (linear) or angle 1 (rotating, byte +0x55d) at the speed at +0x164
+	void sub_100c98e0();	// the think function set by sub_100c97c0 (stub 0x10009764)
 
 	char m_pad0004[0x114 - 4];
-	void *m_pfnThink;	// 0x114
+	void (CBaseButton::*m_pfnThink114)();	// 0x114
 	char m_pad0118[0x164 - 0x118];
-	float m_flWait;	// 0x164
+	float m_flSpeed164;	// 0x164
 	char m_pad0168[0x204 - 0x168];
-	unsigned int m_spawnflags;	// 0x204
+	unsigned int m_flags204;	// 0x204
 	char m_pad0208[0x4f8 - 0x208];
-	int m_nState;	// 0x4f8
-	char m_pad04fc[0x514 - 0x4fc];
-	float m_vecPosition1[3];	// 0x514
-	float m_vecAngle1[3];	// 0x520
-	float m_vecPosition2[3];	// 0x52c
-	unsigned int m_hActivator;	// 0x53c
+	int m_nState4f8;	// 0x4f8
+	char m_pad04fc[0x508 - 0x4fc];
+	Vector m_vec508;	// 0x508
+	char m_pad0514[0x520 - 0x514];
+	Vector m_vec520;	// 0x520
+	char m_pad052c[0x53c - 0x52c];
+	unsigned int m_hActivator53c;	// 0x53c: entity handle of the activator
 	char m_pad0540[0x55d - 0x540];
-	char m_bUseAngles;	// 0x55d
-	char m_pad055e[0x590 - 0x55e];
-	COutputEvent m_OnPressed;	// 0x590
-	char m_pad05a8[0x5c4 - 0x5a8];
-	char m_bLocked;	// 0x5c4
+	char m_b55d;	// 0x55d
+	char m_pad055e[0x5a8 - 0x55e];
+	COutputEvent m_Output5a8;	// 0x5a8
+	int m_n5c0;	// 0x5c0
 };
