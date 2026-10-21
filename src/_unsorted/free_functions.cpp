@@ -27959,6 +27959,34 @@ void __fastcall sub_101251e0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10125200 size=0xae
+#include "CGameMovement.h"
+
+struct IEngineTraceY { virtual int GetPointContents(const Vector &vecPosition, void *ppEntity); };
+extern IEngineTraceY *g_1070b254;
+extern char g_10572420;
+
+static inline float DistToSqrY(const Vector &a, const Vector &b)
+{
+    Vector d;
+    VectorSubtract(a, b, d);
+    return d.x * d.x + (d.y * d.y + d.z * d.z);
+}
+
+// TARGET: CGameMovement::sub_10125200
+int CGameMovement::sub_10125200(const Vector &point)
+{
+    if (g_10572420) {
+        if (m_nCachedContents == -9999 || DistToSqrY(point, m_vecCachedPoint) > 1.0f) {
+            m_nCachedContents = g_1070b254->GetPointContents(point, 0);
+            m_vecCachedPoint = point;
+        }
+        return m_nCachedContents;
+    }
+    return g_1070b254->GetPointContents(point, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101273e0 size=0x8c
 const char *sub_101273e0(int state)
 {
