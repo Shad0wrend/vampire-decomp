@@ -35857,6 +35857,33 @@ void CUnknown101f1c70::sub_101f1c70(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1e20 size=0x67
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+void __cdecl sub_10203dd0(const char *msg);
+
+struct ItemObjX { void sub_1000ec96(); };
+struct ItemMgrX { ItemObjX *sub_1000c30b(int key); };
+extern ItemMgrX g_1073a9a0;
+
+struct CUnknown101f1e20 {
+	int m_nCount;
+	int *m_pItems;
+	void sub_101f1e20();
+};
+
+void CUnknown101f1e20::sub_101f1e20()
+{
+	char buf[0x80];
+	sprintf(buf, "\n");
+	sub_10203dd0(buf);
+	if (m_nCount > 0) {
+		for (int i = 0; i < m_nCount; i++)
+			g_1073a9a0.sub_1000c30b(m_pItems[i])->sub_1000ec96();
+	}
+	sub_10203dd0("\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2500 size=0x9
 struct CUnknown101f2500 { int a; char sub_101f2500(); };
 // TARGET: CUnknown101f2500::sub_101f2500
