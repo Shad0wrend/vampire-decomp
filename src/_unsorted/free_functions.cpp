@@ -55452,6 +55452,53 @@ bool CUnknown10206340::sub_10206340(void *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102064b0 size=0x18f
+#include "CUnknown102064b0.h"
+
+extern char g_106b8540[];
+extern int *sub_1000c162(int **out, void *pKeys);
+extern int *sub_1000282e(int **out, void *pKeys, const char *pName);
+extern int *sub_1000fc2c(int **out, const char *pString);
+
+bool CUnknown102064b0::sub_102064b0(CUnknown102064b0Keys *pKeys)
+{
+    if (pKeys) {
+        int *tmp;
+        m_field000c = *sub_1000c162(&tmp, pKeys);
+        m_field0008 = *sub_1000282e(&tmp, pKeys, "InternalName");
+        m_field0020 = *sub_1000fc2c(&tmp, pKeys->vfunc13("VendorImage", g_106b8540));
+        for (CUnknown102064b0Keys *pSub = pKeys->vfunc2("VendorItem"); pSub != 0; pSub = pSub->vfunc3()) {
+            if (m_allocationCount == m_size) {
+                m_allocationCount += m_growSize;
+                if (m_ppItems) {
+                    CUnknown10206340 **pNew = (CUnknown10206340 **)operator new(m_allocationCount * 4);
+                    int i;
+                    for (i = 0; i < m_size; i++)
+                        pNew[i] = m_ppItems[i];
+                    for (; i < m_allocationCount; i++)
+                        pNew[i] = 0;
+                    operator delete(m_ppItems);
+                    m_ppItems = pNew;
+                    m_size++;
+                } else {
+                    m_ppItems = (CUnknown10206340 **)operator new(m_allocationCount * 4);
+                    for (int i = 0; i < m_allocationCount; i++)
+                        m_ppItems[i] = 0;
+                    m_size++;
+                }
+            } else {
+                m_size++;
+            }
+            if (m_ppItems[m_size - 1] == 0)
+                m_ppItems[m_size - 1] = new CUnknown10206340(m_nNextId++);
+            m_ppItems[m_size - 1]->sub_10206340(pSub);
+        }
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206980 size=0x7a
 extern "C" int sprintf(char *, const char *, ...);
 extern "C" int _strcmpi(const char *, const char *);
