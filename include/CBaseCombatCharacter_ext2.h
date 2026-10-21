@@ -63,3 +63,5 @@
 	int sub_1033d9d0(CBaseEntity *pOther);	// "CBaseCombatCharacter::GetSpecialDamageModifier": scope trace (entity name), 0 without pOther or misc flag 0x200; else the highest weapon-info level (dword at +0x5eb40) over this character's weapons whose info name (+0x5eb20) equals pOther's classname
 	char sub_1033d9b0();	// HasMiscFlag(0x200) (stub 0x1000281f), called directly
 	virtual void vfunc125();	// slot 125 "CBaseCombatCharacter::DrawMuzzleOverlay": scope trace (entity name), with an active weapon (sub_1032e7b0): the position of its "muzzleflash" attachment (CBaseAnimating::sub_10092e20) is drawn as a 3.0f box (sub_10143b70), red (0xff) when the attachment exists
+	void vfunc395();	// slot 395 "CBaseCombatCharacter::CorpseFade": scope trace (entity name), clears the float at +0x6f4, zero velocity (sub_100b2e30), slot 93(0, 0), zero origin (sub_100b2f50), stamps curtime at +0x174, sets bit 4 of the flags at +0x19c, then sub_102695d0()
+	void sub_102695d0();	// CAI_BaseNPC member (stub 0x10011667), called directly
