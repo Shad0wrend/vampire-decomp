@@ -30203,6 +30203,42 @@ PyObject *sub_10196970(PyObject *self, PyObject *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10196a40 size=0x114
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_10543c6c[];
+struct SPyObject { int ob_refcnt; void *ob_type; };
+extern "C" __declspec(dllimport) SPyObject _Py_NoneStruct;
+extern "C" __declspec(dllimport) int __cdecl PyArg_ParseTuple(SPyObject *, const char *, ...);
+extern char g_10590f44[];
+int sub_101cd9e0(int n);
+struct SPyEntUnk { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void *vfunc4(); };
+struct SPyEdict { char m_pad[0x40]; SPyEntUnk *m_pUnk; };
+struct SPyEntity { void sub_1023c760(float fDelay, const char *pszA, const char *pszB); };
+inline SPyEntity *PyInstance(CUnknown1070b22c_Edict *edict)
+{
+	ScopeTrace trace(g_10543c6c, g_106b8540);
+	if (!edict)
+		edict = g_1070b22c->vfunc38(0);
+	SPyEdict *pEdict = (SPyEdict *)edict;
+	return (pEdict && pEdict->m_pUnk) ? (SPyEntity *)pEdict->m_pUnk->vfunc4() : 0;
+}
+SPyObject *sub_10196a40(SPyObject *self, SPyObject *args)
+{
+	const char *pszB = 0;
+	const char *pszA = 0;
+	if (PyArg_ParseTuple(args, g_10590f44, &args, &pszA, &pszB)) {
+		int hPlayer = sub_101cd9e0(1);
+		SPyEntity *pEnt = PyInstance(g_1070b22c->vfunc38(0));
+		if (hPlayer && pEnt)
+			pEnt->sub_1023c760(*(float *)&args, pszA, pszB);
+	}
+	_Py_NoneStruct.ob_refcnt++;
+	return &_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196bb0 size=0x73
 #include "CBaseCombatCharacter.h"
 
