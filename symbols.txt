@@ -3336,6 +3336,7 @@
 0x1000dfb2 func   ??0CVStatInfo_t@@QAE@XZ CVStatInfo_t::CVStatInfo_t
 0x1000dfb2 func   ?sub_101fdaf0@CVStatInfo_t@@QAEPAV1@XZ CVStatInfo_t::sub_101fdaf0
 0x1000dfb7 func   ?vfunc103@CAreaPortal@@UAEXXZ CAreaPortal::vfunc103
+0x1000dfda func   ?vfunc104@CBreakable@@QAEXXZ CBreakable::vfunc104
 0x1000dff3 func   ?sub_10184f70@@YIXPAH@Z sub_10184f70
 0x1000e01b func   _item_m_money_clip item_m_money_clip
 0x1000e020 func   ?sub_10341370@CBaseCombatCharacter@@QAEXPAV1@H@Z CBaseCombatCharacter::sub_10341370
