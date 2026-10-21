@@ -1,5 +1,5 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 142, 158, 161, 162, 167, 173,
-// 192, 193, 194, 198, 202, 203, 204, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 346, 360, 371, 376, 381, 385, 448 and 457 of an entity class that does not model its vtable.
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..601, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 142, 158, 161, 162, 167, 173,
+// 192, 193, 194, 198, 202, 203, 204, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 346, 360, 371, 376, 381, 385, 404, 448, 457 and 601 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -128,10 +128,19 @@ public:
 	EVS(382) EVS(383) EVS(384)
 	virtual void slot385(CEntityVSlots *pWeapon, int a, int b);	// character: drops / removes a weapon ("Weapon_Drop"-like)
 	EVS(386) EVS(387) EVS(388) EVS(389)
-	EVS10(39) EVS10(40) EVS10(41) EVS10(42) EVS10(43)
+	EVS10(39)
+	EVS(400) EVS(401) EVS(402) EVS(403)
+	virtual int slot404(void *pEntity);	// NPC: takes an entity, answers an int (1 = acceptable)
+	EVS(405) EVS(406) EVS(407) EVS(408) EVS(409)
+	EVS10(41) EVS10(42) EVS10(43)
 	EVS(440) EVS(441) EVS(442) EVS(443) EVS(444) EVS(445) EVS(446) EVS(447)
 	virtual void slot448(int a);	// NPC: sets the ideal state (the boss's "FailSchedule"-like slot, called with 4)
 	EVS(449)
 	EVS(450) EVS(451) EVS(452) EVS(453) EVS(454) EVS(455) EVS(456)
 	virtual void slot457(const char *pszName, int a);	// switch to / equip the named weapon
+	EVS(458) EVS(459)
+	EVS10(46) EVS10(47) EVS10(48) EVS10(49)
+	EVS10(50) EVS10(51) EVS10(52) EVS10(53) EVS10(54) EVS10(55) EVS10(56) EVS10(57) EVS10(58) EVS10(59)
+	EVS(600)
+	virtual void slot601(int a);	// NPC: takes one argument
 };
