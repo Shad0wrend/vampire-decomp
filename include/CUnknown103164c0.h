@@ -5,6 +5,13 @@
 #include "CUnknown102e06f0.h"
 #include "CBitString.h"
 
+struct CSquadName	// the name argument of the squad's name setter: one pointer, passed by value
+{
+	const char *m_psz;
+
+	CSquadName() { m_psz = 0; }
+};
+
 class CUnknown103164c0
 {
 public:
@@ -20,4 +27,5 @@ public:
 	CUnknown103164c0(const char *pszName);	// 0x103164c0 (stub 0x10002856): returns this
 	CUnknown103164c0 *sub_10316560();	// the default constructor body (no name), stub-called by CAI_SaveRestoreBlockHandler::vfunc7: returns this
 	void sub_103165f0(const char *pszName);	// sets the squad name (stub 0x100132eb)
+	void sub_103165f0(CSquadName name);
 };
