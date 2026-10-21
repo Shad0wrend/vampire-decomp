@@ -19,8 +19,6 @@ public:
 	CBaseEntity *vfunc242(Vector origin, Vector angles);	// "CEnvShooter::CreateEnvGib"-like: creates a prop_physics at origin / angles with the model of slot 9, the skin-like value at +0x478 copied to +0x670, spawns it, sets bits 5 and 7 of +0x19c and applies a random 0.95..1.05 times the float at +0x468; returns it
 	CBaseEntity *sub_100f54c0(CGib *pGib);	// creates the flame entity of a gib (stub 0x10015a50); null when there is none
 
-	const char **vfunc9(int *pOut);	// slot 9: the shooter's model name
-
 	char m_pad0004[0x168 - 4];
 	int m_n168;	// 0x168
 	int m_n16c;	// 0x16c
