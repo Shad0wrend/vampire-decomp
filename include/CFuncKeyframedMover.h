@@ -9,4 +9,5 @@ public:
 	bool vfunc223();	// "CBaseEntity::IsSolidFlagSet" (slot 223): scope trace, reports when bit 2 of the byte at +0x2b4 is clear, returns true
 	void sub_100a6150(int a, int b, int c);	// reports a message
 	CFuncKeyframedMover *sub_10223330();	// constructor (the base is CBaseKeyframedMover, not modelled)
+	virtual void vfunc103();	// slot 103 "CFuncKeyframedMover::Spawn": AddFlag(0x1000), CBaseEntity::vfunc103, SetModel(model name), SetSolid(1) (inlined scope trace), AddSolidFlags(4) (inlined scope trace) when spawn flag 1 is set, then slot 223
 };
