@@ -55,7 +55,7 @@ public:
 	char sub_100932a0(int attachment, int b, int c);	// "CBaseAnimating::GetAttachmentLocal0" (stub 0x10012625), returns a success flag
 	int sub_100060aa(int a, int b, int c);
 	int sub_10005d12(int a);
-	void sub_10092ef0(int attachment, float *pOrigin, float *pAngles);	// "CBaseAnimating::GetAttachment" (stub 0x10005d12), called directly with three arguments
+	bool sub_10092ef0(int attachment, float *pOrigin, float *pAngles);	// "CBaseAnimating::GetAttachment" (stub 0x10005d12): scope trace (entity name), slot 262 fills a 3x4 matrix for the attachment; true after converting it to the origin (sub_10137ed0, stub 0x10012756) and the angles (sub_10138720(matrix, 3, pAngles), stub 0x10011342), else false
 	void sub_10093cb0(int a);	// "CBaseAnimating::GetBodygroupName": scope trace, then a studio helper on GetModelPtr(-1)
 	void sub_10090bc0(unsigned int flags);	// "CBaseAnimating::AddEffectsForNextSequence": scope trace, ors flags into the dword at +0x5b0
 	void sub_10090890(float delay);	// "CBaseAnimating :: MarkEffectStartTime": scope trace, stores delay + curtime at +0x5a4
