@@ -4206,6 +4206,7 @@
 0x10012f5d func   ?vfunc432@CNPC_VAsianVampire@@QAEXH@Z CNPC_VAsianVampire::vfunc432
 0x10012fa3 func   _item_p_occult_heal_rate item_p_occult_heal_rate
 0x10012fc6 func   ?vfunc5@CItemGIdolDragon@@QAEPAV1@I@Z CItemGIdolDragon::vfunc5
+0x10012fcb func   ?sub_10246ef0@@YA?AVSendProp@@HHPBDH@Z sub_10246ef0
 0x10012fd0 func   ?sub_10359c50@@YAXXZ sub_10359c50
 0x10012fdf func   _item_k_hitman_lu_key item_k_hitman_lu_key
 0x10012fe4 func   _item_w_katana item_w_katana
