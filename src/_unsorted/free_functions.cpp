@@ -32765,6 +32765,44 @@ float sub_1013d450(float target, float value, float speed)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d6c0 size=0xa8
+extern float g_104454c4;
+
+namespace block_1013d6c0 {
+float sub_1013d580(float dest, float src)
+{
+	float delta = dest - src;
+	if (dest > src)
+	{
+		while (delta > 180.0f)
+			delta -= 360.0f;
+	}
+	else
+	{
+		while (delta <= -180.0f)
+			delta += 360.0f;
+	}
+	return delta;
+}
+}
+using namespace block_1013d6c0;
+
+// TARGET: sub_1013d6c0
+void sub_1013d6c0(const Vector &p1, const Vector &p2, float t, Vector &out)
+{
+	if (t > g_104454c4 && t < 1.0f)
+	{
+		out.x = sub_1013d580(p2[0], p1[0]) * t + p1[0];
+		out.y = sub_1013d580(p2[1], p1[1]) * t + p1[1];
+		out.z = sub_1013d580(p2[2], p1[2]) * t + p1[2];
+	}
+	else
+	{
+		VectorCopy(t > g_104454c4 ? p2 : p1, out);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d900 size=0x72
 extern int g_10579690[4][2][3];
 bool sub_1013d900(int a, int b, int c, int *out)
