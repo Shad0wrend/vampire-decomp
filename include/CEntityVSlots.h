@@ -1,4 +1,4 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 42, 62, 64, 86, 94, 107, 118, 122, 158, 161, 167, 173,
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 9, 42, 62, 64, 86, 94, 105, 107, 118, 122, 158, 161, 167, 173,
 // 202, 212, 216, 217 / 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 270, 274, 346, 360, 381 and 457 of an entity class that does not model its vtable.
 #pragma once
 
@@ -11,7 +11,8 @@
 class CEntityVSlots
 {
 public:
-	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8)
+	virtual const char **slot9(int *pOut);	// the pointer to the entity's model name
 	EVS10(1) EVS10(2) EVS10(3)
 	EVS(40) EVS(41)
 	virtual void slot42(CEntityVSlots *pEntity);	// takes an entity (CFuncMonitor::vfunc77 hands it the camera)
@@ -29,7 +30,9 @@ public:
 	EVS(90) EVS(91) EVS(92) EVS(93)
 	virtual int slot94();	// the move type
 	EVS(95) EVS(96) EVS(97) EVS(98) EVS(99)
-	EVS(100) EVS(101) EVS(102) EVS(103) EVS(104) EVS(105) EVS(106)
+	EVS(100) EVS(101) EVS(102) EVS(103) EVS(104)
+	virtual void slot105(const char *pszModel);	// "SetModel"
+	EVS(106)
 	virtual void slot107(const float *pData);	// takes a pointer to a small block (a "ParseMapData"-like slot)
 	EVS(108) EVS(109)
 	EVS(110) EVS(111) EVS(112) EVS(113) EVS(114) EVS(115) EVS(116) EVS(117)
