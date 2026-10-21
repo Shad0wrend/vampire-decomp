@@ -1,6 +1,8 @@
 // CNPC_VSabbatLeader: Sabbat leader NPC. Only the members that decompiled code needs are declared.
 #pragma once
 
+class CEntityVSlots;
+
 struct CNPC_VSabbatLeaderHint
 {
 	char pad0[0x5d8];
@@ -78,4 +80,5 @@ public:
 	void sub_103aa3b0(int unused);	// "CNPC_VSabbatLeader::StartTransformation": scope trace, sets the byte at +0x66b8, sub_10332aa0(1, 1, 10), stamps the source file / line at +0x1b30 / +0x1b34 and runs sub_102ae750(0x163, 0); takes one unused stack argument
 	void sub_10332aa0(int classId, int disposition, int priority);	// "CBaseCombatCharacter::AddClassRelationship" (stub 0x10013cf5), called directly
 	void sub_102ae750(int schedule, int a);	// CAI_BaseNPCTroika member (stub 0x1000198d), called directly
+	void sub_103ab110(const char *pszEmitter, CEntityVSlots *pAt);	// "CNPC_VSabbatLeader::SpawnBloodPoolEmitter": scope trace, the origin of this with the z of pAt's origin (or the floor found by sub_101d08e0 within 1024 units when pAt is null), an emitter of that name there; its entity gets slot 241 (the entity is not checked for null)
 };
