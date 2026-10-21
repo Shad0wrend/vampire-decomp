@@ -34131,6 +34131,24 @@ int CUnknown101d7380::sub_101d7380(const char *name, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7460 size=0x89
+#include "CUnknown101d7460.h"
+#include "CVStatList_t.h"
+
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+
+// TARGET: CUnknown101d7460::sub_101d7460
+void CUnknown101d7460::sub_101d7460(void *pCharacter)
+{
+	if (pCharacter)
+	{
+		int nTemplate = CVStatListSet::Of(pCharacter)->Find(0)->sub_10010609(0x21);
+		if (nTemplate >= 0)
+			m_pTemplates[nTemplate]->sub_101d6aa0(pCharacter);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d76e0 size=0x80
 #include "CUnknown101d76e0.h"
 #include "CGlobalEntityList.h"

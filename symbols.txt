@@ -4250,6 +4250,7 @@
 0x1001433a func   ?vfunc365@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc365
 0x1001434e func   ?sub_100657e0@@YAHXZ sub_100657e0
 0x10014362 func   ?sub_101ab800@CUnknown101ab800@@QAE_NHPBEH@Z CUnknown101ab800::sub_101ab800
+0x1001436c func   ?sub_101d7460@CUnknown101d7460@@QAEXPAX@Z CUnknown101d7460::sub_101d7460
 0x10014385 func   ?vfunc5@CWeaponIThrown@@QAEPAV1@I@Z CWeaponIThrown::vfunc5
 0x1001438a func   _item_w_fireaxe item_w_fireaxe
 0x1001439e func   ?sub_1008d450@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d450
