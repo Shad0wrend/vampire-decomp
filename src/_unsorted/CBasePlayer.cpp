@@ -241,6 +241,48 @@ bool CBasePlayer::vfunc318(int a, melee_dice_roll_result *pRoll, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160d00 size=0x8f
+#include "CBasePlayer.h"
+
+struct melee_dice_roll_result_view
+{
+	int sub_10349830();	// stub 0x100083f0
+};
+
+struct TimeObjP {
+	char m_pad[0xc];
+	float m_flCurTime;
+};
+extern TimeObjP *g_1070b228;
+extern float g_104454c4;
+extern float g_1046faf4;
+extern float g_1046faf8;
+extern float g_1046a5e4;
+
+struct CBasePlayerUnit : CBasePlayer
+{
+	bool sub_10160d00(int a, melee_dice_roll_result *pRoll, int c);
+	int sub_10345f10();	// CBaseCombatCharacter stub 0x1001444d
+	void sub_10324500(int a);	// stub 0x1001464b
+};
+
+#define PL_F1488(p) (*(float *)((char *)(p) + 0x1488))
+
+bool CBasePlayerUnit::sub_10160d00(int a, melee_dice_roll_result *pRoll, int c)
+{
+	int nActivity = sub_10345f10();
+	sub_10324500(nActivity);
+	sub_101644f0(nActivity, -1, 1);
+	*(int *)((char *)this + 0x6f4) = *(int *)((char *)this + 0x1488);
+	float flBase = g_1046faf4;
+	if (pRoll && ((melee_dice_roll_result_view *)pRoll)->sub_10349830() == 2)
+		flBase = g_1046faf8;
+	float flTime = (PL_F1488(this) > g_1046a5e4) ? (double)flBase / PL_F1488(this) : g_104454c4;
+	m_f1564 = flTime + g_1070b228->m_flCurTime;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163630 size=0xd9
 #include "CBasePlayer.h"
 #define GV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
