@@ -39782,6 +39782,37 @@ void CVStatList_t::sub_10200a70(int stat, int source)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10200b10 size=0x99
+#include "CVStatList_t.h"
+#include "CUnknown10205030.h"
+#include "CUnknown10202060.h"
+#include "ScopeTrace.h"
+
+namespace block_10200b10 {
+struct CVStatListUnit : CVStatList_t
+{
+	char sub_102008b0(int stat);
+};
+
+char CVStatListUnit::sub_102008b0(int stat)
+{
+	if (stat >= 0 && stat < m_field04)
+		return 1;
+	return 0;
+}
+}
+using namespace block_10200b10;
+
+// TARGET: CVStatList_t::sub_10200b10
+int CVStatList_t::sub_10200b10(int stat)
+{
+	ScopeTrace trace("CVStatList_t::GetMax", g_106b8540);
+	if (((CVStatListUnit *)this)->sub_102008b0(stat))
+		return ((CUnknown10200370 *)m_field0c)->sub_10200370(stat, ((CUnknown10202060 *)m_pad0000)->sub_10202060())->sub_101ff060();
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10200be0 size=0x88
 #include "CVStatList_t.h"
 #include "ScopeTrace.h"

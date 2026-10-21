@@ -1043,6 +1043,7 @@
 0x10005c8b func   _npc_VGargoyle npc_VGargoyle
 0x10005cae func   ?sub_100430a0@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_100430a0
 0x10005cb3 func   _npc_VWerewolf npc_VWerewolf
+0x10005cc7 func   ?sub_10200b10@CVStatList_t@@QAEHH@Z CVStatList_t::sub_10200b10
 0x10005ccc func   _item_k_tutorial_chopshop_stairs_key item_k_tutorial_chopshop_stairs_key
 0x10005cef func   ?sub_10185910@@YIXPAUMem16@@HH@Z sub_10185910
 0x10005cfe func   _func_rot_button func_rot_button
