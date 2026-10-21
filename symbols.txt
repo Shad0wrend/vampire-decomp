@@ -148,6 +148,7 @@
 0x10001a4b func   ?vfunc5@CGibShooter@@QAEPAV1@I@Z CGibShooter::vfunc5
 0x10001a5a func   ?sub_101c02d0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_101c02d0
 0x10001a5f func   ?vfunc5@CAI_BaseHumanoid@@QAEPAV1@I@Z CAI_BaseHumanoid::vfunc5
+0x10001a8c func   ?sub_101d2560@@YAXVVector@@HPBD1H@Z sub_101d2560
 0x10001a91 func   ?vfunc9@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc9
 0x10001a9b func   ?sub_10027a70@CUnknown10027a70@@QAEXXZ CUnknown10027a70::sub_10027a70
 0x10001aa0 func   ?vfunc291@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc291

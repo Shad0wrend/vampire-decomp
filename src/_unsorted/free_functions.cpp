@@ -34436,6 +34436,30 @@ void sub_101d2460(const float *pOrigin, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2560 size=0xa9
+#include "CPVSFilter.h"
+#include "Vector.h"
+
+#define PV(n) virtual void v##n();
+
+struct CEngineSoundX
+{
+	PV(0) PV(1)
+	virtual void vfunc2(CRecipientFilter *pFilter, int a, const char *b, const char *c, int d);
+};
+
+extern CEngineSoundX *g_10540528;
+
+// TARGET: sub_101d2560
+void sub_101d2560(Vector vecOrigin, int a3, const char *a4, const char *a5, int a6)
+{
+	if (a4 && a5) {
+		CPVSFilter filter(&vecOrigin.x);
+		g_10540528->vfunc2(&filter, a6, a4, a5, a3);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d26b0 size=0x9b
 #include "CRestore.h"
 #include "Vector.h"
