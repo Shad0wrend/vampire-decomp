@@ -1,6 +1,72 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ee990 size=0xb4
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CBaseEntity.h"
+
+struct CGrenadeStateX
+{
+	char m_pad0000[0x17c];
+	float m_flNextThink;
+	char m_pad0180[0x86c - 0x180];
+	int m_n86c;
+	char m_pad0870[0x920 - 0x870];
+	int m_nState;
+	float m_flTime;
+	char m_pad0928[0x930 - 0x928];
+	char m_bDone;
+};
+
+struct CGrenadeCharX
+{
+	void sub_1015fbb0(int nSound, int a);
+};
+
+struct CGrenadeOwnerEntX
+{
+	char m_pad0000[0xa8];
+	CGrenadeCharX *m_pChar;
+};
+
+struct CWeaponUnit
+{
+	void sub_103ed920();
+};
+
+struct CGlobalVars1070b228
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+
+extern CGlobalVars1070b228 *g_1070b228;
+void sub_1000d62f();
+
+// TARGET: CWeaponThrown_Grenade_Frag::vfunc265
+void CWeaponThrown_Grenade_Frag::vfunc265()
+{
+	CGrenadeStateX *p = (CGrenadeStateX *)this;
+	if (!p->m_bDone) {
+		if (p->m_nState == 3 && p->m_flTime + 0.3f < g_1070b228->curtime) {
+			p->m_nState = 5;
+			((CWeaponUnit *)this)->sub_103ed920();
+			CGrenadeOwnerEntX *pOwner = (CGrenadeOwnerEntX *)sub_102521f0();
+			if (pOwner && pOwner->m_pChar) {
+				if (p->m_n86c == 0)
+					pOwner->m_pChar->sub_1015fbb0(0xef9, 1);
+				else
+					pOwner->m_pChar->sub_1015fbb0(0xefb, 1);
+			}
+		} else if (p->m_nState == 1) {
+			p->m_nState = 3;
+			p->m_flNextThink = p->m_flTime + 0.3f;
+			((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000d62f, 0, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eea80 size=0x8
 void CWeaponThrown_Grenade_Frag::vfunc266()
 {
