@@ -81,4 +81,7 @@ public:
 	void sub_10332aa0(int classId, int disposition, int priority);	// "CBaseCombatCharacter::AddClassRelationship" (stub 0x10013cf5), called directly
 	void sub_102ae750(int schedule, int a);	// CAI_BaseNPCTroika member (stub 0x1000198d), called directly
 	void sub_103ab110(const char *pszEmitter, CEntityVSlots *pAt);	// "CNPC_VSabbatLeader::SpawnBloodPoolEmitter": scope trace, the origin of this with the z of pAt's origin (or the floor found by sub_101d08e0 within 1024 units when pAt is null), an emitter of that name there; its entity gets slot 241 (the entity is not checked for null)
+	bool sub_103a9d90();	// "CNPC_VSabbatLeader::CheckForJump": scope trace (no entity name), true when sub_103c67f0(constant) holds or sub_103c6a20() is not below a constant, else sub_103aabc0()
+	bool sub_103c67f0(float flValue);	// stub 0x1000fe11, called by CheckForJump with a constant
+	float sub_103c6a20();	// stub 0x100010d2, a measure returned in ST0
 };
