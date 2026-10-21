@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 118, 122, 142, 158, 161, 162, 167, 173,
-// 192, 193, 194, 202, 203, 204, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 346, 360, 371, 376, 381, 385, 448 and 457 of an entity class that does not model its vtable.
+// 192, 193, 194, 198, 202, 203, 204, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 262, 267, 270, 274, 285, 306, 308, 346, 360, 371, 376, 381, 385, 448 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -62,7 +62,9 @@ public:
 	virtual Vector slot192();	// "WorldSpaceCenter": the center of the collision bounds, returned by value (hidden result pointer)
 	virtual Vector *slot193(Vector *pOut);	// a position getter that fills pOut and returns it
 	virtual Vector *slot194();	// the entity's local angles
-	EVS(195) EVS(196) EVS(197) EVS(198) EVS(199)
+	EVS(195) EVS(196) EVS(197)
+	virtual Vector *slot198();	// a vector getter (the NPC's velocity / ground vector), the pointer to three floats
+	EVS(199)
 	EVS(200) EVS(201)
 	virtual void slot202(CEntityVSlots *pOwner);	// "SetOwnerEntity"
 	virtual double slot203();	// "GetAttackDamageScale" (the value stays on the FPU stack, the caller multiplies it with a float)
