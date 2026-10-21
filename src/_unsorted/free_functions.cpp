@@ -61609,6 +61609,61 @@ void CAI_BaseNPCTroika::sub_102c0270(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c0360 size=0x90
+#include "CAI_BaseNPCTroika.h"
+#include "CGlobalEntityList.h"
+
+struct CNamedDebugFlag
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4(int a);
+};
+
+struct CDebugStatsOwner
+{
+	virtual void v0();
+	virtual char v1();
+	char m_pad0004[0x2c - 4];
+	int m_n2c;
+};
+
+struct CScriptSub5f5c
+{
+	void sub_10010794(CBaseEntity *pEnt, CAI_BaseNPCTroika *pNPC, int a);
+};
+
+extern CGlobalEntityList *g_10566458;
+extern CDebugStatsOwner *g_109241fc;
+CNamedDebugFlag *sub_10245660(const char *pszName);
+void sub_10119900(void *p);
+
+// TARGET: CAI_BaseNPCTroika::sub_102c0360
+void CAI_BaseNPCTroika::sub_102c0360()
+{
+	unsigned int h = m_hfe8;
+	if (h != (unsigned int)-1) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13)) {
+			CBaseEntity *pEnt = (CBaseEntity *)pSlot->m_pEntity;
+			if (pEnt) {
+				m_b1590 = 0;
+				((CScriptSub5f5c *)((char *)this + 0x5f5c))->sub_10010794(pEnt, this, 0);
+				sub_10107050(0);
+			}
+		}
+	}
+	if (!g_109241fc->v1() && g_109241fc->m_n2c) {
+		CNamedDebugFlag *p = sub_10245660("entity_debug_stats");
+		if (p)
+			p->v4(0);
+		sub_10119900(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c0bb0 size=0xb8
 #include "CAI_BaseNPCTroika.h"
 #include "IVEngineServer.h"
