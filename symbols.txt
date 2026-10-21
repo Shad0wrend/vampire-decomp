@@ -402,6 +402,7 @@
 0x100028ec func   ?sub_10339930@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10339930
 0x100028f1 func   ?vfunc5@CSprayCan@@QAEPAV1@I@Z CSprayCan::vfunc5
 0x10002919 func   ?sub_101cb130@@YAPAHXZ sub_101cb130
+0x1000293c func   ?vfunc113@CPointTeleport@@UAEXXZ CPointTeleport::vfunc113
 0x10002950 func   ?sub_10256890@@YAPAVCBaseCombatWeapon@@HPAV1@PAI@Z sub_10256890
 0x10002969 func   ?vfunc103@CPhysConstraintSystem@@QAEXXZ CPhysConstraintSystem::vfunc103
 0x10002982 func   ?sub_10319fe0@CUnknown10319fe0@@QAEXH@Z CUnknown10319fe0::sub_10319fe0
