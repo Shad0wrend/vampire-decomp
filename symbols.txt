@@ -346,6 +346,7 @@
 0x10002743 func   ?sub_1024c000@UtlVec8@@QAEXHH@Z UtlVec8::sub_1024c000
 0x10002748 func   ?vfunc12@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc12
 0x1000274d func   ?sub_1027fbf0@CUnknown1027fbf0@@QAEPAU1@XZ CUnknown1027fbf0::sub_1027fbf0
+0x10002752 func   ?vfunc265@CPropModelState@@QAEXPAX0HM@Z CPropModelState::vfunc265
 0x1000275c func   _scripted_sequence scripted_sequence
 0x10002770 func   ?sub_1018f750@CBreakableProp@@QAEXPAUinputdata_t@@@Z CBreakableProp::sub_1018f750
 0x10002784 func   ?sub_101030e0@CUnknown101030e0@@QAEXH@Z CUnknown101030e0::sub_101030e0
