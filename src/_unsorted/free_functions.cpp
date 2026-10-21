@@ -30153,6 +30153,33 @@ int sub_1013a6a0(float f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a6f0 size=0xb4
+#include <math.h>
+
+// TARGET: sub_1013a6f0
+bool sub_1013a6f0(float a, float b, float c, float &root1, float &root2)
+{
+    if (a == 0) {
+        if (b != 0) {
+            root1 = root2 = -c / b;
+            return true;
+        }
+        if (c == 0) {
+            root1 = root2 = 0;
+            return true;
+        }
+        return false;
+    }
+    float tmp = b * b - 4 * a * c;
+    if (tmp < 0)
+        return false;
+    tmp = sqrt(tmp);
+    root1 = (tmp - b) / (a + a);
+    root2 = (-b - tmp) / (a + a);
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a7e0 size=0x6b
 #include "Vector.h"
 
