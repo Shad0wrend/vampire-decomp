@@ -50,6 +50,9 @@ public:
 	float vfunc603(float *pCurrent, float *pTarget);	// slot 603: picks a random turn angle (global random stream 0x1070b244, slot 1 RandomFloat) from how far *pCurrent is from *pTarget (32.0f window): within it +-30; below it *pCurrent follows the target and a coin flip (slot 2) picks 170..179 or -170..-179; above it a coin flip picks 80..120 or -80..-120
 	void sub_10398890(const float *pOrigin, int nMode, Vector *pOutPoint, Vector *pOutAxis);	// the tip trace points: pOutPoint = the origin + the vector at +0x6290 scaled, plus (mode 4) or minus the vector at +0x629c scaled; pOutAxis = the vector at +0x6290
 	void sub_10397930(int index);	// resets tentacle slot [index]: clears the handle (+0x66a8) and flag (+0x6684) and the new-tentacle handle (+0x668c), copies a float of the global 0x10739d08 object to +0x66dc, stamps curtime + 10.0f / + 1.0f at +0x66c4 / +0x66f4, then starts the gesture 0x1124 + index (AddGesture)
+	void vfunc563(CBaseEntity *pEnt, Vector *pPos, int *pOut1, int *pOut2);	// slot 563 (plain member): with the navigator state (sub_1027d990) 2, moves *pPos by the offset between pEnt's slot 193 and slot 217 positions; otherwise stores the float at +0x6320 in *pOut2, lets sub_102c3b50 adjust *pPos, copies *pOut2 to *pOut1 and runs sub_102c36d0 on this entity's origin (slot 220) with the dword at +0x654 to get the new *pPos
+	void sub_102c3b50(CBaseEntity *pEnt, Vector vecPos, Vector *pPos, int *pOut);	// stub 0x100041d3, called directly by vfunc563
+	void sub_102c36d0(Vector vecOrigin, CBaseEntity *pEnt, int nValue, Vector *pPos, Vector *pOut);	// stub 0x1000c0ae, called directly by vfunc563
 
 	char m_pad03e0[0x6290 - 0x3e0];
 	Vector m_vecAxis6290;	// +0x6290
