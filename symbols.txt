@@ -5076,6 +5076,7 @@
 0x10015014 func   ?sub_1010dcf0@CBreakable@@QAEXPAUinputdata_t@@@Z CBreakable::sub_1010dcf0
 0x10015019 func   ?sub_10366d60@@YADXZ sub_10366d60
 0x10015023 func   ?sub_10349650@CUnknown10349590@@QAE_NXZ CUnknown10349590::sub_10349650
+0x1001505a func   ?vfunc433@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc433
 0x1001505f func   ?sub_10237c30@@YAXXZ sub_10237c30
 0x10015064 func   ?sub_100ac250@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100ac250
 0x10015078 func   ?sub_10221be0@QuestJournal@@QAEDH@Z QuestJournal::sub_10221be0

@@ -276,6 +276,30 @@ void CNPC_VSabbatLeader::sub_103a7760(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a77f0 size=0x98
+#include "CNPC_VSabbatLeader.h"
+#include "ScopeTrace.h"
+
+struct SabbatJumpHook {
+	virtual void vfunc0();
+	virtual void vfunc1();
+};
+extern SabbatJumpHook *g_10924a6c;
+
+void CNPC_VSabbatLeader::vfunc433()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::GatherConditions", g_106b8540);
+	sub_102b27f0();
+	if (sub_103a9d90()) {
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x79);
+	}
+	sub_10269b50(0xf);
+	sub_10269b50(0xc);
+	sub_10269b50(0xe);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a9340 size=0x84
 #include "CNPC_VSabbatLeader.h"
 
