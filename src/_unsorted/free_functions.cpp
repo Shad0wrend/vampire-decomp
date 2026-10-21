@@ -48120,6 +48120,48 @@ bool CUnknown101f10e0::sub_101f10e0(void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1750 size=0x110
+#include "IFileSystemFind.h"
+#include "CUnknown101f10e0.h"
+#include "CUnknown10202c80.h"
+#include "CUnknown1006cf30.h"
+
+extern IFileSystemFind *g_1070b238;
+extern CUnknown10202c80 g_1074e968;
+extern CUnknown1006cf30 g_106c7c34;
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+extern "C" int sprintf(char *, const char *, ...);
+
+void CUnknown101f10e0::sub_101f1750()
+{
+	int handle;
+	char szFile[260];
+	int nFiles = 0;
+	if (g_1070b238->vfunc22("vdata\\system\\Reactions*.txt", &handle)) {
+		do {
+			nFiles++;
+		} while (g_1070b238->vfunc23(handle));
+		g_1070b238->vfunc25(handle);
+		if (nFiles > 0) {
+			for (int i = 0; i < nFiles; i++) {
+				sprintf(szFile, "%sReactions%03d.txt", "vdata\\system\\", i);
+				if (!sub_101f13c0(szFile))
+					Msg("Unable to open Reaction List data file for: %s\n", szFile);
+			}
+		}
+	}
+	m_levelTable = g_1074e968.sub_10203020("ReactionLevel");
+	if (m_levelTable == -1)
+		Msg("Unable to find Reaction String Lists!\n");
+	m_rangesTable = g_106c7c34.sub_1006cf30("Reaction_Ranges");
+	if (m_rangesTable == -1)
+		Msg("Unable to find Reaction Table for Ranges!\n");
+	m_appearanceTable = g_106c7c34.sub_1006cf30("Appearance_Reaction");
+	if (m_appearanceTable == -1)
+		Msg("Unable to find Reaction Table for Appearance!\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f18f0 size=0x18
 #include "CUnknown101f0e50.h"
 
