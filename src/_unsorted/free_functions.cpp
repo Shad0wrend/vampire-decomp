@@ -36843,6 +36843,34 @@ const char *__stdcall sub_101f63b0(const char *szName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f6b90 size=0x7b
+#include "CVTraitEffect_t.h"
+#include "CVTSDependencySaveRestoreDataOps.h"
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+struct CVStatKV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual int vfunc10(const char *pszName, int nDefault);
+	virtual void v11(); virtual void v12();
+	virtual const char *vfunc13(const char *pszName, const char *pszDefault);
+};
+extern char g_106b8540[];
+void CVTraitEffect_t::sub_101f6b90(CVStatKV *pKV)
+{
+	((CVTSDependencyRecord *)this)->sub_10204570(pKV->vfunc13("Trait", g_106b8540));
+	const char *pszModifier = pKV->vfunc13("Modifier", g_106b8540);
+	if (*pszModifier) {
+		sub_101f6a30(pszModifier);
+	} else if (m_cost.sub_101fc220(pKV)) {
+		m_nKind = 7;
+	} else {
+		Msg("Unable to Parse TraitEffect!\n");
+	}
+	m_nDisplayOverride = pKV->vfunc10("DisplayOverride", -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f6c30 size=0x9
 bool CUnknown101f6c30::sub_101f6c30()
 {
