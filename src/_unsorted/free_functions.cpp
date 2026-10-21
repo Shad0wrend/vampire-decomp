@@ -40200,6 +40200,21 @@ int CVStatInfo_t::sub_101fee50(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ff0b0 size=0xa4
+#include "CVStatInfo_t.h"
+#include "CVStatValue_t.h"
+#include "ScopeTrace.h"
+
+int CVStatInfo_t::sub_101ff0b0(int arg)
+{
+	ScopeTrace trace("CVStatInfo_t::MinSell", g_106b8540);
+	CVStatValue_t *pValue = (CVStatValue_t *)((char *)this + 0x74);
+	if (pValue->sub_10205730(arg) > sub_101ff010(arg))
+		return pValue->sub_10205730(arg);
+	return sub_101ff010(arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ff270 size=0x6b
 #include "CVStatInfo_t.h"
 #include "CVStatValue_t.h"

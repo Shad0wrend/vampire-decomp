@@ -1533,6 +1533,7 @@
 0x10007ea5 func   ?vfunc345@CBaseCombatCharacter@@QAEXPBDHH@Z CBaseCombatCharacter::vfunc345
 0x10007eaf func   ?vfunc5@CWeaponList@@UAEXXZ CWeaponList::vfunc5
 0x10007ec8 func   ?sub_10079100@@YIXPAUMem@@HH@Z sub_10079100
+0x10007ecd func   ?sub_101ff0b0@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff0b0
 0x10007ed7 func   _phys_motor phys_motor
 0x10007edc func   ?sub_102f92b0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102f92b0
 0x10007eff func   _func_monitor func_monitor
