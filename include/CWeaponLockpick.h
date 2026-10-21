@@ -22,7 +22,11 @@ public:
 	WLP_V1(wg0) WLP_V1(wg1)
 	virtual void vfunc310(float a);
 	// slots 311..327
-	WLP_V10(wh) WLP_V1(wi0) WLP_V1(wi1) WLP_V1(wi2) WLP_V1(wi3) WLP_V1(wi4) WLP_V1(wi5) WLP_V1(wi6)
+	WLP_V1(wh0) WLP_V1(wh1) WLP_V1(wh2)
+	virtual char vfunc314();	// asked by vfunc319: when true nothing is equipped
+	WLP_V1(wh5) WLP_V1(wh6) WLP_V1(wh7) WLP_V1(wh8)
+	virtual void vfunc319();	// slot 319: CBaseCombatWeapon::vfunc319, then makes the owner's character equip its unarmed weapon (slot 456) unless slot 314 holds
+	WLP_V1(wh9) WLP_V1(wi0) WLP_V1(wi1) WLP_V1(wi2) WLP_V1(wi3) WLP_V1(wi4) WLP_V1(wi5) WLP_V1(wi6)
 	virtual int vfunc328();
 	// slots 329..331
 	WLP_V1(wj0) WLP_V1(wj1) WLP_V1(wj2)
@@ -32,6 +36,7 @@ public:
 	CWeaponLockpick *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	void *sub_102521f0();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale)
+	void sub_10253ea0();	// CBaseCombatWeapon::vfunc319 (stub 0x10009048), called directly
 
 	char m_pad0004[0x72c];
 	float m_f730;	// 0x730
