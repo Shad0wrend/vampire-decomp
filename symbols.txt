@@ -1113,6 +1113,7 @@
 0x10005439 func   ?sub_101bd960@@YIXPAPAX@Z sub_101bd960
 0x10005448 func   _item_g_idol_elephant item_g_idol_elephant
 0x1000544d func   ?sub_100b0df0@@YAXXZ sub_100b0df0
+0x10005475 func   ?sub_100f7d50@@YGPAVCBaseEntity@@PBDABVVector@@M@Z sub_100f7d50
 0x100054a2 func   ?vfunc5@CFunc_Dust@@QAEPAV1@I@Z CFunc_Dust::vfunc5
 0x100054cf func   ?vfunc20@CServerGameDLL@@UAEXPAX@Z CServerGameDLL::vfunc20
 0x100054d9 func   ?sub_10096760@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10096760
