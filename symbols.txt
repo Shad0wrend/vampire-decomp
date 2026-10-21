@@ -2356,6 +2356,7 @@
 0x1000adf3 func   ?vfunc375@CNPC_VWolfMorph@@UAEHH@Z CNPC_VWolfMorph::vfunc375
 0x1000adfd func   ?vfunc5@CPhysFixed@@UAEPAV1@I@Z CPhysFixed::vfunc5
 0x1000ae02 func   ?sub_101eaa40@@YAXH@Z sub_101eaa40
+0x1000ae25 func   ?sub_102e37b0@CUnknown102e37b0@@QAEXPBM0I_NPAUCGameTrace@@@Z CUnknown102e37b0::sub_102e37b0
 0x1000ae2a func   ?vfunc104@CPropSwitch@@UAEXXZ CPropSwitch::vfunc104
 0x1000ae48 func   _item_p_occult_blood_buff item_p_occult_blood_buff
 0x1000ae57 func   ?vfunc0@CAI_Navigator@@UAEPAV1@I@Z CAI_Navigator::vfunc0

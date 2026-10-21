@@ -61029,6 +61029,49 @@ CTraceFilterNav *CTraceFilterNav::sub_102e30d0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e37b0 size=0x136
+#include "CUnknown102e37b0.h"
+#include "CTraceFilterNav.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+
+extern CUnknown1070b254 *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+extern float g_104454c4;
+void sub_10015df2(const float *a, const float *b, int c, int d, int e, int f, float g);
+
+struct V3 { float x, y, z; };
+
+void CUnknown102e37b0::sub_102e37b0(const float *pStart, const float *pEnd, unsigned int fMask, bool bUseOwner, CGameTrace *pTrace)
+{
+	CTraceFilterNav filter;
+	Ray_t ray;
+
+	filter.sub_102e30d0((int)m_pEnt, bUseOwner ? *(int *)((char *)m_pEnt + 0x368) : 0);
+	ray.m_Delta[0] = pEnd[0] - pStart[0];
+	ray.m_Delta[1] = pEnd[1] - pStart[1];
+	ray.m_Delta[2] = pEnd[2] - pStart[2];
+	short swept = ray.m_Delta[2] * ray.m_Delta[2] + ray.m_Delta[1] * ray.m_Delta[1] + ray.m_Delta[0] * ray.m_Delta[0] != g_104454c4;
+	*(char *)&ray.m_IsSwept = swept;
+	ray.m_StartOffset[2] = 0;
+	ray.m_StartOffset[1] = 0;
+	ray.m_StartOffset[0] = 0;
+	ray.m_IsRay = true;
+	ray.m_Extents[2] = 0;
+	ray.m_Extents[1] = 0;
+	ray.m_Extents[0] = 0;
+	*(V3 *)ray.m_Start = *(const V3 *)pStart;
+	ray.m_b32 = 0;
+	ray.m_n34 = 0;
+	ray.m_b33 = 0;
+	g_1070b254->vfunc4(&ray, fMask, (CTraceFilterNoCharacterCollide *)&filter, pTrace);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10015df2((float *)pTrace, pTrace->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e7e00 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
