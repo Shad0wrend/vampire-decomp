@@ -58,4 +58,6 @@ public:
 	void sub_10076f10(char c, const char *a, const char *b);	// stores c at +0x1b1 and copies the strings (the empty string for null) to +0x1b2 / +0x232 (stub 0x1000e822)
 	float sub_10076b30();	// the event's remaining length: 0.0f unless it has a time range (stub 0x10014835)
 	void sub_100754e0(CUnknown10077990 *pSource);	// copies the data of pSource into this event (stub 0x10014637)
+	void sub_10075350();	// destructor body (the object itself is not freed): resets the event (sub_10077650), destroys and frees the object at +0x324, then purges the vectors at +0x30c, +0x2e4 (two), +0x2d0, +0x2bc and +0x19c
+	void sub_10077650();	// resets the event data (stub 0x10007f0e), run first by the destructor
 };
