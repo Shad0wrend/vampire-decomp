@@ -24044,6 +24044,35 @@ void CUnknown100dcd00::sub_100dcd00(const float *pA, const float *pB, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dcd90 size=0xc8
+#include "CCollisionProperty.h"
+
+extern float g_1070d9d0;
+extern float g_1070d9d4;
+extern float g_1070d9d8;
+
+void sub_1013c0e0(float *pMatrix, const float *pMins, const float *pMaxs, float *pOutA, float *pOutB);
+
+struct CollView {
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3();
+	virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7();
+	virtual Vector *GetOrigin();
+};
+
+void CCollisionProperty::sub_100dcd90(const float *pMins, const float *pMaxs, float *pOutA, float *pOutB)
+{
+	if (!(m_usSolidFlags & 0x80) && m_nSolidType != 2 && m_nSolidType != 0) {
+		float *pAngles = vfunc9(0);
+		if (g_1070d9d0 != pAngles[0] || g_1070d9d4 != pAngles[1] || g_1070d9d8 != pAngles[2]) {
+			sub_1013c0e0(vfunc10(), pMins, pMaxs, pOutA, pOutB);
+			return;
+		}
+	}
+	VectorAdd(*(const Vector *)pMins, *((CollView *)this)->GetOrigin(), *(Vector *)pOutA);
+	VectorAdd(*(const Vector *)pMaxs, *((CollView *)this)->GetOrigin(), *(Vector *)pOutB);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd630 size=0xcf
 #include "CCollisionProperty.h"
 #include <math.h>

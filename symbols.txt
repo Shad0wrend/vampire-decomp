@@ -1107,6 +1107,7 @@
 0x100053e4 func   ?sub_100ce8a0@@YGXPBD@Z sub_100ce8a0
 0x100053f3 func   ?sub_102e0630@CUnknown102e0630@@QAEHPAX@Z CUnknown102e0630::sub_102e0630
 0x100053f8 func   ?vfunc2@CTEArmorRicochet@@UAEPAV1@I@Z CTEArmorRicochet::vfunc2
+0x100053fd func   ?sub_100dcd90@CCollisionProperty@@QAEXPBM0PAM1@Z CCollisionProperty::sub_100dcd90
 0x1000542a func   ?vfunc546@CNPC_VMingXiao@@QAEHH@Z CNPC_VMingXiao::vfunc546
 0x1000542f func   ?sub_102ec3b0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102ec3b0
 0x10005434 func   _item_g_hannahs_appt_book item_g_hannahs_appt_book
