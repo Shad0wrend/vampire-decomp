@@ -10438,6 +10438,27 @@ void CUnknown1007bb30::sub_1007bb30(CUnknown1007bb30Dest *pDest)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c1c0 size=0x84
+#include "CUnknown10078540.h"
+#include "CFlexAnimationTrack.h"
+
+void __cdecl sub_1007bf70(void *pFile, int nIndent, const char *pszFormat, ...);
+
+void __cdecl sub_1007c1c0(void *pFile, int nIndent, CUnknown10078540 *pEvent)
+{
+	int nRamp = pEvent->sub_10078630();
+	if (nRamp > 0) {
+		sub_1007bf70(pFile, nIndent, "event_ramp\n");
+		sub_1007bf70(pFile, nIndent, "{\n");
+		for (int i = 0; i < nRamp; i++) {
+			CExpressionSampleStub *p = pEvent->sub_10078650(i);
+			sub_1007bf70(pFile, nIndent + 1, "%.4f %.4f\n", p->m_flTime, p->m_flValue);
+		}
+		sub_1007bf70(pFile, nIndent, "}\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfc0 size=0xa
 struct CUnknown1007dfc0 { char p[0x78]; int a; void sub_1007dfc0(int v); };
 // TARGET: CUnknown1007dfc0::sub_1007dfc0
