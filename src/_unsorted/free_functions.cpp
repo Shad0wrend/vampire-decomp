@@ -32067,6 +32067,43 @@ bool CUtlRBTree12::sub_101c02d0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0b80 size=0xa3
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+extern unsigned int g_1070ba38;
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+
+#define D(n) virtual void n();
+#define D10(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+// The entity's slots up to 173 (slot 116 answers a char, slot 173 is Use).
+struct CEntityUseSlotsX {
+    D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6) D10(a7) D10(a8) D10(a9) D10(b10)
+    D(c110) D(c111) D(c112) D(c113) D(c114) D(c115)
+    virtual char vfunc116();
+    D(c117) D(c118) D(c119)
+    D10(d12) D10(d13) D10(d14) D10(d15) D10(d16)
+    D(e170) D(e171) D(e172)
+    virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);
+    const char *sub_100ab4f0();
+};
+
+void sub_101c0b80(const char *pszTarget, CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value)
+{
+    if (!pszTarget)
+        return;
+    DevMsg(2, "Firing: (%s)\n", pszTarget);
+    CBaseEntity *pTarget = g_106eb5d8.sub_100f7770(0, pszTarget, pActivator, 0);
+    while (pTarget) {
+        CEntityUseSlotsX *p = (CEntityUseSlotsX *)pTarget;
+        if (!p->vfunc116()) {
+            DevMsg(2, "[%03d] Found: %s, firing (%s)\n", g_1070ba38 % 1000, p->sub_100ab4f0(), pszTarget);
+            p->vfunc173(pActivator, pCaller, useType, value);
+        }
+        pTarget = g_106eb5d8.sub_100f7770(pTarget, pszTarget, pActivator, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0cc0 size=0x103
 struct ISaveRestoreOps;
 struct datamap_t;
