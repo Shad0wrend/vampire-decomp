@@ -4522,6 +4522,7 @@
 0x1001246d func   ??0CVFeat_t@@QAE@H@Z CVFeat_t::CVFeat_t
 0x10012472 func   ?sub_10246320@@YAXHPBMPAM@Z sub_10246320
 0x10012477 func   ?sub_101cd070@@YGPAUEnt@@PAU1@@Z sub_101cd070
+0x1001247c func   ?sub_101397c0@@YAXABVQAngle@@PAVVector@@11@Z sub_101397c0
 0x10012481 func   ?sub_10202ba0@CUnknown10202ba0@@QAEXXZ CUnknown10202ba0::sub_10202ba0
 0x10012486 func   ?sub_101e86e0@S@@QAEXPAUP@@@Z S::sub_101e86e0
 0x100124a4 func   _point_camera point_camera
