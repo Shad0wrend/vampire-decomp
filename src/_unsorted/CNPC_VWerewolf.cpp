@@ -28,6 +28,30 @@ CNPC_VWerewolf *CNPC_VWerewolf::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103caa30 size=0xd9
+#include "ScopeTrace.h"
+#include "CNPC_VWerewolf.h"
+
+extern char g_106618d8[];
+
+struct CWerewolfCollision { void sub_100ddd90(); };
+
+void CNPC_VWerewolf::vfunc103()
+{
+	ScopeTrace trace("CNPC_VWerewolf::Spawn", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	*(const char **)((char *)this + 0x10e4) = g_106618d8[0] ? g_106618d8 : 0;
+	sub_10298d30();
+	sub_100b3580(0x2000);
+	*((char *)this + 0x1480) = 1;
+	*((char *)this + 0x66a9) = 0;
+	*(int *)((char *)this + 0x66ac) = 0;
+	*(int *)((char *)this + 0x6680) = 0;
+	((CWerewolfCollision *)((char *)this + 0x270))->sub_100ddd90();
+	sub_100b3900(4);
+	sub_100b3840(0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cab50 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
