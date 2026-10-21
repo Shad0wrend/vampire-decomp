@@ -20051,6 +20051,38 @@ char *CDialog::sub_100e1880(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1ad0 size=0x119
+#include "CDialog.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+#include "Ent.h"
+extern CGlobalEntityList *g_10566458;
+extern char g_105623a8[];
+struct SDialogLineText { int m_pad0; const char *m_pszText; const char *m_pszAlt; };
+inline CGlobalEntityList_Ent *DialogLookup(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13))
+			return s->m_pEntity;
+	}
+	return 0;
+}
+const char *CDialog::sub_100e1ad0(int index)
+{
+	ScopeTrace trace(g_105623a8, g_106b8540);
+	DialogLine *pLine = sub_100e19f0(index);
+	if (pLine && DialogLookup(m_hNPC)) {
+		if (sub_100e1580(pLine))
+			return sub_100e1580(pLine);
+		if (((Ent *)DialogLookup(m_hNPC))->sub_10336920())
+			return ((SDialogLineText *)pLine)->m_pszText;
+		return ((SDialogLineText *)pLine)->m_pszAlt;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e3400 size=0x98
 #include <string.h>
 #include "CUnknown100e3400.h"
