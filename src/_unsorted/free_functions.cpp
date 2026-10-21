@@ -27214,6 +27214,46 @@ void sub_10002441();
 void __stdcall sub_101318a0(int) { sub_10002441(); }
 // END FUNCTION
 
+// FUNCTION: 0x10131950 size=0x6b
+#include "CBaseEntity.h"
+
+extern void *vt_104475c4[];
+extern void *vt_10466444[];
+extern char g_105785e8[];
+void *sub_100aa720(int size);
+
+struct CLogicLineList {
+	void sub_100cd2a0();
+};
+
+struct CLogicLineView : CBaseEntity {
+	char m_padView[0x450 - 0x3e0];
+	CLogicLineList m_list450;
+	char m_pad454[0x46c - 0x454];
+	int m_h46c;
+	int m_h470;
+};
+
+extern "C" CBaseEntity *logic_lineto()
+{
+	CLogicLineView *p = (CLogicLineView *)sub_100aa720(0x474);
+	CBaseEntity *e;
+	if (p) {
+		p->sub_1009d980(0);
+		*(void ***)p = vt_104475c4;
+		p->m_list450.sub_100cd2a0();
+		p->m_h46c = -1;
+		p->m_h470 = -1;
+		e = p;
+	} else
+		e = 0;
+	if (e)
+		*(void ***)e = vt_10466444;
+	e->vfunc106(g_105785e8);
+	return e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131a40 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
