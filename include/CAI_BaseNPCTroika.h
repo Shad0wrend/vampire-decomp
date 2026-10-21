@@ -136,6 +136,7 @@ public:
 	void sub_102b2730();	// part of GatherConditions: with no pending count (+0x5bb0) and a squad (+0x5da4), when the enemy (slot 168) was last seen long enough ago sets the task 0x31 (then 0x32 when condition 0x4a is set); then asks condition 0x46
 	void sub_10332ca0(CBaseEntity *pEnt, int a, int b);	// "CBaseCombatCharacter::AddEntityRelationship" (stub 0x10005849), called directly
 	int sub_102c47e0(const char *pszName, const char *pszCaller);	// "LookupSchedule": the local id of the schedule pszName (also tried as "SCHED_<name>"), -1 with an error message naming pszCaller when it is unknown
+	void sub_102c0bb0();	// resets the NPC's look target: tells the global at 0x1070b248 (slot 6) about the engine index of this edict with 5, runs slot 275, FadeoutExpressions, sub_102c0ca0; then, when slot 613 holds and the state is not 0xf1, takes the activity slot 611 gives (if not negative) as the ideal state 0xf1 and, unless the byte at +0x6080 is set, plays it (+0x6f0, +0x6f8 = 0, +0x174 = curtime, +0xfec = 0xf1, sub_10090950)
 
 	char m_pad0004[0x14bc - 4];
 	unsigned int m_flags14bc;
