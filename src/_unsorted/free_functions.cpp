@@ -32501,6 +32501,32 @@ int sub_10190d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191170 size=0x6a
+#include "COrnamentProp.h"
+
+extern void (__cdecl *g_109f364c)(const char *fmt, ...);
+void sub_101cd940(CBaseEntity *pEntity);
+
+// TARGET: COrnamentProp::sub_10191170
+void COrnamentProp::sub_10191170(CBaseEntity *pParent)
+{
+	if (pParent)
+	{
+		vfunc67();
+		sub_1009ee80(pParent);
+		sub_100a0670(pParent, 0);
+		vfunc202(pParent);
+		vfunc93(0xb, 0);
+		sub_100b3b00();
+	}
+	else
+	{
+		g_109f364c("%s could not find entity to attach to, deleting...\n", sub_100ab4f0());
+		sub_101cd940(this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101916f0 size=0x12
 struct CVirtSlots2 {
     virtual void vfunc0();
