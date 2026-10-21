@@ -30730,6 +30730,43 @@ int *sub_10131a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10132b50 size=0x6d
+struct CGlobals1070b228 { char pad[0x24]; int m_n24; };
+extern CGlobals1070b228 *g_1070b228;
+
+struct CMgr106be530 {
+	int sub_100020bd(int h);
+	int sub_10005d8f(int h);
+	void sub_1000f051(int h, int a);
+	void sub_10009066(int h, int t, int a);
+};
+extern CMgr106be530 g_106be530;
+
+struct CUnit10132b50 {
+	char m_pad0000[0x450];
+	int m_h450;
+	void sub_10132b50(int unused);
+};
+
+// TARGET: CUnit10132b50::sub_10132b50
+void CUnit10132b50::sub_10132b50(int unused)
+{
+	int a;
+	int r = g_106be530.sub_100020bd(m_h450);
+	if (r == 1)
+		a = 0;
+	else if (r == 0)
+		a = 1;
+	else
+		return;
+	int h = m_h450;
+	if (g_106be530.sub_10005d8f(h))
+		g_106be530.sub_1000f051(m_h450, a);
+	else
+		g_106be530.sub_10009066(m_h450, g_1070b228->m_n24, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132db0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;

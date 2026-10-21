@@ -740,6 +740,7 @@
 0x10003dfa func   ??0CTEShatterSurface@@QAE@PBD@Z CTEShatterSurface::CTEShatterSurface
 0x10003dff func   ?vfunc519@CAI_BaseNPC@@UAEXHMMM@Z CAI_BaseNPC::vfunc519
 0x10003e2c func   ?sub_101784c0@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::sub_101784c0
+0x10003e36 func   ?sub_10132b50@CUnit10132b50@@QAEXH@Z CUnit10132b50::sub_10132b50
 0x10003e4f func   ?sub_100be590@bf_read@@QAEHH@Z bf_read::sub_100be590
 0x10003e72 func   ?sub_100a68f0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a68f0
 0x10003e77 func   ?sub_101f10e0@CUnknown101f10e0@@QAE_NPAX@Z CUnknown101f10e0::sub_101f10e0
