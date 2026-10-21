@@ -32612,6 +32612,84 @@ void CSoundEnt::sub_101ba9d0(int iSound, int iPrevious)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101baf80 size=0xbd
+#include "CSoundEnt.h"
+
+struct CSoundView
+{
+	int m_iNext0;
+	int m_n04;
+	int m_n08;
+	int m_n0c;
+	float m_flExpireTime;
+	char m_pad14[4];
+	int m_iNext;
+	char m_pad1c[0x2c - 0x1c];
+
+	void sub_101b9880();
+};
+
+struct CGlobalVarsView
+{
+	char m_pad0000[0x14];
+	int m_nMaxClients;
+};
+
+struct CGameRulesView
+{
+	virtual void v0();
+	virtual bool slot1();
+	char m_pad0004[0x2c - 4];
+	int m_n2c;
+};
+
+struct CSoundEntInitView
+{
+	char m_pad0000[0x450];
+	int m_iFreeSound;
+	int m_iActiveSound;
+	char m_pad0458[0x45c - 0x458];
+	char m_bShowReport;
+	char m_pad045d[0x464 - 0x45d];
+	CSoundView m_SoundPool[64];
+
+	int sub_101bab50();
+};
+
+extern CGlobalVarsView *g_1070b228;
+extern CGameRulesView *g_1070accc;
+extern void (__cdecl *g_109f3630)(const char *, ...);
+
+void CSoundEnt::sub_101baf80()
+{
+	CSoundEntInitView *p = (CSoundEntInitView *)this;
+	int i;
+	p->m_iFreeSound = 0;
+	p->m_iActiveSound = -1;
+	for (i = 0; i < 64; i++) {
+		p->m_SoundPool[i].sub_101b9880();
+		p->m_SoundPool[i].m_iNext = i + 1;
+	}
+	p->m_SoundPool[i - 1].m_iNext = -1;
+	for (i = 0; i < g_1070b228->m_nMaxClients; i++) {
+		int iSound = p->sub_101bab50();
+		if (iSound == -1) {
+			g_109f3630("Could not AllocSound() for Client Reserve! (DLL)\n");
+			return;
+		}
+		p->m_SoundPool[iSound].m_flExpireTime = -1;
+	}
+	if (!g_1070accc->slot1()) {
+		int nMode = g_1070accc->m_n2c;
+		if (nMode == 1) {
+			p->m_bShowReport = nMode;
+			return;
+		}
+	}
+	p->m_bShowReport = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb220 size=0x6b
 struct ScopeEntry {
     const char *a;
