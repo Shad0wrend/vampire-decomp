@@ -37247,6 +37247,36 @@ void CUnknown101d7460::sub_101d7460(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7520 size=0xf9
+#include "CUnknown101d7520.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+
+void CUnknown101d7520::sub_101d7520(const char *name)
+{
+	char buf[512];
+	Q_snprintf(buf, 512, "[[Auto-Level Manager]]:\n");
+	Msg("%s", buf);
+	if (!name) {
+		for (int i = 0; i < m_nCount; i++) {
+			Q_snprintf(buf, 512, "   (%d)  %s\n", i, m_ppEntries[i]->m_name.Get());
+			Msg("%s", buf);
+		}
+	} else {
+		int idx = sub_1000f759(name);
+		if (idx != -1) {
+			m_ppEntries[idx]->sub_101d6af0();
+			return;
+		}
+		if (!_strcmpi(name, "ALL")) {
+			for (int i = 0; i < m_nCount; i++)
+				m_ppEntries[i]->sub_101d6af0();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d76e0 size=0x80
 #include "CUnknown101d76e0.h"
 #include "CGlobalEntityList.h"
