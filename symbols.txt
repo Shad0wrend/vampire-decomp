@@ -4982,6 +4982,7 @@
 0x100140ce func   ?sub_10197360@@YAPAUPyObj@@PAU1@0@Z sub_10197360
 0x100140d8 func   ?sub_10401770@@YAHXZ sub_10401770
 0x100140f6 func   ?sub_10069310@@YAXHHPAUTextMessageParams@@PBD@Z sub_10069310
+0x100140fb func   ?sub_100a9d70@CBaseEntity@@QAEXPAM@Z CBaseEntity::sub_100a9d70
 0x1001410a func   ?vfunc6@CBaseEntity@@UAEX_N@Z CBaseEntity::vfunc6
 0x10014114 func   ?vfunc530@CNPC_VChangBros@@QAE_NPAVCBaseEntity@@@Z CNPC_VChangBros::vfunc530
 0x10014123 func   ?vfunc0@CAI_CsActList@@UAEXPAUCsActSaveIface@@@Z CAI_CsActList::vfunc0

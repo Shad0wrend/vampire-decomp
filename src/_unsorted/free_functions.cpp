@@ -16702,6 +16702,32 @@ CEntityVSlots *sub_100a9ab0(const char *pszClassName, const float *pOrigin, cons
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9d70 size=0xf2
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+// TARGET: CBaseEntity::sub_100a9d70
+void CBaseEntity::sub_100a9d70(float *pOut)
+{
+    ScopeTrace trace("CBaseEntity::GetCentroid", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    if (m_pEdict2e0) {
+        CCollisionProperty *pProp = (CCollisionProperty *)((char *)this + 0x270);
+        const float *pMins = pProp->vfunc1();
+        const float *pMaxs = pProp->vfunc2();
+        pOut[0] = pMaxs[0] + pMins[0];
+        pOut[1] = pMaxs[1] + pMins[1];
+        pOut[2] = pMaxs[2] + pMins[2];
+        pOut[0] = pOut[0] * 0.5f;
+        pOut[1] = pOut[1] * 0.5f;
+        pOut[2] = pOut[2] * 0.5f;
+    } else {
+        pOut[0] = 0;
+        pOut[1] = 0;
+        pOut[2] = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa080 size=0x86
 #include "CBaseEntity.h"
 
