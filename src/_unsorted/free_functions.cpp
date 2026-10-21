@@ -65001,6 +65001,34 @@ void sub_1031a0e0(CChainNodeStub *pHead, CChainNodeStub *pNew)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103217d0 size=0xb2
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_101ab310(const char *name, int offset, int size);
+extern SendTable g_10937c6c;
+extern const char *g_10619d48;
+
+// TARGET: sub_103217d0
+int sub_103217d0()
+{
+    static SendProp g_SendProps[] = {
+        sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+        sub_101ab310("m_flNextAttack", 0x1564, 4),
+        sub_10246af0("m_iDisciplineFlags", 0xeb0, 4, 0x1e, 1, 0, 0),
+        sub_10246af0("m_iDisciplineFlags2", 0xeb4, 4, 0x1e, 1, 0, 0),
+    };
+    g_10937c6c.sub_10247240(g_SendProps + 1, 3, g_10619d48);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10321ec0 size=0xb
 extern int g_10937ccc;
 void sub_10321ec0(void)
