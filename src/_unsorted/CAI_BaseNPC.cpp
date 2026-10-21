@@ -258,6 +258,63 @@ int CAI_BaseNPC::vfunc460()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026fbe0 size=0xc6
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CNpcWeaponX	// the active weapon
+{
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV100(1) SV100(2)
+	SV10(30) SV10(31) SV10(32) SV10(33) SV10(34) SV10(35)
+	SV(360) SV(361) SV(362) SV(363)
+	virtual char v364(int a, int b, char bFlag);
+};
+
+struct CNpcSlotsX	// the NPC's slots past 568
+{
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV100(1) SV100(2) SV100(3) SV100(4)
+	SV10(50) SV10(51) SV10(52) SV10(53) SV10(54) SV10(55) SV10(56)
+	SV(570) SV(571) SV(572)
+	virtual char v573(int a, int b, char bFlag);
+};
+
+struct CNpcAiGlobalX
+{
+	virtual void v0();
+	virtual void v1();
+};
+extern CNpcAiGlobalX *g_10924a6c;
+
+char CAI_BaseNPC::vfunc562(int a, int b, char bFlag)
+{
+	char result;
+	if (sub_10007e19()) {
+		result = ((CNpcWeaponX *)sub_10007e19())->v364(a, b, bFlag);
+	} else if (vfunc513() & 0x20000) {
+		result = ((CNpcSlotsX *)this)->v573(a, b, bFlag);
+	} else {
+		if (bFlag) {
+			g_10924a6c->v1();
+			sub_10269a20(0x42);
+		}
+		result = 0;
+	}
+	if (vfunc513() & 0x10000000) {
+		if (sub_10266b10(a, b, 0.92f)) {
+			if (bFlag) {
+				g_10924a6c->v1();
+				sub_10269a20(0x64);
+			}
+			return 0;
+		}
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10272400 size=0x6e
 #include "CAI_BaseNPC.h"
 
