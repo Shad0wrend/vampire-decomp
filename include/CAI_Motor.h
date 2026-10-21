@@ -38,8 +38,8 @@ public:
 	int m_0c;
 	void *m_pSinkVtbl;	// 0x0010
 	int m_14;
-	int m_18;
-	int m_1c;
+	int m_18;	// a float: the current yaw (see sub_102e0a80)
+	int m_1c;	// a float: the largest yaw change
 	int m_20;
 	int m_24;
 	char m_28;
@@ -67,6 +67,7 @@ public:
 	void sub_102e0ba0(void *pMovementSink);	// "CAI_Motor::Init" (stub 0x10003a1c): takes the local navigator's movement sink (its secondary base at +0x10)
 	int sub_102e0bd0(void *pOut, CBaseEntity *pTarget, int a, int b, int c, int d, int e);	// stub 0x100103ca: 7 stack arguments (the AutoMovement test of a move toward pTarget); 1 when the move is possible
 	void sub_102e20b0(const float *pPosition, float flWeight);	// "AddFacingTarget"-like: queues a look target (position, priority) (stub 0x10007248)
+	float sub_102e0a80(float flIdealYaw);	// the yaw the motor reaches when turning toward flIdealYaw: the difference to the yaw at +0x18 (wrapped into -180..180) is clamped to +-the float at +0x1c, added back and wrapped into 0..360
 
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
 	static int *sub_102e0860();
