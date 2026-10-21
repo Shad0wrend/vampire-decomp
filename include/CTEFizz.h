@@ -1,14 +1,23 @@
 // CTEFizz: fizz temp entity. Declared flat (bases not recovered).
 #pragma once
 
+class CRecipientFilter;
+
 class CTEFizz
 {
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual CTEFizz *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3(const float *pOrigin, const float *pAngles);	// "CTEFizz::Test": precaches the bubble sprite (+0x10), density 200 (+0x14), current 1 (+0xc), then Create to every player
+	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "CTEFizz::Create"
 
 	void sub_100142b8();	// destructor body
 	void vfunc5();	// as in CFireSmoke (transplant)
 	CTEFizz *sub_10061f70(int a);	// constructor body: base constructor (0x10015334), vtable, fields; returns this
+
+	char m_pad0004[8];
+	int m_nCurrent;	// 0x0c
+	int m_nModelIndex;	// 0x10
+	int m_nDensity;	// 0x14
 };
