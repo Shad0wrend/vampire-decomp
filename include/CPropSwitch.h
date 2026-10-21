@@ -5,6 +5,8 @@
 class CPropSwitch : public CBaseEntity
 {
 public:
+	virtual void vfunc113();	// slot 113 (Activate): after the base, finds the entity named by the string at +0x730 and, when it is a "prop_switch", keeps its handle at +0x740 (-1 when it is not a CPropSwitch); looks up the sequences "activate", "deactivate", "idle_on", "idle_off" into +0x7a8..+0x7b4 and starts the idle one (on when the byte at +0x7a5 is set)
+
 	void vfunc104();
 	void sub_1018e0d0();
 	CPropSwitch *sub_1020d5f0();	// as in CKeepUpright (transplant)
@@ -14,4 +16,5 @@ public:
 	float sub_10091080(int sequence);	// CBaseAnimating::SequenceDuration (stub 0x10009813)
 	void sub_1020f330(inputdata_t *pInput);	// input handler: the integer input (0 for another type) minus one selects the state at +0x630; on a change zeroes the velocity, sets +0x3fc = -1.0f, moves the entity to (x at +0x800, y at +0x804, z from the table at +0x608[state]) and runs sub_100b3b00
 	void sub_100b2e30(const float *pVec);	// stub 0x10013728
+	int sub_1008f7b0(const char *pszName);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
 };
