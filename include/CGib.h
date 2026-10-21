@@ -9,5 +9,9 @@ class CGib : public CBaseEntity
 public:
 	CGib *vfunc5(unsigned int flags);
 	void sub_10004c3c();
-	char m_pad0004[0x72c - sizeof(CBaseEntity)];
+	void sub_1012b080(const char *pszModel);	// stub 0x10015b40: sets the model
+	char m_pad0004[0x67c - sizeof(CBaseEntity)];
+	int m_nBody;	// 0x67c
+	char m_pad0680[0x730 - 0x680];
+	int m_n730;	// 0x730
 };
