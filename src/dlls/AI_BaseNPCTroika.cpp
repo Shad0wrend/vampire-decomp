@@ -48,6 +48,63 @@ int CAI_BaseNPCTroika::vfunc359(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f060 size=0x8f
+#include "CAI_BaseNPCTroika.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CTroikaSlot614 {
+	S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+	S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8) S10(b9)
+	S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5) S10(c6) S10(c7) S10(c8) S10(c9)
+	S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5) S10(d6) S10(d7) S10(d8) S10(d9)
+	S10(e0) S10(e1) S10(e2) S10(e3) S10(e4) S10(e5) S10(e6) S10(e7) S10(e8) S10(e9)
+	S10(f0) S10(f1) S10(f2) S10(f3) S10(f4) S10(f5) S10(f6) S10(f7) S10(f8) S10(f9)
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4();
+	virtual void g5(); virtual void g6(); virtual void g7(); virtual void g8(); virtual void g9();
+	virtual void h0(); virtual void h1(); virtual void h2(); virtual void h3();
+	virtual void vfunc614();
+};
+
+struct CTroikaPlayerView {
+	char m_pad[0xfe8];
+	unsigned int m_hEnt;
+};
+
+struct CTroikaDbgView {
+	char m_pad[0x1b30];
+	const char *m_pszFile;
+	int m_nLine;
+};
+
+CTroikaPlayerView *sub_101cd9e0(int index);
+
+void CAI_BaseNPCTroika::sub_1029f060(int unused)
+{
+	CTroikaPlayerView *pPlayer = sub_101cd9e0(1);
+	if (pPlayer) {
+		unsigned int h = pPlayer->m_hEnt;
+		if (h != 0xffffffff) {
+			CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+			if (s->m_Serial == (int)(h >> 13) && s->m_pEntity)
+				return;
+		}
+		if (!sub_1033e2b0() && !(m_flags14bc & 0x10000000)) {
+			sub_1000e4d5();
+			((CTroikaSlot614 *)this)->vfunc614();
+			m_b6495 = 1;
+			((CTroikaDbgView *)this)->m_pszFile = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+			((CTroikaDbgView *)this)->m_nLine = 0x268e;
+			sub_102ae750(0x6e, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029fcf0 size=0x89
 #include "CAI_BaseNPCTroika.h"
 
