@@ -7059,6 +7059,40 @@ int sub_10066e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100679a0 size=0xd5
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+void sub_10009539();
+void sub_10003012();
+
+extern SendTable g_106c55e0;
+extern SendTable *g_1059cb88;
+extern const char *g_10544c2c;
+
+// TARGET: sub_100679a0
+int sub_100679a0()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1059cb88, (void *)sub_10009539),
+		sub_10007bfd("m_nMagnitude", 0x18, 4, 4, 1, 0, 0),
+		sub_10007bfd("m_nTrailLength", 0x1c, 4, 4, 1, 0, 0),
+		sub_1000c14e("m_vecDir", 0x20, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+	};
+	g_106c55e0.sub_1000e8fe(props + 1, 4, g_10544c2c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067b70 size=0x86
 #include "CTESparks.h"
 
