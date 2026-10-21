@@ -101,15 +101,22 @@ public:
 	CNPC_VWerewolfVec3 m_vCache;	// 0x6674: cached vector
 	char pad6680[0x668c - 0x6680];
 	CNPC_VWerewolfIntVec m_History;	// 0x668c
-	char pad66a0[0x66b0 - 0x66a0];
+	char pad66a0[0x66a8 - 0x66a0];
+	char m_b66a8;	// 0x66a8
+	char pad66a9[0x66b0 - 0x66a9];
 	CNPC_VWerewolfHint66b0 *m_pHint66b0;	// 0x66b0
 	char pad66b4[0x66bc - 0x66b4];
 	CNPC_VWerewolfHint66b0 *m_pHint66bc;	// 0x66bc: the move hint
 	char pad66c0[0x66c8 - 0x66c0];
 	char m_b66c8;	// 0x66c8
-	char pad66c9[0x66f8 - 0x66c9];
+	char pad66c9[0x66dc - 0x66c9];
+	CNPC_VWerewolfVec3 m_vSnap66dc;	// 0x66dc: set from the global vector at 0x1070d1b0 by SnapToAnimationPosition
+	char pad66e8[0x66f8 - 0x66e8];
 	float m_flNodeTime;	// 0x66f8: time stamp of the cached node
 	void *m_pNode;	// 0x66fc: cached nearest node
+	char pad6700[0x6708 - 0x6700];
+	int m_n6708;	// 0x6708
+	int m_n670c;	// 0x670c
 
 	int sub_10366490(int key);
 	bool sub_10366400(int key);
@@ -124,7 +131,7 @@ public:
 	void sub_103d99a0(inputdata_t *pInput);	// "CNPC_VWerewolf::InputToggleDoorState": scope trace (entity name), stores the integer input clamped to 0..3 at +0x6680 (0 when the input is not an integer)
 	void vfunc465(const char *msg);	// slot 465, scope-traced wrapper
 	void vfunc516();	// slot 516 "CNPC_VWerewolf::MaxYawSpeed": scope trace (entity name), then the base implementation
-	bool vfunc566(void *pHint);	// "CNPC_VWerewolf::FValidateHintType": scope trace (entity name), true when the hint type at +0x5dc is in 0x3a98..0x3aaa but not 0x3a9f
+	bool vfunc566(void *pHint);	// slot 566 "CNPC_VWerewolf::FValidateHintType": scope trace (entity name), true when the hint type at +0x5dc is in 0x3a98..0x3aaa but not 0x3a9f
 	int sub_103d3220(void *pHint);	// "CNPC_VWerewolf::GetHintTeleportPriority": scope trace (entity name), maps the hint type at +0x5dc of pHint to a priority (0x3a98 -> 1, 0x3a99 -> 2, 0x3a9a/0x3a9b -> 3, 0x3a9f -> 4, else 0)
 	char vfunc68(void *pOther);	// slot 68 "CNPC_VWerewolf::ShouldIgnoreCollision": scope trace (entity name); true when bit 1/2/4 of the byte at +0x4c of pOther is set or bit 3 of its GetFlags2, else CAI_BaseNPCTroika::vfunc68(pOther)
 	char sub_1029afc0(void *pOther);	// CAI_BaseNPCTroika::vfunc68 (stub 0x1000f9de), called directly
@@ -171,4 +178,7 @@ public:
 	bool vfunc617(CNPC_VWerewolfVec3 a, int b, int c, CNPC_VWerewolfVec3 d);	// slot 617 "CNPC_VWerewolf::EnemyCouldSeeHull...": scope trace (entity name); false while the global at 0x1093d694 answers slot 1 false with its field +0x2c set, or when the target (slot 167) answers slot 158 false; else CNPC_VBaseBoss::vfunc617
 	bool sub_10366510(CNPC_VWerewolfVec3 a, int b, int c, CNPC_VWerewolfVec3 d);	// CNPC_VBaseBoss::vfunc617 (stub 0x10007cd4), called directly
 	const char *sub_103ceb60(void *pHint);	// "CNPC_VWerewolf::HintTypeName": "<HINT_WEREWOLF_...> (<debug name of the hint>)" formatted into a global 0x40 byte buffer (0x1093d4a0) from the hint type at +0x5dc (0x3a98..0x3aaa, else HINT_UNKNOWN); returns the buffer
+	void sub_103d9f90();	// "CNPC_VWerewolf::SnapToAnimationPosition": scope trace (entity name), sub_1008eec0("Bip01", 1, 1), sub_10273180(0), then copies the global vector at 0x1070d1b0 to +0x66dc, clears the byte at +0x66a8 and sets the dwords at +0x6708 / +0x670c to -1
+	void sub_1008eec0(const char *pszName, int a, int b);	// CBaseAnimating member (stub 0x1000577c), called directly
+	void sub_10273180(int a);	// CAI_BaseNPC member (stub 0x10013b97), called directly
 };
