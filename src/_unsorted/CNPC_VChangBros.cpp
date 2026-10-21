@@ -191,3 +191,24 @@ void CNPC_VChangBros::vfunc448(int code)
     --*g_109f3680;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1036e6f0 size=0xea
+#include "ScopeTrace.h"
+#include "CNPC_VChangBros.h"
+#include "CBasePlayer.h"
+extern char g_106313e8[];
+extern char g_10538764[];
+extern char g_1055e9bc[];
+bool CNPC_VChangBros::vfunc530(CBaseEntity *pOther)
+{
+	ScopeTrace trace(g_106313e8, g_106b8540);
+	CNPC_VChangBros *pPlayer = (CNPC_VChangBros *)__RTDynamicCast(pOther, 0, g_10538764, g_1055e9bc, 0);
+	if (pPlayer) {
+		int a = sub_1036e580((int)vfunc217());
+		int b = sub_1036e580((int)pPlayer->vfunc217());
+		if ((b == 3 && sub_1000e93f(a)) || (sub_1000e93f(b) && a == 3))
+			return true;
+	}
+	return sub_102741e0(pOther);
+}
+// END FUNCTION
