@@ -22,4 +22,5 @@ public:
 	int sub_103872d0();	// slot 438 (select schedule, stub 0x1000b10e), called directly as the base implementation by CNPC_VGhoulCroucher::vfunc438
 	int vfunc438();	// slot 438 "SelectSchedule": at state 2 the weapon's type flags (slot 360) pick slot 604 (0x18000 bits) or slot 605, a non-zero answer is the schedule, else CNPC_VHuman::vfunc438
 	int sub_10015ad2();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), tail called
+	int vfunc461();	// slot 461 "SelectIdealState": at state 1 a pending 0x4c..0x4e condition (without the byte at +0x65f6) switches to state 3; condition 0x3e reports the entity of the handle at +0x628c to slot 597 on the map la_empire_2 and switches to state 0xb; otherwise CNPC_VHuman::vfunc461
 };
