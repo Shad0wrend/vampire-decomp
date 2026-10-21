@@ -39903,6 +39903,55 @@ void CUnknown101eac50::sub_101eac50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eb050 size=0xff
+#include "CUnknown101eb050.h"
+#include "CEntryY.h"
+extern char g_106b8540[];
+extern char g_10546214[];
+extern char g_105a47e8[];
+extern char g_105a47e0[];
+extern char g_105a47d4[];
+extern char g_105a47a0[];
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+int *sub_102038e0(int *pOut, CVFeatKV *pKV, const char *pszKey);
+int *sub_10203920(int *pOut, CVFeatKV *pKV);
+struct SInvSectionName
+{
+	const char *m_psz;
+	const char *Get() { return m_psz ? m_psz : g_106b8540; }
+};
+struct SInvSection
+{
+	int m_key;
+	SInvSectionName m_Name;	// 0x04
+};
+inline int FindSectionIndex(const char *pszName)
+{
+	for (int i = 0; i < g_1073a2dc; i++) {
+		if (_strcmpi(((SInvSection *)g_1073a2e0[i])->m_Name.Get(), pszName) == 0)
+			return ((SInvSection *)g_1073a2e0[i])->m_key;
+	}
+	return -1;
+}
+bool CUnknown101eb050::sub_101eb050(CVFeatKV *pKV)
+{
+	if (pKV) {
+		int tmp;
+		m_iInternalName = *sub_102038e0(&tmp, pKV, g_10546214);
+		m_iName = *sub_10203920(&tmp, pKV);
+		if (pKV->GetInt(g_105a47e8, 0))
+			m_flags |= 1;
+		if (pKV->GetInt(g_105a47e0, 0))
+			m_flags |= 2;
+		if (pKV->GetInt(g_105a47d4, 0))
+			m_flags |= 4;
+		m_nSection = FindSectionIndex(pKV->GetString(g_105a47a0, g_106b8540));
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eb1d0 size=0x148
 #include "CUnknown101eb1d0.h"
 #include "CEntryY.h"
