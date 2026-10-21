@@ -49336,6 +49336,53 @@ struct CUnknown10260980 { int p; int a; CUnknown10260980* sub_10260980(); };
 CUnknown10260980* CUnknown10260980::sub_10260980() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10260a50 size=0xaf
+#include "CBaseAnimating.h"
+
+#define NV1(n) virtual void nv##n();
+#define NV10(p) NV1(p##0) NV1(p##1) NV1(p##2) NV1(p##3) NV1(p##4) NV1(p##5) NV1(p##6) NV1(p##7) NV1(p##8) NV1(p##9)
+
+struct CAI_BaseNPCSeqView	// the NPC as the sequence reset sees it: vtable slot 18 (TraceMessage) and the members it touches
+{
+	NV10(a) NV1(b0) NV1(b1) NV1(b2) NV1(b3) NV1(b4) NV1(b5) NV1(b6) NV1(b7)
+	virtual void slot18(const char *pszText, int level);
+
+	char m_pad0004[0x98 - 4];
+	int m_pAI;
+	char m_pad009c[0x19c - 0x9c];
+	unsigned int m_nFlags19c;
+	char m_pad01a0[0x224 - 0x1a0];
+	unsigned int m_nFlags224;
+	char m_pad0228[0x65c - 0x228];
+	char m_b65c;
+	char m_pad065d[0x6f0 - 0x65d];
+	int m_nSequence;
+
+	void sub_10090950();
+};
+
+const char *sub_101d3730(const char *pszFormat, ...);
+
+void CAI_BaseNPC::sub_10260a50(int c)
+{
+	CAI_BaseNPCSeqView *p = (CAI_BaseNPCSeqView *)this;
+	CBaseAnimating *pAnim = (CBaseAnimating *)this;
+	if ((p->m_nFlags224 & 0x80000000) && p->m_pAI) {
+		if (p->m_b65c) {
+			int nOld = p->m_nSequence;
+			p->slot18(sub_101d3730("ResetSequence : %s: %s -> %s \t (current sequence finished)\n", pAnim->sub_1009f200(), pAnim->sub_1008fe80(nOld), pAnim->sub_1008fe80(c)), 0xc);
+		} else {
+			int nOld = p->m_nSequence;
+			p->slot18(sub_101d3730("ResetSequence : %s: %s -> %s \t (current sequence not finished)\n", pAnim->sub_1009f200(), pAnim->sub_1008fe80(nOld), pAnim->sub_1008fe80(c)), 0xc);
+		}
+	}
+	if (!pAnim->sub_1008d990(p->m_nSequence))
+		p->m_nFlags19c |= 0x10;
+	p->m_nSequence = c;
+	p->sub_10090950();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10264000 size=0xe4
 #include "CUtlVector56.h"
 
