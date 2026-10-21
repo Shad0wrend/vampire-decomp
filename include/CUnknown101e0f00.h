@@ -7,6 +7,7 @@
 struct CUnknown101e0f00Src	// the 0x1c byte source descriptions at +0xa4 / +0xc0 of an entry
 {
 	void sub_101dd3c0(const char *pszLabel);	// Debug_Display with the label (stub 0x10015d66)
+	void sub_101dcb20();	// the constructor body (stub 0x10002036)
 };
 
 struct CUnknown101e0f00Fx	// the object the tail's callback worker hands back
@@ -25,14 +26,22 @@ struct CUnknown101e0f00Entry	// one targeted discipline
 	int m_id;	// 0x00
 	const char *m_pszName;	// 0x04
 	const char *m_pszInternalName;	// 0x08
-	char m_pad000c[0x18 - 0x0c];
+	unsigned int m_nMask;	// 0x0c: 1 << id
+	int m_n10;	// 0x10
+	int m_n14;	// 0x14
 	const char *m_pszViewModel;	// 0x18
 	const char *m_pszTgtHighlightParticle;	// 0x1c
 	int m_nBaseCost;	// 0x20
 	char m_bOvert;	// 0x24
 	char m_pad0025[0x2c - 0x25];
 	float m_flRecoveryTime;	// 0x2c
-	char m_pad0030[0x38 - 0x30];
+	char m_b30;
+	char m_b31;
+	char m_b32;
+	char m_b33;
+	char m_b34;
+	char m_b35;
+	char m_pad0036[0x38 - 0x36];
 	CUnknown101dbc60 m_range;	// 0x38
 	char m_pad0060[0x68 - 0x60];
 	CUnknown101dd910 m_projectile;	// 0x68
@@ -42,6 +51,7 @@ struct CUnknown101e0f00Entry	// one targeted discipline
 	char m_tail[4];	// 0xdc: a CUnknown101e0f00Tail
 
 	void sub_101e0a00();	// Debug_Display of the entry (stub 0x100100fa)
+	CUnknown101e0f00Entry *sub_101e0520(int id);	// the constructor body (stub of 0x101e0520): constructs the sub objects, stores the id and its bit mask (a DevMsg "Overflowed targeted discipline" and mask 0 from id 30 up)
 };
 
 class CUnknown101e0f00
