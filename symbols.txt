@@ -3233,6 +3233,7 @@
 0x1000df49 func   ?sub_1030f660@@YGPADH@Z sub_1030f660
 0x1000df4e func   ?sub_101b6d60@CUtlRBTree232@@QAEXPBXPAHPA_N@Z CUtlRBTree232::sub_101b6d60
 0x1000df58 func   ?sub_101f6010@CVSoundActivityTable_t@@QAEXPAVCBaseCombatCharacter@@HH@Z CVSoundActivityTable_t::sub_101f6010
+0x1000df6c func   ?sub_103828a0@@YIXPAD@Z sub_103828a0
 0x1000df71 func   _npc_VMingXiaoTentacle npc_VMingXiaoTentacle
 0x1000df8a func   ?sub_1040d0a0@CPlayerPickupController@@QAEXD@Z CPlayerPickupController::sub_1040d0a0
 0x1000dfa8 func   _item_k_netcafe_office_key item_k_netcafe_office_key

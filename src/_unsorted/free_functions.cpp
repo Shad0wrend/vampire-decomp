@@ -76650,6 +76650,53 @@ unsigned char __fastcall sub_10381c80(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103828a0 size=0x9c
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList *g_10566458;
+namespace block_103828a0 {
+char __fastcall sub_10381c80(char *p) { return (*(unsigned int *)(p + 0x14b8) >> 5) & 1; }
+}
+using namespace block_103828a0;
+struct HV {
+    char pad[0x6690];
+    volatile unsigned int m_h6690;
+    void sub_10013110(float f);
+    void sub_10014899(int a);
+};
+void sub_1000e255(CBaseEntity *pEnt);
+inline bool Valid(CGlobalEntityList *l, unsigned int h)
+{
+    if (h == 0xffffffff)
+        return false;
+    CGlobalEntityList_Slot *s = &l->m_Slots[h & 0x1fff];
+    if (s->m_Serial != (int)(h >> 13))
+        return false;
+    if (s->m_pEntity == 0)
+        return false;
+    return true;
+}
+inline CGlobalEntityList_Ent *HandleGet(CGlobalEntityList *l, unsigned int h)
+{
+    if (h == 0xffffffff)
+        return 0;
+    CGlobalEntityList_Slot *s = &l->m_Slots[h & 0x1fff];
+    return (unsigned int)s->m_Serial == (h >> 13) ? s->m_pEntity : 0;
+}
+// TARGET: sub_103828a0
+void __fastcall sub_103828a0(char *p)
+{
+    HV *v = (HV *)p;
+    if (sub_10381c80(p)) {
+        *(int *)(p + 0x6664) = -1;
+        v->sub_10013110(0.75f);
+        if (Valid(g_10566458, v->m_h6690))
+            sub_1000e255((CBaseEntity *)HandleGet(g_10566458, v->m_h6690));
+        v->m_h6690 = 0xffffffff;
+        v->sub_10014899(0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10382970 size=0xed
 #include "CUnknown10382970.h"
 
