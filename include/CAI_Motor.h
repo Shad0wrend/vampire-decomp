@@ -6,6 +6,7 @@
 
 struct CAI_InterestTarget;
 struct ISaveRestoreOps;
+class CBaseEntity;
 
 class CAI_Motor
 {
@@ -64,6 +65,7 @@ public:
 	CAI_Motor *sub_102e0900(int outer);
 	void sub_102e2840(int a, int b);	// forwards (a, b) to slot 93 of the owning NPC (stub 0x1000628a)
 	void sub_102e0ba0(void *pMovementSink);	// "CAI_Motor::Init" (stub 0x10003a1c): takes the local navigator's movement sink (its secondary base at +0x10)
+	int sub_102e0bd0(void *pOut, CBaseEntity *pTarget, int a, int b, int c, int d, int e);	// stub 0x100103ca: 7 stack arguments (the AutoMovement test of a move toward pTarget); 1 when the move is possible
 
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
 	static int *sub_102e0860();
