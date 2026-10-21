@@ -202,6 +202,7 @@
 0x10001c71 func   ?sub_102d6210@@YAHH@Z sub_102d6210
 0x10001c85 func   ?sub_101b4900@@YGMPBD@Z sub_101b4900
 0x10001c8a func   ?vfunc103@CNPCMaker_Fleshpile@@UAEXXZ CNPCMaker_Fleshpile::vfunc103
+0x10001c8f func   ?sub_10090c80@@YIXPAVCBaseAnimating@@HH@Z sub_10090c80
 0x10001c9e func   ?vfunc5@CParamsExplosion@@QAEPAV1@I@Z CParamsExplosion::vfunc5
 0x10001cad func   ?sub_100b99b0@CUnknown100b99b0@@QAEXD@Z CUnknown100b99b0::sub_100b99b0
 0x10001cb2 func   ?sub_10042200@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_10042200

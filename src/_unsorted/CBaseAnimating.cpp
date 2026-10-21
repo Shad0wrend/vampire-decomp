@@ -137,6 +137,45 @@ int CBaseAnimating::vfunc253(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10090c80 size=0x142
+#include <math.h>
+#include "ScopeTrace.h"
+#include "CBaseAnimating.h"
+#include "CCollisionProperty.h"
+int __fastcall sub_100b39c0(CBaseEntity *self);
+struct AttackExtentsView {
+    virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+    virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+    virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14();
+    virtual void SetAttackExtents(const float *pExtents);
+};
+void __fastcall sub_10090c80(CBaseAnimating *self, int unused, int sequence)
+{
+    ScopeTrace trace("CBaseAnimating::SetAttackExtentsForSequence", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+    if (sub_100b39c0(self) & 4) {
+        char *pSeq = (char *)self->sub_1008d990(sequence);
+        if (pSeq) {
+            CCollisionProperty *pCol = (CCollisionProperty *)((char *)self + 0x270);
+            float *pMaxs = pCol->vfunc2();
+            float vecMaxs[3];
+            vecMaxs[0] = pMaxs[0];
+            vecMaxs[1] = pMaxs[1];
+            vecMaxs[2] = pMaxs[2];
+            float ext[3];
+            int i = 0;
+            const float *bb = (const float *)(pSeq + 0x1c);
+            for (; i < 3; i++, bb++)
+                ext[i] = (bb[3] > fabs(bb[0])) ? bb[3] : fabs(bb[0]);
+            ext[0] = sqrt(ext[0] * ext[0] + ext[1] * ext[1]);
+            ext[1] = ext[0];
+            for (int j = 0; j < 3; j++)
+                ext[j] = (ext[j] > vecMaxs[j]) ? ext[j] - vecMaxs[j] : 0.0f;
+            ((AttackExtentsView *)self)->SetAttackExtents(ext);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100916a0 size=0x78
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
