@@ -27575,6 +27575,35 @@ int *sub_1018cc00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d210 size=0xa2
+#include "CPointAngleSensor.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CSensorHandle	// an entity handle with the game's inline Get
+{
+	unsigned int m_Index;
+
+	__inline CBaseEntity *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[m_Index & 0x1fff];
+		if (pSlot->m_Serial == (int)(m_Index >> 13))
+			return (CBaseEntity *)pSlot->m_pEntity;
+		return 0;
+	}
+};
+
+void CPointAngleSensor::sub_1018d210(inputdata_t *pInput)
+{
+	if (sub_1018cf20(((CSensorHandle *)&m_hTargetEntity)->Get(), ((CSensorHandle *)&m_hLookAtEntity)->Get(), m_flDotTolerance))
+		m_OnFacingLookat.sub_100cd660(pInput->pActivator, this, 0);
+	else
+		m_OnNotFacingLookat.sub_100cd660(pInput->pActivator, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018df00 size=0x49
 void *sub_1000db89(int);
 struct GP;
