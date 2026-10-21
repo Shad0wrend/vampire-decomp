@@ -65306,6 +65306,56 @@ void CBaseCombatCharacter::sub_10348490(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10348560 size=0xe4
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+extern "C" int atoi(const char *);
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+#define ECD10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CEngineCmd
+{
+public:
+    ECD10(a) ECD10(b) ECD10(c) ECD10(d) ECD10(e) ECD10(f) ECD10(g) ECD10(h)
+    virtual void i0(); virtual void i1(); virtual void i2(); virtual void i3();
+    virtual const char *Argv(int n);
+};
+
+struct CPlayerUnit : public CBaseEntity
+{
+    void *sub_100952d0(int a);
+    int sub_1008f7b0(const char *label);
+    void sub_10090950();
+};
+
+extern CEngineCmd *g_1070b22c;
+CPlayerUnit *sub_101cd9e0(int index);
+
+void sub_10348560()
+{
+    ScopeTrace trace("CC_Player_Sequence", g_106b8540);
+    CPlayerUnit *pPlayer = sub_101cd9e0(1);
+    const char *pszArg = g_1070b22c->Argv(1);
+    if (pPlayer && pszArg) {
+        if (pPlayer->sub_100952d0(-1)) {
+            int nSequence = atoi(pszArg);
+            if (nSequence <= 0)
+                nSequence = pPlayer->sub_1008f7b0(pszArg);
+            if (nSequence > -1) {
+                *(int *)((char *)pPlayer + 0x6f0) = nSequence;
+                pPlayer->sub_10090950();
+                *(int *)((char *)pPlayer + 0x6f8) = 0;
+                return;
+            }
+            int nDummy;
+            Msg("Could not find sequence named %s in player model:\n\t %s", pszArg, *pPlayer->vfunc9(&nDummy));
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349590 size=0x8a
 #include "CUnknown10349590.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
