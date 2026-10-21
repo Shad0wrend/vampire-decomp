@@ -4,6 +4,8 @@
 
 #include "CVTraitEffect_t.h"
 
+class CVModInfo_t;
+
 class CVTraitEffectGroup_t
 {
 public:
@@ -14,4 +16,5 @@ public:
 	CVTraitEffectGroup_t *vfunc0(unsigned int flags);
 	void sub_1000a38f();
 	void sub_101f73f0(CVStatKV *pKV);	// counts the "TraitEffect" sub keys of pKV, allocates that many effects and loads each from its key
+	void sub_101f7690(int a, CVModInfo_t *pInfo, int c);	// hands (a, pInfo, c) to every effect (stub 0x10015609)
 };
