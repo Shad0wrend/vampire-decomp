@@ -4837,6 +4837,7 @@
 0x100155b4 func   ?sub_1003c3c0@@YIXPAUMem@@HH@Z sub_1003c3c0
 0x100155b9 func   _item_w_uzi item_w_uzi
 0x100155be func   _prop_ragdoll prop_ragdoll
+0x100155c3 func   ?vfunc173@CMultiSource@@UAEXPAVCBaseEntity@@0HM@Z CMultiSource::vfunc173
 0x100155d2 func   ?sub_10185180@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_10185180
 0x100155dc func   ?sub_10221d60@QuestJournal@@QAEPADHH@Z QuestJournal::sub_10221d60
 0x100155e6 func   ?vfunc25@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc25
