@@ -247,6 +247,31 @@ int CNPC_VWerewolf::vfunc142(CUnknown101c2a50 *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d02b0 size=0x108
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+
+extern "C" double __cdecl fabs(double);
+#pragma intrinsic(fabs)
+extern float g_10462950;	// 40.0f
+
+void CNPC_VWerewolf::vfunc561(int a, int b)
+{
+	ScopeTrace trace("CNPC_VWerewolf::GatherAttackConditions", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CEntityVSlots *pEnemy = (CEntityVSlots *)((CEntityVSlots *)this)->slot167();
+	if (((m_nFlags66e8 & 4) == 4 || (m_nFlags66e8 & 0x100) == 0x100) && pEnemy) {
+		float z = ((CEntityVSlots *)this)->slot217()->z;
+		if ((float)fabs(z - pEnemy->slot217()->z) > g_10462950) {
+			sub_10015839(0x51);
+			sub_10015839(0x52);
+			return;
+		}
+	}
+	sub_1026dd10(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d0640 size=0xfc
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
