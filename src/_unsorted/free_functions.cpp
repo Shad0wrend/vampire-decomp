@@ -22283,6 +22283,43 @@ extern "C" GP *raggib()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c840 size=0x82
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct CChildView {
+	char m_pad0000[0x25c];
+	unsigned int m_hMoveParent;	// 0x25c
+};
+
+void sub_1012c6c0(CGlobalEntityList_Ent *pParent, CChildView *pChild);
+void sub_1000a2c7(CChildView *pChild);
+
+inline CGlobalEntityList_Ent *LookupEntity(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+	if (pSlot->m_Serial != (int)(h >> 13))
+		return 0;
+	return pSlot->m_pEntity;
+}
+
+// TARGET: sub_1012c840
+void sub_1012c840(CChildView *pChild)
+{
+	if (LookupEntity(pChild->m_hMoveParent))
+	{
+		unsigned int h = *(volatile unsigned int *)&pChild->m_hMoveParent;
+		CGlobalEntityList_Slot *pSlot;
+		CGlobalEntityList_Ent *pParent = (h != 0xffffffff && (pSlot = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13)) ? pSlot->m_pEntity : 0;
+		sub_1012c6c0(pParent, pChild);
+		sub_1000a2c7(pChild);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c9c0 size=0x6a
 struct TEnt;
 struct TEntry {
