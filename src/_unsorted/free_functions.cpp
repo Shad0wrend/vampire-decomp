@@ -51741,6 +51741,52 @@ float __stdcall sub_1029ca30(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029ea40 size=0xbc
+#include "CAI_BaseNPCTroika.h"
+#include "inputdata_t.h"
+
+extern "C" char *__cdecl strtok(char *, const char *);
+extern char *(__cdecl *g_109f3890)(char *, const char *, int);
+extern void (__cdecl *g_109f3650)(int, const char *, ...);
+extern char g_106b8540[];
+
+#define TV1(n) virtual void tv##n();
+#define TV10(p) TV1(p##0) TV1(p##1) TV1(p##2) TV1(p##3) TV1(p##4) TV1(p##5) TV1(p##6) TV1(p##7) TV1(p##8) TV1(p##9)
+#define TV100(p) TV10(p##0) TV10(p##1) TV10(p##2) TV10(p##3) TV10(p##4) TV10(p##5) TV10(p##6) TV10(p##7) TV10(p##8) TV10(p##9)
+
+struct CTweakParamView	// the NPC's vtable up to slot 585
+{
+	TV100(a) TV100(b) TV100(c) TV100(d) TV100(e)
+	TV10(f0) TV10(f1) TV10(f2) TV10(f3) TV10(f4) TV10(f5) TV10(f6) TV10(f7)
+	TV1(g0) TV1(g1) TV1(g2) TV1(g3) TV1(g4)
+	virtual void slot585(const char *pszName, const char *pszValue);
+
+	const char *sub_100ab4f0();
+};
+
+inline const char *VariantString(variant_t *pValue)
+{
+	if (pValue->fieldType == 2)
+		return pValue->iszValue ? pValue->iszValue : g_106b8540;
+	return pValue->sub_10008805();
+}
+
+void CAI_BaseNPCTroika::sub_1029ea40(inputdata_t *pInput)
+{
+	CTweakParamView *p = (CTweakParamView *)this;
+	char buf[256];
+	variant_t *pValue = &pInput->value;
+	g_109f3890(buf, VariantString(pValue), 256);
+	char *pszName = strtok(buf, ", ");
+	char *pszParam = strtok(0, ", ");
+	if (pszName && pszParam) {
+		p->slot585(pszName, pszParam);
+		return;
+	}
+	g_109f3650(1, "ERROR: %s - Argument to ProcessTweakParam(%s) is in the wrong format.\nShould be 'Param Value'\n", p->sub_100ab4f0(), VariantString(pValue));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0eb0 size=0xb
 void __fastcall sub_100037e2(void *);
 void __fastcall sub_102a0eb0(char *self)

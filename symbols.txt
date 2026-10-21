@@ -4438,6 +4438,7 @@
 0x1001438a func   _item_w_fireaxe item_w_fireaxe
 0x1001439e func   ?sub_1008d450@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d450
 0x100143ad func   _func_button func_button
+0x100143c6 func   ?sub_1029ea40@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029ea40
 0x10014402 func   _env_particle env_particle
 0x1001440c func   ?sub_10055ec0@UtlMem@@QAEXH@Z UtlMem::sub_10055ec0
 0x10014416 func   _prop_dynamic_ornament prop_dynamic_ornament
