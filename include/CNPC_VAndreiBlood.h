@@ -25,4 +25,7 @@ public:
 	virtual int vfunc438();	// slot 438 "CNPC_VAndreiBlood::SelectSchedule": scope trace (no entity name), sets +0x1b2c = 4, then schedule 0x15b without the byte at +0x66cc, 0x15e with the byte at +0x66cd, 0x15d / 0x15c (by sub_1035e920) while the byte at +0x66d4 is clear and the count at +0x66d8 is below +0x66dc, else 0x15a
 	bool sub_1035e920();	// stub 0x1000eba6
 	void sub_1035dd00(inputdata_t *pInput);	// "CNPC_VAndreiBlood::InputTriggerCombat": scope trace (no entity name), sets the byte at +0x66cc, AddClassRelationship(1, 1, 10), slot 461 (SelectIdealState), stamps the source file / line at +0x1b30 / +0x1b34 and runs sub_102ae750(0x15c, 0)
+	void vfunc432(int arg);	// slot 432: without the combat byte at +0x66cc sets the state +0x5cc0 / +0x5cc4 to 1, adds the class relationship (1, 4, 10) while the entity of the handle at +0x628c is not classified 4 and clears bit 2 of +0x5b64; with the byte the state becomes 2; then CNPC_VHuman::vfunc432
+	void sub_10332aa0(int a, int b, int c);	// "AddClassRelationship" (stub 0x10013cf5), called directly
+	void sub_10385a10(int arg);	// CNPC_VHuman::vfunc432 (stub 0x1000698d), called directly
 };
