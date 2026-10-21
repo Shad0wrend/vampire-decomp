@@ -24719,6 +24719,35 @@ void sub_1011d8e0(const char *file, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120f30 size=0x91
+#include "CGameMovement.h"
+struct SIface { virtual void v0(); virtual char vfunc1(); };
+struct SGlobalTime { char pad[0x10]; float frametime; };
+struct SGlobalB { void *vt; char pad[0x24]; float value; };
+extern SGlobalB *g_109ef2d4;
+extern SGlobalTime *g_1070b228;
+
+void CGameMovement::sub_10120f30()
+{
+    char *move = (char *)m_pMove;
+    if (*(float *)(move + 0x2314) != 0.0f)
+        return;
+    float scale;
+    if (*(float *)(move + 0x3ec) != 0.0f)
+        scale = *(float *)(move + 0x3ec);
+    else
+        scale = 1.0f;
+    float *pz = (float *)((char *)m_pPlayer + 0x48);
+    float v;
+    if (((SIface *)g_109ef2d4)->vfunc1())
+        v = 0.0f;
+    else
+        v = g_109ef2d4->value;
+    *pz = *pz - v * g_1070b228->frametime * scale * 0.5;
+    sub_10004ebc();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10122590 size=0xd8
 #include "CGameMovement.h"
 struct SVarA { virtual void v0(); virtual bool v1(); char pad[0x24]; float f28; };

@@ -767,6 +767,7 @@
 0x100043b8 func   ?sub_1034a230@CUnknown1034a230@@QAEXXZ CUnknown1034a230::sub_1034a230
 0x100043bd func   ?sub_101cc810@@YIXPAPAX@Z sub_101cc810
 0x100043c2 func   ?sub_101993c0@@YAPAHPAXPAUPyObj@@@Z sub_101993c0
+0x100043c7 func   ?sub_10120f30@CGameMovement@@QAEXXZ CGameMovement::sub_10120f30
 0x100043ef func   ?sub_100a9800@@YIDPAVCBaseEntity@@@Z sub_100a9800
 0x10004417 func   ?vfunc2@CTEUserTracer@@UAEPAV1@I@Z CTEUserTracer::vfunc2
 0x10004426 func   _item_k_chinese_theatre_key item_k_chinese_theatre_key
