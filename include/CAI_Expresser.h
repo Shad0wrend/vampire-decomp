@@ -38,9 +38,14 @@ struct CAI_ExpresserSub	// 0x1c byte member at +0x30
 	CAI_ExpresserSub() { sub_10311490(); }
 };
 
+struct CAI_ExpresserSink	// the object at +0x10, only its slot 3 is known
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3();
+};
+
 struct CAI_ExpresserTail	// the members at +0x4c .. +0x6f
 {
-	int m_n4c;
+	float m_n4c;
 	int m_n50;
 	char m_pad54[0x64 - 0x54];
 	int m_n64;
@@ -55,7 +60,7 @@ class CAI_Expresser : public CAI_Component
 public:
 	int m_pad08;
 	int m_n0c;
-	int m_n10;
+	CAI_ExpresserSink *m_n10;
 	CAI_ExpresserTree m_Tree;	// 0x14
 	CAI_ExpresserSub m_Sub;	// 0x30
 	CAI_ExpresserTail m_Tail;	// 0x4c
@@ -66,4 +71,6 @@ public:
 		m_Tail.m_n6c = -1;
 		m_Tree.m_pfn2c = (void *)sub_1000feb1;
 	}
+
+	void sub_103121a0(float a, float b);	// (0x103121a0)
 };
