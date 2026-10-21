@@ -26491,6 +26491,39 @@ extern "C" CBaseEntity *func_movelinear()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115c00 size=0x8b
+#include "CBaseEntity.h"
+
+void *sub_100aa720(int size);
+extern void *vt_10461bcc[];
+extern char g_10570e78[];
+void __fastcall sub_1000d5ee(void *pThis);
+void __fastcall sub_10002ddd(void *pThis);
+
+// TARGET: momentary_door
+extern "C" CBaseEntity *momentary_door()
+{
+	void *mem = sub_100aa720(0x608);
+	CBaseEntity *p;
+	if (mem)
+	{
+		p = (CBaseEntity *)mem;
+		sub_1000d5ee(p);
+		sub_10002ddd((char *)p + 0x578);
+		sub_10002ddd((char *)p + 0x590);
+		sub_10002ddd((char *)p + 0x5a8);
+		sub_10002ddd((char *)p + 0x5c0);
+		sub_10002ddd((char *)p + 0x5d8);
+		sub_10002ddd((char *)p + 0x5f0);
+		*(void ***)p = vt_10461bcc;
+	}
+	else
+		p = 0;
+	p->vfunc106(g_10570e78);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101172c0 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
