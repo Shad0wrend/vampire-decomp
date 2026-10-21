@@ -65274,6 +65274,49 @@ void CBaseCombatCharacter::sub_1033d8a0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d9d0 size=0x107
+#include "ScopeTrace.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct SpecialDamageRecord
+{
+	char m_szName[0x20];	// 0x5eb20
+	int m_nLevel;	// 0x5eb40
+};
+
+struct SpecialDamageWeaponInfo
+{
+	char m_pad0000[0x5eb20];
+	SpecialDamageRecord m_record;
+};
+
+struct SpecialDamageWeapon
+{
+	SpecialDamageWeaponInfo *sub_102517b0();
+};
+
+int CBaseCombatCharacter::sub_1033d9d0(CBaseEntity *pOther)
+{
+	ScopeTrace trace("CBaseCombatCharacter::GetSpecialDamageModifier", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pOther && sub_1033d9b0()) {
+		int best = 0;
+		for (int i = 0; i < 0xe0; i++) {
+			SpecialDamageWeapon *pWeapon = (SpecialDamageWeapon *)sub_1032e8b0(i);
+			if (pWeapon) {
+				SpecialDamageRecord *pRec = &pWeapon->sub_102517b0()->m_record;
+				if (pRec->m_nLevel) {
+					const char *pszName = pOther->m_classname11c ? pOther->m_classname11c : g_106b8540;
+					if (!_strcmpi(pszName, pRec->m_szName) && best < pRec->m_nLevel)
+						best = pRec->m_nLevel;
+				}
+			}
+		}
+		return best;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033df80 size=0xdb
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
