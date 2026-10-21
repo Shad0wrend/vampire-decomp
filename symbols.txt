@@ -2493,6 +2493,7 @@
 0x1000c49b func   ?vfunc176@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc176
 0x1000c4be func   _npc_payphone npc_payphone
 0x1000c4cd func   ?sub_102641b0@CUtlVector56@@QAEXH@Z CUtlVector56::sub_102641b0
+0x1000c4e6 func   ?sub_1020f330@CPropSwitch@@QAEXPAUinputdata_t@@@Z CPropSwitch::sub_1020f330
 0x1000c4f0 func   ?sub_1027faa0@UtlMem@@QAEXXZ UtlMem::sub_1027faa0
 0x1000c504 func   ?sub_10046570@CUtlRBTreeFind16@@QAEGPBX@Z CUtlRBTreeFind16::sub_10046570
 0x1000c53b func   ?sub_101970f0@@YAPAUPyObj@@PAXPAU1@@Z sub_101970f0

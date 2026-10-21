@@ -40605,6 +40605,30 @@ void __fastcall sub_1020f2e0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020f330 size=0x87
+#include "CPropSwitch.h"
+#include "inputdata_t.h"
+
+extern float g_1070d1b0[];
+void __cdecl sub_101cf5c0(CBaseEntity *pEntity, const float *pOrigin, int flags);
+
+struct CSwitchVec3 { float x, y, z; };
+
+void CPropSwitch::sub_1020f330(inputdata_t *pInput)
+{
+	int state = (pInput->value.fieldType == 4 ? pInput->value.iValue : 0) - 1;
+	if (state != *(int *)((char *)this + 0x630)) {
+		sub_100b2e30(g_1070d1b0);
+		*(float *)((char *)this + 0x3fc) = -1.0f;
+		*(int *)((char *)this + 0x630) = state;
+		CSwitchVec3 vec = *(CSwitchVec3 *)((char *)this + 0x800);
+		vec.z = *(float *)((char *)this + 0x608 + state * 4);
+		sub_101cf5c0(this, &vec.x, 0);
+		sub_100b3b00();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020f7e0 size=0x43
 #include "CLogicVisible.h"
 void *sub_100aa720(int size);
