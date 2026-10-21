@@ -124,6 +124,32 @@ const char *CNPC_VMingXiao::vfunc408(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395ae0 size=0x75
+#include "CNPC_VMingXiao.h"
+
+struct CNPC_VMingXiaoUnit : CNPC_VMingXiao
+{
+	int sub_10012b3e(int a, void *pWeapon);	// sub_10395650 as the game calls it (through the stub)
+};
+
+void CNPC_VMingXiao::vfunc390(CTakeDamageInfo *pInfo)
+{
+	if (sub_10398870()) {
+		sub_102beda0(pInfo);
+		return;
+	}
+	CTakeDamageInfo info = *pInfo;
+	void *pWeapon;
+	if (info.m_pAttacker == 0)
+		pWeapon = 0;
+	else
+		pWeapon = info.m_pAttacker->m_pWeapon;
+	int nCode = ((CNPC_VMingXiaoUnit *)this)->sub_10012b3e((int)&info, pWeapon);
+	sub_10395750(nCode, &info, pWeapon);
+	sub_102beda0(&info);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10396fd0 size=0x18
 #include "CNPC_VMingXiao.h"
 
