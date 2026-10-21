@@ -35,12 +35,16 @@ public:
 	void sub_100f11b0();	// the door reached the open position (state 1): installs the touch function, fires the output at +0x5dc (flag 1 of +0x204 set) or +0x5c4 with the activator of the handle at +0x53c, closes the area portals (sub_100efbf0(0)) and runs slot 249
 	void sub_100ee4e0(int a, int b);	// stdcall helper called first with the global at 0x106eb3dc and 0 (stub 0x1000ae20)
 	void sub_100f0860();	// the door reached the closed position (state 0): clears the byte at +0x655, installs the touch function (flag 0x20 of +0x204 with 0x400) or schedules the auto-return think (curtime + the wait at +0x500; -1.0f stays -1.0f), tells the AI of the activator (the dword at +0x94 of the entity behind the handle at +0x53c) to forget the door, clears +0x640, fires the output at +0x5c4 (flag 1) or +0x5dc with the activator, and runs slot 249
+	void vfunc177(CBaseEntity *pOther);	// "CBaseDoor::StartBlocked": scope trace (empty names), while closing (state 3) only fires the output at +0x564 for pOther; else makes the AI of the activator (dword +0x94 of the entity behind the handle at +0x53c) and of pOther mark this door (sub_100f0e90(2) / (0x80) then sub_1027de00 / sub_1027dfb0), and fires the output at +0x57c for pOther
+	void sub_100f0e90(int flags);	// CAI_BaseNPCTroika::sub_100f0e90 (stub 0x100080df), called directly on the door
 
 	char m_pad03e0[0x4a4 - 0x3e0];
 	CDoorEventList m_items4a4[2];	// +0x4a4, +0x4bc
 	char m_pad04d4[0x4f8 - 0x4d4];
 	int m_nState4f8;	// +0x4f8: door state (0 closed at rest, 1 open at rest, 2 / 3 moving)
-	char m_pad04fc[0x564 - 0x4fc];
+	char m_pad04fc[0x53c - 0x4fc];
+	unsigned int m_hActivator53c;	// +0x53c: entity handle of the activator
+	char m_pad0540[0x564 - 0x540];
 	CDoorEventList m_items564[8];	// +0x564 .. +0x60c (the lists at +0x5dc / +0x60c are two of them)
 	char m_pad0624[0x628 - 0x624];
 	unsigned int m_hDoorknob0;	// +0x628
