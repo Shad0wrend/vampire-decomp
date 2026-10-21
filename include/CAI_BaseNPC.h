@@ -129,8 +129,7 @@ public:
 	CAI_NPC_V(540)
 	virtual CUnknown102e0150 *vfunc541();	// the NPC's memory list (the same object type as CUnknown102dfc10: nodes at +0xc linked through +0x38)
 	virtual void vfunc542();
-	CAI_NPC_V(543)
-	virtual char vfunc544(CBaseEntity *pEnt, int a, int b);	// "UpdateEnemyMemory": true without a memory list; else (unless pEnt's AI is in the same squad with no pending count) tells the memory list about pEnt (sub_102e0210) and runs slot 494 when that accepts, then updates the list with (the list's +0x2c, pEnt, a, b) through sub_102df700
+	CAI_NPC_V(543) CAI_NPC_V(544)
 	virtual bool vfunc545();	// finds the squad (+0x5da4) from the name at +0x5da8 when the class flags ask for one; true when it has one
 	CAI_NPC_V(546) CAI_NPC_V(547) CAI_NPC_V(548) CAI_NPC_V(549)
 	CAI_NPC_V(550) CAI_NPC_V(551)
@@ -184,4 +183,5 @@ public:
 	int sub_10007e19();	// CBaseCombatCharacter member (the stub at 0x10007e19 for 0x1032e7b0), called directly
 	int sub_10005dd5(float *pBox);	// CBaseCombatCharacter member (the stub at 0x10005dd5 for 0x10333ad0), called directly with a three-float box
 	void sub_102695d0();	// scope trace (entity name), makes the entity fully visible when its field at +0x16c is 0 (alpha byte +0x1a3 = 0xff, field = 2), AddSolidFlags(4) on the collision property at +0x270 (inlined scope trace), sub_100b2f50(zero vector), sub_100b3b00(), next think = curtime + 10.0, ThinkSet(think stub 0x100152b2, 0, 0)
+	void sub_1027dd10(CBaseEntity *pEnt);	// run when the NPC stops caring about pEnt: only while slot 158 holds and pEnt is set; when it is the entity of the handle at +0x5d24 slot 532(1); lets the object at +0x5d34 finish (sub_102ee2c0 when sub_102ee2e0 holds), sets the byte at +0x1a40, runs slot 528, and clears the state at +0x644c (1 or 2) of the object at +0x98
 };
