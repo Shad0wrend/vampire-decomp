@@ -67,3 +67,24 @@ void CNPC_VManBat::vfunc104()
 	sub_101d0ec0("item_w_manbat_claw");
 }
 // END FUNCTION
+
+// FUNCTION: 0x1038e8c0 size=0x9f
+#include "CNPC_VManBat.h"
+#include "CEHandleGet.h"
+
+void sub_101cd940(CGlobalEntityList_Ent *pEnt);
+
+// TARGET: CNPC_VManBat::vfunc144
+void CNPC_VManBat::vfunc144(int arg)
+{
+	sub_1038f020(1);
+	sub_1038c170(2);
+	sub_1038f660();
+	sub_1038fd40();
+	if (EHandle_Get(m_h66a4)) {
+		sub_101cd940(EHandle_Get(m_h66a4));
+		m_h66a4 = 0xffffffff;
+	}
+	sub_103c4f40(arg);
+}
+// END FUNCTION
