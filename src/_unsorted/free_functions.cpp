@@ -27595,6 +27595,51 @@ extern "C" GP *func_platrot()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d6d0 size=0x82
+#include "CBasePlayer.h"
+
+#define VM10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+// The view model entity as this function sees it: slots 1, 62 and 93 are typed.
+struct CViewModelUnit
+{
+	virtual void a0();
+	virtual unsigned int *vfunc1();
+	virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	VM10(b) VM10(c) VM10(d) VM10(e) VM10(f)
+	virtual void g0(); virtual void g1();
+	virtual void vfunc62(const float *pOrigin);
+	virtual void g3(); virtual void g4(); virtual void g5(); virtual void g6(); virtual void g7(); virtual void g8(); virtual void g9();
+	VM10(h) VM10(i)
+	virtual void j0(); virtual void j1(); virtual void j2();
+	virtual void vfunc93(int moveType, int moveCollide);
+	void sub_1042b9c0(CBasePlayer *pOwner);
+	void sub_1042ba00(int index);
+	void sub_1009ee80(CBasePlayer *pEnt);
+};
+
+CViewModelUnit *sub_10136580(const char *classname);
+void sub_101d1280(CViewModelUnit *pEnt);
+
+// TARGET: CBasePlayer::sub_1015d6d0
+void CBasePlayer::sub_1015d6d0(int index)
+{
+    if (sub_1015d680(index))
+        return;
+    CViewModelUnit *pVM = sub_10136580("viewmodel");
+    if (pVM) {
+        pVM->vfunc62(vfunc220());
+        pVM->sub_1042b9c0(this);
+        pVM->sub_1042ba00(index);
+        sub_101d1280(pVM);
+        pVM->vfunc93(11, 0);
+        pVM->sub_1009ee80(this);
+        ((unsigned int *)((char *)this + 0x2308))[index] = *pVM->vfunc1();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015eec0 size=0xe
 bool CUnknown1015ef20::sub_1015eec0()
 {
