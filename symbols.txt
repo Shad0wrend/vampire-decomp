@@ -4717,6 +4717,7 @@
 0x100158cf func   ?sub_102f65b0@@YAXXZ sub_102f65b0
 0x100158e8 func   ?vfunc208@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc208
 0x100158f7 func   ?sub_1038c170@CNPC_VManBat@@QAEXH@Z CNPC_VManBat::sub_1038c170
+0x100158fc func   ?sub_101034f0@@YAXXZ sub_101034f0
 0x10015901 func   ?sub_102ed9c0@CAI_Navigator@@QAE_NHHHHHHHPAVVector@@@Z CAI_Navigator::sub_102ed9c0
 0x10015915 func   ?sub_100eb3d0@CStrHolder100eb3d0@@QAE_NXZ CStrHolder100eb3d0::sub_100eb3d0
 0x1001591f func   ?sub_1008d6d0@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_1008d6d0

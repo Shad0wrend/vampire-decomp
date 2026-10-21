@@ -21676,6 +21676,35 @@ void CUnknown10103100::sub_10103100(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101034f0 size=0xb2
+#include "CUnknown1070b22c.h"
+
+extern "C" double __cdecl atof(const char *);
+extern CUnknown1070b22c *g_1070b22c;
+extern float g_1070917c;
+extern float g_10709180;
+extern float g_10709184;
+extern float g_10709188;
+void *__cdecl sub_101193b0();
+void __cdecl sub_101cde40(void *pPlayer, float a, float b, float c, float d, int e);
+
+// TARGET: sub_101034f0
+void sub_101034f0()
+{
+	void *pPlayer = sub_101193b0();
+	int nMode = 6;
+	if (pPlayer) {
+		if (g_1070b22c->vfunc85() == 4) {
+			g_1070917c = (float)atof(g_1070b22c->vfunc84(1));
+			g_10709180 = (float)atof(g_1070b22c->vfunc84(2));
+			g_10709184 = (float)atof(g_1070b22c->vfunc84(3));
+			nMode = 5;
+		}
+		sub_101cde40(pPlayer, g_1070917c, g_10709180, g_10709184, g_10709188, nMode);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103c80 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
