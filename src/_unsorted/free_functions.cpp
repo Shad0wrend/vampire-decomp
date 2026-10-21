@@ -9933,6 +9933,25 @@ int CBaseAnimating::sub_1008d7c0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008d8b0 size=0xa3
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+void sub_100fce70(CBaseAnimating *pEnt, const char *pszParticle);
+
+void CBaseAnimating::sub_1008d8b0(inputdata_t *pInput)
+{
+    ScopeTrace st("CBaseAnimating::InputSpawnTempParticle", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    variant_t *pValue = &pInput->value;
+    const char *psz;
+    if (pValue->fieldType == 2)
+        psz = pValue->iszValue ? pValue->iszValue : g_106b8540;
+    else
+        psz = pValue->sub_10008805();
+    sub_100fce70(this, psz);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008d990 size=0xf0
 #include "ScopeTrace.h"
 #include "CBaseAnimating.h"
