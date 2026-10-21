@@ -11,10 +11,14 @@ public:
 
 	char m_pad0000[0x10c];
 	unsigned int m_hActivator10c;	// +0x10c: entity handle passed as the activator of the name search
-	char m_pad0110[0x454 - 0x110];
+	char m_pad0110[0x450 - 0x110];
+	const char *m_name450;	// +0x450: name of the condition
 	const char *m_name454;	// +0x454: name of the entity to look up
 	char m_pad0458[0x488 - 0x458];
 	unsigned int m_hEntity488;	// +0x488: cached handle of the entity found by name
+	int m_nCondition;	// +0x48c: the condition id (not positive when the name was invalid)
 
 	CBaseEntity *sub_10135720();	// resolves the cached handle at +0x488, searching the entity by name when it is stale
+	const char *sub_1000b5cd(const char *pszName);	// stub 0x1000b5cd (CBaseEntity::GetDebugName-like, called with the name text)
+	bool sub_10135840();	// tests the condition on the target NPC; warns when the condition is invalid or the NPC is missing
 };
