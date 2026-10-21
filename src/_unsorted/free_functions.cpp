@@ -19756,6 +19756,39 @@ void sub_100dac20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dad50 size=0xa3
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "CUnknown1070b22c.h"
+
+extern "C" int atoi(const char *);
+extern CUnknown1070b22c *g_1070b22c;
+void *sub_101193b0();
+void sub_101cd940(void *pEntity);
+
+// TARGET: sub_100dad50
+void sub_100dad50()
+{
+	void *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		CBaseCombatCharacter *pChar = *(CBaseCombatCharacter **)((char *)pPlayer + 0xa8);
+		if (pChar) {
+			if (g_1070b22c->vfunc85() == 3) {
+				int a = atoi(g_1070b22c->vfunc84(1));
+				int b = atoi(g_1070b22c->vfunc84(2));
+				pChar->sub_103387a0(a);
+				pChar->vfunc111();
+				CEntityVSlots *pWeapon = (CEntityVSlots *)pChar->sub_1032e8b0(b);
+				if (pWeapon) {
+					((CEntityVSlots *)pChar)->slot385(pWeapon, 0, 0);
+					sub_101cd940(pWeapon);
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db3f0 size=0x8
 extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
