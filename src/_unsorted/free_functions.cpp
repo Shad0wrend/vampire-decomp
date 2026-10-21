@@ -20683,6 +20683,38 @@ void sub_100d6820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d6930 size=0x70
+struct CDebugListEntry { void sub_101f76e0(); };
+int sub_10431c2f(char *, const char *, ...);
+
+struct CCmdPlayer {
+	char m_pad[0xa8];
+	void *m_pAI;
+};
+
+struct CTraitEffectTable {
+	CDebugListEntry *sub_101f8480(int index);
+};
+extern CTraitEffectTable g_1074df78;
+extern int g_1074df7c;
+
+CCmdPlayer *sub_101193b0();
+void sub_101ce620(void *pAI, int a, const char *msg, int b, int c, int d, int e);
+
+void sub_100d6930()
+{
+	char buf[64];
+	CCmdPlayer *p = sub_101193b0();
+	if (p && p->m_pAI) {
+		void *pAI = p->m_pAI;
+		sub_10431c2f(buf, "\n\tAvailable Trait Effects (%d):\n\n", g_1074df7c);
+		sub_101ce620(pAI, 2, buf, 0, 0, 0, 0);
+		for (int i = 0; i < g_1074df7c; i++)
+			g_1074df78.sub_101f8480(i)->sub_101f76e0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d7210 size=0x7e
 #include <stdlib.h>
 
