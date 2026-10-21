@@ -47,7 +47,7 @@ public:
 	CAI_NPC_V(210) CAI_NPC_V(211) CAI_NPC_V(212) CAI_NPC_V(213) CAI_NPC_V(214) CAI_NPC_V(215) CAI_NPC_V(216)
 	virtual float *vfunc217();	// "CBaseEntity::GetAbsOrigin"
 	CAI_NPC_V(218) CAI_NPC_V(219)
-	CAI_NPC_V(220)
+	virtual float *vfunc220();	// "CBaseEntity::GetOrigin": the pointer to the three origin floats at +0x41c
 	virtual float *vfunc221();	// "CBaseEntity::GetAngles": the pointer to the three angle floats at +0x428
 	CAI_NPC_V(222) CAI_NPC_V(223) CAI_NPC_V(224) CAI_NPC_V(225) CAI_NPC_V(226) CAI_NPC_V(227) CAI_NPC_V(228) CAI_NPC_V(229)
 	CAI_NPC_V10(23) CAI_NPC_V10(24) CAI_NPC_V10(25) CAI_NPC_V10(26) CAI_NPC_V10(27) CAI_NPC_V10(28)
