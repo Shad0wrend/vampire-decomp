@@ -42926,6 +42926,26 @@ CRecListUnit *CRecListUnit::sub_101dcb80(const CRecListUnit *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dd3c0 size=0x90
+#include "CUnknown101e0f00.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+void CUnknown101e0f00Src::sub_101dd3c0(const char *pszLabel)
+{
+	char buf[512];
+	if (m_nA || m_sub.sub_101dc750()) {
+		Q_snprintf(buf, 512, "[%s]:\n", pszLabel);
+		Msg("%s", buf);
+		for (int i = 0; i < m_nA; i++)
+			m_ppA[i]->sub_101dc8a0();
+		for (int j = 0; j < m_nB; j++)
+			m_ppB[j]->sub_101dc150();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd910 size=0xde
 #include "CUnknown101dd910.h"
 #include "ScopeTrace.h"
