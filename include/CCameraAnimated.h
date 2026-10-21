@@ -21,4 +21,6 @@ public:
 	void sub_1008b3c0(); // base class destructor
 	CCameraAnimated *vfunc5(unsigned char flags); // scalar deleting destructor
 	void vfunc104(); // slot 104: precaches the model
+	void vfunc103();	// slot 103 "Spawn"-like: sets the model from the model name (slots 104, 105) or, without one, warns "missing modelname" with the origin and removes the entity
+	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd)
 };
