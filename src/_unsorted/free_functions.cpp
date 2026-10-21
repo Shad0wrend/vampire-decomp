@@ -58012,6 +58012,66 @@ void CAI_BaseNPC::sub_10252470(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102524f0 size=0xb7
+#include "CBaseCombatCharacter.h"
+
+struct CWeaponOwner
+{
+	char m_pad0000[0x2668];
+	int m_n2668;	// 0x2668
+};
+
+struct CAmmoEntry_102524f0
+{
+	int sub_10427620();	// stub 0x1000a37b
+};
+
+// the global at 0x1070ba0c: slot 55 is asked without an argument (is there a table) and with the ammo type (its entry)
+#define AMMO_V(n) virtual void vfunc##n();
+struct CAmmoCheck_102524f0
+{
+	AMMO_V(0) AMMO_V(1) AMMO_V(2) AMMO_V(3) AMMO_V(4) AMMO_V(5) AMMO_V(6) AMMO_V(7) AMMO_V(8) AMMO_V(9)
+	AMMO_V(10) AMMO_V(11) AMMO_V(12) AMMO_V(13) AMMO_V(14) AMMO_V(15) AMMO_V(16) AMMO_V(17) AMMO_V(18) AMMO_V(19)
+	AMMO_V(20) AMMO_V(21) AMMO_V(22) AMMO_V(23) AMMO_V(24) AMMO_V(25) AMMO_V(26) AMMO_V(27) AMMO_V(28) AMMO_V(29)
+	AMMO_V(30) AMMO_V(31) AMMO_V(32) AMMO_V(33) AMMO_V(34) AMMO_V(35) AMMO_V(36) AMMO_V(37) AMMO_V(38) AMMO_V(39)
+	AMMO_V(40) AMMO_V(41) AMMO_V(42) AMMO_V(43) AMMO_V(44) AMMO_V(45) AMMO_V(46) AMMO_V(47) AMMO_V(48) AMMO_V(49)
+	AMMO_V(50) AMMO_V(51) AMMO_V(52) AMMO_V(53) AMMO_V(54)
+	virtual void *vfunc55();
+};
+struct CAmmoLookup_102524f0
+{
+	AMMO_V(0) AMMO_V(1) AMMO_V(2) AMMO_V(3) AMMO_V(4) AMMO_V(5) AMMO_V(6) AMMO_V(7) AMMO_V(8) AMMO_V(9)
+	AMMO_V(10) AMMO_V(11) AMMO_V(12) AMMO_V(13) AMMO_V(14) AMMO_V(15) AMMO_V(16) AMMO_V(17) AMMO_V(18) AMMO_V(19)
+	AMMO_V(20) AMMO_V(21) AMMO_V(22) AMMO_V(23) AMMO_V(24) AMMO_V(25) AMMO_V(26) AMMO_V(27) AMMO_V(28) AMMO_V(29)
+	AMMO_V(30) AMMO_V(31) AMMO_V(32) AMMO_V(33) AMMO_V(34) AMMO_V(35) AMMO_V(36) AMMO_V(37) AMMO_V(38) AMMO_V(39)
+	AMMO_V(40) AMMO_V(41) AMMO_V(42) AMMO_V(43) AMMO_V(44) AMMO_V(45) AMMO_V(46) AMMO_V(47) AMMO_V(48) AMMO_V(49)
+	AMMO_V(50) AMMO_V(51) AMMO_V(52) AMMO_V(53) AMMO_V(54)
+	virtual CAmmoEntry_102524f0 *vfunc55(int nAmmoType);
+};
+extern CAmmoCheck_102524f0 *g_1070ba0c;
+
+char CBaseCombatWeapon::sub_102524f0(CBaseCombatCharacter *pOwner)
+{
+	int nAmmoType = m_nAmmoType;
+	if (nAmmoType < 0)
+		return 0;
+	if (!sub_102517b0())
+		return 0;
+	if (!&sub_102517b0()->m_n2668)
+		return 0;
+	if (!g_1070ba0c->vfunc55())
+		return 0;
+	int nValue = ((CAmmoLookup_102524f0 *)g_1070ba0c)->vfunc55(nAmmoType)->sub_10427620() + sub_102517b0()->m_n2668;
+	if (!pOwner) {
+		pOwner = (CBaseCombatCharacter *)sub_102521f0();
+		if (!pOwner)
+			return 0;
+	}
+	int nHeld = pOwner->sub_103346c0(nAmmoType);
+	return nValue == nHeld + *(int *)((char *)this + 0x74c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102525e0 size=0xa2
 #include "CBaseCombatWeapon.h"
 #include "CBaseCombatCharacter.h"
