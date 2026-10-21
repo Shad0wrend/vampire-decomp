@@ -184,4 +184,9 @@ public:
 	void sub_1008eec0(const char *pszName, int a, int b);	// CBaseAnimating member (stub 0x1000577c), called directly
 	void sub_10273180(int a);	// CAI_BaseNPC member (stub 0x10013b97), called directly
 	void sub_103cade0();	// finds the doors of the level: calls slot 251 on every "trigger_werewolf_zone", then stores the handles of the func_movelinear entities named "rotdoor1" / "rotdoor2" (-1 when missing) at +0x6684 / +0x6688
+	void vfunc103();	// slot 103 "CNPC_VWerewolf::Spawn": scope trace (entity name), the model name pointer at +0x10e4 (the global "Werewolf" text unless empty), CAI_BaseNPCTroika::vfunc103, entity flag 0x2000, then resets a few fields and the collision property
+	void sub_10298d30();	// CAI_BaseNPCTroika::vfunc103 (stub 0x1000303a), called directly
+	void sub_100b3580(unsigned int flags);	// CBaseEntity::AddFlag (stub 0x10003620), called directly
+	void sub_100b3900(unsigned int flags);	// CBaseEntity::RemoveFlag2 (stub 0x1000df44), called directly
+	void sub_100b3840(unsigned int flags);	// CBaseEntity::AddFlag2 (stub 0x100027bb), called directly
 };
