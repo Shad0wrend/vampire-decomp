@@ -43242,6 +43242,39 @@ void S101e0310::sub_101e0310()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0520 size=0x8b
+#include "CUnknown101e0f00.h"
+#include "CUnknown101e0040.h"
+
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+CUnknown101e0f00Entry *CUnknown101e0f00Entry::sub_101e0520(int id)
+{
+	m_range.sub_101db960();
+	m_projectile.sub_101dd480();
+	((CUnknown101e0f00Src *)m_srcInstant)->sub_101dcb20();
+	((CUnknown101e0f00Src *)m_srcHit)->sub_101dcb20();
+	((CUnknown101e0040 *)m_tail)->sub_101e0040();
+	m_id = id;
+	m_n10 = -1;
+	m_n14 = 0;
+	m_bOvert = 0;
+	m_b30 = 0;
+	m_b31 = 0;
+	m_b32 = 0;
+	m_b33 = 0;
+	m_b34 = 0;
+	m_b35 = 0;
+	if (id < 30) {
+		m_nMask = 1 << id;
+	} else {
+		DevMsg("ERROR: Overflowed targeted discipline flags: %d!  You MUST fix this!!!\n", id);
+		m_nMask = 0;
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0c30 size=0xee
 #include "CUnknown101e0c30.h"
 

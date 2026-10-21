@@ -4147,6 +4147,7 @@
 0x10011bbc func   ?sub_10032b70@UtlMem@@QAEXXZ UtlMem::sub_10032b70
 0x10011bc1 func   ?sub_10081e50@@YIXPAUCSlots@@HH@Z sub_10081e50
 0x10011bd0 func   ?sub_100b79c0@@YIPADPAD@Z sub_100b79c0
+0x10011bd5 func   ?sub_101e0520@CUnknown101e0f00Entry@@QAEPAU1@H@Z CUnknown101e0f00Entry::sub_101e0520
 0x10011bf8 func   ?vfunc5@CItemGHorrorTape_1@@QAEPAV1@I@Z CItemGHorrorTape_1::vfunc5
 0x10011c07 func   ?sub_101eac50@CUnknown101eac50@@QAEXXZ CUnknown101eac50::sub_101eac50
 0x10011c0c func   ?vfunc600@CNPC_VHuman@@UAEDH@Z CNPC_VHuman::vfunc600
