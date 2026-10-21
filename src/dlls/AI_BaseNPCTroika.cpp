@@ -146,6 +146,73 @@ int CAI_BaseNPCTroika::sub_102b6fe0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b8a60 size=0x17d
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown102b5dc0.h"
+
+namespace block_102b8a60 {
+	struct CUnknown102b5dc0Unit : CUnknown102b5dc0
+	{
+		void sub_102b5dc0(int value);
+	};
+
+	void CUnknown102b5dc0Unit::sub_102b5dc0(int value)
+	{
+		m_unk63f4 = value;
+	}
+}
+using namespace block_102b8a60;
+
+#define NPC_DWORD(off) (*(unsigned int *)((char *)this + (off)))
+#define NPC_FILE(off) (*(const char **)((char *)this + (off)))
+#define SRC_FILE "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"
+#define SET_SRC(ln) { NPC_DWORD(0x1b34) = (ln); NPC_FILE(0x1b30) = SRC_FILE; }
+
+// TARGET: CAI_BaseNPCTroika::sub_102b8a60
+int CAI_BaseNPCTroika::sub_102b8a60()
+{
+	if (sub_10269d30(3) && !(NPC_DWORD(0x5d8c) & 0x8000000)) {
+		SET_SRC(0x5f38);
+		return 0x60;
+	}
+	if (sub_10269d30(1) || sub_10269d30(5) || sub_10014df8(0x26)) {
+		((CUnknown102b5dc0Unit *)this)->sub_102b5dc0(3);
+		if (NPC_DWORD(0x5d8c) & 0x8000000) {
+			if (NPC_DWORD(0x14b8) & 0x200000) {
+				char bCond = sub_10014df8(4);
+				NPC_FILE(0x1b30) = SRC_FILE;
+				if (bCond) {
+					NPC_DWORD(0x1b34) = 0x5f48;
+					return 0x5e;
+				}
+				NPC_DWORD(0x1b34) = 0x5f4c;
+				return 0x5c;
+			} else {
+				SET_SRC(0x5f51);
+				return 0x5a;
+			}
+		} else {
+			SET_SRC(0x5f56);
+			return 0x59;
+		}
+	}
+	if (sub_10269d30(2)) {
+		if ((NPC_DWORD(0x5d8c) & 0x8000000) && sub_10014df8(4)) {
+			SET_SRC(0x5f5e);
+			return 0x5f;
+		}
+		SET_SRC(0x5f62);
+		return 0x5d;
+	} else {
+		if (NPC_DWORD(0x14b8) & 0x200000) {
+			SET_SRC(0x5f71);
+			return 0x5c;
+		}
+		return 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b8c40 size=0x65
 #include "CAI_BaseNPCTroika.h"
 

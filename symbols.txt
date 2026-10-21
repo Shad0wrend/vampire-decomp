@@ -1159,6 +1159,7 @@
 0x10005cef func   ?sub_10185910@@YIXPAUMem16@@HH@Z sub_10185910
 0x10005cfe func   _func_rot_button func_rot_button
 0x10005d12 func   ?sub_10092ef0@CBaseAnimating@@QAE_NHPAM0@Z CBaseAnimating::sub_10092ef0
+0x10005d1c func   ?sub_102b8a60@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102b8a60
 0x10005d21 func   ?vfunc63@CSingleplayRules@@UAEPBDH@Z CSingleplayRules::vfunc63
 0x10005d26 func   ?vfunc5@CRagGib@@QAEPAV1@I@Z CRagGib::vfunc5
 0x10005d2b func   ?vfunc18@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::vfunc18
