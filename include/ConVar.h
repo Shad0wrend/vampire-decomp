@@ -4,6 +4,9 @@
 class ConVar
 {
 public:
+	ConVar(const char *pName, const char *pDefaultValue, int flags);	// "ConVar::ConVar" (stub 0x10006488, function 0x10245a40): base constructor, stores the vftable, then Create(name, default, flags, no help, no limits, no callback); a function-local static ConVar is built with it behind a guard byte
+	~ConVar();	// "ConVar::~ConVar" (stub 0x100108bb): the atexit destroy of such a static jumps to it
+
 	virtual ConVar *vfunc0(unsigned int flags);
 	virtual char vfunc1();	// "IsCommand"-like test (a boolean answer in al)
 	virtual void vfunc2();
