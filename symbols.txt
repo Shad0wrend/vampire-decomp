@@ -4180,6 +4180,7 @@
 0x10010cf3 func   ?sub_101d9210@CUnknown101d9210@@QAEXXZ CUnknown101d9210::sub_101d9210
 0x10010d0c func   ?sub_100dda50@CUnknown100dda50@@QAEDXZ CUnknown100dda50::sub_100dda50
 0x10010d1b func   ?sub_10180e70@@YAXXZ sub_10180e70
+0x10010d43 func   ?sub_10161d20@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10161d20
 0x10010d48 func   ?vfunc127@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc127
 0x10010d4d func   ?sub_101b72e0@CMem8_t@@QAEXH@Z CMem8_t::sub_101b72e0
 0x10010d52 func   ?sub_10073410@CUnknown100735a0@@QAEPAV1@PBV1@@Z CUnknown100735a0::sub_10073410

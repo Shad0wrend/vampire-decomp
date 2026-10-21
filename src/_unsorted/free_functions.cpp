@@ -34074,6 +34074,70 @@ void CBasePlayer::sub_101618e0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161d20 size=0x14d
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+void *sub_10002e32(const char *pszName);
+void sub_101d1280(CEntityVSlots *pEnt);
+void sub_101cf390(CEntityVSlots *pEnt, int a, int b);
+void sub_101cf600(CEntityVSlots *pEnt);
+
+struct CPlaceholderLink {
+	virtual void v0();
+	virtual unsigned int *vfunc1();
+};
+struct CPlaceholderObj {
+	char m_pad[0x98];
+	CPlaceholderLink *m_pLink;
+	CPlaceholderLink *GetLink() { return m_pLink; }
+};
+struct CPlaceholderEnt : CEntityVSlots {
+	char m_pad[0x19c - sizeof(CEntityVSlots)];
+	unsigned int m_nFlags;
+	EVS(606) EVS(607) EVS(608) EVS(609) EVS(610) EVS(611) EVS(612) EVS(613)
+	virtual void slot614();
+};
+struct CPlayerHandleFields {
+	char m_pad[0x1da4];
+	unsigned int m_h1da4;
+};
+
+CBaseEntity *CBasePlayer::sub_10161d20()
+{
+	CPlayerHandleFields *f = (CPlayerHandleFields *)this;
+	if (!EHandle_Get(f->m_h1da4)) {
+		CPlaceholderObj *pObj = (CPlaceholderObj *)sub_10002e32("npc_VPlaceholder");
+		CPlaceholderLink *pLink = (pObj == 0) ? 0 : pObj->GetLink();
+		if (pLink != 0) {
+			unsigned int *ph = pLink->vfunc1();
+			f->m_h1da4 = *ph;
+		} else {
+			f->m_h1da4 = 0xffffffff;
+		}
+	}
+	CPlaceholderEnt *pEnt = (CPlaceholderEnt *)EHandle_Get(f->m_h1da4);
+	if (pEnt) {
+		CEntityVSlots *me = (CEntityVSlots *)this;
+		int tmp;
+		pEnt->slot62((const float *)me->slot217());
+		pEnt->slot64((const float *)me->slot221());
+		pEnt->slot202(me);
+		const char *pszName = *me->slot9(&tmp);
+		pEnt->slot105(pszName ? pszName : "");
+		sub_101d1280(pEnt);
+		int a = m_sub270.vfunc1();
+		int b = m_sub270.vfunc2();
+		sub_101cf390(pEnt, a, b);
+		sub_101cf600(pEnt);
+		pEnt->m_nFlags |= 0x60;
+		pEnt->slot614();
+	}
+	return (CBaseEntity *)pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161ed0 size=0x2d
 #include "CBasePlayer.h"
 
