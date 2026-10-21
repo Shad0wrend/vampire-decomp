@@ -196,4 +196,5 @@ public:
 	void sub_1026dd10(int a, int b);	// CAI_BaseNPC::vfunc561 (stub 0x1000ca4f), called directly
 	bool sub_103d2810(void *pHint);	// "CNPC_VWerewolf::IsImperativeRandomMoveHint": scope trace (entity name); for a hint of type 0x3aa8 whose time check against the global at 0x1093d574 passes and that slot 617 / HasPath accept, true; else sub_103d2070(pHint)
 	bool sub_103d2070(void *pHint);	// the fallback of sub_103d2810 (stub 0x10005911)
+	void sub_103cc450();	// "CNPC_VWerewolf::UpdateConditionShouldBreakHint": scope trace (entity name), SetCondition(0x7b); the break hint handle at +0x66c4 is dropped unless bit 1 of the attack state (+0x66e8) is set; with a valid break hint (sub_103d8550) and HasPath from this entity's origin (slot 217) to the hint's ground point it signals the object behind the global 0x10924a6c (slot 1) and sets condition 0x7b again (sub_10269a20)
 };
