@@ -67,6 +67,63 @@ void CWeaponPhysCannon::vfunc326()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040e6c0 size=0x113
+#include "CWeaponPhysCannon.h"
+
+struct GlobalVarsX { int pad0[3]; float curtime; };
+extern GlobalVarsX *g_1070b228;
+
+struct CannonView1040e6c0 {
+	char pad0[0x730];
+	float m_f730;
+	float m_f734;
+	char pad1[0x91c - 0x738];
+	unsigned int m_n91c;
+};
+struct CharView1040e6c0 {
+	char pad[0xa8];
+	struct PlayerView1040e6c0 *m_pPlayer;
+};
+struct PlayerView1040e6c0 {
+	char pad[0x2088];
+	unsigned int m_n2088;
+	unsigned int m_n208c;
+};
+
+void CWeaponPhysCannon::vfunc327()
+{
+	CannonView1040e6c0 *c = (CannonView1040e6c0 *)this;
+	if (!(c->m_f734 > g_1070b228->curtime)) {
+		CharView1040e6c0 *pOwner = (CharView1040e6c0 *)sub_102521f0();
+		if (pOwner) {
+			PlayerView1040e6c0 *pPlayer = pOwner->m_pPlayer;
+			if (pPlayer) {
+				if (m_bGrab911 && (pPlayer->m_n208c & 0x800)) {
+					c->m_f730 = g_1070b228->curtime + 0.5;
+					c->m_f734 = g_1070b228->curtime + 0.5;
+					sub_104106a0(1, 0);
+					vfunc307(0xbc);
+					return;
+				}
+				switch (sub_1040e9c0()) {
+				case 0:
+					vfunc307(0xbc);
+					c->m_f734 = g_1070b228->curtime + 0.5f;
+					c->m_n91c |= pPlayer->m_n2088;
+					break;
+				case 1:
+					c->m_f734 = g_1070b228->curtime + 0.1f;
+					break;
+				case 2:
+					c->m_f734 = g_1070b228->curtime + 0.01f;
+					break;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10410ae0 size=0xd0
 #include "CWeaponPhysCannon.h"
 #include "CBaseCombatCharacter.h"
