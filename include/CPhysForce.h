@@ -1,6 +1,12 @@
 // CPhysForce: physics force entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
 
+// The motion record embedded at +0x464 (class not known): two points, each stored twice.
+struct CPhysForceMotion
+{
+	void sub_10025f00(const float *pStart, const float *pEnd);	// stub 0x10015398: copies pStart / pEnd into the two start / end pairs (+8..+0x34)
+};
+
 class CPhysForce
 {
 public:
@@ -12,4 +18,13 @@ public:
 	virtual CPhysForce *vfunc5(unsigned int flags);	// scalar deleting destructor
 
 	void sub_10014470();	// destructor body
+	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
+	void sub_10027960();	// attaches the force to the physics object of the attached entity (handle at +0x460): the object's current points are stored in the motion record at +0x464, the environment (global 0x10723940, slot 39) creates the controller for it (+0x450) and the object is added to it
+
+	char m_pad0004[0x450 - 4];
+	void *m_pController;	// 0x450
+	char m_pad0454[0x45c - 0x454];
+	float m_flTimeout;	// 0x45c
+	unsigned int m_hAttached;	// 0x460: handle of the attached entity
+	CPhysForceMotion m_Motion;	// 0x464
 };
