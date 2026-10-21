@@ -18291,6 +18291,31 @@ void sub_100d46c0(CVStatList_t *pList, int nMinValue, int nArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d51b0 size=0xd2
+#include <stdlib.h>
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+CBaseEntity *sub_101193b0();
+void sub_100d5360();
+
+void sub_100d51b0()
+{
+	CBaseEntity *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		CBaseCombatCharacter *pChar = *(CBaseCombatCharacter **)((char *)pPlayer + 0xa8);
+		if (pChar) {
+			if (!pChar->sub_10337f30())
+				sub_100d5360();
+			int nValue = 12;
+			if (g_1070b22c->vfunc85() == 2)
+				nValue = atoi((const char *)g_1070b22c->vfunc84(1));
+			CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(12, nValue);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5be0 size=0x77
 #include "IVEngineServer.h"
 #include "CEntityVSlots.h"

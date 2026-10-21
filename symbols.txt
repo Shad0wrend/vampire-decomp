@@ -4045,6 +4045,7 @@
 0x100126de func   ?sub_10097110@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10097110
 0x100126e3 func   ?sub_1002ab80@TFilterX@@QAEPAU1@E@Z TFilterX::sub_1002ab80
 0x10012729 func   ?sub_1022d410@@YIXPAUMem256@@HH@Z sub_1022d410
+0x10012751 func   ?sub_100d51b0@@YAXXZ sub_100d51b0
 0x1001276a func   ?vfunc5@CBaseFilter@@QAEPAV1@I@Z CBaseFilter::vfunc5
 0x10012779 func   ?vfunc5@CItemKeyGeneric@@QAEPAV1@I@Z CItemKeyGeneric::vfunc5
 0x1001277e func   ?vfunc9@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHMMHMHHHHH@Z CTempEntsSystem::vfunc9
