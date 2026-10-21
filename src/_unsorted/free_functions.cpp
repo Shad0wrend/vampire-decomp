@@ -16943,6 +16943,39 @@ int TOutput::sub_100cd7e0(TSave *save)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd870 size=0x9e
+#include "COutputEvent.h"
+#include "CEventAction.h"
+#include "CRestore.h"
+
+extern int g_1055dc00, g_1055dc04, g_1055da88, g_1055da8c;
+
+// The first slots of the restore context's vtable; slot 3 (ReadFields) answers whether the read worked.
+struct CRestoreView {
+    virtual void v0();
+    virtual void v1();
+    virtual int v2(CBaseEntity *pEnt, int map);
+    virtual int vfunc3(int a, int b, int c, int d, int e);
+};
+
+int COutputEvent::sub_100cd870(CRestore *pRestore, int nElements)
+{
+    CRestoreView *pView = (CRestoreView *)pRestore;
+    if (!pView->vfunc3((int)"Value", (int)this, 0, g_1055dc00, g_1055dc04))
+        return 0;
+    *(CEventAction **)(m_data + 0x14) = 0;
+    for (int i = 0; i < nElements; i++) {
+        CEventAction *pAction = (CEventAction *)CEventAction::sub_100cd220(0x20);
+        pAction = pAction ? pAction->sub_100ccf90(0) : 0;
+        if (!pView->vfunc3((int)"EntityOutput", (int)pAction, 0, g_1055da88, g_1055da8c))
+            return 0;
+        pAction->m_pNext = *(CEventAction **)(m_data + 0x14);
+        *(CEventAction **)(m_data + 0x14) = pAction;
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd940 size=0x12
 struct CListNode100cd940 {
     char pad0[0x14];

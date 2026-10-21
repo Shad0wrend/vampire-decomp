@@ -1897,6 +1897,7 @@
 0x10009778 func   _mover_keyframe mover_keyframe
 0x10009787 func   ?vfunc601@CNPC_VHengeyokai@@UAEXH@Z CNPC_VHengeyokai::vfunc601
 0x10009796 func   ?vfunc213@CBaseEntity@@QAEXPBM@Z CBaseEntity::vfunc213
+0x1000979b func   ?sub_100cd870@COutputEvent@@QAEHPAVCRestore@@H@Z COutputEvent::sub_100cd870
 0x100097a5 func   ?sub_10360560@@YADXZ sub_10360560
 0x100097b9 func   _trigger_werewolf_zone trigger_werewolf_zone
 0x100097c3 func   _hud_image hud_image
