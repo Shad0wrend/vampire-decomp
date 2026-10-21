@@ -13,6 +13,28 @@ int CNPC_VZombie::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dfa20 size=0xc5
+#include "ScopeTrace.h"
+#include "CNPC_VZombie.h"
+#include "CNPCSlots614.h"
+#include "CUnknown1028fb70.h"
+
+// TARGET: CNPC_VZombie::vfunc431
+void CNPC_VZombie::vfunc431()
+{
+	ScopeTrace trace("CNPC_VZombie::NPCThink", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!sub_1029f2e0()) {
+		if (*(int *)((char *)this + 0x6678) == 1)
+			sub_103e0a00();
+		if (((CUnknown1028fb70 *)this)->m_flVisionDistance <= 1.0f)
+			((CUnknown1028fb70 *)this)->sub_1028fb70();
+		sub_10292de0();
+		if ((int)*(float *)((char *)this + 0x17c) <= 0)
+			((CNPCSlots614 *)this)->slot614();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e0430 size=0xc3
 #include "CNPC_VZombie.h"
 #include "CUnknown101c2a50.h"
