@@ -21,7 +21,6 @@ struct CVDmgBlock16_t
 	int sub_10204c20(int value);	// scales value by the multiplier m_d (stub 0x1000c45f): 1 keeps it, a negative multiplier divides (negated), else multiplies
 	int sub_10205840();	// the value of a block without a character (type m_a: 0 the plain number m_b, 1 the default value of the stat info record the number m_b names, 2 the value of the stat owner entry m_b, 3 zero, else -1)
 	void sub_10205400(int *pNumber);	// stub 0x10005786: sets the block from a stat info number
-	const char *sub_10202460(int value);	// "vampStats_DepSubValueToStr": scope trace; for a non-empty block the value name the stat info record (kind m_a: 0 / 1 / 2 / 3 pick one of four stat tables, index m_b) gives for value; else value formatted with "%d" into a global buffer
 };
 
 // The entity handed to CVDmg_t::SetSrc (class not known): its character at +0x9c and its edict at +0x2e0.
