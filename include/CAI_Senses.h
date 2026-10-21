@@ -35,11 +35,16 @@ struct CAI_SensesVec	// a CUtlVector<int>: memory (pointer, allocation count, gr
 	}
 };
 
-struct CAI_SensesTimerA	// two floats: the next time and the interval (stub 0x100112f7 sets them)
+struct CAI_SensesTimerA	// two floats: the next time (-1.0f first) and the interval
 {
 	float m_flNext;
 	float m_flInterval;
 
+	CAI_SensesTimerA(float flInterval, char bUseInfinity)
+	{
+		m_flNext = -1.0f;
+		sub_1027cda0(flInterval, bUseInfinity);
+	}
 	void sub_1027cda0(float flInterval, char bUseInfinity);	// stub 0x100112f7
 };
 
@@ -48,6 +53,10 @@ struct CAI_SensesTimerB	// like CAI_SensesTimerA, but the setter starts by clear
 	float m_flNext;
 	float m_flInterval;
 
+	CAI_SensesTimerB(float flInterval, char bUseInfinity)
+	{
+		sub_1027cd50(flInterval, bUseInfinity);
+	}
 	void sub_1027cd50(float flInterval, char bUseInfinity);	// stub 0x10004c32
 };
 
@@ -75,18 +84,9 @@ public:
 	int m_n84;
 
 	CAI_Senses()
+		: m_n0c(-1), m_flLookDist(3072.0f), m_f14(-1.0f), m_f18(-1.0f), m_n1c(0),
+		  m_timer68(0.15f, 1), m_timer70(0.25f, 1), m_timer78(0.45f, 1), m_b80(1), m_n84(0)
 	{
-		m_n0c = -1;
-		m_flLookDist = 3072.0f;
-		m_f14 = -1.0f;
-		m_f18 = -1.0f;
-		m_n1c = 0;
-		m_timer68.m_flNext = -1.0f;
-		m_timer68.sub_1027cda0(0.15f, 1);
-		m_timer70.sub_1027cd50(0.25f, 1);
-		m_timer78.sub_1027cd50(0.45f, 1);
-		m_b80 = 1;
-		m_n84 = 0;
 		m_pVec20 = &m_vec20;
 		m_pVec34 = &m_vec34;
 		m_pVec48 = &m_vec48;
