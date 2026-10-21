@@ -4105,6 +4105,7 @@
 0x100131ab func   ?vfunc5@CFuncPlatRot@@QAEPAV1@I@Z CFuncPlatRot::vfunc5
 0x100131ba func   ??0CTEBloodSprite@@QAE@PBD@Z CTEBloodSprite::CTEBloodSprite
 0x100131c4 func   ?sub_10220e10@QuestJournal@@QAEPAV1@XZ QuestJournal::sub_10220e10
+0x100131c9 func   ?vfunc110@CFunc_LOD@@UAE_NPBD0@Z CFunc_LOD::vfunc110
 0x100131dd func   ?vfunc35@CPropSign@@UAEHH@Z CPropSign::vfunc35
 0x100131e7 func   ?sub_102d2840@@YAPAUSNode@@HPBD@Z sub_102d2840
 0x10013205 func   ?vfunc250@CBaseDoor@@QAEXXZ CBaseDoor::vfunc250
