@@ -1,9 +1,10 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 13, 17, 18, 20, 21, 26, 32, 35, 38, 47, 49, 58, 59, 61, 62, 65, 66, 69, 72, 78, 82, 84, 85, 101, 102, 105 and 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 13, 17, 18, 20, 21, 26, 30, 31, 32, 35, 38, 47, 49, 58, 59, 61, 62, 65, 66, 69, 72, 78, 82, 84, 85, 101, 102, 105 and 119 to 122 are known.
 // Slot 13 takes a resource name and a preload flag (precaches a sound / resource).
 // Slot 17 is PrecacheModel(name, preload) and returns the model index.
 // Slot 18 returns the studio header of a model index (0 when there is none), slot 21 the type of a model index (3 = studio).
 // Slot 20 returns the model index of a model name.
 // Slot 26 takes one dword (a resource handle / name pointer of the gib shooter) and returns a dword.
+// Slot 30 is the cluster of a position (takes a position pointer), slot 31 fills a PVS buffer for a cluster (cluster, buffer size, buffer).
 // Slot 32 takes a position and a visibility set and answers a flag (a PVS test).
 // Slot 47 is SaveAllocMemory(num, size): allocates num * size bytes of save memory.
 // Slot 49 is EmitAmbientSound(entindex, pos, sample, volume, soundlevel, flags, pitch).
@@ -35,7 +36,7 @@ public:
 	virtual void *vfunc18(int modelIndex); virtual void a19();
 	virtual int vfunc20(const char *pszModel); virtual int vfunc21(int modelIndex); virtual void a22(); virtual void a23(); virtual void a24();
 	virtual void a25(); virtual int vfunc26(int a); virtual void a27(); virtual void a28(); virtual void a29();
-	virtual void a30(); virtual void a31(); virtual char vfunc32(const float *pPos, void *pData); virtual void a33(); virtual void a34();
+	virtual int vfunc30(const float *pPos); virtual void vfunc31(int cluster, int size, char *pBuffer); virtual char vfunc32(const float *pPos, void *pData); virtual void a33(); virtual void a34();
 	virtual int vfunc35(int edict);
 	virtual void a36(); virtual void a37();
 	virtual CUnknown1070b22c_Edict *vfunc38(int index);
