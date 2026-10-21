@@ -50278,6 +50278,49 @@ extern "C" CBaseEntity *item_container_animated()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209e30 size=0x89
+#include "CBaseEntity.h"
+#include "CItemContainerAnimated.h"
+
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+struct CSoundObject
+{
+	void sub_101f5950(CBaseEntity *pEnt, int a, int b, float c, float d);	// stub 0x100119fa
+};
+extern CSoundObject g_1074b308;
+extern int g_1074f03c;
+
+struct CItemContainerAnimatedView
+{
+	char m_pad0000[0xb4];
+	int m_nSoundGroup;
+	char m_pad00b8[0x6f0 - 0xb8];
+	int m_nSequence;
+};
+
+// TARGET: CItemContainerAnimated::sub_10209e30
+void CItemContainerAnimated::sub_10209e30(const char *pszLabel)
+{
+	CItemContainerAnimatedView *v = (CItemContainerAnimatedView *)this;
+	int iSequence = sub_1008f7b0(pszLabel);
+	if (v->m_nSoundGroup != -1)
+		g_1074b308.sub_101f5950(this, g_1074f03c, 4, 1.0f, 1.25f);
+	if (iSequence > -1)
+	{
+		v->m_nSequence = iSequence;
+		sub_10090950();
+		sub_100963d0();
+		sub_100b3640(0x40000);
+	}
+	else
+	{
+		DevMsg("%s no sequence named:%s\n", sub_100ab4f0(), pszLabel);
+		v->m_nSequence = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209ff0 size=0x6d
 void *sub_100aa720(int size);
 extern char g_105a9e64[];
