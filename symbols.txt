@@ -5239,6 +5239,7 @@
 0x10015da7 func   ?sub_1007b7b0@CUnknown1007b7b0@@QAEPAVCUnknown1007a060Elem@@XZ CUnknown1007b7b0::sub_1007b7b0
 0x10015dac func   ?vfunc3@CAI_Motor@@UAEXXZ CAI_Motor::vfunc3
 0x10015dc5 func   ?sub_10222ec0@S10222ec0@@QAEXH@Z S10222ec0::sub_10222ec0
+0x10015dca func   ?sub_101d6af0@CUnknown101d7520Entry@@QAEXXZ CUnknown101d7520Entry::sub_101d6af0
 0x10015dd9 func   ?sub_10323c20@@YIHPADHH@Z sub_10323c20
 0x10015de3 func   ?sub_101bd650@@YGXPAUS@@H@Z sub_101bd650
 0x10015dfc func   ??0CUnknown101f4c80@@QAE@H@Z CUnknown101f4c80::CUnknown101f4c80

@@ -41820,6 +41820,28 @@ S101d61e0 *CUnknown101d6750::sub_101d6750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6af0 size=0xa9
+#include "CUnknown101d7520.h"
+#include "CStatDefault3List.h"
+extern CStatDefault3List g_10738d10;
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+
+void CUnknown101d7520Entry::sub_101d6af0()
+{
+	char szBuf[512];
+	Q_snprintf(szBuf, 512, "\n\n(%d): %s\n", m_unk0, m_name.Get());
+	Msg("%s", szBuf);
+	if (m_iClan != -1) {
+		Q_snprintf(szBuf, 512, "Clan: %s\n", g_10738d10.sub_101d5e00(m_iClan));
+		Msg("%s", szBuf);
+	}
+	m_sub.sub_10206190();
+	for (int i = 0; i < m_nRules; i++)
+		m_ppRules[i]->sub_101d6590();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6c20 size=0xeb
 #include "CStatList56.h"
 
