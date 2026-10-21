@@ -6823,6 +6823,34 @@ void __fastcall sub_1006fe00(FollowObj *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071220 size=0x6b
+#include "CCameraAnimated.h"
+extern void *vt_1044eb14[];
+struct CCameraAnimatedItemInit : CCameraAnimatedItem {
+    void sub_10002ddd();
+};
+struct CCameraAnimatedUnit : CCameraAnimated {
+    void sub_100103fc();
+    void sub_100b3580(unsigned int flags);
+    CCameraAnimatedUnit *sub_10071220();
+};
+
+CCameraAnimatedUnit *CCameraAnimatedUnit::sub_10071220()
+{
+    sub_100103fc();
+    for (int i = 0; i < 8; i++)
+        ((CCameraAnimatedItemInit *)&m_items730[i])->sub_10002ddd();
+    *(int *)&m_pad07f0[0] = -1;
+    ((CCameraAnimatedItemInit *)&m_item7f8)->sub_10002ddd();
+    ((CCameraAnimatedItemInit *)&m_item810)->sub_10002ddd();
+    *(void ***)this = vt_1044eb14;
+    sub_100b3580(0x40000);
+    *(float *)((char *)this + 0x82c) = -1.0f;
+    *((char *)this + 0x828) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071840 size=0x7f
 #define V1(p) virtual void p();
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
