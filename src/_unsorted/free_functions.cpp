@@ -62900,6 +62900,43 @@ void CUnknown10398d90::sub_10398d90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10398fd0 size=0x91
+#include "CBaseEntity.h"
+#include "CNPC_VMingXiao.h"
+#include "CUnknown10398d90.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+void sub_1000e255(CGlobalEntityList_Ent *pEnt);	// stub 0x1000e255 for 0x101cd970
+
+inline CGlobalEntityList_Ent *LookupEntity(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+	if (pSlot->m_Serial != (int)(h >> 13))
+		return 0;
+	return pSlot->m_pEntity;
+}
+
+// TARGET: CNPC_VMingXiao::sub_10398fd0
+void CNPC_VMingXiao::sub_10398fd0()
+{
+	char *p = (char *)this;
+	if (LookupEntity(*(unsigned int *)(p + 0x6738)))
+	{
+		unsigned int h = *(volatile unsigned int *)(p + 0x6738);
+		CGlobalEntityList_Slot *pSlot;
+		CGlobalEntityList_Ent *pEnt = (h != 0xffffffff && (pSlot = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13)) ? pSlot->m_pEntity : 0;
+		sub_1000e255(pEnt);
+		*(unsigned int *)(p + 0x6738) = 0xffffffff;
+	}
+	*(unsigned int *)(p + 0x6718) = 0xffffffff;
+	sub_10013110(0.75f);
+	((CUnknown10398d90 *)this)->sub_10398d90(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10399c70 size=0x95
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 class CVProfile {
