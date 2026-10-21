@@ -6650,6 +6650,41 @@ CTEBeamRingPoint *CTEBeamRingPoint::sub_1005cbc0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005cf30 size=0xe5
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246700(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246dc0(const char *name, int offset, int pTable, void *proxy);
+void sub_10009539();
+void sub_10003012();
+void sub_10246300();
+extern SendTable g_106bff5c;
+extern const char *g_10541634;
+extern int g_105409b0;
+
+// TARGET: sub_1005cf30
+int sub_1005cf30()
+{
+	static SendProp g_SendProps[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_105409b0, (void *)sub_10009539),
+		sub_10246700("m_vecCenter", 0x44, 12, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+		sub_10246510("m_flStartRadius", 0x50, 4, 16, 16, 0.0f, 4096.0f, (void *)sub_10246300),
+		sub_10246510("m_flEndRadius", 0x54, 4, 16, 16, 0.0f, 4096.0f, (void *)sub_10246300),
+	};
+	g_106bff5c.sub_10247240(g_SendProps + 1, 4, g_10541634);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d690 size=0xb2
 #include "SendProp.h"
 
