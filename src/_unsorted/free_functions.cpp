@@ -89857,6 +89857,50 @@ void CBaseCombatWeapon::sub_1040dcf0(CBaseEntity *pVictim, const float *pDir, vo
 }
 // END FUNCTION
 
+// FUNCTION: 0x104106a0 size=0x95
+#include "CWeaponPhysCannon.h"
+#include "CGlobalEntityList.h"
+
+struct COwnerView
+{
+	char m_pad0000[0xa8];
+	CBaseEntity *m_pEntity;	// 0xa8
+};
+
+struct CEntityView
+{
+	void sub_100a8340(CBaseEntity *pOwner, float flTime);
+};
+
+extern CGlobalEntityList *g_10566458;
+void __cdecl sub_101895d0(CBaseEntity *pEntity, int a, int b);
+
+// TARGET: CWeaponPhysCannon::sub_104106a0
+void CWeaponPhysCannon::sub_104106a0(int unused, char bFlag)
+{
+	if (m_bGrab911) {
+		COwnerView *pOwner = (COwnerView *)sub_102521f0();
+		CBaseEntity *pPlayer = pOwner == 0 ? 0 : pOwner->m_pEntity;
+		CBaseEntity *pEntity;
+		unsigned int h = m_grab.m_hEntity;
+		if (h != (unsigned int)-1) {
+			CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+			if (pSlot->m_Serial == (int)(h >> 13))
+				pEntity = (CBaseEntity *)pSlot->m_pEntity;
+			else
+				pEntity = 0;
+		} else
+			pEntity = 0;
+		m_grab.sub_1040cb60();
+		if (pEntity) {
+			((CEntityView *)pEntity)->sub_100a8340(pPlayer, 10.0f);
+			sub_101895d0(pEntity, (int)pPlayer, (bFlag != 0) + 2);
+		}
+		m_bGrab911 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x104110d0 size=0x6d
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 #define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
