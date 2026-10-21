@@ -15073,6 +15073,25 @@ bool CBaseEntity::sub_100b3350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b3490 size=0xba
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+
+void sub_10138720(const float *pMatrix, int column, float *pOut);
+void sub_10137ed0(const float *pMatrix, float *pAngles);
+
+void CBaseEntity::sub_100b3490(const float *pMatrix)
+{
+	ScopeTrace trace("CBaseEntity::SetLocalTransform", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	float vecOrigin[3];
+	float vecAngles[3];
+	sub_10138720(pMatrix, 3, vecOrigin);
+	sub_10137ed0(pMatrix, vecAngles);
+	((CEntityVSlots *)this)->slot62(vecOrigin);
+	((CEntityVSlots *)this)->slot64(vecAngles);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3580 size=0x86
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
