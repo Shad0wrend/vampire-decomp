@@ -149,7 +149,8 @@ public:
 	CAI_NPC_V(553) CAI_NPC_V(554) CAI_NPC_V(555) CAI_NPC_V(556) CAI_NPC_V(557) CAI_NPC_V(558)
 	virtual CBaseEntity *vfunc559(const char *pszName);	// slot 559: the entity of that name (asked by the follow-target setter)
 	virtual void vfunc560();	// slot 560: sets the conditions 0x4f..0x52, 0x2e, 0x2f and 0x62..0x66 (sub_10269b50 each)
-	CAI_NPC_V(561) CAI_NPC_V(562)
+	CAI_NPC_V(561)
+	virtual char vfunc562(int a, int b, char bFlag);	// slot 562 (ret 0xc): lets the active weapon (slot 364) answer, else, for NPCs with class flag 0x20000, slot 573; without either a TaskFail(0x42) when bFlag; with class flag 0x10000000 and sub_10266b10(a, b, 0.92f) true a TaskFail(0x64) when bFlag and false; else the answer
 	virtual void vfunc563(CBaseEntity *pEnt, const void *pGoal, const void *pParams, const void *pExtra);	// slot 563: takes the entity, a vector (the goal's destination), a movement parameter block (8 dwords) and the address of a stack value
 	CAI_NPC_V(564) CAI_NPC_V(565) CAI_NPC_V(566)
 	virtual int vfunc567(int unused);
@@ -198,7 +199,7 @@ public:
 	int sub_10348890(CRestore *pRestore);	// CBaseCombatCharacter::vfunc127 (stub 0x10010d48), called directly
 	bool sub_1026fb40();	// throttled check: when the class flags (slot 513) have bit 21 and the time at +0x5da0 has passed, pushes it ahead and, unless sub_10007e19() holds, asks sub_10005dd5 about a (300, 300, 100) box
 	int sub_10007e19();	// CBaseCombatCharacter member (the stub at 0x10007e19 for 0x1032e7b0), called directly
-	int sub_10005dd5(float *pBox);	// CBaseCombatCharacter member (the stub at 0x10005dd5 for 0x10333ad0), called directly with a three-float box
+	int sub_10005dd5(float *pBox);	// CBaseCombatCharacter member (the stub at 0x10005dd5 for 0x10333ad0), called directly
 	void sub_102695d0();	// scope trace (entity name), makes the entity fully visible when its field at +0x16c is 0 (alpha byte +0x1a3 = 0xff, field = 2), AddSolidFlags(4) on the collision property at +0x270 (inlined scope trace), sub_100b2f50(zero vector), sub_100b3b00(), next think = curtime + 10.0, ThinkSet(think stub 0x100152b2, 0, 0)
 	void sub_1027dd10(CBaseEntity *pEnt);	// run when the NPC stops caring about pEnt: only while slot 158 holds and pEnt is set; when it is the entity of the handle at +0x5d24 slot 532(1); lets the object at +0x5d34 finish (sub_102ee2c0 when sub_102ee2e0 holds), sets the byte at +0x1a40, runs slot 528, and clears the state at +0x644c (1 or 2) of the object at +0x98
 	void sub_1027be60();	// level transition cleanup (called by OnRestore): lets the navigator at +0x5d34 finish (sub_102ee270), sub_10280d30, clears +0xfec, clears the six condition dwords at +0x5c5c unless slot 167 holds, and strips a scripted sequence entity that is gone from a state 4 NPC (SetState(1), DevMsg "Scripted Sequence stripped on level transition for %s")
@@ -219,4 +220,5 @@ public:
 	void sub_10270180(void *pObject, int a);	// stub 0x10006217, called directly
 	void sub_1027d8d0(CBaseEntity *pEnt);	// run for an entity that moves faster than 50 units (|vx| + |vy| of its velocity at +0x3bc / +0x3c0): asks the dev flag object (slot 1), sets condition 0x74, resets the motor's (+0x5d44) look state (sub_102e0b40) and hands it pEnt's slot 220 position (sub_102e2020)
 	CBaseEntity *sub_1027a310(const char *pszItemName, Vector vecPos, Vector vecAng);	// "CAI_BaseNPC::DropItem": DevMsg "DropItem() - No item name!" for no name; creates the item entity at vecPos / vecAng (sub_100a99d0), clears its parent when it has one (bit 12 of the flags at +0x268), gives it this NPC's velocity (+0x3bc), then a random 0..100 impulse; null with a DevMsg when the item cannot be created
+	char sub_10266b10(int a, int b, float f);	// stub 0x10013c32, called by slot 562 with (a, b, 0.92f)
 };
