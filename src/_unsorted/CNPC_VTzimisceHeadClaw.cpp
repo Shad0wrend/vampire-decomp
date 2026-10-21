@@ -13,6 +13,46 @@ int CNPC_VTzimisceHeadClaw::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1540 size=0x95
+#include "CNPC_VTzimisceHeadClaw.h"
+
+#define D(n) virtual void n();
+#define D10(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+#define D100(p) D10(p##0) D10(p##1) D10(p##2) D10(p##3) D10(p##4) D10(p##5) D10(p##6) D10(p##7) D10(p##8) D10(p##9)
+
+// The slots of the entity's vtable up to 619 (only 220 and 619 are used here).
+struct CTzHeadSlots {
+    D100(a0) D100(a1) D10(a20) D10(a21)
+    virtual float *vfunc220();
+    D(b221) D(b222) D(b223) D(b224) D(b225) D(b226) D(b227) D(b228) D(b229)
+    D100(a3) D100(a4) D100(a5)
+    D10(c53) D10(c54) D10(c55) D10(c56) D10(c57) D10(c58) D10(c59) D10(c60)
+    D(d610) D(d611) D(d612) D(d613) D(d614) D(d615) D(d616) D(d617) D(d618)
+    virtual void vfunc619(int a);
+    void sub_1029b290(void *pEvent);
+};
+
+void sub_101cdba0(float *pPos, float a, float b, float c, float d, int e, int f);
+
+void CNPC_VTzimisceHeadClaw::vfunc259(void *pEvent)
+{
+    CTzHeadSlots *p = (CTzHeadSlots *)this;
+    switch (*(int *)pEvent) {
+    case 0x802:
+        sub_101cdba0(p->vfunc220(), 1.3f, 0.2f, 0.2f, 1024.0f, 0, 0);
+        p->vfunc619(1);
+        break;
+    case 0x803:
+        sub_101cdba0(p->vfunc220(), 1.3f, 0.2f, 0.2f, 1024.0f, 0, 0);
+        p->vfunc619(0);
+        break;
+    default:
+        p->sub_1029b290(pEvent);
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c16f0 size=0x13
 #include "CNPC_VTzimisceHeadClaw.h"
 void CNPC_VTzimisceHeadClaw::vfunc453()
