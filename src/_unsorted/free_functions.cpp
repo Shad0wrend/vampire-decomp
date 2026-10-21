@@ -27859,6 +27859,61 @@ void sub_10180d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180e70 size=0xf8
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+extern void (*g_109f3630)(const char *, ...);
+extern void (*g_109f364c)(const char *, ...);
+extern char g_10588b48[];
+extern char g_10588bd4[];
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+void sub_101cd940(CBaseEntity *pEnt);
+struct SNamedEnt
+{
+	char m_pad[0x26c];
+	const char *volatile m_pszName;
+	const char *GetName()
+	{
+		const char *n = m_pszName;
+		return n ? n : g_106b8540;
+	}
+	bool NameMatches(const char *pszNameOrWildcard)
+	{
+		if (GetName() == pszNameOrWildcard)
+			return true;
+		unsigned int len = strlen(pszNameOrWildcard);
+		if (len == 0)
+			return m_pszName == 0;
+		if (pszNameOrWildcard[len - 1] != '*')
+			return _strcmpi(GetName(), pszNameOrWildcard) == 0;
+		return _strnicmp(GetName(), pszNameOrWildcard, len - 1) == 0;
+	}
+};
+void sub_10180e70()
+{
+	SNamedEnt *pEnt = (SNamedEnt *)g_106eb5d8.sub_100f7060(0);
+	const char *pszName = g_1070b22c->vfunc84(1);
+	int nRemoved = 0;
+	if (pszName && strlen(pszName)) {
+		while (pEnt) {
+			if (pEnt->NameMatches(pszName)) {
+				nRemoved++;
+				sub_101cd940((CBaseEntity *)pEnt);
+			}
+			pEnt = (SNamedEnt *)g_106eb5d8.sub_100f7060((CBaseEntity *)pEnt);
+		}
+		g_109f3630(g_10588b48, nRemoved);
+	} else {
+		g_109f364c(g_10588bd4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181580 size=0x15
 #include "CAI_BaseNPCTroika.h"
 
