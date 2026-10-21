@@ -9,7 +9,12 @@ class CNPC_VVampireBoss
 public:
 	char pad0[0x17c];
 	float m_flNextThink;	// +0x17c
-	char pad180[0x6498 - 0x180];
+	char pad180[0x1b44 - 0x180];
+	const char *m_pszSourceFile;	// +0x1b44: source file / line stamp of the last failure
+	int m_nSourceLine;	// +0x1b48
+	char pad1b4c[0x5ddc - 0x1b4c];
+	int m_pTarget5ddc;	// +0x5ddc: the entity found by SelectHintNode
+	char pad5de0[0x6498 - 0x5de0];
 	char m_bFlag6498;
 	char pad6499[0x64b8 - 0x6499];
 	float m_f64b8;	// +0x64b8
@@ -41,4 +46,6 @@ public:
 	void vfunc420();	// slot 420 "CNPC_VVampireBoss::NPCInit": scope trace (no entity name), the Troika version, clears the monster model name (+0x6680) and the body emitter names, sets the default NPC name (+0x6694) and the flag byte +0x6498, runs sub_10014c22 and sets +0x64b8 = 1.0f
 	void sub_1000c531();	// CAI_BaseNPCTroika::vfunc420 (stub 0x1000c531), called directly
 	void sub_10014c22();	// stub 0x10014c22 for 0x103c6a00
+	bool sub_103c59d0(int a, int b);	// "CNPC_VVampireBoss::SelectHintNode": scope trace (no entity name), finds a node near (a, b) within 5000 units (sub_102d1af0 through the stub 0x1000633e) and stores it at +0x5ddc; on success sub_1000ac68(0) and true, else stamps the source line 0xd1 and fails through slot 448(4)
+	void sub_1000ac68(int a);	// stub for 0x10273e80, called directly
 };
