@@ -300,6 +300,7 @@
 0x100022bb func   ?sub_10339560@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10339560
 0x100022c0 func   ?sub_10349d50@CUtlVector16@@QAEXH@Z CUtlVector16::sub_10349d50
 0x100022ca func   ?sub_10210250@CUnit10210250@@QAE_NPAVCEntityVSlots@@0@Z CUnit10210250::sub_10210250
+0x100022d4 func   ?vfunc42@CPropSign@@UAEXPAVCBasePlayer@@@Z CPropSign::vfunc42
 0x100022de func   ?vfunc4@CTEGunshotDecal@@UAEXHH@Z CTEGunshotDecal::vfunc4
 0x100022e8 func   ?sub_10156d30@@YIXPAD@Z sub_10156d30
 0x100022f7 func   ?sub_102e9e50@@YIXPAUMem@@HH@Z sub_102e9e50

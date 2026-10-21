@@ -80,3 +80,21 @@ bool CPropSign::vfunc34(int a)
 	return vfunc35(a) != 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10211e70 size=0x72
+#include "CPropSign.h"
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+
+// TARGET: CPropSign::vfunc42
+void CPropSign::vfunc42(CBasePlayer *pPlayer)
+{
+	sub_100a5030(pPlayer);
+	m_Users74c.sub_100cd660(pPlayer, this, 0);
+	sub_102120c0((CBaseEntity *)pPlayer);
+	pPlayer->sub_10178590(((CEntityVSlots *)this)->slot192());
+	pPlayer->sub_1015ef40();
+	pPlayer->sub_1015ef60();
+	pPlayer->sub_101815b0(1);
+}
+// END FUNCTION
