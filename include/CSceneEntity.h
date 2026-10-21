@@ -7,6 +7,8 @@
 #define SCENE_V(n) virtual void vfunc##n();
 #define SCENE_V10(p) SCENE_V(p##0) SCENE_V(p##1) SCENE_V(p##2) SCENE_V(p##3) SCENE_V(p##4) SCENE_V(p##5) SCENE_V(p##6) SCENE_V(p##7) SCENE_V(p##8) SCENE_V(p##9)
 
+class CBaseEntity;
+
 class CSceneOutputList	// the output at +0x4fc (an event list); only the add call is known
 {
 public:
@@ -42,7 +44,8 @@ public:
 	virtual void vfunc260(int unused, void *pEvent, const char *pszSound, int a4, int a5);	// slot 260: for the actor of the scene event (pointer at +0x98 of pEvent): builds "sound/<name>.mp3" and "*<name>" sound names, makes the actor's entity of this scene's player (sub_10081890) its target, and hands "*<name>" to the actor's sub_102c0520(name, a5, byte at this+0x57f)
 	SCENE_V(261) SCENE_V(262) SCENE_V(263) SCENE_V(264) SCENE_V(265)
 	virtual void vfunc266(int unused, const char *pszArgs);	// parses "automate <Cancel|Resume> <seconds>" arguments into the automation fields
-	SCENE_V(267) SCENE_V(268)
+	virtual void vfunc267();
+	virtual CBaseEntity *vfunc268(const char *pszName, int a);	// slot 268: the entity of that name (the scene's actor lookup), null when there is none
 	void sub_1000b1ef();	// as in CPhysForce (transplant)
 	void sub_1000cb8a();	// the base class destructor body, tail called by sub_100809f0
 	void sub_100809f0();	// the destructor body (called by vfunc5): vtable, vfunc245 while the byte at +0x498 is set, destroys the seven outputs at +0x4cc..+0x55c (sub_100cd2d0, last first), then the base destructor body
@@ -51,6 +54,7 @@ public:
 	void sub_10080cb0(int a);	// stub 0x1001163f, called directly by vfunc104 with the dword at +0x4bc
 	void sub_10082d20();	// stub 0x1000ee71 (called first by slot 245 while the scene plays)
 	CSceneEntity *sub_10080830();	// the constructor body (stub of the three scene entity classes' constructors): CBaseEntity constructor, the logical entity fields (-1 at +0x46c..+0x47c), the sub-object at +0x4c0, the seven outputs at +0x4cc..+0x55c, the vtable, the scene state, the "snd_mixahead" console variable at +0x4c8
+	void sub_100821f0(int mode);	// moves every actor entity of the scene (the elements of the object at +0x4bc, entity by name = element + 0x14) according to mode: 1 = to this entity's origin / angles, 2 = to the element's stored origin (+0x17c) / angles (+0x188), 3 = bone match "bip01"; marks the entity (+0x19c bit 4) and updates the CBaseAnimating
 
 	char m_pad0004[0x10c - 4];
 	unsigned int m_hPlayer10c;	// 0x10c: entity handle of the scene's player
