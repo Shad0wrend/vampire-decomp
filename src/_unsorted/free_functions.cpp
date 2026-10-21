@@ -18291,6 +18291,65 @@ void sub_100d46c0(CVStatList_t *pList, int nMinValue, int nArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5000 size=0xdc
+#include "CBasePlayer.h"
+#include "COutputEvent.h"
+#include "ScopeTrace.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+
+struct CLocalPlayerHostX {
+	char m_pad[0xa8];
+	CBasePlayer *m_pPlayer;	// 0xa8
+};
+
+struct CServerUnknownX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void *GetBaseEntity();	// slot 4
+};
+
+struct CEdictX {
+	char m_pad[0x40];
+	CServerUnknownX *m_pUnk;	// 0x40
+};
+
+struct CNotifyOwnerX {
+	char m_pad[0x1504];
+	COutputEvent m_Output;	// 0x1504
+};
+
+struct CNotifyEntityX {
+	char m_pad[0x9c];
+	CNotifyOwnerX *m_pOwner;	// 0x9c
+};
+
+CLocalPlayerHostX *sub_101193b0();
+
+void sub_100d5000()
+{
+	CLocalPlayerHostX *pLocal = sub_101193b0();
+	if (!pLocal || !pLocal->m_pPlayer)
+		return;
+	CBasePlayer *pPlayer = pLocal->m_pPlayer;
+	int iEdictIndex = pPlayer->m_nUseEdictIndex1EB8;
+	CEdictX *pEdict = (CEdictX *)g_1070b22c->vfunc38(iEdictIndex);
+	CNotifyEntityX *pEnt;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if (!pEdict)
+			pEdict = (CEdictX *)g_1070b22c->vfunc38(0);
+		if (pEdict && pEdict->m_pUnk)
+			pEnt = (CNotifyEntityX *)pEdict->m_pUnk->GetBaseEntity();
+		else
+			pEnt = 0;
+	}
+	CNotifyOwnerX *pOwner = pEnt->m_pOwner;
+	if (pOwner)
+		pOwner->m_Output.sub_100cd660(pOwner, pOwner, 0);
+	pPlayer->sub_1017c6d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d51b0 size=0xd2
 #include <stdlib.h>
 #include "IVEngineServer.h"
