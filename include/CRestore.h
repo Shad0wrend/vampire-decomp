@@ -2,6 +2,7 @@
 #pragma once
 
 #include "IRestore.h"
+#include "Vector.h"
 
 struct CRestoreField;
 struct typedescription_t;
@@ -66,8 +67,11 @@ public:
 	virtual int vfunc17(char *pValues, int count, int nBytesAvailable);	// slot 17 ("CRestore::ReadBool"-like): reads up to count bytes into pValues
 	virtual void s18(); virtual void s19();
 	virtual int vfunc20(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadString" (string pool ids): reads up to count zero terminated strings from the buffer, stores the pooled id of each (0 for an empty one) in pValues, then skips the rest of the nBytesAvailable bytes; returns the number read
-	virtual void s21(); virtual void s22();
-	virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27();
+	virtual void s21();
+	virtual int vfunc22(Vector *pValues, int count, int nBytesAvailable);	// slot 22 "CRestore::ReadVector": reads up to count vectors, returns the number read
+	virtual void s23(); virtual void s24();
+	virtual int vfunc25(Vector *pValues, int count, int nBytesAvailable);	// slot 25 "CRestore::ReadPosition": slot 22, then adds the landmark offset of the save data (+0x12dc when the flag at +0x12c4 is set, else the zero vector at 0x1070d1b0) to every vector read
+	virtual void s26(); virtual void s27();
 	virtual int vfunc28(CBaseEntity **pValues, int count, int nBytesAvailable);	// "CRestore::ReadEntityPtr": reads entity indexes (slot 15) and maps each to the entity (sub_101a2390), zero-filling the rest
 	virtual int vfunc29(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadEdictPtr": like slot 28 but stores the edict (+0x2e0) of each entity (0 when it does not resolve); reads through slot 15 into a 256 dword buffer, zero-filling up to the third argument
 	virtual int vfunc30(unsigned int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadEHandle": like slot 29 but stores the entity handle (slot 1 of the entity, -1 when it does not resolve); zero-fills up to the third argument
