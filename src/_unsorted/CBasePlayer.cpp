@@ -943,6 +943,42 @@ void CBasePlayer::vfunc383(CBaseEntity *pWeapon, char bNoSwitch)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178660 size=0xf6
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+
+struct EdictObj_t {
+	void sub_10014eb6(Vector *pOut, int b);
+};
+
+struct EntEdictView_t {
+	char pad[0x98];
+	EdictObj_t *pEdict;
+};
+
+extern Vector g_1070d1b0;
+
+void CBasePlayer::sub_10178660(CBaseEntity *pEnt, char bCenter)
+{
+	Vector vec;
+	CEntityVSlots *pSlots = (CEntityVSlots *)pEnt;
+	if (bCenter) {
+		vec = pSlots->slot192();
+	} else {
+		EntEdictView_t *pView = (EntEdictView_t *)pEnt;
+		if (pView->pEdict) {
+			pView->pEdict->sub_10014eb6(&vec, 0);
+		} else {
+			Vector tmp;
+			vec = *pSlots->slot193(&tmp);
+		}
+		if (vec == g_1070d1b0)
+			vec = pSlots->slot192();
+	}
+	sub_10178590(vec);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017be50 size=0x8f
 int sub_1002dfe0(int a, int b);
 
