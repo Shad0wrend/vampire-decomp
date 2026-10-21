@@ -2785,6 +2785,7 @@
 0x1000c581 func   ?sub_1042c310@@YAXH@Z sub_1042c310
 0x1000c58b func   ?vfunc255@CBaseAnimating@@QAEXPAX0H@Z CBaseAnimating::vfunc255
 0x1000c59a func   ?sub_1004ae60@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004ae60
+0x1000c59f func   ?vfunc319@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc319
 0x1000c5b3 func   ?sub_1021e320@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e320
 0x1000c5b8 func   ?sub_10107550@Mem400@@QAEXH@Z Mem400::sub_10107550
 0x1000c603 func   ?sub_101681a0@@YI_NPAUHolder@@@Z sub_101681a0

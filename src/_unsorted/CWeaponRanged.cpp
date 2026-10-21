@@ -151,3 +151,58 @@ void CWeaponRanged::vfunc374()
 		sub_101cebc0(pOwner, 0x1a, p->m_n86c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10239680 size=0x69
+#include "CWeaponRanged.h"
+
+struct CWeaponRangedView
+{
+	char m_pad0000[0x74c];
+	int m_nClip[2];
+	char m_pad0754[0x898 - 0x754];
+	char m_b898;
+	char m_b899;
+	char m_pad089a[0x8c8 - 0x89a];
+	char m_b8c8;
+};
+
+struct CWeaponRangedOwnerAI
+{
+	char m_pad0000[0x2088];
+	unsigned int m_flags2088;
+	unsigned int m_flags208c;
+};
+
+struct CWeaponRangedRoll
+{
+	char m_pad0000[0x10c];
+	int m_iSlot;
+};
+
+struct CWeaponRangedOwnerEnt
+{
+	char m_pad0000[0xa8];
+	CWeaponRangedOwnerAI *m_pAI;
+};
+
+// TARGET: CWeaponRanged::vfunc319
+void CWeaponRanged::vfunc319()
+{
+	CWeaponRangedOwnerEnt *pOwner = (CWeaponRangedOwnerEnt *)sub_102521f0();
+	if (pOwner)
+	{
+		CWeaponRangedOwnerAI *pAI = pOwner->m_pAI;
+		if (pAI)
+		{
+			CWeaponRangedView *v = (CWeaponRangedView *)this;
+			if (v->m_b898 && v->m_b8c8 && ((pAI->m_flags208c | pAI->m_flags2088) & 0x801))
+			{
+				CWeaponRangedRoll *pRoll = (CWeaponRangedRoll *)sub_102517e0();
+				if (0 < v->m_nClip[pRoll->m_iSlot])
+					v->m_b899 = 1;
+			}
+			sub_10253ea0();
+		}
+	}
+}
+// END FUNCTION
