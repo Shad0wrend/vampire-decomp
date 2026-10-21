@@ -54855,6 +54855,76 @@ CUnknown102718e0 *CUnknown102718e0::sub_102718e0(const CUnknown102718e0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10271b10 size=0x188
+#include "CGlobalEntityList.h"
+#include "CAI_BaseNPC.h"
+struct NavX {
+    int m_pad[6];
+    int m_i18;
+    int sub_100037e2();
+    CAI_BaseNPC *sub_10015906();
+    void sub_10008abc(CAI_BaseNPC *pEnt, const float *pVec);
+    unsigned int sub_10004831();
+    float *sub_100071fd();
+    void sub_10007b4e();
+};
+extern CGlobalEntityList *g_10566458;
+extern float g_1070d1b0[3];
+extern float (*g_10579660)(float);
+extern const float g_104454c8;
+
+struct EH {
+    unsigned int m_Index;
+    CAI_BaseNPC *Get() const
+    {
+        if (m_Index != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_Index & 0x1fff];
+            if ((unsigned int)s->m_Serial == (m_Index >> 13))
+                return (CAI_BaseNPC *)s->m_pEntity;
+        }
+        return 0;
+    }
+    bool IsValid() const
+    {
+        if (m_Index == 0xffffffff)
+            return false;
+        CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_Index & 0x1fff];
+        return (unsigned int)s->m_Serial == (m_Index >> 13) && s->m_pEntity;
+    }
+};
+
+#define NAV (*(NavX **)((char *)self + 0x5d34))
+#define HND ((EH *)((char *)self + 0x5ce4))
+
+void __fastcall sub_10271b10(CAI_BaseNPC *self)
+{
+    if (NAV->m_i18 == 3 || NAV->m_i18 == 1)
+        return;
+    if (NAV->sub_100037e2() != 1)
+        return;
+    CAI_BaseNPC *goal = NAV->sub_10015906();
+    if (HND->Get() != goal) {
+        NAV->sub_10008abc(HND->Get(), g_1070d1b0);
+        return;
+    }
+    if (!(NAV->sub_10004831() & 4))
+        return;
+    if (HND->IsValid()) {
+        CAI_BaseNPC *e = HND->Get();
+        NavX *n = NAV;
+        float *pos = e->vfunc217();
+        float *g = n->sub_100071fd();
+        float dx = g[0] - pos[0];
+        float dy = g[1] - pos[1];
+        float dz = g[2] - pos[2];
+        float d = g_10579660(dy * dy + (dz * dz + dx * dx));
+        if (!(d > g_104454c8))
+            return;
+    }
+    NAV->sub_10007b4e();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10271ff0 size=0xf7
 #include "CAI_BaseNPC.h"
 #include "CBaseAnimating.h"
