@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CVariantCopy.h"
+#include "Vector.h"
 
 class CRestore;
 
@@ -16,6 +17,16 @@ public:
 	int sub_100cd870(CRestore *pRestore, int nElements);	// restores the output: the "Value" block, then nElements "EntityOutput" actions pushed onto the action list at +0x14; 0 when a read fails, else 1
 	void sub_100cd2d0();	// the destructor body of the output (stub 0x10015708), called directly
 	float sub_100cd260();	// "COutputEvent::GetMaxDelay" (stub 0x10005f10): the longest delay of the output's actions
+
+	// variant_t::SetVector3D on the output's value (the variant is the first 0x14 bytes of the output)
+	void SetVector3D(const Vector &val)
+	{
+		float *pf = (float *)this;
+		pf[0] = val.x;
+		pf[1] = val.y;
+		pf[2] = val.z;
+		((CVariantCopy *)this)->m_fieldType = 3;
+	}
 
 	char m_data[0x18];
 };
