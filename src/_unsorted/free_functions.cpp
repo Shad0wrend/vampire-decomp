@@ -37935,6 +37935,33 @@ void CUnknown1073dc28::sub_101f4f80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f5050 size=0x9b
+#include "CUnknown101f5050.h"
+
+void CUnknown101f5050::sub_101f5050()
+{
+	for (int i = 0; i < m_nGroups; i++) {
+		if (m_pGroups[i])
+			delete m_pGroups[i];
+	}
+	delete m_pGroups;
+	m_pGroups = 0;
+	m_nGroups = 0;
+	if (m_pRecords) {
+		for (int i = 0; i < m_nRecords; i++) {
+			if (m_pRecords[i])
+				delete m_pRecords[i];
+			m_pRecords[i] = 0;
+		}
+		delete m_pRecords;
+		m_pRecords = 0;
+	}
+	m_unk04 = 0;
+	m_nRecords = 0;
+	m_unk10 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5150 size=0x8c
 #include "CUnknown101f5150.h"
 bool CUnknown101f5150::sub_101f5150(const char *pszName)
