@@ -18,11 +18,11 @@ public:
 	virtual void vfunc2();
 	virtual void vfunc3(void *pSound, float executeDeltaTime, int command, float duration, float amplitude);	// "CommandAdd"
 	virtual void vfunc4(void *pSound);	// "CommandClear"
-	virtual void vfunc5();
+	virtual void vfunc5(void *pSound);
 	virtual void vfunc6();
 	virtual void vfunc7();
 	virtual void vfunc8();
-	virtual void vfunc9();
+	virtual void vfunc9(void *pSound);	// "SoundDestroy": stops the sound (slot 5), tears down its recipient vector (+0x4c), resets its recipient filter vtable (+0x44) and hands it back to the sound pool
 	virtual void vfunc10();
 	virtual void vfunc11();
 	virtual void vfunc12();
