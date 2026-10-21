@@ -39019,6 +39019,39 @@ void CUnknown101e4150::sub_101e4150(CUnknown101e4150Char *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e4380 size=0xfb
+#include "CUnknown101e0f00.h"
+#include "ScopeTrace.h"
+
+extern "C" __declspec(dllimport) void Msg(const char *pszFormat, ...);
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+void CUnknown101e0f00::sub_101e4380(const char *pszName)
+{
+	char szBuf[512];
+	Q_snprintf(szBuf, sizeof(szBuf), "[[Targeted Discipline Manager]]:\n");
+	Msg("%s", szBuf);
+	if (!pszName) {
+		for (int i = 0; i < m_nEntries; i++) {
+			CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[i];
+			int nCost = pEntry->m_nBaseCost;
+			const char *pszEntry = pEntry->m_pszName ? pEntry->m_pszName : g_106b8540;
+			Q_snprintf(szBuf, sizeof(szBuf), "   (%d)  %s (Base Cost: %d)\n", i, pszEntry, nCost);
+			Msg("%s", szBuf);
+		}
+	} else {
+		int nIndex = sub_101e12f0(pszName);
+		if (nIndex != -1) {
+			((CUnknown101e0f00Entry *)m_ppEntries[nIndex])->sub_101e0a00();
+		} else if (!_strcmpi(pszName, "ALL")) {
+			for (int i = 0; i < m_nEntries; i++)
+				((CUnknown101e0f00Entry *)m_ppEntries[i])->sub_101e0a00();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e48b0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
