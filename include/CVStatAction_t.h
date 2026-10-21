@@ -1,12 +1,20 @@
 // CVStatAction_t: stat action record (no vtable known). Only the methods decompiled code needs.
 #pragma once
 
+#include "CVDmg_t.h"
+
 class CVStatActionPart
 {
 public:
 	char m_pad0000[0x14];
 
 	~CVStatActionPart();	// empty out-of-line destructor (0x102056f0, reached through the stub at 0x1000c0c2)
+};
+
+class CVStatActionValue	// the 0x30 byte CVTraitDependencyValue_t-like object at +0x10 of the action
+{
+public:
+	void sub_10205c70();	// constructor (stub 0x100135d9)
 };
 
 class CVStatAction_t
@@ -19,6 +27,9 @@ public:
 	char m_pad0010[0x28 - 0x10];
 	CVStatActionPart m_part;	// +0x28
 	void *m_pData;	// +0x3c
+	CVDmgBlock16_t m_block40;	// +0x40
+	int m_a50;	// +0x50
+	int m_b54;	// +0x54
 
 	~CVStatAction_t();	// scope trace, frees the record at +0x3c for type 4, then the part at +0x28
 	CVStatAction_t *sub_101fc760(int a, int b);	// constructor (stub 0x1000e8d6), called on freshly allocated memory
