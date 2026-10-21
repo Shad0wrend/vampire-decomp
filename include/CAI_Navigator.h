@@ -122,6 +122,10 @@ public:
 	bool sub_102efd50();	// "MoveGround"-like step: with no route status warns about a wrong nav type for types 1 / 3 (telling the motor at +0x20 slot 8 / 5) and stops (sub_102eeba0(0)); a finished status (2) with another nav type than 2 fails; else clears the pending move (sub_102f13d0(0), byte +0x51) and succeeds
 	void sub_10008832(int a);	// CUnknown102eeba0::sub_102eeba0 (stub 0x10008832), called with this
 	void sub_100053b7(int a);	// stub of 0x102f13d0
+	bool sub_102f13d0(unsigned char bArg);	// stores the argument as a float at +0x3c, then (owner state 0 or 2, and a route waypoint that is not blocked: same entry as its linked one, flags 0x2a clear) runs the three move checks sub_102f0e80 / sub_102f0fe0 (at most every half second, or whenever +0x3c is set) and sub_102f13a0; true when one of them succeeded
+	bool sub_102f0e80(char *pbDone);	// stub 0x1001512c
+	bool sub_102f0fe0(char *pbDone);	// stub 0x100042b4
+	bool sub_102f13a0(char *pbDone);	// stub 0x100029fa
 	int sub_102ecc00();	// the dword at +0x5d3c of the owner (stub 0x10013011)
 	void sub_102ee6a0();	// stub 0x10012963
 	int sub_102ee620();	// stub 0x100037e2: the navigation type (8 is the one the Moleman / Combatman schedule selection waits for)
