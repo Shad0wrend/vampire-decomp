@@ -39,6 +39,8 @@ public:
 	void sub_10334b10();	// CBaseCombatCharacter::Inventory_Destroy (stub 0x1000289c), called directly
 	void sub_1033c6b0(unsigned int flags);	// CBaseCombatCharacter::AddMiscFlag (stub 0x100153a7), called directly
 	void sub_10332aa0(int a, int b, int c);	// stub 0x10013cf5, called directly
+	void vfunc431();	// slot 431 "NPCThink" (plain member): the Troika think, then, for the burning variant with a live fire emitter (handle +0x6670), the emitter's scale = 1 - remap(the float at +0x6264, 200, 600) (at least 0.1)
+	void sub_10292de0();	// CAI_BaseNPCTroika::vfunc431 (stub 0x10002a7c), called directly
 
 	char m_pad03e0[0x10e4 - 0x3e0];
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
@@ -49,7 +51,9 @@ public:
 	int m_nLine1b34;	// +0x1b34: its line
 	char m_pad1b38[0x5dec - 0x1b38];
 	int m_n5dec;	// +0x5dec
-	char m_pad5df0[0x6348 - 0x5df0];
+	char m_pad5df0[0x6264 - 0x5df0];
+	float m_fl6264;	// +0x6264
+	char m_pad6268[0x6348 - 0x6268];
 	int m_n6348[5];	// +0x6348: five distances, 999999 at spawn
 	char m_pad635c[0x6664 - 0x635c];
 	char m_b6664;	// +0x6664: stalker variant
