@@ -923,6 +923,49 @@ unsigned int CAI_BaseNPC::vfunc423()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10289f20 size=0x8e
+#include "CAI_BaseNPC.h"
+#include "CUnknown1027d990.h"
+
+float sub_102d61b0(int index);
+
+struct EntView {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+#define EV(n) virtual void ev##n();
+#define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
+	EV10(1) EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8) EV10(9)
+	EV10(10) EV10(11) EV10(12) EV10(13) EV10(14) EV10(15) EV10(16) EV10(17) EV10(18)
+	EV(190) EV(191) EV(192)
+	virtual Vector ev193();
+	EV(194) EV(195) EV(196) EV(197) EV(198) EV(199)
+	EV10(20)
+	EV(210) EV(211) EV(212) EV(213) EV(214) EV(215) EV(216)
+	virtual float *ev217();
+};
+
+void CAI_BaseNPC::vfunc563(CBaseEntity *pEnt, const void *pGoal, const void *pParams, const void *pExtra)
+{
+	if (((CUnknown1027d990 *)this)->sub_1027d990() == 2) {
+		EntView *e = (EntView *)pEnt;
+		Vector *pAbs = (Vector *)e->ev217();
+		Vector *pPos = (Vector *)pGoal;
+		*pPos += e->ev193() - *pAbs;
+		*(float *)pParams = sub_102d61b0(*(int *)((char *)this + 0x1568));
+	} else {
+		*(int *)pParams = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028b0f0 size=0x13
 extern int (*g_109f3630)(const char *, ...);
 

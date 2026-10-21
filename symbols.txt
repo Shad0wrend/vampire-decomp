@@ -861,6 +861,7 @@
 0x10004453 func   ?sub_102cc900@@YAXXZ sub_102cc900
 0x10004458 func   ?sub_101fa8d0@@YIXPAUCVDmg_t@@HHHH@Z sub_101fa8d0
 0x1000445d func   ?vfunc5@CTriggerWWZone@@QAEPAV1@E@Z CTriggerWWZone::vfunc5
+0x1000446c func   ?vfunc563@CAI_BaseNPC@@UAEXPAVCBaseEntity@@PBX11@Z CAI_BaseNPC::vfunc563
 0x10004471 func   ?sub_10093a40@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10093a40
 0x100044ad func   ?sub_101f3060@@YIXPAD@Z sub_101f3060
 0x100044b2 func   _trigger_changelevel trigger_changelevel
