@@ -138,7 +138,8 @@ public:
 	CAI_NPC_V(546) CAI_NPC_V(547) CAI_NPC_V(548) CAI_NPC_V(549)
 	CAI_NPC_V(550) CAI_NPC_V(551)
 	virtual unsigned int vfunc552();
-	CAI_NPC_V(553) CAI_NPC_V(554) CAI_NPC_V(555) CAI_NPC_V(556) CAI_NPC_V(557) CAI_NPC_V(558) CAI_NPC_V(559)
+	CAI_NPC_V(553) CAI_NPC_V(554) CAI_NPC_V(555) CAI_NPC_V(556) CAI_NPC_V(557) CAI_NPC_V(558)
+	virtual CBaseEntity *vfunc559(const char *pszName);	// slot 559: the entity of that name (asked by the follow-target setter)
 	virtual void vfunc560();	// slot 560: sets the conditions 0x4f..0x52, 0x2e, 0x2f and 0x62..0x66 (sub_10269b50 each)
 	CAI_NPC_V(561) CAI_NPC_V(562)
 	virtual void vfunc563(CBaseEntity *pEnt, const void *pGoal, const void *pParams, const void *pExtra);	// slot 563: takes the entity, a vector (the goal's destination), a movement parameter block (8 dwords) and the address of a stack value
