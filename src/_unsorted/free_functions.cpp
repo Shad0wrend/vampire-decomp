@@ -32175,6 +32175,30 @@ void CPlayerDialogUnit::sub_1017d020(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017deb0 size=0x73
+struct CGameTimeScale {
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad[0x28 - 4];
+	float m_flValue;
+};
+extern CGameTimeScale *g_10725ebc;
+
+inline float GetValue()
+{
+	return g_10725ebc->vfunc1() ? 0.0f : g_10725ebc->m_flValue;
+}
+
+float __stdcall sub_1017deb0(int a, float b)
+{
+	if (b > 0.0f)
+		return b;
+	float fMin = GetValue();
+	float fa = (float)a;
+	return fMin > fa ? GetValue() : fa;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017e560 size=0x68
 #include "CBasePlayer.h"
 #include "inputdata_t.h"
