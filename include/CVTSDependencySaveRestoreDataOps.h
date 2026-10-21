@@ -1,0 +1,38 @@
+// CVTSDependencySaveRestoreDataOps: save/restore ops for a dependency record (RTTI .?AVCVTSDependencySaveRestoreDataOps@@,
+// vtable 0x104540b0, 5 slots). The base ISaveRestoreOps is not modelled.
+#pragma once
+
+struct CVTSDependencyRecord	// the record the field points to
+{
+	void sub_10204270();	// reset (stub 0x10010573)
+	void sub_10204570(const char *pszBuffer);	// fills the record from its saved string (stub 0x100045e3)
+};
+
+struct CVTSDependencyField
+{
+	CVTSDependencyRecord *m_pRecord;
+};
+
+class CVTSDependencyRestore	// the restore stream: only the slots used here
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13();
+	virtual int vfunc14();	// the length of the next string
+	virtual void v15(); virtual void v16();
+	virtual void vfunc17(char *pOut, int a, int b);	// reads a flag byte
+	virtual void v18(); virtual void v19(); virtual void v20();
+	virtual void vfunc21(char *pBuffer, int a, int b);	// reads a string
+};
+
+class CVTSDependencySaveRestoreDataOps
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1(CVTSDependencyField *pField, CVTSDependencyRestore *pRestore);	// "Restore": a flag byte, then the record's string (or the reset record when the flag is clear)
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+};
