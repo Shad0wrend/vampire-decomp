@@ -5220,6 +5220,7 @@
 0x10015aa0 func   ?vfunc5@CAreaPortal@@UAEPAV1@I@Z CAreaPortal::vfunc5
 0x10015aaa func   ?sub_103bde40@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bde40
 0x10015ab4 func   ?sub_102c6c30@CUtlVector4@@QAEXH@Z CUtlVector4::sub_102c6c30
+0x10015ab9 func   ?sub_10136b40@@YAXPAPAVCBaseEntity@@PAD@Z sub_10136b40
 0x10015ac8 func   ?vfunc69@CBatSwarm@@QAE_NPAX@Z CBatSwarm::vfunc69
 0x10015ae6 func   ?vfunc5@CLagCompensationManager@@UAEXXZ CLagCompensationManager::vfunc5
 0x10015aeb func   ?sub_100e5c70@CDialog@@QAEXXZ CDialog::sub_100e5c70
