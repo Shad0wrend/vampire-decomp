@@ -550,6 +550,37 @@ void CBaseCombatCharacter::vfunc403()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032c580 size=0xd4
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+extern "C" int _strcmpi(const char *, const char *);
+
+#define W10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define W100(p) W10(p##0) W10(p##1) W10(p##2) W10(p##3) W10(p##4) W10(p##5) W10(p##6) W10(p##7) W10(p##8) W10(p##9)
+
+class CWeaponNameUnit
+{
+public:
+    W100(a) W100(b) W100(c) W10(d0) W10(d1) W10(d2) W10(d3)
+    virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7();
+    virtual const char *GetClassname();
+    void sub_103f9160(int a);
+};
+
+void CBaseCombatCharacter::vfunc300(int a, int b, int c)
+{
+    ScopeTrace trace("CBaseCombatCharacter::Event_TookLife", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    if (*(unsigned char *)((char *)this + 0xe38) & 4) {
+        for (int i = 0; i < sub_1032e890(); i++) {
+            CWeaponNameUnit *pWeapon = (CWeaponNameUnit *)sub_1032e8b0(i);
+            if (pWeapon && !_strcmpi(pWeapon->GetClassname(), "item_p_occult_regen"))
+                pWeapon->sub_103f9160(a);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032d2e0 size=0x7a
 #include "CBaseCombatCharacter.h"
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
