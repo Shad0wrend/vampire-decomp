@@ -25,3 +25,18 @@ CNPC_VNewscaster *CNPC_VNewscaster::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103a1250 size=0x97
+#include "CNPC_VNewscaster.h"
+#include "ScopeTrace.h"
+
+// TARGET: CNPC_VNewscaster::vfunc124
+int CNPC_VNewscaster::vfunc124()
+{
+	ScopeTrace trace("CNPC_VNewscaster::DrawDebugTextOverlays", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int nLines = sub_1029d4e0();
+	if (m_bFlags224 & 1)
+		nLines += sub_103a0ff0(nLines);
+	return nLines;
+}
+// END FUNCTION
