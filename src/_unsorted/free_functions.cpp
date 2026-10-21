@@ -17465,6 +17465,46 @@ void sub_100d3bc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d46c0 size=0x95
+#include "CVStatList_t.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern char g_106b8540[];
+
+struct CStatListInfoName
+{
+	const char *m_psz;
+
+	const char *Get() const { return m_psz ? m_psz : g_106b8540; }
+};
+
+struct CStatListInfoView
+{
+	char m_pad0000[4];
+	int m_nStats;	// 0x04
+	char m_pad0008[0x24 - 8];
+	CStatListInfoName m_name;	// 0x24
+};
+
+void sub_10203dd0(const char *pszText);	// stub 0x100121a7: hands the text to the console printer (when one is set)
+
+// TARGET: sub_100d46c0
+void sub_100d46c0(CVStatList_t *pList, int nMinValue, int nArg)
+{
+	char szLine[128];
+	CStatListInfoView *pInfo = (CStatListInfoView *)pList->m_field0c;
+	sprintf(szLine, "\n   %s:\n\n", pInfo->m_name.Get());
+	sub_10203dd0(szLine);
+	for (int i = 0; i < ((CStatListInfoView *)pList->m_field0c)->m_nStats; i++)
+	{
+		int nValue = pList->sub_10010609(i);
+		pList->sub_10200ca0(i);
+		if (nValue >= nMinValue)
+			sub_10203dd0(pList->sub_10201a40(i, nArg));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5be0 size=0x77
 #include "IVEngineServer.h"
 #include "CEntityVSlots.h"
