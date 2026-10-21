@@ -26290,6 +26290,39 @@ void sub_101802e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180d10 size=0x9a
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b22c.h"
+#include <string.h>
+extern CGlobalEntityList g_106eb5d8;
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_106b8540[];
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+__declspec(dllimport) void DevWarning(const char *pMsg, ...);
+void sub_101cd940(CBaseEntity *pEnt);
+
+void sub_10180d10()
+{
+    CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0);
+    const char *pszClass = g_1070b22c->vfunc84(1);
+    int nRemoved = 0;
+    if (pszClass && strlen(pszClass) != 0) {
+        for (; pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt)) {
+            const char *pszName = pEnt->m_classname11c;
+            if (!pszName)
+                pszName = g_106b8540;
+            if (_strcmpi(pszName, pszClass) == 0) {
+                nRemoved++;
+                sub_101cd940(pEnt);
+            }
+        }
+        DevMsg("Removed %d entities\n", nRemoved);
+        return;
+    }
+    DevWarning("please supply an entity class (i.e. 'env_sprite' )\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181580 size=0x15
 #include "CAI_BaseNPCTroika.h"
 

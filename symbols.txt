@@ -1685,6 +1685,7 @@
 0x10008940 func   ?vfunc5@CPhysImpact@@UAEPAV1@I@Z CPhysImpact::vfunc5
 0x1000896d func   ?vfunc483@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc483
 0x10008977 func   ?sub_103245a0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_103245a0
+0x1000897c func   ?sub_10180d10@@YAXXZ sub_10180d10
 0x10008986 func   ?sub_10184220@@YGII@Z sub_10184220
 0x10008990 func   ?vfunc5@CPropDoorknob@@QAEPAV1@I@Z CPropDoorknob::vfunc5
 0x1000899a func   ?sub_10146d50@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10146d50
