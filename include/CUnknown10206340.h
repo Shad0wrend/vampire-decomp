@@ -4,6 +4,7 @@
 class CUnknown10206340
 {
 public:
+	CUnknown10206340(int id);	// stub 0x10005ab0 (sets m_field0000)
 	bool sub_10206340(void *pKeys);	// reads Name, AmmoOnly, MinStage and MinVendorState from the block
 
 	int m_field0000;
