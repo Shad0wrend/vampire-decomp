@@ -46013,6 +46013,29 @@ CWeaponRollValue CBaseCombatWeapon::sub_10256350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102563f0 size=0x89
+#include "CBaseCombatWeapon.h"
+#include "CUnknown101d8a70.h"
+
+struct CWeaponRollSlot
+{
+	int m_a, m_b, m_c, m_d;
+};
+
+// TARGET: CBaseCombatWeapon::sub_102563f0
+CWeaponRollValue CBaseCombatWeapon::sub_102563f0(CUnknown101d8a70 *pRecordOut, int n)
+{
+	CWeaponRollSlot roll = *(CWeaponRollSlot *)((char *)this + 0x7a0 + *sub_102517e0() * 0x44);
+	CUnknown101d8a70 record;
+	record.sub_101d8820(sub_10252240(), this, &roll, n);
+	CWeaponRollValue *pValue = (CWeaponRollValue *)record.sub_101d8a70(&n);
+	CWeaponRollValue result = *pValue;
+	if (pRecordOut)
+		*pRecordOut = record;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102567b0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
