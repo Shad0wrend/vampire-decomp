@@ -75,3 +75,61 @@ void CNPC_Bullseye::vfunc141(void *pInfo, int a, int b)
 	sub_10015b13(pInfo, a, b);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10356ff0 size=0xdf
+#include "CNPC_Bullseye.h"
+
+struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
+struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
+extern EntInfoList *g_10566458;
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CBullseyeAttackerNpc
+{
+	S100(a) S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6();
+	virtual CBaseEntity *vfunc167();	// the entity the NPC targets
+};
+
+struct CBullseyeAttacker { char m_pad[0x94]; CBullseyeAttackerNpc *m_pNpc; };
+
+struct CBullseyeDamageInfo	// 0x4c bytes
+{
+	char m_pad00[0x2c];
+	CBullseyeAttacker *m_pAttacker;	// 0x2c
+	int m_nDamage;	// 0x30
+	char m_pad34[0x4c - 0x34];
+};
+
+struct CBullseyeHandle
+{
+	unsigned int m_Index;
+	CBaseEntity *Get() const
+	{
+		EntInfo *e;
+		return (m_Index != 0xffffffff && (e = &g_10566458->m_entries[m_Index & 0x1fff], e->m_serial == (int)(m_Index >> 13))) ? e->m_pEntity : 0;
+	}
+};
+
+int CNPC_Bullseye::vfunc142(void *pInfo)
+{
+	CBullseyeDamageInfo *pDamage = (CBullseyeDamageInfo *)pInfo;
+	if (*(unsigned int *)((char *)this + 0x204) & 0x40000) {
+		CBullseyeAttackerNpc *pNpc = pDamage->m_pAttacker->m_pNpc;
+		if (!pNpc)
+			return 0;
+		if (pNpc->vfunc167() != this)
+			return 0;
+	}
+	if (((CBullseyeHandle *)((char *)this + 0x5f44))->Get()) {
+		((CBullseyeHandle *)((char *)this + 0x5f44))->Get()->sub_100a1250(pInfo);
+		CBullseyeDamageInfo info = *pDamage;
+		info.m_nDamage = 0;
+		return sub_10265e90(&info);
+	}
+	return sub_10265e90(pInfo);
+}
+// END FUNCTION
