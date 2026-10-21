@@ -3313,6 +3313,7 @@
 0x1000efb6 func   _item_k_lucky_star_murder_key item_k_lucky_star_murder_key
 0x1000efbb func   ?sub_10334500@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_10334500
 0x1000efe8 func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>::vfunc2
+0x1000efed func   ?vfunc257@CBaseAnimating@@QAEXHH@Z CBaseAnimating::vfunc257
 0x1000eff2 func   ?vfunc2@CTEBeamEnts@@UAEPAV1@I@Z CTEBeamEnts::vfunc2
 0x1000f001 func   ?sub_102c8c40@UtlMem@@QAEXXZ UtlMem::sub_102c8c40
 0x1000f006 func   ?vfunc546@CNPC_VYukie@@QAEHH@Z CNPC_VYukie::vfunc546

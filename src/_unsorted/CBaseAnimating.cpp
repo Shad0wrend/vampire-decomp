@@ -273,3 +273,42 @@ float __fastcall sub_10091fe0(CBaseAnimating *self, int unused, int iParameter, 
 	return flValue;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10092b50 size=0xfb
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+#include "CUnknown100c7f30.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct SetupBonesSlots
+{
+	V100(a) V100(b)
+	V10(c0)
+	virtual void c10(); virtual void c11(); virtual void c12(); virtual void c13(); virtual void c14(); virtual void c15(); virtual void c16();
+	virtual void *slot217();
+	virtual void c18();
+	virtual void *slot219();
+	V10(c2) V10(c3) V10(c4)
+	virtual void c50(); virtual void c51(); virtual void c52(); virtual void c53(); virtual void c54();
+	virtual void slot255(void *pOut, void *pBuf, CUnknown100c7f30 *pBits);
+};
+
+void sub_100142f4(void *hdr, void *angles, void *origin, void *pOut, void *pBuf, int a, int b, CUnknown100c7f30 *pBits);
+
+void CBaseAnimating::vfunc257(int a, int b)
+{
+	char buf[0x15e0];
+	char out[0x1068];
+	char bitsMem[0x30];
+	ScopeTrace trace("CBaseAnimating::SetupBones", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	void *hdr = sub_100952d0(-1);
+	CUnknown100c7f30 *bits = (CUnknown100c7f30 *)bitsMem;
+	bits->sub_100c7f30((CUnknown100c7f30Hdr *)hdr, b);
+	SetupBonesSlots *s = (SetupBonesSlots *)this;
+	s->slot255(out, buf, bits);
+	sub_100142f4(hdr, s->slot219(), s->slot217(), out, buf, -1, a, bits);
+}
+// END FUNCTION
