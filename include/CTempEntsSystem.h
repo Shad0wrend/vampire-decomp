@@ -35,7 +35,7 @@ public:
 	void vfunc20(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i);	// slot 20 (CTEDynamicLight forwarder)
 	void vfunc15(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i);	// slot 15
 	void vfunc21(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j);	// slot 21 (CTEExplosion forwarder)
-	void vfunc25(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k);	// slot 25
+	void vfunc25(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l);	// slot 25
 	void vfunc26(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k);	// slot 26
 	void vfunc10(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, float i, int j, float k, int l, int m, int n, int o, int p);	// slot 10: like the other wrappers, but the two floats i and k are truncated to int for the worker
 	void vfunc9(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, float i, float j, int k, float l, int m, int n, int o, int p, int q);	// slot 9: as slot 10 with three floats (i, j, l) truncated to int for the worker
