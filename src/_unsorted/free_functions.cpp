@@ -22445,6 +22445,58 @@ int *sub_1010d4b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010ddc0 size=0xa7
+#include "CBreakable.h"
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+struct Vec3 { float x, y, z; };
+
+struct CBreakSlots
+{
+	virtual void s0();
+	virtual unsigned int *v1();
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5)
+	virtual void b62(); virtual void b63();
+	virtual void v64(Vec3 *pAngles);
+	SL100(c1) SL10(c2) SL10(c3) SL10(c4) SL10(c5) SL10(c6)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5();
+	virtual Vec3 *v221();
+	SL10(e0) virtual void e10(); virtual void e11(); virtual void e12(); virtual void e13(); virtual void e14();
+	virtual void e15(); virtual void e16(); virtual void e17(); virtual void e18();
+	virtual void v241();
+
+	unsigned int m_pad[0x450 / 4];
+};
+
+extern char g_1070ba40[];
+extern void sub_10139610(const Vec3 *, void *, void *, void *);
+
+void CBreakable::sub_1010ddc0(void *pEnt)
+{
+	CBreakSlots *self = (CBreakSlots *)this;
+	if (!sub_1010efc0())
+		return;
+	Vec3 *pAng = self->v221();
+	Vec3 v;
+	v.x = pAng->x;
+	v.y = pAng->y;
+	v.z = pAng->z;
+	v.y = *(float *)((char *)this + 0x450);
+	self->v64(&v);
+	sub_10139610(self->v221(), g_1070ba40, 0, 0);
+	unsigned int *pHandle = (unsigned int *)((char *)this + 0x458);
+	if (pEnt) {
+		*pHandle = *((CBreakSlots *)pEnt)->v1();
+	} else {
+		*pHandle = 0xffffffff;
+	}
+	self->v241();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f4e0 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_1010f4e0(void **p) { ((Fn *)*p)[241](p); }
