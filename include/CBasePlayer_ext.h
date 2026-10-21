@@ -7,3 +7,6 @@
 	void sub_10335470(void *pWeapon);	// CBaseCombatCharacter member (stub 0x10013601): takes the weapon (the carried-weapon lookup of the "give up weapon" path), called with the result of sub_10335950
 	void vfunc151(CBaseCombatWeapon *pWeapon);	// slot 151 (plain member): a weapon is being removed from the player: when it is the active weapon runs sub_10177120, its slot 316(0), clears its next think and its think function, zeroes +0x1c50; clears the handles at +0xea4 (slot 443(0)), +0x10dc and +0x10e0 that name it, then sub_1032cbe0(pWeapon)
 	void sub_1032cbe0(CBaseCombatWeapon *pWeapon);	// CBaseCombatCharacter member (stub 0x10004877), called directly by vfunc151
+	void sub_10164040(int type, int *pActivity, int *pOut);	// the thaumaturgy purge step of the activity machine (called by slot 417): for type 0xc steps the activity at +0xff0 through 0x1065 -> 0x1066 (the blood pool at +0x14a0 drains by up to 2 per call until a "Thaumaturgy_Purge" discipline check passes) -> 0x1067 -> 1; stores the activity in *pActivity and 0 in *pOut
+	char sub_10338df0(char bFlag);	// CBaseCombatCharacter::DecBloodPool-like (scope traced), called directly with 1
+	char sub_1033d2f0(unsigned int discipline);	// CBaseCombatCharacter member (stub 0x1000d3d7): whether the character has the discipline, called directly
