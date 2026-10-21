@@ -56444,6 +56444,32 @@ CLogicVisible *CLogicVisible::sub_1020f990()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210250 size=0x70
+#include "CEntityVSlots.h"
+#include <math.h>
+
+bool sub_101d20a0(CEntityVSlots *a, CEntityVSlots *b);
+
+struct CUnit10210250 {
+	char m_pad0000[0x458];
+	float m_flRange;
+	bool sub_10210250(CEntityVSlots *pB, CEntityVSlots *pA);
+};
+
+// TARGET: CUnit10210250::sub_10210250
+bool CUnit10210250::sub_10210250(CEntityVSlots *pB, CEntityVSlots *pA)
+{
+	if (!sub_101d20a0(pA, pB))
+		return false;
+	Vector *a = pA->slot217();
+	Vector *b = pB->slot217();
+	float d = fabs(b->z - a->z) + fabs(b->y - a->y) + fabs(b->x - a->x);
+	if (m_flRange < d)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102106c0 size=0x43
 #include "CTriggerPlayerActivityLevel.h"
 void *sub_100aa720(int size);
