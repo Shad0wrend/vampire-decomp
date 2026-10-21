@@ -3,3 +3,4 @@
 	void sub_1016fa90();	// stub 0x10008e77, run when the field at +0x1e24 had to be created
 	int sub_10178470(CBaseEntity *pKeyring);	// stub 0x100075a9: a value derived from the keyring item the player holds (negative when none), the hud message argument of the lock code
 	void sub_101710b0(const Vector *pImpulse);	// slot 169 "CBasePlayer::vfunc169" (plain member): in the cases the global at 0x10725de4 allows adds 20 * pImpulse to the vector at +0x1f08
+	void sub_1017f170(void *pSpawner);	// the immediate cop spawn of a "CSActs" spawner entity: DevMsg when the global at 0x107258dc allows, fires the output of the spawner picked by the state at +0x1dcc (0: +0x450, 1/2: +0x468, 3/4: +0x480), the +0x4c8 / +0x4e0 outputs by the two state checks, and resets the state fields (+0x1d10 / +0x1d14 / +0x1dc4 / +0x1dc8 / +0x1dcc)
