@@ -3727,6 +3727,7 @@
 0x10010cb2 func   ?vfunc444@CNPC_VGhoulCroucher@@QAEXPAX@Z CNPC_VGhoulCroucher::vfunc444
 0x10010cc6 func   ?sub_1027f990@CUtlVector20@@QAEXH@Z CUtlVector20::sub_1027f990
 0x10010ce9 func   _env_soundscape env_soundscape
+0x10010cee func   ?vfunc420@CNPC_VGhoulCroucher@@QAEXXZ CNPC_VGhoulCroucher::vfunc420
 0x10010cf3 func   ?sub_101d9210@CUnknown101d9210@@QAEXXZ CUnknown101d9210::sub_101d9210
 0x10010d0c func   ?sub_100dda50@CUnknown100dda50@@QAEDXZ CUnknown100dda50::sub_100dda50
 0x10010d1b func   ?sub_10180e70@@YAXXZ sub_10180e70

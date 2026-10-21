@@ -83,6 +83,54 @@ void CNPC_VGhoulCroucher::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b290 size=0x107
+#include "CNPC_VGhoulCroucher.h"
+#include "ScopeTrace.h"
+
+extern char g_1070d1b0[];
+extern char g_1070d9d0[];
+extern char g_1063b128[];	// "item_w_claws_ghoul"
+extern char g_10587630[];	// "item_w_knife"
+CBaseEntity *sub_100fbc90(const char *pszName, void *pOrigin, void *pAngles, float flLifetime);
+void sub_1021fe50(CBaseEntity *pOwner, const char *pszWeapon, int a);
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct GhoulFireSlots
+{
+	virtual void s0();
+	virtual unsigned int *slot1();
+	virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+	V100(b)
+	V10(c0) V10(c1) V10(c2) V10(c3)
+	virtual void c40(); virtual void c41(); virtual void c42();
+	virtual void slot243(CBaseEntity *pOwner, int a, const char *pszAttachment);
+};
+
+void CNPC_VGhoulCroucher::vfunc420()
+{
+	ScopeTrace trace("CNPC_VWerewolf::NPCInit", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_1000dcba();
+	sub_10334b10();
+	if (!m_b6664)
+		sub_1021fe50(this, g_10587630, 0);
+	else
+		sub_1021fe50(this, g_1063b128, 0);
+	sub_1033c6b0(0x10);
+	if (m_b6665) {
+		GhoulFireSlots *pFire = (GhoulFireSlots *)sub_100fbc90("la_malkavian_4_ghoul_body_fire_emitter", g_1070d1b0, g_1070d9d0, -1.0f);
+		if (pFire) {
+			pFire->slot243(this, 1, g_106b8540);
+			m_h6670 = *pFire->slot1();
+		}
+	}
+	sub_10332aa0(1, 1, 10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037b9f0 size=0xc6
 #include "CNPC_VGhoulCroucher.h"
 #include "CEntityVSlots.h"
