@@ -2006,6 +2006,7 @@
 0x1000a281 func   ?sub_1021e3e0@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e3e0
 0x1000a290 func   ?vfunc2@CTEBeamRingPoint@@UAEPAV1@I@Z CTEBeamRingPoint::vfunc2
 0x1000a29a func   ?sub_10427790@CUnknown10427700@@QAEXPBDHH000@Z CUnknown10427700::sub_10427790
+0x1000a2a4 func   ?vfunc9@CSoundControllerImp@@UAEXPAX@Z CSoundControllerImp::vfunc9
 0x1000a2c2 func   ?sub_101f3070@@YIXPAD@Z sub_101f3070
 0x1000a303 func   ?sub_100b7bc0@@YIXPAHH0@Z sub_100b7bc0
 0x1000a308 func   ?vfunc5@CItemGWirelessCamera1@@QAEPAV1@I@Z CItemGWirelessCamera1::vfunc5
