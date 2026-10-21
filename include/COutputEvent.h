@@ -11,6 +11,7 @@ public:
 
 	void sub_100cd660(void *pActivator, void *pCaller, float flDelay);	// "COutputEvent::FireOutput" (stub 0x10010794)
 	int sub_100cd870(CRestore *pRestore, int nElements);	// restores the output: the "Value" block, then nElements "EntityOutput" actions pushed onto the action list at +0x14; 0 when a read fails, else 1
+	void sub_100cd2d0();	// the destructor body of the output (stub 0x10015708), called directly
 
 	char m_data[0x18];
 };
