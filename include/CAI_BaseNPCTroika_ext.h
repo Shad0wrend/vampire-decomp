@@ -20,3 +20,4 @@
 	char sub_100a6fa0(CBaseEntity *pEnt, int a, int *pOut, int d);	// CBaseEntity::vfunc201 (stub 0x10001b63), called directly
 	char sub_1033d2f0(unsigned int discipline);	// CBaseCombatCharacter member (stub 0x1000d3d7), called directly
 	void sub_1027c1f0();	// CAI_BaseNPC member (stub 0x1000e967): the NPC reacts to the debug "all NPCs" command: condition 0x75 / 0x76 by whether its target (+0x5c38) is the player's, slot 93, resets the look target
+	bool vfunc295(CBaseCombatCharacter *pOther);	// slot 295 (plain member): whether this NPC may feed on / attack pOther: both alive, not unconscious, not busy with disciplines, no frenzy and the other not hidden, slot 404 neither 1 nor 2
