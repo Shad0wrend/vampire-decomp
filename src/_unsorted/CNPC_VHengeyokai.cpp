@@ -133,3 +133,33 @@ void CNPC_VHengeyokai::vfunc601(int unused)
 	g_10924edc->v1();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10383560 size=0x6a
+#include "CNPC_VHengeyokai.h"
+#include "CUnknown1070b22c.h"
+
+extern char g_106b8540[];
+extern CUnknown1070b22c *g_1070b22c;
+void __cdecl sub_1000ae7f(int idx, int line, const char *text, float duration, int r, int g, int b, int a);
+
+struct HenViewX {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual const char **vfunc9(int *pOut);
+};
+
+int CNPC_VHengeyokai::vfunc124()
+{
+	int line = sub_10006f64();
+	if (*((unsigned char *)this + 0x224) & 1) {
+		int tmp;
+		const char *name = *((HenViewX *)this)->vfunc9(&tmp);
+		if (!name)
+			name = g_106b8540;
+		int edict = *(int *)((char *)this + 0x2e0);
+		sub_1000ae7f(g_1070b22c->vfunc35(edict), line, name, 0.0f, 255, 255, 255, 255);
+		line++;
+	}
+	return line;
+}
+// END FUNCTION

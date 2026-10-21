@@ -2225,6 +2225,7 @@
 0x1000b4a6 func   ?sub_10340c90@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10340c90
 0x1000b4ab func   ?sub_1042ff80@@YAII@Z sub_1042ff80
 0x1000b4ba func   ?vfunc50@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc50
+0x1000b4c4 func   ?vfunc124@CNPC_VHengeyokai@@QAEHXZ CNPC_VHengeyokai::vfunc124
 0x1000b4e7 func   ?vfunc440@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc440
 0x1000b4ec func   ?sub_1025b5b0@@YAHXZ sub_1025b5b0
 0x1000b4f6 func   ?sub_1008d990@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_1008d990
