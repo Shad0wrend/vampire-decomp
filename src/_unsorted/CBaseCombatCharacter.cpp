@@ -2012,6 +2012,32 @@ bool __fastcall sub_10341850(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10342800 size=0xcb
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct CWeaponInfoBlock
+{
+    char pad0[0x242c];
+    unsigned char m_flags242c;
+};
+
+struct CWeaponUnit : public CEntityVSlots
+{
+    CWeaponInfoBlock *sub_102517b0();
+};
+
+int CBaseCombatCharacter::vfunc34(int pOther)
+{
+    ScopeTrace trace("CBaseCombatCharacter::GetHighlightMaterial", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    CWeaponUnit *pWeapon = (CWeaponUnit *)((CBaseCombatCharacter *)pOther)->sub_1032e7b0();
+    if (pWeapon && !pWeapon->slot267() && (pWeapon->sub_102517b0()->m_flags242c & 2) && pWeapon->slot285() == (int)this)
+        return 6;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10348890 size=0xb7
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
