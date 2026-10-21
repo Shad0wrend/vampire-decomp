@@ -9429,6 +9429,58 @@ void sub_1008a6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b3c0 size=0x9a
+#include "CBaseAnimating.h"
+
+extern "C" __declspec(dllimport) void Plat_Free(void *p);
+extern char vt_1044fad4[];
+
+struct CVecD {
+    int *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    int *m_pElements;
+
+    void MemPurge()
+    {
+        if (m_growSize != -1) {
+            if (m_pMemory) {
+                Plat_Free(m_pMemory);
+                m_pMemory = 0;
+            }
+            m_allocationCount = 0;
+        }
+    }
+    void Destroy()
+    {
+        m_size = 0;
+        MemPurge();
+        m_pElements = m_pMemory;
+        MemPurge();
+    }
+};
+
+struct CListD {
+    void sub_100cd2d0();
+};
+
+void CBaseAnimating::sub_1008b3c0()
+{
+    *(void **)this = vt_1044fad4;
+    CVecD *p = (CVecD *)((char *)this + 0x5ec);
+    int n = 2;
+    do {
+        p--;
+        p->Destroy();
+        n--;
+    } while (n);
+    ((CListD *)((char *)this + 0x4bc))->sub_100cd2d0();
+    ((CListD *)((char *)this + 0x4a4))->sub_100cd2d0();
+    sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b490 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
