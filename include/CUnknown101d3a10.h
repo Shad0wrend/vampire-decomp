@@ -1,15 +1,18 @@
 // CUnknown101d3a10: a loaded clan record (ClanData section); four per-table arrays at +0xd0..+0xdc.
 #pragma once
 
+struct CUnknown101d3a10Pad
+{
+	char m_pad[0x9c];
+};
+
 struct CUnknown101d3a10Sub
 {
 	void *sub_10205840();
 };
 
-struct CUnknown101d3a10Item
+struct CUnknown101d3a10Item : CUnknown101d3a10Pad, CUnknown101d3a10Sub	// the sub object sits at +0x9c
 {
-	char m_pad[0x9c];
-	CUnknown101d3a10Sub m_sub;
 };
 
 struct CUnknown101d3a10Table
