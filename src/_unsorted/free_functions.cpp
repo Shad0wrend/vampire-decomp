@@ -62836,6 +62836,39 @@ void CUnknown102becb0::sub_102becb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bfe10 size=0xca
+#include "CAI_BaseNPCTroika.h"
+
+extern "C" __declspec(dllimport) void DevMsg(int nLevel, const char *pszFormat, ...);
+
+struct CTroikaProbe_102bfe10	// the object at +0x5d40 of the NPC
+{
+	bool sub_102e7880(const Vector *pPos, unsigned int fMask, float flUp, float flDown, Vector *pGround, int *pFlags);	// stub 0x10005d44
+};
+
+void CAI_BaseNPCTroika::sub_102bfe10(int unused)
+{
+	bool bFloating = false;
+	Vector vecGround;
+	Vector vecOrigin = *(const Vector *)vfunc217();
+	int nFlags = 0;
+	CTroikaProbe_102bfe10 *pProbe = *(CTroikaProbe_102bfe10 **)((char *)this + 0x5d40);
+	if (!pProbe->sub_102e7880(&vecOrigin, 0x202400b, 32.0f, -1024.0f, &vecGround, &nFlags)) {
+		DevMsg(2, "I'm floating....  Me llamo %s\n", sub_1000b5cd());
+		bFloating = true;
+	}
+	float flDiff = vecOrigin.z - vecGround.z;
+	if (flDiff < -1.0f) {
+		DevMsg(2, "%s got below the ground by %f units.\n", sub_1000b5cd(), (double)flDiff);
+		sub_1027efb0();
+		DevMsg(2, "\n\n\n\n");
+	} else if (bFloating) {
+		sub_1027efb0();
+		DevMsg(2, "\n\n\n\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c0270 size=0xbf
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"
