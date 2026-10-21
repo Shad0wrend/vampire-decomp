@@ -38,13 +38,26 @@ struct CBaseEntityListLL	// one linked list: memory, allocation count, grow size
 	CBaseEntityListNode &InternalElement(unsigned short i) { return m_pMemory[i]; }
 };
 
+struct CBaseEntityListEntry	// a slot of the entity table (CEntInfo)
+{
+	void *m_pEntity;	// 0x00
+	int m_SerialNumber;	// 0x04
+	int m_pad;	// 0x08
+
+	CBaseEntityListEntry()
+	{
+		m_pEntity = 0;
+		m_SerialNumber = 0;
+	}
+};
+
 class CBaseEntityList
 {
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 
-	char m_pad0004[0x18004 - 4];
+	CBaseEntityListEntry m_EntPtrArray[0x2000];	// 0x0004
 	CBaseEntityListLL m_Live;	// 0x18004
 	CBaseEntityListLL m_Second;	// 0x18020
 
