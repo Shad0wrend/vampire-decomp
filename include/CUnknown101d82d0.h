@@ -10,6 +10,7 @@ struct CUnknown101d82d0_Elem
 
 	CUnknown101d82d0_Elem();	// sets m_a and m_b to -1 and m_c to 0 (stub 0x10007612, body at 0x101d8140)
 	~CUnknown101d82d0_Elem() {}
+	const char *sub_101d8190();	// the element as text: by the kind of the entry m_a names (0: the name of entry m_b, quoted when bit 0 of m_c is set; 1 / 2: the text of the entry m_a), "" when it has none
 };
 
 class CUnknown101d82d0
