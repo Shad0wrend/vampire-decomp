@@ -43218,6 +43218,34 @@ Vector sub_101d0680(const Vector &a, const Vector &b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d08e0 size=0xdb
+#include "CUnknown1070b254.h"
+
+extern CUnknown1070b254 *g_1070b254;
+
+// TARGET: sub_101d08e0
+float sub_101d08e0(const Vector &position, float minz, float maxz)
+{
+    Vector midUp = position;
+    midUp.z = minz;
+    if (!(g_1070b254->vfunc0(&midUp.x, 0) & 0x4030))
+        return minz;
+    midUp.z = maxz;
+    if (g_1070b254->vfunc0(&midUp.x, 0) & 0x4030)
+        return maxz;
+    float diff = maxz - minz;
+    while (diff > 1.0) {
+        midUp.z = minz + diff * 0.5;
+        if (g_1070b254->vfunc0(&midUp.x, 0) & 0x4030)
+            minz = midUp.z;
+        else
+            maxz = midUp.z;
+        diff = maxz - minz;
+    }
+    return midUp.z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0ce0 size=0x146
 #include "CBroadcastRecipientFilter.h"
 
