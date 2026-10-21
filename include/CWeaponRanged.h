@@ -29,7 +29,9 @@ public:
 	CWR_V10(1) CWR_V10(2) CWR_V10(3) CWR_V10(4) CWR_V10(5) CWR_V10(6) CWR_V10(7) CWR_V10(8) CWR_V10(9)
 	CWR_V10(10) CWR_V10(11) CWR_V10(12) CWR_V10(13) CWR_V10(14) CWR_V10(15) CWR_V10(16) CWR_V10(17) CWR_V10(18) CWR_V10(19)
 	CWR_V10(20) CWR_V10(21) CWR_V10(22) CWR_V10(23) CWR_V10(24) CWR_V10(25) CWR_V10(26) CWR_V10(27) CWR_V10(28) CWR_V10(29)
-	CWR_V10(30)
+	CWR_V(300) CWR_V(301) CWR_V(302) CWR_V(303) CWR_V(304) CWR_V(305) CWR_V(306)
+	virtual void vfunc307(int value);	// CBaseCombatWeapon slot 307 (called with a sound / activity id)
+	CWR_V(308) CWR_V(309)
 	CWR_V(310) CWR_V(311) CWR_V(312) CWR_V(313) CWR_V(314)
 	virtual bool vfunc315();	// slot 315: sets the owner's model name (male / female variant), then asks slots 344 / 343 / 342 for the shot parameters and starts the shot; true when it started
 	CWR_V(316) CWR_V(317) CWR_V(318) CWR_V(319)
@@ -52,4 +54,6 @@ public:
 	char sub_10253b70(int a);	// stub 0x1000c37e
 	void sub_10239d80();	// "CWeaponRanged::...": steps the counter at +0x914 through the owner's list (count at +0x4fe84, entries at +0x4fe70) and, for the character object at +0xa8 of the owner entity, sets the flag byte (CFlagSet10174550) and starts slot 333 (4 when the entry is empty, else 9); stores the entry at +0x1e78 of the character (stub 0x10003814)
 	void sub_10254250();	// CBaseCombatWeapon::vfunc320, called directly (stub 0x1000668b)
+	void sub_10239e70();	// uses up one shot: slot 307(0xb9), sub_10239f30(the owner's character), and unless a tuning flag holds lowers the clip of the current roll slot; an empty clip tells the owner's character slot 385(this, 0, 0) and removes the weapon
+	void sub_10239f30(void *pOwner);	// stub 0x1000d198, called directly with the owner's character
 };
