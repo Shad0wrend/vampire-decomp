@@ -313,6 +313,67 @@ void CBaseAnimating::vfunc257(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10093000 size=0x162
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+#define AS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define AS100(p) AS10(p##0) AS10(p##1) AS10(p##2) AS10(p##3) AS10(p##4) AS10(p##5) AS10(p##6) AS10(p##7) AS10(p##8) AS10(p##9)
+
+// The animating entity's virtual table up to slot 256 (the bone matrix getter).
+struct CAnimSlots
+{
+	AS100(a) AS100(b) AS10(c0) AS10(c1) AS10(c2) AS10(c3) AS10(c4)
+	virtual void c50(); virtual void c51(); virtual void c52(); virtual void c53(); virtual void c54(); virtual void c55();
+	virtual void vfunc256(int bone, float *pMatrix);
+};
+
+struct CAimEntHandle
+{
+	unsigned int m_Index;
+	CBaseEntity *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		CGlobalEntityList_Slot *e = &g_10566458->m_Slots[m_Index & 0x1fff];
+		return e->m_Serial == (m_Index >> 13) ? (CBaseEntity *)e->m_pEntity : 0;
+	}
+};
+
+void sub_10138df0(const float *pLocal, const char *pAttachmentMatrix, float *pOut);	// stub 0x1000a01a
+
+// TARGET: CBaseAnimating::vfunc262
+bool CBaseAnimating::vfunc262(int iAttachment, float *pMatrix)
+{
+    float matrix[12];
+    ScopeTrace trace("CBaseAnimating::GetAttachment03", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    char *hdr = (char *)sub_100952d0(-1);
+    if (!hdr || iAttachment < 1 || iAttachment > *(int *)(hdr + 0x148))
+        return false;
+    char *pAtt = hdr + *(int *)(hdr + 0x14c) + iAttachment * 0x3c - 0x3c;
+    CBaseEntity *pOwner = ((CAimEntHandle *)((char *)this + 0x37c))->Get();
+    if (pOwner) {
+        CBaseAnimating *pChar = *(CBaseAnimating **)((char *)pOwner + 0x9c);
+        if (pChar) {
+            char *rec = hdr + *(int *)(hdr + 0xf4) + *(int *)(pAtt + 8) * 0xa0;
+            int idx = pChar->sub_10092550((int)(rec + *(int *)rec));
+            if (idx >= 0) {
+                ((CAnimSlots *)pChar)->vfunc256(idx, matrix);
+                goto Done;
+            }
+        }
+    }
+    ((CAnimSlots *)this)->vfunc256(*(int *)(pAtt + 8), matrix);
+Done:
+    sub_10138df0(matrix, pAtt + 0xc, pMatrix);
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095a20 size=0x159
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
