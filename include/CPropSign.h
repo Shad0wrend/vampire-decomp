@@ -5,10 +5,19 @@
 #include "CCollisionProperty.h"
 
 class CBaseEntity;
+class CBasePlayer;
 
 struct CPropSignHandle
 {
 	unsigned int m_Index;
+};
+
+class CPropSign;
+
+struct CPropSignUserList	// the 0x1c byte object embedded at +0x74c
+{
+	char m_pad0000[0x1c];
+	void sub_100cd660(CBasePlayer *pPlayer, CPropSign *pOwner, int a);	// stub 0x10010794
 };
 
 class CPropSign
@@ -22,12 +31,17 @@ public:
 	virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28(); virtual void vfunc29();
 	virtual void vfunc30(); virtual void vfunc31(); virtual bool vfunc32(void *pEntity); virtual void vfunc33(); virtual bool vfunc34(int a);
 	virtual int vfunc35(int a);
+	virtual void vfunc36(); virtual void vfunc37(); virtual void vfunc38(); virtual void vfunc39(); virtual void vfunc40();
+	virtual void vfunc41();
+	virtual void vfunc42(CBasePlayer *pPlayer);	// slot 42 override: CBaseEntity::vfunc42, registers the player with the user list at +0x74c, sub_102120c0, then slot 192 (the center) is handed to the player (sub_10178590), sub_1015ef40 / sub_1015ef60 and clears flag bit 1 (sub_101815b0(1)) of the player
+	void sub_100a5030(CBasePlayer *pPlayer);	// CBaseEntity::vfunc42 (stub 0x10010e60), called directly
 	char m_pad0004[0x8c - 4];
 	CPropSignHandle m_hAttached;	// +0x8c
 	char m_pad0090[0x26c - 0x90];
 	const char *m_name26c;	// 0x26c
 	CCollisionProperty m_Collision;	// 0x270
-	char m_pad02b8[0x768 - 0x270 - sizeof(CCollisionProperty)];
+	char m_pad02b8[0x74c - 0x270 - sizeof(CCollisionProperty)];
+	CPropSignUserList m_Users74c;	// 0x74c
 	int m_field768;
 	void sub_10001a0a();	// as in CPhysForce (transplant)
 	void vfunc103();	// slot 103 "CPropSign::Spawn": CBaseProp::vfunc103, then with a studio header: stops the movement (slot 93), makes the entity solid (SetSolid 3), takes the collision bounds from the header (+0xb4 / +0xc0), sets collision group 1 and refreshes the partition (sub_100ddd90) and the entity (sub_100b3b00)
