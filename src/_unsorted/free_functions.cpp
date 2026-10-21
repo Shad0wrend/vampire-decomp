@@ -68211,6 +68211,39 @@ CBaseEntity *CAI_BaseNPC::sub_102729d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10274ca0 size=0xc7
+extern Vector g_1070d1b0;
+void sub_10428310(void *pStudioHdr, Vector *pOut);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+struct CAI_ColView {
+	virtual void v0();
+	virtual float *OBBMins();
+	virtual float *OBBMaxs();
+};
+struct CAI_BaseNPCEye : CAI_BaseNPC {
+	char m_padEye[0x5d60 - 4];
+	Vector m_vecEyeOffset;
+};
+
+// TARGET: CAI_BaseNPC::sub_10274ca0
+void CAI_BaseNPC::sub_10274ca0()
+{
+	Vector &eye = ((CAI_BaseNPCEye *)this)->m_vecEyeOffset;
+	sub_10428310(sub_100952d0(-1), &eye);
+	if (eye == g_1070d1b0) {
+		DevMsg("WARNING: %s has no eye offset in .qc!\n", sub_1009f200());
+		CAI_ColView *pColl = (CAI_ColView *)((char *)this + 0x270);
+		float *mins = pColl->OBBMins();
+		float *maxs = pColl->OBBMaxs();
+		eye.x = maxs[0] + mins[0];
+		eye.y = maxs[1] + mins[1];
+		eye.z = maxs[2] + mins[2];
+		eye *= 0.75f;
+	}
+	sub_1009f380(&eye);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102792b0 size=0x114
 #include "CAI_BaseNPC.h"
 #include "CBaseAnimating.h"
