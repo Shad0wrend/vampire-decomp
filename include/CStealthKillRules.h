@@ -8,7 +8,7 @@ class CStealthKillRules
 {
 public:
 	float m_aTable0[20];	// 0x00
-	int m_aTable1[20];	// 0x50
+	float m_aTable1[20];	// 0x50
 	int m_n0a0;	// 0xa0
 	int m_n0a4;	// 0xa4
 	int m_n0a8;	// 0xa8
@@ -19,6 +19,7 @@ public:
 
 	float sub_101be1d0(CBaseEntity *pEntity);
 	float sub_101bea90(CBaseEntity *pEntity);	// "CStealthKillRules::GetDeafZoneArc": scope trace, the arc of table 0 (+0x00) at the entity's feat value - 1 (feat of the active weapon's kind, 10 or else 9), 0.0f when there is no weapon or the index is out of range
+	float sub_101be930(CBaseEntity *pEntity);	// "CStealthKillRules::GetDeafZoneArcDot": same lookup in table 1 (+0x50), else the constant at 0x104454c0
 	void sub_101be0e0();	// "CStealthKillRules::FlushTable": scope trace, clears the four tables and sets the defaults (1, 10, 0, 3.0f, range 70.0f)
 	void sub_101bebf0();	// called through the stub at 0x1000d625 by InitTable after FlushTable
 	void sub_101be020();	// "CStealthKillRules::InitTable": scope trace, FlushTable, sub_101bebf0, then fills the float table at +0x50 with cos(table at +0x00 [i] * constants)
