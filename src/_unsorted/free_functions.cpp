@@ -35823,6 +35823,73 @@ int CUnknown101d76e0::sub_101d76e0(void *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7ec0 size=0xb2
+#include "CUnknown101d82d0.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+extern void (__cdecl *g_109f3628)(const char *, ...);
+
+struct CClanNameRecord
+{
+	int m_id;
+	const char *m_pszName;
+	int m_n08;
+};
+
+struct CClanNameHolder
+{
+	const char *m_psz;
+	const char *Get() const { return m_psz ? m_psz : g_106b8540; }
+};
+
+struct CClanStringList	// the object CClanStringTable looks the "ClanStrs_NO_LOCALIZE" list up in
+{
+	char m_pad0000[0xc];
+	int m_nCount;
+
+	int sub_10202a50(const char *pszName);
+};
+
+struct CClanStringTable	// the global at 0x1074e968
+{
+	int sub_10203020(const char *pszName);
+	CClanStringList *sub_10203190(int index);
+};
+
+extern CClanStringTable g_1074e968;
+
+struct CClanNames	// count at +0, 12 byte records at +4
+{
+	int m_nCount;
+	CClanNameRecord *m_pRecords;
+
+	int sub_101d7ec0(const char *pszName, int *pSubId);
+};
+
+int CClanNames::sub_101d7ec0(const char *pszName, int *pSubId)
+{
+	for (int i = 0; i < m_nCount; i++) {
+		if (_strcmpi(((CClanNameHolder *)((char *)m_pRecords + i * 12 + 4))->Get(), pszName) == 0) {
+			if (pSubId)
+				*pSubId = -1;
+			return m_pRecords[i].m_id;
+		}
+	}
+	int nList = g_1074e968.sub_10203020("ClanStrs_NO_LOCALIZE");
+	if (nList != -1) {
+		int nSub = g_1074e968.sub_10203190(nList)->sub_10202a50(pszName);
+		if (nSub != -1) {
+			if (pSubId)
+				*pSubId = nSub;
+			return 0;
+		}
+	}
+	g_109f3628("Unable to find Clan String Lists!\n");
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8190 size=0x7c
 #include <stdio.h>
 #include "CUnknown101d82d0.h"

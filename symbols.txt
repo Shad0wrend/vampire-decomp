@@ -2935,6 +2935,7 @@
 0x1000dcba func   ?vfunc420@CNPC_VHumanCombatant@@QAEXXZ CNPC_VHumanCombatant::vfunc420
 0x1000dd14 func   ?sub_1006fe00@@YIXPAUFollowObj@@@Z sub_1006fe00
 0x1000dd19 func   ?vfunc5@CPhysTorque@@UAEPAV1@I@Z CPhysTorque::vfunc5
+0x1000dd37 func   ?sub_101d7ec0@CClanNames@@QAEHPBDPAH@Z CClanNames::sub_101d7ec0
 0x1000dd4b func   ?sub_100b5b00@CBaseFlex@@QAEXPBM@Z CBaseFlex::sub_100b5b00
 0x1000dd5f func   ?sub_1019c950@@YAXPAH@Z sub_1019c950
 0x1000dd69 func   ?sub_10359de0@@YADXZ sub_10359de0
