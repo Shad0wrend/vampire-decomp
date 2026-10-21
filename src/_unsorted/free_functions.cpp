@@ -68014,6 +68014,48 @@ extern "C" CBaseEntity *npc_VCameraSecurity()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10369e70 size=0xfc
+#include "CNPC_VCameraSecurity.h"
+#include "CSecCamera.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+extern char g_10538764[];	// RTTI type descriptor of CBaseEntity
+extern char g_105ae064[];	// RTTI type descriptor of CSecCamera
+extern "C" void *__cdecl __RTDynamicCast(void *inptr, long VfDelta, void *SrcType, void *TargetType, int isReference);
+void sub_101cd940(CBaseEntity *pEnt);
+
+CBaseEntity *CNPC_VCameraSecurity::sub_10369e70()
+{
+	CGlobalEntityList_Slot *s;
+	unsigned int h = m_hCamera;
+	if (h == 0xffffffff || (s = &g_10566458->m_Slots[h & 0x1fff], s->m_Serial != (int)(h >> 13)) || !s->m_pEntity) {
+		const char *name = m_pCameraName ? m_pCameraName : g_106b8540;
+		CSecCamera *pCam = (CSecCamera *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, name, this, this), 0, g_10538764, g_105ae064, 0);
+		if (pCam)
+			m_hCamera = *pCam->vfunc1();
+		else
+			m_hCamera = 0xffffffff;
+	}
+	h = m_hCamera;
+	if (h == 0xffffffff || (s = &g_10566458->m_Slots[h & 0x1fff], s->m_Serial != (int)(h >> 13)) || !s->m_pEntity) {
+		if (m_bCameraFound)
+			sub_101cd940(this);
+	} else {
+		m_bCameraFound = 1;
+	}
+	h = m_hCamera;
+	if (h != 0xffffffff) {
+		s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13))
+			return (CBaseEntity *)s->m_pEntity;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036a340 size=0x33
 void sub_1000831e();
 void sub_1000fad8();
