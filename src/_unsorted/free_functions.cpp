@@ -27373,6 +27373,44 @@ int *sub_10132db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10132e30 size=0x6e
+#include "CBaseEntity.h"
+
+extern void *vt_104475c4[];
+extern void *vt_10467684[];
+extern char g_10578808[];
+void *sub_100aa720(int size);
+
+struct COutputCtor {
+	void sub_100cd2a0();
+};
+
+struct CMultiSourceView : CBaseEntity {
+	char m_padView[0x450 - 0x3e0];
+	int m_hSource[0x20];
+	char m_pad4d0[0x550 - 0x4d0];
+	COutputCtor m_out550;
+};
+
+extern "C" CBaseEntity *multisource()
+{
+	CMultiSourceView *p = (CMultiSourceView *)sub_100aa720(0x570);
+	CBaseEntity *e;
+	if (p) {
+		p->sub_1009d980(0);
+		*(void ***)p = vt_104475c4;
+		for (int i = 0; i < 0x20; i++)
+			p->m_hSource[i] = -1;
+		p->m_out550.sub_100cd2a0();
+		*(void ***)p = vt_10467684;
+		e = p;
+	} else
+		e = 0;
+	e->vfunc106(g_10578808);
+	return e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133450 size=0x116
 struct ISaveRestoreOps;
 struct datamap_t;
