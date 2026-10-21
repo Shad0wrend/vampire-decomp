@@ -3,3 +3,6 @@
 	void sub_10257640();	// stub 0x10005d30, tail called at the end of vfunc321
 	int vfunc361(int act);	// slot 361 "CBaseCombatWeapon::ActivityOverride": looks act up in the weapon's activity translation table (slots 362 / 363); the record's weapon activity is returned when the owner's model has a sequence for it (or the owner's player object's), else act
 	void sub_1024f7b0();	// stub 0x10003ca1: run on a weapon the owner just gave up
+	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence (stub 0x100125c1), called directly on the weapon
+	void sub_10090950();	// CBaseAnimating member (stub 0x100117b1), called directly
+	float sub_10091080(int sequence);	// CBaseAnimating::SequenceDuration (stub 0x10009813), called directly
