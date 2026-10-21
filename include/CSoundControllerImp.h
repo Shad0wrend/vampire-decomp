@@ -2,6 +2,10 @@
 // Only the primary vtable (19 slots) is described; slots 3, 4 and 16 are the ones recovered code calls.
 #pragma once
 
+#include "CUtlVector4.h"
+
+class CUnknown101bc140;
+
 struct envelopePoint_t
 {
 	float amplitudeMin;
@@ -15,7 +19,7 @@ class CSoundControllerImp
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual void vfunc2(CUnknown101bc140 *pSound, float flVolume, float flPitch);	// registers a sound: its state at +0x24 is cleared, volume / pitch applied; a sound already playing (+0x3c) goes to slot 4, else it is appended to the sound vector at +0xc and started
 	virtual void vfunc3(void *pSound, float executeDeltaTime, int command, float duration, float amplitude);	// "CommandAdd"
 	virtual void vfunc4(void *pSound);	// "CommandClear"
 	virtual void vfunc5(void *pSound);
@@ -32,4 +36,7 @@ public:
 	virtual float vfunc16(void *pSound, int command, envelopePoint_t *points, int numPoints);	// "SoundPlayEnvelope": clears the commands, adds one per point with random amplitude and duration, returns the total duration
 	virtual void vfunc17();
 	virtual void vfunc18();
+
+	char m_pad0004[8];	// 0x04 .. 0x0b
+	CUtlVector4 m_Sounds;	// 0x0c: the playing sounds
 };
