@@ -32717,6 +32717,33 @@ int *sub_10131a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101321f0 size=0xcc
+#include "CMathRemap.h"
+#include "inputdata_t.h"
+
+struct CMathRemapView {
+	char m_pad[0x450];
+	float m_flInMin;
+	float m_flInMax;
+	float InMin() const { return m_flInMin; }
+	float InMax() const { return m_flInMax; }
+};
+
+// TARGET: CMathRemap::sub_101321f0
+void CMathRemap::sub_101321f0(inputdata_t &inputdata)
+{
+	CMathRemapView *p = (CMathRemapView *)this;
+	float flIn = (inputdata.value.fieldType == 1) ? inputdata.value.flValue : 0.0f;
+	float flClamped = (flIn > p->InMax()) ? p->InMax() : ((flIn < p->InMin()) ? p->InMin() : flIn);
+	if (flClamped != flIn && (m_flags204 & 1))
+		return;
+	void *pActivator = inputdata.pActivator;
+	float flRemapped = ((flIn - m_flInMin) * (m_flOutMax - m_flOutMin)) / (m_flInMax - m_flInMin) + m_flOutMin;
+	((variant_t *)&m_OutValue)->sub_100d0390(1, &flRemapped);
+	m_OutValue.sub_100cd300(*(CVariantCopy *)&m_OutValue, pActivator, this, 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132b50 size=0x6d
 struct CGlobals1070b228 { char pad[0x24]; int m_n24; };
 extern CGlobals1070b228 *g_1070b228;
