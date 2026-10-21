@@ -8,7 +8,7 @@ public:
 	virtual char vfunc1();	// "IsCommand"-like test (a boolean answer in al)
 	virtual void vfunc2();
 	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual void vfunc4(int nValue);	// "ConVar::SetValue( int )"
 	virtual void vfunc5();
 	virtual void vfunc6();
 	virtual void vfunc7(const char *value);
