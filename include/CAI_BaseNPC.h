@@ -9,6 +9,7 @@
 class CBaseEntity;
 class CAI_Motor;
 class CRestore;
+class CUnknown102dfc10;
 
 #define CAI_NPC_V(n) virtual void vfunc##n();
 #define CAI_NPC_V10(p) CAI_NPC_V(p##0) CAI_NPC_V(p##1) CAI_NPC_V(p##2) CAI_NPC_V(p##3) CAI_NPC_V(p##4) CAI_NPC_V(p##5) CAI_NPC_V(p##6) CAI_NPC_V(p##7) CAI_NPC_V(p##8) CAI_NPC_V(p##9)
@@ -123,7 +124,8 @@ public:
 	virtual float vfunc520(int a);	// forwards a to slot 15 of the object pointed to at +0x5d44 and returns its float result
 	CAI_NPC_V(521) CAI_NPC_V(522) CAI_NPC_V(523) CAI_NPC_V(524) CAI_NPC_V(525) CAI_NPC_V(526) CAI_NPC_V(527) CAI_NPC_V(528) CAI_NPC_V(529)
 	CAI_NPC_V10(53)
-	CAI_NPC_V(540) CAI_NPC_V(541)
+	CAI_NPC_V(540)
+	virtual CUnknown102dfc10 *vfunc541(const char *pszMessage);	// the queue of pending records (CUnknown102dfc10) of the NPC; the argument is the "file(line) :" text of the caller
 	virtual void vfunc542();
 	CAI_NPC_V(543) CAI_NPC_V(544)
 	virtual bool vfunc545();	// finds the squad (+0x5da4) from the name at +0x5da8 when the class flags ask for one; true when it has one
