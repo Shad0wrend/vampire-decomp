@@ -53092,6 +53092,35 @@ void CUnknown1030ba50::sub_1030ba50(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030ba90 size=0x71
+#include "CHolderInner24.h"
+#include "CUnknown10936c84.h"
+extern CUnknown10936c84 g_10936c84;
+extern __declspec(dllimport) void DevMsg(const char *fmt, ...);
+void CHolderInner24::sub_1030ba90()
+{
+	if (!sub_1030bd50()) {
+		CHolderInner24_Node *p = m_pNode;
+		CHolderInner24_Node *pNext = p->m_pNext;
+		if (pNext) {
+			if (p->m_flags28 & 4)
+				m_i44 = p->m_i10;
+			if (m_pNode) {
+				if (p->m_pNext)
+					p->m_pNext->m_pPrev = p->m_pPrev;
+				if (p->m_pPrev)
+					p->m_pPrev->m_pNext = p->m_pNext;
+				g_10936c84.sub_1013dce0((CChainNodeStub *)p);
+			}
+			sub_1030b4d0(pNext, 0);
+		} else {
+			DevMsg("!!ERROR!! Force end of route with no goal!\n");
+			m_pNode->m_flags28 |= 8;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030bb30 size=0x94
 #include "CAI_Navigator.h"
 extern CAI_NavVec3 g_1070d1b0;

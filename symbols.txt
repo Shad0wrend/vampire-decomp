@@ -76,6 +76,7 @@
 0x10001640 func   ?sub_10141320@@YA_NXZ sub_10141320
 0x10001645 func   ?sub_1023f040@@YAXPAH@Z sub_1023f040
 0x1000164a func   ?sub_102885f0@@YIXPAUNPCStub@@@Z sub_102885f0
+0x10001659 func   ?sub_1030ba90@CHolderInner24@@QAEXXZ CHolderInner24::sub_1030ba90
 0x10001677 func   ?vfunc5@CPhysMotor@@UAEPAV1@I@Z CPhysMotor::vfunc5
 0x10001681 func   ?sub_100779b0@CUnknown100779b0@@QAEXH@Z CUnknown100779b0::sub_100779b0
 0x10001690 func   ?sub_10057570@CFireSmoke@@QAEXXZ CFireSmoke::sub_10057570
