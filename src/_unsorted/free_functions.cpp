@@ -55846,6 +55846,30 @@ bool CBaseCombatCharacter::sub_1033b7c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033b980 size=0x17c
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+
+extern float g_104454c0;
+extern float g_104454c4;
+extern float g_104454d0;
+
+struct CUnknown1033b980 : CBaseCombatCharacter {
+	float sub_1033b980();
+};
+
+float CUnknown1033b980::sub_1033b980()
+{
+	ScopeTrace trace("CBaseCombatCharacter::BloodHealDelay", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int a = CVStatListSet::Of(this)->Find(0)->sub_10010609(0xf);
+	if ((int)a > 0) {
+		long b = CVStatListSet::Of(this)->Find(0)->sub_10010609(0x10);
+		return a > b ? g_104454d0 : g_104454c0;
+	}
+	return g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033c6b0 size=0x86
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
