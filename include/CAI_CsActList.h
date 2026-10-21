@@ -1,6 +1,8 @@
 // CAI_CsActList (RTTI .?AVCAI_CsActList@@): list of 0x28-byte CSAct entries, count at +0xa04.
 #pragma once
 
+class CBaseEntity;
+
 struct CSAct
 {
 	char m_data[0x28];
@@ -33,6 +35,7 @@ public:
 	virtual void vfunc2(char flag);	// calls sub_102ca760 when flag is set
 
 	void sub_102ca760();
+	void sub_102ca2a0(int nType, CBaseEntity *pSource, float x, float y, float z, int nLevel, float flDuration, CBaseEntity *pOffender, CBaseEntity *pOwner, char bExternal);	// adds an act (type 2 = supernatural, else criminal) to the list unless it holds 0x40: the entry gets the type, the source handle (-1 for none), the position, the level, the duration (sub_102c9d70), the offender and owner handles and the flag, with a DevMsg line when the console variable at 0x107258dc allows
 
 	CSAct m_acts[0x40];	// 0x004 .. 0xa03
 	int m_nActs;		// 0xa04
