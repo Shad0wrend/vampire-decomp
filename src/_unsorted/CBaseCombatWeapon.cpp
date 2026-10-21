@@ -302,6 +302,41 @@ void CBaseCombatWeapon::vfunc340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102552c0 size=0x119
+#include "CBaseCombatWeapon.h"
+#include "CBaseCombatCharacter.h"
+#include "ConVar.h"
+extern ConVar *g_1088aef4;
+#define MIN_(a, b) (((a) < (b)) ? (a) : (b))
+void CBaseCombatWeapon::vfunc323()
+{
+	CBaseCombatCharacter *pOwner = (CBaseCombatCharacter *)sub_102521f0();
+	if (pOwner) {
+		if (*((char *)this + 0x8c8)) {
+			sub_10254cd0(0xc3);
+		} else {
+			int i = 0;
+			int *pClip = (int *)((char *)this + 0x74c);
+			do {
+				if (vfunc277(i)) {
+					int amount = MIN_(vfunc275(i) - *pClip, pOwner->sub_103346c0(pClip[-2]));
+					*pClip += amount;
+					if (*(int *)((char *)pOwner + 0xa8)) {
+						if (g_1088aef4->vfunc1() || g_1088aef4->m_nValue < 1)
+							pOwner->sub_10334500(amount, pClip[-2]);
+					}
+				}
+				pClip++;
+				i++;
+			} while (i < 2);
+		}
+		*((char *)this + 0x898) = 0;
+		*((char *)this + 0x89a) = 0;
+		*((char *)this + 0x899) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102556d0 size=0x14
 #include "CBaseCombatWeapon.h"
 #define V(n) virtual void n();

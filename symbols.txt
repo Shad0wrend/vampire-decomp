@@ -4207,6 +4207,7 @@
 0x10012bfc func   ?vfunc19@CMultiplayRules@@UAEDPAVCBaseEntity@@0@Z CMultiplayRules::vfunc19
 0x10012c15 func   ?sub_10250560@@YAXH@Z sub_10250560
 0x10012c24 func   ?sub_103ec6f0@@YAHXZ sub_103ec6f0
+0x10012c29 func   ?vfunc323@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc323
 0x10012c2e func   ?sub_102c6740@CUnknown102c6740@@QAEPAUCUnknown102c6740_Elem@@H@Z CUnknown102c6740::sub_102c6740
 0x10012c38 func   ?vfunc5@CWeaponMelee@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee::vfunc5
 0x10012c3d func   ?sub_10337b00@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::sub_10337b00
