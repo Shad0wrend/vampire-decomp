@@ -6344,6 +6344,38 @@ void sub_1005be30(int pFilter, int delay, int nStartEntity, int nEndEntity, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005c310 size=0xc3
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246700(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246dc0(const char *name, int offset, int pTable, void *proxy);
+void sub_10009539();
+void sub_10003012();
+extern SendTable g_106bfacc;
+extern const char *g_10541254;
+extern int g_105409b0;
+
+// TARGET: sub_1005c310
+int sub_1005c310()
+{
+    static SendProp g_SendProps[] = {
+        sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+        sub_10246dc0("baseclass", 0, g_105409b0, (void *)sub_10009539),
+        sub_10246700("m_vecStartPoint", 0x44, 12, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+        sub_10246700("m_vecEndPoint", 0x50, 12, -1, 2, 0.0f, -121121.121121f, (void *)sub_10003012),
+    };
+    g_106bfacc.sub_10247240(g_SendProps + 1, 3, g_10541254);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005c4d0 size=0xd8
 #include "CTEBeamPoints.h"
 

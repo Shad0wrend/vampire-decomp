@@ -2176,6 +2176,7 @@
 0x10009fd9 func   ?vfunc327@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc327
 0x10009fde func   _npc_VGhoulCroucher npc_VGhoulCroucher
 0x10009fed func   _info_node_sabbat_top info_node_sabbat_top
+0x1000a00b func   ?sub_1005c310@@YAHXZ sub_1005c310
 0x1000a015 func   _item_k_key_generic item_k_key_generic
 0x1000a01f func   ?sub_1025d880@@YAXXZ sub_1025d880
 0x1000a024 func   ?vfunc178@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc178
