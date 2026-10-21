@@ -182,4 +182,5 @@ public:
 	bool sub_1026fb40();	// throttled check: when the class flags (slot 513) have bit 21 and the time at +0x5da0 has passed, pushes it ahead and, unless sub_10007e19() holds, asks sub_10005dd5 about a (300, 300, 100) box
 	int sub_10007e19();	// CBaseCombatCharacter member (the stub at 0x10007e19 for 0x1032e7b0), called directly
 	int sub_10005dd5(float *pBox);	// CBaseCombatCharacter member (the stub at 0x10005dd5 for 0x10333ad0), called directly with a three-float box
+	void sub_102695d0();	// scope trace (entity name), makes the entity fully visible when its field at +0x16c is 0 (alpha byte +0x1a3 = 0xff, field = 2), AddSolidFlags(4) on the collision property at +0x270 (inlined scope trace), sub_100b2f50(zero vector), sub_100b3b00(), next think = curtime + 10.0, ThinkSet(think stub 0x100152b2, 0, 0)
 };
