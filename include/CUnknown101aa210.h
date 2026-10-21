@@ -23,4 +23,6 @@ public:
 
 	void *sub_101aa210();	// finds the NPC (the object at +0x94 of the entity found) that sub_101aa130 accepts: by target name first, then by the class name among the entities of a sphere query; 0 when there is none
 	bool sub_101aa130(void *pNPC);	// stub 0x1000781a: whether the NPC can be used
+	void sub_101a9fa0();	// the entity's think: with an NPC found (sub_101aa210) asks the engine (slot 57) for the time its line takes (sub_101aa390 of the NPC), fires the output at +0x494 for the entity of the handle at +0x10c after that time plus the delay at +0x460, removes itself when spawn flag 1 is set, thinks again after the time plus the pause (+0x45c) and 0.1 s; without an NPC thinks again after the delay and a constant
+	int sub_101aa390(void *pNPC);	// stub 0x100026f8: the sound / line key of the NPC, handed to engine slot 57
 };
