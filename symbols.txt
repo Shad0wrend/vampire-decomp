@@ -1699,6 +1699,7 @@
 0x10008d6e func   ?sub_10196c50@@YAPAUPyObj@@PAU1@0@Z sub_10196c50
 0x10008d82 func   _env_floating_camera env_floating_camera
 0x10008d91 func   ?sub_102c3350@S@@QAEXPAUinputdata_t@@@Z S::sub_102c3350
+0x10008daf func   ?vfunc0@CVTSDependencySaveRestoreDataOps@@UAEXPAUCVTSDependencyField@@PAVCSave@@@Z CVTSDependencySaveRestoreDataOps::vfunc0
 0x10008dc8 func   ?sub_10078580@CUnknown10078540@@QAEXH@Z CUnknown10078540::sub_10078580
 0x10008dcd func   ?sub_101e8410@@YGXPAHHH@Z sub_101e8410
 0x10008dd2 func   ?sub_1034a170@@YAXPAUCBlock4k@@PBU1@@Z sub_1034a170

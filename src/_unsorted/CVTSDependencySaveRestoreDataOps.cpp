@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100d01f0 size=0x71
+#include "CVTSDependencySaveRestoreDataOps.h"
+#include <string.h>
+void CVTSDependencySaveRestoreDataOps::vfunc0(CVTSDependencyField *pField, CSave *pSave)
+{
+	CVTSDependencyRecord *pRecord = pField->m_pRecord;
+	bool bHas = pRecord && !pRecord->sub_10204250();
+	pSave->vfunc12(&bHas, 1);
+	if (bHas) {
+		const char *psz = pRecord->sub_102043a0();
+		int len = strlen(psz);
+		pSave->vfunc10(&len, 1);
+		pSave->vfunc20(psz);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0290 size=0x6e
 #include "CVTSDependencySaveRestoreDataOps.h"
 extern "C" void *malloc(unsigned int);
