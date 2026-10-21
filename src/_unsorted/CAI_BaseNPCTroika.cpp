@@ -1409,6 +1409,38 @@ char CAI_BaseNPCTroika::sub_102b57c0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5900 size=0xab
+#include "CAI_BaseNPCTroika.h"
+
+struct SGlobalVars { char pad[0xc]; float curtime; };
+extern SGlobalVars *g_1070b228;
+
+struct SDifficulty {
+	virtual void s0();
+	virtual char s1();
+	char pad[0x24];
+	float m28;
+};
+extern SDifficulty *g_10924a1c;
+
+#define NAMED (*(CAI_NamedThing **)((char *)this + 0x65e8))
+
+char CAI_BaseNPCTroika::vfunc602()
+{
+	if ((m_flags5b84 & 2) == 2 || vfunc293() != 0 || !NAMED)
+		return 0;
+	if (((CAI_BaseNPC *)this)->vfunc308()) {
+		if (g_1070b228->curtime >= m_f6074)
+			return 1;
+	} else {
+		double f = g_10924a1c->s1() ? 0.0f : g_10924a1c->m28;
+		if ((float)(f + f) <= m_f6268 && !NAMED->sub_1025db50())
+			return 1;
+	}
+	return NAMED->sub_1025de90(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b59e0 size=0xf1
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown1070b244.h"
