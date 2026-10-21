@@ -63,7 +63,9 @@ public:
 	virtual void s13(); virtual void s14();
 	virtual int vfunc15(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadInt": reads up to count ints into pValues, returns the number read
 	virtual void s16();
-	virtual void s17(); virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21(); virtual void s22();
+	virtual void s17(); virtual void s18(); virtual void s19();
+	virtual int vfunc20(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadString" (string pool ids): reads up to count zero terminated strings from the buffer, stores the pooled id of each (0 for an empty one) in pValues, then skips the rest of the nBytesAvailable bytes; returns the number read
+	virtual void s21(); virtual void s22();
 	virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27();
 	virtual int vfunc28(CBaseEntity **pValues, int count, int nBytesAvailable);	// "CRestore::ReadEntityPtr": reads entity indexes (slot 15) and maps each to the entity (sub_101a2390), zero-filling the rest
 	virtual int vfunc29(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadEdictPtr": like slot 28 but stores the edict (+0x2e0) of each entity (0 when it does not resolve); reads through slot 15 into a 256 dword buffer, zero-filling up to the third argument
