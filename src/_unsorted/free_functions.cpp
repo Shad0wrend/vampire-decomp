@@ -70563,6 +70563,99 @@ extern "C" CBaseEntity *item_g_keyring()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10407c40 size=0x16e
+#include "CItemGKeyring.h"
+extern "C" __declspec(dllimport) int __cdecl Q_strnicmp(const char *s1, const char *s2, int n);
+extern "C" __declspec(dllimport) char *__cdecl Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(unsigned int size);
+extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *pMem, unsigned int size);
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct CKeyElemX {
+    char a[0x60];
+    char b[0x60];
+};
+struct CKeyVecX {
+    CKeyElemX *m_pMemory;	// 0x914
+    int m_nAlloc;	// 0x918
+    int m_nGrow;	// 0x91c
+    int m_nSize;	// 0x920
+    CKeyElemX *m_pElements;	// 0x924
+
+    void Grow(int nRequested)
+    {
+        if (m_nGrow == -1)
+            return;
+        if (m_nAlloc < nRequested) {
+            int a = m_nAlloc;
+            do {
+                if (a) {
+                    if (m_nGrow)
+                        a += m_nGrow;
+                    else
+                        a += a;
+                } else
+                    a = 1;
+            } while (a < nRequested);
+            m_nAlloc = a;
+        }
+        if (m_pMemory)
+            m_pMemory = (CKeyElemX *)Plat_Realloc(m_pMemory, m_nAlloc * sizeof(CKeyElemX));
+        else
+            m_pMemory = (CKeyElemX *)Plat_Alloc(m_nAlloc * sizeof(CKeyElemX));
+    }
+    void GrowVector(int num = 1)
+    {
+        if (m_nSize + num > m_nAlloc)
+            Grow(m_nSize + num);
+        m_nSize += num;
+        m_pElements = m_pMemory;
+    }
+    void ShiftElementsRight(int elem, int num = 1)
+    {
+        int numToMove = m_nSize - elem - num;
+        if (numToMove > 0 && num > 0)
+            memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(CKeyElemX));
+    }
+    int InsertBefore(int elem, const CKeyElemX &src)
+    {
+        GrowVector();
+        ShiftElementsRight(elem);
+        CKeyElemX *p = &m_pMemory[elem];
+        if (p)
+            *p = src;
+        return elem;
+    }
+    int AddToTail(const CKeyElemX &src)
+    {
+        return InsertBefore(m_nSize, src);
+    }
+};
+struct CKeyringUnit : CItemGKeyring {
+    char m_pad03e0[0x914 - 0x3e0];
+    CKeyVecX m_Keys;
+    void sub_10408060(int index);
+    void sub_10407c40(const char *pszName, const char *pszDesc);
+};
+
+// TARGET: CKeyringUnit::sub_10407c40
+void CKeyringUnit::sub_10407c40(const char *pszName, const char *pszDesc)
+{
+    for (int i = 0; i < m_Keys.m_nSize; i++) {
+        if (!Q_strnicmp(m_Keys.m_pMemory[i].a, pszName, 0x60)) {
+            if (i != -1)
+                return;
+            break;
+        }
+    }
+    CKeyElemX e;
+    Q_strncpy(e.a, pszName, 0x60);
+    Q_strncpy(e.b, pszDesc, 0x60);
+    int idx = m_Keys.AddToTail(e);
+    sub_10408060(idx);
+}
+// END FUNCTION
+
 // FUNCTION: 0x104085f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
