@@ -36,3 +36,26 @@ void CNPCMaker_Zombie::vfunc103()
     m_nCounters[4] = 999999;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1034d0a0 size=0x7a
+#include "CNPCMaker_Zombie.h"
+#include "CEntityVSlots.h"
+#include <math.h>
+
+CBaseEntity *sub_101cda50();
+
+char CNPCMaker_Zombie::vfunc618(char bForce)
+{
+	if (bForce)
+		return 1;
+	CBaseEntity *pPlayer = sub_101cda50();
+	if (pPlayer) {
+		Vector *pMine = ((CEntityVSlots *)this)->slot217();
+		Vector *pTheirs = ((CEntityVSlots *)pPlayer)->slot217();
+		float flDist = fabs(pTheirs->z - pMine->z) + fabs(pTheirs->y - pMine->y) + fabs(pTheirs->x - pMine->x);
+		if (flDist * 0.9f > m_flRange)
+			return 0;
+	}
+	return sub_1034b580(0);
+}
+// END FUNCTION
