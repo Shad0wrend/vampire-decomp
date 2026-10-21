@@ -4,6 +4,12 @@
 
 class CBaseCombatCharacter;
 
+struct CSkillOutcome	// a one dword result the skill tests return through a hidden pointer (the class has a constructor)
+{
+	int m_nOutcome;
+	CSkillOutcome() : m_nOutcome(0) {}
+};
+
 class CUnknown10739d08
 {
 public:
@@ -19,6 +25,6 @@ public:
 	float sub_101e8640(void *pChar);	// a float derived from the character's stats (stub 0x1000b3d9)
 	float sub_101e9020();	// a tuning value as a float (stub 0x10004615)
 	float *sub_101e8da0();	// the address of the block at +0x2bc (stub 0x10008e7c): floats at +0x64 / +0x68 are the base and the per-step delay
-	int *sub_101e7ea0(void *pOut, void *pPlayer, void *pSkill, char bFlag);	// the outcome of a vampire skill test of kind 1 for the player, stored at *pOut and returned (stub 0x10010b9f, ret 0x10)
-	int *sub_101e8100(void *pOut, void *pPlayer, void *pSkill, char bFlag);	// like sub_101e7ea0, for the skill kind 2 (stub 0x10005ac4)
+	CSkillOutcome sub_101e7ea0(void *pPlayer, void *pSkill, char bFlag);	// the outcome of a vampire skill test of kind 1 for the player (stub 0x10010b9f, ret 0x10)
+	CSkillOutcome sub_101e8100(void *pPlayer, void *pSkill, char bFlag);	// like sub_101e7ea0, for the skill kind 2 (stub 0x10005ac4)
 };
