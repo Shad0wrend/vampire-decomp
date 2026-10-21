@@ -1027,6 +1027,7 @@
 0x10004fde func   ?sub_1007f510@@YAXPAHPBH@Z sub_1007f510
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
 0x10004fe8 func   ?vfunc5@CWeaponMelee_Tzimisce3Claw@@QAEPAV1@I@Z CWeaponMelee_Tzimisce3Claw::vfunc5
+0x10005006 func   ?sub_10079ca0@SDumpOutput@@QAEXHPAUCDumpChannel10079ca0@@@Z SDumpOutput::sub_10079ca0
 0x1000500b func   ?sub_100fafa0@@YAHPAVCBaseEntity@@HPBD@Z sub_100fafa0
 0x1000501a func   ?sub_101ecae0@CUnknown101ecae0@@QAEXH@Z CUnknown101ecae0::sub_101ecae0
 0x10005024 func   ?sub_10337980@@YIXPAVCBaseCombatCharacter@@HH@Z sub_10337980
