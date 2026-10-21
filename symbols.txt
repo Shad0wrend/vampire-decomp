@@ -1540,6 +1540,7 @@
 0x10006ed3 func   ?sub_1012f850@@YAMM@Z sub_1012f850
 0x10006ed8 func   ?vfunc5@CAI_ChangeHintGroup@@QAEPAV1@I@Z CAI_ChangeHintGroup::vfunc5
 0x10006edd func   ?sub_103ca1a0@CHintData_WW@@QAEXH@Z CHintData_WW::sub_103ca1a0
+0x10006f05 func   ?vfunc110@CFuncRotating@@UAE_NPBD0@Z CFuncRotating::vfunc110
 0x10006f0a func   ?sub_104079a0@@YAHXZ sub_104079a0
 0x10006f23 func   ?vfunc618@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc618
 0x10006f28 func   ?sub_100b7c60@CUnknown100b7c60@@QAEXH@Z CUnknown100b7c60::sub_100b7c60

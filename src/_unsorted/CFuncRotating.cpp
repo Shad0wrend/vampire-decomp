@@ -1,6 +1,27 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100bf9b0 size=0xbd
+#include "CFuncRotating.h"
+#include <string.h>
+#include <stdlib.h>
+
+bool CFuncRotating::vfunc110(const char *szKeyName, const char *szValue)
+{
+	if (!_strcmpi(szKeyName, "fanfriction")) {
+		m_flFanFriction = atof(szValue) * 0.01;
+		return true;
+	}
+	if (!_strcmpi(szKeyName, "Volume")) {
+		float v = atof(szValue) * 0.1;
+		m_flVolume = v;
+		m_flVolume = (v > 1.0f) ? 1.0 : ((v < 0.0) ? 0.0 : v);
+		return true;
+	}
+	return CBaseEntity::vfunc110(szKeyName, szValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bfe80 size=0x92
 #include "CFuncRotating.h"
 
