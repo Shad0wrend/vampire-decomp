@@ -23170,6 +23170,45 @@ void CUnknown100dbd70::sub_100dbd70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dbf50 size=0x16f
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropVector
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropFloat
+void sub_10003012();
+void sub_10006aeb();
+void sub_100dc120();
+void sub_100dc140();
+
+extern SendTable g_106e816c;
+
+// TARGET: sub_100dbf50
+int sub_100dbf50()
+{
+	static const char *pTableName = "DT_CollisionProperty";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000c14e("m_vecMins", 4, 0xc, 0, 4, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_1000c14e("m_vecMaxs", 0x10, 0xc, 0, 4, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_10007bfd("solid", 0, -1, 3, 1, 0, (void *)sub_100dc120),
+		sub_10007bfd("solidflags", 0, -1, 9, 1, 0, (void *)sub_100dc140),
+		sub_10007bfd("m_nSurroundType", 0x1c, 1, 3, 1, 0, 0),
+		sub_10006cc1("m_flTriggerBloat", 0x20, 4, 0, 4, 0.0f, -121121.121094f, (void *)sub_10006aeb),
+		sub_1000c14e("m_vecSpecifiedSurroundingMins", 0x24, 0xc, 0, 4, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_1000c14e("m_vecSpecifiedSurroundingMaxs", 0x30, 0xc, 0, 4, 0.0f, -121121.121094f, (void *)sub_10003012),
+	};
+	g_106e816c.sub_1000e8fe(props + 1, 8, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc120 size=0x10
 void sub_100dc120(int *p, int unused, int *out)
 {
