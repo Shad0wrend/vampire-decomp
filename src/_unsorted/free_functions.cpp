@@ -72132,6 +72132,59 @@ extern "C" GP *item_w_grenade_frag()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f00c0 size=0xbf
+#include "CWeaponThrown_Chang_Energy_Ball.h"
+
+#define PHYS_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CChangBallPhysObj
+{
+	PHYS_SLOTS10(a0) PHYS_SLOTS10(a1) PHYS_SLOTS10(a2)
+	virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34();
+	virtual void a35(); virtual void a36(); virtual void a37(); virtual void a38();
+	virtual void vfunc39(const void *pWorld, float *pVec);
+};
+struct CChangBallEngine { virtual void v0(); virtual void v1(); virtual int vfunc2(int a, int b); };
+
+extern CChangBallEngine *g_1070b244;
+extern char g_1070d1b0[];
+
+static inline void SwapRelief(CBaseEntity *pEnt)
+{
+	pEnt->m_nTakeDamage = 0;
+	switch (g_1070b244->vfunc2(0, 2)) {
+	case 0:
+		pEnt->vfunc105("models/scenery/misc/relief/relief_damaged.mdl");
+		break;
+	case 1:
+		pEnt->vfunc105("models/scenery/misc/relief/relief_damaged2.mdl");
+		break;
+	default:
+		pEnt->vfunc105("models/scenery/misc/relief/relief_damaged3.mdl");
+		break;
+	}
+}
+
+void CWeaponThrown_Chang_Energy_Ball::sub_103f00c0(int unused)
+{
+	if (m_b91c)
+		return;
+	m_b91c = 1;
+	CChangBallPhysObj *pObj = *(CChangBallPhysObj **)((char *)this + 0x36c);
+	if (pObj) {
+		float v[3];
+		v[0] = 0;
+		v[1] = 0;
+		v[2] = 0;
+		pObj->vfunc39(g_1070d1b0, v);
+	}
+	CBaseEntity *pEnt = sub_103f0200();
+	if (pEnt)
+		SwapRelief(pEnt);
+	sub_103f0590();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f04f0 size=0xd
 CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
 {
