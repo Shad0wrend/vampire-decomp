@@ -62088,6 +62088,21 @@ void CBaseCombatCharacter::sub_10325c10(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103268e0 size=0xf1
+#include "CBaseCombatCharacter.h"
+#include "ConVar.h"
+#include "ScopeTrace.h"
+extern ConVar *g_10936f74;
+
+char CBaseCombatCharacter::sub_103268e0(const float *pos, int a)
+{
+	ScopeTrace trace("CBaseCombatCharacter::FInViewCone", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!g_10936f74->vfunc1() && g_10936f74->m_nValue == 2)
+		return sub_103261f0(*(Vector *)pos, 1.0f, a);
+	return sub_103264d0(*(Vector *)pos, 1.0f, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10327960 size=0x7e
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };

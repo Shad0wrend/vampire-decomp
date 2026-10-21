@@ -4358,6 +4358,7 @@
 0x1001384f func   ?vfunc546@CNPC_VScurrying@@QAEHH@Z CNPC_VScurrying::vfunc546
 0x10013854 func   ?sub_10185490@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_10185490
 0x10013877 func   ?sub_103e5db0@@YAHXZ sub_103e5db0
+0x1001387c func   ?sub_103268e0@CBaseCombatCharacter@@QAEDPBMH@Z CBaseCombatCharacter::sub_103268e0
 0x10013890 func   ?sub_1015eee0@@YIXPAD@Z sub_1015eee0
 0x1001389a func   _info_node info_node
 0x100138a9 func   ?vfunc432@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::vfunc432
