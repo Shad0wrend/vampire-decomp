@@ -11,6 +11,7 @@ struct CUnknown100fe0c0_SubA
 struct CUnknown100fe0c0_SubB
 {
 	virtual void vfunc0(int a);
+	virtual float vfunc1(float flMin, float flMax);	// RandomFloat
 };
 
 class CUnknown100fe0c0
@@ -23,7 +24,7 @@ public:
 	int m_2c;
 	int m_30;
 	int m_34;
-	int m_38;
+	float m_38;
 	int m_3c;
 	int m_40;
 	int m_44;
@@ -36,4 +37,5 @@ public:
 	CUnknown100fe0c0_SubB m_e4;
 
 	void sub_100fe0c0(int a0, int a1, int a2, int a3, int a4);
+	void sub_100fe150(float flTime);
 };
