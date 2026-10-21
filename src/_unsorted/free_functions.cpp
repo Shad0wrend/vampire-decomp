@@ -52257,6 +52257,29 @@ int CAI_BaseNPC::sub_10271ff0(int act, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102727d0 size=0xe6
+#include "CAI_BaseNPC.h"
+#include "ScopeTrace.h"
+
+void CAI_BaseNPC::sub_102727d0()
+{
+    ScopeTrace trace("CAI_BaseNPC::MaintainActivity", this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc);
+    if (vfunc466()) {
+        int nIdeal = *(int *)((char *)this + 0xff0);
+        int nCurrent = *(int *)((char *)this + 0xfec);
+        if (nCurrent != nIdeal || *(int *)((char *)this + 0x6f0) != *(int *)((char *)this + 0x5ccc)) {
+            if (nCurrent == 2) {
+                if (*((char *)this + 0x65c))
+                    sub_102726a0();
+            } else {
+                sub_10272130(nIdeal, (int *)((char *)this + 0x5ccc), (int *)((char *)this + 0x5cd0), (int *)((char *)this + 0x5cd4));
+                sub_102726a0();
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10272940 size=0x6f
 #include "CAI_BaseNPC.h"
 #include "CBaseAnimating.h"

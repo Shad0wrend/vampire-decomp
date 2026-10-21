@@ -1018,6 +1018,7 @@
 0x1000568c func   ?sub_102e0090@CUnknown102e0090@@QAEHPAX@Z CUnknown102e0090::sub_102e0090
 0x100056cd func   ?vfunc5@CWeaponIArmor_Lt_Leather@@QAEPAV1@I@Z CWeaponIArmor_Lt_Leather::vfunc5
 0x100056eb func   ?sub_102d9170@CUnknown102d9170@@QAEXH@Z CUnknown102d9170::sub_102d9170
+0x100056f0 func   ?sub_102727d0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_102727d0
 0x100056f5 func   ?sub_10073b20@CUnknown10073b20@@QAEXH@Z CUnknown10073b20::sub_10073b20
 0x100056fa func   ?sub_1026a0f0@CAI_BaseNPCUnit@@QAEXXZ CAI_BaseNPCUnit::sub_1026a0f0
 0x100056ff func   ?sub_1004dcf0@@YAHXZ sub_1004dcf0
