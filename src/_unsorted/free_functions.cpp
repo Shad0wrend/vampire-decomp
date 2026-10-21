@@ -38795,6 +38795,65 @@ int *sub_101a9bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa210 size=0x127
+#include "CUnknown101aa210.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+extern "C" int _strcmpi(const char *, const char *);
+extern CGlobalEntityList g_106eb5d8;
+
+struct SNamedEnt
+{
+	char pad0[0x94];
+	void *pNPC;
+	char pad1[0x11c - 0x98];
+	const char *pszClassname;
+};
+
+struct SQueryFill
+{
+	void sub_101cccf0(const float *pCenter);
+};
+
+struct SSphereQuery
+{
+	int m_index;
+	int m_count;
+	SNamedEnt *m_list[256];
+
+	SQueryFill *Fill() { return (SQueryFill *)((char *)this + 0xc); }
+};
+
+int __fastcall sub_101ccd40(int *p);
+
+void *CUnknown101aa210::sub_101aa210()
+{
+	SNamedEnt *pEnt = (SNamedEnt *)g_106eb5d8.sub_100f7770(0, m_pszName454 ? m_pszName454 : g_106b8540, 0, 0);
+	while (pEnt) {
+		void *pNPC = pEnt->pNPC;
+		if (pNPC && sub_101aa130(pNPC))
+			return pNPC;
+		pEnt = (SNamedEnt *)g_106eb5d8.sub_100f7770((CBaseEntity *)pEnt, m_pszName454 ? m_pszName454 : g_106b8540, 0, 0);
+	}
+	SSphereQuery query;
+	int nRadius = m_n458;
+	float *pCenter = vfunc220(nRadius, 0x2000, 0);
+	query.Fill()->sub_101cccf0(pCenter);
+	pEnt = (SNamedEnt *)sub_101ccd40(&query.m_index);
+	while (pEnt) {
+		if (_strcmpi(pEnt->pszClassname ? pEnt->pszClassname : g_106b8540, m_pszName454 ? m_pszName454 : g_106b8540) == 0) {
+			pEnt = (SNamedEnt *)pEnt->pNPC;
+			if (sub_101aa130(pEnt))
+				return pEnt;
+		}
+		query.m_index++;
+		pEnt = (SNamedEnt *)sub_101ccd40(&query.m_index);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa550 size=0x53
 void *sub_1000db89(int);
 struct GP;

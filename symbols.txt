@@ -2149,6 +2149,7 @@
 0x1000961a func   ?vfunc127@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc127
 0x1000961f func   _item_k_malcolm_office_key item_k_malcolm_office_key
 0x10009629 func   ?sub_10257200@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10257200
+0x1000962e func   ?sub_101aa210@CUnknown101aa210@@QAEPAXXZ CUnknown101aa210::sub_101aa210
 0x1000963d func   ?vfunc559@CAI_BaseNPC@@UAEPAVCBaseEntity@@PBD@Z CAI_BaseNPC::vfunc559
 0x1000966f func   ?sub_1004add0@CMem16_t@@QAEXH@Z CMem16_t::sub_1004add0
 0x10009674 func   ?sub_1003cbc0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1003cbc0
