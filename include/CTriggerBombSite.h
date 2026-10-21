@@ -2,9 +2,10 @@
 // only what matched code needs, as plain members (no vtable pointer is declared, so offsets start at 0).
 #pragma once
 
-struct CBombState	// one byte passed by value (the game builds it in a stack slot and pushes the whole dword)
+struct CBombState	// four bytes passed by value, the first one is the state
 {
 	char m_c;
+	char m_pad[3];
 };
 
 class CTriggerBombSite
