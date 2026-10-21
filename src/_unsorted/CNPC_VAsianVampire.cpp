@@ -88,6 +88,18 @@ void CNPC_VAsianVampire::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10361110 size=0x6f
+#include "ScopeTrace.h"
+#include "CNPC_VAsianVampire.h"
+
+void CNPC_VAsianVampire::vfunc432(int arg)
+{
+	ScopeTrace trace("CNPC_VAsianVampire::RunAI", g_106b8540);
+	sub_10005673();
+	sub_1000698d(arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10361490 size=0x72
 #include "CNPC_VAsianVampire.h"
 
