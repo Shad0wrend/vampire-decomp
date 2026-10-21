@@ -3,6 +3,8 @@
 
 #include "CCineNPC.h"
 
+struct inputdata_t;
+
 class CDynamicProp
 {
 public:
@@ -15,8 +17,13 @@ public:
 
 	void sub_1008b3c0();	// base-class destructor body
 	void vfunc103();	// slot 103 "CDynamicProp::Spawn": CBreakableProp::vfunc103, classname "prop_dynamic" (slot 122), AddFlag(0x40000) ..., and with the byte at +0x7c4 set a think function and the next think time
+	void sub_10190a00(inputdata_t *pInput);	// "CDynamicProp::InputSetAnimation": looks the input's string up as a sequence name; when found sets it (cycle 0), resets the sequence info, runs sub_100963d0, fires the output at +0x77c (caller this), removes flag 0x40000, sets a think function and the next think time (curtime + 0.1); else prints "Dynamic prop no sequence named:%s" and clears the sequence
 
-	char m_pad0004[0x730 - 4];
+	char m_pad0004[0x6f0 - 4];
+	int m_nSequence;	// 0x6f0
+	char m_pad06f4[4];
+	float m_flCycle;	// 0x6f8
+	char m_pad06fc[0x730 - 0x6fc];
 	CCineNPCSlot m_slotA;	// 0x730
 	CCineNPCSlot m_slotB;	// 0x748
 	char m_pad0760[0x77c - 0x760];
