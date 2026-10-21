@@ -2741,6 +2741,7 @@
 0x1000d940 func   ?sub_10332fc0@CUnknown10332fc0@@QAEHPAX@Z CUnknown10332fc0::sub_10332fc0
 0x1000d95e func   ?sub_10307b40@CUnknown10307b40@@QAEXH@Z CUnknown10307b40::sub_10307b40
 0x1000d968 func   _item_g_lilly_purse item_g_lilly_purse
+0x1000d98b func   ?vfunc180@CFire@@QAEXXZ CFire::vfunc180
 0x1000d990 func   ?sub_1026dc60@CUnknown1026dc60@@QAEXXZ CUnknown1026dc60::sub_1026dc60
 0x1000d99f func   ?vfunc104@CBaseProp@@QAEXXZ CBaseProp::vfunc104
 0x1000d9d6 func   _npc_VPlaceholder npc_VPlaceholder
