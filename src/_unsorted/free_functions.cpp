@@ -34883,6 +34883,49 @@ const char *CUnknown101d82d0_Elem::sub_101d8190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d83a0 size=0x9b
+#include "CUnknown101d82d0.h"
+#include "CUnknown101d7ec0.h"
+
+extern "C" char *__cdecl _strlwr(char *);
+extern "C" char *__cdecl strtok(char *, const char *);
+
+// TARGET: CUnknown101d82d0::sub_101d83a0
+void CUnknown101d82d0::sub_101d83a0(const char *pszList)
+{
+	char szBuf[256];
+	int i = 0;
+	do
+	{
+		*(szBuf + i) = pszList[i];
+	} while (pszList[i++]);
+	_strlwr(szBuf);
+	char *pszToken = strtok(szBuf, " ,()");
+	while (pszToken)
+	{
+		int bNegated = 0;
+		if (*pszToken == '!')
+		{
+			bNegated = 1;
+			pszToken++;
+		}
+		int nSub;
+		unsigned int nId; nId = g_10739140.sub_101d7ec0(pszToken, &nSub);
+		if ((int)nId != -1)
+		{
+			CUnknown101d82d0_Elem *pElem = sub_101d82d0();
+			if (pElem)
+			{
+				pElem->m_b = nSub;
+				pElem->m_a = nId;
+				pElem->m_c = bNegated;
+			}
+		}
+		pszToken = strtok(0, " ,()");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d84e0 size=0x77
 #include <stdio.h>
 #include <string.h>
