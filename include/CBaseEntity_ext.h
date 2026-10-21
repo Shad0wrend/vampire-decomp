@@ -69,3 +69,4 @@
 	void sub_1003f810(float flFrameTime);	// "CBaseEntity::SimulateAngles": scope trace (entity name), SetAngles(GetAngles() + flFrameTime * the angular velocity at +0x3c8)
 	void sub_100a04e0(const char *pszParentName, CBaseEntity *pActivator);	// "CBaseEntity::SetParent" (by name): scope trace (entity name), finds the entity of that name (global list at 0x106eb5d8, searching for pActivator), Msg "Entity %s(%s) has bad parent %s" and return when the name is set but nothing is found, Msg "... has ambigious parent %s" when a second one exists, then sub_100a0670(pParent, 0)
 	void sub_100a0670(CBaseEntity *pParent, int iAttachment);	// "CBaseEntity::SetParent" (by entity; stub 0x10005650), called directly
+	void sub_100a9d70(float *pOut);	// "CBaseEntity::GetCentroid": scope trace (entity name); with an edict (+0x2e0) pOut = (OBBMaxs + OBBMins) * 0.5 of the collision property at +0x270 (slots 1 / 2), else the zero vector
