@@ -28912,6 +28912,62 @@ void CBasePlayer::sub_101835e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101836d0 size=0x149
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CBaseCombatWeapon.h"
+#include "ScopeTrace.h"
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+extern char g_1055f710[];
+extern char g_10588eac[];
+void sub_10014614(void *);
+struct KeyPrivB { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual const char *v5(); };
+struct KeyPrivA { virtual void v0(); virtual void v1(); virtual void v2(); virtual KeyPrivB *v3(); };
+struct KeyEdict { char pad[0x40]; KeyPrivA *pPriv; };
+struct KeyItem { char pad[0x2e0]; KeyEdict *pEdict; };
+struct CKeyringUnit { void sub_10407c40(const char *a, const char *b); };
+
+void CBasePlayer::sub_101836d0(void *pKeyring)
+{
+    CBaseEntity *pThis = (CBaseEntity *)this;
+    ScopeTrace t("CBasePlayer::Inventory_AddLooseKeysToKeyRing", pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+    if (!pKeyring)
+        return;
+    bool bAny = false;
+    for (int i = 0; i < 0xe0; i++) {
+        void *pWeapon = sub_1032e8b0(i);
+        if (pWeapon) {
+            KeyItem *pKey = (KeyItem *)__RTDynamicCast(pWeapon, 0, g_1055f710, g_10588eac, 0);
+            if (pKey) {
+                const char *pszName;
+                KeyEdict *pEd = pKey->pEdict;
+                if (!pEd->pPriv)
+                    pszName = g_106b8540;
+                else
+                    pszName = pEd->pPriv->v3()->v5();
+                ((CKeyringUnit *)pKeyring)->sub_10407c40(pszName, (const char *)((CBaseCombatWeapon *)pKey)->sub_102517b0() + 0x88);
+                bAny = true;
+            }
+        }
+    }
+    if (bAny) {
+        do {
+            bAny = false;
+            for (int i = 0; i < 0xe0; i++) {
+                void *pWeapon = sub_1032e8b0(i);
+                if (pWeapon) {
+                    void *pKey = __RTDynamicCast(pWeapon, 0, g_1055f710, g_10588eac, 0);
+                    if (pKey) {
+                        sub_10014614(pKey);
+                        bAny = true;
+                    }
+                }
+            }
+        } while (bAny);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10183880 size=0x67
 #include "CVStatList_t.h"
 struct StatInfoRef { char pad[0x10]; int id; };
