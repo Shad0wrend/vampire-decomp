@@ -108,7 +108,8 @@ public:
 	virtual bool vfunc468(CBaseEntity *pEnt);	// Troika override: false when pEnt is the NPC's own target or is ignored, true when it has the field at +0xa8 or vfunc404 gives 1 or 2
 	CAI_NPC_V(469)
 	CAI_NPC_V10(47)
-	CAI_NPC_V(480) virtual void vfunc481(int a); virtual int vfunc482(int a);	// slot 482: asked of another NPC with the value slot 585 returns, nonzero accepts
+	virtual bool vfunc480();	// "CAI_BaseNPC::...": false while bit 16 of the flags at +0x14bc is set; true without a slot 167 object, when it is not usable (slot 158), or when the memory list (slot 541) flags it; else whether one of the conditions 0x43, 0x45, 0x5b, 0x58 holds
+	virtual void vfunc481(int a); virtual int vfunc482(int a);	// slot 482: asked of another NPC with the value slot 585 returns, nonzero accepts
 	virtual void vfunc483(int unused);
 	// slots 484..567
 	CAI_NPC_V(484) CAI_NPC_V(485) CAI_NPC_V(486) CAI_NPC_V(487) CAI_NPC_V(488) CAI_NPC_V(489)
