@@ -54542,6 +54542,34 @@ bool CAI_Navigator::sub_102edc80(const Vector *pPosition, float flDistance, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x102edd50 size=0xa1
+#include "CUnknown103008f0.h"
+
+struct CGlobalVarsView
+{
+	int m_pad0000;
+	int m_nFrame;	// 0x04
+};
+
+extern CGlobalVarsView *g_1070b228;
+
+// TARGET: CAI_Navigator::sub_102edd50
+bool CAI_Navigator::sub_102edd50(const Vector *pPosition, float flDistance, int c, int d, int e, Vector *pOut, int f)
+{
+	m_i08 = *(int *)(m_pOuter + 0x156c);
+	m_i0c = g_1070b228->m_nFrame;
+	CUnknown103008f0 *pFinder = (CUnknown103008f0 *)sub_102ecc00();
+	pFinder->m_i08 = *(int *)(pFinder->m_pOuter + 0x156c);
+	pFinder->m_i0c = g_1070b228->m_nFrame;
+	int nNode = ((CUnknown103008f0 *)sub_102ecc00())->sub_10302320(pPosition, flDistance, c, d, e, f);
+	if (nNode == -1)
+		return false;
+	Vector position;
+	*pOut = *sub_102ee9c0(&position, nNode);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee120 size=0xb
 void CUnknown102ee120::sub_102ee120(int a, int b, int c)
 {
