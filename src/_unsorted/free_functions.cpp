@@ -88784,6 +88784,29 @@ void CNPC_VVampireBoss::sub_103c63c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6830 size=0x164
+#include <math.h>
+#include "CNPC_VVampireBoss.h"
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+
+struct CNPC_VVampireBossUnit : CNPC_VVampireBoss
+{
+	float sub_103c6830();
+};
+
+// TARGET: CNPC_VVampireBossUnit::sub_103c6830
+float CNPC_VVampireBossUnit::sub_103c6830()
+{
+	ScopeTrace trace("CNPC_VVampireBoss::GetCurrHealthPercent", g_106b8540);
+	float flCur = (float)CVStatListSet::Of(this)->Find(0)->sub_10010609(0xf);
+	float flMax = (float)CVStatListSet::Of(this)->Find(0)->sub_10010609(0x11);
+	if ((float)fabs(flMax) <= 1e-5f)
+		return 0.0f;
+	return flCur / flMax;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c6a90 size=0xa5
 #include "CNPC_VVampireBoss.h"
 

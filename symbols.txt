@@ -441,6 +441,7 @@
 0x10002b30 func   ?vfunc5@CElderVitaePack@@QAEPAV1@I@Z CElderVitaePack::vfunc5
 0x10002b3f func   ?sub_10134a80@@YAPAHXZ sub_10134a80
 0x10002b49 func   ?sub_101f4570@TSeg@@QAEXHPAH0@Z TSeg::sub_101f4570
+0x10002b58 func   ?sub_103c6830@CNPC_VVampireBossUnit@@QAEMXZ CNPC_VVampireBossUnit::sub_103c6830
 0x10002b62 func   ?vfunc30@CRestore@@UAEHPAIHH@Z CRestore::vfunc30
 0x10002b6c func   ?vfunc442@CNPC_VTaxiDriver@@QAEXPBH@Z CNPC_VTaxiDriver::vfunc442
 0x10002b71 func   ?vfunc438@CNPC_VAnimal@@QAEHXZ CNPC_VAnimal::vfunc438
