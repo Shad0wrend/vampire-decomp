@@ -69574,6 +69574,38 @@ void __stdcall sub_1034e7e0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f6f0 size=0x93
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);
+void sub_10009539();
+void sub_10003c3d();
+
+extern SendTable g_1070ba68;
+extern SendTable g_10938108;
+extern SendTable *g_10583868;
+extern const char *g_1062691c;
+
+// TARGET: sub_1034f6f0
+int sub_1034f6f0()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_10583868, (void *)sub_10009539),
+		sub_1000bf2d("m_HL2Local", 0x2464, &g_1070ba68, (void *)sub_10003c3d),
+	};
+	g_10938108.sub_1000e8fe(props + 1, 2, g_1062691c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f9e0 size=0x7a
 #include "CBaseEntity.h"
 
