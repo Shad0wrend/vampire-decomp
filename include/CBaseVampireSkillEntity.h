@@ -27,6 +27,8 @@ public:
 	void vfunc269(int a);	// bumps the count at +0x78c, forwards a to the helper at +0x7c4 (stub 0x10010794) with this, then reports a "botched" message through the global when the entity at 0x1074f04c fails slot 1 and has a non-zero field at +0x2c
 	void vfunc272();
 	void vfunc103();
+	void vfunc42(void *pEntity);	// slot 42: CBaseEntity::vfunc42, then (skill kind +0x784 1 or 2) stores the entity's value of the feat with that id (CVFeatSet::Find) at +0x790
+	void sub_100a5030(void *pEntity);	// CBaseEntity::vfunc42 (stub 0x10010e60), called directly
 	void sub_10012eef();	// CBreakableProp::vfunc103 (non-virtual base call)
 	CBaseVampireSkillEntity *vfunc5(unsigned int flags);	// as in CMomentaryRotButton (transplant)
 	void sub_1018f1c0();	// base class constructor body (stub 0x100039bd)
