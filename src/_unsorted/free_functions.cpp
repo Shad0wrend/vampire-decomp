@@ -68684,6 +68684,28 @@ PlaceRecord_t *CUnknown102d9ed0::sub_102da9e0(const Vector *pPos, const Vector *
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dad60 size=0xc7
+#include "CUnknown102db470.h"
+#include "Vector.h"
+
+bool CUnknown102db470Node::sub_102dad60(CUnknown102db470 *pNPC, float *pOut1, float *pOut2)
+{
+	if (pNPC) {
+		if (m_bEnabled && !m_bBusy && m_nCapacity - m_nUsedA - m_nUsedB > 0 && (m_nMask & pNPC->m_nMask)) {
+			Vector vecOrigin = *(Vector *)vfunc220();
+			const float *pOther = pNPC->vfunc220();
+			float dx = vecOrigin.x - pOther[0];
+			float dy = vecOrigin.y - pOther[1];
+			float dz = vecOrigin.z - pOther[2];
+			float flDist = dz * dz + dx * dx + dy * dy;
+			if (!(flDist > 1e8f))
+				return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db420 size=0xa
 void CUnknown102db420::sub_102db420(int unused)
 {
