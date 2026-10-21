@@ -22,6 +22,8 @@ public:
 	CNPC_VChangBros *sub_1036e2f0();	// "CNPC_VChangBros::GetOtherBrother": scope trace, the first other Chang brother in the squad at +0x5da4 (null while the int at +0x5bb0 is positive or without a squad)
 	void sub_1036e400();	// "CNPC_VChangBros::StoreArenaCenter": scope trace, stores the origin of the first type 0x4651 entity at +0x66dc and sets the flag at +0x66e8
 	bool sub_1036e820();	// "CNPC_VChangBros::ReadyForUnited": scope trace, true while the current schedule is 0x15a or 0x15b
+	bool sub_1036cbd0();	// "CNPC_VChangBros::CheckForUnited": scope trace; true when the other brother exists, the tick at +0x66ec plus 30.0f is not after the current time (+0xc of the global 0x1070b228) and not both brothers' sub_103c6830 values are below 0.5f
+	float sub_103c6830();	// CNPC_VVampireBoss member (stub 0x10002b58), a float value compared with 0.5f
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x209000
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
 	int sub_10011225();	// CNPC_VHuman::vfunc461, called directly
