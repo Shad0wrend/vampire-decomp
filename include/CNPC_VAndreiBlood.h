@@ -6,6 +6,7 @@
 class CNPC_VAndreiBlood : public CNPC_VHuman
 {
 public:
+	virtual void vfunc103();	// slot 103 "CNPC_VAndreiBlood::Spawn": scope trace (no entity name), sub_1026dc00(0x200000), the CNPC_VVampire version (sub_103c4ef0), clears the fields +0x66b8 .. +0x66ce, stamps curtime at +0x66d0, sets the byte at +0x66d4, clears +0x66d8, then sub_1035e950()
 	virtual void vfunc104();
 	virtual void vfunc113();	// slot 113 "CNPC_VAndreiBlood::Activate": scope trace (no entity name), the Troika version, then the state at +0x5cc0 / +0x5cc4 = 2, the source file / line markers at +0x1b30 / +0x1b34 and sub_102ae750(0x6b, 0)
 	void vfunc431();	// slot 431 "CNPC_VAndreiBlood::NPCThink": scope trace, the CNPC_VVampireBoss version (0x100052d6), trace depth back
@@ -28,4 +29,20 @@ public:
 	void vfunc432(int arg);	// slot 432: without the combat byte at +0x66cc sets the state +0x5cc0 / +0x5cc4 to 1, adds the class relationship (1, 4, 10) while the entity of the handle at +0x628c is not classified 4 and clears bit 2 of +0x5b64; with the byte the state becomes 2; then CNPC_VHuman::vfunc432
 	void sub_10332aa0(int a, int b, int c);	// "AddClassRelationship" (stub 0x10013cf5), called directly
 	void sub_10385a10(int arg);	// CNPC_VHuman::vfunc432 (stub 0x1000698d), called directly
+	void sub_1026dc00(unsigned int flags);	// stub 0x10012855, called directly by Spawn with 0x200000
+	void sub_103c4ef0();	// CNPC_VVampire::vfunc103 (stub 0x10014876), called directly
+	void sub_1035e950();	// stub 0x1000a6f0, called by Spawn last
+
+	char m_pad65c0[0x66b8 - 0x65c0];
+	int m_n66b8;
+	int m_n66bc;
+	char m_pad66c0[0x66cc - 0x66c0];
+	char m_b66cc;	// combat started
+	char m_b66cd;
+	char m_b66ce;
+	char m_pad66cf;
+	float m_f66d0;	// curtime stamp
+	char m_b66d4;
+	char m_pad66d5[3];
+	int m_n66d8;
 };
