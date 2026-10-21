@@ -45,6 +45,30 @@ bool sub_10141320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141350 size=0x65
+#include "CMultiplayRules.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+struct CBCCCallX : CBaseCombatCharacter {
+    char sub_1032db60(CBaseEntity *pWeapon);
+    void *sub_1032e7b0();
+};
+
+// TARGET: CMultiplayRules::vfunc19
+char CMultiplayRules::vfunc19(CBaseEntity *pPlayer, CBaseEntity *pWeapon)
+{
+    CBCCCallX *p = (CBCCCallX *)pPlayer;
+    if (!p->sub_1032db60(pWeapon))
+        return 0;
+    if (!p->sub_10335a70(pWeapon))
+        return 0;
+    if (!p->sub_1032e7b0())
+        return 1;
+    int active = ((CBaseCombatWeapon *)p->sub_1032e7b0())->vfunc345();
+    return ((CBaseCombatWeapon *)pWeapon)->vfunc345() > active;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101413e0 size=0x114
 #include "CMultiplayRules.h"
 #include "CBaseCombatCharacter.h"
