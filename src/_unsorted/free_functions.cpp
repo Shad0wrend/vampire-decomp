@@ -74184,6 +74184,45 @@ float sub_103e1680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e17b0 size=0x126
+#include "CBaseEntity.h"
+#include "CGameTrace.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "Ray_t.h"
+#include "Vector.h"
+
+extern CUnknown1070b254 *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+extern CUnknown1070b22c *g_1070b22c;
+
+void sub_10146570(const float *pStart, const float *pEnd, int a, int b, int c, int d, int e);
+
+int sub_103e17b0(Vector vStart, Vector vEnd, Vector *pEndPos, CBaseEntity **ppEnt, Vector *pNormal, int *pSurfaceProps)
+{
+	CTraceFilterNoCharacterCollide filter;
+	CGameTrace tr;
+	Ray_t ray;
+	ray.sub_1004f7a0((const float *)&vStart, (const float *)&vEnd);
+	g_1070b254->vfunc4(&ray, 0x46004033, &filter, &tr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570(tr.m_startpos, tr.m_endpos, 0xff, 0, 0, 1, 0xbf800000);
+	pEndPos->x = tr.m_endpos[0];
+	pEndPos->y = tr.m_endpos[1];
+	pEndPos->z = tr.m_endpos[2];
+	if (!(tr.m_fraction < 1.0f) && !tr.m_allsolid && !tr.m_startsolid)
+		return 1;
+	pNormal->x = tr.m_planeNormal[0];
+	pNormal->y = tr.m_planeNormal[1];
+	pNormal->z = tr.m_planeNormal[2];
+	*ppEnt = tr.m_pEnt;
+	*pSurfaceProps = tr.m_surfaceProps;
+	return (g_1070b22c->vfunc35(tr.m_pEnt->m_pEdict2e0) != 0) + 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1d20 size=0x43
 #include "CFlameCluster.h"
 void *sub_100aa720(int size);
