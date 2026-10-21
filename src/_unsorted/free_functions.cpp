@@ -25619,6 +25619,48 @@ int *sub_10107760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101078e0 size=0x88
+#include "CBaseEntity.h"
+
+extern void *vt_104475c4[];
+extern void *vt_1045b654[];
+extern char g_1056ca84[];
+void *sub_100aa720(int size);
+
+struct COutputCtor {
+	char m_data[0x18];
+	void sub_100cd2a0();
+};
+
+struct CFilterMultiView : CBaseEntity {
+	char m_padView[0x454 - 0x3e0];
+	COutputCtor m_out454;
+	COutputCtor m_out46c;
+	char m_pad484[0x49c - 0x484];
+	int m_h[5];
+};
+
+extern "C" CBaseEntity *filter_multi()
+{
+	CFilterMultiView *p = (CFilterMultiView *)sub_100aa720(0x4b0);
+	CBaseEntity *e;
+	if (p) {
+		p->sub_1009d980(0);
+		*(void ***)p = vt_104475c4;
+		p->m_out454.sub_100cd2a0();
+		p->m_out46c.sub_100cd2a0();
+		for (int i = 0; i < 5; i++)
+			p->m_h[i] = -1;
+		e = p;
+	} else
+		e = 0;
+	if (e)
+		*(void ***)e = vt_1045b654;
+	e->vfunc106(g_1056ca84);
+	return e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108e00 size=0x27
 #include "CUnknown10108e00.h"
 
