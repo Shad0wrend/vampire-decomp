@@ -100,6 +100,8 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 
 	void sub_1030bb30();	// resets the route: deletes the waypoint, vectors to vec3_origin (0x1070d1b0), flags and counters to 0 (+0x2c = 1, +0x30 = -1)
 	int sub_1030bc00();	// the route's move status (stub 0x1000f240): 0 when it has none, 2 for a finished one
+	void sub_1030ba50(int value);	// sets the flag at +0x58 and the value at +0x5c
+	void sub_1030b4d0(int value);	// stub 0x1000b6ef
 };
 
 class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
@@ -119,6 +121,9 @@ public:
 	bool sub_102efd50();	// "MoveGround"-like step: with no route status warns about a wrong nav type for types 1 / 3 (telling the motor at +0x20 slot 8 / 5) and stops (sub_102eeba0(0)); a finished status (2) with another nav type than 2 fails; else clears the pending move (sub_102f13d0(0), byte +0x51) and succeeds
 	void sub_10008832(int a);	// CUnknown102eeba0::sub_102eeba0 (stub 0x10008832), called with this
 	void sub_100053b7(int a);	// stub of 0x102f13d0
+	int sub_102ecc00();	// the dword at +0x5d3c of the owner (stub 0x10013011)
+	void sub_102ee6a0();	// stub 0x10012963
+	void sub_102ed390(int a1, int a2, int a3, int a4, int a5, int a6, int a7);	// asks the owner (slot 220) with the route's value at +0x28, then stores the answer in the route
 
 	int m_i14;
 	int m_i18;
