@@ -33,6 +33,9 @@ public:
 	int sub_100990f0(int sequence, int b);	// "CBaseAnimatingOverlay::AddGestureSequence": slot 272 picks a free layer, slot 268 starts it; returns the layer or -1
 	int sub_100991b0(int activity, int b);	// "CBaseAnimatingOverlay::AddGesture": slot 270(activity) true: slot 271(activity); else selects a sequence for the activity (DevMsg "model missing activity" and -1 when there is none), AddGestureSequence and records the activity in the layer
 	void vfunc255(void *pPos, void *pQ, int mask);	// slot 255 "CBaseAnimatingOverlay::GetSkeleton": the base pose (sequence +0x6f0, cycle +0x6f8, pose parameters +0x690), then each of the first four layers with a positive weight is posed into local bone arrays and slerped in (SlerpBones), then the pose / controller workers
+	void vfunc265(int activity, float flWeight, float flFade, int pszEvent, int nExtra);	// slot 265: while alive and not flagged no-flinch (+0x730) takes the oldest of the four 0x1c byte layers (array at +0x7f4, its time at +0x18), starts the sequence selected for the activity in it (order counter +4 advanced mod 4, weight +8, fade +0xc, kind 0x18, end time now + weight + fade) and, with a second sequence name, looks that up and fills the layer's data block (+0x14) through sub_100c43e0
+	int sub_10092270(int a);	// CBaseAnimating::sub_10092270 (stub 0x10009ac5), called directly: looks up a sequence by its name argument, -1 when there is none
+	void *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 "GetModelPtr" (stub 0x100125...), called directly
 
 	char m_pad0000[0x738];
 	CAnimationLayer m_Layers[15];	// 0x738
