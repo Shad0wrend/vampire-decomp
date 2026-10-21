@@ -72221,6 +72221,36 @@ void CUnknownEmbed102e1cf0::sub_102e1cf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e1f90 size=0x6b
+#include "CAI_Motor.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CMotorOuterSlots
+{
+	PV10(0) PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV100(1)
+	PV10(20)
+	PV(210) PV(211) PV(212) PV(213) PV(214) PV(215) PV(216) PV(217) PV(218) PV(219)
+	PV(220)
+	virtual float *v221();
+};
+
+float sub_1013d580(float flA, float flB);
+
+// TARGET: CAI_Motor::sub_102e1f90
+float CAI_Motor::sub_102e1f90()
+{
+	float flYaw = (float)(unsigned short)(((CMotorOuterSlots *)m_pOuter)->v221()[1] * 182.04445f) * 0.005493164f;
+	if ((double)m_34 == flYaw)
+		return 0.0f;
+	float flIdeal = m_34;
+	return sub_1013d580(flIdeal, flYaw);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2610 size=0xa
 int CAI_Motor::sub_102e2610()
 {

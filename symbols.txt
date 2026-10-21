@@ -3304,6 +3304,7 @@
 0x1000d882 func   ?vfunc387@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc387
 0x1000d887 func   ?sub_100aa080@CBaseEntity@@QAEHPAXH@Z CBaseEntity::sub_100aa080
 0x1000d8aa func   ?sub_10203240@CUnknown10203240@@QAEPAVCUnknown102029c0@@PBD@Z CUnknown10203240::sub_10203240
+0x1000d8c8 func   ?sub_102e1f90@CAI_Motor@@QAEMXZ CAI_Motor::sub_102e1f90
 0x1000d8ff func   ?vfunc103@CHudCounter@@UAEXXZ CHudCounter::vfunc103
 0x1000d909 func   _item_p_research_hg_computers item_p_research_hg_computers
 0x1000d90e func   ?sub_101c1bc0@CBaseToggle@@QAEXH@Z CBaseToggle::sub_101c1bc0
