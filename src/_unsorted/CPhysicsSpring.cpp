@@ -45,3 +45,24 @@ int CPhysicsSpring::vfunc124()
 	return line;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1004d9a0 size=0x107
+#include "CPhysicsSpring.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+extern float g_104454c4;
+
+// TARGET: CPhysicsSpring::vfunc103
+void CPhysicsSpring::vfunc103()
+{
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+	m_vecStart = *((CEntityVSlots *)this)->slot220();
+	if (m_flLength <= g_104454c4)
+		m_flLength = (m_vecEnd - m_vecStart).Length();
+}
+// END FUNCTION
