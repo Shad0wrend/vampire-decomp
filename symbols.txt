@@ -3494,6 +3494,7 @@
 0x1000e714 func   ?sub_103e8f30@@YAHXZ sub_103e8f30
 0x1000e719 func   ?sub_1027ef20@CUnknown1027ef20@@QAEXPBD@Z CUnknown1027ef20::sub_1027ef20
 0x1000e73c func   ?sub_101b1040@@YAXHPBD@Z sub_101b1040
+0x1000e741 func   ?sub_10099e00@@YAXPAVCEntityVSlots@@PBMPAM@Z sub_10099e00
 0x1000e75a func   ?vfunc403@CBasePlayer@@UAEXXZ CBasePlayer::vfunc403
 0x1000e75f func   _disc_particle disc_particle
 0x1000e76e func   ?sub_103801d0@CNPC_VHengeyokai@@QAEHPAUCNPC_VHengeyokaiInfo@@@Z CNPC_VHengeyokai::sub_103801d0

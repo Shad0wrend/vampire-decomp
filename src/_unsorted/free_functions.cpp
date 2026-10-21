@@ -14738,6 +14738,28 @@ int sub_10099d40(SEntV137 *ent, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099e00 size=0xd9
+#include <math.h>
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#pragma intrinsic(fmod)
+
+// TARGET: sub_10099e00
+void sub_10099e00(CEntityVSlots *pEnt, const float *pIn, float *pOut)
+{
+    ScopeTrace trace("SendProxy_EntityAngles", g_106b8540);
+    if (pEnt && (pEnt->slot94() == 11 || pEnt->slot94() == 12)) {
+        *pOut = 0;
+        return;
+    }
+    float flAngle = *pIn;
+    if (flAngle >= 0)
+        *pOut = (float)fmod(flAngle, 360.0);
+    else
+        *pOut = (float)fmod(flAngle, 360.0) + 360.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099f20 size=0xca
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
