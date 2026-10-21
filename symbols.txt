@@ -1732,6 +1732,7 @@
 0x10007d3d func   ?sub_1007f690@CUtlVector12@@QAEXH@Z CUtlVector12::sub_1007f690
 0x10007d42 func   ?vfunc4@CRecipientFilter@@UAEDXZ CRecipientFilter::vfunc4
 0x10007d5b func   _item_k_gimble_key item_k_gimble_key
+0x10007d60 func   ?vfunc151@CBasePlayer@@QAEXPAVCBaseCombatWeapon@@@Z CBasePlayer::vfunc151
 0x10007d65 func   ?sub_10405290@@YAHXZ sub_10405290
 0x10007d79 func   ?sub_1037a740@@YAPAHXZ sub_1037a740
 0x10007d83 func   ?sub_103daf10@CTriggerWWZone@@QAEXXZ CTriggerWWZone::sub_103daf10

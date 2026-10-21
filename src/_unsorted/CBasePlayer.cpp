@@ -652,6 +652,33 @@ bool CBasePlayer::vfunc452(const char *pszKey)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101743f0 size=0x108
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CBasePlayer::vfunc151
+void CBasePlayer::vfunc151(CBaseCombatWeapon *pWeapon)
+{
+    if (sub_1032e7b0() == (void *)pWeapon) {
+        sub_10177120();
+        pWeapon->vfunc316(0);
+        *(int *)((char *)pWeapon + 0x17c) = 0;
+        pWeapon->sub_100ac4e0(0, 0, 0);
+        *(int *)((char *)this + 0x1c50) = 0;
+    }
+    if (EHandle_Get(m_hEnt0EA4) == (void *)pWeapon)
+        vfunc443(0);
+    unsigned int &h10dc = *(unsigned int *)((char *)this + 0x10dc);
+    if (EHandle_Get(h10dc) == (void *)pWeapon)
+        h10dc = 0xffffffff;
+    unsigned int &h10e0 = *(unsigned int *)((char *)this + 0x10e0);
+    if (EHandle_Get(h10e0) == (void *)pWeapon)
+        h10e0 = 0xffffffff;
+    sub_1032cbe0(pWeapon);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174ce0 size=0xb3
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
