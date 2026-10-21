@@ -29,7 +29,11 @@ public:
 	CWR_V10(1) CWR_V10(2) CWR_V10(3) CWR_V10(4) CWR_V10(5) CWR_V10(6) CWR_V10(7) CWR_V10(8) CWR_V10(9)
 	CWR_V10(10) CWR_V10(11) CWR_V10(12) CWR_V10(13) CWR_V10(14) CWR_V10(15) CWR_V10(16) CWR_V10(17) CWR_V10(18) CWR_V10(19)
 	CWR_V10(20) CWR_V10(21) CWR_V10(22) CWR_V10(23) CWR_V10(24) CWR_V10(25) CWR_V10(26) CWR_V10(27) CWR_V10(28) CWR_V10(29)
-	CWR_V10(30) CWR_V10(31) CWR_V10(32)
+	CWR_V10(30)
+	CWR_V(310) CWR_V(311) CWR_V(312) CWR_V(313) CWR_V(314)
+	virtual bool vfunc315();	// slot 315: sets the owner's model name (male / female variant), then asks slots 344 / 343 / 342 for the shot parameters and starts the shot; true when it started
+	CWR_V(316) CWR_V(317) CWR_V(318) CWR_V(319)
+	CWR_V10(32)
 	void sub_10013a57();	// as in CPhysForce (transplant)
 
 	// Slot 370 (animation events), declared as a plain member for now: the slots between 32x and 370 are not modelled.
@@ -38,4 +42,7 @@ public:
 	void sub_10238320();	// worker of events 0xbd6..0xbe4 (stub 0x100049ad)
 	void sub_10093b10(int group, int value);	// CBaseAnimating::SetBodygroup, called directly (stub 0x10001bb8)
 	void sub_1024f030(int *event, void *other);	// CBaseCombatWeapon::vfunc370, called directly (stub 0x10009f02)
+	void *sub_10252240();	// the dword at +0x9c of the entity the owner handle at +0x88c resolves to (0 when stale; stub 0x100011f4)
+	char sub_10253b70(int a);	// stub 0x1000c37e
+	void sub_10239d80();	// stub 0x10003814
 };
