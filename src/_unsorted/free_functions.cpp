@@ -74081,6 +74081,31 @@ void sub_10348560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10348720 size=0xa7
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+
+void *sub_1000ac8b(int index);
+char *sub_10172710(void *pPlayer);
+
+// TARGET: sub_10348720
+void sub_10348720()
+{
+	ScopeTrace trace("CC_Burn_Hitboxes", g_106b8540);
+	char *pPlayer = sub_10172710(sub_1000ac8b(1));
+	if (pPlayer) {
+		CBaseCombatCharacter *pOwner = *(CBaseCombatCharacter **)(pPlayer + 0x9c);
+		if (pOwner) {
+			char *pHdr = (char *)((CBaseAnimating *)pOwner)->sub_100952d0(-1);
+			int nHitboxes = *(int *)(pHdr + *(int *)(pHdr + 0x104) + 4);
+			for (int i = 0; i < nHitboxes; i++)
+				pOwner->sub_1032f770(i, 8.0f, 2.0f);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349590 size=0x8a
 #include "CUnknown10349590.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
