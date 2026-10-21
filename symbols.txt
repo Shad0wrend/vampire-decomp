@@ -422,6 +422,7 @@
 0x10002e4b func   _item_g_watch_fancy item_g_watch_fancy
 0x10002e69 func   ?sub_102461b0@CUnknown102461b0@@QAEXXZ CUnknown102461b0::sub_102461b0
 0x10002e73 func   ?vfunc5@CNPC_VSabbatGunman@@QAEPAV1@I@Z CNPC_VSabbatGunman::vfunc5
+0x10002e78 func   ?vfunc5@CFuncElevator@@UAEPAV1@I@Z CFuncElevator::vfunc5
 0x10002e82 func   ?sub_1042fe60@@YAXXZ sub_1042fe60
 0x10002ea5 func   ?sub_1013fcb0@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1013fcb0
 0x10002ec8 func   ?sub_10071ba0@UtlVec8@@QAEXHH@Z UtlVec8::sub_10071ba0
