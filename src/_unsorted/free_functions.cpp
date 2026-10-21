@@ -32965,6 +32965,32 @@ void CUnknown101c1b60::sub_101c1ba0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1bc0 size=0xb4
+#include "CBaseToggle.h"
+
+void CBaseToggle::sub_101c1bc0(int state)
+{
+	switch (state) {
+	case 0:
+		sub_101c1520(&m_vecPosition1, m_nSpeed480);
+		m_nToggleState = 0;
+		break;
+	case 1:
+		sub_101c1520(&m_vecPosition2, m_nSpeed480);
+		m_nToggleState = 1;
+		break;
+	case 2:
+		sub_101c17e0(&m_vecAngle1, m_nSpeed490);
+		m_nToggleState = 2;
+		break;
+	case 3:
+		sub_101c17e0(&m_vecAngle2, m_nSpeed490);
+		m_nToggleState = 3;
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c23b0 size=0x43
 #include "CSun.h"
 void *sub_100aa720(int size);
