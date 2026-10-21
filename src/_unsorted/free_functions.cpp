@@ -26646,6 +26646,22 @@ int CExpressionTable::sub_10105870(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105a60 size=0xe1
+#include "CUnknown10105a60.h"
+#include "ScopeTrace.h"
+
+void CUnknown10105a60::sub_10105a60(float *pOut, const float *pFrom, const float *pTo, float flWeight, int nCount)
+{
+	ScopeTrace trace("CBaseCombatCharacter::BlendTowards", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (flWeight < 0.0f)
+		flWeight = 0.0f;
+	else if (flWeight > 1.0f)
+		flWeight = 1.0f;
+	for (int i = 0; i < nCount; i++)
+		pOut[i] = flWeight * pTo[i] + (1.0f - flWeight) * pFrom[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105b90 size=0xde
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"

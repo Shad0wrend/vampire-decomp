@@ -2354,6 +2354,7 @@
 0x1000a1b9 func   ??0CWorld@@QAE@XZ CWorld::CWorld
 0x1000a1d7 func   ?sub_100740f0@CUnknown100740f0@@QAEXD@Z CUnknown100740f0::sub_100740f0
 0x1000a1e6 func   ?sub_102a97a0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97a0
+0x1000a1f5 func   ?sub_10105a60@CUnknown10105a60@@QAEXPAMPBM1MH@Z CUnknown10105a60::sub_10105a60
 0x1000a20e func   ?vfunc243@CPhysBox@@QAEXH@Z CPhysBox::vfunc243
 0x1000a213 func   ?vfunc370@CWeaponMelee@@UAEXPAHPAVCBaseCombatWeapon@@@Z CWeaponMelee::vfunc370
 0x1000a218 func   ?vfunc64@CBaseEntity@@UAEXPBM@Z CBaseEntity::vfunc64
