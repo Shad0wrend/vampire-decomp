@@ -13,7 +13,7 @@ public:
 	virtual void slot3();
 	virtual void slot4();
 	virtual void vfunc5();
-	virtual void slot6();
+	virtual float vfunc6(const QAngle &angles, const Vector &vec, float scale, float threshold);	// slot 6: sign(vec . right of angles) * scale, ramped by |dot| / threshold below the threshold
 	virtual void slot7();
 	virtual void slot8();
 	virtual char vfunc9();	// slot 9 "CanAccelerate"
