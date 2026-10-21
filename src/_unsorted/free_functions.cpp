@@ -58365,6 +58365,26 @@ CBaseVampireSkillEntity *CBaseVampireSkillEntity::sub_1020aa70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020aea0 size=0x10d
+#include "CUnknown1020aea0.h"
+#include "CVFeat_t.h"
+
+struct PlayerView1020aea0 {
+	char pad[0x1488];
+	float m_f1488;
+};
+
+float CUnknown1020aea0::sub_1020aea0(void *pPlayer)
+{
+	float flValue = 1.0f;
+	if (m_nKind == 1)
+		flValue = (float)CVFeatSet::Find(0)->sub_101e56e0(pPlayer);
+	else if (m_nKind == 2)
+		flValue = (float)CVFeatSet::Find(2)->sub_101e56e0(pPlayer);
+	return (5.0f - flValue * 0.25f) / ((PlayerView1020aea0 *)pPlayer)->m_f1488;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b000 size=0x9
 int CBaseVampireSkillEntity::sub_1020b000(CBaseEntity *pPlayer)
 {
