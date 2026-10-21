@@ -16,6 +16,67 @@ CVampireProjectile_MingXiaoSpit *CVampireProjectile_MingXiaoSpit::vfunc5(unsigne
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1950 size=0x163
+#include "CVampireProjectile_MingXiaoSpit.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+#include "Vector.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SChar {
+	virtual void v0();
+	virtual unsigned int *vfunc1();
+	virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+	S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8)
+	virtual void s0(); virtual void s1();
+	virtual Vector vfunc192();
+};
+
+struct SGlobals {
+	char pad[0xc];
+	float curtime;
+};
+
+extern CGlobalEntityList *g_10566458;
+extern SGlobals *g_1070b228;
+extern Vector g_1070d9d0;
+extern const float g_104e37a4;
+void sub_101d26b0(Vector origin, const char *name, CBaseEntity *pEnt, int a, int b, int c);
+void sub_101d2780(Vector origin, const char *name, CBaseEntity *pEnt, int a, int b, int c);
+void sub_101d2560(Vector origin, const char *name, Vector *pAngles, Vector *pOther, int a);
+
+// TARGET: CVampireProjectile_MingXiaoSpit::vfunc266
+void CVampireProjectile_MingXiaoSpit::vfunc266(CBaseEntity *pOther)
+{
+	unsigned int h = m_hTarget;
+	CGlobalEntityList_Slot *pSlot;
+	if (h == (unsigned int)-1
+		|| (pSlot = &g_10566458->m_Slots[h & 0x1fff], pSlot->m_Serial != (int)(h >> 13))
+		|| pSlot->m_pEntity == 0) {
+		CBaseCombatCharacter *pChar = *(CBaseCombatCharacter **)((char *)pOther + 0x9c);
+		if (pChar) {
+			float t = g_1070b228->curtime;
+			m_flExpireTime = t + g_104e37a4;
+			m_hTarget = *((SChar *)pChar)->vfunc1();
+			pChar->sub_103326b0(500.0f);
+			sub_101d26b0(((SChar *)pChar)->vfunc192(), "Ming_xiao_vomit_player_emitter", (CBaseEntity *)pChar, 1, -1, 0);
+			CBaseEntity *pHud = *(CBaseEntity **)((char *)pChar + 0xa8);
+			if (pHud) {
+				sub_101d2780(((SChar *)pChar)->vfunc192(), "Ming_xiao_hud_vomit_emitter", pHud, 0xe, 0, 0);
+			}
+			m_bImpactDone = 1;
+		}
+	}
+	if (!m_bImpactDone) {
+		Vector v = ((SChar *)this)->vfunc192();
+		sub_101d2560(v, "Ming_xiao_vomit_impact_emitter", &v, &g_1070d9d0, 0);
+		m_bImpactDone = 1;
+	}
+	CVampireProjectile::vfunc266(pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f1b60 size=0xec
 #include "ScopeTrace.h"
 #include "CBaseCombatCharacter.h"
