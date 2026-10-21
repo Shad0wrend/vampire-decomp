@@ -35855,6 +35855,30 @@ struct CUnknown101e4a90 {
 void CUnknown101e4a90::sub_101e4a90() { slot266(); }
 // END FUNCTION
 
+// FUNCTION: 0x101e7c50 size=0x8e
+#include "CUnknown101e7c50.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+inline int FindId(CUnknown101e7c50 *pTable, const char *pszName)
+{
+	for (int i = 0; i < pTable->m_nEntries; i++)
+	{
+		if (_strcmpi(pTable->m_pEntries[i]->m_name.Get(), pszName) == 0)
+			return pTable->m_pEntries[i]->m_id;
+	}
+	return -1;
+}
+
+// TARGET: CUnknown101e7c50::sub_101e7c50
+CVDmgBlock16_t *CUnknown101e7c50::sub_101e7c50(const char *pszName)
+{
+	static CVDmgBlock16_t s_block;
+	s_block.sub_102042a0(4, FindId(this, pszName));
+	return &s_block;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8080 size=0xd
 // TARGET: CUnknown101e8080::sub_101e8080
 void CUnknown101e8080::sub_101e8080(int *out, void *ent, float dist, int flags)
