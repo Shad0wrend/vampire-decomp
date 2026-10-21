@@ -23,4 +23,6 @@ public:
 	int sub_103952b0(int a);	// called through the stub at 0x10012f85
 	int vfunc376(int act);	// slot 376 "CNPC_VMingXiao::TranslateActivity": 0x3d -> 0x3b, 0x3e -> 0x3c, 0x9f -> 0x9d, 0xa0 -> 0x9e, 0xa3 -> 0xa1, 0xa4 -> 0xa2, else the Troika base
 	int sub_1000fb14(int act);	// CAI_BaseNPCTroika::vfunc376, called directly
+	void sub_10398fd0();	// drops the target: kills the entity of the handle at +0x6738 (sub_101cd970) and clears it, clears the handle at +0x6718, slows the motor (sub_10013110(0.75f)) and resets the state at +0x673c to 0
+	void sub_10013110(float flSpeed);	// stub 0x10013110 for 0x102c43b0
 };
