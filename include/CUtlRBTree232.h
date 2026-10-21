@@ -31,6 +31,9 @@ public:
 	Node_t &ElementAt(int i) const { return m_pElements[i]; }
 
 	void sub_101b6d60(const void *pInsert, int *pParent, bool *pLeftChild);	// "CUtlRBTree::FindInsertionPosition": walks down from the root with the less function, stores the last visited node in *pParent and whether the new element goes to its left in *pLeftChild
+	int sub_101b6bd0(int parent, bool leftchild);	// "CUtlRBTree::InsertAt": NewNode (free list head, else grows the node memory to hold one more node; the first allocation is 1 element), constructs the element (first word 0xffff, sound parameter record sub_101b30d0 at +0xc of the data), links it below parent (red, no children; the root when parent is -1), InsertRebalance, ++m_NumElements; returns the node index
+	Links_t &sub_101b78f0(int i);	// "CUtlRBTree::Links" (out of line, with the sentinel static; stub 0x10005c40)
+	void sub_101b7f70(int i);	// "CUtlRBTree::InsertRebalance" (stub 0x10012d8c)
 };
 
 // The game has one CUtlRBTree<T, I> per element type T; CUtlRBTree232 stands for every instance with 232-byte nodes.
