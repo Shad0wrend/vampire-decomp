@@ -54658,6 +54658,51 @@ void CPropHacking::sub_1021b030()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021b140 size=0x117
+#include "CUnknown10217f50.h"
+#include "ScopeTrace.h"
+
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+
+void CUnknown10217f50::sub_1021b140(const char *pszText)
+{
+	sub_10218ec0(1, 1);
+	sub_10218db0();
+	if (pszText == 0) {
+		unsigned int nMax = 0;
+		if (m_nLines > 0) {
+			const char **ppLine = m_ppLines;
+			int nLines = m_nLines;
+			do {
+				if (strlen(*ppLine) > nMax)
+					nMax = strlen(*ppLine);
+				ppLine++;
+				nLines--;
+			} while (nLines != 0);
+		}
+		int nWidth = m_nLineWidth - nMax - 2;
+		if (nWidth > 2)
+			nWidth = nWidth / 2;
+		else
+			nWidth = 1;
+		sub_1021b2b0();
+		sub_1021b330(g_106b8540, nWidth);
+		for (int i = 0; i < m_nLines; i++)
+			sub_1021b330(m_ppLines[i], nWidth);
+		sub_1021b330(g_106b8540, nWidth);
+		sub_1021b2b0();
+	} else {
+		int nWidth = (int)(m_nLineWidth - strlen(pszText) - 2) / 2;
+		sub_1021b2b0();
+		sub_1021b330(g_106b8540, nWidth);
+		sub_1021b330(pszText, nWidth);
+		sub_1021b330(g_106b8540, nWidth);
+		sub_1021b2b0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021b330 size=0xa2
 #include "CUnknown10217f50.h"
 #include <string.h>
