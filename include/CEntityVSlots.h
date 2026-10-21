@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..457, used to call slots 9, 42, 62, 64, 86, 94, 105, 107, 118, 122, 158, 161, 167, 173,
-// 194, 202, 212, 216, 217 / 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 270, 274, 346, 360, 381 and 457 of an entity class that does not model its vtable.
+// 194, 202, 212, 216, 217 / 218, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 260, 270, 274, 346, 360, 381, 448 and 457 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -97,7 +97,10 @@ public:
 	EVS(380)
 	virtual int slot381(int a);	// character: "Weapon_TranslateActivity"
 	EVS(382) EVS(383) EVS(384) EVS(385) EVS(386) EVS(387) EVS(388) EVS(389)
-	EVS10(39) EVS10(40) EVS10(41) EVS10(42) EVS10(43) EVS10(44)
+	EVS10(39) EVS10(40) EVS10(41) EVS10(42) EVS10(43)
+	EVS(440) EVS(441) EVS(442) EVS(443) EVS(444) EVS(445) EVS(446) EVS(447)
+	virtual void slot448(int a);	// NPC: sets the ideal state (the boss's "FailSchedule"-like slot, called with 4)
+	EVS(449)
 	EVS(450) EVS(451) EVS(452) EVS(453) EVS(454) EVS(455) EVS(456)
 	virtual void slot457(const char *pszName, int a);	// switch to / equip the named weapon
 };
