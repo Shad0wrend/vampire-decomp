@@ -8204,6 +8204,71 @@ void CUnknown10077290::sub_10077290(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077490 size=0xf6
+#include "CUtlVector4.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *pMem, unsigned int size);
+
+struct CFlexTrackParent;
+
+struct CFlexTrack {
+	char m_pad0000[0x50];
+	CFlexTrack *sub_10073b80(CFlexTrackParent *pParent);	// constructor (stub 0x1001329b)
+	void sub_10074000(const char *pszName);	// stub 0x1000d391
+};
+
+struct CFlexTrackParent {
+	char m_pad0000[0x30c];
+	CFlexTrack **m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	CFlexTrack **m_pElements;
+	CFlexTrack *sub_10077490(const char *pszName);
+
+	void Grow(int num)
+	{
+		if (m_growSize == -1)
+			return;
+		int nAllocationRequested = m_allocationCount + num;
+		while (m_allocationCount < nAllocationRequested) {
+			if (m_allocationCount != 0) {
+				if (m_growSize != 0)
+					m_allocationCount += m_growSize;
+				else
+					m_allocationCount += m_allocationCount;
+			} else {
+				m_allocationCount = 8;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (CFlexTrack **)Plat_Realloc(m_pMemory, m_allocationCount * 4);
+		else
+			m_pMemory = (CFlexTrack **)Plat_Alloc(m_allocationCount * 4);
+	}
+};
+
+CFlexTrack *CFlexTrackParent::sub_10077490(const char *pszName)
+{
+	void *pMem = operator new(0x50);
+	CFlexTrack *pTrack = pMem ? ((CFlexTrack *)pMem)->sub_10073b80(this) : 0;
+	pTrack->sub_10074000(pszName);
+	int elem = m_size;
+	if (m_size + 1 > m_allocationCount)
+		Grow(m_size + 1 - m_allocationCount);
+	m_size++;
+	m_pElements = m_pMemory;
+	int numToMove = m_size - elem - 1;
+	if (numToMove > 0)
+		memmove(m_pMemory + elem + 1, m_pMemory + elem, numToMove * 4);
+	CFlexTrack **ppElem = m_pMemory + elem;
+	if (ppElem)
+		*ppElem = pTrack;
+	return pTrack;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077730 size=0xd
 #include "CUnknown10077730.h"
 

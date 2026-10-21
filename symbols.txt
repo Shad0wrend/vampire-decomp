@@ -1922,6 +1922,7 @@
 0x1000939a func   _security_camera security_camera
 0x1000939f func   _npc_VHuman npc_VHuman
 0x100093a9 func   ?vfunc217@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc217
+0x100093b3 func   ?sub_10077490@CFlexTrackParent@@QAEPAUCFlexTrack@@PBD@Z CFlexTrackParent::sub_10077490
 0x100093cc func   _filter_activator_class filter_activator_class
 0x100093d1 func   _npc_VYukie npc_VYukie
 0x100093e0 func   ?sub_103e95b0@@YAHXZ sub_103e95b0
