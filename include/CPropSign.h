@@ -4,6 +4,8 @@
 
 #include "CCollisionProperty.h"
 
+class CBaseEntity;
+
 struct CPropSignHandle
 {
 	unsigned int m_Index;
@@ -34,4 +36,5 @@ public:
 	void sub_100adf10(const float *mins, const float *maxs);	// CBaseEntity::SetSize (stub 0x100115e0)
 	void sub_100aaa40(int group);	// CBaseEntity::SetCollisionGroup (stub 0x10013c00)
 	void sub_100b3b00();	// CBaseEntity::sub_100b3b00 (stub 0x1001514a), called directly
+	void sub_102120c0(CBaseEntity *pPlayer);	// sends the user message 0x10726088 to pPlayer (when set): a zero value, the float 0.5f and the engine index of this entity (edict at +0x2e0)
 };
