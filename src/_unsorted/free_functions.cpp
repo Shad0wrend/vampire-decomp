@@ -41593,6 +41593,26 @@ int CVStatInfoList_t::sub_101ffdf0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10200260 size=0xb5
+#include "CVStatInfoList_t.h"
+#include "ScopeTrace.h"
+
+struct CVDmgBlock16Static : CVDmgBlock16_t
+{
+	~CVDmgBlock16Static() {}
+};
+
+extern int sub_10202760(int);
+
+CVDmgBlock16_t *CVStatInfoList_t::sub_10200260(const char *name)
+{
+	ScopeTrace trace("CVStatInfoList_t::LookupDependency", g_106b8540);
+	static CVDmgBlock16Static s_block;
+	s_block.sub_102042a0(sub_10202760(m_field2c), sub_101ffb90(name));
+	return &s_block;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10200730 size=0x8a
 #include "CVStatList_t.h"
 #include "ScopeTrace.h"

@@ -2672,6 +2672,7 @@
 0x1000ca2c func   ?vfunc5@CAI_NetworkManager@@QAEPAV1@I@Z CAI_NetworkManager::vfunc5
 0x1000ca31 func   ?sub_101c1ba0@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1ba0
 0x1000ca36 func   ?vfunc5@CFogController@@QAEPAV1@I@Z CFogController::vfunc5
+0x1000ca7c func   ?sub_10200260@CVStatInfoList_t@@QAEPAUCVDmgBlock16_t@@PBD@Z CVStatInfoList_t::sub_10200260
 0x1000ca81 func   ?sub_101f9c70@CUnknown101f9c70@@QAEHHHH@Z CUnknown101f9c70::sub_101f9c70
 0x1000ca8b func   _npc_VNosferatu npc_VNosferatu
 0x1000ca9a func   ?sub_101b1880@@YAXHHPBD@Z sub_101b1880
