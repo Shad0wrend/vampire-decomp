@@ -2925,6 +2925,48 @@ void sub_1003d770(CTouchSlots *pEntity, CTouchLink *pLink)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003d8f0 size=0x14d
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+
+struct CTouchLinkX
+{
+	unsigned int m_hEntity;
+	int m_nStamp;
+	CTouchLinkX *m_pNext;
+	CTouchLinkX *m_pPrev;
+};
+struct CTouchLinkPoolX
+{
+	void sub_1013dce0(CTouchLinkX *pLink);
+};
+extern CTouchLinkPoolX g_106bd904;
+extern int g_106bd9b8;
+void sub_1003d640(CBaseEntity *pEntity, CBaseEntity *pOther);
+
+void sub_1003d8f0(CBaseEntity *pEntity)
+{
+	ScopeTrace trace("CBaseEntity::PhysicsRemoveTouchedList", g_106b8540);
+	CTouchLinkX *root = (CTouchLinkX *)pEntity->sub_1003cd50(1);
+	if (root) {
+		CTouchLinkX *link = root->m_pNext;
+		while (link && link != root) {
+			CTouchLinkX *pNext = link->m_pNext;
+			sub_1003d640(pEntity, (CBaseEntity *)EHandle_Get(link->m_hEntity));
+			{
+				ScopeTrace freeTrace("FreeTouchLink", g_106b8540);
+				g_106bd9b8--;
+				g_106bd904.sub_1013dce0(link);
+			}
+			link = pNext;
+		}
+		pEntity->sub_1003d130(1);
+	}
+	*(int *)((char *)pEntity + 0x1ac) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003daa0 size=0xa6
 #define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();

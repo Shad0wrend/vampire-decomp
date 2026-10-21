@@ -1,3 +1,4 @@
+0x10001019 func   ?sub_1003d8f0@@YAXPAVCBaseEntity@@@Z sub_1003d8f0
 0x10001032 func   ?sub_100a7bd0@CBaseEntity@@QAE_NPAV1@@Z CBaseEntity::sub_100a7bd0
 0x10001037 func   ?sub_1034b540@CUnknown1034b540@@QAEXH@Z CUnknown1034b540::sub_1034b540
 0x10001041 func   ?sub_102ae7f0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102ae7f0
