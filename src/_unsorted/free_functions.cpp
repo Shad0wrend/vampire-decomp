@@ -24295,6 +24295,45 @@ bounds:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd2e0 size=0x118
+#include "CCollisionProperty.h"
+
+extern float g_1070d9d0;
+extern float g_1070d9d4;
+extern float g_1070d9d8;
+
+void sub_10138460(const float *pIn, float *pMatrix, float *pOut);
+
+inline void VectorIRotate(const Vector &in1, float *pMatrix, Vector &out)
+{
+	sub_10138460(&in1.x, pMatrix, &out.x);
+}
+
+struct CollView {
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3();
+	virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7();
+	virtual Vector *GetOrigin();
+};
+
+float CCollisionProperty::sub_100dd2e0(const float *pDir)
+{
+	const Vector &vDir = *(const Vector *)pDir;
+	Vector vLocal;
+	float *pAngles;
+	if (!(m_usSolidFlags & 0x80) && m_nSolidType != 2 && m_nSolidType != 0
+		&& ((pAngles = vfunc9(0)), (g_1070d9d0 != pAngles[0] || g_1070d9d4 != pAngles[1] || g_1070d9d8 != pAngles[2]))) {
+		VectorIRotate(vDir, vfunc10(), vLocal);
+	} else {
+		vLocal = vDir;
+	}
+	float flResult = DotProduct(*((CollView *)this)->GetOrigin(), vDir);
+	flResult += (vLocal.x >= 0.0f ? m_vecMaxs.x : m_vecMins.x) * vLocal.x;
+	flResult += (vLocal.y >= 0.0f ? m_vecMaxs.y : m_vecMins.y) * vLocal.y;
+	flResult += (vLocal.z >= 0.0f ? m_vecMaxs.z : m_vecMins.z) * vLocal.z;
+	return flResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd630 size=0xcf
 #include "CCollisionProperty.h"
 #include <math.h>
