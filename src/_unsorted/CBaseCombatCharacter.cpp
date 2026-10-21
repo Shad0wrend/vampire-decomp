@@ -384,6 +384,29 @@ char CBaseCombatCharacter::sub_10325fa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10326040 size=0xc8
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+struct CGlobalVarsView { char pad[0xc]; float curtime; };
+extern CGlobalVarsView *g_1070b228;
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+
+// TARGET: CBaseCombatCharacter::vfunc395
+void CBaseCombatCharacter::vfunc395()
+{
+    ScopeTrace trace("CBaseCombatCharacter::CorpseFade", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    *(int *)((char *)this + 0x6f4) = 0;
+    sub_100b2e30(g_1070d1b0);
+    vfunc93(0, 0);
+    sub_100b2f50(g_1070d9d0);
+    *(float *)((char *)this + 0x174) = g_1070b228->curtime;
+    *(int *)((char *)this + 0x19c) |= 0x10;
+    sub_102695d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10326750 size=0x132
 #include "CBaseCombatCharacter.h"
 #include "CUnknown10738964.h"
