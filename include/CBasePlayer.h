@@ -202,4 +202,5 @@ public:
 	void sub_1032a100(int activity);	// CBaseCombatCharacter member (stub 0x10002626): switches the activity
 	void sub_1032ead0();	// CBaseCombatCharacter member (stub 0x10005a9c), called directly
 	void sub_103345d0();	// CZeroFields103345d0::sub_103345d0 (stub 0x10015000), called directly
+	CBaseEntity *sub_10163f70();	// the player's hud fire emitter: the entity of the handle at +0x1d64, or a new "DMGFX_hud_fire_emitter" (env_particle) attached to the entity sub_1015d680(0) resolves, whose handle is stored again (cleared when none could be made)
 };
