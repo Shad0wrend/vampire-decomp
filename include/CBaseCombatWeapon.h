@@ -69,7 +69,7 @@ public:
 	CBCW_V(305)
 	virtual void vfunc306(int value);
 	virtual void vfunc307(int value);
-	CBCW_V(308)
+	virtual void vfunc308(int a, int b);	// pushes a to the first and b to the second view model of the weapon (owner's player object at +0xa8 needed): sequence from slot 342, slot 266 / 265, and the player's field +0x1488 copied to +0x6f4 of each
 	virtual bool vfunc309();	// true when gpGlobals->curtime is past the time at +0x894
 	virtual void vfunc310(float time);	// "SetNextAttack"-like: stores time at +0x894 of this weapon (just this one without an owner), of the owner's active weapon and of the weapon behind the owner's handle at +0x1c64
 	CBCW_V(311)
