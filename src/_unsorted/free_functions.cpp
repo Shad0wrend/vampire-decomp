@@ -47526,6 +47526,59 @@ void __fastcall sub_1022d410(Mem256 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022d780 size=0xe0
+#include "ScopeTrace.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CItemWeapon { void sub_10003ca1(); };
+
+struct CItemCharacter
+{
+	S100(a) S100(b) S100(c) S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5) S10(d6) S10(d7)
+	virtual void e0(); virtual void e1(); virtual void e2();
+	virtual void vfunc383(CItemWeapon *pWeapon, int a);
+	CItemWeapon *sub_1032e120(int index);
+	bool sub_10334c20(CItemWeapon *pWeapon);
+};
+
+struct CItemEnt { char m_pad[0x9c]; CItemCharacter *m_pChar; };
+struct CItemUnknown { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CItemEnt *vfunc4(); };
+struct CItemEdict { char m_pad[0x40]; CItemUnknown *m_pUnk; };
+
+void sub_1022d780(int index, int arg2)
+{
+	CItemEdict *pEdict = (CItemEdict *)g_1070b22c->vfunc38(index);
+	CItemEnt *pEnt;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if (pEdict == 0)
+			pEdict = (CItemEdict *)g_1070b22c->vfunc38(0);
+		if (pEdict && pEdict->m_pUnk)
+			pEnt = pEdict->m_pUnk->vfunc4();
+		else
+			pEnt = 0;
+	}
+	if (pEnt) {
+		CItemCharacter *pChar = pEnt->m_pChar;
+		if (pChar) {
+			CItemWeapon *pWeapon = pChar->sub_1032e120(arg2);
+			if (pWeapon) {
+				if (pChar->sub_10334c20(pWeapon))
+					pChar->vfunc383(pWeapon, 0);
+				else
+					pWeapon->sub_10003ca1();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022eb60 size=0x82
 struct TStat { void sub_101fc950(int a, int b); };
 
