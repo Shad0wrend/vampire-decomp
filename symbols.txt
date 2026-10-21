@@ -1084,6 +1084,7 @@
 0x10006032 func   ?sub_101f1050@CUnknown101f1050@@QAEPAHXZ CUnknown101f1050::sub_101f1050
 0x1000603c func   ?sub_1003c0e0@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_1003c0e0
 0x1000604b func   _prop_physics_contested prop_physics_contested
+0x1000605f func   ?vfunc113@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc113
 0x10006087 func   ?sub_1022d0d0@CUtlVector72@@QAEXH@Z CUtlVector72::sub_1022d0d0
 0x1000608c func   ?sub_10046390@CUtlRBTreeFind16@@QAEGPBX@Z CUtlRBTreeFind16::sub_10046390
 0x100060a0 func   ?sub_103e6e90@@YAHXZ sub_103e6e90
