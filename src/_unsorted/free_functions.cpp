@@ -23950,6 +23950,47 @@ float *CUnknown100dc9f0::sub_100dc9f0(const float *pPoint, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dcc20 size=0xb0
+#include "CCollisionProperty.h"
+#include "CUnknown100dc9f0.h"
+
+extern float g_1070d9d0[3];
+void sub_10138130(const float *pPoint, const float *pMatrix, float *pOut);
+
+// slot 8 of the collideable returns the origin pointer (the class declares it void)
+struct CCollisionSlot8
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual float *slot8();
+};
+
+// TARGET: CCollisionProperty::sub_100dcc20
+float *CCollisionProperty::sub_100dcc20(const float *pPoint, float *pOut)
+{
+	Vector local;
+	if (!(m_usSolidFlags & 0x80) && m_nSolidType != 2 && m_nSolidType != 0)
+	{
+		float *ang = vfunc9(0);
+		if (g_1070d9d0[0] != ang[0] || g_1070d9d0[1] != ang[1] || g_1070d9d0[2] != ang[2])
+		{
+			float *pMatrix = vfunc10();
+			sub_10138130(pPoint, pMatrix, &local.x);
+			goto normalize;
+		}
+	}
+	{
+		float *org = ((CCollisionSlot8 *)this)->slot8();
+		local.x = pPoint[0] - org[0];
+		local.y = pPoint[1] - org[1];
+		local.z = pPoint[2] - org[2];
+	}
+normalize:
+	((CUnknown100dc9f0 *)this)->sub_100dc9f0(&local.x, pOut);
+	return pOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dcd00 size=0x6d
 #include "CUnknown100dcd00.h"
 

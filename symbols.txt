@@ -4324,6 +4324,7 @@
 0x10011428 func   ?vfunc2@CTEWorldDecal@@UAEPAV1@I@Z CTEWorldDecal::vfunc2
 0x1001144b func   ?vfunc5@CStripWeapons@@QAEPAV1@I@Z CStripWeapons::vfunc5
 0x10011450 func   ?sub_100602e0@@YAXHHPBH0HHHH@Z sub_100602e0
+0x10011455 func   ?sub_100dcc20@CCollisionProperty@@QAEPAMPBMPAM@Z CCollisionProperty::sub_100dcc20
 0x1001147d func   ?sub_101f61b0@CActivityTableX@@QAEXXZ CActivityTableX::sub_101f61b0
 0x100114aa func   ?sub_102e7e40@@YIXPAUCOwner@@@Z sub_102e7e40
 0x100114b9 func   ?sub_10185450@UtlMem@@QAEXXZ UtlMem::sub_10185450
