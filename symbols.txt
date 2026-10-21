@@ -3517,6 +3517,7 @@
 0x1000e629 func   _env_spark env_spark
 0x1000e62e func   ?sub_1008e630@CBaseAnimating@@QAEXPAVCBaseEntity@@@Z CBaseAnimating::sub_1008e630
 0x1000e638 func   ?sub_10066820@@YAHXZ sub_10066820
+0x1000e63d func   ?sub_10061c00@@YAHXZ sub_10061c00
 0x1000e651 func   ?sub_10326d40@@YI_NPADHHHH@Z sub_10326d40
 0x1000e697 func   ?sub_10397b40@CNPC_VMingXiao@@QAE_NPAX@Z CNPC_VMingXiao::sub_10397b40
 0x1000e6a6 func   ?sub_101a8ac0@CCineNPC@@QAEDXZ CCineNPC::sub_101a8ac0

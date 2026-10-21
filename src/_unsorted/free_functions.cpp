@@ -7431,6 +7431,47 @@ int sub_100615e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10061c00 size=0x16e
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropFloat
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropVector
+void sub_10009539();
+void sub_10003012();
+void sub_10006aeb();
+
+extern SendTable g_106c2a5c;
+extern SendTable *g_1059cb88;
+
+// TARGET: sub_10061c00
+int sub_10061c00()
+{
+	static const char *pTableName = "DT_TEExplosion";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1059cb88, (void *)sub_10009539),
+		sub_10007bfd("m_nModelIndex", 0x18, 4, 0xb, 0, 0, 0),
+		sub_10006cc1("m_fScale", 0x1c, 4, 8, 0, 0.0f, 25.6f, (void *)sub_10006aeb),
+		sub_10007bfd("m_nFrameRate", 0x20, 4, 8, 1, 0, 0),
+		sub_10007bfd("m_nFlags", 0x24, 4, 8, 1, 0, 0),
+		sub_1000c14e("m_vecNormal", 0x28, 0xc, -1, 2, 0.0f, -121121.121094f, (void *)sub_10003012),
+		sub_10007bfd("m_chMaterialType", 0x34, 1, 8, 1, 0, 0),
+		sub_10007bfd("m_nRadius", 0x38, 4, 0x20, 1, 0, 0),
+		sub_10007bfd("m_nMagnitude", 0x3c, 4, 0x20, 1, 0, 0),
+	};
+	g_106c2a5c.sub_1000e8fe(props + 1, 9, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10061e80 size=0xb7
 #include "CTEExplosion.h"
 
