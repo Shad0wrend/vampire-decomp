@@ -13,7 +13,9 @@ public:
 	int m_n6674;
 	char m_pad6678[0x6684 - 0x6678];
 	float m_f6684;
-	char m_pad6688[0x66b0 - 0x6688];
+	char m_pad6688[0x66a4 - 0x6688];
+	unsigned int m_h66a4;	// entity handle released by vfunc144
+	char m_pad66a8[0x66b0 - 0x66a8];
 	char m_b66b0;	// set once the minions have been told about the target
 
 	bool sub_1038f290();
@@ -29,4 +31,8 @@ public:
 	void sub_1038c170(int nMode);	// switches between the grounded (1: flag 0x400 set, state 2) and the flying (other: flag cleared, state 0) setup, then slot 93(4, 0)
 	void sub_1038fc80();	// tells every living \"ManBat_Minion\" NPC without a target about the bat's target (once; sets the flag at +0x66b0)
 	void sub_1038fd40();	// the reverse of sub_1038fc80: while the flag at +0x66b0 is set, every living \"ManBat_Minion\" NPC with a target count is released (sub_1026d0c0), told about the bat's target (relationship 1 / 10) and scheduled (sub_102ae840 with 2 when slot 167 of the bat answers, else 1); then clears the flag
+	void vfunc144(int arg);	// slot 144: sub_1038f020(1), sub_1038c170(2), sub_1038f660, sub_1038fd40, releases the entity behind the handle at +0x66a4, then CNPC_VVampire::vfunc144
+	void sub_1038f020(int a);	// stub 0x10015591, called by vfunc144 first
+	void sub_1038f660();	// stub 0x10005ca9
+	void sub_103c4f40(int arg);	// CNPC_VVampire::vfunc144 (stub 0x1000b8a2), called directly
 };
