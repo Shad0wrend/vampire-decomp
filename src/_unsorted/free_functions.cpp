@@ -89943,6 +89943,44 @@ int *sub_1040cef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040cfd0 size=0x9b
+#include "CPlayerPickupController.h"
+#include "CBaseCombatWeapon.h"
+
+struct CPickupPlayerView
+{
+	void *sub_1032e7b0();	// CBaseCombatCharacter::GetActiveWeapon (stub 0x10007e19)
+};
+
+struct CPickupObjectView
+{
+	char m_pad0000[0x368];
+	int m_n368;	// 0x368: move type
+	int m_n36c;	// 0x36c
+};
+
+void __cdecl sub_10189660(CBaseEntity *pObject, CBaseCombatCharacter *pPlayer, int a);
+
+void CPlayerPickupController::sub_1040cfd0(CBaseCombatCharacter *pPlayer, CBaseEntity *pObject)
+{
+	CPickupPlayerView *pView = (CPickupPlayerView *)pPlayer;
+	if (pView->sub_1032e7b0() && !((CBaseCombatWeapon *)pView->sub_1032e7b0())->vfunc316(0)) {
+		sub_1040d0a0(0);
+		return;
+	}
+	CPickupObjectView *pObjectView = (CPickupObjectView *)pObject;
+	if (pObjectView->m_n368 == 1)
+		pObject->sub_100aaa40(2);
+	sub_100a0670(pPlayer, 0);
+	m_Carry.m_bFlag45 = 1;
+	m_Carry.m_f40 = 0.8660254f;
+	m_pPlayer = pPlayer;
+	int nPhysics = pObjectView->m_n36c;
+	sub_10189660(pObject, pPlayer, 0);
+	m_Carry.sub_1040c5d0(pPlayer, pObject, nPhysics);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040d0a0 size=0x91
 #include "CPlayerPickupController.h"
 #include "CGlobalEntityList.h"

@@ -1997,6 +1997,7 @@
 0x1000911a func   ?sub_10256200@@YIEPAE@Z sub_10256200
 0x1000911f func   ?sub_1028b190@CUnknown1028b190@@QAEXPAX@Z CUnknown1028b190::sub_1028b190
 0x10009129 func   ?sub_10135420@CUnknown10135420@@QAEXPAH@Z CUnknown10135420::sub_10135420
+0x10009133 func   ?sub_1040cfd0@CPlayerPickupController@@QAEXPAVCBaseCombatCharacter@@PAVCBaseEntity@@@Z CPlayerPickupController::sub_1040cfd0
 0x1000915b func   ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z CBaseEntity::vfunc107
 0x10009160 func   ?sub_1032d9b0@CBaseCombatCharacter@@QAE_NPAX@Z CBaseCombatCharacter::sub_1032d9b0
 0x1000916a func   ?sub_102283a0@@YAMMMMM@Z sub_102283a0
