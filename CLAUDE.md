@@ -131,3 +131,58 @@ cannot see these. Keep to them in new work:
   places its destroy `?s_default@...@$AV2@A` since 2026-10-21). The stat list lookup (guard 0x109f0b2a, default list
   0x109f0b40) is `CVStatListSet::Of(pChar)->Find(type)` (CVStatList_t.h); the entry lookup (0x109f0938, 0x109f0960)
   is `FindEntry(key)` (CEntryX.h). Never a `static CVStatList_t s_default(-1)` or `static CEntryX` of your own.
+
+## Source mathlib Vector code (x87): write it with Vector.h's operators
+
+Recognise it by `call dword ptr [pfSqrt]` (0x10579660, `__cdecl`, the caller pops the float), `call dword ptr
+[pfVectorNormalize]` (0x1057966c, `__fastcall`, ecx = the vector), or the "z-spill" of an operator result copied into
+a vector: x, y, z computed on the FPU, then
+
+```
+fstp dword ptr [esp+N]; mov edx, dword ptr [esp+N]; fxch st(1); fstp dword ptr [dst]; mov dword ptr [dst+8], edx; fstp dword ptr [dst+4]
+```
+
+`include/Vector.h` holds the game's inline layer (the 2004 SDK's mathlib/vector.h): `+ - * /` returning a temporary
+(`Vector res; VectorSubtract(*this, v, res); return res;`), the inline `operator=`, `+= -= *= /=`, `==`, `!=`,
+`Length()`, `LengthSqr()`, `Length2D()`, `DistTo()`, `Dot()`, `Cross()`, `Init()`, `operator[]`, and the free
+functions `VectorAdd/Subtract/Multiply/Scale/Divide/MA/Lerp/Copy/Clear`, `DotProduct`, `CrossProduct`,
+`VectorLength`, `VectorNormalize(v)` (calls pfVectorNormalize) and `FastSqrt(x)` (calls pfSqrt). Write the Source
+code with them; never per-component arithmetic, never a local V3 struct with operators of your own, never
+`g_10579660` / `g_1057966c` in new code (the names are pfSqrt / pfVectorNormalize).
+
+How the source form shows in the code (each verified with the judge on 2026-10-21):
+
+- **Assignment of an operator result = the z-spill.** `m_vecDir = GetAbsOrigin() - pOther->GetAbsOrigin();` or
+  `vec = vec * flScale;`. For a new local the z-spill means it was declared first and assigned: `Vector dir; dir = a -
+  b;`. `Vector dir = a - b;` (copy initialisation) stores x, y, z straight into the local instead (no spill).
+- **x, y, z all stored to a temporary and then copied with three integer moves into a local** = a named local
+  initialised from an operator and then used: `Vector vecVelocity = vecDelta / flTime; SetLocalVelocity(vecVelocity);`
+  (the frame then has one more 12-byte slot than `SetLocalVelocity(vecDelta / flTime)` gives).
+- **Lengths.** `(a - b).Length()`, `VectorLength(a - b)` and `a.DistTo(b)` give the same code in a small function. In a
+  bigger one VC6 stops inlining `DistTo` (the judge says "cannot link" and shows `call 0`): use `(a - b).Length()`.
+  Swapping the terms of `x*x + y*y + z*z` changes nothing (VC6 picks the order), but the grouping does: when
+  `Length()` gives the right instructions with the squares in another order, write the length with a local inline
+  helper grouped differently, e.g. `FastSqrt(v.x * v.x + (v.y * v.y + v.z * v.z))` (0x1030f7b0 matched that way;
+  `Length()` gave 6). `sqrt()` from <math.h> is the inline `fsqrt`; `FastSqrt` / `Length()` is the `call [pfSqrt]`.
+- **`a == b`** is `(b.x == a.x) && (b.y == a.y) && (b.z == a.z)`: the right operand is loaded first (`fld b.x; fcomp
+  a.x`). `vecDest == GetLocalOrigin()` loads the origin first.
+- **Float constants as literals.** Write `0.5f`, `-0.1f`, `5.0f` (a `fcomp qword ptr` constant is a `double`: `0.001`),
+  not `extern float g_XXXXXXXX`: an extern global changes which operand VC6 loads first (0x10309f60: score 5 with
+  externs, 0 with literals). read_data(addr, "dwords", 1) shows the bits (0x3f800000 = 1.0f, 0x3f000000 = 0.5f).
+- **Real members, not casts.** `*(float *)((char *)this + 0x3fc)` changes the load order and turns a float copy
+  (`mov edx, [a]; mov [b], edx`) into `fld; fstp`. Declare the members (or a local view struct with them).
+- **A Source inline wrapper evaluates all its arguments before the call inside it.** `inline void
+  VectorTransform(const Vector &in1, const matrix3x4_t &in2, Vector &out) { VectorTransform(&in1.x, in2, &out.x); }`:
+  the matrix getter runs before the pushes; calling the out-of-line function directly pushes `out` first.
+- **Returning a Vector by value** (`Vector CBaseEntity::WorldSpaceCenter()`, hidden pointer, `ret 4`) can be declared
+  in CBaseEntity_ext.h: CBaseEntity.h includes Vector.h.
+- **AllocTempVector.** The ring of temporary vectors (`static Vector s_vecTemp[128]` at 0x109f0cc0, guard 0x109f0b80,
+  index `g_106b856c`, `& 0x7f`) is Source's `AllocTempVector()`; its atexit destroy is an empty `ret` (Vector has a
+  constructor, no destructor). Like any shared static it belongs in one function in include/ (the link audit rulings above).
+
+Matched this way (bench copy, 2026-10-21): 0x101c2560 CSun (direction to the target, normalised), 0x10258320,
+0x10309f60, 0x101c1520 CBaseToggle::LinearMove, 0x1013bb40 Catmull_Rom_Spline_Normalize, 0x10027160
+CBaseEntity::WorldSpaceCenter (CCollisionProperty's OBBCenter / CollisionToWorldSpace inlined), 0x1004d9a0
+CPhysicsSpring::Spawn; Sonnet workers with this header then also matched 0x101128d0 and 0x1030f7b0
+(experiment 2026-10-21-x87-vector: marked x87 functions 6/18 -> 14/18). Not solved yet: a 2D normalise whose squares the game sums x first (0x102ed820: VC6 gives y
+first for every form tried) and the VMatrix / VPlane layer (0x1024cdb0, 0x101382f0).
