@@ -21287,6 +21287,65 @@ void __fastcall sub_100f0300(char *p) { p[0x55c] = 1; }
 void __fastcall sub_100f0320(char *p) { p[0x55c] = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x100f0860 size=0x11b
+#include "CBaseDoor.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "CAI_BaseNPC.h"
+
+struct GlobalVarsCurTime
+{
+	char m_pad0000[0xc];
+	float m_flCurTime;
+};
+
+extern GlobalVarsCurTime *g_1070b228;
+extern CGlobalEntityList *g_10566458;
+extern char g_1000f222[];	// think function (stub of sub_100f0f30)
+extern char g_1000abf0[];	// think function (stub)
+
+void CBaseDoor::sub_100f0860()
+{
+	CGlobalEntityList_Slot *s;
+	m_nState4f8 = 0;
+	*((char *)this + 0x655) = 0;
+	if (m_flags204 & 0x20) {
+		if (m_flags204 & 0x400)
+			m_pfnTouch = (void (CBaseEntity::*)(CBaseEntity *))&CBaseDoor::sub_10012837;
+	} else {
+		*(float *)((char *)this + 0x17c) = g_1070b228->m_flCurTime + *(float *)((char *)this + 0x500);
+		if (m_flags204 & 0x2000)
+			sub_100ac4e0((int)g_1000f222, 0, 0);
+		else
+			sub_100ac4e0((int)g_1000abf0, 0, 0);
+		if (*(int *)((char *)this + 0x500) == (int)0xbf800000)
+			*(int *)((char *)this + 0x17c) = (int)0xbf800000;
+	}
+	unsigned int h = *(unsigned int *)((char *)this + 0x53c);
+	if (h != 0xffffffff) {
+		s = &g_10566458->m_Slots[h & 0x1fff];
+		if (s->m_Serial == (int)(h >> 13) && s->m_pEntity) {
+			CAI_BaseNPC *pNPC = *(CAI_BaseNPC **)((char *)s->m_pEntity + 0x94);
+			if (pNPC)
+				pNPC->sub_1027dd10(this);
+		}
+	}
+	*(int *)((char *)this + 0x640) = 0;
+	if (m_flags204 & 1) {
+		m_items564[4].sub_100cd660(this, this, 0);
+	} else {
+		CBaseEntity *pActivator;
+		h = *(unsigned int *)((char *)this + 0x53c);
+		if (h != 0xffffffff && (s = &g_10566458->m_Slots[h & 0x1fff], s->m_Serial == (int)(h >> 13)))
+			pActivator = (CBaseEntity *)s->m_pEntity;
+		else
+			pActivator = 0;
+		m_items564[5].sub_100cd660(pActivator, this, 0);
+	}
+	((CEntityVSlots *)this)->slot249();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0e70 size=0xb
 void __fastcall sub_100f0e70(char *self)
 {
