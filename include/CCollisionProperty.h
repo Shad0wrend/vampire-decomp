@@ -51,4 +51,5 @@ public:
 	void sub_100dda20();	// stub 0x100121f7, called by SetSolid before the type changes
 	void sub_100ddc40();	// stub 0x10001906, called by SetSolid after the type changed
 	void sub_100dc430();	// stub 0x1000c1e4, called by SetSolid when the solidity changed
+	int IsSolid() const { return m_nSolidType != 0 && !(m_usSolidFlags & 4); }	// the solid type is set and the not-solid flag (bit 2) is clear
 };
