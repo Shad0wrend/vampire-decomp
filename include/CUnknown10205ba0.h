@@ -11,4 +11,5 @@ public:
 
 	const char *sub_10205ba0(CUnknown10204bf0 *pNames);	// the text form of the value; numbers go through pNames when it is set, else "%d"
 	int sub_10205840();	// evaluates the value (stub 0x10004e85): the number itself, the sub-object's result, the stat's value, 0 for a function, -1 for anything else
+	int sub_10205730(void *pCharacter);	// evaluates the value for the character (stub 0x100099e4)
 };
