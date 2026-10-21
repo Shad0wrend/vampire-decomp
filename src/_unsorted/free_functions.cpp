@@ -31019,6 +31019,41 @@ void sub_1013d0e0(float gamma, float texGamma, float brightness, int overbright,
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d450 size=0xe1
+extern float g_1044ffe0;
+extern float g_1044ffdc;
+
+static inline float anglemod(float a)
+{
+    a = g_1044ffdc * ((int)(a * g_1044ffe0) & 65535);
+    return a;
+}
+
+// TARGET: sub_1013d450
+float sub_1013d450(float target, float value, float speed)
+{
+    target = anglemod(target);
+    value = anglemod(value);
+    float delta = target - value;
+    if (speed < 0)
+        speed = -speed;
+    if (delta <= -180) {
+        while (delta <= -180)
+            delta += 360;
+    } else {
+        while (delta > 180)
+            delta -= 360;
+    }
+    if (delta > speed)
+        value += speed;
+    else if (delta < -speed)
+        value -= speed;
+    else
+        value = target;
+    return value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d900 size=0x72
 extern int g_10579690[4][2][3];
 bool sub_1013d900(int a, int b, int c, int *out)
