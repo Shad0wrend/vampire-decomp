@@ -45278,6 +45278,47 @@ struct CUnknown10248a50 { int p[4]; int a; void sub_10248a50(int v); };
 void CUnknown10248a50::sub_10248a50(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10248cd0 size=0x8b
+extern int (*g_109f388c)(char *buffer, int count, const char *format, ...);
+
+struct CKeyValuesX {
+	int m_n00;
+	const char *m_sValue;	// 0x04
+	union {
+		int m_iValue;
+		float m_flValue;
+	};	// 0x08
+	int m_iDataType;	// 0x0c
+
+	CKeyValuesX *sub_10248900(const char *keyName, int bCreate);	// FindKey (stub 0x1000b58c)
+	void sub_102490e0(const char *keyName, const char *value);	// SetString (stub 0x10015258)
+	const char *sub_10248cd0(const char *keyName, const char *defaultValue);
+};
+
+const char *CKeyValuesX::sub_10248cd0(const char *keyName, const char *defaultValue)
+{
+	CKeyValuesX *dat = this;
+	if (keyName)
+		dat = sub_10248900(keyName, 0);
+	if (dat) {
+		char buf[64];
+		switch (dat->m_iDataType) {
+		case 1:
+		case 3:
+			g_109f388c(buf, 64, "%d", dat->m_iValue);
+			sub_102490e0(keyName, buf);
+			break;
+		case 2:
+			g_109f388c(buf, 64, "%f", (double)dat->m_flValue);
+			sub_102490e0(keyName, buf);
+			break;
+		}
+		return dat->m_sValue;
+	}
+	return defaultValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249160 size=0x25
 struct CUnknown10249160 {
     char m_pad0000[0xc];
