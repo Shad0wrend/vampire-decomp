@@ -161,6 +161,7 @@ public:
 	bool sub_10290200(int unused);	// task state 2 of the scripted-action runner (CAI_BaseNPCTroika::RunAlternateAction, state at +0x644c): after the base work, once curtime passed the time at +0x6450, when the entity of the handle at +0x5d24 is live runs slot 448(0xe) and clears the handle, the byte at +0x5d30 and the state; else lets the object at +0x5d34 decide (sub_102ee2e0) to run sub_102bf7e0, then slot 528 and clears the state; always true
 	void sub_102c0360();	// scripted-sequence end: when the entity of the handle at +0xfe8 resolves, clears the byte at +0x1590, hands (that entity, this, 0) to the sub-object at +0x5f5c (stub 0x10010794) and runs sub_10107050(0); then, unless the global at 0x109241fc says otherwise, clears the "entity_debug_stats" flag (slot 4 of the named object) and sub_10119900(0)
 	void sub_1029a930(const char *pszSquad);	// joins the squad of that name (a missing or empty name gives none): leaves the current squad (sub_103158f0) or frees the private object at +0x5d88, finds / creates the squad (sub_10315800) and keeps its embedded object (+8) at +0x5d88 (a fresh 0x14 byte object without a squad), then tells the squad (sub_10316700) while the count at +0x5bb0 is positive
+	void sub_100041b0(int task);	// stub 0x100041b0 for 0x10269a20: sets a task (the inverse of sub_10015839)
 
 #include "CAI_BaseNPCTroika_ext.h"
 
@@ -168,7 +169,8 @@ public:
 	unsigned int m_flags204;
 	char m_pad0208[0xfe8 - 0x208];
 	unsigned int m_hfe8;
-	char m_pad0fec[0x14bc - 0xfec];
+	char m_pad0fec[0x14b8 - 0xfec];
+	unsigned int m_flags14b8;
 	unsigned int m_flags14bc;
 	char m_pad14c0[0x1590 - 0x14c0];
 	char m_b1590;
@@ -189,7 +191,11 @@ public:
 	unsigned int m_h6088;
 	unsigned int m_h608c;
 	float m_v6090[3];
-	char m_pad609c[0x63d8 - 0x609c];
+	char m_pad609c[0x630c - 0x609c];
+	char *m_p630c;	// 0x630c: an object with a flag dword at +0x64
+	char m_pad6310[0x6318 - 0x6310];
+	float m_f6318;	// 0x6318
+	char m_pad631c[0x63d8 - 0x631c];
 	char m_b63d8;
 	char m_pad63d9[0x6440 - 0x63d9];
 	float m_f6440;
