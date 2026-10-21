@@ -52,3 +52,5 @@
 	void sub_10346ac0();	// "CBaseCombatCharacter::SendIncomingSwingNotice": scope trace (entity name), sub_10341c30(stub 0x10003585, the global at 0x1049e04c, 0.7f, 0, 0, 0x46004003), then sub_10346910(the dword at +0x9c of slot 167's object, 0 without one)
 	void sub_10341c30(void *pfn, int a, float b, int c, int d, int e);	// stub 0x100080f8, called directly
 	void sub_10346910(CBaseEntity *pTarget);	// "CBaseCombatCharacter::MeleeRollA...": stub 0x10009386, called directly with the owner of slot 167's object
+	void sub_103228c0();	// "CBaseCombatCharacter::UpdateOccult...": scope trace (entity name), for every weapon (count sub_1032e890, GetWeapon) whose info block (sub_102517b0) has a non-zero dword at +0x4fec0, ORs the dword at +0x4fed0 into the occult power flags at +0xe38
+	int sub_1032e890();	// "CBaseCombatCharacter::GetWeaponCount"-like (stub 0x1000bbe0)
