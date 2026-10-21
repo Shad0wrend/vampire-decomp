@@ -138,6 +138,8 @@ public:
 	void sub_103d7420(CHintData_WW *pData);	// "CNPC_VWerewolf::InitPathableHint": scope trace (entity name), walks the global hint list (0x10925450, next at +0x5d8): each hint other than pData's own is added as pathable when it shares pData's entity (sub_103d6390), else when HasPath from the first / second vector of pData to the hint origin (slot 217)
 	void sub_103d4760();	// "CNPC_VWerewolf::ClearTeleportHint": scope trace (entity name), when the hint object at +0x66b0 is set calls its sub_102d1420(0), then clears the pointer
 	void sub_103d4690();	// "CNPC_VWerewolf::ClearMoveHint": scope trace (entity name), when the hint object at +0x66bc is set calls its sub_102d1420(0), then clears the pointer and sets condition 0x78
+	void sub_103d44e0(CNPC_VWerewolfHint66b0 *pHint, char flag);	// "CNPC_VWerewolf::SetMoveHint": scope trace (entity name), clears the current move hint (sub_103d4690) when set, stores flag at +0x66c8 and pHint at +0x66bc, calls slot 1 of the object behind the global 0x10924a6c, then sub_10269a20(0x78)
+	void sub_10269a20(int condition);	// CAI_BaseNPC condition setter (stub 0x100041b0), called directly
 	void sub_10015839(int condition);	// CAI_BaseNPC::sub_10269b50 "SetCondition" (stub 0x10015839), called directly
 	unsigned int sub_1033c9c0();	// CBaseCombatCharacter::sub_1033c9c0 "GetMiscFlags" (stub 0x1000b672), called directly
 	void sub_1033c770(unsigned int flags);	// CBaseCombatCharacter "RemoveMiscFlag" (stub 0x10011531), called directly
