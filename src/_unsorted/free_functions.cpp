@@ -2052,6 +2052,42 @@ bool CBaseEntity::sub_10035a70(CBaseEntity **ppEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10035df0 size=0xca
+#include "ScopeTrace.h"
+#include "CPhysicsPushedEntities.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CPushEntitySlots
+{
+	S100(a) S100(b) S10(c0)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+	virtual float *vfunc217();	// GetAbsOrigin
+};
+
+void CPhysicsPushedEntities::sub_10035df0(CBaseEntity *pEntity)
+{
+	ScopeTrace trace("CPhysicsPushedEntities::AddEntity", g_106b8540);
+	CMovedVec *pVec = &m_rgMoved;
+	int idx = pVec->m_Size;
+	if (idx + 1 > pVec->m_nAllocationCount)
+		pVec->sub_1003c3c0(idx - pVec->m_nAllocationCount + 1);
+	pVec->m_Size++;
+	pVec->m_pElements = pVec->m_pMemory;
+	pVec->sub_1003c330(idx, 1);
+	MovedEntity_t *pMoved = &pVec->m_pMemory[idx];
+	if (pMoved)
+		pMoved->sub_1003c3a0();
+	pVec->m_pMemory[idx].m_pEntity = pEntity;
+	MovedEntity_t *pBase = pVec->m_pMemory;
+	const float *pOrigin = ((CPushEntitySlots *)pEntity)->vfunc217();
+	pBase[idx].m_vecStartAbsOrigin[0] = pOrigin[0];
+	pBase[idx].m_vecStartAbsOrigin[1] = pOrigin[1];
+	pBase[idx].m_vecStartAbsOrigin[2] = pOrigin[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10035f00 size=0x95
 #include "CPhysicsPushedEntities.h"
 
