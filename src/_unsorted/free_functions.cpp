@@ -53812,6 +53812,34 @@ EntL *sub_10256920(int unused, EntL *pEnt, unsigned int *pBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10256a70 size=0x84
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_10003404(const char *pVarName, int offset, int sizeofVar);
+
+extern SendTable g_1089a520;
+extern const char *g_105c6370;
+
+// TARGET: sub_10256a70
+int sub_10256a70()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10003404("m_flNextThink", 0x17c, 4),
+		sub_10003404("m_flTimeWeaponIdle", 0x894, 4),
+	};
+	g_1089a520.sub_1000e8fe(props + 1, 2, g_105c6370);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10256c20 size=0x11a
 #include "SendProp.h"
 
