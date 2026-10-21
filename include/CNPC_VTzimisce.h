@@ -84,6 +84,7 @@ public:
 	void sub_103b9f90(int a, float b);
 	void sub_103b9f50(int a);
 	void sub_102c43b0(float delay);
+	void vfunc491();	// slot 491 (declared as a plain member): when slot 486 holds logs "SPI_TAKE_DAMAGE" with the three convar values (like slot 488) and runs slot 487; then sub_103b9f90(1, 1.0f)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	char vfunc69(void *pOther);	// as in CNPC_VHengeyokai (transplant)
 	char sub_1029b180(void *pOther);	// as in CNPC_VHengeyokai (transplant)
