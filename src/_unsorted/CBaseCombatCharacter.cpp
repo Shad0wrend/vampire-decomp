@@ -384,6 +384,41 @@ char CBaseCombatCharacter::sub_10325fa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10326750 size=0x132
+#include "CBaseCombatCharacter.h"
+#include "CUnknown10738964.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+#define TV_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+// The slots of a target entity this function calls: 29 (a float) and 192 (a position returned by value).
+class CTargetView
+{
+public:
+	TV_SLOTS10(a0) TV_SLOTS10(a1)
+	virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23(); virtual void a24();
+	virtual void a25(); virtual void a26(); virtual void a27(); virtual void a28();
+	virtual float vfunc29();
+	TV_SLOTS10(a3) TV_SLOTS10(a4) TV_SLOTS10(a5) TV_SLOTS10(a6) TV_SLOTS10(a7) TV_SLOTS10(a8) TV_SLOTS10(a9)
+	TV_SLOTS10(b0) TV_SLOTS10(b1) TV_SLOTS10(b2) TV_SLOTS10(b3) TV_SLOTS10(b4) TV_SLOTS10(b5) TV_SLOTS10(b6) TV_SLOTS10(b7) TV_SLOTS10(b8)
+	virtual void c90(); virtual void c91();
+	virtual Vector vfunc192();
+};
+
+extern CUnknown10738964 *g_10936f74;
+
+char CBaseCombatCharacter::vfunc363(CBaseEntity *pTarget)
+{
+	ScopeTrace trace("CBaseCombatCharacter::FInViewCone", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CTargetView *pView = (CTargetView *)pTarget;
+	if (!g_10936f74->vfunc1() && g_10936f74->m_n2c == 2)
+		return sub_103261f0(pView->vfunc192(), pView->vfunc29(), m_field1574);
+	return sub_103264d0(pView->vfunc192(), pView->vfunc29(), m_field1574);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10326a20 size=0x86
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

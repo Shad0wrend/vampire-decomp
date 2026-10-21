@@ -3780,6 +3780,7 @@
 0x10010e06 func   ?sub_1027fa50@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_1027fa50
 0x10010e0b func   _npc_bullseye npc_bullseye
 0x10010e1f func   ?sub_101978b0@@YAPAUPyObject@@PAU1@0@Z sub_101978b0
+0x10010e24 func   ?vfunc363@CBaseCombatCharacter@@QAEDPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc363
 0x10010e33 func   ?sub_1036c810@CNPC_VChangBros@@QAEXHH@Z CNPC_VChangBros::sub_1036c810
 0x10010e3d func   ?sub_100ae7e0@@YAXXZ sub_100ae7e0
 0x10010e42 func   ?sub_10072d60@S10072d60@@QAEXPBD@Z S10072d60::sub_10072d60
