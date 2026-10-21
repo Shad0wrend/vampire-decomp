@@ -34992,6 +34992,54 @@ void CBasePlayerUnit::sub_1015f8b0(float flAmount, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f9e0 size=0x169
+#include "CBasePlayer.h"
+#include "CVStatList_t.h"
+
+struct CCharStatRecord
+{
+	char m_pad0000[0x88];
+	int m_nValue;	// 0x88
+};
+
+struct CCharTemplate
+{
+	char m_pad0000[0xd0];
+	CCharStatRecord *m_pStats;	// 0xd0
+};
+
+struct CCharTemplateMgr
+{
+	CCharTemplate *sub_10207c40(void *pChar);	// stub 0x10001de8
+};
+extern CCharTemplateMgr g_1074f028;
+
+struct CBasePlayerUnit : CBasePlayer
+{
+	void sub_1015f9e0();
+};
+
+// TARGET: CBasePlayerUnit::sub_1015f9e0
+void CBasePlayerUnit::sub_1015f9e0()
+{
+	float *pTotal = (float *)((char *)this + 0x19f8);
+	float *pPartial = (float *)((char *)this + 0x19fc);
+	float flValue = *pTotal;
+	*pPartial = flValue;
+	if (flValue >= 100.0f)
+	{
+		int n = (int)(0.01f * flValue);
+		*pPartial = flValue - n * 100.0f;
+		n += g_1074f028.sub_10207c40(this)->m_pStats->m_nValue;
+		CVStatListSet::Of(this)->Find(0)->sub_102008e0(0x22, n);
+	}
+	else
+	{
+		CVStatListSet::Of(this)->Find(0)->sub_102008e0(0x22, g_1074f028.sub_10207c40(this)->m_pStats->m_nValue);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160680 size=0xd
 extern float g_10725c9c;
 // TARGET: CUnknown10160680::sub_10160680
