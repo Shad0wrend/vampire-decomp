@@ -20,4 +20,5 @@ public:
 	CUnknown101d82d0_Elem *m_pData;	// 0x04
 
 	CUnknown101d82d0_Elem *sub_101d82d0();	// appends a default constructed element (reallocating the array to count + 1) and returns the last element
+	void sub_101d83a0(const char *pszList);	// parses a list of clan names separated by " ,()" (lowercased; a leading '!' negates a name) and appends an element (id, sub id, negated) for every name that resolves
 };
