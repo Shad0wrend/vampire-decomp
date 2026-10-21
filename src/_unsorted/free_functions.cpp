@@ -5512,6 +5512,30 @@ int *sub_1004dee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004f7a0 size=0x8f
+#include "Ray_t.h"
+
+// TARGET: Ray_t::sub_1004f7a0
+void Ray_t::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004feb0 size=0x70
 #define SV(n) virtual void v##n();
 #define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)

@@ -5281,6 +5281,7 @@
 0x10015915 func   ?sub_100eb3d0@CStrHolder100eb3d0@@QAE_NXZ CStrHolder100eb3d0::sub_100eb3d0
 0x1001591f func   ?sub_1008d6d0@CBaseAnimating@@QAEXH@Z CBaseAnimating::sub_1008d6d0
 0x10015924 func   ?sub_102d9040@CUnknown102d9040@@QAEXHPAVCBaseEntity@@PBMHMM@Z CUnknown102d9040::sub_102d9040
+0x10015929 func   ?sub_1004f7a0@Ray_t@@QAEXPBM0@Z Ray_t::sub_1004f7a0
 0x10015951 func   ?sub_103065d0@CUnknown103065d0@@QAEXPBUCUnknown103065d0Vec@@0HHHD@Z CUnknown103065d0::sub_103065d0
 0x1001595b func   ?sub_100737d0@CUnknown100737d0@@QAEXD@Z CUnknown100737d0::sub_100737d0
 0x10015997 func   ?vfunc8@CSoundSchemeManager@@UAEPAV1@I@Z CSoundSchemeManager::vfunc8
