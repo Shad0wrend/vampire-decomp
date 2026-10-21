@@ -66019,6 +66019,53 @@ struct CUnknown10312320 { char pad[0x30]; CSub10002397 m_Sub; void sub_10312320(
 void CUnknown10312320::sub_10312320() { m_Sub.sub_10002397(); }
 // END FUNCTION
 
+// FUNCTION: 0x10312360 size=0x17d
+#include "CUnknown10312580.h"
+
+struct GlobalVarsLite { char pad[0xc]; float curtime; };
+struct DiscRecord { int m_0; int m_4; int m_8; int m_c; int m_10; float m_f14; int m_18; unsigned char m_b1c; };
+struct CRecordTree { DiscRecord *sub_103118e0(int key); };
+struct RBProbe { int key; float value; };
+extern GlobalVarsLite *g_1070b228;
+extern const char *g_109f075c;
+extern const float g_104454c4;
+
+bool CUnknown10312580::sub_10312360(int key)
+{
+	DiscRecord *rec = ((CRecordTree *)((char *)this + 0x30))->sub_103118e0(key);
+	if (!rec || !rec->m_4)
+		return false;
+	if (rec->m_f14 != g_104454c4 || (rec->m_b1c & 1)) {
+		RBProbe probe;
+		probe.value = -1.0f;
+		probe.key = key;
+		const CUtlRBTree16At<0x10936c54> *tree = (const CUtlRBTree16At<0x10936c54> *)&m_Tree;
+		const char *name = *(const char **)((char *)tree + 0x18);
+		if (name)
+			g_109f075c = name;
+		unsigned short i = tree->m_Root;
+		while (i != 0xffff) {
+			if (tree->m_LessFunc(&probe, tree->m_pElements[i].m_Data))
+				i = *tree->sub_10313aa0(i);
+			else if (tree->m_LessFunc(tree->m_pElements[i].m_Data, &probe))
+				i = tree->Links(i).m_Right;
+			else
+				break;
+		}
+		if (i != 0xffff) {
+			if (rec->m_b1c & 1)
+				return false;
+			const float *pv = (const float *)(m_Tree.m_pElements[i].m_Data + 4);
+			if (*(const unsigned int *)pv != 0xbf800000) {
+				if (g_1070b228->curtime < rec->m_f14 + *pv)
+					return false;
+			}
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312580 size=0x106
 #include "CUnknown10312580.h"
 extern const char *g_109f075c;

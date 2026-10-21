@@ -3637,6 +3637,7 @@
 0x1000fd5d func   ?sub_101f5d80@CUnknown101f5d80@@QAEXXZ CUnknown101f5d80::sub_101f5d80
 0x1000fd71 func   ?sub_1042d700@@YIIPAI@Z sub_1042d700
 0x1000fd76 func   ?sub_10411630@CUnknown10411630@@QAEPAVCBaseEntity@@M@Z CUnknown10411630::sub_10411630
+0x1000fd8f func   ?sub_10312360@CUnknown10312580@@QAE_NH@Z CUnknown10312580::sub_10312360
 0x1000fd99 func   ?vfunc86@CBaseCombatCharacter@@QAEDHHHHH@Z CBaseCombatCharacter::vfunc86
 0x1000fda3 func   ?vfunc267@CInstancedSceneEntity@@QAEHH@Z CInstancedSceneEntity::vfunc267
 0x1000fdcb func   ?vfunc5@CItemGHannahsApptBook@@QAEPAV1@I@Z CItemGHannahsApptBook::vfunc5
