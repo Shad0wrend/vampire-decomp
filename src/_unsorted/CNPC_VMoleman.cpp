@@ -27,3 +27,26 @@ int CNPC_VMoleman::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093bdb8.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x1039fd20 size=0x9d
+// TARGET: CNPC_VMoleman::vfunc438
+int CNPC_VMoleman::vfunc438()
+{
+	m_n1b2c = 0x1b;
+	if ((m_flags14b8 & 2) == 2) {
+		m_flags14b8 &= ~2;
+		return 0xf1;
+	}
+	switch (m_nState5cc0) {
+	case 1:
+		if (m_pNavigator->sub_102ee620() != 8 && m_n62ec == 0)
+			return 0xff;
+		if (sub_1001482b(0x13))
+			return 0x102;
+		if (sub_1001482b(0x10))
+			return 0x106;
+		return (sub_1001482b(0x11) ? 5 : 0) + 0x100;
+	}
+	return sub_10015ad2();
+}
+// END FUNCTION
