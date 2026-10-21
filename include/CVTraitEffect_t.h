@@ -10,8 +10,7 @@ public:
 	char m_pad0000[0x10];	// 0x00: the dependency record
 	int m_nKind;	// 0x10: 7 once the cost was loaded
 	char m_pad0014[4];
-	CVStatCost_t m_cost;	// 0x18
-	char m_pad0040[0x40 - 0x18 - sizeof(CVStatCost_t)];
+	CVStatCost_t m_cost;	// 0x18, 0x28 bytes
 	int m_nDisplayOverride;	// 0x40
 
 	void sub_101f6b90(CVStatKV *pKV);	// loads the effect from its key: Trait, then Modifier (a modifier string) or else a cost (kind 7, "Unable to Parse TraitEffect!" when that fails), then DisplayOverride
