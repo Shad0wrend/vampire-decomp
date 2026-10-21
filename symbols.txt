@@ -2295,6 +2295,7 @@
 0x10009b51 func   ?sub_10049d20@CUtlRBTreeNode36@@QBEABURBTreeNode36Links@@G@Z CUtlRBTreeNode36::sub_10049d20
 0x10009b74 func   ?sub_10196970@@YAPAUPyObject@@PAU1@0@Z sub_10196970
 0x10009b79 func   ?sub_103404f0@@YI_NPADHH@Z sub_103404f0
+0x10009b8d func   ?sub_100f7b20@@YGPAVCBaseEntity@@PBDPBVVector@@MPAV1@2@Z sub_100f7b20
 0x10009b97 func   _npc_VToreador npc_VToreador
 0x10009b9c func   ?vfunc5@CPropLargeHullIgnore@@QAEPAV1@I@Z CPropLargeHullIgnore::vfunc5
 0x10009bab func   ?sub_10091f10@CBaseAnimating@@QAEXPBDM@Z CBaseAnimating::sub_10091f10
