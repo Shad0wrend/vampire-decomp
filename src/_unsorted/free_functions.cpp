@@ -90982,6 +90982,57 @@ bool __stdcall sub_104110d0(Holder *h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10411160 size=0xb8
+#include "CWeaponMelee.h"
+
+#define AD_V(n) virtual void v##n();
+#define AD_V10(p) AD_V(p##0) AD_V(p##1) AD_V(p##2) AD_V(p##3) AD_V(p##4) AD_V(p##5) AD_V(p##6) AD_V(p##7) AD_V(p##8) AD_V(p##9)
+
+struct CWeaponMindX	// the owner's object at +0xa8
+{
+	AD_V10(0) AD_V10(1) AD_V10(2) AD_V10(3) AD_V10(4) AD_V10(5) AD_V10(6) AD_V10(7) AD_V10(8) AD_V10(9)
+	AD_V10(10) AD_V10(11) AD_V10(12) AD_V10(13) AD_V10(14) AD_V10(15) AD_V10(16) AD_V10(17) AD_V10(18) AD_V10(19)
+	AD_V(200) AD_V(201) AD_V(202) AD_V(203) AD_V(204) AD_V(205) AD_V(206) AD_V(207) AD_V(208)
+	virtual CBaseEntity *vfunc209();	// the target the object holds
+};
+
+struct CWeaponTuningX
+{
+	float sub_101e8480(CWeaponMindX *pMind);	// stub 0x10011fc2
+};
+extern CWeaponTuningX g_10739d08;
+
+int __fastcall sub_100b39c0(char *pEntity);	// CBaseEntity::GetFlags2
+char sub_1040d930();
+char sub_1016a660(CBaseEntity *pTarget, float flScale, float flExtra);
+
+char CWeaponMelee::sub_10411160(CBaseEntity *pTarget, char bFlag)
+{
+	if (!pTarget)
+		return 0;
+	if (!(sub_100b39c0((char *)pTarget) & 2))
+		return 0;
+	CWeaponMindX *pMind;
+	void *pOwner = sub_102521f0();
+	if (!pOwner) {
+		pMind = 0;
+	} else {
+		pMind = *(CWeaponMindX **)((char *)pOwner + 0xa8);
+		if (pMind && pMind->vfunc209() == pTarget)
+			return 0;
+	}
+	if (!sub_1040d930()) {
+		int n = 0;
+		if (!bFlag)
+			n = (int)g_10739d08.sub_101e8480(pMind);
+		return sub_1016a660(pTarget, (float)n, 0);
+	}
+	if (pTarget->m_field368 == 9)
+		return 0;
+	return sub_1016a660(pTarget, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10411630 size=0x73
 #include "CUnknown10411630.h"
 #include "CGlobalEntityList.h"
