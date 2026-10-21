@@ -48,7 +48,9 @@ public:
 	int sub_100079b4();	// the activity of task 0x14a (the free getter at 0x1037b890)
 	void sub_10014524(int activity);	// CAI_BaseNPCTroika::sub_10289ee0 (stub 0x10014524): starts the activity
 
-	char m_pad03e0[0x10e4 - 0x3e0];
+	char m_pad03e0[0xff0 - 0x3e0];
+	int m_nActivityff0;	// +0xff0: the current activity
+	char m_pad0ff4[0x10e4 - 0xff4];
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
 	char m_pad10e8[0x19b0 - 0x10e8];
 	int m_nVtable19b0;	// +0x19b0: vtable pointer of the second base (CAI_DefMovementSink)
