@@ -1,6 +1,8 @@
 // CNPC_VSheriffMan: sheriff man NPC (derived from CNPC_VVampireBoss at +0x0). Only the functions that decompiled code needs are declared.
 #pragma once
 
+#include "Vector.h"
+
 class CEntityVSlots;
 
 class CNPC_VSheriffMan
@@ -16,9 +18,18 @@ public:
 	CEntityVSlots *m_pTarget;	// +0x5ddc: the entity the teleport bats are placed around
 	char pad5de0[0x628c - 0x5de0];
 	unsigned int m_hHeightTarget;	// +0x628c: entity handle the height categorisation looks at
-	char pad6290[0x66d0 - 0x6290];
+	char pad6290[0x64b8 - 0x6290];
+	float m_flJumpGravity;	// +0x64b8
+	char pad64bc[0x6680 - 0x64bc];
+	const char *m_pszMonsterModelName;	// +0x6680
+	char pad6684[0x6694 - 0x6684];
+	const char *m_pszNpcName;	// +0x6694
+	char pad6698[0x66d0 - 0x6698];
 	unsigned int m_hTeleportBats;	// +0x66d0: entity handle of the teleport bats
-	char pad66d4[0x66e6 - 0x66d4];
+	Vector m_vecSpawnOrigin;	// +0x66d4: the origin at NPCInit
+	int m_nSpawnTime;	// +0x66e0: gpGlobals->curtime bits at NPCInit
+	char m_b66e4;	// +0x66e4
+	char m_b66e5;	// +0x66e5
 	char m_bAttacking;	// +0x66e6
 	char m_bTransformed;	// +0x66e7: set once the transform has been started
 
@@ -55,4 +66,7 @@ public:
 	void sub_10385a10(int arg);	// CNPC_VHuman::vfunc432 (RunAI), called directly through the stub at 0x1000698d
 	CEntityVSlots *sub_103b0930();	// the first reference entity (stub 0x1000c257)
 	CEntityVSlots *sub_103b0ab0(int a);	// the second reference entity (stub 0x10006e74)
+	void vfunc420();	// "CNPC_VSheriffMan::NPCInit": scope trace (no entity name), resets the teleport bats handle and the flag bytes, remembers the origin and the time, runs the base init, sets the monster model and npc names and the jump gravity
+	void sub_10013e85();	// CNPC_VVampireBoss::vfunc420, called directly
+	void sub_10014c22();	// stub for 0x103c6a00, called directly after the model names are stored
 };
