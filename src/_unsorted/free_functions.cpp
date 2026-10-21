@@ -48085,6 +48085,32 @@ void CAI_BaseNPCTroika::sub_102c24a0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c2910 size=0x6e
+#include "inputdata_t.h"
+extern "C" __declspec(dllimport) void Q_trimspace(const char *pSource, char *pDest, int maxLen);
+extern char g_106b8540[];
+int *sub_10203ed0(int *pOut, const char *pszName);
+
+struct CTroikaStringInputUnit {
+    void sub_102c2910(inputdata_t *pData);
+};
+
+void CTroikaStringInputUnit::sub_102c2910(inputdata_t *pData)
+{
+    char szName[0x104];
+    int nTemp;
+    variant_t *pVar = &pData->value;
+    const char *psz;
+    if (pVar->fieldType == 2)
+        psz = pVar->iszValue ? pVar->iszValue : g_106b8540;
+    else
+        psz = pVar->sub_10008805();
+    Q_trimspace(psz, szName, 0x104);
+    if (szName[0])
+        *(int *)((char *)this + 0x64c4) = *sub_10203ed0(&nTemp, szName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c29a0 size=0x6c
 #include "inputdata_t.h"
 struct CDmgInfoLocal {
