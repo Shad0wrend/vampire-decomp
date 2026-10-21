@@ -22,7 +22,9 @@ public:
 	unsigned int m_hSpeaker;	// 0x00: entity handle whose dialog file name is looked up
 	unsigned int m_hNPC;	// 0x04: entity handle of the speaking NPC
 	CDialogTable_t *m_pTable;	// 0x08
-	char m_pad000c[0x2830 - 0xc];
+	char m_pad000c[0x2810 - 0xc];
+	unsigned int m_nStateFlags;	// 0x2810: bit 4 = a choice menu is pending, bit 5 = a goodbye is pending
+	char m_pad2814[0x2830 - 0x2814];
 	int m_nChoices;	// 0x2830: number of player choices
 	char m_pad2834[4];
 	int m_aChoices[1];	// 0x2838: the dialog entry key of each player choice
@@ -45,4 +47,7 @@ public:
 	char *sub_100e1880(int index);	// "CDialog::LookupSpeechFile": scope trace, the speech file of line `index` that exists in the file system, tried with three extensions (the last two are recorded), else null
 	int sub_100e65d0();	// "CDialog::clan_offset": the NPC's clan (handle at +4) as an index 0..6 (Brujah, Gangrel, Nosferatu, Toreador, Tremere, Ventrue, Malkavian), -1 when unknown (stub 0x1000aeed)
 	char sub_100e15c0(DialogLine *pLine, char bExtended);	// the line's text colour / marker character for the speaker's clan; 'E' (0x45) or 'F' (0x46) when the line has no text for the clan
+	void sub_100e4780();	// "CDialog::NPCNotifyDoneTalking": scope trace, runs the pending NPC event script, then with a table: sub_100e4bd0(0) when the goodbye flag (bit 5 of +0x2810) is set, else sub_100e5240() when the menu flag (bit 4) is set
+	void sub_100e4bd0(int a);	// stub 0x1000a448
+	void sub_100e5240();	// stub 0x1000efac
 };
