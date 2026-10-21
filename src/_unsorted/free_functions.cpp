@@ -47914,6 +47914,31 @@ void CAI_BaseNPCTroika::sub_102c24a0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c29a0 size=0x6c
+#include "inputdata_t.h"
+struct CDmgInfoLocal {
+    int m_a;
+    float m_vForce[3];
+    char m_pad[0x4c - 0x10];
+    CDmgInfoLocal *sub_101c26d0(void *pInflictor, void *pAttacker, float flDamage, int a, int b, int c, int d);
+};
+struct CTroikaInputUnit {
+    void sub_100a1250(CDmgInfoLocal *pInfo);
+    void sub_102c29a0(inputdata_t *pData);
+};
+
+void CTroikaInputUnit::sub_102c29a0(inputdata_t *pData)
+{
+    int nDamage = pData->value.fieldType == 4 ? pData->value.iValue : 0;
+    CDmgInfoLocal info;
+    info.sub_101c26d0(pData->pCaller, pData->pActivator, (float)nDamage, 0, 0, 0, -1);
+    info.m_vForce[0] = 0;
+    info.m_vForce[1] = 0;
+    info.m_vForce[2] = 0;
+    sub_100a1250(&info);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c2a30 size=0x21
 #include "CAI_BaseNPCTroika.h"
 #include "inputdata_t.h"
