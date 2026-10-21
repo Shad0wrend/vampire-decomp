@@ -10,7 +10,7 @@ struct CBaseEntityListNode	// a node of the linked lists
 	unsigned short m_Next;	// 0x04
 };
 
-struct CBaseEntityListLL	// one linked list: memory, allocation count, grow size, then the indices (0x18 bytes with the padding)
+struct CBaseEntityListLL	// one linked list: memory, allocation count, grow size, then the indices (0x1c bytes with the padding)
 {
 	CBaseEntityListNode *m_pMemory;	// 0x00
 	int m_allocationCount;	// 0x04
@@ -20,7 +20,20 @@ struct CBaseEntityListLL	// one linked list: memory, allocation count, grow size
 	unsigned short m_FirstFree;	// 0x10
 	unsigned short m_ElementCount;	// 0x12
 	unsigned short m_NumAlloced;	// 0x14
+	CBaseEntityListNode *m_pElements;	// 0x18 (debug pointer to the memory)
 
+	CBaseEntityListLL()
+	{
+		m_pMemory = 0;
+		m_allocationCount = 0;
+		m_growSize = 0;
+		m_Head = 0xffff;
+		m_Tail = 0xffff;
+		m_FirstFree = 0xffff;
+		m_NumAlloced = 0;
+		m_ElementCount = 0;
+		m_pElements = 0;
+	}
 	static unsigned short InvalidIndex() { return (unsigned short)~0; }
 	CBaseEntityListNode &InternalElement(unsigned short i) { return m_pMemory[i]; }
 };
@@ -33,7 +46,6 @@ public:
 
 	char m_pad0004[0x18004 - 4];
 	CBaseEntityListLL m_Live;	// 0x18004
-	char m_pad1801c[0x18020 - 0x1801c];
 	CBaseEntityListLL m_Second;	// 0x18020
 
 	CBaseEntityList();	// 0x100f9a60: clears the slot table, sets up both linked lists, fills the second list with the indices 0x800..0x1fff, then clears the slot table again
