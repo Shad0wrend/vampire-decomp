@@ -21763,6 +21763,46 @@ void CUnknown10103100::sub_10103100(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103370 size=0xba
+#include "CUnknown1070b22c.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+
+struct CCmdPlayerX
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV10(10) PV10(11) PV10(12) PV10(13) PV10(14) PV10(15) PV10(16) PV10(17) PV10(18)
+	PV(190) PV(191)
+	virtual float *vfunc192(float *pOut);
+};
+
+extern "C" double __cdecl atof(const char *);
+extern CUnknown1070b22c *g_1070b22c;
+extern float g_10569fc4;
+extern float g_10569fc8;
+extern float g_10569fcc;
+extern float g_10569fd0;
+CCmdPlayerX *__cdecl sub_101193b0();
+void __cdecl sub_101cdba0(float *p, float a, float b, float c, float d, int e, int f);
+
+// TARGET: sub_10103370
+void sub_10103370()
+{
+	CCmdPlayerX *pPlayer = sub_101193b0();
+	if (pPlayer) {
+		if (g_1070b22c->vfunc85() == 4) {
+			g_10569fc4 = (float)atof(g_1070b22c->vfunc84(1));
+			g_10569fc8 = (float)atof(g_1070b22c->vfunc84(2));
+			g_10569fcc = (float)atof(g_1070b22c->vfunc84(3));
+		}
+	}
+	float vTemp[3];
+	sub_101cdba0(pPlayer->vfunc192(vTemp), g_10569fc4, g_10569fc8, g_10569fcc, g_10569fd0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101034f0 size=0xb2
 #include "CUnknown1070b22c.h"
 
