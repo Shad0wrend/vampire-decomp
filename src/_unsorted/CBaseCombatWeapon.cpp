@@ -359,6 +359,31 @@ void CBaseCombatWeapon::vfunc305()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253140 size=0x9f
+#include "CBaseCombatWeapon.h"
+
+void CBaseCombatWeapon::vfunc338(int a, int b)
+{
+	int seq = sub_1008dc40(a, -1);
+	if (seq == -1) {
+		seq = sub_1008dc40(0xb6, seq);
+		if (seq == -1)
+			return;
+	}
+	m_nSequence = seq;
+	*(int *)((char *)this + 0x8a8) = a;
+	m_n06f8 = 0;
+	sub_10090950();
+	if (*(float *)&b > 0.0f) {
+		float flRate = sub_10091080(seq) / *(float *)&b;
+		m_flPlaybackRate = flRate;
+		m_flPlaybackRate = flRate < 12.0 ? flRate : 12.0;
+	} else {
+		m_flPlaybackRate = 1.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253280 size=0xd
 struct WeaponField890 { char pad[0x890]; int m; };
 void CBaseCombatWeapon::vfunc306(int value)
