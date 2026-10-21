@@ -2474,6 +2474,7 @@
 0x1000c031 func   _item_p_research_lg_stealth item_p_research_lg_stealth
 0x1000c040 func   _npc_maker_zombie npc_maker_zombie
 0x1000c045 func   _events_world events_world
+0x1000c04a func   ?vfunc5@CTriggerHurt@@QAEPAV1@I@Z CTriggerHurt::vfunc5
 0x1000c04f func   ?sub_100aac30@@YIHPAD@Z sub_100aac30
 0x1000c072 func   _item_g_mercurio_journal item_g_mercurio_journal
 0x1000c090 func   ?vfunc241@CFilterInventory@@QAE_NPAVCBaseEntity@@@Z CFilterInventory::vfunc241
