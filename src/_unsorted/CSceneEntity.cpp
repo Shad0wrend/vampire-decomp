@@ -164,3 +164,51 @@ void CSceneEntity::vfunc259(int unused, void *pEvent, const char *pszTarget)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10081700 size=0x13f
+#include "CAI_BaseNPCTroika.h"
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
+extern "C" __declspec(dllimport) void __cdecl Q_SetExtension(char *, const char *, int);
+struct FileSysX { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+  virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual char v9(const char *p, int a); };
+extern FileSysX *g_1070b238;
+extern CGlobalEntityList *g_10566458;
+struct SceneEventX { char pad[0x98]; CAI_BaseNPCTroika *pActor; };
+struct NpcX : CAI_BaseNPCTroika { void sub_102c0520(const char *, int, char); };
+
+void CSceneEntity::vfunc260(int unused, void *pEvent, const char *pszTarget, int a4, int a5)
+{
+    if (!pEvent)
+        return;
+    NpcX *pActor = (NpcX *)((SceneEventX *)pEvent)->pActor;
+    if (!pActor)
+        return;
+    char szName[260];
+    Q_snprintf(szName, 260, "sound/%s", pszTarget);
+    Q_SetExtension(szName, ".mp3", 260);
+    if (!g_1070b238->v9(szName, 0)) {
+        Q_snprintf(szName, 260, "*%s", pszTarget);
+    } else {
+        Q_snprintf(szName, 260, "*%s", pszTarget);
+        Q_SetExtension(szName, ".mp3", 260);
+    }
+    CBasePlayer *pThis = (CBasePlayer *)this;
+    if (pThis->sub_10081890())
+        ((CBaseEntity *)pActor)->sub_100a8d30(pThis->sub_10081890());
+    if (*((char *)pActor + 0x64c0)) {
+        unsigned int h = *(unsigned int *)((char *)pActor + 0x6554);
+        CGlobalEntityList_Ent *pEnt;
+        if (h != 0xffffffff) {
+            CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
+            if (s->m_Serial == (int)(h >> 13))
+                pEnt = s->m_pEntity;
+            else
+                pEnt = 0;
+        } else
+            pEnt = 0;
+        if ((void *)pEnt != (void *)this)
+            pActor->sub_102c0bb0();
+    }
+    pActor->sub_102c0520(szName, a5, *((char *)this + 0x57f));
+}
+// END FUNCTION
