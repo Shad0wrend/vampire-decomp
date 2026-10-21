@@ -470,6 +470,37 @@ bool CAI_BaseNPC::vfunc510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027c160 size=0x65
+#include "CAI_BaseNPC.h"
+#include "CRestore.h"
+
+extern char g_105cabd0[];	// the datamap of the block at +0x19b4
+void sub_10015311(void *pArray, int count);
+
+struct CNpcLookObject
+{
+	void sub_102e0b80();	// stub 0x100010e6
+};
+
+struct CNpcRestoreMember
+{
+	void sub_102e8ac0();	// stub 0x100081bb
+};
+
+int CAI_BaseNPC::vfunc127(CRestore *pRestore)
+{
+	pRestore->vfunc2((CBaseEntity *)((char *)this + 0x19b4), (int)g_105cabd0);
+	int result = sub_10348890(pRestore);
+	sub_10015311((char *)this + 0x5b8c, 4);
+	sub_10015311((char *)this + 0x5db4, 3);
+	CNpcLookObject *pLook = *(CNpcLookObject **)((char *)this + 0x5d44);
+	if (pLook)
+		pLook->sub_102e0b80();
+	((CNpcRestoreMember *)((char *)this + 0x5cf4))->sub_102e8ac0();
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c7f0 size=0x1e
 #include "CAI_BaseNPC.h"
 
