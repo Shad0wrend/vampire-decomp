@@ -184,6 +184,40 @@ int CMultiplayRules::vfunc43(int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141bb0 size=0x9d
+#include "CMultiplayRules.h"
+
+void __cdecl sub_1000c3f6(const char *pszName, CBaseEntity *pActivator, CBaseEntity *pCaller, int nUseType, int nValue);
+
+struct CMPPlayerView
+{
+	int m_pad0000[0x22bc / 4];
+	int m_nScore;
+	int m_nDeaths;
+
+	void sub_10170d40();
+};
+
+void CMultiplayRules::vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo)
+{
+	CMPPlayerView *pV = (CMPPlayerView *)pVictim;
+	vfunc45(pVictim, pInfo);
+	CBaseEntity *pInflictor = pInfo->m_pInflictor;
+	CBaseEntity *pAttacker = pInfo->m_pAttacker;
+	CBaseEntity *pScorer = sub_10141b10(pAttacker, pInflictor);
+	pV->m_nDeaths++;
+	sub_1000c3f6("game_playerdie", pVictim, pVictim, 3, 0);
+	if (pVictim != pScorer && pScorer) {
+		CMPPlayerView *pS = (CMPPlayerView *)pScorer;
+		pS->m_nScore += vfunc43((int)pScorer, (int)pVictim);
+		pS->sub_10170d40();
+		sub_1000c3f6("game_playerkill", pScorer, pScorer, 3, 0);
+		return;
+	}
+	pV->m_nScore--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101420f0 size=0x29
 #include "CBaseEntity.h"
 Vector CMultiplayRules::vfunc51(CBaseEntity *pEnt)

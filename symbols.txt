@@ -1054,6 +1054,7 @@
 0x10005c09 func   ?vfunc99@CBaseEntity@@UAE_NHHH@Z CBaseEntity::vfunc99
 0x10005c3b func   ?sub_102deec0@UtlMem@@QAEXXZ UtlMem::sub_102deec0
 0x10005c4f func   _prop_base prop_base
+0x10005c54 func   ?vfunc44@CMultiplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CMultiplayRules::vfunc44
 0x10005c7c func   ?sub_10378ec0@CNPC_VGargoyle@@QAE_NXZ CNPC_VGargoyle::sub_10378ec0
 0x10005c8b func   _npc_VGargoyle npc_VGargoyle
 0x10005cae func   ?sub_100430a0@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_100430a0
