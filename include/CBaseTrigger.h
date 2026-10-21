@@ -12,6 +12,9 @@ public:
 	void vfunc243(unsigned int flag);
 	void sub_101c4dd0();	// disables the trigger: scope traces "CBaseEntity::IsSolidFlagSet" / "CBaseEntity::RemoveSolidFlags" (entity name); when bit 3 of the solid flags (collision property at +0x270, flags at +0x2b4) is set removes it (SetSolidFlags) and calls PhysicsTouchTriggers(0); then sets the disabled byte at +0x55c
 	void sub_101c4bf0();	// enables the trigger: like sub_101c4dd0 but adds the solid flag when it is clear ("CBaseEntity::AddSolidFlags") and clears the byte at +0x55c
+	bool sub_101c5460(CBaseEntity *pOther);	// "CBaseTrigger::PassesTriggerFilters": true when one of the spawn flags 1 (clients: bit 7 of the entity flags) / 2 (NPCs: bit 13) / 4 (sub_101c53d0) / 8 (sub_101c5420) admits pOther and the filter entity of the handle at +0x564 (slot 241) accepts it; no filter entity means accepted
+	bool sub_101c53d0(CBaseEntity *pOther);	// the spawn flag 4 test (stub 0x1000763a)
+	bool sub_101c5420(CBaseEntity *pOther);	// the spawn flag 8 test (stub 0x10007d1a)
 
 	char m_pad04a4[0x564 - 0x4a4];
 	int m_i564;
