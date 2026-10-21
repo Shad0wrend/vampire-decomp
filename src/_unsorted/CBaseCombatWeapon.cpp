@@ -174,6 +174,50 @@ bool CBaseCombatWeapon::vfunc309()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102526f0 size=0xb2
+#include "CBaseCombatWeapon.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+struct WeaponView
+{
+	char pad[0x894];
+	float m_f894;
+};
+struct OwnerView
+{
+	char pad[0x1c64];
+	unsigned int m_hWeapon1c64;
+	WeaponView *sub_10007e19();
+};
+
+static inline bool HandleIsValid(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return false;
+	CGlobalEntityList_Slot *slot = &g_10566458->m_Slots[h & 0x1fff];
+	return slot->m_Serial == (int)(h >> 13) && slot->m_pEntity;
+}
+
+void CBaseCombatWeapon::vfunc310(float time)
+{
+	OwnerView *pOwner = (OwnerView *)sub_10252290();
+	if (pOwner) {
+		if (pOwner->sub_10007e19())
+			pOwner->sub_10007e19()->m_f894 = time;
+		if (HandleIsValid(pOwner->m_hWeapon1c64)) {
+			unsigned int h = *(volatile unsigned int *)&pOwner->m_hWeapon1c64;
+			CGlobalEntityList_Slot *slot;
+			WeaponView *pWeapon = (h != 0xffffffff && (slot = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13)) ? (WeaponView *)slot->m_pEntity : 0;
+			pWeapon->m_f894 = time;
+		}
+	} else {
+		m_f894 = time;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252e80 size=0xb
 void sub_1000c6f8();
 

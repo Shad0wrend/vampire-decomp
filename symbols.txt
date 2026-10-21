@@ -4256,6 +4256,7 @@
 0x100138e0 func   ?vfunc5@CTriggerImpact@@QAEPAV1@I@Z CTriggerImpact::vfunc5
 0x100138ea func   ?sub_1036e2f0@CNPC_VChangBros@@QAEPAV1@XZ CNPC_VChangBros::sub_1036e2f0
 0x100138ef func   ?sub_1015f510@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1015f510
+0x100138f4 func   ?vfunc310@CBaseCombatWeapon@@UAEXM@Z CBaseCombatWeapon::vfunc310
 0x100138f9 func   ?sub_102231c0@@YAPAHXZ sub_102231c0
 0x1001390d func   ?vfunc0@CChoreoQueueItem@@QAEPAV1@I@Z CChoreoQueueItem::vfunc0
 0x10013917 func   _info_hint info_hint
