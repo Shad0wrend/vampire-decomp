@@ -69264,6 +69264,48 @@ char CBaseCombatCharacter::sub_10338cb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103392c0 size=0x17f
+#include "CBaseCombatCharacter.h"
+#include "CVDmg_t.h"
+#include "CUnknown101c26d0.h"
+#include "CUnknown101c2a90.h"
+#include "ScopeTrace.h"
+
+#define TV(n) virtual void v##n();
+#define TV10(p) TV(p##0) TV(p##1) TV(p##2) TV(p##3) TV(p##4) TV(p##5) TV(p##6) TV(p##7) TV(p##8) TV(p##9)
+
+struct SCharSlots
+{
+	TV10(0) TV10(1) TV10(2) TV10(3) TV10(4) TV10(5) TV10(6) TV10(7) TV10(8) TV10(9) TV10(10) TV10(11) TV10(12) TV10(13)
+	TV(140) TV(141) TV(142) TV(143)
+	virtual void vfunc144(void *pInfo);
+	TV(145) TV(146) TV(147) TV(148) TV(149)
+	TV10(15) TV10(16) TV10(17) TV10(18) TV10(19) TV10(20) TV10(21) TV10(22) TV10(23) TV10(24) TV10(25) TV10(26) TV10(27) TV10(28) TV10(29)
+	TV10(30) TV10(31) TV10(32) TV10(33) TV10(34) TV10(35) TV10(36) TV10(37) TV10(38) TV10(39)
+	TV(400) TV(401) TV(402)
+	virtual void vfunc403();
+};
+
+void CBaseCombatCharacter::sub_103392c0(CBaseEntity *pInflictor, int a, int b)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Die", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (m_field200 != 2) {
+		CVDmg_t dmg;
+		dmg.sub_101fa960((CVDmgSource_t *)this);
+		dmg.m_field04 = 1;
+		dmg.m_field0c = 1;
+		CUnknown101c26d0 info;
+		info.sub_101c26d0(0, pInflictor, 1.0f, 0, 0, (int)&dmg, -1);
+		((CUnknown101c2a90 *)&info)->sub_101c2a90(a);
+		((CUnknown101c2a90 *)&info)->sub_101c2ad0(b);
+		CVStatListSet::Of(this)->Find(0)->sub_10200a70(0xf, 0x11);
+		((SCharSlots *)this)->vfunc144(&info);
+		((SCharSlots *)this)->vfunc403();
+		dmg.sub_101fa680();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103394a0 size=0x8d
 #include "CBaseCombatCharacter.h"
 
