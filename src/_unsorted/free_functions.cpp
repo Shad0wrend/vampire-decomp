@@ -58474,6 +58474,31 @@ bool sub_1023fe10(const Vector &boxCenter, const Vector &boxHalfDiagonal, const 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023fed0 size=0x91
+#include "Vector.h"
+
+bool sub_1023fed0(const Vector &boxMin, const Vector &boxMax, const Vector &center, float radius)
+{
+	float flDelta;
+	float flDistSqr = 0.0f;
+	if (center[0] < boxMin[0]) {
+		flDelta = center[0] - boxMin[0];
+		flDistSqr = flDelta * flDelta;
+	} else if (center[0] > boxMax[0]) {
+		flDelta = boxMax[0] - center[0];
+		flDistSqr = flDelta * flDelta;
+	}
+	if (center[1] < boxMin[1]) {
+		flDelta = center[1] - boxMin[1];
+		flDistSqr += flDelta * flDelta;
+	} else if (center[1] > boxMax[1]) {
+		flDelta = boxMax[1] - center[1];
+		flDistSqr += flDelta * flDelta;
+	}
+	return flDistSqr < radius * radius;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102400e0 size=0x71
 // TARGET: sub_102400e0
 bool sub_102400e0(const Vector *p, const Vector *mins, const Vector *maxs)
