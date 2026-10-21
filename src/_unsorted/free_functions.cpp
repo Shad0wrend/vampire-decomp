@@ -40517,6 +40517,36 @@ StatDefault3 *CStatDefault3List::sub_101d5e80(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6100 size=0x70
+#include "CUnknown101d6100.h"
+
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *pMsg, ...);
+
+struct CCharView
+{
+	char sub_10338190(CUnknown10204e90 *pStat);	// CBaseCombatCharacter::VStatBuy (stub 0x1000de59)
+};
+
+bool CUnknown101d6100::sub_101d6100(void *pCharacter)
+{
+	int nHave = sub_10204900(pCharacter);
+	if (nHave < m_nTarget) {
+		int nNeed = m_nTarget - nHave;
+		DevMsg(3, "AutoLevel_Template: Attempting Buy: %s %d\n", sub_102043a0(), nNeed);
+		int nBefore = sub_10204e90((int)pCharacter);
+		while (nNeed) {
+			nNeed--;
+			if (!((CCharView *)pCharacter)->sub_10338190(this)) {
+				if (sub_10204900(pCharacter) < nBefore)
+					return false;
+				break;
+			}
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6220 size=0x64
 #include "CVStatAction_t.h"
 struct CPartHolderX {
