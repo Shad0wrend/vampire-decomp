@@ -44,10 +44,10 @@ public:
 	int m_24;
 	char m_28;
 	char m_29[3];
-	int m_2c;
+	int m_2c;	// a float: the time of the last yaw update (UpdateYaw)
 	int m_30;
 	float m_34;	// the ideal yaw
-	int m_38;
+	int m_38;	// a float: the yaw speed (UpdateYaw converts it with _ftol)
 	int m_3c;
 	int m_40;
 	int m_44;
@@ -69,6 +69,7 @@ public:
 	void sub_102e20b0(const float *pPosition, float flWeight);	// "AddFacingTarget"-like: queues a look target (position, priority) (stub 0x10007248)
 	float sub_102e0a80(float flIdealYaw);	// the yaw the motor reaches when turning toward flIdealYaw: the difference to the yaw at +0x18 (wrapped into -180..180) is clamped to +-the float at +0x1c, added back and wrapped into 0..360
 	float sub_102e1f90();	// "CAI_Motor::DeltaIdealYaw": 0 when the owner's yaw (angles slot 221, y * 182.04445f quantised to 16 bits and scaled back) equals the ideal yaw at +0x34, else AngleDiff(ideal yaw, current yaw) (sub_1013d580, stub 0x100097e6)
+	void sub_102e1e20(int yawSpeed);	// "CAI_Motor::UpdateYaw": the owner's yaw approaches the ideal yaw (+0x34) by yawSpeed (the float at +0x38 for -1) * 10 per second since the last update (+0x2c)
 
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
 	static int *sub_102e0860();
