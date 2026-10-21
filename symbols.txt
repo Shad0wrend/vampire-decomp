@@ -3847,6 +3847,7 @@
 0x10010e4c func   ?vfunc5@CWeaponThrown_Chang_Ghost@@QAEPAV1@I@Z CWeaponThrown_Chang_Ghost::vfunc5
 0x10010e88 func   ?sub_1018d210@CPointAngleSensor@@QAEXPAUinputdata_t@@@Z CPointAngleSensor::sub_1018d210
 0x10010e92 func   ?sub_10256350@CBaseCombatWeapon@@QAE?AUCWeaponRollValue@@XZ CBaseCombatWeapon::sub_10256350
+0x10010eba func   ?sub_1012d290@@YAHXZ sub_1012d290
 0x10010edd func   ?sub_10258b00@@YAXPAVCUnknown10258b00@@@Z sub_10258b00
 0x10010efb func   ?sub_1010be40@@YAPAHXZ sub_1010be40
 0x10010f14 func   _beam beam

@@ -25609,6 +25609,36 @@ int *sub_1012d0a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d290 size=0xcd
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);
+void sub_10246300();
+
+extern SendTable g_1070bcc4;
+extern const char *g_10573c3c;
+
+// TARGET: sub_1012d290
+int sub_1012d290()
+{
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10007bfd("m_nCountType", 0x46c, 4, 2, 0, 0, 0),
+		sub_10006cc1("m_flCountTime", 0x468, 4, -1, 4, 0.0f, -121121.121094f, (void *)sub_10246300),
+		sub_10006cc1("m_flRemainingTime", 0x480, 4, -1, 4, 0.0f, -121121.121094f, (void *)sub_10246300),
+	};
+	g_1070bcc4.sub_1000e8fe(props + 1, 3, g_10573c3c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d480 size=0x14
 void __stdcall sub_1000de81(int);
 struct S { char pad[0x468]; int a; char pad2[0x14]; int b; };
