@@ -134,6 +134,30 @@ bool CPayphone::vfunc295(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aaf80 size=0xa5
+#include "CPayphone.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include <math.h>
+
+bool sub_10240250(const Vector &, const Vector &, const Vector &, const Vector &);
+
+bool CPayphone::vfunc45(CBaseEntity *pOther, int a, int b, int c, int d, int e, int f, int g)
+{
+	Vector vOther, vThis;
+	const Vector *pvOther = ((CEntityVSlots *)pOther)->slot193(&vOther);
+	const Vector *pvThis = ((CEntityVSlots *)this)->slot193(&vThis);
+	float flDist = (float)(fabs(pvThis->z - pvOther->z) + fabs(pvThis->y - pvOther->y) + fabs(pvThis->x - pvOther->x));
+	if (flDist < 85.0f) {
+		CCollisionProperty *pOtherColl = (CCollisionProperty *)((char *)pOther + 0x270);
+		CCollisionProperty *pColl = (CCollisionProperty *)((char *)this + 0x270);
+		if (sub_10240250(*(Vector *)pColl->vfunc1(), *(Vector *)pColl->vfunc2(), *(Vector *)pOtherColl->vfunc1(), *(Vector *)pOtherColl->vfunc2()))
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab1b0 size=0x1e
 #include "CPayphone.h"
 

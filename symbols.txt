@@ -673,6 +673,7 @@
 0x10003a3a func   ?sub_1021e1c0@@YIXPAH@Z sub_1021e1c0
 0x10003a3f func   ?sub_1036d270@CNPC_VChangBros@@QAE_NPAM@Z CNPC_VChangBros::sub_1036d270
 0x10003a44 func   ?sub_10314b30@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10314b30
+0x10003a62 func   ?vfunc45@CPayphone@@QAE_NPAVCBaseEntity@@HHHHHHH@Z CPayphone::vfunc45
 0x10003a80 func   _soundent soundent
 0x10003a99 func   ?sub_10428fd0@@YAIPAD@Z sub_10428fd0
 0x10003aad func   ?sub_102d1350@CAI_BaseNPC@@QAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::sub_102d1350
