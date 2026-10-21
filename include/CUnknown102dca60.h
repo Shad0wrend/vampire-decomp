@@ -7,6 +7,8 @@
 class CUnknown102dca60_Target	// a target entity: its enabled state is at +0x564 (1 = enabled), its mode at +0x590
 {
 public:
+	void sub_102db3b0(int mode);	// the unit-local setter of the mode at +0x590 (stub 0x1000e3ae)
+
 	char m_pad0000[0x564];
 	int m_nState;	// 0x564
 	char m_pad0568[0x590 - 0x568];
@@ -31,4 +33,6 @@ public:
 	int m_nTargets;	// 0x524: its size
 
 	void sub_102dca60();	// switches every target off (2), then picks a random enabled target other than the current one (retrying until one is found), switches it on (1), makes it current, fires the pick output and schedules the next pick
+	void sub_102dc490();	// switches every target to mode 0, runs sub_102dc520, then fires the output at +0x49c (activator and caller this)
+	void sub_102dc520();	// stub 0x1000d69d
 };
