@@ -13,6 +13,40 @@ int CNPC_VTzimisceHeadClaw::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1400 size=0xe0
+#include "CNPC_VTzimisceHeadClaw.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+
+struct CSoundPrecacherX {
+	virtual void PrecacheSound(const char *pszName, int bPreload);
+};
+extern CSoundPrecacherX *g_1070b248;
+extern const char *g_1065ca68[2];
+extern const char *g_1065ca70[2];
+extern const char *g_1065ca78[3];
+void sub_101d0ec0(const char *pszItem);
+
+void CNPC_VTzimisceHeadClaw::vfunc104()
+{
+	sub_100097b4();
+	g_1070b22c->vfunc17((int)"Tzim2_powerup_emitter", 1);
+	g_1070b22c->vfunc17((int)"Tzim2_blast_emitter", 1);
+	g_1070b22c->vfunc17((int)"Tzim2_player_emitter", 1);
+	g_1070b22c->vfunc17((int)"HUD_Tzim2_emitter", 1);
+	for (unsigned int i = 0; i < 2; i++)
+		g_1070b248->PrecacheSound(g_1065ca68[i], 0);
+	for (unsigned int j = 0; j < 2; j++)
+		g_1070b248->PrecacheSound(g_1065ca70[j], 0);
+	for (unsigned int k = 0; k < 3; k++)
+		g_1070b248->PrecacheSound(g_1065ca78[k], 0);
+	g_1070b248->PrecacheSound("Character/Monster/TC_FatGuy/Sluge_Hit.wav", 0);
+	g_1070b248->PrecacheSound("Character/Monster/TC_FatGuy/Sluge_Affected.wav", 0);
+	sub_101d0ec0("item_w_tzimisce2_claw");
+	sub_101d0ec0("item_w_tzimisce2_head");
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1540 size=0x95
 #include "CNPC_VTzimisceHeadClaw.h"
 
