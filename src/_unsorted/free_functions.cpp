@@ -62069,6 +62069,22 @@ void sub_10242390(const float *v, float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102433a0 size=0x76
+#include "Vector.h"
+
+void sub_10005ab5(const Vector &a, int b, const Vector &c, Vector *out);
+
+// TARGET: sub_102433a0
+void sub_102433a0(const Vector &a1, const Vector &a2, const Vector &a3, int a4, int a5, Vector *a6)
+{
+	Vector d1, d2;
+	VectorSubtract(a2, a1, d1);
+	VectorSubtract(a3, a1, d2);
+	sub_10005ab5(a1, a4, d1, a6);
+	sub_10005ab5(*a6, a5, d2, a6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245770 size=0x10
 struct CFlagHolder245770 {
     char pad[4];
