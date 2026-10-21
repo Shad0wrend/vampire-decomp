@@ -2318,6 +2318,7 @@
 0x1000abc8 func   ?vfunc110@CDynamicLight@@QAE_NPBD0@Z CDynamicLight::vfunc110
 0x1000abd7 func   ?vfunc3@CTEBeamLaser@@UAEXHH@Z CTEBeamLaser::vfunc3
 0x1000ac22 func   ?vfunc590@CAI_BaseNPCTroika@@UAEDXZ CAI_BaseNPCTroika::vfunc590
+0x1000ac27 func   ?vfunc101@CBatSwarm@@QAEXPAVVector@@0@Z CBatSwarm::vfunc101
 0x1000ac36 func   ?vfunc3@CTEBeamRingPoint@@UAEXPBMH@Z CTEBeamRingPoint::vfunc3
 0x1000ac3b func   ?sub_103adb00@@YAPAHXZ sub_103adb00
 0x1000ac45 func   ?sub_103f59f0@@YAHXZ sub_103f59f0

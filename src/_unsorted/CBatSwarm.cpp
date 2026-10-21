@@ -34,6 +34,61 @@ void CBatSwarm::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b9a40 size=0x178
+#include "CBatSwarm.h"
+
+#define V4(p) virtual void p##a(); virtual void p##b(); virtual void p##c(); virtual void p##d();
+#define V16(p) V4(p##0) V4(p##1) V4(p##2) V4(p##3)
+struct CSlot217
+{
+	V16(a) V16(b) V16(c) V16(d) V16(e) V16(f) V16(g) V16(h) V16(i) V16(j) V16(k) V16(l) V16(m)
+	V4(n) V4(o) virtual void q();
+	virtual float *GetAbsOrigin();
+};
+
+void CBatSwarm::vfunc101(Vector *pMins, Vector *pMaxs)
+{
+	bool bFirst = false;
+	for (int i = 0; i < 32; i++) {
+		if (m_mask734 & (1 << i) & m_mask730) {
+			const Vector &p = m_vecPos[i];
+			if (bFirst) {
+				pMins->x = pMins->x < p.x ? pMins->x : p.x;
+				pMins->y = pMins->y < p.y ? pMins->y : p.y;
+				pMins->z = pMins->z < p.z ? pMins->z : p.z;
+				pMaxs->x = pMaxs->x > p.x ? pMaxs->x : p.x;
+				pMaxs->y = pMaxs->y > p.y ? pMaxs->y : p.y;
+				pMaxs->z = pMaxs->z > p.z ? pMaxs->z : p.z;
+			} else {
+				bFirst = true;
+				pMaxs->x = p.x;
+				pMaxs->y = p.y;
+				pMaxs->z = p.z;
+				pMins->x = pMaxs->x;
+				pMins->y = pMaxs->y;
+				pMins->z = pMaxs->z;
+			}
+		}
+	}
+	if (bFirst) {
+		pMins->x -= 16.0f;
+		pMins->y -= 16.0f;
+		pMins->z -= 16.0f;
+		pMaxs->x += 16.0f;
+		pMaxs->y += 16.0f;
+		pMaxs->z += 16.0f;
+	} else {
+		float *o = ((CSlot217 *)this)->GetAbsOrigin();
+		pMaxs->x = o[0];
+		pMaxs->y = o[1];
+		pMaxs->z = o[2];
+		pMins->x = pMaxs->x;
+		pMins->y = pMaxs->y;
+		pMins->z = pMaxs->z;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b9ee0 size=0x75
 #include "CBatSwarm.h"
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
