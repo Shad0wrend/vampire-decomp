@@ -18,4 +18,5 @@ public:
 	CUnknown1073dc00_Entry **m_pEntries;	// 0x18
 
 	int sub_101f55a0(CBaseEntity *pEntity, const char *pszName, int bFemale);	// the table index of the sound set (stub 0x10009331)
+	void sub_101f5950(CBaseEntity *pEntity, int sound, int channel, float volume, float pitch);	// plays a sound of the table on an entity (stub 0x100119fa)
 };
