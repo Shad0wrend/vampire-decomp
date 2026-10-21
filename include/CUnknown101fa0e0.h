@@ -9,4 +9,5 @@ public:
 	int m_ids[1];	// 0x04
 
 	void sub_101fa0e0();	// "Debug_Display" of the whole list
+	void sub_101fa180(void *pFile);	// writes the list to a file / writer object: the name of the global list, then the text of every id's entry
 };
