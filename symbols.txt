@@ -1299,6 +1299,7 @@
 0x10006721 func   ?sub_102e12e0@@YIXPAUCOwner@@@Z sub_102e12e0
 0x1000673f func   ?sub_102c6d90@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102c6d90
 0x10006749 func   _item_g_horrortape_1 item_g_horrortape_1
+0x1000674e func   ?sub_10057230@@YAHXZ sub_10057230
 0x10006753 func   _item_g_horrortape_2 item_g_horrortape_2
 0x1000677b func   ?sub_10316ab0@CUnknown10316890@@QAEXHVVector@@0@Z CUnknown10316890::sub_10316ab0
 0x10006785 func   ?vfunc309@CBaseCombatCharacter@@QAEPAXXZ CBaseCombatCharacter::vfunc309
