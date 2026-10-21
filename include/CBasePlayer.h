@@ -97,7 +97,10 @@ public:
 	virtual bool vfunc412();
 	CBP_V1(si0e) CBP_V1(si0f) CBP_V1(si0g) CBP_V1(si0h) CBP_V1(si0i)
 	virtual char vfunc418(int unused);	// slot 418: runs sub_101644f0(-1, 0, 0), then steps the activity at +0xff0 (0xf49 -> 0xf52 when the entity of the handle at +0xfe8 is gone; with the byte at +0x65c set 0xf40 -> 0xf49), true while it is 0xf52
-	CBP_V10(si1) CBP_V10(si2) CBP_V1(sj0) CBP_V1(sj1)
+	CBP_V1(si10) CBP_V1(si11)
+	virtual char vfunc421(int unused);	// slot 421: false unless the byte at +0x65c is set; with a live character behind the handle at +0x1538 (and +0x153c set) builds a damage record sourced at this player and hands the character a one point damage info (stat 0xf set to the value of stat 0x11 of its active stat list), slot 144 and slot 403; true
+	CBP_V1(si13) CBP_V1(si14) CBP_V1(si15) CBP_V1(si16) CBP_V1(si17) CBP_V1(si18) CBP_V1(si19)
+	CBP_V10(si2) CBP_V1(sj0) CBP_V1(sj1)
 	virtual void vfunc441();	// slot 441: collects the player's weapons (or ammo types) the game rules (global 0x1070ba0c, slots 61 / 62) ask for into a local list, then slot 442(1)
 	virtual void vfunc442(int a);
 	virtual void vfunc443(int a);
