@@ -10,6 +10,44 @@ void CWorld::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b840 size=0x10b
+#include "CWorld.h"
+#include "CCollisionProperty.h"
+#include "CServerNetworkProperty.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown101466e0.h"
+#include "ScopeTrace.h"
+
+struct CWorldCtorGlobals { char pad[0xc]; float curtime; };
+extern CWorldCtorGlobals *g_1070b228;
+extern CUnknown1070b22c *g_1070b22c;
+void sub_104121d0();
+void sub_1028d770();
+
+// TARGET: CWorld::CWorld
+CWorld::CWorld() : CBaseEntity(0)
+{
+    m_flags268 |= 0x400;
+    m_bColdWorld = 0;
+    ((CServerNetworkProperty *)((char *)this + 0x2d4))->sub_101ab5c0(g_1070b22c->vfunc38(0));
+    *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.05;
+    sub_104121d0();
+    ((CUnknown101466e0 *)((char *)this + 0x1b0))->sub_101466e0(1);
+    const char *name = m_name26c;
+    if (!name)
+        name = g_106b8540;
+    {
+        ScopeTrace trace("CBaseEntity::SetSolid", name);
+        ((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(1);
+    }
+    vfunc93(8, 0);
+    m_n518 = 0;
+    m_f51c = 5.0f;
+    m_f520 = 10.0f;
+    sub_1028d770();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ba00 size=0x1e
 #include "CWorld.h"
 
