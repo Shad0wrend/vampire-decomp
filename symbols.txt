@@ -3403,6 +3403,7 @@
 0x100109e2 func   ?sub_100b4950@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100b4950
 0x100109e7 func   ?sub_1009d850@CBaseEntity@@QAEMPAXPAM@Z CBaseEntity::sub_1009d850
 0x100109ec func   ?vfunc344@CBaseCombatCharacter@@QAEMXZ CBaseCombatCharacter::vfunc344
+0x100109f1 func   ?sub_101b50f0@CSoundEmitterSystemBase@@QAEXPBD@Z CSoundEmitterSystemBase::sub_101b50f0
 0x10010a0a func   _phys_constraint phys_constraint
 0x10010a14 func   _prop_keypad prop_keypad
 0x10010a87 func   ?vfunc103@CNPCMaker_Zombie@@UAEXXZ CNPCMaker_Zombie::vfunc103
