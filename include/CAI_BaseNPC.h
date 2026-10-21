@@ -8,6 +8,7 @@
 
 class CBaseEntity;
 class CAI_Motor;
+class CRestore;
 
 #define CAI_NPC_V(n) virtual void vfunc##n();
 #define CAI_NPC_V10(p) CAI_NPC_V(p##0) CAI_NPC_V(p##1) CAI_NPC_V(p##2) CAI_NPC_V(p##3) CAI_NPC_V(p##4) CAI_NPC_V(p##5) CAI_NPC_V(p##6) CAI_NPC_V(p##7) CAI_NPC_V(p##8) CAI_NPC_V(p##9)
@@ -20,7 +21,11 @@ public:
 	virtual CAI_BaseNPC *vfunc5(unsigned int flags); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	// slots 10..289
 	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9)
-	CAI_NPC_V10(10) CAI_NPC_V10(11) CAI_NPC_V10(12) CAI_NPC_V10(13)
+	CAI_NPC_V10(10) CAI_NPC_V10(11)
+	CAI_NPC_V(120) CAI_NPC_V(121) CAI_NPC_V(122) CAI_NPC_V(123) CAI_NPC_V(124) CAI_NPC_V(125) CAI_NPC_V(126)
+	virtual int vfunc127(CRestore *pRestore);	// "CAI_BaseNPC::Restore": reads the data description block at +0x19b4, CBaseCombatCharacter::vfunc127, fixes up the arrays at +0x5b8c (4) and +0x5db4 (3), the object at +0x5d44 (when set) and the member at +0x5cf4; returns the base result
+	CAI_NPC_V(128) CAI_NPC_V(129)
+	CAI_NPC_V10(13)
 	CAI_NPC_V(140) CAI_NPC_V(141) CAI_NPC_V(142) CAI_NPC_V(143)
 	virtual void vfunc144(int a);
 	CAI_NPC_V(145) CAI_NPC_V(146) CAI_NPC_V(147) CAI_NPC_V(148) CAI_NPC_V(149)
@@ -166,4 +171,5 @@ public:
 	int sub_10278090(char bFlag, int n);	// slot 482 "CAI_BaseNPC::vfunc482" override as seen at 0x10278090 (ret 8: two arguments): 1, or 2 when the scripted sequence entity of the handle at +0x5d74 is live and accepts (CCineNPC::sub_101a8ac0); 0 when slot 158 is false or, with bFlag clear and the state at +0x5cc0 not 0 / 1 (and +0x5cc4 not 1, and for state 3 n < 1), the NPC may not take part
 	int sub_10289fe0();	// the activity for the action animation named by the scripted entity (handle at +0x5d74, name at +0x5f50): 9 by default, the model's activity of that name, or 9 / 0x18 depending on whether the model has a sequence of that name
 	void sub_10272940(const char *label);	// "CAI_BaseNPC::ResetSequence"-like: LookupSequence(label); a found sequence is set (sub_10260a50), the ground-speed-like float at +0x6f8 cleared unless the sequence is unchanged and the byte at +0x65d is set, then the object at +0x5d44 updated (sub_102e1cf0); else DevWarning "%s has no sequence named:%f" and the sequence at +0x6f0 cleared
+	int sub_10348890(CRestore *pRestore);	// CBaseCombatCharacter::vfunc127 (stub 0x10010d48), called directly
 };
