@@ -4513,6 +4513,7 @@
 0x1001483f func   ?sub_103326b0@CBaseCombatCharacter@@QAEXM@Z CBaseCombatCharacter::sub_103326b0
 0x10014849 func   ?sub_101d9840@CUnknown101d9840@@QAEDH@Z CUnknown101d9840::sub_101d9840
 0x10014853 func   ?vfunc5@CAI_ExpressiveNPC@@QAEPAV1@I@Z CAI_ExpressiveNPC::vfunc5
+0x1001487b func   ?sub_10248d90@CKeyValuesX@@QAEHPBDPAPBDHH@Z CKeyValuesX::sub_10248d90
 0x1001488a func   ?sub_100ba1b0@@YA_NPAVCBaseEntity@@@Z sub_100ba1b0
 0x1001488f func   ?sub_100a8bf0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a8bf0
 0x100148a8 func   _npc_VPlayerController npc_VPlayerController

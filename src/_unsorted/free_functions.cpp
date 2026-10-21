@@ -48487,6 +48487,49 @@ const char *CKeyValuesX::sub_10248cd0(const char *keyName, const char *defaultVa
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248d90 size=0xc0
+#include <stdio.h>
+#include <string.h>
+
+struct CKeyValuesX
+{
+	char m_pad0000[4];
+	const char *m_pszString;	// 0x04
+	union { int m_nInt; float m_flFloat; };	// 0x08
+	int m_nType;	// 0x0c
+
+	CKeyValuesX *sub_10248900(const char *name, char bCreate);
+	void sub_102490e0(const char *name, const char *value);
+	int sub_10248d90(const char *name, const char **names, int count, int defaultValue);
+};
+
+int CKeyValuesX::sub_10248d90(const char *name, const char **names, int count, int defaultValue)
+{
+	CKeyValuesX *pKey = this;
+	char szBuf[64];
+	if (name)
+		pKey = sub_10248900(name, 0);
+	if (!pKey)
+		return defaultValue;
+	switch (pKey->m_nType) {
+	case 1:
+	case 3:
+		sprintf(szBuf, "%d", pKey->m_nInt);
+		sub_102490e0(name, szBuf);
+		break;
+	case 2:
+		sprintf(szBuf, "%f", (double)pKey->m_flFloat);
+		sub_102490e0(name, szBuf);
+		break;
+	}
+	for (int i = 0; i < count; i++) {
+		if (!_strcmpi(pKey->m_pszString, names[i]))
+			return i;
+	}
+	return defaultValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249160 size=0x25
 struct CUnknown10249160 {
     char m_pad0000[0xc];
