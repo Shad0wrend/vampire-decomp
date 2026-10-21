@@ -178,3 +178,21 @@ char CNPC_VMingXiao::vfunc166(void *pOther)
 	return 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10399d40 size=0x148
+#include "CNPC_VMingXiao.h"
+#include "CEntityVSlots.h"
+
+void sub_10144a30(const Vector &vecOrigin, const Vector &vecDir, float flA, float flB, int r, int g, int b, int a, float flC);
+
+void CNPC_VMingXiao::vfunc123()
+{
+	if (*(unsigned int *)&m_pad0224 & 0x20000000) {
+		sub_10144a30(*((CEntityVSlots *)this)->slot220(), Vector(1.0f, 0.0f, 0.0f), 100.0f, 8.0f, 255, 32, 32, 128, 0.0f);
+		sub_10144a30(*((CEntityVSlots *)this)->slot220(), Vector(1.0f, 0.0f, 0.0f), 150.0f, 8.0f, 255, 32, 32, 128, 0.0f);
+		sub_10144a30(*((CEntityVSlots *)this)->slot220(), Vector(1.0f, 0.0f, 0.0f), 200.0f, 8.0f, 255, 32, 32, 128, 0.0f);
+		sub_10144a30(*((CEntityVSlots *)this)->slot220(), Vector(1.0f, 0.0f, 0.0f), 300.0f, 8.0f, 255, 32, 32, 128, 0.0f);
+	}
+	sub_1029ca50();
+}
+// END FUNCTION
