@@ -115,6 +115,21 @@ void CAI_BaseNPC::vfunc459()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026d890 size=0x6b
+#include "CAI_BaseNPC.h"
+// TARGET: CAI_BaseNPC::vfunc553
+int CAI_BaseNPC::vfunc553(float a, float b)
+{
+    if (b < 100.0f)
+        return 8;
+    if (b < 200.0f)
+        return 0x5f;
+    if (b > 1024.0f)
+        return 0x60;
+    return a < 0.5 ? 0x61 : 0x4f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026db30 size=0x9e
 struct ScopeTraceEntry_t
 {
