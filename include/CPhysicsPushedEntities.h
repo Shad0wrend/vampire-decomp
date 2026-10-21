@@ -13,6 +13,8 @@ struct MovedEntity_t
 	char m_pad10[0x5c - 0x10];	// 0x10: the trace of the blocking hit
 	CBaseEntity *m_pBlocker;	// 0x5c
 	char m_pad60[0x68 - 0x60];
+
+	void sub_1003c3a0();	// the element constructor (stub 0x1000da30)
 };
 
 struct PusherInfo_t
@@ -40,6 +42,8 @@ struct CMovedVec
 
 	int Count() const { return m_Size; }
 	MovedEntity_t &operator[](int i) { return m_pMemory[i]; }
+	void sub_1003c3c0(int num);	// CUtlMemory::Grow (stub 0x100155b4): makes room for num more records
+	void sub_1003c330(int index, int num);	// CUtlVector::ShiftElementsRight (stub 0x10003ada)
 };
 
 class CPhysicsPushedEntities
@@ -59,4 +63,5 @@ public:
 	bool sub_10036a20(const float *pMove);	// "CPhysicsPushedEntities::SpeculativelyCheckPush": scope trace, clears the blocking index, then checks every moved entity last to first; false (and the blocking index set) at the first one that is blocked
 	void sub_10036d40(char bFlag, int a);	// scope trace "CPhysicsPushedEntities::FinishPush" (the string names the per-push variant): sub_10036b10(), then on every moved entity, last to first: PhysicsTouchTriggers(&start origin), slot 232(0), PhysicsImpact(blocker, trace) when it has a blocker and, when bFlag is set, sub_10036bd0(entity, a)
 	void sub_10036bd0(CBaseEntity *pEnt, int a);	// called through the stub at 0x10004be7
+	void sub_10035df0(CBaseEntity *pEntity);	// "CPhysicsPushedEntities::AddEntity": scope trace, appends a moved-entity record for pEntity with its current absolute origin as the start origin
 };
