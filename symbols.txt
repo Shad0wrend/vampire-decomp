@@ -1645,6 +1645,7 @@
 0x1000841d func   ?sub_10348a60@@YI_NPAVCBaseEntity@@@Z sub_10348a60
 0x10008445 func   ?sub_1024afe0@@YAHXZ sub_1024afe0
 0x1000844f func   ?sub_101bd0f0@SFilter@@QAEPAU1@E@Z SFilter::sub_101bd0f0
+0x1000845e func   ?vfunc113@CWorldEvents@@UAEXXZ CWorldEvents::vfunc113
 0x100084a4 func   ?vfunc5@CNPC_VGuard1@@QAEPAV1@I@Z CNPC_VGuard1::vfunc5
 0x100084b8 func   ?sub_10221000@QuestJournal@@QAEXXZ QuestJournal::sub_10221000
 0x100084bd func   ?vfunc619@CNPC_VAndreiBlood@@QAEXH@Z CNPC_VAndreiBlood::vfunc619
