@@ -88525,6 +88525,51 @@ extern "C" CBaseEntity *npc_VZombie()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103de220 size=0x6e
+#include "CNPC_VZombie.h"
+extern void *vt_104d1d3c[];
+extern void *vt_104d1d10[];
+extern "C" __declspec(dllimport) int RandomInt(int, int);
+struct CZombieSub1 { void sub_1000e55c(); };
+struct CZombieSub2 { void sub_10001528(); };
+struct CZombieSub3 { void sub_10002ddd(); };
+struct CZombieFields {
+    char m_pad[0x19b0];
+    void **m_vt19b0;
+    char m_pad19b4[0x6674 - 0x19b4];
+    char m_b6674;
+    char m_b6675;
+    char m_pad6676[2];
+    int m_n6678;
+    char m_pad667c[0x66dc - 0x667c];
+    float m_f66dc;
+    char m_b66e0;
+    char m_pad66e1[3];
+    int m_n66e4;
+};
+struct CNPC_VZombieUnit : CNPC_VZombie {
+    void sub_1001182e();
+};
+
+CNPC_VZombie *CNPC_VZombie::sub_103de220()
+{
+    char *p = (char *)this;
+    CZombieFields *f = (CZombieFields *)this;
+    ((CNPC_VZombieUnit *)this)->sub_1001182e();
+    ((CZombieSub1 *)(p + 0x6674))->sub_1000e55c();
+    ((CZombieSub2 *)(p + 0x668c))->sub_10001528();
+    ((CZombieSub3 *)(p + 0x66e8))->sub_10002ddd();
+    *(void ***)this = vt_104d1d3c;
+    f->m_vt19b0 = vt_104d1d10;
+    f->m_n6678 = 0;
+    f->m_f66dc = 1024.0f;
+    f->m_b6675 = 0;
+    f->m_b66e0 = 0;
+    f->m_n66e4 = RandomInt(1, 3);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103de420 size=0x33
 void sub_10001564();
 void sub_100059c0();
