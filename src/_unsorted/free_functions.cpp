@@ -60866,6 +60866,80 @@ CUnknown102fc5d0 *CUnknown102fc5d0::sub_102fc5d0(int a, int b, const float *pVec
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fce80 size=0x10d
+#include "CAI_Pathfinder.h"
+struct CAI_PathfinderLink
+{
+	char m_pad0000[4];
+	int m_iSrcID;	// 0x04
+	int m_iDestID;	// 0x08
+	char m_pad000c[0x64 - 0x0c];
+	unsigned int m_flags;	// 0x64
+	float m_timeStaleExpires;	// 0x68
+};
+struct SPFNode
+{
+	float *sub_102fb0d0(float *pOut, int hull);	// stub 0x1000d99a
+};
+extern int g_106c994c;
+struct SPFNodeList
+{
+	int m_nNodes;
+	SPFNode **m_pNodes;
+	SPFNode *Get(int index)
+	{
+		if (index < 0 || index >= m_nNodes) {
+			g_106c994c++;
+			return 0;
+		}
+		return m_pNodes[index];
+	}
+};
+struct SPFNavigator
+{
+	char m_pad0000[0x2c];
+	SPFNodeList *m_pNodes;
+};
+struct SPFOuter
+{
+	char m_pad0000[0x5d34];
+	SPFNavigator *m_pNavigator;
+};
+struct SPFGlobals
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern SPFGlobals *g_1070b228;
+inline SPFNodeList *PFNodes(CAI_Pathfinder *p)
+{
+	return ((SPFOuter *)p->m_pOuter)->m_pNavigator->m_pNodes;
+}
+bool CAI_Pathfinder::sub_102fce80(int moveType, CAI_PathfinderLink *pLink)
+{
+	if (!(pLink->m_flags & 1))
+		return false;
+	if (g_1070b228->curtime > pLink->m_timeStaleExpires) {
+		pLink->m_flags &= ~1;
+		return false;
+	}
+	if (g_1070b228->curtime != *(float *)((char *)this + 0x14)) {
+		*(float *)((char *)this + 0x14) = g_1070b228->curtime;
+		float vecDest[3];
+		float vecSrc[3];
+		int hull1 = m_unk08;
+		SPFNode *pDest = PFNodes(this)->Get(pLink->m_iDestID);
+		int hull2 = m_unk08;
+		SPFNode *pSrc = PFNodes(this)->Get(pLink->m_iSrcID);
+		if (sub_10304a40(pSrc->sub_102fb0d0(vecSrc, hull2), pDest->sub_102fb0d0(vecDest, hull1), moveType)) {
+			pLink->m_flags &= ~1;
+			return false;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103058c0 size=0xc6
 #include "CAI_Pathfinder.h"
 
