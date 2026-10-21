@@ -46,3 +46,24 @@ void CNPC_VBach::vfunc104()
     g_1070b248->Precache("Character/Boss/Bach/snipe_warn6.wav", 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10363b60 size=0xba
+#include "CBaseEntity.h"
+#include "CNPC_VBach.h"
+#include "CVStatList_t.h"
+
+struct CGlobalVarsLike { char pad[0xc]; float curtime; };
+extern CGlobalVarsLike *g_1070b228;
+
+void CNPC_VBach::vfunc432(int arg)
+{
+	char *p = (char *)this;
+	if (!p[0x66a8])
+		sub_10279a50(0);
+	if (p[0x66a5] && g_1070b228->curtime > *(float *)(p + 0x6684)) {
+		CVStatListSet::Of(p)->Find(3)->sub_102008e0(0xd, 0);
+		p[0x66a5] = 0;
+	}
+	sub_10385a10(arg);
+}
+// END FUNCTION
