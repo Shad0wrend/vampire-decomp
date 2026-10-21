@@ -1319,6 +1319,7 @@
 0x10007153 func   ?sub_100b0f60@@YAXXZ sub_100b0f60
 0x1000715d func   ?sub_100dec20@CUnknown100dec20@@QAEXH@Z CUnknown100dec20::sub_100dec20
 0x10007162 func   ?sub_1009b030@CBaseEntity@@QAEPAMPAM@Z CBaseEntity::sub_1009b030
+0x10007171 func   ?sub_101fa0e0@CUnknown101fa0e0@@QAEXXZ CUnknown101fa0e0::sub_101fa0e0
 0x10007176 func   ?vfunc5@CPointHurt@@QAEPAV1@I@Z CPointHurt::vfunc5
 0x10007194 func   ?sub_1018e9d0@@YAXHH@Z sub_1018e9d0
 0x100071a8 func   ?sub_10073920@CUnknown10073920@@QAEXH@Z CUnknown10073920::sub_10073920
