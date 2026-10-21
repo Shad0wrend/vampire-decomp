@@ -21,4 +21,5 @@ class CAI_MoveProbe : public CAI_Component
 {
 public:
 	bool sub_102e6d70(int navType, const float *vecStart, const float *vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, float pctToCheckStandPositions, unsigned char flags, AIMoveTrace_t *pTrace, int a9, int a10);	// "CAI_MoveProbe::MoveLimit" (stub 0x10012b43): true when the trace did not fail (fStatus >= 0)
+	char sub_102e7270(const float *vecPosition, unsigned int collisionMask, int a3, int a4, int a5, int a6);	// the stand position check (stub 0x1000b1e5): true when the hull fits at the position
 };
