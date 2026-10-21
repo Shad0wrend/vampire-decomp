@@ -2466,6 +2466,7 @@
 0x1000b11d func   ?sub_1034f6f0@@YAHXZ sub_1034f6f0
 0x1000b136 func   ?sub_1039ae10@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_1039ae10
 0x1000b140 func   _camera_animated camera_animated
+0x1000b145 func   ?sub_10309f60@CUnknown1030a6e0@@QAEXPBVVector@@MPAV2@@Z CUnknown1030a6e0::sub_10309f60
 0x1000b14f func   ?vfunc103@CTriggerWind@@UAEXXZ CTriggerWind::vfunc103
 0x1000b163 func   ?vfunc127@CAI_BaseNPC@@UAEHPAVCRestore@@@Z CAI_BaseNPC::vfunc127
 0x1000b16d func   ?sub_1007f4c0@UtlVec8@@QAEXHH@Z UtlVec8::sub_1007f4c0

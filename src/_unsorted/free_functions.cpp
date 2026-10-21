@@ -65356,6 +65356,32 @@ void CUnknown1030a6e0::sub_10309e80(const Vector *pDirA, const Vector *pDirB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10309f60 size=0xf5
+#include "CUnknown1030a6e0.h"
+#include <math.h>
+
+void CUnknown1030a6e0::sub_10309f60(const Vector *pPos, float flUnused, Vector *pOut)
+{
+	const Vector *pOrigin = (const Vector *)m_pOuter->vfunc220();
+	Vector dir;
+	dir = *pPos - *pOrigin;
+	VectorNormalize(dir);
+	float flLen;
+	pOut->z = dir.z;
+	pOut->x = (flLen = sqrt(dir.x * dir.x + dir.y * dir.y)) * pOut->x;
+	pOut->y = flLen * pOut->y;
+	float f;
+	if (dir.z >= flLen * -0.1f)
+		f = 1.0f;
+	else if (!(-flLen >= dir.z || fabs(dir.z) < 0.001))
+		f = ((-1.0f / dir.z) * flLen - 1.0f) * 0.1f;
+	else
+		f = 0.0f;
+	pOut->z = f * 5.0f + dir.z;
+	VectorNormalize(*pOut);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b100 size=0x98
 #include "CUtlVector280.h"
 
