@@ -14223,6 +14223,26 @@ void sub_100aec70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100afa60 size=0x75
+#include "ScopeTrace.h"
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CEngineSlot84View {
+    S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7)
+    virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3();
+    virtual int vfunc84(int a);
+};
+extern CEngineSlot84View *g_1070b22c;
+int sub_101193b0(int a);
+void sub_100ae1f0(int a);
+
+void sub_100afa60()
+{
+    ScopeTrace trace("CC_Ent_FireTarget", g_106b8540);
+    sub_100ae1f0(sub_101193b0(g_1070b22c->vfunc84(1)));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100afe70 size=0x6f
 #include "ScopeTrace.h"
 
