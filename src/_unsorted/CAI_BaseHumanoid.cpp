@@ -20,6 +20,102 @@ bool CAI_BaseHumanoid::vfunc586()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025f760 size=0x125
+#include "CAI_BaseHumanoid.h"
+#include "CBaseEntity.h"
+#include "CUtlVector36.h"
+#include "CGlobalEntityList.h"
+#include <string.h>
+
+extern CGlobalEntityList *g_10566458;
+struct SGlobalVars { char pad[0xc]; float curtime; };
+extern SGlobalVars *g_1070b228;
+
+struct SLookHandle
+{
+	unsigned int m_Index;
+	void Set(CBaseEntity *pEnt)
+	{
+		if (pEnt)
+			m_Index = *pEnt->vfunc1();
+		else
+			m_Index = 0xffffffff;
+	}
+};
+
+struct SLookItem	// 36 bytes
+{
+	int m_n00;
+	SLookHandle m_hTarget;	// 0x04
+	char m_pad08[0x14 - 8];
+	float m_flStartTime;	// 0x14
+	float m_flEndTime;	// 0x18
+	float m_flRate;	// 0x1c
+	float m_flWeight;	// 0x20
+
+	void sub_10260980();	// the element constructor (stub 0x1000d2fb)
+};
+
+struct CLookQueue : CUtlVector36
+{
+	void sub_10260930(int elem, int num);	// ShiftElementsRight (stub 0x100090e3)
+
+	int Count() const { return m_size; }
+	SLookItem &Element(int i) { return ((SLookItem *)m_pMemory)[i]; }
+	void Remove(int elem)
+	{
+		int numToMove = m_size - elem - 1;
+		if (numToMove > 0)
+			memmove(&Element(elem), &Element(elem + 1), numToMove * sizeof(SLookItem));
+		m_size--;
+	}
+	int AddToTail()
+	{
+		int elem = m_size;
+		sub_10260870(1);
+		sub_10260930(elem, 1);
+		SLookItem *p = &Element(elem);
+		if (p)
+			p->sub_10260980();
+		return elem;
+	}
+};
+
+struct CAI_BaseHumanoidUnit : CAI_BaseHumanoid
+{
+	void sub_1025f760(CBaseEntity *pTarget, float flWeight, float flDuration, float flRamp);
+};
+
+#define LOOKQ ((CLookQueue *)((char *)this + 0x5f88))
+
+inline CBaseEntity *LookupHandle(unsigned int h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *pInfo = &g_10566458->m_Slots[h & 0x1fff];
+		if (pInfo->m_Serial == (int)(h >> 13))
+			return (CBaseEntity *)pInfo->m_pEntity;
+	}
+	return 0;
+}
+
+void CAI_BaseHumanoidUnit::sub_1025f760(CBaseEntity *pTarget, float flWeight, float flDuration, float flRamp)
+{
+	for (int i = 0; i < LOOKQ->Count(); i++) {
+		if (LookupHandle(LOOKQ->Element(i).m_hTarget.m_Index) == pTarget) {
+			LOOKQ->Remove(i);
+			break;
+		}
+	}
+	int iNew = LOOKQ->AddToTail();
+	LOOKQ->Element(iNew).m_n00 = 0;
+	LOOKQ->Element(iNew).m_hTarget.Set(pTarget);
+	LOOKQ->Element(iNew).m_flWeight = flWeight;
+	LOOKQ->Element(iNew).m_flStartTime = g_1070b228->curtime;
+	LOOKQ->Element(iNew).m_flEndTime = flDuration + g_1070b228->curtime;
+	LOOKQ->Element(iNew).m_flRate = flRamp / flDuration;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260de0 size=0x10e
 #include "CAI_BaseHumanoid.h"
 #include "UtlMem.h"
