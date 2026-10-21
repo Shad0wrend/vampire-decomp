@@ -9,9 +9,15 @@ struct CUnknown101e0f00Src	// the 0x1c byte source descriptions at +0xa4 / +0xc0
 	void sub_101dd3c0(const char *pszLabel);	// Debug_Display with the label (stub 0x10015d66)
 };
 
+struct CUnknown101e0f00Fx	// the object the tail's callback worker hands back
+{
+	void sub_101dfe20();	// finishes the callback (stub 0x100156ea)
+};
+
 struct CUnknown101e0f00Tail	// the object at +0xdc of an entry
 {
 	void sub_101e04a0();	// Debug_Display (stub 0x10006a23)
+	CUnknown101e0f00Fx *sub_101e0410(int a, int b, int c, int d);	// callback worker taking four values (stub 0x10015da2)
 };
 
 struct CUnknown101e0f00Entry	// one targeted discipline
@@ -49,4 +55,6 @@ public:
 	void sub_101e0f00();	// counts the "vdata\system\DisciplineTgt_*.txt" files, then loads each DisciplineTgt_%03d.txt (Msg when one cannot be opened)
 	int sub_101e12f0(const char *pszName);	// the index of the entry whose internal name equals pszName (case-insensitive), -1 when none (stub 0x10004570)
 	void sub_101e4380(const char *pszName);	// "Targeted Discipline Manager" Debug_Display: without a name lists every entry (index, name, base cost), with the name of an entry (or "ALL") displays that entry (every entry)
+	int sub_101e12a0(int id);	// the index of the entry of the discipline id, -1 when none (stub 0x10007df1)
+	void sub_101e3910(int a, int b, int c, int d);	// "CallbackHit": looks the entry of discipline c up, logs "Discipline<%s> CallbackHit", runs the entry's tail callback worker with (d, a, b, c | 0x80000000) while the global current entry (0x10739a74) points at the entry
 };
