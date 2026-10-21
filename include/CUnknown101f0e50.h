@@ -2,15 +2,16 @@
 // initialiser (fields +0x0, +0x4, +0x8, +0x14, +0x18); real name not yet known.
 #pragma once
 
-class CVTraitEffectGroup_t;
-class CUnknown101f1c70;
+#include "CUnknown101f1c70.h"
 
-// The object whose list of applied trait ids lives at +0x1460 (CUnknown101f1c70); real name not yet known.
+class CVTraitEffectGroup_t;
+
+// The object whose list of applied trait ids lives at +0x1460; real name not yet known.
 class CTraitOwnerX
 {
 public:
 	char m_pad0000[0x1460];
-	CUnknown101f1c70 *m_pad1460Marker[0];
+	CUnknown101f1c70 m_Applied;	// 0x1460
 };
 
 class CUnknown101f0e50
