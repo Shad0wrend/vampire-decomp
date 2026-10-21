@@ -11,5 +11,4 @@ public:
 
 	int sub_103008f0(const Vector *pPosition, float flDistance, int c);	// "FindBackAwayNode" (stub 0x10004697): the index of the graph node to back away to, -1 when there is none
 	int sub_10301010(const Vector *pPosition, float flDistance, int c);	// "FindBackAwayNodeAStar" (stub 0x10002fea): same contract as sub_103008f0, searching with A*
-	bool sub_102edbb0(const Vector *pPosition, float flDistance, int c, Vector *pOut);
 };
