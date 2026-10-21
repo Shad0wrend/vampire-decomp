@@ -6460,6 +6460,7 @@
 0x10517328 vtable ??_7bad_cast@@6B@ bad_cast::vftable
 0x1051738c vtable ??_7exception@@6B@ exception::vftable
 0x10579660 data   ?pfSqrt@@3P6AMM@ZA pfSqrt
+0x1057966c data   ?pfVectorNormalize@@3P6IMAAVVector@@@ZA pfVectorNormalize
 0x109f3624 data   __imp__Plat_Free _imp__Plat_Free
 0x109f3628 data   ?Msg@@YAXPBDZZ Msg
 0x109f3628 data   Msg Msg
