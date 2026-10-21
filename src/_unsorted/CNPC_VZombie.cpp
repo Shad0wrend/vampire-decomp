@@ -104,3 +104,61 @@ int CNPC_VZombie::vfunc124()
     return line;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103e1080 size=0x183
+#include "CNPC_VZombie.h"
+#include "CGlobalEntityList.h"
+#include "StatDefault.h"
+
+extern CGlobalEntityList *g_10566458;
+extern const char g_105d8c4c[];
+
+struct SZombieStat
+{
+	float sub_1000c874(int index);
+};
+
+struct StatOwner
+{
+	StatDefault *sub_1006cff0(int index);
+	int sub_1000fb46(const char *pszName);
+};
+extern StatOwner g_106c7c34;
+
+struct SZHandle
+{
+	unsigned int m_Index;
+	CBaseEntity *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			CGlobalEntityList_Slot *s = &g_10566458->m_Slots[m_Index & 0x1fff];
+			if (s->m_Serial == (int)(m_Index >> 13))
+				return (CBaseEntity *)s->m_pEntity;
+		}
+		return 0;
+	}
+};
+
+bool CNPC_VZombie::vfunc510()
+{
+	*(int *)((char *)this + 0x10e8) = 9;
+	if (sub_1000b005())
+		return false;
+	if (((SZHandle *)((char *)this + 0x1538))->Get() && *(int *)((char *)this + 0x153c) != -1)
+		return false;
+	if (sub_1000b212())
+		return false;
+	if (*(unsigned int *)((char *)this + 0x14b8) & 0x20000)
+		return false;
+	if (!((SZHandle *)((char *)this + 0x628c))->Get())
+		return false;
+	CBaseEntity *pEnemy = ((SZHandle *)((char *)this + 0x628c))->Get();
+	if (((SZHandle *)((char *)pEnemy + 0xfe8))->Get())
+		return false;
+	static int s_hInfo = g_106c7c34.sub_1000fb46(g_105d8c4c);
+	static float s_flValue = ((SZombieStat *)g_106c7c34.sub_1006cff0(s_hInfo))->sub_1000c874(3);
+	if (!(*(float *)((char *)this + 0x6264) > s_flValue))
+		return sub_10005f97();
+	return false;
+}
+// END FUNCTION

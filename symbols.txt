@@ -266,6 +266,7 @@
 0x100021fd func   ?sub_10204100@@YAHPAVCBaseCombatCharacter@@HD@Z sub_10204100
 0x1000220c func   ?sub_103fe460@@YAHXZ sub_103fe460
 0x1000222a func   _item_g_garys_tape item_g_garys_tape
+0x1000222f func   ?vfunc510@CNPC_VZombie@@QAE_NXZ CNPC_VZombie::vfunc510
 0x1000224d func   ?sub_100d30a0@@YAXXZ sub_100d30a0
 0x10002266 func   ?sub_100bc5e0@@YIXPAHHH@Z sub_100bc5e0
 0x10002289 func   _viewmodel viewmodel
