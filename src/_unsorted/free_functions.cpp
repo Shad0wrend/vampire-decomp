@@ -43635,6 +43635,48 @@ float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be500 size=0x121
+#include "CStealthKillRules.h"
+#include "Vector.h"
+#include "ScopeTrace.h"
+
+#define EV(n) virtual void s##n();
+#define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
+struct CFacingView
+{
+	EV10(0) EV10(1) EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8) EV10(9)
+	EV10(10) EV10(11) EV10(12) EV10(13) EV10(14) EV10(15) EV10(16) EV10(17) EV10(18) EV10(19)
+	EV10(20)
+	EV(210) EV(211) EV(212) EV(213) EV(214) EV(215) EV(216)
+	virtual Vector *s217();
+	EV(218) EV(219) EV(220) EV(221) EV(222) EV(223) EV(224) EV(225) EV(226) EV(227) EV(228) EV(229)
+	EV10(23) EV10(24) EV10(25) EV10(26) EV10(27) EV10(28) EV10(29) EV10(30) EV10(31) EV10(32) EV10(33) EV10(34) EV10(35)
+	EV(360) EV(361) EV(362) EV(363) EV(364) EV(365) EV(366) EV(367)
+	virtual void s368(Vector *pOut);
+};
+
+float sub_101d1120(const Vector *pVictim, const Vector *pKiller, const Vector *pFacing);
+
+struct CStealthKillRulesUnit : CStealthKillRules
+{
+	bool sub_101be500(CBaseEntity *pKiller, CBaseEntity *pVictim);	// "CStealthKillRules::InDeafArc"
+};
+
+bool CStealthKillRulesUnit::sub_101be500(CBaseEntity *pKiller, CBaseEntity *pVictim)
+{
+	ScopeTrace trace("CStealthKillRules::InDeafArc", g_106b8540);
+	Vector vecKiller = *((CFacingView *)pKiller)->s217();
+	Vector vecVictim = *((CFacingView *)pVictim)->s217();
+	Vector vecFacing;
+	((CFacingView *)pVictim)->s368(&vecFacing);
+	vecFacing *= -1.0f;
+	float flDot = sub_101d1120(&vecVictim, &vecKiller, &vecFacing);
+	if (sub_101be930(pKiller) < flDot)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be930 size=0x10d
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
