@@ -2755,6 +2755,7 @@
 0x1000c85b func   ?sub_102c6cf0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102c6cf0
 0x1000c86a func   ?vfunc103@CBasePlayer@@QAEXXZ CBasePlayer::vfunc103
 0x1000c897 func   ?sub_10270290@CUnknown10270290@@QAEXH@Z CUnknown10270290::sub_10270290
+0x1000c89c func   ?sub_1026ff80@CUnitHelper@@QAE_NPAVCBaseEntity@@PBM1@Z CUnitHelper::sub_1026ff80
 0x1000c8b5 func   ?sub_103380d0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_103380d0
 0x1000c8ba func   ?sub_100ac720@CBaseEntity@@QAEMPBD@Z CBaseEntity::sub_100ac720
 0x1000c8bf func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UKEYRING_ENTRY@@V?$CUtlMemory@UKEYRING_ENTRY@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<KEYRING_ENTRY,CUtlMemory<KEYRING_ENTRY> >,9>::vfunc3

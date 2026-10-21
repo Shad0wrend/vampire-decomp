@@ -54730,6 +54730,74 @@ bool CAI_BaseNPC::sub_1026fb40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026ff80 size=0x18b
+#include "CTraceFilterSimple.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+extern CUnknown1070b254 *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+extern float g_104454c4;
+extern double g_10449280;
+void sub_10015df2(float *a, float *b, int c, int d, int e, int f, float g);
+struct EntView
+{
+	char pad[0x9c];
+	int m_n9c;
+};
+struct CUnitHelper
+{
+	bool sub_1000c89c(CBaseEntity *ent, const float *start, const float *end);
+	// TARGET: sub_1026ff80
+	bool sub_1026ff80(CBaseEntity *ent, const float *start, const float *end);
+};
+bool CUnitHelper::sub_1026ff80(CBaseEntity *ent, const float *start, const float *end)
+{
+	Ray_t ray;
+	ray.m_Delta[0] = end[0] - start[0];
+	ray.m_Delta[1] = end[1] - start[1];
+	ray.m_Delta[2] = end[2] - start[2];
+	int swept = ray.m_Delta[0] * ray.m_Delta[0] + ray.m_Delta[1] * ray.m_Delta[1] + ray.m_Delta[2] * ray.m_Delta[2] != g_104454c4;
+	*(char *)&ray.m_IsSwept = swept;
+	ray.m_Start[0] = start[0];
+	ray.m_StartOffset[2] = 0;
+	ray.m_StartOffset[1] = 0;
+	ray.m_StartOffset[0] = 0;
+	ray.m_IsRay = true;
+	ray.m_Extents[2] = 0;
+	ray.m_Extents[1] = 0;
+	ray.m_Extents[0] = 0;
+	ray.m_Start[1] = start[1];
+	ray.m_Start[2] = start[2];
+	ray.m_b32 = 0;
+	ray.m_n34 = 0;
+	ray.m_b33 = 0;
+	CTraceFilterSimple filter(ent, 0);
+	CGameTrace tr;
+	g_1070b254->vfunc4(&ray, 0x46004003, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+	if (!g_10738964->vfunc1())
+	{
+		int n = g_10738964->m_n2c;
+		if (n)
+			sub_10015df2(tr.m_startpos, tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+	}
+	if (tr.m_fraction == g_10449280)
+		return true;
+	EntView *hit = (EntView *)tr.m_pEnt;
+	if (hit)
+	{
+		int v = hit->m_n9c;
+		if (v)
+		{
+			sub_1000c89c(tr.m_pEnt, tr.m_endpos, end);
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10270290 size=0xd
 void CUnknown10270290::sub_10270290(int value)
 {
