@@ -37500,6 +37500,31 @@ S9 *S9::sub_101f4f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f4f80 size=0x95
+#include "CUnknown1073dc28.h"
+
+// TARGET: CUnknown1073dc28::sub_101f4f80
+void CUnknown1073dc28::sub_101f4f80()
+{
+	for (int i = 0; i < m_nGroups; i++)
+		delete m_ppGroups[i];
+	delete m_ppGroups;
+	if (m_ppRecords)
+	{
+		for (int i = 0; i < m_nRecords; i++)
+		{
+			delete ((CUnknown101f4c80 **)m_ppRecords)[i];
+			((CUnknown101f4c80 **)m_ppRecords)[i] = 0;
+		}
+		delete m_ppRecords;
+		m_ppRecords = 0;
+	}
+	m_field04 = 0;
+	m_nRecords = 0;
+	m_field10 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5150 size=0x8c
 #include "CUnknown101f5150.h"
 bool CUnknown101f5150::sub_101f5150(const char *pszName)

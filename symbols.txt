@@ -1253,6 +1253,7 @@
 0x10006c4e func   ?vfunc0@CTraceFilterManBatNoIBeamEntity@@UAE_NPAXH@Z CTraceFilterManBatNoIBeamEntity::vfunc0
 0x10006c58 func   ?vfunc1@CAI_RatPlaneSolver@@QAEPAV1@I@Z CAI_RatPlaneSolver::vfunc1
 0x10006c5d func   _filter_base filter_base
+0x10006c62 func   ?sub_101f4f80@CUnknown1073dc28@@QAEXXZ CUnknown1073dc28::sub_101f4f80
 0x10006ca8 func   ?sub_10074a90@CUnknown10074a90@@QAEXH@Z CUnknown10074a90::sub_10074a90
 0x10006cad func   _npc_VChangBros npc_VChangBros
 0x10006cb2 func   ?vfunc5@CEnvPlayerSurfaceTrigger@@QAEPAV1@I@Z CEnvPlayerSurfaceTrigger::vfunc5
