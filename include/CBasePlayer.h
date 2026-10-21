@@ -2,6 +2,8 @@
 // Barely recovered yet: only the members decompiled code needs are named, the
 // rest is padding that keeps their offsets. The vtable is modelled as placeholder
 // slots up to slot 468 (the ones the code calls are typed).
+// New method declarations can go into CBasePlayer_ext.h (included at the end of the method list) so that
+// workers do not overwrite each other's edits of this large file.
 #pragma once
 
 #include "Vector.h"
@@ -238,4 +240,6 @@ public:
 	void *sub_10335950(const char *pszName);	// CBaseCombatCharacter::Inventory_FindWeapon (stub 0x10015195): the carried weapon whose classname matches, 0 when none; called directly
 	void sub_101784c0(CBaseEntity *pOther);	// adds the keyring item the player carries to the inventory object at +0x245c: lets the keyring look at pOther, creates the inventory when needed, hands it the loose keys and copies the keyring's records into it
 	void sub_10182e00(CBaseCombatWeapon *pWeapon);	// "CBasePlayer::SetViewModel"-like: the model name of the character's default stat item for the weapon (or none when the weapon is not a ranged / usable one) is precached and handed to slot 266 of the second view model
+
+#include "CBasePlayer_ext.h"
 };
