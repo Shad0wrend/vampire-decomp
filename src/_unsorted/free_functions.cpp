@@ -27119,6 +27119,61 @@ CBaseEntity *CGlobalEntityList::sub_100f7890(CBaseEntity *pStart, const char *sz
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f79b0 size=0x111
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+
+struct ColView100f79b0 {
+	virtual void v0();
+	virtual const float *a1();
+	virtual const float *a2();
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual const float *a8();
+	virtual const float *a9(int a);
+	virtual const float *a10();
+	char pad[0x40 - 4];
+	int m_nSolidType;
+	unsigned short m_usSolidFlags;
+};
+struct EntView100f79b0 {
+	char pad0[0x270];
+	ColView100f79b0 m_col;
+	char pad1[0x2e0 - 0x270 - 0x48];
+	int m_pEdict;
+};
+extern Vector g_1070d9d0;
+bool sub_1023fd00(const Vector &mins, const Vector &maxs, const Vector &center, float radius);
+void sub_10138130(const float *in, const float *matrix, float *out);
+
+inline void VectorITransformW(const Vector &in1, const float *in2, Vector &out)
+{
+	sub_10138130(&in1.x, in2, &out.x);
+}
+
+CBaseEntity *CGlobalEntityList::sub_100f79b0(CBaseEntity *pStart, const float *pCenter, float flRadius)
+{
+	for (CBaseEntity *pEnt = sub_100f7060(pStart); pEnt; pEnt = sub_100f7060(pEnt)) {
+		EntView100f79b0 *e = (EntView100f79b0 *)pEnt;
+		if (e->m_pEdict == 0)
+			continue;
+		Vector rel;
+		ColView100f79b0 *col = &e->m_col;
+		if ((col->m_usSolidFlags & 0x80) || col->m_nSolidType == 2 || col->m_nSolidType == 0
+			|| *(Vector *)col->a9(0) == g_1070d9d0) {
+			const float *o = col->a8();
+			rel.x = pCenter[0] - o[0];
+			rel.y = pCenter[1] - o[1];
+			rel.z = pCenter[2] - o[2];
+		} else {
+			VectorITransformW(*(Vector *)pCenter, col->a10(), rel);
+		}
+		if (sub_1023fd00(*(Vector *)col->a1(), *(Vector *)col->a2(), rel, flRadius))
+			return pEnt;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f7b20 size=0xc6
 #include "CGlobalEntityList.h"
 #include "Vector.h"
