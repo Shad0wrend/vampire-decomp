@@ -27815,6 +27815,43 @@ void sub_1011d8e0(const char *file, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ffe0 size=0xa9
+#include "CGameMovement.h"
+
+struct CGlobalVarsW { char pad[0x10]; float frametime; };
+extern CGlobalVarsW *g_1070b228;
+
+struct CMoveW
+{
+	char m_pad0[0x3e0];
+	int m_nWaterLevel;
+	char m_pad3e4[0x2314 - 0x3e4];
+	float m_flWaterJumpTime;
+	float m_vecWaterJumpVel[2];
+};
+struct CPlayerW
+{
+	char m_pad0[0x40];
+	float m_vecVelocity[2];
+};
+
+// TARGET: CGameMovement::sub_1011ffe0
+void CGameMovement::sub_1011ffe0()
+{
+    if (((CMoveW *)m_pMove)->m_flWaterJumpTime > 10000.0f)
+        ((CMoveW *)m_pMove)->m_flWaterJumpTime = 10000.0f;
+    if (!((CMoveW *)m_pMove)->m_flWaterJumpTime)
+        return;
+    ((CMoveW *)m_pMove)->m_flWaterJumpTime -= g_1070b228->frametime * 1000.0f;
+    if (((CMoveW *)m_pMove)->m_flWaterJumpTime <= 0 || !((CMoveW *)m_pMove)->m_nWaterLevel) {
+        ((CMoveW *)m_pMove)->m_flWaterJumpTime = 0;
+        ((CBaseEntity *)m_pMove)->sub_100b3640(4);
+    }
+    ((CPlayerW *)m_pPlayer)->m_vecVelocity[0] = ((CMoveW *)m_pMove)->m_vecWaterJumpVel[0];
+    ((CPlayerW *)m_pPlayer)->m_vecVelocity[1] = ((CMoveW *)m_pMove)->m_vecWaterJumpVel[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120f30 size=0x91
 #include "CGameMovement.h"
 struct SIface { virtual void v0(); virtual char vfunc1(); };
