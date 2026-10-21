@@ -11,4 +11,6 @@ public:
 	int m_nReserved;	// 0x0c
 
 	int sub_103498b0();	// level 0..4 of (m_nTotal - m_nReserved - m_nUsed): 0 up to the float at 0x10739fa0, 1 up to 0x10739fa4, 2 up to 0x10739fa8, 3 up to 0x10739fac, else 4
+	unsigned char sub_103499a0();	// stub 0x1000f786: true when sub_103498b0() is 2 or 3
+	unsigned char sub_10349970();	// stub 0x100040ed: true when sub_103498b0() is 0 or 1
 };
