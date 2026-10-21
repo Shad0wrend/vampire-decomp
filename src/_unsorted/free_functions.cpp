@@ -39753,6 +39753,49 @@ extern "C" CBaseEntity *trigger_wind()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cb010 size=0x8b
+#include "CBaseEntity.h"
+
+void *sub_100aa720(int size);
+extern void *vt_1047d08c[];
+extern void *vt_1047da24[];
+extern void *vt_1048178c[];
+extern char g_1059fe84[];
+void __fastcall sub_1000d5ee(void *pThis);
+void __fastcall sub_10002ddd(void *pThis);
+
+struct CTriggerImpactView
+{
+	char m_pad0000[0x564];
+	unsigned int m_hFilter;
+};
+
+// TARGET: trigger_impact
+extern "C" CBaseEntity *trigger_impact()
+{
+	void *mem = sub_100aa720(0x5d4);
+	CBaseEntity *p;
+	if (mem)
+	{
+		p = (CBaseEntity *)mem;
+		CTriggerImpactView *v = (CTriggerImpactView *)mem;
+		sub_1000d5ee(p);
+		v->m_hFilter = 0xffffffff;
+		sub_10002ddd((char *)p + 0x568);
+		sub_10002ddd((char *)p + 0x580);
+		*(void ***)p = vt_1047d08c;
+		sub_10002ddd((char *)p + 0x598);
+		*(void ***)p = vt_1047da24;
+		sub_10002ddd((char *)p + 0x5bc);
+		*(void ***)p = vt_1048178c;
+	}
+	else
+		p = 0;
+	p->vfunc106(g_1059fe84);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cb130 size=0xa1
 struct ISaveRestoreOps;
 struct datamap_t;
