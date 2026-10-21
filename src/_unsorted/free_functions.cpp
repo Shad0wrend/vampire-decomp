@@ -42272,6 +42272,39 @@ int CClanNames::sub_101d7ec0(const char *pszName, int *pSubId)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7fb0 size=0xa5
+#include "CUnknown101d7ec0.h"
+#include "CStatDefault3List.h"
+extern CStatDefault3List g_10738d10;
+
+char CUnknown101d7ec0::sub_101d7fb0(CBaseCombatCharacter *pChar, const CUnknown101d7ec0_Check *pCheck)
+{
+	if (!sub_101d7e90(pCheck->m_iEntry))
+		return 0;
+	int iStat = g_10738d10.sub_101d5f10(pChar)->sub_101d4d80();
+	int flag = g_10738d10.sub_101d5e80(iStat)->m_8c[0];
+	switch (m_pEntries[pCheck->m_iEntry].m_nType) {
+	case 0:
+		if (!(pCheck->m_nFlags & 1)) {
+			if (iStat == pCheck->m_nValue)
+				return 1;
+		} else if (iStat != pCheck->m_nValue)
+			return 1;
+		break;
+	case 1:
+		if (!(pCheck->m_nFlags & 1)) {
+			if (flag == pCheck->m_nValue)
+				return 1;
+		} else if (flag != pCheck->m_nValue)
+			return 1;
+		break;
+	case 2:
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8190 size=0x7c
 #include <stdio.h>
 #include "CUnknown101d82d0.h"

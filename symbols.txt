@@ -85,6 +85,7 @@
 0x10001609 func   ?vfunc34@CItemContainerLock@@QAEHH@Z CItemContainerLock::vfunc34
 0x10001613 func   ?sub_10349ec0@CUtlVector16@@QAEXH@Z CUtlVector16::sub_10349ec0
 0x10001622 func   ?sub_1002edd0@@YAXPAX@Z sub_1002edd0
+0x10001631 func   ?sub_101d7fb0@CUnknown101d7ec0@@QAEDPAVCBaseCombatCharacter@@PBUCUnknown101d7ec0_Check@@@Z CUnknown101d7ec0::sub_101d7fb0
 0x10001640 func   ?sub_10141320@@YA_NXZ sub_10141320
 0x10001645 func   ?sub_1023f040@@YAXPAH@Z sub_1023f040
 0x1000164a func   ?sub_102885f0@@YIXPAUNPCStub@@@Z sub_102885f0
