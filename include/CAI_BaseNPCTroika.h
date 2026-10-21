@@ -120,6 +120,7 @@ public:
 	char sub_10281430();	// true when the NPC may skip its pending request: not dead / mid-switch (state +0x5cc4 is not 7, nor 4 with +0x5cc0 not 4), and either the one-shot byte at +0x1b28 was set (cleared here), condition 0x5d is not set, bit 29 of +0x5c7c is set with a target at +0x5c38, or state +0x5cc0 is 2 without a slot 167 value
 	char sub_10014df8(int condition);	// "HasCondition" (the stub at 0x10014df8 for 0x10269aa0), called directly
 	void sub_102a0870();	// "CAI_BaseNPCTroika::...": when condition 0x37 holds and the entity of the handle at +0x6010 resolves to an entity with an object at +0x98 whose state (+0xfec) is not refused by sub_10344da0, asks sub_103449b0 for an index and, when it is not negative, hands (this, index) to that object's slot 320
+	void sub_1029f060(int unused);	// when the player's dialog partner (handle at player+0xfe8) is gone, this NPC is not busy with a discipline and flag bit 28 of +0x14bc is clear: sub_1000e4d5, slot 614, sets the byte at +0x6495, stamps the source file / line 0x268e at +0x1b30 / +0x1b34 and starts schedule 0x6e (sub_102ae750); takes one unused stack argument
 	void vfunc432(int a);	// slot 432 "CAI_BaseNPCTroika::RunAI" (plain member): scope trace (entity name), sub_1028fc90(), sub_102a0d20(), then CAI_BaseNPC::vfunc432(a)
 	void sub_1028fc90();	// stub 0x1000ccd4, called directly by RunAI
 	void sub_1026f110(int a);	// CAI_BaseNPC::vfunc432 (stub 0x1000a529), called directly
