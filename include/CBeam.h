@@ -22,13 +22,18 @@ public:
 	void sub_100bb030(CBaseEntity *pEnt);	// called through the stub at 0x1000cdc4
 	void sub_100bb0b0(const float *pPos);	// "CBeam::SetAbsStartPos"-like: without a (live) move parent at +0x25c hands pPos to slot 62; else brings the world position into the parent's space first (recalculating the absolute transform when dirty)
 
-	char m_pad03e0[0x45c - 0x3e0];
+	char m_pad03e0[0x454 - 0x3e0];
+	float m_flStartTime;	// 0x454: stamped with the current time by CEnvBeam::Spawn
+	char m_pad0458[4];
 	int m_nNumBeamEnts;	// 0x45c
 	char m_pad0460[4];
 	unsigned int m_nBeamType;	// 0x464, low nibble is the end type
 	unsigned int m_hEndEntity;	// 0x468
 	char m_pad046c[0x48c - 0x46c];
 	int m_nAttach[3];	// 0x48c
-	char m_pad0498[0x4d8 - 0x498];
+	char m_pad0498[0x4b8 - 0x498];
+	float m_fWidth;	// 0x4b8
+	float m_fEndWidth;	// 0x4bc
+	char m_pad04c0[0x4d8 - 0x4c0];
 	float m_vecEndPos[3];	// 0x4d8
 };
