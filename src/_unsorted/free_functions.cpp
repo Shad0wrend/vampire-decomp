@@ -65622,6 +65622,40 @@ void CNPC_VSabbatLeader::sub_103aaa80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ab110 size=0x10e
+#include "ScopeTrace.h"
+#include "CNPC_VSabbatLeader.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+extern float g_1070d9d0[3];
+float sub_101d08e0(Vector *pPos, float z, float zEnd);
+CEntityVSlots *sub_100fbc90(const char *pszClass, const float *pOrigin, const float *pAngles, float flLife);
+
+void CNPC_VSabbatLeader::sub_103ab110(const char *pszEmitter, CEntityVSlots *pAt)
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::SpawnBloodPoolEmitter", g_106b8540);
+	Vector vecPos = *((CEntityVSlots *)this)->slot217();
+	if (pAt)
+		vecPos.z = pAt->slot217()->z;
+	else
+		vecPos.z = sub_101d08e0(&vecPos, vecPos.z, vecPos.z + 1024.0f);
+	CGlobalEntityList_Ent *pEmitter = (CGlobalEntityList_Ent *)sub_100fbc90(pszEmitter, &vecPos.x, g_1070d9d0, -1.0f);
+	CGlobalEntityList_Ent *pEnt;
+	CGlobalEntityList_Slot *pSlot;
+	if (pEmitter) {
+		unsigned int hEnt = *pEmitter->v1();
+		if (hEnt != 0xffffffff && (pSlot = &g_10566458->m_Slots[hEnt & 0x1fff])->m_Serial == (int)(hEnt >> 13))
+			pEnt = pSlot->m_pEntity;
+		else
+			pEnt = 0;
+	} else
+		pEnt = 0;
+	((CEntityVSlots *)pEnt)->slot241();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103aba00 size=0x43
 #include "CNPC_VScurrying.h"
 void *sub_100aa720(int size);

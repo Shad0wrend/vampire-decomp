@@ -39,6 +39,7 @@
 0x10001311 func   ?sub_10348490@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::sub_10348490
 0x10001343 func   ?sub_1024e030@@YAXABUmat34_1024e030@@AAUang_1024e030@@@Z sub_1024e030
 0x1000134d func   ?sub_101d2850@@YAJPBDH@Z sub_101d2850
+0x1000136b func   ?sub_103ab110@CNPC_VSabbatLeader@@QAEXPBDPAVCEntityVSlots@@@Z CNPC_VSabbatLeader::sub_103ab110
 0x10001384 func   ?sub_103dc400@CMem4b_t@@QAEXH@Z CMem4b_t::sub_103dc400
 0x10001398 func   _ai_sound ai_sound
 0x1000139d func   ?vfunc5@CNPC_Bullseye@@QAEPAV1@I@Z CNPC_Bullseye::vfunc5
