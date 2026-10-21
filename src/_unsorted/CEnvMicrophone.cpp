@@ -1,6 +1,34 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10102490 size=0xd1
+#include "CEnvMicrophone.h"
+
+extern char g_10569a70[];
+
+struct SMicGlobals
+{
+	char pad[0xc];
+	float curtime;
+};
+extern SMicGlobals *g_1070b228;
+
+void CEnvMicrophone::vfunc103()
+{
+	for (unsigned int off = 0; off < 0x20; off += 8) {
+		if (*(unsigned int *)(g_10569a70 + off) & m_flags204)
+			m_nSpeakerFlags |= *(unsigned int *)(g_10569a70 + off + 4);
+	}
+	if (m_flSensitivity == 0.0f)
+		m_flSensitivity = 1.0f;
+	else if (m_flSensitivity > 10.0f)
+		m_flSensitivity = 10.0f;
+	m_flSmoothFactor = (m_flSmoothFactor > 0.9) ? 0.9 : ((m_flSmoothFactor < 0.0f) ? 0.0f : m_flSmoothFactor);
+	if (!m_bDisabled)
+		*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101025b0 size=0xc9
 #include "CEnvMicrophone.h"
 
