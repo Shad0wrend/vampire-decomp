@@ -4873,6 +4873,7 @@
 0x1001363d func   _infodecal infodecal
 0x1001364c func   _keyframe_track keyframe_track
 0x10013660 func   ?vfunc244@CAI_StandoffGoal@@QAEXPAVCAI_BaseNPC@@@Z CAI_StandoffGoal::vfunc244
+0x10013665 func   ?vfunc251@CSceneEntity@@UAEDMHPAUCSceneEvent@@@Z CSceneEntity::vfunc251
 0x10013683 func   ?sub_1017d020@CPlayerDialogUnit@@QAEXPBD@Z CPlayerDialogUnit::sub_1017d020
 0x10013688 func   ?sub_101fa810@CVDmg_t@@QAEXXZ CVDmg_t::sub_101fa810
 0x100136a6 func   ?sub_1030fe70@CUnknown1030fe50@@QAEXHPAVCUtlVector4@@@Z CUnknown1030fe50::sub_1030fe70

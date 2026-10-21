@@ -248,3 +248,26 @@ void CSceneEntity::vfunc245()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10083bf0 size=0x7e
+#include "CSceneEntity.h"
+
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+
+// TARGET: CSceneEntity::vfunc251
+char CSceneEntity::vfunc251(float a, int b, CSceneEvent *pEvent)
+{
+	CSceneEventActorEnt *pActorEnt = 0;
+	CSceneEventActor *pActor = pEvent->sub_10001b5e();
+	if (pActor) {
+		pActorEnt = vfunc267(pActor->sub_10008a99());
+		if (!pActorEnt) {
+			Warning("CSceneEntity unable find actor \"%s\"\n", pActor->sub_10008a99());
+			return 1;
+		}
+	}
+	if (pEvent->sub_100029c8() == 4 && pActorEnt->m_pNPC94 && pActorEnt->m_pNPC94->m_pNav5d34->sub_10012963())
+		return 0;
+	return 1;
+}
+// END FUNCTION
