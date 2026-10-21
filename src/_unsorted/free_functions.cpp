@@ -59738,6 +59738,24 @@ void sub_1022eb60(TStat *stat, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022f4f0 size=0x6b
+#include "CUnknown101e8080.h"
+#include "CUnknown101d8a70.h"
+#include "CVDmg_t.h"
+extern CUnknown101e8080 g_10739d08;
+struct CRecBuilder { void sub_101d8720(CBaseCombatCharacter *p, CVDmgBlock16_t *pBlock, int k); };
+
+int sub_1022f4f0(CBaseCombatCharacter *pChar, int nStat, unsigned char flags)
+{
+	CUnknown101d8a70 rec;
+	CVDmgBlock16_t block(4, g_10739d08.sub_101e8430(pChar, nStat, flags));
+	((CRecBuilder *)&rec)->sub_101d8720(pChar, &block, g_10739d08.sub_101e8ec0((CBaseEntity *)pChar));
+	rec.sub_101d8a70(&flags);
+	int diff = ((int *)&rec)[1] - ((int *)&rec)[3];
+	return diff > 0 ? diff : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230280 size=0x75
 struct H { int v; H(const H &); };
 struct R { void sub_10204270(); void sub_102042d0(int t, int v); };
