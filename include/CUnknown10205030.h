@@ -17,6 +17,7 @@ public:
 	int sub_101ff0b0();	// stub 0x10007ecd
 	const char *sub_101fdda0();	// stub 0x1000c112: the entry's name
 	int sub_101ff060();	// stub 0x10003152: the entry's upper limit
+	int sub_101ff010();	// stub 0x10003a08: the entry's lower limit
 };
 
 class CUnknown10205030Tables	// the object at +0x13dc of a character: finds the table entry of a (kind, id) reference
