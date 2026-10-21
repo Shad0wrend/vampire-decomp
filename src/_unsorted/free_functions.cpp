@@ -76537,6 +76537,31 @@ void melee_dice_roll_result::sub_10349710(int a, int nRolls, int *pDice)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103498b0 size=0x85
+#include "CUnknown103498b0.h"
+
+extern float g_10739fa0;
+extern float g_10739fa4;
+extern float g_10739fa8;
+extern float g_10739fac;
+
+// TARGET: CUnknown103498b0::sub_103498b0
+int CUnknown103498b0::sub_103498b0()
+{
+	int n = (int)(float)(m_nTotal - m_nReserved - m_nUsed);
+	float f = (float)n;
+	if (f <= g_10739fa0)
+		return 0;
+	if (f <= g_10739fa4)
+		return 1;
+	if (f <= g_10739fa8)
+		return 2;
+	if (f <= g_10739fac)
+		return 3;
+	return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103499d0 size=0x1e
 #include "CDataObjectAccessSystem.h"
 
