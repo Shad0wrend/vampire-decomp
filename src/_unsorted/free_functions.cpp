@@ -70625,6 +70625,32 @@ void __stdcall sub_103000a0(const Vector &a, const Vector &b, float num, float d
 }
 // END FUNCTION
 
+// FUNCTION: 0x10300700 size=0xa3
+#include "CAI_BaseNPC.h"
+struct CUnknown1027d990 { int sub_1027d990(); };
+
+// TARGET: sub_10300700
+unsigned int sub_10300700(CAI_BaseNPC *pNPC, const float *pPos)
+{
+    const float *pOrigin = pNPC->vfunc220();
+    if (pPos[0] == pOrigin[0] && pPos[1] == pOrigin[1] && pPos[2] == pOrigin[2]) {
+        if (((CUnknown1027d990 *)pNPC)->sub_1027d990() == 3)
+            return 8;
+    }
+    if (pNPC->vfunc513() & 4)
+        return 0x12;
+    if (pNPC->vfunc513() & 1) {
+        unsigned int r = 0x11;
+        if (pNPC->vfunc513() & 2)
+            r = 0x15;
+        if (pNPC->vfunc513() & 8)
+            r |= 8;
+        return r;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10303740 size=0xcb
 #include "CAI_Pathfinder.h"
 
