@@ -63323,6 +63323,56 @@ int *sub_102231c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10223470 size=0x133
+#include "CBaseKeyframedMover.h"
+#include "CMoverKeyFrame.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+extern "C" __declspec(dllimport) void __cdecl Warning(const char *fmt, ...);
+extern "C" void *__cdecl __RTDynamicCast(void *inptr, long VfDelta, void *SrcType, void *TargetType, int isReference);
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_105b1f14[];	// type descriptor of CMoverKeyFrame
+extern CGlobalEntityList g_106eb5d8;
+extern Vector g_1070d9d0;
+extern int (__cdecl *g_109f3868)(int nMin, int nMax);
+
+#define KV(n) virtual void vfunc##n();
+#define KV10(p) KV(p##0) KV(p##1) KV(p##2) KV(p##3) KV(p##4) KV(p##5) KV(p##6) KV(p##7) KV(p##8) KV(p##9)
+struct CKeyframeSlots
+{
+	KV10(0) KV10(1) KV10(2) KV10(3) KV10(4) KV10(5) KV10(6) KV10(7) KV10(8) KV10(9)
+	KV10(10) KV10(11) KV10(12) KV10(13) KV10(14) KV10(15) KV10(16) KV10(17) KV10(18) KV10(19)
+	KV10(20)
+	KV(210) KV(211) KV(212) KV(213) KV(214) KV(215)
+	virtual void vfunc216(float *pOrigin);
+	virtual float *vfunc217();
+};
+
+// TARGET: CBaseKeyframedMover::sub_10010c35
+void CBaseKeyframedMover::sub_10010c35()
+{
+	if (m_bStarted)
+		return;
+	CMoverKeyFrame *pKey = (CMoverKeyFrame *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, m_pszStartKeyframe ? m_pszStartKeyframe : g_106b8540, 0, 0), 0, g_10538764, g_105b1f14, 0);
+	if (pKey)
+		m_hKeyframe = *pKey->vfunc1();
+	else
+		m_hKeyframe = 0xffffffff;
+	if (!sub_10015217()) {
+		Warning("%s unable to find starting keyframe %s\n", sub_100ab4f0(), m_pszStartKeyframe ? m_pszStartKeyframe : g_106b8540);
+		Vector vec = g_1070d9d0;
+		((int *)&vec)[g_109f3868(0, 2)] = *(int *)((char *)this + 0x164);
+		sub_100b2f50(&vec.x);
+		m_bStarted = 1;
+		return;
+	}
+	CKeyframeSlots *pEnt = (CKeyframeSlots *)EHandle_Get(m_hKeyframe);
+	((CKeyframeSlots *)this)->vfunc216(pEnt->vfunc217());
+	m_bStarted = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102237c0 size=0xd
 void CUnknown102237c0::sub_102237c0(int value)
 {
