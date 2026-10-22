@@ -61510,6 +61510,28 @@ void __fastcall sub_102180a0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10218ec0 size=0xed
+#include "CUnknown10217f50.h"
+#include "CEntityMessageFilter.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: CUnknown10217f50::sub_10218ec0
+void CUnknown10217f50::sub_10218ec0(int a, int b)
+{
+	CEntityMessageFilter filter;
+	int nEdict = *(int *)((char *)this + 0x2e0);
+	filter.sub_1019d2f0(g_1070b22c->vfunc35(nEdict));
+	filter.sub_1019cf50();
+	g_1070b22c->vfunc65(&filter, 0);
+	g_1070b22c->vfunc67(7);
+	g_1070b22c->vfunc67(a);
+	g_1070b22c->vfunc67(b);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10219120 size=0xd9
 #include "CUnknown10219120.h"
 #include "CEntityMessageFilter.h"
