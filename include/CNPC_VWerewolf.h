@@ -86,6 +86,13 @@ struct CNPC_VWerewolfHint66b0
 	void sub_102d1420(float delay);	// stub 0x10013d68: clears the dword at +0x5e0 to -1 and stores delay + curtime at +0x5ec
 };
 
+// A node of the global hint list (head at 0x10925450): only the link to the next one.
+struct CNPC_VWerewolfHintLink
+{
+	char m_pad0000[0x5d8];
+	CNPC_VWerewolfHintLink *m_pNext;	// 0x5d8
+};
+
 class CNPC_VWerewolf
 {
 public:
@@ -201,6 +208,12 @@ public:
 	void sub_1026dd10(int a, int b);	// CAI_BaseNPC::vfunc561 (stub 0x1000ca4f), called directly
 	bool sub_103d2810(void *pHint);	// "CNPC_VWerewolf::IsImperativeRandomMoveHint": scope trace (entity name); for a hint of type 0x3aa8 whose time check against the global at 0x1093d574 passes and that slot 617 / HasPath accept, true; else sub_103d2070(pHint)
 	bool sub_103d2070(void *pHint);	// the fallback of sub_103d2810 (stub 0x10005911)
+	bool sub_103d3360(void *pHint);	// stub 0x100137dc: the hint test of the mode 3 (run by sub_103cb4b0)
+	bool sub_103d8060(void *pHint);	// stub 0x100143bc: the hint test of the mode 4
+	bool sub_103d7dc0(void *pHint);	// stub 0x10010424: the hint test of the mode 5
+	bool sub_103d8300(void *pHint);	// stub 0x10013796: the hint test of the mode 6
+	void sub_103d5590(void *pHint);	// stub 0x10015d7a: adds the hint as pathable
+	void sub_103cb4b0();	// walks the global hint list (0x10925450, next at +0x5d8) and, by the mode of the global object at 0x1093f95c (0 while its slot 1 is true, else the dword at +0x2c; modes 1..6 pick one of sub_103d2070 / sub_103d2810 / sub_103d3360 / sub_103d8060 / sub_103d7dc0 / sub_103d8300), runs sub_103d5590 on every hint the test accepts
 	void sub_103cc450();	// "CNPC_VWerewolf::UpdateConditionShouldBreakHint": scope trace (entity name), SetCondition(0x7b); the break hint handle at +0x66c4 is dropped unless bit 1 of the attack state (+0x66e8) is set; with a valid break hint (sub_103d8550) and HasPath from this entity's origin (slot 217) to the hint's ground point it signals the object behind the global 0x10924a6c (slot 1) and sets condition 0x7b again (sub_10269a20)
 	void sub_103cac20();	// the NPC init: SetSchedule-like sub_10279a50(0), resets the move / hint state (+0x628c, +0x66a1..+0x6708), stamps the current time at +0x66ec / +0x66f4 and adds the hull's half diagonal (from its mins / maxs, sub_102d6100 / sub_102d6120) and a constant square root to the totals at +0x66cc / +0x66d0
 	void sub_10279a50(int a);	// CAI_BaseNPC member (stub 0x1000b974), called directly
