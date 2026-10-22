@@ -30056,6 +30056,37 @@ void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
 // END FUNCTION
 
+// FUNCTION: 0x10104650 size=0xa1
+#include "CBaseEntity.h"
+#include "CParamsExplosion.h"
+#include "CPointExplosion.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+
+extern "C" __declspec(dllimport) void Warning(const char *, ...);
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+extern char g_10538764[];
+extern char g_1056b4b8[];
+extern char g_106b8540[];
+extern CGlobalEntityList g_106eb5d8;
+
+void sub_10104730(const Vector *pOrigin, const Vector *pAngles, int *pParams, CPointExplosion *pEntity);
+void sub_101cd940(CPointExplosion *pEntity);
+
+void CPointExplosion::sub_10104650()
+{
+    CParamsExplosion *pParams = (CParamsExplosion *)__RTDynamicCast(
+        g_106eb5d8.sub_100f7770(0, m_name450 ? m_name450 : g_106b8540, 0, 0), 0, g_10538764, g_1056b4b8, 0);
+    if (pParams) {
+        sub_10104730(((CEntityVSlots *)this)->slot217(), ((CEntityVSlots *)this)->slot219(), pParams->sub_10104510(), this);
+    } else {
+        Warning("%s could not find explosion parameters: %s\n", sub_1000b5cd(), m_name450 ? m_name450 : g_106b8540);
+    }
+    if (m_flags204 & 1)
+        sub_101cd940(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104f20 size=0x93
 #include "CExpressionTable.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
