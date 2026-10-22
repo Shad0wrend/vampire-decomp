@@ -53022,6 +53022,50 @@ SoundRecX *SoundRecX::sub_101df8d0(const SoundRecX *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dfa00 size=0x12b
+#include "CUnknown101dff00.h"
+#include "ScopeTrace.h"
+
+struct S_KV {
+    virtual void v0(); virtual void v1();
+    virtual S_KV *s2(const char *pszName);
+    virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual char s12(const char *pszName, int nDefault);
+    virtual const char *s13(const char *pszName, const char *pszDefault);
+};
+struct S_Range { void sub_101dda70(const char *pszRange); };
+extern CTraitEffectTable g_1074df78;
+const char **sub_10203ed0(const char **pp, const char *p);
+
+bool CUnknown101dff00::sub_101dfa00(int a, void *pKV_, const char *pszName)
+{
+    S_KV *pKV = (S_KV *)pKV_;
+    m_pszName = *sub_10203ed0(&pszName, pszName);
+    if (pKV) {
+        const char *pszInherit = pKV->s13("InheritFrom", g_106b8540);
+        if (*pszInherit == 0 || sub_101df340(a, pszInherit)) {
+            ((CUnknown101df000 *)&m_pad0008)->sub_101ddfb0(pKV, 0);
+            ((CUnknown101df000 *)(m_pad0008 + 0xac))->sub_101ddfb0(pKV, "OnEnd");
+            ((CUnknown101df000 *)(m_pad0008 + 0x158))->sub_101ddfb0(pKV, "OnCallback");
+            ((CUnknown101df000 *)(m_pad0008 + 0x204))->sub_101ddfb0(pKV, "OnInterrupt");
+            ((CUnknown101df000 *)(m_pad0008 + 0x2b0))->sub_101ddfb0(pKV, "OnInterruptSchedule");
+            ((S_Range *)m_RangeStorage)->sub_101dda70(pKV->s13("Duration", g_106b8540));
+            S_KV *pEffect = pKV->s2("TraitEffect");
+            if (pEffect) {
+                const char *pszEffect = pEffect->s13("Effect", g_106b8540);
+                if (*pszEffect)
+                    m_nTraitEffect = g_1074df78.sub_101f83a0(pszEffect);
+            }
+            m_bDoPossession = pKV->s12("DoPossession", 0);
+            m_bDoFrenzy = pKV->s12("DoFrenzy", 0);
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dfb80 size=0x7f
 #include "CUnknown101dfb80.h"
 #include "CUnknown101e0940.h"
