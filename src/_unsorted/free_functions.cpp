@@ -104415,6 +104415,45 @@ void CKeyringUnit::sub_10407c40(const char *pszName, const char *pszDesc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10407e90 size=0x161
+#include "CItemGKeyring.h"
+#include "CEntityMessageFilter.h"
+#include "CUnknown1070b22c.h"
+#include <string.h>
+
+extern "C" __declspec(dllimport) int __cdecl Q_strnicmp(const char *pStr1, const char *pStr2, int nChars);
+extern CUnknown1070b22c *g_1070b22c;
+
+struct CKeyringRecord
+{
+	char m_data[0xc0];
+};
+
+// TARGET: CItemGKeyring::sub_10407e90
+void CItemGKeyring::sub_10407e90(CBaseEntity *pEnt)
+{
+	CKeyringRecord *&rpKeys = *(CKeyringRecord **)((char *)this + 0x914);
+	int &rnKeys = *(int *)((char *)this + 0x920);
+	for (int nIndex = 0; nIndex < rnKeys; nIndex++) {
+		if (!Q_strnicmp((char *)&rpKeys[nIndex], (const char *)pEnt, 0x60)) {
+			int nToMove = rnKeys - nIndex - 1;
+			if (nToMove > 0)
+				memmove(&rpKeys[nIndex], &rpKeys[nIndex + 1], nToMove * sizeof(CKeyringRecord));
+			rnKeys--;
+			CEntityMessageFilter filter;
+			int pEdict = m_pEdict2e0;
+			filter.sub_1019d2f0(g_1070b22c->vfunc35(pEdict));
+			filter.sub_1019cf50();
+			g_1070b22c->vfunc65(&filter, 0);
+			g_1070b22c->vfunc67(0x7b);
+			g_1070b22c->vfunc67(nIndex);
+			g_1070b22c->vfunc66();
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10408060 size=0x102
 #include "CBaseEntity.h"
 #include "CEntityMessageFilter.h"
