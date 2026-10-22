@@ -11,7 +11,9 @@ public:
 	float m_flNextThink;	// 0x17c
 	char pad0180[0x14bc - 0x180];
 	unsigned int m_flags14bc;
-	char pad14c0[0x1b2c - 0x14c0];
+	char pad14c0[0x1568 - 0x14c0];
+	int m_n1568;	// 0x1568
+	char pad156c[0x1b2c - 0x156c];
 	int m_n1b2c;
 	char pad1b30[0x1b38 - 0x1b30];
 	int m_n1b38;
@@ -29,6 +31,8 @@ public:
 	char pad5dac[0x6244 - 0x5dac];
 	float m_flCur6244[4];	// 0x6244: four timestamps
 	float m_flPrev6254[4];	// 0x6254: the previous four
+	char pad6264[0x62dc - 0x6264];
+	int m_n62dc;	// 0x62dc
 
 	int sub_10368f20();
 	CNPC_VCamera *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
@@ -43,4 +47,6 @@ public:
 	char sub_1029f2e0();	// stub 0x1000347c, called directly
 	void sub_1026a0f0();	// CAI_BaseNPCUnit::sub_1026a0f0 (stub 0x100056fa), called directly
 	char sub_1026c3d0();	// stub 0x100155d7, called directly
+	void vfunc104();	// slot 104 "CNPC_VCamera::Spawn"-like (plain member): an empty model name becomes models/null.mdl, the model is precached and its index set, the NPC is removed again (Msg) when slot 452 refuses it; else, with the node graph ready, checks that the hull bits (slot 337) the NPC uses were initialized (DevMsg block otherwise), or registers them when it is not
+	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd), called directly
 };
