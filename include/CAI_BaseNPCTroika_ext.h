@@ -41,3 +41,4 @@
 	void sub_1026b810(float flInterval);	// CAI_BaseNPC::vfunc333 (stub 0x10011fb3), called directly by vfunc333
 	bool sub_10298840(CBaseEntity *pDoor);	// lets the NPC use the door: asks the door (slot 246) for its use record and starts the activity it names; when the door's lock check (sub_100027d4) refuses, runs sub_1027de00(pDoor) and answers false, else sends the door the input "Open" and answers true
 	void sub_1027de00(CBaseEntity *pDoor);	// stub 0x10007b7b, run when the door refuses the NPC
+	void sub_1029f120(inputdata_t *pInput);	// input handler like sub_1029ef80 that also needs the player's sub_10178170 to be false: stores the input's float at +0x5bac, sub_1000e4d5, slot 614, clears the byte at +0x6495, stamps source line 0x26a7 at +0x1b30 / +0x1b34 and starts schedule 0x6d (sub_102ae750)
