@@ -16,7 +16,7 @@ public:
 	virtual unsigned int *vfunc1();	// the entity's handle
 	CEnvPlayerSurfaceTrigger *vfunc5(unsigned int flags);
 	void sub_100108ed();
-	void sub_100fd850();	// the destructor body (stub 0x100108ed): sets the vtable, removes this entity's handle from the global handle list at 0x1070906c, destroys the two outputs, then sub_1009df20
+	~CEnvPlayerSurfaceTrigger();	// the destructor body (stub 0x100108ed, 0x100fd850): sets the vtable, removes this entity's handle from the global handle list at 0x1070906c, destroys the two outputs, then sub_1009df20
 	void sub_1009df20();	// the base destructor body (stub 0x1000cb8a)
 	void vfunc103();	// slot 103 (Spawn): the "CBaseEntity::SetSolid" scope trace around the collision property's SetSolid(0), SetMoveType(0, 0), clears the material (+0x454) and disabled flag (+0x458), then appends this entity's handle to the global handle list at 0x1070906c
 	void vfunc130(int a);	// slot 130: base implementation, then appends this entity's handle to a global handle list
