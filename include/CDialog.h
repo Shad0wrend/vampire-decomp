@@ -64,4 +64,5 @@ public:
 	void sub_100dfb80(CBaseEntity *pNPC, CBaseEntity *pSpeaker);	// "CDialog::GenerateScriptFile": scope trace; without a table takes the handles of the speaker (its object at +0x98) and of the NPC (its object at +0xa8) and, when both resolve, logs "Dumping script file for npc: %s, dialog: %s", runs sub_100e37d0 / sub_100e34d0, clears both handles and unloads the table (sub_100e5770)
 	void sub_100e7d10(char *pPacket, const char *pszText);	// stub 0x100090de: writes the NPC text into the packet
 	void sub_100e8060(char *pPacket, int nMax);	// stub 0x100023c4: finishes the packet line (limit nMax)
+	void sub_100e0f90(unsigned char value);	// "CDialog::SetDialogWindowActive": scope trace, sends a reliable user message (type g_1072608c, byte 8, then value) to the player behind the handle at +4
 };
