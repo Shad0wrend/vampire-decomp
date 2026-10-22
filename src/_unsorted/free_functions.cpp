@@ -20297,6 +20297,49 @@ extern "C" CBaseEntity *env_swarm_bats()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b8b50 size=0x17b
+#include "CBatSwarm.h"
+#include "CCollisionProperty.h"
+#include "ConVar.h"
+#include <math.h>
+
+struct CGlobalsView { char pad[0xc]; float curtime; };
+extern CGlobalsView *g_1070b228;
+
+// TARGET: CBatSwarm::sub_100b8b50
+void CBatSwarm::sub_100b8b50()
+{
+	m_flNextThink = g_1070b228->curtime + 0.01;
+	if (m_mask734) {
+		static ConVar bat_speed("bat_speed", "220", 0);
+		m_flSpeed738 = bat_speed.GetFloat();
+		if (m_bSlow73c)
+			m_flSpeed738 = m_flSpeed738 * 0.3f;
+		float dt = g_1070b228->curtime - *(float *)((char *)this + 0x178);
+		if (dt > 0.0f) {
+			if (!(dt < 0.2f))
+				dt = 0.2f;
+			int n = (int)ceil(dt * 100.0f);
+			if (n >= 10)
+				n = 10;
+			float step = dt / n;
+			bool moved = false;
+			for (int k = n; k > 0; k--) {
+				for (int i = 0; i < 32; i++) {
+					if (m_mask734 & (1 << i)) {
+						moved = true;
+						sub_100b8d50(i, step);
+					}
+				}
+			}
+			if (moved)
+				((CCollisionProperty *)((char *)this + 0x270))->sub_100dda20();
+			*(float *)((char *)this + 0x174) = g_1070b228->curtime;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b97e0 size=0x73
 struct Vec3 { float x, y, z; };
 struct Entry {
