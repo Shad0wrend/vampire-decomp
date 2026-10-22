@@ -317,6 +317,68 @@ extern "C" CConstraintAnchor *info_constraint_anchor()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a210 size=0x153
+#include "matrix3x4_t.h"
+#include "QAngle.h"
+#define R10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
+struct EntView;
+struct PhysObjView {
+	virtual void p0(); virtual void p1(); virtual void p2(); virtual void p3(); virtual void p4(); virtual void p5();
+	virtual EntView *GetGameData();
+};
+struct EntView {
+	R10(a0) R10(a1) R10(a2) R10(a3) R10(a4) R10(a5) R10(a6) R10(a7) R10(a8)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3();
+	virtual int GetMoveType();
+	R10(c0) R10(c1) R10(c2) R10(c3) R10(c4) R10(c5) R10(c6) R10(c7)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5();
+	virtual void Teleport(const Vector *origin, const QAngle *angles, const Vector *velocity);
+	R10(e0) R10(e1) R10(e2)
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5(); virtual void f6();
+	virtual const Vector *GetAbsAngles();
+	char m_pad[0x130 - 4];
+	matrix3x4_t m_frame;
+};
+void sub_10139b50(const Vector &, const QAngle &, matrix3x4_t &);
+void sub_10138630(const matrix3x4_t &, matrix3x4_t &);
+void sub_10138df0(const matrix3x4_t &, const matrix3x4_t &, matrix3x4_t &);
+void sub_10138720(const matrix3x4_t &, int, Vector &);
+void sub_10137ed0(const matrix3x4_t &, QAngle &);
+extern void (*g_109f3628)(const char *, ...);
+
+// TARGET: sub_1002a210
+void sub_1002a210(EntView *pSelf, PhysObjView *pObj1, PhysObjView *pObj2, const QAngle *pAngles, const Vector *pOrigin, bool bUseOrigin)
+{
+	EntView *pEnt1 = pObj1->GetGameData();
+	EntView *pEnt2 = pObj2->GetGameData();
+	if (!pEnt1 || !pEnt2)
+		return;
+	EntView *pOther = pEnt2;
+	if (pSelf != pEnt1) {
+		if (pSelf != pEnt2) {
+			g_109f3628("Bogus teleport notification!!\n");
+			return;
+		}
+		pOther = pEnt1;
+	}
+	if (pOther->GetMoveType() != 7)
+		return;
+	Vector vecPos = *pOrigin;
+	if (!bUseOrigin)
+		vecPos = *pSelf->GetAbsAngles();
+	matrix3x4_t matLocal, matInv, matA, matB;
+	Vector vecOut;
+	QAngle angOut;
+	sub_10139b50(vecPos, *pAngles, matLocal);
+	sub_10138630(matLocal, matInv);
+	sub_10138df0(pSelf->m_frame, matInv, matA);
+	sub_10138df0(matA, pOther->m_frame, matB);
+	sub_10138720(matB, 3, vecOut);
+	sub_10137ed0(matB, angOut);
+	pOther->Teleport(&vecOut, &angOut, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002af90 size=0x91
 #include "CPhysConstraint.h"
 
