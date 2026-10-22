@@ -139,7 +139,8 @@ public:
 	CAI_NPC_V(517) CAI_NPC_V(518)
 	virtual void vfunc519(int a, float b, float c, float d);	// when the debug convar is set, forwards to slot 14 of the object at +0x5d44
 	virtual float vfunc520(int a);	// forwards a to slot 15 of the object pointed to at +0x5d44 and returns its float result
-	CAI_NPC_V(521) CAI_NPC_V(522) CAI_NPC_V(523) CAI_NPC_V(524) CAI_NPC_V(525) CAI_NPC_V(526) CAI_NPC_V(527) CAI_NPC_V(528) CAI_NPC_V(529)
+	CAI_NPC_V(521) CAI_NPC_V(522) CAI_NPC_V(523) CAI_NPC_V(524) CAI_NPC_V(525) CAI_NPC_V(526) CAI_NPC_V(527) CAI_NPC_V(528)
+	virtual bool vfunc529();	// slot 529 (offset 0x844): a boolean answer in al, asked by the navigator after it finishes a move
 	virtual bool vfunc530(CBaseEntity *pEnt);	// slot 530: walks the 20 byte records of the list at +0x5d48 (count +0x5d54; handle, expiry time, position) from the back: stale handles are dropped (the last record moved over them), the record of pEnt is kept (true) while its expiry is not passed and pEnt is within 120 units of the stored position, else dropped (false); false when pEnt has no record
 	CAI_NPC_V(531) CAI_NPC_V(532) CAI_NPC_V(533) CAI_NPC_V(534) CAI_NPC_V(535) CAI_NPC_V(536) CAI_NPC_V(537) CAI_NPC_V(538) CAI_NPC_V(539)
 	CAI_NPC_V(540)
@@ -235,4 +236,5 @@ public:
 	void *sub_100952d0(int a);	// CBaseAnimating::GetModelPtr (stub 0x10013d8b), called directly
 	const char *sub_1009f200();	// CBaseEntity::GetDebugName (stub 0x1000ea11), called directly
 	void sub_1009f380(const Vector *pVec);	// CBaseEntity view offset setter (+0x184 vector), called directly
+	int *sub_1028a150();	// stub 0x10005f1a: the 8 byte record of the current task (index +0x5c40 in the list at +0x5c38), 0 when there is none
 };
