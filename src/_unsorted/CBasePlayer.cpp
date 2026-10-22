@@ -948,6 +948,61 @@ bool CBasePlayer::vfunc382(CBaseCombatWeapon *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101777e0 size=0xd1
+#include <string.h>
+#include "CBaseCombatCharacter.h"
+
+extern char g_106b8540[];
+
+struct CWeaponSlotView	// the weapon's virtual table up to slot 371
+{
+	CBP_V100(a) CBP_V100(b) CBP_V100(c)
+	CBP_V1(d0) CBP_V1(d1) CBP_V1(d2) CBP_V1(d3) CBP_V1(d4) CBP_V1(d5) CBP_V1(d6)
+	virtual void vfunc307(int a);
+	CBP_V10(e0) CBP_V10(e1) CBP_V10(e2) CBP_V10(e3) CBP_V10(e4) CBP_V10(e5)
+	CBP_V1(f0) CBP_V1(f1) CBP_V1(f2)
+	virtual char vfunc371();
+};
+
+struct CPlayerSlot151View	// the player's virtual table up to slot 151
+{
+	CBP_V100(a) CBP_V10(b0) CBP_V10(b1) CBP_V10(b2) CBP_V10(b3) CBP_V10(b4)
+	CBP_V1(c150)
+	virtual void vfunc151(CBaseEntity *pWeapon);
+};
+
+static inline const char *GetClassname(const char *const *ppClassname)
+{
+	return *ppClassname ? *ppClassname : g_106b8540;
+}
+
+// TARGET: CBasePlayer::vfunc385
+void CBasePlayer::vfunc385(CBaseEntity *pWeapon, int a, char bFlag)
+{
+	if (!_stricmp(GetClassname(&pWeapon->m_classname11c), "item_w_unarmed"))
+		return;
+	if (!bFlag && !*(int *)((char *)((CBasePlayer *)pWeapon)->sub_102517b0() + 0x4fe9c))
+		return;
+	char bActive = 0;
+	if (pWeapon == (CBaseEntity *)sub_1032e7b0())
+		bActive = 1;
+	if (pWeapon) {
+		if (bActive)
+			((CWeaponSlotView *)pWeapon)->vfunc307(0xb6);
+		if (((CWeaponSlotView *)pWeapon)->vfunc371() && *(int *)((char *)pWeapon + 0x8d0) > 1)
+			goto skipRemove;
+	}
+	((CPlayerSlot151View *)this)->vfunc151(pWeapon);
+skipRemove:
+	sub_1032d0c0(pWeapon, a, 0);
+	if (bActive && !((CBaseCombatCharacter *)this)->sub_10334860(0)) {
+		CBaseEntity *pEnt = sub_1015d680(a);
+		if (pEnt)
+			pEnt->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177900 size=0x141
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
