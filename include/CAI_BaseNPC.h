@@ -237,4 +237,6 @@ public:
 	const char *sub_1009f200();	// CBaseEntity::GetDebugName (stub 0x1000ea11), called directly
 	void sub_1009f380(const Vector *pVec);	// CBaseEntity view offset setter (+0x184 vector), called directly
 	int *sub_1028a150();	// stub 0x10005f1a: the 8 byte record of the current task (index +0x5c40 in the list at +0x5c38), 0 when there is none
+	void sub_1027c1f0();	// ends a scripted/forced movement phase: while the schedule at +0x5c38 is the one of type 0x3a (sub_102cc1f0): asks the dev flag object (global 0x10924a6c slot 1), sub_10269a20(0x76), clears the activity at +0xfec, move type 4 (slot 93), +0x3ec = 1.0f; otherwise sub_10269a20(0x75), move type 0, +0x3ec = 0, origin and velocity reset to zero vectors
+	int sub_102cc1f0(int type);	// stub 0x10014f6a: the schedule of the given type
 };
