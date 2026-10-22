@@ -26713,6 +26713,28 @@ void CDialog::sub_100e0a40(const char *pszSound)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0f90 size=0x150
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CReliableSingleUserRecipientFilter.h"
+#include "CUnknown1070b22c.h"
+
+extern int g_1072608c;
+extern CUnknown1070b22c *g_1070b22c;
+
+void CDialog::sub_100e0f90(unsigned char value)
+{
+	ScopeTrace trace("CDialog::SetDialogWindowActive", g_106b8540);
+	CGlobalEntityList_Ent *pPlayer = EHandle_Get(m_hNPC);
+	CReliableSingleUserRecipientFilter filter(pPlayer);
+	g_1070b22c->vfunc65(&filter, g_1072608c);
+	g_1070b22c->vfunc67(8);
+	g_1070b22c->vfunc67(value);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e15c0 size=0x82
 #include "CDialog.h"
 #include "CBaseCombatCharacter.h"
