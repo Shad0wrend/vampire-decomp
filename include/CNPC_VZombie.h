@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+#include "Vector.h"
+
 struct CUnknown101c2a50;
 class CBaseCombatCharacter;
 
@@ -30,4 +32,6 @@ public:
 	void vfunc431();	// slot 431 "CNPC_VZombie::NPCThink" (plain member): scope trace (entity name); unless sub_1029f2e0() holds: sub_103e0a00() while the state at +0x6678 is 1, the inspection ranges when the vision distance (+0x63b8) is at most 1.0f, the Troika think, and slot 614 once the next think time (+0x17c) is not in the future
 	char sub_1029f2e0();	// stub 0x1000347c, called directly by the think
 	void sub_10292de0();	// CAI_BaseNPCTroika::vfunc431 (stub 0x10002a7c), called directly
+	char sub_10331da0(Vector *pOrigin, Vector *pDir);	// "CBaseCombatCharacter::CalcLookData"-like (stub 0x10014eb6, ret 8): the look origin and direction of the character, true when they come from the model's data
+	void sub_103e05e0(int nSound);	// emits the sound nSound from the look origin, in the look direction (as angles), to the players that can hear it (a PAS filter)
 };
