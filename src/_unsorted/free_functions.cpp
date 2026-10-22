@@ -66879,6 +66879,42 @@ float sub_102283a0(float cur, float target, float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10229090 size=0x179
+#include "CUnknown1070b248.h"
+#include "CReliableSingleUserRecipientFilter.h"
+extern CUnknown1070b248 *g_1070b248;
+void *sub_1000ac8b(int);
+float sub_102283a0(float cur, float target, float rate, float dt);
+
+struct CSoundFadeItem {
+	char m_name[0x40];
+	float m_fTarget;
+	float m_fCur;
+	float m_fMax;
+	float m_fRate;
+	int m_nChannel;
+	int m_nFlags;
+};
+
+// TARGET: sub_10229090
+void __stdcall sub_10229090(CSoundFadeItem *p, float flDelta)
+{
+	if (p->m_fCur != p->m_fTarget) {
+		p->m_fCur = sub_102283a0(p->m_fCur, p->m_fTarget, p->m_fRate, flDelta);
+		p->m_fCur = ((double)p->m_fMax < p->m_fCur) ? p->m_fMax : ((p->m_fCur < 0.0f) ? 0.0f : p->m_fCur);
+		if (p->m_fCur <= 0.01f && p->m_fTarget <= 0.01f) {
+			g_1070b248->vfunc7(0, p->m_nChannel, p->m_name);
+			return;
+		}
+		void *pPlayer = sub_1000ac8b(1);
+		if (pPlayer) {
+			CReliableSingleUserRecipientFilter filter(pPlayer);
+			g_1070b248->vfunc2(&filter, 0, p->m_nChannel, p->m_name, p->m_fCur, 0, p->m_nFlags | 0x101, 100, 0, 0, 1, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10229430 size=0xde
 #include "CUnknown10229550.h"
 
