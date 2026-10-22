@@ -33,4 +33,5 @@ public:
 	void sub_101f9af0(CTraitOwnerX *pOwner, const char *pszName);	// stub 0x1000181b: applies a named trait of the entry to the owner
 	void sub_101f8510(CTraitOwnerX *pOwner, int index);	// walks the effects of the entry for index: kind 5 effects are removed from the owner's applied list (+0x1460, sub_101f1c70), kind 6 effects are handed to sub_101f9af0 with their name ("" when none)
 	void sub_101f8e20(CTraitOwnerX *pOwner, int index);	// the same walk written with ascending loops over each effect's count (+0x14)
+	void sub_101f8f30(CTraitOwnerX *pOwner, int index);	// stub 0x100112b1: the counterpart of sub_101f8e20 for the effects of the other kinds
 };
