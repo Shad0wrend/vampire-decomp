@@ -57942,6 +57942,32 @@ int CVStatList_t::sub_10201100(int stat, int amount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102012d0 size=0x97
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CUnknown10202060.h"
+#include "CUnknown101f9bf0.h"
+
+#define STAT_OWNER ((CUnknown10202060 *)m_pad0000)
+#define STAT_INFOS ((CVStatInfoList_t *)m_field0c)
+
+// TARGET: CVStatList_t::sub_102012d0
+int CVStatList_t::sub_102012d0(int stat)
+{
+	if (sub_102008b0(stat)) {
+		int value = (*(int **)m_field08)[stat];
+		int upper = STAT_INFOS->sub_10200370(stat)->sub_101ff060(STAT_OWNER->sub_10202060());
+		value = STAT_OWNER->m_pMods->sub_101f9bf0(STAT_INFOS->m_field2c, stat, value);
+		if (value > upper)
+			value = upper;
+		if (value < STAT_INFOS->sub_10200370(stat)->sub_101ff010(STAT_OWNER->sub_10202060()))
+			value = STAT_INFOS->sub_10200370(stat)->sub_101ff010(STAT_OWNER->sub_10202060());
+		return value;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102013a0 size=0x97
 #include "CVStatList_t.h"
 #include "CUnknown10205030.h"
