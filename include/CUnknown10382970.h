@@ -2,6 +2,8 @@
 // 8 bytes at +0x66a4 (memory, allocation count, grow size, size, element pointer); real class not yet known.
 #pragma once
 
+#include "CBaseHandle.h"
+
 class CUnknown10382970
 {
 public:
@@ -13,4 +15,5 @@ public:
 	char *m_pTimedElements;	// 0x66b4
 
 	void sub_10382970(int id);	// appends (id, gpGlobals->curtime + 20.0f) to the vector at +0x66a4
+	void sub_10382970(CBaseHandle hEntity);	// the same function as the game's callers see it: the id is passed as a by-value CBaseHandle (real name ?sub_10382970@CUnknown10382970@@QAEXVCBaseHandle@@@Z)
 };
