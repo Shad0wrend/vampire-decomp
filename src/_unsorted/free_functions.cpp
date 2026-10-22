@@ -56818,6 +56818,54 @@ void CUnknown101f9670::sub_101f9690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9830 size=0x13b
+#include "CUnknown101f9c70.h"
+#include "CUnknown101f0e50.h"
+#include "CSingleUserRecipientFilter.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+extern CUnknown101f0e50 g_1074df78;
+extern int g_10726078;
+struct TraitOwnerPlayerView { char m_pad[0xa8]; void *m_pPlayer; };
+
+namespace block_101f9830 {
+	struct CUnknown101f0e50Unit : CUnknown101f0e50 { bool sub_101f82d0(int index); };
+	bool CUnknown101f0e50Unit::sub_101f82d0(int index)
+	{
+		return index != -1 && index < m_f04;
+	}
+}
+using namespace block_101f9830;
+
+// TARGET: CUnknown101f9c70::sub_101f9830
+void CUnknown101f9c70::sub_101f9830(CTraitOwnerX *pOwner, int id)
+{
+	if (!((CUnknown101f0e50Unit *)&g_1074df78)->sub_101f82d0(id))
+		return;
+	int n = m_count;
+	for (int i = 0; i < n; i++) {
+		if (m_items[i] == id) {
+			if (i < n - 1)
+				m_items[i] = m_items[n - 1];
+			m_count--;
+			g_1074df78.sub_101f8e20(pOwner, id);
+			g_1074df78.sub_101f8f30(pOwner, id);
+			void *pPlayer = ((TraitOwnerPlayerView *)pOwner)->m_pPlayer;
+			if (pPlayer) {
+				CSingleUserRecipientFilter filter(pPlayer);
+				filter.sub_1019cf50();
+				g_1070b22c->vfunc65(&filter, g_10726078);
+				g_1070b22c->vfunc67(0);
+				g_1070b22c->vfunc67(id);
+				g_1070b22c->vfunc66();
+			}
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9c70 size=0xb6
 #include "CUnknown101f9c70.h"
 struct TraceEnt { const char *a; const void *b; const void *c; };
