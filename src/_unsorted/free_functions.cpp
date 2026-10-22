@@ -57501,17 +57501,11 @@ bool CUnknown101f5150::sub_101f5150(const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x101f5b60 size=0x187
-#include "CPASFilter.h"
+#include "CPASAttenuationFilter.h"
 #include "CUnknown1070b248.h"
 #include "CUnknown1070b22c.h"
 #include "CVSoundActivityTable_t.h"
 
-struct CRecipientElemLoopVec
-{
-	void sub_10013e12();	// element destruct (stub 0x10013e12)
-};
-
-extern char vt_104470b0[];	// CPASAttenuationFilter::vftable
 extern char g_106b8540[];
 extern CUnknown1070b248 *g_1070b248;
 extern CUnknown1070b22c *g_1070b22c;
@@ -57532,13 +57526,9 @@ void CVActivitySound::sub_101f5b60(int hControl, int nMode, int nChannel)
 	if (pszSample)
 	{
 		g_1070b248->vfunc0(pszSample, 0);
-		CPASFilter filter(pEnt->GetSoundEmissionOrigin().Base());
-		*(void **)&filter = vt_104470b0;
-		filter.sub_1019d4b0(pEnt->GetSoundEmissionOrigin(), 0.8f);
+		CPASAttenuationFilter filter(pEnt);
 		CVSoundEdict *pEdict = pEnt->m_pEdict;
 		g_1070b248->vfunc3(&filter, g_1070b22c->vfunc35((int)pEdict), nChannel, pszSample, 1.0f, 0.8f, 4, 100, 0, 0, 1, 0);
-		for (int i = filter.m_size; --i >= 0; )
-			((CRecipientElemLoopVec *)&filter.m_pMemory)->sub_10013e12();
 	}
 }
 // END FUNCTION
@@ -63015,31 +63005,6 @@ struct CSecCamSound	// the engine sound object
 	virtual void vfunc11(CRecipientFilter *pFilter, int nEntIndex, int nChannel, int a, int b, int nLevel, int nPitch, int c, int d, int e, int f);	// EmitSound
 };
 
-struct CSecCamPurger	// empty base: the inlined purge of the filter's recipient vector
-{
-	~CSecCamPurger()
-	{
-		CRecipientFilter *p = (CRecipientFilter *)this;
-		void (*pfnFree)(void *) = g_109f3624;
-		p->m_size = 0;
-		if (p->m_growSize != -1) {
-			if (p->m_pMemory) {
-				pfnFree(p->m_pMemory);
-				p->m_pMemory = 0;
-			}
-			p->m_allocCount = 0;
-		}
-		p->m_pElements = p->m_pMemory;
-		if (p->m_growSize != -1 && p->m_pMemory)
-			pfnFree(p->m_pMemory);
-	}
-};
-
-struct CSecCamFilter : CSecCamPurger	// a plain CRecipientFilter on the stack: base constructor, AddAllPlayers, inlined purge
-{
-	CRecipientFilter m_Filter;
-};
-
 extern CSecCamEngine *g_1070b22c;
 extern CSecCamSound *g_1070b248;
 
@@ -63051,9 +63016,9 @@ static inline int IndexOfEdict(int edict)
 void CSecCamera::sub_1020c890()
 {
 	if (*(int *)((char *)this + 0x7d4)) {
-		CSecCamFilter filter;
-		filter.m_Filter.sub_1019cff0();
-		g_1070b248->vfunc11(&filter.m_Filter, IndexOfEdict(m_pEdict2e0), 3, 0, 0, 0xa4, 100, 0, 0, 1, 0);
+		CRecipientFilter filter;
+		filter.AddAllPlayers();
+		g_1070b248->vfunc11(&filter, IndexOfEdict(m_pEdict2e0), 3, 0, 0, 0xa4, 100, 0, 0, 1, 0);
 		*(int *)((char *)this + 0x7d4) = 0;
 	}
 }
@@ -98782,28 +98747,19 @@ int sub_103e2840()
 // FUNCTION: 0x103e2d10 size=0x107
 #include "CWeaponRanged_FlameThrower.h"
 #include "CBaseEntity.h"
-#include "CPASFilter.h"
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
 #include "CUnknown1070b248.h"
 #include "CUnknown1070b22c.h"
 
-inline void *operator new(unsigned int, void *p) { return p; }
-
-extern char vt_104470b0[];
 extern CUnknown1070b248 *g_1070b248;
 extern CUnknown1070b22c *g_1070b22c;
 
 void CWeaponRanged_FlameThrower::sub_103e2d10(const char *pszSample, int channel)
 {
-	CEntitySoundOriginView *pEnt = (CEntitySoundOriginView *)this;
-	char buf[sizeof(CPASFilter)];
-	CPASFilter *filter = new (buf) CPASFilter(pEnt->GetSoundEmissionOrigin().Base());
-	*(void **)filter = vt_104470b0;
-	filter->sub_1019d4b0(pEnt->GetSoundEmissionOrigin(), 0.0f);
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this, ATTN_NONE);
 	int edict = ((CBaseEntity *)this)->m_pEdict2e0;
-	g_1070b248->vfunc2(filter, g_1070b22c->vfunc35(edict), channel, pszSample, 1.0f, 100, 128, 100, 0, 0, 1, 0);
-	((CPASAttenuationFilter *)buf)->m_Recipients.Purge();
+	g_1070b248->vfunc2(&filter, g_1070b22c->vfunc35(edict), channel, pszSample, 1.0f, 100, 128, 100, 0, 0, 1, 0);
 }
 // END FUNCTION
 
