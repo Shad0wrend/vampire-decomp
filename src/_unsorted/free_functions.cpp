@@ -51053,6 +51053,34 @@ float sub_101d08e0(const Vector &position, float minz, float maxz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0b70 size=0x11a
+#include "CBroadcastRecipientFilter.h"
+struct CEnt { char pad[8]; float z; };
+struct SndView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void v18(const CRecipientFilter *f, int a, CEnt *e1, CEnt *e2, float fl, int s, int v, float c);
+};
+extern SndView *g_10540528;
+extern short g_1088ae84;
+extern float sub_101d08e0(CEnt *e, float a, float b);
+void sub_101d0b70(CEnt *a, CEnt *b, int vol)
+{
+	float d = sub_101d08e0(a, a->z, a->z + 256.0f) - a->z;
+	if (d < 8.0f) {
+		float d2 = sub_101d08e0(b, b->z, b->z + 256.0f) - b->z;
+		if (d2 < 8.0f)
+			return;
+		d = d2 + b->z - a->z;
+	}
+	if (vol > 255)
+		vol = 255;
+	CBroadcastRecipientFilter filter;
+	g_10540528->v18(&filter, 0, a, b, d, g_1088ae84, vol, 8.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0ce0 size=0x146
 #include "CBroadcastRecipientFilter.h"
 
