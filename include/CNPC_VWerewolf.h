@@ -105,7 +105,8 @@ public:
 	CNPC_VWerewolfIntVec m_History;	// 0x668c
 	char pad66a0[0x66a8 - 0x66a0];
 	char m_b66a8;	// 0x66a8
-	char pad66a9[0x66b0 - 0x66a9];
+	char m_b66a9;	// 0x66a9
+	char pad66aa[0x66b0 - 0x66aa];
 	CNPC_VWerewolfHint66b0 *m_pHint66b0;	// 0x66b0
 	char pad66b4[0x66bc - 0x66b4];
 	CNPC_VWerewolfHint66b0 *m_pHint66bc;	// 0x66bc: the move hint
@@ -154,6 +155,7 @@ public:
 	void sub_103d44e0(CNPC_VWerewolfHint66b0 *pHint, char flag);	// "CNPC_VWerewolf::SetMoveHint": scope trace (entity name), clears the current move hint (sub_103d4690) when set, stores flag at +0x66c8 and pHint at +0x66bc, calls slot 1 of the object behind the global 0x10924a6c, then sub_10269a20(0x78)
 	void sub_10269a20(int condition);	// CAI_BaseNPC condition setter (stub 0x100041b0), called directly
 	void sub_10015839(int condition);	// CAI_BaseNPC::sub_10269b50 "SetCondition" (stub 0x10015839), called directly
+	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
 	unsigned int sub_1033c9c0();	// CBaseCombatCharacter::sub_1033c9c0 "GetMiscFlags" (stub 0x1000b672), called directly
 	void sub_1033c770(unsigned int flags);	// CBaseCombatCharacter "RemoveMiscFlag" (stub 0x10011531), called directly
 	void sub_103cca80();	// slot 305 "CNPC_VWerewolf::RemoveBaseFightingItems": scope trace (entity name), when bit 4 of the misc flags is set removes the "item_w_werewolf_attacks" weapon (sub_1021fee0(this, name)) and clears that bit
@@ -202,4 +204,6 @@ public:
 	void sub_103cc450();	// "CNPC_VWerewolf::UpdateConditionShouldBreakHint": scope trace (entity name), SetCondition(0x7b); the break hint handle at +0x66c4 is dropped unless bit 1 of the attack state (+0x66e8) is set; with a valid break hint (sub_103d8550) and HasPath from this entity's origin (slot 217) to the hint's ground point it signals the object behind the global 0x10924a6c (slot 1) and sets condition 0x7b again (sub_10269a20)
 	void sub_103cac20();	// the NPC init: SetSchedule-like sub_10279a50(0), resets the move / hint state (+0x628c, +0x66a1..+0x6708), stamps the current time at +0x66ec / +0x66f4 and adds the hull's half diagonal (from its mins / maxs, sub_102d6100 / sub_102d6120) and a constant square root to the totals at +0x66cc / +0x66d0
 	void sub_10279a50(int a);	// CAI_BaseNPC member (stub 0x1000b974), called directly
+	void sub_103cc320();	// "CNPC_VWerewolf::UpdateConditionEnemyUnreachable": scope trace (entity name); the unreachable flag (sub_103da0a0) picks which of the conditions 0x59 / 0x79 is set (sub_10015839) and which cleared (sub_10269a20), after signalling the object behind the global 0x10924a6c (slot 1); a newly raised 0x59 without a path (sub_103cfc50) sets the byte at +0x66a9; remembers whether 0x59 is set in the byte at +0x66a8
+	char sub_103cfc50();	// stub 0x100112ac
 };
