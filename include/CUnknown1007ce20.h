@@ -3,17 +3,7 @@
 #pragma once
 
 #include "CUnknown10075aa0.h"
-
-struct CUnknown1007ce20Vec	// a CUtlVector of pointers (memory, allocation count, grow size, size, element pointer)
-{
-	void **m_pMemory;
-	int m_allocationCount;
-	int m_growSize;
-	int m_size;
-	void **m_pElements;
-
-	void sub_1007fce0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements
-};
+#include "UtlMem6.h"
 
 class CUnknown1007ce20
 {
@@ -24,11 +14,11 @@ public:
 	int m_size;	// 0x0c
 	CUnknown10075aa0 **m_pElements;	// 0x10
 	char m_pad0014[0x3c - 0x14];
-	CUnknown1007ce20Vec m_vec3c;	// 0x3c: the timed events
+	UtlMem6 m_vec3c;	// 0x3c: the timed events
 	char m_pad0050[0x5c - 0x50];
 	int m_n5c;	// 0x5c
 	char m_pad0060[4];
-	CUnknown1007ce20Vec m_vec64;	// 0x64: the type 1 events
+	UtlMem6 m_vec64;	// 0x64: the type 1 events
 	char m_pad0078[0x7c - 0x78];
 	float m_f7c;	// 0x7c
 	float m_f80;	// 0x80
