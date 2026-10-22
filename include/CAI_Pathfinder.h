@@ -7,13 +7,16 @@
 
 class CBaseEntity;
 class CAI_Waypoint;
+class CAI_Pathfinder;
 
 // The owning NPC as the pathfinder sees it (class not modelled here).
 struct CAI_PathfinderOuter
 {
 	char m_pad0000[0x224];
 	unsigned int m_nDebugBits;	// 0x224: bit 15 turns the triangulation overlay on
-	char m_pad0228[0x5d40 - 0x228];
+	char m_pad0228[0x5d34 - 0x228];
+	CAI_Pathfinder *m_pPathfinder;	// 0x5d34
+	char m_pad5d38[0x5d40 - 0x5d38];
 	CAI_MoveProbe *m_pMoveProbe;	// 0x5d40
 };
 
@@ -28,7 +31,8 @@ struct CAI_PathfinderLink;
 // A node of the AI network as the pathfinder reads it.
 struct CAI_PathfinderNode
 {
-	char m_pad0000[0x70];
+	char m_pad0000[0x6c];
+	int m_n6c;	// 0x6c
 	int m_nType;	// 0x70
 	unsigned char m_fFlags;	// 0x74
 
@@ -61,4 +65,6 @@ public:
 	CAI_Waypoint *sub_10303740(int navType, const float *vecStart, const float *vecEnd, const CBaseEntity *pTarget, int endFlags, int nodeID, int nodeTargetType, int flYaw, int a9);	// "CAI_Pathfinder::BuildSimpleRoute": for the node nodeID (any when -1) of the target type, when the probe can move from the start to the end a one waypoint route to the end position; 0 otherwise (ret 0x24: nine stack arguments)
 	char sub_102f1900(int nodeNum, unsigned int collisionMask);	// "CAI_Pathfinder::CanFitAtNode": DevMsg "CanFitAtNode() called with no network!" without a network; for air nodes (type 2) and for climb nodes with a flag of 0x1d (type 4) the probe's stand check at the node's position must pass, then the hull test sub_102f1a20 at that position
 	char sub_102f1a20(const float *vecPosition, unsigned int collisionMask);	// the hull fit test at a position (stub 0x10008706)
+	int sub_102fcab0(CAI_PathfinderNode **ppNodes, int nNode, int nLink);	// stub 0x100114c3
+	CAI_Waypoint *sub_102fcbd0(int *pNext, int nNode);	// builds a chain of waypoints along pNext starting at nNode (ret 8)
 };
