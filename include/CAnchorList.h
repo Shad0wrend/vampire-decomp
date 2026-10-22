@@ -9,7 +9,7 @@ extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
 class CBaseGameSystem
 {
 public:
-	virtual void vfunc0();
+	virtual bool vfunc0();	// slot 0 "Init" (returns al)
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
@@ -46,10 +46,10 @@ public:
 	}
 
 	int *m_pMemory;		// 0x08
-	int m_allocationCount;	// 0x0c
+	int m_allocationCount;		// 0x0c
 	int m_growSize;		// 0x10
 	int m_Size;		// 0x14
-	int *m_pElements;	// 0x18
+	int *m_pElements;		// 0x18
 };
 
 class CAnchorList : public CBaseGameSystem, public CAnchorListVec
