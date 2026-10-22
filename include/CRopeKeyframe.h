@@ -19,6 +19,7 @@ public:
 	void sub_1019de30(CBaseEntity *pEnt, int iAttachment);	// "SetEndPoint" (stub 0x10011603)
 	void sub_1019f640(const char *pszMaterial);	// "SetMaterial" (stub 0x10004b83)
 	static CRopeKeyframe *sub_1019dee0(CBaseEntity *pStartEnt, CBaseEntity *pEndEnt, int iStartAttachment, int iEndAttachment, int ropeWidth, const char *pszMaterial, int numSegments);	// "CRopeKeyframe::Create": creates a \"keyframe_rope\" between the two entities (attachments), spawns it with the given material, width and segment count (clamped to 2..10); null when the entity could not be created
+	static CRopeKeyframe *sub_1019dfb0(CBaseEntity *pStartEnt, int iStartAttachment, int nSlack, int ropeWidth, const char *pszMaterial, int numSegments);	// "CRopeKeyframe::Create" with only a start point: creates a "keyframe_rope", sets the start point and no end point, clears the map file flag (+0x47c) and the simulate bit (0x40 of +0x454), spawns it with the material, stores the slack (+0x474) and width (+0x460) and the segment count clamped to 2..10; null when the entity could not be created
 
 	char m_padRope03e0[0x454 - 0x3e0];
 	unsigned int m_nRopeFlags;	// 0x0454: bit 6 (0x40) is cleared by Create
@@ -29,7 +30,7 @@ public:
 	int m_nSegments;	// 0x0468
 	char m_padRope046c[0x474 - 0x46c];
 	int m_n474;	// 0x0474
-	char m_padRope0478[0x47c - 0x478];
+	int m_n478;	// 0x0478: set to 1 by Create
 	char m_bCreatedFromMapFile;	// 0x047c
 	char m_padRope047d[0x490 - 0x47d];
 	unsigned int m_hStartPoint;	// 0x0490
