@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..605, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 116, 118, 122, 142, 143, 158, 161, 162, 167, 173,
-// 192, 193, 194, 196, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 270, 274, 285, 306, 308, 310, 316, 332, 346, 360, 371, 376, 381, 385, 404, 426, 427, 448, 457, 464, 598, 601 and 605 of an entity class that does not model its vtable.
+// 192, 193, 194, 196, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 270, 274, 285, 306, 308, 310, 316, 332, 346, 360, 371, 376, 381, 385, 404, 426, 427, 448, 457, 464, 532, 598, 601 and 605 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -163,7 +163,11 @@ public:
 	virtual int slot464();	// NPC: a kind / class id (2 and 11 are the ones that react to the witness clear-out)
 	EVS(465) EVS(466) EVS(467) EVS(468) EVS(469)
 	EVS10(47) EVS10(48) EVS10(49)
-	EVS10(50) EVS10(51) EVS10(52) EVS10(53) EVS10(54) EVS10(55) EVS10(56) EVS10(57) EVS10(58)
+	EVS10(50) EVS10(51) EVS10(52)
+	EVS(530) EVS(531)
+	virtual void slot532(int a);	// NPC: takes one argument (CAI_BaseNPCTroika::vfunc532, the door nudge passes 2)
+	EVS(533) EVS(534) EVS(535) EVS(536) EVS(537) EVS(538) EVS(539)
+	EVS10(54) EVS10(55) EVS10(56) EVS10(57) EVS10(58)
 	EVS(590) EVS(591) EVS(592) EVS(593) EVS(594) EVS(595) EVS(596) EVS(597)
 	virtual void slot598(CEntityVSlots *pEntity);	// NPC: told about an entity (the witness clear-out hands it the entity that went away)
 	EVS(599)
