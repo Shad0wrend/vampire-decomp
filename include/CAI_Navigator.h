@@ -103,6 +103,9 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 	int sub_1030bc00();	// the route's move status (stub 0x1000f240): 0 when it has none, 2 for a finished one
 	void sub_1030ba50(int value);	// sets the flag at +0x58 and the value at +0x5c
 	void sub_1030b4d0(int value);	// stub 0x1000b6ef
+	int sub_1030b580();	// the arrival sequence of the route, -1 when unset (stub 0x1000f6b9)
+	int sub_1030b520();	// the arrival activity of the route (stub 0x10001b77)
+	void sub_1030b5b0(int sequence);	// stores the arrival sequence (stub 0x100016b3)
 };
 
 class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
@@ -130,6 +133,7 @@ public:
 	void sub_102ee6a0();	// stub 0x10012963
 	int sub_102ee620();	// stub 0x100037e2: the navigation type (8 is the one the Moleman / Combatman schedule selection waits for)
 	char sub_102ee2e0();	// stub 0x10009c23: whether the navigator is busy with a move that the alternate-action end has to stop
+	int sub_102ee430();	// "GetArrivalSequence" (stub 0x1000fae2): the route's arrival sequence; when unset selects one for the route's arrival activity (idle when that has none, with a DevMsg) and remembers it in the route
 	void sub_102ed390(int a1, int a2, int a3, int a4, int a5, int a6, int a7);	// asks the owner (slot 220) with the route's value at +0x28, then stores the answer in the route
 	bool sub_102edae0(const Vector *pPosition, float flDistance, int c, Vector *pOut);	// "FindBackAwayPoint": refreshes the stamps of this and of the pathfinder (the owner's object at +0x5d3c), asks the pathfinder for a node to back away to and, when there is one, copies the node's position to pOut and succeeds
 	bool sub_102edbb0(const Vector *pPosition, float flDistance, int c, Vector *pOut);	// as sub_102edae0, asking the pathfinder's A* search (sub_10301010)
