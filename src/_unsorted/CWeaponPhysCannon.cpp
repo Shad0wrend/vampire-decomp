@@ -124,6 +124,43 @@ void CWeaponPhysCannon::vfunc327()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10410770 size=0x88
+#include "CWeaponPhysCannon.h"
+#include "CEntityVSlots.h"
+
+float sub_1013d400(float flTarget, float flValue, float flStep);
+
+struct CPhysCannonPlayerView
+{
+	CEntityVSlots *sub_1015d680(int index);	// the view model `index` (stub 0x10013d09)
+};
+
+struct CPhysCannonOwnerView
+{
+	char m_pad0000[0xa8];
+	CPhysCannonPlayerView *m_pPlayer;	// 0xa8
+};
+
+// TARGET: CWeaponPhysCannon::vfunc318
+void CWeaponPhysCannon::vfunc318()
+{
+	CPhysCannonOwnerView *pOwner = (CPhysCannonOwnerView *)sub_102521f0();
+	if (pOwner) {
+		CPhysCannonPlayerView *pPlayer = pOwner->m_pPlayer;
+		if (pPlayer) {
+			float flCurrent = m_flGlow928;
+			float flTarget = m_flGlowTarget92c;
+			m_flGlow928 = sub_1013d400(flTarget, flCurrent, 0.1f);
+			CEntityVSlots *pViewModel = pPlayer->sub_1015d680(0);
+			if (pViewModel)
+				pViewModel->slot261("active", m_flGlow928);
+			if (m_bGrab911)
+				sub_10410620();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10410ae0 size=0xd0
 #include "CWeaponPhysCannon.h"
 #include "CBaseCombatCharacter.h"
