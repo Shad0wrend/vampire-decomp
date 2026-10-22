@@ -23,6 +23,49 @@ void CAI_Navigator::vfunc9(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102eebc0 size=0xda
+#include "CAI_Navigator.h"
+#include "CEntityVSlots.h"
+#include "CUnknown1030bc20.h"
+struct CNavMotorV
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void v3();
+	virtual int v4(CUnknown1030bc20_Record *pGoal, float flValue);
+	virtual void v5();
+};
+namespace block_102ee3f0 {
+struct CNavUnit : CAI_Navigator { int sub_102ee3f0(); };
+int CNavUnit::sub_102ee3f0() { return m_p30->m_i2c; }
+}
+using namespace block_102ee3f0;
+// TARGET: CAI_Navigator::vfunc13
+int CAI_Navigator::vfunc13(int a)
+{
+	if (m_i18 != 3) {
+		Vector vecGoal = *sub_102ee140();
+		if (vecGoal.z > ((CEntityVSlots *)m_pOuter)->slot220()->z)
+			((CEntityVSlots *)m_pOuter)->slot310(0x33);
+		else
+			((CEntityVSlots *)m_pOuter)->slot310(0x34);
+		((CNavMotorV *)m_i20)->v3();
+	}
+	sub_10008832(3);
+	CAI_NavRoute *pRoute = m_p30;
+	CNavMotorV *pMotor = (CNavMotorV *)m_i20;
+	int nResult = pMotor->v4(((CUnknown1030bc20 *)pRoute)->sub_1030b7c0(), pRoute->sub_1030b880());
+	if (nResult == 1) {
+		sub_102f0400();
+		if (m_p30->sub_1030bc00() != 3) {
+			((CEntityVSlots *)m_pOuter)->slot310(((CNavUnit *)this)->sub_102ee3f0());
+			((CNavMotorV *)m_i20)->v5();
+			sub_10008832(0);
+		}
+	}
+	return nResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eece0 size=0x10a
 #include "CBaseEntity.h"
 #include "CAI_Navigator.h"
