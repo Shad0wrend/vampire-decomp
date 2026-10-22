@@ -12916,6 +12916,84 @@ void CSceneEntity::sub_10084170(void *pScene)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100846c0 size=0xd7
+#include "CSceneEntity.h"
+#include "CUnknown1007a2c0.h"
+
+#define PV1(n) virtual void v##n();
+#define PV10(p) PV1(p##0) PV1(p##1) PV1(p##2) PV1(p##3) PV1(p##4) PV1(p##5) PV1(p##6) PV1(p##7) PV1(p##8) PV1(p##9)
+
+struct CScnChar	// the actor's character object (+0x98 of its entity): slots 250 and 312
+{
+	PV10(0) PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV10(10) PV10(11) PV10(12) PV10(13) PV10(14) PV10(15) PV10(16) PV10(17) PV10(18) PV10(19)
+	PV10(20) PV10(21) PV10(22) PV10(23) PV10(24)
+	virtual float vfunc250(int a);
+	PV1(251) PV1(252) PV1(253) PV1(254) PV1(255) PV1(256) PV1(257) PV1(258) PV1(259)
+	PV10(26) PV10(27) PV10(28) PV10(29)
+	PV10(30)
+	PV1(310) PV1(311)
+	virtual void vfunc312(float a);
+};
+
+struct CScnActorEnt
+{
+	char m_pad0000[0x98];
+	CScnChar *m_pChar;	// 0x98
+};
+
+struct CScnEvent : CSceneEvent
+{
+	void *sub_10076710();	// stub 0x10015a78: the scene the event plays
+};
+
+struct CScnRoot : CUnknown1007a2c0
+{
+	int sub_1007a250();	// stub 0x1000f2ae: the number of events
+	CScnEvent *sub_1007a270(int index);	// stub 0x10013c96
+	char sub_1007ed10();	// stub 0x1000f457
+};
+
+struct CSceneUnit : CSceneEntity
+{
+	void sub_100018c5(void *pScene);	// the stub of sub_100846c0 (the recursion goes through it)
+};
+
+void CSceneEntity::sub_100846c0(void *pScene)
+{
+	CScnRoot *pRoot = (CScnRoot *)pScene;
+	if (!pRoot)
+		return;
+	for (int i = 0; i < pRoot->sub_1007a2a0(); i++)
+	{
+		CSceneEventActor *pActor = (CSceneEventActor *)pRoot->sub_1007a2c0(i);
+		if (pActor)
+		{
+			CScnActorEnt *pEnt = (CScnActorEnt *)vfunc267(pActor->sub_10008a99());
+			if (pEnt)
+			{
+				CScnChar *pChar = pEnt->m_pChar;
+				if (pChar)
+				{
+					float flValue = pChar->vfunc250(0);
+					pChar->vfunc312(flValue);
+				}
+			}
+		}
+	}
+	for (int j = 0; j < pRoot->sub_1007a250(); j++)
+	{
+		CScnEvent *pEvent = pRoot->sub_1007a270(j);
+		if (pEvent && pEvent->sub_100029c8() == 0xb && !pRoot->sub_1007ed10())
+		{
+			void *pSub = pEvent->sub_10076710();
+			if (pSub)
+				((CSceneUnit *)this)->sub_100018c5(pSub);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084b40 size=0xb1
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
