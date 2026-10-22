@@ -870,6 +870,78 @@ void CBasePlayer::vfunc436()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016e820 size=0x175
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b248.h"
+
+#define PV1(n) virtual void v##n();
+#define PV10(p) PV1(p##0) PV1(p##1) PV1(p##2) PV1(p##3) PV1(p##4) PV1(p##5) PV1(p##6) PV1(p##7) PV1(p##8) PV1(p##9)
+
+struct CPlayerObj	// the object sub_1015d680 finds: only slot 266 is used
+{
+	PV10(0) PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV10(10) PV10(11) PV10(12) PV10(13) PV10(14) PV10(15) PV10(16) PV10(17) PV10(18) PV10(19)
+	PV10(20) PV10(21) PV10(22) PV10(23) PV10(24) PV10(25)
+	PV1(260) PV1(261) PV1(262) PV1(263) PV1(264) PV1(265)
+	virtual void vfunc266(int a);
+};
+
+struct CPlayerUnit : CBasePlayer
+{
+	CPlayerObj *sub_1015d680(int a);	// stub 0x10013d09
+	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd)
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b248 *g_1070b248;
+extern char g_10580ae8;
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+char sub_102f9970();	// stub 0x10003b7a
+int sub_102f9950();	// stub 0x1000d8b9
+void sub_102f9920(int nHullBits);	// stub 0x1000f36c
+const char *sub_102d6230(int nHull);	// stub 0x10011b4e
+
+void CBasePlayer::vfunc104()
+{
+	*(int *)((char *)this + 0xe98) = 0;
+	*(int *)((char *)this + 0x2294) = -1;
+	*(int *)((char *)this + 0x1c44) = g_1070b22c->vfunc13("materials/sprites/glowa.vmt", 0);
+	*(int *)((char *)this + 0x1c48) = g_1070b22c->vfunc13("materials/sprites/Spread_Indicator_L.vmt", 0);
+	*(int *)((char *)this + 0x1c4c) = g_1070b22c->vfunc13("materials/sprites/Spread_Indicator_R.vmt", 0);
+	g_1070b248->vfunc0("weapons/misc/ammo_pickup.wav", 0);
+	g_1070b248->vfunc0("environmental/fire/fire_hit.wav", 0);
+	g_1070b248->vfunc0("interface/final_death.wav", 0);
+	g_1070b248->vfunc0("weapons/ranged/pickup.wav", 0);
+	*(int *)((char *)this + 0x22a4) = 5;
+	if (g_10580ae8)
+		*((char *)this + 0x2298) = 1;
+	sub_1015d6d0(0);
+	sub_1015d6d0(1);
+	CPlayerObj *pObj = ((CPlayerUnit *)this)->sub_1015d680(1);
+	if (pObj)
+		pObj->vfunc266(0);
+	if (sub_102f9970())
+	{
+		int nBits = ((CEntityVSlots *)this)->slot337();
+		nBits &= sub_102f9950();
+		if (nBits != ((CEntityVSlots *)this)->slot337())
+		{
+			DevMsg("\n****ERROR***\n");
+			DevMsg("%s is being spawned after links have been initialized, but its hull %s\n", ((CPlayerUnit *)this)->sub_1000b5cd(), sub_102d6230(*(int *)((char *)this + 0x1568)));
+			DevMsg("Has not been initialized.  Be sure that this class's GetUsedHullBits function includes that hull type.\n");
+			DevMsg("If it already is, this entity is probably spawned after the node graph is created.\n");
+			DevMsg("Have the class responsible for spawning it include it.\n");
+			DevMsg("****ERROR***\n\n");
+			return;
+		}
+	}
+	else
+		sub_102f9920(((CEntityVSlots *)this)->slot337());
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016eb20 size=0x6f
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"

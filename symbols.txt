@@ -7,6 +7,7 @@
 0x10001050 func   ?vfunc438@CNPC_VYukie@@QAEHXZ CNPC_VYukie::vfunc438
 0x10001064 func   ?vfunc241@CEnvShooter@@QAEPAVCGib@@XZ CEnvShooter::vfunc241
 0x1000106e func   ?sub_10131490@@YAPAHXZ sub_10131490
+0x10001073 func   ?vfunc104@CBasePlayer@@QAEXXZ CBasePlayer::vfunc104
 0x10001078 func   ?sub_101be1d0@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101be1d0
 0x10001082 func   _trigger_brush trigger_brush
 0x1000108c func   ?sub_100920d0@CBaseAnimating@@QAEMPBD@Z CBaseAnimating::sub_100920d0
