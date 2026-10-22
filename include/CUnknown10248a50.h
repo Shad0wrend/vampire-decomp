@@ -20,4 +20,6 @@ public:
 	CUnknown10248a50 *sub_102489a0(const char *pszKeyName, bool bCreate);	// "FindKey" (stub 0x1001569a): the child node of that name, null when there is none (and not bCreate)
 	int sub_10248bb0(const char *pszKeyName, int nDefault);	// "GetInt" (stub 0x1000461a)
 	float sub_10248c60(const char *pszKeyName, float flDefault);	// "GetFloat" (stub 0x10009a9d)
+	CUnknown10248a50 *sub_10248a10();	// "GetFirstSubKey" (stub 0x10004c8c)
+	CUnknown10248a50 *sub_10248a30();	// "GetNextKey" (stub 0x1000fa65)
 };
