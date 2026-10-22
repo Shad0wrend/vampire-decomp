@@ -37,6 +37,7 @@ struct CAI_PathfinderNode
 	unsigned char m_fFlags;	// 0x74
 
 	float *sub_102fb0d0(float *pOutPosition, int nHull);	// the node's position for a hull (stub 0x1000d99a); returns pOutPosition
+	char sub_102f98d0();	// stub 0x1000c3ba: whether the node is a route link node (the waypoint chain marks the join of two of them)
 };
 
 // The node list of the network (count, then the node pointers).
@@ -67,4 +68,5 @@ public:
 	char sub_102f1a20(const float *vecPosition, unsigned int collisionMask);	// the hull fit test at a position (stub 0x10008706)
 	int sub_102fcab0(CAI_PathfinderNode **ppNodes, int nNode, int nLink);	// stub 0x100114c3
 	CAI_Waypoint *sub_102fcbd0(int *pNext, int nNode);	// builds a chain of waypoints along pNext starting at nNode (ret 8)
+	CAI_Waypoint *sub_102fcd00(int *pNext, int nNode);	// the same chain with route link marking: a node joined to the previous waypoint's node by two route link nodes gets the waypoint flags 0x24 and the previous waypoint the flag 0x20 (ret 8)
 };
