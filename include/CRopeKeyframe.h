@@ -15,13 +15,23 @@ public:
 	void sub_1019e5d0();	// stub 0x1000cb03
 	void sub_1019e8b0(int a);	// stub 0x1000f9ed
 	bool sub_1019e110(float slack);	// measures the rope between the start and end entities (their origin, or their attachment when the attachment index is set) and stores the two values it gets back at +0x474 and +0x45c (marking the entity changed, byte +0x1b1); false when either entity is missing
+	void sub_1019ddc0(CBaseEntity *pEnt, int iAttachment);	// "SetStartPoint" (stub 0x100144c0)
+	void sub_1019de30(CBaseEntity *pEnt, int iAttachment);	// "SetEndPoint" (stub 0x10011603)
+	void sub_1019f640(const char *pszMaterial);	// "SetMaterial" (stub 0x10004b83)
+	static CRopeKeyframe *sub_1019dee0(CBaseEntity *pStartEnt, CBaseEntity *pEndEnt, int iStartAttachment, int iEndAttachment, int ropeWidth, const char *pszMaterial, int numSegments);	// "CRopeKeyframe::Create": creates a \"keyframe_rope\" between the two entities (attachments), spawns it with the given material, width and segment count (clamped to 2..10); null when the entity could not be created
 
-	char m_padRope03e0[0x458 - 0x3e0];
+	char m_padRope03e0[0x454 - 0x3e0];
+	unsigned int m_nRopeFlags;	// 0x0454: bit 6 (0x40) is cleared by Create
 	const char *m_pszName458;	// 0x0458: compared case-insensitively with the entity name by sub_1019ee40
 	int m_n45c;	// 0x045c
-	char m_padRope0460[0x474 - 0x460];
+	float m_flWidth;	// 0x0460
+	char m_padRope0464[0x468 - 0x464];
+	int m_nSegments;	// 0x0468
+	char m_padRope046c[0x474 - 0x46c];
 	int m_n474;	// 0x0474
-	char m_padRope0478[0x490 - 0x478];
+	char m_padRope0478[0x47c - 0x478];
+	char m_bCreatedFromMapFile;	// 0x047c
+	char m_padRope047d[0x490 - 0x47d];
 	unsigned int m_hStartPoint;	// 0x0490
 	unsigned int m_hEndPoint;	// 0x0494
 	short m_iStartAttachment;	// 0x0498
