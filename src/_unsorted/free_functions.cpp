@@ -27459,6 +27459,40 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eef50 size=0xad
+#include "CBaseEntity.h"
+#include "CBaseDoor.h"
+#include "CBaseCombatCharacter.h"
+#include "CItemContainerLock.h"
+#include "CEntityVSlots.h"
+
+__declspec(dllimport) void DevMsg(const char *, ...);
+extern int g_106eb3e4;
+
+void CBaseDoor::sub_100eef50(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value)
+{
+    CBaseCombatCharacter *pPlayer;
+    if (!pActivator || !(pPlayer = *(CBaseCombatCharacter **)((char *)pActivator + 0xa8))) {
+        DevMsg("Non-player entity %s trying to use doorknob", pActivator->sub_100ab4f0());
+        return;
+    }
+    CBaseEntity *pKnob = sub_10008cba((int)pPlayer);
+    if (pKnob) {
+        if (((CItemContainerLock *)pKnob)->sub_10224100()) {
+            ((CEntityVSlots *)pKnob)->slot273();
+        } else {
+            dsk8();
+            return;
+        }
+    } else if (!*(char *)((char *)this + 0x55c)) {
+        dsk8();
+        return;
+    }
+    sub_100ee4e0(g_106eb3e4, pPlayer->sub_101671a0());
+    sub_100ee560(pPlayer->sub_101671a0());
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efae0 size=0xc3
 #include "CBaseEntity.h"
 #include "CBaseDoor.h"
