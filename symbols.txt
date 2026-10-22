@@ -2540,6 +2540,7 @@
 0x1000a281 func   ?sub_1021e3e0@@YAXPAUCBlock4k@@PBU1@@Z sub_1021e3e0
 0x1000a290 func   ?vfunc2@CTEBeamRingPoint@@UAEPAV1@I@Z CTEBeamRingPoint::vfunc2
 0x1000a29a func   ?sub_10427790@CUnknown10427700@@QAEXPBDHH000@Z CUnknown10427700::sub_10427790
+0x1000a29f func   ?sub_10224fa0@CItemContainerLock@@QAEXPAVCBaseCombatCharacter@@@Z CItemContainerLock::sub_10224fa0
 0x1000a2a4 func   ?vfunc9@CSoundControllerImp@@UAEXPAX@Z CSoundControllerImp::vfunc9
 0x1000a2c2 func   ?sub_101f3070@@YIXPAD@Z sub_101f3070
 0x1000a2d6 func   ?sub_103322e0@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_103322e0

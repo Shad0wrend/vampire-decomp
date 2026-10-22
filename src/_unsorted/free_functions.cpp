@@ -64604,6 +64604,61 @@ void CItemContainerLock::sub_10224950(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10224fa0 size=0x91
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CWeaponLockpick.h"
+#include "CItemContainerLock.h"
+
+#define LV1(p) virtual void p();
+#define LV10(p) LV1(p##0) LV1(p##1) LV1(p##2) LV1(p##3) LV1(p##4) LV1(p##5) LV1(p##6) LV1(p##7) LV1(p##8) LV1(p##9)
+#define LV100(p) LV10(p##0) LV10(p##1) LV10(p##2) LV10(p##3) LV10(p##4) LV10(p##5) LV10(p##6) LV10(p##7) LV10(p##8) LV10(p##9)
+
+struct LockSlots	// the vtable of the lock as a plain list of slots 0..274
+{
+	LV100(la) LV100(lb) LV10(lc0) LV10(lc1) LV10(lc2) LV10(lc3) LV10(lc4) LV10(lc5)
+	LV1(ld0) LV1(ld1) LV1(ld2) LV1(ld3) LV1(ld4) LV1(ld5) LV1(ld6) LV1(ld7)
+	virtual int slot268(CBaseCombatCharacter *pPlayer);
+	LV1(le0) LV1(le1) LV1(le2) LV1(le3) LV1(le4)
+	virtual void slot274();
+};
+
+struct PlayerView	// the character members this function calls
+{
+	CBaseCombatWeapon *sub_10007e19();	// the active weapon (stub of 0x1032e7b0)
+	void sub_10014a6a();	// stub of 0x10167fd0
+};
+
+struct LockpickView
+{
+	void sub_10012cc9(int nDifficulty);	// stub of 0x103f4fe0
+};
+
+extern char g_1055f710[];	// RTTI type descriptor of CBaseCombatWeapon
+extern char g_105b25b8[];	// RTTI type descriptor of CWeaponLockpick
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long nVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+void sub_101cebc0(CBaseCombatCharacter *pPlayer, int nMessage, int nArg);
+
+// TARGET: CItemContainerLock::sub_10224fa0
+void CItemContainerLock::sub_10224fa0(CBaseCombatCharacter *pPlayer)
+{
+	CBaseCombatCharacter *pUser = pPlayer;
+	sub_1020b090(&pPlayer, pUser);
+	LockpickView *pPick = (LockpickView *)__RTDynamicCast(((PlayerView *)pUser)->sub_10007e19(), 0, g_1055f710, g_105b25b8, 0);
+	if (pPick)
+		pPick->sub_10012cc9(m_unk780);
+	int nResult = ((LockSlots *)this)->slot268(pUser);
+	if (!sub_10224100()) {
+		((LockSlots *)this)->slot274();
+		sub_101cebc0(pUser, 0x4b, nResult);
+		return;
+	}
+	sub_101cebc0(pUser, 0x18, nResult);
+	((PlayerView *)pUser)->sub_10014a6a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102256f0 size=0xf3
 #include "CBaseVampireSkillEntity.h"
 #include "CBaseDoor.h"
