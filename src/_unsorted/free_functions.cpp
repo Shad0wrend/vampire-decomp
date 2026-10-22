@@ -26967,6 +26967,53 @@ bool sub_100e7f70(char *str, int maxLen, const char *find, const char *replace)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e8100 size=0x165
+#include "CDialog.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+extern CGlobalEntityList *g_10566458;
+extern "C++" __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+char sub_100df030(CDialogEntry_t *pEntry);
+
+static inline CGlobalEntityList_Ent *LookupEnt(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+	if (pSlot->m_Serial == (int)(h >> 13))
+		return pSlot->m_pEntity;
+	return 0;
+}
+
+// TARGET: CDialog::sub_100e8100
+int CDialog::sub_100e8100(char *pPacket)
+{
+	ScopeTrace trace("CDialog::process_npc_line", g_106b8540);
+	CDialogEntry_t entry;
+	entry.m_data[0] = *(int *)((char *)this + 0x2830);
+	if (!sub_100e5690(&entry))
+	{
+		strcpy(pPacket, " ");
+		return 0;
+	}
+	if (sub_100e1580((DialogLine *)&entry))
+		sub_100e7d10(pPacket, (const char *)entry.m_data[6 + sub_100e65d0()]);
+	else if (!((CBaseCombatCharacter *)LookupEnt(m_hNPC))->sub_10336920() && sub_100df030(&entry))
+		sub_100e7d10(pPacket, (const char *)entry.m_data[2]);
+	else
+		sub_100e7d10(pPacket, (const char *)entry.m_data[1]);
+	sub_100e8060(pPacket, 0x800);
+	sub_100e4f30((char *)entry.m_data[4]);
+	const char *pszEvent = (const char *)entry.m_data[5];
+	if (pszEvent && *pszEvent)
+		Q_strncpy((char *)this + 0x30ea, pszEvent, 0x100);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e8ef0 size=0x9b
 #include "CDialogDependency.h"
 #include "CVDmg_t.h"
