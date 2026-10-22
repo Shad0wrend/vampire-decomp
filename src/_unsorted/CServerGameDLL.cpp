@@ -1,6 +1,44 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1011aaf0 size=0x91
+#include "CServerGameDLL.h"
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+#include "CUnknown100a8220.h"
+#include "ConVar.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern ConVar g_106bd868;
+extern ConVar *g_1070af4c;
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *fmt, ...);
+void sub_1042c640();
+
+struct CGameFrameHooks
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12();	// slot 12 (offset 0x30)
+};
+extern CGameFrameHooks *g_1070ba0c;
+
+// TARGET: CServerGameDLL::vfunc4
+void CServerGameDLL::vfunc4(int a, int b, int c)
+{
+	if (g_106eb5d8.sub_100f6d60())
+		Msg("ERROR: Entity delete queue not emtpy on level start!\n");
+	for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt)) {
+		if (!((CUnknown100a8220 *)pEnt)->sub_100a8220())
+			pEnt->vfunc113();
+	}
+	sub_1042c640();
+	g_1070ba0c->v12();
+	ConVar *pVar = g_1070af4c;
+	if (!pVar->GetInt())
+		g_106bd868.sub_10246160(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011aec0 size=0x85
 #include "CServerGameDLL.h"
 #include "CSave.h"
