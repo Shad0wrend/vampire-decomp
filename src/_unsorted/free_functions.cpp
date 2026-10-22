@@ -104476,6 +104476,69 @@ void sub_10428690(CStudioHdrRaw *pStudioHdr, int iSequence, float *pPoseParamete
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428880 size=0xbe
+#include <string.h>
+
+struct CStudioEvent	// 0x4c bytes
+{
+	float m_flCycle;	// 0x00
+	int m_nEvent;	// 0x04
+	int m_nType;	// 0x08
+	char m_szOptions[64];	// 0x0c
+};
+
+struct CStudioSeqDesc
+{
+	char m_pad0000[0x14];
+	int m_nEvents;	// 0x14
+	int m_iEventIndex;	// 0x18
+};
+
+struct CEngineSoundView
+{
+	virtual int vfunc0(const char *pszName, int a);
+};
+
+extern CEngineSoundView *g_1070b248;
+__declspec(dllimport) void Warning(const char *pszFormat, ...);
+int sub_10428470(void *pHdr, int iSequence);
+CStudioSeqDesc *sub_100c7480(void *pHdr, int index);
+const char **sub_1042bff0(void *pOut, const char *pszOptions);
+
+namespace block_10428880 {
+int sub_10428850(int nEvent)
+{
+	if (nEvent != 0x3ec && nEvent != 0x3f0)
+		return 0;
+	return 1;
+}
+}
+using namespace block_10428880;
+
+// TARGET: sub_10428880
+void sub_10428880(void *pHdr, int iSequence)
+{
+	int iIndex = sub_10428470(pHdr, iSequence);
+	if (iIndex >= 0) {
+		CStudioSeqDesc *pSeq = sub_100c7480(pHdr, iIndex);
+		if (pSeq) {
+			CStudioEvent *pEvent = (CStudioEvent *)((char *)pSeq + pSeq->m_iEventIndex);
+			for (int i = 0; i < pSeq->m_nEvents; i++, pEvent++) {
+				if (pEvent->m_nEvent < 5000 && sub_10428850(pEvent->m_nEvent)) {
+					if (strlen(pEvent->m_szOptions) == 0)
+						Warning("Bad sound event %d in sequence %s :: %s (sound is \"%s\")\n", pEvent->m_nEvent, (char *)pHdr + 0xc, iSequence, pEvent->m_szOptions);
+					char dummy[4];
+					const char *pszName = *sub_1042bff0(dummy, pEvent->m_szOptions);
+					if (!pszName)
+						pszName = "";
+					g_1070b248->vfunc0(pszName, 0);
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x104289a0 size=0xe1
 struct CTimeTableRec
 {
