@@ -23,6 +23,8 @@ struct CSoundParametersInternal
 	int m_nWaves;	// 0x2c
 	char m_pad0030[0x48 - 0x30];
 	char m_bMissingWave48;	// 0x48: set when one of the waves is not on disk
+
+	CSoundWaveEntry &Wave(int i) { return m_pWaves[i]; }	// the i-th wave of the record (the CUtlVector element)
 };
 
 class CSoundEmitterSystemBase
