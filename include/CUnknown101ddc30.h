@@ -18,4 +18,5 @@ public:
 	int m_nAffects;	// 0x08
 
 	bool sub_101ddc30(CUnknown101ddc30Kv *pKV);	// loads the record from the key file; always false
+	void sub_101ddbe0();	// the constructor body (stub 0x10003936)
 };
