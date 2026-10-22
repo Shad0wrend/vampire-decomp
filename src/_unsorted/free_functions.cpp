@@ -11799,6 +11799,26 @@ void __cdecl sub_1007c1c0(void *pFile, int nIndent, CUnknown10078540 *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c4f0 size=0x81
+#include "CUnknown10077430.h"
+
+void sub_1007bf70(void *pWriter, int nTabs, const char *pszFormat, ...);
+void sub_1007c280(void *pWriter, int nTabs, void *pTrack);
+
+// TARGET: sub_1007c4f0
+void sub_1007c4f0(void *pWriter, int nTabs, CUnknown10077430 *pEvent)
+{
+	if (pEvent->sub_10077430() > 0) {
+		int nInner = nTabs + 1;
+		sub_1007bf70(pWriter, nInner, "flexanimations samples_use_time\n");
+		sub_1007bf70(pWriter, nInner, "{\n");
+		for (int i = 0; i < pEvent->sub_10077430(); i++)
+			sub_1007c280(pWriter, nTabs, pEvent->sub_10077450(i));
+		sub_1007bf70(pWriter, nInner, "}\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ce20 size=0x65
 #include "CUnknown1007ce20.h"
 
