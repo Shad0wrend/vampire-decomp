@@ -36543,6 +36543,48 @@ extern "C" CBaseEntity *prop_ragdoll()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152400 size=0x148
+#include "SendProp.h"
+
+SendProp sub_10246af0(const char *pName, int a, int b, int c, int d, int e, void *pProxy);
+SendProp sub_10246dc0(const char *pName, int a, int b, void *pProxy);
+SendProp sub_102469b0(const char *pName, int a, int b, int c, int d, int e);
+SendProp sub_10246ef0(int a, int b, const char *pName, int c);
+SendProp sub_10246700(const char *pName, int a, int b, int c, int d, int e, int f, void *pProxy);
+SendProp sub_101ab220(const char *pName, int a, int b);
+SendProp sub_10246510(const char *pName, int a, int b, int c, int d, int e, int f, void *pProxy);
+void sub_10246320();
+void sub_10246300();
+void sub_10009539();
+void sub_10003012();
+
+struct S_SendTable
+{
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);
+};
+
+extern S_SendTable g_107234b4;
+extern int g_1054d524;
+extern const char *g_1057d5a4;
+
+int sub_10152400()
+{
+	static SendProp s_props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1054d524, (void *)sub_10009539),
+		sub_102469b0("m_ragAngles[0]", 0xbe8, 0xc, 0xd, 0, (int)sub_10246320),
+		sub_10246ef0(0x1e, 0xc, "m_ragAngles", 0),
+		sub_10246700("m_ragPos[0]", 0xa80, 0xc, -1, 2, 0, 0xc7ec9090, (void *)sub_10003012),
+		sub_10246ef0(0x1e, 0xc, "m_ragPos", 0),
+		sub_101ab220("m_hUnragdoll", 0xd50, 4),
+		sub_10246510("m_flBlendWeight", 0xd60, 4, 8, 0x10, 0, 0x3f800000, (void *)sub_10246300),
+		sub_10246af0("m_nOverlaySequence", 0xd64, 4, 0xb, 0, 0, 0)
+	};
+	g_107234b4.sub_10247240(&s_props[1], 8, g_1057d5a4);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101563b0 size=0x88
 struct CRagdollBody { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
 	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
