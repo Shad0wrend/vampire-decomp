@@ -212,7 +212,7 @@ public:
 	bool sub_103d8060(void *pHint);	// stub 0x100143bc: the hint test of the mode 4
 	bool sub_103d7dc0(void *pHint);	// stub 0x10010424: the hint test of the mode 5
 	bool sub_103d8300(void *pHint);	// stub 0x10013796: the hint test of the mode 6
-	void sub_103d5590(void *pHint);	// stub 0x10015d7a: adds the hint as pathable
+	int sub_103d5590(void *pHint);	// stub 0x10015d7a: adds the hint as pathable
 	void sub_103cb4b0();	// walks the global hint list (0x10925450, next at +0x5d8) and, by the mode of the global object at 0x1093f95c (0 while its slot 1 is true, else the dword at +0x2c; modes 1..6 pick one of sub_103d2070 / sub_103d2810 / sub_103d3360 / sub_103d8060 / sub_103d7dc0 / sub_103d8300), runs sub_103d5590 on every hint the test accepts
 	void sub_103cc450();	// "CNPC_VWerewolf::UpdateConditionShouldBreakHint": scope trace (entity name), SetCondition(0x7b); the break hint handle at +0x66c4 is dropped unless bit 1 of the attack state (+0x66e8) is set; with a valid break hint (sub_103d8550) and HasPath from this entity's origin (slot 217) to the hint's ground point it signals the object behind the global 0x10924a6c (slot 1) and sets condition 0x7b again (sub_10269a20)
 	void sub_103cac20();	// the NPC init: SetSchedule-like sub_10279a50(0), resets the move / hint state (+0x628c, +0x66a1..+0x6708), stamps the current time at +0x66ec / +0x66f4 and adds the hull's half diagonal (from its mins / maxs, sub_102d6100 / sub_102d6120) and a constant square root to the totals at +0x66cc / +0x66d0
