@@ -60056,6 +60056,52 @@ void CAI_BaseNPC::sub_10209ac0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209b20 size=0xea
+#include "CItemContainer.h"
+#include "CEHandleGet.h"
+
+struct CSlot225View	// the entity's virtual table up to slot 225
+{
+	CBP_V100(a) CBP_V100(b) CBP_V10(c0) CBP_V10(c1)
+	CBP_V1(d0) CBP_V1(d1) CBP_V1(d2) CBP_V1(d3) CBP_V1(d4)
+	virtual void vfunc225();
+};
+
+struct CPhysObjView	// the physics object's virtual table up to slot 24
+{
+	CBP_V10(a0) CBP_V10(a1) CBP_V1(b20) CBP_V1(b21) CBP_V1(b22) CBP_V1(b23)
+	virtual void vfunc24(int a);
+};
+
+extern char g_106b8540[];
+__declspec(dllimport) void Warning(const char *fmt, ...);
+void sub_101cd940(void *pEnt);
+
+// TARGET: CItemContainer::sub_10209b20
+void CItemContainer::sub_10209b20(CBaseEntity *pActivator)
+{
+	if (m_nField200 != 2) {
+		const char *pszModel = m_pszBreakModel1a30 ? m_pszBreakModel1a30 : g_106b8540;
+		if (*pszModel) {
+			((CBaseEntity *)this)->vfunc105(pszModel);
+			((CSlot225View *)this)->vfunc225();
+			void *pPhysics = ((CBaseEntity *)this)->sub_100a5ea0(6, 0, 1, 0);
+			if (pPhysics)
+				((CPhysObjView *)pPhysics)->vfunc24(0);
+			((CBaseEntity *)this)->sub_100b3b00();
+		} else {
+			Warning("Broken container %s has an invalid break model!\n", ((CBaseEntity *)this)->sub_100ab4f0());
+		}
+		((CBaseEntity *)this)->sub_100b3640(0x20000000);
+		m_nField200 = 2;
+		m_nTakeDamage1fc = 0;
+		sub_101cd940(EHandle_Get(m_hLock.m_Index));
+		m_hLock.m_Index = 0xffffffff;
+		m_Output19e0.sub_100cd660(pActivator, this, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209cd0 size=0x43
 #include "CItemContainerAnimated.h"
 void *sub_100aa720(int size);
