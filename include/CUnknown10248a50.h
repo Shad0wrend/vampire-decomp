@@ -16,4 +16,5 @@ public:
 	void sub_10248a50(int pNext);	// stores the argument at +0x10 (the link to the next node)
 	void sub_10247cf0(const char *pszName);	// stub 0x10013958: sets the node's name
 	void sub_10248510(const char **ppBuffer, int a);	// stub 0x1000a321: reads the children after a '{'
+	void sub_100046f1();	// the destructor body called through its stub (0x100046f1 for 0x10247da0), as the code that deletes a node calls it
 };
