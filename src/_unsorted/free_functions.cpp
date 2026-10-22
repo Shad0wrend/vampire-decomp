@@ -79619,6 +79619,60 @@ extern char g_1093412c;
 void sub_102f99b0() { g_1093412c = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x102fa510 size=0xd1
+#include "CAI_Node.h"
+#include "CAI_Network.h"
+
+__declspec(dllimport) void __cdecl DevMsg(const char *fmt, ...);
+int sub_102d6210(int hull);
+const char *sub_102d6230(int hull);
+int sub_102f9950();
+
+struct CAI_NodeWCIds
+{
+	char m_pad0000[0xc];
+	int *m_pWCIds;	// 0xc: the worldcraft id of every node
+};
+struct CAI_NodeNetworkOwner
+{
+	char m_pad0000[0x454];
+	CAI_NodeWCIds *m_pNetwork;	// 0x454
+};
+extern CAI_NodeNetworkOwner *g_10934088;
+
+// TARGET: CAI_Node::sub_102fa510
+void CAI_Node::sub_102fa510()
+{
+	if (m_nType != 3) {
+		if (m_nType == 4) {
+			sub_102f9cd0();
+			return;
+		}
+		if (m_nType == 2) {
+			sub_102fa170();
+			int nMask = sub_102f9950();
+			int nHull = -1;
+			if (nMask > 0) {
+				do {
+					nHull++;
+					if (nHull == 0x16)
+						nHull = 0;
+				} while (!(nMask & sub_102d6210(nHull)));
+			} else {
+				nHull = 0;
+			}
+			if (m_aHullHeight[nHull] < -200.0f) {
+				CAI_NodeWCIds *pNetwork = g_10934088->m_pNetwork;
+				DevMsg("ERROR: Node %.0f %.0f %.0f too low. (WC ID# %i) Fell through floor for hull %s!\n", m_x, m_y, m_z, pNetwork->m_pWCIds[m_nIndex], sub_102d6230(nHull));
+				m_nHullMask |= sub_102d6210(nHull);
+			}
+		} else if (m_nType != 1) {
+			DevMsg("Bad node type!\n");
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fc540 size=0x6b
 #include <stdarg.h>
 #include <stdio.h>
