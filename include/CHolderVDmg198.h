@@ -1,6 +1,7 @@
 // CHolderVDmg198: a 0xec84 byte record that embeds a CVDmg_t at +0x198 (real name not yet known).
 // Its constructor (0x1025b390) only constructs the CVDmg_t; it is the element constructor the compiler hands to the
-// vector-constructor helper for the arrays of it inside the big tree nodes.
+// vector-constructor helper for the arrays of it inside the big tree nodes. Its destructor (0x1025b3c0) runs the
+// CVDmg_t destructor body and is the element destructor of the vector-destructor helper.
 #pragma once
 
 #include "CVDmg_t.h"
@@ -13,4 +14,5 @@ public:
 	char m_pad01dc[0xec84 - 0x198 - sizeof(CVDmg_t)];
 
 	CHolderVDmg198();	// the constructor at 0x1025b390
+	~CHolderVDmg198();	// the destructor at 0x1025b3c0 (stub 0x1000db75)
 };
