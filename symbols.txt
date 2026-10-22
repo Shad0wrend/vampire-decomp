@@ -6639,6 +6639,7 @@
 0x10462780 vtable ??_7IServerGameEnts@@6B@ IServerGameEnts::vftable
 0x10462798 vtable ??_7CServerGameClients@@6B@ CServerGameClients::vftable
 0x104627e0 vtable ??_7IServerGameClients@@6B@ IServerGameClients::vftable
+0x10462828 data   ??_7CReliableBroadcastFilter@@6B@ ??_7CReliableBroadcastFilter@@6B@
 0x10462828 vtable ??_7CRelieableBroadcastRecipientFilter@@6B@ CRelieableBroadcastRecipientFilter::vftable
 0x10462854 vtable ??_7CUserCmd@@6B@ CUserCmd::vftable
 0x10462874 vtable ??_7CGameMovement@@6B@ CGameMovement::vftable
