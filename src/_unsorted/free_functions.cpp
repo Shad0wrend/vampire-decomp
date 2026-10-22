@@ -105536,6 +105536,37 @@ char CUnknown1042d9a0::sub_1042daa0(CUnknown1042d9a0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ea40 size=0xf9
+#include "CSprite.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+CBaseEntity *sub_10002e32(const char *name);
+void sub_10011432(CBaseEntity *p, const void *a, const void *b);
+extern char g_1070d1b0[];
+extern char g_10538764[];
+extern char g_106af32c[];
+extern "C" void *__RTDynamicCast(void *, long, void *, void *, int);
+__declspec(dllimport) void Warning(const char *fmt, ...);
+
+CSprite *sub_1042ea40(const char *pSpriteName, const Vector &origin, bool animate)
+{
+	CSprite *pSprite = (CSprite *)__RTDynamicCast(sub_10002e32("env_sprite"), 0, g_10538764, g_106af32c, 0);
+	if (!pSprite)
+		Warning("classname %s used to create wrong class type\n");
+	pSprite->sub_1042e9f0((int)pSpriteName, (int)&origin);
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", pSprite ? (pSprite->m_name26c ? pSprite->m_name26c : g_106b8540) : g_105387dc);
+		((CCollisionProperty *)((char *)pSprite + 0x270))->sub_100dc480(0);
+	}
+	sub_10011432(pSprite, g_1070d1b0, g_1070d1b0);
+	pSprite->vfunc93(9, 0);
+	if (animate)
+		pSprite->sub_1042ef70();
+	return pSprite;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042eb80 size=0xdb
 #include "CSprite.h"
 #include "CCollisionProperty.h"
