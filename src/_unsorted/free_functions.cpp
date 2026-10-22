@@ -49757,6 +49757,20 @@ int *sub_101c72f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c75a0 size=0xbb
+#include "CReliableBroadcastFilter.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+
+void sub_101c75a0()
+{
+	CReliableBroadcastFilter filter;
+	g_1070b22c->vfunc65(&filter, 0x1a);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7690 size=0xf9
 #include "CChangeLevel.h"
 #include "CGlobalEntityList.h"
