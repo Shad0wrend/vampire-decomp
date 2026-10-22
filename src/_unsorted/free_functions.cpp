@@ -50261,6 +50261,40 @@ void sub_101d77d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d79e0 size=0x9c
+#include "CUnknown101d76e0.h"
+#include "CUnknown101d7520.h"
+
+struct CLocalPlayerInfo
+{
+	char m_pad0000[0xa8];
+	CBaseEntity *m_pa8;
+};
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) void Msg(const char *pFormat, ...);
+CLocalPlayerInfo *sub_101193b0();
+extern CUnknown101d76e0 g_10738cf0;
+
+// TARGET: sub_101d79e0
+void sub_101d79e0()
+{
+	char szBuf[512];
+	CLocalPlayerInfo *pPlayer = sub_101193b0();
+	if (pPlayer && pPlayer->m_pa8) {
+		CBaseEntity *pEnt = pPlayer->m_pa8;
+		int nMatches = g_10738cf0.sub_101d7780(pEnt);
+		Q_snprintf(szBuf, sizeof(szBuf), "AutoLevel Matches for %s: (%d)\n", pEnt->m_name26c ? pEnt->m_name26c : g_106b8540, nMatches);
+		Msg("%s", szBuf);
+		int iMatch = g_10738cf0.sub_101d7660(pEnt);
+		while (iMatch != -1) {
+			g_10738cf0.sub_101d71a0(iMatch)->sub_101d6af0();
+			iMatch = g_10738cf0.sub_101d76e0(pEnt);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d7ec0 size=0xb2
 #include "CUnknown101d82d0.h"
 
