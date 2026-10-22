@@ -30743,6 +30743,63 @@ extern "C" CBaseEntity *env_spark()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103f80 size=0x174
+#include "CEntityVSlots.h"
+#include "CUnknown1070b244.h"
+#include "CPVSFilter.h"
+#include "QAngle.h"
+
+struct SGlobals10103f80 { char pad[0xc]; float curtime; };
+struct SEngine10103f80
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+	virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17();
+	virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+	virtual void s24(const CRecipientFilter *pFilter, float flDelay, const Vector *pOrigin, int a, float b, float c, int d);
+};
+struct SSub10103f80 { void sub_100cd660(void *a, void *b, int c); };
+
+extern SGlobals10103f80 *g_1070b228;
+extern CUnknown1070b244 *g_1070b244;
+extern SEngine10103f80 *g_10540528;
+extern Vector g_1070d1b0;
+void sub_10103930(void *pThis, Vector *pOrigin, int a, int b, char c, Vector *pOut);
+void sub_10139610(const QAngle &angles, Vector *fwd, Vector *right, Vector *up);
+
+struct CThis10103f80 : public CEntityVSlots
+{
+	char pad4[0x17c - 4];
+	float m_f17c;
+	char pad180[0x204 - 0x180];
+	unsigned int m_nFlags;
+	char pad208[0x450 - 0x208];
+	float m_f450;
+	int m_i454;
+	int m_i458;
+	int m_i45c;
+	SSub10103f80 m_Sub460;
+
+	void sub_10103f80();
+};
+
+// TARGET: CThis10103f80::sub_10103f80
+void CThis10103f80::sub_10103f80()
+{
+	m_f17c = g_1070b244->vfunc1(0.0f, m_f450) + g_1070b228->curtime + 0.1;
+	Vector vec = g_1070d1b0;
+	if (m_nFlags & 0x200)
+		sub_10139610(*(QAngle *)slot219(), &vec, 0, 0);
+	sub_10103930(this, slot217(), m_i458, m_i45c, ~(m_nFlags >> 8) & 1, &vec);
+	m_Sub460.sub_100cd660(this, this, 0);
+	if (*(char *)&m_nFlags & 0x80)
+	{
+		CPVSFilter filter(*slot217());
+		g_10540528->s24(&filter, 0.0f, slot217(), m_i454, 0.2f, 1.5f, 25);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104220 size=0x43
 #include "CParamsExplosion.h"
 void *sub_100aa720(int size);
