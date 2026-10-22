@@ -42935,6 +42935,30 @@ CRopeKeyframe *CRopeKeyframe::sub_1019dee0(CBaseEntity *pStartEnt, CBaseEntity *
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019dfb0 size=0xa5
+#include "CRopeKeyframe.h"
+
+CBaseEntity *sub_10136580(const char *pszClassname);
+
+CRopeKeyframe *CRopeKeyframe::sub_1019dfb0(CBaseEntity *pStartEnt, int iStartAttachment, int nSlack, int ropeWidth, const char *pszMaterial, int numSegments)
+{
+	CRopeKeyframe *pRet = (CRopeKeyframe *)sub_10136580("keyframe_rope");
+	if (!pRet)
+		return 0;
+	pRet->sub_1019ddc0(pStartEnt, iStartAttachment);
+	pRet->sub_1019de30(0, 0);
+	pRet->m_bCreatedFromMapFile = 0;
+	pRet->m_n478 = 1;
+	pRet->m_nRopeFlags &= ~0x40;
+	pRet->sub_1019e310();
+	pRet->sub_1019f640(pszMaterial);
+	pRet->m_n474 = nSlack;
+	pRet->m_flWidth = (float)ropeWidth;
+	pRet->m_nSegments = (numSegments > 10) ? 10 : ((numSegments < 2) ? 2 : numSegments);
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019e310 size=0xdc
 #include "CRopeKeyframe.h"
 #include "CUnknown101466e0.h"
