@@ -59622,6 +59622,40 @@ void CUnknown102047d0::sub_102047d0(const char *pszName, int *pGender, int *pVal
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204900 size=0x166
+#include "CUnknown10204e90.h"
+#include "CVStatList_t.h"
+#include "CVFeat_t.h"
+
+int sub_10202780(int kind);
+
+// TARGET: CUnknown10204e90::sub_10204900
+int CUnknown10204e90::sub_10204900(void *pCharacter)
+{
+	int nIndex = m_nIndex;
+	if (nIndex == -1 || !pCharacter)
+		return 0;
+	switch (m_nKind) {
+	case 0:
+	case 1:
+	case 2:
+	case 3:
+		return sub_10204c20(CVStatListSet::Of(pCharacter)->Find(sub_10202780(m_nKind))->sub_102012d0(nIndex));
+	case 4:
+		return CVFeatSet::Find(nIndex)->sub_101e56e0(pCharacter);
+	case 5:
+	case 6:
+	case 7:
+	case 8:
+		return 0;
+	case 9:
+		if (nIndex)
+			return ((int (__cdecl *)(void *))nIndex)(pCharacter);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204ad0 size=0x9e
 #include "CVDmg_t.h"
 #include "CUnknown101e56e0.h"
