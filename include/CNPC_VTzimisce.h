@@ -9,6 +9,8 @@
 #define VT_SLOTS100(p) VT_SLOTS10(p##0) VT_SLOTS10(p##1) VT_SLOTS10(p##2) VT_SLOTS10(p##3) VT_SLOTS10(p##4) \
 	VT_SLOTS10(p##5) VT_SLOTS10(p##6) VT_SLOTS10(p##7) VT_SLOTS10(p##8) VT_SLOTS10(p##9)
 
+class CBaseEntity;
+
 // The object returned by CNPC_VTzimisce slot 167; its slot 220 gives the position-like pointer.
 class CNPC_VTzimisceHelper
 {
@@ -103,4 +105,6 @@ public:
 	void sub_103ba640(void *pEnt, Vector *pVec, int *pFlag, int *pOut);	// slot 563: with the navigator state 2 (sub_1027d990) shifts *pVec by the entity's position difference (slot 193 minus slot 217); else runs the two path-step workers sub_102c3b50 / sub_102c36d0 and stores the stepped vector back in *pVec
 	void sub_102c3b50(void *pEnt, Vector vecStart, Vector *pVec, int *pOut);	// stub 0x100041d3
 	void sub_102c36d0(Vector vecOrigin, void *pEnt, int nParam, Vector *pVec, Vector *pOut);	// stub 0x1000c0ae
+	int sub_103bfa50(CBaseEntity *pEnt);	// slot 438 helper: finds the nearest "type 0x36b0" and "type 0x36b1" targets within 200 units of pEnt (sub_102d24b0), prefers the closer one (telling the other one 0.5f), remembers it at +0x5ddc and answers the schedule 0x36b0 / 0x36ba (first) or 0x36b1 / 0x36bb (second) by sub_103bfc20; 0 and +0x5ddc = pEnt when there is none
+	char sub_103bfc20(CBaseEntity *pTarget, CBaseEntity *pEnt);	// stub 0x10009953
 };
