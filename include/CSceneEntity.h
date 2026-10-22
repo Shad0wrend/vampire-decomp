@@ -49,6 +49,8 @@ struct CSceneEvent	// a scene event; only what the actor checks need
 struct CSceneEntityScene	// the scene object at +0x4bc
 {
 	char sub_1007d190();	// whether the scene is finished (stub 0x10014128)
+	void sub_1007d7f0(float flTime);	// stub 0x100039f9, run by the think of the instanced scene with the remainder at +0x4a0
+	char sub_1007d1e0();	// stub 0x10008ff3: whether the scene has run out, asked by the think of the instanced scene
 };
 
 class CSceneEntity
@@ -96,6 +98,7 @@ public:
 	const char *sub_100ab4f0();	// stub 0x1000b5cd: the entity's debug name, called directly
 	float sub_10080ac0();	// stub 0x10010410: a float value of the scene (the playback speed), run by the think
 	void sub_100846c0(void *pScene);	// stub 0x100018c5, run by the think while the scene plays on
+	void sub_10084170(void *pScene);	// stub 0x1001200d, run by the think of the instanced scene when the scene has run out
 
 	char m_pad0004[0x10c - 4];
 	unsigned int m_hPlayer10c;	// 0x10c: entity handle of the scene's player
@@ -123,4 +126,6 @@ public:
 	char m_b57c;	// 0x57c
 	char m_pad057d[1];
 	char m_b57e;	// 0x57e
+	char m_pad057f[1];
+	unsigned int m_h580;	// 0x580: handle of the entity an instanced scene follows
 };
