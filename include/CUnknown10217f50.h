@@ -34,4 +34,6 @@ public:
 	void sub_10218db0();	// stub 0x10005812, called at the start of a page
 	void sub_1021b2b0();	// stub 0x100026fd, prints the border line of a page
 	void sub_102192a0(char value);	// sends the terminal user message (type 0, a byte 9 and the char value) to the players, the filter holding every player and the terminal's own client index
+	void sub_10218ca0();	// stub 0x100156c7, called by the page builders
+	void sub_10218b90();	// stub 0x100068c0, the alternative of sub_10218ca0 (picked at random)
 };
