@@ -61997,6 +61997,35 @@ void CPropHacking::sub_1021a3d0(CSave *pSave)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a740 size=0xb4
+#include "CPropHacking.h"
+#include "CUnknown10217f50.h"
+#include <string.h>
+
+struct S_Globals { char pad[0xc]; float curtime; };
+extern S_Globals *g_1070b228;
+extern "C" __declspec(dllimport) int RandomInt(int lo, int hi);
+void sub_10217ac0(void *pThis, const char *pszText, ...);
+
+void CPropHacking::sub_1021a740()
+{
+	CUnknown10217f50 *t = (CUnknown10217f50 *)this;
+	t->sub_10218ec0(0, 0);
+	t->sub_10218db0();
+	const char *pszText = m_szText0904;
+	int t0; int t1 = t->m_nLineWidth - (int)strlen(pszText); t0 = 0 > t1; int nSpace = t0 ? 0 : t->m_nLineWidth - strlen(pszText);
+	int t2 = m_n0814 - 1; int nRow = RandomInt(1, t2);
+	sub_10218ff0(RandomInt(1, nSpace), nRow);
+	if (RandomInt(0, 1))
+		t->sub_10218b90();
+	else
+		t->sub_10218ca0();
+	sub_10217ac0(this, pszText);
+	t->sub_10218ca0();
+	m_flNextThink = m_flDelay09e4 + g_1070b228->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021b030 size=0xcd
 #include "CPropHacking.h"
 #include "CUnknown10217f50.h"
