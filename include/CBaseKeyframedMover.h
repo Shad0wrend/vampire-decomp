@@ -24,9 +24,16 @@ public:
 	void sub_10223940(int dir);	// "SetDirection": a change of the direction (+0x560) moves to the end keyframe's field (+0x454 for 1, +0x458 for -1) through sub_1000b94c; with no last keyframe warns "NULL last keyframe for %s", and for any other direction stops (sub_100b2e30 with the zero vector, +0x568 = -1)
 	void sub_10223a80();	// the mover reached its keyframe: fires the output at +0x5a0 for the activator (handle +0x10c), tells the keyframe (sub_10223130), copies +0x568 to +0x56c and moves on to the next keyframe of the direction (+0x454 / +0x458) through sub_1000b94c, or else runs CUnknown10223b90::sub_10223b90
 
-	char m_pad04a4[0x560 - sizeof(CBaseToggle)];
+	char m_pad04a4[0x55c - sizeof(CBaseToggle)];
+	const char *m_pszStartKeyframe;	// 0x55c: name of the starting keyframe
 	int m_nDirection;	// 0x560
-	int m_n564;
+	union {
+		int m_n564;
+		char m_bStarted;	// 0x564
+	};
 	int m_n568;
-	int m_n56c;
+	union {
+		int m_n56c;
+		unsigned int m_hKeyframe;	// 0x56c: handle of the starting keyframe
+	};
 };
