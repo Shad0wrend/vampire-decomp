@@ -152,6 +152,7 @@ public:
 	bool vfunc326(int unused1, int unused2);	// slot 326: false when the character's default stat item has the byte at +0x9e set or the first stat list with a zero field at +0x10 (default list when none) is IsEqual(0xf, 0x11); else slot 158 as a bool
 	Vector vfunc369();	// "CBaseCombatCharacter::BodyDirection3D": scope trace (entity name), AngleVectors of slot 367 (BodyAngles) into a local forward vector, returned by value
 	void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);	// AngleVectors (stub 0x10002310)
+	void vfunc104();	// slot 104 "CBaseCombatCharacter::Precache": scope trace (entity name), the character's stat record is precached through the default item list (global 0x10738d10), then, depending on sub_102f9970, either slot 337's answer goes to sub_102f9920 or the spawn-after-links check (slot 337 masked by sub_102f9950 must equal slot 337) prints the "ERROR" DevMsg block and gives up
 
 #include "CBaseCombatCharacter_ext.h"
 #include "CBaseCombatCharacter_ext2.h"
@@ -171,7 +172,9 @@ public:
 	char m_flag1474;
 	char m_pad1475[0x1488 - 0x1475];
 	float m_flFrenzyRate;	// 0x1488
-	char m_pad148c[0x1574 - 0x148c];
+	char m_pad148c[0x1568 - 0x148c];
+	int m_field1568;	// 0x1568
+	char m_pad156c[0x1574 - 0x156c];
 	int m_field1574;
 	CBaseCombatCharacter *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100078c4();	// as in CPhysForce (transplant)
