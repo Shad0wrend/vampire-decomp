@@ -2,6 +2,8 @@
 // handle (+0x14) with the index of the current match at +0x18; real name not yet known.
 #pragma once
 
+struct CUnknown101d7520Entry;
+
 struct CUnknown101d76e0_Item
 {
 	bool sub_101d6a50(void *pEnt);	// does this matcher accept the entity (stub 0x1000e38b)
@@ -19,4 +21,6 @@ public:
 
 	int sub_101d7660(void *pEnt);	// the first match for the entity (stub 0x100025db)
 	int sub_101d76e0(void *pEnt);	// the next match for the entity after the current one, -1 (and the cursor reset) when there is none
+	int sub_101d7780(void *pEnt);	// the number of matches for the entity (stub 0x100025b8)
+	CUnknown101d7520Entry *sub_101d71a0(int index);	// the auto level entry of a match index (stub 0x10010c8a)
 };
