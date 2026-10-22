@@ -5,6 +5,7 @@
 #include "CUnknown101dd910.h"
 
 class CBasePlayer;
+struct S1033d380;
 
 struct CUnknown101e0f00SrcA	// an element of the first list of a source description
 {
@@ -38,6 +39,7 @@ struct CUnknown101e0f00Src	// the 0x1c byte source descriptions at +0xa4 / +0xc0
 struct CUnknown101e0f00Fx	// the object the tail's callback worker hands back
 {
 	void sub_101dfe20();	// finishes the callback (stub 0x100156ea)
+	void sub_101dfe50();	// finishes the callback of a character (stub 0x1000328d)
 };
 
 struct CUnknown101e0f00Tail	// the object at +0xdc of an entry
@@ -93,6 +95,7 @@ public:
 	void sub_101e4380(const char *pszName);	// "Targeted Discipline Manager" Debug_Display: without a name lists every entry (index, name, base cost), with the name of an entry (or "ALL") displays that entry (every entry)
 	int sub_101e12a0(int id);	// the index of the entry of the discipline id, -1 when none (stub 0x10007df1)
 	void sub_101e3910(int a, int b, int c, int d);	// "CallbackHit": looks the entry of discipline c up, logs "Discipline<%s> CallbackHit", runs the entry's tail callback worker with (d, a, b, c | 0x80000000) while the global current entry (0x10739a74) points at the entry
+	void sub_101e3a30(S1033d380 *pObj, int id);	// "InterruptSchedule" callback: looks the entry of discipline id up, logs "Discipline<%s> InterruptSchedule", runs the entry's tail callback worker with the character's two lookups while the global current entry (0x10739a74) points at the entry
 	unsigned int sub_101e1870(unsigned int id);	// id | 0x80000000, called with this in ecx (the game's member form of the free function)
 	int sub_101e1250(int a, int b);	// the index of the entry for a discipline reference (stub 0x100142a4), -1 when none
 	char sub_101e1a60(CUnknown101e0f00Entry *pEntry, void *pSource, void *pSource2, void *pTarget, int flag);	// whether the entry applies to the source / target pair (stub 0x1000b956)
