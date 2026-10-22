@@ -50850,6 +50850,31 @@ bool sub_101cf9b0(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cfa40 size=0xb9
+#include "CPVSFilter.h"
+
+extern char sub_101cf9b0(int);
+
+struct CEffectsView
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual void a10(); virtual void a11(); virtual void a12();
+	virtual void v13(CRecipientFilter *pFilter, int a, const Vector *pOrigin, const Vector *pDir, int c, int d, int e, int f, int g);
+};
+extern CEffectsView *g_10540528;
+
+void sub_101cfa40(const Vector *pOrigin, const Vector *pDir, int bloodColor, int amount)
+{
+	if (sub_101cf9b0(bloodColor)) {
+		CPVSFilter filter(*pOrigin);
+		if (amount >= 0xff)
+			amount = 0xff;
+		g_10540528->v13(&filter, 0, pOrigin, pDir, 0xf7, 0x3f, 0xe, 0xff, amount);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cfd80 size=0x69
 struct TRandom {
 	virtual void v0();
