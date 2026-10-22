@@ -13,7 +13,12 @@ struct CNPC_VSabbatLeaderHint
 class CNPC_VSabbatLeader
 {
 public:
-	char pad0[0xe80];
+	char pad0[0x168];
+	int m_n168;	// +0x168
+	int m_n16c;	// +0x16c
+	char pad170[0x19c - 0x170];
+	unsigned int m_nEffectFlags;	// +0x19c: bit 4 is set by TransformationStart
+	char pad1a0[0xe80 - 0x1a0];
 	int m_nPresence0;	// +0xe80: cleared by UpdatePresenceEffect
 	int m_nPresence1;	// +0xe84
 	int m_nPresence2;	// +0xe88
@@ -21,7 +26,10 @@ public:
 	int m_nState;	// +0xfec
 	char padff0[0x10e4 - 0xff0];
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
-	char pad10e8[0x1b2c - 0x10e8];
+	char pad10e8[0x1568 - 0x10e8];
+	int m_n1568;	// +0x1568
+	int m_n156c;	// +0x156c
+	char pad1570[0x1b2c - 0x1570];
 	int m_n1b2c;	// +0x1b2c
 	const char *m_pszFile1b30;	// +0x1b30: source file stamp
 	int m_nLine1b34;	// +0x1b34: source line stamp
@@ -91,4 +99,8 @@ public:
 	void sub_10269b50(int condition);	// "ClearCondition" (stub 0x10015839)
 	void vfunc448(int a);	// "CNPC_VSabbatLeader::TaskFail" (slot 448 override): scope trace (no entity name); for the failure codes 0xc..0xf counts them at +0x66bc and from the sixth on flips the failure type (sub_103a9d00) and starts schedule 0x161 (line 0x3f4) or 0x160 (line 0x3f9); else CAI_BaseNPCTroika::vfunc448
 	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
+	void vfunc618();	// "CNPC_VSabbatLeader::TransformationStart" (slot 618 override): scope trace (no entity name), the Andrei model through slot 105, sub_10272650(0x113e), bit 4 of +0x19c, +0x168 / +0x16c / +0x1568 / +0x156c cleared, sub_10273070(1), sub_101cf600(this), then CNPC_VVampireBoss::vfunc618
+	void sub_10272650(int a);	// CAI_BaseNPC member (stub 0x100097d2), called with 0x113e
+	void sub_10273070(int a);	// CAI_BaseNPC member (stub 0x1000dc29), called with 1
+	void sub_103c60a0();	// CNPC_VVampireBoss::vfunc618 (stub 0x10014df3), called directly
 };
