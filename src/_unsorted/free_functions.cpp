@@ -34173,6 +34173,33 @@ extern "C" GP *logic_case()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134310 size=0xc2
+#include "CLogicCase.h"
+#include "ScopeTrace.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+void CLogicCase::sub_10134310(inputdata_t *pInput)
+{
+    variant_t &value = pInput->value;
+    const char *pszValue;
+    if (value.fieldType == 2)
+        pszValue = value.iszValue ? value.iszValue : g_106b8540;
+    else
+        pszValue = value.sub_10008805();
+    for (int i = 0; i < 16; i++) {
+        if (m_nCase[i] && !_strcmpi(m_nCase[i], pszValue)) {
+            m_OnCase[i].sub_100cd660(pInput->pActivator, this, 0.0f);
+            return;
+        }
+    }
+    void *pActivator = pInput->pActivator;
+    CVariantCopy copy(*(CVariantCopy *)&value);
+    ((CVariantCopy *)&m_OnDefault)->sub_1000b320(0x12, &copy);
+    m_OnDefault.sub_100cd300(*(CVariantCopy *)&m_OnDefault, pActivator, this, 0.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134420 size=0x9a
 #include "CUnknown101346e0.h"
 #include "COutputEvent.h"
