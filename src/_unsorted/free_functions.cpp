@@ -34204,6 +34204,36 @@ int CUnknown101346e0::sub_101346e0(int steps)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101348a0 size=0xaf
+#include "CLogicCaseToggle.h"
+#include "COutputEvent.h"
+#include "inputdata_t.h"
+__declspec(dllimport) void DevMsg(const char *, ...);
+// TARGET: CLogicCaseToggle::sub_101348a0
+void CLogicCaseToggle::sub_101348a0(inputdata_t *pInput)
+{
+	variant_t *pValue = &pInput->value;
+	int nDelta;
+	if (pValue->fieldType == 4)
+		nDelta = pValue->iValue;
+	else
+		nDelta = 0;
+	if (nDelta == 0)
+		DevMsg("WARNING: logic_case_toggle (%s) called Input ValueDelta with 0 delta.\n", sub_100ab4f0());
+	sub_101346e0(nDelta);
+	COutputEvent *pOutputs = (COutputEvent *)((char *)this + 0x490);
+	if (m_current >= 0 && m_current < 16) {
+		pOutputs[m_current].sub_100cd660(pInput->pActivator, this, 0);
+	} else {
+		void *pActivator = pInput->pActivator;
+		CVariantCopy value(*(CVariantCopy *)pValue);
+		COutputEvent *pExtra = (COutputEvent *)((char *)this + 0x610);
+		((CVariantCopy *)pExtra)->sub_1000b320(0x12, &value);
+		pExtra->sub_100cd300(*(CVariantCopy *)pExtra, pActivator, this, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134980 size=0x7d
 #include "CBaseEntity.h"
 
