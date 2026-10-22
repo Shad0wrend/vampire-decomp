@@ -43573,6 +43573,74 @@ void sub_10199e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019a980 size=0xe8
+#include "CAI_BaseNPCTroika.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct S_Eng {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4)
+    virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+    virtual void b5(); virtual void b6();
+    virtual void s57();
+};
+struct S_Slots {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V10(b7) V10(b8) V10(b9)
+    V10(c0) V10(c1)
+    virtual const Vector *s220();
+};
+struct S_Query {
+    int m_nIndex;
+    int m_nCount;
+    CBaseEntity *m_pList[256];
+    void sub_101cccf0(const Vector *pCenter, float flRadius, int a, int b);
+};
+struct S_Char : CBasePlayer {
+    void sub_1017e150(int a, float b, const char *pszName);
+    void sub_1017e6f0(int a);
+};
+struct S_Ent {
+    char pad0[0x94]; void *m_p94;
+    CAI_BaseNPCTroika *m_pNPC98;
+    char pad9c[0x2e0 - 0x9c]; int m_n2e0;
+};
+struct S_Player { char pad[0xa8]; S_Char *m_pChar; };
+
+extern S_Eng *g_1070ba0c;
+extern "C" __declspec(dllimport) int PyRun_SimpleString(const char *pszCommand);
+CBasePlayer *sub_101193b0();
+int __fastcall sub_101ccd40(int *pQuery);
+
+void sub_1019a980()
+{
+    CBasePlayer *pPlayer = sub_101193b0();
+    if (pPlayer) {
+        S_Char *pChar = ((S_Player *)pPlayer)->m_pChar;
+        if (pChar) {
+            PyRun_SimpleString("G.ClearAll()");
+            pChar->sub_1017df50(0, -1.0f, "CC_GClearAll");
+            pChar->sub_1017e150(0, -1.0f, "CC_GClearAll");
+            pChar->sub_1017e6f0(0);
+            g_1070ba0c->s57();
+            S_Query query;
+            query.sub_101cccf0(((S_Slots *)pChar)->s220(), 64000.0f, 0, 0);
+            S_Ent *pEnt = (S_Ent *)sub_101ccd40((int *)&query);
+            while (pEnt) {
+                if (pEnt->m_n2e0 && pEnt->m_p94) {
+                    CAI_BaseNPCTroika *pNPC = pEnt->m_pNPC98;
+                    if (pNPC) {
+                        pNPC->m_n64bc = 0;
+                        pNPC->sub_102b52a0(1, 1);
+                    }
+                }
+                query.m_nIndex++;
+                pEnt = (S_Ent *)sub_101ccd40((int *)&query);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019b3d0 size=0x9c
 extern "C" int _strcmpi(const char *, const char *);
 extern "C" __declspec(dllimport) int *PyInt_FromLong(long);
