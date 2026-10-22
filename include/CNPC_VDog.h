@@ -24,4 +24,8 @@ public:
 	int sub_1000cc34();	// CAI_BaseNPCTroika::vfunc460 (stub 0x1000cc34), tail called
 	float vfunc516();	// slot 516 (declared as a plain member): the dog's movement speed: the moving state (flag 0x2000 at +0x5d8c) uses |slot 242| times a convar value (at least 1.0f); the flag 0x8000000 at +0x14b8 gives 45.0f; else by the activity (+0xfec) 30.0f, 40.0f, a convar value or 45.0f
 	int vfunc438();	// slot 438 "SelectSchedule": +0x1b2c = 0xd; condition 0x7b (cleared again) gives schedule 0x166; the dog state (+0x5cc0): 1 uses the schedule of the object at +0x6590, else 0x164 without the byte +0x63d9; 1 / 3 give 0x167 while condition 0x7d holds; 2 clears the byte +0x5b80; else CNPC_VAnimal::vfunc438 (0x6b becomes 0x164)
+	void vfunc442(int *pTask);	// slot 442 "StartTask": task 0x36 (move to the enemy's last known position): AutoMovement, resets the motor's look state, looks at the enemy's last known position (queued with weight -2.0f), starts activity 0x4b and completes the movement when slot 251 holds; task 0xbc first asks slot 310 for state 3; every other task goes to CNPC_VAnimal::vfunc442
+	bool sub_10280a50();	// "CAI_BaseNPC::AutoMovement" (stub 0x1000cf6d), called directly
+	void sub_10289ee0(int activity);	// CAI_BaseNPC activity setter (stub 0x10014524), called directly
+	void sub_10273e80(char flag);	// CAI_BaseNPC::sub_10273e80 (stub 0x1000ac68), called directly
 };
