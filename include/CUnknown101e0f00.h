@@ -83,6 +83,7 @@ struct CUnknown101e0f00Entry	// one targeted discipline
 
 	void sub_101e0a00();	// Debug_Display of the entry (stub 0x100100fa)
 	CUnknown101e0f00Entry *sub_101e0520(int id);	// the constructor body (stub of 0x101e0520): constructs the sub objects, stores the id and its bit mask (a DevMsg "Overflowed targeted discipline" and mask 0 from id 30 up)
+	int sub_101e0650(void *pChar);	// stub 0x1000da7b: the cost of the entry for the character (the character's stat 8 / 2 for the dword at +0x10, plus the dword at +0x20)
 };
 
 class CUnknown101e0f00
@@ -112,4 +113,6 @@ public:
 	void sub_101e34c0(void *pSource, void *pTarget, int a, int b);	// like sub_101e3400 but without the dynamic cast: when the entry does not apply and sub_101e22b0 holds, runs sub_101e3be0(pTarget, entry mask)
 	bool sub_101e22b0();	// whether the dword at +0x14 is 1 (stub 0x100087e2)
 	void sub_101e3be0(void *pTarget, unsigned int mask);	// stub 0x10013494
+	void sub_101e2f50(void *pChar, CUnknown101e0f00Entry *pEntry, int nCost);	// stub 0x1000948a: applies the entry to the character after paying nCost of stat 0xc (a user message on failure)
+	void sub_101e2da0(void *pChar, int a, int b);	// finds the entry of the discipline reference (a, b), and applies it (sub_101e2f50) when the character's stat 0xc covers its cost and the stat list 2 value of a does too; else tells the player (message 0x38)
 };
