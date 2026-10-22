@@ -96,3 +96,64 @@ char CNPCMaker_Zombie::vfunc618(char bForce)
 	return sub_1034b580(0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1034d140 size=0x133
+#include "CNPCMaker_Zombie.h"
+#include "CEntityVSlots.h"
+#include "CBaseCombatCharacter.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CNPC_VZombie.h"
+
+struct ZWeapon : CEntityVSlots
+{
+	char m_pad0004[0xa0 - 4];
+	int m_n00a0;
+	char m_pad00a4[0x204 - 0xa4];
+	unsigned int m_flags204;
+};
+
+extern "C" void *__cdecl __RTDynamicCast(void *pObj, long nVfDelta, void *pSrcType, void *pTargetType, int bReference);
+extern char g_10587908[];
+extern char g_1062567c[];
+int sub_101d1280(CBaseEntity *pEnt);
+void sub_101cd940(CBaseEntity *pEnt);
+ZWeapon *sub_10136580(const char *pszName);
+CEntityVSlots *sub_100fbc90(const char *pszName, const float *pOrigin, const float *pAngles, float flTime);
+void __fastcall sub_100fbaf0(CEntityVSlots *pEnt, float flTime);
+
+// TARGET: CNPCMaker_Zombie::vfunc617
+CAI_BaseNPCTroika *CNPCMaker_Zombie::vfunc617(int a)
+{
+	ZWeapon *pWeapon = 0;
+	CAI_BaseNPCTroika *pNPC = sub_1034b7b0(a);
+	if (!pNPC)
+		return 0;
+	if (!((CBaseCombatCharacter *)this)->sub_1032d890("item_w_zombie_fists", 0))
+	{
+		pWeapon = sub_10136580("item_w_zombie_fists");
+		if (!pWeapon)
+		{
+			sub_101cd940((CBaseEntity *)pNPC);
+			return 0;
+		}
+	}
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	CEntityVSlots *pBase = (CEntityVSlots *)pNPC;
+	Vector vec;
+	pWeapon->slot62(&pSelf->slot193(&vec)->x);
+	int n = pWeapon->m_n00a0;
+	pWeapon->m_flags204 |= 0x40000000;
+	sub_101d1280((CBaseEntity *)pWeapon);
+	if (!pWeapon->slot116())
+		pBase->slot383(n, 0);
+	CNPC_VZombie *pZombie = (CNPC_VZombie *)__RTDynamicCast(pNPC, 0, g_10587908, g_1062567c, 0);
+	if (pZombie)
+		pZombie->sub_103e0980(m_n76d0);
+	CEntityVSlots *pEmitter = sub_100fbc90("Zombies_spawning_emitter", &pSelf->slot217()->x, &pSelf->slot219()->x, -1.0f);
+	if (pEmitter)
+		sub_100fbaf0(pEmitter, 15.0f);
+	pBase->slot67();
+	((CNPC_VZombie *)pNPC)->sub_1029f300(0);
+	return pNPC;
+}
+// END FUNCTION
