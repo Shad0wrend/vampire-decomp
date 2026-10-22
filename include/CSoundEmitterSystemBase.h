@@ -21,6 +21,8 @@ struct CSoundParametersInternal
 	CSoundWaveEntry *m_pWaves;	// 0x20
 	char m_pad0024[8];
 	int m_nWaves;	// 0x2c
+	char m_pad0030[0x48 - 0x30];
+	char m_bMissingWave48;	// 0x48: set when one of the waves is not on disk
 };
 
 class CSoundEmitterSystemBase
@@ -65,4 +67,5 @@ public:
 	void sub_101b5180(const char *pszSound, const char *pszScript);	// "CSoundEmitterSystemBase::MoveSound": moves the sound record to another script file of the manifest (both script flags are marked changed); DevWarning for an unknown sound or a script file that is not in the manifest
 	CSoundParametersInternal *sub_101b3730(int index);	// the sound record of the index (stub 0x100130a7 is sub_101b2f60, this one is 0x10007469), null when the index is out of range
 	const char *sub_101b4c90(const CSoundWaveEntry *pWave);	// the wave name of an entry: looks its symbol up in the string table at +0xb0 (stub 0x10008981)
+	int sub_101b4740(bool bVerbose);	// "CheckForMissingWavFiles": counts the sound records whose waves are not on disk ("sound/<name>" without the leading wave characters), flags them (+0x48) and DevMsg's each missing file when bVerbose
 };
