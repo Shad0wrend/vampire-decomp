@@ -20,6 +20,7 @@ public:
 	virtual void vfunc10();
 	void sub_1000168b();	// as in CDataObjectAccessSystem (transplant)
 
+	char m_pad0004[8];
 	CBaseEntity *m_pSuppressHost;	// 0x0c: the prediction system's suppressed host
 	int m_nSuppressCount;	// 0x10: while positive nothing is suppressed
 };
