@@ -37440,6 +37440,70 @@ void CBasePlayerUnit::sub_1015f9e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fbb0 size=0xe0
+#include "CCharacter1015fbb0.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct S_Weapon {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V10(b7) V10(b8) V10(b9)
+    V10(c0) V10(c1) V10(c2) V10(c3) V10(c4) V10(c5) V10(c6) V10(c7)
+    virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+    virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8();
+    virtual int s289();
+    virtual int s290();
+};
+struct S_Char {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V10(b7) V10(b8) V10(b9)
+    V10(c0) V10(c1) V10(c2) V10(c3) V10(c4) V10(c5)
+    virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+    virtual void d5(); virtual void d6(); virtual void d7();
+    virtual void s268(int a, int b, int c, int d);
+    char pad4[0x744 - 4];
+    int m_n744;
+    char pad748[0x1488 - 0x748];
+    int m_n1488;
+    char pad148c[0x14b0 - 0x148c];
+    int m_n14b0;
+    int m_n14b4;
+    int sub_1015fd50();
+    int sub_1015fdc0();
+    S_Weapon *sub_1032e7b0();
+    int sub_1008dc40(int a, int b);
+    void sub_10099360(int a, int b);
+    void sub_10099390(int a, int b);
+};
+
+void CCharacter1015fbb0::sub_1015fbb0(int nAnimation, bool bForce)
+{
+    S_Char *c = (S_Char *)this;
+    c->m_n14b4 = -1;
+    if (!bForce && c->sub_1015fd50() == nAnimation)
+        return;
+    int nSequence = c->sub_1008dc40(nAnimation, -1);
+    if (nSequence < 0)
+        return;
+    if (!bForce && c->sub_1015fdc0() == nSequence)
+        return;
+    c->s268(0, nAnimation, nSequence, 1);
+    c->m_n14b0 = nAnimation;
+    c->m_n744 = c->m_n1488;
+    if (c->sub_1032e7b0()) {
+        S_Weapon *pWeapon = c->sub_1032e7b0();
+        c->m_n14b4 = pWeapon->s289();
+        if (pWeapon->s290() > 1) {
+            if (c->m_n14b4 == -1 && c->m_n14b0 != -1) {
+                c->sub_10099360(0, 0);
+                return;
+            }
+            if (c->m_n14b4 != 0)
+                c->sub_10099390(0, 0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160560 size=0xe0
 #include "CBasePlayer.h"
 #include "CBaseCombatWeapon.h"
