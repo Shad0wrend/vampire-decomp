@@ -30,6 +30,7 @@ public:
 	void sub_1000978c();	// CBreakableProp::vfunc104 (stub of 0x1018fb50), called directly
 	void sub_10213ef0(int index, void *pEvent, CBaseEntity *pOther);	// the impact reaction: when the prop is armed (byte +0x7b8) runs slot 266 on pOther, then damages: with a physics event (pEvent) from pOther (or its owner) at the impact force / position, else from the prop itself with the damage at +0x794 (the damage goes to pOther); takes (index, event, entity)
 	void sub_10214780();	// the activation: drops flag 0x40000, starts the "spin" sequence (a Warning when the model has none), sets the think function and a random next spin time, starts the sound at +0x7cc and, when the ghost (handle at +0x7d0) is gone, creates the ghost particle (name at +0x7c0) attached to the prop
+	void sub_102143e0();	// the think function the activation installs (stub 0x1000c621)
 	int sub_1008f7b0(const char *label);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
 	void sub_10260a50(int nSequence);	// CBaseAnimating::ResetSequence (stub 0x1000d0b2), called directly
 	void sub_10214080(int a);	// stub 0x10002603: takes the value at +0x7cc
