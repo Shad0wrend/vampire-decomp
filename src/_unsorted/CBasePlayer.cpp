@@ -754,6 +754,66 @@ void CBasePlayer::sub_1016af80(void *pCmd, void *pHelper)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016b130 size=0xff
+#include "CBaseEntity.h"
+#include "TestBit.h"
+
+struct S_Plr436
+{
+	char pad0[0x200];
+	int m_n200;
+	char pad1[0x268 - 0x204];
+	unsigned int m_flags268;
+	char pad2[0x3c4 - 0x26c];
+	float m_f3c4;
+	char pad3[0x3e0 - 0x3c8];
+	int m_n3e0;
+	char pad4[0x1ee8 - 0x3e4];
+	float m_f1ee8;
+	char pad5[0x2088 - 0x1eec];
+	unsigned int m_fl2088;
+	unsigned int m_fl208c;
+	char pad6[0x2304 - 0x2090];
+	int m_n2304;
+};
+
+extern char g_1070ba2c;
+
+void CBasePlayer::vfunc436()
+{
+	S_Plr436 *p = (S_Plr436 *)this;
+	if (g_1070ba2c == 0 && p->m_n2304 == 0) {
+		sub_10174c10();
+		sub_10166120();
+		sub_10176520(0.087155745f);
+		vfunc444();
+		sub_1016b270();
+		sub_1016b440();
+		if (p->m_n3e0 == 2)
+			sub_10166500();
+		else if (p->m_n3e0 == 0)
+			((CBaseEntity *)this)->sub_100b3640(4);
+		if (p->m_n200 < 1) {
+			if (p->m_fl2088 & 0x40000)
+				si24();
+			if (p->m_fl2088 & 2)
+				si25();
+			if (p->m_fl208c & 4) {
+				if (sub_100b3700() & 2)
+					((CBaseEntity *)this)->sub_100b3640(2);
+				else
+					((CBaseEntity *)this)->sub_100b3580(2);
+			}
+			if (!(sub_100b3700() & 1)) {
+				if (TestBit(p->m_flags268, 12))
+					((CBaseEntity *)this)->sub_100b1d10();
+				p->m_f1ee8 = -p->m_f3c4;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016eb20 size=0x6f
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
