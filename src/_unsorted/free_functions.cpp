@@ -39159,6 +39159,31 @@ void CUnknown10183100::sub_10183100(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10183470 size=0xe1
+#include "CSingleUserRecipientFilter.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_10726098;
+void *sub_101cda50();
+
+void sub_10183470()
+{
+	if (g_1070b22c->vfunc85() == 2)
+	{
+		void *pPlayer = sub_101cda50();
+		if (pPlayer)
+		{
+			CSingleUserRecipientFilter filter(pPlayer);
+			filter.sub_1019cf50();
+			g_1070b22c->vfunc65(&filter, g_10726098);
+			g_1070b22c->vfunc78(g_1070b22c->vfunc84(1));
+			g_1070b22c->vfunc66();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101835e0 size=0xb5
 #include "CBasePlayer.h"
 struct TraceEntry { const char *a, *b, *c; };
