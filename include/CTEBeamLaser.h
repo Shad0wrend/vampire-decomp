@@ -1,10 +1,12 @@
 // CTEBeamLaser: beam laser temp entity. Declared flat (bases not recovered).
 #pragma once
 
+#include "ServerClass.h"
+
 class CTEBeamLaser
 {
 public:
-	virtual void vfunc0();
+	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual void vfunc1();
 	virtual CTEBeamLaser *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(int a, int b);	// "CTEBeamLaser::Test": fills the fields with test values and fires it to a broadcast recipient filter (the two stack arguments are unused)
