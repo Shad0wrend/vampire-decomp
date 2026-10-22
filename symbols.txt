@@ -4523,6 +4523,7 @@
 0x1001122f func   ?sub_102457d0@CUnknown102457d0@@QAEXH@Z CUnknown102457d0::sub_102457d0
 0x1001123e func   ?sub_100fdcc0@@YIXPADHH@Z sub_100fdcc0
 0x10011243 func   ?sub_100ae090@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100ae090
+0x10011248 func   ?sub_1007cbe0@@YIXPAUCChoreoSaverView@@HPAXHPAUCChoreoChannelView@@@Z sub_1007cbe0
 0x1001127a func   ?sub_10196780@@YAPAXPAUPyObj@@@Z sub_10196780
 0x10011289 func   ?sub_101f6eb0@CVTraitEffect_t@@QAEXXZ CVTraitEffect_t::sub_101f6eb0
 0x10011293 func   ?vfunc546@CNPC_VVentrue@@QAEHH@Z CNPC_VVentrue::vfunc546

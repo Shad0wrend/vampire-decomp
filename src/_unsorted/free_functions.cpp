@@ -11987,6 +11987,35 @@ void sub_1007c4f0(void *pWriter, int nTabs, CUnknown10077430 *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007cbe0 size=0xa2
+struct CChoreoChannelView
+{
+	const char *sub_10073520();
+	int sub_10073540();
+	void *sub_10073560(int index);
+	char sub_100737f0();
+};
+struct CChoreoSaverView
+{
+	void sub_1007c600(void *pBuf, int tabs, void *pEvent, int a);
+};
+void sub_1007bf70(void *pBuf, int tabs, const char *pszFormat, ...);
+// TARGET: sub_1007cbe0
+void __fastcall sub_1007cbe0(CChoreoSaverView *pThis, int unused, void *pBuf, int tabs, CChoreoChannelView *pChannel)
+{
+	sub_1007bf70(pBuf, tabs, "channel \"%s\"\n", pChannel->sub_10073520());
+	sub_1007bf70(pBuf, tabs, "{\n");
+	for (int i = 0; i < pChannel->sub_10073540(); i++) {
+		void *pEvent = pChannel->sub_10073560(i);
+		if (pEvent)
+			pThis->sub_1007c600(pBuf, tabs + 1, pEvent, 0);
+	}
+	if (!pChannel->sub_100737f0())
+		sub_1007bf70(pBuf, tabs + 1, "active \"0\"\n");
+	sub_1007bf70(pBuf, tabs, "}\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ce20 size=0x65
 #include "CUnknown1007ce20.h"
 
