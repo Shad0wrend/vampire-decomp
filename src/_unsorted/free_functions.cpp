@@ -62527,6 +62527,38 @@ void __fastcall sub_102180a0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102189e0 size=0x14d
+#include "CBaseEntity.h"
+#include "CPropHacking.h"
+#include "CEntityMessageFilter.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: CPropHacking::sub_102189e0
+void CPropHacking::sub_102189e0(const char *pszText)
+{
+	CEntityMessageFilter filter;
+	int pEdict = m_pEdict2e0;
+	filter.sub_1019d2f0(g_1070b22c->vfunc35(pEdict));
+	filter.sub_1019cf50();
+	int nChunk;
+	int nLength = strlen(pszText);
+	for (int nOffset = 0; nOffset < nLength; nOffset += nChunk) {
+		char szChunk[251];
+		nChunk = (nLength - nOffset > 250) ? 250 : nLength - nOffset;
+		memcpy(szChunk, pszText + nOffset, nChunk);
+		szChunk[nChunk] = 0;
+		g_1070b22c->vfunc65(&filter, 0);
+		g_1070b22c->vfunc67(2);
+		g_1070b22c->vfunc78(szChunk);
+		g_1070b22c->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218ec0 size=0xed
 #include "CUnknown10217f50.h"
 #include "CEntityMessageFilter.h"
