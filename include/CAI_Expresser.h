@@ -38,16 +38,16 @@ struct CAI_ExpresserSub	// 0x1c byte member at +0x30
 	CAI_ExpresserSub() { sub_10311490(); }
 };
 
-struct CAI_ExpresserSink	// the object at +0x10, only its slot 3 is known
+struct CAI_ExpresserSink	// the object at +0x10, only its slots 0 / 1 (boolean answers) and 3 are known
 {
-	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3();
+	virtual bool vfunc0(); virtual bool vfunc1(); virtual void vfunc2(); virtual void vfunc3();
 };
 
 struct CAI_ExpresserTail	// the members at +0x4c .. +0x6f
 {
 	float m_n4c;
 	int m_n50;
-	char m_pad54[0x64 - 0x54];
+	char m_pad54[0x64 - 0x54];	// the sentence name text
 	int m_n64;
 	char m_b68;
 	int m_n6c;
@@ -73,4 +73,9 @@ public:
 	}
 
 	void sub_103121a0(float a, float b);	// (0x103121a0)
+	void sub_10312b50();	// the per-think step of a running sentence: with a sentence number (+0x64) set, a finished one (sub_10312230) asks the sink (slot 0) and, when it answers, ends it (sub_10312c20(0)); a running one with the flag (+0x68) asks slot 1 and ends it (sub_10312c50); otherwise the next sentence of the series (name + number) is started (sub_10311f50) and, when it cannot be, the state is cleared (sub_10312b20)
+	bool sub_10312230();	// whether the time at +0x4c lies in the future (stub 0x10006767)
+	void sub_10312c50();	// stub 0x1000be51
+	void sub_10312c20(int a);	// stub 0x10004502
+	int sub_10311f50(const char *pszName, int a, float flVolume, int nSoundLevel, int b);	// starts the named sentence, -1 when it cannot (stub 0x10005745)
 };
