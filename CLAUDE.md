@@ -186,3 +186,46 @@ CBaseEntity::WorldSpaceCenter (CCollisionProperty's OBBCenter / CollisionToWorld
 CPhysicsSpring::Spawn; Sonnet workers with this header then also matched 0x101128d0 and 0x1030f7b0
 (experiment 2026-10-21-x87-vector: marked x87 functions 6/18 -> 14/18). Not solved yet: a 2D normalise whose squares the game sums x first (0x102ed820: VC6 gives y
 first for every form tried) and the VMatrix / VPlane layer (0x1024cdb0, 0x101382f0).
+
+## Source recipient filters (CRecipientFilter and friends): write the Source code, never the teardown
+
+Recognise it by `call 0x100035d5` (the CRecipientFilter constructor, 0x1019ce00) on a 0x2c-byte stack object, then
+one or two vtable stores and a call, and at the end of the scope the recipient vector's teardown: `mov reg, dword
+ptr [_imp__Plat_Free]`, the size (+0x14) zeroed, two `cmp ..., -1` / `call reg` purges, sometimes a loop calling
+stub 0x10013e12 (CUtlMemory<int>::Base) per element first, or `call 0x100047aa` (CUtlVector<int>::RemoveAll) and
+`call 0x10007275` (CUtlMemory<int>::Purge) instead of the first purge.
+
+The headers hold Source's classes (recipientfilter.h, 2004 public SDK form) on a real CUtlVector<int>
+(include/utlvector.h): declare the filter and let it go out of scope. Which of the teardown forms you get is VC6's
+inlining choice (deeper classes and bigger functions inline less), and it comes out right by itself when the class
+and the rest of the function are right. Never write the teardown, a vtable store, a `char buf[0x2c]` or a copy of
+the vector by hand (the old CRecipientVec / Purger views are only for matched code).
+
+| the game's code after `call 0x100035d5` | write |
+|---|---|
+| vptr 0x1044ba34, AddAllPlayers (0x1000d9f9) | `CBroadcastRecipientFilter filter;` |
+| ... then vptr 0x10462828, MakeReliable (0x1001186f) | `CReliableBroadcastFilter filter;` (= CRelieableBroadcastRecipientFilter) |
+| vptr 0x104540e8, AddRecipient (0x1001531b) | `CSingleUserRecipientFilter filter(pPlayer);` |
+| ... then vptr 0x10454688, MakeReliable | `CReliableSingleUserRecipientFilter filter(pPlayer);` |
+| vptr 0x10455e54, AddRecipientsByPVS (0x100043db) | `CPVSFilter filter(vecOrigin);` |
+| vptr 0x104470dc, AddRecipientsByPAS (0x10004caa) | `CPASFilter filter(vecOrigin);` |
+| ... then vptr 0x104470b0, Filter (0x1000dfa3) | `CPASAttenuationFilter filter(this);` / `(this, ATTN_NONE)` / `(this, soundlevel)` / `(vecOrigin, 0.8f)` |
+| vptr 0x1045ffec, AddAllPlayers | `CEntityMessageFilter filter;` |
+| no vtable store, AddAllPlayers | `CRecipientFilter filter; filter.AddAllPlayers();` |
+
+- **CPASAttenuationFilter(entity, ...)** calls GetSoundEmissionOrigin (slot 222, +0x378, a Vector by value: a hidden
+  result pointer) twice: once before the CRecipientFilter constructor (the CPASFilter base) and once for Filter. The
+  entity may be any class that declares `virtual Vector GetSoundEmissionOrigin();` in slot 222: cast `this` to
+  `CEntitySoundOriginView *` when the class's own header does not. The float pushed for Filter tells the form: 0.8f
+  (or nothing) = `filter(this)`, 0 = `filter(this, ATTN_NONE)`, an `idiv` of 20 by (soundlevel - 50) else the double 4.0
+  = `filter(this, soundlevel)` with a `soundlevel_t` argument (SNDLVL_TO_ATTN, CPASAttenuationFilter.h).
+- **Calls after the constructor**: Source's names are declared and known to the symbol map: `filter.MakeReliable()`,
+  `filter.UsePredictionRules()` (0x10005ce0), `filter.AddRecipient(pPlayer)`, `filter.AddAllPlayers()`, `Reset()`,
+  `Filter(origin, attenuation)`. The old sub_ names (sub_1019cf50, sub_1019d3d0, ...) are the same functions.
+- **Pass the filter** to the engine (g_1070b22c slot 65 UserMessageBegin, g_1070b248 sound slots) as `&filter`. An
+  argument that the game loads before the filter's construction is a local declared before it, e.g.
+  `int edict = m_pEdict2e0;` then the call (0x103e7680: score 11 without the local, 0 with it).
+
+Matched this way on the bench copy (2026-10-22): 0x10143630, 0x101c75a0 (CReliableBroadcastFilter: the Base()
+loop came by itself), 0x103e7680 (CPASAttenuationFilter(this, ATTN_NONE)), and three matched functions rewritten from
+hand-made views into this form (0x101f5b60, 0x1020c890, 0x103e2d10).
