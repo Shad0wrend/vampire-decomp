@@ -34301,6 +34301,38 @@ int CUnknown101346e0::sub_101346e0(int steps)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134780 size=0xd2
+#include "CUnknown101346e0.h"
+#include "COutputEvent.h"
+#include "inputdata_t.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+// TARGET: CUnknown101346e0::sub_10134780
+void CUnknown101346e0::sub_10134780(inputdata_t *pInput)
+{
+	variant_t *pValue = &pInput->value;
+	const char *pszValue;
+	if (pValue->fieldType == 2)
+		pszValue = pValue->iszValue ? pValue->iszValue : g_106b8540;
+	else
+		pszValue = pValue->sub_10008805();
+	COutputEvent *pOutputs = (COutputEvent *)((char *)this + 0x490);
+	for (int i = 0; i < 16; i++) {
+		if (m_slots[i] && !_strcmpi((const char *)m_slots[i], pszValue)) {
+			m_current = i;
+			pOutputs[i].sub_100cd660(pInput->pActivator, this, 0);
+			return;
+		}
+	}
+	m_current = -1;
+	void *pActivator = pInput->pActivator;
+	CVariantCopy value(*(CVariantCopy *)pValue);
+	COutputEvent *pExtra = (COutputEvent *)((char *)this + 0x610);
+	((CVariantCopy *)pExtra)->sub_1000b320(0x12, &value);
+	pExtra->sub_100cd300(*(CVariantCopy *)pExtra, pActivator, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101348a0 size=0xaf
 #include "CLogicCaseToggle.h"
 #include "COutputEvent.h"
