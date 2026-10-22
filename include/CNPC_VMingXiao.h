@@ -13,6 +13,11 @@ public:
 	virtual void vfunc123();	// DrawDebugTextOverlays-like: with bit 29 of the overlay flags (+0x224) set, dispatches four red markers (sub_10144a30) along x = 100, 150, 200, 300 at the entity's origin (slot 220); then the Troika base
 	virtual void vfunc144(int a);	// slot 144 "Event_Killed"-like: while the byte at +0x6744 is clear sets +0x200 = 1 and runs sub_10395c70; else tells the owner entity (handle +0x6670) sub_10397a50(this), runs sub_10397e90 / sub_10397f00 when the global 0x1093b9b4 is not (slot 1) and has +0x2c set and sub_10398870 is clear; then the Troika base
 	virtual void vfunc465(int act);	// slot 465 "CNPC_VMingXiao::SetActivity"-like: sets the playback rate (sub_1008d230) from the tuning block of the global 0x10739d08 for the activities 9 / 0x13 (the tentacle ones), 0x4b and the rest (scaled by 6 - the count at +0x670c and clamped from below while the target is not held), then sub_1039ab30 (tentacle or 0x1132) or sub_1039aca0, then the Troika base
+	virtual void vfunc259(int *pEvent);	// slot 259 "HandleAnimEvent": event 0x7f8 (pickup) needs the mode at +0x673c to be 2 (sub_10398db0, else a warning), 0x802 / 0x803 do nothing, 0x834 / 0x835 spawn the debug marker at the origin (slot 220 with 5.0f, 0.6f, 0.2f, 512.0f or 15.0f, 1.0f, 1.5f, 1024.0f), 0xbbd (weapon throw) needs the mode 4 (sub_103990c0, else a warning), 0xbd7 starts the \"Ming_xiao_vomit_emitter\" at the \"Bip01 MouthRoot\" attachment (sub_102c42a0) and goes on to the Troika base like every other event
+	void sub_1029b290(int *pEvent);	// CAI_BaseNPCTroika::vfunc259, called directly (stub 0x100146e1)
+	void sub_10398db0();	// stub 0x1000ea8e: the pickup event of the grabbing mode
+	void sub_103990c0();	// stub 0x10008d69: the throw event of the throwing mode
+	void sub_102c42a0(const char *pszEmitter, CBaseEntity *pParent, const char *pszAttachment, int a);	// stub 0x1000c392: starts a particle emitter on an attachment
 	void sub_102bf340(int a);	// CAI_BaseNPCTroika::vfunc144, called directly (stub 0x1000a62d)
 	void sub_10295a60(int act);	// CAI_BaseNPCTroika::vfunc465, called directly (stub 0x100088aa)
 	void sub_1008d230(float flRate);	// CBaseAnimating::sub_1008d230 (stub 0x10012080): the playback rate
@@ -80,6 +85,8 @@ public:
 	float m_flSlotValue[6];	// +0x66dc
 	float m_flSlotTimeB[6];	// +0x66f4
 	int m_n670c;	// +0x670c: the count the delay is scaled by (6 - count)
-	char m_pad6710[0x6744 - 0x6710];
+	char m_pad6710[0x673c - 0x6710];
+	int m_nMode673c;	// +0x673c: the grabbing (2) / throwing (4) mode
+	char m_pad6740[0x6744 - 0x6740];
 	char m_bActive6744;	// +0x6744
 };
