@@ -17,6 +17,7 @@ public:
 	virtual void vfunc16();	// "CMultiplayRules::Think"-like: the base think, then: with the flag byte at 0x1070ba2c set, once the time at +0x8 has passed (and the byte at +0xc is set or 120 more seconds passed) slot 79; otherwise the time limit (60 times the value of the cvar at 0x1070ae7c) or the frag limit (the cvar at 0x1070aa8c, compared with the frags at +0x22bc of every player) ends the game through slot 80
 	virtual char vfunc19(CBaseEntity *pPlayer, CBaseEntity *pWeapon);	// "FShouldSwitchWeapon": the player can switch to the weapon (CanSwitchTo, team test) and it outweighs the active weapon (slot 345), true without an active weapon
 	virtual CBaseEntity *vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurrentWeapon);	// "GetNextBestWeapon": over the player's 0xe0 weapon slots, the first owned weapon that has the same weight as pCurrentWeapon and is usable, else the usable one with the highest weight above the weight of the best so far; null when pCurrentWeapon cannot be switched from
+	virtual void vfunc27(void *pPlayer);	// "ClientPutInServer": announces "<name> has joined the game" (the name or "unconnected") to everybody, logs "<name><userid>" has entered the game, slot 29(pPlayer), sub_101427f0(the player's edict index) and, in a multiplayer game, sends the user message 0x1a to the player alone
 	virtual void vfunc28(void *pEdict);	// "ClientDisconnected": the player behind the edict fires game_playerleave, logs "<name><userid>" disconnected and is removed (slot 442(1)); clears the byte at +0x22dc
 	virtual void vfunc29(void *pPlayer);	// sends the user message of the global at 0x10726038 to the player alone: a byte 0, then the message end
 	virtual float vfunc30(int a);
@@ -39,4 +40,5 @@ public:
 	void sub_1000fcbd();	// CMultiplayRules::vfunc15, called directly
 	CBaseEntity *sub_10141b10(CBaseEntity *pAttacker, CBaseEntity *pInflictor);	// the entity that scores for a kill: the attacker when it is a player (slot 138 == 1), else its scorer interface's answer, else the inflictor's (stub 0x100073b0)
 	void sub_10128f50();	// CGameRules::vfunc16 (stub 0x10013976), called directly
+	void sub_101427f0(int nEdict);	// stub 0x1000d2d8: tells the rules about the new player's edict index
 };
