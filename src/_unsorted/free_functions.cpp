@@ -24911,6 +24911,55 @@ int sub_100d9c50(const char *pszLine, char *pszOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100da040 size=0x10f
+#include "CVStatList_t.h"
+#include "CUnknown10203240.h"
+#include "ConVar.h"
+#include "IVEngineServer.h"
+
+struct PlayerView { char m_pad[0xa8]; void *m_pCharacter; };
+struct StatOwner { void sub_10207c70(void *pCharacter, int a); };
+struct FlagInterface
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20();
+	virtual bool vfunc21();
+};
+extern "C" int atoi(const char *);
+extern IVEngineServer *g_1070b22c;
+extern FlagInterface *g_1070ba0c;
+extern CUnknown10203240 g_1074e968;
+extern StatOwner g_1074f028;
+extern ConVar g_10725d98;
+PlayerView *sub_101193b0();
+
+// TARGET: sub_100da040
+void sub_100da040()
+{
+	PlayerView *pPlayer = sub_101193b0();
+	if (!pPlayer)
+		return;
+	void *pCharacter = pPlayer->m_pCharacter;
+	if (!pCharacter)
+		return;
+	if (g_1070b22c->vfunc85() < 2)
+		return;
+	const char *pszArg = (const char *)g_1070b22c->vfunc84(1);
+	int nGender = g_1074e968.sub_10203240("Gender")->sub_10202a50(pszArg);
+	if (nGender == -1)
+		nGender = atoi(pszArg);
+	if (nGender < 0 || nGender >= 2)
+		return;
+	CVStatListSet::Of(pCharacter)->Find(0)->sub_102008e0(0xb, nGender);
+	g_1074f028.sub_10207c70(pCharacter, 1);
+	if (!g_1070ba0c->vfunc21())
+		g_10725d98.sub_10246160(nGender);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dac20 size=0x74
 #include "CGlobalEntityList.h"
 
