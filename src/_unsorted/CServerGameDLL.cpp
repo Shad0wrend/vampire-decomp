@@ -1,6 +1,42 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1011a330 size=0x8e
+#include "CServerGameDLL.h"
+
+struct IFile101c4580;
+bool __fastcall sub_101c4580(void *p, int a, IFile101c4580 *pFile, const char *pszName);
+
+#define SRV(n) virtual void s##n();
+struct ISaveRestoreBlockSetX
+{
+	SRV(0) SRV(1) SRV(2) SRV(3) SRV(4) SRV(5) SRV(6) SRV(7) SRV(8) SRV(9)
+	virtual void vfunc10(void *pHandler);	// AddBlockHandler
+};
+extern ISaveRestoreBlockSetX *g_10592db0;
+extern IFile101c4580 *g_1070b238;
+extern char g_1072cdf8[];
+
+void *sub_1019b360();
+void *sub_1030c390();
+void *sub_10045700();
+void *sub_100cffa0();
+void *sub_101a3b00();
+void sub_1042c5b0();
+
+// TARGET: CServerGameDLL::vfunc8
+void CServerGameDLL::vfunc8()
+{
+	g_10592db0->vfunc10(sub_1019b360());
+	g_10592db0->vfunc10(sub_1030c390());
+	g_10592db0->vfunc10(sub_10045700());
+	g_10592db0->vfunc10(sub_100cffa0());
+	g_10592db0->vfunc10(sub_101a3b00());
+	sub_101c4580(g_1072cdf8, (int)g_1070b238, g_1070b238, "stats.txt");
+	sub_1042c5b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011aaf0 size=0x91
 #include "CServerGameDLL.h"
 #include "CGlobalEntityList.h"
