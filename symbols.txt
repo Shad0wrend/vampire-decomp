@@ -3055,6 +3055,7 @@
 0x1000c248 func   ?sub_1021e6c0@@YIXPAUMem@@HH@Z sub_1021e6c0
 0x1000c266 func   ?vfunc320@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc320
 0x1000c26b func   ?sub_103d0db0@CNPC_VWerewolf@@QAEHUCNPC_VWerewolfVec3@@0@Z CNPC_VWerewolf::sub_103d0db0
+0x1000c27f func   ?vfunc315@CElderVitaePack@@QAEDXZ CElderVitaePack::vfunc315
 0x1000c2ac func   ?sub_1007ee40@@YIXPAH@Z sub_1007ee40
 0x1000c2b1 func   ?sub_1013b4d0@@YAXABVVector@@00H@Z sub_1013b4d0
 0x1000c2bb func   ?sub_10232520@@YIXPAHHH@Z sub_10232520
