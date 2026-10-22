@@ -10723,6 +10723,46 @@ void CUnknown10077730::sub_10075ce0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075d00 size=0xe0
+#include "CUnknown10075aa0.h"
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) char *Q_strncat(char *pDest, const char *pSrc, int maxLen, int max_chars_to_copy);
+int __fastcall sub_10076690(CUnknown10075aa0 *p);
+const char *sub_10076990(int type);
+int __fastcall sub_10075c00(CUnknown10075aa0 *p);
+int __fastcall sub_10073520(void *p);
+int __fastcall sub_10072d90(void *p);
+extern char g_106c8418[256];
+
+namespace block_10075d00 {
+char *__fastcall sub_10075c50(CUnknown10075aa0 *p) { return (char *)p + 0x84; }
+char *__fastcall sub_10075ca0(CUnknown10075aa0 *p) { return (char *)p + 0x104; }
+int __fastcall sub_10075b70(CUnknown10075aa0 *p) { return p->m_i00; }
+}
+using namespace block_10075d00;
+
+// TARGET: sub_10075d00
+const char *__fastcall sub_10075d00(CUnknown10075aa0 *p)
+{
+	g_106c8418[0] = 0;
+	if (!sub_10076690(p))
+	{
+		Q_snprintf(g_106c8418, 256, "global %s", &p->m_b04);
+	}
+	else
+	{
+		Q_snprintf(g_106c8418, 256, "%s : %s : %s -- %s \"%s\"", sub_10072d90((void *)p->m_i2b4), sub_10073520((void *)p->m_i2b8), sub_10075c00(p), sub_10076990(sub_10075b70(p)), sub_10075c50(p));
+		if (sub_10075b70(p) == 2)
+		{
+			char tmp[256];
+			Q_snprintf(tmp, 256, " \"%s\"", sub_10075ca0(p));
+			Q_strncat(g_106c8418, tmp, 256, -1);
+		}
+	}
+	return g_106c8418;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076670 size=0xd
 void CUnknown10076670::sub_10076670(int value)
 {

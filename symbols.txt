@@ -1881,6 +1881,7 @@
 0x10007cbb func   ?sub_103aabc0@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103aabc0
 0x10007cde func   _player player
 0x10007cfc func   ?sub_101388c0@@YAHH@Z sub_101388c0
+0x10007d01 func   ?sub_10075d00@@YIPBDPAVCUnknown10075aa0@@@Z sub_10075d00
 0x10007d15 func   ?sub_101c5460@CBaseTrigger@@QAE_NPAVCBaseEntity@@@Z CBaseTrigger::sub_101c5460
 0x10007d24 func   ?sub_10073260@S10073260@@QAEXPBD@Z S10073260::sub_10073260
 0x10007d33 func   ?vfunc5@CNPC_VVampire@@QAEPAV1@I@Z CNPC_VVampire::vfunc5
