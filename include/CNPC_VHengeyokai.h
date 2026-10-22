@@ -109,4 +109,8 @@ public:
 	void sub_10381ba0(int a);	// stub 0x10014c63, called directly
 	void sub_102c43b0(float f);	// stub 0x10013110, called directly
 	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
+	void vfunc432(int a);	// slot 432 "RunAI" (plain member): finds the target (sub_10380fc0 also gives its state), reacts to it (sub_103816e0 / sub_10381460), then CNPC_VHuman::vfunc432 and, with the debug convar set, sub_103830e0 and the convar reset
+	void *sub_10380fc0(int *pState);	// stub 0x10011a86: finds a target, its state goes to *pState
+	void sub_10381460(void *pTarget);	// stub 0x10002162
+	void sub_10385a10(int a);	// CNPC_VHuman::vfunc432 (stub 0x1000698d), called directly
 };
