@@ -77884,6 +77884,34 @@ char CUnknown102ee270::sub_102ee270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee430 size=0x8d
+#include "CAI_Navigator.h"
+#include "CBaseAnimating.h"
+
+const char *sub_1025d730(int activity);
+void sub_1027e590(CBaseEntity *pEnt, const char *pszFormat, ...);
+
+int CAI_Navigator::sub_102ee430()
+{
+	int sequence = m_p30->sub_1030b580();
+	if (sequence == -1)
+	{
+		CAI_BaseNPC *pOuter = (CAI_BaseNPC *)m_pOuter;
+		sequence = pOuter->sub_1008dc40(pOuter->sub_10271ff0(m_p30->sub_1030b520(), 0), sequence);
+		if (sequence == -1)
+		{
+			CAI_NavRoute *pRoute = m_p30;
+			CBaseEntity *pEnt = (CBaseEntity *)m_pOuter;
+			sub_1027e590(pEnt, "No appropriate sequence for arrival activity %s (%d)\n", sub_1025d730(pRoute->sub_1030b520()), pRoute->sub_1030b520());
+			pOuter = (CAI_BaseNPC *)m_pOuter;
+			sequence = pOuter->sub_1008dc40(pOuter->sub_10271ff0(1, 0), -1);
+		}
+		m_p30->sub_1030b5b0(sequence);
+	}
+	return sequence;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee4f0 size=0x8
 struct CInner100016b3 { void sub_100016b3(); };
 struct CUnknown102ee4f0 { char pad[0x30]; CInner100016b3 *m_pInner; void sub_102ee4f0(); };
