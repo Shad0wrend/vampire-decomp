@@ -51497,6 +51497,57 @@ bool CUnknown101ddc30::sub_101ddc30(CUnknown101ddc30Kv *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ddcd0 size=0xab
+#include "CVTriggerCasting_t.h"
+#include "CUnknown101e0f00.h"
+
+extern CUnknown101e0f00 g_10739a4c;
+__declspec(dllimport) void __cdecl DevMsg(const char *pszFormat, ...);
+
+struct CCasterView
+{
+	int sub_1033d460(int a);
+};
+
+void CVTriggerCasting_t::sub_101ddcd0(void *pFirst, void *pSecond, int a)
+{
+	if (!pFirst || !pSecond || !m_pszDiscipline)
+		return;
+	void *pSrc;
+	void *pDst;
+	switch (m_nSrcType)
+	{
+	case 0:
+		pSrc = pSecond;
+		break;
+	case 1:
+		pSrc = pFirst;
+		break;
+	default:
+		DevMsg("ERROR: CVTriggerCasting_t SrcType Error!\n");
+		return;
+	}
+	switch (m_nDstType)
+	{
+	case 0:
+		pDst = pSecond;
+		break;
+	case 1:
+		pDst = pFirst;
+		break;
+	default:
+		DevMsg("ERROR: CVTriggerCasting_t SrcType Error!\n");
+		return;
+	}
+	int index = g_10739a4c.sub_101e12f0(m_pszDiscipline);
+	if (index != -1)
+	{
+		unsigned int mask = g_10739a4c.sub_101e11c0(index)->m_nMask;
+		g_10739a4c.sub_101e33c0(pSrc, pDst, mask, ((CCasterView *)pSecond)->sub_1033d460(a));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dddb0 size=0xc7
 #include "CUnknown101dddb0.h"
 extern "C" __declspec(dllimport) int Q_snprintf(char *dest, int maxLen, const char *fmt, ...);

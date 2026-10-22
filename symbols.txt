@@ -2196,6 +2196,7 @@
 0x100091ab func   _logic_timer logic_timer
 0x100091b0 func   ?vfunc78@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc78
 0x100091b5 func   ?sub_10428160@@YAHHHHHH@Z sub_10428160
+0x100091d8 func   ?sub_101ddcd0@CVTriggerCasting_t@@QAEXPAX0H@Z CVTriggerCasting_t::sub_101ddcd0
 0x100091dd func   ?sub_10335f60@@YI_NPADHHH@Z sub_10335f60
 0x100091e2 func   ?vfunc31@CRestore@@UAEHPAHHH@Z CRestore::vfunc31
 0x100091ec func   ?sub_10312580@CUnknown10312580@@QAEMH@Z CUnknown10312580::sub_10312580
