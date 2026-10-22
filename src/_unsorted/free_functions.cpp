@@ -44423,6 +44423,36 @@ bool __stdcall sub_1019e740(EntVt *pEnt, int attachment, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019ebc0 size=0x161
+#include "CRopeKeyframe.h"
+#include "CEntityMessageFilter.h"
+#include "CUnknown1070b22c.h"
+#include "CEHandleGet.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long nVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+extern char g_10538764[];
+extern char g_1059290c[];
+static __inline int ENTINDEX(int pEdict)
+{
+	return g_1070b22c->vfunc35(pEdict);
+}
+// TARGET: CRopeKeyframe::sub_1019ebc0
+void CRopeKeyframe::sub_1019ebc0(int a, int b, CRopeKeyframe *pStop, int x, int y, int z)
+{
+	CEntityMessageFilter filter;
+	filter.sub_1019d2f0(ENTINDEX(m_pEdict2e0));
+	filter.sub_1019cf50();
+	g_1070b22c->vfunc65(&filter, 0);
+	g_1070b22c->vfunc72(x);
+	g_1070b22c->vfunc72(y);
+	g_1070b22c->vfunc72(z);
+	g_1070b22c->vfunc66();
+	CRopeKeyframe *pNext = (CRopeKeyframe *)__RTDynamicCast(EHandle_Get(m_hEndPoint), 0, g_10538764, g_1059290c, 0);
+	if (pNext && pNext != pStop)
+		pNext->sub_1000a84e(a, b, pStop, x, y, z);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019ee40 size=0x113
 #include "CBaseEntity.h"
 #include "CRopeKeyframe.h"
