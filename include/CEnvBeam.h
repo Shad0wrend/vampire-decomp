@@ -14,14 +14,22 @@ public:
 	void sub_10015749();	// CBeam::vfunc104 (stub 0x10015749), called directly
 	void sub_100fef50();	// "CEnvBeam::TurnOn": sets the active flag (+0x4f4); a lasting beam (life +0x500 is 0, spawn flag 8 clear) is shown (effect bit 6 cleared), relinked between its ends (CBeam::sub_100bbe70) and thinks BeamUpdateThink, else it thinks TriggerThink
 	void vfunc103();	// slot 103 "CEnvBeam::Spawn": without a sprite name (+0x518) the entity removes itself (think 0x10015b68), else CBeam::vfunc103 (stub 0x1001553c), the widths (+0x4b8 / +0x4bc) from the bolt width (+0x504), the beam thinks BeamUpdateThink / TriggerThink according to its life (+0x500) and spawn flags, and the start position (+0x4e8) is taken from slot 217 unless the byte at +0x5a8 is set
+	void sub_100ff090();	// "CEnvBeam::TriggerThink"-like: schedules the next think (the restrike time at +0x510, random in 0..restrike with spawn flag 4, from now, plus the life) when the life is set, marks the beam active, then strikes: with an end entity name (+0x4fc) through sub_100ff310, without a start name (+0x4f8) through sub_101001e0, else at the origin of the entity of that name (sub_100bbdf0) or DevMsg "env_beam: unknown entity"
+	CBaseEntity *sub_100bbdf0(const char *pszName);	// finds the entity of that name (stub 0x10006faf)
+	void sub_100ff310();	// stub 0x10009877
+	void sub_101001e0();	// stub 0x100118ec
+	void sub_10100860(const float *pPos);	// stub 0x100078ab: strikes between this beam and the position
 
 	char m_pad04e4[4];
 	float m_vecSavedPos[3];	// 0x4e8
 	int m_nActive;	// 0x4f4
-	char m_pad04f8[0x500 - 0x4f8];
+	const char *m_iszStartEntity;	// 0x4f8
+	int m_iszEndEntity;	// 0x4fc
 	float m_flLife;	// 0x500
 	int m_nBoltWidth;	// 0x504
-	char m_pad0508[0x518 - 0x508];
+	char m_pad0508[0x510 - 0x508];
+	float m_flRestrike;	// 0x510
+	char m_pad0514[0x518 - 0x514];
 	const char *m_iszSpriteName;	// 0x518
 	char m_pad051c[0x5a8 - 0x51c];
 	char m_bFlag5a8;	// 0x5a8
