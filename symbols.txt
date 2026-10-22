@@ -4301,6 +4301,7 @@
 0x1001087f func   ?sub_1009bef0@CBaseEntity@@QAEXHHUCBaseEntityColor32@@@Z CBaseEntity::sub_1009bef0
 0x10010889 func   ?vfunc319@CWeaponGravityGun@@UAEXXZ CWeaponGravityGun::vfunc319
 0x1001088e func   ?vfunc546@CNPC_VSheriffMan@@QAEHH@Z CNPC_VSheriffMan::vfunc546
+0x1001089d func   ?vfunc299@CBaseCombatWeapon@@UAEXPBM@Z CBaseCombatWeapon::vfunc299
 0x100108a7 func   ?vfunc546@CNPC_VChangBrosBlade@@QAEHH@Z CNPC_VChangBrosBlade::vfunc546
 0x100108ac func   ?sub_100c77d0@@YAHPAUStudioHdr@@HH@Z sub_100c77d0
 0x100108b1 func   ?sub_10049da0@@YIXPAUMem@@HH@Z sub_10049da0

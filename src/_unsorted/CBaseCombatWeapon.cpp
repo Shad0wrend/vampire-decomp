@@ -350,6 +350,80 @@ void CBaseCombatWeapon::vfunc310(float time)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252a90 size=0x121
+#include "CBaseCombatWeapon.h"
+#include "CWeaponOwner.h"
+
+#define KV(n) virtual void vfunc##n();
+#define KV10(p) KV(p##0) KV(p##1) KV(p##2) KV(p##3) KV(p##4) KV(p##5) KV(p##6) KV(p##7) KV(p##8) KV(p##9)
+struct CWeaponSlots
+{
+	KV10(0) KV10(1) KV10(2) KV10(3) KV10(4) KV10(5) KV10(6) KV10(7) KV10(8)
+	KV(90) KV(91) KV(92)
+	virtual void vfunc93(int moveType, int moveCollide);
+	KV(94) KV(95) KV(96) KV(97) KV(98) KV(99)
+	KV10(10) KV10(11) KV10(12) KV10(13) KV10(14) KV10(15) KV10(16) KV10(17) KV10(18) KV10(19)
+	KV(200) KV(201)
+	virtual void vfunc202(int a);
+	KV(203) KV(204) KV(205) KV(206) KV(207)
+	virtual void vfunc208(int a);
+};
+
+struct CWeaponPhysObject
+{
+	KV10(0) KV10(1) KV10(2) KV10(3)
+	KV(40)
+	virtual void vfunc41(const float *pVelocity, const float *pAngularVelocity);
+};
+
+struct CGlobalVarsX
+{
+	char m_pad0000[0xc];
+	float curtime;	// 0x0c
+};
+
+struct CTraitTable
+{
+	void sub_101f9a40(void *pCharacter, int n);	// stub 0x1000914c
+};
+
+extern CTraitTable g_1074df78;
+extern CGlobalVarsX *g_1070b228;
+void sub_100fbd50(CBaseCombatWeapon *pWeapon);
+void sub_10258870();
+
+// TARGET: CBaseCombatWeapon::vfunc299
+void CBaseCombatWeapon::vfunc299(const float *pVelocity)
+{
+	int nOwner = sub_10252240();
+	if (nOwner) {
+		g_1074df78.sub_101f9a40((void *)nOwner, *(int *)((char *)sub_102517b0() + 0x2664));
+		sub_100fbd50(this);
+	}
+	m_flPlaybackRate = 0.0f;
+	sub_1009ee80(0);
+	((CWeaponSlots *)this)->vfunc93(6, 0);
+	unsigned int nEffects = *(unsigned int *)((char *)this + 0x19c) & 0xffffffbf;
+	*(float *)((char *)this + 0x3ec) = 1.0f;
+	*(int *)((char *)this + 0x8b0) = 0;
+	*(unsigned int *)((char *)this + 0x19c) = nEffects;
+	sub_1024f840();
+	((CWeaponSlots *)this)->vfunc208(0);
+	sub_100ac4e0((int)sub_10258870, 0, 0);
+	*(int *)((char *)this + 0x1ec) = 0;
+	CWeaponPhysObject *pPhys = *(CWeaponPhysObject **)((char *)this + 0x36c);
+	if (pPhys) {
+		float vecAngVel[3] = { 200.0f, 200.0f, 200.0f };
+		pPhys->vfunc41(pVelocity, vecAngVel);
+	} else {
+		sub_100b2770(pVelocity);
+	}
+	sub_100ac610(g_1070b228->curtime + 1.5f, 0);
+	((CWeaponSlots *)this)->vfunc202(0);
+	m_hOwner = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252e80 size=0xb
 void sub_1000c6f8();
 
