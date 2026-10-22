@@ -5,6 +5,11 @@
 class CRestore;
 class CSave;
 
+struct CPropHackingRecord	// 0xd4 byte element of the array at +0x9a0
+{
+	char m_pad0000[0xd4];
+};
+
 class CPropHacking : public CBaseEntity
 {
 public:
@@ -21,14 +26,28 @@ public:
 	void sub_1021b5e0(int a);	// stub 0x100139ad, called directly
 	void sub_1021a1c0();	// stub 0x10003deb, run at the end of the constructor
 	void sub_10218ff0(int a, int b);	// sends the user message 0 with the byte 1 and the two values to every player but the one of this entity (a reliable entity message filter)
+	const char *sub_10219400(int index);	// stub 0x1000bde8: the screen text number index
+	void sub_1021b410();	// prints the current screen line (user name from the handle at +0x8c) and the selected record, then clears bit 1 of +0x81c and sub_10219120
 
-	char m_pad03e0[0x83c - 0x3e0];
+	char m_pad03e0[0x814 - 0x3e0];
+	int m_n0814;	// 0x814
+	char m_pad0818[4];
+	unsigned int m_flags081c;	// 0x81c
+	char m_pad0820[0x83c - 0x820];
 	char m_b083c;	// 0x83c
-	char m_pad083d[0x98c - 0x83d];
+	char m_pad083d[0x984 - 0x83d];
+	char m_b0984;	// 0x984
+	char m_b0985;	// 0x985
+	char m_pad0986[0x98c - 0x986];
 	int *m_pnCounts098c;	// 0x98c: the per screen counters
 	char m_pad0990[0x998 - 0x990];
 	int m_nCounts0998;	// 0x998: the number of counters
-	char m_pad099c[0x9e0 - 0x99c];
+	char m_pad099c[0x9a0 - 0x99c];
+	CPropHackingRecord *m_pRecords09a0;	// 0x9a0
+	char m_pad09a4[0x9ac - 0x9a4];
+	int m_n09ac;	// 0x9ac
+	char m_pad09b0[0x9dc - 0x9b0];
+	int m_n09dc;	// 0x9dc
 	int m_n09e0;	// 0x9e0
 	char m_pad09e4[0x9ec - 0x9e4];
 	char m_b09ec;	// 0x9ec
