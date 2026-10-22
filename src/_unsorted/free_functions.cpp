@@ -51941,6 +51941,34 @@ void CUnknown101e0f00::sub_101e3910(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3a30 size=0x85
+#include "CUnknown101e0f00.h"
+#include "S1033d380.h"
+
+extern CUnknown101e0f00Entry *g_10739a74;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *fmt, ...);
+
+// TARGET: CUnknown101e0f00::sub_101e3a30
+void CUnknown101e0f00::sub_101e3a30(S1033d380 *pObj, int id)
+{
+	int idx = sub_101e12a0(id);
+	if (idx != -1) {
+		CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[idx];
+		g_10739a74 = pEntry;
+		const char *pszName = pEntry->m_pszName;
+		if (!pszName)
+			pszName = g_106b8540;
+		DevMsg(3, "Discipline<%s> InterruptSchedule\n", pszName);
+		unsigned int h = sub_101e1870(id);
+		int a = pObj->sub_1033d380(h);
+		int b = pObj->sub_1033d410(h);
+		((CUnknown101e0f00Tail *)pEntry->m_tail)->sub_101e0410(b, a, (int)pObj, h)->sub_101dfe50();
+		g_10739a74 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3cf0 size=0x59
 struct CUnknown101e3cfEnt {
     char m_pad0000[0x31];
