@@ -28,6 +28,68 @@ int CNPC_VPedestrian::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a2c30 size=0x18f
+#include "CNPC_VPedestrian.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatWeapon.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+struct CAIEventSink
+{
+	virtual void v0();
+	virtual void v1();
+};
+extern CAIEventSink *g_10924a6c;
+
+struct CCharacterView : CEntityVSlots
+{
+	void *sub_10007e19();
+};
+
+struct CEntityObjView
+{
+	char m_pad0000[0x9c];
+	CCharacterView *m_p009c;
+};
+
+struct CWeaponStatView
+{
+	char m_pad0000[0x3c4];
+	int m_n03c4;
+};
+
+// TARGET: CNPC_VPedestrian::vfunc433
+void CNPC_VPedestrian::vfunc433()
+{
+	CAI_BaseNPCTroika *pNPC = (CAI_BaseNPCTroika *)this;
+	pNPC->sub_10015839(0x24);
+	sub_102b27f0();
+	if (pNPC->sub_10014df8(0x2d))
+	{
+		CGlobalEntityList_Ent *pFirst = EHandle_Get(m_h6160);
+		if (EHandle_Get(m_h5b78) != pFirst)
+		{
+			CGlobalEntityList_Ent *pSecond = EHandle_Get(m_h618c);
+			if (EHandle_Get(m_h5b78) != pSecond)
+				return;
+		}
+		CCharacterView *pChar = ((CEntityObjView *)EHandle_Get(m_h5b78))->m_p009c;
+		if (pChar && pChar->sub_10007e19())
+		{
+			CWeaponStatView *pStat = (CWeaponStatView *)((CBaseCombatWeapon *)pChar->sub_10007e19())->sub_102517e0();
+			if (pStat->m_n03c4 >= m_n634c)
+			{
+				Vector vecPos = *pChar->slot220();
+				pNPC->sub_1028ea60(pStat->m_n03c4, &vecPos.x, pChar);
+				g_10924a6c->v1();
+				pNPC->sub_100041b0(0x1f);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a38c0 size=0xdc
 #include "CBaseEntity.h"
 #include "CNPC_VPedestrian.h"
