@@ -89403,6 +89403,59 @@ extern "C" CBaseEntity *npc_VCop()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103706b0 size=0xe9
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern unsigned int g_1093ac3c;
+void sub_103705b0();
+
+struct CWitnessPlayer
+{
+	void sub_1017f6e0();	// stub 0x10003c33
+};
+
+struct CWitnessNPC : CEntityVSlots
+{
+	char m_pad0004[0x14bc - 4];
+	unsigned int m_nFlags14bc;	// 0x14bc
+	char m_pad14c0[0x6664 - 0x14c0];
+	unsigned int m_hPlayer6664;	// 0x6664
+	void sub_102ae840(int a, int b);	// stub 0x10008242
+};
+
+// TARGET: sub_103706b0
+void sub_103706b0(CWitnessPlayer *pPlayer, char bFlag)
+{
+	CWitnessNPC *pNPC;
+	if (pPlayer) {
+		if ((CGlobalEntityList_Ent *)pPlayer == EHandle_Get(g_1093ac3c))
+			sub_103705b0();
+		char bSet = bFlag;
+		pNPC = 0;
+		while (1) {
+			pNPC = (CWitnessNPC *)g_106eb5d8.sub_100f8370((CBaseEntity *)pNPC, 0x80);
+			if (pNPC == 0)
+				break;
+			switch (pNPC->slot464()) {
+			case 2:
+			case 11:
+				pNPC->sub_102ae840(1, 0);
+				break;
+			}
+			if (bSet)
+				pNPC->m_nFlags14bc |= 0x82000000;
+			if ((CGlobalEntityList_Ent *)pPlayer == EHandle_Get(pNPC->m_hPlayer6664)) {
+				pNPC->m_hPlayer6664 = 0xffffffff;
+				pPlayer->sub_1017f6e0();
+			}
+			pNPC->slot598((CEntityVSlots *)pPlayer);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10370a20 size=0x33
 void sub_1000ef84();
 void sub_1000621c();
