@@ -39,3 +39,15 @@ void CTEBeamLaser::vfunc3(int a, int b)
 	vfunc4((int)&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005bae0 size=0x39
+#include "CTEBeamLaser.h"
+#include "IVEngineServerFull.h"
+
+extern IVEngineServerFull *g_1070b22c;
+
+void CTEBeamLaser::vfunc4(int a, int b)
+{
+	g_1070b22c->PlaybackTempEntity(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+}
+// END FUNCTION
