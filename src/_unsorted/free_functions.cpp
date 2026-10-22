@@ -56802,6 +56802,49 @@ bool CUnknown101f5150::sub_101f5150(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f5b60 size=0x187
+#include "CPASFilter.h"
+#include "CUnknown1070b248.h"
+#include "CUnknown1070b22c.h"
+#include "CVSoundActivityTable_t.h"
+
+struct CRecipientElemLoopVec
+{
+	void sub_10013e12();	// element destruct (stub 0x10013e12)
+};
+
+extern char vt_104470b0[];	// CPASAttenuationFilter::vftable
+extern char g_106b8540[];
+extern CUnknown1070b248 *g_1070b248;
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" __declspec(dllimport) void DevMsg(int nLevel, const char *pszFormat, ...);
+
+void CVActivitySound::sub_101f5b60(int hControl, int nMode, int nChannel)
+{
+	CVSoundEnt *pEnt = (CVSoundEnt *)hControl;
+	int iRow = pEnt->sub_1009d5e0();
+	if (iRow >= m_nLists)
+	{
+		CVSoundEdict *pEdict = pEnt->m_pEdict;
+		const char *pszName = !pEdict->m_pUnk40 ? g_106b8540 : pEdict->m_pUnk40->GetObject()->GetName();
+		DevMsg(1, "ERROR: VSnd: Play: %s Table out of bounds: %d\n", pszName, iRow);
+		return;
+	}
+	const char *pszSample = m_ppLists[iRow]->sub_101f4600(pEnt, nMode);
+	if (pszSample)
+	{
+		g_1070b248->vfunc0(pszSample, 0);
+		CPASFilter filter(pEnt->GetSoundEmissionOrigin().Base());
+		*(void **)&filter = vt_104470b0;
+		filter.sub_1019d4b0(pEnt->GetSoundEmissionOrigin(), 0.8f);
+		CVSoundEdict *pEdict = pEnt->m_pEdict;
+		g_1070b248->vfunc3(&filter, g_1070b22c->vfunc35((int)pEdict), nChannel, pszSample, 1.0f, 0.8f, 4, 100, 0, 0, 1, 0);
+		for (int i = filter.m_size; --i >= 0; )
+			((CRecipientElemLoopVec *)&filter.m_pMemory)->sub_10013e12();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5d60 size=0xd
 extern char g_106b8540[];
 // TARGET: CUnknown101f5d60::sub_101f5d60
