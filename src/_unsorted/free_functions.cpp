@@ -79813,6 +79813,73 @@ bool CUnknown102dd450::sub_102dd450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd740 size=0x11e
+#include "CUnknown10248a50.h"
+#include <stdio.h>
+#include <string.h>
+
+struct PatrolPlace
+{
+	bool sub_102dd0f0(CUnknown10248a50 *pNode);	// stub 0x10003418
+};
+
+extern IFileSys *g_1070b238;
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+void sub_102dd720();	// stub 0x1000cf63
+PatrolPlace *sub_102dd8b0();
+
+struct CKeyNameView
+{
+	const char *sub_102480b0();	// "GetName" (stub 0x1000fec0)
+};
+
+bool sub_102dd740(const char *pszFile)
+{
+	char szPath[512];
+	sub_102dd720();
+	sprintf(szPath, "%s%s.txt", "vdata\\system\\", pszFile);
+	CUnknown10248a50 *pList = new CUnknown10248a50("InterestingPlaceTypeList");
+	IFileSys *pFileSys = g_1070b238;
+	bool bLoaded = pList->sub_102480f0(szPath, pFileSys, 0, true);
+	if (!bLoaded)
+	{
+		IFileSys *pFileSys2 = g_1070b238;
+		bLoaded = pList->sub_102480f0(pszFile, pFileSys2, 0, true);
+	}
+	if (!bLoaded)
+	{
+		DevMsg("Unable to open data file for: %s\n", pszFile);
+		if (pList)
+		{
+			pList->sub_100046f1();
+			operator delete(pList);
+		}
+		return false;
+	}
+	for (CUnknown10248a50 *pNode = pList->sub_10248a10(); pNode; pNode = pNode->sub_10248a30())
+	{
+		if (!_strcmpi(((CKeyNameView *)pNode)->sub_102480b0(), "InterestingPlaceType"))
+		{
+			PatrolPlace *pPlace = sub_102dd8b0();
+			if (!pPlace->sub_102dd0f0(pNode))
+			{
+				if (pList)
+				{
+					pList->sub_100046f1();
+					operator delete(pList);
+				}
+			}
+		}
+	}
+	if (pList)
+	{
+		pList->sub_100046f1();
+		operator delete(pList);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd8b0 size=0x65
 struct PatrolPlace { char pad[676]; };
 extern int g_10931bc8;
