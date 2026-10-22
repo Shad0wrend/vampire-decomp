@@ -63494,6 +63494,29 @@ void CUnknown1020e060::sub_1020e080(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e3c0 size=0xee
+#include "CReliableSingleUserRecipientFilter.h"
+#include "IVEngineServer.h"
+struct S1020e3c0Arg { struct S1020e3c0Ent *pEnt; };
+struct S1020e3c0Ent { char pad[0xa8]; void *pPlayer; };
+extern IVEngineServer *g_1070b22c;
+extern int g_10726070;
+
+void __stdcall sub_1020e3c0(S1020e3c0Arg *p)
+{
+    S1020e3c0Ent *pEnt = p->pEnt;
+    if (pEnt) {
+        void *pPlayer = pEnt->pPlayer;
+        if (pPlayer) {
+            CReliableSingleUserRecipientFilter filter(pPlayer);
+            g_1070b22c->vfunc65(&filter, g_10726070);
+            g_1070b22c->vfunc67(0);
+            g_1070b22c->vfunc66();
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e6b0 size=0x6c
 #include "CGameText.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
