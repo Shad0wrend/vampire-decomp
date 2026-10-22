@@ -3,9 +3,16 @@
 #pragma once
 #include "CBaseEntity.h"
 
+class CEnvParticle;
+
 // Placeholder virtual slots that keep the slot number of vfunc266 right (CBaseEntity declares the slots up to 133).
 #define HAUNTED_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CPropHauntedSub	// the object at +0x7ec
+{
+	void sub_100cd660(CBaseEntity *pA, CBaseEntity *pB, int c);	// stub 0x10010794
+};
 
 class CPropHaunted : public CBaseEntity
 {
@@ -22,9 +29,26 @@ public:
 	void vfunc104();	// slot 104 "Precache": CBreakableProp::vfunc104, then precaches the models named at +0x7bc / +0x7c0 and the sounds named at +0x7c4, +0x7c8, +0x7cc when set
 	void sub_1000978c();	// CBreakableProp::vfunc104 (stub of 0x1018fb50), called directly
 	void sub_10213ef0(int index, void *pEvent, CBaseEntity *pOther);	// the impact reaction: when the prop is armed (byte +0x7b8) runs slot 266 on pOther, then damages: with a physics event (pEvent) from pOther (or its owner) at the impact force / position, else from the prop itself with the damage at +0x794 (the damage goes to pOther); takes (index, event, entity)
+	void sub_10214780();	// the activation: drops flag 0x40000, starts the "spin" sequence (a Warning when the model has none), sets the think function and a random next spin time, starts the sound at +0x7cc and, when the ghost (handle at +0x7d0) is gone, creates the ghost particle (name at +0x7c0) attached to the prop
+	int sub_1008f7b0(const char *label);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
+	void sub_10260a50(int nSequence);	// CBaseAnimating::ResetSequence (stub 0x1000d0b2), called directly
+	const char *sub_100ab4f0(const char *pszName);	// stub 0x1000b5cd: the text the "no animation" warning shows for the entity name
+	void sub_10214080(int a);	// stub 0x10002603: takes the value at +0x7cc
+	CEnvParticle *sub_10214cc0(int a);	// stub 0x10009f0c: the ghost particle entity for the value at +0x7c0, null when there is none
 
-	char m_pad03e0[0x794 - 0x3e0];
+	char m_pad03e0[0x77c - 0x3e0];
+	float m_flTime77c;	// 0x77c: the next spin time
+	char m_pad0780[0x78c - 0x780];
+	float m_flMin78c;	// 0x78c: the shortest wait between spins
+	float m_flMax790;	// 0x790: the longest wait between spins
 	float m_flDamage794;	// 0x794: the damage the impact does
 	char m_pad0798[0x7b8 - 0x798];
 	char m_bArmed7b8;	// 0x7b8: set while the prop reacts to impacts
+	char m_pad07b9[0x7c0 - 0x7b9];
+	int m_iszGhost7c0;	// 0x7c0
+	char m_pad07c4[0x7cc - 0x7c4];
+	int m_iszSound7cc;	// 0x7cc
+	unsigned int m_hGhost7d0;	// 0x7d0: the ghost particle entity handle, -1 when none
+	char m_pad07d4[0x7ec - 0x7d4];
+	char m_sub07ec[4];	// 0x7ec: a CPropHauntedSub
 };
