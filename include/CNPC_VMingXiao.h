@@ -11,6 +11,11 @@ class CNPC_VMingXiao : public CBaseEntity
 public:
 	virtual void vfunc104();	// Precache: the Troika base, the eleven Ming Xiao particle emitters, the move sound list, then the weapons item_w_mingxiao_melee / _tentacle / _spit
 	virtual void vfunc123();	// DrawDebugTextOverlays-like: with bit 29 of the overlay flags (+0x224) set, dispatches four red markers (sub_10144a30) along x = 100, 150, 200, 300 at the entity's origin (slot 220); then the Troika base
+	virtual void vfunc144(int a);	// slot 144 "Event_Killed"-like: while the byte at +0x6744 is clear sets +0x200 = 1 and runs sub_10395c70; else tells the owner entity (handle +0x6670) sub_10397a50(this), runs sub_10397e90 / sub_10397f00 when the global 0x1093b9b4 is not (slot 1) and has +0x2c set and sub_10398870 is clear; then the Troika base
+	void sub_102bf340(int a);	// CAI_BaseNPCTroika::vfunc144, called directly (stub 0x1000a62d)
+	void sub_10395c70();	// stub 0x100116e9
+	void sub_10397e90();	// stub 0x10008eb3
+	void sub_10397f00();	// stub 0x100097eb
 	void sub_10298ad0();	// CAI_BaseNPCTroika::vfunc104 (stub 0x100097b4), called directly
 	void sub_1029ca50();	// CAI_BaseNPCTroika::vfunc123 (stub 0x10008a3f), called directly
 
@@ -57,7 +62,9 @@ public:
 	char m_pad03e0[0x6290 - 0x3e0];
 	Vector m_vecAxis6290;	// +0x6290
 	Vector m_vecExtent629c;	// +0x629c
-	char m_pad62a8[0x6684 - 0x62a8];
+	char m_pad62a8[0x6670 - 0x62a8];
+	unsigned int m_hOwner6670;	// +0x6670: the handle of the owner entity
+	char m_pad6674[0x6684 - 0x6674];
 	char m_bSlotFlag[6];	// +0x6684
 	char m_pad668a[2];
 	int m_hSlotNew[6];	// +0x668c
@@ -68,4 +75,6 @@ public:
 	float m_flSlotValue[6];	// +0x66dc
 	float m_flSlotTimeB[6];	// +0x66f4
 	int m_n670c;	// +0x670c: the count the delay is scaled by (6 - count)
+	char m_pad6710[0x6744 - 0x6710];
+	char m_bActive6744;	// +0x6744
 };
