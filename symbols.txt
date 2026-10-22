@@ -2609,6 +2609,7 @@
 0x1000a5b0 func   ?vfunc3@CTEBloodStream@@UAEXABVVector@@ABVQAngle@@@Z CTEBloodStream::vfunc3
 0x1000a5ce func   ?vfunc103@CGravityPellet@@QAEXXZ CGravityPellet::vfunc103
 0x1000a5d8 func   ?sub_10132db0@@YAPAHXZ sub_10132db0
+0x1000a5ec func   ?vfunc134@CEnvMicrophone@@UAEXXZ CEnvMicrophone::vfunc134
 0x1000a5f1 func   _npc_VCombatman npc_VCombatman
 0x1000a5fb func   ?sub_10340e50@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10340e50
 0x1000a60a func   ?sub_10057680@CUnknown10057680@@QAEXXZ CUnknown10057680::sub_10057680

@@ -65,3 +65,52 @@ void CEnvMicrophone::vfunc113()
     m_hMeasureTarget = *vfunc1();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10102890 size=0x10a
+#include "CEnvMicrophone.h"
+#include "CSoundEnt.h"
+#include <math.h>
+
+struct CMicSound	// the fields of a sound record used here (see CSoundEntSlot)
+{
+	char m_pad0000[4];
+	unsigned int m_iType;	// 0x04
+	char m_pad0008[0x18 - 8];
+	int m_iNext;	// 0x18
+};
+
+struct CMicGlobals
+{
+	char m_pad0000[0xc];
+	float m_flCurTime;
+};
+
+extern CMicGlobals *g_1070b228;
+extern float g_10459634;	// 0.005f
+int sub_101bb0f0();	// CSoundEnt::ActiveList (stub 0x10012120)
+
+void CEnvMicrophone::vfunc134()
+{
+	int iSound = sub_101bb0f0();
+	float flMax; flMax = 0.0f;
+	CMicSound *pSound;
+	for (; iSound != -1; iSound = pSound->m_iNext)
+	{
+		pSound = (CMicSound *)CSoundEnt::sub_101bb150(iSound);
+		if (pSound && (m_nSpeakerFlags & pSound->m_iType))
+		{
+			float flLevel; flLevel = 0.0f;
+			if (sub_10102730((CSound *)pSound, &flLevel) && flLevel > flMax)
+				flMax = flLevel;
+		}
+	}
+	if (flMax != m_SoundLevel.Get())
+	{
+		if (fabs(flMax - m_SoundLevel.Get()) < g_10459634)
+			m_SoundLevel.Set(flMax, this, this);
+		else
+			m_SoundLevel.Set((1.0f - m_flSmoothFactor) * flMax + m_SoundLevel.Get() * m_flSmoothFactor, this, this);
+	}
+	m_flNextThink = g_1070b228->m_flCurTime + 0.1;
+}
+// END FUNCTION
