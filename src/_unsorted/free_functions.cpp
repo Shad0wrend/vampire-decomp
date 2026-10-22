@@ -38352,6 +38352,45 @@ void CAI_BaseNPC::sub_10175360(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10175400 size=0x169
+#include "CBasePlayer.h"
+#include "CSingleUserRecipientFilter.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_1072607c;
+struct CGlobalVarsT { char m_pad0000[0xc]; float curtime; };
+extern CGlobalVarsT *g_1070b228;
+struct CFadeTimer { float sub_101e8bb0(); };
+extern CFadeTimer g_10739d08;
+
+// TARGET: CBasePlayer::sub_10175400
+void CBasePlayer::sub_10175400(char bFade)
+{
+	CSingleUserRecipientFilter filter(this);
+	filter.sub_1019cf50();
+	int nAmount = 0;
+	unsigned char nFlags;
+	if (bFade) {
+		double flPercent = (*(float *)((char *)this + 0x1478) - g_1070b228->curtime) / g_10739d08.sub_101e8bb0() * 100.0;
+		if (flPercent > 100.0)
+			flPercent = 100.0;
+		else if (flPercent < 1.0)
+			flPercent = 1.0;
+		nAmount = (int)flPercent;
+		nFlags = 0x81;
+	} else {
+		nFlags = 0x82;
+	}
+	g_1070b22c->vfunc65(&filter, g_1072607c);
+	g_1070b22c->vfunc67(nFlags);
+	g_1070b22c->vfunc67(nAmount);
+	g_1070b22c->vfunc67(0);
+	g_1070b22c->vfunc67(0);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177ab0 size=0x74
 #include "CBaseCombatCharacter.h"
 extern "C" int _strcmpi(const char *, const char *);
