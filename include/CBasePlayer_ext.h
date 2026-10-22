@@ -37,3 +37,4 @@
 	int sub_1017f770();	// stub 0x10007ee6
 	int sub_1017f8b0();	// stub 0x100063f7
 	char sub_10175180();	// stub 0x1000a6fa
+	void sub_10167e00();	// the use-entity (handle at +0x1040) range check of PlayerUse: the closest point of the entity's world bounds to the player's slot 193 position; out of reach (its slot 37 range not above the 2D distance) the entity gets slot 43(this); else slot 41(this) when it has no weapon name (slot 36) or the active weapon already has that classname, else when the player carries that weapon (sub_10335950) slot 457(name, 0) and slot 40(this)
