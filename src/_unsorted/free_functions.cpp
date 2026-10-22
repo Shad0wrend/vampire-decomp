@@ -91200,6 +91200,39 @@ char sub_103adc00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ae3e0 size=0x91
+#include "CNPC_VSheriffMan.h"
+
+extern int vt_104a7b94[];
+extern int vt_104a7b68[];
+extern int vt_104c619c[];
+extern int vt_104c616c[];
+void *__fastcall sub_103c48e0(void *pThis);	// the CNPC_VVampire constructor
+void *__fastcall sub_100cd2a0(void *pThis);	// the COutputEvent constructor
+void *__fastcall sub_103c51a0(void *pThis);
+void *__fastcall sub_103adbe0(void *pThis);
+
+// TARGET: CNPC_VSheriffMan::sub_103ae3e0
+CNPC_VSheriffMan *CNPC_VSheriffMan::sub_103ae3e0()
+{
+	sub_103c48e0(this);
+	sub_100cd2a0((char *)this + 0x6664);
+	for (int i = 0; i < 4; i++)
+		*(unsigned int *)((char *)this + 0x66a0 + i * 4) = 0xffffffff;
+	*(unsigned int *)((char *)this + 0x66b0) = 0xffffffff;
+	sub_103c51a0((char *)this + 0x66b4);
+	*(int **)this = vt_104a7b94;
+	*(int **)((char *)this + 0x19b0) = vt_104a7b68;
+	sub_100cd2a0((char *)this + 0x66b8);
+	*(unsigned int *)((char *)this + 0x66d0) = 0xffffffff;
+	sub_103adbe0((char *)this + 0x66f8);
+	*(int **)this = vt_104c619c;
+	*(int **)((char *)this + 0x19b0) = vt_104c616c;
+	*(int *)((char *)this + 0x1568) = 0x15;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1300 size=0x11c
 #include "CNPC_VAsianVampire.h"
 #include "CEntityVSlots.h"
