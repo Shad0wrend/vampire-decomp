@@ -15,5 +15,4 @@ public:
 	CSoundscapeSystemMember8 m_member;
 
 	int sub_102297a0();	// picks a free looping channel id (1..6) not used by the vector of 0x58-byte channels at +0x174 (count at +0x180) nor by the four embedded ones at +0x14; when all are used it stops and removes the vector entry with the smallest time (+0x44) and returns that entry's id
-	virtual void vfunc0();	// slot 0 "Init": loads scripts\soundscapes.txt into a key/value tree and adds an entry for every top level key that has children (count at +0xc), always true (al = 1)
 };
