@@ -9369,6 +9369,43 @@ void __fastcall sub_1006fe00(FollowObj *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10070470 size=0xa3
+#include "CBaseCineCam.h"
+
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+CBaseEntity *sub_100a99d0(const char *pszClassname, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
+void sub_101cd940(CBaseEntity *pEnt);
+
+CBaseEntity *sub_10070470(const char *pszShot, void *pTarget0, void *pTarget1, void *pTarget2, void *pTarget3)
+{
+	CBaseEntity *pEnt = sub_100a99d0("camera_cinematic", g_1070d1b0, g_1070d9d0, 0);
+	if (pEnt)
+	{
+		pEnt->m_flags204 |= 4;
+		CBaseCineCam *pCam = (CBaseCineCam *)pEnt;
+		if (pCam->sub_1006e130(pszShot, 1, 0))
+		{
+			if (pTarget0)
+				pCam->sub_1006ef50(pTarget0, 0);
+			if (pTarget1)
+				pCam->sub_1006ef50(pTarget1, 1);
+			if (pTarget2)
+				pCam->sub_1006ef50(pTarget2, 2);
+			if (pTarget3)
+				pCam->sub_1006ef50(pTarget3, 3);
+			pCam->sub_1006e8e0();
+		}
+		else
+		{
+			sub_101cd940(pEnt);
+			return 0;
+		}
+	}
+	return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100705d0 size=0x85
 #include "CBaseCineCam.h"
 #include "CBaseEntity.h"
