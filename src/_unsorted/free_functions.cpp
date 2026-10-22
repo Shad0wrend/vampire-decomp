@@ -80806,6 +80806,37 @@ int CAI_Senses::sub_10310130(int radius)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103104f0 size=0xad
+#include "CAI_Senses.h"
+#include "CEntityVSlots.h"
+
+// TARGET: CAI_Senses::sub_103104f0
+void *CAI_Senses::sub_103104f0(char bFlag)
+{
+	float flBest = 268435456.0f;
+	int iter;
+	CAI_SenseRecord *pBest = 0;
+	CAI_SenseRecord *pRec = (CAI_SenseRecord *)sub_10310440(&iter);
+	Vector vecEar;
+	((CEntityVSlots *)m_pOuter)->slot196(&vecEar);
+	while (pRec) {
+		if ((!bFlag && pRec->sub_101b9920()) || (bFlag && pRec->sub_101b99a0())) {
+			float dx = pRec->m_x - vecEar.x;
+			float dy = pRec->m_y - vecEar.y;
+			float dz = pRec->m_z - vecEar.z;
+			float flDist = dz * dz + dx * dx;
+			flDist += dy * dy;
+			if (flDist < flBest) {
+				flBest = flDist;
+				pBest = pRec;
+			}
+		}
+		pRec = (CAI_SenseRecord *)sub_10310480(&iter);
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103105d0 size=0xf1
 #include "CAI_Senses.h"
 #include "CEHandleGet.h"
