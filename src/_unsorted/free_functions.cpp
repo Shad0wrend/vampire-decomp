@@ -37236,6 +37236,22 @@ void sub_101434b0(int entIndex, int lineOffset, const char *pszText, int duratio
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143630 size=0xa3
+#include "CBroadcastRecipientFilter.h"
+#include "IVEngineServer.h"
+#include "Vector.h"
+
+extern IVEngineServer *g_1070b22c;
+
+void sub_10143630(const Vector *pVec)
+{
+	CBroadcastRecipientFilter filter;
+	g_1070b22c->vfunc65(&filter, 0x32);
+	g_1070b22c->vfunc75((int)pVec);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101466e0 size=0xe
 #include "CUnknown101466e0.h"
 // TARGET: CUnknown101466e0::sub_101466e0
