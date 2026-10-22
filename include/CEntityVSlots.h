@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..605, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 116, 118, 122, 142, 143, 158, 161, 162, 167, 173,
-// 192, 193, 194, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 262, 267, 270, 274, 285, 306, 308, 316, 332, 346, 360, 371, 376, 381, 385, 404, 426, 427, 448, 457, 601 and 605 of an entity class that does not model its vtable.
+// 192, 193, 194, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 270, 274, 285, 306, 308, 316, 332, 346, 360, 371, 376, 381, 385, 404, 426, 427, 448, 457, 601 and 605 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -99,7 +99,7 @@ public:
 	EVS(252) EVS(253) EVS(254) EVS(255) EVS(256) EVS(257) EVS(258)
 	virtual void slot259(void *pEvent);	// "HandleAnimEvent"
 	virtual void slot260(int index, float value);	// "SetPoseParameter" by index
-	EVS(261)
+	virtual float slot261(const char *pszName, float flValue);	// "SetPoseParameter" by name (the animating entity's slot; the float result is left on the FPU stack)
 	virtual char slot262(int attachment, void *pMatrix);	// animating: "GetAttachment" into a 3x4 matrix, a boolean answer in al
 	EVS(263) EVS(264) EVS(265) EVS(266)
 	virtual char slot267();	// weapon: a boolean answer in al
