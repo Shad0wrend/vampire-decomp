@@ -1419,6 +1419,7 @@
 0x1000636b func   ?sub_10032f00@UtlVec8@@QAEXHH@Z UtlVec8::sub_10032f00
 0x10006389 func   ?sub_10387800@@YADXZ sub_10387800
 0x1000638e func   ?sub_1022d1e0@@YAXPAUCBlock4k@@PBU1@@Z sub_1022d1e0
+0x10006393 func   ?vfunc1@CEnvPlayerSurfaceTrigger@@UAEPAIXZ CEnvPlayerSurfaceTrigger::vfunc1
 0x1000639d func   ?sub_104302f0@@YAXXZ sub_104302f0
 0x100063a7 func   ?vfunc5@CPathKeyFrame@@QAEPAV1@I@Z CPathKeyFrame::vfunc5
 0x100063b6 func   ?vfunc463@CAI_BaseNPCTroika@@UAEXHH@Z CAI_BaseNPCTroika::vfunc463
