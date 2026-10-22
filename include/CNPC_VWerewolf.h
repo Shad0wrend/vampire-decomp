@@ -208,4 +208,5 @@ public:
 	char sub_103cfc50();	// stub 0x100112ac
 	void vfunc104();	// slot 104 "CNPC_VWerewolf::Precache": scope trace (entity name), the base Precache, the werewolf and observatory sound folders, the VSound group / table of the "Werewolf" model name, the four footstep sounds, the "item_w_werewolf_attacks" weapon and the two teleport sounds
 	void sub_10298ad0();	// CAI_BaseNPCTroika::vfunc104 (stub 0x100097b4), called directly
+	void sub_103d4820(float x, float y, float z, float flDuration);	// "CNPC_VWerewolf::DrawDebugHullAtPosition": scope trace (entity name); draws the hull box of the hull type at +0x1568 at the position (orange, 100 alpha) and an arrow of the hull's half diagonal length along x
 };
