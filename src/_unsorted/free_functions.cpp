@@ -67205,6 +67205,39 @@ char *sub_102482f0(const char *pszName, IFileSys *pFileSys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248430 size=0xab
+#include "CUnknown10248a50.h"
+
+char *sub_102482b0(const char **ppBuffer, int a);
+
+// TARGET: CUnknown10248a50::sub_10248430
+bool CUnknown10248a50::sub_10248430(int unused, const char *pszBuffer, int a)
+{
+	const char *pszCursor = pszBuffer;
+	CUnknown10248a50 *pPrevious = 0;
+	CUnknown10248a50 *pNode = this;
+	while (1) {
+		const char *pszToken = sub_102482b0(&pszCursor, 0);
+		if (!pszCursor)
+			break;
+		if (!pNode) {
+			pNode = new CUnknown10248a50(pszToken);
+			if (pPrevious)
+				pPrevious->sub_10248a50((int)pNode);
+		} else {
+			delete *(char **)pNode;
+			pNode->sub_10247cf0(pszToken);
+		}
+		const char *pszNext = sub_102482b0(&pszCursor, 0);
+		if (*(int *)pNode && pszNext && *pszNext == '{')
+			pNode->sub_10248510(&pszCursor, a);
+		pPrevious = pNode;
+		pNode = 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248850 size=0xa
 void CUnknown10248850::sub_10248850(int value)
 {
