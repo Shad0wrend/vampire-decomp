@@ -58718,6 +58718,64 @@ void CUnknown101f9670::sub_101f9690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f96b0 size=0x12e
+#include "CUnknown101f0e50.h"
+#include "CUnknown1070b22c.h"
+#include "CSingleUserRecipientFilter.h"
+
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+
+struct CPlayerA8 {
+    char m_pad[0xa8];
+    void *m_p;
+};
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_10726078;
+
+namespace block_101f96b0 {
+struct CTraitDataUnit : CUnknown101f0e50 {
+    bool sub_101f82d0(int index);
+    void sub_101f8620(CTraitOwnerX *pOwner, int index);
+};
+bool CTraitDataUnit::sub_101f82d0(int index)
+{
+    return index != -1 && index < m_f04;
+}
+}
+using namespace block_101f96b0;
+extern CTraitDataUnit g_1074df78;
+
+struct CTraitEffectList {
+    int m_count;
+    int m_ids[32];
+    void sub_101f96b0(CTraitOwnerX *pPlayer, int id);
+};
+
+// TARGET: CTraitEffectList::sub_101f96b0
+void CTraitEffectList::sub_101f96b0(CTraitOwnerX *pPlayer, int id)
+{
+    if (!g_1074df78.sub_101f82d0(id))
+        return;
+    if (m_count >= 32) {
+        DevMsg(1, "ERROR: Ran out of TraitEffect slots!!!\n");
+        return;
+    }
+    m_ids[m_count] = id;
+    m_count++;
+    g_1074df78.sub_101f8510(pPlayer, id);
+    g_1074df78.sub_101f8620(pPlayer, id);
+    void *p = ((CPlayerA8 *)pPlayer)->m_p;
+    if (p) {
+        CSingleUserRecipientFilter filter(p);
+        filter.MakeReliable();
+        g_1070b22c->vfunc65(&filter, g_10726078);
+        g_1070b22c->vfunc67(1);
+        g_1070b22c->vfunc67(id);
+        g_1070b22c->vfunc66();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9830 size=0x13b
 #include "CUnknown101f9c70.h"
 #include "CUnknown101f0e50.h"
