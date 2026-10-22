@@ -75666,6 +75666,78 @@ int CAI_BaseNPCTroika::sub_102b11c0(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b2570 size=0x15e
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "TestBit.h"
+
+struct CTroikaGlobalView
+{
+	virtual void v0();
+	virtual void vfunc1();
+};
+
+struct CTroikaGlobals
+{
+	char m_pad0000[0xc];
+	float m_flCurTime;
+};
+
+struct CTroikaView
+{
+	char m_pad0000[0x1488];
+	float m_f1488;
+	char m_pad148c[0x1564 - 0x148c];
+	float m_f1564;
+	char m_pad1568[0x5b84 - 0x1568];
+	unsigned int m_flags5b84;
+	char m_pad5b88[0x5d9c - 0x5b88];
+	float m_f5d9c;
+	char m_pad5da0[0x606c - 0x5da0];
+	float m_f606c;
+	char m_pad6070[0x6078 - 0x6070];
+	char m_b6078;
+};
+
+extern "C" __declspec(dllimport) int RandomInt(int nMin, int nMax);
+extern CTroikaGlobalView *g_10924a6c;
+extern CTroikaGlobals *g_1070b228;
+
+void CAI_BaseNPCTroika::sub_102b2570()
+{
+	CTroikaView *p = (CTroikaView *)this;
+	sub_10015839(0xe);
+	sub_10015839(0xf);
+	if (!p->m_b6078)
+		return;
+	if (sub_10014df8(0x55))
+	{
+		g_10924a6c->vfunc1();
+		sub_100041b0(9);
+		return;
+	}
+	if (p->m_f606c < p->m_f5d9c || 3.0f / p->m_f1488 + p->m_f606c < g_1070b228->m_flCurTime)
+	{
+		if (sub_10014df8(0x5f) && RandomInt(0, 99) < 20)
+		{
+			g_10924a6c->vfunc1();
+			sub_100041b0(0xe);
+		}
+		else if ((p->m_flags5b84 & 0x400) != 0x400 && !sub_10014df8(9) && !sub_10014df8(0x60) && !sub_10014df8(0x51) && RandomInt(0, 10) == 0)
+		{
+			g_10924a6c->vfunc1();
+			sub_100041b0(0xe);
+		}
+	}
+	if (sub_10269c70(0xf) && p->m_f1564 < g_1070b228->m_flCurTime && sub_10014df8(0x5f) && sub_10007e19()
+		&& TestBit(((CEntityVSlots *)sub_10007e19())->slot360(), 30))
+	{
+		g_10924a6c->vfunc1();
+		sub_100041b0(0xf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b2730 size=0x8c
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102e0150.h"
