@@ -4481,6 +4481,7 @@
 0x100114d2 func   ?vfunc337@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc337
 0x100114dc func   ?vfunc5@CEnvLight@@QAEPAV1@I@Z CEnvLight::vfunc5
 0x100114e6 func   ?sub_100ae450@@YAXXZ sub_100ae450
+0x100114ff func   ?vfunc3@CTESparks@@UAEXPBM0@Z CTESparks::vfunc3
 0x10011504 func   ?vfunc5@CAnchorList@@UAEXXZ CAnchorList::vfunc5
 0x10011509 func   ?sub_1042fb50@@YAII@Z sub_1042fb50
 0x1001150e func   ?sub_10430080@@YAII@Z sub_10430080
