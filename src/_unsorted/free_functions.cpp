@@ -33872,6 +33872,40 @@ int *sub_10135a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135c10 size=0xb7
+#include "CLogicSquadCondition.h"
+#include "CAI_BaseNPC.h"
+
+__declspec(dllimport) void __cdecl DevWarning(const char *fmt, ...);
+extern char g_106b8540[];
+
+// TARGET: CLogicSquadCondition::sub_10135c10
+bool CLogicSquadCondition::sub_10135c10()
+{
+	if (m_nCondition <= 0) {
+		const char *pszName = m_name450;
+		if (!pszName)
+			pszName = g_106b8540;
+		DevWarning("%s has invalid condition %s!\n", sub_1000b5cd(), pszName);
+		return false;
+	}
+	CUnknown103160c0 *pSquad = sub_10135bd0();
+	if (!pSquad) {
+		const char *pszName = m_name454;
+		if (!pszName)
+			pszName = g_106b8540;
+		DevWarning("%s was unable to find squad: %s\n", sub_1000b5cd(), pszName);
+		return false;
+	}
+	for (int i = 0; i < pSquad->sub_103160a0(); i++) {
+		CAI_BaseNPC *pMember = (CAI_BaseNPC *)pSquad->sub_103160c0(i);
+		if (pMember && pMember->sub_10269aa0(m_nCondition))
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136260 size=0x43
 #include "CLogicRelay.h"
 void *sub_100aa720(int size);
