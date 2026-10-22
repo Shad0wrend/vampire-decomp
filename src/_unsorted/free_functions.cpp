@@ -62770,6 +62770,33 @@ void CUnknown10223800::sub_10223800(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10223a80 size=0xd0
+#include "CBaseKeyframedMover.h"
+#include "COutputEvent.h"
+#include "CUnknown10223b90.h"
+#include "CEHandleGet.h"
+
+// TARGET: CBaseKeyframedMover::sub_10223a80
+void CBaseKeyframedMover::sub_10223a80()
+{
+	unsigned int &rhActivator = *(unsigned int *)((char *)this + 0x10c);
+	((COutputEvent *)((char *)this + 0x5a0))->sub_100cd660(EHandle_Get(rhActivator), this, 0.0f);
+	int nTarget = 0;
+	if (sub_10223690()) {
+		sub_10223690()->sub_10223130(EHandle_Get(rhActivator), this);
+		m_n56c = m_n568;
+		if (m_nDirection == 1)
+			nTarget = sub_10223690()->m_n454;
+		else
+			nTarget = sub_10223690()->m_n458;
+	}
+	if (nTarget == 0)
+		((CUnknown10223b90 *)this)->sub_10223b90();
+	else
+		sub_1000b94c(nTarget);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10223b90 size=0xe7
 #include "CUnknown10223b90.h"
 #include "CGlobalEntityList.h"
