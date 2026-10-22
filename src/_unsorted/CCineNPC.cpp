@@ -121,3 +121,59 @@ void CCineNPC::vfunc459()
 	pNPC->sub_10269b50(10);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a8de0 size=0x186
+#include "CCineNPC.h"
+#include "CBaseAnimating.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList g_106eb5d8;
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+void sub_10428880(void *pModel, int pszName);
+
+struct S_CineNames {
+    char pad[0x5f44];
+    const char *m_p5f44;
+    const char *m_p5f48;
+    const char *m_p5f4c;
+};
+
+void CCineNPC::vfunc113()
+{
+    sub_100a0bc0();
+    S_CineNames *v = (S_CineNames *)this;
+    CBaseEntity *pEnt = 0;
+    CBaseAnimating *pNPC = 0;
+    while ((pEnt = g_106eb5d8.sub_100f7f20(pEnt, m_pszTarget5f54 ? m_pszTarget5f54 : g_106b8540, 0, 0)) != 0) {
+        pNPC = *(CBaseAnimating **)((char *)pEnt + 0x94);
+        if (pNPC)
+            break;
+    }
+    if (pNPC) {
+        void *pModel = pNPC->sub_100952d0(-1);
+        if (pModel) {
+            sub_10428880(pModel, (int)(v->m_p5f44 ? v->m_p5f44 : g_106b8540));
+            sub_10428880(pModel, (int)(v->m_p5f4c ? v->m_p5f4c : g_106b8540));
+            sub_10428880(pModel, (int)(v->m_p5f48 ? v->m_p5f48 : g_106b8540));
+        } else {
+            DevMsg("**********\n");
+            DevMsg("NPC %s has no model in CCineNPC::Activate for %s\n", ((CCineNPC *)pNPC)->sub_1000b5cd(), sub_1000b5cd());
+            DevMsg("**********\n");
+        }
+    } else {
+        DevMsg("**********\n");
+        const char *n = m_pszTarget5f54 ? m_pszTarget5f54 : g_106b8540;
+        DevMsg("Could not find NPC %s in CCineNPC::Activate for %s\n", n, sub_1000b5cd());
+        DevMsg("**********\n");
+    }
+    CGlobalEntityList_Ent *pFound = (CGlobalEntityList_Ent *)g_106eb5d8.sub_100f7770(0, m_n5f58 ? (const char *)m_n5f58 : g_106b8540, 0, 0);
+    if (pFound)
+        m_hNPC5f94 = *pFound->v1();
+    else
+        m_hNPC5f94 = 0xffffffff;
+    if (!EHandle_Get(m_hNPC5f94))
+        m_n5f58 = 0;
+}
+// END FUNCTION
