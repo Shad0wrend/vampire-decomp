@@ -20,10 +20,13 @@ public:
 	int sub_101ff010();	// stub 0x10003a08: the entry's lower limit
 };
 
-class CUnknown10205030Tables	// the object at +0x13dc of a character: finds the table entry of a (kind, id) reference
+class CUnknown10205030Tables	// the object at +0x13dc of a character: the list of trait effect group ids (count, then the ids); finds the table entry of a (kind, id) reference
 {
 public:
-	CUnknown101ff0b0 *sub_101f9e80(int kind, int id);	// stub 0x1000484f
+	int m_count;	// 0x00
+	int m_items[1];	// 0x04
+
+	CUnknown101ff0b0 *sub_101f9e80(int kind, int id);	// "CVTraitEffectList_t::Effect_ModCostInfo" (stub 0x1000484f): scope trace, builds a CVModInfo_t(kind, id, 0), the stat cost of the (kind, id) stat (the table entry + 0xb0; kinds 0..2 pick one of the three global stat info lists, none for id -1) and hands both to the effect group of every item; returns the cost pointer, 0 for an unknown kind
 };
 
 class CUnknown10205030
