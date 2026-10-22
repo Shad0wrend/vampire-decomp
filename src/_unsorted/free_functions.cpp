@@ -37562,6 +37562,71 @@ void CHolderPtr36c::sub_10150e50(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150f50 size=0x117
+#include "CPhysicsCannister.h"
+#include "CParamsExplosion.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+__declspec(dllimport) void Warning(const char *pszFormat, ...);
+extern "C" void *__cdecl __RTDynamicCast(void *pObj, long nVfDelta, void *pSrcType, void *pTargetType, int bReference);
+extern char g_10538764[];
+extern char g_1056b4b8[];
+extern CGlobalEntityList g_106eb5d8;
+void sub_101cd940(CPhysicsCannister *pEnt);
+void sub_10192130(int modelIndex, void *pPhysics, const float *pOrigin, const float *pAngles, const float *pVelocity, const float *pAngVelocity, float flScale, int a, int b, int c);
+void sub_10104730(const Vector &vecCenter, const float *pAngles, int *pParams, CPhysicsCannister *pOwner);
+
+struct CPhysObjView
+{
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS10(2) EVS10(3)
+	virtual void slot40(float *pVelocity, float *pAngVelocity);
+};
+
+struct CCannisterVirt
+{
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7)
+	virtual int slot8();
+	EVS(9)
+	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18)
+	EVS(190) EVS(191)
+	virtual Vector slot192();
+	EVS(193) EVS(194) EVS(195) EVS(196) EVS(197) EVS(198) EVS(199)
+	EVS10(20)
+	EVS(210) EVS(211) EVS(212) EVS(213) EVS(214) EVS(215) EVS(216)
+	virtual float *slot217();
+	EVS(218)
+	virtual float *slot219();
+};
+
+struct CCannisterNamed : CPhysicsCannister
+{
+	const char *sub_100ab4f0();
+};
+
+// TARGET: CPhysicsCannister::sub_10150f50
+void CPhysicsCannister::sub_10150f50()
+{
+	m_nTakeDamage = 0;
+	sub_10150e80();
+	CPhysObjView *pPhysics = (CPhysObjView *)m_pPhysObj36c;
+	Vector vecVelocity;
+	Vector vecAngVelocity;
+	pPhysics->slot40(&vecVelocity.x, &vecAngVelocity.x);
+	CCannisterVirt *pVirt = (CCannisterVirt *)this;
+	sub_10192130(pVirt->slot8(), pPhysics, pVirt->slot217(), pVirt->slot219(), &vecVelocity.x, &vecAngVelocity.x, 1.0f, 0, 0, 0);
+	CParamsExplosion *pExplosion = (CParamsExplosion *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, m_pszExplosion1a14 ? m_pszExplosion1a14 : g_106b8540, 0, 0), 0, g_10538764, g_1056b4b8, 0);
+	if (pExplosion)
+		sub_10104730(pVirt->slot192(), pVirt->slot219(), pExplosion->sub_10104510(), this);
+	else
+		Warning("%s could not find explosion parameters: %s\n", ((CCannisterNamed *)this)->sub_100ab4f0(), m_pszExplosion1a14 ? m_pszExplosion1a14 : g_106b8540);
+	sub_101cd940(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151ae0 size=0x6b
 #include "matrix3x4_t.h"
 #include <math.h>
