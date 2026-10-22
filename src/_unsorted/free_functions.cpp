@@ -95512,6 +95512,34 @@ int sub_103e2840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e2d10 size=0x107
+#include "CWeaponRanged_FlameThrower.h"
+#include "CBaseEntity.h"
+#include "CPASFilter.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CUnknown1070b248.h"
+#include "CUnknown1070b22c.h"
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+extern char vt_104470b0[];
+extern CUnknown1070b248 *g_1070b248;
+extern CUnknown1070b22c *g_1070b22c;
+
+void CWeaponRanged_FlameThrower::sub_103e2d10(const char *pszSample, int channel)
+{
+	CEntitySoundOriginView *pEnt = (CEntitySoundOriginView *)this;
+	char buf[sizeof(CPASFilter)];
+	CPASFilter *filter = new (buf) CPASFilter(pEnt->GetSoundEmissionOrigin().Base());
+	*(void **)filter = vt_104470b0;
+	filter->sub_1019d4b0(pEnt->GetSoundEmissionOrigin(), 0.0f);
+	int edict = ((CBaseEntity *)this)->m_pEdict2e0;
+	g_1070b248->vfunc2(filter, g_1070b22c->vfunc35(edict), channel, pszSample, 1.0f, 100, 128, 100, 0, 0, 1, 0);
+	((CPASAttenuationFilter *)buf)->m_Recipients.Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3490 size=0xa6
 #include "CWeaponRanged_FlameThrower.h"
 
