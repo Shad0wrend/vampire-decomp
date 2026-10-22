@@ -6,6 +6,8 @@ class CFire : public CBaseEntity
 {
 public:
 	CFire *vfunc5(unsigned int flags);
+	void vfunc123();	// slot 123 "DrawDebugGeometryOverlays"-like: while the fire burns (heat at +0x470 above 0, burn-out time at +0x464 ahead) draws its box (colour 0x58, 0xff, 0x80) and a "Heat" text line, else (unless sub_1010a8d0 holds) a dimmer box; then CBaseEntity::vfunc123
+	bool sub_1010a8d0();	// stub 0x1000e4f8, asked when the fire is not burning
 	CFire *sub_10109990();	// as in CKeepUpright (transplant)
 	void vfunc180();
 	void sub_1010b3c0();
