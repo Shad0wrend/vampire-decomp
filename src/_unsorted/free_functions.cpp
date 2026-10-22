@@ -56750,6 +56750,29 @@ void CThinkUnit::sub_101ee5a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ef3d0 size=0x119
+#include "CVampireProjectile.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CUnknown1070b248.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b248 *g_1070b248;
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_106b8540[];
+
+void CVampireProjectile::sub_101ef3d0()
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this, ATTN_NORM);
+	filter.MakeReliable();
+	const char *pszSound = *(const char **)((char *)this + 0x880);
+	if (!pszSound)
+		pszSound = g_106b8540;
+	int edict = m_pEdict2e0;
+	g_1070b248->vfunc3(&filter, g_1070b22c->vfunc35(edict), 4, pszSound, 1.0f, ATTN_NORM, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ef900 size=0xe7
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
