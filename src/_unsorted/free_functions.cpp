@@ -13306,6 +13306,72 @@ void sub_10089e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008a520 size=0xdf
+#include <stdlib.h>
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+__declspec(dllimport) void __cdecl DevMsg(const char *pszFormat, ...);
+
+struct CEnemiesView
+{
+	char m_pad0000[0x10];
+	float m_flFreeKnowledgeDuration;	// 0x10
+};
+
+#define NV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define NV100(p) NV10(p##0) NV10(p##1) NV10(p##2) NV10(p##3) NV10(p##4) NV10(p##5) NV10(p##6) NV10(p##7) NV10(p##8) NV10(p##9)
+
+struct CNPCSlotView	// the NPC object at +0x98 of an entity
+{
+	NV100(a) NV100(b) NV100(c) NV100(d) NV100(e)
+	NV10(f0) NV10(f1) NV10(f2) NV10(f3)
+	virtual void g0();
+	virtual CEnemiesView *slot541();
+	char m_pad0004[0x6658 - 4];
+	char m_bFlag6658;
+
+	const char *sub_100ab4f0();
+};
+
+struct CKnowledgeEntView
+{
+	char m_pad0000[0x98];
+	CNPCSlotView *m_pNPC98;
+};
+
+struct CKnowledgeSource
+{
+	float sub_101e8c30();
+};
+
+extern CKnowledgeSource g_10739d08;
+int sub_101193b0();
+CKnowledgeEntView *sub_100d2070(int a, const char *pszName, CKnowledgeEntView *pPrev);
+
+void sub_1008a520()
+{
+	int nList = sub_101193b0();
+	const char *pszName = (const char *)g_1070b22c->vfunc84(1);
+	CKnowledgeEntView *pEnt = sub_100d2070(nList, pszName, 0);
+	float flDuration = g_10739d08.sub_101e8c30();
+	const char *pszArg = (const char *)g_1070b22c->vfunc84(2);
+	if (pszArg && *pszArg)
+		flDuration = (float)atof(pszArg);
+	for (; pEnt; pEnt = sub_100d2070(nList, pszName, pEnt))
+	{
+		CNPCSlotView *pNPC = pEnt->m_pNPC98;
+		if (pNPC && pNPC->slot541())
+		{
+			pNPC->slot541()->m_flFreeKnowledgeDuration = flDuration;
+			pNPC->m_bFlag6658 = !pNPC->m_bFlag6658;
+			DevMsg("%s - FreeKnowledgeDuration set to %f\n", pNPC->sub_100ab4f0(), flDuration);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008a6d0 size=0x64
 #include "CUnknown1070b22c.h"
 
