@@ -25015,6 +25015,52 @@ bounds:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd000 size=0x14a
+#include "CCollisionProperty.h"
+
+extern Vector g_1070d9d0;
+void sub_10138130(const Vector *in, const float *pMatrix, Vector *out);
+void sub_10137fe0(const Vector *in, const float *pMatrix, Vector *out);
+void sub_1013c8c0(const Vector *pMins, const Vector *pMaxs, const Vector *in, Vector *out);
+
+inline void VectorITransform(const Vector &in, const float *pMatrix, Vector &out)
+{
+    sub_10138130(&in, pMatrix, &out);
+}
+
+inline void VectorTransform(const Vector &in, const float *pMatrix, Vector &out)
+{
+    sub_10137fe0(&in, pMatrix, &out);
+}
+
+struct CCollisionPropertyV8
+{
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+    virtual Vector *GetCollisionOrigin();
+};
+
+void CCollisionProperty::sub_100dd000(const Vector &in, Vector &out)
+{
+    Vector local;
+    Vector clamped;
+
+    if (!(m_usSolidFlags & 0x80) && m_nSolidType != 2 && m_nSolidType != 0 &&
+        *(Vector *)vfunc9(0) != g_1070d9d0) {
+        VectorITransform(in, vfunc10(), local);
+    } else {
+        VectorSubtract(in, *((CCollisionPropertyV8 *)this)->GetCollisionOrigin(), local);
+    }
+    sub_1013c8c0(&m_vecMins, &m_vecMaxs, &local, &clamped);
+    if (!(m_usSolidFlags & 0x80) && m_nSolidType != 2 && m_nSolidType != 0 &&
+        *(Vector *)vfunc9(0) != g_1070d9d0) {
+        VectorTransform(clamped, vfunc10(), out);
+        return;
+    }
+    VectorAdd(clamped, *((CCollisionPropertyV8 *)this)->GetCollisionOrigin(), out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd2e0 size=0x118
 #include "CCollisionProperty.h"
 
