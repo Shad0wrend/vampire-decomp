@@ -3,6 +3,7 @@
 #pragma once
 
 class CBaseEntity;
+class CBasePlayer;
 class CBaseCombatCharacter;
 class CItemGKeyring;
 struct inputdata_t;
@@ -19,7 +20,8 @@ public:
 	CItemGKeyring *m_pKeyring;	// 0x810: the keyring item the lock was made for (a static default object when null)
 	char m_bGiveKeyring;	// 0x814
 	char m_bLocked815;	// 0x815
-	char pad816[2];
+	unsigned char m_b816;	// 0x816: sent to the player's hud in the keyring message
+	char pad817;
 	int m_n818;	// 0x818: slot 35 answer while the lock is closed
 	int m_n81c;	// 0x81c: slot 35 answer while the keyring check fails
 	int m_n820;	// 0x820: slot 35 answer while the keyring check passes
@@ -31,6 +33,7 @@ public:
 	int vfunc34(int a);	// slot 34 (plain member): 2 while the attached container answers sub_100eef10, else 3 when sub_10224100 fails, else 2 + (sub_10224910(a) != 0)
 	int vfunc35(int a);	// slot 35 (plain member): 0x3a while the attached container answers sub_100eef10, else when the lock is open (sub_10224100) the field at +0x820 / +0x81c by sub_10224910(a), else 0x3b when the container answers sub_100eedd0, else the field at +0x818
 	bool vfunc32(int a);	// slot 32 (plain member): CanUse-like check of the player a (as an entity pointer): false when the lock is not open (sub_10224100), when the entity at +0x8c is another one, when the open container refuses and the player has flag 0x20 (message 0x4d) or when the lock is closed (+0x815) / the keyring check fails (message 0xf)
+	void vfunc42(CBasePlayer *pPlayer);	// slot 42 (plain member): the base slot 42, then the keyring hud message (type 6: +0x816, sub_1020b000, slot 268) to this player only
 	bool sub_10224100();	// stub 0x10001d2f
 	bool sub_10224910(int a);	// stub 0x1000ffa1
 	void sub_10224950(CBaseEntity *pPlayer);	// a player opens the lock: tells the player's hud about the keyring (messages 0x13 / 0x14), state 3, slot 274, and tells the container who it is used by and runs its slot 242
