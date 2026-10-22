@@ -27,4 +27,6 @@ public:
 	float *sub_101e8da0();	// the address of the block at +0x2bc (stub 0x10008e7c): floats at +0x64 / +0x68 are the base and the per-step delay
 	CSkillOutcome sub_101e7ea0(void *pPlayer, void *pSkill, char bFlag);	// the outcome of a vampire skill test of kind 1 for the player (stub 0x10010b9f, ret 0x10)
 	CSkillOutcome sub_101e8100(void *pPlayer, void *pSkill, char bFlag);	// like sub_101e7ea0, for the skill kind 2 (stub 0x10005ac4)
+	int sub_101e8430(CBaseCombatCharacter *pChar, int a, unsigned char b);	// the number of dice for a roll of the character (stub 0x1000db7a)
+	int sub_101e8ec0(CBaseCombatCharacter *pChar);	// the difficulty of a roll of the character (stub 0x1000b2e4)
 };
