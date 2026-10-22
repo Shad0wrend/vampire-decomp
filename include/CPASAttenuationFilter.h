@@ -1,62 +1,54 @@
-// CPASAttenuationFilter: IRecipientFilter (at +0x0) with the recipient vector of CRecipientFilter (memory at +0x8,
-// size at +0x14, data pointer at +0x18). Primary vtable 0x104470b0. The helper structs model the inlined
-// CUtlVector destructor chain.
+// CPASAttenuationFilter (RTTI .?AVCPASAttenuationFilter@@, vtable 0x104470b0): the players that can hear an origin,
+// minus the ones too far for the attenuation (Source's recipientfilter.h). On the stack:
+//   CPASAttenuationFilter filter(this);           // entity: GetSoundEmissionOrigin (slot 222, +0x378) is called twice
+//   CPASAttenuationFilter filter(vecOrigin, 0.8f); // origin
+//   CPASAttenuationFilter filter(this, soundlevel); // a soundlevel_t: attenuation SNDLVL_TO_ATTN(soundlevel)
+// = the origin, the CRecipientFilter constructor call, CPASFilter's vptr, AddRecipientsByPAS(origin), this vptr,
+// Filter(origin, attenuation) (0x1019d4b0, stub 0x1000dfa3). ATTN_NORM is 0.8f. The entity constructor takes any class
+// that declares `Vector GetSoundEmissionOrigin()` in slot 222 (CEntitySoundOriginView.h has the slot list).
 #pragma once
 
-#include "IRecipientFilter.h"
+#include "CPASFilter.h"
+#include "CRecipientVec.h"
 
-extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
+#define ATTN_NONE 0.0f
+#define ATTN_NORM 0.8f
 
-struct CRecipientVecMem
+#ifndef SNDLVL_TO_ATTN
+enum soundlevel_t	// Source's sound levels (dB); a soundlevel_t argument picks the soundlevel constructors below
 {
-	void *m_pMemory;
-	int m_allocationCount;
-	int m_growSize;
-
-	void Purge(void (__cdecl *pfnFree)(void *))
-	{
-		if (m_growSize != -1) {
-			if (m_pMemory) {
-				pfnFree(m_pMemory);
-				m_pMemory = 0;
-			}
-			m_allocationCount = 0;
-		}
-	}
+	SNDLVL_NONE = 0,
+	SNDLVL_IDLE = 60,
+	SNDLVL_TALKING = 60,
+	SNDLVL_NORM = 75,
+	SNDLVL_GUNFIRE = 140
 };
+// the game's form: an int division (idiv, then fild), 4.0 a double constant (0x10449148)
+#define SNDLVL_TO_ATTN(a) ((a) > 50 ? (20 / ((a) - 50)) : 4.0)
+#endif
 
-struct CRecipientVec
-{
-	CRecipientVecMem m_Memory;
-	int m_Size;
-	void *m_pElements;
-
-	void sub_10013e12();	// element destruct
-	void Purge()
-	{
-		for (int i = m_Size; --i >= 0; )
-			sub_10013e12();
-		void (__cdecl *pfnFree)(void *) = g_109f3624;
-		m_Size = 0;
-		m_Memory.Purge(pfnFree);
-		m_pElements = m_Memory.m_pMemory;
-		m_Memory.Purge(pfnFree);
-	}
-	~CRecipientVec() { Purge(); }
-};
-
-class CPASAttenuationFilter : public IRecipientFilter
+class CPASAttenuationFilter : public CPASFilter
 {
 public:
-	CPASAttenuationFilter();
-	virtual void vfunc1();
-	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual char vfunc4();
-	virtual void vfunc5();
-	virtual void vfunc6();
-	virtual void vfunc7();
+	template <class E>
+	CPASAttenuationFilter(E *entity, float attenuation = ATTN_NORM) : CPASFilter(entity->GetSoundEmissionOrigin())
+	{
+		Filter(entity->GetSoundEmissionOrigin(), attenuation);
+	}
+	CPASAttenuationFilter(const Vector &origin, float attenuation = ATTN_NORM) : CPASFilter(origin)
+	{
+		Filter(origin, attenuation);
+	}
+	template <class E>
+	CPASAttenuationFilter(E *entity, soundlevel_t soundlevel) : CPASFilter(entity->GetSoundEmissionOrigin())
+	{
+		Filter(entity->GetSoundEmissionOrigin(), SNDLVL_TO_ATTN(soundlevel));
+	}
+	CPASAttenuationFilter(const Vector &origin, soundlevel_t soundlevel) : CPASFilter(origin)
+	{
+		Filter(origin, SNDLVL_TO_ATTN(soundlevel));
+	}
+	CPASAttenuationFilter();	// out of line: the matched source of ??_GCPASAttenuationFilter (0x1002ac40) defines it to make VC6 emit that destructor
 
-	int m_pad0004;
-	CRecipientVec m_Recipients;	// 0x0008
+	void Filter(const Vector &origin, float attenuation = ATTN_NORM);	// 0x1019d4b0 (stub 0x1000dfa3)
 };

@@ -1,21 +1,13 @@
-// CReliableSingleUserRecipientFilter: modelled like CPASAttenuationFilter (IRecipientFilter at +0x0, the recipient
-// vector of CRecipientFilter at +0x8); the real bases (CSingleUserRecipientFilter, CRecipientFilter) are not recovered.
+// CReliableSingleUserRecipientFilter (RTTI .?AVCReliableSingleUserRecipientFilter@@, vtable 0x10454688): one player,
+// reliable. On the stack: the CSingleUserRecipientFilter construction (CRecipientFilter constructor call, its vptr,
+// AddRecipient), then this vptr and MakeReliable (0x1019cf50, stub 0x1001186f).
 #pragma once
 
-#include "CPASAttenuationFilter.h"
+#include "CSingleUserRecipientFilter.h"
 
-class CReliableSingleUserRecipientFilter : public IRecipientFilter
+class CReliableSingleUserRecipientFilter : public CSingleUserRecipientFilter
 {
 public:
-	CReliableSingleUserRecipientFilter();
-	virtual void vfunc1();
-	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual char vfunc4();
-	virtual void vfunc5();
-	virtual void vfunc6();
-	virtual void vfunc7();
-
-	int m_pad0004;
-	CRecipientVec m_Recipients;	// 0x0008
+	CReliableSingleUserRecipientFilter(void *player) : CSingleUserRecipientFilter(player) { MakeReliable(); }
+	CReliableSingleUserRecipientFilter();	// out of line: the matched source of ??_GCReliableSingleUserRecipientFilter (0x100e1140) defines it to make VC6 emit that destructor
 };

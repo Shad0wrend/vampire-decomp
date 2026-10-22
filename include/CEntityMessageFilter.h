@@ -1,13 +1,12 @@
-// CEntityMessageFilter (RTTI .?AVCEntityMessageFilter@@, vtable 0x1045ffec): a recipient filter holding every player.
-// Base CRecipientFilter at +0 (flat, see CRecipientFilter.h); its constructor is the base constructor 0x1019ce00 followed
-// by AddAllPlayers (0x1019cff0), both inlined where a function builds one on the stack. Its destructor is the inlined
-// purge of the recipient vector (see CBroadcastRecipientFilter.h), after the vtable store of the derived class.
+// CEntityMessageFilter (RTTI .?AVCEntityMessageFilter@@, vtable 0x1045ffec): every player (its constructor is the
+// CRecipientFilter constructor call, the vptr store and AddAllPlayers, inlined on the stack); callers then remove
+// the sender (sub_1019d2f0) and make it reliable.
 #pragma once
 
-#include "CBroadcastRecipientFilter.h"
+#include "CRecipientFilter.h"
 
-class CEntityMessageFilter : public CRecipientFilterPurger, public CRecipientFilter
+class CEntityMessageFilter : public CRecipientFilter
 {
 public:
-	CEntityMessageFilter() { sub_1019cff0(); }
+	CEntityMessageFilter() { AddAllPlayers(); }
 };

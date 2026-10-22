@@ -1,15 +1,12 @@
-// CPVSFilter (RTTI .?AVCPVSFilter@@, vtable 0x10455e54): a recipient filter holding the players that can see an origin.
-// Base CRecipientFilter at +0 (flat, see CRecipientFilter.h); its constructor is the base constructor 0x1019ce00 followed
-// by AddRecipientsByPVS (0x1019d210), both inlined where a function builds one on the stack. Its destructor is the inlined
-// purge of the recipient vector (see CBroadcastRecipientFilter.h), after the vtable store of the derived class.
+// CPVSFilter (RTTI .?AVCPVSFilter@@, vtable 0x10455e54): the players that can see an origin (Source's
+// recipientfilter.h). On the stack: the CRecipientFilter constructor call, the vptr store, AddRecipientsByPVS(origin).
 #pragma once
 
-#include "CBroadcastRecipientFilter.h"
+#include "CRecipientFilter.h"
 
-class CPVSFilter : public CRecipientFilterPurger, public CRecipientFilter
+class CPVSFilter : public CRecipientFilter
 {
 public:
-	CPVSFilter(const float *pOrigin) { sub_1019d210(pOrigin); }
-	CPVSFilter(const Vector &vecOrigin) { sub_1019d210(&vecOrigin.x); }	// Source's constructor: the origin by reference (a temporary is passed by its address)
-	virtual CRecipientFilter *vfunc0(unsigned char flags);	// scalar deleting destructor (0x100f5fc0 / stub 0x1000948f)
+	CPVSFilter(const Vector &origin) { AddRecipientsByPVS(origin); }	// a temporary origin is passed by its address
+	CPVSFilter(const float *pOrigin) { sub_1019d210(pOrigin); }	// the same, origin as a float pointer (matched code)
 };

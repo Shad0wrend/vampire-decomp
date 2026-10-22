@@ -1,7 +1,6 @@
-// CReliableBroadcastFilter: the stack-constructed view of CRelieableBroadcastRecipientFilter (vtable 0x10462828, see
-// CRelieableBroadcastRecipientFilter.h for the heap-side destructor). Its constructor is the broadcast constructor
-// (CRecipientFilter constructor, own vtable store, AddAllPlayers) followed by its own vtable store and MakeReliable
-// (0x1001186f), all inlined where a function builds one on the stack.
+// CReliableBroadcastFilter: the stack-built CRelieableBroadcastRecipientFilter (vtable 0x10462828, the symbol map
+// names it for both). `CReliableBroadcastFilter filter;` is the CBroadcastRecipientFilter construction (CRecipientFilter
+// constructor call, its vptr, AddAllPlayers), then this vptr and MakeReliable (0x1019cf50, stub 0x1001186f).
 #pragma once
 
 #include "CBroadcastRecipientFilter.h"
@@ -9,6 +8,5 @@
 class CReliableBroadcastFilter : public CBroadcastRecipientFilter
 {
 public:
-	CReliableBroadcastFilter() { sub_1019cf50(); }
-	virtual CRecipientFilter *vfunc0(unsigned char flags);	// scalar deleting destructor
+	CReliableBroadcastFilter() { MakeReliable(); }
 };

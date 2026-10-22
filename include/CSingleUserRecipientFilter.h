@@ -1,14 +1,13 @@
-// CSingleUserRecipientFilter (RTTI .?AVCSingleUserRecipientFilter@@, vtable 0x104540e8): a recipient filter holding one player.
-// Base CRecipientFilter at +0 (flat, see CRecipientFilter.h); its constructor is the base constructor 0x1019ce00 followed
-// by AddRecipient (0x1019d040, stub 0x1001531b), both inlined where a function builds one on the stack. Its destructor is
-// the inlined purge of the recipient vector (see CBroadcastRecipientFilter.h), after the vtable store of the derived class.
+// CSingleUserRecipientFilter (RTTI .?AVCSingleUserRecipientFilter@@, vtable 0x104540e8): one player (Source's
+// recipientfilter.h). On the stack: the CRecipientFilter constructor call, the vptr store, AddRecipient(player)
+// (0x1019d040, stub 0x1001531b). The player is taken as void * so any player view can be passed.
 #pragma once
 
-#include "CBroadcastRecipientFilter.h"
+#include "CRecipientFilter.h"
 
-class CSingleUserRecipientFilter : public CRecipientFilterPurger, public CRecipientFilter
+class CSingleUserRecipientFilter : public CRecipientFilter
 {
 public:
-	CSingleUserRecipientFilter(void *pPlayer) { sub_1019d040(pPlayer); }
-	virtual CRecipientFilter *vfunc0(unsigned char flags);	// scalar deleting destructor
+	CSingleUserRecipientFilter(void *player) { AddRecipient((CBasePlayer *)player); }
+	CSingleUserRecipientFilter();	// not in the game: declared for the matched source of ??_GCReliableSingleUserRecipientFilter (0x100e1140)
 };

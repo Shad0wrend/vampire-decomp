@@ -1,13 +1,14 @@
-// CPASFilter (RTTI .?AVCPASFilter@@, vtable 0x104470dc): a recipient filter holding the players that can hear an origin.
-// Base CRecipientFilter at +0 (flat, see CRecipientFilter.h); its constructor is the base constructor 0x1019ce00 followed
-// by AddRecipientsByPAS (0x1019d280), both inlined where a function builds one on the stack. Its destructor is the
-// inlined purge of the recipient vector, as for CBroadcastRecipientFilter.
+// CPASFilter (RTTI .?AVCPASFilter@@, vtable 0x104470dc): the players that can hear an origin (Source's
+// recipientfilter.h). On the stack: the CRecipientFilter constructor call, the vptr store, AddRecipientsByPAS(origin).
+// The base of CPASAttenuationFilter (CPASAttenuationFilter.h).
 #pragma once
 
-#include "CBroadcastRecipientFilter.h"
+#include "CRecipientFilter.h"
 
-class CPASFilter : public CRecipientFilterPurger, public CRecipientFilter
+class CPASFilter : public CRecipientFilter
 {
 public:
-	CPASFilter(const float *pOrigin) { sub_1019d280(pOrigin); }
+	CPASFilter(const Vector &origin) { AddRecipientsByPAS(origin); }
+	CPASFilter(const float *pOrigin) { sub_1019d280(pOrigin); }	// the same, origin as a float pointer (matched code)
+	CPASFilter();	// not in the game: declared for the matched source of ??_GCPASAttenuationFilter (0x1002ac40)
 };

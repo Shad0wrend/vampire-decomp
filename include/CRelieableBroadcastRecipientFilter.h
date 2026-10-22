@@ -1,21 +1,13 @@
-// CRelieableBroadcastRecipientFilter: modelled like CPASAttenuationFilter (IRecipientFilter at +0x0, the recipient
-// vector of CRecipientFilter at +0x8); the real bases (CBroadcastRecipientFilter, CRecipientFilter) are not recovered.
+// CRelieableBroadcastRecipientFilter (RTTI .?AVCRelieableBroadcastRecipientFilter@@ - the game's spelling, vtable
+// 0x10462828): every player, reliable (Source's CReliableBroadcastRecipientFilter). On the stack it is written
+// `CReliableBroadcastFilter filter;` (CReliableBroadcastFilter.h, the same code): this class keeps an out-of-line
+// default constructor because the matched source of its scalar deleting destructor (0x1011c3c0) defines it.
 #pragma once
 
-#include "CPASAttenuationFilter.h"
+#include "CBroadcastRecipientFilter.h"
 
-class CRelieableBroadcastRecipientFilter : public IRecipientFilter
+class CRelieableBroadcastRecipientFilter : public CBroadcastRecipientFilter
 {
 public:
 	CRelieableBroadcastRecipientFilter();
-	virtual void vfunc1();
-	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual char vfunc4();
-	virtual void vfunc5();
-	virtual void vfunc6();
-	virtual void vfunc7();
-
-	int m_pad0004;
-	CRecipientVec m_Recipients;	// 0x0008
 };
