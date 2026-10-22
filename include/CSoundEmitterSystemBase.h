@@ -4,6 +4,25 @@
 
 class UtlMem2;
 
+// One wave entry of a sound record: an 8 byte record (16 bit symbol of the wave name in the string table at +0xb0, value).
+struct CSoundWaveEntry
+{
+	unsigned short m_symbol;
+	char m_pad02[6];
+};
+
+// A sound record (0xe8 bytes each, table at CSoundEmitterSystemBase +0x54, record = table + 0x1c + index * 0xe8):
+// only the wave list is declared.
+struct CSoundParametersInternal
+{
+	char m_pad0000[0x1d];
+	char m_bPrecache1d;	// 0x1d
+	char m_pad001e[2];
+	CSoundWaveEntry *m_pWaves;	// 0x20
+	char m_pad0024[8];
+	int m_nWaves;	// 0x2c
+};
+
 class CSoundEmitterSystemBase
 {
 public:
@@ -44,4 +63,6 @@ public:
 	int sub_101b4cc0(const char *pszScript);	// the index of a script file in the manifest (stub 0x1000b113), -1 when it is not in it
 	void sub_101b2b30(const char *pszScript, UtlMem2 *pOut);	// "GetSoundIndexesForScript"-like: clears the output vector, then appends the index of every sound record whose script file is pszScript; DevWarning "Can't PrecacheSoundScript( '%s' ), file not in manifest '%s'" when the script is unknown
 	void sub_101b5180(const char *pszSound, const char *pszScript);	// "CSoundEmitterSystemBase::MoveSound": moves the sound record to another script file of the manifest (both script flags are marked changed); DevWarning for an unknown sound or a script file that is not in the manifest
+	CSoundParametersInternal *sub_101b3730(int index);	// the sound record of the index (stub 0x100130a7 is sub_101b2f60, this one is 0x10007469), null when the index is out of range
+	const char *sub_101b4c90(const CSoundWaveEntry *pWave);	// the wave name of an entry: looks its symbol up in the string table at +0xb0 (stub 0x10008981)
 };
