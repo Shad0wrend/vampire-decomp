@@ -22,5 +22,9 @@ public:
 	void vfunc104();	// slot 104 "Precache": CBreakableProp::vfunc104, then precaches the models named at +0x7bc / +0x7c0 and the sounds named at +0x7c4, +0x7c8, +0x7cc when set
 	void sub_1000978c();	// CBreakableProp::vfunc104 (stub of 0x1018fb50), called directly
 	void sub_10213ef0(int index, void *pEvent, CBaseEntity *pOther);	// the impact reaction: when the prop is armed (byte +0x7b8) runs slot 266 on pOther, then damages: with a physics event (pEvent) from pOther (or its owner) at the impact force / position, else from the prop itself with the damage at +0x794 (the damage goes to pOther); takes (index, event, entity)
-	void sub_10032720(CBaseEntity *pTarget, void *pInfo);	// stub 0x1000bd70
+
+	char m_pad03e0[0x794 - 0x3e0];
+	float m_flDamage794;	// 0x794: the damage the impact does
+	char m_pad0798[0x7b8 - 0x798];
+	char m_bArmed7b8;	// 0x7b8: set while the prop reacts to impacts
 };
