@@ -100,6 +100,54 @@ int CNPC_VSheriffMan::vfunc337()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ae8c0 size=0x18a
+#include "CNPC_VSheriffMan.h"
+#include "ScopeTrace.h"
+#include "ConVar.h"
+
+extern ConVar g_1093c588;
+extern float g_104c6150;
+
+// TARGET: CNPC_VSheriffMan::vfunc438
+int CNPC_VSheriffMan::vfunc438()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::SelectSchedule", g_106b8540);
+	m_n1b2c = 0x21;
+	if (m_bAttacking)
+	{
+		int nHeightA = 0;
+		int nHeightB = 0;
+		sub_103b1680(&nHeightA, &nHeightB);
+		if (m_n5cc0 == 5)
+			return 0x158;
+		if (m_b66e5)
+		{
+			sub_103b10f0();
+			return sub_10384ee0();
+		}
+		if (g_1093c588.GetInt() > 0)
+		{
+			g_1093c588.sub_10246160(0);
+			return 0x15a;
+		}
+		if (nHeightA == 0)
+		{
+			if (nHeightB == 1)
+				return 0x15c;
+		}
+		else if (nHeightA == 1 && nHeightB == 0)
+			return 0x15d;
+		if (!(sub_103c6a20() >= 0.05f))
+		{
+			if (!sub_103c67f0(g_104c6150))
+				return sub_10384ee0();
+		}
+		return 0x15a;
+	}
+	return sub_10384ee0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103aeac0 size=0x68
 #include "CNPC_VSheriffMan.h"
 
