@@ -13,4 +13,5 @@ public:
 	CUnknown10205ba0 m_value;	// 0x18
 
 	const char *sub_10205dc0();	// the text form of the dependency ("<name> <stat> <value>"); the empty text for an empty block
+	void sub_10205d00(const char *pszText);	// CVTraitDependencyValue_t::vfunc1: parses "<block> <stat name> <value>" (split with strtok at the delimiter 0x1054ca50) into the block, the stat id and the value
 };
