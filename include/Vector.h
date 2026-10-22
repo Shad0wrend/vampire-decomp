@@ -71,6 +71,7 @@ public:
 
 	Vector &sub_1003e4b0(const Vector &v);	// operator=, where the game did not inline it
 	Vector &sub_1011d2e0(const Vector &v);	// provisional, like sub_1003e4b0 (transplant)
+	Vector &sub_100f2f90(vec_t X, vec_t Y, vec_t Z);	// constructor, where the game did not inline it
 };
 
 // ---- free functions (mathlib/vector.h) ----
