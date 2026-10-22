@@ -9,7 +9,7 @@ class CEffectsServer
 public:
 	virtual CEffectsServer *vfunc0(unsigned int flags);
 	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual void vfunc2(const float *pOrigin, int a, float b, float c);	// slot 2: like slot 7 with a scaled value: forwards (filter, 0, pOrigin, a, b * 0.1f, (int)c) to slot 34 of the temp entity system
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual void vfunc5();
