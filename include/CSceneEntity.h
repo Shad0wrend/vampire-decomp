@@ -69,7 +69,8 @@ public:
 	SCENE_V10(1) SCENE_V10(2) SCENE_V10(3) SCENE_V10(4) SCENE_V10(5) SCENE_V10(6) SCENE_V10(7) SCENE_V10(8) SCENE_V10(9)
 	SCENE_V10(10) SCENE_V10(11) SCENE_V10(12) SCENE_V10(13) SCENE_V10(14) SCENE_V10(15) SCENE_V10(16) SCENE_V10(17) SCENE_V10(18) SCENE_V10(19)
 	SCENE_V10(20) SCENE_V10(21) SCENE_V10(22) SCENE_V10(23)
-	SCENE_V(240) SCENE_V(241) SCENE_V(242)
+	SCENE_V(240) SCENE_V(241)
+	virtual void vfunc242();	// starts the scene: marks it playing (+0x498), clears the pause and remainder, stamps curtime at +0x4a4 / +0x4a8, sorts the events (sub_1007cfc0(1, 0, 0)), then primes the scene and the actors and fires the start output at +0x4cc
 	virtual void vfunc243();	// resets the automation state (called first by vfunc266)
 	SCENE_V(244) SCENE_V(245) SCENE_V(246) SCENE_V(247)
 	virtual void vfunc248(float a, int b, int c);
@@ -99,6 +100,9 @@ public:
 	float sub_10080ac0();	// stub 0x10010410: a float value of the scene (the playback speed), run by the think
 	void sub_100846c0(void *pScene);	// stub 0x100018c5, run by the think while the scene plays on
 	void sub_10084170(void *pScene);	// stub 0x1001200d, run by the think of the instanced scene when the scene has run out
+	void sub_100843d0(void *pScene);	// stub 0x10008a8f, run on the scene when it starts
+	void sub_10081ed0();	// stub 0x100114b4, run when the scene starts
+	void sub_10082c90();	// stub 0x10003080, run when the scene starts
 
 	char m_pad0004[0x10c - 4];
 	unsigned int m_hPlayer10c;	// 0x10c: entity handle of the scene's player
@@ -110,7 +114,7 @@ public:
 	char m_pad049a[2];
 	float m_f49c;	// 0x49c: running remainder of the speed event
 	float m_f4a0;	// 0x4a0: the last speed event value
-	char m_pad04a4[4];
+	float m_f4a4;	// 0x4a4: curtime when the scene started
 	float m_f4a8;	// 0x4a8: the start time of the scene
 	char m_bAutomateTimed;	// 0x4ac: set when a positive time was parsed
 	char m_pad04ad[3];
@@ -118,7 +122,9 @@ public:
 	float m_flAutomateTime;	// 0x4b4
 	int m_nAutomateField;	// 0x4b8
 	void *m_pScene4bc;	// 0x4bc
-	char m_pad04c0[0x4fc - 0x4c0];
+	char m_pad04c0[0x4cc - 0x4c0];
+	CSceneOutputList m_list4cc;	// 0x4cc: the start output
+	char m_pad04e4[0x4fc - 0x4e4];
 	CSceneOutputList m_list4fc;	// 0x4fc
 	char m_pad0514[0x574 - 0x514];
 	int m_n574;	// 0x574
