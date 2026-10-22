@@ -22801,6 +22801,32 @@ float CMomentaryRotButton::sub_100ca630(float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cae90 size=0xda
+#include "CMomentaryRotButton.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+extern float g_1070d9d0[3];
+
+// TARGET: CMomentaryRotButton::sub_100cae90
+void CMomentaryRotButton::sub_100cae90()
+{
+	((CBaseEntity *)this)->sub_100b2f50(g_1070d9d0);
+	float flFraction = sub_100ca630((float *)((CEntityVSlots *)this)->slot221());
+	sub_100cae20(flFraction, this);
+	m_Output58c.sub_100cd660(EHandle_Get(m_hEntity53c), this, 0.0f);
+	m_nUsed5d4 = 0;
+	if ((m_nSpawnFlags204 & 0x10) && m_flReturnDelay5dc > 0.0f) {
+		m_pfnThink114 = &CMomentaryRotButton::sub_100cafb0;
+		m_nDirection5d8 = -1;
+		m_flTime3fc = m_flLocalTime3f4 + 0.1f;
+		return;
+	}
+	((CBaseEntity *)this)->sub_100ac4e0(0, 0, 0);
+	m_pfnThink114 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb670 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
