@@ -58,4 +58,7 @@ public:
 	void sub_10239f30(void *pOwner);	// stub 0x1000d198, called directly with the owner's character
 	bool sub_10237a50(int a, float *pAngles, float *pOrigin);	// the position and angles of the left index finger bone ("Bip01 L Finger01") of the character behind the aim entity handle at +0x37c (its object at +0x9c): the bone transform (slot 256) combined with a zero matrix, then converted; false without the entity / character / bone
 	bool sub_10237570(int a, float *pAngles, float *pOrigin);	// same as sub_10237a50, the variant whose zero matrix is stored dword by dword
+	void sub_10257640();	// finds the character the owner's use-entity index (+0x1eb8) names (or, without a player object, the local player's) and stores the results of sub_102573a0 / sub_10257280 for the pair at +0x864 / +0x868
+	int sub_102573a0(void *pFrom, void *pTo, int a);	// stub 0x1000d440
+	int sub_10257280(void *pFrom, void *pTo, int a);	// stub 0x10011e55
 };
