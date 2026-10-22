@@ -59978,6 +59978,59 @@ int sub_10204100(CBaseCombatCharacter *pChar, int index, char bIncludeZero)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102043a0 size=0x148
+#include "CVDmg_t.h"
+#include "CVStatInfoList_t.h"
+#include "CVFeat_t.h"
+#include "CUnknown10203240.h"
+
+extern char g_106b8540[];
+
+struct NameHolder	// an embedded string pointer whose accessor falls back to the empty string
+{
+	const char *m_psz;
+	const char *Get() { return m_psz ? m_psz : g_106b8540; }
+};
+struct NameRec { char m_pad[4]; NameHolder m_Name; };
+struct NameTable { NameRec *sub_101f1aa0(int id); };
+
+extern CVStatInfoList_t g_1074e658;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e098;
+extern CVStatInfoList_t g_1074e5f8;
+extern NameTable g_1073a9a0;
+extern CUnknown10203240 g_1074e968;
+
+// TARGET: CVDmgBlock16_t::sub_102043a0
+const char *CVDmgBlock16_t::sub_102043a0()
+{
+	if (m_b == -1)
+		return "<None>";
+	switch (m_a) {
+	case 0:
+		return ((NameHolder *)((char *)g_1074e658.sub_10200370(m_b) + 0x14))->Get();
+	case 1:
+		return ((NameHolder *)((char *)g_1074e4f0.sub_10200370(m_b) + 0x14))->Get();
+	case 2:
+		return ((NameHolder *)((char *)g_1074e098.sub_10200370(m_b) + 0x14))->Get();
+	case 3:
+		return ((NameHolder *)((char *)g_1074e5f8.sub_10200370(m_b) + 0x18))->Get();
+	case 4:
+		return ((NameHolder *)((char *)CVFeatSet::Find(m_b) + 0x14))->Get();
+	case 5:
+		return g_1073a9a0.sub_101f1aa0(m_b)->m_Name.Get();
+	case 6:
+	case 7:
+		return ((NameHolder *)&m_b)->Get();
+	case 8:
+		return g_1074e968.sub_10203240("TraitFxStrs")->sub_10202a10(m_b);
+	case 9:
+		return "ObfuscateCanInc";
+	}
+	return "<None>";
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204550 size=0xa
 extern int g_1074eec4;
 
