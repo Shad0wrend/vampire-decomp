@@ -10,15 +10,27 @@ struct CUnknown101d7520Name	// a string holder; Get() yields "" for null
 	const char *Get() const { return m_p ? m_p : g_106b8540; }
 };
 
-struct CUnknown101d7520Rule	// one of the rules of an entry (the array at +0xc of the entry)
-{
-	void sub_101d6590();	// dumps the rule (stub 0x10007603)
-};
-
-struct CUnknown101d7520Sub	// the object embedded at +0x18 of an entry
+struct CUnknown101d7520Sub	// the object embedded at +0x18 of an entry and at +0x10 of a rule
 {
 	char m_pad00[0x1c];
 	void sub_10206190();	// dumps the object (stub 0x1000cd1a)
+	char sub_10206140(void *pArg);	// stub 0x10013ce1: whether the object can be processed for the given argument (the local player's object at +0xa8)
+};
+
+struct CUnknown101d7520Element	// one element of a rule (the array at +0xc of the rule)
+{
+	void sub_101d6190();	// dumps the element (stub 0x100145a1)
+};
+
+struct CUnknown101d7520Rule	// one of the rules of an entry (the array at +0xc of the entry)
+{
+	int m_nGroup;	// 0x0000: the level group number
+	char m_pad0004[4];
+	int m_nElements;	// 0x0008
+	CUnknown101d7520Element **m_ppElements;	// 0x000c
+	CUnknown101d7520Sub m_sub;	// 0x0010 (0x1c bytes)
+
+	void sub_101d6590();	// dumps the rule (stub 0x10007603)
 };
 
 struct CUnknown101d7520Entry
