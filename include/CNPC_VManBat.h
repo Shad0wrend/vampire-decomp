@@ -1,12 +1,16 @@
 // CNPC_VManBat: man-bat NPC (base chain not modelled). Only what decompiled code needs.
 #pragma once
 
+#include "Vector.h"
+
 class CBaseEntity;
 
 class CNPC_VManBat
 {
 public:
-	char m_pad0000[0x628c];
+	char m_pad0000[0xfec];
+	int m_nState;	// 0xfec: the activity the bat is in
+	char m_pad0ff0[0x628c - 0xff0];
 	unsigned int m_h628c;	// entity handle of the bat's target
 	char m_pad6290[0x6670 - 0x6290];
 	unsigned int m_n6670;
@@ -40,4 +44,9 @@ public:
 	void sub_1038f660();	// stub 0x10005ca9: while carried (flag 5 of +0x14b8), lets the ragdoll of the handle at +0x668c go (with the byte at +0x6694), removes the entity of the handle at +0x6690 and clears the carry flag (sub_1038f600(0))
 	void sub_103c4f40(int arg);	// CNPC_VVampire::vfunc144 (stub 0x1000b8a2), called directly
 	void sub_1038f600(char bOn);	// sets / clears bit 5 of the flags at +0x14b8
+	void sub_1038e720(Vector vecDir);	// picks the reaction to a hit from the direction: a downward-pointing hit (z of 30 or more) and a hit from the side other than the front arc (30..330 degrees from the facing) run sub_1038e640 / sub_1038e6a0 / sub_1038e6e0 / sub_1038e670 (none in the states 0x28, 0x30, 0xb0, 0x4b, 0x1171)
+	void sub_1038e640();	// stub 0x10012e4f
+	void sub_1038e6a0();	// stub 0x1000c25c
+	void sub_1038e6e0();	// stub 0x10011db0
+	void sub_1038e670();	// stub 0x100036e8
 };
