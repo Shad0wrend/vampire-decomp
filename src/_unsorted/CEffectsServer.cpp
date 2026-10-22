@@ -14,6 +14,35 @@ CEffectsServer *CEffectsServer::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f5c80 size=0x185
+#include "CEffectsServer.h"
+#include "CUnknown1019d130.h"
+#include "CBroadcastRecipientFilter.h"
+
+struct TempEntsView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void vfunc8(CUnknown1019d130 *filter, int a, int b, int c, int d, int e, int f, int g, int h, float i, float j, int k, float l, int m, int n, int o, int p, int q);	// slot 8
+};
+extern TempEntsView *g_10540528;
+
+// TARGET: CEffectsServer::vfunc1
+void CEffectsServer::vfunc1(int a, int b, int c, int d, unsigned char e, unsigned char f, int g, unsigned char h, unsigned char i, unsigned char j, unsigned char k, unsigned char l, unsigned char m, unsigned char n, unsigned char o, unsigned char p)
+{
+	CBroadcastRecipientFilter filter;
+	CUnknown1019d130 *pFilter = (CUnknown1019d130 *)&filter;
+	if (m_nSuppressCount <= 0 && m_pSuppressHost != 0) {
+		if (!pFilter->sub_1000aa60())
+			pFilter->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost);
+		if (pFilter->vfunc2() == 0)
+			goto done;
+	}
+	g_10540528->vfunc8(pFilter, 0, a, b, c, d, e, f, g, (float)h, (float)i, j, (float)k, l, m, n, o, p);
+done:;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f63b0 size=0xd3
 #include "CEffectsServer.h"
 #include "CPVSFilter.h"
