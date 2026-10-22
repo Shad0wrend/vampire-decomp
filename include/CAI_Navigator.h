@@ -106,6 +106,7 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 	int sub_1030b580();	// the arrival sequence of the route, -1 when unset (stub 0x1000f6b9)
 	int sub_1030b520();	// the arrival activity of the route (stub 0x10001b77)
 	void sub_1030b5b0(int sequence);	// stores the arrival sequence (stub 0x100016b3)
+	float sub_1030b880();	// a float value of the route handed to the motor with its goal record (stub 0x1001021c)
 };
 
 class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
@@ -117,7 +118,7 @@ public:
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8();
 	virtual void vfunc9(int a, float b);
 	virtual void vfunc10(int a, float b);
-	virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual int vfunc14(int a);
+	virtual void vfunc11(); virtual void vfunc12(); virtual int vfunc13(); virtual int vfunc14(int a);
 	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20();
 	void sub_10011c98();	// as in CDataObjectAccessSystem (transplant)
@@ -148,6 +149,9 @@ public:
 	bool sub_102f1dc0(int a, int b);	// per-frame path request step (ret 8): refreshes the stamps of this and of the pathfinder, drops the route's waypoint; while the owner's flag 0x20 (+0x5d8c) is set waits for the deadline at +0x48 (failure: slot 10(0xc, 1)) and retries sub_102f2330(b) after +0x4c, else tries it at once; success clears the flag and, unless the owner's slot 529 holds (or the current task is 0x6e), fails the task with slot 2(0); true on success
 	bool sub_102f2330(int b);	// stub 0x10001e51: "DoFindPath", called directly
 	bool sub_102ed430(const Vector *pPosition, int a, int b, int c);	// path to the node nearest pPosition (sub_102f3c10 asks the owner's graph): stamps the owner's value at +0x156c and the frame count into +8 / +0xc, asks the pathfinder (sub_102ff3e0 with a, b), sets up the route (flag value 4, the node, its arrival data) and stores the squared distance from pPosition to the route's goal position in the float at +0x14; false when any step fails (ret 0x10: four stack arguments, the last one unused)
+	Vector *sub_102ee140();	// stub 0x100071fd: the position the route is heading for
+	void sub_102f0400();	// stub 0x10006744, run when the motor reports 1
+	int sub_102ee3f0();	// stub 0x10011f77: the owner's task id for the finished move
 
 	int m_i14;
 	int m_i18;
