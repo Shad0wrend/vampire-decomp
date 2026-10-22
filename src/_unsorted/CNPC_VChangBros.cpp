@@ -126,6 +126,35 @@ int CNPC_VChangBros::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036b590 size=0xd7
+#include "CNPC_VChangBros.h"
+#include "ScopeTrace.h"
+struct CUnk10924a6c { virtual void vf0(); virtual int vf1(); };
+extern CUnk10924a6c *g_10924a6c;
+struct CChangBrosUnit : CNPC_VChangBros { bool sub_1036cab0(); void sub_102b27f0(); };
+// TARGET: CNPC_VChangBros::vfunc433
+void CNPC_VChangBros::vfunc433()
+{
+	ScopeTrace trace("CNPC_VChangBros::GatherConditions", g_106b8540);
+	((CChangBrosUnit *)this)->sub_102b27f0();
+	sub_1036d600();
+	sub_10269b50(0x79);
+	sub_10269b50(0x7c);
+	if (sub_1036c8d0()) {
+		g_10924a6c->vf1();
+		sub_10269a20(0x79);
+	}
+	if (((CChangBrosUnit *)this)->sub_1036cab0()) {
+		g_10924a6c->vf1();
+		sub_10269a20(0x7a);
+	}
+	if (sub_1036cbd0()) {
+		g_10924a6c->vf1();
+		sub_10269a20(0x7c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036c6c0 size=0x72
 #include "CNPC_VChangBros.h"
 
