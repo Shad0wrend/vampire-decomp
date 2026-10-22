@@ -65713,6 +65713,26 @@ int sub_1022f4f0(CBaseCombatCharacter *pChar, int nStat, unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022f580 size=0x82
+#include "CVDmg_t.h"
+#include "CUnknown10739d08.h"
+#include "CUnknown101d8a70.h"
+
+extern CUnknown10739d08 g_10739d08;
+
+int sub_1022f580(CBaseCombatCharacter *pChar, int a, unsigned char b, int nDice)
+{
+	CUnknown101d8a70 roll;
+	CVDmgBlock16_t block(4, g_10739d08.sub_101e8430(pChar, a, b));
+	if (block.sub_10204900(pChar) <= 0)
+		return 0;
+	roll.sub_101d8770(pChar, 0, nDice, g_10739d08.sub_101e8ec0(pChar));
+	roll.sub_101d8a70(&b);
+	int nResult = roll.m_n04 - roll.m_n0c;
+	return nResult > 0 ? nResult : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230280 size=0x75
 struct H { int v; H(const H &); };
 struct R { void sub_10204270(); void sub_102042d0(int t, int v); };
