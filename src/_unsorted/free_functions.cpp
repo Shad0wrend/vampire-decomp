@@ -57863,6 +57863,53 @@ unsigned int sub_101fab10(const char *pszFlags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fb000 size=0x12f
+#include "CVDmg_t.h"
+#include "ScopeTrace.h"
+#include "StatOwner2.h"
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+extern StatOwner2 g_1074e968;
+char *sub_10203d60(const char *pszText);
+int sub_101fab10(const char *pszText);
+
+// TARGET: CVDmg_t::sub_101fb000
+void CVDmg_t::sub_101fb000(const char *pszText)
+{
+	ScopeTrace trace("CVDmg_t::Parse", g_106b8540);
+	char *pszCopy = sub_10203d60(pszText);
+	char *pszTok = strtok(pszCopy, " ");
+	if (pszTok)
+	{
+		if (!isdigit(*pszTok))
+		{
+			m_block14.sub_10204570(pszTok);
+			pszTok = strtok(0, " ");
+		}
+		else
+			m_block14.sub_10204270();
+		if (pszTok)
+		{
+			m_field04 = atoi(pszTok);
+			pszTok = strtok(0, " ");
+			if (pszTok)
+			{
+				int nType = g_1074e968.sub_10203020("DamageType");
+				m_pad0000 = g_1074e968.sub_10203190(nType)->sub_10202a50(pszTok);
+				m_field10 = sub_101fab10(pszText);
+				pszTok = strtok(0, " ");
+				if (pszTok)
+					m_block24.sub_10204570(pszTok);
+				return;
+			}
+		}
+	}
+	sub_101fa810();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fb180 size=0x5f
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
