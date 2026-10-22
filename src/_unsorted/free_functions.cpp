@@ -45086,6 +45086,66 @@ void CUnknown101b2570::sub_101b2630(const char *soundlevel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2f60 size=0x116
+#include "CSoundEmitterSystemBase.h"
+#include "CUnknown101b30d0.h"
+#include "CUnknown1024b370.h"
+#include "CUtlRBTree232.h"
+#include "UtlMem.h"
+
+struct S_KeyVecA
+{
+	char m_data[0x14];
+	void sub_100121a2();
+	~S_KeyVecA() { sub_100121a2(); }
+};
+
+struct S_KeyVecB
+{
+	char m_data[0x18];
+	void sub_100010f5();
+	~S_KeyVecB()
+	{
+		sub_100010f5();
+		((UtlMem *)this)->sub_101b6b90();
+	}
+};
+
+struct S_SoundKey
+{
+	unsigned short m_symbol;
+	char m_pad02[0x2c - 2];
+	S_KeyVecA m_waves;
+	S_KeyVecB m_other;
+	char m_pad[0xd8 - 0x2c - 0x14 - 0x18];
+};
+
+int CSoundEmitterSystemBase::sub_101b2f60(const char *pszName)
+{
+	CUtlRBTree232At<0x1072c414> *tree = (CUtlRBTree232At<0x1072c414> *)&m_pfn50;
+	int current;
+	{
+		S_SoundKey key;
+		key.m_symbol = 0xffff;
+		((CUnknown101b30d0 *)((char *)&key + 0xc))->sub_101b30d0();
+		key.m_symbol = ((CUnknown1024b370 *)((char *)tree + 0x20))->sub_1024b5e0(pszName).m_Id;
+		current = tree->m_Root;
+		while (current != -1) {
+			if (tree->m_LessFunc(&key, tree->ElementAt(current).m_Data)) {
+				current = tree->sub_101b78f0(current).m_Left;
+			} else if (tree->m_LessFunc(tree->ElementAt(current).m_Data, &key)) {
+				current = tree->Links(current).m_Right;
+			} else {
+				break;
+			}
+		}
+	}
+	if (current == -1)
+		return -1;
+	return current;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b30d0 size=0x98
 #include "CUnknown101b30d0.h"
 extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
