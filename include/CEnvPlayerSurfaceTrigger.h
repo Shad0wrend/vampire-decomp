@@ -1,6 +1,9 @@
 // CEnvPlayerSurfaceTrigger: declared by pcdecomp transplant for 0x100fd920 from CPhysForce (0x10027690);
-// only what matched code needs, as plain members (the vtable pointer is at 0; slots 0, 1 and 5 are declared).
+// only what matched code needs, as plain members (the vtable pointer is at 0, from the entity interface base
+// CGlobalEntityList_Ent whose slot 1 is the entity's handle).
 #pragma once
+
+#include "CGlobalEntityList.h"
 
 struct CSurfaceOutput_t	// 0x18 byte output event
 {
@@ -9,11 +12,9 @@ struct CSurfaceOutput_t	// 0x18 byte output event
 	void sub_100cd2d0();	// stub 0x10015708 (the output's destructor)
 };
 
-class CEnvPlayerSurfaceTrigger
+class CEnvPlayerSurfaceTrigger : public CGlobalEntityList_Ent
 {
 public:
-	virtual void vfunc0();
-	virtual unsigned int *vfunc1();	// the entity's handle
 	CEnvPlayerSurfaceTrigger *vfunc5(unsigned int flags);
 	void sub_100108ed();
 	~CEnvPlayerSurfaceTrigger();	// the destructor body (stub 0x100108ed, 0x100fd850): sets the vtable, removes this entity's handle from the global handle list at 0x1070906c, destroys the two outputs, then sub_1009df20
