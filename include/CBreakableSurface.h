@@ -12,6 +12,8 @@ public:
 	void sub_1010d6a0();	// CBreakable::vfunc103 (stub 0x1000a10f), called directly
 	void sub_101128d0(const Vector &vecPos, float *pX, float *pY);
 	void sub_10112a10();	// resets the pane grid (every cell of the m_nCells x m_nRows panes to -1.0f), sends the entity message 0 with the byte 1 to everybody but the player of this entity (a reliable entity message filter) and stores the pane count at +0x4cc
+	void sub_10112b90(int nCol, int nRow);	// breaks one pane: for a cell inside the grid counts it (+0x4cc), sets its entry in the pane grid to -1.0f, sends the entity message 0 with the cell (0, col, row) to everybody but the player of this entity (reliable), arms the think function (stub 0x1000bb4a, 0x10112650) and makes it think now
+	void sub_10112650();	// the think function (stub 0x1000bb4a)
 
 	char m_pad03e0[0x454 - 0x3e0];
 	int m_n454;
