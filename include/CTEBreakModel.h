@@ -1,12 +1,14 @@
-// CTEBreakModel: break model temp entity. Declared flat (bases not recovered); only the vtable head is modelled.
+// CTEBreakModel: break model temp entity (derived from the CBaseTempEntity head at +0x0); only the vtable head is modelled.
 #pragma once
 
-class CTEBreakModel
+#include "CBaseTempEntity.h"
+
+class CTEBreakModel : public CBaseTempEntityHead
 {
 public:
-	virtual void vfunc0();
-	virtual void vfunc1();
 	virtual CTEBreakModel *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a break model at the origin with random velocity, created for everybody
+	virtual void slot4(void *pFilter, int delay);	// slot 4 "Create" (the virtual call; vfunc4 below is the direct call of its body)
 
 	void sub_1000f53d();	// destructor body
 	void vfunc5();	// as in CFireSmoke (transplant)
@@ -21,4 +23,6 @@ public:
 	int m_nField38;	// 0x38
 	int m_nField3c;	// 0x3c
 	int m_nField40;	// 0x40
+
+	Vector &Origin() { return *(Vector *)m_vecOrigin; }
 };
