@@ -31,6 +31,5 @@ public:
 	void sub_1019d280(const float *pOrigin);	// "CRecipientFilter::AddRecipientsByPAS" (stub 0x10004caa): adds the players that can hear the origin
 	void sub_1019d210(const float *pOrigin);	// "CRecipientFilter::AddRecipientsByPVS" (stub 0x100043db): adds the players that can see the origin
 	void sub_1019cf50();	// called after AddRecipient by user message senders (stub 0x1001186f)
-	void sub_1019d3d0();	// "CRecipientFilter::UsePredictionRules" (stub 0x10005ce0)
-	void sub_1019d2f0(int index);	// "CRecipientFilter::RemoveRecipient" (stub 0x1000c19e): drops the client index from the list
+	void sub_1019d2f0(int nEntIndex);	// removes / adds the client index from the filter (stub 0x1000c19e), fed by engine slot 35
 };
