@@ -94,11 +94,14 @@ public:
 			memmove(&Element(elem + num), &Element(elem), numToMove * sizeof(T));
 	}
 
+	// Source constructs with placement new (null-checked); the plain store gives the same code for int
 	int InsertBefore(int elem, const T &src)
 	{
 		GrowVector();
 		ShiftElementsRight(elem);
-		new (&Element(elem)) T(src);
+		T *p = &Element(elem);
+		if (p)
+			*p = src;
 		return elem;
 	}
 
