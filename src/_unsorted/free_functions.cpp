@@ -12850,6 +12850,72 @@ struct CUnknown10083960 { int p; int a; void sub_10083960(int v); };
 void CUnknown10083960::sub_10083960(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10084170 size=0xb8
+#include "CSceneEntity.h"
+#include "CUnknown1007a2c0.h"
+
+struct S1007a270
+{
+	int sub_1007a270(int index);
+};
+
+struct CSceneListB
+{
+	int sub_1007a250();	// stub 0x1000f2ae
+	char sub_1007ed10();	// stub 0x1000f457
+};
+
+struct CSceneEventX
+{
+	int sub_100029c8();
+	void *sub_10076710();	// stub 0x10015a78: the sub scene the event plays
+};
+
+struct CSceneEntityRecurse : CSceneEntity
+{
+	void sub_10084170(void *pScene);	// the recursion goes through the linker stub
+};
+
+#define SAV(n) virtual void a##n();
+#define SAV10(p) SAV(p##0) SAV(p##1) SAV(p##2) SAV(p##3) SAV(p##4) SAV(p##5) SAV(p##6) SAV(p##7) SAV(p##8) SAV(p##9)
+struct CActorEntView	// the actor entity: slot 285 takes the scene
+{
+	SAV10(0) SAV10(1) SAV10(2) SAV10(3) SAV10(4) SAV10(5) SAV10(6) SAV10(7) SAV10(8) SAV10(9)
+	SAV10(10) SAV10(11) SAV10(12) SAV10(13) SAV10(14) SAV10(15) SAV10(16) SAV10(17) SAV10(18) SAV10(19)
+	SAV10(20) SAV10(21) SAV10(22) SAV10(23) SAV10(24) SAV10(25) SAV10(26) SAV10(27)
+	SAV(280) SAV(281) SAV(282) SAV(283) SAV(284)
+	virtual void vfunc285(void *pScene);
+};
+
+// TARGET: CSceneEntity::sub_10084170
+void CSceneEntity::sub_10084170(void *pScene)
+{
+	if (!pScene)
+		return;
+	int i;
+	for (i = 0; i < ((CUnknown1007a2c0 *)pScene)->sub_1007a2a0(); i++)
+	{
+		void *pActor = ((CUnknown1007a2c0 *)pScene)->sub_1007a2c0(i);
+		if (pActor)
+		{
+			CSceneEventActorEnt *pEnt = vfunc267(((CSceneEventActor *)pActor)->sub_10008a99());
+			if (pEnt)
+				((CActorEntView *)pEnt)->vfunc285(pScene);
+		}
+	}
+	for (i = 0; i < ((CSceneListB *)pScene)->sub_1007a250(); i++)
+	{
+		CSceneEventX *pEvent = (CSceneEventX *)((S1007a270 *)pScene)->sub_1007a270(i);
+		if (pEvent && pEvent->sub_100029c8() == 0xb && !((CSceneListB *)pScene)->sub_1007ed10())
+		{
+			void *pSub = pEvent->sub_10076710();
+			if (pSub)
+				((CSceneEntityRecurse *)this)->sub_10084170(pSub);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084b40 size=0xb1
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
