@@ -2273,6 +2273,7 @@
 0x100094e4 func   _item_p_occult_thaum_damage item_p_occult_thaum_damage
 0x100094e9 func   ?vfunc0@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc0
 0x100094ee func   ?sub_102d42d0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102d42d0
+0x100094fd func   ?vfunc3@CTESprite@@UAEXABVVector@@ABVQAngle@@@Z CTESprite::vfunc3
 0x10009502 func   ?vfunc5@CWeaponRanged_Rifle_RemingtonBach@@QAEPAV1@I@Z CWeaponRanged_Rifle_RemingtonBach::vfunc5
 0x10009507 func   ?sub_102508f0@CUnknown102508f0@@QAEPAUCUnknown102508f0_Elem@@H@Z CUnknown102508f0::sub_102508f0
 0x1000950c func   ?sub_101a05f0@CSave@@QAEXPBXH@Z CSave::sub_101a05f0
