@@ -14,4 +14,10 @@ public:
 	void sub_1026dc00(int a);	// stub 0x10012855, called directly
 	int sub_102767d0();	// CAI_BaseNPC::vfunc124 (stub 0x1000e624), called directly
 	int vfunc124();	// slot 124 "DrawDebugTextOverlays": the base's line offset; with the text overlay bit (bit 0 of +0x224) a "morale: %d" line (+0x5f50) and, with an enemy, an "enemy (dist): %s (%g)" line (+0x5f4c)
+	int vfunc438();	// slot 438 "SelectSchedule": crow schedules by the conditions (morale +0x5f50, enemy distance +0x5f4c, next think time +0x5f48), else the base's
+	int sub_1027d990();	// the state of the navigator object at +0x5d34 (stub 0x100023a1), called directly
+	int sub_100b3700();	// CBaseEntity::GetFlags (stub 0x10008b84), called directly
+	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
+	void sub_10269b50(int condition);	// CAI_BaseNPC condition setter (stub 0x10015839), called directly
+	int sub_1028a380();	// CAI_BaseNPC::vfunc438 (stub 0x10001d57), tail called directly
 };
