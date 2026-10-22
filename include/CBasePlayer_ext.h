@@ -51,3 +51,4 @@
 	int sub_10337860();	// CBaseCombatCharacter member (stub 0x100040d9): the index of the character's template, called directly
 	void *sub_10178120();	// stub 0x10012ab2: the CDialog object at +0x1d24
 	void sub_10171da0(inputdata_t *pInput);	// input handler: only for the "Player_Malkavian" template; the input as text (a string input as is, "" when empty) is handed to the whisper object (global 0x1073dbfc, sub_101f6530) when the dialog partner (handle +0xfe8) is gone, else stored as the pending whisper text of the dialog object (sub_10178120()->sub_100e09a0)
+	void sub_10175400(char bFade);	// the screen fade user message to this player only (reliable single user filter): the flags 0x81 with the amount (255 at most, 0 at least) from the time left until the float at +0x1478 over the fade duration (global 0x10739d08), or 0x82 with amount 0 when bFade is clear; the message is built as (flags, amount, 0, 0)
