@@ -22,6 +22,43 @@ int CNPC_VAsianVampire::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103611a0 size=0xf3
+#include "CNPC_VAsianVampire.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+
+// TARGET: CNPC_VAsianVampire::vfunc442
+void CNPC_VAsianVampire::vfunc442(const CVAsianVampireTask_t *pTask)
+{
+	ScopeTrace trace("CNPC_VAsianVampire::StartTask", g_106b8540);
+	switch (pTask->iTask) {
+	case 0x150:
+		break;
+	case 0x151:
+		m_pHint5ddc = sub_103615c0();
+		if (!m_pHint5ddc) {
+			m_pszFailFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAsianVampire.cpp";
+			m_nFailLine = 0x110;
+			((CEntityVSlots *)this)->slot448(1);
+		}
+		sub_1000ac68(0);
+		break;
+	case 0x152:
+		m_pHint5ddc = sub_10361730();
+		if (!m_pHint5ddc) {
+			m_pszFailFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAsianVampire.cpp";
+			m_nFailLine = 0x118;
+			((CEntityVSlots *)this)->slot448(1);
+		}
+		sub_1000ac68(0);
+		break;
+	default:
+		sub_103c5ac0(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10361a70 size=0x11c
 #include "CNPC_VAsianVampire.h"
 #include "CEntityVSlots.h"
