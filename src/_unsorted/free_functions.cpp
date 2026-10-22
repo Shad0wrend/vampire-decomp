@@ -80915,6 +80915,57 @@ void __fastcall sub_10312b20(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312b50 size=0x9c
+#include "CAI_Expresser.h"
+
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+void __fastcall sub_10312b20(char *p);
+
+struct CGlobalVarsStub {
+	char pad[0xc];
+	float curtime;
+};
+extern CGlobalVarsStub *g_1070b228;
+
+namespace block_10312b50 {
+struct CAI_ExpresserUnit : CAI_Expresser {
+	bool sub_10312230();
+};
+bool CAI_ExpresserUnit::sub_10312230()
+{
+	if (g_1070b228->curtime < m_Tail.m_n4c)
+		return true;
+	return false;
+}
+}
+using namespace block_10312b50;
+
+// TARGET: CAI_Expresser::sub_10312b50
+void CAI_Expresser::sub_10312b50()
+{
+	if (m_Tail.m_n64 != -1) {
+		if (!((CAI_ExpresserUnit *)this)->sub_10312230()) {
+			if (m_Tail.m_b68) {
+				if (m_n10->vfunc1()) {
+					sub_10312c50();
+					return;
+				}
+			} else {
+				char szBuf[16];
+				Q_snprintf(szBuf, 16, "%s%d", m_Tail.m_pad54, m_Tail.m_n64);
+				m_Tail.m_n64++;
+				if (sub_10311f50(szBuf, 0, 1.0f, 0x50, 0) == -1) {
+					sub_10312b20((char *)this);
+					return;
+				}
+			}
+		} else if (m_n10->vfunc0()) {
+			sub_10312c20(0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312f70 size=0x30
 #include "CUtlMemory16.h"
 
