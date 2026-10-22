@@ -347,6 +347,62 @@ bool CBasePlayer::vfunc412()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161fc0 size=0x10b
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+
+extern "C++" __declspec(dllimport) void DevWarning(const char *fmt, ...);
+int sub_10376d00(CBasePlayer *pPlayer);
+const char *sub_101d3730(const char *psz);
+void sub_101cebc0(CBasePlayer *pPlayer, int a, int b);
+
+#define FSV(n) virtual void f##n();
+#define FSV10(p) FSV(p##0) FSV(p##1) FSV(p##2) FSV(p##3) FSV(p##4) FSV(p##5) FSV(p##6) FSV(p##7) FSV(p##8) FSV(p##9)
+struct CFrenzyShadowView	// the controller entity: slot 138 answers its AI type
+{
+	FSV10(0) FSV10(1) FSV10(2) FSV10(3) FSV10(4) FSV10(5) FSV10(6) FSV10(7) FSV10(8) FSV10(9)
+	FSV10(10) FSV10(11) FSV10(12) FSV(130) FSV(131) FSV(132) FSV(133) FSV(134) FSV(135) FSV(136) FSV(137)
+	virtual int vfunc138();
+};
+
+struct CFrenzyList
+{
+	void sub_10227a30(CBasePlayer *pPlayer, int a);
+};
+extern CFrenzyList g_10750cb4;
+
+// TARGET: CBasePlayer::vfunc360
+bool CBasePlayer::vfunc360()
+{
+	if (EHandle_Get(m_h1538) && m_n153C != -1)
+	{
+		DevWarning("CheckForPlayerFrenzy - Failed because player is grappling!\n");
+		return false;
+	}
+	if (m_nUseEdictIndex1EB8)
+		return false;
+	if (!sub_10376d00(this))
+	{
+		DevWarning("CheckForPlayerFrenzy - Failed to prepare NPC enemy list!  No close NPCs.\n");
+		return false;
+	}
+	vfunc457("item_w_fists", 0);
+	CFrenzyShadowView *pShadow = (CFrenzyShadowView *)sub_10161a70("npc_VFrenzyShadow");
+	if (!pShadow)
+	{
+		DevWarning("Failed to create frenzy controller in CheckForPlayerFrenzy!\n");
+		return false;
+	}
+	if (pShadow->vfunc138() != 3)
+		DevWarning("Non Troika Ent in CheckForPlayerFrenzy!\n");
+	sub_10147a30(3);
+	sub_1017e150(1, -1.0f, sub_101d3730("CheckForPlayerFrenzy"));
+	sub_101cebc0(this, 0, 0);
+	g_10750cb4.sub_10227a30(this, 0);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163630 size=0xd9
 #include "CBasePlayer.h"
 #define GV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \

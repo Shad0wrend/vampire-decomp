@@ -5867,6 +5867,7 @@
 0x10015bc2 func   ?vfunc4@CRestore@@UAEXPAXPAUtypedescription_t@@H@Z CRestore::vfunc4
 0x10015bc7 func   ?sub_10315800@@YAPAVCUnknown103164c0@@PAVCBaseEntity@@PBD@Z sub_10315800
 0x10015bcc func   ?sub_103239a0@CBaseCombatCharacter@@QAEFPBD@Z CBaseCombatCharacter::sub_103239a0
+0x10015bd1 func   ?vfunc360@CBasePlayer@@QAE_NXZ CBasePlayer::vfunc360
 0x10015bd6 func   ?vfunc2@CTEBSPDecal@@UAEPAV1@I@Z CTEBSPDecal::vfunc2
 0x10015be5 func   ?sub_101e3f50@CStatusFlagList@@QAE_NPAUCStatusTarget@@@Z CStatusFlagList::sub_101e3f50
 0x10015bea func   ?sub_101cf680@@YAXAAVVector@@M@Z sub_101cf680
