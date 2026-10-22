@@ -51921,6 +51921,31 @@ void CUnknown101e0f00::sub_101e34c0(void *pSource, void *pTarget, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3850 size=0x86
+#include "CUnknown101e0f00.h"
+
+extern CUnknown101e0f00Entry *g_10739a74;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *fmt, ...);
+
+// TARGET: CUnknown101e0f00::sub_101e3850
+void CUnknown101e0f00::sub_101e3850(int a, int b, int id, int d)
+{
+	int idx = sub_101e12a0(id);
+	if (idx != -1) {
+		CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[idx];
+		g_10739a74 = pEntry;
+		const char *pszName = pEntry->m_pszName;
+		if (!pszName)
+			pszName = g_106b8540;
+		DevMsg(3, "Discipline<%s> Hit\n", pszName);
+		((CUnknown101e0f00Src *)pEntry->m_srcHit)->sub_101dd090(a, id);
+		((CUnknown101e0f00Tail *)pEntry->m_tail)->sub_101e0410(d, a, b, sub_101e1870(id))->sub_101dfc20();
+		g_10739a74 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3910 size=0x77
 #include "CUnknown101e0f00.h"
 #include "ScopeTrace.h"
