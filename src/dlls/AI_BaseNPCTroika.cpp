@@ -194,6 +194,88 @@ void CAI_BaseNPCTroika::sub_1029f120(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f460 size=0x115
+#include "CAI_BaseNPCTroika.h"
+
+struct CPatrolPath
+{
+	int m_n0000;
+	int m_nSchedule;	// 0x04
+	int m_n0008;	// 0x08
+
+	void sub_10307aa0();	// stub 0x10013f07: resets the path
+	void sub_10307b40(int a);	// stub 0x1000d95e: stores the argument at +0
+	void sub_10307b60();	// stub 0x10010320
+	void sub_10307bf0(int node);	// stub 0x10013e80: adds the node id
+};
+
+struct CPatrolHolder
+{
+	char m_bOwned;	// 0x00
+	char m_pad0001[3];
+	CPatrolPath *m_pPath;	// 0x04
+};
+
+struct CTroikaPatrolUnit : CAI_BaseNPCTroika
+{
+	void sub_1029f650(void *pHolder);	// stub 0x100151f4
+};
+
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+CPatrolPath *sub_10307d30();	// stub 0x10005a60: creates a patrol path
+
+void CAI_BaseNPCTroika::sub_1029f460(void *pHolder, int a, int b, int c, int *pNodes, char bFlag)
+{
+	if (*(int *)((char *)this + 0x5cc0) == 7)
+		return;
+	CPatrolHolder *pH = (CPatrolHolder *)pHolder;
+	if (!pH)
+		return;
+	if (bFlag)
+	{
+		if (!pH->m_pPath)
+		{
+			pH->m_pPath = sub_10307d30();
+			pH->m_bOwned = 1;
+		}
+		if (!pH->m_pPath)
+		{
+			DevMsg("Failed to create patrol path for %s\n", sub_1000b5cd());
+			return;
+		}
+		pH->m_pPath->sub_10307aa0();
+		pH->m_pPath->m_n0008 = a;
+		pH->m_pPath->sub_10307b40(b);
+	}
+	else if (!pH->m_pPath)
+	{
+		pH->m_pPath = sub_10307d30();
+		pH->m_bOwned = 1;
+		pH->m_pPath->sub_10307aa0();
+		pH->m_pPath->m_n0008 = 0;
+		pH->m_pPath->sub_10307b40(0);
+	}
+	if (pNodes)
+	{
+		while (*pNodes != -1)
+		{
+			pH->m_pPath->sub_10307bf0(*pNodes);
+			pNodes++;
+		}
+	}
+	pH->m_pPath->sub_10307b60();
+	if (c)
+		pH->m_pPath->m_nSchedule = c;
+	if (pH->m_pPath->m_nSchedule)
+	{
+		((CTroikaPatrolUnit *)this)->sub_1029f650((char *)this + 0x658c);
+		*(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		*(int *)((char *)this + 0x1b34) = 0x27a1;
+		sub_102ae750(pH->m_pPath->m_nSchedule, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029fcf0 size=0x89
 #include "CAI_BaseNPCTroika.h"
 
