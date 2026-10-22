@@ -1362,6 +1362,7 @@
 0x10005ea7 func   ?sub_1003f810@CBaseEntity@@QAEXM@Z CBaseEntity::sub_1003f810
 0x10005eac func   ?sub_1008bc50@CBaseAnimating@@QAEXPAVCBaseEntity@@@Z CBaseAnimating::sub_1008bc50
 0x10005ee3 func   ?sub_102718e0@CUnknown102718e0@@QAEPAV1@PBV1@@Z CUnknown102718e0::sub_102718e0
+0x10005eed func   ?vfunc2@CEffectsServer@@UAEXPBMHMM@Z CEffectsServer::vfunc2
 0x10005ef2 func   ?sub_1005a510@@YAHXZ sub_1005a510
 0x10005f01 func   ?vfunc5@CItemGRing03@@QAEPAV1@I@Z CItemGRing03::vfunc5
 0x10005f0b func   ?vfunc432@CNPC_VBach@@QAEXH@Z CNPC_VBach::vfunc432
