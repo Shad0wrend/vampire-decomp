@@ -8,7 +8,7 @@ public:
 	CParamsParticle *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 
-	char m_pad0004[0x450 - 4];
+	char m_pad0000[0x450];
 	int m_nAttachType;	// 0x450: the attachment type handed to sub_100fafa0 and to the temp entity system
 	const char *m_pszParticleName;	// 0x454: the particle file / effect name
 	const char *m_pszAttachment;	// 0x458: the attachment name
