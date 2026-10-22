@@ -5460,6 +5460,7 @@
 0x10014ba0 func   ?vfunc347@CBaseCombatCharacter@@QAE_NHPADPAM111@Z CBaseCombatCharacter::vfunc347
 0x10014ba5 func   ?sub_101eccd0@CUnknown101eccd0@@QAEXXZ CUnknown101eccd0::sub_101eccd0
 0x10014bb4 func   ?sub_103f5cf0@@YAHXZ sub_103f5cf0
+0x10014bbe func   ?sub_102192a0@CUnknown10217f50@@QAEXD@Z CUnknown10217f50::sub_102192a0
 0x10014bcd func   ?vfunc228@CBaseEntity@@QAEXHH@Z CBaseEntity::vfunc228
 0x10014bd7 func   ?sub_101857b0@UtlMem@@QAEXXZ UtlMem::sub_101857b0
 0x10014bdc func   ?sub_10240250@@YA_NABVVector@@000@Z sub_10240250

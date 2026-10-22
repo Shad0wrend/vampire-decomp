@@ -61489,6 +61489,27 @@ void CUnknown10219120::sub_10219120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102192a0 size=0xdb
+#include "CUnknown10217f50.h"
+#include "CEntityMessageFilter.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: CUnknown10217f50::sub_102192a0
+void CUnknown10217f50::sub_102192a0(char value)
+{
+	CEntityMessageFilter filter;
+	int nEdict = *(int *)((char *)this + 0x2e0);
+	filter.sub_1019d2f0(g_1070b22c->vfunc35(nEdict));
+	filter.sub_1019cf50();
+	g_1070b22c->vfunc65(&filter, 0);
+	g_1070b22c->vfunc67(9);
+	g_1070b22c->vfunc68(value);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102196a0 size=0x43
 #include "CPropHacking.h"
 void *sub_100aa720(int size);
