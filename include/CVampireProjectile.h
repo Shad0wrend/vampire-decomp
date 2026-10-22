@@ -44,4 +44,5 @@ public:
 	CVampireProjectile *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100085d5();	// as in CPhysForce (transplant)
 	CVampireProjectile *sub_101ee2e0();	// as in CKeepUpright (transplant)
+	void sub_101ef3d0();	// emits the sound named at +0x880 ("" when null) through a PAS attenuation filter
 };
