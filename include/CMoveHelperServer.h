@@ -25,7 +25,7 @@ public:
 	virtual void vfunc13();
 	virtual CMoveHelperServer *vfunc14(unsigned int flags);
 	virtual void vfunc15();
-	virtual void vfunc16();
+	virtual void vfunc16(const float *pOrigin, const char *pszSound);	// "CMoveHelperServer::StartSound": emits the sound at the origin for the host alone (a single user filter, with the prediction rules unless the global flag at +0x14 is 1)
 
 	CBaseEntity *m_pHost;	// 0x04
 	char m_pad08[0xc];
