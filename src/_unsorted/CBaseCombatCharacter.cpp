@@ -586,6 +586,67 @@ CBaseCombatCharacter *CBaseCombatCharacter::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10327790 size=0x161
+#include "CBaseCombatCharacter.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+void sub_101cd940(void *pEntity);
+void __fastcall sub_103234a0(CBaseCombatCharacter *pChar);
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+class S_Slot139
+{
+public:
+	SL100(a)
+	SL10(b0)
+	SL10(b1)
+	SL10(b2)
+	virtual void b30(); virtual void b31(); virtual void b32(); virtual void b33(); virtual void b34();
+	virtual void b35(); virtual void b36(); virtual void b37(); virtual void b38();
+	virtual void slot139(CBaseEntity *pOther);
+};
+
+struct S_CharView
+{
+	char m_pad0[0x5a8];
+	unsigned int m_hRemove;
+	char m_pad1[0x1598 - 0x5ac];
+	void **m_ppRelationships;
+	int m_nRelAlloc;
+	int m_nRelationships;
+};
+
+void CBaseCombatCharacter::vfunc180()
+{
+	ScopeTrace trace("CBaseCombatCharacter::UpdateOnRemove", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	S_CharView *v = (S_CharView *)this;
+	CBaseEntity *pOwner = vfunc97();
+	if (pOwner)
+		((S_Slot139 *)pOwner)->slot139(this);
+	int i;
+	for (i = 0; i < v->m_nRelationships; i++) {
+		if (v->m_ppRelationships[i])
+			delete v->m_ppRelationships[i];
+	}
+	delete v->m_ppRelationships;
+	v->m_ppRelationships = 0;
+	v->m_nRelationships = 0;
+	v->m_nRelAlloc = 0;
+	for (i = 0; i < 0xe0; i++) {
+		if (sub_1032e8b0(i))
+			sub_101cd940(sub_1032e8b0(i));
+	}
+	sub_10052030();
+	sub_103234a0(this);
+	sub_10323770();
+	sub_101cd940(EHandle_Get(v->m_hRemove));
+	CBaseEntity::vfunc180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10327e20 size=0x77
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };

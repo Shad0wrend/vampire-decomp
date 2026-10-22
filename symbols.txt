@@ -2769,6 +2769,7 @@
 0x1000b087 func   ?sub_101fcf50@CVStatAction_t@@QAE_NXZ CVStatAction_t::sub_101fcf50
 0x1000b09b func   ?sub_102c63b0@CUnknown102c63b0@@QBE_NPAX@Z CUnknown102c63b0::sub_102c63b0
 0x1000b0aa func   _npc_VBrujah npc_VBrujah
+0x1000b0c8 func   ?vfunc180@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc180
 0x1000b0dc func   ?vfunc5@CItemGOHDiary@@QAEPAV1@I@Z CItemGOHDiary::vfunc5
 0x1000b0eb func   ?sub_10157ca0@CRagdollPropSpecial@@QAEXPAVCBaseEntity@@@Z CRagdollPropSpecial::sub_10157ca0
 0x1000b0ff func   ?vfunc585@CCineNPC@@UAE_NXZ CCineNPC::vfunc585
