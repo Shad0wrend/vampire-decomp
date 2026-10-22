@@ -19,5 +19,6 @@ public:
 	void sub_1000a38f();
 	void sub_101f73f0(CVStatKV *pKV);	// counts the "TraitEffect" sub keys of pKV, allocates that many effects and loads each from its key
 	void sub_101f7690(int a, CVModInfo_t *pInfo, int c);	// hands (a, pInfo, c) to every effect (stub 0x10015609)
+	void sub_101f7640(CVModInfo_t *pInfo, void *pResult);	// hands (pInfo, pResult) to every effect (stub 0x10001159)
 	void sub_101f77f0(void *pOut);	// writes the group to an output object (sub_10203df0 / stub 0x100045ed): "[<id text>]\t\t\t{<name>}\t", then the lines of its effects (or "( <ERROR> )") and a newline
 };
