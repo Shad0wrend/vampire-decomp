@@ -12117,6 +12117,78 @@ void CUnknown1007e5a0::sub_1007e5a0(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007eaa0 size=0x123
+#include "CChoreoScene1007eaa0.h"
+#include "CAnchorList.h"
+
+struct S_Event {
+    int sub_10076690();
+    float sub_10075e70();
+};
+struct S_List {
+    S_Event **m_pMemory;
+    int m_nAlloc;
+    int m_nGrow;
+    int m_nCount;
+};
+struct S_Buf {
+    char *m_pBuffer;
+    int m_nSize;
+    int m_nGrow;
+    int m_nGet;
+    int m_nPut;
+    char pad[4];
+    void sub_1006bd20(int a, int b, int c);
+    ~S_Buf()
+    {
+        if (m_nGrow != -1) {
+            if (m_pBuffer)
+                g_109f3624(m_pBuffer);
+        }
+    }
+};
+struct S_FS {
+    virtual void *Open(const char *pszName, const char *pszMode, const char *pszPathId);
+    virtual void Close(void *h);
+    virtual void v2();
+    virtual void Write(const void *p, int nSize, void *h);
+};
+struct S_Scene : CChoreoScene1007eaa0 {
+    void sub_1007c600(S_Buf *pBuf, int a, S_Event *pEvent, float flStart);
+};
+
+extern S_FS *g_1070b238;
+void sub_1007bf70(S_Buf *pBuf, int a, const char *pszFormat, ...);
+
+void CChoreoScene1007eaa0::sub_1007eaa0(const char *pszFile, void *pEvents)
+{
+    S_List *pList = (S_List *)pEvents;
+    if (pList->m_nCount > 0) {
+        S_Buf buf;
+        buf.sub_1006bd20(0, 0, 1);
+        sub_1007bf70(&buf, 0, "// Choreo version 1:  <%i> Exported Events\n", pList->m_nCount);
+        float flMin = 0;
+        for (int i = 0; i < pList->m_nCount; i++) {
+            S_Event *pEvent = pList->m_pMemory[i];
+            if (pEvent->sub_10076690()) {
+                if (i == 0 || pEvent->sub_10075e70() < flMin)
+                    flMin = pEvent->sub_10075e70();
+            }
+        }
+        for (int j = 0; j < pList->m_nCount; j++) {
+            S_Event *pEvent = pList->m_pMemory[j];
+            if (pEvent->sub_10076690())
+                ((S_Scene *)this)->sub_1007c600(&buf, 0, pEvent, flMin);
+        }
+        void *h = g_1070b238->Open(pszFile, "wt", 0);
+        if (h) {
+            g_1070b238->Write(buf.m_pBuffer, buf.m_nPut, h);
+            g_1070b238->Close(h);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ec20 size=0x98
 #include "CUnknown1007ec20.h"
 #include <string.h>
