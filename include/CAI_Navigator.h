@@ -14,7 +14,7 @@ class CAI_NavComponentData
 {
 public:
 	CAI_NavComponentData(int pOuter) { m_pOuter = pOuter; m_i0c = -1; }
-	virtual CAI_Navigator *vfunc0(unsigned int flags); virtual void vfunc1(); virtual void vfunc2();
+	virtual CAI_Navigator *vfunc0(unsigned int flags); virtual void vfunc1(); virtual void vfunc2(int a);
 
 	int m_pOuter;	// 0x04
 	int m_i08;
@@ -110,7 +110,7 @@ class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
 public:
 	CAI_Navigator(int pOuter);	// 0x102eca50: allocates the 0x84 byte object at +0x30
 
-	virtual CAI_Navigator *vfunc0(unsigned int flags); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual CAI_Navigator *vfunc0(unsigned int flags); virtual void vfunc1(); virtual void vfunc2(int a); virtual void vfunc3(); virtual void vfunc4();
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8();
 	virtual void vfunc9(int a, float b);
 	virtual void vfunc10(int a, float b);
@@ -141,6 +141,8 @@ public:
 	bool sub_102ed610(const Vector *pDir, float flDist, float flMax, int c);	// stub 0x10005ad3: tries the point flDist along pDir from the owner's origin
 	bool sub_102ed940(float f, const Vector *pVec, int c);	// stub 0x10007afe: refreshes the stamps of this and of the pathfinder, then hands the owner's origin on
 	float sub_1030a650(float flValue);	// twice the argument clamped to [range of the owner's hull (object at owner +0x5d40, hull index at +8), 0x1049df84]
+	bool sub_102f1dc0(int a, int b);	// per-frame path request step (ret 8): refreshes the stamps of this and of the pathfinder, drops the route's waypoint; while the owner's flag 0x20 (+0x5d8c) is set waits for the deadline at +0x48 (failure: slot 10(0xc, 1)) and retries sub_102f2330(b) after +0x4c, else tries it at once; success clears the flag and, unless the owner's slot 529 holds (or the current task is 0x6e), fails the task with slot 2(0); true on success
+	bool sub_102f2330(int b);	// stub 0x10001e51: "DoFindPath", called directly
 
 	int m_i14;
 	int m_i18;
@@ -152,7 +154,11 @@ public:
 	CAI_NavRoute *m_p30;
 	char m_b34;
 	int m_i38;
-	char m_pad3c[0x50 - 0x3c];
+	char m_pad3c[4];
+	float m_f40;
+	float m_f44;
+	float m_f48;
+	float m_f4c;
 	char m_b50;
 	int m_i54;
 	float m_f58;
