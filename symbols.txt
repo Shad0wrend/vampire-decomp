@@ -3187,6 +3187,7 @@
 0x1000c84c func   ?sub_10246470@@YAXHPAGPAI@Z sub_10246470
 0x1000c85b func   ?sub_102c6cf0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102c6cf0
 0x1000c86a func   ?vfunc103@CBasePlayer@@QAEXXZ CBasePlayer::vfunc103
+0x1000c879 func   ?vfunc175@CTriggerPlayerActivityLevel@@QAEXPAVCBaseEntity@@@Z CTriggerPlayerActivityLevel::vfunc175
 0x1000c897 func   ?sub_10270290@CUnknown10270290@@QAEXH@Z CUnknown10270290::sub_10270290
 0x1000c89c func   ?sub_1026ff80@CUnitHelper@@QAE_NPAVCBaseEntity@@PBM1@Z CUnitHelper::sub_1026ff80
 0x1000c8b5 func   ?sub_103380d0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_103380d0
