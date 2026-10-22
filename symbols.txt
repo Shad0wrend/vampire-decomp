@@ -1710,6 +1710,7 @@
 0x1000725c func   ?sub_103e3ec0@Mem1c@@QAEXH@Z Mem1c::sub_103e3ec0
 0x10007261 func   ?sub_10074050@CUnknown10074050@@QAEPBDXZ CUnknown10074050::sub_10074050
 0x10007270 func   ?sub_10061e80@@YAXPAXHPBMHHHHHH1D@Z sub_10061e80
+0x10007275 func   ?Purge@?$CUtlMemory@H@@QAEXXZ CUtlMemory<int>::Purge
 0x10007275 func   ?sub_1002cbd0@UtlMem@@QAEXXZ UtlMem::sub_1002cbd0
 0x1000727a func   ?vfunc113@CRagdollPropSpecial@@UAEXXZ CRagdollPropSpecial::vfunc113
 0x10007284 func   ?sub_100a5bb0@CBaseEntity@@QAEPAXXZ CBaseEntity::sub_100a5bb0
