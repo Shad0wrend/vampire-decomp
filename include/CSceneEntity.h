@@ -74,13 +74,21 @@ public:
 	virtual void vfunc243();	// resets the automation state (called first by vfunc266)
 	SCENE_V(244) SCENE_V(245) SCENE_V(246) SCENE_V(247)
 	virtual void vfunc248(float a, int b, int c);
-	virtual void vfunc249(float a, int b, int c);
+	virtual void vfunc249(float a, int b, CSceneEvent *pEvent);	// slot 249 (event finished): logs "%8.4f:  finish %s", then by the event's type hands (b, actor entity of the event, pEvent) to slot 253 (type 2), 255 (10), 257 (6) or 263 (7); a type 11 event sorts the events of its sub-scene (sub_1007cfc0(1, 0, 0))
 	virtual void vfunc250(float a, int b, int c);
 	virtual char vfunc251(float a, int b, CSceneEvent *pEvent);	// slot 251: resolves the actor of the event through slot 267 (Warning "CSceneEntity unable find actor" and true when it is unknown); false when the event is of type 4 and the actor's NPC (+0x94) has its navigator (+0x5d34) answering sub_10012963, else true
-	SCENE_V(252) SCENE_V(253) SCENE_V(254) SCENE_V(255) SCENE_V(256) SCENE_V(257) SCENE_V(258)
+	SCENE_V(252)
+	virtual void vfunc253(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 253: the finish handler of a type 2 event
+	SCENE_V(254)
+	virtual void vfunc255(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 255: the finish handler of a type 10 event
+	SCENE_V(256)
+	virtual void vfunc257(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 257: the finish handler of a type 6 event
+	SCENE_V(258)
 	virtual void vfunc259(int unused, void *pEvent, const char *pszTarget);	// slot 259: for the actor of the scene event (object at +0x94 of pEvent) and the entity named pszTarget: sets the actor's move type (4, 0), copies the target's slot 192 vector to +0x5db8 and its slot 219 vector to +0x5dc4 of the actor, runs the actor's sub_10280de0(0x39) and stamps curtime at +0x5cf0
 	virtual void vfunc260(int unused, void *pEvent, const char *pszSound, int a4, int a5);	// slot 260: for the actor of the scene event (pointer at +0x98 of pEvent): builds "sound/<name>.mp3" and "*<name>" sound names, makes the actor's entity of this scene's player (sub_10081890) its target, and hands "*<name>" to the actor's sub_102c0520(name, a5, byte at this+0x57f)
-	SCENE_V(261) SCENE_V(262) SCENE_V(263) SCENE_V(264)
+	SCENE_V(261) SCENE_V(262)
+	virtual void vfunc263(int b, CSceneEventActorEnt *pActor, CSceneEvent *pEvent);	// slot 263: the finish handler of a type 7 event
+	SCENE_V(264)
 	virtual void vfunc265(void *pTarget, void *pEvent);	// slot 265: the speed event: the text parameter of pEvent as a float; pTarget's own start time (+0x78) is set to it, and the running remainder at +0x49c is the old remainder minus the event's elapsed time since +0x4a0, at least 0; +0x4a0 remembers the new value
 	virtual void vfunc266(int unused, const char *pszArgs);	// parses "automate <Cancel|Resume> <seconds>" arguments into the automation fields
 	virtual CSceneEventActorEnt *vfunc267(const char *pszName);	// slot 267: the actor entity of that name, null when there is none (called by slot 251)
