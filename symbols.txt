@@ -1461,6 +1461,7 @@
 0x100064f1 func   ?sub_1009a030@@YAXPAUTEnt@@HPAH@Z sub_1009a030
 0x10006505 func   _item_g_larry_briefcase item_g_larry_briefcase
 0x10006514 func   ?sub_103e6860@@YAHXZ sub_103e6860
+0x10006528 func   ?Reset@CRecipientFilter@@QAEXXZ CRecipientFilter::Reset
 0x1000652d func   ?sub_1030f220@CUnknown1030f480@@QAE_NPBDH@Z CUnknown1030f480::sub_1030f220
 0x10006532 func   ?vfunc546@CNPC_VPedestrian@@QAEHH@Z CNPC_VPedestrian::vfunc546
 0x10006546 func   _npc_VGangrel npc_VGangrel
