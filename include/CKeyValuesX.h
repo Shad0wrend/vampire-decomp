@@ -20,4 +20,6 @@ public:
 	const char *sub_102480b0();	// "GetName" (stub 0x1000fec0): the key's name
 	void sub_10248730(CUtlBuffer *pBuf, int nIndent);	// "RecursiveSaveToFile": writes this key and its sub keys as text, one level deeper per sub key
 	void sub_1001152c(CUtlBuffer *pBuf, int nIndent);	// the stub of sub_10248730 (the recursion goes through it)
+	CKeyValuesX *sub_10248af0(const char *pszName);	// "FindKey" without create (stub 0x1000c9fa): the sub key of that name, 0 when there is none
+	CKeyValuesX *sub_10248b60();	// "GetNextKey" (stub 0x1000894f): the next key of the same level
 };
