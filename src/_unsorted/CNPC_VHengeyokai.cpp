@@ -159,6 +159,31 @@ int CNPC_VHengeyokai::sub_103801d0(CNPC_VHengeyokaiInfo *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10380510 size=0x82
+#include "CNPC_VHengeyokai.h"
+#include "CUnknown10381be0.h"
+#include "CUnknown10382970.h"
+
+unsigned char __fastcall sub_10381c80(char *pNpc);
+
+// TARGET: CNPC_VHengeyokai::vfunc448
+void CNPC_VHengeyokai::vfunc448(int a)
+{
+	if (m_n5cc0 == 2 && sub_10269d30(0x5c))
+		m_flags5d8c &= 0x7fffffff;
+	if (((CUnknown10381be0 *)this)->sub_10381be0()) {
+		((CUnknown10382970 *)this)->sub_10382970(CBaseHandle(*(const CBaseHandle *)&m_h6664));
+		sub_10381ba0(0);
+	}
+	if (!sub_10381c80((char *)this)) {
+		sub_102c43b0(0.75f);
+		m_h6664 = 0xffffffff;
+	}
+	m_n6678 = 0;
+	sub_1029adb0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10380f90 size=0x18
 #include "CNPC_VHengeyokai.h"
 
