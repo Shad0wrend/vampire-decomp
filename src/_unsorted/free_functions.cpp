@@ -38576,6 +38576,76 @@ void sub_1016e650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016fed0 size=0x15b
+#include "ConVar.h"
+#include "CChangeLevel.h"
+#include "CGlobalEntityList.h"
+#include "CDialog.h"
+
+__declspec(dllimport) void DevWarning(const char *pszFormat, ...);
+extern "C" void *__cdecl __RTDynamicCast(void *pObj, long nVfDelta, void *pSrcType, void *pTargetType, int bReference);
+extern char g_10538764[];
+extern char g_1055ef50[];
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106ea788;
+ConVar *sub_10245660(const char *pszName);
+CBaseEntity *sub_101c7690(const char *pszLandmark, CChangeLevel *pChangeLevel);
+char sub_100df7b0();
+
+struct CPlayerObj
+{
+	char m_pad0000[0x128];
+	int m_n0128;
+};
+
+struct CEntityView
+{
+	char m_pad0000[0x98];
+	CPlayerObj *m_p0098;
+};
+
+struct CEntityFlagsView
+{
+	char m_pad0000[0x224];
+	unsigned int m_nFlags0224;
+};
+
+// TARGET: CBasePlayer::sub_1016fed0
+void CBasePlayer::sub_1016fed0()
+{
+	m_n1E0C = 0;
+	m_n1E08 = -1;
+	m_hEnt1E04 = -1;
+	sub_10178140();
+	static ConVar *s_pDeveloper = sub_10245660("developer");
+	if (s_pDeveloper && s_pDeveloper->GetInt())
+	{
+		if (!sub_10170340())
+			DevWarning("Player invalid in CBasePlayer::OnPlacedInMap\n");
+		for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt))
+		{
+			CChangeLevel *pChange = (CChangeLevel *)__RTDynamicCast(pEnt, 0, g_10538764, g_1055ef50, 0);
+			if (pChange && !sub_101c7690(pChange->m_szLandmarkName, pChange))
+			{
+				pChange->vfunc67();
+				((CEntityFlagsView *)pChange)->m_nFlags0224 |= 2;
+			}
+		}
+	}
+	if (sub_100df7b0())
+	{
+		g_106ea788 = 1;
+		for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt))
+		{
+			CPlayerObj *pObj = ((CEntityView *)pEnt)->m_p0098;
+			if (pObj && pObj->m_n0128)
+				((CDialog *)sub_10178120())->sub_100dfb80((CBaseEntity *)this, (CBaseEntity *)pObj);
+		}
+		g_106ea788 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170eb0 size=0xec
 #include "CUnknown10170eb0.h"
 
