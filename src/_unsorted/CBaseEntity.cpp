@@ -1063,6 +1063,56 @@ void CBaseEntity::vfunc228(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6640 size=0x152
+#include "ScopeTrace.h"
+struct CollisionEventView
+{
+	void *pObjects[2];
+	int surfaceProps[2];
+	char m_pad10[4];
+	float deltaCollisionTime;
+	float collisionSpeed;
+	char m_pad1c[0x68 - 0x1c];
+	CBaseEntity *pEntities[2];
+};
+struct SurfaceDataView { char m_pad[0x70]; short m_gameMaterial; };
+struct PhysPropsView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual SurfaceDataView *GetSurfaceData(int index);
+};
+extern PhysPropsView *g_10723944;
+int sub_101cd9e0(int a);
+void sub_10031d50(CBaseEntity *pEntity, void *pObject, int channel, int surfaceProps, int surfacePropsHit, float volume, float speed);
+void sub_10032180(void *pEvent, int index);
+void sub_10032380(void *pEvent, SurfaceDataView *pSurfaceData);
+
+// TARGET: CBaseEntity::vfunc230
+void CBaseEntity::vfunc230(int index, void *pEventArg)
+{
+	ScopeTrace trace("CBaseEntity::VPhysicsCollision", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (this) {
+		CollisionEventView *pEvent = (CollisionEventView *)pEventArg;
+		int otherIndex = !index;
+		CBaseEntity *pHit = pEvent->pEntities[otherIndex];
+		if (!(pEvent->deltaCollisionTime < 0.5) || pHit != this) {
+			SurfaceDataView *pOtherData = g_10723944->GetSurfaceData(pEvent->surfaceProps[otherIndex]);
+			SurfaceDataView *pData = g_10723944->GetSurfaceData(pEvent->surfaceProps[index]);
+			if (pOtherData->m_gameMaterial != 0x58 && pData->m_gameMaterial != 0x58) {
+				if (sub_101cd9e0(1)) {
+					if (pHit == this)
+						sub_10031d50(this, pEvent->pObjects[index], 4, pEvent->surfaceProps[index], pEvent->surfaceProps[otherIndex], pEvent->deltaCollisionTime, pEvent->collisionSpeed);
+					else
+						sub_10031d50(this, pEvent->pObjects[index], 6, pEvent->surfaceProps[index], pEvent->surfaceProps[otherIndex], pEvent->deltaCollisionTime, pEvent->collisionSpeed);
+					sub_10032180(pEvent, index);
+					sub_10032380(pEvent, pOtherData);
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6800 size=0xc0
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
