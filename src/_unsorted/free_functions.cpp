@@ -26382,6 +26382,52 @@ int CDialog::sub_100e4840(int choice)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e5240 size=0x170
+#include "CDialog.h"
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "ScopeTrace.h"
+
+#define KV(n) virtual void vfunc##n();
+struct CEngineSlots
+{
+	KV(0) KV(1) KV(2) KV(3) KV(4) KV(5) KV(6)
+	virtual void vfunc7(const char *pszCommand);
+};
+extern CEngineSlots *g_1070b22c;
+
+struct CDialogX : CDialog
+{
+	void sub_100e4ef0();	// stub 0x10011f8b
+	void sub_100e0f90(int a);	// stub 0x1000a227
+};
+
+void sub_100dfaf0(int level, const char *fmt, ...);
+
+// TARGET: CDialog::sub_100e5240
+void CDialog::sub_100e5240()
+{
+	ScopeTrace trace("CDialog::Release", g_106b8540);
+	g_1070b22c->vfunc7("clear_io_states");
+	if (EHandle_Get(m_hSpeaker))
+		sub_100dfaf0(1, "\n\nReleasing dialog file %s for NPC %s\n\n", sub_100e7310(), ((CBaseEntity *)EHandle_Get(m_hSpeaker))->sub_100ab4f0());
+	else
+		sub_100dfaf0(1, "\n\nReleasing dialog file %s\n\n", sub_100e7310());
+	if (m_bNoReply) {
+		((CDialogX *)this)->sub_100e4ef0();
+		sub_100e5c70();
+	}
+	((CDialogX *)this)->sub_100e0f90(0);
+	if (EHandle_Get(m_hSpeaker))
+		((CAI_BaseNPCTroika *)EHandle_Get(m_hSpeaker))->sub_102c0360();
+	((CAI_BaseNPCTroika *)EHandle_Get(m_hNPC))->vfunc415();
+	*((char *)this + 0x30e8) = 0;
+	sub_100e5770();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e5690 size=0xa7
 #include "CDialog.h"
 
