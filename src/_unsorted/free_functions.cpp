@@ -9638,6 +9638,43 @@ void CUnk10071840::sub_10071840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071970 size=0xab
+#include "CBaseCineCam.h"
+#include "CUnknown1006e890.h"
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];
+extern char g_10546e08[];
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int isReference);
+void sub_101cd940(CBaseEntity *pEnt);
+void *sub_101cd9e0(int n);
+
+struct CBaseCineCamUnit : CBaseCineCam
+{
+	void sub_10070990(void *pPlayer);
+};
+
+// TARGET: sub_10071970
+void sub_10071970()
+{
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7380(0, "camera_cinematic");
+	while (pEnt) {
+		CBaseCineCam *pCam = (CBaseCineCam *)__RTDynamicCast(pEnt, 0, g_10538764, g_10546e08, 0);
+		if (pCam && ((CUnknown1006e890 *)pCam)->sub_1006e890())
+			((CBaseCineCamUnit *)pCam)->sub_10070990(sub_101cd9e0(1));
+		sub_101cd940(pEnt);
+		pEnt = g_106eb5d8.sub_100f7380(pEnt, "camera_cinematic");
+	}
+	pEnt = g_106eb5d8.sub_100f7380(0, "camera_track");
+	while (pEnt) {
+		sub_101cd940(pEnt);
+		pEnt = g_106eb5d8.sub_100f7380(pEnt, "camera_track");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071ae0 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_109f3634)(int);
