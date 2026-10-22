@@ -30,6 +30,50 @@ bool CCineNPC::vfunc585()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a82d0 size=0x13b
+#include "CBaseAnimating.h"
+#include "CEHandleGet.h"
+
+struct CDevCheck {
+	virtual void v0();
+	virtual bool v1();
+	char m_pad[0x28];
+	int m_n2c;
+};
+extern CDevCheck *g_1072bb84;
+extern char g_106b8540[];
+__declspec(dllimport) void Warning(const char *fmt, ...);
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+// TARGET: CCineNPC::vfunc584
+char CCineNPC::vfunc584(CBaseAnimating *pNpc, const char *pszSequence, char bLoop)
+{
+	m_b5f91 = 1;
+	if (!pszSequence && bLoop) {
+		sub_101a8460(pNpc);
+		return 0;
+	}
+	int seq = pNpc->sub_1008f7b0(pszSequence ? pszSequence : g_106b8540);
+	*(int *)((char *)pNpc + 0x6f0) = seq;
+	if (seq == -1) {
+		if (!pszSequence)
+			pszSequence = g_106b8540;
+		Warning("%s: unknown scripted sequence \"%s\"\n", pNpc->sub_100ab4f0(), pszSequence);
+		*(int *)((char *)pNpc + 0x6f0) = 0;
+	}
+	*(int *)((char *)pNpc + 0x6f8) = 0;
+	pNpc->sub_10090950();
+	if (!g_1072bb84->v1() && g_1072bb84->m_n2c) {
+		if (EHandle_Get(m_hTarget5ce4))
+			Msg("Sequence %s targeting %s is starting\n", sub_1000b5cd(), (const char *)((CBaseAnimating *)EHandle_Get(m_hTarget5ce4))->sub_100ab4f0());
+		else
+			Msg("Sequence %s targeting %s is starting\n", sub_1000b5cd(), "**UNKNOWN**");
+		sub_101a6ec0();
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a89a0 size=0xd1
 #include "CCineNPC.h"
 #include "CGlobalEntityList.h"
