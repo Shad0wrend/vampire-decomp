@@ -11911,6 +11911,30 @@ float CUnknown1007ce20::sub_1007ce20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ceb0 size=0xc9
+#include "CUnknown1007ce20.h"
+
+// TARGET: CUnknown1007ce20::sub_1007ceb0
+float CUnknown1007ce20::sub_1007ceb0()
+{
+	float flMax = 0.0f;
+	for (int i = 0; i < m_size; i++) {
+		CUnknown10075aa0 *pEvent = m_pMemory[i];
+		if (((pEvent->sub_10075b70() != 0xe) && (pEvent->sub_10075b70() != 0xd))
+			|| (!(pEvent->sub_10075e70() >= m_f80) && !(pEvent->sub_10075f10() >= m_f80))) {
+			float flTime = pEvent->sub_10075e70();
+			if (pEvent->sub_10075f30())
+				flTime = pEvent->sub_10075f10();
+			if (pEvent->sub_10075b70() == 5)
+				flTime += m_f98;
+			if (flTime > flMax)
+				flMax = flTime;
+		}
+	}
+	return flMax;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfc0 size=0xa
 struct CUnknown1007dfc0 { char p[0x78]; int a; void sub_1007dfc0(int v); };
 // TARGET: CUnknown1007dfc0::sub_1007dfc0
