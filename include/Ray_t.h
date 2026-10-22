@@ -1,6 +1,8 @@
 // Ray_t: the engine's trace ray (0x38 bytes): start, delta, extents, start offset, then the ray / swept flags.
 #pragma once
 
+#include "Vector.h"
+
 struct Ray_t
 {
 	float m_Start[3];
@@ -14,5 +16,5 @@ struct Ray_t
 	int m_n34;
 
 	void sub_1004f7a0(const float *pStart, const float *pEnd);	// Ray_t::Init(start, end): delta = end - start, swept when the delta is not zero, the extents zeroed, IsRay set
-	void sub_1006dec0(const float *pStart, const float *pEnd, const float *pMins, const float *pMaxs, int a, int b);	// Ray_t::Init(start, end, mins, maxs) (stub 0x1000c725), thiscall with six stack arguments
+	void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, int a, int b);	// Ray_t::Init(start, end, mins, maxs) (stub 0x1000c725), thiscall with six stack arguments
 };
