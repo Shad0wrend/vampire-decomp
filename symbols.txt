@@ -944,6 +944,7 @@
 0x1000488b func   ?vfunc5@CBaseMoneyObject@@QAEPAV1@I@Z CBaseMoneyObject::vfunc5
 0x10004890 func   ?vfunc5@CWeaponMelee_Claws@@QAEPAV1@I@Z CWeaponMelee_Claws::vfunc5
 0x10004895 func   ?sub_1017cb80@CUnknown1017cb80@@QAEHPBD@Z CUnknown1017cb80::sub_1017cb80
+0x1000489a func   ?sub_100b2770@CBaseEntity@@QAEXABVVector@@@Z CBaseEntity::sub_100b2770
 0x100048ae func   ?sub_1040cce0@CUnknown1040cce0@@QAEMPAX@Z CUnknown1040cce0::sub_1040cce0
 0x100048d6 func   ?sub_101fc220@CVStatCost_t@@QAE_NPAUCVStatKV@@@Z CVStatCost_t::sub_101fc220
 0x100048db func   ?sub_1009bb40@CBaseEntity@@QAEXHHI@Z CBaseEntity::sub_1009bb40

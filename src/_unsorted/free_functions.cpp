@@ -19405,6 +19405,42 @@ float *CBaseEntity::sub_100b2150(float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2770 size=0x185
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+
+void sub_10138460(const float *pIn, const float *pMatrix, float *pOut);
+
+static inline bool TestBit(unsigned int value, int bit)
+{
+	return ((value >> bit) & 1) != 0;
+}
+
+// TARGET: CBaseEntity::sub_100b2770
+void CBaseEntity::sub_100b2770(const Vector &vecAbsVelocity)
+{
+	ScopeTrace scope("CBaseEntity::SetAbsVelocity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_100b5340(0x1000, 0);
+	m_flags268 &= ~0x1000;
+	Vector *pAbsVelocity = (Vector *)((char *)this + 0x3bc);
+	*pAbsVelocity = vecAbsVelocity;
+	CBaseEntity *pMoveParent = (CBaseEntity *)EHandle_Get(*(unsigned int *)((char *)this + 0x25c));
+	if (!pMoveParent) {
+		*(Vector *)m_vel3d4 = vecAbsVelocity;
+		return;
+	}
+	if (TestBit(pMoveParent->m_flags268, 12))
+		pMoveParent->sub_100b1d10();
+	Vector relVelocity;
+	relVelocity.x = vecAbsVelocity.x - ((Vector *)((char *)pMoveParent + 0x3bc))->x;
+	relVelocity.y = vecAbsVelocity.y - ((Vector *)((char *)pMoveParent + 0x3bc))->y;
+	relVelocity.z = vecAbsVelocity.z - ((Vector *)((char *)pMoveParent + 0x3bc))->z;
+	if (TestBit(pMoveParent->m_flags268, 11))
+		pMoveParent->vfunc98();
+	sub_10138460(&relVelocity.x, (float *)((char *)pMoveParent + 0x130), m_vel3d4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2aa0 size=0xf3
 #include "ScopeTrace.h"
 
