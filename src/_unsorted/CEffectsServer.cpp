@@ -135,6 +135,45 @@ void CEffectsServer::vfunc6(const float *pOrigin, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f64d0 size=0xd8
+#include "CEffectsServer.h"
+#include "CPVSFilter.h"
+#include "CUnknown1019d130.h"
+
+#define TE10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CTempEntsView
+{
+	TE10(a) TE10(b) TE10(c)
+	virtual void d0();
+	virtual void slot31(CUnknown1019d130 *pFilter, int a, const float *pOrigin, int b, int c);
+};
+
+extern CTempEntsView *g_10540528;
+
+struct CEffectsServerUnit : CEffectsServer
+{
+	CBaseEntity *GetSuppressHost() { return m_nSuppressCount > 0 ? 0 : m_pSuppressHost; }
+};
+
+void CEffectsServer::vfunc7(const float *pOrigin, int a, int b)
+{
+	CPVSFilter filter(pOrigin);
+	CUnknown1019d130 *pFilter = (CUnknown1019d130 *)&filter;
+	CEffectsServerUnit *self = (CEffectsServerUnit *)this;
+	if (self->m_nSuppressCount <= 0 && self->m_pSuppressHost)
+	{
+		if (!pFilter->sub_1000aa60())
+			pFilter->sub_1019d130(self->GetSuppressHost());
+		if (pFilter->vfunc2())
+			g_10540528->slot31(pFilter, 0, pOrigin, a, b);
+	}
+	else
+		g_10540528->slot31(pFilter, 0, pOrigin, a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6710 size=0x9
 struct CGlobalVars1070b228 { int pad[3]; float curtime; };
 extern CGlobalVars1070b228 *g_1070b228;
