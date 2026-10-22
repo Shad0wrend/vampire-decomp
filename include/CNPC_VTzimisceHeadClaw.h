@@ -5,7 +5,9 @@
 class CNPC_VTzimisceHeadClaw : public CNPC_VBaseBoss
 {
 public:
-	char pad4[0x10e4 - 4];
+	char pad4[0x2e0 - 4];
+	int m_pEdict2e0;	// +0x2e0: the entity's edict
+	char pad2e4[0x10e4 - 0x2e4];
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
 	char pad10e8[0x5b80 - 0x10e8];
 	char m_b5b80;	// +0x5b80
@@ -43,4 +45,5 @@ public:
 	int vfunc438();	// slot 438 "SelectSchedule" (plain member): while a schedule runs (state 2) and the NPC is not hurt (condition 0x35) it picks 0x158; the weapon the NPC holds (its slot 360 flags) decides between the attack choices of slots 604 (weapon type 0x18000) and 605 (after the sight checks and a 40% roll, 0xca when they fail); falls back to the Troika base
 	char sub_103c24a0();	// stub 0x100098a9: sight / range check run before the melee choice
 	int sub_102af660();	// CAI_BaseNPCTroika::vfunc438 (stub 0x10015596), called directly
+	virtual void vfunc619(char bFlag);	// slot 619 (the position here is not its real slot): emits the footstep-like sound of the claw through a reliable CPASAttenuationFilter, the sample set picked by the flag
 };
