@@ -12,7 +12,12 @@ public:
 	virtual void vfunc104();	// Precache: the Troika base, the eleven Ming Xiao particle emitters, the move sound list, then the weapons item_w_mingxiao_melee / _tentacle / _spit
 	virtual void vfunc123();	// DrawDebugTextOverlays-like: with bit 29 of the overlay flags (+0x224) set, dispatches four red markers (sub_10144a30) along x = 100, 150, 200, 300 at the entity's origin (slot 220); then the Troika base
 	virtual void vfunc144(int a);	// slot 144 "Event_Killed"-like: while the byte at +0x6744 is clear sets +0x200 = 1 and runs sub_10395c70; else tells the owner entity (handle +0x6670) sub_10397a50(this), runs sub_10397e90 / sub_10397f00 when the global 0x1093b9b4 is not (slot 1) and has +0x2c set and sub_10398870 is clear; then the Troika base
+	virtual void vfunc465(int act);	// slot 465 "CNPC_VMingXiao::SetActivity"-like: sets the playback rate (sub_1008d230) from the tuning block of the global 0x10739d08 for the activities 9 / 0x13 (the tentacle ones), 0x4b and the rest (scaled by 6 - the count at +0x670c and clamped from below while the target is not held), then sub_1039ab30 (tentacle or 0x1132) or sub_1039aca0, then the Troika base
 	void sub_102bf340(int a);	// CAI_BaseNPCTroika::vfunc144, called directly (stub 0x1000a62d)
+	void sub_10295a60(int act);	// CAI_BaseNPCTroika::vfunc465, called directly (stub 0x100088aa)
+	void sub_1008d230(float flRate);	// CBaseAnimating::sub_1008d230 (stub 0x10012080): the playback rate
+	void sub_1039ab30();	// stub 0x1001582f
+	void sub_1039aca0();	// stub 0x10014551
 	void sub_10395c70();	// stub 0x100116e9
 	void sub_10397e90();	// stub 0x10008eb3
 	void sub_10397f00();	// stub 0x100097eb
