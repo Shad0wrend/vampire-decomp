@@ -1,6 +1,49 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10192e60 size=0xeb
+#include "CPhysicsPropContested.h"
+#include "CEntityVSlots.h"
+#include "CVStatList_t.h"
+
+struct CContestedGlobals
+{
+	char m_pad0000[0xc];
+	float m_flCurTime;
+};
+
+struct CContestedCharView
+{
+	void sub_10167fd0();	// stub 0x10014a6a
+};
+
+extern CContestedGlobals *g_1070b228;
+void sub_101cebc0(void *pPlayer, int nMessage, int a);
+
+void CPhysicsPropContested::vfunc39(CBaseEntity *pOther)
+{
+	if (!m_b7ac)
+	{
+		if (pOther && ((CEntityVSlots *)this)->slot94() != 7)
+		{
+			if (CVStatListSet::Of(pOther)->Find(0)->sub_102012d0(1) >= m_n78c)
+			{
+				sub_10192b50(pOther);
+				sub_101917f0(pOther);
+				m_flTime7b0 = g_1070b228->m_flCurTime;
+			}
+			else
+			{
+				sub_101cebc0(pOther, 0x2f, 0);
+				((CContestedCharView *)pOther)->sub_10167fd0();
+			}
+		}
+	}
+	else
+		sub_101917f0(pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192f90 size=0xde
 #include "CPhysicsPropContested.h"
 #include "CVStatList_t.h"
