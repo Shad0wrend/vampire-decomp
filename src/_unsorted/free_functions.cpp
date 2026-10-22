@@ -107864,6 +107864,49 @@ const char *sub_10429240(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10429460 size=0x15c
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropFloat
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropVector
+SendProp sub_1000b771(const char *pVarName, int offset, int sizeofVar);	// SendPropEHandle
+SendProp sub_10003404(const char *pVarName, int offset, int sizeofVar);	// SendPropTime
+void sub_10009539();
+void sub_10006aeb();
+void sub_10003012();
+void sub_1000c5c7();
+
+extern SendTable g_109ee748;
+extern SendTable *g_10619d54;
+
+// TARGET: sub_10429460
+int sub_10429460()
+{
+	static const char *pTableName = "DT_BaseGrenade";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_10619d54, (void *)sub_10009539),
+		sub_10006cc1("m_flDamage", 0x19c0, 4, 10, 8, 0.0f, 256.0f, (void *)sub_10006aeb),
+		sub_10006cc1("m_DmgRadius", 0x19b8, 4, 10, 8, 0.0f, 1024.0f, (void *)sub_10006aeb),
+		sub_10007bfd("m_bIsLive", 0x19b5, 1, 1, 1, 0, 0),
+		sub_1000b771("m_hOwner", 0x19b0, 4),
+		sub_1000c14e("m_vecVelocity", 0x3d4, 12, 0, 4, 0.0f, -121121.125f, (void *)sub_10003012),
+		sub_10007bfd("m_fFlags", 0x434, 4, 9, 1, 0, (void *)sub_1000c5c7),
+		sub_10003404("m_flNextAttack", 0x1564, 4),
+	};
+	g_109ee748.sub_1000e8fe(props + 1, 8, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10429650 size=0x43
 #include "CBaseGrenade.h"
 void *sub_100aa720(int size);
