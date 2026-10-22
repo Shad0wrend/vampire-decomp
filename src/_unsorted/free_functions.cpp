@@ -40927,6 +40927,34 @@ extern "C" CBaseEntity *prop_destructable()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193ea0 size=0xc6
+#include "CPropDestructable.h"
+#include "inputdata_t.h"
+
+void CPropDestructable::sub_10193ea0(inputdata_t *pInput)
+{
+	int n = (pInput->value.fieldType == 4) ? pInput->value.iValue : 0;
+	if (n > m_nStageHealth78c)
+	{
+		m_iHealth += m_nStageHealth78c - n;
+		void *pActivator = pInput->pActivator;
+		n = m_iHealth;
+		((CVariantCopy *)&m_OnHealthChanged748)->sub_1000b320(4, &n);
+		m_OnHealthChanged748.sub_100cd300(*(CVariantCopy *)&m_OnHealthChanged748, pActivator, this, 0.0f);
+		if (m_iHealth <= 0)
+		{
+			CPropDestructableDamage info;
+			info.sub_101c2690();
+			info.m_data[11] = (int)pInput->pActivator;
+			info.m_data[10] = (int)pInput->pCaller;
+			n = (pInput->value.fieldType == 4) ? pInput->value.iValue : 0;
+			*(float *)&info.m_data[12] = (float)n;
+			vfunc144(&info);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194270 size=0x49
 void *sub_1000db89(int);
 struct GP;
