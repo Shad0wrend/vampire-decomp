@@ -32,7 +32,6 @@ public:
 	void sub_10214780();	// the activation: drops flag 0x40000, starts the "spin" sequence (a Warning when the model has none), sets the think function and a random next spin time, starts the sound at +0x7cc and, when the ghost (handle at +0x7d0) is gone, creates the ghost particle (name at +0x7c0) attached to the prop
 	int sub_1008f7b0(const char *label);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
 	void sub_10260a50(int nSequence);	// CBaseAnimating::ResetSequence (stub 0x1000d0b2), called directly
-	const char *sub_100ab4f0(const char *pszName);	// stub 0x1000b5cd: the text the "no animation" warning shows for the entity name
 	void sub_10214080(int a);	// stub 0x10002603: takes the value at +0x7cc
 	CEnvParticle *sub_10214cc0(int a);	// stub 0x10009f0c: the ghost particle entity for the value at +0x7c0, null when there is none
 
