@@ -27,6 +27,7 @@ public:
 	int sub_10299da0(CBaseEntity *pEnt);	// CAI_BaseNPCTroika::vfunc404, called directly
 	void vfunc463(int nOld, int nNew);	// slot 463 (state change): entering state 2 takes the hold on the enemy's character (sub_10388c40, sub_1017f7b0, handle at +0x6664), leaving it drops the hold (sub_1017f830); states 1 / 2 / 3 / 0xb tell the active weapon slot 66 / 67; then CNPC_VHumanCombatant::vfunc463
 	void sub_10388c40();	// stub 0x1000a6ff
+	void sub_103871c0(int nOld, int nNew);	// CNPC_VHumanCombatant::vfunc463 (stub 0x10014a10), called directly
 
 	char m_pad03e0[0x6664 - 0x3e0];
 	unsigned int m_hHold6664;	// 0x6664: entity handle of the enemy character the hunter holds
