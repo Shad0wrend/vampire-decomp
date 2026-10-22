@@ -3413,6 +3413,7 @@
 0x1000d085 func   ?vfunc502@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc502
 0x1000d08a func   ?sub_1009b2c0@CBaseEntity@@QAEXHH@Z CBaseEntity::sub_1009b2c0
 0x1000d0a3 func   ?sub_10106a40@@YIHPAVCBaseAnimating@@HH@Z sub_10106a40
+0x1000d0a8 func   ?vfunc495@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc495
 0x1000d0b2 func   ?sub_10260a50@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10260a50
 0x1000d0b7 func   ?sub_10135840@CLogicNPCCondition@@QAE_NXZ CLogicNPCCondition::sub_10135840
 0x1000d0bc func   ?sub_100e1880@CDialog@@QAEPADH@Z CDialog::sub_100e1880
