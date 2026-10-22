@@ -30830,6 +30830,47 @@ bool CUnknown10108e00::sub_10108e00(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109550 size=0x106
+#include "CFire.h"
+#include "Vector.h"
+
+struct CFireHandleSrc
+{
+	virtual void vfunc0();
+	virtual unsigned int *vfunc1();
+};
+
+char sub_101091f0(Vector *pOrigin, float flRadius, int c, unsigned int nFlags);
+int sub_10108f60(void *pBuf, int nMax, int a, Vector *pOrigin, float flRadius);
+CFire *sub_10136580(const char *pszClass);
+
+// TARGET: sub_10109550
+bool sub_10109550(Vector *pOrigin, float flHeat, int a, int b, unsigned int nFlags, CFireHandleSrc *pOwner, int c)
+{
+	Vector vecPos = *pOrigin;
+	if (!sub_101091f0(&vecPos, 16.0f, c, nFlags))
+	{
+		CFire *fires[16];
+		int n = sub_10108f60(fires, 16, 1, pOrigin, 16.0f);
+		for (int i = 0; i < n; i++)
+			fires[i]->sub_1010b5c0(flHeat, 0);
+		return false;
+	}
+	CFire *pFire = sub_10136580("env_fire");
+	if (!pFire)
+		return false;
+	*(unsigned int *)((char *)pFire + 0x204) |= 0x80;
+	pFire->vfunc103();
+	pFire->sub_1010a450(&vecPos.x, flHeat, a, b, nFlags, c);
+	pFire->sub_1010a7f0();
+	if (pOwner)
+		*(unsigned int *)((char *)pFire + 0x454) = *pOwner->vfunc1();
+	else
+		*(unsigned int *)((char *)pFire + 0x454) = 0xffffffff;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109840 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
