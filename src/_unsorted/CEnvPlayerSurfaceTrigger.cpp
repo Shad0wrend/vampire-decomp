@@ -1,6 +1,34 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100fd850 size=0x9f
+#include "CEnvPlayerSurfaceTrigger.h"
+#include "CUtlVector4.h"
+extern CGlobalEntityList *g_10566458;
+extern CUtlVector4 g_1070906c;
+extern unsigned int *(__fastcall *g_10457ad0)(CEnvPlayerSurfaceTrigger *);
+// TARGET: CEnvPlayerSurfaceTrigger::~CEnvPlayerSurfaceTrigger
+CEnvPlayerSurfaceTrigger::~CEnvPlayerSurfaceTrigger()
+{
+	unsigned int hThis = 0xffffffff;
+	hThis = *g_10457ad0(this);
+	for (int i = 0; i < g_1070906c.m_size; i++) {
+		unsigned int *pElem = (unsigned int *)&g_1070906c.m_pMemory[i];
+		CBaseEntity *pThis = g_10566458->sub_100290c0(&hThis);
+		if (g_10566458->sub_100290c0(pElem) == pThis) {
+			if (i != -1) {
+				g_1070906c.sub_100fdd00(i, 1);
+				g_1070906c.m_size--;
+			}
+			break;
+		}
+	}
+	m_OnSurfaceLeave.sub_100cd2d0();
+	m_OnSurfaceEnter.sub_100cd2d0();
+	sub_1009df20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fd920 size=0x1e
 #include "CEnvPlayerSurfaceTrigger.h"
 
