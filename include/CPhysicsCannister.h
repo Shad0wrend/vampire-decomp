@@ -33,14 +33,18 @@ public:
 	void sub_10150e80();	// removes the physics object at +0x19dc (sub-object slot 3 with the object at +0x36c, then slot 40 of the global at 0x10723940), clears the fields at +0x17c / +0x19e8 / +0x19e4, calls sub_101510c0() when +0x19e0 is set, then slot 7 of the global at 0x1070b248 with the edict's (+0x2e0) index (engine slot 35) for the string at +0x19f8
 	void sub_101510c0();	// called through the stub at 0x1000abeb
 	void sub_10150910(int a, void *b);	// stub 0x1000c08b
-	void sub_10150f50();	// stub 0x1000201d
+	void sub_10150f50();	// stub 0x1000201d: "CPhysicsCannister::Explode": no more damage taken, removes the physics object, breaks the model into gibs (velocity of the physics object) and creates the explosion named by the string at +0x1a14 (Warning "%s could not find explosion parameters" when there is none), then removes itself
 
 	char m_pad0000[0x1fc];
 	int m_nTakeDamage;	// 0x1fc
 	char m_pad0200[0x10];
 	int m_iHealth;	// 0x210
-	char m_pad0214[0x19e4 - 0x214];
+	char m_pad0214[0x36c - 0x214];
+	void *m_pPhysObj36c;	// 0x36c: the physics object
+	char m_pad0370[0x19e4 - 0x370];
 	char m_bLeaking;	// 0x19e4
 	char m_pad19e5[0x19f4 - 0x19e5];
 	float m_flLeakStart;	// 0x19f4
+	char m_pad19f8[0x1a14 - 0x19f8];
+	const char *m_pszExplosion1a14;	// 0x1a14: name of the explosion parameters entity
 };
