@@ -43,6 +43,7 @@ struct CSceneEvent	// a scene event; only what the actor checks need
 {
 	CSceneEventActor *sub_10001b5e();	// the event's actor (stub 0x10001b5e)
 	int sub_100029c8();	// the event's type (stub 0x100029c8)
+	const char *sub_10075c50();	// the event's text parameter (stub 0x10006fdc)
 };
 
 struct CSceneEntityScene	// the scene object at +0x4bc
@@ -91,6 +92,8 @@ public:
 	CSceneEntity *sub_10080830();	// the constructor body (stub of the three scene entity classes' constructors): CBaseEntity constructor, the logical entity fields (-1 at +0x46c..+0x47c), the sub-object at +0x4c0, the seven outputs at +0x4cc..+0x55c, the vtable, the scene state, the "snd_mixahead" console variable at +0x4c8
 	void sub_100821f0(int mode);	// moves every actor entity of the scene (the elements of the object at +0x4bc, entity by name = element + 0x14) according to mode: 1 = to this entity's origin / angles, 2 = to the element's stored origin (+0x17c) / angles (+0x188), 3 = bone match "bip01"; marks the entity (+0x19c bit 4) and updates the CBaseAnimating
 	float sub_100ac720(const char *context);	// "CBaseEntity::GetLastThink" (stub 0x1000c8ba), called directly
+	void sub_10080b00(CSceneEvent *pEvent);	// "CSceneEntity::LogPrecache": the first call asks the command line for "-log_speech_files"; with it set and a speech event (type 5) appends "<map>\t<entity debug name>\t<lower-cased speech file>.lip\n" to logs/logged_lcs_files.txt (DevWarning when the file cannot be opened)
+	const char *sub_100ab4f0();	// stub 0x1000b5cd: the entity's debug name, called directly
 
 	char m_pad0004[0x10c - 4];
 	unsigned int m_hPlayer10c;	// 0x10c: entity handle of the scene's player
