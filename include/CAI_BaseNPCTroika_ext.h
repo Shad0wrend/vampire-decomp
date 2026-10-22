@@ -48,3 +48,5 @@
 	virtual void vfunc463(int a, int b);	// slot 463 override: the state change handler (old state a, new state b)
 	void sub_102ae310();	// stub 0x10007e5a, run by vfunc463
 	void sub_10293d90(float f);	// stub 0x10004fac, run by vfunc463 for state 0xe
+	virtual void vfunc77();	// slot 77 "ScriptHide" (script entity check): when the state (+0x5cc0) is 4 or the scripted entity handle (+0x5d74) is live, DevWarnings that a scripted NPC is being hidden, cancels the script (CCineNPC::sub_101a8c30, else sub_1027d170) and, unless the state is 7, sub_102ae7f0(0x6b); then CBaseEntity::vfunc77 and the active weapon's slot 77
+	void sub_100a8710();	// CBaseEntity::vfunc77 (stub 0x100011cc), called directly
