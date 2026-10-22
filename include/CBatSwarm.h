@@ -10,7 +10,9 @@ public:
 	char m_pad03e0[0x350];
 	unsigned int m_mask730;
 	unsigned int m_mask734;
-	char m_pad0738[0x1a0];
+	float m_flSpeed738;
+	char m_bSlow73c;
+	char m_pad073d[0x8d8 - 0x73d];
 	Vector m_vecPos[32];	// 0x8d8
 
 	// Slot 141, called directly so far; declared as a plain member.
@@ -23,4 +25,6 @@ public:
 	void vfunc104();	// as in CCameraAnimated (transplant)
 	CBatSwarm *sub_100b8730();	// as in CKeepUpright (transplant)
 	void vfunc101(Vector *pMins, Vector *pMaxs);	// slot 101: bounds of the active bats
+	void sub_100b8b50();	// per-think movement: steps the active bats (mask at +0x734) in up to 10 sub-steps of the time since the last think (+0x178) with sub_100b8d50
+	void sub_100b8d50(int iBat, float flStep);	// moves one bat (stub 0x10007405), called directly
 };
