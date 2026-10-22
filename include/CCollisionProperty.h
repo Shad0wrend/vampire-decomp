@@ -70,4 +70,5 @@ public:
 	float sub_100dd2e0(const float *pDir);	// "CCollisionProperty::SupportMapping"-like: the origin dotted with pDir plus, per axis of pDir taken into collision space (entity-space bounds with non-zero angles go through the inverse transform), the local mins (negative component) or maxs times that component
 	void sub_100dc9a0(const Vector &in, Vector &out);	// "CCollisionProperty::NormalizedToCollisionSpace" (stub 0x10003715): the normalised point scaled into the bounds
 	Vector *sub_100dcb30(const Vector &in, Vector *pResult);	// "CCollisionProperty::NormalizedToWorldSpace": sub_100dc9a0, then like sub_104103c0 (collision transform for entity-space bounds with non-zero angles, else collision origin + local)
+	void sub_100dd000(const Vector &in, Vector &out);	// "CCollisionProperty::ClampToBounds"-like: the point into collision space (like sub_100dcc20), clamped to the box (mins at +4, maxs at +0x10) by sub_1013c8c0 (stub 0x100044e4), and back to world space (like sub_100dcb30)
 };
