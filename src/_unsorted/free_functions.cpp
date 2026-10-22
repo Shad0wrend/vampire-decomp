@@ -93512,6 +93512,37 @@ void CNPC_VWerewolf::sub_103cade0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cc320 size=0xef
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+
+struct CWerewolfSignal
+{
+	virtual void v0();
+	virtual void v1();
+};
+extern CWerewolfSignal *g_10924a6c;
+char __fastcall sub_103da0a0(CNPC_VWerewolf *pNPC);
+
+// TARGET: CNPC_VWerewolf::sub_103cc320
+void CNPC_VWerewolf::sub_103cc320()
+{
+	ScopeTrace trace("CNPC_VWerewolf::UpdateConditionEnemyUnreachable", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (sub_103da0a0(this)) {
+		g_10924a6c->v1();
+		sub_10269a20(0x59);
+		sub_10015839(0x79);
+	} else {
+		sub_10015839(0x59);
+		g_10924a6c->v1();
+		sub_10269a20(0x79);
+	}
+	if (!m_b66a8 && sub_10269aa0(0x59) && !sub_103cfc50())
+		m_b66a9 = 1;
+	m_b66a8 = sub_10269aa0(0x59);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cc450 size=0x119
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
