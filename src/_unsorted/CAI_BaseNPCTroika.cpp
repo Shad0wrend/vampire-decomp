@@ -1270,6 +1270,80 @@ void CAI_BaseNPCTroika::vfunc610(int emotion)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ae140 size=0x16d
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown1027d990.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct S_Slot610 {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V10(b7) V10(b8) V10(b9)
+    V10(c0) V10(c1) V10(c2) V10(c3) V10(c4) V10(c5) V10(c6) V10(c7) V10(c8) V10(c9)
+    V10(d0) V10(d1) V10(d2) V10(d3) V10(d4) V10(d5) V10(d6) V10(d7) V10(d8) V10(d9)
+    V10(e0) V10(e1) V10(e2) V10(e3) V10(e4) V10(e5) V10(e6) V10(e7) V10(e8) V10(e9)
+    V10(f0) V10(f1) V10(f2) V10(f3) V10(f4) V10(f5) V10(f6) V10(f7) V10(f8) V10(f9)
+    V10(g0)
+    virtual void s610(int);
+};
+struct S_Rnd { virtual void s0(); virtual float RandomFloat(float a, float b); };
+extern S_Rnd *g_1070b244;
+struct S_Glob { char pad[0xc]; float curtime; };
+extern S_Glob *g_1070b228;
+struct S_Holder { void sub_100cd660(CBaseEntity *a, CBaseEntity *b, int c); };
+struct S_V {
+    char pad0[0x5b80]; char m_b5b80;
+    char pad2[0x5d8c - 0x5b81]; unsigned int m_flags5d8c;
+    char pad3[0x5fbc - 0x5d90]; S_Holder m_h5fbc;
+    char pad4[0x63fc - 0x5fbd]; char m_b63fc;
+    char pad5[0x6474 - 0x63fd]; float m_f6474;
+    char pad6[0x6494 - 0x6478]; char m_b6494;
+    char pad7[0x658c - 0x6495]; int m_h658c; int m_p6590; int m_h6594;
+};
+void CAI_BaseNPCTroika::vfunc463(int a, int b)
+{
+    S_V *v = (S_V *)this;
+    CUnknown1027d990 *u = (CUnknown1027d990 *)this;
+    if (a != b) {
+        ((S_Slot610 *)this)->s610(b);
+        sub_102ae310();
+        char flag = 1;
+        switch (b) {
+        case 2: case 3:
+            v->m_b6494 = flag;
+            break;
+        case 0xb:
+            v->m_f6474 = g_1070b244->RandomFloat(10.0f, 20.0f) + g_1070b228->curtime;
+            v->m_b6494 = flag;
+            break;
+        case 7:
+            if (v->m_p6590 != 0)
+                sub_1029f5d0(&v->m_h658c);
+            break;
+        case 8: {
+            CBaseEntity *p = (CBaseEntity *)vfunc167();
+            if (!p) p = (CBaseEntity *)this;
+            v->m_h5fbc.sub_100cd660(p, (CBaseEntity *)this, 0);
+            v->m_b6494 = flag;
+            break; }
+        case 0xe:
+            sub_10293d90(2.0f);
+            v->m_b6494 = flag;
+            break;
+        }
+        v->m_flags5d8c &= 0x7ffffff;
+        if (u->sub_1027d990() != 3 && u->sub_1027d990() != flag)
+            m_flags14b8 &= ~8u;
+    }
+    void *ph = &v->m_h6594;
+    m_flags14b8 &= ~0x1000u;
+    sub_1029f5d0(ph);
+    m_flags14b8 &= ~4u;
+    v->m_b63fc = 0;
+    sub_10295ab0(5.0f);
+    v->m_b5b80 = 0;
+    CAI_BaseNPC::vfunc463(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4540 size=0xb4
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"
