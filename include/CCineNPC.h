@@ -37,8 +37,12 @@ public:
 	void sub_101a6ec0();	// called directly
 	void vfunc113();	// slot 113 "CCineNPC::Activate" (declared as a plain member): the base work, then finds the NPC named at +0x5f54 (the first one with an NPC object at +0x94; DevMsg "Could not find NPC %s in CCineNPC::Activate for %s" when none), plays the sounds of its model for the three names at +0x5f44 / +0x5f4c / +0x5f48 (sub_10428880; DevMsg "NPC %s has no model in CCineNPC::Activate for %s" without a model), looks up the entity named at +0x5f58 and keeps its handle at +0x5f94 (the name is cleared when that is gone)
 	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
+	CCineNPC *sub_101a8130();	// stub 0x1000b348: the scripted sequence entity named at +0x5f5c (found with the entity list, cast to CCineNPC), null when there is none or it has no NPC object at +0x94
+	void sub_101a81a0();	// releases the NPC of the entity behind the handle at +0x5ce4: clears its schedule (sub_10273e80(0)), lets the entity named at +0x5f5c release first when it is another one, resets its animation (slot 584 with the script name at +0x5f48) and the move state, then fires the output at +0x5f9c with the entity behind the handle at +0x10c
 
-	char m_pad0004[0x204 - 4];
+	char m_pad0004[0x10c - 4];
+	unsigned int m_h010c;	// 0x10c: entity handle
+	char m_pad0110[0x204 - 0x110];
 	unsigned int m_flags204;	// 0x204
 	char m_pad0208[0x26c - 0x208];
 	const char *m_pszName26c;	// 0x26c: the entity name
