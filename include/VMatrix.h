@@ -12,7 +12,7 @@ public:
 	float *operator[](int i) { return m[i]; }
 	const float *operator[](int i) const { return m[i]; }
 
-	Vector GetLeft() const;	// 0x1024d7b0 (column 1), out of line
-	Vector GetUp() const;	// 0x1024d7e0 (column 2), out of line
+	Vector sub_1024d7b0() const;	// column 1 (GetLeft), out of line
+	Vector sub_1024d7e0() const;	// column 2 (GetUp), out of line
 	void sub_1024d920(VMatrix &out) const;
 };
