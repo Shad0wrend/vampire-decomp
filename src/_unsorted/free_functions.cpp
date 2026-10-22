@@ -12455,6 +12455,65 @@ void CSceneEntity::sub_100809f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080b00 size=0x143
+#include "CSceneEntity.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+extern "C" char *__cdecl _strlwr(char *);
+extern "C" __declspec(dllimport) char *__cdecl Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+
+class ICommandLine
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual int FindParm(const char *psz, const char *pszDefault);	// slot 3
+};
+extern "C" __declspec(dllimport) ICommandLine *CommandLine();
+
+struct CFileSystemX
+{
+	virtual void *Open(const char *pszName, const char *pszMode, const char *pszPathID);	// slot 0
+	virtual void Close(void *hFile);	// slot 1
+	virtual void v2();
+	virtual int Write(const void *pData, int nBytes, void *hFile);	// slot 3
+};
+extern CFileSystemX *g_1070b238;
+
+struct CGlobalVarsMap
+{
+	char m_pad0000[0x24];
+	const char *mapname;	// 0x24
+};
+extern CGlobalVarsMap *g_1070b228;
+
+extern void (__cdecl *g_109f364c)(const char *, ...);	// DevWarning
+extern void (__cdecl *g_109f3878)(char *pPath, const char *pExt, int nMax);	// Q_SetExtension
+const char *sub_101d3730(const char *fmt, ...);
+
+// TARGET: CSceneEntity::sub_10080b00
+void CSceneEntity::sub_10080b00(CSceneEvent *pEvent)
+{
+	static int s_bLogging = CommandLine()->FindParm("-log_speech_files", 0);
+	if (!s_bLogging || !pEvent)
+		return;
+	if (pEvent->sub_100029c8() != 5)
+		return;
+	void *hFile = g_1070b238->Open("logs/logged_lcs_files.txt", "a+", 0);
+	if (!hFile) {
+		g_109f364c("CSceneEntity::LogPrecache(%s) could not open: logs/logged_lcs_files.txt\n", sub_100ab4f0());
+		return;
+	}
+	char szFile[0x104];
+	Q_strncpy(szFile, pEvent->sub_10075c50(), 0x104);
+	g_109f3878(szFile, ".lip", 0x104);
+	_strlwr(szFile);
+	const char *pszLine = sub_101d3730("%s\t%s\t%s\n", g_1070b228->mapname ? g_1070b228->mapname : g_106b8540, sub_100ab4f0(), szFile);
+	g_1070b238->Write(pszLine, strlen(pszLine), hFile);
+	g_1070b238->Close(hFile);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081890 size=0x2d
 #include "CBasePlayer.h"
 
