@@ -13,13 +13,14 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual void vfunc5();
-	virtual void vfunc6(const float *pOrigin, int a);	// slot 6: builds a PVS filter for the origin, drops the suppressed host from it (unless it is an init message) and, when recipients remain, forwards (filter, 0, pOrigin, a) to slot 30 of the temp entity system (global 0x10540528)
+	virtual void vfunc6();
 	virtual void vfunc7();
-	virtual void vfunc8();
+	virtual void vfunc8(const float *pOrigin, int a);	// slot 8 (ret 8): a temp entity style effect at the origin: sends it to the players that can see the origin (a CPVSFilter), without the prediction suppressed host when there is one
 	virtual float vfunc9();
 	virtual void vfunc10();
 	void sub_1000168b();	// as in CDataObjectAccessSystem (transplant)
 
-	CBaseEntity *m_pSuppressHost;	// 0x0c: the prediction system's suppressed host
-	int m_nSuppressCount;	// 0x10: while positive nothing is suppressed
+	char m_pad0004[8];
+	CBaseEntity *m_pSuppressHost;	// 0x0c: IPredictionSystem's suppressed host (player), null for none
+	int m_nSuppressDisabled;	// 0x10: the suppression is off while this is above zero
 };
