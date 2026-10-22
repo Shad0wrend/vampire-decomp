@@ -28,7 +28,10 @@ public:
 	int m_n1b2c;	// +0x1b2c: set to 6 by SelectSchedule
 	char pad1b30[0x1b38 - 0x1b30];
 	int m_nIdealState;	// +0x1b38
-	char pad1b3c[0x5ddc - 0x1b3c];
+	char pad1b3c[0x1b44 - 0x1b3c];
+	const char *m_pszFailFile;	// +0x1b44: the source file recorded by a task failure
+	int m_nFailLine;	// +0x1b48: the source line recorded by a task failure
+	char pad1b4c[0x5ddc - 0x1b4c];
 	void *m_pHint5ddc;	// +0x5ddc: the hint node the NPC is working on
 	char pad5de0[0x6078 - 0x5de0];
 	char m_b6078;	// +0x6078
@@ -79,4 +82,8 @@ public:
 	void sub_10005d17(void *pHint);	// stub of 0x10361a70, run when task 0x150 ends
 	void sub_1000ac68(int a);	// stub of 0x10273e80 (CAI_BaseNPC::sub_10273e80), called directly
 	void sub_10014524(int activity);	// starts the activity (stub of CAI_BaseNPCTroika::sub_10289ee0)
+	void vfunc442(const CVAsianVampireTask_t *pTask);	// slot 442 "CNPC_VAsianVampire::StartTask": scope trace; task 0x150 does nothing, tasks 0x151 / 0x152 pick a hint (sub_103615c0 / sub_10361730) into +0x5ddc and fail the task (TaskFail(1), recording the source file and line 0x110 / 0x118) when there is none, then sub_1000ac68(0); the rest goes to the base StartTask
+	void sub_103c5ac0(const CVAsianVampireTask_t *pTask);	// CNPC_VVampireBoss::vfunc442 (stub 0x1000de7c), called directly
+	void *sub_103615c0();	// stub 0x1000c61c: the hint for task 0x151
+	void *sub_10361730();	// stub 0x10006a1e: the hint for task 0x152
 };
