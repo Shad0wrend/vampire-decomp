@@ -13,3 +13,24 @@ CTEInspectionFX *CTEInspectionFX::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100654f0 size=0xe3
+#include "CTEInspectionFX.h"
+#include "CBroadcastRecipientFilter.h"
+
+void sub_10139610(const float *pAngles, float *pForward, float *pRight, float *pUp);
+void sub_10139500(const float *pStart, float flScale, const float *pDirection, float *pDest);
+
+void CTEInspectionFX::vfunc3(const float *pOrigin, const float *pAngles)
+{
+	m_vecOrigin = *(const Vector *)pOrigin;
+	m_vecOrigin.z += 24.0f;
+	Vector vecForward;
+	sub_10139610(pAngles, &vecForward.x, 0, 0);
+	vecForward.z = 0;
+	VectorNormalize(vecForward);
+	sub_10139500(&m_vecOrigin.x, 100.0f, &vecForward.x, &m_vecOrigin.x);
+	CBroadcastRecipientFilter filter;
+	vfunc4(&filter, 0);
+}
+// END FUNCTION
