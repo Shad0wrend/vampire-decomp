@@ -159,6 +159,45 @@ int CNPC_VHengeyokai::sub_103801d0(CNPC_VHengeyokaiInfo *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103803d0 size=0x72
+#include "CNPC_VHengeyokai.h"
+
+unsigned char __fastcall sub_10381c80(char *pNPC);
+
+#define SLOT_V(n) virtual void a##n();
+#define SLOT_V10(p) SLOT_V(p##0) SLOT_V(p##1) SLOT_V(p##2) SLOT_V(p##3) SLOT_V(p##4) SLOT_V(p##5) SLOT_V(p##6) SLOT_V(p##7) SLOT_V(p##8) SLOT_V(p##9)
+
+struct CHengeyokaiSlots
+{
+	SLOT_V10(0) SLOT_V10(1) SLOT_V10(2) SLOT_V10(3) SLOT_V10(4) SLOT_V10(5) SLOT_V10(6) SLOT_V10(7)
+	SLOT_V10(8) SLOT_V10(9) SLOT_V10(10) SLOT_V10(11) SLOT_V10(12) SLOT_V10(13) SLOT_V10(14) SLOT_V10(15)
+	SLOT_V(160) SLOT_V(161) SLOT_V(162) SLOT_V(163) SLOT_V(164) SLOT_V(165) SLOT_V(166)
+	virtual void *vfunc167();
+};
+
+struct CGlobal10924a6c
+{
+	virtual void a0();
+	virtual void vfunc1();
+};
+
+extern CGlobal10924a6c *g_10924a6c;
+
+void CNPC_VHengeyokai::vfunc433()
+{
+    sub_102b27f0();
+    sub_10015839(0xf);
+    sub_10015839(0xc);
+    sub_10015839(0xd);
+    if (sub_10381c80((char *)this) && sub_10269aa0(0x4a) && sub_10382020(((CHengeyokaiSlots *)this)->vfunc167())) {
+        g_10924a6c->vfunc1();
+        sub_10269a20(0x1b);
+    } else {
+        sub_10015839(0x1b);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10380510 size=0x82
 #include "CNPC_VHengeyokai.h"
 #include "CUnknown10381be0.h"
