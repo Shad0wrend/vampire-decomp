@@ -21,4 +21,5 @@ public:
 	CBaseEntity *sub_10135720();	// resolves the cached handle at +0x488, searching the entity by name when it is stale
 	const char *sub_1000b5cd();	// stub 0x1000b5cd: CBaseEntity::GetDebugName
 	bool sub_10135840();	// tests the condition on the target NPC; warns when the condition is invalid or the NPC is missing
+	void vfunc113();	// slot 113 "Activate" (plain member): resolves the entity, looks the condition name up (the global condition table, sub_102c8cc0) into +0x48c and, when it is not positive, writes a warning with the debug name and the condition name on screen at the origin (a red cross and the text, 10000 seconds)
 };
