@@ -6,11 +6,14 @@ class CEntityVSlots;
 class CNPC_VSheriffMan
 {
 public:
-	char pad0[0x1b30];
+	char pad0[0x1b2c];
+	int m_n1b2c;	// +0x1b2c: set to 0x21 by the schedule selection
 	const char *m_pszSourceFile;	// +0x1b30: source file / line stamp of the last schedule change
 	int m_nSourceLine;	// +0x1b34
 	int m_nIdealState;	// +0x1b38
-	char pad1b3c[0x5d9c - 0x1b3c];
+	char pad1b3c[0x5cc0 - 0x1b3c];
+	int m_n5cc0;	// +0x5cc0: the task state (5 = busy)
+	char pad5cc4[0x5d9c - 0x5cc4];
 	float m_flAttackStartTime;	// +0x5d9c
 	char pad5da0[0x5ddc - 0x5da0];
 	CEntityVSlots *m_pTarget;	// +0x5ddc: the entity the teleport bats are placed around
@@ -70,4 +73,9 @@ public:
 	void sub_10013e85();	// CNPC_VVampireBoss::vfunc420, called directly
 	void sub_10014c22();	// stub for 0x103c6a00, called directly after the model names are stored
 	CNPC_VSheriffMan *sub_103ae3e0();	// the constructor (the CNPC_VVampire and CNPC_VVampireBoss constructors inlined): vtables 0x104a7b94 / 0x104a7b68 for the boss part, then 0x104c619c / 0x104c616c, +0x1568 = 0x15
+	int vfunc438();	// "CNPC_VSheriffMan::SelectSchedule": scope trace, stamps 0x21 at +0x1b2c; while attacking: the height categories (sub_103b1680) pick 0x158 (task state 5), the convar test 0x15a, 0x15c / 0x15d by the two categories, 0x15a once sub_103c6a20 is not below 0.05 or sub_103c67f0(3.0f) holds; otherwise (and for everything else) CNPC_VHuman::vfunc438
+	int sub_10384ee0();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), called directly
+	void sub_103b10f0();	// stub 0x1000165e: run instead of the schedule pick while the byte at +0x66e5 is set
+	float sub_103c6a20();	// stub 0x100010d2
+	char sub_103c67f0(float flValue);	// stub 0x1000fe11
 };
