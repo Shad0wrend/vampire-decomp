@@ -49676,6 +49676,36 @@ bool CLevelLoader::sub_101d6470(KVNode *pKeys, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6590 size=0x96
+#include "CUnknown101d7520.h"
+
+struct CLocalPlayerInfo
+{
+	char m_pad0000[0xa8];
+	void *m_pa8;
+};
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) void Msg(const char *pFormat, ...);
+CLocalPlayerInfo *sub_101193b0();
+
+// TARGET: CUnknown101d7520Rule::sub_101d6590
+void CUnknown101d7520Rule::sub_101d6590()
+{
+	char szBuf[512];
+	Q_snprintf(szBuf, sizeof(szBuf), "\nLevel Group(%d):\n", m_nGroup);
+	Msg("%s", szBuf);
+	m_sub.sub_10206190();
+	CLocalPlayerInfo *pPlayer = sub_101193b0();
+	if (pPlayer && pPlayer->m_pa8) {
+		if (!m_sub.sub_10206140(pPlayer->m_pa8))
+			Msg("%s", "<<Note: LevelGroup Will FAIL to process due to dependencies.>>\n");
+	}
+	for (int i = 0; i < m_nElements; i++)
+		m_ppElements[i]->sub_101d6190();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d66a0 size=0x64
 #include "CVStatAction_t.h"
 struct CPartHolderX {
