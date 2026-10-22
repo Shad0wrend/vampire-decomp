@@ -61968,6 +61968,56 @@ void CUnknown10217f50::sub_1021b330(const char *pszText, int column)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021b410 size=0x16b
+#include "CBaseEntity.h"
+#include "CPropHacking.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown10219120.h"
+struct HackUser { char m_pad[0x2078]; const char *m_pszName; };
+struct HackEnt { char m_pad[0xa8]; HackUser *m_pUser; };
+extern char g_106b8540[];
+extern CGlobalEntityList *g_10566458;
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+void sub_10217ac0(CPropHacking *pThis, const char *fmt, ...);
+
+static inline HackEnt *HackLookup(unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+	if (pSlot->m_Serial == (int)(h >> 13))
+		return (HackEnt *)pSlot->m_pEntity;
+	return 0;
+}
+
+// TARGET: CPropHacking::sub_1021b410
+void CPropHacking::sub_1021b410()
+{
+	volatile unsigned int &hUser = *(volatile unsigned int *)((char *)this + 0x8c);
+	if (HackLookup(hUser)) {
+		HackEnt *pE = HackLookup(hUser);
+		HackUser *pUser = (pE == 0) ? 0 : pE->m_pUser;
+		const char *pszName = pUser->m_pszName;
+		if (!pszName)
+			pszName = g_106b8540;
+		char szName[8];
+		Q_strncpy(szName, pszName, 8);
+		int nCount = m_n09ac;
+		sub_10218ff0(0, m_n0814 - 2);
+		sub_10217ac0(this, sub_10219400(0x2a));
+		if (m_n09dc >= 0 && m_n09dc < nCount) {
+			sub_10218ff0(0, m_n0814 - 1);
+			sub_10217ac0(this, "%c%s@%s%c ", (int)m_b0984, szName, (const char *)&m_pRecords09a0[m_n09dc], (int)m_b0985);
+		} else {
+			sub_10218ff0(0, m_n0814 - 1);
+			sub_10217ac0(this, "%c%s@%s%c ", (int)m_b0984, szName, sub_10219400(0x11), (int)m_b0985);
+		}
+		m_flags081c &= ~2;
+		((CUnknown10219120 *)this)->sub_10219120();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021bec0 size=0xca
 #include <string.h>
 #include "CUnknown1021bec0.h"
