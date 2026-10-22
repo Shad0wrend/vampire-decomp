@@ -61373,6 +61373,31 @@ void __fastcall sub_102180a0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10219120 size=0xd9
+#include "CUnknown10219120.h"
+#include "CEntityMessageFilter.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+
+static inline int IndexOfEdict(int pEdict)
+{
+	return g_1070b22c->vfunc35(pEdict);
+}
+
+// TARGET: CUnknown10219120::sub_10219120
+void CUnknown10219120::sub_10219120()
+{
+	CEntityMessageFilter filter;
+	filter.sub_1019d2f0(IndexOfEdict(m_pEdict2e0));
+	filter.sub_1019cf50();
+	g_1070b22c->vfunc65(&filter, 0);
+	g_1070b22c->vfunc67(3);
+	g_1070b22c->vfunc66();
+	m_flags81c &= 0xfffffffa;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102196a0 size=0x43
 #include "CPropHacking.h"
 void *sub_100aa720(int size);
