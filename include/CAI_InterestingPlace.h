@@ -17,6 +17,9 @@ public:
 	void sub_1000a25e();
 	CAI_InterestingPlace *sub_102d99d0();	// as in CKeepUpright (transplant)
 	void sub_102d9eb0();	// stub 0x10008701
+	void sub_102daac0(int a);	// stub 0x10015889
+	void sub_102d9b10();	// the destructor body (stub 0x1000a25e): stores the vtable, frees the slot records (+0x580), unlinks the place from the global chain (head 0x10927194, next pointer at +0x540, count 0x10927198), then destroys the outputs: the eight at +0x480 (last first), then +0x468 and +0x450, and runs the base destructor body (sub_1000cb8a)
+	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a), tail called
 
 	char m_pad03e0[0x544 - 0x3e0];
 	const char *m_pszTypeName;	// 0x544
