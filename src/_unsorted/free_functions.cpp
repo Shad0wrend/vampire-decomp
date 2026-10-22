@@ -72471,6 +72471,36 @@ CBaseEntity *CAI_BaseNPC::sub_102729d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273ec0 size=0x9c
+#include "CAI_BaseNPC.h"
+#include "CUnknown102ee270.h"
+
+extern "C" __declspec(dllimport) void Warning(const char *, ...);
+
+void CAI_BaseNPC::sub_10273ec0()
+{
+    *(char *)((char *)this + 0x1a40) = 0;
+    switch (*(int *)((char *)this + 0x5c44)) {
+    case 0:
+    case 1:
+        *(int *)((char *)this + 0x5c44) = 3;
+        break;
+    case 2:
+        sub_10273e80(0);
+        break;
+    case 3:
+        Warning("Movement completed twice!\n");
+        break;
+    }
+    int state = *(int *)((char *)this + 0x5d70);
+    if (state != 6 && state != 4 && state != 5)
+        sub_10272650(sub_1027a6c0());
+    if ((*(CUnknown102ee270 **)((char *)this + 0x5d34))->sub_102ee6a0())
+        (*(CUnknown102ee270 **)((char *)this + 0x5d34))->sub_102f0400();
+    (*(CUnknown102ee270 **)((char *)this + 0x5d34))->sub_102ee270();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10274ca0 size=0xc7
 extern Vector g_1070d1b0;
 void sub_10428310(void *pStudioHdr, Vector *pOut);
