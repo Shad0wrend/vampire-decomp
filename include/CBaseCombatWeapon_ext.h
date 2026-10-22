@@ -8,3 +8,7 @@
 	float sub_10091080(int sequence);	// CBaseAnimating::SequenceDuration (stub 0x10009813), called directly
 	void sub_10095030(const char *pszName);	// CBaseAnimating::vfunc105 (stub 0x10005100), called directly by vfunc105
 	void sub_100adf10(const float *mins, const float *maxs);	// CBaseEntity::SetSize (stub 0x100115e0), called directly
+	void sub_1009ee80(CBaseEntity *pEnt);	// "CBaseEntity::SetAimEnt" (stub 0x10003df5), called directly by vfunc299
+	void sub_100b2770(const float *pVelocity);	// the absolute velocity setter (stub 0x1000489a), called directly by vfunc299
+	void sub_100ac610(float time, const char *szContext);	// "CBaseEntity::SetNextThink" (stub 0x1000326f), called directly
+	void sub_1024f840();	// stub 0x1000aec5: the weapon's world setup (bounds, solid flags, think), run by vfunc103 and vfunc299
