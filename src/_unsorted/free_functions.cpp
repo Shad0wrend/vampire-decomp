@@ -12274,6 +12274,38 @@ SEvent1007e810 *SScene1007e810::sub_1007e810(const char *a, const char *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e970 size=0xe3
+#include "CChoreoScene1007e970.h"
+#include <string.h>
+
+int CChoreoScene1007e970::sub_1007e970(const char *pszText, int a)
+{
+	for (int i = 0; i < m_nActors; i++)
+	{
+		CChoreoSceneActor1007e970 *pActor = m_ppActors[i];
+		if (!pActor)
+			continue;
+		for (int j = 0; j < pActor->sub_10072eb0(); j++)
+		{
+			CChoreoSceneChannel1007e970 *pChannel = pActor->sub_10072ed0(j);
+			if (!pChannel)
+				continue;
+			for (int k = 0; k < pChannel->sub_10073540(); k++)
+			{
+				CChoreoSceneEvent1007e970 *pEvent = pChannel->sub_10073560(k);
+				if (pEvent && pEvent->sub_100029c8() == 5 && strstr(pEvent->sub_10075c50(), pszText))
+				{
+					int nResult = pEvent->sub_10076e70(a);
+					if (nResult)
+						return nResult;
+				}
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007eaa0 size=0x123
 #include "CChoreoScene1007eaa0.h"
 #include "CAnchorList.h"
