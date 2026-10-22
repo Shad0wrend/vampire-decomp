@@ -58887,6 +58887,36 @@ CVDmgBlock16_t *CVStatInfoList_t::sub_10200260(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10200410 size=0x189
+#include <stdio.h>
+#include "CVStatInfoList_t.h"
+#include "StatOwner2.h"
+#include "ScopeTrace.h"
+
+extern "C" __declspec(dllimport) void DevMsg(int, const char *, ...);
+extern StatOwner2 g_1074e968;
+
+void CVStatInfoList_t::sub_10200410()
+{
+    ScopeTrace trace("CVStatInfoList_t::Debug_Display", g_106b8540);
+    char buf[128];
+    const char *pszName = *(const char **)((char *)this + 0x24);
+    sprintf(buf, "\n   %s:\n\n", pszName ? pszName : g_106b8540);
+    DevMsg(1, buf);
+    int iCost = g_1074e968.sub_10203020("CostStrings");
+    if (iCost != -1 && !m_cost.sub_101fc160()) {
+        sprintf(buf, "[%s]:\n", g_1074e968.sub_10203190(iCost)->sub_10202a10(0));
+        DevMsg(1, buf);
+        sprintf(buf, "\t\t%s:\t%s\n", g_1074e968.sub_10203190(iCost)->sub_10202a10(1), m_cost.m_first.sub_101fbd30());
+        DevMsg(1, buf);
+        sprintf(buf, "\t\t%s:\t%s\n", g_1074e968.sub_10203190(iCost)->sub_10202a10(2), m_cost.m_second.sub_101fbd30());
+        DevMsg(1, buf);
+    }
+    for (int i = 0; i < m_nStats; i++)
+        m_pStats[i].sub_101fef90(m_field2c, this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10200730 size=0x8a
 #include "CVStatList_t.h"
 #include "ScopeTrace.h"
