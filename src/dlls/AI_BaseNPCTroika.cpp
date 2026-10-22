@@ -158,6 +158,42 @@ void CAI_BaseNPCTroika::sub_1029f060(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f120 size=0xbd
+#include "CEHandleGet.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+#include "inputdata_t.h"
+#include "CUnknown102c0ca0.h"
+
+struct CNpcSlot614View	// the NPC's virtual table up to slot 614
+{
+	CBP_V100(a) CBP_V100(b) CBP_V100(c) CBP_V100(d) CBP_V100(e) CBP_V100(f)
+	CBP_V10(g0) CBP_V1(g10) CBP_V1(g11) CBP_V1(g12) CBP_V1(g13)
+	virtual void vfunc614();
+};
+
+extern float g_104454c4;	// the file-scope zero
+CBasePlayer *sub_101cd9e0(int index);
+
+// TARGET: CAI_BaseNPCTroika::sub_1029f120
+void CAI_BaseNPCTroika::sub_1029f120(inputdata_t *pInput)
+{
+	CBasePlayer *pPlayer = sub_101cd9e0(1);
+	if (pPlayer && !EHandle_Get(*(unsigned int *)((char *)pPlayer + 0xfe8))
+		&& !((CBaseCombatCharacter *)this)->sub_1033e2b0()
+		&& !(*(unsigned int *)((char *)this + 0x14bc) & 0x10000000)
+		&& !pPlayer->sub_10178170()) {
+		*(float *)((char *)this + 0x5bac) = pInput->value.fieldType == 1 ? pInput->value.flValue : g_104454c4;
+		((CUnknown102c0ca0 *)this)->sub_102c0ca0();
+		((CNpcSlot614View *)this)->vfunc614();
+		*(char *)((char *)this + 0x6495) = 0;
+		*(const char **)((char *)this + 0x1b30) = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		*(int *)((char *)this + 0x1b34) = 0x26a7;
+		sub_102ae750(0x6d, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029fcf0 size=0x89
 #include "CAI_BaseNPCTroika.h"
 
