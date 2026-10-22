@@ -2453,6 +2453,73 @@ void CPhysicsPushedEntities::sub_10035fd0(int *pHandles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100360a0 size=0x16b
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+#include "matrix3x4_t.h"
+#include "CPhysicsPushedEntities.h"
+
+#define PV(n) virtual void s##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+
+struct PushColl_t {
+	PV(a0) PV(a1) PV(a2) PV(a3) PV(a4) PV(a5) PV(a6) PV(a7)
+	virtual float *vfunc8();
+};
+
+struct PushEnt_t {
+	char pad[0x270];
+	PushColl_t coll;
+};
+
+struct PushPusher_t {
+	PV10(a0) PV10(a1) PV10(a2) PV10(a3) PV10(a4) PV10(a5) PV10(a6) PV10(a7) PV10(a8)
+	PV(b0) PV(b1)
+	virtual int vfunc92();
+};
+
+struct PushRot_t {
+	char pad[0xc];
+	matrix3x4_t m_ToLocal;
+	matrix3x4_t m_ToWorld;
+};
+
+void sub_10138130(const Vector &in, const matrix3x4_t &mat, Vector &out);
+void sub_10137fe0(const Vector &in, const matrix3x4_t &mat, Vector &out);
+
+void CPhysicsPushedEntities::sub_100360a0(CBaseEntity *pEntity, const float *pRotation, float *pMove, const float *pOrigin)
+{
+	ScopeTrace trace("CPhysicsPushedEntities::ComputeRotationalPushDirection", g_106b8540);
+	PushColl_t *pColl = &((PushEnt_t *)pEntity)->coll;
+	Vector vecPoint = *(Vector *)pColl->vfunc8();
+	if (((PushPusher_t *)pOrigin)->vfunc92() == 6) {
+		Vector vecOutB;
+		Vector vecOutA;
+		((CCollisionProperty *)pColl)->sub_100dcd90(&((CCollisionProperty *)pColl)->m_vecMins.x, &((CCollisionProperty *)pColl)->m_vecMaxs.x, &vecOutA.x, &vecOutB.x);
+		if (pMove[0] < 0.0f)
+			vecPoint.x = vecOutB.x;
+		else
+			vecPoint.x = vecOutA.x;
+		if (pMove[1] < 0.0f)
+			vecPoint.y = vecOutB.y;
+		else
+			vecPoint.y = vecOutA.y;
+		if (pMove[2] < 0.0f)
+			vecPoint.z = vecOutB.z;
+		else
+			vecPoint.z = vecOutA.z;
+	}
+	const PushRot_t *pRot = (const PushRot_t *)pRotation;
+	Vector vecLocal;
+	Vector vecWorld;
+	sub_10138130(vecPoint, pRot->m_ToLocal, vecLocal);
+	sub_10137fe0(vecLocal, pRot->m_ToWorld, vecWorld);
+	pMove[0] = vecWorld.x - vecPoint.x;
+	pMove[1] = vecWorld.y - vecPoint.y;
+	pMove[2] = vecWorld.z - vecPoint.z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036810 size=0xb2
 struct TraceEntry { const char *a, *b, *c; };
 extern int *g_109f3680;
