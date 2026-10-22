@@ -391,3 +391,27 @@ int CMultiplayRules::vfunc62(int)
 	return 11;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10142410 size=0xe7
+#include "CMultiplayRules.h"
+#include "CReliableBroadcastFilter.h"
+#include "IVEngineServer.h"
+
+struct CGlobalVarsView { char pad[0xc]; float curtime; };
+extern IVEngineServer *g_1070b22c;
+extern CGlobalVarsView *g_1070b228;
+extern char g_1070ba2c;
+
+// TARGET: CMultiplayRules::vfunc80
+void CMultiplayRules::vfunc80()
+{
+	if (!g_1070ba2c) {
+		CReliableBroadcastFilter filter;
+		g_1070b22c->vfunc65(&filter, 0x1a);
+		g_1070b22c->vfunc66();
+		*(float *)&m_n08 = g_1070b228->curtime + 6.0f;
+		g_1070ba2c = 1;
+		m_b0c = 0;
+	}
+}
+// END FUNCTION
