@@ -491,6 +491,36 @@ void CBaseEntity::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009e120 size=0x105
+#include "ScopeTrace.h"
+#include "CUnknown1070b22c.h"
+struct CEngX { U22C_SLOTS10(a0) U22C_SLOTS10(b0) U22C_SLOTS10(c0) virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual int vfunc35(int edict, int a); };
+extern CEngX *g_1070b22c;
+struct CUnkSink { void sub_10003198(const char **p, CBaseEntity *e); void sub_10014d08(void *p, CBaseEntity *e, int v); };
+extern CUnkSink g_106eb5d8;
+void sub_10014614(CBaseEntity *e);
+struct CPart { void sub_100015eb(int a); };
+void CBaseEntity::vfunc106(const char *classname)
+{
+	ScopeTrace trace("CBaseEntity::PostConstructor", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (classname && *classname) {
+		vfunc122(classname);
+		if (m_flags268 & 0x200) {
+			g_106eb5d8.sub_10003198(&classname, this);
+			return;
+		}
+		if (!(m_flags268 & 0x400))
+			((CPart *)((char *)this + 0x2d4))->sub_100015eb(0);
+		if (m_pEdict2e0) {
+			g_106eb5d8.sub_10014d08((char *)&classname + 4, this, g_1070b22c->vfunc35(m_pEdict2e0, -1));
+			return;
+		}
+	} else {
+		sub_10014614(this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009e280 size=0xd1
 #include "CBaseEntity.h"
 #include "CEntityMapData.h"
