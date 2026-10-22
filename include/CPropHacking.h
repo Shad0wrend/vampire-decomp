@@ -43,7 +43,7 @@ public:
 	void sub_1021c260();	// prints the selected record (+0x9f4 of the array at +0xa14): the screen texts 0x17 / 0x16 with its three strings, then the five heading texts 0x18..0x1c
 	void sub_1021a740();	// a random "noise" line: a random column and row (RandomInt within the line width left after the text at +0x904 and the screen height at +0x814), one of two page printers, the text at +0x904, then the next think at +0x9e4 seconds ahead
 	void sub_102189e0(const char *pszText);	// sends the text to every player but the one of this entity, reliably, in chunks of at most 250 characters (user message 0, byte 2, the chunk as a string)
-	char sub_1021aaa0(int a, char *pszCommand);	// AcceptCmd helper (called by vfunc273): matches the command against the screen texts 0x21..0x24, 0x11
+	bool sub_1021aaa0(int a, char *pszCommand);	// AcceptCmd helper (called by vfunc273): matches the command against the screen texts 0x21..0x24, 0x11
 	void sub_1021aca0();	// stub 0x10002fae
 	void sub_1021c390(int a);	// stub 0x1000137a
 
