@@ -92801,6 +92801,52 @@ void CNPC_VManBat::sub_1038c170(int nMode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038e720 size=0x108
+#include "CNPC_VManBat.h"
+
+#define MBV(n) virtual void v##n();
+#define MBV10(p) MBV(p##0) MBV(p##1) MBV(p##2) MBV(p##3) MBV(p##4) MBV(p##5) MBV(p##6) MBV(p##7) MBV(p##8) MBV(p##9)
+struct CManBatVView
+{
+	MBV(0) MBV(1) MBV(2) MBV(3) MBV(4) MBV(5) MBV(6) MBV(7) MBV(8) MBV(9)
+	MBV10(1) MBV10(2) MBV10(3) MBV10(4) MBV10(5) MBV10(6) MBV10(7) MBV10(8) MBV10(9)
+	MBV10(10) MBV10(11) MBV10(12) MBV10(13) MBV10(14) MBV10(15) MBV10(16) MBV10(17) MBV10(18) MBV10(19)
+	MBV10(20) MBV10(21) MBV(220)
+	virtual Vector *vfunc221();
+};
+
+float sub_101d2c70(const Vector &vec);
+
+// TARGET: CNPC_VManBat::sub_1038e720
+void CNPC_VManBat::sub_1038e720(Vector vecDir)
+{
+	int nState = m_nState;
+	if (nState == 0x28 || nState == 0x30 || nState == 0xb0 || nState == 0x4b || nState == 0x1171)
+		return;
+	if (vecDir.z >= 30.0f)
+	{
+		sub_1038e640();
+		return;
+	}
+	Vector vecAngles = *((CManBatVView *)this)->vfunc221();
+	double flDiff = sub_101d2c70(vecDir) - vecAngles.y;
+	if (flDiff < 0.0)
+		flDiff += 360.0;
+	if (!(flDiff < 30.0) && !(flDiff > 330.0))
+	{
+		if (flDiff < 180.0)
+			sub_1038e6a0();
+		else
+			sub_1038e6e0();
+		return;
+	}
+	if (nState == 0x24)
+		sub_1038e640();
+	else
+		sub_1038e670();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038f290 size=0x1e
 #include "CNPC_VManBat.h"
 bool CNPC_VManBat::sub_1038f290()
