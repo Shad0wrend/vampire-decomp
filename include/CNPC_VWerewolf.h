@@ -206,4 +206,6 @@ public:
 	void sub_10279a50(int a);	// CAI_BaseNPC member (stub 0x1000b974), called directly
 	void sub_103cc320();	// "CNPC_VWerewolf::UpdateConditionEnemyUnreachable": scope trace (entity name); the unreachable flag (sub_103da0a0) picks which of the conditions 0x59 / 0x79 is set (sub_10015839) and which cleared (sub_10269a20), after signalling the object behind the global 0x10924a6c (slot 1); a newly raised 0x59 without a path (sub_103cfc50) sets the byte at +0x66a9; remembers whether 0x59 is set in the byte at +0x66a8
 	char sub_103cfc50();	// stub 0x100112ac
+	void vfunc104();	// slot 104 "CNPC_VWerewolf::Precache": scope trace (entity name), the base Precache, the werewolf and observatory sound folders, the VSound group / table of the "Werewolf" model name, the four footstep sounds, the "item_w_werewolf_attacks" weapon and the two teleport sounds
+	void sub_10298ad0();	// CAI_BaseNPCTroika::vfunc104 (stub 0x100097b4), called directly
 };
