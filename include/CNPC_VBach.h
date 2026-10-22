@@ -28,6 +28,9 @@ public:
 	int vfunc604(int arg);	// slot 604 "CNPC_VBach::SelectFailSchedule"-like: picks a schedule from the conditions 0x7b / 0x7a / 0x79 and the active weapon (katana / "item_w_rem_m_700_bach"), recording the source line (+0x1b34) and file (+0x1b30) of the choice; the rest goes to CNPC_VHuman::vfunc604
 	int sub_10385e40(int arg);	// CNPC_VHuman::vfunc604 (stub 0x10004462), called directly
 	void sub_103656a0();	// gives the NPC the "item_d_holy_light" discipline weapon (finds it in the inventory or creates and adds it, "Error: Couldn't find space in inventory for Discipline weapon!" otherwise), selects it and completes the task (sub_10272650(5))
+	void *sub_1032e120(const char *pszName);	// stub 0x1000b0b4: creates the named item for the character
+	char sub_10334c20(void *pItem);	// stub 0x100112d9: adds the item to the character's inventory, false when there is no room
+	void sub_10272650(int code);	// stub 0x100097d2, called directly with 5 to end the task
 
 	char m_pad03e0[0x1b30 - 0x3e0];
 	const char *m_pszSchedFile;	// 0x1b30: source file of the last schedule choice
