@@ -74003,6 +74003,47 @@ float __stdcall sub_1029ca30(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029e840 size=0x18e
+#include "CAI_BaseNPCTroika.h"
+#include "inputdata_t.h"
+
+extern "C" char *strtok(char *, const char *);
+extern "C" int sprintf(char *, const char *, ...);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+extern void (*g_109f3650)(int, const char *, ...);	// DevMsg
+const char *sub_100067f3(const char *pszFormat, const char *pszArg);	// stub of 0x101d3730
+int sub_10007b12(CAI_BaseNPCTroika *pNPC, const char *pszNode);	// stub of 0x102d2900
+
+#define VSTR(v) ((v).fieldType == 2 ? ((v).iszValue ? (v).iszValue : "") : (v).sub_10008805())
+
+// TARGET: CAI_BaseNPCTroika::sub_1029e840
+void CAI_BaseNPCTroika::sub_1029e840(inputdata_t *pInput)
+{
+	if (*(int *)((char *)this + 0x5cc0) == 7)
+		return;
+	char szMsg[256];
+	char szArg[256];
+	variant_t &v = pInput->value;
+	Q_strncpy(szArg, VSTR(v), 256);
+	char *pszSchedule = strtok(szArg, ", ");
+	char *pszNode = strtok(0, ", ");
+	if (pszNode && pszSchedule) {
+		int nSchedule = sub_102c47e0(pszSchedule, sub_100067f3("(in InputWalkToNode (%s))", VSTR(v)));
+		int nodes[2];
+		nodes[0] = sub_10007b12(this, pszNode);
+		if (nodes[0] == -1) {
+			sprintf(szMsg, "ERROR: %s - Could not find node with id '%s' (in InputWalkToNode (%s))\n", sub_1000b5cd(), pszNode, VSTR(v));
+			g_109f3650(1, szMsg);
+			return;
+		}
+		nodes[1] = -1;
+		sub_1029f460((char *)this + 0x658c, 0, 0, nSchedule, nodes, 1);
+		return;
+	}
+	g_109f3650(1, "ERROR: %s - Argument to InputWalkToNode is in the wrong format.\nShould be 'Schedule Node'\n", sub_1000b5cd(), pszNode, VSTR(v));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029ea40 size=0xbc
 #include "CAI_BaseNPCTroika.h"
 #include "inputdata_t.h"
