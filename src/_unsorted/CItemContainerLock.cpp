@@ -8,6 +8,51 @@ void CItemContainerLock::vfunc275()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10224ae0 size=0x154
+#include "CEHandleGet.h"
+#include "CItemContainer.h"
+#include "CBaseCombatCharacter.h"
+
+void sub_101cebc0(void *pPlayer, int a, int b);
+
+struct CLockSlots {
+	virtual void p0(); virtual void p1(); virtual void p2(); virtual void p3(); virtual void p4();
+	virtual void p5(); virtual void p6(); virtual void p7(); virtual void p8(); virtual void p9();
+	virtual void p10(); virtual void p11(); virtual void p12(); virtual void p13(); virtual void p14();
+	virtual void p15(); virtual void p16(); virtual void p17(); virtual void p18(); virtual void p19();
+	virtual void p20(); virtual void p21(); virtual void p22(); virtual void p23(); virtual void p24();
+	virtual void p25(); virtual void p26(); virtual void p27(); virtual void p28(); virtual void p29();
+	virtual void p30(); virtual void p31(); virtual void p32(); virtual void p33(); virtual void p34();
+	virtual void p35();
+	virtual const char *GetName();
+};
+
+// TARGET: CItemContainerLock::vfunc32
+bool CItemContainerLock::vfunc32(int a)
+{
+	if (!sub_10224100())
+		return 0;
+	if (EHandle_Get(m_hUser8c)) {
+		if ((int)EHandle_Get(m_hUser8c) != a)
+			return 0;
+	}
+	if (EHandle_Get(m_hContainer) && ((CItemContainer *)EHandle_Get(m_hContainer))->sub_100eef10() && (*(unsigned char *)(a + 0x208c) & 0x20)) {
+		sub_101cebc0((void *)a, 0x4d, 0);
+		return 0;
+	}
+	if (!sub_10224910(a)) {
+		if (m_bLocked815)
+			return 0;
+		if (!((CBaseCombatCharacter *)a)->sub_10335950(((CLockSlots *)this)->GetName())) {
+			if (*(unsigned char *)(a + 0x208c) & 0x20)
+				sub_101cebc0((void *)a, 0xf, 0);
+			return 0;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224ed0 size=0x9d
 #include "CItemContainerLock.h"
 #include "CGlobalEntityList.h"
