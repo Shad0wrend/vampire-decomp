@@ -60875,6 +60875,42 @@ extern "C" CBaseEntity *prop_haunted()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10213ef0 size=0xbe
+#include "CPropHaunted.h"
+#include "CTakeDamageInfo.h"
+
+void sub_101520a0(void *pEvent, int index, float *pOutA, float *pOutB);
+void sub_10032720(void *pTarget, CTakeDamageInfo *pInfo);
+
+struct CHauntedOwnerView	// CBaseEntity::sub_100a8240: the owner / parent entity (null when none)
+{
+	CHauntedOwnerView *sub_100a8240();
+};
+
+void CPropHaunted::sub_10213ef0(int index, void *pEvent, CBaseEntity *pOther)
+{
+	if (!m_bArmed7b8)
+		return;
+	vfunc266(pOther);
+	if (pEvent)
+	{
+		float vecA[3];
+		float vecB[3];
+		CTakeDamageInfo info;
+		sub_101520a0(pEvent, index, vecA, vecB);
+		CHauntedOwnerView *pView = (CHauntedOwnerView *)pOther;
+		info.sub_101c2720(pOther, !pView->sub_100a8240() ? pView : pView->sub_100a8240(), vecB, vecA, m_flDamage794, 1, 0);
+		sub_10032720(this, &info);
+	}
+	else
+	{
+		CTakeDamageInfo info;
+		info.sub_101c26d0(this, this, m_flDamage794, 1, 0, 0, -1);
+		sub_10032720(pOther, &info);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102148f0 size=0xec
 #include "CUnknown102148f0.h"
 #include "CGlobalEntityList.h"
