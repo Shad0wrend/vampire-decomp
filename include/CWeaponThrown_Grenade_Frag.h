@@ -33,4 +33,5 @@ public:
 	void sub_103ed200();	// stub 0x1000d5f3
 	void sub_103ed830(void *pObject);	// stub 0x1000c734
 	void sub_100ac4e0(void *pFunc, int a, int b);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
+	void sub_103ee6f0();	// the fuse tick sound: plays the tick sample ("weapons/ranged/grenade_pineapple/tic.wav", channel 1) from the weapon for everybody who hears it, runs the fuse step (sub_103ee660) and schedules the next think one second ahead
 };
