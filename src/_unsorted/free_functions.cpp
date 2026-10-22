@@ -62071,6 +62071,40 @@ CPropKeypad *CPropKeypad::sub_1021d890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021df90 size=0xdb
+#include "CPropKeypad.h"
+#include "CUnknown10217f50.h"
+#include "CPropHacking.h"
+#include "CUnknown10219120.h"
+
+void sub_10217ac0(void *pThis, const char *pszText, ...);
+
+void CPropKeypad::sub_1021df90()
+{
+	CUnknown10217f50 *t = (CUnknown10217f50 *)this;
+	CPropHacking *h = (CPropHacking *)this;
+	t->sub_10218ec0(0, 0);
+	t->sub_10218db0();
+	sub_10217ac0(this, (const char *)this + 0x840);
+	if (m_bFlag8b8) {
+		h->sub_10218ff0(0, h->m_n0814 - 1);
+		sub_10217ac0(this, t->sub_10219400(0x10));
+		return;
+	}
+	if (m_bFlag8b9) {
+		h->sub_10218ff0(0, h->m_n0814 - 2);
+		sub_10217ac0(this, t->sub_10219400(0xf));
+		h->sub_10218ff0(0, h->m_n0814 - 1);
+		sub_10217ac0(this, t->sub_10219400(0xc));
+		((CUnknown10219120 *)this)->sub_10219120();
+		return;
+	}
+	h->sub_10218ff0(0, h->m_n0814 - 1);
+	sub_10217ac0(this, t->sub_10219400(0xc));
+	((CUnknown10219120 *)this)->sub_10219120();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e100 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_1021e100(); };
 void CUtlVectorBase::sub_1021e100() { m_Size = 0; }
