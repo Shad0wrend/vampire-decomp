@@ -69,4 +69,5 @@ public:
 	void vfunc420();	// "CNPC_VSheriffMan::NPCInit": scope trace (no entity name), resets the teleport bats handle and the flag bytes, remembers the origin and the time, runs the base init, sets the monster model and npc names and the jump gravity
 	void sub_10013e85();	// CNPC_VVampireBoss::vfunc420, called directly
 	void sub_10014c22();	// stub for 0x103c6a00, called directly after the model names are stored
+	CNPC_VSheriffMan *sub_103ae3e0();	// the constructor (the CNPC_VVampire and CNPC_VVampireBoss constructors inlined): vtables 0x104a7b94 / 0x104a7b68 for the boss part, then 0x104c619c / 0x104c616c, +0x1568 = 0x15
 };
