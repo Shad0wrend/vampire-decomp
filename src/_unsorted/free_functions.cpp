@@ -64075,6 +64075,28 @@ void CPropHaunted::sub_10213ef0(int index, void *pEvent, CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10214080 size=0x121
+#include "CPropHaunted.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b248.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b248 *g_1070b248;
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_106b8540[];
+
+void CPropHaunted::sub_10214080(const char *pszSound)
+{
+    if (!pszSound)
+        pszSound = g_106b8540;
+    if (*pszSound) {
+        CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+        int edict = m_pEdict2e0;
+        g_1070b248->vfunc2(&filter, g_1070b22c->vfunc35(edict), 4, pszSound, 1.0f, 75, 0, 100, 0, 0, 1, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10214780 size=0x11f
 #include "CPropHaunted.h"
 #include "CEHandleGet.h"
