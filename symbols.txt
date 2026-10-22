@@ -4565,6 +4565,7 @@
 0x10011581 func   ?sub_1036dc60@CNPC_VChangBros@@QAEMXZ CNPC_VChangBros::sub_1036dc60
 0x1001158b func   ?vfunc404@CNPC_VCop@@QAEHPAUCNPC_VCopTarget@@@Z CNPC_VCop::vfunc404
 0x10011595 func   ?vfunc253@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc253
+0x100115b8 func   ?sub_103cc890@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc890
 0x100115c2 func   ?vfunc546@CNPC_VGargoyle@@QAEHH@Z CNPC_VGargoyle::vfunc546
 0x100115c7 func   ?sub_1021d730@@YAPAHXZ sub_1021d730
 0x100115d6 func   _item_k_skyline_haven_key item_k_skyline_haven_key

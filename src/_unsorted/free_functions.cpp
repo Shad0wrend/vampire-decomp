@@ -95458,6 +95458,44 @@ void CNPC_VWerewolf::sub_103cc450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cc890 size=0xda
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct S_Slot167 {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5)
+    virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4();
+    virtual void c5(); virtual void c6();
+    virtual CBaseEntity *s167();
+};
+struct S_Holder { void sub_100cd660(CBaseEntity *a, void *b, int c); };
+struct S_WW {
+    char pad0[0xfec]; int m_n0fec;
+    char pad1[0x6680 - 0xff0]; int m_n6680;
+    char pad2[0x6728 - 0x6684]; S_Holder m_holder;
+};
+struct S_Ent { void sub_10265a90(CBaseEntity *p); };
+struct S_Sig { virtual void v0(); virtual void v1(); };
+extern S_Sig *g_10924a6c;
+
+void CNPC_VWerewolf::sub_103cc890()
+{
+    ScopeTrace trace("CNPC_VWerewolf::UpdateConditionDeathTriggered", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    sub_10015839(0x7a);
+    S_WW *w = (S_WW *)this;
+    if (w->m_n0fec == 0x11d && w->m_n6680 == 1) {
+        if (!sub_10269aa0(0x7a)) {
+            ((S_Ent *)this)->sub_10265a90(((S_Slot167 *)this)->s167());
+            w->m_holder.sub_100cd660(((S_Slot167 *)this)->s167(), this, 0);
+        }
+        g_10924a6c->v1();
+        sub_10269a20(0x7a);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ceb60 size=0x120
 #include "CNPC_VWerewolf.h"
 
