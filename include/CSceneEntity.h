@@ -76,7 +76,8 @@ public:
 	SCENE_V(252) SCENE_V(253) SCENE_V(254) SCENE_V(255) SCENE_V(256) SCENE_V(257) SCENE_V(258)
 	virtual void vfunc259(int unused, void *pEvent, const char *pszTarget);	// slot 259: for the actor of the scene event (object at +0x94 of pEvent) and the entity named pszTarget: sets the actor's move type (4, 0), copies the target's slot 192 vector to +0x5db8 and its slot 219 vector to +0x5dc4 of the actor, runs the actor's sub_10280de0(0x39) and stamps curtime at +0x5cf0
 	virtual void vfunc260(int unused, void *pEvent, const char *pszSound, int a4, int a5);	// slot 260: for the actor of the scene event (pointer at +0x98 of pEvent): builds "sound/<name>.mp3" and "*<name>" sound names, makes the actor's entity of this scene's player (sub_10081890) its target, and hands "*<name>" to the actor's sub_102c0520(name, a5, byte at this+0x57f)
-	SCENE_V(261) SCENE_V(262) SCENE_V(263) SCENE_V(264) SCENE_V(265)
+	SCENE_V(261) SCENE_V(262) SCENE_V(263) SCENE_V(264)
+	virtual void vfunc265(void *pEvent, float flSpeed);	// slot 265: the speed event: the event's text parameter as a float (flSpeed is overwritten by it); the event's own start time (+0x78) is set to it, and the running remainder at +0x49c is the old remainder minus the event's elapsed time since +0x4a0, at least 0; +0x4a0 remembers the new value
 	virtual void vfunc266(int unused, const char *pszArgs);	// parses "automate <Cancel|Resume> <seconds>" arguments into the automation fields
 	virtual CSceneEventActorEnt *vfunc267(const char *pszName);	// slot 267: the actor entity of that name, null when there is none (called by slot 251)
 	virtual CBaseEntity *vfunc268(const char *pszName, int a);	// slot 268: the entity of that name (the scene's actor lookup), null when there is none
@@ -96,7 +97,10 @@ public:
 	char m_pad0110[0x498 - 0x110];
 	char m_bPlaying498;	// 0x498
 	char m_bPlaying499;	// 0x499
-	char m_pad049a[0x4ac - 0x49a];
+	char m_pad049a[2];
+	float m_f49c;	// 0x49c: running remainder of the speed event
+	float m_f4a0;	// 0x4a0: the last speed event value
+	char m_pad04a4[0x4ac - 0x4a4];
 	char m_bAutomateTimed;	// 0x4ac: set when a positive time was parsed
 	char m_pad04ad[3];
 	int m_nAutomateType;	// 0x4b0: 1 = Cancel, 2 = Resume
