@@ -10,5 +10,6 @@ class CPVSFilter : public CRecipientFilterPurger, public CRecipientFilter
 {
 public:
 	CPVSFilter(const float *pOrigin) { sub_1019d210(pOrigin); }
+	CPVSFilter(const Vector &vecOrigin) { sub_1019d210(&vecOrigin.x); }	// Source's constructor: the origin by reference (a temporary is passed by its address)
 	virtual CRecipientFilter *vfunc0(unsigned char flags);	// scalar deleting destructor (0x100f5fc0 / stub 0x1000948f)
 };
