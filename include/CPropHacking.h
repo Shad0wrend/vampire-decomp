@@ -37,6 +37,8 @@ public:
 	void sub_1021b410();	// prints the current screen line (user name from the handle at +0x8c) and the selected record, then clears bit 1 of +0x81c and sub_10219120
 	void sub_10218db0();	// stub 0x10005812: starts a new page, run first by sub_1021c260
 	void sub_10219240();	// stub 0x1000f196: ends the page, run last by sub_1021c260
+	void sub_10219270();	// stub 0x100150f0: ends the page of the command screens, run last by sub_1021c3c0
+	void sub_1021c3c0(int a, char *pszCommand);	// the fallback of AcceptCmd (vfunc273) for an unknown command: plays the error sound (g_1074f75c), starts a page headed by the screen text 5 (\"%s: %s\" with the command when it is not empty), prints the texts 6 and 7, the text 0x12 and sub_10218ff0(0, the line count - 1), then ends the page
 	void sub_1021c260();	// prints the selected record (+0x9f4 of the array at +0xa14): the screen texts 0x17 / 0x16 with its three strings, then the five heading texts 0x18..0x1c
 	void sub_1021a740();	// a random "noise" line: a random column and row (RandomInt within the line width left after the text at +0x904 and the screen height at +0x814), one of two page printers, the text at +0x904, then the next think at +0x9e4 seconds ahead
 	void sub_102189e0(const char *pszText);	// sends the text to every player but the one of this entity, reliably, in chunks of at most 250 characters (user message 0, byte 2, the chunk as a string)
