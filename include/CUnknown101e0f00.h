@@ -96,6 +96,7 @@ public:
 	int sub_101e12f0(const char *pszName);	// the index of the entry whose internal name equals pszName (case-insensitive), -1 when none (stub 0x10004570)
 	void sub_101e4380(const char *pszName);	// "Targeted Discipline Manager" Debug_Display: without a name lists every entry (index, name, base cost), with the name of an entry (or "ALL") displays that entry (every entry)
 	int sub_101e12a0(int id);	// the index of the entry of the discipline id, -1 when none (stub 0x10007df1)
+	CUnknown101e0f00Entry *sub_101e11c0(int index);	// the entry with that index (stub 0x100123d7)
 	void sub_101e3910(int a, int b, int c, int d);	// "CallbackHit": looks the entry of discipline c up, logs "Discipline<%s> CallbackHit", runs the entry's tail callback worker with (d, a, b, c | 0x80000000) while the global current entry (0x10739a74) points at the entry
 	void sub_101e3a30(S1033d380 *pObj, int id);	// "InterruptSchedule" callback: looks the entry of discipline id up, logs "Discipline<%s> InterruptSchedule", runs the entry's tail callback worker with the character's two lookups while the global current entry (0x10739a74) points at the entry
 	void sub_101e3850(int a, int b, int id, int d);	// "Hit" callback: looks the entry of discipline id up, logs "Discipline<%s> Hit", notes the hit on the entry's hit source (a, id), runs the entry's tail callback worker with (d, a, b, id | 0x80000000) while the global current entry (0x10739a74) points at the entry
@@ -103,6 +104,7 @@ public:
 	int sub_101e1250(int a, int b);	// the index of the entry for a discipline reference (stub 0x100142a4), -1 when none
 	char sub_101e1a60(CUnknown101e0f00Entry *pEntry, void *pSource, void *pSource2, void *pTarget, int flag);	// whether the entry applies to the source / target pair (stub 0x1000b956)
 	void sub_101e3730(void *pSource, void *pTarget, unsigned int mask, int flag);	// applies the entry's effect (stub 0x1000ae07)
+	void sub_101e33c0(void *pSource, void *pTarget, unsigned int mask, int a);	// applies the effect of a mask to the pair with one more value (stub 0x1000fb4b)
 	void sub_101e3400(void *pSource, void *pTarget, int a, int b);	// "ActivateEffect" by reference: finds the entry, applies it to the target when sub_101e1a60 accepts the pair or the target is a CNPC_VPlayerController (dynamic cast of a CBaseCombatCharacter)
 	void sub_101e4220(CBasePlayer *pPlayer);	// "CVTgt_DisciplineFXMgr_t::UpdateSupernaturalLevel": when the player's default stat list has a positive stat 0x19, hands the level of the "Thaumaturgy_Bloodshield" entry to the player's sub_1017df50 (time -1.0f)
 	void sub_101e3380(void *pSource, void *pTarget, int id);	// "ActivateEffect" by discipline id (stub 0x10005c0e): prepares the pair (sub_101e3560) and applies the entry (sub_101e3730 with flag -1)
