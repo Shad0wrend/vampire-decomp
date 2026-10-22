@@ -37839,6 +37839,44 @@ void CBloodSplat::sub_101719d0(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10171da0 size=0x116
+#include "CBasePlayer.h"
+#include "inputdata_t.h"
+#include "CDialog.h"
+#include "CEHandleGet.h"
+#include "CUnknown101d5bd0.h"
+#include "ScopeTrace.h"
+
+struct CWhisperObj
+{
+	void sub_101f6530(CBasePlayer *pPlayer, const char *pszText);	// stub 0x10002842
+};
+
+extern CUnknown101d5bd0 g_10738d10;
+extern CWhisperObj g_1073dbfc;
+
+static inline const char *VString(variant_t &v)
+{
+	if (v.fieldType == 2)
+		return v.iszValue ? v.iszValue : g_106b8540;
+	return v.sub_10008805();
+}
+
+// TARGET: CBasePlayer::sub_10171da0
+void CBasePlayer::sub_10171da0(inputdata_t *pInput)
+{
+	int nTemplate = sub_10337860();
+	if (nTemplate != g_10738d10.sub_101d5bd0("Player_Malkavian"))
+		return;
+	if (!VString(pInput->value))
+		return;
+	if (!EHandle_Get(*(unsigned int *)((char *)this + 0xfe8)))
+		g_1073dbfc.sub_101f6530(this, VString(pInput->value));
+	else
+		((CDialog *)sub_10178120())->sub_100e09a0(VString(pInput->value));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10172670 size=0x74
 #include "CEntityVSlots.h"
 
