@@ -430,3 +430,69 @@ int CAI_BaseNPCTroika::sub_102b8c40()
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102c51a0 size=0x119
+#include "CAI_BaseNPCTroika.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct S_Ent1 { virtual void v0(); virtual unsigned int *v1(); };
+struct S_EH {
+    unsigned int m_h;
+    S_EH &operator=(S_Ent1 *p) { m_h = *p->v1(); return *this; }
+};
+struct S_Slots {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5)
+    virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6();
+    virtual CBaseEntity *s167();
+    V10(d0) V10(d1) V10(d2) V10(d3) V10(d4) V10(d5) V10(d6) V10(d7) V10(d8) V10(d9)
+    V10(e0) V10(e1) V10(e2)
+    virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5();
+    virtual void s304();
+    V10(g0) V10(g1) V10(g2) V10(g3) V10(g4) V10(g5) V10(g6) V10(g7) V10(g8)
+    virtual void h0(); virtual void h1(); virtual void h2(); virtual void h3(); virtual void h4();
+    virtual void h5(); virtual void h6(); virtual void h7(); virtual void h8();
+    virtual int s404(CBaseEntity *p);
+    V10(i0) V10(i1) V10(i2) V10(i3) V10(i4) V10(i5) V10(i6) V10(i7) V10(i8) V10(i9)
+    V10(j0) V10(j1) V10(j2) V10(j3) V10(j4) V10(j5) V10(j6) V10(j7) V10(j8)
+    virtual void s595();
+    V10(k0)
+    virtual void l0(); virtual void l1(); virtual void l2(); virtual void l3(); virtual void l4();
+    virtual void l5(); virtual void l6(); virtual void l7();
+    virtual void s614();
+};
+struct S_N {
+    char pad0[0x1b3c]; const char *m_pszFile; int m_nLine;
+    char pad1[0x5cc4 - 0x1b44]; int m_n5cc4;
+    char pad2[0x60ac - 0x5cc8]; S_EH m_h60ac;
+};
+
+void CAI_BaseNPCTroika::sub_102c51a0(CBaseEntity *pEnemy)
+{
+    if (pEnemy) {
+        if (((S_Slots *)this)->s167()) {
+            if (((S_Slots *)this)->s404(((S_Slots *)this)->s167()) == 1)
+                sub_1033c6b0(0x800);
+        }
+        if (((S_Slots *)this)->s404(pEnemy) == 1)
+            sub_1033c6b0(0x800);
+        sub_1026d050();
+        sub_102b52a0(1, 1);
+        ((S_Slots *)this)->s304();
+        m_flags14bc |= 0x80840000;
+        if (*(int *)((char *)pEnemy + 0xa8))
+            sub_10273790("player D_LI 99", 0);
+        sub_102c4470(pEnemy);
+        sub_102c4640("Combat");
+        ((S_N *)this)->m_pszFile = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+        ((S_N *)this)->m_nLine = 0x6e42;
+        ((S_N *)this)->m_n5cc4 = 1;
+        sub_1026e340(1);
+        sub_10279cc0(pEnemy);
+        ((S_N *)this)->m_h60ac = (S_Ent1 *)pEnemy;
+        ((S_Slots *)this)->s614();
+        m_flags5b84 = 0x3b1c;
+        ((S_Slots *)this)->s595();
+    }
+}
+// END FUNCTION
