@@ -3111,6 +3111,7 @@
 0x1000c432 func   ?vfunc5@CNPC_Crow@@QAEPAV1@I@Z CNPC_Crow::vfunc5
 0x1000c441 func   ?sub_1015f9e0@CBasePlayerUnit@@QAEXXZ CBasePlayerUnit::sub_1015f9e0
 0x1000c446 func   ?sub_100aa5c0@CBaseEntity@@QAEHPAVCRestore@@H@Z CBaseEntity::sub_100aa5c0
+0x1000c44b func   ?vfunc3@CTETracer@@UAEXPBVVector@@0@Z CTETracer::vfunc3
 0x1000c450 func   ?sub_1006e4c0@CBaseCineCam@@QAE_NPBDH@Z CBaseCineCam::sub_1006e4c0
 0x1000c464 func   ?sub_100aaf30@CBaseEntity@@QAEXXZ CBaseEntity::sub_100aaf30
 0x1000c46e func   ?sub_10325b20@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325b20
