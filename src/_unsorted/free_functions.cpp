@@ -79793,6 +79793,30 @@ bool NodeGraph::sub_102f48b0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f4e00 size=0x7c
+#include "CAI_NodeGraph.h"
+
+void sub_102cc9f0();
+void sub_102f99b0();
+
+// TARGET: CAI_NodeGraph::sub_102f4e00
+void CAI_NodeGraph::sub_102f4e00()
+{
+	int i;
+	for (i = 0; i < m_nNodes; i++)
+		m_ppNodes[i]->sub_102fa510();
+	for (i = 0; i < m_nNodes; i++)
+		m_ppNodes[i]->sub_102fac00();
+	sub_102cc9f0();
+	for (i = 0; i < m_nNodes; i++)
+		m_ppNodes[i]->m_n78 = 0;
+	for (i = 0; i < m_nNodes; i++)
+		m_ppNodes[i]->sub_102fb4e0();
+	sub_102f99b0();
+	sub_102f49c0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f4ee0 size=0x43
 #include "CAI_NetworkManager.h"
 void *sub_100aa720(int size);

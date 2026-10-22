@@ -3688,6 +3688,7 @@
 0x1000e4f3 func   ?vfunc5@CPhysicsProp@@QAEPAV1@I@Z CPhysicsProp::vfunc5
 0x1000e507 func   ?vfunc546@CNPC_VSheriffSwarm@@QAEHH@Z CNPC_VSheriffSwarm::vfunc546
 0x1000e511 func   ?sub_103d7090@CWerewolfUnit@@QAEPAUCForwardHintX@@PAU2@@Z CWerewolfUnit::sub_103d7090
+0x1000e516 func   ?sub_102f4e00@CAI_NodeGraph@@QAEXXZ CAI_NodeGraph::sub_102f4e00
 0x1000e520 func   ?vfunc5@CVGuiScreen@@QAEPAV1@I@Z CVGuiScreen::vfunc5
 0x1000e52f func   ?sub_102bf5d0@CAI_BaseNPCTroikaUnit@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroikaUnit::sub_102bf5d0
 0x1000e534 func   ?vfunc126@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc126
