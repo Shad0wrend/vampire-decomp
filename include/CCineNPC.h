@@ -5,6 +5,7 @@
 #pragma once
 
 class CBaseEntity;
+class CBaseAnimating;
 
 // Element of the three 0x18-byte containers at +0x5f9c, +0x5fb4 and +0x5fcc[8].
 struct CCineNPCSlot
@@ -31,19 +32,26 @@ public:
 	void sub_101a7390(int unused);	// "BeginSequence" (takes one unused stack argument): warns when called before the next think (+0x17c) was reached and pushes the time at +0x5f74 out; else, when sub_101a7760 finds an NPC whose NPC object (state +0x5d70 0 or 2) accepts slot 585(1) on its slot 482, runs slot 583; with no NPC behind the handle at +0x5ce4 arms the think function sub_101a8070 and stamps the current time as the next think
 	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd), called directly
 	int sub_100ac4e0(void *pFunc, int a, int b);	// CBaseEntity::ThinkSet (stub 0x10007fe5), called directly
+	char vfunc584(CBaseAnimating *pNpc, const char *pszSequence, char bLoop);	// slot 584: marks the script as started (byte at +0x5f91), looks the sequence up on pNpc (Warning when unknown, then sequence 0), resets its sequence info; without a name and with bLoop set hands pNpc to sub_101a8460 and returns false; developer Msg "Sequence %s targeting %s is starting" and sub_101a6ec0; returns true
+	void sub_101a8460(CBaseAnimating *pNpc);	// stub 0x10012a80
+	void sub_101a6ec0();	// called directly
 
 	char m_pad0004[0x204 - 4];
 	unsigned int m_flags204;	// 0x204
 	char m_pad0208[0x26c - 0x208];
 	const char *m_pszName26c;	// 0x26c: the entity name
-	char m_pad0270[0x5f48 - 0x270];
+	char m_pad0270[0x5ce4 - 0x270];
+	unsigned int m_hTarget5ce4;	// 0x5ce4: entity handle of the entity the script targets
+	char m_pad5ce8[0x5f48 - 0x5ce8];
 	const char *m_pszScript5f48;	// 0x5f48: the script's name
 	char m_pad5f4c[0x5f54 - 0x5f4c];
 	const char *m_pszTarget5f54;	// 0x5f54: the name of the NPC the script plays on
 	int m_n5f58;	// 0x5f58
 	char m_pad5f5c[0x5f68 - 0x5f5c];
 	int m_n5f68;	// 0x5f68
-	char m_pad5f6c[0x5f94 - 0x5f6c];
+	char m_pad5f6c[0x5f91 - 0x5f6c];
+	char m_b5f91;	// 0x5f91
+	char m_pad5f92[0x5f94 - 0x5f92];
 	unsigned int m_hNPC5f94;	// 0x5f94: entity handle of the NPC the script plays on
 	CBaseEntity *m_pSearchStart5f98;	// 0x5f98: where the name search resumes
 	CCineNPCSlot m_slotA;	// 0x5f9c
