@@ -22,7 +22,8 @@ public:
 	static CRopeKeyframe *sub_1019dfb0(CBaseEntity *pStartEnt, int iStartAttachment, int nSlack, int ropeWidth, const char *pszMaterial, int numSegments);	// "CRopeKeyframe::Create" with only a start point: creates a \"keyframe_rope\", sets the start point and no end point, clears the map file flag (+0x47c) and the simulate bit (0x40 of +0x454), spawns it with the material, stores the slack (+0x474) and width (+0x460) and the segment count clamped to 2..10; null when the entity could not be created
 	void vfunc113();	// slot 113 "CRopeKeyframe::Activate" (plain member): base activate (sub_100a0bc0); for a rope made from the map file loads the cable material, finds the entity named at +0x458, ties the rope end to it (SetEndPoint) and the start to the rope itself, then Spawn
 	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
-	void sub_1019ebc0(int a, int b, CRopeKeyframe *pStop, int x, int y, int z);	// sends the rope message (user message 0 to every player but the one of this entity: the three dwords x, y, z) and passes the same arguments on to the rope behind the end point handle (+0x494) unless it is pStop (stub 0x1000a84e for the recursive call)
+	void sub_1019ebc0(int a, int b, CRopeKeyframe *pStop, int x, int y, int z);	// sends the rope message (user message 0 to every player but the one of this entity: the three dwords x, y, z) and passes the same arguments on to the rope behind the end point handle (+0x494) unless it is pStop
+	void sub_1000a84e(int a, int b, CRopeKeyframe *pStop, int x, int y, int z);	// the jump stub of sub_1019ebc0, used by its recursive call
 
 	char m_padRope03e0[0x454 - 0x3e0];
 	unsigned int m_nRopeFlags;	// 0x0454: bit 6 (0x40) is cleared by Create
