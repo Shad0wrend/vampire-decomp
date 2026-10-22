@@ -31758,6 +31758,52 @@ extern "C" CBaseEntity *game_ui(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10118b40 size=0x12e
+#include "CGameUI.h"
+#include "COutputEvent.h"
+#include "CVariantCopy.h"
+#include "CEHandleGet.h"
+
+struct CGameUIView
+{
+	char m_pad0000[0x17c];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x470 - 0x180];
+	COutputEvent m_o470;
+	char m_pad0488[0x548 - 0x488];
+	COutputEvent m_o548;
+	COutputEvent m_o560;
+	COutputEvent m_o578;
+	COutputEvent m_o590;
+	unsigned int m_hPlayer;	// 0x5a8
+};
+
+// TARGET: CGameUI::sub_10118b40
+void CGameUI::sub_10118b40(CBaseEntity *pPlayer)
+{
+	CGameUIView *pView = (CGameUIView *)this;
+	CGlobalEntityList_Ent *pEnt = EHandle_Get(pView->m_hPlayer);
+	if (pEnt == (CGlobalEntityList_Ent *)pPlayer) {
+		float flValue;
+		pView->m_o470.sub_100cd660(pEnt, this, 0.0f);
+		flValue = 0.0f;
+		((CVariantCopy *)&pView->m_o548)->sub_1000b320(1, &flValue);
+		pView->m_o548.sub_100cd300(*(CVariantCopy *)&pView->m_o548, pEnt, this, 0.0f);
+		flValue = 0.0f;
+		((CVariantCopy *)&pView->m_o560)->sub_1000b320(1, &flValue);
+		pView->m_o560.sub_100cd300(*(CVariantCopy *)&pView->m_o560, pEnt, this, 0.0f);
+		flValue = 0.0f;
+		((CVariantCopy *)&pView->m_o578)->sub_1000b320(1, &flValue);
+		pView->m_o578.sub_100cd300(*(CVariantCopy *)&pView->m_o578, pEnt, this, 0.0f);
+		flValue = 0.0f;
+		((CVariantCopy *)&pView->m_o590)->sub_1000b320(1, &flValue);
+		pView->m_o590.sub_100cd300(*(CVariantCopy *)&pView->m_o590, pEnt, this, 0.0f);
+		pView->m_hPlayer = 0xffffffff;
+		pView->m_flNextThink = 0.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119750 size=0x145
 extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
