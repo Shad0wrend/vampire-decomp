@@ -31,9 +31,11 @@ public:
 	virtual int vfunc62(int index);
 	virtual const char *vfunc63(int index);
 	virtual void vfunc75();
+	virtual void vfunc80();	// once (flag byte at 0x1070ba2c): sends the user message 0x1a reliably to everybody, then sets the time at +0x8 to the current time (0x1070b228 + 0xc) plus a constant, the flag byte and clears the byte at +0xc
 
 	int m_n04;	// 0x04
 	int m_n08;	// 0x08
+	char m_b0c;	// 0x0c
 
 	CMultiplayRules *sub_10140f60();	// "CMultiplayRules::CMultiplayRules" body: base constructor, vtable, sub_1000fcbd(), then runs the dedicated / listen server config file (exec <cvar string>) when its cvar is non-empty; returns this
 	void sub_101291f0();	// CGameRules constructor body (stub 0x10011d79)
