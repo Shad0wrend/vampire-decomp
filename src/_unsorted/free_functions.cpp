@@ -11914,6 +11914,38 @@ void CUnknown1007bb30::sub_1007bb30(CUnknown1007bb30Dest *pDest)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bd70 size=0x12f
+#include "CUnknown1007b7b0.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+// TARGET: CUnknown1007b7b0::sub_1007bd70
+bool CUnknown1007b7b0::sub_1007bd70(CUnknown1007bb30Reader *pReader)
+{
+	m_pReader = pReader;
+	while (true) {
+		if (!m_pReader->vfunc1(1) || !strlen(m_pReader->vfunc0())) {
+			sub_1007e5f0();
+			return true;
+		}
+		if (!_strcmpi(m_pReader->vfunc0(), "event")) {
+			sub_1007ab40(0, 0, 0);
+		} else if (!_strcmpi(m_pReader->vfunc0(), "actor")) {
+			sub_1007b7b0();
+		} else if (!_strcmpi(m_pReader->vfunc0(), "mapname")) {
+			sub_1007b9e0();
+		} else if (!_strcmpi(m_pReader->vfunc0(), "fps")) {
+			sub_1007ba30();
+		} else if (!_strcmpi(m_pReader->vfunc0(), "snap")) {
+			sub_1007baa0();
+		} else {
+			m_pReader->vfunc3("unexpected token %s\n", m_pReader->vfunc0());
+			sub_1007e5f0();
+			return true;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c1c0 size=0x84
 #include "CUnknown10078540.h"
 #include "CFlexAnimationTrack.h"
