@@ -425,6 +425,28 @@ void CNPC_VSabbatLeader::vfunc313()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ab310 size=0xb7
+#include "CNPC_VSabbatLeader.h"
+#include "ScopeTrace.h"
+
+void sub_101cf600(CBaseEntity *pEnt);
+
+void CNPC_VSabbatLeader::vfunc618()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::TransformationStart", g_106b8540);
+	((CBaseEntity *)this)->vfunc105("models/character/npc/unique/hollywood/andrei/andrei_no_mouth.mdl");
+	sub_10272650(0x113e);
+	m_nEffectFlags |= 0x10;
+	m_n168 = 0;
+	m_n16c = 0;
+	m_n1568 = 0;
+	m_n156c = 0;
+	sub_10273070(1);
+	sub_101cf600((CBaseEntity *)this);
+	sub_103c60a0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ab400 size=0x78
 #include "CNPC_VSabbatLeader.h"
 extern char g_106b8540[];
