@@ -1,2 +1,4 @@
 	bool sub_1027e140(const Vector *pMove, int mask);	// "TryMove": traces from the absolute origin (slot 217) by pMove with mask (sub_101cd110); with the whole way free (and, for entities with flag bit 11, a point contents check at the end point) moves there (slot 216), runs PhysicsTouchTriggers(0) and returns true
 	void sub_100a53d0(int a);	// CBaseEntity::PhysicsTouchTriggers (stub 0x10005bcd), called directly
+	void sub_1027c1f0();	// ends a scripted/forced movement phase: while the schedule at +0x5c38 is the one of type 0x3a (sub_102cc1f0): asks the dev flag object (global 0x10924a6c slot 1), sub_10269a20(0x76), clears the activity at +0xfec, move type 4 (slot 93), +0x3ec = 1.0f; otherwise sub_10269a20(0x75), move type 0, +0x3ec = 0, origin and velocity reset to zero vectors
+	int sub_102cc1f0(int type);	// stub 0x10014f6a: the schedule of the given type
