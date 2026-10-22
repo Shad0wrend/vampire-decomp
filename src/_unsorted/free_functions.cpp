@@ -12581,6 +12581,38 @@ void sub_100855f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10085a80 size=0x8f
+#include "IVEngineServer.h"
+#include <string.h>
+
+extern IVEngineServer *g_1070b22c;
+extern char g_106c9208[];
+extern int g_109340d8;
+extern int g_10552810;
+struct CBigNetOwner { char pad[0x454]; int m_n454; };
+struct CBigNetModule { void sub_102f7a90(); };
+extern CBigNetOwner *g_10934088;
+extern "C" __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+extern "C" __declspec(dllimport) int Q_strnicmp(const char *s1, const char *s2, int n);
+const char *sub_102d6230(int i);
+void sub_102f7a10(const char *pszName);
+int sub_10119390();
+
+// TARGET: sub_10085a80
+void sub_10085a80()
+{
+	Q_strncpy(g_106c9208, (const char *)g_1070b22c->vfunc84(1), 0x100);
+	for (int i = 0; i < 22; i++) {
+		if (!Q_strnicmp(g_106c9208, sub_102d6230(i), strlen(g_106c9208))) {
+			g_109340d8 = i;
+			((CBigNetModule *)g_10934088->m_n454)->sub_102f7a90();
+		}
+	}
+	sub_102f7a10("BigNet");
+	g_10552810 = sub_10119390();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10085bd0 size=0x77
 #include "CUnknown1070b22c.h"
 extern CUnknown1070b22c *g_1070b22c;

@@ -5577,6 +5577,7 @@
 0x1001553c func   ?vfunc103@CBeam@@UAEXXZ CBeam::vfunc103
 0x10015541 func   ?sub_101dcb80@CRecListUnit@@QAEPAU1@PBU1@@Z CRecListUnit::sub_101dcb80
 0x10015546 func   ?sub_10032660@@YAXPAX0PAHH@Z sub_10032660
+0x10015550 func   ?sub_10085a80@@YAXXZ sub_10085a80
 0x10015555 func   ?vfunc49@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc49
 0x1001555f func   ?vfunc71@CPropRadio@@UAEXXZ CPropRadio::vfunc71
 0x10015564 func   ?sub_1025dca0@CUnknown1025ddd0@@QAE_NPAVCBaseEntity@@D@Z CUnknown1025ddd0::sub_1025dca0
