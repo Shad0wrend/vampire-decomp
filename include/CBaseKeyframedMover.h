@@ -17,6 +17,8 @@ public:
 	void sub_10010c35();	// stub of 0x10223470
 	CKeyframeX *sub_10015217();	// stub of 0x10223700
 	void sub_1000b94c(int n);	// stub of 0x10223a30
+	const char *sub_100ab4f0();	// the entity's name text for messages (stub 0x1000b5cd)
+	void sub_10223940(int dir);	// "SetDirection": a change of the direction (+0x560) moves to the end keyframe's field (+0x454 for 1, +0x458 for -1) through sub_1000b94c; with no last keyframe warns "NULL last keyframe for %s", and for any other direction stops (sub_100b2e30 with the zero vector, +0x568 = -1)
 
 	char m_pad04a4[0x560 - sizeof(CBaseToggle)];
 	int m_nDirection;	// 0x560
