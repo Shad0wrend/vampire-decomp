@@ -12,4 +12,5 @@ public:
 	int vfunc404(void *pEnt);	// slot 404 (classification of pEnt): 0 for null, 3 for the entity of the handle at +0x60ac, 1 when pEnt's object at +0x9c has its byte at +0x1480 set and sub_100b5190 is clear there, else 4
 	void vfunc420();	// slot 420 (reset): base slot 420 (sub_1000c531), then the same counter/limit reset as CNPC_VNewscaster::vfunc420 (scrambled sub_10009408(0) at +0x6364), then slot 416(1), slot 97() -> +0x60ac and clearing of the flags
 	void sub_1000c531();	// CAI_BaseNPCTroika::vfunc420, called directly
+	void sub_103a4580();	// the same function as vfunc420 (stub 0x100155aa), as the subclasses call it directly
 };
