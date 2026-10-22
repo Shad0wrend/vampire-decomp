@@ -79175,6 +79175,41 @@ void __fastcall sub_102dcec0(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dcf70 size=0xeb
+#include "CUnknown102dcf70.h"
+extern "C++" __declspec(dllimport) void DevWarning(const char *fmt, ...);
+int *sub_1042bff0(int *pOut, const char *psz);
+extern char g_106b8540[];
+
+// TARGET: CUnknown102dcf70::sub_102dcf70
+bool CUnknown102dcf70::sub_102dcf70(CKeyValuesX *pKV, int *pCount, CUnknown102dcf70Entry *pEntries)
+{
+	if (!pKV || !pEntries)
+		return false;
+	float flTotal = 0;
+	*pCount = 0;
+	for (CKeyValuesX *pSub = pKV->sub_10004c8c(); pSub; pSub = pSub->sub_1000fa65())
+	{
+		if (*pCount >= 8)
+		{
+			DevWarning("Interesting place type '%s' has too many activities.  Ignoring the rest.\n", m_pszName ? m_pszName : g_106b8540);
+		}
+		else
+		{
+			int id;
+			pEntries[*pCount].m_id = *sub_1042bff0(&id, pSub->sub_102480b0());
+			pEntries[*pCount].m_flWeight = pSub->sub_10248c60(0, 0);
+			flTotal += pEntries[*pCount].m_flWeight;
+			(*pCount)++;
+		}
+	}
+	flTotal = 100.0f / flTotal;
+	for (int i = 0; i < *pCount; i++)
+		pEntries[i].m_flWeight = flTotal * pEntries[i].m_flWeight;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd450 size=0x9
 bool CUnknown102dd450::sub_102dd450()
 {
