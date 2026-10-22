@@ -4,6 +4,17 @@
 
 #include "CUnknown10075aa0.h"
 
+struct CUnknown1007ce20Vec	// a CUtlVector of pointers (memory, allocation count, grow size, size, element pointer)
+{
+	void **m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	void **m_pElements;
+
+	void sub_1007fce0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements
+};
+
 class CUnknown1007ce20
 {
 public:
@@ -12,11 +23,24 @@ public:
 	int m_growSize;	// 0x08
 	int m_size;	// 0x0c
 	CUnknown10075aa0 **m_pElements;	// 0x10
-	char m_pad0014[0x80 - 0x14];
+	char m_pad0014[0x3c - 0x14];
+	CUnknown1007ce20Vec m_vec3c;	// 0x3c: the timed events
+	char m_pad0050[0x5c - 0x50];
+	int m_n5c;	// 0x5c
+	char m_pad0060[4];
+	CUnknown1007ce20Vec m_vec64;	// 0x64: the type 1 events
+	char m_pad0078[0x7c - 0x78];
+	float m_f7c;	// 0x7c
 	float m_f80;	// 0x80
-	char m_pad0084[0x98 - 0x84];
+	int m_n84;	// 0x84
+	int m_n88;	// 0x88
+	float m_f8c;	// 0x8c
+	float m_f90;	// 0x90
+	int m_n94;	// 0x94
 	float m_f98;	// 0x98
+	int m_n9c;	// 0x9c
 
 	float sub_1007ce20();	// the lowest time over the events (starting from 0.0f); type 5 events count with m_f98 subtracted
 	float sub_1007ceb0();	// the highest time over the events (starting from 0.0f): the end time when the event has one, else the start time (+ m_f98 for type 5); the types 0xd / 0xe only count when both their times are below m_f80
+	void sub_1007cfc0(char bUseStart, int a, int b);	// sorts the events into the two lists (type 1 events to +0x64, the timed ones to +0x3c), then caches the start / end times (+0x8c / +0x90; +0x7c is the end time, or the start time with bUseStart), the event count (+0x94) and the two arguments (+0x84 / +0x88)
 };
