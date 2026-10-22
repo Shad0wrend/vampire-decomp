@@ -73426,6 +73426,75 @@ void CAI_BaseNPC::sub_1027dd10(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027de00 size=0x150
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CAI_Navigator.h"
+
+struct CTroikaDoorView
+{
+	char sub_100f0ec0(int flags);	// stub 0x1000da94
+	void sub_100f0e30(float flTime);	// stub 0x10009363
+};
+
+struct CTroikaSquadView
+{
+	CBaseEntity *sub_103166b0();	// stub 0x10009962
+	void sub_10316660(CBaseEntity *pDoor);	// stub 0x1000751d
+};
+
+struct CTroikaNavView
+{
+	char sub_102ee6a0();	// stub 0x10012963
+};
+
+struct CTroikaGlobals
+{
+	char m_pad0000[0xc];
+	float m_flCurTime;
+};
+
+extern CTroikaGlobals *g_1070b228;
+
+void CAI_BaseNPCTroika::sub_1027de00(CBaseEntity *pDoor)
+{
+	if (((CEntityVSlots *)this)->slot158() && pDoor)
+	{
+		if (pDoor == (CBaseEntity *)EHandle_Get(m_h5d24))
+			((CEntityVSlots *)this)->slot532(2);
+		if (!((CTroikaDoorView *)pDoor)->sub_100f0ec0(0x10))
+		{
+			if (((CTroikaDoorView *)pDoor)->sub_100f0ec0(0x40))
+			{
+				if (((CTroikaNavView *)m_p5d34)->sub_102ee6a0())
+					((CAI_Navigator *)m_p5d34)->sub_102f1fa0(5.0f, (CAI_NavSource *)pDoor);
+				((CTroikaDoorView *)pDoor)->sub_100f0e30(g_1070b228->m_flCurTime + 5.0f);
+			}
+			else
+			{
+				if (((CTroikaNavView *)m_p5d34)->sub_102ee6a0())
+					((CAI_Navigator *)m_p5d34)->sub_102f1fa0(20.0f, (CAI_NavSource *)pDoor);
+				((CTroikaDoorView *)pDoor)->sub_100f0e30(g_1070b228->m_flCurTime + 20.0f);
+			}
+		}
+		if (*(int *)((char *)this + 0x5bb0) <= 0 && *(CTroikaSquadView **)((char *)this + 0x5da4))
+		{
+			CTroikaSquadView *pSquad = *(CTroikaSquadView **)((char *)this + 0x5da4);
+			if (pSquad->sub_103166b0() != pDoor)
+				pSquad->sub_10316660(pDoor);
+		}
+		*(unsigned int *)((char *)this + 0x5d28) = *pDoor->vfunc1();
+		CAI_BaseNPCTroika *pOther = *(CAI_BaseNPCTroika **)((char *)this + 0x98);
+		if (pOther && (pOther->m_n644c == 1 || pOther->m_n644c == 2))
+		{
+			pOther->m_n644c = 3;
+			pOther->m_f6450 = g_1070b228->m_flCurTime + 1.0f;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027e140 size=0xc2
 #include "CAI_BaseNPC.h"
 #include "CEntityVSlots.h"
