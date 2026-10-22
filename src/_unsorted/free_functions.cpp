@@ -61423,6 +61423,44 @@ int *sub_10210fe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211550 size=0x115
+#include "CTriggerBombSite.h"
+#include "CRecipientFilter.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_1072607c;
+extern char vt_104540e8[];
+extern char vt_10454688[];
+
+struct S_ReliableFilter
+{
+	void *m_vptr;
+	int m_pad04;
+	CRecipientVec m_Vec;
+	int m_n1c;
+	char m_pad20[8];
+	char m_b28;
+};
+
+void CTriggerBombSite::sub_10211550(CBombState state, CBombState newState)
+{
+	S_ReliableFilter filter;
+	((CRecipientFilter *)&filter)->sub_1019ce00();
+	filter.m_vptr = vt_104540e8;
+	((CRecipientFilter *)&filter)->sub_1019d040(*(void **)&state);
+	filter.m_vptr = vt_10454688;
+	((CRecipientFilter *)&filter)->sub_1019cf50();
+	g_1070b22c->vfunc65((CRecipientFilter *)&filter, g_1072607c);
+	g_1070b22c->vfunc67((unsigned char)newState.m_c);
+	g_1070b22c->vfunc67(m_nProgress);
+	g_1070b22c->vfunc67(0);
+	g_1070b22c->vfunc67(0);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211970 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
