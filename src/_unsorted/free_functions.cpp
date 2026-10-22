@@ -100224,6 +100224,32 @@ extern "C" GP *item_w_sledgehammer()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7680 size=0xff
+#include "CWeaponMelee_Torch.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CUnknown1070b248.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b248 *g_1070b248;
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_1067c294[];
+
+struct CTorchSoundView : CEntitySoundOriginView
+{
+	char m_pad[0x2e0 - 4];
+	int m_pEdict2e0;
+};
+
+void CWeaponMelee_Torch::sub_103e7680()
+{
+	CTorchSoundView *pThis = (CTorchSoundView *)this;
+	CPASAttenuationFilter filter(pThis, ATTN_NONE);
+	int edict = pThis->m_pEdict2e0;
+	g_1070b248->vfunc2(&filter, g_1070b22c->vfunc35(edict), 4, g_1067c294, 1.0f, 0x4b, 8, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e77f0 size=0x83
 #include "CWeaponMelee_Torch.h"
 
