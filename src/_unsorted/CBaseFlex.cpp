@@ -124,3 +124,24 @@ found:
 	m_nItems--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b7040 size=0x75
+#include "CBaseFlex.h"
+
+// TARGET: CBaseFlex::vfunc291
+void CBaseFlex::vfunc291(CFlexRequest *pRequest)
+{
+	if (pRequest) {
+		CFlexPlayerTrack *pTrack = pRequest->m_pTrack;
+		if (pTrack) {
+			CFlexPlayerSource *pSource = pRequest->m_pSource;
+			if (pSource && pRequest->m_n0c >= 0) {
+				float flDuration = pTrack->sub_10076b30();
+				sub_10091080(pRequest->m_nSequence);
+				pTrack->sub_10077f10((*(float *)((char *)this + 0x174) - pRequest->m_flStartTime + 0.1) / flDuration);
+				pTrack->sub_10076280(pSource->sub_1007dfa0());
+			}
+		}
+	}
+}
+// END FUNCTION
