@@ -52564,6 +52564,34 @@ struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x101e2da0 size=0x149
+#include "CVStatList_t.h"
+#include "CUnknown101e0f00.h"
+struct CMsgPlayerView;
+struct CharView { char m_pad[0xa8]; CMsgPlayerView *m_pPlayer; };
+void sub_101cebc0(CMsgPlayerView *pPlayer, int nMsg, int nArg);
+
+// TARGET: CUnknown101e0f00::sub_101e2da0
+void CUnknown101e0f00::sub_101e2da0(void *pChar, int a, int b)
+{
+	if (!pChar)
+		return;
+	int nIndex = sub_101e1250(a, b);
+	if (nIndex == -1)
+		return;
+	CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[nIndex];
+	int nCost = pEntry->sub_101e0650(pChar);
+	if (CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(0xc) < nCost) {
+		CMsgPlayerView *pPlayer = ((CharView *)pChar)->m_pPlayer;
+		if (pPlayer)
+			sub_101cebc0(pPlayer, 0x38, 0);
+		return;
+	}
+	if (CVStatListSet::Of(pChar)->Find(2)->sub_102012d0(a) >= nCost)
+		sub_101e2f50(pChar, pEntry, nCost);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3400 size=0x8e
 #include "CUnknown101e0f00.h"
 
