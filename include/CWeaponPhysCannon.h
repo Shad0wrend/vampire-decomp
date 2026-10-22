@@ -3,6 +3,9 @@
 #include "CBaseCombatWeapon.h"
 #include "CUnknown1040cb60.h"
 
+class CSoundControllerImp;
+class CUnknown101bc140;
+
 class CWeaponPhysCannon : public CBaseCombatWeapon
 {
 public:
@@ -17,12 +20,14 @@ public:
 	void sub_10410620();	// stub 0x10011c84, tail called by slot 318 while the grab byte is set
 	bool sub_1040e880(CBaseEntity *pEnt);	// tries to pick pEnt up: false while already holding; the owner's pick-up strength (tuning block 0x10739d08) must reach the mass of pEnt's physics object (else sound 0x2f and slot 456 of the owner), then the melee check sub_10411160, then the grab starts (sub_1040dde0, sub_1040c5d0) and the next time (+0x734) is pushed out 0.5s
 	void sub_1040dde0(CBaseEntity *pEnt, void *pPlayer, int a);	// stub 0x10007adb, called when picking an object up
+	CUnknown101bc140 *sub_104112d0();	// the hold sound, created on the first call and cached in +0x968
 
 	char m_pad0898[0x911 - 0x898];
 	char m_bGrab911;	// 0x911
 	char m_pad0912[0x928 - 0x912];
 	float m_flGlow928;	// 0x928: the glow value, eased towards m_flGlowTarget92c
 	float m_flGlowTarget92c;	// 0x92c
-	char m_pad0930[0x96c - 0x930];
+	char m_pad0930[0x968 - 0x930];
+	CUnknown101bc140 *m_pHoldSound;	// 0x968: "Weapon_PhysCannon.HoldSound", cached
 	CUnknown1040cb60 m_grab;	// 0x96c: the grab controller, its entity handle is at +0xab8
 };
