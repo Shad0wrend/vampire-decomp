@@ -175,3 +175,55 @@ void CNPC_VDog::vfunc432(int a)
 	CNPC_VAnimal::vfunc432(a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10374940 size=0xa3
+#include "CBaseEntity.h"
+#include "CNPC_VDog.h"
+#include "CAI_Motor.h"
+#include "CUnknown102e0150.h"
+#include "Vector.h"
+
+void __fastcall sub_102e0b40(float *pMotor);
+
+#define DOG_V(n) virtual void a##n();
+#define DOG_V10(p) DOG_V(p##0) DOG_V(p##1) DOG_V(p##2) DOG_V(p##3) DOG_V(p##4) DOG_V(p##5) DOG_V(p##6) DOG_V(p##7) DOG_V(p##8) DOG_V(p##9)
+
+struct CDogTaskSlots
+{
+	DOG_V10(0) DOG_V10(1) DOG_V10(2) DOG_V10(3) DOG_V10(4) DOG_V10(5) DOG_V10(6) DOG_V10(7)
+	DOG_V10(8) DOG_V10(9) DOG_V10(10) DOG_V10(11) DOG_V10(12) DOG_V10(13) DOG_V10(14) DOG_V10(15)
+	DOG_V(160) DOG_V(161) DOG_V(162) DOG_V(163) DOG_V(164) DOG_V(165) DOG_V(166)
+	virtual CBaseEntity *vfunc167();
+	DOG_V(168) DOG_V(169)
+	DOG_V10(17) DOG_V10(18) DOG_V10(19) DOG_V10(20) DOG_V10(21) DOG_V10(22) DOG_V10(23) DOG_V10(24)
+	DOG_V(250)
+	virtual char vfunc251();
+	DOG_V(252) DOG_V(253) DOG_V(254) DOG_V(255) DOG_V(256) DOG_V(257) DOG_V(258) DOG_V(259)
+	DOG_V10(26) DOG_V10(27) DOG_V10(28) DOG_V10(29) DOG_V10(30)
+	virtual void vfunc310(int a);
+	DOG_V(311) DOG_V(312) DOG_V(313) DOG_V(314) DOG_V(315) DOG_V(316) DOG_V(317) DOG_V(318) DOG_V(319)
+	DOG_V10(32) DOG_V10(33) DOG_V10(34) DOG_V10(35) DOG_V10(36) DOG_V10(37) DOG_V10(38) DOG_V10(39)
+	DOG_V10(40) DOG_V10(41) DOG_V10(42) DOG_V10(43) DOG_V10(44) DOG_V10(45) DOG_V10(46) DOG_V10(47)
+	DOG_V10(48) DOG_V10(49) DOG_V10(50) DOG_V10(51) DOG_V10(52) DOG_V10(53)
+	DOG_V(540)
+	virtual CUnknown102e0150 *vfunc541();
+};
+
+void CNPC_VDog::vfunc442(int *pTask)
+{
+    if (*pTask != 0x36) {
+        if (*pTask == 0xbc)
+            ((CDogTaskSlots *)this)->vfunc310(3);
+        sub_1035f650(pTask);
+        return;
+    }
+    sub_10280a50();
+    sub_102e0b40(*(float **)((char *)this + 0x5d44));
+    Vector vecPos;
+    ((CDogTaskSlots *)this)->vfunc541()->sub_102dfed0(&vecPos, ((CDogTaskSlots *)this)->vfunc167());
+    (*(CAI_Motor **)((char *)this + 0x5d44))->sub_102e20b0(&vecPos.x, -2.0f);
+    sub_10289ee0(0x4b);
+    if (((CDogTaskSlots *)this)->vfunc251())
+        sub_10273e80(0);
+}
+// END FUNCTION
