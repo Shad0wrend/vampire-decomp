@@ -64,4 +64,6 @@ public:
 	float sub_10075f10();	// the event's end time (stub 0x10003fc6)
 	char sub_10075f30();	// whether the event has an end time (stub 0x1000695b)
 	int sub_10075b70();	// returns the type at +0x00 (stub 0x100029c8)
+	void sub_10077860();	// stub 0x10001596, run on every event by CUnknown1007ce20::sub_1007cfc0 first
+	char sub_10076b10();	// stub 0x1000cc52: whether the event is one of the timed (non type 1) events the scene keeps (the list at +0x3c)
 };
