@@ -70992,6 +70992,33 @@ char CBaseCombatWeapon::sub_10257200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10257280 size=0xdb
+#include "CWeaponRanged.h"
+#include "CWeaponOwner.h"
+#include "CVFeat_t.h"
+#include "StatDefault.h"
+
+struct StatOwner
+{
+	int sub_1006cf30(const char *pszName);
+	StatDefault *sub_1006cff0(int id);
+};
+extern StatOwner g_106c7c34;
+
+// TARGET: CWeaponRanged::sub_10257280
+int CWeaponRanged::sub_10257280(void *pFrom, void *pTo, int a)
+{
+	float flBase;
+	if ((char)a)
+		flBase = (float)((CWeaponOwner *)sub_102517b0())->m_n266c;
+	else
+		flBase = (float)((CWeaponOwner *)sub_102517b0())->m_n255c;
+	int nLevel = CVFeatSet::Find(5)->sub_101e56e0(pFrom) - 1;
+	static int s_id = g_106c7c34.sub_1006cf30("Barter_Sell_Adjustment");
+	return (int)(g_106c7c34.sub_1006cff0(s_id)->sub_1006caa0(nLevel) * flBase);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10257640 size=0x12c
 #include "CWeaponRanged.h"
 #include "CUnknown1070b22c.h"
