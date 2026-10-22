@@ -491,6 +491,55 @@ bool CBaseAnimating::vfunc100(int a, int b, char *pTrace)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095e50 size=0x13a
+#include "CBaseAnimating.h"
+#include "matrix3x4_t.h"
+#include "ScopeTrace.h"
+
+#define KV(n) virtual void vfunc##n();
+#define KV10(p) KV(p##0) KV(p##1) KV(p##2) KV(p##3) KV(p##4) KV(p##5) KV(p##6) KV(p##7) KV(p##8) KV(p##9)
+struct CAnimSlots
+{
+	KV10(0) KV10(1) KV10(2) KV10(3) KV10(4) KV10(5) KV10(6) KV10(7) KV10(8)
+	KV(90) KV(91) KV(92) KV(93)
+	virtual int vfunc94();	// GetMoveType
+	KV(95) KV(96) KV(97) KV(98) KV(99)
+	KV10(10) KV10(11) KV10(12) KV10(13) KV10(14) KV10(15) KV10(16) KV10(17) KV10(18) KV10(19)
+	KV10(20) KV10(21)
+	KV(220)
+	virtual float *vfunc221();	// GetAngles
+};
+
+void sub_10139b90(const float *pAngles, matrix3x4_t *pMatrix);
+void sub_101381b0(const float *pIn, const matrix3x4_t *pMatrix, float *pOut);
+
+// TARGET: CBaseAnimating::vfunc199
+void CBaseAnimating::vfunc199(float *vVelocity, float *vAngVelocity)
+{
+	ScopeTrace trace("CBaseAnimating::GetVelocity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (((CAnimSlots *)this)->vfunc94() == 7) {
+		sub_100ad1a0(vVelocity, vAngVelocity);
+		return;
+	}
+	if (!(sub_100b3700() & 1)) {
+		sub_100ad1a0(vVelocity, vAngVelocity);
+		return;
+	}
+	if (vVelocity) {
+		Vector vecVelocity;
+		sub_1008fcd0(*(int *)((char *)this + 0x6f0), &vecVelocity.x);
+		matrix3x4_t matrix;
+		sub_10139b90(((CAnimSlots *)this)->vfunc221(), &matrix);
+		sub_101381b0(&vecVelocity.x, &matrix, vVelocity);
+	}
+	if (vAngVelocity) {
+		vAngVelocity[0] = m_angVel3c8[0];
+		vAngVelocity[1] = m_angVel3c8[1];
+		vAngVelocity[2] = m_angVel3c8[2];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095fe0 size=0xdb
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
