@@ -7,9 +7,13 @@ class CNPC_VTzimisceHeadClaw : public CNPC_VBaseBoss
 public:
 	char pad4[0x10e4 - 4];
 	const char *m_pszName10e4;	// +0x10e4: the model-related name, null when its string is empty
-	char pad10e8[0x5b84 - 0x10e8];
+	char pad10e8[0x5b80 - 0x10e8];
+	char m_b5b80;	// +0x5b80
+	char pad5b81[0x5b84 - 0x5b81];
 	unsigned int m_nFlags5b84;	// +0x5b84
-	char pad5b88[0x63ac - 0x5b88];
+	char pad5b88[0x5cc0 - 0x5b88];
+	int m_nState5cc0;	// +0x5cc0: the NPC state, 2 while a schedule is running
+	char pad5cc4[0x63ac - 0x5cc4];
 	const char *m_pszName63ac;	// +0x63ac
 	char pad63b0[0x6420 - 0x63b0];
 	int m_n6420;	// +0x6420 .. +0x642c cleared at spawn
@@ -36,4 +40,7 @@ public:
 	void sub_10012855(int flags);	// sets the solid flags, called directly
 	void sub_1009b060(const float *pSize);	// stub 0x10001a50, called directly with a three-float vector
 	void sub_100b3900(unsigned int flags);	// CBaseEntity::RemoveFlag2 (stub 0x1000df44), called directly
+	int vfunc438();	// slot 438 "SelectSchedule" (plain member): while a schedule runs (state 2) and the NPC is not hurt (condition 0x35) it picks 0x158; the weapon the NPC holds (its slot 360 flags) decides between the attack choices of slots 604 (weapon type 0x18000) and 605 (after the sight checks and a 40% roll, 0xca when they fail); falls back to the Troika base
+	char sub_103c24a0();	// stub 0x100098a9: sight / range check run before the melee choice
+	int sub_102af660();	// CAI_BaseNPCTroika::vfunc438 (stub 0x10015596), called directly
 };
