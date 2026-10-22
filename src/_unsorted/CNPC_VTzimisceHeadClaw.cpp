@@ -87,6 +87,57 @@ void CNPC_VTzimisceHeadClaw::vfunc259(void *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1610 size=0xa6
+#include "CNPC_VTzimisceHeadClaw.h"
+#include "CUnknown1070b244.h"
+
+struct CNpcSlotsView	// the NPC's virtual table up to slot 605
+{
+	CBP_V100(a) CBP_V100(b) CBP_V100(c) CBP_V100(d) CBP_V100(e) CBP_V100(f)
+	CBP_V1(g0) CBP_V1(g1) CBP_V1(g2) CBP_V1(g3)
+	virtual int vfunc604(unsigned int flags);
+	virtual int vfunc605(unsigned int flags);
+};
+
+struct CWeaponFlagsView	// the weapon's virtual table up to slot 360
+{
+	CBP_V100(a) CBP_V100(b) CBP_V100(c) CBP_V10(d0) CBP_V10(d1) CBP_V10(d2) CBP_V10(d3) CBP_V10(d4) CBP_V10(d5)
+	virtual unsigned int vfunc360();
+};
+
+extern CUnknown1070b244 *g_1070b244;
+
+// TARGET: CNPC_VTzimisceHeadClaw::vfunc438
+int CNPC_VTzimisceHeadClaw::vfunc438()
+{
+	switch (m_nState5cc0) {
+	case 2: {
+		m_b5b80 = 0;
+		if (((CAI_BaseNPC *)this)->sub_10269aa0(0x35))
+			return 0x158;
+		unsigned int nWeaponFlags;
+		if (((CAI_BaseNPC *)this)->sub_10007e19())
+			nWeaponFlags = ((CWeaponFlagsView *)((CAI_BaseNPC *)this)->sub_10007e19())->vfunc360();
+		else
+			nWeaponFlags = 0;
+		if (nWeaponFlags & 0x18000) {
+			int iSchedule = ((CNpcSlotsView *)this)->vfunc604(nWeaponFlags);
+			if (iSchedule)
+				return iSchedule;
+		} else {
+			if (sub_103c24a0() || g_1070b244->vfunc2(0, 100) < 40)
+				return 0xca;
+			int iSchedule = ((CNpcSlotsView *)this)->vfunc605(nWeaponFlags);
+			if (iSchedule)
+				return iSchedule;
+		}
+		break;
+	}
+	}
+	return sub_102af660();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c16f0 size=0x13
 #include "CNPC_VTzimisceHeadClaw.h"
 void CNPC_VTzimisceHeadClaw::vfunc453()
