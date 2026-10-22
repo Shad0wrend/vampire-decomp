@@ -103009,6 +103009,35 @@ void CKeyringUnit::sub_10407c40(const char *pszName, const char *pszDesc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10408060 size=0x102
+#include "CBaseEntity.h"
+#include "CEntityMessageFilter.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+struct CKeyringUnit : CBaseEntity
+{
+	char m_pad03e0[0x914 - 0x3e0];
+	char *m_pRecords;
+	void sub_10408060(int index);
+};
+
+void CKeyringUnit::sub_10408060(int index)
+{
+	CEntityMessageFilter filter;
+	int pEdict = m_pEdict2e0;
+	filter.sub_1019d2f0(g_1070b22c->vfunc35(pEdict));
+	filter.sub_1019cf50();
+	g_1070b22c->vfunc65(&filter, 0);
+	g_1070b22c->vfunc67(0x7a);
+	char *pRecord = m_pRecords + index * 0xc0;
+	g_1070b22c->vfunc78(pRecord);
+	g_1070b22c->vfunc78(pRecord + 0x60);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x104085f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
