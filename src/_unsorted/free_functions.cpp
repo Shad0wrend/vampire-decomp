@@ -78008,6 +78008,58 @@ char CAI_Pathfinder::sub_102f1900(int nodeNum, unsigned int collisionMask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f1dc0 size=0x180
+#include "CAI_Navigator.h"
+#include "CAI_BaseNPC.h"
+
+struct CGlobalsView2 { int pad0; int framecount; int pad8; float curtime; };
+extern CGlobalsView2 *g_1070b228;
+
+// TARGET: CAI_Navigator::sub_102f1dc0
+bool CAI_Navigator::sub_102f1dc0(int a, int b)
+{
+	m_i08 = *(int *)(m_pOuter + 0x156c);
+	m_i0c = g_1070b228->framecount;
+	CAI_NavComponentData *pPathfinder = (CAI_NavComponentData *)sub_102ecc00();
+	pPathfinder->m_i08 = *(int *)(pPathfinder->m_pOuter + 0x156c);
+	pPathfinder->m_i0c = g_1070b228->framecount;
+	CAI_NavRoute *pRoute = m_p30;
+	pRoute->m_pWaypoint.sub_10319ee0();
+	pRoute->m_nProvider = -1;
+	if (*(unsigned int *)(m_pOuter + 0x5d8c) & 0x20) {
+		if (m_f48 < g_1070b228->curtime) {
+			vfunc10(0xc, 1.4012984643e-45f);
+			return false;
+		}
+		if (m_f4c < g_1070b228->curtime) {
+			if (sub_102f2330(b)) {
+				*(unsigned int *)(m_pOuter + 0x5d8c) &= ~0x20;
+				if (*((CAI_BaseNPC *)m_pOuter)->sub_1028a150() != 0x6e)
+					vfunc2(0);
+				return true;
+			}
+			m_f4c = g_1070b228->curtime + m_f44;
+			return false;
+		}
+	} else {
+		if (sub_102f2330(b)) {
+			*(unsigned int *)(m_pOuter + 0x5d8c) &= ~0x20;
+			if (!((CAI_BaseNPC *)m_pOuter)->vfunc529())
+				vfunc2(0);
+			return true;
+		}
+		if (m_f40 == 0.0f) {
+			vfunc10(0xc, 1.4012984643e-45f);
+			return false;
+		}
+		*(unsigned int *)(m_pOuter + 0x5d8c) |= 0x20;
+		m_f4c = g_1070b228->curtime + m_f44;
+		m_f48 = g_1070b228->curtime + m_f40;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1fa0 size=0x90
 #include "CAI_Navigator.h"
 struct CGlobalVarsX { char pad[0xc]; float curtime; };
