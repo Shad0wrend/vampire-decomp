@@ -17,5 +17,6 @@ struct CTakeDamageInfo
 	char m_pad002c[0x4c - 0x2c];
 
 	CTakeDamageInfo *sub_101c26d0(void *pInflictor, void *pAttacker, float flDamage, int bitsDamageType, int a, int b, int c);	// the constructor (stub 0x10009656): returns this
+	CTakeDamageInfo *sub_101c2720(void *pInflictor, void *pAttacker, const float *pForce, const float *pPosition, float flDamage, int bitsDamageType, int ammoType);	// the constructor with a damage force and position (stub 0x10002090): returns this
 	void sub_101c29e0(CGameTrace *pTrace);	// stub 0x1000e548: fills the damage force from the trace
 };
