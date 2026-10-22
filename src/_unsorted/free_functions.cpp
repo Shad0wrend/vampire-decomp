@@ -30276,6 +30276,45 @@ void CEnvBeam::sub_100fef50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10100080 size=0x10b
+#include "CBroadcastRecipientFilter.h"
+struct ITempEnts {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8(IRecipientFilter *filter, int a, int b, int c, int d, int e, int f, int g, int h, float i, float j, int k, float l, int m, int n, int o, int p, int q);
+};
+extern ITempEnts *g_10540528;
+struct SView {
+	char pad0[0x1a0];
+	unsigned char r, g, b, a;
+	char pad1[0x450 - 0x1a4];
+	float m450;
+	char pad2[0x500 - 0x454];
+	int m500, m504, m508, m50c;
+	char pad3[4];
+	int m514;
+	char pad4[4];
+	int m51c;
+	void sub_10100080(int x, int y);
+	void sub_10004b3d(int x, int y);
+};
+
+// TARGET: SView::sub_10100080
+void SView::sub_10100080(int x, int y)
+{
+	CBroadcastRecipientFilter filter;
+	float f = (float)m504;
+	g_10540528->v8(&filter, 0, x, y, m514, 0, m51c, (int)m450, m500, f, f, 0, (float)m508, r, g, b, a, m50c);
+	sub_10004b3d(x, y);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101006e0 size=0x125
 #include "Ray_t.h"
 #include "CTraceFilterSimple.h"
