@@ -87,6 +87,28 @@ int CItemContainerLock::vfunc34(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10225140 size=0x146
+#include "CReliableSingleUserRecipientFilter.h"
+#include "CUnknown1070b22c.h"
+#include "CEntityVSlots.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_1072607c;
+
+void CItemContainerLock::vfunc42(CBasePlayer *pPlayer)
+{
+	((CBaseVampireSkillEntity *)this)->vfunc42(pPlayer);
+	pPlayer->sub_1017cef0(0);
+	pPlayer->sub_1015ef60();
+	CReliableSingleUserRecipientFilter filter(pPlayer);
+	g_1070b22c->vfunc65(&filter, g_1072607c);
+	g_1070b22c->vfunc67(6);
+	g_1070b22c->vfunc67(m_b816);
+	g_1070b22c->vfunc67(((CBaseVampireSkillEntity *)this)->sub_1020b000((CBaseEntity *)pPlayer));
+	g_1070b22c->vfunc67(((CEntityVSlots *)this)->slot268(pPlayer));
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10226460 size=0x6d
 #include "CItemContainerLock.h"
 
