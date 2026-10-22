@@ -76,7 +76,8 @@ public:
 	CBCW_V(286) CBCW_V(287) CBCW_V(288) CBCW_V(289)
 	CBCW_V(290) CBCW_V(291) CBCW_V(292) CBCW_V(293) CBCW_V(294) CBCW_V(295) CBCW_V(296)
 	virtual void vfunc297(int value);
-	CBCW_V(298) CBCW_V(299) CBCW_V(300) CBCW_V(301) CBCW_V(302)
+	CBCW_V(298) virtual void vfunc299(const float *pVelocity);	// "CBaseCombatWeapon::Drop"-like: the owner gives the weapon up; the weapon becomes a physics-less dropped item (move type 6) that gets pVelocity
+	CBCW_V(300) CBCW_V(301) CBCW_V(302)
 	virtual bool vfunc303();
 	virtual char vfunc304();	// true when the field at +0x2444 of the owner (sub_102517b0) is set
 	CBCW_V(305)
