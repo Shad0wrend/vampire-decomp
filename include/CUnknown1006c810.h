@@ -21,6 +21,14 @@ struct CVTraitTextId	// a 4 byte text id returned through a hidden pointer (the 
 	CVTraitTextId(const CVTraitTextId &other) : m_id(other.m_id) { }
 };
 
+struct CVTraitDependency	// the 16 byte dependency record
+{
+	int m_a, m_b, m_c, m_d;
+
+	void sub_10204270();	// stub 0x10010573: sets the record to its default
+	void sub_10204570(const char *pszDependency);	// stub 0x100045e3: parses the record from its text
+};
+
 class CUnknown1006c810
 {
 public:
@@ -30,9 +38,7 @@ public:
 	unsigned int m_flags;	// 0x0c: bit 0 = clamping
 	int m_nValues;	// 0x10: the number of numbered keys
 	float *m_pValues;	// 0x14
-	int m_aDependency[4];	// 0x18: the dependency record
+	CVTraitDependency m_Dependency;	// 0x18
 
-	void sub_10204270();	// stub 0x10010573: sets the dependency record to its default
-	void sub_10204570(const char *pszDependency);	// stub 0x100045e3: parses the dependency record from its text
-	bool sub_1006c810(CVTraitKV *pKV, const int *pDefaultDependency);	// loads the record from its key: InternalName, the text id, TraitDependency (the text, else a copy of pDefaultDependency, else the default), Clamping and the numbered float keys; always true
+	bool sub_1006c810(CVTraitKV *pKV, const CVTraitDependency *pDefaultDependency);	// loads the record from its key: InternalName, the text id, TraitDependency (the text, else a copy of pDefaultDependency, else the default), Clamping and the numbered float keys; always true
 };
