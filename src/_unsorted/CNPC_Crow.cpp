@@ -1,6 +1,54 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10358ce0 size=0x17a
+#include "CNPC_Crow.h"
+#include "CUnknown1070b244.h"
+struct CGlobalsView { char pad[0xc]; float curtime; };
+extern CGlobalsView *g_1070b228;
+extern CUnknown1070b244 *g_1070b244;
+
+// TARGET: CNPC_Crow::vfunc438
+int CNPC_Crow::vfunc438()
+{
+	if (sub_1027d990() == 2)
+		return 0x45;
+	if (sub_10269aa0(0x79)) {
+		sub_10269b50(0x79);
+		return 0x49;
+	}
+	if (!(sub_100b3700() & 1) && g_1070b228->curtime > 2.0)
+		return 0x49;
+	if (sub_10269aa0(0x6a)) return 0x49;
+	if (sub_10269aa0(0x6d)) return 0x49;
+	if (sub_10269aa0(0x4c)) return 0x49;
+	if (sub_10269aa0(0x4d)) return 0x49;
+	if (sub_10269aa0(0x78)) {
+		sub_10269b50(0x78);
+		*(int *)((char *)this + 0x5f50) = 0;
+		return 0x49;
+	}
+	if (sub_10269aa0(0x77)) {
+		sub_10269b50(0x77);
+		if (*(float *)((char *)this + 0x5f4c) > 400.0f)
+			return 0x46;
+		if (*(float *)((char *)this + 0x5f4c) > 300.0f) {
+			*(int *)((char *)this + 0x5f50) -= 1;
+			return 0x47;
+		}
+		*(int *)((char *)this + 0x5f50) -= 2;
+		return 0x48;
+	}
+	int state = *(int *)((char *)this + 0x5cc0);
+	if (state > 0 && state <= 3 && sub_1027d990() != 2) {
+		if (g_1070b228->curtime > *(float *)((char *)this + 0x5f48))
+			*(float *)((char *)this + 0x5f48) = g_1070b244->vfunc1(10.0f, 20.0f) + g_1070b228->curtime;
+		return 0x44;
+	}
+	return sub_1028a380();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358f90 size=0x103
 #include "CNPC_Crow.h"
 #include "CUnknown1070b22c.h"

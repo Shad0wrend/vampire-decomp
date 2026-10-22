@@ -5645,6 +5645,7 @@
 0x1001593d func   ?sub_101006e0@@YAXPBM0IPAXHPAUCGameTrace@@@Z sub_101006e0
 0x10015951 func   ?sub_103065d0@CUnknown103065d0@@QAEXPBUCUnknown103065d0Vec@@0HHHD@Z CUnknown103065d0::sub_103065d0
 0x1001595b func   ?sub_100737d0@CUnknown100737d0@@QAEXD@Z CUnknown100737d0::sub_100737d0
+0x10015974 func   ?vfunc438@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc438
 0x10015997 func   ?vfunc8@CSoundSchemeManager@@UAEPAV1@I@Z CSoundSchemeManager::vfunc8
 0x100159ab func   ?sub_10295a80@@YIXPAHHHPAIHH@Z sub_10295a80
 0x100159c9 func   ?sub_100acc20@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100acc20
