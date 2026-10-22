@@ -1,11 +1,15 @@
 // CUnknown101dbe30: sound description loaded from a KeyValues-like block (Sound, Channel, IsLooping); not identified yet.
 #pragma once
 
+class CBaseEntity;
+
 class CUnknown101dbe30
 {
 public:
 	bool sub_101dbe30(void *pKeys);
 	CUnknown101dbe30 *sub_101dbdc0(int index);	// constructor body (stub 0x10003350): returns this
+	bool sub_101dbe10();	// the sound is set (stub 0x10012a5d)
+	void sub_101dbed0(CBaseEntity *pEntity);	// plays the sound from the entity to the players that hear it, logging it with DevMsg
 
 	int m_field0000;	// Sound
 	int m_field0004;	// Channel
