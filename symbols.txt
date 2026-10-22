@@ -773,6 +773,7 @@
 0x10003eef func   ?vfunc480@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc480
 0x10003ef4 func   ?vfunc319@CWeaponLockpick@@UAEXXZ CWeaponLockpick::vfunc319
 0x10003efe func   ?sub_10259120@@YA_NPAUSKeyValues@@PADPBD@Z sub_10259120
+0x10003f08 func   ?sub_1013d7a0@@YAXPBM0PAM1@Z sub_1013d7a0
 0x10003f3f func   ?sub_100cd940@@YIHPAUCListNode100cd940@@@Z sub_100cd940
 0x10003f44 func   ?sub_10246430@@YAXHPAH0@Z sub_10246430
 0x10003f4e func   ?vfunc1@CBreakParser@@UAEXPAX@Z CBreakParser::vfunc1

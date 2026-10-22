@@ -35059,6 +35059,28 @@ void sub_1013d6c0(const Vector &p1, const Vector &p2, float t, Vector &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d7a0 size=0x6d
+#include "Quaternion.h"
+
+void sub_1013b1f0(const float *angles, Quaternion &q);
+void sub_1013add0(const float *p, float t, float *qt);
+void sub_1013af60(const Quaternion &p, const Quaternion &q, Quaternion &qt);
+float sub_1013ad40(Quaternion &q);
+void sub_1013b280(const Quaternion &q, float *a, float *b);
+
+// TARGET: sub_1013d7a0
+void sub_1013d7a0(const float *angles1, const float *angles2, float *pOut1, float *pOut2)
+{
+	Quaternion q1, q2, qScaled, qResult;
+	sub_1013b1f0(angles1, q1);
+	sub_1013b1f0(angles2, q2);
+	sub_1013add0(&q1.x, -1.0f, &qScaled.x);
+	sub_1013af60(qScaled, q2, qResult);
+	sub_1013ad40(qResult);
+	sub_1013b280(qResult, pOut1, pOut2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d900 size=0x72
 extern int g_10579690[4][2][3];
 bool sub_1013d900(int a, int b, int c, int *out)
