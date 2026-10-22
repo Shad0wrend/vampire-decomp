@@ -64973,6 +64973,42 @@ void __stdcall sub_10230700(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230fc0 size=0x166
+#include "CVDmg_t.h"
+#include "CVStatList_t.h"
+#include "CVFeat_t.h"
+
+int sub_10202780(int kind);
+
+// TARGET: CVDmgBlock16_t::sub_10230fc0
+int CVDmgBlock16_t::sub_10230fc0(void *pCharacter)
+{
+	if (pCharacter) {
+		int nIndex = m_b;
+		if (nIndex != -1) {
+			switch (m_a) {
+			case 0:
+			case 1:
+			case 2:
+			case 3:
+				return sub_10204c20(CVStatListSet::Of(pCharacter)->Find(sub_10202780(m_a))->sub_102012d0(nIndex));
+			case 4:
+				return CVFeatSet::Find(nIndex)->sub_101e56e0(pCharacter);
+			case 5:
+			case 6:
+			case 7:
+			case 8:
+				return 0;
+			case 9:
+				if (nIndex)
+					return ((int (__cdecl *)(void *))nIndex)(pCharacter);
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231970 size=0x147
 #include "SendProp.h"
 
