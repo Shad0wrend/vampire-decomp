@@ -19,7 +19,7 @@ public:
 	int m_nState644c;	// 0x644c: 2 once the turn is under way
 	float m_flTime6450;	// 0x6450
 
-	bool sub_10290040();	// asks the target (slot 246) for the direction to turn to, points the motor's ideal yaw there and, when sub_10278c80 holds, arms the state (2) with the next time (1 s ahead with the flag at +0x5d30, else 5 s ahead when sub_10298840 accepts the target); false when the target is gone or has no answer
+	bool sub_10290040(int a);	// asks the target (slot 246) for the direction to turn to, points the motor's ideal yaw there and, when sub_10278c80 holds, arms the state (2) with the next time (1 s ahead with the flag at +0x5d30, else 5 s ahead when sub_10298840 accepts the target); false when the target is gone or has no answer (the argument is not used)
 	char sub_10278c80();	// stub 0x10010352
 	char sub_10298840(CBaseEntity *pTarget);	// stub 0x1000dd73
 };
