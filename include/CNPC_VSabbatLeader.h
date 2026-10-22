@@ -18,7 +18,9 @@ public:
 	int m_n16c;	// +0x16c
 	char pad170[0x19c - 0x170];
 	unsigned int m_nEffectFlags;	// +0x19c: bit 4 is set by TransformationStart
-	char pad1a0[0xe80 - 0x1a0];
+	char pad1a0[0x2e0 - 0x1a0];
+	int m_nEdict2e0;	// +0x2e0: the engine edict index
+	char pad2e4[0xe80 - 0x2e4];
 	int m_nPresence0;	// +0xe80: cleared by UpdatePresenceEffect
 	int m_nPresence1;	// +0xe84
 	int m_nPresence2;	// +0xe88
@@ -58,6 +60,7 @@ public:
 	int sub_103a7390(int schedule);	// "TranslateSchedule" (slot 440 override): schedules 0xe5/0xe6 map to 0x15f, else the CNPC_VHuman version
 	char sub_103a9340(CNPC_VSabbatLeaderHint *pHint);	// "FValidateHintType": hint type in [0x3e80, 0x3e85]
 	void vfunc619(int arg);	// slot 619, not modelled as virtual yet
+	void vfunc620();	// "CNPC_VSabbatLeader::FootstepSound" (slot 620): scope trace, a PAS attenuation filter at the origin, a random footstep sound of the table at 0x1064c480
 	void sub_1000c27a(int arg);
 	int sub_103a6ef0();	// "Classify" (slot 138): scope trace only, returns 0x10
 	void vfunc259(void *pEvent);	// "HandleAnimEvent" (slot 259 override): scope trace, events 0x802/0x803 go to slot 620, the rest to CNPC_VHuman::vfunc259
