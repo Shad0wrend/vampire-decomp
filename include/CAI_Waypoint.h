@@ -25,7 +25,11 @@ public:
 		}
 	}
 
-	char m_pad0000[0x30];
+	char m_pad0000[0x10];
+	int m_iNodeID;	// 0x10: the network node the waypoint stands on
+	char m_pad0014[0x28 - 0x14];
+	unsigned int m_fWaypointFlags;	// 0x28
+	char m_pad002c[4];
 	CAI_Waypoint *m_pNext;	// 0x30
 	CAI_Waypoint *m_pPrev;	// 0x34
 };
