@@ -33,4 +33,5 @@ public:
 	void sub_1019cf50();	// called after AddRecipient by user message senders (stub 0x1001186f)
 	void sub_1019d3d0();	// "CRecipientFilter::UsePredictionRules" (stub 0x10005ce0)
 	void sub_1019d2f0(int clientIndex);	// "CRecipientFilter::RemoveRecipient" by client index (stub 0x1000c19e)
+	void sub_1019d4b0(const float *pOrigin, float flAttenuation);	// "CRecipientFilter::AddRecipientsByPAS" with attenuation (stub 0x1000dfa3): drops the players farther than 1 / attenuation
 };
