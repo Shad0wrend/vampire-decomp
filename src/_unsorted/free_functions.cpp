@@ -50594,6 +50594,27 @@ void sub_101ce620(void *pPlayer, int value, const char *s1, const char *s2, cons
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ce920 size=0xf7
+#include "CReliableBroadcastFilter.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+extern int g_10726048;
+
+struct CEdictHolder { char pad[0x2e0]; int m_pEdict2e0; };
+
+inline int ENTINDEX(int e) { return g_1070b22c->vfunc35(e); }
+
+void sub_101ce920(int nValue, CEdictHolder *pEnt)
+{
+	CReliableBroadcastFilter filter;
+	g_1070b22c->vfunc65(&filter, g_10726048);
+	g_1070b22c->vfunc67(ENTINDEX(pEnt->m_pEdict2e0));
+	g_1070b22c->vfunc78(nValue);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cea60 size=0xcf
 #include "IVEngineServer.h"
 #include "CSingleUserRecipientFilter.h"
