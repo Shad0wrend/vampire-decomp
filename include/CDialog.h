@@ -58,8 +58,10 @@ public:
 	const char *sub_100e1580(DialogLine *pLine);	// stub 0x1000c676: the line's text for the speaker's clan, null when it has none
 	const char *sub_100e1ad0(int index);	// "CDialog::get_display_text": scope trace, null without the line or a live NPC; else the line's clan text, or the plain text (+4) / the alternative (+8) picked by the NPC's flag
 	void sub_100e7da0(char *pPacket);	// "CDialog::fill_packet": scope trace, clears the first byte of the four 0x800 byte lines of the packet (from +0x804) and Init's the four dependency records at +0x2848 (0x228 bytes each), then builds the player responses; without any valid reply writes "I do not have a valid reply." into the first line
-	int sub_100e8100(char *pPacket);	// stub 0x1001521c: builds the packet's line from the table, non-zero on success
+	int sub_100e8100(char *pPacket);	// "CDialog::process_npc_line" (stub 0x1001521c): builds the packet's NPC line from the table entry of the current key (+0x2830): the clan text, else the alternative text for a female NPC when sub_100df030 allows, else the plain text; runs the entry's script and remembers its event name (+0x30ea); non-zero on success
 	int sub_100e82d0(int *pChoices);	// stub 0x10014858: collects the player choices into the array, returns their count
 	int sub_100e8520(int nKey, int nSlot, char *pPacket);	// stub 0x10001fe1: builds response nSlot for the choice key into the packet; -1 failed (no reply), 0 skipped, 1 and above filled
 	void sub_100dfb80(CBaseEntity *pNPC, CBaseEntity *pSpeaker);	// "CDialog::GenerateScriptFile": scope trace; without a table takes the handles of the speaker (its object at +0x98) and of the NPC (its object at +0xa8) and, when both resolve, logs "Dumping script file for npc: %s, dialog: %s", runs sub_100e37d0 / sub_100e34d0, clears both handles and unloads the table (sub_100e5770)
+	void sub_100e7d10(char *pPacket, const char *pszText);	// stub 0x100090de: writes the NPC text into the packet
+	void sub_100e8060(char *pPacket, int nMax);	// stub 0x100023c4: finishes the packet line (limit nMax)
 };
