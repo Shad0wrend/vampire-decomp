@@ -63978,6 +63978,29 @@ int *sub_10211970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102120c0 size=0xf7
+#include "CPropSign.h"
+#include "CSingleUserRecipientFilter.h"
+#include "IVEngineServer.h"
+extern IVEngineServer *g_1070b22c;
+extern int g_10726088;
+
+// TARGET: CPropSign::sub_102120c0
+void CPropSign::sub_102120c0(CBaseEntity *pPlayer)
+{
+    if (pPlayer != 0) {
+        CSingleUserRecipientFilter filter(pPlayer);
+        filter.MakeReliable();
+        g_1070b22c->vfunc65(&filter, g_10726088);
+        g_1070b22c->vfunc67(0);
+        g_1070b22c->vfunc72(0.5f);
+        int edict = *(int *)((char *)this + 0x2e0);
+        g_1070b22c->vfunc71(g_1070b22c->vfunc35(edict));
+        g_1070b22c->vfunc66();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212430 size=0x43
 #include "CGameSign.h"
 void *sub_100aa720(int size);
