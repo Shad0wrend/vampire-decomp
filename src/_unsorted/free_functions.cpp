@@ -54683,6 +54683,45 @@ void sub_101eddd0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101edfe0 size=0x126
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10006cc1(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropFloat
+SendProp sub_1000b771(const char *pVarName, int offset, int sizeofVar);	// SendPropEHandle
+SendProp sub_1000c14e(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *proxy);	// SendPropVector
+void sub_10009539();
+void sub_10006aeb();
+void sub_10003012();
+
+extern SendTable g_1073a3fc;
+extern SendTable *g_1054d524;
+
+// TARGET: sub_101edfe0
+int sub_101edfe0()
+{
+	static const char *pTableName = "DT_VampireProjectile";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1054d524, (void *)sub_10009539),
+		sub_10006cc1("m_flKillTime", 0x738, 4, -1, 4, 0.0f, -121121.125f, (void *)sub_10006aeb),
+		sub_1000b771("m_hAttachedEntity", 0x730, 4),
+		sub_10007bfd("m_iAttachedBone", 0x734, 4, -1, 0, 0, 0),
+		sub_1000c14e("m_vecAttachOrigin", 0x73c, 0xc, 0, 4, 0.0f, -121121.125f, (void *)sub_10003012),
+		sub_1000c14e("m_angAttachAngle", 0x748, 0xc, 0, 4, 0.0f, -121121.125f, (void *)sub_10003012),
+	};
+	g_1073a3fc.sub_1000e8fe(props + 1, 6, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee190 size=0x43
 #include "CVampireProjectile.h"
 void *sub_100aa720(int size);
