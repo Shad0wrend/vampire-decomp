@@ -32896,6 +32896,122 @@ int CGameMovement::sub_10124120(Vector &in, Vector &normal, Vector &out, float o
 }
 // END FUNCTION
 
+// FUNCTION: 0x10124ba0 size=0x14f
+#include "CGameMovement.h"
+#include "CGlobalEntityList.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "IVEngineServer.h"
+#include "Ray_t.h"
+
+extern CUnknown1070b254 *g_1070b254;
+extern IVEngineServer *g_1070b22c;
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int noDepth, float flDuration);
+
+struct CMoveFlagsView
+{
+	char m_pad0000[0x1edd];
+	char m_bDucked;	// 0x1edd
+	char m_pad1ede[0x20f0 - 0x1ede];
+	unsigned int m_fFlags;	// 0x20f0: bit 5 = observer
+};
+
+struct CMoveInfoView
+{
+	char m_pad0000[0x368];
+	int m_n368;	// 0x368
+};
+
+struct CMovePlayerOrigin
+{
+	char m_pad0000[0x70];
+	Vector m_vecOrigin;	// 0x70
+};
+
+struct CDebugCvar	// a convar object: slot 1 answers the bool, the int value is at +0x2c
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x2c - 4];
+	int m_nValue;
+};
+extern CDebugCvar *g_10738964;
+extern CDebugCvar *g_1070b754;
+
+#define EVV(n) virtual void e##n();
+#define EVV10(p) EVV(p##0) EVV(p##1) EVV(p##2) EVV(p##3) EVV(p##4) EVV(p##5) EVV(p##6) EVV(p##7) EVV(p##8) EVV(p##9)
+struct CStuckEntView	// the entity the trace started inside: slot 211 answers its flags
+{
+	EVV10(0) EVV10(1) EVV10(2) EVV10(3) EVV10(4) EVV10(5) EVV10(6) EVV10(7) EVV10(8) EVV10(9)
+	EVV10(10) EVV10(11) EVV10(12) EVV10(13) EVV10(14) EVV10(15) EVV10(16) EVV10(17) EVV10(18) EVV10(19)
+	EVV10(20) EVV(210)
+	virtual unsigned int vfunc211();
+	char m_pad0004[0x2e0 - 4];
+	int m_nEdict;	// 0x2e0
+};
+
+namespace block_10124ba0 {
+struct CGameMovementUnit : CGameMovement
+{
+	float *sub_1011e350();
+	float *sub_1011e310();
+};
+
+float *CGameMovementUnit::sub_1011e350()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMax.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
+}
+
+float *CGameMovementUnit::sub_1011e310()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMin.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
+}
+}
+using namespace block_10124ba0;
+
+// TARGET: CGameMovement::sub_10124ba0
+void CGameMovement::sub_10124ba0()
+{
+	Ray_t ray;
+	CGameTrace tr;
+	CMoveInfoView *pMove = (CMoveInfoView *)m_pMove;
+	CMovePlayerOrigin *pPlayer = (CMovePlayerOrigin *)m_pPlayer;
+	int nGroup = pMove->m_n368;
+	ray.sub_1006dec0(pPlayer->m_vecOrigin, &pPlayer->m_vecOrigin.x, ((CGameMovementUnit *)this)->sub_1011e310(), ((CGameMovementUnit *)this)->sub_1011e350(), 1, 0);
+	CTraceFilterSimple filter(pMove, nGroup);
+	g_1070b254->vfunc4(&ray, 0x201400b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+	if (!g_10738964->vfunc1() && g_10738964->m_nValue)
+		sub_10146570(tr.m_startpos, tr.m_endpos, 255, 255, 0, 1, -1.0f);
+	if (tr.m_startsolid && tr.m_pEnt)
+	{
+		if (!g_1070b754->vfunc1() && g_1070b754->m_nValue)
+		{
+			int nEdict = ((CStuckEntView *)tr.m_pEnt)->m_nEdict;
+			if (g_1070b22c->vfunc35(nEdict))
+			{
+				sub_10124630(tr.m_pEnt);
+				return;
+			}
+		}
+		else
+		{
+			int nEdict = ((CStuckEntView *)tr.m_pEnt)->m_nEdict;
+			if (g_1070b22c->vfunc35(nEdict))
+			{
+				if (((CStuckEntView *)tr.m_pEnt)->vfunc211() & 0x40)
+					sub_10124630(tr.m_pEnt);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101251b0 size=0x12
 struct CHolderInner3e0 {
     char pad_0000[0x3e0];
