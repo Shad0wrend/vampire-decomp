@@ -13044,6 +13044,66 @@ void CSceneEntity::sub_10084170(void *pScene)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100845a0 size=0xd4
+#include "CSceneEntity.h"
+#include "CUnknown1007a2c0.h"
+#include "CEntityVSlots.h"
+
+extern "C" void *__cdecl __RTDynamicCast(void *pObj, long nVfDelta, void *pSrcType, void *pTargetType, int bReference);
+extern char g_10538764[];
+extern char g_1053dd10[];
+
+struct CSceneData : CUnknown1007a2c0
+{
+	int sub_1007a250();
+	void *sub_1007a270(int index);
+	char sub_1007ed10();
+};
+
+struct CSceneEventView : CSceneEvent
+{
+	CSceneData *sub_10076710();
+};
+
+struct CSceneEntityStub : CSceneEntity
+{
+	void sub_1000eb38(void *pScene);
+};
+
+// TARGET: CSceneEntity::sub_100845a0
+void CSceneEntity::sub_100845a0(void *pScene)
+{
+	CSceneData *pData = (CSceneData *)pScene;
+	if (pData)
+	{
+		for (int i = 0; i < pData->sub_1007a2a0(); i++)
+		{
+			CSceneEventActor *pActor = (CSceneEventActor *)pData->sub_1007a2c0(i);
+			if (pActor)
+			{
+				CBaseEntity *pEnt = vfunc268(pActor->sub_10008a99(), 0);
+				if (pEnt)
+				{
+					CEntityVSlots *pAnim = (CEntityVSlots *)__RTDynamicCast(pEnt, 0, g_10538764, g_1053dd10, 0);
+					if (pAnim)
+						pAnim->slot246();
+				}
+			}
+		}
+		for (int j = 0; j < pData->sub_1007a250(); j++)
+		{
+			CSceneEventView *pEvent = (CSceneEventView *)pData->sub_1007a270(j);
+			if (pEvent && pEvent->sub_100029c8() == 0xb && !pData->sub_1007ed10())
+			{
+				CSceneData *pSub = pEvent->sub_10076710();
+				if (pSub)
+					((CSceneEntityStub *)this)->sub_1000eb38(pSub);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100846c0 size=0xd7
 #include "CSceneEntity.h"
 #include "CUnknown1007a2c0.h"
