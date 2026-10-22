@@ -33038,6 +33038,42 @@ void CMathRemap::sub_101321f0(inputdata_t &inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10132680 size=0x190
+#include "CMathColorBlend.h"
+#include "inputdata_t.h"
+
+static inline void NavFireColor(COutputEvent &out, CMathColorBlendColor32 val, void *pActivator, CBaseEntity *pCaller)
+{
+	((CVariantCopy *)&out)->sub_1000b320(8, &val);
+	out.sub_100cd300(*(CVariantCopy *)&out, pActivator, pCaller, 0.0f);
+}
+
+// TARGET: CMathColorBlend::sub_10132680
+void CMathColorBlend::sub_10132680(inputdata_t &inputdata)
+{
+	float flValue;
+	if (inputdata.value.fieldType == 1)
+		flValue = inputdata.value.flValue;
+	else
+		flValue = 0;
+	float flClamped;
+	if (m_flInMax < flValue)
+		flClamped = m_flInMax;
+	else if (m_flInMin > flValue)
+		flClamped = m_flInMin;
+	else
+		flClamped = flValue;
+	if (flClamped != flValue && (m_flags204 & 1))
+		return;
+	CMathColorBlendColor32 col;
+	col.r = (unsigned char)((float)(m_OutMax.r - m_OutMin.r) * (flClamped - m_flInMin) / (m_flInMax - m_flInMin) + m_OutMin.r);
+	col.g = (unsigned char)((float)(m_OutMax.g - m_OutMin.g) * (flClamped - m_flInMin) / (m_flInMax - m_flInMin) + m_OutMin.g);
+	col.b = (unsigned char)((float)(m_OutMax.b - m_OutMin.b) * (flClamped - m_flInMin) / (m_flInMax - m_flInMin) + m_OutMin.b);
+	col.a = (unsigned char)((float)(m_OutMax.a - m_OutMin.a) * (flClamped - m_flInMin) / (m_flInMax - m_flInMin) + m_OutMin.a);
+	NavFireColor(m_OutValue, col, inputdata.pActivator, this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132b50 size=0x6d
 struct CGlobals1070b228 { char pad[0x24]; int m_n24; };
 extern CGlobals1070b228 *g_1070b228;
