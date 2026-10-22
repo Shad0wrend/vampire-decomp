@@ -1978,6 +1978,63 @@ void CBaseCombatCharacter::vfunc125()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10340360 size=0x139
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CStatDefault3List.h"
+#include "CUnknown101d4f20.h"
+
+extern CStatDefault3List g_10738d10;
+extern "C++" __declspec(dllimport) void DevMsg(const char *fmt, ...);
+void sub_10191ac0(int nValue);
+char sub_102f9970();
+int sub_102f9950();
+void sub_102f9920(int a);
+const char *sub_102d6230(int a);
+
+struct CUnknown101d4f20Ret : CUnknown101d4f20
+{
+	CUnknown101d4f20_Value *sub_101d4f20(CUnknown101d4f20_Value *out);
+};
+
+#define BCV(n) virtual void b##n();
+#define BCV10(p) BCV(p##0) BCV(p##1) BCV(p##2) BCV(p##3) BCV(p##4) BCV(p##5) BCV(p##6) BCV(p##7) BCV(p##8) BCV(p##9)
+struct CCharacterView	// the character as seen for slot 337
+{
+	BCV10(0) BCV10(1) BCV10(2) BCV10(3) BCV10(4) BCV10(5) BCV10(6) BCV10(7) BCV10(8) BCV10(9)
+	BCV10(10) BCV10(11) BCV10(12) BCV10(13) BCV10(14) BCV10(15) BCV10(16) BCV10(17) BCV10(18) BCV10(19)
+	BCV10(20) BCV10(21) BCV10(22) BCV10(23) BCV10(24) BCV10(25) BCV10(26) BCV10(27) BCV10(28) BCV10(29)
+	BCV10(30) BCV10(31) BCV10(32) BCV(330) BCV(331) BCV(332) BCV(333) BCV(334) BCV(335) BCV(336)
+	virtual int vfunc337();
+};
+
+// TARGET: CBaseCombatCharacter::vfunc104
+void CBaseCombatCharacter::vfunc104()
+{
+	ScopeTrace trace("CBaseCombatCharacter::Precache", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CUnknown101d4f20_Value value;
+	int nTemplate = sub_10337860();
+	sub_10191ac0(((CUnknown101d4f20Ret *)g_10738d10.sub_101d5e80(nTemplate))->sub_101d4f20(&value)->m_value);
+	vfunc71();
+	if (sub_102f9970())
+	{
+		int nA = ((CCharacterView *)this)->vfunc337();
+		nA &= sub_102f9950();
+		if (nA != ((CCharacterView *)this)->vfunc337())
+		{
+			DevMsg("\n****ERROR***\n");
+			DevMsg("%s is being spawned after links have been initialized, but its hull %s\n", sub_100ab4f0(), sub_102d6230(m_field1568));
+			DevMsg("Has not been initialized.  Be sure that this class's GetUsedHullBits function includes that hull type.\n");
+			DevMsg("If it already is, this entity is probably spawned after the node graph is created.\n");
+			DevMsg("Have the class responsible for spawning it include it.\n");
+			DevMsg("****ERROR***\n\n");
+		}
+	}
+	else
+		sub_102f9920(((CCharacterView *)this)->vfunc337());
+}
+// END FUNCTION
+
 // FUNCTION: 0x103404f0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
