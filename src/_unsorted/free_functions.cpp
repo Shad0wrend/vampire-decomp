@@ -80889,6 +80889,60 @@ int CUtlVector4::sub_103109a0(int elem, int num, const int *pToInsert)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310c10 size=0xb0
+#include "CUnknown10310c10.h"
+
+struct CNpcFactoryView	// the factory's virtual table up to slot 617
+{
+	CBP_V100(a) CBP_V100(b) CBP_V100(c) CBP_V100(d) CBP_V100(e) CBP_V100(f)
+	CBP_V10(g0) CBP_V1(g10) CBP_V1(g11) CBP_V1(g12) CBP_V1(g13) CBP_V1(g14) CBP_V1(g15) CBP_V1(g16)
+	virtual void *vfunc617(int a);
+};
+
+struct CNpcOriginView	// the NPC's virtual table up to slot 62
+{
+	CBP_V10(a0) CBP_V10(a1) CBP_V10(a2) CBP_V10(a3) CBP_V10(a4) CBP_V10(a5) CBP_V1(a60) CBP_V1(a61)
+	virtual void vfunc62(const float *pOrigin);
+};
+
+struct CNpcPostSpawn	// the Troika NPC members the maker calls
+{
+	char m_pad0000[0x65f6];
+	char m_b65f6;	// 0x65f6
+	void sub_102ae8e0(int a);
+};
+
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+void sub_101cd940(void *pEnt);
+
+// TARGET: CUnknown10310c10::sub_10310c10
+void *CUnknown10310c10::sub_10310c10(void *pSpawnPoint, int hIdeal)
+{
+	float vecOrigin[3];
+	sub_10310bc0();
+	if (m_pFactory == (void *)-1)
+		return 0;
+	CNpcPostSpawn *pNpc = (CNpcPostSpawn *)((CNpcFactoryView *)m_pFactory)->vfunc617(1);
+	if (!pNpc) {
+		DevMsg("Failed to spawn with NPCMaker( %s )\n", this);
+		return 0;
+	}
+	if (!sub_10310d70(pSpawnPoint, pNpc, vecOrigin)) {
+		sub_101cd940(pNpc);
+		return 0;
+	}
+	((CNpcOriginView *)pNpc)->vfunc62(vecOrigin);
+	if (hIdeal) {
+		if (pNpc->m_b65f6)
+			((CAI_BaseNPC *)pNpc)->sub_1026e340(1);
+		else
+			((CAI_BaseNPC *)pNpc)->sub_1026e340(3);
+		pNpc->sub_102ae8e0(hIdeal);
+	}
+	return pNpc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10311a20 size=0xfa
 #include "CUnknown10311a20.h"
 
