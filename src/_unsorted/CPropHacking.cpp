@@ -16,6 +16,25 @@ CPropHacking *CPropHacking::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a5b0 size=0xc2
+#include "CPropHacking.h"
+#include "CBasePlayer.h"
+#include "CVFeat_t.h"
+CBaseEntity *sub_10070470(const char *pszName, void *a, void *b, void *c, void *d);
+// TARGET: CPropHacking::sub_1021a5b0
+void CPropHacking::sub_1021a5b0(CBaseEntity *pPlayer)
+{
+	sub_1021a1c0();
+	sub_102181a0(pPlayer);
+	sub_1021a2f0((CRestore *)pPlayer);
+	sub_100ac4e0(0, 0, 0);
+	sub_1021aca0();
+	sub_1021b410();
+	((CBasePlayer *)pPlayer)->sub_1017cef0(sub_10070470("Hacking", 0, this, this, 0));
+	CVFeatSet::Find(2)->sub_101e56e0(pPlayer);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021c560 size=0xf2
 #include "CPropHacking.h"
 #include "CEHandleGet.h"
