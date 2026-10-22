@@ -113,4 +113,10 @@ public:
 	void *sub_10380fc0(int *pState);	// stub 0x10011a86: finds a target, its state goes to *pState
 	void sub_10381460(void *pTarget);	// stub 0x10002162
 	void sub_10385a10(int a);	// CNPC_VHuman::vfunc432 (stub 0x1000698d), called directly
+	void vfunc433();	// slot 433 (plain member): CAI_BaseNPCTroika::vfunc433, sets the conditions 0xf, 0xc and 0xd, then 0x1b: through the global 0x10924a6c (slot 1) and the condition setter sub_10269a20 when flag bit 5 (sub_10381c80) is set, condition 0x4a holds and sub_10382020 accepts the slot 167 entity, else through sub_10015839
+	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
+	void sub_10269a20(int condition);	// CAI_BaseNPC condition setter (stub 0x100041b0), called directly
+	void sub_10015839(int condition);	// CAI_BaseNPC::sub_10269b50 "SetCondition" (stub 0x10015839), called directly
+	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
+	bool sub_10382020(void *pTarget);	// stub 0x1001580c
 };
