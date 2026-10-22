@@ -36,7 +36,7 @@ struct CAI_PathfinderNode
 	int m_nType;	// 0x70
 	unsigned char m_fFlags;	// 0x74
 
-	void sub_102fb0d0(float *pOutPosition, int nHull);	// the node's position for a hull (stub 0x1000d99a)
+	float *sub_102fb0d0(float *pOutPosition, int nHull);	// the node's position for a hull (stub 0x1000d99a); returns pOutPosition
 };
 
 // The node list of the network (count, then the node pointers).
