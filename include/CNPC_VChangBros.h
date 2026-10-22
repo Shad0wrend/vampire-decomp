@@ -13,6 +13,9 @@ public:
 	void vfunc103();	// "CNPC_VChangBros::Spawn": scope trace around the base spawn
 	virtual void vfunc104();	// "CNPC_VChangBros::Precache": scope trace (no entity name), base precache, 7 particle emitters, 4 weapon items
 	void vfunc431();	// "CNPC_VChangBros::NPCThink": scope trace around the base think, then schedules the next think
+	void vfunc433();	// slot 433 "CNPC_VChangBros::GatherCondition": scope trace (no entity name), the Troika base, sub_1036d600, clears the conditions 0x79 / 0x7c, then sets 0x79 / 0x7a / 0x7c when CheckForJumpAttack / sub_1036cab0 / CheckForUnited hold (each after a slot 1 call on the global 0x10924a6c)
+	void sub_1036d600();	// stub 0x1000a353, run after the base GatherCondition
+	void sub_10269a20(int condition);	// CAI_BaseNPC member (stub 0x100041b0): sets the condition
 	int vfunc461();	// "CNPC_VChangBros::SelectIdealState": scope trace, sets the ideal state (+0x1b38) to 10, then the base implementation
 	void vfunc448(int code);	// "CNPC_VChangBros::TaskFail": scope trace, a failure code in 12..15 stores 0x15d at +0x5c54, then the base implementation
 	void sub_1036c810(int a, int b);	// "CNPC_VChangBros::PrintTask": scope trace, then Msg("%s: [%s]:%s\n", a, classname, vfunc449(b))
