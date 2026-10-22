@@ -64504,6 +64504,36 @@ void __fastcall sub_102180a0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10218820 size=0x131
+#include "CBaseTerminal.h"
+#include "CEHandleGet.h"
+#include "CReliableSingleUserRecipientFilter.h"
+#include "CUnknown1070b22c.h"
+
+struct CTerminalUserView
+{
+	char m_pad[0xa8];
+	void *m_pPlayer;
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_10726070;
+
+void CBaseTerminal::sub_10218820(int a, int b)
+{
+	CTerminalUserView *pUser = (CTerminalUserView *)EHandle_Get(m_hUser);
+	if (pUser && pUser->m_pPlayer)
+	{
+		CReliableSingleUserRecipientFilter filter(pUser->m_pPlayer);
+		int msg = g_10726070;
+		g_1070b22c->vfunc65(&filter, msg);
+		g_1070b22c->vfunc67(a);
+		g_1070b22c->vfunc67(b);
+		g_1070b22c->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102189e0 size=0x14d
 #include "CBaseEntity.h"
 #include "CPropHacking.h"
