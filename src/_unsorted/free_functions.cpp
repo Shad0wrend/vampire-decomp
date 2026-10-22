@@ -67238,6 +67238,33 @@ bool CUnknown10248a50::sub_10248430(int unused, const char *pszBuffer, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248730 size=0xb0
+#include "CKeyValuesX.h"
+
+void sub_10248810(CUtlBuffer *pBuf, int nIndent);
+void sub_1006c5a0(CUtlBuffer *pBuf, const char *pszFormat, ...);
+
+void CKeyValuesX::sub_10248730(CUtlBuffer *pBuf, int nIndent)
+{
+	sub_10248810(pBuf, nIndent);
+	sub_1006c5a0(pBuf, "\"%s\"\n", sub_102480b0());
+	sub_10248810(pBuf, nIndent);
+	sub_1006c5a0(pBuf, "{\n");
+	for (CKeyValuesX *pSub = m_pSub; pSub; pSub = pSub->m_pPeer)
+	{
+		if (pSub->m_pSub)
+			pSub->sub_1001152c(pBuf, nIndent + 1);
+		else if (pSub->m_sValue && *pSub->m_sValue)
+		{
+			sub_10248810(pBuf, nIndent + 1);
+			sub_1006c5a0(pBuf, "\"%s\"\t\t\"%s\"\n", pSub->sub_102480b0(), pSub->m_sValue);
+		}
+	}
+	sub_10248810(pBuf, nIndent);
+	sub_1006c5a0(pBuf, "}\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248850 size=0xa
 void CUnknown10248850::sub_10248850(int value)
 {
