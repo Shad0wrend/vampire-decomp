@@ -45150,6 +45150,53 @@ void CCineNPC::sub_101a8070()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8460 size=0x173
+#include "CCineNPC.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+struct CCineConVarView
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+
+struct CCineNpcView
+{
+	char m_pad0000[0x5d70];
+	int m_n5d70;
+	void sub_1027f270(int a);	// stub 0x10005cc2
+};
+
+extern "C" __declspec(dllimport) void Msg(const char *pszFormat, ...);
+extern CCineConVarView *g_1072bb84;
+
+void CCineNPC::sub_101a8460(CBaseAnimating *pNpc)
+{
+	if (!g_1072bb84->vfunc1() && g_1072bb84->m_n2c)
+	{
+		if (EHandle_Get(m_hTarget5ce4))
+			Msg("Sequence %s targeting %s is done\n", sub_1000b5cd(), ((CCineNPC *)EHandle_Get(m_hTarget5ce4))->sub_1000b5cd());
+		else
+			Msg("Sequence %s targeting %s is done\n", sub_1000b5cd(), "**UNKNOWN**");
+		sub_101a6ec0();
+	}
+	if (!m_pszSequence5f4c || (EHandle_Get(m_hNPC5f94) != 0))
+	{
+		sub_101a8640(pNpc);
+	}
+	else
+	{
+		((CCineNpcView *)pNpc)->sub_1027f270(2);
+		((CCineNpcView *)pNpc)->m_n5d70 = 2;
+		((CEntityVSlots *)this)->slot584((CEntityVSlots *)pNpc, m_pszSequence5f4c, 0);
+	}
+	m_slotB.sub_100cd660((CBaseEntity *)EHandle_Get(m_h010c), this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8ac0 size=0x116
 #include "CBaseEntity.h"
 #include "CCineNPC.h"
