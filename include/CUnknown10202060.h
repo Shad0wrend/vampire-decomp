@@ -1,11 +1,14 @@
 // CUnknown10202060: an object holding an entity index at +0x1c; real name not yet known.
 #pragma once
 
+class CUnknown101f9bf0;
+
 class CUnknown10202060
 {
 public:
 	char pad0[0x1c];
 	int m_nEntIndex;	// 0x1c
+	CUnknown101f9bf0 *m_pMods;	// 0x20: the stat modifiers of the owner
 
 	int sub_10202060();	// the field at +0x9c of the entity at m_nEntIndex (0 when there is none)
 };
