@@ -6,12 +6,14 @@
 
 class CBaseEntity;
 class CBaseAnimating;
+class CCineNPC;
 
 // Element of the three 0x18-byte containers at +0x5f9c, +0x5fb4 and +0x5fcc[8].
 struct CCineNPCSlot
 {
 	int m_data[6];
 	void sub_10015708();	// destructor
+	void sub_100cd660(CBaseEntity *pEnt, CCineNPC *pOwner, int a);	// stub 0x10010794: hands (entity, owner, 0) to the container
 };
 
 class CCineNPC
@@ -33,7 +35,8 @@ public:
 	const char *sub_1000b5cd();	// CBaseEntity::GetDebugName (stub 0x1000b5cd), called directly
 	int sub_100ac4e0(void *pFunc, int a, int b);	// CBaseEntity::ThinkSet (stub 0x10007fe5), called directly
 	char vfunc584(CBaseAnimating *pNpc, const char *pszSequence, char bLoop);	// slot 584: marks the script as started (byte at +0x5f91), looks the sequence up on pNpc (Warning when unknown, then sequence 0), resets its sequence info; without a name and with bLoop set hands pNpc to sub_101a8460 and returns false; developer Msg "Sequence %s targeting %s is starting" and sub_101a6ec0; returns true
-	void sub_101a8460(CBaseAnimating *pNpc);	// stub 0x10012a80
+	void sub_101a8460(CBaseAnimating *pNpc);	// stub 0x10012a80: the sequence is done: developer Msg "Sequence %s targeting %s is done" and sub_101a6ec0 (stub 0x10002225), then either sub_101a8640 or (with a named follow-up sequence at +0x5f4c that is not live at +0x5f94) the NPC's state 2 and slot 584 on that sequence, then hands (the entity behind +0x10c, this, 0) to the container at +0x5fb4
+	void sub_101a8640(CBaseAnimating *pNpc);	// stub 0x10013a7a
 	void sub_101a6ec0();	// called directly
 	void vfunc113();	// slot 113 "CCineNPC::Activate" (declared as a plain member): the base work, then finds the NPC named at +0x5f54 (the first one with an NPC object at +0x94; DevMsg "Could not find NPC %s in CCineNPC::Activate for %s" when none), plays the sounds of its model for the three names at +0x5f44 / +0x5f4c / +0x5f48 (sub_10428880; DevMsg "NPC %s has no model in CCineNPC::Activate for %s" without a model), looks up the entity named at +0x5f58 and keeps its handle at +0x5f94 (the name is cleared when that is gone)
 	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
@@ -50,7 +53,8 @@ public:
 	unsigned int m_hTarget5ce4;	// 0x5ce4: entity handle of the entity the script targets
 	char m_pad5ce8[0x5f48 - 0x5ce8];
 	const char *m_pszScript5f48;	// 0x5f48: the script's name
-	char m_pad5f4c[0x5f54 - 0x5f4c];
+	const char *m_pszSequence5f4c;	// 0x5f4c: the follow-up sequence name
+	char m_pad5f50[0x5f54 - 0x5f50];
 	const char *m_pszTarget5f54;	// 0x5f54: the name of the NPC the script plays on
 	int m_n5f58;	// 0x5f58
 	char m_pad5f5c[0x5f68 - 0x5f5c];
