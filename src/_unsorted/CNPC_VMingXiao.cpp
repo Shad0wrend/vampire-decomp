@@ -48,6 +48,64 @@ void CNPC_VMingXiao::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10392a70 size=0x16d
+#include "CNPC_VMingXiao.h"
+
+extern "C++" __declspec(dllimport) void DevMsg(const char *fmt, ...);
+void sub_101cdba0(float *pOrigin, float a, float b, float c, float d, int e, int f);
+
+#define MXV(n) virtual void m##n();
+#define MXV10(p) MXV(p##0) MXV(p##1) MXV(p##2) MXV(p##3) MXV(p##4) MXV(p##5) MXV(p##6) MXV(p##7) MXV(p##8) MXV(p##9)
+struct CMingXiaoView	// the NPC as seen for slot 220 (GetAbsOrigin)
+{
+	MXV(0) MXV(1) MXV(2) MXV(3) MXV(4) MXV(5) MXV(6) MXV(7) MXV(8) MXV(9)
+	MXV10(1) MXV10(2) MXV10(3) MXV10(4) MXV10(5) MXV10(6) MXV10(7) MXV10(8) MXV10(9)
+	MXV10(10) MXV10(11) MXV10(12) MXV10(13) MXV10(14) MXV10(15) MXV10(16) MXV10(17) MXV10(18) MXV10(19)
+	MXV10(20) MXV(210) MXV(211) MXV(212) MXV(213) MXV(214) MXV(215) MXV(216) MXV(217) MXV(218) MXV(219)
+	virtual float *vfunc220();
+};
+
+// TARGET: CNPC_VMingXiao::vfunc259
+void CNPC_VMingXiao::vfunc259(int *pEvent)
+{
+	switch (*pEvent)
+	{
+	case 0x7f8:
+		if (m_nMode673c == 2)
+		{
+			sub_10398db0();
+			return;
+		}
+		DevMsg("WARNING: Ming Xiao is getting NPC_EVENT_PICKUP but is not at VMING_XIAO_TO_MODE_GRABBING.\n");
+		return;
+	case 0x802:
+	case 0x803:
+		break;
+	case 0x834:
+		sub_101cdba0(((CMingXiaoView *)this)->vfunc220(), 5.0f, 0.6f, 0.2f, 512.0f, 0, 0);
+		return;
+	case 0x835:
+		sub_101cdba0(((CMingXiaoView *)this)->vfunc220(), 15.0f, 1.0f, 1.5f, 1024.0f, 0, 0);
+		return;
+	default:
+		sub_1029b290(pEvent);
+		return;
+	case 0xbd7:
+		sub_102c42a0("Ming_xiao_vomit_emitter", this, "Bip01 MouthRoot", 0);
+		sub_1029b290(pEvent);
+		return;
+	case 0xbbd:
+		if (m_nMode673c == 4)
+		{
+			sub_103990c0();
+			return;
+		}
+		DevMsg("WARNING: Ming Xiao is getting EVENT_WEAPON_THROW but is not at VMING_XIAO_TO_MODE_THROWING.\n");
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10392c40 size=0xf9
 #include "CNPC_VMingXiao.h"
 #include "CUnknown1027d990.h"
