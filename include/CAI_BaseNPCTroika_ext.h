@@ -39,3 +39,5 @@
 	void vfunc333(float flInterval);	// slot 333 (plain member): ticks the float at +0x6570 down by flInterval while the float at +0x6264 is below 512.0f, re-rolling it with the random stream when it runs out (slot 276 first), refreshes the next-think time at +0x5d6c while the dialog partner (+0xfe8) lives, then sub_102c0010 and CAI_BaseNPC::vfunc333
 	void sub_102c0010(float flInterval);	// stub 0x10005484, called directly by vfunc333
 	void sub_1026b810(float flInterval);	// CAI_BaseNPC::vfunc333 (stub 0x10011fb3), called directly by vfunc333
+	bool sub_10298840(CBaseEntity *pDoor);	// lets the NPC use the door: asks the door (slot 246) for its use record and starts the activity it names; when the door's lock check (sub_100027d4) refuses, runs sub_1027de00(pDoor) and answers false, else sends the door the input "Open" and answers true
+	void sub_1027de00(CBaseEntity *pDoor);	// stub 0x10007b7b, run when the door refuses the NPC
