@@ -36,4 +36,6 @@ public:
 	void sub_103e05e0(int nSound);	// emits the sound nSound from the look origin, in the look direction (as angles), to the players that can hear it (a PAS filter)
 	void vfunc444(int *pTask);	// slot 444 "CNPC_VZombie::RunTask"-like (plain member): task handler of the zombie, unknown tasks go to CNPC_VAnimal::vfunc444
 	void sub_10273e80(char bForce);	// CAI_BaseNPC member (stub 0x1000ac68), called directly
+	void sub_103e0980(int a);	// hands the zombie the maker's value (CNPCMaker_Zombie::vfunc617), stub 0x1001128e
+	void sub_1029f300(int a);	// stub 0x10008931, called directly on the new zombie (also on the maker)
 };
