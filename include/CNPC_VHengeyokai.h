@@ -97,4 +97,6 @@ public:
 	bool sub_10381e90(CBaseEntity *pEnt);	// picks the bone of the ragdoll pEnt (bone name table at 0x1063bd88) closest to this NPC (within 1025 units) into +0x6684 / +0x6668; true when one was found (any ragdoll-less entity: this NPC's own origin and bone 0)
 	int sub_10382f60();	// schedule pick by the distance to the slot 167 entity: clears +0x6678; 0x15c when condition 0x1a holds or there is no such entity, else 0x16a, or 0x15c by a roll (RandomInt(0, 99) below 70 / 40) beyond 400 / 200 units
 	char sub_10269d30(int condition);	// stub 0x1001482b: tests the condition
+	bool sub_10381cd0();	// picks the nearest "fish" entity (within 1024 units, not claimed per sub_10382aa0, with a zero vector from slot 199) as the target: stores its handle at +0x6664 (-1 and false when there is none), tells sub_102c4380(the entity) and returns sub_10381e90(it)
+	void sub_102c4380(CBaseEntity *pEnt);	// stub 0x10008a94, called directly
 };
