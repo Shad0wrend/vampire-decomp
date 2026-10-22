@@ -98079,6 +98079,76 @@ bool CWeaponThrown_Grenade_Frag::sub_103ee660()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee6f0 size=0x121
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CRecipientFilter.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b22c.h"
+
+class S_SoundSystem
+{
+public:
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void slot3(const CRecipientFilter *pFilter, int entindex, int channel, const char *pszSample, float flVolume, float flAttenuation, int flags, int pitch, int a, int b, int c, int d);
+};
+
+struct S_Globals { char pad[0xc]; float curtime; };
+
+struct S_EntView
+{
+	char m_pad[0x2e0];
+	int m_pEdict;
+};
+
+#define EO10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define EO100(p) EO10(p##0) EO10(p##1) EO10(p##2) EO10(p##3) EO10(p##4) EO10(p##5) EO10(p##6) EO10(p##7) EO10(p##8) EO10(p##9)
+
+class S_EntOrigin
+{
+public:
+	EO100(a)	// slots 0..99
+	EO100(b)	// slots 100..199
+	EO10(c0) EO10(c1)	// slots 200..219
+	virtual void c20(); virtual void c21();	// 220, 221
+	virtual Vector *slot222(Vector *pOut);
+};
+
+extern S_SoundSystem *g_1070b248;
+extern CUnknown1070b22c *g_1070b22c;
+extern S_Globals *g_1070b228;
+extern char vt_104470dc[];
+extern char vt_104470b0[];
+
+struct S_PASFilter
+{
+	void *m_vptr;
+	int m_pad04;
+	CRecipientVec m_Vec;
+	int m_n1c;
+	char m_pad20[8];
+	char m_b28;
+};
+
+void CWeaponThrown_Grenade_Frag::sub_103ee6f0()
+{
+	S_PASFilter filter;
+	Vector pos;
+	S_EntOrigin *pEnt = (S_EntOrigin *)this;
+	Vector *pOrigin = pEnt->slot222(&pos);
+	((CRecipientFilter *)&filter)->sub_1019ce00();
+	filter.m_vptr = vt_104470dc;
+	((CRecipientFilter *)&filter)->sub_1019d280(&pOrigin->x);
+	filter.m_vptr = vt_104470b0;
+	((CRecipientFilter *)&filter)->sub_1019d4b0(*pEnt->slot222(&pos), 0.8f);
+	int edict = ((S_EntView *)this)->m_pEdict;
+	g_1070b248->slot3((CRecipientFilter *)&filter, g_1070b22c->vfunc35(edict), 1, "weapons/ranged/grenade_pineapple/tic.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	sub_103ee660();
+	m_flNextThink17c = g_1070b228->curtime + 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eec60 size=0xd
 void CUnknown103eec60::sub_103eec60(char value)
 {
