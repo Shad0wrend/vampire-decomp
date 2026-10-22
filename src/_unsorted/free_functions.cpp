@@ -53647,6 +53647,38 @@ bool CUnknown101dbe30::sub_101dbe30(void *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dbed0 size=0x180
+#include "CUnknown101dbe30.h"
+#include "CBaseEntity.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "IVEngineServer.h"
+#include "CUnknown1070b248.h"
+
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *fmt, ...);
+struct CSoundOwnerView { int m_pad; const char *m_pszName; };
+extern CSoundOwnerView *g_10739a74;
+extern IVEngineServer *g_1070b22c;
+extern CUnknown1070b248 *g_1070b248;
+
+// TARGET: CUnknown101dbe30::sub_101dbed0
+void CUnknown101dbe30::sub_101dbed0(CBaseEntity *pEntity)
+{
+	if (sub_101dbe10())
+	{
+		const char *pszOwner = g_10739a74 ? (g_10739a74->m_pszName ? g_10739a74->m_pszName : "") : "NULL";
+		const char *pszEntity = pEntity->m_name26c ? pEntity->m_name26c : "";
+		const char *pszSound = m_field0000 ? (const char *)m_field0000 : "";
+		DevMsg(3, "Discipline<%s>: Sound Play: '%s' on %s (%s)\n", pszOwner, pszSound, pszEntity, pEntity->sub_1009f200());
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)pEntity, 0.8f);
+		pszSound = m_field0000 ? (const char *)m_field0000 : "";
+		int edict = pEntity->m_pEdict2e0;
+		int entindex = g_1070b22c->vfunc35(edict);
+		g_1070b248->vfunc3(&filter, entindex, m_field0004, pszSound, 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dc260 size=0x150
 void *operator new(unsigned int);
 void operator delete(void *);
