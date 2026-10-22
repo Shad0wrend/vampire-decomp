@@ -64,10 +64,16 @@ public:
 
 	char m_pad0004[0x670 - 4];
 	int m_n670;	// 0x670: state, 1 while transformed
-	char m_pad0674[0x6664 - 0x674];
+	char m_pad0674[0x5cc0 - 0x674];
+	int m_n5cc0;	// 0x5cc0: schedule state, 2 while a schedule is running
+	char m_pad5cc4[0x5d8c - 0x5cc4];
+	unsigned int m_flags5d8c;	// 0x5d8c: bit 31 is cleared by the cancel path
+	char m_pad5d90[0x6664 - 0x5d90];
 	unsigned int m_h6664;	// 0x6664: entity handle (the target of the bone attack)
 	int m_n6668;	// 0x6668: index of the bone name used by the attack
-	char m_pad666c[0x6684 - 0x666c];
+	char m_pad666c[0x6678 - 0x666c];
+	int m_n6678;	// 0x6678
+	char m_pad667c[0x6684 - 0x667c];
 	Vector m_vecBonePos;	// 0x6684: position of the chosen bone
 	char m_pad6690[0x6694 - 0x6690];
 	char m_b6694;	// 0x6694
@@ -99,4 +105,8 @@ public:
 	char sub_10269d30(int condition);	// stub 0x1001482b: tests the condition
 	bool sub_10381cd0();	// picks the nearest "fish" entity (within 1024 units, not claimed per sub_10382aa0, with a zero vector from slot 199) as the target: stores its handle at +0x6664 (-1 and false when there is none), tells sub_102c4380(the entity) and returns sub_10381e90(it)
 	void sub_102c4380(CBaseEntity *pEnt);	// stub 0x10008a94, called directly
+	void vfunc448(int a);	// slot 448 (plain member): while a schedule runs (+0x5cc0 == 2) and condition 0x5c holds clears bit 31 of +0x5d8c; while sub_10381be0 holds starts the timer for the target (+0x6664) and sub_10381ba0(0); without the flag bit 5 (sub_10381c80) calls sub_102c43b0(0.75f) and drops the target; clears +0x6678, then the Troika base
+	void sub_10381ba0(int a);	// stub 0x10014c63, called directly
+	void sub_102c43b0(float f);	// stub 0x10013110, called directly
+	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
 };
