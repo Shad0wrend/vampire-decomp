@@ -11997,6 +11997,65 @@ float CUnknown1007ce20::sub_1007ceb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007cfc0 size=0x16d
+#include "CUnknown1007ce20.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+void sub_1007f510(void **pDest, void *const *pSrc);
+
+static inline void GrowVector(UtlMem6 *v, int num)
+{
+	if (v->m_size + num > v->m_allocationCount)
+		v->sub_1007fce0(v->m_size + num - v->m_allocationCount);
+	v->m_size += num;
+	v->m_pElements = v->m_pMemory;
+}
+
+static inline void ShiftRight(UtlMem6 *v, int elem, int num)
+{
+	int numToMove = v->m_size - elem - num;
+	if (numToMove > 0)
+		memmove(&v->m_pMemory[elem + num], &v->m_pMemory[elem], numToMove * 4);
+}
+
+static inline int InsertBefore(UtlMem6 *v, int elem, void *const *pValue)
+{
+	GrowVector(v, 1);
+	ShiftRight(v, elem, 1);
+	sub_1007f510(&v->m_pMemory[elem], pValue);
+	return elem;
+}
+
+// TARGET: CUnknown1007ce20::sub_1007cfc0
+void CUnknown1007ce20::sub_1007cfc0(char bUseStart, int a, int b)
+{
+	int i = 0;
+	UtlMem6 *pTimed = &m_vec3c;
+	UtlMem6 *pType1 = &m_vec64;
+	m_n5c = 0;
+	pTimed->m_size = 0;
+	pType1->m_size = 0;
+	for (; i < m_size; i++) {
+		CUnknown10075aa0 *pEvent = m_pMemory[i];
+		pEvent->sub_10077860();
+		if (pEvent->sub_10075b70() == 1)
+			InsertBefore(pType1, pType1->m_size, (void **)&pEvent);
+		else if (pEvent->sub_10076b10())
+			InsertBefore(pTimed, pTimed->m_size, (void **)&pEvent);
+	}
+	m_f8c = sub_1007ce20();
+	m_f90 = sub_1007ceb0();
+	float f = m_f90;
+	if (bUseStart)
+		f = m_f8c;
+	m_f7c = f;
+	m_n9c = 0;
+	m_n94 = m_size;
+	m_n84 = a;
+	m_n88 = b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfc0 size=0xa
 struct CUnknown1007dfc0 { char p[0x78]; int a; void sub_1007dfc0(int v); };
 // TARGET: CUnknown1007dfc0::sub_1007dfc0
