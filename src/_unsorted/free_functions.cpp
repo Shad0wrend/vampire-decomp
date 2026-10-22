@@ -44247,6 +44247,39 @@ void sub_101b1880(int a, int b, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1fb0 size=0x8e
+#include "CSoundEmitterSystemBase.h"
+
+struct CEngineSoundView
+{
+	virtual int vfunc0(const char *pszWave, int a);
+};
+
+extern CSoundEmitterSystemBase g_1072be18;
+extern CEngineSoundView *g_1070b248;
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+// TARGET: sub_101b1fb0
+void sub_101b1fb0(const char *pszName, int a)
+{
+	int index = g_1072be18.sub_101b2f60(pszName);
+	if (g_1072be18.sub_101b31a0(index)) {
+		CSoundParametersInternal *pSound = g_1072be18.sub_101b3730(index);
+		if (pSound && pSound->m_bPrecache1d) {
+			int nWaves = pSound->m_nWaves;
+			if (nWaves == 0) {
+				DevMsg("CSoundEmitterSystem:  sounds.txt entry '%s' has no waves listed under 'wave' or 'rndwave' key!!!\n", pszName);
+				return;
+			}
+			for (int i = 0; i < nWaves; i++) {
+				CSoundWaveEntry *pWave = &pSound->m_pWaves[i];
+				g_1070b248->vfunc0(g_1072be18.sub_101b4c90(pWave), a);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2070 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
