@@ -91227,6 +91227,48 @@ bool CUnknown103bf330::sub_103bf330(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bfa50 size=0x166
+#include "CNPC_VTzimisce.h"
+#include "CEntityVSlots.h"
+
+struct CTzEnt : CEntityVSlots
+{
+    void sub_102d1420(float flValue);
+};
+
+CBaseEntity *sub_102d24b0(CNPC_VTzimisce *pNPC, CBaseEntity *pEnt, int nType, unsigned int nFlags, float flRadius);
+
+int CNPC_VTzimisce::sub_103bfa50(CBaseEntity *pEnt)
+{
+    if (!pEnt) {
+        *(CBaseEntity **)((char *)this + 0x5ddc) = 0;
+        return 0;
+    }
+    CTzEnt *pA = (CTzEnt *)sub_102d24b0(this, pEnt, 0x36b0, 0, 200.0f);
+    CTzEnt *pB = (CTzEnt *)sub_102d24b0(this, pEnt, 0x36b1, 0, 200.0f);
+    if (pA) {
+        if (pB) {
+            Vector vecA = *pA->slot220() - *((CTzEnt *)pEnt)->slot220();
+            Vector vecB = *pB->slot220() - *((CTzEnt *)pEnt)->slot220();
+            if (vecA.LengthSqr() < vecB.LengthSqr()) {
+                pB->sub_102d1420(0.5f);
+            } else {
+                pA->sub_102d1420(0.5f);
+                goto tryB;
+            }
+        }
+        *(CBaseEntity **)((char *)this + 0x5ddc) = (CBaseEntity *)pA;
+        return sub_103bfc20((CBaseEntity *)pA, pEnt) ? 0x36b0 : 0x36ba;
+    }
+tryB:
+    if (pB) {
+        *(CBaseEntity **)((char *)this + 0x5ddc) = (CBaseEntity *)pB;
+        return sub_103bfc20((CBaseEntity *)pB, pEnt) ? 0x36b1 : 0x36bb;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c0860 size=0x4a
 struct V3 { float x, y, z; };
 #define D(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
