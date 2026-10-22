@@ -25,4 +25,5 @@ public:
 	int sub_102000e0(const char *name, int startIdx);	// "CVStatInfoList_t::LookupNextPart" (another instance)
 	CVStatInfo_t *sub_10200370(int idx);	// element accessor: the record at idx, or a shared default record when idx is out of range
 	CVDmgBlock16_t *sub_10200260(const char *name);	// "CVStatInfoList_t::LookupDependency": scope trace, a function-local static block set to (the table entry for +0x2c, the index of the stat named name) and returned
+	void sub_10200410();	// "CVStatInfoList_t::Debug_Display": scope trace; prints the name (the text at +0x24), the "CostStrings" record's texts of the list's cost (first, then second sub cost) unless it is null, then Debug_Display of every record
 };
