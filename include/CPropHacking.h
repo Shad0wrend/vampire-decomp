@@ -10,6 +10,13 @@ struct CPropHackingRecord	// 0xd4 byte element of the array at +0x9a0
 	char m_pad0000[0xd4];
 };
 
+struct CPropHackingScreenRecord	// 0x2c0 byte element of the array at +0xa14
+{
+	char m_szFirst[0x20];	// 0x00
+	char m_szSecond[0x20];	// 0x20
+	char m_szText[0x280];	// 0x40
+};
+
 class CPropHacking : public CBaseEntity
 {
 public:
@@ -27,9 +34,10 @@ public:
 	void sub_1021a1c0();	// stub 0x10003deb, run at the end of the constructor
 	void sub_10218ff0(int a, int b);	// sends the user message 0 with the byte 1 and the two values to every player but the one of this entity (a reliable entity message filter)
 	const char *sub_10219400(int index);	// stub 0x1000bde8: the screen text number index
-	void sub_10219120();	// stub 0x1000aa1f, called directly
 	void sub_1021b410();	// prints the current screen line (user name from the handle at +0x8c) and the selected record, then clears bit 1 of +0x81c and sub_10219120
-	void sub_1021a740();	// builds a random "noise" screen line: a random column and row (RandomInt within the line width left after the text at +0x904 and the screen height at +0x814), one of two page printers, the text at +0x904, then the next think at +0x9e4 seconds ahead
+	void sub_10218db0();	// stub 0x10005812: starts a new page, run first by sub_1021c260
+	void sub_10219240();	// stub 0x1000f196: ends the page, run last by sub_1021c260
+	void sub_1021c260();	// prints the selected record (+0x9f4 of the array at +0xa14): the screen texts 0x17 / 0x16 with its three strings, then the five heading texts 0x18..0x1c
 
 	char m_pad03e0[0x814 - 0x3e0];
 	int m_n0814;	// 0x814
@@ -37,8 +45,7 @@ public:
 	unsigned int m_flags081c;	// 0x81c
 	char m_pad0820[0x83c - 0x820];
 	char m_b083c;	// 0x83c
-	char m_pad083d[0x904 - 0x83d];
-	char m_szText0904[0x984 - 0x904];	// 0x904: the text line
+	char m_pad083d[0x984 - 0x83d];
 	char m_b0984;	// 0x984
 	char m_b0985;	// 0x985
 	char m_pad0986[0x98c - 0x986];
@@ -52,12 +59,15 @@ public:
 	char m_pad09b0[0x9dc - 0x9b0];
 	int m_n09dc;	// 0x9dc
 	int m_n09e0;	// 0x9e0
-	float m_flDelay09e4;	// 0x9e4
-	char m_pad09e8[0x9ec - 0x9e8];
+	char m_pad09e4[0x9ec - 0x9e4];
 	char m_b09ec;	// 0x9ec
-	char m_pad09ed[0xa10 - 0x9ed];
+	char m_pad09ed[0x9f4 - 0x9ed];
+	int m_nSelected09f4;	// 0x9f4: the selected record
+	char m_pad09f8[0xa10 - 0x9f8];
 	char m_bEmailState;	// 0xa10
-	char m_pad0a11[0xa28 - 0xa11];
+	char m_pad0a11[0xa14 - 0xa11];
+	CPropHackingScreenRecord *m_pScreenRecords0a14;	// 0xa14
+	char m_pad0a18[0xa28 - 0xa18];
 	char m_szEmailState[0x80];	// 0xa28
 	char m_pad0aa8[0xc28 - 0xaa8];
 	int m_n0c28;	// 0xc28
