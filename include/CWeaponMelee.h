@@ -16,10 +16,12 @@ public:
 	CWeaponMelee();
 	bool vfunc283(CBaseEntity *pTarget);	// slot 283: its own (0x103ea6d0), true when pTarget answers slot 158, the weapon has an owner other than pTarget and the owner's centre (slot 192) is within the melee range of pTarget's
 	bool vfunc315();	// when the weapon has an owner: plays the swing, picks a sound name by the owner state (slots 272 / 273), and queries the animation (slots 342, 343, 344)
+	void vfunc326();	// slot 326: its own (0x103eaca0): picks the swing activity (0x4b, 0x4c or 0x53) and tries it through slot 372 in a few ways, then tells the owner's player (slot 429) when one of them worked
 	void vfunc327();	// slot 327: its own (0x103eae00)
 	void vfunc339();	// slot 339: kicks the owner player's view with a random (x, y) punch from the weapon's roll record (+0x384..+0x398), scaled down by the owner's stat 1 of its type 0 list
 	void vfunc367(int a, int b, int c);	// forwards to sub_103ea7e0 with the constant 0x4b
 	void vfunc370(int *event, CBaseCombatWeapon *other);	// animation events: 0xbb9 / 0xbd6..0xbe7 run slot 326 unless other has its dword at +0xa8 set, 0xfa1 / 0xfa2 set a bodygroup from the event's string, the rest go to the base class
+	virtual char vfunc372(int a, int b, int c);	// slot 372 (stub 0x100148e9): starts the swing activity a; the first slot beyond CBaseCombatWeapon's 372
 	void *sub_100011f4();	// the weapon's owner (CAI_BaseNPCTroika::sub_10252240 stub)
 	char sub_1000c37e(int a);	// helper taking the result of slot 342 (stub)
 	void sub_10093b10(int group, int value);	// CBaseAnimating::SetBodygroup, called directly (stub 0x10001bb8)
