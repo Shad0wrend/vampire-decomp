@@ -15,4 +15,5 @@ public:
 	void sub_1026dc00(int flags);	// CAI_BaseNPC member (stub 0x10012855), called by Spawn with 1 and 0x800000
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	float vfunc516();	// as in CGeneric_NPC (transplant)
+	void vfunc495();	// slot 495 (plain member): emits one of the 0x1062a008 sounds (channel 2, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
 };
