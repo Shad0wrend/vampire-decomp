@@ -104383,6 +104383,68 @@ void CBaseCombatWeapon::sub_1040dcf0(CBaseEntity *pVictim, const float *pDir, vo
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040e880 size=0xfe
+#include "CWeaponPhysCannon.h"
+#include "CWeaponMelee.h"
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101e8480.h"
+#include "CUnknown100a8340.h"
+
+struct CPhysObjMass
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual float GetMass();
+};
+struct COwnerView
+{
+	char m_pad[0xa8];
+	CBasePlayer *m_pPlayer;
+};
+struct CGlobalVarsView
+{
+	char m_pad[0xc];
+	float curtime;
+};
+
+extern CUnknown101e8480 g_10739d08;
+extern CGlobalVarsView *g_1070b228;
+void sub_101cebc0(CBasePlayer *p, int a, int b);
+typedef float (CUnknown101e8480::*PFN_FLOAT)(CBaseCombatCharacter *);
+
+bool CWeaponPhysCannon::sub_1040e880(CBaseEntity *pEnt)
+{
+	if (m_bGrab911)
+		return false;
+	CPhysObjMass *pPhys = (CPhysObjMass *)pEnt->m_obj36c;
+	float flMass = pPhys ? pPhys->GetMass() : 0.0f;
+	COwnerView *pOwner = (COwnerView *)sub_102521f0();
+	CBasePlayer *pPlayer = (pOwner == 0) ? 0 : pOwner->m_pPlayer;
+	PFN_FLOAT pfn = (PFN_FLOAT)&CUnknown101e8480::sub_101e8480;
+	if ((g_10739d08.*pfn)((CBaseCombatCharacter *)pPlayer) < flMass)
+	{
+		sub_101cebc0(pPlayer, 0x2f, 0);
+		pPlayer->vfunc456();
+		return false;
+	}
+	if (!((CWeaponMelee *)this)->sub_10411160(pEnt, 0))
+		return false;
+	m_grab.m_bFlag45 = 0;
+	m_grab.m_f40 = 0;
+	m_bGrab911 = 1;
+	if (pPlayer)
+	{
+		sub_1040dde0(pEnt, pPlayer, 0);
+		((CUnknown100a8340 *)pEnt)->sub_100a8340(0, 0);
+	}
+	m_grab.sub_1040c5d0((CBaseEntity *)pPlayer, pEnt, (int)pPhys);
+	*(float *)((char *)this + 0x734) = g_1070b228->curtime + 0.4f;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104103c0 size=0x9b
 #include "CCollisionProperty.h"
 #include "matrix3x4_t.h"
