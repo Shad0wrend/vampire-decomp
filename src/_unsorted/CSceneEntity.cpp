@@ -157,6 +157,37 @@ void CSceneEntity::vfunc266(int unused, const char *pszArgs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081380 size=0x9a
+#include <stdlib.h>
+#include "CSceneEntity.h"
+#include "CUnknown10078540.h"
+
+struct CSceneEventSpeed	// the choreography event: text parameter, ramp state, elapsed time
+{
+	const char *sub_10075c50();
+	int sub_10078610();
+	int sub_100785d0();
+	float sub_10075e70();
+	void sub_1007dfc0(int value);
+};
+
+void CSceneEntity::vfunc265(void *pTarget, void *pEvent)
+{
+	CSceneEventSpeed *pSpeed = (CSceneEventSpeed *)pEvent;
+	float flSpeed = (float)atof(pSpeed->sub_10075c50());
+	if (pSpeed->sub_10078610() != -1)
+	{
+		int n = pSpeed->sub_100785d0();
+		if (n <= 0)
+			return;
+		((CUnknown10078540 *)pSpeed)->sub_100785f0(n - 1);
+	}
+	((CSceneEventSpeed *)pTarget)->sub_1007dfc0(*(int *)&flSpeed);
+	m_f49c = (m_f49c - (pSpeed->sub_10075e70() - m_f4a0) < 0.0f) ? 0.0f : m_f49c - (pSpeed->sub_10075e70() - m_f4a0);
+	m_f4a0 = flSpeed;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081620 size=0xad
 #include "CSceneEntity.h"
 #include "CGlobalEntityList.h"
