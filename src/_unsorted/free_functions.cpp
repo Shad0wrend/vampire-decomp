@@ -60609,6 +60609,99 @@ void NameSet::sub_10206980(const char *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10206aa0 size=0x13c
+#include "CUnknown10206c70.h"
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101ecae0.h"
+#include "CUnknown101ecb10.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+
+extern int g_10738d14;
+extern char g_1073a354[];
+extern CUnknown1070b22c *g_1070b22c;
+
+static inline void S_strcpy(char *dest, const char *src)
+{
+	char c;
+	do {
+		c = *src++;
+		*dest++ = c;
+	} while (c);
+}
+
+static inline void S_strcpyIdx(char *dest, const char *src)
+{
+	int i = 0;
+	char c;
+	do {
+		c = src[i];
+		dest[i] = c;
+		i++;
+	} while (c);
+}
+
+static inline const char *S_STRING(const char *const &p)
+{
+	return p ? p : g_106b8540;
+}
+
+struct S_EntName
+{
+	char m_pad[0x11c];
+	const char *m_classname;
+};
+
+struct S_Char
+{
+	char m_pad0[0xa8];
+	void *m_pObj;
+	char m_pad1[0x2e0 - 0xac];
+	int m_pEdict;
+
+	void sub_10337980(int nValue);
+	S_EntName *sub_1032e7b0();
+	S_EntName *sub_10341510();
+	void sub_1015f9e0();
+};
+
+struct S_Applier
+{
+	void sub_10207680(int nOld, CBaseCombatCharacter *pChar);
+	void sub_10206da0(int nTemplate, CBaseCombatCharacter *pChar);
+};
+
+void CUnknown10206c70::sub_10206aa0(int nTemplate, CBaseCombatCharacter *pChar)
+{
+	S_Char *pC = (S_Char *)pChar;
+	*(char *)this = 1;
+	if (nTemplate >= 0 && nTemplate < g_10738d14) {
+		int nOld = pChar->sub_10337860();
+		if (nTemplate != nOld) {
+			char szBuf[32];
+			pC->sub_10337980(-1);
+			if (pC->sub_1032e7b0())
+				S_strcpy(szBuf, S_STRING(pC->sub_1032e7b0()->m_classname));
+			else
+				S_strcpyIdx(szBuf, "item_w_unarmed");
+			if (pC->sub_10341510())
+				S_strcpy(szBuf, S_STRING(pC->sub_10341510()->m_classname));
+			else
+				S_strcpyIdx(szBuf, "item_w_lt_cloth");
+			int edict = pC->m_pEdict;
+			((CUnknown101ecae0 *)g_1073a354)->sub_101ecae0(g_1070b22c->vfunc35(edict));
+			((S_Applier *)this)->sub_10207680(nOld, pChar);
+			((S_Applier *)this)->sub_10206da0(nTemplate, pChar);
+			edict = pC->m_pEdict;
+			((CUnknown101ecb10 *)g_1073a354)->sub_101ecb10(g_1070b22c->vfunc35(edict));
+			if (pC->m_pObj)
+				pC->sub_1015f9e0();
+		}
+	}
+	*(char *)this = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206c70 size=0xe6
 #include "CUnknown10206c70.h"
 #include "CBaseCombatCharacter.h"
