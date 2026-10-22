@@ -33,4 +33,5 @@ public:
 	void sub_10218ec0(int a, int b);	// stub 0x10002ce8, called with (1, 1) at the start of a page
 	void sub_10218db0();	// stub 0x10005812, called at the start of a page
 	void sub_1021b2b0();	// stub 0x100026fd, prints the border line of a page
+	void sub_102192a0(char value);	// sends the terminal user message (type 0, a byte 9 and the char value) to the players, the filter holding every player and the terminal's own client index
 };
