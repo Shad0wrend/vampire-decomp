@@ -51,6 +51,7 @@ public:
 
 	CBaseEntity *sub_100f7060(CBaseEntity *pCurrent);	// "CGlobalEntityList::NextEnt": the first entity's slot-4 result when pCurrent is null, else the first non-null slot-4 result after pCurrent in the list
 	CBaseEntity *sub_100f7770(CBaseEntity *pStart, const char *szName, CBaseEntity *pSearching, CBaseEntity *pActivator);	// "CGlobalEntityList::FindEntityByName" (called through the stub at 0x1000b4b5)
+	CBaseEntity *sub_100f7f20(CBaseEntity *pStart, const char *szName, CBaseEntity *pSearching, CBaseEntity *pActivator);	// a name search with the same four arguments as sub_100f7770 (stub 0x1000b9b0)
 	CBaseEntity *sub_100f7c30(CBaseEntity *pStart, const char *szName, const Vector *pCenter, float flRadius, CBaseEntity *pSearching, CBaseEntity *pActivator);	// "FindEntityByNameWithin" (stub 0x10012193): sub_100f7770, then the first one with an edict within flRadius of pCenter; matched as a free function, called as a member here
 	CBaseEntity *sub_100f7380(CBaseEntity *pStart, const char *pszClassname);	// "CGlobalEntityList::FindEntityByClassname": the first entity after pStart (the first one when null) whose classname matches
 	CBaseEntity *sub_100f7930(CBaseEntity *pStart, const char *szName);	// the first entity after pStart whose target name matches szName (stub 0x1000e665)
