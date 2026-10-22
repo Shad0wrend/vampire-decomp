@@ -31520,6 +31520,49 @@ void CMoverUnit::sub_10117310(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101189e0 size=0xfd
+#include "CBaseEntity.h"
+
+void *sub_100aa720(int nSize);
+extern char vt_10462064[];
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+struct CGameUIOutput	// a 0x18 byte output member (constructor stub 0x10002ddd, function 0x100cd2a0)
+{
+	void sub_100cd2a0();
+};
+
+struct CGameUIAux	// a 0x18 byte member (constructor stub 0x1001052d)
+{
+	void sub_101192e0();
+};
+
+#define GAMEUI_OUTPUT(off) ((CGameUIOutput *)((char *)pMem + (off)))->sub_100cd2a0();
+#define GAMEUI_AUX(off) ((CGameUIAux *)((char *)pMem + (off)))->sub_101192e0();
+
+// TARGET: game_ui
+extern "C" CBaseEntity *game_ui(void)
+{
+	void *pMem = sub_100aa720(0x5ac);
+	CBaseEntity *pEnt;
+	if (pMem) {
+		new (pMem) CBaseEntity(0);
+		*(int *)((char *)pMem + 0x454) = -1;
+		GAMEUI_OUTPUT(0x458) GAMEUI_OUTPUT(0x470) GAMEUI_OUTPUT(0x488) GAMEUI_OUTPUT(0x4a0) GAMEUI_OUTPUT(0x4b8)
+		GAMEUI_OUTPUT(0x4d0) GAMEUI_OUTPUT(0x4e8) GAMEUI_OUTPUT(0x500) GAMEUI_OUTPUT(0x518) GAMEUI_OUTPUT(0x530)
+		GAMEUI_AUX(0x548) GAMEUI_AUX(0x560) GAMEUI_AUX(0x578) GAMEUI_AUX(0x590)
+		*(int *)((char *)pMem + 0x5a8) = -1;
+		*(void **)pMem = vt_10462064;
+		pEnt = (CBaseEntity *)pMem;
+	} else {
+		pEnt = 0;
+	}
+	pEnt->vfunc106("game_ui");
+	return pEnt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119750 size=0x145
 extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
