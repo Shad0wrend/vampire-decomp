@@ -43,9 +43,9 @@ public:
 	void sub_1021c260();	// prints the selected record (+0x9f4 of the array at +0xa14): the screen texts 0x17 / 0x16 with its three strings, then the five heading texts 0x18..0x1c
 	void sub_1021a740();	// a random "noise" line: a random column and row (RandomInt within the line width left after the text at +0x904 and the screen height at +0x814), one of two page printers, the text at +0x904, then the next think at +0x9e4 seconds ahead
 	void sub_102189e0(const char *pszText);	// sends the text to every player but the one of this entity, reliably, in chunks of at most 250 characters (user message 0, byte 2, the chunk as a string)
-	bool sub_1021aaa0(int a, char *pszCommand);	// AcceptCmd helper (called by vfunc273): matches the command against the screen texts 0x21..0x24, 0x11
+	void sub_1021a5b0(CBaseEntity *pPlayer);	// slot 39 "CPropHacking::OnUse"-like (CBaseTerminal::vfunc39 override, ret 4): sub_1021a1c0, the terminal base (sub_102181a0), sub_1021a2f0, ThinkSet(0, 0, 0), sub_1021aca0, sub_1021b410, makes the player a camera cinematic watching this terminal (sub_10070470 "Hacking", then CBasePlayer::sub_1017cef0), then the feat list default (id 2) value for the player (CVFeatSet::Find(2)->sub_101e56e0)
+	void sub_102181a0(CBaseEntity *pPlayer);	// CBaseTerminal::vfunc39 (stub 0x1000f515), called directly
 	void sub_1021aca0();	// stub 0x10002fae
-	void sub_1021c390(int a);	// stub 0x1000137a
 
 	char m_pad03e0[0x814 - 0x3e0];
 	int m_n0814;	// 0x814
@@ -77,11 +77,8 @@ public:
 	char m_bEmailState;	// 0xa10
 	char m_pad0a11[0xa14 - 0xa11];
 	CPropHackingScreenRecord *m_pScreenRecords0a14;	// 0xa14
-	char m_pad0a18[0xa20 - 0xa18];
-	int m_n0a20;	// 0xa20
-	char m_pad0a24[0xa28 - 0xa24];
+	char m_pad0a18[0xa28 - 0xa18];
 	char m_szEmailState[0x80];	// 0xa28
 	char m_pad0aa8[0xc28 - 0xaa8];
 	int m_n0c28;	// 0xc28
-	char m_b0c2c;	// 0xc2c
 };
