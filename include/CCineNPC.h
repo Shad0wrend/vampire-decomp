@@ -35,6 +35,8 @@ public:
 	char vfunc584(CBaseAnimating *pNpc, const char *pszSequence, char bLoop);	// slot 584: marks the script as started (byte at +0x5f91), looks the sequence up on pNpc (Warning when unknown, then sequence 0), resets its sequence info; without a name and with bLoop set hands pNpc to sub_101a8460 and returns false; developer Msg "Sequence %s targeting %s is starting" and sub_101a6ec0; returns true
 	void sub_101a8460(CBaseAnimating *pNpc);	// stub 0x10012a80
 	void sub_101a6ec0();	// called directly
+	void vfunc113();	// slot 113 "CCineNPC::Activate" (declared as a plain member): the base work, then finds the NPC named at +0x5f54 (the first one with an NPC object at +0x94; DevMsg "Could not find NPC %s in CCineNPC::Activate for %s" when none), plays the sounds of its model for the three names at +0x5f44 / +0x5f4c / +0x5f48 (sub_10428880; DevMsg "NPC %s has no model in CCineNPC::Activate for %s" without a model), looks up the entity named at +0x5f58 and keeps its handle at +0x5f94 (the name is cleared when that is gone)
+	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
 
 	char m_pad0004[0x204 - 4];
 	unsigned int m_flags204;	// 0x204
