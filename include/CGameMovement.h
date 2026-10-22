@@ -72,4 +72,6 @@ public:
 	CGameTrace sub_10123f40(const Vector &vecOffset);	// "CGameMovement::TracePlayerBBox"-like (profiled as such): traces the player hull from the player's origin (+0x70) by vecOffset, moves the player's origin to where the trace ended, tells the global at 0x1071a278 (slot 2) about a partial hit that did not start solid (with the player's velocity at +0x40), and returns the trace
 	float *sub_1011e350();	// stub 0x1000991c: the hull maxs for the player's stance (ducked / observer / standing)
 	float *sub_1011e310();	// stub 0x10009bbf: the hull mins for the player's stance
+	void sub_10124ba0();	// a zero length hull trace at the player's origin (ducked hull, pass entity the move data, group from its +0x368): the line is drawn by the movement debug convar, and for a start solid hit on an entity the engine knows (slot 35 of the engine) sub_10124630 handles it (with the second convar set at once, else only when the entity's flags (slot 211) have bit 6)
+	void sub_10124630(void *pEnt);	// stub 0x10005e93: the stuck entity handler
 };
