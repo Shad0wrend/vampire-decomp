@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1019ce00 size=0x23
+CRecipientFilter::CRecipientFilter()
+{
+	Reset();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d320 size=0x8
 #include "CRecipientFilter.h"
 
