@@ -3,18 +3,23 @@
 
 #include "CBaseTempEntity.h"
 
+class CRecipientFilter;
+
 class CTEBloodSprite : public CBaseTempEntityHead
 {
 public:
 	CTEBloodSprite(const char *name);	// 0x1005d8f0
 
 	virtual CTEBloodSprite *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a blood sprite at the origin (raised by 24, then 50 units along the flat direction of the angles), created for everybody
+	virtual void vfunc4(int a, int b);	// "Create" (filter pointer, delay bits), as in CTEMetalSparks (transplant)
 
 	void sub_1000d4b8();	// destructor body
 
 	char m_pad0004[8];
-	int m_c[3];	// 0x000c
+	int m_c[3];	// 0x000c: the origin
 	char m_pad0018[12];
 	int m_24[7];	// 0x0024
-	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
+
+	Vector &Origin() { return *(Vector *)m_c; }
 };
