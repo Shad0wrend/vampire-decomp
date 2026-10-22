@@ -17456,6 +17456,30 @@ void CBaseEntity::sub_100a53d0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a54a0 size=0xc2
+#include "ScopeTrace.h"
+#include "Quaternion.h"
+
+void sub_1013b1f0(const float *angles, Quaternion &q);
+void sub_1013add0(const float *p, float t, float *qt);
+void sub_1013af60(const Quaternion &p, const Quaternion &q, Quaternion &qt);
+float sub_1013ad40(Quaternion &q);
+void sub_1013b280(const Quaternion &q, float *a, float *b);
+
+// TARGET: sub_100a54a0
+void sub_100a54a0(const float *angles1, const float *angles2, float *pOut1, float *pOut2)
+{
+	ScopeTrace scope("ComputeDeltaRotation", g_106b8540);
+	Quaternion q1, q2, qScaled, qResult;
+	sub_1013b1f0(angles1, q1);
+	sub_1013b1f0(angles2, q2);
+	sub_1013add0(&q1.x, -1.0f, &qScaled.x);
+	sub_1013af60(qScaled, q2, qResult);
+	sub_1013ad40(qResult);
+	sub_1013b280(qResult, pOut1, pOut2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5ad0 size=0xa1
 #include "CBaseEntity.h"
 
