@@ -100,6 +100,7 @@ public:
 	float sub_10080ac0();	// stub 0x10010410: a float value of the scene (the playback speed), run by the think
 	void sub_100846c0(void *pScene);	// stub 0x100018c5, run by the think while the scene plays on
 	void sub_10084170(void *pScene);	// stub 0x1001200d, run by the think of the instanced scene when the scene has run out
+	void sub_100845a0(void *pScene);	// the twin of sub_10084170 (recursive over the scene's sub-scenes): hands every actor of the scene that is an animating entity its slot 246
 	void sub_100843d0(void *pScene);	// stub 0x10008a8f, run on the scene when it starts
 	void sub_10081ed0();	// stub 0x100114b4, run when the scene starts
 	void sub_10082c90();	// stub 0x10003080, run when the scene starts
