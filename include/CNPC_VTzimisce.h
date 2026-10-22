@@ -56,7 +56,10 @@ public:
 	virtual void t250(); virtual void t251();
 	virtual void vfunc420();	// slot 420: base boss reset, then the state flag at +0x6689, the timers at +0x66ac / +0x66b0 (curtime + 3), the target handle at +0x6670 = -1
 	virtual void t253(); virtual void t254(); virtual void t255(); virtual void t256(); virtual void t257(); virtual void t258(); virtual void t259();
-	VT_SLOTS10(t26) VT_SLOTS10(t27) VT_SLOTS10(t28) VT_SLOTS10(t29)
+	VT_SLOTS10(t26) VT_SLOTS10(t27)
+	virtual void vfunc448(int a);	// slot 448: with the state (+0x5cc0) 2 and condition 0x5c clears bit 31 of +0x5d8c; when the 10381be0 check holds remembers the target handle (+0x6670) in the timed list (sub_103bf200) and runs sub_103be050(0); when the other check fails runs sub_102c43b0(0.75f) and clears the target handle; clears +0x66b8, then CAI_BaseNPCTroika::vfunc448(a)
+	virtual void t281(); virtual void t282(); virtual void t283(); virtual void t284(); virtual void t285(); virtual void t286(); virtual void t287(); virtual void t288(); virtual void t289();
+	VT_SLOTS10(t29)
 	VT_SLOTS10(t30)
 	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3();
 	virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7();
@@ -79,15 +82,23 @@ public:
 
 	char m_pad0004[0x2dc];
 	int m_n02e0;
-	char m_pad02e4[0x666c - 0x2e0];
+	char m_pad02e4[0x5cc0 - 0x2e4];
+	int m_nState5cc0;
+	char m_pad5cc4[0x5d8c - 0x5cc4];
+	unsigned int m_flags5d8c;
+	char m_pad5d90[0x6670 - 0x5d90];
 	unsigned int m_hTarget;
 	char m_posBuf[0x18];
 	int m_state;
+	char m_pad6690[0x66b8 - 0x6690];
+	int m_n66b8;
 
 	void *sub_103bf580(void *pDefault);
 	void sub_103b9f90(int a, float b);
 	void sub_103b9f50(int a);
 	void sub_102c43b0(float delay);
+	void sub_103be050(int a);	// stub 0x1000f556, called directly with 0
+	void sub_1029adb0(int a);	// CAI_BaseNPCTroika::vfunc448 (stub 0x100054bb), called directly
 	void vfunc491();	// slot 491 (declared as a plain member): when slot 486 holds logs "SPI_TAKE_DAMAGE" with the three convar values (like slot 488) and runs slot 487; then sub_103b9f90(1, 1.0f)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	char vfunc69(void *pOther);	// as in CNPC_VHengeyokai (transplant)
