@@ -37,6 +37,43 @@ void CNPCMaker_Zombie::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034cde0 size=0xc7
+#include "CNPCMaker_Zombie.h"
+#include "CUnknown1070b22c.h"
+#include "CEntityVSlots.h"
+
+extern "C" __declspec(dllimport) void __cdecl Warning(const char *fmt, ...);
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_106b8540[];
+void sub_101d0ec0(const char *pszClassname);
+void sub_101cd940(CBaseEntity *pEnt);
+
+// TARGET: CNPCMaker_Zombie::vfunc104
+void CNPCMaker_Zombie::vfunc104()
+{
+	int nOut;
+	const char *pszModel = *vfunc9(&nOut);
+	if (!pszModel)
+		pszModel = g_106b8540;
+	if (*pszModel) {
+		g_1070b22c->vfunc13(pszModel, 0);
+		*(int *)((char *)this + 0x1a98) = 0;
+		*(int *)((char *)this + 0x5dec) = 0;
+		sub_1027bb50();
+		const char *pszTemplate = *(const char **)((char *)this + 0x665c);
+		if (!pszTemplate)
+			pszTemplate = g_106b8540;
+		sub_101d0ec0(pszTemplate);
+		sub_101d0ec0("item_w_zombie_fists");
+		return;
+	}
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+	Vector *pOrigin = pSlots->slot220();
+	Warning("%s at %.0f %.0f %0.f missing modelname\n", sub_100ab4f0(), pOrigin->x, pSlots->slot220()->y, pSlots->slot220()->z);
+	sub_101cd940(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d0a0 size=0x7a
 #include "CNPCMaker_Zombie.h"
 #include "CEntityVSlots.h"
