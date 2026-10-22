@@ -20,6 +20,7 @@ public:
 	void sub_10218820(int a, int b);	// stub 0x1000c77f, called directly
 	void sub_1021b5e0(int a);	// stub 0x100139ad, called directly
 	void sub_1021a1c0();	// stub 0x10003deb, run at the end of the constructor
+	void sub_10218ff0(int a, int b);	// sends the user message 0 with the byte 1 and the two values to every player but the one of this entity (a reliable entity message filter)
 
 	char m_pad03e0[0x83c - 0x3e0];
 	char m_b083c;	// 0x83c
