@@ -4073,6 +4073,7 @@
 0x1000fbff func   ?vfunc267@CBaseViewModel@@QAEPAVCBaseEntity@@XZ CBaseViewModel::vfunc267
 0x1000fc1d func   ?vfunc2@CTEBreakModel@@UAEPAV1@I@Z CTEBreakModel::vfunc2
 0x1000fc27 func   ?sub_100737b0@CUnknown100737b0@@QAEXH@Z CUnknown100737b0::sub_100737b0
+0x1000fc36 func   ?vfunc3@CTEShowLine@@UAEXPBVVector@@0@Z CTEShowLine::vfunc3
 0x1000fc3b func   ?vfunc5@COccultThaumDamage@@QAEPAV1@I@Z COccultThaumDamage::vfunc5
 0x1000fc40 func   ?sub_101d77d0@@YAXXZ sub_101d77d0
 0x1000fc5e func   ?vfunc109@CBaseEntity@@UAE_NPBDM@Z CBaseEntity::vfunc109
