@@ -193,6 +193,32 @@ void CNPC_VMingXiao::vfunc390(CTakeDamageInfo *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395ba0 size=0x9c
+#include "CNPC_VMingXiao.h"
+#include "CEHandleGet.h"
+struct CUnk1093b9b4 { virtual char vf0(); virtual char vf1(); char pad[0x28]; int m_n2c; };
+extern CUnk1093b9b4 *g_1093b9b4;
+// TARGET: CNPC_VMingXiao::vfunc144
+void CNPC_VMingXiao::vfunc144(int a)
+{
+	if (m_bActive6744) {
+		CGlobalEntityList_Ent *pEnt = EHandle_Get(m_hOwner6670);
+		if (pEnt)
+			((CNPC_VMingXiao *)pEnt)->sub_10397a50(this);
+		if (!g_1093b9b4->vf1() && g_1093b9b4->m_n2c) {
+			if (!sub_10398870()) {
+				sub_10397e90();
+				sub_10397f00();
+			}
+		}
+		sub_102bf340(a);
+	} else {
+		*(int *)((char *)this + 0x200) = 1;
+		sub_10395c70();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395e70 size=0xcd
 #include "CNPC_VMingXiao.h"
 #include "CUnknown1070b244.h"
