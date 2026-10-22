@@ -2,6 +2,9 @@
 // CUnknown101e01e0 hands out arrays of pointers to these).
 #pragma once
 
+#include "CUnknown101e0f00.h"
+#include "CUnknown101ddc30.h"
+
 class CUnknown101e01e0;
 class IKVNodeView;
 
@@ -10,20 +13,6 @@ struct S101dda30	// 8 byte object at +0x364 of S101df260 (and five times in S101
 	char m_pad[8];
 
 	void sub_101dda30();	// constructor body (stub 0x10003cbf)
-};
-
-struct S101ddbe0	// 0xc byte object at +0x50 of S101ddec0
-{
-	char m_pad[0xc];
-
-	void sub_101ddbe0();	// constructor body (stub 0x10003936)
-};
-
-struct S101dcb20	// 0x1c byte object at +0x5c / +0x78 of S101ddec0
-{
-	char m_pad[0x1c];
-
-	void sub_101dcb20();	// constructor body (stub 0x10002036)
 };
 
 struct S101dc1c0	// 0x10 byte object at +0x94 of S101ddec0
@@ -47,21 +36,22 @@ struct S101ddec0	// 0xac byte item
 	S101dda30 m_o20;
 	S101dda30 m_o28;
 	int m_n30;	// 0x32 after construction
-	int m_n34;
+	const char *m_pszSchedule34;	// 0x34: null after construction
 	int m_n38;	// -1 after construction
 	int m_n3c;	// -1 after construction
 	int m_n40;
 	int m_n44;
 	int m_n48;
 	int m_n4c;
-	S101ddbe0 m_o50;
-	S101dcb20 m_o5c;
-	S101dcb20 m_o78;
+	CUnknown101ddc30 m_o50;
+	CUnknown101e0f00Src m_o5c;
+	CUnknown101e0f00Src m_o78;
 	S101dc1c0 m_o94;
 	int m_na4;
-	int m_na8;
+	int m_na8;	// the flag bits it sets in (and takes from) the character's NPC object: bits of +0x14b8, or of +0x14bc when negative
 
 	S101ddec0 *sub_101ddec0();	// constructor body (stub 0x1000eeb2), returns this
+	void sub_101def10(int unused, void *pChar, int id);	// ends the effect on the character: ends both sources, takes the flag bits back from the NPC object, the character's sub_10323770 when m_b1e is set, and, for a named schedule (+0x34) while the NPC object (+0x98) is flagged 0x800000 / has a current task of 0xe1 or 0xe3, cancels it
 };
 
 struct S101df260
