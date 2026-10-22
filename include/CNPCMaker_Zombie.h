@@ -3,6 +3,8 @@
 #pragma once
 #include "CBaseEntity.h"
 
+class CAI_BaseNPCTroika;
+
 class CNPCMaker_Zombie : public CBaseEntity
 {
 public:
@@ -14,6 +16,8 @@ public:
 	void sub_1034d2d0();	// schedules the next think like CNPCMaker::sub_1034bbf0
 	char vfunc618(char bForce);	// slot 618: true when forced; else CNPCMaker::vfunc618(0) unless the player (sub_101cda50) is farther than 0.9 * the Manhattan distance limit at +0x76d8
 	char sub_1034b580(char a);	// CNPCMaker::vfunc618 (stub 0x1000ae4d), called directly
+	CAI_BaseNPCTroika *vfunc617(int a);	// slot 617 "SpawnNPC": CNPCMaker::vfunc617, then gives the new zombie the fists, hands it the maker's value at +0x76d0 and plays the "Zombies spawning emitter" particle at its place
+	CAI_BaseNPCTroika *sub_1034b7b0(int a);	// CNPCMaker::vfunc617 (stub 0x10005a5b), called directly
 
 	char m_pad03e0[0x6348 - 0x3e0];
 	int m_nCounters[5];	// 0x6348
@@ -28,6 +32,8 @@ public:
 	char m_pad66c1;
 	char m_b66c2;	// 0x66c2
 	char m_b66c3;	// 0x66c3
-	char m_pad66c4[0x76d8 - 0x66c4];
+	char m_pad66c4[0x76d0 - 0x66c4];
+	int m_n76d0;	// 0x76d0
+	char m_pad76d4[4];
 	float m_flRange;	// 0x76d8
 };
