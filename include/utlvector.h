@@ -10,10 +10,11 @@
 // much of it VC6 inlines depends on how deep the destructor is nested in the caller (see CRecipientFilter.h): write
 // the Source code and let the compiler choose. The out-of-line copies are named in the symbol map:
 // CUtlMemory<int>::Base 0x1002cca0 (stub 0x10013e12), CUtlMemory<int>::Purge 0x1002cbd0, CUtlVector<int>::RemoveAll
-// 0x10032b00.
+// 0x10032b00, CUtlMemory<int>::Grow 0x100eb280 (stub 0x1000ff51).
 #pragma once
 
 extern "C" __declspec(dllimport) void Plat_Free(void *);	// tier0 (import 0x109f3624), the free of utlmemory.h
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
 template <class T>
 inline void Destruct(T *pMemory)
@@ -33,6 +34,8 @@ public:
 	T *Base() { return m_pMemory; }
 	int NumAllocated() const { return m_nAllocationCount; }
 	bool IsExternallyAllocated() const { return m_nGrowSize == EXTERNAL_BUFFER_MARKER; }
+
+	void Grow(int num = 1);	// out of line (CUtlMemory<int>::Grow, stub 0x1000ff51)
 
 	void Purge()
 	{
@@ -75,6 +78,31 @@ public:
 		}
 		return -1;
 	}
+
+	void GrowVector(int num = 1)
+	{
+		if (m_Size + num > m_Memory.NumAllocated())
+			m_Memory.Grow(m_Size + num - m_Memory.NumAllocated());
+		m_Size += num;
+		ResetDbgInfo();
+	}
+
+	void ShiftElementsRight(int elem, int num = 1)
+	{
+		int numToMove = m_Size - elem - num;
+		if (numToMove > 0)
+			memmove(&Element(elem + num), &Element(elem), numToMove * sizeof(T));
+	}
+
+	int InsertBefore(int elem, const T &src)
+	{
+		GrowVector();
+		ShiftElementsRight(elem);
+		new (&Element(elem)) T(src);
+		return elem;
+	}
+
+	int AddToTail(const T &src) { return InsertBefore(m_Size, src); }
 
 	void RemoveAll()
 	{
