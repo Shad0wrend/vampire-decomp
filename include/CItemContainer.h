@@ -16,6 +16,7 @@ public:
 	CItemContainerHandle m_hLock;	// EHANDLE to the CItemContainerLock
 
 	void *sub_10209a20();	// returns the lock entity (dynamic_cast<CItemContainerLock *>) or NULL
+	char sub_100eef10();	// stub 0x100127ec: asked by the lock; true when the container is open (the byte at +0x1480)
 	void vfunc71();
 	CItemContainer *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10005718();	// as in CPhysForce (transplant)
