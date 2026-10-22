@@ -366,6 +366,7 @@
 0x10002621 func   _item_p_occult_strength item_p_occult_strength
 0x1000263a func   ?sub_101d84e0@CUnk101d84e0@@QAEPADXZ CUnk101d84e0::sub_101d84e0
 0x1000263f func   ?sub_1008d7c0@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::sub_1008d7c0
+0x10002644 func   ?sub_10218ff0@CPropHacking@@QAEXHH@Z CPropHacking::sub_10218ff0
 0x10002649 func   ?vfunc105@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc105
 0x10002658 func   _item_p_occult_passive_durations item_p_occult_passive_durations
 0x10002671 func   ?sub_1029f060@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_1029f060
