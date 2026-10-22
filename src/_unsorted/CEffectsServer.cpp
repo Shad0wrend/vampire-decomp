@@ -72,6 +72,39 @@ void CEffectsServer::vfunc2(const float *pOrigin, int a, float b, float c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6050 size=0xe0
+#include "CEffectsServer.h"
+#include "CPVSFilter.h"
+#include "CUnknown1019d130.h"
+
+struct CTEView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(CRecipientFilter *filter, int a, const float *pOrigin, int b, int c, int d);
+};
+extern CTEView *g_10540528;
+
+// TARGET: CEffectsServer::vfunc3
+void CEffectsServer::vfunc3(const float *pOrigin, int a, int b, int c)
+{
+	CPVSFilter filter(pOrigin);
+	if (m_nSuppressCount > 0 || !m_pSuppressHost) {
+	} else {
+	}
+	CUnknown1019d130 *f = (CUnknown1019d130 *)&filter;
+	if (m_nSuppressCount > 0 || !m_pSuppressHost
+		|| (!f->sub_1000aa60() && (f->sub_1019d130(m_nSuppressCount > 0 ? 0 : m_pSuppressHost), 0))
+		|| f->vfunc2()) {
+		g_10540528->v35(&filter, 0, pOrigin, a, b, c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f63b0 size=0xd3
 #include "CEffectsServer.h"
 #include "CPVSFilter.h"
