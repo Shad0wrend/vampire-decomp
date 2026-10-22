@@ -1521,6 +1521,45 @@ int CAI_BaseNPCTroika::vfunc609(char bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf340 size=0x105
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_CsActList.h"
+#include "CTakeDamageInfo.h"
+#include "CEHandleGet.h"
+
+extern "C" __declspec(dllimport) int __cdecl PyRun_SimpleString(const char *command);
+
+struct CCsActListV : CAI_CsActList
+{
+	void sub_102ca2a0(int nType, CBaseEntity *pSource, Vector vecPos, int nLevel, float flDuration, CBaseEntity *pOffender, CBaseEntity *pOwner, char bExternal);
+};
+
+extern CCsActListV *g_109253f8;
+const char *sub_101d3730(const char *fmt, const char *name);
+
+// TARGET: CAI_BaseNPCTroika::vfunc144
+void CAI_BaseNPCTroika::vfunc144(int a)
+{
+	if (!((CTakeDamageInfo *)a)->sub_101c2af0()) {
+		Vector vecPos = *(Vector *)vfunc217();
+		vecPos.z += 16.0f;
+		g_109253f8->sub_102ca2a0(1, (CBaseEntity *)this, vecPos, 3, 100000.0f, 0, (CBaseEntity *)this, 1);
+	}
+	sub_10265ad0(a);
+	sub_10295ab0(5.0f);
+	vfunc601((int)this);
+	sub_102b53d0(0, "Leaving interesting place (Event_Killed)");
+	if (sub_102c1170())
+		sub_102c0bb0();
+	const char *pszName = *(const char **)((char *)this + 0x26c);
+	if (pszName)
+		PyRun_SimpleString(sub_101d3730("MarkAsDead(\"%s\")", pszName));
+	CGlobalEntityList_Ent *pEnt = EHandle_Get(*(unsigned int *)((char *)this + 0x628c));
+	if (pEnt)
+		((CAI_BaseNPC *)pEnt)->sub_101828b0((CBaseEntity *)this, 99999.9f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf6e0 size=0x68
 #include "CAI_BaseNPCTroika.h"
 
