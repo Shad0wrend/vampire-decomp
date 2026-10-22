@@ -2,6 +2,7 @@
 #pragma once
 
 struct DialogLine;
+class CBaseEntity;
 
 struct CDialogEntry_t
 {
@@ -60,4 +61,5 @@ public:
 	int sub_100e8100(char *pPacket);	// stub 0x1001521c: builds the packet's line from the table, non-zero on success
 	int sub_100e82d0(int *pChoices);	// stub 0x10014858: collects the player choices into the array, returns their count
 	int sub_100e8520(int nKey, int nSlot, char *pPacket);	// stub 0x10001fe1: builds response nSlot for the choice key into the packet; -1 failed (no reply), 0 skipped, 1 and above filled
+	void sub_100dfb80(CBaseEntity *pNPC, CBaseEntity *pSpeaker);	// "CDialog::GenerateScriptFile": scope trace; without a table takes the handles of the speaker (its object at +0x98) and of the NPC (its object at +0xa8) and, when both resolve, logs "Dumping script file for npc: %s, dialog: %s", runs sub_100e37d0 / sub_100e34d0, clears both handles and unloads the table (sub_100e5770)
 };
