@@ -359,6 +359,41 @@ void CSceneEntity::vfunc134()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100829e0 size=0xbb
+#include "CSceneEntity.h"
+#include "CUnknown1007ce20.h"
+
+struct CGlobalVarsView
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+void sub_100826b0(CSceneEntity *pEnt);
+
+// TARGET: CSceneEntity::vfunc242
+void CSceneEntity::vfunc242()
+{
+	if (m_pScene4bc && !m_bPlaying498)
+	{
+		m_bPlaying498 = 1;
+		m_bPlaying499 = 0;
+		m_f4a0 = 0;
+		m_f4a4 = g_1070b228->curtime;
+		m_f4a8 = g_1070b228->curtime;
+		((CUnknown1007ce20 *)m_pScene4bc)->sub_1007cfc0(1, 0, 0);
+		sub_10084170(m_pScene4bc);
+		sub_100843d0(m_pScene4bc);
+		sub_10081ed0();
+		sub_10082c90();
+		m_flNextThink = g_1070b228->curtime;
+		if (m_b57e)
+			sub_100826b0(this);
+		m_list4cc.sub_100cd660(this, this, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10082b80 size=0x7f
 #include "CSceneEntity.h"
 #include "CGlobalEntityList.h"
