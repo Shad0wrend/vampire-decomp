@@ -8,6 +8,9 @@ class CNPCMaker_Zombie : public CBaseEntity
 public:
 	CNPCMaker_Zombie *sub_1034ca80();
 	void vfunc103();	// slot 103 "Spawn": like CNPCMaker::vfunc103, with a randomised first think and the five counters at +0x6348 set to 999999
+	void vfunc104();	// slot 104 "Precache": like the Fleshpile one, but clears the fields +0x1a98 / +0x5dec and also precaches "item_w_zombie_fists"; without a model name warns "<name> at x y z missing modelname" and removes the entity
+	void sub_1027bb50();	// CAI_BaseNPC::vfunc104 (stub 0x1000eaf7), called directly
+	const char *sub_100ab4f0();	// the entity's name text for messages (stub 0x1000b5cd)
 	void sub_1034d2d0();	// schedules the next think like CNPCMaker::sub_1034bbf0
 	char vfunc618(char bForce);	// slot 618: true when forced; else CNPCMaker::vfunc618(0) unless the player (sub_101cda50) is farther than 0.9 * the Manhattan distance limit at +0x76d8
 	char sub_1034b580(char a);	// CNPCMaker::vfunc618 (stub 0x1000ae4d), called directly
