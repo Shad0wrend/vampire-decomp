@@ -13,3 +13,39 @@ CTEExplosion *CTEExplosion::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100618e0 size=0x102
+#include "CTEExplosion.h"
+#include "CBroadcastRecipientFilter.h"
+
+void sub_10139610(const Vector *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_10139500(const Vector *pStart, float flScale, const Vector *pDir, Vector *pDest);
+extern short g_1088ae7c;
+
+struct CTEExplosionSlots
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4(CRecipientFilter *pFilter, float flDelay);
+};
+
+// TARGET: CTEExplosion::vfunc3
+void CTEExplosion::vfunc3(const Vector *pOrigin, const Vector *pAngles)
+{
+	m_nField18 = g_1088ae7c;
+	m_nField1c = 0x3f000000;
+	m_nField20 = 0xf;
+	m_nField24 = 0;
+	m_vecOrigin = *pOrigin;
+	m_vecOrigin.z += 24.0f;
+	Vector vecForward;
+	sub_10139610(pAngles, &vecForward, 0, 0);
+	vecForward.z = 0.0f;
+	VectorNormalize(vecForward);
+	sub_10139500(&m_vecOrigin, 50.0f, &vecForward, &m_vecOrigin);
+	CBroadcastRecipientFilter filter;
+	((CTEExplosionSlots *)this)->v4(&filter, 0.0f);
+}
+// END FUNCTION
