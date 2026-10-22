@@ -61670,6 +61670,53 @@ void CPropHaunted::sub_10213ef0(int index, void *pEvent, CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10214780 size=0x11f
+#include "CPropHaunted.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+struct GlobalVarsView { char m_pad[0xc]; float curtime; };
+extern GlobalVarsView *g_1070b228;
+__declspec(dllimport) void Warning(const char *pszFormat, ...);
+extern "C" __declspec(dllimport) float RandomFloat(float flMin, float flMax);
+
+union ThinkPtr
+{
+	void (CPropHaunted::*pfn)();
+	int n;
+};
+
+// TARGET: CPropHaunted::sub_10214780
+void CPropHaunted::sub_10214780()
+{
+	sub_100b3640(0x40000);
+	int nSequence = sub_1008f7b0("spin");
+	if (nSequence >= 0) {
+		sub_10260a50(nSequence);
+	} else {
+		int nTmp;
+		const char *pszName = *vfunc9(&nTmp);
+		if (!pszName)
+			pszName = g_106b8540;
+		Warning("%s does not have a 'spin' animation. (%s) \n", sub_100ab4f0(), pszName);
+	}
+	ThinkPtr think;
+	think.pfn = &CPropHaunted::sub_102143e0;
+	sub_100ac4e0(think.n, 0, 0);
+	m_flTime77c = RandomFloat(m_flMin78c, m_flMax790) + g_1070b228->curtime;
+	m_flNextThink = g_1070b228->curtime + 0.01;
+	((CPropHauntedSub *)m_sub07ec)->sub_100cd660(this, this, 0);
+	sub_10214080(m_iszSound7cc);
+	if (!EHandle_Get(m_hGhost7d0)) {
+		CEnvParticle *pGhost = sub_10214cc0(m_iszGhost7c0);
+		if (pGhost) {
+			pGhost->sub_100fb1f0(this, 0, -1);
+			m_hGhost7d0 = *((CBaseEntity *)pGhost)->vfunc1();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102148f0 size=0xec
 #include "CUnknown102148f0.h"
 #include "CGlobalEntityList.h"
