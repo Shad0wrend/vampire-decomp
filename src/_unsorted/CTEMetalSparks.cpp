@@ -28,6 +28,32 @@ CTEMetalSparks *CTEMetalSparks::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10059ea0 size=0xf3
+#include "CTEMetalSparks.h"
+#include "CBroadcastRecipientFilter.h"
+
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+void sub_10139500(const Vector &start, float scale, const Vector &direction, Vector &dest);
+
+void CTEMetalSparks::vfunc3(const Vector &origin, const QAngle &angles)
+{
+	const int *pOrigin = (const int *)&origin;
+	int *pPos = m_pos;
+	pPos[0] = pOrigin[0];
+	pPos[1] = pOrigin[1];
+	pPos[2] = pOrigin[2];
+	sub_10139610(angles, (Vector *)m_dir, 0, 0);
+	*(float *)&m_pos[2] = *(float *)&m_pos[2] + 24.0f;
+	Vector forward;
+	sub_10139610(angles, &forward, 0, 0);
+	forward.z = 0;
+	VectorNormalize(forward);
+	sub_10139500(*(Vector *)pPos, 100.0f, forward, *(Vector *)pPos);
+	CBroadcastRecipientFilter filter;
+	vfunc4(filter, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10059fe0 size=0x39
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"
