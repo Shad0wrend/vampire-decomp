@@ -42,4 +42,5 @@ public:
 
 	int GetInt() { return m_pParent->vfunc1() ? 0 : m_pParent->m_nValue; }
 	bool GetBool() { return GetInt() != 0; }
+	float GetFloat() { return m_pParent->vfunc1() ? 0.0f : m_pParent->m_fValue; }
 };
