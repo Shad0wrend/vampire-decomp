@@ -1658,6 +1658,7 @@
 0x10007108 func   ?sub_102d00a0@CUnknown102d00a0@@QAEXI@Z CUnknown102d00a0::sub_102d00a0
 0x1000710d func   ?vfunc2@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc2
 0x10007112 func   ?sub_101ec6f0@CUnknown101ec6f0@@QAEXXZ CUnknown101ec6f0::sub_101ec6f0
+0x10007121 func   ?sub_10112a10@CBreakableSurface@@QAEXXZ CBreakableSurface::sub_10112a10
 0x10007130 func   _item_p_research_lg_firearms item_p_research_lg_firearms
 0x10007135 func   ?sub_1018f960@CUnknown1018f960@@QAEXAAUinputdata_t@@@Z CUnknown1018f960::sub_1018f960
 0x1000713a func   ?sub_10117230@CEnt10117230@@QAEXH@Z CEnt10117230::sub_10117230

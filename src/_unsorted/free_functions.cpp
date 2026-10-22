@@ -31284,6 +31284,31 @@ void CBreakableSurface::sub_101128d0(const Vector &vecPos, float *pX, float *pY)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10112a10 size=0x124
+#include "CBreakableSurface.h"
+#include "CEntityMessageFilter.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+void CBreakableSurface::sub_10112a10()
+{
+	int i, j;
+	for (i = 0; i < m_nCols49c; i++) {
+		for (j = 0; j < m_nRows4a0; j++)
+			m_aflPanes[i][j] = -1.0f;
+	}
+	CEntityMessageFilter filter;
+	int edict = m_pEdict2e0;
+	filter.sub_1019d2f0(g_1070b22c->vfunc35(edict));
+	filter.sub_1019cf50();
+	g_1070b22c->vfunc65(&filter, 0);
+	g_1070b22c->vfunc67(1);
+	g_1070b22c->vfunc66();
+	m_nPanes4cc = m_nCols49c * m_nRows4a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113b30 size=0x43
 #include "CFunc_DustMotes.h"
 void *sub_100aa720(int size);
