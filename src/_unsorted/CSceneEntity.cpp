@@ -310,6 +310,55 @@ void CSceneEntity::vfunc260(int unused, void *pEvent, const char *pszTarget, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x100819b0 size=0x145
+#include "CSceneEntity.h"
+#include "CEHandleGet.h"
+struct CSceneGlobalVars { char m_pad0000[0xc]; float curtime; };
+extern CSceneGlobalVars *g_1070b228;
+struct CSceneObj
+{
+	void *sub_1007a2c0(int index);
+	void sub_1007e5a0(float flValue);
+	void sub_1007d7f0(int nValue);
+	char sub_1007d1e0();
+};
+struct CSceneAIView { char m_pad0000[0xfe8]; unsigned int m_hDialog; };
+struct CSceneActorEntView { char m_pad0000[0x98]; CSceneAIView *m_pAI98; };
+// TARGET: CSceneEntity::vfunc134
+void CSceneEntity::vfunc134()
+{
+	if (!m_pScene4bc)
+		return;
+	if (!m_bPlaying498)
+		return;
+	m_b57c = 1;
+	CSceneEventActor *pActor = (CSceneEventActor *)((CSceneObj *)m_pScene4bc)->sub_1007a2c0(0);
+	CSceneActorEntView *pEnt;
+	if (pActor && (pEnt = (CSceneActorEntView *)vfunc267(pActor->sub_10008a99())) != 0 && pEnt->m_pAI98 && EHandle_Get(pEnt->m_pAI98->m_hDialog))
+		m_flNextThink = g_1070b228->curtime;
+	else
+		m_flNextThink = g_1070b228->curtime;
+	if (m_bPlaying499) {
+		vfunc241();
+		m_b57c = 0;
+		return;
+	}
+	m_f4a0 = g_1070b228->curtime - m_f4a8;
+	((CSceneObj *)m_pScene4bc)->sub_1007e5a0(sub_10080ac0());
+	((CSceneObj *)m_pScene4bc)->sub_1007d7f0(*(int *)&m_f4a0);
+	if (m_pScene4bc) {
+		if (!m_bPlaying499 && ((CSceneObj *)m_pScene4bc)->sub_1007d1e0()) {
+			vfunc247();
+			m_b57c = 0;
+			return;
+		}
+		if (m_n574 == 1)
+			sub_100846c0(m_pScene4bc);
+	}
+	m_b57c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10082b80 size=0x7f
 #include "CSceneEntity.h"
 #include "CGlobalEntityList.h"
