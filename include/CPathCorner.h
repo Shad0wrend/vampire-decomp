@@ -15,4 +15,5 @@ public:
 	int vfunc124();	// slot 124 "CPathCorner::DrawDebugTextOverlays": the base's line offset, plus one line "Target: <name>" ("Target:   -  " without one) when the text overlay bit is set
 	int sub_100018cf();	// CBaseEntity::vfunc124 (stub 0x100018cf), called directly
 	void vfunc123();	// slot 123 "CPathCorner::DrawDebugGeometryOverlays": with the box / pivot overlay bits (0x24) a red box of 10 units around the origin and a line to the next corner (the entity named by the target), then CBaseEntity::vfunc123
+	void sub_100a0130();	// CBaseEntity::vfunc123 (stub 0x10005880), called directly
 };
