@@ -29157,6 +29157,51 @@ int sub_100fc7a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fce70 size=0x133
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CParamsParticle.h"
+#include "CPVSFilter.h"
+#include "ScopeTrace.h"
+
+extern "C" void *__cdecl __RTDynamicCast(void *inptr, long VfDelta, void *SrcType, void *TargetType, int isReference);
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_10567864[];	// type descriptor of CParamsParticle
+extern CGlobalEntityList g_106eb5d8;
+void sub_101cf7c0(const char *pszPath, char *pszOut, int nMax);
+int sub_100fafa0(CBaseEntity *pEntity, int nType, const char *pszName);
+
+#define KV(n) virtual void vfunc##n();
+#define KV10(p) KV(p##0) KV(p##1) KV(p##2) KV(p##3) KV(p##4) KV(p##5) KV(p##6) KV(p##7) KV(p##8) KV(p##9)
+struct CEntitySlots
+{
+	KV10(0) KV10(1) KV10(2) KV10(3) KV10(4) KV10(5) KV10(6) KV10(7) KV10(8) KV10(9)
+	KV10(10) KV10(11) KV10(12) KV10(13) KV10(14) KV10(15) KV10(16) KV10(17) KV10(18)
+	KV(190) KV(191)
+	virtual Vector vfunc192();	// WorldSpaceCenter
+};
+
+struct CTempEntsX
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void vfunc3(CRecipientFilter *pFilter, float flDelay, CBaseEntity *pEntity, int nAttachType, int nAttachment, const char *pszEffect);
+};
+extern CTempEntsX *g_10540528;
+
+// TARGET: sub_100fce70
+void sub_100fce70(CBaseEntity *pEntity, const char *pszName)
+{
+	CParamsParticle *pParticle = (CParamsParticle *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, pszName, pEntity, 0), 0, g_10538764, g_10567864, 0);
+	if (pParticle && pEntity) {
+		char szEffect[0x104];
+		sub_101cf7c0(pParticle->m_pszParticleName ? pParticle->m_pszParticleName : g_106b8540, szEffect, 0x104);
+		CPVSFilter filter(((CEntitySlots *)pEntity)->vfunc192());
+		int nAttachment = sub_100fafa0(pEntity, pParticle->m_nAttachType, pParticle->m_pszAttachment ? pParticle->m_pszAttachment : g_106b8540);
+		g_10540528->vfunc3(&filter, 0.0f, pEntity, pParticle->m_nAttachType, nAttachment, szEffect);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fd000 size=0x49
 void *sub_1000db89(int);
 struct GP;
