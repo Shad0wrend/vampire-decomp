@@ -70128,6 +70128,85 @@ char CBaseCombatWeapon::sub_10257200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10257640 size=0x12c
+#include "CWeaponRanged.h"
+#include "CUnknown1070b22c.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+struct S_Edict
+{
+	char m_pad[0x40];
+	CGlobalEntityList_Ent *m_pUnknown;
+};
+
+struct S_Chr
+{
+	char m_pad0[0xa8];
+	S_Chr *m_pObj;
+	char m_pad1[0x2e0 - 0xac];
+	int m_pEdict;
+	char m_pad2[0x1eb8 - 0x2e4];
+	int m_nUseIndex;
+};
+
+struct S_Ent
+{
+	char m_pad[0x9c];
+	void *m_pChar;
+};
+
+struct S_Weapon
+{
+	char m_pad[0x864];
+	int m_n864;
+	int m_n868;
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+S_Chr *sub_101193b0();
+
+static inline S_Ent *S_Instance(S_Edict *pEdict)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	if (!pEdict)
+		pEdict = (S_Edict *)g_1070b22c->vfunc38(0);
+	return (pEdict && pEdict->m_pUnknown) ? (S_Ent *)pEdict->m_pUnknown->vfunc4() : 0;
+}
+
+void CWeaponRanged::sub_10257640()
+{
+	if (sub_102521f0()) {
+		S_Chr *pOwner = (S_Chr *)sub_102521f0();
+		S_Chr *pPlayer;
+		void *pTarget;
+		if (pOwner->m_pObj != 0) {
+			pPlayer = pOwner;
+			int nIndex = pOwner->m_nUseIndex;
+			S_Ent *pEnt = S_Instance((S_Edict *)g_1070b22c->vfunc38(nIndex));
+			if (pEnt == 0)
+				return;
+			pTarget = pEnt->m_pChar;
+			if (pTarget == 0)
+				return;
+		} else {
+			S_Chr *pLocal = sub_101193b0();
+			if (pLocal == 0)
+				return;
+			pPlayer = pLocal->m_pObj;
+			if (pPlayer == 0)
+				return;
+			int edict = pOwner->m_pEdict;
+			if (g_1070b22c->vfunc35(edict) != pPlayer->m_nUseIndex)
+				return;
+			pTarget = pOwner;
+		}
+		((S_Weapon *)this)->m_n864 = sub_102573a0(pPlayer, pTarget, 0);
+		((S_Weapon *)this)->m_n868 = sub_10257280(pPlayer, pTarget, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258290 size=0x68
 #include "ConVar.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
