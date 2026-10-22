@@ -1764,6 +1764,34 @@ bool CAI_BaseNPCTroika::vfunc347(int event, char *pszName, float *pA, float *pB,
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c1ce0 size=0x171
+#include "CAI_BaseNPCTroika.h"
+#include "CEHandleGet.h"
+#include "CCineNPC.h"
+#include "CUnknown102b5dc0.h"
+#include "CBaseCombatWeapon.h"
+
+__declspec(dllimport) void DevWarning(const char *, ...);
+
+void CAI_BaseNPCTroika::vfunc77()
+{
+    if (*(int *)((char *)this + 0x5cc0) == 4 || EHandle_Get(m_h5d74)) {
+        const char *pszName = EHandle_Get(m_h5d74) ? ((CCineNPC *)EHandle_Get(m_h5d74))->sub_1000b5cd() : "**UNKNOWN**";
+        DevWarning("Attempting to ScriptHide an NPC (%s) playing a scripted sequence (%s).  Satan will eat your babies if you continue to do this.\n", ((CCineNPC *)this)->sub_1000b5cd(), pszName);
+        DevWarning("Cancelling script...\n");
+        if (EHandle_Get(m_h5d74))
+            ((CCineNPC *)EHandle_Get(m_h5d74))->sub_101a8c30();
+        else
+            sub_1027d170();
+        if (*(int *)((char *)this + 0x5cc0) != 7)
+            ((CUnknown102b5dc0 *)this)->sub_102ae7f0(0x6b);
+    }
+    sub_100a8710();
+    if (sub_10007e19())
+        ((CBaseCombatWeapon *)sub_10007e19())->vfunc77();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c21c0 size=0xf4
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatCharacter.h"
