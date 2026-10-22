@@ -25018,6 +25018,42 @@ int sub_100d9c50(const char *pszLine, char *pszOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9ec0 size=0xb8
+#include "CTakeDamageInfo.h"
+#include "CVDmg_t.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" int __cdecl atoi(const char *);
+struct CCmdClient_t { char m_pad0000[0xa8]; CVDmgSource_t *m_pEnt; };
+CCmdClient_t *sub_10008d8c();
+void __cdecl sub_101c2c30();
+void __cdecl sub_101c2c60();
+void __cdecl sub_101c2d20(CTakeDamageInfo *pInfo, void *pEntity);
+// TARGET: sub_100d9ec0
+void sub_100d9ec0()
+{
+	CCmdClient_t *pClient = sub_10008d8c();
+	if (pClient) {
+		CVDmgSource_t *pEnt = pClient->m_pEnt;
+		if (pEnt) {
+			if (g_1070b22c->vfunc85() == 2) {
+				int nDamage = atoi(g_1070b22c->vfunc84(1));
+				sub_101c2c30();
+				CVDmg_t vdmg;
+				vdmg.sub_101fa960(pEnt);
+				vdmg.m_field04 = nDamage;
+				vdmg.m_field0c = nDamage;
+				CTakeDamageInfo info;
+				info.sub_101c26d0(pEnt, pEnt, (float)nDamage, 4, 0, (int)&vdmg, -1);
+				sub_101c2d20(&info, pEnt);
+				sub_101c2c60();
+				vdmg.sub_101fa680();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100da040 size=0x10f
 #include "CVStatList_t.h"
 #include "CUnknown10203240.h"
