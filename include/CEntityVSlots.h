@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..605, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 116, 118, 122, 142, 143, 158, 161, 162, 167, 173,
-// 192, 193, 194, 196, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 270, 274, 285, 306, 308, 310, 316, 332, 346, 360, 371, 376, 381, 385, 404, 426, 427, 448, 457, 464, 532, 584, 598, 601 and 605 of an entity class that does not model its vtable.
+// 192, 193, 194, 196, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 270, 274, 285, 306, 308, 310, 316, 332, 346, 360, 371, 376, 381, 383, 385, 404, 426, 427, 448, 457, 464, 532, 584, 598, 601 and 605 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -140,7 +140,9 @@ public:
 	EVS(377) EVS(378) EVS(379)
 	EVS(380)
 	virtual int slot381(int a);	// character: "Weapon_TranslateActivity"
-	EVS(382) EVS(383) EVS(384)
+	EVS(382)
+	virtual void slot383(int a, int b);	// character: takes two arguments (the spawned zombie is handed its fists's value and 0)
+	EVS(384)
 	virtual void slot385(CEntityVSlots *pWeapon, int a, int b);	// character: drops / removes a weapon ("Weapon_Drop"-like)
 	EVS(386) EVS(387) EVS(388) EVS(389)
 	EVS10(39)
