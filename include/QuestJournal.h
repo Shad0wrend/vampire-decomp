@@ -1,6 +1,8 @@
 // QuestJournal: the player's quest journal; layout so far is ten zero-initialised dwords and a flag byte at +0x28.
 #pragma once
 
+class CKeyValuesX;
+
 class QuestJournal
 {
 public:
@@ -18,5 +20,6 @@ public:
 	void sub_102210f0();	// "QuestJournal::PurgeQuestData": scope trace, clears the flag, frees the strings of every completion (0x18 byte records at m_field[0]) and quest (0x68 byte records at m_field[5]) record, then empties and releases both vectors
 	void sub_10221270();	// resets every quest record (0x68 bytes each at m_field[5], count m_field[8]): the dword at +0x10 = -1, the dword at +0xc = 0
 	void sub_10221000();	// "QuestJournal::PreCache": scope trace, once (flag +0x28): loads the four quest script files "vdata\system\<name>.txt" through sub_102212b0
-	void sub_102212b0(const char *pszFile, int index);	// loads one quest script file (called through the stub at 0x100125b7)
+	void sub_102212b0(const char *pszFile, int index);	// "QuestJournal::LoadQuestFile": scope trace, loads the script file into a key/value tree ("QuestTable") and hands each of its top level keys to sub_102213c0 (called through the stub at 0x100125b7)
+	void sub_102213c0(CKeyValuesX *pKey, int index);	// reads one quest block of the script (stub 0x10010820)
 };
