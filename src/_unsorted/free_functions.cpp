@@ -63749,6 +63749,49 @@ void sub_10230320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102304e0 size=0x89
+#include "CUnknown102304e0.h"
+#include "CUnknown10204c60.h"
+#include "CVDmg_t.h"
+#include "StatDefault.h"
+
+struct StatOwner
+{
+	StatDefault *sub_1006cff0(int id);
+};
+extern StatOwner g_106c7c34;
+
+struct CVDmgBlock16Raw
+{
+	int m_a, m_b, m_c, m_d;
+};
+
+static inline CVDmgBlock16_t GetBlock(StatDefault *pStat)
+{
+	return *(CVDmgBlock16_t *)((char *)pStat + 0x18);
+}
+
+static inline void AssignBlock(CVDmgBlock16Raw *pDest, const CVDmgBlock16_t &src)
+{
+	((CVDmgBlock16_t *)pDest)->sub_10230f90(&src);
+}
+
+// TARGET: CUnknown102304e0::sub_102304e0
+int CUnknown102304e0::sub_102304e0(int id, void *pCharacter)
+{
+	CVDmgBlock16Raw block;
+	StatDefault *pStat = g_106c7c34.sub_1006cff0(id);
+	((CVDmgBlock16_t *)&block)->sub_10230ed0();
+	AssignBlock(&block, GetBlock(pStat));
+	int nValue;
+	if (pCharacter)
+		nValue = ((CVDmgBlock16_t *)&block)->sub_10230fc0(pCharacter);
+	else
+		nValue = ((CUnknown10204c60 *)&block)->sub_10204c60();
+	return sub_102304b0(id, nValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230700 size=0x1e
 #include "StatDefault.h"
 
