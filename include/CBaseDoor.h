@@ -5,14 +5,23 @@
 
 struct inputdata_t;
 
+// Placeholder virtual slots that keep the slot number of vfunc246 right (CBaseEntity declares the slots up to 133).
+#define DOOR_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
 class CBaseDoor : public CBaseEntity
 {
 public:
+	DOOR_SLOTS10(dsa) DOOR_SLOTS10(dsb) DOOR_SLOTS10(dsc) DOOR_SLOTS10(dsd) DOOR_SLOTS10(dse)	// slots 134..183
+	DOOR_SLOTS10(dsf) DOOR_SLOTS10(dsg) DOOR_SLOTS10(dsh) DOOR_SLOTS10(dsi) DOOR_SLOTS10(dsj)	// slots 184..233
+	virtual void dsk0(); virtual void dsk1(); virtual void dsk2(); virtual void dsk3(); virtual void dsk4();	// slots 234..245
+	virtual void dsk5(); virtual void dsk6(); virtual void dsk7(); virtual void dsk8(); virtual void dsk9();
+	virtual void dsl0(); virtual void dsl1();
+	virtual void vfunc246(int a, int* b, int c);	// slot 246: called with the NPC that wants to use the door, a 16 byte result record and a flag byte; the record's last dword is an activity to start
 	void vfunc71();
 	void vfunc104();	// slot 104: calls slot 71, then sub_100eecf0
 	virtual void vfunc113();	// "CBaseDoor::Activate": base Activate, updates the area portals for a door at rest (state 0 opens them, 1 closes them), then looks up the two entities named at +0x634 / +0x63c and stores their handles at +0x630 (-1 when none) / +0x638 (unchanged when none)
 	void vfunc245(Vector *pMins, Vector *pMaxs);	// slot 245: the world bounds of the door's collision box moved to its open position: the absolute origin moved against the move direction (+0x190) by the door's extent along it (|(size - 2) * dir| summed over the axes) minus the lip (+0x504), plus the collision mins / maxs (slots 1 / 2 of the property at +0x270); the two results go to pMins / pMaxs
-	void vfunc246(int a, int* b, int c);
 	void vfunc248();	// slot 248 "CBaseDoor::UpdatePosition"-like: when the absolute origin (slot 220) equals the position at +0x508 within 0.001f the state at +0x4f8 becomes 1, else when it equals the position at +0x514 it becomes 0
 	int vfunc35(int a);	// slot 35: 0x3a when sub_100127ec; else the slot 35 answer of the entity behind the handle at +0x638, or of the entity sub_10008cba(a) finds; else (flags +0x204 has bit 8 or 10) the value at +0x650 when the byte at +0x55c is set, else 0x3b when sub_1000cc57 else the value at +0x64c; 0 without those flag bits
 	char sub_100127ec();	// stub 0x100127ec for 0x100eef10, called directly
