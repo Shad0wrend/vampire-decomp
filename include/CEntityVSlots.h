@@ -1,5 +1,5 @@
-// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..605, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 116, 118, 122, 142, 143, 158, 161, 162, 167, 173,
-// 192, 193, 194, 196, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 270, 274, 285, 306, 308, 310, 316, 332, 346, 360, 371, 376, 381, 383, 385, 404, 426, 427, 448, 457, 464, 532, 584, 598, 601 and 605 of an entity class that does not model its vtable.
+// CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..605, used to call slots 9, 10, 42, 62, 64, 86, 93, 94, 105, 107, 116, 118, 122, 142, 143, 158, 161, 162, 167, 173,
+// 192, 193, 194, 196, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 270, 274, 285, 306, 308, 310, 316, 332, 337, 346, 360, 371, 376, 381, 383, 385, 404, 426, 427, 448, 452, 457, 464, 532, 584, 598, 601 and 605 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -13,7 +13,9 @@ class CEntityVSlots
 public:
 	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8)
 	virtual const char **slot9(int *pOut);	// the pointer to the entity's model name
-	EVS10(1) EVS10(2) EVS10(3)
+	virtual void slot10(int a);	// takes one argument (SetModelIndex-like: the index the engine gave the model name)
+	EVS(11) EVS(12) EVS(13) EVS(14) EVS(15) EVS(16) EVS(17) EVS(18) EVS(19)
+	EVS10(2) EVS10(3)
 	EVS(40) EVS(41)
 	virtual void slot42(CEntityVSlots *pEntity);	// takes an entity (CFuncMonitor::vfunc77 hands it the camera)
 	EVS(43) EVS(44) EVS(45) EVS(46) EVS(47) EVS(48) EVS(49)
@@ -126,7 +128,9 @@ public:
 	EVS10(32)
 	EVS(330) EVS(331)
 	virtual float slot332();	// weapon: a time span (the delay of the next shot), returned on the FPU stack
-	EVS(333) EVS(334) EVS(335) EVS(336) EVS(337) EVS(338) EVS(339)
+	EVS(333) EVS(334) EVS(335) EVS(336)
+	virtual int slot337();	// the hull bits the entity uses ("GetUsedHullBits"-like)
+	EVS(338) EVS(339)
 	EVS(340) EVS(341) EVS(342) EVS(343) EVS(344) EVS(345)
 	virtual unsigned char slot346();	// weapon: a flag byte (bit 3 = may be held twice)
 	EVS(347) EVS(348) EVS(349)
@@ -158,7 +162,9 @@ public:
 	EVS(440) EVS(441) EVS(442) EVS(443) EVS(444) EVS(445) EVS(446) EVS(447)
 	virtual void slot448(int a);	// NPC: sets the ideal state (the boss's "FailSchedule"-like slot, called with 4)
 	EVS(449)
-	EVS(450) EVS(451) EVS(452) EVS(453) EVS(454) EVS(455) EVS(456)
+	EVS(450) EVS(451)
+	virtual char slot452();	// NPC: a boolean answer in al (false rejects the spawn: the schedules had an error)
+	EVS(453) EVS(454) EVS(455) EVS(456)
 	virtual void slot457(const char *pszName, int a);	// switch to / equip the named weapon
 	EVS(458) EVS(459)
 	EVS(460) EVS(461) EVS(462) EVS(463)
