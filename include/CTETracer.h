@@ -1,12 +1,20 @@
 // CTETracer: tracer temp entity. Declared flat (bases not recovered).
 #pragma once
 
+#include "Vector.h"
+
 class CTETracer
 {
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual CTETracer *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3(const Vector *pOrigin, const Vector *pAngles);	// slot 3 "Test": same body as CTEShowLine::vfunc3 (a line from the raised origin along the flattened forward direction with a cross bar), then slot 4 for every player
+	virtual void vfunc4(void *pFilter, int delay);	// "Create"
+
+	char m_pad0004[8];
+	Vector m_vecStart;	// 0x0c
+	Vector m_vecEnd;	// 0x18
 
 	void sub_1000f236();	// destructor body
 };
