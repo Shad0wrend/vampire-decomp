@@ -59956,6 +59956,81 @@ void CPropSwitch::sub_1020f330(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020f3f0 size=0x174
+#include "CFuncElevator.h"
+#include "inputdata_t.h"
+#include "COutputEvent.h"
+#include "Vector.h"
+
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+__declspec(dllimport) void Warning(const char *, ...);
+
+struct ElevTime_t { char pad[0xc]; float curtime; };
+extern ElevTime_t *g_1070b228;
+
+void sub_10003cce();	// the elevator's think function (stub)
+
+struct ElevView_t {
+	char m_pad0000[0x164];
+	float m_flSpeed;	// 0x164
+	char m_pad0168[0x17c - 0x168];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x548 - 0x180];
+	float m_f548;
+	char m_pad054c[0x608 - 0x54c];
+	float m_flFloors[9];	// 0x608
+	int m_nFloors;	// 0x62c
+	int m_n630;
+	int m_n634;
+	COutputEvent m_out638;
+	char m_pad0650[0x800 - 0x650];
+	Vector m_vec800;
+	char m_bBusy;	// 0x80c
+	char m_bFlags[8];	// 0x80d
+
+	void sub_1020f700(int nFloor);	// stub 0x1000aebb
+	void sub_10116570(Vector vecDest, float flSpeed);	// stub 0x1000c7c5
+	int sub_100ac4e0(int func, int thinkTime, const char *pszContext);	// stub 0x10007fe5
+};
+
+void CFuncElevator::sub_1020f3f0(inputdata_t *pInput)
+{
+	ElevView_t *p = (ElevView_t *)this;
+	int nFloor = ((pInput->value.fieldType == 4) ? pInput->value.iValue : 0) - 1;
+	if (p->m_n630 != -1 && !p->m_bBusy) {
+		if (nFloor == p->m_n630) {
+			p->sub_1020f700(p->m_n630);
+			return;
+		}
+		if (nFloor <= 8 && nFloor <= p->m_nFloors && nFloor >= 0) {
+			float flPos = p->m_flFloors[nFloor];
+			Vector vecDest = p->m_vec800;
+			vecDest.z = flPos;
+			p->sub_10116570(vecDest, p->m_flSpeed);
+			p->m_n634 = nFloor;
+			p->m_n630 = -1;
+			p->m_out638.sub_100cd660(pInput->pActivator, this, 0);
+			p->sub_100ac4e0((int)sub_10003cce, 0, 0);
+			p->m_flNextThink = g_1070b228->curtime + 0.1f;
+			memset(p->m_bFlags, 0, 8);
+			bool bUp = p->m_f548 > flPos;
+			for (int i = 0; i < 8; i++) {
+				if (bUp) {
+					if (flPos > p->m_flFloors[i])
+						p->m_bFlags[i] = 1;
+				} else {
+					if (flPos < p->m_flFloors[i])
+						p->m_bFlags[i] = 1;
+				}
+			}
+		} else {
+			Warning("Elevator asked to go to invalid floor %d", nFloor);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020f7e0 size=0x43
 #include "CLogicVisible.h"
 void *sub_100aa720(int size);
