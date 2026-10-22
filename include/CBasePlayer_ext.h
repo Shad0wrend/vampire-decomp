@@ -55,3 +55,6 @@
 	bool vfunc360();	// slot 360 "CheckForPlayerFrenzy" (plain member): fails (with a DevWarning) while the player grapples, without close NPCs; otherwise creates the "npc_VFrenzyShadow" controller, equips the fists, raises the criminal level and tells the frenzy list
 	void *sub_10161a70(const char *pszClassname);	// stub 0x1000cc93: creates the entity of that class for the player
 	void sub_10147a30(int a);	// stub 0x10001d8e
+	void sub_1016fed0();	// "CBasePlayer::OnRestore"-like (called by slot 103 and sub_101707c0): resets the use handles (+0x1e04 / +0x1e08 / +0x1e0c), sub_10178140, then with "developer" set validates the player (sub_10170340) and marks the level changes whose landmark cannot be found; with sub_100df7b0 set runs the dialog script dump over every entity that has a dialog (+0x98 object with +0x128)
+	void sub_10178140();	// stub 0x10013c7d: resets the fields +0x1d2c / +0x1d40 / +0x1dd0 / +0x1dd8
+	char sub_10170340();	// stub 0x10012314: validates the player entity (solid flags, collision group, move type, bounds, required items), true when everything is fine
