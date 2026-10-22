@@ -35,6 +35,7 @@ struct CUnknown101e0f00Src	// the 0x1c byte source descriptions at +0xa4 / +0xc0
 	void sub_101dd3c0(const char *pszLabel);	// Debug_Display with the label (stub 0x10015d66)
 	void sub_101dcb20();	// the constructor body (stub 0x10002036)
 	void sub_101dd090(int a, int id);	// notes the hit of discipline id on a (stub 0x10012157)
+	void sub_101dd3a0(void *pChar, int id);	// takes the effect of discipline id back from the character (stub 0x10001212)
 };
 
 struct CUnknown101e0f00Fx	// the object the tail's callback worker hands back
