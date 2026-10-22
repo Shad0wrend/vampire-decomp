@@ -28,6 +28,36 @@ void CFuncPlat::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101597a0 size=0x156
+#include "CFuncPlat.h"
+#include "CBaseToggle.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CUnknown1070b248.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+extern CUnknown1070b248 *g_1070b248;
+extern char g_106b8540[];
+void sub_10004232();
+
+// TARGET: CFuncPlat::vfunc243
+void CFuncPlat::vfunc243()
+{
+	if (m_pszStartSound)
+	{
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this, 0.8f);
+		filter.MakeReliable();
+		const char *pszSound = m_pszStartSound ? m_pszStartSound : g_106b8540;
+		int entindex = g_1070b22c->vfunc35((int)m_pEdict);
+		g_1070b248->vfunc3(&filter, entindex, 6, pszSound, m_flVolume, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+	m_nToggleState = 3;
+	m_pfnThink = (void *)sub_10004232;
+	((CBaseToggle *)this)->sub_101c1520(&m_vecPosition514, m_flSpeed164);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a4d0 size=0x36
 #include "CFuncPlat.h"
 
