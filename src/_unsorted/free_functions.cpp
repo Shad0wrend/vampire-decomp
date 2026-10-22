@@ -34085,6 +34085,26 @@ void __fastcall sub_1012d4b0(S *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d5e0 size=0xf9
+#include "CUnknown1012d740.h"
+#include "CReliableBroadcastFilter.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+extern int g_10726080;
+
+void CUnknown1012d740::sub_1012d5e0(int nState)
+{
+	m_nState488 = nState;
+	CReliableBroadcastFilter filter;
+	g_1070b22c->vfunc65(&filter, g_10726080);
+	g_1070b22c->vfunc71(nState);
+	int edict = m_pEdict2e0;
+	g_1070b22c->vfunc71(g_1070b22c->vfunc35(edict));
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d740 size=0x97
 #include "CUnknown1012d740.h"
 
