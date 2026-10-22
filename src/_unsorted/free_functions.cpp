@@ -12218,6 +12218,62 @@ void CUnknown1007e5a0::sub_1007e5a0(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e810 size=0x103
+extern "C" int _strcmpi(const char *a, const char *b);
+struct SEvent1007e810
+{
+	char sub_10076ef0();
+	const char *sub_10076fc0();
+	const char *sub_10076fa0();
+};
+struct SChannel1007e810
+{
+	int sub_10073540();
+	SEvent1007e810 *sub_10073560(int i);
+};
+struct SActor1007e810
+{
+	int sub_10072eb0();
+	SChannel1007e810 *sub_10072ed0(int i);
+};
+struct SScene1007e810
+{
+	char m_pad[0x14];
+	SActor1007e810 **m_actors;
+	char m_pad2[8];
+	int m_nActors;
+	SEvent1007e810 *sub_1007e810(const char *a, const char *b);
+};
+
+SEvent1007e810 *SScene1007e810::sub_1007e810(const char *a, const char *b)
+{
+	for (int i = 0; i < m_nActors; i++)
+	{
+		SActor1007e810 *pActor = m_actors[i];
+		if (pActor)
+		{
+			for (int j = 0; j < pActor->sub_10072eb0(); j++)
+			{
+				SChannel1007e810 *pChannel = pActor->sub_10072ed0(j);
+				if (pChannel)
+				{
+					for (int k = 0; k < pChannel->sub_10073540(); k++)
+					{
+						SEvent1007e810 *pEvent = pChannel->sub_10073560(k);
+						if (pEvent && pEvent->sub_10076ef0())
+						{
+							if (!_strcmpi(a, pEvent->sub_10076fc0()) && !_strcmpi(b, pEvent->sub_10076fa0()))
+								return pEvent;
+						}
+					}
+				}
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007eaa0 size=0x123
 #include "CChoreoScene1007eaa0.h"
 #include "CAnchorList.h"
