@@ -13,3 +13,30 @@ CTEDynamicLight *CTEDynamicLight::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10060c00 size=0x10a
+#include "CTEDynamicLight.h"
+#include "CBroadcastRecipientFilter.h"
+
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_10139500(const Vector &start, float scale, const Vector &direction, Vector &dest);
+
+void CTEDynamicLight::vfunc3(const Vector &origin, const QAngle &angles)
+{
+	Vector forward;
+	r = 255;
+	g = 255;
+	b = 63;
+	m_vecOrigin = origin;
+	m_fRadius = 200.0f;
+	m_fTime = 2.0f;
+	m_fDecay = 0;
+	m_vecOrigin[2] += 24.0f;
+	sub_10139610(angles, &forward, 0, 0);
+	forward.z = 0;
+	VectorNormalize(forward);
+	sub_10139500(m_vecOrigin, 50.0f, forward, m_vecOrigin);
+	CBroadcastRecipientFilter filter;
+	vfunc4(filter, 0);
+}
+// END FUNCTION
