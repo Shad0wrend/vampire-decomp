@@ -63,6 +63,67 @@ void CNPC_VTest::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b4600 size=0x12f
+#include "CNPC_VTest.h"
+#include "CPASAttenuationFilter.h"
+#include "CRecipientFilter.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##a) V10(p##b) V10(p##c) V10(p##d) V10(p##e) V10(p##f) V10(p##g) V10(p##h) V10(p##i) V10(p##j)
+struct S_Eng {
+    V10(a0) V10(a1) V10(a2)
+    virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+    virtual int s35(void *pEdict);
+};
+struct S_Obj {
+    V100(a) V100(b)
+    V10(c0) V10(c1)
+    virtual void d0(); virtual void d1();
+    virtual Vector *s222(Vector *pOut);
+    V100(e) V100(f)
+    V10(g0) V10(g1) V10(g2) V10(g3) V10(g4) V10(g5)
+    virtual void h0(); virtual void h1(); virtual void h2();
+    virtual char s486();
+    char pad0[0x2e0 - 4];
+    void *m_pEdict2e0;
+};
+struct S_Filter {
+    void *m_vptr;
+    int pad04;
+    CRecipientVec m_Vec;
+    int m_n1c;
+    char pad20[8];
+    char m_b28;
+};
+extern S_Eng *g_1070b22c;
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern char g_104470dc[];
+extern char g_104470b0[];
+extern const char *g_10652190[];
+
+void CNPC_VTest::vfunc490()
+{
+    S_Obj *pObj = (S_Obj *)this;
+    if (pObj->s486()) {
+        Vector origin;
+        const Vector *pOrigin = pObj->s222(&origin);
+        S_Filter f;
+        ((CRecipientFilter *)&f)->sub_1019ce00();
+        f.m_vptr = g_104470dc;
+        ((CRecipientFilter *)&f)->sub_1019d280((const float *)pOrigin);
+        f.m_vptr = g_104470b0;
+        ((CRecipientFilter *)&f)->sub_1019d4b0(*pObj->s222(&origin), 0.8f);
+        ((CRecipientFilter *)&f)->sub_1019cf50();
+        void *pEdict = pObj->m_pEdict2e0;
+        int nEntity = g_1070b22c->s35(pEdict);
+        g_1070b248->vfunc3((const CRecipientFilter *)&f, nEntity, 2, g_10652190[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b4f30 size=0x77
 #include "CNPC_VTest.h"
 struct CNPC_VTestUnit : CNPC_VTest {
