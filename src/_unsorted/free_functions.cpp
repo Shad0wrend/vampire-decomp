@@ -24577,6 +24577,54 @@ void sub_100d5f10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d60c0 size=0x85
+#include "CWeaponRanged.h"
+#include "CFlagSet10174550.h"
+
+class CBasePlayer;
+extern char g_1055f710[];
+extern char g_1055f738[];
+extern "C" void *__cdecl __RTDynamicCast(void *pIn, long vfDelta, void *pSrc, void *pTarget, int isRef);
+CBasePlayer *sub_101193b0();
+
+struct S_Owner { char pad[0x4fe84]; int m_nCount; };
+struct S_Char {
+    char pad[0x1e78];
+    int m_n1e78;
+    void *sub_1032e7b0();
+};
+struct S_Player { char pad[0xa8]; S_Char *m_pChar; };
+struct S_Ranged : CWeaponRanged {
+    int sub_1023a250();
+    void sub_1023a2a0();
+};
+
+void sub_100d60c0()
+{
+    CBasePlayer *pPlayer = sub_101193b0();
+    if (pPlayer) {
+        S_Char *pChar = ((S_Player *)pPlayer)->m_pChar;
+        if (pChar) {
+            CWeaponRanged *pWeapon = (CWeaponRanged *)pChar->sub_1032e7b0();
+            if (pWeapon) {
+                if (pWeapon->sub_102517b0()) {
+                    if (((S_Owner *)pWeapon->sub_102517b0())->m_nCount > 0) {
+                        S_Ranged *pRanged = (S_Ranged *)__RTDynamicCast(pWeapon, 0, g_1055f710, g_1055f738, 0);
+                        if (pRanged) {
+                            if (pRanged->sub_1023a250()) {
+                                ((CFlagSet10174550 *)pChar)->sub_10174550(true);
+                                pChar->m_n1e78 = 0;
+                                pRanged->sub_1023a2a0();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d6560 size=0xa3
 #include "CStatDefault3List.h"
 #include "CUnknown101d5bd0.h"
