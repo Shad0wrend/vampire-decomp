@@ -33,7 +33,8 @@ public:
 	void sub_102143e0();	// the think function the activation installs (stub 0x1000c621)
 	int sub_1008f7b0(const char *label);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
 	void sub_10260a50(int nSequence);	// CBaseAnimating::ResetSequence (stub 0x1000d0b2), called directly
-	void sub_10214080(int a);	// stub 0x10002603: takes the value at +0x7cc
+	void sub_10214080(const char *pszSound);	// stub 0x10002603: emits the sound (null = the empty string) from the prop to everyone who can hear it (CPASAttenuationFilter), channel 4, 75 dB
+	void sub_10214080(int a);	// the caller of the activation passes the string at +0x7cc as an int
 	CEnvParticle *sub_10214cc0(int a);	// stub 0x10009f0c: the ghost particle entity for the value at +0x7c0, null when there is none
 
 	char m_pad03e0[0x77c - 0x3e0];
