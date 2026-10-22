@@ -27253,6 +27253,74 @@ struct CUnknown100eb420 { int pad[4]; int m_p; bool sub_100eb420(); };
 bool CUnknown100eb420::sub_100eb420() { if (m_p != 0) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x100eb870 size=0x133
+#include "CUnknown10248a50.h"
+#include <string.h>
+
+extern IFileSys *g_1070b238;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+struct CDispositionEntry	// 0x264 bytes: the name first
+{
+	char m_szName[8];
+	char m_pad0008[0x264 - 8];
+};
+
+class CUnknown100eb870	// the dialogue disposition table: loaded once from a key/value file
+{
+public:
+	char m_bLoaded;	// 0x00
+	char m_pad0001[3];
+	int m_iDefault;	// 0x04: the index of the "Neutral" entry
+	CDispositionEntry *m_pEntries;	// 0x08
+	int m_nAlloc;	// 0x0c
+	int m_nGrow;	// 0x10
+	int m_nEntries;	// 0x14
+
+	void sub_100ed2c0(int nLevel, const char *pszMsg);	// stub 0x1000e886
+	void sub_100eb5a0(int a);	// stub 0x10001686
+	void sub_100eba00(CUnknown10248a50 *pKey);	// stub 0x1000adf8
+	void sub_100eb870(const char *pszFile);
+};
+
+// TARGET: CUnknown100eb870::sub_100eb870
+void CUnknown100eb870::sub_100eb870(const char *pszFile)
+{
+	if (m_bLoaded)
+		return;
+	CUnknown10248a50 *pKV = new CUnknown10248a50("DispositionTable");
+	if (pKV && pKV->sub_102480f0(pszFile, g_1070b238, 0, true))
+	{
+		sub_100ed2c0(1, "Started loading disposition table\n");
+		sub_100eb5a0(0);
+		for (CUnknown10248a50 *pSub = pKV->sub_10248a10(); pSub; pSub = pSub->sub_10248a30())
+			sub_100eba00(pSub);
+		pKV->sub_100046f1();
+		operator delete(pKV);
+		m_iDefault = -1;
+		for (int i = 0; i < m_nEntries; i++)
+		{
+			if (!strcmp("Neutral", m_pEntries[i].m_szName))
+				m_iDefault = i;
+		}
+		if (m_iDefault < 0)
+		{
+			m_iDefault = 0;
+			sub_100ed2c0(0, "Warning: defunct default dialogue disposition definition!\n");
+		}
+		sub_100ed2c0(1, "Finished loading disposition table\n");
+		m_bLoaded = 1;
+		return;
+	}
+	Msg("Unable to open Disposition Table file: %s \n", pszFile);
+	if (pKV)
+	{
+		pKV->sub_100046f1();
+		operator delete(pKV);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecc60 size=0x6d
 struct Entry { char pad[0x244]; int vals[3]; char pad2[0x264 - 0x250]; };
 struct EntryTable {
