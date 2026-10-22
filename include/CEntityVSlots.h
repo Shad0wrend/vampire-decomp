@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..605, used to call slots 9, 42, 62, 64, 86, 93, 94, 105, 107, 116, 118, 122, 142, 143, 158, 161, 162, 167, 173,
-// 192, 193, 194, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 270, 274, 285, 306, 308, 316, 332, 346, 360, 371, 376, 381, 385, 404, 426, 427, 448, 457, 601 and 605 of an entity class that does not model its vtable.
+// 192, 193, 194, 196, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 270, 274, 285, 306, 308, 316, 332, 346, 360, 371, 376, 381, 385, 404, 426, 427, 448, 457, 601 and 605 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -65,7 +65,9 @@ public:
 	virtual Vector slot192();	// "WorldSpaceCenter": the center of the collision bounds, returned by value (hidden result pointer)
 	virtual Vector *slot193(Vector *pOut);	// a position getter that fills pOut and returns it
 	virtual Vector *slot194();	// the entity's local angles
-	EVS(195) EVS(196) EVS(197)
+	EVS(195)
+	virtual Vector *slot196(Vector *pOut);	// "EarPosition": forwards to slot 193, fills pOut and returns it
+	EVS(197)
 	virtual Vector *slot198();	// a vector getter (the NPC's velocity / ground vector), the pointer to three floats
 	virtual void slot199(Vector *pA, Vector *pB);	// fills two vectors (a zero first one marks a free entity for the Hengeyokai's fish search)
 	EVS(200) EVS(201)
