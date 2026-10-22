@@ -8,6 +8,83 @@ void CBaseGrenade::vfunc144(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ace0 size=0x121
+#include "CBaseGrenade.h"
+#include "CRecipientFilter.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+
+class S_SoundSystem
+{
+public:
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void slot3(const CRecipientFilter *pFilter, int entindex, int channel, const char *pszSample, float flVolume, float flAttenuation, int flags, int pitch, int a, int b, int c, int d);
+};
+
+struct S_GrenadeView
+{
+	char m_pad[0x19c4];
+	const char *m_pszSample;
+};
+
+#define EO10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define EO100(p) EO10(p##0) EO10(p##1) EO10(p##2) EO10(p##3) EO10(p##4) EO10(p##5) EO10(p##6) EO10(p##7) EO10(p##8) EO10(p##9)
+
+class S_EntOrigin
+{
+public:
+	EO100(a)	// slots 0..99
+	EO100(b)	// slots 100..199
+	EO10(c0) EO10(c1)	// slots 200..219
+	virtual void c20(); virtual void c21();	// 220, 221
+	virtual Vector *slot222(Vector *pOut);
+};
+
+extern S_SoundSystem *g_1070b248;
+extern CUnknown1070b22c *g_1070b22c;
+extern char vt_104470dc[];
+extern char vt_104470b0[];
+
+struct S_PASFilter
+{
+	void *m_vptr;
+	int m_pad04;
+	CRecipientVec m_Vec;
+	int m_n1c;
+	char m_pad20[8];
+	char m_b28;
+};
+
+static inline const char *S_STRING(const char *const &p)
+{
+	return p ? p : g_106b8540;
+}
+
+void CBaseGrenade::vfunc408()
+{
+	S_PASFilter filter;
+	Vector pos;
+	S_EntOrigin *pEnt = (S_EntOrigin *)this;
+	Vector *pOrigin = pEnt->slot222(&pos);
+	((CRecipientFilter *)&filter)->sub_1019ce00();
+	filter.m_vptr = vt_104470dc;
+	((CRecipientFilter *)&filter)->sub_1019d280(&pOrigin->x);
+	filter.m_vptr = vt_104470b0;
+	((CRecipientFilter *)&filter)->sub_1019d4b0(*pEnt->slot222(&pos), 0.8f);
+	S_GrenadeView *pView = (S_GrenadeView *)this;
+	const char *pszSample;
+	if (pView->m_pszSample == 0)
+		pszSample = "weapons/grenade_hit1.wav";
+	else
+		pszSample = S_STRING(pView->m_pszSample);
+	int edict = m_pEdict2e0;
+	g_1070b248->slot3((CRecipientFilter *)&filter, g_1070b22c->vfunc35(edict), 2, pszSample, 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b080 size=0x6c
 #include "CBaseGrenade.h"
 
