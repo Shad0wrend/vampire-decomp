@@ -8,6 +8,7 @@ class CUnknown101df000	// one 0xac byte action record
 {
 public:
 	void sub_101df000(const char *pszLabel);	// stub 0x100102ad: prints the record under that label when it is in use
+	void sub_101ddfb0(void *pKV, const char *pszKeyName);	// stub 0x1000852b: loads the record from the sub key of that name of pKV (a null name: the key itself)
 };
 
 class CTraitEffectTable	// the table behind the global at 0x1074df78
@@ -24,6 +25,7 @@ public:
 		Name m_Name;	// 0x08
 	};
 	Entry *sub_101f8480(int id);	// stub 0x1000c5d1: the entry of a trait effect id
+	int sub_101f83a0(const char *pszEffect);	// stub 0x1000ee67: the id of the named trait effect
 };
 
 class CUnknown101dff00
@@ -34,6 +36,10 @@ public:
 	char m_pad0008[0x364 - 0x08];	// five 0xac byte CUnknown101df000 records at +0x08, +0xb4, +0x160, +0x20c, +0x2b8
 	char m_RangeStorage[8];	// 0x364: a Range (min, max)
 	int m_nTraitEffect;	// 0x36c, -1 when none
+	char m_bDoPossession;	// 0x370
+	char m_bDoFrenzy;	// 0x371
 
 	void sub_101dff00();	// debug print: "Hit Group: <name>", the trait effect (when set), the duration range and the five action records (Begin, End, Callback, Interrupt, InterruptSchedule)
+	bool sub_101dfa00(int a, void *pKV, const char *pszName);	// loads the hit group from its key (ret 0xc): the name, "InheritFrom" (another hit group, sub_101df340), the five action records, "Duration", the "TraitEffect" sub key's "Effect" and the "DoPossession" / "DoFrenzy" flags; false without a key or when the inherited group is unknown
+	char sub_101df340(int a, const char *pszParent);	// stub 0x10002699: copies the hit group named pszParent
 };
