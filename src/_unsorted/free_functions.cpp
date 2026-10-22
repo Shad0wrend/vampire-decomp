@@ -38672,6 +38672,57 @@ void CBasePlayer::sub_1017f2a0(int priority, CBaseEntity *pEntity, const Vector 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f4a0 size=0x10b
+#include "CBasePlayer.h"
+#include "ConVar.h"
+
+struct CGlobalVarsView
+{
+	char m_pad[0xc];
+	float curtime;
+};
+struct CLocalPlayerView
+{
+	char m_pad[0x49c];
+	int m_n49c;
+};
+
+extern ConVar *g_107258dc;
+extern ConVar *g_10725804;
+extern ConVar *g_10723984;
+extern CGlobalVarsView *g_1070b228;
+CLocalPlayerView *sub_1023bd00();
+void sub_1022dea0(CBasePlayer *pPlayer, int a);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+void CBasePlayer::sub_1017f4a0(int priority, CBaseEntity *pEntity, const Vector *pPos)
+{
+	if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
+	{
+		const char *pszName;
+		if (pEntity)
+		{
+			*(float *)((char *)pEntity + 0x63a8) = g_1070b228->curtime + 20.0f;
+			pszName = pEntity->sub_100ab4f0();
+		}
+		else
+			pszName = "**UNKNOWN**";
+		DevMsg("CSActs:    %6.1f - Supernatural act witnessed by %s at %f\n", (double)g_1070b228->curtime, pszName, (double)g_1070b228->curtime);
+	}
+	CLocalPlayerView *pLocal = sub_1023bd00();
+	if (pLocal && pLocal->m_n49c)
+	{
+		if (g_1070b228->curtime >= *(float *)((char *)this + 0x1dbc))
+		{
+			::sub_1022dea0(this, 1);
+			*(float *)((char *)this + 0x1dbc) = (g_10723984->vfunc1() ? 0.0f : g_10723984->m_fValue) + g_1070b228->curtime;
+		}
+		if (!g_10725804->vfunc1() && g_10725804->m_nValue)
+			sub_1017ed00(priority, pEntity, pPos);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f650 size=0x6b
 #include "CNPC_VCop.h"
 #include "ConVar.h"
