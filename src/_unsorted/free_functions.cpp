@@ -108631,6 +108631,27 @@ char CWeaponMelee::sub_10411160(CBaseEntity *pTarget, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104112d0 size=0x11d
+#include "CWeaponPhysCannon.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CSoundControllerImp.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+CSoundControllerImp *sub_10004746();
+
+CUnknown101bc140 *CWeaponPhysCannon::sub_104112d0()
+{
+	if (!m_pHoldSound) {
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		int edict = ((CBaseEntity *)this)->m_pEdict2e0;
+		m_pHoldSound = sub_10004746()->vfunc7(&filter, g_1070b22c->vfunc35(edict), 6, "Weapon_PhysCannon.HoldSound", 0.8f);
+	}
+	return m_pHoldSound;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10411630 size=0x73
 #include "CUnknown10411630.h"
 #include "CGlobalEntityList.h"
