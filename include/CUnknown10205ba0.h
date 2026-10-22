@@ -1,6 +1,8 @@
 // CUnknown10205ba0: a tagged value (type at +0: 0 number, 1 sub-object at +4, 2 stat id, 3 function; -1 none); real name not yet known.
 #pragma once
 
+#include "CVDmg_t.h"
+
 class CUnknown10204bf0;
 
 class CUnknown10205ba0
@@ -12,4 +14,5 @@ public:
 	const char *sub_10205ba0(CUnknown10204bf0 *pNames);	// the text form of the value; numbers go through pNames when it is set, else "%d"
 	int sub_10205840();	// evaluates the value (stub 0x10004e85): the number itself, the sub-object's result, the stat's value, 0 for a function, -1 for anything else
 	int sub_10205730(void *pCharacter);	// evaluates the value for the character (stub 0x100099e4)
+	void sub_100032a6(CVDmgBlock16_t *pBlock, const char *pszValue);	// stub 0x100032a6: parses the value text for the block
 };
