@@ -45,3 +45,6 @@
 	void sub_1027dfb0(CBaseEntity *pDoor);	// the door starts to bother the NPC: when slot 158 holds and a door is given, asks the global 0x10924a6c (slot 1), sets the task 0x34 and remembers the door's handle at +0x5d2c; when the debug convar 0x1092038c allows, a door that is the NPC's current one (handle +0x5d24) gets sub_1027de00, any other is notified (sub_100f0e30 with curtime + 0.5f), told to the squad (+0x5da4) and remembered at +0x5d28; else slot 532-ish 448(4)
 	virtual void vfunc144(int a);	// slot 144 "Event_Killed": the argument is the damage info (CTakeDamageInfo *); an act record for the cs act list unless the info's sub_101c2af0 holds, CAI_BaseNPC::vfunc144, ClearHintNode(5.0f), slot 601(this), "Leaving interesting place (Event_Killed)", the look target reset when sub_102c1170 holds, the python MarkAsDead call for a named NPC and sub_101828b0(this, ...) on the entity of the handle at +0x628c
 	void sub_10265ad0(int a);	// CAI_BaseNPC::vfunc144 (stub 0x10006f32), called directly
+	virtual void vfunc463(int a, int b);	// slot 463 override: the state change handler (old state a, new state b)
+	void sub_102ae310();	// stub 0x10007e5a, run by vfunc463
+	void sub_10293d90(float f);	// stub 0x10004fac, run by vfunc463 for state 0xe
