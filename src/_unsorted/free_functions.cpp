@@ -73952,6 +73952,85 @@ unsigned short CUtlRBTreeBig::sub_1025c6a0(const void *search)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025c800 size=0x169
+#include "CUtlRBTreeBig.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int nSize);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *pMem, unsigned int nSize);
+
+void __stdcall sub_10025e50(void *pArray, unsigned int nSize, int nCount, void (*pfnCtor)());
+void sub_1025b390();
+
+struct CRBTreeBigMemory
+{
+	CUtlRBTreeBig::Node_t *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+
+	int NumAllocated() const { return m_nAllocationCount; }
+
+	void Grow(int num = 1)
+	{
+		if (m_nGrowSize == -1)
+			return;
+		int nAllocationRequested = m_nAllocationCount + num;
+		while (m_nAllocationCount < nAllocationRequested) {
+			if (m_nAllocationCount != 0) {
+				if (m_nGrowSize)
+					m_nAllocationCount += m_nGrowSize;
+				else
+					m_nAllocationCount += m_nAllocationCount;
+			} else {
+				m_nAllocationCount = (31 + sizeof(CUtlRBTreeBig::Node_t)) / sizeof(CUtlRBTreeBig::Node_t);
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (CUtlRBTreeBig::Node_t *)Plat_Realloc(m_pMemory, m_nAllocationCount * sizeof(CUtlRBTreeBig::Node_t));
+		else
+			m_pMemory = (CUtlRBTreeBig::Node_t *)Plat_Alloc(m_nAllocationCount * sizeof(CUtlRBTreeBig::Node_t));
+	}
+};
+
+// TARGET: CUtlRBTreeBig::sub_1025c800
+unsigned short CUtlRBTreeBig::sub_1025c800(unsigned short parent, bool leftchild)
+{
+	CRBTreeBigMemory &mem = *(CRBTreeBigMemory *)&m_pElements;
+	unsigned short elem = m_FirstFree;
+	if (elem == InvalidIndex()) {
+		if (m_unk8 == m_TotalElements)
+			mem.Grow();
+		elem = m_TotalElements++;
+	} else {
+		m_FirstFree = sub_1025cb70(elem).m_Right;
+	}
+
+	unsigned short *pData = (unsigned short *)m_pElements[elem].m_Data;
+	if (pData) {
+		*pData = 0xffff;
+		sub_10025e50((char *)pData + 0x238e4, 0xec84, 3, sub_1025b390);
+	}
+
+	Links_t &links = m_pElements[elem].m_Links;
+	links.m_Parent = parent;
+	links.m_Right = InvalidIndex();
+	links.m_Left = InvalidIndex();
+	links.m_Tag = 0;
+
+	if (parent != InvalidIndex()) {
+		if (leftchild)
+			m_pElements[parent].m_Links.m_Left = elem;
+		else
+			m_pElements[parent].m_Links.m_Right = elem;
+	} else {
+		m_Root = elem;
+	}
+
+	sub_1025cbf0(elem);
+	++m_NumElements;
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025c9d0 size=0x10e
 #include "CUtlRBTreeBig.h"
 
