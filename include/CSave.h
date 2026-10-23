@@ -8,7 +8,19 @@
 struct typedescription_t;
 struct CSaveEdict;
 
-class CSave : public ISave
+// the data of the CUtlVector<int> section stack at +4 (without its destructor: the game's code tears it down by hand)
+struct CSaveSections
+{
+	CSaveSections() : m_pSections(0), m_nAlloc(0), m_nGrow(0), m_nSections(0), m_pElements(0) {}
+
+	int *m_pSections;	// +0x04
+	int m_nAlloc;	// +0x08
+	int m_nGrow;	// +0x0c
+	int m_nSections;	// +0x10
+	int *m_pElements;	// +0x14
+};
+
+class CSave : public ISave, public CSaveSections
 {
 public:
 	virtual int vfunc0();	// current position
@@ -54,10 +66,6 @@ public:
 
 	CSave(void *pData);	// stub 0x10009bf6
 
-	int *m_pSections;	// +0x04: section start stack
-	char m_pad0008[0x8];
-	int m_nSections;	// +0x10
-	char m_pad0014[0x4];
 	void *m_pData;	// +0x18
 	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
 
