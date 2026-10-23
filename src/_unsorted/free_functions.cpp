@@ -21444,6 +21444,29 @@ extern "C" CBaseEntity *funCBaseFlex()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5970 size=0xd7
+#include "CBaseFlex.h"
+#include "utlvector.h"
+extern void *vt_10450abc[];
+struct CFlexVecView {
+	void **m_vptr;
+	char pad[0xa58 - 4];
+	CUtlVector<CBaseFlexItem> a;
+	CUtlVector<CBaseFlexItem> b;
+	void sub_100b6480();
+	void sub_1008b3c0();
+};
+void CBaseFlex::sub_100b5970()
+{
+	CFlexVecView *v = (CFlexVecView *)this;
+	v->m_vptr = vt_10450abc;
+	v->sub_100b6480();
+	v->b.~CUtlVector();
+	v->a.~CUtlVector();
+	v->sub_1008b3c0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6510 size=0x7f
 extern "C" unsigned strlen(const char *);
 extern void (*g_109f3890)(char *dest, const char *src, int count);
