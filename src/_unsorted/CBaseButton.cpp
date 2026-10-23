@@ -31,6 +31,42 @@ void CBaseButton::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c8810 size=0xe5
+#include "CBaseButton.h"
+#include "CUnknown1073dc28.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern CUnknown1073dc28 g_1073dc00;
+extern int g_106e6f78;
+extern int g_106e6f7c;
+
+inline int FindSoundId(const char *pszName)
+{
+	for (int i = 0; i < g_1073dc00.m_nRecords; i++)
+	{
+		if (!_strcmpi(g_1073dc00.m_ppRecords[i]->m_Name.Get(), pszName))
+			return g_1073dc00.m_ppRecords[i]->m_nId;
+	}
+	return -1;
+}
+
+struct CSoundNameView
+{
+	const char *m_psz;
+	const char *Get() { return m_psz ? m_psz : g_106b8540; }
+};
+
+// TARGET: CBaseButton::vfunc71
+void CBaseButton::vfunc71()
+{
+	m_nField0bc = 0;
+	m_nSoundSet0b4 = g_1073dc00.sub_101f55a0((CBaseEntity *)this, ((CSoundNameView *)&m_pszSoundName0c0)->Get(), 0);
+
+	g_106e6f78 = FindSoundId("on");
+	g_106e6f7c = FindSoundId("off");
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c8990 size=0x16
 #include "CBaseButton.h"
 
