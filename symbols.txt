@@ -989,6 +989,7 @@
 0x100048db func   ?sub_1009bb40@CBaseEntity@@QAEXHHI@Z CBaseEntity::sub_1009bb40
 0x100048e0 func   ?sub_10183100@CUnknown10183100@@QAEXH@Z CUnknown10183100::sub_10183100
 0x100048e5 func   ?sub_10200ca0@CVStatList_t@@QAEHH@Z CVStatList_t::sub_10200ca0
+0x100048f4 func   ?GetPercentage@CUnknown10076da0TimingTag@@QBEMXZ CUnknown10076da0TimingTag::GetPercentage
 0x10004903 func   _vdisciplineprojectile vdisciplineprojectile
 0x10004912 func   ?sub_10200410@CVStatInfoList_t@@QAEXXZ CVStatInfoList_t::sub_10200410
 0x10004917 func   ?vfunc28@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc28
