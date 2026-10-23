@@ -28167,6 +28167,25 @@ void CUnknown100eb870::sub_100eb870(const char *pszFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ecb40 size=0x7f
+#include "utlvector.h"
+struct CThreeVecs {
+    char m_flag;
+    char m_pad[7];
+    CUtlVector<int> m_a;
+    CUtlVector<int> m_b;
+    CUtlVector<int> m_c;
+    void sub_100ecb40();
+};
+void CThreeVecs::sub_100ecb40()
+{
+    m_b.Purge();
+    m_c.Purge();
+    m_a.Purge();
+    m_flag = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecc60 size=0x6d
 struct Entry { char pad[0x244]; int vals[3]; char pad2[0x264 - 0x250]; };
 struct EntryTable {
