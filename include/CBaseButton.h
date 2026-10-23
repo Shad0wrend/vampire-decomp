@@ -97,9 +97,15 @@ public:
 	void sub_100c9430(CBaseEntity *pOther);	// the touch function variant for a toucher that has the field at +0xa8 (or, with the byte at +0x5c5 set, bit 2 of the flags at +0x4c): remembers its handle as the activator (+0x53c), then like sub_100c8a20 without the use filter, using the state from sub_100c93b0
 	int sub_100c93b0();	// the button's current state (stub 0x10008aa8), called directly
 	int vfunc142(void *pInfo);	// slot 142 \"CBaseButton::OnTakeDamage\": fires the damage output (+0x560) for the activator; for a damageable button (flag 0x200 at +0x204 or health at +0x210) in a usable state takes the attacker (the entity at +0x2c of the damage info) as the new activator and presses it like sub_100c9430; always 0
+
 	bool sub_100a7bd0(CBaseEntity *pActivator);	// CBaseEntity::PassesUseFilter (stub 0x10001032), called directly
 
-	char m_pad0004[0x114 - 4];
+	char m_pad0004[0xb4 - 4];
+	int m_nSoundSet0b4;	// 0xb4: the sound table index of the sound set named by the sound name
+	char m_pad00b8[4];
+	int m_nField0bc;	// 0xbc
+	const char *m_pszSoundName0c0;	// 0xc0
+	char m_pad00c4[0x114 - 0xc4];
 	void (CBaseButton::*m_pfnThink114)();	// 0x114
 	char m_pad0118[0x164 - 0x118];
 	float m_flSpeed164;	// 0x164
