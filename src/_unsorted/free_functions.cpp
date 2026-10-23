@@ -10411,6 +10411,21 @@ float CUnknown10074a30::sub_10074610(float flValue, int nMode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100746e0 size=0xf6
+#include "CFlexAnimationTrack.h"
+#include "utlvector.h"
+
+void CFlexAnimationTrack::sub_100746e0(float flTime, float flValue, int nList)
+{
+	CExpressionSampleStub sample;
+	sample.m_flTime = flTime;
+	sample.m_flValue = flValue;
+	*(char *)&sample.m_nFlags = 0;
+	((CUtlVector<CExpressionSampleStub> *)&m_Samples[nList])->AddToTail(sample);
+	sub_10074820(nList);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074820 size=0x10e
 #include "CFlexAnimationTrack.h"
 
