@@ -40,9 +40,9 @@ public:
 extern int g_10739d20;
 extern CVFeat_t **g_10739d24;
 
-struct CVFeatSet
+struct CVFeatSet	// the feat table as one object: count g_10739d20, elements g_10739d24 (the next dword)
 {
-	static CVFeat_t *Find(int id)
+	CVFeat_t *Lookup(int id)	// a member, not a static function: VC6 gives its static's guard one communal name
 	{
 		for (int i = 0; i < g_10739d20; i++) {
 			if (*(int *)g_10739d24[i] == id)
@@ -51,4 +51,5 @@ struct CVFeatSet
 		static CVFeat_t s_default(-1);
 		return &s_default;
 	}
+	static CVFeat_t *Find(int id) { return ((CVFeatSet *)&g_10739d20)->Lookup(id); }
 };
