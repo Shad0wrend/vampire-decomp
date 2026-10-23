@@ -5298,6 +5298,7 @@
 0x100137b9 func   ?sub_101d8190@CUnknown101d82d0_Elem@@QAEPBDXZ CUnknown101d82d0_Elem::sub_101d8190
 0x100137d2 func   ?sub_100efbf0@CBaseDoor@@QAEXD@Z CBaseDoor::sub_100efbf0
 0x100137e1 func   ?vfunc103@CSkyCamera@@UAEXXZ CSkyCamera::vfunc103
+0x100137e6 func   ??1CUnknown100eb490@@QAE@XZ CUnknown100eb490::~CUnknown100eb490
 0x100137eb func   ?vfunc5@CItemContainer@@QAEPAV1@I@Z CItemContainer::vfunc5
 0x100137fa func   ?vfunc104@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc104
 0x10013804 func   ?sub_100c0c60@CUnknown100c0c60@@QAEXM@Z CUnknown100c0c60::sub_100c0c60
