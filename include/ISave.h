@@ -4,5 +4,6 @@
 class ISave
 {
 public:
+	ISave() {}
 	virtual int vfunc0() = 0;
 };
