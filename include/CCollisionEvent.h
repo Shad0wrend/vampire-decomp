@@ -49,6 +49,38 @@ struct CCollisionEventRecords
 	CCollisionEventRecords() { sub_1000d350(m, 12, 2, (void *)sub_1000c95a); }
 };
 
+// A vector of five zeroed dwords (memory, allocation count, grow size, size, element pointer) as its inline constructor leaves it.
+struct CCollisionEventVec5
+{
+	void *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	void *m_pElements;
+
+	CCollisionEventVec5()
+	{
+		m_pMemory = 0;
+		m_allocationCount = 0;
+		m_growSize = 0;
+		m_size = 0;
+		m_pElements = 0;
+	}
+};
+
+// Not yet modelled dwords of CCollisionEvent that its constructor zeroes.
+struct CCollisionEventZero1
+{
+	int m[1];
+	CCollisionEventZero1() { m[0] = 0; }
+};
+
+struct CCollisionEventZero2
+{
+	int m[2];
+	CCollisionEventZero2() { m[0] = 0; m[1] = 0; }
+};
+
 // The vector at +0x114 as the constructor builds it (memory constructor, size 0, element pointer).
 struct CCollisionEventPenetrateVec : CUtlVector20
 {
@@ -130,21 +162,15 @@ public:
 	char m_pad0068[0xb8 - 0x68];
 	CCollisionEventRecords m_records;	// 0x00b8
 	char m_pad00d0[0xd8 - 0xd0];
-	char *m_pTouchEvents;	// 0x00d8: queued touch records of 0x24 bytes
-	int m_z00dc;
-	int m_z00e0;
-	int m_nTouchEvents;	// 0x00e4
-	int m_z00e8;
-	CDamageEvent_t *m_pDamageEvents;	// 0x00ec
-	int m_z00f0;
-	int m_z00f4;
-	int m_nDamageEvents;	// 0x00f8
-	int m_z00fc;
-	int m_z0100;
-	int m_z0104;
-	int m_z0108;
-	int m_z010c;
-	int m_z0110;
+	CCollisionEventVec5 m_touchVec;	// 0x00d8: queued touch records of 0x24 bytes (memory +0xd8, size +0xe4)
+	CCollisionEventVec5 m_damageVec;	// 0x00ec: queued damage events (memory +0xec, size +0xf8)
+	CCollisionEventVec5 m_vec0100;	// 0x0100
 	CCollisionEventPenetrateVec m_penetrateEvents;	// 0x0114 (size at +0x120)
 	CCollisionEventTimeVec m_timeEvents;	// 0x0128
 };
+
+// The queue fields as the matched functions name them.
+#define m_pTouchEvents (*(char **)&m_touchVec.m_pMemory)
+#define m_nTouchEvents m_touchVec.m_size
+#define m_pDamageEvents (*(CDamageEvent_t **)&m_damageVec.m_pMemory)
+#define m_nDamageEvents m_damageVec.m_size
