@@ -229,3 +229,62 @@ the vector by hand (the old CRecipientVec / Purger views are only for matched co
 Matched this way on the bench copy (2026-10-22): 0x10143630, 0x101c75a0 (CReliableBroadcastFilter: the Base()
 loop came by itself), 0x103e7680 (CPASAttenuationFilter(this, ATTN_NONE)), and three matched functions rewritten from
 hand-made views into this form (0x101f5b60, 0x1020c890, 0x103e2d10).
+
+## Source containers (CUtlVector, CUtlMemory, CUtlRBTree): write the Source call, never the inlined steps
+
+`include/utlvector.h`, `utlmemory.h` and `utlrbtree.h` hold Source's container templates (tier1, 2004 public SDK
+form) with every member inline, as the game compiled them. Recognise them by:
+
+- **CUtlVector** (0x14 bytes: memory +0, allocation count +4, grow size +8, size +0xc, element pointer +0x10):
+  `cmp size+1, alloc; jle` then Grow (inline: `cmp grow, -1`, a doubling loop, `call [0x109f3638]` Plat_Realloc /
+  `call [0x109f3634]` Plat_Alloc; or a call to the out-of-line copy), `+0x10 = memory`, a `memmove` of the tail and a
+  null-checked store (`lea eax, [mem + i*N]; test eax, eax; je`) = `v.AddToTail(x)` / `v.InsertBefore(i, x)`;
+  `size = 0`, `cmp grow, -1`, `call [Plat_Free]` twice = `v.Purge()` or the vector's destructor (a member going out
+  of scope: a class with CUtlVector members and an empty destructor body gives the whole teardown);
+  memmove down and `--size` = `v.Remove(i)`; a compare loop returning the index or -1 = `v.Find(x)`.
+- **CUtlRBTree** (less function +0, node memory +4/+8/+0xc, root, count, first free, total at +0x10.. as words for
+  `unsigned short` indices or dwords for `int`): a guarded static filled with 0xffff, 0xffff, 0xffff, 1 (the
+  sentinel of `Links()`), nodes of 4 * sizeof(I) + sizeof(T) bytes = `CUtlRBTree<T, I>`. Its own functions are the
+  template's members: NewNode, Insert / InsertAt / LinkToParent / InsertRebalance, RotateLeft / RotateRight, Find,
+  FindInsertionPosition, RemoveAt / RemoveRebalance / FreeNode, RemoveAll, Purge.
+
+How to write it:
+
+1. Declare the container with its element type: `CUtlVector<int> m_Recipients;`, `CUtlVector<CBaseHandle>`,
+   `CUtlVector<CFoo *>`, `CUtlRBTree<CFooEntry, unsigned short>`. Use the real Source type when the game shows it
+   (RTTI names such as `CUtlVectorDataOps<CUtlVector<thinkfunc_t, ...>>`, strings, a matched twin). Otherwise define
+   the element in the owning class's header as a struct of the element's size named after its owner
+   (`struct CBreakModelsPrecached_Entry`), with a constructor / copy only if the game's code runs one.
+2. Write the Source call (`m_List.AddToTail(h)`, `m_Tree.Insert(entry)`, `m_Tree.Find(key)`, `m_Tree.Element(i)`,
+   a member destroyed by its class's destructor). Never the grow, memmove, Plat_Free, sentinel or rebalancing steps by
+   hand, and never `CUtlVector4` / `CUtlVector20` / `CUtlRBTree12` / `UtlMem*` style views in new code (they are kept
+   for matched code only).
+3. The out-of-line copies are per element type (one CUtlMemory<T>::Grow, one CUtlRBTree<T,I>::Links ... per T). When
+   the judge says "cannot link ?Grow@?$CUtlMemory@VCBaseHandle@@@@QAEXH@Z: the game's copy is not known yet", the
+   game's `call` there goes to that copy: `rename_symbol` the address the game calls (its body, not the stub) to the
+   name the judge prints, then compile again. If the name already belongs to another address, the game's container
+   holds a different type: pick another T (another struct of the same size).
+4. For a function that IS one of the template's members (an out-of-line `NewNode`, `RotateLeft`, `GrowVector`,
+   `Grow`, `Links`, ...), the source is just the instantiation; rename_symbol its own address to the member's name
+   first (the judge prints it), then:
+
+   ```cpp
+   // TARGET: ?NewNode@?$CUtlRBTree@UCFooEntry@@G@@QAEGXZ
+   #include "utlrbtree.h"
+   #include "CFoo.h"	// where CFooEntry is defined
+   template class CUtlRBTree<CFooEntry, unsigned short>;
+   ```
+
+Which calls VC6 expands is its own choice, and it follows the whole function: an inline expansion that comes AFTER
+the container call in the function (a later inline call, an inline call in another branch, a local whose inline
+destructor runs at the end of the scope, such as the ScopeTrace) makes VC6 keep the deep, big members (Grow,
+Links) as calls; without one it expands them. So write the whole function the Source way and the calls come out as
+in the game; a `call` you do not get usually means a missing inline object or call later in the function. One known
+exception: CRecipientFilter::AddRecipient-like code (0x1019d040, 0x101bd010) calls Grow where the obvious source
+expands it.
+
+Byte-identical this way on the bench copy (2026-10-23; a new name still needs its rename_symbol): 0x100ecb40 (three `v.Purge()`), 0x100eb490 (a class with three
+CUtlVector<int> members and an empty destructor), 0x10323370 AddToPresenceList (`g_List.AddToTail(CEntHandle(this))`
+inside a ScopeTrace; Grow stays a call), the RB-tree members 0x10194780 / 0x10055050 NewNode and 0x1004c5b0
+RotateLeft (after naming its out-of-line Links), 0x100498c0 LinkToParent and 0x10055f50 RotateLeft (only their
+out-of-line callees' names missing).
