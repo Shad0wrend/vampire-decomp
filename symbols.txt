@@ -3973,6 +3973,7 @@
 0x1000edc2 func   ?vfunc5@CNPC_VBatSwarm@@QAEPAV1@I@Z CNPC_VBatSwarm::vfunc5
 0x1000edc7 func   ?sub_100f4260@@YAHHHMMMH@Z sub_100f4260
 0x1000edc7 func   ?sub_100f4260@@YAXHHMMMH@Z sub_100f4260
+0x1000ede0 func   ?vfunc246@CBaseAnimating@@QAEXXZ CBaseAnimating::vfunc246
 0x1000edea func   ?sub_1014ee10@@YAPAHXZ sub_1014ee10
 0x1000edf4 func   ?vfunc130@CAI_InterestingPlace@@UAEXH@Z CAI_InterestingPlace::vfunc130
 0x1000ee26 func   ?vfunc2@CTEKillPlayerAttachments@@UAEPAV1@I@Z CTEKillPlayerAttachments::vfunc2

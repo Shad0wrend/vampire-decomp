@@ -74,6 +74,61 @@ void CBaseAnimating::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008e310 size=0x11e
+#include <string.h>
+#include "ScopeTrace.h"
+#include "CBaseAnimating.h"
+
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *p);
+
+struct VecX {
+	int *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	int *m_pElements;
+};
+struct AnimLayoutX {
+	char pad[0x5b8];
+	int m_hExtra;	// 0x5b8
+	int m_h[2];	// 0x5bc
+	VecX m_v[2];	// 0x5c4
+	int m_a1[10];	// 0x5ec
+	int m_a2[10];	// 0x614
+};
+struct Slot260X { void sub_10260a50(int c); };
+
+void CBaseAnimating::vfunc246()
+{
+	ScopeTrace trace("CBaseAnimating::RemoveExtraAnimationModels", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	AnimLayoutX *p = (AnimLayoutX *)this;
+	int i;
+	p->m_hExtra = -1;
+	memset(p->m_a1, 0, sizeof(p->m_a1));
+	memset(p->m_a2, 0, sizeof(p->m_a2));
+	for (i = 0; i < 2; i++) {
+		VecX *v = &p->m_v[i];
+		v->m_size = 0;
+		if (v->m_growSize != -1) {
+			if (v->m_pMemory != 0) {
+				Plat_Free(v->m_pMemory);
+				v->m_pMemory = 0;
+			}
+			v->m_allocationCount = 0;
+		}
+		v->m_pElements = v->m_pMemory;
+		p->m_h[i] = 0;
+	}
+	if (!sub_1008d990(*(int *)((char *)this + 0x6f0))) {
+		int seq = sub_1008dd30(1, -1);
+		if (seq < 0)
+			seq = 0;
+		((Slot260X *)this)->sub_10260a50(seq);
+		sub_10090bc0(0x10);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008f3c0 size=0x81
 #include "CBaseAnimating.h"
 
