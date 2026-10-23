@@ -632,6 +632,7 @@
 0x10003503 func   _scripted_target scripted_target
 0x1000350d func   ?vfunc103@CBaseEntity@@UAEXXZ CBaseEntity::vfunc103
 0x10003512 func   ?sub_10218080@@YIXPADHH@Z sub_10218080
+0x10003526 func   ??0CUnknown10076da0TimingTag@@QAE@HPBDM_N@Z CUnknown10076da0TimingTag::CUnknown10076da0TimingTag
 0x1000352b func   _npc_VTzimisce npc_VTzimisce
 0x1000353a func   ?sub_10383e50@@YGII@Z sub_10383e50
 0x1000353f func   ?vfunc440@CNPC_VChangBros@@QAEHH@Z CNPC_VChangBros::vfunc440
