@@ -67474,6 +67474,35 @@ void CUnknown10227410::sub_10227410(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227a30 size=0xb6
+#include "utlvector.h"
+#include "CEHandleGet.h"
+
+struct SEntV { void sub_102271d0(int a, int b); };
+
+struct SList2
+{
+    int m_unk0;
+    int m_unk4;
+    CUtlVector<unsigned int> m_List;
+
+    void sub_10227a30(int a, int b);
+};
+
+// TARGET: SList2::sub_10227a30
+void SList2::sub_10227a30(int a, int b)
+{
+    for (int i = 0; i < m_List.Count(); ) {
+        if (EHandle_Get(m_List[i]) == 0) {
+            m_List.Remove(i);
+        } else {
+            ((SEntV *)EHandle_Get(m_List[i]))->sub_102271d0(a, b);
+            i++;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227b20 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
