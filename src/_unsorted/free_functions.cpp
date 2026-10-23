@@ -11770,6 +11770,95 @@ void __fastcall sub_10079910(Obj *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100799b0 size=0x15f
+#include "UtlMem.h"
+#include "CUnknown10075aa0.h"
+
+struct VecView {
+	int *m_pMemory;
+	int m_alloc;
+	int m_grow;
+	int m_size;
+	int *m_pElements;
+};
+
+struct SceneView {
+	VecView a;	// 0x00 events
+	VecView b;	// 0x14
+	VecView c;	// 0x28
+	VecView d;	// 0x3c
+	VecView e;	// 0x50
+	VecView f;	// 0x64
+	void sub_100799b0();
+};
+
+void __fastcall sub_1007ee00(int *);
+void __fastcall sub_1007ee20(int *);
+void __fastcall sub_1007ee40(int *);
+void __fastcall sub_1007eeb0(char *);
+void __fastcall sub_1007ee60(char *);
+
+void SceneView::sub_100799b0()
+{
+	int i;
+	for (i = 0; i < b.m_size; i++) {
+		char *elem = ((char **)b.m_pMemory)[i];
+		if (elem) {
+			sub_1007eeb0(elem + 0x164);
+			((UtlMem *)(elem + 0x164))->sub_1007f650();
+			delete elem;
+		}
+	}
+	VecView *pb = &b;
+	pb->m_size = 0;
+	for (i = 0; i < a.m_size; i++) {
+		CUnknown10075aa0 *elem = ((CUnknown10075aa0 **)a.m_pMemory)[i];
+		if (elem) {
+			elem->sub_10075350();
+			delete elem;
+		}
+	}
+	a.m_size = 0;
+	for (i = 0; i < c.m_size; i++) {
+		char *elem = ((char **)c.m_pMemory)[i];
+		if (elem) {
+			sub_1007ee60(elem + 0x84);
+			((UtlMem *)(elem + 0x84))->sub_1007f540();
+			delete elem;
+		}
+	}
+	VecView *pc = &c;
+	pc->m_size = 0;
+	VecView *pf = &f;
+	sub_1007ee00((int *)pf);
+	((UtlMem *)pf)->sub_1007f540();
+	pf->m_pElements = pf->m_pMemory;
+	((UtlMem *)pf)->sub_1007f540();
+	VecView *pe = &e;
+	sub_1007ee00((int *)pe);
+	((UtlMem *)pe)->sub_1007f540();
+	pe->m_pElements = pe->m_pMemory;
+	((UtlMem *)pe)->sub_1007f540();
+	VecView *pd = &d;
+	sub_1007ee00((int *)pd);
+	((UtlMem *)pd)->sub_1007f540();
+	pd->m_pElements = pd->m_pMemory;
+	((UtlMem *)pd)->sub_1007f540();
+	sub_1007ee40((int *)pc);
+	((UtlMem *)pc)->sub_1007f650();
+	pc->m_pElements = pc->m_pMemory;
+	((UtlMem *)pc)->sub_1007f650();
+	sub_1007ee20((int *)pb);
+	((UtlMem *)pb)->sub_1007f610();
+	pb->m_pElements = pb->m_pMemory;
+	((UtlMem *)pb)->sub_1007f610();
+	sub_1007ee00((int *)&a);
+	((UtlMem *)&a)->sub_1007f540();
+	a.m_pElements = a.m_pMemory;
+	((UtlMem *)&a)->sub_1007f540();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079b70 size=0xd
 void CUnknown10079b70::sub_10079b70(int value)
 {
