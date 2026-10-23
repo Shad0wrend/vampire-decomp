@@ -73802,6 +73802,55 @@ CHolderVDmg198 *CHolderVDmg198::sub_1025b390()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025b3e0 size=0x16b
+#include "CUtlRBTreeBig.h"
+#include "CVDmg_t.h"
+
+struct CBigSymbol
+{
+	unsigned short m_Id;
+	CBigSymbol() : m_Id(0xffff) {}
+};
+struct BigHolder
+{
+	char m_pad0000[0x198];
+	CVDmg_t m_Dmg;
+	char m_pad01dc[0xec84 - 0x198 - sizeof(CVDmg_t)];
+	~BigHolder() { m_Dmg.sub_101fa680(); }
+};
+struct BigTreeElem
+{
+	CBigSymbol m_Sym;
+	char m_pad0002[0x238e4 - 2];
+	BigHolder m_Holders[3];
+	char m_pad4fe70[0x5f31c - 0x238e4 - 3 * 0xec84];
+};
+struct SymbolTable
+{
+	unsigned short *sub_1024b5e0(unsigned short *pOut, const char *psz);
+};
+extern CUtlRBTreeBig g_1089d7c8;
+extern SymbolTable g_1089d7e0;
+
+// TARGET: sub_1025b3e0
+unsigned short sub_1025b3e0(const char *pszName)
+{
+	BigTreeElem key;
+	unsigned short sym;
+	key.m_Sym.m_Id = *g_1089d7e0.sub_1024b5e0(&sym, pszName);
+	unsigned short i = g_1089d7c8.m_Root;
+	while (i != 0xffff) {
+		if (g_1089d7c8.m_LessFunc(&key, g_1089d7c8.m_pElements[i].m_Data))
+			i = g_1089d7c8.Links(i).m_Left;
+		else if (g_1089d7c8.m_LessFunc(g_1089d7c8.m_pElements[i].m_Data, &key))
+			i = g_1089d7c8.Links(i).m_Right;
+		else
+			break;
+	}
+	return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025b5b0 size=0x9
 extern unsigned short g_1089d7da;
 
