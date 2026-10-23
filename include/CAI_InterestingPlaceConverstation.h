@@ -24,11 +24,7 @@ struct CAI_IPVec
 class CAI_InterestingPlaceConverstation : public CPointEntity
 {
 public:
-	CAI_InterestingPlaceConverstation()
-	{
-		m_b515 = 1;
-		m_b516 = 0;
-	}
+	CAI_InterestingPlaceConverstation();	// 0x102dbb00
 
 	char pad4[0x454 - 4];
 	const char *m_pszSound1;	// 0x454
