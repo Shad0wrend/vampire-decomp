@@ -46,6 +46,25 @@ struct CCollisionEventRecord12	// 12 byte element of the two-element array at +0
 	CCollisionEventRecord12();
 };
 
+// Not yet modelled dwords of CCollisionEvent that its constructor zeroes.
+struct CCollisionEventZero1
+{
+	int m[1];
+	CCollisionEventZero1() { m[0] = 0; }
+};
+
+struct CCollisionEventZero2
+{
+	int m[2];
+	CCollisionEventZero2() { m[0] = 0; m[1] = 0; }
+};
+
+struct CCollisionEventZero6
+{
+	int m[6];
+	CCollisionEventZero6() { m[0] = 0; m[1] = 0; m[2] = 0; m[3] = 0; m[4] = 0; m[5] = 0; }
+};
+
 // The vector at +0x114 as the constructor builds it (memory constructor, size 0, element pointer).
 struct CCollisionEventPenetrateVec : CUtlVector20
 {
@@ -128,13 +147,13 @@ public:
 	CCollisionEventRecord12 m_records[2];	// 0x00b8
 	char m_pad00d0[0xd8 - 0xd0];
 	char *m_pTouchEvents;	// 0x00d8: queued touch records of 0x24 bytes
-	char m_pad00dc[0xe4 - 0xdc];
+	CCollisionEventZero2 m_zero00dc;
 	int m_nTouchEvents;	// 0x00e4
-	char m_pad00e8[4];
+	CCollisionEventZero1 m_zero00e8;
 	CDamageEvent_t *m_pDamageEvents;	// 0x00ec
-	char m_pad00f0[8];
+	CCollisionEventZero2 m_zero00f0;
 	int m_nDamageEvents;	// 0x00f8
-	char m_pad00fc[0x114 - 0xfc];
+	CCollisionEventZero6 m_zero00fc;
 	CCollisionEventPenetrateVec m_penetrateEvents;	// 0x0114 (size at +0x120)
 	CCollisionEventTimeVec m_timeEvents;	// 0x0128
 };
