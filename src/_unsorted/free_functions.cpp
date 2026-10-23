@@ -72115,6 +72115,17 @@ unsigned short SymMap::sub_10249980(unsigned int key, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10249fc0 size=0x89
+#include "CUnknown10249fc0.h"
+int CUnknown10249fc0::sub_10249fc0(unsigned short i)
+{
+	if (m_pTree->Links(i).m_Left == i)
+		return 0;
+	CUnknown10249fc0_Tree *t = m_pTree;
+	return t->m_sub.sub_1024b830(*t->sub_1024a2e0(i));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024a080 size=0x7e
 struct Node16 {
     unsigned short m_Left, m_Right, m_Parent, m_Tag;
