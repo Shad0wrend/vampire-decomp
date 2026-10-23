@@ -25,6 +25,7 @@ public:
 	virtual CFlexAnimationTrack *vfunc0(unsigned int flags);	// scalar deleting destructor
 
 	void sub_1000fbaa();	// destructor body
+	void sub_10073e70();	// destructor body (real address behind the stub)
 	void sub_10074b10(int nList);	// removes the samples of list nList (0 or 1) whose time is negative or past the event's length
 	void sub_10074820(int nList);	// sorts the samples of list nList by time (exchange sort), then runs sub_10074b10 on both lists
 	void sub_100746e0(float flTime, float flValue, int nList);	// AddSample: appends a sample (value, time, unselected) to list nList (CUtlVector::AddToTail, inlined) and re-sorts the list (sub_10074820)
