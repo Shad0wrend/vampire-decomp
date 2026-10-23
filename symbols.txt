@@ -6480,6 +6480,7 @@
 0x1044916c vtable ??_7CPhysicsHook@@6B@ CPhysicsHook::vftable
 0x104491bc vtable ??_7CCollisionEvent@@6BIPhysicsCollisionSolver@@@ CCollisionEvent::vftable
 0x104491d8 vtable ??_7CCollisionEvent@@6B@ CCollisionEvent::vftable
+0x104491d8 data   ??_7CCollisionEvent@@6BIPhysicsCollisionEvent@@@ ??_7CCollisionEvent@@6BIPhysicsCollisionEvent@@@
 0x1044920c vtable ??_7IPhysicsCollisionSolver@@6B@ IPhysicsCollisionSolver::vftable
 0x10449228 vtable ??_7IPhysicsCollisionEvent@@6B@ IPhysicsCollisionEvent::vftable
 0x104492f0 vtable ??_7CPushBlockerEnum@@6B@ CPushBlockerEnum::vftable
