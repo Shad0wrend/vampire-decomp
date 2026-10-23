@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1019f870 size=0x84
+#include "CSave.h"
+
+// TARGET: ??0CSave@@QAE@PAX@Z
+CSave::CSave(void *pData) : CSaveSections(pData)
+{
+	((CUtlVector<int> *)&m_pSections)->EnsureCapacity(0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f980 size=0x68
 extern "C" __declspec(dllimport) void Plat_Free(void *);
 extern int g_104625f4[];
