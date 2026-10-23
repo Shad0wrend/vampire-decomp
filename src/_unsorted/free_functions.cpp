@@ -33449,6 +33449,57 @@ void sub_1011a580(SHandleHolder *holder)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011a620 size=0xb1
+#include "CBaseEntity.h"
+#include "CUnknown100a8220.h"
+struct HandleEntry { CBaseEntity *ent; int serial; int pad; };
+struct HandleTable { int pad; HandleEntry e[1]; };
+extern HandleTable *g_10566458;
+struct HandleVec {
+    unsigned int *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    unsigned int *m_pElements;
+};
+extern HandleVec g_1070b0d0;
+extern char g_1070b265;
+extern char g_1070b268;
+extern void (*g_109f3624)(void *);
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+struct EntView130 {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9) V10(b0) V10(b1) V10(b2)
+    virtual void vf130(char flag);
+};
+
+void sub_1011a620()
+{
+    if (!g_1070b265)
+        return;
+    for (int i = g_1070b0d0.m_size - 1; i >= 0; i--) {
+        unsigned int h = g_1070b0d0.m_pMemory[i];
+        if (h != 0xffffffff) {
+            HandleEntry *p = &g_10566458->e[h & 0x1fff];
+            if (p->serial == (int)(h >> 13)) {
+                CBaseEntity *ent = p->ent;
+                if (ent && !((CUnknown100a8220 *)ent)->sub_100a8220())
+                    ((EntView130 *)ent)->vf130(g_1070b268);
+            }
+        }
+    }
+    g_1070b0d0.m_size = 0;
+    if (g_1070b0d0.m_growSize != -1) {
+        if (g_1070b0d0.m_pMemory) {
+            g_109f3624(g_1070b0d0.m_pMemory);
+            g_1070b0d0.m_pMemory = 0;
+        }
+        g_1070b0d0.m_allocationCount = 0;
+    }
+    g_1070b0d0.m_pElements = g_1070b0d0.m_pMemory;
+    g_1070b265 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a710 size=0x6c
 struct HandleVec {
     unsigned int *m_pMemory;
