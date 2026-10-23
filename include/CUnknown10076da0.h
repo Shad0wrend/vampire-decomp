@@ -26,7 +26,7 @@ struct CUnknown10076da0TimingTag
 
 	CUnknown10076da0TimingTag(int pOwner, const char *name, float percentage, bool locked);	// stub 0x10003526
 	CUnknown10076da0TimingTag(const CUnknown10076da0TimingTag &src);	// stub 0x1000fac9
-	float GetPercentage() const { return m_flPercentage; }
+	float GetPercentage() const;	// 0x100738c0 (stub 0x100048f4)
 };
 
 class CUnknown10076da0
