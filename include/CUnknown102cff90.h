@@ -16,4 +16,5 @@ public:
 	CUtlVector<CUnknown102cff90Elem> m_second;	// 0x20
 
 	void sub_102cff90();	// purges both vectors, then destroys them
+	~CUnknown102cff90();
 };
