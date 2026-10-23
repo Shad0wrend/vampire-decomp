@@ -11054,6 +11054,44 @@ void CUnknown10076da0::sub_10076da0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100770b0 size=0x17f
+// TARGET: ?sub_100770b0@CUnknown10076da0@@QAEXPBDM_N@Z
+#include "CUnknown10076da0.h"
+
+extern char g_106b8540[];
+
+namespace block_100770b0 {
+struct CTimingTagUnit : CUnknown10076da0TimingTag
+{
+	float sub_100738c0() const;
+};
+float CTimingTagUnit::sub_100738c0() const
+{
+	return m_flPercentage;
+}
+}
+using namespace block_100770b0;
+
+void CUnknown10076da0::sub_100770b0(const char *name, float percentage, bool locked)
+{
+	CUnknown10076da0TimingTag tag((int)this, name, percentage, locked);
+	m_TimingTags.AddToTail(tag);
+
+	CUnknown10076da0TimingTag temp(1, g_106b8540, 0, 0);
+	for (int i = 0; i < m_TimingTags.Count(); i++) {
+		for (int j = i + 1; j < m_TimingTags.Count(); j++) {
+			CUnknown10076da0TimingTag *pI = &m_TimingTags[i];
+			CUnknown10076da0TimingTag *pJ = &m_TimingTags[j];
+			if (((CTimingTagUnit *)pI)->sub_100738c0() > ((CTimingTagUnit *)pJ)->sub_100738c0()) {
+				temp = *pI;
+				*pI = *pJ;
+				*pJ = temp;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077290 size=0xac
 #include "CUnknown10077290.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
