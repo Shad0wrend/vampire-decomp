@@ -32976,6 +32976,31 @@ void S::sub_101153a0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115660 size=0x109
+#include "CEHandleGet.h"
+#include "utlvector.h"
+
+struct SMonHandle {
+    union {
+        unsigned int m_Index;
+        CGlobalEntityList_Ent *m_pEnt;
+    };
+    bool operator==(const SMonHandle &o) const { CGlobalEntityList_Ent *a = EHandle_Get(o.m_Index); CGlobalEntityList_Ent *b = EHandle_Get(m_Index); return b == a; }
+};
+extern CUtlVector<SMonHandle> g_1070a870;
+
+void sub_10115660(SMonHandle h)
+{
+    if (h.m_pEnt)
+        h.m_Index = *h.m_pEnt->v1();
+    else
+        h.m_Index = 0xffffffff;
+    if (g_1070a870.Find(h) != -1)
+        return;
+    g_1070a870.AddToTail(h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10115980 size=0x117
 // TARGET: ?sub_10115980@@YAXPAUSHandleOwner@@@Z
 #include "CUnknown101151a0.h"
