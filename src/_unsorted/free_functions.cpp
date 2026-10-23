@@ -79558,6 +79558,66 @@ void CAI_GoalEntity::sub_102cd3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cd4a0 size=0x150
+#include "CAI_GoalEntity.h"
+#include "CGlobalEntityList.h"
+#include "CUtlVector4.h"
+#include "utlvector.h"
+
+#define GS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define GS100(p) GS10(p##0) GS10(p##1) GS10(p##2) GS10(p##3) GS10(p##4) GS10(p##5) GS10(p##6) GS10(p##7) GS10(p##8) GS10(p##9)
+
+struct CActorNPCSlots
+{
+	virtual void v0();
+	virtual CBaseHandle *vfunc1();
+	GS100(a) GS100(b) GS100(c) GS100(d) GS10(e0) GS10(e1) GS10(e2) GS10(e3) GS10(e4) GS10(e5)
+	virtual void e60(); virtual void e61();
+	virtual int vfunc464();
+};
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+template <> void CopyConstruct<CBaseHandle>(CBaseHandle *pMemory, CBaseHandle const &src);
+
+// TARGET: CAI_GoalEntity::sub_102cd4a0
+void CAI_GoalEntity::sub_102cd4a0()
+{
+    CBaseEntity *pEnt = 0;
+    CUtlVector<CBaseHandle, CActorMemory> *vec = (CUtlVector<CBaseHandle, CActorMemory> *)&m_pActors;
+    vec->m_Size = 0;
+    ((CUtlVector4 *)vec)->sub_102ce7f0(0, 0, 0);
+    for (;;) {
+        switch (*(int *)((char *)this + 0x460)) {
+        case 0: {
+            const char *name = *(const char **)((char *)this + 0x454);
+            pEnt = g_106eb5d8.sub_100f7770(pEnt, name ? name : g_106b8540, 0, 0);
+            break;
+        }
+        case 1: {
+            const char *name = *(const char **)((char *)this + 0x454);
+            pEnt = g_106eb5d8.sub_100f7380(pEnt, name ? name : g_106b8540);
+            break;
+        }
+        }
+        if (!pEnt)
+            break;
+        CActorNPCSlots *pNPC = *(CActorNPCSlots **)((char *)pEnt + 0x94);
+        if (pNPC && pNPC->vfunc464() != 7) {
+            CBaseHandle h;
+            h = *pNPC->vfunc1();
+            vec->AddToTail(h);
+        }
+    }
+    const char *name2 = *(const char **)((char *)this + 0x458);
+    CBaseEntity *pTarget = g_106eb5d8.sub_100f7770(0, name2 ? name2 : g_106b8540, 0, 0);
+    if (pTarget)
+        *(unsigned int *)((char *)this + 0x47c) = ((CActorNPCSlots *)pTarget)->vfunc1()->m_Index;
+    else
+        *(unsigned int *)((char *)this + 0x47c) = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cdb70 size=0xaa
 #include "CAI_GoalEntity.h"
 #include "CGlobalEntityList.h"
