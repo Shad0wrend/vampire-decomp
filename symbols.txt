@@ -2335,6 +2335,7 @@
 0x100094ad func   ?sub_102db650@@YAXXZ sub_102db650
 0x100094b2 func   _item_w_tire_iron item_w_tire_iron
 0x100094cb func   ?vfunc5@CVampireProjectile@@QAEPAV1@I@Z CVampireProjectile::vfunc5
+0x100094d0 func   ?NewNode@?$CUtlRBTree@HG@@QAEGXZ CUtlRBTree<int,unsigned short>::NewNode
 0x100094d5 func   ?vfunc103@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc103
 0x100094df func   ?sub_103dc8a0@@YADXZ sub_103dc8a0
 0x100094e4 func   _item_p_occult_thaum_damage item_p_occult_thaum_damage
