@@ -29,6 +29,13 @@ struct CUnknown10076da0TimingTag
 	float GetPercentage() const;	// 0x100738c0 (stub 0x100048f4)
 };
 
+// the tags' memory: the game calls its Grow out of line (0x10079060, stub 0x100077ed)
+class CUnknown10076da0TagMemory : public CUtlMemory<CUnknown10076da0TimingTag>
+{
+public:
+	void Grow(int num = 1);
+};
+
 class CUnknown10076da0
 {
 public:
@@ -38,7 +45,7 @@ public:
 	int m_nGrow;	// 0x02c4
 	int m_nEntries;	// 0x02c8
 	CUnknown10076da0Entry *m_pElements;	// 0x02cc
-	CUtlVector<CUnknown10076da0TimingTag> m_TimingTags;	// 0x02d0
+	CUtlVector<CUnknown10076da0TimingTag, CUnknown10076da0TagMemory> m_TimingTags;	// 0x02d0
 
 	void sub_10076da0(const char *name);	// removes the first entry whose name equals `name` (case-insensitive)
 	CUnknown10076da0Entry *sub_10076e70(const char *name);	// the first entry whose name equals `name` (case-insensitive), else null
