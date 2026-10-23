@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1002eef0 size=0x11c
+#include "CCollisionEvent.h"
+#include "ScopeTrace.h"
+
+CCollisionEvent::CCollisionEvent()
+{
+	ScopeTrace trace("CCollisionEvent::CCollisionEvent", g_106b8540);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030050 size=0xb4
 #include "CCollisionEvent.h"
 #include "CBaseEntity.h"
