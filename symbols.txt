@@ -780,6 +780,7 @@
 0x10003cfb func   ?vfunc110@CLight@@QAE_NPBD0@Z CLight::vfunc110
 0x10003d0f func   ?sub_100db3f0@@YAXXZ sub_100db3f0
 0x10003d14 func   ?sub_103e3f60@CUtlMemory8@@QAEXH@Z CUtlMemory8::sub_103e3f60
+0x10003d23 func   ?sub_103118e0@CUnknown10311a20@@QAEPAXH@Z CUnknown10311a20::sub_103118e0
 0x10003d3c func   ?sub_100e4840@CDialog@@QAEHH@Z CDialog::sub_100e4840
 0x10003d46 func   ?sub_102524f0@CBaseCombatWeapon@@QAEDPAVCBaseCombatCharacter@@@Z CBaseCombatWeapon::sub_102524f0
 0x10003d50 func   ?sub_1025b3e0@@YAGPBD@Z sub_1025b3e0

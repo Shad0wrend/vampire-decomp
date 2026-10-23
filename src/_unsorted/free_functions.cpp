@@ -86367,6 +86367,35 @@ void *CUnknown10310c10::sub_10310c10(void *pSpawnPoint, int hIdeal)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103118e0 size=0xf5
+#include "CUnknown10311a20.h"
+
+extern int g_109f076c;
+
+struct RBData16 { int key; void *value; };
+
+void *CUnknown10311a20::sub_103118e0(int key)
+{
+    RBData16 search;
+    search.key = key;
+    if (m_nContext)
+        g_109f076c = m_nContext;
+    unsigned short cur = m_Root;
+    while (cur != 0xffff) {
+        if (m_LessFunc(&search, m_pElements[cur].m_Data)) {
+            cur = *sub_10313430(cur);
+        } else if (m_LessFunc(m_pElements[cur].m_Data, &search)) {
+            cur = Links(cur).m_Right;
+        } else {
+            break;
+        }
+    }
+    if (cur != 0xffff)
+        return ((RBData16 *)m_pElements[cur].m_Data)->value;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10311a20 size=0xfa
 #include "CUnknown10311a20.h"
 
