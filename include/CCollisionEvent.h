@@ -38,11 +38,15 @@ struct CPenetrateEvent_t	// 20 byte record of the penetrating entity pairs
 	int m_nReported;	// 0x10
 };
 
-struct CCollisionEventRecord12	// 12 byte element of the two-element array at +0xb8 (the constructor runs the empty element constructor 0x1002f060 over it)
+void __stdcall sub_1000d350(void *p, int size, int count, void *ctor);	// the game's vector constructor iterator
+void sub_1000c95a();	// empty element constructor (stub of 0x1002f060)
+
+// The two 12 byte elements at +0xb8, constructed by the vector constructor iterator with an empty element constructor.
+struct CCollisionEventRecords
 {
-	int m_a;
-	int m_b;
-	int m_c;
+	int m[6];
+
+	CCollisionEventRecords() { sub_1000d350(m, 12, 2, (void *)sub_1000c95a); }
 };
 
 // Not yet modelled dwords of CCollisionEvent that its constructor zeroes.
@@ -143,7 +147,7 @@ public:
 
 	CFrictionEntry_t m_friction[8];	// 0x0008
 	char m_pad0068[0xb8 - 0x68];
-	CCollisionEventRecord12 m_records[2];	// 0x00b8
+	CCollisionEventRecords m_records;	// 0x00b8
 	char m_pad00d0[0xd8 - 0xd0];
 	char *m_pTouchEvents;	// 0x00d8: queued touch records of 0x24 bytes
 	CCollisionEventZero2 m_zero00dc;
