@@ -43402,6 +43402,67 @@ void CHolderPtr36c::sub_101916f0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191cc0 size=0x16c
+#include "utlvector.h"
+#include "CBreakParser.h"
+#include "CUnknown1070b22c.h"
+
+struct CBreakModelRec {
+	char pad0[0xc];
+	char m_bKeep;
+	char pad1[0x107];
+	float m_flValue;
+	char pad2[4];
+};
+
+struct CKeyParserView {
+	virtual void v0();
+	virtual const char *GetCurrentBlockName();
+	virtual char Finished();
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void ParseCustom(void *pData, CBreakParser *pHandler);
+	virtual void v8();
+	virtual void SkipBlock();
+};
+
+struct CKeyParserFactoryView {
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4();
+	virtual void f5(); virtual void f6(); virtual void f7(); virtual void f8(); virtual void f9();
+	virtual void f10(); virtual void f11(); virtual void f12(); virtual void f13(); virtual void f14();
+	virtual void f15(); virtual void f16(); virtual void f17(); virtual void f18(); virtual void f19();
+	virtual void f20(); virtual void f21(); virtual void f22(); virtual void f23(); virtual void f24();
+	virtual void f25();
+	virtual CKeyParserView *Create(void *pData);
+	virtual void Destroy(CKeyParserView *p);
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CKeyParserFactoryView *g_1072393c;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+void sub_10191cc0(CUtlVector<CBreakModelRec> *pList, int modelIndex)
+{
+	void *pVCollide = g_1070b22c->vfunc58(modelIndex);
+	if (pVCollide) {
+		CKeyParserView *pParse = g_1072393c->Create(((void **)pVCollide)[2]);
+		while (!pParse->Finished()) {
+			CBreakParser breakParser;
+			const char *pBlock = pParse->GetCurrentBlockName();
+			if (!_strcmpi(pBlock, "break")) {
+				int index = pList->AddToTail();
+				CBreakModelRec &rec = pList->Element(index);
+				pParse->ParseCustom(&rec, &breakParser);
+				if (!rec.m_bKeep || !(rec.m_flValue > 0.0f))
+					pList->Remove(index);
+			} else {
+				pParse->SkipBlock();
+			}
+		}
+		g_1072393c->Destroy(pParse);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192800 size=0x43
 #include "CPropMover.h"
 void *sub_100aa720(int size);
