@@ -60,4 +60,5 @@ public:
 	CBaseFlex *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100152ad();	// as in CPhysForce (transplant)
 	CBaseFlex *sub_100b58d0();	// as in CKeepUpright (transplant)
+	void sub_100b5970();	// the destructor body (called through stub 0x100152ad)
 };
