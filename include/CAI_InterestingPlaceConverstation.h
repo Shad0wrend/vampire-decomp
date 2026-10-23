@@ -1,11 +1,11 @@
 // CAI_InterestingPlaceConverstation: point entity; only the members recovered so far (layout padded to the real offsets).
 #pragma once
+#include "CPointEntity.h"
+#include "COutputEvent.h"
 
 // 0x18-byte member objects at +0x46c (six of them), released by sub_100cd2d0.
-struct CAI_IPItem
+struct CAI_IPItem : COutputEvent
 {
-	char m_pad[0x18];
-
 	void sub_100cd2d0();
 };
 
@@ -17,17 +17,28 @@ struct CAI_IPVec
 	int m_growSize;
 	int m_size;
 	int *m_pElements;
+
+	CAI_IPVec() : m_pMemory(0), m_allocationCount(0), m_growSize(0), m_size(0), m_pElements(0) {}
 };
 
-class CAI_InterestingPlaceConverstation
+class CAI_InterestingPlaceConverstation : public CPointEntity
 {
 public:
-	char pad0[0x454];
+	CAI_InterestingPlaceConverstation()
+	{
+		m_b515 = 1;
+		m_b516 = 0;
+	}
+
+	char pad4[0x454 - 4];
 	const char *m_pszSound1;	// 0x454
 	const char *m_pszSound2;	// 0x458
 	char pad45c[0x46c - 0x45c];
 	CAI_IPItem m_items46c[6];	// 0x46c
-	char pad4fc[0x518 - 0x4fc];
+	char pad4fc[0x515 - 0x4fc];
+	char m_b515;
+	char m_b516;
+	char pad517;
 	CAI_IPVec m_vec518;	// 0x518
 	char pad52c[0x608 - 0x52c];
 	int m_unk608;
