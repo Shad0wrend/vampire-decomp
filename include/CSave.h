@@ -2,10 +2,13 @@
 // Only the slots that decompiled code needs have their signature; the rest are placeholders.
 #pragma once
 
+#include "ISave.h"
+#include "utlvector.h"
+
 struct typedescription_t;
 struct CSaveEdict;
 
-class CSave
+class CSave : public ISave
 {
 public:
 	virtual int vfunc0();	// current position
@@ -54,7 +57,8 @@ public:
 	int *m_pSections;	// +0x04: section start stack
 	char m_pad0008[0x8];
 	int m_nSections;	// +0x10
-	char m_pad0014[0x8];
+	char m_pad0014[0x4];
+	void *m_pData;	// +0x18
 	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
 
 	int sub_101a08f0(void *pEntity);	// index of the entity in the table, or -1
@@ -63,7 +67,7 @@ public:
 	void sub_101a05f0(const void *p, int a);	// called by vfunc5 through the stub at 0x1000950c
 	bool sub_1000643d(const void *pData, int nBits);	// as in CUnknown100bde40 (transplant)
 	bool sub_101a1140(int a, void *pData, void *pBase, typedescription_t *pField);	// "CSave::WriteField": dispatches on the field type (0xb..0x13) to the matching write slot, "Bad field type" warning otherwise
-	CSave *sub_1019f870(void *pBuffer);	// the CSave constructor (the stub at 0x10009bf6): vtable, +0x18 = pBuffer, +0x1c = pBuffer + 0x18 (0 for null), room for 0x20 elements in the char vector at +4
+	CSave *sub_1019f870(void *pBuffer);	// the CSave constructor (the stub at 0x10009bf6)
 	void sub_1016f0f0(const char *pszName, char *pData, int size);	// writes the size byte string pData under pszName (stub 0x100139b7)
 	bool sub_1019fe10(void *pData, typedescription_t *pField);	// "CSave::IsFieldNonEmpty"-like (recursive, stub 0x10015aaf): whether the field holds data that has to be saved: embedded structures (type 9) are checked field by field, custom fields (type 10) ask their save/restore ops (slot 2), everything else is tested for all-zero bytes (sub_101a0570)
 	int sub_101a0570(const void *pData, int nBytes);	// whether the bytes are all zero (stub 0x100041d8)
