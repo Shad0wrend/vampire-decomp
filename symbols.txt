@@ -5640,6 +5640,7 @@
 0x10014a2e func   ?vfunc617@CNPC_VWerewolf@@QAE_NUCNPC_VWerewolfVec3@@HH0@Z CNPC_VWerewolf::vfunc617
 0x10014a42 func   ?vfunc433@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc433
 0x10014a5b func   ?sub_101f1a30@CUnknown101f1a30@@QAEHPBD@Z CUnknown101f1a30::sub_101f1a30
+0x10014a60 func   ?sub_10099b00@CUnknown10099b00@@QAEXPAVCBaseEntity@@@Z CUnknown10099b00::sub_10099b00
 0x10014a65 func   ?sub_1012d4b0@@YIXPAUS@@@Z sub_1012d4b0
 0x10014a6f func   ?sub_10325940@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325940
 0x10014a79 func   ?sub_103d1ca0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d1ca0

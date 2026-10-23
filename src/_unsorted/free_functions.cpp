@@ -17194,6 +17194,64 @@ int CBaseAnimatingOverlay::sub_100991b0(int activity, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099b00 size=0xe8
+#include "CUnknown10099b00.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct EHandleRef
+{
+	unsigned int m_Index;
+	bool operator==(const EHandleRef &o) const
+	{
+		CGlobalEntityList_Ent *a = EHandle_Get(m_Index);
+		CGlobalEntityList_Ent *b = EHandle_Get(o.m_Index);
+		return b == a;
+	}
+};
+
+struct HandleVector
+{
+	int m_nUnknown0;
+	EHandleRef *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_nSize;
+
+	int Find(const EHandleRef &src) const
+	{
+		for (int i = 0; i < m_nSize; i++) {
+			if (src == m_pMemory[i])
+				return i;
+		}
+		return -1;
+	}
+
+	void Remove(int elem)
+	{
+		int toMove = m_nSize - elem - 1;
+		if (toMove > 0)
+			memmove(&m_pMemory[elem], &m_pMemory[elem + 1], toMove * sizeof(EHandleRef));
+		--m_nSize;
+	}
+};
+
+void CUnknown10099b00::sub_10099b00(CBaseEntity *pEnt)
+{
+	HandleVector *v = (HandleVector *)this;
+	EHandleRef h;
+	if (pEnt)
+		h.m_Index = *pEnt->vfunc1();
+	else
+		h.m_Index = 0xffffffff;
+	int elem = v->Find(h);
+	if (elem != -1)
+		v->Remove(elem);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099ca0 size=0x76
 struct TraceEnt { const char *a; const char *b; const char *c; };
 struct AnimEnt { char pad[0x174]; float m_animtime; };
