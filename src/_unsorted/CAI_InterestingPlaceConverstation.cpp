@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102dbb00 size=0x8a
+#include "CAI_InterestingPlaceConverstation.h"
+CAI_InterestingPlaceConverstation::CAI_InterestingPlaceConverstation()
+{
+	m_b515 = 1;
+	m_b516 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dbbc0 size=0x84
 #include "CAI_InterestingPlaceConverstation.h"
 #include "UtlMem.h"
