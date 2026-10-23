@@ -4,6 +4,16 @@
 
 class CUtlBuffer;
 
+// vtable view of the file system object SaveToFile gets: slot 0 Open, 1 Close, 3 Write.
+class IKeyValuesFileView
+{
+public:
+	virtual int Open(const char *pFileName, const char *pOptions, const char *pPathID);
+	virtual void Close(int hFile);
+	virtual int Read(void *pOutput, int size, int hFile);
+	virtual int Write(const void *pInput, int size, int hFile);
+};
+
 class CKeyValuesX
 {
 public:
@@ -23,4 +33,5 @@ public:
 	CKeyValuesX *sub_10248af0(const char *pszName);	// "FindKey" without create (stub 0x1000c9fa): the sub key of that name, 0 when there is none
 	CKeyValuesX *sub_10248b60();	// "GetNextKey" (stub 0x1000894f): the next key of the same level
 	float sub_10248c60(const char *pszKey, float flDefault);	// "GetFloat" (stub 0x10009a9d)
+	void sub_10248690(const char *pszFile, IKeyValuesFileView *pFileSystem, const char *pszPathID);	// "SaveToFile": writes the tree as text into the file
 };
