@@ -1,6 +1,8 @@
 // CUtlBuffer: growable byte buffer with a read cursor (not in the game's RTTI; layout read off the string getters).
 #pragma once
 
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+
 class CUtlBuffer
 {
 public:
@@ -11,6 +13,13 @@ public:
 	int m_nPut;	// 0x10
 	unsigned char m_nError;	// 0x14: nonzero when the buffer is unusable; bit 1 set when a read ran past the end
 	unsigned char m_nFlags;	// 0x15: bit 0 = text buffer
+
+	CUtlBuffer(int nGrow, int nInitSize, int bText);	// out of line (stub 0x1000faa1 = 0x1006bd20)
+	~CUtlBuffer()
+	{
+		if (m_nGrow != -1 && m_pBuffer)
+			Plat_Free(m_pBuffer);
+	}
 
 	void sub_1006bf40();	// skips the white space at the read cursor of a text buffer (stub 0x1000c35b)
 	void sub_1006bfb0(char *pString);	// reads one string: to the terminating null of a binary buffer, or to the next white space of a text buffer
