@@ -1322,6 +1322,7 @@
 0x10005beb func   ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z CBaseEntity::vfunc140
 0x10005bff func   ?sub_101f77f0@CVTraitEffectGroup_t@@QAEXPAX@Z CVTraitEffectGroup_t::sub_101f77f0
 0x10005c09 func   ?vfunc99@CBaseEntity@@UAE_NHHH@Z CBaseEntity::vfunc99
+0x10005c13 func   ?ShiftElementsRight@?$CUtlVector@UCUnknown10076da0TimingTag@@V?$CUtlMemory@UCUnknown10076da0TimingTag@@@@@@QAEXHH@Z CUtlVector<CUnknown10076da0TimingTag,CUtlMemory<CUnknown10076da0TimingTag> >::ShiftElementsRight
 0x10005c3b func   ?sub_102deec0@UtlMem@@QAEXXZ UtlMem::sub_102deec0
 0x10005c4f func   _prop_base prop_base
 0x10005c54 func   ?vfunc44@CMultiplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CMultiplayRules::vfunc44
