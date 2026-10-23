@@ -11,4 +11,5 @@ public:
 
 	unsigned short *sub_10313430(unsigned short i);	// the left child link of node i (stub 0x10002a86)
 	void sub_10311a20(int key, int value);	// walks down to the node equal to key and, when there is one, stores value in field +4 of the record its data points to
+	void *sub_103118e0(int key);	// the record pointer stored for key, or 0
 };
