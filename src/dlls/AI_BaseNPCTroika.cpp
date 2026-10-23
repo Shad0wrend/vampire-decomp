@@ -347,6 +347,81 @@ char CAI_BaseNPCTroika::vfunc320(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102aa860 size=0x12b
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_TroikaLink.h"
+
+extern int g_10923dd8;
+extern Vector g_10934060;
+struct CTaskPathList_102aa860 { char m_pad0000[0x10]; int m_iCur; int m_aIds[1]; };
+struct CTaskPath_102aa860 { int m_pad0; CTaskPathList_102aa860 *m_pList; };
+struct CTaskReq_102aa860 {
+	int type;
+	Vector pos;
+	int a[4];
+	float flValue;
+	int b;
+	int c;
+	Vector org;
+	int d;
+	int e;
+	CTaskReq_102aa860(int t, const Vector &v, float f, int val)
+	{
+		type = t;
+		pos = v;
+		a[0] = -1;
+		a[1] = -1;
+		a[2] = -1;
+		a[3] = -1;
+		flValue = f;
+		b = 0;
+		c = val;
+		org = g_10934060;
+		d = 0;
+		e = 0;
+	}
+};
+struct CNPCView_102aa860 {
+	char m_pad0000[0x1568];
+	int m1568;
+	char m_pad156c[0x1b44 - 0x156c];
+	const char *pFile;
+	int nLine;
+	char m_pad1b4c[0x5d34 - 0x1b4c];
+	void *m5d34;
+};
+struct CTroikaNodeU : CTroikaNode { Vector sub_102fb0d0(int id); };
+struct CTroikaNavU : CTroikaNav { void sub_102ecd20(CTaskReq_102aa860 *p, int n); };
+extern int g_106c994c;
+float sub_102d61b0(int);
+
+// TARGET: sub_102aa860
+void __fastcall sub_102aa860(CAI_BaseNPCTroika *pThis, int, CTaskPath_102aa860 *pPath)
+{
+	CNPCView_102aa860 *p = (CNPCView_102aa860 *)pThis;
+	if (pPath && pPath->m_pList) {
+		CTaskPathList_102aa860 *pList = pPath->m_pList;
+		int iNode = pList->m_aIds[pList->m_iCur];
+		if (iNode != -1) {
+			CTroikaNodeNet *pNet = ((CTroikaNav *)p->m5d34)->m_pNet;
+			CTroikaNode *pNode;
+			if (iNode >= 0 && iNode < pNet->m_nNodes)
+				pNode = pNet->m_ppNodes[iNode];
+			else {
+				g_106c994c++;
+				pNode = 0;
+			}
+			CTaskReq_102aa860 req(4, ((CTroikaNodeU *)pNode)->sub_102fb0d0(p->m1568), sub_102d61b0(p->m1568), g_10923dd8);
+			((CTroikaNavU *)p->m5d34)->sub_102ecd20(&req, 0);
+		}
+	} else {
+		p->pFile = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		p->nLine = 0x3d73;
+		pThis->vfunc448(0x1d);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4fe0 size=0x91
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102dfaa0.h"
