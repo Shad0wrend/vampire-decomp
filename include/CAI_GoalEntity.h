@@ -3,6 +3,14 @@
 #pragma once
 
 #include "CBaseEntity.h"
+#include "CBaseHandle.h"
+#include "utlmemory.h"
+
+// The memory of the actor vector as the game's code at 0x102cd4a0 uses it: Grow stays an out-of-line call.
+struct CActorMemory : CUtlMemory<CBaseHandle>
+{
+	void Grow(int num);
+};
 
 class CAI_GoalEntity : public CBaseEntity
 {
