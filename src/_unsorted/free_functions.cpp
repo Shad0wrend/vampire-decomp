@@ -57268,6 +57268,93 @@ CUnknown101ed9e0 *CUnknown101ed9e0::sub_101ed9e0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101edae0 size=0x23f
+#include "CUnknown101edae0.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern void (*g_109f3628)(const char *, ...);
+
+struct DataVBase
+{
+	virtual void v0();
+	virtual void v1();
+};
+
+struct DataNode : virtual DataVBase
+{
+	virtual void n0();
+	virtual void n1();
+	virtual DataNode *FindKey(const char *pszName);
+	virtual DataNode *GetNext();
+};
+
+DataNode *sub_1000a119(const char *pszName, int pFileSystem);
+int *sub_1000c162(int *pOut, DataNode *pNode);
+int *sub_1000282e(int *pOut, DataNode *pNode, const char *pszKey);
+extern int g_1070b238;
+
+bool CUnknown101edae0::sub_101edae0()
+{
+	if (m_pRecords) {
+		for (int i = 0; i < m_nRecords; i++) {
+			if (m_pRecords[i])
+				delete m_pRecords[i];
+			m_pRecords[i] = 0;
+		}
+		delete m_pRecords;
+		m_pRecords = 0;
+	}
+	m_n04 = 0;
+	m_nRecords = 0;
+	m_nAlloc = 0;
+	int tmp;
+	char buf[128];
+	sprintf(buf, "%s%s.txt", "vdata\\system\\", "items");
+	DataNode *pFile = sub_1000a119(buf, g_1070b238);
+	if (pFile) {
+		DataNode *pSection = pFile->FindKey("ActivationTypes");
+		if (pSection) {
+			m_n0c = *sub_1000c162(&tmp, pSection);
+			m_n08 = *sub_1000282e(&tmp, pSection, "InternalName");
+			for (DataNode *p = pSection->FindKey("ActivationType"); p; p = p->GetNext()) {
+				if (m_nAlloc == m_nRecords) {
+					m_nAlloc += m_nGrow;
+					if (m_pRecords) {
+						CUnknown101ed9e0 **pNew = (CUnknown101ed9e0 **)operator new(m_nAlloc * 4);
+						int j = 0;
+						for (; j < m_nRecords; j++)
+							pNew[j] = m_pRecords[j];
+						for (; j < m_nAlloc; j++)
+							pNew[j] = 0;
+						delete m_pRecords;
+						m_pRecords = pNew;
+						m_nRecords++;
+					} else {
+						m_pRecords = (CUnknown101ed9e0 **)operator new(m_nAlloc * 4);
+						for (int j = 0; j < m_nAlloc; j++)
+							m_pRecords[j] = 0;
+						m_nRecords++;
+					}
+				} else {
+					m_nRecords++;
+				}
+				if (!m_pRecords[m_nRecords - 1]) {
+					CUnknown101ed9e0 *pRec = (CUnknown101ed9e0 *)operator new(0xc);
+					m_pRecords[m_nRecords - 1] = pRec ? pRec->sub_101ed9e0(m_n04++) : 0;
+				}
+				m_pRecords[m_nRecords - 1]->sub_101eda20(p);
+			}
+		} else {
+			g_109f3628("Unable to open data file for: %s\n", buf);
+		}
+		((DataVBase *)pFile)->v1();
+	} else {
+		g_109f3628("Unable to load data for: %s\n", buf);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eddb0 size=0xa
 extern int g_1073a3b4;
 
