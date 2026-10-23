@@ -83098,6 +83098,30 @@ void __fastcall sub_102e8a80(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e9a90 size=0x112
+#include "CUtlVector280.h"
+#include "utlvector.h"
+
+struct Elem280_t
+{
+    int m_type;
+    int m_b;
+    int m_c;
+    int m_d;
+    int m_e;
+    int m_f;
+    char m_g;
+    char m_pad[0x118 - 0x19];
+
+    Elem280_t() : m_type(7), m_b(0), m_c(0), m_d(0), m_e(-1), m_f(0), m_g(0) {}
+};
+
+int CUtlVector280::sub_102e9a90(int num, const void *pToCopy)
+{
+    return ((CUtlVector<Elem280_t> *)this)->AddMultipleToTail(num, (const Elem280_t *)pToCopy);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e9cd0 size=0x12e
 #include "CUtlVectorElem118.h"
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
