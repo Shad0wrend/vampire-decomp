@@ -41791,6 +41791,22 @@ unsigned int __stdcall sub_10184220(unsigned int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101842a0 size=0x88
+#include "CUtlVector4.h"
+#include "CEHandleGet.h"
+
+int CUtlVector4::sub_101842a0(const unsigned int *pHandle)
+{
+	for (int i = 0; i < m_size; i++) {
+		CGlobalEntityList_Ent *pSearch = EHandle_Get(*pHandle);
+		CGlobalEntityList_Ent *pElem = EHandle_Get(((unsigned int *)m_pMemory)[i]);
+		if (pElem == pSearch)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184360 size=0x8
 void __fastcall sub_10184360(int *p)
 {
