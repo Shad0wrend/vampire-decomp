@@ -8,16 +8,21 @@
 struct typedescription_t;
 struct CSaveEdict;
 
-// the data of the CUtlVector<int> section stack at +4 (without its destructor: the game's code tears it down by hand)
+// the data of CSave after the vtable pointer, built by the game before CSave's own vtable store: the CUtlVector<int>
+// section stack at +4 (without its destructor: the game's code tears it down by hand), the buffer and the entity block
 struct CSaveSections
 {
-	CSaveSections() : m_pSections(0), m_nAlloc(0), m_nGrow(0), m_nSections(0), m_pElements(0) {}
+	CSaveSections(void *pData)
+		: m_pSections(0), m_nAlloc(0), m_nGrow(0), m_nSections(0), m_pElements(0), m_pData(pData),
+		  m_pEntityBlock(pData ? (char *)pData + 0x18 : 0) {}
 
 	int *m_pSections;	// +0x04
 	int m_nAlloc;	// +0x08
 	int m_nGrow;	// +0x0c
 	int m_nSections;	// +0x10
 	int *m_pElements;	// +0x14
+	void *m_pData;	// +0x18
+	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
 };
 
 class CSave : public ISave, public CSaveSections
@@ -65,9 +70,6 @@ public:
 	virtual void vfunc39();
 
 	CSave(void *pData);	// stub 0x10009bf6
-
-	void *m_pData;	// +0x18
-	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
 
 	int sub_101a08f0(void *pEntity);	// index of the entity in the table, or -1
 	int sub_101a0830(CSaveEdict *pEdict);	// "CSave::EntityIndex" (edict): -1 for null, else sub_101a08f0 of the entity of the edict (CBaseEntity::Instance scope trace around slot 4 of the object at edict+0x40)
