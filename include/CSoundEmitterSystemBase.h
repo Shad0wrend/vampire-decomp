@@ -1,6 +1,7 @@
 // CSoundEmitterSystemBase: sound emitter system (3 virtual slots; only the layout the constructor sets up is declared).
 #pragma once
 #include "CUnknown1024b2d0.h"
+#include "utlrbtree.h"
 
 class UtlMem2;
 
@@ -25,6 +26,18 @@ struct CSoundParametersInternal
 	char m_bMissingWave48;	// 0x48: set when one of the waves is not on disk
 
 	CSoundWaveEntry &Wave(int i) { return m_pWaves[i]; }	// the i-th wave of the record (the CUtlVector element)
+};
+
+// A tree (0x20 bytes, int indices) followed by a 0x2c byte table object: 0x4c bytes.
+struct CSoundEmitterDict
+{
+	CUtlRBTree<int, int> m_tree;
+	CUnknown1024b2d0 m_table;
+
+	CSoundEmitterDict(bool (*pfnLess)(int const &, int const &)) : m_tree(0, 0, pfnLess)
+	{
+		m_table.sub_1024b2d0(0, 0, 1);
+	}
 };
 
 class CSoundEmitterSystemBase
