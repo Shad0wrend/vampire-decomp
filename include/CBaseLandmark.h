@@ -12,6 +12,8 @@ class CBaseLandmark : public CPointEntity
 public:
 	static void *operator new(unsigned int nSize) { return sub_100aa720(nSize); }
 
+	virtual CPointEntity *vfunc5(unsigned int flags);	// scalar deleting destructor: the eight outputs, then the base body
+
 	char m_pad0004[0x450 - 4];
 	COutputEvent m_Output450;
 	COutputEvent m_Output468;
