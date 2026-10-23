@@ -10288,6 +10288,31 @@ void CUnknown10073b60::sub_10073b60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073e70 size=0xa0
+#include "CFlexAnimationTrack.h"
+#include "utlvector.h"
+extern char vt_1044f014[];
+struct TrackView {
+	void *vptr;
+	void *m_p;
+	char pad[0xc];
+	CUtlVector<CExpressionSampleStub> v[2];
+};
+void CFlexAnimationTrack::sub_10073e70()
+{
+	TrackView *t = (TrackView *)this;
+	*(void **)this = vt_1044f014;
+	operator delete(t->m_p);
+	for (int i = 0; i < 2; i++)
+		t->v[i].Purge();
+	CUtlVector<CExpressionSampleStub> *p = t->v + 2;
+	for (int n = 2; n; n--) {
+		--p;
+		p->~CUtlVector();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073f40 size=0xa
 struct CUnknown10073f40 { char p[0x4c]; int a; void sub_10073f40(int v); };
 // TARGET: CUnknown10073f40::sub_10073f40

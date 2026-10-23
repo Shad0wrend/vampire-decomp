@@ -4189,6 +4189,7 @@
 0x1000fb69 func   ?sub_10109da0@@YIXPADHH@Z sub_10109da0
 0x1000fb6e func   ?vfunc103@CEnvShake@@UAEXXZ CEnvShake::vfunc103
 0x1000fb8c func   ?sub_1034e7e0@@YGXH@Z sub_1034e7e0
+0x1000fbaa func   ?sub_10073e70@CFlexAnimationTrack@@QAEXXZ CFlexAnimationTrack::sub_10073e70
 0x1000fbb4 func   _point_anglesensor point_anglesensor
 0x1000fbcd func   _move_rope move_rope
 0x1000fbd2 func   ?sub_100f6ec0@CGlobalEntityList@@QAEXXZ CGlobalEntityList::sub_100f6ec0
