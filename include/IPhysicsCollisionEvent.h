@@ -1,0 +1,17 @@
+// IPhysicsCollisionEvent: the vphysics collision event callback interface (vtable at 0x10449228, all slots pure here).
+#pragma once
+
+class IPhysicsCollisionEvent
+{
+public:
+	virtual void vfunc0(void *pEvent) = 0;
+	virtual void vfunc1() = 0;
+	virtual void vfunc2() = 0;
+	virtual void vfunc3(void *pObject1, void *pObject2, void *pData) = 0;
+	virtual void vfunc4(void *pObject1, void *pObject2, void *pData) = 0;
+	virtual void vfunc5() = 0;
+	virtual void vfunc6(void *pObject, void *pFluid) = 0;
+	virtual void vfunc7() = 0;
+	virtual void vfunc8(void *pObject1, void *pObject2) = 0;
+	virtual void vfunc9(void *pObject1, void *pObject2) = 0;
+};
