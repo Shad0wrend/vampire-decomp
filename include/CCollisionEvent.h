@@ -62,10 +62,10 @@ struct CCollisionEventZero2
 	CCollisionEventZero2() { m[0] = 0; m[1] = 0; }
 };
 
-struct CCollisionEventZero6
+struct CCollisionEventZero5
 {
-	int m[6];
-	CCollisionEventZero6() { m[0] = 0; m[1] = 0; m[2] = 0; m[3] = 0; m[4] = 0; m[5] = 0; }
+	int m[5];
+	CCollisionEventZero5() { m[0] = 0; m[1] = 0; m[2] = 0; m[3] = 0; m[4] = 0; }
 };
 
 // The vector at +0x114 as the constructor builds it (memory constructor, size 0, element pointer).
@@ -156,7 +156,8 @@ public:
 	CDamageEvent_t *m_pDamageEvents;	// 0x00ec
 	CCollisionEventZero2 m_zero00f0;
 	int m_nDamageEvents;	// 0x00f8
-	CCollisionEventZero6 m_zero00fc;
+	CCollisionEventZero1 m_zero00fc;
+	CCollisionEventZero5 m_zero0100;
 	CCollisionEventPenetrateVec m_penetrateEvents;	// 0x0114 (size at +0x120)
 	CCollisionEventTimeVec m_timeEvents;	// 0x0128
 };
