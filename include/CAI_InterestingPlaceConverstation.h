@@ -9,6 +9,14 @@ struct CAI_IPItem : COutputEvent
 	void sub_100cd2d0();
 };
 
+// The six items as separate members (the game's constructor calls each constructor in turn), indexable.
+struct CAI_IPItems
+{
+	CAI_IPItem m_a, m_b, m_c, m_d, m_e, m_f;
+
+	CAI_IPItem &operator[](int i) { return (&m_a)[i]; }
+};
+
 // CUtlVector of 4-byte elements at +0x518: memory (pointer, allocation count, grow size), size, element pointer.
 struct CAI_IPVec
 {
@@ -30,7 +38,7 @@ public:
 	const char *m_pszSound1;	// 0x454
 	const char *m_pszSound2;	// 0x458
 	char pad45c[0x46c - 0x45c];
-	CAI_IPItem m_items46c[6];	// 0x46c
+	CAI_IPItems m_items46c;	// 0x46c
 	char pad4fc[0x515 - 0x4fc];
 	char m_b515;
 	char m_b516;
