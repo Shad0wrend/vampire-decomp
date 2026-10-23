@@ -39,6 +39,37 @@ struct PlayerEdict_t {
 	int m_edict;
 };
 
+// The game calls CUtlMemory<int>::Grow out of line here, where VC6 expands the template's Grow: the vector is
+// written through a view of its own with the out-of-line copy declared (only for this matched function).
+struct UtlMem2
+{
+	void sub_100eb280(int num);	// CUtlMemory<int>::Grow
+};
+
+struct CRecipientIntVecView
+{
+	int *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	int *m_pElements;
+
+	void AddToTail(int src)
+	{
+		int elem = m_Size;
+		if (m_Size + 1 > m_nAllocationCount)
+			((UtlMem2 *)this)->sub_100eb280(m_Size + 1 - m_nAllocationCount);
+		m_Size += 1;
+		m_pElements = m_pMemory;
+		int numToMove = m_Size - elem - 1;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], numToMove * sizeof(int));
+		int *p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+	}
+};
+
 bool CRecipientFilter::sub_101bd010(void *pPlayer)
 {
 	int edict = ((PlayerEdict_t *)pPlayer)->m_edict;
@@ -47,7 +78,7 @@ bool CRecipientFilter::sub_101bd010(void *pPlayer)
 		return false;
 	if (m_Recipients.Find(idx) != -1)
 		return false;
-	m_Recipients.AddToTail(idx);
+	((CRecipientIntVecView *)&m_Recipients)->AddToTail(idx);
 	return true;
 }
 // END FUNCTION
