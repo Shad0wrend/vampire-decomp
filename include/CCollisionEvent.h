@@ -38,12 +38,12 @@ struct CPenetrateEvent_t	// 20 byte record of the penetrating entity pairs
 	int m_nReported;	// 0x10
 };
 
-struct CCollisionEventRecord12	// 12 byte element of the two-element array at +0xb8 (constructed by an empty constructor)
+struct CCollisionEventRecord12	// 12 byte element of the two-element array at +0xb8 (constructed by an empty out-of-line constructor, 0x1002f060)
 {
 	int m_a;
 	int m_b;
 	int m_c;
-	CCollisionEventRecord12() {}
+	CCollisionEventRecord12();
 };
 
 class CCollisionEvent;
