@@ -7,4 +7,5 @@ public:
 	int m_unk0;
 
 	CUnknown101ed9e0 *sub_101ed9e0(int value);
+	void sub_101eda20(void *pNode);	// stub 0x1000887d: reads the record from a data node
 };
