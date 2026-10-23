@@ -14406,6 +14406,43 @@ int sub_1008a8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b230 size=0x106
+#include "CBaseAnimating.h"
+#include "CUtlMemory60.h"
+#include "ScopeTrace.h"
+extern char vt_1044fad4[];
+extern char g_1054e21c[];
+CBaseAnimating *CBaseAnimating::sub_1008b230()
+{
+	sub_101c0e20();
+	*(int *)((char *)this + 0x55c) = -1;
+	*(int *)((char *)this + 0x5a8) = -1;
+	*(int *)((char *)this + 0x5b8) = -1;
+	char *pVec = (char *)this + 0x5c4;
+	int n = 2;
+	do {
+		((CUtlMemory60 *)pVec)->sub_10097b00(0, 0);
+		*(int *)(pVec + 0xc) = 0;
+		*(int *)(pVec + 0x10) = *(int *)pVec;
+		pVec += 0x14;
+	} while (--n);
+	int *p63c = (int *)((char *)this + 0x63c);
+	*p63c = -1;
+	*(void **)this = vt_1044fad4;
+	ScopeTrace trace(g_1054e21c, m_name26c ? m_name26c : g_106b8540);
+	*(int *)((char *)this + 0x5a4) = 0x4affffea;
+	*(char *)((char *)this + 0x70c) = 0;
+	*(int *)((char *)this + 0x56c) = 0;
+	*(int *)((char *)this + 0x674) = -1;
+	*(int *)((char *)this + 0x678) = 0x40000000;
+	*(int *)((char *)this + 0x5b0) = 0;
+	*(char *)((char *)this + 0x5b4) = 0;
+	sub_1008d0f0(1.0f);
+	sub_1000ede0();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b3c0 size=0x9a
 #include "CBaseAnimating.h"
 
