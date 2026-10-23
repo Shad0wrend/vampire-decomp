@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CBaseCombatCharacter.h"
+#include "CVFeat_t.h"
 
 extern char g_106b8540[];	// the empty string
 
@@ -42,23 +43,15 @@ public:
 	void sub_101e5e60(CBaseCombatCharacter *pCharacter);	// debug print of the cost formula for the character ("name<id> ( stat + stat <stat> ...):\tcost"), handed to the debug output function pointer (sub_10203dd0)
 };
 
-// The global table of these records (count at 0x10739d20, array at 0x10739d24). Find is the game's one lookup of the
-// record of an id: its default record is one function-local static, so every function that looks a record up
-// inlines Find instead of a static of its own (link audit E).
-extern int g_10739d20;
-extern CUnknown101e56e0 **g_10739d24;
+// The global table of these records is the feat table of CVFeat_t.h (count g_10739d20, array g_10739d24, declared
+// there as CVFeat_t **): a record is a feat seen as CUnknown101e56e0, so read the table through Records(). Find is the
+// game's one lookup of the record of an id, CVFeatSet::Find: its default record is one function-local static (guard
+// 0x109f0a8c, object 0x109f0ac0), never a static of its own (link audit E).
+inline CUnknown101e56e0 **Records() { return (CUnknown101e56e0 **)g_10739d24; }
 
 struct CUnknown101e56e0Table
 {
-	static CUnknown101e56e0 *Find(int id)
-	{
-		for (int i = 0; i < g_10739d20; i++) {
-			if (g_10739d24[i]->m_id == id)
-				return g_10739d24[i];
-		}
-		static CUnknown101e56e0 s_default(-1);
-		return &s_default;
-	}
+	static CUnknown101e56e0 *Find(int id) { return (CUnknown101e56e0 *)CVFeatSet::Find(id); }
 };
 
 struct CUnknown101e56e0Holder

@@ -19,7 +19,7 @@ extern int g_1055dff0[];
 // TARGET: CVariantSaveDataOps::vfunc1
 void CVariantSaveDataOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, CRestore *pRestore)
 {
-	CVariantCopy *pVariant = fieldInfo->pField;
+	CVariantCopy *pVariant = (CVariantCopy *)fieldInfo->pField;
 	CVariantCopy var;
 	Vector vec;
 	int type = pRestore->vfunc14();

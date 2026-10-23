@@ -4,12 +4,7 @@
 #include "CRestore.h"
 #include "CVariantCopy.h"
 
-struct SaveRestoreFieldInfo_t
-{
-	CVariantCopy *pField;	// 0x00: the variant being restored
-	void *pOwner;	// 0x04
-	void *pTypeDesc;	// 0x08: the field's typedescription_t (field name at +4)
-};
+#include "SaveRestoreFieldInfo_t.h"
 
 class CVariantSaveDataOps
 {

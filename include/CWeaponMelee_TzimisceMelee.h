@@ -17,5 +17,6 @@ public:
 	int m_n0910;
 	int vfunc367(int a, float b, float c);	// slot 367: its own (0x103e8ad0)
 	void vfunc370(int *event, CBaseCombatWeapon *other);	// slot 370: its own (0x103e8be0)
+	void vfunc269(CBaseCombatWeapon *pOther, Vector vecDir);	// slot 269: its own (0x103e8cd0)
 	CBaseCombatWeapon *vfunc5(unsigned int flags);	// as in CPhysForce (transplant); VC6 has no covariant returns
 };

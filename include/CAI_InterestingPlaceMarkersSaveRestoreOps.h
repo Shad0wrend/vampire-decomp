@@ -2,11 +2,7 @@
 
 class CSave;
 
-struct SaveRestoreFieldInfo_t {
-	void *pField;
-	void *pOwner;
-	void *pTypeDesc;
-};
+#include "SaveRestoreFieldInfo_t.h"
 
 class CAI_InterestingPlaceMarkersSaveRestoreOps {
 public:

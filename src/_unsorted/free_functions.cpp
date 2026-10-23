@@ -26034,13 +26034,14 @@ struct CCollisionOriginView {
 
 namespace block_100dc9a0 {
 struct CCollisionPropertyUnit : CCollisionProperty {
-	void sub_100dc9a0(const Vector &in, Vector &out);
+	Vector &sub_100dc9a0(const Vector &in, Vector &out);	// returns out: the game keeps it in eax
 };
-void CCollisionPropertyUnit::sub_100dc9a0(const Vector &in, Vector &out)
+Vector &CCollisionPropertyUnit::sub_100dc9a0(const Vector &in, Vector &out)
 {
 	out.x = (m_vecMaxs.x - m_vecMins.x) * in.x + m_vecMins.x;
 	out.y = (m_vecMaxs.y - m_vecMins.y) * in.y + m_vecMins.y;
 	out.z = (m_vecMaxs.z - m_vecMins.z) * in.z + m_vecMins.z;
+	return out;
 }
 }
 using namespace block_100dc9a0;
@@ -33457,7 +33458,7 @@ struct CGameMovementUnit : CGameMovement
 float *CGameMovementUnit::sub_1011e350()
 {
 	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
-	if ((pMove->m_fFlags >> 5) & 1)
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)	// the game tests the shifted byte
 		return &m_vecObsHullMax.x;
 	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
 }
@@ -33465,7 +33466,7 @@ float *CGameMovementUnit::sub_1011e350()
 float *CGameMovementUnit::sub_1011e310()
 {
 	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
-	if ((pMove->m_fFlags >> 5) & 1)
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)	// the game tests the shifted byte
 		return &m_vecObsHullMin.x;
 	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
 }
@@ -58739,7 +58740,9 @@ struct CTraitDataUnit : CUnknown101f0e50 {
 };
 bool CTraitDataUnit::sub_101f82d0(int index)
 {
-    return index != -1 && index < m_f04;
+    if (index != -1 && index < m_f04)	// as its own block (0x101f82d0)
+        return true;
+    return false;
 }
 }
 using namespace block_101f96b0;
@@ -58791,7 +58794,9 @@ namespace block_101f9830 {
 	struct CUnknown101f0e50Unit : CUnknown101f0e50 { bool sub_101f82d0(int index); };
 	bool CUnknown101f0e50Unit::sub_101f82d0(int index)
 	{
-		return index != -1 && index < m_f04;
+		if (index != -1 && index < m_f04)	// as its own block (0x101f82d0)
+			return true;
+		return false;
 	}
 }
 using namespace block_101f9830;
@@ -85495,13 +85500,11 @@ extern CGlobalVarsStub *g_1070b228;
 
 namespace block_10312b50 {
 struct CAI_ExpresserUnit : CAI_Expresser {
-	bool sub_10312230();
+	int sub_10312230();	// the game's body answers 1 / 0 in eax; the caller tests al
 };
-bool CAI_ExpresserUnit::sub_10312230()
+int CAI_ExpresserUnit::sub_10312230()
 {
-	if (g_1070b228->curtime < m_Tail.m_n4c)
-		return true;
-	return false;
+	return m_Tail.m_n4c > g_1070b228->curtime;
 }
 }
 using namespace block_10312b50;
@@ -85510,7 +85513,7 @@ using namespace block_10312b50;
 void CAI_Expresser::sub_10312b50()
 {
 	if (m_Tail.m_n64 != -1) {
-		if (!((CAI_ExpresserUnit *)this)->sub_10312230()) {
+		if (!(char)((CAI_ExpresserUnit *)this)->sub_10312230()) {
 			if (m_Tail.m_b68) {
 				if (m_n10->vfunc1()) {
 					sub_10312c50();
@@ -94036,7 +94039,12 @@ unsigned char __fastcall sub_10381c80(char *self)
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
 namespace block_103828a0 {
-char __fastcall sub_10381c80(char *p) { return (*(unsigned int *)(p + 0x14b8) >> 5) & 1; }
+unsigned char __fastcall sub_10381c80(char *self)	// as its own block (0x10381c80)
+{
+	unsigned char v = (unsigned char)(*(unsigned int *)(self + 0x14b8) >> 5);
+	v &= 1;
+	return v;
+}
 }
 using namespace block_103828a0;
 struct HV {

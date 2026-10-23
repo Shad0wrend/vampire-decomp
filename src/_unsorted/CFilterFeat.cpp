@@ -14,8 +14,8 @@ inline const char *OrEmpty(const char *p)
 inline int FindFeatId(const char *pszName)
 {
 	for (int i = 0; i < g_10739d20; i++) {
-		if (_strcmpi(g_10739d24[i]->Get(), pszName) == 0)
-			return g_10739d24[i]->m_id;
+		if (_strcmpi(Records()[i]->Get(), pszName) == 0)
+			return Records()[i]->m_id;
 	}
 	return -1;
 }

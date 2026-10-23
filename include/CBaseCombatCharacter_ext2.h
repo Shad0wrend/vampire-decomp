@@ -10,17 +10,9 @@
 	char sub_103300c0();	// "CBaseCombatCharacter::...": whether the value of stat 7 (kindred) or 0xd (others) of the stat list with id 3 (the shared default list when absent) is positive
 	char sub_10339930();	// "CBaseCombatCharacter::ResistsFeeding": scope trace (entity name), true when the stat record of this character resists, or misc flag 0x40000 is set, or the NPC at +0x98 (state 2, slot 167 object with a field at +0xa8) is in combat with the player; else false (with a console message when the dev convar allows)
 
-	// The inlined stat-list lookup: the first stat list with a zero field at +0x10, else the shared default list
-	// (function-local static at 0x109f0b40, guard byte 0x109f0b2a).
-	CVStatList_t *GetActiveStatList()
-	{
-		for (int i = 0; i < m_nStatLists; i++) {
-			if (m_pStatLists[i]->m_field10 == 0)
-				return m_pStatLists[i];
-		}
-		static CVStatList_t s_default(-1);
-		return &s_default;
-	}
+	// The active stat list: the first stat list with a zero field at +0x10, else the shared default list. It is the
+	// game's one stat list lookup (CVStatListSet::Find, CVStatList_t.h), never a static of its own (link audit E).
+	CVStatList_t *GetActiveStatList() { return CVStatListSet::Of(this)->Find(0); }
 
 	// Slot 86 "ShouldTransmit"-like (declared as a plain member; CBaseEntity::vfunc86 is the same slot).
 	char vfunc86(int a, int b, int c, int d, int e);	// scope trace (entity name), true while the force-transmit time at +0x90 is still ahead of curtime or the flag byte at +0x14e3 + (engine slot 35 index of b) is set, else CBaseEntity::sub_100ab020(a, b, c, d, e)

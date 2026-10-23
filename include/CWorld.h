@@ -15,6 +15,9 @@ public:
 	CWorld();	// the constructor (0x1023b840): CBaseEntity body, vftable, engine edict 0 attached, world flags, solid BSP / move type none
 	virtual void vfunc113();	// "CWorld::Activate"-like: CBaseEntity::vfunc113, caches sv_cheats in the global 0x10752e9c, clamps the value at +0x49c to 0..2 and, when that changed it, refreshes every player (sub_10170750) and flags the entity (+0x1b1); resets the globals 0x109247e0 / 0x109247e4 to -1 and 0x10924fb8 to 0
 	virtual void vfunc130(int a);
+	virtual void vfunc103();	// slot 103: its own (0x1023bba0)
+	virtual int vfunc126(int a);	// slot 126: its own (0x1023b5e0)
+	virtual int vfunc127(int a);	// slot 127: its own (0x1023b600)
 	CWorld *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_1000fe98();	// as in CPhysForce (transplant)
 	CWorld *sub_1023b840();	// as in CKeepUpright (transplant)
