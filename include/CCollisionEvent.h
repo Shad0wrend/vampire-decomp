@@ -2,6 +2,10 @@
 #pragma once
 
 #include "CUtlVector20.h"
+#include "CUtlMemory20.h"
+#include "UtlMem.h"
+#include "IPhysicsCollisionEvent.h"
+#include "IPhysicsCollisionSolver.h"
 
 class CBaseEntity;
 
@@ -34,6 +38,14 @@ struct CPenetrateEvent_t	// 20 byte record of the penetrating entity pairs
 	int m_nReported;	// 0x10
 };
 
+struct CCollisionEventRecord12	// 12 byte element of the two-element array at +0xb8 (constructed by an empty constructor)
+{
+	int m_a;
+	int m_b;
+	int m_c;
+	CCollisionEventRecord12() {}
+};
+
 class CCollisionEvent;
 
 // The IPhysicsCollisionSolver sub-object at +4 of CCollisionEvent (its methods get this + 4 as ECX).
@@ -44,17 +56,30 @@ struct CCollisionEventSolver
 	CCollisionEvent *Event() { return (CCollisionEvent *)((char *)this - 4); }
 };
 
-class CCollisionEvent
+class CCollisionEvent : public IPhysicsCollisionEvent, public IPhysicsCollisionSolver
 {
 public:
-	virtual void vfunc0(void *pEvent);	// "CCollisionEvent::PreCollision": scope trace, copies the 32 byte event to +0x68, then slot 40 of both objects fills the records at +0x88 / +0x94 (second argument 0x30 further)
+	CCollisionEvent();
 
-	// Slots 3, 4, 6, 8 and 9, declared as plain members.
-	void vfunc3(void *pObject1, void *pObject2, void *pData);	// "CCollisionEvent::StartTouch": scope trace, with both entities (slot 6 of the objects) set and the collision data queried (slots 1 / 0), the start touch is dispatched at once (sub_10030ba0) unless the byte at +0x13c is set, which goes to sub_10030f30 (queued) instead
-	void vfunc4(void *pObject1, void *pObject2, void *pData);	// "CCollisionEvent::EndTouch": scope trace, with both entities (slot 6 of the objects) set and the collision data queried (slots 1 / 0), the end touch is dispatched at once (sub_10030cb0) unless the byte at +0x13c is set, which goes to sub_10030f30 (queued) instead
-	void vfunc6(void *pObject, void *pFluid);	// "CCollisionEvent::FluidEndTouch": scope trace, the entity of the object (slot 6) loses bit 19 of its flags at +0x268 and, when the time since its last fluid touch (DeltaTimeSinceLast) reaches a minimum, sub_10151150(pFluid, pObject, entity)
-	void vfunc8(void *pObject1, void *pObject2);	// "CCollisionEvent::ObjectEnterTrigger"
-	void vfunc9(void *pObject1, void *pObject2);	// "CCollisionEvent::ObjectLeaveTrigger"
+	virtual void vfunc0(void *pEvent);	// "CCollisionEvent::PreCollision": scope trace, copies the 32 byte event to +0x68, then slot 40 of both objects fills the records at +0x88 / +0x94 (second argument 0x30 further)
+	virtual void vfunc1();
+	virtual void vfunc2();
+
+	// Slots 3, 4, 6, 8 and 9.
+	virtual void vfunc3(void *pObject1, void *pObject2, void *pData);	// "CCollisionEvent::StartTouch": scope trace, with both entities (slot 6 of the objects) set and the collision data queried (slots 1 / 0), the start touch is dispatched at once (sub_10030ba0) unless the byte at +0x13c is set, which goes to sub_10030f30 (queued) instead
+	virtual void vfunc4(void *pObject1, void *pObject2, void *pData);	// "CCollisionEvent::EndTouch": scope trace, with both entities (slot 6 of the objects) set and the collision data queried (slots 1 / 0), the end touch is dispatched at once (sub_10030cb0) unless the byte at +0x13c is set, which goes to sub_10030f30 (queued) instead
+	virtual void vfunc5();
+	virtual void vfunc6(void *pObject, void *pFluid);	// "CCollisionEvent::FluidEndTouch": scope trace, the entity of the object (slot 6) loses bit 19 of its flags at +0x268 and, when the time since its last fluid touch (DeltaTimeSinceLast) reaches a minimum, sub_10151150(pFluid, pObject, entity)
+	virtual void vfunc7();
+	virtual void vfunc8(void *pObject1, void *pObject2);	// "CCollisionEvent::ObjectEnterTrigger"
+	virtual void vfunc9(void *pObject1, void *pObject2);	// "CCollisionEvent::ObjectLeaveTrigger"
+
+	// The IPhysicsCollisionSolver slots (the second vtable, at +4).
+	virtual void solverfunc0();
+	virtual void solverfunc1();
+	virtual void solverfunc2();
+	virtual void solverfunc3();
+	virtual void solverfunc4();
 
 	int sub_10031270(int inflictor);	// "CCollisionEvent::FindDamageInflictor": index of the last 32-byte record (array at +0x100, count at +0x10c) starting with inflictor, or -1
 	CFrictionEntry_t *sub_10030720(int key);	// "CCollisionEvent::FindFriction": scope trace, the entry of the 8 at +0x8 with this key, else the first free one, else null
@@ -72,9 +97,10 @@ public:
 	void sub_10030e40();	// "CCollisionEvent::UpdateDamageEvents": scope trace, hands every queued damage event (0x58 byte records, array at +0xec, count at +0xf8) to its entity (copy of the damage info), then empties the queue
 	void sub_10030910();	// "CCollisionEvent::FrameUpdate": scope trace, UpdateFrictionSounds, UpdateTouchEvents, then UpdateDamageEvents (called through the stub at 0x10005a42)
 
-	char m_pad0004[4];
 	CFrictionEntry_t m_friction[8];	// 0x0008
-	char m_pad0068[0xd8 - 0x68];
+	char m_pad0068[0xb8 - 0x68];
+	CCollisionEventRecord12 m_records[2];	// 0x00b8
+	char m_pad00d0[0xd8 - 0xd0];
 	char *m_pTouchEvents;	// 0x00d8: queued touch records of 0x24 bytes
 	char m_pad00dc[0xe4 - 0xdc];
 	int m_nTouchEvents;	// 0x00e4
@@ -84,4 +110,7 @@ public:
 	int m_nDamageEvents;	// 0x00f8
 	char m_pad00fc[0x114 - 0xfc];
 	CUtlVector20 m_penetrateEvents;	// 0x0114 (size at +0x120)
+	UtlMem m_timeMem;	// 0x0128: the (key, time) records of DeltaTimeSinceLast
+	int m_timeSize;	// 0x0134
+	int *m_pTimeElements;	// 0x0138
 };
