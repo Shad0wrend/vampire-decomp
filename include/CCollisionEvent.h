@@ -46,6 +46,32 @@ struct CCollisionEventRecord12	// 12 byte element of the two-element array at +0
 	CCollisionEventRecord12();
 };
 
+// The vector at +0x114 as the constructor builds it (memory constructor, size 0, element pointer).
+struct CCollisionEventPenetrateVec : CUtlVector20
+{
+	CCollisionEventPenetrateVec()
+	{
+		((CUtlMemory20 *)this)->sub_10032a60(0, 0);
+		m_size = 0;
+		m_pElements = m_pMemory;
+	}
+};
+
+// The vector of (key, time) records at +0x128.
+struct CCollisionEventTimeVec
+{
+	UtlMem m_mem;
+	int m_size;
+	int *m_pElements;
+
+	CCollisionEventTimeVec()
+	{
+		m_mem.sub_10032ab0(0, 0);
+		m_size = 0;
+		m_pElements = m_mem.m_pMemory;
+	}
+};
+
 class CCollisionEvent;
 
 // The IPhysicsCollisionSolver sub-object at +4 of CCollisionEvent (its methods get this + 4 as ECX).
@@ -109,8 +135,6 @@ public:
 	char m_pad00f0[8];
 	int m_nDamageEvents;	// 0x00f8
 	char m_pad00fc[0x114 - 0xfc];
-	CUtlVector20 m_penetrateEvents;	// 0x0114 (size at +0x120)
-	UtlMem m_timeMem;	// 0x0128: the (key, time) records of DeltaTimeSinceLast
-	int m_timeSize;	// 0x0134
-	int *m_pTimeElements;	// 0x0138
+	CCollisionEventPenetrateVec m_penetrateEvents;	// 0x0114 (size at +0x120)
+	CCollisionEventTimeVec m_timeEvents;	// 0x0128
 };
