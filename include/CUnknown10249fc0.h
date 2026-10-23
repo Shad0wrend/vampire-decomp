@@ -8,7 +8,7 @@ struct CUnknown10249fc0_Key	// a two byte value passed by value (built through a
 {
 	unsigned short m_v;
 
-	CUnknown10249fc0_Key(unsigned short v) : m_v(v) {}
+	CUnknown10249fc0_Key(const unsigned short &v) : m_v(v) {}
 };
 
 class CUnknown10249fc0_Sub
