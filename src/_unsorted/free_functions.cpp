@@ -71837,6 +71837,20 @@ bool CUnknown10248a50::sub_10248430(int unused, const char *pszBuffer, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248690 size=0x7c
+#include "CKeyValuesX.h"
+#include "CUtlBuffer.h"
+
+void CKeyValuesX::sub_10248690(const char *pszFile, IKeyValuesFileView *pFileSystem, const char *pszPathID)
+{
+	CUtlBuffer buf(0, 0, 1);
+	sub_1001152c(&buf, 0);
+	int hFile = pFileSystem->Open(pszFile, "wt", pszPathID);
+	pFileSystem->Write(buf.m_pBuffer, buf.m_nPut, hFile);
+	pFileSystem->Close(hFile);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248730 size=0xb0
 #include "CKeyValuesX.h"
 
