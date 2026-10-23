@@ -1,23 +1,19 @@
-// CUnknown102cff90: an object holding two CUtlVector-like containers of 4-byte elements at +0xc and +0x20; real name not yet known.
+// CUnknown102cff90: an object holding two CUtlVectors of 4-byte elements at +0xc and +0x20; real name not yet known.
 #pragma once
 
-struct CUnknown102cff90Vec
-{
-	int *m_pMemory;
-	int m_allocationCount;
-	int m_growSize;
-	int m_size;
-	int *m_pElements;
+#include "utlvector.h"
 
-	void sub_10004a75();	// run on the second container (cleanup of its elements)
+struct CUnknown102cff90Elem
+{
+	int m_value;
 };
 
 class CUnknown102cff90
 {
 public:
 	char m_pad0000[0xc];
-	CUnknown102cff90Vec m_first;	// 0x0c
-	CUnknown102cff90Vec m_second;	// 0x20
+	CUtlVector<int> m_first;	// 0x0c
+	CUtlVector<CUnknown102cff90Elem> m_second;	// 0x20
 
-	void sub_102cff90();	// destructor-like: purges both containers (with the inlined CUtlVector::Purge / CUtlMemory::Purge sequences)
+	void sub_102cff90();	// purges both vectors, then destroys them
 };
