@@ -42394,6 +42394,23 @@ void *sub_101878d0(SEdict *pent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10187ef0 size=0x86
+#include "CLagCompensationManager.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+void CLagCompensationManager::sub_10187ef0()
+{
+	CUtlVector<CLagCompensationRecord> *v = (CUtlVector<CLagCompensationRecord> *)&m_pRecords;
+	float t0 = g_1070b22c->vfunc119(1) - 1.0; float cutoff = (float)(t0);
+	for (int i = v->Count() - 1; i >= 0; --i) {
+		if (!(m_pRecords[i].m_flSimulationTime >= cutoff))
+			v->Remove(i);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189510 size=0x77
 struct Elem784 { char d[0x784]; };
 extern void *(*g_109f3638)(void *, int);
