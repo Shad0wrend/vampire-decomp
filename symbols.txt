@@ -312,6 +312,7 @@
 0x1000222f func   ?vfunc510@CNPC_VZombie@@QAE_NXZ CNPC_VZombie::vfunc510
 0x1000224d func   ?sub_100d30a0@@YAXXZ sub_100d30a0
 0x10002266 func   ?sub_100bc5e0@@YIXPAHHH@Z sub_100bc5e0
+0x10002284 func   ?vfunc435@CNPC_VWerewolf@@QAEXH@Z CNPC_VWerewolf::vfunc435
 0x10002289 func   _viewmodel viewmodel
 0x1000228e func   ?vfunc546@CGeneric_NPC@@QAEHH@Z CGeneric_NPC::vfunc546
 0x10002293 func   ?sub_104024e0@@YAHXZ sub_104024e0

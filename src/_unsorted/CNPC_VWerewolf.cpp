@@ -247,6 +247,24 @@ int CNPC_VWerewolf::vfunc142(CUnknown101c2a50 *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ced10 size=0x10c
+#include "ScopeTrace.h"
+#include "utlvector.h"
+struct WWBase { void sub_102a0940(int a); };
+struct WWEntry { int v; };
+
+void CNPC_VWerewolf::vfunc435(int arg)
+{
+    ScopeTrace trace("CNPC_VWerewolf::OnScheduleChange", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    ((WWBase *)this)->sub_102a0940(arg);
+    if (((CUtlVector<WWEntry> *)&m_History)->Count() > 50)
+        ((CUtlVector<WWEntry> *)&m_History)->Remove(0);
+    WWEntry e;
+    e.v = arg;
+    ((CUtlVector<WWEntry> *)&m_History)->AddToTail(e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d02b0 size=0x108
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
