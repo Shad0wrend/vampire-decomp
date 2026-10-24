@@ -1,30 +1,14 @@
-// CUnknown101b4680: object with two plain-data vectors (CUtlVector memory + size + element pointer) at +0x20 and +0x34;
-// real name not yet known.
+// CUnknown101b4680: object holding two CUtlVector<int> (at +0x20 and +0x34); real name not yet known.
 #pragma once
 
-#include "CPASAttenuationFilter.h"
-
-struct CPodVec
-{
-	CRecipientVecMem m_Memory;
-	int m_Size;
-	void *m_pElements;
-
-	void Purge(void (__cdecl *pfnFree)(void *))
-	{
-		m_Size = 0;
-		m_Memory.Purge(pfnFree);
-		m_pElements = m_Memory.m_pMemory;
-		m_Memory.Purge(pfnFree);
-	}
-};
+#include "utlvector.h"
 
 class CUnknown101b4680
 {
 public:
-	char pad0[0x20];
-	CPodVec m_vecA;	// 0x20
-	CPodVec m_vecB;	// 0x34
+	char m_pad0000[0x20];
+	CUtlVector<int> m_vecA;	// 0x20
+	CUtlVector<int> m_vecB;	// 0x34
 
-	void sub_101b4680();	// purges m_vecB, then m_vecA
+	~CUnknown101b4680();
 };
