@@ -1179,6 +1179,7 @@
 0x1000533a func   ?vfunc69@CNPC_VMingXiao@@QAEDPAX@Z CNPC_VMingXiao::vfunc69
 0x1000533f func   ?vfunc228@CBaseCombatCharacter@@UAEXHH@Z CBaseCombatCharacter::vfunc228
 0x10005349 func   ?sub_10401cd0@@YAHXZ sub_10401cd0
+0x10005358 func   ??1CUnknown101b4680@@QAE@XZ CUnknown101b4680::~CUnknown101b4680
 0x10005367 func   ?vfunc5@CNPC_VStalker@@QAEPAV1@I@Z CNPC_VStalker::vfunc5
 0x10005371 func   ?sub_1019ee40@CRopeKeyframe@@QAE_NXZ CRopeKeyframe::sub_1019ee40
 0x1000537b func   ?vfunc265@CVampireProjectile@@UAE_NXZ CVampireProjectile::vfunc265
