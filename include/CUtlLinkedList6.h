@@ -27,6 +27,10 @@ public:
 
 	static unsigned short InvalidIndex() { return (unsigned short)~0; }
 
+	unsigned short Head() const { return m_Head; }
+	unsigned short Count() const { return m_ElementCount; }
+	unsigned short &Element(unsigned short i) { return m_pMemory[i].m_Data; }
+
 	bool IsInList(unsigned short i) const
 	{
 		return i < m_TotalElements && m_pMemory[i].m_Previous != i;
