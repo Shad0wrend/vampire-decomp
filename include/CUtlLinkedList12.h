@@ -21,4 +21,5 @@ public:
 	int m_NumAlloced;	// 0x1c
 
 	bool sub_100decb0(int i);	// "CUtlLinkedList::IsInList": i is below the number of allocated nodes, not negative and the node's previous index is not itself (called through the stub at 0x1000ac54)
+	void sub_100deb80(int elem);	// "CUtlLinkedList::Unlink": takes the node out of the list when it is in it (IsInList inlined)
 };
