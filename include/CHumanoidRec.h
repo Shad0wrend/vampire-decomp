@@ -15,4 +15,13 @@ struct CHumanoidRec
 	float m_flValue;	// 0x20
 
 	CHumanoidRec();	// 0x10260980
+	CHumanoidRec *sub_10260980();	// the same function called directly (Construct without a placement new)
 };
+
+// The vector's Construct for this record: the game's insert does `test ecx; je; call the constructor`.
+inline CHumanoidRec *Construct(CHumanoidRec *pMemory)
+{
+	if (pMemory)
+		pMemory->sub_10260980();
+	return pMemory;
+}
