@@ -87845,6 +87845,29 @@ int CBaseCombatCharacter::sub_103232b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10323370 size=0xe8
+#include "ScopeTrace.h"
+#include "utlvector.h"
+
+class CEntHandle
+{
+public:
+	CEntHandle() : m_Index(0xffffffff) {}
+	CEntHandle(unsigned long index) : m_Index(index) {}
+	unsigned long m_Index;
+};
+
+extern CUtlVector<CEntHandle> g_109370bc;
+
+// TARGET: CBaseCombatCharacter::sub_10323370
+void CBaseCombatCharacter::sub_10323370()
+{
+	ScopeTrace trace("CBaseCombatCharacter::AddToPresenceList", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CEntHandle h(this ? *vfunc1() : 0xffffffff);
+	g_109370bc.AddToTail(h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103234a0 size=0x13d
 #include "CBaseCombatCharacter.h"
 #include "CUtlVector4.h"
