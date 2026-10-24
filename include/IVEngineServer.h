@@ -28,7 +28,7 @@ public:
 	virtual void vfunc60(); virtual void __cdecl vfunc61(void *pEdict, const char *pszFormat, ...);	// slot 61 (+0xf4): ClientCommand (a cdecl member: the caller pushes this first and pops everything)
 	virtual void vfunc62(); virtual void vfunc63(); virtual void vfunc64();
 	virtual void vfunc65(void *pFilter, int nMessage);	// slot 65 (+0x104): UserMessageBegin
-	virtual void vfunc66();	// slot 66 (+0x108): MessageEnd
+	virtual int vfunc66();	// slot 66 (+0x108): MessageEnd
 	virtual void vfunc67(int nValue);	// slot 67 (+0x10c): a message write taking one value
 	virtual void vfunc68(); virtual void vfunc69();
 	virtual void vfunc70(int nValue);	// slot 70 (+0x118): a message write taking one value (a 16 bit one)
