@@ -13,6 +13,17 @@ void CAI_BaseHumanoid::vfunc277(const float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025e8e0 size=0x28
+#include "CAI_BaseHumanoid.h"
+
+// TARGET: CAI_BaseHumanoid::vfunc193
+Vector CAI_BaseHumanoid::vfunc193()
+{
+    sub_10010be5();
+    return m_vec5f50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025f1a0 size=0xe
 bool CAI_BaseHumanoid::vfunc586()
 {
