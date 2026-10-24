@@ -31725,6 +31725,67 @@ void CBaseCombatCharacter::sub_10106b30(const char *pszName, char *pDest, int si
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106c40 size=0x17d
+#include <stdio.h>
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+__declspec(dllimport) void DevWarning(const char *fmt, ...);
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *p);
+struct ExprLoader {
+    void sub_100119c3(CBaseEntity *pEnt, char *pszFile, int bFlag);
+};
+extern ExprLoader g_10709200;
+void __fastcall sub_10003747(CBaseEntity *self);
+struct ExprVec {
+    void *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    void *m_pElements;
+};
+struct ExprFields {
+    char pad[0x10bc];
+    ExprVec m_vec;
+};
+struct CBCCReloadUnit : CBaseCombatCharacter { void sub_10106c40(); };
+// TARGET: CBCCReloadUnit::sub_10106c40
+void CBCCReloadUnit::sub_10106c40()
+{
+    CBaseCombatCharacter *self = this;
+    ScopeTrace trace("CBaseCombatCharacter::ReloadExpressionsForMyModel", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+    ExprVec *pVec = &((ExprFields *)self)->m_vec;
+    pVec->m_size = 0;
+    if (pVec->m_growSize != -1) {
+        if (pVec->m_pMemory) {
+            Plat_Free(pVec->m_pMemory);
+            pVec->m_pMemory = 0;
+        }
+        pVec->m_allocationCount = 0;
+    }
+    pVec->m_pElements = pVec->m_pMemory;
+    char *pHdr = (char *)((CBaseAnimating *)self)->sub_100952d0(-1);
+    if (!pHdr) {
+        int unused;
+        const char **ppName = self->vfunc9(&unused);
+        const char *pszModel = *ppName;
+        if (!pszModel)
+            pszModel = g_106b8540;
+        DevWarning("Could not load expressions for %s, model %s is invalid.\n", self->sub_100ab4f0(), pszModel);
+        return;
+    }
+    if (*(int *)(pHdr + 0x160) > 0) {
+        char szFile[128];
+        self->sub_10106b30("expressions", szFile, 128);
+        g_10709200.sub_100119c3(self, szFile, 1);
+        Q_snprintf(szFile, 128, "expressions/%s.vfe", "expressions");
+        g_10709200.sub_100119c3(self, szFile, 0);
+        sub_10003747(self);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106e20 size=0x114
 #include "ScopeTrace.h"
 struct ExprCurve {
