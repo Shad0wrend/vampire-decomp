@@ -48824,6 +48824,42 @@ void CFloatUnit::sub_101bb650(float x, float y)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb7e0 size=0x80
+#include "CUtlVectorDataOps.h"
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern int g_1059a714[2];
+static inline ISaveRestoreOps *GetVecOps()
+{
+    static CUtlVectorDataOps<CUtlVector<int, CUtlMemory<int> >, 4> ops;
+    return (ISaveRestoreOps *)&ops;
+}
+int *sub_101bb7e0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_Flags", {4, 0}, 1, 2 },
+        { 10, "m_Recipients", {8, 0}, 1, 2, 0, GetVecOps(), 0 },
+    };
+    g_1059a714[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1059a714[0] = (int)&dataDesc[1];
+    return g_1059a714;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbd10 size=0x9e
 #include "CUnknown101bbd10.h"
 #include "CGlobalEntityList.h"
