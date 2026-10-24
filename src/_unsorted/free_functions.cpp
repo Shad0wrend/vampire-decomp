@@ -21571,6 +21571,19 @@ void __fastcall sub_100b7130(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7590 size=0xad
+#include "CBaseLandmark.h"
+#include "CBaseEntity.h"
+
+// TARGET: info_landmark
+extern "C" CBaseLandmark *info_landmark()
+{
+	CBaseLandmark *pEntity = new CBaseLandmark;
+	((CBaseEntity *)pEntity)->vfunc106("info_landmark");
+	return pEntity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7a40 size=0x12
 struct CVirtSlots14 {
     virtual void vfunc0();
