@@ -27066,6 +27066,28 @@ void sub_100deb50(int *dst, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100deb80 size=0x7b
+#include "CUtlLinkedList12.h"
+
+void CUtlLinkedList12::sub_100deb80(int elem)
+{
+	if (IsInList(elem)) {
+		CUtlLinkedList12Node *pBase = m_pMemory;
+		CUtlLinkedList12Node *pOldElem = &pBase[elem];
+		if (pOldElem->m_Previous != -1)
+			pBase[pOldElem->m_Previous].m_Next = pOldElem->m_Next;
+		else
+			m_Head = pOldElem->m_Next;
+		if (pOldElem->m_Next != -1)
+			pBase[pOldElem->m_Next].m_Previous = pOldElem->m_Previous;
+		else
+			m_Tail = pOldElem->m_Previous;
+		pOldElem->m_Previous = pOldElem->m_Next = elem;
+		--m_ElementCount;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dec20 size=0x6a
 #include "CUnknown100dec20.h"
 
