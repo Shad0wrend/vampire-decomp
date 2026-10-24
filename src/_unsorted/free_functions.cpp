@@ -72662,6 +72662,45 @@ void sub_1024e930(VMatrix &dst, const Vector &v, float angleDegrees)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024fc20 size=0x174
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+struct CGlobalVarsView { char m_pad0000[0xc]; float curtime; };
+extern CGlobalVarsView *g_1070b228;
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+static __inline int ENTINDEX(int pEdict)
+{
+	return g_1070b22c->vfunc35(pEdict);
+}
+struct CPhysObjV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual char v4(); };
+struct CDropEntityUnit : CBaseEntity { void sub_1024fc20(); void sub_1024fe00(); };
+// TARGET: CDropEntityUnit::sub_1024fc20
+void CDropEntityUnit::sub_1024fc20()
+{
+	m_flNextThink = g_1070b228->curtime + 0.1;
+	char bOk;
+	if (m_obj36c)
+		bOk = ((CPhysObjV *)m_obj36c)->v4();
+	else
+		bOk = ((CEntityVSlots *)this)->slot346() & 1;
+	if (bOk) {
+		if (vfunc97()) {
+			int nPitch = g_1070b244->vfunc2(0, 0x1d) + 0x5f;
+			CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+			g_1070b248->vfunc3(&filter, ENTINDEX(m_pEdict2e0), 2, "items/weapondrop1.wav", 1.0f, 0.8f, 0, nPitch, 0, 0, 1, 0);
+		}
+		sub_1024fe00();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10250400 size=0x104
 #include "CUnknown10250830.h"
 extern CUnknown10250830 g_1088ae60;
