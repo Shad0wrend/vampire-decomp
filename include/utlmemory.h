@@ -33,9 +33,9 @@ inline void *__cdecl operator new(unsigned int, void *p, CUtlPlacement *) { retu
 inline void __cdecl operator delete(void *, void *, CUtlPlacement *) {}
 
 template <class T>
-inline void Construct(T *pMemory)
+inline T *Construct(T *pMemory)
 {
-	new (pMemory, (CUtlPlacement *)0) T;
+	return new (pMemory, (CUtlPlacement *)0) T;
 }
 
 template <class T>
