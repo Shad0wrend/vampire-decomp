@@ -2175,6 +2175,7 @@
 0x10008a3a func   ?sub_1021b410@CPropHacking@@QAEXXZ CPropHacking::sub_1021b410
 0x10008a49 func   ?sub_10078dd0@CUtlVector140@@QAEXH@Z CUtlVector140::sub_10078dd0
 0x10008a58 func   ?vfunc5@COccultDodge@@QAEPAV1@I@Z COccultDodge::vfunc5
+0x10008a67 func   ?sub_101ce7f0@@YAXHPAVCBaseEntity@@@Z sub_101ce7f0
 0x10008a76 func   ?vfunc5@COccultLockpicking@@QAEPAV1@I@Z COccultLockpicking::vfunc5
 0x10008a80 func   ?vfunc242@CEnvParticle@@QAEXXZ CEnvParticle::vfunc242
 0x10008a85 func   _item_g_eyes item_g_eyes
