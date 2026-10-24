@@ -24,4 +24,36 @@ public:
 
 	unsigned short sub_100fa470(bool multilist);	// "CUtlLinkedList::AllocInternal"
 	void sub_100fa3a0(unsigned short i);	// the per-node bookkeeping run after AllocInternal (stub 0x100139a8)
+
+	static unsigned short InvalidIndex() { return (unsigned short)~0; }
+
+	bool IsInList(unsigned short i) const
+	{
+		return i < m_TotalElements && m_pMemory[i].m_Previous != i;
+	}
+
+	void Unlink(unsigned short elem)
+	{
+		if (IsInList(elem)) {
+			CUtlLinkedList6Node *pBase = m_pMemory;
+			CUtlLinkedList6Node *pOldElem = &pBase[elem];
+			if (pOldElem->m_Previous != InvalidIndex())
+				pBase[pOldElem->m_Previous].m_Next = pOldElem->m_Next;
+			else
+				m_Head = pOldElem->m_Next;
+			if (pOldElem->m_Next != InvalidIndex())
+				pBase[pOldElem->m_Next].m_Previous = pOldElem->m_Previous;
+			else
+				m_Tail = pOldElem->m_Previous;
+			pOldElem->m_Previous = pOldElem->m_Next = elem;
+			--m_ElementCount;
+		}
+	}
+
+	void Remove(unsigned short elem)
+	{
+		Unlink(elem);
+		m_pMemory[elem].m_Next = m_FirstFree;
+		m_FirstFree = elem;
+	}
 };
