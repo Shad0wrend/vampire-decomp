@@ -81430,6 +81430,23 @@ extern "C" CBaseEntity *intersting_place()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d9ed0 size=0x9c
+#include "CUnknown102d9ed0.h"
+
+struct CGlobalVars { char pad[0xc]; float curtime; };
+extern CGlobalVars *g_1070b228;
+
+void CUnknown102d9ed0::sub_102d9ed0(const Vector *start, const Vector *end)
+{
+	if (m_nNextLine >= 4)
+		m_nNextLine = 0;
+	m_lines[m_nNextLine].m_flExpireTime = g_1070b228->curtime + 2.0f;
+	m_lines[m_nNextLine].m_vecStart = *start;
+	m_lines[m_nNextLine].m_vecEnd = *end;
+	++m_nNextLine;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102da600 size=0x151
 struct CTriple
 {

@@ -528,6 +528,7 @@
 0x10002e82 func   ?sub_1042fe60@@YAXXZ sub_1042fe60
 0x10002ea5 func   ?sub_1013fcb0@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1013fcb0
 0x10002ec8 func   ?sub_10071ba0@UtlVec8@@QAEXHH@Z UtlVec8::sub_10071ba0
+0x10002ed2 func   ?sub_102d9ed0@CUnknown102d9ed0@@QAEXPBVVector@@0@Z CUnknown102d9ed0::sub_102d9ed0
 0x10002edc func   ?sub_10150e50@CHolderPtr36c@@QAEXH@Z CHolderPtr36c::sub_10150e50
 0x10002ef5 func   ?sub_101c67e0@@YAPAHXZ sub_101c67e0
 0x10002f04 func   ?sub_10086e50@@YAXXZ sub_10086e50
