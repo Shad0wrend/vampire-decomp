@@ -2301,6 +2301,38 @@ void CPhysicsMovedEntitiesUnit::sub_10033820(char bRestoreAngles, const Vector *
 }
 // END FUNCTION
 
+// FUNCTION: 0x100339b0 size=0xb1
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+struct SEntView { char pad[0x130]; float m[3][4]; };
+struct SEntName { char pad[0x26c]; const char *m_name; };
+
+void __fastcall sub_100339b0(SEntView *p, int, float *forward, float *right, float *up)
+{
+	const char *name;
+	if (p) {
+		name = ((SEntName *)p)->m_name;
+		if (name == 0)
+			name = g_106b8540;
+	} else
+		name = g_105387dc;
+	g_109f3620[*g_109f3680].a = "CBaseEntity::PhysicsGetAngleVectors";
+	g_109f3620[*g_109f3680].b = name;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	for (int i = 0; i < 3; i++) {
+		forward[i] = p->m[i][0];
+		right[i] = -p->m[i][1];
+		up[i] = p->m[i][2];
+	}
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033aa0 size=0xad
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
