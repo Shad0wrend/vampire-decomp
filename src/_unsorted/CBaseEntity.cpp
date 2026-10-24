@@ -2519,3 +2519,40 @@ void CBaseEntity::vfunc226(int a)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10267260 size=0xba
+#include "CPASFilter.h"
+#include "CUnknown1070b22c.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+
+struct CEngineEffectX
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV10(1) PV10(2)
+	PV(30) PV(31) PV(32) PV(33) PV(34) PV(35) PV(36) PV(37) PV(38)
+	virtual void vfunc39(CRecipientFilter *pFilter, int a, const float *pOrigin, const float *pOther, int nEntIndex);
+};
+
+struct CEntView184
+{
+	char pad[0x2e0];
+	int m_pEdict2e0;
+	void sub_10267260(const float *pOrigin, const void *pOther, int mode);
+};
+
+extern CEngineEffectX *g_10540528;
+extern CUnknown1070b22c *g_1070b22c;
+
+void CEntView184::sub_10267260(const float *pOrigin, const void *pOther, int mode)
+{
+	CPASFilter filter(pOrigin);
+	switch (mode) {
+	case 1:
+		int edict = m_pEdict2e0;
+		g_10540528->vfunc39(&filter, 0, pOrigin, (const float *)((const char *)pOther + 0xc), g_1070b22c->vfunc35(edict));
+		break;
+	}
+}
+// END FUNCTION

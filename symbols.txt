@@ -3362,6 +3362,7 @@
 0x1000caea func   ?sub_102c6e90@@YIXPAV?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@@Z sub_102c6e90
 0x1000caf4 func   ?sub_1002e970@@YAPAXHHHPAD@Z sub_1002e970
 0x1000cb17 func   ?vfunc103@CScriptedSentence@@QAEXXZ CScriptedSentence::vfunc103
+0x1000cb1c func   ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z CEntView184::sub_10267260
 0x1000cb21 func   ?vfunc5@CAI_Hint@@UAEPAV1@I@Z CAI_Hint::vfunc5
 0x1000cb26 func   ?sub_10033160@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10033160
 0x1000cb35 func   ?sub_1033d580@CBaseCombatCharacter@@QAEDH@Z CBaseCombatCharacter::sub_1033d580
