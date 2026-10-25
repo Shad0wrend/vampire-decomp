@@ -9,6 +9,7 @@ class CRecipientFilter;
 class CTEGlowSprite
 {
 public:
+	CTEGlowSprite *sub_100639b0(int a);	// constructor (0x100639b0): the temp entity base constructor (sub_10015334), then the vtable and the zeroed fields
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual CTEGlowSprite *vfunc2(unsigned int flags);	// scalar deleting destructor
