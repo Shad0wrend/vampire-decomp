@@ -110,6 +110,20 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 	Vector *sub_1030b7c0();	// the route's goal position (stub 0x10012805)
 };
 
+struct CAI_NavGoal	// the record CAI_Navigator::vfunc17 fills for the motor
+{
+	Vector m_vecStart;	// 0x00: the route's goal position
+	Vector m_vecDelta;	// 0x0c: start minus the owner's origin, normalised (2D without the flag at +0x18)
+	Vector m_vecDir;	// 0x18: a copy of the direction
+	float m_f24;	// 0x24: the motor's value
+	float m_flDist;	// 0x28: the length before normalising
+	float m_f2c;	// 0x2c: the motor's value times its factor at +0x30, at most m_flDist
+	int m_i30;	// 0x30: the navigator's dword at +0x18
+	void *m_p34;	// 0x34: sub_102ecc40 (the entity the navigator is after)
+	unsigned int m_flags;	// 0x38: bit 0 = route finished, bit 2 = waypoint linked to another entry
+	CAI_NavRoute *m_pRoute;	// 0x3c
+};
+
 class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
 {
 public:
@@ -120,7 +134,7 @@ public:
 	virtual void vfunc9(int a, float b);
 	virtual void vfunc10(int a, float b);
 	virtual void vfunc11(); virtual int vfunc12(int a); virtual int vfunc13(int a); virtual int vfunc14(int a);
-	virtual int vfunc15(void *pGoal, int a); virtual bool vfunc16(int *pOut); virtual void vfunc17(void *pGoal); virtual void vfunc18(); virtual void vfunc19();
+	virtual int vfunc15(void *pGoal, int a); virtual bool vfunc16(int *pOut); virtual void vfunc17(CAI_NavGoal *pGoal); virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20();
 	void sub_10011c98();	// as in CDataObjectAccessSystem (transplant)
 	void sub_102f1fa0(float flDelay, CAI_NavSource *pSource);	// finds the record of the route's waypoint (provider list at +0x2c), sets bit 0 of its flags, its time to curtime + flDelay and its handle from pSource (-1 without)
@@ -155,6 +169,7 @@ public:
 	int sub_102ee3f0();	// stub 0x10011f77: the owner's task id for the finished move
 	float sub_102f1cf0();	// the distance from the owner's origin (slot 220) to the route's goal position: 2D while the flag at +0x18 is clear, else 3D
 	bool sub_102f05d0(const Vector *pTarget);	// true while the float at +0x3c is set; else asks the owner (slot 368) about the flat direction to pTarget and fails when it points away (dot with the answer's x / y at most the threshold 0x1049d984)
+	void *sub_102ecc40();	// stub 0x10009322: the entity the navigator is after, chosen by the navigation type (the owner's focus entity for types 1, 2 and 7, else the entity of the route's handle at +0x30)
 
 	int m_i14;
 	int m_i18;
