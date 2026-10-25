@@ -13,4 +13,5 @@ public:
 	CUtlMemory16 *sub_10184f90(int growSize, int allocationCount);	// provisional, like sub_100b4610 (transplant)
 	CUtlMemory16 *sub_10312f70(int growSize, int allocationCount);	// provisional, like sub_100b4610 (transplant)
 	CUtlMemory16 *sub_10349d10(int growSize, int allocationCount);	// provisional, like sub_100b4610 (transplant)
+	void Grow(int num);	// the stub 0x1000884b, body 0x10313f70
 };
