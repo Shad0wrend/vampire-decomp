@@ -63057,6 +63057,23 @@ void CUnknown101f6c50::sub_101f6c50(CTraitStatBlock *pBlock)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f6e20 size=0x32
+#include "CVTraitEffect_t.h"
+
+char __stdcall sub_1000578b(void *p);
+
+void CVTraitEffect_t::sub_101f6e20(CVModInfo_t *pInfo, int *pResult)
+{
+    if (sub_1000578b((char *)pInfo + 4)) {
+        if (m_nKind == 7) {
+            if (!m_cost.sub_101fc160()) {
+                *pResult = (int)&m_cost;
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f6eb0 size=0xf6
 #include "CVTraitEffect_t.h"
 extern "C" int __cdecl sprintf(char *, const char *, ...);
