@@ -36,6 +36,63 @@ void CPhysThruster::vfunc242()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027de0 size=0x18c
+#include "CPhysThruster.h"
+#include "IPhysicsObject.h"
+#include "CEntityVSlots.h"
+#include "CUnknown101d1460.h"
+#include "CEHandleGet.h"
+#include "QAngle.h"
+
+struct CMatrix10027de0 : CUnknown101d1460
+{
+	void sub_10027fe0(Vector *pOut, const Vector *pIn);
+	void sub_10028060(Vector *pOut, const Vector *pIn);
+	void sub_100280e0(Vector *pOut, const Vector *pIn);
+};
+
+void sub_10139550(const QAngle &angles, Vector *pForward);
+
+void CPhysThruster::vfunc241(IPhysicsObject *pPhys, Vector *pLinear, Vector *pAngular)
+{
+	Vector vecForce;
+	sub_10139550(*(const QAngle *)((CEntityVSlots *)this)->slot221(), &vecForce);
+	vecForce = vecForce * m_flForce;
+	if (m_flags204 & 0x10)
+		vecForce = vecForce * pPhys->vfunc12();
+	{
+		CMatrix10027de0 matAttached;
+		matAttached.sub_101d1530((CBaseEntity *)EHandle_Get(m_hAttached), 0);
+		Vector vecOffset;
+		matAttached.sub_10027fe0(&vecOffset, &m_vecOffset);
+		{
+			Vector vecTemp;
+			matAttached.sub_10028060(&vecTemp, &vecForce);
+			vecForce = vecTemp;
+		}
+		pPhys->vfunc33(&vecForce, &vecOffset, pLinear, pAngular);
+		if (m_flags204 & 8)
+		{
+			Vector vecLocal;
+			matAttached.sub_100280e0(&vecLocal, pLinear);
+			*pLinear = vecLocal;
+		}
+	}
+	if (!(m_flags204 & 2))
+	{
+		pLinear->x = 0;
+		pLinear->y = 0;
+		pLinear->z = 0;
+	}
+	if (!(m_flags204 & 4))
+	{
+		pAngular->x = 0;
+		pAngular->y = 0;
+		pAngular->z = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029b50 size=0x1e
 #include "CPhysThruster.h"
 

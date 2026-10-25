@@ -4112,6 +4112,7 @@
 0x1000dc1a func   ?sub_100cfda0@CEventQueue@@QAEHPAVIEQRestore@@@Z CEventQueue::sub_100cfda0
 0x1000dc42 func   ?sub_101b6650@@YA_NPAG0@Z sub_101b6650
 0x1000dc4c func   ?sub_102a1510@@YIHPAUN@@@Z sub_102a1510
+0x1000dc51 func   ?vfunc241@CPhysThruster@@UAEXPAVIPhysicsObject@@PAVVector@@1@Z CPhysThruster::vfunc241
 0x1000dc88 func   ?vfunc461@CNPC_VMingXiao@@QAEHXZ CNPC_VMingXiao::vfunc461
 0x1000dc92 func   ?sub_103fdc50@@YAHXZ sub_103fdc50
 0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43
