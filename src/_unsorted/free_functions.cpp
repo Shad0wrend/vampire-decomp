@@ -88283,6 +88283,26 @@ extern "C" CBaseEntity *ai_network()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f5090 size=0x38
+extern int vt_1049da64[];
+void __fastcall sub_1000be15(void *p);
+void __fastcall sub_1000a376(void *p);
+void __fastcall sub_1000cb8a(void *p);
+
+// TARGET: sub_102f5090
+void __fastcall sub_102f5090(int *self)
+{
+    void *p = (void *)self[0x115];
+    self[0] = (int)vt_1049da64;
+    if (p) {
+        sub_1000be15(p);
+        operator delete(p);
+    }
+    sub_1000a376(self + 0x116);
+    sub_1000cb8a(self);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f5b30 size=0x7b
 #include <string.h>
 
