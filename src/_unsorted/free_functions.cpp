@@ -24972,6 +24972,27 @@ void CUnknown100cdba0::sub_100cdba0(CUnknown100cdba0Data data, int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdda0 size=0x38
+// TARGET: CEventQueue::sub_100cdda0
+#include "CEventQueue.h"
+
+extern int g_106e70e4;
+
+void CEventQueue::sub_100cdda0()
+{
+	CEQEvent *p = m_pHead;
+	while (p)
+	{
+		CEQEvent *pNext = p->m_pNext;
+		delete p;
+		p = pNext;
+	}
+	m_pHead = 0;
+	m_n54 = 0;
+	g_106e70e4 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce210 size=0x79
 #include "CEventQueue.h"
 
