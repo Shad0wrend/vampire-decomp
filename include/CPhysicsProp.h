@@ -8,6 +8,7 @@ class CPhysicsProp : public CBaseEntity
 {
 public:
 	virtual bool vfunc32(int a);	// slot 32 override
+	void vfunc103();	// slot 103 (declared as a plain member: the base slot has no argument here): stub 0x10013782, called directly by CPhysicsPropContested::vfunc103
 	void vfunc226(int a);	// slot 226 override: base implementation, then sets the byte at +0x1b1
 	CPhysicsProp *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
 	bool vfunc223();	// slot 223 override: creates the physics object (CBaseEntity::VPhysicsInitNormal-like), applies the mass / damping at +0x77c / +0x780
