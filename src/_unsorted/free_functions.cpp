@@ -14285,6 +14285,28 @@ void sub_10088380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088540 size=0x3b
+int sub_10012a08(int a);
+void sub_1000d2ba(int a);
+extern void (*g_109f3630)(const char *pszFormat, ...);
+extern int g_1072c440;
+void sub_101bb2e0(int a);
+int sub_101bb310(int a);
+
+// TARGET: sub_10088540
+void sub_10088540()
+{
+    if (sub_101bb310(1))
+    {
+        g_109f3630("SoundShow enabled\n");
+        sub_101bb2e0(2);
+        g_1072c440 = -1;
+        return;
+    }
+    g_109f3630("SoundShow disabled\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088890 size=0x66
 #include "CBaseEntity.h"
 
