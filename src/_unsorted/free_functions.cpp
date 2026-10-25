@@ -66960,6 +66960,26 @@ int sub_102173e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10217ac0 size=0x3c
+#include "CPropHacking.h"
+#include <stdarg.h>
+
+extern char g_1074f178[0x200];
+extern int (*g_109f387c)(char *buf, int size, const char *fmt, va_list args);
+
+void sub_10217ac0(CPropHacking *self, const char *fmt, ...)
+{
+    va_list args;
+    unsigned int *p = (unsigned int *)g_1074f178;
+    for (int i = 0; i < 0x80; i++) {
+        p[i] = 0;
+    }
+    va_start(args, fmt);
+    g_109f387c(g_1074f178, 0x200, fmt, args);
+    self->sub_102189e0(g_1074f178);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218080 size=0xa
 void __fastcall sub_10218080(char *self, int, int)
 {
