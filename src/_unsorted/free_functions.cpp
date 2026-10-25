@@ -74725,6 +74725,28 @@ bool CUtlRBTree12::sub_1024c0e0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024c630 size=0x3b
+void sub_1024c630(float *m)
+{
+    m[0] = 1.0f;
+    m[1] = 0.0f;
+    m[2] = 0.0f;
+    m[3] = 0.0f;
+    m[4] = 0.0f;
+    m[5] = 1.0f;
+    m[6] = 0.0f;
+    m[7] = 0.0f;
+    m[8] = 0.0f;
+    m[9] = 0.0f;
+    m[10] = 1.0f;
+    m[11] = 0.0f;
+    m[12] = 0.0f;
+    m[13] = 0.0f;
+    m[14] = 0.0f;
+    m[15] = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024cc90 size=0xd3
 #include "Vector.h"
 
