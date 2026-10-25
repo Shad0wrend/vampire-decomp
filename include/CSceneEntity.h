@@ -8,6 +8,7 @@
 #define SCENE_V10(p) SCENE_V(p##0) SCENE_V(p##1) SCENE_V(p##2) SCENE_V(p##3) SCENE_V(p##4) SCENE_V(p##5) SCENE_V(p##6) SCENE_V(p##7) SCENE_V(p##8) SCENE_V(p##9)
 
 class CBaseEntity;
+class CUnknown1007ce20;
 
 class CSceneOutputList	// the output at +0x4fc (an event list); only the add call is known
 {
@@ -44,6 +45,8 @@ struct CSceneEvent	// a scene event; only what the actor checks need
 	CSceneEventActor *sub_10001b5e();	// the event's actor (stub 0x10001b5e)
 	int sub_100029c8();	// the event's type (stub 0x100029c8)
 	const char *sub_10075c50();	// the event's text parameter (stub 0x10006fdc)
+	const char *sub_10075d00();	// the event's name (stub 0x10007d01)
+	CUnknown1007ce20 *sub_10076710();	// the event's sub-scene (stub 0x10015a78), null when it has none
 };
 
 struct CSceneEntityScene	// the scene object at +0x4bc
