@@ -139,3 +139,48 @@ void CSoundSchemeManager::vfunc5()
 	v->m_pElements = v->m_pMemory;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10228d00 size=0x123
+#include "CSoundSchemeManager.h"
+#include "utlvector.h"
+
+struct CSoundLoopRec { char m_pad[0x44]; float m_flVolume; char m_pad48[0x58 - 0x48]; };
+struct CSoundRandRec { char m_pad[0x1c]; float m_flEnd; };
+struct SGlobalVars { char m_pad[0xc]; float m_flCurtime; };
+extern SGlobalVars *g_1070b228;
+
+struct CSoundSchemeManagerView
+{
+	char m_pad[0x174];
+	CUtlVector<CSoundLoopRec> m_Loops;
+	CUtlVector<CSoundRandRec> m_Rands;
+};
+
+void CSoundSchemeManager::vfunc7()
+{
+	CSoundSchemeManagerView *p = (CSoundSchemeManagerView *)this;
+	float flDelta = g_1070b228->m_flCurtime - m_f0c;
+	m_f0c = g_1070b228->m_flCurtime;
+	sub_10228e80(sub_10228a80());
+	CSoundFadeItem *pTrack = (CSoundFadeItem *)m_buf14;
+	for (int i = 0; i < 4; i++) {
+		sub_10229090(pTrack, flDelta);
+		pTrack = (CSoundFadeItem *)((char *)pTrack + 0x58);
+	}
+	for (int j = 0; j < p->m_Loops.Count(); ) {
+		sub_10229090((CSoundFadeItem *)&p->m_Loops[j], flDelta);
+		if (p->m_Loops[j].m_flVolume <= 0.01)
+			p->m_Loops.Remove(j);
+		else
+			j++;
+	}
+	for (int k = 0; k < p->m_Rands.Count(); ) {
+		float flEnd = p->m_Rands[k].m_flEnd;
+		if (flEnd <= g_1070b228->m_flCurtime)
+			p->m_Rands.Remove(k);
+		else
+			k++;
+	}
+	sub_10229c50();
+}
+// END FUNCTION
