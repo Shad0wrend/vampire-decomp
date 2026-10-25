@@ -60752,6 +60752,36 @@ void CVTraitEffectGroup_t::sub_101f73f0(CVStatKV *pKV)
 bool __fastcall sub_101f74e0(int *p) { bool r = p[3] != -1; return r; }
 // END FUNCTION
 
+// FUNCTION: 0x101f7690 size=0x3c
+struct CUnk101f7690Elem {
+    void sub_1000dc79(int a, int b, int c);
+};
+
+struct CUnk101f7690 {
+    char m_pad0000[0x10];
+    int m_nCount;
+    char *m_pBase;
+
+    void sub_101f7690(int a, int b, int c);
+};
+
+void CUnk101f7690::sub_101f7690(int a, int b, int c)
+{
+    int i;
+    int off;
+
+    i = 0;
+    if (m_nCount > 0) {
+        off = 0;
+        do {
+            ((CUnk101f7690Elem *)(m_pBase + off))->sub_1000dc79(a, b, c);
+            i++;
+            off += 0x44;
+        } while (i < m_nCount);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f76e0 size=0xc3
 extern "C" int sprintf(char *, const char *, ...);
 extern void (__cdecl *g_109f3650)(int level, const char *fmt, ...);
