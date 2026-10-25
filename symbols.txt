@@ -1530,6 +1530,7 @@
 0x10005f1f func   ?sub_1006ac90@@YAHXZ sub_1006ac90
 0x10005f47 func   ?sub_10094370@CFakeEnt@@QAEHH@Z CFakeEnt::sub_10094370
 0x10005f4c func   _info_node_shoot_at info_node_shoot_at
+0x10005f60 func   ?sub_103b1860@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::sub_103b1860
 0x10005f65 func   ?vfunc8@CAI_SystemHook@@QAEPAV1@I@Z CAI_SystemHook::vfunc8
 0x10005f6f func   ?sub_100ce750@CList_t@@QAE_NPAUCListNode_t@@PAXPBD@Z CList_t::sub_100ce750
 0x10005f7e func   ?sub_1013a0e0@@YAXXZ sub_1013a0e0

@@ -105236,6 +105236,27 @@ void CNPC_VSheriffMan::sub_103b1790(float flHeight, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b1860 size=0x116
+#include "ScopeTrace.h"
+#include "CNPC_VSheriffMan.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+
+extern float g_104c6158;
+
+void CNPC_VSheriffMan::sub_103b1860()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::SetTeleportVelocity", g_106b8540);
+	if (m_pTarget) {
+		Vector vecDir = *m_pTarget->slot217() - *((CEntityVSlots *)this)->slot217();
+		float flSpeed = VectorNormalize(vecDir) / g_104c6158;
+		Vector vecVel = vecDir * flSpeed;
+		m_flTeleportSpeed = flSpeed;
+		((CBaseEntity *)this)->sub_100b2770(vecVel);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b19d0 size=0x43
 #include "CBatSwarm_Teleport.h"
 void *sub_100aa720(int size);
