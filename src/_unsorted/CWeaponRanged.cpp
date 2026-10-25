@@ -152,6 +152,35 @@ void CWeaponRanged::vfunc374()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10239570 size=0x3f
+#include "CWeaponRanged.h"
+
+struct CWeaponRangedView
+{
+	char m_pad0000[0x86c];
+	int m_n086c;	// +0x86c
+	char m_pad0870[0x898 - 0x870];
+	char m_b0898;	// +0x898
+	char m_b0899;	// +0x899
+	char m_pad089a[0x8c8 - 0x89a];
+	char m_b08c8;	// +0x8c8
+
+	void sub_10254b00(int a);	// CBaseCombatWeapon::sub_10254b00 (stub 0x10007784), called directly
+};
+
+// TARGET: CWeaponRanged::vfunc325
+void CWeaponRanged::vfunc325()
+{
+	CWeaponRangedView *pView = (CWeaponRangedView *)this;
+	if (!pView->m_b0898 && pView->m_b08c8) {
+		pView->m_b0899 = 0;
+		pView->sub_10254b00(0xc1);
+		return;
+	}
+	pView->sub_10254b00(pView->m_n086c ? 0xe3 : 0xc2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10239680 size=0x69
 #include "CWeaponRanged.h"
 
