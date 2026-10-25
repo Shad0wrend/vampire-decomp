@@ -103176,6 +103176,45 @@ bool CNPC_VChangBros::sub_1036cbd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036cfa0 size=0x105
+#include "CNPC_VChangBros.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct ChangLedgeHintView : CEntityVSlots
+{
+    char pad[0x5d8 - 4];
+    ChangLedgeHintView *m_pNext;
+    int m_nHintType;
+};
+extern ChangLedgeHintView *g_10925450;
+
+// TARGET: CNPC_VChangBros::sub_1036cfa0
+void *CNPC_VChangBros::sub_1036cfa0()
+{
+    ScopeTrace trace("CNPC_VChangBros::SelectLedgeNode", g_106b8540);
+    ChangLedgeHintView *pBest = 0;
+    float flBest = -3.402823466e+38f;
+    for (ChangLedgeHintView *pHint = g_10925450; pHint; pHint = pHint->m_pNext)
+    {
+        if (pHint->m_nHintType == 0x4653 && sub_1036df50(pHint))
+        {
+            const Vector *pHintPos = pHint->slot217();
+            const Vector *pPos = ((CEntityVSlots *)this)->slot217();
+            Vector vecDelta;
+            VectorSubtract(*pPos, *pHintPos, vecDelta);
+            float flDist = FastSqrt(vecDelta.y * vecDelta.y + vecDelta.x * vecDelta.x + vecDelta.z * vecDelta.z);
+            if (flDist > flBest)
+            {
+                flBest = flDist;
+                pBest = pHint;
+            }
+        }
+    }
+    return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036d100 size=0x9c
 #include "CNPC_VChangBros.h"
 
