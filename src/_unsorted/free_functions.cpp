@@ -32545,6 +32545,28 @@ void CFuncAreaPortalBase::sub_1010c930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010cb00 size=0x8d
+#include "CUtlLinkedList8.h"
+
+void CUtlLinkedList8::sub_1010cb00(unsigned short elem)
+{
+	if (elem < m_NumAlloced && m_pMemory[elem].m_Previous != elem) {
+		CUtlLinkedList8Node *pList = m_pMemory;
+		CUtlLinkedList8Node *pElem = &pList[elem];
+		if (pElem->m_Previous != 0xffff)
+			pList[pElem->m_Previous].m_Next = pElem->m_Next;
+		else
+			m_Head = pElem->m_Next;
+		if (pElem->m_Next != 0xffff)
+			pList[pElem->m_Next].m_Previous = pElem->m_Previous;
+		else
+			m_Tail = pElem->m_Previous;
+		pElem->m_Previous = pElem->m_Next = elem;
+		--m_ElementCount;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010cbc0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
