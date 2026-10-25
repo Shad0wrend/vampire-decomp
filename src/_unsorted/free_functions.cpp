@@ -71455,6 +71455,79 @@ void CTriggerBombSite::sub_10211550(CBombState state, CBombState newState)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102116c0 size=0x145
+#include "CTriggerBombSite.h"
+#include "CEntityVSlots.h"
+#include "CAI_BaseNPC.h"
+
+struct CBombSitePlayerObj
+{
+	char pad0000[0x1cb8];
+	unsigned int m_hBombSite;
+};
+
+struct CBombSitePlayerView
+{
+	char pad0000[0xa8];
+	CBombSitePlayerObj *m_pObj;
+};
+
+struct CBombSiteSub5a0
+{
+	void sub_100cd660(CBombSitePlayerView *pPlayer, CTriggerBombSite *pSite, int a);
+};
+
+struct CTriggerBombSiteUnit : CTriggerBombSite
+{
+	void sub_101c4dd0();
+};
+
+struct CItemAstroUnit : CAI_BaseNPC
+{
+	void sub_103f6800(CBombSitePlayerView *pPlayer);
+};
+
+extern Vector g_1070d9d0;
+extern char g_10538764[];
+extern char g_105ae890[];
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+void sub_1021fee0(CBombSitePlayerObj *pObj, const char *pszName);
+CBaseEntity *sub_100a99d0(const char *pszClassname, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
+
+void CTriggerBombSite::sub_102116c0(CBombState state)
+{
+	CEntityVSlots *pPlayer = *(CEntityVSlots **)&state;
+	((CTriggerBombSiteUnit *)this)->sub_101c4dd0();
+	m_hOwner008c = 0xffffffff;
+	CBombSitePlayerObj *pObj = ((CBombSitePlayerView *)pPlayer)->m_pObj;
+	if (pObj)
+	{
+		pObj->m_hBombSite = 0xffffffff;
+		sub_1021fee0(pObj, "item_g_astrolite");
+	}
+	Vector vecTemp;
+	const Vector *pHalf = pPlayer->slot368(&vecTemp);
+	Vector vecScaled;
+	vecScaled.x = pHalf->x * 20.0f;
+	vecScaled.y = pHalf->y * 20.0f;
+	vecScaled.z = pHalf->z * 20.0f;
+	Vector vecPos = vecScaled + *pPlayer->slot220();
+	Vector vecAng = g_1070d9d0;
+	vecAng.y = pPlayer->slot221()->y + 180.0f;
+	CBaseEntity *pItem = sub_100a99d0("item_g_astrolite", &vecPos.x, &vecAng.x, 0);
+	if (pItem)
+	{
+		CAI_BaseNPC *pAstro = (CAI_BaseNPC *)__RTDynamicCast(pItem, 0, g_10538764, g_105ae890, 0);
+		if (pAstro)
+		{
+			pAstro->sub_103f6ab0((CBaseEntity *)this);
+			((CItemAstroUnit *)pAstro)->sub_103f6800((CBombSitePlayerView *)pPlayer);
+		}
+	}
+	((CBombSiteSub5a0 *)((char *)this + 0x5a0))->sub_100cd660((CBombSitePlayerView *)pPlayer, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10211970 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
