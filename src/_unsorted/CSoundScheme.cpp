@@ -15,3 +15,30 @@ CSoundScheme *CSoundScheme::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1022a300 size=0x33
+#include "CSoundScheme.h"
+
+extern char g_10750d78[];
+
+struct CSoundLockView {
+    void sub_100115f9(void *pOwner);
+};
+
+struct CSoundCallView {
+    char pad0[0x454];
+    unsigned char m_b454;
+    void sub_100ac4e0(void *pFunc, float flTime, const char *pszContext);
+};
+
+// TARGET: CSoundScheme::vfunc113
+void CSoundScheme::vfunc113()
+{
+    ((CSoundLockView *)g_10750d78)->sub_100115f9(this);
+    if (((CSoundCallView *)this)->m_b454 != 0) {
+        sub_1022b590(2.0f);
+        return;
+    }
+    ((CSoundCallView *)this)->sub_100ac4e0(0, 0.0f, 0);
+}
+// END FUNCTION
