@@ -130,3 +130,22 @@ void CBaseAnimatingOverlay::vfunc268(int index, int a, int sequence, char flag)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10099470 size=0x40
+#include "CBaseAnimatingOverlay.h"
+
+// TARGET: CBaseAnimatingOverlay::vfunc272
+int CBaseAnimatingOverlay::vfunc272()
+{
+	int i = (*(int (__fastcall **)(CBaseAnimatingOverlay *))(*(int *)this + 0x42c))(this);
+	if (i < 4) {
+		do {
+			if (m_Layers[i].m_f10 == 0.0f) {
+				return i;
+			}
+			i++;
+		} while (i < 4);
+	}
+	return -1;
+}
+// END FUNCTION
