@@ -37388,6 +37388,29 @@ void CLogicRelay::sub_101364e0(inputdata_t *pInputData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136600 size=0x39
+#include "CUnknown10136600.h"
+
+void sub_1003d8f0(int a);
+void sub_1000e255(int a);
+
+// TARGET: sub_10136600
+void sub_10136600(CUnknown10136600 *p)
+{
+    if (p != 0 && p->m_p40 != 0)
+    {
+        int h = p->m_p40->vfunc4();
+        if (h != 0)
+        {
+            p->m_p40 = 0;
+            p->m_b44 = 0;
+            sub_1003d8f0(h);
+            sub_1000e255(h);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136910 size=0xd2
 #include "CGlobalEntityList.h"
 #include <string.h>
