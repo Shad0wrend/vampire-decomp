@@ -84885,6 +84885,28 @@ int sub_102db470(CUnknown102db470 *pNPC)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db590 size=0x39
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+extern int g_10927198;
+extern int g_10926d80[];
+int sub_102db470(int n);
+
+// TARGET: sub_102db590
+int sub_102db590(int n)
+{
+    if (n != 0 && g_10927198 > 0) {
+        int nCount = sub_102db470(n);
+        if (nCount > 0) {
+            int nIndex = g_1070b244->vfunc2(0, nCount - 1);
+            return g_10926d80[nIndex];
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db5e0 size=0x3b
 extern char *g_10927194;
 

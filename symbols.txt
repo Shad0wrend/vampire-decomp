@@ -4894,6 +4894,7 @@
 0x10011720 func   ?sub_10407020@@YAHXZ sub_10407020
 0x10011739 func   ?sub_100a54a0@@YAXPBM0PAM1@Z sub_100a54a0
 0x1001173e func   ?sub_1007fce0@UtlMem6@@QAEXH@Z UtlMem6::sub_1007fce0
+0x1001174d func   ?sub_102db590@@YAHH@Z sub_102db590
 0x10011757 func   ?sub_1042eca0@CUnknown1042e8c0@@QAEXXZ CUnknown1042e8c0::sub_1042eca0
 0x1001175c func   ?sub_1025da90@@YIXPAUS1025da90@@@Z sub_1025da90
 0x1001177f func   ?sub_103c6f40@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c6f40
