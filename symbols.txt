@@ -144,6 +144,7 @@
 0x100017ad func   ?sub_102035c0@@YAPBDH@Z sub_102035c0
 0x100017b7 func   ?sub_10112420@CUnknown10112420@@QAEMHH@Z CUnknown10112420::sub_10112420
 0x100017bc func   ?sub_100bd090@bf_write@@QAEXMH@Z bf_write::sub_100bd090
+0x100017c1 func   ?sub_1013c090@@YAXMMMH@Z sub_1013c090
 0x100017c6 func   ?vfunc437@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc437
 0x100017cb func   _npc_VCop npc_VCop
 0x100017da func   _npc_VRat npc_VRat

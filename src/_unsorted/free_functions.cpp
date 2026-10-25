@@ -39344,6 +39344,16 @@ void sub_1013bef0(const Vector &p1, const Vector &p2, const Vector &d1, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013c090 size=0x32
+// TARGET: sub_1013c090
+void __cdecl sub_10009548(float a, float b, float c, float d, int e);
+
+void __cdecl sub_1013c090(float p1, float p2, float p3, int p4)
+{
+    sub_10009548(p2, p3, p2 - p1, p3 - p2, p4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c7e0 size=0xab
 // TARGET: sub_1013c7e0
 float sub_1013c7e0(const Vector &mins, const Vector &maxs, const Vector &point)
