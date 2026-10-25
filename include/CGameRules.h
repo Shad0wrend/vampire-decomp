@@ -7,6 +7,7 @@
 #include "Vector.h"
 
 class CBaseEntity;
+class CBaseCombatCharacter;
 struct CMPDamageInfo;
 
 class CGameRules
@@ -65,7 +66,7 @@ public:
 	virtual float vfunc50(int a);
 	virtual Vector vfunc51(CBaseEntity *pEnt);	// returns a copy of the entity's origin
 	virtual void vfunc52();
-	virtual void vfunc53();
+	virtual char vfunc53(CBaseCombatCharacter *pChar, int nIndex);	// the character's count of the index (sub_103346c0) is below the limit of the index (slot 55's object, sub_1000a37b)
 	virtual void vfunc54();
 	virtual void vfunc55();
 	virtual void vfunc56();
