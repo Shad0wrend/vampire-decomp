@@ -240,6 +240,36 @@ void CHL2_Player::vfunc478(unsigned int *pPower)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352b50 size=0xf2
+#include "CHL2_Player.h"
+#include "CVDmg_t.h"
+#include "ConVar.h"
+#include "CUnknown1070b244.h"
+struct SDamageView { CVDmg_t *m_pDmg; char m_pad[0x2c]; float m_flDamage; };
+struct SGlobalVars { char m_pad[0xc]; float m_flCurTime; };
+extern SGlobalVars *g_1070b228;
+extern ConVar *g_109382cc;
+extern CUnknown1070b244 *g_1070b244;
+int CHL2_Player::vfunc142(const CTakeDamageInfo *pInfo)
+{
+    const SDamageView *pDamage = (const SDamageView *)pInfo;
+    float flDamage = pDamage->m_pDmg ? (float)pDamage->m_pDmg->sub_101faa70() : pDamage->m_flDamage;
+    if (flDamage > 0.0f)
+    {
+        m_flLastDamageTime = g_1070b228->m_flCurTime;
+        float flAmount = pDamage->m_pDmg ? (float)pDamage->m_pDmg->sub_101faa70() : pDamage->m_flDamage;
+        float flScale = g_109382cc->vfunc1() ? 0.0f : g_109382cc->m_fValue;
+        flAmount = flScale * flAmount;
+        Vector punch;
+        punch.x = g_1070b244->vfunc1(-flAmount, flAmount);
+        punch.y = g_1070b244->vfunc1(-flAmount, flAmount);
+        punch.z = g_1070b244->vfunc1(-flAmount, flAmount);
+        vfunc169(&punch);
+    }
+    return sub_10163020(pInfo);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352cd0 size=0x77
 #include "CHL2_Player.h"
 
