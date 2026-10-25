@@ -53031,6 +53031,25 @@ void sub_101d0ce0(int p1, int p2, int p3, int p4, unsigned char p5, unsigned cha
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0ec0 size=0x3d
+#include "CBaseEntity.h"
+extern char g_105a03d0[];
+extern void (*g_109f362c)(const char *fmt, ...);
+CBaseEntity *sub_10136580(const char *name);
+void sub_1000e255(CBaseEntity *pEnt);
+
+void sub_101d0ec0(const char *name)
+{
+    CBaseEntity *pEnt = sub_10136580(name);
+    if (pEnt == 0) {
+        g_109f362c(g_105a03d0, name);
+        return;
+    }
+    pEnt->vfunc104();
+    sub_1000e255(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d1280 size=0xe0
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
