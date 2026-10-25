@@ -16,7 +16,7 @@ public:
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
-	virtual bool vfunc4(const Vector &vecGoal, float flYaw);	// a step toward vecGoal: false (speed cleared, ideal yaw flYaw set) when the goal is not closer than a hundredth of the speed, else true and the speed is reduced by the distance still to go
+	virtual int vfunc4(const Vector &vecGoal, float flYaw);	// a step toward vecGoal: 0 (speed cleared, ideal yaw flYaw set) when the goal is not closer than a hundredth of the speed, else 1 and the speed is reduced by the distance still to go
 	virtual void vfunc5();
 	virtual void vfunc6();
 	virtual void vfunc7();
