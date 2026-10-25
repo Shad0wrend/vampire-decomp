@@ -48350,6 +48350,24 @@ int sub_1019b570(PyDataObj *self, const char *name, PyObj *value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b720 size=0x39
+extern void *g_109f37d0;	// PyString_Type (the import slot's value)
+extern void *g_109f36cc;	// PyString_AsString import slot
+extern void *g_109f37bc;	// PyDict_SetItem import slot
+void sub_1019b570(void *a, char *s, void *c);
+
+// TARGET: sub_1019b720
+void sub_1019b720(void *a, void *obj, void *c)
+{
+	if (*(void **)((char *)obj + 4) == g_109f37d0)
+	{
+		sub_1019b570(a, ((char *(*)(void *))g_109f36cc)(obj), c);
+		return;
+	}
+	((void (*)(void *, void *, void *))g_109f37bc)(a, obj, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019b7e0 size=0x10
 extern void *g_1072b370;
 extern void *(__cdecl *g_109f3738)(void *);
