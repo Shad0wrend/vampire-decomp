@@ -11,6 +11,7 @@ class CNPC_VGargoyle
 public:
 	virtual int vfunc359(int index);
 	virtual void vfunc601(int unused);
+	virtual void vfunc144(int info);	// slot 144 (Event_Killed-like) override: when the object at +0x6684 is set, CNPC_VVampire::vfunc144(info) (tail jump); else sets the source file / line stamp (0x1063a854, 0x248) at +0x1b30 / +0x1b34 and sub_102ae750(0x15c, 1)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	int vfunc440(int schedule);	// slot 440 (TranslateSchedule) override: maps schedules 0x5b, 0xea, 0xdc, 0xdd to 0x15d..0x160, everything else goes to CNPC_VHuman::vfunc440
 	void vfunc24(CBaseEntity *pOther);	// slot 24 override: when the other entity is named "pillar" or "central_pillar" (NameMatches), calls slot 266 of it with this
@@ -30,6 +31,7 @@ public:
 	char sub_10010352();	// stub 0x10010352, answers in al (end of the task 0x31 handling)
 	void sub_1000ac68(int a);	// stub 0x1000ac68, run when the task handling answers true
 	void sub_10011928(int *pTask);	// CNPC_VHuman::vfunc444 (stub 0x10011928), called directly
+	void sub_102ae750(int schedule, int a);	// stub 0x1000198d, starts the schedule (the source line stamp is written by the caller)
 
 	char m_pad0004[0x5d44 - 4];
 	void *m_pObj5d44;	// 0x5d44
@@ -37,6 +39,7 @@ public:
 	unsigned int m_nFlags5d8c;	// 0x5d8c
 	char m_pad5d90[0x667c - 0x5d90];
 	int m_hPillar;	// 0x667c
-	char m_pad6680[0x6688 - 0x6680];
+	char m_pad6680[0x6684 - 0x6680];
+	void *m_p6684;	// 0x6684: the object that takes the Event_Killed call when set
 	int m_nVulnerable;	// 0x6688
 };
