@@ -19,6 +19,24 @@ bool CMultiSource::vfunc110(const char *szKeyName, const char *szValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10132fa0 size=0x32
+// TARGET: CMultiSource::vfunc103
+#include "CMultiSource.h"
+
+extern char *g_1070b228;
+extern double g_104493d0;
+void sub_100120bc();
+
+void CMultiSource::vfunc103()
+{
+    unsigned int flags = m_flags204 | 1;
+    float t = *(float *)(g_1070b228 + 0xc) + g_104493d0;
+    m_flags204 = flags;
+    m_flNextThink = t;
+    sub_100ac4e0((int)sub_100120bc, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132ff0 size=0x11d
 #include "CMultiSource.h"
 #include "CGlobalEntityList.h"
