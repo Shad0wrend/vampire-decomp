@@ -101752,6 +101752,31 @@ void CNPC_VAndreiBlood::sub_1035cd00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035e030 size=0x114
+#include "CNPC_VAndreiBlood.h"
+#include "ScopeTrace.h"
+
+bool CNPC_VAndreiBlood::sub_1035e030(const Vector *pPos, float flMinDistance)
+{
+    ScopeTrace trace("CNPC_VAndreiBlood::PositionClearForTeleport", g_106b8540);
+    const float *pOrigin = vfunc217();
+    float dx = pOrigin[0] - pPos->x;
+    float dy = pOrigin[1] - pPos->y;
+    float dz = pOrigin[2] - pPos->z;
+    float flSqr = dz * dz;
+    flSqr += dx * dx;
+    flSqr += dy * dy;
+    if (FastSqrt(flSqr) < flMinDistance)
+        return false;
+    dx = m_vec66c0.x - pPos->x;
+    dy = m_vec66c0.y - pPos->y;
+    dz = m_vec66c0.z - pPos->z;
+    if (FastSqrt(dx * dx + dy * dy + dz * dz) < 100.0f)
+        return false;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035e5f0 size=0xa5
 #include "CNPC_VAndreiBlood.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
