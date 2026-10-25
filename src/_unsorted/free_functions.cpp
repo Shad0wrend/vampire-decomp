@@ -85692,6 +85692,23 @@ int CUtlVector280::sub_102e9a90(int num, const void *pToCopy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e9c00 size=0x3c
+#include "CUtlVector280.h"
+
+extern void *(*g_109f3634)(unsigned int);
+
+CUtlVector280 *CUtlVector280::sub_102e9c00(int growSize, int count)
+{
+    m_pMemory = 0;
+    m_allocationCount = count;
+    m_growSize = growSize;
+    if (count != 0) {
+        m_pMemory = (char *)g_109f3634(count * 0x118);
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e9cd0 size=0x12e
 #include "CUtlVectorElem118.h"
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
