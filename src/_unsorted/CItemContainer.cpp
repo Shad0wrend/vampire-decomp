@@ -16,6 +16,31 @@ CItemContainer *CItemContainer::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208ba0 size=0x3e
+#include "CItemContainer.h"
+
+extern char *g_10566458;
+
+struct CItemContainerTail
+{
+	char m_pad0000[0x1a34];
+	unsigned int m_n1a34;	// +0x1a34
+};
+
+// TARGET: CItemContainer::vfunc35
+unsigned int CItemContainer::vfunc35(int unused)
+{
+	unsigned int hUser = m_hUser.m_Index;
+	if (hUser != 0xffffffff) {
+		char *pEntry = g_10566458 + 4 + (hUser & 0x1fff) * 12;
+		if (*(unsigned int *)(pEntry + 4) == (hUser >> 13) && *(void **)pEntry != 0) {
+			return 0;
+		}
+	}
+	return ((CItemContainerTail *)this)->m_n1a34;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208ff0 size=0x72
 #include "CItemContainer.h"
 #include "CGlobalEntityList.h"
