@@ -53131,6 +53131,35 @@ int sub_101bb220(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb370 size=0x8e
+#include "CSoundEnt.h"
+#include "CSound.h"
+
+// TARGET: CSoundEnt::sub_101bb370
+CSound *CSoundEnt::sub_101bb370(int iType, const Vector *pOrigin)
+{
+    CSound *pBest = 0;
+    float flBest = 268435456.0f;
+    for (int iSound = sub_101bb0f0(); iSound != -1; )
+    {
+        CSound *pSound = sub_101bb150(iSound);
+        if (pSound && pSound->m_iType == iType)
+        {
+            Vector vecDelta;
+            VectorSubtract(pSound->m_vecOrigin, *pOrigin, vecDelta);
+            float flDist = FastSqrt(vecDelta.y * vecDelta.y + vecDelta.z * vecDelta.z + vecDelta.x * vecDelta.x);
+            if (flDist < flBest)
+            {
+                flBest = flDist;
+                pBest = pSound;
+            }
+        }
+        iSound = pSound->m_iNext;
+    }
+    return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb650 size=0x75
 extern "C" double fabs(double);
 extern float g_104454c4;
