@@ -25742,6 +25742,55 @@ float CMomentaryRotButton::sub_100ca630(float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100caa40 size=0x126
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CMomentaryRotButton.h"
+
+extern Vector g_1070d9d0;
+
+#define TV1(n) virtual void n();
+#define TV10(p) TV1(p##0) TV1(p##1) TV1(p##2) TV1(p##3) TV1(p##4) TV1(p##5) TV1(p##6) TV1(p##7) TV1(p##8) TV1(p##9)
+
+class CAnglesSlot64
+{
+public:
+	TV10(a0) TV10(a1) TV10(a2) TV10(a3) TV10(a4) TV10(a5)
+	TV1(b0) TV1(b1) TV1(b2) TV1(b3)
+	virtual void slot64(const Vector &vecAngles);	// SetAbsAngles by reference
+};
+
+struct RotButtonView
+{
+	char pad0[0x5fc];
+	float m_flTarget5fc;
+	float m_f600;
+	float m_flThinkDelta604;
+};
+
+void CMomentaryRotButton::sub_100caa40()
+{
+	RotButtonView *pView = (RotButtonView *)this;
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	float flPos = sub_100ca630(&pSelf->slot221()->x);
+	if ((flPos >= pView->m_flTarget5fc && m_nDirection5d8 == 1) || (flPos <= pView->m_flTarget5fc && m_nDirection5d8 == -1))
+	{
+		sub_100b2f50(&g_1070d9d0.x);
+		float flDist = m_flRange4fc * pView->m_flTarget5fc;
+		((CAnglesSlot64 *)this)->slot64(*(Vector *)m_vecMoveDir * flDist + m_vecStart5e0);
+		m_flNextThink = 0;
+		m_flTime3fc = 0;
+		sub_100cae20(pView->m_flTarget5fc, this);
+		sub_100ca9d0();
+	}
+	else
+	{
+		sub_100cae20(flPos, this);
+		m_flTime3fc = pView->m_flThinkDelta604 + m_flLocalTime3f4;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cacb0 size=0x115
 #include "CMomentaryRotButton.h"
 #include "CEntityVSlots.h"
