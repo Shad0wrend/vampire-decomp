@@ -37969,6 +37969,19 @@ float sub_10137300(const float *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137c70 size=0x36
+// TARGET: sub_10137c70
+#include "Vector.h"
+
+int sub_10137c70(Vector *a, Vector *b)
+{
+	if (a->x == b->x && a->y == b->y && a->z == b->z) {
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137ed0 size=0xc4
 #include <math.h>
 #include "matrix3x4_t.h"
