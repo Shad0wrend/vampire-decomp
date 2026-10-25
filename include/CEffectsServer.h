@@ -12,7 +12,7 @@ public:
 	virtual void vfunc2(const float *pOrigin, int a, float b, float c);	// slot 2: like slot 7 with a scaled value: forwards (filter, 0, pOrigin, a, b * 0.1f, (int)c) to slot 34 of the temp entity system
 	virtual void vfunc3(const float *pOrigin, int a, int b, int c);	// slot 3: PVS filter for the origin, suppressed host dropped, forwards (filter, 0, pOrigin, a, b, c) to slot 35 of the temp entity system
 	virtual void vfunc4(const float *pOrigin, int a, int b, int c);	// slot 4: as slot 3, forwarded to slot 43 of the temp entity system
-	virtual void vfunc5();
+	virtual void vfunc5(const float *pOrigin, int a, int b, int c);	// slot 5: as slot 3, forwarded to slot 42 of the temp entity system
 	virtual void vfunc6(const float *pOrigin, int a);	// slot 6: builds a PVS filter for the origin, drops the suppressed host from it (unless it is an init message) and, when recipients remain, forwards (filter, 0, pOrigin, a) to slot 30 of the temp entity system (global 0x10540528)
 	virtual void vfunc7(const float *pOrigin, int a, int b);	// slot 7: as slot 6 with two more values, forwarded to slot 31 of the temp entity system as (filter, 0, pOrigin, a, b)
 	virtual void vfunc8(const float *pOrigin, int a);	// slot 8: as slot 6, forwarded to slot 5 of the temp entity system
