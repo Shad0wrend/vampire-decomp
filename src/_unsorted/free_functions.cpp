@@ -43284,6 +43284,38 @@ CUnknown1018b790 *CUnknown1018b790::sub_1018b790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018be10 size=0x3d
+struct CUnknownCopy1018be10
+{
+	char m_b00;
+	char m_b01;
+	int m_n04;
+	int m_n08;
+	int m_n0c;
+	int m_n10;
+	int m_n14;
+	int m_n18;
+	int m_n1c;
+
+	CUnknownCopy1018be10 *sub_1018be10(const CUnknownCopy1018be10 *pSrc);
+};
+
+// TARGET: CUnknownCopy1018be10::sub_1018be10
+CUnknownCopy1018be10 *CUnknownCopy1018be10::sub_1018be10(const CUnknownCopy1018be10 *pSrc)
+{
+	m_b00 = pSrc->m_b00;
+	m_b01 = pSrc->m_b01;
+	m_n04 = pSrc->m_n04;
+	m_n08 = pSrc->m_n08;
+	m_n0c = pSrc->m_n0c;
+	m_n10 = pSrc->m_n10;
+	m_n14 = pSrc->m_n14;
+	m_n18 = pSrc->m_n18;
+	m_n1c = pSrc->m_n1c;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018bfe0 size=0x102
 #include "SendProp.h"
 
