@@ -58001,6 +58001,39 @@ CUnknown101e0f00Entry *CUnknown101e0f00Entry::sub_101e0520(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e05e0 size=0x35
+// TARGET: CUnknown101e05e0::sub_101e05e0
+struct CUnknown101e05e0_A { void sub_10014f47(); };
+struct CUnknown101e05e0_B { void sub_10014aa6(); };
+struct CUnknown101e05e0_C { void sub_10014506(); };
+struct CUnknown101e05e0_E { void sub_101db9a0(); };
+
+struct CUnknown101e05e0
+{
+	char m_pad0000[0x38];
+	CUnknown101e05e0_E m_m38;
+	char m_pad39[0x68 - 0x39];
+	CUnknown101e05e0_C m_m68;
+	char m_pad69[0xa4 - 0x69];
+	CUnknown101e05e0_B m_ma4;
+	char m_padA5[0xc0 - 0xa5];
+	CUnknown101e05e0_B m_mc0;
+	char m_padC1[0xdc - 0xc1];
+	CUnknown101e05e0_A m_mdc;
+
+	void sub_101e05e0();
+};
+
+void CUnknown101e05e0::sub_101e05e0()
+{
+	m_mdc.sub_10014f47();
+	m_mc0.sub_10014aa6();
+	m_ma4.sub_10014aa6();
+	m_m68.sub_10014506();
+	m_m38.sub_101db9a0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0c30 size=0xee
 #include "CUnknown101e0c30.h"
 
