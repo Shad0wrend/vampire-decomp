@@ -71716,6 +71716,28 @@ void CWeaponRanged::sub_10239e70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023a250 size=0x3e
+struct CUnknown1023a250
+{
+	char m_pad0000[0x914];
+	int m_n0914;	// +0x914
+
+	void *sub_102517b0();	// CBaseCombatWeapon::sub_102517b0: the weapon's owner (stub 0x10010ea6), called directly
+	int sub_1023a250();
+};
+
+// TARGET: CUnknown1023a250::sub_1023a250
+int CUnknown1023a250::sub_1023a250()
+{
+	if (sub_102517b0()) {
+		if ((char *)sub_102517b0() + 0x4fe70 != 0 && m_n0914 >= 0) {
+			return *(int *)((char *)sub_102517b0() + 0x4fe70 + m_n0914 * 4);
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ae40 size=0x43
 #include "CWorld.h"
 void *sub_100aa720(int size);
