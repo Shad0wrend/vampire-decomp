@@ -51397,6 +51397,25 @@ void __fastcall sub_101b9880(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b98d0 size=0x32
+extern int g_1070d1b0;
+extern int g_1070d1b4;
+extern int g_1070d1b8;
+
+void __fastcall sub_101b98d0(int *p)
+{
+    p[8] = g_1070d1b0;
+    p[9] = g_1070d1b4;
+    p[10] = g_1070d1b8;
+    p[1] = 0;
+    p[2] = 0;
+    p[3] = 0;
+    p[4] = 0;
+    *(char *)(p + 5) = 0;
+    p[6] = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ba9d0 size=0x123
 #include "CSoundEnt.h"
 #include "CGlobalEntityList.h"
