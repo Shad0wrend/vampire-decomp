@@ -76836,6 +76836,22 @@ bool sub_102400e0(const Vector *p, const Vector *mins, const Vector *maxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10240180 size=0x97
+#include "Vector.h"
+
+bool sub_10240180(const Vector *pA, const Vector *pB, const Vector *pDir, float flMinDot, float flMaxDist)
+{
+    Vector vecDelta = *pA - *pB;
+    float flLength = VectorNormalize(vecDelta);
+    float flDot = DotProduct(vecDelta, *pDir);
+    if (flDot < flMinDot)
+        return false;
+    if (flDot * flLength > flMaxDist)
+        return false;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10240250 size=0x78
 #include "Vector.h"
 
