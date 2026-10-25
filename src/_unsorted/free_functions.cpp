@@ -54966,6 +54966,23 @@ void CUnknown101d1460::sub_101d1530(CBaseEntity *pEnt, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d1670 size=0x34
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+int *__cdecl sub_10002095(void *pTemp, int a);
+// TARGET: sub_101d1670
+void __cdecl sub_101d1670(char **ppszValue, int a)
+{
+	if (*ppszValue) {
+		if (strlen(*ppszValue) >= 1)
+			return;
+	}
+	int tmp;
+	int *pValue = sub_10002095(&tmp, a);
+	*ppszValue = (char *)*pValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d16c0 size=0x40
 // TARGET: sub_101d16c0
 char *sub_101d16c0(char *pDest, char *pSrc, char cDelim)
