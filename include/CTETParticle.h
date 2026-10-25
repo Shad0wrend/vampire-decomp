@@ -4,6 +4,8 @@
 class CTETParticle
 {
 public:
+	CTETParticle *sub_10069430(int a);	// constructor (0x10069430): the temp entity base constructor (sub_10015334), then the vtable and the zeroed fields and the flag byte at +0x24
+
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual CTETParticle *vfunc2(unsigned int flags);	// scalar deleting destructor
