@@ -42734,6 +42734,17 @@ float CUnknown101800e0::sub_101800e0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10180100 size=0x37
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+
+// TARGET: CBasePlayer::sub_10180100
+CBaseEntity *CBasePlayer::sub_10180100(int index)
+{
+    return (CBaseEntity *)EHandle_Get(((unsigned int *)((char *)this + 0x1d3c))[index]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10180220 size=0x11
 struct P { void sub_1015ef60(); };
 P *sub_10008d8c();

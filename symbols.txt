@@ -752,6 +752,7 @@
 0x10003931 func   ?sub_10050d90@CDisciplineParticle@@SAPAV1@HHHHHHHHHH@Z CDisciplineParticle::sub_10050d90
 0x1000393b func   ?sub_102e9a90@CUtlVector280@@QAEHHPBX@Z CUtlVector280::sub_102e9a90
 0x10003963 func   ?vfunc103@CSoundEnt@@UAEXXZ CSoundEnt::vfunc103
+0x10003977 func   ?sub_10180100@CBasePlayer@@QAEPAVCBaseEntity@@H@Z CBasePlayer::sub_10180100
 0x1000398b func   ?sub_10103100@CUnknown10103100@@QAEXH@Z CUnknown10103100::sub_10103100
 0x10003995 func   ?sub_10072ba0@CUnknown10072ba0@@QAEPAU1@H@Z CUnknown10072ba0::sub_10072ba0
 0x1000399f func   ?sub_101eab40@@YAXH@Z sub_101eab40
