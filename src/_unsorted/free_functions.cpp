@@ -1030,6 +1030,25 @@ void __stdcall sub_1002f100(int unused, CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002f190 size=0x3f
+#include "vampire.h"
+
+typedef void (*CUnknownDevMsgFn1002f190)(int level, const char *pszFormat, ...);
+extern CUnknownDevMsgFn1002f190 g_109f3650;
+
+// TARGET: sub_1002f190
+int __stdcall sub_1002f190(int nCount)
+{
+    if (nCount < 0x4b0)
+    {
+        g_109f3650(1, "VPhysics Collision detection getting expensive, check for too many convex pieces!\n");
+        return 0x4b0 - nCount;
+    }
+    g_109f3650(1, "VPhysics exceeded collision check limit (%d)!!!\nInterpenetration may result!\n", nCount);
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002f820 size=0xa3
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
