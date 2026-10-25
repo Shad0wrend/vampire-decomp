@@ -1686,6 +1686,7 @@
 0x10006578 func   ?sub_1027fba0@UtlVec8@@QAEXHH@Z UtlVec8::sub_1027fba0
 0x1000658c func   ?vfunc275@CRagdollProp@@UAE?AVVector@@XZ CRagdollProp::vfunc275
 0x10006596 func   _func_breakable_surf func_breakable_surf
+0x100065a5 func   ?vfunc481@CNPC_Crow@@QAEXPAVCBaseEntity@@@Z CNPC_Crow::vfunc481
 0x100065aa func   ?sub_101e9880@CUnknown101e9880@@QAEPAV1@XZ CUnknown101e9880::sub_101e9880
 0x100065b4 func   ?vfunc3@CTEMetalSparks@@UAEXABVVector@@ABVQAngle@@@Z CTEMetalSparks::vfunc3
 0x100065be func   ?sub_1042d9a0@CUnknown1042d9a0@@QAEGXZ CUnknown1042d9a0::sub_1042d9a0

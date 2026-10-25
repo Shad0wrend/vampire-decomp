@@ -1,6 +1,54 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10357680 size=0xac
+#include "CNPC_Crow.h"
+
+#define SV1(n) virtual void n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CCrowSlotView
+{
+	SV100(a) SV100(b) SV10(c0) SV10(c1)
+	virtual float *vfunc220();
+};
+
+struct CCrowFieldView
+{
+	char m_pad0000[0x5f4c];
+	float m_flEnemyDist;
+};
+
+struct CDevFlag
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+};
+
+extern CDevFlag *g_10924a6c;
+
+void CNPC_Crow::vfunc481(CBaseEntity *pEnemy)
+{
+	CCrowFieldView *pView = (CCrowFieldView *)this;
+	const Vector *pMine = (const Vector *)((CCrowSlotView *)this)->vfunc220();
+	const Vector *pOther = (const Vector *)((CCrowSlotView *)pEnemy)->vfunc220();
+	Vector vecDelta = *pMine - *pOther;
+	pView->m_flEnemyDist = FastSqrt(vecDelta.x * vecDelta.x + (vecDelta.y * vecDelta.y + vecDelta.z * vecDelta.z));
+	if (pView->m_flEnemyDist < 256.0f)
+	{
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x78);
+	}
+	if (pView->m_flEnemyDist < 512.0f)
+	{
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x77);
+	}
+	sub_10270b20(pEnemy);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358ce0 size=0x17a
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"
