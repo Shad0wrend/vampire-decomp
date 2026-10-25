@@ -36877,6 +36877,31 @@ bool CLogicSquadCondition::sub_10135c10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135d00 size=0x3b
+struct CUnknownHelper10135d00 {
+    void sub_10010794(int a, void *owner, int b);
+};
+
+struct CUnknown10135d00 {
+    char m_pad0000[0x458];
+    CUnknownHelper10135d00 m_helper454;
+    char m_pad0459[0x470 - 0x459];
+    CUnknownHelper10135d00 m_helper46c;
+    bool sub_1000c293();
+    void sub_10135d00(int *pArg);
+};
+
+// TARGET: sub_10135d00
+void CUnknown10135d00::sub_10135d00(int *pArg)
+{
+    if (sub_1000c293()) {
+        m_helper454.sub_10010794(*pArg, this, 0);
+    } else {
+        m_helper46c.sub_10010794(*pArg, this, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136260 size=0x43
 #include "CLogicRelay.h"
 void *sub_100aa720(int size);
