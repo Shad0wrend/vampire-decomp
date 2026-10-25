@@ -53,3 +53,22 @@ void PyServerSystem::vfunc1()
     XDECREF(g_1072b374);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1019a490 size=0x3e
+#include "vampire.h"
+
+extern int (*g_109f36fc)(const char *pszCommand);
+extern int g_1059195c;
+int sub_1019b380(int a);
+void sub_1019be10(const char *pszModule, int value, int *pValue);
+
+// TARGET: sub_1019a490
+void sub_1019a490()
+{
+    int (*pfnRun)(const char *) = g_109f36fc;
+    pfnRun("import __main__");
+    pfnRun("from vampire import *");
+    pfnRun("from vamputil import *");
+    sub_1019be10("__main__", sub_1019b380(0), &g_1059195c);
+}
+// END FUNCTION
