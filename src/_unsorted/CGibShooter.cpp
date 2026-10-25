@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100f46e0 size=0x39
+#include "CGibShooter.h"
+#include "CUnknown1070b22c.h"
+
+extern int g_1070ba34;
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_10566034[];
+extern char g_10541fc4[];
+
+// TARGET: ?vfunc104@CGibShooter@@QAEXXZ
+void CGibShooter::vfunc104()
+{
+    if (g_1070ba34 == 1) {
+        m_nGibModel45c = g_1070b22c->vfunc13(g_10566034, 0);
+    } else {
+        m_nGibModel45c = g_1070b22c->vfunc13(g_10541fc4, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4730 size=0x23
 #include "CGibShooter.h"
 struct globalvars_t { int pad[3]; int curtime; };
