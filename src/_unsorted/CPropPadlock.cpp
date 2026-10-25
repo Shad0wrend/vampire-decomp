@@ -54,6 +54,24 @@ void CPropPadlock::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10225f10 size=0x38
+#include "CPropPadlock.h"
+#include "CBaseVampireSkillEntity.h"
+
+void sub_10003e63();
+
+// TARGET: CPropPadlock::vfunc113
+void CPropPadlock::vfunc113()
+{
+    sub_10003e63();
+    ((CBaseVampireSkillEntity *)this)->sub_102256f0(*(const char **)((char *)this + 0x124));
+    if (*(int *)((char *)this + 0x210) == 0)
+        *(int *)((char *)this + 0x1fc) = 1;
+    else
+        *(int *)((char *)this + 0x1fc) = 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10225f60 size=0x139
 #include "CBaseEntity.h"
 #include "CPropPadlock.h"
