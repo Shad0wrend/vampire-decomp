@@ -73,13 +73,16 @@ public:
 	// slots 65..220
 	CBP_V10(sb0) CBP_V10(sb1) CBP_V10(sb2) CBP_V10(sb3) CBP_V10(sb4) CBP_V10(sb5) CBP_V10(sb6)
 	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) CBP_V1(sb76) CBP_V1(sb77) CBP_V1(sb78)
-	virtual void vfunc144(const void *pArg);	// slot 144: takes a 16 byte record (a dword, then a vector); sub_10170d60 hands it a random vector
+	virtual void vfunc144(const void *pArg);	// slot 144: takes a damage info (CUnknown101c26d0, the force vector at +4); sub_10170d60 hands it a random force
 	CBP_V10(sb8) CBP_V10(sb9)
 	CBP_V10(sc0) CBP_V10(sc1) CBP_V1(sc20) CBP_V1(sc21) CBP_V1(sc22) CBP_V1(sc23) CBP_V1(sc24) CBP_V1(sc25) CBP_V1(sc26)
 	virtual Vector vfunc192();	// "EyePosition"-like getter returning the vector by value (hidden pointer, ret 4)
 	CBP_V1(sc28)
 	virtual float *vfunc194();	// slot 194 "GetAbsAngles"-like: the player's angles (+0x206c) in world space: with a live move parent (handle at +0x25c) its matrix (+0x130, slot 98 first when bit 11 of its flags +0x268 is set) times the angles' matrix, turned back into angles in a static; else the angles themselves
-	CBP_V10(sc3) CBP_V10(sc4) CBP_V1(sd0) CBP_V1(sd1)
+	CBP_V10(sc3) CBP_V1(sc40) CBP_V1(sc41) CBP_V1(sc42) CBP_V1(sc43)
+	virtual CBaseEntity *vfunc209();	// slot 209: an entity (the player's ground / move parent entity); null when none
+	CBP_V1(sc45) CBP_V1(sc46) CBP_V1(sc47) CBP_V1(sc48) CBP_V1(sc49)
+	CBP_V1(sd0) CBP_V1(sd1)
 	virtual int vfunc217(const void *pName, int a);
 	CBP_V1(sd3) CBP_V1(sd4)
 	virtual float *vfunc220();	// "CBaseEntity::GetOrigin"
@@ -121,7 +124,7 @@ public:
 	CBP_V1(sj6) CBP_V1(sj7) CBP_V1(sj8)
 	virtual void vfunc448();
 	// slots 449..467
-	CBP_V1(sk0a)
+	virtual void vfunc449(int a, int b);	// slot 449: called with (2, 0) by slot 434 when the player is on the ground
 	virtual void vfunc450();
 	CBP_V1(sk0c)
 	virtual bool vfunc452(const char *pszKey);	// slot 452 key handler: "vehicleRole" with two console arguments hands the role number to the vehicle at +0x20fc (leaving the vehicle first when it does not know the role yet)
@@ -132,13 +135,22 @@ public:
 	CBP_V1(sl0) CBP_V1(sl1) CBP_V1(sl2) CBP_V1(sl3) CBP_V1(sl4) CBP_V1(sl5) CBP_V1(sl6) CBP_V1(sl7) CBP_V1(sl8)
 	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
 
-	char m_pad0004[0x26c];	// 0x0004 .. 0x026F
+	char m_pad0004[0x264];	// 0x0004 .. 0x0267
+	unsigned int m_fFlags268;	// 0x0268: the entity flag word (bit 12 = attached to a parent)
+	char m_pad026C[4];	// 0x026C .. 0x026F
 	CBasePlayerSub270 m_sub270;	// 0x0270
 	char m_pad0274[0x6c];	// 0x0274 .. 0x02DF
 	int m_n02E0;
-	char m_pad02E4[0xea4 - 0x2e4];	// 0x02E4 .. 0x0EA3
+	char m_pad02E4[0x3b0 - 0x2e4];	// 0x02E4 .. 0x03AF
+	Vector m_vec03B0;	// 0x03B0: the velocity
+	Vector m_vec03BC;	// 0x03BC: the base velocity
+	char m_pad03C8[0x3e0 - 0x3c8];	// 0x03C8 .. 0x03DF
+	int m_n03E0;	// 0x03E0: the move type
+	char m_pad03E4[0xea4 - 0x3e4];	// 0x03E4 .. 0x0EA3
 	unsigned int m_hEnt0EA4;	// entity handle
-	char m_pad0EA8[0x1538 - 0xea8];	// 0x0EA8 .. 0x1537
+	char m_pad0EA8[0x148c - 0xea8];	// 0x0EA8 .. 0x148B
+	float m_f148C;	// 0x148C
+	char m_pad1490[0x1538 - 0x1490];	// 0x1490 .. 0x1537
 	unsigned int m_h1538;	// entity handle
 	int m_n153C;
 	char m_pad1540[0x24];	// 0x1540 .. 0x1563
@@ -170,7 +182,9 @@ public:
 	int m_aSlotValue2040[10];	// 0x2040: value of each command slot (a name hash or packed range)
 	char m_pad2068[4];	// 0x2068 .. 0x206B
 	Vector m_vec206c;	// 0x206C: the view angles / target vector (stored by sub_10167030)
-	char m_pad2078[0x20a8 - 0x2078];	// 0x2078 .. 0x20A7
+	char m_pad2078[0x208c - 0x2078];	// 0x2078 .. 0x208B
+	unsigned char m_b208C;	// 0x208C
+	char m_pad208D[0x20a8 - 0x208d];	// 0x208D .. 0x20A7
 	char m_b20A8;
 	char m_pad20A9[0x4b];	// 0x20A9 .. 0x20F3
 	char m_b20F4;	// vehicle active flag
@@ -253,7 +267,8 @@ public:
 	void sub_101784c0(CBaseEntity *pOther);	// adds the keyring item the player carries to the inventory object at +0x245c: lets the keyring look at pOther, creates the inventory when needed, hands it the loose keys and copies the keyring's records into it
 	void sub_10182e00(CBaseCombatWeapon *pWeapon);	// "CBasePlayer::SetViewModel"-like: the model name of the character's default stat item for the weapon (or none when the weapon is not a ranged / usable one) is precached and handed to slot 266 of the second view model
 	void sub_101711e0(float flThreshold);	// resets the vector pair at +0x1efc / +0x1f08 to the zero vector unless the threshold is non-zero and the pair's squared length is above flThreshold squared
-	void sub_10170d60();	// the random impulse: once curtime passes the float at +0x2148 (then pushed 3.x seconds ahead), clears the field at +0x210, builds a damage info (this, this, 10.0f, 0x1000) and hands slot 144 a random vector (each component rand() * 0.0008 - 12.5-ish)
+	void sub_10170d60();	// the random impulse: once curtime passes the float at +0x2148 (5 seconds ahead again), clears the field at +0x210, builds a damage info (this, this, 10.0f, 0x1000) and hands slot 144 a random force vector (each component rand() * 9.155553e-5 + 2.0)
+	void sub_100b1d10();	// CBaseEntity member (stub 0x1000d486), called directly by slot 434
 
 #include "CBasePlayer_ext.h"
 };
