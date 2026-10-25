@@ -49,6 +49,8 @@ public:
 	virtual void vfunc266(); virtual void vfunc267(); virtual void vfunc268(); virtual void vfunc269();
 	virtual void vfunc270(int a, int b);
 	virtual void vfunc271(int a, int b);
+	virtual void vfunc272(); virtual void vfunc273(); virtual void vfunc274();
+	virtual Vector vfunc275();	// slot 275: a random vector, every component rand() * (1200 / 32767) - 600 (hidden result pointer)
 	void *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 (GetModelPtr-like), called directly
 	CRagdollProp *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10014317();	// as in CPhysForce (transplant)
