@@ -26331,6 +26331,29 @@ void sub_100d7f20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8040 size=0x3c
+#include "CVStatInfoList_t.h"
+
+char *sub_101193b0();
+extern CVStatInfoList_t g_1074e658;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e098;
+extern CVStatInfoList_t g_1074e5f8;
+
+void sub_100d8040()
+{
+    char *pObj;
+
+    pObj = sub_101193b0();
+    if (pObj != 0 && *(int *)(pObj + 0xa8) != 0) {
+        g_1074e658.sub_10200410();
+        g_1074e4f0.sub_10200410();
+        g_1074e098.sub_10200410();
+        g_1074e5f8.sub_10200410();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d94a0 size=0x118
 #include "CBaseCombatCharacter.h"
 #include "CVStatList_t.h"
