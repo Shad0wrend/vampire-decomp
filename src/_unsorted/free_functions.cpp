@@ -54226,6 +54226,34 @@ int CUnknown101d76e0::sub_101d76e0(void *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7780 size=0x40
+struct CUnknownElem101d7780 {
+    char sub_1000e38b(int a);
+};
+
+struct CUnknownList101d7780 {
+    int m0;
+    int m4;
+    CUnknownElem101d7780 **m8;
+};
+
+// TARGET: sub_101d7780
+int __fastcall sub_101d7780(CUnknownList101d7780 *p, void *unused, int arg)
+{
+    int count = 0;
+    int i = 0;
+    if (p->m4 > 0) {
+        do {
+            if (p->m8[i]->sub_1000e38b(arg)) {
+                count++;
+            }
+            i++;
+        } while (i < p->m4);
+    }
+    return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d77d0 size=0x128
 #include "CVStatList_t.h"
 #include "CUnknown101d7460.h"
