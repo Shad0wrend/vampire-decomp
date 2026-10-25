@@ -40,6 +40,7 @@ public:
 	void sub_101171a0(inputdata_t &inputdata);	// "CFuncMoveLinear::InputOpen"-like: moves to the position at +0x514 at the speed at +0x164 unless the local origin (slot 220) is already there
 	void sub_10117230(inputdata_t &inputdata);	// "CFuncMoveLinear::InputClose"-like: the same for the position at +0x508
 	void sub_10116ff0(inputdata_t &inputdata);	// "CFuncMoveLinear::InputToggle": at the position at +0x514 moves to the one at +0x508; else (at +0x508, or with the final destination at +0x540 equal to it) moves to the one at +0x514; always at the speed at +0x164
+	void sub_10116e80(float flFraction);	// "CFuncMoveLinear::SetPosition": the point flFraction of the way from position 1 (+0x508) to position 2 (+0x514); MoveTo it (at the speed at +0x164) unless it is within 0.001f of the local origin (slot 220)
 	void sub_10116bf0();	// slot 133 "CFuncMoveLinear::MoveDone": fires the OnFullyClosed-like output at +0x590, stops the movement (think function 0x10007180, next think a hundredth of a second later), the base CBaseToggle::vfunc133, then fires the output at +0x5c0 when at position 2 or the one at +0x5a8 when at position 1; Warning otherwise
 	void sub_10013912();	// CBaseToggle::vfunc133 (stub 0x10013912), called directly
 	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5), called directly
