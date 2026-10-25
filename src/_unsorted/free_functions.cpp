@@ -25852,6 +25852,22 @@ relink:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce6c0 size=0x3b
+#include "CList_t.h"
+
+// TARGET: CList_t::sub_100ce6c0
+bool CList_t::sub_100ce6c0(int a, int b, CList_tValue value)
+{
+	if (sub_100ce3c0(a, b)) {
+		if (m_pNode54) {
+			*(CList_tValue *)(m_pNode54 + 0x20) = value;
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce750 size=0x85
 struct EntInfo { void *m_pEntity; int m_serial; int m_unused; };
 struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
