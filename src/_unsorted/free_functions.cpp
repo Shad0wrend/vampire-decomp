@@ -95141,6 +95141,90 @@ Helper1030f680 *Helper1030f680::sub_1030f680(const char *s, int v1, int v2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030f7b0 size=0x132
+#include "CUnknown1030f940.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+
+struct CBaseEntityUnit1030f7b0 : CBaseEntity
+{
+	char sub_100b5190();
+};
+
+struct CEntRef1030f7b0
+{
+	char pad0[0x9c];
+	CBaseEntity *m_pObj;
+};
+
+struct CNpc1030f7b0
+{
+	U1030F940_S10(a0) U1030F940_S10(a1) U1030F940_S10(a2) U1030F940_S10(a3) U1030F940_S10(a4)
+	U1030F940_S10(a5) U1030F940_S10(a6) U1030F940_S10(a7) U1030F940_S10(a8) U1030F940_S10(a9)
+	U1030F940_S10(b0) U1030F940_S10(b1) U1030F940_S10(b2) U1030F940_S10(b3) U1030F940_S10(b4)
+	U1030F940_S10(b5) U1030F940_S10(b6) U1030F940_S10(b7) U1030F940_S10(b8)
+	virtual void v190(); virtual void v191(); virtual void v192(); virtual void v193(); virtual void v194(); virtual void v195();
+	virtual Vector *vfunc196(Vector *pOut);
+	virtual void v197(); virtual void v198(); virtual void v199();
+	U1030F940_S10(c0) U1030F940_S10(c1) U1030F940_S10(c2) U1030F940_S10(c3) U1030F940_S10(c4)
+	U1030F940_S10(c5) U1030F940_S10(c6) U1030F940_S10(c7) U1030F940_S10(c8) U1030F940_S10(c9)
+	U1030F940_S10(d0) U1030F940_S10(d1) U1030F940_S10(d2) U1030F940_S10(d3) U1030F940_S10(d4)
+	U1030F940_S10(d5) U1030F940_S10(d6) U1030F940_S10(d7) U1030F940_S10(d8) U1030F940_S10(d9)
+	U1030F940_S10(e0) U1030F940_S10(e1) U1030F940_S10(e2) U1030F940_S10(e3) U1030F940_S10(e4)
+	U1030F940_S10(e5)
+	virtual void v460(); virtual void v461(); virtual void v462(); virtual void v463(); virtual void v464(); virtual void v465(); virtual void v466();
+	virtual char vfunc467(CUnknown1030f940Rec *pRec);
+	virtual void v468(); virtual void v469(); virtual void v470(); virtual void v471(); virtual void v472(); virtual void v473(); virtual void v474(); virtual void v475();
+	virtual float vfunc476();
+
+	float sub_102703f0(CUnknown1030f940Rec *pRec, float *pRange);
+};
+
+char CUnknown1030f940::sub_1030f7b0(CUnknown1030f940Rec *pRec)
+{
+	CBaseEntity *pObj;
+	unsigned int hEnt = *(unsigned int *)pRec;
+	CGlobalEntityList_Slot *pSlot;
+	CEntRef1030f7b0 *pRef;
+	if (hEnt == 0xffffffff)
+		goto noObj;
+	pSlot = &g_10566458->m_Slots[hEnt & 0x1fff];
+	if (pSlot->m_Serial != (int)(hEnt >> 13))
+		goto noObj;
+	pRef = (CEntRef1030f7b0 *)pSlot->m_pEntity;
+	if (!pRef)
+		goto noObj;
+	pObj = pRef->m_pObj;
+	if (pObj)
+	{
+		if (((CBaseEntityUnit1030f7b0 *)pObj)->sub_100b5190() || !*((char *)pObj + 0x1480))
+			return 0;
+	}
+	goto haveObj;
+noObj:
+	pObj = 0;
+haveObj:
+	if ((void *)pObj != (void *)m_pNpc && !(m_flLastUpdate >= *(float *)((char *)pRec + 0xc)))
+	{
+		Vector vecEar;
+		const Vector *pEar = ((CNpc1030f7b0 *)m_pNpc)->vfunc196(&vecEar);
+		const Vector *pPos = (const Vector *)((char *)pRec + 0x20);
+		float dx = pPos->x - pEar->x;
+		float dy = pPos->y - pEar->y;
+		float dz = pPos->z - pEar->z;
+		float flDist = FastSqrt(dz * dz + dy * dy + dx * dx);
+		float flRange = ((CNpc1030f7b0 *)m_pNpc)->vfunc476() * *(int *)((char *)pRec + 8);
+		if (pObj)
+			pObj->sub_1009d850(pRec, &flRange);
+		if (*((char *)pRec + 0x14))
+			((CNpc1030f7b0 *)m_pNpc)->sub_102703f0(pRec, &flRange);
+		if (flDist <= flRange)
+			return ((CNpc1030f7b0 *)m_pNpc)->vfunc467(pRec);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f940 size=0x85
 #include "CUnknown1030f940.h"
 
