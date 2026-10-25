@@ -8368,6 +8368,31 @@ void sub_10063880(int a, int b, const float *p3, const float *p4, const float *p
 }
 // END FUNCTION
 
+// FUNCTION: 0x100639b0 size=0x30
+#include "CTEGlowSprite.h"
+
+extern int vt_1044defc[];
+
+struct CBaseTempEntityHeadPlaceholder {
+    void sub_10015334(int a);
+};
+
+// TARGET: CTEGlowSprite::sub_100639b0
+CTEGlowSprite *CTEGlowSprite::sub_100639b0(int a)
+{
+    ((CBaseTempEntityHeadPlaceholder *)this)->sub_10015334(a);
+    *(int **)this = vt_1044defc;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(int *)((char *)this + 0x24) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10063d70 size=0x11e
 #include "SendProp.h"
 

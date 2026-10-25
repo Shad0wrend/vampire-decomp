@@ -5116,6 +5116,7 @@
 0x1001190f func   ?vfunc10@CGameMovement@@UAEXAAVVector@@MM@Z CGameMovement::vfunc10
 0x10011914 func   ?NewNode@?$CUtlRBTree@UCRBEntry8_10047280@@G@@QAEGXZ CUtlRBTree<CRBEntry8_10047280,unsigned short>::NewNode
 0x1001191e func   ?vfunc433@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::vfunc433
+0x1001192d func   ?sub_100639b0@CTEGlowSprite@@QAEPAV1@H@Z CTEGlowSprite::sub_100639b0
 0x10011937 func   ?vfunc2@CTEBloodSprite@@UAEPAV1@I@Z CTEBloodSprite::vfunc2
 0x1001193c func   ?sub_1033c830@CBaseCombatCharacter@@QAEXI@Z CBaseCombatCharacter::sub_1033c830
 0x1001196e func   _npc_VFrenzyShadow npc_VFrenzyShadow
