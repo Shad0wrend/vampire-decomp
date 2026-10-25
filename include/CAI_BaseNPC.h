@@ -143,7 +143,9 @@ public:
 	CAI_NPC_V(521) CAI_NPC_V(522) CAI_NPC_V(523) CAI_NPC_V(524) CAI_NPC_V(525) CAI_NPC_V(526) CAI_NPC_V(527) CAI_NPC_V(528)
 	virtual bool vfunc529();	// slot 529 (offset 0x844): a boolean answer in al, asked by the navigator after it finishes a move
 	virtual bool vfunc530(CBaseEntity *pEnt);	// slot 530: walks the 20 byte records of the list at +0x5d48 (count +0x5d54; handle, expiry time, position) from the back: stale handles are dropped (the last record moved over them), the record of pEnt is kept (true) while its expiry is not passed and pEnt is within 120 units of the stored position, else dropped (false); false when pEnt has no record
-	CAI_NPC_V(531) CAI_NPC_V(532) CAI_NPC_V(533) CAI_NPC_V(534) CAI_NPC_V(535) CAI_NPC_V(536) CAI_NPC_V(537) CAI_NPC_V(538) CAI_NPC_V(539)
+	CAI_NPC_V(531) CAI_NPC_V(532)
+	virtual Vector vfunc533(int a, int b);	// slot 533 (ret 0xc: hidden result pointer, two arguments): a position vector for an activity (the Troika override moves it to the hint node's position while the NPC works at a hint)
+	CAI_NPC_V(534) CAI_NPC_V(535) CAI_NPC_V(536) CAI_NPC_V(537) CAI_NPC_V(538) CAI_NPC_V(539)
 	CAI_NPC_V(540)
 	virtual CUnknown102e0150 *vfunc541();	// the NPC's memory list (the same object type as CUnknown102dfc10: nodes at +0xc linked through +0x38)
 	virtual void vfunc542();
