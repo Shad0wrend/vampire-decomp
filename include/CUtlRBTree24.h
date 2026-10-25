@@ -33,6 +33,11 @@ public:
 
 	Node_t &ElementAt(int i) const { return m_pElements[i]; }
 
+	Links_t &Links(int i) { return *(Links_t *)&m_pElements[i]; }
+	void SetParent(int i, int parent) { Links(i).m_Parent = parent; }
+	void SetLeftChild(int i, int child) { Links(i).m_Left = child; }
+	void SetRightChild(int i, int child) { Links(i).m_Right = child; }
+
 	void GrowInl(int num)	// "CUtlMemory::Grow"
 	{
 		if (m_nGrowSize == -1)
