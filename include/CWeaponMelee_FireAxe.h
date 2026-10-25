@@ -8,4 +8,5 @@ public:
 	CWeaponMelee_FireAxe *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	void vfunc298(int a, int b);	// slot 298: the owner's values at +0x4fec0 / +0x4fed0 are handed to a's sub_100091a6 when a is set, then the base's slot 298 (stub 0x100131ec) runs with (a, b)
+	void vfunc300();	// slot 300: clears the bits of the owner's +0x4fed0 value from the dword at +0xe38 of the weapon's sub_10252240 record (when there is one), then CBaseCombatWeapon::vfunc300 (stub 0x10005b69)
 };
