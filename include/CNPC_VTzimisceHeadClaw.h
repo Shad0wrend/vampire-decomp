@@ -46,4 +46,5 @@ public:
 	char sub_103c24a0();	// stub 0x100098a9: sight / range check run before the melee choice
 	int sub_102af660();	// CAI_BaseNPCTroika::vfunc438 (stub 0x10015596), called directly
 	virtual void vfunc619(char bFlag);	// slot 619 (the position here is not its real slot): emits the footstep-like sound of the claw through a reliable CPASAttenuationFilter, the sample set picked by the flag
+	virtual void vfunc310(int a);	// slot 310 "CNPC_VTzimisceHeadClaw::vfunc310": a 9 with the NPC's slot 167 value answers 0x1136 to the Troika base, else the argument goes on to the Troika base
 };
