@@ -14,6 +14,7 @@ public:
 	void sub_10215960(inputdata_t *pData);	// input handler: takes the input's integer (0 unless its type is 4) minus one, clamps it to [0, m_nPositions - 1] and passes it with the activator to sub_10215ad0
 	void sub_10215ad0(int index, void *pActivator);	// sets the button position (stores the index at +0x670, plays the sound)
 	void vfunc265(void *pActivator, void *pCaller, int useType, float value);	// slot 265 "CPropButton::Use" (plain member): locked (byte at +0x738): fires the locked output (+0x75c) and plays the locked sound; else fires the pressed output (+0x744) and steps to the next position (wrapping to 0 after the last)
+	int vfunc35(int pActivator);	// slot 35: the position value to report for the activator: +0x734 while locked or when the activator's check (sub_100a7bd0) fails, else +0x730
 
 	char m_pad03e0[0x738 - 0x3e0];
 	char m_bLocked;	// 0x738
