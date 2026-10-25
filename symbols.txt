@@ -4523,6 +4523,7 @@
 0x1000f213 func   ?vfunc5@CResearchBook_LG_DODGE@@QAEPAV1@I@Z CResearchBook_LG_DODGE::vfunc5
 0x1000f222 func   ?sub_100f0f30@@YIXPAUCSlots@@@Z sub_100f0f30
 0x1000f227 func   ?sub_10362670@CNPC_VAsianVampire@@QAE_NXZ CNPC_VAsianVampire::sub_10362670
+0x1000f24f func   ?sub_100949e0@CBaseAnimating@@QAEMM@Z CBaseAnimating::sub_100949e0
 0x1000f25e func   ?sub_1030bec0@TObj@@QAEPAU1@XZ TObj::sub_1030bec0
 0x1000f263 func   ?sub_10092610@CBaseAnimating@@QAEXHHH@Z CBaseAnimating::sub_10092610
 0x1000f272 func   ?sub_1030d4f0@@YGHPBD@Z sub_1030d4f0

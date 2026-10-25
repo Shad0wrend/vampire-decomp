@@ -17655,6 +17655,38 @@ int CBaseAnimating::sub_10094790(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100949e0 size=0x135
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "CBaseAnimating.h"
+
+void sub_100c5ee0(void *pStudioHdr, int nSequence, float flCycle, float *poseParameter, float *pVec);
+
+struct AnimatingVelView
+{
+	char pad0[0x690];
+	float m_flPoseParameter[1];
+	char pad694[0x6f0 - 0x694];
+	int m_nSequence;
+	float m_flPlaybackRate;
+	float m_flCycle;
+};
+
+float CBaseAnimating::sub_100949e0(float flInterval)
+{
+	ScopeTrace trace("CBaseAnimating::GetInstantaneousVelocity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	AnimatingVelView *pView = (AnimatingVelView *)this;
+	void *pStudioHdr = sub_100952d0(-1);
+	if (!pStudioHdr)
+		return 0;
+	float flNextCycle = sub_10091230(pView->m_nSequence) * pView->m_flPlaybackRate * flInterval + pView->m_flCycle;
+	Vector vecVelocity;
+	sub_100c5ee0(pStudioHdr, pView->m_nSequence, flNextCycle, pView->m_flPoseParameter, &vecVelocity.x);
+	vecVelocity *= pView->m_flPlaybackRate;
+	return vecVelocity.Length();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10094dc0 size=0xb2
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
