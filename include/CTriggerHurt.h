@@ -14,10 +14,15 @@ public:
 	bool sub_101c5f40(CBaseEntity *pOther, float flDamage);	// "CTriggerHurt::HurtEntity": hurts pOther, true when it was
 	void vfunc176(CBaseEntity *pOther);	// slot 176 "CTriggerHurt::EndTouch": when pOther passes the trigger filters and is not yet in the damaged-entity vector (+0x5f4, size +0x600) hurts it once with half the damage-per-second (+0x598 * a constant); then CBaseTrigger::vfunc176
 	void sub_101c55d0(CBaseEntity *pOther);	// CBaseTrigger::vfunc176 (stub 0x1001346c), called directly
+	virtual void vfunc103();	// slot 103 (Spawn): CBaseEntity::vfunc103, sub_101c5080, the think function 0x1000cc89, then the push vector (+0x5b4) = the unit vector from the origin (slot 217) to the target position (+0x5a8) scaled by the speed (+0x5a4)
+	void sub_101c5080();	// stub 0x1000dfd0, called directly by vfunc103
 
 	float m_flDamage;	// 0x598
 	float m_flLastDmgTime;	// 0x59c
-	char m_pad05a0[0x5c0 - 0x5a0];
+	char m_pad05a0[4];
+	float m_flSpeed5a4;	// 0x5a4
+	Vector m_vecTarget5a8;	// 0x5a8
+	Vector m_vecPushDir5b4;	// 0x5b4
 	int m_i5c0;
 	COutputEvent m_out5c4;
 	COutputEvent m_out5dc;
