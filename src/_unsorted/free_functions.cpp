@@ -117064,6 +117064,26 @@ int sub_1042b470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b710 size=0x33
+// TARGET: sub_1042b710
+extern char *g_1070b228;
+
+struct CFloatOwner_1042b710 {
+    char pad0[0x17c];
+    float m_f17c;
+    void sub_1042b710(float v);
+};
+
+void CFloatOwner_1042b710::sub_1042b710(float v)
+{
+    if (v == -1.0f) {
+        m_f17c = -1.0f;
+        return;
+    }
+    m_f17c = v + *(float *)(g_1070b228 + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b9c0 size=0x2a
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
