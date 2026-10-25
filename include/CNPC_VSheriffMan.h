@@ -35,6 +35,7 @@ public:
 	char m_bTransformed;	// +0x66e7: set once the transform has been started
 	float m_flFloorHeightA;	// +0x66e8: cached floor height of the first reference entity
 	float m_flFloorHeightB;	// +0x66ec: cached floor height of the second reference entity
+	float m_flTeleportSpeed;	// +0x66f0: the teleport speed set by SetTeleportVel (distance / 1.5)
 
 	int sub_10005e20(int a);
 	int vfunc440(int a);
@@ -78,4 +79,5 @@ public:
 	void sub_103b10f0();	// stub 0x1000165e: run instead of the schedule pick while the byte at +0x66e5 is set
 	float sub_103c6a20();	// stub 0x100010d2
 	char sub_103c67f0(float flValue);	// stub 0x1000fe11
+	void sub_103b1860();	// "CNPC_VSheriffMan::SetTeleportVel": scope trace (no entity name); with a target at +0x5ddc: the velocity towards it (target origin - own origin, normalised) scaled by distance / 1.5 is set as the absolute velocity (sub_100b2770) and the scale is kept at +0x66f0
 };
