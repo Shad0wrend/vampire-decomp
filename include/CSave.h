@@ -47,7 +47,7 @@ public:
 	virtual void vfunc16();
 	virtual void vfunc17(const char *pszName, void *pData, int count);	// slot used by WriteField for field types 0x10 / 0x11
 	virtual void vfunc18();
-	virtual void vfunc19();
+	virtual void vfunc19(const char **ppStrings, int count);	// writes count strings (a null entry is the empty string at 0x106b8540), each with its length + 1 through sub_1000643d
 	virtual void vfunc20(const char *pString);	// WriteString
 	virtual void vfunc21();
 	virtual void vfunc22();
