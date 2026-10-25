@@ -45,6 +45,7 @@ struct CUnknown101d7520Entry
 	int m_iClan;	// 0x0034: index into the clan table, -1 for none
 
 	void sub_101d6af0();	// dumps the entry (stub 0x10015dca)
+	bool sub_101d6a50(void *pCharacter);	// whether the entry accepts the character: m_sub.sub_10206140 holds and the clan is -1 or the character's clan
 };
 
 class CUnknown101d7520
