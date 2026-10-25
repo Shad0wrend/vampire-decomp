@@ -41066,6 +41066,21 @@ bool sub_10168e60(void *unused, EntX *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016b0e0 size=0x37
+// TARGET: CBasePlayer::sub_1016b0e0
+#include "CBasePlayer.h"
+
+void CBasePlayer::sub_1016b0e0(unsigned int buttons)
+{
+    char *p = (char *)this;
+    *(unsigned int *)(p + 0x20a4) = *(unsigned int *)(p + 0x2098);
+    *(unsigned int *)(p + 0x2098) = buttons;
+    unsigned int changed = *(unsigned int *)(p + 0x20a4) ^ buttons;
+    *(unsigned int *)(p + 0x209c) = changed & buttons;
+    *(unsigned int *)(p + 0x20a0) = ~buttons & changed;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016b440 size=0xb
 struct IUnk1070ba0c {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
