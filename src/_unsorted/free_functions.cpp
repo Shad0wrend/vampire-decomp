@@ -49375,6 +49375,30 @@ void CUnknown101aa210::sub_101a9fa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa0e0 size=0x34
+extern char *g_1070b228;
+void sub_1000880a();
+
+struct CThinkOwnerView {
+    char pad0[0x17c];
+    float m_flNextThink;
+    char pad1[0x26c - 0x180];
+    const char *m_name26c;
+    char pad2[0x470 - 0x270];
+    unsigned char m_b470;
+    void sub_100ac4e0(void *pFunc, float flTime, const char *pszContext);
+};
+
+// TARGET: sub_101aa0e0
+void __fastcall sub_101aa0e0(CThinkOwnerView *p)
+{
+    p->m_b470 = 1;
+    if (p->m_name26c == 0)
+        p->m_flNextThink = *(float *)(g_1070b228 + 0xc) + 0.1;
+    p->sub_100ac4e0((void *)sub_1000880a, 0.0f, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aa210 size=0x127
 #include "CUnknown101aa210.h"
 #include "CGlobalEntityList.h"
