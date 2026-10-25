@@ -553,6 +553,27 @@ int CBaseCombatCharacter::vfunc365(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10326bd0 size=0x11b
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CBaseCombatCharacter.h"
+
+bool CBaseCombatCharacter::vfunc364(const Vector *pTarget)
+{
+	ScopeTrace trace("CBaseCombatCharacter::FInAimCone", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	Vector dir = *pTarget - *pSelf->slot217();
+	dir.z = 0;
+	VectorNormalize(dir);
+	Vector fwd;
+	pSelf->slot372(&fwd);
+	if (DotProduct(dir, fwd) > 0.994)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10326d40 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
