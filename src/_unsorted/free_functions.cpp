@@ -74345,6 +74345,40 @@ CUnk10245660Node *sub_10245660(const char *pName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245720 size=0x38
+struct CUnknown10245720Node
+{
+    char pad0000[8];
+    CUnknown10245720Node *pNext;
+    char pad000c[0x18 - 0xc];
+    unsigned int flags;
+};
+
+extern CUnknown10245720Node *g_10753434;
+
+// TARGET: sub_10245720
+void sub_10245720(unsigned int mask)
+{
+    CUnknown10245720Node *pKeep = 0;
+    CUnknown10245720Node *pNode = g_10753434;
+    while (pNode != 0)
+    {
+        CUnknown10245720Node *pNext = pNode->pNext;
+        if ((mask & pNode->flags) == 0)
+        {
+            pNode->pNext = pKeep;
+            pKeep = pNode;
+        }
+        else
+        {
+            pNode->pNext = 0;
+        }
+        pNode = pNext;
+    }
+    g_10753434 = pKeep;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245770 size=0x10
 struct CFlagHolder245770 {
     char pad[4];
