@@ -56554,6 +56554,28 @@ void CUnknown101dd910::sub_101dd910()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ddaf0 size=0x3a
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+struct CUnknown101ddaf0 {
+    int m_nMin;
+    int m_nMax;
+    int sub_101ddaf0(int percent);
+};
+
+// TARGET: CUnknown101ddaf0::sub_101ddaf0
+int CUnknown101ddaf0::sub_101ddaf0(int percent)
+{
+    int nResult = g_1070b244->vfunc2(m_nMin, m_nMax);
+    if (percent != 100) {
+        nResult = (nResult * percent) / 100;
+    }
+    return nResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ddb40 size=0x78
 extern int (*g_109f388c)(char *, int, const char *, ...);
 extern void (*g_109f3628)(const char *, ...);
