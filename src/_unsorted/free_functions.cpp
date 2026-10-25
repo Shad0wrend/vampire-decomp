@@ -33288,6 +33288,48 @@ int *sub_10102410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102730 size=0x10d
+#include "CEnvMicrophone.h"
+#include "CSound.h"
+#include "CEHandleGet.h"
+
+#define SV1(p) virtual void p();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+struct CEntityOriginView
+{
+    SV100(a) SV100(b)
+    SV10(c0) SV10(c1)
+    virtual const Vector *vfunc220();
+};
+
+bool CEnvMicrophone::sub_10102730(CSound *pSound, float *pLevel)
+{
+    CEntityOriginView *pTarget = (CEntityOriginView *)EHandle_Get(m_hMeasureTarget);
+    const Vector *pOrigin = pTarget->vfunc220();
+    float dx = pSound->m_vecOrigin.x - pOrigin->x;
+    float dy = pSound->m_vecOrigin.y - pOrigin->y;
+    float dz = pSound->m_vecOrigin.z - pOrigin->z;
+    float flSqr = dz * dz;
+    flSqr += dx * dx;
+    flSqr += dy * dy;
+    float flDist = FastSqrt(flSqr);
+    if (flDist == 0.0f) {
+        *pLevel = 1.0f;
+        return true;
+    }
+    float flRadius = pSound->m_iVolume * m_flSensitivity;
+    if (flDist <= flRadius) {
+        float flLevel = 1.0f - flDist / flRadius;
+        *pLevel = flLevel;
+        *pLevel = (flLevel > 1.0f) ? 1.0f : ((flLevel < 0.0f) ? 0.0f : flLevel);
+        return true;
+    }
+    *pLevel = 0.0f;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102aa0 size=0x55
 void *sub_1000db89(int);
 extern int vt_10459f58;
