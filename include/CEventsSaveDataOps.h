@@ -6,5 +6,5 @@ class CRestore;
 class CEventsSaveDataOps
 {
 public:
-	void vfunc1(CRestore *pRestore, void *pEvents);	// restores each output of the events list (ISaveRestoreOps slot 1)
+	void vfunc1(void *pEvents, CRestore *pRestore);	// restores each output of the events list (ISaveRestoreOps slot 1)
 };
