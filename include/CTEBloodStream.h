@@ -1,14 +1,14 @@
-// CTEBloodStream: blood stream temp entity. Declared flat (bases not recovered).
+// CTEBloodStream: blood stream temp entity (derived from the CBaseTempEntity head at +0x0).
 #pragma once
 
 #include "Vector.h"
 #include "QAngle.h"
+#include "CBaseTempEntity.h"
 
-class CTEBloodStream
+class CTEBloodStream : public CBaseTempEntityHead
 {
 public:
-	virtual void vfunc0();
-	virtual void vfunc1();
+	CTEBloodStream(const char *name);	// constructor: the base head with the name, then the zeroed fields (sub_1005df60)
 	virtual CTEBloodStream *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a blood stream at the origin (raised, then 50 units along the flat direction of the angles) with a random direction, created for everybody
 
