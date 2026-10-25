@@ -1,8 +1,10 @@
 // CAI_Hint: an AI hint node entity.
 // Only the vtable slots that decompiled code needs are given their real names,
 // the others are placeholders that keep the slot indices of the game's primary
-// vtable (the slots up to 124 are declared so far).
+// vtable (the slots up to 181 are declared so far).
 #pragma once
+
+#include "Vector.h"
 
 // 0x18-byte member objects of CAI_Hint, initialised by sub_100cd2a0.
 struct CAI_HintItem
@@ -140,6 +142,63 @@ public:
 	virtual void vfunc122();
 	virtual void vfunc123();
 	virtual int vfunc124();	// slot 124 "CAI_Hint::DrawDebugTextOverlays": the base entity's line count, plus (while bit 0 of the byte at +0x224 is set) two overlay lines: the hint's node id (+0x5dc) and "delay %f" (the lock time at +0x5ec minus curtime, at least 0)
+	virtual void vfunc125();
+	virtual void vfunc126();
+	virtual void vfunc127();
+	virtual void vfunc128();
+	virtual void vfunc129();
+	virtual void vfunc130(int a);	// slot 130 (KeyValue-like): the base entity's slot 130, then the node record of sub_102d3e60: warning when there is none, else slot 181 with the record's position and the record's owner (+0xa0) set to this
+	virtual void vfunc131();
+	virtual void vfunc132();
+	virtual void vfunc133();
+	virtual void vfunc134();
+	virtual void vfunc135();
+	virtual void vfunc136();
+	virtual void vfunc137();
+	virtual void vfunc138();
+	virtual void vfunc139();
+	virtual void vfunc140();
+	virtual void vfunc141();
+	virtual void vfunc142();
+	virtual void vfunc143();
+	virtual void vfunc144();
+	virtual void vfunc145();
+	virtual void vfunc146();
+	virtual void vfunc147();
+	virtual void vfunc148();
+	virtual void vfunc149();
+	virtual void vfunc150();
+	virtual void vfunc151();
+	virtual void vfunc152();
+	virtual void vfunc153();
+	virtual void vfunc154();
+	virtual void vfunc155();
+	virtual void vfunc156();
+	virtual void vfunc157();
+	virtual void vfunc158();
+	virtual void vfunc159();
+	virtual void vfunc160();
+	virtual void vfunc161();
+	virtual void vfunc162();
+	virtual void vfunc163();
+	virtual void vfunc164();
+	virtual void vfunc165();
+	virtual void vfunc166();
+	virtual void vfunc167();
+	virtual void vfunc168();
+	virtual void vfunc169();
+	virtual void vfunc170();
+	virtual void vfunc171();
+	virtual void vfunc172();
+	virtual void vfunc173();
+	virtual void vfunc174();
+	virtual void vfunc175();
+	virtual void vfunc176();
+	virtual void vfunc177();
+	virtual void vfunc178();
+	virtual void vfunc179();
+	virtual void vfunc180();
+	virtual void vfunc181(Vector *pPos, int a, int b);
 	void sub_10005e98();	// as in CPhysForce (transplant)
 
 	char m_pad0004[0x4f8];
@@ -159,4 +218,5 @@ public:
 	char sub_102d14c0();	// "IsLocked": a lock owner is set, or the lock timeout at +0x5ec is still in the future, or the owner handle at +0x5e0 resolves (stub 0x1000cc39)
 	char sub_102d1450(void *pOwner);	// "IsLockedBy" (stub 0x10010154)
 	void sub_102d1420(float delay);	// "Unlock" (stub 0x10013d68)
+	char *sub_102d3e60();	// the node record this hint belongs to (stub 0x10007cca); its position is at +8 and its owner at +0xa0
 };
