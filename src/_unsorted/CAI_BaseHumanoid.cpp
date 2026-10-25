@@ -212,6 +212,25 @@ CAI_BaseHumanoid *CAI_BaseHumanoid::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260f40 size=0x3a
+extern char vt_1049939c[];
+extern char vt_10499370[];
+
+// TARGET: CAI_BaseHumanoid::vfunc427
+CAI_HumanoidMotor *CAI_BaseHumanoid::vfunc427()
+{
+    char *p = (char *)operator new(0x70);
+    if (p != 0) {
+        ((CAI_Motor *)p)->sub_102e0900((int)this);
+        *(int *)p = (int)vt_1049939c;
+        *(int *)(p + 0x10) = (int)vt_10499370;
+        *(int *)(p + 0x6c) = -1;
+        return (CAI_HumanoidMotor *)p;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102624b0 size=0x74
 #include "CAI_BaseHumanoid.h"
 
