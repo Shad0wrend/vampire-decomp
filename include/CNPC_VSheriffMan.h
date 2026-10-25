@@ -69,7 +69,7 @@ public:
 	void sub_103b1510();	// "CNPC_VSheriffMan::CacheFloorHeights": scope trace (no entity name), caches the floor heights of the two reference entities (the third dword of their slot 217 vectors) at +0x66e8 / +0x66ec and sets the cached byte at +0x66e7 (stub 0x10012431)
 	void sub_10385a10(int arg);	// CNPC_VHuman::vfunc432 (RunAI), called directly through the stub at 0x1000698d
 	CEntityVSlots *sub_103b0930();	// the first reference entity (stub 0x1000c257)
-	CEntityVSlots *sub_103b0ab0(int a);	// the second reference entity (stub 0x10006e74)
+	CEntityVSlots *sub_103b0ab0(char bUseSelf);	// "CNPC_VSheriffMan::SelectLedgeNode": the nearest hint of type 0x4653 to the origin of this entity (bUseSelf) or of the entity behind the handle at +0x628c; null without that entity (stub 0x10006e74)
 	void vfunc420();	// "CNPC_VSheriffMan::NPCInit": scope trace (no entity name), resets the teleport bats handle and the flag bytes, remembers the origin and the time, runs the base init, sets the monster model and npc names and the jump gravity
 	void sub_10013e85();	// CNPC_VVampireBoss::vfunc420, called directly
 	void sub_10014c22();	// stub for 0x103c6a00, called directly after the model names are stored
