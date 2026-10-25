@@ -71557,6 +71557,40 @@ void __fastcall sub_102180a0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10218710 size=0xc1
+#include "Vector.h"
+#include "CBaseAnimating.h"
+#include "CBaseTerminal.h"
+
+float sub_101d1120(const Vector &a, const Vector &b, const Vector &c);
+
+#define TV1(n) virtual void n();
+#define TV10(p) TV1(p##0) TV1(p##1) TV1(p##2) TV1(p##3) TV1(p##4) TV1(p##5) TV1(p##6) TV1(p##7) TV1(p##8) TV1(p##9)
+
+class CTerminalViewer
+{
+public:
+	TV10(a0) TV10(a1) TV10(a2) TV10(a3) TV10(a4) TV10(a5) TV10(a6) TV10(a7) TV10(a8) TV10(a9)
+	TV10(b0) TV10(b1) TV10(b2) TV10(b3) TV10(b4) TV10(b5) TV10(b6) TV10(b7) TV10(b8)
+	TV1(c0) TV1(c1) TV1(c2)
+	virtual Vector slot193();	// the viewer's position, returned by value (hidden result pointer)
+};
+
+int CBaseTerminal::sub_10218710(int a)
+{
+	CBaseAnimating *pAnim = (CBaseAnimating *)this;
+	Vector posA, angA;
+	Vector posB, angB;
+	pAnim->sub_10092e20((int)"screen", (int)&posA, (int)&angA);
+	pAnim->sub_10092e20((int)"screen_axis", (int)&posB, (int)&angB);
+	Vector dir = posB - posA;
+	VectorNormalize(dir);
+	if (sub_101d1120(posA, ((CTerminalViewer *)a)->slot193(), dir) > 0.7f)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218820 size=0x131
 #include "CBaseTerminal.h"
 #include "CEHandleGet.h"
