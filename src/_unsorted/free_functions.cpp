@@ -42376,6 +42376,37 @@ void CBasePlayer::sub_101816c0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182210 size=0x3b
+#include "CBasePlayer.h"
+
+struct CBasePlayerUnit10182210 : CBasePlayer
+{
+    int sub_10182210(int key);
+};
+
+// TARGET: sub_10182210
+int CBasePlayerUnit10182210::sub_10182210(int key)
+{
+    int i = 0;
+    int count = *(int *)((char *)this + 0x1d74);
+    if (count > 0)
+    {
+        char *pRecords = *(char **)((char *)this + 0x1d68);
+        int *pKey = (int *)(pRecords + 0x30);
+        do
+        {
+            if (*pKey == key)
+            {
+                return *(int *)(pRecords + (i << 6) + 0x34);
+            }
+            i++;
+            pKey += 16;
+        } while (i < count);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182810 size=0x80
 #include "CUnknown10182810.h"
 
