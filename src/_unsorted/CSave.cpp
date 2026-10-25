@@ -204,3 +204,31 @@ void CSave::vfunc28(const Vector &value)
 	vfunc24(vecResult);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a0c70 size=0x8d
+#include "CSave.h"
+
+struct CSaveBlockX
+{
+	char m_pad0000[0x12c4];
+	int m_bLandmark;	// 0x12c4
+	char m_pad12c8[0x12dc - 0x12c8];
+	Vector m_vecLandmarkOffset;	// 0x12dc
+};
+
+extern Vector g_1070d1b0;
+
+inline Vector GetLandmarkOffsetX(CSaveBlockX *pBlock)
+{
+	return pBlock->m_bLandmark ? pBlock->m_vecLandmarkOffset : g_1070d1b0;
+}
+
+void CSave::vfunc27(const Vector *pValues, int count)
+{
+	for (int i = 0; i < count; i++) {
+		Vector vecResult;
+		vecResult = pValues[i] - GetLandmarkOffsetX((CSaveBlockX *)m_pEntityBlock);
+		vfunc16(&vecResult, 12);
+	}
+}
+// END FUNCTION

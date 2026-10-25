@@ -3331,6 +3331,7 @@
 0x1000bac3 func   ?sub_10430170@@YAII@Z sub_10430170
 0x1000bac8 func   ?sub_103580d0@CNPC_Crow@@QAEXH@Z CNPC_Crow::sub_103580d0
 0x1000bacd func   ?sub_101d86d0@CUnknown101d86d0@@QAEPAU1@HHH@Z CUnknown101d86d0::sub_101d86d0
+0x1000bad2 func   ?vfunc27@CSave@@UAEXPBVVector@@H@Z CSave::vfunc27
 0x1000bad7 func   ?sub_10310c10@CUnknown10310c10@@QAEPAXPAXH@Z CUnknown10310c10::sub_10310c10
 0x1000baeb func   ?vfunc294@CNPC_VGhoulCroucher@@QAEDH@Z CNPC_VGhoulCroucher::vfunc294
 0x1000baf0 func   ?vfunc104@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc104
