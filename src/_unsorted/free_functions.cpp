@@ -103427,6 +103427,29 @@ void CUnknown1039ef90::sub_1039ef90(const int *pSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039f030 size=0x11f
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_106477c8[];
+
+void CNPC_VMingXiaoTentacle::sub_1039f030()
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	filter.MakeReliable();
+	int edict = *(int *)((char *)this + 0x2e0);
+	int idx = g_1070b22c->vfunc35(edict);
+	g_1070b248->vfunc3(&filter, idx, 4, g_106477c8[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039f550 size=0x43
 #include "CNPC_VMoleman.h"
 void *sub_100aa720(int size);
