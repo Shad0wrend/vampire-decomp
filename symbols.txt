@@ -4082,6 +4082,7 @@
 0x1000ef0c func   ?sub_102c6b30@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_102c6b30
 0x1000ef1b func   ?vfunc13@CServerGameClients@@UAEXPAXPAM@Z CServerGameClients::vfunc13
 0x1000ef25 func   ?vfunc309@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc309
+0x1000ef2a func   ?vfunc298@CWeaponMelee_FireAxe@@QAEXHH@Z CWeaponMelee_FireAxe::vfunc298
 0x1000ef2f func   ?vfunc274@CPropPadlock@@QAEXXZ CPropPadlock::vfunc274
 0x1000ef34 func   ?vfunc41@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc41
 0x1000ef39 func   ?sub_100b0980@@YAXXZ sub_100b0980
