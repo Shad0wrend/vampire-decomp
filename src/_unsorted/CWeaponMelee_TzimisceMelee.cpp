@@ -62,3 +62,25 @@ int CWeaponMelee_TzimisceMelee::vfunc367(int a, float b, float c)
 	return 0x51;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103e8cd0 size=0xbf
+#include "CWeaponMelee_TzimisceMelee.h"
+#include "CUnknown1070b244.h"
+extern CUnknown1070b244 *g_1070b244;
+
+void CWeaponMelee_TzimisceMelee::vfunc269(CBaseCombatWeapon *pOther, Vector vecDir)
+{
+    if (pOther) {
+        if (m_n0910 > 0 && m_n0910 <= 2) {
+            float *p = (float *)sub_102517e0();
+            float f = g_1070b244->vfunc1(p[0x3b8 / 4], p[0x3bc / 4]);
+            if (f != 0.0f) {
+                vecDir = vecDir * -f;
+                pOther->vfunc170(&vecDir);
+            }
+        } else {
+            CBaseCombatWeapon::vfunc269(pOther, vecDir);
+        }
+    }
+}
+// END FUNCTION
