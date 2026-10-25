@@ -56115,6 +56115,22 @@ void sub_101cee20(float a, Vector b, QAngle angles, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ceef0 size=0x142
+#include "Vector.h"
+
+void sub_10142e90(const Vector &start, const Vector &end, int r, int g, int b, int noDepth, float flDuration);
+
+void sub_101ceef0(float size, Vector position, Vector xvec, Vector yvec, Vector zvec, float flDuration)
+{
+	xvec = position + size * xvec;
+	yvec = position - size * yvec;
+	zvec = position + size * zvec;
+	sub_10142e90(position, xvec, 255, 0, 0, 1, flDuration);
+	sub_10142e90(position, yvec, 0, 255, 0, 1, flDuration);
+	sub_10142e90(position, zvec, 0, 0, 255, 1, flDuration);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf0a0 size=0x120
 #include "CUnknown101cf0a0.h"
 #include "ScopeTrace.h"
