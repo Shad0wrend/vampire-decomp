@@ -22,6 +22,8 @@ public:
 	FP_V10(18) FP_V10(19) FP_V10(20) FP_V10(21) FP_V10(22) FP_V10(23)
 	virtual void vfunc240(); virtual unsigned char vfunc241();
 	virtual void vfunc242(); virtual void vfunc243();	// 242: starts the sound named at +0x55c (if any) and moves to position 1 (state 2); 243: the same toward position 2 (state 3)
+	FP_V(244)
+	virtual void vfunc245();	// "HitBottom"-like: stops the sound at +0x55c, plays the one at +0x560 (channel 1) and sets the toggle state (+0x4f8) to 1
 	char m_pad[0x114 - 4];
 	void *m_pfnThink;	// 0x114
 	char m_pad0118[0x164 - 0x118];
@@ -41,7 +43,7 @@ public:
 	Vector m_vecPosition514;	// 0x514
 	char m_pad0520[0x55c - 0x520];
 	const char *m_pszStartSound;	// 0x55c
-	char m_pad0560[0x564 - 0x560];
+	const char *m_pszArriveSound;	// 0x560
 	float m_flVolume;	// 0x564
 	char m_pad0568[0x570 - 0x568];
 	const char *m_pszStopSound;	// 0x570
