@@ -17,6 +17,10 @@ public:
 	// Slot 404: a pedestrian-owned entity whose character has flag 0x20000 gives 2; else the base's slot 404 (stub 0x10001adc).
 	int vfunc404(CBaseEntity *pEntity);
 
+	// Slot 432, declared as a plain member.
+	void vfunc432(int arg);	// slot 432 (the RunAI-like tick): CNPC_VHuman::vfunc432, then while bit 7 of the flags at +0x14b8 is set, once every 10 seconds (+0x641c) a debug marker 256 units behind this entity's facing
+	void sub_1000698d(int arg);	// CNPC_VHuman::vfunc432 (stub 0x1000698d), called directly
+
 	// Slot 433, declared as a plain member.
 	void vfunc433();	// slot 433 "CNPC_VPedestrian::...": sets the condition 0x24 and runs CAI_BaseNPCTroika::vfunc433; with the condition 0x2d set and the entity of the handle at +0x5b78 being the one of +0x6160 or +0x618c, takes that entity's character (+0x9c): once its active weapon's stat record has a value (+0x3c4) of at least the one at +0x634c, fills the record at +0x6360 from it (position = the character's slot 220 vector), asks the global at 0x10924a6c (slot 1) and clears the condition 0x1f
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
