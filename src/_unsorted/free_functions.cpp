@@ -113663,6 +113663,16 @@ bool CWeaponPhysCannon::sub_1040e880(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10410370 size=0x39
+// TARGET: sub_10410370
+void sub_10410370(const float *a, const float *b, float t, float *out)
+{
+    out[0] = (b[0] - a[0]) * t + a[0];
+    out[1] = (b[1] - a[1]) * t + a[1];
+    out[2] = (b[2] - a[2]) * t + a[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x104103c0 size=0x9b
 #include "CCollisionProperty.h"
 #include "matrix3x4_t.h"
