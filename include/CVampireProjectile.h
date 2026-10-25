@@ -41,6 +41,8 @@ public:
 	virtual void vfunc260(); virtual void vfunc261(); virtual void vfunc262(); virtual void vfunc263(); virtual void vfunc264();
 	virtual bool vfunc265();
 	virtual void vfunc266(CBaseEntity *pOther);
+	virtual void vfunc267(); virtual void vfunc268(); virtual void vfunc269(); virtual void vfunc270(); virtual void vfunc271();
+	virtual void vfunc272(const Vector *pOrigin, const Vector *pDir, float flSpeed, int nDamage, int nOwnerType, const char *pszModel, const char *pszSound);	// slot 272 "CVampireProjectile::Launch": puts the projectile at pOrigin, stores the two ints at +0x878 / +0x8a0, the model name (+0x87c) and the sound name (+0x880) (null when empty), turns it along pDir (VectorAngles, slot 64), tells slot 202 about the direction, runs the Spawn (slot 103), sets the velocity to pDir * flSpeed, remembers the start (+0x888) and the direction (+0x894), sequence 0 and ResetSequenceInfo
 	CVampireProjectile *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100085d5();	// as in CPhysForce (transplant)
 	CVampireProjectile *sub_101ee2e0();	// as in CKeepUpright (transplant)
