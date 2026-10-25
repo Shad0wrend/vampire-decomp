@@ -18,4 +18,5 @@ public:
 	void vfunc495();	// slot 495 (plain member): emits one of the 0x1062a008 sounds (channel 2, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
 	void vfunc489();	// slot 489 (plain member): same shape as vfunc495, sounds at 0x1062a004
 	void vfunc488();	// slot 488 (plain member): same shape as vfunc495, volume 0.5, sounds at 0x1062a00c
+	void vfunc491();	// slot 491 (plain member): same shape as vfunc495, sounds at 0x1062a014 (random 0..3)
 };
