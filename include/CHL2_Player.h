@@ -6,6 +6,8 @@
 #include "CUnknown1012cf10.h"
 #include "Vector.h"
 
+struct CTakeDamageInfo;
+
 #define CHL2_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define CHL2_V100(p) CHL2_V10(p##0) CHL2_V10(p##1) CHL2_V10(p##2) CHL2_V10(p##3) CHL2_V10(p##4) CHL2_V10(p##5) CHL2_V10(p##6) CHL2_V10(p##7) CHL2_V10(p##8) CHL2_V10(p##9)
 
@@ -33,7 +35,14 @@ public:
 	virtual void pb00(); virtual void pb01(); virtual void pb02();	// slots 100..102
 	virtual void vfunc103();	// slot 103 "CHL2_Player::Spawn": clears the byte at +0x2544, slot 408 / 407 around the flag tests of CUnknown1015ef20 (bit 5 of +0x19c follows them), the player base (sub_1016d260), then CBasePlayer::vfunc103 when slot 406 says so
 	virtual void pb04(); virtual void pb05(); virtual void pb06(); virtual void pb07(); virtual void pb08(); virtual void pb09();	// slots 104..109
-	CHL2_V10(pb1) CHL2_V10(pb2) CHL2_V10(pb3) CHL2_V10(pb4) CHL2_V10(pb5) CHL2_V10(pb6) CHL2_V10(pb7) CHL2_V10(pb8) CHL2_V10(pb9)	// slots 110..199
+	CHL2_V10(pb1) CHL2_V10(pb2) CHL2_V10(pb3)	// slots 110..139
+	virtual void pb40(); virtual void pb41();	// slots 140, 141
+	virtual int vfunc142(const CTakeDamageInfo *pInfo);	// slot 142 "OnTakeDamage": a damage above zero (the CVDmg_t's GetDmg when the record has one, else the plain damage at +0x30) stamps the time at +0x253c and punches the view by a random angle scaled by the damage (and a convar), then the player base
+	virtual void pb43(); virtual void pb44(); virtual void pb45(); virtual void pb46(); virtual void pb47(); virtual void pb48(); virtual void pb49();	// slots 143..149
+	CHL2_V10(pb5)	// slots 150..159
+	virtual void pb60(); virtual void pb61(); virtual void pb62(); virtual void pb63(); virtual void pb64(); virtual void pb65(); virtual void pb66(); virtual void pb67(); virtual void pb68();	// slots 160..168
+	virtual void vfunc169(const Vector *pPunch);	// slot 169: takes the pointer of a view punch angle
+	CHL2_V10(pb7) CHL2_V10(pb8) CHL2_V10(pb9)	// slots 170..199
 	CHL2_V10(pc0) CHL2_V10(pc1) CHL2_V10(pc2) CHL2_V10(pc3) CHL2_V10(pc4) CHL2_V10(pc5) CHL2_V10(pc6)	// slots 200..269
 	virtual void pc70(); virtual void pc71(); virtual void pc72(); virtual void pc73(); virtual void pc74(); virtual void pc75(); virtual void pc76();	// slots 270..276
 	virtual void vfunc277(const Vector *pVec);	// slot 277: takes the pointer of a vector (the camera offset record at +0xe50 for slot 333)
@@ -90,6 +99,8 @@ public:
 	int m_n2528;
 	int m_n252c;
 	float m_f2530;
+	char m_pad2534[0x253c - 0x2534];
+	float m_flLastDamageTime;	// 0x253c: when the player last took damage
 	CHL2_Player *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100140f1();	// as in CPhysForce (transplant)
 	void sub_1016d260();	// the player base's slot 103 (stub 0x10002f9f), called directly
@@ -98,4 +109,5 @@ public:
 	int sub_103346c0(int ammoIndex);	// CBaseCombatCharacter::GetAmmoCount (stub 0x1000ff97), called directly
 	int sub_10334180(int count, int ammoIndex, int unused);	// CBaseCombatCharacter::GiveAmmo by index (slot 374 of the base, stub 0x10009543), called directly
 	char sub_10334860(void *pCurrent);	// CBaseCombatCharacter::SwitchToNextBestWeapon (stub 0x100138d6), called directly
+	int sub_10163020(const CTakeDamageInfo *pInfo);	// CBasePlayer::vfunc142 (stub 0x10014425), called directly
 };
