@@ -27,6 +27,7 @@ public:
 	int sub_10299da0(CBaseEntity *pEnt);	// CAI_BaseNPCTroika::vfunc404, called directly
 	int vfunc440(int arg);	// slot 440: 0x6b gives 0x132 or 0x15b by bit 0x80000 of +0x14bc, 0x103 gives 0x15a, else CNPC_VHumanCombatant::vfunc440
 	void vfunc463(int nOld, int nNew);	// slot 463 (state change): entering state 2 takes the hold on the enemy's character (sub_10388c40, sub_1017f7b0, handle at +0x6664), leaving it drops the hold (sub_1017f830); states 1 / 2 / 3 / 0xb tell the active weapon slot 66 / 67; then CNPC_VHumanCombatant::vfunc463
+	void vfunc472(int a);	// slot 472: when the byte at +0x6081 is clear and vfunc404(a) is 1, sub_10387fd0(a); then the Troika base vfunc472(a)
 	void sub_10388c40();	// stub 0x1000a6ff
 	void sub_103871c0(int nOld, int nNew);	// CNPC_VHumanCombatant::vfunc463 (stub 0x10014a10), called directly
 
