@@ -70532,6 +70532,34 @@ void sub_10233ba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10233c80 size=0x3e
+#include "vampire.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_10552810;
+extern char g_109340dd;
+int sub_1000f0fb();
+int sub_10008d8c();
+void sub_10233ad0(int a);
+void sub_10003c56(int a);
+
+// TARGET: sub_10233c80
+void sub_10233c80()
+{
+    if (g_1070b22c->a12())
+    {
+        g_10552810 = sub_1000f0fb();
+        if (g_109340dd)
+        {
+            sub_10233ad0(sub_10008d8c());
+            return;
+        }
+        sub_10003c56(sub_10008d8c());
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102342d0 size=0x72
 #include "SendProp.h"
 
