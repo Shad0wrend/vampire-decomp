@@ -10566,6 +10566,28 @@ void CUnknown10073920::sub_10073920(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073940 size=0x38
+// TARGET: sub_10073940
+float __fastcall sub_100154e7(void *p);
+float __fastcall sub_10014835(void *p);
+
+struct CScaledView {
+    char pad[0x80];
+    float m_flScale;
+    void *m_pChild;
+};
+
+float __fastcall sub_10073940(void *ecx)
+{
+    CScaledView *self = (CScaledView *)ecx;
+    if (self->m_pChild == 0)
+        return 0.0f;
+    float a = sub_100154e7(self->m_pChild);
+    float b = sub_10014835(self->m_pChild);
+    return b * self->m_flScale + a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073a30 size=0xd
 void CUnknown10073a30::sub_10073a30(char value)
 {

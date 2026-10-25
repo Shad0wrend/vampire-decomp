@@ -4071,6 +4071,7 @@
 0x1000e930 func   ?sub_100b4a40@UtlMem3@@QAEXH@Z UtlMem3::sub_100b4a40
 0x1000e93f func   ?sub_1036b6b0@@YG_NH@Z sub_1036b6b0
 0x1000e94e func   ?vfunc491@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc491
+0x1000e953 func   ?sub_10073940@@YIMPAX@Z sub_10073940
 0x1000e962 func   ?vfunc546@CNPC_VVampire@@QAEHH@Z CNPC_VVampire::vfunc546
 0x1000e971 func   ?sub_10146a80@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10146a80
 0x1000e976 func   ?sub_10123e20@CGameMovement@@QAEXXZ CGameMovement::sub_10123e20
