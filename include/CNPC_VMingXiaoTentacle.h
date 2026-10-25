@@ -11,6 +11,8 @@ public:
 	CNPC_VMingXiaoTentacle *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100123af();	// as in CPhysForce (transplant)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
+	void *vfunc408(int condition);	// slot 408 override: the address of the state's data for the conditions 0x77 / 0x78 / 0x79 (0x1064a42c / 0x1064a430 / 0x1064a434), else the base's slot 408 (sub_1027ede0, tail call)
+	void *sub_1027ede0(int condition);	// CAI_BaseNPC::vfunc408 (stub 0x10011590), called directly
 	int vfunc461();	// "CNPC_VMingXiaoTentacle::SelectIdealState": picks the ideal state (1, 2 or 7) and its schedule from slot 167
 	void sub_1039ef90(float *pPos);	// called through the stub at 0x1000d1f2: scope work, then copies the three floats of pPos to +0x668c
 	void vfunc104();	// "CNPC_VMingXiaoTentacle::Precache": default model when none is set, base Precache, then the baby / transformation models (handles at +0x6664..+0x666c), three particle emitters and two sounds
