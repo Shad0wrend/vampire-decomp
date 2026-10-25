@@ -70436,6 +70436,39 @@ void CPropHaunted::sub_10214080(const char *pszSound)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10214300 size=0xb0
+#include "CPropHaunted.h"
+#include "IPhysicsObject.h"
+#include "ConVar.h"
+
+struct CGlobalVarsView
+{
+	char m_pad0000[0xc];
+	float m_curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+extern ConVar *g_1074f0c4;
+extern float g_104454c4;
+
+void CPropHaunted::sub_10214300()
+{
+	if (m_obj36c)
+	{
+		Vector vecVelocity;
+		((IPhysicsObject *)m_obj36c)->vfunc40((float *)&vecVelocity, 0);
+		float flSpeed = vecVelocity.Length();
+		float flThreshold = g_1074f0c4->vfunc1() ? g_104454c4 : g_1074f0c4->m_fValue;
+		if (flSpeed < flThreshold)
+		{
+			sub_100ac4e0(0, 0, 0);
+			m_bArmed7b8 = 0;
+			return;
+		}
+		m_flNextThink = g_1070b228->m_curtime + 0.05;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10214780 size=0x11f
 #include "CPropHaunted.h"
 #include "CEHandleGet.h"
