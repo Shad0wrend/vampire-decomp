@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101c9ea0 size=0x32
+#include "CTriggerProximity.h"
+
+void sub_101cf600(CTriggerProximity *pTrigger);
+
+// TARGET: CTriggerProximity::vfunc103
+void CTriggerProximity::vfunc103()
+{
+    if (m_flMeasure05a0 == 0.0f) {
+        m_flMeasure05a0 = 32.0f;
+    }
+    sub_101c5080();
+    sub_101cf600(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9ef0 size=0xbb
 #include "CTriggerProximity.h"
 
