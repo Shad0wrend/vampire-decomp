@@ -31598,6 +31598,32 @@ void sub_10101100(float *pDuration, unsigned char *pColor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101019d0 size=0x3a
+#include "CBaseEntity.h"
+
+struct CUnk101019d0Obj
+{
+    void sub_10010dde();
+};
+
+struct CUnk101019d0 : CBaseEntity
+{
+    void sub_101019d0();
+};
+
+// TARGET: ?sub_101019d0@CUnk101019d0@@QAEXXZ
+void CUnk101019d0::sub_101019d0()
+{
+    *(unsigned int *)((char *)this + 0x19c) |= 0x40;
+    CUnk101019d0Obj *p = *(CUnk101019d0Obj **)((char *)this + 0x4f8);
+    if (p) {
+        p->sub_10010dde();
+    }
+    *(int *)((char *)this + 0x17c) = 0;
+    sub_100ac4e0(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101a90 size=0x78
 #include "CEnvLaser.h"
 #include "Vector.h"
