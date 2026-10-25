@@ -30,9 +30,10 @@ public:
 	int sub_10295460(int a, int b);	// CAI_BaseNPCTroika member (stub 0x10009c14), called directly
 	void sub_102ae750(int schedule, int a);	// CAI_BaseNPCTroika member (stub 0x1000198d), called directly
 	void sub_1039f310();	// stub 0x100072ac
-	void sub_1039f030();	// plays one of the 0x106477c8 sounds (channel 4, volume 1.0, attenuation 0.8) from the edict to the players that can hear it, reliably (a PAS attenuation filter built inline)
 	void sub_1039ee20(void *pArg);	// builds the doubled (x / y only) bounds of hull 0xf (NAI_Hull Mins / Maxs) and hands them with the mask 0x202400b to sub_102a0fb0
 	void sub_102a0fb0(void *pArg, int mask, float *pMins, float *pMaxs);	// stub 0x10001f50, called directly
+	void sub_1039f030();	// sound emitter of the same shape as sub_1039f1a0
+	void sub_1039f1a0();	// plays one of the 0x106477cc sounds (channel 2, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 
 	char m_pad0004[0x200 - 4];
 	int m_nTakeDamage;	// 0x200
