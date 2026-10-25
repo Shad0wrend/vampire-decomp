@@ -120,3 +120,23 @@ void ConVar::vfunc12(const char *pName, const char *pDefaultValue, int flags, co
 	sub_102455c0(pName, pHelpString, flags);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10246160 size=0x36
+#include "ConVar.h"
+
+// TARGET: ConVar::sub_10246160
+void ConVar::sub_10246160(int nValue)
+{
+	if (!m_pParent->vfunc1())
+	{
+		if (nValue != m_nValue)
+		{
+			vfunc9(nValue);
+		}
+		if (nValue != m_pParent->m_nValue)
+		{
+			m_pParent->vfunc9(nValue);
+		}
+	}
+}
+// END FUNCTION
