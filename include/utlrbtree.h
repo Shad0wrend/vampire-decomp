@@ -569,7 +569,7 @@ template <class T, class I>
 inline void CUtlRBTree<T, I>::RemoveAt(I elem)
 {
 	if (elem != InvalidIndex()) {
-		I x, y;
+		I y, x;
 
 		if ((LeftChild(elem) == InvalidIndex()) || (RightChild(elem) == InvalidIndex())) {
 			// y has a NIL node as a child
