@@ -44522,6 +44522,31 @@ void CPointAngleSensor::sub_1018d210(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d7f0 size=0x37
+#include "CBaseEntity.h"
+
+struct CUnknown1018d7f0
+{
+	char m_pad0000[0x464];
+	unsigned int m_h464;
+
+	void sub_1018d7f0(CBaseEntity **ppEnt);
+};
+
+// TARGET: CUnknown1018d7f0::sub_1018d7f0
+void CUnknown1018d7f0::sub_1018d7f0(CBaseEntity **ppEnt)
+{
+	((CBaseEntity *)this)->sub_100ac4e0(0, 0, 0);
+	CBaseEntity *pEnt = *ppEnt;
+	if (pEnt != 0)
+	{
+		m_h464 = *pEnt->vfunc1();
+		return;
+	}
+	m_h464 = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018df00 size=0x49
 void *sub_1000db89(int);
 struct GP;
