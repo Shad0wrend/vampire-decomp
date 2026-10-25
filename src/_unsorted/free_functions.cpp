@@ -82918,6 +82918,76 @@ void CUnknown102dfd90::sub_102dfd90(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dfed0 size=0x160
+#include "CUnknown102e0150.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "Vector.h"
+
+extern "C" __declspec(dllimport) void DevWarning(int, const char *, ...);
+
+struct SEnemyNode
+{
+	char m_pad0000[0x0c];
+	Vector m_vec;	// 0x0c
+	char m_pad0018[0x24 - 0x18];
+	unsigned int m_hEnt;	// 0x24
+	char m_pad0028[0x34 - 0x28];
+	char m_bFlag;	// 0x34
+	char m_pad0035[3];
+	SEnemyNode *m_pNext;	// 0x38
+};
+
+extern CGlobalEntityList *g_10566458;
+extern Vector g_1070d1b0;
+
+inline CBaseEntity *LookupEnt(const unsigned int &h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13))
+			return (CBaseEntity *)pSlot->m_pEntity;
+	}
+	return 0;
+}
+
+struct CEnemiesView : CUnknown102e0150
+{
+	Vector sub_102dfed0(CBaseEntity *pEnemy);
+};
+
+// TARGET: CEnemiesView::sub_102dfed0
+Vector CEnemiesView::sub_102dfed0(CBaseEntity *pEnemy)
+{
+	SEnemyNode *pNode = (SEnemyNode *)m_pHead;
+	bool bFound = false;
+	Vector vecDanger(0, 0, 0);
+	while (pNode) {
+		CBaseEntity *pNodeEnt = LookupEnt(pNode->m_hEnt);
+		if (pNodeEnt && pEnemy == pNodeEnt)
+			return pNode->m_vec;
+		if (pNode->m_bFlag == 1) {
+			bFound = true;
+			vecDanger = pNode->m_vec;
+		}
+		pNode = pNode->m_pNext;
+	}
+	if (m_bUseHandleSink) {
+		if (m_pHandleSink)
+			m_pHandleSink->sub_10316bc0(pEnemy);
+	} else {
+		if (m_pSink)
+			m_pSink->vfunc58(pEnemy);
+	}
+	if (bFound) {
+		DevWarning(2, "Asking LastKnownPosition for enemy (%s) that's not in my memory (using danger pos)!!\n", pEnemy ? pEnemy->sub_100ab4f0() : "**NULL**");
+		return vecDanger;
+	}
+	DevWarning(2, "Asking LastKnownPosition for enemy (%s) that's not in my memory!!\n", pEnemy ? pEnemy->sub_100ab4f0() : "**NULL**");
+	return g_1070d1b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0090 size=0x85
 #include "CUnknown102e0090.h"
 
