@@ -202,6 +202,21 @@ void CBaseCombatWeapon::vfunc359()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024f7f0 size=0x31
+#include "CBaseCombatWeapon.h"
+
+extern float *g_1070b228;
+void sub_101c0b10(CBaseEntity *pEnt);
+
+// TARGET: CBaseCombatWeapon::vfunc119
+void CBaseCombatWeapon::vfunc119()
+{
+    *(int *)((char *)this + 0x1ec) = 0;
+    sub_100ac4e0((int)sub_101c0b10, 0, 0);
+    *(float *)((char *)this + 0x17c) = g_1070b228[3] + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10250c20 size=0x1e
 #include "CBaseCombatWeapon.h"
 
