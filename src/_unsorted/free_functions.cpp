@@ -81512,6 +81512,51 @@ void __fastcall sub_1025e140(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025e7b0 size=0xe1
+#include "CAI_BaseHumanoid.h"
+#include "QAngle.h"
+
+void sub_10139550(const QAngle &angles, Vector *pForward);
+
+#define SV1(n) virtual void n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CHumanoidSlotView
+{
+	SV100(a) SV100(b) SV10(c0) SV10(c1) SV1(c2)
+	virtual float *vfunc221();
+	SV10(d0) SV10(d1) SV10(d2) SV10(d3) SV10(d4) SV1(e0) SV1(e1) SV1(e2) SV1(e3) SV1(e4) SV1(e5)
+	virtual float *vfunc278();
+};
+
+void CAI_BaseHumanoid::sub_1025e7b0()
+{
+	if (!(m_flags5f4c & 2))
+	{
+		m_flags5f4c |= 2;
+		Vector vecAngles;
+		Vector *pForward;
+		if (sub_10092e20("eyes", &m_vec5f50, &vecAngles))
+		{
+			sub_10139550(*(QAngle *)&vecAngles, &m_vec5f68);
+		}
+		else
+		{
+			m_vec5f50 = sub_100b4b40();
+			sub_10139550(*(QAngle *)((CHumanoidSlotView *)this)->vfunc221(), &m_vec5f68);
+		}
+		m_flags5f4c &= ~1;
+	}
+	if (!(m_flags5f4c & 1))
+	{
+		m_flags5f4c |= 1;
+		m_vec5f5c = *(Vector *)((CHumanoidSlotView *)this)->vfunc278() - m_vec5f50;
+		VectorNormalize(m_vec5f5c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260750 size=0xb
 void __fastcall sub_10260750(char *self)
 {
