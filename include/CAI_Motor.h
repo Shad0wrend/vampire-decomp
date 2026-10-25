@@ -48,9 +48,9 @@ public:
 	float m_30;	// the wanted speed
 	float m_34;	// the ideal yaw
 	int m_38;	// a float: the yaw speed (UpdateYaw converts it with _ftol)
-	int m_3c;
-	int m_40;
-	int m_44;
+	float m_3c;	// the velocity vector (x, y, z)
+	float m_40;
+	float m_44;
 	int m_48;
 	int m_4c;
 	int m_50;
@@ -75,6 +75,7 @@ public:
 	void sub_102e1cf0();	// stub 0x10011af9: the yaw speed (+0x38) from slot 0 of the movement sink at +0x10
 	void sub_102e1c10(float flIdealYaw, float flYawSpeed);	// "CAI_Motor::SetIdealYawAndUpdate" (stub 0x10014b8c): sets the ideal yaw (flipped when the byte at +0x28 is set, limited by the turn rate unless the largest change is 180), the yaw speed (+0x38, -1 keeps it; -2 asks the movement sink) and updates the yaw
 	float sub_102e12c0();	// CAI_Component helper (stub 0x10008bfc): a scale factor, returned in st(0)
+	float sub_102e12e0();	// CAI_Component helper (stub 0x10006721): the owner's value at slot 249 (+0x3e4), returned in st(0)
 
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
 	static int *sub_102e0860();
