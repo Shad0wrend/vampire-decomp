@@ -51664,6 +51664,24 @@ CBaseEntity *sub_101c7690(const char *pLandmarkName, CChangeLevel *pCaller)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7fa0 size=0x3c
+typedef unsigned int (__fastcall *FlagSlotFn)(void *);
+typedef int (__fastcall *IntSlotFn)(void *);
+
+int sub_101c7fa0(void *pObj)
+{
+    if (pObj == 0) {
+        return 0;
+    }
+    if (!(((FlagSlotFn)(*(void ***)pObj)[117])(pObj) & 0x100)) {
+        if (((IntSlotFn)(*(void ***)pObj)[94])(pObj) != 0xb) {
+            ((IntSlotFn)(*(void ***)pObj)[94])(pObj);
+        }
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c8850 size=0x43
 #include "CTriggerPush.h"
 void *sub_100aa720(int size);

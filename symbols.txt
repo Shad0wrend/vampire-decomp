@@ -526,6 +526,7 @@
 0x10002d6f func   ?sub_101c6550@CTriggerHurt@@QAEHM@Z CTriggerHurt::sub_101c6550
 0x10002d79 func   _ai_network ai_network
 0x10002d9c func   ??0CUnknown101ec4f0@@QAE@H@Z CUnknown101ec4f0::CUnknown101ec4f0
+0x10002da1 func   ?sub_101c7fa0@@YAHPAX@Z sub_101c7fa0
 0x10002da6 func   ?vfunc272@CBaseAnimatingOverlay@@QAEHXZ CBaseAnimatingOverlay::vfunc272
 0x10002dab func   ?vfunc440@CNPC_VGuard1@@QAEHH@Z CNPC_VGuard1::vfunc440
 0x10002dbf func   _item_w_thirtyeight item_w_thirtyeight
