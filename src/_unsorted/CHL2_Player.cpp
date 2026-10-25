@@ -51,6 +51,20 @@ CHL2_Player *CHL2_Player::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034fd90 size=0x39
+// TARGET: CHL2_Player::sub_1034fd90
+#include "CHL2_Player.h"
+
+void sub_1000ecd2(int a, float f);
+
+int CHL2_Player::sub_1034fd90(int a)
+{
+    Vector v = vfunc367();
+    sub_1000ecd2(a, v.y + m_fe5c);
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034fde0 size=0x6c
 #include "CHL2_Player.h"
 #include "QAngle.h"
