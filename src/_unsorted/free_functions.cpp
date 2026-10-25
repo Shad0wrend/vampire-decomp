@@ -43677,6 +43677,31 @@ void CBasePlayer::sub_1017f4a0(int priority, CBaseEntity *pEntity, const Vector 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f600 size=0x31
+struct CUnk_1017f600
+{
+    char pad_0000[0x1d18];
+    char m_b1d18;
+    bool sub_1000ae3e();
+    int sub_10007ee6();
+    void sub_1001314c();
+    void sub_1017f600();
+};
+
+// TARGET: CUnk_1017f600::sub_1017f600
+void CUnk_1017f600::sub_1017f600()
+{
+    if (m_b1d18 != 0) {
+        if (!sub_1000ae3e()) {
+            m_b1d18 = 0;
+            if (sub_10007ee6() == 0) {
+                sub_1001314c();
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f650 size=0x6b
 #include "CNPC_VCop.h"
 #include "ConVar.h"
