@@ -84327,6 +84327,43 @@ bool CAI_BaseNPCTroika::sub_10297430(CAI_BaseNPCTroika *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10297940 size=0xb0
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Motor.h"
+
+void __fastcall sub_102e0b40(float *pMotor);
+
+struct CTroikaMotorView
+{
+	char m_pad0000[0x5d44];
+	CAI_Motor *m_pMotor;
+	char m_pad5d48[0x63e8 - 0x5d48];
+	float m_flYawOffset;
+};
+
+void CAI_BaseNPCTroika::sub_10297940(const float *pPosition)
+{
+	CTroikaMotorView *pView = (CTroikaMotorView *)this;
+	sub_102e0b40((float *)pView->m_pMotor);
+	pView->m_pMotor->sub_102e2020(pPosition, 0);
+	sub_10297a20();
+	float flYaw = vfunc221()[1] + pView->m_flYawOffset;
+	CAI_Motor *pMotor = pView->m_pMotor;
+	m_flags14b8 |= 0x8000000;
+	if (pMotor->m_28)
+	{
+		if (flYaw >= 180.0f)
+			flYaw -= 180.0f;
+		else
+			flYaw += 180.0f;
+	}
+	if (pMotor->m_1c == 0x43340000)
+		pMotor->m_34 = flYaw;
+	else
+		pMotor->m_34 = pMotor->sub_102e0a80(flYaw);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10298910 size=0x9f
 extern "C" int atoi(const char *);
 
