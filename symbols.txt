@@ -2187,6 +2187,7 @@
 0x100081f2 func   ?vfunc525@CNPC_VVampireBoss@@QAE_NH@Z CNPC_VVampireBoss::vfunc525
 0x100081f7 func   ?vfunc5@CWorld@@QAEPAV1@I@Z CWorld::vfunc5
 0x100081fc func   ?sub_104088d0@@YIXPAD@Z sub_104088d0
+0x10008201 func   ??0CTEDust@@QAE@PBD@Z CTEDust::CTEDust
 0x10008206 func   ?vfunc0@CNotifyList@@UAEPAXPAVCBaseEntity@@0@Z CNotifyList::vfunc0
 0x1000820b func   ?sub_101c88c0@CTriggerPush@@QAEPAV1@XZ CTriggerPush::sub_101c88c0
 0x10008210 func   ?sub_103a6ef0@CNPC_VSabbatLeader@@QAEHXZ CNPC_VSabbatLeader::sub_103a6ef0
