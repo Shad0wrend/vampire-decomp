@@ -54455,6 +54455,23 @@ Ent * __stdcall sub_101cd070(Ent *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cd340 size=0x31
+#include "CBaseEntity.h"
+
+int sub_101cd340(CBaseEntity *p)
+{
+    unsigned char c;
+    int m;
+    if (p->sub_100b3700() & 0x2000) {
+        return 0x202400b;
+    }
+    c = (unsigned char)p->sub_100b3700();
+    c &= 0x80;
+    m = c ? -1 : 0;
+    return (m & 0x10000) + 0x200400b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cdac0 size=0xa7
 #include "CUnknown1070b22c.h"
 
