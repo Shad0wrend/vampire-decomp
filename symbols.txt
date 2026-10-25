@@ -4888,6 +4888,7 @@
 0x10010a19 func   ?sub_101f96b0@CTraitEffectList@@QAEXPAVCTraitOwnerX@@H@Z CTraitEffectList::sub_101f96b0
 0x10010a32 func   ?sub_103e2000@CFlameCluster@@QAEXPAVCBaseEntity@@H@Z CFlameCluster::sub_103e2000
 0x10010a3c func   ?sub_100417c0@@YIPAUHashHolder@@PAU1@HE@Z sub_100417c0
+0x10010a69 func   ?sub_10334940@@YAMPBMHM@Z sub_10334940
 0x10010a6e func   ?sub_10337bd0@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::sub_10337bd0
 0x10010a78 func   ?sub_1013ab70@@YAXHHHH@Z sub_1013ab70
 0x10010a87 func   ?vfunc103@CNPCMaker_Zombie@@UAEXXZ CNPCMaker_Zombie::vfunc103

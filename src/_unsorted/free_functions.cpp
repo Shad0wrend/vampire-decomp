@@ -96584,6 +96584,34 @@ char CBaseCombatCharacter::sub_10334860(void *pCurrent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10334940 size=0xc4
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+extern float g_10619e68[];
+extern const float g_104454c4;
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+
+float sub_10334940(const float *pTable, int nEntries, float flValue)
+{
+    ScopeTrace trace("ReadDamageTable", g_106b8540);
+    int i = 0;
+    if (nEntries > 0) {
+        do {
+            if (flValue < pTable[i * 2])
+                break;
+            i++;
+        } while (i < nEntries);
+        if (i > 0) {
+            i--;
+            Msg("Damge %.0f, energy %.0f\n", (double)g_10619e68[i * 2], (double)FastSqrt(flValue));
+            return pTable[i * 2 + 1];
+        }
+    }
+    return g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10334b10 size=0xc8
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
