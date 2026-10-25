@@ -4,6 +4,8 @@
 
 #include "Vector.h"
 
+class CBaseEntity;
+
 struct LineRecord_t
 {
 	float m_flExpireTime;	// 0x00
@@ -35,4 +37,5 @@ public:
 	void sub_102d9ed0(const Vector *start, const Vector *end);	// adds a record that expires 2 seconds from now
 	PlaceRecord_t *sub_102da9e0(const Vector *pPos, const Vector *pMaxOffset, const Vector *pMinOffset);	// the first used place that the box around pPos touches (min side: pPos + pMinOffset >= place min; max side: pPos + the x of pMaxOffset <= place max, for all three axes), null when none
 	Vector sub_102d9fa0(bool bFlat, const float *pMinOffset, const float *pMaxOffset);	// a random point in the box (origin from slot 220 + RandomFloat(min - pMinOffset, max - pMaxOffset) per axis); z is left at the origin's z when bFlat is set
+	void sub_102da860(CBaseEntity *pNpc, const Vector *pOrigin, const Vector *pMinOffset, const Vector *pMaxOffset);	// "AddMarker": appends a place record for the NPC (the box around pOrigin) while there is room, else warns "AddMarker failed to add NPC '%s'"
 };
