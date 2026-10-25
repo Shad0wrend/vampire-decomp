@@ -34285,6 +34285,15 @@ void sub_1011d8e0(const char *file, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e010 size=0x3b
+#include "Vector.h"
+
+void sub_1011e010(Vector *a, Vector *b, Vector *out)
+{
+    CrossProduct(*a, *b, *out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011fa80 size=0x9a
 #include "CGameMovement.h"
 

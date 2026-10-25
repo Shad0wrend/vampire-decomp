@@ -994,6 +994,7 @@
 0x100045fc func   ?sub_103dbeb0@UtlVec8@@QAEPAU1@HH@Z UtlVec8::sub_103dbeb0
 0x10004601 func   ?CopyConstruct@@YAXPAVCBaseHandle@@ABV1@@Z CopyConstruct
 0x10004601 func   ?sub_102ce9f0@@YAXPAHPBH@Z sub_102ce9f0
+0x10004624 func   ?sub_1011e010@@YAXPAVVector@@00@Z sub_1011e010
 0x10004638 func   ?sub_10136a30@@YA_NPBD0PAD@Z sub_10136a30
 0x1000463d func   ?sub_1042c0c0@THL@@QAE_NHH@Z THL::sub_1042c0c0
 0x10004642 func   ?sub_101e4fe0@CVFeat_t@@QAEXPAUCVFeatKV@@@Z CVFeat_t::sub_101e4fe0
