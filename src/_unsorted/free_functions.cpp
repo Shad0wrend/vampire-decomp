@@ -923,6 +923,73 @@ void *sub_1002e140(void *pBuffer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002e7e0 size=0x13d
+#include "ScopeTrace.h"
+
+class CBaseEntity;
+
+struct PhysCustomView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6();
+	virtual int v7(void *a, int id, int b, void *c, void *out);
+	virtual int v8(void *a, int id, int b, void *c, void *out);
+};
+struct PhysSurfaceView {
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual int v3(const char *name);
+};
+struct PhysNotifyView {
+	virtual void v0();
+	virtual void v1(int pObject, void *pEntity);
+};
+struct PhysEntityView {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual const char **v9(void *out);
+};
+struct PhysTail {
+	int w[12];
+};
+struct PhysCreateParams {
+	char m_pad0000[0x610];
+	PhysTail m_tail;
+};
+
+extern PhysCustomView *g_10723940;
+extern PhysSurfaceView *g_10723944;
+extern PhysNotifyView *g_1053c5e0;
+extern PhysTail g_1046ecb4;
+
+int sub_1002e7e0(CBaseEntity *pEnt, int pObj, int b, void *c, const char *pszName, char bFlag, PhysCreateParams *pParams)
+{
+	ScopeTrace trace("PhysModelCreateCustom", g_106b8540);
+	PhysCreateParams local;
+	if (!pParams) {
+		local.m_tail = g_1046ecb4;
+		local.m_tail.w[1] = 0x42aa0000;
+		local.m_tail.w[2] = 0x6753c21c;
+		pParams = &local;
+	}
+	int id = -1;
+	if (pszName && *pszName)
+		id = g_10723944->v3(pszName);
+	pParams->m_tail.w[7] = (int)pEnt;
+	char tmp[4];
+	const char *pName = *((PhysEntityView *)pEnt)->v9(tmp);
+	if (!pName)
+		pName = g_106b8540;
+	pParams->m_tail.w[6] = (int)pName;
+	int ret;
+	if (bFlag)
+		ret = g_10723940->v8((void *)pObj, id, b, c, &pParams->m_tail);
+	else
+		ret = g_10723940->v7((void *)pObj, id, b, c, &pParams->m_tail);
+	if (ret)
+		g_1053c5e0->v1(ret, (void *)pObj);
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002e970 size=0xa0
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
