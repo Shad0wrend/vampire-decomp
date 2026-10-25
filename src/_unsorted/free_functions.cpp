@@ -91029,6 +91029,37 @@ bool CUnknown102ee120_x::sub_102f1690(HelperParams102f1690 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f1860 size=0x79
+#include "Vector.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct CSlot514View
+{
+	V100(a) V100(b) V100(c) V100(d) V100(e)
+	V10(f0) virtual void f10(); virtual void f11(); virtual void f12(); virtual void f13();
+	virtual void slot514(int nType, const Vector *pA, const Vector *pB, float *pDist);
+};
+
+class CUnknown102f1860
+{
+public:
+	int m_n0004;
+	CSlot514View *m_pTarget;	// 0x04
+	float sub_102f1860(int nType, const Vector &vecA, const Vector &vecB);
+};
+
+float CUnknown102f1860::sub_102f1860(int nType, const Vector &vecA, const Vector &vecB)
+{
+	float flDist = (vecA - vecB).Length();
+	if (nType == 2 || nType == 8)
+		flDist += flDist;
+	m_pTarget->slot514(nType, &vecA, &vecB, &flDist);
+	return flDist;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1900 size=0xd2
 #include "CAI_Pathfinder.h"
 
