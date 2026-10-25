@@ -32062,6 +32062,50 @@ void __stdcall sub_100f7fe0(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8030 size=0x153
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include <string.h>
+
+extern char g_106b8540[];	// the empty string
+
+struct ConeEntView : CEntityVSlots
+{
+    char pad0004[0x11c - 4];
+    const char *m_pszClassname;	// 0x11c
+    char pad0120[0x2b8 - 0x120];
+    float m_flField2b8;	// 0x2b8
+};
+
+// TARGET: CGlobalEntityList::sub_100f8030
+CBaseEntity *CGlobalEntityList::sub_100f8030(const Vector *pOrigin, const Vector *pDir, float flThreshold, const char *pszClassname)
+{
+    float flBest = flThreshold;
+    ConeEntView *pBest = 0;
+    for (ConeEntView *pEnt = (ConeEntView *)sub_100f7060(0); pEnt; pEnt = (ConeEntView *)sub_100f7060((CBaseEntity *)pEnt))
+    {
+        if (pEnt->m_flField2b8 != 0.0f)
+        {
+            Vector vecDelta = *pEnt->slot217() - *pOrigin;
+            VectorNormalize(vecDelta);
+            float flDot = DotProduct(vecDelta, *pDir);
+            if (flDot > flBest)
+            {
+                if (_strcmpi(pEnt->m_pszClassname ? pEnt->m_pszClassname : g_106b8540, pszClassname) == 0
+                    && _strcmpi(pEnt->m_pszClassname ? pEnt->m_pszClassname : g_106b8540, "worldspawn") != 0
+                    && _strcmpi(pEnt->m_pszClassname ? pEnt->m_pszClassname : g_106b8540, "soundent") != 0)
+                {
+                    flBest = flDot;
+                    pBest = pEnt;
+                }
+            }
+        }
+    }
+    return (CBaseEntity *)pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f81f0 size=0x127
 #include "Vector.h"
 #include "CBaseEntity.h"
