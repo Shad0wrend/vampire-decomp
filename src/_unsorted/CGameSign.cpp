@@ -40,3 +40,30 @@ void CGameSign::vfunc41(void *pPlayer)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10212ca0 size=0x95
+#include "CGameSign.h"
+
+#define SV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+// the entity vtable up to slot 368
+struct CTouchSlotsView
+{
+	SV10(a0) SV10(a1) SV10(a2) SV10(a3) SV10(a4) SV10(a5) SV10(a6) SV10(a7) SV10(a8) SV10(a9)
+	SV10(b0) SV10(b1) SV10(b2) SV10(b3) SV10(b4) SV10(b5) SV10(b6) SV10(b7) SV10(b8)
+	virtual void u190(); virtual void u191(); virtual void u192();
+	virtual Vector vfunc193();
+	SV10(c0) SV10(c1) SV10(c2) SV10(c3) SV10(c4) SV10(c5) SV10(c6) SV10(c7) SV10(c8) SV10(c9)
+	SV10(d0) SV10(d1) SV10(d2) SV10(d3) SV10(d4) SV10(d5) SV10(d6)
+	virtual void u364(); virtual void u365(); virtual void u366(); virtual void u367();
+	virtual Vector vfunc368();
+};
+
+void CGameSign::vfunc39(CBaseEntity *pOther)
+{
+	sub_10212810(pOther);
+	CBaseEntity::vfunc39(pOther);
+	m_vecToucherPos = ((CTouchSlotsView *)pOther)->vfunc368() * 2000.0f + ((CTouchSlotsView *)pOther)->vfunc193();
+}
+// END FUNCTION
