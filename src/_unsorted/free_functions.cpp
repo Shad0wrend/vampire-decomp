@@ -24841,6 +24841,32 @@ int __fastcall sub_100cd940(CListNode100cd940 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdb50 size=0x3a
+struct CListNode100cdb50 {
+	char pad[0x18];
+	CListNode100cdb50 *next;
+};
+
+struct CListHolder100cdb50 {
+	CListNode100cdb50 *head;
+};
+
+void sub_1000205e(void *p);
+
+void __fastcall sub_100cdb50(CListHolder100cdb50 *pThis)
+{
+	if (pThis->head) {
+		CListNode100cdb50 *n = pThis->head->next;
+		while (n) {
+			pThis->head->next = n->next;
+			sub_1000205e(n);
+			n = pThis->head->next;
+		}
+		sub_1000205e(pThis->head);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdba0 size=0x82
 #include "CUnknown100cdba0.h"
 
