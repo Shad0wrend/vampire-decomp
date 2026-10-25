@@ -78,6 +78,28 @@ l30:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10374280 size=0x3f
+#include "vampire.h"
+#include "CNPC_VDog.h"
+
+extern void (*g_109f3628)(const char *pszFormat, ...);
+
+// TARGET: CNPC_VDog::vfunc259
+void CNPC_VDog::vfunc259(int *pEvent)
+{
+    if (*pEvent != 0xbb9)
+    {
+        CNPC_VAnimal::vfunc259(pEvent);
+        return;
+    }
+    if (sub_1032e7b0())
+    {
+        sub_10374f40();
+        g_109f3628("Gots a doggie bite!\n");
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103742d0 size=0x80
 #include "CBaseEntity.h"
 #include "CNPC_VDog.h"
