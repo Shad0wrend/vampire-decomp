@@ -183,6 +183,31 @@ void CSave::vfunc25(const float *pValues, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0ad0 size=0x81
+#include "CSave.h"
+
+struct CSaveEntityBlockView {
+    char pad[0x12c4];
+    int m_nLandmark;
+    char pad2[0x12dc - 0x12c8];
+    Vector m_vecLandmark;
+};
+extern Vector g_1070d1b0;
+
+void CSave::vfunc30(const char *pszName, const Vector &value)
+{
+    CSaveEntityBlockView *pBlock = (CSaveEntityBlockView *)m_pEntityBlock;
+    const Vector *pOffset;
+    if (pBlock->m_nLandmark)
+        pOffset = &pBlock->m_vecLandmark;
+    else
+        pOffset = &g_1070d1b0;
+    Vector vecOffset = *pOffset;
+    Vector vecOut = value - vecOffset;
+    vfunc22(pszName, vecOut);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0b90 size=0x7c
 #include "CSave.h"
 
