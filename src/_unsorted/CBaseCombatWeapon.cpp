@@ -524,6 +524,14 @@ bool CBaseCombatWeapon::vfunc280(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253c50 size=0x32
+#pragma warning(disable : 4716)
+bool CBaseCombatWeapon::vfunc315()
+{
+    sub_10253b70(vfunc342(0), vfunc343(), 0xb4, vfunc344());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253ca0 size=0x17c
 #include "CBaseAnimating.h"
 
