@@ -95830,6 +95830,34 @@ void sub_103706b0(CWitnessPlayer *pPlayer, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103708e0 size=0x40
+#include "CNPC_VCop.h"
+
+extern int vt_104b09f4[];
+extern int vt_104b09c4[];
+
+struct CUnknownBase103708e0 {
+    void sub_100037f6();
+};
+
+struct CUnknownMember103708e0 {
+    void sub_1000afa1();
+};
+
+// TARGET: CNPC_VCop::sub_103708e0
+CNPC_VCop *CNPC_VCop::sub_103708e0()
+{
+    ((CUnknownBase103708e0 *)this)->sub_100037f6();
+    *(int *)((char *)this + 0x6664) = -1;
+    ((CUnknownMember103708e0 *)((char *)this + 0x6673))->sub_1000afa1();
+    *(int **)this = vt_104b09f4;
+    *(int **)((char *)this + 0x19b0) = vt_104b09c4;
+    *(unsigned int *)((char *)this + 0x4c) |= 0x80;
+    *((char *)this + 0x65f8) = 1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10370a20 size=0x33
 void sub_1000ef84();
 void sub_1000621c();
