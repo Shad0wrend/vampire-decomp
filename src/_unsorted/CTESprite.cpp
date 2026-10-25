@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10067c30 size=0x3c
+#include "CTESprite.h"
+
+// TARGET: CTESprite::CTESprite
+CTESprite::CTESprite(const char *name) : CBaseTempEntityHead(name)
+{
+    m_c[0] = 0;
+    m_c[1] = 0;
+    m_c[2] = 0;
+    *(int *)((char *)this + 0x28) = 0;
+    *(int *)((char *)this + 0x2c) = 0;
+    *(int *)((char *)this + 0x30) = 0;
+    m_nModelIndex = 0;
+    m_fScale = 0.0f;
+    m_nBrightness = 0;
+    *(int *)((char *)this + 0x24) = 0;
+    *(unsigned char *)((char *)this + 0x34) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067c80 size=0x1e
 #include "CTESprite.h"
 
