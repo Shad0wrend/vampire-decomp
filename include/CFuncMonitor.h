@@ -15,6 +15,7 @@ public:
 
 	// Slot 32, called directly so far; declared as a plain member.
 	bool vfunc32(void *pEntity);	// true if pEntity is the camera or no camera is set
+	void vfunc39(void *pArg);	// slot 39: CBaseEntity::vfunc39(pArg), then the entity found by "FuncMonitor" (sub_10070470) gets its byte at +0x5e8 cleared and pArg's sub_1017cef0 / sub_1015ef40 run
 	CFuncMonitor *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 	void sub_101150f0(const char *szName);	// slot 113 helper: finds the entity of that name, keeps it at +0x45c when it is a CPointCamera (else null) and its edict index (engine slot 35) at +0x458 (0 without a camera)
