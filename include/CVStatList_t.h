@@ -35,6 +35,7 @@ public:
 	void sub_102016a0(int stat);	// "CVStatList_t::SetMax": scope trace, when the stat is valid moves the base value by (the stat's MaxBuy-like value record evaluated for the owner entity) - (the stat's current value) and tells the info's action list (+0x10c) about the change
 	void sub_10201590(int stat);	// "CVStatList_t::SetMin": like SetMax with the stat's minimum value record (sub_101ff010)
 	int sub_102012d0(int stat);	// "CVStatList_t::GetBoundedBase": 0 for an invalid stat, else the stat's base value with the owner's modifiers applied (sub_101f9bf0), clamped to the stat's upper value record (sub_101ff060) and then to its lower one (sub_101ff010), both evaluated for the owner entity
+	int sub_10201190(int stat);	// "CVStatList_t::Get": scope trace, 0 for an invalid stat, else the base value with the owner's modifiers applied (CUnknown101f9c70::sub_101f9c70 of the info list's field at +0x2c), clamped to the stat's upper value record and then to its lower one
 };
 
 // The stat lists of a character: the object at +0x13a8 of a CBaseCombatCharacter (its CUtlVector of lists at +0x8:
