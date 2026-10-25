@@ -58909,6 +58909,36 @@ void CUnknown101f0330::sub_101f0330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0440 size=0x3e
+extern char g_1073a7e0[];
+extern const char g_105a5974[];
+extern char g_106b8540[];
+int sub_10431c2f(char *, const char *, ...);
+
+struct CFoo {
+    char *sub_101f0440(int i);
+};
+
+char *CFoo::sub_101f0440(int i)
+{
+    int *pItem;
+    char *pA;
+    char *pB;
+
+    pItem = ((int **)*(int *)((char *)this + 0x18))[i];
+    pA = (char *)pItem[2];
+    if (pA == 0) {
+        pA = g_106b8540;
+    }
+    pB = (char *)pItem[1];
+    if (pB == 0) {
+        pB = g_106b8540;
+    }
+    sub_10431c2f(g_1073a7e0, g_105a5974, pB, pA);
+    return g_1073a7e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0740 size=0xac
 extern char g_106b8540[];
 int sub_10431c2f(char *, const char *, ...);
