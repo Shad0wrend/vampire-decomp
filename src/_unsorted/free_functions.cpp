@@ -42749,6 +42749,34 @@ void CBasePlayer::sub_10170cf0(unsigned int flags, char bSet)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170d60 size=0xd1
+#include "CBasePlayer.h"
+#include "CUnknown101c26d0.h"
+#include <stdlib.h>
+
+struct CGlobalVarsView {
+    char pad[0xc];
+    float curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+
+void CBasePlayer::sub_10170d60()
+{
+    if (!(m_f2148 > g_1070b228->curtime)) {
+        m_f2148 = g_1070b228->curtime + 5.0f;
+        *(int *)((char *)this + 0x210) = 0;
+        CUnknown101c26d0 info;
+        info.sub_101c26d0(this, this, 10.0f, 0x1000, 0, 0, -1);
+        Vector v;
+        v.x = rand() * 9.155553e-5f + 2.0f;
+        v.y = rand() * 9.155553e-5f + 2.0f;
+        v.z = rand() * 9.155553e-5f + 2.0f;
+        info.m_vecForce = v;
+        vfunc144(&info);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170eb0 size=0xec
 #include "CUnknown10170eb0.h"
 
