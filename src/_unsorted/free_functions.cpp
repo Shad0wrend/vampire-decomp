@@ -63673,6 +63673,35 @@ CUnknown102029c0 *CUnknown10202d10::sub_10202d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202fd0 size=0x3f
+struct CSlotIter
+{
+	virtual int slot0(const char *pszName, int a);
+	virtual int slot1();
+	virtual int slot2();
+	virtual int slot3();
+	virtual CSlotIter *slot4();
+	virtual CSlotIter *slot5();
+};
+
+extern char g_105a8a10[];
+
+struct CUnknown10202fd0
+{
+	void sub_10009d95(CSlotIter *pObj, int nValue);	// stub 0x10009d95, called directly
+	void sub_10202fd0(CSlotIter *pObj);
+};
+
+// TARGET: CUnknown10202fd0::sub_10202fd0
+void CUnknown10202fd0::sub_10202fd0(CSlotIter *pObj)
+{
+	for (CSlotIter *p = pObj->slot4(); p; p = p->slot5()) {
+		int nValue = p->slot0(g_105a8a10, 1);
+		sub_10009d95(pObj, nValue);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203190 size=0x66
 #include "CUnknown102029c0.h"
 struct StatOwner2 {
