@@ -29207,6 +29207,36 @@ struct CUnknown100eb420 { int pad[4]; int m_p; bool sub_100eb420(); };
 bool CUnknown100eb420::sub_100eb420() { if (m_p != 0) return true; return false; }
 // END FUNCTION
 
+// FUNCTION: 0x100eb440 size=0x34
+struct CZeroedView {
+    unsigned char m_b00;
+    char m_pad01[7];
+    int m_d08[15];
+};
+
+// TARGET: sub_100eb440
+CZeroedView *__fastcall sub_100eb440(CZeroedView *p)
+{
+    p->m_d08[0] = 0;
+    p->m_d08[1] = 0;
+    p->m_d08[2] = 0;
+    p->m_d08[3] = 0;
+    p->m_d08[4] = 0;
+    p->m_d08[5] = 0;
+    p->m_d08[6] = 0;
+    p->m_d08[7] = 0;
+    p->m_d08[8] = 0;
+    p->m_d08[9] = 0;
+    p->m_d08[10] = 0;
+    p->m_d08[11] = 0;
+    p->m_d08[12] = 0;
+    p->m_d08[13] = 0;
+    p->m_d08[14] = 0;
+    p->m_b00 = 0;
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb870 size=0x133
 #include "CUnknown10248a50.h"
 #include <string.h>
