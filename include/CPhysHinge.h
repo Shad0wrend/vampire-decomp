@@ -47,6 +47,7 @@ public:
 	virtual CPhysHinge *vfunc5(unsigned int flags);	// scalar deleting destructor
 
 	void sub_100121ac();	// destructor body
+	void vfunc103();	// slot 103 (plain member): initialises the hinge parameters: world position = the origin (slot 220), axis = the stored axis minus the origin, normalised and snapped to a main axis when it is close to one (sub_101cf680, 0.01f), no rotation limits / velocity / torque, force / torque limits from the members at +0x464 / +0x468 times a constant, active flag from spawnflag bit 2
 	void *vfunc241(void *pGroup, CPhysConstraintObjects *pObjects);	// slot 241 (declared as a plain member): "ERROR: Hinge with bad data!!!" and null when the hinge axis is the zero vector; else fills the hinge parameters (force / torque limits scaled from the members at +0x464 / +0x468, active flag from spawnflag bit 2, hinge friction at +0x4c0 as the axis torque) and asks the physics environment (global 0x10723940, slot 13) to create the hinge constraint
 
 	char m_pad0004[0x204 - 4];
