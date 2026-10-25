@@ -24709,6 +24709,23 @@ float sub_100c5720(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5b00 size=0xb1
+struct CBoneOwner { int pad[4]; int m_p; };
+void sub_10011b62(CBoneOwner *p, int idx, Vector *pos, Vector *ang);
+void sub_1013a7e0(Vector *v, float f, Vector *out);
+char sub_100c5b00(CBoneOwner *p, int a, int b, Vector *turn, Vector *pOut)
+{
+    if (!p->m_p) return 0;
+    Vector p0, a0, p1, a1;
+    sub_10011b62(p, a, &p0, &a0);
+    sub_10011b62(p, b, &p1, &a1);
+    Vector delta = p1 - p0;
+    pOut->y = a1.y - a0.y;
+    sub_1013a7e0(&delta, -a0.y, turn);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6280 size=0xa0
 #include <string.h>
 struct SModelLoader {
