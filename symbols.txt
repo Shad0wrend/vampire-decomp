@@ -2297,6 +2297,7 @@
 0x100083dc func   ?sub_100eb400@@YIXPAH@Z sub_100eb400
 0x100083e6 func   ?sub_101b98d0@@YIXPAH@Z sub_101b98d0
 0x100083f5 func   ?vfunc0@CTriggerTraceEnum@@UAE_NPAVCBaseEntity@@@Z CTriggerTraceEnum::vfunc0
+0x100083fa func   ?vfunc134@CInfoIntermission@@QAEXXZ CInfoIntermission::vfunc134
 0x1000840e func   ?sub_103f3d70@@YAHXZ sub_103f3d70
 0x10008413 func   ?vfunc404@CNPC_VPlayerController@@QAEHPAX@Z CNPC_VPlayerController::vfunc404
 0x1000841d func   ?sub_10348a60@@YI_NPAVCBaseEntity@@@Z sub_10348a60
