@@ -1,4 +1,4 @@
-// CHL2_Player: the HL2 player entity (derived from CBasePlayer at +0x0).
+// CHL2_Player: the HL2 player entity (derived from CBasePlayer at +0).
 // Slots 0..439 are placeholders that keep the slot indices; the named ones
 // from 440 on are the ones decompiled code uses.
 #pragma once
@@ -70,9 +70,9 @@ public:
 	virtual float vfunc480();
 	virtual float vfunc481();
 
-	int sub_1034fd90(int a);	// slot 370 (called through the vtable): stores the forward x (slot 367's x + +0xe5c) through sub_1000ecd2(a, x) and answers a
+	int sub_1034fd90(int a);	// slot 370 (called through the vtable): stores the forward y (slot 367's y + +0xe5c) through sub_1000ecd2(a, y) and answers a
 	char m_pad0004[0xe5c - 4];	// 0x0004 .. 0x0e5b
-	float m_fe5c;	// 0x0e5c: added to the forward x of slot 367 (slot 370)
+	float m_fe5c;	// 0x0e5c: added to the forward y of slot 367 (slot 370)
 	char m_pad0e60[0x2464 - 0xe60];	// 0x0e60 .. 0x2463
 	CHL2_PlayerMember2464 m_u2464;
 	char m_pad2468[0xC0];	// 0x2468 .. 0x2527
