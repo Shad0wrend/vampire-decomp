@@ -74962,6 +74962,37 @@ void CUnknownCaller102562b0::sub_102562b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10256300 size=0x3e
+struct CUnknownGlobalObj10256300
+{
+	void sub_1000914c(void *pTarget, int nValue);	// stub 0x1000914c, called directly
+};
+
+extern CUnknownGlobalObj10256300 g_1074df78;
+
+struct CUnknown10256300
+{
+	void *sub_102521f0();	// CBaseCombatWeapon::sub_102521f0 (stub 0x10014fab), called directly
+	void *sub_102517b0();	// CBaseCombatWeapon::sub_102517b0 (stub 0x10010ea6), called directly
+	void sub_10256300();
+};
+
+// TARGET: CUnknown10256300::sub_10256300
+void CUnknown10256300::sub_10256300()
+{
+	if (sub_102521f0()) {
+		char *pEntity = (char *)sub_102521f0();
+		if (pEntity) {
+			void *pTarget = *(void **)(pEntity + 0xa8);
+			if (pTarget) {
+				char *pOwner = (char *)sub_102517b0();
+				g_1074df78.sub_1000914c(pTarget, *(int *)(pOwner + 0x25e0));
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10256350 size=0x73
 #include "CUnknown101d8a70.h"
 
