@@ -430,6 +430,50 @@ void CSceneEntity::vfunc245()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10083700 size=0x120
+#include "CSceneEntity.h"
+#include "CUnknown1007ce20.h"
+
+void sub_10081190(const char *pszFormat, double flTime, const char *pszName);
+
+void CSceneEntity::vfunc249(float a, int b, CSceneEvent *pEvent)
+{
+	CSceneEventActorEnt *pActor = 0;
+	CSceneEventActor *pEventActor = pEvent->sub_10001b5e();
+	if (pEventActor)
+		pActor = vfunc267(pEventActor->sub_10008a99());
+
+	sub_10081190("%8.4f:  finish %s\n", a, pEvent->sub_10075d00());
+
+	switch (pEvent->sub_100029c8())
+	{
+	case 2:
+		if (pActor)
+			vfunc253(b, pActor, pEvent);
+		break;
+	case 10:
+		if (pActor)
+			vfunc255(b, pActor, pEvent);
+		break;
+	case 6:
+		if (pActor)
+			vfunc257(b, pActor, pEvent);
+		break;
+	case 7:
+		if (pActor)
+			vfunc263(b, pActor, pEvent);
+		break;
+	case 11:
+		{
+			CUnknown1007ce20 *pScene = pEvent->sub_10076710();
+			if (pScene)
+				pScene->sub_1007cfc0(1, 0, 0);
+		}
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10083bf0 size=0x7e
 #include "CSceneEntity.h"
 
