@@ -23,6 +23,42 @@ bool CFuncMonitor::vfunc32(void *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115260 size=0x3f
+#include "CFuncMonitor.h"
+
+extern char g_10570710[];
+void *sub_10070470(const char *pszName, int a, void *p1, void *p2, void *p3);
+
+struct CFuncMonitorBaseView
+{
+	void sub_10015262(void *pEntity);	// CBaseEntity::vfunc39 (stub 0x10015262), called directly
+};
+
+struct CFuncMonitorArgView
+{
+	void sub_1017cef0(void *pPlayer);	// CBasePlayer::sub_1017cef0 (stub 0x100015cd), called directly
+	void sub_1015ef40();	// stub 0x10011f68, called directly
+};
+
+struct CFuncMonitorFoundView
+{
+	char m_pad0000[0x5e8];
+	char m_b05e8;	// +0x5e8
+};
+
+// TARGET: CFuncMonitor::vfunc39
+void CFuncMonitor::vfunc39(void *pArg)
+{
+	((CFuncMonitorBaseView *)this)->sub_10015262(pArg);
+	void *pFound = sub_10070470(g_10570710, 0, this, this, this);
+	if (pFound) {
+		((CFuncMonitorFoundView *)pFound)->m_b05e8 = 0;
+		((CFuncMonitorArgView *)pArg)->sub_1017cef0(pFound);
+		((CFuncMonitorArgView *)pArg)->sub_1015ef40();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101153f0 size=0x84
 #include "CFuncMonitor.h"
 #include "CEntityVSlots.h"
