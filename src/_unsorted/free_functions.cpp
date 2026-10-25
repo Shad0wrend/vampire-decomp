@@ -93706,6 +93706,28 @@ void CUnk_1030b4d0::sub_1030b4d0(int a, char b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b6b0 size=0xc5
+#include "CUnknown1030b610.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+// TARGET: CUnknown1030b610::sub_1030b6b0
+Vector CUnknown1030b610::sub_1030b6b0()
+{
+    if (EHandle_Get(m_hTarget))
+    {
+        const Vector *pPos = (const Vector *)m_sub24.sub_1031a000();
+        if (pPos)
+        {
+            m_vecDir = *((CEntityVSlots *)EHandle_Get(m_hTarget))->slot217() - *pPos;
+            VectorNormalize(m_vecDir);
+        }
+    }
+    return m_vecDir;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b7c0 size=0xd
 extern CUnknown1030bc20_Record g_10936afc;
 CUnknown1030bc20_Record *CUnknown1030bc20::sub_1030b7c0()
