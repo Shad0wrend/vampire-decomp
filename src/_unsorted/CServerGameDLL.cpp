@@ -75,6 +75,29 @@ void CServerGameDLL::vfunc4(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011adc0 size=0x32
+// TARGET: sub_1011adc0
+#include "CGlobalEntityList.h"
+
+void sub_1000e304();
+void sub_100084a9();
+void sub_1001587a();
+extern unsigned char g_1070b267;
+extern int g_1072c464;
+extern int g_106eb5d8;
+
+void sub_1011adc0()
+{
+    g_1070b267 = 1;
+    sub_1000e304();
+    sub_100084a9();
+    g_1072c464 = 0;
+    ((CGlobalEntityList *)&g_106eb5d8)->sub_100f6ec0();
+    sub_1001587a();
+    g_1070b267 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ae50 size=0x3e
 #include "CServerGameDLL.h"
 
