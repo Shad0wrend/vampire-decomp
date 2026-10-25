@@ -6774,6 +6774,7 @@
 0x1043e327 func   __strdup _strdup
 0x1043e352 func   _signal signal
 0x1043e496 func   _raise raise
+0x1043e780 func   ?_strcmpi@@YAHPBD0@Z _strcmpi
 0x1043e780 func   __strcmpi _strcmpi
 0x1043e780 func   __stricmp _stricmp
 0x1043e80c func   __itoa _itoa
