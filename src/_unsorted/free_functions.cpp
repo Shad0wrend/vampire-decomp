@@ -12720,6 +12720,27 @@ void *CUnknown1007a2c0::sub_1007a2c0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a340 size=0x33
+int __stdcall sub_1000d701();
+int __stdcall sub_1000a470(int i);
+
+int __stdcall sub_1007a340(int p)
+{
+    int i = 0;
+    int n = sub_1000d701();
+    if (n > 0) {
+        do {
+            if (p == sub_1000a470(i)) {
+                return i;
+            }
+            i++;
+            n = sub_1000d701();
+        } while (i < n);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b7b0 size=0x17a
 #include "CUnknown1007b7b0.h"
 #include "CUnknown1007bb30.h"
