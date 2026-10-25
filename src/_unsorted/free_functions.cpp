@@ -74122,6 +74122,27 @@ struct CUnknown102477c0 { int p[6]; int a; int b; void sub_102477c0(); };
 void CUnknown102477c0::sub_102477c0() { a = 0; b = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10247c50 size=0x3b
+struct CUnk10247c50
+{
+    int m_n0000;
+
+    void sub_10013958(int a);
+    void sub_10015258(int a, int b);
+    CUnk10247c50 *sub_10247c50(int a, int b, int c, int d, int e);
+};
+
+// TARGET: ?sub_10247c50@CUnk10247c50@@QAEPAU1@HHHHH@Z
+CUnk10247c50 *CUnk10247c50::sub_10247c50(int a, int b, int c, int d, int e)
+{
+    m_n0000 = 0;
+    sub_10013958(a);
+    sub_10015258(b, c);
+    sub_10015258(d, e);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102480f0 size=0x159
 struct IFileSys
 {
