@@ -22512,6 +22512,38 @@ void CUnknown100b7c60::sub_100b7c60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7cc0 size=0x33
+// TARGET: sub_100b7cc0
+struct CVirtBox_100b7cc0 {
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual void vfunc5();
+    virtual void vfunc6(void *p);
+};
+struct CVirtList_100b7cc0 {
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual void vfunc5();
+    virtual void vfunc6();
+    virtual void vfunc7();
+    virtual void vfunc8();
+    virtual char vfunc9(int flag, int a, int b, int c, int d);
+    void sub_100b7cc0(int *p);
+};
+void CVirtList_100b7cc0::sub_100b7cc0(int *p)
+{
+    if (vfunc9(0, p[0], p[1], p[2], p[3])) {
+        ((CVirtBox_100b7cc0 *)((char *)this - 4))->vfunc6(p);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b8520 size=0x117
 #include "SendProp.h"
 
