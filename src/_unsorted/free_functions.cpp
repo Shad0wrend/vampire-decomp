@@ -40151,6 +40151,27 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016b9d0 size=0x3e
+// TARGET: sub_1016b9d0
+int *__fastcall sub_1016b9d0(int *self)
+{
+    int *pFirst = ((int *(__fastcall *)(void *))((*(int **)self)[0x344 / 4]))(self);
+    if (pFirst != 0) {
+        int nClass = ((int (__fastcall *)(void *))((*(int **)pFirst)[0x178 / 4]))(pFirst);
+        if (nClass == 7) {
+            int *pSecond = (int *)pFirst[0x36c / 4];
+            if (pSecond != 0) {
+                char bOk = ((char (__fastcall *)(void *))((*(int **)pSecond)[0xd0 / 4]))(pSecond);
+                if (bOk != 0) {
+                    return pSecond;
+                }
+            }
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016bb50 size=0x18f
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
