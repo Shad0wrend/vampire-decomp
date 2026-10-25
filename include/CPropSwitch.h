@@ -9,6 +9,7 @@ public:
 
 	virtual void vfunc103();	// slot 103 "CPropSwitch::Spawn": the CBaseProp spawn, effects 0xa0 (+0x19c), and unless spawn flag 0x8000 is set a bounding box solid (SOLID_BBOX, inlined scope trace "CBaseEntity::SetSolid") sized from the model header (+0xb4 / +0xc0), collision group 1, partition handle and sub_100b3b00; then the starts-on byte (+0x7a4, flag 0x4000) and the state (+0x670 / +0x7a5, flag 0x2000)
 	void vfunc104();
+	virtual void vfunc130(int a);	// slot 130: stores the flag at +0x7a5 when the state at +0x73c is 2 (set) or 1 (clear), then CBaseAnimating::vfunc130 (stub 0x10009e6c) with the argument
 	void sub_1018e0d0();
 	CPropSwitch *sub_1020d5f0();	// as in CKeepUpright (transplant)
 	float sub_1020df00(int sequence);	// starts the animation sequence (negative: sequence 0): resets the sequence info, cycle 0, animtime = curtime and clears flag 0x40000 for a valid one, then forces a transmit, sets the think function 0x100080b7, the next think and returns the sequence's duration
