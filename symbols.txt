@@ -5806,6 +5806,7 @@
 0x10014fa6 func   ?sub_100c7650@@YAPAXPAUStudioHdr@@HPAPAU1@PAMPBM@Z sub_100c7650
 0x10014fba func   ?vfunc5@CEnvParticle@@QAEPAV1@I@Z CEnvParticle::vfunc5
 0x10014fbf func   ?RemoveRebalance@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEXG@Z CUtlRBTree<CRBTree16Entry8,unsigned short>::RemoveRebalance
+0x10014fe2 func   ?vfunc130@CAI_Hint@@UAEXH@Z CAI_Hint::vfunc130
 0x10014ff6 func   ?sub_10298910@CAI_BaseNPCTroika@@QAEXPBD@Z CAI_BaseNPCTroika::sub_10298910
 0x10015000 func   ?sub_103345d0@CZeroFields103345d0@@QAEXXZ CZeroFields103345d0::sub_103345d0
 0x1001500a func   ?sub_10310130@CAI_Senses@@QAEHH@Z CAI_Senses::sub_10310130

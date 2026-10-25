@@ -62,3 +62,23 @@ CAI_Hint *CAI_Hint::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102d3ec0 size=0x6c
+#include "CAI_Hint.h"
+#include "CBaseEntity.h"
+
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+void CAI_Hint::vfunc130(int a)
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc130(a);
+	char *pNode = sub_102d3e60();
+	if (!pNode) {
+		DevMsg("Warning: AI hint has incorrect or no AI node\n");
+		return;
+	}
+	Vector vecPos = *(Vector *)(pNode + 8);
+	vfunc181(&vecPos, 0, 0);
+	*(CAI_Hint **)(pNode + 0xa0) = this;
+}
+// END FUNCTION
