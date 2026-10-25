@@ -34,4 +34,5 @@ public:
 	Vector &sub_1024d7b0(Vector &out) const;	// column 1 (GetLeft), out of line; returns out
 	Vector &sub_1024d7e0(Vector &out) const;	// column 2 (GetUp), out of line; returns out
 	void sub_1024d920(VMatrix &out) const;
+	void sub_1024d500(VMatrix &ret) const;	// "VMatrix::InverseTR": ret = the inverse of a rotation + translation matrix (transposed 3x3, the translation transformed by it and negated, bottom row 0 0 0 1)
 };
