@@ -37372,6 +37372,15 @@ void sub_10138630(const matrix3x4_t &in, matrix3x4_t &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138870 size=0x3b
+#include "Vector.h"
+
+void sub_10138870(Vector *a, Vector *b, Vector *out)
+{
+    CrossProduct(*a, *b, *out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101388c0 size=0x10
 int sub_101388c0(int x)
 {
