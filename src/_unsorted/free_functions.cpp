@@ -57159,6 +57159,28 @@ void sub_101d20a0(EntV *a, EntV *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2300 size=0xb5
+#include "Vector.h"
+#include "CEntityVSlots.h"
+
+void sub_10139970(const Vector *dir, Vector *angles);
+
+bool sub_101d2300(CEntityVSlots *pEnt, CEntityVSlots *pTarget)
+{
+	if (pEnt && pTarget)
+	{
+		Vector dir = *pTarget->slot217() - *pEnt->slot217();
+		VectorNormalize(dir);
+		Vector angles;
+		sub_10139970(&dir, &angles);
+		pEnt->slot64(&angles.x);
+		pEnt->slot218(&angles);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2460 size=0x9a
 #include "CRecipientFilter.h"
 
