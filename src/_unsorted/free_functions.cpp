@@ -82219,6 +82219,29 @@ int CAI_BaseNPCTroika::sub_1029f370(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f730 size=0x33
+struct CLazyTroikaView {
+    char pad0[0x659c];
+    int m_n659c;
+    unsigned char m_b65a0;
+    int sub_1000e64c(int a);
+    int sub_1029f730(int a);
+};
+
+// TARGET: CLazyTroikaView::sub_1029f730
+int CLazyTroikaView::sub_1029f730(int a)
+{
+    if (m_b65a0 == 0)
+        return 0;
+    int v = m_n659c;
+    if (v == 0) {
+        v = sub_1000e64c(a);
+        m_n659c = v;
+    }
+    return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0eb0 size=0xb
 void __fastcall sub_100037e2(void *);
 void __fastcall sub_102a0eb0(char *self)

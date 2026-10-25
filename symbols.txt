@@ -1684,6 +1684,7 @@
 0x100069ba func   ?vfunc254@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc254
 0x100069ce func   ?vfunc5@CNPC_VWolfMorph@@QAEPAV1@I@Z CNPC_VWolfMorph::vfunc5
 0x100069d8 func   ?sub_102296e0@@YIDPADPAXHH@Z sub_102296e0
+0x100069e7 func   ?sub_1029f730@CLazyTroikaView@@QAEHH@Z CLazyTroikaView::sub_1029f730
 0x10006a05 func   ?sub_10067b70@@YAXPAVCUnknown1019d130@@MPBVVector@@HH1@Z sub_10067b70
 0x10006a19 func   ?vfunc32@CPhysicsPropContested@@UAE_NH@Z CPhysicsPropContested::vfunc32
 0x10006a46 func   ?sub_101251b0@CHolderOuter8@@QAE_NXZ CHolderOuter8::sub_101251b0
