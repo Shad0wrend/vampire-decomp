@@ -74,3 +74,4 @@
 	void sub_1033bf50(int a);	// stub 0x1000e7e1, run first by the BloodHeal input handler
 	void sub_102c3580(struct inputdata_t &data);	// "CBaseCombatCharacter::InputSetFrenzyRate"-like (slot of the input table): the input's float (0 when it is not a float) picks the animation rate state at +0x1484 (exactly 1.0f or -1.0f: 0 and rate -1.0f; at least 1.0f: 3; else 0 with the rate clamped up to 0.001f), then CBaseAnimating::sub_1008d230(rate) as a tail call
 	void sub_1008d230(float flRate);	// CBaseAnimating::SetPlaybackAndSpeed (stub 0x10012080), called directly
+	void sub_103455a0(CBaseEntity *pTarget, void *pInfo, Vector *pOut);	// a velocity vector toward pTarget: zero vector without a target; else the facing built from the pitch -45 degrees and a yaw offset by the distance (sub_101d2c70 of the center-to-center delta plus a per-kind constant of the info byte at +0xb8), scaled by (GetRawAttackValue * k1 * k2 + 1.0f) times a factor picked by the info byte at +0xba
