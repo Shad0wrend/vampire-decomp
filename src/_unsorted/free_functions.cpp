@@ -54630,6 +54630,30 @@ S101d61e0 *CUnknown101d6750::sub_101d6750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6aa0 size=0x3c
+struct CUnk101d6aa0Item {
+    bool sub_100028e7(int p);
+    void sub_10004d09(int p);
+};
+
+struct CUnk101d6aa0 {
+    char pad[8];
+    int count;
+    CUnk101d6aa0Item **items;
+    void sub_101d6aa0(int p);
+};
+
+// TARGET: sub_101d6aa0
+void CUnk101d6aa0::sub_101d6aa0(int p)
+{
+    for (int i = 0; i < count; i++) {
+        if (items[i]->sub_100028e7(p)) {
+            items[i]->sub_10004d09(p);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6af0 size=0xa9
 #include "CUnknown101d7520.h"
 #include "CStatDefault3List.h"
