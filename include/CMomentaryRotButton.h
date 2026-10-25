@@ -2,6 +2,7 @@
 #pragma once
 
 #include "COutputEvent.h"
+#include "Vector.h"
 
 class CMomentaryRotButton
 {
@@ -18,7 +19,7 @@ public:
 	void sub_100cacb0(float flAngle, bool bFlag);	// stub 0x1000be60: starts the movement to the angle
 	void sub_100cae90();	// the movement finished: stops the angular velocity, reports the final position (sub_100cae20 with the fraction of the current angles), fires the output at +0x58c for the entity of the handle at +0x53c, clears the used flag (+0x5d4) and, for a button with spawn flag 0x10 and a positive return delay (+0x5dc), arms the return think (sub_100cafb0 after the local time + a constant, direction +0x5d8 = -1), else clears the think
 	void sub_100cae20(float flValue, void *pActivator);	// stub 0x100140e7: when the value differs from the one at +0x55c, stores it there and fires that output for the activator
-	void sub_100cafb0();	// the return think (stub 0x1001028f)
+	void sub_100cafb0();	// the return think (stub 0x1001028f): once the button is back at its start angles (fraction not above zero) stops the angular velocity, restores the start angles (+0x5e0, slot 64), reports 0 and clears the thinks; else keeps it turning back at -the return speed (+0x5dc) along the movement direction and thinks again
 	void sub_100cb110();	// slot 221 (the absolute angles) through the fraction of sub_100ca630, then sub_100cae20(fraction, 0) and the next think time at +0x17c from the global at 0x1070b228 (+0xc)
 
 	char m_pad0004[0x114 - 4];
@@ -44,4 +45,5 @@ public:
 	int m_nUsed5d4;	// 0x5d4
 	int m_nDirection5d8;	// 0x5d8
 	float m_flReturnDelay5dc;	// 0x5dc
+	Vector m_vecStart5e0;	// 0x5e0: the start angles
 };
