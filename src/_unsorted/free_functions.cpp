@@ -42172,6 +42172,25 @@ CGlobalEntityList_Ent *CUnknown1017d630::sub_1017d630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017d680 size=0x38
+// TARGET: CUnknown1017d680::sub_1017d680
+#include "CEHandleGet.h"
+
+struct CUnknown1017d680
+{
+	char m_pad0000[0x19cc];
+	unsigned int m_h19cc;
+	float sub_1000c07c();
+	CGlobalEntityList_Ent *sub_1017d680();
+};
+
+CGlobalEntityList_Ent *CUnknown1017d680::sub_1017d680()
+{
+	sub_1000c07c();
+	return EHandle_Get(m_h19cc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017deb0 size=0x73
 struct CGameTimeScale {
 	virtual void vfunc0();

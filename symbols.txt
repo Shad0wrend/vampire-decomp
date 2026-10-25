@@ -5920,6 +5920,7 @@
 0x10014a97 func   ?sub_100d5d10@@YAXXZ sub_100d5d10
 0x10014ab0 func   ??0CVDmg_t@@QAE@XZ CVDmg_t::CVDmg_t
 0x10014ace func   ?sub_10230280@@YAXPAUR@@H@Z sub_10230280
+0x10014ad3 func   ?sub_1017d680@CUnknown1017d680@@QAEPAVCGlobalEntityList_Ent@@XZ CUnknown1017d680::sub_1017d680
 0x10014ad8 func   ?sub_10096530@CBaseAnimating@@QAEXPBD@Z CBaseAnimating::sub_10096530
 0x10014add func   ?sub_1011a580@@YAXPAUSHandleHolder@@@Z sub_1011a580
 0x10014ae2 func   ?sub_103cc320@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc320
