@@ -1,6 +1,10 @@
 // CNPC_Crow: crow NPC (base chain not modelled). Only what decompiled code needs.
 #pragma once
 
+#include "Vector.h"
+
+class CBaseEntity;
+
 class CNPC_Crow
 {
 public:
@@ -20,4 +24,6 @@ public:
 	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
 	void sub_10269b50(int condition);	// CAI_BaseNPC condition setter (stub 0x10015839), called directly
 	int sub_1028a380();	// CAI_BaseNPC::vfunc438 (stub 0x10001d57), tail called directly
+	void sub_103581b0(CBaseEntity *pTarget);	// takes off toward pTarget: with a target, flight mode 1, the NPC is lifted 1.0f (UTIL_SetOrigin), then its absolute velocity is the unit direction to the target's origin (slot 220) times 170.0f
+	void sub_100b2770(const Vector &vec);	// CBaseEntity absolute velocity setter (stub 0x1000489a), called directly
 };
