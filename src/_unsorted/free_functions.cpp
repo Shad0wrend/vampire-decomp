@@ -96600,6 +96600,23 @@ void CBaseCombatCharacter::sub_10325c10(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10325da0 size=0x95
+#include "Vector.h"
+#include "CBaseCombatCharacter.h"
+
+bool CBaseCombatCharacter::sub_10325da0(const Vector *pTarget)
+{
+	Vector vecOrigin;
+	Vector vecForward;
+	sub_10331da0(&vecOrigin, &vecForward);
+	Vector dir = *pTarget - vecOrigin;
+	VectorNormalize(dir);
+	if (DotProduct(dir, vecForward) > 0.866)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103261f0 size=0x120
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
