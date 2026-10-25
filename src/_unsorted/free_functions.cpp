@@ -96815,6 +96815,35 @@ void CBaseCombatCharacter::sub_1032aa40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032ab60 size=0x167
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+struct CBCCHullView : CEntityVSlots
+{
+    char pad0004[0x268];
+    const char *m_name26c;
+    CBaseEntity *sub_1032ad30(const Vector &vStart, const Vector &vEnd, const Vector &mins, const Vector &maxs, int iDamage, int iDmgType);	// the other CheckTraceHullAttack (stub 0x1000ebd3)
+};
+void sub_10139610(const Vector *angles, Vector *forward, Vector *right, Vector *up);
+
+// TARGET: sub_1032ab60
+CBaseEntity *__fastcall sub_1032ab60(CBCCHullView *pThis, int unused, float flDist, const Vector &mins, const Vector &maxs, int iDamage, int iDmgType)
+{
+    ScopeTrace trace("CBaseCombatCharacter::CheckTraceHullAttack", pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+    Vector forward;
+    sub_10139610(pThis->slot221(), &forward, 0, 0);
+    Vector vStart = *pThis->slot220();
+    float flVerticalOffset = pThis->slot214()->z * 0.5;
+    if (flVerticalOffset < maxs.z)
+        flVerticalOffset = maxs.z + 1.0;
+    vStart.z += flVerticalOffset;
+    Vector vEnd = vStart + forward * flDist;
+    return pThis->sub_1032ad30(vStart, vEnd, mins, maxs, iDamage, iDmgType);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032b960 size=0x3c
 #include "TempVector.h"
 
