@@ -75,7 +75,7 @@ public:
 	virtual void w124(); virtual void w125(); virtual void w126();
 	virtual void vfunc618();
 	virtual void vfunc619();	// slot 619: plays one of the 0x106530fc sounds (random 0..5, channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
-	virtual void w129();
+	virtual void vfunc620();	// slot 620: plays one of the 0x10653114 sounds (random 0..2, channel 1, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 	virtual void vfunc621(); virtual void vfunc622();
 	virtual void vfunc623();
 	virtual void vfunc624();
