@@ -1,6 +1,24 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100fc020 size=0x3e
+#include "vampire.h"
+#include "CInspectionNode.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_10708e3c;
+extern int g_10708e40;
+
+// TARGET: CInspectionNode::vfunc104
+void CInspectionNode::vfunc104()
+{
+    g_10708e3c = g_1070b22c->vfunc17((int)"Inspection_Emitter", 0);
+    g_10708e40 = g_1070b22c->vfunc17((int)"Inspection_Insight_Emitter", 0);
+    *(int *)((char *)this + 0x454) = g_10708e3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fc070 size=0x114
 #include "CInspectionNode.h"
 #include "CGlobalEntityList.h"
