@@ -32756,6 +32756,32 @@ void CUnknown100fe0c0::sub_100fe150(float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fe1e0 size=0xd2
+#include "CUnknown100fde30.h"
+#include "CUnknown1070b244.h"
+struct SGameCheck { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual bool v10(); };
+struct SSoundCtl { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void ChangePitch(int h, float pitch, float t); virtual void ChangeVolume(int h, float vol, float t); };
+extern SGameCheck *g_10566258;
+extern CUnknown1070b244 *g_1070b244;
+SSoundCtl *sub_10004746();
+float sub_1013a870(float x, float y);
+void CUnknown100fde30::sub_100fe1e0(float flSpeed)
+{
+    if (!g_10566258->v10())
+    {
+        float t = g_1070b244->vfunc1(1.0f, 2.0f);
+        SSoundCtl *pCtl = sub_10004746();
+        float x = flSpeed * 0.006666667f;
+        if (x > 1.0f)
+            x = 1.0f;
+        float pitch = sub_1013a870(x, 0.3f) * 120.0f + 100.0f;
+        float vol = sub_1013a870(x, 0.3f) * 0.3f + 0.7f;
+        pCtl->ChangePitch(m_field170, pitch, t);
+        pCtl->ChangeVolume(m_field170, vol, t);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100feae0 size=0x43
 #include "CEnvBeam.h"
 void *sub_100aa720(int size);
