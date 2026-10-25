@@ -94788,6 +94788,27 @@ void __fastcall sub_103159d0(Squad *self, int, Ent *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10315a80 size=0xe3
+#include "CUnknown103160c0.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+struct SGroupMember { char m_pad[0x5bb0]; int m_nCounter; };
+CBaseEntity *CUnknown103160c0::sub_10315a80(const Vector *pPos, float flRadius)
+{
+    for (int i = 0; i < m_nMembers; i++)
+    {
+        if (EHandle_Get(m_hMembers[i]) && ((SGroupMember *)EHandle_Get(m_hMembers[i]))->m_nCounter <= 0)
+        {
+            Vector *pOrigin = ((CEntityVSlots *)EHandle_Get(m_hMembers[i]))->slot220();
+            if ((*pPos - *pOrigin).Length2D() <= flRadius)
+                return (CBaseEntity *)EHandle_Get(m_hMembers[i]);
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10315ec0 size=0x71
 #include "CUnknown10315ec0.h"
 
