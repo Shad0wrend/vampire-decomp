@@ -65,11 +65,12 @@ public:
 	virtual int vfunc15(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadInt": reads up to count ints into pValues, returns the number read
 	virtual void s16();
 	virtual int vfunc17(char *pValues, int count, int nBytesAvailable);	// slot 17 ("CRestore::ReadBool"-like): reads up to count bytes into pValues; its first argument is used as an int (see sub_1000fe9d)
-	virtual void s18(); virtual void s19();
+	virtual int vfunc18(float *pValues, int count, int nBytesAvailable);	// slot 18 ("CRestore::ReadFloat"-like): reads up to count floats into pValues, returns the number read
+	virtual void s19();
 	virtual int vfunc20(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadString" (string pool ids): reads up to count zero terminated strings from the buffer, stores the pooled id of each (0 for an empty one) in pValues, then skips the rest of the nBytesAvailable bytes; returns the number read
 	virtual void s21();
 	virtual int vfunc22(Vector *pValues, int count, int nBytesAvailable);	// slot 22 "CRestore::ReadVector": reads up to count vectors, returns the number read
-	virtual void s23(); virtual void s24();
+	virtual void s23(); virtual void vfunc24(float *pValues, int count, int nBytesAvailable);	// slot 24: slot 18 into pValues, then adds the float at m_pData2 + 0x12e8 to each value read (in place)
 	virtual int vfunc25(Vector *pValues, int count, int nBytesAvailable);	// slot 25 "CRestore::ReadPosition": slot 22, then adds the landmark offset of the save data (+0x12dc when the flag at +0x12c4 is set, else the zero vector at 0x1070d1b0) to every vector read
 	virtual void s26(); virtual void s27();
 	virtual int vfunc28(CBaseEntity **pValues, int count, int nBytesAvailable);	// "CRestore::ReadEntityPtr": reads entity indexes (slot 15) and maps each to the entity (sub_101a2390), zero-filling the rest
