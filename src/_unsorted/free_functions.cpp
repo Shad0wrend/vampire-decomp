@@ -88186,6 +88186,23 @@ void CUnknown1030fe50Unit::sub_1030ff10(int radius)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030ffa0 size=0x3e
+#include "CAI_Senses.h"
+#include "CUnknown1030fb90.h"
+
+char CAI_Senses::sub_1030ffa0(void *pEnt)
+{
+    if (((CUnknown1030fb90 *)this)->sub_1030fb90(pEnt) == 0) {
+        if (sub_1030fa00((CBaseEntity *)pEnt) != 0) {
+            if (sub_1030faa0(pEnt) != 0) {
+                return sub_1030fc50(pEnt);
+            }
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fff0 size=0xf5
 #include "CUnknown1030fe50.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
