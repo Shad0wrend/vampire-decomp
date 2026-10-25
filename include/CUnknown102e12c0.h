@@ -8,6 +8,8 @@ class CUnknown102e12c0
 public:
 	char pad0[4];
 	CAI_BaseNPC *m_pOuter;
+	char pad8[0x30 - 8];
+	float m_f30;	// 0x30
 
 	void sub_102e12c0();
 	void sub_102e2750();
