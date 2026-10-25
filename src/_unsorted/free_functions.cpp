@@ -39902,6 +39902,45 @@ void sub_1013c460(const matrix3x4_t &transform, const Vector &vecMinsIn, const V
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013c620 size=0x15a
+#include "matrix3x4_t.h"
+#include <math.h>
+
+void sub_10138460(const float *in1, const matrix3x4_t &in2, float *out);
+
+inline void VectorTransform(const Vector &in1, const matrix3x4_t &in2, Vector &out)
+{
+	sub_10138460(&in1.x, in2, &out.x);
+}
+
+inline float FloatMakePositive(vec_t f)
+{
+	return (float)fabs(f);
+}
+
+inline float DotProductAbsCol(const Vector &v0, const matrix3x4_t &m, int col)
+{
+	return FloatMakePositive(v0.x * m.m_flMatVal[0][col]) + FloatMakePositive(v0.y * m.m_flMatVal[1][col]) + FloatMakePositive(v0.z * m.m_flMatVal[2][col]);
+}
+
+void sub_1013c620(const matrix3x4_t &transform, const Vector &vecMinsIn, const Vector &vecMaxsIn, Vector &vecMinsOut, Vector &vecMaxsOut)
+{
+	Vector localCenter = (vecMinsIn + vecMaxsIn) * 0.5f;
+	Vector localExtents;
+	VectorSubtract(vecMaxsIn, localCenter, localExtents);
+	Vector worldCenter;
+	VectorTransform(localCenter, transform, worldCenter);
+
+	Vector worldExtents;
+	worldExtents.x = DotProductAbsCol(localExtents, transform, 0);
+	worldExtents.y = DotProductAbsCol(localExtents, transform, 1);
+	worldExtents.z = DotProductAbsCol(localExtents, transform, 2);
+
+	vecMinsOut = worldCenter - worldExtents;
+	vecMaxsOut = worldCenter + worldExtents;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c7e0 size=0xab
 // TARGET: sub_1013c7e0
 float sub_1013c7e0(const Vector &mins, const Vector &maxs, const Vector &point)
