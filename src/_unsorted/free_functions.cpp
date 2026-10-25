@@ -41121,6 +41121,28 @@ void *Helper::sub_10177ab0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177b50 size=0x3c
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+
+struct CBasePlayerUnit177b50 : CBasePlayer
+{
+    void sub_10177b50();
+};
+
+// TARGET: sub_10177b50
+void CBasePlayerUnit177b50::sub_10177b50()
+{
+    if (*(int *)((char *)this + 0x2304) == 0)
+    {
+        ((CBaseEntity *)this)->sub_100b3580(0x4020);
+        ((CBaseEntity *)this)->vfunc93(0, 0);
+        *(int *)((char *)this + 0x2304) = 1;
+        this->vfunc444();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178170 size=0xcc
 #include "CUnknown101800e0.h"
 
