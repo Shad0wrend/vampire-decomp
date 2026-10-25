@@ -23532,6 +23532,29 @@ Rec *sub_100c47d0(Src *src, int b, int c, Vector *v1, Vector *v2, unsigned flags
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c49d0 size=0x3b
+extern int g_106e39c0;
+extern int g_106e39bc;
+extern int g_106dbe80[];
+void sub_100c4980(int *p);
+
+// TARGET: sub_100c49d0
+void sub_100c49d0()
+{
+    int i = g_106e39c0 + 1;
+    if (i != g_106e39c0) {
+        do {
+            i &= 0xf;
+            sub_100c4980(&g_106dbe80[i * 11]);
+            if (g_106e39bc) {
+                return;
+            }
+            i++;
+        } while (i != g_106e39c0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c5600 size=0x71
 struct S100c5600 { int pad[3]; int m_n; };
 
