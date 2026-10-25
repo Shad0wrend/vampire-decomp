@@ -4593,6 +4593,7 @@
 0x1001064f func   ?sub_100df7b0@@YA_NXZ sub_100df7b0
 0x10010663 func   ?sub_10237ce0@@YAXXZ sub_10237ce0
 0x1001066d func   ?sub_101ff190@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff190
+0x10010681 func   ?sub_1019bf80@@YAXPAUCUnknown1019bf80List@@@Z sub_1019bf80
 0x10010690 func   ?vfunc622@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc622
 0x100106a4 func   ?sub_10209e30@CItemContainerAnimated@@QAEXPBD@Z CItemContainerAnimated::sub_10209e30
 0x100106ae func   ?sub_101ed9e0@CUnknown101ed9e0@@QAEPAV1@H@Z CUnknown101ed9e0::sub_101ed9e0

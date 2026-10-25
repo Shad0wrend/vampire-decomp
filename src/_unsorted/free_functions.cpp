@@ -47028,6 +47028,41 @@ PyObj* sub_1019be80(const char* module, const char* name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019bf80 size=0x39
+void sub_10158c00(int a, int b);
+
+struct CUnknown1019bf80Entry {
+    int m_a;
+    int m_b;
+    int m_nIndex;
+    int m_c;
+    int m_d;
+    int m_e;
+};
+
+struct CUnknown1019bf80List {
+    int m_nCount;
+    int m_pad0004[4];
+    CUnknown1019bf80Entry m_entries[1];
+};
+
+// TARGET: sub_1019bf80
+void sub_1019bf80(CUnknown1019bf80List *pList)
+{
+    int i = 0;
+    if (pList->m_nCount > 0) {
+        CUnknown1019bf80Entry *pEntry = pList->m_entries;
+        do {
+            if (pEntry->m_nIndex >= 0) {
+                sub_10158c00(pEntry->m_a, pList->m_entries[pEntry->m_nIndex].m_a);
+            }
+            i++;
+            pEntry++;
+        } while (i < pList->m_nCount);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019c6f0 size=0xdf
 struct V3 { float x, y, z; };
 
