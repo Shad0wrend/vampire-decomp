@@ -159,6 +159,30 @@ int CNPC_VHengeyokai::sub_103801d0(CNPC_VHengeyokaiInfo *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10380320 size=0x34
+// TARGET: CNPC_VHengeyokai::vfunc320
+#include "CNPC_VHengeyokai.h"
+#include "CAI_BaseNPCTroika.h"
+
+struct CRandomStreamView
+{
+	virtual int vf0();
+	virtual int vf1();
+	virtual int vf2(int lo, int hi);
+};
+
+extern CRandomStreamView *g_1070b244;
+
+char CNPC_VHengeyokai::vfunc320(int a, int b)
+{
+	if (g_1070b244->vf2(1, 100) <= 50) {
+		((CAI_BaseNPCTroika *)this)->vfunc320(a, b);
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103803d0 size=0x72
 #include "CNPC_VHengeyokai.h"
 
