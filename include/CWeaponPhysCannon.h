@@ -10,8 +10,11 @@ class CWeaponPhysCannon : public CBaseCombatWeapon
 {
 public:
 	virtual void vfunc291();
+	virtual void vfunc307(int a);	// slot 307: the view model / sound call with a sequence-style code (0xc2, 0xb6, 0xbc, 0xc0 passed by the grab code)
+	virtual bool vfunc309();	// slot 309: true when the owner's state allows the grab (a boolean query, tested by slot 321)
 	virtual void vfunc318();	// slot 318: eases the glow value (+0x928) towards its target (+0x92c) by 0.1 per call, mirrors it into the "active" pose parameter of the owner's first view model, and while the grab byte at +0x911 is set runs sub_10410620
 	virtual void vfunc319();	// slot 319: refreshes the owner's unarmed weapon handle (+0xea4) and forwards to slot 456 of the owner
+	virtual void vfunc321();	// slot 321: when slot 309() is true and the grab byte at +0x911 is set calls slot 307(0xc2), else slot 307(0xb6)
 	virtual void vfunc326();	// slot 326: once the time at +0x730 has passed, with an owner whose character object is set and the byte at +0x911 set: asks the character for its position (sub_100b7fa0), the tuning block (0x10739d08) for a float, hands both to sub_10410bf0 and runs slot 307(0xc0)
 	virtual void vfunc327();	// slot 327: once the time at +0x734 has passed, with an owner character that has a player object (+0xa8): a held object with the player flag 0x800 is dropped (sub_104106a0(1, 0), slot 307(0xbc)), else by the state sub_1040e9c0() the next time is pushed out (0: slot 307(0xbc), 0.5s, the player's bits at +0x2088 are or-ed into +0x91c; 1: 0.1s; 2: 0.01s)
 	void sub_10410bf0(Vector *pPos, float flValue);	// stub 0x1000776b
