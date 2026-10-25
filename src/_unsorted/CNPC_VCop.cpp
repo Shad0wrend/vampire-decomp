@@ -28,6 +28,23 @@ int CNPC_VCop::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10371a90 size=0x33
+#include "CNPC_VCop.h"
+extern int g_1093acac;
+extern int g_1093acb0;
+// TARGET: CNPC_VCop::vfunc180
+void CNPC_VCop::vfunc180()
+{
+	if (m_b6671)
+		g_1093acac--;
+	m_b6671 = 0;
+	if (m_b6672)
+		g_1093acb0--;
+	m_b6672 = 0;
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10371b70 size=0x65
 #include "CGlobalEntityList.h"
 #include "CAI_BaseNPC.h"
