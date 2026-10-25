@@ -24039,6 +24039,29 @@ void CBitString::sub_100bf5b0(int numDwords)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0690 size=0x9a
+#include "CFloatPair3f4.h"
+#include <math.h>
+
+void CFloatPair3f4::sub_100c0690()
+{
+    bool bSwitch = false;
+    float flTarget = fabs(m_f164) + m_f460 * m_f450;
+    if (fabs(flTarget) >= fabs(m_f45c)) {
+        flTarget = m_f45c;
+        bSwitch = true;
+    } else if (m_f45c < 0.0f) {
+        flTarget = flTarget * -1.0f;
+    }
+    sub_100c0420(flTarget);
+    if (bSwitch) {
+        m_pfn114 = sub_100c08d0;
+        sub_100c08d0();
+    }
+    m_f3fc = m_f3f4 + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0830 size=0x39
 #include "CFloatPair3f4.h"
 
