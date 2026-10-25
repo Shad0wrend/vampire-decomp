@@ -105310,6 +105310,48 @@ char sub_103abc90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103acac0 size=0xa1
+#include "CBaseEntity.h"
+#include "CNPC_VScurrying.h"
+
+char sub_103ad0f0(CBaseEntity *pEnt);
+
+#define SV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CEntityOriginView
+{
+    SV10(a0) SV10(a1) SV10(a2) SV10(a3) SV10(a4) SV10(a5) SV10(a6) SV10(a7) SV10(a8) SV10(a9)
+    SV10(b0) SV10(b1) SV10(b2) SV10(b3) SV10(b4) SV10(b5) SV10(b6) SV10(b7) SV10(b8) SV10(b9)
+    SV10(c0)
+    virtual void c20(); virtual void c21(); virtual void c22(); virtual void c23(); virtual void c24();
+    virtual void c25(); virtual void c26();
+    virtual const float *vfunc217();
+};
+
+char CNPC_VScurrying::sub_103acac0(CBaseEntity *pEnt)
+{
+    if (pEnt) {
+        const float *pThis = ((CEntityOriginView *)this)->vfunc217();
+        const float *pOther = ((CEntityOriginView *)pEnt)->vfunc217();
+        float dx = pOther[0] - pThis[0];
+        float dy = pOther[1] - pThis[1];
+        float dz = pOther[2] - pThis[2];
+        float flSqr = dz * dz;
+        flSqr += dx * dx;
+        flSqr += dy * dy;
+        float flDist = FastSqrt(flSqr);
+        if (flDist < m_flRange6690) {
+            if (m_b6694 && sub_103ad0f0(pEnt))
+                return 0;
+            if (m_b6695 && !sub_103ad0a0(pEnt))
+                return 0;
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad0a0 size=0x35
 // TARGET: CUnknown103ad0a0::sub_103ad0a0
 struct CUnknown103ad0a0
