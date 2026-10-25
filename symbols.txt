@@ -3043,6 +3043,7 @@
 0x1000af79 func   ?sub_10042d00@CMem8c_t@@QAEXH@Z CMem8c_t::sub_10042d00
 0x1000af92 func   ?sub_10249160@CUnknown10249160@@QAEXHH@Z CUnknown10249160::sub_10249160
 0x1000af97 func   ?vfunc8@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc8
+0x1000afa6 func   ??0CSAct@@QAE@XZ CSAct::CSAct
 0x1000afa6 func   ?sub_102c9d20@@YIPAHPAH@Z sub_102c9d20
 0x1000afc9 func   ?sub_101072b0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_101072b0
 0x1000afd3 func   ?sub_102ecce0@@YIXPAUCOwner@@@Z sub_102ecce0
