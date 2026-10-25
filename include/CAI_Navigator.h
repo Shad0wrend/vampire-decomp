@@ -119,8 +119,8 @@ public:
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8();
 	virtual void vfunc9(int a, float b);
 	virtual void vfunc10(int a, float b);
-	virtual void vfunc11(); virtual void vfunc12(); virtual int vfunc13(int a); virtual int vfunc14(int a);
-	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
+	virtual void vfunc11(); virtual int vfunc12(int a); virtual int vfunc13(int a); virtual int vfunc14(int a);
+	virtual int vfunc15(void *pGoal, int a); virtual bool vfunc16(int *pOut); virtual void vfunc17(void *pGoal); virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20();
 	void sub_10011c98();	// as in CDataObjectAccessSystem (transplant)
 	void sub_102f1fa0(float flDelay, CAI_NavSource *pSource);	// finds the record of the route's waypoint (provider list at +0x2c), sets bit 0 of its flags, its time to curtime + flDelay and its handle from pSource (-1 without)
