@@ -37185,6 +37185,20 @@ void sub_101397c0(const QAngle &angles, Vector *forward, Vector *right, Vector *
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139d20 size=0x40
+void sub_10139d70(float *pDegrees, float *pOut);
+
+// TARGET: sub_10139d20
+void sub_10139d20(float *pAngles, float *pOut)
+{
+	float rad[3];
+	rad[0] = pAngles[1] * 57.29578f;
+	rad[1] = pAngles[2] * 57.29578f;
+	rad[2] = pAngles[0] * 57.29578f;
+	sub_10139d70(rad, pOut);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139f90 size=0x71
 #include "Vector.h"
 
