@@ -106538,6 +106538,26 @@ void sub_103e1960(CLinkElem *pBase, CLinkElem *pNode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e1bb0 size=0x33
+void sub_1000fe66(int *base, int *entry, int arg);
+
+int sub_103e1bb0(int *p, int arg)
+{
+    int count = 0;
+    int *entry = p;
+    int i = 0x32;
+    do {
+        if (*entry != 0) {
+            sub_1000fe66(p, entry, arg);
+            count++;
+        }
+        entry += 0xf;
+        i--;
+    } while (i != 0);
+    return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1d20 size=0x43
 #include "CFlameCluster.h"
 void *sub_100aa720(int size);
