@@ -10138,6 +10138,26 @@ int CUnknown1006eeb0::sub_1006eeb0(int which)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006f670 size=0x10a
+#include "CBaseCineCam.h"
+
+extern Vector g_1070d1b0;
+
+// TARGET: CBaseCineCam::sub_1006f670
+Vector CBaseCineCam::sub_1006f670()
+{
+    Vector vecResult = g_1070d1b0;
+    int nFlags = sub_1006edb0();
+    if ((nFlags & 4) && (nFlags & 8))
+        vecResult = (sub_1006f010(2) + sub_1006f010(3)) * 0.5f;
+    else if (nFlags & 4)
+        vecResult = sub_1006f010(2);
+    else if (nFlags & 8)
+        vecResult = sub_1006f010(3);
+    return vecResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006fe00 size=0xf6
 #include "CGlobalEntityList.h"
 #define XV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
