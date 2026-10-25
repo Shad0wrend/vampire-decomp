@@ -159,6 +159,30 @@ int CNPC_VDog::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10374370 size=0x36
+#include "CNPC_VDog.h"
+
+struct CNPC_VAnimalBaseCall
+{
+	int sub_10012283(int activity);
+};
+
+// TARGET: CNPC_VDog::vfunc440
+int CNPC_VDog::vfunc440(int activity)
+{
+	switch (activity)
+	{
+	case 0x6b:
+		return 0x164;
+	case 0x156:
+		return 0x161;
+	case 0x157:
+		return 0x162;
+	}
+	return ((CNPC_VAnimalBaseCall *)this)->sub_10012283(activity);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103747e0 size=0xa4
 #include "CNPC_VDog.h"
 

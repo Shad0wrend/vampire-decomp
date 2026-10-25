@@ -1720,6 +1720,7 @@
 0x10006cda func   ?sub_1030a650@CAI_Navigator@@QAEMM@Z CAI_Navigator::sub_1030a650
 0x10006ce4 func   ?sub_10095be0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10095be0
 0x10006d02 func   ?sub_101dc260@CElemList@@QAEPAU1@ABU1@@Z CElemList::sub_101dc260
+0x10006d0c func   ?vfunc440@CNPC_VDog@@QAEHH@Z CNPC_VDog::vfunc440
 0x10006d11 func   ?vfunc77@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc77
 0x10006d16 func   ?sub_103dc520@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_103dc520
 0x10006d34 func   ?vfunc8@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHMMHMHHHHH@Z CTempEntsSystem::vfunc8
