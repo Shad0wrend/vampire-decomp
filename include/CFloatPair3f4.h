@@ -8,13 +8,24 @@ public:
 	void sub_100c08d0();	// stub 0x10006a91
 
 	void sub_100c0830();	// the member at 0x100c0830: when the helper at 0x10014691 accepts +0x45c, swaps the member pointer at +0x114 to sub_100c08d0 and runs it; else +0x3fc = +0x3f4 + 0.1
+	void sub_100c0690();	// picks the target value from |+0x164| + +0x460 * +0x450 and +0x45c (the +0x45c value wins when its magnitude does not exceed it: then the member pointer at +0x114 becomes sub_100c08d0 and runs), hands it to sub_100c0420 and arms +0x3fc = +0x3f4 + 0.1
+	void sub_100c0420(float flValue);	// stub 0x10002a59
 
 	char m_pad0000[0x114];
 	void (CFloatPair3f4::*m_pfn114)();	// 0x0114
-	char m_pad0118[0x3f4 - 0x118];
+	char m_pad0118[0x164 - 0x118];
+	float m_f164;	// 0x0164
+	char m_pad0168[0x3f4 - 0x168];
 	float m_f3f4;	// 0x03f4
 	char m_pad03f8[4];
 	float m_f3fc;	// 0x03fc
-	char m_pad0400[0x45c - 0x400];
-	int m_n45c;	// 0x045c
+	char m_pad0400[0x450 - 0x400];
+	float m_f450;	// 0x0450
+	char m_pad0454[0x45c - 0x454];
+	union
+	{
+		int m_n45c;	// 0x045c
+		float m_f45c;
+	};
+	float m_f460;	// 0x0460
 };
