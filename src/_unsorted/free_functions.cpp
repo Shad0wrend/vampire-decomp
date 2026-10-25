@@ -31932,6 +31932,24 @@ void CUnknown10103120::sub_10103120(CUnknown10103120Param *pParam)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103170 size=0x39
+#include "CUnknown10103170.h"
+
+extern float g_104454c4;
+
+// TARGET: CUnknown10103170::sub_10103170
+void CUnknown10103170::sub_10103170(void *pInfo)
+{
+    float flValue;
+    if (((int *)pInfo)[6] == 1)
+        flValue = ((float *)pInfo)[2];
+    else
+        flValue = g_104454c4;
+    m_f454 = flValue;
+    sub_1000c333(3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103370 size=0xba
 #include "CUnknown1070b22c.h"
 
