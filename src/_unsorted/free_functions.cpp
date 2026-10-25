@@ -22732,6 +22732,21 @@ void bf_read::sub_100bf1c0(int iStart, int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf3d0 size=0x40
+extern char g_1055b374[];
+extern char g_10547e40[];
+void sub_10007f04(void *pCtx, ...);
+
+// TARGET: sub_100bf3d0
+void sub_100bf3d0(void **ppItems, int count, void *pCtx)
+{
+	for (int i = 0; i < count; i++) {
+		sub_10007f04(pCtx, g_1055b374, ppItems[i]);
+	}
+	sub_10007f04(pCtx, g_10547e40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf480 size=0xe7
 #include "CBitString.h"
 
