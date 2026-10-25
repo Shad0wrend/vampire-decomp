@@ -205,6 +205,36 @@ bool CBasePlayer::sub_1015ff40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160a60 size=0x104
+#include "CBasePlayer.h"
+#include "ConVar.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown10739d08.h"
+struct SGlobalVars { char m_pad[0xc]; float m_flCurTime; };
+extern SGlobalVars *g_1070b228;
+extern ConVar *g_107255ec;
+extern ConVar *g_10725634;
+extern ConVar *g_107251ac;
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown10739d08 g_10739d08;
+char CBasePlayer::vfunc321(int unused)
+{
+    float flScale = g_107255ec->vfunc1() ? 0.0f : g_107255ec->m_fValue;
+    if (m_f1DA8 <= g_1070b228->m_flCurTime)
+    {
+        flScale = g_10725634->vfunc1() ? 0.0f : g_10725634->m_fValue;
+        m_f1DA8 = g_10739d08.sub_101e7d70() + g_1070b228->m_flCurTime;
+    }
+    float flAmount = (g_107251ac->vfunc1() ? 0.0f : g_107251ac->m_fValue) * flScale;
+    Vector punch;
+    punch.x = g_1070b244->vfunc1(-flAmount, flAmount);
+    punch.y = g_1070b244->vfunc1(-flAmount, flAmount);
+    punch.z = g_1070b244->vfunc1(-flAmount, flAmount);
+    vfunc169(&punch);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160bc0 size=0xfc
 #include "CBasePlayer.h"
 #include "melee_dice_roll_result.h"
