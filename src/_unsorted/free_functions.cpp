@@ -1854,6 +1854,43 @@ void sub_10032180(ImpactEvent_t *pEvent, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032380 size=0xed
+#include <stdlib.h>
+#include "gamevcollisionevent_t.h"
+#include "CUnknown1070b244.h"
+struct SSurfaceData { char m_pad[0x70]; unsigned short m_material; };
+struct SEffects { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void Sparks(const Vector &pos, const Vector &dir, float flMagnitude, float flTrail); };
+extern SEffects *g_10566258;
+extern CUnknown1070b244 *g_1070b244;
+void sub_10032380(gamevcollisionevent_t *pEvent, SSurfaceData *pSurface)
+{
+    bool bSkip;
+    switch (pSurface->m_material)
+    {
+    case 0x43:
+        bSkip = pEvent->collisionSpeed < 340.0f;
+        break;
+    case 0x44:
+        bSkip = pEvent->collisionSpeed < 200.0f;
+        break;
+    default:
+        return;
+    }
+    if (!bSkip)
+    {
+        Vector pos;
+        pEvent->pInternalData->vfunc1(&pos);
+        Vector dir;
+        dir.x = rand() * (2.0f / 32767.0f) - 1.0f;
+        dir.y = rand() * (2.0f / 32767.0f) - 1.0f;
+        dir.z = rand() * (2.0f / 32767.0f) - 1.0f;
+        dir.z = g_1070b244->vfunc1(0.3f, 1.0f);
+        VectorNormalize(dir);
+        g_10566258->Sparks(pos, dir, 8.0f, pEvent->collisionSpeed);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032660 size=0x8f
 #include "CCollisionEvent.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
