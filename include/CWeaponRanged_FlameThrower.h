@@ -19,6 +19,8 @@ public:
 	bool sub_103e3490(CBaseEntity *pEnt);	// true when pEnt is a valid target (flagged 0x20002080, not unselectable, byte +0x19c bit 6 clear) that is not already in the burning list (8 byte records {handle, time} at +0x1554, count at +0x1560)
 	void sub_103e3d80(float *pOrigin, float *pAngles);	// the muzzle attachment origin / angles: re-queries the "muzzle" attachment when the engine's slot 120 value changed since the last call (cached at +0x1534 / +0x1538 / +0x1544), then copies the cached vectors to the non-null outputs
 	void sub_103e2d10(const char *pszSample, int channel);	// emits the sample from the weapon (channel) to a CPASAttenuationFilter of the weapon's sound origin
+	void sub_103e3c40();	// debug overlay of the 50 flame particles (list at +0x91c, 0x3c bytes each): a coloured box of the particle's fade for type 1, a fading box for the other live types (stub 0x1001...: called by 0x103e32b0 when the debug bit 1 is set)
+	float sub_103e3900();	// the debug box size: 0 while the debug object (global 0x10940954) is on, else its float at +0x28 (stub 0x10005425)
 
 	char m_pad0004[0x91c - 4];
 	int m_aBuf[0x2ee];	// 0x91c, zeroed by the constructor
