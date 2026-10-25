@@ -53,6 +53,22 @@ void CRotDoor::vfunc250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2290 size=0x151
+#include "Vector.h"
+#include "CRotDoor.h"
+
+void CRotDoor::vfunc104()
+{
+	sub_100efab0();
+	sub_100f19b0(m_angRotation52c, &m_vecMins698, &m_vecMaxs6a4);
+	sub_100f19b0(-1.0f * m_angRotation52c, &m_vecMins6bc, &m_vecMaxs6c8);
+	m_vecCenter6b0 = 0.5f * (m_vecMins698 + m_vecMaxs6a4);
+	m_vecCenter6d4 = (m_vecMins6bc + m_vecMaxs6c8) * 0.5f;
+	sub_100f3f20();
+	sub_100eecf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2450 size=0x92
 #include "CRotDoor.h"
 
