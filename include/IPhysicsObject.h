@@ -18,7 +18,9 @@ public:
 	virtual void vfunc30(); virtual void vfunc31();
 	virtual void vfunc32(const Vector *pForce, const Vector *pWorldPosition, Vector *pCenterForce, Vector *pCenterTorque);	// slot 32 CalculateForceOffset
 	virtual void vfunc33(); virtual void vfunc34(); virtual void vfunc35(); virtual void vfunc36(); virtual void vfunc37();
-	virtual void vfunc38(); virtual void vfunc39(); virtual void vfunc40(); virtual void vfunc41(); virtual void vfunc42();
+	virtual void vfunc38(); virtual void vfunc39();
+	virtual void vfunc40(float *pVelocity, float *pAngVelocity);	// slot 40 GetVelocity (either pointer may be null)
+	virtual void vfunc41(); virtual void vfunc42();
 	virtual void vfunc43();
 	virtual char vfunc44(Vector *pContactPoint, IPhysicsObject **ppObject);	// slot 44 GetContactPoint
 };
