@@ -119,4 +119,5 @@ public:
 	void sub_10015839(int condition);	// CAI_BaseNPC::sub_10269b50 "SetCondition" (stub 0x10015839), called directly
 	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
 	bool sub_10382020(void *pTarget);	// stub 0x1001580c
+	char vfunc320(int a, int b);	// slot 320 (plain member): with a 1..50 roll (the random stream at 0x1070b244, slot 2 with (1, 100)) under 51, the Troika base's vfunc320(a, b); else false
 };
