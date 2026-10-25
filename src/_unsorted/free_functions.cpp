@@ -23747,6 +23747,37 @@ float sub_100c4160(void *hdr, int index, float value, float *ctl)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4390 size=0x36
+struct CLerpRange
+{
+    float m_flStart;
+    float m_flEnd;
+    float m_flUnk;
+    float m_flUnk2;
+    float m_flUnk3;
+};
+
+struct CLerpRangeSet
+{
+    float m_fUnk;
+};
+
+int sub_100c4340(void *pOwner, int id);
+
+// TARGET: sub_100c4390
+float sub_100c4390(void *pOwner, int id, float t)
+{
+    if (pOwner == 0) {
+        return 0.0f;
+    }
+    char *e = (char *)sub_100c4340(pOwner, id);
+    if (e == 0) {
+        return 0.0f;
+    }
+    return (*(float *)(e + 0xc) - *(float *)(e + 8)) * t + *(float *)(e + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c46c0 size=0xc2
 struct CacheEntry {
 	int m_a;
