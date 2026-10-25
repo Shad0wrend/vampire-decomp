@@ -24782,6 +24782,33 @@ char *CUnknown100cd640::sub_100cd640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd6d0 size=0x39
+void *sub_1000ffec(int nSize);
+
+struct CUnknown100cd6d0Action {
+    void *sub_100ccf90(void *pOwner);
+};
+
+struct CUnknown100cd6d0 {
+    char m_pad0000[0x14];
+    void *m_pHead;
+    void sub_100cd6d0(void *pOwner);
+};
+
+// TARGET: CUnknown100cd6d0::sub_100cd6d0
+void CUnknown100cd6d0::sub_100cd6d0(void *pOwner)
+{
+    void *pAction = sub_1000ffec(0x20);
+    if (pAction != 0) {
+        pAction = ((CUnknown100cd6d0Action *)pAction)->sub_100ccf90(pOwner);
+    } else {
+        pAction = 0;
+    }
+    *(void **)((char *)pAction + 0x1c) = m_pHead;
+    m_pHead = pAction;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd7e0 size=0x69
 extern int g_1055dc00, g_1055dc04, g_1055da88, g_1055da8c;
 
