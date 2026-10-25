@@ -66219,6 +66219,28 @@ CBaseVampireSkillEntity *CBaseVampireSkillEntity::sub_1020aa70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020ac00 size=0x3a
+typedef void (__fastcall *CUnknownVFunc272)(void *pThis);
+
+struct CUnknown1020ac00 {
+    int m_pad0000[0x1df];
+    int m_n77c;
+    void sub_1020ac00(int value);
+};
+
+// TARGET: CUnknown1020ac00::sub_1020ac00
+void CUnknown1020ac00::sub_1020ac00(int value)
+{
+    if (value > 10) {
+        value = 10;
+    } else {
+        value &= (value < 0) - 1;
+    }
+    m_n77c = value;
+    ((CUnknownVFunc272)((int *)*(int **)this)[272])(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020aea0 size=0x10d
 #include "CUnknown1020aea0.h"
 #include "CVFeat_t.h"
