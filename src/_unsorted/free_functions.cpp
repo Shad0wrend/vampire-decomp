@@ -96262,6 +96262,27 @@ void CBaseCombatCharacter::sub_10325c10(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10326360 size=0x118
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CBaseCombatCharacter.h"
+
+bool CBaseCombatCharacter::sub_10326360(Vector vecPos, float flScale, float flCone)
+{
+	ScopeTrace trace("CBaseCombatCharacter::FinViewCone3d", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	Vector tmp;
+	Vector dir = vecPos - *pSelf->slot193(&tmp);
+	VectorNormalize(dir);
+	Vector fwd;
+	pSelf->slot373(&fwd);
+	if (DotProduct(dir, fwd) * flScale <= flCone)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103268e0 size=0xf1
 #include "CBaseCombatCharacter.h"
 #include "ConVar.h"
