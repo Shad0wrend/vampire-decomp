@@ -3030,6 +3030,7 @@
 0x1000a70e func   ?vfunc266@CSceneEntity@@UAEXHPBD@Z CSceneEntity::vfunc266
 0x1000a718 func   ?sub_1011a620@@YAXXZ sub_1011a620
 0x1000a74a func   ?vfunc104@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc104
+0x1000a74f func   ?vfunc323@CBaseCombatCharacter@@UAEHPBVVector@@@Z CBaseCombatCharacter::vfunc323
 0x1000a75e func   _item_g_brotherhood_flyer item_g_brotherhood_flyer
 0x1000a763 func   ?vfunc546@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc546
 0x1000a7b3 func   ?sub_10400f60@@YAHXZ sub_10400f60

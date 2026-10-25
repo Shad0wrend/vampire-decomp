@@ -2359,6 +2359,46 @@ int CBaseCombatCharacter::vfunc34(int pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10344dd0 size=0x14b
+#include "CBaseCombatCharacter.h"
+#include "Vector.h"
+
+#define SV1(n) virtual void n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CSlot219View
+{
+	SV100(a0) SV100(a1) SV10(a20) SV1(a210) SV1(a211) SV1(a212) SV1(a213) SV1(a214) SV1(a215) SV1(a216) SV1(a217) SV1(a218)
+	virtual float *vfunc219();
+};
+
+float sub_101d2c70(const Vector *pVec);
+
+int CBaseCombatCharacter::vfunc323(const Vector *pDirection)
+{
+	int nSide = 0;
+	Vector vecDir = *pDirection;
+	if (FastSqrt(vecDir.x * vecDir.x + vecDir.y * vecDir.y) >= 1e-7f) {
+		vecDir.z = 0;
+		VectorNormalize(vecDir);
+		float flYaw = sub_101d2c70(&vecDir);
+		float flAngle = (float)(unsigned short)(int)((((CSlot219View *)this)->vfunc219()[1] - flYaw) * 182.04445f) * 0.005493164f;
+		if (flAngle < 0)
+			flAngle += 360.0f;
+		if (flAngle > 316.0f || flAngle <= 45.0f)
+			nSide = 2;
+		else if (flAngle <= 135.0f)
+			nSide = 3;
+		else if (flAngle > 135.0f && flAngle <= 225.0f)
+			nSide = 0;
+		else if (flAngle > 225.0f)
+			nSide = 1;
+	}
+	return nSide;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10348890 size=0xb7
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
