@@ -19,6 +19,7 @@ public:
 	void sub_100cae90();	// the movement finished: stops the angular velocity, reports the final position (sub_100cae20 with the fraction of the current angles), fires the output at +0x58c for the entity of the handle at +0x53c, clears the used flag (+0x5d4) and, for a button with spawn flag 0x10 and a positive return delay (+0x5dc), arms the return think (sub_100cafb0 after the local time + a constant, direction +0x5d8 = -1), else clears the think
 	void sub_100cae20(float flValue, void *pActivator);	// stub 0x100140e7: when the value differs from the one at +0x55c, stores it there and fires that output for the activator
 	void sub_100cafb0();	// the return think (stub 0x1001028f)
+	void sub_100cb110();	// slot 221 (the absolute angles) through the fraction of sub_100ca630, then sub_100cae20(fraction, 0) and the next think time at +0x17c from the global at 0x1070b228 (+0xc)
 
 	char m_pad0004[0x114 - 4];
 	void (CMomentaryRotButton::*m_pfnThink114)();	// 0x114
