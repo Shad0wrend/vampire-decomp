@@ -2928,6 +2928,16 @@ bool CPushBlockerEnum::sub_10037750(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003b850 size=0x36
+#include "Vector.h"
+
+// TARGET: Vector::sub_1003b850
+bool Vector::sub_1003b850(const Vector &v) const
+{
+    return (v.x == x) && (v.y == y) && (v.z == z);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c0e0 size=0xaa
 #include "CUtlVector4.h"
 
