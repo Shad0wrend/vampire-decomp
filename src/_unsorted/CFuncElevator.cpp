@@ -1,6 +1,29 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1020f220 size=0x3b
+#include "CFuncElevator.h"
+#include "CBasePlayer.h"
+#include "CFuncMoveLinear.h"
+
+struct CFuncElevatorUnit1020f220 : CFuncElevator
+{
+    void sub_1020f220();
+};
+
+// TARGET: sub_1020f220
+void CFuncElevatorUnit1020f220::sub_1020f220()
+{
+    float *pOrigin = ((CBasePlayer *)this)->vfunc220();
+    *(float *)((char *)this + 0x800) = pOrigin[0];
+    *(float *)((char *)this + 0x804) = pOrigin[1];
+    *(float *)((char *)this + 0x808) = pOrigin[2];
+    *(int *)((char *)this + 0x630) = 0;
+    *(char *)((char *)this + 0x80c) = 0;
+    ((CFuncMoveLinear *)this)->CFuncMoveLinear::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216e30 size=0xcd
 #include "CFuncElevator.h"
 
