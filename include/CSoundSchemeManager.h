@@ -2,6 +2,8 @@
 // at +0x0 are not modelled; primary vtable 0x1048dd00 has 9 slots.
 #pragma once
 
+struct CSoundFadeItem;
+
 class CSoundSchemeManager
 {
 public:
@@ -12,11 +14,15 @@ public:
 	virtual void vfunc4();
 	virtual void vfunc5();
 	virtual void vfunc6();
-	virtual void vfunc7();
+	virtual void vfunc7();	// per-frame update: fades every loop track by the time since the last update (sub_10229090), drops the loop tracks that faded out (volume at most 0.01) and the random sounds whose time has passed, then draws the debug text
 	virtual CSoundSchemeManager *vfunc8(unsigned int flags);	// scalar deleting destructor: empties the three vectors (+0x19c, +0x188, +0x174), the base destructor, then delete this when bit 0 of flags is set
 
 	void sub_102288b0();	// releases the four sounds at +0x64 (stride 0x58) and empties both lists (0x58 byte records at +0x174, count +0x180; 0x20 byte records at +0x188, count +0x194), releasing the sound of each record, when the globals' dword at +0x24 is set
 	void sub_1042c2c0();	// CBaseGameSystem::~CBaseGameSystem, called directly (stub 0x1000cfbd)
+	int sub_10228a80();	// stub 0x10011491: the state the scheme should be in (1 without a player, 3 / 2 by the player's sound state)
+	void sub_10228e80(int state);	// stub 0x1001536b: switches to that state (volumes, then the fade of the engine's sound channels)
+	void sub_10229c50();	// stub 0x10004f9d: draws the debug text of the tracks (when the byte at +0x8 is set and a player exists)
+	void sub_10229090(CSoundFadeItem *pItem, float flDelta);	// stub 0x10013f8e: the fade of one track (ret 8; the object is not used)
 
 	char m_pad0004[4];	// 0x0004 .. 0x0007
 	char m_b08;
