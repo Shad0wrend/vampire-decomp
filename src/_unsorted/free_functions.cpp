@@ -74926,6 +74926,42 @@ char CBaseCombatWeapon::sub_10256250()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102562b0 size=0x3e
+#include "vampire.h"
+
+struct CUnknownHolder102562b0
+{
+    void sub_100066cc(void *pOwner, int value);
+};
+
+extern CUnknownHolder102562b0 g_1074df78;
+
+struct CUnknownCaller102562b0
+{
+    void *sub_10014fab();
+    void *sub_10010ea6();
+    void sub_102562b0();
+};
+
+// TARGET: CUnknownCaller102562b0::sub_102562b0
+void CUnknownCaller102562b0::sub_102562b0()
+{
+    if (sub_10014fab())
+    {
+        void *pObj = sub_10014fab();
+        if (pObj)
+        {
+            void *pOwner = *(void **)((char *)pObj + 0xa8);
+            if (pOwner)
+            {
+                int nValue = *(int *)((char *)sub_10010ea6() + 0x25e0);
+                g_1074df78.sub_100066cc(pOwner, nValue);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10256350 size=0x73
 #include "CUnknown101d8a70.h"
 
