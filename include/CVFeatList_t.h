@@ -15,7 +15,7 @@ public:
 	virtual float vfunc2(int index);
 	virtual float vfunc3(int index);
 	virtual float vfunc4(int index);
-	virtual void vfunc5();
+	virtual float vfunc5(int index);	// the float at +0x160 + index * 0x18 (+0x14) when it is above 1.0, else 2.0
 
 	char m_pad0004[0x164];
 	CVFeatList_t_Record m_records[1];
