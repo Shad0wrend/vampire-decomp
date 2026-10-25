@@ -27,8 +27,8 @@ public:
 	virtual void vfunc13();
 	virtual void vfunc14(int a, int b, int c);	// forwards its arguments to the subobject at +0x54 (stub 0x1000b8ca)
 	virtual void vfunc15();
-	virtual void vfunc16();
-	virtual void vfunc17();
+	virtual float vfunc16();	// slot 16: the minimum speed (asked by slot 17 with the same call twice)
+	virtual float vfunc17();	// slot 17: the wanted speed (+0x30 times the component's scale) raised to at least slot 16 and capped at sub_102d61b0(+0x8)
 	virtual void vfunc18();
 	virtual void vfunc19();
 	virtual void vfunc20();
@@ -45,7 +45,7 @@ public:
 	char m_28;
 	char m_29[3];
 	int m_2c;	// a float: the time of the last yaw update (UpdateYaw)
-	int m_30;
+	float m_30;	// the wanted speed
 	float m_34;	// the ideal yaw
 	int m_38;	// a float: the yaw speed (UpdateYaw converts it with _ftol)
 	int m_3c;
@@ -74,6 +74,7 @@ public:
 	void sub_102e1e20(int yawSpeed);	// "CAI_Motor::UpdateYaw": the owner's yaw approaches the ideal yaw (+0x34) by yawSpeed (the float at +0x38 for -1) * 10 per second since the last update (+0x2c)
 	void sub_102e1cf0();	// stub 0x10011af9: the yaw speed (+0x38) from slot 0 of the movement sink at +0x10
 	void sub_102e1c10(float flIdealYaw, float flYawSpeed);	// "CAI_Motor::SetIdealYawAndUpdate" (stub 0x10014b8c): sets the ideal yaw (flipped when the byte at +0x28 is set, limited by the turn rate unless the largest change is 180), the yaw speed (+0x38, -1 keeps it; -2 asks the movement sink) and updates the yaw
+	float sub_102e12c0();	// CAI_Component helper (stub 0x10008bfc): a scale factor, returned in st(0)
 
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
 	static int *sub_102e0860();
