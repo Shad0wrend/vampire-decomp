@@ -9250,6 +9250,35 @@ void CTraceSpinEntity::sub_1006bb80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006be50 size=0x3b
+extern void *(*g_109f3638)(void *, int);
+extern void *(*g_109f3634)(int);
+
+struct CUtlMemUnit1006be50
+{
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+
+    void sub_1006be50(int num);
+};
+
+// TARGET: sub_1006be50
+void CUtlMemUnit1006be50::sub_1006be50(int num)
+{
+    if (m_nAllocationCount < num && m_nGrowSize != -1)
+    {
+        m_nAllocationCount = num;
+        if (m_pMemory)
+        {
+            m_pMemory = g_109f3638(m_pMemory, num);
+            return;
+        }
+        m_pMemory = g_109f3634(num);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c0a0 size=0xa1
 #include "CUnknown1006bea0.h"
 
