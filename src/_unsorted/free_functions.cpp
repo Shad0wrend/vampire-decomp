@@ -93392,6 +93392,29 @@ void CUnknown103160c0::sub_103161a0(int pEnemy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103162d0 size=0x31
+struct CUnknown103162d0Node
+{
+	CUnknown103162d0Node *pNext;
+	void sub_10316440();
+};
+
+extern CUnknown103162d0Node *g_10936c68;
+
+// TARGET: sub_103162d0
+void sub_103162d0()
+{
+	CUnknown103162d0Node *pNode = g_10936c68;
+	while (pNode != 0) {
+		CUnknown103162d0Node *pNext = pNode->pNext;
+		pNode->sub_10316440();
+		delete pNode;
+		pNode = pNext;
+	}
+	g_10936c68 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316320 size=0x90
 #include "CUnknown10316320.h"
 
