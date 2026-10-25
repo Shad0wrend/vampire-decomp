@@ -47,4 +47,5 @@ public:
 	int sub_102af660();	// CAI_BaseNPCTroika::vfunc438 (stub 0x10015596), called directly
 	virtual void vfunc619(char bFlag);	// slot 619 (the position here is not its real slot): emits the footstep-like sound of the claw through a reliable CPASAttenuationFilter, the sample set picked by the flag
 	virtual void vfunc310(int a);	// slot 310 "CNPC_VTzimisceHeadClaw::vfunc310": a 9 with the NPC's slot 167 value answers 0x1136 to the Troika base, else the argument goes on to the Troika base
+	void vfunc618();	// slot 618 (plain member): plays one of the 0x1065ca78 sounds (channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 };
