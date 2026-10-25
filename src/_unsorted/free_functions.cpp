@@ -107895,6 +107895,23 @@ void CWeaponThrown_Chang_Energy_Ball::sub_103f00c0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f01b0 size=0x35
+#include <string.h>
+extern char g_106b8540[];
+// TARGET: sub_103f01b0
+bool __stdcall sub_103f01b0(char *self)
+{
+	if (self) {
+		char *name = *(char **)(self + 0x26c);
+		if (!name)
+			name = g_106b8540;
+		if (_strnicmp(name, "changcoffin", 11) == 0)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f0200 size=0x17d
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 #include "CEntityVSlots.h"
