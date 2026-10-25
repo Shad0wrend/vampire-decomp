@@ -63,7 +63,8 @@ public:
 	virtual bool vfunc473(float value);
 	virtual void vfunc474(float value);
 	virtual void vfunc475(int value);
-	virtual void vfunc476(); virtual void vfunc477(); virtual void vfunc478();
+	virtual void vfunc476(); virtual void vfunc477();
+	virtual void vfunc478(unsigned int *pPower);	// slot 478 "SUIT POWER TRIED TO REMOVE AN INACTIVE DEVICE": clears the power's flag bits in +0x252c (pPower[0]) and takes its amount (the float at pPower[1]) off +0x2530
 	virtual bool vfunc479();
 	virtual float vfunc480();
 	virtual float vfunc481();
