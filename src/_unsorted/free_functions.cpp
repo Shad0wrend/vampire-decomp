@@ -81226,6 +81226,32 @@ CUnknownNode102cce10 *sub_102cce10(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cce60 size=0x3e
+#include "vampire.h"
+#include "CAI_DynamicLink.h"
+
+struct CUnknownBase102cce60
+{
+    void sub_100090fc(int bAddAsDefault);
+};
+
+extern int vt_1049b4f4[];
+extern CAI_DynamicLink *g_1092541c;
+
+// TARGET: CAI_DynamicLink::sub_102cce60
+CAI_DynamicLink *CAI_DynamicLink::sub_102cce60()
+{
+    ((CUnknownBase102cce60 *)this)->sub_100090fc(0);
+    *(int **)this = vt_1049b4f4;
+    m_nSrcID = -1;
+    m_nDestID = -1;
+    m_nLinkState = 0;
+    m_pNext = g_1092541c;
+    g_1092541c = this;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cd310 size=0x71
 #include "inputdata_t.h"
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
