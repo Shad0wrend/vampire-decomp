@@ -124,6 +124,21 @@ void CWeaponThrown_Grenade_Frag::vfunc266()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eec10 size=0x38
+#include "CWeaponThrown_Grenade_Frag.h"
+
+extern char *g_1070b228;
+void sub_1000dcd8();
+
+// TARGET: CWeaponThrown_Grenade_Frag::vfunc373
+void CWeaponThrown_Grenade_Frag::vfunc373(int unused)
+{
+    sub_100ac4e0((void *)sub_1000dcd8, 0, 0);
+    *(int *)&m_flTimer91c = *(int *)(g_1070b228 + 0xc);
+    m_flNextThink17c = *(float *)(g_1070b228 + 0xc) + 0.01;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eed20 size=0xf6
 #include "CWeaponThrown_Grenade_Frag.h"
 #include "CBaseEntity.h"
