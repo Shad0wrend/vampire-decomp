@@ -80,6 +80,22 @@ void CSpeakerUnit::sub_101af420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af600 size=0x32
+#include "CSpeaker.h"
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+extern float *g_1070b228;
+
+// TARGET: CSpeaker::vfunc104
+void CSpeaker::vfunc104()
+{
+    if (!(m_b0204 & 1)) {
+        m_flTime017c = g_1070b244->vfunc1(5.0f, 15.0f) + g_1070b228[3];
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af940 size=0x1e
 #include "CSpeaker.h"
 
