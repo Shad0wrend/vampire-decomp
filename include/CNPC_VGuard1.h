@@ -9,6 +9,8 @@ class CNPC_VGuard1 : public CBaseEntity
 public:
 	CNPC_VGuard1 *vfunc5(unsigned int flags);
 	void sub_100123af();
+	int vfunc440(int schedule);	// slot 440 "TranslateSchedule": schedule 0x6b gives 0x132 or 0x15a from the flags at +0x14bc, schedule 0x103 gives 0x159, any other goes to CNPC_VHuman::vfunc440
+	int sub_10005e20(int schedule);	// CNPC_VHuman::vfunc440 (stub 0x10005e20), tail called
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VGuard1 *sub_1037c620();	// as in CKeepUpright (transplant)
 	void vfunc463(int a, int b);	// slot 463 override: slot 167()'s object at +0xa8 set -> sub_1037e2d0(); on b == 1 calls slot 66 of sub_1032e7b0()'s object, on b == 2, 3 or 11 slot 67; then CNPC_VHuman::vfunc463(a, b)
