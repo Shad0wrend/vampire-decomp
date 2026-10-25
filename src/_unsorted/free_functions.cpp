@@ -82057,6 +82057,36 @@ void __fastcall sub_10265a40(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10266b10 size=0x116
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CAI_BaseNPC.h"
+
+struct CGlobalVarsMaxClients
+{
+	char pad0[0x14];
+	int maxClients;
+};
+extern CGlobalVarsMaxClients *g_1070b228;
+CEntityVSlots *sub_101cd9e0(int index);
+
+char CAI_BaseNPC::sub_10266b10(int a, int b, float f)
+{
+	const Vector *pA = (const Vector *)a;
+	const Vector *pB = (const Vector *)b;
+	Vector dir = *pB - *pA;
+	float flDist = VectorNormalize(dir);
+	for (int i = 1; i <= g_1070b228->maxClients; i++)
+	{
+		Vector dir2 = sub_101cd9e0(i)->slot192() - *pA;
+		float flDist2 = VectorNormalize(dir2);
+		if (DotProduct(dir, dir2) > f && flDist > flDist2)
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10266c80 size=0x86
 #include "CEntityVSlots.h"
 
