@@ -77718,6 +77718,26 @@ void __fastcall sub_102a0eb0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a0ed0 size=0xa7
+#include "CAI_BaseNPCTroika.h"
+#include "ScopeTrace.h"
+
+struct CStandChecker
+{
+	int sub_102e7270(int a, int b, int c, int d, int e, int f);
+};
+
+int CAI_BaseNPCTroika::sub_102a0ed0(int a, int b, int c, int d)
+{
+	ScopeTrace trace("CAI_BaseNPCTroika::CanStandAt", this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc);
+	*((char *)this + 0x63da) = 1;
+	CStandChecker *p = *(CStandChecker **)((char *)this + 0x5d40);
+	int r = p->sub_102e7270(a, b, c, d, 0, 0);
+	*((char *)this + 0x63da) = 0;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a13d0 size=0x3f
 struct T { char pad[0x5dc]; int kind; };
 struct N { char pad[0x5ddc]; T *t; char pad2[0x63fd - 0x5de0]; char flag; };
