@@ -61,3 +61,4 @@
 	void vfunc104();	// slot 104 "CBasePlayer::Precache" (plain member): clears the discipline effect mask (+0xe98), the stat bar pair (+0x2294 = -1), precaches the glow / spread indicator materials (+0x1c44 / +0x1c48 / +0x1c4c) and four sounds, sets +0x22a4 = 5 (and the byte +0x2298 under the debug global 0x10580ae8), runs sub_1015d6d0(0) / (1), slot 266(0) of the object sub_1015d680(1) finds, then the used-hull-bits check of the graph (slot 337)
 	CBaseEntity *sub_1015d680(int index);	// the entity of the handle in the viewmodel array at +0x2308 (index 0..n); null when stale
 	CBaseEntity *sub_10180100(int index);	// the entity of the handle in the array at +0x1d3c (index 0..n); null when stale
+	void sub_1016b0e0(unsigned int buttons);	// the button state update (CHL2_Player::vfunc462 calls it): the previous buttons (+0x2098) go to +0x20a4, the new ones are stored at +0x2098, the newly pressed bits to +0x209c and the released bits to +0x20a0
