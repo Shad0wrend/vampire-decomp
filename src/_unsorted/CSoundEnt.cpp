@@ -27,6 +27,22 @@ void CSoundEnt::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ba840 size=0x31
+#include "CSoundEnt.h"
+
+// TARGET: CSoundEnt::vfunc127
+int CSoundEnt::vfunc127(int a)
+{
+    int result = sub_1000961a(a);
+    CSoundEntSlot *pSlot = m_SoundPool;
+    for (int i = 0x40; i != 0; i--) {
+        pSlot->sub_1000a493();
+        pSlot++;
+    }
+    return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ba890 size=0xd2
 #include "CSoundEnt.h"
 
