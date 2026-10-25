@@ -91279,6 +91279,31 @@ void CUnknown102f3900::sub_102f3900(CUnknown102f3900Ent *pEnt, Vector vecA, Vect
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f4520 size=0x91
+#include "CUnknown102f45f0.h"
+#include "Vector.h"
+
+struct CGlobalVarsView
+{
+	char m_pad0000[0xc];
+	float m_curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+
+int CUnknown102f45f0::sub_102f4520(const CachedPos_t *pPos)
+{
+	for (int i = 0; i < 20; i++)
+	{
+		if (!(m_cache[i].m_flTime + 5.0f < g_1070b228->m_curtime) && m_cache[i].m_nField14 == 0x17)
+		{
+			if ((*(Vector *)&m_cache[i].m_vecPos - *(Vector *)pPos).Length() < 24.0)
+				return m_cache[i].m_nNode;
+		}
+	}
+	return -2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f45f0 size=0xa9
 #include "CUnknown102f45f0.h"
 
