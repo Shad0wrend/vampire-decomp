@@ -16,6 +16,11 @@ public:
 	void sub_10003044(float *pAngles);	// sub_100f3e60 (stub 0x10003044)
 	CRotDoor *vfunc5(unsigned char flags);	// scalar deleting destructor: releases the ten event lists, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
+	void vfunc104();	// slot 104 "CRotDoor::Precache"-like (plain member): CBaseDoor::vfunc104, then the door's two end volumes (sub_100f19b0 on the +0x52c angles and on their negation) with their centres (the halves of the sums of the min / max corners) at +0x6b0 / +0x6d4, sub_100f3f20(), and the tail call of CBaseDoor::sub_100eecf0
+	void sub_100efab0();	// CBaseDoor::vfunc104 (stub 0x100076b2), called directly
+	void sub_100f19b0(Vector vecAngles, Vector *pMins, Vector *pMaxs);	// stub 0x10011216: the volume the door sweeps for the angles
+	void sub_100f3f20();	// stub 0x1000d53f, called directly
+	void sub_100eecf0();	// CBaseDoor::sub_100eecf0 (stub 0x10012a58), tail called
 
 	char m_pad03e0[0x4a4 - 0x3e0];
 	CDoorEventList m_items4a4[2];	// +0x4a4, +0x4bc
@@ -26,4 +31,11 @@ public:
 	Vector m_angRotation52c;	// +0x52c: the other end angle
 	char m_pad0538[0x564 - 0x538];
 	CDoorEventList m_items564[8];	// +0x564 .. +0x60c
+	char m_pad060c[0x698 - 0x60c];
+	Vector m_vecMins698;	// +0x698: the volume for the +0x52c angles
+	Vector m_vecMaxs6a4;	// +0x6a4
+	Vector m_vecCenter6b0;	// +0x6b0: its centre
+	Vector m_vecMins6bc;	// +0x6bc: the volume for the opposite angles
+	Vector m_vecMaxs6c8;	// +0x6c8
+	Vector m_vecCenter6d4;	// +0x6d4
 };
