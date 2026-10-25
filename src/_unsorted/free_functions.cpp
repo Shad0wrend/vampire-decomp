@@ -86940,6 +86940,31 @@ void __fastcall sub_102e9e50(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea090 size=0x38
+// TARGET: CUnknown102ea090::sub_102ea090
+struct CUnknown102ea090
+{
+	int m_a;
+	int m_b;
+	int m_c;
+	int m_d;
+	int m_e;
+	int m_f;
+	CUnknown102ea090 *sub_102ea090(char bFlag);
+};
+
+CUnknown102ea090 *CUnknown102ea090::sub_102ea090(char bFlag)
+{
+	m_a = bFlag ? 0 : -1;
+	m_b = bFlag ? 0 : 9999;
+	m_c = -1;
+	m_d = -1;
+	m_e = 0;
+	m_f = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ea130 size=0xc3
 #include "CUnknown10359c50.h"
 
