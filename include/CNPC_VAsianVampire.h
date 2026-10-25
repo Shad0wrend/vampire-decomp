@@ -2,6 +2,8 @@
 // until the bases are recovered. Only what decompiled code needs.
 #pragma once
 
+#include "Vector.h"
+
 class CBaseEntity;
 
 struct StoredHintPos_t
@@ -45,6 +47,7 @@ public:
 	char m_bTaskFailedJump;	// +0x66d4: set when a task fails with a code in 12..15
 	char pad66d5[3];
 	float m_flStationaryTime;	// +0x66d8
+	StoredHintPos_t m_stationaryPos;	// +0x66dc: where the NPC stood when the stamp was taken
 
 	bool sub_10362670();	// "CNPC_VAsianVampire::StationaryFor...": curtime - m_flStationaryTime >= constant
 	int vfunc438();	// slot 438 "CNPC_VAsianVampire::SelectSchedule"
@@ -76,6 +79,7 @@ public:
 	void sub_10013e85();	// CNPC_VVampireBoss::vfunc420, called directly
 	void vfunc432(int arg);	// slot 432 "CNPC_VAsianVampire::RunAI": scope trace, sub_10005673(), then CNPC_VHuman::vfunc432(arg)
 	void sub_10005673();	// the Asian vampire's per-tick update (stub of 0x10362540), called with this
+	void sub_10362540();	// "CNPC_VAsianVampire::UpdateMovedTimeStamp": scope trace; when the NPC (slot 217) is more than a constant away from the stationary position (+0x66dc) stamps the current time at +0x66d8 and takes the current origin as the new stationary position
 	void sub_1000698d(int arg);	// CNPC_VHuman::vfunc432, called directly
 	void vfunc444(const CVAsianVampireTask_t *pTask);	// slot 444 "CNPC_VAsianVampire::RunTask": scope trace; task 0x13a: the base RunTask, then, unless the ideal activity (+0xfec) is already 0x2d, starts it (sub_10014524) when the z of the slot 198 vector is not above a constant; task 0x150: sub_10005d17(+0x5ddc), clears the failed-jump byte (+0x66d4) and sub_1000ac68(0); tasks 0x151 / 0x152 do nothing; the rest goes to the base RunTask
 	void sub_10004edf(const CVAsianVampireTask_t *pTask);	// CNPC_VVampireBoss::vfunc444, called directly
