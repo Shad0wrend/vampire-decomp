@@ -60,3 +60,24 @@ bool CFuncKeyframedMover::vfunc223()
 	return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10223fd0 size=0x78
+#include "CFuncKeyframedMover.h"
+void sub_100aa7b0(void *p);
+
+CFuncKeyframedMover *CFuncKeyframedMover::vfunc5(unsigned int flags)
+{
+	m_Output5e8.sub_100cd2d0();
+	m_Output5d0.sub_100cd2d0();
+	m_Output5b8.sub_100cd2d0();
+	m_Output5a0.sub_100cd2d0();
+	m_Output588.sub_100cd2d0();
+	m_Output570.sub_100cd2d0();
+	m_Output4bc.sub_100cd2d0();
+	m_Output4a4.sub_100cd2d0();
+	sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
