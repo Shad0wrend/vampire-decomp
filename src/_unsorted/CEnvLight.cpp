@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10130af0 size=0x33
+// TARGET: CEnvLight::vfunc110
+#include "CEnvLight.h"
+#include "CLight.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+bool CEnvLight::vfunc110(const char *szKeyName, const char *szValue)
+{
+	if (_strcmpi(szKeyName, "_light") == 0) {
+		return true;
+	}
+	return ((CLight *)this)->vfunc110(szKeyName, szValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130b60 size=0x1e
 #include "CEnvLight.h"
 

@@ -5717,6 +5717,7 @@
 0x10013b2e func   ?sub_101d1280@@YAHPAVCBaseEntity@@@Z sub_101d1280
 0x10013b65 func   ?sub_10071660@CUnk10071840@@QAEXXZ CUnk10071840::sub_10071660
 0x10013b6a func   ?sub_1018e1c0@CActivityCopyProp@@QAEPAV1@XZ CActivityCopyProp::sub_1018e1c0
+0x10013b74 func   ?vfunc110@CEnvLight@@QAE_NPBD0@Z CEnvLight::vfunc110
 0x10013b79 func   ?sub_100a9470@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9470
 0x10013b88 func   ?sub_101b26c0@CSoundEmitterSystemBase@@QAEPAV1@XZ CSoundEmitterSystemBase::sub_101b26c0
 0x10013b92 func   ?sub_10068110@@YAHXZ sub_10068110
