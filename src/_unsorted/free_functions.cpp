@@ -61372,6 +61372,28 @@ struct CUnknown101f2500 { int a; char sub_101f2500(); };
 char CUnknown101f2500::sub_101f2500() { int v = ((int *)this)[-5]; return v != 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101f2550 size=0x35
+#include <string.h>
+struct SNodeVT { int slot0; int slot1; int offset; };
+struct SNode {
+	SNodeVT *vt;
+	int pad[4];
+	const char *name;
+	SNode *next;
+};
+// TARGET: sub_101f2550
+int __fastcall sub_101f2550(void *self)
+{
+	SNode *node = *(SNode **)((char *)self - 0x18);
+	while (node) {
+		if (_strcmpi(*(const char **)((char *)self - 0x1c), node->name) == 0)
+			return (int)node + node->vt->offset;
+		node = node->next;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f25a0 size=0x12
 // TARGET: sub_101f25a0
 int __fastcall sub_101f25a0(char *self)
