@@ -31,6 +31,53 @@ void CNPC_VZombie::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103df850 size=0x16c
+#include "CNPC_VZombie.h"
+#include "CEHandleGet.h"
+#include "CUnknown10739d08.h"
+#include "CUnknown1070b244.h"
+
+__declspec(dllimport) void __cdecl DevMsg(const char *pszFormat, ...);
+
+struct CGlobalVarsView
+{
+	char m_pad0000[0xc];
+	float m_flCurTime;	// 0x0c
+};
+extern CGlobalVarsView *g_1070b228;
+extern CUnknown10739d08 g_10739d08;
+extern CUnknown1070b244 *g_1070b244;
+
+struct CEntityPlayerView
+{
+	char m_pad0000[0xa8];
+	void *m_pPlayer;	// 0xa8
+};
+
+// TARGET: CNPC_VZombie::vfunc432
+void CNPC_VZombie::vfunc432(int a)
+{
+	if (m_nMode6678 == 1 && m_flPlayerDist6264 > m_flMaxDist66dc) {
+		DevMsg("zombie %s: player too far away, killing self (%.1f > %.1f)...\n", sub_100ab4f0(), m_flPlayerDist6264, m_flMaxDist66dc);
+		vfunc119();
+	}
+	sub_10360160(a);
+	if ((m_nMode6678 == 1 || m_nMode6678 == 0) && m_nState0fec != 0x4b && sub_10269aa0(0x46)) {
+		if (g_10739d08.sub_101e8a90() <= m_flPlayerDist6264 && g_10739d08.sub_101e8ab0() >= m_flPlayerDist6264 && g_1070b228->m_flCurTime >= m_flNextLunge66d8) {
+			CEntityPlayerView *pEnemy = (CEntityPlayerView *)EHandle_Get(m_hEnemy628c);
+			if (pEnemy && pEnemy->m_pPlayer) {
+				int roll = g_1070b244->vfunc2(0, 99);
+				if (g_10739d08.sub_101e8b30() > roll) {
+					sub_102ae750(0x16a, 0);
+					m_flNextLunge66d8 = g_10739d08.sub_101e8c10() + g_1070b228->m_flCurTime;
+				}
+			}
+		}
+	}
+	m_bActive05ac = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dfa20 size=0xc5
 #include "ScopeTrace.h"
 #include "CNPC_VZombie.h"
