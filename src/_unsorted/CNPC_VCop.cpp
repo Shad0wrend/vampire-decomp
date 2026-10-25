@@ -28,6 +28,23 @@ int CNPC_VCop::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10371a20 size=0x39
+#include "CNPC_VCop.h"
+
+// TARGET: CNPC_VCop::vfunc103
+extern int g_1093acac;
+
+void CNPC_VCop::vfunc103()
+{
+	sub_10012855(0x200d00);
+	m_d6668 = 0;
+	CNPC_VHumanCombatant::vfunc103();
+	g_1093acac++;
+	m_b6671 = 1;
+	m_b6672 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10371a90 size=0x33
 #include "CNPC_VCop.h"
 extern int g_1093acac;
