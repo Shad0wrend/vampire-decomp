@@ -15,6 +15,7 @@ class CSoundScheme : public CBaseEntity
 {
 public:
 	CSoundScheme *vfunc5(unsigned int flags);
+	void vfunc113();	// slot 113: locks the global at 0x10750d78 with this (0x100115f9); then when the byte at +0x454 is set calls sub_1022b590(2.0), else CBaseEntity::sub_100ac4e0(0, 0.0, 0) (0x10007fe5)
 	void sub_1000bccb();
 	void sub_1000cb8a();
 	void sub_1022a200();	// destructor body (stub 0x1000bccb): resets the vtable, purges the vectors at +0x580 and +0x594
