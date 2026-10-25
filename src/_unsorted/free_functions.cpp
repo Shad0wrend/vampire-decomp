@@ -34778,6 +34778,61 @@ void CFire::sub_1010b470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b840 size=0x133
+#include "CBaseEntity.h"
+#include "CFire.h"
+#include "ConVar.h"
+
+struct CGlobalVarsView
+{
+	char m_pad00[0xc];
+	float curtime;
+	float frametime;
+};
+
+struct CFireBurnView
+{
+	char m_pad0000[0x464];
+	float m_flBurnOut;
+	char m_pad0468[4];
+	float m_flHeat;
+	float m_flLevel;
+	char m_pad0474[4];
+	float m_flRate;
+	char m_pad047c[4];
+	float m_flFade;
+	char m_pad0484[0x490 - 0x484];
+	char m_bBurning;
+};
+
+extern CGlobalVarsView *g_1070b228;
+extern ConVar *g_1070954c;
+extern ConVar *g_10709474;
+extern float g_104454c4;
+float sub_1013d400(float a, float b, float c);
+
+void CFire::sub_1010b840(float flTime)
+{
+	CFireBurnView *pView = (CFireBurnView *)this;
+	if (!pView->m_bBurning)
+		return;
+	pView->m_flBurnOut = g_1070b228->curtime + 0.5;
+	bool bWasBurning = pView->m_flHeat > g_104454c4;
+	pView->m_flHeat -= flTime;
+	pView->m_flLevel += (g_1070954c->vfunc1() ? g_104454c4 : g_1070954c->m_fValue) * flTime;
+	if ((g_10709474->vfunc1() ? g_104454c4 : g_10709474->m_fValue) < pView->m_flLevel)
+		pView->m_flLevel = g_10709474->vfunc1() ? g_104454c4 : g_10709474->m_fValue;
+	float flTarget = pView->m_flRate * 0.3125f;
+	pView->m_flFade = sub_1013d400(flTarget, pView->m_flFade, g_1070b228->frametime + g_1070b228->frametime);
+	if (pView->m_flHeat <= g_104454c4)
+	{
+		pView->m_flHeat = 0;
+		if (bWasBurning)
+			sub_1010b9d0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010be40 size=0xaf
 struct ISaveRestoreOps;
 struct datamap_t;
