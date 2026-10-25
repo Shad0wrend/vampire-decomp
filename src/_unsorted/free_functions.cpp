@@ -102224,6 +102224,42 @@ void CNPC_Crow::sub_103580d0(int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103581b0 size=0x10e
+#include "CNPC_Crow.h"
+
+#define SV1(n) virtual void n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CCrowSlotView
+{
+	SV100(a) SV100(b) SV10(c0) SV10(c1)
+	virtual float *vfunc220();
+};
+
+void sub_101cf5c0(CNPC_Crow *pEnt, const Vector *pOrigin, int a);
+
+inline void UTIL_SetOrigin(CNPC_Crow *pEnt, const Vector &vecOrigin, int a)
+{
+	Vector vecCopy = vecOrigin;
+	sub_101cf5c0(pEnt, &vecCopy, a);
+}
+
+void CNPC_Crow::sub_103581b0(CBaseEntity *pTarget)
+{
+	if (pTarget)
+	{
+		sub_103580d0(1);
+		UTIL_SetOrigin(this, *(Vector *)((CCrowSlotView *)this)->vfunc220() + Vector(0, 0, 1), 0);
+		const Vector *pTargetPos = (const Vector *)((CCrowSlotView *)pTarget)->vfunc220();
+		const Vector *pMyPos = (const Vector *)((CCrowSlotView *)this)->vfunc220();
+		Vector vecDir = *pTargetPos - *pMyPos;
+		VectorNormalize(vecDir);
+		sub_100b2770(vecDir * 170.0f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10359190 size=0x33
 void sub_1000b15e();
 void sub_1000215d();
