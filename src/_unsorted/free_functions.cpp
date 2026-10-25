@@ -77096,6 +77096,29 @@ struct CUnknown10248a50 { int p[4]; int a; void sub_10248a50(int v); };
 void CUnknown10248a50::sub_10248a50(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10248b60 size=0x3d
+#include <string.h>
+
+extern char g_10753f68;
+char *__fastcall sub_1000fa65(char *self);
+
+char *__fastcall sub_10248b60(char *self)
+{
+    char *p;
+    if (g_10753f68 != 0) {
+        p = sub_1000fa65(self);
+        while (p != 0) {
+            if (_strcmpi(&g_10753f68, *(char **)p) == 0) {
+                break;
+            }
+            p = sub_1000fa65(p);
+        }
+        return p;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248cd0 size=0x8b
 extern int (*g_109f388c)(char *buffer, int count, const char *format, ...);
 
