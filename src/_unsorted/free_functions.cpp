@@ -111619,6 +111619,39 @@ ActEntry *sub_10412260(const char *pName, int iActivityIndex, bool isPrivate)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10412420 size=0x3f
+struct CActivityTable
+{
+	int sub_1000cc2a(const char *pszName);	// the index of the name, -1 when there is none (stub 0x1000cc2a)
+};
+
+struct CActivityEntry
+{
+	int m_n00;
+	int m_n04;
+};
+
+extern CActivityTable g_1094afe0;
+extern CActivityEntry *g_109d3010;
+extern char g_10684a44[];
+typedef void (*FnDevWarning)(int level, const char *pszFormat, ...);
+extern FnDevWarning g_109f3658;
+
+// TARGET: sub_10412420
+CActivityEntry *sub_10412420(const char *pszName)
+{
+	int iIndex = g_1094afe0.sub_1000cc2a(pszName);
+	if (iIndex < 0) {
+		return 0;
+	}
+	if (iIndex >= 0x118d) {
+		g_109f3658(1, g_10684a44, pszName);
+		return 0;
+	}
+	return &g_109d3010[iIndex];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10412590 size=0xcb
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(int);
