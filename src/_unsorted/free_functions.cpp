@@ -16502,6 +16502,20 @@ int CBaseAnimating::sub_1008f7b0(const char *pszLabel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008fbe0 size=0xb5
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+// TARGET: CBaseAnimating::sub_1008fbe0
+float CBaseAnimating::sub_1008fbe0(int sequence)
+{
+    ScopeTrace trace("CBaseAnimating::GetSequenceMoveDist", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    Vector vecMove;
+    sub_1008fcd0(sequence, &vecMove.x);
+    return FastSqrt(vecMove.z * vecMove.z + vecMove.x * vecMove.x + vecMove.y * vecMove.y);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008fe80 size=0x9d
 #include "CBaseAnimating.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
