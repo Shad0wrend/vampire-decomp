@@ -10645,6 +10645,30 @@ struct CUnknown100740f0 { int p[2]; char a; void sub_100740f0(char v); };
 void CUnknown100740f0::sub_100740f0(char v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10074110 size=0x39
+extern float g_104454d0;
+
+struct CUnknown10074110 {
+    char m_pad0000[0xc];
+    float m_flA;	// 0x0c
+    float m_flB;	// 0x10
+    float sub_10074110(int nMode);
+};
+
+// TARGET: CUnknown10074110::sub_10074110
+float CUnknown10074110::sub_10074110(int nMode)
+{
+    float flResult = 0.0f;
+    if (nMode == 1) {
+        return g_104454d0;
+    }
+    if (m_flA != m_flB) {
+        flResult = (-m_flA) / (m_flB - m_flA);
+    }
+    return flResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074160 size=0x70
 #include "CUnknown10074070.h"
 
