@@ -4098,6 +4098,7 @@
 0x1000e363 func   ??0CUnknown10248a50@@QAE@PBD@Z CUnknown10248a50::CUnknown10248a50
 0x1000e381 func   ?sub_102477c0@CUnknown102477c0@@QAEXXZ CUnknown102477c0::sub_102477c0
 0x1000e386 func   ?sub_101128d0@CBreakableSurface@@QAEXABVVector@@PAM1@Z CBreakableSurface::sub_101128d0
+0x1000e38b func   ?sub_101d6a50@CUnknown101d7520Entry@@QAE_NPAX@Z CUnknown101d7520Entry::sub_101d6a50
 0x1000e390 func   ?sub_101618a0@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_101618a0
 0x1000e395 func   ?sub_1024e930@@YAXAAVVMatrix@@ABVVector@@M@Z sub_1024e930
 0x1000e39f func   ?vfunc241@CEnvParticleHUD@@QAEXXZ CEnvParticleHUD::vfunc241
