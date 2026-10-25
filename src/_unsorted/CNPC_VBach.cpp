@@ -114,3 +114,15 @@ int __stdcall sub_10364500(float flA, float flB)
     return 0x4f;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10364550 size=0x31
+int __stdcall sub_10364550(float a, float b)
+{
+    if (a < 0.5) {
+        if (b > 120.0f) {
+            return 0x61;
+        }
+    }
+    return 0x50;
+}
+// END FUNCTION
