@@ -84353,6 +84353,29 @@ int sub_102db470(CUnknown102db470 *pNPC)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db5e0 size=0x3b
+extern char *g_10927194;
+
+char *sub_102db5e0(int key)
+{
+    char *result = 0;
+    for (char *obj = g_10927194; obj != 0; obj = *(char **)(obj + 0x540)) {
+        int n = *(int *)(obj + 0x588);
+        if (n > 0) {
+            char *p = *(char **)(obj + 0x580);
+            do {
+                if (*(int *)p == key) {
+                    result = obj;
+                }
+                p += 0x1c;
+                n--;
+            } while (n != 0);
+        }
+    }
+    return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db630 size=0xa
 extern char g_1092719c;
 void sub_102db630(char value)
