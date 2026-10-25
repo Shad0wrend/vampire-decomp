@@ -30,6 +30,28 @@ int CNPC_VTzimisce::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9060 size=0x84
+#include "CNPC_VTzimisce.h"
+
+void CNPC_VTzimisce::vfunc103()
+{
+	sub_10298d30();
+	m_f1574 = -0.5f;
+	{
+		Vector v = m_vec1074;
+		m_vec1074.y = v.x;
+		m_vec1074.x = -v.y;
+		m_vec1074.z = v.z;
+	}
+	{
+		Vector size(60.0f, 60.0f, 100.0f);
+		sub_1009b060(&size);
+	}
+	sub_100b3900(4);
+	m_b6078 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b91d0 size=0x71
 #include "CNPC_VTzimisce.h"
 #include "CNPC_VBaseBoss.h"
