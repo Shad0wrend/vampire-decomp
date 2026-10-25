@@ -3222,6 +3222,7 @@
 0x1000bc0d func   ?sub_101cdac0@@YAXHHPBDHHIH@Z sub_101cdac0
 0x1000bc12 func   ?sub_10216aa0@CPropModelState@@QAEXHPAX@Z CPropModelState::sub_10216aa0
 0x1000bc21 func   ?sub_1008be20@CBaseAnimating@@QAE_NPAVCBaseEntity@@@Z CBaseAnimating::sub_1008be20
+0x1000bc30 func   ?sub_101cccf0@CUnknown101cccf0@@QAEPAU1@HHHH@Z CUnknown101cccf0::sub_101cccf0
 0x1000bc44 func   ?sub_10323a70@@YIFPAD@Z sub_10323a70
 0x1000bc49 func   ?sub_102c8ca0@@YAXXZ sub_102c8ca0
 0x1000bc6c func   ?vfunc5@CNPC_VPlayerController@@QAEPAV1@I@Z CNPC_VPlayerController::vfunc5

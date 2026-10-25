@@ -53404,6 +53404,27 @@ CEdtEntitiesEnum *CEdtEntitiesEnum::sub_101ccb60(CBaseEntity **pList, int nMaxLi
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cccf0 size=0x37
+int sub_10009917(char *pBuf, int nSize, int a, int b, int c, int d);
+
+struct CUnknown101cccf0
+{
+	int m_n00;
+	int m_n04;
+	char m_buf08[0x100];
+
+	CUnknown101cccf0 *sub_101cccf0(int a, int b, int c, int d);
+};
+
+// TARGET: CUnknown101cccf0::sub_101cccf0
+CUnknown101cccf0 *CUnknown101cccf0::sub_101cccf0(int a, int b, int c, int d)
+{
+	m_n00 = 0;
+	m_n04 = sub_10009917(m_buf08, 0x100, a, b, c, d);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ccd40 size=0x11
 int __fastcall sub_101ccd40(int *p)
 {
