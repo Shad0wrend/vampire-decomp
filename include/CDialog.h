@@ -65,4 +65,5 @@ public:
 	void sub_100e7d10(char *pPacket, const char *pszText);	// stub 0x100090de: writes the NPC text into the packet
 	void sub_100e8060(char *pPacket, int nMax);	// stub 0x100023c4: finishes the packet line (limit nMax)
 	void sub_100e0f90(unsigned char value);	// "CDialog::SetDialogWindowActive": scope trace, sends a reliable user message (type g_1072608c, byte 8, then value) to the player behind the handle at +4
+	void sub_100e1220(unsigned char value);	// "CDialog::ShowHistoryWindow": scope trace, sends a reliable user message (type g_1072608c, byte 6, then value) to the player behind the handle at +4
 };
