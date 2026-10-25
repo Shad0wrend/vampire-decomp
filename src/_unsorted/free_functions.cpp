@@ -82098,6 +82098,35 @@ void CUnknown102dca60::sub_102dc490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dc520 size=0x128
+#include "CUnknown102dca60.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CUnknown1070b248.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b248 *g_1070b248;
+extern CUnknown1070b22c *g_1070b22c;
+int sub_10228350(int);
+
+struct CSoundEntityView : CEntitySoundOriginView
+{
+	char m_pad0004[0x2e0 - 4];
+	int m_pEdict2e0;	// 0x2e0
+	char m_pad02e4[0x468 - 0x2e4];
+	int m_nSoundLevel;	// 0x468
+};
+
+void CUnknown102dca60::sub_102dc520()
+{
+	CSoundEntityView *pEnt = (CSoundEntityView *)this;
+	soundlevel_t soundlevel = (soundlevel_t)sub_10228350(pEnt->m_nSoundLevel);
+	CPASAttenuationFilter filter(pEnt, soundlevel);
+	int edict = pEnt->m_pEdict2e0;
+	g_1070b248->vfunc11(&filter, g_1070b22c->vfunc35(edict), 2, 0, 0, 4, 100, 0, 0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dca60 size=0x15e
 #include "CUnknown102dca60.h"
 #include "CGlobalEntityList.h"
