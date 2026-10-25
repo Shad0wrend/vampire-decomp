@@ -28494,6 +28494,21 @@ void CFlagsUnit::sub_100dc580(unsigned short flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc770 size=0x74
+#include "CCollisionProperty.h"
+
+// TARGET: CCollisionProperty::sub_100dc770
+void CCollisionProperty::sub_100dc770(const float *mins, const float *maxs)
+{
+    m_vecMins = *(const Vector *)mins;
+    m_vecMaxs = *(const Vector *)maxs;
+    Vector vecDelta;
+    VectorSubtract(*(const Vector *)maxs, *(const Vector *)mins, vecDelta);
+    *(float *)((char *)this + 0x48) = vecDelta.Length() * 0.5f;
+    sub_100dda20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc9f0 size=0xfa
 #include "CUnknown100dc9f0.h"
 #include "TempVector.h"
