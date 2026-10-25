@@ -56796,6 +56796,29 @@ float sub_101d2ce0(const Vector &vec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2d80 size=0xa9
+#include "matrix3x4_t.h"
+#include <math.h>
+
+extern float g_104454c4;
+extern float g_10446758;
+extern float g_10450568;
+
+float sub_101d2d80(const matrix3x4_t *pMatrix, const Vector *pVec)
+{
+	Vector tmp = *pVec;
+	VectorNormalize(tmp);
+	float x = tmp.x * pMatrix->m_flMatVal[0][0] + tmp.y * pMatrix->m_flMatVal[1][0] + tmp.z * pMatrix->m_flMatVal[2][0];
+	float y = tmp.x * pMatrix->m_flMatVal[0][1] + tmp.y * pMatrix->m_flMatVal[1][1] + tmp.z * pMatrix->m_flMatVal[2][1];
+	if (x == g_104454c4 && y == g_104454c4)
+		return g_104454c4;
+	float yaw = atan2(-y, x) * g_10446758;
+	if (yaw < g_104454c4)
+		yaw += g_10450568;
+	return yaw;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2e60 size=0xa7
 #include "matrix3x4_t.h"
 #include <math.h>
