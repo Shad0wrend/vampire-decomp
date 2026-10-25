@@ -9656,6 +9656,22 @@ bool CBaseCineCam::sub_1006d9d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006e0e0 size=0x33
+// TARGET: sub_1006e0e0
+void __fastcall sub_1006e0e0(char *pThis)
+{
+    int *p = (int *)(pThis + 0x620);
+    int i;
+    for (i = 4; i != 0; i--) {
+        p[-4] = -1;
+        p[0] = -1;
+        p++;
+    }
+    *(int *)(pThis + 0x630) = -1;
+    *(int *)(pThis + 0x638) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006e4c0 size=0x17a
 #include "CBaseCineCam.h"
 #include "CUtlVector4.h"
