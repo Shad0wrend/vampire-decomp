@@ -1121,6 +1121,31 @@ float *CBasePlayer::vfunc367(float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174e60 size=0xdd
+#include "CBasePlayer.h"
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+struct CBasePlayerViewOffsetView
+{
+	char m_pad0000[0x184];
+	Vector m_vecViewOffset;	// 0x184
+};
+
+Vector CBasePlayer::vfunc197(const Vector &posSrc, char bRandom, char bAddViewOffset)
+{
+	CBasePlayerViewOffsetView *pView = (CBasePlayerViewOffsetView *)this;
+	if (bRandom) {
+		return *(Vector *)vfunc220() + pView->m_vecViewOffset * g_1070b244->vfunc1(0.5f, 1.0f);
+	} else if (bAddViewOffset) {
+		return *(Vector *)vfunc220() + pView->m_vecViewOffset;
+	} else {
+		return vfunc192();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177210 size=0x73
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
