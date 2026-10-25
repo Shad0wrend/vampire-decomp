@@ -80043,6 +80043,57 @@ void sub_1024e930(VMatrix &dst, const Vector &v, float angleDegrees)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024eaa0 size=0x174
+#include "Vector.h"
+#include <math.h>
+
+void sub_1024dfb0(void *pMat);
+void sub_1024e930(void *pMat, const Vector *pAxis, float flAngle);
+void sub_10139500(const Vector &start, float scale, const Vector &dir, Vector &dest);
+
+static inline float FloatAbs(float f)
+{
+    return (float)fabs(f);
+}
+
+// TARGET: sub_1024eaa0
+void sub_1024eaa0(void *pMat, const Vector *a, const Vector *b)
+{
+    float flDot = a->z * b->z + a->x * b->x + a->y * b->y;
+    Vector axis;
+    float flAngle;
+    if (flDot - 1.0 > -0.001)
+    {
+        sub_1024dfb0(pMat);
+        return;
+    }
+    if (flDot + 1.0 < 0.001)
+    {
+        int i = 0;
+        if (FloatAbs(b->y) < FloatAbs(b->x))
+            i = 1;
+        if (FloatAbs(b->z) < FloatAbs((*b)[i]))
+            i = 2;
+        axis.x = 0.0f;
+        axis.y = 0.0f;
+        axis.z = 0.0f;
+        axis[i] = 1.0f;
+        sub_10139500(axis, -(axis.y * b->y + axis.x * b->x + axis.z * b->z), *b, axis);
+        VectorNormalize(axis);
+        flAngle = 180.0f;
+    }
+    else
+    {
+        axis.x = a->y * b->z - a->z * b->y;
+        axis.y = b->x * a->z - b->z * a->x;
+        axis.z = a->x * b->y - a->y * b->x;
+        VectorNormalize(axis);
+        flAngle = (float)(acos(flDot) * 57.29577951308232);
+    }
+    sub_1024e930(pMat, &axis, flAngle);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024fc20 size=0x174
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"

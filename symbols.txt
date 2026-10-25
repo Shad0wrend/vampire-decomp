@@ -5428,6 +5428,7 @@
 0x1001208f func   ?sub_10193100@CContestedFields10193100@@QAEHH@Z CContestedFields10193100::sub_10193100
 0x10012099 func   ?vfunc243@CBaseFire@@QAEXH@Z CBaseFire::vfunc243
 0x100120a8 func   ?sub_101dbc60@CUnknown101dbc60@@QAEXXZ CUnknown101dbc60::sub_101dbc60
+0x100120b7 func   ?sub_1024eaa0@@YAXPAXPBVVector@@1@Z sub_1024eaa0
 0x100120c1 func   ?vfunc87@CBaseEntity@@UAEXPAX@Z CBaseEntity::vfunc87
 0x100120c6 func   ?vfunc103@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc103
 0x100120cb func   ?sub_103ba640@CNPC_VTzimisce@@QAEXPAXPAVVector@@PAH2@Z CNPC_VTzimisce::sub_103ba640
