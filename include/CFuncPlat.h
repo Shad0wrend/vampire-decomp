@@ -21,7 +21,7 @@ public:
 	FP_V(179)
 	FP_V10(18) FP_V10(19) FP_V10(20) FP_V10(21) FP_V10(22) FP_V10(23)
 	virtual void vfunc240(); virtual unsigned char vfunc241();
-	virtual void vfunc242(); virtual void vfunc243();	// 243: starts the sound named at +0x55c (if any) and moves to position 2 (state 3)
+	virtual void vfunc242(); virtual void vfunc243();	// 242: starts the sound named at +0x55c (if any) and moves to position 1 (state 2); 243: the same toward position 2 (state 3)
 	char m_pad[0x114 - 4];
 	void *m_pfnThink;	// 0x114
 	char m_pad0118[0x164 - 0x118];
@@ -36,7 +36,8 @@ public:
 	float m_flMoveDoneTime;	// 0x3fc
 	char m_pad0400[0x4f8 - 0x400];
 	int m_nToggleState;	// 0x4f8
-	char m_pad04fc[0x514 - 0x4fc];
+	char m_pad04fc[0x508 - 0x4fc];
+	Vector m_vecPosition508;	// 0x508
 	Vector m_vecPosition514;	// 0x514
 	char m_pad0520[0x55c - 0x520];
 	const char *m_pszStartSound;	// 0x55c
