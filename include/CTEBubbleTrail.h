@@ -1,12 +1,19 @@
 // CTEBubbleTrail: bubble trail temp entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
 
+#include "Vector.h"
+#include "QAngle.h"
+
+class CRecipientFilter;
+
 class CTEBubbleTrail
 {
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual CTEBubbleTrail *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "CTEBubbleTrail::Test": like CTEBubbles::Test with 20 bubbles, height 128 and speed 8.0
+	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "Create"
 
 	void sub_100157ee();	// destructor body
 	void sub_1005fec0(int a, int b);	// "CTEBubbleTrail::Create" (called through the stub at 0x10010992)
