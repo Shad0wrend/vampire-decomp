@@ -300,6 +300,34 @@ float CNPC_VMingXiao::vfunc603(float *pCurrent, float *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10396000 size=0x35
+struct CUnknownTroikaBase
+{
+	int sub_1000527c(int a);
+};
+
+void sub_10015311(void *pValue, int nBytes);
+
+struct CUnknown10396000
+{
+	char m_pad0000[0x66f4];
+	float m_fl66f4[6];
+
+	int sub_10396000(int a);
+};
+
+// TARGET: CUnknown10396000::sub_10396000
+int CUnknown10396000::sub_10396000(int a)
+{
+	int result = ((CUnknownTroikaBase *)this)->sub_1000527c(a);
+	for (int i = 0; i < 6; i++)
+	{
+		sub_10015311(&m_fl66f4[i], 4);
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10396fd0 size=0x18
 #include "CNPC_VMingXiao.h"
 
