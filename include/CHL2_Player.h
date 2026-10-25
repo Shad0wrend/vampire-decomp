@@ -70,7 +70,10 @@ public:
 	virtual float vfunc480();
 	virtual float vfunc481();
 
-	char m_pad0004[0x2460];	// 0x0004 .. 0x2463
+	int sub_1034fd90(int a);	// slot 370 (called through the vtable): stores the forward x (slot 367's x + +0xe5c) through sub_1000ecd2(a, x) and answers a
+	char m_pad0004[0xe5c - 4];	// 0x0004 .. 0x0e5b
+	float m_fe5c;	// 0x0e5c: added to the forward x of slot 367 (slot 370)
+	char m_pad0e60[0x2464 - 0xe60];	// 0x0e60 .. 0x2463
 	CHL2_PlayerMember2464 m_u2464;
 	char m_pad2468[0xC0];	// 0x2468 .. 0x2527
 	int m_n2528;
