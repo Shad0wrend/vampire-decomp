@@ -5423,6 +5423,7 @@
 0x10012436 func   ?sub_10050b90@CDisciplineParticle@@SAPAV1@PAUCDisciplineParticleParams@@HHHH@Z CDisciplineParticle::sub_10050b90
 0x10012440 func   ?sub_103d4760@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d4760
 0x1001244a func   ?sub_10406560@@YAHXZ sub_10406560
+0x10012459 func   ?vfunc16@CAI_Motor@@UAEMXZ CAI_Motor::vfunc16
 0x10012468 func   ?vfunc103@CVGuiScreen@@UAEXXZ CVGuiScreen::vfunc103
 0x1001246d func   ??0CVFeat_t@@QAE@H@Z CVFeat_t::CVFeat_t
 0x10012472 func   ?sub_10246320@@YAXHPBMPAM@Z sub_10246320

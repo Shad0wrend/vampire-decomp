@@ -59,3 +59,20 @@ void CAI_Motor::vfunc3()
 	((COuterView *)m_pOuter)->vfunc208(0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x102e1300 size=0xba
+#include "CAI_Motor.h"
+#include "Vector.h"
+
+float CAI_Motor::vfunc16()
+{
+    float flAccel = sub_102e12e0();
+    if (flAccel > 0.0) {
+        float flTime = FastSqrt(m_3c * m_3c + m_40 * m_40 + m_44 * m_44) / flAccel;
+        float flDist = FastSqrt(m_3c * m_3c + m_40 * m_40 + m_44 * m_44) * flTime - flAccel * (double)flTime * (double)flTime * 0.5;
+        if (flDist > 10.0)
+            return flDist;
+    }
+    return 10.0f;
+}
+// END FUNCTION
