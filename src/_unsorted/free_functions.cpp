@@ -87281,6 +87281,50 @@ void *CUnknown10310c10::sub_10310c10(void *pSpawnPoint, int hIdeal)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10311710 size=0x16e
+#include "CUnknown10311a20.h"
+#include "CUtlMemory16.h"
+
+extern int g_109f076c;
+
+bool CUnknown10311a20::sub_10311710(const CUnknown10311a20_Record *rec)
+{
+	CUnknown10311a20_Record *copy = new CUnknown10311a20_Record(*rec);
+	CUnknown10311a20_Elem key = { rec->m_Key, copy };
+	if (m_nContext)
+		g_109f076c = m_nContext;
+	unsigned short cur = m_Root;
+	unsigned short parent = 0xffff;
+	bool left = false;
+	while (cur != 0xffff) {
+		parent = cur;
+		if (((bool (*)(const void *, const void *))m_LessFunc)(&key, &m_pElements[cur].m_Data)) {
+			left = true;
+			cur = *sub_10313430(cur);
+		} else {
+			left = false;
+			cur = Links(cur).m_Right;
+		}
+	}
+	unsigned short i = m_FirstFree;
+	if (i == 0xffff) {
+		if (m_unk8 == m_TotalElements)
+			((CUtlMemory16 *)&m_pElements)->Grow(1);
+		i = m_TotalElements++;
+	} else {
+		m_FirstFree = sub_10313430(i)[1];
+	}
+	sub_10312fb0(i, parent, left);
+	m_NumElements++;
+	CUnknown10311a20_Elem *dst = (CUnknown10311a20_Elem *)m_pElements[i].m_Data;
+	if (dst) {
+		dst->m_Key = key.m_Key;
+		dst->m_pRecord = key.m_pRecord;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103118e0 size=0xf5
 #include "CUnknown10311a20.h"
 
