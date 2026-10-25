@@ -12856,6 +12856,20 @@ bool CUnknown1007b7b0::sub_1007bd70(CUnknown1007bb30Reader *pReader)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007bf70 size=0x33
+extern int g_10547ad4;
+void sub_10007f04(void *p, void *s);
+struct CUnk_1007bf70 { void sub_10007bf3(int v, int *va); };
+
+void sub_1007bf70(void *p, int n, int v, int a4)
+{
+    int i;
+    for (i = n; i > 0; i--)
+        sub_10007f04(p, &g_10547ad4);
+    ((CUnk_1007bf70 *)p)->sub_10007bf3(v, &a4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c1c0 size=0x84
 #include "CUnknown10078540.h"
 #include "CFlexAnimationTrack.h"
