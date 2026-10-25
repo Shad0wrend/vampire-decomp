@@ -2,6 +2,7 @@
 #pragma once
 
 class CGib;
+class Vector;
 
 class CGibShooter
 {
@@ -10,7 +11,10 @@ public:
     int m_nNextThink;    // 0x17c (raw bits of the float)
     char m_pad0180[0x45c - 0x180];
     int m_nGibModel45c;    // 0x45c: the model index of the gib model (engine slot 13, see vfunc104)
-    char m_pad0460[0x470 - 0x460];
+    float m_flGibVelocity;    // 0x460: the speed the gibs are shot with
+    float m_flVariance;    // 0x464
+    float m_flGibLife;    // 0x468: life time of a gib, +-5% random
+    int m_nShootMode;    // 0x46c: 0 point gib (InitPointGib), 1 physics prop, 2 effect
     int m_nBodies;    // 0x470: number of gib bodies (the body list size from the model)
 
     void sub_100f4730(int a, int b, int c, int d);    // slot 173: SetThink(stub 0x1000913d), then the next think time = curtime
@@ -22,4 +26,5 @@ public:
     void vfunc104();    // slot 104: the gib model index into +0x45c: "models/germanygibs.mdl" when the global at 0x1070ba34 is 1, else "models/gibs/hgibs.mdl" (engine slot 13, not preloaded)
     void sub_100b3b00();    // CBaseEntity::sub_100b3b00 (stub 0x1001514a), called directly
     CGib *vfunc241();    // slot 241 "CGibShooter::CreateGib": with the violence_hgibs convar set to "no gibs" returns null, else creates a "gib" entity (warns when it is the wrong class), sets the gib model, +0x730 = 0xf7 and the body from the model's body list
+    void sub_100f49e0(CGib *pGib, const Vector &vecShootDir);    // "CGibShooter::InitPointGib": puts the gib at the shooter's origin, gives it the velocity vecShootDir * m_flGibVelocity and a random spin (x 100..200, y 100..300), a life time of 0.95..1.05 times m_flGibLife (the gib thinks at that time when sooner than its next think), then hands it to sub_101cf600
 };
