@@ -13,3 +13,45 @@ CTEBubbleTrail *CTEBubbleTrail::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005fd40 size=0x125
+#include "CTEBubbleTrail.h"
+#include "CBroadcastRecipientFilter.h"
+
+extern short g_1088ae84;
+
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_10139500(const Vector &start, float flScale, const Vector &direction, Vector &dest);
+
+struct CTEBubbleTrailView
+{
+	char m_pad0000[0xc];
+	Vector m_vecMins;
+	Vector m_vecMaxs;
+	float m_fHeight;
+	int m_nModelIndex;
+	int m_nCount;
+	float m_fSpeed;
+};
+
+void CTEBubbleTrail::vfunc3(const Vector &origin, const QAngle &angles)
+{
+	CTEBubbleTrailView *p = (CTEBubbleTrailView *)this;
+	p->m_vecMins = origin;
+	p->m_vecMins.z += 24.0f;
+	Vector forward;
+	sub_10139610(angles, &forward, 0, 0);
+	forward.z = 0.0f;
+	VectorNormalize(forward);
+	sub_10139500(p->m_vecMins, 100.0f, forward, p->m_vecMins);
+	p->m_fSpeed = 8.0f;
+	p->m_nCount = 20;
+	p->m_fHeight = 128.0f;
+	p->m_vecMaxs.x = p->m_vecMins.x + 256.0f;
+	p->m_vecMaxs.y = p->m_vecMins.y + 256.0f;
+	p->m_vecMaxs.z = p->m_vecMins.z + 256.0f;
+	p->m_nModelIndex = g_1088ae84;
+	CBroadcastRecipientFilter filter;
+	vfunc4(filter, 0);
+}
+// END FUNCTION
