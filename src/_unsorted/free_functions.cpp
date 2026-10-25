@@ -76494,6 +76494,26 @@ struct CUnknown10248980 { int p[5]; int a; char sub_10248980(); };
 char CUnknown10248980::sub_10248980() { int v = a; return v != 0; }
 // END FUNCTION
 
+// FUNCTION: 0x102489c0 size=0x33
+// TARGET: sub_102489c0
+int __cdecl _strcmpi(const char *, const char *);
+
+struct CNamedNode_102489c0 {
+    const char *name;
+    CNamedNode_102489c0 *sub_1000fa65();
+    CNamedNode_102489c0 *sub_102489c0();
+};
+
+CNamedNode_102489c0 *CNamedNode_102489c0::sub_102489c0()
+{
+    CNamedNode_102489c0 *p = sub_1000fa65();
+    while (p && _strcmpi(name, p->name) != 0) {
+        p = p->sub_1000fa65();
+    }
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248a50 size=0xa
 struct CUnknown10248a50 { int p[4]; int a; void sub_10248a50(int v); };
 // TARGET: CUnknown10248a50::sub_10248a50
