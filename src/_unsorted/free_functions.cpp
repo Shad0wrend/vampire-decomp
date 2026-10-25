@@ -86156,6 +86156,39 @@ bool CUnknown102db470Node::sub_102dad60(CUnknown102db470 *pNPC, float *pOut1, fl
 }
 // END FUNCTION
 
+// FUNCTION: 0x102daea0 size=0x35
+extern char g_106b8540[];
+
+struct CPartnerView {
+    void *sub_10005b19();
+    void *sub_100077b1();
+    void *sub_100104a1();
+};
+
+struct COwnerView {
+    char pad0[0x548];
+    CPartnerView *m548;
+    char pad1[0x590 - 0x54c];
+    int m590;
+};
+
+// TARGET: sub_102daea0
+void *__fastcall sub_102daea0(COwnerView *p)
+{
+    if (p->m548 != 0) {
+        int t = p->m590;
+        if (t == 0)
+            return p->m548->sub_10005b19();
+        if (t == 1)
+            return p->m548->sub_100077b1();
+        if (t == 2)
+            return p->m548->sub_100104a1();
+        return p->m548->sub_10005b19();
+    }
+    return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db420 size=0xa
 void CUnknown102db420::sub_102db420(int unused)
 {
