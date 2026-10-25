@@ -50,6 +50,33 @@ char CAI_BaseHumanoid::vfunc587(const Vector &vecPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025ea00 size=0xb7
+#include "CAI_BaseHumanoid.h"
+#include <math.h>
+#define S1(n) virtual void s##n();
+#define S10(p) S1(p##0) S1(p##1) S1(p##2) S1(p##3) S1(p##4) S1(p##5) S1(p##6) S1(p##7) S1(p##8) S1(p##9)
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CHumanoidSlots588 {
+	S100(0) S10(10) S10(11) S10(12) S10(13) S10(14) S10(15) S10(16) S10(17) S10(18)
+	S1(190) S1(191) S1(192)
+	virtual Vector *slot193(Vector *pOut);
+	S1(194) S1(195) S1(196) S1(197) S1(198) S1(199)
+	S100(2) S10(30) S10(31) S10(32) S10(33) S10(34) S10(35)
+	S1(360) S1(361) S1(362) S1(363) S1(364) S1(365) S1(366) S1(367) S1(368)
+	virtual void slot369(Vector *pOut);
+};
+char CAI_BaseHumanoid::vfunc588(const Vector &vecPos)
+{
+	CHumanoidSlots588 *p = (CHumanoidSlots588 *)this;
+	Vector vecFacing;
+	p->slot369(&vecFacing);
+	Vector vecEye;
+	Vector vecDir = vecPos - *p->slot193(&vecEye);
+	VectorNormalize(vecDir);
+	return DotProduct(vecDir, vecFacing) > -0.5 && fabs(vecDir.z) < 0.7;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025f1a0 size=0xe
 bool CAI_BaseHumanoid::vfunc586()
 {
