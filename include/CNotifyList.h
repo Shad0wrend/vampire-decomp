@@ -9,7 +9,7 @@ class CBaseEntity;
 class CNotifyList
 {
 public:
-	virtual void vfunc0();
+	virtual void *vfunc0(CBaseEntity *pNotify, CBaseEntity *pWatched);	// \"AddEntity\": flags pWatched (bit 6 of +0x268) and appends the (pNotify, pWatched) pair
 	virtual void vfunc1();
 	virtual void vfunc2(CBaseEntity *pEntity, const char *pszEvent);	// "ReportNamedEvent": for every pair registered for pEntity (only when bit 6 of its flags at +0x268 is set) calls the listener's AcceptInput(pszEvent, pEntity, pEntity, an empty variant, 0)
 	virtual void vfunc3();
