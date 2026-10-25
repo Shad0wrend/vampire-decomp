@@ -276,6 +276,53 @@ void CAI_BaseNPCTroika::sub_1029f460(void *pHolder, int a, int b, int c, int *pN
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029fbe0 size=0xcd
+#include "CBaseCombatWeapon.h"
+#include "CEntityVSlots.h"
+
+struct ThreatNpcView : CEntityVSlots
+{
+    void sub_10344f80(const Vector *pDir, int mode, int flag);	// stub 0x1000a713
+};
+struct ThreatRecView
+{
+    char pad0000[8];
+    Vector m_vecPos;	// 0x08
+    char pad0014[0x94 - 0x14];
+    CEntityVSlots *m_pEnt94;	// 0x94
+    CBaseCombatWeapon *m_pWeapon98;	// 0x98
+};
+struct ThreatEntView : CEntityVSlots
+{
+    char pad[0x9c - 4];
+    void *m_pObj9c;
+};
+struct WeaponRollView
+{
+    char pad[0x404];
+    float m_flNear404;
+    float m_flFar408;
+};
+
+// TARGET: sub_1029fbe0
+void __fastcall sub_1029fbe0(ThreatNpcView *pThis, int unused, int a, ThreatRecView *pRec)
+{
+    Vector vecDir = *pThis->slot217() - pRec->m_vecPos;
+    float flDist = VectorNormalize(vecDir);
+    if (pRec->m_pWeapon98 && pRec->m_pEnt94 && ((ThreatEntView *)pRec->m_pEnt94)->m_pObj9c)
+    {
+        WeaponRollView *pRoll = (WeaponRollView *)pRec->m_pWeapon98->sub_102517e0();
+        if (flDist < pRoll->m_flNear404)
+        {
+            pThis->sub_10344f80(&vecDir, 2, 0);
+            return;
+        }
+        if (flDist < pRoll->m_flFar408)
+            pThis->sub_10344f80(&vecDir, 0, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029fcf0 size=0x89
 #include "CAI_BaseNPCTroika.h"
 
