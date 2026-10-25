@@ -66483,6 +66483,30 @@ int CVStatList_t::sub_10201100(int stat, int amount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10201190 size=0xff
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CUnknown10202060.h"
+#include "CUnknown101f9c70.h"
+
+int CVStatList_t::sub_10201190(int stat)
+{
+	ScopeTrace trace("CVStatList_t::Get", g_106b8540);
+	if (sub_102008b0(stat)) {
+		int nBase = (*(int **)m_field08)[stat];
+		int nMax = ((CVStatInfoList_t *)m_field0c)->sub_10200370(stat)->sub_101ff060(((CUnknown10202060 *)m_pad0000)->sub_10202060());
+		int nValue = ((CUnknown101f9c70 *)((CUnknown10202060 *)m_pad0000)->m_pMods)->sub_101f9c70(((CVStatInfoList_t *)m_field0c)->m_field2c, stat, nBase);
+		if (nValue > nMax)
+			nValue = nMax;
+		if (nValue < ((CVStatInfoList_t *)m_field0c)->sub_10200370(stat)->sub_101ff010(((CUnknown10202060 *)m_pad0000)->sub_10202060()))
+			nValue = ((CVStatInfoList_t *)m_field0c)->sub_10200370(stat)->sub_101ff010(((CUnknown10202060 *)m_pad0000)->sub_10202060());
+		return nValue;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102012d0 size=0x97
 #include "CVStatList_t.h"
 #include "CVStatInfoList_t.h"
