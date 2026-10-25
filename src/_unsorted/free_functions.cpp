@@ -43075,6 +43075,47 @@ void sub_10189660(CBaseEntity *ent, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018b790 size=0x3f
+#include "vampire.h"
+
+struct CUnknownBase1018b790
+{
+    void sub_10009ade();
+};
+
+struct CUnknown1018b790 : CUnknownBase1018b790
+{
+    CUnknown1018b790 *sub_1018b790();
+    char m_pad00[0x6c];
+    int m_n6c;
+    char m_pad70[0x13c - 0x70];
+    int m_n13c;
+    char m_pad140[0x1cc - 0x140];
+    int m_n1cc;
+    int m_n1d0;
+    int m_n1d4;
+    int m_a1d8[10];
+    int m_a200[10];
+};
+
+// TARGET: CUnknown1018b790::sub_1018b790
+CUnknown1018b790 *CUnknown1018b790::sub_1018b790()
+{
+    ((CUnknownBase1018b790 *)this)->sub_10009ade();
+    m_n1cc = 0;
+    m_n1d0 = 0;
+    m_n1d4 = 0;
+    m_n6c = 0;
+    for (int i = 0; i < 10; i++)
+    {
+        m_a1d8[i] = 0;
+        m_a200[i] = 0;
+    }
+    m_n13c = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018bfe0 size=0x102
 #include "SendProp.h"
 
