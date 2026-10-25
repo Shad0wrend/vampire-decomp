@@ -1,6 +1,45 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10128370 size=0x3e
+#include "CGameRules.h"
+
+#define VS(n) virtual void s##n();
+#define VS10(p) VS(p##0) VS(p##1) VS(p##2) VS(p##3) VS(p##4) VS(p##5) VS(p##6) VS(p##7) VS(p##8) VS(p##9)
+
+struct CUnknownObjB
+{
+	int sub_1000a37b();
+};
+
+// the virtual slots of the game's object up to slot 55 (the layout is not known yet)
+struct CVtblRulesHelper
+{
+	VS10(0) VS10(1) VS10(2) VS10(3) VS10(4)
+	VS(50) VS(51) VS(52) VS(53) VS(54)
+	virtual CUnknownObjB *s55(int a);
+};
+
+struct CBaseCombatCharacterView2
+{
+	int sub_103346c0(int a);	// CBaseCombatCharacter::sub_103346c0 (stub 0x1000ff97), called directly
+};
+
+extern CVtblRulesHelper *g_1070ba0c;
+
+// TARGET: CGameRules::vfunc53
+char CGameRules::vfunc53(CBaseCombatCharacter *pChar, int nIndex)
+{
+	if (nIndex > -1) {
+		int nLimit = g_1070ba0c->s55(nIndex)->sub_1000a37b();
+		if (((CBaseCombatCharacterView2 *)pChar)->sub_103346c0(nIndex) < nLimit) {
+			return 1;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101286f0 size=0x9c
 struct SkillVar { virtual void v0(); virtual bool v1(); char pad[0x28]; int m_value; };
 struct SkillEntry { int pad; SkillVar *pVar; };
