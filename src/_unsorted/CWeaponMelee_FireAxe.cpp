@@ -25,6 +25,22 @@ void CWeaponMelee_FireAxe::vfunc298(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e5fb0 size=0x35
+// TARGET: CWeaponMelee_FireAxe::vfunc300
+#include "CBaseCombatWeapon.h"
+#include "CWeaponMelee_FireAxe.h"
+
+void CWeaponMelee_FireAxe::vfunc300()
+{
+	int iVar1 = ((CBaseCombatWeapon *)this)->sub_10252240();
+	if (iVar1 != 0) {
+		int *pOwner = (int *)((CBaseCombatWeapon *)this)->sub_102517b0();
+		*(unsigned int *)(iVar1 + 0xe38) = *(unsigned int *)(iVar1 + 0xe38) & ~(unsigned int)pOwner[0x4fed0 / 4];
+	}
+	((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc300();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eccc0 size=0x1e
 #include "CWeaponMelee_FireAxe.h"
 
