@@ -103971,6 +103971,29 @@ void CNPC_VManBat::sub_1038c170(int nMode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038c250 size=0xfb
+#include "CNPC_VManBat.h"
+#include "CEntityVSlots.h"
+
+void CNPC_VManBat::sub_1038c250(CBaseEntity *pTarget)
+{
+	if (pTarget)
+	{
+		CEntityVSlots *pSelf = (CEntityVSlots *)this;
+		sub_1038c170(1);
+		Vector vecAngles = *pSelf->slot221();
+		vecAngles.x = 0;
+		pSelf->slot64(&vecAngles.x);
+		Vector *pTargetPos = ((CEntityVSlots *)pTarget)->slot220();
+		Vector *pMyPos = pSelf->slot220();
+		Vector vecDir = *pTargetPos - *pMyPos;
+		VectorNormalize(vecDir);
+		Vector vecVel = vecDir * 200.0f;
+		((CBaseEntity *)this)->sub_100b2770(vecVel);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038e720 size=0x108
 #include "CNPC_VManBat.h"
 
