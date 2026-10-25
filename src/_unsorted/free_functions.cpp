@@ -35757,6 +35757,22 @@ void __fastcall sub_1012d4b0(S *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d550 size=0x38
+// TARGET: CUnknown1012d740::sub_1012d550
+#include "CBreakableProp.h"
+#include "CUnknown1012d740.h"
+
+extern char *g_1070b228;
+
+void CUnknown1012d740::sub_1012d550(unsigned int flags)
+{
+    *(int *)((char *)this + 0x474) = *(int *)(g_1070b228 + 4);
+    *(char *)((char *)this + 0x470) = 1;
+    ((CBreakableProp *)this)->sub_10007fe5(0, 0, 0);
+    this->sub_1012d5e0(flags | 0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d5e0 size=0xf9
 #include "CUnknown1012d740.h"
 #include "CReliableBroadcastFilter.h"
