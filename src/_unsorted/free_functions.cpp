@@ -13055,6 +13055,23 @@ void CUnknown1007ed90::sub_1007ed90(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007edb0 size=0x3c
+char sub_10001401();
+int sub_1000a344();
+
+// TARGET: sub_1007edb0
+float __stdcall sub_1007edb0(float flValue)
+{
+    if (!sub_10001401())
+    {
+        return flValue;
+    }
+    int nValue = sub_1000a344();
+    int nRounded = (int)(flValue * (float)nValue + 0.5f);
+    return (float)nRounded / (float)nValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ee00 size=0x8
 void __fastcall sub_1007ee00(int *p) { p[3] = 0; }
 // END FUNCTION
