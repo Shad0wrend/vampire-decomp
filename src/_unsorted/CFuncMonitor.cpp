@@ -59,6 +59,21 @@ void CFuncMonitor::vfunc39(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115300 size=0x31
+#include "CFuncMonitor.h"
+#include "CBasePlayer.h"
+#include "CAI_BaseNPCTroika.h"
+// TARGET: CFuncMonitor::vfunc42
+void CFuncMonitor::vfunc42(void *pCamera)
+{
+	((CBaseEntity *)this)->vfunc42(pCamera);
+	((CBasePlayer *)pCamera)->sub_1017cef0(0);
+	((CFuncMonitor *)pCamera)->sub_1015ef60();
+	((CAI_BaseNPCTroika *)pCamera)->sub_101815b0(1);
+	((CAI_BaseNPCTroika *)pCamera)->sub_101815b0(8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101153f0 size=0x84
 #include "CFuncMonitor.h"
 #include "CEntityVSlots.h"
