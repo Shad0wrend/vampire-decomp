@@ -91095,6 +91095,30 @@ bool CUnknown1030f480::sub_1030f220(const char *pszName, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030f350 size=0x33
+// TARGET: sub_1030f350
+int __cdecl _strcmpi(const char *, const char *);
+struct SNamedEntry_1030f350 {
+    char pad[0x40];
+    const char *name;
+    SNamedEntry_1030f350 *next;
+};
+struct SNamedList_1030f350 {
+    char pad[4];
+    SNamedEntry_1030f350 *head;
+    SNamedEntry_1030f350 *sub_1030f350(const char *s);
+};
+SNamedEntry_1030f350 *SNamedList_1030f350::sub_1030f350(const char *s)
+{
+    SNamedEntry_1030f350 *e = head;
+    while (e) {
+        if (_strcmpi(e->name, s) == 0) return e;
+        e = e->next;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f3a0 size=0x3d
 void __fastcall sub_10003ebd(void *node);
 
