@@ -51,7 +51,7 @@ public:
 	virtual void vfunc19(const char **ppStrings, int count);	// writes count strings (a null entry is the empty string at 0x106b8540), each with its length + 1 through sub_1000643d
 	virtual void vfunc20(const char *pString);	// WriteString
 	virtual void vfunc21();
-	virtual void vfunc22();
+	virtual void vfunc22(const char *pszName, const Vector &value);	// slot 22: writes a named vector (called by vfunc30 with the landmark relative position)
 	virtual void vfunc23(const void *pData, int count);	// WriteVector
 	virtual void vfunc24(const Vector &value);	// WriteVector (one vector)
 	virtual void vfunc25(const float *pValues, int count);	// slot 25: for each of the count floats writes the value minus the float at +0x12e8 of the entity block (m_pEntityBlock) through slot 16
@@ -59,7 +59,7 @@ public:
 	virtual void vfunc27();
 	virtual void vfunc28(const Vector &value);	// WritePositionVector: with the landmark flag at +0x12c4 of the entity block set, the vector minus the landmark offset at +0x12dc is written through slot 24; without it the offset is the zero vector (0x1070d1b0)
 	virtual void vfunc29(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xe
-	virtual void vfunc30();
+	virtual void vfunc30(const char *pszName, const Vector &value);	// named version of vfunc28: the same landmark relative vector, written through slot 22 under pszName
 	virtual void vfunc31(void *pBase, const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0x13
 	virtual void vfunc32();
 	virtual void vfunc33(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xb
