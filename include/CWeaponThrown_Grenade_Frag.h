@@ -22,7 +22,7 @@ public:
 	char m_bFinished930;
 	CWeaponThrown_Grenade_Frag *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10013a57();	// as in CPhysForce (transplant)
-	void vfunc373();	// slot 373 (plain member): arms the think function sub_103ee6f0 (ThinkSet, stub 0x10007fe5) with no context, stamps the time at +0x91c and schedules the next think 0.01 seconds ahead
+	void vfunc373(int unused);	// slot 373 (plain member, takes one stack argument that is not used): arms the think function sub_103ee6f0 (ThinkSet, stub 0x10007fe5) with no context, stamps the time at +0x91c and schedules the next think 0.01 seconds ahead
 	bool vfunc325();	// slot 325 (declared as a plain member, the slots are not modelled here): with a live owner that still has ammo of the roll's ammo type, clears the field at +0x920, tells the owner (slot 449 with 0xe, 0), plays slot 307(0xc2), stamps the time at +0x730 and starts slot 333(10, 1, 0, 0, 0, 0); false without
 	void vfunc326();	// slot 326 (plain member): the throw state machine step (state +0x920, time +0x924, timer +0x91c, finished byte +0x930): when sub_103ee8f0() holds starts the fuse (state 1) and calls slot 307(0xb8); state 1 after 0.3 seconds goes to 3 and sets the think function
 	bool sub_103ee8f0();	// stub 0x1001556e
