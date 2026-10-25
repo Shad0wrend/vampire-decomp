@@ -47,6 +47,25 @@ void CBreakable::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010efe0 size=0x31
+#include "CBreakable.h"
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+// TARGET: CBreakable::vfunc154
+int CBreakable::vfunc154(int a, int b)
+{
+    if (m_nMaterial == 0) {
+        return g_1070b244->vfunc2(0, 2) + 0x2c;
+    }
+    if (m_nMaterial == 7) {
+        return 0x34;
+    }
+    return sub_1000b9e2(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f240 size=0x36
 #include "CBreakable.h"
 
