@@ -2,9 +2,36 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+#include "Vector.h"
+
 class CWeaponThrown_Chang_Ghost
 {
 public:
 	CWeaponThrown_Chang_Ghost *vfunc5(unsigned int flags);
 	void sub_10013a57();
+	void vfunc372(int a, const Vector *pDir);	// slot 372 (throw): solid / health set, sequence 0x22, the throw speed (global 0x104e1614) at +0x91c, the direction normalised and scaled by it when it was long enough, set as the velocity; touch and think functions installed, next think and the expiry time (+0x920) from curtime; the three random rolls (-30..30) are not used
+	int sub_1008dc40(int a, int b);	// CBaseAnimating::SelectWeightedSequence (stub 0x100125c1), called directly
+	void sub_10090950();	// CBaseAnimating member (stub 0x100117b1), called directly
+	void sub_100b2770(const float *pVelocity);	// the absolute velocity setter (stub 0x1000489a), called directly
+	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5), called directly
+
+	char m_pad0000[0x17c];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x1ec - 0x180];
+	void *m_pfnTouch;	// 0x1ec
+	char m_pad01f0[0x1fc - 0x1f0];
+	int m_nTakeDamage;	// 0x1fc
+	char m_pad0200[0x210 - 0x200];
+	int m_iHealth;	// 0x210
+	char m_pad0214[0x6f0 - 0x214];
+	int m_nSequence;	// 0x6f0
+	char m_pad06f4[4];
+	int m_n06f8;	// 0x6f8
+	char m_pad06fc[0x8a8 - 0x6fc];
+	int m_n08a8;	// 0x8a8
+	char m_pad08ac[0x914 - 0x8ac];
+	int m_n0914;	// 0x914
+	char m_pad0918[4];
+	float m_flThrowSpeed;	// 0x91c
+	float m_flExpireTime;	// 0x920
 };
