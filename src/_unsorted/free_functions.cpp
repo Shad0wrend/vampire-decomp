@@ -82478,6 +82478,51 @@ void __fastcall sub_102696f0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102697b0 size=0x14a
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+struct CGlobalVarsView { char pad[0xc]; float curtime; int pad10; int maxClients; };
+extern CGlobalVarsView *g_1070b228;
+CEntityVSlots *sub_101cd9e0(int playerIndex);
+void sub_10139550(const Vector *angles, Vector *forward);
+void sub_101c0b10();
+
+struct DeathThinkView : CEntityVSlots
+{
+    char pad0004[0x17c - 4];
+    float m_flNextThink;	// 0x17c
+
+    int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
+};
+
+// TARGET: sub_102697b0
+void __fastcall sub_102697b0(DeathThinkView *pThis)
+{
+    pThis->m_flNextThink = g_1070b228->curtime + 0.1f;
+    for (int i = 1; i <= g_1070b228->maxClients; i++)
+    {
+        CEntityVSlots *pPlayer = sub_101cd9e0(i);
+        if (pPlayer)
+        {
+            Vector vecDelta = *pThis->slot220() - pPlayer->slot192();
+            float flDistSqr = vecDelta.y * vecDelta.y + vecDelta.x * vecDelta.x + vecDelta.z * vecDelta.z;
+            if (flDistSqr < 65536.0)
+                return;
+            if (flDistSqr < 2250000.0)
+            {
+                VectorNormalize(vecDelta);
+                Vector vecForward;
+                sub_10139550((const Vector *)((char *)pPlayer + 0x206c), &vecForward);
+                if (DotProduct(vecForward, vecDelta) > 0.0f)
+                    return;
+            }
+        }
+    }
+    pThis->sub_100ac4e0((int)sub_101c0b10, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a0f0 size=0x143
 #include "CAI_BaseNPC.h"
 #include "ScopeTrace.h"

@@ -4488,6 +4488,7 @@
 0x1000f074 func   ?sub_100ce210@CEventQueue@@QAEXPAUCEQEvent@@@Z CEventQueue::sub_100ce210
 0x1000f092 func   ?sub_10094dc0@CBaseAnimating@@QAEMM@Z CBaseAnimating::sub_10094dc0
 0x1000f0a6 func   ??1CVStatInfo_t@@QAE@XZ CVStatInfo_t::~CVStatInfo_t
+0x1000f0ba func   ?sub_102697b0@@YIXPAUDeathThinkView@@@Z sub_102697b0
 0x1000f0bf func   ?sub_10030cb0@@YGXPAX0@Z sub_10030cb0
 0x1000f0ce func   _item_p_occult_lockpicking item_p_occult_lockpicking
 0x1000f0d8 func   ?sub_10042d90@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_10042d90
