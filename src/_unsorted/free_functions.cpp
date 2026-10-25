@@ -56712,6 +56712,26 @@ void sub_101d2ab0(Vector *pOut, int a, int b, float flMin, float flMax)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2ce0 size=0x75
+#include "Vector.h"
+#include <math.h>
+
+float sub_101d2ce0(const Vector &vec)
+{
+	float pitch;
+	if (vec[1] == 0 && vec[0] == 0) {
+		if (vec[2] < 0)
+			pitch = 180.0f;
+		else
+			pitch = -180.0f;
+	} else {
+		float dist = vec.Length2D();
+		pitch = (float)atan2(-vec[2], dist) * (float)(180.0f / 3.14159265358979323846);
+	}
+	return pitch;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2fc0 size=0x88
 #define Q10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
