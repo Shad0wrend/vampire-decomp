@@ -46554,6 +46554,44 @@ extern "C" CBaseEntity *point_camera()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c2b0 size=0x108
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+#include "CPointCamera.h"
+
+void sub_10139970(const Vector *dir, Vector *angles);
+
+struct CameraView
+{
+	char pad0[0x254];
+	unsigned int m_hTarget;
+	char pad258[0x45c - 0x258];
+	Vector m_vecLook;
+};
+
+void CPointCamera::sub_1018c2b0()
+{
+	CameraView *pView = (CameraView *)this;
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	Vector angles;
+	if (EHandle_Get(pView->m_hTarget))
+	{
+		CEntityVSlots *pTarget = (CEntityVSlots *)EHandle_Get(pView->m_hTarget);
+		angles = *pTarget->slot219();
+	}
+	else
+	{
+		Vector dir = pView->m_vecLook - *pSelf->slot217();
+		VectorNormalize(dir);
+		sub_10139970(&dir, &angles);
+	}
+	pSelf->slot64(&angles.x);
+	pSelf->slot218(&angles);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c4d0 size=0xd
 void CUnknown1018c4d0::sub_1018c4d0(char value)
 {
