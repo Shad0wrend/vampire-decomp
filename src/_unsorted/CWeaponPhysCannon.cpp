@@ -124,6 +124,22 @@ void CWeaponPhysCannon::vfunc327()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040e830 size=0x39
+#include "CWeaponPhysCannon.h"
+
+// TARGET: CWeaponPhysCannon::vfunc321
+void CWeaponPhysCannon::vfunc321()
+{
+    if (vfunc309()) {
+        if (m_bGrab911 != 0) {
+            vfunc307(0xc2);
+            return;
+        }
+        vfunc307(0xb6);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10410770 size=0x88
 #include "CWeaponPhysCannon.h"
 #include "CEntityVSlots.h"
