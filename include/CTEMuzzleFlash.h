@@ -1,12 +1,15 @@
-// CTEMuzzleFlash: muzzle flash temp entity. Declared flat (bases not recovered); only the vtable head is modelled.
+// CTEMuzzleFlash: muzzle flash temp entity (derived from the CBaseTempEntity head at +0x0); only the vtable head is modelled.
 #pragma once
 
-class CTEMuzzleFlash
+#include "CBaseTempEntity.h"
+
+class CTEMuzzleFlash : public CBaseTempEntityHead
 {
 public:
-	virtual void vfunc0();
+	virtual ServerClass *vfunc0();
 	virtual void vfunc1();
 	virtual CTEMuzzleFlash *vfunc2(unsigned int flags);	// scalar deleting destructor
 
 	void sub_1000df12();	// destructor body
+	CTEMuzzleFlash *sub_10065e20(const char *name);	// constructor body: base constructor, vtable, fields 0x0c..0x28; returns this
 };
