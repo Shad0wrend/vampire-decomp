@@ -107,6 +107,7 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 	int sub_1030b520();	// the arrival activity of the route (stub 0x10001b77)
 	void sub_1030b5b0(int sequence);	// stores the arrival sequence (stub 0x100016b3)
 	float sub_1030b880();	// a float value of the route handed to the motor with its goal record (stub 0x1001021c)
+	Vector *sub_1030b7c0();	// the route's goal position (stub 0x10012805)
 };
 
 class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
@@ -152,6 +153,7 @@ public:
 	Vector *sub_102ee140();	// stub 0x100071fd: the position the route is heading for
 	void sub_102f0400();	// stub 0x10006744, run when the motor reports 1
 	int sub_102ee3f0();	// stub 0x10011f77: the owner's task id for the finished move
+	float sub_102f1cf0();	// the distance from the owner's origin (slot 220) to the route's goal position: 2D while the flag at +0x18 is clear, else 3D
 
 	int m_i14;
 	int m_i18;
