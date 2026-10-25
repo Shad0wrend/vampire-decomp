@@ -88,6 +88,20 @@ Vector CHL2_Player::vfunc371()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10350270 size=0x9f
+#include "CHL2_Player.h"
+
+void CHL2_Player::vfunc333(int unused)
+{
+	Vector vecSecond;
+	Vector vecFirst;
+	sub_10014eb6((float *)&vecFirst, (float *)&vecSecond);
+	m_vecE44 = vecSecond * 300.0f + vecFirst;
+	m_vecE50 = m_vecE44;
+	vfunc277(&m_vecE50);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10351390 size=0x73
 #include "CHL2_Player.h"
 #include "CBasePlayer.h"
