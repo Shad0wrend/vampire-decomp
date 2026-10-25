@@ -75,6 +75,31 @@ void CServerGameDLL::vfunc4(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ae50 size=0x3e
+#include "CServerGameDLL.h"
+
+struct CAllocatorLike
+{
+	virtual void *slot0(const char *pszName, int nSize);
+};
+
+extern CAllocatorLike *g_1070b23c;
+extern void *g_10571c20;
+extern void *g_10571c24;
+extern char g_10572000[];
+extern char g_10571ff4[];
+extern char g_10571fe0[];
+void sub_10004ef8(const char *pszName);
+
+// TARGET: CServerGameDLL::vfunc11
+void CServerGameDLL::vfunc11()
+{
+	g_10571c20 = g_1070b23c->slot0(g_10572000, 0x100);
+	g_10571c24 = g_1070b23c->slot0(g_10571ff4, 0x400);
+	sub_10004ef8(g_10571fe0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011aec0 size=0x85
 #include "CServerGameDLL.h"
 #include "CSave.h"
