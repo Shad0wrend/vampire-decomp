@@ -9,6 +9,7 @@ class CTEBloodStream : public CBaseTempEntityHead
 {
 public:
 	CTEBloodStream(const char *name);	// constructor: the base head with the name, then the zeroed fields (sub_1005df60)
+	CTEBloodStream *sub_1005df60(const char *name);	// the same constructor body as a member: the base head with the name (sub_10015334), the vtable, then the zeroed fields (0x1005df60)
 	virtual CTEBloodStream *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a blood stream at the origin (raised, then 50 units along the flat direction of the angles) with a random direction, created for everybody
 
