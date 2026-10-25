@@ -52331,6 +52331,23 @@ bool CUtlRBTree12::sub_101c02d0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0b10 size=0x32
+#include "CBaseEntity.h"
+
+extern void (*g_109f3658)(int level, const char *pszFormat, ...);
+void sub_101cd940(CBaseEntity *pEnt);
+
+// TARGET: sub_101c0b10
+void __fastcall sub_101c0b10(CBaseEntity *pEnt)
+{
+    if (pEnt->m_iHealth > 0) {
+        pEnt->m_iHealth = 0;
+        g_109f3658(2, "SUB_Remove called on entity with health > 0\n");
+    }
+    sub_101cd940(pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0b80 size=0xa3
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
