@@ -18,6 +18,7 @@ public:
 	void vfunc420();	// slot 420 "CNPC_VFrenzyShadow::NPCInit": gives the NPC its \"item_w_fists\" weapon (flag 0x40 on it), the player controller reset, stamps source line 0xe4, ideal state 0xb, flag 0x5ddf at +0x5b84, the senses' byte +0x80, clears the shadow counter and the flag at +0x6668, +0x1488 = 8.0f, +0x65f7 = 1, then counts the shadows
 	char sub_10334c20(void *pWeapon);	// stub 0x100112d9: whether the NPC can take the weapon
 	void *sub_1032e120(const char *pszName);	// CBaseCombatCharacter::Weapon_Create (stub 0x1000b0b4), called directly
+	void vfunc433();	// slot 433 "CNPC_VFrenzyShadow::...": CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f) first, then the shadow count (+0x6664) above 1 starts schedule 0x79 after the global at 0x10924a6c (slot 1); else the base's sub_10015839 with 0x79
 
 	char m_pad0004[0x1488 - 4];
 	float m_fl1488;	// 0x1488
