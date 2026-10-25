@@ -47405,6 +47405,29 @@ int sub_101b0ab0(const char *partial, char (*commands)[64])
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b0c10 size=0x11c
+#include "CBaseEntity.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+void sub_101b0dc0(CRecipientFilter *pFilter, int nEntIndex, int a, int b, int c, int d);
+
+struct CBaseEntityUnit101b0c10 : public CBaseEntity
+{
+	void sub_101b0c10(int a);
+};
+
+// TARGET: CBaseEntityUnit101b0c10::sub_101b0c10
+void CBaseEntityUnit101b0c10::sub_101b0c10(int a)
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this, a);
+	int edict = m_pEdict2e0;
+	sub_101b0dc0(&filter, g_1070b22c->vfunc35(edict), a, 0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1040 size=0xa1
 struct SSoundParams
 {
