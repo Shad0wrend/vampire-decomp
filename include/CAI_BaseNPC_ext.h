@@ -2,5 +2,3 @@
 	void sub_100a53d0(int a);	// CBaseEntity::PhysicsTouchTriggers (stub 0x10005bcd), called directly
 	void sub_10273070(char bForce);	// "CAI_BaseNPC::InitHull"-like: checks the hull (+0x1568) is among the hulls the class precached (DevMsg "ERROR" block when not), then, when the hull is not set up yet (byte +0x5f2d) or bForce, sets the hull size and clears the byte; with a navigator object at +0x36c runs sub_10272f40
 	void sub_10272f40();	// stub 0x100081c0
-	bool sub_10278220(const Vector *pStart, const Vector *pEnd, int mask);	// stub 0x100116b7: a trace-based visibility test of pEnd (offset by the eye offset at +0x184) from pStart; true when it is clear or the navigator accepts a move there
-	bool sub_102784a0(const Vector *pStart, int mask);	// tests pStart against the NPC's origin and then against five pairs of points that step 48 units either side of the origin along its right vector (sub_10278220 each); true at the first one that is clear
