@@ -38592,6 +38592,19 @@ void sub_1013a9f0(const Quaternion &p, const Quaternion &q, Quaternion &qt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ab70 size=0x35
+void sub_1013a9f0(int a, int b, void *pOut);
+void sub_1013abc0(int a, void *pIn, int c, int d);
+
+// TARGET: sub_1013ab70
+void sub_1013ab70(int a, int b, int c, int d)
+{
+    char local[16];
+    sub_1013a9f0(a, b, local);
+    sub_1013abc0(a, local, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013abc0 size=0x12a
 #include "Quaternion.h"
 #include <math.h>
