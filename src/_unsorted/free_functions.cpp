@@ -49678,6 +49678,27 @@ int CUnknown101b9140::sub_101b9140(int elem, int num, const CUnknown101b9140Elem
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9880 size=0x3b
+extern int g_1070d1b0;
+extern int g_1070d1b4;
+extern int g_1070d1b8;
+
+void __fastcall sub_101b9880(int *p)
+{
+    p[0] = -1;
+    p[8] = g_1070d1b0;
+    p[9] = g_1070d1b4;
+    p[10] = g_1070d1b8;
+    p[1] = 0;
+    p[2] = 0;
+    p[3] = 0;
+    p[4] = 0;
+    ((char *)p)[0x14] = 0;
+    p[6] = -1;
+    p[7] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ba9d0 size=0x123
 #include "CSoundEnt.h"
 #include "CGlobalEntityList.h"
