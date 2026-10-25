@@ -47865,6 +47865,26 @@ int *sub_101a9bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a9dd0 size=0x3c
+#include "CBaseEntity.h"
+
+extern char *g_1070b228;
+void sub_1000880a();
+
+struct CUnk101a9dd0 {
+    void sub_101a9dd0(int *pValue);
+};
+
+void CUnk101a9dd0::sub_101a9dd0(int *pValue)
+{
+    if (*((char *)this + 0x470) != 0) {
+        *(int *)((char *)this + 0x478) = *pValue;
+        ((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000880a, 0, 0);
+        *(int *)((char *)this + 0x17c) = *(int *)(g_1070b228 + 0xc);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9fa0 size=0x100
 #include "CUnknown101aa210.h"
 #include "CEHandleGet.h"
