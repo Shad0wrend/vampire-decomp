@@ -8527,6 +8527,32 @@ int sub_100657e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065e20 size=0x37
+#include "CTEMuzzleFlash.h"
+
+extern int vt_1044dfd4[];
+
+struct CTEBaseHeadPlaceholder {
+    void sub_10015334(const char *name);
+};
+
+// TARGET: CTEMuzzleFlash::sub_10065e20
+CTEMuzzleFlash *CTEMuzzleFlash::sub_10065e20(const char *name)
+{
+    ((CTEBaseHeadPlaceholder *)this)->sub_10015334(name);
+    *(int **)this = vt_1044dfd4;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(int *)((char *)this + 0x28) = 0;
+    *(float *)((char *)this + 0x24) = 1.0f;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100660a0 size=0x100
 #include "SendProp.h"
 
