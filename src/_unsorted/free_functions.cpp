@@ -86961,6 +86961,32 @@ bool CUnknown10359c50::sub_102ea130(const char *pszSymbol, int nLocalId, const c
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea280 size=0x38
+// TARGET: sub_102ea280
+struct CRangeNode_102ea280 {
+    int lo;
+    int id;
+    int pad08;
+    int hi;
+    CRangeNode_102ea280 *next;
+    int sub_102ea280(int v);
+};
+
+int CRangeNode_102ea280::sub_102ea280(int v)
+{
+    if (v != -1) {
+        CRangeNode_102ea280 *p = this;
+        do {
+            if (p->id != 9999 && v >= p->lo && v <= p->hi) {
+                return p->id - p->lo + v;
+            }
+            p = p->next;
+        } while (p != 0);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eb170 size=0x107
 #include "CUtlRBTree12.h"
 extern CUtlRBTree12 g_10934014;
