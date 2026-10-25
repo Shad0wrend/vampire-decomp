@@ -75,8 +75,9 @@ public:
 	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) CBP_V1(sb76) CBP_V1(sb77) CBP_V1(sb78)
 	virtual void vfunc144(const void *pArg);	// slot 144: takes a damage info (CUnknown101c26d0, the force vector at +4); sub_10170d60 hands it a random force
 	CBP_V10(sb8) CBP_V10(sb9)
-	CBP_V1(sc00) CBP_V1(sc01) CBP_V1(sc02) CBP_V1(sc03) CBP_V1(sc04)	// slots 165..169 (169 is the view punch, typed below)
-	CBP_V1(sc05) CBP_V1(sc06) CBP_V1(sc07) CBP_V1(sc08) CBP_V1(sc09)
+	CBP_V1(sc00) CBP_V1(sc01) CBP_V1(sc02) CBP_V1(sc03)	// slots 165..168
+	virtual void vfunc169(const Vector *pPunch);	// slot 169: takes the pointer of a view punch angle
+	CBP_V1(sc05) CBP_V1(sc06) CBP_V1(sc07) CBP_V1(sc08) CBP_V1(sc09)	// slots 170..174
 	CBP_V10(sc1) CBP_V1(sc20) CBP_V1(sc21) CBP_V1(sc22) CBP_V1(sc23) CBP_V1(sc24) CBP_V1(sc25) CBP_V1(sc26)
 	virtual Vector vfunc192();	// "EyePosition"-like getter returning the vector by value (hidden pointer, ret 4)
 	CBP_V1(sc28)
