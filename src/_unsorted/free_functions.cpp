@@ -17858,6 +17858,51 @@ CUnknown10098810 *CUnknown10098810::sub_10098810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100989f0 size=0x33
+extern char vt_10450024[];
+
+namespace block_100989f0 {
+    struct CUnknown10098810Unit {
+        char pad0[4];
+        int m_n4;
+        char pad1[0xc];
+        int m_n14;
+        CUnknown10098810Unit *sub_10098810();
+    };
+    CUnknown10098810Unit *CUnknown10098810Unit::sub_10098810()
+    {
+        m_n14 = 0;
+        m_n4 = 0;
+        return this;
+    }
+}
+using namespace block_100989f0;
+
+struct COverlayElemView {
+    char pad0[0x30];
+};
+
+struct COverlayView {
+    void *vfptr;
+    char pad0[0x730 - 4];
+    unsigned char m_b730;
+    char pad1[3];
+    COverlayElemView m_elems[4];
+    void sub_1008b230();
+};
+
+// TARGET: sub_100989f0
+COverlayView *__fastcall sub_100989f0(COverlayView *p)
+{
+    p->sub_1008b230();
+    for (int i = 0; i < 4; i++)
+        ((CUnknown10098810Unit *)&p->m_elems[i])->sub_10098810();
+    p->vfptr = vt_10450024;
+    p->m_b730 = 0;
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098cd0 size=0x17c
 #include "CBaseAnimating.h"
 #include "CBaseAnimatingOverlay.h"
