@@ -32489,6 +32489,42 @@ void __fastcall sub_10109da0(char *self, int, int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109df0 size=0x3f
+#include "vampire.h"
+
+struct CUnknownInput10109df0
+{
+    char m_pad00[8];
+    float m_flValue;
+    char m_pad0c[0x18 - 0xc];
+    int m_nType;
+};
+
+struct CUnknownTimer10109df0
+{
+    void sub_10109df0(CUnknownInput10109df0 *pInput);
+    void sub_100121f2(float fl);
+    char m_pad0000[0x204];
+    unsigned int m_flags204;
+};
+
+// TARGET: CUnknownTimer10109df0::sub_10109df0
+void CUnknownTimer10109df0::sub_10109df0(CUnknownInput10109df0 *pInput)
+{
+    float flValue;
+    m_flags204 &= 0xfffffffe;
+    if (pInput->m_nType == 1)
+    {
+        flValue = pInput->m_flValue;
+    }
+    else
+    {
+        flValue = 0.0f;
+    }
+    sub_100121f2(flValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109e40 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
