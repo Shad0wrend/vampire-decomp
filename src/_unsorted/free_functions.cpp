@@ -62055,6 +62055,19 @@ void CUnk101f75f0::sub_101f75f0(CTraitStatBlock *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f7640 size=0x37
+#include "CVTraitEffectGroup_t.h"
+#include "CVModInfo_t.h"
+
+// TARGET: CVTraitEffectGroup_t::sub_101f7640
+void CVTraitEffectGroup_t::sub_101f7640(CVModInfo_t *pInfo, void *pResult)
+{
+    for (int i = 0; i < m_nEffects; i++) {
+        m_pEffects[i].sub_101f6e20(pInfo, (int *)pResult);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f7690 size=0x3c
 struct CUnk101f7690Elem {
     void sub_1000dc79(int a, int b, int c);
