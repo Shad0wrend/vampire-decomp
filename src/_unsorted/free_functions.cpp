@@ -73627,6 +73627,20 @@ void sub_10238380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10239170 size=0x36
+// TARGET: CBaseCombatWeapon::sub_10239170
+#include "CBaseCombatWeapon.h"
+
+bool CBaseCombatWeapon::sub_10239170()
+{
+	int *pRoll = sub_102517e0();
+	if (vfunc277(0) && ((int *)this)[(pRoll[0x10c / 4] + 0x74c / 4)] > 0) {
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102391c0 size=0x3d
 #define VS(n) virtual void s##n();
 #define VS10(p) VS(p##0) VS(p##1) VS(p##2) VS(p##3) VS(p##4) VS(p##5) VS(p##6) VS(p##7) VS(p##8) VS(p##9)
