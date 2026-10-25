@@ -52564,6 +52564,26 @@ Vector sub_101d2a20(int a, int b, float lo, float hi)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2ab0 size=0x66
+#include "Vector.h"
+
+extern "C" __declspec(dllimport) void RandomSeed(int iSeed);
+extern "C" __declspec(dllimport) float RandomFloat(float flMinVal, float flMaxVal);
+
+int sub_100b4e10(int a, int b);
+int sub_101d2960(int a);
+
+void sub_101d2ab0(Vector *pOut, int a, int b, float flMin, float flMax)
+{
+	Vector v;
+	RandomSeed(sub_101d2960(sub_100b4e10(a, b)));
+	v.x = RandomFloat(flMin, flMax);
+	v.y = RandomFloat(flMin, flMax);
+	v.z = RandomFloat(flMin, flMax);
+	pOut->Init(v.x, v.y, v.z);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2fc0 size=0x88
 #define Q10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
