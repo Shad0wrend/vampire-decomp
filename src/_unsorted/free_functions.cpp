@@ -24160,6 +24160,35 @@ void CFloatPair3f4::sub_100c08d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0970 size=0x109
+#include "CFloatPair3f4.h"
+#include <math.h>
+
+extern float g_104454c4;
+
+void CFloatPair3f4::sub_100c0970(float flValue)
+{
+	flValue = (float)fabs(flValue);
+	if (m_b46c)
+		flValue = flValue * -1.0f;
+	m_f45c = flValue;
+	if (!(m_b204 & 0x10))
+	{
+		sub_100c0420(flValue);
+		m_pfn114 = sub_100c08d0;
+	}
+	else if ((m_f164 > g_104454c4 && flValue < g_104454c4) || (m_f164 < g_104454c4 && flValue > g_104454c4))
+		m_pfn114 = sub_10011586;
+	else if (fabs(m_f164) < fabs(flValue))
+		m_pfn114 = sub_100c0690;
+	else if (fabs(m_f164) > fabs(flValue))
+		m_pfn114 = sub_100c0830;
+	else
+		m_pfn114 = sub_100c08d0;
+	m_f3fc = m_f3f4 + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0b40 size=0x7e
 #include <math.h>
 
