@@ -106241,6 +106241,45 @@ CNPC_VSheriffMan *CNPC_VSheriffMan::sub_103ae3e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b0930 size=0x12b
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CNPC_VSheriffMan.h"
+
+struct SheriffListNode : CEntityVSlots
+{
+	char pad[0x5d8 - 4];
+	SheriffListNode *m_pNext;
+	int m_nType;
+};
+extern SheriffListNode *g_10925450;
+
+CEntityVSlots *CNPC_VSheriffMan::sub_103b0930()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::SelectCenterNode", g_106b8540);
+	CEntityVSlots *pRef = (CEntityVSlots *)EHandle_Get(m_hHeightTarget);
+	if (!pRef)
+		return 0;
+	CEntityVSlots *pBest = 0;
+	float flBest = 3.4028235e+38f;
+	for (SheriffListNode *p = g_10925450; p; p = p->m_pNext)
+	{
+		if (p->m_nType == 0x4651)
+		{
+			float flDist = (*pRef->slot217() - *p->slot217()).Length();
+			if (flDist < flBest)
+			{
+				flBest = flDist;
+				pBest = p;
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1300 size=0x11c
 #include "CNPC_VAsianVampire.h"
 #include "CEntityVSlots.h"
