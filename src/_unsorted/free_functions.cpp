@@ -93787,6 +93787,38 @@ int S1033d380::sub_1033d380(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d410 size=0x3a
+struct CLookupUnit1033d410
+{
+    char m_pad0000[0xfb4];
+    int *m_pItems;
+    int m_pad0fb8[2];
+    int m_nCount;
+
+    int sub_1033d410(int key);
+};
+
+// TARGET: sub_1033d410
+int CLookupUnit1033d410::sub_1033d410(int key)
+{
+    int i = 0;
+    if (m_nCount > 0)
+    {
+        int *p = m_pItems;
+        do
+        {
+            if (*p == key)
+            {
+                return m_pItems[i * 4 + 2];
+            }
+            i++;
+            p += 4;
+        } while (i < m_nCount);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d580 size=0x8d
 #include "CBaseCombatCharacter.h"
 
