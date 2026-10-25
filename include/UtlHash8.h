@@ -56,4 +56,5 @@ public:
 	void sub_10042580();	// destroys every bucket (last to first) and empties the bucket vector
 	void sub_10042800();	// same as sub_10042580 (another instance, stub 0x100099f3)
 	void sub_10042940();	// same as sub_10042580 (another instance, stub 0x1000edb3)
+	void sub_100426c0();	// same as sub_10042580 (another instance, stub 0x10003db9)
 };
