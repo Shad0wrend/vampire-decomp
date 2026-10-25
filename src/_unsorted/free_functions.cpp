@@ -38758,6 +38758,23 @@ void sub_1013a030(V3 *mins, V3 *maxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a0e0 size=0x33
+// TARGET: sub_1013a0e0
+#include <math.h>
+extern float g_1070d5cc[];
+
+void sub_1013a0e0()
+{
+    int i = 0;
+    float *p = &g_1070d5cc[0];
+    do {
+        double v = pow(2.0, (double)(i - 128)) * 0.00392156862745098;
+        i++;
+        p[i] = (float)v;
+    } while (i < 256);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a600 size=0x31
 extern int g_10712de0[];
 
