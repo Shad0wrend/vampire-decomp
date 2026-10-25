@@ -41137,6 +41137,24 @@ int sub_10151ae0(const matrix3x4_t &mat, const Vector &dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101520a0 size=0xc6
+#include "gamevcollisionevent_t.h"
+
+extern Vector g_1070d1b0;
+
+void sub_101520a0(gamevcollisionevent_t *pEvent, int index, Vector *pContactPoint, Vector *pOut)
+{
+    pEvent->pInternalData->vfunc1(pContactPoint);
+    float mass = pEvent->pObjects[index]->vfunc12();
+    *pOut = pEvent->postVelocity[index] * mass;
+    if (*pOut == g_1070d1b0) {
+        index = (index == 0);
+        mass = pEvent->pObjects[index]->vfunc12();
+        *pOut = pEvent->postVelocity[index] * mass;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101521b0 size=0x43
 #include "CRagdollProp.h"
 void *sub_100aa720(int size);
