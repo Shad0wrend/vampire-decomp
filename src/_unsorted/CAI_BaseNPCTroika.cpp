@@ -1694,6 +1694,15 @@ void CAI_BaseNPCTroika::vfunc333(float flInterval)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c0b60 size=0x3c
+#include "CEHandleGet.h"
+
+bool __fastcall sub_102c0b60(void *self)
+{
+    return EHandle_Get(*(const unsigned int *)((char *)self + 0xfe8)) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c12a0 size=0x10b
 #include "CUnknown100ecee0.h"
 
