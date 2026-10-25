@@ -23663,6 +23663,23 @@ void CBitString::sub_100bf480(int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf5b0 size=0x31
+#include "CBitString.h"
+#include <malloc.h>
+
+// TARGET: CBitString::sub_100bf5b0
+void CBitString::sub_100bf5b0(int numDwords)
+{
+    if (numDwords != 0) {
+        if (numDwords == 1) {
+            m_pData = &m_nInline;
+            return;
+        }
+        m_pData = (int *)malloc(numDwords * 4);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0830 size=0x39
 #include "CFloatPair3f4.h"
 
