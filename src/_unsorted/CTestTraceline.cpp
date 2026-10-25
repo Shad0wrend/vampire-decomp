@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1006bb30 size=0x3d
+#include "vampire.h"
+#include "CTestTraceline.h"
+
+extern char *g_1070b228;
+void sub_10003f62();
+
+// TARGET: CTestTraceline::vfunc103
+void CTestTraceline::vfunc103()
+{
+    unsigned char bColor = 0xff;
+    *((unsigned char *)this + 0x1a3) = bColor;
+    *((unsigned char *)this + 0x1a2) = bColor;
+    *((unsigned char *)this + 0x1a1) = bColor;
+    *((unsigned char *)this + 0x1a0) = bColor;
+    *(float *)((char *)this + 0x17c) = *(float *)(g_1070b228 + 0xc) + 0.01;
+    sub_100ac4e0((void *)sub_10003f62, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006bcf0 size=0x1e
 #include "CTestTraceline.h"
 

@@ -3497,6 +3497,7 @@
 0x1000ce96 func   ?sub_10116bf0@CFuncMoveLinear@@QAEXXZ CFuncMoveLinear::sub_10116bf0
 0x1000cec3 func   ?sub_10177ab0@Helper@@QAEPAXPBD@Z Helper::sub_10177ab0
 0x1000cec8 func   _npc_VCamera npc_VCamera
+0x1000cecd func   ?vfunc103@CTestTraceline@@UAEXXZ CTestTraceline::vfunc103
 0x1000cedc func   ?sub_100dd2e0@CCollisionProperty@@QAEMPBM@Z CCollisionProperty::sub_100dd2e0
 0x1000cef0 func   ?sub_1005ac10@CTEBeamEntPoint@@QAEPAV1@H@Z CTEBeamEntPoint::sub_1005ac10
 0x1000ceff func   _npc_VProneDialog npc_VProneDialog
