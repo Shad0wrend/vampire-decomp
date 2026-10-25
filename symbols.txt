@@ -2041,6 +2041,7 @@
 0x10007b21 func   ?sub_100b17f0@@YIHPAD@Z sub_100b17f0
 0x10007b26 func   ?vfunc35@CPropRadio@@UAEHH@Z CPropRadio::vfunc35
 0x10007b3a func   ?sub_104110d0@@YG_NPAUHolder@@@Z sub_104110d0
+0x10007b53 func   ?sub_102f44d0@CNodePosFilter_102f44d0@@QAEMPBUCPosArg_102f44d0@@@Z CNodePosFilter_102f44d0::sub_102f44d0
 0x10007b6c func   ?sub_10315080@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10315080
 0x10007b71 func   _func_brush func_brush
 0x10007b7b func   ?sub_1027de00@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_1027de00
