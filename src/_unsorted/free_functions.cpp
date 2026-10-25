@@ -89451,6 +89451,31 @@ void __fastcall sub_102e12e0(COwner *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e1c10 size=0xa9
+#include "CAI_Motor.h"
+
+void CAI_Motor::sub_102e1c10(float flIdealYaw, float flYawSpeed)
+{
+    float yaw = flIdealYaw;
+    if (m_28) {
+        if (flIdealYaw >= 180.0f)
+            yaw = flIdealYaw - 180.0f;
+        else
+            yaw = flIdealYaw + 180.0f;
+    }
+    if (m_1c == 0x43340000)
+        m_34 = yaw;
+    else
+        m_34 = sub_102e0a80(yaw);
+    if (flYawSpeed == -1.0f) {
+        sub_102e1cf0();
+    } else if (flYawSpeed != -2.0f) {
+        *(float *)&m_38 = flYawSpeed;
+    }
+    sub_102e1e20(-1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e1cf0 size=0x10
 struct CUnknownEmbed102e1cf0 {
     char m_pad0000[0x10];
