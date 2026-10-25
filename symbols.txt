@@ -4551,6 +4551,7 @@
 0x10010b5e func   ?vfunc0@CGameRules@@UAEPAV1@I@Z CGameRules::vfunc0
 0x10010b7c func   ?sub_10216c20@@YAPAHXZ sub_10216c20
 0x10010b81 func   ?RemoveAt@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEXG@Z CUtlRBTree<CRBTree16Entry8,unsigned short>::RemoveAt
+0x10010b81 func   ?RemoveNode@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEXG@Z CUtlRBTree<CRBTree16Entry8,unsigned short>::RemoveNode
 0x10010b86 func   ?sub_102366f0@@YAHXZ sub_102366f0
 0x10010b95 func   ?sub_101c2b10@CUnknown101c2b10@@QAEXD@Z CUnknown101c2b10::sub_101c2b10
 0x10010bb3 func   ?vfunc313@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc313
