@@ -1040,6 +1040,29 @@ void CBaseEntity::vfunc178(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a4fe0 size=0x3b
+struct CBaseEntityUnit5c {
+    void sub_10010794(CBaseEntity *pOther, CBaseEntity *pThis, int flags);
+};
+
+struct IHandleEntityView {
+    virtual void vfunc0();
+    virtual unsigned int *vfunc1();
+};
+
+// TARGET: CBaseEntity::vfunc39
+void CBaseEntity::vfunc39(CBaseEntity *pOther)
+{
+    ((CBaseEntityUnit5c *)((char *)this + 0x5c))->sub_10010794(pOther, this, 0);
+    if (pOther != 0) {
+        unsigned int *p = pOther->vfunc1();
+        *(int *)((char *)this + 0x8c) = *p;
+        return;
+    }
+    *(int *)((char *)this + 0x8c) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a65a0 size=0x71
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;

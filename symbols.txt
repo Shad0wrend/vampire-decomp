@@ -5998,6 +5998,7 @@
 0x10015230 func   ?vfunc620@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc620
 0x1001523a func   ?sub_100546b0@@YAXXZ sub_100546b0
 0x10015249 func   ?sub_101b5180@CSoundEmitterSystemBase@@QAEXPBD0@Z CSoundEmitterSystemBase::sub_101b5180
+0x10015262 func   ?vfunc39@CBaseEntity@@UAEXPAV1@@Z CBaseEntity::vfunc39
 0x1001526c func   ?sub_1006a370@@YAXPAVCUnknown1019d130@@HPAUTERecipientX@@HDPBD@Z sub_1006a370
 0x10015271 func   ?vfunc420@CNPC_VGargoyle@@QAEXXZ CNPC_VGargoyle::vfunc420
 0x10015280 func   ?sub_103be130@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be130
