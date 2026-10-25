@@ -1347,6 +1347,7 @@
 0x10005542 func   ?sub_1015a140@CFuncPlatRot@@QAEXXZ CFuncPlatRot::sub_1015a140
 0x1000554c func   ?vfunc2@CAI_SaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CAI_SaveRestoreBlockHandler::vfunc2
 0x10005560 func   _item_g_ring_serial_killer_1 item_g_ring_serial_killer_1
+0x1000556a func   ?sub_103261f0@CBaseCombatCharacter@@QAE_NVVector@@MM@Z CBaseCombatCharacter::sub_103261f0
 0x1000556f func   ?sub_101a8070@CCineNPC@@QAEXXZ CCineNPC::sub_101a8070
 0x10005574 func   ?sub_1019a490@@YAXXZ sub_1019a490
 0x1000557e func   ?sub_1023dff0@CUnit1023dff0@@QAEXPAUinputdata_t@@@Z CUnit1023dff0::sub_1023dff0

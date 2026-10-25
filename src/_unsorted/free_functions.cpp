@@ -96262,6 +96262,41 @@ void CBaseCombatCharacter::sub_10325c10(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103261f0 size=0x120
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+#define SV1(n) virtual void n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CBCCSlotView
+{
+	SV100(a)
+	SV10(b0) SV10(b1) SV10(b2) SV10(b3) SV10(b4) SV10(b5) SV10(b6) SV10(b7) SV10(b8)
+	SV1(c0) SV1(c1) SV1(c2)
+	virtual Vector vfunc193();
+	SV100(d)
+	SV10(e0) SV10(e1) SV10(e2) SV10(e3) SV10(e4) SV10(e5) SV10(e6)
+	SV1(f0) SV1(f1) SV1(f2) SV1(f3) SV1(f4) SV1(f5) SV1(f6) SV1(f7)
+	virtual Vector vfunc372();
+};
+
+bool CBaseCombatCharacter::sub_103261f0(Vector vecPos, float flScale, float flCone)
+{
+	ScopeTrace trace("CBaseCombatCharacter::FinViewCone2d", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	Vector vecDir = vecPos - ((CBCCSlotView *)this)->vfunc193();
+	vecDir.z = 0;
+	VectorNormalize(vecDir);
+	Vector vecFacing = ((CBCCSlotView *)this)->vfunc372();
+	float flDot = (vecDir.y * vecFacing.y + vecDir.z * vecFacing.z) + vecDir.x * vecFacing.x;
+	flDot = flDot * flScale;
+	if (flDot <= flCone)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10326360 size=0x118
 #include "ScopeTrace.h"
 #include "Vector.h"
