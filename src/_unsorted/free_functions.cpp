@@ -58408,6 +58408,38 @@ void __fastcall sub_101f0740(Holder *self, int, const char *filter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0910 size=0x40
+struct CUnknownStat101f0910 {
+    int m0;
+    int m4;
+    int m8;
+    int m0c;
+    int m10;
+    int m14;
+    int m18;
+    int m1c;
+    int m20;
+    int m24;
+    int m28;
+    int m2c;
+    int m30;
+};
+
+// TARGET: sub_101f0910
+int __fastcall sub_101f0910(CUnknownStat101f0910 *p)
+{
+    int iVar1 = ((p->m0c + p->m0) * p->m10) / p->m18;
+    if (p->m30 != 100) {
+        iVar1 = (p->m30 * iVar1) / 100;
+    }
+    int iVar2 = p->m20;
+    if (iVar1 <= p->m20 && (iVar2 = p->m28, iVar1 >= p->m28)) {
+        iVar2 = iVar1;
+    }
+    return iVar2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0bc0 size=0xb2
 #include "CUnknown101f0960.h"
 #include "CUnknown101f0bc0.h"
