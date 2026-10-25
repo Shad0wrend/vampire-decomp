@@ -74,6 +74,32 @@ void CRagdollPropSpecial::vfunc191(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157be0 size=0x8c
+#include "CRagdollPropSpecial.h"
+#include "IPhysicsObject.h"
+
+struct CCollisionEventX
+{
+	char m_pad0000[0x68];
+	CBaseEntity *m_pEntities[2];	// 0x68
+};
+
+void CRagdollPropSpecial::vfunc230(int index, void *pEvent)
+{
+	CBaseEntity::vfunc230(index, pEvent);
+	CBaseEntity *pOther = ((CCollisionEventX *)pEvent)->m_pEntities[index == 0];
+	if (pOther && pOther != this) {
+		IPhysicsObject *pPhysics = (IPhysicsObject *)m_obj36c;
+		if (pPhysics) {
+			Vector vecVelocity;
+			pPhysics->vfunc40(&vecVelocity.x, 0);
+			if (vecVelocity.Length() > 150.0)
+				sub_10157ca0(pOther);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158120 size=0x1e
 #include "CRagdollPropSpecial.h"
 
