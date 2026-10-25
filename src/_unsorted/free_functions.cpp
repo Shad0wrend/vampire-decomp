@@ -83355,6 +83355,37 @@ int *__fastcall sub_102c9d20(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ca030 size=0x36
+void sub_100107c1();
+void *sub_104312d5(unsigned int size);
+extern void *g_109253f8;
+
+struct CUnknown102ca030
+{
+	void *sub_100031c5();
+};
+
+// TARGET: sub_102ca030
+bool sub_102ca030()
+{
+	sub_100107c1();
+	void *pNew = sub_104312d5(0xa0c);
+	if (pNew != 0)
+	{
+		g_109253f8 = ((CUnknown102ca030 *)pNew)->sub_100031c5();
+		if (g_109253f8 != 0)
+		{
+			return true;
+		}
+	}
+	else
+	{
+		g_109253f8 = 0;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ca2a0 size=0x15f
 #include "CBaseEntity.h"
 #include "CAI_CsActList.h"
