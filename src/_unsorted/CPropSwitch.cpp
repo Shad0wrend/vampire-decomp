@@ -128,3 +128,24 @@ void CPropSwitch::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int us
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1020e100 size=0x38
+// TARGET: CPropSwitch::vfunc130
+#include "CPropSwitch.h"
+#include "CBaseAnimating.h"
+
+void CPropSwitch::vfunc130(int a)
+{
+    if ((char)a != 0) {
+        if (*(int *)((char *)this + 0x73c) == 2) {
+            *(char *)((char *)this + 0x7a5) = 1;
+            ((CBaseAnimating *)this)->CBaseAnimating::vfunc130(a);
+            return;
+        }
+        if (*(int *)((char *)this + 0x73c) == 1) {
+            *(char *)((char *)this + 0x7a5) = 0;
+        }
+    }
+    ((CBaseAnimating *)this)->CBaseAnimating::vfunc130(a);
+}
+// END FUNCTION
