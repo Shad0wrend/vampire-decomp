@@ -112633,6 +112633,22 @@ CSprite *sub_1042eb80(int a, int b, int c, int d, bool animate)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042eca0 size=0x3f
+#include "vampire.h"
+#include "CUnknown1042e8c0.h"
+
+extern char *g_1070b228;
+
+// TARGET: CUnknown1042e8c0::sub_1042eca0
+void CUnknown1042e8c0::sub_1042eca0()
+{
+    float flScale = *(float *)((char *)this + 0x458);
+    sub_1042ee50((*(float *)((char *)g_1070b228 + 0xc) - *(float *)((char *)this + 0x474)) * flScale);
+    *(float *)((char *)this + 0x17c) = *(float *)((char *)g_1070b228 + 0xc);
+    *(float *)((char *)this + 0x474) = *(float *)((char *)g_1070b228 + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042edb0 size=0x7c
 #include "CBaseEntity.h"
 
