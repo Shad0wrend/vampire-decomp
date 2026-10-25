@@ -13,7 +13,9 @@ class CWeaponIGeneric
 {
 public:
 	// slots 0..104
-	WIG_V100(wa) WIG_V1(wb0) WIG_V1(wb1) WIG_V1(wb2) WIG_V1(wb3) WIG_V1(wb4)
+	WIG_V100(wa) WIG_V1(wb0) WIG_V1(wb1) WIG_V1(wb2)
+	virtual void vfunc103();	// "CWeaponIGeneric::Precache"-like: CBaseCombatWeapon::vfunc103, then, when the name at +0x11c is "item_g_warrens4_passkey", sub_1000ce23(this) (sub_100fbd50)
+	WIG_V1(wb4)
 	virtual void vfunc105(const char *pszName);
 	// slots 106..271
 	WIG_V100(wc) WIG_V10(wd0) WIG_V10(wd1) WIG_V10(wd2) WIG_V10(wd3) WIG_V10(wd4) WIG_V10(wd5)
