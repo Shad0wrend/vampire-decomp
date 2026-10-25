@@ -2274,6 +2274,33 @@ void CMem8b_t::sub_10033160(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100335e0 size=0x3e
+struct CUnknownCycle100335e0 {
+    unsigned int lo;
+    unsigned int hi;
+
+    void Sample()
+    {
+        __asm {
+            mov ecx, this
+            rdtsc
+            mov [ecx], eax
+            mov [ecx + 4], edx
+        }
+    }
+};
+
+// TARGET: sub_100335e0
+void __fastcall sub_100335e0(CUnknownCycle100335e0 *self)
+{
+    CUnknownCycle100335e0 now;
+    now.lo = 0;
+    now.hi = 0;
+    now.Sample();
+    *(__int64 *)self = *(__int64 *)&now - *(__int64 *)self;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033740 size=0xab
 #include "CPhysicsMovedEntities.h"
 
