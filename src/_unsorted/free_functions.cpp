@@ -64035,6 +64035,27 @@ const char *CVStatList_t::sub_10201470(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10201540 size=0x3a
+// TARGET: CVStatList_t::sub_10201540
+char CVStatList_t::sub_10201540()
+{
+    char bChanged = 0;
+    int i = 0;
+    if (m_field04 > 0) {
+        do {
+            int value = sub_102012d0(i);
+            int *pValue = &((int *)((int *)m_field08)[1])[i];
+            if (*pValue != value) {
+                bChanged = 1;
+            }
+            *pValue = value;
+            i++;
+        } while (i < m_field04);
+    }
+    return bChanged;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10201590 size=0xc5
 #include "ScopeTrace.h"
 #include "CVStatList_t.h"
