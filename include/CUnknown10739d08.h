@@ -21,6 +21,7 @@ public:
 	virtual float vfunc5(int level);	// the tuning value for a stat level
 
 	float sub_101e7d90();	// returns the float at +0x3c8 (stub 0x10006f0f)
+	float sub_101e7d70();	// a tuning delay as a float (stub 0x10007e0f): the time between the random view punches of the player
 	float sub_101e8820(CBaseCombatCharacter *pChar);	// the character's stat 0x1a divided by the (truncated) tuning value of its stat 1 level minus one (stub 0x10004c91)
 	float sub_101e8640(void *pChar);	// a float derived from the character's stats (stub 0x1000b3d9)
 	float sub_101e9020();	// a tuning value as a float (stub 0x10004615)
