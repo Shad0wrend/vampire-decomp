@@ -55,6 +55,7 @@ struct CNPC_VHengeyokaiEvent
 };
 
 class CBaseEntity;
+class CAI_Motor;
 
 class CNPC_VHengeyokai
 {
@@ -67,7 +68,9 @@ public:
 	int m_n670;	// 0x670: state, 1 while transformed
 	char m_pad0674[0x5cc0 - 0x674];
 	int m_n5cc0;	// 0x5cc0: schedule state, 2 while a schedule is running
-	char m_pad5cc4[0x5d8c - 0x5cc4];
+	char m_pad5cc4[0x5d44 - 0x5cc4];
+	CAI_Motor *m_pMotor5d44;	// 0x5d44
+	char m_pad5d48[0x5d8c - 0x5d48];
 	unsigned int m_flags5d8c;	// 0x5d8c: bit 31 is cleared by the cancel path
 	char m_pad5d90[0x6664 - 0x5d90];
 	unsigned int m_h6664;	// 0x6664: entity handle (the target of the bone attack)
@@ -124,4 +127,5 @@ public:
 	void sub_100048f9(int arg);	// CAI_BaseNPCTroika::vfunc435 (stub 0x100048f9), called directly
 	void vfunc617();	// slot 617 (plain member): plays one of the 0x1063bd94 sounds (random 0..3, channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 	void vfunc618();	// slot 618 (plain member): plays one of the 0x1063bda4 sounds (channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
+	void sub_10382bb0();	// with the target (handle +0x6664) alive: the motor (+0x5d44) takes the yaw of slot 221 and the turn rate 20.0f, is reset, and then looks at the slot 167 target (stub 0x10007248) or, without one, turns to the angles yaw (flipped by 180 when the motor's byte +0x28 is set)
 };
