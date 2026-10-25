@@ -6384,6 +6384,7 @@
 0x1001577b func   ?sub_1018be10@CUnknownCopy1018be10@@QAEPAU1@PBU1@@Z CUnknownCopy1018be10::sub_1018be10
 0x10015780 func   ?vfunc359@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc359
 0x1001578a func   ?vfunc460@CNPC_VDog@@QAEHXZ CNPC_VDog::vfunc460
+0x1001579e func   ?vfunc491@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc491
 0x100157a8 func   ?sub_10404a80@@YAHXZ sub_10404a80
 0x100157c1 func   ?sub_1009edc0@CBaseEntity@@QAEXPBM0@Z CBaseEntity::sub_1009edc0
 0x100157c6 func   _item_container_animated item_container_animated
