@@ -49989,6 +49989,18 @@ extern "C" GP *npc_payphone()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab310 size=0x31
+void sub_10246300();
+int sub_10246510(int a, int b, int c, int d, int e, int f, int g, int h, void *pFunc);
+
+// TARGET: sub_101ab310
+int sub_101ab310(int a, int b, int c, int d)
+{
+    sub_10246510(a, b, c, d, -1, 4, 0, 0xc7ec9090, (void *)sub_10246300);
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab590 size=0x12
 struct CInitPair101ab590 {
     int pad0;
