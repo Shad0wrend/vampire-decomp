@@ -36,7 +36,7 @@ public:
 	virtual void vfunc215(); virtual void vfunc216(float *p); virtual void vfunc217(); virtual void vfunc218(); virtual void vfunc219();
 	virtual void vfunc220(); virtual void vfunc221(); virtual void vfunc222(); virtual void vfunc223(); virtual void vfunc224();
 	virtual void vfunc225(); virtual void vfunc226(); virtual void vfunc227(); virtual void vfunc228(); virtual void vfunc229();
-	virtual void vfunc230(); virtual void vfunc231(); virtual void vfunc232(); virtual void vfunc233(); virtual void vfunc234();
+	virtual void vfunc230(); virtual void vfunc231(); virtual void vfunc232(); virtual int vfunc233(int *pOut, int nMax); virtual void vfunc234();	// slot 233: copies the first nMax dwords of the element at +0x744 (one per 0x18 bytes, count at +0x730) into pOut and returns the count
 	virtual void vfunc235(); virtual void vfunc236(); virtual void vfunc237(); virtual void vfunc238(); virtual void vfunc239();
 	virtual void vfunc240(); virtual void vfunc241(); virtual void vfunc242(); virtual void vfunc243(); virtual void vfunc244();
 	virtual void vfunc245(); virtual void vfunc246(); virtual void vfunc247(); virtual void vfunc248(); virtual void vfunc249();
