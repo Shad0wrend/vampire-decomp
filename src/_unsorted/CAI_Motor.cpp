@@ -60,6 +60,46 @@ void CAI_Motor::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0f90 size=0x122
+#include "CAI_Motor.h"
+#include "CAI_BaseNPC.h"
+
+struct MotorOwnerView
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5)
+	CAI_NPC_V(60) CAI_NPC_V(61)
+	virtual void vfunc62(const Vector &vecGoal);
+	CAI_NPC_V(63) CAI_NPC_V(64) CAI_NPC_V(65) CAI_NPC_V(66) CAI_NPC_V(67) CAI_NPC_V(68) CAI_NPC_V(69)
+	CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9) CAI_NPC_V10(10) CAI_NPC_V10(11) CAI_NPC_V10(12) CAI_NPC_V10(13) CAI_NPC_V10(14) CAI_NPC_V10(15)
+	CAI_NPC_V10(16) CAI_NPC_V10(17) CAI_NPC_V10(18) CAI_NPC_V10(19) CAI_NPC_V10(20) CAI_NPC_V10(21)
+	virtual float *vfunc220();
+};
+
+// TARGET: CAI_Motor::vfunc4
+int CAI_Motor::vfunc4(const Vector &vecGoal, float flYaw)
+{
+	Vector vecDir = vecGoal - *(Vector *)((MotorOwnerView *)m_pOuter)->vfunc220();
+	float flDist = VectorNormalize(vecDir);
+	Vector vecMove = vecDir * 100.0f;
+	sub_102e2690(&vecMove);
+	if (m_30 * 100.0f > flDist)
+	{
+		if (flDist <= 0.01)
+			flDist = 0;
+		float flSpeed = m_30;
+		flSpeed -= flDist * 0.01f;
+		m_30 = flSpeed;
+		((MotorOwnerView *)m_pOuter)->vfunc62(vecGoal);
+		return 1;
+	}
+	m_30 = 0;
+	sub_102e1c10(flYaw, -1.0f);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e1300 size=0xba
 #include "CAI_Motor.h"
 #include "Vector.h"
