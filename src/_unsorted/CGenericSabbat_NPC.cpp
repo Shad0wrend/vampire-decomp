@@ -152,6 +152,29 @@ void CGenericSabbat_NPC::vfunc495()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035ba00 size=0x11f
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CGenericSabbat_NPC.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_1062a004[];
+
+void CGenericSabbat_NPC::vfunc489()
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	filter.MakeReliable();
+	int edict = *(int *)((char *)this + 0x2e0);
+	int idx = g_1070b22c->vfunc35(edict);
+	g_1070b248->vfunc3(&filter, idx, 2, g_1062a004[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035be80 size=0x2a
 #include "CGenericSabbat_NPC.h"
 extern const float g_1044f00c;
