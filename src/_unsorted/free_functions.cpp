@@ -92801,6 +92801,41 @@ void sub_10307e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10308190 size=0xd8
+#include "CUnknown1030a6e0.h"
+#include "CEntityVSlots.h"
+struct SGlobalVars { char m_pad[0xc]; float m_flCurTime; };
+extern SGlobalVars *g_1070b228;
+bool CUnknown1030a6e0::sub_10308190(const Vector *pGoal)
+{
+    Vector *pOrigin = ((CEntityVSlots *)m_pOuter)->slot220();
+    Vector d;
+    d = *pGoal - *pOrigin;
+    float flDist = d.Length2D();
+    if (!(m_vecGoal == *pGoal))
+    {
+        m_flBestTime = g_1070b228->m_flCurTime;
+        m_bStuck = 0;
+        m_flBestDist = flDist;
+        return false;
+    }
+    if (m_bStuck)
+        return true;
+    if (m_flBestDist - flDist > 0.0f)
+    {
+        m_flBestTime = g_1070b228->m_flCurTime;
+        m_flBestDist = flDist;
+        return false;
+    }
+    if (g_1070b228->m_flCurTime - m_flBestTime > 0.75)
+    {
+        m_bStuck = 1;
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103090d0 size=0x36
 // TARGET: sub_103090d0
 float sub_103090d0(float x)
