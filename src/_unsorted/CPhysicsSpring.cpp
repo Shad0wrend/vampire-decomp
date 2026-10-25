@@ -46,6 +46,26 @@ int CPhysicsSpring::vfunc124()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d420 size=0x111
+#include "CPhysicsSpring.h"
+#include "Vector.h"
+void sub_10007de2(const Vector &v1, const Vector &v2, int r, int g, int b, bool noDepth, float duration);
+
+void CPhysicsSpring::vfunc123()
+{
+	if (m_fTextOverlayFlags & 4) {
+		Vector start, end;
+		m_pSpring->GetEndPoints(&start, &end);
+		Vector dir = end - start;
+		VectorNormalize(dir);
+		Vector p = start + dir * m_flLength;
+		sub_10007de2(start, p, 0, 0, 255, false, 0);
+		sub_10007de2(p, end, 255, 0, 0, false, 0);
+	}
+	sub_10005880();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d9a0 size=0x107
 #include "CPhysicsSpring.h"
 #include "CCollisionProperty.h"

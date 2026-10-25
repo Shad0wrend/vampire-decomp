@@ -5303,6 +5303,7 @@
 0x10011982 func   ?sub_103be3d0@CTargetNPC@@QAE_NPAVCBaseEntity@@@Z CTargetNPC::sub_103be3d0
 0x1001198c func   ?vfunc0@ConCommand@@UAEPAV1@I@Z ConCommand::vfunc0
 0x10011991 func   ?sub_10183910@StatOwner2@@QAEPAUStatDefault2@@H@Z StatOwner2::sub_10183910
+0x100119a0 func   ?vfunc123@CPhysicsSpring@@QAEXXZ CPhysicsSpring::vfunc123
 0x100119b4 func   ?sub_101d07f0@@YAXPAVVector@@PBV1@1@Z sub_101d07f0
 0x100119d7 func   ?vfunc5@CPropPadlock@@QAEPAV1@I@Z CPropPadlock::vfunc5
 0x100119e1 func   ?sub_1036e160@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::sub_1036e160
