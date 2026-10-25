@@ -40273,6 +40273,20 @@ void sub_1013d7a0(const float *angles1, const float *angles2, float *pOut1, floa
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d830 size=0x99
+#include "Vector.h"
+
+void sub_1013d830(const Vector &v1, const Vector &v2, const Vector &v3, Vector &normal, float &intercept)
+{
+	Vector e1, e2;
+	VectorSubtract(v2, v1, e1);
+	VectorSubtract(v3, v1, e2);
+	CrossProduct(e1, e2, normal);
+	VectorNormalize(normal);
+	intercept = DotProduct(normal, v1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d900 size=0x72
 extern int g_10579690[4][2][3];
 bool sub_1013d900(int a, int b, int c, int *out)
