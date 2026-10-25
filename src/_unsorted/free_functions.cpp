@@ -88907,6 +88907,23 @@ char CAI_Senses::sub_1030fa00(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030fb10 size=0x3b
+#include "S1030fc90.h"
+
+bool S1030fc90::sub_1030fb10(int key)
+{
+    int cur;
+    int next = sub_1030fc90(&cur);
+    while (next != 0) {
+        if (key == next) {
+            return true;
+        }
+        next = sub_1030fd20(&cur);
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030fb90 size=0x85
 #include "CUnknown1030fb90.h"
 
