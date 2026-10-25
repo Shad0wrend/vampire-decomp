@@ -41767,6 +41767,26 @@ bool sub_10168e60(void *unused, EntX *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016af30 size=0x32
+// TARGET: sub_1016af30
+struct CSumElem_1016af30 {
+    char pad[0xc];
+    int value;
+    char pad2[0x60 - 0x10];
+};
+
+float __cdecl sub_1016af30(int n, CSumElem_1016af30 *p)
+{
+    int sum = 0;
+    while (n > 0) {
+        sum += p->value;
+        p++;
+        n--;
+    }
+    return sum * 0.001f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016b0e0 size=0x37
 // TARGET: CBasePlayer::sub_1016b0e0
 #include "CBasePlayer.h"
