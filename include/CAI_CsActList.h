@@ -5,6 +5,7 @@ class CBaseEntity;
 
 struct CSAct
 {
+	CSAct();	// out-of-line (0x102c9d20): clears the type and sets the handles to -1
 	char m_data[0x28];
 };
 
@@ -30,6 +31,7 @@ struct CsActRestoreIface
 class CAI_CsActList
 {
 public:
+	CAI_CsActList();	// constructor (0x102ca0c0): constructs the 0x40 acts, then the count and the field after it are cleared
 	virtual void vfunc0(CsActSaveIface *pSave);	// Save
 	virtual void vfunc1(CsActRestoreIface *pRestore);	// Restore
 	virtual void vfunc2(char flag);	// calls sub_102ca760 when flag is set
