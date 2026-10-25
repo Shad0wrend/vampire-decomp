@@ -35,7 +35,7 @@ struct CUnknown101cf0a0
 	float m_flDistance;	// 0x2c
 	int m_nValue30;	// 0x30
 	char m_pad0034[3];
-	char m_bZeroDistance;	// 0x37: the distance is zero
+	bool m_bZeroDistance;	// 0x37: the distance is zero
 	char m_pad0038[4];
 	const char *m_pszName;	// 0x3c
 	int m_nValue40;	// 0x40
