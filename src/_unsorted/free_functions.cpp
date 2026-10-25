@@ -41189,6 +41189,37 @@ void CUtlMemory96::sub_1013fd20(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140070 size=0x137
+#include "CPathKeyFrame.h"
+#include <stdlib.h>
+
+extern float g_104454c4;
+
+// TARGET: CPathKeyFrame::sub_10140070
+void CPathKeyFrame::sub_10140070()
+{
+    if (m_pNext && m_flSpeed > g_104454c4)
+    {
+        Vector vecDelta;
+        VectorSubtract(m_vOrigin, m_pNext->m_vOrigin, vecDelta);
+        m_flNextTime = vecDelta.Length() / m_flSpeed;
+        if (m_flNextTime == g_104454c4)
+        {
+            Vector vecAngDelta = m_vAngles - m_pNext->m_vAngles;
+            sub_1013fdf0(&vecAngDelta.x);
+            float flMax = g_104454c4;
+            for (int i = 0; i < 3; i++)
+            {
+                float flAbs = (float)abs((int)vecAngDelta[i]);
+                if (flAbs > flMax)
+                    flMax = flAbs;
+            }
+            m_flNextTime = flMax / m_flSpeed;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140bd0 size=0x11
 struct CScaleFields10140bd0 {
     char pad0[0x49c];
