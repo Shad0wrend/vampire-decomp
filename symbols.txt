@@ -3983,6 +3983,7 @@
 0x1000e421 func   ?sub_1002cc60@CUnknown1002cc60@@QAEPAU1@XZ CUnknown1002cc60::sub_1002cc60
 0x1000e426 func   _path_corner_crash path_corner_crash
 0x1000e430 func   ?vfunc303@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc303
+0x1000e44e func   ?vfunc7@ConCommand@@UAEXPBDP6AXXZ0H1@Z ConCommand::vfunc7
 0x1000e45d func   ?sub_10398d90@CUnknown10398d90@@QAEXH@Z CUnknown10398d90::sub_10398d90
 0x1000e48a func   ?vfunc5@CWeaponMelee_Katana@@QAEPAV1@I@Z CWeaponMelee_Katana::vfunc5
 0x1000e48f func   ?sub_1017ec40@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017ec40
