@@ -1,6 +1,29 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1039e890 size=0x3d
+#include "vampire.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CNPC_VMingXiaoTentacle.h"
+
+extern char g_1064a398[];
+
+struct CUnknownTroikaBase1039e890
+{
+    void sub_10012611(int a);
+};
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc390
+void CNPC_VMingXiaoTentacle::vfunc390(int a)
+{
+    m_n6680 = 0;
+    m_pszFile1b30 = g_1064a398;
+    m_nLine1b34 = 0x549;
+    ((CAI_BaseNPCTroika *)this)->sub_102ae750(0x168, 0);
+    ((CUnknownTroikaBase1039e890 *)this)->sub_10012611(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039e970 size=0xbc
 #include "CNPC_VMingXiaoTentacle.h"
 
