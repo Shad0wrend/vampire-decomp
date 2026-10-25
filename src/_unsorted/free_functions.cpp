@@ -21668,6 +21668,32 @@ void UtlMem3::sub_100b4a40(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4ad0 size=0x3e
+typedef int *(__fastcall *SlotFn)(void *);
+
+struct CBar {
+    void sub_10014e75(void *);
+};
+
+struct CFoo {
+    void sub_100b4ad0(int *param_2);
+};
+
+void CFoo::sub_100b4ad0(int *param_2)
+{
+    int *puVar1;
+
+    *((char *)this + 0x43c) = 1;
+    ((CBar *)param_2)->sub_10014e75(this);
+    if (param_2 != 0) {
+        puVar1 = ((SlotFn)(*(void ***)param_2)[1])(param_2);
+        *(int *)((char *)this + 0x440) = *puVar1;
+        return;
+    }
+    *(int *)((char *)this + 0x440) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4e80 size=0xa
 extern int g_106cff54;
 // TARGET: sub_100b4e80
