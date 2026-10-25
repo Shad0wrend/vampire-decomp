@@ -16,6 +16,33 @@ CRagdollProp *CRagdollProp::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101553f0 size=0x3b
+#include "CRagdollProp.h"
+#include "IPhysicsObject.h"
+
+struct CRagdollPropBody	// 0x18 byte element of the body array at +0x744 (count at +0x730)
+{
+	IPhysicsObject *m_pObject;
+	char m_pad0004[0x14];
+};
+
+// TARGET: CRagdollProp::vfunc270
+void CRagdollProp::vfunc270(int a, int b)
+{
+	int i = 0;
+	int nBodies = *(int *)((char *)this + 0x730);
+	if (nBodies > 0) {
+		CRagdollPropBody *pBody = (CRagdollPropBody *)((char *)this + 0x744);
+		do {
+			pBody->m_pObject->vfunc2();
+			pBody->m_pObject->vfunc24(1);
+			i++;
+			pBody++;
+		} while (i < *(int *)((char *)this + 0x730));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155ae0 size=0xf1
 #include "CRagdollProp.h"
 #include <string.h>
