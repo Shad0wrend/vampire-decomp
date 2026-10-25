@@ -13,6 +13,24 @@ int CNPC_VZombie::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103df120 size=0x35
+#include "CNPC_VZombie.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+void sub_1000bcb7();
+void sub_101d0ec0(const char *pszName);
+
+// TARGET: CNPC_VZombie::vfunc104
+void CNPC_VZombie::vfunc104()
+{
+	sub_1000bcb7();
+	g_1070b22c->vfunc17((int)"zombie_headshot_death_emitter", 0);
+	g_1070b22c->vfunc17((int)"zombie_headshot_dmg_emitter", 0);
+	sub_101d0ec0("item_w_zombie_fists");
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dfa20 size=0xc5
 #include "ScopeTrace.h"
 #include "CNPC_VZombie.h"
