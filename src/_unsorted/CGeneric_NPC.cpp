@@ -123,6 +123,31 @@ void CGeneric_NPC::vfunc489()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035a500 size=0x11b
+#include "CGeneric_NPC.h"
+#include "CBaseEntity.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_10629a20[];
+
+// TARGET: CGeneric_NPC::vfunc488
+void CGeneric_NPC::vfunc488()
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this, ATTN_NONE);
+	filter.MakeReliable();
+	int edict = ((CBaseEntity *)this)->m_pEdict2e0;
+	int entindex = g_1070b22c->vfunc35(edict);
+	g_1070b248->vfunc3(&filter, entindex, 2, g_10629a20[g_1070b244->vfunc2(0, 0)], 0.5f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a810 size=0x2a
 #include "CGeneric_NPC.h"
 extern const float g_1044f00c;
