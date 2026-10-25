@@ -100423,6 +100423,32 @@ void CNPC_VMingXiaoTentacle::sub_1039ee20(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039ef90 size=0x39
+struct CUnknown1039ef90Global {
+    virtual void vfunc0();
+    virtual void vfunc1();
+};
+
+extern CUnknown1039ef90Global *g_10924a6c;
+
+struct CUnknown1039ef90 {
+    char m_pad0000[0x668c];
+    int m_668c[3];
+    void sub_1039ef90(const int *pSrc);
+    void sub_100041b0(int a);
+};
+
+// TARGET: CUnknown1039ef90::sub_1039ef90
+void CUnknown1039ef90::sub_1039ef90(const int *pSrc)
+{
+    g_10924a6c->vfunc1();
+    sub_100041b0(0x78);
+    m_668c[0] = pSrc[0];
+    m_668c[1] = pSrc[1];
+    m_668c[2] = pSrc[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039f550 size=0x43
 #include "CNPC_VMoleman.h"
 void *sub_100aa720(int size);
