@@ -51,6 +51,6 @@ public:
 	void sub_102db740(int value);
 	void vfunc104();	// Precache: precaches the two sound names, warning about an invalid first one
 	const char *sub_1000b5cd();	// the entity's name (stub of 0x100ab4f0)
-	CAI_InterestingPlaceConverstation *vfunc5(unsigned char flags);	// scalar deleting destructor: tears down the vector at +0x518 and the six items at +0x46c, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
+	virtual CPointEntity *vfunc5(unsigned int flags);	// slot 5 (CPointEntity's override; VC6 has no covariant returns), scalar deleting destructor: tears down the vector at +0x518 and the six items at +0x46c, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
 };

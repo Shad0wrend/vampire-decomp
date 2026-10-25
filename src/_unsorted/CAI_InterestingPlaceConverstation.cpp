@@ -17,7 +17,7 @@ CAI_InterestingPlaceConverstation::CAI_InterestingPlaceConverstation()
 void __fastcall sub_102dce10(int *pVec);
 void __cdecl sub_100aa7b0(void *p);
 
-CAI_InterestingPlaceConverstation *CAI_InterestingPlaceConverstation::vfunc5(unsigned char flags)
+CPointEntity *CAI_InterestingPlaceConverstation::vfunc5(unsigned int flags)
 {
 	CAI_IPVec *pVec = &m_vec518;
 	sub_102dce10((int *)pVec);

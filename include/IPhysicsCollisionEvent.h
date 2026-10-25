@@ -1,4 +1,4 @@
-// IPhysicsCollisionEvent: the vphysics collision event callback interface (vtable at 0x10449228, all slots pure here).
+// IPhysicsCollisionEvent: the vphysics collision event callback interface (vtable at 0x10449228, slots 8 and 9 are the game's empty `ret 8` bodies (0x1002f080, 0x1002f0a0), the rest pure).
 #pragma once
 
 class IPhysicsCollisionEvent
@@ -12,6 +12,6 @@ public:
 	virtual void vfunc5() = 0;
 	virtual void vfunc6(void *pObject, void *pFluid) = 0;
 	virtual void vfunc7() = 0;
-	virtual void vfunc8(void *pObject1, void *pObject2) = 0;
-	virtual void vfunc9(void *pObject1, void *pObject2) = 0;
+	virtual void vfunc8(void *pObject1, void *pObject2) {}
+	virtual void vfunc9(void *pObject1, void *pObject2) {}
 };

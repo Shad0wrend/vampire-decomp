@@ -140,7 +140,7 @@ public:
 	virtual void solverfunc1();
 	virtual void solverfunc2();
 	virtual void solverfunc3();
-	virtual void solverfunc4();
+	virtual void solverfunc4(void *pObject1, void *pObject2);	// the game's 0x1002f100 (matched as sub_1002f100)
 
 	int sub_10031270(int inflictor);	// "CCollisionEvent::FindDamageInflictor": index of the last 32-byte record (array at +0x100, count at +0x10c) starting with inflictor, or -1
 	CFrictionEntry_t *sub_10030720(int key);	// "CCollisionEvent::FindFriction": scope trace, the entry of the 8 at +0x8 with this key, else the first free one, else null
