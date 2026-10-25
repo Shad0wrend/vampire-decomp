@@ -59,8 +59,14 @@ class CBaseEntity;
 class CUnknown1017fd60
 {
 public:
-	char pad0[0x1d90];
+	char pad0[0x1d28];
+	float m_flNoticeTime[5];	// 0x1d28: per kind, the time the entity of that kind was last noticed
+	unsigned int m_hNoticed[5];	// 0x1d3c: per kind, the handle of that entity
+	unsigned int m_hNearest;	// 0x1d50: handle of the nearest noticed entity
+	float m_flNearestDist;	// 0x1d54: its distance
+	char pad1d58[0x1d90 - 0x1d58];
 	CUnknown1017fd60Vec m_list;	// 0x1d90
 
 	void sub_1017fd60(int value, CBaseEntity *pNpc);	// adds the NPC to the list, or refreshes its record (max value, current time)
+	void sub_1017ff40(CBaseEntity *pEnt, int nKind);	// notes that pEnt of the kind was seen now (time and handle of that kind) and, for an entity without the field at +0x128 or the kinds 3 / 4, keeps it as the nearest one when the old nearest is gone or farther away
 };
