@@ -23,4 +23,5 @@ public:
 	int m_nNextCache;	// 0x1e8
 
 	void sub_102f45f0(const CachedPos_t *pPos, int node, int field);	// "AI NearestNode Cache is full" check, then stores the lookup in the ring
+	int sub_102f4520(const CachedPos_t *pPos);	// looks the position up in the ring: the node of the first entry of type 0x17 that is at most 5 seconds old and within 24 units of pPos, else -2
 };
