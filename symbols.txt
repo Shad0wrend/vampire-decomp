@@ -5698,6 +5698,7 @@
 0x1001427c func   ?sub_1012ca50@@YA_NPAUEnt@@0@Z sub_1012ca50
 0x10014281 func   ?sub_1009b640@CBaseEntity@@QAEXHHH@Z CBaseEntity::sub_1009b640
 0x1001428b func   ?vfunc316@CBaseCombatWeapon@@UAEDH@Z CBaseCombatWeapon::vfunc316
+0x100142a4 func   ?sub_101e1250@CUnknown101e0f00@@QAEHHH@Z CUnknown101e0f00::sub_101e1250
 0x100142ae func   ?vfunc1@CVTSDependencySaveRestoreDataOps@@UAEXPAUCVTSDependencyField@@PAVCVTSDependencyRestore@@@Z CVTSDependencySaveRestoreDataOps::vfunc1
 0x100142c2 func   ?vfunc103@CAI_InterestingPlace@@UAEXXZ CAI_InterestingPlace::vfunc103
 0x100142cc func   ?vfunc1@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc1

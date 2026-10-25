@@ -56996,6 +56996,31 @@ bool CUnknown101e0f00::sub_101e10e0(const char *name, int *pIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1250 size=0x3b
+#include "CUnknown101e0f00.h"
+
+int CUnknown101e0f00::sub_101e1250(int key, int offset)
+{
+    int count = *(int *)((char *)this + 4);
+    int i = 0;
+    if (count > 0) {
+        int **pp = *(int ***)((char *)this + 8);
+        do {
+            if (*(int *)((char *)*pp + 0x10) == key) {
+                int idx = i + offset;
+                if (idx < count) {
+                    return idx;
+                }
+                break;
+            }
+            i++;
+            pp++;
+        } while (i < count);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1360 size=0xa8
 extern "C" char *_strlwr(char *);
 extern "C" char *strstr(const char *, const char *);
