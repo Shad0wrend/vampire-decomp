@@ -8,7 +8,7 @@ public:
 	virtual void vfunc1();
 	virtual CTEUserTracer *vfunc2(unsigned int flags);	// scalar deleting destructor
 
-	CTEUserTracer(const char *name);	// the temp entity's constructor (the base constructor with the name, then the field clears)
+	CTEUserTracer *sub_1006aa10(const char *name);	// the constructor body (CBaseTempEntityHead with the name, the vptr, the cleared fields); returns this
 	void sub_1000b2b7();	// destructor body
 	void sub_1006aad0(int a, int b);	// slot 4 (the Create/Send step), called directly with the filter and delay
 
