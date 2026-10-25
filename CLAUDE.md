@@ -266,14 +266,21 @@ How to write it:
    holds a different type: pick another T (another struct of the same size).
 4. For a function that IS one of the template's members (an out-of-line `NewNode`, `RotateLeft`, `GrowVector`,
    `Grow`, `Links`, ...), the source is just the instantiation; rename_symbol its own address to the member's name
-   first (the judge prints it), then:
+   first (the judge prints it), then instantiate THAT member only, through a member pointer:
 
    ```cpp
    // TARGET: ?NewNode@?$CUtlRBTree@UCFooEntry@@G@@QAEGXZ
    #include "utlrbtree.h"
    #include "CFoo.h"	// where CFooEntry is defined
-   template class CUtlRBTree<CFooEntry, unsigned short>;
+   static unsigned short (CUtlRBTree<CFooEntry, unsigned short>::*s_NewNode)() = &CUtlRBTree<CFooEntry, unsigned short>::NewNode;
    ```
+
+   Never `template class CUtlRBTree<...>;`: it emits every member (Links' sentinel, LinkToParent, RemoveAt ...) into
+   the object, and the whole-DLL link audit then finds copies the game does not have (2026-10-25: 14 errors). VC6
+   ignores `template unsigned short CUtlRBTree<...>::NewNode();`. One game instance (one sentinel address) is one T:
+   before you invent an element struct, look for the instance's existing T (`grep -r "CUtlRBTree<" src include`) and
+   for an old `CUtlRBTreeNNAt<0x...>` view of the same sentinel; an old view block reads the links through
+   `((const CUtlRBTree<T, I> *)this)->Links(i)` of that T.
 
 Which calls VC6 expands is its own choice, and it follows the whole function: an inline expansion that comes AFTER
 the container call in the function (a later inline call, an inline call in another branch, a local whose inline
