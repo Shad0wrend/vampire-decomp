@@ -23,6 +23,7 @@ public:
 			memset(m_pData, 0, m_nDwords * 4);
 	}
 
+	CBitString *sub_102fe9a0(int nBits);	// the constructor's first part without the clearing: sets the bit and dword counts, zeroes the data pointer and allocates through sub_100bf5b0 (stub 0x1000be6a), returns this
 	void sub_100bf5b0(int numDwords);	// allocates the dword storage (stub 0x1000be6a)
 	void sub_100bf600(int numDwords);	// resizes the dword storage to numDwords (0 frees it); switches between the inline dword and heap memory
 	void sub_100bf6a0();	// releases the dword storage
