@@ -315,3 +315,26 @@ void CMoveHelperServer::vfunc11()
 	g_1073dc28.sub_101f5950(*(int *)((char *)this + 4), s_nSound, 2, 1.0f, 1.25f);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1013fc60 size=0x3c
+#include "CMoveHelperServer.h"
+#include "CBaseAnimating.h"
+
+struct CUnk1013fc60Obj {
+    float sub_10091080(int a);
+};
+
+float CMoveHelperServer::vfunc13(int param_2)
+{
+    int iVar1;
+
+    if (*(int *)((char *)this + 4) == 0) {
+        return 0.0f;
+    }
+    iVar1 = ((CBaseAnimating *)*(int *)((char *)this + 4))->sub_1008dd30(param_2, -1);
+    if (iVar1 == -1) {
+        return 0.0f;
+    }
+    return ((CUnk1013fc60Obj *)*(int *)((char *)this + 4))->sub_10091080(iVar1);
+}
+// END FUNCTION
