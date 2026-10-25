@@ -1448,6 +1448,30 @@ bool CAI_BaseNPCTroika::vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b50b0 size=0x3b
+#include "CAI_BaseNPCTroika.h"
+
+struct CAI_BaseNPCTroikaUnit54 : CAI_BaseNPCTroika
+{
+    bool sub_102b50b0(int a);
+};
+
+// TARGET: ?sub_102b50b0@CAI_BaseNPCTroikaUnit54@@QAE_NH@Z
+bool CAI_BaseNPCTroikaUnit54::sub_102b50b0(int a)
+{
+    if (a != 0) {
+        if (a == vfunc167()) {
+            if (*(void **)((char *)this + 0x5c38) != 0) {
+                if (!sub_10269c70(0x47)) {
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b57c0 size=0x8d
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatWeapon.h"
