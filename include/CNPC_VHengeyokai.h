@@ -61,6 +61,7 @@ class CNPC_VHengeyokai
 public:
 	virtual void vfunc601(int unused);
 	virtual char vfunc69(void *pOther);	// true when the other object has one of the flags 0x16 at +0x4c, else the Troika base's answer
+	virtual void vfunc435(int arg);	// slot 435: the Troika base's vfunc435(arg), then the flags at +0x14b8 bit 3 clear: 0 at +0x6680 and the count at +0x6678 drops by one while above 0
 
 	char m_pad0004[0x670 - 4];
 	int m_n670;	// 0x670: state, 1 while transformed
@@ -120,4 +121,5 @@ public:
 	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
 	bool sub_10382020(void *pTarget);	// stub 0x1001580c
 	char vfunc320(int a, int b);	// slot 320 (plain member): with a 1..50 roll (the random stream at 0x1070b244, slot 2 with (1, 100)) under 51, the Troika base's vfunc320(a, b); else false
+	void sub_100048f9(int arg);	// CAI_BaseNPCTroika::vfunc435 (stub 0x100048f9), called directly
 };
