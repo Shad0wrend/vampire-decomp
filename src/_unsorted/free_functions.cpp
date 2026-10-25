@@ -9329,6 +9329,34 @@ void CTraceSpinEntity::sub_1006bb80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006bd90 size=0x33
+struct CInitView {
+    int m_n0;
+    int m_n4;
+    int m_n8;
+    int m_nc;
+    int m_n10;
+    unsigned char m_b14;
+    unsigned char m_b15;
+    CInitView *sub_1006bd90(int a, int b, unsigned char bFlag);
+};
+
+// TARGET: CInitView::sub_1006bd90
+CInitView *CInitView::sub_1006bd90(int a, int b, unsigned char bFlag)
+{
+    m_n0 = a;
+    m_n4 = b;
+    m_n8 = -1;
+    m_b14 = 0;
+    m_nc = 0;
+    m_n10 = 0;
+    m_b15 = 0;
+    if (bFlag != 0)
+        m_b15 = 1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006be50 size=0x3b
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
