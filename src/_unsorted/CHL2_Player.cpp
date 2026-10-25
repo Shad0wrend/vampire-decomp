@@ -175,6 +175,21 @@ void CHL2_Player::vfunc472()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352990 size=0x31
+#include "CHL2_Player.h"
+
+bool CHL2_Player::vfunc473(float flDelta)
+{
+    float *pTime = (float *)((char *)this + 0x2464);
+    *pTime = *pTime - flDelta;
+    if (*pTime < 0.0) {
+        *pTime = 0.0f;
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352a20 size=0x3e
 #include "CHL2_Player.h"
 
