@@ -1,6 +1,6 @@
 // CNPC_VGargoyle: the gargoyle NPC (derived from CAI_BaseNPC at +0x0).
 // The vtable slots are *not* modelled here, so the declaration order of the
-// virtuals below carries no meaning -- add the padding slots before using a
+// virtuals below carries no meaning -- add padding slots before using a
 // virtual call through this class.
 #pragma once
 
@@ -34,6 +34,9 @@ public:
 	void sub_102ae750(int schedule, int a);	// stub 0x1000198d, starts the schedule (the source line stamp is written by the caller)
 	void vfunc617();	// slot 617 (plain member): emits one of the 0x10639480 sounds (random 3..0, channel 4, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
 	void vfunc618();	// slot 618 (plain member): emits one of the 0x10639490 sounds (random 0..2, channel 4, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
+	void vfunc433();	// slot 433 override: CAI_BaseNPCTroika::vfunc433, then raises the conditions 0xf, 0xc, 0xd and, with an enemy (slot 167) within 50 units in the plane, 0x5f and 0xe
+	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
+	void sub_10269b50(int a);	// stub 0x10015839, called with a condition number
 
 	char m_pad0004[0x5d44 - 4];
 	void *m_pObj5d44;	// 0x5d44
