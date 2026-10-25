@@ -70688,6 +70688,32 @@ void sub_10233c80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10234080 size=0x3d
+#include "vampire.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_109340dd;
+extern char *g_10934088;
+
+// TARGET: sub_10234080
+void sub_10234080()
+{
+    if (g_1070b22c->a12())
+    {
+        if (g_109340dd)
+        {
+            g_109340dd = 0;
+            return;
+        }
+        if (!(*(unsigned int *)(*(char **)(g_10934088 + 0x454) + 8) & 0x10000000))
+        {
+            g_109340dd = 1;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102342d0 size=0x72
 #include "SendProp.h"
 
