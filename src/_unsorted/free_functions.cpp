@@ -92279,6 +92279,23 @@ CUnknown103164c0 *CUnknown103164c0::sub_10316560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316660 size=0x34
+#include "CUnknown10316660.h"
+
+extern char *g_1070b228;
+
+// TARGET: CUnknown10316660::sub_10316660
+void CUnknown10316660::sub_10316660(CBaseEntity *pEnt)
+{
+    if (pEnt) {
+        m_hEnt70 = *pEnt->vfunc1();
+    } else {
+        m_hEnt70 = -1;
+    }
+    m_flTime74 = *(float *)(g_1070b228 + 0xc) + 15.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103166b0 size=0x3b
 #include "CEHandleGet.h"
 
