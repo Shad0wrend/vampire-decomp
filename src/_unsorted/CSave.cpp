@@ -61,6 +61,25 @@ bool CSave::vfunc14(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fb60 size=0x40
+#include "CSave.h"
+#include <string.h>
+
+extern char g_106b8540[];
+
+// TARGET: CSave::vfunc19
+void CSave::vfunc19(const char **ppStrings, int count)
+{
+	for (int i = 0; i < count; i++) {
+		const char *pString = ppStrings[i];
+		if (!pString) {
+			pString = g_106b8540;
+		}
+		sub_1000643d(pString, strlen(pString) + 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fc20 size=0x1a
 #include "CSave.h"
 
