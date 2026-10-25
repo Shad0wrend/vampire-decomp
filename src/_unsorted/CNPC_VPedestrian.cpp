@@ -90,6 +90,46 @@ void CNPC_VPedestrian::vfunc433()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a3670 size=0x101
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CNPC_VPedestrian.h"
+
+struct CGlobalVarsView
+{
+	char pad0[0xc];
+	float curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+extern int g_1072bc8c;
+extern char g_1072bcc3;
+void sub_10139610(const Vector *angles, Vector *forward, Vector *right, Vector *up);
+void sub_101bac90(int a, const Vector *pPos, int b, float flDuration, char c, CNPC_VPedestrian *pEnt);
+
+struct PedestrianView
+{
+	char pad0[0x14b8];
+	unsigned int m_nFlags;
+	char pad14bc[0x641c - 0x14bc];
+	float m_flNextMarker;
+};
+
+void CNPC_VPedestrian::vfunc432(int arg)
+{
+	sub_1000698d(arg);
+	PedestrianView *pView = (PedestrianView *)this;
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	if ((pView->m_nFlags & 0x80) == 0x80 && g_1070b228->curtime >= pView->m_flNextMarker)
+	{
+		pView->m_flNextMarker = g_1070b228->curtime + 10.0f;
+		Vector fwd;
+		sub_10139610(pSelf->slot221(), &fwd, 0, 0);
+		Vector vecPos = *pSelf->slot220() - fwd * 256.0f;
+		sub_101bac90(8, &vecPos, g_1072bc8c, 10.0f, g_1072bcc3, this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a38c0 size=0xdc
 #include "CBaseEntity.h"
 #include "CNPC_VPedestrian.h"

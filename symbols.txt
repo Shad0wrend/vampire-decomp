@@ -5023,6 +5023,7 @@
 0x10010d57 func   ?vfunc311@CAI_BaseNPC@@UAEXHHH@Z CAI_BaseNPC::vfunc311
 0x10010d5c func   ??0CEnvLaser@@QAE@XZ CEnvLaser::CEnvLaser
 0x10010d6b func   ?vfunc53@CGameRules@@UAEDPAVCBaseCombatCharacter@@H@Z CGameRules::vfunc53
+0x10010d7a func   ?vfunc432@CNPC_VPedestrian@@QAEXH@Z CNPC_VPedestrian::vfunc432
 0x10010d7f func   ?sub_101db7e0@S101db7e0@@QAEXXZ S101db7e0::sub_101db7e0
 0x10010d93 func   ?sub_101fd110@CVStatAction_t@@QAEXHHHH@Z CVStatAction_t::sub_101fd110
 0x10010d9d func   ?sub_101a56d0@CUtlVector40@@QAEHHPBX@Z CUtlVector40::sub_101a56d0
