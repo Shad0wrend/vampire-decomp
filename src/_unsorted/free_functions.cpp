@@ -43080,6 +43080,26 @@ void __stdcall sub_1017e840(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017e980 size=0x33
+extern char *g_1070b228;
+extern char g_105882e0[];
+
+struct CPlayerClearView {
+    char pad0[0x1ce4];
+    float m_flTime1ce4;
+    void sub_1017df50(int a, float b, const char *c);
+};
+
+// TARGET: sub_1017e980
+void __fastcall sub_1017e980(CPlayerClearView *p)
+{
+    if (*(int *)&p->m_flTime1ce4 != (int)0xbf800000) {
+        if (p->m_flTime1ce4 < *(float *)(g_1070b228 + 0xc))
+            p->sub_1017df50(0, -1.0f, g_105882e0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017ec10 size=0x12
 int __stdcall sub_1017ec10(int a)
 {
