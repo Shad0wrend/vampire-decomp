@@ -23231,6 +23231,40 @@ int sub_100c6280(char *pHdr, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6370 size=0x148
+#include "utlvector.h"
+
+extern int (*g_109f3868)(int lo, int hi);	// RandomInt
+extern "C" char *__cdecl strstr(const char *, const char *);
+
+struct S100c6370
+{
+	char pad[0x148];
+	int m_nCount;
+	int m_nOffset;
+};
+
+int sub_100c6370(S100c6370 *o, const char *needle)
+{
+	if (o)
+	{
+		CUtlVector<int> c;
+		for (int i = 0; i < o->m_nCount; i++)
+		{
+			int *rec = (int *)((char *)o + i * 0x3c + o->m_nOffset);
+			if (strstr((char *)rec + *rec, needle))
+				c.AddToTail(i);
+		}
+		if (c.Count() > 0)
+		{
+			int r = g_109f3868(0, c.Count() - 1);
+			return c[r];
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6590 size=0xd
 int sub_100c6590(int p)
 {
