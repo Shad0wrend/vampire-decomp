@@ -33546,6 +33546,38 @@ int *sub_1010be40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c190 size=0x37
+#include "COutputEvent.h"
+
+struct CUnknown1010c190
+{
+	char m_pad0000[0x17c];
+	int m_n17c;
+	char m_pad0180[0x450 - 0x180];
+	char m_b450;
+	char m_b451;
+	char m_pad0452[0x47c - 0x452];
+	COutputEvent m_Out47c;
+
+	void sub_1010c190();
+};
+
+// TARGET: CUnknown1010c190::sub_1010c190
+void CUnknown1010c190::sub_1010c190()
+{
+	if (m_b450 != 0)
+	{
+		m_b450 = 0;
+		m_n17c = 0;
+		if (m_b451 != 0)
+		{
+			m_b451 = 0;
+			m_Out47c.sub_100cd660(this, this, 0.0f);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c780 size=0x124
 #include "CFuncAreaPortalBase.h"
 #include "CUtlLinkedList8.h"
