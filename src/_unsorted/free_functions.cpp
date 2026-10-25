@@ -5377,6 +5377,23 @@ void CUnknown10045360::sub_10045360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10045d90 size=0x37
+// TARGET: sub_10045d90
+extern unsigned char g_106bda5c;
+extern int g_106bda00[];
+
+int *sub_10045d90(int i)
+{
+    if (g_106bda5c == 0) {
+        g_106bda5c = 1;
+        for (int j = 0; j < 0xb; j++) {
+            g_106bda00[j * 2 + 1] = j;
+        }
+    }
+    return &g_106bda00[i * 2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045de0 size=0x127
 #include "CUtlRBTree36.h"
 extern int g_109f0b74;
