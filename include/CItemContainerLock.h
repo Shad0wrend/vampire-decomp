@@ -40,4 +40,5 @@ public:
 	void sub_102241f0(inputdata_t *pInput);	// input handler: with the lock open (sub_10224100 false) and the container alive: when the container answers sub_100eef10 sends message 0x4d to the activator's player object (+0xa8), else remembers the activator's handle at +0x53c of the container and runs the container's slot 242
 	void sub_10224fa0(CBaseCombatCharacter *pPlayer);	// a player picks the lock: records the player (sub_1020b090), tells an equipped lockpick the lock's difficulty (+0x780), then message 0x18 (lock open) or 0x4b (slot 274 first) to the player with the answer of slot 268
 	void sub_1020b090(void *ppPlayer, void *pPlayer);	// stub 0x10009fe3 (CBaseVampireSkillEntity::vfunc267), called directly
+	void sub_103f4fe0(int nMode);	// slot-333 caller (plain member): calls slot 333 with 7 (nMode > 1), 0xd (nMode 0) or 2 (nMode 1), then 1 and four zeros
 };
