@@ -102308,6 +102308,71 @@ void CUnknown1034d620::sub_1034d620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034db70 size=0x190
+#include "Vector.h"
+#include "CBaseEntity.h"
+#include "CUnknown1034d620.h"
+
+#define SV1(n) virtual void n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CSlotView217
+{
+	SV100(a) SV100(b) SV10(c0) SV1(c10) SV1(c11) SV1(c12) SV1(c13) SV1(c14) SV1(c15) SV1(c16)
+	virtual float *vfunc217();
+};
+
+struct CUnknown101cccf0
+{
+	int m_nCurrent;
+	int m_nCount;
+	CBaseEntity *m_pList[0x100];
+	CUnknown101cccf0 *sub_101cccf0(int a, int b, int c, int d);
+};
+
+int __fastcall sub_101ccd40(int *pQuery);
+int __cdecl _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+extern CGlobalEntityList g_106eb5d8;
+extern int g_10938054;
+
+CBaseEntity *CUnknown1034d620::sub_1034db70()
+{
+	const char *pszName = m_pszTargetName ? m_pszTargetName : g_106b8540;
+	CBaseEntity *pFound = g_106eb5d8.sub_100f7770(0, pszName, 0, 0);
+	if (pFound && (pFound->sub_100b3700() & 0x2000) && ((CUnknown1034d620_Ent *)pFound)->m_pTarget->vfunc366(g_10938054, 0, (int)this))
+		return pFound;
+
+	CBaseEntity *pBest = 0;
+	float flBest = 16384.0f;
+	CUnknown101cccf0 query;
+	query.sub_101cccf0((int)((CSlotView217 *)this)->vfunc217(), m_nSearchRadius, 0, 0);
+	for (CBaseEntity *pEnt = (CBaseEntity *)sub_101ccd40(&query.m_nCurrent); pEnt; pEnt = (CBaseEntity *)sub_101ccd40(&query.m_nCurrent))
+	{
+		if (pEnt->sub_100b3700() & 0x2000)
+		{
+			const char *pszMine = m_pszTargetName ? m_pszTargetName : g_106b8540;
+			const char *pszOther = pEnt->m_classname11c ? pEnt->m_classname11c : g_106b8540;
+			if (_strcmpi(pszOther, pszMine) == 0)
+			{
+				Vector vecDelta = *(Vector *)((CSlotView217 *)pEnt)->vfunc217() - *(Vector *)((CSlotView217 *)this)->vfunc217();
+				float flDist = vecDelta.Length();
+				if (flDist < flBest)
+				{
+					flBest = flDist;
+					pBest = pEnt;
+				}
+			}
+		}
+		query.m_nCurrent++;
+	}
+	if (pBest && ((CUnknown1034d620_Ent *)pBest)->m_pTarget->vfunc366(g_10938054, 0, (int)this))
+		return pBest;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034e520 size=0xbb
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
