@@ -48220,6 +48220,41 @@ bool sub_1019cae0(CRagdollLayout *pRagdoll, CRagdollStudio *pStudio, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019cd10 size=0x33
+struct CBoolVirtView {
+    virtual int f0();
+    virtual int f1();
+    virtual int f2();
+    virtual int f3();
+    virtual bool f4();
+};
+
+struct CBoolItemView {
+    CBoolVirtView *m_p;
+    char pad0[0x14];
+};
+
+struct CBoolListView {
+    int m_count;
+    char pad0[0x10];
+    CBoolItemView m_items[1];
+};
+
+// TARGET: sub_1019cd10
+bool sub_1019cd10(CBoolListView *p)
+{
+    int i = 0;
+    if (p->m_count > 0) {
+        do {
+            if (!p->m_items[i].m_p->f4())
+                return false;
+            i++;
+        } while (i < p->m_count);
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019cf00 size=0x3f
 #include "vampire.h"
 #include "CRecipientFilter.h"
