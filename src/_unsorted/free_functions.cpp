@@ -35808,6 +35808,19 @@ extern "C" CBaseEntity *momentary_door()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116e80 size=0xe4
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CFuncMoveLinear.h"
+
+void CFuncMoveLinear::sub_10116e80(float flFraction)
+{
+	Vector vecTarget = m_vecPosition1 + (m_vecPosition2 - m_vecPosition1) * flFraction;
+	if ((vecTarget - *((CEntityVSlots *)this)->slot220()).Length() > 0.001)
+		sub_10116570(vecTarget, m_flSpeed);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116ff0 size=0x147
 #include "CFuncMoveLinear.h"
 
