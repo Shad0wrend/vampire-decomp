@@ -44468,6 +44468,28 @@ void CBasePlayer::sub_101784c0(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178590 size=0x91
+#include "CEntityVSlots.h"
+#include "QAngle.h"
+void sub_10139970(const Vector &vecForward, QAngle &angles);
+
+struct CBasePlayerUnit178590 : CBasePlayer
+{
+	void sub_10178550(Vector vecAngles);
+};
+
+void CBasePlayer::sub_10178590(Vector vecPos)
+{
+	Vector vecEar;
+	((CEntityVSlots *)this)->slot193(&vecEar);
+	Vector vecDir = vecPos - vecEar;
+	VectorNormalize(vecDir);
+	QAngle angles;
+	sub_10139970(vecDir, angles);
+	((CBasePlayerUnit178590 *)this)->sub_10178550(*(Vector *)&angles);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10179270 size=0x96
 #include "SendProp.h"
 
