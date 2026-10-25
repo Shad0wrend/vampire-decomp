@@ -6,6 +6,7 @@
 class CTESprite : public CBaseTempEntityHead
 {
 public:
+	CTESprite(const char *name);	// constructor: the base head with the name, then the zeroed fields (sub_10067c30)
 	virtual CTESprite *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a gunsmoke sprite at the origin (raised by 24, then 50 units along the flat direction of the angles and 25 against the right vector), created for everybody
 	virtual void vfunc4(int a, int b);	// "Create" (stub 0x1000b52d), filter pointer and delay bits
