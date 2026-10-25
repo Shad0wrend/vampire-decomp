@@ -106092,6 +106092,32 @@ bool CNPC_VSabbatLeader::sub_103aabc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103aaf50 size=0x15d
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CNPC_VSabbatLeader.h"
+
+void sub_10139550(const Vector *angles, Vector *forward);
+
+bool CNPC_VSabbatLeader::sub_103aaf50()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::PlayerIsFacingMe", g_106b8540);
+	CEntityVSlots *pPlayer = (CEntityVSlots *)EHandle_Get(m_hPlayer);
+	if (!pPlayer)
+		return false;
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	Vector fwd;
+	sub_10139550(pPlayer->slot219(), &fwd);
+	Vector dir = *pSelf->slot217() - *pPlayer->slot217();
+	float flLen = VectorNormalize(dir);
+	if (flLen > 0.0001f && DotProduct(dir, fwd) <= 0.34202f)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ab110 size=0x10e
 #include "ScopeTrace.h"
 #include "CNPC_VSabbatLeader.h"

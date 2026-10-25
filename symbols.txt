@@ -1083,6 +1083,7 @@
 0x10004750 func   ?sub_10430130@@YAII@Z sub_10430130
 0x1000476e func   ?sub_10058d70@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::sub_10058d70
 0x10004773 func   _point_target point_target
+0x10004778 func   ?sub_103aaf50@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103aaf50
 0x10004782 func   ?vfunc71@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc71
 0x1000478c func   ?vfunc1@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc1
 0x10004791 func   ?sub_102cdd10@CUtlRBTree12@@QBEGPBX@Z CUtlRBTree12::sub_102cdd10
