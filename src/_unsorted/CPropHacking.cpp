@@ -98,3 +98,16 @@ void CPropHacking::vfunc276()
     g_1074f75c = FindNameId("error");
 }
 // END FUNCTION
+
+// FUNCTION: 0x1021ca90 size=0x34
+#include "CPropHacking.h"
+#include "CBaseVampireSkillEntity.h"
+// TARGET: CPropHacking::vfunc272
+void CPropHacking::vfunc272()
+{
+	for (int i = 0; i < m_nCounts0998; i++)
+		m_pnCounts098c[i] = 0;
+	m_n0c28 = 0;
+	((CBaseVampireSkillEntity *)this)->vfunc272();
+}
+// END FUNCTION
