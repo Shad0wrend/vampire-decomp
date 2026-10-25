@@ -63,4 +63,10 @@ public:
 	int sub_100ed150(CTableNpc_t *pNpc, int a, int b);	// the sequence of the stance transition a -> b for the NPC ("stance_trans_<a>_<n>_<b>_<n>", then "..._1_..._1", then the table value); logs whether the animation was found
 	const char *sub_100ecc10(int index);	// stub 0x10015b59: the name text of a stance
 	void sub_100ed2c0(int a, const char *pszMessage);	// stub 0x1000e886: reports the message
+	int sub_100ec530(const char *pszName, int bFlag);	// stub 0x10007fa9: the index of the named entry, -1 when unknown
+	int sub_100eccf0(int index);	// stub 0x10015145: an int of the entry (the default entry when out of range)
+	float sub_100ecdf0(int index, int a);	// stub 0x1000704a: a float of the entry
+	int sub_100ec360(int index, void *pNpc);	// stub 0x10006d3e: an int of the entry for the NPC
+	int sub_100ec2e0(int index, void *pNpc);	// stub 0x1000509c: an int of the entry for the NPC
+	float sub_100ec3d0(int index);	// stub 0x10013cc3: a float of the entry
 };
