@@ -450,6 +450,7 @@
 0x10002752 func   ?vfunc265@CPropModelState@@QAEXPAX0HM@Z CPropModelState::vfunc265
 0x1000275c func   _scripted_sequence scripted_sequence
 0x10002770 func   ?sub_1018f750@CBreakableProp@@QAEXPAUinputdata_t@@@Z CBreakableProp::sub_1018f750
+0x10002775 func   ?sub_1013c460@@YAXABUmatrix3x4_t@@ABVVector@@1AAV2@2@Z sub_1013c460
 0x10002784 func   ?sub_101030e0@CUnknown101030e0@@QAEXH@Z CUnknown101030e0::sub_101030e0
 0x10002789 func   _npc_VAsianVampire npc_VAsianVampire
 0x100027a2 func   ?sub_10359ba0@@YIXPAH@Z sub_10359ba0
