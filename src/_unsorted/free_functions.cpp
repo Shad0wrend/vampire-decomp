@@ -101030,6 +101030,80 @@ int CUnknown10344c80::sub_10344c80(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103455a0 size=0x15b
+#include "CBaseCombatCharacter.h"
+#include "QAngle.h"
+
+#define SV1(n) virtual void n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CSlotView192
+{
+	SV100(a) SV10(b0) SV10(b1) SV10(b2) SV10(b3) SV10(b4) SV10(b5) SV10(b6) SV10(b7) SV10(b8) SV1(c0) SV1(c1)
+	virtual Vector vfunc192();
+};
+
+struct CWeaponInfoView
+{
+	char m_pad0000[0xb8];
+	signed char m_nKind;
+	char m_pad00b9;
+	signed char m_nClass;
+};
+
+extern Vector g_1070d1b0;
+extern float g_1049e044;
+extern float g_10937b10;
+extern float g_1093715c;
+
+float sub_101d2c70(const Vector *pVec);
+void sub_10139550(const QAngle &angles, Vector *pForward);
+
+void CBaseCombatCharacter::sub_103455a0(CBaseEntity *pTarget, void *pInfo, Vector *pOut)
+{
+	if (!pTarget)
+	{
+		*pOut = g_1070d1b0;
+		return;
+	}
+	CWeaponInfoView *pView = (CWeaponInfoView *)pInfo;
+	int nKind = pView->m_nKind;
+	float flFactor = g_1049e044;
+	switch (pView->m_nClass)
+	{
+	case 1:
+		flFactor = g_10937b10;
+		break;
+	case 2:
+		flFactor = g_1093715c;
+		break;
+	}
+	float flAttack = sub_10346070() * 0.1f;
+	flAttack = flAttack * 0.39999998f;
+	float flScale = (flAttack + 1.0f) * flFactor;
+	Vector vecDelta = ((CSlotView192 *)pTarget)->vfunc192() - ((CSlotView192 *)this)->vfunc192();
+	float flYaw = sub_101d2c70(&vecDelta);
+	switch (nKind)
+	{
+	case 1:
+		flYaw += 270.0f;
+		break;
+	case 2:
+		flYaw += 180.0f;
+		break;
+	case 3:
+		flYaw += 90.0f;
+		break;
+	}
+	QAngle angles(-45.0f, flYaw, 0.0f);
+	sub_10139550(angles, pOut);
+	pOut->x = flScale * pOut->x;
+	pOut->y = flScale * pOut->y;
+	pOut->z = flScale * pOut->z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10345890 size=0xb6
 #include "ScopeTrace.h"
 
