@@ -46453,6 +46453,29 @@ void CUnknown1018f960::sub_1018f7f0(inputdata_t &data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f890 size=0x68
+#include "CBreakableProp.h"
+#include "inputdata_t.h"
+
+extern float g_104454c4;
+
+inline float VariantFloat(const variant_t &v)
+{
+	float f = (v.fieldType == 1) ? v.flValue : g_104454c4;
+	return f;
+}
+
+void CBreakableProp::sub_1018f890(inputdata_t *pInput)
+{
+	float flDelay;
+	if (VariantFloat(pInput->value) < g_104454c4)
+		flDelay = 0;
+	else
+		flDelay = VariantFloat(pInput->value);
+	sub_10002d1f(flDelay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f960 size=0x6d
 #include "CUnknown1018f960.h"
 #include "COutputEvent.h"
