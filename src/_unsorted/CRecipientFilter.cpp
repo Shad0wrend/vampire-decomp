@@ -50,6 +50,28 @@ TFilterX *TFilterX::sub_1019ce40(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019cff0 size=0x3e
+#include "vampire.h"
+#include "CRecipientFilter.h"
+
+extern char *g_1070b228;
+void *sub_1000ac8b(int nClient);
+
+// TARGET: CRecipientFilter::AddAllPlayers
+void CRecipientFilter::AddAllPlayers()
+{
+    m_Recipients.RemoveAll();
+    for (int i = 1; i <= *(int *)(g_1070b228 + 0x14); i++)
+    {
+        void *pPlayer = sub_1000ac8b(i);
+        if (pPlayer)
+        {
+            AddRecipient((CBasePlayer *)pPlayer);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d320 size=0x8
 #include "CRecipientFilter.h"
 
