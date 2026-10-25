@@ -28978,6 +28978,50 @@ void CCollisionProperty::sub_100dd000(const Vector &in, Vector &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd1b0 size=0xef
+#include "CCollisionProperty.h"
+#include "Vector.h"
+extern float g_1070d9d0[3];
+void sub_10013c82(const float *in, float *m, float *out);
+void sub_1013c8c0(const float *mins, const float *maxs, const float *in, float *out);
+
+struct COriginView {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
+	virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7();
+	virtual float *GetOrigin();
+};
+
+inline void VITransform(const Vector &in, float *m, Vector &out)
+{
+	sub_10013c82(&in.x, m, &out.x);
+}
+
+float CCollisionProperty::sub_100dd1b0(const Vector &point)
+{
+	Vector local;
+	Vector result;
+	if (!(m_usSolidFlags & 0x80) && m_nSolidType != 2 && m_nSolidType != 0) {
+		float *ang = vfunc9(0);
+		if (g_1070d9d0[0] != ang[0] || g_1070d9d0[1] != ang[1] || g_1070d9d0[2] != ang[2]) {
+			VITransform(point, vfunc10(), local);
+			goto clamp;
+		}
+	}
+	{
+		float *o = ((COriginView *)this)->GetOrigin();
+		local.x = point.x - o[0];
+		local.y = point.y - o[1];
+		local.z = point.z - o[2];
+	}
+clamp:
+	sub_1013c8c0(&m_vecMins.x, &m_vecMaxs.x, &local.x, &result.x);
+	float dx = local.x - result.x;
+	float dy = local.y - result.y;
+	float dz = local.z - result.z;
+	return FastSqrt(dx * dx + dy * dy + dz * dz);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd2e0 size=0x118
 #include "CCollisionProperty.h"
 
