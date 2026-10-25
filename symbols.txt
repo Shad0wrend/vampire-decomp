@@ -4637,6 +4637,7 @@
 0x1000ffba func   ?vfunc412@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc412
 0x1000ffce func   ?vfunc5@CItemGIdolCrane@@QAEPAV1@I@Z CItemGIdolCrane::vfunc5
 0x1000ffd3 func   ?sub_100b1750@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100b1750
+0x1000ffd8 func   ?vfunc493@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc493
 0x1000ffdd func   _item_container_lock item_container_lock
 0x1000ffe2 func   ?sub_100f9790@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100f9790
 0x1001000f func   _item_k_museum_office_key item_k_museum_office_key

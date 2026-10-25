@@ -170,6 +170,29 @@ void CNPC_VTest::vfunc490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b4a60 size=0x11f
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CNPC_VTest.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_106521a8[];
+
+void CNPC_VTest::vfunc493()
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	filter.MakeReliable();
+	int edict = *(int *)((char *)this + 0x2e0);
+	int idx = g_1070b22c->vfunc35(edict);
+	g_1070b248->vfunc3(&filter, idx, 2, g_106521a8[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b4f30 size=0x77
 #include "CNPC_VTest.h"
 struct CNPC_VTestUnit : CNPC_VTest {
