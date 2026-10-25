@@ -30,6 +30,32 @@ void CPropDestructable::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193b90 size=0x3b
+#include "CPropDestructable.h"
+#include "CUnknown1070b22c.h"
+
+void sub_1000978c();
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: ?vfunc104@CPropDestructable@@UAEXXZ
+void CPropDestructable::vfunc104()
+{
+    sub_1000978c();
+    int i = m_nStage784;
+    if (i < 8) {
+        int *p = &m_hModels794[i];
+        do {
+            if (*p == 0) {
+                return;
+            }
+            g_1070b22c->vfunc13((const char *)*p, 0);
+            i = i + 1;
+            p = p + 1;
+        } while (i < 8);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194080 size=0xa8
 #include "CPropDestructable.h"
 #include "COutputEvent.h"
