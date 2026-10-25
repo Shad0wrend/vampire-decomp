@@ -100962,6 +100962,28 @@ float CNPC_VMingXiaoUnit::sub_10397f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10398630 size=0x37
+#include "CBaseAnimating.h"
+
+struct CUnknown10398630
+{
+	int sub_10398680(int a);
+	void sub_10398630(int a, int b);
+};
+
+// TARGET: CUnknown10398630::sub_10398630
+void CUnknown10398630::sub_10398630(int a, int b)
+{
+	int bone = ((CBaseAnimating *)this)->sub_10092550(sub_10398680(a));
+	if (bone < 0)
+	{
+		bone = 0;
+	}
+	float vecOut[3];
+	((CBaseAnimating *)this)->sub_100926e0(bone, b, (int)vecOut);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398d90 size=0xd
 void CUnknown10398d90::sub_10398d90(int value)
 {
