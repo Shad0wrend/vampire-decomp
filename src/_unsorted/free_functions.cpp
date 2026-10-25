@@ -36557,6 +36557,32 @@ float sub_1012f700(CUnknown1012f700 *pRange)
 float sub_1012f850(float x) { return x * x; }
 // END FUNCTION
 
+// FUNCTION: 0x1012f890 size=0x34
+extern const char *g_105751a0;
+extern void *g_105751a4;
+
+namespace block_1012f890 {
+    int sub_1012f870()
+    {
+        return 3;
+    }
+}
+using namespace block_1012f890;
+
+// TARGET: sub_1012f890
+bool sub_1012f890(int nIndex, const char **ppOut)
+{
+    if (nIndex >= 0) {
+        if (nIndex < sub_1012f870() && g_105751a0 && g_105751a4) {
+            if (ppOut)
+                *ppOut = g_105751a0;
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130100 size=0xb
 extern void (*g_105751b8[])();
 void sub_10130100(int i)
