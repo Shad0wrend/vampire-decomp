@@ -8,7 +8,7 @@ struct CHolderInner24_Node
 	int m_i10;
 	char m_pad14[0x28 - 0x14];
 	int m_flags28;	// bit 2 = has a value at +0x10, bit 3 = ended
-	char m_pad2c[4];
+	int m_i2c;	// 0x2c
 	CHolderInner24_Node *m_pNext;	// 0x30
 	CHolderInner24_Node *m_pPrev;	// 0x34
 };
