@@ -13228,6 +13228,50 @@ void __fastcall sub_1007cbe0(CChoreoSaverView *pThis, int unused, void *pBuf, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ccc0 size=0x10a
+#include <string.h>
+
+struct CChoreoChannelView;
+
+struct CChoreoActorView
+{
+	const char *sub_10072d90();
+	int sub_10072eb0();
+	CChoreoChannelView *sub_10072ed0(int index);
+	const char *sub_10073290();
+	const char *sub_10072e20();
+	const char *sub_10072e40();
+	char sub_100732d0();
+};
+
+struct CChoreoSaverView
+{
+	void sub_1007cbe0(void *pFile, int indent, CChoreoChannelView *pChannel);
+	void sub_1007ccc0(void *pFile, int indent, CChoreoActorView *pActor);
+};
+
+void sub_1007bf70(void *pFile, int indent, const char *pszFormat, ...);
+
+void CChoreoSaverView::sub_1007ccc0(void *pFile, int indent, CChoreoActorView *pActor)
+{
+	sub_1007bf70(pFile, indent, "actor \"%s\"\n", pActor->sub_10072d90());
+	sub_1007bf70(pFile, indent, "{\n");
+	for (int i = 0; i < pActor->sub_10072eb0(); i++)
+	{
+		CChoreoChannelView *pChannel = pActor->sub_10072ed0(i);
+		if (pChannel)
+			sub_1007cbe0(pFile, indent + 1, pChannel);
+	}
+	if ((int)strlen(pActor->sub_10073290()) > 0)
+		sub_1007bf70(pFile, indent + 1, "faceposermodel \"%s\"\n", pActor->sub_10073290());
+	if ((int)strlen(pActor->sub_10072e20()) > 0)
+		sub_1007bf70(pFile, indent + 1, "bonerename \"%s\" \"%s\"\n", pActor->sub_10072e20(), pActor->sub_10072e40());
+	if (!pActor->sub_100732d0())
+		sub_1007bf70(pFile, indent + 1, "active \"0\"\n");
+	sub_1007bf70(pFile, indent, "}\n\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ce20 size=0x65
 #include "CUnknown1007ce20.h"
 
