@@ -1469,6 +1469,7 @@
 0x100060d7 func   ?sub_102dcf70@CUnknown102dcf70@@QAE_NPAVCKeyValuesX@@PAHPAUCUnknown102dcf70Entry@@@Z CUnknown102dcf70::sub_102dcf70
 0x100060e6 func   ?sub_1039e970@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::sub_1039e970
 0x100060f5 func   ?sub_102db740@CAI_InterestingPlaceConverstation@@QAEXH@Z CAI_InterestingPlaceConverstation::sub_102db740
+0x100060fa func   ?sub_101358e0@CUnknown101358e0@@QAEXPAH@Z CUnknown101358e0::sub_101358e0
 0x100060ff func   ?vfunc3@CGameMovement@@QAEPAMDH@Z CGameMovement::vfunc3
 0x10006118 func   ?sub_10408480@SSrc192@@QAEXPAUSDest192@@@Z SSrc192::sub_10408480
 0x10006122 func   ?vfunc1@CEventsSaveDataOps@@QAEXPAXPAVCRestore@@@Z CEventsSaveDataOps::vfunc1

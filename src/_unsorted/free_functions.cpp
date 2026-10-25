@@ -36782,6 +36782,31 @@ bool CLogicNPCCondition::sub_10135840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101358e0 size=0x3b
+struct CUnknownHelper101358e0 {
+    void sub_10010794(int a, void *owner, int b);
+};
+
+struct CUnknown101358e0 {
+    char m_pad0000[0x458];
+    CUnknownHelper101358e0 m_helper454;
+    char m_pad0459[0x470 - 0x459];
+    CUnknownHelper101358e0 m_helper46c;
+    bool sub_1000d0b7();
+    void sub_101358e0(int *pArg);
+};
+
+// TARGET: sub_101358e0
+void CUnknown101358e0::sub_101358e0(int *pArg)
+{
+    if (sub_1000d0b7()) {
+        m_helper454.sub_10010794(*pArg, this, 0);
+    } else {
+        m_helper46c.sub_10010794(*pArg, this, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135a20 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
