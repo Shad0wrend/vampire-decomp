@@ -102787,6 +102787,21 @@ int CNPC_VWerewolf::sub_103d0db0(CNPC_VWerewolfVec3 a, CNPC_VWerewolfVec3 b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d0e70 size=0x39
+int *sub_103d0bf0(void);
+int *__fastcall sub_10007cca(void *p);
+
+// TARGET: sub_103d0e70
+bool __stdcall sub_103d0e70(void *pArg)
+{
+    int *pA = sub_103d0bf0();
+    int *pB = sub_10007cca(pArg);
+    if (pB && pA && pA[0x94 / 4] && pB[0x94 / 4])
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d1ca0 size=0x81
 #include "CNPC_VWerewolf.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
