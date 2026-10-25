@@ -30175,6 +30175,15 @@ CBaseHandle CGlobalEntityList::sub_100f9fc0(CGlobalEntityList_Ent *pEnt, int slo
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fa3a0 size=0x99
+#include "CUtlLinkedList6.h"
+
+void CUtlLinkedList6::sub_100fa3a0(unsigned short i)
+{
+	Unlink(i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fa600 size=0x68
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
