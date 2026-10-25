@@ -83093,6 +83093,78 @@ char CUnknown102e0150::sub_102e0290(CBaseEntity *pEnemy, Vector *pPos, Vector *p
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0470 size=0x15c
+#include "CUnknown102e0150.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "Vector.h"
+
+#define V virtual void
+#define S10(p) V p##0(); V p##1(); V p##2(); V p##3(); V p##4(); V p##5(); V p##6(); V p##7(); V p##8(); V p##9();
+struct SMemObj {
+	S10(a0) S10(a1) S10(a2) S10(a3) S10(a4)
+	V b0(); V b1(); V b2(); V b3(); V b4(); V b5(); V b6(); V b7();
+	virtual void vfunc58(CBaseEntity *pEnemy);
+};
+struct SMemObj2 {
+	void sub_10316bc0(CBaseEntity *pEnemy);
+};
+struct SMemNode {
+	Vector m_pos;
+	char m_pad0c[0x24 - 0xc];
+	unsigned int m_hEnemy;	// 0x24
+	char m_pad28[0x34 - 0x28];
+	char m_flag;	// 0x34
+	char m_pad35[3];
+	SMemNode *m_pNext;	// 0x38
+};
+struct SMemList {
+	SMemObj *m_pObj;	// 0x00
+	SMemObj2 *m_pObj2;	// 0x04
+	char m_bMode;	// 0x08
+	char m_pad09[3];
+	SMemNode *m_pHead;	// 0x0c
+};
+
+extern "C" __declspec(dllimport) void __cdecl DevWarning(int level, const char *fmt, ...);
+extern CGlobalEntityList *g_10566458;
+extern Vector g_1070d1b0;
+
+Vector CUnknown102e0150::sub_102e0470(CBaseEntity *pEnemy)
+{
+	SMemList *self = (SMemList *)this;
+	SMemNode *pNode = self->m_pHead;
+	bool bFound = false;
+	Vector last(0, 0, 0);
+	for (; pNode; pNode = pNode->m_pNext) {
+		unsigned int h = pNode->m_hEnemy;
+		CGlobalEntityList_Slot *pSlot;
+		if (h != (unsigned int)-1
+			&& (pSlot = &g_10566458->m_Slots[h & 0x1fff], pSlot->m_Serial == (int)(h >> 13))
+			&& pSlot->m_pEntity != 0
+			&& (CGlobalEntityList_Ent *)pEnemy == pSlot->m_pEntity) {
+			return pNode->m_pos;
+		}
+		if (pNode->m_flag == 1) {
+			bFound = true;
+			last = pNode->m_pos;
+		}
+	}
+	if (self->m_bMode) {
+		if (self->m_pObj2)
+			self->m_pObj2->sub_10316bc0(pEnemy);
+	} else if (self->m_pObj) {
+		self->m_pObj->vfunc58(pEnemy);
+	}
+	if (bFound) {
+		DevWarning(2, "Asking LastKnownPosition for enemy (%s) that's not in my memory (using danger pos)!!\n", pEnemy ? pEnemy->sub_100ab4f0() : "**NULL**");
+		return last;
+	}
+	DevWarning(2, "Asking LastKnownPosition for enemy (%s) that's not in my memory!!\n", pEnemy ? pEnemy->sub_100ab4f0() : "**NULL**");
+	return g_1070d1b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0630 size=0x85
 #include "CUnknown102e0630.h"
 
