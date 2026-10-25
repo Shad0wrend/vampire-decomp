@@ -5843,6 +5843,7 @@
 0x10013c55 func   ?vfunc86@CInspectionBrush@@QAEDHPAUCInspectionBrushEdict@@HHH@Z CInspectionBrush::vfunc86
 0x10013c69 func   ?sub_1034d490@@YAPAHXZ sub_1034d490
 0x10013c6e func   ?vfunc2@CEntityListSystem@@QAEXXZ CEntityListSystem::vfunc2
+0x10013c78 func   ?vfunc618@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc618
 0x10013c87 func   ?sub_10245790@CUnknown10245790@@QAEXI@Z CUnknown10245790::sub_10245790
 0x10013c91 func   ?vfunc103@CPropClockHand@@UAEXXZ CPropClockHand::vfunc103
 0x10013c96 func   ?sub_1007a270@S1007a270@@QAEHH@Z S1007a270::sub_1007a270
