@@ -84,3 +84,29 @@ void CNPC_VPlayerController::vfunc245(int a, int b, int c, int d, int e)
 	g_109f364c("Player Controller NPC adding extra animations, but is not attached to a player. This is probably bad.\n");
 }
 // END FUNCTION
+
+// FUNCTION: 0x103a4a60 size=0x38
+#include "CNPC_VPlayerController.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+
+void sub_1000ede0();
+extern void *g_109f364c;
+
+// TARGET: CNPC_VPlayerController::vfunc246
+void CNPC_VPlayerController::vfunc246()
+{
+    sub_1000ede0();
+    CBaseEntity *pOwner = ((CBaseEntity *)this)->vfunc97();
+    if (pOwner != 0)
+    {
+        CBasePlayer *pPlayer = *(CBasePlayer **)((char *)pOwner + 0xa8);
+        if (pPlayer != 0)
+        {
+            pPlayer->se24();
+            return;
+        }
+    }
+    ((int (__cdecl *)(const char *))g_109f364c)("Player Controller NPC removing extra animations, but is not attached to a player. This is probably bad.\n");
+}
+// END FUNCTION

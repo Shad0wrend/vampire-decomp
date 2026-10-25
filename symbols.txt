@@ -3342,6 +3342,7 @@
 0x1000c2f7 func   ?sub_1007cfc0@CUnknown1007ce20@@QAEXDHH@Z CUnknown1007ce20::sub_1007cfc0
 0x1000c2fc func   ?vfunc104@CNPC_VGargoyle@@QAEXXZ CNPC_VGargoyle::vfunc104
 0x1000c301 func   ?vfunc2@CTEBeamRing@@UAEPAV1@I@Z CTEBeamRing::vfunc2
+0x1000c329 func   ?vfunc246@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc246
 0x1000c32e func   ?vfunc226@CPhysicsProp@@QAEXH@Z CPhysicsProp::vfunc226
 0x1000c347 func   ?vfunc5@COccultExperience@@QAEPAV1@I@Z COccultExperience::vfunc5
 0x1000c351 func   ?sub_102f9900@@YAXXZ sub_102f9900
