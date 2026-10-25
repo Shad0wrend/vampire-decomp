@@ -4653,6 +4653,7 @@
 0x100104e2 func   ?vfunc124@CBaseTrigger@@UAEHXZ CBaseTrigger::vfunc124
 0x100104ec func   ?vfunc5@CWeaponMelee_Sheriff_Sword@@QAEPAV1@I@Z CWeaponMelee_Sheriff_Sword::vfunc5
 0x100104f1 func   ?vfunc103@CEnvParticle@@QAEXXZ CEnvParticle::vfunc103
+0x1001050a func   ?sub_1018be60@@YAXXZ sub_1018be60
 0x10010514 func   ?sub_10410370@@YAXPBM0MPAM@Z sub_10410370
 0x10010519 func   ?sub_1013fd20@CUtlMemory96@@QAEXH@Z CUtlMemory96::sub_1013fd20
 0x1001051e func   ?vfunc259@CSceneEntity@@UAEXHPAXPBD@Z CSceneEntity::vfunc259

@@ -44686,6 +44686,26 @@ CUnknownCopy1018be10 *CUnknownCopy1018be10::sub_1018be10(const CUnknownCopy1018b
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018be60 size=0x34
+extern char *g_1070b228;
+void *sub_101cd9e0(int index);
+void sub_1018b7e0(void *pEnt);
+
+// TARGET: sub_1018be60
+void sub_1018be60()
+{
+    int i = 1;
+    if (*(int *)(g_1070b228 + 0x14) >= 1) {
+        do {
+            void *pEnt = sub_101cd9e0(i);
+            if (pEnt != 0)
+                sub_1018b7e0(pEnt);
+            i++;
+        } while (i <= *(int *)(g_1070b228 + 0x14));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018bfe0 size=0x102
 #include "SendProp.h"
 
