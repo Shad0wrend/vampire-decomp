@@ -72,7 +72,8 @@ public:
 	float sub_102e0a80(float flIdealYaw);	// the yaw the motor reaches when turning toward flIdealYaw: the difference to the yaw at +0x18 (wrapped into -180..180) is clamped to +-the float at +0x1c, added back and wrapped into 0..360
 	float sub_102e1f90();	// "CAI_Motor::DeltaIdealYaw": 0 when the owner's yaw (angles slot 221, y * 182.04445f quantised to 16 bits and scaled back) equals the ideal yaw at +0x34, else AngleDiff(ideal yaw, current yaw) (sub_1013d580, stub 0x100097e6)
 	void sub_102e1e20(int yawSpeed);	// "CAI_Motor::UpdateYaw": the owner's yaw approaches the ideal yaw (+0x34) by yawSpeed (the float at +0x38 for -1) * 10 per second since the last update (+0x2c)
-	void sub_102e1c10(float flIdealYaw, float flYawSpeed);	// "CAI_Motor::SetIdealYawAndUpdate" (stub 0x10014b8c): sets the ideal yaw (flipped when the byte at +0x28 is set, limited by the turn rate unless the largest change is 180), the yaw speed (+0x38, -1 keeps it) and updates the yaw
+	void sub_102e1cf0();	// stub 0x10011af9: the yaw speed (+0x38) from slot 0 of the movement sink at +0x10
+	void sub_102e1c10(float flIdealYaw, float flYawSpeed);	// "CAI_Motor::SetIdealYawAndUpdate" (stub 0x10014b8c): sets the ideal yaw (flipped when the byte at +0x28 is set, limited by the turn rate unless the largest change is 180), the yaw speed (+0x38, -1 keeps it; -2 asks the movement sink) and updates the yaw
 
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
 	static int *sub_102e0860();
