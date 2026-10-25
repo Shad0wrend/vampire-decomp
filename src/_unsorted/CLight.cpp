@@ -90,3 +90,17 @@ void CLight::vfunc103()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10130580 size=0x33
+// TARGET: CLight::vfunc173
+#include "CLight.h"
+
+void CLight::vfunc173(int a, int b, int useType, int d)
+{
+    if (m_iStyle >= 0x20) {
+        if (((CBaseEntity *)this)->sub_100a98f0(useType, !(m_flags204 & 1))) {
+            sub_100115fe();
+        }
+    }
+}
+// END FUNCTION
