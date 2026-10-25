@@ -56796,6 +56796,29 @@ float sub_101d2ce0(const Vector &vec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2e60 size=0xa7
+#include "matrix3x4_t.h"
+#include <math.h>
+
+extern float g_104454c4;
+extern float g_10446758;
+extern float g_10450568;
+
+float sub_101d2e60(const matrix3x4_t *pMatrix, const Vector *pVec)
+{
+	Vector tmp = *pVec;
+	VectorNormalize(tmp);
+	float x = tmp.x * pMatrix->m_flMatVal[0][0] + tmp.y * pMatrix->m_flMatVal[1][0] + tmp.z * pMatrix->m_flMatVal[2][0];
+	float y = tmp.x * pMatrix->m_flMatVal[0][2] + tmp.y * pMatrix->m_flMatVal[1][2] + tmp.z * pMatrix->m_flMatVal[2][2];
+	if (x == g_104454c4 && y == g_104454c4)
+		return g_104454c4;
+	float yaw = atan2(y, x) * g_10446758;
+	if (yaw < g_104454c4)
+		yaw += g_10450568;
+	return yaw;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2fc0 size=0x88
 #define Q10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
