@@ -72,4 +72,5 @@ public:
 	void sub_100dc9a0(const Vector &in, Vector &out);	// "CCollisionProperty::NormalizedToCollisionSpace" (stub 0x10003715): the normalised point scaled into the bounds
 	Vector *sub_100dcb30(const Vector &in, Vector *pResult);	// "CCollisionProperty::NormalizedToWorldSpace": sub_100dc9a0, then like sub_104103c0 (collision transform for entity-space bounds with non-zero angles, else collision origin + local)
 	void sub_100dd000(const Vector &in, Vector &out);	// "CCollisionProperty::ClampToBounds"-like: the point into collision space (like sub_100dcc20), clamped to the box (mins at +4, maxs at +0x10) by sub_1013c8c0 (stub 0x100044e4), and back to world space (like sub_100dcb30)
+	float sub_100dd1b0(const Vector &point);	// distance from the point to the box in collision space: the point into collision space (like sub_100dd000), clamped by sub_1013c8c0, length of the difference
 };
