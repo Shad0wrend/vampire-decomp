@@ -107,6 +107,7 @@ public:
 	void *sub_10310480(int *pIter);	// next record (stub 0x1001228d)
 	void *sub_103104f0(char bFlag);	// the record closest (squared distance below 2^28) to the NPC's ear position (slot 196) that passes the filter picked by bFlag (set: sub_101b99a0, clear: sub_101b9920); null when none
 	int sub_10310130(int radius);	// at most every m_timer70 interval: counts the entities of the global list at 0x1090fe10 within radius of the NPC's origin that pass sub_1030ffa0, remembers the count in the vector at +0x34 (sub_1030fe70); returns the last count
+	int sub_10310290(int radius);	// at most every m_timer78 interval: counts the entities in the box of half size radius around the NPC's origin (the entity box query with flag 0x2000000, up to 100) that pass sub_1030ffa0, remembers the count in the vector at +0x48; returns the last count
 	void sub_1030fe50();	// stub 0x10003305, run before the count
 	void sub_1030fe70(int count, CAI_SensesVec *pVec);	// stub 0x100136a6, hands the count to the vector
 	char sub_1030ffa0(void *pEnt);	// stub 0x1000ae6b
