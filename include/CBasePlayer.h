@@ -75,7 +75,9 @@ public:
 	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) CBP_V1(sb76) CBP_V1(sb77) CBP_V1(sb78)
 	virtual void vfunc144(const void *pArg);	// slot 144: takes a damage info (CUnknown101c26d0, the force vector at +4); sub_10170d60 hands it a random force
 	CBP_V10(sb8) CBP_V10(sb9)
-	CBP_V10(sc0) CBP_V10(sc1) CBP_V1(sc20) CBP_V1(sc21) CBP_V1(sc22) CBP_V1(sc23) CBP_V1(sc24) CBP_V1(sc25) CBP_V1(sc26)
+	CBP_V1(sc00) CBP_V1(sc01) CBP_V1(sc02) CBP_V1(sc03) CBP_V1(sc04)	// slots 165..169 (169 is the view punch, typed below)
+	CBP_V1(sc05) CBP_V1(sc06) CBP_V1(sc07) CBP_V1(sc08) CBP_V1(sc09)
+	CBP_V10(sc1) CBP_V1(sc20) CBP_V1(sc21) CBP_V1(sc22) CBP_V1(sc23) CBP_V1(sc24) CBP_V1(sc25) CBP_V1(sc26)
 	virtual Vector vfunc192();	// "EyePosition"-like getter returning the vector by value (hidden pointer, ret 4)
 	CBP_V1(sc28)
 	virtual float *vfunc194();	// slot 194 "GetAbsAngles"-like: the player's angles (+0x206c) in world space: with a live move parent (handle at +0x25c) its matrix (+0x130, slot 98 first when bit 11 of its flags +0x268 is set) times the angles' matrix, turned back into angles in a static; else the angles themselves
@@ -164,7 +166,9 @@ public:
 	int m_nRangeEnd1B78;	// 0x1B78: high half of that value, minus one
 	char m_pad1B7C[0x1cd8 - 0x1b7c];	// 0x1B7C .. 0x1CD7
 	unsigned int m_nCriminalLevelEnc;	// 0x1CD8, scrambled by the xor/and/add mask chain
-	char m_pad1CDC[0x128];	// 0x1CDC .. 0x1E03
+	char m_pad1CDC[0x1da8 - 0x1cdc];	// 0x1CDC .. 0x1DA7
+	float m_f1DA8;	// 0x1DA8: when the next random view punch is due
+	char m_pad1DAC[0x1e04 - 0x1dac];	// 0x1DAC .. 0x1E03
 	unsigned int m_hEnt1E04;	// entity handle
 	int m_n1E08;
 	int m_n1E0C;
