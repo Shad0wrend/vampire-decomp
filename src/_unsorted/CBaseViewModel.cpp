@@ -65,6 +65,35 @@ void CBaseViewModel::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ba40 size=0x3a
+#include "CBaseViewModel.h"
+
+extern const char g_106b8540[];
+
+// TARGET: CBaseViewModel::vfunc266
+void CBaseViewModel::vfunc266(const char *pszName)
+{
+	const char *pName = pszName;
+	if (pName)
+	{
+		pName = (*pName) ? pName : 0;
+	}
+	else
+	{
+		pName = 0;
+	}
+	if (pName != *(const char **)((char *)this + 0x744))
+	{
+		*(const char **)((char *)this + 0x744) = pName;
+		if (!pName)
+		{
+			pName = g_106b8540;
+		}
+		vfunc105(pName);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042ba90 size=0x3b
 #include "CBaseViewModel.h"
 #include "CBaseAnimating.h"
