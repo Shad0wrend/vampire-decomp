@@ -81811,6 +81811,36 @@ void __fastcall sub_10265a40(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10266c80 size=0x86
+#include "CEntityVSlots.h"
+
+struct CGlobalVarsView { char pad[0x14]; int maxClients; };
+extern CGlobalVarsView *g_1070b228;
+CEntityVSlots *sub_101cd9e0(int playerIndex);
+
+static inline float DistTo2D(const Vector &a, const Vector &b)
+{
+    Vector vecDelta;
+    VectorSubtract(a, b, vecDelta);
+    return vecDelta.Length2D();
+}
+
+// TARGET: sub_10266c80
+bool __stdcall sub_10266c80(const Vector *pPos, float flRadius)
+{
+    for (int i = 1; i <= g_1070b228->maxClients; i++)
+    {
+        CEntityVSlots *pPlayer = sub_101cd9e0(i);
+        if (pPlayer)
+        {
+            if (DistTo2D(*pPos, pPlayer->slot192()) <= flRadius)
+                return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10267350 size=0xd
 extern int g_10920544;
 extern int g_10920548;

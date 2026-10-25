@@ -4014,6 +4014,7 @@
 0x1000d99f func   ?vfunc104@CBaseProp@@QAEXXZ CBaseProp::vfunc104
 0x1000d9a4 func   ?sub_1024fc20@CDropEntityUnit@@QAEXXZ CDropEntityUnit::sub_1024fc20
 0x1000d9a9 func   ?sub_10138870@@YAXPAVVector@@00@Z sub_10138870
+0x1000d9b8 func   ?sub_10266c80@@YG_NPBVVector@@M@Z sub_10266c80
 0x1000d9cc func   ?sub_100d6680@@YAXXZ sub_100d6680
 0x1000d9d6 func   _npc_VPlaceholder npc_VPlaceholder
 0x1000d9db func   ?vfunc5@CSave@@UAEXPBX@Z CSave::vfunc5
