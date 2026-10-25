@@ -120,6 +120,29 @@ int CNPC_VGargoyle::vfunc390(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378d30 size=0x3e
+#include "vampire.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown1070b244.h"
+#include "CNPC_VGargoyle.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+// TARGET: CNPC_VGargoyle::vfunc320
+bool CNPC_VGargoyle::vfunc320(int a, int b)
+{
+    if (m_nVulnerable)
+    {
+        if (g_1070b244->vfunc2(1, 100) <= 0x32)
+        {
+            ((CAI_BaseNPCTroika *)this)->vfunc320(a, b);
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379f50 size=0xe
 struct CUnk10924edc
 {
