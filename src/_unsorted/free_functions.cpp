@@ -998,6 +998,38 @@ void sub_1002ee60(void *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002f100 size=0x6a
+#include "CBaseEntity.h"
+#include "Vector.h"
+
+__declspec(dllimport) void __cdecl DevMsg(const char *fmt, ...);
+
+#define PO_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CEntityOriginPtrView
+{
+public:
+	PO_SLOTS10(a00) PO_SLOTS10(a01) PO_SLOTS10(a02) PO_SLOTS10(a03) PO_SLOTS10(a04)
+	PO_SLOTS10(a05) PO_SLOTS10(a06) PO_SLOTS10(a07) PO_SLOTS10(a08) PO_SLOTS10(a09)
+	PO_SLOTS10(a10) PO_SLOTS10(a11) PO_SLOTS10(a12) PO_SLOTS10(a13) PO_SLOTS10(a14)
+	PO_SLOTS10(a15) PO_SLOTS10(a16) PO_SLOTS10(a17) PO_SLOTS10(a18) PO_SLOTS10(a19)
+	PO_SLOTS10(a20)
+	virtual void a210(); virtual void a211(); virtual void a212(); virtual void a213(); virtual void a214();
+	virtual void a215(); virtual void a216();
+	virtual float *GetAbsOriginPtr();	// slot 217
+};
+
+void __stdcall sub_1002f100(int unused, CBaseEntity *pEnt)
+{
+	if (pEnt) {
+		Vector pos = *(Vector *)((CEntityOriginPtrView *)pEnt)->GetAbsOriginPtr();
+		const char *name = pEnt->m_name26c;
+		DevMsg("phys %s %s at %.1f %.1f %.1f\n", name, pEnt->sub_1009f200(), pos.x, pos.y, pos.z);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002f820 size=0xa3
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
