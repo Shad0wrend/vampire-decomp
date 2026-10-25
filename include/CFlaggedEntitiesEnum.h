@@ -14,4 +14,5 @@ public:
 	int m_nCount;	// 0x10
 
 	bool sub_101cc9a0(CBaseEntity *pEnt);	// appends pEnt when there is room
+	CFlaggedEntitiesEnum *sub_101cc950(CBaseEntity **pList, int nMaxList, unsigned int nFlagMask);	// the constructor body (ecx = this, three stack arguments): vtable, list, size, mask, count 0, then the engine's PEntityOfEntIndex(0) at +0x14
 };
