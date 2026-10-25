@@ -90184,6 +90184,20 @@ CUnknown103164c0 *CUnknown103164c0::sub_10316560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103166b0 size=0x3b
+#include "CEHandleGet.h"
+
+extern char *g_1070b228;
+
+CGlobalEntityList_Ent *__fastcall sub_103166b0(char *self)
+{
+    if (*(float *)(g_1070b228 + 0xc) < *(float *)(self + 0x74)) {
+        return EHandle_Get(*(const unsigned int *)(self + 0x70));
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103167f0 size=0x72
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 struct Ent {
