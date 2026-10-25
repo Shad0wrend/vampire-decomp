@@ -79978,6 +79978,32 @@ CBaseEntity *CAI_BaseNPC::sub_1027a310(const char *pszItemName, Vector vecPos, V
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027cd50 size=0x34
+// TARGET: CUnknown1027cd50::sub_1027cd50
+extern char *g_1070b228;
+extern double g_10499408;
+
+struct CUnknown1027cd50
+{
+	float m_flTime;
+	float m_flInterval;
+
+	CUnknown1027cd50 *sub_1027cd50(float flInterval, char bNever);
+};
+
+CUnknown1027cd50 *CUnknown1027cd50::sub_1027cd50(float flInterval, char bNever)
+{
+	m_flInterval = flInterval;
+	m_flTime = -1.0f;
+	if (bNever) {
+		m_flTime = (float)g_10499408;
+		return this;
+	}
+	m_flTime = flInterval + *(float *)(g_1070b228 + 0xc);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d8d0 size=0x90
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
