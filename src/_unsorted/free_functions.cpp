@@ -108592,6 +108592,38 @@ extern "C" CItemGWarrLedger1* item_g_bloodpack()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103fc5f0 size=0x39
+#include "CBlueBloodPack.h"
+
+extern char g_10015b68[];
+
+struct CBloodPackStubObj {
+    void *sub_10014fab();
+};
+
+struct CBloodPackStubTarget {
+    void sub_10013601(void *owner);
+};
+
+struct CBloodPackStubSelf {
+    void sub_10007fe5(void *a, int b, int c);
+};
+
+// TARGET: CBlueBloodPack::sub_103fc5f0
+void CBlueBloodPack::sub_103fc5f0()
+{
+    void *obj = ((CBloodPackStubObj *)this)->sub_10014fab();
+    if (obj != 0) {
+        int *pCount = (int *)((char *)this + 0x8d0);
+        int count = --*pCount;
+        if (count <= 0) {
+            ((CBloodPackStubTarget *)obj)->sub_10013601(this);
+            ((CBloodPackStubSelf *)this)->sub_10007fe5(g_10015b68, 0, 0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103fc7b0 size=0x72
 #include "SendProp.h"
 
