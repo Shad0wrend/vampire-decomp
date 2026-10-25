@@ -49,3 +49,19 @@ void CWeaponRanged_FlameThrower::vfunc104()
     m_unk1550 = 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103e2e70 size=0x33
+// TARGET: CWeaponRanged_FlameThrower::vfunc265
+#include "CWeaponRanged_FlameThrower.h"
+
+void CWeaponRanged_FlameThrower::vfunc265()
+{
+	if (*(int *)((char *)this + 0x74c) > 0) {
+		if (m_b1519 != 0) {
+			sub_103e2d10("Weapons/Ranged/Flamethrower/Deactivate.wav", 1);
+		}
+		m_b1519 = 0;
+	}
+	*((char *)this + 0x1520) = 1;
+}
+// END FUNCTION

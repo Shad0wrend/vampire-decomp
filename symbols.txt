@@ -5352,6 +5352,7 @@
 0x1001294a func   ?sub_10068870@@YAHXZ sub_10068870
 0x1001295e func   ?sub_10232090@@YAXPAX@Z sub_10232090
 0x10012968 func   ?sub_1002ee60@@YAXPAX@Z sub_1002ee60
+0x10012972 func   ?vfunc265@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc265
 0x10012977 func   ?vfunc5@CWeaponMelee_ManBatClaw@@QAEPAV1@I@Z CWeaponMelee_ManBatClaw::vfunc5
 0x10012986 func   ?sub_102dd740@@YA_NPBD@Z sub_102dd740
 0x1001299f func   ?sub_10338950@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10338950
