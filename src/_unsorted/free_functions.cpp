@@ -80965,6 +80965,39 @@ void CAI_DynamicLink::sub_102ccce0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cce10 size=0x3e
+#include "vampire.h"
+
+struct CUnknownNode102cce10
+{
+    char m_pad0000[0x450];
+    CUnknownNode102cce10 *m_pNext;	// 0x450
+    int m_a454;	// 0x454
+    int m_b458;	// 0x458
+};
+
+extern CUnknownNode102cce10 *g_1092541c;
+
+// TARGET: sub_102cce10
+CUnknownNode102cce10 *sub_102cce10(int a, int b)
+{
+    CUnknownNode102cce10 *pNode = g_1092541c;
+    while (pNode)
+    {
+        if (a == pNode->m_a454 && b == pNode->m_b458)
+        {
+            return pNode;
+        }
+        if (a == pNode->m_b458 && b == pNode->m_a454)
+        {
+            return pNode;
+        }
+        pNode = pNode->m_pNext;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cd310 size=0x71
 #include "inputdata_t.h"
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
