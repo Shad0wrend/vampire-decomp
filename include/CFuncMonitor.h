@@ -23,4 +23,5 @@ public:
 	void vfunc77();	// slot 77: unless the flag byte (sub_10014da8) is set, hands the camera to slot 42 and forgets it; then CBaseEntity::vfunc77
 	bool sub_10014da8();	// stub 0x10014da8: the byte at +0xf4
 	void sub_100011cc();	// CBaseEntity::vfunc77, called directly (stub 0x100011cc)
+	void sub_1015ef60();	// member of CFuncMonitor, CBaseTerminal, CPropSign (the same worker)
 };
