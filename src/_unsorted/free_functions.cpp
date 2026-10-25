@@ -16522,6 +16522,23 @@ int CBaseAnimating::sub_1008f7b0(const char *pszLabel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008fab0 size=0xe1
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+float sub_101d2c70(const Vector *pVec);
+
+float CBaseAnimating::sub_1008fab0(int sequence)
+{
+	ScopeTrace trace("CBaseAnimating::GetSequenceMoveYaw", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	Vector vecReturn;
+	sub_1008fcd0(sequence, (float *)&vecReturn);
+	if (0.0f < FastSqrt((vecReturn.x * vecReturn.x) + (vecReturn.y * vecReturn.y) + vecReturn.z * vecReturn.z))
+		return sub_101d2c70(&vecReturn);
+	return 99999.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008fbe0 size=0xb5
 #include "CBaseAnimating.h"
 #include "ScopeTrace.h"
