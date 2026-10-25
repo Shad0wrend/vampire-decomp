@@ -53577,6 +53577,45 @@ StatDefault3 *CStatDefault3List::sub_101d5e80(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d60b0 size=0x40
+struct CSlotObject
+{
+	virtual int slot0();
+	virtual int slot1();
+	virtual int slot2();
+	virtual int slot3();
+	virtual CSlotObject *slot4();
+	virtual int slot5();
+	virtual int slot6();
+	virtual int slot7();
+	virtual int slot8();
+	virtual int slot9();
+	virtual int slot10(int a, int b);
+};
+
+struct CLoaderUnit101d60b0
+{
+	char m_pad00[0x10];
+	int m_n10;
+	bool sub_101d60b0(CSlotObject *pObj);
+	void sub_100045e3(int a);
+};
+
+// TARGET: CLoaderUnit101d60b0::sub_101d60b0
+bool CLoaderUnit101d60b0::sub_101d60b0(CSlotObject *pObj)
+{
+	if (pObj) {
+		CSlotObject *pSlot = pObj->slot4();
+		if (pSlot) {
+			sub_100045e3(pSlot->slot0());
+			m_n10 = pSlot->slot10(0, 0);
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6100 size=0x70
 #include "CUnknown101d6100.h"
 
