@@ -41,3 +41,16 @@ float CVFeatList_t::vfunc4(int index)
 	return (float)*(int *)((char *)this + 0x170 + index * 0x18);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101e8a40 size=0x33
+#include "CVFeatList_t.h"
+
+// TARGET: CVFeatList_t::vfunc5
+float CVFeatList_t::vfunc5(int index)
+{
+    float *pEntry = (float *)((char *)this + 0x160 + index * 24);
+    if (pEntry[5] > 1.0)
+        return pEntry[5];
+    return 2.0f;
+}
+// END FUNCTION

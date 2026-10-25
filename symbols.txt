@@ -5827,6 +5827,7 @@
 0x10014029 func   ?sub_10032d70@UtlMem@@QAEXXZ UtlMem::sub_10032d70
 0x1001402e func   ?sub_102ee1c0@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102ee1c0
 0x10014042 func   ?sub_10115660@@YAXUSMonHandle@@@Z sub_10115660
+0x10014047 func   ?vfunc5@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc5
 0x1001404c func   ?vfunc5@CFilterName@@QAEPAV1@I@Z CFilterName::vfunc5
 0x10014079 func   ?sub_100be4b0@bf_read@@QAEIH@Z bf_read::sub_100be4b0
 0x1001407e func   _item_g_drugs_pill_bottle item_g_drugs_pill_bottle
