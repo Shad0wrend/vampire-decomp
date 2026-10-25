@@ -42,7 +42,9 @@ public:
 	int m_nLine1b34;	// 0x1b34: its line
 	char m_pad1b38[0x63d8 - 0x1b38];
 	char m_b63d8;	// 0x63d8
-	char m_pad63d9[0x6664 - 0x63d9];
+	char m_pad63d9[0x65c8 - 0x63d9];
+	int m_nAct65c8;	// 0x65c8
+	char m_pad65cc[0x6664 - 0x65cc];
 	int m_nModelIndex6664;	// 0x6664: PrecacheModel result of the baby model
 	int m_nModelIndex6668;	// 0x6668: PrecacheModel result of the baby model (again)
 	int m_nModelIndex666c;	// 0x666c: PrecacheModel result of the transformation model
