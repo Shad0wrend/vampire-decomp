@@ -31996,6 +31996,51 @@ void __stdcall sub_100f7fe0(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f81f0 size=0x127
+#include "Vector.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+#define SV1(n) virtual void n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CEntSlotView215
+{
+	SV100(a) SV100(b) SV10(c0) SV1(c10) SV1(c11) SV1(c12) SV1(c13) SV1(c14)
+	virtual float *vfunc215();
+};
+
+int __cdecl _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+
+CBaseEntity *CGlobalEntityList::sub_100f81f0(const Vector *pOrigin, const Vector *pDir, float flThreshold)
+{
+	float flBestDot = flThreshold;
+	CBaseEntity *pBest = 0;
+	for (CBaseEntity *pEnt = sub_100f7060(0); pEnt; pEnt = sub_100f7060(pEnt))
+	{
+		if (!pEnt->m_pEdict2e0)
+			continue;
+		Vector vecToEnt = *(Vector *)((CEntSlotView215 *)pEnt)->vfunc215() - *pOrigin;
+		VectorNormalize(vecToEnt);
+		float flDot = DotProduct(*pDir, vecToEnt);
+		if (!(flDot <= flBestDot))
+		{
+			const char *pszClass = pEnt->m_classname11c ? pEnt->m_classname11c : g_106b8540;
+			if (_strcmpi(pszClass, "worldspawn") == 0)
+				continue;
+			pszClass = pEnt->m_classname11c ? pEnt->m_classname11c : g_106b8540;
+			if (_strcmpi(pszClass, "soundent") == 0)
+				continue;
+			flBestDot = flDot;
+			pBest = pEnt;
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8490 size=0xbf
 #include "CGlobalEntityList.h"
 #include "Vector.h"
