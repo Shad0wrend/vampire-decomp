@@ -142,6 +142,66 @@ void CGameMovement::vfunc1(void *pMove, void *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10121120 size=0x12b
+#include "Vector.h"
+#include "ConVar.h"
+#include "CGameMovement.h"
+
+extern ConVar g_109ef360;
+void sub_10139610(const Vector *angles, Vector *forward, Vector *right, Vector *up);
+
+struct GMMoveView
+{
+	char pad0[0x2c];
+	float m_flForwardMove;
+	float m_flSideMove;
+	char pad34[4];
+	float m_flMaxSpeed;
+	char pad3c[4];
+	Vector m_vecVelocity;
+	char pad4c[0x58 - 0x4c];
+	Vector m_vecViewAngles;
+};
+
+struct GMPlayerView
+{
+	char pad0[0x3b0];
+	Vector m_vecBaseVelocity;
+};
+
+#define MV ((GMMoveView *)m_pPlayer)
+#define PL ((GMPlayerView *)m_pMove)
+
+void CGameMovement::vfunc8()
+{
+	int i;
+	Vector wishvel;
+	float fmove, smove;
+	Vector wishdir;
+	float wishspeed;
+	Vector forward, right, up;
+
+	sub_10139610(&MV->m_vecViewAngles, &forward, &right, &up);
+	fmove = MV->m_flForwardMove;
+	smove = MV->m_flSideMove;
+	forward.z = 0;
+	right.z = 0;
+	VectorNormalize(forward);
+	VectorNormalize(right);
+	for (i = 0; i < 2; i++)
+		wishvel[i] = forward[i] * fmove + right[i] * smove;
+	wishvel.z = 0;
+	wishdir = wishvel;
+	wishspeed = VectorNormalize(wishdir);
+	if (wishspeed > MV->m_flMaxSpeed)
+		wishspeed = MV->m_flMaxSpeed;
+	sub_10121000(wishdir, wishspeed, g_109ef360.GetFloat());
+	GMMoveView *mv = MV;
+	VectorAdd(mv->m_vecVelocity, PL->m_vecBaseVelocity, mv->m_vecVelocity);
+	slot19(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101212e0 size=0x98
 #include "CGameMovement.h"
 
