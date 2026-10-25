@@ -57693,6 +57693,23 @@ bool CUnknown101e98c0Item::sub_101e9640(CDataNode *pNode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9710 size=0x3d
+#include <string.h>
+
+extern const char g_105a0d74[];
+extern const char g_105a0d6c[];
+
+void sub_101e9710(unsigned int *pFlags, const char *pStr)
+{
+    if (strstr(pStr, g_105a0d74) != 0) {
+        *pFlags |= 2;
+    }
+    if (strstr(pStr, g_105a0d6c) != 0) {
+        *pFlags |= 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9760 size=0x97
 #include "CUnknown101e9760.h"
 #include "CBaseCombatCharacter.h"
