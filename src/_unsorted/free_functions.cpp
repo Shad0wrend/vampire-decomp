@@ -41038,6 +41038,19 @@ void sub_10143630(const Vector *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143d80 size=0x16b
+#include "Vector.h"
+
+void sub_10142e90(const Vector &start, const Vector &end, int r, int g, int b, int noDepth, float flDuration);
+
+void sub_10143d80(const Vector &position, float size, int r, int g, int b, int noDepth, float flDuration)
+{
+	sub_10142e90(position + Vector(size, 0, 0), position - Vector(size, 0, 0), r, g, b, noDepth, flDuration);
+	sub_10142e90(position + Vector(0, size, 0), position - Vector(0, size, 0), r, g, b, noDepth, flDuration);
+	sub_10142e90(position + Vector(0, 0, size), position - Vector(0, 0, size), r, g, b, noDepth, flDuration);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101466e0 size=0xe
 #include "CUnknown101466e0.h"
 // TARGET: CUnknown101466e0::sub_101466e0
