@@ -4,6 +4,7 @@
 
 #include "ISave.h"
 #include "utlvector.h"
+#include "Vector.h"
 
 struct typedescription_t;
 struct CSaveEdict;
@@ -52,11 +53,11 @@ public:
 	virtual void vfunc21();
 	virtual void vfunc22();
 	virtual void vfunc23(const void *pData, int count);	// WriteVector
-	virtual void vfunc24();
+	virtual void vfunc24(const Vector &value);	// WriteVector (one vector)
 	virtual void vfunc25(const float *pValues, int count);	// slot 25: for each of the count floats writes the value minus the float at +0x12e8 of the entity block (m_pEntityBlock) through slot 16
 	virtual void vfunc26(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xf
 	virtual void vfunc27();
-	virtual void vfunc28();
+	virtual void vfunc28(const Vector &value);	// WritePositionVector: with the landmark flag at +0x12c4 of the entity block set, the vector minus the landmark offset at +0x12dc is written through slot 24; without it the offset is the zero vector (0x1070d1b0)
 	virtual void vfunc29(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xe
 	virtual void vfunc30();
 	virtual void vfunc31(void *pBase, const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0x13
