@@ -51,6 +51,7 @@ public:
 	CEQEvent *m_pHead;	// 0x38
 	char m_pad003c[0x50 - 0x3c];
 	int m_nEvents;	// 0x50
+	int m_n54;	// 0x54: cleared together with the head by sub_100cdda0
 
 	void sub_100cdda0();	// empties the queue (stub 0x1000fc81)
 	void sub_100ce1c0(CEQEvent *pEvent);	// adds an event (stub 0x1001253f)
