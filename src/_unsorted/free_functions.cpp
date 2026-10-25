@@ -101647,6 +101647,26 @@ void CNPC_VAsianVampire::sub_10361990(CBaseEntity *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10362540 size=0xe3
+#include "ScopeTrace.h"
+#include "CNPC_VAsianVampire.h"
+#include "CEntityVSlots.h"
+struct SGlobalVars { char m_pad[0xc]; float m_flCurTime; };
+extern SGlobalVars *g_1070b228;
+void CNPC_VAsianVampire::sub_10362540()
+{
+    ScopeTrace trace("CNPC_VAsianVampire::UpdateMovedTimeStamp", g_106b8540);
+    Vector *pOrigin = ((CEntityVSlots *)this)->slot217();
+    Vector d;
+    d = *pOrigin - *(Vector *)&m_stationaryPos;
+    if (d.Length() > 40.0f)
+    {
+        m_flStationaryTime = g_1070b228->m_flCurTime;
+        m_stationaryPos = *(StoredHintPos_t *)((CEntityVSlots *)this)->slot217();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10362670 size=0x81
 #include "CNPC_VAsianVampire.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
