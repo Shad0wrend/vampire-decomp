@@ -64,7 +64,7 @@ public:
 	virtual void s13(); virtual int vfunc14();	// slot 14: reads a count (used by the memory list restore)
 	virtual int vfunc15(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadInt": reads up to count ints into pValues, returns the number read
 	virtual void s16();
-	virtual int vfunc17(char *pValues, int count, int nBytesAvailable);	// slot 17 ("CRestore::ReadBool"-like): reads up to count bytes into pValues
+	virtual int vfunc17(char *pValues, int count, int nBytesAvailable);	// slot 17 ("CRestore::ReadBool"-like): reads up to count bytes into pValues; its first argument is used as an int (see sub_1000fe9d)
 	virtual void s18(); virtual void s19();
 	virtual int vfunc20(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadString" (string pool ids): reads up to count zero terminated strings from the buffer, stores the pooled id of each (0 for an empty one) in pValues, then skips the rest of the nBytesAvailable bytes; returns the number read
 	virtual void s21();
@@ -84,6 +84,8 @@ public:
 	char sub_101a1860(typedescription_t *pField);	// "CRestore::ShouldReadField" (stub 0x100092cd)
 	void sub_101a1990(unsigned short *pValue);	// slot 7: calls slot 9(pValue), then appends slot 0() + *pValue to the vector at +4
 	void sub_101a1f90(void *pData, int size);	// reads size bytes into pData
+	void sub_1000fe9d(int a, int n);	// the callee of slots 12 / 17 (stub 0x1000fe9d)
+	void sub_1000910b(int n);	// the callee of slots 12 / 17 (stub 0x1000910b): the short-read tail
 	char vfunc16();	// slot 16: reads one byte
 	CBaseEntity *sub_101a2390(int index);	// the entity of the given save index (stub 0x10014a3d)
 	CRestoreSaveEnt *sub_101a2410(int index);	// the save index record (stub 0x10012ff8)
