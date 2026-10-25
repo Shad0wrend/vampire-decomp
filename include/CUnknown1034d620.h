@@ -33,7 +33,10 @@ public:
 	unsigned int m_hEntity;	// 0x5ce4
 	char pad5ce8[0x5f50 - 0x5ce8];
 	int m_field5f50;	// 0x5f50
+	const char *m_pszTargetName;	// 0x5f54: the name of the entity the NPC looks for
+	int m_nSearchRadius;	// 0x5f58: a float's bits (the search radius)
 
 	void sub_10007fe5(int a, int b, int c);
 	void sub_1034d620();	// scope-less: calls sub_10007fe5(0, 0, 0), sets +0x5f50 to 1, then calls slot 366 (global value, 0, 0) of the object at +0x94 of the entity behind the handle at +0x5ce4 (when it resolves)
+	CBaseEntity *sub_1034db70();	// finds the named target: the entity of the name at +0x5f54 when it has flag bit 13 and its object at +0x94 accepts this NPC (slot 366), else the closest entity within the radius at +0x5f58 that has bit 13 and the same classname and is accepted; null when none
 };
