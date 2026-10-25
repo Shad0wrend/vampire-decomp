@@ -72,3 +72,25 @@ void CUnknown1039a6e0::sub_1039a6e0(int value)
 	m_unk1594 = value;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1039a700 size=0x34
+extern char g_10647090[];
+
+struct CMingXiaoView {
+    char pad0[0x1b30];
+    const char *m_psz1b30;
+    int m_n1b34;
+    void sub_10013cf5(int a, int b, int c);
+    void sub_1000198d(int a, int b);
+    void sub_1039a700(int unused);
+};
+
+// TARGET: CMingXiaoView::sub_1039a700
+void CMingXiaoView::sub_1039a700(int unused)
+{
+    sub_10013cf5(1, 1, 10);
+    m_psz1b30 = g_10647090;
+    m_n1b34 = 0x14b1;
+    sub_1000198d(0x156, 0);
+}
+// END FUNCTION
