@@ -66994,6 +66994,19 @@ struct CUnknown1020b020 { char p[0x790]; int a; int sub_1020b020(int x); };
 int CUnknown1020b020::sub_1020b020(int x) { return a; }
 // END FUNCTION
 
+// FUNCTION: 0x1020b040 size=0x37
+#include "CUnknown1020aea0.h"
+
+extern int *g_1070b228;
+
+// TARGET: CUnknown1020aea0::sub_1020b040
+float CUnknown1020aea0::sub_1020b040(void *pPlayer)
+{
+    float f; f = sub_1020aea0(pPlayer) + *(float *)((char *)this + 0x788) - *(float *)(0xc + (char *)g_1070b228);
+    return !(f > 0.0) ? 0.0 : f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b370 size=0x43
 #include "CSecCamera.h"
 void *sub_100aa720(int size);
