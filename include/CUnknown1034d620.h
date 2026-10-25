@@ -16,7 +16,7 @@ public:
 	CU1034_H(a) CU1034_H(b) CU1034_H(c)
 	CU1034_T(d1) CU1034_T(d2) CU1034_T(d3) CU1034_T(d4) CU1034_T(d5) CU1034_T(d6)
 	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5();
-	virtual void vfunc366(int a, int b, int c);
+	virtual char vfunc366(int a, int b, int c);	// whether the NPC (c) may take this target (a boolean answer in al)
 };
 
 class CUnknown1034d620_Ent
