@@ -118174,6 +118174,33 @@ void CBaseCombatWeapon::sub_1040dcf0(CBaseEntity *pVictim, const float *pDir, vo
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040e1c0 size=0xd5
+#include "CBaseEntity.h"
+#include "IPhysicsObject.h"
+Vector sub_101898f0(CBaseEntity *pEnt);
+extern "C" void *__RTDynamicCast(void *pObj, long vfDelta, void *pSrcType, void *pTargetType, int isReference);
+extern char g_10538764[];
+extern char g_1057c684[];
+struct SRagdollPartView { IPhysicsObject *m_pObject; char m_pad[0x14]; };
+struct SRagdollView { char m_pad[0x730]; int m_nParts; char m_pad2[0x744 - 0x734]; SRagdollPartView m_Parts[1]; };
+void __stdcall sub_1040e1c0(CBaseEntity *pEnt, const Vector *pDir, float flScale)
+{
+    IPhysicsObject *pPhys = (IPhysicsObject *)pEnt->m_obj36c;
+    if (!pPhys)
+        return;
+    Vector impulse = *pDir * flScale;
+    Vector angular = sub_101898f0(pEnt);
+    SRagdollView *pRagdoll = (SRagdollView *)__RTDynamicCast(pEnt, 0, g_10538764, g_1057c684, 0);
+    if (!pRagdoll)
+    {
+        pPhys->vfunc41(&impulse, &angular);
+        return;
+    }
+    for (int i = 0; i < pRagdoll->m_nParts; i++)
+        pRagdoll->m_Parts[i].m_pObject->vfunc41(&impulse, &angular);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040e880 size=0xfe
 #include "CWeaponPhysCannon.h"
 #include "CWeaponMelee.h"
