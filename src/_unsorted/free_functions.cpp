@@ -74854,6 +74854,28 @@ void __fastcall sub_1024d2c0(void *self, int unusedEdx, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024dfb0 size=0x3b
+void sub_1024dfb0(float *m)
+{
+    m[0] = 1.0f;
+    m[1] = 0.0f;
+    m[2] = 0.0f;
+    m[3] = 0.0f;
+    m[4] = 0.0f;
+    m[5] = 1.0f;
+    m[6] = 0.0f;
+    m[7] = 0.0f;
+    m[8] = 0.0f;
+    m[9] = 0.0f;
+    m[10] = 1.0f;
+    m[11] = 0.0f;
+    m[12] = 0.0f;
+    m[13] = 0.0f;
+    m[14] = 0.0f;
+    m[15] = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024e030 size=0xc4
 #include <math.h>
 struct mat34_1024e030 { float m[3][4]; float *operator[](int i) { return m[i]; } const float *operator[](int i) const { return m[i]; } };
