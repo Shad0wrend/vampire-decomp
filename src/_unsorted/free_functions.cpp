@@ -106449,6 +106449,50 @@ CEntityVSlots *CNPC_VSheriffMan::sub_103b0930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b0ab0 size=0x152
+#include "CNPC_VSheriffMan.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+struct LedgeHintView : CEntityVSlots
+{
+    char pad[0x5d8 - 4];
+    LedgeHintView *m_pNext;
+    int m_nHintType;
+};
+extern LedgeHintView *g_10925450;
+
+// TARGET: CNPC_VSheriffMan::sub_103b0ab0
+CEntityVSlots *CNPC_VSheriffMan::sub_103b0ab0(char bUseSelf)
+{
+    ScopeTrace trace("CNPC_VSheriffMan::SelectLedgeNode", g_106b8540);
+    CGlobalEntityList_Ent *pEnt = EHandle_Get(m_hHeightTarget);
+    if (!pEnt)
+        return 0;
+    LedgeHintView *pHint = g_10925450;
+    LedgeHintView *pBest = 0;
+    float flBest = 3.402823466e+38f;
+    Vector vecOrigin;
+    if (bUseSelf)
+        vecOrigin = *((CEntityVSlots *)this)->slot217();
+    else
+        vecOrigin = *((CEntityVSlots *)pEnt)->slot217();
+    while (pHint) { if (pHint->m_nHintType == 0x4653)
+        {
+            Vector vecDelta;
+            VectorSubtract(vecOrigin, *pHint->slot217(), vecDelta);
+            float t0 = (vecDelta.z * vecDelta.z) + (vecDelta.x * vecDelta.x); float flDist = FastSqrt(t0 + vecDelta.y * vecDelta.y);
+            if (flDist < flBest)
+            {
+                flBest = flDist;
+                pBest = pHint;
+            }
+        } pHint = pHint->m_pNext; }
+    return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1300 size=0x11c
 #include "CNPC_VAsianVampire.h"
 #include "CEntityVSlots.h"
