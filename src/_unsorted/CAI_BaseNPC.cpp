@@ -576,6 +576,19 @@ int CAI_BaseNPC::sub_10278090(char bFlag, int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10278900 size=0x82
+#include "Vector.h"
+#include "CAI_BaseNPC.h"
+
+Vector CAI_BaseNPC::vfunc574(const Vector &vecPos, int a, int b)
+{
+	Vector vecTarget = sub_10278650(vecPos, a, b);
+	Vector dir = vecTarget - vecPos;
+	VectorNormalize(dir);
+	return dir;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278cb0 size=0x47
 struct ConVarLike {
 	virtual void vfunc0();
