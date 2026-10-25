@@ -41553,6 +41553,24 @@ extern "C" GP *func_platrot()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a3c0 size=0xcf
+#include "CFuncPlat.h"
+
+void CFuncPlat::sub_1015a3c0(const Vector &vecDestAngles, float flTime)
+{
+	Vector vecDestDelta = vecDestAngles - *(Vector *)vfunc221();
+	if (flTime >= 0.1)
+	{
+		sub_100b2f50(vecDestDelta / flTime);
+	}
+	else
+	{
+		sub_100b2f50(vecDestDelta);
+		m_flMoveDoneTime = m_flLocalTime + 1.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015d680 size=0x37
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
