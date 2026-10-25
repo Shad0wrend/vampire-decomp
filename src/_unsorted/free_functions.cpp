@@ -103316,6 +103316,29 @@ void CNPC_VMingXiao::sub_1039ab30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039aca0 size=0x120
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CNPC_VMingXiao.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_1064339c[];
+
+void CNPC_VMingXiao::sub_1039aca0()
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	filter.MakeReliable();
+	int edict = *(int *)((char *)this + 0x2e0);
+	int idx = g_1070b22c->vfunc35(edict);
+	g_1070b248->vfunc3(&filter, idx, 4, g_1064339c[g_1070b244->vfunc2(0, 0)], 1.0f, 0.8f, 4, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039ae10 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_109f3634)(int);
