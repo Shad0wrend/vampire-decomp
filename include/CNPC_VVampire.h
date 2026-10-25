@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+#include "CBaseEntity.h"
+
 class CNPC_VVampire : public CBaseEntity
 {
 public:
@@ -9,4 +11,5 @@ public:
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VVampire *sub_103c48e0();	// as in CKeepUpright (transplant)
+	void vfunc144(int info);	// slot 144 (Event_Killed-like): the game's CNPC_VVampire::vfunc144 (0x103c4f40, stub 0x1000b8a2)
 };
