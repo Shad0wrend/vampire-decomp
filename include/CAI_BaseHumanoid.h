@@ -31,4 +31,5 @@ public:
 	CAI_HumanoidMotor *vfunc427();	// "CAI_BaseHumanoid::vfunc427": new CAI_HumanoidMotor(this), the motor's base constructor sub_102e0900 on the new object, null when the allocation fails
 	CAI_Navigator *vfunc429();	// "CAI_BaseHumanoid::vfunc429": new CAI_HumanoidNavigator(this) (0x6c bytes), its base constructor on the new object, null when the allocation fails
 	char vfunc587(const Vector &vecPos);	// slot 587 (plain member): whether the position lies in front of the NPC: the direction from the eye position (slot 193) to it, normalised, dotted with the facing vector of slot 371, is above 0.5
+	char vfunc588(const Vector &vecPos);	// slot 588 (plain member): like slot 587 with the vector of slot 369 (dot above -0.5) and the vertical part of the normalised direction under 0.7 in magnitude
 };
