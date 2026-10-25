@@ -2665,6 +2665,7 @@
 0x1000963d func   ?vfunc559@CAI_BaseNPC@@UAEPAVCBaseEntity@@PBD@Z CAI_BaseNPC::vfunc559
 0x10009647 func   ?sub_102cce10@@YAPAUCUnknownNode102cce10@@HH@Z sub_102cce10
 0x10009656 func   ?sub_101c26d0@CUnk101c26d0@@QAEPAU1@HHHHHHH@Z CUnk101c26d0::sub_101c26d0
+0x10009665 func   ?vfunc533@CAI_BaseNPC@@UAE?AVVector@@HH@Z CAI_BaseNPC::vfunc533
 0x1000966f func   ?sub_1004add0@CMem16_t@@QAEXH@Z CMem16_t::sub_1004add0
 0x10009674 func   ?sub_1003cbc0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1003cbc0
 0x10009679 func   ?vfunc104@CNPC_VZombie@@UAEXXZ CNPC_VZombie::vfunc104
