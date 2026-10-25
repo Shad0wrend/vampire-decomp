@@ -9197,6 +9197,25 @@ int sub_1006b440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006b5e0 size=0x3c
+#include "CTEWorldDecal.h"
+
+extern int g_106c7528;
+extern int g_106c752c;
+extern int g_106c7530;
+extern int g_106c7534;
+extern CTEWorldDecal g_106c751c;
+
+void sub_1006b5e0(int a, int b, int *v, int c)
+{
+    g_106c7528 = v[0];
+    g_106c752c = v[1];
+    g_106c7530 = v[2];
+    g_106c7534 = c;
+    g_106c751c.sub_1000a097(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006bb80 size=0xe6
 #include <math.h>
 #include "CBaseEntity.h"
