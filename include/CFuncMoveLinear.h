@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Vector.h"
+#include "COutputEvent.h"
 
 struct inputdata_t;
 
@@ -10,7 +11,8 @@ class CFuncMoveLinear
 {
 public:
 	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
-	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	virtual CFuncMoveLinear *vfunc5(unsigned int flags);	// scalar deleting destructor: the eight outputs, then the base body
+	virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual void vfunc14();
 	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23(); virtual void vfunc24();
@@ -42,10 +44,14 @@ public:
 	void sub_10013912();	// CBaseToggle::vfunc133 (stub 0x10013912), called directly
 	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5), called directly
 	const char *sub_100ab4f0();	// CBaseEntity::sub_100ab4f0 (stub 0x1000b5cd): the entity's debug name
+	void sub_1000cb8a();	// destructor body (the CBaseToggle/CBaseEntity part, stub 0x1000cb8a), called directly
 
 	char m_pad0004[0x164 - 4];
 	float m_flSpeed;	// 0x164
-	char m_pad0168[0x508 - 0x168];
+	char m_pad0168[0x4a4 - 0x168];
+	COutputEvent m_Output4a4;	// 0x4a4
+	COutputEvent m_Output4bc;	// 0x4bc
+	char m_pad04d4[0x508 - 0x4d4];
 	Vector m_vecPosition1;	// 0x508
 	Vector m_vecPosition2;	// 0x514
 	char m_pad0520[0x540 - 0x520];
@@ -55,4 +61,11 @@ public:
 	const char *m_str560;
 	int m_field564;
 	const char *m_str568;
+	char m_pad056c[0x578 - 0x56c];
+	COutputEvent m_Output578;	// 0x578
+	COutputEvent m_Output590;	// 0x590: OnFullyClosed-like
+	COutputEvent m_Output5a8;	// 0x5a8
+	COutputEvent m_Output5c0;	// 0x5c0
+	COutputEvent m_Output5d8;	// 0x5d8
+	COutputEvent m_Output5f0;	// 0x5f0
 };
