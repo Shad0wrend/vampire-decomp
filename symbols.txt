@@ -2605,6 +2605,7 @@
 0x1000939f func   _npc_VHuman npc_VHuman
 0x100093a9 func   ?vfunc217@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc217
 0x100093b3 func   ?sub_10077490@CFlexTrackParent@@QAEPAUCFlexTrack@@PBD@Z CFlexTrackParent::sub_10077490
+0x100093b8 func   ?sub_102f1500@CUnknown102ee120_y@@QAEHPAUHelperParams102f1500@@@Z CUnknown102ee120_y::sub_102f1500
 0x100093c2 func   ?sub_10429460@@YAHXZ sub_10429460
 0x100093cc func   _filter_activator_class filter_activator_class
 0x100093d1 func   _npc_VYukie npc_VYukie

@@ -92563,6 +92563,72 @@ bool CAI_Navigator::sub_102f13d0(unsigned char bArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f1500 size=0xda
+#include "CEntityVSlots.h"
+
+struct HelperParams102f1500
+{
+	int m_n0;
+	float m_f4;
+	float m_f8;
+	float m_fC;
+	float m_f10;
+	float Get10() { return m_f10; }
+};
+
+struct View102f1500
+{
+	char pad0[0x28];
+	float m_f28;
+	float Get() { return m_f28; }
+};
+
+struct CUnknown102ee120_y
+{
+	char pad0[4];
+	CEntityVSlots *m_pEntity;
+	char pad8[0x28];
+	View102f1500 *m_p30;
+
+	char sub_102ee6a0();
+	Vector *sub_102ee5e0();
+	char sub_102ee660();
+	void sub_102f0400();
+	char sub_102f1690(HelperParams102f1500 *pParams);
+	int sub_102f1500(HelperParams102f1500 *pParams);
+};
+
+int CUnknown102ee120_y::sub_102f1500(HelperParams102f1500 *pParams)
+{
+	int nResult = 0;
+	if (sub_102ee6a0())
+	{
+		const Vector *pOrigin = m_pEntity->slot220();
+		const Vector *pPos = sub_102ee5e0();
+		float dx = pPos->x - pOrigin->x;
+		float dy = pPos->y - pOrigin->y;
+		float dz = pPos->z - pOrigin->z;
+		float flDist = FastSqrt(dz * dz + dy * dy + dx * dx);
+		if (sub_102ee660())
+		{
+			if (flDist <= ((pParams->Get10() > m_p30->Get()) ? pParams->Get10() : m_p30->Get()))
+				return 2;
+		}
+		else
+		{
+			if (flDist <= pParams->m_fC)
+			{
+				sub_102f0400();
+				nResult = 1;
+			}
+			if (sub_102f1690(pParams))
+				return 1;
+		}
+	}
+	return nResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1690 size=0x168
 #include "CUnknown102ee120.h"
 extern "C" void *memset(void *, int, unsigned int);
