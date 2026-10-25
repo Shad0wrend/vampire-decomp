@@ -23581,6 +23581,33 @@ void CBeam::sub_100bbb10(int nEnts, CBaseEntity **ppEnts, int *pAttach)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbbf0 size=0x183
+#include "CBeam.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+
+// TARGET: CBeam::sub_100bbbf0
+void CBeam::sub_100bbbf0()
+{
+    const float *a = sub_100bb270();
+    const float *b = sub_100bb440();
+    Vector mins, maxs;
+    mins.x = (a[0] < b[0]) ? a[0] : b[0];
+    mins.y = (a[1] < b[1]) ? a[1] : b[1];
+    mins.z = (a[2] < b[2]) ? a[2] : b[2];
+    maxs.x = (a[0] > b[0]) ? a[0] : b[0];
+    maxs.y = (a[1] > b[1]) ? a[1] : b[1];
+    maxs.z = (a[2] > b[2]) ? a[2] : b[2];
+    Vector vecLocalMaxs = maxs - *((CEntityVSlots *)this)->slot217();
+    Vector vecLocalMins = mins - *((CEntityVSlots *)this)->slot217();
+    sub_1009edc0(&vecLocalMins.x, &vecLocalMaxs.x);
+    CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+    float *pMins = pCollision->vfunc1();
+    float *pMaxs = pCollision->vfunc2();
+    sub_100adf10(pMins, pMaxs);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc0f0 size=0x23
 #include "CUnknown100bc0f0.h"
 
