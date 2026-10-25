@@ -1401,6 +1401,7 @@
 0x10005b3c func   ?sub_100ca630@CMomentaryRotButton@@QAEMPAM@Z CMomentaryRotButton::sub_100ca630
 0x10005b4b func   ?sub_100a93d0@@YI_NPAD@Z sub_100a93d0
 0x10005b5a func   ?vfunc334@CBaseCombatCharacter@@QAE_NHH@Z CBaseCombatCharacter::vfunc334
+0x10005b69 func   ?vfunc300@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc300
 0x10005b6e func   ?sub_10428ad0@@YAHPAUCStudioHdr@@HHPAH@Z sub_10428ad0
 0x10005b82 func   ?vfunc4@CTEImpact@@UAEXHH@Z CTEImpact::vfunc4
 0x10005b8c func   ?sub_1003db80@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_1003db80
