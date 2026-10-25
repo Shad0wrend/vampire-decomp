@@ -17,4 +17,5 @@ public:
 	virtual void vfunc495();	// slot 495: plays a random sound from the table at 0x10629a1c to the PAS around the NPC (reliable)
 	virtual void vfunc489();	// slot 489: plays a random sound from the table at 0x10629a18 to the PAS around the NPC (reliable), like slot 495
 	virtual void vfunc488();	// slot 488: like slot 489 with the table at 0x10629a20 and volume 0.5
+	virtual void vfunc491();	// slot 491: like slot 489 with the table at 0x10629a28 (random 0..3, channel 2)
 };
