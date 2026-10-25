@@ -13,6 +13,8 @@ struct CSoundEntSlot	// one 0x2c byte entry of the sound pool at +0x464
 	char m_pad0014[4];
 	int m_iNext;	// 0x18
 	char m_pad001c[0x2c - 0x1c];
+
+	void sub_1000a493();	// stub 0x1000a493, called for every pool entry by CSoundEnt::vfunc127
 };
 
 class CSoundEnt
@@ -28,6 +30,8 @@ public:
 	void vfunc134();	// slot 134 "CSoundEnt::Think": next think 0.3 s ahead (+0x17c), frees the expired sounds of the active list, reports the sound counts when the report flag is set, then CBaseEntity::Think (sub_101bb350, stub 0x1001138d)
 	int sub_101bb070(int nList);	// the number of sounds in a list (stub 0x1000d300): 1 = free, 2 = active
 	void sub_101bb350();	// CBaseEntity::Think-like base (stub 0x1001138d), tail called
+	int vfunc127(int a);	// slot 127 "CSoundEnt::vfunc127": CBaseEntity::vfunc127 (sub_1000961a) with a, then sub_1000a493 on each of the 0x40 pool entries; returns the base's result
+	int sub_1000961a(int a);	// CBaseEntity::vfunc127 (stub 0x1000961a), called directly
 
 	char m_pad0004[0x17c - 4];
 	float m_flNextThink;	// 0x17c
