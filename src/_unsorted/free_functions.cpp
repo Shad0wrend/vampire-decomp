@@ -9008,6 +9008,31 @@ void sub_10069310(int a, int b, TextMessageParams *p, const char *text)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069430 size=0x30
+#include "CTETParticle.h"
+
+extern int vt_1044e0f4[];
+
+struct CBaseTempEntityHeadPlaceholder {
+    void sub_10015334(int a);
+};
+
+// TARGET: CTETParticle::sub_10069430
+CTETParticle *CTETParticle::sub_10069430(int a)
+{
+    ((CBaseTempEntityHeadPlaceholder *)this)->sub_10015334(a);
+    *(int **)this = vt_1044e0f4;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(char *)((char *)this + 0x24) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100697a0 size=0xe1
 #include "SendProp.h"
 
