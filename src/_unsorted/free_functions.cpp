@@ -105211,6 +105211,29 @@ int sub_103e17b0(Vector vStart, Vector vEnd, Vector *pEndPos, CBaseEntity **ppEn
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e1960 size=0x36
+// TARGET: sub_103e1960
+struct CLinkElem
+{
+	int m_pad00[8];
+	int m_iPrev;	// 0x20
+	int m_iNext;	// 0x24
+	int m_pad28[5];
+};
+
+void sub_103e1960(CLinkElem *pBase, CLinkElem *pNode)
+{
+	if (pNode->m_iNext != -1) {
+		pBase[pNode->m_iNext].m_iPrev = -1;
+	}
+	if (pNode->m_iPrev != -1) {
+		pBase[pNode->m_iPrev].m_iNext = -1;
+	}
+	pNode->m_iPrev = -1;
+	pNode->m_iNext = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1d20 size=0x43
 #include "CFlameCluster.h"
 void *sub_100aa720(int size);
