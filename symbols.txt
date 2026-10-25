@@ -4269,6 +4269,7 @@
 0x1000f187 func   ?sub_101a8c30@CCineNPC@@QAEXXZ CCineNPC::sub_101a8c30
 0x1000f1aa func   _item_p_research_lg_computers item_p_research_lg_computers
 0x1000f1b9 func   ?sub_101859a0@S101859a0@@QAEXH@Z S101859a0::sub_101859a0
+0x1000f1cd func   ?sub_1023eff0@@YAXPADPBD@Z sub_1023eff0
 0x1000f1d2 func   ?sub_10073f40@CUnknown10073f40@@QAEXH@Z CUnknown10073f40::sub_10073f40
 0x1000f1d7 func   ?sub_102ee4f0@CUnknown102ee4f0@@QAEXXZ CUnknown102ee4f0::sub_102ee4f0
 0x1000f1dc func   ?sub_10205ba0@CUnknown10205ba0@@QAEPBDPAVCUnknown10204bf0@@@Z CUnknown10205ba0::sub_10205ba0

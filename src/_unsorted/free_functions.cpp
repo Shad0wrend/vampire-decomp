@@ -74484,6 +74484,31 @@ void sub_1023ee30(int src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023eff0 size=0x36
+#include <string.h>
+
+// TARGET: sub_1023eff0
+void sub_1023eff0(char *pTable, const char *psz)
+{
+    if (pTable == 0) {
+        return;
+    }
+    if (psz == 0) {
+        return;
+    }
+    memset(pTable, 0, 0x100);
+    char c = *psz;
+    if (c != 0) {
+        const char *p = psz;
+        do {
+            p++;
+            pTable[c] = 1;
+            c = *p;
+        } while (c != 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023f040 size=0xb
 void sub_1023f040(int *p)
 {
