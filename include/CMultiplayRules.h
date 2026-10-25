@@ -22,6 +22,7 @@ public:
 	virtual void vfunc29(void *pPlayer);	// sends the user message of the global at 0x10726038 to the player alone: a byte 0, then the message end
 	virtual float vfunc30(int a);
 	virtual void vfunc35(CBaseEntity *pPlayer);	// "EquipPlayer": every game_player_equip entity equips the player (slot 175); without one gives weapon_crowbar, weapon_9mmhandgun and 0x44 SmallRound
+	virtual void vfunc36(void *pOwner);	// clears the dwords +0x208c, +0x2088 and +0x2090 of pOwner when the flag byte at 0x1070ba2c is set, and sets this's byte at +0xc when one of the bits 0x440827 of +0x208c was set
 	virtual float vfunc38(int a);
 	virtual int vfunc43(int a, int b);
 	virtual void vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "PlayerKilled": DeathNotice (slot 45), counts the death and fires game_playerdie; credits the scorer (sub_10141b10) with the points of slot 43 and fires game_playerkill, or takes a point off a suicide
