@@ -75365,6 +75365,33 @@ bool sub_10232cb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10232d80 size=0x11d
+#include "Vector.h"
+#include "CEntityVSlots.h"
+
+extern int g_10552810;
+extern Vector g_1070d1b0;
+CEntityVSlots *sub_101cd9e0(int index);
+void sub_10139610(const Vector *angles, Vector *forward, Vector *right, Vector *up);
+
+Vector sub_10232d80()
+{
+	CEntityVSlots *pPlayer = sub_101cd9e0(g_10552810);
+	if (!pPlayer)
+		return g_1070d1b0;
+	Vector fwd;
+	sub_10139610((const Vector *)((char *)pPlayer + 0x206c), &fwd, 0, 0);
+	Vector flat = fwd;
+	flat.z = 0;
+	VectorNormalize(flat);
+	VectorNormalize(fwd);
+	float flScale = 300.0f / DotProduct(flat, fwd);
+	Vector scaled = fwd * flScale;
+	Vector tmp;
+	return scaled + *pPlayer->slot193(&tmp);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10233a10 size=0x89
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 char sub_10232cb0();
