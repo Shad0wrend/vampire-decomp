@@ -85836,6 +85836,35 @@ int CAI_BaseNPCTroika::sub_102c47e0(const char *pszName, const char *pszCaller)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4ad0 size=0x12f
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CAI_BaseNPCTroika.h"
+
+struct TroikaJumpView
+{
+	char pad0[0x649c];
+	Vector m_vecJumpOrigin;
+	Vector m_vecJumpTarget;
+	float m_flJumpHeight;
+};
+
+void CAI_BaseNPCTroika::sub_102c4ad0(CEntityVSlots *pTarget, float flHeight, float flDist)
+{
+	TroikaJumpView *pView = (TroikaJumpView *)this;
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	pView->m_vecJumpOrigin = *pSelf->slot217();
+	pView->m_flJumpHeight = flHeight;
+	Vector dir = *pTarget->slot217() - *pSelf->slot217();
+	dir.z = 0;
+	float flLen = VectorNormalize(dir);
+	if (flLen < flDist)
+		pView->m_vecJumpTarget = *pTarget->slot217();
+	else
+		pView->m_vecJumpTarget = *pTarget->slot217() - dir * flDist;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c5730 size=0x3c
 #include "CBaseCombatWeapon.h"
 
