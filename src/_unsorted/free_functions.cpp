@@ -69151,6 +69151,26 @@ void CUnknown10229550::sub_10229550(CUnknown10229550Item *pItem, float flScale)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102296e0 size=0x3e
+// TARGET: sub_102296e0
+char __fastcall sub_102296e0(char *self, void *unused, int a, int b)
+{
+    int nCount = *(int *)(self + 0x194);
+    int i = 0;
+    if (nCount > 0) {
+        char *p = *(char **)(self + 0x188) + 0x14;
+        do {
+            if (*(int *)(p - 4) == b && *(int *)p == a) {
+                return 1;
+            }
+            i++;
+            p += 0x20;
+        } while (i < nCount);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10229ff0 size=0x43
 #include "CSoundScheme.h"
 void *sub_100aa720(int size);
