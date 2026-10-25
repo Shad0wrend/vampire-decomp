@@ -31909,6 +31909,29 @@ void CUnknown10103100::sub_10103100(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103120 size=0x39
+struct CUnknown10103120Param {
+    char m_pad0000[0x8];
+    float m_f8;
+    char m_pad000c[0x18 - 0xc];
+    int m_n18;
+};
+
+struct CUnknown10103120 {
+    char m_pad0000[0x450];
+    float m_fl450;
+    void sub_10103120(CUnknown10103120Param *pParam);
+    void sub_1000c333(int a);
+};
+
+// TARGET: CUnknown10103120::sub_10103120
+void CUnknown10103120::sub_10103120(CUnknown10103120Param *pParam)
+{
+    m_fl450 = (pParam->m_n18 == 1) ? pParam->m_f8 : 0.0f;
+    sub_1000c333(2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103370 size=0xba
 #include "CUnknown1070b22c.h"
 
