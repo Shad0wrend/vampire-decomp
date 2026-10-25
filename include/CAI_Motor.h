@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CUtlVectorDataOps.h"
+#include "Vector.h"
 
 struct CAI_InterestTarget;
 struct ISaveRestoreOps;
@@ -15,7 +16,7 @@ public:
 	virtual void vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual bool vfunc4(const Vector &vecGoal, float flYaw);	// a step toward vecGoal: false (speed cleared, ideal yaw flYaw set) when the goal is not closer than a hundredth of the speed, else true and the speed is reduced by the distance still to go
 	virtual void vfunc5();
 	virtual void vfunc6();
 	virtual void vfunc7();
@@ -77,6 +78,7 @@ public:
 	float sub_102e12c0();	// CAI_Component helper (stub 0x10008bfc): a scale factor, returned in st(0)
 	float sub_102e12e0();	// CAI_Component helper (stub 0x10006721): the owner's value at slot 249 (+0x3e4), returned in st(0)
 	void sub_102e1560(int a, float flScale, float flValue, int b, int c);	// stub 0x10012116, called directly by slot 19 with five stack arguments
+	void sub_102e2690(Vector *pVec);	// stub 0x10011a09
 
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
 	static int *sub_102e0860();
