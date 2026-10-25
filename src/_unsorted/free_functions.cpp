@@ -50440,6 +50440,29 @@ void CBaseToggle::sub_101c1520(Vector *pPosition, float flSpeed)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1790 size=0x3d
+#include "CBaseEntity.h"
+
+extern int g_1070d1b0[];
+void sub_100043cc(void *, void *, int);
+
+struct CUnk101c1790Sub {
+    void sub_10010794(int, void *, int);
+};
+
+struct CUnk101c1790 {
+    void sub_101c1790();
+};
+
+void CUnk101c1790::sub_101c1790()
+{
+    sub_100043cc(this, (char *)this + 0x540, 0);
+    ((CBaseEntity *)this)->sub_100b2e30((const float *)g_1070d1b0);
+    *(float *)((char *)this + 0x3fc) = -1.0f;
+    ((CUnk101c1790Sub *)((char *)this + 0x4a4))->sub_10010794(0, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1b40 size=0xd
 void CUnknown101c1b40::sub_101c1b40(int mode)
 {
