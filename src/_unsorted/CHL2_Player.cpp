@@ -161,6 +161,24 @@ void CHL2_Player::vfunc472()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352a20 size=0x3e
+#include "CHL2_Player.h"
+
+extern int g_109f3628;
+
+// TARGET: CHL2_Player::vfunc477
+void CHL2_Player::vfunc477(unsigned int *pPower)
+{
+    if ((m_n252c & pPower[0]) != 0) {
+        ((void (*)(const char *))g_109f3628)("SUIT POWER TRIED TO ADD A DUPLICATE DEVICE\n");
+        return;
+    }
+    m_n252c = pPower[0] | m_n252c;
+    float flAmount = *(float *)&pPower[1];
+    m_f2530 = flAmount + m_f2530;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352a70 size=0x40
 #include "CHL2_Player.h"
 
