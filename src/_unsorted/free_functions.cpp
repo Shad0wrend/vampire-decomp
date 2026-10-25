@@ -88191,6 +88191,36 @@ bool CUnknown1030f480::sub_1030f220(const char *pszName, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030f3a0 size=0x3d
+void __fastcall sub_10003ebd(void *node);
+
+struct CUnknown1030f3a0Node {
+    char m_pad[0x44];
+    CUnknown1030f3a0Node *m_pNext;
+};
+
+struct CUnknown1030f3a0List {
+    int m_nRef;
+    CUnknown1030f3a0Node *m_pHead;
+};
+
+void __fastcall sub_1030f3a0(CUnknown1030f3a0List *self)
+{
+    self->m_nRef++;
+    if (self->m_nRef < 0) {
+        self->m_nRef = 0;
+    }
+    CUnknown1030f3a0Node *node = self->m_pHead;
+    while (node) {
+        CUnknown1030f3a0Node *next = node->m_pNext;
+        sub_10003ebd(node);
+        operator delete(node);
+        node = next;
+    }
+    self->m_pHead = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f480 size=0x9d
 #include "CUnknown1030f480.h"
 

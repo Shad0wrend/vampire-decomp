@@ -3445,6 +3445,7 @@
 0x1000cb1c func   ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z CEntView184::sub_10267260
 0x1000cb21 func   ?vfunc5@CAI_Hint@@UAEPAV1@I@Z CAI_Hint::vfunc5
 0x1000cb26 func   ?sub_10033160@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10033160
+0x1000cb2b func   ?sub_1030f3a0@@YIXPAUCUnknown1030f3a0List@@@Z sub_1030f3a0
 0x1000cb35 func   ?sub_1033d580@CBaseCombatCharacter@@QAEDH@Z CBaseCombatCharacter::sub_1033d580
 0x1000cb3f func   ?sub_101a1140@CSave@@QAE_NHPAX0PAUtypedescription_t@@@Z CSave::sub_101a1140
 0x1000cb49 func   ?sub_10309e80@CUnknown1030a6e0@@QAEXPBVVector@@0@Z CUnknown1030a6e0::sub_10309e80
