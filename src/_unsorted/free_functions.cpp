@@ -46752,6 +46752,31 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d1c0 size=0x3c
+#include "CRecipientFilter.h"
+
+CBasePlayer *sub_1000ac8b(int);
+
+struct CUnk1019d1c0 {
+    void sub_1019d1c0(unsigned int mask);
+};
+
+void CUnk1019d1c0::sub_1019d1c0(unsigned int mask)
+{
+    int i;
+    CBasePlayer *pPlayer;
+
+    for (i = 0; i < 0x20; i++) {
+        if (mask & (1 << i)) {
+            pPlayer = sub_1000ac8b(i + 1);
+            if (pPlayer != 0) {
+                ((CRecipientFilter *)this)->AddRecipient(pPlayer);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d490 size=0xa
 void CUnknown1019d490::sub_1019d490(char value)
 {
