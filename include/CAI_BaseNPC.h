@@ -245,4 +245,6 @@ public:
 	void sub_10272650(int a);	// stub 0x100097d2, run by TaskMovementComplete with the result of sub_1027a6c0
 	bool sub_10278220(const Vector *pStart, const Vector *pEnd, int mask);	// stub 0x100116b7: a trace-based visibility test of pEnd (offset by the eye offset at +0x184) from pStart; true when it is clear or the navigator accepts a move there
 	bool sub_102784a0(const Vector *pStart, int mask);	// tests pStart against the NPC's origin and then against five pairs of points that step 48 units either side of the origin along its right vector (sub_10278220 each); true at the first one that is clear
+	Vector vfunc574(const Vector &vecPos, int a, int b);	// slot 574 (plain member): the unit direction from vecPos to the point sub_10278650 finds for (vecPos, a, b): (point - vecPos) normalised, returned by value
+	Vector sub_10278650(const Vector &vecPos, int a, int b);	// stub 0x1001592e, called directly by vfunc574, returns a Vector by value
 };
