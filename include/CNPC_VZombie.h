@@ -39,4 +39,23 @@ public:
 	void sub_10273e80(char bForce);	// CAI_BaseNPC member (stub 0x1000ac68), called directly
 	void sub_103e0980(int a);	// hands the zombie the maker's value (CNPCMaker_Zombie::vfunc617), stub 0x1001128e
 	void sub_1029f300(int a);	// stub 0x10008931, called directly on the new zombie (also on the maker)
+	void vfunc432(int a);	// slot 432 "CNPC_VZombie::RunAI" (plain member): while the state (+0x6678) is 1 and the player is farther than the limit (+0x66dc) logs "zombie %s: player too far away, killing self" and runs slot 119; then CNPC_VAnimal::vfunc432(a); in the states 0 / 1, unless active (+0xfec = 0x4b), with condition 0x46 set, the player distance (+0x6264) inside the tuning range and the lunge timer (+0x66d8) due, with a live enemy (handle +0x628c) that has a player object, a roll against the tuning chance starts the schedule 0x16a and re-arms the timer; always sets the byte +0x5ac
+	void sub_10360160(int a);	// CNPC_VAnimal::vfunc432 (stub 0x10014f92), called directly
+	void sub_102ae750(int schedule, int a);	// starts the schedule (stub 0x1000198d), called directly
+	bool sub_10269aa0(int condition);	// CAI_BaseNPC::HasCondition (stub 0x10014df8), called directly
+	const char *sub_100ab4f0();	// CBaseEntity::sub_100ab4f0 (stub 0x1000b5cd): the entity's debug name
+
+	char m_pad03e0[0x5ac - sizeof(CBaseEntity)];
+	char m_bActive05ac;	// 0x5ac
+	char m_pad05ad[0xfec - 0x5ad];
+	int m_nState0fec;	// 0xfec: the activity the zombie is in
+	char m_pad0ff0[0x6264 - 0xff0];
+	float m_flPlayerDist6264;	// 0x6264: the distance to the player
+	char m_pad6268[0x628c - 0x6268];
+	unsigned int m_hEnemy628c;	// 0x628c: entity handle of the target
+	char m_pad6290[0x6678 - 0x6290];
+	int m_nMode6678;	// 0x6678
+	char m_pad667c[0x66d8 - 0x667c];
+	float m_flNextLunge66d8;	// 0x66d8
+	float m_flMaxDist66dc;	// 0x66dc
 };
