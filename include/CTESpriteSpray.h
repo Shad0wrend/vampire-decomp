@@ -1,12 +1,17 @@
 // CTESpriteSpray: sprite spray temp entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
 
+class CRecipientFilter;
+class Vector;
+
 class CTESpriteSpray
 {
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual CTESpriteSpray *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3(const Vector *pOrigin, const Vector *pAngles);	// slot 3 "CTESpriteSpray::Test": fills the effect (smoke model, noise 0.8f, speed 5, count 30), puts the origin 24 units above pOrigin and moves it 50 units along the flat forward vector of pAngles and -25 along its right vector, a random direction (x, y in -100..100, z in 0..100), then Create(broadcast filter, 0.0f)
+	virtual void vfunc4(CRecipientFilter *pFilter, float flDelay);	// slot 4 "CTESpriteSpray::Create"
 
 	void sub_1000bc7b();	// destructor body
 	void sub_100686b0(int a, int b);	// "CTESpriteSpray::Create" (called through the stub at 0x100014b5)
