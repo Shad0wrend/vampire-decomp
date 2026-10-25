@@ -38,3 +38,66 @@ void CEnvShake::vfunc103()
         *(int *)((char *)this + 0x45c) = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101031c0 size=0x146
+#include "CEnvShake.h"
+#include "CEntityVSlots.h"
+#include "CUnknown1070b244.h"
+#include <math.h>
+
+struct CGlobalVarsView { char pad[0xc]; float curtime; float frametime; };
+extern CGlobalVarsView *g_1070b228;
+extern CUnknown1070b244 *g_1070b244;
+
+struct ShakeThinkView
+{
+    char pad0000[0x17c];
+    float m_flNextThink;	// 0x17c
+    char pad0180[0x454 - 0x180];
+    float m_flFrequency;	// 0x454
+    float m_flDuration;	// 0x458
+    int m_nRadius;	// 0x45c
+    float m_flStopTime;	// 0x460
+    float m_flNextShake;	// 0x464
+    float m_flCurrentAmp;	// 0x468
+    Vector m_vecMaxForce;	// 0x46c
+    CEntityVSlots *m_pOwner;	// 0x478
+    char pad047c[4];
+    Vector m_vecShake;	// 0x480
+
+    float Frequency() const { return m_flFrequency; }
+    float Duration() const { return m_flDuration; }
+};
+
+// TARGET: CEnvShake::vfunc134
+void CEnvShake::vfunc134()
+{
+    ShakeThinkView *p = (ShakeThinkView *)this;
+    int i;
+    if (g_1070b228->curtime > p->m_flNextShake)
+    {
+        p->m_flNextShake = 1.0f / p->Frequency() + g_1070b228->curtime;
+        for (i = 0; i < 2; i++)
+            p->m_vecMaxForce[i] = g_1070b244->vfunc1(-1.0f, 1.0f);
+        p->m_vecMaxForce[2] = 4.0f;
+        VectorNormalize(p->m_vecMaxForce);
+        p->m_vecMaxForce *= p->m_flCurrentAmp * 10.0f;
+    }
+    float fraction = (p->m_flStopTime - g_1070b228->curtime) / p->m_flDuration;
+    if (fraction < 0.0f && p->m_pOwner)
+    {
+        p->m_pOwner->slot6();
+        return;
+    }
+    float freq = 0.0f;
+    if (fraction != 0.0f)
+        freq = p->m_flFrequency / fraction;
+    float angle = (float)sin(freq * g_1070b228->curtime);
+    float flAmp = angle * (fraction * fraction);
+    for (i = 0; i < 3; i++)
+        p->m_vecShake[i] = flAmp * p->m_vecMaxForce[i];
+    float flCurrentAmp = p->m_flCurrentAmp;
+    p->m_flCurrentAmp = flCurrentAmp - (g_1070b228->frametime / (p->Frequency() * p->Duration())) * flCurrentAmp;
+    p->m_flNextThink = g_1070b228->curtime;
+}
+// END FUNCTION
