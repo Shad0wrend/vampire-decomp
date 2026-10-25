@@ -1,4 +1,5 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 13, 17, 18, 20, 21, 26, 30, 31, 32, 35, 38, 47, 49, 58, 59, 61, 62, 65 to 67, 68, 69, 72, 78, 82, 84, 85, 101, 102, 105 and 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 12, 13, 17, 18, 20, 21, 26, 30, 31, 32, 35, 38, 47, 49, 58, 59, 61, 62, 65 to 67, 68, 69, 72, 78, 82, 84, 85, 101, 102, 105 and 119 to 122 are known.
+// Slot 12 answers a flag (the server's "is the level loaded" test, used before the sprite / particle code).
 // Slot 13 takes a resource name and a preload flag (precaches a model / sound / resource) and returns the index.
 // Slot 17 is PrecacheModel(name, preload) and returns the model index.
 // Slot 18 returns the studio header of a model index (0 when there is none), slot 21 the type of a model index (3 = studio).
@@ -30,7 +31,7 @@ class CUnknown1070b22c
 {
 public:
 	U22C_SLOTS10(a0)
-	virtual void a10(); virtual void a11(); virtual void a12(); virtual int vfunc13(const char *pszName, int bPreload); virtual void a14();
+	virtual void a10(); virtual void a11(); virtual int a12(); virtual int vfunc13(const char *pszName, int bPreload); virtual void a14();
 	virtual void a15(); virtual void a16();
 	virtual int vfunc17(int a, int b);
 	virtual void *vfunc18(int modelIndex); virtual void a19();
