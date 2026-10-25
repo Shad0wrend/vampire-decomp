@@ -3933,6 +3933,7 @@
 0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43
 0x1000dca1 func   ?vfunc421@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc421
 0x1000dcab func   ?sub_1013c7e0@@YAMABVVector@@00@Z sub_1013c7e0
+0x1000dcb5 func   ?sub_103a46b0@@YIHPAD@Z sub_103a46b0
 0x1000dcba func   ?vfunc420@CNPC_VHumanCombatant@@QAEXXZ CNPC_VHumanCombatant::vfunc420
 0x1000dcc4 func   ?vfunc3@CTEBloodSprite@@UAEXABVVector@@ABVQAngle@@@Z CTEBloodSprite::vfunc3
 0x1000dcd8 func   ?sub_103ee6f0@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::sub_103ee6f0
