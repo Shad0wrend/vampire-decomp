@@ -83,6 +83,24 @@ void CNPC_VGhoulCroucher::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b1a0 size=0x37
+#include "CNPC_VGhoulCroucher.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+void sub_101d0ec0(const char *pszName);
+void sub_10009dbd();
+
+// TARGET: CNPC_VGhoulCroucher::vfunc104
+void CNPC_VGhoulCroucher::vfunc104()
+{
+	sub_10009dbd();
+	sub_101d0ec0("item_w_claws_ghoul");
+	g_1070b22c->vfunc13("models/character/npc/unique/Malkavian_mansion/Stalker/stalker.mdl", 0);
+	g_1070b22c->vfunc13("models/character/npc/unique/Malkavian_mansion/Stalker_Female/stalker_female.mdl", 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037b290 size=0x107
 #include "CNPC_VGhoulCroucher.h"
 #include "ScopeTrace.h"
