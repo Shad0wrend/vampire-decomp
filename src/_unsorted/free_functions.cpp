@@ -57995,6 +57995,34 @@ void CHistoryList::sub_101e9e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9f40 size=0x3d
+struct CUnk101e9f40 {
+    int m_unk0;
+    int m_nCount;
+
+    int sub_101e9f40(void *pParam);
+    char sub_1000aafb(void *pParam, int i);
+};
+
+int CUnk101e9f40::sub_101e9f40(void *pParam)
+{
+    int i;
+    int n;
+
+    n = 0;
+    i = 0;
+    if (m_nCount > 0) {
+        do {
+            if (sub_1000aafb(pParam, i)) {
+                n++;
+            }
+            i++;
+        } while (i < m_nCount);
+    }
+    return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eaa40 size=0xa
 extern int g_1073a38c;
 
