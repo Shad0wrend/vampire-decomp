@@ -2249,6 +2249,7 @@
 0x100084db func   ?sub_102ef0e0@@YIDPAXHPAUInfo102ef0e0@@MPAH@Z sub_102ef0e0
 0x100084ea func   ?sub_10236400@@YAHXZ sub_10236400
 0x100084f4 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc3
+0x10008521 func   ?vfunc617@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc617
 0x10008530 func   ?vfunc5@CWeaponMelee_Sledgehammer@@QAEPAV1@I@Z CWeaponMelee_Sledgehammer::vfunc5
 0x10008535 func   ?sub_10042c10@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10042c10
 0x1000853a func   ?vfunc8@IGameSystem@@QAEPAV1@I@Z IGameSystem::vfunc8
