@@ -39746,6 +39746,41 @@ int sub_101388c0(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101388e0 size=0x146
+#include "Vector.h"
+#include "matrix3x4_t.h"
+
+extern Vector g_1070d1b0;
+void sub_10138760(const Vector &in, int column, matrix3x4_t &out);
+
+void sub_101388e0(const Vector &forward, matrix3x4_t &matrix)
+{
+	Vector right, up, left;
+	if (forward.x == 0 && forward.y == 0)
+	{
+		up.y = -forward.z;
+		left.x = -1.0f;
+		left.y = 0;
+		left.z = 0;
+		up.x = 0;
+		up.z = 0;
+	}
+	else
+	{
+		Vector worldUp(0, 0, 1);
+		CrossProduct(forward, worldUp, right);
+		VectorNormalize(right);
+		CrossProduct(right, forward, up);
+		VectorMultiply(right, -1.0f, left);
+		VectorNormalize(up);
+	}
+	sub_10138760(forward, 0, matrix);
+	sub_10138760(left, 1, matrix);
+	sub_10138760(up, 2, matrix);
+	sub_10138760(g_1070d1b0, 3, matrix);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138a90 size=0xc7
 #include "Vector.h"
 
