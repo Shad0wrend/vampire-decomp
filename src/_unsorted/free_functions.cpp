@@ -14185,6 +14185,36 @@ void sub_10085070(int *dst, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10085130 size=0x37
+#include "CBaseAnimating.h"
+
+struct CUnknown10085130
+{
+	char m_pad0000[0x6f0];
+	int m_n6f0;
+	char m_pad06f4[0x6f8 - 0x6f4];
+	int m_n6f8;
+	char m_pad06fc[0x730 - 0x6fc];
+	int m_n730;
+
+	void sub_10085130(int a);
+	void sub_10090950();
+};
+
+// TARGET: CUnknown10085130::sub_10085130
+void CUnknown10085130::sub_10085130(int a)
+{
+	int iSeq = ((CBaseAnimating *)this)->sub_1008dc40(a, -1);
+	if (iSeq != -1)
+	{
+		m_n6f0 = iSeq;
+		m_n730 = a;
+		m_n6f8 = 0;
+		sub_10090950();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10085480 size=0x116
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
