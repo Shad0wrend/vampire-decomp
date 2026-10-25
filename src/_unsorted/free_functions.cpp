@@ -49458,6 +49458,41 @@ void CUnknown101bc140::sub_101bc140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc540 size=0x40
+#include "CUnknown101bbd10.h"
+
+struct CUnknown101bc540Obj
+{
+	void sub_100139e4(int a, int b);
+	void sub_10014713(int a, int b);
+};
+
+struct CUnknown101bc540Rec
+{
+	void *m_pObj;	// +0
+	int m_n04;
+	int m_n08;	// +0x8
+	int m_nMode;	// +0xc
+	int m_n10;	// +0x10
+};
+
+// TARGET: sub_101bc540
+void __stdcall sub_101bc540(CUnknown101bc540Rec *p)
+{
+	switch (p->m_nMode) {
+	case 2:
+		((CUnknown101bbd10 *)p->m_pObj)->sub_101bbd10();
+		break;
+	case 1:
+		((CUnknown101bc540Obj *)p->m_pObj)->sub_10014713(p->m_n10, p->m_n08);
+		break;
+	case 0:
+		((CUnknown101bc540Obj *)p->m_pObj)->sub_100139e4(p->m_n10, p->m_n08);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc750 size=0x7e
 #include "CUnknown101bc750.h"
 struct Mem4;
