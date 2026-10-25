@@ -61170,6 +61170,34 @@ void CVTraitEffectGroup_t::sub_101f73f0(CVStatKV *pKV)
 bool __fastcall sub_101f74e0(int *p) { bool r = p[3] != -1; return r; }
 // END FUNCTION
 
+// FUNCTION: 0x101f75f0 size=0x3a
+#include "CUnknown101f6c50.h"
+
+struct CUnk101f75f0
+{
+    char m_pad0000[0xc];
+    int m_n0c;    // 0xc
+    int m_n10;    // 0x10
+    char *m_p14;    // 0x14: an array of 0x44 byte elements
+    void sub_101f75f0(CTraitStatBlock *pOut);
+};
+
+// TARGET: ?sub_101f75f0@CUnk101f75f0@@QAEXPAUCTraitStatBlock@@@Z
+void CUnk101f75f0::sub_101f75f0(CTraitStatBlock *pOut)
+{
+    if (m_n0c == 0) {
+        int i = 0;
+        *(int *)((char *)pOut + 0x40) = 0;
+        if (m_n10 > 0) {
+            do {
+                ((CUnknown101f6c50 *)(m_p14 + i * 0x44))->sub_101f6c50(pOut);
+                i++;
+            } while (i < m_n10);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f7690 size=0x3c
 struct CUnk101f7690Elem {
     void sub_1000dc79(int a, int b, int c);
