@@ -47541,6 +47541,64 @@ unsigned int CAmbientGeneric::sub_101ac2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af0d0 size=0x18a
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+#include "CUnknown1070b22c.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+
+struct SndOwnerView
+{
+	virtual void a0();
+	virtual void a1();
+	virtual void a2();
+	virtual void a3();
+	virtual CEntitySoundOriginView *vfunc4();
+};
+
+struct SndSrcView
+{
+	char m_pad[0x40];
+	SndOwnerView *m_pOwner;
+};
+
+struct SndTimeView
+{
+	virtual void a0();
+	virtual bool vfunc1();
+	char m_pad[0x24];
+	float m_flValue;
+};
+
+extern SndTimeView *g_1070ac84;
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern CUnknown1070b22c *g_1070b22c;
+
+void sub_101af0d0(SndSrcView *pSrc, const char *pszSample)
+{
+	int pitch = 100;
+	float vol;
+	if (g_1070ac84->vfunc1())
+		vol = 0;
+	else
+		vol = g_1070ac84->m_flValue;
+	if (g_1070b244->vfunc2(0, 1))
+		pitch = g_1070b244->vfunc2(0, 6) + 0x62;
+	if (vol > 0.05) {
+		CEntitySoundOriginView *pEnt;
+		if (pSrc && pSrc->m_pOwner)
+			pEnt = pSrc->m_pOwner->vfunc4();
+		else
+			pEnt = 0;
+		CPASAttenuationFilter filter(pEnt);
+		filter.MakeReliable();
+		g_1070b248->vfunc3((CRecipientFilter *)&filter, g_1070b22c->vfunc35((int)pSrc), 6, pszSample, vol, 0.8f, 0, pitch, 0, 0, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af880 size=0x86
 struct CGlobalVarsY { char pad[0xc]; float curtime; };
 extern CGlobalVarsY *g_1070b228;
