@@ -4902,6 +4902,7 @@
 0x10010e42 func   ?sub_10072d60@S10072d60@@QAEXPBD@Z S10072d60::sub_10072d60
 0x10010e4c func   ?vfunc5@CWeaponThrown_Chang_Ghost@@QAEPAV1@I@Z CWeaponThrown_Chang_Ghost::vfunc5
 0x10010e56 func   ?vfunc180@CNPC_VCop@@QAEXXZ CNPC_VCop::vfunc180
+0x10010e60 func   ?vfunc42@CBaseEntity@@QAEXPAX@Z CBaseEntity::vfunc42
 0x10010e6f func   ?sub_100c97c0@CBaseButton@@QAEXXZ CBaseButton::sub_100c97c0
 0x10010e83 func   ?vfunc438@CNPC_VTzimisceHeadClaw@@QAEHXZ CNPC_VTzimisceHeadClaw::vfunc438
 0x10010e88 func   ?sub_1018d210@CPointAngleSensor@@QAEXPAUinputdata_t@@@Z CPointAngleSensor::sub_1018d210
