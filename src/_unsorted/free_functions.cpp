@@ -39500,6 +39500,47 @@ bool __fastcall sub_101664d0(CVirtSlots94 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10167030 size=0x11e
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+
+extern Vector g_1070d1b0;
+void sub_101cf5c0(CBasePlayer *pPlayer, Vector *pOrigin, int a);
+
+struct CBasePlayerView
+{
+	char m_pad0000[0x184];
+	Vector m_vec184;
+	char m_pad0190[0x1fc - 0x190];
+	int m_nTakeDamage;
+	char m_pad0200[0x26c - 0x200];
+	const char *m_pszName;
+	char m_pad0270[0x206c - 0x270];
+	Vector m_vecTarget;
+	char m_pad2078[4];
+	int m_n207c;
+};
+
+void CBasePlayer::sub_10167030(Vector vecOrigin, Vector vecTarget)
+{
+	CBasePlayerView *p = (CBasePlayerView *)this;
+	*(unsigned int *)((char *)this + 0x20f0) |= 0x20;
+	p->m_vec184 = g_1070d1b0;
+	vfunc64(&vecTarget.x);
+	p->m_vecTarget = vecTarget;
+	p->m_n207c = 1;
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", p->m_pszName ? p->m_pszName : g_106b8540);
+		CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+		pCollision->sub_100dc580(pCollision->m_usSolidFlags | 4);
+	}
+	p->m_nTakeDamage = 0;
+	((CBaseEntity *)this)->vfunc93(0, 0);
+	((CBaseEntity *)this)->vfunc10(0);
+	sub_101cf5c0(this, &vecOrigin, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101671a0 size=0x73
 #include "CBaseCombatCharacter.h"
 
