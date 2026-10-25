@@ -101969,6 +101969,49 @@ void *CNPC_VAsianVampire::sub_103615c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10361730 size=0x11f
+#include "CNPC_VAsianVampire.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct HintListView : CEntityVSlots
+{
+    char pad[0x5d8 - 4];
+    HintListView *m_pNext;
+    int m_nHintType;
+};
+extern HintListView *g_10925450;
+extern float g_104a9320;
+
+// TARGET: CNPC_VAsianVampire::sub_10361730
+void *CNPC_VAsianVampire::sub_10361730()
+{
+    ScopeTrace trace("CNPC_VAsianVampire::SelectJumpbaseNode", g_106b8540);
+    HintListView *pBest = 0;
+    float flBest; flBest = 3.402823466e+38f;
+    { HintListView *pHint = g_10925450; while (pHint) { if (pHint->m_nHintType == 0x4650)
+        {
+            if (sub_103629d0((const float *)pHint->slot217(), g_104a9320))
+            {
+                const Vector *pHintPos = pHint->slot217();
+                const Vector *pPos = ((CEntityVSlots *)this)->slot217();
+                Vector delta;
+                VectorSubtract(*pPos, *pHintPos, delta);
+                float flDist = FastSqrt((delta.x * delta.x) + (delta.z * delta.z) + delta.y * delta.y);
+                if (flDist < flBest)
+                {
+                    flBest = flDist;
+                    pBest = pHint;
+                }
+            }
+        } pHint = pHint->m_pNext; } }
+    if (pBest)
+        sub_10361990((CBaseEntity *)pBest);
+    return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103618a0 size=0xbc
 #include "ScopeTrace.h"
 #include "CNPC_VAsianVampire.h"
