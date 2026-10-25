@@ -16,7 +16,7 @@ public:
 	virtual void vfunc6();
 	virtual void vfunc7(const char *value);
 	virtual void vfunc8();
-	virtual void vfunc9();
+	virtual void vfunc9(int nValue);	// slot 9 (0x24): takes the integer value; called by ConVar::SetValue( int ) on this and on the parent (the flagged convar)
 	virtual bool vfunc10(float *value);
 	virtual void vfunc11(const char *value);	// "ConVar::ChangeStringValue": copies the old string to the stack when a change callback is set, stores the new string, calls the callback with the old one
 	virtual void vfunc12(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax, void (*pCallback)(ConVar *, const char *));	// "ConVar::Create": stores the default string (an empty one when null), a heap copy of it, its length, the parsed float / int value and the limits, then ConCommandBase::Create(name, help, flags)
