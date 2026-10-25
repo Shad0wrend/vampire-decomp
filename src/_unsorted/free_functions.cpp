@@ -27094,6 +27094,31 @@ void sub_100dad50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100daec0 size=0x36
+#include "CBasePlayer.h"
+
+extern int *g_1070b22c;
+
+void *sub_10008d8c();
+
+// TARGET: sub_100daec0
+void sub_100daec0()
+{
+    char *pEnt = (char *)sub_10008d8c();
+    if (pEnt != 0) {
+        CBasePlayer *pPlayer = *(CBasePlayer **)(pEnt + 0xa8);
+        if (pPlayer != 0) {
+            int nValue = ((int (__fastcall *)(int *))(*(int **)g_1070b22c)[85])(g_1070b22c);
+            if (nValue == 1) {
+                pPlayer->sub_1015ef40();
+            } else {
+                pPlayer->sub_1015ef60();
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db0b0 size=0xc3
 #include "CBaseAnimating.h"
 #include "ConVar.h"
