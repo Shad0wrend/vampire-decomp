@@ -94187,6 +94187,31 @@ CAI_Waypoint *CAI_Pathfinder::sub_10304020(int a1, const float *pEndPosition, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x103048d0 size=0x11d
+#include "CAI_Pathfinder.h"
+
+// TARGET: CAI_Pathfinder::sub_103048d0
+bool CAI_Pathfinder::sub_103048d0(int navType, const float *vecStart, const float *vecEnd)
+{
+	AIMoveTrace_t trace;
+	((CAI_PathfinderOuter *)m_pOuter)->m_pMoveProbe->sub_102e6d70(navType, vecStart, vecEnd, 0x202400b, 0, 100.0f, 0, &trace, 0, 0);
+	if (trace.fStatus >= 0)
+		return true;
+	Vector vecDelta = *(Vector *)vecEnd - *(Vector *)vecStart;
+	float t1 = vecDelta.z * vecDelta.z; float t2 = vecDelta.y * vecDelta.y; float t0 = (t1) + (vecDelta.x * vecDelta.x + t2); float flDist = FastSqrt(t0);
+	float apex[3];
+	if (sub_103059d0(navType, vecStart, vecEnd, flDist - *(float *)&trace.m_unk[8], 0, apex, 0x202400b, 0))
+		return true;
+	if (trace.m_unk[6] && *(int *)((char *)trace.m_unk[6] + 0x94))
+	{
+		((CAI_PathfinderOuter *)m_pOuter)->m_pMoveProbe->sub_102e6d70(navType, vecStart, vecEnd, 0x2400b, 0, 100.0f, 0, &trace, 0, 0);
+		if (0 <= trace.fStatus)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103058c0 size=0xc6
 #include "CAI_Pathfinder.h"
 
