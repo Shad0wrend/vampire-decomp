@@ -19,11 +19,18 @@ public:
 	FP_V(170) FP_V(171) FP_V(172) FP_V(173) FP_V(174) FP_V(175) FP_V(176) FP_V(177)
 	virtual void vfunc178(CBaseEntity *pOther);	// slot 178 "CFuncPlat::Blocked": DevMsg "%s Blocked by %s" (the class names of both edicts), damages pOther by 1 (CTakeDamageInfo built by sub_101c26d0), stops the sound named at +0x570 (sound system slot 7 with the entity index and channel 6), then calls slot 243 when the toggle state (+0x4f8) is 2 or slot 242 when it is 3
 	FP_V(179)
-	FP_V10(18) FP_V10(19) FP_V10(20) FP_V10(21) FP_V10(22) FP_V10(23)
+	FP_V10(18) FP_V10(19) FP_V10(20) FP_V10(21)
+	FP_V(220) virtual float *vfunc221();	// slot 221 "GetAngles": the entity's angles (+0x428)
+	FP_V(222) FP_V(223) FP_V(224) FP_V(225) FP_V(226) FP_V(227) FP_V(228) FP_V(229)
+	FP_V10(23)
 	virtual void vfunc240(); virtual unsigned char vfunc241();
 	virtual void vfunc242(); virtual void vfunc243();	// 242: starts the sound named at +0x55c (if any) and moves to position 1 (state 2); 243: the same toward position 2 (state 3)
 	FP_V(244)
 	virtual void vfunc245();	// "HitBottom"-like: stops the sound at +0x55c, plays the one at +0x560 (channel 1) and sets the toggle state (+0x4f8) to 1
+
+	void sub_1015a3c0(const Vector &vecDestAngles, float flTime);	// "AngularMove"-like (called by slots 242 / 243 of the rotating platform): the angular velocity that turns the angles to vecDestAngles in flTime seconds (the plain difference with a move-done time one second ahead when flTime is below 0.1)
+	void sub_100b2f50(const Vector &vecAngVelocity);	// CBaseEntity::SetLocalAngularVelocity (stub 0x10006a5f), called directly
+
 	char m_pad[0x114 - 4];
 	void *m_pfnThink;	// 0x114
 	char m_pad0118[0x164 - 0x118];
