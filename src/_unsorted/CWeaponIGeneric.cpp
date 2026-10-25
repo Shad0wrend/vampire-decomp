@@ -16,6 +16,24 @@ CWeaponIGeneric *CWeaponIGeneric::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4400 size=0x34
+#include <string.h>
+#include "CWeaponIGeneric.h"
+#include "CBaseCombatWeapon.h"
+extern char g_106b8540[];
+void sub_1000ce23(CWeaponIGeneric *pWeapon);
+// TARGET: CWeaponIGeneric::vfunc103
+void CWeaponIGeneric::vfunc103()
+{
+	((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc103();
+	char *pszName = *(char **)((char *)this + 0x11c);
+	if (!pszName)
+		pszName = g_106b8540;
+	if (_strcmpi(pszName, "item_g_warrens4_passkey") == 0)
+		sub_1000ce23(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f48a0 size=0x70
 #include "CWeaponIGeneric.h"
 struct IRandom { virtual void v0(); virtual void v1(); virtual int RandomInt(int lo, int hi); };
