@@ -3538,6 +3538,7 @@
 0x1000cc16 func   ?vfunc367@CWeaponMelee@@QAEXHHH@Z CWeaponMelee::vfunc367
 0x1000cc43 func   ?sub_1006c0a0@CUnknown1006bea0@@QAEXPAD@Z CUnknown1006bea0::sub_1006c0a0
 0x1000cc5c func   ?vfunc0@CVoiceGameMgr@@QAEPAV1@I@Z CVoiceGameMgr::vfunc0
+0x1000cc61 func   ?vfunc1@CHLPlayerMove@@QAEXHHHH@Z CHLPlayerMove::vfunc1
 0x1000cc70 func   ??1CUnknown102cff90@@QAE@XZ CUnknown102cff90::~CUnknown102cff90
 0x1000cc7f func   ?sub_10227410@CUnknown10227410@@QAEXH@Z CUnknown10227410::sub_10227410
 0x1000cca7 func   ?sub_103aa960@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::sub_103aa960
