@@ -165,3 +165,20 @@ void CSave::vfunc4()
 	vfunc5(g_106b8540);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a0a80 size=0x3f
+#include "vampire.h"
+#include "CSave.h"
+
+// TARGET: CSave::vfunc25
+void CSave::vfunc25(const float *pValues, int count)
+{
+    for (int i = 0; i < count; i++)
+    {
+        float flValue;
+        flValue = *(float *)((char *)m_pEntityBlock + 0x12e8);
+        flValue = pValues[i] - flValue;
+        vfunc16(&flValue, 4);
+    }
+}
+// END FUNCTION
