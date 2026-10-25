@@ -25659,6 +25659,34 @@ float CMomentaryRotButton::sub_100ca630(float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cacb0 size=0x115
+#include "CMomentaryRotButton.h"
+#include "CEntityVSlots.h"
+extern Vector g_1070d9d0;
+void CMomentaryRotButton::sub_100cacb0(float flAngle, bool bFlag)
+{
+    int direction = m_nDirection5d8;
+    m_flTime3fc = m_flLocalTime3f4 + 0.1;
+    if (direction > 0 && flAngle >= 1.0)
+    {
+        sub_100b2f50(&g_1070d9d0.x);
+        ((CEntityVSlots *)this)->slot64(&m_vecEnd5ec.x);
+        m_Output5bc.sub_100cd660(this, this, 0);
+        return;
+    }
+    if (direction < 0 && flAngle <= 0.0f)
+    {
+        sub_100b2f50(&g_1070d9d0.x);
+        ((CEntityVSlots *)this)->slot64(&m_vecStart5e0.x);
+        m_Output5a4.sub_100cd660(this, this, 0);
+        return;
+    }
+    Vector avel = *(Vector *)m_vecMoveDir * (direction * m_flSpeed164);
+    sub_100b2f50(&avel.x);
+    m_pfnThink114 = &CMomentaryRotButton::sub_100cae90;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cae90 size=0xda
 #include "CMomentaryRotButton.h"
 #include "CEntityVSlots.h"
