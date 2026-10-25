@@ -27,7 +27,11 @@ public:
 	int sub_10299da0(CNPC_VCopTarget *pEnt);	// CAI_BaseNPCTroika::vfunc404 (stub 0x10001adc), called directly
 	void vfunc598(CBaseEntity *pTarget);	// slot 598 (declared as a plain member): when pTarget is the entity of the handle at +0x628c: forgets it (relationship 4, no target at +0x6668, no enemy / no look target when they are pTarget), registers a "Player D_NU 10" note with the entity registry (slot 541); else CAI_BaseNPCTroika::vfunc598
 	void sub_10273790(const char *pszText, int a);	// CAI_BaseNPC member (stub 0x1000421e): prints / records a debug note
+	void vfunc180();	// slot 180: clears the two per-NPC counter flags at +0x6671 / +0x6672 (decrementing the globals 0x1093acac / 0x1093acb0 for each one that was set), then CAI_BaseNPCTroika::vfunc180
 
 	char m_pad03e0[0x628c - 0x3e0];
 	unsigned int m_h628c;	// 0x628c
+	char m_pad6290[0x6671 - 0x6290];
+	char m_b6671;	// 0x6671
+	char m_b6672;	// 0x6672
 };
