@@ -24907,6 +24907,40 @@ char sub_100c5b00(CBoneOwner *p, int a, int b, Vector *turn, Vector *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5d10 size=0x168
+#include "Vector.h"
+
+void sub_100c5400(void *pStudioHdr, int iSequence, const float *poseParameter, void **panim, float *weight);
+char sub_100c5b00(void *panim, float flCycleFrom, float flCycleTo, Vector &deltaPos, Vector &deltaAngles);
+
+bool sub_100c5d10(void *pStudioHdr, int iSequence, float flCycleFrom, float flCycleTo, const float *poseParameter, Vector &deltaPos, Vector &deltaAngles)
+{
+	void *panim[4];
+	float weight[4];
+	sub_100c5400(pStudioHdr, iSequence, poseParameter, panim, weight);
+	deltaPos.Init();
+	deltaAngles.Init();
+	bool found = false;
+	for (int i = 0; i < 4; i++)
+	{
+		if (weight[i])
+		{
+			Vector localPos;
+			Vector localAngles;
+			localPos.Init();
+			localAngles.Init();
+			if (sub_100c5b00(panim[i], flCycleFrom, flCycleTo, localPos, localAngles))
+			{
+				found = true;
+				deltaPos = deltaPos + localPos * weight[i];
+				deltaAngles = deltaAngles + localAngles * weight[i];
+			}
+		}
+	}
+	return found;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6020 size=0x160
 #include "Vector.h"
 
