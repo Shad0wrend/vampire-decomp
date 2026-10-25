@@ -767,6 +767,7 @@
 0x1000392c func   ?sub_101727a0@@YAXPAUCPlayerVecSlotsX@@H@Z sub_101727a0
 0x10003931 func   ?sub_10050d90@CDisciplineParticle@@SAPAV1@HHHHHHHHHH@Z CDisciplineParticle::sub_10050d90
 0x1000393b func   ?sub_102e9a90@CUtlVector280@@QAEHHPBX@Z CUtlVector280::sub_102e9a90
+0x10003940 func   ?vfunc408@CNPC_VMingXiaoTentacle@@QAEPAXH@Z CNPC_VMingXiaoTentacle::vfunc408
 0x10003963 func   ?vfunc103@CSoundEnt@@UAEXXZ CSoundEnt::vfunc103
 0x10003977 func   ?sub_10180100@CBasePlayer@@QAEPAVCBaseEntity@@H@Z CBasePlayer::sub_10180100
 0x1000398b func   ?sub_10103100@CUnknown10103100@@QAEXH@Z CUnknown10103100::sub_10103100

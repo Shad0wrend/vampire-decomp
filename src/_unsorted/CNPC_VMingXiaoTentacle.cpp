@@ -127,3 +127,25 @@ void CNPC_VMingXiaoTentacle::vfunc433()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1039ece0 size=0x32
+#include "CNPC_VMingXiaoTentacle.h"
+
+extern char g_1064a42c;
+extern char g_1064a430;
+extern char g_1064a434;
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc408
+void *CNPC_VMingXiaoTentacle::vfunc408(int condition)
+{
+    switch (condition) {
+    case 0x77:
+        return &g_1064a42c;
+    case 0x78:
+        return &g_1064a430;
+    case 0x79:
+        return &g_1064a434;
+    }
+    return sub_1027ede0(condition);
+}
+// END FUNCTION
