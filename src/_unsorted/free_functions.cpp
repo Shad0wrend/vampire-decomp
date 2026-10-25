@@ -82875,6 +82875,47 @@ int CUnknown102e0630::sub_102e0630(void *enemy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e0860 size=0x80
+#include "CUtlVectorDataOps.h"
+struct CAI_InterestTarget;
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern int g_1060e508[2];
+static inline ISaveRestoreOps *GetVecOps()
+{
+    static CUtlVectorDataOps<CAI_InterestTarget, 9> ops;
+    return (ISaveRestoreOps *)&ops;
+}
+int *sub_102e0860()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "m_IdealYaw", {0x34, 0}, 1, 2 },
+        { 1, "m_YawSpeed", {0x38, 0}, 1, 2 },
+        { 15, "m_flLastYawTime", {0x2c, 0}, 1, 2 },
+        { 3, "m_vecVelocity", {0x3c, 0}, 1, 2 },
+        { 3, "m_vecAngularVelocity", {0x48, 0}, 1, 2 },
+        { 10, "m_facingQueue", {0x54, 0}, 1, 2, 0, GetVecOps(), 0 },
+    };
+    g_1060e508[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1060e508[0] = (int)&dataDesc[1];
+    return g_1060e508;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e0900 size=0x64
 extern int vt_1049d79c[];
 extern int vt_1049d854[];
