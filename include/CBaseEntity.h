@@ -49,7 +49,7 @@ public:
 	virtual void vfunc24(); virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28();
 	virtual void vfunc29(); virtual float vfunc30(); virtual void vfunc31(); virtual bool vfunc32(int a); virtual void vfunc33();
 	virtual int vfunc34(int a); virtual int vfunc35(int a); virtual void vfunc36(); virtual void vfunc37(); virtual void vfunc38();
-	virtual void vfunc39(); virtual void vfunc40(); virtual void vfunc41(); virtual void vfunc42(); virtual void vfunc43();
+	virtual void vfunc39(CBaseEntity *pOther); virtual void vfunc40(); virtual void vfunc41(); virtual void vfunc42(); virtual void vfunc43();
 	virtual void vfunc44(); virtual void vfunc45(); virtual void vfunc46(); virtual void vfunc47(); virtual void vfunc48();
 	virtual void vfunc49(); virtual void vfunc50(); virtual void vfunc51(); virtual void vfunc52(); virtual void vfunc53();
 	virtual void vfunc54(); virtual void vfunc55(); virtual void vfunc56(); virtual void vfunc57(); virtual void vfunc58();
