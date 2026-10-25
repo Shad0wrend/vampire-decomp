@@ -68943,6 +68943,26 @@ CLogicVisible *CLogicVisible::sub_1020f990()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210180 size=0x32
+#include "CEntityVSlots.h"
+
+struct CUnit10210250
+{
+	bool sub_10210250(CEntityVSlots *pA, CEntityVSlots *pB);
+	char sub_102102e0(CEntityVSlots *pA, CEntityVSlots *pB);
+	bool sub_10210180(CEntityVSlots *pA, CEntityVSlots *pB);
+};
+
+// TARGET: CUnit10210250::sub_10210180
+bool CUnit10210250::sub_10210180(CEntityVSlots *pA, CEntityVSlots *pB)
+{
+	if (!sub_10210250(pA, pB)) {
+		return false;
+	}
+	return sub_102102e0(pA, pB) ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210250 size=0x70
 #include "CEntityVSlots.h"
 #include <math.h>
