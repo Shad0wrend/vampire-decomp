@@ -54,5 +54,5 @@ public:
 	UtlHash8 *sub_10041f40(int nBuckets, int growSize, int initSize, bool (__cdecl *pCompare)(void *, void *), unsigned int (__cdecl *pKey)(void *));	// constructor (another instance)
 	UtlHash8 *sub_100420a0(int nBuckets, int growSize, int initSize, bool (__cdecl *pCompare)(void *, void *), unsigned int (__cdecl *pKey)(void *));	// constructor (another instance)
 	void sub_10042580();	// destroys every bucket (last to first) and empties the bucket vector
-	void sub_100426c0();	// the same for another instance (stub 0x10003db9)
+	void sub_10042800();	// same as sub_10042580 (another instance, stub 0x100099f3)
 };
