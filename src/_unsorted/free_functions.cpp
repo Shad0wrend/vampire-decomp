@@ -76392,6 +76392,22 @@ single:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102473e0 size=0x32
+extern char g_10753640;
+extern char g_10753440;
+extern char g_10753540;
+void sub_1023eff0(char *pObj, const char *pszChars);
+
+void sub_102473e0()
+{
+    if (!g_10753640) {
+        sub_1023eff0(&g_10753440, "{}()'");
+        sub_1023eff0(&g_10753540, "{}()':");
+        g_10753640 = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247450 size=0x98
 extern "C" __declspec(dllimport) int RandomInt(int, int);
 extern char g_105c4f00[];
