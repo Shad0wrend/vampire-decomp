@@ -73072,6 +73072,29 @@ void sub_10237ce0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10237f90 size=0x38
+// TARGET: sub_10237f90
+extern int g_10751a54;
+extern const char *g_105bf918[];
+extern char g_1053e080[];
+extern void (*g_109f3628)(const char *, ...);
+const char *sub_100077cf(const char *pszName);
+
+void sub_10237f90()
+{
+	int i = 0;
+	if (g_10751a54 > 0)
+	{
+		void (*pfnMsg)(const char *, ...) = g_109f3628;
+		do
+		{
+			pfnMsg(g_1053e080, sub_100077cf(g_105bf918[i]));
+			i++;
+		} while (i < g_10751a54);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10238380 size=0x12
 extern int g_1088aee4;
 void __stdcall sub_102383b0(int a);

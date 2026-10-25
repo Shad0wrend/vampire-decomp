@@ -4652,6 +4652,7 @@
 0x100108e3 func   ?vfunc283@CWeaponMelee@@UAE_NPAVCBaseEntity@@@Z CWeaponMelee::vfunc283
 0x100108ed func   ??1CEnvPlayerSurfaceTrigger@@QAE@XZ CEnvPlayerSurfaceTrigger::~CEnvPlayerSurfaceTrigger
 0x100108fc func   ?sub_101a59f0@CUnknown101a59f0@@QAEXH@Z CUnknown101a59f0::sub_101a59f0
+0x1001091a func   ?sub_10237f90@@YAXXZ sub_10237f90
 0x1001091f func   ?sub_100e4780@CDialog@@QAEXXZ CDialog::sub_100e4780
 0x10010924 func   ?sub_102dfd90@CUnknown102dfd90@@QAEXPAVCBaseEntity@@@Z CUnknown102dfd90::sub_102dfd90
 0x10010929 func   ?sub_103e8570@@YAHXZ sub_103e8570
