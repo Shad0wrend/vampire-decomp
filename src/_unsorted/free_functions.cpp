@@ -42489,6 +42489,44 @@ float CUnknown10160680::sub_10160680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160ec0 size=0x79
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CBaseCombatWeapon.h"
+#include "TestBit.h"
+
+struct PlayerView : CEntityVSlots
+{
+    char pad0004[0x268 - 4];
+    unsigned int m_flags268;
+    char pad026c[0x3bc - 0x26c];
+    Vector m_vecAbsVelocity;	// 0x3bc
+    char pad03c8[0x2088 - 0x3c8];
+    unsigned int m_nFlags2088;
+
+    int sub_100b3700();	// CBaseEntity::GetFlags (stub 0x10008b84)
+    CBaseCombatWeapon *sub_1032e7b0();	// the active weapon (stub 0x10007e19)
+    void sub_100b1d10();	// CBaseEntity::CalcAbsoluteVelocity (stub 0x1000d486)
+};
+
+// TARGET: sub_10160ec0
+bool __fastcall sub_10160ec0(PlayerView *pThis)
+{
+    if (pThis->sub_100b3700() & 1)
+    {
+        CBaseCombatWeapon *pWeapon = pThis->sub_1032e7b0();
+        if (pWeapon && !(pWeapon->vfunc360() & 0x18000))
+            return false;
+        if (pThis->m_nFlags2088 & 0x8000000)
+            return true;
+        if (TestBit(pThis->m_flags268, 12))
+            pThis->sub_100b1d10();
+        pThis->m_vecAbsVelocity.Length2D();
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101618a0 size=0x2d
 #include "CBasePlayer.h"
 

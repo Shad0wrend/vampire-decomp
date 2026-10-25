@@ -5760,6 +5760,7 @@
 0x10013241 func   ?vfunc113@CPhysForce@@UAEXXZ CPhysForce::vfunc113
 0x10013246 func   ?sub_1009bd10@CBaseEntity@@QAEXHHMMM@Z CBaseEntity::sub_1009bd10
 0x10013273 func   ?sub_100fea60@CUnknown100fea60@@QAEXPAVCBaseEntity@@@Z CUnknown100fea60::sub_100fea60
+0x1001327d func   ?sub_10160ec0@@YI_NPAUPlayerView@@@Z sub_10160ec0
 0x10013282 func   ?sub_10090e30@CBaseAnimating@@QAE_NH@Z CBaseAnimating::sub_10090e30
 0x1001328c func   ?sub_10074b10@CFlexAnimationTrack@@QAEXH@Z CFlexAnimationTrack::sub_10074b10
 0x100132a0 func   ?vfunc238@CBaseEntity@@QAEXHHHH@Z CBaseEntity::vfunc238
