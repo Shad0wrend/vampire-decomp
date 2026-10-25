@@ -23172,6 +23172,24 @@ void CBitString::sub_100bf480(int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0830 size=0x39
+#include "CFloatPair3f4.h"
+
+char __stdcall sub_10014691(int a);
+
+// TARGET: CFloatPair3f4::sub_100c0830
+void CFloatPair3f4::sub_100c0830()
+{
+    if (sub_10014691(m_n45c))
+    {
+        m_pfn114 = &CFloatPair3f4::sub_100c08d0;
+        sub_100c08d0();
+        return;
+    }
+    m_f3fc = m_f3f4 + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c08d0 size=0x13
 struct CFloatPair3f4 {
     char pad_0000[0x3f4];
