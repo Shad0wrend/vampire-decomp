@@ -60184,6 +60184,33 @@ CUnknown101ed9e0 *CUnknown101ed9e0::sub_101ed9e0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eda90 size=0x36
+int sub_10431c2f(char *buffer, const char *format, ...);
+void sub_10203dd0(const char *pszText);
+
+struct CUnknown101eda90
+{
+	int m_n00;
+	char m_pad04[4];
+	const char *m_pszText08;
+
+	void sub_101eda90();
+};
+
+// TARGET: CUnknown101eda90::sub_101eda90
+void CUnknown101eda90::sub_101eda90()
+{
+	const char *pszText = m_pszText08;
+	if (pszText == 0)
+	{
+		pszText = "";
+	}
+	char buf[0x80];
+	sub_10431c2f(buf, "(%d): %s\n", m_n00, pszText);
+	sub_10203dd0(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101edae0 size=0x23f
 #include "CUnknown101edae0.h"
 

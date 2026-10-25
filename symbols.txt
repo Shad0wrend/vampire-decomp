@@ -1503,6 +1503,7 @@
 0x100060b9 func   _item_w_claws_protean5 item_w_claws_protean5
 0x100060be func   ?vfunc494@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc494
 0x100060d7 func   ?sub_102dcf70@CUnknown102dcf70@@QAE_NPAVCKeyValuesX@@PAHPAUCUnknown102dcf70Entry@@@Z CUnknown102dcf70::sub_102dcf70
+0x100060e1 func   ?sub_101eda90@CUnknown101eda90@@QAEXXZ CUnknown101eda90::sub_101eda90
 0x100060e6 func   ?sub_1039e970@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::sub_1039e970
 0x100060f5 func   ?sub_102db740@CAI_InterestingPlaceConverstation@@QAEXH@Z CAI_InterestingPlaceConverstation::sub_102db740
 0x100060fa func   ?sub_101358e0@CUnknown101358e0@@QAEXPAH@Z CUnknown101358e0::sub_101358e0
