@@ -91734,6 +91734,40 @@ void CAI_Expresser::sub_10312b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312c80 size=0x35
+#include "CAI_Expresser.h"
+
+extern void *vt_1049885c[];
+extern void *vt_10498830[];
+extern void *vt_10498818[];
+
+struct CAI_ExpressiveNPCDtorView {
+    void **vfptr;
+    char pad0[0x19b0 - 4];
+    void **vfptr1;
+    char pad1[0x5f44 - 0x19b0 - 4];
+    void **vfptr2;
+    CAI_Expresser *pExpresser;
+    void sub_1027c820();
+};
+
+// TARGET: sub_10312c80
+void __fastcall sub_10312c80(CAI_ExpressiveNPCDtorView *p)
+{
+    CAI_Expresser *pExp = p->pExpresser;
+    p->vfptr = vt_1049885c;
+    if (pExp) {
+        p->vfptr2 = vt_10498818;
+        p->vfptr1 = vt_10498830;
+        delete pExp;
+    } else {
+        p->vfptr1 = vt_10498830;
+        p->vfptr2 = vt_10498818;
+    }
+    p->sub_1027c820();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312f70 size=0x30
 #include "CUtlMemory16.h"
 
