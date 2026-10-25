@@ -9404,6 +9404,35 @@ void CUtlBuffer::sub_1006c4a0(const void *pMem, int nSize)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c6a0 size=0x37
+struct CUnknown1006c6a0
+{
+	char m_pad0000[4];
+	int m_i04;
+	char m_pad0008[8];
+	int m_i10;
+
+	void sub_1006c6a0(int op, int value);
+};
+
+// TARGET: CUnknown1006c6a0::sub_1006c6a0
+void CUnknown1006c6a0::sub_1006c6a0(int op, int value)
+{
+	switch (op)
+	{
+	case 0:
+		m_i10 = value;
+		break;
+	case 1:
+		m_i10 += value;
+		break;
+	case 2:
+		m_i10 = m_i04 - value;
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cc20 size=0x79
 int sub_10431c2f(char *, const char *, ...);
 void sub_10203dd0(char *);
