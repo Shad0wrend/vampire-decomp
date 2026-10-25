@@ -2,9 +2,22 @@
 // The data lives in a non-polymorphic base (its constructor runs before CAI_PlaneSolver stores its vtable pointer).
 #pragma once
 
+#include "Vector.h"
+
 extern float g_1049df80;
 extern double g_10445e08;
 extern void *(*g_109f3634)(int);
+
+struct CAI_PlaneSolverObj	// the object a plane solver probes for (a pointer at +0x30 goes to the trace)
+{
+	char m_pad0000[0x30];
+	void *m_p30;
+};
+
+struct CAI_PlaneSolverTrace	// 0x38 byte result record of a probe trace (zeroed by the caller)
+{
+	int m_n[14];
+};
 
 class CAI_PlaneSolverBase
 {
@@ -35,6 +48,10 @@ public:
 		m_pBuf50 = g_109f3634(0x8c0);
 		m_pBuf60 = m_pBuf50;
 	}
+
+	int sub_10309650(CAI_PlaneSolverObj *pObj, float flYaw, float flScale, float flStep, int nIndex);	// probes one steering direction (yaw offset by nIndex steps of flStep): the probe point lies flScale along it from the owner's origin; when the trace (sub_10307ef0) is clear the result is handed to sub_10308540 and 1 is returned, else 0
+	char sub_10307ef0(void *pObjData, Vector *pEnd, int a, int mask, CAI_PlaneSolverTrace *pResult);	// stub 0x10003ddc, called directly
+	void sub_10308540(CAI_PlaneSolverObj *pObj, CAI_PlaneSolverTrace *pTrace, float flScale, float flStep, float flStepOrig);	// stub 0x10005687, called directly
 
 	int m_owner;			// 0x04
 	float m_f08;
