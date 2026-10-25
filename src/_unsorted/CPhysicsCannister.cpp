@@ -129,3 +129,19 @@ int CPhysicsCannister::vfunc142(CCannisterTakeInfo *pInfo)
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10150870 size=0x76
+#include "CPhysicsCannister.h"
+#include "CGameTrace.h"
+
+void CPhysicsCannister::vfunc141(CCannisterTakeInfo *pInfo, const Vector *pDir, CGameTrace *pTrace)
+{
+	if (!m_bLeaking && pTrace->m_hitgroup)
+	{
+		Vector vecDir(-pDir->x, -pDir->y, -pDir->z - 5.0f);
+		VectorNormalize(vecDir);
+		sub_10150910(pInfo->m_field2c, &vecDir);
+	}
+	sub_100a7de0(pInfo, pDir, pTrace);
+}
+// END FUNCTION
