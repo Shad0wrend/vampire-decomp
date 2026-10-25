@@ -12753,6 +12753,35 @@ void S1007b9b0::sub_1007b9b0(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007b9e0 size=0x33
+struct CNameSourceView {
+    virtual const char *f0();
+    virtual void f1(int a);
+};
+
+struct CNameOwnerView {
+    char pad0[0xa8];
+    CNameSourceView *m_pSource;
+    char m_szName[1];
+};
+
+// TARGET: sub_1007b9e0
+void __fastcall sub_1007b9e0(CNameOwnerView *p)
+{
+    p->m_szName[0] = 0;
+    p->m_pSource->f1(1);
+    const char *s = p->m_pSource->f0();
+    char *d = p->m_szName;
+    char c;
+    do {
+        c = *s;
+        s++;
+        *d = c;
+        d++;
+    } while (c != 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007bb30 size=0x67
 #include "CUnknown1007bb30.h"
 extern void (__cdecl *g_109f3890)(char *, const char *, int);
