@@ -128,4 +128,5 @@ public:
 	void vfunc617();	// slot 617 (plain member): plays one of the 0x1063bd94 sounds (random 0..3, channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 	void vfunc618();	// slot 618 (plain member): plays one of the 0x1063bda4 sounds (channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 	void sub_10382bb0();	// with the target (handle +0x6664) alive: the motor (+0x5d44) takes the yaw of slot 221 and the turn rate 20.0f, is reset, and then looks at the slot 167 target (stub 0x10007248) or, without one, turns to the angles yaw (flipped by 180 when the motor's byte +0x28 is set)
+	bool sub_103822a0(CBaseEntity *pEnt);	// "is pEnt within +-20 degrees of this NPC's facing": true unless pEnt is given, the target handle (+0x6664) is alive and the yaw from this NPC to pEnt's origin (sub_101d2c70, stub 0x1000612c) differs from this NPC's pitch/yaw angle at +4 of slot 221 (sub_1013d580, stub 0x100097e6) by less than -20.0f or more than 20.0f
 };
