@@ -44048,6 +44048,57 @@ bool sub_10195940(DMEntity *pEnt, const char *name, typedescription_t **pDesc, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x101960f0 size=0xf4
+#include "Vector.h"
+
+struct PyObject { int ob_refcnt; void *ob_type; };
+struct PyTupleObject { int ob_refcnt; void *ob_type; int ob_size; PyObject *ob_item[1]; };
+struct RawVec3 { int a, b, c; };
+extern "C" {
+__declspec(dllimport) extern char PyTuple_Type[];
+__declspec(dllimport) extern char PyFloat_Type[];
+__declspec(dllimport) extern char PyInt_Type[];
+__declspec(dllimport) extern char PyLong_Type[];
+__declspec(dllimport) extern PyObject *PyExc_TypeError;
+__declspec(dllimport) double PyFloat_AsDouble(PyObject *);
+__declspec(dllimport) long PyInt_AsLong(PyObject *);
+__declspec(dllimport) double PyLong_AsDouble(PyObject *);
+__declspec(dllimport) void PyErr_SetString(PyObject *, const char *);
+}
+extern Vector g_1070d1b0;
+
+Vector *sub_101960f0(Vector *ret, PyObject *obj)
+{
+	Vector v = g_1070d1b0;
+	PyTupleObject *t = (PyTupleObject *)obj;
+	if (t->ob_type == PyTuple_Type && t->ob_size == 3)
+	{
+		float *out = &v.x;
+		for (int i = 0; i < 3; i++)
+		{
+			PyObject *item = t->ob_item[i];
+			if (!item)
+				goto bad;
+			if (item->ob_type == PyFloat_Type)
+				out[i] = (float)PyFloat_AsDouble(item);
+			else if (item->ob_type == PyInt_Type)
+				out[i] = (float)PyInt_AsLong(item);
+			else if (item->ob_type == PyLong_Type)
+				out[i] = (float)PyLong_AsDouble(item);
+			else
+			{
+			bad:
+				PyErr_SetString(PyExc_TypeError, "PyTuple_AsVector got invalid argument.\n");
+				v = g_1070d1b0;
+				break;
+			}
+		}
+	}
+	*(RawVec3 *)ret = *(RawVec3 *)&v;
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10196780 size=0xa0
 struct PyObj { int refcnt; void *type; int pad; void *dict; };
 extern "C" {
