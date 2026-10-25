@@ -1,6 +1,24 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10192ab0 size=0x39
+#include "CPhysicsPropContested.h"
+#include "IPhysicsObject.h"
+
+void sub_10013782();
+
+// TARGET: CPhysicsPropContested::vfunc103
+void CPhysicsPropContested::vfunc103()
+{
+    sub_10013782();
+    vfunc93(0, 0);
+    if (m_obj36c != 0)
+        ((IPhysicsObject *)m_obj36c)->vfunc24(0);
+    sub_100b3840(2);
+    m_b7ac = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192e60 size=0xeb
 #include "CPhysicsPropContested.h"
 #include "CEntityVSlots.h"
