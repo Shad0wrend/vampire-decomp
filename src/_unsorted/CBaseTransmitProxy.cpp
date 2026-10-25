@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10097b50 size=0x3c
+#include "CBaseTransmitProxy.h"
+
+extern int vt_10450004[];
+
+CBaseTransmitProxy::CBaseTransmitProxy(CBaseEntity *pEnt)
+{
+    m_hEnt = 0xffffffff;
+    m_vptr = vt_10450004;
+    if (pEnt) {
+        m_hEnt = *pEnt->vfunc1();
+        m_sUnk = 0;
+    } else {
+        m_hEnt = 0xffffffff;
+        m_sUnk = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097ba0 size=0x1e
 #include "CBaseTransmitProxy.h"
 
