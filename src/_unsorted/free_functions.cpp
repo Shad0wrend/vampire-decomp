@@ -76402,6 +76402,32 @@ two:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247520 size=0x32
+// TARGET: sub_10247520
+extern int (__cdecl *g_109f3854)(const char *, const char *, int);
+extern char g_105c4f00[];
+
+struct CBoneEntry_10247520 {
+    char name[0x20];
+    int index;
+};
+
+int __cdecl sub_10247520(const char *pszName)
+{
+    int (__cdecl *cmp)(const char *, const char *, int) = g_109f3854;
+    CBoneEntry_10247520 *p = (CBoneEntry_10247520 *)g_105c4f00;
+    int idx;
+    do {
+        idx = p->index;
+        if (cmp(p->name, pszName, 0x20) == 0) {
+            break;
+        }
+        p++;
+    } while (idx != -1);
+    return idx;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102477a0 size=0x9
 struct CUnknown102477a0 { int a; int b; int c; int d; void sub_102477a0(); };
 // TARGET: CUnknown102477a0::sub_102477a0

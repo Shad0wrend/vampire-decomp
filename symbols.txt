@@ -2876,6 +2876,7 @@
 0x1000a64b func   ?sub_1042d650@CUnknown1042d650@@QAEPAU1@XZ CUnknown1042d650::sub_1042d650
 0x1000a65a func   _item_w_grenade_frag item_w_grenade_frag
 0x1000a65f func   _prop_destructable prop_destructable
+0x1000a664 func   ?sub_10247520@@YAHPBD@Z sub_10247520
 0x1000a682 func   ?sub_101f95f0@@YAXH@Z sub_101f95f0
 0x1000a68c func   ?sub_103d4690@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d4690
 0x1000a69b func   ?sub_100f7890@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@PBD@Z CGlobalEntityList::sub_100f7890
