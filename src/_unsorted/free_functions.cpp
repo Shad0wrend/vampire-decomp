@@ -87944,6 +87944,34 @@ void sub_1030b250(int *pDst, int *pSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b2a0 size=0x3c
+#include <string.h>
+
+struct CUnk1030b2a0 {
+    int m_n0;
+    int m_n4;
+    int m_n8;
+    int m_nc;
+    int m_n10;
+    int m_n14;
+    int m_body[0x40];
+
+    CUnk1030b2a0 *sub_1030b2a0(const CUnk1030b2a0 *pSrc);
+};
+
+CUnk1030b2a0 *CUnk1030b2a0::sub_1030b2a0(const CUnk1030b2a0 *pSrc)
+{
+    m_n0 = pSrc->m_n0;
+    m_n4 = pSrc->m_n4;
+    m_n8 = pSrc->m_n8;
+    m_nc = pSrc->m_nc;
+    m_n10 = pSrc->m_n10;
+    m_n14 = pSrc->m_n14;
+    memcpy(m_body, pSrc->m_body, sizeof(m_body));
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b2f0 size=0x6a
 #include "CUnknown1030b2f0.h"
 
