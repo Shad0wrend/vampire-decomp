@@ -44,7 +44,7 @@ public:
 	virtual void vfunc13();
 	virtual bool vfunc14(const void *pData, int nBytes);
 	virtual void vfunc15();
-	virtual void vfunc16();
+	virtual void vfunc16(const void *pData, int nBytes);	// slot 16: writes the float at pData (a 4-byte value), called by vfunc25 with the difference of two floats
 	virtual void vfunc17(const char *pszName, void *pData, int count);	// slot used by WriteField for field types 0x10 / 0x11
 	virtual void vfunc18();
 	virtual void vfunc19(const char **ppStrings, int count);	// writes count strings (a null entry is the empty string at 0x106b8540), each with its length + 1 through sub_1000643d
@@ -53,7 +53,7 @@ public:
 	virtual void vfunc22();
 	virtual void vfunc23(const void *pData, int count);	// WriteVector
 	virtual void vfunc24();
-	virtual void vfunc25();
+	virtual void vfunc25(const float *pValues, int count);	// slot 25: for each of the count floats writes the value minus the float at +0x12e8 of the entity block (m_pEntityBlock) through slot 16
 	virtual void vfunc26(const char *pszName, void *pData, int count);	// slot used by WriteField for field type 0xf
 	virtual void vfunc27();
 	virtual void vfunc28();
