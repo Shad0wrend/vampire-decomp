@@ -18804,6 +18804,30 @@ void *sub_1009ab70(CBaseEntity *pEnt, void *pRet, unsigned int *pBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009b060 size=0x11f
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+
+struct CEntSlot15View {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void slot15(const Vector *pExtents);
+};
+
+void CBaseEntity::sub_1009b060(const Vector &vecExtents)
+{
+	ScopeTrace trace("CBaseEntity::SetAbsoluteAttackExtents", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	ICollideable *pCollision = (ICollideable *)((char *)this + 0x270);
+	const Vector *pMaxs = (const Vector *)pCollision->vfunc2();
+	const Vector *pMins = (const Vector *)pCollision->vfunc1();
+	Vector vecAttack = (*pMaxs - *pMins) * 0.5f;
+	vecAttack = vecExtents - vecAttack;
+	((CEntSlot15View *)this)->slot15(&vecAttack);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009b440 size=0x83
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
