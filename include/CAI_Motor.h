@@ -29,8 +29,8 @@ public:
 	virtual void vfunc15();
 	virtual float vfunc16();	// slot 16: the minimum speed (asked by slot 17 with the same call twice)
 	virtual float vfunc17();	// slot 17: the wanted speed (+0x30 times the component's scale) raised to at least slot 16 and capped at sub_102d61b0(+0x8)
-	virtual void vfunc18();
-	virtual void vfunc19();
+	virtual void vfunc18(int a);	// takes one argument (slot 19 hands it its first argument)
+	virtual void vfunc19(int a, int b, int c);	// slot 19: slot 18(a), then sub_102e1560(a, scale, (speed of the velocity vector + scale) * the wanted speed * 0.5, b, c)
 	virtual void vfunc20();
 
 	char *m_pOuter;	// 0x0004, CAI_Component::m_pOuter (the owning NPC)
@@ -76,6 +76,7 @@ public:
 	void sub_102e1c10(float flIdealYaw, float flYawSpeed);	// "CAI_Motor::SetIdealYawAndUpdate" (stub 0x10014b8c): sets the ideal yaw (flipped when the byte at +0x28 is set, limited by the turn rate unless the largest change is 180), the yaw speed (+0x38, -1 keeps it; -2 asks the movement sink) and updates the yaw
 	float sub_102e12c0();	// CAI_Component helper (stub 0x10008bfc): a scale factor, returned in st(0)
 	float sub_102e12e0();	// CAI_Component helper (stub 0x10006721): the owner's value at slot 249 (+0x3e4), returned in st(0)
+	void sub_102e1560(int a, float flScale, float flValue, int b, int c);	// stub 0x10012116, called directly by slot 19 with five stack arguments
 
 	// The datamap getter (BEGIN_DATADESC); its m_facingQueue field uses the vector save/restore ops below.
 	static int *sub_102e0860();
