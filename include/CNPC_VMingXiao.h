@@ -68,6 +68,7 @@ public:
 	void vfunc563(CBaseEntity *pEnt, Vector *pPos, int *pOut1, int *pOut2);	// slot 563 (plain member): with the navigator state (sub_1027d990) 2, moves *pPos by the offset between pEnt's slot 193 and slot 217 positions; otherwise stores the float at +0x6320 in *pOut2, lets sub_102c3b50 adjust *pPos, copies *pOut2 to *pOut1 and runs sub_102c36d0 on this entity's origin (slot 220) with the dword at +0x654 to get the new *pPos
 	void sub_102c3b50(CBaseEntity *pEnt, Vector vecPos, Vector *pPos, int *pOut);	// stub 0x100041d3, called directly by vfunc563
 	void sub_102c36d0(Vector vecOrigin, CBaseEntity *pEnt, int nValue, Vector *pPos, Vector *pOut);	// stub 0x1000c0ae, called directly by vfunc563
+	void sub_103998d0(CNPC_VMingXiaoTentacle *pTentacle);	// a tentacle (not in the activities 0x163 / 0x165, state 2) within 128 units whose direction from this NPC has a positive-enough dot (>= 0.25) with the axis at +0x6290 (x/y only) is told to go to this NPC's slot 217 position (sub_1039ef90)
 
 	char m_pad03e0[0x6290 - 0x3e0];
 	Vector m_vecAxis6290;	// +0x6290
