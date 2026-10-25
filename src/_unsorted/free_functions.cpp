@@ -53750,6 +53750,35 @@ void sub_101cfe10(void *pObj, int a, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d02c0 size=0x38
+// TARGET: sub_101d02c0
+struct CUnknown101d02c0Iface
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22();
+	virtual char v23();
+};
+
+extern CUnknown101d02c0Iface *g_1070ba0c;
+
+int _strcmpi(const char *a, const char *b);
+
+char sub_101d02c0(const char *pA, const char *pB)
+{
+	if (!g_1070ba0c->v23())
+		return 1;
+	if (*pA && *pB)
+	{
+		if (_strcmpi(pA, pB) == 0)
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0310 size=0x9a
 extern "C" double __cdecl atof(const char *);
 extern void (*g_109f3890)(char *dest, const char *src, int maxLen);
