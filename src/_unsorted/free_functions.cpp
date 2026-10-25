@@ -11363,6 +11363,26 @@ const char *__fastcall sub_10075d00(CUnknown10075aa0 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075e20 size=0x35
+// TARGET: CUnknown10075e20::sub_10075e20
+struct CUnknown10075e20
+{
+	char m_pad0000[0x184];
+	float m_f184;
+	float m_f188;
+
+	void sub_10075e20(float flValue);
+};
+
+void CUnknown10075e20::sub_10075e20(float flValue)
+{
+	m_f184 = flValue;
+	if (*(int *)&m_f188 != 0xbf800000 && m_f188 < flValue) {
+		m_f188 = flValue;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076670 size=0xd
 void CUnknown10076670::sub_10076670(int value)
 {
