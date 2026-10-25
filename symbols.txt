@@ -637,6 +637,7 @@
 0x100030f3 func   _game_ui game_ui
 0x100030f8 func   ?sub_10182c40@CAI_BaseNPC@@QAEXPBD0@Z CAI_BaseNPC::sub_10182c40
 0x100030fd func   ?vfunc2@CEntitySaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CEntitySaveRestoreBlockHandler::vfunc2
+0x10003102 func   ?vfunc3@CTEBubbles@@UAEXABVVector@@ABVQAngle@@@Z CTEBubbles::vfunc3
 0x10003107 func   ?sub_10323370@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10323370
 0x10003111 func   _env_sun env_sun
 0x1000311b func   ?sub_10158d60@@YIXPAPAX@Z sub_10158d60
