@@ -51434,6 +51434,22 @@ void CUnk101c1790::sub_101c1790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1af0 size=0x37
+// TARGET: sub_101c1af0
+float sub_101c1af0(unsigned char flags, const float *pA, const float *pB)
+{
+	if (flags & 0x40)
+	{
+		return pA[2] - pB[2];
+	}
+	if (flags & 0x80)
+	{
+		return pA[0] - pB[0];
+	}
+	return pA[1] - pB[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1b40 size=0xd
 void CUnknown101c1b40::sub_101c1b40(int mode)
 {
