@@ -27435,6 +27435,34 @@ extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x100db6c0 size=0x33
+extern char *g_1070b228;
+void *sub_10008d8c();
+
+struct CSpawnedOwnerView {
+    char pad0[0xa8];
+    char *m_pSub;
+};
+
+struct CSpawnedSubView {
+    char pad0[0x168];
+    int m_n168;
+    char pad1[0x5a4 - 0x16c];
+    float m_fl5a4;
+};
+
+// TARGET: sub_100db6c0
+void sub_100db6c0()
+{
+    CSpawnedOwnerView *pOwner = (CSpawnedOwnerView *)sub_10008d8c();
+    if (pOwner != 0 && pOwner->m_pSub != 0) {
+        CSpawnedSubView *pSub = (CSpawnedSubView *)pOwner->m_pSub;
+        pSub->m_n168 = 0x1b;
+        pSub->m_fl5a4 = *(float *)(g_1070b228 + 0xc) + 1.0f;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dbc60 size=0xb3
 #include "CUnknown100dbc60.h"
 
