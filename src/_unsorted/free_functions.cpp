@@ -59749,6 +59749,36 @@ void CVFeat_t::sub_101e4fe0(CVFeatKV *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e5e10 size=0x31
+// TARGET: sub_101e5e10
+extern int (__cdecl *g_109f3628)(const char *, ...);
+extern const char g_105a3558[];
+
+struct CLookupArg_101e5e10 {
+    char pad[0xa8];
+    int m_n00a8;
+};
+
+struct CLookupOwner_101e5e10 {
+    char pad[0x34];
+    int m_n34;
+    int m_n38;
+    int sub_101e5e10(CLookupArg_101e5e10 *p);
+};
+
+int CLookupOwner_101e5e10::sub_101e5e10(CLookupArg_101e5e10 *p)
+{
+    if (p) {
+        if (p->m_n00a8) {
+            return m_n34;
+        }
+    } else {
+        g_109f3628(g_105a3558);
+    }
+    return m_n38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e5e60 size=0x174
 #include "CUnknown101e56e0.h"
 #include "CUnknown102043a0.h"

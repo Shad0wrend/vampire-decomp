@@ -6285,6 +6285,7 @@
 0x100154e2 func   ?sub_100b03b0@@YAXXZ sub_100b03b0
 0x100154fb func   ?sub_1023b3a0@@YAXPAUCStateHolder@@@Z sub_1023b3a0
 0x1001552d func   ?sub_1027be60@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1027be60
+0x10015537 func   ?sub_101e5e10@CLookupOwner_101e5e10@@QAEHPAUCLookupArg_101e5e10@@@Z CLookupOwner_101e5e10::sub_101e5e10
 0x1001553c func   ?vfunc103@CBeam@@UAEXXZ CBeam::vfunc103
 0x10015541 func   ?sub_101dcb80@CRecListUnit@@QAEPAU1@PBU1@@Z CRecListUnit::sub_101dcb80
 0x10015546 func   ?sub_10032660@@YAXPAX0PAHH@Z sub_10032660
