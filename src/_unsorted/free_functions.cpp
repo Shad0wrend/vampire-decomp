@@ -94380,6 +94380,41 @@ void __stdcall sub_10309120(float flAngle, float flStep, int nCount, float *pFir
 }
 // END FUNCTION
 
+// FUNCTION: 0x10309650 size=0x120
+#include "CAI_PlaneSolver.h"
+#include "CEntityVSlots.h"
+#include <string.h>
+
+Vector *sub_101d2f40(Vector *pOut, float flYaw);
+
+struct CAI_PlaneSolverUnit309650 : CAI_PlaneSolver
+{
+	void sub_10309120(float a, float b, int c, float *pOut1, float *pOut2);
+};
+
+int CAI_PlaneSolver::sub_10309650(CAI_PlaneSolverObj *pObj, float flYaw, float flScale, float flStep, int nIndex)
+{
+	CAI_PlaneSolverTrace trace;
+	memset(&trace, 0, sizeof(trace));
+	int nStepBits = *(int *)&flStep;
+	((CAI_PlaneSolverUnit309650 *)this)->sub_10309120(flYaw, *(float *)&nStepBits, nIndex, (float *)&nIndex, &flStep);
+	Vector vecTemp;
+	Vector *pDir = sub_101d2f40(&vecTemp, *(float *)&nIndex);
+	Vector vecScaled;
+	vecScaled.x = flScale * pDir->x;
+	vecScaled.y = flScale * pDir->y;
+	vecScaled.z = flScale * pDir->z;
+	const Vector *pOrigin = ((CEntityVSlots *)m_owner)->slot220();
+	Vector vecEnd = vecScaled + *pOrigin;
+	if (!sub_10307ef0(pObj->m_p30, &vecEnd, 0, 0x2400b, &trace))
+	{
+		sub_10308540(pObj, &trace, flScale, flStep, nStepBits);
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10309e80 size=0xa5
 #include "CUnknown1030a6e0.h"
 #include "Vector.h"
