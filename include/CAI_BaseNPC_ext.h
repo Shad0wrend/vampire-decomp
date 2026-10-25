@@ -2,3 +2,5 @@
 	void sub_100a53d0(int a);	// CBaseEntity::PhysicsTouchTriggers (stub 0x10005bcd), called directly
 	void sub_10273070(char bForce);	// "CAI_BaseNPC::InitHull"-like: checks the hull (+0x1568) is among the hulls the class precached (DevMsg "ERROR" block when not), then, when the hull is not set up yet (byte +0x5f2d) or bForce, sets the hull size and clears the byte; with a navigator object at +0x36c runs sub_10272f40
 	void sub_10272f40();	// stub 0x100081c0
+	Vector vfunc574(const Vector &vecPos, int a, int b);	// slot 574 (plain member): the unit direction from vecPos to the point sub_10278650 finds for (vecPos, a, b) -- (point - vecPos) normalised, returned by value
+	Vector sub_10278650(const Vector &vecPos, int a, int b);	// stub 0x1001592e, called directly by vfunc574, returns a Vector by value
