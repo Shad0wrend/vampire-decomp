@@ -1372,6 +1372,7 @@
 0x10005803 func   ?vfunc6@CPhysSaveRestoreBlockHandler@@QAEXPAX@Z CPhysSaveRestoreBlockHandler::vfunc6
 0x10005808 func   ?vfunc5@CNPC_VGangrel@@QAEPAV1@I@Z CNPC_VGangrel::vfunc5
 0x1000580d func   ?sub_102567b0@@YAPAHXZ sub_102567b0
+0x10005812 func   ?sub_10218db0@CUnknown10217f50@@QAEXXZ CUnknown10217f50::sub_10218db0
 0x1000581c func   ?sub_102792b0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_102792b0
 0x10005821 func   ?vfunc488@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc488
 0x10005844 func   ?vfunc255@CBaseAnimatingOverlay@@QAEXPAX0H@Z CBaseAnimatingOverlay::vfunc255
