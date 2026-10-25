@@ -1873,6 +1873,7 @@
 0x10007707 func   ?sub_1019dfb0@CRopeKeyframe@@SAPAV1@PAVCBaseEntity@@HHHPBDH@Z CRopeKeyframe::sub_1019dfb0
 0x1000770c func   ?vfunc561@CNPC_VWerewolf@@QAEXHH@Z CNPC_VWerewolf::vfunc561
 0x1000772f func   ?sub_103d7420@CNPC_VWerewolf@@QAEXPAVCHintData_WW@@@Z CNPC_VWerewolf::sub_103d7420
+0x1000773e func   ?sub_10233ba0@@YAXXZ sub_10233ba0
 0x1000774d func   ?sub_100d7f20@@YAXXZ sub_100d7f20
 0x10007752 func   ?sub_10245f50@SConVar@@QAEXH@Z SConVar::sub_10245f50
 0x10007757 func   ?vfunc39@CPhysicsPropContested@@QAEXPAVCBaseEntity@@@Z CPhysicsPropContested::vfunc39

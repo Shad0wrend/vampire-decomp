@@ -70506,6 +70506,32 @@ void sub_10233ad0(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10233ba0 size=0x3e
+extern void *g_1070b22c;
+extern int g_10552810;
+extern char g_109340dd;
+int sub_1000f0fb();
+int sub_10008d8c();
+void sub_10233a10(int);
+void sub_10005da8(int);
+
+void sub_10233ba0()
+{
+    typedef int (__fastcall *SlotFn)(void *);
+    void *obj;
+
+    obj = g_1070b22c;
+    if (((SlotFn)(*(void ***)obj)[12])(obj) != 0) {
+        g_10552810 = sub_1000f0fb();
+        if (g_109340dd != 0) {
+            sub_10233a10(sub_10008d8c());
+            return;
+        }
+        sub_10005da8(sub_10008d8c());
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102342d0 size=0x72
 #include "SendProp.h"
 
