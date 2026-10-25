@@ -32455,6 +32455,29 @@ extern "C" CBaseEntity *params_explosion()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104320 size=0x36
+#include <string.h>
+#include "CParamsExplosion.h"
+
+extern int vt_1045a894[];
+
+struct CParamsExplosionBasePlaceholder
+{
+    void sub_100090fc(int bAddAsDefault);
+};
+
+// TARGET: CParamsExplosion::sub_10104320
+CParamsExplosion *CParamsExplosion::sub_10104320()
+{
+    ((CParamsExplosionBasePlaceholder *)this)->sub_100090fc(0);
+    *(int **)this = vt_1045a894;
+    memset((char *)this + 0x45c, 0, 0x51 * 4);
+    *(int *)((char *)this + 0x598) = 100;
+    *(int *)((char *)this + 0x59c) = 100;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104630 size=0x8
 void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }

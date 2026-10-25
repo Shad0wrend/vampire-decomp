@@ -1917,6 +1917,7 @@
 0x1000766c func   ?sub_101dbed0@CUnknown101dbe30@@QAEXPAVCBaseEntity@@@Z CUnknown101dbe30::sub_101dbed0
 0x10007671 func   ?sub_10081eb0@@YIXPAUCSlots@@HH@Z sub_10081eb0
 0x10007676 func   ?sub_1029fcf0@CAI_BaseNPCTroika@@QAEDHPAVCBaseEntity@@H@Z CAI_BaseNPCTroika::sub_1029fcf0
+0x1000767b func   ?sub_10104320@CParamsExplosion@@QAEPAV1@XZ CParamsExplosion::sub_10104320
 0x10007680 func   ?sub_10092e20@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::sub_10092e20
 0x1000768a func   ?sub_100705d0@@YAPAVCBaseCineCam@@PAVCBaseEntity@@@Z sub_100705d0
 0x100076a3 func   ?sub_100a98f0@CBaseEntity@@QAEHHH@Z CBaseEntity::sub_100a98f0
