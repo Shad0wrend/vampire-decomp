@@ -37,7 +37,9 @@ class CNPC_VTzimisce
 {
 public:
 	VT_SLOTS100(s0)
-	VT_SLOTS10(s10)
+	virtual void s100(); virtual void s101(); virtual void s102();
+	virtual void vfunc103();	// "Spawn": base spawn, +0x1574 = -0.5f, turns the 2D vector at +0x1074 by 90 degrees, sets the size (60, 60, 100), RemoveFlag2(4), byte +0x6078 = 1
+	virtual void s104(); virtual void s105(); virtual void s106(); virtual void s107(); virtual void s108(); virtual void s109();
 	VT_SLOTS10(s11)
 	VT_SLOTS10(s12)
 	VT_SLOTS10(s13)
@@ -82,17 +84,26 @@ public:
 
 	char m_pad0004[0x2dc];
 	int m_n02e0;
-	char m_pad02e4[0x5cc0 - 0x2e4];
+	char m_pad02e4[0x1074 - 0x2e4];
+	Vector m_vec1074;	// 0x1074: a 2D direction, turned by 90 degrees in Spawn
+	char m_pad1080[0x1574 - 0x1080];
+	float m_f1574;	// 0x1574: set to -0.5f in Spawn
+	char m_pad1578[0x5cc0 - 0x1578];
 	int m_nState5cc0;
 	char m_pad5cc4[0x5d8c - 0x5cc4];
 	unsigned int m_flags5d8c;
-	char m_pad5d90[0x6670 - 0x5d90];
+	char m_pad5d90[0x6078 - 0x5d90];
+	char m_b6078;	// 0x6078: set in Spawn
+	char m_pad6079[0x6670 - 0x6079];
 	unsigned int m_hTarget;
 	char m_posBuf[0x18];
 	int m_state;
 	char m_pad6690[0x66b8 - 0x6690];
 	int m_n66b8;
 
+	void sub_10298d30();	// CAI_BaseNPCTroika::vfunc103 (stub 0x1000303a), called directly by Spawn
+	void sub_1009b060(Vector *pSize);	// stub 0x10001a50: sets the entity's size from the vector
+	void sub_100b3900(int flags);	// CBaseEntity::RemoveFlag2 (stub 0x1000df44), called directly
 	void *sub_103bf580(void *pDefault);
 	void sub_103b9f90(int a, float b);
 	void sub_103b9f50(int a);
