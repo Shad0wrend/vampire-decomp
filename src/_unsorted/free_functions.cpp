@@ -105713,6 +105713,55 @@ void CUnknown10398630::sub_10398630(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103989b0 size=0x113
+#include "CEntityVSlots.h"
+#include <math.h>
+
+extern float g_104454c4;
+
+struct MingTurnView : CEntityVSlots
+{
+    char pad0004[0x6290 - 4];
+    float m_flDirA_x;	// 0x6290
+    float m_flDirA_y;	// 0x6294
+    char pad6298[0x629c - 0x6298];
+    float m_flDirB_x;	// 0x629c
+    float m_flDirB_y;	// 0x62a0
+
+    bool sub_10398000(int nMove);	// stub 0x10001802
+};
+
+// TARGET: sub_103989b0
+bool __fastcall sub_103989b0(MingTurnView *pThis, int unused, const Vector &vecTarget, int *pOut)
+{
+    Vector vecDelta = vecTarget - *pThis->slot217();
+    if (fabs(vecDelta.z) > 64.0)
+        return false;
+    vecDelta.z = 0.0f;
+    VectorNormalize(vecDelta);
+    float flDot = vecDelta.x * pThis->m_flDirA_x + vecDelta.y * pThis->m_flDirA_y;
+    if (flDot < -0.17f || flDot > 0.5f)
+        return false;
+    if (vecDelta.x * pThis->m_flDirB_x + vecDelta.y * pThis->m_flDirB_y > g_104454c4)
+    {
+        if (pThis->sub_10398000(4))
+        {
+            *pOut = 4;
+            return true;
+        }
+    }
+    else
+    {
+        if (pThis->sub_10398000(5))
+        {
+            *pOut = 5;
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398d90 size=0xd
 void CUnknown10398d90::sub_10398d90(int value)
 {
