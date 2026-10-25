@@ -1902,6 +1902,7 @@
 0x10007572 func   ?sub_100509b0@SFilter@@QAEPAU1@E@Z SFilter::sub_100509b0
 0x10007577 func   ?sub_102eb7f0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102eb7f0
 0x10007590 func   ?sub_101fc160@CVStatCost_t@@QAE_NXZ CVStatCost_t::sub_101fc160
+0x10007595 func   ?sub_103ad0a0@CUnknown103ad0a0@@QAEDPAX@Z CUnknown103ad0a0::sub_103ad0a0
 0x1000759a func   ?sub_101d6ef0@CUnknown101d7380@@QAEXXZ CUnknown101d7380::sub_101d6ef0
 0x100075ae func   ?vfunc609@CAI_BaseNPCTroika@@QAEHD@Z CAI_BaseNPCTroika::vfunc609
 0x100075b3 func   ?sub_1014ca10@CUnknown1014ca10@@QAEXEEE@Z CUnknown1014ca10::sub_1014ca10

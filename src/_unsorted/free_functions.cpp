@@ -102424,6 +102424,34 @@ char sub_103abc90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad0a0 size=0x35
+// TARGET: CUnknown103ad0a0::sub_103ad0a0
+struct CUnknown103ad0a0
+{
+	char sub_10014df8(int condition);
+
+	char sub_103ad0a0(void *pEnt);
+};
+
+struct CUnknown103ad0a0Ent
+{
+	char m_pad0000[0xa8];
+	void *m_pPlayer;	// 0xa8
+};
+
+char CUnknown103ad0a0::sub_103ad0a0(void *pEnt)
+{
+	if (((CUnknown103ad0a0Ent *)pEnt)->m_pPlayer != 0) {
+		if (!sub_10014df8(0x5a)) {
+			if (!sub_10014df8(0x6f)) {
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad0f0 size=0x3b
 #include "CBaseCombatCharacter.h"
 
