@@ -9,5 +9,6 @@ public:
 	char m_pad0041[0x98 - 0x41];
 	char m_data98[0x10];	// 0x98: the sub-object the source is handed to (slot 2 of the source's vtable)
 
+	void vfunc5();	// slot 5: hands this + 8 (or 0 without a block) to the global at 0x106eb5d8, then calls slot 49 of the object at 0x10723940 with a zeroed dword
 	void vfunc6(void *pSource);	// stores whether the source's slot 13 short equals 0x1053c340 at +0x40, then forwards the block at +0x98 with the string 0x1053c344 to the source's slot 2
 };
