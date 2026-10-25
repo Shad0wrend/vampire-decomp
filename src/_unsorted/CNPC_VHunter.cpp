@@ -28,6 +28,26 @@ int CNPC_VHunter::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388a40 size=0x40
+#include "vampire.h"
+#include "CNPC_VHunter.h"
+
+// TARGET: CNPC_VHunter::vfunc440
+int CNPC_VHunter::vfunc440(int arg)
+{
+    if (arg != 0x6b)
+    {
+        if (arg != 0x103)
+        {
+            return CNPC_VHumanCombatant::vfunc440(arg);
+        }
+        return 0x15a;
+    }
+    int t = (*(int *)((char *)this + 0x14bc) & 0x80000) - 0x80000;
+    return (((t != 0) ? -1 : 0) & 0x29) + 0x132;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388bb0 size=0x6d
 #include "CNPC_VHunter.h"
 #include "CGlobalEntityList.h"
