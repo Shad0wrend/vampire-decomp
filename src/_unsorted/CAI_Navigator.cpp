@@ -123,3 +123,48 @@ L1:
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102eee40 size=0x11d
+#include "CAI_Navigator.h"
+#include "CAI_BaseNPC.h"
+#include "CUnknown102e12c0.h"
+#include "CHolderInner24.h"
+
+double __fastcall sub_10008bfc(CUnknown102e12c0 *p);
+float sub_100067ad(Vector *pVec);
+
+void CAI_Navigator::vfunc17(CAI_NavGoal *pGoal)
+{
+	pGoal->m_i30 = m_i18;
+	pGoal->m_vecStart = *m_p30->sub_1030b7c0();
+	Vector *delta = &pGoal->m_vecDelta;
+	int bFlag = m_i18;
+	float *pOrigin = ((CAI_BaseNPC *)m_pOuter)->vfunc220();
+	delta->x = pGoal->m_vecStart.x - pOrigin[0];
+	delta->y = pGoal->m_vecStart.y - pOrigin[1];
+	float flLen;
+	if (bFlag == 0) {
+		delta->z = 0;
+		flLen = sub_100067ad(delta);
+	} else {
+		delta->z = pGoal->m_vecStart.z - pOrigin[2];
+		flLen = VectorNormalize(*delta);
+	}
+	pGoal->m_flDist = flLen;
+	pGoal->m_vecDir = *delta;
+	double flSpeed = sub_10008bfc((CUnknown102e12c0 *)m_i20);
+	pGoal->m_f24 = (float)flSpeed;
+	pGoal->m_f2c = (float)(((CUnknown102e12c0 *)m_i20)->m_f30 * flSpeed);
+	pGoal->m_p34 = sub_102ecc40();
+	if (pGoal->m_f2c > pGoal->m_flDist)
+		pGoal->m_f2c = pGoal->m_flDist;
+	if (((CHolderInner24 *)m_p30)->sub_1030bd50()) {
+		pGoal->m_flags |= 1;
+	} else {
+		CHolderInner24_Node *pNode = ((CHolderInner24 *)m_p30)->m_pNode;
+		if (pNode->m_pNext && pNode->m_pNext->m_i2c != pNode->m_i2c)
+			pGoal->m_flags |= 4;
+	}
+	pGoal->m_pRoute = m_p30;
+}
+// END FUNCTION
