@@ -45873,6 +45873,31 @@ void CHolderPtr36c::sub_101916f0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191720 size=0x33
+struct CFlagArgView {
+    char pad0[8];
+    unsigned char m_b08;
+    char pad1[0x18 - 9];
+    int m_n18;
+};
+
+struct CFlagOwnerView {
+    char pad0[0x204];
+    unsigned int m_flags204;
+    void sub_10191720(CFlagArgView *pArg);
+};
+
+// TARGET: CFlagOwnerView::sub_10191720
+void CFlagOwnerView::sub_10191720(CFlagArgView *pArg)
+{
+    if (pArg->m_n18 == 5 && pArg->m_b08) {
+        m_flags204 |= 2;
+        return;
+    }
+    m_flags204 &= 0xfffffffd;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191cc0 size=0x16c
 #include "utlvector.h"
 #include "CBreakParser.h"
