@@ -1,6 +1,24 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x104088d0 size=0x32
+#include <string.h>
+void __fastcall sub_10014c3b(char *self);
+char *__fastcall sub_10010ea6(char *self);
+void __fastcall sub_1000e859(char *self);
+
+void __fastcall sub_104088d0(char *self)
+{
+    char *p;
+    sub_10014c3b(self);
+    p = sub_10010ea6(self);
+    if (p != 0) {
+        strcpy(self + 0x914, p + 8);
+        sub_1000e859(self);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10408920 size=0x79
 #include "CItemKeyGeneric.h"
 #include "CBaseCombatCharacter.h"
