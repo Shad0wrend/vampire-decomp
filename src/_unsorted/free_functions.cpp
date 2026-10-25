@@ -67034,6 +67034,23 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203bb0 size=0x31
+// TARGET: sub_10203bb0
+void __cdecl sub_10203c00(const char *a, const char *b);
+extern const char g_105a8be0[];
+extern const char g_105a8bd4[];
+extern const char g_105a8bc0[];
+extern const char g_105a8bb4[];
+extern const char g_105a8ba4[];
+
+void __cdecl sub_10203bb0()
+{
+    sub_10203c00(g_105a8bd4, g_105a8be0);
+    sub_10203c00(g_105a8bc0, g_105a8be0);
+    sub_10203c00(g_105a8ba4, g_105a8bb4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203c00 size=0xb1
 extern "C" int __cdecl sprintf(char *, const char *, ...);
 
