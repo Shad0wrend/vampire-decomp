@@ -92084,6 +92084,32 @@ int CUtlVector4::sub_103109a0(int elem, int num, const int *pToInsert)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310bc0 size=0x33
+extern char g_106eb5d8[];
+extern char g_106148ec[];
+extern void (*g_109f3630)(const char *pszFormat, ...);
+
+struct CNPCMakerLookupView {
+    int sub_1000b4b5(int a, void *pOwner, int b, int c);
+};
+
+struct CNPCMakerOwnerView {
+    char pad0[0x28];
+    int m_n28;
+    void sub_10310bc0();
+};
+
+// TARGET: sub_10310bc0
+void __fastcall sub_10310bc0(CNPCMakerOwnerView *p)
+{
+    p->m_n28 = ((CNPCMakerLookupView *)g_106eb5d8)->sub_1000b4b5(0, p, 0, 0);
+    if (p->m_n28 == 0) {
+        p->m_n28 = -1;
+        g_109f3630(g_106148ec, p);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10310c10 size=0xb0
 #include "CUnknown10310c10.h"
 
