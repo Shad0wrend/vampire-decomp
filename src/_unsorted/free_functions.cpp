@@ -58974,6 +58974,32 @@ int CUnknown101e1650::sub_101e1650(CBaseCombatCharacter *pChar, int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1720 size=0x33
+// TARGET: sub_101e1720
+extern int (__cdecl *g_109f3630)(const char *, ...);
+extern const char g_105a2d30[];
+
+struct CDiscEntry_101e1720 {
+    char pad[0x10];
+    int m_value;
+};
+struct CDiscTable_101e1720 {
+    char pad[8];
+    CDiscEntry_101e1720 **items;
+    int sub_10007df1(int key);
+    int sub_101e1720(int key);
+};
+int CDiscTable_101e1720::sub_101e1720(int key)
+{
+    int idx = sub_10007df1(key);
+    if (idx != -1) {
+        return items[idx]->m_value;
+    }
+    g_109f3630(g_105a2d30);
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1850 size=0xc
 unsigned int __stdcall sub_101e1850(unsigned int value)
 {
