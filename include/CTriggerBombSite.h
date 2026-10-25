@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members (no vtable pointer is declared, so offsets start at 0).
 #pragma once
 
+class CBaseEntity;
+
 struct CBombState	// four bytes passed by value, the first one is the state
 {
 	char m_c;
@@ -12,6 +14,7 @@ class CTriggerBombSite
 {
 public:
 	CTriggerBombSite *vfunc5(unsigned int flags);
+	void vfunc39(CBaseEntity *pOther);	// slot 39: CBaseEntity::vfunc39(pOther) (direct call), stores the time of the global at 0x1070b228 (+0xc, as a dword) at +0x598, then sub_1015ef40(pOther) and CAI_BaseNPCTroika::sub_10181580(1) on pOther
 	void sub_1000cb8a();
 	bool vfunc32(void *pOther);	// slot 32: false when disabled (+0x55c), or when the player object at pOther+0xa8 does not point back to this entity (handle at +0x1cb8) or this entity's own handle at +0x8c resolves to another object
 	void vfunc41(CBombState state);	// slot 41: the bomb progress (0..100, a sixth of the time since +0x598 in percent) is stored at +0x59c; a full bar runs sub_102116c0 first, then the update sub_10211550 with 0x62 (0x21 while still running)
