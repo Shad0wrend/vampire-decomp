@@ -2747,6 +2747,7 @@
 0x10009d9a func   ?sub_1005d830@@YAXPAXMHPAVVector@@@Z sub_1005d830
 0x10009d9f func   ?sub_10187ef0@CLagCompensationManager@@QAEXXZ CLagCompensationManager::sub_10187ef0
 0x10009da4 func   ?sub_101e05e0@CUnknown101e05e0@@QAEXXZ CUnknown101e05e0::sub_101e05e0
+0x10009de0 func   ?vfunc5@CBaseKeyframedMover@@UAEPAV1@I@Z CBaseKeyframedMover::vfunc5
 0x10009def func   ?LinkToParent@?$CUtlRBTree@HG@@QAEXGG_N@Z CUtlRBTree<int,unsigned short>::LinkToParent
 0x10009df4 func   ?sub_102f7970@CUnknown102f7970@@QAEXXZ CUnknown102f7970::sub_102f7970
 0x10009df9 func   ?vfunc266@CPropPadlock@@QAEXH@Z CPropPadlock::vfunc266
