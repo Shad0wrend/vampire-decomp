@@ -9,6 +9,8 @@ class CWeaponThrown_Chang_Energy_Ball
 public:
 	CWeaponThrown_Chang_Energy_Ball *vfunc5(unsigned int flags);
 	void sub_10013a57();
+	void vfunc103();	// slot 103 "...::Restore-like": CBaseCombatWeapon::vfunc103 (stub 0x100047be), then the energy ball's timers and sound fields at +0x910 / +0x91c / +0x928 / +0x938 / +0x93c from the global at 0x1070b228
+	void sub_100047be();	// CBaseCombatWeapon::vfunc103 (stub 0x100047be), called directly
 	void vfunc104();	// "...::Precache": precaches the grenade particle systems, the tic sound and the relief models, then CBaseCombatWeapon::Precache
 	void sub_103f00c0(int unused);	// first call only (byte at +0x91c): tells the physics object, then swaps the nearest solid entity's model for a damaged relief (picked at random) and calls sub_103f0590
 	CBaseEntity *sub_103f0200();	// stub 0x10012409: finds the nearest solid entity that sub_103f01b0 accepts, within the radius of the global at 0x104e15f8 around this weapon's origin
