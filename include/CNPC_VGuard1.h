@@ -24,7 +24,8 @@ public:
 
 	char m_pad03e0[0x14b8 - 0x3e0];
 	unsigned int m_flags14b8;	// +0x14b8
-	char m_pad14bc[0x1b2c - 0x14bc];
+	unsigned int m_flags14bc;	// +0x14bc
+	char m_pad14c0[0x1b2c - 0x14c0];
 	int m_n1b2c;	// +0x1b2c: schedule selection id
 	char m_pad1b30[0x5cc0 - 0x1b30];
 	int m_nState5cc0;	// +0x5cc0
