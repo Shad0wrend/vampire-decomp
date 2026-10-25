@@ -3597,6 +3597,7 @@
 0x1000cc61 func   ?vfunc1@CHLPlayerMove@@QAEXHHHH@Z CHLPlayerMove::vfunc1
 0x1000cc70 func   ??1CUnknown102cff90@@QAE@XZ CUnknown102cff90::~CUnknown102cff90
 0x1000cc7f func   ?sub_10227410@CUnknown10227410@@QAEXH@Z CUnknown10227410::sub_10227410
+0x1000cca2 func   ?sub_10247860@CAccum64View@@QAEXPB_J@Z CAccum64View::sub_10247860
 0x1000cca7 func   ?sub_103aa960@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::sub_103aa960
 0x1000ccac func   ?sub_10242390@@YAXPBMPAM@Z sub_10242390
 0x1000ccd9 func   ?sub_10200be0@CVStatList_t@@QAEXHH@Z CVStatList_t::sub_10200be0

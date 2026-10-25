@@ -76081,6 +76081,23 @@ struct CUnknown102477c0 { int p[6]; int a; int b; void sub_102477c0(); };
 void CUnknown102477c0::sub_102477c0() { a = 0; b = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x10247860 size=0x33
+struct CAccum64View {
+    char pad0[8];
+    __int64 m_qwA;
+    char pad1[8];
+    __int64 m_qwB;
+    void sub_10247860(const __int64 *pValue);
+};
+
+// TARGET: CAccum64View::sub_10247860
+void CAccum64View::sub_10247860(const __int64 *pValue)
+{
+    m_qwA += *pValue;
+    m_qwB += *pValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247c50 size=0x3b
 struct CUnk10247c50
 {
