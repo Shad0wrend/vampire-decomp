@@ -32,3 +32,4 @@
 	void sub_100ad1a0(float *vVelocity, float *vAngVelocity);	// CBaseEntity::vfunc199 (stub 0x1000120d), called directly
 	void vfunc263(Vector *pVelocity);	// slot 263 "CBaseAnimating::GetGroundSpeedVelocity": scope trace (entity name), the ground speed of the sequence at +0x6f0 (sub_1008fab0) as the y of a vector turned by the entity's angles (slot 221, AngleVectors), scaled by the ideal speed at +0x654
 	float sub_1008fab0(int sequence);	// stub 0x1000837d: the ground speed of the sequence
+	bool sub_10094eb0(int sequence);	// "CBaseAnimating::HasMovement": scope trace (entity name), false without a studio header; else true when the sequence's movement (studio worker sub_100c5d10, whole cycle, pose parameters at +0x690) is longer than 0.01 or its first angle is non-zero
