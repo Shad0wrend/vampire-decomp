@@ -90839,6 +90839,19 @@ bool CAI_Pathfinder::sub_102fce80(int moveType, CAI_PathfinderLink *pLink)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fe9a0 size=0x32
+#include "CBitString.h"
+
+CBitString *CBitString::sub_102fe9a0(int nBits)
+{
+    m_nBits = nBits;
+    m_pData = 0;
+    m_nDwords = (nBits + 31) / 32;
+    sub_100bf5b0(m_nDwords);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103000a0 size=0x75
 #include "Vector.h"
 
