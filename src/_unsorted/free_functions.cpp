@@ -62327,6 +62327,30 @@ void CUnknown101f5d80::sub_101f5d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f5e80 size=0x33
+// TARGET: sub_101f5e80
+struct CEntryPair_101f5e80 {
+    int a;
+    void *b;
+    void *c;
+};
+struct CEntryTable_101f5e80 {
+    CEntryPair_101f5e80 e[0x118d];
+    void sub_101f5e80();
+};
+void CEntryTable_101f5e80::sub_101f5e80()
+{
+    int i;
+    for (i = 0; i < 0x118d; i++) {
+        delete e[i].b;
+        delete e[i].c;
+        e[i].a = 0;
+        e[i].b = 0;
+        e[i].c = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5f00 size=0xc2
 #include "CUnknown101f5f00.h"
 
