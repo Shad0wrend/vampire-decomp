@@ -5451,6 +5451,7 @@
 0x10012e8b func   ?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@HG@@@@QAEXH@Z CUtlMemory<CUtlRBTree<int,unsigned short>::Node_t>::Grow
 0x10012e8b func   ?sub_102ec320@CUnknown102ec320@@QAEXH@Z CUnknown102ec320::sub_102ec320
 0x10012e95 func   ?sub_100d3bc0@@YAXXZ sub_100d3bc0
+0x10012e9a func   ?sub_1013a870@@YAMMM@Z sub_1013a870
 0x10012ea4 func   ?sub_1023ee30@@YAXH@Z sub_1023ee30
 0x10012ea9 func   ?sub_101ccb60@CEdtEntitiesEnum@@QAEPAV1@PAPAVCBaseEntity@@HI@Z CEdtEntitiesEnum::sub_101ccb60
 0x10012eb3 func   _item_k_hannahs_safe_key item_k_hannahs_safe_key
