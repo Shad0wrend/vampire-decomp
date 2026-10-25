@@ -58,3 +58,26 @@ void CPropButton::vfunc265(void *pActivator, void *pCaller, int useType, float v
 	g_1073dc00.sub_101f5950(this, g_1074f148, 2, 1.0f, 1.25f);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10215b80 size=0x3b
+#include "CPropButton.h"
+
+struct CPropButtonUnit10215b80 : CPropButton
+{
+    int sub_10215b80(int pActivator);
+};
+
+// TARGET: sub_10215b80
+int CPropButtonUnit10215b80::sub_10215b80(int pActivator)
+{
+    if (m_bLocked)
+    {
+        return *(int *)((char *)this + 0x734);
+    }
+    if (!((CBaseEntity *)this)->sub_100a7bd0((CBaseEntity *)pActivator))
+    {
+        return *(int *)((char *)this + 0x734);
+    }
+    return *(int *)((char *)this + 0x730);
+}
+// END FUNCTION
