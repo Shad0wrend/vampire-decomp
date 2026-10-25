@@ -55867,6 +55867,21 @@ Vector sub_101d0680(const Vector &a, const Vector &b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d07f0 size=0xb2
+#include "Vector.h"
+
+void sub_101d07f0(Vector *pA, const Vector *pB, const Vector *pLimit)
+{
+	Vector vecSum = *pA + *pB;
+	for (int i = 0; i < 3; i++)
+	{
+		if (!(!(vecSum[i] > (*pLimit)[i]))) vecSum[i] = (*pLimit)[i]; else { if (vecSum[i] < -(*pLimit)[i])
+			vecSum[i] = -(*pLimit)[i]; }
+		(*pA)[i] = vecSum[i] - (*pB)[i];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d08e0 size=0xdb
 #include "CUnknown1070b254.h"
 
