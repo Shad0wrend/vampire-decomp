@@ -154,6 +154,7 @@ public:
 	void sub_102f0400();	// stub 0x10006744, run when the motor reports 1
 	int sub_102ee3f0();	// stub 0x10011f77: the owner's task id for the finished move
 	float sub_102f1cf0();	// the distance from the owner's origin (slot 220) to the route's goal position: 2D while the flag at +0x18 is clear, else 3D
+	bool sub_102f05d0(const Vector *pTarget);	// true while the float at +0x3c is set; else asks the owner (slot 368) about the flat direction to pTarget and fails when it points away (dot with the answer's x / y at most the threshold 0x1049d984)
 
 	int m_i14;
 	int m_i18;
@@ -165,7 +166,7 @@ public:
 	CAI_NavRoute *m_p30;
 	char m_b34;
 	int m_i38;
-	char m_pad3c[4];
+	float m_f3c;	// 0x3c
 	float m_f40;
 	float m_f44;
 	float m_f48;
