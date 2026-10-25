@@ -111,3 +111,16 @@ void CPropHacking::vfunc272()
 	((CBaseVampireSkillEntity *)this)->vfunc272();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1021d610 size=0x33
+#include "CPropHacking.h"
+
+void sub_10217ac0(CPropHacking *p, const char *fmt, ...);
+
+// TARGET: CPropHacking::vfunc278
+void CPropHacking::vfunc278(int a)
+{
+    sub_10218ff0(0, m_n0814 - 1);
+    sub_10217ac0(this, "%s%s     ", sub_10219400(0xc), a);
+}
+// END FUNCTION
