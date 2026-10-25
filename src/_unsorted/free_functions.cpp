@@ -101435,6 +101435,24 @@ char sub_10360560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103618a0 size=0xbc
+#include "ScopeTrace.h"
+#include "CNPC_VAsianVampire.h"
+bool CNPC_VAsianVampire::sub_10004b8d(const float *pos)
+{
+    ScopeTrace trace("CNPC_VAsianVampire::IsPosNearStoredJumpPositions", g_106b8540);
+    const StoredHintPos_t *p = m_storedHints;
+    for (int i = 0; i < 2; i++, p++)
+    {
+        Vector d;
+        d = *(const Vector *)p - *(const Vector *)pos;
+        if (d.Length2D() <= 30.0f)
+            return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10361990 size=0xaa
 #include "CNPC_VAsianVampire.h"
 
