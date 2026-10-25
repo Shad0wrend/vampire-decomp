@@ -89497,6 +89497,25 @@ float CAI_Motor::sub_102e1f90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2020 size=0x68
+#include "CAI_Motor.h"
+
+void CAI_Motor::sub_102e2020(const float *pPosition, int b)
+{
+    float yaw = sub_102e2750(pPosition);
+    if (m_28) {
+        if (yaw >= 180.0f)
+            yaw = yaw - 180.0f;
+        else
+            yaw = yaw + 180.0f;
+    }
+    if (m_1c == 0x43340000)
+        m_34 = yaw;
+    else
+        m_34 = sub_102e0a80(yaw);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2610 size=0xa
 int CAI_Motor::sub_102e2610()
 {
