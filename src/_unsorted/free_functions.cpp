@@ -68586,6 +68586,49 @@ void CBaseKeyframedMover::sub_10010c35()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10223770 size=0x3d
+#include "vampire.h"
+#include "CBaseToggle.h"
+
+struct CUnknownInput10223770
+{
+    char m_pad00[8];
+    float m_flValue;
+    char m_pad0c[0x18 - 0xc];
+    int m_nType;
+};
+
+struct CUnknownToggle10223770
+{
+    void sub_10223770(CUnknownInput10223770 *pInput);
+    char m_pad0000[0x164];
+    float m_flValue164;
+    char m_pad0168[0x540 - 0x168];
+    Vector m_vecMove540;
+    char m_pad054c[0x560 - 0x54c];
+    int m_n560;
+};
+
+// TARGET: CUnknownToggle10223770::sub_10223770
+void CUnknownToggle10223770::sub_10223770(CUnknownInput10223770 *pInput)
+{
+    float flValue;
+    if (pInput->m_nType == 1)
+    {
+        flValue = pInput->m_flValue;
+    }
+    else
+    {
+        flValue = 0.0f;
+    }
+    m_flValue164 = flValue;
+    if (m_n560)
+    {
+        ((CBaseToggle *)this)->sub_101c1520(&m_vecMove540, flValue);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102237c0 size=0xd
 void CUnknown102237c0::sub_102237c0(int value)
 {
