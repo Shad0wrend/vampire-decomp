@@ -81271,6 +81271,20 @@ float CVector2Dot::sub_102a9540(const CVector2Dot *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9570 size=0x38
+// TARGET: sub_102a9570
+#include "Vector.h"
+
+float __fastcall sub_102a9570(Vector *a, int unused, Vector *b)
+{
+    float dx = a->x - b->x;
+    float dy = a->y - b->y;
+    float dz = a->z - b->z;
+    float sum = dz * dz + dx * dx;
+    return FastSqrt(sum + dy * dy);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a95e0 size=0xa
 struct CUnknown102a95e0 { int a[1]; int *sub_102a95e0(int i); };
 // TARGET: CUnknown102a95e0::sub_102a95e0
