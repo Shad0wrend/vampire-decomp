@@ -8,5 +8,8 @@ public:
 	CGargoyleTalisman *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	void vfunc298(void *pChar, int nValue);	// slot 298: when the character is set, its sub_10322800 gets the owner's value at +0x4fed0 (the owner of this's sub_102517b0 and its handle at +0x4fec0); then CBaseCombatWeapon::vfunc298(pChar, nValue)
-	void vfunc300();	// slot 300: clears the owner's bits at +0xe38 (the value at +0x4fed0 of sub_10010ea6) of the character from sub_10252240, then CBaseCombatWeapon::vfunc300
+	void vfunc300();	// slot 300: clears the bits of the character (sub_10252240) that are set in the owner's value at +0x4fed0 (sub_10010ea6), then CBaseCombatWeapon::vfunc300 (sub_10005b69)
+	char *sub_10252240();	// CAI_BaseNPCTroika::sub_10252240 (0x100011f4), called on this: the character or 0
+	char *sub_10010ea6();	// the owner object of this (0x10010ea6)
+	void sub_10005b69();	// CBaseCombatWeapon::vfunc300 (stub 0x10005b69), called directly
 };
