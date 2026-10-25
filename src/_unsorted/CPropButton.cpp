@@ -1,6 +1,36 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10215620 size=0xe5
+#include "CPropButton.h"
+#include "CUnknown1073dc28.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern CUnknown1073dc28 g_1073dc00;
+extern int g_1074f144;
+extern int g_1074f148;
+
+inline int FindSoundId(const char *pszName)
+{
+	for (int i = 0; i < g_1073dc00.m_nRecords; i++)
+	{
+		if (!_strcmpi(g_1073dc00.m_ppRecords[i]->m_Name.Get(), pszName))
+			return g_1073dc00.m_ppRecords[i]->m_nId;
+	}
+	return -1;
+}
+
+// TARGET: CPropButton::vfunc71
+void CPropButton::vfunc71()
+{
+	m_nVSoundTableIdx = 0;
+	m_nVSoundGroup = g_1073dc00.sub_101f55a0((CBaseEntity *)this, ((CUnknown1073dc28Name *)((char *)this + 0xc0))->Get(), 0);
+
+	g_1074f144 = FindSoundId("on");
+	g_1074f148 = FindSoundId("off");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10215750 size=0x12e
 #include "CPropButton.h"
 #include "CBaseProp.h"
