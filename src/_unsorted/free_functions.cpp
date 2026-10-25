@@ -100472,6 +100472,27 @@ char sub_103abc90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad0f0 size=0x3b
+#include "CBaseCombatCharacter.h"
+
+struct CUnk10738d10
+{
+    int sub_1000297d(const char *pszName);
+};
+
+extern CUnk10738d10 g_10738d10;
+
+// TARGET: sub_103ad0f0
+bool sub_103ad0f0(CBaseCombatCharacter *pChar)
+{
+    static int s_nPlayer = g_10738d10.sub_1000297d("Player_Nosferatu");
+    if (pChar->sub_10337860() == s_nPlayer) {
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad710 size=0x53
 void *sub_1000db89(int);
 struct GP;
