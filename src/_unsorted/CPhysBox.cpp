@@ -160,3 +160,21 @@ void CPhysBox::vfunc243(int a)
 	((CPhysBoxHelper498 *)((char *)this + 0x4b0))->sub_10010794(a, this, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1004e970 size=0x31
+#include "CPhysBox.h"
+
+struct CUnknown1004e970Sub
+{
+    void sub_10010794(int a, void *pOwner, int b);
+};
+
+int CPhysBox::vfunc142(CBaseEntity *pEnt)
+{
+    sub_1000850d(pEnt);
+    if (*(int *)((char *)pEnt + 0x28) != 0) {
+        ((CUnknown1004e970Sub *)((char *)this + 0x468))->sub_10010794(*(int *)((char *)pEnt + 0x2c), this, 0);
+    }
+    return 1;
+}
+// END FUNCTION
