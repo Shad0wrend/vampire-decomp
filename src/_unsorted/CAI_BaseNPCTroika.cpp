@@ -1448,6 +1448,53 @@ bool CAI_BaseNPCTroika::vfunc201(CBaseEntity *pEnt, int a, int *pOut, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4ab0 size=0x104
+#include "CEntityVSlots.h"
+
+struct CTroikaHint533
+{
+	void sub_102d1180(void *pNpc, Vector *pOut);
+};
+
+struct CTroikaView533
+{
+	char pad0[0x5d60];
+	Vector m_vecOffset;
+	char pad5d6c[0x5ddc - 0x5d6c];
+	CTroikaHint533 *m_pHint;
+};
+
+struct CAI_BaseNPCTroikaUnit533 : CAI_BaseNPCTroika
+{
+	void sub_102b6120(Vector *pVec, int a);
+};
+
+Vector CAI_BaseNPCTroika::vfunc533(int a, int b)
+{
+	CTroikaView533 *pView = (CTroikaView533 *)this;
+	if (pView->m_pHint)
+	{
+		switch (a)
+		{
+		case 0x1119:
+		case 0x111a:
+		case 0x111b:
+		case 0x111c:
+		case 0x111f:
+		case 0x1120:
+			{
+				Vector vecOrigin = *((CEntityVSlots *)this)->slot217();
+				((CAI_BaseNPCTroikaUnit533 *)this)->sub_102b6120(&vecOrigin, 0);
+				Vector vecPos;
+				pView->m_pHint->sub_102d1180(this, &vecPos);
+				return (vecPos - vecOrigin) + pView->m_vecOffset;
+			}
+		}
+	}
+	return CAI_BaseNPC::vfunc533(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b50b0 size=0x3b
 #include "CAI_BaseNPCTroika.h"
 
