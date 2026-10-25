@@ -5,6 +5,7 @@ class ConVar
 {
 public:
 	ConVar(const char *pName, const char *pDefaultValue, int flags);	// "ConVar::ConVar" (stub 0x10006488, function 0x10245a40): base constructor, stores the vftable, then Create(name, default, flags, no help, no limits, no callback); a function-local static ConVar is built with it behind a guard byte
+	ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, void (*pCallback)(ConVar *, const char *));	// function 0x10245b80: calls the ConCommandBase constructor (sub_10007f3b), stores the vftable, then Create(name, default, flags, help, no limits, callback)
 	~ConVar();	// "ConVar::~ConVar" (stub 0x100108bb): the atexit destroy of such a static jumps to it
 
 	virtual ConVar *vfunc0(unsigned int flags);
@@ -37,6 +38,7 @@ public:
 	float m_fMaxVal;	// 0x003c
 	void (*m_fnChangeCallback)(ConVar *pVar, const char *pOldString);	// 0x0040
 	void sub_100108bb();	// as in CDataObjectAccessSystem (transplant)
+	void sub_10007f3b();	// ConCommandBase constructor (stub 0x10007f3b, jumps to 0x102454e0), called directly first by the constructors
 	void sub_102455c0(const char *pName, const char *pHelpString, int flags);	// ConCommandBase::Create, called directly (stub 0x1000de4f)
 	void sub_10246160(int nValue);	// slot 4's implementation as called directly with an integer ("ConVar::SetValue( int )", stub 0x1000c5cc)
 
