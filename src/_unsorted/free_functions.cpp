@@ -8573,6 +8573,21 @@ int sub_100657e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065930 size=0x32
+#include "CTEInspectionFX.h"
+
+extern char g_106c4828;
+extern int g_106c4834[3];
+
+void sub_10065930(CRecipientFilter *pFilter, float flDelay, const int *pVec)
+{
+    g_106c4834[0] = pVec[0];
+    g_106c4834[1] = pVec[1];
+    g_106c4834[2] = pVec[2];
+    ((CTEInspectionFX *)&g_106c4828)->sub_1000de27(pFilter, flDelay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065e20 size=0x37
 #include "CTEMuzzleFlash.h"
 
