@@ -39307,6 +39307,18 @@ CBaseEntity *__stdcall sub_10141b10(CBaseEntity *a, CBaseEntity *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142aa0 size=0x36
+extern int g_1070d9d0;
+
+void sub_10142b80(int a1, int a2, int a3, int *pTable, int a4, int a5, int a6, int a7, int a8);
+
+// TARGET: sub_10142aa0
+void sub_10142aa0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+    sub_10142b80(a1, a2, a3, &g_1070d9d0, a4, a5, a6, a7, a8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142af0 size=0x64
 struct CAnglesPlain
 {
