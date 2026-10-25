@@ -1,6 +1,7 @@
 // CNPC_VCop: declared by pcdecomp transplant for 0x10370970 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CNPC_VHumanCombatant.h"
 
 struct CNPC_VCopPlayer	// the object behind +0xa8 of an entity (the controlling player)
 {
@@ -14,7 +15,7 @@ struct CNPC_VCopTarget	// an entity as vfunc404 sees it
 	CNPC_VCopPlayer *m_pPlayer;	// 0xa8
 };
 
-class CNPC_VCop : public CBaseEntity
+class CNPC_VCop : public CNPC_VHumanCombatant
 {
 public:
 	CNPC_VCop *vfunc5(unsigned int flags);
