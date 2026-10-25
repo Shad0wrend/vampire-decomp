@@ -68131,6 +68131,52 @@ int CVDmgBlock16_t::sub_10205840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10205ac0 size=0xab
+#include "CVDmg_t.h"
+
+extern "C" int __cdecl isdigit(int);
+extern "C" int __cdecl atoi(const char *);
+
+struct CNameTable
+{
+	int sub_1006cf30(const char *pszName);
+};
+
+struct CParsedValue
+{
+	void sub_102058e0(int nValue);
+	void sub_10205900(CVDmgBlock16_t *pBlock);
+	void sub_10205920(int nIndex);
+	void sub_10205ac0(void *pOwner, const char *pszText);
+};
+
+extern CNameTable g_106c7c34;
+int sub_102025f0(void *pOwner, const char *pszText);
+
+void CParsedValue::sub_10205ac0(void *pOwner, const char *pszText)
+{
+	if (isdigit(*pszText) || *pszText == '-')
+	{
+		sub_102058e0(atoi(pszText));
+		return;
+	}
+	CVDmgBlock16_t block;
+	block.sub_10204570(pszText);
+	if (!block.sub_10204250())
+	{
+		sub_10205900(&block);
+		return;
+	}
+	int nIndex = g_106c7c34.sub_1006cf30(pszText);
+	if (nIndex != -1)
+	{
+		sub_10205920(nIndex);
+		return;
+	}
+	sub_102058e0(sub_102025f0(pOwner, pszText));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205ba0 size=0x98
 #include "CUnknown10205ba0.h"
 #include "CUnknown102043a0.h"
