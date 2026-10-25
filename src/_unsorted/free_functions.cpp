@@ -11218,6 +11218,22 @@ float *CUnknown10074070::sub_10074160(int index, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100741f0 size=0x8d
+#include "CUnknown10074070.h"
+
+float CUnknown10074070::sub_100741f0(float flTime, int index)
+{
+	float flValue = sub_10074110(index);
+	if (m_pRange && m_pRange->sub_10075f30() && !(m_pRange->sub_10075e70() > flTime) && !(m_pRange->sub_10075f10() < flTime)) {
+		float flRelative = flTime - m_pRange->sub_10075e70();
+		flValue = sub_100742b0(flRelative, index);
+		if (m_f0c != m_f10)
+			flValue = (m_f10 - m_f0c) * flValue + m_f0c;
+	}
+	return flValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074610 size=0x9f
 #include "CUnknown10074a30.h"
 
