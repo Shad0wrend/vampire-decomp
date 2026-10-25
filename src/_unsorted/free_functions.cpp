@@ -100057,6 +100057,27 @@ extern "C" CBaseEntity *npc_VCop()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370560 size=0x33
+// TARGET: sub_10370560
+extern float g_1093aca8;
+extern int g_1093ac3c;
+extern char *g_1070b228;
+
+struct CVirtObj_10370560 {
+    virtual void *vfunc0();
+    virtual void *vfunc1();
+};
+
+void sub_10370560(CVirtObj_10370560 *p)
+{
+    if (p && *(int *)((char *)p + 0xa8)) {
+        g_1093aca8 = *(float *)(g_1070b228 + 0xc) + 30.0f;
+        int *r = (int *)p->vfunc1();
+        g_1093ac3c = *r;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103705e0 size=0x3f
 struct CUnknownEntList103705e0 {
     char *sub_10015b95(char *pPrev, int flags);
