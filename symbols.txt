@@ -2459,6 +2459,7 @@
 0x10008fb2 func   ?sub_10337300@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10337300
 0x10008fb7 func   ?sub_1024cef0@CBlock64_t@@QAEPAU1@PBU1@@Z CBlock64_t::sub_1024cef0
 0x10008fd5 func   ?sub_1030f680@Helper1030f680@@QAEPAU1@PBDHH@Z Helper1030f680::sub_1030f680
+0x10008fe4 func   ?sub_10041980@@YIPAUHashHolder@@PAU1@HE@Z sub_10041980
 0x10008fe9 func   ?sub_1013d400@@YAMMMM@Z sub_1013d400
 0x10008fee func   ?vfunc5@CWeaponIWritten@@QAEPAV1@I@Z CWeaponIWritten::vfunc5
 0x10009002 func   ?vfunc5@CNPC_VSheriffMan@@QAEPAV1@I@Z CNPC_VSheriffMan::vfunc5
