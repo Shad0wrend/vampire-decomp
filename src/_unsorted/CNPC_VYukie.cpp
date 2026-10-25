@@ -163,3 +163,26 @@ char CNPC_VYukie::vfunc602()
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103ddaa0 size=0x3a
+extern char g_10924fba;
+extern char g_10924fb9;
+
+// TARGET: sub_103ddaa0
+bool __stdcall sub_103ddaa0(char *pEntity)
+{
+    if (pEntity == 0)
+    {
+        return false;
+    }
+    if (g_10924fba != 0)
+    {
+        return false;
+    }
+    if (g_10924fb9 != 0 && *(int *)(pEntity + 0xa8) != 0)
+    {
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
