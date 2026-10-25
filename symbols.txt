@@ -1604,6 +1604,7 @@
 0x1000628f func   ?sub_10430320@@YAII@Z sub_10430320
 0x10006299 func   ?sub_1042fde0@@YAII@Z sub_1042fde0
 0x1000629e func   ?vfunc546@CNPC_VCamera@@QAEHH@Z CNPC_VCamera::vfunc546
+0x100062da func   ?sub_1018cf20@CPointAngleSensor@@QAE_NPAVCBaseEntity@@0M@Z CPointAngleSensor::sub_1018cf20
 0x100062e4 func   ?vfunc259@CNPC_VDog@@UAEXPAH@Z CNPC_VDog::vfunc259
 0x100062e9 func   ?sub_10097e50@@YAHXZ sub_10097e50
 0x10006320 func   ?sub_102ca2a0@CAI_CsActList@@QAEXHPAVCBaseEntity@@MMMHM00D@Z CAI_CsActList::sub_102ca2a0

@@ -46183,6 +46183,24 @@ int *sub_1018cc00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018cf20 size=0xc7
+#include "CPointAngleSensor.h"
+#include "CEntityVSlots.h"
+struct CBaseEntityVectorsUnit : CBaseEntity { void sub_100ad320(float *forward, float *right, float *up); };
+bool CPointAngleSensor::sub_1018cf20(CBaseEntity *pTarget, CBaseEntity *pLookAt, float flDotTolerance)
+{
+    if (!pTarget || !pLookAt)
+        return false;
+    Vector forward;
+    ((CBaseEntityVectorsUnit *)pTarget)->sub_100ad320(&forward.x, 0, 0);
+    Vector *pA = ((CEntityVSlots *)pTarget)->slot220();
+    Vector *pB = ((CEntityVSlots *)pLookAt)->slot220();
+    Vector dir = *pB - *pA;
+    VectorNormalize(dir);
+    return m_flDotTolerance <= (dir.x * forward.x + forward.y * dir.y + forward.z * dir.z) ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018d210 size=0xa2
 #include "CPointAngleSensor.h"
 
