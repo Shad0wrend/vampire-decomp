@@ -64530,6 +64530,26 @@ int CVDmgBlock16_t::sub_10204ad0(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204ba0 size=0x3d
+#include "CVStatInfoList_t.h"
+extern CVStatInfoList_t g_1074e098;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e658;
+
+CVStatInfo_t *__fastcall sub_10204ba0(int *p)
+{
+    switch (p[0]) {
+    case 0:
+        return g_1074e658.sub_10200370(p[1]);
+    case 1:
+        return g_1074e4f0.sub_10200370(p[1]);
+    case 2:
+        return g_1074e098.sub_10200370(p[1]);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204c60 size=0x9c
 #include "CUnknown10204c60.h"
 #include "CUnknown10205ba0.h"
