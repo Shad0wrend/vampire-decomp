@@ -6169,6 +6169,7 @@
 0x100145ba func   ?sub_1013da70@@YAXH@Z sub_1013da70
 0x100145ce func   _info_node_tzimisce_claw_right info_node_tzimisce_claw_right
 0x100145dd func   ?vfunc5@CItemGMilligansBuisnesscard@@QAEPAV1@I@Z CItemGMilligansBuisnesscard::vfunc5
+0x100145e7 func   ?vfunc574@CNPC_VMingXiao@@QAE?AVVector@@ABV2@HH@Z CNPC_VMingXiao::vfunc574
 0x100145ec func   ?sub_10098cd0@CAnimationLayerAdvance@@QAEXHPAX0@Z CAnimationLayerAdvance::sub_10098cd0
 0x10014605 func   ?sub_102237c0@CUnknown102237c0@@QAEXH@Z CUnknown102237c0::sub_102237c0
 0x10014619 func   ?sub_10215960@CPropButton@@QAEXPAUinputdata_t@@@Z CPropButton::sub_10215960

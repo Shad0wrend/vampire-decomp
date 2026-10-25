@@ -277,6 +277,21 @@ void CNPC_VMingXiao::vfunc144(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395d00 size=0x90
+#include "CBaseEntity.h"
+#include "CNPC_VMingXiao.h"
+
+Vector CNPC_VMingXiao::vfunc574(const Vector &vecPos, int a, int b)
+{
+	Vector vecTarget;
+	sub_10278650(&vecTarget, &vecPos, a, b);
+	vecTarget.z += 20.0f;
+	Vector vecDir = vecTarget - vecPos;
+	VectorNormalize(vecDir);
+	return vecDir;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395e70 size=0xcd
 #include "CNPC_VMingXiao.h"
 #include "CUnknown1070b244.h"
