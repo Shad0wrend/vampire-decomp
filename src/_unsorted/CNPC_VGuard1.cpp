@@ -67,3 +67,19 @@ int CNPC_VGuard1::vfunc438()
 	return sub_10015ad2();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1037d240 size=0x40
+#include "CNPC_VGuard1.h"
+
+// TARGET: CNPC_VGuard1::vfunc440
+int CNPC_VGuard1::vfunc440(int schedule)
+{
+	if (schedule != 0x6b) {
+		if (schedule != 0x103) {
+			return sub_10005e20(schedule);
+		}
+		return 0x159;
+	}
+	return ((m_flags14bc & 0x80000) == 0x80000) ? 0x132 : 0x15a;
+}
+// END FUNCTION
