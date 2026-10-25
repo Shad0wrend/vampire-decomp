@@ -49,6 +49,20 @@ void CPhysBox::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e3e0 size=0x34
+// TARGET: CPhysBox::vfunc68
+#include "CPhysBox.h"
+
+bool CPhysBox::vfunc68(void *pOther)
+{
+	if ((*(int *)((char *)pOther + 0x9c) != 0 && (*(unsigned char *)((char *)this + 0x204) & 0x10)) ||
+		(*(int *)((char *)pOther + 0xa8) != 0 && (sub_100b39c0() & 1))) {
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e430 size=0x97
 #include "CPhysBox.h"
 #include "CUnknown101466e0.h"
