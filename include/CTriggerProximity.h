@@ -41,7 +41,10 @@ class CTriggerProximity : public CBaseTrigger
 public:
 	CTriggerProximityHandle m_hMeasureTarget;	// 0x598: handle of the entity named by m_pszMeasureTarget
 	const char *m_pszMeasureTarget;	// 0x59c
+	float m_flMeasure05a0;	// 0x5a0: the measured distance, 32 when it was never set
 
 	virtual void vfunc113();	// "CTriggerProximity::Activate": the base activation, finds the measure target by name (stores its handle, -1 when none) and warns "TriggerProximity - Missing measure target or measure target with no origin!" unless it resolves to a live entity with an edict
+	void vfunc103();	// slot 103: sets the distance to 32 while it is 0, then sub_101c5080() and the free function sub_101cf600(this)
+	void sub_101c5080();	// stub 0x1000dfd0, called directly
 	void sub_100113a6();	// CBaseTrigger::vfunc113 (Activate), called directly
 };
