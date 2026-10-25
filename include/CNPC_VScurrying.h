@@ -24,8 +24,9 @@ public:
 	void sub_10269b50(int condition);	// stub 0x10015839
 	void sub_10269a20(int condition);	// stub 0x100041b0
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f)
-	char sub_103acac0(CBaseEntity *pEnt);	// stub 0x1000f9f7
+	char sub_103acac0(CBaseEntity *pEnt);	// stub 0x1000f9f7: whether pEnt is within the distance at +0x6690 (3D, slot 217 origins) and passes the checks the two flag bytes at +0x6694 / +0x6695 ask for (sub_103ad0f0 must refuse it, sub_103ad0a0 must accept it)
 	CScurryPick *sub_103aca80();	// stub 0x1000b573
+	char sub_103ad0a0(CBaseEntity *pEnt);	// stub 0x10007595, called directly
 
 	char m_pad03e0[0x1b2c - 0x3e0];
 	int m_n1b2c;
@@ -37,6 +38,9 @@ public:
 	unsigned int m_hEnt667c;
 	Vector m_vec6680;
 	float m_flTime668c;	// 0x668c
-	char m_pad6690[0x669c - 0x6690];
+	float m_flRange6690;	// 0x6690: the largest distance of a pick
+	char m_b6694;	// 0x6694
+	char m_b6695;	// 0x6695
+	char m_pad6696[0x669c - 0x6696];
 	float m_flDelay669c;	// 0x669c
 };
