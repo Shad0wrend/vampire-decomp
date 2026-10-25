@@ -34618,6 +34618,20 @@ void sub_1011e010(Vector *a, Vector *b, Vector *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e8f0 size=0x39
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+
+extern CUnknown1070b254 *g_1070b254;
+
+// TARGET: sub_1011e8f0
+void sub_1011e8f0(Ray_t *pRay, unsigned int fMask, void *pPassEnt, int nGroup, CGameTrace *pTrace)
+{
+    CTraceFilterSimple filter(pPassEnt, nGroup);
+    g_1070b254->vfunc4(pRay, fMask, (CTraceFilterNoCharacterCollide *)&filter, pTrace);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011fa80 size=0x9a
 #include "CGameMovement.h"
 
