@@ -1,6 +1,23 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1010fef0 size=0x3a
+#include "CBreakableSurface.h"
+
+extern int *g_1070b228;
+void sub_100154ec();
+
+// TARGET: ?vfunc130@CBreakableSurface@@UAEXH@Z
+void CBreakableSurface::vfunc130(int a)
+{
+    CBaseEntity::vfunc130(a);
+    if (m_b4c4) {
+        sub_100ac4e0((int)sub_100154ec, 0, 0);
+        *(int *)((char *)this + 0x17c) = g_1070b228[3];
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101134f0 size=0x72
 #include "CBreakableSurface.h"
 
