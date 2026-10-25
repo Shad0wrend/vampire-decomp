@@ -73,6 +73,49 @@ int CNPC_VYukie::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd8b0 size=0x3e
+#include "CNPC_VYukie.h"
+
+struct CVirtSimpleA
+{
+	virtual void slot0();
+	virtual void slot1();
+};
+
+struct CVirtSoundB
+{
+	virtual float slot0();
+	virtual float slot1(float a, float b);
+};
+
+struct CVYukieTimeInfo
+{
+	char m_pad0000[0xc];
+	float m_f0c;	// +0xc
+};
+
+extern CVirtSimpleA *g_10924edc;
+extern CVirtSoundB *g_1070b244;
+extern CVYukieTimeInfo *g_1070b228;
+
+struct CNPC_VYukieView
+{
+	char m_pad0000[0x6074];
+	float m_fTime6074;	// +0x6074
+	char m_b6078;	// +0x6078
+};
+
+// TARGET: CNPC_VYukie::vfunc599
+char CNPC_VYukie::vfunc599(int unused)
+{
+	CNPC_VYukieView *pView = (CNPC_VYukieView *)this;
+	g_10924edc->slot1();
+	pView->m_b6078 = 1;
+	pView->m_fTime6074 = g_1070b244->slot1(22.5f, 45.0f) + g_1070b228->m_f0c;
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd900 size=0x74
 #include "CNPC_VYukie.h"
 #include "CEntityVSlots.h"
