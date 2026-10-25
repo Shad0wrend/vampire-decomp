@@ -24907,6 +24907,40 @@ char sub_100c5b00(CBoneOwner *p, int a, int b, Vector *turn, Vector *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6020 size=0x160
+#include "Vector.h"
+
+void sub_100c5400(void *pStudioHdr, int iSequence, const float *poseParameter, void **panim, float *weight);
+char sub_100c57e0(void *panim, float flCycle, Vector &deltaPos, Vector &deltaAngles);
+
+bool sub_100c6020(void *pStudioHdr, int iSequence, float flCycle, const float *poseParameter, Vector &deltaPos, Vector &deltaAngles)
+{
+	void *panim[4];
+	float weight[4];
+	sub_100c5400(pStudioHdr, iSequence, poseParameter, panim, weight);
+	deltaPos.Init();
+	deltaAngles.Init();
+	bool found = false;
+	for (int i = 0; i < 4; i++)
+	{
+		if (weight[i])
+		{
+			Vector localPos;
+			Vector localAngles;
+			localPos.Init();
+			localAngles.Init();
+			if (sub_100c57e0(panim[i], flCycle, localPos, localAngles))
+			{
+				found = true;
+				deltaPos = deltaPos + localPos * weight[i];
+				deltaAngles = deltaAngles + localAngles * weight[i];
+			}
+		}
+	}
+	return found;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6280 size=0xa0
 #include <string.h>
 struct SModelLoader {

@@ -6637,6 +6637,7 @@
 0x10015aeb func   ?sub_100e5c70@CDialog@@QAEXXZ CDialog::sub_100e5c70
 0x10015af5 func   ?vfunc5@CDecal@@QAEPAV1@I@Z CDecal::vfunc5
 0x10015aff func   ?vfunc546@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc546
+0x10015b09 func   ?sub_100c6020@@YA_NPAXHMPBMAAVVector@@2@Z sub_100c6020
 0x10015b0e func   ?sub_10170eb0@CUnknown10170eb0@@QAEXXZ CUnknown10170eb0::sub_10170eb0
 0x10015b1d func   ?sub_100f8ec0@CEntityListSystem@@QAEXXZ CEntityListSystem::sub_100f8ec0
 0x10015b27 func   ?vfunc103@CFunc_Dust@@QAEXXZ CFunc_Dust::vfunc103
