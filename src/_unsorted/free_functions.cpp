@@ -10137,6 +10137,36 @@ void sub_10071cd0(float *out, const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10072ba0 size=0x3a
+struct S10072d60 {
+    void sub_10072d60(int a);
+};
+
+struct CUnknown10072ba0 {
+    char m_pad0000[0x164];
+    int m_164;
+    int m_168;
+    int m_16c;
+    int m_170;
+    int m_174;
+    CUnknown10072ba0 *sub_10072ba0(int a);
+    void sub_10013f57();
+};
+
+// TARGET: CUnknown10072ba0::sub_10072ba0
+CUnknown10072ba0 *CUnknown10072ba0::sub_10072ba0(int a)
+{
+    m_164 = 0;
+    m_168 = 0;
+    m_16c = 0;
+    m_170 = 0;
+    m_174 = 0;
+    sub_10013f57();
+    ((S10072d60 *)this)->sub_10072d60(a);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072bf0 size=0xe6
 #include "CUnknown10072f10.h"
 #include "CUnknown100735a0.h"
