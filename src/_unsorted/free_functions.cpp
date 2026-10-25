@@ -88559,6 +88559,32 @@ void CUnk102da7c0::sub_102da7c0(void *pEnt, char bTrack, char bFire)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102da860 size=0xf1
+#include "CUnknown102d9ed0.h"
+#include "CBaseEntity.h"
+
+struct CEntityNameView : CBaseEntity {
+	const char *sub_100ab4f0();
+};
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *pszFormat, ...);
+
+void CUnknown102d9ed0::sub_102da860(CBaseEntity *pNpc, const Vector *pOrigin, const Vector *pMinOffset, const Vector *pMaxOffset)
+{
+	if (m_nPlaces < m_nPlacesAlloc)
+	{
+		m_pPlaces[m_nPlaces].m_bUsed = (int)pNpc;
+		m_pPlaces[m_nPlaces].m_vecMin = *pOrigin + *pMinOffset;
+		m_pPlaces[m_nPlaces].m_vecMax = *pOrigin + *pMaxOffset;
+		m_nPlaces++;
+		return;
+	}
+	if (pNpc)
+		DevWarning(2, "AddMarker failed to add NPC '%s'\n", ((CEntityNameView *)pNpc)->sub_100ab4f0());
+	else
+		DevWarning(2, "AddMarker failed to add NPC '%s'\n", "**UNKNOWN**");
+}
+// END FUNCTION
+
 // FUNCTION: 0x102da9e0 size=0xa1
 #include "CUnknown102d9ed0.h"
 
