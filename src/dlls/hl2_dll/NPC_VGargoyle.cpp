@@ -58,3 +58,22 @@ int CNPC_VGargoyle::vfunc438()
     return sub_10384ee0();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10378da0 size=0x32
+// TARGET: CNPC_VGargoyle::vfunc144
+#include "CNPC_VGargoyle.h"
+#include "CNPC_VVampire.h"
+
+extern char g_1063a854[];
+
+void CNPC_VGargoyle::vfunc144(int info)
+{
+    if (m_p6684) {
+        ((CNPC_VVampire *)this)->vfunc144(info);
+        return;
+    }
+    *(const char **)((char *)this + 0x1b30) = g_1063a854;
+    *(int *)((char *)this + 0x1b34) = 0x248;
+    sub_102ae750(0x15c, 1);
+}
+// END FUNCTION
