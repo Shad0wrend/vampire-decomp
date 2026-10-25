@@ -56,7 +56,8 @@ public:
 	CPASAttenuationFilter(E *entity, int soundIndex) : CPASFilter(entity->GetSoundEmissionOrigin())
 	{
 		int soundlevel = sub_101b19e0(soundIndex);
-		Filter(entity->GetSoundEmissionOrigin(), SNDLVL_TO_ATTN(soundlevel));
+		float attenuation = (float)SNDLVL_TO_ATTN(soundlevel);
+		Filter(entity->GetSoundEmissionOrigin(), attenuation);
 	}
 	CPASAttenuationFilter();	// out of line: the matched source of ??_GCPASAttenuationFilter (0x1002ac40) defines it to make VC6 emit that destructor
 
