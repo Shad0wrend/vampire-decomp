@@ -9531,6 +9531,29 @@ void CUnknown1006c6a0::sub_1006c6a0(int op, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006ca50 size=0x31
+#include "CUnknown10204e90.h"
+#include "CUnknown10204c60.h"
+
+struct CUnk_1006ca50
+{
+    char pad_0000[0x18];
+    void sub_1000d102(int a);
+    void sub_1006ca50(int a);
+};
+
+void CUnk_1006ca50::sub_1006ca50(int a)
+{
+    int v;
+    if (a != 0) {
+        v = ((CUnknown10204e90 *)((char *)this + 0x18))->sub_10204900((void *)a);
+    } else {
+        v = ((CUnknown10204c60 *)((char *)this + 0x18))->sub_10204c60();
+    }
+    this->sub_1000d102(v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cb10 size=0x31
 #include "CUnknown10204e90.h"
 #include "CUnknown10204c60.h"

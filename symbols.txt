@@ -643,6 +643,7 @@
 0x10003242 func   ?sub_10231970@@YAHXZ sub_10231970
 0x1000324c func   ?sub_103cade0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cade0
 0x10003256 func   ?sub_103fa3d0@@YAHXZ sub_103fa3d0
+0x10003265 func   ?sub_1006ca50@CUnk_1006ca50@@QAEXH@Z CUnk_1006ca50::sub_1006ca50
 0x1000326a func   ?sub_1022d780@@YAXHH@Z sub_1022d780
 0x1000326f func   ?sub_100ac610@@YIXPAVCBaseEntity@@HMPBD@Z sub_100ac610
 0x10003288 func   ?vfunc0@CTraceFilterNav@@QAE_NPAXH@Z CTraceFilterNav::vfunc0
