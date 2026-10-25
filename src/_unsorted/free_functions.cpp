@@ -25308,6 +25308,21 @@ void CMomentaryRotButton::sub_100cae90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb110 size=0x38
+#include "CMomentaryRotButton.h"
+#include "CEntityVSlots.h"
+
+extern char *g_1070b228;
+
+// TARGET: CMomentaryRotButton::sub_100cb110
+void CMomentaryRotButton::sub_100cb110()
+{
+	float fValue = sub_100ca630((float *)((CEntityVSlots *)this)->slot221());
+	sub_100cae20(fValue, 0);
+	*(int *)&m_flNextThink = *(int *)(g_1070b228 + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb670 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
