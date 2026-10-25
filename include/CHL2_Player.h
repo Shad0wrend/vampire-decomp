@@ -34,8 +34,16 @@ public:
 	virtual void vfunc103();	// slot 103 "CHL2_Player::Spawn": clears the byte at +0x2544, slot 408 / 407 around the flag tests of CUnknown1015ef20 (bit 5 of +0x19c follows them), the player base (sub_1016d260), then CBasePlayer::vfunc103 when slot 406 says so
 	virtual void pb04(); virtual void pb05(); virtual void pb06(); virtual void pb07(); virtual void pb08(); virtual void pb09();	// slots 104..109
 	CHL2_V10(pb1) CHL2_V10(pb2) CHL2_V10(pb3) CHL2_V10(pb4) CHL2_V10(pb5) CHL2_V10(pb6) CHL2_V10(pb7) CHL2_V10(pb8) CHL2_V10(pb9)	// slots 110..199
-	CHL2_V100(pc)	// slots 200..299
-	CHL2_V10(pd0) CHL2_V10(pd1) CHL2_V10(pd2) CHL2_V10(pd3) CHL2_V10(pd4) CHL2_V10(pd5)	// slots 300..359
+	CHL2_V10(pc0) CHL2_V10(pc1) CHL2_V10(pc2) CHL2_V10(pc3) CHL2_V10(pc4) CHL2_V10(pc5) CHL2_V10(pc6)	// slots 200..269
+	virtual void pc70(); virtual void pc71(); virtual void pc72(); virtual void pc73(); virtual void pc74(); virtual void pc75(); virtual void pc76();	// slots 270..276
+	virtual void vfunc277(const Vector *pVec);	// slot 277: takes the pointer of a vector (the camera offset record at +0xe50 for slot 333)
+	virtual void pc78(); virtual void pc79();	// slots 278..279
+	CHL2_V10(pc8) CHL2_V10(pc9)	// slots 280..299
+	CHL2_V10(pd0) CHL2_V10(pd1) CHL2_V10(pd2)	// slots 300..329
+	virtual void pd30(); virtual void pd31(); virtual void pd32();	// slots 330..332
+	virtual void vfunc333(int unused);	// slot 333: the camera offset: (the second vector of the viewpoint query) * 300.0f + the first one, kept at +0xe44 and copied to +0xe50, then slot 277(+0xe50)
+	virtual void pd34(); virtual void pd35(); virtual void pd36(); virtual void pd37(); virtual void pd38(); virtual void pd39();	// slots 334..339
+	CHL2_V10(pd4) CHL2_V10(pd5)	// slots 340..359
 	virtual void pd60(); virtual void pd61(); virtual void pd62(); virtual void pd63(); virtual void pd64(); virtual void pd65(); virtual void pd66();	// slots 360..366
 	virtual Vector vfunc367();	// slot 367: returns a vector by value (hidden result pointer; its y is the base of the angle vfunc371 builds)
 	virtual void pd68(); virtual void pd69();	// slots 368..369
@@ -71,7 +79,10 @@ public:
 	virtual float vfunc481();
 
 	int sub_1034fd90(int a);	// slot 370 (called through the vtable): stores the forward y (slot 367's y + +0xe5c) through sub_1000ecd2(a, y) and answers a
-	char m_pad0004[0xe5c - 4];	// 0x0004 .. 0x0e5b
+	void sub_10014eb6(float *pFirst, float *pSecond);	// CBaseCombatCharacter::sub_10014eb6 (viewpoint query, stub 0x10014eb6), called directly by slot 333
+	char m_pad0004[0xe44 - 4];	// 0x0004 .. 0x0e43
+	Vector m_vecE44;	// 0x0e44
+	Vector m_vecE50;	// 0x0e50
 	float m_fe5c;	// 0x0e5c: added to the forward y of slot 367 (slot 370)
 	char m_pad0e60[0x2464 - 0xe60];	// 0x0e60 .. 0x2463
 	CHL2_PlayerMember2464 m_u2464;
