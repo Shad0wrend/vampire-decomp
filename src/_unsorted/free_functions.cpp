@@ -6946,6 +6946,25 @@ void CUnknown10057680::sub_10057680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100576a0 size=0x32
+// TARGET: sub_100576a0
+int __cdecl _strcmpi(const char *, const char *);
+
+struct CNamedHeadC_100576a0 {
+    char *head;
+    char *sub_100576a0(const char *s);
+};
+char *CNamedHeadC_100576a0::sub_100576a0(const char *s)
+{
+    if (s == 0) return 0;
+    char *p = head;
+    while (p && _strcmpi(s, p) != 0) {
+        p = *(char **)(p + 0x64);
+    }
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100576f0 size=0x3e
 typedef int (*MsgFn)(const char *, ...);
 extern MsgFn g_109f3628;

@@ -1464,6 +1464,7 @@
 0x10005d71 func   ?sub_1026e4f0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1026e4f0
 0x10005d80 func   ?sub_1016b0e0@CBasePlayer@@QAEXI@Z CBasePlayer::sub_1016b0e0
 0x10005d85 func   ?sub_10250910@@YIXPAUMem8@@HH@Z sub_10250910
+0x10005d8f func   ?sub_100576a0@CNamedHeadC_100576a0@@QAEPADPBD@Z CNamedHeadC_100576a0::sub_100576a0
 0x10005d9e func   ?sub_10083960@CUnknown10083960@@QAEXH@Z CUnknown10083960::sub_10083960
 0x10005db7 func   ?sub_10428470@@YAHHH@Z sub_10428470
 0x10005dbc func   ?sub_10336f20@CBaseCombatCharacter@@QAEPAXXZ CBaseCombatCharacter::sub_10336f20
