@@ -39808,6 +39808,25 @@ void sub_10158af0(void *pA, void *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158b40 size=0x39
+struct CUnknown10158b40Obj {
+    virtual void vfunc0();
+    virtual void vfunc1(int nA, int nB);
+};
+
+extern CUnknown10158b40Obj *g_10723948;
+void sub_10006555(void *pA, void *pB);
+
+typedef int (__fastcall *CUnknownHandleFn)(void *pThis);
+
+// TARGET: sub_10158b40
+void sub_10158b40(void *pA, void *pB)
+{
+    g_10723948->vfunc1(((CUnknownHandleFn)((void **)*(void **)pA)[6])(pA), ((CUnknownHandleFn)((void **)*(void **)pB)[6])(pB));
+    sub_10006555(pA, pB);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158d60 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_10158d60(void **p) { ((Fn *)*p)[243](p); }
