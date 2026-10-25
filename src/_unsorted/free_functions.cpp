@@ -71675,6 +71675,38 @@ void sub_10238380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102391c0 size=0x3d
+#define VS(n) virtual void s##n();
+#define VS10(p) VS(p##0) VS(p##1) VS(p##2) VS(p##3) VS(p##4) VS(p##5) VS(p##6) VS(p##7) VS(p##8) VS(p##9)
+
+// the virtual slots of the weapon up to slot 277 (the layout is not known yet)
+struct CUnknown102391c0
+{
+	VS10(0) VS10(1) VS10(2) VS10(3) VS10(4) VS10(5) VS10(6) VS10(7) VS10(8) VS10(9)
+	VS10(10) VS10(11) VS10(12) VS10(13) VS10(14) VS10(15) VS10(16) VS10(17) VS10(18) VS10(19)
+	VS10(20) VS10(21) VS10(22) VS10(23) VS10(24) VS10(25) VS10(26)
+	VS(270) VS(271) VS(272) VS(273) VS(274) VS(275) VS(276)
+	virtual char s277(int a);
+
+	int *sub_102517e0();	// CBaseCombatWeapon::sub_102517e0 (stub 0x10003d91), called directly
+	bool sub_102391c0();
+};
+
+// TARGET: CUnknown102391c0::sub_102391c0
+bool CUnknown102391c0::sub_102391c0()
+{
+	char *pRec = (char *)sub_102517e0();
+	int nLimit = *(int *)(pRec + 0x110);
+	if (s277(0)) {
+		int nIndex = *(int *)(pRec + 0x10c);
+		if (!(*(int *)((char *)this + nIndex * 4 + 0x74c) > nLimit)) {
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102399b0 size=0xd4
 #include "IVEngineServer.h"
 #define KV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
