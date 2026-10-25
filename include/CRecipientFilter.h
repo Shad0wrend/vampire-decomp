@@ -57,4 +57,5 @@ public:
 	void sub_1019d3d0();	// UsePredictionRules (stub 0x10005ce0)
 	void sub_1019d2f0(int clientIndex);	// "CRecipientFilter::RemoveRecipient" by client index (stub 0x1000c19e)
 	void sub_1019d4b0(const Vector &origin, float flAttenuation);	// CPASAttenuationFilter::Filter (stub 0x1000dfa3): drops the players farther than 1 / attenuation
+	void sub_1019cf00();	// counts the connected clients (client indices 1 .. maxClients of the globals) into m_24 once, after m_24 was reset to -1 (called by vfunc6)
 };
