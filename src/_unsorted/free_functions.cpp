@@ -79166,6 +79166,39 @@ char CBaseCombatWeapon::sub_102525e0(CBaseCombatCharacter *pOwner)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252800 size=0xc6
+#include "CBaseAnimating.h"
+
+struct CStudioHullView {
+    char pad[0xb4];
+    float m_vecMin[3];
+    float m_vecMax[3];
+};
+
+void sub_10252800(CBaseAnimating *pEnt, float flSize)
+{
+    float half = flSize * 0.5f;
+    Vector mins, maxs;
+    CStudioHullView *pHdr = (CStudioHullView *)pEnt->sub_100952d0(-1);
+    if (pHdr) {
+        for (int i = 0; i < 3; i++) {
+            if (flSize > (pHdr->m_vecMax[i] - pHdr->m_vecMin[i])) {
+                float center = 0.5f * (pHdr->m_vecMin[i] + pHdr->m_vecMax[i]);
+                mins[i] = center - half;
+                maxs[i] = center + half;
+            } else {
+                mins[i] = pHdr->m_vecMin[i];
+                maxs[i] = pHdr->m_vecMax[i];
+            }
+        }
+    } else {
+        mins = Vector(-half, -half, -half);
+        maxs = Vector(half, half, half);
+    }
+    pEnt->sub_100adf10(&mins.x, &maxs.x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253b70 size=0xa6
 #include "CBaseCombatWeapon.h"
 
