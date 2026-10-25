@@ -23883,6 +23883,37 @@ Rec *sub_100c47d0(Src *src, int b, int c, Vector *v1, Vector *v2, unsigned flags
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4980 size=0x35
+// TARGET: sub_100c4980
+struct CUnknownFreeNode100c4980
+{
+	char m_pad0000[0x34];
+	CUnknownFreeNode100c4980 *m_pNext;	// 0x34
+};
+
+struct CUnknownFreeList100c4980
+{
+	int m_n00;
+	char m_pad04[0x28 - 4];
+	CUnknownFreeNode100c4980 *m_pHead;	// 0x28
+};
+
+extern CUnknownFreeNode100c4980 *g_106e39bc;
+
+void sub_100c4980(CUnknownFreeList100c4980 *pList)
+{
+	CUnknownFreeNode100c4980 *pNode = pList->m_pHead;
+	while (pNode != 0) {
+		CUnknownFreeNode100c4980 *pNext = pNode->m_pNext;
+		pNode->m_pNext = g_106e39bc;
+		g_106e39bc = pNode;
+		pNode = pNext;
+	}
+	pList->m_n00 = 0;
+	pList->m_pHead = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c49d0 size=0x3b
 extern int g_106e39c0;
 extern int g_106e39bc;
