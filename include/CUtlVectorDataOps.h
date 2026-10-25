@@ -1,5 +1,5 @@
 // CUtlVectorDataOps<VEC,N>: save/restore ops used by DEFINE_UTLVECTOR fields (bases CDefSaveRestoreOps -> ISaveRestoreOps
-// are not modelled). Only the 5 vtable slots are declared; slot 0 is the (scalar deleting) destructor.
+// are not modelled). Only the 5 vtable slots are declared; slot 0 is Save, slot 1 Restore.
 #pragma once
 
 template <class T> class CUtlMemory;
@@ -10,7 +10,7 @@ class CUtlVectorDataOps
 {
 public:
 	CUtlVectorDataOps() {}
-	virtual ~CUtlVectorDataOps() {}
+	virtual void vfunc0(void *fieldInfo, void *pSave);	// Save(SaveRestoreFieldInfo_t &, ISave *)
 	virtual void vfunc1(void *fieldInfo, void *pRestore);	// Restore(SaveRestoreFieldInfo_t &, IRestore *)
 	virtual bool vfunc2(void *pFieldData);	// IsEmpty: the size (+0xc) of the vector the field points to is zero
 	virtual int vfunc3(void *pFieldData);	// MakeEmpty: zeroes the size (+0xc) of the vector the field points to
