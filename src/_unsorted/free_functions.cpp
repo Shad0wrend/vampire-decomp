@@ -13351,6 +13351,25 @@ CBaseEntity *CBasePlayer::sub_10081890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10081e00 size=0x3f
+extern char g_106e7e91;
+void sub_101d2850(const char *pszName, int nSize);
+void sub_10002ca7(const char *pszStart, const char *pszEnd);
+
+// TARGET: sub_10081e00
+void __fastcall sub_10081e00(char *self, void *unused, int arg)
+{
+    if (g_106e7e91 == 0) {
+        int *vtbl = *(int **)self;
+        ((void (__fastcall *)(void *))vtbl[0x3c8 / 4])(self);
+        return;
+    }
+    g_106e7e91 = 0;
+    sub_101d2850("__main__.G.Story_State=-3", 0x100);
+    sub_10002ca7("sp_tutorial_1", "tutorial");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10081e50 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
