@@ -104446,6 +104446,24 @@ void CNPC_VMingXiao::sub_10398fd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103998d0 size=0xd4
+#include "CNPC_VMingXiao.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CEntityVSlots.h"
+
+void CNPC_VMingXiao::sub_103998d0(CNPC_VMingXiaoTentacle *pTentacle)
+{
+	if (pTentacle->m_nAct65c8 == 0x163 || pTentacle->m_nAct65c8 == 0x165 || pTentacle->m_n6670 != 2)
+		return;
+	Vector *pMine = ((CEntityVSlots *)this)->slot217();
+	Vector *pTheirs = ((CEntityVSlots *)pTentacle)->slot217();
+	Vector vecDir = *pTheirs - *pMine;
+	if (!(VectorNormalize(vecDir) > 128.0f)
+		&& !(vecDir.x * m_vecAxis6290.x + vecDir.y * m_vecAxis6290.y < 0.25))
+		pTentacle->sub_1039ef90((float *)((CEntityVSlots *)this)->slot217());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10399c70 size=0x95
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 class CVProfile {
