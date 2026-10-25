@@ -73201,6 +73201,34 @@ void __fastcall sub_1024a120(CTreeHolder1024a120 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024a1e0 size=0x3f
+#include "CUnknown1024b370.h"
+
+struct CUnknownObj1024a1e0 {
+    int m0;
+    int m4;
+    int m8;
+    int mC;
+};
+
+// TARGET: sub_1024a1e0
+void __fastcall sub_1024a1e0(CUnknownObj1024a1e0 **pp)
+{
+    CUnknownObj1024a1e0 *p = *pp;
+    if (p != 0) {
+        ((CUnknown1024b370 *)((char *)p + 0x18))->sub_1024b370();
+        if (p->mC != -1) {
+            if (p->m4 != 0) {
+                g_109f3624((void *)p->m4);
+                p->m4 = 0;
+            }
+            p->m8 = 0;
+        }
+        operator delete(p);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024a2b0 size=0x13
 bool sub_1024a2b0(unsigned short *a, unsigned short *b)
 {
