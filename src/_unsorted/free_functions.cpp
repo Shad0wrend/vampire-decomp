@@ -47139,6 +47139,40 @@ void sub_1018ec20(CBaseEntity *pTarget, float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018ecf0 size=0x116
+#include "CBaseEntity.h"
+#include "CActivityCopyProp.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_1058ed4c[];	// type descriptor of CActivityCopyProp
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int bReference);
+void sub_10139610(const Vector *angles, Vector *forward, Vector *right, Vector *up);
+void sub_101cf5c0(CBaseEntity *pEnt, const Vector *pOrigin, int a);
+
+// TARGET: sub_1018ecf0
+void sub_1018ecf0(CBaseEntity *pOwner, float flScale)
+{
+    CBaseEntity *pEnt = 0;
+    do
+    {
+        pEnt = g_106eb5d8.sub_100f7380(pEnt, "activity_copy_prop");
+        CActivityCopyProp *pProp = (CActivityCopyProp *)__RTDynamicCast(pEnt, 0, g_10538764, g_1058ed4c, 0);
+        if (pProp && (CBaseEntity *)EHandle_Get(pProp->m_hTarget) == pOwner)
+        {
+            Vector forward;
+            sub_10139610(((CEntityVSlots *)pProp)->slot221(), &forward, 0, 0);
+            Vector vecOffset = forward * flScale;
+            Vector vecNew = vecOffset + *((CEntityVSlots *)pProp)->slot220();
+            sub_101cf5c0(pProp, &vecNew, 0);
+        }
+    } while (pEnt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018ee60 size=0x9c
 #include "CActivityCopyProp.h"
 

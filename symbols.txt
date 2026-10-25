@@ -5686,6 +5686,7 @@
 0x10012da5 func   ?vfunc104@CNPCMaker_Fleshpile@@UAEXXZ CNPCMaker_Fleshpile::vfunc104
 0x10012daf func   ?sub_100d0000@CPySave@@QAEXPAUField@@PAUSaveIf@@@Z CPySave::sub_100d0000
 0x10012db4 func   ?sub_10106f90@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::sub_10106f90
+0x10012dc3 func   ?sub_1018ecf0@@YAXPAVCBaseEntity@@M@Z sub_1018ecf0
 0x10012dd2 func   ?sub_102a1620@@YI_NPAUN@@@Z sub_102a1620
 0x10012ddc func   ?sub_10042a80@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_10042a80
 0x10012df0 func   _item_g_lockpick item_g_lockpick
