@@ -37938,6 +37938,28 @@ int *sub_10134f10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135070 size=0x31
+struct CUnknown10135070Sub
+{
+    void sub_10010794(int a, void *pOwner, int b);
+};
+
+struct CUnknown10135070
+{
+    char pad_0000[0x454];
+    void sub_10135070(int a, char flag);
+};
+
+void CUnknown10135070::sub_10135070(int a, char flag)
+{
+    if (flag) {
+        ((CUnknown10135070Sub *)((char *)this + 0x454))->sub_10010794(a, this, 0);
+    } else {
+        ((CUnknown10135070Sub *)((char *)this + 0x46c))->sub_10010794(a, this, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101351b0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
