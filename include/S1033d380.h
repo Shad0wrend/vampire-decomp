@@ -11,5 +11,5 @@ struct S1033d380
 	int sub_1033d380(int key);	// the object (field +0x9c) of the entity behind the record `key`, 0 when none
 	int sub_1033d410(int key);	// the value at +8 of the record `key`, -1 when none
 	char sub_1033d2f0(int key);	// whether the character has a record `key` (stub 0x1000d3d7)
-	void sub_1033d190(int key);	// drops the record `key` (stub 0x10004f7f)
+	int sub_1033d190(int key);	// drops the record `key` (stub 0x10004f7f)
 };
