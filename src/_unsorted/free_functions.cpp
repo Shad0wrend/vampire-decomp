@@ -75858,6 +75858,26 @@ void __fastcall sub_10260750(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260820 size=0x3e
+#include <string.h>
+
+struct CUnknownVector10260820 {
+    char *pMemory;
+    int m4;
+    int m8;
+    int nSize;
+};
+
+// TARGET: sub_10260820
+void __fastcall sub_10260820(CUnknownVector10260820 *self, void *unused, int nElem, int nNum)
+{
+    int nToMove = self->nSize - nElem - nNum;
+    if (nToMove > 0 && nNum > 0) {
+        memmove(self->pMemory + nElem * 36, self->pMemory + (nElem + nNum) * 36, nToMove * 36);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260870 size=0x8f
 #include "CUtlVector36.h"
 
