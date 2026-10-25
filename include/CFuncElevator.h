@@ -18,6 +18,7 @@ public:
 
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
 	void sub_1020f3f0(inputdata_t *pInput);	// the "go to floor" input (the floor number is 1 based; 0 or a bad number warns): while the elevator stands still (+0x630 is not -1, flag byte +0x80c clear) a request for the floor it is heading to finishes the move (sub_1020f700), another valid floor starts the move to it (the floor heights are the floats at +0x608, the count at +0x62c, the destination x / y at +0x800 and the speed at +0x164), fires the output at +0x638, installs the think function, schedules the next think 0.1 seconds ahead and clears / sets the per-floor flag bytes at +0x80d
+	void vfunc130(int a);	// slot 130: calls CBaseEntity::vfunc130(a), then when a is set clears the floor at +0x630 after sub_100043cc(this, +0x800, 0) and the flag byte at +0x80c
 
 	char m_pad0004[0x4a4 - 4];
 	CAI_IPItem m_item4a4;
@@ -29,10 +30,14 @@ public:
 	CAI_IPItem m_item5c0;
 	CAI_IPItem m_item5d8;
 	CAI_IPItem m_item5f0;
-	char m_pad608[0x638 - 0x608];
+	char m_pad608[0x630 - 0x608];
+	int m_nFloor630;	// 0x630: the floor the elevator is at (-1 while it moves)
+	char m_pad634[0x638 - 0x634];
 	CAI_IPItem m_item638;
 	CAI_IPItem m_item650;
 	CAI_IPItem m_item668;
 	CAI_IPItem m_items680[8];	// 0x680
 	CAI_IPItem m_items740[8];	// 0x740
+	float m_vecDest800[3];	// 0x800: the destination x / y (and z)
+	unsigned char m_flag80c;	// 0x80c: set while the elevator is moving
 };
