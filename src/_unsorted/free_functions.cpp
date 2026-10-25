@@ -92151,6 +92151,17 @@ CBitString *CBitString::sub_102fe9a0(int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10300010 size=0x6d
+#include "Vector.h"
+
+float __stdcall sub_10300010(const Vector &vecFrom, const Vector &vecTo, const Vector &vecDir)
+{
+	Vector vecDelta = vecTo - vecFrom;
+	VectorNormalize(vecDelta);
+	return DotProduct(vecDelta, vecDir);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103000a0 size=0x75
 #include "Vector.h"
 
