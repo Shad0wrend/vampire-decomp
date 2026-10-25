@@ -9269,6 +9269,21 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c4a0 size=0x3e
+#include "vampire.h"
+#include "CUtlBuffer.h"
+
+// TARGET: CUtlBuffer::sub_1006c4a0
+void CUtlBuffer::sub_1006c4a0(const void *pMem, int nSize)
+{
+    if (sub_10005583(nSize))
+    {
+        memcpy(m_pBuffer + m_nPut, pMem, nSize);
+        m_nPut += nSize;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cc20 size=0x79
 int sub_10431c2f(char *, const char *, ...);
 void sub_10203dd0(char *);
