@@ -86,7 +86,7 @@ public:
 	virtual const char *vfunc70(int index);
 	virtual void vfunc71();
 	virtual void vfunc72();
-	virtual void vfunc73();
+	virtual bool vfunc73(CBaseEntity *pPlayer);	// slot 73 (multiplayer rules: whether the player's movement counts, see CMultiplayRules)
 	virtual char vfunc74();	// asked by Spawn of the NPCs: false removes the NPC again (the rule set does not allow it)
 	virtual void vfunc75();
 	virtual void vfunc76();
