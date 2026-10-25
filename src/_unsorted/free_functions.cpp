@@ -70166,6 +70166,25 @@ void CUnknown10217f50::sub_10218b90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10218ca0 size=0xc5
+#include "CUnknown10217f50.h"
+#include "CEntityMessageFilter.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+void CUnknown10217f50::sub_10218ca0()
+{
+	CEntityMessageFilter filter;
+	int nEdict = *(int *)((char *)this + 0x2e0);
+	filter.sub_1019d2f0(g_1070b22c->vfunc35(nEdict));
+	filter.sub_1019cf50();
+	g_1070b22c->vfunc65(&filter, 0);
+	g_1070b22c->vfunc67(5);
+	g_1070b22c->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218db0 size=0xc5
 #include "CUnknown10217f50.h"
 #include "CEntityMessageFilter.h"
