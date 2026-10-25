@@ -103,3 +103,14 @@ void CNPC_VBach::vfunc432(int arg)
 	sub_10385a10(arg);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10364500 size=0x31
+// TARGET: sub_10364500
+int __stdcall sub_10364500(float flA, float flB)
+{
+    if (flA < 0.5 && flB > 120.0f) {
+        return 0x61;
+    }
+    return 0x4f;
+}
+// END FUNCTION
