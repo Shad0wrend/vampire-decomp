@@ -11,24 +11,24 @@ class CMoveHelperServer
 public:
 	virtual void vfunc0();
 	virtual void vfunc1();
-	virtual bool vfunc2(const void *pTrace, const float *pVelocity);	// "CMoveHelperServer::AddToTouched": false for a trace without entity, the host (+0x4) or an entity already touched; else appends the trace and the impact velocity to the touch list at +0x8
+	virtual bool vfunc2(const void *pTrace, const float *pVelocity); // "CMoveHelperServer::AddToTouched": false for a trace without entity, the host (+0x4) or an entity already touched; else appends the trace and the impact velocity to the touch list at +0x8
 	virtual void vfunc3();
 	virtual void vfunc4();
-	virtual void vfunc5(const float *pOrigin, int channel, const char *pszSample, float flVolume, int soundlevel, int fFlags, int pitch);	// "CMoveHelperServer::StartSound": emits the sound at the origin for the players that can hear it (a PAS filter, with the prediction rules unless the global flag at +0x14 is 1)
+	virtual void vfunc5(const float *pOrigin, int channel, const char *pszSample, float flVolume, int soundlevel, int fFlags, int pitch); // "CMoveHelperServer::StartSound": emits the sound at the origin for the players that can hear it (a PAS filter, with the prediction rules unless the global flag at +0x14 is 1)
 	virtual void vfunc6();
-	virtual bool vfunc7();	// "CMoveHelperServer::PlayerFallingDamage": hurts the host by the game rules' fall damage (slot 30 of the rules); always true
+	virtual bool vfunc7(); // "CMoveHelperServer::PlayerFallingDamage": hurts the host by the game rules' fall damage (slot 30 of the rules); always true
 	virtual void vfunc8();
 	virtual void vfunc9();
 	virtual void vfunc10();
 	virtual void vfunc11();
 	virtual void vfunc12();
-	virtual void vfunc13();
+	virtual float vfunc13(int param);
 	virtual CMoveHelperServer *vfunc14(unsigned int flags);
 	virtual void vfunc15();
-	virtual void vfunc16(const float *pOrigin, const char *pszSound);	// "CMoveHelperServer::StartSound": emits the sound at the origin for the host alone (a single user filter, with the prediction rules unless the global flag at +0x14 is 1)
+	virtual void vfunc16(const float *pOrigin, const char *pszSound); // "CMoveHelperServer::StartSound": emits the sound at the origin for the host alone (a single user filter, with the prediction rules unless the global flag at +0x14 is 1)
 
-	CBaseEntity *m_pHost;	// 0x04
+	CBaseEntity *m_pHost; // 0x04
 	char m_pad08[0xc];
 	int m_nTouchCount;
-	void sub_1000185c();	// as in CDataObjectAccessSystem (transplant)
+	void sub_1000185c(); // as in CDataObjectAccessSystem (transplant)
 };
