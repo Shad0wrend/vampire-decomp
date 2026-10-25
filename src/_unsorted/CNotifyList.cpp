@@ -1,6 +1,28 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100f8780 size=0x78
+#include "CNotifyList.h"
+#include "utlvector.h"
+
+struct CNotifyList_Elem
+{
+	CBaseEntity *m_pNotify;
+	CBaseEntity *m_pWatched;
+};
+struct CNotifyList_Ent { char pad[0x268]; unsigned int m_iEFlags; };
+
+void *CNotifyList::vfunc0(CBaseEntity *pNotify, CBaseEntity *pWatched)
+{
+	((CNotifyList_Ent *)pWatched)->m_iEFlags |= 0x40;
+	int index = ((CUtlVector<CNotifyList_Elem> *)((char *)this + 8))->AddToTail();
+	CNotifyList_Elem &n = ((CUtlVector<CNotifyList_Elem> *)((char *)this + 8))->Element(index);
+	n.m_pWatched = pWatched;
+	n.m_pNotify = pNotify;
+	return &n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f88a0 size=0x81
 #include "CNotifyList.h"
 #include "CEntityVSlots.h"
