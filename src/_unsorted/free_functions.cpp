@@ -95704,6 +95704,23 @@ void CBaseCombatCharacter::sub_1033ca60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033cb00 size=0x34
+extern const char *g_10619ec8[];
+int _strcmpi(const char *a, const char *b);
+
+// TARGET: sub_1033cb00
+int sub_1033cb00(const char *pszName)
+{
+    int i = 0;
+    do {
+        if (_strcmpi(g_10619ec8[i], pszName) == 0)
+            return 1 << i;
+        i++;
+    } while (i < 0x16);
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033ce10 size=0xaa
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
