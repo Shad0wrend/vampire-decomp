@@ -2,9 +2,12 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+class CBaseEntity;
+
 class CBaseTransmitProxy
 {
 public:
+	CBaseTransmitProxy(CBaseEntity *pEnt);
 	CBaseTransmitProxy *vfunc0(unsigned int flags);
 	void sub_10002428();
 	void sub_10097bd0();
