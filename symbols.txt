@@ -1618,6 +1618,7 @@
 0x10006221 func   _item_k_gallery_noir_key item_k_gallery_noir_key
 0x10006226 func   _item_g_warr_ledger_1 item_g_warr_ledger_1
 0x1000622b func   _item_g_warr_ledger_2 item_g_warr_ledger_2
+0x10006235 func   ?sub_10266d40@@YAXVVector@@0H@Z sub_10266d40
 0x1000623f func   ?sub_10323630@@YIXPAVCBaseCombatCharacter@@@Z sub_10323630
 0x10006249 func   ?sub_10349400@TOps@@QAE_NPAPAH@Z TOps::sub_10349400
 0x10006262 func   ?sub_100ce6c0@CList_t@@QAE_NHHUCList_tValue@@@Z CList_t::sub_100ce6c0

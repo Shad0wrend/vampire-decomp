@@ -82748,6 +82748,48 @@ bool __stdcall sub_10266c80(const Vector *pPos, float flRadius)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10266d40 size=0x14f
+#include "CAI_BaseNPC.h"
+
+struct RayGlobalsView
+{
+	char m_pad0000[0x14];
+	int m_nMaxClients;	// 0x14
+};
+extern RayGlobalsView *g_1070b228;
+
+struct RayPlayerView
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9)
+	CAI_NPC_V10(10) CAI_NPC_V10(11) CAI_NPC_V10(12) CAI_NPC_V10(13) CAI_NPC_V10(14) CAI_NPC_V10(15) CAI_NPC_V10(16) CAI_NPC_V10(17) CAI_NPC_V10(18)
+	CAI_NPC_V(190) CAI_NPC_V(191) CAI_NPC_V(192) CAI_NPC_V(193) CAI_NPC_V(194) CAI_NPC_V(195)
+	virtual Vector vfunc196();
+};
+
+RayPlayerView *sub_1000ac8b(int index);
+
+// TARGET: sub_10266d40
+void sub_10266d40(Vector vecStart, Vector vecDir, int nIgnoreEdict)
+{
+	vecDir = vecDir - vecStart;
+	VectorNormalize(vecDir);
+	for (int i = 1; i <= g_1070b228->m_nMaxClients; i++)
+	{
+		RayPlayerView *pPlayer = sub_1000ac8b(i);
+		if (pPlayer && *(int *)((char *)pPlayer + 0x2e0) != nIgnoreEdict)
+		{
+			Vector vecToPlayer = pPlayer->vfunc196() - vecStart;
+			float flAlong = vecToPlayer.Dot(vecDir);
+			Vector vecClosest = vecStart + vecDir * flAlong;
+			Vector vecOffset = vecClosest - pPlayer->vfunc196();
+			vecOffset.Length();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10267350 size=0xd
 extern int g_10920544;
 extern int g_10920548;
