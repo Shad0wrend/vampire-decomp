@@ -247,4 +247,5 @@ public:
 	bool sub_102784a0(const Vector *pStart, int mask);	// tests pStart against the NPC's origin and then against five pairs of points that step 48 units either side of the origin along its right vector (sub_10278220 each); true at the first one that is clear
 	Vector vfunc574(const Vector &vecPos, int a, int b);	// slot 574 (plain member): the unit direction from vecPos to the point sub_10278650 finds for (vecPos, a, b): (point - vecPos) normalised, returned by value
 	Vector sub_10278650(const Vector &vecPos, int a, int b);	// stub 0x1001592e, called directly by vfunc574, returns a Vector by value
+	float vfunc515(const Vector *pTarget);	// slot 515 \"CAI_BaseNPC::GetYawTo\"-like (declared as a plain overload of the placeholder slot): the yaw (sub_101d2c70, stub 0x1000612c) of the vector from the NPC's origin (slot 220) to pTarget; while the navigator (+0x5d34) reports task 0x37 / 0x38 the target's x / y are swapped (0x37 also negates the new x) and its z is left unset
 };
