@@ -4475,6 +4475,7 @@
 0x1000fec5 func   ?vfunc103@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc103
 0x1000feca func   ?sub_103d6650@CNPC_VWerewolf@@QAE?AUCNPC_VWerewolfVec3@@PAX@Z CNPC_VWerewolf::sub_103d6650
 0x1000fed4 func   ?sub_1010ce30@@YAHXZ sub_1010ce30
+0x1000fed9 func   ?sub_1006c1c0@CUnknown1006c1c0@@QAEXHH@Z CUnknown1006c1c0::sub_1006c1c0
 0x1000fee3 func   ?sub_101cde40@@YAXPAXMMMMH@Z sub_101cde40
 0x1000fef2 func   ?vfunc507@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc507
 0x1000ff01 func   ?vfunc5@CFuncAreaPortalWindow@@QAEPAV1@I@Z CFuncAreaPortalWindow::vfunc5
