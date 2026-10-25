@@ -34620,6 +34620,55 @@ bool sub_1012ca50(Ent *target, Ent *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012cbb0 size=0x105
+#include "CUtlVector4.h"
+#include "CEHandleGet.h"
+
+struct UtlMem3 { int *m_pMemory; int m_nAllocationCount; int m_nGrowSize; void sub_100b4a40(int num); };
+struct SMoveEnt
+{
+	char m_pad0000[0x260];
+	unsigned int m_hMoveChild;	// 0x260
+	unsigned int m_hMovePeer;	// 0x264
+};
+inline void *operator new(unsigned int, void *p) { return p; }
+
+struct CMoveVec : CUtlVector4
+{
+	void GrowVector()
+	{
+		if (m_size + 1 > m_allocationCount)
+			((UtlMem3 *)this)->sub_100b4a40(m_size + 1 - m_allocationCount);
+		m_size++;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem)
+	{
+		int numToMove = m_size - elem - 1;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], numToMove * sizeof(int));
+	}
+	int AddToTail(int src)
+	{
+		int elem = m_size;
+		GrowVector();
+		ShiftElementsRight(elem);
+		new (&m_pMemory[elem]) int(src);
+		return elem;
+	}
+};
+
+void sub_1012cbb0(SMoveEnt *pEnt, CUtlVector4 *pVec)
+{
+	while (pEnt) {
+		((CMoveVec *)pVec)->AddToTail((int)pEnt);
+		if (EHandle_Get(pEnt->m_hMoveChild))
+			sub_1012cbb0((SMoveEnt *)EHandle_Get(pEnt->m_hMoveChild), pVec);
+		pEnt = (SMoveEnt *)EHandle_Get(pEnt->m_hMovePeer);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cdd0 size=0x7b
 #include "SendProp.h"
 
