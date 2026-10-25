@@ -52681,6 +52681,29 @@ void CUnknown101d1460::sub_101d1530(CBaseEntity *pEnt, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d16c0 size=0x40
+// TARGET: sub_101d16c0
+char *sub_101d16c0(char *pDest, char *pSrc, char cDelim)
+{
+    char c;
+    if (pSrc == 0 || (c = *pSrc, c == 0)) {
+        *pDest = 0;
+        return 0;
+    }
+    while (c != cDelim && c != 0) {
+        *pDest = c;
+        pDest++;
+        pSrc++;
+        c = *pSrc;
+    }
+    *pDest = 0;
+    if (*pSrc != 0) {
+        return pSrc + 1;
+    }
+    return pSrc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d1800 size=0x108
 #include "CUnknown1070b22c.h"
 
