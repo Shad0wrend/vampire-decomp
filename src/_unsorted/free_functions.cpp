@@ -91168,6 +91168,22 @@ void CUnknown1030b2f0::sub_1030b2f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b4d0 size=0x33
+struct CUnknown10319fe0 { void sub_10319fe0(int a); int sub_100118e7(); };
+struct CUnk_1030b4d0 { void sub_1030b4d0(int a, char b); void sub_1000ad3a(int a); };
+
+void CUnk_1030b4d0::sub_1030b4d0(int a, char b)
+{
+    ((CUnknown10319fe0 *)((char *)this + 0x24))->sub_10319fe0(a);
+    if (b) {
+        int p = ((CUnknown10319fe0 *)((char *)this + 0x24))->sub_100118e7();
+        if (p) {
+            this->sub_1000ad3a(p);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b7c0 size=0xd
 extern CUnknown1030bc20_Record g_10936afc;
 CUnknown1030bc20_Record *CUnknown1030bc20::sub_1030b7c0()
