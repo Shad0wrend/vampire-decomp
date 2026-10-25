@@ -2926,6 +2926,7 @@
 0x1000ae2a func   ?vfunc104@CPropSwitch@@UAEXXZ CPropSwitch::vfunc104
 0x1000ae34 func   ?vfunc124@CPropClockHand@@UAEHXZ CPropClockHand::vfunc124
 0x1000ae48 func   _item_p_occult_blood_buff item_p_occult_blood_buff
+0x1000ae52 func   ?sub_100733c0@CUnknown100733c0@@QAEPAU1@H@Z CUnknown100733c0::sub_100733c0
 0x1000ae57 func   ?vfunc0@CAI_Navigator@@UAEPAV1@I@Z CAI_Navigator::vfunc0
 0x1000ae61 func   ?sub_1020b020@CUnknown1020b020@@QAEHH@Z CUnknown1020b020::sub_1020b020
 0x1000ae6b func   ?sub_1030ffa0@CAI_Senses@@QAEDPAX@Z CAI_Senses::sub_1030ffa0

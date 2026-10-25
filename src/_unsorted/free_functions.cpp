@@ -10402,6 +10402,36 @@ void UtlMem5::sub_100732f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100733c0 size=0x3a
+struct S100734f0 {
+    void sub_100734f0(int a);
+};
+
+struct CUnknown100733c0 {
+    char m_pad0000[0x84];
+    int m_84;
+    int m_88;
+    int m_8c;
+    int m_90;
+    int m_94;
+    CUnknown100733c0 *sub_100733c0(int a);
+    void sub_10004921();
+};
+
+// TARGET: CUnknown100733c0::sub_100733c0
+CUnknown100733c0 *CUnknown100733c0::sub_100733c0(int a)
+{
+    m_84 = 0;
+    m_88 = 0;
+    m_8c = 0;
+    m_90 = 0;
+    m_94 = 0;
+    sub_10004921();
+    ((S100734f0 *)this)->sub_100734f0(a);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073410 size=0xa3
 #include "CUnknown100735a0.h"
 #include "CUnknown10075aa0.h"
