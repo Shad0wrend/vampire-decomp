@@ -7470,6 +7470,7 @@
 0x10579660 data   ?pfSqrt@@3P6AMM@ZA pfSqrt
 0x1057966c data   ?pfVectorNormalize@@3P6IMAAVVector@@@ZA pfVectorNormalize
 0x106845d0 data   ??_R0?AVCBaseCombatWeapon@@@8 ??_R0?AVCBaseCombatWeapon@@@8
+0x106845d0 data   ??_R0?AVCBaseCombatWeaponX@@@8 ??_R0?AVCBaseCombatWeaponX@@@8
 0x109f3624 data   __imp__Plat_Free _imp__Plat_Free
 0x109f3628 data   ?Msg@@YAXPBDZZ Msg
 0x109f3628 data   Msg Msg
