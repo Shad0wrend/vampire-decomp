@@ -62,3 +62,4 @@
 	CBaseEntity *sub_1015d680(int index);	// the entity of the handle in the viewmodel array at +0x2308 (index 0..n); null when stale
 	CBaseEntity *sub_10180100(int index);	// the entity of the handle in the array at +0x1d3c (index 0..n); null when stale
 	void sub_1016b0e0(unsigned int buttons);	// the button state update (CHL2_Player::vfunc462 calls it): the previous buttons (+0x2098) go to +0x20a4, the new ones are stored at +0x2098, the newly pressed bits to +0x209c and the released bits to +0x20a0
+	void sub_10170cf0(unsigned int flags, char bSet);	// sets (bSet) or clears the bits of the flag word at +0x20f0
