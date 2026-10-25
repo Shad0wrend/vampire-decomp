@@ -1,6 +1,29 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102ea450 size=0x38
+#include "CNavPropertyDatabase.h"
+#include "CUnknown100f6d80.h"
+
+extern void *g_10934014;
+extern CUnknown100f6d80 g_106eb5d8;
+void sub_102ea4a0();
+
+// TARGET: CNavPropertyDatabase::vfunc0
+bool CNavPropertyDatabase::vfunc0()
+{
+    if (g_10934014 == 0)
+        g_10934014 = (void *)sub_102ea4a0;
+    int arg;
+    if (this != 0)
+        arg = (int)this + 8;
+    else
+        arg = 0;
+    g_106eb5d8.sub_100f6d80(arg);
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ea4d0 size=0x99
 #include "CNavPropertyDatabase.h"
 #include "CUtlRBTree12.h"
