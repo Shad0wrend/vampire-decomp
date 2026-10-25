@@ -1077,6 +1077,7 @@
 0x100049e9 func   ?sub_10157890@CUnknown101578b0@@QAEXD@Z CUnknown101578b0::sub_10157890
 0x100049f8 func   ?sub_102f48b0@NodeGraph@@QAE_NHH@Z NodeGraph::sub_102f48b0
 0x10004a02 func   ?sub_10185620@CUtlVector576@@QAEXH@Z CUtlVector576::sub_10185620
+0x10004a0c func   ?sub_103830e0@CUnknown103830e0@@QAEXXZ CUnknown103830e0::sub_103830e0
 0x10004a1b func   ?sub_100bd840@bf_write@@QAEXM@Z bf_write::sub_100bd840
 0x10004a48 func   ?vfunc5@CNPC_VGhoulCroucher@@QAEPAV1@I@Z CNPC_VGhoulCroucher::vfunc5
 0x10004a5c func   ?sub_1038f290@CNPC_VManBat@@QAE_NXZ CNPC_VManBat::sub_1038f290
