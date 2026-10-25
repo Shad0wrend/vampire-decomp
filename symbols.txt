@@ -1443,6 +1443,7 @@
 0x100060f5 func   ?sub_102db740@CAI_InterestingPlaceConverstation@@QAEXH@Z CAI_InterestingPlaceConverstation::sub_102db740
 0x100060ff func   ?vfunc3@CGameMovement@@QAEPAMDH@Z CGameMovement::vfunc3
 0x10006118 func   ?sub_10408480@SSrc192@@QAEXPAUSDest192@@@Z SSrc192::sub_10408480
+0x10006122 func   ?vfunc1@CEventsSaveDataOps@@QAEXPAXPAVCRestore@@@Z CEventsSaveDataOps::vfunc1
 0x10006131 func   ?vfunc3@CTEKillPlayerAttachments@@UAEXPBM0@Z CTEKillPlayerAttachments::vfunc3
 0x1000613b func   ?sub_103498b0@CUnknown103498b0@@QAEHXZ CUnknown103498b0::sub_103498b0
 0x1000614a func   ?vfunc431@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc431
