@@ -87321,6 +87321,25 @@ int CRangeNode_102ea280::sub_102ea280(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea2d0 size=0x37
+#include "CUnknown10359c50.h"
+
+// TARGET: CUnknown10359c50::sub_102ea2d0
+int CUnknown10359c50::sub_102ea2d0(int nLocalId)
+{
+    if (nLocalId != -1) {
+        CUnknown10359c50 *p = this;
+        do {
+            if (p->m_nLocalBase != 9999 && nLocalId >= p->m_nLocalBase && nLocalId <= p->m_nHighestLocal) {
+                return p->m_nGlobalBase - p->m_nLocalBase + nLocalId;
+            }
+            p = *(CUnknown10359c50 **)((char *)p + 0x10);
+        } while (p);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eb170 size=0x107
 #include "CUtlRBTree12.h"
 extern CUtlRBTree12 g_10934014;

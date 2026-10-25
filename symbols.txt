@@ -5149,6 +5149,7 @@
 0x100122e2 func   _trigger_inventory_check trigger_inventory_check
 0x100122e7 func   ?vfunc2@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc2
 0x100122f6 func   ?sub_10214780@CPropHaunted@@QAEXXZ CPropHaunted::sub_10214780
+0x10012300 func   ?sub_102ea2d0@CUnknown10359c50@@QAEHH@Z CUnknown10359c50::sub_102ea2d0
 0x1001230f func   ?vfunc546@CNPC_VHunter@@QAEHH@Z CNPC_VHunter::vfunc546
 0x1001231e func   ?vfunc5@CPointAngleSensor@@QAEPAV1@I@Z CPointAngleSensor::vfunc5
 0x10012341 func   ?vfunc5@CTestTraceline@@UAEPAV1@I@Z CTestTraceline::vfunc5
