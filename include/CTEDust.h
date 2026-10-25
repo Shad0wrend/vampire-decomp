@@ -16,7 +16,5 @@ public:
 	int m_n0014;
 	float m_fl0018;
 	float m_fl001c;
-	int m_n0020;
-	int m_n0024;
-	int m_n0028;
+	Vector m_vec0020;
 };
