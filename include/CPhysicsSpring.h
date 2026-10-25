@@ -7,7 +7,7 @@
 struct IPhysicsSpringStub
 {
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual void GetEndPoints(Vector *pStart, Vector *pEnd);
 	virtual void SetSpringConstant(float flSpringConstant);
 };
 
@@ -28,9 +28,11 @@ public:
 	int vfunc124();	// slot 124 "CPhysicsSpring::DrawDebugTextOverlays": the base's line offset, plus three lines (constant, length, damping) when the text overlay bit is set
 	int sub_100018cf();	// CBaseEntity::vfunc124 (stub 0x100018cf), called directly
 	void vfunc103();	// slot 103 (called directly): SetSolid(0) on the collision property, copies the origin to m_vecStart and recomputes the length when it is positive-or-zero
+	void vfunc123();	// slot 123 "CPhysicsSpring::DrawDebugGeometryOverlays": with the overlay bit 4 draws the spring (start to the point at the length along the line, blue; from there to the end, red), then the base's
+	void sub_10005880();	// CBaseEntity::vfunc123 (stub 0x10005880), called directly
 
 	char m_pad0004[0x224 - 4];
-	unsigned char m_fTextOverlayFlags;	// 0x224: bit 0 = text overlay shown
+	unsigned char m_fTextOverlayFlags;	// 0x224: bit 0 = text overlay shown, bit 2 = geometry overlay shown
 	char m_pad0225[0x26c - 0x225];
 	const char *m_name26c;	// 0x26c
 	char m_pad0270[0x2e0 - 0x270];
