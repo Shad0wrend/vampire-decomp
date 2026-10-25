@@ -51100,6 +51100,34 @@ extern "C" CBaseEntity *trigger_push()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c88c0 size=0x40
+#include "CTriggerPush.h"
+
+extern int vt_1048ab34[];
+extern int vt_1047f1b4[];
+
+struct CUnknownTerminalBase101c88c0 {
+    void sub_1000d5ee();
+};
+
+struct CUnknownMember101c88c0 {
+    void sub_10002ddd();
+};
+
+// TARGET: CTriggerPush::sub_101c88c0
+CTriggerPush *CTriggerPush::sub_101c88c0()
+{
+    ((CUnknownTerminalBase101c88c0 *)this)->sub_1000d5ee();
+    *(int *)((char *)this + 0x564) = -1;
+    ((CUnknownMember101c88c0 *)((char *)this + 0x568))->sub_10002ddd();
+    ((CUnknownMember101c88c0 *)((char *)this + 0x580))->sub_10002ddd();
+    *(int **)this = vt_1047f1b4;
+    *(int *)((char *)this + 0x598) = 0;
+    *(int *)((char *)this + 0x59c) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c90e0 size=0x43
 #include "CTriggerTeleport.h"
 void *sub_100aa720(int size);
