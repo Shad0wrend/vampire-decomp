@@ -73222,6 +73222,31 @@ void sub_10243700(const Vector &origin, const Vector &angles, const Vector &mins
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245660 size=0x3d
+int sub_1043e780(const char *, const char *);
+
+struct CUnk10245660Node {
+    const char *sub_10013d13();
+    CUnk10245660Node *sub_100072b1();
+};
+
+CUnk10245660Node *sub_1000e0d4();
+
+CUnk10245660Node *sub_10245660(const char *pName)
+{
+    CUnk10245660Node *pNode;
+
+    pNode = sub_1000e0d4();
+    while (pNode != 0) {
+        if (sub_1043e780(pName, pNode->sub_10013d13()) == 0) {
+            return pNode;
+        }
+        pNode = pNode->sub_100072b1();
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245770 size=0x10
 struct CFlagHolder245770 {
     char pad[4];
