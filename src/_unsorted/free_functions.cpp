@@ -35652,6 +35652,22 @@ extern "C" GP *raggib()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c5b0 size=0x36
+extern int g_1070ba58;
+void sub_1013d0e0(float a, float b, int c, int d, int e, int f, int g, int h);
+
+// TARGET: sub_1012c5b0
+int __stdcall sub_1012c5b0(int hInstance, int nReason, int pReserved)
+{
+	if (nReason == 1)
+	{
+		sub_1013d0e0(2.2f, 2.2f, 0, 2, 1, 1, 1, 1);
+		g_1070ba58 = hInstance;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c840 size=0x82
 #include "CGlobalEntityList.h"
 
