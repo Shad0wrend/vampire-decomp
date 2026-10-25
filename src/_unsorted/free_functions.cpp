@@ -51773,6 +51773,45 @@ void sub_101cee20(float a, Vector b, QAngle angles, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf0a0 size=0x120
+#include "CUnknown101cf0a0.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern const char *g_105a0120;
+extern int g_105a0124;
+void sub_10139500(const Vector *pStart, float flScale, const Vector *pDir, Vector *pOut);
+
+inline CBaseEntity *Instance(CUnknown1070b22c_Edict *pEdict)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	CBaseEntity *pEntity;
+	if (!pEdict)
+		pEdict = (CUnknown1070b22c_Edict *)g_1070b22c->vfunc38(0);
+	if (pEdict && pEdict->m_pUnknown)
+		pEntity = pEdict->m_pUnknown->GetBaseEntity();
+	else
+		pEntity = 0;
+	return pEntity;
+}
+
+// TARGET: sub_101cf0a0
+void sub_101cf0a0(CUnknown101cf0a0 *pOut, CUnknown101cf0a0_Source *pSource, CUnknown1070b22c_Edict *pEdict, float flDistance, int nValue44, int nValue30, const Vector *pExtra, int nExtra)
+{
+	pOut->m_bZeroDistance = flDistance == 0.0f;
+	pOut->m_flDistance = flDistance;
+	pOut->m_vecStart = pSource->m_vecStart;
+	sub_10139500(&pSource->m_vecStart, flDistance, &pSource->m_vecDir, &pOut->m_vecEnd);
+	pOut->m_vecExtra = *pExtra;
+	pOut->m_nExtra = nExtra;
+	pOut->m_pEntity = Instance(pEdict);
+	pOut->m_nValue44 = nValue44;
+	pOut->m_pszName = g_105a0120;
+	pOut->m_nValue40 = g_105a0124;
+	pOut->m_nValue30 = nValue30;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf250 size=0x74
 void sub_101cf250(float *p, int mode)
 {
