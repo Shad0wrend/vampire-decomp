@@ -31,7 +31,7 @@ public:
 	void vfunc103();	// slot 103 "Spawn": solid flags, picks the Malk mansion model by the bytes at +0x6664 / +0x6665, then the CNPC_VHumanCombatant spawn
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x4000000, 0x200000 and 0x8000
 	void sub_1000bc08();	// CNPC_VHumanCombatant::vfunc103 (stub 0x1000bc08), called directly
-	void vfunc104();	// slot 104: the item_w_claws_ghoul give (scope trace free), then the stalker and female stalker models are precached through the model table
+	void vfunc104();	// slot 104: calls the stub 0x10009dbd (CNPC_VHumanCombatant::vfunc104), then sub_101d0ec0("item_w_claws_ghoul") and slot 13 of the global object g_1070b22c with the two Malkavian stalker model paths
 	void vfunc105(const char *pszModel);	// slot 105 "SetModel": the Troika version, then the sound name "Zombie_Male" / "Zombie_Female" at +0xc0 (by IsMale), sound table index 2, and the sound group looked up in the global sound table
 	void sub_10298ce0(const char *pszModel);	// CAI_BaseNPCTroika::vfunc105 (stub 0x10009b6f), called directly
 	char sub_10336920();	// CBaseCombatCharacter::IsMale (stub 0x100092be)
