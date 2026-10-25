@@ -15,6 +15,40 @@ void CSaveBlockFields10043c40::sub_10043c40(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10044020 size=0x3c
+#include "CPhysSaveRestoreBlockHandler.h"
+#include "CUnknown100f6d80.h"
+
+extern CUnknown100f6d80 g_106eb5d8;
+extern void *g_10723940;
+
+struct CUnknown10723940
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13(); virtual void vfunc14();
+	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
+	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23(); virtual void vfunc24();
+	virtual void vfunc25(); virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28(); virtual void vfunc29();
+	virtual void vfunc30(); virtual void vfunc31(); virtual void vfunc32(); virtual void vfunc33(); virtual void vfunc34();
+	virtual void vfunc35(); virtual void vfunc36(); virtual void vfunc37(); virtual void vfunc38(); virtual void vfunc39();
+	virtual void vfunc40(); virtual void vfunc41(); virtual void vfunc42(); virtual void vfunc43(); virtual void vfunc44();
+	virtual void vfunc45(); virtual void vfunc46(); virtual void vfunc47(); virtual void vfunc48();
+	virtual void vfunc49(int *pResult);
+};
+
+// TARGET: CPhysSaveRestoreBlockHandler::vfunc5
+void CPhysSaveRestoreBlockHandler::vfunc5()
+{
+	int local[3];
+	g_106eb5d8.sub_100f6d80(this ? (int)this + 8 : 0);
+	if (g_10723940) {
+		local[0] = 0;
+		((CUnknown10723940 *)g_10723940)->vfunc49(local);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044070 size=0x34
 #include "CPhysSaveRestoreBlockHandler.h"
 
