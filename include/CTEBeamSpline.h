@@ -5,6 +5,7 @@
 class CTEBeamSpline
 {
 public:
+	CTEBeamSpline(const char *name);	// 0x1005d220: the CBaseTempEntityHead constructor with the name, the vtable, the 16 points zeroed, no points
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual CTEBeamSpline *vfunc2(unsigned int flags);	// scalar deleting destructor
