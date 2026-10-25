@@ -104514,6 +104514,34 @@ unsigned char __fastcall sub_10381c80(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103822a0 size=0x10e
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CNPC_VHengeyokai.h"
+
+float sub_101d2c70(const Vector *pDelta);
+float sub_1013d580(float a, float b);
+
+bool CNPC_VHengeyokai::sub_103822a0(CBaseEntity *pEnt)
+{
+	CEntityVSlots *pOther = (CEntityVSlots *)pEnt;
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	if (pOther && EHandle_Get(m_h6664))
+	{
+		Vector vecOther = *pOther->slot220();
+		Vector delta = vecOther - *pSelf->slot220();
+		float flYaw = sub_101d2c70(&delta);
+		float flPitch = ((float *)pSelf->slot221())[1];
+		float flDiff = sub_1013d580(flYaw, flPitch);
+		if (-20.0f <= flDiff && flDiff <= 20.0f)
+			return true;
+		return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103828a0 size=0x9c
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
