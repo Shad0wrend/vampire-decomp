@@ -76868,6 +76868,31 @@ void CUnknown1024b370::sub_1024b370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024b590 size=0x33
+// TARGET: sub_1024b590
+struct CFindItem_1024b590 {
+    int a;
+    int b;
+};
+struct CFindList_1024b590 {
+    char pad[0x18];
+    CFindItem_1024b590 **items;
+    char pad2[8];
+    int count;
+    int sub_1024b590(int v);
+};
+int CFindList_1024b590::sub_1024b590(int v)
+{
+    int i;
+    for (i = 0; i < count; i++) {
+        if (items[i]->a - items[i]->b >= v) {
+            return i;
+        }
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024c000 size=0x34
 #include "UtlVec8.h"
 void UtlVec8::sub_1024c000(int elem, int num)
