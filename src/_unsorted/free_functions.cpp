@@ -29747,6 +29747,20 @@ void sub_100f42f0(const char *name, int id, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f43c0 size=0x39
+extern void *g_109f388c;
+void sub_1000e354(const char *buf, int p);
+void sub_100f4490(const char *buf, int p);
+
+// TARGET: sub_100f43c0
+void sub_100f43c0(int nNode, int p2)
+{
+    char buf[260];
+    ((int (__cdecl *)(char *, int, const char *, ...))g_109f388c)(buf, 260, "node_delete %d", nNode);
+    sub_1000e354(buf, p2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4410 size=0x3e
 extern "C" __declspec(dllimport) int Q_snprintf(char *buf, int size, const char *fmt, ...);
 void __cdecl sub_100f4490(char *cmd, int a);
