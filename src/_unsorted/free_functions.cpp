@@ -24891,6 +24891,27 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce570 size=0x3b
+#include "CList_t.h"
+
+struct CList_tEntry5
+{
+    int v[5];
+};
+
+bool CList_t::sub_100ce570(int a, int b, int *pOut)
+{
+    if (sub_100ce3c0(a, b)) {
+        char *node = m_pNode54;
+        if (node != 0) {
+            *(CList_tEntry5 *)pOut = *(CList_tEntry5 *)(node + 0x20);
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce630 size=0x64
 #include "CUnknown100ce630.h"
 
