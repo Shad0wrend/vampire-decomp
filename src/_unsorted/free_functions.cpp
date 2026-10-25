@@ -87922,6 +87922,29 @@ void __fastcall sub_103234a0(CBaseCombatCharacter *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10323630 size=0xf7
+#include "CBaseCombatCharacter.h"
+#include "utlvector.h"
+#include "ScopeTrace.h"
+
+class CEntHandle
+{
+public:
+    unsigned long m_Index;
+};
+
+extern CUtlVector<CEntHandle> g_10937af4;
+
+void __fastcall sub_10323630(CBaseCombatCharacter *self)
+{
+    ScopeTrace trace("CBaseCombatCharacter::AddToComfortList", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+    CEntHandle h;
+    h.m_Index = self ? *self->vfunc1() : -1;
+    g_10937af4.AddToTail(h);
+    *(int *)((char *)self + 0xe94) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103239a0 size=0x99
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
