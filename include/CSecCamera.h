@@ -8,6 +8,7 @@ class CSecCamera : public CBaseEntity
 {
 public:
 	CSecCamera *sub_1020bf00();
+	virtual void vfunc103();	// slot 103 (Spawn): CBreakableProp::vfunc103, movedir (0, 1, 0), RemoveFlag(0xfffbffff), movetype 8, the sweep length and the end positions from the angles, state 0, the swing angle at +0x798 = cos(half of it in radians), then Precache (slot 104)
 	void vfunc104();	// slot 104 (Precache): precaches the four model names at +0x7c4 / +0x7c8 / +0x7cc / +0x7d0 when set, then CBreakableProp::vfunc104
 	void sub_1000978c();	// CBreakableProp::vfunc104, called directly (tail call)
 	void sub_1020c890();	// when the sound pointer at +0x7d4 is set: has the engine sound object (global 0x1070b248, slot 11, EmitSound with 11 arguments) play to a broadcast recipient filter (every player) on this entity's engine index (IndexOfEdict, engine slot 35), then clears the pointer
@@ -20,10 +21,19 @@ public:
 
 	char m_pad03e0[0x77c - 0x3e0];
 	char m_b77c;	// 0x77c
-	char m_pad77d[0x79c - 0x77d];
+	char m_pad77d[0x780 - 0x77d];
+	float m_flF780;	// 0x780: divisor of the sweep length
+	char m_pad784[0x788 - 0x784];
+	float m_flF788;	// 0x788: the sweep distance (truncated, made positive)
+	float m_flF78c;	// 0x78c: m_flF788 as a fraction of m_flF780
+	char m_pad790[0x798 - 0x790];
+	float m_flF798;	// 0x798: the swing angle in degrees (becomes its cosine at Spawn)
 	int m_nState79c;	// 0x79c
 	float m_flNextStateTime7a0;	// 0x7a0
-	char m_pad07a4[0x7f4 - 0x7a4];
+	char m_pad07a4[0x7a8 - 0x7a4];
+	Vector m_vecStart7a8;	// 0x7a8: the angles at Spawn
+	Vector m_vecEnd7b4;	// 0x7b4: those angles plus the sweep along the movedir
+	char m_pad07c0[0x7f4 - 0x7c0];
 	COutputEvent m_Output7f4;	// 0x7f4
 	COutputEvent m_Output80c;	// 0x80c
 };
