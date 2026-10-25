@@ -55980,6 +55980,43 @@ extern "C" GP *trigger_fog()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ca510 size=0x14e
+#include "CBaseTrigger.h"
+#include "CEntityVSlots.h"
+#include "CPVSFilter.h"
+
+#define TV(n) virtual void s##n();
+struct CTempEntsView101ca510
+{
+	TV(0) TV(1) TV(2) TV(3) TV(4) TV(5) TV(6) TV(7) TV(8) TV(9) TV(10) TV(11) TV(12) TV(13) TV(14) TV(15) TV(16) TV(17) TV(18) TV(19) TV(20) TV(21)
+	virtual void vfunc22(IRecipientFilter *pFilter, int nDelay, const Vector *pOrigin, const Vector *pDir);
+};
+
+struct CTriggerUnit101ca510 : CBaseTrigger
+{
+	void sub_101ca510(CBaseEntity *pOther);
+};
+
+extern CTempEntsView101ca510 *g_10540528;
+float sub_102f9c70(const Vector *pPos);
+
+void CTriggerUnit101ca510::sub_101ca510(CBaseEntity *pOther)
+{
+	if (!sub_101c5460(pOther))
+		return;
+	Vector vecVel;
+	((CEntityVSlots *)pOther)->slot199(&vecVel, 0);
+	if (vecVel.Length() > 5.0f)
+	{
+		vecVel *= 0.25f;
+		Vector vecOrigin = *((CEntityVSlots *)pOther)->slot220();
+		vecOrigin.z = sub_102f9c70(&vecOrigin) + 12.0f;
+		CPVSFilter filter(vecOrigin);
+		g_10540528->vfunc22(&filter, 0, &vecOrigin, &vecVel);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca6c0 size=0x84
 #include "CBaseEntity.h"
 
