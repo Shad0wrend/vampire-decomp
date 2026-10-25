@@ -37,6 +37,24 @@ CPhysicsProp *CPhysicsProp::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191450 size=0x37
+#include "CPhysicsProp.h"
+#include "CBreakableProp.h"
+
+// TARGET: CPhysicsProp::vfunc103
+void CPhysicsProp::vfunc103()
+{
+    ((CBreakableProp *)this)->vfunc103();
+    if (*((unsigned char *)this + 0x204) & 4) {
+        ((CBaseEntity *)this)->sub_100aaa40(1);
+    }
+    if (!(*((unsigned char *)this + 0x204) & 8)) {
+        ((CBaseEntity *)this)->sub_100b3840(2);
+    }
+    ((void (__fastcall *)(void *))(*(int **)this)[223])(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191510 size=0x17a
 #include "CPhysicsProp.h"
 #include "CCollisionProperty.h"
