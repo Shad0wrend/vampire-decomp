@@ -63514,6 +63514,28 @@ int CVStatInfo_t::sub_101fee50(int level)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ff060 size=0x3a
+#include "CVStatInfo_t.h"
+
+struct CVStatValueRecord {
+    int sub_100099e4(int arg);
+};
+
+struct CUnknown101ff060Target {
+    int sub_10004d81(int a, int b, int c);
+};
+
+// TARGET: CVStatInfo_t::sub_101ff060
+int CVStatInfo_t::sub_101ff060(int arg)
+{
+    if (arg != 0) {
+        int nValue = ((CVStatValueRecord *)((char *)this + 0x60))->sub_100099e4(arg);
+        return ((CUnknown101ff060Target *)((char *)arg + 0x13dc))->sub_10004d81(*(int *)((char *)this + 0xc), *(int *)((char *)this + 0x10), nValue);
+    }
+    return ((CVStatValueRecord *)((char *)this + 0x60))->sub_100099e4(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ff0b0 size=0xa4
 #include "CVStatInfo_t.h"
 #include "CVStatValue_t.h"
