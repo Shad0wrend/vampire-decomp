@@ -12582,6 +12582,46 @@ void CUnknown1007ce20::sub_1007cfc0(char bUseStart, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d190 size=0x3f
+#include "vampire.h"
+
+struct CUnknownItem1007d190
+{
+    bool sub_10009f16(int a, void *pOwner, int b);
+};
+
+struct CUnknown1007d190
+{
+    void sub_1007d190();
+    char m_pad00[0x3c];
+    CUnknownItem1007d190 **m_pItems;
+    char m_pad40[0x48 - 0x40];
+    int m_nItems;
+    char m_pad4c[0x7c - 0x4c];
+    int m_n7c;
+    char m_pad80[0xa4 - 0x80];
+    int m_na4;
+};
+
+// TARGET: CUnknown1007d190::sub_1007d190
+void CUnknown1007d190::sub_1007d190()
+{
+    bool bOk = true;
+    for (int i = 0; i < m_nItems; i++)
+    {
+        CUnknownItem1007d190 *pItem = m_pItems[i];
+        if (bOk && pItem->sub_10009f16(m_na4, this, m_n7c))
+        {
+            bOk = true;
+        }
+        else
+        {
+            bOk = false;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfc0 size=0xa
 struct CUnknown1007dfc0 { char p[0x78]; int a; void sub_1007dfc0(int v); };
 // TARGET: CUnknown1007dfc0::sub_1007dfc0
