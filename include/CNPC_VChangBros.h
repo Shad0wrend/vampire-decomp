@@ -47,4 +47,6 @@ public:
 	void sub_1036e160(int bSetup);	// "CNPC_VChangBros::SetupSuperJump": scope trace (no entity name); with bSetup stores this entity's origin and the enemy's (+0x5ddc) origin as the jump start and target (+0x649c / +0x64a8), the height difference (the higher z minus this z, plus 50 or 150 when it is within 4 units) at +0x64b4, then sub_10269b50(0x7b) and sub_102c4e80()
 	void sub_10269b50(int schedule);	// CAI_BaseNPC member (stub 0x10015839), called directly
 	void sub_102c4e80();	// stub 0x10011a31, called directly
+	void *sub_1036cfa0();	// "CNPC_VChangBros::SelectLedgeNode": scope trace (no entity name); of the hints of type 0x4653 that sub_1036df50 accepts, the one farthest from this entity (stub 0x1036cfa0's callers: vfunc442)
+	bool sub_1036df50(void *pHint);	// stub 0x10006d70: whether a ledge hint is acceptable
 };
