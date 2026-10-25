@@ -81047,6 +81047,28 @@ int CAI_BaseNPCTroika::sub_102c47e0(const char *pszName, const char *pszCaller)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c5730 size=0x3c
+#include "CBaseCombatWeapon.h"
+
+typedef float (*RandFn)(int, int);
+extern RandFn g_109f385c;
+
+struct CUnk102c5730 {
+    void sub_102c5730(void *pObj);
+    void sub_10010988(void *pWeapon, float flValue);
+};
+
+void CUnk102c5730::sub_102c5730(void *pObj)
+{
+    char *pWeapon;
+    float flValue;
+
+    pWeapon = (char *)((CBaseCombatWeapon *)pObj)->sub_102517e0();
+    flValue = g_109f385c(*(int *)(pWeapon + 0x264), *(int *)(pWeapon + 0x268));
+    sub_10010988(pWeapon, flValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c62f0 size=0x24
 unsigned int __stdcall sub_102c62f0(unsigned int x)
 {
