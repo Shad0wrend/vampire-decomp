@@ -2153,6 +2153,7 @@
 0x10008819 func   ?sub_101fb000@CVDmg_t@@QAEXPBD@Z CVDmg_t::sub_101fb000
 0x10008832 func   ?sub_102eeba0@CUnknown102eeba0@@QAEXH@Z CUnknown102eeba0::sub_102eeba0
 0x10008837 func   ?sub_103c6a90@CNPC_VVampireBoss@@QAEHPAHHHH@Z CNPC_VVampireBoss::sub_103c6a90
+0x1000884b func   ?Grow@CUtlMemory16@@QAEXH@Z CUtlMemory16::Grow
 0x1000884b func   ?sub_10313f70@@YIXPAUMem16@@HH@Z sub_10313f70
 0x10008850 func   ?sub_101daf60@CUnknown101daf60@@QAE_NXZ CUnknown101daf60::sub_101daf60
 0x10008855 func   ?sub_1037c090@CNPC_VGhoulCroucher@@QAEXPAXM@Z CNPC_VGhoulCroucher::sub_1037c090
