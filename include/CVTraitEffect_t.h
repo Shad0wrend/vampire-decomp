@@ -4,6 +4,8 @@
 
 #include "CVStatCost_t.h"
 
+class CVModInfo_t;
+
 class CVTraitEffect_t
 {
 public:
@@ -19,4 +21,5 @@ public:
 	void sub_101f6eb0();	// "CVTraitEffect_t::Debug_Display": DevMsg of the effect: "\t\t\t( <ERROR> )" for an empty record, else the trait text with the kind's name and the value (kind 6: the modifier name, kind 7: the cost between "\t( " and " )")
 	const char *sub_101f7110(const char *pszName);	// "CVTraitEffect_t::GetDisplayString": "<ERROR>" for an empty record, else formats pszName (the trait text when null / empty) with the kind's name and the value into the shared buffer at 0x1074dea8 ("%s  %s  %d", kind 0 without a name and kind 9 / 10 with a percent sign, kind 6 also DevMsg's the text)
 	void sub_101f6ff0(void *pOut);	// writes the Debug_Display line to an output object (sub_10203df0 / stub 0x100045ed): "\t\t\t( <ERROR> )" for an empty record, else "( trait  kind  value )" (kind 6: the modifier name instead of the value)
+	void sub_101f6e20(CVModInfo_t *pInfo, int *pResult);	// hands the result to the caller when the trait's name (+4 of the record) passes sub_10205430 and the kind is 7 with a cost that sub_101fc160 does not refuse: stores the cost's address into *pResult (called for every effect by sub_101f7640)
 };
