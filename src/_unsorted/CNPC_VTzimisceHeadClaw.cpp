@@ -253,6 +253,61 @@ void CNPC_VTzimisceHeadClaw::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1cd0 size=0x37
+// TARGET: CNPC_VTzimisceHeadClaw::vfunc310
+#include "CNPC_VTzimisceHeadClaw.h"
+#include "CAI_BaseNPCTroika.h"
+
+struct CNPC_VTzimisceHeadClawSlotView
+{
+	virtual int vf0(); virtual int vf1(); virtual int vf2(); virtual int vf3(); virtual int vf4();
+	virtual int vf5(); virtual int vf6(); virtual int vf7(); virtual int vf8(); virtual int vf9();
+	virtual int vf10(); virtual int vf11(); virtual int vf12(); virtual int vf13(); virtual int vf14();
+	virtual int vf15(); virtual int vf16(); virtual int vf17(); virtual int vf18(); virtual int vf19();
+	virtual int vf20(); virtual int vf21(); virtual int vf22(); virtual int vf23(); virtual int vf24();
+	virtual int vf25(); virtual int vf26(); virtual int vf27(); virtual int vf28(); virtual int vf29();
+	virtual int vf30(); virtual int vf31(); virtual int vf32(); virtual int vf33(); virtual int vf34();
+	virtual int vf35(); virtual int vf36(); virtual int vf37(); virtual int vf38(); virtual int vf39();
+	virtual int vf40(); virtual int vf41(); virtual int vf42(); virtual int vf43(); virtual int vf44();
+	virtual int vf45(); virtual int vf46(); virtual int vf47(); virtual int vf48(); virtual int vf49();
+	virtual int vf50(); virtual int vf51(); virtual int vf52(); virtual int vf53(); virtual int vf54();
+	virtual int vf55(); virtual int vf56(); virtual int vf57(); virtual int vf58(); virtual int vf59();
+	virtual int vf60(); virtual int vf61(); virtual int vf62(); virtual int vf63(); virtual int vf64();
+	virtual int vf65(); virtual int vf66(); virtual int vf67(); virtual int vf68(); virtual int vf69();
+	virtual int vf70(); virtual int vf71(); virtual int vf72(); virtual int vf73(); virtual int vf74();
+	virtual int vf75(); virtual int vf76(); virtual int vf77(); virtual int vf78(); virtual int vf79();
+	virtual int vf80(); virtual int vf81(); virtual int vf82(); virtual int vf83(); virtual int vf84();
+	virtual int vf85(); virtual int vf86(); virtual int vf87(); virtual int vf88(); virtual int vf89();
+	virtual int vf90(); virtual int vf91(); virtual int vf92(); virtual int vf93(); virtual int vf94();
+	virtual int vf95(); virtual int vf96(); virtual int vf97(); virtual int vf98(); virtual int vf99();
+	virtual int vf100(); virtual int vf101(); virtual int vf102(); virtual int vf103(); virtual int vf104();
+	virtual int vf105(); virtual int vf106(); virtual int vf107(); virtual int vf108(); virtual int vf109();
+	virtual int vf110(); virtual int vf111(); virtual int vf112(); virtual int vf113(); virtual int vf114();
+	virtual int vf115(); virtual int vf116(); virtual int vf117(); virtual int vf118(); virtual int vf119();
+	virtual int vf120(); virtual int vf121(); virtual int vf122(); virtual int vf123(); virtual int vf124();
+	virtual int vf125(); virtual int vf126(); virtual int vf127(); virtual int vf128(); virtual int vf129();
+	virtual int vf130(); virtual int vf131(); virtual int vf132(); virtual int vf133(); virtual int vf134();
+	virtual int vf135(); virtual int vf136(); virtual int vf137(); virtual int vf138(); virtual int vf139();
+	virtual int vf140(); virtual int vf141(); virtual int vf142(); virtual int vf143(); virtual int vf144();
+	virtual int vf145(); virtual int vf146(); virtual int vf147(); virtual int vf148(); virtual int vf149();
+	virtual int vf150(); virtual int vf151(); virtual int vf152(); virtual int vf153(); virtual int vf154();
+	virtual int vf155(); virtual int vf156(); virtual int vf157(); virtual int vf158(); virtual int vf159();
+	virtual int vf160(); virtual int vf161(); virtual int vf162(); virtual int vf163(); virtual int vf164();
+	virtual int vf165(); virtual int vf166(); virtual int vf167();
+};
+
+void CNPC_VTzimisceHeadClaw::vfunc310(int a)
+{
+	if (a == 9) {
+		if (((CNPC_VTzimisceHeadClawSlotView *)this)->vf167()) {
+			((CAI_BaseNPCTroika *)this)->vfunc310(0x1136);
+			return;
+		}
+	}
+	((CAI_BaseNPCTroika *)this)->vfunc310(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c2640 size=0x170
 #include "CNPC_VTzimisceHeadClaw.h"
 #include "CPASAttenuationFilter.h"

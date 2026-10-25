@@ -3050,6 +3050,7 @@
 0x1000b30c func   ?sub_1003d300@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003d300
 0x1000b316 func   ?vfunc1@CSafeDiscSaveRestoreOps_0@@UAEXPAPAHPAUCSafeDiscReader@@@Z CSafeDiscSaveRestoreOps_0::vfunc1
 0x1000b32f func   ?vfunc516@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc516
+0x1000b343 func   ?vfunc310@CNPC_VTzimisceHeadClaw@@UAEXH@Z CNPC_VTzimisceHeadClaw::vfunc310
 0x1000b34d func   ?vfunc5@CGargoyleTalisman@@QAEPAV1@I@Z CGargoyleTalisman::vfunc5
 0x1000b352 func   ?vfunc265@CPropButton@@QAEXPAX0HM@Z CPropButton::vfunc265
 0x1000b361 func   ?sub_103159d0@@YIXPAUSquad@@HPAUEnt@@@Z sub_103159d0
