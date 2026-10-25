@@ -26,4 +26,7 @@ public:
 	int sub_1028a380();	// CAI_BaseNPC::vfunc438 (stub 0x10001d57), tail called directly
 	void sub_103581b0(CBaseEntity *pTarget);	// takes off toward pTarget: with a target, flight mode 1, the NPC is lifted 1.0f (UTIL_SetOrigin), then its absolute velocity is the unit direction to the target's origin (slot 220) times 170.0f
 	void sub_100b2770(const Vector &vec);	// CBaseEntity absolute velocity setter (stub 0x1000489a), called directly
+	void vfunc481(CBaseEntity *pEnemy);	// slot 481 (plain member): stores the distance to pEnemy (slot 220 positions) at +0x5f4c and sets the condition 0x78 below 256.0f and 0x77 below 512.0f (each after asking the dev flag object at 0x10924a6c), then CAI_BaseNPC::vfunc481
+	void sub_10269a20(int condition);	// CAI_BaseNPC condition setter (stub 0x100041b0), called directly
+	void sub_10270b20(CBaseEntity *pEnemy);	// CAI_BaseNPC::vfunc481 (stub 0x10002a95), called directly
 };
