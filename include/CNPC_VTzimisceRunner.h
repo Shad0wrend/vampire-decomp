@@ -24,6 +24,7 @@ public:
 	void sub_102aacf0(int *pEvent);	// CAI_BaseNPCTroika::vfunc444 (stub 0x10015c2b), called directly
 	bool sub_10280a50();	// CAI_BaseNPC::AutoMovement (stub 0x1000cf6d), called directly
 	void sub_10273e80(int a);	// CAI_BaseNPC member (stub 0x1000ac68), called directly
+	void vfunc618();	// slot 618 (plain member): plays one of the 0x1065d6a0 sounds (channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 
 	char pad4[0xfe0 - 4];
 	char m_b0fe0;	// +0xfe0
