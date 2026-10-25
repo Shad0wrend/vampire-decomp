@@ -6758,6 +6758,33 @@ void UtlMem::sub_10055ec0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10055f50 size=0x1cd
+#include "CUtlRBTree24.h"
+
+void CUtlRBTree24::sub_10055f50(int elem)
+{
+	const CUtlRBTree24At<0x106bddc4> *tree = (const CUtlRBTree24At<0x106bddc4> *)this;
+	int rightchild = sub_10055520(elem).m_Right;
+	SetRightChild(elem, sub_10055520(rightchild).m_Left);
+	if (sub_10055520(rightchild).m_Left != InvalidIndex())
+		SetParent(sub_10055520(rightchild).m_Left, elem);
+
+	if (rightchild != InvalidIndex())
+		SetParent(rightchild, tree->Links(elem).m_Parent);
+	if (elem != m_Root) {
+		if (tree->Links(sub_10055520(elem).m_Parent).m_Left == elem)
+			SetLeftChild(tree->Links(elem).m_Parent, rightchild);
+		else
+			SetRightChild(tree->Links(elem).m_Parent, rightchild);
+	} else
+		m_Root = rightchild;
+
+	SetLeftChild(rightchild, elem);
+	if (elem != InvalidIndex())
+		SetParent(elem, rightchild);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056a60 size=0x14
 #include "CUnknown10056a00.h"
 
