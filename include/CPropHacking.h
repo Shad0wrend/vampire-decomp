@@ -26,7 +26,7 @@ public:
 	void vfunc272();	// slot 272: clears the counter of every screen (the array at +0x98c, count at +0x998) and the dword at +0xc28, then CBaseVampireSkillEntity::vfunc272
 	void vfunc275();	// slot 275: sub_1021c890(the dword at +0x9e0), then stores the id of the global record named "access" in a global (-1 when there is none)
 	void vfunc278(int a);	// slot 278: sub_10218ff0(0, the selected count - 1), then sub_10217ac0 with the screen text 0xc and the argument a
-	void sub_1021c890(int a);	// called through the stub at 0x10003aa8
+	char sub_1021c890(int a);	// switches to the screen a (-1: the main one, -2: the summary, else that record; false when a is beyond the count at +0x9ac), then plays the sound g_1074f754; called through the stub at 0x10003aa8
 	void sub_1021a2f0(CRestore *pRestore);	// "CPropHacking::LoadGlobalEmailState": scope trace (entity name), when the byte at +0xa10 is set reads the 0x80 byte string at +0xa28 from pRestore under the entity name
 	void sub_1021a3d0(CSave *pSave);	// "CPropHacking::SaveGlobalEmailState": as LoadGlobalEmailState, writing the string to pSave
 	void sub_1021b030();	// prints the four help lines (screen texts 8..11, each when not empty, as "\n%s\n") after starting a new page with text 0x14, then sets the byte at +0x9ec
@@ -59,7 +59,7 @@ public:
 	char m_szText0904[0x984 - 0x904];	// 0x904: the text line
 	char m_b0984;	// 0x984
 	char m_b0985;	// 0x985
-	char m_pad0986[0x98c - 0x986];
+	char m_abVisited0986[6];	// 0x986: one flag per record, set once its screen has been shown
 	int *m_pnCounts098c;	// 0x98c: the per screen counters
 	char m_pad0990[0x998 - 0x990];
 	int m_nCounts0998;	// 0x998: the number of counters
@@ -83,4 +83,5 @@ public:
 	char m_szEmailState[0x80];	// 0xa28
 	char m_pad0aa8[0xc28 - 0xaa8];
 	int m_n0c28;	// 0xc28
+	char m_b0c2c;	// 0xc2c
 };
