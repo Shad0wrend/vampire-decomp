@@ -13,6 +13,26 @@ int CNPC_VFrenzyShadow::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10375ed0 size=0x32
+#include "CNPC_VFrenzyShadow.h"
+#include "CAI_BaseNPCTroika.h"
+
+struct CUnknown10924a6c { virtual void vfunc0(); virtual void vfunc1(); };
+extern CUnknown10924a6c *g_10924a6c;
+void __fastcall sub_10013f2f(void *self);
+
+void CNPC_VFrenzyShadow::vfunc433()
+{
+    sub_10013f2f(this);
+    if (m_n6664 > 1) {
+        g_10924a6c->vfunc1();
+        ((CAI_BaseNPCTroika *)this)->sub_100041b0(0x79);
+        return;
+    }
+    ((CAI_BaseNPCTroika *)this)->sub_10015839(0x79);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376b70 size=0x1a
 #include "CNPC_VFrenzyShadow.h"
 struct S10924edc { virtual void a(); virtual void b(); };
