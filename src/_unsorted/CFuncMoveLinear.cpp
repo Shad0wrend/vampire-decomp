@@ -63,3 +63,24 @@ void CFuncMoveLinear::sub_10116bf0()
     Warning("%s done moving, at invalid position?\n", sub_100ab4f0());
 }
 // END FUNCTION
+
+// FUNCTION: 0x10117740 size=0x78
+#include "CFuncMoveLinear.h"
+void sub_100aa7b0(void *p);
+
+CFuncMoveLinear *CFuncMoveLinear::vfunc5(unsigned int flags)
+{
+	m_Output5f0.sub_100cd2d0();
+	m_Output5d8.sub_100cd2d0();
+	m_Output5c0.sub_100cd2d0();
+	m_Output5a8.sub_100cd2d0();
+	m_Output590.sub_100cd2d0();
+	m_Output578.sub_100cd2d0();
+	m_Output4bc.sub_100cd2d0();
+	m_Output4a4.sub_100cd2d0();
+	sub_1000cb8a();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
