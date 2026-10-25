@@ -1,0 +1,18 @@
+// CUnknown102f3900: stand-in for the class that owns sub_102f3900 / sub_102f39a0 (a helper taking an entity and two
+// positions by value); real name not yet known. The entity is only used for its view offset at +0x184.
+#pragma once
+
+#include "Vector.h"
+
+struct CUnknown102f3900Ent
+{
+	char m_pad0000[0x184];
+	Vector m_vecViewOffset;	// 0x184
+};
+
+class CUnknown102f3900
+{
+public:
+	void sub_102f3900(CUnknown102f3900Ent *pEnt, Vector vecA, Vector vecB, int nFlag);	// forwards (pEnt, vecA, vecB + the entity's view offset, nFlag) to sub_102f39a0
+	void sub_102f39a0(CUnknown102f3900Ent *pEnt, Vector vecA, Vector vecB, int nFlag);	// stub 0x10010816
+};
