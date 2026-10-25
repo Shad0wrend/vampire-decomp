@@ -103824,6 +103824,65 @@ int CNPC_VHengeyokai::sub_10382b30(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10382bb0 size=0x114
+#include "CNPC_VHengeyokai.h"
+#include "CAI_Motor.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#define S1(n) virtual void s##n();
+#define S10(p) S1(p##0) S1(p##1) S1(p##2) S1(p##3) S1(p##4) S1(p##5) S1(p##6) S1(p##7) S1(p##8) S1(p##9)
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CTargetSlots {
+	S100(0) S100(1) S10(20) S10(21)
+	virtual Vector *slot220(float f);
+};
+struct CMotorUnit : CAI_Motor {
+	void sub_102e0a40(float flYaw);
+	void sub_102e0a60(float flRate);
+	void sub_102e0b40();
+	void sub_10007248(Vector *pPos);
+	void SetIdealYaw(float flYaw);
+};
+static inline float AngleY(const Vector *p)
+{
+	return p->y;
+}
+inline void CMotorUnit::SetIdealYaw(float flYaw)
+{
+	if (m_28)
+	{
+		if (flYaw >= 180.0f)
+			flYaw = flYaw - 180.0f;
+		else
+			flYaw = flYaw + 180.0f;
+	}
+	if (*(float *)&m_1c == 180.0f)
+		m_34 = flYaw;
+	else
+		m_34 = sub_102e0a80(flYaw);
+}
+
+void CNPC_VHengeyokai::sub_10382bb0()
+{
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	if (EHandle_Get(m_h6664))
+	{
+		((CMotorUnit *)m_pMotor5d44)->sub_102e0a40(AngleY(pSelf->slot221()));
+		((CMotorUnit *)m_pMotor5d44)->sub_102e0a60(20.0f);
+		((CMotorUnit *)m_pMotor5d44)->sub_102e0b40();
+		if (pSelf->slot167())
+		{
+			CTargetSlots *pTarget = (CTargetSlots *)pSelf->slot167();
+			CMotorUnit *pMotor = (CMotorUnit *)m_pMotor5d44;
+			pMotor->sub_10007248(pTarget->slot220(-1.0f));
+			return;
+		}
+		float flYaw = AngleY(pSelf->slot221());
+		((CMotorUnit *)m_pMotor5d44)->SetIdealYaw(flYaw);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10382f60 size=0xee
 #include "CNPC_VHengeyokai.h"
 #include "CUnknown1070b244.h"
