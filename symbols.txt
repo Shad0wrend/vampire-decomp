@@ -4472,6 +4472,7 @@
 0x10010122 func   ?vfunc241@CGibShooter@@QAEPAVCGib@@XZ CGibShooter::vfunc241
 0x10010140 func   ?sub_1024a980@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1024a980
 0x1001014a func   ?sub_10334790@CBaseCombatCharacter@@QAEHPBD@Z CBaseCombatCharacter::sub_10334790
+0x1001015e func   ?vfunc130@CFuncElevator@@QAEXH@Z CFuncElevator::vfunc130
 0x10010163 func   ?sub_1007ee00@@YIXPAH@Z sub_1007ee00
 0x1001017c func   ?vfunc2@CServerGameEnts@@UAEXPAUCServerGameEntsEdict@@0@Z CServerGameEnts::vfunc2
 0x1001018b func   ?sub_103324a0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_103324a0

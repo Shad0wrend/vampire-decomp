@@ -24,6 +24,24 @@ void CFuncElevatorUnit1020f220::sub_1020f220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020f270 size=0x3a
+// TARGET: CFuncElevator::vfunc130
+#include "CFuncElevator.h"
+#include "CBaseEntity.h"
+
+void sub_100043cc(CFuncElevator *p, float *v, int flag);
+
+void CFuncElevator::vfunc130(int a)
+{
+    ((CBaseEntity *)this)->CBaseEntity::vfunc130(a);
+    if ((char)a) {
+        sub_100043cc(this, m_vecDest800, 0);
+        m_nFloor630 = 0;
+        m_flag80c = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216e30 size=0xcd
 #include "CFuncElevator.h"
 
