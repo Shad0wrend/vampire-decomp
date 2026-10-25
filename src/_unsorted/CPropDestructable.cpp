@@ -56,6 +56,31 @@ void CPropDestructable::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193be0 size=0x36
+#include "CPropDestructable.h"
+
+void sub_10004dbd();
+
+// TARGET: CPropDestructable::vfunc113
+void CPropDestructable::vfunc113()
+{
+	sub_10004dbd();
+	int i = 0;
+	int *pModel = m_hModels794;
+	do
+	{
+		if (*pModel == 0)
+		{
+			break;
+		}
+		m_n77c = i;
+		i++;
+		pModel++;
+	} while (i < 8);
+	sub_10193cc0(m_nStage784, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194080 size=0xa8
 #include "CPropDestructable.h"
 #include "COutputEvent.h"
