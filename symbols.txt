@@ -596,6 +596,7 @@
 0x10002f22 func   ?vfunc0@CAI_RatLocalNavigator@@QAEPAV1@I@Z CAI_RatLocalNavigator::vfunc0
 0x10002f31 func   ?sub_101bc750@CUnknown101bc750@@QAEXH@Z CUnknown101bc750::sub_101bc750
 0x10002f36 func   ?sub_1012f100@@YAXPAX@Z sub_1012f100
+0x10002f40 func   ?sub_1013c0e0@@YAXABUmatrix3x4_t@@ABVVector@@1AAV2@2@Z sub_1013c0e0
 0x10002f5e func   ?vfunc113@CEnvMicrophone@@UAEXXZ CEnvMicrophone::vfunc113
 0x10002f63 func   ?sub_102fa510@CAI_Node@@QAEXXZ CAI_Node::sub_102fa510
 0x10002f6d func   ?sub_10408060@CKeyringUnit@@QAEXH@Z CKeyringUnit::sub_10408060
