@@ -24062,6 +24062,33 @@ void CFloatPair3f4::sub_100c0690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0760 size=0x9b
+#include "CFuncRotating.h"
+#include <math.h>
+
+struct CFuncRotatingSpeedView
+{
+	char m_pad0000[0x164];
+	float m_flSpeed;	// 0x164
+};
+
+bool CFuncRotating::sub_100c0760(float flStep)
+{
+	bool bDone = false;
+	float flNew = (float)fabs(((CFuncRotatingSpeedView *)this)->m_flSpeed) - m_f460 * m_flFanFriction * 0.5;
+	if (flNew < 0.0f)
+		flNew = 0.0f;
+	if (fabs(flNew) <= fabs(flStep)) {
+		bDone = true;
+		flNew = flStep;
+	} else if (((CFuncRotatingSpeedView *)this)->m_flSpeed < 0.0f) {
+		flNew = flNew * -1.0f;
+	}
+	sub_100c0420(flNew);
+	return bDone;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0830 size=0x39
 #include "CFloatPair3f4.h"
 
