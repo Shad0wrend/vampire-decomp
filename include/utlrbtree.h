@@ -18,6 +18,7 @@
 // to the name the judge asks for (e.g. ?Links@?$CUtlRBTree@HG@@IBEABULinks_t@1@G@Z).
 // Every member is inline: the game expands FindInsertionPosition into Insert, Grow into NewNode, InsertRebalance into
 // LinkToParent where its budget allows.
+// RemoveNode is RemoveAt without the final FreeNode / --m_NumElements (the older SDK split it: the caller frees).
 #pragma once
 
 #include "utlmemory.h"
@@ -59,6 +60,7 @@ public:
 	I Insert(T const &insert);
 	I Find(T const &search) const;
 	void RemoveAt(I i);
+	void RemoveNode(I i);
 	bool Remove(T const &remove);
 	void RemoveAll();
 	void Purge();
@@ -627,6 +629,68 @@ inline void CUtlRBTree<T, I>::RemoveAt(I elem)
 
 		FreeNode(elem);
 		--m_NumElements;
+	}
+}
+
+template <class T, class I>
+inline void CUtlRBTree<T, I>::RemoveNode(I elem)
+{
+	if (elem != InvalidIndex()) {
+		I x, y;
+
+		if ((LeftChild(elem) == InvalidIndex()) || (RightChild(elem) == InvalidIndex())) {
+			// y has a NIL node as a child
+			y = elem;
+		} else {
+			// find the tree successor with a NIL node as a child
+			y = RightChild(elem);
+			while (LeftChild(y) != InvalidIndex())
+				y = LeftChild(y);
+		}
+
+		// x is y's only child
+		if (LeftChild(y) != InvalidIndex())
+			x = LeftChild(y);
+		else
+			x = RightChild(y);
+
+		// remove y from the parent chain
+		if (x != InvalidIndex())
+			SetParent(x, Parent(y));
+		if (!IsRoot(y)) {
+			if (IsLeftChild(y))
+				SetLeftChild(Parent(y), x);
+			else
+				SetRightChild(Parent(y), x);
+		} else
+			m_Root = x;
+
+		// store this off now, y's colour is reset below
+		NodeColor_t ycolor = Color(y);
+		if (y != elem) {
+			// hook y in to link to what elem linked to
+			SetParent(y, Parent(elem));
+			SetRightChild(y, RightChild(elem));
+			SetLeftChild(y, LeftChild(elem));
+
+			if (!IsRoot(elem)) {
+				if (IsLeftChild(elem))
+					SetLeftChild(Parent(elem), y);
+				else
+					SetRightChild(Parent(elem), y);
+			} else
+				m_Root = y;
+
+			if (LeftChild(y) != InvalidIndex())
+				SetParent(LeftChild(y), y);
+			if (RightChild(y) != InvalidIndex())
+				SetParent(RightChild(y), y);
+
+			SetColor(y, Color(elem));
+		}
+
+		if ((x != InvalidIndex()) && (ycolor == BLACK))
+			RemoveRebalance(x);
 	}
 }
 
