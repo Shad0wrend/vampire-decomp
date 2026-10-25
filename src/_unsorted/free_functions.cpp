@@ -105073,6 +105073,39 @@ extern "C" CItemGWarrLedger1* item_g_lockpick()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4fe0 size=0x3e
+#include "CItemContainerLock.h"
+
+#define VS(n) virtual void s##n();
+#define VS10(p) VS(p##0) VS(p##1) VS(p##2) VS(p##3) VS(p##4) VS(p##5) VS(p##6) VS(p##7) VS(p##8) VS(p##9)
+
+// the virtual slots of the game's object up to slot 333 (the layout is not known yet)
+struct CVtblLockSlots
+{
+	VS10(0) VS10(1) VS10(2) VS10(3) VS10(4) VS10(5) VS10(6) VS10(7) VS10(8) VS10(9)
+	VS10(10) VS10(11) VS10(12) VS10(13) VS10(14) VS10(15) VS10(16) VS10(17) VS10(18) VS10(19)
+	VS10(20) VS10(21) VS10(22) VS10(23) VS10(24) VS10(25) VS10(26) VS10(27) VS10(28) VS10(29)
+	VS10(30) VS10(31) VS10(32)
+	virtual void s330();
+	virtual void s331();
+	virtual void s332();
+	virtual void s333(int a, int b, int c, int d, int e, int f);
+};
+
+// TARGET: CItemContainerLock::sub_103f4fe0
+void CItemContainerLock::sub_103f4fe0(int nMode)
+{
+	CVtblLockSlots *pSlots = (CVtblLockSlots *)this;
+	if (nMode > 1) {
+		pSlots->s333(7, 1, 0, 0, 0, 0);
+	} else if (nMode == 0) {
+		pSlots->s333(0xd, 1, 0, 0, 0, 0);
+	} else {
+		pSlots->s333(2, 1, 0, 0, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f5220 size=0x72
 #include "SendProp.h"
 
