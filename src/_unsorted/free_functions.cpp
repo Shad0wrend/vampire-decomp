@@ -63489,6 +63489,41 @@ const char *sub_10202880(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202ac0 size=0x3f
+#include "vampire.h"
+
+struct CUnknown10202ac0
+{
+    bool sub_10202ac0(int *pIndex);
+    char m_pad00[0xc];
+    int m_nCount;
+    char m_pad10[0x14 - 0x10];
+    unsigned char m_bClamp;
+};
+
+// TARGET: CUnknown10202ac0::sub_10202ac0
+bool CUnknown10202ac0::sub_10202ac0(int *pIndex)
+{
+    if (!m_bClamp)
+    {
+        if (*pIndex < 0 || *pIndex >= m_nCount)
+        {
+            return false;
+        }
+        return true;
+    }
+    if (*pIndex < 0)
+    {
+        *pIndex = 0;
+    }
+    else if (*pIndex >= m_nCount)
+    {
+        *pIndex = m_nCount - 1;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202ba0 size=0x73
 #include "CUnknown10202ba0.h"
 
