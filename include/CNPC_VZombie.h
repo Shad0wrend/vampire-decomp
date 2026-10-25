@@ -18,6 +18,7 @@ public:
 	bool sub_1000dbcf(CBaseCombatCharacter *pEnt, int b, int c, int d);	// CAI_BaseNPCTroika::vfunc201 (stub 0x1000dbcf), called directly
 	virtual void vfunc105(const char *pszModel);	// slot 105 "CNPC_VZombie::SetModel": CAI_BaseNPCTroika::vfunc105, then the sound group (+0xb4) of the male / female zombie name (+0xc0) with the kind +0xbc = 2
 	void vfunc103();	// slot 103 "CNPC_VZombie::Spawn" (declared as a plain member): solid flags 0x4000000 / 0x200000 / 0x8000, the distances at +0x6348 to 999999, a scrambled random value at +0x6364, then CNPC_VAnimal::vfunc103
+	void vfunc104();	// slot 104 "CNPC_VZombie::" (declared as a plain member): the base slot 104 (stub 0x1000bcb7, ecx = this), the two zombie headshot emitters through the engine's slot 17 (0x1070b22c), then the item_w_zombie_fists give
 	void sub_10012855(int flags);	// sets the solid flags, called directly
 	void sub_100117ca();	// CNPC_VAnimal::vfunc103 (stub 0x100117ca), called directly
 	virtual int vfunc124();	// slot 124 "CNPC_VZombie::DrawDebugTextOverlays": base lines, then (with bit 18 of the debug flags at +0x224) one "Cond: %s" overlay line per condition bit set in the 192 bit vector at +0x5c5c
