@@ -3223,6 +3223,7 @@
 0x1000c248 func   ?sub_1021e6c0@@YIXPAUMem@@HH@Z sub_1021e6c0
 0x1000c266 func   ?vfunc320@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc320
 0x1000c26b func   ?sub_103d0db0@CNPC_VWerewolf@@QAEHUCNPC_VWerewolfVec3@@0@Z CNPC_VWerewolf::sub_103d0db0
+0x1000c270 func   ?vfunc371@CHL2_Player@@UAE?AVVector@@XZ CHL2_Player::vfunc371
 0x1000c27f func   ?vfunc315@CElderVitaePack@@QAEDXZ CElderVitaePack::vfunc315
 0x1000c293 func   ?sub_10135c10@CLogicSquadCondition@@QAE_NXZ CLogicSquadCondition::sub_10135c10
 0x1000c2ac func   ?sub_1007ee40@@YIXPAH@Z sub_1007ee40

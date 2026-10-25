@@ -51,6 +51,29 @@ CHL2_Player *CHL2_Player::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034fde0 size=0x6c
+#include "CHL2_Player.h"
+#include "QAngle.h"
+
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+
+struct SHL2PlayerView
+{
+	char m_pad[0xe5c];
+	float m_f5c;
+	float m_f60;
+};
+
+Vector CHL2_Player::vfunc371()
+{
+	Vector tmp = vfunc367();
+	QAngle ang(((SHL2PlayerView *)this)->m_f60, tmp.y + ((SHL2PlayerView *)this)->m_f5c, 0);
+	Vector fwd;
+	sub_10139610(ang, &fwd, 0, 0);
+	return fwd;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10351390 size=0x73
 #include "CHL2_Player.h"
 #include "CBasePlayer.h"
