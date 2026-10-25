@@ -53996,6 +53996,21 @@ void sub_101d0570(int *pVector, int count, const char *pString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0630 size=0x37
+void sub_101d0570(int *pOut, int count, const char *psz);
+
+// TARGET: sub_101d0630
+void sub_101d0630(unsigned char *pOut, const char *psz)
+{
+    int color[4];
+    sub_101d0570(color, 4, psz);
+    pOut[0] = (unsigned char)color[0];
+    pOut[1] = (unsigned char)color[1];
+    pOut[2] = (unsigned char)color[2];
+    pOut[3] = (unsigned char)color[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0680 size=0x111
 extern float (__fastcall *g_1057966c)(Vector *);
 
