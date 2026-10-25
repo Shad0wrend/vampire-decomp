@@ -109139,6 +109139,68 @@ void CKeyringUnit::sub_10408060(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10408480 size=0x111
+#include "CUtlMemory192.h"
+
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int n);
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+struct SRec192 : CUtlMemory192Elem
+{
+};
+
+struct SVec192 : CUtlMemory192
+{
+	int AddToTail(const SRec192 &src)
+	{
+		int elem = m_size;
+		if (m_size + 1 > m_allocationCount)
+			sub_1040b120(m_size + 1 - m_allocationCount);
+		m_size++;
+		m_pElements = m_pMemory;
+		int numToMove = m_size - elem - 1;
+		if (numToMove > 0)
+			memmove(m_pMemory + (elem + 1) * 0xc0, m_pMemory + elem * 0xc0, numToMove * 0xc0);
+		SRec192 *p = (SRec192 *)(m_pMemory + elem * 0xc0);
+		if (p)
+			*p = src;
+		return elem;
+	}
+};
+
+struct SDest192
+{
+	char m_pad[0x914];
+	SVec192 m_list;
+	void sub_104081e0();
+};
+
+struct SSrc192
+{
+	SRec192 *m_pMemory;
+	int m_alloc;
+	int m_grow;
+	int m_size;
+
+	void sub_10408480(SDest192 *pDest);
+};
+
+void SSrc192::sub_10408480(SDest192 *pDest)
+{
+	if (pDest) {
+		SVec192 *pList = &pDest->m_list;
+		pList->m_size = 0;
+		for (int i = 0; i < m_size; i++) {
+			SRec192 rec;
+			Q_strncpy(rec.a, m_pMemory[i].a, 0x60);
+			Q_strncpy(rec.b, m_pMemory[i].b, 0x60);
+			pList->AddToTail(rec);
+		}
+		pDest->sub_104081e0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x104085f0 size=0x49
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
