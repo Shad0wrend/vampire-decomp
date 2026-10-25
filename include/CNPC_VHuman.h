@@ -15,6 +15,8 @@ public:
 	int sub_10001b45(void *info);
 	// Slot 104 (Precache) override, called directly by the NPC subclasses' Precache.
 	virtual void vfunc104();
+	// Slot 103 override (function 0x10384690): four condition-mask setters (0x4000000, 0x8000000, 0x200000, 0xd00) on the base, then CAI_BaseNPCTroika::vfunc103.
+	void vfunc103();
 	// Slot 376 (TranslateActivity step 2 / next activity of the fallback chain) override: maps the activities
 	// 0x3d, 0x3e, 0x9f, 0xa0, 0xa3 and 0xa4 to 0x3b, 0x3c, 0x9d, 0x9e, 0xa1 and 0xa2 for the Troika version.
 	virtual int vfunc376(int act);
