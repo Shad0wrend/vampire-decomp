@@ -52095,6 +52095,20 @@ CUnk101c26d0 *CUnk101c26d0::sub_101c26d0(int a1, int a2, int a3, int a4, int a5,
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2720 size=0x35
+// TARGET: CSubHost::sub_101c2720
+struct CSubHost {
+    CSubHost *sub_101c2720(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+    void sub_1000f16e(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8);
+};
+
+CSubHost *CSubHost::sub_101c2720(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
+{
+    sub_1000f16e(a1, a2, a3, a4, a5, a6, a7, -1);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2770 size=0xda
 #include "CUnknown101c2770.h"
 #include "CVDmg_t.h"
