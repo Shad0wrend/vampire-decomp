@@ -52067,6 +52067,27 @@ CFlaggedEntitiesEnum *CFlaggedEntitiesEnum::sub_101cc950(CBaseEntity **pList, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ccb60 size=0x3e
+#include "vampire.h"
+#include "CEdtEntitiesEnum.h"
+#include "CUnknown1070b22c.h"
+
+extern int vt_10482f54[];
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: CEdtEntitiesEnum::sub_101ccb60
+CEdtEntitiesEnum *CEdtEntitiesEnum::sub_101ccb60(CBaseEntity **pList, int nMaxList, unsigned int nFlagMask)
+{
+    *(int **)this = vt_10482f54;
+    *(CBaseEntity ***)((char *)this + 4) = pList;
+    *(int *)((char *)this + 8) = nMaxList;
+    m_nMask = nFlagMask;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = (int)g_1070b22c->vfunc38(0);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ccd40 size=0x11
 int __fastcall sub_101ccd40(int *p)
 {

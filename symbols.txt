@@ -5253,6 +5253,7 @@
 0x10012e8b func   ?sub_102ec320@CUnknown102ec320@@QAEXH@Z CUnknown102ec320::sub_102ec320
 0x10012e95 func   ?sub_100d3bc0@@YAXXZ sub_100d3bc0
 0x10012ea4 func   ?sub_1023ee30@@YAXH@Z sub_1023ee30
+0x10012ea9 func   ?sub_101ccb60@CEdtEntitiesEnum@@QAEPAV1@PAPAVCBaseEntity@@HI@Z CEdtEntitiesEnum::sub_101ccb60
 0x10012eb3 func   _item_k_hannahs_safe_key item_k_hannahs_safe_key
 0x10012eef func   ?vfunc103@CBreakableProp@@QAEXXZ CBreakableProp::vfunc103
 0x10012ef4 func   ?sub_1017f650@CNPC_VCopUnit@@QAEXXZ CNPC_VCopUnit::sub_1017f650
