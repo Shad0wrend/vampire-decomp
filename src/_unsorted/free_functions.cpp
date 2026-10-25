@@ -19334,6 +19334,22 @@ unsigned int CUnknown100a8220::sub_100a8220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8340 size=0x3b
+#include "CUnknown100a8340.h"
+
+extern char *g_1070b228;
+
+void CUnknown100a8340::sub_100a8340(CBaseEntity *pEnt, float flTime)
+{
+    if (pEnt) {
+        *(unsigned int *)((char *)this + 0xc8) = *pEnt->vfunc1();
+    } else {
+        *(int *)((char *)this + 0xc8) = -1;
+    }
+    *(float *)((char *)this + 0xcc) = flTime + *(float *)(g_1070b228 + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8bf0 size=0x7c
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
 extern ScopeTrace *g_109f3620;
