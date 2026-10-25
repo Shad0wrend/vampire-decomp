@@ -94375,6 +94375,40 @@ int CAI_Senses::sub_10310130(int radius)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310290 size=0x147
+#include "CAI_Senses.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+
+struct CGlobalVarsView { char pad[0xc]; float curtime; };
+extern CGlobalVarsView *g_1070b228;
+int sub_101cca80(CBaseEntity **pList, int listMax, const Vector &mins, const Vector &maxs, int flagMask, int partitionMask);
+
+// TARGET: CAI_Senses::sub_10310290
+int CAI_Senses::sub_10310290(int radius)
+{
+    int nCount = 0;
+    if (g_1070b228->curtime - m_timer78.m_flNext > -0.001)
+    {
+        m_timer78.m_flNext = m_timer78.m_flInterval + g_1070b228->curtime;
+        sub_1030fe50();
+        Vector vecExtents((float)radius, (float)radius, (float)radius);
+        Vector vecMaxs = *((CEntityVSlots *)m_pOuter)->slot217() + vecExtents;
+        Vector vecMins = *((CEntityVSlots *)m_pOuter)->slot217() - vecExtents;
+        CBaseEntity *list[100];
+        int n = sub_101cca80(list, 100, vecMins, vecMaxs, 0x2000000, 0);
+        for (int i = 0; i < n; i++)
+        {
+            if (sub_1030ffa0(list[i]))
+                nCount++;
+        }
+        sub_1030fe70(nCount, &m_vec48);
+        return nCount;
+    }
+    return m_vec48.m_size;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103104f0 size=0xad
 #include "CAI_Senses.h"
 #include "CEntityVSlots.h"
