@@ -111397,6 +111397,26 @@ int sub_10428360(char *p, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428470 size=0x40
+int sub_104284c0(int a, int b);
+int sub_10428360(int a, int b);
+int sub_10428280(int a, int b, int c, int d, int e);
+
+// TARGET: sub_10428470
+int sub_10428470(int a, int b)
+{
+    int iVar1 = sub_104284c0(a, b);
+    if (iVar1 < 0) {
+        iVar1 = sub_10428360(a, b);
+        if (iVar1 != -1) {
+            return sub_10428280(a, iVar1, 0, 0, -1);
+        }
+        iVar1 = -1;
+    }
+    return iVar1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104284c0 size=0xc2
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 
