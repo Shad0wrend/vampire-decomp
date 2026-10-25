@@ -11,9 +11,12 @@ class CAI_BaseHumanoid
 public:
 	char pad0[0xfec];
 	int m_state0fec;
-	char pad1[0x5f50 - 0xff0];
+	char pad1[0x5f4c - 0xff0];
+	unsigned int m_flags5f4c;	// 0x5f4c: bit 1 = the eye position / facing vectors are stale (set while they are recomputed), bit 0 = the direction to the focus point is stale
 	Vector m_vec5f50;	// 0x5f50
-	char pad2[0x5f94 - 0x5f5c];
+	Vector m_vec5f5c;	// 0x5f5c: the normalised direction from the eye position to the point slot 278 gives
+	Vector m_vec5f68;	// 0x5f68: the facing vector
+	char pad2[0x5f94 - 0x5f74];
 	int m_unk5f94;
 	int m_pad5f98;
 	const char *m_pSceneName;	// 0x5f9c
@@ -24,6 +27,9 @@ public:
 	const char *vfunc589(int type);	// returns the string registered for the given kind (1, 2, 3, 5/7 at +0x5fa8/+0x5fb0/+0x5fac/+0x5fb4), or the override string at +0x5fa4 when set (and the kind is not 7); null when unset
 	Vector vfunc193();	// returns the vector at +0x5f50 (hidden result pointer), after sub_10010be5()
 	void sub_10010be5();
+	void sub_1025e7b0();	// the function behind the stub sub_10010be5: recomputes the cached eye position (+0x5f50) and facing vector (+0x5f68) when bit 1 of +0x5f4c is clear, and the normalised direction (+0x5f5c) from the eye to the point of slot 278 when bit 0 is clear
+	bool sub_10092e20(const char *pszName, Vector *pOrigin, Vector *pAngles);	// CBaseAnimating::GetAttachment01 (named attachment), called directly
+	Vector sub_100b4b40();	// CBaseEntity::vfunc193 (stub 0x10007941), called directly
 	CAI_BaseHumanoid *vfunc5(unsigned int flags);	// scalar deleting destructor: purges the three vectors at +0x6038, +0x6024 and +0x5f88 (grow size at +8, size at +0xc, element pointer at +0x10 of each), runs the base destructor body (stub 0x1000aa51) and, with bit 0 of flags, deletes this
 	void sub_1000aa51();	// base destructor body, called directly
 	void vfunc277(const float *v);	// slot 277: clears bit 0 of the int at +0x5f4c, then tail-calls CBaseFlex::sub_100b5b00(v)
