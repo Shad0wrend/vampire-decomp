@@ -20,7 +20,8 @@ public:
 	virtual void vfunc33(); virtual void vfunc34(); virtual void vfunc35(); virtual void vfunc36(); virtual void vfunc37();
 	virtual void vfunc38(); virtual void vfunc39();
 	virtual void vfunc40(float *pVelocity, float *pAngVelocity);	// slot 40 GetVelocity (either pointer may be null)
-	virtual void vfunc41(); virtual void vfunc42();
+	virtual void vfunc41(const Vector *pVelocity, const Vector *pAngVelocity);	// slot 41 AddVelocity
+	virtual void vfunc42();
 	virtual void vfunc43();
 	virtual char vfunc44(Vector *pContactPoint, IPhysicsObject **ppObject);	// slot 44 GetContactPoint
 };
