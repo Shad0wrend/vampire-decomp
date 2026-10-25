@@ -52026,6 +52026,26 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101cc810(void **p) { ((Fn *)*p)[246](p); }
 // END FUNCTION
 
+// FUNCTION: 0x101cc950 size=0x3e
+#include "CFlaggedEntitiesEnum.h"
+#include "CUnknown1070b22c.h"
+
+extern int vt_10482f48[];
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: CFlaggedEntitiesEnum::sub_101cc950
+CFlaggedEntitiesEnum *CFlaggedEntitiesEnum::sub_101cc950(CBaseEntity **pList, int nMaxList, unsigned int nFlagMask)
+{
+    *(int **)this = vt_10482f48;
+    m_pList = pList;
+    m_nMaxList = nMaxList;
+    m_nFlagMask = nFlagMask;
+    m_nCount = 0;
+    *(int *)((char *)this + 0x14) = (int)g_1070b22c->vfunc38(0);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ccd40 size=0x11
 int __fastcall sub_101ccd40(int *p)
 {
