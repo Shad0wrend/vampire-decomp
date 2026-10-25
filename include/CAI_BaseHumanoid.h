@@ -30,5 +30,5 @@ public:
 	void sub_10260670(const char *pszName);	// sets the scene name at +0x5f9c: clears it for an empty name, else (unless it is already the current name) starts the scene through sub_10084b40 (handle into +0x5fa0) and stores the name when the handle resolves
 	CAI_HumanoidMotor *vfunc427();	// "CAI_BaseHumanoid::vfunc427": new CAI_HumanoidMotor(this), the motor's base constructor sub_102e0900 on the new object, null when the allocation fails
 	CAI_Navigator *vfunc429();	// "CAI_BaseHumanoid::vfunc429": new CAI_HumanoidNavigator(this) (0x6c bytes), its base constructor on the new object, null when the allocation fails
-	bool vfunc587(const Vector &vecPos);	// slot 587 (plain member): whether the position lies in front of the NPC: the direction from the eye position (slot 193) to it, normalised, dotted with the facing vector of slot 371, is above 0.5
+	char vfunc587(const Vector &vecPos);	// slot 587 (plain member): whether the position lies in front of the NPC: the direction from the eye position (slot 193) to it, normalised, dotted with the facing vector of slot 371, is above 0.5
 };
