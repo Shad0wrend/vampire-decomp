@@ -71,7 +71,11 @@ public:
 	CBP_V10(sa0) CBP_V10(sa1) CBP_V10(sa2) CBP_V10(sa3) CBP_V10(sa4) CBP_V10(sa5) CBP_V1(sa6) CBP_V1(sa7) CBP_V1(sa8) CBP_V1(sa9)
 	virtual void vfunc64(float *pVec);
 	// slots 65..220
-	CBP_V100(sb) CBP_V10(sc0) CBP_V10(sc1) CBP_V1(sc20) CBP_V1(sc21) CBP_V1(sc22) CBP_V1(sc23) CBP_V1(sc24) CBP_V1(sc25) CBP_V1(sc26)
+	CBP_V10(sb0) CBP_V10(sb1) CBP_V10(sb2) CBP_V10(sb3) CBP_V10(sb4) CBP_V10(sb5) CBP_V10(sb6)
+	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) CBP_V1(sb76) CBP_V1(sb77) CBP_V1(sb78)
+	virtual void vfunc144(const void *pArg);	// slot 144: takes a 16 byte record (a dword, then a vector); sub_10170d60 hands it a random vector
+	CBP_V10(sb8) CBP_V10(sb9)
+	CBP_V10(sc0) CBP_V10(sc1) CBP_V1(sc20) CBP_V1(sc21) CBP_V1(sc22) CBP_V1(sc23) CBP_V1(sc24) CBP_V1(sc25) CBP_V1(sc26)
 	virtual Vector vfunc192();	// "EyePosition"-like getter returning the vector by value (hidden pointer, ret 4)
 	CBP_V1(sc28)
 	virtual float *vfunc194();	// slot 194 "GetAbsAngles"-like: the player's angles (+0x206c) in world space: with a live move parent (handle at +0x25c) its matrix (+0x130, slot 98 first when bit 11 of its flags +0x268 is set) times the angles' matrix, turned back into angles in a static; else the angles themselves
@@ -177,7 +181,9 @@ public:
 	CBasePlayerPart *m_pPart2104;	// 0x2104
 	CBasePlayerPart *m_pPart2108;	// 0x2108
 	int m_nPartMode;	// 0x210C
-	char m_pad2110[0x198];	// 0x2110 .. 0x22A7
+	char m_pad2110[0x2148 - 0x2110];	// 0x2110 .. 0x2147
+	float m_f2148;	// 0x2148: the next time of the random impulse (sub_10170d60)
+	char m_pad214C[0x22a8 - 0x214c];	// 0x214C .. 0x22A7
 	float m_f22A8;
 	float m_f22AC;
 	float m_f22B0;
@@ -247,6 +253,7 @@ public:
 	void sub_101784c0(CBaseEntity *pOther);	// adds the keyring item the player carries to the inventory object at +0x245c: lets the keyring look at pOther, creates the inventory when needed, hands it the loose keys and copies the keyring's records into it
 	void sub_10182e00(CBaseCombatWeapon *pWeapon);	// "CBasePlayer::SetViewModel"-like: the model name of the character's default stat item for the weapon (or none when the weapon is not a ranged / usable one) is precached and handed to slot 266 of the second view model
 	void sub_101711e0(float flThreshold);	// resets the vector pair at +0x1efc / +0x1f08 to the zero vector unless the threshold is non-zero and the pair's squared length is above flThreshold squared
+	void sub_10170d60();	// the random impulse: once curtime passes the float at +0x2148 (then pushed 3.x seconds ahead), clears the field at +0x210, builds a damage info (this, this, 10.0f, 0x1000) and hands slot 144 a random vector (each component rand() * 0.0008 - 12.5-ish)
 
 #include "CBasePlayer_ext.h"
 };
