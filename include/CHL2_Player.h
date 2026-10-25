@@ -4,6 +4,7 @@
 #pragma once
 
 #include "CUnknown1012cf10.h"
+#include "Vector.h"
 
 #define CHL2_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define CHL2_V100(p) CHL2_V10(p##0) CHL2_V10(p##1) CHL2_V10(p##2) CHL2_V10(p##3) CHL2_V10(p##4) CHL2_V10(p##5) CHL2_V10(p##6) CHL2_V10(p##7) CHL2_V10(p##8) CHL2_V10(p##9)
@@ -34,8 +35,13 @@ public:
 	virtual void pb04(); virtual void pb05(); virtual void pb06(); virtual void pb07(); virtual void pb08(); virtual void pb09();	// slots 104..109
 	CHL2_V10(pb1) CHL2_V10(pb2) CHL2_V10(pb3) CHL2_V10(pb4) CHL2_V10(pb5) CHL2_V10(pb6) CHL2_V10(pb7) CHL2_V10(pb8) CHL2_V10(pb9)	// slots 110..199
 	CHL2_V100(pc)	// slots 200..299
-	CHL2_V10(pd0) CHL2_V10(pd1) CHL2_V10(pd2) CHL2_V10(pd3) CHL2_V10(pd4) CHL2_V10(pd5) CHL2_V10(pd6)	// slots 300..369
-	virtual void pd70(); virtual void pd71(); virtual void pd72(); virtual void pd73();	// slots 370..373
+	CHL2_V10(pd0) CHL2_V10(pd1) CHL2_V10(pd2) CHL2_V10(pd3) CHL2_V10(pd4) CHL2_V10(pd5)	// slots 300..359
+	virtual void pd60(); virtual void pd61(); virtual void pd62(); virtual void pd63(); virtual void pd64(); virtual void pd65(); virtual void pd66();	// slots 360..366
+	virtual Vector vfunc367();	// slot 367: returns a vector by value (hidden result pointer; its y is the base of the angle vfunc371 builds)
+	virtual void pd68(); virtual void pd69();	// slots 368..369
+	virtual void pd70();	// slot 370
+	virtual Vector vfunc371();	// slot 371: the forward direction of the angle (+0xe60, slot 367's y + +0xe5c, 0)
+	virtual void pd72(); virtual void pd73();	// slots 372..373
 	virtual int vfunc374(int count, int ammoIndex, int unused);	// slot 374 "CHL2_Player::GiveAmmo": remembers whether the active weapon (which answers sub_10253b40(0)) has no ammo of the type, gives the ammo through the base, and when it had none and the game rules (slot 20) agree switches to the next best weapon
 	virtual void pd75(); virtual void pd76(); virtual void pd77(); virtual void pd78(); virtual void pd79();	// slots 375..379
 	CHL2_V10(pd8) CHL2_V10(pd9)	// slots 380..399
