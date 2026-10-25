@@ -47717,6 +47717,19 @@ CSoundEmitterSystemBase *CSoundEmitterSystemBase::sub_101b26c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2790 size=0xaf
+#include "CUnknown101b2790.h"
+#include "CUtlRBTree232.h"
+
+void CUnknown101b2790::sub_101b2790()
+{
+	const CUtlRBTree232At<0x1072c414> *tree = (const CUtlRBTree232At<0x1072c414> *)((char *)this + 0x50);
+	int i = tree->m_Root;
+	while (tree->Links(i).m_Left != -1)
+		i = tree->Links(i).m_Left;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2b30 size=0xe8
 #include "CSoundEmitterSystemBase.h"
 #include "UtlMem2.h"
