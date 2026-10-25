@@ -31,7 +31,7 @@ public:
     int vfunc142(const void *pInfo);    // slot 142: false once the flag byte at +0x791 is set; copies the 0x4c byte damage record (a CVDmg_t pointer at +0, a plain damage value at +0x2c) and, when its damage (GetDmg of the record, else the plain value) exceeds the stage health (+0x78c), hands the copy with the excess as the plain value to CBreakableProp::vfunc142
     int sub_10008a1c(void *pInfo);    // CBreakableProp::vfunc142 (stub 0x10008a1c), called directly
     void sub_10193ea0(inputdata_t *pInput);    // an input handler that takes an integer off the stage health: when the integer exceeds the stage health (+0x78c) the health is lowered by the excess, the OnHealthChanged output (+0x748) fires with the new health, and at 0 or less the prop takes a damage record (attacker = the input's caller, damage = the integer) through slot 144
-    void vfunc113();    // slot 113 "CPropDestructable::" (the base CBreakableProp::vfunc113 stub 0x10004dbd, then the last stage with a model: the stage index into +0x77c for the entries of +0x794 up to the first zero, then sub_10193cc0(stage counter +0x784, 0))
+    void vfunc113();    // slot 113 (the base CBreakableProp::vfunc113 via stub 0x10004dbd, then the stage index of the last model: +0x77c = the count of the non-zero entries of +0x794, then sub_10193cc0(the stage counter +0x784, 0))
 
     char m_pad03e0[0x748 - 0x3e0];
     COutputEvent m_OnHealthChanged748;    // 0x748
