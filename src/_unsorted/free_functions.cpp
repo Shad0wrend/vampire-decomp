@@ -17685,6 +17685,28 @@ float CBaseAnimating::sub_10094dc0(float flCycle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094eb0 size=0x121
+#include "CBaseAnimating.h"
+#include "QAngle.h"
+#include "ScopeTrace.h"
+
+void sub_100c5d10(void *pHdr, int iSequence, float flCycleStart, float flCycleEnd, float *pPoseParams, Vector *pDeltaPos, QAngle *pDeltaAngles);
+
+bool CBaseAnimating::sub_10094eb0(int iSequence)
+{
+	ScopeTrace trace("CBaseAnimating::HasMovement", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	void *pstudiohdr = sub_100952d0(-1);
+	if (!pstudiohdr)
+		return false;
+	QAngle deltaAngles;
+	Vector deltaPos;
+	sub_100c5d10(pstudiohdr, iSequence, 0.0f, 1.0f, (float *)((char *)this + 0x690), &deltaPos, &deltaAngles);
+	if (FastSqrt(deltaPos.z * deltaPos.z + deltaPos.x * deltaPos.x + deltaPos.y * deltaPos.y) > 0.01 || deltaAngles.y != 0.0f)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100952d0 size=0x133
 #include "CBaseAnimating.h"
 #include "CGlobalEntityList.h"
