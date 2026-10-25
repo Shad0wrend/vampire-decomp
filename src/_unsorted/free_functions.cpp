@@ -83227,6 +83227,31 @@ void S::sub_102c33a0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c34b0 size=0x33
+struct CFlagArgView {
+    char pad0[8];
+    unsigned char m_b08;
+    char pad1[0x18 - 9];
+    int m_n18;
+};
+
+struct CFlagOwnerView {
+    char pad0[0x204];
+    unsigned int m_flags204;
+    void sub_102c34b0(CFlagArgView *pArg);
+};
+
+// TARGET: CFlagOwnerView::sub_102c34b0
+void CFlagOwnerView::sub_102c34b0(CFlagArgView *pArg)
+{
+    if (pArg->m_n18 == 5 && pArg->m_b08) {
+        m_flags204 |= 8;
+        return;
+    }
+    m_flags204 &= 0xfffffff7;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c3690 size=0xe
 extern const char *g_105d1068[];
 
