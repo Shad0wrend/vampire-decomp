@@ -81348,6 +81348,25 @@ void CAI_GoalEntity::sub_102cdb70(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cdca0 size=0x3e
+#include "CBaseEntity.h"
+
+extern char *g_1070b228;
+void sub_10006672();
+
+struct CUnk102cd310 {
+    void sub_102cdca0(int *param_2);
+};
+
+void CUnk102cd310::sub_102cdca0(int *param_2)
+{
+    if (*(int *)((char *)param_2 + 0x94) != 0) {
+        ((CBaseEntity *)((char *)this - 0x450))->sub_100ac4e0((int)sub_10006672, 0, 0);
+        *(float *)((char *)this - 0x2d4) = *(float *)((char *)g_1070b228 + 0xc) + 0.01;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cdd10 size=0x109
 #include "CUtlRBTree12.h"
 
