@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10384690 size=0x39
+#include "CNPC_VHuman.h"
+
+struct CNPC_VHumanBaseUnit {
+    void sub_10012855(int flags);
+    void sub_1000303a();
+};
+
+// TARGET: CNPC_VHuman::vfunc103
+void CNPC_VHuman::vfunc103()
+{
+    ((CNPC_VHumanBaseUnit *)this)->sub_10012855(0x4000000);
+    ((CNPC_VHumanBaseUnit *)this)->sub_10012855(0x8000000);
+    ((CNPC_VHumanBaseUnit *)this)->sub_10012855(0x200000);
+    ((CNPC_VHumanBaseUnit *)this)->sub_10012855(0xd00);
+    ((CNPC_VHumanBaseUnit *)this)->sub_1000303a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384760 size=0x64
 #include "CNPC_VHuman.h"
 struct CUnknown1027d990 { int sub_1027d990(); };
