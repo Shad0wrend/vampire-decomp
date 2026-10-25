@@ -243,4 +243,6 @@ public:
 	void sub_10273ec0();	// "CAI_BaseNPC::TaskMovementComplete": clears the byte at +0x1a40, by the movement state at +0x5c44 (0 / 1: becomes 3, 2: sub_10273e80(0), 3: Warning "Movement completed twice!") and, unless the state at +0x5d70 is 4, 5 or 6, sub_10272650(sub_1027a6c0()); then, when the navigator at +0x5d34 answers sub_102ee6a0, sub_102f0400, and finally the navigator's sub_102ee270
 	int sub_1027a6c0();	// stub 0x1000b285, run by TaskMovementComplete
 	void sub_10272650(int a);	// stub 0x100097d2, run by TaskMovementComplete with the result of sub_1027a6c0
+	bool sub_10278220(const Vector *pStart, const Vector *pEnd, int mask);	// stub 0x100116b7: a trace-based visibility test of pEnd (offset by the eye offset at +0x184) from pStart; true when it is clear or the navigator accepts a move there
+	bool sub_102784a0(const Vector *pStart, int mask);	// tests pStart against the NPC's origin and then against five pairs of points that step 48 units either side of the origin along its right vector (sub_10278220 each); true at the first one that is clear
 };
