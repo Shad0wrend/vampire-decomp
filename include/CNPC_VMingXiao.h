@@ -70,6 +70,7 @@ public:
 	void sub_102c36d0(Vector vecOrigin, CBaseEntity *pEnt, int nValue, Vector *pPos, Vector *pOut);	// stub 0x1000c0ae, called directly by vfunc563
 	void sub_103998d0(CNPC_VMingXiaoTentacle *pTentacle);	// a tentacle (not in the activities 0x163 / 0x165, state 2) within 128 units whose direction from this NPC has a positive-enough dot (>= 0.25) with the axis at +0x6290 (x/y only) is told to go to this NPC's slot 217 position (sub_1039ef90)
 	Vector vfunc574(const Vector &vecPos, int a, int b);	// slot 574 (plain member, Vector by value): the unit direction from vecPos to the point sub_10278650 finds for (vecPos, a, b), raised by 20.0f
+	void sub_10278650(Vector *pOut, const Vector *pPos, int a, int b);	// stub 0x1001592e, called directly by vfunc574 (this stays in ecx)
 
 	char m_pad03e0[0x6290 - 0x3e0];
 	Vector m_vecAxis6290;	// +0x6290
