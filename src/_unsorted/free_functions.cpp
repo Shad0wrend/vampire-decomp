@@ -91239,6 +91239,15 @@ int sub_102f3770(const float *a, const float *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f3900 size=0x76
+#include "CUnknown102f3900.h"
+
+void CUnknown102f3900::sub_102f3900(CUnknown102f3900Ent *pEnt, Vector vecA, Vector vecB, int nFlag)
+{
+	sub_102f39a0(pEnt, vecA, vecB + pEnt->m_vecViewOffset, nFlag);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f45f0 size=0xa9
 #include "CUnknown102f45f0.h"
 

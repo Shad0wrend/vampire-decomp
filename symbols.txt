@@ -2770,6 +2770,7 @@
 0x10009d9f func   ?sub_10187ef0@CLagCompensationManager@@QAEXXZ CLagCompensationManager::sub_10187ef0
 0x10009da4 func   ?sub_101e05e0@CUnknown101e05e0@@QAEXXZ CUnknown101e05e0::sub_101e05e0
 0x10009db8 func   ?sub_1013c620@@YAXABUmatrix3x4_t@@ABVVector@@1AAV2@2@Z sub_1013c620
+0x10009ddb func   ?sub_102f3900@CUnknown102f3900@@QAEXPAUCUnknown102f3900Ent@@VVector@@1H@Z CUnknown102f3900::sub_102f3900
 0x10009de0 func   ?vfunc5@CBaseKeyframedMover@@UAEPAV1@I@Z CBaseKeyframedMover::vfunc5
 0x10009def func   ?LinkToParent@?$CUtlRBTree@HG@@QAEXGG_N@Z CUtlRBTree<int,unsigned short>::LinkToParent
 0x10009df4 func   ?sub_102f7970@CUnknown102f7970@@QAEXXZ CUnknown102f7970::sub_102f7970
