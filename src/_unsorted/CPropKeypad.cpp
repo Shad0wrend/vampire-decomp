@@ -49,3 +49,19 @@ char CPropKeypad::vfunc32(int a)
 	return ((CBaseTerminal *)this)->sub_102180c0(a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1021ddf0 size=0x35
+#include "CPropKeypad.h"
+#include "CBaseTerminal.h"
+#include "CBasePlayer.h"
+extern char g_105b05bc[];
+int sub_10070470(const char *pszName, int a, void *p1, void *p2, int b);
+// TARGET: CPropKeypad::vfunc39
+void CPropKeypad::vfunc39(CBasePlayer *pPlayer)
+{
+	((CBaseTerminal *)this)->vfunc39(pPlayer);
+	sub_1021df90();
+	int result = sub_10070470(g_105b05bc, 0, this, this, 0);
+	pPlayer->sub_1017cef0((CBaseEntity *)result);
+}
+// END FUNCTION
