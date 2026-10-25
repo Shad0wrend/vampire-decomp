@@ -59177,6 +59177,26 @@ void __stdcall sub_101e8410(int *p, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8430 size=0x34
+extern int g_105a3208[];
+
+struct CCharView {
+    bool sub_10337f30();
+};
+
+// TARGET: sub_101e8430
+int __stdcall sub_101e8430(CCharView *p, int idx, unsigned char flags)
+{
+    int v = 0xd;
+    if (p->sub_10337f30())
+        v = 0x11;
+    v += g_105a3208[idx];
+    if (flags & 0x20)
+        v++;
+    return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8480 size=0xdf
 #include "CBaseCombatCharacter.h"
 #include "CUnknown101e8480.h"
