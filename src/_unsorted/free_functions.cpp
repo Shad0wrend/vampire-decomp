@@ -9138,6 +9138,32 @@ int sub_1006a7b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006aa10 size=0x33
+#include "CTEUserTracer.h"
+
+extern int vt_1044e184[];
+
+struct CTEBaseHeadPlaceholder {
+    void sub_10015334(const char *name);
+};
+
+// TARGET: CTEUserTracer::sub_1006aa10
+CTEUserTracer *CTEUserTracer::sub_1006aa10(const char *name)
+{
+    ((CTEBaseHeadPlaceholder *)this)->sub_10015334(name);
+    *(int **)this = vt_1044e184;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(int *)((char *)this + 0x24) = 0;
+    *(char *)((char *)this + 0x28) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006ac90 size=0x11a
 #include "SendProp.h"
 
