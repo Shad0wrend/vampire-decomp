@@ -44312,6 +44312,25 @@ extern "C" GP *prop_base()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e1c0 size=0x38
+#include "CActivityCopyProp.h"
+
+void sub_100103fc();
+extern char vt_1047382c[];
+
+// TARGET: CActivityCopyProp::sub_1018e1c0
+CActivityCopyProp *CActivityCopyProp::sub_1018e1c0()
+{
+    sub_100103fc();
+    *(unsigned int *)((char *)this + 0x730) = 0xffffffff;
+    *((char *)this + 0x734) = 0;
+    *((char *)this + 0x735) = 0;
+    *(void **)this = (void *)vt_1047382c;
+    m_nEffectFlags |= 0xb0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e2a0 size=0x67
 #include "CUnknown1018e2a0.h"
 struct GlobalsL { char pad[0xc]; float curtime; };
