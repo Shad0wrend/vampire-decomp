@@ -37185,6 +37185,22 @@ void sub_101397c0(const QAngle &angles, Vector *forward, Vector *right, Vector *
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139b00 size=0x40
+#include "Vector.h"
+
+void sub_10012deb(Vector *pVec, int arg);
+
+// TARGET: sub_10139b00
+void sub_10139b00(const Vector *pVec, int arg)
+{
+    Vector tmp;
+    tmp.x = pVec->y * 57.29578f;
+    tmp.y = pVec->z * 57.29578f;
+    tmp.z = pVec->x * 57.29578f;
+    sub_10012deb(&tmp, arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139d20 size=0x40
 void sub_10139d70(float *pDegrees, float *pOut);
 
