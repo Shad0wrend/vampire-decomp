@@ -68081,6 +68081,17 @@ void CFuncElevator::sub_1020f3f0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020f700 size=0x35
+#include "CFuncElevator.h"
+// TARGET: CFuncElevator::sub_1020f700
+void CFuncElevator::sub_1020f700(int nFloor)
+{
+	m_item650.sub_100cd660(this, this, 0.0f);
+	m_items680[nFloor].sub_100cd660(this, this, 0.0f);
+	m_nFloor630 = nFloor;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020f7e0 size=0x43
 #include "CLogicVisible.h"
 void *sub_100aa720(int size);
