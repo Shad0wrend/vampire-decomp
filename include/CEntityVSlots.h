@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..605, used to call slots 9, 10, 42, 62, 64, 86, 93, 94, 105, 107, 116, 118, 122, 142, 143, 158, 161, 162, 167, 173,
-// 192, 193, 194, 196, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 268, 270, 274, 285, 306, 308, 310, 316, 332, 337, 346, 360, 369, 371, 372, 373, 376, 381, 383, 385, 404, 426, 427, 448, 452, 457, 464, 532, 584, 598, 601 and 605 of an entity class that does not model its vtable.
+// 192, 193, 194, 196, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 268, 270, 274, 285, 306, 308, 310, 316, 332, 337, 346, 360, 368, 369, 371, 372, 373, 376, 381, 383, 385, 404, 426, 427, 448, 452, 457, 464, 532, 584, 598, 601 and 605 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -137,7 +137,8 @@ public:
 	EVS(347) EVS(348) EVS(349)
 	EVS10(35)
 	virtual unsigned int slot360();	// weapon: its flag word (bits 0x18000 mark the special kinds)
-	EVS(361) EVS(362) EVS(363) EVS(364) EVS(365) EVS(366) EVS(367) EVS(368)
+	EVS(361) EVS(362) EVS(363) EVS(364) EVS(365) EVS(366) EVS(367)
+	virtual Vector *slot368(Vector *pOut);	// character: fills pOut with a vector (the player's drop-position half extent, scaled by 0.5 for the astrolite) and returns it
 	virtual Vector *slot369(Vector *pOut);	// character: fills pOut with a direction (the weapon drop direction) and returns it
 	EVS(370)
 	virtual char slot371();	// item: a boolean answer in al (the item is stackable)
