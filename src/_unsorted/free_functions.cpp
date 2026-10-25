@@ -28997,6 +28997,30 @@ void CThreeVecs::sub_100ecb40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ecc10 size=0x38
+// TARGET: CUnknown100ecc10::sub_100ecc10
+struct CUnknown100ecc10
+{
+	char m_pad0000[8];
+	char *m_pElements;	// 0x08
+	char m_pad000c[8];
+	int m_nCount;	// 0x14
+	char *sub_100ecc10(int index);
+};
+
+extern char g_10564258[];
+extern char g_10563cf8[];
+void __stdcall sub_1000e886(int level, const char *pszMsg);
+
+char *CUnknown100ecc10::sub_100ecc10(int index)
+{
+	if (index >= 0 && index <= m_nCount)
+		return m_pElements + 200 + index * 0x264;
+	sub_1000e886(1, g_10564258);
+	return g_10563cf8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecc60 size=0x6d
 struct Entry { char pad[0x244]; int vals[3]; char pad2[0x264 - 0x250]; };
 struct EntryTable {
