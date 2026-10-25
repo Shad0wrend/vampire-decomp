@@ -30978,6 +30978,27 @@ void __stdcall sub_100f71c0(EntSlots_t *pEnt, unsigned int oldFlags, unsigned in
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7330 size=0x31
+struct CUnk_100f7330
+{
+    int sub_100019e2(int a);
+    bool sub_100f7330(int a);
+};
+
+// TARGET: CUnk_100f7330::sub_100f7330
+bool CUnk_100f7330::sub_100f7330(int a)
+{
+    int x = sub_100019e2(0);
+    while (x != 0) {
+        if (x == a) {
+            return true;
+        }
+        x = sub_100019e2(x);
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f7890 size=0x77
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
