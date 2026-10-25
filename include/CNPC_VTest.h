@@ -13,4 +13,5 @@ public:
 	int vfunc461();	// slot 461 "SelectIdealState" (plain member): state 2 without a slot 167 object warns "***Combat state with no enemy!" and goes to state 3, a pending condition 0x47 clears it and goes to state 0xb; state 0xb goes back to state 2 on condition 0x54 or 0x46, to state 1 when slot 462 holds; otherwise CNPC_VHuman::vfunc461
 	void vfunc490();	// slot 490 "CNPC_VTest::Idle sound" (plain member): when slot 486 allows, emits one of the "character/npc/test/idle" sounds (channel 2, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position (a PAS attenuation filter built inline)
 	void vfunc488();	// slot 488 (plain member): emits one of the 0x10652188 sounds (channel 2, volume 0.5, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
+	void vfunc489();	// slot 489 (plain member): like vfunc488 with the 0x1065218c sounds (volume 1.0)
 };
