@@ -13,7 +13,7 @@ public:
 	virtual void vfunc123();	// DrawDebugTextOverlays-like: with bit 29 of the overlay flags (+0x224) set, dispatches four red markers (sub_10144a30) along x = 100, 150, 200, 300 at the entity's origin (slot 220); then the Troika base
 	virtual void vfunc144(int a);	// slot 144 "Event_Killed"-like: while the byte at +0x6744 is clear sets +0x200 = 1 and runs sub_10395c70; else tells the owner entity (handle +0x6670) sub_10397a50(this), runs sub_10397e90 / sub_10397f00 when the global 0x1093b9b4 is not (slot 1) and has +0x2c set and sub_10398870 is clear; then the Troika base
 	virtual void vfunc465(int act);	// slot 465 "CNPC_VMingXiao::SetActivity"-like: sets the playback rate (sub_1008d230) from the tuning block of the global 0x10739d08 for the activities 9 / 0x13 (the tentacle ones), 0x4b and the rest (scaled by 6 - the count at +0x670c and clamped from below while the target is not held), then sub_1039ab30 (tentacle or 0x1132) or sub_1039aca0, then the Troika base
-	virtual void vfunc259(int *pEvent);	// slot 259 "HandleAnimEvent": event 0x7f8 (pickup) needs the mode at +0x673c to be 2 (sub_10398db0, else a warning), 0x802 / 0x803 do nothing, 0x834 / 0x835 spawn the debug marker at the origin (slot 220 with 5.0f, 0.6f, 0.2f, 512.0f or 15.0f, 1.0f, 1.5f, 1024.0f), 0xbbd (weapon throw) needs the mode 4 (sub_103990c0, else a warning), 0xbd7 starts the \"Ming_xiao_vomit_emitter\" at the \"Bip01 MouthRoot\" attachment (sub_102c42a0) and goes on to the Troika base like every other event
+	virtual void vfunc259(int *pEvent);	// slot 259 "HandleAnimEvent": event 0x7f8 (pickup) needs the mode at +0x673c to be 2 (sub_10398db0, else a warning), 0x802 / 0x803 do nothing, 0x834 / 0x835 spawn the debug marker at the origin (slot 220 with 5.0f, 0.6f, 0.2f, 512.0f or 15.0f, 1.0f, 1.5f, 1024.0f), 0xbbd (weapon throw) needs the mode 4 (sub_103990c0, else a warning), 0xbd7 starts the "Ming_xiao_vomit_emitter" at the "Bip01 MouthRoot" attachment (sub_102c42a0) and goes on to the Troika base like every other event
 	void sub_1029b290(int *pEvent);	// CAI_BaseNPCTroika::vfunc259, called directly (stub 0x100146e1)
 	void sub_10398db0();	// stub 0x1000ea8e: the pickup event of the grabbing mode
 	void sub_103990c0();	// stub 0x10008d69: the throw event of the throwing mode
@@ -69,6 +69,7 @@ public:
 	void sub_102c3b50(CBaseEntity *pEnt, Vector vecPos, Vector *pPos, int *pOut);	// stub 0x100041d3, called directly by vfunc563
 	void sub_102c36d0(Vector vecOrigin, CBaseEntity *pEnt, int nValue, Vector *pPos, Vector *pOut);	// stub 0x1000c0ae, called directly by vfunc563
 	void sub_103998d0(CNPC_VMingXiaoTentacle *pTentacle);	// a tentacle (not in the activities 0x163 / 0x165, state 2) within 128 units whose direction from this NPC has a positive-enough dot (>= 0.25) with the axis at +0x6290 (x/y only) is told to go to this NPC's slot 217 position (sub_1039ef90)
+	Vector vfunc574(const Vector &vecPos, int a, int b);	// slot 574 (plain member, Vector by value): the unit direction from vecPos to the point sub_10278650 finds for (vecPos, a, b), raised by 20.0f
 
 	char m_pad03e0[0x6290 - 0x3e0];
 	Vector m_vecAxis6290;	// +0x6290
