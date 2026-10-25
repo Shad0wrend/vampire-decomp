@@ -1,6 +1,27 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10107e10 size=0x3d
+#include "CFilterClass.h"
+
+extern char g_106b8540[];
+int sub_1043e780(const char *, const char *);
+
+bool CFilterClass::vfunc241(void *pEntity)
+{
+    const char *pEntName;
+
+    if (pEntity == 0) {
+        return false;
+    }
+    pEntName = *(const char **)((char *)pEntity + 0x11c);
+    if (pEntName == 0) {
+        pEntName = g_106b8540;
+    }
+    return sub_1043e780(*(const char **)((char *)this + 0x484) == 0 ? g_106b8540 : *(const char **)((char *)this + 0x484), pEntName) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108620 size=0x36
 #include "CFilterClass.h"
 
