@@ -10,6 +10,30 @@ void CEnvWind::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fea60 size=0x36
+#include "CBaseAnimating.h"
+
+extern char g_10538764;
+extern char g_1053dd10;
+void *sub_10430b64(void *pObject, int vfDelta, void *pSrcType, void *pDstType, int bReference);
+
+struct CUnknown100fea60
+{
+	void sub_100fea60(CBaseEntity *pOther);
+};
+
+// TARGET: CUnknown100fea60::sub_100fea60
+void CUnknown100fea60::sub_100fea60(CBaseEntity *pOther)
+{
+	((CBaseEntity *)this)->vfunc176(pOther);
+	CBaseAnimating *pAnim = (CBaseAnimating *)sub_10430b64(pOther, 0, &g_10538764, &g_1053dd10, 0);
+	if (pAnim != 0)
+	{
+		pAnim->sub_1008e630((CBaseEntity *)this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100feab0 size=0x1e
 #include "CEnvWind.h"
 
