@@ -67990,6 +67990,25 @@ char CUnknown10205e60::sub_10205e60(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10206140 size=0x3a
+#include "CUnknown101d7520.h"
+#include "CUnknown10205e60.h"
+
+// TARGET: CUnknown101d7520Sub::sub_10206140
+char CUnknown101d7520Sub::sub_10206140(void *pArg)
+{
+	int i = 0;
+	if (m_nCount > 0) {
+		do {
+			if (!m_ppItems[i]->sub_10205e60(pArg))
+				return 0;
+			i++;
+		} while (i < m_nCount);
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206190 size=0x36
 #include "CUnknown10205dc0.h"
 
