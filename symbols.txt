@@ -2424,6 +2424,7 @@
 0x10008b93 func   ?sub_10099d40@@YAHPAUSEntV137@@H@Z sub_10099d40
 0x10008b98 func   ?sub_1025db70@CUnknown1025ddd0@@QAE_NPAVCBaseEntity@@@Z CUnknown1025ddd0::sub_1025db70
 0x10008ba2 func   ?vfunc505@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc505
+0x10008ba7 func   ?sub_1017ff40@CUnknown1017fd60@@QAEXPAVCBaseEntity@@H@Z CUnknown1017fd60::sub_1017ff40
 0x10008bca func   ?sub_102bec60@@YAHPAH0@Z sub_102bec60
 0x10008bd4 func   ?sub_102950c0@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102950c0
 0x10008bd9 func   ?sub_100cb670@@YAPAHXZ sub_100cb670

@@ -44575,6 +44575,54 @@ void __fastcall sub_1017faa0(CMsgPlayerView *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017ff40 size=0x106
+#include "CUnknown1017fd60.h"
+#include "CEHandleGet.h"
+#include "Vector.h"
+#define S1(n) virtual void s##n();
+#define S10(p) S1(p##0) S1(p##1) S1(p##2) S1(p##3) S1(p##4) S1(p##5) S1(p##6) S1(p##7) S1(p##8) S1(p##9)
+
+struct CEntView1017ff40
+{
+	S1(0)
+	virtual int *slot1();
+	S1(2) S1(3) S1(4) S1(5) S1(6) S1(7) S1(8) S1(9)
+	S10(1) S10(2) S10(3) S10(4) S10(5) S10(6) S10(7) S10(8) S10(9) S10(10) S10(11) S10(12)
+	S1(130) S1(131) S1(132) S1(133) S1(134) S1(135) S1(136) S1(137)
+	virtual int slot138();
+	S1(139)
+	S10(14) S10(15) S10(16) S10(17) S10(18) S10(19) S10(20)
+	S1(210) S1(211) S1(212) S1(213) S1(214) S1(215) S1(216)
+	virtual Vector *slot217();
+	char m_pad[0x128 - 4];
+	int m_n128;
+};
+struct CGlobals1070b228 { char pad[0xc]; float curtime; };
+extern CGlobals1070b228 *g_1070b228;
+
+void CUnknown1017fd60::sub_1017ff40(CBaseEntity *pEnt, int nKind)
+{
+	CEntView1017ff40 *pView = (CEntView1017ff40 *)pEnt;
+	if (pView && pView->slot138() != 13)
+	{
+		m_flNoticeTime[nKind] = g_1070b228->curtime;
+		m_hNoticed[nKind] = *pView->slot1();
+		if (pView->m_n128 == 0 || nKind == 3 || nKind == 4)
+		{
+			Vector *pMine = ((CEntView1017ff40 *)this)->slot217();
+			Vector *pTheirs = pView->slot217();
+			Vector d = *pTheirs - *pMine;
+			float flDist = FastSqrt(d.x * d.x + (d.y * d.y + d.z * d.z));
+			if (!EHandle_Get(m_hNearest) || flDist < m_flNearestDist)
+			{
+				m_flNearestDist = flDist;
+				m_hNearest = *pView->slot1();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101800e0 size=0xe
 #include "CUnknown101800e0.h"
 // TARGET: CUnknown101800e0::sub_101800e0
