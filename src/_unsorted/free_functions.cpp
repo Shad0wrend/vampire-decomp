@@ -14371,6 +14371,25 @@ void CUnknown10085130::sub_10085130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10085180 size=0x33
+extern unsigned char g_1092053c;
+extern int g_10552810;
+void sub_10265680(int a);
+int sub_10119390();
+
+// TARGET: sub_10085180
+void sub_10085180()
+{
+    if (g_1092053c & 1) {
+        sub_10265680(1);
+        g_10552810 = sub_10119390();
+        return;
+    }
+    sub_10265680(0);
+    g_10552810 = sub_10119390();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10085480 size=0x116
 #include "CBaseEntity.h"
 #include "CEHandleGet.h"
