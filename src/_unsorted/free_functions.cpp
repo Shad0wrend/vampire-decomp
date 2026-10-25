@@ -39501,6 +39501,36 @@ void sub_101397c0(const QAngle &angles, Vector *forward, Vector *right, Vector *
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139970 size=0xd7
+#include <math.h>
+#include "QAngle.h"
+void sub_10139970(const Vector &forward, QAngle &angles)
+{
+    float tmp, yaw, pitch;
+    if (forward[1] == 0.0f && forward[0] == 0.0f)
+    {
+        yaw = 0.0f;
+        if (forward[2] > 0.0f)
+            pitch = 270.0f;
+        else
+            pitch = 90.0f;
+    }
+    else
+    {
+        yaw = atan2(forward[1], forward[0]) * 57.29577951308232;
+        if (yaw < 0.0f)
+            yaw += 360.0f;
+        tmp = FastSqrt(forward[0] * forward[0] + forward[1] * forward[1]);
+        pitch = atan2(-forward[2], tmp) * 57.29577951308232;
+        if (pitch < 0.0f)
+            pitch += 360.0f;
+    }
+    angles.x = pitch;
+    angles.y = yaw;
+    angles.z = 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139b00 size=0x40
 #include "Vector.h"
 
