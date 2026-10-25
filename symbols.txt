@@ -1235,6 +1235,7 @@
 0x1000542f func   ?sub_102ec3b0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102ec3b0
 0x10005434 func   _item_g_hannahs_appt_book item_g_hannahs_appt_book
 0x10005439 func   ?sub_101bd960@@YIXPAPAX@Z sub_101bd960
+0x1000543e func   ?sub_100cc0e0@CUnk100cc0e0@@QAEXH@Z CUnk100cc0e0::sub_100cc0e0
 0x10005448 func   _item_g_idol_elephant item_g_idol_elephant
 0x1000544d func   ?sub_100b0df0@@YAXXZ sub_100b0df0
 0x10005475 func   ?sub_100f7d50@@YGPAVCBaseEntity@@PBDABVVector@@M@Z sub_100f7d50

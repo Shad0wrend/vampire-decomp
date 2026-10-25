@@ -24437,6 +24437,36 @@ int *sub_100cb670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc0e0 size=0x3d
+extern char *g_1070b228;
+void *sub_1000ac8b(int);
+
+struct CUnk100cc0e0Ent {
+    void sub_10012e36(void *pOwner, int flag);
+};
+
+struct CUnk100cc0e0 {
+    void sub_100cc0e0(int unused);
+};
+
+void CUnk100cc0e0::sub_100cc0e0(int unused)
+{
+    int i;
+    void *pEnt;
+
+    i = 1;
+    if (*(int *)(g_1070b228 + 0x14) >= 1) {
+        do {
+            pEnt = sub_1000ac8b(i);
+            if (pEnt != 0) {
+                ((CUnk100cc0e0Ent *)pEnt)->sub_10012e36(this, 0);
+            }
+            i++;
+        } while (i <= *(int *)(g_1070b228 + 0x14));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc130 size=0x6a
 #include "CUnknown100cc130.h"
 
