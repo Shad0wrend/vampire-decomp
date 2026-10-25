@@ -18,15 +18,30 @@ public:
     void sub_1018f750(inputdata_t *pInput);    // "CBreakableProp::InputAddHealth": the integer value of the input is added to the health, set into the OnHealthChanged output at +0x748 which is fired (activator, this); a health of 0 or less runs slot 266 with the activator
     void sub_1018f890(inputdata_t *pInput);    // "CBreakableProp::InputBreak"-like: the input's float (0 when it is not a float or negative) goes on to sub_1018f9f0 (tail jump through the stub 0x10002d1f)
     void sub_10002d1f(float flDelay);    // stub of 0x1018f9f0: full alpha, no render fx, next think curtime + flDelay, random value at +0x770, flag 0x40000, think function
+    void sub_1018fa70();    // the fade-out think the break input installs: collision group 1 when none, render fx 2, the alpha at +0x1a3 approaches 0 by 255 / the fade time (+0x770) per second of the time since +0x178; removed once it reaches 0, else thinks again in 0.05 seconds
+    void sub_100aaa40(int group);    // CBaseEntity::SetCollisionGroup (stub 0x10013c00), called directly
     const char *sub_1009f200();    // CBaseEntity::GetClassname
     const char *sub_100ab4f0();    // the entity's name for debug output (stub 0x1000b5cd)
     int vfunc124();    // slot 124 "DrawDebugTextOverlays": the base's line offset, plus one line "Health: %d" when the text overlay bit (bit 0 of +0x224) is set
     int sub_10096100();    // CBaseAnimating::vfunc124 (stub 0x10007d97), called directly
 
-    char m_pad0000[0x210];
+    char m_pad0000[0x16c];
+    int m_nRenderFX;    // 0x16c
+    char m_pad0170[0x178 - 0x170];
+    float m_flFadeStart178;    // 0x178
+    float m_flNextThink;    // 0x17c
+    char m_pad0180[0x1a3 - 0x180];
+    unsigned char m_nRenderAlpha;    // 0x1a3
+    char m_pad01a4[0x1b1 - 0x1a4];
+    char m_bDirty1b1;    // 0x1b1
+    char m_pad01b2[0x210 - 0x1b2];
     int m_iHealth;    // 0x210
     char m_pad0214[0x224 - 0x214];
     unsigned char m_fTextOverlayFlags;    // 0x224
     char m_pad0225[0x2e0 - 0x225];
     int m_pEdict;    // 0x2e0
+    char m_pad02e4[0x368 - 0x2e4];
+    int m_nCollisionGroup;    // 0x368
+    char m_pad036c[0x770 - 0x36c];
+    float m_flFadeTime770;    // 0x770
 };
