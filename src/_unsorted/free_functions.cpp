@@ -41804,6 +41804,31 @@ extern "C" GP *func_platrot()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a140 size=0x103
+#include "CFuncPlatRot.h"
+#include "CEntityVSlots.h"
+
+extern Vector g_1070d9d0;
+
+void CFuncPlatRot::sub_1015a140()
+{
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	if (m_flFinalAngle != 0.0f)
+	{
+		sub_10009967();
+		m_vecStart = *pSelf->slot221();
+		m_vecFinalAngle = m_vecMoveAng * m_flFinalAngle + *pSelf->slot221();
+	}
+	else
+	{
+		m_vecStart = g_1070d9d0;
+		m_vecFinalAngle = g_1070d9d0;
+	}
+	if (m_pParent26c)
+		pSelf->slot64(&m_vecFinalAngle.x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a3c0 size=0xcf
 #include "CFuncPlat.h"
 
