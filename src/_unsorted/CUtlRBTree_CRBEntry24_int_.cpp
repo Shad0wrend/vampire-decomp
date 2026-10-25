@@ -5,5 +5,6 @@
 #include "utlrbtree.h"
 struct CRBEntry24 { int a; int b; };
 // TARGET: ?NewNode@?$CUtlRBTree@UCRBEntry24@@H@@QAEHXZ
-template class CUtlRBTree<CRBEntry24, int>;
+// one member, not `template class`: that emits every member (and the sentinel) in this object
+static int (CUtlRBTree<CRBEntry24, int>::*s_NewNode)() = &CUtlRBTree<CRBEntry24, int>::NewNode;
 // END FUNCTION

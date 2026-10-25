@@ -5,5 +5,6 @@
 // TARGET: ?NewNode@?$CUtlRBTree@UCRBEntry4_1024b9e0@@G@@QAEGXZ
 #include "utlrbtree.h"
 struct CRBEntry4_1024b9e0 { int a; };
-template class CUtlRBTree<CRBEntry4_1024b9e0, unsigned short>;
+// one member, not `template class`: that emits every member (and the sentinel) in this object
+static unsigned short (CUtlRBTree<CRBEntry4_1024b9e0, unsigned short>::*s_NewNode)() = &CUtlRBTree<CRBEntry4_1024b9e0, unsigned short>::NewNode;
 // END FUNCTION

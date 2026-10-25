@@ -5,5 +5,6 @@
 // TARGET: ?RotateLeft@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QAEXG@Z
 #include "utlrbtree.h"
 struct CRBTree36Entry_1004c5b0 { char data[28]; };
-template class CUtlRBTree<CRBTree36Entry_1004c5b0, unsigned short>;
+// one member, not `template class`: that emits every member (and the sentinel) in this object
+static void (CUtlRBTree<CRBTree36Entry_1004c5b0, unsigned short>::*s_RotateLeft)(unsigned short) = &CUtlRBTree<CRBTree36Entry_1004c5b0, unsigned short>::RotateLeft;
 // END FUNCTION

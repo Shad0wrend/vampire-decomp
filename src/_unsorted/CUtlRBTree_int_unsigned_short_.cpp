@@ -4,5 +4,6 @@
 // FUNCTION: 0x10194780 size=0xfa
 // TARGET: ?NewNode@?$CUtlRBTree@HG@@QAEGXZ
 #include "utlrbtree.h"
-template class CUtlRBTree<int, unsigned short>;
+// one member, not `template class`: that emits every member (and the sentinel) in this object
+static unsigned short (CUtlRBTree<int, unsigned short>::*s_NewNode)() = &CUtlRBTree<int, unsigned short>::NewNode;
 // END FUNCTION

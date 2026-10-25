@@ -10,5 +10,6 @@ struct CRBEntry8 {
     int b;
 };
 
-template class CUtlRBTree<CRBEntry8, int>;
+// one member, not `template class`: that emits every member (and the sentinel) in this object
+static int (CUtlRBTree<CRBEntry8, int>::*s_NewNode)() = &CUtlRBTree<CRBEntry8, int>::NewNode;
 // END FUNCTION

@@ -317,6 +317,7 @@
 0x100020d6 func   ?vfunc2@CTESpriteSpray@@UAEPAV1@I@Z CTESpriteSpray::vfunc2
 0x100020ef func   ?sub_101d1800@@YAPAUCUnknown1070b22c_Edict@@PAUViewerEntity@@@Z sub_101d1800
 0x100020f9 func   ?NewNode@?$CUtlRBTree@UCRBEntry28@@G@@QAEGXZ CUtlRBTree<CRBEntry28,unsigned short>::NewNode
+0x100020f9 func   ?NewNode@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QAEGXZ CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::NewNode
 0x10002103 func   ?vfunc173@CStripWeapons@@QAEXPAX0HM@Z CStripWeapons::vfunc173
 0x10002108 func   ?vfunc103@CPathKeyFrame@@QAEXXZ CPathKeyFrame::vfunc103
 0x10002112 func   ?vfunc5@CHL2_Player@@QAEPAV1@I@Z CHL2_Player::vfunc5
@@ -5159,6 +5160,7 @@
 0x10011900 func   ?sub_100339b0@@YIXPAUSEntView@@HPAM11@Z sub_100339b0
 0x1001190f func   ?vfunc10@CGameMovement@@UAEXAAVVector@@MM@Z CGameMovement::vfunc10
 0x10011914 func   ?NewNode@?$CUtlRBTree@UCRBEntry8_10047280@@G@@QAEGXZ CUtlRBTree<CRBEntry8_10047280,unsigned short>::NewNode
+0x10011914 func   ?NewNode@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEGXZ CUtlRBTree<CRBTree16Entry8,unsigned short>::NewNode
 0x1001191e func   ?vfunc433@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::vfunc433
 0x1001192d func   ?sub_100639b0@CTEGlowSprite@@QAEPAV1@H@Z CTEGlowSprite::sub_100639b0
 0x10011937 func   ?vfunc2@CTEBloodSprite@@UAEPAV1@I@Z CTEBloodSprite::vfunc2

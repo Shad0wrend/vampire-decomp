@@ -5406,11 +5406,13 @@ int *sub_10045d90(int i)
 
 // FUNCTION: 0x10045de0 size=0x127
 #include "CUtlRBTree36.h"
+#include "utlrbtree.h"
+struct CRBTree36Entry_1004c5b0 { char data[28]; };
 extern int g_109f0b74;
 struct Key28 { int a; char pad[24]; };
 unsigned short CUtlRBTree36::sub_10045de0(const int *pKey)
 {
-    const CUtlRBTree36At<0x106bdb5c> *tree = (const CUtlRBTree36At<0x106bdb5c> *)this;
+    const CUtlRBTree<CRBTree36Entry_1004c5b0, unsigned short> *tree = (const CUtlRBTree<CRBTree36Entry_1004c5b0, unsigned short> *)this;
     Key28 key;
     key.a = *pKey;
     int ctx = *(int *)((char *)this + 0x18);
@@ -5533,10 +5535,12 @@ S10046310 *S10046310::sub_10046310(int c, int count, int a)
 
 // FUNCTION: 0x10046390 size=0x108
 #include "CUtlRBTreeFind16.h"
+#include "utlrbtree.h"
+#include "CRBTree16Entry8.h"
 
 unsigned short CUtlRBTreeFind16::sub_10046390(const void *search)
 {
-	const CUtlRBTree16At<0x106bdb38> *tree = (const CUtlRBTree16At<0x106bdb38> *)this;
+	const CUtlRBTree<CRBTree16Entry8, unsigned short> *tree = (const CUtlRBTree<CRBTree16Entry8, unsigned short> *)this;
 	unsigned short current = m_Root;
 	while (current != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[current].m_Data))
@@ -5642,10 +5646,12 @@ unsigned short CUtlRBTreeFind16::sub_10046750(const void *search)
 
 // FUNCTION: 0x10046930 size=0x109
 #include "CUtlRBTree36.h"
+#include "utlrbtree.h"
+struct CRBTree36Entry_1004c5b0 { char data[28]; };
 
 unsigned short CUtlRBTree36::sub_10046930(const void *search) const
 {
-	const CUtlRBTree36At<0x106bdb5c> *tree = (const CUtlRBTree36At<0x106bdb5c> *)this;
+	const CUtlRBTree<CRBTree36Entry_1004c5b0, unsigned short> *tree = (const CUtlRBTree<CRBTree36Entry_1004c5b0, unsigned short> *)this;
 	unsigned short i = m_Root;
 	while (i != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[i].m_Data)) {
@@ -5865,20 +5871,24 @@ void CUtlRBTree16Unit::sub_100473c0(unsigned short i, unsigned short parent, boo
 
 // FUNCTION: 0x10047840 size=0xb9
 #include "CUtlRBTree16.h"
+#include "utlrbtree.h"
+#include "CRBTree16Entry8.h"
 
 bool CUtlRBTree16::sub_10047840(unsigned short i) const
 {
-	const CUtlRBTree16At<0x106bdb38> *tree = (const CUtlRBTree16At<0x106bdb38> *)this;
+	const CUtlRBTree<CRBTree16Entry8, unsigned short> *tree = (const CUtlRBTree<CRBTree16Entry8, unsigned short> *)this;
 	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
 
 // FUNCTION: 0x100483f0 size=0xbb
 #include "CUtlRBTree16.h"
+#include "utlrbtree.h"
+#include "CRBTree16Entry8.h"
 
 bool CUtlRBTree16::sub_100483f0(unsigned short i) const
 {
-	const CUtlRBTree16At<0x106bdb38> *tree = (const CUtlRBTree16At<0x106bdb38> *)this;
+	const CUtlRBTree<CRBTree16Entry8, unsigned short> *tree = (const CUtlRBTree<CRBTree16Entry8, unsigned short> *)this;
 	return tree->Links(tree->Parent(i)).m_Right == i;
 }
 // END FUNCTION
@@ -5899,10 +5909,12 @@ const CUtlRBTree16::Links_t *CUtlRBTree16Unit::sub_10048960(unsigned short i) co
 
 // FUNCTION: 0x10049d20 size=0x58
 #include "CUtlRBTreeNode36.h"
+#include "utlrbtree.h"
+struct CRBTree36Entry_1004c5b0 { char data[28]; };
 
 const RBTreeNode36Links &CUtlRBTreeNode36::sub_10049d20(unsigned short i) const
 {
-	return (const RBTreeNode36Links &)((const CUtlRBTree36At<0x106bdb5c> *)this)->Links(i);
+	return (const RBTreeNode36Links &)((const CUtlRBTree<CRBTree36Entry_1004c5b0, unsigned short> *)this)->Links(i);
 }
 // END FUNCTION
 
@@ -6053,10 +6065,12 @@ bool CUtlRBTree16::sub_1004bf70(unsigned short i) const
 
 // FUNCTION: 0x1004c4c0 size=0xbd
 #include "CUtlRBTree36.h"
+#include "utlrbtree.h"
+struct CRBTree36Entry_1004c5b0 { char data[28]; };
 
 bool CUtlRBTree36::sub_1004c4c0(unsigned short i) const
 {
-	const CUtlRBTree36At<0x106bdb5c> *tree = (const CUtlRBTree36At<0x106bdb5c> *)this;
+	const CUtlRBTree<CRBTree36Entry_1004c5b0, unsigned short> *tree = (const CUtlRBTree<CRBTree36Entry_1004c5b0, unsigned short> *)this;
 	unsigned short parent = tree->Links(i).m_Parent;
 	return tree->Links(parent).m_Left == i;
 }
@@ -6748,10 +6762,15 @@ void sub_100548b0()
 
 // FUNCTION: 0x10054ad0 size=0xf0
 #include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
+struct CRBEntry8 {
+    int a;
+    int b;
+};
 
 void CUtlRBTreeInsert24::sub_10054ad0(const void *insert, int *parent, bool *leftchild)
 {
-	const CUtlRBTree24At<0x106bddc4> *tree = (const CUtlRBTree24At<0x106bddc4> *)this;
+	const CUtlRBTree<CRBEntry8, int> *tree = (const CUtlRBTree<CRBEntry8, int> *)this;
 	int cur = m_Root;
 	*parent = InvalidIndex();
 	*leftchild = false;
@@ -6784,10 +6803,15 @@ void UtlVec8::sub_10055000(int elem, int num)
 
 // FUNCTION: 0x10055520 size=0x4f
 #include "CUtlRBTree24.h"
+#include "utlrbtree.h"
+struct CRBEntry8 {
+    int a;
+    int b;
+};
 
 const CUtlRBTree24::Links_t &CUtlRBTree24::sub_10055520(int i) const
 {
-	return ((const CUtlRBTree24At<0x106bddc4> *)this)->Links(i);
+	return (const Links_t &)((const CUtlRBTree<CRBEntry8, int> *)this)->Links(i);
 }
 // END FUNCTION
 
@@ -6833,10 +6857,15 @@ void UtlMem::sub_10055ec0(int num)
 
 // FUNCTION: 0x10055f50 size=0x1cd
 #include "CUtlRBTree24.h"
+#include "utlrbtree.h"
+struct CRBEntry8 {
+    int a;
+    int b;
+};
 
 void CUtlRBTree24::sub_10055f50(int elem)
 {
-	const CUtlRBTree24At<0x106bddc4> *tree = (const CUtlRBTree24At<0x106bddc4> *)this;
+	const CUtlRBTree<CRBEntry8, int> *tree = (const CUtlRBTree<CRBEntry8, int> *)this;
 	int rightchild = sub_10055520(elem).m_Right;
 	SetRightChild(elem, sub_10055520(rightchild).m_Left);
 	if (sub_10055520(rightchild).m_Left != InvalidIndex())
@@ -13670,10 +13699,12 @@ void __fastcall sub_1007ee40(int *p) { p[3] = 0; }
 
 // FUNCTION: 0x1007f250 size=0xf0
 #include "CUtlRBTree24.h"
+#include "utlrbtree.h"
+struct CRBEntry24 { int a; int b; };
 
 void CUtlRBTree24::sub_1007f250(const void *pInsert, int *pParent, bool *pLeftChild)
 {
-    const CUtlRBTree24At<0x106c85b4> *tree = (const CUtlRBTree24At<0x106c85b4> *)this;
+    const CUtlRBTree<CRBEntry24, int> *tree = (const CUtlRBTree<CRBEntry24, int> *)this;
     int current = m_Root;
     *pParent = InvalidIndex();
     *pLeftChild = false;
@@ -46593,10 +46624,11 @@ extern "C" GP *prop_largehull_ignore()
 
 // FUNCTION: 0x10194330 size=0x109
 #include "CUtlRBTree12.h"
+#include "utlrbtree.h"
 
 unsigned short CUtlRBTree12::sub_10194330(const void *search) const
 {
-	const CUtlRBTree12At<0x1072b2a4> *tree = (const CUtlRBTree12At<0x1072b2a4> *)this;
+	const CUtlRBTree<int, unsigned short> *tree = (const CUtlRBTree<int, unsigned short> *)this;
 	unsigned short i = m_Root;
 	while (i != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[i].m_Data)) {
@@ -46613,10 +46645,11 @@ unsigned short CUtlRBTree12::sub_10194330(const void *search) const
 
 // FUNCTION: 0x101945f0 size=0x10e
 #include "CUtlRBTree12.h"
+#include "utlrbtree.h"
 
 void CUtlRBTree12::sub_101945f0(const void *insert, unsigned short &parent, bool &leftchild)
 {
-    const CUtlRBTree12At<0x1072b2a4> *tree = (const CUtlRBTree12At<0x1072b2a4> *)this;
+    const CUtlRBTree<int, unsigned short> *tree = (const CUtlRBTree<int, unsigned short> *)this;
     unsigned short current = m_Root;
     parent = InvalidIndex();
     leftchild = false;
@@ -46674,10 +46707,11 @@ void CUnknown10194da0::sub_10194da0(int num)
 
 // FUNCTION: 0x10194e40 size=0xbd
 #include "CUtlRBTree12.h"
+#include "utlrbtree.h"
 
 bool CUtlRBTree12::sub_10194e40(unsigned short i) const
 {
-	const CUtlRBTree12At<0x1072b2a4> *tree = (const CUtlRBTree12At<0x1072b2a4> *)this;
+	const CUtlRBTree<int, unsigned short> *tree = (const CUtlRBTree<int, unsigned short> *)this;
 	unsigned short parent = tree->Links(i).m_Parent;
 	return tree->Links(parent).m_Left == i;
 }
@@ -77842,10 +77876,12 @@ void __fastcall sub_1024c050(Mem4 *self, int, int num)
 
 // FUNCTION: 0x1024c0e0 size=0xbd
 #include "CUtlRBTree12.h"
+#include "utlrbtree.h"
+struct CRBEntry4_1024b9e0 { int a; };
 
 bool CUtlRBTree12::sub_1024c0e0(unsigned short i) const
 {
-	const CUtlRBTree12At<0x1088ae44> *tree = (const CUtlRBTree12At<0x1088ae44> *)this;
+	const CUtlRBTree<CRBEntry4_1024b9e0, unsigned short> *tree = (const CUtlRBTree<CRBEntry4_1024b9e0, unsigned short> *)this;
 	unsigned short parent = tree->Links(i).m_Parent;
 	return tree->Links(parent).m_Left == i;
 }
