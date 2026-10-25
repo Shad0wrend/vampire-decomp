@@ -25656,6 +25656,61 @@ void CMomentaryRotButton::sub_100cae90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cafb0 size=0x105
+#include "CBaseEntity.h"
+#include "CMomentaryRotButton.h"
+
+struct CGlobalVarsView {
+    char pad[0xc];
+    float curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+extern Vector g_1070d9d0;
+
+#define SV1(p) virtual void p();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+struct CButtonAnglesView
+{
+    SV100(a) SV100(b)
+    SV10(c0) SV10(c1)
+    SV1(c20)
+    virtual float *vfunc221();
+};
+struct CButtonSetAnglesView
+{
+    SV10(a0) SV10(a1) SV10(a2) SV10(a3) SV10(a4) SV10(a5)
+    SV1(a60) SV1(a61) SV1(a62) SV1(a63)
+    virtual void vfunc64(const float *pAngles);
+};
+union CThinkFn
+{
+    void (CMomentaryRotButton::*pfn)();
+    int n;
+};
+
+void CMomentaryRotButton::sub_100cafb0()
+{
+    if (sub_100ca630(((CButtonAnglesView *)this)->vfunc221()) <= 0.0f) {
+        ((CBaseEntity *)this)->sub_100b2f50(&g_1070d9d0.x);
+        ((CButtonSetAnglesView *)this)->vfunc64(&m_vecStart5e0.x);
+        sub_100cae20(0.0f, 0);
+        m_flTime3fc = 0.0f;
+        m_pfnThink114 = 0;
+        m_flNextThink = 0.0f;
+        ((CBaseEntity *)this)->sub_100ac4e0(0, 0, 0);
+    } else {
+        Vector vecVelocity = *(Vector *)m_vecMoveDir * -m_flReturnDelay5dc;
+        ((CBaseEntity *)this)->sub_100b2f50(&vecVelocity.x);
+        m_flTime3fc = m_flLocalTime3f4 + 0.1f;
+        CThinkFn think;
+        think.pfn = &CMomentaryRotButton::sub_100cb110;
+        ((CBaseEntity *)this)->sub_100ac4e0(think.n, 0, 0);
+        m_flNextThink = g_1070b228->curtime + 0.01f;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb110 size=0x38
 #include "CMomentaryRotButton.h"
 #include "CEntityVSlots.h"
