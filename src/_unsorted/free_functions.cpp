@@ -61538,6 +61538,20 @@ void CVTraitEffectGroup_t::sub_101f73f0(CVStatKV *pKV)
 bool __fastcall sub_101f74e0(int *p) { bool r = p[3] != -1; return r; }
 // END FUNCTION
 
+// FUNCTION: 0x101f75a0 size=0x38
+// TARGET: CVTraitEffectGroup_t::sub_101f75a0
+#include "CVTraitEffectGroup_t.h"
+#include "CUnknown101f6c50.h"
+
+void CVTraitEffectGroup_t::sub_101f75a0(CTraitStatBlock *pBlock)
+{
+    pBlock->m_ref = m_nId;
+    for (int i = 0; i < m_nEffects; i++) {
+        ((CUnknown101f6c50 *)&m_pEffects[i])->sub_101f6c50(pBlock);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f75f0 size=0x3a
 #include "CUnknown101f6c50.h"
 
