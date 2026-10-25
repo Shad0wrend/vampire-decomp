@@ -308,6 +308,29 @@ void CNPC_VTzimisceHeadClaw::vfunc310(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c24d0 size=0x120
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CNPC_VTzimisceHeadClaw.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_1065ca78[];
+
+void CNPC_VTzimisceHeadClaw::vfunc618()
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	filter.MakeReliable();
+	int edict = *(int *)((char *)this + 0x2e0);
+	int idx = g_1070b22c->vfunc35(edict);
+	g_1070b248->vfunc3(&filter, idx, 4, g_1065ca78[g_1070b244->vfunc2(0, 2)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c2640 size=0x170
 #include "CNPC_VTzimisceHeadClaw.h"
 #include "CPASAttenuationFilter.h"

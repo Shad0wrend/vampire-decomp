@@ -3392,6 +3392,7 @@
 0x1000bf14 func   ?vfunc546@CNPC_VBatSwarm@@QAEHH@Z CNPC_VBatSwarm::vfunc546
 0x1000bf2d func   ?sub_10246dc0@@YA?AVSendProp@@PBDHHPAX@Z sub_10246dc0
 0x1000bf32 func   _phys_ballsocket phys_ballsocket
+0x1000bf37 func   ?vfunc618@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc618
 0x1000bf46 func   ?sub_1004bf70@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004bf70
 0x1000bf50 func   ?vfunc2@CTESmoke@@UAEPAV1@I@Z CTESmoke::vfunc2
 0x1000bf55 func   ?sub_10337ff0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10337ff0
