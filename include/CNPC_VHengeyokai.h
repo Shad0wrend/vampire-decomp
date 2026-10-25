@@ -122,5 +122,6 @@ public:
 	bool sub_10382020(void *pTarget);	// stub 0x1001580c
 	char vfunc320(int a, int b);	// slot 320 (plain member): with a 1..50 roll (the random stream at 0x1070b244, slot 2 with (1, 100)) under 51, the Troika base's vfunc320(a, b); else false
 	void sub_100048f9(int arg);	// CAI_BaseNPCTroika::vfunc435 (stub 0x100048f9), called directly
+	void vfunc617();	// slot 617 (plain member): plays one of the 0x1063bd94 sounds (random 0..3, channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 	void vfunc618();	// slot 618 (plain member): plays one of the 0x1063bda4 sounds (channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 };
