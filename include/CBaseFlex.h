@@ -41,6 +41,8 @@ struct CFlexRequest	// the argument of CBaseFlex::vfunc291
 class CBaseFlex : public CBaseEntity
 {
 public:
+	void vfunc105(const char *pszModel);	// slot 105 override: CBaseAnimating::vfunc105(pszModel), then slot 279(i, 0) once for each flex controller (sub_10094520 counts them, re-read after each call)
+	void vfunc279(int nController, int nValue);	// slot 279 (CBaseAnimating's flex controller setter, called through the vtable)
 	void sub_100b5b00(const float *v);	// slot 277 override: stores three floats at +0x848
 	void sub_100b5ce0();	// slot 276 override: toggles the int at +0x854
 	void vfunc287(CBaseFlexItemObject *pObject);	// slot 287: removes the item of the vector at +0xa58 that refers to pObject (calls its sub_100029c8, clears the item and shifts the following ones down)
