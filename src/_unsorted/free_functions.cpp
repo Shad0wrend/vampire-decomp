@@ -84635,6 +84635,73 @@ void CAI_BaseNPCTroika::sub_102c0bb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c0f70 size=0x183
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseAnimating.h"
+#include "CUnknown100ecee0.h"
+#include "CUnknown100ecd30.h"
+
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+
+extern CUnknown100ecee0 g_10924980;
+
+struct CGlobalVarsView
+{
+	char m_pad0000[0xc];
+	int m_curtimeBits;
+};
+extern CGlobalVarsView *g_1070b228;
+
+struct CTroikaSlots : CAI_BaseNPCTroika
+{
+	virtual void s610();
+	virtual int vfunc611();
+};
+
+void CAI_BaseNPCTroika::sub_102c0f70(const char *pszName, int bFlag)
+{
+	int nOld = *(int *)((char *)this + 0x64d4);
+	*(int *)((char *)this + 0x64d4) = g_10924980.sub_100ec530(pszName, bFlag);
+	while (*(int *)((char *)this + 0x64d4) == -1)
+	{
+		DevMsg("Could not find disposition for %s  ( %s at level %d )!!\n", sub_1000b5cd(), pszName, bFlag);
+		nOld = *(int *)((char *)this + 0x64d4);
+		bFlag = 1;
+		pszName = "Neutral";
+		*(int *)((char *)this + 0x64d4) = g_10924980.sub_100ec530(pszName, bFlag);
+	}
+	int nIndex = *(int *)((char *)this + 0x64d4);
+	((CUnknown100ecd30 *)&g_10924980)->sub_100ecd30(nIndex, (int *)((char *)this + 0x64d8), (int *)((char *)this + 0x64d8), (int *)((char *)this + 0x6584), (int *)((char *)this + 0x6588));
+	*(int *)((char *)this + 0x5b94) = g_10924980.sub_100eccf0(*(int *)((char *)this + 0x64d4));
+	*(float *)((char *)this + 0xe3c) = g_10924980.sub_100ecdf0(*(int *)((char *)this + 0x64d4), 0);
+	*(int *)((char *)this + 0x10b4) = g_10924980.sub_100ec360(*(int *)((char *)this + 0x64d4), this);
+	*(int *)((char *)this + 0x64d0) = g_10924980.sub_100ec2e0(*(int *)((char *)this + 0x64d4), this);
+	*(float *)((char *)this + 0x10b8) = g_10924980.sub_100ec3d0(*(int *)((char *)this + 0x64d4));
+	if (*(int *)((char *)this + 0x64d4) != nOld)
+	{
+		int nSequence;
+		if (nOld != -1)
+			nSequence = g_10924980.sub_100ed150((CTableNpc_t *)this, nOld, *(int *)((char *)this + 0x64d4));
+		else
+			nSequence = ((CTroikaSlots *)this)->vfunc611();
+		if (nSequence > -1)
+		{
+			*(int *)((char *)this + 0xff0) = 0xf1;
+			*(int *)((char *)this + 0x5ccc) = nSequence;
+			if (!*(char *)((char *)this + 0x6080))
+			{
+				*(int *)((char *)this + 0x6f0) = nSequence;
+				*(int *)((char *)this + 0x6f8) = 0;
+				int nNow = g_1070b228->m_curtimeBits;
+				*(int *)((char *)this + 0xfec) = 0xf1;
+				*(int *)((char *)this + 0x174) = nNow;
+				((CBaseAnimating *)this)->sub_10090950();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c1170 size=0x85
 #include "CAI_BaseNPCTroika.h"
 
