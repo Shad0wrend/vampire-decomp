@@ -1,6 +1,21 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1012df00 size=0x34
+#include "CHudCounter.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+// TARGET: CHudCounter::vfunc86
+bool CHudCounter::vfunc86(int unused, int edict, int c, int d, int e)
+{
+	if (*(int *)((char *)this + 0x450) >= 0) {
+		if (g_1070b22c->vfunc35(edict) == *(int *)((char *)this + 0x450))
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e4c0 size=0x1e
 #include "CHudCounter.h"
 
