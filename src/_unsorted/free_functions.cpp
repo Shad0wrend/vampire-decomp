@@ -69450,6 +69450,34 @@ int CVDmgBlock16_t::sub_10230fc0(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231290 size=0x40
+#include "vampire.h"
+#include "CTriggerElectricBugaloo.h"
+
+extern int vt_1048e714[];
+
+struct CUnknownTerminalBase10231290 {
+    void sub_1000d5ee();
+};
+
+struct CUnknownMember10231290 {
+    void sub_10002ddd();
+};
+
+// TARGET: CTriggerElectricBugaloo::sub_10231290
+CTriggerElectricBugaloo *CTriggerElectricBugaloo::sub_10231290()
+{
+    ((CUnknownTerminalBase10231290 *)this)->sub_1000d5ee();
+    *(int *)((char *)this + 0x564) = -1;
+    ((CUnknownMember10231290 *)((char *)this + 0x568))->sub_10002ddd();
+    ((CUnknownMember10231290 *)((char *)this + 0x580))->sub_10002ddd();
+    *(int **)this = vt_1048e714;
+    *((char *)this + 0x59c) = 0;
+    *(int *)((char *)this + 0x598) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231970 size=0x147
 #include "SendProp.h"
 
