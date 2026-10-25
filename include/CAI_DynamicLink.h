@@ -8,6 +8,7 @@ public:
 	CAI_DynamicLink *vfunc5(unsigned int flags);
 	void sub_10009101();
 	void sub_102ccce0();	// "CAI_DynamicLink::SetLinkState": finds the link between the two nodes (ids at +0x454 / +0x458) in the AI network and sets or clears its off bit (0x1000) from the state at +0x45c; complains when a node id is invalid or the link does not exist
+	CAI_DynamicLink *sub_102cce60();	// the constructor body: the constraint anchor base, the vtable, both node ids -1, the state 0, then the link is pushed on the global list (head at 0x1092541c)
 
 	char m_pad0000[0x450];
 	CAI_DynamicLink *m_pNext;	// 0x450: next link of the global list (head at 0x1092541c)
