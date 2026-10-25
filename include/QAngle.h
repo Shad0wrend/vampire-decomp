@@ -4,5 +4,8 @@
 class QAngle
 {
 public:
+	QAngle() {}
+	QAngle(float X, float Y, float Z) { x = X; y = Y; z = Z; }
+
 	float x, y, z;
 };
