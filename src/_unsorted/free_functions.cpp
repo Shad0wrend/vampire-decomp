@@ -72478,6 +72478,32 @@ int NodeHolder::sub_1024a080(unsigned short idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024a120 size=0x85
+#include "CUtlRBTree16.h"
+
+struct CTreeHolder1024a120
+{
+	CUtlRBTree16At<0x1088ae24> *m_pTree;
+};
+
+void __fastcall sub_1024a120(CTreeHolder1024a120 *p)
+{
+	CUtlRBTree16At<0x1088ae24> *t = p->m_pTree;
+	unsigned short prev = 0xffff;
+	for (int i = (int)t->m_TotalElements; --i >= 0; ) {
+		unsigned short idx = (unsigned short)i;
+		if (t->Links(idx).m_Left != idx) {
+		}
+		t->m_pElements[idx].m_Links.m_Right = prev;
+		t->m_pElements[idx].m_Links.m_Left = idx;
+		prev = idx;
+	}
+	t->m_FirstFree = t->m_TotalElements ? (unsigned short)0 : (unsigned short)0xffff;
+	t->m_Root = 0xffff;
+	t->m_NumElements = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024a2b0 size=0x13
 bool sub_1024a2b0(unsigned short *a, unsigned short *b)
 {
