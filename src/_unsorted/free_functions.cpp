@@ -90573,6 +90573,35 @@ TObj *TObj::sub_1030bec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030c560 size=0x35
+// TARGET: CUnknown1030c560::sub_1030c560
+extern void (*g_109f366c)(const char *pszFormat, ...);
+
+extern unsigned int g_1092053c;
+void sub_1030c4e0();
+char sub_102cb690();
+
+struct CUnknown1030c560
+{
+	int m_n00;
+	int m_n04;
+
+	bool sub_1030c560();
+};
+
+bool CUnknown1030c560::sub_1030c560()
+{
+	if (m_n04 == 0) {
+		sub_1030c4e0();
+		if (!sub_102cb690()) {
+			g_1092053c = g_1092053c | 1;
+			g_109f366c("ERROR:  Mistake in default schedule definitions, AI Disabled.\n");
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030c600 size=0x190
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 extern "C" __declspec(dllimport) void __cdecl Error(const char *, ...);
