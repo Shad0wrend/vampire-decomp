@@ -40213,6 +40213,27 @@ void sub_1013bb40(const Vector &p1, const Vector &p2, const Vector &p3, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013bd20 size=0x16a
+#include "Vector.h"
+
+void sub_1013b610(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, float t, Vector &output);
+
+void sub_1013bd20(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, float t, Vector &output)
+{
+	float dt = p3.x - p2.x;
+	Vector p1n = p1;
+	Vector p4n = p4;
+	if (dt != 0.0)
+	{
+		if (p1.x != p2.x)
+			p1n = p2 - (p2 - p1) * (dt / (p2.x - p1.x));
+		if (p4.x != p3.x)
+			p4n = p3 + (p4 - p3) * (dt / (p4.x - p3.x));
+	}
+	sub_1013b610(p1n, p2, p3, p4n, t, output);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013bef0 size=0xa2
 void sub_10139500(const Vector &start, float scale, const Vector &direction, Vector &dest);
 
