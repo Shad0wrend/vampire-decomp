@@ -1,6 +1,8 @@
 // CBaseCineCam: cinematic camera entity. Declared flat (bases not recovered); only the vtable head is modelled.
 #pragma once
 
+#include "Vector.h"
+
 class CBaseCineCam
 {
 public:
@@ -19,6 +21,9 @@ public:
 	void sub_1006e770();	// picks the think function of the shot state at +0x638 (0: none, 1..4: the shot's think functions, otherwise the function at 0x100034ef while the time at +0x55c is in the past) and schedules the next think 0.1 after curtime
 	bool sub_1006db10();	// stub 0x10011734: whether the shot just set up is usable
 	bool sub_1006e4c0(const char *pszPrefix, int unused);	// "CBaseCineCam::FindBestShot": state 1, sets up every shot "<prefix>_<n>" (n = 1, 2, ... while the handle at +0x630 stays set) and collects the usable ones; none -> false, else a random one of them is set up again ("CBaseCineCam::FindBestShot chose %s") -> true; takes a second, unused stack argument
+	Vector sub_1006f670();	// the position the shot looks at: the middle of the two shot positions (flags 4 and 8 of sub_1006edb0), or the one that is set, else the zero vector (returned by value)
+	int sub_1006edb0();	// stub 0x10002a6d: the shot flags (bit 2 = first position, bit 3 = second)
+	Vector sub_1006f010(int index);	// stub 0x10011ebe: the position of shot `index` (2 or 3), returned by value
 
 	char m_pad0004[0x8c];
 	float m_flTime90;	// 0x0090
