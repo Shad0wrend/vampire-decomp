@@ -10099,6 +10099,27 @@ void S10072d60::sub_10072d60(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10072e60 size=0x3f
+#include "vampire.h"
+
+struct CUnknown10072e60
+{
+    void sub_10072e60(int a, int b, int c, int d, int e, int f);
+    int m_pad[0x17c / 4];
+};
+
+// TARGET: CUnknown10072e60::sub_10072e60
+void CUnknown10072e60::sub_10072e60(int a, int b, int c, int d, int e, int f)
+{
+    m_pad[0x17c / 4] = a;
+    m_pad[0x180 / 4] = b;
+    m_pad[0x184 / 4] = c;
+    m_pad[0x188 / 4] = d;
+    m_pad[0x18c / 4] = e;
+    m_pad[0x190 / 4] = f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072f10 size=0xce
 #include "CUnknown10072f10.h"
 
