@@ -29,4 +29,8 @@ public:
 	CSkillOutcome sub_101e8100(void *pPlayer, void *pSkill, char bFlag);	// like sub_101e7ea0, for the skill kind 2 (stub 0x10005ac4)
 	int sub_101e8430(CBaseCombatCharacter *pChar, int a, unsigned char b);	// the number of dice for a roll of the character (stub 0x1000db7a)
 	int sub_101e8ec0(CBaseCombatCharacter *pChar);	// the difficulty of a roll of the character (stub 0x1000b2e4)
+	float sub_101e8a90();	// a zombie tuning distance (stub 0x100145f6): the lower bound of the range in which the zombie attacks
+	float sub_101e8ab0();	// a zombie tuning distance (stub 0x10014bf0): the upper bound of that range
+	int sub_101e8b30();	// a zombie tuning percentage (stub 0x100136e7): the chance the zombie lunges (rolled against 0..99)
+	float sub_101e8c10();	// a zombie tuning delay (stub 0x1000f85d): seconds until the zombie may lunge again
 };
