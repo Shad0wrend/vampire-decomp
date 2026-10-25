@@ -16,4 +16,5 @@ public:
 	virtual void vfunc103();	// slot 103 "CGeneric_NPC::Spawn": slot 104, the model name from slot 9 (default when empty) through slot 105, clears the fields at +0x1568 / +0x156c, solid type 2 (inlined SetSolid scope trace), move type 4, +0x1570 = 0xf7, +0x19c = 0, health from the global cvar object at 0x1093a1f4 (0 while its slot 1 holds), +0x1574 = 0.2f, +0x5cc0 = 0, three flag setters (1, 0x200000, 0x800000), then slot 420
 	virtual void vfunc495();	// slot 495: plays a random sound from the table at 0x10629a1c to the PAS around the NPC (reliable)
 	virtual void vfunc489();	// slot 489: plays a random sound from the table at 0x10629a18 to the PAS around the NPC (reliable), like slot 495
+	virtual void vfunc488();	// slot 488: like slot 489 with the table at 0x10629a20 and volume 0.5
 };
