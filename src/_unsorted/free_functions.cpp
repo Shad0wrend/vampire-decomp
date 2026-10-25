@@ -10337,6 +10337,23 @@ void sub_10071cd0(float *out, const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100727c0 size=0x32
+#include <string.h>
+
+int *__fastcall sub_100727c0(int *p)
+{
+    p[0] = 0;
+    p[1] = 0;
+    p[2] = 0;
+    p[3] = 0;
+    p[4] = 0;
+    memset(p + 5, 0, 0x41 * 4);
+    *(char *)(p + 0x46) = 0;
+    p[0xd] = -1;
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072ba0 size=0x3a
 struct S10072d60 {
     void sub_10072d60(int a);
