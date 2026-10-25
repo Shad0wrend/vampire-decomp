@@ -153,3 +153,22 @@ void CRagdollProp::vfunc181(const float *pPosition, const float *pAngles, const 
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10156360 size=0x40
+#include "vampire.h"
+#include "CRagdollProp.h"
+
+// TARGET: CRagdollProp::vfunc233
+int CRagdollProp::vfunc233(int *pOut, int nMax)
+{
+    int i;
+    for (i = 0; i < *(int *)((char *)this + 0x730); i++)
+    {
+        if (i < nMax)
+        {
+            pOut[i] = *(int *)((char *)this + 0x744 + i * 0x18);
+        }
+    }
+    return *(int *)((char *)this + 0x730);
+}
+// END FUNCTION

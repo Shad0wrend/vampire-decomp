@@ -2687,6 +2687,7 @@
 0x1000a4c0 func   ?sub_103a0eb0@CUnknown103a0eb0@@QAEHHPAUCUnknown103a0eb0Info@@D@Z CUnknown103a0eb0::sub_103a0eb0
 0x1000a4ca func   ?vfunc86@CInspectionNode@@QAEDHPAXHHH@Z CInspectionNode::vfunc86
 0x1000a4cf func   ?sub_10405d50@@YAHXZ sub_10405d50
+0x1000a4e3 func   ?vfunc233@CRagdollProp@@UAEHPAHH@Z CRagdollProp::vfunc233
 0x1000a4ed func   ?sub_103ee100@@YAHXZ sub_103ee100
 0x1000a4fc func   ?vfunc315@CWeaponIGeneric@@UAE_NXZ CWeaponIGeneric::vfunc315
 0x1000a50b func   ?sub_102b8c40@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102b8c40
