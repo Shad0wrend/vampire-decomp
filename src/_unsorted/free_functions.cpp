@@ -14155,6 +14155,19 @@ float sub_10084b40(CBaseEntity *pActor, const char *pszScene, unsigned int *phSc
 }
 // END FUNCTION
 
+// FUNCTION: 0x10084c30 size=0x36
+#include "CEHandleGet.h"
+
+// TARGET: sub_10084c30
+void sub_10084c30(int unused, unsigned int hEntity)
+{
+    CGlobalEntityList_Ent *pEnt = EHandle_Get(hEntity);
+    if (pEnt) {
+        ((void (__fastcall *)(void *))(*(int **)pEnt)[245])(pEnt);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084fb0 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_109f3634)(int);
