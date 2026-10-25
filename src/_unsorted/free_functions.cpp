@@ -46417,6 +46417,30 @@ bool sub_1019cae0(CRagdollLayout *pRagdoll, CRagdollStudio *pStudio, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019cf00 size=0x3f
+#include "vampire.h"
+#include "CRecipientFilter.h"
+
+extern char *g_1070b228;
+int sub_1000ac8b(int nClient);
+
+// TARGET: CRecipientFilter::sub_1019cf00
+void CRecipientFilter::sub_1019cf00()
+{
+    if (m_24 == -1)
+    {
+        m_24 = 0;
+        for (int i = 1; i <= *(int *)(g_1070b228 + 0x14); i++)
+        {
+            if (sub_1000ac8b(i))
+            {
+                m_24++;
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d130 size=0x6c
 #include "CUnknown1019d130.h"
 struct IObj {

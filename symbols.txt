@@ -2244,6 +2244,7 @@
 0x10008bf2 func   ?sub_101b3a10@CUnknown101b3a10@@QAEXPAXPBDPADH@Z CUnknown101b3a10::sub_101b3a10
 0x10008bfc func   ?sub_102e12c0@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e12c0
 0x10008c01 func   ?sub_102373f0@@YAHXZ sub_102373f0
+0x10008c15 func   ?sub_1019cf00@CRecipientFilter@@QAEXXZ CRecipientFilter::sub_1019cf00
 0x10008c1f func   _item_g_eldervitaepack item_g_eldervitaepack
 0x10008c33 func   ?sub_101b6b10@UtlVec8@@QAEXHH@Z UtlVec8::sub_101b6b10
 0x10008c3d func   ?sub_10134420@CUnknown101346e0@@QAEXPAUinputdata_t@@@Z CUnknown101346e0::sub_10134420
