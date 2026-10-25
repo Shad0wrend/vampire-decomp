@@ -107943,6 +107943,47 @@ void CNPC_VWerewolf::sub_103cc890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ce9b0 size=0x14e
+#include "CNPC_VWerewolf.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct WWRangeView : CEntityVSlots
+{
+    char pad0004[0x268];
+    const char *m_name26c;
+    char pad0270[0x5dd0 - 0x270];
+    Vector m_vecHintPos;	// 0x5dd0
+    char pad5ddc[0x6320 - 0x5ddc];
+    float m_flRange;	// 0x6320
+};
+struct WWHintTypeView
+{
+    char pad[0x5dc];
+    int m_nType;
+};
+
+// TARGET: sub_103ce9b0
+int __fastcall sub_103ce9b0(WWRangeView *pThis, int unused, void *pHint)
+{
+    ScopeTrace trace("CNPC_VWerewolf::SelectScheduleForHint", pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+    if (!pHint)
+        return 0x163;
+    int nType = ((WWHintTypeView *)pHint)->m_nType;
+    if (nType == 0x3aa4)
+        return 0x15f;
+    if (nType == 0x3aa5)
+        return 0x160;
+    if (0x3aaa == nType)
+        return 0x164;
+    Vector vecDelta;
+    VectorSubtract(pThis->m_vecHintPos, *pThis->slot217(), vecDelta);
+    if (FastSqrt((vecDelta.x * vecDelta.x) + (vecDelta.z * vecDelta.z) + vecDelta.y * vecDelta.y) > pThis->m_flRange)
+        return 0x15a;
+    return 0x15b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ceb60 size=0x120
 #include "CNPC_VWerewolf.h"
 
