@@ -10,6 +10,7 @@
 	VT_SLOTS10(p##5) VT_SLOTS10(p##6) VT_SLOTS10(p##7) VT_SLOTS10(p##8) VT_SLOTS10(p##9)
 
 class CBaseEntity;
+class CAI_Motor;
 
 // The object returned by CNPC_VTzimisce slot 167; its slot 220 gives the position-like pointer.
 class CNPC_VTzimisceHelper
@@ -91,7 +92,9 @@ public:
 	float m_f1574;	// 0x1574: set to -0.5f in Spawn
 	char m_pad1578[0x5cc0 - 0x1578];
 	int m_nState5cc0;
-	char m_pad5cc4[0x5d8c - 0x5cc4];
+	char m_pad5cc4[0x5d44 - 0x5cc4];
+	CAI_Motor *m_pMotor5d44;	// 0x5d44
+	char m_pad5d48[0x5d8c - 0x5d48];
 	unsigned int m_flags5d8c;
 	char m_pad5d90[0x6078 - 0x5d90];
 	char m_b6078;	// 0x6078: set in Spawn
@@ -130,4 +133,5 @@ public:
 	void sub_102c36d0(Vector vecOrigin, void *pEnt, int nParam, Vector *pVec, Vector *pOut);	// stub 0x1000c0ae
 	int sub_103bfa50(CBaseEntity *pEnt);	// slot 438 helper: finds the nearest "type 0x36b0" and "type 0x36b1" targets within 200 units of pEnt (sub_102d24b0), prefers the closer one (telling the other one 0.5f), remembers it at +0x5ddc and answers the schedule 0x36b0 / 0x36ba (first) or 0x36b1 / 0x36bb (second) by sub_103bfc20; 0 and +0x5ddc = pEnt when there is none
 	char sub_103bfc20(CBaseEntity *pTarget, CBaseEntity *pEnt);	// stub 0x10009953
+	void sub_103bf440();	// the facing / ideal yaw setup of the motor (at +0x5d44): the yaw of slot 221 into the motor (sub_102e0a40), turn rate 20.0f (sub_102e0a60), motor reset (sub_102e0b40); then looks at the slot 167 target's slot 220 position (stub 0x10007248) when there is one, else sets the motor's ideal yaw (+0x34) to the angle slot 221's y (flipped by 180 when the motor's byte +0x28 is set, limited by sub_102e0a80 unless the largest change is 180)
 };
