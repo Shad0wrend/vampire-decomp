@@ -89663,6 +89663,20 @@ void sub_10307e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103090d0 size=0x36
+// TARGET: sub_103090d0
+float sub_103090d0(float x)
+{
+    if (x < 0.0) {
+        return x + 360.0;
+    }
+    if (360.0 <= x) {
+        return x - 360.0;
+    }
+    return x;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10309120 size=0xd0
 extern float g_104454c4;
 
