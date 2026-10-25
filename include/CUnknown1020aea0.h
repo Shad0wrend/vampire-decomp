@@ -9,4 +9,5 @@ public:
 	int m_nKind;	// 0x784: 1 or 2 (picks the feat id 0 / 2)
 
 	float sub_1020aea0(void *pPlayer);	// (1 - feat value * constant) / the player's float at +0x1488, the feat is the one of id 0 for kind 1 and id 2 for kind 2 (value 1.0 for other kinds)
+	float sub_1020b040(void *pPlayer);	// sub_1020aea0(pPlayer) + the float at +0x788, minus the curtime of the global game variables (gpGlobals at 0x1070b228, +0xc), never below 0
 };
