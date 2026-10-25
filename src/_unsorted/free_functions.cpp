@@ -57234,6 +57234,35 @@ S101df260 *S101df260::sub_101df260(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101df2f0 size=0x38
+// TARGET: CUnknown101df2f0::sub_101df2f0
+struct CUnknownDtorMember101df2f0
+{
+	char m_pad[0xac];
+	void sub_1000b60e();
+};
+
+struct CUnknown101df2f0
+{
+	char m_pad0000[8];
+	CUnknownDtorMember101df2f0 m_m8;
+	CUnknownDtorMember101df2f0 m_mb4;
+	CUnknownDtorMember101df2f0 m_m160;
+	CUnknownDtorMember101df2f0 m_m20c;
+	CUnknownDtorMember101df2f0 m_m2b8;
+	void sub_101df2f0();
+};
+
+void CUnknown101df2f0::sub_101df2f0()
+{
+	m_m2b8.sub_1000b60e();
+	m_m20c.sub_1000b60e();
+	m_m160.sub_1000b60e();
+	m_mb4.sub_1000b60e();
+	m_m8.sub_1000b60e();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101df8d0 size=0xe9
 struct Vec3X { int x, y, z; };
 struct ItemVecX {
