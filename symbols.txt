@@ -5216,6 +5216,7 @@
 0x10011c2a func   ?vfunc5@CGameText@@QAEPAV1@I@Z CGameText::vfunc5
 0x10011c34 func   ?sub_102c0270@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_102c0270
 0x10011c39 func   ?sub_10095d80@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10095d80
+0x10011c3e func   ?vfunc491@CGeneric_NPC@@UAEXXZ CGeneric_NPC::vfunc491
 0x10011c43 func   ?vfunc5@CFuncRotating@@QAEPAV1@I@Z CFuncRotating::vfunc5
 0x10011c48 func   ?vfunc461@CNPC_VSabbatLeader@@QAEHXZ CNPC_VSabbatLeader::vfunc461
 0x10011c52 func   ?vfunc4@CGameMovement@@QAEPAMDH@Z CGameMovement::vfunc4
