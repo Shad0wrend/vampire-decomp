@@ -86544,6 +86544,26 @@ void CUtlVector280::sub_1030b100(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b250 size=0x40
+struct CUnknownBody1030b250 {
+    int d[64];
+};
+
+// TARGET: sub_1030b250
+void sub_1030b250(int *pDst, int *pSrc)
+{
+    if (pDst != 0) {
+        pDst[0] = pSrc[0];
+        pDst[1] = pSrc[1];
+        pDst[2] = pSrc[2];
+        pDst[3] = pSrc[3];
+        pDst[4] = pSrc[4];
+        pDst[5] = pSrc[5];
+        *(CUnknownBody1030b250 *)(pDst + 6) = *(CUnknownBody1030b250 *)(pSrc + 6);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b2f0 size=0x6a
 #include "CUnknown1030b2f0.h"
 
