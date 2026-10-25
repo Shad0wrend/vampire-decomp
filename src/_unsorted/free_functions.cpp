@@ -39206,6 +39206,31 @@ int sub_101388c0(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138a90 size=0xc7
+#include "Vector.h"
+
+void sub_10138a90(const Vector &forward, Vector &right, Vector &up)
+{
+    Vector tmp;
+    if (forward[0] == 0 && forward[1] == 0) {
+        right[0] = 1.0f;
+        right[1] = 0.0f;
+        right[2] = 0.0f;
+        up[0] = 0.0f;
+        up[1] = -forward[2];
+        up[2] = 0.0f;
+        return;
+    }
+    tmp[0] = 0.0f;
+    tmp[1] = 0.0f;
+    tmp[2] = 1.0f;
+    CrossProduct(forward, tmp, right);
+    VectorNormalize(right);
+    CrossProduct(right, forward, up);
+    VectorNormalize(up);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138ba0 size=0xd5
 #include <math.h>
 #include "QAngle.h"
