@@ -30,8 +30,8 @@ public:
 	Vector m_angRotation520;	// +0x520: one end angle of the door
 	Vector m_angRotation52c;	// +0x52c: the other end angle
 	char m_pad0538[0x564 - 0x538];
-	CDoorEventList m_items564[8];	// +0x564 .. +0x60c
-	char m_pad060c[0x698 - 0x60c];
+	CDoorEventList m_items564[8];	// +0x564 .. +0x624
+	char m_pad0624[0x698 - 0x624];
 	Vector m_vecMins698;	// +0x698: the volume for the +0x52c angles
 	Vector m_vecMaxs6a4;	// +0x6a4
 	Vector m_vecCenter6b0;	// +0x6b0: its centre
