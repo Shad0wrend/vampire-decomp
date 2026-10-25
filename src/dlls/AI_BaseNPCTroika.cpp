@@ -489,6 +489,24 @@ int CAI_BaseNPCTroika::sub_102b6fe0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b8a10 size=0x3d
+#include "CAI_BaseNPCTroika.h"
+extern char g_105da024[];
+
+int __fastcall sub_102b8a10(void *self)
+{
+    char *p = (char *)self;
+    if (((CAI_BaseNPCTroika *)self)->sub_10014df8(0x58)) {
+        if (((CAI_BaseNPCTroika *)self)->sub_1008dc40(0x61, -1) != -1) {
+            *(const char **)(p + 0x1b30) = g_105da024;
+            *(int *)(p + 0x1b34) = 0x5f20;
+            return 8;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b8a60 size=0x17d
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102b5dc0.h"
