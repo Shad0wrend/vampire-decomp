@@ -12513,6 +12513,29 @@ void sub_1007c4f0(void *pWriter, int nTabs, CUnknown10077430 *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c5b0 size=0x3e
+#include <string.h>
+
+struct CUnknownStrObj
+{
+	int sub_100029c8();	// stub 0x100029c8, called directly
+	const char *sub_1000b0e1();	// stub 0x1000b0e1, called directly
+};
+
+// TARGET: sub_1007c5b0
+bool __stdcall sub_1007c5b0(CUnknownStrObj *pObj)
+{
+	if (pObj->sub_100029c8()) {
+		if (pObj->sub_1000b0e1()) {
+			if (strlen(pObj->sub_1000b0e1()) != 0) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007cbe0 size=0xa2
 struct CChoreoChannelView
 {

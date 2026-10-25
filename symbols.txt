@@ -5377,6 +5377,7 @@
 0x100134da func   ?sub_103da0a0@@YIDPAVCNPC_VWerewolf@@@Z sub_103da0a0
 0x100134e4 func   ?vfunc493@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc493
 0x100134f8 func   ?sub_10222bf0@@YAXXZ sub_10222bf0
+0x100134fd func   ?sub_1007c5b0@@YG_NPAUCUnknownStrObj@@@Z sub_1007c5b0
 0x10013502 func   ?sub_10265310@CUtlVector4@@QAEXH@Z CUtlVector4::sub_10265310
 0x10013507 func   ?vfunc5@CSprite@@QAEPAV1@I@Z CSprite::vfunc5
 0x1001351b func   ?vfunc7@CSaveRestoreBlockSet@@QAEXPAXHH@Z CSaveRestoreBlockSet::vfunc7
