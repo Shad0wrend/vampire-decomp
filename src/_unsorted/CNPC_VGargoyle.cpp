@@ -143,6 +143,29 @@ bool CNPC_VGargoyle::vfunc320(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378df0 size=0x93
+#include "CEntityVSlots.h"
+
+void CNPC_VGargoyle::vfunc433()
+{
+	sub_102b27f0();
+	sub_10269b50(0xf);
+	sub_10269b50(0xc);
+	sub_10269b50(0xd);
+	CEntityVSlots *pEnemy = (CEntityVSlots *)((CEntityVSlots *)this)->slot167();
+	if (pEnemy)
+	{
+		const Vector *pMine = ((CEntityVSlots *)this)->slot217();
+		const Vector *pTheirs = pEnemy->slot217();
+		if ((*pTheirs - *pMine).Length2D() <= 50.0)
+		{
+			sub_10269b50(0x5f);
+			sub_10269b50(0xe);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379f50 size=0xe
 struct CUnk10924edc
 {
