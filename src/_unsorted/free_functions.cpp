@@ -36852,6 +36852,21 @@ eof:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137300 size=0x3f
+#include "vampire.h"
+
+// TARGET: sub_10137300
+float sub_10137300(const float *pVec)
+{
+    float flLenSqr = pVec[2] * pVec[2] + pVec[1] * pVec[1] + pVec[0] * pVec[0];
+    if (flLenSqr < 1.0f)
+    {
+        return 1.0f;
+    }
+    return 1.0f / flLenSqr;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137ed0 size=0xc4
 #include <math.h>
 #include "matrix3x4_t.h"
