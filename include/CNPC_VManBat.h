@@ -49,4 +49,5 @@ public:
 	void sub_1038e6a0();	// stub 0x1000c25c
 	void sub_1038e6e0();	// stub 0x10011db0
 	void sub_1038e670();	// stub 0x100036e8
+	void sub_1038c250(CBaseEntity *pTarget);	// "launch at the target": with a target, sub_1038c170(1), the angles (slot 221) with the pitch cleared set back (slot 64), then the direction to the target (slot 220 of both) normalised and scaled by 200.0f becomes the velocity (CBaseEntity::sub_100b2770)
 };
