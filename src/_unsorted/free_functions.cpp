@@ -36878,6 +36878,37 @@ float CGameMovement::sub_101282b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129870 size=0xb5
+#include "CBaseEntity.h"
+#include "TestBit.h"
+
+struct VelClampView
+{
+    char pad0000[0x268];
+    unsigned int m_flags268;
+    char pad026c[0x3bc - 0x26c];
+    Vector m_vecAbsVelocity;	// 0x3bc
+
+    void sub_100b1d10();	// CBaseEntity::CalcAbsoluteVelocity (stub 0x1000d486)
+    void sub_100b2e30(const float *pVelocity);	// the absolute velocity setter (stub 0x10013728)
+};
+
+// TARGET: sub_10129870
+void __fastcall sub_10129870(VelClampView *pThis)
+{
+    if (TestBit(pThis->m_flags268, 12))
+        pThis->sub_100b1d10();
+    Vector vecVelocity = pThis->m_vecAbsVelocity;
+    float flSpeed = FastSqrt(vecVelocity.x * vecVelocity.x + vecVelocity.z * vecVelocity.z + vecVelocity.y * vecVelocity.y);
+    if (flSpeed > 1500.0)
+    {
+        VectorNormalize(vecVelocity);
+        vecVelocity *= 1500.0f;
+        pThis->sub_100b2e30(&vecVelocity.x);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a610 size=0x99
 #include "CGib.h"
 
