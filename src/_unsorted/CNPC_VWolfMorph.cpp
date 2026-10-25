@@ -18,6 +18,23 @@ int CNPC_VWolfMorph::vfunc546(int x)
 int CNPC_VWolfMorph::vfunc375(int unused) { return 0x1145; }
 // END FUNCTION
 
+// FUNCTION: 0x103dceb0 size=0x31
+#include <string.h>
+#include "CNPC_VWolfMorph.h"
+
+int __fastcall sub_10015ad2(void *self);
+
+int CNPC_VWolfMorph::vfunc438()
+{
+    if (m_p5c38 != 0) {
+        if (_strcmpi(*(const char **)((char *)m_p5c38 + 0x40), "SCHED_VWOLFMORPH_MORPH") == 0) {
+            return sub_10015ad2(this);
+        }
+    }
+    return 0x158;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dcf20 size=0x1e
 #include "CNPC_VWolfMorph.h"
 
