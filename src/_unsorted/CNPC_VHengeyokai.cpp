@@ -273,6 +273,25 @@ void CNPC_VHengeyokai::vfunc601(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10383090 size=0x39
+#include "CNPC_VHengeyokai.h"
+
+// TARGET: CNPC_VHengeyokai::vfunc435
+void CNPC_VHengeyokai::vfunc435(int arg)
+{
+	sub_100048f9(arg);
+	if ((~*(unsigned int *)((char *)this + 0x14b8) & 8) != 0)
+	{
+		int n = m_n6678;
+		*(int *)((char *)this + 0x6680) = 0;
+		if (n > 0)
+		{
+			m_n6678 = n - 1;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10383560 size=0x6a
 #include "CNPC_VHengeyokai.h"
 #include "CUnknown1070b22c.h"
