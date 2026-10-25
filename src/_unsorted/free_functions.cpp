@@ -58119,6 +58119,21 @@ extern "C" CBaseEntity *vdisciplineprojectile()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101da8d0 size=0x67
+#include <string.h>
+extern const char *g_105a1bdc[15];
+const char *sub_1001353e(int);
+int __stdcall sub_101da8d0(int a)
+{
+    const char *s = sub_1001353e(a);
+    for (int i = 0; i < 15; i++) {
+        if (strcmp(g_105a1bdc[i], s) == 0)
+            return i;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101da960 size=0xe
 #include "CUnknown101da960.h"
 extern const char *g_105a1bdc[];
