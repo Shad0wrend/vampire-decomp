@@ -14435,6 +14435,84 @@ void CSceneEntity::sub_10084170(void *pScene)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10084260 size=0x114
+#include "CSceneEntity.h"
+#include "CUnknown1007a2c0.h"
+#include "CBaseAnimating.h"
+
+struct S1007a270
+{
+	int sub_1007a270(int index);
+	int sub_1007a250();
+	char sub_1007ed10();
+};
+
+struct CSceneResetNPC
+{
+	char m_pad0000[0x5c38];
+	int m_n5c38;
+	int sub_102cc1f0(int a);
+	void sub_10280d30();
+};
+
+struct CSceneResetActor
+{
+	char m_pad0000[0x94];
+	CSceneResetNPC *m_pNPC94;
+};
+
+struct CSceneEntityUnit : CSceneEntity
+{
+	void sub_10002cfc(void *pScene);
+};
+
+void CSceneEntity::sub_10084260(void *pScene)
+{
+	if (pScene)
+	{
+		int i = 0;
+		while (i < ((CUnknown1007a2c0 *)pScene)->sub_1007a2a0())
+		{
+			CSceneEventActor *pRecord = (CSceneEventActor *)((CUnknown1007a2c0 *)pScene)->sub_1007a2c0(i);
+			if (pRecord)
+			{
+				CSceneResetActor *pActor = (CSceneResetActor *)vfunc267(pRecord->sub_10008a99());
+				if (pActor)
+				{
+					CSceneResetNPC *pNPC = pActor->m_pNPC94;
+					if (pNPC)
+					{
+						if (pNPC->m_n5c38)
+						{
+							if (pNPC->m_n5c38 == pNPC->sub_102cc1f0(0x34))
+								pNPC->sub_10280d30();
+						}
+					}
+					else
+					{
+						CBaseAnimating *pAnim = (CBaseAnimating *)pActor;
+						*(int *)((char *)pAnim + 0x6f0) = pAnim->sub_1008dc40(1, -1);
+						pAnim->sub_10090950();
+						*(int *)((char *)pAnim + 0x6f8) = 0;
+					}
+				}
+			}
+			i++;
+		}
+		for (int j = 0; j < ((S1007a270 *)pScene)->sub_1007a250(); j++)
+		{
+			CSceneEvent *pEvent = (CSceneEvent *)((S1007a270 *)pScene)->sub_1007a270(j);
+			if (pEvent && pEvent->sub_100029c8() == 11 && !((S1007a270 *)pScene)->sub_1007ed10())
+			{
+				CUnknown1007ce20 *pSub = pEvent->sub_10076710();
+				if (pSub)
+					((CSceneEntityUnit *)this)->sub_10002cfc(pSub);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100845a0 size=0xd4
 #include "CSceneEntity.h"
 #include "CUnknown1007a2c0.h"

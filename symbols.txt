@@ -552,6 +552,7 @@
 0x10002ccf func   ?sub_10107480@UtlMem@@QAEXXZ UtlMem::sub_10107480
 0x10002cd4 func   ?sub_100c9430@CBaseButton@@QAEXPAVCBaseEntity@@@Z CBaseButton::sub_100c9430
 0x10002ce8 func   ?sub_10218ec0@CUnknown10217f50@@QAEXHH@Z CUnknown10217f50::sub_10218ec0
+0x10002cfc func   ?sub_10084260@CSceneEntity@@QAEXPAX@Z CSceneEntity::sub_10084260
 0x10002d06 func   ?vfunc374@CWeaponRanged@@QAEXXZ CWeaponRanged::vfunc374
 0x10002d10 func   ??1StatDefault@@QAE@XZ StatDefault::~StatDefault
 0x10002d15 func   ?vfunc25@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHH@Z CTempEntsSystem::vfunc25
