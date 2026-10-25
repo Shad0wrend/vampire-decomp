@@ -11797,6 +11797,30 @@ void sub_10079320(SDumpOutput *pOut, int indent, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079400 size=0x40
+#include "CUnknown1007b7b0.h"
+#include "CUnknown1007dfe0.h"
+
+struct CUnknownObj10079400 {
+    CUnknown1007b7b0 *sub_10079450(int a);
+};
+
+// TARGET: sub_10079400
+CUnknown1007b7b0 *sub_10079400(int a, int b, int c)
+{
+    CUnknown1007b7b0 *p;
+    void *pMem = operator new(0x134);
+    if (pMem != 0) {
+        p = ((CUnknownObj10079400 *)pMem)->sub_10079450(a);
+    } else {
+        p = 0;
+    }
+    p->sub_1007bd70((CUnknown1007bb30Reader *)b);
+    ((CUnknown1007dfe0 *)p)->sub_1007dfe0(c);
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079450 size=0x6e
 struct Obj {
     int f[30];
