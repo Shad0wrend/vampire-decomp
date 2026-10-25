@@ -79781,6 +79781,19 @@ int CAI_BaseNPC::sub_10265970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10265a40 size=0x32
+#include "CBaseEntity.h"
+
+// TARGET: sub_10265a40
+void __fastcall sub_10265a40(CBaseEntity *pEnt)
+{
+    pEnt->m_iHealth = pEnt->m_iMaxHealth / 2;
+    pEnt->m_nTakeDamage = 2;
+    pEnt->m_iMaxHealth = 5;
+    pEnt->vfunc93(6, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10267350 size=0xd
 extern int g_10920544;
 extern int g_10920548;
