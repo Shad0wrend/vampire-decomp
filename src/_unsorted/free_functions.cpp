@@ -34031,6 +34031,27 @@ extern "C" GP *window_pane()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10112420 size=0x36
+struct CUnknown10112420
+{
+	char m_pad0000[0x4d0];
+	float m_fl4d0[256];
+
+	float sub_10112420(int a, int b);
+};
+
+// TARGET: CUnknown10112420::sub_10112420
+float CUnknown10112420::sub_10112420(int a, int b)
+{
+	float *pValue = &m_fl4d0[a * 16 + b];
+	if (*pValue < 0.0f)
+	{
+		return 0.0f;
+	}
+	return *pValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101128d0 size=0xf7
 #include "CBreakableSurface.h"
 void sub_10003d4b(Vector *, Vector *);

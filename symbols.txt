@@ -142,6 +142,7 @@
 0x10001794 func   ?sub_101a7390@CCineNPC@@QAEXH@Z CCineNPC::sub_101a7390
 0x10001799 func   ?sub_100c81b0@CUnknown100c81b0@@QAEXPBUCBitVecWords@@HPBUCBoneRecord@@PBUCStudioBoneCount@@@Z CUnknown100c81b0::sub_100c81b0
 0x100017ad func   ?sub_102035c0@@YAPBDH@Z sub_102035c0
+0x100017b7 func   ?sub_10112420@CUnknown10112420@@QAEMHH@Z CUnknown10112420::sub_10112420
 0x100017bc func   ?sub_100bd090@bf_write@@QAEXMH@Z bf_write::sub_100bd090
 0x100017c6 func   ?vfunc437@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc437
 0x100017cb func   _npc_VCop npc_VCop
