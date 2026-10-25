@@ -40120,6 +40120,17 @@ extern "C" GP *func_platrot()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d680 size=0x37
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+
+// TARGET: CBasePlayer::sub_1015d680
+CBaseEntity *CBasePlayer::sub_1015d680(int index)
+{
+    return (CBaseEntity *)EHandle_Get(((unsigned int *)((char *)this + 0x2308))[index]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015d6d0 size=0x82
 #include "CBasePlayer.h"
 
