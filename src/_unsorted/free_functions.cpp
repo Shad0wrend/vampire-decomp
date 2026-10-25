@@ -37770,6 +37770,20 @@ void sub_1013d0e0(float gamma, float texGamma, float brightness, int overbright,
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d400 size=0x3f
+// TARGET: sub_1013d400
+float sub_1013d400(float a, float b, float c)
+{
+    if (a - b > c) {
+        return b + c;
+    }
+    if (a - b < -c) {
+        return b - c;
+    }
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d450 size=0xe1
 extern float g_1044ffe0;
 extern float g_1044ffdc;
