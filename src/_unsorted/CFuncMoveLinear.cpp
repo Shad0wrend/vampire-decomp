@@ -64,6 +64,32 @@ void CFuncMoveLinear::sub_10116bf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116d20 size=0x107
+#include "CFuncMoveLinear.h"
+
+#define SV1(n) virtual void n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CMoveLinearSlotView
+{
+	SV100(a) SV100(b) SV10(c0) SV10(c1)
+	virtual float *vfunc220();
+};
+
+void CFuncMoveLinear::vfunc173(void *pActivator, void *pCaller, int useType, float flValue)
+{
+	if (useType != 2)
+		return;
+	if (flValue > 1.0)
+		flValue = 1.0f;
+	Vector vecMove = m_vecPosition1 + flValue * (m_vecPosition2 - m_vecPosition1);
+	Vector vecDelta = vecMove - *(Vector *)((CMoveLinearSlotView *)this)->vfunc220();
+	float flSpeed = vecDelta.Length() * 10.0f;
+	sub_10116570(vecMove, flSpeed);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117740 size=0x78
 #include "CFuncMoveLinear.h"
 void sub_100aa7b0(void *p);
