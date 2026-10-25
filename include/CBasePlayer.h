@@ -124,7 +124,7 @@ public:
 	CBP_V1(sj6) CBP_V1(sj7) CBP_V1(sj8)
 	virtual void vfunc448();
 	// slots 449..467
-	virtual void vfunc449(int a, int b);	// slot 449: called with (2, 0) by slot 434 when the player is on the ground
+	virtual void vfunc449(int a, int b);	// slot 449: called with (2, 0) by slot 434
 	virtual void vfunc450();
 	CBP_V1(sk0c)
 	virtual bool vfunc452(const char *pszKey);	// slot 452 key handler: "vehicleRole" with two console arguments hands the role number to the vehicle at +0x20fc (leaving the vehicle first when it does not know the role yet)
@@ -267,8 +267,9 @@ public:
 	void sub_101784c0(CBaseEntity *pOther);	// adds the keyring item the player carries to the inventory object at +0x245c: lets the keyring look at pOther, creates the inventory when needed, hands it the loose keys and copies the keyring's records into it
 	void sub_10182e00(CBaseCombatWeapon *pWeapon);	// "CBasePlayer::SetViewModel"-like: the model name of the character's default stat item for the weapon (or none when the weapon is not a ranged / usable one) is precached and handed to slot 266 of the second view model
 	void sub_101711e0(float flThreshold);	// resets the vector pair at +0x1efc / +0x1f08 to the zero vector unless the threshold is non-zero and the pair's squared length is above flThreshold squared
-	void sub_10170d60();	// the random impulse: once curtime passes the float at +0x2148 (5 seconds ahead again), clears the field at +0x210, builds a damage info (this, this, 10.0f, 0x1000) and hands slot 144 a random force vector (each component rand() * 9.155553e-5 + 2.0)
+	void sub_10170d60();	// the random impulse: once curtime passes the float at +0x2148 (5 seconds ahead again), clears the field at +0x210, builds a damage info (this, this, 10.0f, 0x1000) and hands slot 144 a random force vector (each component rand() * 9.155653e-5 + 2.0)
 	void sub_100b1d10();	// CBaseEntity member (stub 0x1000d486), called directly by slot 434
+	void vfunc434();	// slot 434 (plain member): with the player on the ground (flags bit 0, not bit 2, move type below 2): slot 449(2, 0), stamps the time at +0x148c and, when the entity of slot 209 has flag bit 12, hands the velocity plus the base velocity to sub_100b2e30
 
 #include "CBasePlayer_ext.h"
 };
