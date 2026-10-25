@@ -30081,6 +30081,24 @@ CBaseEntity * __stdcall sub_100f7e30(CBaseEntity *pStart, const char *szName, co
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7fe0 size=0x3d
+struct CUnknownGlobal100f7fe0
+{
+	int sub_100f7b20(int a, int b, int c, int d, int e);	// stub 0x10009b8d, called directly
+	void sub_100f7d50(int a, int b, int c);	// stub 0x10005475, called directly
+};
+
+extern CUnknownGlobal100f7fe0 g_106eb5d8;
+
+// TARGET: sub_100f7fe0
+void __stdcall sub_100f7fe0(int a, int b, int c, int d, int e)
+{
+	if (g_106eb5d8.sub_100f7b20(a, b, c, d, e) == 0) {
+		g_106eb5d8.sub_100f7d50(a, b, c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8490 size=0xbf
 #include "CGlobalEntityList.h"
 #include "Vector.h"
