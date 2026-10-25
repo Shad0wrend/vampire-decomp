@@ -48683,6 +48683,23 @@ int *sub_101a5e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6ec0 size=0x35
+extern int *g_1072bb84;
+extern void (*g_109f3630)(const char *, ...);
+
+// TARGET: sub_101a6ec0
+void sub_101a6ec0()
+{
+    if (!((char (__fastcall *)(int *))(*(int **)g_1072bb84)[1])(g_1072bb84)) {
+        if (g_1072bb84[11] >= 2) {
+            void (*pDevMsg)(const char *, ...) = g_109f3630;
+            pDevMsg("         \n");
+            pDevMsg("         \n");
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7170 size=0x78
 #include "CGlobalEntityList.h"
 #include "CCineNPC.h"
