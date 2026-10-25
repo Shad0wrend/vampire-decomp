@@ -77074,6 +77074,24 @@ void CAI_BaseNPC::sub_10274ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279260 size=0x3e
+#include "CBaseEntity.h"
+
+extern char *g_1070b228;
+void sub_100940d0();
+
+void __fastcall sub_10279260(CBaseEntity *param_1)
+{
+    if (param_1->sub_100b3700() & 1) {
+        param_1->sub_100ac4e0(0, 0, 0);
+        ((void (__fastcall *)(CBaseEntity *))sub_100940d0)(param_1);
+        param_1->sub_100b3b00();
+        return;
+    }
+    *(float *)((char *)param_1 + 0x17c) = *(float *)((char *)g_1070b228 + 0xc) + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102792b0 size=0x114
 #include "CAI_BaseNPC.h"
 #include "CBaseAnimating.h"
