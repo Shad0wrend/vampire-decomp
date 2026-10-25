@@ -42153,6 +42153,25 @@ void SBlendView::sub_1017d0b0(float flRate)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017d630 size=0x38
+// TARGET: CUnknown1017d630::sub_1017d630
+#include "CEHandleGet.h"
+
+struct CUnknown1017d630
+{
+	char m_pad0000[0x19c0];
+	unsigned int m_h19c0;
+	float sub_1000c07c();
+	CGlobalEntityList_Ent *sub_1017d630();
+};
+
+CGlobalEntityList_Ent *CUnknown1017d630::sub_1017d630()
+{
+	sub_1000c07c();
+	return EHandle_Get(m_h19c0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017deb0 size=0x73
 struct CGameTimeScale {
 	virtual void vfunc0();
