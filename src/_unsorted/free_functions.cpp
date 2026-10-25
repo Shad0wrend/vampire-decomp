@@ -45651,6 +45651,32 @@ void sub_10189660(CBaseEntity *ent, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101898f0 size=0xdd
+#include "CRagdollProp.h"
+#include "IPlayerPickupVPhysics.h"
+
+extern "C" int __cdecl rand(void);
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int isReference);
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_10589544[];	// type descriptor of IPlayerPickupVPhysics
+extern char g_1057c684[];	// type descriptor of CRagdollProp
+
+Vector sub_101898f0(CBaseEntity *pEntity)
+{
+	IPlayerPickupVPhysics *pPickup = (IPlayerPickupVPhysics *)__RTDynamicCast(pEntity, 0, g_10538764, g_10589544, 0);
+	if (pPickup)
+		return pPickup->vfunc6();
+	CRagdollProp *pRagdoll = (CRagdollProp *)__RTDynamicCast(pEntity, 0, g_10538764, g_1057c684, 0);
+	if (pRagdoll)
+		return pRagdoll->vfunc275();
+	Vector vecRandom;
+	vecRandom.x = rand() * 0.03662221f - 600.0f;
+	vecRandom.y = rand() * 0.03662221f - 600.0f;
+	vecRandom.z = rand() * 0.03662221f - 600.0f;
+	return vecRandom;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018b790 size=0x3f
 #include "vampire.h"
 
