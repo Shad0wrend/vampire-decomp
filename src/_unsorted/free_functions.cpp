@@ -52920,6 +52920,33 @@ void sub_101cea60(int nValue, CPlayerSlots162 *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ceb70 size=0x3b
+struct CUnk1070b228
+{
+    char m_pad0000[0x14];
+    int m_nCount;    // 0x14
+};
+
+extern CUnk1070b228 *g_1070b228;
+void *sub_1000ac8b(int i);
+void sub_101cea60(int a, void *p);
+
+// TARGET: sub_101ceb70
+void sub_101ceb70(int a)
+{
+    int i = 1;
+    if (g_1070b228->m_nCount >= 1) {
+        do {
+            void *p = sub_1000ac8b(i);
+            if (p) {
+                sub_101cea60(a, p);
+            }
+            i++;
+        } while (i <= g_1070b228->m_nCount);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cebc0 size=0xef
 #include "CSingleUserRecipientFilter.h"
 #include "IVEngineServer.h"
