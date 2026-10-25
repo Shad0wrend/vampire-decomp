@@ -3,6 +3,8 @@
 
 extern char g_106b8540[];	// empty string
 
+class CUnknown10205e60;
+
 struct CUnknown101d7520Name	// a string holder; Get() yields "" for null
 {
 	const char *m_p;
@@ -12,9 +14,11 @@ struct CUnknown101d7520Name	// a string holder; Get() yields "" for null
 
 struct CUnknown101d7520Sub	// the object embedded at +0x18 of an entry and at +0x10 of a rule
 {
-	char m_pad00[0x1c];
+	char m_pad00[0x14];
+	int m_nCount;	// 0x14: elements in m_ppItems
+	CUnknown10205e60 **m_ppItems;	// 0x18: the list of dependencies this object checks
 	void sub_10206190();	// dumps the object (stub 0x1000cd1a)
-	char sub_10206140(void *pArg);	// stub 0x10013ce1: whether the object can be processed for the given argument (the local player's object at +0xa8)
+	char sub_10206140(void *pArg);	// stub 0x10013ce1: whether every dependency in the list holds for the given argument (the local player's object at +0xa8)
 };
 
 struct CUnknown101d7520Element	// one element of a rule (the array at +0xc of the rule)
