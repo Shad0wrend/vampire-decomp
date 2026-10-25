@@ -7,7 +7,8 @@ class CSave;
 
 struct CPropHackingRecord	// 0xd4 byte element of the array at +0x9a0
 {
-	char m_pad0000[0xd4];
+	char m_szName[0x30];	// 0x00
+	char m_szText[0xd4 - 0x30];	// 0x30
 };
 
 struct CPropHackingScreenRecord	// 0x2c0 byte element of the array at +0xa14
