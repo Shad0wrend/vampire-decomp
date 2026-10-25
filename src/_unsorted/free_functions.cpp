@@ -96133,6 +96133,36 @@ extern "C" CBaseEntity *npc_VCop()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103705e0 size=0x3f
+struct CUnknownEntList103705e0 {
+    char *sub_10015b95(char *pPrev, int flags);
+};
+
+struct CUnknownEnt103705e0 {
+    void sub_10008242(int a, int b);
+};
+
+extern char g_106eb5d8;
+
+// TARGET: sub_103705e0
+void sub_103705e0(char *pStart)
+{
+    if (pStart != 0) {
+        char *p = 0;
+        while (1) {
+            p = ((CUnknownEntList103705e0 *)&g_106eb5d8)->sub_10015b95(p, 0x80);
+            if (p == 0) {
+                break;
+            }
+            int nState = ((int (__fastcall *)(void *))((int *)(*(int **)p))[0x740 / 4])(p);
+            if (nState == 0xe) {
+                ((CUnknownEnt103705e0 *)p)->sub_10008242(2, 0);
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103706b0 size=0xe9
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"

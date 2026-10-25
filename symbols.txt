@@ -2258,6 +2258,7 @@
 0x10008c9c func   ?vfunc563@CNPC_VMingXiao@@QAEXPAVCBaseEntity@@PAVVector@@PAH2@Z CNPC_VMingXiao::vfunc563
 0x10008cd3 func   ?vfunc369@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc369
 0x10008cd8 func   ?sub_100de610@@YGXH@Z sub_100de610
+0x10008cdd func   ?sub_103705e0@@YAXPAD@Z sub_103705e0
 0x10008ce7 func   ?sub_10402a40@@YAHXZ sub_10402a40
 0x10008d0f func   ?sub_1014f210@CPhysicsAnimlink@@QAEXPAVCBaseAnimating@@HPAXHH@Z CPhysicsAnimlink::sub_1014f210
 0x10008d14 func   _info_landmark info_landmark
