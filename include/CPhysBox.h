@@ -20,4 +20,5 @@ public:
 	CPhysBox *sub_1004e0a0();	// as in CKeepUpright (transplant)
 	void sub_102d08e0(int a);	// provisional, like sub_1004e910 (transplant)
 	virtual void vfunc103();	// slot 103 "CPhysBox::Spawn": SetMoveType(0, 0), SetSolid(1) (inlined scope trace), then the byte at +0x4c8 / SetMoveType(8, 0) depending on the dword at +0x124, SetAbsVelocity(zero), take-damage mode 1, SetModel(model name), slot 104, then SetSolidFlags(1) when spawn flag 0x10, AddFlag2(2) unless spawn flag 0x20, and slot 223
+	bool vfunc68(void *pOther);	// slot 68 (plain member): true when pOther has a model-related entity at +0x9c and this entity has bit 4 of +0x204, or pOther's object at +0xa8 passes sub_100b39c0; else false
 };
