@@ -250,6 +250,23 @@ extern float g_104454c0;
 float CMultiplayRules::vfunc30(int a) { return g_104454c0; }
 // END FUNCTION
 
+// FUNCTION: 0x10141980 size=0x34
+extern unsigned char g_1070ba2c;
+
+// TARGET: CMultiplayRules::vfunc36
+void CMultiplayRules::vfunc36(void *pOwner)
+{
+    if (g_1070ba2c != 0) {
+        char *p = (char *)pOwner;
+        if (*(unsigned int *)(p + 0x208c) & 0x440827)
+            m_b0c = 1;
+        *(unsigned int *)(p + 0x208c) = 0;
+        *(unsigned int *)(p + 0x2088) = 0;
+        *(unsigned int *)(p + 0x2090) = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101419d0 size=0x7b
 #include "CMultiplayRules.h"
 #include "CGlobalEntityList.h"
