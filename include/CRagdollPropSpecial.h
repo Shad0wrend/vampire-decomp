@@ -34,4 +34,5 @@ public:
 	void sub_10015424();	// think function
 	void sub_100ac4e0(void (CRagdollPropSpecial::*pfnThink)(), float flThinkTime, const char *szContext);	// "CBaseEntity::SetThink" (called through the stub at 0x10007fe5)
 	void sub_101578d0(char bValue);	// stub 0x10009a4d: takes the byte the man-bat kept at +0x6694 (called by CNPC_VManBat::sub_1038f660)
+	void vfunc230(int index, void *pEvent);	// slot 230 "VPhysicsCollision" override (plain member): the base implementation, then for the other entity of the collision event (entities at +0x68 of the event, picked by the index) that is not this entity: when this entity's physics object moves faster than 150 units/s, sub_10157ca0(other)
 };
