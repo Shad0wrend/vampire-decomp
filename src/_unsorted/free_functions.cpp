@@ -78116,6 +78116,24 @@ void CUnknown10270290::sub_10270290(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102707d0 size=0x39
+typedef int (__fastcall *CUnknownSlotFn)(void *pThis);
+
+int __stdcall sub_102707d0(void *pEntity)
+{
+    if (pEntity != 0) {
+        void *pObj = *(void **)((char *)pEntity + 0x98);
+        if (pObj != 0) {
+            int nState = ((CUnknownSlotFn)((void **)*(void **)pObj)[138])(pObj);
+            if (nState == 3) {
+                return ((CUnknownSlotFn)((void **)*(void **)pObj)[97])(pObj);
+            }
+        }
+    }
+    return (int)pEntity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10270aa0 size=0x2a
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
