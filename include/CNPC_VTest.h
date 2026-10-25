@@ -14,6 +14,7 @@ public:
 	void vfunc490();	// slot 490 "CNPC_VTest::Idle sound" (plain member): when slot 486 allows, emits one of the "character/npc/test/idle" sounds (channel 2, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position (a PAS attenuation filter built inline)
 	void vfunc488();	// slot 488 (plain member): emits one of the 0x10652188 sounds (channel 2, volume 0.5, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
 	void vfunc489();	// slot 489 (plain member): like vfunc488 with the 0x1065218c sounds (volume 1.0)
+	void vfunc492();	// slot 492 (plain member): like vfunc488 with the 0x106521a4 sounds (volume 1.0)
 	void vfunc493();	// slot 493 (plain member): like vfunc489 with the 0x106521a8 sounds
 	void vfunc494();	// slot 494 (plain member): like vfunc489 with the 0x106521ac sounds
 };
