@@ -700,6 +700,29 @@ bool CBasePlayer::sub_10168e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016aa00 size=0x31
+// TARGET: sub_1016aa00
+struct CPlayerAccum_1016aa00 {
+    char pad[0x22bc];
+    int m_n22bc;
+    void sub_1016aa00(int a, char b);
+};
+
+void CPlayerAccum_1016aa00::sub_1016aa00(int a, char b)
+{
+    if (a < 0 && !b) {
+        int v = m_n22bc;
+        if (v < 0) {
+            return;
+        }
+        if (-a > v) {
+            a = -v;
+        }
+    }
+    m_n22bc += a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016aa50 size=0x7a
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
