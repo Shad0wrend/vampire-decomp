@@ -83817,6 +83817,30 @@ bool CUnknown102dcf70::sub_102dcf70(CKeyValuesX *pKV, int *pCount, CUnknown102dc
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd0a0 size=0x3e
+#include "CUnknown102dd450.h"
+
+extern const char g_1060d4b8[];
+
+struct CUnk10248bb0 {
+    int sub_10248bb0(const char *name, int value);
+};
+
+struct CUnk102dd0a0 {
+    bool sub_102dd0a0(void *p);
+};
+
+bool CUnk102dd0a0::sub_102dd0a0(void *p)
+{
+    if (p == 0) {
+        return false;
+    }
+    int r = ((CUnk10248bb0 *)p)->sub_10248bb0(g_1060d4b8, ((CUnknown102dd450 *)this)->sub_102dd450());
+    *(bool *)((char *)this + 0x19c) = r != 0;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd450 size=0x9
 bool CUnknown102dd450::sub_102dd450()
 {
