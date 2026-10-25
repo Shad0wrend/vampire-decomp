@@ -53744,6 +53744,24 @@ void CTraceEntList::sub_101d3430(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d4ca0 size=0x3d
+#include <string.h>
+
+extern char g_105a0d74[];
+extern char g_105a0d6c[];
+
+// TARGET: sub_101d4ca0
+void sub_101d4ca0(unsigned int *pFlags, const char *pszName)
+{
+	if (strstr(pszName, g_105a0d74)) {
+		*pFlags |= 2;
+	}
+	if (strstr(pszName, g_105a0d6c)) {
+		*pFlags |= 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4f20 size=0xc
 void CUnknown101d4f20::sub_101d4f20(CUnknown101d4f20_Value *out)
 {
