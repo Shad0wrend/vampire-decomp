@@ -49,10 +49,6 @@ public:
 		m_pBuf60 = m_pBuf50;
 	}
 
-	int sub_10309650(CAI_PlaneSolverObj *pObj, float flYaw, float flScale, float flStep, int nIndex);	// probes one steering direction (yaw offset by nIndex steps of flStep): the probe point lies flScale along it from the owner's origin; when the trace (sub_10307ef0) is clear the result is handed to sub_10308540 and 1 is returned, else 0
-	char sub_10307ef0(void *pObjData, Vector *pEnd, int a, int mask, CAI_PlaneSolverTrace *pResult);	// stub 0x10003ddc, called directly
-	void sub_10308540(CAI_PlaneSolverObj *pObj, CAI_PlaneSolverTrace *pTrace, float flScale, float flStep, float flStepOrig);	// stub 0x10005687, called directly
-
 	int m_owner;			// 0x04
 	float m_f08;
 	float m_f0c;
@@ -84,4 +80,8 @@ class CAI_PlaneSolver : public CAI_PlaneSolverBase
 public:
 	CAI_PlaneSolver(int owner);
 	virtual void vfunc0();
+
+	int sub_10309650(CAI_PlaneSolverObj *pObj, float flYaw, float flScale, float flStep, int nIndex);	// probes one steering direction (yaw offset by nIndex steps of flStep): the probe point lies flScale along it from the owner's origin; when the trace (sub_10307ef0) is clear the result is handed to sub_10308540 and 1 is returned, else 0
+	char sub_10307ef0(void *pObjData, Vector *pEnd, int a, int mask, CAI_PlaneSolverTrace *pResult);	// stub 0x10003ddc, called directly
+	void sub_10308540(CAI_PlaneSolverObj *pObj, CAI_PlaneSolverTrace *pTrace, float flScale, float flStep, float flStepOrig);	// stub 0x10005687, called directly
 };
