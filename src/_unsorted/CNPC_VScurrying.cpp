@@ -28,6 +28,30 @@ int CNPC_VScurrying::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ac490 size=0x36
+#include "CNPC_VScurrying.h"
+
+struct CNPCVAnimalBase
+{
+    int sub_10012283(int act);
+};
+
+// TARGET: CNPC_VScurrying::vfunc440
+int CNPC_VScurrying::vfunc440(int act)
+{
+    switch (act) {
+    case 0x6b:
+        return 0x161;
+    case 0x156:
+        return 0x15e;
+    case 0x157:
+        return 0x15f;
+    default:
+        return ((CNPCVAnimalBase *)this)->sub_10012283(act);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ac500 size=0xcb
 #include "CNPC_VScurrying.h"
 #include "CEHandleGet.h"
