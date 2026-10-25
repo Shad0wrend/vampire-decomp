@@ -64,3 +64,20 @@ void CBaseViewModel::vfunc103()
 	m_flags268 &= ~0x40000;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1042ba90 size=0x3b
+#include "CBaseViewModel.h"
+#include "CBaseAnimating.h"
+
+// TARGET: CBaseViewModel::vfunc265
+void CBaseViewModel::vfunc265(int value)
+{
+	if (vfunc8())
+	{
+		*(int *)((char *)this + 0x6f0) = value;
+		*(int *)((char *)this + 0x740) = (*(int *)((char *)this + 0x740) + 1) & 7;
+		*(int *)((char *)this + 0x6f8) = 0;
+		((CBaseAnimating *)this)->sub_10090950();
+	}
+}
+// END FUNCTION
