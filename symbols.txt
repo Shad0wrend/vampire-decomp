@@ -3432,6 +3432,7 @@
 0x1000c919 func   ?sub_10063880@@YAXHHPBM000MMMHEEEEEE@Z sub_10063880
 0x1000c91e func   _item_p_occult_dodge item_p_occult_dodge
 0x1000c932 func   ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z CBaseEntity::vfunc231
+0x1000c93c func   ?sub_100fbaf0@CBaseEntityUnit100fbaf0@@QAEXM@Z CBaseEntityUnit100fbaf0::sub_100fbaf0
 0x1000c946 func   ?sub_10032e70@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_10032e70
 0x1000c94b func   ?sub_10349a20@UtlVec8@@QAEPAU1@HH@Z UtlVec8::sub_10349a20
 0x1000c95a func   ??0CCollisionEventRecord12@@QAE@XZ CCollisionEventRecord12::CCollisionEventRecord12

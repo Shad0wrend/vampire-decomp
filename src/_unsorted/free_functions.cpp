@@ -30945,6 +30945,28 @@ void CUnit100fb980::sub_100fb980(float flRate)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fbaf0 size=0x3a
+#include "CBaseEntity.h"
+
+extern char *g_1070b228;
+void sub_1000f88f();
+
+struct CBaseEntityUnit100fbaf0 : CBaseEntity
+{
+    void sub_100fbaf0(float flTime);
+};
+
+// TARGET: sub_100fbaf0
+void CBaseEntityUnit100fbaf0::sub_100fbaf0(float flTime)
+{
+    if (flTime >= 0.0f)
+    {
+        ((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000f88f, 0, 0);
+        *(float *)((char *)this + 0x17c) = flTime + *(float *)(g_1070b228 + 0xc);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbc20 size=0x19
 #include "CBaseEntity.h"
 
