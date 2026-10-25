@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10155210 size=0x7a
+#include "CRagdollProp.h"
+#include <stdlib.h>
+
+Vector CRagdollProp::vfunc275()
+{
+    Vector v;
+    v.x = rand() * 0.03662221f - 600.0f;
+    v.y = rand() * 0.03662221f - 600.0f;
+    v.z = rand() * 0.03662221f - 600.0f;
+    return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101552d0 size=0x1e
 #include "CRagdollProp.h"
 
