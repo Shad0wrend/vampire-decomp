@@ -108584,6 +108584,45 @@ tryB:
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bfc20 size=0x105
+#include "CNPC_VTzimisce.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+
+float sub_1000612c(Vector *pVec);
+float sub_100097e6(float a, float b);
+
+struct VTzView
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9)
+	CAI_NPC_V10(10) CAI_NPC_V10(11) CAI_NPC_V10(12) CAI_NPC_V10(13) CAI_NPC_V10(14) CAI_NPC_V10(15) CAI_NPC_V10(16) CAI_NPC_V10(17) CAI_NPC_V10(18) CAI_NPC_V10(19)
+	CAI_NPC_V10(20) CAI_NPC_V10(21)
+	virtual float *vfunc220();
+	float sub_100085f8();
+};
+
+// TARGET: CNPC_VTzimisce::sub_103bfc20
+char CNPC_VTzimisce::sub_103bfc20(CBaseEntity *pTarget, CBaseEntity *pEnt)
+{
+	if (pTarget && pEnt)
+	{
+		Vector vecDelta = *(Vector *)((VTzView *)pEnt)->vfunc220() - *(Vector *)((VTzView *)pTarget)->vfunc220();
+		float flDist = vecDelta.LengthSqr();
+		if (flDist < 1e4f || flDist > 2.25e4f)
+			return 0;
+		float flYaw = sub_1000612c(&vecDelta);
+		float flMine = ((VTzView *)pTarget)->sub_100085f8();
+		float flDiff = sub_100097e6(flYaw, flMine);
+		if (-30.0f > flDiff || flDiff > 30.0f)
+			return 0;
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c0860 size=0x4a
 struct V3 { float x, y, z; };
 #define D(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
