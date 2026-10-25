@@ -23,6 +23,7 @@ public:
 	CPropHacking *vfunc5(unsigned int flags);
 	void sub_1000befb();
 	CPropHacking *sub_10219d40();	// as in CKeepUpright (transplant)
+	void vfunc272();	// slot 272: clears the counter of every screen (the array at +0x98c, count at +0x998) and the dword at +0xc28, then CBaseVampireSkillEntity::vfunc272
 	void vfunc275();	// slot 275: sub_1021c890(the dword at +0x9e0), then stores the id of the global record named "access" in a global (-1 when there is none)
 	void sub_1021c890(int a);	// called through the stub at 0x10003aa8
 	void sub_1021a2f0(CRestore *pRestore);	// "CPropHacking::LoadGlobalEmailState": scope trace (entity name), when the byte at +0xa10 is set reads the 0x80 byte string at +0xa28 from pRestore under the entity name
