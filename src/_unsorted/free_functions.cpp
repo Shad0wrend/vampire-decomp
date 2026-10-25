@@ -86339,6 +86339,63 @@ void CUnknown102b5dc0::sub_102b5dc0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b6120 size=0x152
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+
+struct CTroikaHint6120
+{
+	char pad0000[0x5dc];
+	int m_nType;
+	void sub_102d1180(void *pNpc, Vector *pOut);
+	float sub_102d12e0();
+};
+
+struct CTroikaView6120
+{
+	char pad0000[0x5ddc];
+	CTroikaHint6120 *m_pHint;
+	char pad5de0[0x63fd - 0x5de0];
+	char m_b63fd;
+};
+
+struct CAI_BaseNPCTroikaUnit6120 : CAI_BaseNPCTroika
+{
+	bool sub_102b6120(Vector *pPos, char bFlag);
+};
+
+Vector *sub_101d2f40(Vector *pOut, float flYaw);
+
+bool CAI_BaseNPCTroikaUnit6120::sub_102b6120(Vector *pPos, char bFlag)
+{
+	CTroikaView6120 *pView = (CTroikaView6120 *)this;
+	CTroikaHint6120 *pHint = pView->m_pHint;
+	if (!pHint)
+	{
+		pPos->x = 0;
+		pPos->y = 0;
+		pPos->z = 0;
+		return false;
+	}
+	pHint->sub_102d1180(this, pPos);
+	if (pView->m_pHint->m_nType == 0x27d8)
+	{
+		Vector vecTemp;
+		Vector vecDir;
+		if (pView->m_b63fd)
+			vecDir = *sub_101d2f40(&vecTemp, pView->m_pHint->sub_102d12e0() - 45.0f);
+		else
+			vecDir = *sub_101d2f40(&vecTemp, pView->m_pHint->sub_102d12e0() + 45.0f);
+		if (bFlag)
+			vecDir = vecDir * (((CEntityVSlots *)this)->slot214()->y * 1.2f);
+		else
+			vecDir = vecDir * (((CEntityVSlots *)this)->slot214()->y * 1.4f);
+		*pPos = vecDir + *pPos;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b97a0 size=0x33
 void sub_1000b15e();
 void sub_10002914();
