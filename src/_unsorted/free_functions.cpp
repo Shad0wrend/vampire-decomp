@@ -40432,6 +40432,31 @@ bool CBaseCombatCharacter::sub_101671a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101672d0 size=0x3a
+#include "CUnknown101800e0.h"
+
+int __stdcall sub_10003977(int a);
+extern int *g_1070b228;
+extern float g_104454c0;
+
+struct CUnk101672d0
+{
+    bool sub_101672d0();
+};
+
+// TARGET: ?sub_101672d0@CUnk101672d0@@QAE_NXZ
+bool CUnk101672d0::sub_101672d0()
+{
+    if (sub_10003977(1)) {
+        float *pf = (float *)((char *)g_1070b228 + 0xc);
+        if (((CUnknown101800e0 *)this)->sub_101800e0(1) + g_104454c0 > *pf) {
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101681a0 size=0x125
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
