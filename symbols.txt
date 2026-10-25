@@ -679,6 +679,7 @@
 0x10003440 func   ?sub_102056d0@CUnknown102056d0@@QAEPAU1@XZ CUnknown102056d0::sub_102056d0
 0x1000345e func   ?sub_1035aaa0@@YAXXZ sub_1035aaa0
 0x10003463 func   ?sub_100b6510@@YAXPBDPAD@Z sub_100b6510
+0x1000346d func   ?vfunc0@CThrustController@@UAEHPAXHMAAVVector@@1@Z CThrustController::vfunc0
 0x10003472 func   ?sub_10090890@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_10090890
 0x10003486 func   ?vfunc103@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc103
 0x10003490 func   ?sub_10079e60@@YIPAVCUnknown10075aa0@@PAUSceneEventVec@@@Z sub_10079e60
