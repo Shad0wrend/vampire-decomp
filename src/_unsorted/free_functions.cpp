@@ -89700,6 +89700,29 @@ void __fastcall sub_102f8ef0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9090 size=0x33
+// TARGET: CUnknown102f9090::sub_102f9090
+struct CUnknown102f9090Pair
+{
+	int m_a;
+	int m_b;
+};
+
+struct CUnknown102f9090
+{
+	CUnknown102f9090Pair *m_pItems;
+
+	void sub_102f9090(int i, int j);
+};
+
+void CUnknown102f9090::sub_102f9090(int i, int j)
+{
+	CUnknown102f9090Pair t = m_pItems[i];
+	m_pItems[i] = m_pItems[j];
+	m_pItems[j] = t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f90e0 size=0x95
 #include "UtlVec8.h"
 
