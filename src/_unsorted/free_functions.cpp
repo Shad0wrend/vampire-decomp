@@ -41741,6 +41741,21 @@ void CBasePlayer::sub_1016fed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170cf0 size=0x34
+// TARGET: CBasePlayer::sub_10170cf0
+#include "CBasePlayer.h"
+
+void CBasePlayer::sub_10170cf0(unsigned int flags, char bSet)
+{
+	unsigned int *pFlags = (unsigned int *)((char *)this + 0x20f0);
+	if (bSet) {
+		*pFlags |= flags;
+	} else {
+		*pFlags &= ~flags;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170eb0 size=0xec
 #include "CUnknown10170eb0.h"
 
