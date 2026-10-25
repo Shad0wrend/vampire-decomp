@@ -90977,6 +90977,15 @@ void CBaseCombatCharacter::sub_1032aa40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032b960 size=0x3c
+#include "TempVector.h"
+
+Vector *sub_1032b960()
+{
+    return &AllocTempVector();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032d890 size=0xd5
 #include "CBaseCombatCharacter.h"
 extern "C" int _strcmpi(const char *, const char *);
