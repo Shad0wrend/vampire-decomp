@@ -39563,6 +39563,20 @@ float sub_1013d450(float target, float value, float speed)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d600 size=0x32
+float __cdecl sub_1013d600(float a, float b)
+{
+    float d = a - b;
+    if (d <= -180.0f) {
+        return d + 360.0f;
+    }
+    if (d > 180.0f) {
+        d = d - 360.0f;
+    }
+    return d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d6c0 size=0xa8
 extern float g_104454c4;
 
