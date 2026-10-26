@@ -82411,6 +82411,26 @@ int CLethalUnit::sub_10258290(int pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102584c0 size=0x2e
+#include <string.h>
+// TARGET: sub_102584c0
+extern const char *g_105c6388[6];
+
+int sub_102584c0(const char *psz)
+{
+    int i = 0;
+    do
+    {
+        if (_strcmpi(g_105c6388[i], psz) == 0)
+        {
+            return i;
+        }
+        i++;
+    } while (i < 6);
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258500 size=0xc
 extern const char *g_105c6388[];
 const char *sub_10258500(int index)
