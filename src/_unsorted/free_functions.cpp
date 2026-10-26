@@ -87864,6 +87864,20 @@ void CUnknown1028b190::sub_1028b190(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028b3e0 size=0x27
+// TARGET: sub_1028b3e0
+float __fastcall sub_1028b3e0(int *pThis)
+{
+	int sum = 0;
+	int *p = pThis + 1;
+	for (int i = 5; i != 0; i--) {
+		sum += *p;
+		p += 3;
+	}
+	return sum * 0.2f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028b420 size=0x2c
 struct CMinEnt1028b420 {
     int m_v;
