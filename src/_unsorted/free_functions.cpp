@@ -122396,6 +122396,31 @@ void sub_10412590(int unused, int src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104126a0 size=0x2f
+// TARGET: sub_104126a0
+extern int g_109d3078;
+extern int *g_109d306c;
+
+bool sub_104126a0(int value)
+{
+    int idx = 0;
+    if (g_109d3078 > 0)
+    {
+        do
+        {
+            if (g_109d306c[idx] == value)
+            {
+                goto found;
+            }
+            idx++;
+        } while (idx < g_109d3078);
+    }
+    idx = -1;
+found:
+    return idx >= 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104273f0 size=0x67
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
