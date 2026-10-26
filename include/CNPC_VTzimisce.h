@@ -68,6 +68,7 @@ public:
 	virtual void u4(); virtual void u5(); virtual void u6(); virtual void u7();
 	virtual bool vfunc486();
 	virtual void v487(); virtual void vfunc488(); virtual void v489();	// slot 488: logs "SPI_DIES" with the three convar values, then runs slot 487
+	void vfunc487();	// slot 487 (the same slot as v487, declared under its real name for the matched functions)
 	virtual void vfunc490();
 	VT_SLOTS100(w0)
 	VT_SLOTS10(w10)
