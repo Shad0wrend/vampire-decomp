@@ -774,6 +774,33 @@ void CBaseCombatWeapon::vfunc269(CBaseCombatWeapon *pOther, Vector vecDir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102583e0 size=0x26
+#include "CBaseEntity.h"
+
+struct CGlobalVarsView {
+    char m_pad0000[0xc];
+    float curtime;
+};
+
+extern CGlobalVarsView *g_1070b228;
+void sub_100065d2();
+
+// TARGET: sub_102583e0
+void __fastcall sub_102583e0(CBaseEntity *self)
+{
+    float *pf = (float *)((char *)self + 0x730);
+    int n = 2;
+    do {
+        n--;
+        *pf = *pf - g_1070b228->curtime;
+        pf++;
+    } while (n != 0);
+    void (CBaseEntity::*pBase)();
+    *(void **)&pBase = (void *)sub_100065d2;
+    (self->*pBase)();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258560 size=0xe
 // TARGET: CBaseCombatWeapon::vfunc291
 void CBaseCombatWeapon::vfunc291()
