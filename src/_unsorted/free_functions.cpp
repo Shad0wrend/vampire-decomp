@@ -80113,6 +80113,22 @@ void __fastcall sub_1024d2c0(void *self, int unusedEdx, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024d670 size=0xf4
+#include "VMatrix.h"
+Vector VMatrix::sub_1024d670() const
+{
+	Vector tmp, vecs[3];
+	tmp.sub_100f2f90(m[0][0], m[1][0], m[2][0]);
+	vecs[0] = tmp;
+	vecs[1].sub_1003e4b0(sub_1024d7b0(tmp));
+	vecs[2].sub_1003e4b0(sub_1024d7e0(tmp));
+	float b = vecs[1].Length();
+	float a = FastSqrt(vecs[0].y * vecs[0].y + vecs[0].x * vecs[0].x + vecs[0].z * vecs[0].z);
+	float c = vecs[2].Length();
+	return Vector(a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024dfb0 size=0x3b
 void sub_1024dfb0(float *m)
 {
