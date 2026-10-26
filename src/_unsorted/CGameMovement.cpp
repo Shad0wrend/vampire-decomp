@@ -97,6 +97,97 @@ float *CGameMovement::vfunc4(char flag, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e430 size=0xee
+#include "CGameMovement.h"
+
+struct CGlobalVarsMP
+{
+	char m_pad0000[0x14];
+	int m_nMaxClients;	// 0x14
+};
+extern CGlobalVarsMP *g_1070b228;
+
+struct StepVar
+{
+	virtual void a0();
+	virtual bool IsSet();	// slot 1
+	char m_pad0004[0x24];
+	float m_flValue;	// 0x28
+};
+extern StepVar *g_109ef094;
+
+struct StepSoundTable
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5();
+	virtual int GetStepSound(short id);	// slot 6
+};
+
+struct SoundEmitter
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual void EmitSound(void *pOrigin, int channel, int sound, float volume, int level, int flags, int pitch);	// slot 5
+	virtual void a6(); virtual void a7(); virtual void a8();
+	virtual StepSoundTable *GetStepSounds();	// slot 9
+};
+extern SoundEmitter *g_1071a278;
+
+struct RandomStream
+{
+	virtual void a0(); virtual void a1();
+	virtual int RandomInt(int lo, int hi);	// slot 2
+};
+extern RandomStream *g_1070b244;
+
+struct MoveData
+{
+	char m_pad0000[0x1ee4];
+	int m_bStepFlag;	// 0x1ee4
+};
+
+struct SurfaceData
+{
+	char m_pad0000[0x2c];
+	short m_nStepLeft;	// 0x2c
+	short m_nStepRight;	// 0x2e
+};
+
+struct MovementSlots
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual bool ShouldPlay(void *pSurface, float volume);	// slot 15
+};
+
+void CGameMovement::vfunc16(void *pSurface, float volume, char bForce)
+{
+	if (g_1070b228->m_nMaxClients > 1) {
+		if (g_109ef094->IsSet())
+			return;
+		if (g_109ef094->m_flValue == 0.0f)
+			return;
+	}
+	if (pSurface) {
+		StepSoundTable *pTable = g_1071a278->GetStepSounds();
+		if (!bForce && !((MovementSlots *)this)->ShouldPlay(pSurface, volume))
+			return;
+		MoveData *pMove = (MoveData *)m_pMove;
+		int bStep = pMove->m_bStepFlag;
+		short sound;
+		if (bStep)
+			sound = ((SurfaceData *)pSurface)->m_nStepLeft;
+		else
+			sound = ((SurfaceData *)pSurface)->m_nStepRight;
+		pMove->m_bStepFlag = bStep == 0;
+		if (sound != 0 && *(char *)m_pPlayer != 0) {
+			int snd = pTable->GetStepSound(sound);
+			SoundEmitter *pEmitter = g_1071a278;
+			pEmitter->EmitSound((char *)m_pPlayer + 0x70, 4, snd, volume, 0x4b, 0, g_1070b244->RandomInt(0, 10) + 0x5f);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011f520 size=0xe6
 #include "CGameMovement.h"
 
