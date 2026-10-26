@@ -34,6 +34,18 @@ void CPhysForce::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027740 size=0x27
+// TARGET: CPhysForce::vfunc130
+#include "CPhysForce.h"
+
+void CPhysForce::vfunc130(int a)
+{
+	CBaseEntity::vfunc130(a);
+	if (m_pController)
+		((CPhysForceController *)m_pController)->vfunc1(&m_Motion);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027780 size=0x92
 #include "CPhysForce.h"
 #include "CGlobalEntityList.h"

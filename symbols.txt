@@ -4118,6 +4118,7 @@
 0x1000d431 func   ?sub_1033b980@CUnknown1033b980@@QAEMXZ CUnknown1033b980::sub_1033b980
 0x1000d445 func   _item_w_avamp_blade item_w_avamp_blade
 0x1000d454 func   ?sub_1009ba60@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009ba60
+0x1000d459 func   ?vfunc130@CPhysForce@@UAEXH@Z CPhysForce::vfunc130
 0x1000d45e func   ?vfunc5@CEnvShooter@@QAEPAV1@I@Z CEnvShooter::vfunc5
 0x1000d468 func   ?vfunc84@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc84
 0x1000d46d func   ?sub_103a5da0@@YADXZ sub_103a5da0
