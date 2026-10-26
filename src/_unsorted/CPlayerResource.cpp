@@ -31,6 +31,17 @@ void CPlayerResource::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018a210 size=0x22
+extern char *g_1070b228;
+
+// TARGET: sub_1018a210
+void __fastcall sub_1018a210(void *pSelf)
+{
+    ((void (__fastcall *)(void *))(*(void ***)pSelf)[0x3c8 / 4])(pSelf);
+    *(float *)((char *)pSelf + 0x17c) = (float)(*(float *)(g_1070b228 + 0xc) + 0.1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018a250 size=0x129
 #include "CPlayerResource.h"
 
