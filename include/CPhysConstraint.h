@@ -34,6 +34,6 @@ public:
 	void sub_100121ac();	// destructor body
 	void sub_1002af90(int unused);	// re-enables collisions of the two attached physics objects (clears bit 1 of their game flags), and with spawnflag bit 0 (dword at +0x204) calls sub_1001474a(first, second); the constraint is the object at +0x450
 
-	char m_pad0004[0x458 - 4];
+	char m_pad0004[0x45c - 4];
 	const char *m_psz45c;	// 0x045c: a name passed to the sound system's slot 0 by vfunc104 (the empty string when it is null)
 };
