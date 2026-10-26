@@ -84900,6 +84900,30 @@ void CAI_BaseNPCTroika::sub_1028e8b0(CBaseEntity *pEnt, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e980 size=0xb0
+#include "CAI_BaseNPC.h"
+#include "CAI_Navigator.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+#define NAV (*(CAI_Navigator **)((char *)this + 0x5d34))
+
+// TARGET: CAI_BaseNPC::sub_1028e980
+void CAI_BaseNPC::sub_1028e980(CBaseEntity *pEnt)
+{
+	CEntityVSlots *pTarget = (CEntityVSlots *)pEnt;
+	if (pTarget && NAV->m_i18 != 3 && NAV->m_i18 != 1 && NAV->sub_102ee620())
+	{
+		CAI_Navigator *pNav = NAV;
+		if ((*pNav->sub_102ee140() - *pTarget->slot220()).Length() > 80.0f)
+		{
+			pNav = NAV;
+			pNav->sub_102ee220(pTarget->slot220());
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028eb30 size=0x66
 struct Vec3 { int x, y, z; };
 struct HandleObj {
