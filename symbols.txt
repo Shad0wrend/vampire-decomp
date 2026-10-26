@@ -242,6 +242,7 @@
 0x10001bd6 func   ?vfunc124@CAI_Hint@@UAEHXZ CAI_Hint::vfunc124
 0x10001bea func   ?sub_102d8bc0@CUnknown102d8bc0@@QAEMXZ CUnknown102d8bc0::sub_102d8bc0
 0x10001bf9 func   ?vfunc2@CTEExplosiveGunshotDecal@@UAEPAV1@I@Z CTEExplosiveGunshotDecal::vfunc2
+0x10001c12 func   ?sub_10171f10@CUnknown10171f10@@QAEXH@Z CUnknown10171f10::sub_10171f10
 0x10001c17 func   ?sub_101b6a50@UtlVec8@@QAEXH@Z UtlVec8::sub_101b6a50
 0x10001c1c func   ??0CWeaponRanged_FlameThrower@@QAE@XZ CWeaponRanged_FlameThrower::CWeaponRanged_FlameThrower
 0x10001c26 func   _npc_VSabbatLeader npc_VSabbatLeader

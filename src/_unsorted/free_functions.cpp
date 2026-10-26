@@ -45466,6 +45466,23 @@ void CBasePlayer::sub_10171da0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10171f10 size=0x27
+// TARGET: CUnknown10171f10::sub_10171f10
+#include "CUnknown10171f10.h"
+#include "CUnknown1017d630.h"
+#include "CBasePlayer.h"
+
+void CUnknown10171f10::sub_10171f10(int unk4)
+{
+	if (((CUnknown1017d630 *)this)->sub_1017d630())
+	{
+		sub_1017d6d0(1.0f);
+		return;
+	}
+	((CBasePlayer *)this)->sub_1017cef0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10172670 size=0x74
 #include "CEntityVSlots.h"
 
