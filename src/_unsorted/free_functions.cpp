@@ -85669,6 +85669,18 @@ void CUtlRBTreeBig::sub_1025c9d0(const void *insert, unsigned short &parent, boo
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025cb30 size=0x24
+#include <string.h>
+// TARGET: sub_1025cb30
+void sub_1025cb30(unsigned short *dst, unsigned short *src)
+{
+    if (dst) {
+        *dst = *src;
+        memcpy((char *)dst + 4, (char *)src + 4, 0x17cc6 * 4);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d2b0 size=0xbf
 #include "CUtlRBTreeBig.h"
 

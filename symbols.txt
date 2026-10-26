@@ -6850,6 +6850,7 @@
 0x10015109 func   ?sub_103ec130@@YAHXZ sub_103ec130
 0x10015113 func   ?sub_1036e400@CNPC_VChangBros@@QAEXXZ CNPC_VChangBros::sub_1036e400
 0x10015118 func   ?sub_10273e40@CUnknown10273e40@@QAEXXZ CUnknown10273e40::sub_10273e40
+0x10015127 func   ?sub_1025cb30@@YAXPAG0@Z sub_1025cb30
 0x1001512c func   ?sub_102f0e80@CAI_Navigator@@QAE_NPAD@Z CAI_Navigator::sub_102f0e80
 0x10015131 func   ?sub_100ecb40@CThreeVecs@@QAEXXZ CThreeVecs::sub_100ecb40
 0x10015145 func   ?sub_100eccf0@CIndexedTableView@@QAEHH@Z CIndexedTableView::sub_100eccf0
