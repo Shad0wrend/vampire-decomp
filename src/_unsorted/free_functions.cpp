@@ -27005,6 +27005,22 @@ CEventAction *CEventAction::sub_100ccf90(const char *pszTargetName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd260 size=0x24
+// TARGET: sub_100cd260
+float __fastcall sub_100cd260(char *pThis)
+{
+    float fMax = 0.0f;
+    char *p = *(char **)(pThis + 0x14);
+    while (p != 0)
+    {
+        if (fMax < *(float *)(p + 0x10))
+            fMax = *(float *)(p + 0x10);
+        p = *(char **)(p + 0x1c);
+    }
+    return fMax;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd640 size=0xc
 extern char g_106b8540[];
 char *CUnknown100cd640::sub_100cd640()
