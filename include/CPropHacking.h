@@ -49,6 +49,7 @@ public:
 	void sub_1021a5b0(CBaseEntity *pPlayer);	// slot 39 "CPropHacking::OnUse"-like (CBaseTerminal::vfunc39 override, ret 4): sub_1021a1c0, the terminal base (sub_102181a0), sub_1021a2f0, ThinkSet(0, 0, 0), sub_1021aca0, sub_1021b410, makes the player a camera cinematic watching this terminal (sub_10070470 "Hacking", then CBasePlayer::sub_1017cef0), then the feat list default (id 2) value for the player (CVFeatSet::Find(2)->sub_101e56e0)
 	void sub_102181a0(CBaseEntity *pPlayer);	// CBaseTerminal::vfunc39 (stub 0x1000f515), called directly
 	void sub_1021aca0();	// stub 0x10002fae
+	void sub_1021c040();	// stub 0x10014f5b / 0x1021c040: tail of the sub_1021c000 and sub_1021b9c0 paths (the screen refresh), called with this
 
 	char m_pad03e0[0x814 - 0x3e0];
 	int m_n0814;	// 0x814
@@ -76,7 +77,10 @@ public:
 	char m_b09ec;	// 0x9ec
 	char m_pad09ed[0x9f4 - 0x9ed];
 	int m_nSelected09f4;	// 0x9f4: the selected record
-	char m_pad09f8[0xa10 - 0x9f8];
+	char m_pad09f8[0xa04 - 0x9f8];
+	int m_n0a04;	// 0xa04: the count of the screen list (the lines of the selected record divided by 10 in sub_1021c000)
+	char m_pad0a08[0xa0c - 0xa08];
+	int m_n0a0c;	// 0xa0c: the current screen line, clamped to m_n0a04 / 10 by sub_1021c000
 	char m_bEmailState;	// 0xa10
 	char m_pad0a11[0xa14 - 0xa11];
 	CPropHackingScreenRecord *m_pScreenRecords0a14;	// 0xa14
