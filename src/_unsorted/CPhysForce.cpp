@@ -16,6 +16,24 @@ CPhysForce *CPhysForce::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027700 size=0x2a
+#include "CPhysForce.h"
+
+// TARGET: CPhysForce::vfunc103
+void CPhysForce::vfunc103()
+{
+    unsigned int flags = *(unsigned int *)((char *)this + 0x204);
+    if ((flags & 8) != 0) {
+        *(int *)((char *)this + 0x468) = 1;
+    } else {
+        *(int *)((char *)this + 0x468) = 3;
+    }
+    if ((flags & 1) != 0) {
+        sub_1000b5d2();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027780 size=0x92
 #include "CPhysForce.h"
 #include "CGlobalEntityList.h"

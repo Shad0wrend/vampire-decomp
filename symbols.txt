@@ -1401,6 +1401,7 @@
 0x100055ab func   ?sub_10172670@@YAXPAVCEntityVSlots@@H@Z sub_10172670
 0x100055ba func   ?sub_100c5b00@@YADPAUCBoneOwner@@HHPAVVector@@1@Z sub_100c5b00
 0x100055bf func   _env_physexplosion env_physexplosion
+0x100055c4 func   ?vfunc103@CPhysForce@@UAEXXZ CPhysForce::vfunc103
 0x100055c9 func   _info_node_bach_teleport_1 info_node_bach_teleport_1
 0x100055d8 func   _info_node_bach_teleport_2 info_node_bach_teleport_2
 0x100055e2 func   _info_node_bach_teleport_3 info_node_bach_teleport_3
