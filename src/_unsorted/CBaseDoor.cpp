@@ -235,3 +235,18 @@ void CBaseDoor::vfunc177(CBaseEntity *pOther)
 	m_items564[1].sub_100cd660(pOther, this, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100f1830 size=0x27
+// TARGET: CBaseDoor::vfunc179
+#include "CBaseDoor.h"
+
+void CBaseDoor::vfunc179()
+{
+	if (m_nState4f8 == 3)
+	{
+		m_items564[2].sub_100cd660(this, this, 0);
+		return;
+	}
+	m_items564[3].sub_100cd660(this, this, 0);
+}
+// END FUNCTION
