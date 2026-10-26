@@ -52573,6 +52573,25 @@ void CCineNPC::sub_101a7500(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7540 size=0x2a
+extern char *g_1070b228;
+
+struct CUnit101a7540 {
+    int sub_101a7540();
+};
+
+int CUnit101a7540::sub_101a7540()
+{
+    int nCount = *(int *)((char *)this + 0x5f70);
+    if (nCount <= 0) {
+        if (*(float *)(g_1070b228 + 0xc) >= *(float *)((char *)this + 0x5f74)) {
+            return 1;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7760 size=0x2e
 // TARGET: CCineNPC::sub_101a7760
 #include "CAI_BaseNPC.h"
