@@ -56909,6 +56909,48 @@ extern "C" CBaseEntity *trigger_wind()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101caea0 size=0x2c
+struct CVariantArg101caea0
+{
+	char pad0[8];
+	int m_value;	// 0x08
+	char pad1[0x18 - 0xc];
+	int m_type;	// 0x18
+};
+
+struct CUnkVirt101caea0
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual void vfunc5();
+	virtual void vfunc6();
+	virtual void vfunc7();
+};
+
+struct CUnk101caea0
+{
+	char pad0[0x5b0];
+	int m_unk5b0;
+	char pad1[0x5d8 - 0x5b4];
+	char m_b5d8;
+	char pad2[0x5dc - 0x5d9];
+	CUnkVirt101caea0 *m_p5dc;
+
+	void sub_101caea0(const CVariantArg101caea0 *d);
+};
+
+// TARGET: CUnk101caea0::sub_101caea0
+void CUnk101caea0::sub_101caea0(const CVariantArg101caea0 *d)
+{
+	m_unk5b0 = (d->m_type == 4) ? d->m_value : 0;
+	m_b5d8 = 1;
+	m_p5dc->vfunc7();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cb010 size=0x8b
 #include "CBaseEntity.h"
 
