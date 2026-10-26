@@ -2592,6 +2592,7 @@
 0x10008c97 func   ?vfunc103@CWeaponIGeneric@@UAEXXZ CWeaponIGeneric::vfunc103
 0x10008c9c func   ?vfunc563@CNPC_VMingXiao@@QAEXPAVCBaseEntity@@PAVVector@@PAH2@Z CNPC_VMingXiao::vfunc563
 0x10008ca1 func   ?sub_102da860@CUnknown102d9ed0@@QAEXPAVCBaseEntity@@PBVVector@@11@Z CUnknown102d9ed0::sub_102da860
+0x10008cb0 func   ?vfunc134@CLogicAuto@@QAEXXZ CLogicAuto::vfunc134
 0x10008cd3 func   ?vfunc369@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc369
 0x10008cd8 func   ?sub_100de610@@YGXH@Z sub_100de610
 0x10008cdd func   ?sub_103705e0@@YAXPAD@Z sub_103705e0
