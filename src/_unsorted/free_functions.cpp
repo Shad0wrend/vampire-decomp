@@ -62605,6 +62605,24 @@ char *CUnk101d84e0::sub_101d84e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d8690 size=0x22
+void __fastcall sub_10205380(void *p);
+
+struct CUnk101d8690
+{
+    void sub_1000cf4f(int a, int b, int c, int d, int e, int f);
+    CUnk101d8690 *sub_101d8690();
+};
+
+// TARGET: sub_101d8690
+CUnk101d8690 *CUnk101d8690::sub_101d8690()
+{
+    sub_10205380((char *)this + 0x1c);
+    sub_1000cf4f(0, 0, 0, 0, 0, 0);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d86d0 size=0x3f
 #include "CVDmg_t.h"
 
