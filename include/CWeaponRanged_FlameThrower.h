@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CWeaponRanged.h"
+#include "Vector.h"
 
 class CWeaponRanged_FlameThrower : public CWeaponRanged
 {
@@ -21,6 +22,10 @@ public:
 	void sub_103e2d10(const char *pszSample, int channel);	// emits the sample from the weapon (channel) to a CPASAttenuationFilter of the weapon's sound origin
 	void sub_103e3c40();	// debug overlay of the 50 flame particles (list at +0x91c, 0x3c bytes each): a coloured box of the particle's fade for type 1, a fading box for the other live types (stub 0x1001...: called by 0x103e32b0 when the debug bit 1 is set)
 	float sub_103e3900();	// the debug box size: 0 while the debug object (global 0x10940954) is on, else its float at +0x28 (stub 0x10005425)
+	void sub_103e32b0();	// the per-frame update (called by vfunc319 / vfunc320): steps the 50 flame particles by the time since the last call (+0x1524), drops burning records older than half a second, ends the particles of type 2 / 3 / 4 (type 3 hands a burning target to sub_103e3570), clears the owner's flag when no particle is alive, the debug overlay, and every 0.05 s the burn scan sub_103e3930
+	CBaseEntity *sub_103e3130();	// stub 0x1000e1d3: the entity of the handle at +0x1530, null when it does not resolve
+	void sub_103e3570(CBaseEntity *pEnt, Vector vecPos);	// stub 0x1001020d: sets pEnt alight (damage record, burning list entry at +0x1554)
+	void sub_103e3930();	// stub 0x1000397c: the burn scan over the particles' bounds (calls sub_103e3570 for the entities it finds)
 
 	char m_pad0004[0x91c - 4];
 	int m_aBuf[0x2ee];	// 0x91c, zeroed by the constructor
