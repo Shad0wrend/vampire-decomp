@@ -19132,6 +19132,27 @@ int CBaseAnimatingOverlay::sub_100991b0(int activity, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099320 size=0x28
+#include "CBaseAnimatingOverlay.h"
+#define VS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+// the slots 0 to 270 of the overlay's vtable, only the slot 271 is called
+struct CUnknown10099320VT
+{
+	VS10(a) VS10(b) VS10(c) VS10(d) VS10(e) VS10(f) VS10(g) VS10(h) VS10(i) VS10(j)
+	VS10(k) VS10(l) VS10(m) VS10(n) VS10(o) VS10(p) VS10(q) VS10(r) VS10(s) VS10(t)
+	VS10(u) VS10(v) VS10(w) VS10(x) VS10(y) VS10(z) VS10(A)
+	virtual void zz();
+	virtual int vfunc271(int a);
+};
+// TARGET: CBaseAnimatingOverlay::sub_10099320
+void CBaseAnimatingOverlay::sub_10099320(int a, float b, int c)
+{
+    int r = ((CUnknown10099320VT *)this)->vfunc271(a);
+    sub_100992d0(r, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099b00 size=0xe8
 #include "CUnknown10099b00.h"
 #include "CBaseEntity.h"
