@@ -68,6 +68,22 @@ void CNPC_VManBat::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038e880 size=0x2f
+#include "CNPC_VManBat.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VManBat::vfunc390
+int CNPC_VManBat::vfunc390(void *info)
+{
+	if (*(int *)((char *)this + 0x210) < 0x19) {
+		if (*(int *)(*(int *)((char *)info + 0x2c) + 0xa8) == 0) {
+			return 1;
+		}
+	}
+	return ((CNPC_VHuman *)this)->sub_10001b45(info);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038e8c0 size=0x9f
 #include "CNPC_VManBat.h"
 #include "CEHandleGet.h"
