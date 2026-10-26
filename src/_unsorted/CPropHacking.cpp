@@ -112,6 +112,19 @@ void CPropHacking::vfunc272()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021cb60 size=0x27
+#include "CPropHacking.h"
+
+// TARGET: CPropHacking::vfunc274
+void *CPropHacking::vfunc274()
+{
+    if (m_n09e0 != -2) {
+        return (char *)(m_pRecords09a0 + m_n09e0) + 0x30;
+    }
+    return (char *)this + 0x944;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d610 size=0x33
 #include "CPropHacking.h"
 
