@@ -92905,6 +92905,36 @@ bool CUnknown102dd450::sub_102dd450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd630 size=0x2b
+struct CUnkPair102dd630
+{
+	int m_key;
+	int m_val;
+};
+
+struct CUnk102dd630
+{
+	char m_pad0000[0x1a0];
+	int m_count1a0;
+	CUnkPair102dd630 m_aPairs1a4[1];
+
+	int *sub_102dd630(int key);
+};
+
+// TARGET: CUnk102dd630::sub_102dd630
+int *CUnk102dd630::sub_102dd630(int key)
+{
+	CUnkPair102dd630 *p = m_aPairs1a4;
+	CUnkPair102dd630 *pEnd = m_aPairs1a4 + m_count1a0;
+	for (; p < pEnd; p++)
+	{
+		if (key == p->m_key)
+			return &p->m_key;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd740 size=0x11e
 #include "CUnknown10248a50.h"
 #include <stdio.h>
