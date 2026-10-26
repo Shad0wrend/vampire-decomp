@@ -102562,6 +102562,27 @@ bool CUnknown10319f10::sub_10319f10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10319f30 size=0x23
+int __cdecl sub_1031a0e0(int a, int b);
+
+struct CUnknown10319fe0 {
+	void sub_10319fe0(int a);
+};
+
+struct CUnknown10319f30 {
+	int m_v0;
+	bool sub_10319f30(int a);
+};
+
+// TARGET: CUnknown10319f30::sub_10319f30
+bool CUnknown10319f30::sub_10319f30(int a)
+{
+	sub_1031a0e0(a, m_v0);
+	((CUnknown10319fe0 *)this)->sub_10319fe0(a);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319fe0 size=0x9
 struct CUnknown10319fe0 { int a; void sub_10319fe0(int v); };
 // TARGET: CUnknown10319fe0::sub_10319fe0
