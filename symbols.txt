@@ -4865,6 +4865,7 @@
 0x1000f312 func   ?vfunc13@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHH@Z CTempEntsSystem::vfunc13
 0x1000f317 func   ?sub_1037c750@@YADXZ sub_1037c750
 0x1000f31c func   ?vfunc461@CNPC_VCamera@@UAEHXZ CNPC_VCamera::vfunc461
+0x1000f321 func   ?vfunc41@CBaseTerminal@@QAEXPAX@Z CBaseTerminal::vfunc41
 0x1000f326 func   ?sub_101cfd80@@YA?AUTVec@@XZ sub_101cfd80
 0x1000f330 func   ?sub_1017c600@CBasePlayerUnit@@QAEXPAVCBaseEntity@@DHHH@Z CBasePlayerUnit::sub_1017c600
 0x1000f33f func   ?sub_1022d090@UtlMem@@QAEXXZ UtlMem::sub_1022d090
