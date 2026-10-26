@@ -4411,6 +4411,7 @@
 0x1000dc51 func   ?vfunc241@CPhysThruster@@UAEXPAVIPhysicsObject@@PAVVector@@1@Z CPhysThruster::vfunc241
 0x1000dc56 func   ?sub_1011f6e0@CUnknown1011f6e0@@QAEXXZ CUnknown1011f6e0::sub_1011f6e0
 0x1000dc79 func   ?sub_101f6e70@CUnknown101f6c50@@QAEXHPAUCTraitStatBlock@@PAH@Z CUnknown101f6c50::sub_101f6e70
+0x1000dc7e func   ?sub_10050a40@@YAXXZ sub_10050a40
 0x1000dc88 func   ?vfunc461@CNPC_VMingXiao@@QAEHXZ CNPC_VMingXiao::vfunc461
 0x1000dc92 func   ?sub_103fdc50@@YAHXZ sub_103fdc50
 0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43

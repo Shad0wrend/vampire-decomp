@@ -6699,6 +6699,30 @@ const char *CUnknown10050860::sub_10050860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050a40 size=0x22
+struct CUnknown10050a40Node {
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void s3();
+	virtual void s4();
+	virtual void vfunc5();
+	void *sub_10005ed9();
+};
+
+void *sub_1000b6e5();
+
+// TARGET: sub_10050a40
+void sub_10050a40()
+{
+	CUnknown10050a40Node *p = (CUnknown10050a40Node *)sub_1000b6e5();
+	while (p != 0) {
+		p->vfunc5();
+		p = (CUnknown10050a40Node *)p->sub_10005ed9();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050b90 size=0xa9
 #include "CDisciplineParticle.h"
 
