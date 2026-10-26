@@ -1,6 +1,24 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101150b0 size=0x2a
+#include "CFuncMonitor.h"
+
+extern char g_106b8540[];
+void sub_10115660(CFuncMonitor *p);
+
+// TARGET: CFuncMonitor::vfunc113
+void CFuncMonitor::vfunc113()
+{
+    ((CBaseEntity *)this)->CBaseEntity::vfunc113();
+    const char *szName = *(const char **)((char *)this + 0x20c);
+    if (!szName)
+        szName = g_106b8540;
+    sub_101150f0(szName);
+    sub_10115660(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101151c0 size=0x7f
 #include "CFuncMonitor.h"
 struct Sub { void *pEnt; unsigned int serial; };
