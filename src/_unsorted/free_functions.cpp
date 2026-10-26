@@ -125498,6 +125498,22 @@ bool sub_1042c4e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c680 size=0x2a
+void sub_1042c740(void *pfn);
+void sub_1001330e();
+extern char *g_109eed64;
+
+// TARGET: sub_1042c680
+void sub_1042c680()
+{
+	sub_1042c740((void *)sub_1001330e);
+	if (g_109eed64) {
+		delete g_109eed64;
+		g_109eed64 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d650 size=0x9
 struct CUnknown1042d650 { int a; CUnknown1042d650* sub_1042d650(); };
 // TARGET: CUnknown1042d650::sub_1042d650
