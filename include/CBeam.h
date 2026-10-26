@@ -3,6 +3,8 @@
 #pragma once
 #include "CGlobalEntityList.h"
 
+struct CGameTrace;
+
 class CBeam : public CBaseEntity
 {
 public:
@@ -23,10 +25,11 @@ public:
 	void sub_100bafc0(CBaseEntity *pEnt);	// called through the stub at 0x10002568
 	void sub_100bb030(CBaseEntity *pEnt);	// called through the stub at 0x1000cdc4
 	void sub_100bb0b0(const float *pPos);	// "CBeam::SetAbsStartPos"-like: without a (live) move parent at +0x25c hands pPos to slot 62; else brings the world position into the parent's space first (recalculating the absolute transform when dirty)
+	void sub_100bbef0(CGameTrace *pTrace);	// "CBeam::DoDamage"-like: refreshes the beam (sub_100bbbf0); when the trace hit something (fraction below 1, or started / stuck in a solid) and its entity takes damage, applies a damage record of (time since +0x454) * the rate at +0x458 (at least 1) along the trace direction; then stamps the current time at +0x454
 
 	char m_pad03e0[0x454 - 0x3e0];
 	float m_flStartTime;	// 0x454: stamped with the current time by CEnvBeam::Spawn
-	char m_pad0458[4];
+	float m_flDamageRate;	// 0x458
 	int m_nNumBeamEnts;	// 0x45c
 	char m_pad0460[4];
 	unsigned int m_nBeamType;	// 0x464, low nibble is the end type
