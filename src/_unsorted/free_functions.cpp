@@ -15554,6 +15554,23 @@ void sub_10088890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100889b0 size=0x2a
+int sub_10012a08(int a);
+extern void (*g_109f3630)(const char *fmt, ...);
+extern const char g_1054c058[];
+extern const char g_1054c030[];
+
+// TARGET: sub_100889b0
+void sub_100889b0()
+{
+	if (sub_10012a08(8)) {
+		g_109f3630(g_1054c058);
+		return;
+	}
+	g_109f3630(g_1054c030);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088a80 size=0x10
 extern bool g_10924fbb;
 
