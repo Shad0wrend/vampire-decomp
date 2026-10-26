@@ -93374,6 +93374,22 @@ void *__fastcall sub_102daea0(COwnerView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db3e0 size=0x28
+#include "CPropHaunted.h"
+
+struct CUnknown102db3e0 {
+    char pad_0000[0x468];
+    void sub_102db3e0(CBaseEntity *pOther, int i);
+};
+
+// TARGET: CUnknown102db3e0::sub_102db3e0
+void CUnknown102db3e0::sub_102db3e0(CBaseEntity *pOther, int i)
+{
+    if (i >= 1 && i <= 8)
+        ((CPropHauntedSub *)((char *)this + 0x468 + i * 0x18))->sub_100cd660(pOther, (CBaseEntity *)this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db420 size=0xa
 void CUnknown102db420::sub_102db420(int unused)
 {
