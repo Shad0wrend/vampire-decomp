@@ -16,6 +16,41 @@ CFireSmoke *CFireSmoke::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057510 size=0x2b
+struct IRend10057510 {
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+    virtual void v4();
+    virtual void v5();
+    virtual void v6();
+    virtual void v7();
+    virtual void v8();
+    virtual void v9();
+    virtual void v10();
+    virtual void v11();
+    virtual void v12();
+    virtual int vfunc13(const char *name, int flags);
+};
+extern IRend10057510 *g_1070b22c;
+extern char g_1053fae4[];
+
+struct CFireSmokeUnit10057510 {
+    char pad[0x460];
+    int m_i460;
+    void sub_1000961a(int a);
+    void sub_10057510(int a);
+};
+
+// TARGET: sub_10057510
+void CFireSmokeUnit10057510::sub_10057510(int a)
+{
+    m_i460 = g_1070b22c->vfunc13(g_1053fae4, 0);
+    sub_1000961a(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057570 size=0x13
 struct IEnginePrecache {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
