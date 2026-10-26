@@ -62249,6 +62249,24 @@ void CUnknown101e0f00::sub_101e2da0(void *pChar, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e33c0 size=0x2d
+#include "CVTriggerCasting_t.h"
+
+struct CVTriggerCastingUnit
+{
+	void sub_1000ae07(int a, int b, int c, int d);
+};
+
+void __stdcall sub_1000dba2(int a, int b);
+
+// TARGET: CVTriggerCasting_t::sub_101e33c0
+void CVTriggerCasting_t::sub_101e33c0(int a, int b, int c, int d)
+{
+	sub_1000dba2(a, c);
+	((CVTriggerCastingUnit *)this)->sub_1000ae07(a, b, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3400 size=0x8e
 #include "CUnknown101e0f00.h"
 
