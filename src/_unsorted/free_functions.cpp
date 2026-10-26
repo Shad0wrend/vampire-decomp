@@ -112896,6 +112896,29 @@ void sub_103dbd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dbe70 size=0x2c
+struct CIntObj103dbe70 {
+    virtual void vfunc0();
+    virtual int *vfunc1();
+};
+struct CIntHolder103dbe70 {
+    int m_v;
+    CIntHolder103dbe70 *sub_103dbe70(CIntObj103dbe70 *pObj);
+};
+
+// TARGET: sub_103dbe70
+CIntHolder103dbe70 *CIntHolder103dbe70::sub_103dbe70(CIntObj103dbe70 *pObj)
+{
+    m_v = -1;
+    if (pObj) {
+        m_v = *pObj->vfunc1();
+        return this;
+    }
+    m_v = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dbeb0 size=0x40
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int size);
 struct UtlVec8 {
