@@ -90520,6 +90520,55 @@ void CAI_InterestingPlaceConverstation::sub_102db740(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dbfb0 size=0x164
+#include "CUnknown102dca60.h"
+#include "CUnknown102dc2c0.h"
+#include "CEntityVSlots.h"
+
+struct CGlobalVarsView { char m_pad[0xc]; float curtime; };
+extern CGlobalVarsView *g_1070b228;
+
+CEntityVSlots *sub_101cd9e0(int n);
+
+// TARGET: CUnknown102dca60::sub_102dbfb0
+void CUnknown102dca60::sub_102dbfb0()
+{
+	CEntityVSlots *pPlayer = sub_101cd9e0(1);
+	if (!pPlayer)
+	{
+		m_flNextThink = g_1070b228->curtime + 0.1;
+		return;
+	}
+	if (sub_102dc8f0())
+	{
+		Vector vecTemp;
+		if ((*pPlayer->slot193(&vecTemp) - *((CEntityVSlots *)this)->slot220()).Length() < m_flRadius464)
+		{
+			m_OutA.sub_100cd660(pPlayer, this, 0.0f);
+			sub_102dc490();
+			((CUnknown102dc2c0 *)this)->sub_102dc2c0();
+			sub_102dc3e0();
+			return;
+		}
+		if (m_flField460 != 0.0f && m_flField460 < g_1070b228->curtime)
+		{
+			m_OutB.sub_100cd660(this, this, 0.0f);
+			sub_102dc6a0(0);
+		}
+		if (m_bField45d)
+			sub_102dc6a0(1);
+		if (m_flNextTime < g_1070b228->curtime)
+			sub_102dca60();
+		m_flNextThink = g_1070b228->curtime + 0.1;
+	}
+	else
+	{
+		sub_102dc490();
+		sub_102dc3e0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dc2c0 size=0x68
 #include "CUnknown102dc2c0.h"
 
