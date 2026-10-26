@@ -45,6 +45,35 @@ void CNPC_VHuman::vfunc563(CEntityVSlots *pEnt, Vector *pVec, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103850a0 size=0xd2
+#include "CNPC_VHuman.h"
+#include "CCineNPC.h"
+#include "CEHandleGet.h"
+
+struct CNPCStateView {
+	char m_pad0000[0x5cc0];
+	int m_nState;	// 0x5cc0
+	int m_nIdealState;	// 0x5cc4
+};
+
+int CNPC_VHuman::vfunc482(char bDisregardState, int interruptLevel)
+{
+	int result = 1;
+	if (EHandle_Get(m_h5d74)) {
+		CCineNPC *pCine = (CCineNPC *)EHandle_Get(m_h5d74);
+		if (!pCine->sub_101a8ac0())
+			return 0;
+		result = 2;
+	}
+	if (!((CEntityVSlots *)this)->slot158())
+		return 0;
+	CNPCStateView *pView = (CNPCStateView *)this;
+	if (!bDisregardState && pView->m_nState != 0 && pView->m_nState != 1 && pView->m_nIdealState != 1 && (pView->m_nState != 3 || interruptLevel < 1))
+		return (pView->m_nState == 4) ? result : 0;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103858b0 size=0x108
 #include "CNPC_VHuman.h"
 
