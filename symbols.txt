@@ -5488,6 +5488,7 @@
 0x100111da func   ?sub_100c9250@CBaseButton@@QAEXPAVCBaseEntity@@0HM@Z CBaseButton::sub_100c9250
 0x100111e4 func   ?sub_102489c0@CNamedNode_102489c0@@QAEPAU1@XZ CNamedNode_102489c0::sub_102489c0
 0x100111f3 func   ?vfunc149@CBasePlayer@@QAEXHH@Z CBasePlayer::vfunc149
+0x10011207 func   ?vfunc103@CFuncAreaPortalWindow@@UAEXXZ CFuncAreaPortalWindow::vfunc103
 0x1001120c func   ?sub_10109990@CFire@@QAEPAV1@XZ CFire::sub_10109990
 0x10011211 func   ?sub_100a8060@CBaseEntity@@QAEXXZ CBaseEntity::sub_100a8060
 0x1001121b func   ?vfunc241@CAI_StandoffGoal@@QAEXH@Z CAI_StandoffGoal::vfunc241

@@ -16,6 +16,20 @@ CFuncAreaPortalWindow *CFuncAreaPortalWindow::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010d0d0 size=0x24
+#include "CFuncAreaPortalWindow.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: CFuncAreaPortalWindow::vfunc103
+void CFuncAreaPortalWindow::vfunc103()
+{
+    vfunc104();
+    g_1070b22c->vfunc102(*(int *)((char *)this + 0x450), 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010d110 size=0xce
 #include "CFuncAreaPortalWindow.h"
 
