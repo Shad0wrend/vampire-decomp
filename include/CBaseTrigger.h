@@ -11,6 +11,7 @@ public:
 	CBaseTrigger() : m_i564(-1) {}	// inlined into the constructors of every trigger class (the game's allocation size is 0x598)
 	void vfunc243(unsigned int flag);
 	virtual int vfunc124();	// slot 124 (debug text overlays): adds the line "State: Enabled" / "State: Disabled" when the debug bit 0 of the byte at +0x224 is set; returns the next free line
+	void vfunc174(CBaseEntity *pOther);	// slot 174 "CBaseTrigger::StartTouch"-like: when PassesTriggerFilters(pOther) the output at +0x568 fires (activator pOther) through stub 0x10010794
 	void vfunc176(CBaseEntity *pOther);	// "CBaseTrigger::EndTouch" (the base's slot 176, called directly by the trigger classes): the entity's EndTouch
 	void sub_101c4dd0();	// disables the trigger: scope traces "CBaseEntity::IsSolidFlagSet" / "CBaseEntity::RemoveSolidFlags" (entity name); when bit 3 of the solid flags (collision property at +0x270, flags at +0x2b4) is set removes it (SetSolidFlags) and calls PhysicsTouchTriggers(0); then sets the disabled byte at +0x55c
 	void sub_101c4bf0();	// enables the trigger: like sub_101c4dd0 but adds the solid flag when it is clear ("CBaseEntity::AddSolidFlags") and clears the byte at +0x55c
