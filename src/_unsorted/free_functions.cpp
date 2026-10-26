@@ -63424,6 +63424,22 @@ int CUnknown101d5bd0::sub_101e1440(const char *name, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1610 size=0x27
+// TARGET: CStatusFlagList::sub_101e1610
+#include "CStatusFlagList.h"
+
+unsigned int CStatusFlagList::sub_101e1610(int nKey)
+{
+	unsigned int nFlags = 0;
+	for (int i = 0; i < m_nCount; i++)
+	{
+		if (m_ppEntries[i]->m_nKey == nKey)
+			nFlags |= m_ppEntries[i]->m_nFlags;
+	}
+	return nFlags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1650 size=0xa0
 #include "CBaseCombatCharacter.h"
 #include "CUnknown101e1650.h"
