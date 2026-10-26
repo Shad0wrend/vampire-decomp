@@ -38133,6 +38133,27 @@ void sub_10119750(const char *pFormat, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119900 size=0x21
+struct CUnkVT10119900
+{
+    virtual void vf0();
+    virtual int *vf1();
+};
+
+extern int g_1070b070;
+
+// TARGET: sub_10119900
+void sub_10119900(CUnkVT10119900 *p)
+{
+    if (p) {
+        int *pValue = p->vf1();
+        g_1070b070 = *pValue;
+        return;
+    }
+    g_1070b070 = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a430 size=0x8
 extern char g_1070b264;
 void sub_1011a430() { g_1070b264 = 1; }
