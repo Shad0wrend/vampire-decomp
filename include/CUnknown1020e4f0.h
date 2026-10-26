@@ -9,7 +9,7 @@ class CUnknown1020e4f0
 public:
 	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
 	virtual int vfunc4(int a);	// slot 4 (+0x10): also reached with four arguments (name, delay, entity, previous result), see sub_1020e4f0
-	char m_pad0008[0x450 - 8];
+	char m_pad0004[0x450 - 4];
 	const char *m_pName450;
 	char m_pad0454[0x470 - 0x454];
 	float m_f470;
