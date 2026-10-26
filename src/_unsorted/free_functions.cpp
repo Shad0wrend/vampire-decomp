@@ -40804,6 +40804,23 @@ float sub_10137300(const float *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137c30 size=0x28
+#include <math.h>
+extern float g_1070c8ac[];
+// TARGET: sub_10137c30
+void sub_10137c30()
+{
+    int i = 0;
+    do
+    {
+        double x = (double)i;
+        i++;
+        x = sin(x * 0.02454369260617026);
+        g_1070c8ac[i] = (float)x;
+    } while (i < 0x100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137c70 size=0x36
 // TARGET: sub_10137c70
 #include "Vector.h"
