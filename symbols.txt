@@ -6581,6 +6581,7 @@
 0x10013f39 func   ?sub_10377c20@@YADXZ sub_10377c20
 0x10013f3e func   ?sub_101f41b0@CUnknown101f40f0@@QAEXXZ CUnknown101f40f0::sub_101f41b0
 0x10013f52 func   ?sub_100d2990@@YAXXZ sub_100d2990
+0x10013f57 func   ?sub_10072d20@CUnk10072d20@@QAEXXZ CUnk10072d20::sub_10072d20
 0x10013f66 func   ?sub_103b5bc0@@YADXZ sub_103b5bc0
 0x10013f7f func   ?sub_103300c0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_103300c0
 0x10013f89 func   ?sub_1005b850@@YAXHHHHHHHHHHHHHHHHHH@Z sub_1005b850

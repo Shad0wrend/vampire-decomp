@@ -11180,6 +11180,24 @@ CUnknown10072f10 *CUnknown10072f10::sub_10072bf0(const CUnknown10072f10 *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10072d20 size=0x21
+struct CUnk10072d20
+{
+    void sub_10072d20();
+};
+
+// TARGET: sub_10072d20
+void CUnk10072d20::sub_10072d20()
+{
+    *((char *)this + 0x178) = 1;
+    *((char *)this + 0x14) = 0;
+    *((char *)this + 0x94) = 0;
+    *((char *)this + 0x114) = 0;
+    *((char *)this + 0x13c) = 0;
+    *((char *)this) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072d60 size=0x16
 struct S10072d60 {
 	char m_pad[0x14];
