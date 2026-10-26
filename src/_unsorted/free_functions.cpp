@@ -12668,6 +12668,19 @@ unsigned int CTableFields10077ac0::sub_10077ac0(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077af0 size=0x21
+struct CUnk10077af0
+{
+    char *sub_10077af0(int a, int b);
+};
+
+// TARGET: sub_10077af0
+char *CUnk10077af0::sub_10077af0(int a, int b)
+{
+    return (char *)(*(int *)((char *)this + (a * 5 + 0xb9) * 4) + b * 0x88);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077b30 size=0x72
 #include "CUnknown10077b30.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);

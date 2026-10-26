@@ -6411,6 +6411,7 @@
 0x10013877 func   ?sub_103e5db0@@YAHXZ sub_103e5db0
 0x1001387c func   ?sub_103268e0@CBaseCombatCharacter@@QAEDPBMH@Z CBaseCombatCharacter::sub_103268e0
 0x10013881 func   ?sub_101bb650@CFloatUnit@@QAEXMM@Z CFloatUnit::sub_101bb650
+0x10013886 func   ?sub_10077af0@CUnk10077af0@@QAEPADHH@Z CUnk10077af0::sub_10077af0
 0x10013890 func   ?sub_1015eee0@@YIXPAD@Z sub_1015eee0
 0x10013895 func   ?sub_103e2840@@YAHXZ sub_103e2840
 0x1001389a func   _info_node info_node
