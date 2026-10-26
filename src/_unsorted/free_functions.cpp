@@ -15081,6 +15081,75 @@ void CSceneEntity::sub_100821f0(int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10082520 size=0x135
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+
+struct CSceneActors82520
+{
+	int sub_1007a2a0();	// stub 0x1000bbfe
+};
+
+struct CSceneView82520
+{
+	char m_pad0000[0x498];
+	char m_bPlaying;	// 0x498
+	char m_pad0499[0x4bc - 0x499];
+	CSceneActors82520 *m_pActors;	// 0x4bc
+	CBaseEntity *sub_100823c0(int index);	// stub 0x10010294
+};
+
+#define NV(n) virtual void n();
+#define NV10(p) NV(p##0) NV(p##1) NV(p##2) NV(p##3) NV(p##4) NV(p##5) NV(p##6) NV(p##7) NV(p##8) NV(p##9)
+#define NV100(p) NV10(p##0) NV10(p##1) NV10(p##2) NV10(p##3) NV10(p##4) NV10(p##5) NV10(p##6) NV10(p##7) NV10(p##8) NV10(p##9)
+
+struct CNpcView82520
+{
+	NV100(a) NV10(b0) NV10(b1) NV10(b2) NV10(b3) NV10(b4) NV10(b5)
+	NV(c60) NV(c61) NV(c62) NV(c63) NV(c64) NV(c65) NV(c66)
+	virtual int slot167();
+	NV100(d) NV100(e) NV10(f0) NV10(f1) NV10(f2) NV(g0) NV(g1) NV(g2) NV(g3) NV(g4) NV(g5)
+	virtual int slot404(int player);
+	NV10(h0) NV10(h1) NV10(h2) NV10(h3) NV10(h4) NV(i0) NV(i1) NV(i2) NV(i3) NV(i4) NV(i5) NV(i6) NV(i7) NV(i8)
+	virtual int slot464();
+	char m_pad[0xfe8 - 4 * 465];
+};
+
+struct CEntView82520
+{
+	char m_pad0000[0x98];
+	CNpcView82520 *m_pNpc;	// 0x98
+};
+
+int sub_101cd9e0(int index);
+int __fastcall sub_100b39c0(char *pEnt);
+
+// TARGET: sub_10082520
+char sub_10082520(CBaseEntity *pEnt, CSceneView82520 *pScene)
+{
+	if (pEnt && !pEnt->sub_100a52a0() && !(sub_100b39c0((char *)pEnt) & 0x20)) {
+		if (pScene && pScene->m_pActors && pScene->m_bPlaying) {
+			for (int i = 0; i < pScene->m_pActors->sub_1007a2a0(); i++) {
+				if (pScene->sub_100823c0(i) == pEnt)
+					return 0;
+			}
+		}
+		int player = sub_101cd9e0(1);
+		CNpcView82520 *pNpc = ((CEntView82520 *)pEnt)->m_pNpc;
+		if (pNpc && !EHandle_Get(*(unsigned int *)((char *)pNpc + 0xfe8)) && pNpc->slot464() != 4) {
+			if (pNpc->slot167() == player) {
+				if (pNpc->slot464() == 2 || pNpc->slot464() == 3 || pNpc->slot464() == 0xb || pNpc->slot464() == 0xe)
+					return 1;
+			}
+			int r = pNpc->slot404(player);
+			if (r == 1)
+				return r;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100828d0 size=0xcc
 #define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
