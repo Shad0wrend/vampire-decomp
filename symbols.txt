@@ -891,6 +891,7 @@
 0x10003d9b func   ?sub_10335a70@CBaseCombatCharacter@@QAE_NPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10335a70
 0x10003da0 func   _item_g_keyring item_g_keyring
 0x10003da5 func   ?vfunc390@CNPC_VMingXiaoTentacle@@QAEXH@Z CNPC_VMingXiaoTentacle::vfunc390
+0x10003db9 func   ?RemoveAll@?$CUtlVector@V?$CUtlVector@Ugroundlink_t@@V?$CUtlMemory@Ugroundlink_t@@@@@@V?$CUtlMemory@V?$CUtlVector@Ugroundlink_t@@V?$CUtlMemory@Ugroundlink_t@@@@@@@@@@QAEXXZ CUtlVector<CUtlVector<groundlink_t,CUtlMemory<groundlink_t> >,CUtlMemory<CUtlVector<groundlink_t,CUtlMemory<groundlink_t> > > >::RemoveAll
 0x10003dbe func   ?vfunc5@CNPC_VPedestrian@@QAEPAV1@I@Z CNPC_VPedestrian::vfunc5
 0x10003dc3 func   ?vfunc134@CEnvFireSource@@QAEXXZ CEnvFireSource::vfunc134
 0x10003dc8 func   ?sub_10088890@@YAXXZ sub_10088890
