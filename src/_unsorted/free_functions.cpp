@@ -5692,6 +5692,25 @@ void PQ::sub_10046050(const Elem &src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100462d0 size=0x2b
+struct CSix100462d0 {
+    int v[6];
+    CSix100462d0 *sub_100462d0(CSix100462d0 *pOther);
+};
+
+// TARGET: sub_100462d0
+CSix100462d0 *CSix100462d0::sub_100462d0(CSix100462d0 *pOther)
+{
+    v[0] = pOther->v[0];
+    v[1] = pOther->v[1];
+    v[2] = pOther->v[2];
+    v[3] = pOther->v[3];
+    v[4] = pOther->v[4];
+    v[5] = pOther->v[5];
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10046310 size=0x51
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 

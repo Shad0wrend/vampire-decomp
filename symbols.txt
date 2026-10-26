@@ -1370,6 +1370,7 @@
 0x1000544d func   ?sub_100b0df0@@YAXXZ sub_100b0df0
 0x10005457 func   ?sub_1035e030@CNPC_VAndreiBlood@@QAE_NPBVVector@@M@Z CNPC_VAndreiBlood::sub_1035e030
 0x10005475 func   ?sub_100f7d50@@YGPAVCBaseEntity@@PBDABVVector@@M@Z sub_100f7d50
+0x1000547a func   ?sub_100462d0@CSix100462d0@@QAEPAU1@PAU1@@Z CSix100462d0::sub_100462d0
 0x100054a2 func   ?vfunc5@CFunc_Dust@@QAEPAV1@I@Z CFunc_Dust::vfunc5
 0x100054cf func   ?vfunc20@CServerGameDLL@@UAEXPAX@Z CServerGameDLL::vfunc20
 0x100054d9 func   ?sub_10096760@CBaseAnimating@@QAEHXZ CBaseAnimating::sub_10096760
