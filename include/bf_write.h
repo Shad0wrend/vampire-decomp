@@ -28,7 +28,7 @@ public:
 	bf_write *sub_100bc490(const char *pDebugName, void *pData, int nBytes, int nBits);	// constructor with a debug name: sets the name and assert-on-overflow, then StartWriting(pData, nBytes, 0, nBits); returns this
 	bf_write *sub_100bc4d0(void *pData, int nBytes, int nBits);	// constructor without a name: assert-on-overflow set, then StartWriting(pData, nBytes, 0, nBits); returns this
 	bf_write *sub_100bdf10(void *pData, int nBytes, int nBits);	// same as sub_100bc4d0 (another copy: StartWriting at sub_100bdf90)
-	void sub_100bdf90(void *pData, int iStartBit, int nBytes, int nBits);	// StartWriting: the copy at 0x100bdf90 (called from sub_100bdf10)
+	void sub_100bdf90(void *pData, int nBytes, int iStartBit, int nBits);	// StartWriting: the copy at 0x100bdf90 (called from sub_100bdf10)
 
 	void WriteOneBit(int nValue)	// the byte-wise bit write of the 2003 SDK
 	{
