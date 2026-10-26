@@ -4422,6 +4422,7 @@
 0x1000e9d0 func   ?sub_1022b590@CSoundScheme@@QAEXM@Z CSoundScheme::sub_1022b590
 0x1000e9e9 func   _window_pane window_pane
 0x1000e9fd func   ?sub_102e2710@@YIXPAUCOwner@@@Z sub_102e2710
+0x1000ea07 func   ?sub_102f9000@UtlVec8@@QAEXH@Z UtlVec8::sub_102f9000
 0x1000ea11 func   ?sub_1009f200@CBaseEntity@@QAEPBDXZ CBaseEntity::sub_1009f200
 0x1000ea16 func   ?sub_10264000@CUtlVector56@@QAEHHPBX@Z CUtlVector56::sub_10264000
 0x1000ea20 func   ?sub_1028b0f0@@YGHH@Z sub_1028b0f0

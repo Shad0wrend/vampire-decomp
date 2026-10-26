@@ -94850,6 +94850,19 @@ void __fastcall sub_102f8ef0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9000 size=0x2e
+#include "UtlVec8.h"
+
+// TARGET: UtlVec8::sub_102f9000
+void UtlVec8::sub_102f9000(int elem)
+{
+	if (m_Size > 0) {
+		memmove(m_pMemory + elem * 8, m_pMemory + (m_Size - 1) * 8, 8);
+		m_Size--;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9090 size=0x33
 // TARGET: CUnknown102f9090::sub_102f9090
 struct CUnknown102f9090Pair
