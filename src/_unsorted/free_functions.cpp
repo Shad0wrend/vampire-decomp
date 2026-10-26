@@ -51324,6 +51324,31 @@ extern "C" CBaseEntity *keyframe_rope()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019dea0 size=0x2c
+struct CUnit1019dea0 {
+    char pad[0x1b1];
+    char m_b1b1;
+    char pad2[0x454 - 0x1b2];
+    unsigned int m_flags454;
+    void sub_1019dea0(bool on);
+};
+
+// TARGET: sub_1019dea0
+void CUnit1019dea0::sub_1019dea0(bool on)
+{
+    unsigned int flags = m_flags454;
+    if (on) {
+        flags = flags | 0x80;
+    } else {
+        flags = flags & 0xffffff7f;
+    }
+    if (flags != m_flags454) {
+        m_flags454 = flags;
+        m_b1b1 = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019dee0 size=0x96
 #include "CRopeKeyframe.h"
 
