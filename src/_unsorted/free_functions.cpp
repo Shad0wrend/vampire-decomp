@@ -123374,6 +123374,26 @@ unsigned int sub_10428fd0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10429200 size=0x2e
+#include <string.h>
+// TARGET: sub_10429200
+extern const char *g_106ac3a0[17];
+
+int sub_10429200(const char *psz)
+{
+    int i = 0;
+    do
+    {
+        if (_strcmpi(psz, g_106ac3a0[i]) == 0)
+        {
+            return i;
+        }
+        i++;
+    } while (i < 17);
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10429240 size=0xc
 extern const char *g_106ac3a0[];
 const char *sub_10429240(int index)
