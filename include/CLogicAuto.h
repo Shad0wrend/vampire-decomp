@@ -8,4 +8,5 @@ public:
 	float m_flTime;	// 0x17c
 
 	void sub_10130d10();
+	void vfunc134();
 };
