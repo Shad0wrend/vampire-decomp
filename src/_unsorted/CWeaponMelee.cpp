@@ -71,6 +71,27 @@ void CWeaponMelee::vfunc339()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ea510 size=0x75
+#include "CWeaponMelee.h"
+struct Ent { bool sub_10336920(); };
+
+bool CWeaponMelee::vfunc315()
+{
+    Ent *pEnt = (Ent *)sub_100011f4();
+    if (!pEnt)
+        return false;
+    char *pszName;
+    if (!pEnt->sub_10336920())
+        pszName = vfunc272();
+    else
+        pszName = vfunc273();
+    if (*pszName)
+        vfunc105(pszName);
+    char r = sub_1000c37e(vfunc342(0), vfunc343(), 0xb4, vfunc344());
+    return r ? true : false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ea5b0 size=0xd5
 #include "CWeaponMelee.h"
 
