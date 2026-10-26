@@ -61,6 +61,7 @@ class CNPC_VNewscaster
 {
 public:
 	virtual int vfunc404(int unused);
+	void vfunc104();	// slot 104: calls CAI_BaseNPCTroika::vfunc104, then plays the two news sound pairs (sub_101d0f10, stub 0x1000bb04)
 	virtual int vfunc124();	// slot 124 "CNPC_VNewscaster::DrawDebugTextOverlays": scope trace (entity name), the Troika version's line count, plus sub_103a0ff0 of it while bit 0 of the byte at +0x224 is set (the position of this virtual is not its real slot)
 	int sub_1029d4e0();	// CAI_BaseNPCTroika::vfunc124, called directly (stub 0x10006f64)
 	int sub_103a0ff0(int nLines);	// the extra lines of the newscaster's own text (stub 0x10003bbb)
