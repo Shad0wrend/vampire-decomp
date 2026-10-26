@@ -101257,6 +101257,16 @@ bool CUnknown10312580::sub_10312360(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312540 size=0x24
+float __stdcall sub_100091ec(int a);
+
+// TARGET: sub_10312540
+int __stdcall sub_10312540(int a)
+{
+    return sub_100091ec(a) != -1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312580 size=0x106
 #include "CUnknown10312580.h"
 extern const char *g_109f075c;
