@@ -4935,6 +4935,7 @@
 0x1000f295 func   ?sub_10233c80@@YAXXZ sub_10233c80
 0x1000f29f func   ?sub_1042fe30@@YAII@Z sub_1042fe30
 0x1000f2a9 func   ?vfunc546@CNPC_VCop@@QAEHH@Z CNPC_VCop::vfunc546
+0x1000f2b3 func   ?vfunc379@CAI_BaseNPCTroika@@UAE_NPAVCBaseEntity@@HHHHHH@Z CAI_BaseNPCTroika::vfunc379
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
 0x1000f2cc func   ?sub_100ea0d0@@YI_NPAUHandlePairHolder@@HPADH@Z sub_100ea0d0
 0x1000f2d1 func   ?vfunc241@CTriggerWind@@UAEXH@Z CTriggerWind::vfunc241

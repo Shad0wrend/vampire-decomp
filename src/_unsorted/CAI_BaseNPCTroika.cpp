@@ -1679,6 +1679,72 @@ float CAI_BaseNPCTroika::vfunc603(float *pCur, float *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5c00 size=0x131
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "CTakeDamageInfo.h"
+#include "CCineNPC.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+extern "C" __declspec(dllimport) int RandomInt(int minVal, int maxVal);
+
+struct CTroikaScriptHandle
+{
+	unsigned int m_Index;
+	CCineNPC *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		CGlobalEntityList_Slot *e = &g_10566458->m_Slots[m_Index & 0x1fff];
+		return e->m_Serial == (int)(m_Index >> 13) ? (CCineNPC *)e->m_pEntity : 0;
+	}
+};
+
+inline bool IsHandleValid(unsigned int index)
+{
+	if (index == 0xffffffff)
+		return false;
+	CGlobalEntityList_Slot *e = &g_10566458->m_Slots[index & 0x1fff];
+	return e->m_Serial == (int)(index >> 13) && e->m_pEntity != 0;
+}
+
+bool CAI_BaseNPCTroika::vfunc379(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g)
+{
+	int i = 0;
+	if (m_nDamageRecords > 0)
+	{
+		do
+		{
+			CTakeDamageInfo *pInfo = &m_pDamageRecords[i];
+			pInfo->m_pInflictor = this;
+			pInfo->m_pAttacker = (CTakeDamageAttacker *)this;
+			if (RandomInt(0, 1))
+				pInfo->sub_101c2a10(4);
+			else
+				pInfo->sub_101c2a10(5);
+			pEnt->sub_100a1250(pInfo);
+			i++;
+		} while (i < m_nDamageRecords);
+	}
+	if (i <= 0 && sub_10005bfa(pEnt, b, c, d, e, f, g))
+	{
+		if (sub_102c1170())
+			sub_102c0bb0();
+		CTroikaScriptHandle *h = (CTroikaScriptHandle *)&m_h5d74;
+		if (IsHandleValid(m_h5d74))
+		{
+			h->Get()->sub_101a8c30();
+			if (*(int *)((char *)this + 0x5cc0) != *(int *)((char *)this + 0x5cc4))
+				sub_1026e340(*(int *)((char *)this + 0x5cc4));
+		}
+		sub_10280d30();
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b6b50 size=0xaa
 #include "CAI_BaseNPCTroika.h"
 
