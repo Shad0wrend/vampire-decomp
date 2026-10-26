@@ -25,6 +25,7 @@ public:
 	void sub_100bd840(float f);	// "WriteBitNormal": a sign bit (f <= -1/2047), then |(int)(f * 2047)| clamped to 2047 in 11 bits (WriteOneBit and WriteUBitLong inlined)
 	void sub_100bc460();	// default constructor body (stub 0x1000cd24): data 0, sizes 0, bits -1, current bit 0, no overflow, assert on overflow, no name
 	void sub_100bc510(void *pData, int nBytes, int iStartBit, int nBits);	// "StartWriting" (stub 0x10001a28): nBits -1 means nBytes * 8
+	bf_write *sub_100bc490(const char *pDebugName, void *pData, int nBytes, int nBits);	// constructor with a debug name: sets the name and assert-on-overflow, then StartWriting(pData, nBytes, 0, nBits); returns this
 
 	void WriteOneBit(int nValue)	// the byte-wise bit write of the 2003 SDK
 	{
