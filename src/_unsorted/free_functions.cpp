@@ -56931,6 +56931,17 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101bd960(void **p) { void **q = p - 1; ((Fn *)*q)[0](q); }
 // END FUNCTION
 
+// FUNCTION: 0x101bdde0 size=0x21
+// TARGET: CUtlVector4::sub_101bdde0
+#include "CUtlVector4.h"
+void CUtlVector4::sub_101bdde0(int a, int b)
+{
+    int tmp = m_pMemory[a];
+    m_pMemory[a] = m_pMemory[b];
+    m_pMemory[b] = tmp;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bde20 size=0x34
 #include "UtlVec8.h"
 void UtlVec8::sub_101bde20(int elem, int num)
