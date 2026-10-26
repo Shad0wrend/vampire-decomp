@@ -4978,6 +4978,7 @@
 0x1001082f func   ?vfunc0@CTraitDependencyDataDescSaveDataOps@@UAEXPAUCTraitDependencyField@@PAVCSave@@@Z CTraitDependencyDataDescSaveDataOps::vfunc0
 0x10010834 func   ?vfunc475@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc475
 0x10010839 func   ?sub_10349a00@@YIXPAH@Z sub_10349a00
+0x1001083e func   ?sub_1008bf00@@YIPAVCBaseEntity@@PAV1@@Z sub_1008bf00
 0x10010848 func   ?vfunc5@CTerrainMorph@@QAEPAV1@I@Z CTerrainMorph::vfunc5
 0x1001084d func   ?sub_100b47e0@@YIXPAH@Z sub_100b47e0
 0x10010857 func   ?vfunc341@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::vfunc341

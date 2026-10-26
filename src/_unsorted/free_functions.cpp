@@ -16047,6 +16047,17 @@ bool CBaseAnimating::sub_1008be20(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008bf00 size=0xa8
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+
+CBaseEntity *__fastcall sub_1008bf00(CBaseEntity *pThis)
+{
+	ScopeTrace trace("CBaseAnimating::GetIgnoreCollisionEntity", pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+	return (CBaseEntity *)EHandle_Get(*(unsigned int *)((char *)pThis + 0x55c));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008cfc0 size=0xed
 #include "CBaseAnimating.h"
 #include <stdio.h>
