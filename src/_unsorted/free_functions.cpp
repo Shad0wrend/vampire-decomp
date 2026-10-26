@@ -65350,6 +65350,20 @@ int __fastcall sub_101f0910(CUnknownStat101f0910 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0b80 size=0x2a
+#include "CUnknown101f0b80.h"
+
+int *sub_102038e0(int *pValue, int a, const char *pszName);
+extern const char g_10546214[];
+
+// TARGET: CUnknown101f0b80::sub_101f0b80
+void CUnknown101f0b80::sub_101f0b80(int a, int b)
+{
+    m_n08 = b;
+    m_n04 = *sub_102038e0(&b, a, g_10546214);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0bc0 size=0xb2
 #include "CUnknown101f0960.h"
 #include "CUnknown101f0bc0.h"
