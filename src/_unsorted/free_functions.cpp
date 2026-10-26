@@ -86890,6 +86890,22 @@ const char * __stdcall sub_1027f1e0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027f5d0 size=0x28
+#include <stdarg.h>
+
+extern "C" int __cdecl _vsnprintf(char *buffer, size_t count, const char *format, va_list argptr);
+
+// TARGET: sub_1027f5d0
+char *sub_1027f5d0(char *pBuffer, const char *pszFormat, ...)
+{
+    va_list args;
+    va_start(args, pszFormat);
+    _vsnprintf(pBuffer, 0xff, pszFormat, args);
+    pBuffer[0xff] = 0;
+    return pBuffer;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027f610 size=0x12
 void __fastcall sub_1027f610(unsigned int *p)
 {
