@@ -27496,6 +27496,32 @@ int CEventQueue::sub_100cfda0(IEQRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1250 size=0x27
+struct SListNode_t {
+    int unk0;
+    SListNode_t *pNext;
+};
+
+struct SListOwner_t {
+    int unk0;
+    SListNode_t *pHead;
+};
+
+void sub_100d1210(SListNode_t *p);
+
+void __fastcall sub_100d1250(SListOwner_t *pThis)
+{
+    SListNode_t *p = pThis->pHead;
+    while (p)
+    {
+        SListNode_t *pNext = p->pNext;
+        sub_100d1210(p);
+        p = pNext;
+    }
+    pThis->pHead = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d13d0 size=0xab
 #include "CUnknown106b89bc.h"
 #include "CGlobalEntityList.h"
