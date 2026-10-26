@@ -92895,6 +92895,51 @@ void CUnknown102f09a0::sub_102f09a0(CAI_Waypoint *pWaypoint, const float *pPosit
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f0e80 size=0x104
+#include "CAI_Navigator.h"
+#include "CHolderInner24.h"
+#include "CEntityVSlots.h"
+#include "CUnknown10936c84.h"
+
+extern CUnknown10936c84 g_10936c84;
+extern float g_1060fcd8;
+
+bool CAI_Navigator::sub_102f0e80(char *pbDone)
+{
+	CHolderInner24 *pRoute = (CHolderInner24 *)m_p30;
+	CHolderInner24_Node *pNode = pRoute->m_pNode;
+	CHolderInner24_Node *pNext = pNode->m_pNext;
+	if (pNext) {
+		if (sub_102f0e00(&g_1060fcd8, pbDone))
+			return true;
+		if (*pbDone == 0 && sub_102f05d0((const Vector *)pNext)) {
+			int bFlag = m_i18;
+			const float *pOrigin = (const float *)((CEntityVSlots *)m_pOuter)->slot220();
+			const float *pPos = (const float *)pNext;
+			float dx = pPos[0] - pOrigin[0];
+			float dy = pPos[1] - *(pOrigin + 1);
+			float flDist;
+			if (bFlag == 0) {
+				float t1 = dx * dx; float t0 = t1 + dy * dy; flDist = FastSqrt(t0);
+			} else {
+				float dz = pPos[2] - pOrigin[2];
+				flDist = FastSqrt(dz * dz + dx * dx + dy * dy);
+			}
+			if (flDist < g_1060fcd8 && sub_102f06e0(pNext, pbDone)) {
+				if (pNode->m_pNext)
+					pNode->m_pNext->m_pPrev = pNode->m_pPrev;
+				if (pNode->m_pPrev)
+					pNode->m_pPrev->m_pNext = pNode->m_pNext;
+				g_10936c84.sub_1013dce0((CChainNodeStub *)pNode);
+				((CHolderInner24 *)m_p30)->sub_1030b4d0(pNext, 0);
+				return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f13d0 size=0xeb
 #include "CAI_Navigator.h"
 #include "CUnknown1027d990.h"
