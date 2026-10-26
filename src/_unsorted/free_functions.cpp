@@ -30340,6 +30340,23 @@ void CDialog::sub_100e13d0(unsigned char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1580 size=0x26
+struct CUnknown100e1580View {
+    int sub_1000aeed();
+    int sub_100e1580(CUnknown100e1580View *p);
+};
+
+// TARGET: CUnknown100e1580View::sub_100e1580
+int CUnknown100e1580View::sub_100e1580(CUnknown100e1580View *p)
+{
+    if (sub_1000aeed() == -1) {
+        return 0;
+    }
+    int i = sub_1000aeed();
+    return ((int *)p)[i + 6];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e15c0 size=0x82
 #include "CDialog.h"
 #include "CBaseCombatCharacter.h"
