@@ -82991,6 +82991,27 @@ CUnknown102496a0 *CUnknown102496a0::sub_102496a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102496d0 size=0x25
+struct CUnknown102496d0 {
+    int m_0;
+    int m_4;
+    int m_8;
+    int m_c;
+    float m_10;
+    void sub_102496d0(float flValue);
+};
+
+// TARGET: CUnknown102496d0::sub_102496d0
+void CUnknown102496d0::sub_102496d0(float flValue)
+{
+    m_0 = 0;
+    m_4 = 0;
+    m_8 = 0;
+    *(float *)&m_c = flValue;
+    m_10 = flValue * flValue * 0.5f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249960 size=0xb
 unsigned int __fastcall sub_10249960(char **self)
 {
