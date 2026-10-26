@@ -61693,6 +61693,29 @@ void CUnknown101e0f00Src::sub_101dd3c0(const char *pszLabel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dd480 size=0x2b
+#include "CUnknown101dd480.h"
+
+struct CUnknown101dd480Sub
+{
+    void sub_1001232d();
+    void sub_10002036();
+};
+
+// TARGET: CUnknown101dd480::sub_101dd480
+CUnknown101dd480 *CUnknown101dd480::sub_101dd480()
+{
+    ((CUnknown101dd480Sub *)((char *)this + 0x10))->sub_1001232d();
+    ((CUnknown101dd480Sub *)((char *)this + 0x20))->sub_10002036();
+    m_nHead = -1;
+    m_n04 = 0;
+    m_n08 = 0;
+    m_b0c = 0;
+    m_b0d = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd910 size=0xde
 #include "CUnknown101dd910.h"
 #include "ScopeTrace.h"
