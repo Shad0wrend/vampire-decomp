@@ -20,6 +20,6 @@ public:
 	virtual void vfunc0();
 	virtual void vfunc1(SaveRestoreFieldInfo_t *fieldInfo, CRestore *pRestore);	// restore: reads the count and each node into the list the field points to, dropping the nodes whose entity is gone
 	virtual void vfunc2();
-	virtual void vfunc3();
+	virtual void vfunc3(CAI_MemoryNode **ppHead);	// destructor: frees every node of the list the field points to (sub_102df1b0 each), clearing the head
 	virtual void vfunc4();
 };
