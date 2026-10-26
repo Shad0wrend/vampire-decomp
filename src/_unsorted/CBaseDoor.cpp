@@ -79,6 +79,24 @@ void CBaseDoor::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ef5f0 size=0x21
+struct CBaseDoorX
+{
+    void sub_10013534(bool bFlag);
+    void sub_100ef5f0(bool bFlag);
+};
+
+// TARGET: sub_100ef5f0
+void CBaseDoorX::sub_100ef5f0(bool bFlag)
+{
+    sub_10013534(bFlag);
+    if (bFlag) {
+        void (__fastcall *pfn)(void *) = (void (__fastcall *)(void *))(*(void ***)this)[0x3e8 / 4];
+        pfn(this);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ef630 size=0x8a
 #include "CBaseDoor.h"
 
