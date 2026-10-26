@@ -45702,6 +45702,90 @@ CBaseEntity *CBasePlayer::sub_10161ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164040 size=0x135
+#include "CBasePlayer.h"
+
+class SDisciplineTable
+{
+public:
+	int sub_101e12f0(const char *pszName);
+};
+extern SDisciplineTable g_10739a4c;
+
+struct SPlayerPurgeView
+{
+	char pad0[0x65c];
+	char b65c;
+	char pad1[0xff0 - 0x65d];
+	int nActivity;
+	char pad2[0x14a0 - 0xff4];
+	int nBloodPool;
+	char pad3[0x1cb0 - 0x14a4];
+	char b1cb0;
+	char b1cb1;
+	char pad4[2];
+	int n1cb4;
+};
+
+void CBasePlayer::sub_10164040(int type, int *pActivity, int *pOut)
+{
+	SPlayerPurgeView *v = (SPlayerPurgeView *)this;
+	int act;
+	if (type != 0xc)
+		return;
+	act = v->nActivity;
+	if (v->b65c) {
+		if (act == 0x1065) {
+			act = 0x1066;
+			goto done;
+		}
+		if (act == 0x1066) {
+			if (v->b1cb1) {
+				act = 0x1067;
+				goto done;
+			}
+			int nPool = v->nBloodPool;
+			if (nPool > 0) {
+				int nDrain = 2;
+				if (nPool < 2)
+					nDrain = 1;
+				v->nBloodPool = nPool - nDrain;
+				while (nDrain > 0) {
+					sub_10338df0(1);
+					nDrain--;
+				}
+			}
+			if (v->nBloodPool <= 0) {
+				static int s_iPurge = g_10739a4c.sub_101e12f0("Thaumaturgy_Purge");
+				if (!sub_1033d2f0(s_iPurge))
+					v->b1cb1 = 1;
+			}
+			act = 0x1066;
+			goto done;
+		}
+		if (act == 0x1067) {
+			act = 1;
+			v->b1cb0 = 0;
+			v->nActivity = act;
+			goto done;
+		}
+	} else {
+		if (v->n1cb4 == 0xc)
+			goto setflag;
+	}
+	act = 0x1065;
+	v->b1cb1 = 0;
+	v->nActivity = act;
+setflag:
+	v->b1cb0 = 1;
+done:
+	if (pActivity)
+		*pActivity = act;
+	if (pOut)
+		*pOut = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101664d0 size=0x13
 struct CVirtSlots94 {
     virtual void vfunc0();
