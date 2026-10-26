@@ -20,10 +20,19 @@ struct CPhysForceMotion
 	CPhysForceVec3 m_vEnd2;	// 0x2c
 };
 
+// The controller object whose pointer sits at +0x450 of CPhysForce (class not known): its slot 1 takes the motion record.
+class CPhysForceController
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1(CPhysForceMotion *pMotion);
+};
+
 class CPhysForce : public CBaseEntity
 {
 public:
 	CPhysForce *vfunc5(unsigned int flags);	// scalar deleting destructor
+	void vfunc130(int a);	// slot 130: CBaseEntity::vfunc130(a), then the controller's slot 1 with the motion record
 
 	void sub_10014470();	// destructor body
 	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
