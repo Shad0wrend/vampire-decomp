@@ -43,6 +43,7 @@ public:
 	virtual int vfunc344();
 
 	CWeaponIGeneric *vfunc5(unsigned int flags);
+	int vfunc328();	// slot 328: the constant 0xbc, after a strcmpi of the name at +0x11c (or the empty string) with "item_g_lockpick" (result ignored)
 	void sub_10013a57();
 	void sub_100138fe();
 	void vfunc321();
