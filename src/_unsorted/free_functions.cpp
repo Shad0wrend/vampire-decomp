@@ -96300,6 +96300,22 @@ Vector CUnknown102f46d0::sub_102f46d0(void *pObj, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f47b0 size=0x29
+struct CUnknown102f47b0 {
+    int m_nCount;
+    char **m_ppElements;
+    float sub_102f47b0(int i);
+};
+
+// TARGET: CUnknown102f47b0::sub_102f47b0
+float CUnknown102f47b0::sub_102f47b0(int i)
+{
+    if (m_ppElements != 0 && i >= 0 && i <= m_nCount)
+        return *(float *)(m_ppElements[i] + 0x6c);
+    return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f47f0 size=0x81
 #include "CUnknown102f47f0.h"
 extern void (*g_109f3630)(const char *, ...);
