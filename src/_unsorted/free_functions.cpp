@@ -126886,6 +126886,25 @@ CUnknown10412470Ent *sub_10412470(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10412550 size=0x24
+extern int g_1094afe0;
+unsigned short *sub_10412470(int a);
+
+struct CUnknown10249fc0Callee {
+    int sub_10249fc0(unsigned short handle);
+};
+
+// TARGET: sub_10412550
+int sub_10412550(int a)
+{
+    unsigned short *p = sub_10412470(a);
+    if (p != 0) {
+        return ((CUnknown10249fc0Callee *)&g_1094afe0)->sub_10249fc0(p[2]);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10412590 size=0xcb
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(int);
