@@ -57979,6 +57979,24 @@ void sub_101d0ec0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d1240 size=0x2e
+// TARGET: sub_101d1240
+#include <stdarg.h>
+
+extern "C" __declspec(dllimport) int __cdecl Q_vsnprintf(char *pBuffer, int nSize, const char *pFormat, va_list args);
+__declspec(dllimport) void __cdecl Warning(const char *pFormat, ...);
+
+char g_1072d088[0x400];
+
+void sub_101d1240(const char *pszFormat, ...) {
+    va_list args;
+    va_start(args, pszFormat);
+    Q_vsnprintf(g_1072d088, 0x400, pszFormat, args);
+    va_end(args);
+    Warning("%s", g_1072d088);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d1280 size=0xe0
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
