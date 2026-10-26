@@ -11,4 +11,5 @@ public:
 	char *m_pElements;
 
 	void sub_101851a0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements
+	void sub_10185260(int elem, int num);	// "CUtlVector::ShiftElementsRight" (stub 0x100046ec): moves the elements from elem up by num
 };
