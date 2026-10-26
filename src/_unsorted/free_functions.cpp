@@ -98973,6 +98973,28 @@ int CAI_Senses::sub_10310290(int radius)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310440 size=0x29
+int sub_1001160d(int i);
+
+struct CUnknown10310440 {
+    char pad_0000[0x1c];
+    int m_nIndex;
+    int sub_10310440(int *pOut);
+};
+
+// TARGET: CUnknown10310440::sub_10310440
+int CUnknown10310440::sub_10310440(int *pOut)
+{
+    int i = m_nIndex;
+    if (i == -1) {
+        *pOut = 0;
+        return 0;
+    }
+    *pOut = i;
+    return sub_1001160d(i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103104f0 size=0xad
 #include "CAI_Senses.h"
 #include "CEntityVSlots.h"
