@@ -61376,6 +61376,31 @@ void CUnknown101dc7d0::sub_101dc7d0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc810 size=0x2c
+struct CUnknown101dc810Item {
+    void sub_10013485(int a);
+};
+
+struct CUnknown101dc810 {
+    char m_pad0000[8];
+    int m_nCount;
+    CUnknown101dc810Item **m_ppItems;
+    void sub_101dc810(int a);
+};
+
+// TARGET: sub_101dc810
+void CUnknown101dc810::sub_101dc810(int a)
+{
+    int i = 0;
+    if (m_nCount > 0) {
+        do {
+            m_ppItems[i]->sub_10013485(a);
+            i++;
+        } while (i < m_nCount);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dcb80 size=0x64
 struct CItemVec {
     int m_growBy;
