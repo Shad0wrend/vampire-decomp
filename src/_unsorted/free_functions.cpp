@@ -59576,6 +59576,18 @@ void sub_101cf620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf640 size=0x23
+extern int g_10566258;
+extern short g_1088ae52;
+
+// TARGET: sub_101cf640
+void sub_101cf640(int a, int b, int c)
+{
+    void *pObj = (void *)g_10566258;
+    ((void (__fastcall *)(void *, int, int, int, int, int))(*(void ***)pObj)[2])(pObj, a, a, g_1088ae52, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf680 size=0x74
 #include <math.h>
 // TARGET: sub_101cf680
