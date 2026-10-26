@@ -28902,6 +28902,24 @@ void sub_100db0b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100db320 size=0x2a
+void *sub_10008d8c();
+void *sub_101193b0();
+
+// TARGET: sub_100db320
+void sub_100db320()
+{
+	void *pObj = sub_10008d8c();
+	if (pObj) {
+		char *pChar = *(char **)((char *)pObj + 0xa8);
+		if (pChar) {
+			int v = *(int *)(pChar + 0x1c90) & 3;
+			*(int *)(pChar + 0x1c90) = 3 - v;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db3f0 size=0x8
 extern char g_106e7e91;
 void sub_100db3f0() { g_106e7e91 = 1; }

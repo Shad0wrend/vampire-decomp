@@ -4521,6 +4521,7 @@
 0x1000eb3d func   ?sub_103aa3b0@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::sub_103aa3b0
 0x1000eb56 func   _env_wind env_wind
 0x1000eb5b func   _env_fade env_fade
+0x1000eb60 func   ?sub_100db320@@YAXXZ sub_100db320
 0x1000eb65 func   ?sub_102a9dc0@Obj@@QAEPAU1@HPAUVec3@@HHHHHH@Z Obj::sub_102a9dc0
 0x1000eb6a func   _env_fire env_fire
 0x1000eb74 func   ?sub_101bc020@CUnknown101bc140@@QAEXXZ CUnknown101bc140::sub_101bc020
