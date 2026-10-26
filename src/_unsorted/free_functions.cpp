@@ -96536,6 +96536,23 @@ void CAI_Navigator::sub_102f1fa0(float flDelay, CAI_NavSource *pSource)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f28a0 size=0x28
+#include "CUnknown102ee270.h"
+#include "CAI_NavRoute.h"
+
+// TARGET: CUnknown102ee270::sub_102f28a0
+void CUnknown102ee270::sub_102f28a0()
+{
+    m_n40 = 0;
+    m_n48 = 0;
+    m_n4c = 0;
+    m_n44 = 0;
+    int flags = *(int *)((char *)m_pOwner + 0x5d8c);
+    *(int *)((char *)m_pOwner + 0x5d8c) = flags & 0xffffffdf;
+    m_pRoute->sub_1030bb30();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f2d10 size=0x9a
 void sub_102f2d10(float *color, int mode, unsigned int flags)
 {
