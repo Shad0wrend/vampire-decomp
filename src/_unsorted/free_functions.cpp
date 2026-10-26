@@ -84688,6 +84688,28 @@ void __fastcall sub_102697b0(DeathThinkView *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026a0b0 size=0x2b
+#include <string.h>
+
+struct CUnk1026a0b0
+{
+	char m_pad0000[0x5c74];
+	int m_a5c74[6];
+	int m_a5c8c[6];
+
+	void sub_1026a0b0();
+};
+
+// TARGET: CUnk1026a0b0::sub_1026a0b0
+void CUnk1026a0b0::sub_1026a0b0()
+{
+	if (m_a5c74 != 0)
+		memset(m_a5c74, 0, sizeof(m_a5c74));
+	if (m_a5c8c != 0)
+		memset(m_a5c8c, 0, sizeof(m_a5c8c));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a0f0 size=0x143
 #include "CAI_BaseNPC.h"
 #include "ScopeTrace.h"
