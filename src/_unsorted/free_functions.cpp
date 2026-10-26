@@ -422,6 +422,30 @@ void sub_1002a210(EntView *pSelf, PhysObjView *pObj1, PhysObjView *pObj2, const 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002ad20 size=0x21
+struct CUnkVT1002ad20
+{
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7(int flags);
+    virtual int vf8();
+};
+
+// TARGET: sub_1002ad20
+void __stdcall sub_1002ad20(CUnkVT1002ad20 *p)
+{
+    if (p) {
+        int flags = p->vf8();
+        p->vf7(flags & 0xfffd);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002af90 size=0x91
 #include "CPhysConstraint.h"
 
