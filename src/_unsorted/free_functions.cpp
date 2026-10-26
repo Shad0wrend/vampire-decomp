@@ -89963,6 +89963,19 @@ void CAI_BaseNPCTroikaUnit::sub_102bf5d0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf7e0 size=0x26
+// TARGET: CUnknown102bf7e0::sub_102bf7e0
+#include "CUnknown102bf7e0.h"
+#include "CUnknown102ee2e0.h"
+
+void CUnknown102bf7e0::sub_102bf7e0()
+{
+	if (m_p5d34->sub_10009c23())
+		m_p5d34->sub_10003d19();
+	m_b1a40 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bfe10 size=0xca
 #include "CAI_BaseNPCTroika.h"
 
