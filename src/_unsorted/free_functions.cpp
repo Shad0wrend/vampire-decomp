@@ -69878,6 +69878,22 @@ void sub_10203dd0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203df0 size=0x2f
+#include "FileSystemViews.h"
+#include <string.h>
+// TARGET: sub_10203df0
+
+extern IFileSystemView *g_1070b238;
+
+void sub_10203df0(int arg, const char *pszFile)
+{
+    if (arg != 0)
+    {
+        g_1070b238->vfunc3(pszFile, strlen(pszFile), arg);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203e30 size=0xa
 extern int g_1074ede0;
 
