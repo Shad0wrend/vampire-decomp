@@ -81119,6 +81119,17 @@ void sub_1023f060(unsigned int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023f080 size=0x26
+extern unsigned int g_10496f58[256];
+
+// TARGET: sub_1023f080
+void sub_1023f080(unsigned int *pCrc, unsigned int value)
+{
+	unsigned int x = (value & 0xff) ^ *pCrc;
+	*pCrc = g_10496f58[x & 0xff] ^ (x >> 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023fd00 size=0xc4
 #include "Vector.h"
 

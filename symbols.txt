@@ -1852,6 +1852,7 @@
 0x10006997 func   ?sub_1016e500@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1016e500
 0x100069a6 func   ?sub_10146790@CUnknown10146790@@QAEXXZ CUnknown10146790::sub_10146790
 0x100069ba func   ?vfunc254@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc254
+0x100069c9 func   ?sub_1023f080@@YAXPAII@Z sub_1023f080
 0x100069ce func   ?vfunc5@CNPC_VWolfMorph@@QAEPAV1@I@Z CNPC_VWolfMorph::vfunc5
 0x100069d8 func   ?sub_102296e0@@YIDPADPAXHH@Z sub_102296e0
 0x100069e7 func   ?sub_1029f730@CLazyTroikaView@@QAEHH@Z CLazyTroikaView::sub_1029f730
