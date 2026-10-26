@@ -25711,6 +25711,18 @@ int *sub_100c45c0(char *pThis, int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4600 size=0x21
+// TARGET: sub_100c4600
+void sub_100c4600(int *pTable, char *pSrc)
+{
+    int *p = *(int **)(pSrc + 0x28);
+    while (p != 0) {
+        pTable[p[0]] = (int)(p + 1);
+        p = (int *)p[13];
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c46c0 size=0xc2
 struct CacheEntry {
 	int m_a;
