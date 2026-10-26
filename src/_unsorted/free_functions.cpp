@@ -80721,6 +80721,34 @@ struct CUnknown10248a50 { int p[4]; int a; void sub_10248a50(int v); };
 void CUnknown10248a50::sub_10248a50(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x10248a70 size=0x2c
+extern int g_10856fac;
+extern char g_10753fa8[32][64];
+extern char g_10753f68[];
+
+// TARGET: sub_10248a70
+void sub_10248a70(void)
+{
+	char *pDst;
+	char *pSrc;
+	char c;
+
+	if (g_10856fac < 0x20)
+	{
+		pSrc = g_10753f68;
+		pDst = g_10753fa8[g_10856fac];
+		g_10856fac = g_10856fac + 1;
+		do
+		{
+			c = *pSrc;
+			pSrc++;
+			*pDst = c;
+			pDst++;
+		} while (c != 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248b60 size=0x3d
 #include <string.h>
 
