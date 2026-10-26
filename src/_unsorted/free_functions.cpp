@@ -123351,6 +123351,19 @@ int sub_10428eb0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428ed0 size=0x2e
+// TARGET: sub_10428ed0
+void sub_10014cae(void *pDest, const float *pData);
+
+void sub_10428ed0(char *pObj, int index, const float *pData)
+{
+    if (index >= 0)
+    {
+        sub_10014cae(pObj + *(int *)(pObj + 0x14c) + index * 0x3c + 0xc, pData);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428fd0 size=0x10
 unsigned int sub_10428fd0(char *p)
 {
