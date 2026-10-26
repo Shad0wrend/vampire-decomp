@@ -33816,6 +33816,27 @@ CBaseEntity * __stdcall sub_100f8580(const Vector *pPos, float flRadius)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8960 size=0x21
+struct CUnknown100f6d80X
+{
+    void sub_100f6d80(void *p);
+};
+
+extern CUnknown100f6d80X g_106eb5d8;
+
+// TARGET: sub_100f8960
+void __fastcall sub_100f8960(int p)
+{
+    int a;
+    if (p) {
+        a = p + 4;
+    } else {
+        a = 0;
+    }
+    g_106eb5d8.sub_100f6d80((void *)a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8e20 size=0x80
 void *sub_10430fa0(void *, const void *, unsigned);
 
