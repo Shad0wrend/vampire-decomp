@@ -114146,6 +114146,18 @@ const char *CNPC_VWerewolf::sub_103ceb60(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cecd0 size=0x27
+#include "CTriggerWWZone.h"
+
+// TARGET: CTriggerWWZone::sub_103cecd0
+void CTriggerWWZone::sub_103cecd0(CBaseEntity *pEnt)
+{
+	m_pEnt66c4 = pEnt;
+	if (pEnt != 0 && *(int *)((char *)pEnt + 0x5dc) != 0x3aa3)
+		m_pEnt66c4 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cf5f0 size=0x124
 #include "ScopeTrace.h"
 #include "ConVar.h"
