@@ -89213,6 +89213,46 @@ bool CUnitHelper::sub_1026ff80(CBaseEntity *ent, const float *start, const float
 }
 // END FUNCTION
 
+// FUNCTION: 0x10270180 size=0xcd
+#include "CAI_BaseNPC.h"
+#include "CEntityVSlots.h"
+
+extern Vector g_1070d1b0;
+
+struct CAINpcTrackView
+{
+	char m_pad0000[0x5bc5];
+	char m_bTracking;	// 0x5bc5
+	char m_pad5bc6[2];
+	Vector m_vecTrack;	// 0x5bc8
+};
+
+static inline float LengthSqrG(const Vector &v)
+{
+	return v.x * v.x + (v.y * v.y + v.z * v.z);
+}
+
+void CAI_BaseNPC::sub_10270180(void *pObject, char bTrack)
+{
+	CAINpcTrackView *p = (CAINpcTrackView *)this;
+	CEntityVSlots *pEnt = (CEntityVSlots *)pObject;
+	if (!pEnt) {
+		p->m_vecTrack = g_1070d1b0;
+		p->m_bTracking = bTrack;
+		return;
+	}
+	if (!bTrack) {
+		p->m_vecTrack = *pEnt->slot217();
+		p->m_bTracking = 0;
+		return;
+	}
+	if (!p->m_bTracking) {
+		if (LengthSqrG(p->m_vecTrack - *pEnt->slot217()) > 4096.0f)
+			p->m_bTracking = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10270290 size=0xd
 void CUnknown10270290::sub_10270290(int value)
 {
