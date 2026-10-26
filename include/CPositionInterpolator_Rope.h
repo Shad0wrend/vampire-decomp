@@ -3,13 +3,15 @@
 #include "CUnknown102496a0.h"
 #include "CBaseRopePhysics.h"	// CRopeNode
 
+class CRopeDelegate;
+
 class IPositionInterpolator
 {
 public:
 	virtual void vfunc0() = 0;
 	virtual void vfunc1() = 0;
 	virtual void vfunc2() = 0;
-	virtual void vfunc3() = 0;
+	virtual void vfunc3(float t, Vector *pOut) = 0;	// the position at t (0..1) along the rope
 	virtual char vfunc4(const char *pKey, const char *pValue) = 0;
 	int m_unk0004;
 };
@@ -43,6 +45,8 @@ public:
 
 	void sub_10249390();	// sets the timer's interval to 0.02 s
 	void sub_10249340(int nNodes);	// links the nodes into springs
+	void sub_10249420(float flSegment, CRopeDelegate *pDelegate);	// stub 0x100142d6: the rest length of one segment, and the delegate that supplies the end points
+	void sub_10249470(float flValue);	// stub 0x100060c3
 };
 
 // RTTI .?AV?$CRopePhysics@$09@@, the member at +8 of CPositionInterpolator_Rope
@@ -77,13 +81,13 @@ public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();
-	virtual void vfunc3();
+	virtual void vfunc3(float t, Vector *pOut);	// when the rope changed: re-links it for the type, puts every node at the first end point, sizes the segments from the end point distance plus the slack; then the lerp of the two nodes around t
 	virtual char vfunc4(const char *pKey, const char *pValue);	// KeyValue: "Slack" (value - 100) and "Type" (0 -> 10, 1 -> 4, else 2); returns 1 when handled
 
 	CRopePhysics<10> m_rope;	// 0x08
 	CRopeDelegate m_delegate;	// 0x1f0
 	CRopeVec m_vecs[2];	// 0x1f4
-	int m_flSlack;	// 0x20c
+	float m_flSlack;	// 0x20c
 	char m_bChanged;	// 0x210
 	int m_nType;	// 0x214
 };
