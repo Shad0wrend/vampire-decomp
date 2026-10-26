@@ -75564,6 +75564,79 @@ void CPropSwitchUnit::sub_1020dce0(char on)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020dd70 size=0x138
+#include "CPropSwitch.h"
+#include "COutputEvent.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CPropSwitchSlotsX
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV100(1)
+	PV10(20) PV10(21) PV10(22) PV10(23) PV10(24)
+	virtual float vfunc250(int a);
+};
+
+struct CPropSwitchFields
+{
+	char m_pad0000[0x10c];
+	unsigned int m_hOwner;
+	char m_pad0110[0x17c - 0x110];
+	float m_flNextThink;
+	char m_pad0180[0x65c - 0x180];
+	char m_bActive;
+	char m_bHold;
+	char m_pad065e[0x670 - 0x65e];
+	int m_nState;
+	char m_pad0674[0x6f0 - 0x674];
+	int m_nSequence;
+	char m_pad06f4[0x744 - 0x6f4];
+	COutputEvent m_OnOn;
+	COutputEvent m_OnOff;
+	char m_pad0774[0x7a8 - 0x774];
+	int m_seqOn;
+	int m_seqOff;
+	int m_seqAfterOn;
+	int m_seqAfterOff;
+};
+struct CGlobalVars1070b228
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern CGlobalVars1070b228 *g_1070b228;
+
+// TARGET: CPropSwitch::sub_1020dd70
+void CPropSwitch::sub_1020dd70()
+{
+	CPropSwitchFields *p = (CPropSwitchFields *)this;
+	if (p->m_bActive) {
+		if (p->m_nSequence == p->m_seqOn) {
+			p->m_nState = 1;
+			p->m_OnOn.sub_100cd660(EHandle_Get(p->m_hOwner), this, 0);
+			sub_1020df00(p->m_seqAfterOn);
+		} else if (p->m_nSequence == p->m_seqOff) {
+			p->m_nState = 0;
+			p->m_OnOff.sub_100cd660(EHandle_Get(p->m_hOwner), this, 0);
+			sub_1020df00(p->m_seqAfterOff);
+		} else if (!p->m_bHold) {
+			sub_100b3580(0x40000);
+			sub_100ac4e0(0, 0, 0);
+		}
+	}
+	if (!p->m_bActive || p->m_bHold) {
+		((CPropSwitchSlotsX *)this)->vfunc250(0);
+		p->m_flNextThink = g_1070b228->curtime + 0.05;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020df00 size=0x85
 #include "CPropSwitch.h"
 
