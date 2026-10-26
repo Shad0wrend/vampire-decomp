@@ -9,7 +9,7 @@ public:
 	void sub_1000cb8a();
 	void vfunc104();	// slot 104: the text at +0x454 (the default string when unset) through the global at 0x1070b22c (slot 13, flags 0), stored at +0x458
 
-	char m_pad0004[0x454 - 4];
+	char m_pad0000[0x454];
 	char *m_p454;	// 0x454
 	int m_n458;	// 0x458
 };
