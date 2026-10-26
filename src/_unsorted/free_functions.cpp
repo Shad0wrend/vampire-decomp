@@ -99580,6 +99580,27 @@ struct CUnknown10319fe0 { int a; void sub_10319fe0(int v); };
 void CUnknown10319fe0::sub_10319fe0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x1031a0a0 size=0x2b
+struct CUnk10936c84 { char sub_1000afe2(void *p); };
+extern int g_10936c84;
+struct CUnkList { char pad[0x30]; CUnkList *next; };
+
+// TARGET: sub_1031a0a0
+bool sub_1031a0a0(CUnkList *p)
+{
+    bool b = true;
+    if (p) {
+        do {
+            CUnkList *cur = p;
+            p = p->next;
+            if (!((CUnk10936c84 *)&g_10936c84)->sub_1000afe2(cur))
+                b = false;
+        } while (p);
+    }
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1031a0e0 size=0xab
 #include "CUnknown10936c84.h"
 
