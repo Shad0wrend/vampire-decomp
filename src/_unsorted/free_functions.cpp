@@ -96617,6 +96617,14 @@ void CAI_Motor::sub_102e2020(const float *pPosition, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e20b0 size=0x23
+// TARGET: CAI_Motor::sub_102e20b0
+void CAI_Motor::sub_102e20b0(const float *pPosition, float flWeight)
+{
+    sub_102e1c10(sub_102e2750(pPosition), flWeight);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2610 size=0xa
 int CAI_Motor::sub_102e2610()
 {
