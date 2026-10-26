@@ -88970,6 +88970,35 @@ const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c43f0 size=0x2b
+struct CUnkGlobal102c43f0
+{
+	char m_pad00[0xc];
+	float m_fl0c;
+};
+
+extern CUnkGlobal102c43f0 *g_1070b228;
+
+struct CUnk102c43f0
+{
+	char m_pad0000[0x6458];
+	float m_fl6458;
+
+	void sub_102c43f0();
+	void sub_1008bd30();
+};
+
+// TARGET: CUnk102c43f0::sub_102c43f0
+void CUnk102c43f0::sub_102c43f0()
+{
+	if (g_1070b228->m_fl0c >= m_fl6458)
+	{
+		sub_1008bd30();
+		m_fl6458 = 3.402823466e+38F;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c44e0 size=0x107
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
