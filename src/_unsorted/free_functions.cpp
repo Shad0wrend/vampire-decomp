@@ -37079,6 +37079,42 @@ void sub_1011e8f0(Ray_t *pRay, unsigned int fMask, void *pPassEnt, int nGroup, C
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011f6e0 size=0x2e
+// TARGET: sub_1011f6e0
+
+struct CUnknown1011f6e0Peer
+{
+    char m_pad0000[0x24];
+    int m_n24;
+    int m_n28;
+    char m_pad002c[0xc8 - 0x2c];
+    int m_nC8;
+    int m_nCC;
+};
+
+struct CUnknown1011f6e0Src
+{
+    char m_pad0000[0x3e0];
+    int m_n3e0;
+    int m_n3e4;
+};
+
+struct CUnknown1011f6e0
+{
+    int m_pad0000;
+    CUnknown1011f6e0Peer *m_pPeer;
+    CUnknown1011f6e0Src *m_pSrc;
+    void sub_1011f6e0();
+};
+
+void CUnknown1011f6e0::sub_1011f6e0()
+{
+    m_pPeer->m_n28 = m_pPeer->m_n24;
+    m_pPeer->m_nC8 = m_pSrc->m_n3e0;
+    m_pPeer->m_nCC = m_pSrc->m_n3e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011fa80 size=0x9a
 #include "CGameMovement.h"
 
