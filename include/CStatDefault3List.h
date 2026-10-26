@@ -17,4 +17,5 @@ public:
 	void sub_101d5a30(const char *pszName, int arg);	// loads every "vdata\system\<pszName>*.txt" file (counted first with the file system's find functions): each one through sub_101d57c0, with a message for the ones that fail
 	char sub_101d57c0(const char *pszFile, int arg);	// loads one template file (stub 0x10009d2c): the "ClanData" nodes fill the items from the index (*arg) on
 	const char *sub_101d5e00(int index);	// the name of the clan at index (stub 0x1000ce46)
+	void sub_101d5b90();	// loads the ClanDoc and NPCTemplate template sets
 };
