@@ -28,4 +28,5 @@ public:
 
 	bool sub_10205430(void *p);	// test on the block's field at +4 (stub 0x1000578b)
 	void sub_101f6c50(CTraitStatBlock *pBlock);	// "Unable to Calculate TraitEffect" on an unknown type
+	void sub_101f6e70(int nType, CTraitStatBlock *pBlock, int *pOut);	// when the effect's type is nType and the block's test at +4 (sub_10205430) holds, *pOut = the effect's value
 };
