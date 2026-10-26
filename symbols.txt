@@ -6438,6 +6438,7 @@
 0x10013f7f func   ?sub_103300c0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_103300c0
 0x10013f89 func   ?sub_1005b850@@YAXHHHHHHHHHHHHHHHHHH@Z sub_1005b850
 0x10013f8e func   ?sub_10229090@@YGXPAUCSoundFadeItem@@M@Z sub_10229090
+0x10013f93 func   ?vfunc521@CAI_TestHull@@QAEXHHH@Z CAI_TestHull::vfunc521
 0x10013f98 func   ?sub_10217ac0@@YAXPAVCPropHacking@@PBDZZ sub_10217ac0
 0x10013fa7 func   ?sub_103bf200@CUnknown103bf200@@QAEXH@Z CUnknown103bf200::sub_103bf200
 0x10013fb1 func   ?sub_10063d70@@YAHXZ sub_10063d70

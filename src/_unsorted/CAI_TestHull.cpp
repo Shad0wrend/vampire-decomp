@@ -48,6 +48,16 @@ void CAI_TestHull::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d7760 size=0x26
+// TARGET: CAI_TestHull::vfunc521
+#include "CAI_TestHull.h"
+
+void CAI_TestHull::vfunc521(int a, int b, int c)
+{
+	sub_1001484e(a, b, c, 1024.0f, 1024.0f, 1024.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d77d0 size=0x1e
 #include "CAI_TestHull.h"
 
