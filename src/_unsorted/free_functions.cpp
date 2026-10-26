@@ -110028,6 +110028,20 @@ char sub_103b7040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9f50 size=0x2d
+#include "CNPC_VTzimisce.h"
+
+extern const char *g_10653120[];
+void *__stdcall sub_10106a40(const char *pszName);
+
+// TARGET: CNPC_VTzimisce::sub_103b9f50
+void CNPC_VTzimisce::sub_103b9f50(int a)
+{
+	*(void **)((char *)this + 0x10b4) = sub_10106a40(g_10653120[a]);
+	sub_103b9f90(a, 1.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be090 size=0xc
 bool CUnknown10381be0::sub_103be090()
 {
