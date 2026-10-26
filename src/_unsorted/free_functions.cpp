@@ -67386,6 +67386,18 @@ struct CUnknown101f2cd0 { int p[6]; int a; void sub_101f2cd0(int v); };
 void CUnknown101f2cd0::sub_101f2cd0(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101f2f30 size=0x23
+extern int g_1073aa80;
+int sub_10004273(int a, void *b, int c);
+
+// TARGET: sub_101f2f30
+void *sub_101f2f30(int *p, int unused, int value)
+{
+    *p = sub_10004273(*p, &g_1073aa80, value);
+    return &g_1073aa80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f3060 size=0x8
 void __fastcall sub_1000be01(char *p);
 void __fastcall sub_101f3060(char *p) { sub_1000be01(p - *(int *)(p - 4)); }
