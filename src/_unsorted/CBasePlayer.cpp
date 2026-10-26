@@ -730,6 +730,39 @@ bool CBasePlayer::sub_10168e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016a870 size=0xf1
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "TestBit.h"
+
+struct CGlobalVarsView {
+    char pad[0xc];
+    float curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+
+void CBasePlayer::vfunc434()
+{
+    if (!(sub_100b3700() & 4) && m_n03E0 < 2 && (m_b208C & 2)) {
+        if (sub_100b3700() & 1) {
+            if (vfunc209()) {
+                vfunc449(2, 0);
+                m_f148C = g_1070b228->curtime;
+                CBaseEntity *pEnt = vfunc209();
+                if (pEnt) {
+                    if (pEnt->sub_100b3700() & 0x1000) {
+                        if (TestBit(m_fFlags268, 12))
+                            sub_100b1d10();
+                        Vector vecVelocity = m_vec03BC + m_vec03B0;
+                        ((CBaseEntity *)this)->sub_100b2e30(&vecVelocity.x);
+                    }
+                }
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016aa00 size=0x31
 // TARGET: sub_1016aa00
 struct CPlayerAccum_1016aa00 {
