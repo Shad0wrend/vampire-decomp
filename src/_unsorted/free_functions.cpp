@@ -48101,6 +48101,98 @@ void sub_10191cc0(CUtlVector<CBreakModelRec> *pList, int modelIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101925e0 size=0x17e
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+#include "CBaseAnimating.h"
+#include "CBreakableProp.h"
+
+#define PVS(n) virtual void pslot##n();
+#define PVS10(p) PVS(p##0) PVS(p##1) PVS(p##2) PVS(p##3) PVS(p##4) PVS(p##5) PVS(p##6) PVS(p##7) PVS(p##8) PVS(p##9)
+
+struct CGibPhysObj {
+	PVS(0) PVS(1) PVS(2) PVS(3) PVS(4) PVS(5) PVS(6) PVS(7) PVS(8) PVS(9)
+	PVS10(1) PVS10(2)
+	PVS(30) PVS(31) PVS(32) PVS(33) PVS(34) PVS(35) PVS(36) PVS(37) PVS(38)
+	virtual void slot39(int a, int b);
+};
+
+struct CGibEntity : CEntityVSlots {
+	char m_pad0004[0xdc - 4];
+	int m_nField0dc;	// 0xdc
+	char m_pad00e0[0x19c - 0xe0];
+	unsigned int m_nEffectFlags;	// 0x19c
+	char m_pad01a0[0x204 - 0x1a0];
+	unsigned int m_flags204;	// 0x204
+	char m_pad0208[0x210 - 0x208];
+	int m_iHealth;	// 0x210
+	char m_pad0214[0x36c - 0x214];
+	CGibPhysObj *m_pPhysObj;	// 0x36c
+};
+
+struct CGibInfo {
+	char m_pad0000[0xc];
+	char m_ref0c[4];	// 0xc
+	char m_pad0010[0x110 - 0x10];
+	float m_flDelay;	// 0x110
+	float m_flHealth;	// 0x114
+	int m_nBodygroup;	// 0x118
+};
+
+extern float g_1047331c;
+extern float g_10473320;
+extern float g_104454c4;
+extern float (*g_109f385c)(float, float);
+extern char g_106b8540[];
+CEntityVSlots *sub_100a9ab0(const char *name, const float *origin, const float *angles, CEntityVSlots *owner);
+int *sub_10002095(int *pOut, const void *p);
+void sub_10014614(void *pEnt);
+
+// TARGET: sub_101925e0
+void sub_101925e0(CGibInfo *pInfo, const float *pOrigin, const float *pAngles, int a4, int a5, int a6, int mode, char bRandom)
+{
+	CGibEntity *pGib = (CGibEntity *)sub_100a9ab0("prop_physics", pOrigin, pAngles, 0);
+	if (!pGib)
+		return;
+	int hRef;
+	pGib->slot212(*sub_10002095(&hRef, pInfo->m_ref0c));
+	const char *pszModel = *pGib->slot9(&hRef);
+	if (!pszModel)
+		pszModel = g_106b8540;
+	pGib->slot105(pszModel);
+	pGib->m_iHealth = (int)pInfo->m_flHealth;
+	if (pInfo->m_nBodygroup)
+		((CBaseAnimating *)pGib)->sub_10093b10(0, pInfo->m_nBodygroup);
+	if (mode != 0) {
+		if (mode == 1) {
+			pGib->m_flags204 = 2;
+			goto flagsDone;
+		}
+		if (!(pInfo->m_flDelay > g_104454c4))
+			goto flagsDone;
+	}
+	pGib->m_flags204 |= 4;
+	((CBaseEntity *)pGib)->sub_100b3840(1);
+flagsDone:
+	pGib->m_nEffectFlags |= 0xa0;
+	pGib->m_nField0dc = a6;
+	pGib->slot103();
+	((CBreakableProp *)pGib)->sub_100124d1(mode);
+	if (pInfo->m_flDelay != g_104454c4) {
+		((CBreakableProp *)pGib)->sub_10002d1f(pInfo->m_flDelay);
+		((CBaseEntity *)pGib)->sub_100b3900(2);
+	} else if (bRandom) {
+		float flRandom = g_109f385c(g_1047331c, g_10473320);
+		((CBreakableProp *)pGib)->sub_10002d1f(flRandom);
+		((CBaseEntity *)pGib)->sub_100b3900(2);
+	}
+	if (pGib->m_pPhysObj)
+		pGib->m_pPhysObj->slot39(a4, a5);
+	else
+		sub_10014614(pGib);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192800 size=0x43
 #include "CPropMover.h"
 void *sub_100aa720(int size);
