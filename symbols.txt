@@ -255,6 +255,7 @@
 0x10001d11 func   ?sub_102e2020@CAI_Motor@@QAEXPBMH@Z CAI_Motor::sub_102e2020
 0x10001d16 func   ??1CMeasureSectionInstance@@QAE@XZ CMeasureSectionInstance::~CMeasureSectionInstance
 0x10001d2a func   ?sub_101916f0@CHolderPtr36c@@QAEXH@Z CHolderPtr36c::sub_101916f0
+0x10001d34 func   ?sub_101f7db0@CUnknown101f7bb0@@QAE_NPBD@Z CUnknown101f7bb0::sub_101f7db0
 0x10001d39 func   ?sub_103e2d10@CWeaponRanged_FlameThrower@@QAEXPBDH@Z CWeaponRanged_FlameThrower::sub_103e2d10
 0x10001d43 func   _npc_VZombie npc_VZombie
 0x10001d52 func   ?vfunc276@CPropHacking@@QAEXXZ CPropHacking::vfunc276
