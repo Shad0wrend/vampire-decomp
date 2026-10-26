@@ -165,6 +165,7 @@
 0x10001852 func   ?sub_10340180@@YAXXZ sub_10340180
 0x10001857 func   ??_GCAI_Senses@@UAEPAXI@Z ??_GCAI_Senses@@UAEPAXI@Z
 0x10001861 func   _item_p_research_lg_dodge item_p_research_lg_dodge
+0x10001866 func   ??0CTraceFilterSimpleList@@QAE@H@Z CTraceFilterSimpleList::CTraceFilterSimpleList
 0x10001870 func   ?sub_100b3ee0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3ee0
 0x1000188e func   ?sub_1006cfb0@CUnknown1006cfb0@@QAE_NH@Z CUnknown1006cfb0::sub_1006cfb0
 0x10001898 func   ?sub_100ba120@CUnknown100ba120@@QAEXD@Z CUnknown100ba120::sub_100ba120
