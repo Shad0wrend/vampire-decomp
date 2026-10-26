@@ -17,6 +17,7 @@ public:
 	void sub_10260a50(int a);	// called through the stub at 0x1000d0b2
 	char *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 (stub 0x10013d8b): the studio header of the model (null when there is none)
 	void vfunc265(void *pActivator, void *pCaller, int useType, float value);	// slot 265 "CPropModelState::Use" (plain member): locked (byte at +0x734): fires the locked output (+0x778) and plays the locked sound; else fires the pressed output (+0x760) and steps to the next state (wrapping to 0 after the last)
+	bool vfunc34(CBaseEntity *pActivator);	// slot 34: false while locked (byte at +0x734); else the base's check sub_100a7bd0(pActivator) (CBaseEntity member)
 	int vfunc35(void *pActivator);	// slot 35: false while locked (byte at +0x734); else the base's check sub_100a7bd0(pActivator) (CBaseEntity member); when that holds the dword at +0x730, else 0
 	virtual void vfunc71();	// slot 71 "GetVSoundTable": looks the sound set named by the string at +0xc0 up in the sound table (0x1073dc00) into +0xb4, clears +0xbc and caches the ids of the sounds "on" / "off" in 0x1074f14c / 0x1074f150
 
