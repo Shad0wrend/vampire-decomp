@@ -21,4 +21,8 @@ public:
 	void sub_1000dfd0();	// the zone's own activation step (stub of 0x101c5080)
 	CTriggerWWZone *vfunc5(unsigned char flags);	// scalar deleting destructor, declared as a plain member: purges the handle vector at +0x598 (twice, like the inlined CUtlVector destructor), destroys the four outputs at +0x580 / +0x568 / +0x4bc / +0x4a4, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
+	void sub_103cecd0(CBaseEntity *pEnt);	// stores pEnt at +0x66c4, and clears it again unless pEnt's dword at +0x5dc is 0x3aa3
+
+	char m_pad05a8[0x66c4 - 0x5a8];
+	CBaseEntity *m_pEnt66c4;	// 0x66c4
 };
