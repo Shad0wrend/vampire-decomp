@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a9730 size=0x2e
+#include "CCineAISchedule.h"
+// TARGET: CCineAISchedule::vfunc103
+extern void (*g_109f3650)(int level, const char *pszMsg);
+extern const char g_1059518c[];
+
+void CCineAISchedule::vfunc103()
+{
+    sub_1000c711();
+    if (m_n6094 == 0 && m_n6090 == 0)
+    {
+        g_109f3650(2, g_1059518c);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a9790 size=0xe9
 #include "CCineAISchedule.h"
 #include "CBaseEntity.h"
