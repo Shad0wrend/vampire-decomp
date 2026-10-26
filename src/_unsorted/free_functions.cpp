@@ -99143,6 +99143,25 @@ void CUnknown103065d0::sub_103065d0(const CUnknown103065d0Vec *pStart, const CUn
 }
 // END FUNCTION
 
+// FUNCTION: 0x10307890 size=0x25
+#include <string.h>
+
+struct CUnknown10307890 {
+    char m_pad0000[2];
+    unsigned short m_nCount;
+    char m_pad0004[4];
+    void *m_pData;
+};
+
+// TARGET: sub_10307890
+void __fastcall sub_10307890(CUnknown10307890 *pThis)
+{
+    if (pThis->m_pData != 0) {
+        memset(pThis->m_pData, 0, pThis->m_nCount * 4);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103079c0 size=0xa8
 extern "C" int _strcmpi(const char *, const char *);
 extern "C" char *strcat(char *, const char *);
