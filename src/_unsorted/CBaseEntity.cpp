@@ -124,6 +124,23 @@ Vector CBaseEntity::vfunc192()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027370 size=0x21
+#include "Vector.h"
+
+extern Vector g_1070d1b0;
+
+struct CBaseEntityX
+{
+    void sub_10027370(Vector &out);
+};
+
+// TARGET: sub_10027370
+void CBaseEntityX::sub_10027370(Vector &out)
+{
+    out = g_1070d1b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027490 size=0xa
 #include "CBaseEntity.h"
 // TARGET: CBaseEntity::vfunc116
