@@ -20484,6 +20484,21 @@ void CBaseEntity::sub_100a04e0(const char *pszParentName, CBaseEntity *pActivato
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0ae0 size=0x26
+#include "CBaseHandle.h"
+
+// TARGET: ??4CBaseHandle@@QAEAAV0@PAVIHandleEntity@@@Z
+CBaseHandle &CBaseHandle::operator=(IHandleEntity *pEntity)
+{
+	if (pEntity) {
+		m_Index = *pEntity->vfunc1();
+	} else {
+		m_Index = 0xffffffff;
+	}
+	return *this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a0b20 size=0x7b
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
