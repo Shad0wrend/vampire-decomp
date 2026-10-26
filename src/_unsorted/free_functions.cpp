@@ -24634,6 +24634,18 @@ bool CUnknown100bde40::sub_100bde40(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bdf10 size=0x25
+#include "bf_write.h"
+
+// TARGET: sub_100bdf10
+bf_write *bf_write::sub_100bdf10(void *pData, int nBytes, int nBits)
+{
+    m_bAssertOnOverflow = true;
+    sub_100bdf90(pData, nBytes, 0, nBits);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bdfe0 size=0x9
 struct CUnknown100bdfe0 { int p[3]; int a; char b; void sub_100bdfe0(); };
 // TARGET: CUnknown100bdfe0::sub_100bdfe0
