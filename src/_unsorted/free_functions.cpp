@@ -32547,6 +32547,25 @@ CBaseEntity *CGlobalEntityList::sub_100f81f0(const Vector *pOrigin, const Vector
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8370 size=0x2e
+#include "CGlobalEntityList.h"
+// TARGET: CGlobalEntityList::sub_100f8370
+
+CBaseEntity *CGlobalEntityList::sub_100f8370(CBaseEntity *pCurrent, unsigned int nFlags)
+{
+    CBaseEntity *pEnt = sub_100f7060(pCurrent);
+    while (pEnt != 0)
+    {
+        if (*(unsigned int *)((char *)pEnt + 0x4c) & nFlags)
+        {
+            return pEnt;
+        }
+        pEnt = sub_100f7060(pEnt);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8490 size=0xbf
 #include "CGlobalEntityList.h"
 #include "Vector.h"
