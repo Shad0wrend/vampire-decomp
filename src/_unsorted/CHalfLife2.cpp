@@ -1,6 +1,24 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10355790 size=0x24
+#include "CHalfLife2.h"
+
+extern int vt_1047a40c[];
+void sub_1000d189();
+
+// TARGET: CHalfLife2::vfunc0
+CGameRules *CHalfLife2::vfunc0(unsigned int flags)
+{
+    *(int **)this = vt_1047a40c;
+    sub_1000d189();
+    if (flags & 1) {
+        delete this;
+    }
+    return (CGameRules *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103560a0 size=0x134
 #include "CHalfLife2.h"
 extern char g_1062820c[];

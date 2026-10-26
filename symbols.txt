@@ -2993,6 +2993,7 @@
 0x10009c8c func   ?sub_100290c0@CUnknown100290c0@@QAEIPAI@Z CUnknown100290c0::sub_100290c0
 0x10009c9b func   ?sub_102696f0@@YIXPAD@Z sub_102696f0
 0x10009ca0 func   ?vfunc546@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::vfunc546
+0x10009caa func   ?vfunc0@CHalfLife2@@QAEPAVCGameRules@@I@Z CHalfLife2::vfunc0
 0x10009caf func   ?vfunc174@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc174
 0x10009cb4 func   ?vfunc5@CWeaponRanged_Rifle_Crossbow@@QAEPAV1@I@Z CWeaponRanged_Rifle_Crossbow::vfunc5
 0x10009cc3 func   ?vfunc103@CDynamicProp@@QAEXXZ CDynamicProp::vfunc103
