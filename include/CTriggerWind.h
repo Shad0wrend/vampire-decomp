@@ -22,11 +22,13 @@ public:
 	CTW_V10(20) CTW_V10(21)
 	CTW_V(220)
 	virtual float *vfunc221();	// "GetAngles"
+	virtual void vfunc241(int a);	// slot 241 "CTriggerWind::...": the base slot 241 (CBaseTrigger::vfunc241, stub 0x10012206), then the next think time (+0x17c) is curtime + 0.1
 
 	void sub_100b3b00();	// CBaseEntity::sub_100b3b00, called directly
 	void sub_101c6860();	// CTriggerMultiple::vfunc103, called directly (stub 0x100048ef)
 	int sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
 	int sub_101c4f40();	// CBaseTrigger::vfunc124 (stub 0x100104e2), called directly
+	void sub_10012206(int a);	// CBaseTrigger::vfunc241 (stub 0x10012206), called directly
 
 	char m_pad0004[0x5b0 - 4];
 	int m_n05b0;	// 0x5b0
