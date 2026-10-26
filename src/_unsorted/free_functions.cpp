@@ -105742,6 +105742,62 @@ void CBaseCombatCharacter::sub_103352b0(inputdata_t &data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10335780 size=0x16c
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+extern char g_106210d4[];
+
+#define D(x) virtual void x();
+#define T(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+
+struct CCharacterSlots298
+{
+	H(a0) H(b0)
+	T(c0) T(c1) T(c2) T(c3) T(c4) T(c5) T(c6) T(c7) T(c8)
+	D(d0) D(d1) D(d2) D(d3) D(d4) D(d5) D(d6) D(d7)
+	virtual int slot298(int type);
+};
+
+struct CWeaponUnit
+{
+	int sub_10255cf0();	// stub 0x10001eab
+};
+
+void CBaseCombatCharacter::sub_10335780(CBaseEntity *pWeapon)
+{
+	ScopeTrace trace(g_106210d4, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pWeapon) {
+		int nTypes = ((CWeaponUnit *)pWeapon)->sub_10255cf0();
+		int slot = 0;
+		for (int i = 0; i < nTypes; i++)
+			slot += ((CCharacterSlots298 *)this)->slot298(i);
+		if ((CBaseEntity *)sub_1032e8b0(slot) != pWeapon) {
+			int found = 0;
+			if (((CCharacterSlots298 *)this)->slot298(((CWeaponUnit *)pWeapon)->sub_10255cf0()) > 0) {
+				do {
+					if ((CBaseEntity *)sub_1032e8b0(slot) == pWeapon) {
+						int cur = slot;
+						for (int j = found; j > 0; j--) {
+							int prev = cur - 1;
+							sub_1032e9f0(cur, (CBaseEntity *)sub_1032e8b0(prev));
+							*(int *)((char *)sub_1032e8b0(cur) + 0x73c) = cur;
+							cur = prev;
+						}
+						*(int *)((char *)pWeapon + 0x73c) = cur;
+						sub_1032e9f0(cur, pWeapon);
+						break;
+					}
+					found++;
+					slot++;
+				} while (found < ((CCharacterSlots298 *)this)->slot298(((CWeaponUnit *)pWeapon)->sub_10255cf0()));
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10335950 size=0xd5
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
