@@ -4146,6 +4146,7 @@
 0x1000d7c9 func   ?sub_102f1860@CUnknown102f1860@@QAEMHABVVector@@0@Z CUnknown102f1860::sub_102f1860
 0x1000d7ce func   ?sub_1019dea0@CUnit1019dea0@@QAEX_N@Z CUnit1019dea0::sub_1019dea0
 0x1000d7dd func   ?vfunc361@CBaseCombatWeapon@@QAEHH@Z CBaseCombatWeapon::vfunc361
+0x1000d80a func   ?vfunc376@CWeaponThrown_Grenade_Frag@@QAEHH@Z CWeaponThrown_Grenade_Frag::vfunc376
 0x1000d828 func   ?vfunc124@CEnvGlobal@@UAEHXZ CEnvGlobal::vfunc124
 0x1000d832 func   ?sub_1006eeb0@CUnknown1006eeb0@@QAEHH@Z CUnknown1006eeb0::sub_1006eeb0
 0x1000d837 func   ?sub_103fe1b0@@YAHXZ sub_103fe1b0

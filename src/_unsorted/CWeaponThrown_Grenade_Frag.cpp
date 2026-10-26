@@ -281,6 +281,23 @@ CBaseEntity *CWeaponThrown_Grenade_Frag::vfunc372(Vector vecOrigin, Vector vecAn
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eee80 size=0x2a
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CBaseEntity.h"
+
+extern char *g_1070b228;
+
+// TARGET: CWeaponThrown_Grenade_Frag::vfunc376
+int CWeaponThrown_Grenade_Frag::vfunc376(int a)
+{
+    if (*(int *)((char *)this + 0x1fc) == 2) {
+        *(float *)((char *)this + 0x17c) = *(float *)(g_1070b228 + 0xc) + 0.1f;
+        return 1;
+    }
+    return ((CBaseEntity *)this)->sub_100a1250((const void *)a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f13b0 size=0x1e
 #include "CWeaponThrown_Grenade_Frag.h"
 
