@@ -42007,6 +42007,23 @@ void sub_1013b0d0(const Q &q, float *m)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013b240 size=0x25
+struct Q;
+struct matrix3x4_t;
+class QAngle;
+
+void sub_1013b0d0(const Q &q, float *out);
+void sub_10137ed0(const matrix3x4_t &m, QAngle &ang);
+
+// TARGET: sub_1013b240
+void sub_1013b240(const Q &q, QAngle &ang)
+{
+    float m[12];
+    sub_1013b0d0(q, m);
+    sub_10137ed0(reinterpret_cast<const matrix3x4_t &>(m), ang);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013b300 size=0x68
 #include "Vector.h"
 
