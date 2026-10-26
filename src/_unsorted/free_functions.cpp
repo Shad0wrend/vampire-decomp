@@ -93844,6 +93844,28 @@ void __fastcall sub_102e9e50(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e9fe0 size=0x2c
+struct CSymMapUnit102e9fe0 {
+    void sub_10249980(int a, int b);
+};
+struct CSymTabUnit102e9fe0 {
+    CSymMapUnit102e9fe0 *m_pMap;
+    int m_count;
+    void sub_102e9fe0(int a, int idx);
+};
+
+// TARGET: sub_102e9fe0
+void CSymTabUnit102e9fe0::sub_102e9fe0(int a, int idx)
+{
+    if (idx != -1) {
+        m_pMap->sub_10249980(a, idx);
+        if (m_count < idx + 1) {
+            m_count = idx + 1;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ea090 size=0x38
 // TARGET: CUnknown102ea090::sub_102ea090
 struct CUnknown102ea090
