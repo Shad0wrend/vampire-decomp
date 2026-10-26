@@ -127761,6 +127761,19 @@ void CUnknown10427700::sub_10427790(const char *name, int a, int b, const char *
 }
 // END FUNCTION
 
+// FUNCTION: 0x10427a30 size=0x22
+// TARGET: sub_10427a30
+extern "C" void __declspec(dllimport) Msg(const char *pszFormat, ...);
+void *__cdecl sub_10427a30(int *pHdr)
+{
+    if (pHdr != 0 && pHdr[1] == 0x9e3) {
+        return pHdr;
+    }
+    Msg("Bad pstudiohdr in GetStudioHdr()!\n");
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428160 size=0x6e
 int sub_10008ef9(int, int, char *, char *, int, int, int, int);
 int sub_1000e66f(int, char *, char *);
