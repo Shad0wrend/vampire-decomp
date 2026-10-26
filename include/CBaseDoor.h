@@ -12,7 +12,10 @@ struct inputdata_t;
 class CBaseDoor : public CBaseEntity
 {
 public:
-	DOOR_SLOTS10(dsa) DOOR_SLOTS10(dsb) DOOR_SLOTS10(dsc) DOOR_SLOTS10(dsd) DOOR_SLOTS10(dse)	// slots 134..183
+	DOOR_SLOTS10(dsa) DOOR_SLOTS10(dsb) DOOR_SLOTS10(dsc) DOOR_SLOTS10(dsd)	// slots 134..173
+	virtual void dse0(); virtual void dse1(); virtual void dse2(); virtual void dse3(); virtual void dse4();	// slots 174..178
+	virtual void vfunc179();	// slot 179: fires the door's event list 2 (state 3, closing) or 3 (other states) with the door as activator and caller
+	virtual void dse6(); virtual void dse7(); virtual void dse8(); virtual void dse9();	// slots 180..183
 	DOOR_SLOTS10(dsf) DOOR_SLOTS10(dsg) DOOR_SLOTS10(dsh) DOOR_SLOTS10(dsi) DOOR_SLOTS10(dsj)	// slots 184..233
 	virtual void dsk0(); virtual void dsk1(); virtual void dsk2(); virtual void dsk3(); virtual void dsk4();	// slots 234..245
 	virtual void dsk5(); virtual void dsk6(); virtual void dsk7(); virtual void dsk8(); virtual void dsk9();
