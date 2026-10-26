@@ -172,6 +172,30 @@ void CWeaponThrown_Grenade_Frag::vfunc373(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eece0 size=0x2c
+struct CGrenadeUnit103eece0 {
+    char pad[0x931];
+    char m_b931;
+    unsigned char sub_10015933();
+    void *sub_102521f0();
+    unsigned char sub_103eece0();
+};
+
+// TARGET: sub_103eece0
+unsigned char CGrenadeUnit103eece0::sub_103eece0()
+{
+    unsigned char r;
+    if (m_b931 == 0) {
+        if (sub_102521f0() == 0) {
+            return sub_10015933() | 8;
+        }
+    }
+    r = sub_10015933();
+    r &= 0xc7;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eed20 size=0xf6
 #include "CWeaponThrown_Grenade_Frag.h"
 #include "CBaseEntity.h"
