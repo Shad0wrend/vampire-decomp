@@ -93079,6 +93079,15 @@ SNode *sub_102d2840(int unused, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d2940 size=0x24
+void sub_1000a1e1(int a, int b, int c, int d, int e, int f);
+
+void sub_102d2940(int a, int b, int c, int d, int e)
+{
+    sub_1000a1e1(a, b, 1, c, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d2e30 size=0x6b
 extern CAI_Hint *g_10925450;
 extern void *vt_1049b9a4[];
