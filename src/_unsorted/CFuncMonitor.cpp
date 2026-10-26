@@ -124,6 +124,29 @@ void CFuncMonitor::vfunc77()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101154b0 size=0x84
+#include "CFuncMonitor.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+void sub_101157c0(CFuncMonitor *pMonitor);
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CFuncMonitorView
+{
+	V10(a) V10(b) V10(c) V10(d)
+	virtual void v40(); virtual void v41();
+	virtual void vfunc42(CGlobalEntityList_Ent *pCamera);
+};
+void CFuncMonitor::vfunc180()
+{
+	sub_101157c0(this);
+	if (EHandle_Get(m_hCamera.m_Index)) {
+		((CFuncMonitorView *)this)->vfunc42(EHandle_Get(m_hCamera.m_Index));
+		m_hCamera.m_Index = 0xffffffff;
+	}
+	sub_1000cb94();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10115af0 size=0x1e
 #include "CFuncMonitor.h"
 
