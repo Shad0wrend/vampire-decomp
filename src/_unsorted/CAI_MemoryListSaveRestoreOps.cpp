@@ -36,6 +36,23 @@ void CAI_MemoryListSaveRestoreOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, CRe
 }
 // END FUNCTION
 
+// FUNCTION: 0x102df1d0 size=0x29
+#include "CAI_MemoryListSaveRestoreOps.h"
+void sub_102df1b0(CAI_MemoryNode *p);
+// TARGET: CAI_MemoryListSaveRestoreOps::vfunc3
+void CAI_MemoryListSaveRestoreOps::vfunc3(CAI_MemoryNode **ppHead)
+{
+    CAI_MemoryNode *node = *(CAI_MemoryNode **)*ppHead;
+    *(CAI_MemoryNode **)*ppHead = 0;
+    while (node != 0)
+    {
+        CAI_MemoryNode *next = node->m_pNext;
+        sub_102df1b0(node);
+        node = next;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102df210 size=0x11
 bool __stdcall sub_102df210(int **p)
 {
