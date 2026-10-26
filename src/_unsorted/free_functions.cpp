@@ -29449,6 +29449,105 @@ bool sub_100d94a0(CBaseCombatCharacter *pChar, int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9820 size=0xe8
+struct CRosterFlagsView
+{
+	char m_pad0000[0x104];
+	unsigned int m_nFlags104;
+};
+
+struct CRosterTableView
+{
+	CRosterFlagsView *sub_10200370(int index);
+};
+
+struct CRosterStatsView	// the object at +0xa8 of the local player
+{
+	char m_pad0000[0x1b70];
+	int m_nCurrent;	// 0x1b70
+	char m_bChanged;	// 0x1b74
+	char m_pad1b75[3];
+	int m_nSub;	// 0x1b78
+
+	int sub_10182d70(int a);
+	int sub_10182da0(int index, int a);
+	int sub_10182dd0(int index, int a);
+};
+
+struct CRosterPlayerView
+{
+	char m_pad0000[0xa8];
+	CRosterStatsView *m_pStats;
+};
+
+struct CRosterMgrView
+{
+	int sub_101e1650(CRosterStatsView *pStats, int index);
+};
+
+extern CRosterTableView g_1074e098;
+extern CRosterMgrView g_10739a4c;
+CRosterPlayerView *sub_101193b0();
+
+inline bool IsSecondBit(const CRosterFlagsView *p)
+{
+	unsigned char bit = (unsigned char)(p->m_nFlags104 >> 1);
+	return (bit & 1) != 0;
+}
+
+void sub_100d9820()
+{
+	CRosterPlayerView *pPlayer = sub_101193b0();
+	if (pPlayer)
+	{
+		CRosterStatsView *pStats = pPlayer->m_pStats;
+		if (pStats)
+		{
+			int nCount = pStats->sub_10182d70(0);
+			int nCurrent = pStats->sub_10182da0(pStats->m_nCurrent, 0);
+			if (nCount > 0)
+			{
+				if (!IsSecondBit(g_1074e098.sub_10200370(pStats->m_nCurrent)))
+				{
+					int nSub = pStats->m_nSub;
+					if (nSub < g_10739a4c.sub_101e1650(pStats, pStats->m_nCurrent) - 1)
+					{
+						pStats->m_nSub = nSub + 1;
+						return;
+					}
+				}
+				int nNext;
+				if (nCurrent < nCount - 1)
+				{
+					for (int i = nCurrent + 1; i < nCount; i++)
+					{
+						nNext = pStats->sub_10182dd0(i, 0);
+						if (nNext != -1)
+						{
+							pStats->m_nCurrent = nNext;
+							pStats->m_bChanged = 1;
+							pStats->m_nSub = 0;
+							return;
+						}
+					}
+				}
+				for (int j = 0; j < nCurrent; j++)
+				{
+					nNext = pStats->sub_10182dd0(j, 0);
+					if (nNext != -1)
+					{
+						pStats->m_nCurrent = nNext;
+						pStats->m_bChanged = 1;
+						pStats->m_nSub = 0;
+						return;
+					}
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9c50 size=0x9d
 #include <string.h>
 #include "CUnknown101d5bd0.h"
