@@ -74712,6 +74712,17 @@ void CPropHacking::sub_1021a3d0(CSave *pSave)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a4b0 size=0x28
+#include "CUnknown1021a4b0.h"
+// TARGET: CUnknown1021a4b0::sub_1021a4b0
+bool CUnknown1021a4b0::sub_1021a4b0(int index)
+{
+    if (index >= 0 && index < 0x80)
+        return (m_anFlags[index] & 1) == 1;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021a4f0 size=0x2a
 struct CUnit1021a4f0 {
     char m_pad0000[0xa28];
