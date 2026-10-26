@@ -6,5 +6,6 @@
 class CPositionInterpolator_Linear
 {
 public:
+	void vfunc2(int nIndex, const Vector *pPosition);	// slot 2: stores the position in the 28 byte state record nIndex of the global array at 0x1057519c
 	void vfunc3(float flT, Vector *pOut);	// Lerp between the two positions of the global interpolator state (slot 3)
 };
