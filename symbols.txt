@@ -4257,6 +4257,7 @@
 0x1000d288 func   _trigger_player_activity_level trigger_player_activity_level
 0x1000d292 func   _item_p_research_hg_dodge item_p_research_hg_dodge
 0x1000d297 func   _item_p_research_hg_melee item_p_research_hg_melee
+0x1000d2a6 func   ?sub_101051b0@CExpressionTable@@QAEHH@Z CExpressionTable::sub_101051b0
 0x1000d2b0 func   ?vfunc14@CSave@@UAE_NPBXH@Z CSave::vfunc14
 0x1000d2b5 func   ?sub_100ee750@CUnknown100ee750@@QAEXPAX@Z CUnknown100ee750::sub_100ee750
 0x1000d2c4 func   ?sub_1028b3e0@@YIMPAH@Z sub_1028b3e0

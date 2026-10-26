@@ -36345,6 +36345,31 @@ const char *CExpressionTable::sub_10105090(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101051b0 size=0x88
+#include "CExpressionTable.h"
+#include "ScopeTrace.h"
+
+static inline bool IsValidIndexN(int i, int n)
+{
+	return (i >= 0) && (i < n);
+}
+
+int CExpressionTable::sub_101051b0(int index)
+{
+	g_109f3620[*g_109f3680].name = "CExpressionTable::GetExpressionData";
+	g_109f3620[*g_109f3680].file = g_106b8540;
+	g_109f3620[*g_109f3680].line = g_106b8540;
+	(*g_109f3680)++;
+	if (!IsValidIndexN(index, m_field0c)) {
+		(*g_109f3680)--;
+		return 0;
+	}
+	int base = m_field00;
+	(*g_109f3680)--;
+	return base + index * 400;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105270 size=0xe6
 #include "ScopeTrace.h"
 #include "CBaseEntity.h"
