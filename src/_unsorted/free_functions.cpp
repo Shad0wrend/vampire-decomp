@@ -40656,6 +40656,21 @@ void sub_10138ff0(double a, double b, int *pQuot, int *pRem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101391c0 size=0x2c
+// TARGET: sub_101391c0
+unsigned int sub_101391c0(float *v)
+{
+    unsigned int mask = 0;
+    int i;
+    for (i = 0; i < 3; i++) {
+        if (v[i] < 0.0f) {
+            mask |= 1 << i;
+        }
+    }
+    return mask;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139550 size=0x8a
 #include "Vector.h"
 #include "QAngle.h"
