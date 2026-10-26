@@ -41992,6 +41992,18 @@ void sub_10139970(const Vector &forward, QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139ac0 size=0x22
+void __cdecl sub_10139b00(int a, int b);
+void __cdecl sub_10011996(int a, int b, int c);
+
+// TARGET: sub_10139ac0
+void __cdecl sub_10139ac0(int a, int b, int c)
+{
+    sub_10139b00(a, c);
+    sub_10011996(b, 3, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139b00 size=0x40
 #include "Vector.h"
 
