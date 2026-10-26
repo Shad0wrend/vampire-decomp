@@ -68,7 +68,7 @@ public:
 	virtual int vfunc18(float *pValues, int count, int nBytesAvailable);	// slot 18 ("CRestore::ReadFloat"-like): reads up to count floats into pValues, returns the number read
 	virtual void s19();
 	virtual int vfunc20(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadString" (string pool ids): reads up to count zero terminated strings from the buffer, stores the pooled id of each (0 for an empty one) in pValues, then skips the rest of the nBytesAvailable bytes; returns the number read
-	virtual void vfunc21(char *pDest, int n, int a);	// slot 21: sub_101a1f70 (the record's int at +4 as the source), sub_101a2020(a), then Q_strncpy(pDest, source, n)
+	virtual void vfunc21(char *pDest, int n, int a);	// slot 21: sub_101a1f70 (the record's int at +4 as the source), sub_1000910b(a), then Q_strncpy(pDest, source, n)
 	virtual int vfunc22(Vector *pValues, int count, int nBytesAvailable);	// slot 22 "CRestore::ReadVector": reads up to count vectors, returns the number read
 	virtual void s23(); virtual void vfunc24(float *pValues, int count, int nBytesAvailable);	// slot 24: slot 18 into pValues, then adds the float at m_pData2 + 0x12e8 to each value read (in place)
 	virtual int vfunc25(Vector *pValues, int count, int nBytesAvailable);	// slot 25 "CRestore::ReadPosition": slot 22, then adds the landmark offset of the save data (+0x12dc when the flag at +0x12c4 is set, else the zero vector at 0x1070d1b0) to every vector read
@@ -85,6 +85,7 @@ public:
 	char sub_101a1860(typedescription_t *pField);	// "CRestore::ShouldReadField" (stub 0x100092cd)
 	void sub_101a1990(unsigned short *pValue);	// slot 7: calls slot 9(pValue), then appends slot 0() + *pValue to the vector at +4
 	void sub_101a1f90(void *pData, int size);	// reads size bytes into pData
+	int sub_101a1f70();	// CUnknown101a1f70::sub_101a1f70 (stub 0x10007df6), the int at the record of +0x18, called directly
 	void sub_1000fe9d(int a, int n);	// the callee of slots 12 / 17 (stub 0x1000fe9d)
 	void sub_1000910b(int n);	// the callee of slots 12 / 17 (stub 0x1000910b): the short-read tail
 	char vfunc16();	// slot 16: reads one byte
