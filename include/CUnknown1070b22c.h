@@ -1,4 +1,4 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 12, 13, 17, 18, 20, 21, 26, 30, 31, 32, 35, 38, 47, 49, 58, 59, 61, 62, 65 to 67, 68, 69, 72, 78, 82, 84, 85, 101, 102, 105 and 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 12, 13, 17, 18, 20, 21, 26, 30, 31, 32, 35, 38, 47, 49, 58, 59, 61, 62, 65 to 67, 68, 69, 72, 78, 82, 84, 85, 98, 101, 102, 105 and 119 to 122 are known.
 // Slot 12 answers a flag (the server's "is the level loaded" test, used before the sprite / particle code).
 // Slot 13 takes a resource name and a preload flag (precaches a model / sound / resource) and returns the index.
 // Slot 17 is PrecacheModel(name, preload) and returns the model index.
@@ -13,6 +13,7 @@
 // Slot 61 is ClientCommand(edict, fmt, ...): a variadic (cdecl) slot, the object is pushed as the first argument.
 // Slot 62 is LightStyle(style, pattern).
 // Slot 65 is UserMessageBegin(filter, message type), slot 66 MessageEnd; the message body is written with slot 67 (one integer, a byte), slot 68 (a char), slot 69 (an integer field), slot 72 (a float, passed as its raw dword) and slot 78 (a string).
+// Slot 98 takes an integer and a pointer and returns an integer (the scene token processor's (m_4, &m_8) call, CSceneTokenProcessor::vfunc1).
 // Slot 101 takes one dword (the index of an entity) and returns nothing used.
 // Slot 102 is SetAreaPortalState(portalKey, isOpen); slot 113 is GetAreaPortalPlane(viewOrigin, portalKey, pPlane): fills a plane (normal, dist) and answers whether the portal has one.
 // Slot 119 takes a flag and returns a time value in ST0; slot 120 returns a dword in EAX.
@@ -60,7 +61,10 @@ public:
 	virtual const char *vfunc84(int index);
 	virtual int vfunc85();
 	virtual void a86(); virtual void a87(); virtual void a88(); virtual void a89();
-	U22C_SLOTS10(a9)
+	virtual void a90(); virtual void a91(); virtual void a92(); virtual void a93(); virtual void a94();
+	virtual void a95(); virtual void a96(); virtual void a97();
+	virtual int vfunc98(int a, void *b);
+	virtual void a99();
 	virtual void b00(); virtual void vfunc101(int index); virtual void vfunc102(int portalKey, int bOpen); virtual void b03(); virtual void b04();
 	virtual int vfunc105(int a, int b);
 	virtual void b06(); virtual void b07(); virtual void b08(); virtual void b09();
