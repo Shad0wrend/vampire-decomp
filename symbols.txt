@@ -1785,6 +1785,7 @@
 0x100065c3 func   ?sub_103f15b0@@YAHXZ sub_103f15b0
 0x100065d2 func   ?vfunc126@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc126
 0x100065d7 func   ?vfunc5@CItemMMoneyClip@@QAEPAV1@I@Z CItemMMoneyClip::vfunc5
+0x100065dc func   ?sub_10148c00@@YAXPAMM0@Z sub_10148c00
 0x100065f0 func   ?sub_10403500@@YAHXZ sub_10403500
 0x10006604 func   ?sub_102dc3e0@@YIXPAVCBaseEntity@@@Z sub_102dc3e0
 0x1000662c func   ?sub_10406810@@YAHXZ sub_10406810

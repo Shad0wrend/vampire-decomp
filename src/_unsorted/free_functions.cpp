@@ -43283,6 +43283,16 @@ int *sub_10148560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148c00 size=0x25
+// TARGET: sub_10148c00
+void sub_10148c00(float *v, float s, float *out)
+{
+    out[2] = s * v[0];
+    out[0] = s * v[1];
+    out[1] = s * v[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014c130 size=0x121
 #include "CWeaponGravityGun.h"
 #include "CBaseEntity.h"
