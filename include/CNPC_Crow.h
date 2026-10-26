@@ -8,6 +8,9 @@ class CBaseEntity;
 class CNPC_Crow
 {
 public:
+	char pad0[0x6f8];
+	float m_fl6f8;	// 0x6f8: a random delay drawn by the event 0x22 handler (vfunc465)
+
 	// Slot 546.
 	int vfunc546(int arg);
 	CNPC_Crow *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
@@ -29,4 +32,5 @@ public:
 	void vfunc481(CBaseEntity *pEnemy);	// slot 481 (plain member): stores the distance to pEnemy (slot 220 positions) at +0x5f4c and sets the condition 0x78 below 256.0f and 0x77 below 512.0f (each after asking the dev flag object at 0x10924a6c), then CAI_BaseNPC::vfunc481
 	void sub_10269a20(int condition);	// CAI_BaseNPC condition setter (stub 0x100041b0), called directly
 	void sub_10270b20(CBaseEntity *pEnemy);	// CAI_BaseNPC::vfunc481 (stub 0x10002a95), called directly
+	void vfunc465(int nEvent);	// slot 465: event 0x22 draws m_fl6f8 = RandomFloat(0, 0.75f) from the random stream at 0x1070b244
 };
