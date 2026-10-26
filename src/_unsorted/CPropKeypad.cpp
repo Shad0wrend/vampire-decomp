@@ -39,6 +39,48 @@ const char *CPropKeypad::sub_1021dc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021dcc0 size=0xa7
+#include "CPropKeypad.h"
+#include "COutputEvent.h"
+#include "CEHandleGet.h"
+
+struct CKeypadNameRecord
+{
+	int m_id;
+	const char *m_psz;
+};
+
+extern int g_1074b344;
+extern CKeypadNameRecord **g_1074b348;
+extern int g_1074f75c;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+
+inline const char *RecordName(const char *const &r)
+{
+	if (!r)
+		return g_106b8540;
+	return r;
+}
+
+inline int FindRecordId(const char *pszWanted)
+{
+	for (int i = 0; i < g_1074b344; i++) {
+		if (_strcmpi(RecordName(g_1074b348[i]->m_psz), pszWanted) == 0)
+			return g_1074b348[i]->m_id;
+	}
+	return -1;
+}
+
+void CPropKeypad::vfunc276()
+{
+	((COutputEvent *)((char *)this + 0x8a0))->sub_100cd660(EHandle_Get(m_hActivator), this, 0);
+	m_bFlag8b9 = 1;
+	sub_1021df90();
+	g_1074f75c = FindRecordId("error");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021ddc0 size=0x14
 #include "CPropKeypad.h"
 #include "CBaseTerminal.h"
