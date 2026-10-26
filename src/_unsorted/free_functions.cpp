@@ -42022,6 +42022,15 @@ void sub_10143d80(const Vector &position, float size, int r, int g, int b, int n
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146150 size=0x2e
+// TARGET: sub_10146150
+#include "Vector.h"
+
+float sub_10146150(const Vector *v) {
+    return FastSqrt(v->z * v->z + v->y * v->y + v->x * v->x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101466e0 size=0xe
 #include "CUnknown101466e0.h"
 // TARGET: CUnknown101466e0::sub_101466e0
