@@ -88,6 +88,17 @@ Vector CAI_BaseHumanoid::vfunc373()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025f160 size=0x28
+#include "CAI_BaseHumanoid.h"
+
+// TARGET: CAI_BaseHumanoid::vfunc371
+Vector CAI_BaseHumanoid::vfunc371()
+{
+    sub_10010be5();
+    return m_vec5f68;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025f1a0 size=0xe
 bool CAI_BaseHumanoid::vfunc586()
 {
