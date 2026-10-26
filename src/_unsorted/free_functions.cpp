@@ -30589,6 +30589,71 @@ void CUnknown100dda50::sub_100ddc40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ddd90 size=0x143
+#include "CCollisionProperty.h"
+#include "TestBit.h"
+
+extern float g_104454c4;
+
+struct CPartitionObj
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void ElementMoved(unsigned short handle, const float *pMins, const float *pMaxs);
+};
+extern CPartitionObj *g_1070b24c;
+
+struct CCollisionSlot8
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual float *slot8();
+};
+
+struct CCollisionHandleCreate
+{
+	void sub_100ddbd0();	// stub 0x10006ba4
+};
+
+static inline bool TestBitS(unsigned short value, int bit)
+{
+	return ((value >> bit) & 1) != 0;
+}
+
+// TARGET: CCollisionProperty::sub_100ddd90
+void CCollisionProperty::sub_100ddd90()
+{
+	if (TestBit(*(volatile unsigned int *)&m_pOuter->m_flags268, 15) && ((m_pOuter->m_flags268 &= ~0x8000), m_pOuter->m_pEdict2e0))
+	{
+		if (m_hPartition == 0xffff)
+		{
+			((CCollisionHandleCreate *)this)->sub_100ddbd0();
+			sub_100ddc40();
+		}
+		if ((m_nSolidType != 0 && !(m_usSolidFlags & 4)) || TestBitS(m_usSolidFlags, 3) || TestBit(m_pOuter->m_flags268, 18))
+		{
+			if (*(float *)&m_48[0] != g_104454c4)
+			{
+				Vector mins, maxs;
+				vfunc15(&mins, &maxs);
+				mins.x -= 1.0f;
+				mins.y -= 1.0f;
+				mins.z -= 1.0f;
+				maxs.x += 1.0f;
+				maxs.y += 1.0f;
+				maxs.z += 1.0f;
+				g_1070b24c->ElementMoved(m_hPartition, &mins.x, &maxs.x);
+			}
+			else
+			{
+				unsigned short h = m_hPartition;
+				g_1070b24c->ElementMoved(h, ((CCollisionSlot8 *)this)->slot8(), ((CCollisionSlot8 *)this)->slot8());
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ddf40 size=0xc
 int *CUnknown100ddf40::sub_100ddf40(int index)
 {
