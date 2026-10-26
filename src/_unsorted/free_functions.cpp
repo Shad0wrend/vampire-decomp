@@ -25474,6 +25474,24 @@ float sub_100c4500(int a, int b, float t)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c45c0 size=0x25
+// TARGET: sub_100c45c0
+int *sub_100c45c0(char *pThis, int key)
+{
+    int *pNode = *(int **)(pThis + 0x28);
+    while (pNode != 0) {
+        if (*pNode == key) {
+            return pNode + 1;
+        }
+        if (*pNode > key) {
+            return 0;
+        }
+        pNode = (int *)pNode[0xd];
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c46c0 size=0xc2
 struct CacheEntry {
 	int m_a;
