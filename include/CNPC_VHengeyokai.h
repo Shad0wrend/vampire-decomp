@@ -84,6 +84,7 @@ public:
 	char m_pad6695[0x66a4 - 0x6695];
 	CNPC_VHengeyokaiTimerVec m_Timers;	// 0x66a4
 
+	CNPC_VHengeyokai *vfunc5(unsigned int flags);	// slot 5 (scalar deleting destructor, plain member): the timer vector goes, then the Troika base's destructor body (stub 0x100123af), then the delete when bit 0 of flags is set
 	int sub_10382b30(int key);
 	bool sub_10382aa0(int key);
 	char sub_1029b180(void *pOther);	// CAI_BaseNPCTroika::vfunc69
@@ -129,4 +130,5 @@ public:
 	void vfunc618();	// slot 618 (plain member): plays one of the 0x1063bda4 sounds (channel 4, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
 	void sub_10382bb0();	// with the target (handle +0x6664) alive: the motor (+0x5d44) takes the yaw of slot 221 and the turn rate 20.0f, is reset, and then looks at the slot 167 target (stub 0x10007248) or, without one, turns to the angles yaw (flipped by 180 when the motor's byte +0x28 is set)
 	bool sub_103822a0(CBaseEntity *pEnt);	// "is pEnt within +-20 degrees of this NPC's facing": true unless pEnt is given, the target handle (+0x6664) is alive and the yaw from this NPC to pEnt's origin (sub_101d2c70, stub 0x1000612c) differs from this NPC's pitch/yaw angle at +4 of slot 221 (sub_1013d580, stub 0x100097e6) by less than -20.0f or more than 20.0f
+	void sub_1028d610();	// CAI_BaseNPCTroika destructor body (stub 0x100123af), called directly
 };
