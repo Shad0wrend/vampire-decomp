@@ -5757,6 +5757,7 @@
 0x10011f86 func   ?vfunc616@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::vfunc616
 0x10011f90 func   ?sub_10404270@@YAHXZ sub_10404270
 0x10011f95 func   ?sub_1020e080@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e080
+0x10011fa4 func   ?sub_102491a0@CUnknown102491a0@@QAEXHH@Z CUnknown102491a0::sub_102491a0
 0x10011fa9 func   ?sub_101074c0@@YIXPAUMem32@@HH@Z sub_101074c0
 0x10011fbd func   ?vfunc4@CTEBreakModel@@QAEXPAXH@Z CTEBreakModel::vfunc4
 0x10011fc2 func   ?sub_101e8480@CUnknown101e8480@@QAEXPAVCBaseCombatCharacter@@@Z CUnknown101e8480::sub_101e8480

@@ -82937,6 +82937,25 @@ void CUnknown10249160::sub_10249160(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102491a0 size=0x25
+struct CUnknown102491a0 {
+    char m_pad0000[0xc];
+    int m_0c;
+    int *sub_1000b58c(int a, int b);
+    void sub_102491a0(int a, int b);
+};
+
+// TARGET: CUnknown102491a0::sub_102491a0
+void CUnknown102491a0::sub_102491a0(int a, int b)
+{
+    int *p = sub_1000b58c(a, 1);
+    if (p != 0) {
+        p[2] = b;
+        m_0c = 2;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249450 size=0xa
 void CUnknown10249450::sub_10249450(int value)
 {
