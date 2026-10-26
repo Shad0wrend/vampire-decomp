@@ -41937,6 +41937,19 @@ void CPathKeyFrame::sub_10140070()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140270 size=0x2d
+#include "CPathKeyFrame.h"
+
+void sub_1013b1f0(float *pVec, float *pOther);
+
+// TARGET: CPathKeyFrame::sub_10140270
+void CPathKeyFrame::sub_10140270(Vector angles)
+{
+	m_vAngles = angles;
+	sub_1013b1f0((float *)&m_vAngles, (float *)m_pad0468);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140bd0 size=0x11
 struct CScaleFields10140bd0 {
     char pad0[0x49c];
