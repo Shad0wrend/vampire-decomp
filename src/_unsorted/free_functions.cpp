@@ -93015,6 +93015,34 @@ bool sub_102eb170(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102eb2d0 size=0x2f
+// TARGET: sub_102eb2d0
+
+struct CUnknown102eb2d0Node
+{
+    unsigned short m_Element;
+    unsigned short m_Previous;
+    int m_Next;
+    int m_pad;
+};
+
+struct CUnknown102eb2d0
+{
+    int m_pad0000;
+    CUnknown102eb2d0Node *m_pMemory;
+    char m_pad0008[0x14 - 8];
+    unsigned short m_Head;
+    void sub_102eb2d0(unsigned short elem);
+};
+
+void CUnknown102eb2d0::sub_102eb2d0(unsigned short elem)
+{
+    m_pMemory[elem].m_Element = elem;
+    m_pMemory[elem].m_Previous = m_Head;
+    m_Head = elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eb7f0 size=0xbd
 #include "CUtlRBTree12.h"
 
