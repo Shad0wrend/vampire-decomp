@@ -41959,6 +41959,22 @@ void sub_1013da70(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013db40 size=0x2b
+void sub_10431641(void *p);
+void __fastcall sub_1013db10(int *pThis);
+
+void __fastcall sub_1013db40(int *pThis)
+{
+    int *pNode = (int *)pThis[4];
+    while (pNode != pThis + 3) {
+        int *pNext = (int *)pNode[1];
+        sub_10431641(pNode);
+        pNode = pNext;
+    }
+    sub_1013db10(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013dbb0 size=0x70
 struct Blob { Blob *m_pNext; Blob *m_pPrev; int m_NumBytes; char m_Data[1]; };
 struct BlobHead { Blob *m_pNext; Blob *m_pPrev; };
