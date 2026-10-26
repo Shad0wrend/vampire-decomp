@@ -68,7 +68,7 @@ public:
 	virtual void vfunc52();
 	virtual char vfunc53(CBaseCombatCharacter *pChar, int nIndex);	// the character's count of the index (sub_103346c0) is below the limit of the index (slot 55's object, sub_1000a37b)
 	virtual void vfunc54();
-	virtual void vfunc55();
+	virtual void *vfunc55(int a);	// slot 55: the object of the index a (its sub_1000df3f gives the limit, see vfunc52)
 	virtual void vfunc56();
 	virtual void vfunc57();
 	virtual void vfunc58();
