@@ -100250,6 +100250,23 @@ void CUnknown10316890::sub_10316ab0(int arg, Vector a, Vector b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316e80 size=0x29
+extern char g_10936c74[];
+extern char g_1061514c[];
+extern char g_10615134[];
+
+struct CSymTabUnit102e9fe0 {
+    void sub_102e9fe0(int a, int b);
+};
+
+// TARGET: sub_10316e80
+void sub_10316e80()
+{
+    ((CSymTabUnit102e9fe0 *)g_10936c74)->sub_102e9fe0((int)g_1061514c, 1000000000);
+    ((CSymTabUnit102e9fe0 *)g_10936c74)->sub_102e9fe0((int)g_10615134, 1000000001);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316ec0 size=0xa1
 extern "C" int sprintf(char *, const char *, ...);
 extern "C" int strcmp(const char *, const char *);
