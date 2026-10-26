@@ -49371,6 +49371,30 @@ flagsDone:
 }
 // END FUNCTION
 
+// FUNCTION: 0x101927c0 size=0x28
+struct CUnk101927c0
+{
+    float m_fl;
+    const char *m_psz;
+};
+
+extern CUnk101927c0 g_1058d9b8[24];
+extern const char *g_1058da7c;
+
+// TARGET: sub_101927c0
+const char *sub_101927c0(float x)
+{
+    unsigned int i = 0;
+    do
+    {
+        if (x < g_1058d9b8[i].m_fl)
+            return g_1058d9b8[i].m_psz;
+        i++;
+    } while (i < 24);
+    return g_1058da7c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192800 size=0x43
 #include "CPropMover.h"
 void *sub_100aa720(int size);
