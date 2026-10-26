@@ -1,4 +1,4 @@
-// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 12, 13, 17, 18, 20, 21, 26, 30, 31, 32, 35, 38, 47, 49, 58, 59, 61, 62, 65 to 67, 68, 69, 72, 78, 82, 84, 85, 101, 102, 105 and 119 to 122 are known.
+// CUnknown1070b22c: the global object at 0x1070b22c (pointer in the data segment); only slots 12, 13, 17, 18, 20, 21, 26, 30, 31, 32, 35, 38, 47, 48, 49, 58, 59, 61, 62, 65 to 67, 68, 69, 72, 78, 82, 84, 85, 101, 102, 105 and 119 to 122 are known.
 // Slot 12 answers a flag (the server's "is the level loaded" test, used before the sprite / particle code).
 // Slot 13 takes a resource name and a preload flag (precaches a model / sound / resource) and returns the index.
 // Slot 17 is PrecacheModel(name, preload) and returns the model index.
@@ -8,6 +8,7 @@
 // Slot 30 is the cluster of a position (takes a position pointer), slot 31 fills a PVS buffer for a cluster (cluster, buffer size, buffer).
 // Slot 32 takes a position and a visibility set and answers a flag (a PVS test).
 // Slot 47 is SaveAllocMemory(num, size): allocates num * size bytes of save memory.
+// Slot 48 answers a flag (the test the sound code makes before it changes the global float at 0x106102fc).
 // Slot 49 is EmitAmbientSound(entindex, pos, sample, volume, soundlevel, flags, pitch).
 // Slot 58 is GetVCollide(modelIndex): the collision data of a model (a solid count, then the array of solids), 0 when there is none.
 // Slot 61 is ClientCommand(edict, fmt, ...): a variadic (cdecl) slot, the object is pushed as the first argument.
@@ -43,7 +44,7 @@ public:
 	virtual CUnknown1070b22c_Edict *vfunc38(int index);
 	virtual void a39();
 	virtual void a40(); virtual void a41(); virtual void a42(); virtual void a43(); virtual void a44();
-	virtual void a45(); virtual void a46(); virtual void *vfunc47(int num, int size); virtual void a48();
+	virtual void a45(); virtual void a46(); virtual void *vfunc47(int num, int size); virtual int vfunc48();
 	virtual void vfunc49(int entindex, int pos, const char *pszSample, int volume, int soundlevel, int flags, int pitch);
 	virtual void a50(); virtual void a51(); virtual void a52(); virtual void a53(); virtual void a54();
 	virtual void a55(); virtual void a56(); virtual void a57(); virtual void *vfunc58(int modelIndex);
