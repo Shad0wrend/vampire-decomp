@@ -40827,6 +40827,23 @@ int *sub_10136330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101363b0 size=0x25
+#include "CLogicRelay.h"
+
+extern char vt_104475c4[];
+extern char vt_10469f94[];
+
+// TARGET: sub_101363b0
+CLogicRelay *CLogicRelay::sub_101363b0()
+{
+    sub_100090fc(0);
+    *(void **)this = vt_104475c4;
+    ((COutputEvent *)((char *)this + 0x454))->sub_100cd2a0();
+    *(void **)this = vt_10469f94;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136450 size=0xa
 void __fastcall sub_10136450(char *self, int, int)
 {
