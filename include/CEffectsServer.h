@@ -7,6 +7,7 @@ class CBaseEntity;
 class CEffectsServer
 {
 public:
+	CEffectsServer();
 	virtual CEffectsServer *vfunc0(unsigned int flags);
 	virtual void vfunc1(int a, int b, int c, int d, unsigned char e, unsigned char f, int g, unsigned char h, unsigned char i, unsigned char j, unsigned char k, unsigned char l, unsigned char m, unsigned char n, unsigned char o, unsigned char p);	// slot 1: a 16 argument effect (the bytes h, i, k become floats) broadcast to every player through slot 8 of the temp entity system (global 0x10540528), unless the prediction system's suppressed host leaves nobody
 	virtual void vfunc2(const float *pOrigin, int a, float b, float c);	// slot 2: like slot 7 with a scaled value: forwards (filter, 0, pOrigin, a, b * 0.1f, (int)c) to slot 34 of the temp entity system
@@ -20,7 +21,9 @@ public:
 	virtual void vfunc10();
 	void sub_1000168b();	// as in CDataObjectAccessSystem (transplant)
 
-	char m_pad0004[8];
+	void *m_pNext;	// 0x04: the link of the global list at 0x10939fdc (the constructor pushes this)
+	unsigned char m_b08;	// 0x08: cleared by the constructor
+	char m_pad0009[3];
 	CBaseEntity *m_pSuppressHost;	// 0x0c: the prediction system's suppressed host
 	int m_nSuppressCount;	// 0x10: while positive nothing is suppressed
 };
