@@ -74,6 +74,33 @@ void CBaseAnimating::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008df10 size=0x136
+#include "ScopeTrace.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+#include "CBaseAnimating.h"
+#include "CEHandleGet.h"
+void sub_100c7be0(void *a, void *b, void *c, void *d, void *e);
+
+// TARGET: CBaseAnimating::vfunc130
+void CBaseAnimating::vfunc130(int a)
+{
+	ScopeTrace trace("CBaseAnimating::OnRestore", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!EHandle_Get(*(unsigned int *)((char *)this + 0x5b8))) {
+		((CEntityVSlots *)this)->slot246();
+	} else {
+		for (int i = 0; i < 2; i++) {
+			sub_100c7be0((char *)this + 0x5c4 + i * 0x14, sub_100952d0(i), (char *)this + 0x5ec, sub_100952d0(-1), (char *)this + 0x614);
+		}
+	}
+	if (!EHandle_Get(*(unsigned int *)((char *)this + 0x63c))) {
+		*(int *)((char *)this + 0x648) = 0;
+		*(int *)((char *)this + 0x64c) = 0;
+	}
+	CBaseEntity::vfunc130(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e310 size=0x11e
 #include <string.h>
 #include "ScopeTrace.h"
