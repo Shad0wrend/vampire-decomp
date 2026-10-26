@@ -40396,6 +40396,18 @@ void sub_10138630(const matrix3x4_t &in, matrix3x4_t &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101387a0 size=0x2d
+// TARGET: sub_101387a0
+int sub_101387a0(const float *a, const float *b) {
+    for (int i = 0; i < 3; i++) {
+        if (a[i] != b[i]) {
+            return 0;
+        }
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138870 size=0x3b
 #include "Vector.h"
 
