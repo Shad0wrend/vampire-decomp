@@ -105,3 +105,17 @@ void CAI_StandoffGoal::vfunc241(int a)
 	CAI_GoalEntity::vfunc241(a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x102cd2d0 size=0x27
+// TARGET: CAI_StandoffGoal::vfunc103
+#include "CAI_StandoffGoal.h"
+
+extern char *g_1070b228;
+void sub_102cd310();
+
+void CAI_StandoffGoal::vfunc103()
+{
+	((CBaseEntity *)this)->sub_100ac4e0((int)(void *)sub_102cd310, 0, 0);
+	*(float *)((char *)this + 0x17c) = *(float *)(g_1070b228 + 0xc) + 0.01;
+}
+// END FUNCTION
