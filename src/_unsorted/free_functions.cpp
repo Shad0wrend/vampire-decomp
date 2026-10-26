@@ -30950,6 +30950,21 @@ int CDialog::sub_100e8100(char *pPacket)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e84e0 size=0x27
+bool __stdcall sub_100e84e0(int flags, char *pThis)
+{
+    int i = 0;
+    int *p = (int *)(pThis + 0x2804);
+    do {
+        if (*p & flags)
+            return true;
+        i++;
+        p++;
+    } while (i < 4);
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e8ef0 size=0x9b
 #include "CDialogDependency.h"
 #include "CVDmg_t.h"
