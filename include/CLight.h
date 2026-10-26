@@ -19,6 +19,7 @@ public:
 	void sub_100115fe();
 	void sub_10130800(inputdata_t *pInput);	// "CLight::InputSetPattern": remembers the current level, the new target level (first character of the pattern) and the pattern, restarts the fade think
 	void sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
+	void sub_10130690();	// LightStyle(m_iStyle, "a") on the engine (slot 62), then sets bit 0 of the flags at +0x204
 
 	char m_pad00[0x17c];
 	float m_flNextThink;	// 0x17c
