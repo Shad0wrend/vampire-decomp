@@ -24640,6 +24640,20 @@ void CFloatPair3f4::sub_100c0970(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0ad0 size=0x2c
+#include "CFloatPair3f4.h"
+
+// TARGET: CFloatPair3f4::sub_100c0ad0
+void CFloatPair3f4::sub_100c0ad0(int a, int b, int c, int d)
+{
+	if (m_f164 != 0.0f) {
+		sub_100c0970(0.0f);
+	} else {
+		sub_100c0970(m_f460);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0b40 size=0x7e
 #include <math.h>
 
