@@ -25,6 +25,7 @@ public:
 	virtual void hsn0(); virtual void hsn1();
 	virtual void vfunc266(CBaseEntity *pOther);	// slot 266: reacts to the entity that hit the prop
 	CPropHaunted *sub_102139f0();
+	void vfunc174(CBaseEntity *pOther);	// slot 174 (declared as a plain member): CBaseEntity::vfunc174 for the entity that hit the prop, the impact reaction sub_10213ef0 (index 0, no event) first; the reaction is skipped while the state at +0x200 is 2
 	void vfunc180();	// slot 180 (declared as a plain member): CBaseEntity::vfunc180, then for a live ghost entity (handle at +0x7d0) runs its slot 242 and schedules its next think 5.0 seconds ahead
 	void vfunc104();	// slot 104 "Precache": CBreakableProp::vfunc104, then precaches the models named at +0x7bc / +0x7c0 and the sounds named at +0x7c4, +0x7c8, +0x7cc when set
 	void sub_1000978c();	// CBreakableProp::vfunc104 (stub of 0x1018fb50), called directly
