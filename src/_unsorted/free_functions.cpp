@@ -66893,6 +66893,20 @@ void CVTraitFields101f7380::sub_101f7380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f73b0 size=0x2a
+#include "CUnknown101f73b0.h"
+
+int *sub_102038e0(int *pValue, int a, const char *pszName);
+extern const char g_10546214[];
+
+// TARGET: CUnknown101f73b0::sub_101f73b0
+void CUnknown101f73b0::sub_101f73b0(int a, int b)
+{
+    m_n0c = b;
+    m_n08 = *sub_102038e0(&b, a, g_10546214);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f73f0 size=0xb5
 #include "CVTraitEffectGroup_t.h"
 struct CVStatKV
