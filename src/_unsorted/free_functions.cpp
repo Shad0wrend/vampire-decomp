@@ -29428,6 +29428,21 @@ void CCollisionProperty::sub_100dd630(Vector *pOutMins, Vector *pOutMaxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd740 size=0x2c
+#include "CCollisionProperty.h"
+
+// TARGET: CCollisionProperty::sub_100dd740
+void CCollisionProperty::sub_100dd740(bool bWorld, Vector *pMins, Vector *pMaxs)
+{
+	if (bWorld)
+	{
+		sub_100dd450(pMins, pMaxs);
+		return;
+	}
+	vfunc3(pMins, pMaxs);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd990 size=0x65
 #include "CUnknown100dd990.h"
 

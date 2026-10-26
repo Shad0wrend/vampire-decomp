@@ -4562,6 +4562,7 @@
 0x1000ef2f func   ?vfunc274@CPropPadlock@@QAEXXZ CPropPadlock::vfunc274
 0x1000ef34 func   ?vfunc41@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc41
 0x1000ef39 func   ?sub_100b0980@@YAXXZ sub_100b0980
+0x1000ef48 func   ?sub_100dd740@CCollisionProperty@@QAEX_NPAVVector@@1@Z CCollisionProperty::sub_100dd740
 0x1000ef4d func   ?sub_102e7e20@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e7e20
 0x1000ef52 func   ?sub_10074a30@CUnknown10074a30@@QAEXD@Z CUnknown10074a30::sub_10074a30
 0x1000ef57 func   ?sub_103fc5f0@CBlueBloodPack@@QAEXXZ CBlueBloodPack::sub_103fc5f0
