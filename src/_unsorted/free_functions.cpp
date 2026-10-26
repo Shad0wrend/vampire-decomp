@@ -83372,6 +83372,22 @@ void CKeyValuesX::sub_10248730(CUtlBuffer *pBuf, int nIndent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248810 size=0x22
+void sub_10007f04(void *p, void *pData);
+extern char g_105c5328[];
+
+// TARGET: sub_10248810
+void sub_10248810(void *p, int n)
+{
+    if (n > 0) {
+        do {
+            sub_10007f04(p, g_105c5328);
+            n--;
+        } while (n != 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248850 size=0xa
 void CUnknown10248850::sub_10248850(int value)
 {
