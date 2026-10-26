@@ -73,6 +73,25 @@ int CNPC_VYukie::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd800 size=0x27
+#include "CNPC_VYukie.h"
+
+struct CAI_BaseNPCTroikaPlaceholder {
+    void sub_1000dcba();
+};
+
+// TARGET: CNPC_VYukie::vfunc420
+void CNPC_VYukie::vfunc420()
+{
+    ((CAI_BaseNPCTroikaPlaceholder *)this)->sub_1000dcba();
+    if (sub_1032e7b0() != 0) {
+        CEntityVSlots *w = sub_1032e7b0();
+        void **vt = *(void ***)w;
+        ((void (__fastcall *)(void *))vt[0x108 / 4])(w);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd8b0 size=0x3e
 #include "CNPC_VYukie.h"
 
