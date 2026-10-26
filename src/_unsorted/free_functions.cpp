@@ -88874,6 +88874,19 @@ int CAI_BaseNPC::sub_10289fe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028a150 size=0x23
+// TARGET: sub_1028a150
+int __fastcall sub_1028a150(char *p)
+{
+    int idx = *(int *)(p + 0x5c40);
+    int *tbl = *(int **)(p + 0x5c38);
+    if (tbl != 0 && idx >= 0 && idx < tbl[9]) {
+        return tbl[8] + idx * 8;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028a190 size=0x97
 #include "CAI_BaseNPCTroika.h"
 #include "CCineNPC.h"
