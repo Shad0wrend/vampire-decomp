@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10109a20 size=0x26
+#include "CFire.h"
+
+struct CGlobalVarsView {
+    char m_pad0000[0xc];
+    float curtime;
+};
+
+extern CGlobalVarsView *g_1070b228;
+
+// TARGET: CFire::sub_10109a20
+void CFire::sub_10109a20(CBaseEntity *p)
+{
+    if (*(int *)((char *)p + 0x9c) != 0) {
+        *(float *)((char *)this + 0x460) = g_1070b228->curtime;
+    }
+    CBaseEntity::vfunc174(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109c10 size=0x36
 #include "CFire.h"
 
