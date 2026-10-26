@@ -12,7 +12,7 @@ class CRecipientFilter;
 class CUnknown1070b248
 {
 public:
-	virtual int vfunc0(const char *pszSample, int bPreload);
+	virtual void vfunc0(const char *pszSample, int bPreload);
 	virtual void vfunc1();
 	virtual void vfunc2(const CRecipientFilter *pFilter, int entindex, int channel, const char *pszSample, float flVolume, int iSoundlevel, int iFlags, int iPitch, const float *pOrigin, const float *pDirection, int bUpdatePositions, int soundtime);
 	virtual void vfunc3(const CRecipientFilter *pFilter, int entindex, int channel, const char *pszSample, float flVolume, float flAttenuation, int flags, int pitch, int a, int b, int c, int d);
