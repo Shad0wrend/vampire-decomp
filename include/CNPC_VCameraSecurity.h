@@ -9,6 +9,7 @@ public:
 	void sub_100123af();
 	CNPC_VCameraSecurity *sub_10369df0();	// as in CKeepUpright (transplant)
 	CBaseEntity *sub_10369e70();	// finds the camera entity named by m_pCameraName (cached as a handle, looked up again once stale), returns it or null
+	bool vfunc363(CBaseEntity *pOther);	// slot 363: true when the camera (sub_10369e70) exists, pOther's dword at +0xa8 is set and the camera's sub_100150c3(pOther) accepts it
 
 	char m_pad03e0[0x6660 - 0x3e0];
 	const char *m_pCameraName;	// 0x6660
