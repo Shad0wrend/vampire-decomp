@@ -45140,6 +45140,18 @@ void CBasePlayer::sub_1016fed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170cb0 size=0x27
+// TARGET: CUnknown10170cb0::sub_10170cb0
+#include "CUnknown10170cb0.h"
+
+void CUnknown10170cb0::sub_10170cb0(int flDelta, int nLimit)
+{
+	m_unk22e4 += flDelta;
+	if (nLimit > 0 && m_unk22e4 > nLimit)
+		m_unk22e4 = nLimit;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170cf0 size=0x34
 // TARGET: CBasePlayer::sub_10170cf0
 #include "CBasePlayer.h"
