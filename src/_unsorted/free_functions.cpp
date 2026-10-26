@@ -47423,6 +47423,16 @@ void sub_1018be60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018beb0 size=0x2e
+// TARGET: sub_1018beb0
+int sub_1018beb0(int a, int b, unsigned int *pBits, int nBit) {
+    unsigned int n = nBit - 1;
+    *pBits = 0;
+    pBits[n >> 5] |= 1 << (n & 31);
+    return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018bfe0 size=0x102
 #include "SendProp.h"
 
