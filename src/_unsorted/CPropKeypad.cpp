@@ -65,3 +65,19 @@ void CPropKeypad::vfunc39(CBasePlayer *pPlayer)
 	pPlayer->sub_1017cef0((CBaseEntity *)result);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1021de70 size=0x24
+#include "CBaseTerminal.h"
+#include "CPropKeypad.h"
+
+void __fastcall sub_10014a6a(void *p);
+
+// TARGET: CPropKeypad::vfunc41
+void CPropKeypad::vfunc41(void *pArg)
+{
+	((CBaseTerminal *)this)->vfunc41(pArg);
+	if (m_bFlag8b8 != 0) {
+		sub_10014a6a(pArg);
+	}
+}
+// END FUNCTION
