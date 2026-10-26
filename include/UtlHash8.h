@@ -25,6 +25,9 @@ struct UtlHash8Bucket
 		}
 	}
 
+	int Count() const { return m_Size; }
+	char *Element(int i) { return m_pElements + i * 8; }
+
 	char *m_pElements;
 	int m_allocationCount;
 	int m_growSize;
