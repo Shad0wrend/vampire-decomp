@@ -6386,6 +6386,7 @@
 0x10014948 func   ?sub_100deb10@@YIXPADHD@Z sub_100deb10
 0x1001494d func   ?sub_10094790@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10094790
 0x10014966 func   _item_a_lt_cloth item_a_lt_cloth
+0x1001498e func   ?vfunc2@CPositionInterpolator_Linear@@QAEXHPBVVector@@@Z CPositionInterpolator_Linear::vfunc2
 0x100149a2 func   _logic_auto logic_auto
 0x100149a7 func   ?vfunc0@CTraceFilterSimple@@UAE_NPAXH@Z CTraceFilterSimple::vfunc0
 0x100149b1 func   ?vfunc127@CSoundEnt@@QAEHH@Z CSoundEnt::vfunc127
