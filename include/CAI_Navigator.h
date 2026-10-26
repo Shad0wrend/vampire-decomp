@@ -108,7 +108,6 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 	void sub_1030b5b0(int sequence);	// stores the arrival sequence (stub 0x100016b3)
 	float sub_1030b880();	// a float value of the route handed to the motor with its goal record (stub 0x1001021c)
 	Vector *sub_1030b7c0();	// the route's goal position (stub 0x10012805)
-	CAI_NavVec3 *sub_1030ba30();	// the vector at +0x4c (stub 0x1000f60a)
 };
 
 struct CAI_NavGoal	// the record CAI_Navigator::vfunc17 fills for the motor
@@ -144,6 +143,8 @@ public:
 	void sub_100053b7(int a);	// stub of 0x102f13d0
 	bool sub_102f13d0(unsigned char bArg);	// stores the argument as a float at +0x3c, then (owner state 0 or 2, and a route waypoint that is not blocked: same entry as its linked one, flags 0x2a clear) runs the three move checks sub_102f0e80 / sub_102f0fe0 (at most every half second, or whenever +0x3c is set) and sub_102f13a0; true when one of them succeeded
 	bool sub_102f0e80(char *pbDone);	// stub 0x1001512c
+	bool sub_102f0e00(const float *pfThreshold, char *pbDone);	// stub 0x100132fa, called directly by sub_102f0e80 with the threshold global 0x1060fcd8
+	bool sub_102f06e0(void *pWaypoint, char *pbDone);	// stub 0x100135c5, called directly by sub_102f0e80 with the next waypoint
 	bool sub_102f0fe0(char *pbDone);	// stub 0x100042b4
 	bool sub_102f13a0(char *pbDone);	// stub 0x100029fa
 	int sub_102ecc00();	// the dword at +0x5d3c of the owner (stub 0x10013011)
@@ -167,7 +168,6 @@ public:
 	bool sub_102ed430(const Vector *pPosition, int a, int b, int c);	// path to the node nearest pPosition (sub_102f3c10 asks the owner's graph): stamps the owner's value at +0x156c and the frame count into +8 / +0xc, asks the pathfinder (sub_102ff3e0 with a, b), sets up the route (flag value 4, the node, its arrival data) and stores the squared distance from pPosition to the route's goal position in the float at +0x14; false when any step fails (ret 0x10: four stack arguments, the last one unused)
 	Vector *sub_102ee140();	// stub 0x100071fd: the position the route is heading for
 	void sub_102ee220(const Vector *pPosition);	// stub 0x1000481d: hands the navigator a position to head for
-	float sub_102ee1a0();	// stub 0x1000df94: the float at +0x28 of the route object (+0x30)
 	void sub_102f0400();	// stub 0x10006744, run when the motor reports 1
 	int sub_102ee3f0();	// stub 0x10011f77: the owner's task id for the finished move
 	float sub_102f1cf0();	// the distance from the owner's origin (slot 220) to the route's goal position: 2D while the flag at +0x18 is clear, else 3D
