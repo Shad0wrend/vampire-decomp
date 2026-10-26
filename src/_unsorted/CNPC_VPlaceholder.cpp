@@ -27,3 +27,17 @@ CNPC_VPlaceholder *CNPC_VPlaceholder::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103a4350 size=0x28
+#include "CNPC_VPlaceholder.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VPlaceholder::vfunc420
+void CNPC_VPlaceholder::vfunc420()
+{
+    *(int *)((char *)this + 0x62ec) = 0;
+    ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc420();
+    *(char *)((char *)this + 0x1480) = 1;
+    sub_100ac4e0(0, 0, 0);
+}
+// END FUNCTION

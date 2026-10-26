@@ -2097,6 +2097,7 @@
 0x100075ae func   ?vfunc609@CAI_BaseNPCTroika@@QAEHD@Z CAI_BaseNPCTroika::vfunc609
 0x100075b3 func   ?sub_1014ca10@CUnknown1014ca10@@QAEXEEE@Z CUnknown1014ca10::sub_1014ca10
 0x100075c7 func   ?sub_1021a4f0@CUnit1021a4f0@@QAE_NH@Z CUnit1021a4f0::sub_1021a4f0
+0x100075db func   ?vfunc420@CNPC_VPlaceholder@@QAEXXZ CNPC_VPlaceholder::vfunc420
 0x100075e5 func   ?sub_1008f540@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_1008f540
 0x100075ef func   ?sub_101c31f0@@YAXEPAH0GHE@Z sub_101c31f0
 0x100075fe func   ?sub_101b7df0@CUnknown101b9140@@QAEHHPBUCUnknown101b9140Elem@@@Z CUnknown101b9140::sub_101b7df0
