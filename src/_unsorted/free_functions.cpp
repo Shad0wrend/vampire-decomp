@@ -83382,6 +83382,29 @@ struct CUnknown1025d820 { int a; CUnknown1025d820* sub_1025d820(); };
 CUnknown1025d820* CUnknown1025d820::sub_1025d820() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x1025d840 size=0x2c
+struct CIntObj1025d840 {
+    virtual void vfunc0();
+    virtual int *vfunc1();
+};
+struct CIntHolder1025d840 {
+    int m_v;
+    CIntHolder1025d840 *sub_1025d840(CIntObj1025d840 *pObj);
+};
+
+// TARGET: sub_1025d840
+CIntHolder1025d840 *CIntHolder1025d840::sub_1025d840(CIntObj1025d840 *pObj)
+{
+    m_v = -1;
+    if (pObj) {
+        m_v = *pObj->vfunc1();
+        return this;
+    }
+    m_v = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d880 size=0x87
 struct S1025d9d0
 {
