@@ -15,6 +15,7 @@ public:
 	virtual void vfunc104();	// slot 104 "CFuncRotating::Precache": precaches the running noise (name at +0x468) when it is set, and with non-zero angles (+0x3c8) schedules the move done function 1.5 seconds on
 	void sub_100c0690();	// the move done function installed by Precache (stub 0x1000b884)
 	bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 "CFuncRotating::KeyValue": "fanfriction" (percent) and "Volume" (tenths, clamped to 0..1), else CBaseEntity::vfunc110
+	void vfunc178(CBaseEntity *pOther);	// slot 178 "CFuncRotating::Blocked": a damage info object (this as attacker and inflictor, +0x464 as the damage, bits 1, the last three arguments 0, 0, -1) handed to the entity pOther (CBaseEntity::sub_100a1250)
 	bool sub_100c0760(float flStep);	// slows the rotation down: the speed at +0x164 loses (+0x460 * fan friction * a constant), clamped at 0; when that is not above |flStep| the speed becomes flStep (true), else the reduced value (negated for a negative speed) (false); either way handed to sub_100c0420
 	void sub_100c0420(float flSpeed);	// stub 0x10002a59: applies the new speed
 
@@ -24,6 +25,6 @@ public:
 	float m_flVolume;	// 0x458
 	char m_pad045c[0x460 - 0x45c];
 	float m_f460;	// 0x460
-	char m_pad0464[0x468 - 0x464];
+	float m_f464;	// 0x464: the damage value of the blocked hit (vfunc178)
 	const char *m_pszNoiseRunning;	// 0x468
 };
