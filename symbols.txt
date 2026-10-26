@@ -6748,6 +6748,7 @@
 0x1001469b func   ?vfunc275@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc275
 0x100146b4 func   ?vfunc546@CNPC_VTest@@QAEHH@Z CNPC_VTest::vfunc546
 0x100146be func   ?vfunc71@CBaseButton@@UAEXXZ CBaseButton::vfunc71
+0x100146c8 func   ?sub_10126380@@YGMMM@Z sub_10126380
 0x100146cd func   ?sub_100c5600@@YAHHHH@Z sub_100c5600
 0x100146d7 func   ?sub_102e0730@CUnknown102e0730@@QAEXXZ CUnknown102e0730::sub_102e0730
 0x100146e6 func   ?sub_1024a310@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_1024a310

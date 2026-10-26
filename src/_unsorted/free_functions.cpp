@@ -38951,6 +38951,16 @@ int CGameMovement::sub_10125200(const Vector &point)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10126380 size=0x21
+// TARGET: sub_10126380
+float __stdcall sub_10126380(float a, float b)
+{
+    float x = a * b;
+    float y = x * x * x;
+    return 3.0f * x * x - (y + y);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10126e20 size=0xf4
 #include "CGameMovement.h"
 
