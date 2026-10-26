@@ -69906,6 +69906,35 @@ void CUnknown10202fd0::sub_10202fd0(CSlotIter *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203150 size=0x2e
+// TARGET: sub_10203150
+
+struct CUnknown10203150
+{
+    char m_pad0000[8];
+    int m_count;
+    int **m_ppItems;
+    bool sub_10203150(int value);
+};
+
+bool CUnknown10203150::sub_10203150(int value)
+{
+    int i = 0;
+    if (m_count > 0)
+    {
+        do
+        {
+            if (*m_ppItems[i] == value)
+            {
+                return true;
+            }
+            i++;
+        } while (i < m_count);
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203190 size=0x66
 #include "CUnknown102029c0.h"
 struct StatOwner2 {
