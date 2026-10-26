@@ -8,10 +8,15 @@ struct CAI_StandoffBehaviorOuter
 {
 	char pad0[0x1fc];
 	int m_unk1fc;
-	char pad1[0x5ddc - 0x200];
+	char pad1[0x5c38 - 0x200];
+	int m_unk5c38;
+	char pad1b[0x5ddc - 0x5c3c];
 	CAI_Hint *m_pHintNode;	// 0x5ddc: the hint node the NPC has locked
 	char pad2[4];
 	float m_unk5de4;
+
+	int sub_102cc1f0(int a);	// stub 0x10014f6a: the NPC's activity answer for a (compared with the field at +0x5c38)
+	void sub_10269f30(int a);	// stub 0x1000c39c: the NPC's call with a (the standoff's 0x54 notice)
 };
 
 // CAI_BehaviorBase (RTTI .?AVCAI_BehaviorBase@@): the behaviours' common base; only the type is needed (source type of
@@ -61,14 +66,9 @@ public:
 	char m_unk4c;
 	char pad004d[3];
 	float m_savedUnk50;
-	unsigned char m_b54;
-	char pad0055[0x64 - 0x55];
-	float m_fl64;
-	float m_fl68;
 
 	CAI_StandoffBehavior *sub_102c7100();	// constructor body (base constructors inlined)
 	int sub_102c6f70(int a);	// tail call: slot 2 of the object at +0x14 (a base behaviour's default, stub 0x1000fa83)
 	void sub_102c7360(char a);	// stores the byte at +0x19 when it changes, then runs sub_102c6ff0 (stub 0x1000d3be)
 	void sub_102c73b0(const CStandoffParams *p);	// copies the block to +0x20 and sets +0x3c = -1, +0x40 = p->m_flMin, +0x44 = p->m_flMax (stub 0x10010b54)
-	void sub_102c6db0();	// the base behaviour's vfunc10, called directly (stub 0x1000192e)
 };
