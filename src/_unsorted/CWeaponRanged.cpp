@@ -288,3 +288,37 @@ void CWeaponRanged::vfunc320()
 	sub_10254250();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1023a210 size=0x2c
+#include "CWeaponRanged.h"
+
+#define S10(b) virtual void s##b##0(); virtual void s##b##1(); virtual void s##b##2(); virtual void s##b##3(); virtual void s##b##4(); virtual void s##b##5(); virtual void s##b##6(); virtual void s##b##7(); virtual void s##b##8(); virtual void s##b##9();
+
+struct CIntObj1023a210 {
+    virtual void vfunc0();
+    virtual int *vfunc1();
+};
+struct CWRView1023a210 {
+    S10(0) S10(1) S10(2) S10(3) S10(4) S10(5) S10(6) S10(7) S10(8) S10(9)
+    S10(10) S10(11) S10(12) S10(13) S10(14) S10(15) S10(16) S10(17) S10(18) S10(19)
+    S10(20) S10(21) S10(22) S10(23) S10(24) S10(25) S10(26) S10(27) S10(28)
+    virtual void s290();
+    virtual void s291();
+    virtual void s292();
+    virtual CIntObj1023a210 *vfunc293();
+    char pad[0x874 - 4];
+    int m_i874;
+};
+
+// TARGET: CWeaponRanged::vfunc294
+void CWeaponRanged::vfunc294()
+{
+    CIntObj1023a210 *pObj = ((CWRView1023a210 *)this)->vfunc293();
+    if (pObj != 0) {
+        int *pVal = pObj->vfunc1();
+        ((CWRView1023a210 *)this)->m_i874 = *pVal;
+        return;
+    }
+    ((CWRView1023a210 *)this)->m_i874 = -1;
+}
+// END FUNCTION
