@@ -8096,6 +8096,29 @@ void sub_1005ed80(void *pFilter, int delay, const float *pOrigin, const float *p
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005ee50 size=0x2a
+#include "CTEBSPDecal.h"
+
+extern int vt_1044dd6c[];
+
+struct CTEBaseBeamPlaceholder {
+    void sub_10015334(int a);
+};
+
+// TARGET: CTEBSPDecal::sub_1005ee50
+CTEBSPDecal *CTEBSPDecal::sub_1005ee50(int a)
+{
+    ((CTEBaseBeamPlaceholder *)this)->sub_10015334(a);
+    *(int **)this = vt_1044dd6c;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f380 size=0xd5
 #include "SendProp.h"
 
