@@ -8,6 +8,20 @@ void CItemContainerLock::vfunc275()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102241b0 size=0x22
+char __fastcall sub_10001d2f(void *p);
+
+// TARGET: sub_102241b0
+void __fastcall sub_102241b0(int *pThis)
+{
+    if (sub_10001d2f(pThis)) {
+        void (__fastcall *pfn)(void *) = (void (__fastcall *)(void *))((void **)(*(void ***)pThis))[0x448 / 4];
+        pfn(pThis);
+    }
+    *((int *)((char *)pThis + 0x780)) = 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224ae0 size=0x154
 #include "CEHandleGet.h"
 #include "CItemContainer.h"
