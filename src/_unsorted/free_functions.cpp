@@ -123535,6 +123535,23 @@ void sub_10428ed0(char *pObj, int index, const float *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428f90 size=0x2d
+extern char g_106b8540[];
+
+// TARGET: sub_10428f90
+char *sub_10428f90(char *pObj, int nIndex)
+{
+	if (pObj == 0) {
+		return g_106b8540;
+	}
+	int *p = (int *)(pObj + *(int *)(pObj + 0x104) + nIndex * 12);
+	if (p == 0) {
+		return g_106b8540;
+	}
+	return (char *)(*p + (int)p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428fd0 size=0x10
 unsigned int sub_10428fd0(char *p)
 {
