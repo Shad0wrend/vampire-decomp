@@ -48682,6 +48682,25 @@ int sub_1018bfe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c170 size=0x25
+#include "CPlayerLocalPredictedData.h"
+
+extern int vt_10470490[];
+
+// TARGET: CPlayerLocalPredictedData::sub_1018c170
+CPlayerLocalPredictedData *CPlayerLocalPredictedData::sub_1018c170()
+{
+    *(int **)this = vt_10470490;
+    m_i04 = 0;
+    m_i08 = 0;
+    m_i0c = 0;
+    m_i10 = 0;
+    for (int i = 0; i < 8; i++)
+        m_aData[i] = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c1b0 size=0x43
 #include "CPointCamera.h"
 void *sub_100aa720(int size);
