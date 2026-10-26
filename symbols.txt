@@ -3266,6 +3266,7 @@
 0x1000a74f func   ?vfunc323@CBaseCombatCharacter@@UAEHPBVVector@@@Z CBaseCombatCharacter::vfunc323
 0x1000a75e func   _item_g_brotherhood_flyer item_g_brotherhood_flyer
 0x1000a763 func   ?vfunc546@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc546
+0x1000a786 func   ?sub_10139b50@@YAXPAH00@Z sub_10139b50
 0x1000a79f func   ?sub_10057510@CFireSmokeUnit10057510@@QAEXH@Z CFireSmokeUnit10057510::sub_10057510
 0x1000a7b3 func   ?sub_10400f60@@YAHXZ sub_10400f60
 0x1000a7b8 func   ?sub_10054360@@YAXPAUS10054360Particle@@@Z sub_10054360

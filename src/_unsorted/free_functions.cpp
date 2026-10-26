@@ -42020,6 +42020,17 @@ void sub_10139b00(const Vector *pVec, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139b50 size=0x22
+// TARGET: sub_10139b50
+void __cdecl sub_10139b90(int *pA, int *pB);
+void __cdecl sub_10138760(int *pSrc, int index, int *pArr);
+void __cdecl sub_10139b50(int *pA, int *pSrc, int *pArr)
+{
+    sub_10139b90(pA, pArr);
+    sub_10138760(pSrc, 3, pArr);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139d20 size=0x40
 void sub_10139d70(float *pDegrees, float *pOut);
 
