@@ -40,6 +40,21 @@ char CGameRules::vfunc53(CBaseCombatCharacter *pChar, int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101283c0 size=0x2b
+#include "CGameRules.h"
+
+struct CUnkObj101283c0
+{
+	int sub_1000df3f();
+};
+
+// TARGET: CGameRules::vfunc52
+void CGameRules::vfunc52(CBaseCombatCharacter *pChar, int nIndex)
+{
+	vfunc53(pChar, ((CUnkObj101283c0 *)vfunc55(nIndex))->sub_1000df3f());
+}
+// END FUNCTION
+
 // FUNCTION: 0x101286f0 size=0x9c
 struct SkillVar { virtual void v0(); virtual bool v1(); char pad[0x28]; int m_value; };
 struct SkillEntry { int pad; SkillVar *pVar; };
