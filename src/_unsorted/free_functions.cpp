@@ -213,6 +213,32 @@ extern "C" GP *phys_torque()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028a60 size=0x28
+#include <math.h>
+
+struct CUnk10028a60
+{
+    char pad0000[0x458];
+    float m_f458;
+    char pad045c[4];
+    float m_f460;
+    float m_f464;
+
+    void sub_10028a60();
+};
+
+// TARGET: CUnk10028a60::sub_10028a60
+void CUnk10028a60::sub_10028a60()
+{
+    float v;
+    if (m_f458 != 0.0f)
+        v = m_f460 / m_f458;
+    else
+        v = m_f460;
+    m_f464 = (float)fabs(v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100290c0 size=0x2b
 #include "CUnknown100290c0.h"
 
