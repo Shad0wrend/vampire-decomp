@@ -33,4 +33,6 @@ public:
 	void sub_10269a20(int condition);	// CAI_BaseNPC condition setter (stub 0x100041b0), called directly
 	void sub_10270b20(CBaseEntity *pEnemy);	// CAI_BaseNPC::vfunc481 (stub 0x10002a95), called directly
 	void vfunc465(int nEvent);	// slot 465: event 0x22 draws m_fl6f8 = RandomFloat(0, 0.75f) from the random stream at 0x1070b244
+	void vfunc525(int a);	// slot 525: when the navigator state (sub_1027d990) is 2, sub_1000b61d(a) and true; else false
+	void sub_1000b61d(int a);	// the member called by vfunc525 (stub 0x1000b61d)
 };
