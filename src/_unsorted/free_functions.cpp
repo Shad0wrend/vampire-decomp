@@ -59918,6 +59918,20 @@ int *sub_101c9cf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9d70 size=0x84
+#include "CTriggerProximity.h"
+
+extern char g_1059fd34[];
+
+// TARGET: trigger_proximity
+extern "C" CBaseEntity *trigger_proximity()
+{
+	CTriggerProximity *p = new CTriggerProximity;
+	p->vfunc106(g_1059fd34);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ca3b0 size=0x7a
 void *sub_1000db89(int);
 struct GP;
