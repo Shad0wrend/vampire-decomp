@@ -1394,6 +1394,23 @@ void CAI_BaseNPCTroika::vfunc463(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b39a0 size=0x24
+struct CAI_BaseNPCTroikaCallee {
+    void sub_10007bdf(int a);
+    bool sub_10014df8(int condition);
+    void sub_102b39a0(int arg);
+};
+
+// TARGET: CAI_BaseNPCTroikaCallee::sub_102b39a0
+void CAI_BaseNPCTroikaCallee::sub_102b39a0(int arg)
+{
+    sub_10007bdf(arg);
+    if (sub_10014df8(0x54)) {
+        *(int *)((char *)this + 0x60a8) = *(int *)((char *)this + 0x60a8) + 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4540 size=0xb4
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"
