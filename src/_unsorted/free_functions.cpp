@@ -83605,6 +83605,24 @@ const char *sub_10258500(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258580 size=0x2a
+#include "CUnknown10258580.h"
+#include "CWeaponRanged.h"
+
+// TARGET: CUnknown10258580::sub_10258580
+bool CUnknown10258580::sub_10258580()
+{
+    char *pOwner = (char *)((CWeaponRanged *)this)->sub_102517b0();
+    if (*(int *)(pOwner + 0x4fe9c) == 0)
+        return false;
+    pOwner = (char *)((CWeaponRanged *)this)->sub_102517b0();
+    int n = *(int *)(pOwner + 0x2558);
+    if (n > 0)
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258870 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
