@@ -76452,6 +76452,29 @@ unsigned int CUnknown10231ed0::sub_10231ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231f40 size=0x2f
+#include "CVGuiScreen.h"
+
+class CVGuiPanelFactory
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual int vfunc3(int a, const char *pszName, int b, int c);
+};
+
+extern CVGuiPanelFactory *g_1070b23c;
+extern int g_10571c20;
+
+// TARGET: CVGuiScreen::sub_10231f40
+void CVGuiScreen::sub_10231f40(const char *pszPanelName)
+{
+	*(int *)((char *)this + 0x458) = g_1070b23c->vfunc3(g_10571c20, pszPanelName, 0, 0);
+	*((char *)this + 0x1b1) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232090 size=0x12
 void sub_10014614(void *p);
 
