@@ -85465,6 +85465,18 @@ int sub_1025b5b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025b5d0 size=0x24
+extern int g_1089d7cc;
+
+// TARGET: sub_1025b5d0
+int sub_1025b5d0(unsigned int index)
+{
+    if (index == 0xffff)
+        return 0;
+    return (index & 0xffff) * 0x5f324 + g_1089d7cc + 0xc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025b630 size=0xc8
 #include <string.h>
 extern const char g_105c8664[];
