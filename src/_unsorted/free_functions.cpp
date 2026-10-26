@@ -108042,6 +108042,21 @@ void CUnk1034f9e0::sub_1034f9e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352e90 size=0x25
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_1056ece0[];
+extern char g_105730d0[];
+
+// TARGET: sub_10352e90
+void sub_10352e90()
+{
+    g_1070b22c->vfunc13(g_1056ece0, 0);
+    g_1070b22c->vfunc13(g_105730d0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10355d70 size=0x49
 void *sub_1000db89(int);
 struct GP;
