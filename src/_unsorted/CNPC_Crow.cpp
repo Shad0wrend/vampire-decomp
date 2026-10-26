@@ -65,6 +65,20 @@ void CNPC_Crow::vfunc465(int nEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357ba0 size=0x25
+#include "CNPC_Crow.h"
+
+// TARGET: vfunc525
+bool CNPC_Crow::vfunc525(int a)
+{
+    if (sub_1027d990() == 2) {
+        sub_1000b61d(a);
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358ce0 size=0x17a
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"
