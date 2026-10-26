@@ -602,6 +602,17 @@ char CBaseCombatWeapon::vfunc316(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10254410 size=0x29
+void __fastcall sub_1033d940(int p, float f);
+// TARGET: CBaseCombatWeapon::vfunc332
+void CBaseCombatWeapon::vfunc332()
+{
+    float v = *(float *)((char *)sub_102517e0() + 0x260);
+    int p = ((CAI_BaseNPCTroika *)this)->sub_10252240();
+    sub_1033d940(p, v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10255030 size=0x8
 #include "CBaseCombatWeapon.h"
 
