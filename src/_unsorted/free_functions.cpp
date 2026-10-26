@@ -52674,6 +52674,32 @@ bool CSave::sub_101a1140(int a, void *pData, void *pBase, typedescription_t *pFi
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1780 size=0x26
+struct CUnknown101a1780Arg {
+    char m_pad0000[0x12];
+    unsigned short m_wFlags12;	// 0x12
+};
+
+struct CUnknown101a1780View {
+    char m_pad0000[0x20];
+    int m_n20;	// 0x20
+    bool sub_101a1780(CUnknown101a1780Arg *p);
+};
+
+// TARGET: CUnknown101a1780View::sub_101a1780
+bool CUnknown101a1780View::sub_101a1780(CUnknown101a1780Arg *p)
+{
+    unsigned short f = p->m_wFlags12;
+    if ((f & 2) == 0) {
+        return false;
+    }
+    if (m_n20 != 0 && (f & 1) != 0) {
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a17c0 size=0x77
 #include "CRestore.h"
 struct CRestoreField { int pad; const char *fieldName; char rest[0x2c - 8]; };

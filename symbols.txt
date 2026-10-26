@@ -6259,6 +6259,7 @@
 0x10013895 func   ?sub_103e2840@@YAHXZ sub_103e2840
 0x1001389a func   _info_node info_node
 0x100138a9 func   ?vfunc432@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::vfunc432
+0x100138ae func   ?sub_101a1780@CUnknown101a1780View@@QAE_NPAUCUnknown101a1780Arg@@@Z CUnknown101a1780View::sub_101a1780
 0x100138b8 func   _player_weaponstrip player_weaponstrip
 0x100138c2 func   ?sub_101cebc0@@YAXPAUCMsgPlayerView@@HH@Z sub_101cebc0
 0x100138c7 func   ?sub_10070470@@YAPAVCBaseEntity@@PBDPAX111@Z sub_10070470
