@@ -65259,6 +65259,19 @@ int CBloodAmountUnit::sub_101e9290(void *pChar, int amount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9470 size=0x23
+char __fastcall sub_10006b04(void *pOther);
+
+// TARGET: sub_101e9470
+int __fastcall sub_101e9470(void *pSelf, int unused, void *pOther)
+{
+    if (sub_10006b04(pOther)) {
+        return *(int *)((char *)pSelf + 0x3bc);
+    }
+    return 100;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e94b0 size=0xa
 extern int g_1073a144;
 
