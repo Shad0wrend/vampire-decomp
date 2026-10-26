@@ -30967,6 +30967,34 @@ CTableRecord44_t *CUnknown100ecee0::sub_100ecee0(CTableNpc_t *pNpc, int *pOutA, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ed370 size=0x2e
+// TARGET: sub_100ed370
+extern void (*g_109f3630)(const char *fmt, ...);
+
+struct CUnknown100ed370
+{
+    char m_pad0000[0x14];
+    int m_count;
+    const char *sub_100ed2e0(int index);
+    void sub_100ed370();
+};
+
+void CUnknown100ed370::sub_100ed370()
+{
+    int i = 0;
+    if (m_count > 0)
+    {
+        void (*pfnDevMsg)(const char *fmt, ...) = g_109f3630;
+        do
+        {
+            const char *pszName = sub_100ed2e0(i);
+            pfnDevMsg(pszName);
+            i++;
+        } while (i < m_count);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ed4d0 size=0x18
 struct CBlock4k
 {
