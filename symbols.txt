@@ -312,6 +312,7 @@
 0x10001f28 func   ?sub_101c0820@CPointEntity@@QAEXXZ CPointEntity::sub_101c0820
 0x10001f37 func   ?sub_10065e20@CTEMuzzleFlash@@QAEPAV1@PBD@Z CTEMuzzleFlash::sub_10065e20
 0x10001f3c func   ?sub_100feea0@CFieldHolder@@QAEXH@Z CFieldHolder::sub_100feea0
+0x10001f41 func   ?sub_10077770@CUnknown10077770@@QAEXPAUCUnknownSlot0Obj@@HH@Z CUnknown10077770::sub_10077770
 0x10001f4b func   ?sub_1006b440@@YAHXZ sub_1006b440
 0x10001f5f func   _item_w_zombie_fists item_w_zombie_fists
 0x10001f69 func   ?sub_10310440@CUnknown10310440@@QAEHPAH@Z CUnknown10310440::sub_10310440
