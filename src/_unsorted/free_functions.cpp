@@ -55504,6 +55504,20 @@ void CFloatUnit::sub_101bb650(float x, float y)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb6f0 size=0x27
+#include "CFloatUnit.h"
+
+// TARGET: CFloatUnit::sub_101bb6f0
+void CFloatUnit::sub_101bb6f0(float flValue)
+{
+	if (m_flPrev != flValue)
+		m_bChanged = 1;
+	m_flRate = 0.0f;
+	m_flPrev = flValue;
+	m_flValue = flValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb7e0 size=0x80
 #include "CUtlVectorDataOps.h"
 struct ISaveRestoreOps;
