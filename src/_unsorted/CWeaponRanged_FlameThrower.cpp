@@ -81,3 +81,18 @@ void CWeaponRanged_FlameThrower::vfunc265()
 	*((char *)this + 0x1520) = 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103e31c0 size=0x24
+void __fastcall sub_1000c59f(void *pSelf);
+void __fastcall sub_100138bd(void *pSelf);
+
+// TARGET: sub_103e31c0
+void __fastcall sub_103e31c0(void *pSelf)
+{
+    sub_1000c59f(pSelf);
+    if (*(char *)((char *)pSelf + 0x1518) != 0) {
+        ((void (__fastcall *)(void *))(*(void ***)pSelf)[0x5d0 / 4])(pSelf);
+    }
+    sub_100138bd(pSelf);
+}
+// END FUNCTION
