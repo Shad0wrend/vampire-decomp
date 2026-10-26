@@ -99569,6 +99569,34 @@ void CUnknown1030b8a0::sub_1030b8a0(float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b950 size=0x25
+struct CUnknown1030b950 {
+    char m_pad0000[0x34];
+    float m_v34;
+    float m_v38;
+    float m_v3c;
+    char m_pad40[8];
+    char m_b48;
+    char m_pad49[3];
+    float m_v4c;
+    float m_v50;
+    float m_v54;
+    void sub_1030b950(const float *pAdd);
+};
+
+// TARGET: sub_1030b950
+void CUnknown1030b950::sub_1030b950(const float *pAdd)
+{
+    m_b48 = 1;
+    float x = m_v34 + pAdd[0];
+    m_v4c = x;
+    float y = m_v38 + pAdd[1];
+    m_v50 = y;
+    float z = m_v3c + pAdd[2];
+    m_v54 = z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030ba50 size=0xe
 void CUnknown1030ba50::sub_1030ba50(int value)
 {
