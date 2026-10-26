@@ -97448,6 +97448,21 @@ bool sub_102f67a0(const char *mapname)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f6cd0 size=0x27
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+
+// TARGET: sub_102f6cd0
+void __fastcall sub_102f6cd0(char *pThis)
+{
+	if (g_1070b22c->vfunc12() == 0) {
+		operator delete(*(void **)(pThis + 0xc));
+		*(void **)(pThis + 0xc) = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f7970 size=0x79
 #include "CUnknown102f7970.h"
 
