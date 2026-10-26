@@ -2634,6 +2634,7 @@
 0x10008fee func   ?vfunc5@CWeaponIWritten@@QAEPAV1@I@Z CWeaponIWritten::vfunc5
 0x10009002 func   ?vfunc5@CNPC_VSheriffMan@@QAEPAV1@I@Z CNPC_VSheriffMan::vfunc5
 0x10009016 func   ?sub_10312b20@@YIXPAD@Z sub_10312b20
+0x10009025 func   ?vfunc103@CNPC_VScurrying@@UAEXXZ CNPC_VScurrying::vfunc103
 0x10009039 func   ?sub_1005cbc0@CTEBeamRingPoint@@QAEPAV1@H@Z CTEBeamRingPoint::sub_1005cbc0
 0x1000903e func   ?vfunc237@CBaseEntity@@QAEHXZ CBaseEntity::vfunc237
 0x10009043 func   ?vfunc26@CAI_StandoffBehavior@@UAEXHH@Z CAI_StandoffBehavior::vfunc26

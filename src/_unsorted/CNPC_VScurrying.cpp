@@ -28,6 +28,22 @@ int CNPC_VScurrying::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ac430 size=0x29
+#include "CNPC_VAnimal.h"
+#include "CNPC_VScurrying.h"
+
+extern char *g_1070b228;
+
+// TARGET: CNPC_VScurrying::vfunc103
+void CNPC_VScurrying::vfunc103()
+{
+    ((CNPC_VAnimal *)this)->CNPC_VAnimal::vfunc103();
+    *(unsigned int *)((char *)this + 0x5b84) |= 0x10000;
+    char *p = g_1070b228;
+    *(int *)((char *)this + 0x668c) = *(int *)(p + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ac490 size=0x36
 #include "CNPC_VScurrying.h"
 
