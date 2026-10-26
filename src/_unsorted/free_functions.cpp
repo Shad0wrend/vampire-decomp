@@ -23928,6 +23928,21 @@ void CBaseEntity::sub_100b9880(const float *pOrigin, float a, float b, float c, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b9970 size=0x25
+struct CUnknown100b9970 {
+    void sub_100b9970(int index, const int *src);
+};
+
+// TARGET: sub_100b9970
+void CUnknown100b9970::sub_100b9970(int index, const int *src)
+{
+    int *dst = (int *)((char *)this + 0x744 + index * 0x28);
+    dst[0] = src[0];
+    dst[1] = src[1];
+    dst[2] = src[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b99b0 size=0xd
 void CUnknown100b99b0::sub_100b99b0(char value)
 {
