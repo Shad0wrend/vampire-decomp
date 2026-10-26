@@ -98691,6 +98691,15 @@ void CMem4_t::sub_102f9330(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9470 size=0x24
+// TARGET: sub_102f9470
+void __fastcall sub_102f9470(void *pSelf, int unused, int bit)
+{
+    unsigned int *pWords = *(unsigned int **)(*(int *)((char *)pSelf + 0x90) + 8);
+    pWords[bit >> 5] |= 1 << (bit & 0x1f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f94b0 size=0x2c
 struct CBitHolder102f94b0 {
     char pad[8];
