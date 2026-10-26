@@ -57591,6 +57591,24 @@ void sub_101cf0a0(CUnknown101cf0a0 *pOut, CUnknown101cf0a0_Source *pSource, CUnk
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf210 size=0x2d
+extern char *g_105a0120;
+extern int g_105a0124;
+
+// TARGET: sub_101cf210
+void sub_101cf210(int *p)
+{
+    int i;
+    for (i = 0; i < 0x15; i++) {
+        p[i] = 0;
+    }
+    ((float *)p)[11] = 1.0f;
+    p[14] = 0;
+    p[15] = (int)g_105a0120;
+    p[16] = g_105a0124;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf250 size=0x74
 void sub_101cf250(float *p, int mode)
 {
