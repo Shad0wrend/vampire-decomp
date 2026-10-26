@@ -52028,6 +52028,21 @@ void CCineNPC::sub_101a7390(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7760 size=0x2e
+// TARGET: CCineNPC::sub_101a7760
+#include "CAI_BaseNPC.h"
+#include "CCineNPC.h"
+
+char CCineNPC::sub_101a7760() {
+    void *pNPC = sub_101a7600();
+    if (m_flags204 & 0x400) {
+        m_pSearchStart5f98 = (CBaseEntity *)pNPC;
+    }
+    ((CAI_BaseNPC *)this)->sub_10279cc0((CBaseEntity *)pNPC);
+    return pNPC ? 1 : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a77a0 size=0xa2
 #include "CCineNPC.h"
 extern void (__cdecl *g_109f364c)(const char *fmt, ...);

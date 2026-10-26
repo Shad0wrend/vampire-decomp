@@ -633,6 +633,7 @@
 0x10003085 func   ?vfunc318@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc318
 0x1000308a func   ?vfunc5@CResearchBook_LG_FIREARMS@@QAEPAV1@I@Z CResearchBook_LG_FIREARMS::vfunc5
 0x1000308f func   ?sub_101fdf40@TInfo@@QAE_NXZ TInfo::sub_101fdf40
+0x10003094 func   ?sub_101a7760@CCineNPC@@QAEDXZ CCineNPC::sub_101a7760
 0x10003099 func   ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z sub_100aa680
 0x100030b2 func   ?vfunc67@CGameRules@@UAEPBDH@Z CGameRules::vfunc67
 0x100030c6 func   ?sub_100fe150@CUnknown100fe0c0@@QAEXM@Z CUnknown100fe0c0::sub_100fe150
