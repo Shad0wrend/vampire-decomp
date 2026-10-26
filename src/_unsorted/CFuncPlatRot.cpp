@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1015a2c0 size=0x28
+#include "CFuncPlatRot.h"
+#include "CFuncPlat.h"
+// TARGET: CFuncPlatRot::vfunc243
+void CFuncPlatRot::vfunc243()
+{
+    ((CFuncPlat *)this)->CFuncPlat::vfunc243();
+    ((CFuncPlat *)this)->sub_1015a3c0(*(Vector *)((char *)this + 0x580), ((CFuncPlat *)this)->m_flMoveDoneTime - ((CFuncPlat *)this)->m_flLocalTime);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a550 size=0x36
 #include "CFuncPlatRot.h"
 
