@@ -61,9 +61,14 @@ public:
 	char m_unk4c;
 	char pad004d[3];
 	float m_savedUnk50;
+	unsigned char m_b54;
+	char pad0055[0x64 - 0x55];
+	float m_fl64;
+	float m_fl68;
 
 	CAI_StandoffBehavior *sub_102c7100();	// constructor body (base constructors inlined)
 	int sub_102c6f70(int a);	// tail call: slot 2 of the object at +0x14 (a base behaviour's default, stub 0x1000fa83)
 	void sub_102c7360(char a);	// stores the byte at +0x19 when it changes, then runs sub_102c6ff0 (stub 0x1000d3be)
 	void sub_102c73b0(const CStandoffParams *p);	// copies the block to +0x20 and sets +0x3c = -1, +0x40 = p->m_flMin, +0x44 = p->m_flMax (stub 0x10010b54)
+	void sub_102c6db0();	// the base behaviour's vfunc10, called directly (stub 0x1000192e)
 };
