@@ -166,6 +166,25 @@ void CNPC_VGargoyle::vfunc433()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378fc0 size=0x2f
+#include "CNPC_VGargoyle.h"
+// TARGET: vfunc435
+
+struct CAI_BaseNPCTroikaCall
+{
+    void sub_100048f9(int a);
+};
+
+void CNPC_VGargoyle::vfunc435(int a)
+{
+    ((CAI_BaseNPCTroikaCall *)this)->sub_100048f9(a);
+    if ((~m_nFlags14b8 & 8) != 0 && m_n6680 > 0)
+    {
+        m_n6680--;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379f50 size=0xe
 struct CUnk10924edc
 {
