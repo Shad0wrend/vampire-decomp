@@ -5365,6 +5365,7 @@
 0x10010c67 func   ?vfunc29@CMultiplayRules@@UAEXPAX@Z CMultiplayRules::vfunc29
 0x10010c7b func   ?vfunc5@CItemGGuyMagazine@@QAEPAV1@I@Z CItemGGuyMagazine::vfunc5
 0x10010c8f func   ?sub_10202a10@CUnknown10202ba0@@QAEPBDH@Z CUnknown10202ba0::sub_10202a10
+0x10010c94 func   ?sub_10075b90@CUnknown10075b90@@QAEXH@Z CUnknown10075b90::sub_10075b90
 0x10010cad func   ?vfunc104@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc104
 0x10010cb2 func   ?vfunc444@CNPC_VGhoulCroucher@@QAEXPAX@Z CNPC_VGhoulCroucher::vfunc444
 0x10010cc6 func   ?sub_1027f990@CUtlVector20@@QAEXH@Z CUtlVector20::sub_1027f990

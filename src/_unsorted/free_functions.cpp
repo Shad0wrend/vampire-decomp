@@ -12036,6 +12036,25 @@ void CUnknown10075aa0::sub_10075aa0(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075b90 size=0x24
+struct CUnknown10075b90
+{
+    void sub_10075b90(int a);
+};
+
+// TARGET: CUnknown10075b90::sub_10075b90
+void CUnknown10075b90::sub_10075b90(int a)
+{
+    *(int *)this = a;
+    if (a != 5 && a != 0xb)
+    {
+        *((char *)this + 0x198) = 0;
+        return;
+    }
+    *((char *)this + 0x198) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075bd0 size=0x16
 struct S10075bd0 {
 	char m_pad[0x4];
