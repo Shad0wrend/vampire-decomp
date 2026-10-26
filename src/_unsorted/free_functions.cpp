@@ -103973,6 +103973,29 @@ int sub_1033cb00(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033cb50 size=0x28
+extern char *g_10619ec8[];
+extern char g_105a695c[];
+
+// TARGET: sub_1033cb50
+char *sub_1033cb50(int nBits)
+{
+    if (nBits != 0) {
+        int nIndex = 0;
+        if ((nBits & 1) == 0) {
+            do {
+                nBits >>= 1;
+                nIndex++;
+            } while ((nBits & 1) == 0);
+            if (nIndex >= 0x16)
+                return g_105a695c;
+        }
+        return g_10619ec8[nIndex];
+    }
+    return g_105a695c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033ce10 size=0xaa
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
