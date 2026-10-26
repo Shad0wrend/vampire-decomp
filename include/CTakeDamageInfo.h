@@ -14,7 +14,12 @@ struct CTakeDamageInfo
 {
 	char m_pad0000[0x28];
 	CTakeDamageAttacker *m_pAttacker;	// 0x28
-	char m_pad002c[0x4c - 0x2c];
+	void *m_pInflictor;	// 0x2c
+	char m_pad0030[0x40 - 0x30];
+	int m_bitsDamageType;	// 0x40
+	char m_pad0044[0x4c - 0x44];
+
+	void sub_101c2a10(int bitsDamageType);	// stub 0x10005916: stores the damage type at +0x40
 
 	CTakeDamageInfo *sub_101c26d0(void *pInflictor, void *pAttacker, float flDamage, int bitsDamageType, int a, int b, int c);	// the constructor (stub 0x10009656): returns this
 	CTakeDamageInfo *sub_101c2720(void *pInflictor, void *pAttacker, const float *pForce, const float *pPosition, float flDamage, int bitsDamageType, int ammoType);	// the constructor with a damage force and position (stub 0x10002090): returns this
