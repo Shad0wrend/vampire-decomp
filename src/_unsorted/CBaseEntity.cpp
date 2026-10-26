@@ -2087,6 +2087,17 @@ void CBaseEntity::vfunc208(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1510 size=0xa8
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+
+CBaseEntity *__fastcall sub_100b1510(CBaseEntity *pThis)
+{
+	ScopeTrace trace("CBaseEntity::GetGroundEntity", pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+	return (CBaseEntity *)EHandle_Get(*(unsigned int *)((char *)pThis + 0x384));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b15f0 size=0x7e
 #include "CBaseEntity.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
