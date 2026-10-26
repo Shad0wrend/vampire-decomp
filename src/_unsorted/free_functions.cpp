@@ -16302,6 +16302,43 @@ void sub_100896c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10089860 size=0x87
+#include "CEHandleGet.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+
+struct COverlayObj
+{
+	void sub_101067e0(const char *pszText, float a, float b, float c, int d, float e);
+};
+
+struct CPickEntity
+{
+	char m_pad0000[0x98];
+	COverlayObj *m_pOverlay;
+};
+
+struct CCmdPlayerView
+{
+	char m_pad0000[0xfe8];
+	unsigned int m_hDialogPartner;
+};
+
+CCmdPlayerView *__cdecl sub_101193b0();
+CPickEntity *__cdecl sub_10172710(CCmdPlayerView *pPlayer);
+
+void sub_10089860()
+{
+	CPickEntity *pEnt = (CPickEntity *)EHandle_Get(sub_101193b0()->m_hDialogPartner);
+	if (!pEnt)
+		pEnt = sub_10172710(sub_101193b0());
+	const char *pszText = (const char *)g_1070b22c->vfunc84(1);
+	if (pEnt && pEnt->m_pOverlay)
+		pEnt->m_pOverlay->sub_101067e0(pszText, 0.25f, 0.25f, 1.0f, 0, 10.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10089ac0 size=0xcb
 #include "IVEngineServer.h"
 extern "C" int __cdecl atoi(const char *);
