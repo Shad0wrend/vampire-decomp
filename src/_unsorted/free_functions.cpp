@@ -80302,6 +80302,26 @@ char *__fastcall sub_10248b60(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248c20 size=0x2e
+#include "CKeyValuesX.h"
+
+// TARGET: CKeyValuesX::sub_10248c20
+int CKeyValuesX::sub_10248c20(const char *pszKey, int nDefault)
+{
+	CKeyValuesX *pKey = this;
+	if (pszKey != 0) {
+		pKey = sub_10248900(pszKey, 0);
+	}
+	if (pKey != 0) {
+		if (((int *)pKey)[3] != 3) {
+			return 0;
+		}
+		return ((int *)pKey)[2];
+	}
+	return nDefault;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248cd0 size=0x8b
 extern int (*g_109f388c)(char *buffer, int count, const char *format, ...);
 
