@@ -3,6 +3,8 @@
 // (the same slot indices as CBaseCombatWeapon), the ones the code calls are typed.
 #pragma once
 
+#include "CWeaponIArmor.h"	// CWeaponIArmorOwner / CWeaponIArmorTarget: the owner and the object kicked by slot 339
+
 #define WIG_V1(p) virtual void p();
 #define WIG_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -33,7 +35,9 @@ public:
 	// slots 316..320
 	virtual void vfunc321Slot();
 	// slots 322..341
-	WIG_V10(wj0) WIG_V10(wj1)
+	WIG_V10(wj0) WIG_V1(wj10) WIG_V1(wj11) WIG_V1(wj12) WIG_V1(wj13) WIG_V1(wj14) WIG_V1(wj15) WIG_V1(wj16)	// slots 322..338
+	virtual void vfunc339();	// kicks the owner's target with a random vector
+	WIG_V1(wj17) WIG_V1(wj18)	// slots 340, 341
 	virtual int vfunc342(int a);
 	virtual int vfunc343();
 	virtual int vfunc344();
@@ -44,4 +48,5 @@ public:
 	void vfunc321();
 	int sub_10252240();	// provisional, like CAI_BaseNPCTroika::sub_10252240
 	char sub_10253b70(int a, int b, int c, int d);
+	CWeaponIArmorOwner *sub_102521f0();	// the weapon's owner (stub 0x10014fab)
 };
