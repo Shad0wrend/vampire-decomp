@@ -73263,6 +73263,22 @@ bool CUnknown1021bec0::sub_1021bec0(const char *pszExpression)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021c000 size=0x2f
+#include "CPropHacking.h"
+
+// TARGET: CPropHacking::sub_1021c000
+void CPropHacking::sub_1021c000()
+{
+	int limit = m_n0a04 / 10;
+	int next = m_n0a0c + 1;
+	if (limit < next) {
+		next = limit;
+	}
+	m_n0a0c = next;
+	sub_1021c040();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d730 size=0x103
 struct ISaveRestoreOps;
 struct datamap_t;
