@@ -41723,6 +41723,20 @@ void sub_1013a0e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a5c0 size=0x25
+extern float g_1070d9e0[256];
+
+// TARGET: sub_1013a5c0
+float sub_1013a5c0(int index)
+{
+    if (index < 0)
+        return 0.0f;
+    if (index > 0xff)
+        return 1.0f;
+    return g_1070d9e0[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a600 size=0x31
 extern int g_10712de0[];
 
