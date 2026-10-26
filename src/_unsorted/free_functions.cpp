@@ -81966,6 +81966,34 @@ void sub_10243700(const Vector &origin, const Vector &angles, const Vector &mins
 }
 // END FUNCTION
 
+// FUNCTION: 0x102454a0 size=0x24
+struct CUnknown10753434
+{
+    virtual void a0();
+    virtual void a1();
+    virtual void a2();
+    virtual void vfunc3();
+    int m_pad4;
+    CUnknown10753434 *m_pNext;	// +0x8
+};
+
+extern CUnknown10753434 *g_10753434;
+extern int g_10753438;
+
+// TARGET: sub_102454a0
+void sub_102454a0(int a)
+{
+    g_10753438 = a;
+    CUnknown10753434 *p = g_10753434;
+    while (p != 0)
+    {
+        CUnknown10753434 *next = p->m_pNext;
+        p->vfunc3();
+        p = next;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245540 size=0x25
 #include "ConCommandBase.h"
 
