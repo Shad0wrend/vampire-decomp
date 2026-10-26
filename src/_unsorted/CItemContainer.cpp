@@ -41,6 +41,21 @@ unsigned int CItemContainer::vfunc35(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208bf0 size=0x23
+void *__fastcall sub_1000689d(void *pSelf);
+char __fastcall sub_10001d2f(void *pSelf);
+
+// TARGET: sub_10208bf0
+void *__fastcall sub_10208bf0(void *pSelf, int unused, int flags)
+{
+    void *pFound = sub_1000689d(pSelf);
+    if (pFound != 0 && sub_10001d2f(pFound)) {
+        return pFound;
+    }
+    return pSelf;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208ff0 size=0x72
 #include "CItemContainer.h"
 #include "CGlobalEntityList.h"

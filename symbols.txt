@@ -6797,6 +6797,7 @@
 0x10014bdc func   ?sub_10240250@@YA_NABVVector@@000@Z sub_10240250
 0x10014be1 func   ?sub_100464f0@S100464f0@@QAEPAU1@HHH@Z S100464f0::sub_100464f0
 0x10014bf5 func   ?sub_10184380@@YIXPAH@Z sub_10184380
+0x10014bff func   ?sub_10208bf0@@YIPAXPAXHH@Z sub_10208bf0
 0x10014c04 func   ?sub_1038fc80@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038fc80
 0x10014c09 func   ?sub_1023db70@CWorldEvents@@QAEXXZ CWorldEvents::sub_1023db70
 0x10014c1d func   ?sub_100ce810@@YGEPAUEv_t@@PAXPAH@Z sub_100ce810
