@@ -23862,6 +23862,21 @@ void CUnknown100b99b0::sub_100b99b0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba030 size=0x27
+int __fastcall sub_100ba030(int *p)
+{
+    unsigned int m = (unsigned int)p[0x734 / 4] & (unsigned int)p[0x730 / 4];
+    int count = 0;
+    int i;
+    for (i = 0; i < 32; i++) {
+        if (m & (1u << i)) {
+            count++;
+        }
+    }
+    return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ba120 size=0xd
 // TARGET: CUnknown100ba120::sub_100ba120
 void CUnknown100ba120::sub_100ba120(char value)
