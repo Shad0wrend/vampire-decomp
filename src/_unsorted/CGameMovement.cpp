@@ -46,6 +46,24 @@ CGameMovement *CGameMovement::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e250 size=0x2f
+#include "CGameMovement.h"
+
+// TARGET: CGameMovement::vfunc14
+int CGameMovement::vfunc14(int type)
+{
+	switch (type) {
+	case 0:
+		return 0x14;
+	case 1:
+		return 0x1a;
+	case 2:
+		return 0xd;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e2b0 size=0x11
 #include "CGameMovement.h"
 
