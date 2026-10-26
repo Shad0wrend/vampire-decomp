@@ -15509,6 +15509,23 @@ void sub_10088540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088730 size=0x2a
+int sub_10012a08(int a);
+extern void (*g_109f3630)(const char *fmt, ...);
+extern const char g_1054bea8[];
+extern const char g_1054be7c[];
+
+// TARGET: sub_10088730
+void sub_10088730()
+{
+	if (sub_10012a08(4)) {
+		g_109f3630(g_1054bea8);
+		return;
+	}
+	g_109f3630(g_1054be7c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088890 size=0x66
 #include "CBaseEntity.h"
 
