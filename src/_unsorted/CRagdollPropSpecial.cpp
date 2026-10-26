@@ -12,6 +12,20 @@ void CRagdollPropSpecial::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157680 size=0x22
+// TARGET: CRagdollPropSpecial::vfunc73
+#include "CRagdollPropSpecial.h"
+bool CRagdollPropSpecial::vfunc73(CBaseEntity *pOther)
+{
+    if (*(int *)((char *)pOther + 0x9c) != 0) {
+        if (m_b103c != 0) {
+            return false;
+        }
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101576c0 size=0x14e
 struct CPhysObjStub {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
