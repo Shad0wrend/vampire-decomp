@@ -124098,6 +124098,17 @@ void CKeyringUnit::sub_10408060(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104081e0 size=0x26
+// TARGET: CKeyringUnit::sub_104081e0
+#include "CKeyringUnit.h"
+
+void CKeyringUnit::sub_104081e0()
+{
+	for (int i = 0; i < m_n920; i++)
+		sub_10408060(i);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10408480 size=0x111
 #include "CUtlMemory192.h"
 
