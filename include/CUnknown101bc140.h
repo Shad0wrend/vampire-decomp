@@ -34,8 +34,9 @@ public:
 	char m_Filter[4];	// 0x44: the recipient filter object
 	unsigned int m_nFlags;	// 0x48
 
+	void sub_101bbc70(float flValue);	// sets m_fl24 to the engine's slot 9 value plus flValue (after sub_100139e4(0, flValue))
 	float sub_101bbcf0();	// m_flPitchScale * m_flScale (stub 0x10007851)
-	void sub_101bbc20(int unused, float flValue);	// the member called by sub_101bbc70 first (stub 0x100139e4)
+	void sub_100139e4(int unused, float flValue);	// the member called by sub_101bbc70 first (stub 0x100139e4)
 	void sub_101bc140();	// when the sound is set up and playing (bit 0 of the flags) emits it through the engine sound object (sub_101b14d0) from its entity
 	void sub_101bc020();	// clears +0x38; when bit 0 of the flags is set emits the sound through the engine (sub_100126cf: filter, entity index of the entity behind the handle at +0x30 or -1, channel, sample, volume = sub_101bbcf0(), sound level, 1, (int)m_flVolume, 0, 0, 0); then sets the dword at +0x3c to 1
 	void sub_101bc260(void *pPlayer);	// like sub_101bc020 for one player: when the sound is set up (bit 0 of the flags) and its filter (slot 8) includes the player, emits it to a single user filter holding the player
