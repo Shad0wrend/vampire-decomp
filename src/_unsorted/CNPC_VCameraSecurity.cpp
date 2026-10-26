@@ -36,3 +36,24 @@ bool CNPC_VCameraSecurity::vfunc363(CBaseEntity *pOther)
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10369ff0 size=0x2c
+#include "CNPC_VCameraSecurity.h"
+
+struct CUnk100137c3
+{
+	char sub_100137c3();
+};
+
+// TARGET: CNPC_VCameraSecurity::vfunc201
+bool CNPC_VCameraSecurity::vfunc201(CBaseEntity *pOther, int a, int b, int c)
+{
+	CBaseEntity *pCamera = sub_10369e70();
+	if (*(int *)((char *)pOther + 0xa8) != 0 && pCamera != 0)
+	{
+		if (((CUnk100137c3 *)pCamera)->sub_100137c3())
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
