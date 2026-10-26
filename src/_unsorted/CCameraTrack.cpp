@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100cbf70 size=0x23
+// TARGET: sub_100cbf70
+float __fastcall sub_100cbf70(void *pSelf)
+{
+    if (*(float *)((char *)pSelf + 0x4b8) > 0.0f) {
+        return *(float *)((char *)pSelf + 0x4b8);
+    }
+    return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbfb0 size=0x41
 #include "CCameraTrack.h"
 
