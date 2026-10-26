@@ -788,6 +788,7 @@
 0x1000382d func   ?vfunc341@CItemKeyGeneric@@QAEXPAVCBaseCombatCharacter@@@Z CItemKeyGeneric::vfunc341
 0x10003837 func   ?sub_1010e620@CBreakable@@QAEXXZ CBreakable::sub_1010e620
 0x10003850 func   ?vfunc500@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc500
+0x10003855 func   ?vfunc29@CSave@@UAEXPBDPAXH@Z CSave::vfunc29
 0x10003878 func   ?vfunc458@CBasePlayer@@UAEXXZ CBasePlayer::vfunc458
 0x10003882 func   ?sub_10060080@@YAHXZ sub_10060080
 0x10003891 func   ?vfunc5@CNPC_VTremere@@QAEPAV1@I@Z CNPC_VTremere::vfunc5
