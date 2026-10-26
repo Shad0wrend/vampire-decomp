@@ -52720,6 +52720,21 @@ CRestoreField *CRestore::sub_101a17c0(const char *name, CRestoreField *fields, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1860 size=0x26
+// TARGET: CUnknown101a1860::sub_101a1860
+#include "CUnknown101a1860.h"
+
+bool CUnknown101a1860::sub_101a1860(CUnknown101a1860_Record *pRecord)
+{
+	unsigned short nFlags = pRecord->m_nFlags;
+	if ((nFlags & 2) == 0)
+		return false;
+	if (m_p20 != 0 && (nFlags & 1) != 0)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1f70 size=0xc
 int CUnknown101a1f70::sub_101a1f70()
 {
