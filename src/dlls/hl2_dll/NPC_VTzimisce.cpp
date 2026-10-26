@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ba780 size=0x26
+bool __stdcall sub_103ba780(char *pObj)
+{
+	if (pObj != 0)
+	{
+		int nState = *(int *)(pObj + 0x5dc);
+		if (nState >= 0x36b0 && nState <= 0x36b1)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bc820 size=0x18b
 #include "CNPC_VTzimisce.h"
 #include "CUnknown1070b244.h"
