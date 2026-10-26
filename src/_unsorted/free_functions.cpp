@@ -8273,6 +8273,29 @@ void sub_100602e0(int a, int b, const int *mins, const int *maxs, int p5, int p6
 }
 // END FUNCTION
 
+// FUNCTION: 0x10060380 size=0x2a
+#include "CTEDecal.h"
+
+extern int vt_1044dddc[];
+
+struct CTEBaseBeamPlaceholder {
+    void sub_10015334(int a);
+};
+
+// TARGET: CTEDecal::sub_10060380
+CTEDecal *CTEDecal::sub_10060380(int a)
+{
+    ((CTEBaseBeamPlaceholder *)this)->sub_10015334(a);
+    *(int **)this = vt_1044dddc;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x24) = 0;
+    *(int *)((char *)this + 0x2c) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10060880 size=0x135
 #include "SendProp.h"
 
