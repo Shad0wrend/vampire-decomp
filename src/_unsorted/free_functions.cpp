@@ -67126,6 +67126,19 @@ void CUnknown101f5d80::sub_101f5d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f5e40 size=0x27
+void __fastcall sub_101f5e40(void **pThis)
+{
+	void **pp = (void **)((char *)pThis + 8);
+	for (int i = 0x118d; i != 0; i--)
+	{
+		operator delete(pp[-1]);
+		operator delete(pp[0]);
+		pp += 3;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5e80 size=0x33
 // TARGET: sub_101f5e80
 struct CEntryPair_101f5e80 {
