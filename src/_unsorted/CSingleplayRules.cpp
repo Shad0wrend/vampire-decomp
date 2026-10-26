@@ -11,6 +11,23 @@ const char *CSingleplayRules::vfunc63(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101abc60 size=0x24
+#include "CSingleplayRules.h"
+
+extern int vt_1047a40c[];
+
+// TARGET: vfunc0
+CGameRules *CSingleplayRules::vfunc0(unsigned int flags)
+{
+    *(int **)this = vt_1047a40c;
+    sub_1000d189();
+    if (flags & 1) {
+        delete this;
+    }
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abd40 size=0x99
 #include "CSingleplayRules.h"
 #include "CBaseCombatCharacter.h"
