@@ -3040,6 +3040,57 @@ CBaseEntity *CPhysicsPushedEntities::sub_10036e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036ef0 size=0x8b
+#include "CPhysicsPushedEntities.h"
+
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+// CBaseEntity viewed as a plain list of slots up to 216 (SetAbsOrigin).
+struct SSetOriginEntity
+{
+	PV100(a0) PV100(a1)
+	PV10(a20)
+	virtual void a210(); virtual void a211(); virtual void a212(); virtual void a213();
+	virtual void a214(); virtual void a215();
+	virtual void SetAbsOrigin(const float *origin);
+};
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+struct SMovedMemory
+{
+	MovedEntity_t *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	MovedEntity_t &operator[](int i) { return m_pMemory[i]; }
+};
+
+struct SMovedVec : SMovedMemory
+{
+	int m_Size;
+	int Count() const { return m_Size; }
+	MovedEntity_t &Element(int i) { return (*this)[i]; }
+	MovedEntity_t &operator[](int i) { return SMovedMemory::operator[](i); }
+};
+
+void CPhysicsPushedEntities::sub_10036ef0()
+{
+	g_109f3620[*g_109f3680].a = "CPhysicsPushedEntities::RestoreEntities";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	SMovedVec &v = *(SMovedVec *)&m_rgMoved;
+	for (int i = v.Count(); --i >= 0; )
+		((SSetOriginEntity *)v[i].m_pEntity)->SetAbsOrigin(v[i].m_vecStartAbsOrigin);
+	--*g_109f3680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037680 size=0x93
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
