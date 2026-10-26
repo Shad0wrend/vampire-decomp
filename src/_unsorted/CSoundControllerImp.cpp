@@ -94,3 +94,27 @@ float CSoundControllerImp::vfunc16(void *pSound, int command, envelopePoint_t *p
 	return totalDuration;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101bd850 size=0x26
+#include "CUnknown101bc140.h"
+
+struct CSoundControllerImpView {
+    char m_pad0000[0xc];
+    CUnknown101bc140 **m_pp0c;	// 0x0c
+    char m_pad0010[0x18 - 0x10];
+    int m_n18;	// 0x18
+    void sub_101bd850();
+};
+
+// TARGET: CSoundControllerImpView::sub_101bd850
+void CSoundControllerImpView::sub_101bd850()
+{
+    int i = m_n18;
+    while (--i >= 0) {
+        CUnknown101bc140 *p = m_pp0c[i];
+        if (p != 0 && *(int *)((char *)p + 0x3c) != 0) {
+            p->sub_101bc140();
+        }
+    }
+}
+// END FUNCTION
