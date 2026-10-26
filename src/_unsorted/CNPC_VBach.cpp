@@ -83,6 +83,29 @@ void CNPC_VBach::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103639b0 size=0x2e
+// TARGET: sub_103639b0
+
+struct CUnknown103639b0
+{
+    char m_pad0000[0x66a8];
+    char m_b66a8;
+    void sub_103639b0(int a, int b);
+    void sub_10002554(int a);
+    void sub_10011234(int a, int b);
+};
+
+void CUnknown103639b0::sub_103639b0(int a, int b)
+{
+    if (m_b66a8 == 0 && (b == 2 || b == 3))
+    {
+        sub_10002554(a);
+        return;
+    }
+    sub_10011234(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10363b60 size=0xba
 #include "CBaseEntity.h"
 #include "CNPC_VBach.h"
