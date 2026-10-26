@@ -128312,6 +128312,19 @@ void sub_1042c680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c740 size=0x23
+extern void **g_109eed50;
+extern int g_109eed5c;
+
+// TARGET: sub_1042c740
+void __cdecl sub_1042c740(void (__fastcall *pfn)(void *))
+{
+	for (int i = g_109eed5c - 1; i >= 0; i--) {
+		pfn(g_109eed50[i]);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d650 size=0x9
 struct CUnknown1042d650 { int a; CUnknown1042d650* sub_1042d650(); };
 // TARGET: CUnknown1042d650::sub_1042d650
