@@ -34513,6 +34513,31 @@ int *sub_10102410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101026c0 size=0x28
+struct CUnk1070b228 { char pad0000[0xc]; float m_fl0c; };
+extern CUnk1070b228 *g_1070b228;
+
+struct CUnk101026c0
+{
+    char pad0000[0x17c];
+    float m_f17c;
+    char pad0180[0x450 - 0x180];
+    unsigned char m_b450;
+
+    void sub_101026c0(int unused);
+};
+
+// TARGET: CUnk101026c0::sub_101026c0
+void CUnk101026c0::sub_101026c0(int unused)
+{
+    if (m_b450)
+    {
+        m_b450 = 0;
+        m_f17c = g_1070b228->m_fl0c + 0.1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102730 size=0x10d
 #include "CEnvMicrophone.h"
 #include "CSound.h"
