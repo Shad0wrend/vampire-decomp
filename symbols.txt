@@ -5343,6 +5343,7 @@
 0x10010dcf func   ?sub_10303740@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@HPBM0PBVCBaseEntity@@HHHHH@Z CAI_Pathfinder::sub_10303740
 0x10010dd9 func   _item_p_occult_frenzy item_p_occult_frenzy
 0x10010de3 func   ?vfunc242@CFuncPlatRot@@QAEXXZ CFuncPlatRot::vfunc242
+0x10010df2 func   ?vfunc104@CRagdollProp@@UAEXXZ CRagdollProp::vfunc104
 0x10010df7 func   ?sub_100e0a40@CDialog@@QAEXPBD@Z CDialog::sub_100e0a40
 0x10010e06 func   ?sub_1027fa50@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_1027fa50
 0x10010e0b func   _npc_bullseye npc_bullseye

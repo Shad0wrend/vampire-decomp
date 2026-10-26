@@ -30,6 +30,24 @@ CRagdollProp *CRagdollProp::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155320 size=0x26
+// TARGET: CRagdollProp::vfunc104
+#include "CRagdollProp.h"
+#include "CEntityVSlots.h"
+
+extern char g_106b8540[];
+
+void CRagdollProp::vfunc104()
+{
+	int nOut;
+	const char **pName = ((CEntityVSlots *)this)->slot9(&nOut);
+	const char *pszName = *pName;
+	if (pszName == 0)
+		pszName = g_106b8540;
+	((CBaseEntity *)this)->sub_100adfd0(pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101553f0 size=0x3b
 #include "CRagdollProp.h"
 #include "IPhysicsObject.h"
