@@ -14273,6 +14273,22 @@ void CSceneEntity::sub_100809f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080ac0 size=0x2f
+// TARGET: CSceneEntity::sub_10080ac0
+#include "ConVar.h"
+
+float CSceneEntity::sub_10080ac0() {
+    ConVar *pVar = *(ConVar **)((char *)this + 0x4c8);
+    if (pVar != 0) {
+        if (pVar->m_pParent->vfunc1()) {
+            return 0.0f;
+        }
+        return pVar->m_pParent->m_fValue;
+    }
+    return 0.1f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080b00 size=0x143
 #include "CSceneEntity.h"
 #include "ScopeTrace.h"
