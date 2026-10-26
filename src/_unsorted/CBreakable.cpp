@@ -47,6 +47,25 @@ void CBreakable::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e5c0 size=0x26
+#include "CBreakable.h"
+
+void sub_10006d61();
+
+// TARGET: CBreakable::vfunc230
+void CBreakable::vfunc230(int a, int b)
+{
+    void (CBreakable::*pBase)(int, int);
+    *(void **)&pBase = (void *)sub_10006d61;
+    (this->*pBase)(a, b);
+
+    void (CBreakable::*pSlot75)(int, int);
+    void **vt = *(void ***)this;
+    *(void **)&pSlot75 = vt[0x12c / 4];
+    (this->*pSlot75)(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010efe0 size=0x31
 #include "CBreakable.h"
 #include "CUnknown1070b244.h"
