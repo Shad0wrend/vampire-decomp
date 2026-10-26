@@ -3804,6 +3804,7 @@
 0x1000bf00 func   ?sub_10190d80@@YAHXZ sub_10190d80
 0x1000bf0f func   ?sub_1042ee50@CUnknown1042e8c0@@QAEXM@Z CUnknown1042e8c0::sub_1042ee50
 0x1000bf14 func   ?vfunc546@CNPC_VBatSwarm@@QAEHH@Z CNPC_VBatSwarm::vfunc546
+0x1000bf28 func   ?vfunc124@CBeam@@UAEHXZ CBeam::vfunc124
 0x1000bf2d func   ?sub_10246dc0@@YA?AVSendProp@@PBDHHPAX@Z sub_10246dc0
 0x1000bf32 func   _phys_ballsocket phys_ballsocket
 0x1000bf37 func   ?vfunc618@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc618

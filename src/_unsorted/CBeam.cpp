@@ -86,3 +86,36 @@ void CBeam::vfunc104()
         sub_100bb030(p->m_hAttach.Get());
 }
 // END FUNCTION
+
+// FUNCTION: 0x100bc200 size=0x128
+#include "CBeam.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+void sub_101434b0(int index, int line, const char *text, int a, int r, int g, int b, int al);
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct BeamEntView {
+    V100(a) V100(b) V10(c0)
+    virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+    virtual const float *GetAbsOrigin();
+};
+int CBeam::vfunc124()
+{
+    int offset = CBaseEntity::vfunc124();
+    if (*((char *)this + 0x224) & 1) {
+        char tempstr[512];
+        BeamEntView *pEnt = (BeamEntView *)this;
+        Q_snprintf(tempstr, sizeof(tempstr), "start: (%.2f,%.2f,%.2f)", pEnt->GetAbsOrigin()[0], pEnt->GetAbsOrigin()[1], pEnt->GetAbsOrigin()[2]);
+        int edict = m_pEdict2e0;
+        sub_101434b0(g_1070b22c->vfunc35(edict), offset, tempstr, 0, 255, 255, 255, 255);
+        offset++;
+        Q_snprintf(tempstr, sizeof(tempstr), "end  : (%.2f,%.2f,%.2f)", m_vecEndPos[0], m_vecEndPos[1], m_vecEndPos[2]);
+        edict = m_pEdict2e0;
+        sub_101434b0(g_1070b22c->vfunc35(edict), offset, tempstr, 0, 255, 255, 255, 255);
+        offset++;
+    }
+    return offset;
+}
+// END FUNCTION
