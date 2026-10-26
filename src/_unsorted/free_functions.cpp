@@ -95098,6 +95098,31 @@ CTraceFilterNav *CTraceFilterNav::sub_102e30d0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e3290 size=0x28
+extern int vt_1049d8d0[];
+
+struct CTraceFilterSimplePlaceholder {
+    void sub_1000bd7f(int a, int b);
+};
+
+struct CTraceFilterNavGround102e3290 {
+    int m_pad0000[3];
+    int m_0c;
+    int m_10;
+    CTraceFilterNavGround102e3290 *sub_102e3290(int a, int b);
+};
+
+// TARGET: CTraceFilterNavGround102e3290::sub_102e3290
+CTraceFilterNavGround102e3290 *CTraceFilterNavGround102e3290::sub_102e3290(int a, int b)
+{
+    ((CTraceFilterSimplePlaceholder *)this)->sub_1000bd7f(a, b);
+    m_0c = b;
+    *(int **)this = vt_1049d8d0;
+    m_10 = a;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e37b0 size=0x136
 #include "CUnknown102e37b0.h"
 #include "CTraceFilterNav.h"
