@@ -31590,6 +31590,30 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eef10 size=0x29
+#include "CUnknown100eef10.h"
+
+void *sub_1000ac8b(int a);
+
+struct CUnknown100eef10Obj
+{
+    int sub_10007ee6();
+};
+
+// TARGET: CUnknown100eef10::sub_100eef10
+bool CUnknown100eef10::sub_100eef10()
+{
+    if (m_b648) {
+        CUnknown100eef10Obj *p = (CUnknown100eef10Obj *)sub_1000ac8b(1);
+        if (p) {
+            if (p->sub_10007ee6() > 0)
+                return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eef50 size=0xad
 #include "CBaseEntity.h"
 #include "CBaseDoor.h"
