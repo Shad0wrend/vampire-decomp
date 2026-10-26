@@ -31371,6 +31371,28 @@ int CIndexedTableView::sub_100ec2a0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec3d0 size=0x27
+struct SIndexedTable_t {
+    int unk0;
+    int nDefault;
+    char *pEntries;
+    int unkC;
+    int unk10;
+    int nMax;
+};
+
+struct CIndexedTableView : SIndexedTable_t {
+    float sub_100ec3d0(int index);
+};
+
+float CIndexedTableView::sub_100ec3d0(int index)
+{
+    if (index < 0 || index > nMax)
+        index = nDefault;
+    return *(float *)(pEntries + 0xc4 + index * 0x264);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecb40 size=0x7f
 #include "utlvector.h"
 struct CThreeVecs {
