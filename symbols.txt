@@ -517,6 +517,7 @@
 0x100028dd func   ?sub_102c24a0@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c24a0
 0x100028ec func   ?sub_10339930@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10339930
 0x100028f1 func   ?vfunc5@CSprayCan@@QAEPAV1@I@Z CSprayCan::vfunc5
+0x100028fb func   ?vfunc230@CBreakableProp@@QAEXHH@Z CBreakableProp::vfunc230
 0x1000290f func   ?sub_101672d0@CUnk101672d0@@QAE_NXZ CUnk101672d0::sub_101672d0
 0x10002919 func   ?sub_101cb130@@YAPAHXZ sub_101cb130
 0x1000293c func   ?vfunc113@CPointTeleport@@UAEXXZ CPointTeleport::vfunc113
