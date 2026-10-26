@@ -54092,6 +54092,29 @@ void *sub_101ab360(void *pSelf, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab550 size=0x24
+#include "CServerNetworkProperty.h"
+
+extern int vt_1047a3bc[];
+extern int vt_10451544[];
+
+struct CUnknown10003828
+{
+    void sub_10003828();
+};
+
+// TARGET: CServerNetworkProperty::sub_101ab550
+void CServerNetworkProperty::sub_101ab550()
+{
+    void *pOuter = *(void **)((char *)this + 8);
+    *(int **)this = vt_1047a3bc;
+    if (pOuter != 0)
+        ((CUnknown10003828 *)pOuter)->sub_10003828();
+    sub_101ab610();
+    *(int **)this = vt_10451544;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab590 size=0x12
 struct CInitPair101ab590 {
     int pad0;
