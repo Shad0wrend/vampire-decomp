@@ -121,6 +121,20 @@ void ConVar::vfunc12(const char *pName, const char *pDefaultValue, int flags, co
 }
 // END FUNCTION
 
+// FUNCTION: 0x102460b0 size=0x2e
+// TARGET: ConVar::vfunc6
+#include "ConVar.h"
+
+void ConVar::vfunc6(const char *value) {
+    if (!m_pParent->vfunc1()) {
+        vfunc7(value);
+        if (this != m_pParent) {
+            m_pParent->vfunc7(value);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246160 size=0x36
 #include "ConVar.h"
 
