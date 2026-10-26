@@ -66805,6 +66805,24 @@ bool ItemLoader::sub_101ecde0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ed0f0 size=0x21
+extern bool (*g_1073a3b0)(void *, int, int);
+
+struct CUnk101ed0f0
+{
+    bool sub_101ed0f0(int a, int b);
+};
+
+// TARGET: sub_101ed0f0
+bool CUnk101ed0f0::sub_101ed0f0(int a, int b)
+{
+    if (g_1073a3b0 != 0) {
+        return g_1073a3b0(this, a, b);
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ed170 size=0x7b
 #include "CUnknown101ed170.h"
 
