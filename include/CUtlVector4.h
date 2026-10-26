@@ -29,6 +29,7 @@ public:
 	void sub_102ce8e0(int num);	// same as sub_10071ae0 (another instance)
 	void sub_102d4210(int num);	// same as sub_10071ae0 (another instance)
 	void sub_102f91f0(int num);	// same as sub_10071ae0 (another instance)
+	void sub_101bdde0(int a, int b);	// "CUtlVector::Swap": exchanges the elements a and b
 	int sub_101842a0(const unsigned int *pHandle);	// "CUtlVector<EHANDLE>::Find": index of the first element resolving to the same entity as *pHandle, or -1
 	int sub_103109a0(int elem, int num, const int *pToInsert);	// "CUtlVector<EHANDLE>::InsertMultipleBefore": grows by num, shifts the tail, fills the new slots with -1 (invalid handle) and then copies pToInsert over them; returns elem
 	int sub_102ce7f0(int elem, int num, const int *pToCopy);	// "CUtlVector<EHANDLE>::InsertMultipleBefore" (another instance, other grow function)
