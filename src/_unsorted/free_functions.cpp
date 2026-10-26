@@ -41948,6 +41948,18 @@ void CUtlMemory96::sub_1013fd20(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013fdf0 size=0x2c
+float sub_1013fe30(float f);
+
+// TARGET: sub_1013fdf0
+void sub_1013fdf0(float *v)
+{
+    v[0] = sub_1013fe30(v[0]);
+    v[1] = sub_1013fe30(v[1]);
+    v[2] = sub_1013fe30(v[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140070 size=0x137
 #include "CPathKeyFrame.h"
 #include <stdlib.h>
