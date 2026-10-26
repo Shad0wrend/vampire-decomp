@@ -94339,6 +94339,27 @@ struct CUnknown102ee4f0 { char pad[0x30]; CInner100016b3 *m_pInner; void sub_102
 void CUnknown102ee4f0::sub_102ee4f0() { m_pInner->sub_100016b3(); }
 // END FUNCTION
 
+// FUNCTION: 0x102ee550 size=0x2c
+struct CVecTarget102ee550 {
+    void sub_1000745a(float *pVec);
+};
+struct CVecUnit102ee550 {
+    char pad[0x30];
+    CVecTarget102ee550 *m_pTarget;
+    void sub_102ee550(int a);
+};
+void sub_10139550(int a, float *pVec);
+void sub_1030b5e0(float *pVec);
+
+// TARGET: sub_102ee550
+void CVecUnit102ee550::sub_102ee550(int a)
+{
+    float v[3];
+    sub_10139550(a, v);
+    m_pTarget->sub_1000745a(v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee590 size=0x8
 struct B { void sub_10014ef2(int *); };
 struct A { char pad[0x30]; B *b; void sub_102ee590(int *x); };
