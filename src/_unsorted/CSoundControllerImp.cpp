@@ -1,6 +1,21 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101bd180 size=0x28
+#include "CSoundControllerImp.h"
+#include "CUnknown101bbd10.h"
+
+// TARGET: CSoundControllerImp::vfunc5
+void CSoundControllerImp::vfunc5(void *pSound)
+{
+    if (pSound) {
+        ((CUnknown101bbd10 *)pSound)->sub_101bbd10();
+        vfunc4(pSound);
+        sub_101bc590(pSound);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd510 size=0x75
 #include "CPASAttenuationFilter.h"
 #include "UtlMem.h"
