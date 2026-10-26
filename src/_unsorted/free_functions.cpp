@@ -70398,6 +70398,26 @@ const char *sub_10202880(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202a10 size=0x2b
+#include "CUnknown10202ba0.h"
+#include "CUnknown10202ac0.h"
+
+extern char g_106b8540[];
+
+// TARGET: CUnknown10202ba0::sub_10202a10
+const char *CUnknown10202ba0::sub_10202a10(int index)
+{
+    const char **ppEntry = 0;
+    if (((CUnknown10202ac0 *)this)->sub_10202ac0(&index)) {
+        ppEntry = (const char **)*(char **)((char *)this + 0x10) + index;
+        if (*ppEntry != 0) {
+            return *ppEntry;
+        }
+    }
+    return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202ac0 size=0x3f
 #include "vampire.h"
 
