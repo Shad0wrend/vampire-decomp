@@ -91070,6 +91070,25 @@ bool sub_102ca030()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ca080 size=0x27
+struct CUnknown102ca080 {
+    void sub_100099c1();
+};
+
+extern CUnknown102ca080 *g_109253f8;
+
+// TARGET: sub_102ca080
+void sub_102ca080()
+{
+    CUnknown102ca080 *p = g_109253f8;
+    if (p) {
+        p->sub_100099c1();
+        delete p;
+    }
+    g_109253f8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ca2a0 size=0x15f
 #include "CBaseEntity.h"
 #include "CAI_CsActList.h"
