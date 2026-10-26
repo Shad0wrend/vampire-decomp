@@ -59306,6 +59306,31 @@ void sub_101d4ca0(unsigned int *pFlags, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d4e30 size=0x2b
+#include "CBaseEntity.h"
+
+struct CUnit101d4e30 : CBaseEntity {
+    bool sub_101d4e30(int a);
+};
+
+bool CUnit101d4e30::sub_101d4e30(int a)
+{
+    switch (a) {
+    case 0:
+        if ((*((unsigned char *)this + 0x80) & 1) != 0) {
+            return true;
+        }
+        break;
+    case 1:
+        if ((*((unsigned char *)this + 0x80) & 2) != 0) {
+            return true;
+        }
+        break;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4f20 size=0xc
 void CUnknown101d4f20::sub_101d4f20(CUnknown101d4f20_Value *out)
 {
