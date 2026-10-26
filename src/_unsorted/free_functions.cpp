@@ -95179,6 +95179,15 @@ CAI_Waypoint *CAI_Pathfinder::sub_10303740(int navType, const float *vecStart, c
 }
 // END FUNCTION
 
+// FUNCTION: 0x10303c90 size=0x2f
+// TARGET: CAI_Pathfinder::sub_10303c90
+#include "CAI_Pathfinder.h"
+
+CAI_Waypoint *CAI_Pathfinder::sub_10303c90(const float *vecStart, const float *vecEnd, const CBaseEntity *pTarget, int endFlags, int nodeID, int a6, int flYaw, int a9) {
+    return sub_10303740(1, vecStart, vecEnd, pTarget, endFlags, nodeID, 2, flYaw, a9);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10303cd0 size=0x2f
 #include "CAI_Pathfinder.h"
 // TARGET: sub_10303cd0
