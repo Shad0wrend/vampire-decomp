@@ -2,12 +2,23 @@
 // It is the navigator the NPC holds at +0x5d34 (see CAI_Navigator.h).
 #pragma once
 
+class CAI_NavRoute;
+
 class CUnknown102ee270
 {
 public:
 	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3();
 	virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6();
 	virtual void vfunc7();
+
+	void *m_pOwner;	// 0x4: the entity the navigator works for (its +0x5d8c holds a flag, bit 5)
+	char m_pad0008[0x30 - 0x8];
+	CAI_NavRoute *m_pRoute;	// 0x30
+	char m_pad0034[0x40 - 0x34];
+	int m_n40;
+	int m_n44;
+	int m_n48;
+	int m_n4c;
 
 	void sub_102f28a0();
 	char sub_102ee270();	// runs sub_102f28a0, then slot 7, and returns true
