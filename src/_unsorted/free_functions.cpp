@@ -61828,6 +61828,18 @@ void sub_101d79e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7c50 size=0x25
+// TARGET: sub_101d7c50
+void __fastcall sub_101d7c50(int *pThis)
+{
+    if (pThis[1] != 0) {
+        operator delete((void *)(pThis[1] - 4));
+        pThis[1] = 0;
+    }
+    pThis[0] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d7ec0 size=0xb2
 #include "CUnknown101d82d0.h"
 
