@@ -86,6 +86,20 @@ void CTentacleUnit::sub_1039e800(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039eb50 size=0x2a
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc68
+bool CNPC_VMingXiaoTentacle::vfunc68(CBaseEntity *pOther)
+{
+    if (pOther != 0 && (*(int *)((char *)pOther + 0x9c) == 0 || m_b6688 == 0)) {
+        return ((CAI_BaseNPCTroika *)this)->vfunc68(pOther);
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039ec10 size=0x94
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CEntityVSlots.h"
