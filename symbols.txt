@@ -498,6 +498,7 @@
 0x100028a6 func   ?sub_102a9e60@@YIMPAUCSlots@@@Z sub_102a9e60
 0x100028ab func   ?vfunc2@CTEBubbles@@UAEPAV1@I@Z CTEBubbles::vfunc2
 0x100028ba func   ?sub_1002f100@@YGXHPAVCBaseEntity@@@Z sub_1002f100
+0x100028c9 func   ?sub_100c4500@@YAMHHM@Z sub_100c4500
 0x100028ce func   _item_g_garys_cd item_g_garys_cd
 0x100028d8 func   ?vfunc339@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc339
 0x100028dd func   ?sub_102c24a0@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c24a0

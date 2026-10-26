@@ -25108,6 +25108,19 @@ float sub_100c4390(void *pOwner, int id, float t)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4500 size=0x2b
+float *sub_100c73b0(int a, int b);
+
+// TARGET: sub_100c4500
+float sub_100c4500(int a, int b, float t)
+{
+	float *p = sub_100c73b0(a, b);
+	if (p != 0)
+		return (p[3] - p[2]) * t + p[2];
+	return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c46c0 size=0xc2
 struct CacheEntry {
 	int m_a;
