@@ -3918,6 +3918,7 @@
 0x1000c504 func   ?sub_10046570@CUtlRBTreeFind16@@QAEGPBX@Z CUtlRBTreeFind16::sub_10046570
 0x1000c50e func   ?sub_101b2790@CUnknown101b2790@@QAEXXZ CUnknown101b2790::sub_101b2790
 0x1000c518 func   ?sub_10205e60@CUnknown10205e60@@QAEDPAX@Z CUnknown10205e60::sub_10205e60
+0x1000c52c func   ?sub_102dee60@@YIPAVCAI_PlaneSolver@@PAD@Z sub_102dee60
 0x1000c531 func   ?vfunc420@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc420
 0x1000c536 func   ?vfunc144@CPropDestructable@@UAEXPBUCPropDestructableDamage@@@Z CPropDestructable::vfunc144
 0x1000c53b func   ?sub_101970f0@@YAPAUPyObj@@PAXPAU1@@Z sub_101970f0

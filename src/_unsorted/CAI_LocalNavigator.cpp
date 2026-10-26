@@ -13,3 +13,13 @@ CAI_LocalNavigator *CAI_LocalNavigator::vfunc0(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102dee60 size=0x22
+#include "CAI_PlaneSolver.h"
+
+// TARGET: sub_102dee60
+CAI_PlaneSolver *__fastcall sub_102dee60(char *pThis)
+{
+    return new CAI_PlaneSolver(*(int *)(pThis + 4));
+}
+// END FUNCTION
