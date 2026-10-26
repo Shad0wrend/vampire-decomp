@@ -53,4 +53,6 @@ public:
 	void sub_102dc2c0();	// calls sub_102db440 on the entity of every handle with a 32 byte scratch buffer, then sets the flag
 	bool sub_102dc8f0();	// unless done: drops the handles that no longer resolve (shifting the rest down), counts the ones in state 1 at +0x500; when a dropped handle was at or before +0x504 and at least two are counted resets +0x504 and calls sub_102dca60(); true when at least two are counted
 	void sub_102dca60();
+	void sub_102dc420();	// stub 0x102dc420: the think run when the object is complete
+	void sub_102dc180();	// per-think check: the local player's distance to the origin against the range at +0x464 plus 120.0f
 };
