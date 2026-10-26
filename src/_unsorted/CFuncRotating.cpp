@@ -54,6 +54,17 @@ bool CFuncRotating::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0cd0 size=0x2d
+// TARGET: CFuncRotating::vfunc178
+#include "CFuncRotating.h"
+#include "CUnknown101c26d0.h"
+
+void CFuncRotating::vfunc178(CBaseEntity *pOther) {
+    CUnknown101c26d0 info;
+    pOther->sub_100a1250(info.sub_101c26d0(this, this, m_f464, 1, 0, 0, -1));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0d10 size=0xa1
 #include "CFuncRotating.h"
 #include "CUnknown1070b22c.h"
