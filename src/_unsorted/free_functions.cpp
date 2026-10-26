@@ -84796,6 +84796,19 @@ bool sub_10259120(SKeyValues *kv, char *out, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10259de0 size=0x26
+extern char g_1089d810[];
+extern char *g_1089d7cc;
+
+// TARGET: sub_10259de0
+void *sub_10259de0(unsigned short index)
+{
+	if (index == 0xffff)
+		return g_1089d810;
+	return g_1089d7cc + index * 0x5f324 + 0xc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025b390 size=0x12
 struct CVDmg_t {
     CVDmg_t();
