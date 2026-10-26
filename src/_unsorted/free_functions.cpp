@@ -92531,6 +92531,23 @@ int sub_102d3f50(const char *pszString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d40a0 size=0x26
+extern char g_106b8540[];
+int sub_10431447(const char *);
+
+int __fastcall sub_102d40a0(char *p)
+{
+    if (*(char * volatile *)(p + 0x5d4) == 0) {
+        return 0;
+    }
+    char *s = *(char * volatile *)(p + 0x5d4);
+    if (s == 0) {
+        s = g_106b8540;
+    }
+    return sub_10431447(s);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d4160 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
