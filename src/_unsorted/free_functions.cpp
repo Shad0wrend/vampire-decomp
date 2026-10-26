@@ -65567,6 +65567,34 @@ void CUnknown101f40f0::sub_101f41b0()
 int __fastcall sub_101f4280(int *p) { return (*p)++; }
 // END FUNCTION
 
+// FUNCTION: 0x101f4330 size=0x2c
+struct CUnkSub101f4330
+{
+	void sub_10011cde(int a, int b, int c);
+};
+
+struct CUnk101f4330
+{
+	char m_pad00[0xc];
+	int *m_pArr;	// 0x0c
+	CUnkSub101f4330 m_sub;	// 0x10
+
+	void sub_101f4330(int a, int b);
+};
+
+// TARGET: CUnk101f4330::sub_101f4330
+void CUnk101f4330::sub_101f4330(int a, int b)
+{
+	int nNew = b + 1;
+	int cur = m_pArr[a];
+	if (cur < nNew)
+	{
+		m_pArr[a] = nNew;
+		m_sub.sub_10011cde(a, nNew - 1, cur - 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4570 size=0x68
 struct TInner {
 	char pad[0x14];

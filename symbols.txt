@@ -1117,6 +1117,7 @@
 0x100047c3 func   _item_w_tzimisce2_head item_w_tzimisce2_head
 0x100047dc func   ?sub_101d20a0@@YAXPAUEntV@@0@Z sub_101d20a0
 0x100047e6 func   ?vfunc141@CPhysicsCannister@@QAEXPAUCCannisterTakeInfo@@PBVVector@@PAUCGameTrace@@@Z CPhysicsCannister::vfunc141
+0x100047f0 func   ?sub_101f4330@CUnk101f4330@@QAEXHH@Z CUnk101f4330::sub_101f4330
 0x10004809 func   ?vfunc3@CTEEnergySplash@@UAEXPBVVector@@0@Z CTEEnergySplash::vfunc3
 0x1000480e func   ?sub_1025c800@CUtlRBTreeBig@@QAEGG_N@Z CUtlRBTreeBig::sub_1025c800
 0x10004818 func   ?vfunc19@CSave@@UAEXPAPBDH@Z CSave::vfunc19
