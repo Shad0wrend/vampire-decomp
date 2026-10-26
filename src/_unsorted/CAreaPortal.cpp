@@ -24,3 +24,23 @@ void CAreaPortal::vfunc103()
 	vfunc104();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010c520 size=0x29
+struct CUnit1010c520 {
+    void sub_1010c520(int a, int b, int c, int d);
+    void sub_1010c5d0();
+};
+
+void CUnit1010c520::sub_1010c520(int a, int b, int c, int d)
+{
+    if (c == 1) {
+        *(int *)((char *)this + 0x458) = c;
+        sub_1010c5d0();
+        return;
+    }
+    if (c == 0) {
+        *(int *)((char *)this + 0x458) = c;
+        sub_1010c5d0();
+    }
+}
+// END FUNCTION
