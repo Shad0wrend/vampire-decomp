@@ -7,4 +7,5 @@ class CTriggerSave : public CBaseTrigger
 {
 public:
 	void vfunc103();	// slot 103 (0x101c97d0): when the global object at 0x1070ba0c answers slot 22 with true, sub_10014614(this); else the member 0x1000dfd0 on this
+	void sub_1000dfd0();	// the member 0x1000dfd0 (a jump stub), called at the end of vfunc103
 };
