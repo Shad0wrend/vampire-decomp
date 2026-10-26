@@ -17,6 +17,24 @@ void CWeaponMelee_Torch::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7640 size=0x24
+void __fastcall sub_10008512(void *pSelf);
+
+struct CWeaponMelee_TorchCallee {
+    char sub_1001428b(int a);
+};
+
+// TARGET: sub_103e7640
+char __fastcall sub_103e7640(void *pSelf, int unused, int arg)
+{
+    if (((CWeaponMelee_TorchCallee *)pSelf)->sub_1001428b(arg)) {
+        sub_10008512(pSelf);
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecde0 size=0x1e
 #include "CWeaponMelee_Torch.h"
 
