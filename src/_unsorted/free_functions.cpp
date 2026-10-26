@@ -98905,6 +98905,17 @@ void CBaseCombatCharacter::sub_1032e210(void *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032e7b0 size=0xa8
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+
+CBaseEntity *__fastcall sub_1032e7b0(CBaseEntity *pThis)
+{
+	ScopeTrace trace("CBaseCombatCharacter::GetActiveWeapon", pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+	return (CBaseEntity *)EHandle_Get(*(unsigned int *)((char *)pThis + 0x19a4));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032e8b0 size=0xf7
 #include "CBaseCombatCharacter.h"
 struct TraceEntry { const char *a, *b, *c; };
