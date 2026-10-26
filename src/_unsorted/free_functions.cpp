@@ -24015,6 +24015,19 @@ void sub_100bc3a0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc490 size=0x2c
+#include "bf_write.h"
+
+// TARGET: bf_write::sub_100bc490
+bf_write *bf_write::sub_100bc490(const char *pDebugName, void *pData, int nBytes, int nBits)
+{
+	m_pDebugName = pDebugName;
+	m_bAssertOnOverflow = true;
+	sub_100bc510(pData, nBytes, 0, nBits);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc510 size=0x3b
 #include "bf_write.h"
 

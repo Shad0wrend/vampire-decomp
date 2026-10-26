@@ -2073,6 +2073,7 @@
 0x10007707 func   ?sub_1019dfb0@CRopeKeyframe@@SAPAV1@PAVCBaseEntity@@HHHPBDH@Z CRopeKeyframe::sub_1019dfb0
 0x1000770c func   ?vfunc561@CNPC_VWerewolf@@QAEXHH@Z CNPC_VWerewolf::vfunc561
 0x1000772f func   ?sub_103d7420@CNPC_VWerewolf@@QAEXPAVCHintData_WW@@@Z CNPC_VWerewolf::sub_103d7420
+0x10007734 func   ?sub_100bc490@bf_write@@QAEPAV1@PBDPAXHH@Z bf_write::sub_100bc490
 0x1000773e func   ?sub_10233ba0@@YAXXZ sub_10233ba0
 0x10007743 func   ?vfunc488@CGeneric_NPC@@UAEXXZ CGeneric_NPC::vfunc488
 0x1000774d func   ?sub_100d7f20@@YAXXZ sub_100d7f20
