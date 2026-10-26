@@ -13,3 +13,13 @@ CAI_RatLocalNavigator *CAI_RatLocalNavigator::vfunc0(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103ad5f0 size=0x22
+// TARGET: CAI_RatLocalNavigator::vfunc8
+#include "CAI_RatLocalNavigator.h"
+#include "CAI_RatPlaneSolver.h"
+CAI_PlaneSolver *CAI_RatLocalNavigator::vfunc8()
+{
+    return new CAI_RatPlaneSolver(m_pOwner);
+}
+// END FUNCTION
