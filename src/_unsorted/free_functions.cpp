@@ -24440,6 +24440,18 @@ void bf_read::sub_100becc0(Vector &fa)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bee40 size=0x2b
+#include "bf_read.h"
+
+// TARGET: bf_read::sub_100bee40
+void bf_read::sub_100bee40(Vector &fa)
+{
+    Vector tmp;
+    sub_100bea10(tmp);
+    fa.Init(tmp.x, tmp.y, tmp.z);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf030 size=0x14
 #include "CUnknown100bf030.h"
 
