@@ -41601,6 +41601,16 @@ void __cdecl sub_10138720(int *pArr, int index, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138760 size=0x22
+// TARGET: sub_10138760
+void __cdecl sub_10138760(int *pSrc, int index, int *pArr)
+{
+    pArr[index] = pSrc[0];
+    pArr[index + 4] = pSrc[1];
+    pArr[index + 8] = pSrc[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101387a0 size=0x2d
 // TARGET: sub_101387a0
 int sub_101387a0(const float *a, const float *b) {
