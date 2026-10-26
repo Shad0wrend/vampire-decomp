@@ -2074,6 +2074,7 @@
 0x10007676 func   ?sub_1029fcf0@CAI_BaseNPCTroika@@QAEDHPAVCBaseEntity@@H@Z CAI_BaseNPCTroika::sub_1029fcf0
 0x1000767b func   ?sub_10104320@CParamsExplosion@@QAEPAV1@XZ CParamsExplosion::sub_10104320
 0x10007680 func   ?sub_10092e20@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::sub_10092e20
+0x10007685 func   ?sub_103f5070@CLockUnit103f5070@@QAEHXZ CLockUnit103f5070::sub_103f5070
 0x1000768a func   ?sub_100705d0@@YAPAVCBaseCineCam@@PAVCBaseEntity@@@Z sub_100705d0
 0x100076a3 func   ?sub_100a98f0@CBaseEntity@@QAEHHH@Z CBaseEntity::sub_100a98f0
 0x100076b2 func   ?vfunc104@CBaseDoor@@UAEXXZ CBaseDoor::vfunc104

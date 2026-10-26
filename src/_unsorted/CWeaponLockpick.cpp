@@ -65,6 +65,27 @@ void CWeaponLockpick::vfunc292(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f5070 size=0x2c
+struct CThinkOwner103f5070 {
+    int sub_100080f8(void *fn, float a, float b, int c, int d, int e);
+};
+struct CLockUnit103f5070 {
+    CThinkOwner103f5070 *sub_10252290();
+    int sub_103f5070();
+};
+void sub_10005d99();
+
+// TARGET: sub_103f5070
+int CLockUnit103f5070::sub_103f5070()
+{
+    CThinkOwner103f5070 *pOwner = (CThinkOwner103f5070 *)sub_10252290();
+    if (pOwner != 0) {
+        return pOwner->sub_100080f8((void *)sub_10005d99, 64.0f, 0.7f, 0, 0, 0x46004003);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10409af0 size=0x1e
 #include "CWeaponLockpick.h"
 
