@@ -4,5 +4,5 @@
 class CUnknown1017d630
 {
 public:
-	int sub_1017d630();	// stub 0x10014371: nonzero when the object is in the state the player's use / hack code asks for
+	int sub_1017d630();	// stub 0x10014371: its nonzero / zero answer picks the branch of CUnknown10171f10::sub_10171f10
 };
