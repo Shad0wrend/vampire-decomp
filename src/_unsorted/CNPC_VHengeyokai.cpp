@@ -335,6 +335,27 @@ void CNPC_VHengeyokai::vfunc618()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10381b10 size=0x24
+extern char g_10739a4c[];
+
+struct CUnknownGlobal10739a4c {
+	void sub_1000d954(void *pArg);
+};
+
+struct CUnknown10381b10 {
+	void sub_10381b10();
+};
+
+// TARGET: CUnknown10381b10::sub_10381b10
+void CUnknown10381b10::sub_10381b10()
+{
+	((CUnknownGlobal10739a4c *)g_10739a4c)->sub_1000d954(this);
+	*(int *)((char *)this + 0xe80) = 0;
+	*(int *)((char *)this + 0xe88) = 0;
+	*(int *)((char *)this + 0xe84) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10383090 size=0x39
 #include "CNPC_VHengeyokai.h"
 
