@@ -64866,6 +64866,18 @@ unsigned int __stdcall sub_101e1870(unsigned int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1930 size=0x21
+// TARGET: sub_101e1930
+void __declspec(dllimport) DevMsg(const char *pszFormat, ...);
+void __stdcall sub_101e12a0(int a);
+float __stdcall sub_101e1930(int a)
+{
+    sub_101e12a0(a);
+    DevMsg("ERROR: DiscFlag Lookup Failed!\n");
+    return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e22b0 size=0x8
 struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
