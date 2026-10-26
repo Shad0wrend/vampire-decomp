@@ -90498,6 +90498,46 @@ bool CUtlRBTree12::sub_102cefc0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cff50 size=0x2b
+struct CUnk102cff50
+{
+	int m_0;
+	int m_4;
+	int m_8;
+	int m_c;
+	int m_10;
+	int m_14;
+	int m_18;
+	int m_1c;
+	int m_20;
+	int m_24;
+	int m_28;
+	int m_2c;
+	int m_30;
+
+	CUnk102cff50 *sub_102cff50();
+};
+
+// TARGET: CUnk102cff50::sub_102cff50
+CUnk102cff50 *CUnk102cff50::sub_102cff50()
+{
+	m_c = 0;
+	m_10 = 0;
+	m_14 = 0;
+	m_18 = 0;
+	m_1c = 0;
+	m_20 = 0;
+	m_24 = 0;
+	m_28 = 0;
+	m_2c = 0;
+	m_30 = 0;
+	m_4 = 0;
+	m_8 = 0;
+	m_0 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d0080 size=0xa
 void __fastcall sub_102d0080(int *self, int, int value)
 {
