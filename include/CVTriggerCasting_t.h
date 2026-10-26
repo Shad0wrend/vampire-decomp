@@ -10,4 +10,5 @@ public:
 	int m_nDstType;	// 0x08: 0 = the second character is the target, 1 = the first
 
 	void sub_101ddcd0(void *pFirst, void *pSecond, int a);	// casts the discipline from one character on the other
+	void sub_101e33c0(int a, int b, int c, int d);	// two steps of the casting: the stdcall sub_1000dba2(a, c), then sub_1000ae07(a, b, c, d) on this
 };
