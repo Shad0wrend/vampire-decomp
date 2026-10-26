@@ -87932,6 +87932,18 @@ int __fastcall sub_1027a740(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027a780 size=0x23
+// TARGET: sub_1027a780
+int __fastcall sub_1027a780(void *pSelf)
+{
+    if (((void *(__fastcall *)(void *))(*(void ***)pSelf)[0x29c / 4])(pSelf) == 0) {
+        return 0;
+    }
+    char *pObj = (char *)((void *(__fastcall *)(void *))(*(void ***)pSelf)[0x29c / 4])(pSelf);
+    return *(int *)(pObj + 0x9c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027cd50 size=0x34
 // TARGET: CUnknown1027cd50::sub_1027cd50
 extern char *g_1070b228;
