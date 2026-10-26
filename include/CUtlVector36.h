@@ -14,4 +14,5 @@ public:
 	void sub_102e2b60(int num);	// same as sub_10260870 (another instance)
 	void sub_10033040(int num);	// "CUtlMemory::Grow" of the touch event vector of CCollisionEvent (the memory part starts at the vector's start)
 	void sub_10032b20(int elem, int num);	// "CUtlVector::ShiftElementsRight" of the touch event vector (stub 0x1000801c)
+	void sub_102e2c20(int elem, int num);	// "CUtlVector::ShiftElementsRight" of the CAI_InterestTarget vector (stub 0x100020a9)
 };
