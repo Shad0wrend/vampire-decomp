@@ -13,14 +13,16 @@ public:
 	char pad258[0x450 - 0x258];
 	int m_iszParticleName;	// 0x450 (string_t)
 	int m_iParticleIndex;	// 0x454
-	char pad458[0x484 - 0x458];
+	int m_iAttachType;	// 0x458: attachment type (0..18)
+	const char *m_pszAttachName;	// 0x45c: attachment name, "" when none
+	char pad460[0x484 - 0x460];
 	int m_unk484;
 
 	void vfunc242();
 	CEnvParticle *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10011ac7();	// as in CPhysForce (transplant)
 	void sub_100fae90(inputdata_t *pInput);	// attachment-type input: integer 0..18 stored at +0x458 when the attach entity at +0x254 resolves, then sub_100faf60(entity)
-	void sub_100faf60(void *pEntity);	// slot 0x3cc call with (entity, the type at +0x458, the name at +0x45c or "")
+	void sub_100faf60(void *pEntity);	// slot 0x3cc call with (entity, the type at +0x458, the name at +0x45c or \"\")
 	void vfunc103();	// CEnvParticle::vfunc103 (stub 0x100104f1 for 0x100fb3d0), called directly by CFuncParticle::vfunc103
 	void vfunc104();	// resolves the particle system index from the name
 	CEnvParticle *sub_100fad50();	// constructor body (env_particle entity creation): CBaseEntity constructor, vtable, default particle state
