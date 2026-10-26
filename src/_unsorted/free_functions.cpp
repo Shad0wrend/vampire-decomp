@@ -27734,6 +27734,20 @@ void sub_100d23a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2990 size=0x25
+char *sub_10008d8c(void);
+void sub_100111f8(int, int);
+
+// TARGET: sub_100d2990
+void sub_100d2990(void)
+{
+    char *p = (char *)sub_10008d8c();
+    if (p != 0 && *(int *)(p + 0xa8) != 0) {
+        sub_100111f8(*(int *)(*(int *)(p + 0xa8) + 0x2e0), 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2b30 size=0x7b
 #include "CBaseCombatCharacter.h"
 #include "IVEngineServer.h"
