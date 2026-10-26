@@ -7084,6 +7084,22 @@ void CUnknown10056a00::sub_10056a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056f10 size=0x2f
+// TARGET: sub_10056f10
+extern int vt_1044cce4[];
+
+CBaseFire *__fastcall sub_10056f10(CBaseFire *pThis)
+{
+    pThis->sub_100090fc(0);
+    pThis->m_field450 = 0;
+    pThis->m_field454 = 0;
+    pThis->m_field458 = 0;
+    pThis->m_flags45c = 0;
+    *(void **)pThis = (void *)vt_1044cce4;
+    return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057230 size=0x12d
 #include "SendProp.h"
 
