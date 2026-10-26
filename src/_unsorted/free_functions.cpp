@@ -19280,6 +19280,53 @@ CUnknown10098810 *CUnknown10098810::sub_10098810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098830 size=0x15d
+#include "CBaseAnimatingOverlay.h"
+
+struct LayerV {
+	int m_n00;
+	int m_bFinished;
+	int m_nSequence;
+	float m_flCycle;
+	float m_flRate;
+	float m_flWeight;
+	float m_flMaxWeight;
+	float m_flFadeIn;
+	float m_flFadeOut;
+};
+
+float CAnimationLayerAdvance::sub_10098830(float dt, CBaseAnimatingOverlay *pEntity)
+{
+	LayerV *l = (LayerV *)this;
+	l->m_flCycle = pEntity->sub_10091230(l->m_nSequence) * l->m_flRate * dt + l->m_flCycle;
+	if (l->m_flCycle < 0.0) {
+		if (pEntity->sub_10090ef0(l->m_nSequence) & 1)
+			l->m_flCycle = l->m_flCycle - (int)l->m_flCycle;
+		else
+			l->m_flCycle = 0.0f;
+	} else if (l->m_flCycle >= 1.0) {
+		l->m_bFinished = 1;
+		if (pEntity->sub_10090ef0(l->m_nSequence) & 1)
+			l->m_flCycle = l->m_flCycle - (int)l->m_flCycle;
+		else
+			l->m_flCycle = 1.0f;
+	}
+	l->m_flWeight = 1.0f;
+	if (l->m_flFadeIn < 0.95f || l->m_flFadeOut < 0.95f) {
+		if (l->m_flFadeIn != 0.0f && l->m_flCycle < l->m_flFadeIn)
+			l->m_flWeight = l->m_flCycle / l->m_flFadeIn;
+		if (l->m_flFadeOut != 0.0f && l->m_flCycle > 1.0 - l->m_flFadeOut)
+			l->m_flWeight = (1.0 - l->m_flCycle) / l->m_flFadeOut;
+		double flSq = l->m_flWeight * l->m_flWeight;
+		double flCube = l->m_flWeight * flSq;
+		l->m_flWeight = 3.0 * flSq - (flCube + flCube);
+	}
+	if (l->m_flMaxWeight < l->m_flWeight)
+		l->m_flWeight = l->m_flMaxWeight;
+	return dt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100989f0 size=0x33
 extern char vt_10450024[];
 

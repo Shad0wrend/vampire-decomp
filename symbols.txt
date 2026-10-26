@@ -4300,6 +4300,7 @@
 0x1000d52b func   ?sub_1019d1c0@CUnk1019d1c0@@QAEXI@Z CUnk1019d1c0::sub_1019d1c0
 0x1000d530 func   ?sub_1007eaa0@CChoreoScene1007eaa0@@QAEXPBDPAX@Z CChoreoScene1007eaa0::sub_1007eaa0
 0x1000d535 func   ?vfunc359@CAI_BaseNPCTroika@@UAEHPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc359
+0x1000d53a func   ?sub_10098830@CAnimationLayerAdvance@@QAEMMPAVCBaseAnimatingOverlay@@@Z CAnimationLayerAdvance::sub_10098830
 0x1000d553 func   ?vfunc13@CServerGameDLL@@UAEXPAXHHHHH@Z CServerGameDLL::vfunc13
 0x1000d558 func   ?sub_10075c70@S10075c70@@QAEXPBD@Z S10075c70::sub_10075c70
 0x1000d562 func   ?sub_103cf5f0@CNPC_VWerewolf@@QAE_NXZ CNPC_VWerewolf::sub_103cf5f0
