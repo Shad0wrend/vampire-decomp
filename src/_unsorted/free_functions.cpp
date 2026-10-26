@@ -28005,6 +28005,23 @@ void sub_100d23a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d27b0 size=0x21
+char *sub_10008d8c();
+void sub_1001080c(int value);
+
+// TARGET: sub_100d27b0
+void sub_100d27b0()
+{
+    char *p = sub_10008d8c();
+    if (p != 0) {
+        char *pInner = *(char **)(p + 0xa8);
+        if (pInner != 0) {
+            sub_1001080c(*(int *)(pInner + 0x2e0));
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2990 size=0x25
 char *sub_10008d8c(void);
 void sub_100111f8(int, int);
