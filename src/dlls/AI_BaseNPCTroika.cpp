@@ -194,6 +194,32 @@ void CAI_BaseNPCTroika::sub_1029f120(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f210 size=0x2e
+#include "CBCCSlotViews.h"
+// TARGET: CUnknown1029f210View::sub_1029f210
+extern const char g_105da024[];
+
+struct CUnknown1029f210View
+{
+    VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2) VIEW_SLOT100(3) VIEW_SLOT100(4) VIEW_SLOT100(5)
+    VIEW_SLOT10(60) VIEW_SLOT(610) VIEW_SLOT(611) VIEW_SLOT(612) VIEW_SLOT(613)
+    virtual void vfunc614();
+    char m_pad0004[0x1b30 - 4];
+    const char *m_pszFile1b30;
+    int m_nLine1b34;
+    void sub_1000198d(int a, int b);
+    void sub_1029f210(int unused);
+};
+
+void CUnknown1029f210View::sub_1029f210(int unused)
+{
+    vfunc614();
+    m_pszFile1b30 = g_105da024;
+    m_nLine1b34 = 0x26b5;
+    sub_1000198d(0x6f, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f460 size=0x115
 #include "CAI_BaseNPCTroika.h"
 
