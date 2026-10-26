@@ -86125,6 +86125,23 @@ CBaseEntity *CAI_BaseNPC::sub_1027a310(const char *pszItemName, Vector vecPos, V
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027a6c0 size=0x29
+#include "CUnknown102ee270.h"
+int __fastcall sub_102ee510(void *p);
+// TARGET: CAI_BaseNPC::sub_1027a6c0
+int CAI_BaseNPC::sub_1027a6c0()
+{
+    int r;
+    if (((CUnknown102ee270 *)*(int *)((char *)this + 0x5d34))->sub_102ee6a0())
+    {
+        r = sub_102ee510(*(void **)((char *)this + 0x5d34));
+        if (r != -1)
+            return r;
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027cd50 size=0x34
 // TARGET: CUnknown1027cd50::sub_1027cd50
 extern char *g_1070b228;
