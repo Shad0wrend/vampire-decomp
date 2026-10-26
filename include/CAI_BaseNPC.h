@@ -150,7 +150,8 @@ public:
 	CAI_NPC_V(540)
 	virtual CUnknown102e0150 *vfunc541();	// the NPC's memory list (the same object type as CUnknown102dfc10: nodes at +0xc linked through +0x38)
 	virtual void vfunc542();
-	CAI_NPC_V(543) CAI_NPC_V(544)
+	CAI_NPC_V(543)
+	virtual char vfunc544(CBaseEntity *pEnt, int a, int b);	// slot 544 (ret 0xc): 1 without a memory list (slot 541); false when pEnt's squad owner is this NPC's squad owner (both counts <= 0); otherwise lets the memory list note pEnt (sub_102e0210, then slot 494 on a hit) and returns the memory list's sub_102df700(object at +0x5d34's +0x2c, pEnt, a, b)
 	virtual bool vfunc545();	// finds the squad (+0x5da4) from the name at +0x5da8 when the class flags ask for one; true when it has one
 	CAI_NPC_V(546) CAI_NPC_V(547) CAI_NPC_V(548) CAI_NPC_V(549)
 	CAI_NPC_V(550) CAI_NPC_V(551)
