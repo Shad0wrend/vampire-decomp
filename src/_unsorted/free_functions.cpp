@@ -87719,6 +87719,18 @@ bool CUnknown102781a0::sub_102781a0(CUnknown102781a0 *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102781e0 size=0x23
+// TARGET: sub_102781e0
+void __fastcall sub_102781e0(void *pSelf, int unused, int value)
+{
+    int old = *(int *)((char *)pSelf + 0x5db0);
+    *(int *)((char *)pSelf + 0x5db0) = value;
+    if (old != value) {
+        ((void (__fastcall *)(void *, int, int, int))(*(void ***)pSelf)[0x89c / 4])(pSelf, value, old, value);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279260 size=0x3e
 #include "CBaseEntity.h"
 
