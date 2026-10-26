@@ -68060,6 +68060,20 @@ void CUnknown101f9c70::sub_101f9830(CTraitOwnerX *pOwner, int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9a40 size=0x28
+#include "CBaseEntity.h"
+#include "CUnknown101f9c70.h"
+// TARGET: sub_101f9a40
+void __stdcall sub_101f9a40(CBaseEntity *p, int x)
+{
+    if (p != 0)
+    {
+        ((CUnknown101f9c70 *)((char *)p + 0x13dc))->sub_101f9830((CTraitOwnerX *)p, x);
+        p->vfunc111();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9c70 size=0xb6
 #include "CUnknown101f9c70.h"
 struct TraceEnt { const char *a; const void *b; const void *c; };
