@@ -24314,6 +24314,26 @@ bool CUnknown100bf030::sub_100bf030(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf180 size=0x2f
+// TARGET: bf_read::sub_100bf180
+#include "bf_read.h"
+
+bool bf_read::sub_100bf180(int iBit) {
+    if (iBit < 0) {
+        m_iCurBit = m_nDataBits;
+        m_bOverflow = true;
+        return false;
+    }
+    if (iBit > m_nDataBits) {
+        m_iCurBit = m_nDataBits;
+        m_bOverflow = true;
+        return false;
+    }
+    m_iCurBit = iBit;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf1c0 size=0x133
 #include "bf_read.h"
 #include "bf_write.h"

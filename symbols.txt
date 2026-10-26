@@ -6306,6 +6306,7 @@
 0x10014763 func   ?sub_102f94f0@CUnknown102f94f0@@QAEXPAUSBitRef@@@Z CUnknown102f94f0::sub_102f94f0
 0x10014768 func   ?sub_100dd000@CCollisionProperty@@QAEXABVVector@@AAV2@@Z CCollisionProperty::sub_100dd000
 0x10014777 func   ?sub_10379040@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_10379040
+0x1001477c func   ?sub_100bf180@bf_read@@QAE_NH@Z bf_read::sub_100bf180
 0x1001478b func   ?sub_10202350@@YAPBDHH@Z sub_10202350
 0x10014795 func   ?vfunc5@CWeaponMelee_MingXiaoMelee@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponMelee_MingXiaoMelee::vfunc5
 0x100147bd func   ?sub_100bb180@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_100bb180
