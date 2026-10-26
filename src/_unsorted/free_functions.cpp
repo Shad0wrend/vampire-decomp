@@ -88787,6 +88787,16 @@ struct CUnknown10288540 { int m_p; CUnknown10288540 *sub_10288540(); };
 CUnknown10288540 *CUnknown10288540::sub_10288540() { m_p = 0; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10288590 size=0x23
+// TARGET: sub_10288590
+float __cdecl sub_10288590(float a)
+{
+    int n = (int)(a * 182.04445f);
+    n &= 0xffff;
+    return (float)n * 0.005493164f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102885d0 size=0x8
 typedef void (__fastcall *Fn102885d0)(void *);
 
