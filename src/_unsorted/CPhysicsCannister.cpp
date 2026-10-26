@@ -78,6 +78,21 @@ void CPhysicsCannister::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101504f0 size=0x28
+#include "CPhysicsCannister.h"
+#include "CUnknown101466e0.h"
+
+void __stdcall sub_1000e78c(int a, int b, char c, int d);
+
+// TARGET: CPhysicsCannister::vfunc223
+char CPhysicsCannister::vfunc223()
+{
+    sub_1000e78c(6, 0, m_b204 & 1, 0);
+    ((CUnknown101466e0 *)((char *)this + 0x1b0))->sub_101466e0(1);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150670 size=0x1e
 #include "CPhysicsCannister.h"
 
