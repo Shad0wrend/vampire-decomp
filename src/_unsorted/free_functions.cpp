@@ -52791,6 +52791,17 @@ int __stdcall sub_101a0570(const char *pBytes, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a05b0 size=0x25
+#include "CSave.h"
+
+// TARGET: sub_101a05b0
+void CSave::sub_101a05b0(int a, int bytes, int b)
+{
+    sub_101a05f0((const void *)a, bytes);
+    sub_1000643d((const void *)b, bytes);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a05f0 size=0x153
 #include "CSave.h"
 #include <string.h>
