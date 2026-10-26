@@ -11,6 +11,7 @@ public:
     void vfunc103();    // "CBreakableProp::Spawn"-like: base spawn, slot 265, take-damage mode from the health, default 0.1 at +0xdc, AddFlag(0x20000000)
     void sub_10011793();    // CBaseProp::vfunc103 (jump stub)
     void vfunc104();    // CBreakableProp::vfunc104 (stub 0x1000978c), called directly by CPropDestructable::vfunc104
+    void sub_1000d99f();    // CBaseProp::vfunc104 (stub 0x1000d99f), called directly by CBreakableProp::vfunc104
     void vfunc113();    // slot 113 (stub 0x10004dbd), called directly by CSecCamera::vfunc113
     void vfunc144(void *pInfo);    // "BreakableProp::Break"-like: clears flag 0x2000 / 0x40000, remembers the attacker's handle (+0x768), sets a think function, no damage taking, thinks again in a millisecond
     void vfunc230(int a, int b);    // slot 230: CBaseEntity::vfunc230 (stub 0x10006d61) with the same arguments, then slot 75 (0x12c) with them
