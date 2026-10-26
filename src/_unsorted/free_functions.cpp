@@ -89053,6 +89053,17 @@ void sub_102ce9f0(int *dst, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cea20 size=0x2f
+// TARGET: CUtlRBTree12::sub_102cea20
+#include "CUtlRBTree12.h"
+
+void CUtlRBTree12::sub_102cea20(unsigned short elem) {
+    m_pElements[elem].m_Links.m_Left = elem;
+    m_pElements[elem].m_Links.m_Right = m_FirstFree;
+    m_FirstFree = elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cef30 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
