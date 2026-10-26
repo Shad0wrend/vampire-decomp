@@ -65,7 +65,7 @@ public:
 	virtual float vfunc49(int a);
 	virtual float vfunc50(int a);
 	virtual Vector vfunc51(CBaseEntity *pEnt);	// returns a copy of the entity's origin
-	virtual void vfunc52();
+	virtual void vfunc52(CBaseCombatCharacter *pChar, int nIndex);	// slot 52: the object of the index (slot 55) gives the value (its sub_1000df3f) that is handed to slot 53 with the character
 	virtual char vfunc53(CBaseCombatCharacter *pChar, int nIndex);	// the character's count of the index (sub_103346c0) is below the limit of the index (slot 55's object, sub_1000a37b)
 	virtual void vfunc54();
 	virtual void *vfunc55(int a);	// slot 55: the object of the index a (its sub_1000df3f gives the limit, see vfunc52)
