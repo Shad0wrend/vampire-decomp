@@ -4,5 +4,7 @@
 
 struct CAI_InterestTarget
 {
+	CAI_InterestTarget();	// 0x102d9150 (stub 0x1000823d): called on every element the facing queue's Restore adds
+
 	char m_pad0000[0x24];
 };
