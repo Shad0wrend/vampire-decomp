@@ -199,6 +199,25 @@ char CNPC_VHengeyokai::vfunc320(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10380390 size=0x23
+#include "CNPC_VHengeyokai.h"
+#include "CNPC_VVampire.h"
+
+struct CNPC_VHengeyokaiCalls {
+	char sub_10381c80();
+	void sub_103828a0();
+};
+
+// TARGET: CNPC_VHengeyokai::vfunc144
+void CNPC_VHengeyokai::vfunc144(int info)
+{
+	if (((CNPC_VHengeyokaiCalls *)this)->sub_10381c80()) {
+		((CNPC_VHengeyokaiCalls *)this)->sub_103828a0();
+	}
+	((CNPC_VVampire *)this)->vfunc144(info);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103803d0 size=0x72
 #include "CNPC_VHengeyokai.h"
 
