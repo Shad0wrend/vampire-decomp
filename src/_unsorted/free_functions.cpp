@@ -62911,6 +62911,21 @@ void CUnknown101e0f00::sub_101e2da0(void *pChar, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3380 size=0x2a
+void __stdcall sub_1000dba2(int a, int b);
+
+struct CUnit101e3380 {
+    void sub_101e3380(int a1, int a2, int a3);
+    void sub_1000ae07(int a1, int a2, int a3, int a4);
+};
+
+void CUnit101e3380::sub_101e3380(int a1, int a2, int a3)
+{
+    sub_1000dba2(a1, a3);
+    sub_1000ae07(a1, a2, a3, -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e33c0 size=0x2d
 #include "CVTriggerCasting_t.h"
 
