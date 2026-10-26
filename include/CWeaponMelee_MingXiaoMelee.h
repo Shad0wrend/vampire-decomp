@@ -9,5 +9,9 @@ class CWeaponMelee_MingXiaoMelee : public CWeaponMelee
 public:
 	int vfunc367(int a, float b, float c);	// slot 367: its own (0x103ec350)
 	void vfunc370(CWeaponMeleeEvent *pEvent, int b);	// slot 370: ignores event type 0xbbb, else the base handler
+	void vfunc269(CBaseCombatWeapon *pOther, Vector vecDir);	// slot 269: its own (0x103ec490), pushes pOther along -vecDir scaled by the mathlib value while the state at +0x910 is 1 or 2
 	CBaseCombatWeapon *vfunc5(unsigned int flags);	// as in CPhysForce (transplant); VC6 has no covariant returns
+
+	char m_pad08b8[0x910 - 0x8b8];
+	int m_n0910;
 };
