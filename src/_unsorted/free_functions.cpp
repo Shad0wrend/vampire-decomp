@@ -67183,6 +67183,20 @@ void CUnknown101f3d80::sub_101f3d80(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f4170 size=0x25
+#include "CUnknown101f40f0.h"
+#include "CUnknown101f5150.h"
+
+int *sub_10203ed0(void *pOwnerRef, const char *pszName);
+
+// TARGET: CUnknown101f40f0::sub_101f4170
+void CUnknown101f40f0::sub_101f4170(CUnknown101f5150 *pOwner, const char *pszName)
+{
+    m_pParent = (CUnknown101f40f0_Parent *)pOwner;
+    m_pszName = (const char *)*sub_10203ed0(&pOwner, pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f41b0 size=0x9b
 #include "CUnknown101f40f0.h"
 #include <stdio.h>
