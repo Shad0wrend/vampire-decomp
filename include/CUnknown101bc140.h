@@ -23,7 +23,8 @@ public:
 	char m_b1c;	// 0x1c
 	char m_pad1d[3];
 	int m_nSoundLevel;	// 0x20
-	char m_pad24[0x2c - 0x24];
+	float m_fl24;	// 0x24: the volume offset set by sub_101bbc70 (the slot 9 value of the engine plus the argument)
+	char m_pad28[0x2c - 0x28];
 	const char *m_pszSample;	// 0x2c
 	unsigned int m_hEntity;	// 0x30: entity handle the sound plays from
 	int m_nChannel;	// 0x34
@@ -34,6 +35,7 @@ public:
 	unsigned int m_nFlags;	// 0x48
 
 	float sub_101bbcf0();	// m_flPitchScale * m_flScale (stub 0x10007851)
+	void sub_101bbc20(int unused, float flValue);	// the member called by sub_101bbc70 first (stub 0x100139e4)
 	void sub_101bc140();	// when the sound is set up and playing (bit 0 of the flags) emits it through the engine sound object (sub_101b14d0) from its entity
 	void sub_101bc020();	// clears +0x38; when bit 0 of the flags is set emits the sound through the engine (sub_100126cf: filter, entity index of the entity behind the handle at +0x30 or -1, channel, sample, volume = sub_101bbcf0(), sound level, 1, (int)m_flVolume, 0, 0, 0); then sets the dword at +0x3c to 1
 	void sub_101bc260(void *pPlayer);	// like sub_101bc020 for one player: when the sound is set up (bit 0 of the flags) and its filter (slot 8) includes the player, emits it to a single user filter holding the player
