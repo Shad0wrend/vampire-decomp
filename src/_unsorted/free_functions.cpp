@@ -56217,6 +56217,17 @@ void CFloatUnit::sub_101bb6f0(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb760 size=0x23
+float __cdecl sub_1013d400(float a, float b, float c);
+
+// TARGET: sub_101bb760
+void __fastcall sub_101bb760(void *pSelf, int unused, float scale)
+{
+    float *p = (float *)pSelf;
+    p[0] = sub_1013d400(p[1], p[0], scale * p[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb7e0 size=0x80
 #include "CUtlVectorDataOps.h"
 struct ISaveRestoreOps;
