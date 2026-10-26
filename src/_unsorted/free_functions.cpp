@@ -35673,6 +35673,27 @@ void CUnknown1010c190::sub_1010c190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c5d0 size=0x2e
+#include "CUnknown1070b22c.h"
+// TARGET: sub_1010c5d0
+extern CUnknown1070b22c *g_1070b22c;
+
+struct CUnknown1010c5d0
+{
+    char m_pad0000[0x450];
+    int m_nPortalKey;
+    int m_pad0454;
+    int m_nOpen;
+    bool sub_1010c5d0();
+};
+
+bool CUnknown1010c5d0::sub_1010c5d0()
+{
+    g_1070b22c->vfunc102(m_nPortalKey, m_nOpen);
+    return m_nOpen != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c780 size=0x124
 #include "CFuncAreaPortalBase.h"
 #include "CUtlLinkedList8.h"
