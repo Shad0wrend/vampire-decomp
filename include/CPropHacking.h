@@ -50,6 +50,7 @@ public:
 	void sub_102181a0(CBaseEntity *pPlayer);	// CBaseTerminal::vfunc39 (stub 0x1000f515), called directly
 	void sub_1021aca0();	// stub 0x10002fae
 	void sub_1021c040();	// stub 0x10014f5b / 0x1021c040: tail of the sub_1021c000 and sub_1021b9c0 paths (the screen refresh), called with this
+	void sub_1021c000();	// stub-less member: m_n0a0c = min(m_n0a04 / 10, m_n0a0c + 1), then sub_1021c040()
 
 	char m_pad03e0[0x814 - 0x3e0];
 	int m_n0814;	// 0x814
