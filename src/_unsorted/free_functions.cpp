@@ -64392,6 +64392,32 @@ void CUnknown101e05e0::sub_101e05e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e09c0 size=0x21
+extern char g_106b8540[];
+
+struct CUnkSub101e09c0
+{
+    char *sub_10015da2(void *p);
+};
+
+struct CUnk101e09c0
+{
+    char *sub_101e09c0(void *p);
+};
+
+// TARGET: sub_101e09c0
+char *CUnk101e09c0::sub_101e09c0(void *p)
+{
+    CUnkSub101e09c0 *pSub = (CUnkSub101e09c0 *)((char *)this + 0xdc);
+    char *pObj = pSub->sub_10015da2(p);
+    char *&pValue = *(char **)(pObj + 4);
+    if (pValue == 0) {
+        return g_106b8540;
+    }
+    return pValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0c30 size=0xee
 #include "CUnknown101e0c30.h"
 
