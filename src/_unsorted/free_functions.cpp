@@ -92874,6 +92874,28 @@ void CUnknown102d09b0::sub_102d09b0(CBaseEntity *pOther, int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d0b20 size=0x24
+extern char g_106b8540[];
+
+struct CUnknown102d0b20 {
+	void sub_102d0b20();
+};
+
+// TARGET: CUnknown102d0b20::sub_102d0b20
+void CUnknown102d0b20::sub_102d0b20()
+{
+	char *p = g_106b8540;
+	char *dst = (char *)this + 0x478;
+	char c;
+	do {
+		c = *p;
+		*(char *)(dst + (p - g_106b8540)) = c;
+		p++;
+	} while (c != 0);
+	*(int *)((char *)this + 0x4f8) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1220 size=0x90
 #include "CUnknown102d1220.h"
 
