@@ -5674,6 +5674,7 @@
 0x100127a1 func   ?vfunc3@CTEDynamicLight@@UAEXABVVector@@ABVQAngle@@@Z CTEDynamicLight::vfunc3
 0x100127ba func   ?sub_10360bc0@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::sub_10360bc0
 0x100127c4 func   ?sub_100295f0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295f0
+0x100127c9 func   ?sub_100d1100@@YG_NPAUCVSDOps@@@Z sub_100d1100
 0x100127d8 func   ?sub_102507b0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_102507b0
 0x100127e2 func   ?vfunc35@CPushable@@UAEHH@Z CPushable::vfunc35
 0x10012805 func   ?sub_1030b7c0@CUnknown1030bc20@@QAEPAUCUnknown1030bc20_Record@@XZ CUnknown1030bc20::sub_1030b7c0

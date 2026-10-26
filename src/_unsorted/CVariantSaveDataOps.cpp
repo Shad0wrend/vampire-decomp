@@ -60,3 +60,22 @@ void CVariantSaveDataOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, CRestore *pR
 	pVariant->sub_1000b320(type, &var);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d1100 size=0x2d
+struct CVSDMeta { char pad[0x10]; short count; };
+struct CVSDOps { int *data; int unk4; CVSDMeta *meta; };
+
+// TARGET: sub_100d1100
+bool __stdcall sub_100d1100(CVSDOps *p)
+{
+    int i = 0;
+    int *e = p->data;
+    int n = p->meta->count;
+    for (; i < n; i++, e += 5) {
+        if (*(int *)((char *)e + 0x10) != 0) {
+            return false;
+        }
+    }
+    return true;
+}
+// END FUNCTION
