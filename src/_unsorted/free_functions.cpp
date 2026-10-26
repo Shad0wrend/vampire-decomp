@@ -81036,6 +81036,26 @@ CUnk10247bd0 *CUnk10247bd0::sub_10247bd0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247c10 size=0x2a
+#include "CUnknown10247c10.h"
+
+void __stdcall sub_10013958(int a);
+
+struct CUnknown10247c10Peer
+{
+    void sub_1000af92(int a, int b);
+};
+
+// TARGET: CUnknown10247c10::sub_10247c10
+CUnknown10247c10 *CUnknown10247c10::sub_10247c10(int a, int b, int c)
+{
+    m_n00 = 0;
+    sub_10013958(a);
+    ((CUnknown10247c10Peer *)this)->sub_1000af92(b, c);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247c50 size=0x3b
 struct CUnk10247c50
 {
