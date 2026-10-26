@@ -52,3 +52,17 @@ void CFire::vfunc180()
 	CBaseEntity::vfunc180();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010a330 size=0x27
+#include "CFire.h"
+
+// TARGET: CFire::vfunc113
+void CFire::vfunc113()
+{
+    CBaseEntity::vfunc113();
+    if (*(unsigned char *)((char *)this + 0x204) & 4) {
+        *(int *)((char *)this + 0x46c) = *(int *)((char *)this + 0x478);
+        sub_10109e90();
+    }
+}
+// END FUNCTION
