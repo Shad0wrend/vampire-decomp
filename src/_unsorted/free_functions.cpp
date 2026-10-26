@@ -89137,6 +89137,42 @@ void CAI_BaseNPCTroika::sub_102c4ad0(CEntityVSlots *pTarget, float flHeight, flo
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c54c0 size=0x2b
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+struct CUnkRec102c54c0
+{
+	char m_pad00[0x34];
+	int m_n34;
+	int m_n38;
+};
+
+struct CUnkTable102c54c0
+{
+	CUnkRec102c54c0 *sub_10001de8(void *pOwner);
+};
+
+extern CUnkTable102c54c0 g_1074f028;
+
+struct CUnk102c54c0
+{
+	char m_pad0000[0x65f0];
+	int m_n65f0;
+
+	void sub_102c54c0();
+};
+
+// TARGET: CUnk102c54c0::sub_102c54c0
+void CUnk102c54c0::sub_102c54c0()
+{
+	CUnkRec102c54c0 *pRec = g_1074f028.sub_10001de8(this);
+	int n34 = pRec->m_n34;
+	m_n65f0 = g_1070b244->vfunc2(n34, pRec->m_n38);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c5730 size=0x3c
 #include "CBaseCombatWeapon.h"
 
