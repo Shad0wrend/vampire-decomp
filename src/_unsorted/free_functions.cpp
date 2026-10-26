@@ -81016,6 +81016,26 @@ void CAccum64View::sub_10247860(const __int64 *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247bd0 size=0x2a
+void __stdcall sub_10013958(int a);
+
+struct CUnk10247bd0
+{
+    int m_first;
+    void sub_10015258(int b, int c);
+    CUnk10247bd0 *sub_10247bd0(int a, int b, int c);
+};
+
+// TARGET: sub_10247bd0
+CUnk10247bd0 *CUnk10247bd0::sub_10247bd0(int a, int b, int c)
+{
+    m_first = 0;
+    ::sub_10013958(a);
+    sub_10015258(b, c);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247c50 size=0x3b
 struct CUnk10247c50
 {
