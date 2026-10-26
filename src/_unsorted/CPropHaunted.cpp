@@ -102,3 +102,15 @@ void CPropHaunted::vfunc104()
 	if (*p) g_1070b248->vfunc0(p, 1);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10213d90 size=0x28
+#include "CPropHaunted.h"
+
+// TARGET: CPropHaunted::vfunc174
+void CPropHaunted::vfunc174(CBaseEntity *pOther)
+{
+    sub_10213ef0(0, 0, pOther);
+    if (*(int *)((char *)this + 0x200) != 2)
+        CBaseEntity::vfunc174(pOther);
+}
+// END FUNCTION
