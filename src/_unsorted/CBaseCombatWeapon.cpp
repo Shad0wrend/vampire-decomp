@@ -290,6 +290,18 @@ int __stdcall sub_10251e40(int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251e80 size=0x27
+#include "CBaseCombatWeapon.h"
+
+void *sub_10010ea6();
+
+// TARGET: CBaseCombatWeapon::vfunc276
+int CBaseCombatWeapon::vfunc276(unsigned int index)
+{
+	return *(int *)((char *)sub_10010ea6() + 0x2670 + index * 0x1093c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252090 size=0x67
 #include "CBaseCombatWeapon.h"
 
