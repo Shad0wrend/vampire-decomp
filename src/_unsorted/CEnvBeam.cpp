@@ -65,3 +65,18 @@ void CEnvBeam::vfunc103()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x100fee60 size=0x2e
+#include "CEnvBeam.h"
+// TARGET: vfunc113
+extern float g_104454c4;
+
+void CEnvBeam::vfunc113()
+{
+    CBaseEntity::vfunc113();
+    if (m_flLife == g_104454c4 && !(m_flags204 & 8))
+    {
+        sub_10100b60();
+    }
+}
+// END FUNCTION
