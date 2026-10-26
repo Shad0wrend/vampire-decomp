@@ -91299,6 +91299,20 @@ int CUtlVector4::sub_102c65d0(const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c66b0 size=0x25
+struct CUnknown102c66b0
+{
+    bool sub_102c66b0(int bit);
+};
+
+// TARGET: CUnknown102c66b0::sub_102c66b0
+bool CUnknown102c66b0::sub_102c66b0(int bit)
+{
+    unsigned int *pBits = (unsigned int *)this;
+    return (pBits[bit >> 5] & (1 << (bit & 0x1f))) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c66f0 size=0x40
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int size);
 struct UtlVec8 {
