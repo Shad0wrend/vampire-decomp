@@ -12514,6 +12514,17 @@ CFlexTrack *CFlexTrackParent::sub_10077490(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077650 size=0x22
+// TARGET: CUnknown10077430::sub_10077650
+#include "CUnknown10077430.h"
+void CUnknown10077430::sub_10077650()
+{
+    while (sub_10077430() > 0) {
+        sub_100775d0(0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077730 size=0xd
 #include "CUnknown10077730.h"
 
