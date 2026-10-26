@@ -1104,6 +1104,55 @@ int CAI_BaseNPCTroika::vfunc127(CRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029afc0 size=0x15f
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseAnimating.h"
+#include "CEHandleGet.h"
+
+#define NPCF(type, off) (*(type *)((char *)this + (off)))
+#define ENTF(type, p, off) (*(type *)((char *)(p) + (off)))
+
+// TARGET: CAI_BaseNPCTroika::vfunc68
+bool CAI_BaseNPCTroika::vfunc68(void *pOther)
+{
+	if (!NPCF(char, 0x63da))
+	{
+		if ((NPCF(unsigned int, 0x14b8) & 0x40) == 0x40)
+		{
+			if (ENTF(int, pOther, 0x94))
+				return true;
+			if (ENTF(int, pOther, 0xa8))
+				return true;
+		}
+		else
+		{
+			void *p = (void *)ENTF(int, pOther, 0x98);
+			if (p && (ENTF(unsigned int, p, 0x14b8) & 0x20000))
+				return true;
+		}
+	}
+	if (pOther == EHandle_Get(NPCF(unsigned int, 0x643c)))
+		return true;
+	if (ENTF(int, pOther, 0xa0))
+		return true;
+	void *q = (void *)NPCF(int, 0x5ddc);
+	if (q)
+	{
+		int id = ENTF(int, q, 0x5dc);
+		if (id >= 0x283c && id <= 0x283d && (ENTF(unsigned char, pOther, 0x4c) & 0x14))
+			return true;
+	}
+	if ((unsigned char)(ENTF(unsigned int, pOther, 0x4c) >> 1) & 1)
+		return true;
+	if (EHandle_Get(NPCF(unsigned int, 0x1538)) && NPCF(int, 0x153c) != -1)
+	{
+		if (EHandle_Get(NPCF(unsigned int, 0x1538)) == pOther)
+			return true;
+	}
+	return ((CBaseAnimating *)this)->sub_1008be20((CBaseEntity *)pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029b180 size=0xce
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseAnimating.h"
