@@ -88923,6 +88923,35 @@ void CFlagOwnerView::sub_102c34b0(CFlagArgView *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c3540 size=0x2b
+struct CVariantArg102c3540
+{
+	char m_pad0[8];
+	char m_b8;	// 0x08
+	char pad1[0x18 - 0x9];
+	int m_type;	// 0x18
+};
+
+struct CUnk102c3540
+{
+	void sub_10012855(unsigned int flags);
+	void sub_1001005f(unsigned int flags);
+
+	void sub_102c3540(const CVariantArg102c3540 *d);
+};
+
+// TARGET: CUnk102c3540::sub_102c3540
+void CUnk102c3540::sub_102c3540(const CVariantArg102c3540 *d)
+{
+	if (d->m_type == 5 && d->m_b8 != 0)
+	{
+		sub_10012855(0xd00);
+		return;
+	}
+	sub_1001005f(0xd00);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c3690 size=0xe
 extern const char *g_105d1068[];
 

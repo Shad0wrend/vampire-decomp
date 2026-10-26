@@ -5216,6 +5216,7 @@
 0x10010e33 func   ?sub_1036c810@CNPC_VChangBros@@QAEXHH@Z CNPC_VChangBros::sub_1036c810
 0x10010e3d func   ?sub_100ae7e0@@YAXXZ sub_100ae7e0
 0x10010e42 func   ?sub_10072d60@S10072d60@@QAEXPBD@Z S10072d60::sub_10072d60
+0x10010e47 func   ?sub_102c3540@CUnk102c3540@@QAEXPBUCVariantArg102c3540@@@Z CUnk102c3540::sub_102c3540
 0x10010e4c func   ?vfunc5@CWeaponThrown_Chang_Ghost@@QAEPAV1@I@Z CWeaponThrown_Chang_Ghost::vfunc5
 0x10010e56 func   ?vfunc180@CNPC_VCop@@QAEXXZ CNPC_VCop::vfunc180
 0x10010e60 func   ?vfunc42@CBaseEntity@@QAEXPAX@Z CBaseEntity::vfunc42
