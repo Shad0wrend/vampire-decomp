@@ -109394,6 +109394,27 @@ extern "C" CBaseEntity *npc_VHunter()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10387fd0 size=0x29
+struct CUnknown10387fd0
+{
+    virtual void vfunc0();
+    virtual int *vfunc1();
+};
+extern char *g_1070b228;
+extern float g_1093b658;
+extern int g_1093b650;
+// TARGET: sub_10387fd0
+void sub_10387fd0(CUnknown10387fd0 *p)
+{
+    if (p)
+    {
+        g_1093b658 = *(float *)((char *)g_1070b228 + 0xc) + 30.0f;
+        int *pr = p->vfunc1();
+        g_1093b650 = *pr;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388150 size=0x33
 void sub_1000ef84();
 void sub_1000935e();
