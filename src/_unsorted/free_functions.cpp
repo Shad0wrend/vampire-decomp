@@ -122137,6 +122137,19 @@ CUnknown101bc140 *CWeaponPhysCannon::sub_104112d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104114d0 size=0x2f
+// TARGET: sub_104114d0
+#include "CPlayerPickupController.h"
+
+bool sub_104114d0(CBaseEntity *pEntity, void *pOther) {
+    CPlayerPickupController *pPickup = dynamic_cast<CPlayerPickupController *>(pEntity);
+    if (pPickup != 0) {
+        return pPickup->sub_1040d440(pOther);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10411630 size=0x73
 #include "CUnknown10411630.h"
 #include "CGlobalEntityList.h"
