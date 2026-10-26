@@ -6855,6 +6855,7 @@
 0x10015c7b func   ?sub_10316ec0@@YAXXZ sub_10316ec0
 0x10015c80 func   ?sub_10073b60@CUnknown10073b60@@QAEXH@Z CUnknown10073b60::sub_10073b60
 0x10015c85 func   ?vfunc0@CTraceFilterSimpleTwoEnt@@UAE_NPAXH@Z CTraceFilterSimpleTwoEnt::vfunc0
+0x10015c8a func   ?sub_10428e20@@YAHPAUCTable10428e20@@H@Z sub_10428e20
 0x10015c99 func   ?vfunc5@CWeaponIArmor_Hvy_Cloth@@UAEPAV1@I@Z CWeaponIArmor_Hvy_Cloth::vfunc5
 0x10015c9e func   ??0CBaseTransmitProxy@@QAE@PAVCBaseEntity@@@Z CBaseTransmitProxy::CBaseTransmitProxy
 0x10015ca3 func   ?sub_100770b0@CUnknown10076da0@@QAEXPBDM_N@Z CUnknown10076da0::sub_100770b0

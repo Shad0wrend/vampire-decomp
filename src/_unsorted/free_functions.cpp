@@ -124062,6 +124062,26 @@ int sub_10428ad0(CStudioHdr *pStudioHdr, int iFrom, int iTo, int *pDirection)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10428e20 size=0x2c
+struct CTable10428e20 {
+    char pad[0x140];
+    int m_i140;
+    int m_i144;
+};
+
+// TARGET: sub_10428e20
+int sub_10428e20(CTable10428e20 *p, int idx)
+{
+    if (p == 0) {
+        return 0;
+    }
+    if (idx > p->m_i140) {
+        return 0;
+    }
+    return *(int *)((char *)p + 4 + p->m_i144 + idx * 16);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428e60 size=0x10
 unsigned int sub_10428e60(char *p)
 {
