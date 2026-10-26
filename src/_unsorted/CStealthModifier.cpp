@@ -25,3 +25,22 @@ void CStealthUnit101cba00::sub_101cba00(void *pOther)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x101cba40 size=0x2d
+#include "CStealthModifier.h"
+
+struct CStealthTarget
+{
+	void sub_10011f13(int);
+};
+
+// TARGET: CStealthModifier::vfunc176
+void CStealthModifier::vfunc176(CBaseEntity *pOther)
+{
+	CBaseTrigger::vfunc176(pOther);
+	if (*(CStealthTarget **)((char *)pOther + 0x9c) != 0)
+	{
+		(*(CStealthTarget **)((char *)pOther + 0x9c))->sub_10011f13(m_i598);
+	}
+}
+// END FUNCTION
