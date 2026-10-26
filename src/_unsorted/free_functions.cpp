@@ -91616,6 +91616,22 @@ void CUnk102d0910::sub_102d0910(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d09b0 size=0x28
+#include "CPropHaunted.h"
+
+struct CUnknown102d09b0 {
+    char pad_0000[0x4e4];
+    void sub_102d09b0(CBaseEntity *pOther, int i);
+};
+
+// TARGET: CUnknown102d09b0::sub_102d09b0
+void CUnknown102d09b0::sub_102d09b0(CBaseEntity *pOther, int i)
+{
+    if (i >= 1 && i <= 8)
+        ((CPropHauntedSub *)((char *)this + 0x4e4 + i * 0x18))->sub_100cd660(pOther, (CBaseEntity *)this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1220 size=0x90
 #include "CUnknown102d1220.h"
 
