@@ -59706,6 +59706,37 @@ CTriggerPush *CTriggerPush::sub_101c88c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c8b60 size=0xa3
+struct S101c8b60Globals { char pad[0xc]; float curtime; };
+extern S101c8b60Globals *g_1070b228;
+float sub_102283a0(float a, float b, float c, float d);
+
+struct CView101c8b60 {
+    char pad0[0x164];
+    float m_f164;
+    char pad1[0x17c - 0x168];
+    float m_flNextThink;
+    char pad2[0x598 - 0x180];
+    float m_f598;
+    float m_f59c;
+    float m_flLastTime;
+    void sub_101c8b60();
+};
+
+// TARGET: CView101c8b60::sub_101c8b60
+void CView101c8b60::sub_101c8b60()
+{
+    float dt = g_1070b228->curtime - m_flLastTime;
+    double v = (dt > 0.2f) ? (double)0.2f : ((dt < 0.001) ? 0.001 : dt);
+    m_f164 = sub_102283a0(m_f164, m_f59c, m_f598, (m_flLastTime = g_1070b228->curtime, (float)v));
+    if (m_f164 == m_flNextThink) {
+        ((CBaseEntity *)this)->sub_100ac4e0(0, 0, 0);
+        return;
+    }
+    m_flNextThink = g_1070b228->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c90e0 size=0x43
 #include "CTriggerTeleport.h"
 void *sub_100aa720(int size);
