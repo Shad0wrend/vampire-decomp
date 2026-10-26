@@ -43408,6 +43408,16 @@ float sub_10151b70(const float *pTable, int nEntries, float flValue, char bPrint
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152060 size=0x27
+extern int g_1057d360;
+void sub_100126e8(int a, int b, int *c, int d, int e, int f);
+
+void sub_10152060(int a, int b, int c, int d, int e)
+{
+    sub_100126e8(a, b, &g_1057d360, c, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101520a0 size=0xc6
 #include "gamevcollisionevent_t.h"
 

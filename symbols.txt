@@ -3549,6 +3549,7 @@
 0x1000ba14 func   ?vfunc438@CNPC_VGuard1@@QAEHXZ CNPC_VGuard1::vfunc438
 0x1000ba28 func   ?sub_10272940@CAI_BaseNPC@@QAEXPBD@Z CAI_BaseNPC::sub_10272940
 0x1000ba3c func   ?sub_101348a0@CLogicCaseToggle@@QAEXPAUinputdata_t@@@Z CLogicCaseToggle::sub_101348a0
+0x1000ba41 func   ?sub_10152060@@YAXHHHHH@Z sub_10152060
 0x1000ba46 func   ?sub_10043750@S10043750@@QAEXH@Z S10043750::sub_10043750
 0x1000ba5a func   ?sub_100575e0@CBaseFire@@QAEXH@Z CBaseFire::sub_100575e0
 0x1000ba5f func   ?vfunc8@CSoundscapeSystem@@QAEPAV1@I@Z CSoundscapeSystem::vfunc8
