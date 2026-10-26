@@ -52527,6 +52527,18 @@ void CUnk101a0530::sub_101a0530(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0570 size=0x26
+// TARGET: sub_101a0570
+int __stdcall sub_101a0570(const char *pBytes, int nBytes)
+{
+	for (int i = 0; i < nBytes; i++) {
+		if (pBytes[i] != 0)
+			return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a05f0 size=0x153
 #include "CSave.h"
 #include <string.h>
