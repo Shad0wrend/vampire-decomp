@@ -468,6 +468,25 @@ bool CAI_BaseNPC::vfunc545()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273e40 size=0x27
+// TARGET: CUnknown10273e40::sub_10273e40
+#include "CUnknown10273e40.h"
+#include "CUnknown102e0730.h"
+
+void CUnknown10273e40::sub_10273e40()
+{
+	if (m_n5da4 == 0)
+	{
+		CUnknown102e0730 *p = m_p5d88;
+		if (p)
+		{
+			p->sub_100146d7();
+			operator delete(p);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273fc0 size=0x8e
 #include "CAI_BaseNPC.h"
 
