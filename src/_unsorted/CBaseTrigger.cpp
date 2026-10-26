@@ -32,6 +32,22 @@ int CBaseTrigger::vfunc124()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c5590 size=0x26
+#include "CBaseTrigger.h"
+
+struct CBaseTriggerSub568 {
+    void sub_10010794(void *a, CBaseTrigger *b, int c);
+};
+
+// TARGET: CBaseTrigger::vfunc174
+void CBaseTrigger::vfunc174(CBaseEntity *p)
+{
+    if (sub_101c5460(p)) {
+        ((CBaseTriggerSub568 *)((char *)this + 0x568))->sub_10010794(p, this, 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c5610 size=0x16e
 #include "CBaseTrigger.h"
 struct TraceFrame { const char *a; const char *b; const char *c; };
