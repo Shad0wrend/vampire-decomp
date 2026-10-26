@@ -10,6 +10,14 @@ class CBaseEntity;
 class CBaseCombatCharacter;
 struct CMPDamageInfo;
 
+// The 0x484 byte object that CGameRules creates in its slot 56 (its class is not known yet).
+class CGameRulesSub
+{
+public:
+	CGameRulesSub();
+	char m_pad0000[0x484];
+};
+
 class CGameRules
 {
 public:
@@ -69,7 +77,7 @@ public:
 	virtual char vfunc53(CBaseCombatCharacter *pChar, int nIndex);	// the character's count of the index (sub_103346c0) is below the limit of the index (slot 55's object, sub_1000a37b)
 	virtual void vfunc54();
 	virtual void *vfunc55(int a);	// slot 55: the object of the index a (its sub_1000df3f gives the limit, see vfunc52)
-	virtual void vfunc56();
+	virtual void vfunc56();	// creates the 0x484 byte object at +4 (CGameRulesSub), null when the allocation fails
 	virtual void vfunc57();
 	virtual void vfunc58();
 	virtual void vfunc59();
