@@ -42318,6 +42318,20 @@ void CUtlMemory96::sub_1013fd20(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013fdb0 size=0x29
+int sub_10130100(int index);
+extern int g_1071a28c[];
+
+// TARGET: sub_1013fdb0
+int sub_1013fdb0(int index)
+{
+    if (g_1071a28c[index] == 0) {
+        g_1071a28c[index] = sub_10130100(index);
+    }
+    return g_1071a28c[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fdf0 size=0x2c
 float sub_1013fe30(float f);
 
