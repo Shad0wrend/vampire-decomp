@@ -87315,6 +87315,19 @@ void __fastcall sub_102697b0(DeathThinkView *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102699e0 size=0x22
+#include "Vector.h"
+
+extern char g_1070ba40[];
+void sub_1000b497(const Vector *pVec, void *pData, int a, int b);
+
+// TARGET: sub_102699e0
+void sub_102699e0(Vector vec, int a, float t)
+{
+    sub_1000b497(&vec, g_1070ba40, a, (int)t);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a0b0 size=0x2b
 #include <string.h>
 
