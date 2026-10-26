@@ -18,6 +18,7 @@ public:
 	void sub_1020c2a0();	// the camera's think (next think 0.1 s later): while the byte at +0x77c is set runs the state machine (sub_1020c3d0), every 0.25 s asks sub_1020cd30 and goes to state 4 unless already in 4 or 6; in the states 4 / 5 sets the playback rate (+0x6f4 = 1 / the float at +0x7c0), advances the animation (slot 250) and, with the byte at +0x65c set, restarts "idle" (state 5) or "zoom_idle" (state 4)
 	void sub_1020cbf0(const char *pszSequence);	// starts the named sequence (stub 0x1000aaab)
 	void vfunc113();	// slot 113: CBreakableProp::vfunc113 (0x10004dbd), then the think (sub_1020c2a0) set +0.0 s later, the nothing-else timer at +0x7a0 (1020c250)
+	void vfunc133();	// slot 133: the think timer and the sound: sub_1020c890, sub_10007725, then the global 0x1070b228's +0xc as the next state time at +0x7a0, then sub_1020c3d0
 	void sub_10007725();	// the member called by vfunc133 after sub_1020c890 (stub 0x10007725)
 
 	char m_pad03e0[0x77c - 0x3e0];
