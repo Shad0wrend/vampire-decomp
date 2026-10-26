@@ -55,6 +55,17 @@ void CGameRules::vfunc52(CBaseCombatCharacter *pChar, int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128430 size=0x27
+#include "CGameRules.h"
+
+// TARGET: CGameRules::vfunc56
+void CGameRules::vfunc56()
+{
+	CGameRulesSub **ppSub = (CGameRulesSub **)((char *)this + 4);
+	*ppSub = new CGameRulesSub;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101286f0 size=0x9c
 struct SkillVar { virtual void v0(); virtual bool v1(); char pad[0x28]; int m_value; };
 struct SkillEntry { int pad; SkillVar *pVar; };
