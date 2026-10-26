@@ -220,6 +220,24 @@ void CGameMovement::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101212a0 size=0x29
+struct CUnit101212a0 {
+    bool sub_101212a0();
+};
+
+bool CUnit101212a0::sub_101212a0()
+{
+    char *pPlayer = *(char **)((char *)this + 8);
+    if (*(int *)(pPlayer + 0x2068) != 0) {
+        return false;
+    }
+    if (*(float *)(pPlayer + 0x2314) != 0.0f) {
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101212e0 size=0x98
 #include "CGameMovement.h"
 
