@@ -15,6 +15,19 @@ void CSaveBlockFields10043c40::sub_10043c40(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043f70 size=0x2e
+// TARGET: CPhysSaveRestoreBlockHandler::vfunc3
+#include "CPhysSaveRestoreBlockHandler.h"
+#include "CSave.h"
+
+extern char g_1053c340[];
+
+void CPhysSaveRestoreBlockHandler::vfunc3(CSave *pSave) {
+    pSave->vfunc8(g_1053c340, 1);
+    pSave->vfunc2(m_data98, "");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044020 size=0x3c
 #include "CPhysSaveRestoreBlockHandler.h"
 #include "CUnknown100f6d80.h"
