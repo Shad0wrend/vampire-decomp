@@ -86256,6 +86256,26 @@ void CAI_BaseNPC::sub_10274ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102781a0 size=0x28
+struct CUnknown102781a0 {
+    char pad_0000[0x5da4];
+    int m_n5da4;
+    bool sub_102781a0(CUnknown102781a0 *pOther);
+};
+
+// TARGET: CUnknown102781a0::sub_102781a0
+bool CUnknown102781a0::sub_102781a0(CUnknown102781a0 *pOther)
+{
+    if (pOther == 0)
+        return false;
+    if (m_n5da4 == 0)
+        return false;
+    if (m_n5da4 == pOther->m_n5da4)
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279260 size=0x3e
 #include "CBaseEntity.h"
 

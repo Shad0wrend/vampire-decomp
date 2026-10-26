@@ -1671,6 +1671,7 @@
 0x10006195 func   ?vfunc5@CItemGHorrorTape_2@@QAEPAV1@I@Z CItemGHorrorTape_2::vfunc5
 0x1000619f func   ?sub_10092380@CBaseAnimating@@QAE_NHPBD@Z CBaseAnimating::sub_10092380
 0x100061ae func   ?sub_102c44e0@CAI_BaseNPCTroika@@QAE_NPBD@Z CAI_BaseNPCTroika::sub_102c44e0
+0x100061b8 func   ?sub_102781a0@CUnknown102781a0@@QAE_NPAU1@@Z CUnknown102781a0::sub_102781a0
 0x100061f4 func   ?vfunc440@CAI_BaseNPC@@QAEHH@Z CAI_BaseNPC::vfunc440
 0x100061fe func   ?sub_100d5510@@YAXXZ sub_100d5510
 0x10006212 func   ?sub_1006ccc0@CUnknown1006ccc0@@QAEPAV1@XZ CUnknown1006ccc0::sub_1006ccc0
