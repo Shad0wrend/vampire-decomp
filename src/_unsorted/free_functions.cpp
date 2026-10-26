@@ -68357,6 +68357,18 @@ int CVStatSubCost_t::sub_101fbc40(int level, bool bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fbf80 size=0x2a
+#include "CUnknown101fbf80.h"
+
+// TARGET: CUnknown101fbf80::sub_101fbf80
+bool CUnknown101fbf80::sub_101fbf80(int a, int b, int c, int d, int e)
+{
+    if (a == m_x && b == m_y && c == m_z)
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fbfc0 size=0x2a
 struct CUnit101fbfc0 {
     int m_v[3];
