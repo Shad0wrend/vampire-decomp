@@ -82946,6 +82946,18 @@ parse:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102482b0 size=0x23
+extern int g_10754fa8;
+int sub_10004273(int a, void *b, int c);
+
+// TARGET: sub_102482b0
+void *sub_102482b0(int *p, int value)
+{
+    *p = sub_10004273(*p, &g_10754fa8, value);
+    return &g_10754fa8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102482f0 size=0xf6
 extern "C" unsigned int strlen(const char *);
 #pragma intrinsic(strlen)
