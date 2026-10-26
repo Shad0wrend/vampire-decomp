@@ -28,6 +28,8 @@ public:
 	void sub_10397f00();	// stub 0x100097eb
 	void sub_10298ad0();	// CAI_BaseNPCTroika::vfunc104 (stub 0x100097b4), called directly
 	void sub_1029ca50();	// CAI_BaseNPCTroika::vfunc123 (stub 0x10008a3f), called directly
+	CNPC_VMingXiao *vfunc5(unsigned int flags);	// slot 5 (scalar deleting destructor, plain member): the vector at +0x665c goes, then the Troika base's destructor body (sub_1028d610), then the delete when bit 0 of flags is set
+	void sub_1028d610();	// CAI_BaseNPCTroika destructor body (stub 0x100123af), called directly
 
 	int vfunc546(int arg);
 	int vfunc461();	// sets the task state at +0x5cc4 (and the source file/line markers at +0x1b3c/+0x1b40) from slots 158, 464 and 167
