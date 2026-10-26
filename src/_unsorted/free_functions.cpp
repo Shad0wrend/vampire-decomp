@@ -96441,6 +96441,25 @@ int __stdcall sub_1030cb00(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030d390 size=0x2d
+#include <string.h>
+
+extern const char *g_10619ec8[];
+
+// TARGET: sub_1030d390
+int sub_1030d390(const char *pszName)
+{
+	int i = 0;
+	do {
+		if (_strcmpi(g_10619ec8[i], pszName) == 0) {
+			return i;
+		}
+		i++;
+	} while (i < 0x16);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030d4f0 size=0x10e
 extern "C" int _strcmpi(const char *, const char *);
 extern void (*g_109f366c)(const char *, ...);
