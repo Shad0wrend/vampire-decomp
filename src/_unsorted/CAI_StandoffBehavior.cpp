@@ -33,3 +33,20 @@ void CAI_StandoffBehavior::vfunc20() {
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x102c7dd0 size=0x29
+#include "CAI_StandoffBehavior.h"
+
+// TARGET: CAI_StandoffBehavior::vfunc26
+void CAI_StandoffBehavior::vfunc26(int a, int b)
+{
+    if (m_n20 > 0)
+    {
+        m_fl5c = 5.0f;
+        m_n60 = 0;
+        m_fl58 = -1.0f;
+    }
+    if (*(volatile int *)&m_n20 == 2)
+        m_unk4c = 1;
+}
+// END FUNCTION
