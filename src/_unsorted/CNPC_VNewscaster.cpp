@@ -26,6 +26,20 @@ CNPC_VNewscaster *CNPC_VNewscaster::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a03e0 size=0x2f
+// TARGET: CNPC_VNewscaster::vfunc104
+#include "CNPC_VNewscaster.h"
+
+void sub_100097b4();
+void sub_101d0f10(const char *pszPrefix, const char *pszExt, int a, int b);
+
+void CNPC_VNewscaster::vfunc104() {
+    sub_100097b4();
+    sub_101d0f10("sound/character/conversations/news/tv", ".mp3", 0, 0);
+    sub_101d0f10("sound/character/conversations/news/tv", ".wav", 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a05b0 size=0x88
 #include "CNPC_VNewscaster.h"
 
