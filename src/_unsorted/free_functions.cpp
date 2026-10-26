@@ -46250,6 +46250,18 @@ void CBasePlayer::sub_10175400(char bFade)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101771b0 size=0x23
+// TARGET: sub_101771b0
+void __fastcall sub_101771b0(void *pSelf, int unused, int value)
+{
+    if (value > 0 && value < 8) {
+        *(int *)((char *)pSelf + 0x22c4) = value;
+        return;
+    }
+    *(int *)((char *)pSelf + 0x22c4) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177ab0 size=0x74
 #include "CBaseCombatCharacter.h"
 extern "C" int _strcmpi(const char *, const char *);
