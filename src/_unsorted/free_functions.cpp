@@ -33831,6 +33831,22 @@ void sub_10101100(float *pDuration, unsigned char *pColor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101012c0 size=0x2f
+// TARGET: sub_101012c0
+void sub_10101100(int *a, int *b);
+int sub_10008d8c();
+void sub_10009020(int a, int *b, int c, int d, int e);
+
+void sub_101012c0()
+{
+    int a;
+    int b;
+    sub_10101100(&a, &b);
+    int r = sub_10008d8c();
+    sub_10009020(r, &b, a, 0, 0x11);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101019d0 size=0x3a
 #include "CBaseEntity.h"
 

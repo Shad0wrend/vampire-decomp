@@ -6809,6 +6809,7 @@
 0x100e77f0 func   ?sub_100e77f0@@YAHPBH0@Z sub_100e77f0
 0x101010c0 func   ?sub_101010c0@@YAXXZ sub_101010c0
 0x10101100 func   ?sub_10101100@@YAXPAMPAE@Z sub_10101100
+0x101012c0 func   ?sub_101012c0@@YAXXZ sub_101012c0
 0x1012cbb0 func   ?sub_1012cbb0@@YAXPAUSMoveEnt@@PAVCUtlVector4@@@Z sub_1012cbb0
 0x1012f340 func   ?sub_1012f340@@YAHPBD0@Z sub_1012f340
 0x10136910 func   ?sub_10136910@@YAHPAUParentEntityView@@@Z sub_10136910
