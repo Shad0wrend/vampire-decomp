@@ -1150,6 +1150,18 @@ void CAI_BaseNPC::vfunc563(CBaseEntity *pEnt, const void *pGoal, const void *pPa
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028b0b0 size=0x24
+// TARGET: sub_1028b0b0
+char __fastcall sub_1028b0b0(void *pSelf, int edxUnused, int unused, int *pOther)
+{
+    int *pVal = *(int **)((char *)pSelf + 0x5db0);
+    if (pVal != 0 && (pOther == 0 || pOther[0x5f0 / 4] != (int)pVal)) {
+        return 0;
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028b0f0 size=0x13
 extern int (*g_109f3630)(const char *, ...);
 
