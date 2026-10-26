@@ -61284,6 +61284,22 @@ StatDefault3 *CStatDefault3List::sub_101d5e80(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d5fb0 size=0x23
+void __fastcall sub_100135a7(void *pObj);
+
+// TARGET: sub_101d5fb0
+void __fastcall sub_101d5fb0(void *pSelf)
+{
+    int i = 0;
+    if (0 < *(int *)((char *)pSelf + 4)) {
+        do {
+            sub_100135a7(*(void **)(*(int *)((char *)pSelf + 8) + i * 4));
+            i++;
+        } while (i < *(int *)((char *)pSelf + 4));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d60b0 size=0x40
 struct CSlotObject
 {
