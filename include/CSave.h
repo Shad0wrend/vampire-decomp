@@ -31,13 +31,13 @@ class CSave : public ISave, public CSaveSections
 public:
 	virtual int vfunc0();	// current position
 	virtual void vfunc1(int pos);	// seek
-	virtual void vfunc2();
+	virtual void vfunc2(void *pBlock, const char *pszName);	// slot 2: the save hook of a custom block (the physics save block handler hands it its block at +0x98 and an empty name)
 	virtual int vfunc3(int a, int b, int c, int d, int e);	// "CSave::WriteFields" (name, base data, root map, fields, field count): stub 0x1000b258, returns 1
 	virtual void vfunc4();
 	virtual void vfunc5(const void *p);	// pushes the current position on the section stack (vector at +4) after sub_101a05f0(p, 0)
 	virtual void vfunc6();	// pops the section stack, writes the section size
 	virtual void vfunc7(int a, int b, int count);	// forwards to sub_101a05b0 with the count doubled (shorts to bytes)
-	virtual void vfunc8();
+	virtual void vfunc8(const char *pszName, int value);	// slot 8: writes a named value (the physics save block handler writes its flag 1 under the global name at 0x1053c340)
 	virtual void vfunc9(const char *pszName, void *pData, int count);	// writes count ints (called by vfunc37 with the entity indices)
 	virtual bool vfunc10(const void *pData, int nBytes);	// WriteInt
 	virtual void vfunc11();
