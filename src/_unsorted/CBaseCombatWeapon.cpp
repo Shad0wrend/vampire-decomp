@@ -280,6 +280,16 @@ void CBaseCombatWeapon::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251e40 size=0x27
+struct CWeaponOwner;
+CWeaponOwner *sub_102517b0();
+
+int __stdcall sub_10251e40(int nIndex)
+{
+	return *(int *)((char *)sub_102517b0() + 0x2668 + nIndex * 0x1093c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252090 size=0x67
 #include "CBaseCombatWeapon.h"
 

@@ -463,6 +463,7 @@
 0x1000269e func   _info_node_chang_teleport info_node_chang_teleport
 0x100026a3 func   ?sub_10200ea0@CVStatList_t@@QAE_NH@Z CVStatList_t::sub_10200ea0
 0x100026c1 func   ?sub_10124ba0@CGameMovement@@QAEXXZ CGameMovement::sub_10124ba0
+0x100026d0 func   ?sub_10251e40@@YGHH@Z sub_10251e40
 0x100026e9 func   ?sub_1011d490@@YIXPAXHH@Z sub_1011d490
 0x10002702 func   ?sub_101b7120@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_101b7120
 0x10002707 func   ?sub_100c0970@CFloatPair3f4@@QAEXM@Z CFloatPair3f4::sub_100c0970
