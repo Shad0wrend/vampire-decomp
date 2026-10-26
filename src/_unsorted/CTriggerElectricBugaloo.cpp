@@ -89,6 +89,24 @@ void CTriggerElectricBugaloo::vfunc39(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231690 size=0x25
+#include "CTriggerElectricBugaloo.h"
+#include "CAI_BaseNPCTroika.h"
+
+struct CUnknown1015ef60
+{
+    void sub_1015ef60();
+};
+
+// TARGET: CTriggerElectricBugaloo::vfunc42
+void CTriggerElectricBugaloo::vfunc42(void *pOther)
+{
+    ((CUnknown1015ef60 *)pOther)->sub_1015ef60();
+    ((CAI_BaseNPCTroika *)pOther)->sub_101815b0(1);
+    ((CBaseEntity *)this)->vfunc42(pOther);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102316d0 size=0x85
 #include "CTriggerElectricBugaloo.h"
 
