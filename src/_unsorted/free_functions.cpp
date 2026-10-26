@@ -65738,6 +65738,29 @@ void CUnknown101f10e0::sub_101f1750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f18b0 size=0x29
+extern char g_105a5ecc[];
+extern char g_106b8540[];
+
+struct CUnknown101f18b0 {
+    char pad_0000[0x14];
+    int m_nCount;
+    char **m_ppElements;
+    char *sub_101f18b0(int i);
+};
+
+// TARGET: CUnknown101f18b0::sub_101f18b0
+char *CUnknown101f18b0::sub_101f18b0(int i)
+{
+    if (i < 0 || i >= m_nCount)
+        return g_105a5ecc;
+    char **pp = &m_ppElements[i];
+    if (*pp == 0)
+        return g_106b8540;
+    return *pp;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f18f0 size=0x18
 #include "CUnknown101f0e50.h"
 

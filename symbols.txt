@@ -2314,6 +2314,7 @@
 0x10008120 func   ?sub_101e1360@List@@QAEHPBD@Z List::sub_101e1360
 0x1000812a func   ?vfunc546@CNPC_VDog@@QAEHH@Z CNPC_VDog::vfunc546
 0x1000812f func   ?sub_102d00c0@@YIXPAHHH@Z sub_102d00c0
+0x10008139 func   ?sub_101f18b0@CUnknown101f18b0@@QAEPADH@Z CUnknown101f18b0::sub_101f18b0
 0x10008143 func   ?vfunc2@CTEBeamPoints@@UAEPAV1@I@Z CTEBeamPoints::vfunc2
 0x10008148 func   ?sub_10032ab0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_10032ab0
 0x1000814d func   ?vfunc7@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc7
