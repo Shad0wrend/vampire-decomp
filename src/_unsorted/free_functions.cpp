@@ -23857,6 +23857,23 @@ void __fastcall sub_100b7a40(int *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7a90 size=0x22
+struct CUnknown100b7a90 {
+	void sub_10012891();
+	void *sub_100b7a90(unsigned int flags);
+};
+
+// TARGET: CUnknown100b7a90::sub_100b7a90
+void *CUnknown100b7a90::sub_100b7a90(unsigned int flags)
+{
+	sub_10012891();
+	if (flags & 1) {
+		operator delete((char *)this - 4);
+	}
+	return (char *)this - 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7c60 size=0xa
 void CUnknown100b7c60::sub_100b7c60(int value)
 {
