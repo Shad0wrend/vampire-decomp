@@ -49116,6 +49116,26 @@ extern "C" CBaseEntity *point_camera()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c220 size=0x22
+#include "CPointCamera.h"
+
+extern int vt_104720e4[];
+
+struct CConstraintAnchorBaseStub {
+	void sub_100090fc(int a);
+};
+
+// TARGET: CPointCamera::sub_1018c220
+CPointCamera *CPointCamera::sub_1018c220()
+{
+	((CConstraintAnchorBaseStub *)this)->sub_100090fc(0);
+	*(int **)this = vt_104720e4;
+	*(char *)((char *)this + 0x458) = 0;
+	*(char *)((char *)this + 0x459) = 1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c2b0 size=0x108
 #include "Vector.h"
 #include "CEntityVSlots.h"
