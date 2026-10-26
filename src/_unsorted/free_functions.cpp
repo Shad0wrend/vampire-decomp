@@ -52585,6 +52585,63 @@ PyObj *sub_101976b0(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101977a0 size=0xc7
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+struct PyObject { int ob_refcnt; };
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObject *args, const char *format, ...);
+__declspec(dllimport) PyObject *PyErr_Occurred(void);
+__declspec(dllimport) void PyErr_SetString(PyObject *exc, const char *string);
+__declspec(dllimport) PyObject *PyExc_StandardError;
+__declspec(dllimport) PyObject _Py_NoneStruct;
+}
+
+struct CModelNameEnt
+{
+	SL100(a0)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void v105(const char *pszName);
+};
+
+struct CTmp12
+{
+	union { PyObject *m_args; const char *m_psz; };
+	int m_b;
+	int m_c;
+};
+
+extern CUnknown1070b22c *g_1070b22c;
+CModelNameEnt *sub_10196780(PyObject *obj);
+void __cdecl sub_10203ed0(CTmp12 *pOut, const char *psz);
+
+// TARGET: sub_101977a0
+PyObject *sub_101977a0(PyObject *self, CTmp12 a)
+{
+	PyObject *obj = 0;
+	const char *str = 0;
+	if (!PyArg_ParseTuple(a.m_args, "Os", &obj, &str)) {
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_StandardError, "bad args to SetModel()");
+		return 0;
+	}
+	CModelNameEnt *pEnt = sub_10196780(obj);
+	if (pEnt && str) {
+		if (g_1070b22c->vfunc13(str, 0) > 1) {
+			sub_10203ed0(&a, str);
+			pEnt->v105(a.m_psz ? a.m_psz : "");
+		}
+	}
+	_Py_NoneStruct.ob_refcnt++;
+	return &_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101978b0 size=0xcf
 #include "CBaseEntity.h"
 struct PyObject { int ob_refcnt; };
