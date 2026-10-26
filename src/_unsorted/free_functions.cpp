@@ -41072,6 +41072,17 @@ void sub_10136600(CUnknown10136600 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136860 size=0x23
+// TARGET: sub_10136860
+int sub_10136860(int *pA, int *pB)
+{
+    if (pA[1] == pB[1]) {
+        return 0;
+    }
+    return (pA[1] > pB[1]) ? 1 : -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136910 size=0xd2
 #include "CGlobalEntityList.h"
 #include <string.h>
