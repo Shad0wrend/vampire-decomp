@@ -17,6 +17,7 @@ public:
 
 	void sub_1000dc10();	// destructor body
 	void sub_100677e0(CUnknown1019d130 *filter, float delay);	// slot 4 (called directly, stub 0x10011f22): sends the temp entity to the recipients
+	CTESparks *sub_10067620(int a);	// the constructor body (stub 0x10002ddd of CBaseTempEntityHead; the vtable of CTESparks is stored after it)
 
 	char m_pad0004[8];
 	Vector m_vecOrigin;	// 0x0c
