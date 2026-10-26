@@ -88741,6 +88741,26 @@ int CAI_BaseNPCTroika::sub_1029f370(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f5d0 size=0x27
+struct SNPCTroikaRef_t
+{
+	char bValid;
+	void *pData;
+};
+
+void sub_100157da(void *p);
+
+void __stdcall sub_1029f5d0(SNPCTroikaRef_t *pRef)
+{
+	if (pRef != 0 && pRef->pData != 0)
+	{
+		pRef->bValid = 0;
+		sub_100157da(pRef->pData);
+		pRef->pData = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f730 size=0x33
 struct CLazyTroikaView {
     char pad0[0x659c];

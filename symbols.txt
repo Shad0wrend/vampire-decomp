@@ -2801,6 +2801,7 @@
 0x1000961f func   _item_k_malcolm_office_key item_k_malcolm_office_key
 0x10009629 func   ?sub_10257200@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10257200
 0x1000962e func   ?sub_101aa210@CUnknown101aa210@@QAEPAXXZ CUnknown101aa210::sub_101aa210
+0x10009638 func   ?sub_1029f5d0@@YGXPAUSNPCTroikaRef_t@@@Z sub_1029f5d0
 0x1000963d func   ?vfunc559@CAI_BaseNPC@@UAEPAVCBaseEntity@@PBD@Z CAI_BaseNPC::vfunc559
 0x10009647 func   ?sub_102cce10@@YAPAUCUnknownNode102cce10@@HH@Z sub_102cce10
 0x10009656 func   ?sub_101c26d0@CUnk101c26d0@@QAEPAU1@HHHHHHH@Z CUnk101c26d0::sub_101c26d0
