@@ -65975,6 +65975,19 @@ void CVTraitEffect_t::sub_101f6e20(CVModInfo_t *pInfo, int *pResult)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f6e70 size=0x2e
+// TARGET: CUnknown101f6c50::sub_101f6e70
+#include "CUnknown101f6c50.h"
+
+void CUnknown101f6c50::sub_101f6e70(int nType, CTraitStatBlock *pBlock, int *pOut) {
+    if (m_nType == nType) {
+        if (sub_10205430((char *)pBlock + 4)) {
+            *pOut = m_nValue;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f6eb0 size=0xf6
 #include "CVTraitEffect_t.h"
 extern "C" int __cdecl sprintf(char *, const char *, ...);
