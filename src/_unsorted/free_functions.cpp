@@ -3371,6 +3371,48 @@ void CBaseEntity::sub_1003cc80(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003d130 size=0x169
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+struct DataObjAllocator
+{
+	virtual void a0();
+	virtual void a1();
+	virtual void a2();
+	virtual void Destroy(CBaseEntity *pEnt);
+};
+extern DataObjAllocator *g_106bd938[32];
+
+static inline bool IsValidType(int type)
+{
+	ScopeTrace st("CDataObjectAccessSystem::IsValidType", g_106b8540);
+	if (type < 0 || type >= 32)
+		return false;
+	if (g_106bd938[type] != 0)
+		return true;
+	return false;
+}
+
+static inline void DestroyDataObject(CBaseEntity *pEnt, int type)
+{
+	ScopeTrace st("CDataObjectAccessSystem::DestroyDataObject", g_106b8540);
+	if (!IsValidType(type))
+		return;
+	g_106bd938[type]->Destroy(pEnt);
+}
+
+// TARGET: CBaseEntity::sub_1003d130
+void CBaseEntity::sub_1003d130(int type)
+{
+	ScopeTrace st("CBaseEntity::DestroyDataObject", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!sub_1003cb00(type))
+		return;
+	DestroyDataObject(this, type);
+	sub_1003cc80(type);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003d300 size=0x91
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
