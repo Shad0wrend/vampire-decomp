@@ -95418,6 +95418,21 @@ int CPairFields102dda40::sub_102dda40(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dda70 size=0x24
+#include <string.h>
+// TARGET: sub_102dda70
+int *__fastcall sub_102dda70(int *pThis)
+{
+    pThis[0] = -1;
+    pThis[1] = -1;
+    pThis[2] = -1;
+    pThis[0x19] = 0;
+    pThis[0x1a] = 0;
+    memset(pThis + 3, 0, 0x16 * 4);
+    return pThis;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ddb30 size=0xa0
 #include "CAI_LocalNavigator.h"
 

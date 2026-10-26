@@ -5015,6 +5015,7 @@
 0x1000fae7 func   ?sub_1008d0f0@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_1008d0f0
 0x1000fb19 func   ?sub_1016aa00@CPlayerAccum_1016aa00@@QAEXHD@Z CPlayerAccum_1016aa00::sub_1016aa00
 0x1000fb1e func   _trigger_transition trigger_transition
+0x1000fb32 func   ?sub_102dda70@@YIPAHPAH@Z sub_102dda70
 0x1000fb3c func   ?vfunc5@CVampireProjectile_MingXiaoSpit@@QAEPAV1@I@Z CVampireProjectile_MingXiaoSpit::vfunc5
 0x1000fb41 func   ?sub_1007e090@CUnk1007e090@@QAEXHH@Z CUnk1007e090::sub_1007e090
 0x1000fb4b func   ?sub_101e33c0@CVTriggerCasting_t@@QAEXHHHH@Z CVTriggerCasting_t::sub_101e33c0
