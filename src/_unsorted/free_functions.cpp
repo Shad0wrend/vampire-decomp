@@ -52432,6 +52432,18 @@ bool CRopeKeyframe::sub_1019ee40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019f1f0 size=0x27
+// TARGET: CRopeKeyframe::sub_1019f1f0
+#include "CRopeKeyframe.h"
+
+void CRopeKeyframe::sub_1019f1f0(int nBit)
+{
+	int *pFlags = &m_n478;
+	*pFlags = *pFlags & ~(1 << nBit);
+	*((char *)this + 0x1b1) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0530 size=0x2d
 struct CUnk101a0530 {
     void sub_1000643d(int a, int b);
