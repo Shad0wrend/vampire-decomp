@@ -34330,6 +34330,58 @@ void CEnvParticle::sub_100fb1f0(CBaseEntity *pEnt, int nType, int nAttachment)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fb620 size=0x128
+#include "CEnvParticle.h"
+
+#define EV(n) virtual void e##n();
+#define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
+struct CParseEngineView
+{
+	EV10(0) EV(10) EV(11) EV(12) EV(13) EV(14) EV(15) EV(16)
+	virtual int vfunc17(const char *pszName, int a);
+	EV(18) EV(19)
+	EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8)
+	EV(90) EV(91) EV(92) EV(93) EV(94) EV(95) EV(96) EV(97)
+	virtual const char *ParseFile(const char *pData, char *pToken);
+};
+extern CParseEngineView *g_1070b22c;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+int *sub_1042bff0(int *pOut, char *pToken);
+
+struct CEnvParticleUnit : CEnvParticle
+{
+	void sub_100fb620(const char *pszData);
+};
+
+// TARGET: CEnvParticleUnit::sub_100fb620
+void CEnvParticleUnit::sub_100fb620(const char *pszData)
+{
+	char szToken[512];
+	const char *pRest = g_1070b22c->ParseFile(pszData, szToken);
+	if (pRest) {
+		m_iParticleIndex = g_1070b22c->vfunc17(szToken, 1);
+		pRest = g_1070b22c->ParseFile(pRest, szToken);
+		if (pRest) {
+			if (_strcmpi(szToken, "origin") != 0)
+				m_iAttachType = 0;
+			else if (_strcmpi(szToken, "tree") != 0)
+				m_iAttachType = 1;
+			else if (_strcmpi(szToken, "point") != 0)
+				m_iAttachType = 2;
+			else if (_strcmpi(szToken, "treecolor") != 0)
+				m_iAttachType = 3;
+			else
+				return;
+			pRest = g_1070b22c->ParseFile(pRest, szToken);
+			if (pRest) {
+				int nLocal;
+				m_pszAttachName = (const char *)*sub_1042bff0(&nLocal, szToken);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fb850 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
