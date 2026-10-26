@@ -292,6 +292,22 @@ void CNPC_VGargoyle::vfunc24(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037a5b0 size=0x24
+extern int g_10739a4c;
+struct CNPC_VGargoyleCallee {
+    void sub_1000d954(void *pOther);
+};
+
+// TARGET: sub_1037a5b0
+void __fastcall sub_1037a5b0(void *pSelf)
+{
+    ((CNPC_VGargoyleCallee *)&g_10739a4c)->sub_1000d954(pSelf);
+    *(int *)((char *)pSelf + 0xe80) = 0;
+    *(int *)((char *)pSelf + 0xe88) = 0;
+    *(int *)((char *)pSelf + 0xe84) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037a5f0 size=0x8
 // TARGET: CNPC_VGargoyle::vfunc359
 int CNPC_VGargoyle::vfunc359(int index)
