@@ -36,3 +36,4 @@
 	float sub_100949e0(float flInterval);	// "CBaseAnimating::GetInstantaneousVelocity": scope trace (entity name), 0 without a studio header; else the sequence velocity (studio worker sub_100c5ee0 at the cycle advanced by flInterval * sequence cycle rate * playback rate (+0x6f4), pose parameters at +0x690) scaled by the playback rate and its length
 	int sub_10093d70(const char *pszName);	// "CBaseAnimating::FindBodygroupByName": scope trace (entity name), then a studio helper on (GetModelPtr(-1), pszName)
 	int sub_100966a0();	// "CBaseAnimating::GetHitboxSetName": scope trace (entity name), then a studio helper on (GetModelPtr(-1), the hitbox set at +0x680)
+	int sub_10093e30(int group);	// "CBaseAnimating::GetBodygroupCount": scope trace (entity name), then a studio helper on (GetModelPtr(-1), group)
