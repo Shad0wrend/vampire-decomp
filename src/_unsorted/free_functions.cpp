@@ -9987,6 +9987,35 @@ StatDefault *CStatDefaultList::sub_1006cd90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006cfb0 size=0x2e
+// TARGET: sub_1006cfb0
+
+struct CUnknown1006cfb0
+{
+    int m_pad0000;
+    int m_count;
+    int **m_ppItems;
+    bool sub_1006cfb0(int value);
+};
+
+bool CUnknown1006cfb0::sub_1006cfb0(int value)
+{
+    int i = 0;
+    if (m_count > 0)
+    {
+        do
+        {
+            if (*m_ppItems[i] == value)
+            {
+                return true;
+            }
+            i++;
+        } while (i < m_count);
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cff0 size=0x66
 #include "StatDefault.h"
 struct StatItem { int id; };
