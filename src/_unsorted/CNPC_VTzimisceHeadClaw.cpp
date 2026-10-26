@@ -232,6 +232,31 @@ void HeadClawView::sub_103c1820(EventData *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1ad0 size=0x25
+#include "CNPC_VTzimisceHeadClaw.h"
+
+struct CUnknown10924edc
+{
+    virtual void a0();
+    virtual void vfunc1();
+};
+
+extern CUnknown10924edc *g_10924edc;
+
+struct CUnknown1025ddd0
+{
+    void sub_1025ddd0(CNPC_VTzimisceHeadClaw *pOwner);
+};
+
+// TARGET: CNPC_VTzimisceHeadClaw::vfunc601
+void CNPC_VTzimisceHeadClaw::vfunc601(int a)
+{
+    g_10924edc->vfunc1();
+    *((char *)this + 0x6078) = 0;
+    ((CUnknown1025ddd0 *)*(void **)((char *)this + 0x65e8))->sub_1025ddd0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1b90 size=0xb4
 #include "CNPC_VTzimisceHeadClaw.h"
 
