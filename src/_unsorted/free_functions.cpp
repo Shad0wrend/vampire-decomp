@@ -35548,6 +35548,23 @@ int *sub_1010be40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c150 size=0x2f
+#include "CEnvFireSensor.h"
+// TARGET: sub_1010c150
+extern int *g_1070b228;
+
+void CEnvFireSensor::sub_1010c150()
+{
+    if (m_bEnabled450 == 0)
+    {
+        m_bEnabled450 = 1;
+        m_field17c = g_1070b228[3];
+        m_b451 = 0;
+        m_field460 = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c190 size=0x37
 #include "COutputEvent.h"
 
