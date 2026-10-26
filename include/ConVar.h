@@ -14,7 +14,7 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4(int nValue);	// "ConVar::SetValue( int )"
 	virtual void vfunc5();
-	virtual void vfunc6();
+	virtual void vfunc6(const char *value);	// "ConVar::SetValue( string )"-like: unless the parent (+0x4) answers slot 1 true, slot 7(value) on this and on the parent (when it is another convar)
 	virtual void vfunc7(const char *value);
 	virtual void vfunc8();
 	virtual void vfunc9(int nValue);	// slot 9 (0x24): takes the integer value; called by ConVar::SetValue( int ) on this and on the parent (the flagged convar)
