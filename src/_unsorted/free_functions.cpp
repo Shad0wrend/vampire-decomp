@@ -33327,6 +33327,18 @@ void CEntityListSystem::sub_100f8ec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f9460 size=0x26
+#include "CBaseEntity.h"
+
+int __cdecl _strcmpi(const char *a, const char *b);
+
+// TARGET: sub_100f9460
+char sub_100f9460(CBaseEntity **a, CBaseEntity **b)
+{
+    return _strcmpi((*a)->sub_1009f200(), (*b)->sub_1009f200()) < 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f9790 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_100f9790(); };
 void CUtlVectorBase::sub_100f9790() { m_Size = 0; }

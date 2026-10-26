@@ -374,6 +374,7 @@
 0x1000228e func   ?vfunc546@CGeneric_NPC@@QAEHH@Z CGeneric_NPC::vfunc546
 0x10002293 func   ?sub_104024e0@@YAHXZ sub_104024e0
 0x10002298 func   ?sub_103e7680@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::sub_103e7680
+0x100022a2 func   ?sub_100f9460@@YADPAPAVCBaseEntity@@0@Z sub_100f9460
 0x100022b1 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vfunc3
 0x100022b6 func   ?sub_1040c500@CGrabController@@QAEPAVVector@@PAV2@PBV2@PAVCEntityVSlots@@@Z CGrabController::sub_1040c500
 0x100022bb func   ?sub_10339560@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10339560
