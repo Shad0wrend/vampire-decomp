@@ -5,3 +5,4 @@
 	Vector vfunc574(const Vector &vecPos, int a, int b);	// slot 574 (plain member): the unit direction from vecPos to the point sub_10278650 finds for (vecPos, a, b) -- (point - vecPos) normalised, returned by value
 	Vector sub_10278650(const Vector &vecPos, int a, int b);	// stub 0x1001592e, called directly by vfunc574, returns a Vector by value
 	void sub_102697b0();	// a think function (next think 0.1 s ahead): while a player (1..maxClients) is closer than 256 units, or within 1500 units and looking at this NPC (the player's view angles at +0x206c), it keeps waiting; otherwise the next think is the function 0x10015b68 (SetThink via sub_100ac4e0)
+	void sub_10269f30(int condition);	// "CAI_BaseNPC::ClearCondition" (stub 0x1000c39c): ids below 1000000000 (and -1) are translated through slot 580 first, then the condition bit in the array at +0x5c5c is cleared
