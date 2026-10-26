@@ -76327,6 +76327,28 @@ void CUnknown10227410::sub_10227410(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227440 size=0x2a
+void *sub_1000ac8b(int a);
+
+struct CUnknown10227440Obj
+{
+    void sub_100087dd();
+    void sub_1016bd50();
+    void sub_1000c185();
+};
+
+// TARGET: sub_10227440
+void __stdcall sub_10227440(int unused)
+{
+    CUnknown10227440Obj *p = (CUnknown10227440Obj *)sub_1000ac8b(1);
+    if (p) {
+        p->sub_100087dd();
+        p->sub_1016bd50();
+        p->sub_1000c185();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227a30 size=0xb6
 #include "utlvector.h"
 #include "CEHandleGet.h"
