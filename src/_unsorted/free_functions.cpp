@@ -4172,6 +4172,33 @@ UtlHash8 *UtlHash8::sub_100420a0(int nBuckets, int growSize, int initSize, bool 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10042140 size=0x85
+#include "UtlHash8.h"
+
+unsigned int UtlHash8::sub_10042140(void *pData)
+{
+	unsigned int key = m_pKey(pData);
+	unsigned int b;
+	if (m_bPowerOfTwo)
+		b = m_ModMask & key;
+	else
+		b = key % m_bucketCount;
+	int i = 0;
+	int count = m_pBuckets[b].Count();
+	if (count > 0) {
+		do {
+			char *pBase = m_pBuckets[b].m_pElements;
+			if (m_pCompare(pBase + i * 8, pData))
+				break;
+			i++;
+		} while (i < count);
+	}
+	if (i == count)
+		return -1;
+	return (b << 16) | i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042200 size=0xb0
 #include "UtlVec8.h"
 
