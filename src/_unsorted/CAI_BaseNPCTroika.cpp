@@ -1152,6 +1152,36 @@ bool CAI_BaseNPCTroika::sub_1029b180(void *pOtherArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f890 size=0x25
+#include "CAI_BaseNPCTroika.h"
+
+struct CUnknown102bf5d0
+{
+    void sub_102bf5d0(int a);
+};
+
+struct CUnknown10924a6c
+{
+    virtual void a0();
+    virtual void vfunc1();
+};
+
+extern CUnknown10924a6c *g_10924a6c;
+
+struct CUnknown1029f890
+{
+    void sub_1029f890(int a);
+};
+
+// TARGET: CUnknown1029f890::sub_1029f890
+void CUnknown1029f890::sub_1029f890(int a)
+{
+    ((CUnknown102bf5d0 *)this)->sub_102bf5d0(a);
+    g_10924a6c->vfunc1();
+    ((CAI_BaseNPCTroika *)this)->sub_100041b0(10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f940 size=0xc1
 #include "CAI_BaseNPCTroika.h"
 
