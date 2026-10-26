@@ -89579,6 +89579,27 @@ const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c43b0 size=0x29
+extern char *g_1070b228;
+void *__fastcall sub_1008bf00(void *p);
+
+struct CUnknown102c43b0 {
+    char pad_0000[0x6458];
+    float m_fUnk6458;
+    void sub_102c43b0(float f);
+    void sub_102c43f0();
+};
+
+// TARGET: CUnknown102c43b0::sub_102c43b0
+void CUnknown102c43b0::sub_102c43b0(float f)
+{
+    if (sub_1008bf00(this)) {
+        m_fUnk6458 = f + *(float *)(g_1070b228 + 0xc);
+        sub_102c43f0();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c43f0 size=0x2b
 struct CUnkGlobal102c43f0
 {
