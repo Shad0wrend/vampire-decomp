@@ -105654,6 +105654,48 @@ extern "C" GP *bodyque()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356040 size=0x2b
+class CUnk10938738 {
+public:
+	virtual void vfn0(); virtual void vfn1(); virtual void vfn2(); virtual void vfn3(); virtual void vfn4();
+	virtual void vfn5(); virtual void vfn6(); virtual void vfn7(); virtual void vfn8(); virtual void vfn9();
+	virtual void vfn10(); virtual void vfn11(); virtual void vfn12(); virtual void vfn13(); virtual void vfn14();
+	virtual void vfn15(); virtual void vfn16(); virtual void vfn17(); virtual void vfn18(); virtual void vfn19();
+	virtual void vfn20(); virtual void vfn21(); virtual void vfn22(); virtual void vfn23(); virtual void vfn24();
+	virtual void vfn25(); virtual void vfn26(); virtual void vfn27(); virtual void vfn28(); virtual void vfn29();
+	virtual void vfn30(); virtual void vfn31(); virtual void vfn32(); virtual void vfn33(); virtual void vfn34();
+	virtual void vfn35(); virtual void vfn36(); virtual void vfn37(); virtual void vfn38(); virtual void vfn39();
+	virtual void vfn40(); virtual void vfn41(); virtual void vfn42(); virtual void vfn43(); virtual void vfn44();
+	virtual void vfn45(); virtual void vfn46(); virtual void vfn47(); virtual void vfn48(); virtual void vfn49();
+	virtual void vfn50(); virtual void vfn51(); virtual void vfn52(); virtual void vfn53(); virtual void vfn54();
+	virtual void vfn55(); virtual void vfn56(); virtual void vfn57(); virtual void vfn58(); virtual void vfn59();
+	virtual void vfn60(); virtual void vfn61(); virtual void vfn62(); virtual void vfn63(); virtual void vfn64();
+	virtual void vfn65(); virtual void vfn66(); virtual void vfn67(); virtual void vfn68(); virtual void vfn69();
+	virtual void vfn70(); virtual void vfn71(); virtual void vfn72(); virtual void vfn73(); virtual void vfn74();
+	virtual void vfn75(); virtual void vfn76(); virtual void vfn77(); virtual void vfn78(); virtual void vfn79();
+	virtual void vfn80(); virtual void vfn81(); virtual void vfn82(); virtual void vfn83(); virtual void vfn84();
+	virtual void vfn85(); virtual void vfn86(); virtual void vfn87(); virtual void vfn88(); virtual void vfn89();
+	virtual void vfn90(); virtual void vfn91(); virtual void vfn92(); virtual void vfn93(); virtual void vfn94();
+	virtual void vfn95(); virtual void vfn96();
+	virtual CUnk10938738 *vfn97();
+	char pad[0x730 - 4];
+	int field730;
+};
+extern CUnk10938738 *g_10938738;
+
+// TARGET: sub_10356040
+void sub_10356040()
+{
+    CUnk10938738 *first = g_10938738;
+    CUnk10938738 *p = first;
+    if (!p) return;
+    do {
+        p->field730 = 0;
+        p = p->vfn97();
+    } while (p != first && p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356550 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;

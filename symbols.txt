@@ -1258,6 +1258,7 @@
 0x10004edf func   ?vfunc444@CNPC_VVampireBoss@@QAEXPAH@Z CNPC_VVampireBoss::vfunc444
 0x10004eee func   ?sub_10248870@CLinkList@@QAEPAUCLinkNode1c@@H@Z CLinkList::sub_10248870
 0x10004efd func   ?sub_1007e000@S1007e050@@QAEXH@Z S1007e050::sub_1007e000
+0x10004f0c func   ?sub_10356040@@YAXXZ sub_10356040
 0x10004f1b func   ?sub_1035b2b0@@YAXXZ sub_1035b2b0
 0x10004f2a func   ?sub_1042da80@CUnknown1042da80@@QAEXH@Z CUnknown1042da80::sub_1042da80
 0x10004f2f func   ?sub_1009b7d0@CBaseEntity@@QAEXHPADD@Z CBaseEntity::sub_1009b7d0
