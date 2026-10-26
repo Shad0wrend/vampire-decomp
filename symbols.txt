@@ -3262,6 +3262,7 @@
 0x1000b217 func   ?sub_100c46c0@@YAPAUCacheEntry@@HHMPBM0I@Z sub_100c46c0
 0x1000b21c func   ?sub_10232cb0@@YA_NXZ sub_10232cb0
 0x1000b22b func   ?vfunc134@CBloodSplat@@QAEXXZ CBloodSplat::vfunc134
+0x1000b23a func   ?sub_10303cd0@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@PBM0PBVCBaseEntity@@HHHHH@Z CAI_Pathfinder::sub_10303cd0
 0x1000b23f func   ?sub_1013b300@@YAXABVVector@@MAAUQuaternion@@@Z sub_1013b300
 0x1000b249 func   ?sub_10338440@CBaseCombatCharacter@@QAEXPBH@Z CBaseCombatCharacter::sub_10338440
 0x1000b24e func   ?sub_10136470@@YIXPADHH@Z sub_10136470
