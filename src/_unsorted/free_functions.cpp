@@ -7240,6 +7240,25 @@ int SaveList::sub_10057850(IVisitor *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100579b0 size=0x2e
+#include "CUnknown10057680.h"
+
+extern char g_106b8540[];
+extern void (*g_109f3890)(char *pDest, const char *pSrc, int nSize);
+
+// TARGET: CUnknown10057680::sub_100579b0
+void CUnknown10057680::sub_100579b0(const char *pszName, const char *pszValue)
+{
+	char *pRecord = sub_100576a0(pszName);
+	if (pRecord) {
+		if (pszValue == 0) {
+			pszValue = g_106b8540;
+		}
+		g_109f3890(pRecord + 0x40, pszValue, 0x20);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057a30 size=0x70
 #include "CSave.h"
 struct IVisitor;
