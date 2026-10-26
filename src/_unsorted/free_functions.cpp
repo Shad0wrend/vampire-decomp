@@ -77180,6 +77180,26 @@ void __fastcall sub_10232520(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10232c70 size=0x2c
+struct CPair10232c70 {
+    int m_v[2];
+    bool sub_10232c70(int *pOther);
+};
+
+// TARGET: sub_10232c70
+bool CPair10232c70::sub_10232c70(int *pOther)
+{
+    int i = 0;
+    do {
+        if (m_v[i] != pOther[i]) {
+            return false;
+        }
+        i++;
+    } while (i < 1);
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232cb0 size=0x9d
 #include "CUnknown1070b22c.h"
 struct SMapEdit { char pad[0x24]; const char *m_pszName; int m_nVersion; };
