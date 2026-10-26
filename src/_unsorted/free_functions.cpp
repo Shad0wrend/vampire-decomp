@@ -67255,6 +67255,71 @@ CProjSlots *sub_101ef900(const float *pos, const float *ang, CBaseEntity *pOwner
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eff70 size=0x176
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+
+struct PhysObjView
+{
+    EVS10(0) EVS10(1) EVS10(2) EVS10(3)
+    EVS(40)
+    virtual void slot41(const Vector *pForce, const Vector *pTorque);
+};
+struct BodyEntView
+{
+    EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8)
+    EVS(90) EVS(91) EVS(92) EVS(93)
+    virtual int slot94();
+    EVS(95) EVS(96) EVS(97) EVS(98) EVS(99)
+    EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18)
+    EVS(190) EVS(191) EVS(192) EVS(193) EVS(194) EVS(195) EVS(196)
+    virtual Vector slot197(const Vector &posSrc, int bNoisy, int c);
+    char pad[0x36c - 4];
+    PhysObjView *m_pPhysObj;
+};
+struct ProjView : CEntityVSlots
+{
+    char pad[0x7a8 - 4];
+    int m_nRadius;
+    float Radius() const { return (float)m_nRadius; }
+};
+extern CGlobalEntityList g_106eb5d8;
+extern float g_10483aac;
+
+static inline float Rad(const ProjView *p)
+{
+    float f = (float)p->m_nRadius;
+    return f;
+}
+
+// TARGET: sub_101eff70
+void __fastcall sub_101eff70(ProjView *pThis)
+{
+    Vector vecCenter = *pThis->slot220();
+    BodyEntView *pEnt = (BodyEntView *)g_106eb5d8.sub_100f79b0(0, &vecCenter.x, pThis->Radius());
+    while (pEnt)
+    {
+        if (pEnt->slot94() == 7 || pEnt->m_pPhysObj)
+        {
+            Vector vecPos;
+            vecPos = pEnt->slot197(vecCenter, 1, 0);
+            Vector vecDelta;
+            vecDelta = vecPos - vecCenter;
+            float flDist = VectorLength(vecDelta);
+            float flScale = (1.0f - flDist / Rad(pThis)) * g_10483aac;
+            if (pEnt->m_pPhysObj)
+            {
+                Vector vecZero(0.0f, 0.0f, 0.0f);
+                vecDelta = vecDelta * flScale;
+                pEnt->m_pPhysObj->slot41(&vecDelta, &vecZero);
+            }
+        }
+        pEnt = (BodyEntView *)g_106eb5d8.sub_100f79b0((CBaseEntity *)pEnt, &vecCenter.x, pThis->Radius());
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0270 size=0xb
 int * __fastcall sub_101f0270(int *self, int, int value)
 {
