@@ -12418,6 +12418,29 @@ void CUnknown10077730::sub_10077730(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100777e0 size=0x26
+struct CUnknown100777e0Vt {
+    virtual void vfunc0();
+    virtual void vfunc1(int a, int b, void *pWho);
+};
+
+struct CUnknown100777e0View {
+    char m_pad0000[0x328];
+    char m_b0328;	// 0x328
+
+    void sub_100777e0(CUnknown100777e0Vt *p, int a, int b);
+};
+
+// TARGET: CUnknown100777e0View::sub_100777e0
+void CUnknown100777e0View::sub_100777e0(CUnknown100777e0Vt *p, int a, int b)
+{
+    if (p != 0) {
+        p->vfunc1(b, a, this);
+    }
+    m_b0328 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077890 size=0xd
 void CUnknown10077890::sub_10077890(int value)
 {
