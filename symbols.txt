@@ -4467,6 +4467,7 @@
 0x1000ed95 func   ?sub_10248cd0@CKeyValuesX@@QAEPBDPBD0@Z CKeyValuesX::sub_10248cd0
 0x1000ed9a func   ?sub_102dd450@CUnknown102dd450@@QAE_NXZ CUnknown102dd450::sub_102dd450
 0x1000eda4 func   ?sub_100b3a60@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3a60
+0x1000edb3 func   ?RemoveAll@?$CUtlVector@V?$CUtlVector@UModelWidthScale@@V?$CUtlMemory@UModelWidthScale@@@@@@V?$CUtlMemory@V?$CUtlVector@UModelWidthScale@@V?$CUtlMemory@UModelWidthScale@@@@@@@@@@QAEXXZ CUtlVector<CUtlVector<ModelWidthScale,CUtlMemory<ModelWidthScale> >,CUtlMemory<CUtlVector<ModelWidthScale,CUtlMemory<ModelWidthScale> > > >::RemoveAll
 0x1000edb8 func   ?sub_103ab4a0@CNPC_VSabbatLeader@@QAEXPAX@Z CNPC_VSabbatLeader::sub_103ab4a0
 0x1000edc2 func   ?vfunc5@CNPC_VBatSwarm@@QAEPAV1@I@Z CNPC_VBatSwarm::vfunc5
 0x1000edc7 func   ?sub_100f4260@@YAHHHMMMH@Z sub_100f4260
