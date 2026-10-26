@@ -29234,6 +29234,22 @@ void sub_100db0b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100db250 size=0x25
+char *sub_10008d8c(void);
+void sub_100087dd(void);
+extern void (*g_109f3630)(const char *, ...);
+
+// TARGET: sub_100db250
+void sub_100db250(void)
+{
+    char *p = (char *)sub_10008d8c();
+    if (p != 0 && *(int *)(p + 0xa8) != 0) {
+        sub_100087dd();
+        g_109f3630("Turning off All Disciplines on player\n");
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db320 size=0x2a
 void *sub_10008d8c();
 void *sub_101193b0();
