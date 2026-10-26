@@ -42689,6 +42689,20 @@ void CPathKeyFrame::sub_10140270(Vector angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101402b0 size=0x22
+// TARGET: CBaseMoveBehavior::sub_101402b0
+#include "CBaseMoveBehavior.h"
+
+int CBaseMoveBehavior::sub_101402b0(int nIndex)
+{
+	if (nIndex == 1)
+		return m_unk480;
+	if (nIndex == -1)
+		return m_unk484;
+	return (int)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140bd0 size=0x11
 struct CScaleFields10140bd0 {
     char pad0[0x49c];
