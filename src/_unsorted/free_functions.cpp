@@ -42929,6 +42929,22 @@ void __fastcall sub_1013dbb0(Pool *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e3a0 size=0x23
+void __fastcall sub_10003cb5(void *pSelf);
+void __fastcall sub_1000f3b2(void *pSelf);
+
+// TARGET: sub_1013e3a0
+void __fastcall sub_1013e3a0(void *pSelf, int unused, int arg)
+{
+    char bResult = ((char (__fastcall *)(void *))(*(void ***)pSelf)[0x3c4 / 4])(pSelf);
+    if (bResult != 0) {
+        sub_10003cb5(pSelf);
+    } else {
+        sub_1000f3b2(pSelf);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e4a0 size=0x6c
 #include "CBaseEntity.h"
 
