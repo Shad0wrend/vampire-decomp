@@ -42,8 +42,8 @@ class CBaseFlex : public CBaseEntity
 {
 public:
 	void vfunc105(const char *pszModel);	// slot 105 override: CBaseAnimating::vfunc105(pszModel), then slot 279(i, 0) once for each flex controller (sub_10094520 counts them, re-read after each call)
-	void vfunc279(int nController, int nValue);	// slot 279 (CBaseAnimating's flex controller setter, called through the vtable)
-	void vfunc280(int nValue, int nController);	// slot 280: calls sub_1001337c(a) (this as ecx, the first argument) and then slot 279 with that result and b
+	virtual void vfunc279(int nController, int nValue);	// slot 279 (CBaseAnimating's flex controller setter, called through the vtable)
+	void vfunc280(int a, int b);	// slot 280: slot 279(sub_1001337c(a), b)
 	int sub_1001337c(int a);	// CBaseFlex member (stub 0x1001337c), called from vfunc280
 	void sub_100b5b00(const float *v);	// slot 277 override: stores three floats at +0x848
 	void sub_100b5ce0();	// slot 276 override: toggles the int at +0x854
