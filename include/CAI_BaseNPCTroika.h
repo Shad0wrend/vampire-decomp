@@ -221,7 +221,11 @@ public:
 	float m_f64cc;
 	char m_pad64d0[0x6554 - 0x64d0];
 	unsigned int m_h6554;
-	char m_pad6558[0x65bc - 0x6558];
+	char m_pad6558[0x65a8 - 0x6558];
+	struct CTakeDamageInfo *m_pDamageRecords;	// 0x65a8: the NPC's damage record vector (memory pointer), count at +0x65b4
+	char m_pad65ac[0x65b4 - 0x65ac];
+	int m_nDamageRecords;	// 0x65b4
+	char m_pad65b8[0x65bc - 0x65b8];
 	float m_f65bc;
 	void sub_100f0e90(unsigned int flags);	// provisional, like sub_102a97a0 (transplant)
 	void sub_10181580(unsigned int flags);	// provisional, like sub_102a97a0 (transplant)
