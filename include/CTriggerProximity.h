@@ -47,7 +47,7 @@ public:
 	int m_i05a4;	// 0x5a4
 	COutputEvent m_out05a8;	// 0x5a8
 
-	CTriggerProximity() { m_hMeasureTarget.m_Index = 0xffffffff; }
+	CTriggerProximity() {}
 	void *operator new(unsigned int size)	// the game's entity allocator (stub 0x1000db89)
 	{
 		extern void *sub_100aa720(int size);
