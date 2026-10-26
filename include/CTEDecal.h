@@ -10,6 +10,7 @@ public:
 
 	void sub_100038eb();	// destructor body
 	void sub_100606c0(int a, int b);	// called through the stub at 0x1000b03c
+	CTEDecal *sub_10060380(int a);	// 0x10060380: the base temp entity's constructor (0x10015334), then the vtable and the zeroed fields at +0xc, +0x10, +0x14, +0x24, +0x2c
 
 	char m_pad0004[8];
 	int m_mins[3];	// 0x000c
