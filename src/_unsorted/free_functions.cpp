@@ -41591,6 +41591,16 @@ void sub_10138630(const matrix3x4_t &in, matrix3x4_t &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138720 size=0x22
+// TARGET: sub_10138720
+void __cdecl sub_10138720(int *pArr, int index, int *pOut)
+{
+    pOut[0] = pArr[index];
+    pOut[1] = pArr[index + 4];
+    pOut[2] = pArr[index + 8];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101387a0 size=0x2d
 // TARGET: sub_101387a0
 int sub_101387a0(const float *a, const float *b) {
