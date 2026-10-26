@@ -95,6 +95,23 @@ float CSoundControllerImp::vfunc16(void *pSound, int command, envelopePoint_t *p
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd810 size=0x24
+#include "CSoundControllerImp.h"
+
+struct CUnknown101bc260
+{
+    void sub_101bc260(int a);
+};
+
+// TARGET: CSoundControllerImp::vfunc17
+void CSoundControllerImp::vfunc17(int a)
+{
+    int i = *(int *)((char *)this + 0x18);
+    while (--i >= 0)
+        ((CUnknown101bc260 *)((void **)*(void ***)((char *)this + 0xc))[i])->sub_101bc260(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd850 size=0x26
 #include "CUnknown101bc140.h"
 
