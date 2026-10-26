@@ -12578,6 +12578,28 @@ void CUnknown100777e0View::sub_100777e0(CUnknown100777e0Vt *p, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077820 size=0x22
+struct CUnknownSlot3Obj {
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual char vfunc3(int a, int b, void *c);
+};
+
+struct CUnknown10077820 {
+	char sub_10077820(CUnknownSlot3Obj *pObj, int a, int b);
+};
+
+// TARGET: CUnknown10077820::sub_10077820
+char CUnknown10077820::sub_10077820(CUnknownSlot3Obj *pObj, int a, int b)
+{
+	if (pObj != 0) {
+		return pObj->vfunc3(b, a, this);
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077890 size=0xd
 void CUnknown10077890::sub_10077890(int value)
 {
