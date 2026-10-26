@@ -15242,6 +15242,21 @@ void sub_100855f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10085830 size=0x29
+extern void (*g_109f3630)(const char *fmt, ...);
+extern const char g_10549c34[];
+extern unsigned int g_1092053c;
+extern int g_105c9798;
+
+// TARGET: sub_10085830
+void sub_10085830()
+{
+	g_109f3630(g_10549c34);
+	g_1092053c = g_1092053c | 2;
+	g_105c9798 = g_105c9798 + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10085a80 size=0x8f
 #include "IVEngineServer.h"
 #include <string.h>
