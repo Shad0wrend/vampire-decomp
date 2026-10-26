@@ -79820,6 +79820,30 @@ void CWeaponRanged::sub_10239e70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10239f30 size=0x28
+#include "Vector.h"
+#define VS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+// the slots 0 to 367 of the vtable (only 220 and 368 are called)
+struct CUnknown10239f30VT
+{
+	VS10(a) VS10(b) VS10(c) VS10(d) VS10(e) VS10(f) VS10(g) VS10(h) VS10(i) VS10(j)
+	VS10(k) VS10(l) VS10(m) VS10(n) VS10(o) VS10(p) VS10(q) VS10(r) VS10(s) VS10(t)
+	VS10(u) VS10(v) VS10(w) VS10(x) VS10(y) VS10(z) VS10(A) VS10(B) VS10(C) VS10(D)
+	VS10(E) VS10(F) VS10(G) VS10(H) VS10(I) VS10(J)
+	virtual void K0(); virtual void K1(); virtual void K2(); virtual void K3();
+	virtual void K4(); virtual void K5(); virtual void K6(); virtual void K7();
+	virtual void vfunc368(Vector *pOut);
+};
+// TARGET: sub_10239f30
+void __stdcall sub_10239f30(void *p)
+{
+    Vector v;
+    ((CUnknown10239f30VT *)p)->w0();
+    ((CUnknown10239f30VT *)p)->vfunc368(&v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023a250 size=0x3e
 struct CUnknown1023a250
 {
