@@ -48,6 +48,7 @@ public:
 	void sub_100f0860();	// the door reached the closed position (state 0): clears the byte at +0x655, installs the touch function (flag 0x20 of +0x204 with 0x400) or schedules the auto-return think (curtime + the wait at +0x500; -1.0f stays -1.0f), tells the AI of the activator (the dword at +0x94 of the entity behind the handle at +0x53c) to forget the door, clears +0x640, fires the output at +0x5c4 (flag 1) or +0x5dc with the activator, and runs slot 249
 	void vfunc177(CBaseEntity *pOther);	// "CBaseDoor::StartBlocked": scope trace (empty names), while closing (state 3) only fires the output at +0x564 for pOther; else makes the AI of the activator (dword +0x94 of the entity behind the handle at +0x53c) and of pOther mark this door (sub_100f0e90(2) / (0x80) then sub_1027de00 / sub_1027dfb0), and fires the output at +0x57c for pOther
 	void sub_100f0e90(int flags);	// CAI_BaseNPCTroika::sub_100f0e90 (stub 0x100080df), called directly on the door
+	void sub_100f0e30(float flTime);	// the timer at +0x640: keeps the larger of it and flTime (stub 0x10009363)
 
 	char m_pad03e0[0x4a4 - 0x3e0];
 	CDoorEventList m_items4a4[2];	// +0x4a4, +0x4bc
@@ -67,4 +68,5 @@ public:
 	const char *m_pszLinked634;	// +0x634
 	unsigned int m_hLinked638;	// +0x638
 	const char *m_pszLinked63c;	// +0x63c
+	float m_flTimer640;	// +0x640: the door's timer (the largest time it was set to)
 };
