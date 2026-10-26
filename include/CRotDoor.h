@@ -14,6 +14,7 @@ public:
 	void sub_100efae0(CBaseEntity *pOther);	// the door's touch function (called through the stub at 0x10012837)
 	void sub_100f3dd0(const float *pDir);	// takes the opening direction, zeroes the axis the spawn flags (0x40: x, 0x80: y, else z) say the door does not rotate about, converts it to angles (sub_10139970, stub 0x10003d4b) and hands them to sub_100f3e60 (stub 0x10003044)
 	void sub_10003044(float *pAngles);	// sub_100f3e60 (stub 0x10003044)
+	float sub_100f3e60(float *pAngles);	// 0x100f3e60: the angle component the spawn flags pick (0x40: x, sign bit 0x80: z, else y), returned in ST0
 	CRotDoor *vfunc5(unsigned char flags);	// scalar deleting destructor: releases the ten event lists, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
 	void vfunc104();	// slot 104 "CRotDoor::Precache"-like (plain member): CBaseDoor::vfunc104, then the door's two end volumes (sub_100f19b0 on the +0x52c angles and on their negation) with their centres (the halves of the sums of the min / max corners) at +0x6b0 / +0x6d4, sub_100f3f20(), and the tail call of CBaseDoor::sub_100eecf0
