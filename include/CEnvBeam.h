@@ -14,6 +14,8 @@ public:
 	void sub_10015749();	// CBeam::vfunc104 (stub 0x10015749), called directly
 	void sub_100fef50();	// "CEnvBeam::TurnOn": sets the active flag (+0x4f4); a lasting beam (life +0x500 is 0, spawn flag 8 clear) is shown (effect bit 6 cleared), relinked between its ends (CBeam::sub_100bbe70) and thinks BeamUpdateThink, else it thinks TriggerThink
 	void vfunc103();	// slot 103 "CEnvBeam::Spawn": without a sprite name (+0x518) the entity removes itself (think 0x10015b68), else CBeam::vfunc103 (stub 0x1001553c), the widths (+0x4b8 / +0x4bc) from the bolt width (+0x504), the beam thinks BeamUpdateThink / TriggerThink according to its life (+0x500) and spawn flags, and the start position (+0x4e8) is taken from slot 217 unless the byte at +0x5a8 is set
+	void vfunc113();	// slot 113: CBaseEntity::vfunc113 called directly, then when the life (+0x500) is zero and the spawn flag 8 (+0x204) is clear, sub_10100b60 (stub 0x10004ea3)
+	void sub_10100b60();	// the lasting-beam tail of vfunc113, called directly (stub 0x10004ea3)
 	void sub_100ff090();	// "CEnvBeam::TriggerThink"-like: schedules the next think (the restrike time at +0x510, random in 0..restrike with spawn flag 4, from now, plus the life) when the life is set, marks the beam active, then strikes: with an end entity name (+0x4fc) through sub_100ff310, without a start name (+0x4f8) through sub_101001e0, else at the origin of the entity of that name (sub_100bbdf0) or DevMsg "env_beam: unknown entity"
 	CBaseEntity *sub_100bbdf0(const char *pszName);	// finds the entity of that name (stub 0x10006faf)
 	void sub_100ff310();	// stub 0x10009877
