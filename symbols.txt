@@ -3564,6 +3564,7 @@
 0x1000ba0a func   ?sub_101eaaa0@@YAXH@Z sub_101eaaa0
 0x1000ba14 func   ?vfunc438@CNPC_VGuard1@@QAEHXZ CNPC_VGuard1::vfunc438
 0x1000ba28 func   ?sub_10272940@CAI_BaseNPC@@QAEXPBD@Z CAI_BaseNPC::sub_10272940
+0x1000ba37 func   ?sub_102f9780@CUnknown102f9780View@@QAEHH@Z CUnknown102f9780View::sub_102f9780
 0x1000ba3c func   ?sub_101348a0@CLogicCaseToggle@@QAEXPAUinputdata_t@@@Z CLogicCaseToggle::sub_101348a0
 0x1000ba41 func   ?sub_10152060@@YAXHHHHH@Z sub_10152060
 0x1000ba46 func   ?sub_10043750@S10043750@@QAEXH@Z S10043750::sub_10043750

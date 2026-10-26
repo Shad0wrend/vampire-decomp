@@ -97856,6 +97856,27 @@ void CUnknown102f95d0::sub_102f95d0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9780 size=0x27
+struct CUnknown102f9780View {
+    char m_pad0000[0x78];
+    int m_n078;	// 0x78
+    int *m_p07c;	// 0x7c
+    char m_pad0080[0xa4 - 0x80];
+    int m_n0a4;	// 0xa4
+    int sub_102f9780(int i);
+};
+
+// TARGET: CUnknown102f9780View::sub_102f9780
+int CUnknown102f9780View::sub_102f9780(int i)
+{
+    int idx = m_n0a4 + i;
+    if (idx >= m_n078) {
+        return m_p07c[idx - m_n078];
+    }
+    return m_p07c[idx];
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f97c0 size=0xd0
 extern int g_106c994c;
 struct CRelElemUnit {
