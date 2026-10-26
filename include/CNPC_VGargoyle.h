@@ -19,6 +19,7 @@ public:
 	bool vfunc320(int a, int b);	// slot 320: when the vulnerable flag at +0x6688 is set and a random int 1..100 is at most 50, CAI_BaseNPCTroika::vfunc320(a, b) and true; else false
 	int vfunc390(void *pInfo);	// slot 390 (OnTakeDamage) override: clears the vulnerable flag at +0x6688 when the damage type has bit 26, tells the entity of the handle at +0x628c about it (sub_10005849(ent, 1, 10)), then CNPC_VHuman::vfunc390
 	void vfunc420();	// slot 420: calls CAI_BaseNPCTroika::vfunc420 (stub 0x1000c531), then resets the pillar handle, the flags at +0x6680..+0x6688 and the global at 0x109340d8 (set to 0xe)
+	void vfunc435(int a);	// slot 435 override: CAI_BaseNPCTroika::vfunc435 (stub 0x100048f9, ecx = this, one stack argument), then when the flags at +0x14b8 lack bit 3 and the counter at +0x6680 is positive, the counter goes down by one
 	void vfunc444(int *pTask);	// slot 444 override: task 0x31 -> (slot 572 unless bit 13 of +0x5d8c, sub_1000e6e7(-1) on the object at +0x5d44, sub_10010352), task 0x12f -> slot 251; when that answers true runs sub_1000ac68(0); other tasks CNPC_VHuman::vfunc444
 	int sub_10001b45(void *pInfo);	// CNPC_VHuman::vfunc390, called directly
 	void sub_10005849(CBaseEntity *pEnt, int a, int b);	// a CBaseCombatCharacter member (the stub at 0x10005849 for 0x10332ca0), called directly
@@ -38,13 +39,15 @@ public:
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
 	void sub_10269b50(int a);	// stub 0x10015839, called with a condition number
 
-	char m_pad0004[0x5d44 - 4];
+	char m_pad0004[0x14b8 - 4];
+	unsigned int m_nFlags14b8;	// 0x14b8
+	char m_pad14bc[0x5d44 - 0x14bc];
 	void *m_pObj5d44;	// 0x5d44
 	char m_pad5d48[0x5d8c - 0x5d48];
 	unsigned int m_nFlags5d8c;	// 0x5d8c
 	char m_pad5d90[0x667c - 0x5d90];
 	int m_hPillar;	// 0x667c
-	char m_pad6680[0x6684 - 0x6680];
+	int m_n6680;	// 0x6680: the counter the vfunc435 override lowers
 	void *m_p6684;	// 0x6684: the object that takes the Event_Killed call when set
 	int m_nVulnerable;	// 0x6688
 };
