@@ -30,6 +30,20 @@ void __fastcall sub_1019e550(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e590 size=0x22
+char __fastcall sub_10014da8(void *p);
+void __fastcall sub_1000468d(void *p);
+
+// TARGET: sub_1019e590
+void __fastcall sub_1019e590(char *pThis)
+{
+    if (sub_10014da8(pThis)) {
+        *(unsigned int *)(pThis + 0x454) |= 8;
+    }
+    sub_1000468d(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f570 size=0x95
 #include "CRopeKeyframe.h"
 #include "IVEngineServer.h"
