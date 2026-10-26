@@ -213,6 +213,23 @@ extern "C" GP *phys_torque()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100290c0 size=0x2b
+#include "CUnknown100290c0.h"
+
+// TARGET: CUnknown100290c0::sub_100290c0
+unsigned int CUnknown100290c0::sub_100290c0(unsigned int *pHandle)
+{
+    unsigned int h = *pHandle;
+    if (h != 0xffffffff) {
+        CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (int)(h >> 13)) {
+            return pSlot->m_Value;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029100 size=0x13
 struct CUnknown10029100 {
     float m_f0;
