@@ -108,6 +108,7 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 	void sub_1030b5b0(int sequence);	// stores the arrival sequence (stub 0x100016b3)
 	float sub_1030b880();	// a float value of the route handed to the motor with its goal record (stub 0x1001021c)
 	Vector *sub_1030b7c0();	// the route's goal position (stub 0x10012805)
+	CAI_NavVec3 *sub_1030ba30();	// the vector at +0x4c (stub 0x1000f60a)
 };
 
 struct CAI_NavGoal	// the record CAI_Navigator::vfunc17 fills for the motor
@@ -166,6 +167,7 @@ public:
 	bool sub_102ed430(const Vector *pPosition, int a, int b, int c);	// path to the node nearest pPosition (sub_102f3c10 asks the owner's graph): stamps the owner's value at +0x156c and the frame count into +8 / +0xc, asks the pathfinder (sub_102ff3e0 with a, b), sets up the route (flag value 4, the node, its arrival data) and stores the squared distance from pPosition to the route's goal position in the float at +0x14; false when any step fails (ret 0x10: four stack arguments, the last one unused)
 	Vector *sub_102ee140();	// stub 0x100071fd: the position the route is heading for
 	void sub_102ee220(const Vector *pPosition);	// stub 0x1000481d: hands the navigator a position to head for
+	float sub_102ee1a0();	// stub 0x1000df94: the float at +0x28 of the route object (+0x30)
 	void sub_102f0400();	// stub 0x10006744, run when the motor reports 1
 	int sub_102ee3f0();	// stub 0x10011f77: the owner's task id for the finished move
 	float sub_102f1cf0();	// the distance from the owner's origin (slot 220) to the route's goal position: 2D while the flag at +0x18 is clear, else 3D
