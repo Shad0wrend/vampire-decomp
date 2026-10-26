@@ -316,6 +316,21 @@ void CNPC_VTzimisce::vfunc627()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b9f10 size=0x29
+#include "CNPC_VTzimisce.h"
+#include "CUnknown1070b244.h"
+
+struct CUnk1070b228 { char pad0000[0xc]; float m_fl0c; };
+extern CUnknown1070b244 *g_1070b244;
+extern CUnk1070b228 *g_1070b228;
+
+// TARGET: CNPC_VTzimisce::vfunc487
+void CNPC_VTzimisce::vfunc487()
+{
+    *(float *)((char *)this + 0x5ce8) = g_1070b244->vfunc1(0.5f, 0.75f) + g_1070b228->m_fl0c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ba640 size=0xf9
 #include "CNPC_VTzimisce.h"
 #include "CUnknown1027d990.h"
