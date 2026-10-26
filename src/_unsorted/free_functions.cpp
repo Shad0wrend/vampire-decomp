@@ -52736,6 +52736,18 @@ extern "C" GP *npc_payphone()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab220 size=0x2c
+int sub_10246af0(int a, int b, int c, int d, int e, int f, int g, void *h);
+void sub_101ab260();
+
+// TARGET: sub_101ab220
+void *sub_101ab220(void *pSelf, int a, int b, int c)
+{
+	sub_10246af0((int)pSelf, a, b, c, 0xb, 1, 0, (void *)sub_101ab260);
+	return pSelf;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab310 size=0x31
 void sub_10246300();
 int sub_10246510(int a, int b, int c, int d, int e, int f, int g, int h, void *pFunc);

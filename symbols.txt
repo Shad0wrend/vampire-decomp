@@ -3394,6 +3394,7 @@
 0x1000b749 func   _npc_VMingXiao npc_VMingXiao
 0x1000b74e func   ?sub_10376c10@CNPC_VFrenzyShadow@@QAEXXZ CNPC_VFrenzyShadow::sub_10376c10
 0x1000b762 func   _item_g_watch_normal item_g_watch_normal
+0x1000b771 func   ?sub_101ab220@@YAPAXPAXHHH@Z sub_101ab220
 0x1000b776 func   ?sub_1009b980@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009b980
 0x1000b785 func   ?sub_101019d0@CUnk101019d0@@QAEXXZ CUnk101019d0::sub_101019d0
 0x1000b78f func   ??0CBeamHead@@QAE@XZ CBeamHead::CBeamHead
