@@ -7100,6 +7100,7 @@
 0x100155c3 func   ?vfunc173@CMultiSource@@UAEXPAVCBaseEntity@@0HM@Z CMultiSource::vfunc173
 0x100155cd func   ?sub_1038e720@CNPC_VManBat@@QAEXVVector@@@Z CNPC_VManBat::sub_1038e720
 0x100155d2 func   ?sub_10185180@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_10185180
+0x100155d7 func   ?sub_1026c3d0@@YI_NPAVCAI_BaseNPC@@@Z sub_1026c3d0
 0x100155dc func   ?sub_10221d60@QuestJournal@@QAEPADHH@Z QuestJournal::sub_10221d60
 0x100155e6 func   ?vfunc25@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc25
 0x100155eb func   ?sub_10250080@CUnknown10250080@@QAEXXZ CUnknown10250080::sub_10250080

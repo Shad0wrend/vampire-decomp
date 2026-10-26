@@ -88632,6 +88632,86 @@ void CAI_BaseNPCUnit::sub_1026a0f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026c3d0 size=0x11f
+#include "CAI_BaseNPC.h"
+
+extern unsigned char g_1092053c;
+extern char g_1093408c;
+extern int g_105c9798;
+extern float g_10920550;
+extern const float g_10454110;
+struct CGlobalVarsX { char pad[0xc]; float curtime; };
+extern CGlobalVarsX *g_1070b228;
+
+struct CAI_BaseNPCNavX { bool sub_102ee6a0(); };
+
+struct CTextParamsX
+{
+	float x, y;
+	int effect;
+	unsigned char r, g, b, a, r2, g2, b2, a2;
+	float fadein, fadeout, hold, fx;
+	int channel;
+};
+void sub_101ce3d0(CTextParamsX *p, const char *text);
+
+#define S1(n) virtual void s##n();
+#define S10(p) S1(p##0) S1(p##1) S1(p##2) S1(p##3) S1(p##4) S1(p##5) S1(p##6) S1(p##7) S1(p##8) S1(p##9)
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct CAI_BaseNPCSlot310
+{
+	S1(0) S1(1) S1(2) S1(3) S1(4) S1(5) S1(6) S1(7) S1(8) S1(9)
+	S10(1) S10(2) S10(3) S10(4) S10(5) S10(6) S10(7) S10(8) S10(9)
+	S100(1) S100(2)
+	S10(30)
+	virtual void s310(int a);
+};
+
+// TARGET: sub_1026c3d0
+bool __fastcall sub_1026c3d0(CAI_BaseNPC *p)
+{
+	unsigned char f = g_1092053c;
+	if (!(f & 1)) {
+		if (g_1093408c) {
+			if (f & 2) {
+				if (*(int *)((char *)p + 0x5f40) >= g_105c9798) {
+					if (!(*(CAI_BaseNPCNavX **)((char *)p + 0x5d34))->sub_102ee6a0()) {
+						*(float *)((char *)p + 0x6f4) = 0.0f;
+						return false;
+					}
+					return false;
+				}
+				*(float *)((char *)p + 0x6f4) = 1.0f;
+			}
+			return true;
+		}
+	} else {
+		if (g_1093408c)
+			goto call;
+	}
+	if (g_1070b228->curtime >= g_10920550) {
+		float flNext = g_1070b228->curtime;
+		flNext += g_10454110;
+		CTextParamsX t;
+		t.x = 0.7f;
+		t.y = 0.65f;
+		g_10920550 = flNext;
+		t.effect = 0;
+		t.r = 255; t.g = 255; t.b = 255; t.a = 255;
+		t.r2 = 255; t.g2 = 255; t.b2 = 255; t.a2 = 255;
+		t.fadein = 0.0f;
+		t.fadeout = 0.0f;
+		t.hold = 5.1f;
+		t.fx = 0.0f;
+		t.channel = 1;
+		sub_101ce3d0(&t, "A.I. Disabled...\n");
+	}
+call:
+	((CAI_BaseNPCSlot310 *)p)->s310(1);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026d0c0 size=0x43
 struct Helper { void sub_1000a8a8(void*); };
 // TARGET: sub_1026d0c0
