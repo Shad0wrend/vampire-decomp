@@ -165,6 +165,7 @@ public:
 	bool sub_102f2330(int b);	// stub 0x10001e51: "DoFindPath", called directly
 	bool sub_102ed430(const Vector *pPosition, int a, int b, int c);	// path to the node nearest pPosition (sub_102f3c10 asks the owner's graph): stamps the owner's value at +0x156c and the frame count into +8 / +0xc, asks the pathfinder (sub_102ff3e0 with a, b), sets up the route (flag value 4, the node, its arrival data) and stores the squared distance from pPosition to the route's goal position in the float at +0x14; false when any step fails (ret 0x10: four stack arguments, the last one unused)
 	Vector *sub_102ee140();	// stub 0x100071fd: the position the route is heading for
+	void sub_102ee220(const Vector *pPosition);	// stub 0x1000481d: hands the navigator a position to head for
 	void sub_102f0400();	// stub 0x10006744, run when the motor reports 1
 	int sub_102ee3f0();	// stub 0x10011f77: the owner's task id for the finished move
 	float sub_102f1cf0();	// the distance from the owner's origin (slot 220) to the route's goal position: 2D while the flag at +0x18 is clear, else 3D
