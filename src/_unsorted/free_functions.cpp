@@ -33549,6 +33549,20 @@ void CBaseEntity::sub_100fbc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fbc50 size=0x2a
+#include "CUnknown100fbc50.h"
+
+void __stdcall sub_10004845(int a, int b);
+
+// TARGET: CUnknown100fbc50::sub_100fbc50
+void CUnknown100fbc50::sub_100fbc50()
+{
+    sub_10004845(0, *(int *)&m_fValue498);
+    float flValue = m_fValue498 + 0.1f;
+    sub_1000fb23(flValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fbc90 size=0x8a
 #include "CEntityVSlots.h"
 #include "CEnvParticle.h"
