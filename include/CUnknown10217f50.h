@@ -8,6 +8,8 @@ struct CUnknown10217f50Quad	// the four dwords at +0x82c
 {
 	int m_n0, m_n1, m_n2, m_n3;
 	void Clear() { m_n0 = 0; m_n1 = 0; m_n2 = 0; m_n3 = 0; }
+	CUnknown10217f50Quad() {}
+	CUnknown10217f50Quad(int v) { m_n0 = v; m_n1 = v; m_n2 = v; m_n3 = v; }
 	void Init(int a, int b, int c, int d) { m_n0 = a; m_n1 = b; m_n2 = c; m_n3 = d; }
 	void ClearLoop() { for (int i = 0; i < 4; i++) (&m_n0)[i] = 0; }
 };
