@@ -84428,6 +84428,33 @@ void __fastcall sub_10265a40(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10265a90 size=0x2b
+struct CUnkSub10265a90
+{
+	void sub_100cd660(int a, void *pOwner, int b);
+};
+
+struct CUnk10265a90
+{
+	char m_pad0000[0x5bd4];
+	char m_b5bd4;
+	char m_pad5bd5[0x5e24 - 0x5bd5];
+	CUnkSub10265a90 m_sub5e24;
+
+	void sub_10265a90(int a);
+};
+
+// TARGET: CUnk10265a90::sub_10265a90
+void CUnk10265a90::sub_10265a90(int a)
+{
+	if (m_b5bd4 == 0)
+	{
+		m_sub5e24.sub_100cd660(a, this, 0);
+		m_b5bd4 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10266b10 size=0x116
 #include "Vector.h"
 #include "CEntityVSlots.h"

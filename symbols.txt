@@ -2020,6 +2020,7 @@
 0x100073a1 func   ?sub_10189510@Mem784@@QAEXH@Z Mem784::sub_10189510
 0x100073a6 func   ?sub_104112d0@CWeaponPhysCannon@@QAEPAVCUnknown101bc140@@XZ CWeaponPhysCannon::sub_104112d0
 0x100073b0 func   ?sub_10141b10@@YGPAVCBaseEntity@@PAV1@0@Z sub_10141b10
+0x100073ba func   ?sub_10265a90@CUnk10265a90@@QAEXH@Z CUnk10265a90::sub_10265a90
 0x100073c9 func   ?sub_10100f90@CEnvShake@@QAEXAAUinputdata_t@@@Z CEnvShake::sub_10100f90
 0x100073d3 func   ?sub_102ca760@@YIXPAD@Z sub_102ca760
 0x100073ec func   ?sub_100f0120@CUnknown100f0120@@QAEXPAUinputdata_t@@@Z CUnknown100f0120::sub_100f0120
