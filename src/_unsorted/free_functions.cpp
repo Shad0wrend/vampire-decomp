@@ -10494,6 +10494,17 @@ void CBaseCineCam::sub_1006e770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006e850 size=0x22
+// TARGET: sub_1006e850
+extern char *g_1070b228;
+void __cdecl sub_101cd940(void *p);
+void __fastcall sub_1006e850(char *p)
+{
+    sub_101cd940(p);
+    *(float *)(p + 0x17c) = *(float *)(g_1070b228 + 0xc) + 0.04166f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006e890 size=0xe
 bool CUnknown1006e890::sub_1006e890()
 {
