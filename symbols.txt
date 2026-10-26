@@ -5803,6 +5803,7 @@
 0x1001302f func   ?vfunc433@CNPC_VPedestrian@@QAEXXZ CNPC_VPedestrian::vfunc433
 0x1001304d func   ?vfunc0@CAI_Motor@@UAEPAV1@I@Z CAI_Motor::vfunc0
 0x1001305c func   _item_g_wireless_camera_1 item_g_wireless_camera_1
+0x10013066 func   ?sub_101f7cc0@CUnknown101f7cc0@@QAE_NPAX@Z CUnknown101f7cc0::sub_101f7cc0
 0x1001306b func   ?sub_10256220@CBaseCombatWeapon@@QAEDXZ CBaseCombatWeapon::sub_10256220
 0x10013070 func   ?sub_1017c6d0@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017c6d0
 0x10013075 func   _item_g_wireless_camera_2 item_g_wireless_camera_2
