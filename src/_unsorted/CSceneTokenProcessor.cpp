@@ -13,6 +13,26 @@ bool CSceneTokenProcessor::vfunc1(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100838d0 size=0x21
+struct CSceneTokenProcessorX
+{
+    bool sub_100838d0();
+};
+
+// TARGET: sub_100838d0
+bool CSceneTokenProcessorX::sub_100838d0()
+{
+    char *p = *(char **)((char *)this + 4);
+    if (p[0] == '\n' || p[0] == ';' || p[0] == '#') {
+        return false;
+    }
+    if (p[0] == '/' && p[1] == '/') {
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10083910 size=0x3a
 #include <stdarg.h>
 
