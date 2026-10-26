@@ -4494,6 +4494,7 @@
 0x1000e8cc func   ?vfunc5@CActivityCopyProp@@QAEPAV1@I@Z CActivityCopyProp::vfunc5
 0x1000e8d6 func   ??0CVStatAction_t@@QAE@HH@Z CVStatAction_t::CVStatAction_t
 0x1000e8ef func   ?sub_1027f8f0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_1027f8f0
+0x1000e8fe func   ?sub_10247240@CUnknown10247240@@QAEXHHH@Z CUnknown10247240::sub_10247240
 0x1000e903 func   ?sub_101ee5a0@CThinkUnit@@QAEXXZ CThinkUnit::sub_101ee5a0
 0x1000e912 func   ?sub_1028b420@CMinSet1028b420@@QAEMXZ CMinSet1028b420::sub_1028b420
 0x1000e917 func   ?sub_103323d0@CUnknown103323d0@@QAEXPAUinputdata_t@@@Z CUnknown103323d0::sub_103323d0

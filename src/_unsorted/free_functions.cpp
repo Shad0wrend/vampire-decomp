@@ -80972,6 +80972,32 @@ SendProp sub_10247030(const char *pszDataTableName, const char *pszPropName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247240 size=0x29
+struct CUnknown10247240 {
+    int m_a;
+    int m_b;
+    int m_c;
+    int m_d;
+    unsigned char m_e;
+    int m_f;
+    int m_g;
+
+    void sub_10247240(int a, int b, int c);
+};
+
+// TARGET: CUnknown10247240::sub_10247240
+void CUnknown10247240::sub_10247240(int a, int b, int c)
+{
+    m_a = a;
+    m_b = b;
+    m_c = c;
+    m_d = 0;
+    m_e = 0;
+    m_f = -1;
+    m_g = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247280 size=0x10b
 void sub_102473e0();
 extern char g_10753641;
