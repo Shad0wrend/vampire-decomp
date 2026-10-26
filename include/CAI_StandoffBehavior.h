@@ -52,13 +52,16 @@ public:
 	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18(); virtual void vfunc19();
 	virtual void vfunc20(); virtual void vfunc21();
 	virtual int vfunc22(int a);	// picks the activity to use for the requested one (weapon activity translation of the standoff states)
+	virtual void vfunc23(); virtual void vfunc24(); virtual void vfunc25();
+	virtual void vfunc26(int a, int b);	// the standoff's start: with the int at +0x20 above 0 the parameter block's range is set (-1.0f at +0x58, 5.0f at +0x5c, 0 at +0x60); then flag byte +0x4c is set when the int at +0x20 is 2
 
 	CAI_StandoffBehaviorOuter *m_pOuter;
 	char pad0008[0x1a - 8];
 	char m_unk1a;
 	char pad001b;
 	int m_nState1c;
-	char pad0020[0x3c - 0x20];
+	int m_n20;
+	char pad0024[0x3c - 0x24];
 	float m_flTime3c;
 	float m_flMin40;
 	float m_flMax44;
@@ -67,7 +70,10 @@ public:
 	char pad004d[3];
 	float m_savedUnk50;
 	unsigned char m_b54;
-	char pad0055[0x64 - 0x55];
+	char pad0055[0x58 - 0x55];
+	float m_fl58;
+	float m_fl5c;
+	int m_n60;
 	float m_fl64;
 	float m_fl68;
 
