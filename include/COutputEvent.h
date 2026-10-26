@@ -11,6 +11,7 @@ class COutputEvent
 {
 public:
 	COutputEvent();
+	void sub_100cd2a0();	// the constructor body (stub 0x10002ddd), called on an existing output
 
 	void sub_100cd660(void *pActivator, void *pCaller, float flDelay);	// "COutputEvent::FireOutput" (stub 0x10010794)
 	void sub_100cd300(CVariantCopy value, void *pActivator, void *pCaller, float flDelay);	// "COutputEvent::FireOutput" with an explicit value (stub 0x10004f75)
