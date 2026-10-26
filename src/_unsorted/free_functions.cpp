@@ -72778,6 +72778,21 @@ CUnknown102029c0 *CUnknown10203240::sub_10203240(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102033e0 size=0x22
+// TARGET: sub_102033e0
+#include "CUnit101d5e00.h"
+extern CUnit101d5e00 g_10738d10;
+extern int g_10738d14;
+extern char g_106b8540[];
+char *__cdecl sub_102033e0(int index)
+{
+    if (index >= 0 && index < g_10738d14) {
+        return g_10738d10.sub_101d5e00(index);
+    }
+    return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203440 size=0x22
 struct CUnit101d5e40
 {
