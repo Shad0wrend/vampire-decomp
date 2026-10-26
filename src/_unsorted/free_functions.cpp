@@ -9936,6 +9936,24 @@ void CUtlBuffer::sub_1006c4a0(const void *pMem, int nSize)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c4f0 size=0x2a
+#include "CUtlBuffer.h"
+#include <string.h>
+
+struct CUnit1006c4f0 : CUtlBuffer {
+    void sub_1006c4f0(const char *pString);
+};
+
+void CUnit1006c4f0::sub_1006c4f0(const char *pString)
+{
+    int nSize = strlen(pString);
+    if ((m_nFlags & 1) == 0) {
+        nSize++;
+    }
+    sub_1006c4a0(pString, nSize);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c6a0 size=0x37
 struct CUnknown1006c6a0
 {
