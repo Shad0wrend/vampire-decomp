@@ -38635,6 +38635,20 @@ void sub_10130100(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130690 size=0x2d
+#include "CLight.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: CLight::sub_10130690
+void CLight::sub_10130690()
+{
+	g_1070b22c->vfunc62(m_iStyle, "a");
+	m_flags204 |= 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101308d0 size=0x99
 #include "CLight.h"
 
