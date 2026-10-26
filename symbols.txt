@@ -7213,6 +7213,7 @@
 0x10431452 func   __atoi64 _atoi64
 0x10431510 func   _strstr strstr
 0x10431590 func   _calloc calloc
+0x10431641 func   ?free@@YAXPAX@Z free
 0x10431641 func   _free free
 0x104316aa func   _isalpha isalpha
 0x104316d8 func   _isupper isupper
