@@ -10044,6 +10044,22 @@ void CUnknown1006c6a0::sub_1006c6a0(int op, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c7d0 size=0x23
+struct CUnknown1006c7d0 {
+	void sub_1006c7d0();
+};
+
+// TARGET: CUnknown1006c7d0::sub_1006c7d0
+void CUnknown1006c7d0::sub_1006c7d0()
+{
+	if (*(void **)((char *)this + 0x14) != 0) {
+		delete *(void **)((char *)this + 0x14);
+		*(int *)((char *)this + 0x14) = 0;
+	}
+	*(int *)((char *)this + 0x10) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006ca50 size=0x31
 #include "CUnknown10204e90.h"
 #include "CUnknown10204c60.h"
