@@ -54886,6 +54886,20 @@ int sub_101bb220(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb310 size=0x2a
+extern char *g_1072c464;
+
+// TARGET: sub_101bb310
+unsigned int sub_101bb310(unsigned int flags)
+{
+    if (g_1072c464 == 0) {
+        return 0;
+    }
+    *(unsigned int *)(g_1072c464 + 0x460) = *(unsigned int *)(g_1072c464 + 0x460) ^ flags;
+    return *(unsigned int *)(g_1072c464 + 0x460) & flags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb370 size=0x8e
 #include "CSoundEnt.h"
 #include "CSound.h"
