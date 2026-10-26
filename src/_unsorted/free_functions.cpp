@@ -59609,6 +59609,21 @@ void sub_101cde40(void *pPlayer, float a, float b, float c, float d, int nByte)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ce020 size=0x21
+// TARGET: sub_101ce020
+int sub_101ce020(float a, float b)
+{
+    int v = (int)(a * b);
+    if (v < 0) {
+        return 0;
+    }
+    if (v > 0xffff) {
+        v = 0xffff;
+    }
+    return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ce060 size=0x14c
 #include "CSingleUserRecipientFilter.h"
 #include "IVEngineServer.h"
