@@ -1905,6 +1905,7 @@
 0x100069ce func   ?vfunc5@CNPC_VWolfMorph@@QAEPAV1@I@Z CNPC_VWolfMorph::vfunc5
 0x100069d8 func   ?sub_102296e0@@YIDPADPAXHH@Z sub_102296e0
 0x100069e7 func   ?sub_1029f730@CLazyTroikaView@@QAEHH@Z CLazyTroikaView::sub_1029f730
+0x100069f1 func   ?vfunc515@CAI_BaseNPC@@QAEMPBVVector@@@Z CAI_BaseNPC::vfunc515
 0x10006a05 func   ?sub_10067b70@@YAXPAVCUnknown1019d130@@MPBVVector@@HH1@Z sub_10067b70
 0x10006a19 func   ?vfunc32@CPhysicsPropContested@@UAE_NH@Z CPhysicsPropContested::vfunc32
 0x10006a1e func   ?sub_10361730@CNPC_VAsianVampire@@QAEPAXXZ CNPC_VAsianVampire::sub_10361730

@@ -616,6 +616,51 @@ int CAI_BaseNPC::sub_10274aa0(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10274b30 size=0x11e
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CAI_Navigator.h"
+#include "CAI_BaseNPC.h"
+
+float sub_101d2c70(const Vector *pDelta);
+
+struct NpcNavView
+{
+	char pad0[0x5d34];
+	CAI_Navigator *m_pNavigator;
+};
+
+float CAI_BaseNPC::vfunc515(const Vector *pTarget)
+{
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	CAI_Navigator *pNav = ((NpcNavView *)this)->m_pNavigator;
+	Vector vecPos;
+	if (pNav->sub_102ee3f0() == 0x37)
+	{
+		vecPos.x = -pTarget->y;
+		vecPos.y = pTarget->x;
+		{
+			Vector delta = vecPos - *pSelf->slot220();
+			return sub_101d2c70(&delta);
+		}
+	}
+	else if (((NpcNavView *)this)->m_pNavigator->sub_102ee3f0() == 0x38)
+	{
+		vecPos.x = pTarget->y;
+		vecPos.y = pTarget->x;
+		{
+			Vector delta = vecPos - *pSelf->slot220();
+			return sub_101d2c70(&delta);
+		}
+	}
+	else
+	{
+		Vector delta = *pTarget - *pSelf->slot220();
+		return sub_101d2c70(&delta);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278090 size=0xc7
 #include "CAI_BaseNPC.h"
 #include "CCineNPC.h"
