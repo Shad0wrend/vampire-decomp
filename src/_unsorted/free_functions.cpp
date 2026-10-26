@@ -30972,6 +30972,29 @@ int CDialog::sub_100e4840(int choice)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e4ef0 size=0x22
+#include <string.h>
+
+void __stdcall sub_1000bd11(void *p);
+
+struct CUnknown100e4ef0 {
+	char m_pad0000[0x31ea];
+	char m_b31ea;
+	char m_pad31eb[0x3];
+	int m_pad31ee[0x3f];
+	void sub_100e4ef0();
+};
+
+// TARGET: CUnknown100e4ef0::sub_100e4ef0
+void CUnknown100e4ef0::sub_100e4ef0()
+{
+	if (m_b31ea != 0) {
+		sub_1000bd11(&m_b31ea);
+	}
+	memset(&m_b31ea, 0, 0x100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e5240 size=0x170
 #include "CDialog.h"
 #include "CEHandleGet.h"

@@ -5837,6 +5837,7 @@
 0x10011f7c func   ?sub_1034cf20@CNPCMaker@@QAEXHD@Z CNPCMaker::sub_1034cf20
 0x10011f81 func   ?sub_10336b90@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10336b90
 0x10011f86 func   ?vfunc616@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::vfunc616
+0x10011f8b func   ?sub_100e4ef0@CUnknown100e4ef0@@QAEXXZ CUnknown100e4ef0::sub_100e4ef0
 0x10011f90 func   ?sub_10404270@@YAHXZ sub_10404270
 0x10011f95 func   ?sub_1020e080@CUnknown1020e060@@QAEXH@Z CUnknown1020e060::sub_1020e080
 0x10011fa4 func   ?sub_102491a0@CUnknown102491a0@@QAEXHH@Z CUnknown102491a0::sub_102491a0
