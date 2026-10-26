@@ -16,6 +16,20 @@ CRopeKeyframe *CRopeKeyframe::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e550 size=0x22
+char __fastcall sub_10014da8(void *p);
+void __fastcall sub_100011cc(void *p);
+
+// TARGET: sub_1019e550
+void __fastcall sub_1019e550(char *pThis)
+{
+    if (!sub_10014da8(pThis)) {
+        *(unsigned int *)(pThis + 0x454) &= ~0x8u;
+    }
+    sub_100011cc(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f570 size=0x95
 #include "CRopeKeyframe.h"
 #include "IVEngineServer.h"
