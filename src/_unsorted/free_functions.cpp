@@ -108231,6 +108231,22 @@ bool CNPC_VGargoyle::sub_10378ec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378f80 size=0x2a
+#include "CNPC_VGargoyle.h"
+
+// TARGET: CNPC_VGargoyle::sub_10378f80
+int CNPC_VGargoyle::sub_10378f80()
+{
+    if (sub_10378ec0())
+    {
+        sub_10379000(1);
+        return 0x15a;
+    }
+    m_n6680 = 2;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10379040 size=0xc
 bool CUnknown10381be0::sub_10379040()
 {

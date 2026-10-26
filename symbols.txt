@@ -3388,6 +3388,7 @@
 0x1000b4ba func   ?vfunc50@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc50
 0x1000b4c4 func   ?vfunc124@CNPC_VHengeyokai@@QAEHXZ CNPC_VHengeyokai::vfunc124
 0x1000b4ce func   ?sub_1006f670@CBaseCineCam@@QAE?AVVector@@XZ CBaseCineCam::sub_1006f670
+0x1000b4e2 func   ?sub_10378f80@CNPC_VGargoyle@@QAEHXZ CNPC_VGargoyle::sub_10378f80
 0x1000b4e7 func   ?vfunc440@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc440
 0x1000b4ec func   ?sub_1025b5b0@@YAHXZ sub_1025b5b0
 0x1000b4f6 func   ?sub_1008d990@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_1008d990
