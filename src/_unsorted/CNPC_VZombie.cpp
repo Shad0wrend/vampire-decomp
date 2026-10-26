@@ -249,3 +249,25 @@ bool CNPC_VZombie::vfunc510()
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103e1280 size=0x22
+struct CNPC_VZombieX;
+
+struct CUnkZombie66e8
+{
+    void sub_10010794(int a, CNPC_VZombieX *pOwner, int b);
+};
+
+struct CNPC_VZombieX
+{
+    void sub_10006136(int a);
+    void sub_103e1280(int a);
+};
+
+// TARGET: sub_103e1280
+void CNPC_VZombieX::sub_103e1280(int a)
+{
+    sub_10006136(a);
+    ((CUnkZombie66e8 *)((char *)this + 0x66e8))->sub_10010794(a, this, 0);
+}
+// END FUNCTION
