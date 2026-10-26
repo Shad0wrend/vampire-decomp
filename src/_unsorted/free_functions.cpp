@@ -91500,6 +91500,33 @@ CEntityVSlots *sub_102d2f30(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d3e60 size=0x29
+extern int g_106c994c;
+
+struct CUnknownList102d3e60 {
+    int m_nCount;
+    int *m_pElements;
+};
+extern CUnknownList102d3e60 *g_1093407c;
+
+struct CUnknown102d3e60 {
+    char pad_0000[0x5e4];
+    int m_nIndex;
+    int sub_102d3e60();
+};
+
+// TARGET: CUnknown102d3e60::sub_102d3e60
+int CUnknown102d3e60::sub_102d3e60()
+{
+    if (m_nIndex != -1) {
+        if (m_nIndex >= 0 && m_nIndex < g_1093407c->m_nCount)
+            return g_1093407c->m_pElements[m_nIndex];
+        g_106c994c++;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d3f50 size=0xc9
 extern "C" unsigned int __cdecl strlen(const char *);
 extern "C" char *__cdecl strstr(const char *, const char *);
