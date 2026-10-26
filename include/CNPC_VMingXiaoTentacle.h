@@ -37,6 +37,8 @@ public:
 	void sub_102a0fb0(void *pArg, int mask, float *pMins, float *pMaxs);	// stub 0x10001f50, called directly
 	void sub_1039f030();	// sound emitter of the same shape as sub_1039f1a0
 	void sub_1039f1a0();	// plays one of the 0x106477cc sounds (channel 2, volume 1.0, attenuation 0.8) from the edict at +0x2e0 to the players that can hear it, reliably (PAS attenuation filter inline)
+	char vfunc166(CBaseEntity *pEnt);	// slot 166: false for the player (sub_1039ede0) or a null entity; else true unless the entity's slot 164 answers false
+	void *sub_1039ede0();	// CBasePlayer::sub_1039ede0 (stub 0x1001105e), called directly: the player entity
 
 	char m_pad0004[0x200 - 4];
 	int m_nTakeDamage;	// 0x200
