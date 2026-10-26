@@ -30556,6 +30556,24 @@ bool __cdecl sub_100df030(CUnknown100df030 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df070 size=0x22
+#include <string.h>
+
+struct CUnknown100df070 {
+	char m_pad0000[0x10];
+	const char *m_psz10;
+};
+
+// TARGET: sub_100df070
+bool __cdecl sub_100df070(CUnknown100df070 *p)
+{
+	if (p->m_psz10 == 0) {
+		return false;
+	}
+	return _strcmpi(p->m_psz10, "(Character Description)") == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df7b0 size=0x72
 struct ICommandLine {
     virtual void v0();
