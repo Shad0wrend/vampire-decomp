@@ -7321,6 +7321,24 @@ void CUnknown10057680::sub_100579b0(const char *pszName, const char *pszValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100579f0 size=0x25
+#include "CUnknown10057680.h"
+
+void free(void *p);
+
+void __fastcall sub_100579f0(int *pThis)
+{
+	int *p = (int *)*pThis;
+	while (p != 0)
+	{
+		int *pNext = *(int **)((char *)p + 0x64);
+		free(p);
+		p = pNext;
+	}
+	((CUnknown10057680 *)pThis)->sub_10057680();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057a30 size=0x70
 #include "CSave.h"
 struct IVisitor;
