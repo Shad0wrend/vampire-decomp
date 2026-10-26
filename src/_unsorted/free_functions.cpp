@@ -105778,6 +105778,26 @@ void *CBaseCombatCharacter::sub_1032d890(const char *pszClassname, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032e120 size=0xbf
+#include <string.h>
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+extern "C" int _strcmpi(const char *, const char *);
+CBaseEntity *sub_100a99d0(const char *pszName, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
+
+// TARGET: CBaseCombatCharacter::sub_1032e120
+void *CBaseCombatCharacter::sub_1032e120(const char *pszName)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Weapon_Create", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!_strcmpi(pszName, "Nothing"))
+		return 0;
+	CEntityVSlots *pSelf = (CEntityVSlots *)this;
+	return sub_100a99d0(pszName, &pSelf->slot220()->x, &pSelf->slot221()->x, this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032e210 size=0xde
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
