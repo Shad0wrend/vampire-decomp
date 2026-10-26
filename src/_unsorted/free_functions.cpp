@@ -127665,6 +127665,26 @@ struct CUnknown1042d650 { int a; CUnknown1042d650* sub_1042d650(); };
 CUnknown1042d650* CUnknown1042d650::sub_1042d650() { a = 0; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x1042d670 size=0x25
+struct CUnknown109ef590
+{
+    int m_a;
+    int m_b;
+    int m_c[0x200];
+};
+
+extern CUnknown109ef590 g_109ef590;
+
+// TARGET: sub_1042d670
+void sub_1042d670()
+{
+    g_109ef590.m_a = -1;
+    g_109ef590.m_b = 0;
+    for (int i = 0; i < 0x200; i++)
+        g_109ef590.m_c[i] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042d700 size=0x8
 unsigned int __fastcall sub_1042d700(unsigned int *p) { return (*p >> 1) & 0x1f; }
 // END FUNCTION
