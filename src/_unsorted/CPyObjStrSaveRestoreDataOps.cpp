@@ -66,3 +66,24 @@ void CPyObjStrSaveRestoreDataOps::vfunc1(void **field, IRestoreLike *restore)
         *dest = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d0130 size=0x29
+#include "CPyObjStrSaveRestoreDataOps.h"
+
+extern void *g_109f37d0;
+
+// TARGET: CPyObjStrSaveRestoreDataOps::vfunc2
+int CPyObjStrSaveRestoreDataOps::vfunc2(void ***ppField)
+{
+	void **pObj = *ppField;
+	if (pObj) {
+		void *pyObj = *pObj;
+		if (pyObj) {
+			void *type = *(void **)((char *)pyObj + 4);
+			if (type == g_109f37d0)
+				return 0;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
