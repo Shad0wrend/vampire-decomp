@@ -31708,6 +31708,30 @@ float CIndexedTableView::sub_100ec3d0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec410 size=0x23
+struct CUnknown100ec410Elem {
+	char m_pad0000[0x264];
+};
+
+struct CUnknown100ec410 {
+	int m_pad0000;
+	int m_nDefault;	// 0x4
+	CUnknown100ec410Elem *m_pElems;	// 0x8
+	int m_pad000c[2];
+	int m_n14;	// 0x14
+	CUnknown100ec410Elem *sub_100ec410(int index);
+};
+
+// TARGET: CUnknown100ec410::sub_100ec410
+CUnknown100ec410Elem *CUnknown100ec410::sub_100ec410(int index)
+{
+	if (index < 0 || index > m_n14) {
+		index = m_nDefault;
+	}
+	return &m_pElems[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecb40 size=0x7f
 #include "utlvector.h"
 struct CThreeVecs {
