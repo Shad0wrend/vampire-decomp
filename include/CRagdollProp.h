@@ -15,6 +15,7 @@ class CRagdollProp : public CBaseEntity
 {
 public:
     virtual void vfunc103();	// slot 103 "CRagdollProp::Spawn": slot 104, the model (slot 9 / 105), the bone setup (CBaseAnimating::vfunc257 with mask 0xfffc) handed to the ragdoll initialiser sub_101554a0, clears the fields at +0xd54 / +0xd60, +0xd64 = -1, a zero float at +0xdc becomes 0.1f, marks the collision property at +0x270 dirty and sets or clears flag bit 2 of +0x438 by bit 5 of +0x204
+    virtual void vfunc104();	// slot 104: the model name (slot 9) or the default one when it is empty, handed to CBaseEntity::sub_100adfd0
     virtual void vfunc134();
     virtual void vfunc135(); virtual void vfunc136(); virtual void vfunc137(); virtual void vfunc138(); virtual void vfunc139();
     virtual void vfunc140(); virtual void vfunc141(); virtual void vfunc142(const CRagdollPropDamageInfo *pInfo); virtual void vfunc143(); virtual void vfunc144();	// slot 142 "CRagdollProp::OnTakeDamage"-like: forwards a copy of the info with bit 23 of the damage type added to the entity of the handle at +0xd5c when it is live, else the base implementation
