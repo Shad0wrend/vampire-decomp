@@ -72470,6 +72470,21 @@ void CUnknown10206c70::sub_10206aa0(int nTemplate, CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10206c30 size=0x28
+#include "CUnknown10206c70.h"
+#include "CUnknown101d5bd0.h"
+
+extern char g_10738d10[];
+
+// TARGET: CUnknown10206c70::sub_10206c30
+void CUnknown10206c70::sub_10206c30(const char *pszName, CBaseCombatCharacter *pChar)
+{
+    int nTemplate = ((CUnknown101d5bd0 *)g_10738d10)->sub_101d5bd0(pszName);
+    if (nTemplate != -1)
+        sub_10206aa0(nTemplate, pChar);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206c70 size=0xe6
 #include "CUnknown10206c70.h"
 #include "CBaseCombatCharacter.h"

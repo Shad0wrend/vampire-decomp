@@ -5622,6 +5622,7 @@
 0x10011e1e func   ?sub_100a52a0@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100a52a0
 0x10011e23 func   ?sub_101f4eb0@CDumpThing@@QAEXXZ CDumpThing::sub_101f4eb0
 0x10011e37 func   ?sub_100a9290@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9290
+0x10011e41 func   ?sub_10206c30@CUnknown10206c70@@QAEXPBDPAVCBaseCombatCharacter@@@Z CUnknown10206c70::sub_10206c30
 0x10011e46 func   ?sub_102008e0@CVStatList_t@@QAEXHH@Z CVStatList_t::sub_102008e0
 0x10011e4b func   ?sub_1042d9f0@@YIIPAI@Z sub_1042d9f0
 0x10011e55 func   ?sub_10257280@CWeaponRanged@@QAEHPAX0H@Z CWeaponRanged::sub_10257280
