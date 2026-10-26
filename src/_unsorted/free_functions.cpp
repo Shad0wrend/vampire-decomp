@@ -83255,6 +83255,30 @@ int sub_1024afe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024b000 size=0x25
+struct CUnknown1024b000_Ref
+{
+    unsigned short *sub_10005c95();
+};
+
+CUnknown1024b000_Ref *__stdcall sub_1024afe0(int *pValue, int value);
+
+struct CUnknown1024b000
+{
+    unsigned short m_nValue;
+
+    CUnknown1024b000 *sub_1024b000(int value);
+};
+
+// TARGET: CUnknown1024b000::sub_1024b000
+CUnknown1024b000 *CUnknown1024b000::sub_1024b000(int value)
+{
+    unsigned short *p = sub_1024afe0(&value, value)->sub_10005c95();
+    m_nValue = *p;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024b070 size=0x8
 extern char g_105c5338;
 void sub_1024b070() { g_105c5338 = 0; }
