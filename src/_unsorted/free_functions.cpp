@@ -81880,6 +81880,20 @@ void sub_10243700(const Vector &origin, const Vector &angles, const Vector &mins
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245540 size=0x25
+#include "ConCommandBase.h"
+
+extern char vt_1049745c[];
+
+// TARGET: sub_10245540
+ConCommandBase *ConCommandBase::sub_10245540(const char *pszName, const char *pszHelp, int nFlags)
+{
+    *(void **)this = vt_1049745c;
+    vfunc2(pszName, pszHelp, nFlags);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245660 size=0x3d
 int sub_1043e780(const char *, const char *);
 
