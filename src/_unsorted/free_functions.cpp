@@ -75758,6 +75758,19 @@ void CPropHacking::sub_1021b410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021bc20 size=0x25
+void __stdcall sub_10015569(int value);
+
+// TARGET: sub_1021bc20
+void __fastcall sub_1021bc20(char *pThis)
+{
+    int *pCount = (int *)(pThis + 0x9f0);
+    if (*pCount < *(int *)(pThis + 0xa04) + 1)
+        *pCount = *pCount + 1;
+    sub_10015569(*pCount);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021bec0 size=0xca
 #include <string.h>
 #include "CUnknown1021bec0.h"
