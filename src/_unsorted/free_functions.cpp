@@ -71237,6 +71237,25 @@ void CUnknown10202fd0::sub_10202fd0(CSlotIter *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203110 size=0x28
+struct CUnknown10203110 {
+    char pad_0000[8];
+    int m_nCount;
+    int **m_ppElements;
+    int sub_10203110(int value);
+};
+
+// TARGET: CUnknown10203110::sub_10203110
+int CUnknown10203110::sub_10203110(int value)
+{
+    for (int i = 0; i < m_nCount; i++) {
+        if (*m_ppElements[i] == value)
+            return i;
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203150 size=0x2e
 // TARGET: sub_10203150
 
