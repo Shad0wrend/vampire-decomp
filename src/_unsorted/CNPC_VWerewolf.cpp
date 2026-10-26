@@ -353,6 +353,26 @@ void CNPC_VWerewolf::vfunc516()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d4a20 size=0x2c
+struct CWerewolfUnit103d4a20 {
+    char pad66ec[0x66ec];
+    int m_i66ec;
+    void sub_10009ecb();
+    void sub_103d4a20();
+};
+extern char *g_1070b228;
+
+// TARGET: sub_103d4a20
+void CWerewolfUnit103d4a20::sub_103d4a20()
+{
+    sub_10009ecb();
+    m_i66ec = *(int *)((char *)g_1070b228 + 0xc);
+    *(int *)((char *)this + 0x66d8) = 0;
+    *(int *)((char *)this + 0x66d4) = 0;
+    *(int *)((char *)this + 0x66a4) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d5050 size=0xa4
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
