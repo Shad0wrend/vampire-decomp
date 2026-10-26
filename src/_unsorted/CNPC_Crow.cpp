@@ -49,6 +49,22 @@ void CNPC_Crow::vfunc481(CBaseEntity *pEnemy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357b30 size=0x28
+#include "CNPC_Crow.h"
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+// TARGET: CNPC_Crow::vfunc465
+void CNPC_Crow::vfunc465(int nEvent)
+{
+    if (nEvent == 0x22)
+    {
+        m_fl6f8 = g_1070b244->vfunc1(0.0f, 0.75f);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358ce0 size=0x17a
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"
