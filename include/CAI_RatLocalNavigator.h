@@ -2,9 +2,14 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+class CAI_PlaneSolver;
+
 class CAI_RatLocalNavigator
 {
 public:
 	CAI_RatLocalNavigator *vfunc0(unsigned int flags);
+	CAI_PlaneSolver *vfunc8();	// slot 8: a new CAI_RatPlaneSolver for the owner at +0x4 (0 when the allocation fails)
 	void sub_10006988();
+
+	int m_pOwner;	// 0x4: the owning NPC
 };
