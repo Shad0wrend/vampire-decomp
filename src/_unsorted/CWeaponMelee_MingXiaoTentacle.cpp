@@ -50,3 +50,27 @@ int CWeaponMelee_MingXiaoTentacle::vfunc367(int a, float b, float c)
 	return 0x51;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103eca50 size=0xbf
+#include "CWeaponMelee_MingXiaoTentacle.h"
+#include "CWeaponMelee_MingXiaoMelee.h"
+#include "CUnknown1070b244.h"
+extern CUnknown1070b244 *g_1070b244;
+
+void CWeaponMelee_MingXiaoTentacle::vfunc269(CBaseCombatWeapon *pOther, Vector vecDir)
+{
+    CWeaponMelee_MingXiaoMelee *pWeapon = (CWeaponMelee_MingXiaoMelee *)this;
+    if (pOther) {
+        if (pWeapon->m_n0910 > 0 && pWeapon->m_n0910 <= 2) {
+            float *p = (float *)pWeapon->sub_102517e0();
+            float f = g_1070b244->vfunc1(p[0x3b8 / 4], p[0x3bc / 4]);
+            if (f != 0.0f) {
+                vecDir = vecDir * -f;
+                pOther->vfunc170(&vecDir);
+            }
+        } else {
+            pWeapon->CBaseCombatWeapon::vfunc269(pOther, vecDir);
+        }
+    }
+}
+// END FUNCTION
