@@ -30,6 +30,24 @@ void CTriggerWind::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cab20 size=0x26
+#include "CTriggerWind.h"
+
+struct CGlobalVarsView
+{
+	char pad0000[0xc];
+	float curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+
+// TARGET: CTriggerWind::vfunc241
+void CTriggerWind::vfunc241(int a)
+{
+	sub_10012206(a);
+	*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101caee0 size=0xe9
 #include "CTriggerWind.h"
 

@@ -4808,6 +4808,7 @@
 0x1000f2a9 func   ?vfunc546@CNPC_VCop@@QAEHH@Z CNPC_VCop::vfunc546
 0x1000f2bd func   _item_w_tzimisce_melee item_w_tzimisce_melee
 0x1000f2cc func   ?sub_100ea0d0@@YI_NPAUHandlePairHolder@@HPADH@Z sub_100ea0d0
+0x1000f2d1 func   ?vfunc241@CTriggerWind@@UAEXH@Z CTriggerWind::vfunc241
 0x1000f2d6 func   ?sub_10074160@CUnknown10074070@@QAEPAMHH@Z CUnknown10074070::sub_10074160
 0x1000f2ea func   ?vfunc5@CResearchBook_MG_BRAWL@@QAEPAV1@I@Z CResearchBook_MG_BRAWL::vfunc5
 0x1000f2ef func   ?sub_10310290@CAI_Senses@@QAEHH@Z CAI_Senses::sub_10310290
