@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1022bca0 size=0x86
+#include "CPropRadio.h"
+#include "CBaseAnimating.h"
+#include "utlvector.h"
+
+struct CPropRadioRecord {
+	char m_data[0x100];
+};
+void sub_100aa7b0(void *pEntity);
+
+CPropRadio *CPropRadio::vfunc5(unsigned int flags)
+{
+	((CUtlVector<CPropRadioRecord> *)&m_pRadioData)->~CUtlVector<CPropRadioRecord>();
+	((CBaseAnimating *)this)->sub_10004c3c();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022bf10 size=0x161
 #include "CPropRadio.h"
 #include "CUnknown1073dc00.h"
