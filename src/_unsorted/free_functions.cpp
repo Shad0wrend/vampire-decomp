@@ -10056,6 +10056,35 @@ void CUnk_1006cb10::sub_1006cb10(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006cbe0 size=0x28
+struct CUnk1006cbe0
+{
+    char pad0000[0x10];
+    int m_nCount;
+    float *m_pValues;
+
+    int sub_1006cbe0(float x);
+};
+
+// TARGET: CUnk1006cbe0::sub_1006cbe0
+int CUnk1006cbe0::sub_1006cbe0(float x)
+{
+    int i = 0;
+    if (m_nCount > 0)
+    {
+        float *p = m_pValues;
+        do
+        {
+            if (x <= *p)
+                return i;
+            i++;
+            p++;
+        } while (i < m_nCount);
+    }
+    return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cc20 size=0x79
 int sub_10431c2f(char *, const char *, ...);
 void sub_10203dd0(char *);
