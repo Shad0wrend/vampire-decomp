@@ -4593,6 +4593,7 @@
 0x1000edea func   ?sub_1014ee10@@YAPAHXZ sub_1014ee10
 0x1000edef func   ?vfunc8@IPhysicsCollisionEvent@@UAEXPAX0@Z IPhysicsCollisionEvent::vfunc8
 0x1000edf4 func   ?vfunc130@CAI_InterestingPlace@@UAEXH@Z CAI_InterestingPlace::vfunc130
+0x1000edf9 func   ?sub_1013b090@@YAXHPAHPAD@Z sub_1013b090
 0x1000ee26 func   ?vfunc2@CTEKillPlayerAttachments@@UAEPAV1@I@Z CTEKillPlayerAttachments::vfunc2
 0x1000ee3a func   ?vfunc3@CBaseTempEntity@@UAEXABVVector@@ABVQAngle@@@Z CBaseTempEntity::vfunc3
 0x1000ee5d func   ?vfunc425@CAI_BaseNPC@@UAEPAVCAI_Senses@@XZ CAI_BaseNPC::vfunc425

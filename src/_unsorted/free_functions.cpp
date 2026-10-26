@@ -41433,6 +41433,18 @@ void sub_1013af60(const Quaternion &p, const Quaternion &q, Quaternion &qt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013b090 size=0x2a
+void sub_1013b0d0(int a, void *p);
+
+void sub_1013b090(int a1, int *pSrc, char *pDst)
+{
+    sub_1013b0d0(a1, pDst);
+    *(int *)(pDst + 0xc) = pSrc[0];
+    *(int *)(pDst + 0x1c) = pSrc[1];
+    *(int *)(pDst + 0x2c) = pSrc[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013b0d0 size=0xdb
 struct Q { float x, y, z, w; };
 void sub_1013b0d0(const Q &q, float *m)
