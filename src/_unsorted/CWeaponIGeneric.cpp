@@ -34,6 +34,24 @@ void CWeaponIGeneric::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4840 size=0x23
+#include <string.h>
+#include "CWeaponIGeneric.h"
+
+extern char g_106b8540[];
+
+// TARGET: CWeaponIGeneric::vfunc328
+int CWeaponIGeneric::vfunc328()
+{
+	const char *pszName = *(const char **)((char *)this + 0x11c);
+	if (pszName == 0) {
+		pszName = g_106b8540;
+	}
+	_strcmpi(pszName, "item_g_lockpick");
+	return 0xbc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f48a0 size=0x70
 #include "CWeaponIGeneric.h"
 struct IRandom { virtual void v0(); virtual void v1(); virtual int RandomInt(int lo, int hi); };
