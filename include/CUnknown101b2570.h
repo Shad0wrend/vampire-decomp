@@ -10,13 +10,16 @@ struct SFloatPair
 class CUnknown101b2570
 {
 public:
-	char m_pad0000[0xc];
+	int m_nChannel;	// 0x0000: the channel id (sub_101b24d0 of the channel name)
+	char m_pad0004[0xc - 0x4];
 	SFloatPair m_pitch;	// 0x000c
 	SFloatPair m_soundlevel;	// 0x0014
-	char m_pad001c[0x89 - 0x1c];
+	char m_pad001c[0x69 - 0x1c];
+	char m_szChannel[0x20];	// 0x0069: the channel name (copied with 32 bytes, see sub_101b2490)
 	char m_szSoundLevel[0x20];	// 0x0089
 	char m_szPitch[0x20];	// 0x00a9
 
+	void sub_101b2490(const char *channel);	// "channel": m_nChannel = sub_101b24d0(channel) (the channel id), then the name is copied into m_szChannel (32 bytes)
 	void sub_101b2570(const char *pitch);	// parses "PITCH_NORM" / "PITCH_LOW" / "PITCH_HIGH" or a number pair, and keeps the text
 	void sub_101b2630(const char *soundlevel);	// parses "SNDLVL_..." (through sub_101b49f0) or a number pair into m_soundlevel, and keeps the text
 	const char *sub_101b2320();	// the pitch as text: the name of the constant for a pitch without a spread (PITCH_NORM ... through sub_101b23b0(float)), else "%i, %i" of (int)a and (int)(a + b) in a global buffer
