@@ -73,7 +73,8 @@ public:
 	CAI_NPC_V(370) CAI_NPC_V(371) CAI_NPC_V(372) CAI_NPC_V(373) CAI_NPC_V(374)
 	virtual int vfunc375(int act);	// TranslateActivity step 1: the activity the NPC wants for act
 	virtual int vfunc376(int act);	// the next activity of the fallback chain
-	CAI_NPC_V(377) CAI_NPC_V(378) CAI_NPC_V(379)
+	CAI_NPC_V(377) CAI_NPC_V(378)
+	virtual bool vfunc379(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g);	// slot 379 (ret 0x1c: seven stack arguments): the Troika override damages pEnt with its damage records first
 	CAI_NPC_V(380)
 	virtual int vfunc381(int act);	// resolves an activity to the sequence/activity the model really has
 	CAI_NPC_V(382)
