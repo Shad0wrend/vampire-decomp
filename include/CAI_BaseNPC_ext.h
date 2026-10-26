@@ -6,3 +6,4 @@
 	Vector sub_10278650(const Vector &vecPos, int a, int b);	// stub 0x1001592e, called directly by vfunc574, returns a Vector by value
 	void sub_102697b0();	// a think function (next think 0.1 s ahead): while a player (1..maxClients) is closer than 256 units, or within 1500 units and looking at this NPC (the player's view angles at +0x206c), it keeps waiting; otherwise the next think is the function 0x10015b68 (SetThink via sub_100ac4e0)
 	void sub_10269f30(int condition);	// "CAI_BaseNPC::ClearCondition" (stub 0x1000c39c): ids below 1000000000 (and -1) are translated through slot 580 first, then the condition bit in the array at +0x5c5c is cleared
+	void vfunc511();	// slot 511 (plain member): sends the edict at +0x2e0 to the engine (IndexOfEdict-style slot 35 of 0x1070b22c with a 1) and gives the index to the sound system's slot 5
