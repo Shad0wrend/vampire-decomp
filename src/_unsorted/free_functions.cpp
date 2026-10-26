@@ -38284,6 +38284,36 @@ void sub_1011a710(char flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011bc70 size=0x21
+struct CUnkVT1011bc70
+{
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3();
+    virtual void vf4();
+    virtual void vf5();
+    virtual void vf6();
+    virtual void vf7();
+    virtual int vf8(int a, int b);
+};
+
+extern CUnkVT1011bc70 *g_1070b23c;
+extern int g_10571c24;
+
+// TARGET: sub_1011bc70
+int sub_1011bc70(int param)
+{
+    if (param != 0) {
+        int result = g_1070b23c->vf8(g_10571c24, param);
+        if (result >= 0) {
+            return result;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d2e0 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_1011d2e0(const Vector &v)
