@@ -124469,6 +124469,28 @@ CActivityEntry *sub_10412420(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10412470 size=0x2a
+struct CUnknown10412470Ent
+{
+    int key;
+    int value;
+};
+
+extern int g_109d301c;
+extern CUnknown10412470Ent *g_109d3010;
+
+// TARGET: sub_10412470
+CUnknown10412470Ent *sub_10412470(int key)
+{
+    int i;
+    for (i = 0; i < g_109d301c; i++) {
+        if (g_109d3010[i].key == key)
+            return &g_109d3010[i];
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10412590 size=0xcb
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(int);
