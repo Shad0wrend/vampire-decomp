@@ -30369,6 +30369,48 @@ float CCollisionProperty::sub_100dd2e0(const float *pDir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd450 size=0x148
+#include "CCollisionProperty.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct ColView {
+    virtual void a0(); virtual void a1(); virtual void a2();
+    virtual void WorldSpaceTriggerBounds(Vector *pMins, Vector *pMaxs);
+    virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7();
+    virtual const Vector *GetCollisionOrigin();
+    virtual const Vector *GetCollisionAngles(int unused);
+};
+struct PhysView {
+    V10(a) V10(b) V10(c) V10(d)
+    virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8();
+    virtual int Get();
+};
+struct SurroundView {
+    V10(a) 
+    virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7();
+    virtual void Compute(Vector *pMins, Vector *pMaxs, int a, const Vector *pOrigin, const Vector *pAngles);
+};
+extern SurroundView *g_1072393c;
+void CCollisionProperty::sub_100dd450(Vector *pMins, Vector *pMaxs)
+{
+    ColView *self = (ColView *)this;
+    PhysView *pPhys = (PhysView *)m_pOuter->m_obj36c;
+    if (pPhys) {
+        g_1072393c->Compute(pMins, pMaxs, pPhys->Get(), self->GetCollisionOrigin(), self->GetCollisionAngles(0));
+    } else {
+        const Vector *pOrigin = self->GetCollisionOrigin();
+        *pMins = *pOrigin;
+        *pMaxs = *pMins;
+    }
+    if (m_usSolidFlags & 0x100) {
+        Vector mins, maxs;
+        self->WorldSpaceTriggerBounds(&mins, &maxs);
+        VectorMin(mins, *pMins, *pMins);
+        VectorMax(maxs, *pMaxs, *pMaxs);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd630 size=0xcf
 #include "CCollisionProperty.h"
 #include <math.h>
