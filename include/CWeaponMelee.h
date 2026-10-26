@@ -24,7 +24,7 @@ public:
 	void vfunc370(int *event, CBaseCombatWeapon *other);	// animation events: 0xbb9 / 0xbd6..0xbe7 run slot 326 unless other has its dword at +0xa8 set, 0xfa1 / 0xfa2 set a bodygroup from the event's string, the rest go to the base class
 	virtual char vfunc372(int a, int b, int c);	// slot 372 (stub 0x100148e9): starts the swing activity a; the first slot beyond CBaseCombatWeapon's 372
 	void *sub_100011f4();	// the weapon's owner (CAI_BaseNPCTroika::sub_10252240 stub)
-	char sub_1000c37e(int a);	// helper taking the result of slot 342 (stub)
+	char sub_1000c37e(int a, int b, int c, int d);	// CBaseCombatWeapon::sub_10253b70 (stub): the results of slots 342 / 343, 0xb4 and the result of slot 344
 	void sub_10093b10(int group, int value);	// CBaseAnimating::SetBodygroup, called directly (stub 0x10001bb8)
 	void sub_103ea5b0(CWeaponMeleeEvent *pEvent, int b);	// slot 370 (vfunc370) as CWeaponMelee_MingXiaoMelee calls it
 	void sub_103ea7e0(int kind, int a, int b, int c);
