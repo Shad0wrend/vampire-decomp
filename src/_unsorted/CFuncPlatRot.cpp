@@ -12,6 +12,17 @@ void CFuncPlatRot::vfunc243()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a340 size=0x28
+#include "CFuncPlatRot.h"
+#include "CFuncPlat.h"
+// TARGET: CFuncPlatRot::vfunc242
+void CFuncPlatRot::vfunc242()
+{
+    ((CFuncPlat *)this)->CFuncPlat::vfunc242();
+    ((CFuncPlat *)this)->sub_1015a3c0(*(Vector *)((char *)this + 0x574), ((CFuncPlat *)this)->m_flMoveDoneTime - ((CFuncPlat *)this)->m_flLocalTime);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a550 size=0x36
 #include "CFuncPlatRot.h"
 
