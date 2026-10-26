@@ -48185,6 +48185,66 @@ void CAI_BaseNPC::sub_101828b0(CBaseEntity *pEnt, float flScore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182a90 size=0x143
+#include "CAI_BaseNPC.h"
+#include "CUnknown10739d08.h"
+#include "CEHandleGet.h"
+
+extern CUnknown10739d08 g_10739d08;
+
+struct ScoreEnt
+{
+	float sub_1029c970();
+	float sub_1029c9f0(float flValue, CAI_BaseNPC *pNPC);
+	float sub_1029ca30(float flValue);
+};
+
+struct ScoreEntView
+{
+	char m_pad0000[0x628c];
+	unsigned int m_hOther;
+};
+
+struct ScoreNPCView : public CAI_BaseNPC
+{
+	char m_pad0004[0x1cc0 - 4];
+	unsigned int m_hBest;
+	float m_flBestScore;
+	int m_nStamp;
+};
+
+// TARGET: CAI_BaseNPC::sub_10182a90
+int CAI_BaseNPC::sub_10182a90()
+{
+	ScoreNPCView *pThis = (ScoreNPCView *)this;
+	int nScale = g_10739d08.sub_101e9000();
+	ScoreEnt *pEnt = (ScoreEnt *)EHandle_Get(pThis->m_hBest);
+	if (pEnt)
+	{
+		float flFirst = pEnt->sub_1029c970();
+		float flSecond;
+		float flThird;
+		if (EHandle_Get(((ScoreEntView *)pEnt)->m_hOther))
+		{
+			flSecond = pEnt->sub_1029c9f0(flFirst, this);
+			flThird = pEnt->sub_1029ca30(flSecond);
+		}
+		else
+		{
+			flThird = pEnt->sub_1029ca30(flFirst);
+			flSecond = flThird;
+		}
+		if (flThird > pThis->m_flBestScore)
+			return 0x264;
+		if (pThis->m_flBestScore > flFirst)
+			return 0;
+		int bFlag = nScale * flSecond * 0.01f > pThis->m_flBestScore;
+		return (int)(100.0f - (pThis->m_flBestScore - flThird) * 100.0f / (flFirst - flThird)) | (bFlag << 8);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182c40 size=0xe6
 #include "CAI_BaseNPC.h"
 struct Globals { char pad[0xc]; float curtime; };

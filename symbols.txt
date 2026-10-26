@@ -2277,6 +2277,7 @@
 0x10007a6d func   ?sub_10315a80@CUnknown103160c0@@QAEPAVCBaseEntity@@PBVVector@@M@Z CUnknown103160c0::sub_10315a80
 0x10007a77 func   ?vfunc103@CSceneEntity@@UAEXXZ CSceneEntity::vfunc103
 0x10007a86 func   _item_w_glock_17c item_w_glock_17c
+0x10007a95 func   ?sub_10182a90@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_10182a90
 0x10007a9a func   ?sub_104087d0@@YAHXZ sub_104087d0
 0x10007a9f func   ?sub_102e0900@CAI_Motor@@QAEPAV1@H@Z CAI_Motor::sub_102e0900
 0x10007aa4 func   ?sub_101e5e60@CUnknown101e56e0@@QAEXPAVCBaseCombatCharacter@@@Z CUnknown101e56e0::sub_101e5e60
