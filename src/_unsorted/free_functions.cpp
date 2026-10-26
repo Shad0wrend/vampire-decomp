@@ -41608,6 +41608,17 @@ void sub_1013bef0(const Vector &p1, const Vector &p2, const Vector &d1, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013c050 size=0x2a
+void sub_1013bef0(int a, int b, void *pOut, void *pOut2, int c, int d);
+
+// TARGET: sub_1013c050
+void sub_1013c050(int a, int b, int c, int d, int e)
+{
+    char buf[12];
+    sub_1013bef0(b, c, buf, buf, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c090 size=0x32
 // TARGET: sub_1013c090
 void __cdecl sub_10009548(float a, float b, float c, float d, int e);
