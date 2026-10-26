@@ -96872,6 +96872,26 @@ void sub_102f65b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f65d0 size=0x28
+extern void (*g_109f3890)(char *pDest, const char *pSrc, int nMax);
+
+struct CUnknown102f65d0 {
+    char pad_0000[0x659];
+    unsigned char m_b659;
+    char m_sz65a[0x100];
+    void sub_102f65d0(const char *pszText);
+};
+
+// TARGET: CUnknown102f65d0::sub_102f65d0
+void CUnknown102f65d0::sub_102f65d0(const char *pszText)
+{
+    if (pszText != 0) {
+        m_b659 = 1;
+        g_109f3890(m_sz65a, pszText, 0x100);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f6690 size=0xce
 #include "CAI_NetworkManager.h"
 
