@@ -43007,6 +43007,24 @@ int sub_10152400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155460 size=0x2b
+#include "CBaseAnimating.h"
+
+struct CUnit10155460 : CBaseAnimating {
+    void sub_10155460(int a);
+};
+
+void CUnit10155460::sub_10155460(int a)
+{
+    int iVar = ((CBaseAnimating *)this)->sub_1008dc40(a, -1);
+    if (iVar < 0) {
+        *(int *)((char *)this + 0xd64) = -1;
+        return;
+    }
+    *(int *)((char *)this + 0xd64) = iVar;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101563b0 size=0x88
 struct CRagdollBody { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
 	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
