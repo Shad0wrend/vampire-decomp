@@ -96390,6 +96390,26 @@ void CAI_NodeGraph::sub_102f4e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f4ea0 size=0x29
+struct CUnknown102f4ea0 {
+    char pad_0000[0x1ec];
+    int *m_pElements;
+    int pad_01f0[2];
+    int m_nCount;
+    int sub_102f4ea0(int i);
+};
+
+// TARGET: CUnknown102f4ea0::sub_102f4ea0
+int CUnknown102f4ea0::sub_102f4ea0(int i)
+{
+    if (i == 1)
+        return 1;
+    if (i >= 0 && i < m_nCount)
+        return m_pElements[i];
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f4ee0 size=0x43
 #include "CAI_NetworkManager.h"
 void *sub_100aa720(int size);

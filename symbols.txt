@@ -246,6 +246,7 @@
 0x10001c4e func   ?sub_1005d690@@YAHXZ sub_1005d690
 0x10001c5d func   ?sub_10043320@@YIXPAUMem8@@HH@Z sub_10043320
 0x10001c71 func   ?sub_102d6210@@YAHH@Z sub_102d6210
+0x10001c80 func   ?sub_102f4ea0@CUnknown102f4ea0@@QAEHH@Z CUnknown102f4ea0::sub_102f4ea0
 0x10001c85 func   ?sub_101b4900@@YGMPBD@Z sub_101b4900
 0x10001c8a func   ?vfunc103@CNPCMaker_Fleshpile@@UAEXXZ CNPCMaker_Fleshpile::vfunc103
 0x10001c8f func   ?sub_10090c80@@YIXPAVCBaseAnimating@@HH@Z sub_10090c80
