@@ -52760,6 +52760,18 @@ int sub_101ab310(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab360 size=0x2c
+int sub_10246af0(int a, int b, int c, int d, int e, int f, int g, void *h);
+void sub_101ab3a0();
+
+// TARGET: sub_101ab360
+void *sub_101ab360(void *pSelf, int a, int b, int c)
+{
+	sub_10246af0((int)pSelf, a, b, c, 0x1f, 1, 0, (void *)sub_101ab3a0);
+	return pSelf;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab590 size=0x12
 struct CInitPair101ab590 {
     int pad0;
