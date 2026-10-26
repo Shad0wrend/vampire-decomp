@@ -16,6 +16,7 @@ public:
 	CStandoffParams m_CustomParams;	// 0x488 (used by aggressiveness 5)
 	int m_unk4a4;	// 0x4a4: overwrites the first dword of the parameter block handed to the behaviour
 
+	void vfunc103();	// slot 103: registers the goal's callback (sub_102cd310) with CBaseEntity::sub_100ac4e0, then sets the float at +0x17c to the global's +0xc field plus 0.01
 	void vfunc241(int a);	// slot 241 override: clamps the aggressiveness (valid 0..4, or 5) with a DevMsg, then CAI_GoalEntity::vfunc241(a)
 	void vfunc243(int a);	// slot 243 override: the same aggressiveness check, then CAI_GoalEntity::sub_102cdb70(a)
 	void vfunc244(CAI_BaseNPC *pActor);	// slot 244: like vfunc245 but sets the behaviour's flag at +0x19 and its byte at +0x1a from bit 0 of the byte at +0x204
