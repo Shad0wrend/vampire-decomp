@@ -2554,6 +2554,21 @@ void CBaseEntity::vfunc226(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5040 size=0x2f
+// TARGET: CBaseEntity::vfunc225
+void sub_1002ee60(CBaseEntity *pEnt);
+void sub_10004705(int pObject, CBaseEntity *pEnt);
+
+void CBaseEntity::vfunc225()
+{
+	if (m_obj36c != 0) {
+		sub_1002ee60(this);
+		sub_10004705(m_obj36c, this);
+		m_obj36c = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10267260 size=0xba
 #include "CPASFilter.h"
 #include "CUnknown1070b22c.h"
