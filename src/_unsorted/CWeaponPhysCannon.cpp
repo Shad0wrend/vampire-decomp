@@ -226,3 +226,34 @@ void CWeaponPhysCannon::vfunc319()
     ((PlayerSlots *)pPlayer)->vfunc456();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10411440 size=0x2c
+struct CSlotObj10411440 {
+    virtual void v0();
+    virtual void v1();
+    virtual void v2();
+    virtual void v3();
+    virtual void v4();
+    virtual void v5();
+    virtual void v6();
+    virtual void v7();
+    virtual void v8();
+    virtual void vfunc9(int a);
+};
+struct CPhysCannonUnit10411440 {
+    char pad[0x968];
+    int m_i968;
+    CSlotObj10411440 *sub_10004746();
+    void sub_10411440();
+};
+
+// TARGET: sub_10411440
+void CPhysCannonUnit10411440::sub_10411440()
+{
+    if (m_i968 != 0) {
+        CSlotObj10411440 *pObj = sub_10004746();
+        pObj->vfunc9(m_i968);
+        m_i968 = 0;
+    }
+}
+// END FUNCTION
