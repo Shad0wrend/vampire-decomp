@@ -42,6 +42,20 @@ void CFuncElevator::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020f6c0 size=0x24
+#include "CFuncElevator.h"
+#include "CBaseEntity.h"
+#include "CFuncMoveLinear.h"
+
+// TARGET: CFuncElevator::vfunc133
+void CFuncElevator::vfunc133()
+{
+    ((CBaseEntity *)this)->sub_100ac4e0(0, 0, 0);
+    sub_1020f700(*(int *)((char *)this + 0x634));
+    ((CFuncMoveLinear *)this)->sub_10116bf0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216e30 size=0xcd
 #include "CFuncElevator.h"
 
