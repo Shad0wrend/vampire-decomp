@@ -51475,6 +51475,22 @@ bool CRopeKeyframe::sub_1019ee40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0530 size=0x2d
+struct CUnk101a0530 {
+    void sub_1000643d(int a, int b);
+    void sub_101a0530(int a, int b);
+};
+
+// TARGET: sub_101a0530
+void CUnk101a0530::sub_101a0530(int a, int b)
+{
+    unsigned int local;
+    *((unsigned char *)&local + 3) = 0;
+    sub_1000643d(a, b);
+    sub_1000643d((int)((unsigned char *)&local + 3), 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a05f0 size=0x153
 #include "CSave.h"
 #include <string.h>
