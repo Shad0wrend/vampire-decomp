@@ -43,3 +43,18 @@ void CSecCamera::vfunc113()
     ((CBreakableProp *)this)->sub_10007fe5((void *)sub_10004c19, 0, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1020c850 size=0x25
+#include "CSecCamera.h"
+
+extern int *g_1070b228;
+
+// TARGET: vfunc133
+void CSecCamera::vfunc133()
+{
+    sub_1020c890();
+    sub_10007725();
+    *(int *)&m_flNextStateTime7a0 = g_1070b228[3];
+    sub_1020c3d0();
+}
+// END FUNCTION
