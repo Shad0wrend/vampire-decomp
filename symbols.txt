@@ -621,6 +621,7 @@
 0x10002ef5 func   ?sub_101c67e0@@YAPAHXZ sub_101c67e0
 0x10002efa func   ?vfunc599@CNPC_VYukie@@QAEDH@Z CNPC_VYukie::vfunc599
 0x10002f04 func   ?sub_10086e50@@YAXXZ sub_10086e50
+0x10002f13 func   ?vfunc104@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::vfunc104
 0x10002f18 func   ?sub_10342470@@YA_NPAUUserEntity@@PAUUsedEntity@@@Z sub_10342470
 0x10002f1d func   ?sub_101ccd40@@YIHPAH@Z sub_101ccd40
 0x10002f22 func   ?vfunc0@CAI_RatLocalNavigator@@QAEPAV1@I@Z CAI_RatLocalNavigator::vfunc0
