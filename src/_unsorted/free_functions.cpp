@@ -33779,6 +33779,22 @@ void CEnvShake::sub_10100f90(inputdata_t &inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101010c0 size=0x2f
+// TARGET: sub_101010c0
+void sub_10101100(int *a, int *b);
+int sub_10008d8c();
+void sub_10009020(int a, int *b, int c, int d, int e);
+
+void sub_101010c0()
+{
+    int a;
+    int b;
+    sub_10101100(&a, &b);
+    int r = sub_10008d8c();
+    sub_10009020(r, &b, a, 0, 0x1a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101100 size=0xe5
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
     virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
