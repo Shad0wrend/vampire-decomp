@@ -22,7 +22,7 @@ public:
 	virtual void slot11();
 	virtual void slot12();
 	virtual void slot13();
-	virtual void slot14();
+	virtual int slot14(int type);	// slot 14: maps type 0 to 0x14, 1 to 0x1a, 2 to 0xd and any other to 1
 	virtual void slot15();
 	virtual void slot16();
 	virtual void slot17();	// called by vfunc18 when bit 1 of the player's +0x24 is set
