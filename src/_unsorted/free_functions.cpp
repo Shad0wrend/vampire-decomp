@@ -58915,6 +58915,18 @@ void CStatDefault3List::sub_101d5a30(const char *pszName, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d5b90 size=0x2f
+#include "CStatDefault3List.h"
+// TARGET: sub_101d5b90
+
+void CStatDefault3List::sub_101d5b90()
+{
+    int a = 0;
+    sub_101d5a30("ClanDoc", (int)&a);
+    sub_101d5a30("NPCTemplate", (int)&a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d5c40 size=0xa8
 extern "C" char *_strlwr(char *);
 extern "C" char *strstr(const char *, const char *);
