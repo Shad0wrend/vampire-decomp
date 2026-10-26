@@ -12,6 +12,21 @@ void CFuncPlatRot::vfunc243()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a300 size=0x27
+#include "CFuncPlatRot.h"
+#include "CFuncPlat.h"
+
+extern Vector g_1070d9d0;
+
+// TARGET: CFuncPlatRot::vfunc245
+void CFuncPlatRot::vfunc245()
+{
+    ((CFuncPlat *)this)->CFuncPlat::vfunc245();
+    ((CFuncPlat *)this)->sub_100b2f50(g_1070d9d0);
+    ((CFuncPlat *)this)->vfunc64(&m_vecStart);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a340 size=0x28
 #include "CFuncPlatRot.h"
 #include "CFuncPlat.h"
