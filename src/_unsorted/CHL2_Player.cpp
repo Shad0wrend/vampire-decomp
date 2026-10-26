@@ -204,6 +204,21 @@ bool CHL2_Player::vfunc473(float flDelta)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103529e0 size=0x2c
+#include "CHL2_Player.h"
+
+// TARGET: CHL2_Player::vfunc474
+void CHL2_Player::vfunc474(float value)
+{
+    float *pAmount = (float *)((char *)this + 0x2464);
+    float f = value + *pAmount;
+    *pAmount = f;
+    if (f > 100.0) {
+        *pAmount = 100.0f;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352a20 size=0x3e
 #include "CHL2_Player.h"
 
