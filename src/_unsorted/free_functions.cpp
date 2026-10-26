@@ -54304,6 +54304,24 @@ void CInitPair101ab590::sub_101ab590(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab720 size=0x23
+void __fastcall sub_10003828(void *pObj);
+void __fastcall sub_10010e74(void *pObj);
+
+// TARGET: sub_101ab720
+void __fastcall sub_101ab720(void *pSelf, int unused, void *pNew)
+{
+    void **pSlot = (void **)((char *)pSelf + 8);
+    if (*pSlot != 0) {
+        sub_10003828(*pSlot);
+    }
+    *pSlot = pNew;
+    if (pNew != 0) {
+        sub_10010e74(pNew);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab800 size=0xb9
 #include "CUnknown101ab800.h"
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
