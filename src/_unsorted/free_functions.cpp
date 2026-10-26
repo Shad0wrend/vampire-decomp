@@ -31459,6 +31459,28 @@ int EntryTable::sub_100ecc60(int idx, int slot)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eccf0 size=0x27
+struct SIndexedTable_t {
+    int unk0;
+    int nDefault;
+    char *pEntries;
+    int unkC;
+    int unk10;
+    int nMax;
+};
+
+struct CIndexedTableView : SIndexedTable_t {
+    int sub_100eccf0(int index);
+};
+
+int CIndexedTableView::sub_100eccf0(int index)
+{
+    if (index < 0 || index > nMax)
+        index = nDefault;
+    return *(int *)(pEntries + 0x240 + index * 0x264);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ecd30 size=0x8f
 #include "CUnknown100ecd30.h"
 

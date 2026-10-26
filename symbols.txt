@@ -6723,6 +6723,7 @@
 0x10015113 func   ?sub_1036e400@CNPC_VChangBros@@QAEXXZ CNPC_VChangBros::sub_1036e400
 0x1001512c func   ?sub_102f0e80@CAI_Navigator@@QAE_NPAD@Z CAI_Navigator::sub_102f0e80
 0x10015131 func   ?sub_100ecb40@CThreeVecs@@QAEXXZ CThreeVecs::sub_100ecb40
+0x10015145 func   ?sub_100eccf0@CIndexedTableView@@QAEHH@Z CIndexedTableView::sub_100eccf0
 0x1001514a func   ?sub_100b3b00@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3b00
 0x1001514f func   ?vfunc5@CAI_TestHull@@QAEPAV1@I@Z CAI_TestHull::vfunc5
 0x10015154 func   ?sub_1013b390@@YAXABUSRadianEuler@@AAVQuaternion@@@Z sub_1013b390
