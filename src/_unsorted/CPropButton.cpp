@@ -89,6 +89,23 @@ void CPropButton::vfunc265(void *pActivator, void *pCaller, int useType, float v
 }
 // END FUNCTION
 
+// FUNCTION: 0x10215b40 size=0x22
+struct CPropButtonX
+{
+    char sub_100a7bd0(void *pActivator);
+    int sub_10215b40(void *pActivator);
+};
+
+// TARGET: sub_10215b40
+int CPropButtonX::sub_10215b40(void *pActivator)
+{
+    if (*((char *)this + 0x738)) {
+        return 0;
+    }
+    return sub_100a7bd0(pActivator) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10215b80 size=0x3b
 #include "CPropButton.h"
 
