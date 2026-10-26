@@ -114193,6 +114193,22 @@ void CNPC_VVampireBoss::sub_103c63c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c67f0 size=0x25
+extern int *g_1070b228;
+
+struct CUnknown103c67f0
+{
+    char sub_103c67f0(float f);
+};
+
+// TARGET: CUnknown103c67f0::sub_103c67f0
+char CUnknown103c67f0::sub_103c67f0(float f)
+{
+    float diff = *(float *)((char *)g_1070b228 + 0xc) - *(float *)((char *)this + 0x5d9c);
+    return f < diff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c6830 size=0x164
 #include <math.h>
 #include "CNPC_VVampireBoss.h"
