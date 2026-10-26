@@ -49736,6 +49736,62 @@ int sub_1018c9a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018cb00 size=0x76
+#include "CBaseEntity.h"
+
+void *sub_100aa720(int size);
+extern void *vt_1044b584[];
+extern void *vt_10472574[];
+extern char g_1058c550[];
+void __fastcall sub_10002ddd(void *pThis);
+
+struct SHandle
+{
+	unsigned int m_Index;
+	SHandle() { m_Index = 0xffffffff; }
+};
+
+struct SOutput
+{
+	char m_data[0x18];
+	SOutput() { sub_10002ddd(this); }
+};
+
+struct SPointBase
+{
+	void **m_vptr;
+	char m_pad0004[0x454 - 4];
+	SPointBase()
+	{
+		((CBaseEntity *)this)->sub_1009d980(0);
+		m_vptr = vt_1044b584;
+	}
+	static void *operator new(unsigned int size) { return sub_100aa720(size); }
+};
+
+struct CPointAngleSensorView : SPointBase
+{
+	SHandle m_hTarget;
+	SHandle m_hFacing;
+	char m_pad045c[0x46c - 0x45c];
+	SOutput m_Output1;
+	SOutput m_Output2;
+	CPointAngleSensorView()
+	{
+		m_vptr = vt_10472574;
+	}
+};
+
+// TARGET: point_anglesensor
+extern "C" CBaseEntity *point_anglesensor()
+{
+	CPointAngleSensorView *pv = new CPointAngleSensorView;
+	CBaseEntity *p = (CBaseEntity *)pv;
+	p->vfunc106(g_1058c550);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018cc00 size=0x108
 struct ISaveRestoreOps;
 struct datamap_t;
