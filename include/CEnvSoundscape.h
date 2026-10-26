@@ -14,6 +14,7 @@ class CEnvSoundscape
 {
 public:
 	CEnvSoundscape *vfunc5(unsigned int flags);
+	void vfunc103();	// slot 103: the next think time (+0x17c) is the random value of the stream at 0x1070b244 (vfunc1(0, 0.5f)) plus curtime
 	void sub_1000cb8a();
 	void sub_101ae6c0(CEnvSoundscapeParams *pParams);	// fills the soundscape parameters: +0x30 = the dword at +0x458, +0x38 = the edict index (engine slot 35 of the edict at +0x2e0), then for each of the four position names at +0x45c finds the named entity and stores its origin (slot 217) and the found bit in +0x34
 	void vfunc123();	// slot 123 (plain member): with a debug flag (mask 0x2c of the byte at +0x224) set and the local player in this soundscape (the player's index at +0x2014 equals this edict's index), draws a debug box at the player's slot 192 position (red unless the float at +0x454 is 1.0f); then the base CBaseEntity::vfunc123
