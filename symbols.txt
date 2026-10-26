@@ -2353,6 +2353,7 @@
 0x10008657 func   ?sub_100bbb10@CBeam@@QAEXHPAPAVCBaseEntity@@PAH@Z CBeam::sub_100bbb10
 0x10008666 func   ?sub_10240670@@YA_NABVVector@@0PAUBoxObj@@M@Z sub_10240670
 0x1000866b func   ?vfunc223@CFuncKeyframedMover@@QAE_NXZ CFuncKeyframedMover::vfunc223
+0x1000867a func   ?sub_10114f20@@YAHXZ sub_10114f20
 0x1000867f func   ?vfunc408@CBaseGrenade@@UAEXXZ CBaseGrenade::vfunc408
 0x10008684 func   ?vfunc5@CFuncAreaPortalBase@@QAEPAV1@I@Z CFuncAreaPortalBase::vfunc5
 0x1000868e func   ?sub_1007ecf0@CUnknown1007ecf0@@QAEXD@Z CUnknown1007ecf0::sub_1007ecf0

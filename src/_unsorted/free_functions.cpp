@@ -35956,6 +35956,28 @@ int sub_10114820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114f20 size=0x93
+#include "SendTable.h"
+
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int extra, void *proxy);
+SendProp sub_10246dc0(const char *pVarName, int offset, int pTable, void *proxy);
+void sub_10009539();
+extern int g_1055282c;
+extern const char *g_1057057c;
+extern SendTable g_1070a988;
+
+int sub_10114f20()
+{
+	static SendProp s_Props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1055282c, (void *)sub_10009539),
+		sub_10246af0("m_TargetIndex", 0x458, 4, 16, 1, 0, 0),
+	};
+	g_1070a988.sub_10247240(&s_Props[1], 2, g_1057057c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101150f0 size=0x66
 #include "CFuncMonitor.h"
 #include "CPointCamera.h"
