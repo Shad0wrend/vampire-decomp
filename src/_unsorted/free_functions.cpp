@@ -40183,6 +40183,22 @@ int *sub_10135a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135bd0 size=0x2a
+int sub_10008ee5(int p);
+
+struct CUnit10135bd0 {
+    int sub_10135bd0();
+};
+
+int CUnit10135bd0::sub_10135bd0()
+{
+    if (*(int *)((char *)this + 0x488) == 0) {
+        *(int *)((char *)this + 0x488) = sub_10008ee5(*(int *)((char *)this + 0x454));
+    }
+    return *(int *)((char *)this + 0x488);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135c10 size=0xb7
 #include "CLogicSquadCondition.h"
 #include "CAI_BaseNPC.h"
