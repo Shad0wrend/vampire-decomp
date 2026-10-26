@@ -117686,6 +117686,20 @@ void CItemContainerLock::sub_103f4fe0(int nMode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f5030 size=0x29
+#include "CBaseLockableEnt.h"
+extern char g_10538764[];
+extern char g_105b2630[];
+// TARGET: sub_103f5030
+bool sub_103f5030(int unused, CBaseEntity *p)
+{
+    CBaseLockableEnt *pl = (CBaseLockableEnt *)__RTDynamicCast(p, 0, g_10538764, g_105b2630, 0);
+    if (pl == 0)
+        return 0;
+    return pl->sub_10224100();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f5220 size=0x72
 #include "SendProp.h"
 
