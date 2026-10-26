@@ -125,6 +125,26 @@ void CAI_BaseNPCTroika::vfunc532(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10293e80 size=0x24
+#include "CAI_BaseNPCTroika.h"
+
+struct CTroikaVFunc527 {
+	bool sub_10293e80(void *pArg);
+};
+
+// TARGET: CTroikaVFunc527::sub_10293e80
+bool CTroikaVFunc527::sub_10293e80(void *pArg)
+{
+	CAI_BaseNPCTroika *pObj = *(CAI_BaseNPCTroika **)((char *)pArg + 0xa0);
+	if (pObj != 0) {
+		if (!pObj->sub_102d1540(this)) {
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293ec0 size=0x8a
 #include "CAI_BaseNPCTroika.h"
 
