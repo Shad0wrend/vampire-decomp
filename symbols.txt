@@ -6745,6 +6745,7 @@
 0x100155dc func   ?sub_10221d60@QuestJournal@@QAEPADHH@Z QuestJournal::sub_10221d60
 0x100155e6 func   ?vfunc25@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc25
 0x100155eb func   ?sub_10250080@CUnknown10250080@@QAEXXZ CUnknown10250080::sub_10250080
+0x100155fa func   ?sub_101fbfc0@CUnit101fbfc0@@QAE_NHHHHH@Z CUnit101fbfc0::sub_101fbfc0
 0x10015604 func   ?sub_100d5f10@@YAXXZ sub_100d5f10
 0x10015609 func   ?sub_101f7690@CUnk101f7690@@QAEXHHH@Z CUnk101f7690::sub_101f7690
 0x1001560e func   ?sub_10066e20@@YAHXZ sub_10066e20

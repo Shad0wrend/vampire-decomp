@@ -68357,6 +68357,21 @@ int CVStatSubCost_t::sub_101fbc40(int level, bool bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fbfc0 size=0x2a
+struct CUnit101fbfc0 {
+    int m_v[3];
+    bool sub_101fbfc0(int a, int b, int c, int d, int e);
+};
+
+bool CUnit101fbfc0::sub_101fbfc0(int a, int b, int c, int d, int e)
+{
+    if (a == m_v[0] && b == m_v[1] && c == m_v[2]) {
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fc000 size=0x9f
 #include <stdio.h>
 #include "CVStatCost_t.h"
