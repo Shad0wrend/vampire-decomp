@@ -47214,6 +47214,15 @@ void sub_10188d60(float t, const float *a, const float *b, float *out) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10188da0 size=0x2e
+// TARGET: sub_10188da0
+void sub_10188da0(float t, const float *a, const float *b, float *out) {
+    for (int i = 0; i < 3; i++) {
+        out[i] = (b[i] - a[i]) * t + a[i];
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189510 size=0x77
 struct Elem784 { char d[0x784]; };
 extern void *(*g_109f3638)(void *, int);
