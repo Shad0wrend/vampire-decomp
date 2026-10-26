@@ -25,6 +25,7 @@ public:
 	CUnknown10229550Item *m_pElements;	// 0x184
 
 	void sub_10229550(CUnknown10229550Item *pItem, float flScale);	// when the item is active: stores m_f48 / flScale in m_f4c, appends a copy of the item to the vector and clears the original
+	void sub_102293f0(float flScale);	// the four items at +0x14 (0x58 bytes each) are each given to sub_10229550 with the scale
 	void sub_10229430(const char *pszName, float flVolume, int a, float flTime, CUnknown10229550Item *pItem);	// stub 0x10006663: no name or no volume queues the item away (sub_10229550); the same name just refreshes the item, another one queues the old item away and takes over the name, volume, fade rate (volume / flTime) and the value of sub_102297a0
 	int sub_102297a0();	// stub 0x10007b58
 };
