@@ -91,7 +91,7 @@ public:
 	virtual void vfunc75();
 	virtual void vfunc76();
 	virtual void vfunc77();
-	virtual void vfunc78();
+	virtual float vfunc78(int a, int b, int c, int d, int e);	// 0x10129700: passes the five arguments on to sub_10009863 and answers the constant at 0x104454c0
 	virtual void vfunc79();
 	virtual void vfunc80();
 	void sub_1000d189();	// as in CDataObjectAccessSystem (transplant)
