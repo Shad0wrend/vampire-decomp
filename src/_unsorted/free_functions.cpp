@@ -36450,6 +36450,18 @@ bool CUnknown10108e00::sub_10108e00(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108fd0 size=0x21
+// TARGET: sub_10108fd0
+int __cdecl sub_10108f60(int *pA, int b, int c, int d, int e);
+bool __cdecl sub_10108fd0(int a1, int a2)
+{
+    if (sub_10108f60(&a2, 1, 1, a1, a2) <= 0) {
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109550 size=0x106
 #include "CFire.h"
 #include "Vector.h"
