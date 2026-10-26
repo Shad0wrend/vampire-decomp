@@ -13,6 +13,7 @@ public:
     void vfunc104();    // CBreakableProp::vfunc104 (stub 0x1000978c), called directly by CPropDestructable::vfunc104
     void vfunc113();    // slot 113 (stub 0x10004dbd), called directly by CSecCamera::vfunc113
     void vfunc144(void *pInfo);    // "BreakableProp::Break"-like: clears flag 0x2000 / 0x40000, remembers the attacker's handle (+0x768), sets a think function, no damage taking, thinks again in a millisecond
+    void vfunc230(int a, int b);    // slot 230: CBaseEntity::vfunc230 (stub 0x10006d61) with the same arguments, then slot 75 (0x12c) with them
     void sub_10007fe5(void *pfnThink, int a, int b);    // SetThink-like helper (stub of 0x100ac4e0)
     void vfunc265();    // slot 265: when the health (+0x210) is 5 and both list nodes (+0x730, +0x748) are empty, sets the health to 0 and warns ("HACK DESTRUCTABLE PROP HEALTH HACK", "Setting entity %-4d's health to 0")
     void sub_1018f750(inputdata_t *pInput);    // "CBreakableProp::InputAddHealth": the integer value of the input is added to the health, set into the OnHealthChanged output at +0x748 which is fired (activator, this); a health of 0 or less runs slot 266 with the activator
