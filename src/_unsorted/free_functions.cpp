@@ -24454,6 +24454,20 @@ void sub_100bf3d0(void **ppItems, int count, void *pCtx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf420 size=0x2c
+extern int g_105461f0;
+void sub_1006c470(int a, int *b, int *c);
+
+// TARGET: sub_100bf420
+void sub_100bf420(int *p, int count, int a)
+{
+    int i;
+    for (i = 0; i < count; i++) {
+        sub_1006c470(a, &g_105461f0, p + i);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf480 size=0xe7
 #include "CBitString.h"
 
