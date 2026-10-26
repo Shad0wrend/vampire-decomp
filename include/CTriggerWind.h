@@ -1,5 +1,5 @@
 // CTriggerWind: trigger_wind entity (CTriggerMultiple). Declared flat (bases not recovered); only what the matched
-// functions need. The virtual table is modelled as placeholder slots up to slot 221.
+// functions need. The virtual table is modelled as placeholder slots up to slot 240.
 #pragma once
 
 #define CTW_V(n) virtual void vfunc##n();
@@ -22,7 +22,10 @@ public:
 	CTW_V10(20) CTW_V10(21)
 	CTW_V(220)
 	virtual float *vfunc221();	// "GetAngles"
-	virtual void vfunc241(int a);	// slot 241 "CTriggerWind::...": the base slot 241 (CBaseTrigger::vfunc241, stub 0x10012206), then the next think time (+0x17c) is curtime + 0.1
+	CTW_V(222) CTW_V(223) CTW_V(224) CTW_V(225) CTW_V(226) CTW_V(227) CTW_V(228) CTW_V(229)
+	CTW_V10(23)
+	CTW_V(240)
+	virtual void vfunc241(int a);	// slot 241: the base slot 241 (CBaseTrigger::vfunc241, stub 0x10012206), then the next think time (+0x17c) is curtime + 0.1
 
 	void sub_100b3b00();	// CBaseEntity::sub_100b3b00, called directly
 	void sub_101c6860();	// CTriggerMultiple::vfunc103, called directly (stub 0x100048ef)
