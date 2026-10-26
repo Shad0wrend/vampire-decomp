@@ -49381,6 +49381,19 @@ int sub_10190d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191130 size=0x27
+#include "COrnamentProp.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+// TARGET: COrnamentProp::sub_10191130
+void COrnamentProp::sub_10191130(const char *szName, CBaseEntity *pSearching)
+{
+	sub_10191170(g_106eb5d8.sub_100f7770(0, szName, pSearching, 0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191170 size=0x6a
 #include "COrnamentProp.h"
 
