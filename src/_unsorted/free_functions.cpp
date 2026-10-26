@@ -85231,6 +85231,27 @@ CUnknown1027cd50 *CUnknown1027cd50::sub_1027cd50(float flInterval, char bNever)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027cda0 size=0x2c
+struct CFloatPair1027cda0 {
+    float m_f0;
+    float m_f4;
+    void sub_1027cda0(float f, bool b);
+};
+extern double g_10499408;
+extern char *g_1070b228;
+
+// TARGET: sub_1027cda0
+void CFloatPair1027cda0::sub_1027cda0(float f, bool b)
+{
+    m_f4 = f;
+    if (b) {
+        m_f0 = g_10499408;
+        return;
+    }
+    m_f0 = f + *(float *)((char *)g_1070b228 + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d8d0 size=0x90
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
