@@ -13,3 +13,20 @@ void CSolidSetDefaults::vfunc0(int unused, const char *pszKey, const char *pszVa
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10158260 size=0x26
+#include "CSolidSetDefaults.h"
+
+struct CSolidDefaultBlock {
+    int d[12];
+};
+
+extern CSolidDefaultBlock g_1046ecb4;
+
+// TARGET: CSolidSetDefaults::vfunc1
+void CSolidSetDefaults::vfunc1(void *pSolid)
+{
+    *(CSolidDefaultBlock *)((char *)pSolid + 0x610) = g_1046ecb4;
+    m_nContents = 1;
+}
+// END FUNCTION
