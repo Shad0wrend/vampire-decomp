@@ -72778,6 +72778,26 @@ CUnknown102029c0 *CUnknown10203240::sub_10203240(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203440 size=0x22
+struct CUnit101d5e40
+{
+    void *sub_101d5e40(int i);
+};
+
+extern CUnit101d5e40 g_10738d10;
+extern int g_10738d14;
+extern char g_106b8540[];
+
+// TARGET: sub_10203440
+void *sub_10203440(int i)
+{
+    if (i >= 0 && i < g_10738d14) {
+        return g_10738d10.sub_101d5e40(i);
+    }
+    return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102034a0 size=0x76
 #include "CUnknown101ec4f0.h"
 extern char g_106b8540[];
