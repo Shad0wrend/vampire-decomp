@@ -73365,6 +73365,20 @@ void CUnknown10217f50::sub_102192a0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102193c0 size=0x2d
+#include "CPropHacking.h"
+
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+
+// TARGET: CPropHacking::sub_102193c0
+void CPropHacking::sub_102193c0(int c)
+{
+	char buf[2];
+	g_109f388c(buf, 2, "%c", c);
+	sub_102189e0(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102196a0 size=0x43
 #include "CPropHacking.h"
 void *sub_100aa720(int size);
