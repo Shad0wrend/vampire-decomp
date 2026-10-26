@@ -57392,6 +57392,17 @@ struct CUnknown101c4760 { int a; int b; int c; void sub_101c4760(); };
 void sub_101c4820(CUnknown101c4760 *p) { p->sub_101c4760(); }
 // END FUNCTION
 
+// FUNCTION: 0x101c4880 size=0x25
+extern char g_1059d41c[];
+
+// TARGET: sub_101c4880
+void sub_101c4880(int *pObj, int nParam, int *pPair)
+{
+    void (*pfn)(int *, int, const char *, ...) = (void (*)(int *, int, const char *, ...))((void **)*pObj)[21];
+    pfn(pObj, nParam, g_1059d41c, pPair[0], pPair[1]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c49e0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;

@@ -2724,6 +2724,7 @@
 0x10009151 func   ?sub_100579b0@CUnknown10057680@@QAEXPBD0@Z CUnknown10057680::sub_100579b0
 0x1000915b func   ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z CBaseEntity::vfunc107
 0x10009160 func   ?sub_1032d9b0@CBaseCombatCharacter@@QAE_NPAX@Z CBaseCombatCharacter::sub_1032d9b0
+0x10009165 func   ?sub_101c4880@@YAXPAHH0@Z sub_101c4880
 0x1000916a func   ?sub_102283a0@@YAMMMMM@Z sub_102283a0
 0x1000916f func   ?sub_1013c940@@YAMABVVector@@00AAV1@@Z sub_1013c940
 0x10009174 func   ?sub_102a99c0@CUnknown102a99c0@@QAEXD@Z CUnknown102a99c0::sub_102a99c0
