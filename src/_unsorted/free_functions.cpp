@@ -53874,6 +53874,25 @@ unsigned int CAmbientGeneric::sub_101ac2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af030 size=0x26
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern int g_1072bc10;
+
+// TARGET: sub_101af030
+void sub_101af030()
+{
+    if (g_1072bc10 == 0) {
+        void (CUnknown1070b22c::*pSlot15)(const char *, int);
+        void **vt = *(void ***)g_1070b22c;
+        *(void **)&pSlot15 = vt[0x3c / 4];
+        (g_1070b22c->*pSlot15)("scripts/sentences.txt", 0);
+        g_1072bc10 = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af0d0 size=0x18a
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
