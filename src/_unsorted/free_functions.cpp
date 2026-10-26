@@ -87601,6 +87601,23 @@ void CAI_BaseNPCTroika::sub_1029a930(const char *pszSquad)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029c9f0 size=0x2a
+struct CUnk1029c9f0
+{
+    char pad0000[0x1c70];
+    float m_1c70;
+};
+
+// TARGET: sub_1029c9f0
+float __stdcall sub_1029c9f0(float a, CUnk1029c9f0 *p)
+{
+    float r = a * p->m_1c70;
+    if (0.0f > r)
+        r = 0.0f;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029ca30 size=0xd
 extern float g_10457f54;
 float __stdcall sub_1029ca30(float x)
