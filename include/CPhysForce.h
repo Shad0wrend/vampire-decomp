@@ -28,6 +28,7 @@ public:
 	void sub_10014470();	// destructor body
 	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
 	void sub_10027960();	// attaches the force to the physics object of the attached entity (handle at +0x460): the object's current points are stored in the motion record at +0x464, the environment (global 0x10723940, slot 39) creates the controller for it (+0x450) and the object is added to it
+	void sub_1000b5d2();	// stub 0x1000b5d2, the tail target of vfunc103 (the force's base work for flag bit 0)
 	virtual void vfunc113();	// slot 113: base work, then looks up the attached entity by name (+0x454) when its handle (+0x460) is stale, slot 242, and attaches the force (sub_10027960) when a controller exists
 	void vfunc103();	// slot 103: sets the motion state at +0x468 from the flags at +0x204 (1 with bit 3, else 3), then sub_1000b5d2 when bit 0 is set
 
