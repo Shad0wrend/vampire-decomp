@@ -58698,6 +58698,23 @@ void sub_101d0ec0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d10e0 size=0x29
+#include <stdarg.h>
+
+extern char g_10735938[];
+extern void *g_109f387c;
+extern void *g_109f3678;
+
+// TARGET: sub_101d10e0
+void sub_101d10e0(const char *pszFormat, ...)
+{
+    va_list args;
+    va_start(args, pszFormat);
+    ((int (__cdecl *)(char *, int, const char *, va_list))g_109f387c)(g_10735938, 0x400, pszFormat, args);
+    ((void (__cdecl *)(char *))g_109f3678)(g_10735938);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d1240 size=0x2e
 // TARGET: sub_101d1240
 #include <stdarg.h>
