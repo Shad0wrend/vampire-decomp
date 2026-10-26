@@ -11587,6 +11587,19 @@ float CUnknown10074070::sub_100741f0(float flTime, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100745d0 size=0x28
+#include "CUnknown10074a30.h"
+#include "CUnknown10074070.h"
+
+// TARGET: CUnknown10074a30::sub_100745d0
+float CUnknown10074a30::sub_100745d0(float flValue)
+{
+    if (sub_10074a50())
+        return ((CUnknown10074070 *)this)->sub_100741f0(flValue, 1);
+    return 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074610 size=0x9f
 #include "CUnknown10074a30.h"
 
