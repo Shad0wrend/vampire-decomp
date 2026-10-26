@@ -41381,6 +41381,78 @@ int *sub_101351b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135290 size=0x132
+#include "CLogicPythonCheck.h"
+
+struct PyTypeObject;
+struct PyObject {
+    int ob_refcnt;
+    PyTypeObject *ob_type;
+};
+struct PyTypeObject {
+    char pad[0x18];
+    void (__cdecl *tp_dealloc)(PyObject *);
+};
+
+extern "C" __declspec(dllimport) PyObject *__cdecl PyImport_AddModule(const char *);
+extern "C" __declspec(dllimport) PyObject *__cdecl PyModule_GetDict(PyObject *);
+extern "C" __declspec(dllimport) PyObject *__cdecl PyRun_String(const char *, int, PyObject *, PyObject *);
+extern "C" __declspec(dllimport) void __cdecl PyErr_Print();
+extern "C" __declspec(dllimport) void __cdecl PyErr_Clear();
+extern "C" __declspec(dllimport) int __cdecl Py_FlushLine();
+extern "C" __declspec(dllimport) void __cdecl Py_FlushConsoleOutput();
+extern "C" __declspec(dllimport) long __cdecl PyInt_AsLong(PyObject *);
+extern "C" __declspec(dllimport) PyTypeObject PyInt_Type;
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *, ...);
+
+struct SConsoleVarView {
+    virtual void v0();
+    virtual char IsOff();
+    char pad[0x2c - 4];
+    int m_nValue;
+};
+
+struct SGlobalsView { char pad[0xc]; float curtime; };
+extern SConsoleVarView *g_107318bc;
+extern SGlobalsView *g_1070b228;
+extern char g_106b8540[];
+extern "C" unsigned int __cdecl strlen(const char *);
+
+static inline const char *StrRef(const char *const &r)
+{
+    return r ? r : g_106b8540;
+}
+
+bool CLogicPythonCheck::sub_10135290()
+{
+    int result = 0;
+    PyObject *pMain = PyImport_AddModule("__main__");
+    if (m_pszCode != 0 && strlen(StrRef(m_pszCode)) != 0 && pMain != 0) {
+        PyObject *pDict = PyModule_GetDict(pMain);
+        PyObject *pRes;
+        const char *code = StrRef(m_pszCode);
+        if (code != 0) {
+            if (!g_107318bc->IsOff() && g_107318bc->m_nValue != 0)
+                Msg("RUNNING PYTHON AT TIME %f:\n%s\n\n", (double)g_1070b228->curtime, code);
+        }
+        pRes = PyRun_String(StrRef(m_pszCode), 0x102, pDict, pDict);
+        if (pRes == 0) {
+            PyErr_Print();
+        } else {
+            if (pRes->ob_type == &PyInt_Type)
+                result = PyInt_AsLong(pRes);
+            if (--pRes->ob_refcnt == 0)
+                pRes->ob_type->tp_dealloc(pRes);
+            if (Py_FlushLine())
+                PyErr_Clear();
+        }
+        Py_FlushConsoleOutput();
+        return result != 0;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135420 size=0x3b
 struct CUnknownHelper10135420 {
     void sub_10010794(int a, void *owner, int b);
