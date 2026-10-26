@@ -27,6 +27,7 @@ public:
 	const char *vfunc589(int type);	// returns the string registered for the given kind (1, 2, 3, 5/7 at +0x5fa8/+0x5fb0/+0x5fac/+0x5fb4), or the override string at +0x5fa4 when set (and the kind is not 7); null when unset
 	Vector vfunc193();	// returns the vector at +0x5f50 (hidden result pointer), after sub_10010be5()
 	Vector vfunc373();	// returns the vector at +0x5f5c (hidden result pointer), after sub_10010be5()
+	Vector vfunc371();	// returns the facing vector at +0x5f68 (hidden result pointer), after sub_10010be5()
 	void sub_10010be5();
 	void sub_1025e7b0();	// the function behind the stub sub_10010be5: recomputes the cached eye position (+0x5f50) and facing vector (+0x5f68) when bit 1 of +0x5f4c is clear, and the normalised direction (+0x5f5c) from the eye to the point of slot 278 when bit 0 is clear
 	bool sub_10092e20(const char *pszName, Vector *pOrigin, Vector *pAngles);	// CBaseAnimating::GetAttachment01 (named attachment), called directly
