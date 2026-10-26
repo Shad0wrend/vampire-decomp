@@ -28,6 +28,7 @@ public:
 	void sub_10384670();	// CNPC_VHuman::vfunc104 (stub 0x100013f7), called directly
 	int vfunc438();	// slot 438 "SelectSchedule" override: sets +0x1b2c = 0x11; schedule 0x15c (line 0x174) when the default stat list's stats 0xf and 0x11 are equal; in state 2 with an enemy that is not slot 530 and the navigator (+0x5d34) cannot reach (slot 217 origins) tries sub_10378f80(); else CNPC_VHuman::vfunc438
 	int sub_10378f80();	// called by SelectSchedule (stub 0x1000b4e2)
+	void sub_10379000(int a);	// the member the stub at 0x10006613 calls with one argument (from sub_10378f80, with a = 1)
 	int sub_10384ee0();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), tail called
 	char sub_10010352();	// stub 0x10010352, answers in al (end of the task 0x31 handling)
 	void sub_1000ac68(int a);	// stub 0x1000ac68, run when the task handling answers true
