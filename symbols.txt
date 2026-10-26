@@ -3330,6 +3330,7 @@
 0x1000ac4f func   ?sub_100f0170@CTargetHolder@@QAEXPAPAUCTargetObj@@@Z CTargetHolder::sub_100f0170
 0x1000ac54 func   ?sub_100decb0@CUnk100decb0@@QAEHH@Z CUnk100decb0::sub_100decb0
 0x1000ac59 func   ?sub_101e4380@CUnknown101e0f00@@QAEXPBD@Z CUnknown101e0f00::sub_101e4380
+0x1000ac68 func   ?sub_10273e80@CAI_BaseNPC@@QAEXD@Z CAI_BaseNPC::sub_10273e80
 0x1000ac6d func   ?sub_100f43c0@@YAXHH@Z sub_100f43c0
 0x1000ac72 func   ?sub_1005b1e0@@YAXHHHPAUTEVec3@@H0HHHHHHHHHHHHHH@Z sub_1005b1e0
 0x1000ac77 func   ?sub_102454a0@@YAXH@Z sub_102454a0

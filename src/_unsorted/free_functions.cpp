@@ -87342,6 +87342,19 @@ CBaseEntity *CAI_BaseNPC::sub_102729d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273e80 size=0x24
+#include "CAI_BaseNPC.h"
+
+// TARGET: CAI_BaseNPC::sub_10273e80
+void CAI_BaseNPC::sub_10273e80(char flag)
+{
+	if (flag == 0 && sub_10269aa0(0x5c)) {
+		return;
+	}
+	*(int *)((char *)this + 0x5c44) = 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273ec0 size=0x9c
 #include "CAI_BaseNPC.h"
 #include "CUnknown102ee270.h"
