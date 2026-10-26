@@ -17,6 +17,7 @@
 0x100010a5 func   ?sub_102b8a10@@YIHPAX@Z sub_102b8a10
 0x100010aa func   ?sub_101c68e0@CTriggerMultiple@@QAEXPAVCBaseEntity@@@Z CTriggerMultiple::sub_101c68e0
 0x100010b4 func   ?sub_1033d410@CLookupUnit1033d410@@QAEHH@Z CLookupUnit1033d410::sub_1033d410
+0x100010c3 func   ?vfunc2@CHLPlayerMove@@QAEXHHH@Z CHLPlayerMove::vfunc2
 0x100010d7 func   ?sub_102d7640@@YAXXZ sub_102d7640
 0x100010dc func   ?vfunc490@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc490
 0x100010e1 func   ?sub_103d99a0@CNPC_VWerewolf@@QAEXPAUinputdata_t@@@Z CNPC_VWerewolf::sub_103d99a0

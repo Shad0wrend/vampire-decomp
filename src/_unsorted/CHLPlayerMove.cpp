@@ -29,3 +29,32 @@ void CHLPlayerMove::vfunc1(int a1, int a2, int a3, int a4)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x103563f0 size=0x2f
+#include "CHLPlayerMove.h"
+// TARGET: vfunc2
+
+struct CUnknownMoveSlots
+{
+    virtual void s0();
+    virtual void s1();
+    virtual void s2();
+    virtual void s3();
+    virtual void s4();
+    virtual void s5();
+    virtual void s6();
+    virtual void s7();
+    virtual void s8();
+    virtual void s9(int a1, int a2, int a3);
+};
+
+void CHLPlayerMove::vfunc2(int a1, int a2, int a3)
+{
+    sub_1000637f(a1, a2, a3);
+    CUnknownMoveSlots *p = *(CUnknownMoveSlots **)((char *)a1 + 0x20fc);
+    if (p != 0)
+    {
+        p->s9(a1, a2, a3);
+    }
+}
+// END FUNCTION
