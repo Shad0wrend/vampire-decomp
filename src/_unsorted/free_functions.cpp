@@ -57163,6 +57163,24 @@ extern "C" CBaseEntity *trigger_hurt()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6390 size=0x27
+#include "CTriggerHurt.h"
+
+struct CGlobalVarsView
+{
+	char pad0000[0xc];
+	float curtime;
+};
+extern CGlobalVarsView *g_1070b228;
+
+// TARGET: CTriggerHurt::sub_101c6390
+void CTriggerHurt::sub_101c6390()
+{
+	if (sub_101c6550(3.0f) > 0)
+		m_flNextThink = g_1070b228->curtime + 3.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c63d0 size=0x2c
 #include "CTriggerHurt.h"
 
