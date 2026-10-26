@@ -54,6 +54,27 @@ extern float g_104454c4;
 float CAI_BaseNPC::vfunc568(int a) { return g_104454c4; }
 // END FUNCTION
 
+// FUNCTION: 0x1026af30 size=0x26
+#include "CAI_Senses.h"
+
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+struct CUnknown1026af30View {
+    char m_pad0000[0x5cdc];
+    CAI_Senses *m_pSenses;	// 0x5cdc
+};
+
+// TARGET: sub_1026af30
+void *__fastcall sub_1026af30(CUnknown1026af30View *self)
+{
+    void *p = self->m_pSenses->sub_103104f0(1);
+    if (p == 0) {
+        g_109f3630("Warning: NULL Return from GetBestScent\n");
+    }
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026b4f0 size=0x6c
 #include "CAI_BaseNPC.h"
 
