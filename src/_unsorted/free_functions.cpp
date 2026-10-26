@@ -45998,6 +45998,20 @@ void CAI_BaseNPC::sub_10175360(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101753a0 size=0x25
+#include "CTriggerEnvAudio.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+// TARGET: CTriggerEnvAudio::sub_101753a0
+void CTriggerEnvAudio::sub_101753a0(int value)
+{
+    *(int *)((char *)this + 0x1e08) = value;
+    *(int *)((char *)this + 0x1e0c) = g_1070b22c->vfunc120();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10175400 size=0x169
 #include "CBasePlayer.h"
 #include "CSingleUserRecipientFilter.h"
