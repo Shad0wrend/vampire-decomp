@@ -89110,6 +89110,33 @@ void CUnknown102c7390::sub_102c7390(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c73b0 size=0x2c
+struct CSeven102c73b0 {
+    int v[7];
+};
+struct CCopyUnit102c73b0 {
+    char pad[0x20];
+    CSeven102c73b0 m_copy;
+    float m_f3c;
+    float m_f40;
+    float m_f44;
+    void sub_102c73b0(void *pSrc);
+};
+
+// TARGET: sub_102c73b0
+void CCopyUnit102c73b0::sub_102c73b0(void *pSrc)
+{
+    float f3;
+    float f2;
+    m_copy = *(CSeven102c73b0 *)pSrc;
+    f3 = ((float *)pSrc)[3];
+    f2 = ((float *)pSrc)[2];
+    m_f40 = f2;
+    m_f3c = -1.0f;
+    m_f44 = f3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c7eb0 size=0x2e
 // TARGET: sub_102c7eb0
 extern int g_10601878;
