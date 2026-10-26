@@ -14,6 +14,20 @@ CAI_Navigator *CAI_Navigator::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ecb50 size=0x28
+#include "CAI_Navigator.h"
+
+// TARGET: CAI_Navigator::vfunc3
+void CAI_Navigator::vfunc3(int a)
+{
+    char *owner = (char *)m_pOuter;
+    m_i20 = *(int *)(owner + 0x5d44);
+    m_i24 = *(int *)(owner + 0x5d40);
+    m_i28 = *(int *)(owner + 0x5d38);
+    m_pProviders = (CAI_NavProviderList *)a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eeb50 size=0xd
 #include "CAI_Navigator.h"
 
