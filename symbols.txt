@@ -3951,6 +3951,7 @@
 0x1000c653 func   ?sub_103e6ba0@@YAHXZ sub_103e6ba0
 0x1000c676 func   ?sub_100e1580@CUnknown100e1580View@@QAEHPAU1@@Z CUnknown100e1580View::sub_100e1580
 0x1000c67b func   ?vfunc5@CItemGStake@@QAEPAV1@I@Z CItemGStake::vfunc5
+0x1000c680 func   ?sub_103e7920@CWeaponMelee_TorchX@@QAEXH@Z CWeaponMelee_TorchX::sub_103e7920
 0x1000c68f func   ?sub_101ef900@@YAPAUCProjSlots@@PBM0PAVCBaseEntity@@HMPBD222@Z sub_101ef900
 0x1000c694 func   ?sub_10143630@@YAXPBVVector@@@Z sub_10143630
 0x1000c699 func   ?sub_1009c2d0@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009c2d0

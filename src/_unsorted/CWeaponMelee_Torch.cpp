@@ -35,6 +35,25 @@ char __fastcall sub_103e7640(void *pSelf, int unused, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e7920 size=0x22
+void __fastcall sub_10008512(void *p);
+
+struct CWeaponMelee_TorchX
+{
+    void sub_1001089d(int a);
+    void sub_103e7920(int a);
+};
+
+// TARGET: sub_103e7920
+void CWeaponMelee_TorchX::sub_103e7920(int a)
+{
+    sub_1001089d(a);
+    void (__fastcall *pfn)(void *) = (void (__fastcall *)(void *))(*(void ***)this)[0x10c / 4];
+    pfn(this);
+    sub_10008512(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ecde0 size=0x1e
 #include "CWeaponMelee_Torch.h"
 
