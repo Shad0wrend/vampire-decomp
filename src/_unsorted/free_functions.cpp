@@ -41943,6 +41943,14 @@ void sub_1013add0(const float *p, float t, float *q)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013af20 size=0x25
+// TARGET: sub_1013af20
+float sub_1013af20(float *a, float *b)
+{
+    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2] + a[3] * b[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013af60 size=0xed
 #include "Quaternion.h"
 
