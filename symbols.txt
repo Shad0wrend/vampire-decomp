@@ -2007,6 +2007,7 @@
 0x10006e6a func   ?sub_102c54c0@CUnk102c54c0@@QAEXXZ CUnk102c54c0::sub_102c54c0
 0x10006e74 func   ?sub_103b0ab0@CNPC_VSheriffMan@@QAEPAVCEntityVSlots@@D@Z CNPC_VSheriffMan::sub_103b0ab0
 0x10006e79 func   ?sub_101851a0@CUtlVector64@@QAEXH@Z CUtlVector64::sub_101851a0
+0x10006e83 func   ?sub_101cf4a0@@YAXPAUCModelEntX@@PBD@Z sub_101cf4a0
 0x10006e88 func   ?vfunc141@CNPC_VZombie@@QAEXPAUCUnknown101c2a50@@HPAD@Z CNPC_VZombie::vfunc141
 0x10006e8d func   ?sub_10185600@@YIXPAH@Z sub_10185600
 0x10006ea6 func   ?sub_1005ee50@CTEBSPDecal@@QAEPAV1@H@Z CTEBSPDecal::sub_1005ee50

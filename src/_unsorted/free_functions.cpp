@@ -60829,6 +60829,68 @@ void sub_101cf2f0(float *pValue, int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf4a0 size=0xd8
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CModelEntX
+{
+	SV10(0)
+	virtual void v10(int nModelIndex);
+	SV(11) SV(12) SV(13) SV(14) SV(15) SV(16) SV(17) SV(18) SV(19)
+	SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV100(1)
+	SV(200) SV(201) SV(202) SV(203) SV(204) SV(205) SV(206) SV(207) SV(208) SV(209) SV(210) SV(211)
+	virtual void v212(int iszModelName);
+};
+
+struct CModelInfoX
+{
+	SV(0) SV(1)
+	virtual void *GetModel(int nModelIndex);
+	virtual void GetModelBounds(void *pModel, Vector *pMins, Vector *pMaxs);
+	SV(4) SV(5) SV(6) SV(7) SV(8) SV(9) SV(10) SV(11)
+	virtual int GetModelIndex(const char *pszName);
+};
+extern CModelInfoX *g_1070b250;
+extern Vector g_1070d1b0;
+extern "C" __declspec(dllimport) void __cdecl Error(const char *pMsg, ...);
+
+char sub_101d37a0(const char *psz);
+const char *__cdecl sub_101d3730(const char *pszFormat, ...);
+void sub_101cf3c0(CModelEntX *pEntity, const Vector *pMins, const Vector *pMaxs, int bNotify);
+
+inline int AllocPooledString(const char *pszValue)
+{
+	if (pszValue && *pszValue)
+		return (int)pszValue;
+	return 0;
+}
+
+void sub_101cf4a0(CModelEntX *pEntity, const char *pszModelName)
+{
+	if (pszModelName && pszModelName[0]) {
+		int nIndex = g_1070b250->GetModelIndex(pszModelName);
+		if (nIndex < 0)
+			Error("no precache: %s\n", pszModelName);
+		if (sub_101d37a0(pszModelName))
+			Error(sub_101d3730("UTIL_SetModel passed a va string '%s'", pszModelName));
+		pEntity->v10(nIndex);
+		pEntity->v212(AllocPooledString(pszModelName));
+		void *pModel = g_1070b250->GetModel(nIndex);
+		if (pModel) {
+			Vector mins;
+			Vector maxs;
+			g_1070b250->GetModelBounds(pModel, &mins, &maxs);
+			sub_101cf3c0(pEntity, &mins, &maxs, 1);
+		} else {
+			sub_101cf3c0(pEntity, &g_1070d1b0, &g_1070d1b0, 1);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf620 size=0xd
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 
