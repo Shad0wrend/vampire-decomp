@@ -5521,6 +5521,7 @@
 0x10011cf7 func   ?vfunc465@CNPC_VWerewolf@@QAEXPBD@Z CNPC_VWerewolf::vfunc465
 0x10011d10 func   ?vfunc619@CNPC_VTzimisceHeadClaw@@UAEXD@Z CNPC_VTzimisceHeadClaw::vfunc619
 0x10011d15 func   ?sub_1030b6b0@CUnknown1030b610@@QAE?AVVector@@XZ CUnknown1030b610::sub_1030b6b0
+0x10011d1a func   ?sub_102c3470@CUnk102c3470@@QAEXPBUCVariantArg102c3470@@@Z CUnk102c3470::sub_102c3470
 0x10011d1f func   ?sub_1030fc90@S1030fc90@@QAEPAXPAI@Z S1030fc90::sub_1030fc90
 0x10011d29 func   ?sub_100c6590@@YAHH@Z sub_100c6590
 0x10011d33 func   _prop_doorknob prop_doorknob

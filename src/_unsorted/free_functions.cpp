@@ -88869,6 +88869,35 @@ void S::sub_102c33a0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c3470 size=0x2b
+struct CVariantArg102c3470
+{
+	char m_pad0[8];
+	char m_b8;	// 0x08
+	char pad1[0x18 - 0x9];
+	int m_type;	// 0x18
+};
+
+struct CUnk102c3470
+{
+	char m_pad0000[0x14bc];
+	unsigned int m_flags14bc;
+
+	void sub_102c3470(const CVariantArg102c3470 *d);
+};
+
+// TARGET: CUnk102c3470::sub_102c3470
+void CUnk102c3470::sub_102c3470(const CVariantArg102c3470 *d)
+{
+	if (d->m_type == 5 && d->m_b8 != 0)
+	{
+		m_flags14bc &= 0x7fffbfff;
+		return;
+	}
+	m_flags14bc |= 0x80004000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c34b0 size=0x33
 struct CFlagArgView {
     char pad0[8];
