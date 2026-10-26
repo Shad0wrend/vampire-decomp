@@ -18208,6 +18208,20 @@ int __fastcall sub_10096600(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100966a0 size=0x8d
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+int sub_1000ffc9(void *pStudio, int nSet);
+
+// TARGET: CBaseAnimating::sub_100966a0
+int CBaseAnimating::sub_100966a0()
+{
+	ScopeTrace trace("CBaseAnimating::GetHitboxSetName", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	return sub_1000ffc9(sub_100952d0(-1), *(int *)((char *)this + 0x680));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096760 size=0x83
 #include "CBaseAnimating.h"
 
