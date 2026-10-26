@@ -42,6 +42,11 @@ public:
 	CTriggerProximityHandle m_hMeasureTarget;	// 0x598: handle of the entity named by m_pszMeasureTarget
 	const char *m_pszMeasureTarget;	// 0x59c
 	float m_flMeasure05a0;	// 0x5a0: the measured distance, 32 when it was never set
+	int m_i05a4;	// 0x5a4
+	COutputEvent m_out05a8;	// 0x5a8
+
+	CTriggerProximity() { m_hMeasureTarget.m_Index = 0xffffffff; }
+	void *operator new(unsigned int size);	// the game's entity allocator (0x1000db89, function 0x100aa720)
 
 	virtual void vfunc113();	// "CTriggerProximity::Activate": the base activation, finds the measure target by name (stores its handle, -1 when none) and warns "TriggerProximity - Missing measure target or measure target with no origin!" unless it resolves to a live entity with an edict
 	void vfunc103();	// slot 103: sets the distance to 32 while it is 0, then sub_101c5080() and the free function sub_101cf600(this)
