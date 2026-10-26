@@ -89320,6 +89320,20 @@ bool CAI_BaseNPCTroika::sub_10290200(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10290660 size=0x23
+extern char *g_1070b228;
+
+// TARGET: sub_10290660
+int __stdcall sub_10290660(float a)
+{
+    float d = a - *(float *)(g_1070b228 + 0xc);
+    if (d <= *(float *)(g_1070b228 + 0x10)) {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293d70 size=0x10
 void __fastcall sub_10293d70(int *p)
 {
