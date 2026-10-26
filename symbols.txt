@@ -4214,6 +4214,7 @@
 0x1000d783 func   ?sub_101dadd0@CUnknown101da960@@QAEXXZ CUnknown101da960::sub_101dadd0
 0x1000d7ab func   _item_w_gargoyle_fist item_w_gargoyle_fist
 0x1000d7ba func   ?vfunc306@CBaseCombatCharacter@@QAEXPAV1@D@Z CBaseCombatCharacter::vfunc306
+0x1000d7bf func   ?sub_1027cef0@@YIPAVCAI_MoveProbe@@PAX@Z sub_1027cef0
 0x1000d7c9 func   ?sub_102f1860@CUnknown102f1860@@QAEMHABVVector@@0@Z CUnknown102f1860::sub_102f1860
 0x1000d7ce func   ?sub_1019dea0@CUnit1019dea0@@QAEX_N@Z CUnit1019dea0::sub_1019dea0
 0x1000d7dd func   ?vfunc361@CBaseCombatWeapon@@QAEHH@Z CBaseCombatWeapon::vfunc361

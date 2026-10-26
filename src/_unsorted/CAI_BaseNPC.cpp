@@ -916,6 +916,16 @@ CAI_Motor *CAI_BaseNPC::vfunc427()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027cef0 size=0x27
+#include "CAI_MoveProbe.h"
+
+// TARGET: sub_1027cef0
+CAI_MoveProbe *__fastcall sub_1027cef0(void *pOuter)
+{
+    return new CAI_MoveProbe(pOuter);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027d9f0 size=0x76
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
