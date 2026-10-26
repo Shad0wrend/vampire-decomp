@@ -61,6 +61,23 @@ bool CSave::vfunc14(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fb20 size=0x21
+#include <string.h>
+#pragma intrinsic(strlen)
+
+struct CSaveFwd2
+{
+    void sub_1000643d(const char *pszName, int count);
+    void sub_1019fb20(const char *pszName);
+};
+
+// TARGET: sub_1019fb20
+void CSaveFwd2::sub_1019fb20(const char *pszName)
+{
+    sub_1000643d(pszName, strlen(pszName) + 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fb60 size=0x40
 #include "CSave.h"
 #include <string.h>
