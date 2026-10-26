@@ -85464,6 +85464,28 @@ void CAI_BaseNPC::sub_1028e790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e830 size=0x2f
+// TARGET: sub_1028e830
+extern float g_104454c4;
+extern float *g_1070b228;
+
+struct CUnknown1028e830
+{
+    char m_pad0000[0x62c8];
+    float m_f62c8;
+    float sub_1028e830(float x);
+};
+
+float CUnknown1028e830::sub_1028e830(float x)
+{
+    if (x == g_104454c4)
+    {
+        return g_104454c4;
+    }
+    return m_f62c8 + g_1070b228[3] - x;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e8b0 size=0x6a
 #include "CAI_BaseNPCTroika.h"
 
