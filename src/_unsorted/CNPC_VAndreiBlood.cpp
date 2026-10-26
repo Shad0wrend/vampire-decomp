@@ -188,3 +188,40 @@ void CNPC_VAndreiBlood::vfunc619(int arg)
 	(*g_109f3680)--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1035e980 size=0xab
+#include "CNPC_VAndreiBlood.h"
+#include "CEHandleGet.h"
+
+struct AndreiView
+{
+	char pad0[0x5b64];
+	unsigned int m_flags5b64;
+	char pad1[0x5cc0 - 0x5b68];
+	int m_state5cc0;
+	int m_state5cc4;
+	char pad2[0x628c - 0x5cc8];
+	unsigned int m_hTarget628c;
+	char pad3[0x66cc - 0x6290];
+	char m_bCombat66cc;
+};
+
+void CNPC_VAndreiBlood::vfunc432(int arg)
+{
+	AndreiView *v = (AndreiView *)this;
+	if (!v->m_bCombat66cc) {
+		v->m_state5cc0 = 1;
+		v->m_state5cc4 = 1;
+		CGlobalEntityList_Ent *pTarget = EHandle_Get(v->m_hTarget628c);
+		if (pTarget) {
+			if (vfunc404((CBaseEntity *)pTarget) != 4)
+				sub_10332aa0(1, 4, 10);
+		}
+		v->m_flags5b64 &= 0xfffffffb;
+	} else {
+		v->m_state5cc0 = 2;
+		v->m_state5cc4 = 2;
+	}
+	sub_10385a10(arg);
+}
+// END FUNCTION

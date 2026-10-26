@@ -3855,6 +3855,7 @@
 0x1000c072 func   _item_g_mercurio_journal item_g_mercurio_journal
 0x1000c090 func   ?vfunc241@CFilterInventory@@QAE_NPAVCBaseEntity@@@Z CFilterInventory::vfunc241
 0x1000c09a func   ?vfunc214@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc214
+0x1000c0a9 func   ?vfunc432@CNPC_VAndreiBlood@@QAEXH@Z CNPC_VAndreiBlood::vfunc432
 0x1000c0b8 func   ?vfunc0@CChoreoEventCallback@@UAEXMHH@Z CChoreoEventCallback::vfunc0
 0x1000c0bd func   ?sub_103f4780@@YAXPAVCEntityVSlots@@H@Z sub_103f4780
 0x1000c0c2 func   ??1CVStatActionPart@@QAE@XZ CVStatActionPart::~CVStatActionPart
