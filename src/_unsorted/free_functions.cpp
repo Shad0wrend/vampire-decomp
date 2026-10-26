@@ -27412,6 +27412,20 @@ bool CList_t::sub_100ce570(int a, int b, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce5c0 size=0x23
+#include <string.h>
+// TARGET: sub_100ce5c0
+char __fastcall sub_100ce5c0(void *pSelf, int unused, void *pDst)
+{
+    char *pObj = *(char **)((char *)pSelf + 0x54);
+    if (pObj != 0) {
+        memcpy(pDst, pObj + 0x20, 5 * 4);
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce630 size=0x64
 #include "CUnknown100ce630.h"
 
