@@ -35535,6 +35535,18 @@ int CExpressionTable::sub_10105270(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10105830 size=0x23
+// TARGET: sub_10105830
+void *__fastcall sub_10105830(void *pSelf, int unused, int index)
+{
+    char *p = (char *)pSelf;
+    if (*(int *)(p + 4) == 1 && index >= 0 && index < *(int *)(p + 8)) {
+        return p + *(int *)(p + 0x14) + index * 8;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105870 size=0xa6
 #include "CExpressionTable.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
