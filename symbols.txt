@@ -1623,6 +1623,7 @@
 0x1000615e func   ?sub_10139d20@@YAXPAM0@Z sub_10139d20
 0x10006172 func   ?sub_101e8780@S@@QAEXPAUP@@@Z S::sub_101e8780
 0x1000617c func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>::vfunc3
+0x10006181 func   ?sub_101a7500@CCineNPC@@QAEXH@Z CCineNPC::sub_101a7500
 0x10006186 func   ?vfunc5@CItemGGarysPhoto@@QAEPAV1@I@Z CItemGGarysPhoto::vfunc5
 0x1000618b func   ?vfunc221@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc221
 0x10006190 func   ?sub_101b6250@CUnknown101b6250@@QAEPAV1@XZ CUnknown101b6250::sub_101b6250

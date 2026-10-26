@@ -52102,6 +52102,25 @@ void CCineNPC::sub_101a7390(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7500 size=0x2d
+#include "CCineNPC.h"
+
+extern char g_106b8540[];
+extern void (*g_109f3650)(int level, const char *pszFormat, ...);
+void sub_101a7170(CCineNPC *pNpc);
+
+// TARGET: CCineNPC::sub_101a7500
+void CCineNPC::sub_101a7500(int unused)
+{
+	const char *pszName = m_pszScript5f48;
+	if (pszName == 0) {
+		pszName = g_106b8540;
+	}
+	g_109f3650(2, "InputCancelScript: Cancelling script '%s'\n", pszName);
+	sub_101a7170(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7760 size=0x2e
 // TARGET: CCineNPC::sub_101a7760
 #include "CAI_BaseNPC.h"
