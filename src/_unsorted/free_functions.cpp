@@ -102554,6 +102554,23 @@ int sub_10316fa0(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10319e70 size=0x23
+// TARGET: sub_10319e70
+int *__fastcall sub_10319e70(int *p)
+{
+    int i;
+    volatile int *v = p + 8;
+    v[0] = -1;
+    v[1] = -1;
+    for (i = 0; i < 14; i++) {
+        p[i] = 0;
+    }
+    p[6] = -1;
+    p[7] = -1;
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319f10 size=0xc
 bool sub_1000528b(void *);
 bool CUnknown10319f10::sub_10319f10()
