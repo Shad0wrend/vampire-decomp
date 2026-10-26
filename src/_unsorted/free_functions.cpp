@@ -57027,6 +57027,20 @@ void CUnk101c1790::sub_101c1790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c1a30 size=0x23
+// TARGET: sub_101c1a30
+float __cdecl sub_101c1a30(unsigned char flags, float *p)
+{
+    if (flags & 0x40) {
+        return p[2];
+    }
+    if (flags & 0x80) {
+        return p[0];
+    }
+    return p[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1af0 size=0x37
 // TARGET: sub_101c1af0
 float sub_101c1af0(unsigned char flags, const float *pA, const float *pB)
