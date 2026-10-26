@@ -65145,6 +65145,57 @@ void CUnknown101e0f00::sub_101e34c0(void *pSource, void *pTarget, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e3730 size=0xd4
+#include "CUnknown101e0f00.h"
+
+struct CDisciplineFx
+{
+	void sub_101dfb80();	// stub 0x10009a66: finishes the callback of an instant trigger
+};
+
+struct CDisciplineRange
+{
+	int sub_101dbc10(void *pSource, void *pTarget);	// stub 0x100065eb
+};
+
+struct CDisciplineChar
+{
+	char sub_1033d2f0(unsigned int mask);	// stub 0x1000d3d7: whether the character has the discipline
+};
+
+struct CDisciplineUnit : CUnknown101e0f00
+{
+	void sub_101e3af0(void *pTarget, unsigned int mask, int a);	// stub 0x10003945
+};
+
+extern CUnknown101e0f00Entry *g_10739a74;
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) void DevMsg(int nLevel, const char *pszFormat, ...);
+void __stdcall sub_101dd620(void *pSource, void *pTarget, unsigned int maskx, int nRange, int flag);	// stub 0x10002068
+
+void CUnknown101e0f00::sub_101e3730(void *pSource, void *pTarget, unsigned int mask, int flag)
+{
+	int iEntry = sub_101e12a0(mask);
+	if (iEntry == -1)
+		return;
+	CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[iEntry];
+	g_10739a74 = pEntry;
+	DevMsg(3, "Discipline<%s> Triggered\n", pEntry->m_pszName ? pEntry->m_pszName : g_106b8540);
+	unsigned int maskx = sub_101e1870(mask);
+	if (((CDisciplineChar *)pTarget)->sub_1033d2f0(maskx))
+		((CDisciplineUnit *)this)->sub_101e3af0(pTarget, maskx, 1);
+	int nRange = ((CDisciplineRange *)&pEntry->m_range)->sub_101dbc10(pSource, pTarget);
+	CDisciplineFx *pFx = (CDisciplineFx *)((CUnknown101e0f00Tail *)pEntry->m_tail)->sub_101e0410(nRange, (int)pSource, (int)pTarget, maskx);
+	pFx->sub_101dfb80();
+	if (pEntry->m_projectile.sub_101dd4f0())
+	{
+		sub_101dd620(pSource, pTarget, maskx, nRange, flag);
+		return;
+	}
+	sub_101e3850((int)pSource, (int)pTarget, maskx, nRange);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e3850 size=0x86
 #include "CUnknown101e0f00.h"
 

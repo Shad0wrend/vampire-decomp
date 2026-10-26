@@ -3431,6 +3431,7 @@
 0x1000adf3 func   ?vfunc375@CNPC_VWolfMorph@@UAEHH@Z CNPC_VWolfMorph::vfunc375
 0x1000adfd func   ?vfunc5@CPhysFixed@@UAEPAV1@I@Z CPhysFixed::vfunc5
 0x1000ae02 func   ?sub_101eaa40@@YAXH@Z sub_101eaa40
+0x1000ae07 func   ?sub_101e3730@CUnknown101e0f00@@QAEXPAX0IH@Z CUnknown101e0f00::sub_101e3730
 0x1000ae25 func   ?sub_102e37b0@CUnknown102e37b0@@QAEXPBM0I_NPAUCGameTrace@@@Z CUnknown102e37b0::sub_102e37b0
 0x1000ae2a func   ?vfunc104@CPropSwitch@@UAEXXZ CPropSwitch::vfunc104
 0x1000ae34 func   ?vfunc124@CPropClockHand@@UAEHXZ CPropClockHand::vfunc124
