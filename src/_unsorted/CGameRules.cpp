@@ -130,3 +130,16 @@ CGameRules *CGameRules::vfunc0(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129700 size=0x2a
+#include "CGameRules.h"
+
+void sub_10009863(int a, int b, int c, int d, int e);
+
+// TARGET: CGameRules::vfunc78
+float CGameRules::vfunc78(int a, int b, int c, int d, int e)
+{
+	sub_10009863(a, b, c, d, e);
+	return 1.0f;
+}
+// END FUNCTION
