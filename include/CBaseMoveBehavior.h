@@ -18,6 +18,7 @@ public:
 	char m_pad04a8[0x4b4 - 0x4a8];
 	int m_unk4b4;
 	int sub_101402b0(int nIndex);	// stub 0x101402b0: returns the entry at +0x480 for index 1, the entry at +0x484 for index -1, else this
+	int sub_101402f0(int nIndex);	// the same lookup with the two entries swapped: +0x484 for index 1, +0x480 for index -1, else this
 	CBaseMoveBehavior *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 	void vfunc103();	// slot 103: sets the mover fields, caches the origin / angles at +0x450 / +0x45c, then CPathKeyFrame::vfunc103
