@@ -43337,6 +43337,20 @@ int CBaseMoveBehavior::sub_101402b0(int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101402f0 size=0x22
+#include "CBaseMoveBehavior.h"
+
+// TARGET: CBaseMoveBehavior::sub_101402f0
+int CBaseMoveBehavior::sub_101402f0(int nIndex)
+{
+	if (nIndex == 1)
+		return m_unk484;
+	if (nIndex == -1)
+		return m_unk480;
+	return (int)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140710 size=0x27
 // TARGET: CBaseMoveBehavior::sub_10140710
 #include "CBaseMoveBehavior.h"
