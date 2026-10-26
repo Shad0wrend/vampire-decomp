@@ -1,6 +1,22 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1037e870 size=0x86
+#include "CNPC_VHengeyokai.h"
+#include "utlvector.h"
+
+void sub_100aa7b0(void *pEntity);
+
+CNPC_VHengeyokai *CNPC_VHengeyokai::vfunc5(unsigned int flags)
+{
+	((CUtlVector<CNPC_VHengeyokaiTimer> *)&m_Timers)->~CUtlVector<CNPC_VHengeyokaiTimer>();
+	sub_1028d610();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037ea60 size=0x1d
 #include "CNPC_VHengeyokai.h"
 struct A { int sub_10012300(int); };
