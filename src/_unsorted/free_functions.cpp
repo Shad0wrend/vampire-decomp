@@ -18995,6 +18995,30 @@ COverlayView *__fastcall sub_100989f0(COverlayView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098c40 size=0x28
+struct CUnknownEntry10098c40 {
+    float fl;
+    char pad_0004[0x30 - 4];
+};
+
+struct CUnknown10098c40 {
+    char pad_0000[0x748];
+    CUnknownEntry10098c40 m_entries[4];
+    int sub_10098c40();
+};
+
+// TARGET: CUnknown10098c40::sub_10098c40
+int CUnknown10098c40::sub_10098c40()
+{
+    int n = 0;
+    for (int i = 0; i < 4; i++) {
+        if (m_entries[i].fl != 0.0f)
+            n++;
+    }
+    return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098cd0 size=0x17c
 #include "CBaseAnimating.h"
 #include "CBaseAnimatingOverlay.h"
