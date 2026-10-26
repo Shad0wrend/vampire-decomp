@@ -3308,6 +3308,7 @@
 0x1000b06e func   ?vfunc103@CFuncIllusionary@@UAEXXZ CFuncIllusionary::vfunc103
 0x1000b082 func   ?vfunc393@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc393
 0x1000b087 func   ?sub_101fcf50@CVStatAction_t@@QAE_NXZ CVStatAction_t::sub_101fcf50
+0x1000b08c func   ?sub_101b5290@CUnit101b5290@@QAEPADH@Z CUnit101b5290::sub_101b5290
 0x1000b09b func   ?sub_102c63b0@CUnknown102c63b0@@QBE_NPAX@Z CUnknown102c63b0::sub_102c63b0
 0x1000b0aa func   _npc_VBrujah npc_VBrujah
 0x1000b0c8 func   ?vfunc180@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc180
