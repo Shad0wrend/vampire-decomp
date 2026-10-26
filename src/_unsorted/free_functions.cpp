@@ -19246,6 +19246,17 @@ void CBaseAnimatingOverlay::sub_10099320(int a, float b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100993c0 size=0x23
+// TARGET: sub_100993c0
+char __fastcall sub_100993c0(void *pSelf, int unused, int index)
+{
+    if (index != -1) {
+        return *(int *)((char *)pSelf + index * 0x30 + 0x738) != 0;
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10099b00 size=0xe8
 #include "CUnknown10099b00.h"
 #include "CBaseEntity.h"
