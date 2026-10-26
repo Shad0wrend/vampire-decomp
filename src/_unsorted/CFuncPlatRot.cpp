@@ -23,6 +23,22 @@ void CFuncPlatRot::vfunc242()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a380 size=0x27
+#include "CFuncPlatRot.h"
+#include "CFuncPlat.h"
+#include "CBaseEntity.h"
+
+extern Vector g_1070d9d0;
+
+// TARGET: CFuncPlatRot::vfunc244
+void CFuncPlatRot::vfunc244()
+{
+	((CFuncPlat *)this)->CFuncPlat::vfunc244();
+	((CFuncPlat *)this)->sub_100b2f50(g_1070d9d0);
+	((CBaseEntity *)this)->vfunc64((float *)&m_vecFinalAngle);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a550 size=0x36
 #include "CFuncPlatRot.h"
 

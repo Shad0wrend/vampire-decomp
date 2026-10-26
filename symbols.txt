@@ -5800,6 +5800,7 @@
 0x100124bd func   ?sub_101cf250@@YAXPAMH@Z sub_101cf250
 0x100124c7 func   _item_g_badlucktalisman item_g_badlucktalisman
 0x100124d6 func   ?vfunc35@CMultiplayRules@@UAEXPAVCBaseEntity@@@Z CMultiplayRules::vfunc35
+0x100124e0 func   ?vfunc244@CFuncPlatRot@@QAEXXZ CFuncPlatRot::vfunc244
 0x100124ea func   ?sub_103be090@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_103be090
 0x100124fe func   ?sub_101f5e80@CEntryTable_101f5e80@@QAEXXZ CEntryTable_101f5e80::sub_101f5e80
 0x10012503 func   ?sub_101618e0@CBasePlayer@@QAEXHH@Z CBasePlayer::sub_101618e0
