@@ -48,6 +48,25 @@ int CNPC_VHunter::vfunc440(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388b30 size=0x27
+// TARGET: CNPC_VHunter::vfunc420
+#include "CNPC_VHunter.h"
+
+struct CAI_BaseNPCTroikaPlaceholder {
+	void sub_1000dcba();
+};
+
+void CNPC_VHunter::vfunc420()
+{
+	((CAI_BaseNPCTroikaPlaceholder *)this)->sub_1000dcba();
+	if (sub_1032e7b0() != 0)
+	{
+		CHunterMate *w = sub_1032e7b0();
+		w->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388bb0 size=0x6d
 #include "CNPC_VHunter.h"
 #include "CGlobalEntityList.h"
