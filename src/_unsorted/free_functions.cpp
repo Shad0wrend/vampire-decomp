@@ -53751,6 +53751,13 @@ extern "C" GP *npc_payphone()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab1e0 size=0x26
+void sub_101ab1e0(int unk0, unsigned char *pSrc, unsigned int *pDst)
+{
+	*pDst = ((((unsigned int)pSrc[0] << 8 | pSrc[1]) << 8 | pSrc[2]) << 8) | pSrc[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab220 size=0x2c
 int sub_10246af0(int a, int b, int c, int d, int e, int f, int g, void *h);
 void sub_101ab260();
