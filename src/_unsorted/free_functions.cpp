@@ -54121,6 +54121,17 @@ CUnknown101b30d0 *CUnknown101b30d0::sub_101b30d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3730 size=0x28
+#include "CUnknown101b3730.h"
+// TARGET: CUnknown101b3730::sub_101b3730
+void *CUnknown101b3730::sub_101b3730(int index)
+{
+    if (index >= 0 && index < m_nRecords)
+        return m_pRecords + 0x1c + index * 0xe8;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3830 size=0x10f
 #include "CUnknown101b3830.h"
 __declspec(dllimport) const char *Q_stristr(const char *, const char *);
