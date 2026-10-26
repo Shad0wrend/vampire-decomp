@@ -4,9 +4,8 @@
 class CPlayerLocalPredictedData
 {
 public:
-	virtual void vfunc0();	// slot 0 (0x100130b6)
+	virtual void vfunc0();	// slot 0 (0x100130b6); the vtable pointer is at 0x00 (vtable 0x10470490)
 
-	int m_vptrPad[1];	// 0x00: the vtable pointer (vtable 0x10470490)
 	int m_i04;		// 0x04
 	int m_i08;		// 0x08
 	int m_i0c;		// 0x0c
