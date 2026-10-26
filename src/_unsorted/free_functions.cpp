@@ -49774,6 +49774,18 @@ void CFlagOwnerView::sub_10191720(CFlagArgView *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101918e0 size=0x25
+extern char g_106b8540[];
+
+// TARGET: sub_101918e0
+bool sub_101918e0(char **pa, char **pb)
+{
+    char *a = *pa ? *pa : g_106b8540;
+    char *b = *pb ? *pb : g_106b8540;
+    return a < b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191cc0 size=0x16c
 #include "utlvector.h"
 #include "CBreakParser.h"
