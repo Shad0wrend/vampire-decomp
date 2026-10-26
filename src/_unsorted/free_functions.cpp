@@ -88540,6 +88540,24 @@ void CUnknown102c7390::sub_102c7390(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c7eb0 size=0x2e
+// TARGET: sub_102c7eb0
+extern int g_10601878;
+extern int g_10936b68;
+extern char g_10601874;
+void sub_10008828();
+
+char sub_102c7eb0() {
+    if (g_10601878 != g_10936b68) {
+        sub_10008828();
+        g_10601874 = 1;
+        g_10601878 = g_10936b68;
+        return 1;
+    }
+    return g_10601874;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c8c00 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);

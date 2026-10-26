@@ -3763,6 +3763,7 @@
 0x1000c93c func   ?sub_100fbaf0@CBaseEntityUnit100fbaf0@@QAEXM@Z CBaseEntityUnit100fbaf0::sub_100fbaf0
 0x1000c946 func   ?sub_10032e70@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_10032e70
 0x1000c94b func   ?sub_10349a20@UtlVec8@@QAEPAU1@HH@Z UtlVec8::sub_10349a20
+0x1000c950 func   ?sub_102c7eb0@@YADXZ sub_102c7eb0
 0x1000c95a func   ??0CCollisionEventRecord12@@QAE@XZ CCollisionEventRecord12::CCollisionEventRecord12
 0x1000c95f func   ?sub_102a0eb0@@YIXPAD@Z sub_102a0eb0
 0x1000c96e func   ?sub_100991b0@CBaseAnimatingOverlay@@QAEHHH@Z CBaseAnimatingOverlay::sub_100991b0
