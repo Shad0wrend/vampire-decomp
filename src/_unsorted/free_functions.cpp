@@ -39068,6 +39068,21 @@ float CGameMovement::sub_101282b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101297a0 size=0x21
+// TARGET: sub_101297a0
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+int __fastcall sub_101297a0(char *p)
+{
+    CBaseEntity *pEnt = *(CBaseEntity **)(p + 0x4c);
+    if (pEnt != 0) {
+        return g_1070b22c->vfunc35(pEnt->m_pEdict2e0);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129870 size=0xb5
 #include "CBaseEntity.h"
 #include "TestBit.h"

@@ -4446,6 +4446,7 @@
 0x1000dcab func   ?sub_1013c7e0@@YAMABVVector@@00@Z sub_1013c7e0
 0x1000dcb5 func   ?sub_103a46b0@@YIHPAD@Z sub_103a46b0
 0x1000dcba func   ?vfunc420@CNPC_VHumanCombatant@@QAEXXZ CNPC_VHumanCombatant::vfunc420
+0x1000dcbf func   ?sub_101297a0@@YIHPAD@Z sub_101297a0
 0x1000dcc4 func   ?vfunc3@CTEBloodSprite@@UAEXABVVector@@ABVQAngle@@@Z CTEBloodSprite::vfunc3
 0x1000dcd8 func   ?sub_103ee6f0@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::sub_103ee6f0
 0x1000dce2 func   ?sub_100df070@@YA_NPAUCUnknown100df070@@@Z sub_100df070
