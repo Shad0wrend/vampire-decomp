@@ -22780,6 +22780,17 @@ void CBaseEntity::sub_100b3ee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4010 size=0xa8
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+
+CBaseEntity *__fastcall sub_100b4010(CBaseEntity *pThis)
+{
+	ScopeTrace trace("CBaseEntity::GetSimulatingPlayer", pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+	return (CBaseEntity *)EHandle_Get(*(unsigned int *)((char *)pThis + 0x440));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b40f0 size=0x71
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
