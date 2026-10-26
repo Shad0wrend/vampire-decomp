@@ -129,7 +129,7 @@ class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
 public:
 	CAI_Navigator(int pOuter);	// 0x102eca50: allocates the 0x84 byte object at +0x30
 
-	virtual CAI_Navigator *vfunc0(unsigned int flags); virtual void vfunc1(); virtual void vfunc2(int a); virtual void vfunc3(); virtual void vfunc4();
+	virtual CAI_Navigator *vfunc0(unsigned int flags); virtual void vfunc1(); virtual void vfunc2(int a); virtual void vfunc3(int a); virtual void vfunc4();
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8();
 	virtual void vfunc9(int a, float b);
 	virtual void vfunc10(int a, float b);
