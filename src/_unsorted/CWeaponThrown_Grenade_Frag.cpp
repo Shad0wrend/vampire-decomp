@@ -1,6 +1,39 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ee260 size=0x2c
+#define S10(b) virtual void s##b##0(); virtual void s##b##1(); virtual void s##b##2(); virtual void s##b##3(); virtual void s##b##4(); virtual void s##b##5(); virtual void s##b##6(); virtual void s##b##7(); virtual void s##b##8(); virtual void s##b##9();
+
+struct CGrenadeUnit103ee260 {
+    S10(0) S10(1) S10(2) S10(3) S10(4) S10(5) S10(6) S10(7) S10(8) S10(9)
+    S10(10) S10(11) S10(12) S10(13) S10(14) S10(15) S10(16) S10(17) S10(18) S10(19)
+    S10(20) S10(21) S10(22) S10(23) S10(24) S10(25) S10(26) S10(27) S10(28) S10(29)
+    virtual void s300();
+    virtual void s301();
+    virtual void s302();
+    virtual void s303();
+    virtual void s304();
+    virtual void s305();
+    char pad[0x928 - 4];
+    float m_f928;
+    int m_i92c;
+    char pad930;
+    char m_b931;
+    void sub_100047be();
+    void sub_103ee260();
+};
+
+// TARGET: sub_103ee260
+void CGrenadeUnit103ee260::sub_103ee260()
+{
+    sub_100047be();
+    s305();
+    m_f928 = 512.0f;
+    m_i92c = 0;
+    m_b931 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee510 size=0xdb
 #include "CBaseEntity.h"
 struct SGlobals { int pad[3]; float curtime; };

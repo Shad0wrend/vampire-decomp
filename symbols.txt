@@ -3983,6 +3983,7 @@
 0x1000d233 func   ?vfunc176@CTriggerBombSite@@QAEXPAX@Z CTriggerBombSite::vfunc176
 0x1000d23d func   ?sub_1013a6a0@@YAHM@Z sub_1013a6a0
 0x1000d242 func   ?vfunc34@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc34
+0x1000d24c func   ?sub_103ee260@CGrenadeUnit103ee260@@QAEXXZ CGrenadeUnit103ee260::sub_103ee260
 0x1000d251 func   ?sub_1021e350@@YIXPAUVec@@HHH@Z sub_1021e350
 0x1000d256 func   ?vfunc103@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc103
 0x1000d25b func   ?sub_1024b590@CFindList_1024b590@@QAEHH@Z CFindList_1024b590::sub_1024b590
