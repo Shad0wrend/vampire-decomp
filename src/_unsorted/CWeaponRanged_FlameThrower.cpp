@@ -22,6 +22,22 @@ CWeaponRanged_FlameThrower::CWeaponRanged_FlameThrower() : m_n1530(-1), m_n1554(
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e2b90 size=0x86
+#include "CWeaponRanged_FlameThrower.h"
+#include "utlvector.h"
+
+void sub_100aa7b0(void *pEntity);
+
+CWeaponRanged *CWeaponRanged_FlameThrower::vfunc5(unsigned int flags)
+{
+	((CUtlVector<int> *)&m_n1554)->~CUtlVector<int>();
+	((CBaseCombatWeapon *)this)->sub_10250c50();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e2c70 size=0x7a
 #include "CWeaponRanged_FlameThrower.h"
 
