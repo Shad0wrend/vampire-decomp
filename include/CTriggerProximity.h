@@ -17,6 +17,8 @@ struct CTriggerProximityHandle	// the entity handle (EHANDLE) of the measure tar
 {
 	unsigned int m_Index;
 
+	CTriggerProximityHandle() : m_Index(0xffffffff) {}
+
 	bool IsValid() const
 	{
 		if (m_Index == 0xffffffff)
