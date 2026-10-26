@@ -86227,6 +86227,32 @@ void CUnknown1028b190::sub_1028b190(void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028b420 size=0x2c
+struct CMinEnt1028b420 {
+    int m_v;
+    int m_x;
+    int m_y;
+};
+struct CMinSet1028b420 {
+    int m_pad;
+    CMinEnt1028b420 m_ent[5];
+    float sub_1028b420();
+};
+
+// TARGET: sub_1028b420
+float CMinSet1028b420::sub_1028b420()
+{
+    int best = 0x7fffffff;
+    int i;
+    for (i = 0; i < 5; i++) {
+        if (m_ent[i].m_v < best) {
+            best = m_ent[i].m_v;
+        }
+    }
+    return (float)best;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028d610 size=0x9a
 #include "UtlMem.h"
 extern void *vt_1049a25c;
