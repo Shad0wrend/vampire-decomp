@@ -51668,6 +51668,30 @@ void *sub_1019ba30(void *self, char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019bb10 size=0x27
+struct CPyObjWrap {
+    int ob_refcnt;
+    void *ob_type;
+    void *pObj;
+    int value;
+};
+
+struct CPyObjVirt {
+    virtual int vfunc0();
+};
+
+extern void *(*g_109f371c)(void *);
+extern int g_1058fae8;
+
+CPyObjWrap *sub_1019bb10(CPyObjVirt *p, int n)
+{
+    CPyObjWrap *w = (CPyObjWrap *)g_109f371c(&g_1058fae8);
+    w->pObj = p;
+    w->value = p->vfunc0() + n;
+    return w;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019bb70 size=0x19
 extern int g_1058f620[];
 extern void *(__cdecl *g_109f3724)(void *, void *, char *);
