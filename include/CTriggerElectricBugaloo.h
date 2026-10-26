@@ -7,6 +7,7 @@ public:
     bool vfunc32(void *pOther);    // slot 32: same as CTriggerBombSite::vfunc32, with the player's back-pointer handle at +0x1cbc
     void vfunc39(void *pOther);    // slot 39: CBaseEntity::vfunc39 (stub 0x10015262) on pOther's entity, then CAI_BaseNPCTroika::sub_10181580(1) on it after the entity's own sub_10011f68, then the global at 0x1070b228's word at +0xc is stored at +0x598
     void sub_100a4fe0(void *pOther);    // CBaseEntity::vfunc39 (stub 0x10015262), called directly
+    void vfunc42(void *pOther);    // slot 42 (0x10231690): sub_1015ef60 on pOther, CAI_BaseNPCTroika::sub_101815b0(1) on pOther, then CBaseEntity::vfunc42(pOther) called directly on this
     void vfunc175(void *pOther);    // slot 175 (Touch): the base Touch, then when the entity behind the handle at +0x8c is pOther hands it (resolved again) to sub_10231790
     void sub_100a4af0(void *pOther);    // CBaseEntity::vfunc175 (Touch), called directly
     void sub_10231790(void *pEnt);    // called through the stub at 0x10013eda
