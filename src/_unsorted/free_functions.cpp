@@ -59959,6 +59959,27 @@ int CUnknown101d5bd0::sub_101d5d20(const char *name, int start)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d5e40 size=0x29
+extern char g_106b8540[];
+
+struct CUnit101d5e40 {
+    char *sub_101d5e40(int index);
+};
+
+char *CUnit101d5e40::sub_101d5e40(int index)
+{
+    if (index < 0 || index >= *(int *)((char *)this + 4)) {
+        return 0;
+    }
+    char **ppItems = *(char ***)((char *)this + 8);
+    char **ppField = (char **)(ppItems[index] + 8);
+    if (*ppField == 0) {
+        return g_106b8540;
+    }
+    return *ppField;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d5e80 size=0x4b
 #include "CStatDefault3List.h"
 
