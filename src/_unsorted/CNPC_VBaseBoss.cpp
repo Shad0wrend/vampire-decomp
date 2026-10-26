@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10366290 size=0x24
+void sub_10119750(const char *pszFormat, double value);
+void __fastcall sub_10006e0b(void *pSelf);
+
+// TARGET: sub_10366290
+void __fastcall sub_10366290(void *pSelf)
+{
+    sub_10119750("Dist to player: %.3f", *(float *)((char *)pSelf + 0x6264));
+    sub_10006e0b(pSelf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10391170 size=0x86
 #include "CNPC_VBaseBoss.h"
 #include "utlvector.h"
