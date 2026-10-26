@@ -1,5 +1,5 @@
 // CEntityVSlots: the CBaseEntity virtual table viewed as a plain list of slots 0..605, used to call slots 9, 10, 42, 62, 64, 86, 93, 94, 105, 107, 116, 118, 122, 142, 143, 158, 161, 162, 167, 173,
-// 192, 193, 194, 196, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 267, 268, 270, 274, 285, 306, 308, 310, 316, 332, 337, 346, 360, 368, 369, 371, 372, 373, 376, 381, 383, 385, 404, 426, 427, 448, 452, 457, 464, 532, 584, 598, 601 and 605 of an entity class that does not model its vtable.
+// 192, 193, 194, 196, 198, 199, 202, 203, 204, 209, 210, 212, 213, 214, 216, 217 / 218, 219, 220 / 221 (the absolute origin / angles getters), 232, 243, 244, 251, 259, 260, 261, 262, 266, 267, 268, 270, 274, 285, 306, 308, 310, 316, 332, 337, 346, 360, 368, 369, 371, 372, 373, 376, 381, 383, 385, 404, 426, 427, 448, 452, 457, 464, 532, 584, 598, 601 and 605 of an entity class that does not model its vtable.
 #pragma once
 
 #include "Vector.h"
@@ -105,7 +105,8 @@ public:
 	virtual void slot260(int index, float value);	// "SetPoseParameter" by index
 	virtual float slot261(const char *pszName, float flValue);	// "SetPoseParameter" by name (the animating entity's slot; the float result is left on the FPU stack)
 	virtual char slot262(int attachment, void *pMatrix);	// animating: "GetAttachment" into a 3x4 matrix, a boolean answer in al
-	EVS(263) EVS(264) EVS(265) EVS(266)
+	EVS(263) EVS(264) EVS(265)
+	virtual void slot266(int a);	// takes one argument (the player's activity-table call passes 0)
 	virtual char slot267();	// weapon: a boolean answer in al
 	virtual int slot268(void *pPlayer);	// vampire skill entity: the value the keyring hud message sends for the player
 	EVS(269)
