@@ -77666,6 +77666,26 @@ void S::sub_10227320(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227370 size=0x24
+struct CUnknown10227370
+{
+    void sub_100153c5(void *p);
+};
+
+void *sub_1000ac8b(int flag);
+
+// TARGET: sub_10227370
+void __stdcall sub_10227370(void *p)
+{
+    CUnknown10227370 *pObj = (CUnknown10227370 *)sub_1000ac8b(1);
+    if (pObj == 0)
+        return;
+    if (p == 0)
+        return;
+    pObj->sub_100153c5(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102273b0 size=0x18
 #include "CUnknown102273b0.h"
 char *sub_101cd9e0(int index);
