@@ -108451,6 +108451,20 @@ char sub_10362d40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10366190 size=0x26
+#include "inputdata_t.h"
+#include "CNPC_VVampireBoss.h"
+
+// TARGET: CNPC_VVampireBoss::sub_10366190
+void CNPC_VVampireBoss::sub_10366190(inputdata_t *pInput)
+{
+	int iValue = pInput->value.fieldType == 4 ? pInput->value.iValue : 0;
+	if ((const char *)iValue == m_MorphModelName) {
+		m_MorphModelName = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103661d0 size=0xa
 void __fastcall sub_103661d0(char *self, int, int)
 {
