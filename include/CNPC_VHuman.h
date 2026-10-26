@@ -9,6 +9,10 @@ class CNPC_VHuman : public CAI_BaseNPCTroika
 public:
 	// Slot 440 (TranslateSchedule), called directly; declared as a plain member.
 	int vfunc440(int schedule);
+	// Slot 482 (CanPlaySequence-like, asked by the scripted sequence): 0 when the scripted sequence entity of the handle at +0x5d74 refuses
+	// or the NPC is not alive (slot 158); with the NPC state (+0x5cc0) not idle / none, not heading for idle (+0x5cc4) and not
+	// (combat with a high interrupt level) only a state of 4 may go on; declared as a plain member.
+	int vfunc482(char bDisregardState, int interruptLevel);
 	// Slot 442 (StartTask) implementation (stub 0x10013336, function 0x103847f0), called directly by the subclasses' override; takes the task record.
 	void sub_10013336(const int *pTask);
 	// Slot 390 implementation (damage handling taking the damage info), called directly by the Bach override.
