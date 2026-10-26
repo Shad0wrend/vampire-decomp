@@ -57455,6 +57455,17 @@ extern "C" CBaseEntity *env_sun()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2690 size=0x22
+// TARGET: CUnknown101c2770::sub_101c2690
+#include "CUnknown101c2770.h"
+extern float g_1070d1b0[3];
+CUnknown101c2770 *CUnknown101c2770::sub_101c2690()
+{
+    sub_101c2910(0, 0, g_1070d1b0, g_1070d1b0, 0.0f, 0, 0, -1);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c26d0 size=0x3e
 extern int g_1070d1b0[];
 
