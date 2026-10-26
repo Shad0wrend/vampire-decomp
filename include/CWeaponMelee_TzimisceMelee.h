@@ -19,4 +19,5 @@ public:
 	void vfunc370(int *event, CBaseCombatWeapon *other);	// slot 370: its own (0x103e8be0)
 	void vfunc269(CBaseCombatWeapon *pOther, Vector vecDir);	// slot 269: its own (0x103e8cd0)
 	CBaseCombatWeapon *vfunc5(unsigned int flags);	// as in CPhysForce (transplant); VC6 has no covariant returns
+	void sub_103e8c50();	// 0x103e8c50: sets the flag at +0x910, calls the swing slot 372 (0x4b, 1, 0) and clears the flag again
 };
