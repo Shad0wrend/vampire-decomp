@@ -52185,6 +52185,20 @@ void *sub_1019b7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b9d0 size=0x23
+extern void *(*g_109f371c)(void *);
+extern int g_1058fa78;
+
+// TARGET: sub_1019b9d0
+int *sub_1019b9d0(int *pObj)
+{
+    int *pNew = (int *)g_109f371c(&g_1058fa78);
+    pNew[2] = (int)pObj;
+    pNew[3] = ((int (__fastcall *)(void *))(*(void ***)pObj)[0])(pObj);
+    return pNew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019ba30 size=0x19
 extern int g_1058f600[];
 extern void *(__cdecl *g_109f3724)(void *, void *, char *);
