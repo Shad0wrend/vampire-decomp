@@ -2399,6 +2399,27 @@ int CBaseCombatCharacter::vfunc323(const Vector *pDirection)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103482e0 size=0xaa
+#include "CBaseCombatCharacter.h"
+#include "CStatDefault3List.h"
+#include "CVStatList_t.h"
+
+extern CStatDefault3List g_10738d10;
+
+// TARGET: CBaseCombatCharacter::vfunc326
+bool CBaseCombatCharacter::vfunc326(int unused1, int unused2)
+{
+	StatDefault3 *pDefault = g_10738d10.sub_101d5f10(this);
+	if (pDefault->m_98[6])
+		return false;
+	if (CVStatListSet::Of(this)->Find(0)->sub_102017b0(0xf, 0x11))
+		return false;
+	if (vfunc158())
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10348890 size=0xb7
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
