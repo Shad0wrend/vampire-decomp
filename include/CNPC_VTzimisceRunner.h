@@ -9,6 +9,8 @@ class CNPC_VTzimisceRunner
 {
 public:
 	virtual bool vfunc599(void *pEntity);
+	CNPC_VTzimisceRunner *vfunc5(unsigned int flags);	// slot 5 (scalar deleting destructor, plain member): the record vector at +0x665c goes, then the Troika base's destructor body (stub 0x100123af), then the delete when bit 0 of flags is set
+	void sub_1028d610();	// CAI_BaseNPCTroika destructor body (stub 0x100123af), called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	bool vfunc600(void *pEntity);	// slot 600: touches the global at 0x10924edc (slot 1), stores the handle of pEntity (-1 for null) at +0x6678, then toggles the byte at +0x6078 on the result of the behaviour object at +0x65e8 (sub_10015564(this, 0))
 	int vfunc310(int act);	// slot 310: when the byte at +0x6672 is set, maps activities 1/0xf1 -> 0x1134, 9 -> 0x1136, 0x13 -> 0x1137, 3 -> 0x1135; then the Troika base
