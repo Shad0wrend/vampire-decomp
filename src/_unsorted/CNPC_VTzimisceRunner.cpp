@@ -13,6 +13,22 @@ int CNPC_VTzimisceRunner::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3120 size=0x86
+#include "CNPC_VTzimisceRunner.h"
+#include "utlvector.h"
+
+void sub_100aa7b0(void *pEntity);
+
+CNPC_VTzimisceRunner *CNPC_VTzimisceRunner::vfunc5(unsigned int flags)
+{
+	((CUtlVector<int> *)((char *)this + 0x665c))->~CUtlVector<int>();
+	sub_1028d610();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c31e0 size=0x89
 #include "CNPC_VTzimisceRunner.h"
 struct CRunnerSoundSystem { virtual void vfunc0(const char *pszSound, int bPreload); };
