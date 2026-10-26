@@ -82123,6 +82123,36 @@ int CUnknown102522e0::sub_102522e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252410 size=0x2c
+struct CUnkGlobal10252410
+{
+	char m_pad00[0xc];
+	float m_fl0c;
+};
+
+extern CUnkGlobal10252410 *g_1070b228;
+
+struct CUnk10252410
+{
+	char m_pad000[0x730];
+	float m_fl730[3];
+
+	bool sub_10252410(unsigned int i);
+};
+
+// TARGET: CUnk10252410::sub_10252410
+bool CUnk10252410::sub_10252410(unsigned int i)
+{
+	if ((int)i <= 2)
+	{
+		if (g_1070b228->m_fl0c >= m_fl730[i])
+			return true;
+		return false;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252450 size=0xe
 float CUnknown10252450::sub_10252450(int index)
 {
