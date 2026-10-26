@@ -25,6 +25,35 @@ CBaseDoor *CBaseDoor::vfunc5(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eedf0 size=0xdb
+#include "CBaseDoor.h"
+#include "CEHandleGet.h"
+struct CDoorView_100eedf0 { char m_pad0[0x204]; unsigned int m_nFlags; char m_pad1[0x55c - 0x208]; char m_b55c; char m_pad2[0x64c - 0x55d]; int m_n64c; int m_n650; };
+int CBaseDoor::vfunc35(int a)
+{
+	if (sub_100127ec())
+		return 0x3a;
+	unsigned int h = m_hLinked638;
+	if (h != 0xffffffff)
+	{
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13) && pSlot->m_pEntity != 0)
+			return ((CBaseDoor *)EHandle_Get(m_hLinked638))->vfunc35(a);
+	}
+	CBaseEntity *pOther = sub_10008cba(a);
+	if (pOther)
+		return ((CBaseDoor *)pOther)->vfunc35(a);
+	CDoorView_100eedf0 *v = (CDoorView_100eedf0 *)this;
+	if (!(v->m_nFlags & 0x500))
+		return 0;
+	if (v->m_b55c)
+		return v->m_n650;
+	if (sub_1000cc57())
+		return 0x3b;
+	return v->m_n64c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ef060 size=0x18b
 #include "CBaseDoor.h"
 
