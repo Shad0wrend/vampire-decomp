@@ -478,6 +478,21 @@ void CAI_BaseNPC::vfunc311(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10273720 size=0x24
+void __fastcall sub_100081c0(void *pSelf);
+
+// TARGET: sub_10273720
+char __fastcall sub_10273720(void *pSelf)
+{
+    if (((char (__fastcall *)(void *))(*(void ***)pSelf)[158])(pSelf)) {
+        if (*(int *)((char *)pSelf + 0x36c) == 0) {
+            sub_100081c0(pSelf);
+        }
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273d30 size=0x7c
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
