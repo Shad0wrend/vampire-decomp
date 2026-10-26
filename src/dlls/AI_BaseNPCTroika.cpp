@@ -744,3 +744,64 @@ void CAI_BaseNPCTroika::sub_102c51a0(CBaseEntity *pEnemy)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x102c5310 size=0x104
+#include "CAI_BaseNPCTroika.h"
+
+struct CTroikaV5310
+{
+	char m_pad0[0x1b3c];
+	const char *m_pszFile1b3c;
+	int m_nLine1b40;
+	char m_pad1b44[0x5b84 - 0x1b44];
+	int m_n5b84;
+	char m_pad5b88[0x5cc4 - 0x5b88];
+	int m_nState5cc4;
+	char m_pad5cc8[0x60ac - 0x5cc8];
+	unsigned int m_h60ac;
+	char m_pad60b0[0x6338 - 0x60b0];
+	int m_n6338;
+	int m_n633c;
+};
+
+struct CHandleY
+{
+	unsigned int m_Index;
+	void Set(CBaseEntity *pEnt)
+	{
+		if (pEnt)
+			m_Index = *pEnt->vfunc1();
+		else
+			m_Index = 0xffffffff;
+	}
+};
+
+// TARGET: CAI_BaseNPCTroika::sub_102c5310
+void CAI_BaseNPCTroika::sub_102c5310(CBaseEntity *pEnemy)
+{
+    CTroikaV5310 *p = (CTroikaV5310 *)this;
+    if (pEnemy) {
+        if (vfunc167()) {
+            if (vfunc404((CBaseEntity *)vfunc167()) == 1)
+                sub_1033c6b0(0x800);
+        }
+        if (vfunc404(pEnemy) == 1)
+            sub_1033c6b0(0x800);
+        sub_1026d050();
+        sub_102b52a0(1, 1);
+        vfunc595();
+        vfunc304();
+        m_flags14bc |= 0x80820000;
+        if (*(int *)((char *)pEnemy + 0xa8))
+            sub_10273790("player D_LI 99", 0);
+        p->m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+        p->m_nLine1b40 = 0x6e7f;
+        p->m_nState5cc4 = 0xb;
+        sub_1026e340(0xb);
+        p->m_n6338 = 6;
+        p->m_n633c = 6;
+        ((CHandleY *)&p->m_h60ac)->Set(pEnemy);
+        p->m_n5b84 = 0x9fbd;
+    }
+}
+// END FUNCTION
