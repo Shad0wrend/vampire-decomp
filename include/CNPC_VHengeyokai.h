@@ -131,4 +131,5 @@ public:
 	void sub_10382bb0();	// with the target (handle +0x6664) alive: the motor (+0x5d44) takes the yaw of slot 221 and the turn rate 20.0f, is reset, and then looks at the slot 167 target (stub 0x10007248) or, without one, turns to the angles yaw (flipped by 180 when the motor's byte +0x28 is set)
 	bool sub_103822a0(CBaseEntity *pEnt);	// "is pEnt within +-20 degrees of this NPC's facing": true unless pEnt is given, the target handle (+0x6664) is alive and the yaw from this NPC to pEnt's origin (sub_101d2c70, stub 0x1000612c) differs from this NPC's pitch/yaw angle at +4 of slot 221 (sub_1013d580, stub 0x100097e6) by less than -20.0f or more than 20.0f
 	void sub_1028d610();	// CAI_BaseNPCTroika destructor body (stub 0x100123af), called directly
+	void vfunc144(int info);	// slot 144 "Event_Killed"-like (plain member): the flag check (sub_10381c80) then sub_103828a0 when it holds, then CNPC_VVampire::vfunc144(info)
 };
