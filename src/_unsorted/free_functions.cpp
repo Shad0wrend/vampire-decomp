@@ -65990,6 +65990,35 @@ int __fastcall sub_101f25d0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f27b0 size=0x29
+struct CVBaseView101f27b0 {
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual void vfunc5();
+    virtual void vfunc6();
+    virtual void vfunc7();
+    virtual void vfunc8();
+    virtual void vfunc9();
+    virtual int vfunc10(int a, int b);
+};
+
+struct CUnknown101f27b0 {
+    bool sub_101f27b0(int a, bool b);
+};
+
+// TARGET: CUnknown101f27b0::sub_101f27b0
+bool CUnknown101f27b0::sub_101f27b0(int a, bool b)
+{
+    char *self = (char *)this;
+    int off = *(int *)(*(char **)(self - 0x30) + 8);
+    CVBaseView101f27b0 *base = (CVBaseView101f27b0 *)(self + off - 0x30);
+    return (bool)base->vfunc10(a, (unsigned char)b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2ae0 size=0xe
 void sub_101f3030(void* p);
 
