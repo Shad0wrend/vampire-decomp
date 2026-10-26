@@ -92946,6 +92946,24 @@ bool CUnknown102d1220::sub_102d1220(int key, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d12e0 size=0x24
+extern void *g_1093407c;
+struct CUnknown102f47b0Callee {
+    float sub_102f47b0(int handle);
+};
+
+// TARGET: sub_102d12e0
+float __fastcall sub_102d12e0(void *pSelf)
+{
+    int handle = *(int *)((char *)pSelf + 0x5e4);
+    if (handle != -1) {
+        return ((CUnknown102f47b0Callee *)g_1093407c)->sub_102f47b0(handle);
+    }
+    float *pValue = ((float *(__fastcall *)(void *))(*(void ***)pSelf)[0x374 / 4])(pSelf);
+    return pValue[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1350 size=0x94
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"

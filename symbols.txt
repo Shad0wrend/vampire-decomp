@@ -2493,6 +2493,7 @@
 0x100085df func   ?sub_101f2550@@YIHPAX@Z sub_101f2550
 0x100085e4 func   ?vfunc481@CHL2_Player@@UAEMXZ CHL2_Player::vfunc481
 0x100085f3 func   ?sub_1028eb30@Holder@@QAEXHPAUVec3@@PAUHandleObj@@D@Z Holder::sub_1028eb30
+0x100085f8 func   ?sub_102d12e0@@YIMPAX@Z sub_102d12e0
 0x10008607 func   ?vfunc103@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::vfunc103
 0x1000860c func   ?vfunc448@CNPC_VMingXiao@@QAEXH@Z CNPC_VMingXiao::vfunc448
 0x1000861b func   ?vfunc113@CEnvBeam@@UAEXXZ CEnvBeam::vfunc113
