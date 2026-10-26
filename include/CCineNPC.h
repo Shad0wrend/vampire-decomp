@@ -25,6 +25,7 @@ public:
 	void sub_1000c9cd();	// base-class destructor body
 	char sub_101a8930();	// stub 0x1000c6da: true when the byte at +0x5f90 is set and the entity of the handle at +0x5ce4 resolves and answers slot 158 with true
 	void sub_101a8c30();	// "CancelScript" (stub 0x1000f187): DevMsg "Cancelling script: %s" (the name at +0x5f48), then cancels the scripted sequence entities of this entity's name (this one when it has none)
+	void sub_101a7500(int unused);	// "InputCancelScript" (takes one unused stack argument): DevMsg(2, "InputCancelScript: Cancelling script '%s'") with the name at +0x5f48 (or ""), then sub_101a7170(this)
 	void sub_101a77a0(void *pNpc);	// warns (DevWarning) that a scripted sequence (this) was asked to play on a ScriptHidden NPC (pNpc), after setting the byte at +0x5d78 of pNpc
 	char sub_101a8ac0();	// stub 0x1000e6a6: asked of the scripted sequence entity by CAI_BaseNPC::sub_10278090; true lets the NPC take part. With the NPC entity (handle at +0x5f94) live: false (Msg "%s is specified as the Next Script...") while +0x5f58 is set, false (Msg "%s is a priority script...") when the entity has flag bit 9 of +0x204, else true
 	void *sub_101a7600();	// finds the NPC to play the script: walks the entities named like this one (name at +0x5f54, search start at +0x5f98) and returns the first NPC (object at +0x94) that accepts (slot 482 == 1), else the last one that accepts as a fallback (== 2), else null; Msg "Found %s, but can't play!" for the others unless flag bit 11 of +0x204 is set
