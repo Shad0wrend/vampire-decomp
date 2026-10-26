@@ -110443,6 +110443,20 @@ float CNPC_VVampireBossUnit::sub_103c6830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6a50 size=0x2e
+#include "Vector.h"
+
+// TARGET: sub_103c6a50
+float __stdcall sub_103c6a50(const Vector &a, const Vector &b)
+{
+	float dx = b.x - a.x;
+	float dy = b.y - a.y;
+	float sum = dx * dx;
+	sum += dy * dy;
+	return FastSqrt(sum);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c6a90 size=0xa5
 #include "CNPC_VVampireBoss.h"
 
