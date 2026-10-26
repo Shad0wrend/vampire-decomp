@@ -8,6 +8,8 @@ public:
 	CFire *vfunc5(unsigned int flags);
 	void vfunc103();	// slot 103 \"CFire::Spawn\": the base Spawn and Precache, the fire box (-8, -8, 0 to 8, 8, 8), the heat level from the heat (x 0.05), sub_1010a450 with the origin and the fire fields, then the removed env_fire warning: creates an env_fire entity (sub_1020a0a0), puts two red messages on it, sizes it from the fire size and runs sub_10014614
 	void sub_1010a450(const float *pOrigin, float flSize, int a, int b, unsigned int nFlags, int c);	// stub 0x10004ae3: sets the fire up from the origin and the fire fields (+0x468, +0x480, +0x45c, spawnflags, +0x458)
+	void vfunc113();	// slot 113 (0x1010a330): CBaseEntity::vfunc113, then if the flags at +0x204 have 4: the heat-fire field +0x478 is copied to +0x46c and sub_10109e90 runs (tail call)
+	void sub_10109e90();	// the tail call of vfunc113 (stub 0x1000105a)
 	void vfunc123();	// slot 123 \"DrawDebugGeometryOverlays\"-like: while the fire burns (heat at +0x470 above 0, burn-out time at +0x464 ahead) draws its box (colour 0x58, 0xff, 0x80) and a \"Heat\" text line, else (unless sub_1010a8d0 holds) a dimmer box; then CBaseEntity::vfunc123
 	bool sub_1010a8d0();	// stub 0x1000e4f8, asked when the fire is not burning
 	void sub_100a0130();	// CBaseEntity::vfunc123, called directly (stub 0x10005880)
