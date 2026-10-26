@@ -4789,6 +4789,7 @@
 0x1000ebab func   ?sub_10136450@@YIXPADHH@Z sub_10136450
 0x1000ebba func   ?sub_103c1820@HeadClawView@@QAEXPAUEventData@@@Z HeadClawView::sub_103c1820
 0x1000ebbf func   ??1CVStatList_t@@QAE@XZ CVStatList_t::~CVStatList_t
+0x1000ebc4 func   ?Grow@?$CUtlMemory@Uthinkfunc_t@@@@QAEXH@Z CUtlMemory<thinkfunc_t>::Grow
 0x1000ebc4 func   ?sub_100b49b0@CMem16c_t@@QAEXH@Z CMem16c_t::sub_100b49b0
 0x1000ebc9 func   _env_glow env_glow
 0x1000ebce func   ?vfunc5@COccultFrenzy@@QAEPAV1@I@Z COccultFrenzy::vfunc5
