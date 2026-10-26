@@ -27748,6 +27748,25 @@ void sub_100d2990(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2a60 size=0x25
+int sub_10008d8c();
+void sub_100111f8(int value, int flag);
+
+// TARGET: sub_100d2a60
+void sub_100d2a60()
+{
+    int *pOwner = (int *)sub_10008d8c();
+    if (pOwner != 0)
+    {
+        int *pInner = (int *)pOwner[0xa8 / 4];
+        if (pInner != 0)
+        {
+            sub_100111f8(pInner[0x2e0 / 4], 1);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2b30 size=0x7b
 #include "CBaseCombatCharacter.h"
 #include "IVEngineServer.h"
