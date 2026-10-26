@@ -94023,6 +94023,25 @@ void CUnknown102dc2c0::sub_102dc2c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dc3e0 size=0x27
+#include "CBaseEntity.h"
+
+struct CGlobalVarsView {
+    char m_pad0000[0xc];
+    float curtime;
+};
+
+extern CGlobalVarsView *g_1070b228;
+void sub_100045ac();
+
+// TARGET: sub_102dc3e0
+void __fastcall sub_102dc3e0(CBaseEntity *p)
+{
+    p->sub_100ac4e0((int)sub_100045ac, 0, 0);
+    *(float *)((char *)p + 0x17c) = g_1070b228->curtime + 0.5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dc490 size=0x6e
 #include "CUnknown102dca60.h"
 #include "CUnknown102dc2c0.h"
