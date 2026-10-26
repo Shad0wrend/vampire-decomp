@@ -48,6 +48,24 @@ void CBaseEntity::sub_10026c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026f20 size=0x21
+bool __fastcall sub_100117d9(void *p);
+
+struct CBaseEntityX
+{
+    int sub_10026f20();
+};
+
+// TARGET: sub_10026f20
+int CBaseEntityX::sub_10026f20()
+{
+    if (sub_100117d9(this) && *((int *)((char *)this + 0x1fc)) == 0) {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027020 size=0x8
 #include "CBaseEntity.h"
 
