@@ -478,6 +478,18 @@ void CAI_BaseNPC::vfunc311(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10272900 size=0x23
+// TARGET: sub_10272900
+int __fastcall sub_10272900(void *pSelf)
+{
+    char *p = (char *)pSelf;
+    if (*(p + 0x65c) != 0 && *(int *)(p + 0x6f0) == *(int *)(p + 0x5ccc)) {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10273720 size=0x24
 void __fastcall sub_100081c0(void *pSelf);
 
