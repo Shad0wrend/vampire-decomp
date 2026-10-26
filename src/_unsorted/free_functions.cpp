@@ -29831,6 +29831,35 @@ void CUnknown100dec20::sub_100dec20(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100decb0 size=0x2b
+struct CUnkElem100decb0
+{
+	int m_0;
+	int m_4;
+	int m_8;
+};
+
+struct CUnk100decb0
+{
+	CUnkElem100decb0 *m_pElems;
+	char m_pad04[0x1c - 4];
+	int m_count;
+
+	int sub_100decb0(int i);
+};
+
+// TARGET: CUnk100decb0::sub_100decb0
+int CUnk100decb0::sub_100decb0(int i)
+{
+	if (i < m_count && i >= 0)
+	{
+		if (m_pElems[i].m_4 != i)
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df010 size=0xe
 struct S100df010 { int a, b, c, d; };
 
