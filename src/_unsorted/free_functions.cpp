@@ -77026,6 +77026,18 @@ void __stdcall sub_10229090(CSoundFadeItem *p, float flDelta)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102293f0 size=0x28
+#include "CUnknown10229550.h"
+
+// TARGET: CUnknown10229550::sub_102293f0
+void CUnknown10229550::sub_102293f0(float flScale)
+{
+    for (int i = 0; i < 4; i++) {
+        sub_10229550((CUnknown10229550Item *)((char *)this + 0x14 + i * 0x58), flScale);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10229430 size=0xde
 #include "CUnknown10229550.h"
 
