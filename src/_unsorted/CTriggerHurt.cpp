@@ -70,3 +70,15 @@ void CTriggerHurt::vfunc103()
 	m_vecPushDir5b4 *= m_flSpeed5a4;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101c6630 size=0x22
+// TARGET: CTriggerHurt::vfunc175
+#include "CTriggerHurt.h"
+extern char *g_1070b228;
+void CTriggerHurt::vfunc175(CBaseEntity *pOther)
+{
+    if (m_flNextThink < *(float *)(g_1070b228 + 0xc)) {
+        m_flNextThink = *(float *)(g_1070b228 + 0xc);
+    }
+}
+// END FUNCTION
