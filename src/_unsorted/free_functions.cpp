@@ -70444,6 +70444,39 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102038e0 size=0x2c
+struct IObj102038e0 {
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual void vfunc5();
+    virtual void vfunc6();
+    virtual void vfunc7();
+    virtual void vfunc8();
+    virtual void vfunc9();
+    virtual void vfunc10();
+    virtual void vfunc11();
+    virtual void vfunc12();
+    virtual int vfunc13(int a, void *b);
+};
+
+extern int g_106b8540;
+int sub_10203d60(int a);
+void sub_10203ed0(int a, int b);
+int sub_1001353e(int a);
+
+// TARGET: sub_102038e0
+int sub_102038e0(int a, IObj102038e0 *obj, int b)
+{
+    int r = obj->vfunc13(b, &g_106b8540);
+    r = sub_10203d60(r);
+    sub_10203ed0(a, r);
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203bb0 size=0x31
 // TARGET: sub_10203bb0
 void __cdecl sub_10203c00(const char *a, const char *b);

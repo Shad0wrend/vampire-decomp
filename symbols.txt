@@ -481,6 +481,7 @@
 0x10002801 func   ?sub_102db470@@YAHPAVCUnknown102db470@@@Z sub_102db470
 0x1000280b func   ?sub_103c9ed0@CHintData_WW@@QAEPAV1@PBV1@@Z CHintData_WW::sub_103c9ed0
 0x10002829 func   ?sub_102da600@CHolder@@QAEXPADDD@Z CHolder::sub_102da600
+0x1000282e func   ?sub_102038e0@@YAHHPAUIObj102038e0@@H@Z sub_102038e0
 0x10002847 func   ?vfunc546@CNPC_VHumanCombatant@@QAEHH@Z CNPC_VHumanCombatant::vfunc546
 0x1000284c func   ?sub_102391c0@CUnknown102391c0@@QAE_NXZ CUnknown102391c0::sub_102391c0
 0x10002856 func   ??0CUnknown103164c0@@QAE@PBD@Z CUnknown103164c0::CUnknown103164c0
