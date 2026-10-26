@@ -95670,6 +95670,24 @@ void CMem4_t::sub_102f9330(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f94b0 size=0x2c
+struct CBitHolder102f94b0 {
+    char pad[8];
+    unsigned int *m_bits;
+};
+struct CBitOwner102f94b0 {
+    char pad[0x90];
+    CBitHolder102f94b0 *m_pHolder;
+    bool sub_102f94b0(int idx);
+};
+
+// TARGET: sub_102f94b0
+bool CBitOwner102f94b0::sub_102f94b0(int idx)
+{
+    return (m_pHolder->m_bits[idx >> 5] & (1 << (idx & 0x1f))) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f94f0 size=0xa2
 #include <string.h>
 #include "CBitString.h"
