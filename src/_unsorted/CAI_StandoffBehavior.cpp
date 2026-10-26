@@ -19,3 +19,17 @@ void CAI_StandoffBehavior::vfunc5()
 	m_pOuter->m_unk1fc = 2;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102c7960 size=0x2f
+// TARGET: CAI_StandoffBehavior::vfunc20
+#include "CAI_StandoffBehavior.h"
+
+void CAI_StandoffBehavior::vfunc20() {
+    CAI_StandoffBehaviorOuter *pOuter = m_pOuter;
+    if (pOuter->m_unk5c38 != 0) {
+        if (pOuter->m_unk5c38 == pOuter->sub_102cc1f0(0x17)) {
+            m_pOuter->sub_10269f30(0x54);
+        }
+    }
+}
+// END FUNCTION
