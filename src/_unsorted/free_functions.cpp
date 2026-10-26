@@ -83689,6 +83689,19 @@ void sub_1024e140(const S1024e140Matrix &src, S1024e140Matrix &dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024e8b0 size=0x25
+void sub_1024dfb0(void *p);
+
+// TARGET: sub_1024e8b0
+void sub_1024e8b0(int *p, int a, int b, int c)
+{
+    sub_1024dfb0(p);
+    p[3] = a;
+    p[7] = b;
+    p[11] = c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024e930 size=0x112
 #include <math.h>
 #include "Vector.h"

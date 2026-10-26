@@ -4237,6 +4237,7 @@
 0x1000d67f func   ?sub_1020c3d0@CSecCamera@@QAEXXZ CSecCamera::sub_1020c3d0
 0x1000d68e func   ?sub_101f0e50@CUnknown101f0e50@@QAEPAV1@XZ CUnknown101f0e50::sub_101f0e50
 0x1000d69d func   ?sub_102dc520@CUnknown102dca60@@QAEXXZ CUnknown102dca60::sub_102dc520
+0x1000d6a2 func   ?sub_1024e8b0@@YAXPAHHHH@Z sub_1024e8b0
 0x1000d6a7 func   _prop_clockhand prop_clockhand
 0x1000d6ac func   ?sub_101fbc40@CVStatSubCost_t@@QAEHH_N@Z CVStatSubCost_t::sub_101fbc40
 0x1000d6b6 func   ?sub_1011d2e0@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1011d2e0
