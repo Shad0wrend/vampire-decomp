@@ -46747,6 +46747,20 @@ void CNPC_VCopUnit::sub_1017f650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f980 size=0x27
+// TARGET: CUnknown1017f980::sub_1017f980
+#include "CUnknown1017f980.h"
+#include "CDoorEventList.h"
+
+void CUnknown1017f980::sub_1017f980()
+{
+	char *p = sub_10005e7a();
+	if (p)
+		((CDoorEventList *)(p + 0x480))->sub_100cd660((CBaseEntity *)this, (CBaseEntity *)this, 0);
+	m_unk1d1c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017faa0 size=0x65
 struct CMsgPlayerView;
 struct CPlayerLookup { char pad[0x49c]; int m_nState; };
