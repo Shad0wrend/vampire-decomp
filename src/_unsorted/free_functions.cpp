@@ -61977,6 +61977,18 @@ const char *CUnknown101d82d0_Elem::sub_101d8190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d8250 size=0x25
+// TARGET: sub_101d8250
+void __fastcall sub_101d8250(int *pThis)
+{
+    if (pThis[1] != 0) {
+        operator delete((void *)(pThis[1] - 4));
+        pThis[1] = 0;
+    }
+    pThis[0] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d83a0 size=0x9b
 #include "CUnknown101d82d0.h"
 #include "CUnknown101d7ec0.h"
