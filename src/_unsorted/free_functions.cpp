@@ -30333,6 +30333,33 @@ char CUnknown100dda50::sub_100dda50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ddc00 size=0x21
+struct CUnkVT100ddc00
+{
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3(unsigned short value);
+};
+
+extern CUnkVT100ddc00 *g_1070b24c;
+
+struct CUnk100ddc00
+{
+    void sub_100ddc00();
+};
+
+// TARGET: sub_100ddc00
+void CUnk100ddc00::sub_100ddc00()
+{
+    unsigned short h = *(unsigned short *)((char *)this + 0x46);
+    if (h != 0xffff) {
+        g_1070b24c->vf3(h);
+        *(unsigned short *)((char *)this + 0x46) = 0xffff;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ddc40 size=0xb0
 struct S24c {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();

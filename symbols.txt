@@ -4579,6 +4579,7 @@
 0x1000e2b9 func   ?sub_10382b30@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::sub_10382b30
 0x1000e2be func   ?vfunc418@CAI_BaseNPC@@UAEMM@Z CAI_BaseNPC::vfunc418
 0x1000e2c3 func   ?vfunc103@CCineAISchedule@@QAEXXZ CCineAISchedule::vfunc103
+0x1000e2d2 func   ?sub_100ddc00@CUnk100ddc00@@QAEXXZ CUnk100ddc00::sub_100ddc00
 0x1000e2e1 func   ?sub_101d58b0@Loader@@QAEXPBD@Z Loader::sub_101d58b0
 0x1000e2e6 func   ?vfunc5@CItemMWallet@@QAEPAV1@I@Z CItemMWallet::vfunc5
 0x1000e2ff func   ?sub_100427c0@UtlMem@@QAEXXZ UtlMem::sub_100427c0
