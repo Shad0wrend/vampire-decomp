@@ -11,6 +11,7 @@ public:
 	void sub_100011ef();
 	void sub_103ad1b0();
 
+	char m_pad64[0x70 - 0x64];
 	int m_n70;	// 0x70
 	float m_f74;	// 0x74
 };
