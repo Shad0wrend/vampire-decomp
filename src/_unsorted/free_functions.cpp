@@ -77705,6 +77705,23 @@ void sub_10233ee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10233fb0 size=0x2b
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern unsigned char g_109340dc;
+extern float g_106102fc;
+
+// TARGET: sub_10233fb0
+void sub_10233fb0()
+{
+	int iVar1 = g_1070b22c->a12();
+	if (iVar1 != 0 && g_109340dc != 0) {
+		g_106102fc = g_106102fc - 10.0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10234080 size=0x3d
 #include "vampire.h"
 #include "CUnknown1070b22c.h"
