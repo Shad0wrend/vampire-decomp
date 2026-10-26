@@ -35403,6 +35403,59 @@ void CEnvBeam::sub_100fef50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff090 size=0xd5
+#include "CEnvBeam.h"
+#include "CEntityVSlots.h"
+#include "CUnknown1070b244.h"
+#include "ScopeTrace.h"
+
+struct CBeamGlobals
+{
+	char m_pad0000[0xc];
+	float m_flCurTime;
+};
+
+extern CBeamGlobals *g_1070b228;
+extern CUnknown1070b244 *g_1070b244;
+__declspec(dllimport) void __cdecl DevMsg(const char *pszFormat, ...);
+
+static inline const char *StringOf(const char *const &s)
+{
+	return s ? s : g_106b8540;
+}
+
+void CEnvBeam::sub_100ff090()
+{
+	if (m_flLife != 0.0f)
+	{
+		float flNext;
+		if (m_flags204 & 4)
+			flNext = g_1070b244->vfunc1(0, m_flRestrike) + g_1070b228->m_flCurTime;
+		else
+			flNext = m_flRestrike + g_1070b228->m_flCurTime;
+		m_flNextThink = flNext + m_flLife;
+	}
+	m_nActive = 1;
+	if (m_iszEndEntity == 0)
+	{
+		if (m_iszStartEntity == 0)
+		{
+			sub_101001e0();
+			return;
+		}
+		CBaseEntity *pEnt = sub_100bbdf0(StringOf(m_iszStartEntity));
+		if (pEnt)
+		{
+			sub_10100860((const float *)((CEntityVSlots *)pEnt)->slot217());
+			return;
+		}
+		DevMsg("env_beam: unknown entity \"%s\"\n", StringOf(m_iszStartEntity));
+		return;
+	}
+	sub_100ff310();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100080 size=0x10b
 #include "CBroadcastRecipientFilter.h"
 struct ITempEnts {
