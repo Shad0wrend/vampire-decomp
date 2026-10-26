@@ -45837,6 +45837,23 @@ void CBasePlayerUnit177b50::sub_10177b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101780e0 size=0x27
+// TARGET: CUnknown101780e0::sub_101780e0
+#include "CUnknown101780e0.h"
+#include "CWeaponOwner.h"
+#include "CEntityVSlots.h"
+
+void CUnknown101780e0::sub_101780e0()
+{
+	for (int i = 0; i < 2; i++)
+	{
+		CEntityVSlots *p = (CEntityVSlots *)((CWeaponOwner *)this)->sub_1015d680(i);
+		if (p)
+			p->slot266(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178170 size=0xcc
 #include "CUnknown101800e0.h"
 
