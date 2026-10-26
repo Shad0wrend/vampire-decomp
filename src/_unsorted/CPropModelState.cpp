@@ -54,6 +54,18 @@ void CPropModelState::vfunc265(void *pActivator, void *pCaller, int useType, flo
 }
 // END FUNCTION
 
+// FUNCTION: 0x10216a10 size=0x22
+// TARGET: CPropModelState::vfunc34
+#include "CPropModelState.h"
+int CPropModelState::vfunc34(CBaseEntity *pActivator)
+{
+    if (m_bLocked != 0) {
+        return 0;
+    }
+    return sub_100a7bd0(pActivator) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216a50 size=0x33
 #include "CPropModelState.h"
 // TARGET: CPropModelState::vfunc35
