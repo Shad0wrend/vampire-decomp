@@ -80896,6 +80896,19 @@ void sub_1024c630(float *m)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024cc10 size=0x2e
+#include "VMatrix.h"
+// TARGET: sub_1024cc10
+void sub_100141b9(int a, VMatrix *pOut);
+
+VMatrix sub_1024cc10(int a)
+{
+    VMatrix m;
+    sub_100141b9(a, &m);
+    return m;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024cc90 size=0xd3
 #include "Vector.h"
 
