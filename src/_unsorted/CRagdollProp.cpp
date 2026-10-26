@@ -213,3 +213,18 @@ int CRagdollProp::vfunc233(int *pOut, int nMax)
     return *(int *)((char *)this + 0x730);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10158080 size=0x2e
+#include "CRagdollProp.h"
+// TARGET: CRagdollProp::vfunc32
+void *sub_104115b0(int a, int b);
+
+bool CRagdollProp::vfunc32(int a)
+{
+    if ((m_flags204 & 0x20) == 0)
+    {
+        return (void *)this == sub_104115b0(a, 0);
+    }
+    return false;
+}
+// END FUNCTION
