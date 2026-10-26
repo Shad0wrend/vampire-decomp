@@ -36201,6 +36201,35 @@ void CBreakable::sub_1010dcf0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010dd80 size=0x2b
+struct CVariantArg1010dd80
+{
+	char pad0[8];
+	int m_value;	// 0x08
+	char pad1[0x18 - 0xc];
+	int m_type;	// 0x18
+};
+
+struct CUnk1010dd80
+{
+	char pad0[0x1fc];
+	int m_unk1fc;
+
+	void sub_1010dd80(const CVariantArg1010dd80 *d);
+};
+
+// TARGET: CUnk1010dd80::sub_1010dd80
+void CUnk1010dd80::sub_1010dd80(const CVariantArg1010dd80 *d)
+{
+	if (d->m_type == 4 && d->m_value != 0)
+	{
+		m_unk1fc = 2;
+		return;
+	}
+	m_unk1fc = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010ddc0 size=0xa7
 #include "CBreakable.h"
 
