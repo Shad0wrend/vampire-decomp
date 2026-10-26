@@ -122229,6 +122229,21 @@ void CBaseCombatWeapon::sub_1040dcf0(CBaseEntity *pVictim, const float *pDir, vo
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040dde0 size=0x2e
+#include "CBaseEntity.h"
+// TARGET: sub_1040dde0
+void sub_10189660(CBaseEntity *pEnt, int a, int b);
+
+void __stdcall sub_1040dde0(CBaseEntity *pEnt, int a, int b)
+{
+    if (pEnt->m_field368 == 1)
+    {
+        pEnt->sub_100aaa40(2);
+    }
+    sub_10189660(pEnt, a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040e1c0 size=0xd5
 #include "CBaseEntity.h"
 #include "IPhysicsObject.h"
