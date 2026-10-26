@@ -1,6 +1,25 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a65e0 size=0x26
+struct CUnknown101a65e0View {
+    int sub_101a65e0(int a);
+};
+
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+// TARGET: CUnknown101a65e0View::sub_101a65e0
+int CUnknown101a65e0View::sub_101a65e0(int a)
+{
+    g_109f3630("Called wrong RunTask()\n");
+    void (CUnknown101a65e0View::*pSlot444)(int);
+    void **vt = *(void ***)this;
+    *(void **)&pSlot444 = vt[0x6f0 / 4];
+    (this->*pSlot444)(a);
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6840 size=0xb
 void CAI_BaseNPC::vfunc483(int unused)
 {
