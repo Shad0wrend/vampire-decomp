@@ -16,6 +16,7 @@ public:
 	void sub_101c55d0(CBaseEntity *pOther);	// CBaseTrigger::vfunc176 (stub 0x1001346c), called directly
 	virtual void vfunc103();	// slot 103 (Spawn): CBaseEntity::vfunc103, sub_101c5080, the think function 0x1000cc89, then the push vector (+0x5b4) = the unit vector from the origin (slot 217) to the target position (+0x5a8) scaled by the speed (+0x5a4)
 	void sub_101c5080();	// stub 0x1000dfd0, called directly by vfunc103
+	void sub_101c63d0();	// 0x101c63d0: resets the hurt timer (the trigger's base init, then clears +0x17c)
 
 	float m_flDamage;	// 0x598
 	float m_flLastDmgTime;	// 0x59c
