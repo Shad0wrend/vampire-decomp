@@ -9436,6 +9436,28 @@ int sub_10069ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069f00 size=0x2b
+#include "CTETParticleHUD.h"
+
+extern int vt_1044e13c[];
+
+struct CBaseTempEntityHeadPlaceholder {
+    void sub_10015334(int a);
+};
+
+// TARGET: CTETParticleHUD::sub_10069f00
+CTETParticleHUD *CTETParticleHUD::sub_10069f00(int a)
+{
+    ((CBaseTempEntityHeadPlaceholder *)this)->sub_10015334(a);
+    *(int **)this = vt_1044e13c;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(char *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x14) = 1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006a190 size=0xe8
 #include "SendProp.h"
 

@@ -6228,6 +6228,7 @@
 0x10013e44 func   ?sub_101d1530@CUnknown101d1460@@QAEXPAVCBaseEntity@@H@Z CUnknown101d1460::sub_101d1530
 0x10013e49 func   ?vfunc392@CBaseCombatCharacter@@QAEHPAX@Z CBaseCombatCharacter::vfunc392
 0x10013e53 func   ?vfunc124@CTriggerLook@@UAEHXZ CTriggerLook::vfunc124
+0x10013e5d func   ?sub_10069f00@CTETParticleHUD@@QAEPAV1@H@Z CTETParticleHUD::sub_10069f00
 0x10013e67 func   ?sub_1030f7b0@CUnknown1030f940@@QAEDPAUCUnknown1030f940Rec@@@Z CUnknown1030f940::sub_1030f7b0
 0x10013e6c func   ?sub_1022eb60@@YAXPAUTStat@@PBD@Z sub_1022eb60
 0x10013e7b func   ?sub_103fd440@@YAHXZ sub_103fd440
