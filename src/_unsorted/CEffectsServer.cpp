@@ -1,6 +1,26 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100f5bf0 size=0x28
+#include "CEffectsServer.h"
+
+extern char vt_1044db7c[];
+extern char vt_10455e18[];
+extern void *g_10939fdc;
+
+// TARGET: CEffectsServer::CEffectsServer
+CEffectsServer::CEffectsServer()
+{
+    *(void **)this = vt_1044db7c;
+    m_pNext = g_10939fdc;
+    g_10939fdc = this;
+    m_b08 = 0;
+    m_pSuppressHost = 0;
+    m_nSuppressCount = 0;
+    *(void **)this = vt_10455e18;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5c30 size=0x1e
 #include "CEffectsServer.h"
 
