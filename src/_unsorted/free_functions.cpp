@@ -91157,6 +91157,31 @@ void CUnknown102d9ed0::sub_102da860(CBaseEntity *pNpc, const Vector *pOrigin, co
 }
 // END FUNCTION
 
+// FUNCTION: 0x102da9a0 size=0x2e
+// TARGET: CUnknown102da9a0::sub_102da9a0
+struct CUnknown102da9a0Record {
+    int m_first;
+    char m_pad04[0x18];
+};
+
+struct CUnknown102da9a0 {
+    char m_pad0000[0x580];
+    CUnknown102da9a0Record *m_pRecords;	// 0x580: records of 0x1c bytes
+    int m_pad0584;
+    int m_nRecords;	// 0x588
+    int sub_102da9a0(int index);
+};
+
+int CUnknown102da9a0::sub_102da9a0(int index) {
+    if (m_pRecords != 0) {
+        if (index < m_nRecords) {
+            return m_pRecords[index].m_first;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102da9e0 size=0xa1
 #include "CUnknown102d9ed0.h"
 
