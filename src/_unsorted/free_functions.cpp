@@ -56211,6 +56211,19 @@ extern "C" CBaseEntity *trigger_hurt()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c63d0 size=0x2c
+#include "CTriggerHurt.h"
+
+// TARGET: CTriggerHurt::sub_101c63d0
+void CTriggerHurt::sub_101c63d0()
+{
+	sub_101c6550(3.0f);
+	((CBaseEntity *)this)->sub_100ac4e0(0, 0, 0);
+	*(int *)((char *)this + 0x17c) = 0;
+	((CBaseTrigger *)this)->sub_101c4dd0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6550 size=0xa1
 #include "CTriggerHurt.h"
 #include "CGlobalEntityList.h"
