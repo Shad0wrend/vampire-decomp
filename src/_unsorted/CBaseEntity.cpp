@@ -1075,6 +1075,55 @@ void CBaseEntity::vfunc178(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a4e70 size=0x118
+#include "CEHandleGet.h"
+
+struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
+extern ScopeEntry_t *g_109f3620;
+extern int *g_109f3680;
+extern char g_106b8540[];
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct EntSlots173_t
+{
+    SL10(a00) SL10(a01) SL10(a02) SL10(a03) SL10(a04) SL10(a05) SL10(a06) SL10(a07) SL10(a08) SL10(a09)
+    SL10(a10) SL10(a11) SL10(a12) SL10(a13) SL10(a14) SL10(a15) SL10(a16)
+    virtual void b0(); virtual void b1(); virtual void b2();
+    virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value);
+};
+
+void CBaseEntity::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value)
+{
+    const char *pszName;
+    if (this) {
+        pszName = m_name26c;
+        if (!pszName)
+            pszName = g_106b8540;
+    } else {
+        pszName = "NULL ENTITY";
+    }
+    g_109f3620[*g_109f3680].m_pszName = "CBaseEntity::Use";
+    g_109f3620[*g_109f3680].m_pszEnt = pszName;
+    g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
+    (*g_109f3680)++;
+    void (CBaseEntity::*pfnUse)(CBaseEntity *, CBaseEntity *, int, int) = *(void (CBaseEntity::**)(CBaseEntity *, CBaseEntity *, int, int))((char *)this + 0x1f0);
+    if (pfnUse) {
+        (this->*pfnUse)(pActivator, pCaller, useType, value);
+        (*g_109f3680)--;
+        return;
+    }
+    unsigned int h = m_hTouch254;
+    if (h != 0xffffffff) {
+        CGlobalEntityList_Slot *e = &g_10566458->m_Slots[h & 0x1fff];
+        if (e->m_Serial == (int)(h >> 13) && e->m_pEntity != 0)
+            ((EntSlots173_t *)EHandle_Get(m_hTouch254))->vfunc173(pActivator, pCaller, useType, value);
+    }
+    (*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a4fe0 size=0x3b
 struct CBaseEntityUnit5c {
     void sub_10010794(CBaseEntity *pOther, CBaseEntity *pThis, int flags);
