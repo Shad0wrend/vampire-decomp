@@ -99552,6 +99552,23 @@ CUnknown1030bc20_Record *CUnknown1030bc20::sub_1030b7c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b8a0 size=0x25
+struct CUnknown1030b8a0
+{
+    void sub_1030b8a0(float *p);
+};
+
+// TARGET: CUnknown1030b8a0::sub_1030b8a0
+void CUnknown1030b8a0::sub_1030b8a0(float *p)
+{
+    float *pf = (float *)this;
+    *(char *)((char *)this + 0x48) = 1;
+    pf[0x4c / 4] = pf[0x34 / 4] + p[0];
+    pf[0x50 / 4] = pf[0x38 / 4] + p[1];
+    pf[0x54 / 4] = pf[0x3c / 4] + p[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030ba50 size=0xe
 void CUnknown1030ba50::sub_1030ba50(int value)
 {
