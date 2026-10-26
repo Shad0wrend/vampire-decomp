@@ -37532,6 +37532,22 @@ const char *sub_101273e0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128270 size=0x2f
+#include "CGameMovement.h"
+
+extern char *g_1070b228;
+
+// TARGET: CGameMovement::sub_10128270
+float CGameMovement::sub_10128270()
+{
+	char *pPlayer = (char *)m_pPlayer;
+	if (*(float *)(pPlayer + 0xb4) <= *(float *)((char *)g_1070b228 + 0xc) - *(float *)(pPlayer + 0xb8)) {
+		return 0.0f;
+	}
+	return 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101282b0 size=0x8d
 #include "CGameMovement.h"
 

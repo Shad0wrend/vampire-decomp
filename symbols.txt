@@ -6458,6 +6458,7 @@
 0x10014f51 func   ?sub_101b2570@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_101b2570
 0x10014f56 func   ?vfunc305@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc305
 0x10014f60 func   ?sub_10109df0@CUnknownTimer10109df0@@QAEXPAUCUnknownInput10109df0@@@Z CUnknownTimer10109df0::sub_10109df0
+0x10014f65 func   ?sub_10128270@CGameMovement@@QAEMXZ CGameMovement::sub_10128270
 0x10014f88 func   ?sub_100c89e0@@YIXPADHH@Z sub_100c89e0
 0x10014f92 func   ?vfunc432@CNPC_VAnimal@@UAEXH@Z CNPC_VAnimal::vfunc432
 0x10014fa6 func   ?sub_100c7650@@YAPAXPAUStudioHdr@@HPAPAU1@PAMPBM@Z sub_100c7650
