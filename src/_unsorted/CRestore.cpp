@@ -213,6 +213,21 @@ unsigned int CRestore::vfunc12(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2210 size=0x2a
+#include "CRestore.h"
+
+extern void (*g_109f3890)(char *, const char *, int);
+void __stdcall sub_1000910b(int n);
+
+// TARGET: CRestore::vfunc21
+void CRestore::vfunc21(char *pDest, int n, int a)
+{
+    const char *src = (const char *)sub_101a1f70();
+    ::sub_1000910b(a);
+    g_109f3890(pDest, src, n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2460 size=0x96
 #include "CRestore.h"
 #include <string.h>
