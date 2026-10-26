@@ -48990,6 +48990,50 @@ void CUnknown10185a30::sub_10185a30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10185f90 size=0x140
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+
+extern Vector g_1070d1b0;
+
+#define GV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CGroundEntityView
+{
+    GV10(a0) GV10(a1) GV10(a2) GV10(a3) GV10(a4) GV10(a5) GV10(a6) GV10(a7) GV10(a8) GV10(a9)
+    GV10(b0) GV10(b1) GV10(b2) GV10(b3) GV10(b4) GV10(b5) GV10(b6) GV10(b7) GV10(b8) GV10(b9)
+    GV10(c0)
+    virtual void vfunc210(Vector *pOut);
+};
+
+void __stdcall sub_10185f90(CBasePlayer *pPlayer, double flFrame)
+{
+    CBaseEntity *pPlayerEnt = (CBaseEntity *)pPlayer;
+    if (pPlayerEnt->sub_100b3700() & 1) {
+        CBaseEntity *pGround = pPlayer->vfunc209();
+        if (pGround) {
+            if (pGround->sub_100b3700() & 0x1000) {
+                Vector vecBase;
+                ((CGroundEntityView *)pGround)->vfunc210(&vecBase);
+                if (pPlayerEnt->sub_100b3700() & 0x800000) {
+                    vecBase.x = vecBase.x + pPlayer->m_vec03B0.x;
+                    vecBase.y = vecBase.y + pPlayer->m_vec03B0.y;
+                    vecBase.z = vecBase.z + pPlayer->m_vec03B0.z;
+                }
+                pPlayer->m_vec03B0 = vecBase;
+                pPlayerEnt->sub_100b3580(0x800000);
+            }
+        }
+    }
+    if (!(pPlayerEnt->sub_100b3700() & 0x800000)) {
+        Vector vecImpulse = pPlayer->m_vec03B0 * (float)(flFrame * 0.5 + 1.0);
+        pPlayerEnt->sub_100b2aa0(vecImpulse);
+        pPlayer->m_vec03B0 = g_1070d1b0;
+    }
+    pPlayerEnt->sub_100b3640(0x800000);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101871f0 size=0x69
 struct CGlobalVarsStub
 {
