@@ -27476,6 +27476,28 @@ bool CList_t::sub_100ce6c0(int a, int b, CList_tValue value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce710 size=0x23
+struct CUnknown100ce710Block {
+	int v[5];
+};
+
+struct CUnknown100ce710 {
+	char m_pad0000[0x54];
+	char *m_p54;
+	bool sub_100ce710(CUnknown100ce710Block block);
+};
+
+// TARGET: CUnknown100ce710::sub_100ce710
+bool CUnknown100ce710::sub_100ce710(CUnknown100ce710Block block)
+{
+	if (m_p54 != 0) {
+		*(CUnknown100ce710Block *)(m_p54 + 0x20) = block;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce750 size=0x85
 struct EntInfo { void *m_pEntity; int m_serial; int m_unused; };
 struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
