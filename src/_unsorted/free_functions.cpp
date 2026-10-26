@@ -54081,6 +54081,21 @@ void CBaseEntityUnit101b0c10::sub_101b0c10(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b0d80 size=0x26
+// TARGET: CUnknown101b0d80::sub_101b0d80
+#include "CUnknown101b0d80.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+void sub_101b1040(int b, int a);
+
+void CUnknown101b0d80::sub_101b0d80(int a)
+{
+	int nEdict = m_n2e0;
+	sub_101b1040(g_1070b22c->vfunc35(nEdict), a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1040 size=0xa1
 struct SSoundParams
 {
