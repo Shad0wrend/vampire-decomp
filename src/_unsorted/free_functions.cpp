@@ -42703,6 +42703,36 @@ int CBaseMoveBehavior::sub_101402b0(int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140710 size=0x27
+// TARGET: CBaseMoveBehavior::sub_10140710
+#include "CBaseMoveBehavior.h"
+
+namespace block_10140710 {
+	struct CBaseMoveBehaviorUnit : CBaseMoveBehavior {
+		int sub_101402b0(int nIndex);
+	};
+
+	int CBaseMoveBehaviorUnit::sub_101402b0(int nIndex)
+	{
+		if (nIndex == 1)
+			return m_unk480;
+		if (nIndex == -1)
+			return m_unk484;
+		return (int)this;
+	}
+}
+
+bool CBaseMoveBehavior::sub_10140710()
+{
+	if (m_p4a0 != 0)
+	{
+		if (((block_10140710::CBaseMoveBehaviorUnit *)m_p4a0)->sub_101402b0(1) == 0 && m_p4a4 == 0)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140bd0 size=0x11
 struct CScaleFields10140bd0 {
     char pad0[0x49c];
