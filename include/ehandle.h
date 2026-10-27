@@ -17,32 +17,35 @@
 
 class CBaseEntity;
 
+struct EHandleEntInfo	// CEntInfo: one of the entity list's 0x2000 slots
+{
+	IHandleEntity *m_pEntity;
+	int m_SerialNumber;
+	int m_pad;
+};
+
+struct EHandleEntityList	// CBaseEntityList: the slots follow the vtable pointer
+{
+	void *m_vtable;
+	EHandleEntInfo m_EntPtrArray[0x2000];
+
+	// CBaseEntityList::LookupEntity: the entity in the handle's slot when the slot's serial number is the handle's
+	IHandleEntity *LookupEntity(const CBaseHandle &handle) const
+	{
+		if (handle.m_Index == 0xffffffff)
+			return 0;
+		const EHandleEntInfo *pInfo = &m_EntPtrArray[handle.GetEntryIndex()];
+		if (pInfo->m_SerialNumber == handle.GetSerialNumber())
+			return pInfo->m_pEntity;
+		else
+			return 0;
+	}
+};
+
 namespace EHandleDetail
 {
-	struct EntInfo	// CEntInfo: one of the entity list's 0x2000 slots
-	{
-		IHandleEntity *m_pEntity;
-		int m_SerialNumber;
-		int m_pad;
-	};
-
-	struct EntityList	// CBaseEntityList: the slots follow the vtable pointer
-	{
-		void *m_vtable;
-		EntInfo m_EntPtrArray[0x2000];
-
-		// CBaseEntityList::LookupEntity: the entity in the handle's slot when the slot's serial number is the handle's
-		IHandleEntity *LookupEntity(const CBaseHandle &handle) const
-		{
-			if (handle.m_Index == 0xffffffff)
-				return 0;
-			const EntInfo *pInfo = &m_EntPtrArray[handle.GetEntryIndex()];
-			if (pInfo->m_SerialNumber == handle.GetSerialNumber())
-				return pInfo->m_pEntity;
-			else
-				return 0;
-		}
-	};
+	typedef EHandleEntInfo EntInfo;
+	typedef EHandleEntityList EntityList;
 
 	extern EntityList *g_10566458;	// g_pEntityList (the game's CGlobalEntityList)
 }
