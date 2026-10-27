@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100f1870 size=0x6
+#include "CRotDoor.h"
+namespace lifted {
+extern char g_10564ae4;
+}
+datamap_t * CRotDoor::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10564ae4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f21d0 size=0x81
 #include "CBaseEntity.h"
 #include "CRotDoor.h"
