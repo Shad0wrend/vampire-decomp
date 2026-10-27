@@ -5545,6 +5545,7 @@
 0x1000f5a1 func   ?sub_101e3400@CUnknown101e0f00@@QAEXPAX0HH@Z CUnknown101e0f00::sub_101e3400
 0x1000f5a6 func   ?sub_10057ac0@@YAXPAX@Z sub_10057ac0
 0x1000f5ab func   ?sub_100aa9a0@@YI_NPAVCBaseEntity@@HHHH@Z sub_100aa9a0
+0x1000f5b0 func   ?sub_101b6230@CUnknown101b6230@@QAEPAXXZ CUnknown101b6230::sub_101b6230
 0x1000f5b5 func   ?sub_10333700@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10333700
 0x1000f5bf func   ?sub_10200730@CVStatList_t@@QAEXXZ CVStatList_t::sub_10200730
 0x1000f5d8 func   ?sub_101d2780@@YAXVVector@@HHHHH@Z sub_101d2780

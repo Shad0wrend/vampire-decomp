@@ -60088,6 +60088,16 @@ CUnknown101b61a0 &CUnknown101b61a0::sub_101b61a0(const CUnknown101b61a0 &other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6230 size=0xf
+struct CUnknown101b6230 { void * sub_101b6230(); };
+void * CUnknown101b6230::sub_101b6230()
+{
+    *(short *)this = 0xffff;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6250 size=0x9e
 #include "CUnknown101b6250.h"
 
