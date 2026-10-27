@@ -82,6 +82,16 @@ int CCollisionProperty::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc940 size=0x8
+namespace lifted {
+struct C100016a4 { int sub_100016a4(); };
+}
+void CCollisionProperty::vfunc7()
+{
+    ((lifted::C100016a4 *)(*(int *)((char *)this + 0x3c)))->sub_100016a4();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc960 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CEntSlots
