@@ -114077,6 +114077,12 @@ void sub_103706b0(CWitnessPlayer *pPlayer, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103708c0 size=0x1
+void sub_103708c0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103708e0 size=0x40
 #include "CNPC_VCop.h"
 
