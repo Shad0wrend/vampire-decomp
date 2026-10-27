@@ -750,6 +750,7 @@
 0x10002fcc func   ?sub_101e8e80@CUnknown101e8e80@@QAEHXZ CUnknown101e8e80::sub_101e8e80
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
 0x10002fdb func   ?sub_1009ad70@@YIPADPAD@Z sub_1009ad70
+0x10002fe0 func   ?vfunc82@CBaseFlex@@UAEPAUdatamap_t@@XZ CBaseFlex::vfunc82
 0x10002ff4 func   ?sub_101fee50@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101fee50
 0x10002ff9 func   ?vfunc4@CTEBloodStream@@QAEXHH@Z CTEBloodStream::vfunc4
 0x10003017 func   _ai_changehintgroup ai_changehintgroup

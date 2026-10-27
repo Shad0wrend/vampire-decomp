@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100b57b0 size=0x6
+#include "CBaseFlex.h"
+namespace lifted {
+extern char g_10559360;
+}
+datamap_t * CBaseFlex::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10559360);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5940 size=0x1e
 #include "CBaseFlex.h"
 
