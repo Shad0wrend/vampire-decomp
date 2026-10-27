@@ -67525,6 +67525,19 @@ extern "C" CBaseEntity *vdisciplineprojectile()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d9f60 size=0xb
+namespace lifted {
+extern char g_10483004;
+int sub_100085d5();
+}
+struct CUnknown101d9f60 { int sub_101d9f60(); };
+int CUnknown101d9f60::sub_101d9f60()
+{
+    *(int *)this = (int)&lifted::g_10483004;
+    return lifted::sub_100085d5();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101da8b0 size=0x1
 void sub_101da8b0()
 {
