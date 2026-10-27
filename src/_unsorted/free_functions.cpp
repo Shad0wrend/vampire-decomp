@@ -37523,6 +37523,65 @@ extern "C" GP *inspection_brush()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fd270 size=0x1b3
+#include "CInspectionBrush.h"
+#include "CEntityVSlots.h"
+#include "CEnvParticle.h"
+#include "CBaseCombatCharacter.h"
+#include "CVFeat_t.h"
+#include "CUnknown101d5bd0.h"
+
+extern CUnknown101d5bd0 g_10738d10;
+extern int g_10708e44;
+extern int g_10708e48;
+
+struct CBrushOriginView
+{
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18)
+	EVS(190) EVS(191)
+	virtual Vector *slot192(Vector *pOut);
+};
+
+// TARGET: CInspectionBrush::sub_100fd270
+void CInspectionBrush::sub_100fd270(int pObject)
+{
+	CBaseCombatCharacter *pTarget = (CBaseCombatCharacter *)pObject;
+	if (sub_100b5190())
+		goto skip;
+	{
+		Vector vA, vB;
+		Vector *pA = ((CBrushOriginView *)this)->slot192(&vA);
+		Vector *pB = ((CEntityVSlots *)pTarget)->slot193(&vB);
+		float dx = pB->x - pA->x;
+		float dy = pB->y - pA->y;
+		float dz = pB->z - pA->z;
+		float flDist = FastSqrt(dx * dx + dy * dy + dz * dz);
+		if (flDist < 800.0f) {
+			double flScale = 1.0 - flDist * 0.00125f;
+			if (flScale > 1.0)
+				flScale = 1.0;
+			else if (flScale < 0.05)
+				flScale = 0.05;
+			((CEnvParticle *)this)->sub_100fb980((float)flScale);
+			static int s_iMalkavian = g_10738d10.sub_101d5bd0("Player_Malkavian");
+			if (CVFeatSet::Find(3)->sub_101e56e0(pTarget) >= m_nMinFeat) {
+				if (pTarget->sub_10337860() == s_iMalkavian)
+					m_iParticleIndex = g_10708e48;
+				else
+					m_iParticleIndex = g_10708e44;
+				if (m_unk484 == 0)
+					((CEntityVSlots *)this)->slot241();
+				return;
+			}
+		}
+	}
+skip:
+	if (m_unk484 != 0)
+		((CEntityVSlots *)this)->slot242();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fd680 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
