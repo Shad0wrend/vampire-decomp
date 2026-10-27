@@ -341,6 +341,7 @@
 0x10002027 func   ?sub_102e26f0@@YIXPAUCOwner@@@Z sub_102e26f0
 0x1000202c func   ?sub_10411f90@@YAXXZ sub_10411f90
 0x10002031 func   ?vfunc5@CBaseCineCam@@UAEPAV1@I@Z CBaseCineCam::vfunc5
+0x1000204f func   ?Grow@?$CUtlMemory@V?$CHandle@VCBasePlayer@@@@@@QAEXH@Z CUtlMemory<CHandle<CBasePlayer> >::Grow
 0x1000204f func   ?sub_10227b20@@YIXPAUMem4@@HH@Z sub_10227b20
 0x10002054 func   ?sub_100bee40@bf_read@@QAEXAAVVector@@@Z bf_read::sub_100bee40
 0x10002072 func   ?sub_100f7330@CUnk_100f7330@@QAE_NH@Z CUnk_100f7330::sub_100f7330
