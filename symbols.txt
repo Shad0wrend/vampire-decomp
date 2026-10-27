@@ -7520,6 +7520,7 @@
 0x100154d8 func   ?sub_1036ec40@@YADXZ sub_1036ec40
 0x100154dd func   ?vfunc175@CPlatTrigger@@QAEXPAVCBaseEntity@@@Z CPlatTrigger::vfunc175
 0x100154e2 func   ?sub_100b03b0@@YAXXZ sub_100b03b0
+0x100154e7 func   ?sub_10075e70@CUnknown10075e70@@QAEMXZ CUnknown10075e70::sub_10075e70
 0x100154fb func   ?sub_1023b3a0@@YAXPAUCStateHolder@@@Z sub_1023b3a0
 0x10015514 func   ?sub_10056660@@YAHXZ sub_10056660
 0x10015523 func   ?sub_1039f1a0@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::sub_1039f1a0

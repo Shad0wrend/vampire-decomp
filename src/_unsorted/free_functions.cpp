@@ -12829,6 +12829,14 @@ void CUnknown10075e20::sub_10075e20(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075e70 size=0x7
+struct CUnknown10075e70 { float sub_10075e70(); };
+float CUnknown10075e70::sub_10075e70()
+{
+    return *(float *)((char *)this + 0x184);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076670 size=0xd
 void CUnknown10076670::sub_10076670(int value)
 {
