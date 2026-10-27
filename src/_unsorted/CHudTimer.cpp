@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1012d040 size=0x6
+#include "CHudTimer.h"
+namespace lifted {
+extern char g_10573960;
+}
+datamap_t * CHudTimer::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10573960);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d720 size=0x10
 #include "CHudTimer.h"
 
