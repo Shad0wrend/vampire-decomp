@@ -7384,6 +7384,7 @@
 0x10014d8a func   ?sub_1042ffe0@@YAII@Z sub_1042ffe0
 0x10014d99 func   ?sub_10247030@@YA?AVSendProp@@PBD0@Z sub_10247030
 0x10014da3 func   ?sub_10230320@@YAXXZ sub_10230320
+0x10014da8 func   ?sub_100b5190@CUnknown100b5190@@QAEDXZ CUnknown100b5190::sub_100b5190
 0x10014dad func   ?vfunc618@CNPCMaker_Zombie@@QAEDD@Z CNPCMaker_Zombie::vfunc618
 0x10014dc1 func   ?vfunc3@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc3
 0x10014dd5 func   _item_w_remington_m_700 item_w_remington_m_700

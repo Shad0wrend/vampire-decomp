@@ -24668,6 +24668,14 @@ extern int g_106cff54;
 void sub_100b4e80(int v) { g_106cff54 = v; }
 // END FUNCTION
 
+// FUNCTION: 0x100b5190 size=0x7
+struct CUnknown100b5190 { char sub_100b5190(); };
+char CUnknown100b5190::sub_100b5190()
+{
+    return *(char *)((char *)this + 0xf4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b52a0 size=0x7d
 #include "CCollisionProperty.h"
 #include "CGlobalEntityList.h"
