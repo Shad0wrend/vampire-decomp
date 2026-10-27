@@ -45759,6 +45759,16 @@ void __fastcall sub_1013e3a0(void *pSelf, int unused, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e3e0 size=0x8
+namespace lifted {
+int sub_10003cb5();
+}
+int __stdcall sub_1013e3e0(int a0)
+{
+    return lifted::sub_10003cb5();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e4a0 size=0x6c
 #include "CBaseEntity.h"
 
