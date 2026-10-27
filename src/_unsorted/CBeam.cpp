@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100babc0 size=0x6
+#include "CBeam.h"
+namespace lifted {
+extern char g_1055a97c;
+}
+datamap_t * CBeam::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1055a97c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bacc0 size=0x90
 #include "CBeam.h"
 #include "TempVector.h"
