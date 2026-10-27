@@ -1378,6 +1378,7 @@
 0x10004f2f func   ?sub_1009b7d0@CBaseEntity@@QAEXHPADD@Z CBaseEntity::sub_1009b7d0
 0x10004f48 func   ?sub_103eece0@CGrenadeUnit103eece0@@QAEEXZ CGrenadeUnit103eece0::sub_103eece0
 0x10004f5c func   ?sub_10406d70@@YAHXZ sub_10406d70
+0x10004f61 func   ?sub_101f99c0@@YGXHH@Z sub_101f99c0
 0x10004f8e func   ?sub_101c4660@@YIXPADHPBD@Z sub_101c4660
 0x10004f93 func   ?sub_10201ca0@CUnknown10201ca0@@QAEXHH@Z CUnknown10201ca0::sub_10201ca0
 0x10004f98 func   ?sub_10364500@@YGHMM@Z sub_10364500
