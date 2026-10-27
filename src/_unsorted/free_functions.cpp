@@ -55370,6 +55370,66 @@ int CUnknown101a1f70::sub_101a1f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2820 size=0x198
+#include "CRestore.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b248.h"
+
+struct RestoreFieldView
+{
+	int fieldType;
+	const char *fieldName;
+	int fieldOffset[2];
+	short fieldSize;
+};
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b248 *g_1070b248;
+
+void CRestore::sub_101a2820(unsigned short *pSize, int *pValues, void *pBase, typedescription_t *pField)
+{
+	RestoreFieldView *pF = (RestoreFieldView *)pField;
+	switch (pF->fieldType) {
+	case 0xe:
+		vfunc25((Vector *)pValues, pF->fieldSize, *pSize);
+		return;
+	case 0xf:
+		vfunc24((float *)pValues, pF->fieldSize, *pSize);
+		return;
+	case 0x13:
+		vfunc27(pBase, pValues, pF->fieldSize, *pSize);
+		return;
+	case 0x10:
+	case 0x11: {
+		int n = vfunc20(pValues, pF->fieldSize, *pSize);
+		if (m_bField24) {
+			for (int i = 0; i < n; i++) {
+				if (pValues[i]) {
+					if (pF->fieldType == 0x10)
+						g_1070b22c->vfunc13((const char *)pValues[i], 0);
+					else if (pF->fieldType == 0x11)
+						g_1070b248->vfunc0((const char *)pValues[i], 0);
+				}
+			}
+		}
+		return;
+	}
+	case 0xb:
+		vfunc28((CBaseEntity **)pValues, pF->fieldSize, *pSize);
+		return;
+	case 0xd:
+		vfunc29(pValues, pF->fieldSize, *pSize);
+		return;
+	case 0xc:
+		vfunc30((unsigned int *)pValues, pF->fieldSize, *pSize);
+		return;
+	default:
+		Warning("Bad field type\n");
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2d50 size=0xbd
 #include "CEntitySaveRestoreBlockHandler.h"
 #include "CGlobalEntityList.h"
