@@ -122741,6 +122741,28 @@ CEntityVSlots *CNPC_VSheriffMan::sub_103b0ab0(char bUseSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b0c70 size=0x1a2
+#include "CNPC_VSheriffMan.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+bool CNPC_VSheriffMan::sub_103b0c70(const Vector *pPos, float flMinDist)
+{
+	ScopeTrace trace("CNPC_VSheriffMan::PositionClearForTeleport", g_106b8540);
+	if ((*((CEntityVSlots *)this)->slot217() - *pPos).Length() < flMinDist)
+		return false;
+	if ((*(Vector *)m_nSpawnOrigin - *pPos).Length() < 100.0f)
+		return false;
+	CEntityVSlots *pEnt = (CEntityVSlots *)EHandle_Get(m_hHeightTarget);
+	if (pEnt) {
+		if ((*pEnt->slot217() - *pPos).Length() < flMinDist)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b10f0 size=0x199
 #include "CNPC_VSheriffMan.h"
 #include "CLogicRelay.h"
