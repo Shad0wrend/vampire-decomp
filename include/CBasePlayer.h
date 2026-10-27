@@ -228,6 +228,7 @@ public:
 	char m_pad23D0[0x245c - 0x23d0];	// 0x23D0 .. 0x245B
 	void *m_pInventory;	// 0x245C: the 5-dword inventory object (created by sub_101835e0)
 
+	float sub_1017d900();	// fade progress 0..1 of the timer at +0x19b8 / +0x19bc (needs a live entity at +0x19c0 or +0x19cc), resets the fade fields when it has ended
 	void sub_10177120();
 	void sub_101835e0();	// "CBasePlayer::Inventory_CreateKey": scope trace (entity name), then allocates the 5-dword inventory object at +0x245c when it is not there yet
 	int sub_1017ddd0();	// the decoded value at +0x1cd8, or a convar override
