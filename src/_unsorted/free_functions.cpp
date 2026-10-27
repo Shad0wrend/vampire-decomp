@@ -101013,6 +101013,15 @@ int __fastcall sub_102d40a0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d4140 size=0xf
+struct CUnknown102d4140 { int sub_102d4140(int); };
+int CUnknown102d4140::sub_102d4140(int a0)
+{
+    *(int *)((char *)a0) = *(int *)((char *)this + 0x5d4);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d4160 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
