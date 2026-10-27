@@ -7632,6 +7632,19 @@ int sub_10057230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057550 size=0xb
+namespace lifted {
+extern char g_1044d17c;
+int sub_10007c9d();
+}
+struct CUnknown10057550 { int sub_10057550(); };
+int CUnknown10057550::sub_10057550()
+{
+    *(int *)this = (int)&lifted::g_1044d17c;
+    return lifted::sub_10007c9d();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100575a0 size=0x24
 #include "CBaseFire.h"
 
