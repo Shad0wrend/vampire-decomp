@@ -13,9 +13,17 @@ public:
 	void sub_10011793();	// CBaseProp::vfunc103 (jump stub)
 	int sub_10096100();	// CBaseAnimating::vfunc124 (stub 0x10007d97), called directly
 
-	char m_pad03e0[0x73c - 0x3e0];
-	float m_flAngle[4];	// 0x73c: the angle components (the one in use is selected by m_iAxis)
+	char m_pad03e0[0x730 - 0x3e0];
+	Vector m_vecBaseAngle;	// 0x730: the angles at Spawn
+	Vector m_flAngle;	// 0x73c: the angle components (the one in use is selected by m_iAxis)
+	int m_nTick748;	// 0x748: the engine tick of the last update
 	int m_iAxis;	// 0x74c
+	char m_pad750[0x750 - 0x750 + 4];
+	EHANDLE m_hSource750;	// 0x750: the entity whose two time floats (+0x468, +0x480) drive the hand; none = time since spawn
+	char m_pad754[0x75c - 0x754];
+	int m_nMode75c;	// 0x75c: 1 = minutes, 2 = hours
+	int m_nDivisor760;	// 0x760
+	float m_flSpawnTime;	// 0x764
 public:
     virtual datamap_t * vfunc82();
 };
