@@ -39679,6 +39679,13 @@ void sub_1011e010(Vector *a, Vector *b, Vector *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e290 size=0x5
+char __stdcall sub_1011e290(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e8f0 size=0x39
 #include "CTraceFilterSimple.h"
 #include "CUnknown1070b254.h"
