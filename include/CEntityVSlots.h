@@ -197,4 +197,6 @@ public:
 	virtual void slot601(int a);	// NPC: takes one argument
 	EVS(602) EVS(603) EVS(604)
 	virtual int slot605(int a);	// NPC: schedule selection helper, takes the task argument and returns a schedule id
+	EVS(606) EVS(607) EVS(608) EVS(609) EVS(610) EVS(611) EVS(612) EVS(613) EVS(614) EVS(615) EVS(616)
+	virtual void slot617();	// the gargoyle's roar sound
 };
