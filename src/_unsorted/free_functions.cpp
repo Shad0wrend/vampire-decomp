@@ -90268,6 +90268,13 @@ void sub_1025b740(const char *pszFlag, unsigned int *pFlags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025b800 size=0x6
+int sub_1025b800()
+{
+    return 9;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025c670 size=0x13
 bool sub_1025c670(unsigned short *a, unsigned short *b)
 {
