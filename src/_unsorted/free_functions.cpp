@@ -11944,6 +11944,14 @@ int CUnknown10074070::sub_10074070(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100740d0 size=0x4
+struct CUnknown100740d0 { char sub_100740d0(); };
+char CUnknown100740d0::sub_100740d0()
+{
+    return *(char *)((char *)this + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100740f0 size=0xa
 struct CUnknown100740f0 { int p[2]; char a; void sub_100740f0(char v); };
 // TARGET: CUnknown100740f0::sub_100740f0
