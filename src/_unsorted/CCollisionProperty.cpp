@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100dc1c0 size=0x1
+void CCollisionProperty::vfunc17()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc3c0 size=0xa
 #include "CCollisionProperty.h"
 // TARGET: CCollisionProperty::vfunc14
