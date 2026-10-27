@@ -59084,6 +59084,17 @@ int CUnknown101ac670::sub_101ac670(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ad440 size=0x17
+namespace lifted {
+struct C100131e2 { int sub_100131e2(int, int, int, int); };
+}
+struct CUnknown101ad440 { int sub_101ad440(int); };
+int CUnknown101ad440::sub_101ad440(int a0)
+{
+    return ((lifted::C100131e2 *)this)->sub_100131e2(*(int *)((char *)a0), *(int *)((char *)a0 + 4), 3, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af030 size=0x26
 #include "CUnknown1070b22c.h"
 
