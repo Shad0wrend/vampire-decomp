@@ -66,6 +66,13 @@ void CGameRules::vfunc56()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101286d0 size=0x5
+char CGameRules::vfunc47(CBaseEntity * a0, CBaseEntity * a1)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101286f0 size=0x9c
 struct SkillVar { virtual void v0(); virtual bool v1(); char pad[0x28]; int m_value; };
 struct SkillEntry { int pad; SkillVar *pVar; };
