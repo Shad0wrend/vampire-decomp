@@ -50466,6 +50466,14 @@ void CAI_BaseNPCTroika::sub_101815b0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101815e0 size=0x7
+struct CUnknown101815e0 { int sub_101815e0(); };
+int CUnknown101815e0::sub_101815e0()
+{
+    return *(int *)((char *)this + 0x1d60);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181600 size=0xb
 void __fastcall sub_10181600(char *self)
 {

@@ -5549,6 +5549,7 @@
 0x1000fe1b func   ?sub_10348b00@@YIHPADHH@Z sub_10348b00
 0x1000fe20 func   ?sub_102ea070@CUnknown102ea070@@QAEHXZ CUnknown102ea070::sub_102ea070
 0x1000fe2f func   ?vfunc7@ConVar@@UAEXPBD@Z ConVar::vfunc7
+0x1000fe34 func   ?sub_101815e0@CUnknown101815e0@@QAEHXZ CUnknown101815e0::sub_101815e0
 0x1000fe43 func   ?sub_10295180@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_10295180
 0x1000fe4d func   ?sub_103fc7b0@@YAHXZ sub_103fc7b0
 0x1000fe57 func   ?vfunc37@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::vfunc37
