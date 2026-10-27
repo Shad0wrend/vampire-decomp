@@ -42231,6 +42231,16 @@ int __stdcall sub_10130720(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130740 size=0x8
+namespace lifted {
+int sub_100012cb();
+}
+int __stdcall sub_10130740(int a0)
+{
+    return lifted::sub_100012cb();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101308d0 size=0x99
 #include "CLight.h"
 
