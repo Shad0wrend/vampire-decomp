@@ -23973,6 +23973,23 @@ extern int g_106cff54;
 void sub_100b4e80(int v) { g_106cff54 = v; }
 // END FUNCTION
 
+// FUNCTION: 0x100b52a0 size=0x7d
+#include "CCollisionProperty.h"
+#include "CGlobalEntityList.h"
+
+struct CMoveChildRec { void sub_1000e881(); };
+
+void CBaseEntity::sub_100b52a0()
+{
+	((CCollisionProperty *)((char *)this + 0x270))->sub_100ddd20();
+	CBaseEntity *pChild = ((EHANDLE *)((char *)this + 0x260))->Get();
+	while (pChild) {
+		((CMoveChildRec *)pChild)->sub_1000e881();
+		pChild = ((EHANDLE *)((char *)pChild + 0x264))->Get();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5620 size=0x105
 #include "SendProp.h"
 
