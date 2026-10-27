@@ -45,6 +45,12 @@ CVampireProjectile *CVampireProjectile::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee710 size=0x1
+void CVampireProjectile::vfunc268()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee750 size=0xb
 struct S168 { char pad[0x168]; int v; };
 bool CVampireProjectile::vfunc265()

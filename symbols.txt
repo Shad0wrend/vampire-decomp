@@ -4478,6 +4478,7 @@
 0x1000d8aa func   ?sub_10203240@CUnknown10203240@@QAEPAVCUnknown102029c0@@PBD@Z CUnknown10203240::sub_10203240
 0x1000d8c3 func   ?sub_10033de0@CBaseEntityThinkUnit@@QAE_NPAM0H@Z CBaseEntityThinkUnit::sub_10033de0
 0x1000d8c8 func   ?sub_102e1f90@CAI_Motor@@QAEMXZ CAI_Motor::sub_102e1f90
+0x1000d8cd func   ?vfunc268@CVampireProjectile@@UAEXXZ CVampireProjectile::vfunc268
 0x1000d8d2 func   ?vfunc4@CServerGameDLL@@UAEXHHH@Z CServerGameDLL::vfunc4
 0x1000d8eb func   ?vfunc438@CNPC_VWolfMorph@@QAEHXZ CNPC_VWolfMorph::vfunc438
 0x1000d8ff func   ?vfunc103@CHudCounter@@UAEXXZ CHudCounter::vfunc103
