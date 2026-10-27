@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10027850 size=0x8
+namespace lifted {
+int sub_1000b5d2();
+}
+int __stdcall sub_10027850(int a0)
+{
+    return lifted::sub_1000b5d2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027890 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
