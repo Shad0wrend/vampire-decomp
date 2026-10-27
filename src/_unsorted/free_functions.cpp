@@ -132379,6 +132379,16 @@ void sub_10411f90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10412140 size=0x6
+namespace lifted {
+extern int g_109d301c;
+}
+int sub_10412140()
+{
+    return lifted::g_109d301c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x104121d0 size=0xb
 extern int g_109d3080;
 void sub_104121d0()
