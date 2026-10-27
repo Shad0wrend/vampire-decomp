@@ -45,6 +45,12 @@ void CBaseEntity::vfunc111()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026c30 size=0x1
+void CBaseEntity::vfunc132()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026c50 size=0xd
 void CBaseEntity::vfunc133()
 {
