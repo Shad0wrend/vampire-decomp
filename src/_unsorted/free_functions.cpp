@@ -67472,6 +67472,13 @@ float __stdcall sub_101e1930(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1970 size=0x5
+int __stdcall sub_101e1970(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e22b0 size=0x8
 struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
