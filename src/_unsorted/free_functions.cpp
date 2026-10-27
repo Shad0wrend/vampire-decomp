@@ -93616,6 +93616,16 @@ void __fastcall sub_1027d9b0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027dbf0 size=0x7
+namespace lifted {
+extern float g_104492dc;
+}
+float sub_1027dbf0()
+{
+    return lifted::g_104492dc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027dd10 size=0xb3
 #include "CGlobalEntityList.h"
 

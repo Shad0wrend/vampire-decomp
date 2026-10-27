@@ -6176,6 +6176,7 @@
 0x1001174d func   ?sub_102db590@@YAHH@Z sub_102db590
 0x10011757 func   ?sub_1042eca0@CUnknown1042e8c0@@QAEXXZ CUnknown1042e8c0::sub_1042eca0
 0x1001175c func   ?sub_1025da90@@YIXPAUS1025da90@@@Z sub_1025da90
+0x10011761 func   ?sub_1027dbf0@@YAMXZ sub_1027dbf0
 0x1001176b func   ?sub_10364550@@YGHMM@Z sub_10364550
 0x1001177a func   ?vfunc390@CNPC_VManBat@@QAEHPAX@Z CNPC_VManBat::vfunc390
 0x1001177f func   ?sub_103c6f40@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c6f40
