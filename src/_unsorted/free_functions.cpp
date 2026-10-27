@@ -57762,6 +57762,13 @@ void sub_101b3b70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3b90 size=0x5
+int __stdcall sub_101b3b90(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b40a0 size=0x99
 struct S101b40a0 {
     int a;
