@@ -13,7 +13,7 @@ class CUnknown102e0150;
 class CEntityVSlots
 {
 public:
-	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8)
+	EVS(0) virtual unsigned int *slot1(); EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8)
 	virtual const char **slot9(int *pOut);	// the pointer to the entity's model name
 	virtual void slot10(int a);	// takes one argument (SetModelIndex-like: the index the engine gave the model name)
 	EVS(11)
