@@ -50962,6 +50962,12 @@ void CUnknown1018c4d0::sub_1018c4d0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c4f0 size=0x3
+void __stdcall sub_1018c4f0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c600 size=0xad
 #include "CUtlVector4.h"
 

@@ -666,6 +666,7 @@
 0x10002e78 func   ?vfunc5@CFuncElevator@@UAEPAV1@I@Z CFuncElevator::vfunc5
 0x10002e82 func   ?sub_1042fe60@@YAXXZ sub_1042fe60
 0x10002ea5 func   ?sub_1013fcb0@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1013fcb0
+0x10002eaf func   ?sub_1018c4f0@@YGXH@Z sub_1018c4f0
 0x10002ec8 func   ?ShiftElementsRight@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXHH@Z CUtlVector<int,CUtlMemory<int> >::ShiftElementsRight
 0x10002ec8 func   ?sub_10071ba0@UtlVec8@@QAEXHH@Z UtlVec8::sub_10071ba0
 0x10002ed2 func   ?sub_102d9ed0@CUnknown102d9ed0@@QAEXPBVVector@@0@Z CUnknown102d9ed0::sub_102d9ed0
