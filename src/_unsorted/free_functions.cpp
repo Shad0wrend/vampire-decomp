@@ -87003,6 +87003,16 @@ void __stdcall sub_1023e1c0(CParam *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023e270 size=0x8
+namespace lifted {
+int sub_10009aac();
+}
+int __stdcall sub_1023e270(int a0)
+{
+    return lifted::sub_10009aac();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023e4b0 size=0x184
 #include "CGlobalEntityList.h"
 
