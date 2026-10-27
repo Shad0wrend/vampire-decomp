@@ -41,7 +41,10 @@ public:
 
 	Vector m_vecMins;	// 0x04
 	Vector m_vecMaxs;	// 0x10
-	char m_1c[0x3c - 0x1c];
+	unsigned char m_nSurroundType;	// 0x1c: how the surrounding box is computed (4 = the game code of the outer entity)
+	char m_1d[0x24 - 0x1d];
+	Vector m_vecSpecifiedSurroundingMins;	// 0x24
+	Vector m_vecSpecifiedSurroundingMaxs;	// 0x30
 	// The entity the collision property belongs to; several slots just forward to it.
 	CBaseEntity *m_pOuter;
 	int m_nSolidType;	// 0x40
