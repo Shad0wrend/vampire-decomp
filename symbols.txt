@@ -5104,6 +5104,7 @@
 0x1000e007 func   ?sub_10178660@CBasePlayer@@QAEXPAVCBaseEntity@@D@Z CBasePlayer::sub_10178660
 0x1000e01b func   _item_m_money_clip item_m_money_clip
 0x1000e020 func   ?sub_10341370@CBaseCombatCharacter@@QAEXPAV1@H@Z CBaseCombatCharacter::sub_10341370
+0x1000e02f func   ?vfunc82@CPropHacking@@UAEPAUdatamap_t@@XZ CPropHacking::vfunc82
 0x1000e034 func   _prop_largehull_ignore prop_largehull_ignore
 0x1000e039 func   ?sub_101eaa80@@YAXH@Z sub_101eaa80
 0x1000e052 func   ?vfunc2@CAI_ExpresserSink@@UAEXXZ CAI_ExpresserSink::vfunc2

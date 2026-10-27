@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10219710 size=0x6
+#include "CPropHacking.h"
+namespace lifted {
+extern char g_105af464;
+}
+datamap_t * CPropHacking::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105af464);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10219ee0 size=0x1e
 #include "CPropHacking.h"
 
