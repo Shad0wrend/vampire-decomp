@@ -28,7 +28,7 @@ public:
 	virtual void vfunc12();
 	virtual void vfunc13();
 	virtual void vfunc14(int a, int b, int c);	// forwards its arguments to the subobject at +0x54 (stub 0x1000b8ca)
-	virtual void vfunc15();
+	virtual float vfunc15(Vector &vecDir);	// GetFacingDirection: drops the expired facing targets (+0x54), blends the directions to the live ones (weighted by their interest) into vecDir and returns the total interest
 	virtual float vfunc16();	// slot 16: the minimum speed (asked by slot 17 with the same call twice)
 	virtual float vfunc17();	// slot 17: the wanted speed (+0x30 times the component's scale) raised to at least slot 16 and capped at sub_102d61b0(+0x8)
 	virtual void vfunc18(int a);	// takes one argument (slot 19 hands it its first argument)
