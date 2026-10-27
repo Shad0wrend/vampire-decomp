@@ -6469,6 +6469,7 @@
 0x10012c65 func   ?sub_1003c1c0@@YIXPAH@Z sub_1003c1c0
 0x10012c6a func   ?vfunc111@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc111
 0x10012c7e func   ?sub_10109e40@S10109e40@@QAEXAAUinputdata_t@@@Z S10109e40::sub_10109e40
+0x10012c88 func   ?sub_102c6900@CUnknown102c6900@@QAEHXZ CUnknown102c6900::sub_102c6900
 0x10012c8d func   ?vfunc241@CFuncAreaPortalBase@@QAE_NPBM@Z CFuncAreaPortalBase::vfunc241
 0x10012c92 func   ?sub_100bf460@@YGXH@Z sub_100bf460
 0x10012c97 func   ?vfunc444@CNPC_VSheriffMan@@QAEXPAH@Z CNPC_VSheriffMan::vfunc444
