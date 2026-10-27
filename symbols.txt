@@ -4229,6 +4229,7 @@
 0x1000bcbc func   ?vfunc349@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::vfunc349
 0x1000bcc1 func   ?sub_10164040@CBasePlayer@@QAEXHPAH0@Z CBasePlayer::sub_10164040
 0x1000bccb func   ?sub_1022a200@CSoundScheme@@QAEXXZ CSoundScheme::sub_1022a200
+0x1000bcd0 func   ?vfunc82@CBaseKeyframedMover@@UAEPAUdatamap_t@@XZ CBaseKeyframedMover::vfunc82
 0x1000bcd5 func   ?sub_101d72a0@List@@QAEHPBD@Z List::sub_101d72a0
 0x1000bcda func   ?sub_101b61a0@CUnknown101b61a0@@QAEAAV1@ABV1@@Z CUnknown101b61a0::sub_101b61a0
 0x1000bcdf func   _auspex_aura auspex_aura

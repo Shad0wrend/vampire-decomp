@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10223160 size=0x6
+#include "CBaseKeyframedMover.h"
+namespace lifted {
+extern char g_105b1a6c;
+}
+datamap_t * CBaseKeyframedMover::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105b1a6c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102233d0 size=0x78
 #include "CBaseKeyframedMover.h"
 void sub_100aa7b0(void *p);
