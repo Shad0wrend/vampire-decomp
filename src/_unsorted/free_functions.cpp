@@ -67864,6 +67864,21 @@ bool CUnknown101d90c0::sub_101d90c0(CUnknown101d90c0_Section *pSection)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d91c0 size=0x1c
+struct CUnknown101d91c0 { void * sub_101d91c0(); };
+void * CUnknown101d91c0::sub_101d91c0()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = -1;
+    *(int *)((char *)this + 0x14) = -1;
+    *(int *)((char *)this + 0x18) = -1;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9210 size=0x7f
 #include "CUnknown101d9210.h"
 
