@@ -16,6 +16,29 @@ CAmbientGeneric *CAmbientGeneric::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac5e0 size=0x6a
+#include "CBaseEntity.h"
+#include "CAmbientGeneric.h"
+#include "CEntityVSlots.h"
+
+extern char g_106b8540[];
+void sub_101cdac0(int edict, int pOrigin, const char *pszName, int a, int b, unsigned int flags, int c);
+typedef void (*PFN_EmitAt)(int edict, int pOrigin, const char *pszName, float flVolume, int a, unsigned int flags, int c);
+
+void CAmbientGeneric::vfunc180()
+{
+	CEntityVSlots *pEnt = (CEntityVSlots *)((EHANDLE *)&m_hSoundEnt)->Get();
+	if (pEnt) {
+		const char *pszName = m_pszSoundFile;
+		if (!pszName)
+			pszName = g_106b8540;
+		int edict = *(int *)((char *)pEnt + 0x2e0);
+		((PFN_EmitAt)sub_101cdac0)(edict, (int)pEnt->slot217(), pszName, 0.0f, 0, 4, 0);
+	}
+	((CBaseEntity *)this)->vfunc180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ac930 size=0x66
 #include "CAmbientGeneric.h"
 
