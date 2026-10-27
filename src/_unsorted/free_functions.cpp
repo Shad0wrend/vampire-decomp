@@ -50755,6 +50755,17 @@ void sub_10180e70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10181040 size=0xa
+namespace lifted {
+extern char g_106e7050;
+struct C1000fd3a { int sub_1000fd3a(); };
+}
+int sub_10181040()
+{
+    return ((lifted::C1000fd3a *)((int)&lifted::g_106e7050))->sub_1000fd3a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181580 size=0x15
 #include "CAI_BaseNPCTroika.h"
 
