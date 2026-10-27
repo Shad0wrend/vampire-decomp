@@ -95550,6 +95550,16 @@ char sub_102b97a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102beb10 size=0x6
+namespace lifted {
+extern char g_109203cc;
+}
+int sub_102beb10()
+{
+    return (int)&lifted::g_109203cc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bec60 size=0x11
 int sub_102bec60(int *a, int *b)
 {
