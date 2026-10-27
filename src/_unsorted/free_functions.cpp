@@ -101084,6 +101084,12 @@ int CUnknown10359c50::sub_102ea2d0(int nLocalId)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea5e0 size=0x3
+void __stdcall sub_102ea5e0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eb170 size=0x107
 #include "CUtlRBTree12.h"
 extern CUtlRBTree12 g_10934014;
