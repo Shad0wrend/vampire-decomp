@@ -9868,6 +9868,19 @@ CTEMuzzleFlash *CTEMuzzleFlash::sub_10065e20(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065ea0 size=0xb
+namespace lifted {
+extern char g_1044dfd4;
+int sub_100021d0();
+}
+struct CUnknown10065ea0 { int sub_10065ea0(); };
+int CUnknown10065ea0::sub_10065ea0()
+{
+    *(int *)this = (int)&lifted::g_1044dfd4;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100660a0 size=0x100
 #include "SendProp.h"
 
