@@ -36594,6 +36594,16 @@ void CFieldHolder::sub_100feea0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fef30 size=0x8
+namespace lifted {
+int sub_10009877();
+}
+int __stdcall sub_100fef30(int a0)
+{
+    return lifted::sub_10009877();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fef50 size=0x9c
 #include "CEnvBeam.h"
 #include "CBeam.h"
