@@ -104375,6 +104375,14 @@ void CUnknown1030b950::sub_1030b950(const float *pAdd)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030ba30 size=0x4
+struct CUnknown1030ba30 { char * sub_1030ba30(); };
+char * CUnknown1030ba30::sub_1030ba30()
+{
+    return (char *)this + 0x4c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030ba50 size=0xe
 void CUnknown1030ba50::sub_1030ba50(int value)
 {
