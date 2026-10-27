@@ -318,6 +318,16 @@ void CBaseCombatWeapon::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251d80 size=0xd
+namespace lifted {
+int sub_10010ea6();
+}
+int CBaseCombatWeapon::vfunc342(int a0)
+{
+    return (lifted::sub_10010ea6()) + 0x2188;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10251da0 size=0xb
 namespace lifted {
 int sub_10010ea6();
