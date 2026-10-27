@@ -33,7 +33,12 @@ public:
 	float m_flTime55c;	// 0x055c
 	char m_pad0560[0x5d0 - 0x560];
 	unsigned int m_hTarget5d0;	// 0x05d0
-	char m_pad05d4[0x610 - 0x5d4];
+	const char *m_psz5d4;	// 0x05d4: the shot's name
+	const char *m_psz5d8;	// 0x05d8: the names of the four shot targets
+	const char *m_psz5dc;
+	const char *m_psz5e0;
+	const char *m_psz5e4;
+	char m_pad05e8[0x610 - 0x5e8];
 	unsigned int m_hShot610[4];	// 0x0610: entity handles, one per flag bit
 	char m_pad0620[0x630 - 0x620];
 	unsigned int m_hShot630;	// 0x0630
