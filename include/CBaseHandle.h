@@ -18,6 +18,8 @@ public:
 
 	CBaseHandle &operator=(IHandleEntity *pEntity);	// the handle of pEntity (GetRefEHandle), or the invalid handle for null
 
+	CBaseHandle &sub_1028ac80(IHandleEntity *pEntity);	// copy of operator=(IHandleEntity *) at another address
+
 	bool IsValid() const { return m_Index != 0xffffffff; }
 	int GetEntryIndex() const { return m_Index & 0x1fff; }
 	int GetSerialNumber() const { return m_Index >> 13; }
