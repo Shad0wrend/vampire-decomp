@@ -28,6 +28,17 @@ int CNPC_VBach::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363720 size=0x6
+#include "CNPC_VBach.h"
+namespace lifted {
+extern char g_1062d22c;
+}
+datamap_t * CNPC_VBach::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1062d22c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103637b0 size=0x7c
 #include "CNPC_VBach.h"
 struct ISoundPrecache { virtual int Precache(const char *pszSound, int bPreload); };
