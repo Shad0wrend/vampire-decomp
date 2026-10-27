@@ -169,7 +169,9 @@ public:
 	unsigned int m_nCriminalLevelEnc;	// 0x1CD8, scrambled by the xor/and/add mask chain
 	char m_pad1CDC[0x1da8 - 0x1cdc];	// 0x1CDC .. 0x1DA7
 	float m_f1DA8;	// 0x1DA8: when the next random view punch is due
-	char m_pad1DAC[0x1e04 - 0x1dac];	// 0x1DAC .. 0x1E03
+	char m_pad1DAC[0x1dfc - 0x1dac];	// 0x1DAC .. 0x1DFB
+	EHANDLE m_hEnt1DFC;	// 0x1DFC: entity handle, cleared by sub_10183330
+	char m_pad1E00[4];	// 0x1E00 .. 0x1E03
 	unsigned int m_hEnt1E04;	// entity handle
 	int m_n1E08;
 	int m_n1E0C;
