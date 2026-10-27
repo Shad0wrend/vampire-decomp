@@ -104511,6 +104511,39 @@ CBaseEntity *CUnknown103160c0::sub_10315a80(const Vector *pPos, float flRadius)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10315db0 size=0xc9
+#include "CUnknown10315db0.h"
+
+#define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct EntSlots201 {
+	D10(a0) D10(a1) D10(a2) D10(a3) D10(a4) D10(a5) D10(a6) D10(a7) D10(a8) D10(a9)
+	D10(b0) D10(b1) D10(b2) D10(b3) D10(b4) D10(b5) D10(b6) D10(b7) D10(b8) D10(b9)
+	virtual void c0();
+	virtual char f201(EntSlots201 *pOther, int flags, int a, int b);
+	char m_pad[0x5bb0 - 4];
+	int m_nBlock;
+};
+
+int CUnknown10315db0::sub_10315db0(EntSlots201 *pEntity)
+{
+	int i = 0;
+	if (pEntity && pEntity->m_nBlock <= 0) {
+		int n = 0;
+		for (i = 0; i < m_nMembers; i++) {
+			CHandle<EntSlots201> *h = (CHandle<EntSlots201> *)&m_hMembers[i];
+			if (h->Get() && pEntity != h->Get() && h->Get()->m_nBlock <= 0) {
+				if (pEntity->f201(h->Get(), 0x2804091, 0, 0))
+					n++;
+			}
+		}
+		return n;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10315ec0 size=0x71
 #include "CUnknown10315ec0.h"
 
