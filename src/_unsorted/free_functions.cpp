@@ -65720,6 +65720,12 @@ void CUnknown101dc810::sub_101dc810(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc880 size=0x1
+void sub_101dc880()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dcb80 size=0x64
 struct CItemVec {
     int m_growBy;
