@@ -46,7 +46,9 @@ public:
 
 	char m_pad0004[0x10c - 4];
 	unsigned int m_h010c;	// 0x10c: entity handle
-	char m_pad0110[0x204 - 0x110];
+	char m_pad0110[0x17c - 0x110];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x204 - 0x180];
 	unsigned int m_flags204;	// 0x204
 	char m_pad0208[0x26c - 0x208];
 	const char *m_pszName26c;	// 0x26c: the entity name
