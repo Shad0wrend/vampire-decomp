@@ -42128,6 +42128,45 @@ void sub_1012a6e0(CBaseEntity *pOwner, int nCount, int nType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b080 size=0x1a0
+#include "CGib.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+extern float g_1070d1b0[3];
+void sub_101cf390(CBaseEntity *pEnt, const float *pMins, const float *pMaxs);
+void sub_10011c5c();
+void sub_10013868();
+
+void CGib::sub_1012b080(const char *pszModel)
+{
+	CCollisionProperty *pCol;
+	vfunc93(6, 1);
+	m_flFriction3f0 = 0.55f;
+	m_bAlpha1a3 = 0xff;
+	m_n16c = 0;
+	m_n168 = 0;
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		pCol = (CCollisionProperty *)((char *)this + 0x270);
+		pCol->sub_100dc480(2);
+	}
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		pCol->AddSolidFlags(0x10);
+	}
+	sub_100aaa40(1);
+	vfunc105(pszModel);
+	sub_101cf390(this, g_1070d1b0, g_1070d1b0);
+	m_flNextThink = gpGlobals->curtime + 4.0f;
+	m_flLife73c = 25.0f;
+	sub_100ac4e0((int)sub_10011c5c, 0, 0);
+	*(int *)&m_pfnTouch = (int)sub_10013868;
+	m_n738 = 9;
+	m_n734 = 5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b290 size=0x49
 void *sub_1000db89(int);
 struct GP;
