@@ -136,6 +136,10 @@ public:
 	void vfunc421();
 	bool vfunc201(void *pEnt, int b, int *pOut, int d);	// slot 201 "CNPC_VWerewolf::FVisible": scope trace (entity name); false for no entity; true unless one global flag byte is set or the second one is set and the dword at +0xa8 of pEnt is non-zero, in which case *pOut (when given) is cleared and false returned
 
+	void vfunc259(int *pEvent);	// slot 259 "CNPC_VWerewolf::HandleAnimEvent": event 0x3eb hands the integer in its text to the first hint object set (+0x66b0, +0x66bc, +0x66c4; else the base), 0x802..0x805 sub_103d8c10, 0x834 a debug marker at the "Bip01" attachment, 0x835 sub_103d8df0, 0x836..0x83d nothing, the rest the Troika base
+	void sub_1029b290(int *pEvent);	// CAI_BaseNPCTroika::vfunc259 (stub 0x100146e1), called directly
+	void sub_103d8c10();	// stub 0x1001529e: the event 0x802..0x805 handler
+	void sub_103d8df0();	// stub 0x10003369: the event 0x835 handler
 	void vfunc113();	// slot 113 "CNPC_VWerewolf::Activate": scope trace (entity name), then CAI_BaseNPCTroika::vfunc113
 	void sub_103d1ca0();	// "CNPC_VWerewolf::StartSearchTimer": stores the time stamp counter in a global
 	void *sub_103d7620(int key);	// "CNPC_VWerewolf::GetDataForHint": scope trace (entity name), the 0x48-byte record at +0x6714 (count at +0x6720) whose key at +4 equals the argument, or null
