@@ -106148,6 +106148,17 @@ bool CAI_Pathfinder::sub_103058c0(int navType, const float *vecStart, const floa
 }
 // END FUNCTION
 
+// FUNCTION: 0x103061e0 size=0x8
+namespace lifted {
+struct C10003b52 { int sub_10003b52(); };
+}
+struct CUnknown103061e0 { int sub_103061e0(); };
+int CUnknown103061e0::sub_103061e0()
+{
+    return ((lifted::C10003b52 *)(this + 0x10))->sub_10003b52();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103065d0 size=0xe5
 #include "CUnknown103065d0.h"
 
