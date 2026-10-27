@@ -33,7 +33,8 @@ public:
 	virtual void vfunc33();
 	virtual int vfunc34(int edictIndex);	// the user id of the player behind an engine index
 	virtual int vfunc35(int edict);	// IndexOfEdict
-	virtual void vfunc36(); virtual void vfunc37();
+	virtual char *vfunc36();	// the base of the edict array (stride 0x78)
+	virtual void vfunc37();
 	virtual void *vfunc38(int index);	// PEntityOfEntIndex: the edict (its IServerUnknown is at +0x40)
 	virtual void vfunc39(); virtual void vfunc40(); virtual void vfunc41(); virtual void vfunc42(); virtual void vfunc43();
 	virtual void vfunc44(); virtual void vfunc45();
