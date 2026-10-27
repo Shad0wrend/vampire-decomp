@@ -18,9 +18,17 @@ struct CUnknown10217f50Quad	// the four dwords at +0x82c
 class CUnknown10217f50 : public CEntityVSlots
 {
 public:
-	char m_pad0004[0x810 - 4];
+	char m_pad0004[0x8c - 4];
+	EHANDLE m_hUser;	// 0x8c: the entity using the terminal
+	char m_pad0090[0x780 - 0x90];
+	int m_n780;	// 0x780
+	char m_pad0784[0x7dc - 0x784];
+	char m_Output7dc[0x18];	// 0x7dc: a COutputEvent
+	char m_pad07f4[0x810 - 0x7f4];
 	int m_nLineWidth;	// 0x810: width of a screen line in characters
-	char m_pad0814[0x82c - 0x814];
+	char m_pad0814[0x81c - 0x814];
+	unsigned int m_flags081c;	// 0x81c
+	char m_pad0820[0x82c - 0x820];
 	CUnknown10217f50Quad m_quad;	// 0x82c: cleared at the end of the request
 	char m_b083c;	// 0x83c
 	char m_pad083d[0x9c8 - 0x83d];
