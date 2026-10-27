@@ -41549,6 +41549,16 @@ bool sub_1012f890(int nIndex, const char **ppOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f970 size=0x6
+namespace lifted {
+extern char g_1070c4c0;
+}
+int sub_1012f970()
+{
+    return (int)&lifted::g_1070c4c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130100 size=0xb
 extern void (*g_105751b8[])();
 void sub_10130100(int i)
