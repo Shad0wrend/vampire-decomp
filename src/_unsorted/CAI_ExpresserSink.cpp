@@ -7,3 +7,10 @@ void CAI_ExpresserSink::vfunc2()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x10260d50 size=0x1
+#include "CAI_Expresser.h"
+void CAI_ExpresserSink::vfunc3()
+{
+}
+// END FUNCTION
