@@ -38726,6 +38726,49 @@ void CGameUI::sub_10118b40(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10118cc0 size=0xb8
+struct CTargetEnt
+{
+	char m_pad[0xa8];
+	int m_a8;
+};
+
+struct CTargetSub
+{
+	void sub_10010794(CTargetEnt *pEnt, void *pOwner, int a);
+};
+
+struct CGlobalsView
+{
+	char m_pad[0xc];
+	int m_n0c;
+};
+extern CGlobalsView *g_1070b228;
+
+struct CHandleOwner
+{
+	char m_pad0[0x17c];
+	int m_n17c;
+	char m_pad180[0x458 - 0x180];
+	CTargetSub m_sub458;
+	char m_pad459[0x5a8 - 0x459];
+	CHandle<CTargetEnt> m_hTarget;
+};
+
+void __fastcall sub_10118cc0(CHandleOwner *self, int, CTargetEnt **ppEnt)
+{
+	if (self->m_hTarget.Get()) {
+		if (self->m_hTarget.Get() != *ppEnt)
+			return;
+	}
+	if (*ppEnt && (*ppEnt)->m_a8) {
+		self->m_hTarget = *ppEnt;
+		self->m_sub458.sub_10010794(*ppEnt, self, 0);
+		self->m_n17c = g_1070b228->m_n0c;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119750 size=0x145
 extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
