@@ -64995,6 +64995,12 @@ extern "C" CBaseEntity *vdisciplineprojectile()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101da8b0 size=0x1
+void sub_101da8b0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101da8d0 size=0x67
 #include <string.h>
 extern const char *g_105a1bdc[15];
