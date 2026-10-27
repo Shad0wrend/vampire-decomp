@@ -103067,6 +103067,17 @@ void __fastcall sub_102e9e50(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e9f70 size=0x7
+namespace lifted {
+struct C1000579a { int sub_1000579a(); };
+}
+struct CUnknown102e9f70 { int sub_102e9f70(); };
+int CUnknown102e9f70::sub_102e9f70()
+{
+    return ((lifted::C1000579a *)(*(int *)this))->sub_1000579a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e9fe0 size=0x2c
 struct CSymMapUnit102e9fe0 {
     void sub_10249980(int a, int b);
