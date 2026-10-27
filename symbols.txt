@@ -7883,6 +7883,7 @@
 0x1001500a func   ?sub_10310130@CAI_Senses@@QAEHH@Z CAI_Senses::sub_10310130
 0x10015014 func   ?sub_1010dcf0@CBreakable@@QAEXPAUinputdata_t@@@Z CBreakable::sub_1010dcf0
 0x10015019 func   ?sub_10366d60@@YADXZ sub_10366d60
+0x1001501e func   ?vfunc82@CNPC_VPlaceholder@@UAEPAUdatamap_t@@XZ CNPC_VPlaceholder::vfunc82
 0x10015023 func   ?sub_10349650@CUnknown10349590@@QAE_NXZ CUnknown10349590::sub_10349650
 0x10015028 func   ?vfunc56@CGameRules@@UAEXXZ CGameRules::vfunc56
 0x1001504b func   ?sub_1023ffa0@@YAHPBVVector@@00MM@Z sub_1023ffa0

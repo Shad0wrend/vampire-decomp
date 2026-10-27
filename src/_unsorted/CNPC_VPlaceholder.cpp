@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103a3a90 size=0x6
+#include "CNPC_VPlaceholder.h"
+namespace lifted {
+extern char g_1064b9a8;
+}
+datamap_t * CNPC_VPlaceholder::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1064b9a8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a3c50 size=0x1d
 #include "CNPC_VPlaceholder.h"
 struct A { int sub_10012300(int); };
