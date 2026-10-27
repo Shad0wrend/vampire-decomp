@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102125c0 size=0x5
+#include "CGameSign.h"
+bool CGameSign::vfunc32(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212620 size=0x1e
 #include "CGameSign.h"
 

@@ -6448,6 +6448,7 @@
 0x100119cd func   ?sub_100cf680@@YAHXZ sub_100cf680
 0x100119d7 func   ?vfunc5@CPropPadlock@@QAEPAV1@I@Z CPropPadlock::vfunc5
 0x100119e1 func   ?sub_1036e160@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::sub_1036e160
+0x100119f0 func   ?vfunc32@CGameSign@@UAE_NH@Z CGameSign::vfunc32
 0x100119fa func   ?sub_101f5950@CVActivitySound@@QAEXHHHMM@Z CVActivitySound::sub_101f5950
 0x100119ff func   ?sub_10032f90@CUnknown10032f90@@QAEPAXXZ CUnknown10032f90::sub_10032f90
 0x10011a09 func   ?sub_102e2690@CUnknown102e2690@@QAEHXZ CUnknown102e2690::sub_102e2690
