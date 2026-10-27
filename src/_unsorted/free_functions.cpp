@@ -3236,6 +3236,61 @@ bool Vector::sub_1003b850(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003b8a0 size=0x1b9
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "globalvars.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "CBCCSlotViews.h"
+
+extern void (__cdecl *g_109f3630)(const char *pMsg, ...);
+extern float g_104454c4;
+extern CBaseEntity *g_106baaa0[];
+extern CBaseEntity *g_106bbb58[];
+
+struct Edict1003b8a0
+{
+	char pad[0x40];
+	CServerUnknownSlotView *m_pUnk;
+	char pad2[8];
+	char m_bFree;
+	char pad3[0x78 - 0x4d];
+};
+
+void sub_1003b8a0()
+{
+	ScopeTrace trace("Physics_BuildThinkLists", g_106b8540, g_106b8540);
+	int nEdicts = engine->vfunc39();
+	Edict1003b8a0 *pEdict = (Edict1003b8a0 *)engine->vfunc36();
+	int nThinkers = 0;
+	int nChecks = 0;
+	for (int i = 0; i < nEdicts; i++, pEdict++) {
+		if (pEdict->m_bFree || !pEdict->m_pUnk)
+			continue;
+		CBaseEntity *pEnt = (CBaseEntity *)pEdict->m_pUnk->vfunc4();
+		if (!pEnt)
+			continue;
+		if (pEnt->vfunc83() & 1) {
+			g_109f3630("Ignoring ent %d (%s) which is pending deletion\n", i, pEnt->sub_1000b5cd());
+			continue;
+		}
+		if (*((unsigned char *)&pEnt->m_flags268 + 3) & 1)
+			g_106baaa0[nChecks++] = pEnt;
+		if (pEnt->sub_100b3700() & 0x40000)
+			continue;
+		if (pEnt->sub_100b5190())
+			continue;
+		if (EHandle_Get(*(unsigned int *)((char *)pEnt + 0x25c)))
+			continue;
+		if (pEnt->vfunc94() != 0 || (!(pEnt->m_flNextThink <= g_104454c4) && !(gpGlobals->curtime < pEnt->m_flNextThink)))
+			g_106bbb58[nThinkers++] = pEnt;
+	}
+	g_106bbb58[nThinkers] = 0;
+	g_106baaa0[nChecks] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c0e0 size=0xaa
 #include "CUtlVector4.h"
 
