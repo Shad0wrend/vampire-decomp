@@ -87425,6 +87425,12 @@ void sub_1024eaa0(void *pMat, const Vector *a, const Vector *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024eda0 size=0x1
+void sub_1024eda0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024fc20 size=0x174
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
