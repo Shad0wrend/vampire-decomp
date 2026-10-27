@@ -64457,6 +64457,13 @@ bool CLevelLoader::sub_101d6470(KVNode *pKeys, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6500 size=0x5
+char __stdcall sub_101d6500(int a0, int a1)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6590 size=0x96
 #include "CUnknown101d7520.h"
 

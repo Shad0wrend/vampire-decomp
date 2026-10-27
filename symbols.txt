@@ -3587,6 +3587,7 @@
 0x1000ad76 func   ?sub_10199800@@YAPAXPAX0@Z sub_10199800
 0x1000ad85 func   ?sub_100b2150@CBaseEntity@@QAEPAMPAM@Z CBaseEntity::sub_100b2150
 0x1000ad8a func   ?sub_100ad100@@YIXPAVCBaseEntity@@HH@Z sub_100ad100
+0x1000ad8f func   ?sub_101d6500@@YGDHH@Z sub_101d6500
 0x1000ada3 func   ?sub_102e2630@CUnknown102e2630@@QAEHH@Z CUnknown102e2630::sub_102e2630
 0x1000adad func   ?vfunc73@CGameRules@@UAE_NPAVCBaseEntity@@@Z CGameRules::vfunc73
 0x1000adb2 func   ?sub_101d1670@@YAXPAPADH@Z sub_101d1670
