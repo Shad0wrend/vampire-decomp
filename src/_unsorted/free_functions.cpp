@@ -57600,6 +57600,14 @@ CUnknown101b30d0 *CUnknown101b30d0::sub_101b30d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3220 size=0x4
+struct CUnknown101b3220 { int sub_101b3220(); };
+int CUnknown101b3220::sub_101b3220()
+{
+    return *(int *)((char *)this + 0x64);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3730 size=0x28
 #include "CUnknown101b3730.h"
 // TARGET: CUnknown101b3730::sub_101b3730
