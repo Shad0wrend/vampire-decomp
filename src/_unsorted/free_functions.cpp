@@ -741,6 +741,14 @@ extern "C" GP *phys_pulleyconstraint()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c900 size=0x3
+struct CUnknown1002c900 { void * sub_1002c900(); };
+void * CUnknown1002c900::sub_1002c900()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002cbd0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_109f3624)(void *);
