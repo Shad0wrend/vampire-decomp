@@ -1197,6 +1197,7 @@
 0x1000472d func   ?sub_1010c150@CEnvFireSensor@@QAEXXZ CEnvFireSensor::sub_1010c150
 0x1000474b func   ?sub_1042fbf0@@YAII@Z sub_1042fbf0
 0x10004750 func   ?sub_10430130@@YAII@Z sub_10430130
+0x10004769 func   ?sub_101d62b0@@YAXXZ sub_101d62b0
 0x1000476e func   ?sub_10058d70@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::sub_10058d70
 0x10004773 func   _point_target point_target
 0x10004778 func   ?sub_103aaf50@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103aaf50
