@@ -67,3 +67,14 @@ void CTEBreakModel::vfunc3(const Vector &origin, const QAngle &angles)
 	slot4(&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005e9f0 size=0x6
+#include "CTEBreakModel.h"
+namespace lifted {
+extern char g_106c1144;
+}
+ServerClass * CTEBreakModel::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c1144);
+}
+// END FUNCTION
