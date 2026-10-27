@@ -59967,6 +59967,14 @@ void CUnknown101c2a90::sub_101c2a90(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2ab0 size=0x4
+struct CUnknown101c2ab0 { char sub_101c2ab0(); };
+char CUnknown101c2ab0::sub_101c2ab0()
+{
+    return *(char *)((char *)this + 0x48);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2ad0 size=0xa
 void CUnknown101c2a90::sub_101c2ad0(char value)
 {
