@@ -103515,6 +103515,14 @@ void CUnknown102ee120::sub_102ee120(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee1a0 size=0x7
+struct CUnknown102ee1a0 { float sub_102ee1a0(); };
+float CUnknown102ee1a0::sub_102ee1a0()
+{
+    return *(float *)((char *)(*(int *)((char *)this + 0x30)) + 0x28);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee1c0 size=0xd
 void CUnknown102ee120::sub_102ee1c0(int value)
 {
