@@ -106705,6 +106705,13 @@ int CUnknown10316320::sub_10316320(int a, int b, void *pExcept)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103163e0 size=0x5
+char __stdcall sub_103163e0(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316560 size=0x6f
 #include "CUnknown103164c0.h"
 
