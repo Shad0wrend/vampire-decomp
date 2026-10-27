@@ -85968,6 +85968,12 @@ void CAccum64View::sub_10247860(const __int64 *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247b80 size=0x1
+void sub_10247b80()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247bd0 size=0x2a
 void __stdcall sub_10013958(int a);
 
