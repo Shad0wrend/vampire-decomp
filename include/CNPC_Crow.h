@@ -8,8 +8,25 @@ class CBaseEntity;
 class CNPC_Crow
 {
 public:
-	char pad0[0x6f8];
+	char pad0[0x204];
+	unsigned int m_flags204;	// 0x204: bit 4 is handed to SetFlightMode by Spawn
+	char pad208[0x210 - 0x208];
+	int m_n210;	// 0x210: set to the frame time by Spawn
+	char pad214[0x26c - 0x214];
+	const char *m_name26c;	// 0x26c: the entity name
+	char pad270[0x6f8 - 0x270];
 	float m_fl6f8;	// 0x6f8: a random delay drawn by the event 0x22 handler (vfunc465)
+	char pad6fc[0x1568 - 0x6fc];
+	int m_n1568;	// 0x1568
+	int m_n156c;	// 0x156c
+	char pad1570[0x1574 - 0x1570];
+	float m_f1574;	// 0x1574
+	char pad1578[0x5cc0 - 0x1578];
+	int m_n5cc0;	// 0x5cc0: schedule state
+	char pad5cc4[0x5f48 - 0x5cc4];
+	float m_f5f48;	// 0x5f48: next think time
+	char pad5f4c[0x5f50 - 0x5f4c];
+	int m_n5f50;	// 0x5f50: morale
 
 	// Slot 546.
 	int vfunc546(int arg);
@@ -35,4 +52,12 @@ public:
 	void vfunc465(int nEvent);	// slot 465: event 0x22 draws m_fl6f8 = RandomFloat(0, 0.75f) from the random stream at 0x1070b244
 	bool vfunc525(int a);	// slot 525: when the navigator state (sub_1027d990) is 2, sub_1000b61d(a) and true; else false
 	void sub_1000b61d(int a);	// the member called by vfunc525 (stub 0x1000b61d)
+	void vfunc103();	// slot 103 "Spawn": CAI_BaseNPC::vfunc103, model models/crow.mdl, solid 2, flight setup and a random think delay / morale
+	void sub_10273200();	// CAI_BaseNPC::vfunc103 (stub 0x100026da), called directly
+	void sub_10273070(int a);	// CAI_BaseNPC member (stub 0x1000dc29), called directly
+	void sub_1009f380(const Vector *pOffset);	// CBaseEntity view offset setter (stub 0x10015bfe), called directly
+	void sub_10327960(int a);	// CBaseCombatCharacter member (stub 0x1000ce82), called directly
+	void sub_100aaa40(int a);	// CBaseEntity member (stub 0x10013c00), called directly
+	void sub_1026dc60();	// stub 0x1000d990, called directly
+	void sub_10332aa0(int classId, int disposition, int priority);	// "CBaseCombatCharacter::AddClassRelationship" (stub 0x10013cf5), called directly
 };
