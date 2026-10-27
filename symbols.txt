@@ -4998,6 +4998,7 @@
 0x1000e642 func   ?vfunc618@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc618
 0x1000e647 func   ?sub_100d56b0@@YAXXZ sub_100d56b0
 0x1000e651 func   ?sub_10326d40@@YI_NPADHHHH@Z sub_10326d40
+0x1000e65b func   ?sub_10078520@CUnknown10078520@@QAEHXZ CUnknown10078520::sub_10078520
 0x1000e697 func   ?sub_10397b40@CNPC_VMingXiao@@QAE_NPAX@Z CNPC_VMingXiao::sub_10397b40
 0x1000e6a6 func   ?sub_101a8ac0@CCineNPC@@QAEDXZ CCineNPC::sub_101a8ac0
 0x1000e6c9 func   ?sub_100dbf50@@YAHXZ sub_100dbf50
