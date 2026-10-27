@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1022bba0 size=0x6
+#include "CPropRadio.h"
+namespace lifted {
+extern char g_105b41b0;
+}
+datamap_t * CPropRadio::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105b41b0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022bca0 size=0x86
 #include "CPropRadio.h"
 #include "CBaseAnimating.h"
