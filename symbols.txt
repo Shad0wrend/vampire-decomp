@@ -4780,6 +4780,7 @@
 0x1000d251 func   ?sub_1021e350@@YIXPAUVec@@HHH@Z sub_1021e350
 0x1000d256 func   ?vfunc103@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc103
 0x1000d25b func   ?sub_1024b590@CFindList_1024b590@@QAEHH@Z CFindList_1024b590::sub_1024b590
+0x1000d260 func   ?vfunc82@CWorldEvents@@UAEPAUdatamap_t@@XZ CWorldEvents::vfunc82
 0x1000d265 func   ?sub_101afc50@CUnk101afc50@@QAE_NPAUCUnk101afc50Table@@@Z CUnk101afc50::sub_101afc50
 0x1000d274 func   ?vfunc3@CAI_ExpresserSink@@UAEXXZ CAI_ExpresserSink::vfunc3
 0x1000d288 func   _trigger_player_activity_level trigger_player_activity_level

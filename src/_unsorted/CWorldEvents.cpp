@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1023cff0 size=0x6
+#include "CWorldEvents.h"
+namespace lifted {
+extern char g_105c2a50;
+}
+datamap_t * CWorldEvents::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105c2a50);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023d930 size=0x196
 #include "CWorldEvents.h"
 #include "CCollisionProperty.h"
