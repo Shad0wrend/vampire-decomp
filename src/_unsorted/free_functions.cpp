@@ -93977,6 +93977,14 @@ struct CUnknown102a9600 { float a[1]; float sub_102a9600(int i); };
 float CUnknown102a9600::sub_102a9600(int i) { return a[i]; }
 // END FUNCTION
 
+// FUNCTION: 0x102a9670 size=0x3
+struct CUnknown102a9670 { void * sub_102a9670(); };
+void * CUnknown102a9670::sub_102a9670()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9690 size=0xa
 struct CUnknown102a9690 { int p[3]; int a; void sub_102a9690(int v); };
 // TARGET: CUnknown102a9690::sub_102a9690
