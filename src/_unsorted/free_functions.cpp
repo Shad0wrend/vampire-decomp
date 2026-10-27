@@ -70505,6 +70505,14 @@ void CUnknown101f2360::sub_101f2360(const char **ppBuf, void *pFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f24c0 size=0x4
+struct CUnknown101f24c0 { int sub_101f24c0(); };
+int CUnknown101f24c0::sub_101f24c0()
+{
+    return *(int *)((char *)this + -32);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2500 size=0x9
 struct CUnknown101f2500 { int a; char sub_101f2500(); };
 // TARGET: CUnknown101f2500::sub_101f2500
