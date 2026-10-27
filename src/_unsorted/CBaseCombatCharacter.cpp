@@ -128,6 +128,16 @@ bool CBaseCombatCharacter::vfunc347(int event, char *pszName, float *pA, float *
 }
 // END FUNCTION
 
+// FUNCTION: 0x1031a5a0 size=0x6
+namespace lifted {
+extern char g_1061664c;
+}
+datamap_t * CBaseCombatCharacter::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1061664c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323a90 size=0x96
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"
