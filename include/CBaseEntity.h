@@ -58,7 +58,7 @@ public:
 	virtual void vfunc65(); virtual void vfunc66(); virtual void vfunc67(); virtual void vfunc68();
 	virtual void vfunc69(); virtual bool vfunc70(); virtual void vfunc71(); virtual void vfunc72(); virtual void vfunc73();
 	virtual void vfunc74(); virtual void vfunc75(); virtual void vfunc76(); virtual void vfunc77(); virtual void vfunc78();
-	virtual void vfunc79(); virtual void vfunc80(); virtual void vfunc81(); virtual datamap_t *vfunc82(); virtual void vfunc83();	// slot 82 "GetDataDescMap": the entity class's datamap
+	virtual void vfunc79(); virtual void vfunc80(); virtual void vfunc81(); virtual datamap_t *vfunc82(); virtual int vfunc83();	// slot 82 "GetDataDescMap": the entity class's datamap
 	virtual void vfunc84(int flags); virtual char *vfunc85(); virtual void vfunc86(); virtual void vfunc87(void *pCheckTransmitInfo); virtual void vfunc88();	// slot 87 "CBaseEntity::SetTransmit"-like: takes the transmit info (bit vector pointer at +0x10)
 	virtual void vfunc89(); virtual void vfunc90(); virtual void vfunc91(); virtual void vfunc92();
 	virtual void vfunc93(int moveType, int moveCollide);	// "CBaseEntity::SetMoveType": scope trace (entity name), on change stores both at +0x35c/+0x360 and calls slot 25 of the object at +0x36c
