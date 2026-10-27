@@ -42873,6 +42873,14 @@ skipwhite:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136ec0 size=0x3
+struct CUnknown10136ec0 { int sub_10136ec0(); };
+int CUnknown10136ec0::sub_10136ec0()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136ee0 size=0x102
 #include "CEntityMapData.h"
 #include <string.h>
