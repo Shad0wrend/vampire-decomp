@@ -27,5 +27,7 @@ public:
 	CDialogDependency();	// "CDialogDependency::CDialogDependency": constructs the block at +4 (sub_10230ed0), then scope trace and Init(0)
 	const char *sub_100ea5e0();	// "CDialogDependency::ToStr": scope trace; for type 2 builds m_nIndent 0x7f characters followed by two spaces in a global buffer and returns it, else returns ""
 	void sub_100e8ef0(int a);	// "CDialogDependency::Init": scope trace, resets the 16 byte block at +4 (sub_10204270), zeroes the two 0x40 dword arrays and the small fields, +0x224 = -1, +0 = a
+	void sub_100e8fc0(CDialog *pDialog, CBaseEntity *pNPC, int a, int b, int c, int d);	// stub 0x100087c9: fills the record for the dialog's NPC
+	char sub_100e94e0(CBaseEntity *pNPC, CBaseEntity *pSpeaker);	// stub 0x100120f8: whether the record passes for the NPC and speaker
 	bool sub_100e9ff0(int a, int b);	// "CDialogDependency::TestPython": scope trace, evaluates the python expression stored as a string at +0x1c through sub_100ea2d0(text, a, b, 0x102, 0); DevMsg error and false when the string is empty
 };
