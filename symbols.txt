@@ -7007,6 +7007,7 @@
 0x10014e57 func   ?sub_101d5e80@CStatDefault3List@@QAEPAUStatDefault3@@H@Z CStatDefault3List::sub_101d5e80
 0x10014e5c func   ?sub_1040dc70@@YIDPAD@Z sub_1040dc70
 0x10014e66 func   ?vfunc546@CNPC_VCombatman@@QAEHH@Z CNPC_VCombatman::vfunc546
+0x10014e6b func   ?sub_1010fc80@@YAHXZ sub_1010fc80
 0x10014e7f func   ?vfunc421@CBasePlayer@@UAEDH@Z CBasePlayer::vfunc421
 0x10014eac func   ?sub_102bfe10@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_102bfe10
 0x10014eb1 func   ?sub_102033e0@@YAPADH@Z sub_102033e0

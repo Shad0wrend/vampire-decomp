@@ -38172,6 +38172,47 @@ extern "C" GP *window_pane()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010fc80 size=0x192
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10246510(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropFloat
+SendProp sub_10246700(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropVector
+void sub_10009539();
+void sub_10246300();
+void sub_10003012();
+
+extern SendTable g_1070996c;
+extern SendTable *g_1055282c;
+
+// TARGET: sub_1010fc80
+int sub_1010fc80()
+{
+	static const char *pTableName = "DT_BreakableSurface";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1055282c, (void *)sub_10009539),
+		sub_10007bfd("m_nNumWide", 0x49c, 4, 8, 1, 0, 0),
+		sub_10007bfd("m_nNumHigh", 0x4a0, 4, 8, 1, 0, 0),
+		sub_10246510("m_flPanelWidth", 0x4a4, 4, 0, 4, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10246510("m_flPanelHeight", 0x4a8, 4, 0, 4, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10246700("m_vNormal", 0x4ac, 0xc, -1, 4, 0.0f, -121121.125f, (void *)sub_10003012),
+		sub_10246700("m_vCorner", 0x4b8, 0xc, -1, 2, 0.0f, -121121.125f, (void *)sub_10003012),
+		sub_10007bfd("m_bIsBroken", 0x4c4, 1, 1, 1, 0, 0),
+		sub_10007bfd("m_nSurfaceType", 0x4c8, 4, 2, 1, 0, 0),
+	};
+	g_1070996c.sub_1000e8fe(props + 1, 9, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10112420 size=0x36
 struct CUnknown10112420
 {
