@@ -87452,6 +87452,17 @@ ConCommandBase *ConCommandBase::sub_10245540(const char *pszName, const char *ps
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245580 size=0x7
+namespace lifted {
+extern char g_1049745c;
+}
+struct CUnknown10245580 { void sub_10245580(); };
+void CUnknown10245580::sub_10245580()
+{
+    *(int *)this = (int)&lifted::g_1049745c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245660 size=0x3d
 int sub_1043e780(const char *, const char *);
 
