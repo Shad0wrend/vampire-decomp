@@ -3262,6 +3262,7 @@
 0x10009dc2 func   ?vfunc434@CBasePlayer@@QAEXXZ CBasePlayer::vfunc434
 0x10009ddb func   ?sub_102f3900@CUnknown102f3900@@QAEXPAUCUnknown102f3900Ent@@VVector@@1H@Z CUnknown102f3900::sub_102f3900
 0x10009de0 func   ?vfunc5@CBaseKeyframedMover@@UAEPAV1@I@Z CBaseKeyframedMover::vfunc5
+0x10009de5 func   ?sub_10041b70@@YAHH@Z sub_10041b70
 0x10009def func   ?LinkToParent@?$CUtlRBTree@HG@@QAEXGG_N@Z CUtlRBTree<int,unsigned short>::LinkToParent
 0x10009df4 func   ?sub_102f7970@CUnknown102f7970@@QAEXXZ CUnknown102f7970::sub_102f7970
 0x10009df9 func   ?vfunc266@CPropPadlock@@QAEXH@Z CPropPadlock::vfunc266
