@@ -44802,6 +44802,13 @@ void __fastcall sub_1013dbb0(Pool *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013dd10 size=0x5
+char __stdcall sub_1013dd10(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e3a0 size=0x23
 void __fastcall sub_10003cb5(void *pSelf);
 void __fastcall sub_1000f3b2(void *pSelf);

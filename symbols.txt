@@ -3632,6 +3632,7 @@
 0x1000afc4 func   ?vfunc28@CSave@@UAEXABVVector@@@Z CSave::vfunc28
 0x1000afc9 func   ?sub_101072b0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_101072b0
 0x1000afd3 func   ?sub_102ecce0@@YIXPAUCOwner@@@Z sub_102ecce0
+0x1000afe2 func   ?sub_1013dd10@@YGDH@Z sub_1013dd10
 0x1000afe7 func   ?vfunc230@CBreakable@@QAEXHH@Z CBreakable::vfunc230
 0x1000b005 func   ?sub_102c1170@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_102c1170
 0x1000b00a func   ?vfunc4@CEntitySaveRestoreBlockHandler@@UAEXXZ CEntitySaveRestoreBlockHandler::vfunc4
