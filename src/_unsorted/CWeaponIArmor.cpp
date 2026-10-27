@@ -11,3 +11,11 @@ CWeaponActivityRecord * CWeaponIArmor::vfunc362()
     return (CWeaponActivityRecord *)((int)&lifted::g_1067ea10);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103f2f60 size=0x6
+#include "CWeaponIArmor.h"
+int CWeaponIArmor::vfunc363()
+{
+    return 1;
+}
+// END FUNCTION
