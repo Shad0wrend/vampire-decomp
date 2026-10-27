@@ -133515,6 +133515,16 @@ int sub_1042bcc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042bfd0 size=0x6
+namespace lifted {
+extern char g_109eed28;
+}
+int sub_1042bfd0()
+{
+    return (int)&lifted::g_109eed28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c310 size=0xcb
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(int);

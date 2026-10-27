@@ -159,6 +159,7 @@
 0x10001730 func   ?vfunc601@CNPC_VGargoyle@@UAEXH@Z CNPC_VGargoyle::vfunc601
 0x10001735 func   ?sub_102a9f00@CUnknown102a9f00@@QAEPAXXZ CUnknown102a9f00::sub_102a9f00
 0x1000173a func   _filter_activator_feat filter_activator_feat
+0x1000173f func   ?sub_1042bfd0@@YAHXZ sub_1042bfd0
 0x10001744 func   ?vfunc5@CItemGIdolCat@@QAEPAV1@I@Z CItemGIdolCat::vfunc5
 0x10001753 func   _filter_activator_mass filter_activator_mass
 0x10001758 func   ?sub_103d3a40@CBaseEntity@@QAE_NPBD@Z CBaseEntity::sub_103d3a40
