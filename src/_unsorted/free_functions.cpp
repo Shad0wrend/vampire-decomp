@@ -3252,6 +3252,14 @@ void CUtlVector16::sub_1003c220(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003c3a0 size=0x3
+struct CUnknown1003c3a0 { void * sub_1003c3a0(); };
+void * CUnknown1003c3a0::sub_1003c3a0()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003c3c0 size=0x70
 struct Elem { char data[0x68]; };
 struct Mem {
