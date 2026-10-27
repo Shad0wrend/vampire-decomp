@@ -108067,6 +108067,17 @@ struct CUnknown10312320 { char pad[0x30]; CSub10002397 m_Sub; void sub_10312320(
 void CUnknown10312320::sub_10312320() { m_Sub.sub_10002397(); }
 // END FUNCTION
 
+// FUNCTION: 0x10312340 size=0x8
+namespace lifted {
+struct C10003d23 { int sub_10003d23(); };
+}
+struct CUnknown10312340 { int sub_10312340(); };
+int CUnknown10312340::sub_10312340()
+{
+    return ((lifted::C10003d23 *)(this + 0x30))->sub_10003d23();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312360 size=0x17d
 #include "CUnknown10312580.h"
 
