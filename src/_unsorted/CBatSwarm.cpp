@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100b8320 size=0x6
+#include "CBatSwarm.h"
+namespace lifted {
+extern char g_1055a430;
+}
+datamap_t * CBatSwarm::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1055a430);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b8770 size=0x1e
 #include "CBatSwarm.h"
 
