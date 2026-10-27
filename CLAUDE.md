@@ -295,3 +295,27 @@ CUtlVector<int> members and an empty destructor), 0x10323370 AddToPresenceList (
 inside a ScopeTrace; Grow stays a call), the RB-tree members 0x10194780 / 0x10055050 NewNode and 0x1004c5b0
 RotateLeft (after naming its out-of-line Links), 0x100498c0 LinkToParent and 0x10055f50 RotateLeft (only their
 out-of-line callees' names missing).
+
+## Source entity handles (EHANDLE, CHandle<T>): write the Source expression, never the slot lookup
+
+`include/ehandle.h` (in the prelude) holds Source's entity handles in the 2004 public SDK form: `CBaseHandle`,
+`CHandle<T>` and `EHANDLE` (= `CHandle<CBaseEntity>`), with Get / Set inline as the game compiled them. Recognise them by:
+
+- **Get** (handle -> entity): `cmp h, -1; je`, `and h, 0x1fff`, `lea [x+x*2]` (12-byte slots) into
+  `[0x10566458]+4`, `shr h, 0xd`, compare with the slot's serial, the slot's entity or 0.
+  This is `m_hFoo.Get()`, `m_hFoo->vfuncN()`, `if (m_hFoo)`, `m_hFoo == pEnt`.
+- **Set** (entity -> handle): `test p, p; je` then `call [vtable+4]` (GetRefEHandle) and `mov eax, [eax]`,
+  else -1. This is `m_hFoo = pEnt;`.
+
+How to write it:
+
+1. Type the member as a handle: `EHANDLE m_hOwner364;` or `CHandle<CFoo> m_hFoo;` in place of `unsigned int`
+   (same 4 bytes; `patch_context` the one line). Its default constructor stores -1, as the game's constructors do.
+   `EHandle_Get(m_hFoo)` (CEHandleGet.h) still compiles for such a member, so matched code is not broken. If the
+   header change is rejected, a matched function reads the member as a number (`m_hFoo != -1`,
+   `m_hFoo & 0x1fff`): leave that member as it is and use `EHandle_Get(m_hFoo)`.
+2. Write the Source code: `if (m_hOwner364.Get() != pOwner) { m_hOwner364 = pOwner; ... }` is the game's
+   SetOwnerEntity byte for byte (0x100aab10); `pTarget == m_h628c.Get()` is 0x10372dd0's compare (the operand order
+   matters: `m_h628c == pTarget` swaps the compare). Never open-code the slot lookup, never declare your own
+   `g_10566458` slot struct, and never declare a private handle struct (`CFooHandle`) in new code.
+3. A `CUtlVector<EHANDLE>` / `CUtlVector<CHandle<CFoo> >` is a list of handles (utlvector.h).
