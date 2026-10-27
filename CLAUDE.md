@@ -319,3 +319,11 @@ How to write it:
    matters: `m_h628c == pTarget` swaps the compare). Never open-code the slot lookup, never declare your own
    `g_10566458` slot struct, and never declare a private handle struct (`CFooHandle`) in new code.
 3. A `CUtlVector<EHANDLE>` / `CUtlVector<CHandle<CFoo> >` is a list of handles (utlvector.h).
+
+## Engine globals (gpGlobals): use globalvars.h, never a local view of g_1070b228
+
+`include/globalvars.h` (in the prelude) declares the engine's global variables at g_1070b228 as `gpGlobals`:
+`gpGlobals->curtime` (+0xc), `->frametime` (+0x10), `->realtime` (+0x0), `->framecount` (+0x4),
+`->absoluteframetime` (+0x8), `->maxClients` (+0x14), `->mapname` (+0x24, const char *), `->mapversion` (+0x28),
+`->m_nEdicts` (+0x38). Write `gpGlobals->curtime`, not `extern SomeView *g_1070b228;` with a struct of your own.
+A member not named yet: add it to globalvars.h with edit_context (it lives in `namespace EngineGlobals`).
