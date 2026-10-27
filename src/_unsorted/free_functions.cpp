@@ -24531,6 +24531,16 @@ char * CUnknown100b7a00::sub_100b7a00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7a20 size=0x6
+namespace lifted {
+extern char g_106b8540;
+}
+int sub_100b7a20()
+{
+    return (int)&lifted::g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7a40 size=0x12
 struct CVirtSlots14 {
     virtual void vfunc0();
