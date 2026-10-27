@@ -1449,6 +1449,7 @@
 0x1000501f func   ?sub_10125190@@YAHXZ sub_10125190
 0x10005024 func   ?sub_10337980@@YIXPAVCBaseCombatCharacter@@HH@Z sub_10337980
 0x1000502e func   ?sub_10202140@@YAXXZ sub_10202140
+0x10005033 func   ?sub_101e8c70@CUnknown101e8c70@@QAEMXZ CUnknown101e8c70::sub_101e8c70
 0x10005038 func   ?vfunc104@CRotDoor@@UAEXXZ CRotDoor::vfunc104
 0x1000503d func   ?sub_1040c430@CUnknown1040cb60@@QAEPAVVector@@PAV2@PBV2@PAVCBaseEntity@@@Z CUnknown1040cb60::sub_1040c430
 0x10005042 func   ?sub_102b5be0@@YADXZ sub_102b5be0
