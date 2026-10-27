@@ -39922,6 +39922,25 @@ int __stdcall sub_1012c5b0(int hInstance, int nReason, int pReserved)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c600 size=0x84
+#include "CBaseEntity.h"
+
+void sub_1012c6c0(CBaseEntity *pParent, CBaseEntity *pChild);
+void sub_10014498(void *pArg, CBaseEntity *pChild);
+
+// TARGET: sub_1012c600
+void sub_1012c600(CBaseEntity *pParent, void *pArg)
+{
+	CBaseEntity *pChild = ((EHANDLE *)((char *)pParent + 0x260))->Get();
+	while (pChild)
+	{
+		sub_1012c6c0(pParent, pChild);
+		sub_10014498(pArg, pChild);
+		pChild = ((EHANDLE *)((char *)pParent + 0x260))->Get();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c840 size=0x82
 #include "CGlobalEntityList.h"
 
