@@ -94215,6 +94215,14 @@ char CAI_BaseNPCTroika::sub_102a9ec0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9f00 size=0x3
+struct CUnknown102a9f00 { void * sub_102a9f00(); };
+void * CUnknown102a9f00::sub_102a9f00()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102aab70 size=0x126
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_Motor.h"
