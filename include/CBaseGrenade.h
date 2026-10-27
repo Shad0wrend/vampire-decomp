@@ -68,4 +68,7 @@ public:
 	CBaseGrenade *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_1000a67d();	// as in CPhysForce (transplant)
 	CBaseGrenade *sub_1042b2b0();	// as in CKeepUpright (transplant)
+
+	char m_pad19b0[0x19b0 - sizeof(CBaseEntity)];
+	unsigned int m_hHeld19b0;	// 0x19b0: handle of the entity the grenade is checked against (slot 407)
 };
