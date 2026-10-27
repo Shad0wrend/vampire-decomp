@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1034ab50 size=0x6
+#include "CNPCMaker.h"
+namespace lifted {
+extern char g_10624718;
+}
+datamap_t * CNPCMaker::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10624718);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034afe0 size=0x105
 #include "CNPCMaker.h"
 #include "CCollisionProperty.h"
