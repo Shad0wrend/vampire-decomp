@@ -103871,6 +103871,17 @@ void CUnknown102ee120::sub_102ee120(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee140 size=0x8
+namespace lifted {
+struct C1000f89e { int sub_1000f89e(); };
+}
+struct CUnknown102ee140 { int sub_102ee140(); };
+int CUnknown102ee140::sub_102ee140()
+{
+    return ((lifted::C1000f89e *)(*(int *)((char *)this + 0x30)))->sub_1000f89e();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee1a0 size=0x7
 struct CUnknown102ee1a0 { float sub_102ee1a0(); };
 float CUnknown102ee1a0::sub_102ee1a0()
