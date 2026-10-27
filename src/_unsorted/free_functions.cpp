@@ -60514,6 +60514,98 @@ CBaseEntity *sub_101c7690(const char *pLandmarkName, CChangeLevel *pCaller)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7b80 size=0x195
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+#include "CChangeLevel.h"
+
+__declspec(dllimport) char *Q_strncpy(char *pszDest, const char *pszSrc, int nMaxLen);
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int nLevel, const char *pszFormat, ...);
+
+struct CChangeLevelTargetView {	// the engine's edict: only the unknown pointer at +0x40
+	char m_pad0000[0x40];
+	CGlobalEntityList_Ent *m_pUnknown;	// 0x40
+};
+
+struct CChangeLevelPlayerView {
+	char m_pad0000[0xa8];
+	CEntityVSlots *m_pObject;	// 0xa8
+};
+
+class CUnknown1070ba0c
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21();
+	virtual char vfunc22();	// a boolean answer in al (true skips the level change)
+};
+
+class CEngineChangeLevel
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void vfunc9(const char *pszMap, const char *pszLandmark);	// ChangeLevel
+};
+
+struct CPlayerChangeLevelView
+{
+	void sub_10170090();	// stub 0x1000f97a
+};
+
+extern CUnknown1070ba0c *g_1070ba0c;
+extern CUnknown1070b22c *g_1070b22c;
+extern char g_1072cf78[];
+extern char g_1072cf44[];
+
+CBaseEntity *sub_10136580(const char *pszClassname);
+const char **sub_1042bff0(const char **ppszOut, const char *pszValue);
+CPlayerChangeLevelView *sub_101cd9e0(int a);
+
+// TARGET: sub_101c7b80
+void sub_101c7b80(const char *pszMap, const char *pszLandmark)
+{
+	if (g_1070ba0c->vfunc22())
+		return;
+	CChangeLevelTargetView *pEdict = (CChangeLevelTargetView *)g_1070b22c->vfunc38(1);
+	CBaseEntity *pPlayer;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if (!pEdict)
+			pEdict = (CChangeLevelTargetView *)g_1070b22c->vfunc38(0);
+		if (pEdict && pEdict->m_pUnknown)
+			pPlayer = pEdict->m_pUnknown->vfunc4();
+		else
+			pPlayer = 0;
+	}
+	CEntityVSlots *pObject = pPlayer ? ((CChangeLevelPlayerView *)pPlayer)->m_pObject : 0;
+	CBaseEntity *pLandmark = sub_10136580("info_landmark");
+	if (!pLandmark)
+		return;
+	const char *pszLandmarkCopy = pszLandmark;
+	pLandmark->sub_100a0420(*sub_1042bff0(&pszLandmark, pszLandmarkCopy));
+	((CEntityVSlots *)pLandmark)->slot62((const float *)pObject->slot220());
+	CChangeLevel *pChangeLevel = (CChangeLevel *)sub_10136580("trigger_changelevel");
+	const char *pszMapCopy = pszMap;
+	Q_strncpy(pChangeLevel->m_szMapName, pszMapCopy, 0x20);
+	Q_strncpy(pChangeLevel->m_szLandmarkName, pszLandmarkCopy, 0x20);
+	Q_strncpy(g_1072cf78, pszMapCopy, 0x20);
+	g_1072cf44[0] = 0;
+	Q_strncpy(g_1072cf44, pszLandmarkCopy, 0x20);
+	DevMsg(3, "CHANGE LEVEL: %s %s\n", g_1072cf78, g_1072cf44);
+	CPlayerChangeLevelView *pLocal = sub_101cd9e0(1);
+	if (pLocal)
+		pLocal->sub_10170090();
+	((CEngineChangeLevel *)g_1070b22c)->vfunc9(g_1072cf78, g_1072cf44);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7fa0 size=0x3c
 typedef unsigned int (__fastcall *FlagSlotFn)(void *);
 typedef int (__fastcall *IntSlotFn)(void *);
