@@ -6547,6 +6547,7 @@
 0x10013967 func   ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z sub_100b4c30
 0x1001396c func   ?sub_101d6100@CUnknown101d6100@@QAE_NPAX@Z CUnknown101d6100::sub_101d6100
 0x10013971 func   ?sub_100c8490@@YAPAHXZ sub_100c8490
+0x1001398f func   ?sub_10050e70@CDisciplineParticle@@SAPAV1@PBDHHHHHHHHHHH@Z CDisciplineParticle::sub_10050e70
 0x10013994 func   ?vfunc104@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc104
 0x1001399e func   ?vfunc104@CCameraAnimated@@QAEXXZ CCameraAnimated::vfunc104
 0x100139a3 func   ?sub_10288590@@YAMM@Z sub_10288590

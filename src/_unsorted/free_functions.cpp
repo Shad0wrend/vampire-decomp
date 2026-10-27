@@ -6961,6 +6961,61 @@ CDisciplineParticle *CDisciplineParticle::sub_10050d90(int a1, int a2, int a3, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050e70 size=0x193
+#include "CDisciplineParticle.h"
+#include "CBaseEntity.h"
+#include "CBaseViewModel.h"
+#include "CEntityVSlots.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+CEntityVSlots *sub_100a9ab0(const char *pszClassname, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
+int sub_101d1280(CBaseEntity *pEntity);
+
+struct CEntityVSlots243 {
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS10(21) EVS10(22) EVS10(23)
+	EVS(240) EVS(241) EVS(242)
+	virtual void slot243(int a, int b, int c);	// the particle's setup slot (user, model index, a parameter)
+};
+
+CDisciplineParticle *CDisciplineParticle::sub_10050e70(const char *pszClassname, int a2, int a3, int a4, int a5, int a6, int modelIndex, int a8, int a9, int a10, int a11, int a12)
+{
+	ScopeTrace trace("CDisciplineParticle::Create", g_106b8540);
+	if (modelIndex < 0)
+		return 0;
+	int a; a = a10;
+	if (!a)
+		a = a2;
+	CDisciplineParticle *pParticle = dynamic_cast<CDisciplineParticle *>((CBaseEntity *)sub_100a9ab0(pszClassname, g_1070d1b0, g_1070d9d0, 0));
+	if (!pParticle)
+		return 0;
+	pParticle->m_n4a4 = a3;
+	pParticle->m_b4a1 = 1;
+	pParticle->m_n4a8 = a4;
+	pParticle->m_n4ac = a5;
+	pParticle->m_n4b0 = a6;
+	pParticle->m_nModelIndex = modelIndex;
+	const char *pszName = g_1070b22c->vfunc28(modelIndex);
+	pParticle->m_pszModelName = *pszName ? pszName : 0;
+	pParticle->m_b4b4 = 0;
+	pParticle->m_n4bc = a11;
+	pParticle->m_n4c0 = a12;
+	pParticle->m_b4c4 = 1;
+	if (a && dynamic_cast<CBaseViewModel *>((CBaseEntity *)a))
+		pParticle->m_b4b4 = 1;
+	sub_101d1280((CBaseEntity *)pParticle);
+	pParticle->sub_10051650((CBaseEntity *)a2);
+	((CEntityVSlots243 *)pParticle)->slot243(a, a8, a9);
+	pParticle->m_b4c5 = 0;
+	return pParticle;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051a40 size=0x6d
 #include "CDisciplineParticle.h"
 #include "ScopeTrace.h"
