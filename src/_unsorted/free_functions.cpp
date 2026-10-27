@@ -38680,6 +38680,16 @@ int __stdcall sub_1010bda0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bdc0 size=0x8
+namespace lifted {
+int sub_10009a02();
+}
+int __stdcall sub_1010bdc0(int a0)
+{
+    return lifted::sub_10009a02();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010be40 size=0xaf
 struct ISaveRestoreOps;
 struct datamap_t;
