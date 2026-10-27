@@ -214,7 +214,9 @@ public:
 	void (CBaseEntity::*m_pfn0114)();
 	void (CBaseEntity::*m_pfnThink)();
 	const char *m_classname11c;
-	char m_pad0120[0x17c - 0x120];
+	char m_pad0120[0x164 - 0x120];
+	float m_flSpeed164;	// 0x0164
+	char m_pad0168[0x17c - 0x168];
 	float m_flNextThink;	// 0x017c
 	char m_pad0180[0x190 - 0x180];
 	float m_vecMovedir[3];	// 0x0190: the direction set by SetMovedir
