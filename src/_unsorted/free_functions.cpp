@@ -24381,6 +24381,13 @@ void __fastcall sub_100b7a40(int *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7a70 size=0x3
+int sub_100b7a70()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7a90 size=0x22
 struct CUnknown100b7a90 {
 	void sub_10012891();
