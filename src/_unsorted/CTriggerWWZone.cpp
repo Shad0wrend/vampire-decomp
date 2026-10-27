@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103da3e0 size=0x6
+#include "CTriggerWWZone.h"
+namespace lifted {
+extern char g_1065f7ac;
+}
+datamap_t * CTriggerWWZone::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1065f7ac);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103da540 size=0x7e
 #include "CTriggerWWZone.h"
 #include "ScopeTrace.h"
