@@ -420,6 +420,13 @@ void CBaseCombatWeapon::vfunc310(float time)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102527e0 size=0x7
+float CBaseCombatWeapon::vfunc311()
+{
+    return *(float *)((char *)this + 0x894);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252a90 size=0x121
 #include "CBaseCombatWeapon.h"
 #include "CWeaponOwner.h"
