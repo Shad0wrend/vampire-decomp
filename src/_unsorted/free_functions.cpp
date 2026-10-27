@@ -96187,6 +96187,17 @@ int __stdcall sub_10290660(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102906a0 size=0xd
+namespace lifted {
+int __stdcall sub_1000b654(int);
+}
+struct CUnknown102906a0 { int sub_102906a0(); };
+int CUnknown102906a0::sub_102906a0()
+{
+    return lifted::sub_1000b654(*(int *)((char *)this + 0x6244));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102906e0 size=0x3
 char sub_102906e0()
 {
