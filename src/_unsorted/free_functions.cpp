@@ -131530,6 +131530,39 @@ extern "C" CBaseEntity *grenade()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042a540 size=0x194
+#include "CBaseGrenade.h"
+#include "TestBit.h"
+
+struct CGrenadeGlobals {
+	float m_f00, m_f04, m_f08;
+	float m_curtime;	// 0x0c
+};
+
+extern CGrenadeGlobals *g_1070b228;
+void sub_101babc0(int type, const Vector &vecPos, int nSpeed, float flScale, int nFlags);
+
+void CBaseGrenade::sub_1042a540()
+{
+	if (!sub_100a9510()) {
+		sub_100ae150();
+		return;
+	}
+	if (TestBit(m_flags268, 12))
+		sub_100b1d10();
+	if (TestBit(m_flags268, 12))
+		sub_100b1d10();
+	sub_101babc0(8, (*(Vector *)vfunc220() + m_vecVelocity3bc * 0.5f), (int)m_vecVelocity3bc.Length(), 0.2f, 0);
+	m_flNextThink = 0.2 + g_1070b228->m_curtime;
+	if (m_n03e0) {
+		if (TestBit(m_flags268, 12))
+			sub_100b1d10();
+		Vector vecVelocity = m_vecVelocity3bc * 0.5f;
+		sub_100b2e30(&vecVelocity.x);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042ab80 size=0x108
 #include "CBaseGrenade.h"
 #include "CEHandleGet.h"

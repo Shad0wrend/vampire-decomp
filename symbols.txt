@@ -843,6 +843,7 @@
 0x10003788 func   ?vfunc438@CNPC_VScurrying@@QAEHXZ CNPC_VScurrying::vfunc438
 0x100037a1 func   ?vfunc348@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc348
 0x100037a6 func   ?sub_10105870@CExpressionTable@@QAEHHH@Z CExpressionTable::sub_10105870
+0x100037b5 func   ?sub_1042a540@CBaseGrenade@@QAEXXZ CBaseGrenade::sub_1042a540
 0x100037c9 func   ?sub_100ba030@@YIHPAH@Z sub_100ba030
 0x100037ce func   ?sub_10222e30@@YIXPAUMem@@HH@Z sub_10222e30
 0x100037dd func   ?RotateRight@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEXG@Z CUtlRBTree<CRBTree16Entry8,unsigned short>::RotateRight
