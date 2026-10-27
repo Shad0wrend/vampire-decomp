@@ -121529,6 +121529,50 @@ void CUnknown10398d90::sub_10398d90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10398db0 size=0x1a5
+#include "CBaseEntity.h"
+#include "CNPC_VMingXiao.h"
+#include "CEntityVSlots.h"
+#include "CRagdollProp.h"
+#include "CPhysicsAnimlink.h"
+#include "CUnknown10398d90.h"
+
+CEntityVSlots *sub_100a9ab0(const char *pszClassname, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+
+bool CNPC_VMingXiao::sub_10398db0()
+{
+	if (!m_h6718.Get())
+		return false;
+	CEntityVSlots *pLink = sub_100a9ab0("phys_animlink", g_1070d1b0, g_1070d9d0, 0);
+	if (!pLink)
+		return false;
+	int nBone;
+	if (m_nSide671c == 4)
+		nBone = sub_10092550("Bip01 R ThrowingTenticle5");
+	else
+		nBone = sub_10092550("Bip01 L ThrowingTenticle5");
+	if (nBone < 0)
+		return false;
+	int pPhys = m_h6718.Get()->m_obj36c;
+	if (!pPhys)
+		return false;
+	CRagdollProp *pRagdoll = dynamic_cast<CRagdollProp *>(m_h6718.Get());
+	if (pRagdoll) {
+		pPhys = pRagdoll->vfunc265("Bone01");
+		if (!pPhys)
+			return false;
+	}
+	Vector vecA(0, 0, 0);
+	Vector vecB(0, 0, 0);
+	((CPhysicsAnimlink *)pLink)->sub_1014f210((CBaseAnimating *)this, nBone, (void *)pPhys, (int)&vecA, (int)&vecB);
+	m_h6738 = (CBaseEntity *)pLink;
+	((CUnknown10398d90 *)this)->sub_10398d90(3);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398fd0 size=0x91
 #include "CBaseEntity.h"
 #include "CNPC_VMingXiao.h"
