@@ -39729,6 +39729,16 @@ int sub_1011bc70(int param)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011bde0 size=0x6
+namespace lifted {
+extern char g_1070b1c4;
+}
+int sub_1011bde0()
+{
+    return (int)&lifted::g_1070b1c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d2e0 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_1011d2e0(const Vector &v)
