@@ -57285,6 +57285,12 @@ void CUnknown101b3a10::sub_101b3a10(void *pCharacter, const char *pszSrc, char *
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3b70 size=0x1
+void sub_101b3b70()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b40a0 size=0x99
 struct S101b40a0 {
     int a;
