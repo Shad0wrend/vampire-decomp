@@ -6142,6 +6142,7 @@
 0x10011342 func   ?sub_10138720@@YAXPAHH0@Z sub_10138720
 0x10011347 func   _npc_generic_bathack npc_generic_bathack
 0x1001134c func   ?sub_1027f1e0@@YGPBDH@Z sub_1027f1e0
+0x10011351 func   ?sub_1042f0a0@@YGHH@Z sub_1042f0a0
 0x10011356 func   ?vfunc1@CAI_CsActList@@UAEXPAUCsActRestoreIface@@@Z CAI_CsActList::vfunc1
 0x1001135b func   ?sub_101fa960@CVDmg_t@@QAEXPAUCVDmgSource_t@@@Z CVDmg_t::sub_101fa960
 0x10011365 func   ?vfunc113@CSun@@UAEXXZ CSun::vfunc113
