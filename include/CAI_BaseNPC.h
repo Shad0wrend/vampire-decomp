@@ -203,6 +203,8 @@ public:
 	void sub_10252470(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
 	void sub_10279b70(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
 	void sub_10279cc0(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
+	void sub_10005d94();	// CBaseCombatCharacter::vfunc380 (stub 0x10005d94), called directly
+	void sub_10007ea0();	// tail-called by vfunc380 (0x10007ea0)
 	void sub_10357110(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
 	void sub_103f6ab0(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
 	void sub_1042b9c0(CBaseEntity *pEnt);	// provisional, like sub_10270aa0 (transplant)
