@@ -103958,6 +103958,17 @@ int CUnknown102ee3f0::sub_102ee3f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee410 size=0x8
+namespace lifted {
+struct C100039b8 { int sub_100039b8(); };
+}
+struct CUnknown102ee410 { int sub_102ee410(); };
+int CUnknown102ee410::sub_102ee410()
+{
+    return ((lifted::C100039b8 *)(*(int *)((char *)this + 0x30)))->sub_100039b8();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee430 size=0x8d
 #include "CAI_Navigator.h"
 #include "CBaseAnimating.h"
