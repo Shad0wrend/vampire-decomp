@@ -45091,6 +45091,12 @@ void CWeaponGravityGun::sub_1014c130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014c2b0 size=0x1
+void sub_1014c2b0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ca10 size=0x86
 #include "CUnknown1014ca10.h"
 
