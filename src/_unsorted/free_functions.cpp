@@ -50418,6 +50418,14 @@ void CBasePlayer::sub_10178590(Vector vecPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10179160 size=0x13
+int sub_10179160(int a0, int a1, int a2)
+{
+    *(int *)((char *)a2) = (*(int *)((char *)a1)) & 0x1ff;
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10179190 size=0x6
 int sub_10179190()
 {
