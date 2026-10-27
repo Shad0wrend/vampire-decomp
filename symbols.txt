@@ -5694,6 +5694,7 @@
 0x100101fe func   ?vfunc372@CWeaponThrown_Grenade_Frag@@QAEPAVCBaseEntity@@VVector@@000@Z CWeaponThrown_Grenade_Frag::vfunc372
 0x10010212 func   ?sub_100916a0@@YIMPAD@Z sub_100916a0
 0x10010217 func   ?vfunc233@CBaseEntity@@QAEHPAHH@Z CBaseEntity::vfunc233
+0x1001021c func   ?sub_1030b880@CUnknown1030b880@@QAEMXZ CUnknown1030b880::sub_1030b880
 0x10010226 func   ?sub_100697a0@@YAHXZ sub_100697a0
 0x1001022b func   ?sub_101b9880@@YIXPAH@Z sub_101b9880
 0x10010244 func   ?sub_10199240@@YAPAUPyObj@@PAU1@0@Z sub_10199240

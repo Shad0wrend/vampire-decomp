@@ -106126,6 +106126,14 @@ CUnknown1030bc20_Record *CUnknown1030bc20::sub_1030b7c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b880 size=0x7
+struct CUnknown1030b880 { float sub_1030b880(); };
+float CUnknown1030b880::sub_1030b880()
+{
+    return *(float *)((char *)(*(int *)((char *)this + 0x24)) + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b8a0 size=0x25
 struct CUnknown1030b8a0
 {
