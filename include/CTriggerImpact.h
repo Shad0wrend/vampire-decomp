@@ -16,4 +16,6 @@ public:
 	int m_pEdict2e0;	// 0x2e0
 	char m_pad02e4[0x5b0 - 0x2e4];
 	float m_flMagnitude;	// 0x5b0
+	float m_flRandomness;	// 0x5b4
+	float m_f5b8;	// 0x5b8
 };
