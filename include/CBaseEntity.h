@@ -113,6 +113,7 @@ public:
 	int vfunc237();	// "CBaseEntity::PhysicsSolidMaskForEntity": scope trace (entity name), a solid mask picked by bit 13 of GetFlags() and the dword at +0xa8
 	void vfunc238(int a, int b, int c, int d);
 
+	char sub_100ab020(int a, int b, int c, int d, int e);	// slot 86 "CBaseEntity::ShouldTransmit": scope trace (entity name); true while the force-transmit time at +0x90 is ahead of curtime, false with bit 6 of +0x19c, else the visibility test of the network property at +0x2d4 for the viewer edict b
 	const char *sub_1000ea11();
 	void sub_10026c70();	// "CBaseEntity::Think": calls the think function pointer at +0x118
 	int sub_10027570();	// "CBaseEntity::GetSolid": forwards to slot 11 of the collision object at +0x270
