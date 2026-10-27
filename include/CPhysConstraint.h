@@ -34,6 +34,12 @@ public:
 	void sub_100121ac();	// destructor body
 	void sub_1002af90(int unused);	// re-enables collisions of the two attached physics objects (clears bit 1 of their game flags), and with spawnflag bit 0 (dword at +0x204) calls sub_1001474a(first, second); the constraint is the object at +0x450
 
-	char m_pad0004[0x45c - 4];
+	char m_pad0004[0x204 - 4];
+	unsigned int m_spawnflags204;	// 0x204: bit 0 = re-enable collisions between the attached objects when released
+	char m_pad0208[0x2e0 - 0x208];
+	void *m_pEdict2e0;	// 0x2e0: the edict (IndexOfEdict takes it)
+	char m_pad02e4[0x450 - 0x2e4];
+	void *m_pConstraint450;	// 0x450: the physics constraint object
+	char m_pad0454[0x45c - 0x454];
 	const char *m_psz45c;	// 0x045c: a name passed to the sound system's slot 0 by vfunc104 (the empty string when it is null)
 };
