@@ -18,7 +18,10 @@ public:
 	bool sub_10212da0();	// "CGameSign::LoadSignData" (stub 0x100147b8), called by sub_10212810 before the message: loads the sign file's data, true when no file name came out
 	void sub_10212810(CBaseEntity *pOther);	// stub 0x1000d39b, called directly first by vfunc39
 
-	char m_pad03e0[0x464 - 0x3e0];
+	char m_pad03e0[0x450 - 0x3e0];
+	char *m_pszFile450;	// 0x450: copy of the sign's file name
+	const char *m_psz454;	// 0x454: the data file to load
+	char m_pad458[0x464 - 0x458];
 	Vector m_vecToucherPos;	// 0x464
 public:
     virtual bool vfunc32(int);
