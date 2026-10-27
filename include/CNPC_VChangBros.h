@@ -51,4 +51,5 @@ public:
 	void sub_102c4e80();	// stub 0x10011a31, called directly
 	void *sub_1036cfa0();	// "CNPC_VChangBros::SelectLedgeNode": scope trace (no entity name); of the hints of type 0x4653 that sub_1036df50 accepts, the one farthest from this entity (stub 0x1036cfa0's callers: vfunc442)
 	bool sub_1036df50(void *pHint);	// stub 0x10006d70: whether a ledge hint is acceptable
+	float sub_103c6b70(const Vector *pFrom, const Vector *pTo, const float *pPoint);	// stub 0x1000de86: a distance-like value of pPoint against the segment from pFrom to pTo (a CNPC_VVampireBoss member)
 };
