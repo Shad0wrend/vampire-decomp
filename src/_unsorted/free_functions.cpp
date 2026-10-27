@@ -39517,6 +39517,18 @@ int CUnknown1010c460::sub_1010c460(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c490 size=0x12
+namespace lifted {
+int sub_10011c25();
+}
+struct CUnknown1010c490 { int sub_1010c490(int); };
+int CUnknown1010c490::sub_1010c490(int a0)
+{
+    *(int *)((char *)this + 0x458) = 1;
+    return lifted::sub_10011c25();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c5d0 size=0x2e
 #include "CUnknown1070b22c.h"
 // TARGET: sub_1010c5d0
