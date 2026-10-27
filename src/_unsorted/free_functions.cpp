@@ -101386,6 +101386,14 @@ void CSymTabUnit102e9fe0::sub_102e9fe0(int a, int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea070 size=0x4
+struct CUnknown102ea070 { int sub_102ea070(); };
+int CUnknown102ea070::sub_102ea070()
+{
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ea090 size=0x38
 // TARGET: CUnknown102ea090::sub_102ea090
 struct CUnknown102ea090
