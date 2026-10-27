@@ -86076,6 +86076,14 @@ void CUnknown10245790::sub_10245790(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102457b0 size=0x4
+struct CUnknown102457b0 { int sub_102457b0(); };
+int CUnknown102457b0::sub_102457b0()
+{
+    return *(int *)((char *)this + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102457d0 size=0xa
 void CUnknown102457d0::sub_102457d0(int value)
 {
