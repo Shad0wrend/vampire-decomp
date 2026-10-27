@@ -26,6 +26,16 @@ int CUnknown101a65e0View::sub_101a65e0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6660 size=0x6
+namespace lifted {
+extern char g_10594820;
+}
+const char * CAI_BaseNPC::vfunc451()
+{
+    return (const char *)((int)&lifted::g_10594820);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a66c0 size=0x3
 CAI_BehaviorBase ** CAI_BaseNPC::vfunc456()
 {

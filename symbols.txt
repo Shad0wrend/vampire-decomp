@@ -2735,6 +2735,7 @@
 0x1000880f func   ?vfunc601@CNPC_VFrenzyShadow@@UAEXH@Z CNPC_VFrenzyShadow::vfunc601
 0x10008814 func   ?vfunc4@CAI_Motor@@UAEHABVVector@@M@Z CAI_Motor::vfunc4
 0x10008819 func   ?sub_101fb000@CVDmg_t@@QAEXPBD@Z CVDmg_t::sub_101fb000
+0x10008823 func   ?vfunc451@CAI_BaseNPC@@UAEPBDXZ CAI_BaseNPC::vfunc451
 0x10008832 func   ?sub_102eeba0@CUnknown102eeba0@@QAEXH@Z CUnknown102eeba0::sub_102eeba0
 0x10008837 func   ?sub_103c6a90@CNPC_VVampireBoss@@QAEHPAHHHH@Z CNPC_VVampireBoss::sub_103c6a90
 0x10008841 func   ?sub_10366190@CNPC_VVampireBoss@@QAEXPAUinputdata_t@@@Z CNPC_VVampireBoss::sub_10366190
