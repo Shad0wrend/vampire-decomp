@@ -102964,6 +102964,17 @@ void CUnknown102e2770::sub_102e2770(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2790 size=0x8
+namespace lifted {
+struct C1000837d { int sub_1000837d(); };
+}
+struct CUnknown102e2790 { int sub_102e2790(); };
+int CUnknown102e2790::sub_102e2790()
+{
+    return ((lifted::C1000837d *)(*(int *)((char *)this + 4)))->sub_1000837d();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e27b0 size=0xa
 float __fastcall sub_102e27b0(char *self)
 {
