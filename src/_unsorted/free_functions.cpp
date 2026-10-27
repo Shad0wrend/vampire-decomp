@@ -76413,6 +76413,12 @@ int * __fastcall sub_10206300(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10206320 size=0x1
+void sub_10206320()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206340 size=0x71
 #include "CUnknown10206340.h"
 
