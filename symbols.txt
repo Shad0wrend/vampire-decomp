@@ -6971,6 +6971,7 @@
 0x10013007 func   ?sub_1013bef0@@YAXABVVector@@000MAAV1@@Z sub_1013bef0
 0x10013011 func   ?sub_102ecc00@CUnknown102ecc00@@QAEHXZ CUnknown102ecc00::sub_102ecc00
 0x1001301b func   ?sub_10312b50@CAI_Expresser@@QAEXXZ CAI_Expresser::sub_10312b50
+0x1001302a func   ?vfunc104@CBaseViewModel@@UAEXXZ CBaseViewModel::vfunc104
 0x1001302f func   ?vfunc433@CNPC_VPedestrian@@QAEXXZ CNPC_VPedestrian::vfunc433
 0x1001303e func   ?sub_101ab1e0@@YAXHPAEPAI@Z sub_101ab1e0
 0x1001304d func   ?vfunc0@CAI_Motor@@UAEPAV1@I@Z CAI_Motor::vfunc0

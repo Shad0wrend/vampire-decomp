@@ -44,6 +44,13 @@ CBaseViewModel *CBaseViewModel::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b880 size=0x1
+#include "CBaseViewModel.h"
+void CBaseViewModel::vfunc104()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b8a0 size=0xd8
 #include "CBaseEntity.h"
 #include "CBaseViewModel.h"
