@@ -17106,6 +17106,21 @@ void sub_100855f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100856b0 size=0x1c
+namespace lifted {
+extern char g_1054970c;
+extern int g_10552810;
+int sub_1000f0fb();
+int sub_10011090(int, int, int);
+}
+int sub_100856b0()
+{
+    lifted::sub_10011090((int)&lifted::g_1054970c, 8, 0);
+    lifted::g_10552810 = lifted::sub_1000f0fb();
+    return lifted::g_10552810;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10085830 size=0x29
 extern void (*g_109f3630)(const char *fmt, ...);
 extern const char g_10549c34[];
