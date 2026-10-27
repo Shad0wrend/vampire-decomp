@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f9060 size=0x6
+#include "COccultRegen.h"
+namespace lifted {
+extern char g_1067f3b0;
+}
+datamap_t * COccultRegen::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1067f3b0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f9130 size=0x1e
 #include "COccultRegen.h"
 
