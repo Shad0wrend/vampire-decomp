@@ -80447,6 +80447,18 @@ void __stdcall sub_10227440(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102277a0 size=0x111
+#include "CUnknown10750cb4.h"
+
+// TARGET: CUnknown10750cb4::sub_102277a0
+void CUnknown10750cb4::sub_102277a0(CBaseEntity *pEnt)
+{
+	CHandle<CBasePlayer> h((CBasePlayer *)pEnt);
+	if (!m_List.IsValidIndex(m_List.Find(h)))
+		m_List.AddToTail(h);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227a30 size=0xb6
 #include "utlvector.h"
 #include "CEHandleGet.h"
