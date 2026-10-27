@@ -50887,6 +50887,49 @@ int sub_10179270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10179430 size=0x1ae
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_10246dc0(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10246510(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, int varProxy);	// SendPropFloat
+SendProp sub_101ab310(const char *pVarName, int offset, int sizeofVar);	// SendPropTime
+void sub_102464d0();
+void sub_10246300();
+void sub_10179160();
+
+extern SendTable g_10725088;
+extern SendTable g_1072a47c;
+extern SendTable *g_1058385c;
+
+// TARGET: sub_10179430
+int sub_10179430()
+{
+	static const char *pTableName = "DT_LocalPlayerExclusive";
+	static SendProp props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("m_Local", 0x1e40, &g_1072a47c, (void *)sub_102464d0),
+		sub_10246510("m_vecViewOffset[0]", 0x184, 4, 8, 0, -32.0f, 32.0f, (int)sub_10246300),
+		sub_10246510("m_vecViewOffset[1]", 0x188, 4, 8, 0, -32.0f, 32.0f, (int)sub_10246300),
+		sub_10246510("m_vecViewOffset[2]", 0x18c, 4, 10, 0, 0.0f, 128.0f, (int)sub_10246300),
+		sub_10246510("m_flFriction", 0x3f0, 4, 8, 8, 0.0f, 4.0f, (int)sub_10246300),
+		sub_10246af0("m_fFlags", 0x434, 4, 9, 1, 0, (void *)sub_10179160),
+		sub_10246af0("m_fOnTarget", 0x20a8, 1, 2, 1, 0, 0),
+		sub_101ab310("m_flTimeBase", 0x2358, 4),
+		sub_101ab310("m_flNextThink", 0x17c, 4),
+		sub_10246af0("m_lifeState", 0x200, 4, 3, 1, 0, 0),
+	};
+	g_10725088.sub_1000e8fe(props + 1, 10, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017a290 size=0x1
 void sub_1017a290()
 {
