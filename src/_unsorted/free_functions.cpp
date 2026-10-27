@@ -62130,6 +62130,12 @@ void sub_101cfe10(void *pObj, int a, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d02a0 size=0x1
+void sub_101d02a0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d02c0 size=0x38
 // TARGET: sub_101d02c0
 struct CUnknown101d02c0Iface
