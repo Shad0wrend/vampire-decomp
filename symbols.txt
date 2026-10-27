@@ -5032,6 +5032,7 @@
 0x1000e65b func   ?sub_10078520@CUnknown10078520@@QAEHXZ CUnknown10078520::sub_10078520
 0x1000e697 func   ?sub_10397b40@CNPC_VMingXiao@@QAE_NPAX@Z CNPC_VMingXiao::sub_10397b40
 0x1000e6a6 func   ?sub_101a8ac0@CCineNPC@@QAEDXZ CCineNPC::sub_101a8ac0
+0x1000e6ba func   ?sub_101e8de0@CUnknown101e8de0@@QAEHXZ CUnknown101e8de0::sub_101e8de0
 0x1000e6c9 func   ?sub_100dbf50@@YAHXZ sub_100dbf50
 0x1000e6ce func   ?vfunc327@CDisciplineWeapon@@UAEXXZ CDisciplineWeapon::vfunc327
 0x1000e6e7 func   ?sub_102e1e20@CAI_Motor@@QAEXH@Z CAI_Motor::sub_102e1e20
