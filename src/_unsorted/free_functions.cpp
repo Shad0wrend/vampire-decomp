@@ -102988,6 +102988,17 @@ struct A { int a; B *b; void sub_102e2800(int x); };
 void A::sub_102e2800(int x) { b->sub_1000108c(x); }
 // END FUNCTION
 
+// FUNCTION: 0x102e2820 size=0x8
+namespace lifted {
+struct C1000619f { int sub_1000619f(); };
+}
+struct CUnknown102e2820 { int sub_102e2820(); };
+int CUnknown102e2820::sub_102e2820()
+{
+    return ((lifted::C1000619f *)(*(int *)((char *)this + 4)))->sub_1000619f();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2840 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CSlots
