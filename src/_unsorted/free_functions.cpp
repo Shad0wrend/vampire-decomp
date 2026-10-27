@@ -85603,6 +85603,16 @@ void CWorldEvents::sub_1023db70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023dcd0 size=0x6
+namespace lifted {
+extern int g_107532ec;
+}
+int sub_1023dcd0()
+{
+    return lifted::g_107532ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ddd0 size=0x104
 #include "CUnknown1023ddd0.h"
 #include "inputdata_t.h"
