@@ -15,3 +15,29 @@ CWeaponIWritten *CWeaponIWritten::vfunc5(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1040b4f0 size=0x65
+#include "CWeaponIWritten.h"
+
+struct IRandomStream {
+	virtual void v0();
+	virtual float RandomFloat(float minVal, float maxVal);
+};
+extern IRandomStream *g_1070b244;
+struct Vec3 {
+	float x, y, z;
+};
+
+void CWeaponIWritten::sub_1040b4f0()
+{
+	Vec3 vec;
+	CWeaponIArmorTarget *target;
+	CWeaponIArmorOwner *owner = sub_102521f0();
+	if (owner && (target = owner->m_pTarget) != 0) {
+		vec.x = g_1070b244->RandomFloat(-2.0f, -1.0f);
+		vec.y = g_1070b244->RandomFloat(0.5f, 1.0f);
+		vec.z = 0.0f;
+		target->vfunc169(&vec.x);
+	}
+}
+// END FUNCTION
