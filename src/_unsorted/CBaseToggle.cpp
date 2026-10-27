@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101c0c60 size=0x6
+#include "CBaseToggle.h"
+namespace lifted {
+extern char g_1059b6f0;
+}
+datamap_t * CBaseToggle::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1059b6f0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0e70 size=0x36
 #include "CBaseToggle.h"
 
