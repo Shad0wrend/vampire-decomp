@@ -86652,6 +86652,14 @@ int CUnknown102480b0::sub_102480b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102480d0 size=0x4
+struct CUnknown102480d0 { int sub_102480d0(); };
+int CUnknown102480d0::sub_102480d0()
+{
+    return *(int *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102480f0 size=0x159
 struct IFileSys
 {

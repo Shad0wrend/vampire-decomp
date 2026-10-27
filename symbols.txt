@@ -3843,6 +3843,7 @@
 0x1000b979 func   ?sub_1020a240@CUnknown1020a240@@QAEXPBDHHHH@Z CUnknown1020a240::sub_1020a240
 0x1000b97e func   ?vfunc245@CSceneEntity@@UAEXXZ CSceneEntity::vfunc245
 0x1000b983 func   ?sub_101f2cd0@CUnknown101f2cd0@@QAEXH@Z CUnknown101f2cd0::sub_101f2cd0
+0x1000b98d func   ?sub_102480d0@CUnknown102480d0@@QAEHXZ CUnknown102480d0::sub_102480d0
 0x1000b992 func   ?vfunc563@CAI_BaseNPCTroika@@UAEXPAVCBaseEntity@@PBX11@Z CAI_BaseNPCTroika::vfunc563
 0x1000b9a1 func   ?sub_1007dfa0@CUnknown1007dfa0@@QAEMXZ CUnknown1007dfa0::sub_1007dfa0
 0x1000b9b0 func   ?sub_100f7f20@@YGXPAVCBaseEntity@@PBD00@Z sub_100f7f20
