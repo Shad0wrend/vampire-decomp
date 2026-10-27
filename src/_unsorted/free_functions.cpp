@@ -76825,6 +76825,14 @@ void NameSet::sub_10206980(const char *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10206a80 size=0x3
+struct CUnknown10206a80 { char sub_10206a80(); };
+char CUnknown10206a80::sub_10206a80()
+{
+    return *(char *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206aa0 size=0x13c
 #include "CUnknown10206c70.h"
 #include "CBaseCombatCharacter.h"
