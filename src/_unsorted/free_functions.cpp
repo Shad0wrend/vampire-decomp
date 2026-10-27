@@ -42530,6 +42530,16 @@ void sub_10002441();
 void __stdcall sub_101318a0(int) { sub_10002441(); }
 // END FUNCTION
 
+// FUNCTION: 0x101318c0 size=0x8
+namespace lifted {
+int sub_10009a0c();
+}
+int __stdcall sub_101318c0(int a0)
+{
+    return lifted::sub_10009a0c();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131950 size=0x6b
 #include "CBaseEntity.h"
 
