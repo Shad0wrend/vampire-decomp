@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10407730 size=0x6
+#include "CItemGKeyring.h"
+namespace lifted {
+extern char g_1067f9fc;
+}
+datamap_t * CItemGKeyring::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1067f9fc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10407b80 size=0x86
 #include "CItemGKeyring.h"
 #include "utlvector.h"

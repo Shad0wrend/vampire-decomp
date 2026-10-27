@@ -271,6 +271,7 @@
 0x10001ad2 func   ?sub_1025d2b0@CUtlRBTreeBig@@QBE_NG@Z CUtlRBTreeBig::sub_1025d2b0
 0x10001af0 func   ?sub_102043a0@CVDmgBlock16_t@@QAEPBDXZ CVDmgBlock16_t::sub_102043a0
 0x10001aff func   ?vfunc36@CMultiplayRules@@UAEXPAX@Z CMultiplayRules::vfunc36
+0x10001b18 func   ?vfunc82@CItemGKeyring@@UAEPAUdatamap_t@@XZ CItemGKeyring::vfunc82
 0x10001b2c func   ?vfunc448@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::vfunc448
 0x10001b31 func   ?vfunc127@CPointAngleSensor@@UAEHH@Z CPointAngleSensor::vfunc127
 0x10001b3b func   ?sub_101fab10@@YAIPBD@Z sub_101fab10
