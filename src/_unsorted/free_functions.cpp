@@ -12882,6 +12882,14 @@ void CUnknown100766f0::sub_100766f0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076710 size=0x7
+struct CUnknown10076710 { int sub_10076710(); };
+int CUnknown10076710::sub_10076710()
+{
+    return *(int *)((char *)this + 0x324);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076990 size=0xd8
 // TARGET: sub_10076990
 const char *sub_10076990(int type)
