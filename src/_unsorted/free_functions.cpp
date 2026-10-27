@@ -72291,6 +72291,12 @@ void __stdcall sub_101f99c0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f99e0 size=0x3
+void __stdcall sub_101f99e0(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9a40 size=0x28
 #include "CBaseEntity.h"
 #include "CUnknown101f9c70.h"
