@@ -3413,6 +3413,7 @@
 0x1000a8bc func   ?vfunc39@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc39
 0x1000a8da func   ?sub_1009be00@CBaseEntity@@QAEXHHMMM@Z CBaseEntity::sub_1009be00
 0x1000a8e4 func   ?vfunc5@CRotDoor@@QAEPAV1@E@Z CRotDoor::vfunc5
+0x1000a8ee func   ?sub_102c9d50@@YAXXZ sub_102c9d50
 0x1000a8f8 func   ?vfunc103@CLogicCaseToggle@@QAEXXZ CLogicCaseToggle::vfunc103
 0x1000a902 func   ?sub_10403a60@@YAHXZ sub_10403a60
 0x1000a907 func   ?sub_100b0720@@YAXXZ sub_100b0720
