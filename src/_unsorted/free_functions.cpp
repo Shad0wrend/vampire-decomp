@@ -105927,6 +105927,12 @@ int sub_10316fa0(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10319d30 size=0x1
+void sub_10319d30()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10319e70 size=0x23
 // TARGET: sub_10319e70
 int *__fastcall sub_10319e70(int *p)
