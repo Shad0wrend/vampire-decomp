@@ -45,7 +45,6 @@ struct FieldInfoStub {
 };
 
 class CBaseEntity;
-template <class T> class CHandle : public CBaseHandle {};
 
 typedef CUtlVector<CHandle<CBaseEntity> > HandleVec;
 
