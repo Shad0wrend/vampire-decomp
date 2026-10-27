@@ -104312,6 +104312,14 @@ void CUnknown102ee120::sub_102f2fe0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f3000 size=0x7
+struct CUnknown102f3000 { char sub_102f3000(); };
+char CUnknown102f3000::sub_102f3000()
+{
+    return *(char *)((char *)(*(int *)((char *)this + 0x30)) + 0x48);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f3770 size=0x1e
 int sub_102f3770(const float *a, const float *b)
 {
