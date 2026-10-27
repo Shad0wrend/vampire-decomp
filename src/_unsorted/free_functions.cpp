@@ -59996,6 +59996,14 @@ struct CUnknown101c2b10 { char p[0x4a]; char a; void sub_101c2b10(char v); };
 void CUnknown101c2b10::sub_101c2b10(char v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101c2b30 size=0x4
+struct CUnknown101c2b30 { char sub_101c2b30(); };
+char CUnknown101c2b30::sub_101c2b30()
+{
+    return *(char *)((char *)this + 0x4a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2c60 size=0x85
 #include "CVDmg_t.h"
 #include "CGlobalEntityList.h"

@@ -3443,6 +3443,7 @@
 0x1000a7db func   ?sub_102d0080@@YIXPAHHH@Z sub_102d0080
 0x1000a7e5 func   _npc_VHengeyokai npc_VHengeyokai
 0x1000a7ea func   ?sub_100b3d10@CBaseEntity@@QAEHXZ CBaseEntity::sub_100b3d10
+0x1000a808 func   ?sub_101c2b30@CUnknown101c2b30@@QAEDXZ CUnknown101c2b30::sub_101c2b30
 0x1000a80d func   _env_fog_controller env_fog_controller
 0x1000a812 func   ?sub_10381b10@CUnknown10381b10@@QAEXXZ CUnknown10381b10::sub_10381b10
 0x1000a821 func   ?vfunc408@CBasePlayer@@UAEXXZ CBasePlayer::vfunc408
