@@ -52,7 +52,10 @@ public:
 	unsigned int m_flags204;	// 0x204
 	char m_pad0208[0x26c - 0x208];
 	const char *m_pszName26c;	// 0x26c: the entity name
-	char m_pad0270[0x5ce4 - 0x270];
+	char m_pad0270[0x1480 - 0x270];
+	char m_b1480;	// 0x1480
+	char m_b1481;	// 0x1481
+	char m_pad1482[0x5ce4 - 0x1482];
 	unsigned int m_hTarget5ce4;	// 0x5ce4: entity handle of the entity the script targets
 	char m_pad5ce8[0x5f48 - 0x5ce8];
 	const char *m_pszScript5f48;	// 0x5f48: the script's name
