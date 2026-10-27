@@ -58596,6 +58596,14 @@ int *sub_101bb7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bbcb0 size=0x3
+struct CUnknown101bbcb0 { float sub_101bbcb0(); };
+float CUnknown101bbcb0::sub_101bbcb0()
+{
+    return *(float *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bbd10 size=0x9e
 #include "CUnknown101bbd10.h"
 #include "CGlobalEntityList.h"

@@ -5102,6 +5102,7 @@
 0x1000f21d func   ?vfunc111@CBaseEntity@@UAEXXZ CBaseEntity::vfunc111
 0x1000f222 func   ?sub_100f0f30@@YIXPAUCSlots@@@Z sub_100f0f30
 0x1000f227 func   ?sub_10362670@CNPC_VAsianVampire@@QAE_NXZ CNPC_VAsianVampire::sub_10362670
+0x1000f231 func   ?sub_101bbcb0@CUnknown101bbcb0@@QAEMXZ CUnknown101bbcb0::sub_101bbcb0
 0x1000f24f func   ?sub_100949e0@CBaseAnimating@@QAEMM@Z CBaseAnimating::sub_100949e0
 0x1000f25e func   ?sub_1030bec0@TObj@@QAEPAU1@XZ TObj::sub_1030bec0
 0x1000f263 func   ?sub_10092610@CBaseAnimating@@QAEXHHH@Z CBaseAnimating::sub_10092610
