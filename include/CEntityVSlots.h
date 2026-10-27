@@ -14,7 +14,9 @@ public:
 	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8)
 	virtual const char **slot9(int *pOut);	// the pointer to the entity's model name
 	virtual void slot10(int a);	// takes one argument (SetModelIndex-like: the index the engine gave the model name)
-	EVS(11) EVS(12) EVS(13) EVS(14) EVS(15) EVS(16) EVS(17) EVS(18) EVS(19)
+	EVS(11)
+	virtual float slot12();	// a float getter (the mass-like weight the grab check sums up)
+	EVS(13) EVS(14) EVS(15) EVS(16) EVS(17) EVS(18) EVS(19)
 	EVS10(2) EVS10(3)
 	EVS(40) EVS(41)
 	virtual void slot42(CEntityVSlots *pEntity);	// takes an entity (CFuncMonitor::vfunc77 hands it the camera)
