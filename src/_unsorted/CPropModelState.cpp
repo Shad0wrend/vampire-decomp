@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10215c40 size=0x6
+#include "CPropModelState.h"
+namespace lifted {
+extern char g_105ac430;
+}
+datamap_t * CPropModelState::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105ac430);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102164e0 size=0xe5
 #include "CPropModelState.h"
 #include "CBaseButton.h"

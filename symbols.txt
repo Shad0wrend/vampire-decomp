@@ -3245,6 +3245,7 @@
 0x10009598 func   ?vfunc223@CFuncMoveLinear@@QAE_NXZ CFuncMoveLinear::vfunc223
 0x1000959d func   ?sub_100fe580@@YAHHH@Z sub_100fe580
 0x100095bb func   ?sub_10080b00@CSceneEntity@@QAEXPAUCSceneEvent@@@Z CSceneEntity::sub_10080b00
+0x100095c0 func   ?vfunc82@CPropModelState@@UAEPAUdatamap_t@@XZ CPropModelState::vfunc82
 0x100095c5 func   ?sub_1033d380@S1033d380@@QAEHH@Z S1033d380::sub_1033d380
 0x100095cf func   ?sub_100433b0@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_100433b0
 0x100095d9 func   ?sub_1005a6a0@@YAXHHPBH0@Z sub_1005a6a0
