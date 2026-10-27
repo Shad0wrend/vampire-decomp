@@ -108889,6 +108889,13 @@ CBaseEntity *__fastcall sub_1032e7b0(CBaseEntity *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032e890 size=0x6
+int sub_1032e890()
+{
+    return 0xe0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032e8b0 size=0xf7
 #include "CBaseCombatCharacter.h"
 struct TraceEntry { const char *a, *b, *c; };
