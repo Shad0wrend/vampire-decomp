@@ -96652,6 +96652,12 @@ void CUnk102cd310::sub_102cdca0(int *param_2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cdcf0 size=0x3
+void __stdcall sub_102cdcf0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cdd10 size=0x109
 #include "CUtlRBTree12.h"
 
