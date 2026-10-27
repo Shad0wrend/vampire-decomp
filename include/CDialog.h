@@ -6,6 +6,19 @@
 struct DialogLine;
 class CBaseEntity;
 
+struct CDialogVecs3
+{
+	CUtlVector<int> a;
+	CUtlVector<int> b;
+	CUtlVector<int> c;
+};
+
+struct CDialogVecs2
+{
+	CUtlVector<int> a;
+	CUtlVector<int> b;
+};
+
 struct CDialogEntry_t
 {
 	int m_data[13];	// 0x34 bytes; the first dword is the sort key
