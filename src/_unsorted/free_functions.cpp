@@ -48793,6 +48793,13 @@ void CBasePlayer::sub_10178590(Vector vecPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10179190 size=0x6
+int sub_10179190()
+{
+    return 0x21;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10179270 size=0x96
 #include "SendProp.h"
 
