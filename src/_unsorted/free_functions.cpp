@@ -41327,6 +41327,13 @@ float sub_1012f700(CUnknown1012f700 *pRange)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f800 size=0x5
+float sub_1012f800(float a0)
+{
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f850 size=0x9
 // TARGET: sub_1012f850
 float sub_1012f850(float x) { return x * x; }
