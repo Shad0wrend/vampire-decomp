@@ -59027,6 +59027,12 @@ void __fastcall sub_101c0b10(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0b60 size=0x1
+void sub_101c0b60()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0b80 size=0xa3
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList g_106eb5d8;
