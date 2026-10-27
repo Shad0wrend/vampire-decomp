@@ -34,6 +34,8 @@ public:
 	void sub_1000ac68(int a);	// stub 0x1000ac68, run when the task handling answers true
 	void sub_10011928(int *pTask);	// CNPC_VHuman::vfunc444 (stub 0x10011928), called directly
 	void sub_102ae750(int schedule, int a);	// stub 0x1000198d, starts the schedule (the source line stamp is written by the caller)
+	void vfunc259(void *pEvent);	// slot 259 "HandleAnimEvent" override: event 2 plays the roar2 sound (reliably, from the NPC's edict, to the players that can hear it), events 0x802 / 0x803 shake the screen around the NPC and then slot 617, event 1 does nothing, anything else CNPC_VHuman::vfunc259
+	void sub_100076bc(void *pEvent);	// CNPC_VHuman::vfunc259 (stub 0x100076bc), called directly
 	void vfunc617();	// slot 617 (plain member): emits one of the 0x10639480 sounds (random 3..0, channel 4, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
 	void vfunc618();	// slot 618 (plain member): emits one of the 0x10639490 sounds (random 0..2, channel 4, volume 1.0, attenuation 0.8) from the NPC's edict to the players that can hear its position, reliably (a PAS attenuation filter built inline)
 	void vfunc433();	// slot 433 override: CAI_BaseNPCTroika::vfunc433, then raises the conditions 0xf, 0xc, 0xd and, with an enemy (slot 167) within 50 units in the plane, 0x5f and 0xe
