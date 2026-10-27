@@ -94470,6 +94470,14 @@ void CUnknown102a99c0::sub_102a99c0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9c60 size=0x4
+struct CUnknown102a9c60 { int sub_102a9c60(); };
+int CUnknown102a9c60::sub_102a9c60()
+{
+    return *(int *)((char *)this + 0x30);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9c80 size=0x77
 struct Vec3 { int x, y, z; };
 extern Vec3 g_1093404c;
