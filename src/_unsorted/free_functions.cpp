@@ -119521,6 +119521,17 @@ void CNPC_VHengeyokai::sub_10382bb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10382d20 size=0xe
+namespace lifted {
+struct C1000e6e7 { int sub_1000e6e7(int); };
+}
+struct CUnknown10382d20 { int sub_10382d20(); };
+int CUnknown10382d20::sub_10382d20()
+{
+    return ((lifted::C1000e6e7 *)(*(int *)((char *)this + 0x5d44)))->sub_1000e6e7(-1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10382f60 size=0xee
 #include "CNPC_VHengeyokai.h"
 #include "CUnknown1070b244.h"

@@ -2801,6 +2801,7 @@
 0x1000862f func   ?sub_10209b20@CItemContainer@@QAEXPAVCBaseEntity@@@Z CItemContainer::sub_10209b20
 0x10008634 func   ?vfunc5@CNPC_VYukie@@QAEPAV1@I@Z CNPC_VYukie::vfunc5
 0x10008639 func   ?sub_10245880@CUnknown10245880@@QAEDXZ CUnknown10245880::sub_10245880
+0x10008643 func   ?sub_10382d20@CUnknown10382d20@@QAEHXZ CUnknown10382d20::sub_10382d20
 0x10008648 func   ?vfunc104@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc104
 0x1000864d func   ?sub_10211970@@YAPAHXZ sub_10211970
 0x10008652 func   ?sub_1017f4a0@CBasePlayer@@QAEXHPAVCBaseEntity@@PBVVector@@@Z CBasePlayer::sub_1017f4a0
