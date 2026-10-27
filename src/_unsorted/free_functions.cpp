@@ -134621,6 +134621,14 @@ void CUnknown1042ba00::sub_1042ba00(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ba20 size=0x7
+struct CUnknown1042ba20 { int sub_1042ba20(); };
+int CUnknown1042ba20::sub_1042ba20()
+{
+    return *(int *)((char *)this + 0x730);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042bae0 size=0x43
 #include "CBaseViewModel.h"
 void *sub_100aa720(int size);
