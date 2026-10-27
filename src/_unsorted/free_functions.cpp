@@ -96033,6 +96033,14 @@ unsigned int *__fastcall sub_102a9890(unsigned int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a98c0 size=0x7
+struct CUnknown102a98c0 { int sub_102a98c0(); };
+int CUnknown102a98c0::sub_102a98c0()
+{
+    return *(int *)((char *)this + 0x5d40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a98e0 size=0x17
 #include "CAI_BaseNPCTroika.h"
 void CAI_BaseNPCTroika::sub_102a98e0(unsigned int flags)
