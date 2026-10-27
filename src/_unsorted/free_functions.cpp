@@ -47215,6 +47215,18 @@ void sub_10148c00(float *v, float s, float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014c0f0 size=0xf
+namespace lifted {
+int sub_10002392();
+}
+struct CUnknown1014c0f0 { int sub_1014c0f0(); };
+int CUnknown1014c0f0::sub_1014c0f0()
+{
+    *(int *)((char *)this + 0x928) = 0;
+    return lifted::sub_10002392();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014c130 size=0x121
 #include "CWeaponGravityGun.h"
 #include "CBaseEntity.h"
