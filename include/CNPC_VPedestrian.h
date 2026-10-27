@@ -25,17 +25,37 @@ public:
 	void vfunc433();	// slot 433 "CNPC_VPedestrian::...": sets the condition 0x24 and runs CAI_BaseNPCTroika::vfunc433; with the condition 0x2d set and the entity of the handle at +0x5b78 being the one of +0x6160 or +0x618c, takes that entity's character (+0x9c): once its active weapon's stat record has a value (+0x3c4) of at least the one at +0x634c, fills the record at +0x6360 from it (position = the character's slot 220 vector), asks the global at 0x10924a6c (slot 1) and clears the condition 0x1f
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
 
-	char m_pad03e0[0x5b78 - 0x3e0];
+	// Slot 438 (SelectSchedule), declared as a plain member.
+	int vfunc438();	// stamps 0x1d at +0x1b2c; a pending request byte (+0x6678) gives 0xfe, a missing discipline 0xfa, the flag 2 of +0x14b8 0xf1; in the idle / alert states (+0x5cc0 1 or 3) with condition 0x25 set 0x158 / 0x157 by the distance to the point at +0x60d0 and a random roll; else CNPC_VHuman::vfunc438
+	char sub_10014df8(int condition);	// HasCondition (stub 0x10014df8), called directly
+	char sub_1033e2b0();	// CBaseCombatCharacter::IsBusyWithDiscipline (stub 0x1000caae), called directly
+	void sub_1000bff5();	// stub of 0x102b4090 (picks the point at +0x60b0 / +0x60d0 from the condition), called directly
+	int sub_10015ad2();	// CNPC_VHuman::vfunc438 (stub 0x10015ad2), tail-called
+
+	char m_pad03e0[0x14b8 - 0x3e0];
+	unsigned int m_flags14b8;	// 0x14b8
+	char m_pad14bc[0x1b2c - 0x14bc];
+	int m_n1b2c;	// 0x1b2c
+	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule pick
+	int m_nLine1b34;	// 0x1b34
+	char m_pad1b38[0x5b78 - 0x1b38];
 	unsigned int m_h5b78;	// 0x5b78: entity handle
-	char m_pad5b7c[0x6160 - 0x5b7c];
+	char m_pad5b7c[0x5cc0 - 0x5b7c];
+	int m_n5cc0;	// 0x5cc0: NPC state
+	char m_pad5cc4[0x60d0 - 0x5cc4];
+	Vector m_vec60d0;	// 0x60d0
+	char m_pad60dc[0x6160 - 0x60dc];
 	unsigned int m_h6160;	// 0x6160: entity handle
 	char m_pad6164[0x618c - 0x6164];
 	unsigned int m_h618c;	// 0x618c: entity handle
-	char m_pad6190[0x634c - 0x6190];
+	char m_pad6190[0x623c - 0x6190];
+	float m_f623c;	// 0x623c
+	char m_pad6240[0x634c - 0x6240];
 	int m_n634c;	// 0x634c
 	char m_pad6350[0x6660 - 0x6350];
 	float m_vecMins6660[3];	// 0x6660
 	float m_vecMaxs666c[3];	// 0x666c
+	char m_b6678;	// 0x6678
 public:
     virtual datamap_t * vfunc82();
 };
