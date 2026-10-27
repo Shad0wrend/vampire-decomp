@@ -44032,6 +44032,17 @@ int *sub_10134a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134d00 size=0x16
+namespace lifted {
+struct C100061b3 { int sub_100061b3(int, int); };
+}
+struct CUnknown10134d00 { int sub_10134d00(int); };
+int CUnknown10134d00::sub_10134d00(int a0)
+{
+    return ((lifted::C100061b3 *)this)->sub_100061b3(*(int *)((char *)a0), *(int *)((char *)this + 0x450));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134f10 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
