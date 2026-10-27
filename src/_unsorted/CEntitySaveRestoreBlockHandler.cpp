@@ -105,3 +105,10 @@ void CEntitySaveRestoreBlockHandler::vfunc4()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a3a00 size=0x1
+#include "CEntitySaveRestoreBlockHandler.h"
+void CEntitySaveRestoreBlockHandler::vfunc5()
+{
+}
+// END FUNCTION
