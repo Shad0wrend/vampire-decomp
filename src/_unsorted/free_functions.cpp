@@ -8892,6 +8892,19 @@ void sub_1005fc00(int a, int b, const int *mins, const int *maxs, int p5, int p6
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005fd20 size=0xb
+namespace lifted {
+extern char g_1044ddb8;
+int sub_100021d0();
+}
+struct CUnknown1005fd20 { int sub_1005fd20(); };
+int CUnknown1005fd20::sub_1005fd20()
+{
+    *(int *)this = (int)&lifted::g_1044ddb8;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10060080 size=0x147
 #include "SendProp.h"
 
