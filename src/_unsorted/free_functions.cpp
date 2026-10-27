@@ -127684,6 +127684,17 @@ void sub_103eeec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eeee0 size=0xf
+namespace lifted {
+extern char g_1000c568;
+int __stdcall sub_10007fe5(int, int, int);
+}
+int sub_103eeee0()
+{
+    return lifted::sub_10007fe5((int)&lifted::g_1000c568, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ef070 size=0x72
 #include "SendProp.h"
 
