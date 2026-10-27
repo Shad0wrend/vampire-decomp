@@ -3618,6 +3618,7 @@
 0x1000b280 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UASSIGNED_QUEST@@V?$CUtlMemory@UASSIGNED_QUEST@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_QUEST> >,9>::vfunc3
 0x1000b285 func   ?sub_1027a6c0@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_1027a6c0
 0x1000b28f func   ?vfunc127@CNPC_VVampireBoss@@QAEHH@Z CNPC_VVampireBoss::vfunc127
+0x1000b2a8 func   ?sub_102bf050@@YAXXZ sub_102bf050
 0x1000b2bc func   ?vfunc113@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc113
 0x1000b2cb func   ?sub_10407c40@CKeyringUnit@@QAEXPBD0@Z CKeyringUnit::sub_10407c40
 0x1000b2d0 func   ?sub_10341850@@YI_NPADHH@Z sub_10341850

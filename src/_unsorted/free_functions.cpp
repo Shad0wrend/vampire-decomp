@@ -94221,6 +94221,12 @@ void CUnknown102becb0::sub_102becb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf050 size=0x1
+void sub_102bf050()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bf5d0 size=0xc4
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"
