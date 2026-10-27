@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1020b3e0 size=0x6
+#include "CSecCamera.h"
+namespace lifted {
+extern char g_105aa3a4;
+}
+datamap_t * CSecCamera::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105aa3a4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020c0d0 size=0x125
 #include "CSecCamera.h"
 #include "CEntityVSlots.h"
