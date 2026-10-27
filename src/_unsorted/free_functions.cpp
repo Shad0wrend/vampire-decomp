@@ -8365,6 +8365,19 @@ void sub_1005c4d0(int a, int b, int *p3, int *p4, int p5, int p6, int p7, int p8
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005c660 size=0xb
+namespace lifted {
+extern char g_1044dc88;
+int sub_1000d08f();
+}
+struct CUnknown1005c660 { int sub_1005c660(); };
+int CUnknown1005c660::sub_1005c660()
+{
+    *(int *)this = (int)&lifted::g_1044dc88;
+    return lifted::sub_1000d08f();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005cae0 size=0xad
 #include "CTEBeamRing.h"
 extern CTEBeamRing g_106bfd20;
