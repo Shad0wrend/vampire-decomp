@@ -10,4 +10,6 @@ public:
 	CWeaponIWritten *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	CWeaponIWritten *sub_1040b270();	// as in CKeepUpright (transplant)
+	void sub_1040b4f0();	// slot 339: kicks the owner's target with a random vector
+	CWeaponIArmorOwner *sub_102521f0();	// the weapon's owner (stub 0x10014fab)
 };
