@@ -86341,6 +86341,14 @@ CUnk10247c50 *CUnk10247c50::sub_10247c50(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102480b0 size=0x3
+struct CUnknown102480b0 { int sub_102480b0(); };
+int CUnknown102480b0::sub_102480b0()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102480f0 size=0x159
 struct IFileSys
 {
