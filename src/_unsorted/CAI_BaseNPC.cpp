@@ -75,6 +75,80 @@ void *__fastcall sub_1026af30(CUnknown1026af30View *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026b270 size=0x197
+#include "CAI_BaseNPC.h"
+#include "CEntityVSlots.h"
+#include "CBaseCombatCharacter.h"
+#include "ehandle.h"
+#include "CUnknown1070b244.h"
+
+struct S1026b270Sphere
+{
+	int m_nIndex;
+	int m_nCount;
+	CBaseEntity *m_pList[256];
+	S1026b270Sphere *sub_101cccf0(int a, int b, int c, int d);
+};
+CBaseEntity *__fastcall sub_101ccd40(S1026b270Sphere *p);
+
+struct S1026b270Npc
+{
+	char m_pad0000[0xe64];
+	EHANDLE m_hTarget;	// 0xe64
+	char m_pad0e68[0x5d6c - 0xe68];
+	float m_flNextCheck;	// 0x5d6c
+};
+
+struct S1026b270Globals
+{
+	float m_pad[3];
+	float curtime;
+};
+extern S1026b270Globals *g_1070b228;
+extern CUnknown1070b244 *g_1070b244;
+
+struct S1026b270Ent
+{
+	char m_pad0000[0x94];
+	void *m_p94;
+};
+
+CBaseEntity *CAI_BaseNPC::vfunc534()
+{
+	S1026b270Npc *pNpc = (S1026b270Npc *)this;
+	if (pNpc->m_flNextCheck < g_1070b228->curtime) {
+		CBaseEntity *pBest = 0;
+		float flBest = 16384.0f;
+		S1026b270Sphere sphere;
+		sphere.sub_101cccf0((int)((CEntityVSlots *)this)->slot217(), 0x44800000, 0, 0);
+		for (CBaseEntity *pEnt = sub_101ccd40(&sphere); pEnt; pEnt = sub_101ccd40(&sphere)) {
+			if (pEnt != (CBaseEntity *)this && (((S1026b270Ent *)pEnt)->m_p94 || (pEnt->sub_100b3700() & 0x80))) {
+				Vector vec1;
+				const Vector *pPos = ((CEntityVSlots *)pEnt)->slot193(&vec1);
+				const Vector *pMine = ((CEntityVSlots *)this)->slot217();
+				float dx = pMine->x - pPos->x;
+				float dy = pMine->y - pPos->y;
+				float dz = pMine->z - pPos->z;
+				float flDist = FastSqrt(dy * dy + (dx * dx + dz * dz));
+				if (flDist < flBest) {
+					Vector vec2;
+					if (((CBaseCombatCharacter *)this)->sub_10325da0(((CEntityVSlots *)pEnt)->slot193(&vec2))) {
+						pBest = pEnt;
+						flBest = flDist;
+					}
+				}
+			}
+			sphere.m_nIndex++;
+		}
+		if (pBest) {
+			pNpc->m_flNextCheck = (float)g_1070b244->vfunc2(1, 5) + g_1070b228->curtime;
+			pNpc->m_hTarget = pBest;
+		}
+	}
+	return ((S1026b270Npc *)this)->m_hTarget.Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026b4f0 size=0x6c
 #include "CAI_BaseNPC.h"
 
