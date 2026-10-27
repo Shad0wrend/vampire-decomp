@@ -3118,6 +3118,7 @@
 0x10009ea8 func   ?sub_1027da90@@YI_NPADHH@Z sub_1027da90
 0x10009eb7 func   _prop_padlock prop_padlock
 0x10009ebc func   ??0CPlayerMove@@QAE@XZ CPlayerMove::CPlayerMove
+0x10009ec1 func   ?sub_1012c900@@YAXPAD@Z sub_1012c900
 0x10009ec6 func   ?sub_10078540@CUnknown10078540@@QAEXH@Z CUnknown10078540::sub_10078540
 0x10009edf func   ?sub_1006c4f0@CUnit1006c4f0@@QAEXPBD@Z CUnit1006c4f0::sub_1006c4f0
 0x10009ef8 func   _prop_hacking prop_hacking

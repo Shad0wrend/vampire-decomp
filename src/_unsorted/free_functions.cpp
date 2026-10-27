@@ -39884,6 +39884,24 @@ void sub_1012c840(CChildView *pChild)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c900 size=0x84
+#include "CBaseEntity.h"
+
+void sub_1012c7f0(CBaseEntity *pEnt);
+
+// TARGET: sub_1012c900
+void sub_1012c900(char *pEnt)
+{
+	CBaseEntity *cur = ((EHANDLE *)(pEnt + 0x260))->Get();
+	while (cur != 0) {
+		CBaseEntity *next = ((EHANDLE *)((char *)cur + 0x264))->Get();
+		sub_1012c7f0(cur);
+		cur = next;
+	}
+	*(int *)(pEnt + 0x260) = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c9c0 size=0x6a
 struct TEnt;
 struct TEntry {
