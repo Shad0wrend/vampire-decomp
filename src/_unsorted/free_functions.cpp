@@ -10285,6 +10285,19 @@ void sub_10068ab0(int a, int b, const int *mins, const int *maxs, int p5, int p6
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068c00 size=0xb
+namespace lifted {
+extern char g_1044e0d0;
+int sub_100021d0();
+}
+struct CUnknown10068c00 { int sub_10068c00(); };
+int CUnknown10068c00::sub_10068c00()
+{
+    *(int *)this = (int)&lifted::g_1044e0d0;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10069310 size=0xd6
 #include "CTETextMessage.h"
 
