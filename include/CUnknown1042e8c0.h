@@ -8,7 +8,7 @@ class CUnknown1042e8c0 : public CBaseEntity
 {
 public:
 	char m_pad03e0[0x450 - 0x3e0];
-	unsigned int m_hAttachedTo;	// 0x450: handle of the entity the sprite follows
+	EHANDLE m_hAttachedTo;	// 0x450: handle of the entity the sprite follows
 	int m_nAttachment;	// 0x454
 	char m_pad0458[4];
 	float m_flFrame;	// 0x45c: the current animation frame
