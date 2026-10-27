@@ -98498,6 +98498,17 @@ void UtlMem::sub_102c8c40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c8c80 size=0xa
+namespace lifted {
+extern char g_109203dc;
+struct C1000acdb { int sub_1000acdb(); };
+}
+int sub_102c8c80()
+{
+    return ((lifted::C1000acdb *)((int)&lifted::g_109203dc))->sub_1000acdb();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c8ca0 size=0xa
 extern char g_109203dc;
 void __fastcall sub_1000c3c9(void *);
