@@ -11846,6 +11846,14 @@ void CUnknown10073a30::sub_10073a30(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073ae0 size=0x3
+struct CUnknown10073ae0 { void * sub_10073ae0(); };
+void * CUnknown10073ae0::sub_10073ae0()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073b20 size=0xd
 // TARGET: CUnknown10073b20::sub_10073b20
 void CUnknown10073b20::sub_10073b20(int value)
