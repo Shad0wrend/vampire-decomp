@@ -106712,6 +106712,13 @@ char __stdcall sub_103163e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316400 size=0x5
+char __stdcall sub_10316400(int a0, int a1)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10316560 size=0x6f
 #include "CUnknown103164c0.h"
 
