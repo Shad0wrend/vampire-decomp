@@ -4073,6 +4073,7 @@
 0x1000be97 func   ?sub_10050c70@CDisciplineParticle@@SAPAV1@PAUCDisciplineParticleParams@@HHHH@Z CDisciplineParticle::sub_10050c70
 0x1000be9c func   ?vfunc5@CTriggerBombSite@@QAEPAV1@I@Z CTriggerBombSite::vfunc5
 0x1000bea6 func   ?sub_10233ad0@@YAXPAX@Z sub_10233ad0
+0x1000beab func   ?sub_101e8af0@CUnknown101e8af0@@QAEMXZ CUnknown101e8af0::sub_101e8af0
 0x1000beb0 func   ?sub_10156d50@CUnit10156d50@@QAEXH@Z CUnit10156d50::sub_10156d50
 0x1000beb5 func   ?sub_102def00@UtlMem@@QAEXXZ UtlMem::sub_102def00
 0x1000bec4 func   ?sub_10231e60@@YIIPAD@Z sub_10231e60
