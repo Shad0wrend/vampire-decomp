@@ -8145,6 +8145,19 @@ void sub_1005b1e0(int a1, int a2, int model, TEVec3 *start, int model2, TEVec3 *
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005b3d0 size=0xb
+namespace lifted {
+extern char g_1044dc1c;
+int sub_1000d08f();
+}
+struct CUnknown1005b3d0 { int sub_1005b3d0(); };
+int CUnknown1005b3d0::sub_1005b3d0()
+{
+    *(int *)this = (int)&lifted::g_1044dc1c;
+    return lifted::sub_1000d08f();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005b850 size=0xc0
 struct CBeamEntsData	// the global CTEBeamEnts object at 0x106bf7a0 (members as set by the helper)
 {

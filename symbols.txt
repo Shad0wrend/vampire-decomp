@@ -4876,6 +4876,7 @@
 0x1000dcd8 func   ?sub_103ee6f0@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::sub_103ee6f0
 0x1000dce2 func   ?sub_100df070@@YA_NPAUCUnknown100df070@@@Z sub_100df070
 0x1000dcf6 func   ?sub_100c2bd0@@YAXHHHHHHHM@Z sub_100c2bd0
+0x1000dcfb func   ?sub_1005b3d0@CUnknown1005b3d0@@QAEHXZ CUnknown1005b3d0::sub_1005b3d0
 0x1000dd0f func   ?sub_100d7c40@@YAXXZ sub_100d7c40
 0x1000dd14 func   ?sub_1006fe00@@YIXPAUFollowObj@@@Z sub_1006fe00
 0x1000dd19 func   ?vfunc5@CPhysTorque@@UAEPAV1@I@Z CPhysTorque::vfunc5
