@@ -69076,6 +69076,14 @@ CVDmgBlock16_t *CUnknown101e7c50::sub_101e7c50(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e7d30 size=0x7
+struct CUnknown101e7d30 { float sub_101e7d30(); };
+float CUnknown101e7d30::sub_101e7d30()
+{
+    return *(float *)((char *)this + 0x3d4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e7fb0 size=0x93
 #include "CUnknown101e56e0.h"
 
