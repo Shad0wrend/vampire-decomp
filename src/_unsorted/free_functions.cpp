@@ -29760,6 +29760,12 @@ void sub_100d9d60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9e10 size=0x1
+void sub_100d9e10()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9ec0 size=0xb8
 #include "CTakeDamageInfo.h"
 #include "CVDmg_t.h"
