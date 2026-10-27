@@ -105154,6 +105154,16 @@ void CUnknown102ee120::sub_102ee1c0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee1e0 size=0xf
+namespace lifted {
+int __stdcall sub_1000b2ee(int, int);
+}
+int __stdcall sub_102ee1e0(int a0)
+{
+    return lifted::sub_1000b2ee(a0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee200 size=0xa
 namespace lifted {
 int __stdcall sub_1000b2ee(int, int);
