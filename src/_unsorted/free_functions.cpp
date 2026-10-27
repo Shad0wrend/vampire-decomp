@@ -34664,6 +34664,12 @@ void __fastcall sub_100f8960(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8a20 size=0x3
+void __stdcall sub_100f8a20(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8e20 size=0x80
 void *sub_10430fa0(void *, const void *, unsigned);
 
