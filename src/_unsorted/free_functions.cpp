@@ -79463,6 +79463,14 @@ char CUnknown1020e020::sub_1020e020()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e040 size=0x7
+struct CUnknown1020e040 { char sub_1020e040(); };
+char CUnknown1020e040::sub_1020e040()
+{
+    return *(char *)((char *)this + 0x7a5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e060 size=0xa
 void CUnknown1020e060::sub_1020e060(int unused)
 {
