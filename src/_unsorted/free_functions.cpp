@@ -12001,6 +12001,14 @@ float __fastcall sub_10073940(void *ecx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073a10 size=0x7
+struct CUnknown10073a10 { char sub_10073a10(); };
+char CUnknown10073a10::sub_10073a10()
+{
+    return *(char *)((char *)this + 0x88);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073a30 size=0xd
 void CUnknown10073a30::sub_10073a30(char value)
 {
