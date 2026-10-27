@@ -151,6 +151,7 @@ public:
 	int sub_1009d760();	// "CBaseEntity::GetVSoundGroupFemale": same shape on the value at +0xb8
 	float sub_1009d850(void *pListener, float *pDist);	// "CBaseEntity::AdjustSoundDistForStealth": scope trace (entity name), when pListener is set with type 4 at +4 and the object at +0xa8 is set, subtracts slot 30() from *pDist (clamped at 0); returns *pDist
 	void sub_1009ee80(CBaseEntity *pEnt);	// "CBaseEntity::SetAimEnt": stores pEnt's handle at +0x37c (-1 for null)
+	const char *sub_1000b5cd();	// "CBaseEntity::GetDebugName" (stub 0x1000b5cd; a null this answers a placeholder name), called directly
 	const char *sub_1009f200();	// "CBaseEntity::GetClassname": the string at +0x11c, or "" when it is null
 	void sub_1009f3c0(const char *msg, int duration);	// "CBaseEntity::AddTimedOverlay": scope trace (entity name), pushes a 16 byte record (copy of msg, curtime + duration, curtime, old head) on the list at +0x228
 	void sub_1009fa60();
