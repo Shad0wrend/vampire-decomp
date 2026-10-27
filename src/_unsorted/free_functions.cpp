@@ -8670,6 +8670,19 @@ void sub_1005e5c0(int pFilter, int delay, const int *pOrigin, const int *pDirect
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005e700 size=0xb
+namespace lifted {
+extern char g_1044dd48;
+int sub_100021d0();
+}
+struct CUnknown1005e700 { int sub_1005e700(); };
+int CUnknown1005e700::sub_1005e700()
+{
+    *(int *)this = (int)&lifted::g_1044dd48;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005eaf0 size=0x17a
 #include "SendProp.h"
 
