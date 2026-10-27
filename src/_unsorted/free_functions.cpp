@@ -113303,6 +113303,13 @@ char sub_1035ed00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035fd20 size=0x3
+int sub_1035fd20()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10360560 size=0x33
 void sub_1000831e();
 void sub_100136a1();
