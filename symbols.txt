@@ -1681,6 +1681,7 @@
 0x10005772 func   ?sub_101d0410@@YAXHHPBD@Z sub_101d0410
 0x1000579a func   ?sub_10249940@@YAXXZ sub_10249940
 0x1000579f func   ?sub_10099f20@@YAXPAUEntB@@HPAM@Z sub_10099f20
+0x100057ae func   ?sub_10223130@CUnknown10223130@@QAEHHH@Z CUnknown10223130::sub_10223130
 0x100057b3 func   ?sub_1018cc00@@YAPAHXZ sub_1018cc00
 0x100057bd func   ?vfunc291@CBaseFlex@@QAEXPAUCFlexRequest@@@Z CBaseFlex::vfunc291
 0x100057c7 func   ?sub_10332930@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10332930
