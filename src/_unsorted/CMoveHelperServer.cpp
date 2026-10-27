@@ -236,6 +236,45 @@ bool CMoveHelperServer::vfunc7()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f950 size=0x131
+#include "CMoveHelperServer.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+#include "ehandle.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+
+struct EdictUnk_t {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void *GetBaseEntity();
+};
+struct EdictView_t {
+	char m_pad0000[0x40];
+	EdictUnk_t *m_pUnk;
+};
+
+static inline void *InstanceOf(EdictView_t *pent)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	if (!pent)
+		pent = (EdictView_t *)g_1070b22c->vfunc38(0);
+	return (pent && pent->m_pUnk) ? pent->m_pUnk->GetBaseEntity() : 0;
+}
+
+static inline void *InstanceOfIndex(int n)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	return InstanceOf((EdictView_t *)g_1070b22c->vfunc38(n));
+}
+
+// TARGET: CMoveHelperServer::vfunc10
+bool CMoveHelperServer::vfunc10(const unsigned int *pHandle)
+{
+	void *pWorld = InstanceOfIndex(0);
+	return ((const EHANDLE *)pHandle)->Get() == pWorld;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fae0 size=0x8d
 #include "CMoveHelperServer.h"
 
