@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103564f0 size=0x6
+#include "CNPC_Bullseye.h"
+namespace lifted {
+extern char g_10628520;
+}
+datamap_t * CNPC_Bullseye::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10628520);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356740 size=0x1e
 #include "CNPC_Bullseye.h"
 
