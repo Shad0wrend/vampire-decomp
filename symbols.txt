@@ -83,6 +83,7 @@
 0x100013e3 func   ?sub_101918e0@@YA_NPAPAD0@Z sub_101918e0
 0x100013e8 func   ?vfunc86@CPointCamera@@QAE_NHHHHH@Z CPointCamera::vfunc86
 0x100013f7 func   ?vfunc104@CNPC_VHuman@@UAEXXZ CNPC_VHuman::vfunc104
+0x100013fc func   ?sub_1016a660@@YA_NPAUCEntitySizeView@@MM@Z sub_1016a660
 0x10001410 func   ?vfunc241@CBaseParticleEntity@@QAE_NHPAUCParticleTransmitInfo_t@@HH@Z CBaseParticleEntity::vfunc241
 0x10001424 func   ?sub_1021bc20@@YIXPAD@Z sub_1021bc20
 0x10001429 func   ?sub_10091230@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10091230

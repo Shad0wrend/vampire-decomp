@@ -46806,6 +46806,43 @@ bool sub_10168e60(void *unused, EntX *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016a660 size=0x191
+#include "CEntityVSlots.h"
+#include "TempVector.h"
+
+struct CEntitySizeView : CEntityVSlots {
+	char m_pad0004[0x274 - 4];
+	Vector m_vecA274;	// 0x274
+	Vector m_vecB280;	// 0x280
+};
+
+bool sub_1016a660(CEntitySizeView *pEntity, float flMaxWeight, float flMaxExtent)
+{
+	if (!pEntity)
+		return false;
+	if (pEntity->slot94() != 7)
+		return false;
+	CEntityVSlots *pList[32];
+	int nCount = pEntity->slot233(pList, 32);
+	if (!nCount)
+		return false;
+	float flTotal = 0;
+	for (int i = 0; i < nCount; i++) {
+		flTotal = pList[i]->slot12() + flTotal;
+		pList[i]->slot52();
+	}
+	if (flMaxWeight > 0 && flTotal > flMaxWeight)
+		return false;
+	if (flMaxExtent > 0) {
+		Vector &v = AllocTempVector();
+		VectorSubtract(pEntity->m_vecB280, pEntity->m_vecA274, v);
+		if (v.x > flMaxExtent || v.y > flMaxExtent || v.z > flMaxExtent)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016af30 size=0x32
 // TARGET: sub_1016af30
 struct CSumElem_1016af30 {
