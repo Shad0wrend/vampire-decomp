@@ -12744,6 +12744,14 @@ void S10075c70::sub_10075c70(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075ca0 size=0x7
+struct CUnknown10075ca0 { char * sub_10075ca0(); };
+char * CUnknown10075ca0::sub_10075ca0()
+{
+    return (char *)this + 0x104;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075ce0 size=0xd
 #include "CUnknown10077730.h"
 
