@@ -6,17 +6,9 @@
 struct DialogLine;
 class CBaseEntity;
 
-struct CDialogVecs3
+struct CDialogVec : CUtlVector<int>
 {
-	CUtlVector<int> a;
-	CUtlVector<int> b;
-	CUtlVector<int> c;
-};
-
-struct CDialogVecs2
-{
-	CUtlVector<int> a;
-	CUtlVector<int> b;
+	~CDialogVec() {}
 };
 
 struct CDialogEntry_t
