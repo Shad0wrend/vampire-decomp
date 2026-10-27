@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10213040 size=0x6
+#include "CPropHaunted.h"
+namespace lifted {
+extern char g_105abb0c;
+}
+datamap_t * CPropHaunted::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105abb0c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10213b70 size=0xb3
 #include "CPropHaunted.h"
 #include "CGlobalEntityList.h"
