@@ -47660,6 +47660,19 @@ int sub_10152400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155300 size=0xb
+namespace lifted {
+extern char g_1046dcec;
+int sub_10004c3c();
+}
+struct CUnknown10155300 { int sub_10155300(); };
+int CUnknown10155300::sub_10155300()
+{
+    *(int *)this = (int)&lifted::g_1046dcec;
+    return lifted::sub_10004c3c();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155460 size=0x2b
 #include "CBaseAnimating.h"
 
