@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100feb50 size=0x6
+#include "CEnvBeam.h"
+namespace lifted {
+extern char g_10568420;
+}
+datamap_t * CEnvBeam::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10568420);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fec10 size=0x1e
 #include "CEnvBeam.h"
 
