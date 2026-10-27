@@ -83085,6 +83085,64 @@ void CPropHacking::sub_1021c000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021c040 size=0x1aa
+#include "CBaseEntity.h"
+#include "CPropHacking.h"
+
+const char *sub_101d3730(const char *pszFormat, ...);
+void sub_10217ac0(CPropHacking *pHack, const char *pszFormat, ...);
+
+namespace block_1021c040
+{
+	struct CPropHackingUnit : CPropHacking
+	{
+		bool sub_1021a4b0(int record);
+	};
+
+	bool CPropHackingUnit::sub_1021a4b0(int record)
+	{
+		if (record >= 0 && record < 0x80)
+			return (((int *)((char *)this + 0xa28))[record] & 1) == 1;
+		return false;
+	}
+}
+using namespace block_1021c040;
+
+void CPropHacking::sub_1021c040()
+{
+	m_nSelected09f4 = -1;
+	sub_1021bd80();
+	sub_1021b140(sub_101d3730("%s %s", sub_10219400(0x1d), (char *)this + 0x964));
+	int nCount = m_n0a04;
+	int nShown = 0;
+	int nStart = m_n0a0c * 10;
+	for (int i = nStart; i < nCount; i++)
+	{
+		if (nShown >= 10)
+			break;
+		if (!((CPropHackingUnit *)this)->sub_1021a4b0((*(int **)((char *)this + 0x9f8))[i]))
+		{
+			sub_10218b90();
+			sub_10217ac0(this, "[%d]", i + 1);
+			sub_10218ca0();
+		}
+		else
+		{
+			sub_10217ac0(this, "[%d]", i + 1);
+		}
+		sub_10217ac0(this, "%s\n", (char *)&m_pScreenRecords0a14[(*(int **)((char *)this + 0x9f8))[i]]);
+		nShown++;
+	}
+	sub_10218ff0(0, m_n0814 - 3);
+	sub_10217ac0(this, sub_10219400(0x2d), nCount, nStart + 1, nShown + nStart);
+	sub_10218ff0(0, m_n0814 - 2);
+	sub_10217ac0(this, sub_10219400(0x2e), sub_10219400(0x18), sub_10219400(0x19));
+	sub_10218ff0(0, m_n0814 - 1);
+	sub_10217ac0(this, sub_10219400(0x2f), sub_10219400(0x1c));
+	sub_10219120();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d730 size=0x103
 struct ISaveRestoreOps;
 struct datamap_t;
