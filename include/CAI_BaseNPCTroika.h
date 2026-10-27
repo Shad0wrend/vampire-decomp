@@ -97,6 +97,7 @@ public:
 	char sub_102a9ec0(int index);
 	const char *sub_102c3690(int task);
 	const char *sub_102c36b0(int schedule);
+	void sub_102c2680(const struct CAI_FloatParam *pParam);	// stores the parameter's float (0 unless its type is 1) clamped to 0..1 at +0x6550; with the byte at +0x64c0 set plays a sound at that volume to the players that can hear it
 	char sub_102c1170();	// true when one of two flag bytes (+0x64c0, +0x64ec) is set or one of two entity handles (+0xfe8, +0x6554) is valid
 	char sub_102c0aa0();	// true when the entity of the handle at +0x6554 has its byte at +0x498 set, or the time at +0x64cc lies in the future
 	void sub_10015839(int a);	// base-class slot 616 implementation, called directly
