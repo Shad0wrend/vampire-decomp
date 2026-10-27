@@ -7176,6 +7176,32 @@ CDisciplineParticle *CDisciplineParticle::sub_10050e70(const char *pszClassname,
 }
 // END FUNCTION
 
+// FUNCTION: 0x10051810 size=0x1b5
+#include "CDisciplineParticle.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+
+struct UserEnt {
+	char m_pad0000[0x14c0];
+	CUtlVector<EHANDLE> m_Handles;
+};
+
+void CDisciplineParticle::sub_10051810()
+{
+	ScopeTrace trace("CDisciplineParticle::RemoveFromUser", g_106b8540);
+	if (m_hUser.Get()) {
+		int i = 0;
+		while (i < ((UserEnt *)m_hUser.Get())->m_Handles.Count()) {
+			if (((UserEnt *)m_hUser.Get())->m_Handles[i].Get() == (CBaseEntity *)this)
+				((UserEnt *)m_hUser.Get())->m_Handles.Remove(i);
+			else
+				i++;
+		}
+	}
+	m_hUser = (CBaseEntity *)0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051a40 size=0x6d
 #include "CDisciplineParticle.h"
 #include "ScopeTrace.h"

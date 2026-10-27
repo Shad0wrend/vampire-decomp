@@ -5170,6 +5170,7 @@
 0x1000df67 func   ?vfunc123@CPathCorner@@QAEXXZ CPathCorner::vfunc123
 0x1000df6c func   ?sub_103828a0@@YIXPAD@Z sub_103828a0
 0x1000df71 func   _npc_VMingXiaoTentacle npc_VMingXiaoTentacle
+0x1000df85 func   ?sub_10051810@CDisciplineParticle@@QAEXXZ CDisciplineParticle::sub_10051810
 0x1000df8a func   ?sub_1040d0a0@CPlayerPickupController@@QAEXD@Z CPlayerPickupController::sub_1040d0a0
 0x1000df94 func   ?sub_102ee1a0@CUnknown102ee1a0@@QAEMXZ CUnknown102ee1a0::sub_102ee1a0
 0x1000dfa3 func   ?Filter@CPASAttenuationFilter@@QAEXABVVector@@M@Z CPASAttenuationFilter::Filter
