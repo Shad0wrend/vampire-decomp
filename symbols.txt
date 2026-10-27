@@ -3806,6 +3806,7 @@
 0x1000be6a func   ?sub_100bf5b0@CBitString@@QAEXH@Z CBitString::sub_100bf5b0
 0x1000be6f func   ?sub_10397a50@CNPC_VMingXiao@@QAEXPAX@Z CNPC_VMingXiao::sub_10397a50
 0x1000be79 func   ?sub_101e1010@Loader@@QAE_NPBD@Z Loader::sub_101e1010
+0x1000be8d func   ?sub_10208c90@CUnknown10208c90@@QAEXPAUinputdata_t@@@Z CUnknown10208c90::sub_10208c90
 0x1000be97 func   ?sub_10050c70@CDisciplineParticle@@SAPAV1@PAUCDisciplineParticleParams@@HHHH@Z CDisciplineParticle::sub_10050c70
 0x1000be9c func   ?vfunc5@CTriggerBombSite@@QAEPAV1@I@Z CTriggerBombSite::vfunc5
 0x1000bea6 func   ?sub_10233ad0@@YAXPAX@Z sub_10233ad0

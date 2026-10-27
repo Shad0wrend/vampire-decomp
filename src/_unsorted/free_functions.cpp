@@ -75553,6 +75553,99 @@ void CUnknown10206c70::sub_10206c70(int nTemplate, CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208c90 size=0x15c
+#include "CUnknown10208c90.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "IVEngineServer.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CHideBarterActivatorObj
+{
+	char sub_10008a44();
+};
+
+struct CHideBarterActivator
+{
+	char m_pad0000[0x9c];
+	CBaseEntity *m_pOwner;	// 0x9c
+	char m_pad00a0[8];
+	CHideBarterActivatorObj *m_pObj;	// 0xa8
+};
+
+struct CHideBarterInput
+{
+	CHideBarterActivator *m_pActivator;
+};
+
+struct CHideBarterView
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV100(1) PV100(2) PV100(3)
+	PV10(40)
+	char m_pad0004[0xb4 - 4];
+	int m_nSoundGroup;	// 0xb4
+	char m_pad00b8[0x1a28 - 0xb8];
+	EHANDLE m_hTarget;	// 0x1a28
+};
+
+struct CHideBarterSndTable
+{
+	void sub_101f5950(void *pEnt, int snd, int n, float flVolume, float flPitch);
+};
+
+struct CHideBarterUtilPlayer
+{
+	char m_pad0000[0x2e0];
+	void *m_pEdict;
+};
+
+struct CHideBarterNpc : CBaseCombatCharacter
+{
+	void sub_100a5030(CHideBarterActivatorObj *pObj);
+};
+
+CHideBarterUtilPlayer *sub_101cda50();
+extern CHideBarterSndTable g_1074b308;
+extern int g_1074f03c;
+extern int g_1074f034;
+extern IVEngineServer *g_1070b22c;
+
+// TARGET: CUnknown10208c90::sub_10208c90
+void CUnknown10208c90::sub_10208c90(inputdata_t *pInput)
+{
+	CHideBarterInput *pIn = (CHideBarterInput *)pInput;
+	CHideBarterView *p = (CHideBarterView *)this;
+	if (!pIn->m_pActivator)
+		return;
+	CHideBarterActivatorObj *pObj = pIn->m_pActivator->m_pObj;
+	if (!pObj)
+		return;
+	if (pObj->sub_10008a44())
+		return;
+	if (p->m_nSoundGroup != -1)
+		g_1074b308.sub_101f5950(this, g_1074f03c, 4, 1.0f, 1.25f);
+	if (!p->m_hTarget.Get()) {
+		p->m_hTarget = pIn->m_pActivator->m_pOwner;
+		((CBaseCombatCharacter *)this)->sub_103411c0((int)p->m_hTarget.Get(), 1);
+		p->v406();
+		if (p->m_nSoundGroup != -1)
+			g_1074b308.sub_101f5950(this, g_1074f034, 2, 1.0f, 1.25f);
+	} else {
+		CHideBarterUtilPlayer *pPlayer = sub_101cda50();
+		g_1070b22c->vfunc61(pPlayer->m_pEdict, "hidebarter\n");
+		p->m_hTarget = (CBaseEntity *)0;
+		p->v407();
+		((CHideBarterNpc *)this)->sub_100a5030(pObj);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208e50 size=0xa5
 #include "CUnknown10208e50.h"
 #include "inputdata_t.h"
