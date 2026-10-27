@@ -33470,6 +33470,39 @@ int CDialog::sub_100e4840(int choice)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e49b0 size=0x1ab
+#include "CDialog.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+struct CDialogEntView : CEntityVSlots
+{
+	int sub_10092550(const char *pszName);	// LookupAttachment (stub 0x10002c0c)
+};
+void sub_101d26b0(Vector vecOrigin, const char *pszName, CBaseEntity *pEnt, int a, int attachment, int b);
+
+void CDialog::sub_100e49b0(int nIndex)
+{
+	if (nIndex < 0 || nIndex >= m_nResponses)
+		return;
+	if (!EHandle_Get(m_hSpeaker))
+		return;
+	unsigned int *pFlags = &m_nStateFlags;
+	if (!(pFlags[nIndex] & 1))
+		return;
+	int type = pFlags[nIndex + 4];
+	if (type == 6) {
+		int attachment = ((CDialogEntView *)EHandle_Get(m_hSpeaker))->sub_10092550("bip01 head");
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(m_hSpeaker);
+		sub_101d26b0(((CEntityVSlots *)EHandle_Get(m_hSpeaker))->slot192(), "Dialog_Domination_Victim_Emitter", pEnt, 2, attachment, 0);
+	} else if (type == 5) {
+		int attachment = ((CDialogEntView *)EHandle_Get(m_hSpeaker))->sub_10092550("bip01 head");
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(m_hSpeaker);
+		sub_101d26b0(((CEntityVSlots *)EHandle_Get(m_hSpeaker))->slot192(), "Dialog_Dementation_Victim_Emitter", pEnt, 2, attachment, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e4ef0 size=0x22
 #include <string.h>
 
