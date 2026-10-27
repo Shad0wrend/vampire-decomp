@@ -59349,6 +59349,24 @@ void sub_101c4070()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4160 size=0x89
+#include "utlvector.h"
+#include "ehandle.h"
+#include "CBaseEntity.h"
+
+extern CUtlVector<EHANDLE> g_1072cd9c;
+void sub_101cd940(CBaseEntity *pEnt);
+
+// TARGET: sub_101c4160
+void sub_101c4160()
+{
+	for (int i = 0; i < g_1072cd9c.Count(); i++) {
+		if (g_1072cd9c[i].Get())
+			sub_101cd940(g_1072cd9c[i].Get());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4460 size=0x11
 void sub_101c4460(int *dst, const int *src)
 {
