@@ -124,7 +124,7 @@ public:
 
 	virtual void vfunc0(void *pEvent);	// "CCollisionEvent::PreCollision": scope trace, copies the 32 byte event to +0x68, then slot 40 of both objects fills the records at +0x88 / +0x94 (second argument 0x30 further)
 	virtual void vfunc1();
-	virtual void vfunc2();
+	virtual void vfunc2(void *pObject, float energy, int surfaceProps, int surfacePropsHit, void *pData);	// "CCollisionEvent::Friction": scope trace (no entity name), the velocity of the object at the contact point reversed and normalised, effects for hard hits on concrete-like materials, then the entity's slot 231 (VPhysicsFriction)
 
 	// Slots 3, 4, 6, 8 and 9.
 	virtual void vfunc3(void *pObject1, void *pObject2, void *pData);	// "CCollisionEvent::StartTouch": scope trace, with both entities (slot 6 of the objects) set and the collision data queried (slots 1 / 0), the start touch is dispatched at once (sub_10030ba0) unless the byte at +0x13c is set, which goes to sub_10030f30 (queued) instead
