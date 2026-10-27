@@ -51,3 +51,14 @@ void CTEBeamLaser::vfunc4(int a, int b)
 	g_1070b22c->PlaybackTempEntity(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005bba0 size=0x6
+#include "CTEBeamLaser.h"
+namespace lifted {
+extern char g_106bfa50;
+}
+ServerClass * CTEBeamLaser::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106bfa50);
+}
+// END FUNCTION
