@@ -2833,6 +2833,7 @@
 0x10008382 func   ?vfunc103@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc103
 0x10008387 func   ?sub_1019a980@@YAXXZ sub_1019a980
 0x10008391 func   ?vfunc3@CPositionInterpolator_CatmullRom@@QAEXHH@Z CPositionInterpolator_CatmullRom::vfunc3
+0x1000839b func   ?sub_100bd9b0@bf_write@@QAEXABVVector@@@Z bf_write::sub_100bd9b0
 0x100083a0 func   ?sub_10041b40@@YA_NPAH0@Z sub_10041b40
 0x100083a5 func   ?sub_101da8d0@@YGHH@Z sub_101da8d0
 0x100083aa func   ?sub_101caea0@CUnk101caea0@@QAEXPBUCVariantArg101caea0@@@Z CUnk101caea0::sub_101caea0

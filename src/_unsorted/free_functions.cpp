@@ -26670,6 +26670,25 @@ void bf_write::sub_100bd840(float f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bd9b0 size=0x19e
+#include "bf_write.h"
+#include "Vector.h"
+
+void bf_write::sub_100bd9b0(const Vector &fa)
+{
+	int xflag, yflag;
+	xflag = (fa[0] >= 0.0004885197850512946) || (fa[0] <= -0.0004885197850512946);
+	yflag = (fa[1] >= 0.0004885197850512946) || (fa[1] <= -0.0004885197850512946);
+	WriteOneBit(xflag);
+	WriteOneBit(yflag);
+	if (xflag)
+		sub_100bd840(fa[0]);
+	if (yflag)
+		sub_100bd840(fa[1]);
+	WriteOneBit(fa[2] <= -0.0004885197850512946);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bdc00 size=0xf
 namespace lifted {
 int __stdcall sub_10001ef1(int, int);
