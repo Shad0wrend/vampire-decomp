@@ -14,6 +14,14 @@ CWeaponPhysCannon::CWeaponPhysCannon()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040da80 size=0x3
+#include "CWeaponPhysCannon.h"
+char CWeaponPhysCannon::vfunc312()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dc70 size=0xc
 char __fastcall sub_1040dc70(char *self)
 {
