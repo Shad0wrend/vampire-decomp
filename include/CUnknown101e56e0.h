@@ -39,6 +39,7 @@ public:
 	void sub_101e4f30(int id);
 	void sub_101e4f70();
 	int sub_101e56e0(CBaseCombatCharacter *pCharacter);	// the cost of the skill for the character (stub 0x1000f03d), clamped to its limit
+	int sub_101e54c0(CBaseCombatCharacter *pCharacter);	// the sum over the first table of the stat values the character has (\"Feats::FeatValue\"), at most the limit at +0x18
 	int sub_101e5b30(void *pCharacter);	// the sum over the second table of the stat values the character has (stub 0x1000c036)
 	void sub_101e5e60(CBaseCombatCharacter *pCharacter);	// debug print of the cost formula for the character ("name<id> ( stat + stat <stat> ...):\tcost"), handed to the debug output function pointer (sub_10203dd0)
 };
