@@ -41584,6 +41584,13 @@ void sub_10130100(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130150 size=0x6
+int sub_10130150()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130690 size=0x2d
 #include "CLight.h"
 #include "CUnknown1070b22c.h"
