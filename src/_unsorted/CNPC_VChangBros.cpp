@@ -82,6 +82,56 @@ int CNPC_VChangBros::vfunc127(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036b250 size=0x193
+#include "CNPC_VChangBros.h"
+#include "CEHandleGet.h"
+#include "CUnknown100290c0.h"
+#include "ScopeTrace.h"
+
+struct CChangBrosConVar {
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+
+struct CChangBrosView {
+	char m_pad0000[0x1b2c];
+	int m_nState1b2c;
+	char m_pad1b30[0x628c - 0x1b30];
+	unsigned int m_h628c;
+};
+
+extern CChangBrosConVar *g_1093aa2c;
+extern CChangBrosConVar *g_1093a984;
+extern CChangBrosConVar *g_1093a9cc;
+
+int CNPC_VChangBros::vfunc438()
+{
+	ScopeTrace trace("CNPC_VChangBros::SelectSchedule", g_106b8540);
+	CChangBrosView *v = (CChangBrosView *)this;
+	v->m_nState1b2c = 10;
+	CBaseEntity *pEnemy = (CBaseEntity *)((CUnknown100290c0 *)g_10566458)->sub_100290c0(&v->m_h628c);
+	if (!pEnemy || vfunc404(pEnemy) == 1) {
+		if (!g_1093aa2c->vfunc1() && g_1093aa2c->m_n2c)
+			return 0x15e;
+		if (!g_1093a984->vfunc1() && g_1093a984->m_n2c)
+			return 0x15a;
+		if (!g_1093a9cc->vfunc1() && g_1093a9cc->m_n2c)
+			return 0x15c;
+		if (sub_10014df8(0x7c))
+			return 0x15e;
+		if (sub_10014df8(0x79))
+			return 0x15c;
+		if (sub_10014df8(0x7a))
+			return 0x15a;
+		if (sub_10014df8(0x59))
+			return 0x15d;
+	}
+	return sub_10015ad2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036b460 size=0x7c
 #include "CNPC_VChangBros.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
