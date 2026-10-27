@@ -10501,6 +10501,19 @@ CTETParticleHUD *CTETParticleHUD::sub_10069f00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069f70 size=0xb
+namespace lifted {
+extern char g_1044e13c;
+int sub_100021d0();
+}
+struct CUnknown10069f70 { int sub_10069f70(); };
+int CUnknown10069f70::sub_10069f70()
+{
+    *(int *)this = (int)&lifted::g_1044e13c;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006a190 size=0xe8
 #include "SendProp.h"
 
