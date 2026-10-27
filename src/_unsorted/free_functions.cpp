@@ -104014,6 +104014,17 @@ int CUnknown102ee510::sub_102ee510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee530 size=0x8
+namespace lifted {
+struct C1000745a { int sub_1000745a(); };
+}
+struct CUnknown102ee530 { int sub_102ee530(); };
+int CUnknown102ee530::sub_102ee530()
+{
+    return ((lifted::C1000745a *)(*(int *)((char *)this + 0x30)))->sub_1000745a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee550 size=0x2c
 struct CVecTarget102ee550 {
     void sub_1000745a(float *pVec);
