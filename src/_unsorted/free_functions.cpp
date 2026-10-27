@@ -126494,6 +126494,14 @@ extern "C" CBaseEntity *item_w_unarmed()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f5800 size=0x7
+struct CUnknown103f5800 { int sub_103f5800(); };
+int CUnknown103f5800::sub_103f5800()
+{
+    return *(int *)((char *)this + 0x8d4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f59f0 size=0x72
 #include "SendProp.h"
 
