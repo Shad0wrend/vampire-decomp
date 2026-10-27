@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101575b0 size=0x6
+namespace lifted {
+extern char g_1057e9ac;
+}
+datamap_t * CRagdollPropSpecial::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1057e9ac);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157640 size=0x22
 #include "CRagdollPropSpecial.h"
 void CRagdollPropSpecial::vfunc113()
