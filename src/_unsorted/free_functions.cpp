@@ -122608,6 +122608,25 @@ int sub_103f6630()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f6a20 size=0x64
+#include "CBaseEntity.h"
+#include "CTriggerBombSite.h"
+#include "CUnknown103f6a20.h"
+
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+extern char g_1059f638[];
+extern char g_105ae82c[];
+
+// TARGET: CUnknown103f6a20::sub_103f6a20
+void CUnknown103f6a20::sub_103f6a20(void *pParam)
+{
+	m_b0914 = 0;
+	CTriggerBombSite *pSite = (CTriggerBombSite *)__RTDynamicCast(((EHANDLE *)&m_hSite)->Get(), 0, g_1059f638, g_105ae82c, 0);
+	if (pSite)
+		pSite->sub_10211870(this, pParam);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f6ab0 size=0x2a
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
