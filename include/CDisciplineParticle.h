@@ -28,6 +28,7 @@ public:
 
 	void sub_1000f10f();	// destructor body
 	void sub_10051650(CBaseEntity *pUser);	// "CDisciplineParticle::AddToUser": scope trace, stores pUser's handle at +0x4b8 (-1 for null) and appends this entity's handle to the handle vector at +0x14c0 of the user
+	void sub_10051810();	// "CDisciplineParticle::RemoveFromUser": scope trace, removes this entity's handle from the user's handle vector (+0x14c0) and clears the user handle
 	char vfunc86(int a, int b, int c, int d, int e);	// slot 86 "CDisciplineParticle::ShouldTransmit": scope trace; without the flag byte at +0x4b4 the CEnvParticle implementation, else true only when the user entity (handle at +0x4b8) has the edict b (its dword at +0x2e0)
 	static CDisciplineParticle *sub_10050d90(int a1, int a2, int a3, int a4, int a5, int pszModel, int a7, int a8, int a9, int a10);	// "CDisciplineParticle::Create" overload taking a model name: precaches it (engine slot 17) and forwards to the full version
 	static CDisciplineParticle *sub_10050e70(const char *pszClassname, int a2, int a3, int a4, int a5, int a6, int modelIndex, int a8, int a9, int a10, int a11, int a12);	// "CDisciplineParticle::Create" (stub 0x1001398f)
