@@ -124481,6 +124481,16 @@ void CWeaponUnit::sub_103ed920()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee000 size=0x6
+namespace lifted {
+extern char g_10942ee4;
+}
+int sub_103ee000()
+{
+    return (int)&lifted::g_10942ee4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee020 size=0x3
 int sub_103ee020()
 {
