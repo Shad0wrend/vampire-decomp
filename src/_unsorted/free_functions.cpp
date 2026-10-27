@@ -10132,6 +10132,19 @@ void sub_10067b70(CUnknown1019d130 *filter, float delay, const Vector *pos, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067cb0 size=0xb
+namespace lifted {
+extern char g_1044e088;
+int sub_100021d0();
+}
+struct CUnknown10067cb0 { int sub_10067cb0(); };
+int CUnknown10067cb0::sub_10067cb0()
+{
+    *(int *)this = (int)&lifted::g_1044e088;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068110 size=0x15f
 #include "SendProp.h"
 
