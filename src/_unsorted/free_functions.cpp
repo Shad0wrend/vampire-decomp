@@ -24256,6 +24256,16 @@ void CFoo::sub_100b4ad0(int *param_2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4e10 size=0x6
+namespace lifted {
+extern int g_10552818;
+}
+int sub_100b4e10()
+{
+    return lifted::g_10552818;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4e80 size=0xa
 extern int g_106cff54;
 // TARGET: sub_100b4e80
