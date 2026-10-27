@@ -49801,6 +49801,14 @@ void CBasePlayer::sub_1017e5f0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017e720 size=0x7
+struct CUnknown1017e720 { int sub_1017e720(); };
+int CUnknown1017e720::sub_1017e720()
+{
+    return *(int *)((char *)this + 0x1ce8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017e760 size=0xa1
 struct PlayerView1017e760 {
 	char pad[0x3c8];
