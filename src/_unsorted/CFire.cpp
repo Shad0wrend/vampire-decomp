@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101097e0 size=0x6
+#include "CFire.h"
+namespace lifted {
+extern char g_1056cd58;
+}
+datamap_t * CFire::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1056cd58);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109a20 size=0x26
 #include "CFire.h"
 
