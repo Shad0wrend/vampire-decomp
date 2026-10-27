@@ -41569,6 +41569,13 @@ int sub_1012faf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101300e0 size=0x6
+int sub_101300e0()
+{
+    return 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130100 size=0xb
 extern void (*g_105751b8[])();
 void sub_10130100(int i)
