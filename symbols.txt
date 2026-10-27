@@ -6995,6 +6995,7 @@
 0x10014146 func   ?vfunc0@CFireSphere@@UAEHPAVCBaseEntity@@@Z CFireSphere::vfunc0
 0x10014150 func   ?sub_101eb820@CUnknown101eb820@@QAEXXZ CUnknown101eb820::sub_101eb820
 0x1001415a func   ?sub_10137c70@@YAHPAVVector@@0@Z sub_10137c70
+0x10014164 func   ?vfunc367@CBaseCombatWeapon@@UAEHHMM@Z CBaseCombatWeapon::vfunc367
 0x10014169 func   ?vfunc310@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc310
 0x10014187 func   _logic_npc_condition logic_npc_condition
 0x100141aa func   ?sub_10046b40@@YA_NPBI0@Z sub_10046b40

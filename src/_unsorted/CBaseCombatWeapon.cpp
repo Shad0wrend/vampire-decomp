@@ -214,6 +214,13 @@ int CBaseCombatWeapon::vfunc365(int a, float b, float c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024f750 size=0x5
+int CBaseCombatWeapon::vfunc367(int a0, float a1, float a2)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f790 size=0x8
 #include "CBaseCombatWeapon.h"
 
