@@ -13848,6 +13848,17 @@ void __fastcall sub_100791a0(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079280 size=0x7
+namespace lifted {
+extern char g_1044f038;
+}
+struct CUnknown10079280 { void sub_10079280(); };
+void CUnknown10079280::sub_10079280()
+{
+    *(int *)this = (int)&lifted::g_1044f038;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100792a0 size=0x4
 struct CUnknown100792a0 { int sub_100792a0(); };
 int CUnknown100792a0::sub_100792a0()
