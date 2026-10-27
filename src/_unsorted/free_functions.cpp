@@ -85030,6 +85030,99 @@ float sub_102283a0(float cur, float target, float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10228e80 size=0x19f
+#include "CSoundSchemeManager.h"
+#include "CUnknown1070b22c.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+int sub_1023dcd0();
+int sub_1023bd00();
+int sub_101cd9e0(int);
+
+struct CSoundTrackView
+{
+	void sub_100cd660(int a, int b, int c);
+};
+
+struct CSoundSchemeView
+{
+	char pad0[0x10];
+	int m_state;
+	char pad1[0xac - 0x14];
+	int m_ac;
+	int m_b0;
+	int m_b4;
+	char pad2[0x104 - 0xb8];
+	int m_104;
+	char pad3[0x10c - 0x108];
+	int m_10c;
+	char pad4[0x15c - 0x110];
+	int m_15c;
+	char pad5[0x164 - 0x160];
+	int m_164;
+};
+
+void CSoundSchemeManager::sub_10228e80(int state)
+{
+	CSoundSchemeView *p = (CSoundSchemeView *)this;
+	switch (state)
+	{
+	case 1:
+		g_1070b22c->vfunc123(1.0f);
+		p->m_ac = p->m_b4;
+		p->m_15c = 0;
+		p->m_104 = 0;
+		break;
+	case 2:
+		g_1070b22c->vfunc123(0.92f);
+		p->m_104 = p->m_10c;
+		p->m_ac = 0;
+		p->m_15c = 0;
+		break;
+	case 3:
+		g_1070b22c->vfunc123(1.0f);
+		p->m_15c = p->m_164;
+		p->m_ac = 0;
+		p->m_104 = 0;
+		break;
+	}
+	if (p->m_state != state)
+	{
+		int a = sub_1023dcd0();
+		int b = sub_1023bd00();
+		int c = sub_101cd9e0(1);
+		if (a && b && c)
+		{
+			switch (state)
+			{
+			case 1:
+				((CSoundTrackView *)(a + 0x618))->sub_100cd660(b, c, 0);
+				if (p->m_state == 2)
+					((CSoundTrackView *)(a + 0x5d0))->sub_100cd660(b, c, 0);
+				else
+					((CSoundTrackView *)(a + 0x600))->sub_100cd660(b, c, 0);
+				break;
+			case 2:
+				((CSoundTrackView *)(a + 0x5b8))->sub_100cd660(b, c, 0);
+				if (p->m_state == 1)
+					((CSoundTrackView *)(a + 0x630))->sub_100cd660(b, c, 0);
+				else
+					((CSoundTrackView *)(a + 0x600))->sub_100cd660(b, c, 0);
+				break;
+			case 3:
+				((CSoundTrackView *)(a + 0x5e8))->sub_100cd660(b, c, 0);
+				if (p->m_state == 1)
+					((CSoundTrackView *)(a + 0x630))->sub_100cd660(b, c, 0);
+				else
+					((CSoundTrackView *)(a + 0x5d0))->sub_100cd660(b, c, 0);
+				break;
+			}
+		}
+	}
+	p->m_state = state;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10229090 size=0x179
 #include "CUnknown1070b248.h"
 #include "CReliableSingleUserRecipientFilter.h"
