@@ -5110,6 +5110,7 @@
 0x1000f678 func   ?sub_1040e880@CWeaponPhysCannon@@QAE_NPAVCBaseEntity@@@Z CWeaponPhysCannon::sub_1040e880
 0x1000f682 func   ?vfunc63@CMultiplayRules@@UAEPBDH@Z CMultiplayRules::vfunc63
 0x1000f687 func   ?sub_100fdf40@CUnknown100fde30@@QAEXXZ CUnknown100fde30::sub_100fdf40
+0x1000f68c func   ?sub_1006fde0@@YAXXZ sub_1006fde0
 0x1000f69b func   ?vfunc41@CPropKeypad@@QAEXPAX@Z CPropKeypad::vfunc41
 0x1000f6a5 func   ?vfunc266@CVampireProjectile@@UAEXPAVCBaseEntity@@@Z CVampireProjectile::vfunc266
 0x1000f6af func   ?vfunc61@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc61

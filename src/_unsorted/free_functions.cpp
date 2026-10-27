@@ -10815,6 +10815,12 @@ Vector CBaseCineCam::sub_1006f670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006fde0 size=0x1
+void sub_1006fde0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006fe00 size=0xf6
 #include "CGlobalEntityList.h"
 #define XV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
