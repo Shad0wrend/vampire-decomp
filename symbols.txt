@@ -1089,6 +1089,7 @@
 0x10004138 func   ?sub_101a77a0@CCineNPC@@QAEXPAX@Z CCineNPC::sub_101a77a0
 0x1000414c func   ?sub_100dd990@CUnknown100dd990@@QAEXHPBUCUnknown100dd990Vec@@0@Z CUnknown100dd990::sub_100dd990
 0x10004156 func   ?sub_103234a0@@YIXPAVCBaseCombatCharacter@@@Z sub_103234a0
+0x1000415b func   ?sub_101482c0@@YAHXZ sub_101482c0
 0x10004165 func   ?sub_1030b950@CUnknown1030b950@@QAEXPBM@Z CUnknown1030b950::sub_1030b950
 0x10004174 func   ?sub_103cc9b0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc9b0
 0x10004188 func   ?sub_102b4540@@YIDPAVCAI_BaseNPCTroika@@HPAUSOtherEntity@@@Z sub_102b4540

@@ -45573,6 +45573,16 @@ void CUnknown10147d10::sub_10147d50(CPair10147d50 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101482c0 size=0x6
+namespace lifted {
+extern int g_1057b7b4;
+}
+int sub_101482c0()
+{
+    return lifted::g_1057b7b4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148300 size=0x49
 void *sub_1000db89(int);
 struct GP;
