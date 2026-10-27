@@ -5029,6 +5029,7 @@
 0x1000eb9c func   ?vfunc5@CNPC_VCamera@@QAEPAV1@I@Z CNPC_VCamera::vfunc5
 0x1000eba1 func   ?sub_1020f2e0@@YIXPADHH@Z sub_1020f2e0
 0x1000ebab func   ?sub_10136450@@YIXPADHH@Z sub_10136450
+0x1000ebb0 func   ?sub_10247e20@CUnknown10247e20@@QAEPAXH@Z CUnknown10247e20::sub_10247e20
 0x1000ebba func   ?sub_103c1820@HeadClawView@@QAEXPAUEventData@@@Z HeadClawView::sub_103c1820
 0x1000ebbf func   ??1CVStatList_t@@QAE@XZ CVStatList_t::~CVStatList_t
 0x1000ebc4 func   ?Grow@?$CUtlMemory@Uthinkfunc_t@@@@QAEXH@Z CUtlMemory<thinkfunc_t>::Grow

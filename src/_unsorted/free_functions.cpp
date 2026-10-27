@@ -86800,6 +86800,14 @@ CUnk10247c50 *CUnk10247c50::sub_10247c50(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247e20 size=0x5
+struct CUnknown10247e20 { void * sub_10247e20(int); };
+void * CUnknown10247e20::sub_10247e20(int a0)
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102480b0 size=0x3
 struct CUnknown102480b0 { int sub_102480b0(); };
 int CUnknown102480b0::sub_102480b0()
