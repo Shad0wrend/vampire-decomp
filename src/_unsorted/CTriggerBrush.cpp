@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1013e530 size=0x6
+#include "CTriggerBrush.h"
+namespace lifted {
+extern char g_10579bc8;
+}
+datamap_t * CTriggerBrush::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10579bc8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e820 size=0x193
 #include "CTriggerBrush.h"
 #include "CCollisionProperty.h"
