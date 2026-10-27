@@ -197,7 +197,9 @@ public:
 	char m_b5d30;
 	char m_pad5d31[3];
 	void *m_p5d34;
-	char m_pad5d38[0x5d74 - 0x5d38];
+	char m_pad5d38[0x5d40 - 0x5d38];
+	CAI_MoveProbe *m_pMoveProbe5d40;
+	char m_pad5d44[0x5d74 - 0x5d44];
 	unsigned int m_h5d74;
 	char m_pad5d78[0x6010 - 0x5d78];
 	unsigned int m_h6010;
