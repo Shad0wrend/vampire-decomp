@@ -57447,6 +57447,13 @@ void CUnknown101b2790::sub_101b2790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b2b10 size=0x4
+int sub_101b2b10()
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b2b30 size=0xe8
 #include "CSoundEmitterSystemBase.h"
 #include "UtlMem2.h"
