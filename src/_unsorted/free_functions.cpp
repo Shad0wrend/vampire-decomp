@@ -29727,6 +29727,74 @@ void __stdcall sub_100ce8a0(const char *code)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce990 size=0x1a2
+#include "CDevFlagObj.h"
+
+struct PyObject;
+struct PyTypeObject
+{
+	char m_pad0000[0x18];
+	void (__cdecl *tp_dealloc)(PyObject *);	// 0x18
+};
+struct PyObject
+{
+	int ob_refcnt;
+	PyTypeObject *ob_type;
+};
+
+#define Py_DECREF(op) if (--(op)->ob_refcnt == 0) (*(op)->ob_type->tp_dealloc)(op)
+#define Py_XDECREF(op) if ((op) != 0) { Py_DECREF(op); }
+
+extern "C" int __cdecl _snprintf(char *, unsigned int, const char *, ...);
+extern "C" __declspec(dllimport) void Msg(const char *pszFormat, ...);
+extern PyObject *(__cdecl *g_109f3750)(const char *);	// PyImport_AddModule
+extern PyObject *(__cdecl *g_109f3754)(PyObject *);	// PyModule_GetDict
+extern PyObject *(__cdecl *g_109f3758)(const char *, int, PyObject *, PyObject *);	// PyRun_String
+extern PyObject *(__cdecl *g_109f374c)(PyObject *, const char *, ...);	// PyObject_CallFunction
+extern void (__cdecl *g_109f375c)();	// PyErr_Print
+extern void (__cdecl *g_109f3760)();	// Py_FlushConsoleOutput
+extern int (__cdecl *g_109f3764)();	// Py_FlushLine
+extern void (__cdecl *g_109f3768)();	// PyErr_Clear
+extern PyObject *g_109f3748;	// &_Py_NoneStruct
+extern CDevFlagObj *g_107318bc;
+PyObject *sub_101966a0(int arg);
+
+void __stdcall sub_100ce990(const char *pszFunction, int a, int b, int c)
+{
+	char szCommand[1024];
+	PyObject *pMain = g_109f3750("__main__");
+	if (pMain) {
+		PyObject *pDict = g_109f3754(pMain);
+		_snprintf(szCommand, 0x400, "__main__.%s", pszFunction);
+		if (!g_107318bc->vfunc1() && g_107318bc->m_n2c)
+			Msg("RUNNING PYTHON AT TIME %f:\n%s\n\n", (double)gpGlobals->curtime, szCommand);
+		PyObject *pFunc = g_109f3758(szCommand, 0x100, pDict, pDict);
+		if (pFunc) {
+			if (pFunc != g_109f3748) {
+				PyObject *pArg1 = sub_101966a0(a);
+				PyObject *pArg2 = sub_101966a0(b);
+				PyObject *pArg3 = sub_101966a0(c);
+				PyObject *pResult = g_109f374c(pFunc, "OOO", pArg1, pArg2, pArg3);
+				if (!pResult) {
+					g_109f375c();
+				} else {
+					if (g_109f3764())
+						g_109f3768();
+					Py_DECREF(pResult);
+					Py_XDECREF(pArg1);
+					Py_XDECREF(pArg2);
+					Py_XDECREF(pArg3);
+				}
+				Py_DECREF(pFunc);
+			}
+		} else {
+			g_109f375c();
+		}
+		g_109f3760();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cf080 size=0xb0
 #include "CEventQueue.h"
 #include "CGlobalEntityList.h"
