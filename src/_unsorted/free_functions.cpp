@@ -49809,6 +49809,14 @@ int CUnknown1017e720::sub_1017e720()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017e740 size=0x7
+struct CUnknown1017e740 { int sub_1017e740(); };
+int CUnknown1017e740::sub_1017e740()
+{
+    return *(int *)((char *)this + 0x1cec);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017e760 size=0xa1
 struct PlayerView1017e760 {
 	char pad[0x3c8];

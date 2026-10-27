@@ -746,6 +746,7 @@
 0x10003102 func   ?vfunc3@CTEBubbles@@UAEXABVVector@@ABVQAngle@@@Z CTEBubbles::vfunc3
 0x10003107 func   ?sub_10323370@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10323370
 0x10003111 func   _env_sun env_sun
+0x10003116 func   ?sub_1017e740@CUnknown1017e740@@QAEHXZ CUnknown1017e740::sub_1017e740
 0x1000311b func   ?sub_10158d60@@YIXPAPAX@Z sub_10158d60
 0x1000312a func   ?sub_100ccf90@CEventAction@@QAEPAV1@PBD@Z CEventAction::sub_100ccf90
 0x1000312f func   ?sub_103c6eb0@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c6eb0
