@@ -2029,6 +2029,7 @@
 0x100063f7 func   ?sub_1017f8b0@CUnknown1017f8b0@@QAEHXZ CUnknown1017f8b0::sub_1017f8b0
 0x10006401 func   ?sub_103f7930@@YAHXZ sub_103f7930
 0x1000640b func   ?sub_103e98f0@@YAHXZ sub_103e98f0
+0x10006410 func   ?vfunc82@CBatSwarm_Teleport@@UAEPAUdatamap_t@@XZ CBatSwarm_Teleport::vfunc82
 0x10006415 func   ?vfunc453@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc453
 0x1000641a func   ?vfunc620@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc620
 0x1000642e func   ?vfunc9@CCollisionEvent@@UAEXPAX0@Z CCollisionEvent::vfunc9
