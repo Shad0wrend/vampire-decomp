@@ -6893,6 +6893,16 @@ int *sub_10050170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100507c0 size=0x6
+namespace lifted {
+extern int g_106bdd3c;
+}
+int sub_100507c0()
+{
+    return lifted::g_106bdd3c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050860 size=0xd
 #include "CUnknown10050860.h"
 
