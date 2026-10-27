@@ -12827,6 +12827,16 @@ float CUnknown10074070::sub_100741f0(float flTime, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100745b0 size=0xf
+namespace lifted {
+int __stdcall sub_10007635(int, int);
+}
+int __stdcall sub_100745b0(int a0)
+{
+    return lifted::sub_10007635(a0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100745d0 size=0x28
 #include "CUnknown10074a30.h"
 #include "CUnknown10074070.h"
