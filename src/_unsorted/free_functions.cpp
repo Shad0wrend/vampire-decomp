@@ -102920,6 +102920,18 @@ int CUnk102dcc20::sub_102dcc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dccc0 size=0xf
+namespace lifted {
+int sub_10006604();
+}
+struct CUnknown102dccc0 { int sub_102dccc0(int); };
+int CUnknown102dccc0::sub_102dccc0(int a0)
+{
+    *(char *)((char *)this + 0x45c) = 1;
+    return lifted::sub_10006604();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dcd10 size=0xa
 void CUnknown102dcd10::sub_102dcd10(int unused)
 {
