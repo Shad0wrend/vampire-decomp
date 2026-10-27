@@ -13133,6 +13133,14 @@ void CUnknown10077290::sub_10077290(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077430 size=0x7
+struct CUnknown10077430 { int sub_10077430(); };
+int CUnknown10077430::sub_10077430()
+{
+    return *(int *)((char *)this + 0x318);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077490 size=0xf6
 #include "CUtlVector4.h"
 
