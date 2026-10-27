@@ -39897,6 +39897,16 @@ void __fastcall sub_10118cc0(CHandleOwner *self, int, CTargetEnt **ppEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119390 size=0x7
+namespace lifted {
+extern int g_1070b25c;
+}
+int sub_10119390()
+{
+    return lifted::g_1070b25c + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119750 size=0x145
 extern "C" char *__cdecl strncpy(char *, const char *, unsigned int);
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
