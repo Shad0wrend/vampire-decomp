@@ -1421,6 +1421,17 @@ int CBaseEntity::vfunc96()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9c90 size=0xa8
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+
+CBaseEntity *CBaseEntity::sub_100a9c90()
+{
+	ScopeTrace trace("CBaseEntity::GetOwnerEntity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	return (CBaseEntity *)EHandle_Get(m_hOwner364);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9eb0 size=0x86
 #include "CBaseEntity.h"
 #include "CBaseEntitySlots.h"
