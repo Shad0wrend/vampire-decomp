@@ -13458,6 +13458,14 @@ void CUnknown10078540::sub_100785f0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078610 size=0x7
+struct CUnknown10078610 { int sub_10078610(); };
+int CUnknown10078610::sub_10078610()
+{
+    return *(int *)((char *)this + 0x190);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078860 size=0xb
 void __fastcall sub_10078860(char *self)
 {
