@@ -32,6 +32,13 @@ void CNPCMaker::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034b140 size=0x1
+#include "CNPCMaker.h"
+void CNPCMaker::vfunc113()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034bc90 size=0x74
 #include "CNPCMaker.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
