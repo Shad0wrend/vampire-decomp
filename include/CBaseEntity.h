@@ -221,7 +221,9 @@ public:
 	char m_pad0180[0x190 - 0x180];
 	float m_vecMovedir[3];	// 0x0190: the direction set by SetMovedir
 	unsigned int m_nEffectFlags;	// 0x019c: bit 4 / bit 6 are set by the scene and beam code
-	char m_pad01a0[0x1b8 - 0x1a0];
+	char m_pad01a0[0x1b1 - 0x1a0];
+	char m_bChanged1b1;	// 0x01b1: set when a networked field changed
+	char m_pad01b2[0x1b8 - 0x1b2];
 	CBaseEntityThinkContext *m_pThinkContexts;	// 0x01b8
 	int m_nThinkContextsAlloc;	// 0x01bc
 	int m_pad01c0;
