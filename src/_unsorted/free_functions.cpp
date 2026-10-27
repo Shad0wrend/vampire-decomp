@@ -5732,6 +5732,47 @@ void CUnknown10045360::sub_10045360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100454d0 size=0xaa
+struct EntWithEdict { char pad[0x2e0]; int m_edict; };
+struct EntSlot { EntWithEdict *pEnt; unsigned int serial; };
+struct EntListEntry { int pad; EntSlot s; };
+extern EntListEntry *g_10566458;
+struct EngineSlots {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual int IndexOfEdict(int edict);
+};
+extern EngineSlots *g_1070b22c;
+struct SortItem { int key; unsigned int handle; };
+
+inline EntWithEdict *HGet(unsigned int h)
+{
+    if (h != 0xffffffff) {
+        EntSlot *p = &g_10566458[h & 0x1fff].s;
+        if (p->serial == (h >> 13))
+            return p->pEnt;
+    }
+    return 0;
+}
+
+bool sub_100454d0(const SortItem *a, const SortItem *b)
+{
+    if (a->key == b->key) {
+        EntWithEdict *pA = HGet(a->handle);
+        int edictA = pA->m_edict;
+        EntWithEdict *pB = HGet(b->handle);
+        EngineSlots *eng = g_1070b22c;
+        int edictB = pB->m_edict;
+        int r1 = eng->IndexOfEdict(edictB);
+        int r2 = g_1070b22c->IndexOfEdict(edictA);
+        return r2 > r1;
+    }
+    return a->key > b->key;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045d90 size=0x37
 // TARGET: sub_10045d90
 extern unsigned char g_106bda5c;
