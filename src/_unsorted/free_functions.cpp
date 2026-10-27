@@ -69530,6 +69530,14 @@ bool CUnknown101e8080::sub_101e8c90(const char *type, int *a, int *b, int *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8da0 size=0x7
+struct CUnknown101e8da0 { char * sub_101e8da0(); };
+char * CUnknown101e8da0::sub_101e8da0()
+{
+    return (char *)this + 0x2bc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8f20 size=0x86
 #include "CUnknown101e8f20.h"
 #include "CBaseCombatCharacter.h"
