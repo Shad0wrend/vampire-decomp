@@ -7282,6 +7282,7 @@
 0x10014691 func   ?sub_100c0760@CFuncRotating@@QAE_NM@Z CFuncRotating::sub_100c0760
 0x10014696 func   ?sub_10041be0@@YA_NPAH0@Z sub_10041be0
 0x1001469b func   ?vfunc275@CItemContainerLock@@QAEXXZ CItemContainerLock::vfunc275
+0x100146aa func   ?sub_10205710@CUnknown10205710@@QAEXXZ CUnknown10205710::sub_10205710
 0x100146af func   ?sub_101a3b00@@YAHXZ sub_101a3b00
 0x100146b4 func   ?vfunc546@CNPC_VTest@@QAEHH@Z CNPC_VTest::vfunc546
 0x100146be func   ?vfunc71@CBaseButton@@UAEXXZ CBaseButton::vfunc71

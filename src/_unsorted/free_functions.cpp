@@ -78075,6 +78075,14 @@ struct CUnknown102056d0 { int m_val; CUnknown102056d0 *sub_102056d0(); };
 CUnknown102056d0 *CUnknown102056d0::sub_102056d0() { m_val = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x10205710 size=0x7
+struct CUnknown10205710 { void sub_10205710(); };
+void CUnknown10205710::sub_10205710()
+{
+    *(int *)this = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10205840 size=0x7c
 #include "CVDmg_t.h"
 #include "CUnknown10204c60.h"
