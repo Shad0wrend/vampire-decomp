@@ -63702,6 +63702,12 @@ void __fastcall sub_101d5fb0(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6090 size=0x1
+void sub_101d6090()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d60b0 size=0x40
 struct CSlotObject
 {
