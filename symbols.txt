@@ -7114,6 +7114,7 @@
 0x10014e7f func   ?vfunc421@CBasePlayer@@UAEDH@Z CBasePlayer::vfunc421
 0x10014eac func   ?sub_102bfe10@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_102bfe10
 0x10014eb1 func   ?sub_102033e0@@YAPADH@Z sub_102033e0
+0x10014ec5 func   ?vfunc8@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc8
 0x10014eca func   ?sub_10206320@@YAXXZ sub_10206320
 0x10014ed4 func   ?sub_101b40a0@@YGPADPADH@Z sub_101b40a0
 0x10014ed9 func   ?sub_10198640@@YAPAUPyObj@@PAU1@0@Z sub_10198640
