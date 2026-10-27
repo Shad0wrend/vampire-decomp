@@ -3497,6 +3497,7 @@
 0x1000aa51 func   ?sub_10312c80@@YIXPAUCAI_ExpressiveNPCDtorView@@@Z sub_10312c80
 0x1000aa56 func   ?sub_102b57c0@CAI_BaseNPCTroika@@QAEDH@Z CAI_BaseNPCTroika::sub_102b57c0
 0x1000aa5b func   ?vfunc5@CWeaponIGeneric@@QAEPAV1@I@Z CWeaponIGeneric::vfunc5
+0x1000aa60 func   ?sub_1019d470@CUnknown1019d470@@QAEDXZ CUnknown1019d470::sub_1019d470
 0x1000aa7e func   ?sub_10050860@CUnknown10050860@@QAEPBDXZ CUnknown10050860::sub_10050860
 0x1000aa83 func   ?sub_103ee020@@YAHXZ sub_103ee020
 0x1000aa97 func   ?sub_10074a50@CUnknown10074a50@@QAEDXZ CUnknown10074a50::sub_10074a50
