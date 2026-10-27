@@ -36,4 +36,6 @@ public:
 	float m_flNoiseAmplitude;	// 0x4c8
 	char m_pad04cc[0x4d0 - 0x4cc];
 	float m_flTextureScroll;	// 0x4d0
+	char m_pad04d4[0x4f4 - 0x4d4];
+	const char *m_pszEndEntity4f4;	// 0x4f4: name of the end entity (null when unset)
 };
