@@ -216,7 +216,9 @@ public:
 	const char *m_classname11c;
 	char m_pad0120[0x164 - 0x120];
 	float m_flSpeed164;	// 0x0164
-	char m_pad0168[0x17c - 0x168];
+	int m_n168;
+	int m_n16c;
+	char m_pad0170[0x17c - 0x170];
 	float m_flNextThink;	// 0x017c
 	char m_pad0180[0x190 - 0x180];
 	float m_vecMovedir[3];	// 0x0190: the direction set by SetMovedir
