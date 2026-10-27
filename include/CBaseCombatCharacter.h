@@ -183,7 +183,9 @@ public:
 	int m_field146c;
 	char m_pad1470[0x1474 - 0x1470];
 	char m_flag1474;
-	char m_pad1475[0x1488 - 0x1475];
+	char m_pad1475[0x1480 - 0x1475];
+	char m_b1480;	// burning flag
+	char m_pad1481[0x1488 - 0x1481];
 	float m_flFrenzyRate;	// 0x1488
 	bool sub_103395f0();	// "CBaseCombatCharacter::CanFeed": scope trace (entity name); needs sub_10337f30, then true without a live target (handle +0x149c), else true when the target's stat list 0 gives a non-zero bounded stat 12 and the target's slot 158 holds
 	char m_pad148c[0x149c - 0x148c];
