@@ -1100,6 +1100,70 @@ void CBasePlayer::sub_101710b0(const Vector *pImpulse)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10171f50 size=0x1a9
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "ehandle.h"
+
+struct CGiveWeaponView
+{
+	CBP_V100(wa) CBP_V100(wb) CBP_V10(wc0) CBP_V10(wc1) CBP_V10(wc2) CBP_V10(wc3) CBP_V10(wc4) CBP_V10(wc5) CBP_V10(wc6) CBP_V10(wc7) CBP_V10(wc8)
+	CBP_V1(wd0) CBP_V1(wd1) CBP_V1(wd2) CBP_V1(wd3) CBP_V1(wd4) CBP_V1(wd5) CBP_V1(wd6)
+	virtual void vfunc297(int iSubType);
+	CBP_V10(we0) CBP_V10(we1) CBP_V10(we2) CBP_V10(we3) CBP_V1(wf0) CBP_V1(wf1) CBP_V1(wf2)
+	virtual void vfunc341(CBasePlayer *pPlayer);
+};
+struct CGiveEntView : CEntityVSlots
+{
+	char m_pad0004[0xa0 - 4];
+	CGiveWeaponView *m_pWeapona0;
+	char m_pad00a4[0x204 - 0xa4];
+	unsigned int m_spawnflags204;
+};
+struct CBasePlayerUnit : CBasePlayer
+{
+	int sub_1032d890(const char *pszName, int iSubType);
+	char sub_10173f90(CGiveWeaponView *pWeapon, int a, int b, int c);
+};
+extern "C" __declspec(dllimport) void Msg(const char *pszFormat, ...);
+CBaseEntity *sub_10136580(const char *pszName);
+void sub_101d1280(CBaseEntity *pEnt);
+void sub_100fbd50(CGiveWeaponView *pWeapon);
+void sub_101cebc0(CBasePlayer *pPlayer, int a, int b);
+
+CBaseEntity *CBasePlayer::vfunc459(const char *pszName, int iSubType)
+{
+	if (((CBasePlayerUnit *)this)->sub_1032d890(pszName, iSubType))
+		return 0;
+
+	CHandle<CGiveEntView> pent = (CGiveEntView *)sub_10136580(pszName);
+	if (pent == 0) {
+		Msg("NULL Ent in GiveNamedItem!\n");
+		return 0;
+	}
+
+	Vector vecOrigin;
+	pent->slot62((const float *)((CEntityVSlots *)this)->slot193(&vecOrigin));
+	pent->m_spawnflags204 |= 0x40000000;
+
+	CGiveEntView *pSpawned = pent.Get();
+	CGiveWeaponView *pWeapon = !pSpawned ? 0 : pSpawned->m_pWeapona0;
+	if (iSubType && pWeapon)
+		pWeapon->vfunc297(iSubType);
+
+	sub_101d1280((CBaseEntity *)pent.Get());
+	if (pent != 0 && !pent->slot116()) {
+		if (((CBasePlayerUnit *)this)->sub_10173f90(pWeapon, 0, 1, 0)) {
+			pWeapon->vfunc341(this);
+		} else {
+			sub_100fbd50(pWeapon);
+			sub_101cebc0(this, 0x52, 0);
+		}
+	}
+	return (CBaseEntity *)pent.Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10173ed0 size=0x87
 #include "CBasePlayer.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
