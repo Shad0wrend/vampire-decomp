@@ -33526,6 +33526,43 @@ void CDialog::sub_100e5c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e5d00 size=0x19b
+#include <string.h>
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CReliableSingleUserRecipientFilter.h"
+#include "CUnknown1070b22c.h"
+
+extern int g_1072608c;
+extern CUnknown1070b22c *g_1070b22c;
+
+void CDialog::sub_100e5d00(int nIndex, char *pszText)
+{
+	ScopeTrace trace("CDialog::message_append", g_106b8540);
+	unsigned int len;
+	char saved;
+	do {
+		len = strlen(pszText);
+		if (len > 100) {
+			saved = pszText[100];
+			pszText[100] = 0;
+		}
+		CGlobalEntityList_Ent *pPlayer = EHandle_Get(m_hNPC);
+		CReliableSingleUserRecipientFilter filter(pPlayer);
+		g_1070b22c->vfunc65(&filter, g_1072608c);
+		g_1070b22c->vfunc67(1);
+		g_1070b22c->vfunc67(nIndex);
+		g_1070b22c->vfunc78(pszText);
+		g_1070b22c->vfunc66();
+		if (len > 100) {
+			pszText[100] = saved;
+			pszText += 100;
+		}
+	} while (len > 100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7230 size=0xaf
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
