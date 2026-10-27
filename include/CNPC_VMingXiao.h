@@ -118,7 +118,7 @@ public:
 	char m_pad6720[0x6738 - 0x6720];
 	EHANDLE m_h6738;	// +0x6738: the phys_animlink
 	int m_nMode673c;	// +0x673c: the grabbing (2) / throwing (4) mode
-	char m_pad6740[0x6744 - 0x6740];
+	int m_n6740;	// +0x6740
 	char m_bActive6744;	// +0x6744
 public:
     virtual bool vfunc70();
