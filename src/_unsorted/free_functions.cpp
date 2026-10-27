@@ -38791,6 +38791,16 @@ int __stdcall sub_1010c1e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c200 size=0x8
+namespace lifted {
+int sub_10012dfa();
+}
+int __stdcall sub_1010c200(int a0)
+{
+    return lifted::sub_10012dfa();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c5d0 size=0x2e
 #include "CUnknown1070b22c.h"
 // TARGET: sub_1010c5d0
