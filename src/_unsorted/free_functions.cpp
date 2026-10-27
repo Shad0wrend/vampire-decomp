@@ -109191,6 +109191,18 @@ int CUnknown10344c80::sub_10344c80(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10345480 size=0x2e
+#include "CBaseAnimating.h"
+struct SeqDesc { char pad[0x2e8]; int off; };
+int __fastcall sub_10345480(CBaseAnimating *pThis)
+{
+    SeqDesc *p = (SeqDesc *)pThis->sub_1008d990(*(int *)((char *)pThis + 0x6f0));
+    if (p && p->off >= 0)
+        return pThis->sub_1008f7b0((const char *)p + p->off);
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103455a0 size=0x15b
 #include "CBaseCombatCharacter.h"
 #include "QAngle.h"
