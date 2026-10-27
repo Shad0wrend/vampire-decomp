@@ -65,7 +65,10 @@ public:
 	int m_n5f58;	// 0x5f58
 	char m_pad5f5c[0x5f68 - 0x5f5c];
 	int m_n5f68;	// 0x5f68
-	char m_pad5f6c[0x5f91 - 0x5f6c];
+	char m_pad5f6c[0x5f74 - 0x5f6c];
+	float m_flTime5f74;	// 0x5f74
+	char m_pad5f78[0x5f90 - 0x5f78];
+	char m_b5f90;	// 0x5f90
 	char m_b5f91;	// 0x5f91
 	char m_pad5f92[0x5f94 - 0x5f92];
 	unsigned int m_hNPC5f94;	// 0x5f94: entity handle of the NPC the script plays on
