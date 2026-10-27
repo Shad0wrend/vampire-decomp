@@ -96216,6 +96216,17 @@ char sub_102906e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10290700 size=0xd
+namespace lifted {
+int __stdcall sub_1000b654(int);
+}
+struct CUnknown10290700 { int sub_10290700(); };
+int CUnknown10290700::sub_10290700()
+{
+    return lifted::sub_1000b654(*(int *)((char *)this + 0x6250));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293d70 size=0x10
 void __fastcall sub_10293d70(int *p)
 {

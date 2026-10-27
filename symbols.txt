@@ -1612,6 +1612,7 @@
 0x1000551f func   _item_g_idol_cat item_g_idol_cat
 0x10005524 func   ?sub_101351b0@@YAPAHXZ sub_101351b0
 0x10005529 func   ?sub_102a1560@@YI_NPAUN@@@Z sub_102a1560
+0x1000552e func   ?sub_10290700@CUnknown10290700@@QAEHXZ CUnknown10290700::sub_10290700
 0x10005538 func   _intersting_place_conversation intersting_place_conversation
 0x1000553d func   ?vfunc5@CBaseTerminal@@QAEPAV1@I@Z CBaseTerminal::vfunc5
 0x10005542 func   ?sub_1015a140@CFuncPlatRot@@QAEXXZ CFuncPlatRot::sub_1015a140
