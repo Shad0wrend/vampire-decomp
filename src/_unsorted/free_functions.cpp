@@ -34838,6 +34838,14 @@ void CGlobalEntityList::sub_100f6ec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7040 size=0x7
+struct CUnknown100f7040 { int sub_100f7040(); };
+int CUnknown100f7040::sub_100f7040()
+{
+    return *(int *)((char *)this + 0x18040);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f71c0 size=0x115
 inline void *operator new(unsigned int, void *p) { return p; }
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
