@@ -88866,6 +88866,14 @@ void sub_10246320(int unused, const float *pIn, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102463f0 size=0xe
+int sub_102463f0(int a0, int a1, int a2)
+{
+    *(int *)((char *)a2) = *(signed char *)((char *)a1);
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246430 size=0xd
 void sub_10246430(int unused, int *src, int *dst)
 {

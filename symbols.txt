@@ -2008,6 +2008,7 @@
 0x100065b4 func   ?vfunc3@CTEMetalSparks@@UAEXABVVector@@ABVQAngle@@@Z CTEMetalSparks::vfunc3
 0x100065be func   ?sub_1042d9a0@CUnknown1042d9a0@@QAEGXZ CUnknown1042d9a0::sub_1042d9a0
 0x100065c3 func   ?sub_103f15b0@@YAHXZ sub_103f15b0
+0x100065cd func   ?sub_102463f0@@YAHHHH@Z sub_102463f0
 0x100065d2 func   ?vfunc126@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc126
 0x100065d7 func   ?vfunc5@CItemMMoneyClip@@QAEPAV1@I@Z CItemMMoneyClip::vfunc5
 0x100065dc func   ?sub_10148c00@@YAXPAMM0@Z sub_10148c00
