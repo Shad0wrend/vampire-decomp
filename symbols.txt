@@ -649,6 +649,7 @@
 0x10002da6 func   ?vfunc272@CBaseAnimatingOverlay@@QAEHXZ CBaseAnimatingOverlay::vfunc272
 0x10002dab func   ?vfunc440@CNPC_VGuard1@@QAEHH@Z CNPC_VGuard1::vfunc440
 0x10002db5 func   ?vfunc259@CNPC_VGargoyle@@QAEXPAX@Z CNPC_VGargoyle::vfunc259
+0x10002dba func   ?vfunc1@CTraceFilterNearestNode@@UAEHXZ CTraceFilterNearestNode::vfunc1
 0x10002dbf func   _item_w_thirtyeight item_w_thirtyeight
 0x10002dc4 func   ?vfunc242@CFuncPlat@@UAEXXZ CFuncPlat::vfunc242
 0x10002dc9 func   ?sub_1042fb20@@YAXXZ sub_1042fb20
