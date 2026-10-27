@@ -120,6 +120,7 @@
 0x10001550 func   ?sub_101db9a0@@YIXPAD@Z sub_101db9a0
 0x1000155f func   ?sub_1042edb0@@YIXPAUFadeEntView@@@Z sub_1042edb0
 0x10001564 func   ?sub_1035ed00@@YADXZ sub_1035ed00
+0x10001569 func   ?vfunc585@CCineAI@@UAE_NXZ CCineAI::vfunc585
 0x1000156e func   ?vfunc340@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc340
 0x10001578 func   ?sub_102b5bb0@@YADXZ sub_102b5bb0
 0x1000157d func   ?sub_103b15e0@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::sub_103b15e0
