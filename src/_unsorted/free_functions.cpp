@@ -67399,6 +67399,13 @@ int CDiscTable_101e1720::sub_101e1720(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e17e0 size=0x5
+int __stdcall sub_101e17e0(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1800 size=0x33
 // TARGET: sub_101e1800
 extern int (__cdecl *g_109f3630)(const char *, ...);
