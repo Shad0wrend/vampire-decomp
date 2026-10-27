@@ -106,7 +106,7 @@ public:
 	int m_hSlotNew[6];	// +0x668c
 	float m_flTime66a4;	// +0x66a4
 	int m_hSlotOld[6];	// +0x66a8
-	char m_pad66c0[4];
+	float m_flTime66c0;	// +0x66c0
 	float m_flSlotTimeA[6];	// +0x66c4
 	float m_flSlotValue[6];	// +0x66dc
 	float m_flSlotTimeB[6];	// +0x66f4
