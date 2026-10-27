@@ -84586,6 +84586,16 @@ int sub_10230240(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230260 size=0x9
+namespace lifted {
+struct C10015df7 { int sub_10015df7(); };
+}
+int sub_10230260(int a0)
+{
+    return ((lifted::C10015df7 *)a0)->sub_10015df7();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230280 size=0x75
 struct H { int v; H(const H &); };
 struct R { void sub_10204270(); void sub_102042d0(int t, int v); };
