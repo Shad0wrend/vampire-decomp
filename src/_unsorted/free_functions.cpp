@@ -91558,6 +91558,13 @@ int __fastcall sub_1027a780(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027c2c0 size=0x3
+char sub_1027c2c0()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027cd50 size=0x34
 // TARGET: CUnknown1027cd50::sub_1027cd50
 extern double g_10499408;
