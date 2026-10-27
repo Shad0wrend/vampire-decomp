@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101cba80 size=0x6
+#include "CTriggerEnvAudio.h"
+namespace lifted {
+extern char g_1059e878;
+}
+datamap_t * CTriggerEnvAudio::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1059e878);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cbc10 size=0x39
 // TARGET: CTriggerEnvAudio::vfunc176
 #include "CTriggerEnvAudio.h"
