@@ -11590,6 +11590,14 @@ char * CUnknown10072e20::sub_10072e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10072e40 size=0x7
+struct CUnknown10072e40 { char * sub_10072e40(); };
+char * CUnknown10072e40::sub_10072e40()
+{
+    return (char *)this + 0x13c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072e60 size=0x3f
 #include "vampire.h"
 
