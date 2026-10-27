@@ -23990,6 +23990,23 @@ void CBaseEntity::sub_100b52a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5340 size=0x8d
+#include "CBaseEntity.h"
+
+struct CMoveChildRec { void sub_1000f05b(unsigned int, unsigned int); };
+
+void CBaseEntity::sub_100b5340(unsigned int addFlags, unsigned int propagateFlags)
+{
+	m_flags268 |= addFlags;
+	addFlags |= propagateFlags;
+	CBaseEntity *pEnt = ((EHANDLE *)((char *)this + 0x260))->Get();
+	while (pEnt) {
+		((CMoveChildRec *)pEnt)->sub_1000f05b(addFlags, 0);
+		pEnt = ((EHANDLE *)((char *)pEnt + 0x264))->Get();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5620 size=0x105
 #include "SendProp.h"
 
