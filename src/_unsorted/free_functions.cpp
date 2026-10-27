@@ -65867,6 +65867,12 @@ void CUnknown101dd910::sub_101dd910()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dda50 size=0x1
+void sub_101dda50()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ddaf0 size=0x3a
 #include "CUnknown1070b244.h"
 
