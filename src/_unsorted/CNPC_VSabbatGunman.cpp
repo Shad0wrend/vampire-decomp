@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103a4f60 size=0x6
+#include "CNPC_VSabbatGunman.h"
+namespace lifted {
+extern char g_1064c118;
+}
+datamap_t * CNPC_VSabbatGunman::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1064c118);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a50e0 size=0x1e
 #include "CNPC_VSabbatGunman.h"
 
