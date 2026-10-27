@@ -5499,6 +5499,7 @@
 0x1001000a func   ?vfunc113@CFire@@UAEXXZ CFire::vfunc113
 0x1001000f func   _item_k_museum_office_key item_k_museum_office_key
 0x10010019 func   ?vfunc176@CTriggerHurt@@QAEXPAVCBaseEntity@@@Z CTriggerHurt::vfunc176
+0x1001001e func   ?sub_100b4e60@@YAHXZ sub_100b4e60
 0x10010023 func   ?sub_1013a6f0@@YA_NMMMAAM0@Z sub_1013a6f0
 0x1001002d func   ?vfunc342@CBaseCombatCharacter@@QAEDH@Z CBaseCombatCharacter::vfunc342
 0x10010032 func   ?vfunc24@CGameMovement@@QAEXXZ CGameMovement::vfunc24

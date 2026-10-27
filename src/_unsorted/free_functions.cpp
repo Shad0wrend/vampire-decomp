@@ -24266,6 +24266,16 @@ int sub_100b4e10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4e60 size=0x6
+namespace lifted {
+extern int g_106cff54;
+}
+int sub_100b4e60()
+{
+    return lifted::g_106cff54;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4e80 size=0xa
 extern int g_106cff54;
 // TARGET: sub_100b4e80
