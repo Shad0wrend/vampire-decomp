@@ -119024,6 +119024,14 @@ void CUnknown1039aaf0::sub_1039aaf0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039ab10 size=0x7
+struct CUnknown1039ab10 { char sub_1039ab10(); };
+char CUnknown1039ab10::sub_1039ab10()
+{
+    return *(char *)((char *)this + 0x6750);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039ab30 size=0x11f
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
