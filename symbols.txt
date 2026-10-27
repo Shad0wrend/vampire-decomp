@@ -1506,6 +1506,7 @@
 0x100051af func   ?sub_101b7430@CUnknown101b7430@@QAEHXZ CUnknown101b7430::sub_101b7430
 0x100051b9 func   ?vfunc300@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc300
 0x100051be func   ??0CUnknown100735a0@@QAE@XZ CUnknown100735a0::CUnknown100735a0
+0x100051c8 func   ?sub_1005b9b0@CUnknown1005b9b0@@QAEHXZ CUnknown1005b9b0::sub_1005b9b0
 0x100051d7 func   ?sub_10152400@@YAHXZ sub_10152400
 0x100051eb func   ?sub_1018e910@@YAXPAVCBaseEntity@@@Z sub_1018e910
 0x10005204 func   ?vfunc420@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc420
