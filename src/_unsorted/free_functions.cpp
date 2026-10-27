@@ -69433,6 +69433,14 @@ float CUnknown101e8b70::sub_101e8b70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8b90 size=0x7
+struct CUnknown101e8b90 { int sub_101e8b90(); };
+int CUnknown101e8b90::sub_101e8b90()
+{
+    return *(int *)((char *)this + 0x270);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e8c90 size=0xc4
 extern int (*g_109f3630)(const char *, ...);
 extern const char g_105a43f0[];
