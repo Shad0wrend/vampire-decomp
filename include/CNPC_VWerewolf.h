@@ -106,7 +106,7 @@ public:
 	CNPC_VWerewolfTimerVec m_Timers;	// 0x665c
 	int m_nCacheTick;	// 0x6670: engine tick of the cached vector
 	CNPC_VWerewolfVec3 m_vCache;	// 0x6674: cached vector
-	char pad6680[0x6684 - 0x6680];
+	int m_nDoorState;	// 0x6680
 	unsigned int m_hRotDoor1;	// 0x6684: entity handle of the func_movelinear "rotdoor1"
 	unsigned int m_hRotDoor2;	// 0x6688: entity handle of the func_movelinear "rotdoor2"
 	CNPC_VWerewolfIntVec m_History;	// 0x668c
