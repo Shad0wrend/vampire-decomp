@@ -26594,6 +26594,29 @@ void bf_write::sub_100bd540(unsigned int curData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bd620 size=0x1a9
+#include "bf_write.h"
+
+void bf_write::sub_100bd620(const Vector &fa)
+{
+	int xflag, yflag, zflag;
+	xflag = (fa[0] >= 0.0625) || (fa[0] <= -0.0625);
+	yflag = (fa[1] >= 0.0625) || (fa[1] <= -0.0625);
+	zflag = (fa[2] >= 0.0625) || (fa[2] <= -0.0625);
+
+	WriteOneBit(xflag);
+	WriteOneBit(yflag);
+	WriteOneBit(zflag);
+
+	if (xflag)
+		sub_100bd1d0(fa[0]);
+	if (yflag)
+		sub_100bd1d0(fa[1]);
+	if (zflag)
+		sub_100bd1d0(fa[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bd840 size=0x116
 #include "bf_write.h"
 
