@@ -189,7 +189,9 @@ public:
 	EVS(531)
 	virtual void slot532(int a);	// NPC: takes one argument (CAI_BaseNPCTroika::vfunc532, the door nudge passes 2)
 	EVS(533) EVS(534) EVS(535) EVS(536) EVS(537) EVS(538) EVS(539)
-	EVS10(54) EVS10(55) EVS10(56) EVS10(57)
+	EVS(540) virtual CEnemiesView *slot541();	// NPC: the object that remembers where its enemies were last seen
+	EVS(542) EVS(543) EVS(544) EVS(545) EVS(546) EVS(547) EVS(548) EVS(549)
+	EVS10(55) EVS10(56) EVS10(57)
 	EVS(580) EVS(581) EVS(582) EVS(583)
 	virtual char slot584(CEntityVSlots *pNpc, const char *pszSequence, char bLoop);	// scripted sequence: starts the sequence on the NPC (CCineNPC::vfunc584)
 	EVS(585) EVS(586) EVS(587) EVS(588) EVS(589)
