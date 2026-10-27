@@ -5870,6 +5870,7 @@
 0x10011b53 func   ?sub_1030cb00@@YGHPBD@Z sub_1030cb00
 0x10011b67 func   ?sub_10046050@PQ@@QAEXABUElem@@@Z PQ::sub_10046050
 0x10011b85 func   ?sub_10223770@CUnknownToggle10223770@@QAEXPAUCUnknownInput10223770@@@Z CUnknownToggle10223770::sub_10223770
+0x10011b8f func   ??0CBaseCombatWeapon@@QAE@XZ CBaseCombatWeapon::CBaseCombatWeapon
 0x10011b8f func   ??0CWeaponRangedBase@@QAE@XZ CWeaponRangedBase::CWeaponRangedBase
 0x10011b9e func   ?sub_1022f580@@YAHPAVCBaseCombatCharacter@@HEH@Z sub_1022f580
 0x10011ba8 func   ?sub_101391c0@@YAIPAM@Z sub_101391c0
