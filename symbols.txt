@@ -389,6 +389,7 @@
 0x100021fd func   ?sub_10204100@@YAHPAVCBaseCombatCharacter@@HD@Z sub_10204100
 0x10002202 func   ?sub_1024b830@CUnknown1024b2d0@@QAEPBDUCUnknown1024b2d0Id@@@Z CUnknown1024b2d0::sub_1024b830
 0x1000220c func   ?sub_103fe460@@YAHXZ sub_103fe460
+0x10002220 func   ?sub_102478b0@CUnknown102478b0@@QAEHXZ CUnknown102478b0::sub_102478b0
 0x10002225 func   ?sub_101a6ec0@@YAXXZ sub_101a6ec0
 0x1000222a func   _item_g_garys_tape item_g_garys_tape
 0x1000222f func   ?vfunc510@CNPC_VZombie@@QAE_NXZ CNPC_VZombie::vfunc510

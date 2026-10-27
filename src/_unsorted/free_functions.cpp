@@ -86569,6 +86569,14 @@ void CAccum64View::sub_10247860(const __int64 *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102478b0 size=0x4
+struct CUnknown102478b0 { int sub_102478b0(); };
+int CUnknown102478b0::sub_102478b0()
+{
+    return *(int *)((char *)this + 0x24);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247b80 size=0x1
 void sub_10247b80()
 {
