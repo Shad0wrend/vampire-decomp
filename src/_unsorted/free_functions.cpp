@@ -67395,6 +67395,18 @@ char *CUnk101d84e0::sub_101d84e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d8670 size=0xe
+namespace lifted {
+extern char g_10739194;
+struct C10011d24 { int sub_10011d24(int); };
+}
+struct CUnknown101d8670 { int sub_101d8670(); };
+int CUnknown101d8670::sub_101d8670()
+{
+    return ((lifted::C10011d24 *)((int)&lifted::g_10739194))->sub_10011d24(*(int *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8690 size=0x22
 void __fastcall sub_10205380(void *p);
 
