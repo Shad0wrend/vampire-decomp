@@ -32,6 +32,7 @@ public:
 	void sub_103656a0();	// gives the NPC the "item_d_holy_light" discipline weapon (finds it in the inventory or creates and adds it, "Error: Couldn't find space in inventory for Discipline weapon!" otherwise), selects it and completes the task (sub_10272650(5))
 	void *sub_1032e120(const char *pszName);	// stub 0x1000b0b4: creates the named item for the character
 	char sub_10334c20(void *pItem);	// stub 0x100112d9: adds the item to the character's inventory, false when there is no room
+	void sub_10365860(const char *pszTarget, float flSpeed);	// throws an "item_w_grenade_frag" from the origin of the entity named pszTarget (at most every 5 seconds, time at +0x6680) with its forward vector scaled by flSpeed; clears the byte at +0x66a0
 	void sub_10272650(int code);	// stub 0x100097d2, called directly with 5 to end the task
 
 	char m_pad03e0[0x1b30 - 0x3e0];
