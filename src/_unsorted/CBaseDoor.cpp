@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100ed720 size=0x6
+namespace lifted {
+extern char g_10564578;
+}
+datamap_t * CBaseDoor::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10564578);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee420 size=0x8e
 #include "CBaseDoor.h"
 
