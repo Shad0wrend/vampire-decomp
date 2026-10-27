@@ -5744,6 +5744,7 @@
 0x10010be5 func   ?sub_1025e7b0@CAI_BaseHumanoid@@QAEXXZ CAI_BaseHumanoid::sub_1025e7b0
 0x10010c03 func   ?sub_10249980@SymMap@@QAEGIH@Z SymMap::sub_10249980
 0x10010c08 func   ?sub_10158570@@YAXHPAUIFieldSink@@PAUIRestoreSrc@@@Z sub_10158570
+0x10010c12 func   ?sub_1019a960@@YGDHH@Z sub_1019a960
 0x10010c26 func   _multisource multisource
 0x10010c2b func   ?sub_100f0320@@YIXPAD@Z sub_100f0320
 0x10010c30 func   ?sub_100d8040@@YAXXZ sub_100d8040
