@@ -27,6 +27,19 @@ CVampireProjectile_MingXiaoSpit *CVampireProjectile_MingXiaoSpit::vfunc5(unsigne
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f18e0 size=0x19
+#include "CVampireProjectile_MingXiaoSpit.h"
+namespace lifted {
+int sub_10007581();
+}
+void CVampireProjectile_MingXiaoSpit::vfunc103()
+{
+    *(int *)((char *)this + 0x8c0) = 0x7f7fffff;
+    *(int *)((char *)this + 0x8bc) = -1;
+    lifted::sub_10007581();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f1950 size=0x163
 #include "CVampireProjectile_MingXiaoSpit.h"
 #include "CBaseCombatCharacter.h"
