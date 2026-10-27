@@ -110,6 +110,12 @@ L:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129260 size=0x1
+void CGameRules::vfunc2()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101295a0 size=0x8
 #include "CGameRules.h"
 
