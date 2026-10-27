@@ -95885,6 +95885,12 @@ void sub_102cc540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc6a0 size=0x1
+void sub_102cc6a0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc7e0 size=0x8
 void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
