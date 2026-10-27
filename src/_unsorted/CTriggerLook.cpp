@@ -12,6 +12,19 @@ datamap_t * CTriggerLook::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6c50 size=0x19
+#include "CTriggerLook.h"
+namespace lifted {
+int sub_100075f9();
+}
+void CTriggerLook::vfunc103()
+{
+    *(int *)((char *)this + 0x5b0) = -1;
+    *(int *)((char *)this + 0x5bc) = -1082130432;
+    lifted::sub_100075f9();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6f80 size=0xae
 #include "CTriggerLook.h"
 #include "IVEngineServer.h"
