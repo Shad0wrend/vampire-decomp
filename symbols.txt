@@ -3506,6 +3506,7 @@
 0x1000a2c2 func   ?sub_101f3070@@YIXPAD@Z sub_101f3070
 0x1000a2d6 func   ?sub_103322e0@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_103322e0
 0x1000a2db func   ?sub_102ee410@CUnknown102ee410@@QAEHXZ CUnknown102ee410::sub_102ee410
+0x1000a2e0 func   ?sub_10258270@@YAHXZ sub_10258270
 0x1000a2e5 func   ?sub_1037b6e0@CNPC_VGhoulCroucher@@QAEXH@Z CNPC_VGhoulCroucher::sub_1037b6e0
 0x1000a2ea func   ?vfunc556@CAI_BaseNPC@@UAEHMM@Z CAI_BaseNPC::vfunc556
 0x1000a2f9 func   ?sub_1020e020@CUnknown1020e020@@QAEDXZ CUnknown1020e020::sub_1020e020

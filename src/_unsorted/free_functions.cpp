@@ -92025,6 +92025,16 @@ void CWeaponRanged::sub_10257640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258270 size=0xc
+namespace lifted {
+int sub_10003d91();
+}
+int sub_10258270()
+{
+    return *(int *)((char *)(lifted::sub_10003d91()) + 0x3f8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258290 size=0x68
 #include "ConVar.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
