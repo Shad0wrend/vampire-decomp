@@ -8005,6 +8005,19 @@ void sub_1005a6a0(int a, int b, const int *pos, const int *dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005a7b0 size=0xb
+namespace lifted {
+extern char g_1044dbd4;
+int sub_100021d0();
+}
+struct CUnknown1005a7b0 { int sub_1005a7b0(); };
+int CUnknown1005a7b0::sub_1005a7b0()
+{
+    *(int *)this = (int)&lifted::g_1044dbd4;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005ac10 size=0x33
 #include "CTEBeamEntPoint.h"
 
