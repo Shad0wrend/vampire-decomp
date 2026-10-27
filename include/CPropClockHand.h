@@ -18,7 +18,6 @@ public:
 	Vector m_flAngle;	// 0x73c: the angle components (the one in use is selected by m_iAxis)
 	int m_nTick748;	// 0x748: the engine tick of the last update
 	int m_iAxis;	// 0x74c
-	char m_pad750[0x750 - 0x750 + 4];
 	EHANDLE m_hSource750;	// 0x750: the entity whose two time floats (+0x468, +0x480) drive the hand; none = time since spawn
 	char m_pad754[0x75c - 0x754];
 	int m_nMode75c;	// 0x75c: 1 = minutes, 2 = hours
