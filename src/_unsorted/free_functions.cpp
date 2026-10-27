@@ -96009,6 +96009,14 @@ CUnknown102c6740_Elem *CUnknown102c6740::sub_102c6740(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6760 size=0x4
+struct CUnknown102c6760 { int sub_102c6760(); };
+int CUnknown102c6760::sub_102c6760()
+{
+    return *(int *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6780 size=0xad
 #include "UtlVec8.h"
 
