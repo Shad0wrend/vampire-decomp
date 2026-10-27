@@ -104703,6 +104703,12 @@ int CUtlVector4::sub_103109a0(int elem, int num, const int *pToInsert)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310b70 size=0x1
+void sub_10310b70()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10310bc0 size=0x33
 extern char g_106eb5d8[];
 extern char g_106148ec[];

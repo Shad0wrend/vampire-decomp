@@ -2170,6 +2170,7 @@
 0x100072c0 func   ?sub_103315e0@@YIHPADHH@Z sub_103315e0
 0x100072c5 func   ?sub_102d40a0@@YIHPAD@Z sub_102d40a0
 0x100072d4 func   ?sub_1005c4d0@@YAXHHPAH0HHHHHHHHHHHHHH@Z sub_1005c4d0
+0x100072d9 func   ?sub_10310b70@@YAXXZ sub_10310b70
 0x100072de func   ?sub_1039a700@CMingXiaoView@@QAEXH@Z CMingXiaoView::sub_1039a700
 0x100072ed func   ?sub_10397930@CNPC_VMingXiao@@QAEXH@Z CNPC_VMingXiao::sub_10397930
 0x100072f7 func   ?sub_103228c0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_103228c0
