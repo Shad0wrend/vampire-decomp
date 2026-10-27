@@ -92819,6 +92819,14 @@ void CUnknown10270290::sub_10270290(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102702b0 size=0x7
+struct CUnknown102702b0 { int sub_102702b0(); };
+int CUnknown102702b0::sub_102702b0()
+{
+    return *(int *)((char *)this + 0x5b90);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102707d0 size=0x39
 typedef int (__fastcall *CUnknownSlotFn)(void *pThis);
 
