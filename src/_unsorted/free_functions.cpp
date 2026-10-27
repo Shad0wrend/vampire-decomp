@@ -86298,6 +86298,13 @@ void sub_102464b0(int a, int b, int *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102464d0 size=0x5
+int sub_102464d0(int a0, int a1)
+{
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246870 size=0xfe
 #include "SendProp.h"
 
