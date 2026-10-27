@@ -31807,6 +31807,36 @@ int __stdcall sub_100e7230(const char *name, int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7310 size=0x113
+#include "CDialog.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+extern char g_106e87e8[];
+extern void (*g_109f3888)(const char *, char *, int);
+extern "C" char *__cdecl _strlwr(char *);
+struct DialogEnt { char pad[0x128]; const char *m_name; };
+
+char *CDialog::sub_100e7310()
+{
+	ScopeTrace trace("CDialog::get_dialog_filename", g_106b8540);
+	unsigned int &hNPC = m_hNPC;
+	unsigned int &hSpeaker = m_hSpeaker;
+	if (EHandle_Get(hNPC)) {
+		if (EHandle_Get(hSpeaker)) {
+			*(const char * volatile *)&((DialogEnt *)EHandle_Get(hSpeaker))->m_name;
+			const char *name = ((DialogEnt *)EHandle_Get(hSpeaker))->m_name;
+			if (!name)
+				name = g_106b8540;
+			g_109f3888(name, g_106e87e8, 0x104);
+			_strlwr(g_106e87e8);
+			return g_106e87e8;
+		}
+	}
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7480 size=0x70
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
