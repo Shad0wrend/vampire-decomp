@@ -13057,6 +13057,14 @@ char * CUnknown10076fa0::sub_10076fa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076fc0 size=0x7
+struct CUnknown10076fc0 { char * sub_10076fc0(); };
+char * CUnknown10076fc0::sub_10076fc0()
+{
+    return (char *)this + 0x232;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100770b0 size=0x17f
 // TARGET: ?sub_100770b0@CUnknown10076da0@@QAEXPBDM_N@Z
 #include "CUnknown10076da0.h"

@@ -4574,6 +4574,7 @@
 0x1000d454 func   ?sub_1009ba60@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009ba60
 0x1000d459 func   ?vfunc130@CPhysForce@@UAEXH@Z CPhysForce::vfunc130
 0x1000d45e func   ?vfunc5@CEnvShooter@@QAEPAV1@I@Z CEnvShooter::vfunc5
+0x1000d463 func   ?sub_10076fc0@CUnknown10076fc0@@QAEPADXZ CUnknown10076fc0::sub_10076fc0
 0x1000d468 func   ?vfunc84@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc84
 0x1000d46d func   ?sub_103a5da0@@YADXZ sub_103a5da0
 0x1000d486 func   ?sub_100b1d10@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b1d10
