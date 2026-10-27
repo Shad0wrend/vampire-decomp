@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103ec200 size=0x6
+#include "CWeaponMelee_MingXiaoMelee.h"
+namespace lifted {
+extern char g_106780e8;
+}
+CWeaponActivityRecord * CWeaponMelee_MingXiaoMelee::vfunc362()
+{
+    return (CWeaponActivityRecord *)((int)&lifted::g_106780e8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ec320 size=0x1e
 #include "CWeaponMelee_MingXiaoMelee.h"
 
