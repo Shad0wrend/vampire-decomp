@@ -4193,6 +4193,7 @@
 0x1000c473 func   ?sub_102256f0@CBaseVampireSkillEntity@@QAEXPBD@Z CBaseVampireSkillEntity::sub_102256f0
 0x1000c482 func   ?sub_1042ff00@@YAXXZ sub_1042ff00
 0x1000c48c func   ?sub_101f5f00@CUnknown101f5f00@@QAEXHHH@Z CUnknown101f5f00::sub_101f5f00
+0x1000c491 func   ?sub_10077710@CUnknown10077710@@QAEDXZ CUnknown10077710::sub_10077710
 0x1000c496 func   ?sub_1024b150@@YA_NPBUSym@@0@Z sub_1024b150
 0x1000c49b func   ?vfunc176@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc176
 0x1000c4be func   _npc_payphone npc_payphone
