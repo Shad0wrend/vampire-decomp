@@ -986,6 +986,7 @@
 0x1000399f func   ?sub_101eab40@@YAXH@Z sub_101eab40
 0x100039a4 func   ?sub_101d9800@CUnknown10739194@@QAEHH@Z CUnknown10739194::sub_101d9800
 0x100039ae func   ?sub_103fd6f0@@YAHXZ sub_103fd6f0
+0x100039b3 func   ?vfunc82@CPropDestructable@@UAEPAUdatamap_t@@XZ CPropDestructable::vfunc82
 0x100039c2 func   ?vfunc82@CMathRemap@@UAEPAUdatamap_t@@XZ CMathRemap::vfunc82
 0x100039cc func   ?sub_101bb220@@YAHH@Z sub_101bb220
 0x100039db func   ?sub_10237860@@YAHXZ sub_10237860
