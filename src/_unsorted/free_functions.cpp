@@ -66970,6 +66970,17 @@ S6 *CUnknown101db210::sub_101db210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db410 size=0x8
+namespace lifted {
+struct C10003986 { int sub_10003986(); };
+}
+struct CUnknown101db410 { int sub_101db410(); };
+int CUnknown101db410::sub_101db410()
+{
+    return ((lifted::C10003986 *)(this + 4))->sub_10003986();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db430 size=0xeb
 #include "CUnknown101db210.h"
 
