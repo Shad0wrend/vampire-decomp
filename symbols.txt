@@ -5841,6 +5841,7 @@
 0x1000fca4 func   ?sub_102f91b0@UtlMem@@QAEXXZ UtlMem::sub_102f91b0
 0x1000fcae func   ?vfunc5@CRopeKeyframe@@QAEPAV1@I@Z CRopeKeyframe::vfunc5
 0x1000fcb8 func   ?sub_101e80a0@@YGHH@Z sub_101e80a0
+0x1000fcd6 func   ?vfunc363@CWeaponMelee_TzimisceMelee@@UAEHXZ CWeaponMelee_TzimisceMelee::vfunc363
 0x1000fce0 func   ?sub_101a9dd0@CUnk101a9dd0@@QAEXPAH@Z CUnk101a9dd0::sub_101a9dd0
 0x1000fcea func   ?sub_10260750@@YIXPAD@Z sub_10260750
 0x1000fcef func   ?sub_10340d70@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10340d70

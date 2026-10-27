@@ -12,6 +12,14 @@ CWeaponActivityRecord * CWeaponMelee_TzimisceMelee::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e89a0 size=0x6
+#include "CWeaponMelee_TzimisceMelee.h"
+int CWeaponMelee_TzimisceMelee::vfunc363()
+{
+    return 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e8a30 size=0x37
 #include "CWeaponMelee_TzimisceMelee.h"
 CWeaponMelee_TzimisceMelee::CWeaponMelee_TzimisceMelee()
