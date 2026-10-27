@@ -2,10 +2,11 @@
 // are not modelled; primary vtable 0x1049d854 has 21 slots.
 #pragma once
 
+#include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 #include "Vector.h"
+#include "CAI_InterestTarget.h"
 
-struct CAI_InterestTarget;
 struct ISaveRestoreOps;
 class CBaseEntity;
 
