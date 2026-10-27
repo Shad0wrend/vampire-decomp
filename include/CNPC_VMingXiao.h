@@ -82,8 +82,8 @@ public:
 	void sub_10398800();	// stub 0x10004160
 	float sub_10397f70();	// stub 0x10011d42: the delay of the next tentacle slot
 	CBaseEntity *sub_10336f20();	// CBaseCombatCharacter::sub_10336f20 (stub 0x10005dbc)
-	CBaseEntity *vfunc309();	// slot 309 (+0x4d4): an entity this NPC is bound to
-	void vfunc388(int a, int b);	// slot 388 (+0x610)
+	virtual CBaseEntity *vfunc309();	// slot 309 (+0x4d4): an entity this NPC is bound to
+	virtual void vfunc388(int a, int b);	// slot 388 (+0x610)
 	void sub_1009b060(Vector *pVec);	// CBaseEntity::sub_1009b060 (stub 0x10001a50), called directly with a size vector
 	virtual void vfunc103();	// slot 103 (spawn-like): the base flags, the Troika base, resets the tentacle slots (six handles, flags, times), the owner handles +0x667c / +0x6680, the mode and the target fields
 
