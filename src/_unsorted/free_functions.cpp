@@ -103553,6 +103553,14 @@ char CUnknown102ee270::sub_102ee270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee2e0 size=0x7
+struct CUnknown102ee2e0 { char sub_102ee2e0(); };
+char CUnknown102ee2e0::sub_102ee2e0()
+{
+    return *(char *)((char *)(*(int *)((char *)this + 0x30)) + 0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee430 size=0x8d
 #include "CAI_Navigator.h"
 #include "CBaseAnimating.h"
