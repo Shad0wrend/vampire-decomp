@@ -33272,6 +33272,13 @@ void Mem44::sub_100ed500(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ed5a0 size=0x6
+int sub_100ed5a0()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee240 size=0x43
 #include "CBaseDoor.h"
 void *sub_100aa720(int size);
