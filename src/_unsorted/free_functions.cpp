@@ -71949,6 +71949,41 @@ void CVDmg_t::sub_101fb3e0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fb470 size=0x191
+#include "CVDmg_t.h"
+#include "ScopeTrace.h"
+#include "StatOwner2.h"
+#include "CUnknown10202ba0.h"
+#include <string.h>
+#include <stdio.h>
+
+extern StatOwner2 g_1074e968;
+extern char g_1074e5c8[];
+extern const char g_105a7610[];
+
+char *CVDmg_t::sub_101fb470()
+{
+	ScopeTrace trace("CVDmg_t::ToStr", g_106b8540);
+	if (m_pad0000 != -1) {
+		static int s_nDamageType = g_1074e968.sub_10203020("DamageType");
+		strcpy(g_1074e5c8, g_105a7610);
+		int len = 1;
+		if (!m_block14.sub_10204250()) {
+			sprintf(g_1074e5c8 + 1, " %s", m_block14.sub_102043a0());
+			len = strlen(g_1074e5c8);
+		}
+		sprintf(g_1074e5c8 + len, " %d %s", m_field04, ((CUnknown10202ba0 *)g_1074e968.sub_10203190(s_nDamageType))->sub_10202a10(m_pad0000));
+		len = strlen(g_1074e5c8);
+		if (!m_block24.sub_10204250())
+			sprintf(g_1074e5c8 + len, " %s", m_block24.sub_102043a0());
+		strcat(g_1074e5c8, " )");
+		return g_1074e5c8;
+	}
+	g_1074e5c8[0] = 0;
+	return g_1074e5c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fb680 size=0xd8
 #include <stdio.h>
 #include "ScopeTrace.h"
