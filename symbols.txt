@@ -5677,6 +5677,7 @@
 0x1000f3df func   ?sub_1030f940@CUnknown1030f940@@QAEXXZ CUnknown1030f940::sub_1030f940
 0x1000f3ee func   ?vfunc372@CWeaponThrown_Chang_Ghost@@QAEXHPBVVector@@@Z CWeaponThrown_Chang_Ghost::vfunc372
 0x1000f3f3 func   ?sub_100d2d80@@YAXXZ sub_100d2d80
+0x1000f407 func   ?sub_10131f50@@YAPAHXZ sub_10131f50
 0x1000f40c func   ?vfunc3@CTEExplosion@@UAEXPBVVector@@0@Z CTEExplosion::vfunc3
 0x1000f411 func   ?sub_102dd8b0@@YAPAUPatrolPlace@@XZ sub_102dd8b0
 0x1000f416 func   ?sub_100b0280@@YAXXZ sub_100b0280

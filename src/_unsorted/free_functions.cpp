@@ -43738,6 +43738,43 @@ int *sub_10131a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131f50 size=0x1a6
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1057619c[2];
+void sub_1000c158();
+
+int *sub_10131f50()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 1, "InputValue", {0, 0}, 1, 8, "InValue", 0, (void *)sub_1000c158 },
+        { 10, "m_OutValue", {0x460, 0}, 1, 0x16, "OutValue", g_1055dc70 },
+        { 1, "m_flInMin", {0x450, 0}, 1, 6, "in1", 0, 0 },
+        { 1, "m_flInMax", {0x454, 0}, 1, 6, "in2", 0, 0 },
+        { 1, "m_flOut1", {0x458, 0}, 1, 6, "out1", 0, 0 },
+        { 1, "m_flOut2", {0x45c, 0}, 1, 6, "out2", 0, 0 },
+    };
+    g_1057619c[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1057619c[0] = (int)&dataDesc[1];
+    return g_1057619c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101321f0 size=0xcc
 #include "CMathRemap.h"
 #include "inputdata_t.h"
