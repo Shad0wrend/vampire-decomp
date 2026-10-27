@@ -783,6 +783,14 @@ struct CUnknown1002cc60 { int p[3]; int a; CUnknown1002cc60* sub_1002cc60(); };
 CUnknown1002cc60* CUnknown1002cc60::sub_1002cc60() { a = -1; return this; }
 // END FUNCTION
 
+// FUNCTION: 0x1002cc80 size=0x3
+struct CUnknown1002cc80 { int sub_1002cc80(); };
+int CUnknown1002cc80::sub_1002cc80()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002ccc0 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
