@@ -113832,6 +113832,16 @@ void sub_10352e90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10353100 size=0x6
+namespace lifted {
+extern char g_10938628;
+}
+int sub_10353100()
+{
+    return (int)&lifted::g_10938628;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10355d70 size=0x49
 void *sub_1000db89(int);
 struct GP;
