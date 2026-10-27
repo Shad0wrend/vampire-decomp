@@ -6403,6 +6403,7 @@
 0x10011324 func   ?vfunc104@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc104
 0x10011329 func   ?sub_100d2b30@@YAXXZ sub_100d2b30
 0x10011338 func   _item_k_fu_cell_key item_k_fu_cell_key
+0x1001133d func   ?vfunc82@CPlayerPickupController@@UAEPAUdatamap_t@@XZ CPlayerPickupController::vfunc82
 0x10011342 func   ?sub_10138720@@YAXPAHH0@Z sub_10138720
 0x10011347 func   _npc_generic_bathack npc_generic_bathack
 0x1001134c func   ?sub_1027f1e0@@YGPBDH@Z sub_1027f1e0
