@@ -49071,6 +49071,14 @@ void CTriggerEnvAudio::sub_101753a0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101753e0 size=0x7
+struct CUnknown101753e0 { int sub_101753e0(); };
+int CUnknown101753e0::sub_101753e0()
+{
+    return *(int *)((char *)this + 0x1e08);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10175400 size=0x169
 #include "CBasePlayer.h"
 #include "CSingleUserRecipientFilter.h"
