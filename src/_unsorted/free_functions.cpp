@@ -4082,6 +4082,14 @@ void CBaseEntity::sub_1003f810(float flFrameTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003ff80 size=0x3
+struct CUnknown1003ff80 { void * sub_1003ff80(); };
+void * CUnknown1003ff80::sub_1003ff80()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040220 size=0x114
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
