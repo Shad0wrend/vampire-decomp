@@ -133789,6 +133789,16 @@ void * CUnknown1042def0::sub_1042def0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042df50 size=0x6
+namespace lifted {
+extern char g_109eff34;
+}
+int sub_1042df50()
+{
+    return (int)&lifted::g_109eff34;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042e310 size=0x198
 #include "SendTable.h"
 #include "SendProp.h"
