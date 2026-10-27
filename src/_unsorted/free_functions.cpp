@@ -111951,6 +111951,46 @@ int CBaseCombatCharacter::sub_103282e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10328380 size=0x1a4
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+struct CGrappleView {
+	char pad[0x1538];
+	EHANDLE m_h1538;
+	int m_n153c;
+	char pad1540[4];
+	int m_n1544;
+};
+
+int CBaseCombatCharacter::sub_10328380(int a, int b, CBaseCombatCharacter *pOther, int c)
+{
+	CGrappleView *pView = (CGrappleView *)this;
+	ScopeTrace trace("CBaseCombatCharacter::TranslateBaseGrappleActivity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (b == -1) {
+		if (!pView->m_h1538.Get() || (b = pView->m_n153c) == -1)
+			return a;
+	}
+	if (!pOther) {
+		if (pView->m_n153c == -1 || !(pOther = (CBaseCombatCharacter *)pView->m_h1538.Get()))
+			return a;
+	}
+	int bGrappling = pOther->sub_103282e0();
+	if (c == -1) {
+		if (!pView->m_h1538.Get() || pView->m_n153c == -1 || (c = pView->m_n1544) == -1)
+			return a;
+	}
+	a++;
+	if (bGrappling == 1)
+		a++;
+	if (b == 1)
+		a += 2;
+	if (c == 1)
+		a += 4;
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10328af0 size=0x139
 #include "ScopeTrace.h"
 #include "CEntityVSlots.h"
