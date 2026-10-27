@@ -12131,6 +12131,14 @@ void CUnknown10074a30::sub_10074a30(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10074a50 size=0x4
+struct CUnknown10074a50 { char sub_10074a50(); };
+char CUnknown10074a50::sub_10074a50()
+{
+    return *(char *)((char *)this + 9);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10074a70 size=0xa
 struct CUnknown10074a70 { int p[3]; int a; void sub_10074a70(int v); };
 // TARGET: CUnknown10074a70::sub_10074a70
