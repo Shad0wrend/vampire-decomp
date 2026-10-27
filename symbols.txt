@@ -3693,6 +3693,7 @@
 0x1000b609 func   ?sub_100d94a0@@YA_NPAVCBaseCombatCharacter@@H@Z sub_100d94a0
 0x1000b627 func   _func_wall func_wall
 0x1000b636 func   ?sub_1012c840@@YAXPAUCChildView@@@Z sub_1012c840
+0x1000b63b func   ?sub_102d3ea0@@YAXXZ sub_102d3ea0
 0x1000b645 func   ?vfunc187@CBaseCombatWeapon@@UAEPAVCBaseEntity@@XZ CBaseCombatWeapon::vfunc187
 0x1000b654 func   ?sub_10290660@@YGHM@Z sub_10290660
 0x1000b659 func   ?sub_10233a10@@YAXH@Z sub_10233a10

@@ -96928,6 +96928,12 @@ int CUnknown102d3e60::sub_102d3e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d3ea0 size=0x1
+void sub_102d3ea0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d3f50 size=0xc9
 extern "C" unsigned int __cdecl strlen(const char *);
 extern "C" char *__cdecl strstr(const char *, const char *);
