@@ -24405,6 +24405,13 @@ void *CUnknown100b7a90::sub_100b7a90(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7c00 size=0x3
+int sub_100b7c00()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7c20 size=0x1
 void sub_100b7c20()
 {
