@@ -154,6 +154,7 @@ public:
 	void vfunc388(void *weapon, int a);	// switches to the given weapon
 	int vfunc392(void *pInfo);	// "CBaseCombatCharacter::OnTakeDamage_Dead": scope trace (entity name), unless the life state at +0x1fc is 1 lowers the health at +0x210 by the info's damage (a CVDmg_t at info+0 when set, else the float at info+0x30); returns 1
 	int vfunc393();
+	char vfunc402();	// slot 402 "CBaseCombatCharacter::Event_Gibbed": scope trace (entity name), tests the violence_hgibs / violence_agibs convars, take-damage mode 0, AddSolidFlags(4) (inlined scope trace), +0x200 = 2; gibbing calls slot 395 and returns false, else slots 66 and 394
 	void vfunc403();
 	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
 	void vfunc51(int unused, float *pOut);	// "CBaseCombatCharacter::GetCameraTargetPosition": scope trace (entity name), with the flag byte at +0x10d4 set sub_10014eb6(pOut, 0), else copies the vector slot 192 returns into pOut
