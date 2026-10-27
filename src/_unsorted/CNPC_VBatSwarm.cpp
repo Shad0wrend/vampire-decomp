@@ -27,3 +27,14 @@ int CNPC_VBatSwarm::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093a6d0.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x103672d0 size=0x6
+#include "CNPC_VBatSwarm.h"
+namespace lifted {
+extern char g_1062ef0c;
+}
+datamap_t * CNPC_VBatSwarm::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1062ef0c);
+}
+// END FUNCTION
