@@ -8261,6 +8261,12 @@ int sub_1005dcc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005df40 size=0x1
+void sub_1005df40()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005e330 size=0x17b
 #include "SendProp.h"
 
