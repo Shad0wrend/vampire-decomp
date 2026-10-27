@@ -12,6 +12,14 @@ CWeaponActivityRecord * CWeaponMelee_MingXiaoMelee::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ec220 size=0x6
+#include "CWeaponMelee_MingXiaoMelee.h"
+int CWeaponMelee_MingXiaoMelee::vfunc363()
+{
+    return 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ec320 size=0x1e
 #include "CWeaponMelee_MingXiaoMelee.h"
 
