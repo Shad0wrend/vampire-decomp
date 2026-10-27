@@ -93647,6 +93647,16 @@ void sub_102699e0(Vector vec, int a, float t)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10269b30 size=0xd
+namespace lifted {
+int __stdcall sub_10014df8(int);
+}
+int __stdcall sub_10269b30(int a0, int a1)
+{
+    return lifted::sub_10014df8(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a0b0 size=0x2b
 #include <string.h>
 
