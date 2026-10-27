@@ -50478,6 +50478,12 @@ void Mem784::sub_10189510(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101895b0 size=0x1
+void sub_101895b0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101895d0 size=0x64
 #include "CRagdollProp.h"
 
