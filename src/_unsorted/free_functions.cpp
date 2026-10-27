@@ -46675,6 +46675,16 @@ int __stdcall sub_10150e10(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150e30 size=0x8
+namespace lifted {
+int sub_1000201d();
+}
+int __stdcall sub_10150e30(int a0)
+{
+    return lifted::sub_1000201d();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150e50 size=0x12
 struct CVirtSlots2 {
     virtual void vfunc0();
