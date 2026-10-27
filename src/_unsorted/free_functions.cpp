@@ -109747,6 +109747,44 @@ void CBaseCombatCharacter::sub_1033df80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033e0a0 size=0x196
+#include "CBaseCombatCharacter.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b248.h"
+#include "CUnknown1074e098.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b248 *g_1070b248;
+extern CUnknown1074e098 g_1074e098;
+
+struct S1033e0a0Name
+{
+	const char *m_psz;
+	const char *Get() const { return m_psz ? m_psz : g_106b8540; }
+};
+
+struct S1033e0a0Record
+{
+	char m_pad0000[0xe4];
+	S1033e0a0Name m_Sound;	// 0xe4
+};
+
+void CBaseCombatCharacter::sub_1033e0a0(int nDiscipline, int unused1, CBaseEntity *pUnused2)
+{
+	ScopeTrace trace("CBaseCombatCharacter::AddFakedDisciplineEffect", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	const char *pszSound = ((S1033e0a0Record *)g_1074e098.sub_10200370(nDiscipline))->m_Sound.Get();
+	g_1070b248->vfunc0(pszSound, 0);
+	if (*pszSound && *pszSound != ' ') {
+		int edict = m_pEdict2e0;
+		g_1070b248->vfunc3(&filter, g_1070b22c->vfunc35(edict), 3, pszSound, 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033e2b0 size=0x87
 #include "CBaseCombatCharacter.h"
 
