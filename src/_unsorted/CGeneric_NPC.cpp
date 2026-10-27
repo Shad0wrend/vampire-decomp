@@ -13,6 +13,17 @@ int CGeneric_NPC::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10359f00 size=0x6
+#include "CGeneric_NPC.h"
+namespace lifted {
+extern char g_1093a1a8;
+}
+CAI_CondOwner * CGeneric_NPC::vfunc580()
+{
+    return (CAI_CondOwner *)((int)&lifted::g_1093a1a8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a090 size=0x13e
 #include "CGeneric_NPC.h"
 #include "CCollisionProperty.h"
