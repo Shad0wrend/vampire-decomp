@@ -9171,6 +9171,19 @@ CTEEnergySplash *CTEEnergySplash::sub_10061250(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100612c0 size=0xb
+namespace lifted {
+extern char g_1044de24;
+int sub_100021d0();
+}
+struct CUnknown100612c0 { int sub_100612c0(); };
+int CUnknown100612c0::sub_100612c0()
+{
+    *(int *)this = (int)&lifted::g_1044de24;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100615e0 size=0xc4
 #include "SendProp.h"
 
