@@ -37,6 +37,17 @@ CPhysicsProp *CPhysicsProp::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101913c0 size=0x6
+#include "CPhysicsProp.h"
+namespace lifted {
+extern char g_1058d864;
+}
+datamap_t * CPhysicsProp::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1058d864);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191450 size=0x37
 #include "CPhysicsProp.h"
 #include "CBreakableProp.h"
