@@ -24513,6 +24513,16 @@ extern "C" CBaseLandmark *info_landmark()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7780 size=0x6
+namespace lifted {
+extern char g_106d0678;
+}
+int sub_100b7780()
+{
+    return (int)&lifted::g_106d0678;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7a00 size=0x4
 struct CUnknown100b7a00 { char * sub_100b7a00(); };
 char * CUnknown100b7a00::sub_100b7a00()
