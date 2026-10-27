@@ -190,6 +190,10 @@ public:
 	int m_field1568;	// 0x1568
 	char m_pad156c[0x1574 - 0x156c];
 	int m_field1574;
+	float m_f1578;	// 0x1578: gun position offset along the right vector
+	float m_f157c;	// 0x157c: along the forward vector
+	float m_f1580;	// 0x1580: along the up vector
+	Vector vfunc389(const Vector &vecSrc);	// "CBaseCombatCharacter::Weapon_ShootPosition": scope trace (entity name), the active weapon's "muzzleflash" attachment, else vecSrc plus the gun position offsets (+0x157c forward, +0x1578 right, +0x1580 up) along the angles of slot 221; returned by value
 	CBaseCombatCharacter *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100078c4();	// as in CPhysForce (transplant)
 public:
