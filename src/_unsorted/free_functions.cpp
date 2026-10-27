@@ -44768,6 +44768,16 @@ void sub_1013d0e0(float gamma, float texGamma, float brightness, int overbright,
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d380 size=0x6
+namespace lifted {
+extern char g_10717df8;
+}
+char sub_1013d380()
+{
+    return lifted::g_10717df8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d400 size=0x3f
 // TARGET: sub_1013d400
 float sub_1013d400(float a, float b, float c)
