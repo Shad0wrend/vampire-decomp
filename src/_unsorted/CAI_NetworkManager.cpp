@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102f4f50 size=0x6
+#include "CAI_NetworkManager.h"
+namespace lifted {
+extern char g_10610258;
+}
+datamap_t * CAI_NetworkManager::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10610258);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f5060 size=0x1e
 #include "CAI_NetworkManager.h"
 
