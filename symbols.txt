@@ -3633,6 +3633,7 @@
 0x1000b0cd func   ?vfunc0@CPhysicsShake@@UAEHPAXHMAAVVector@@1@Z CPhysicsShake::vfunc0
 0x1000b0d7 func   ?sub_10103170@CUnknown10103170@@QAEXPAX@Z CUnknown10103170::sub_10103170
 0x1000b0dc func   ?vfunc5@CItemGOHDiary@@QAEPAV1@I@Z CItemGOHDiary::vfunc5
+0x1000b0e1 func   ?sub_10075c00@CUnknown10075c00@@QAEPADXZ CUnknown10075c00::sub_10075c00
 0x1000b0eb func   ?sub_10157ca0@CRagdollPropSpecial@@QAEXPAVCBaseEntity@@@Z CRagdollPropSpecial::sub_10157ca0
 0x1000b0ff func   ?vfunc585@CCineNPC@@UAE_NXZ CCineNPC::vfunc585
 0x1000b104 func   ?vfunc14@CMoveHelperServer@@UAEPAV1@I@Z CMoveHelperServer::vfunc14
