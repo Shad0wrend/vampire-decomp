@@ -960,6 +960,7 @@
 0x100038eb func   ?sub_100603f0@CUnknown100603f0@@QAEHXZ CUnknown100603f0::sub_100603f0
 0x100038fa func   ?sub_1005df40@@YAXXZ sub_1005df40
 0x100038ff func   ?sub_10235ea0@@YAHXZ sub_10235ea0
+0x10003904 func   ?vfunc29@CGameRules@@UAEXPAX@Z CGameRules::vfunc29
 0x10003922 func   _item_g_bloodpack item_g_bloodpack
 0x10003927 func   ?sub_10198150@@YAPAXPAX0@Z sub_10198150
 0x1000392c func   ?sub_101727a0@@YAXPAUCPlayerVecSlotsX@@H@Z sub_101727a0
