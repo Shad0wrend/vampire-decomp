@@ -70861,6 +70861,13 @@ void __stdcall sub_101f1b50(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1b70 size=0x6
+int __stdcall sub_101f1b70(int a0, int a1)
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1be0 size=0x6c
 #include "CUnknown10227c90.h"
 #include "CUnknown101f0e50.h"
