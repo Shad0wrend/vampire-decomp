@@ -17217,6 +17217,19 @@ void sub_10086fb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087550 size=0xf
+namespace lifted {
+extern char g_10936b68;
+struct C1000bd9d { int sub_1000bd9d(); };
+int sub_10014ce5();
+}
+int sub_10087550()
+{
+    lifted::sub_10014ce5();
+    return ((lifted::C1000bd9d *)((int)&lifted::g_10936b68))->sub_1000bd9d();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087fb0 size=0x12a
 #include "CBaseEntity.h"
 #include "CUnknown1070b22c.h"
