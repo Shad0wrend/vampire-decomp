@@ -5081,6 +5081,7 @@
 0x1000f05b func   ?sub_100b5340@CBaseEntity@@QAEXII@Z CBaseEntity::sub_100b5340
 0x1000f065 func   ?sub_1015dc60@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_1015dc60
 0x1000f074 func   ?sub_100ce210@CEventQueue@@QAEXPAUCEQEvent@@@Z CEventQueue::sub_100ce210
+0x1000f08d func   ?sub_102d99b0@@YGXHH@Z sub_102d99b0
 0x1000f092 func   ?sub_10094dc0@CBaseAnimating@@QAEMM@Z CBaseAnimating::sub_10094dc0
 0x1000f0a6 func   ??1CVStatInfo_t@@QAE@XZ CVStatInfo_t::~CVStatInfo_t
 0x1000f0ba func   ?sub_102697b0@@YIXPAUDeathThinkView@@@Z sub_102697b0

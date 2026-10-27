@@ -98556,6 +98556,12 @@ extern "C" CBaseEntity *intersting_place()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d99b0 size=0x3
+void __stdcall sub_102d99b0(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d9eb0 size=0x1
 void sub_102d9eb0()
 {
