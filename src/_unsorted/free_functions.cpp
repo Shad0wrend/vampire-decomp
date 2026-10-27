@@ -14503,6 +14503,14 @@ int __stdcall sub_1007d2b0(float a, float b, float c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007dfa0 size=0x4
+struct CUnknown1007dfa0 { float sub_1007dfa0(); };
+float CUnknown1007dfa0::sub_1007dfa0()
+{
+    return *(float *)((char *)this + 0x7c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfc0 size=0xa
 struct CUnknown1007dfc0 { char p[0x78]; int a; void sub_1007dfc0(int v); };
 // TARGET: CUnknown1007dfc0::sub_1007dfc0
