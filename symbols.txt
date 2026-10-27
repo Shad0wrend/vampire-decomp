@@ -6043,6 +6043,7 @@
 0x10012233 func   ?vfunc19@CServerGameDLL@@UAEXPAX@Z CServerGameDLL::vfunc19
 0x10012238 func   ?vfunc3@CTEInspectionFX@@UAEXPBM0@Z CTEInspectionFX::vfunc3
 0x10012242 func   ?vfunc125@CBaseEntity@@UAEXXZ CBaseEntity::vfunc125
+0x10012247 func   ?sub_1019efb0@CRopeKeyframe@@QAEXXZ CRopeKeyframe::sub_1019efb0
 0x10012260 func   ?sub_1033e960@@YAXXZ sub_1033e960
 0x10012265 func   ?vfunc39@CPropKeypad@@QAEXPAVCBasePlayer@@@Z CPropKeypad::vfunc39
 0x1001226a func   ?sub_10041c80@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_10041c80

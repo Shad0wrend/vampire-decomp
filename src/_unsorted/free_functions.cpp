@@ -55114,6 +55114,55 @@ bool CRopeKeyframe::sub_1019ee40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019efb0 size=0x198
+#include "CRopeKeyframe.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+
+struct S1019efb0Globals
+{
+	float m_pad[3];
+	float curtime;
+};
+extern S1019efb0Globals *g_1070b228;
+void sub_101cd940(CBaseEntity *pEntity);
+
+void CRopeKeyframe::sub_1019efb0()
+{
+	if (m_flRemoveTime480 != 0.0f && m_flRemoveTime480 < g_1070b228->curtime) {
+		sub_101cd940(this);
+		return;
+	}
+	sub_1019e8b0(0);
+	m_flNextThink = g_1070b228->curtime + 0.2f;
+	CBaseEntity *pEnts[2];
+	pEnts[0] = (CBaseEntity *)EHandle_Get(m_hStartPoint);
+	pEnts[1] = (CBaseEntity *)EHandle_Get(m_hEndPoint);
+	if ((m_nRopeFlags & 1) && pEnts[0] && pEnts[0]->m_pEdict2e0 && pEnts[1] && pEnts[1]->m_pEdict2e0) {
+		const Vector *pEnd = ((CEntityVSlots *)pEnts[1])->slot217();
+		const Vector *pStart = ((CEntityVSlots *)pEnts[0])->slot217();
+		float dx = pStart->x - pEnd->x;
+		float dy = pStart->y - pEnd->y;
+		float dz = pStart->z - pEnd->z;
+		float flDist = FastSqrt(dx * dx + (dy * dy + dz * dz));
+		int nSlack = (int)flDist + m_n45c;
+		if (nSlack != m_n474) {
+			m_n474 = nSlack;
+			m_bChanged1b1 = 1;
+		}
+	}
+	bool *pValid[2] = { &m_bStartPointValid, &m_bEndPointValid };
+	for (int i = 0; i < 2; i++) {
+		bool bValid = pEnts[i] != 0;
+		if (*pValid[i] != bValid) {
+			*pValid[i] = bValid;
+			m_bChanged1b1 = 1;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f1f0 size=0x27
 // TARGET: CRopeKeyframe::sub_1019f1f0
 #include "CRopeKeyframe.h"
