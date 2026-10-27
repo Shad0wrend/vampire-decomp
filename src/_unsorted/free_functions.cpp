@@ -122534,6 +122534,17 @@ void CNPC_VTzimisce::sub_103bf440()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bf560 size=0xe
+namespace lifted {
+struct C1000e6e7 { int sub_1000e6e7(int); };
+}
+struct CUnknown103bf560 { int sub_103bf560(); };
+int CUnknown103bf560::sub_103bf560()
+{
+    return ((lifted::C1000e6e7 *)(*(int *)((char *)this + 0x5d44)))->sub_1000e6e7(-1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bfa50 size=0x166
 #include "CNPC_VTzimisce.h"
 #include "CEntityVSlots.h"
