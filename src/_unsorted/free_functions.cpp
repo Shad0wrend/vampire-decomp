@@ -56458,6 +56458,16 @@ void CRopeKeyframe::sub_1019ebc0(int a, int b, CRopeKeyframe *pStop, int x, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019ee20 size=0x8
+namespace lifted {
+int sub_10005371();
+}
+int __stdcall sub_1019ee20(int a0)
+{
+    return lifted::sub_10005371();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019ee40 size=0x113
 #include "CBaseEntity.h"
 #include "CRopeKeyframe.h"
