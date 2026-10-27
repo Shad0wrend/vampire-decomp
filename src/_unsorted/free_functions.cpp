@@ -53030,6 +53030,16 @@ int sub_10195390()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101953b0 size=0x6
+namespace lifted {
+extern int g_1072b374;
+}
+int sub_101953b0()
+{
+    return lifted::g_1072b374;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101953d0 size=0xf5
 struct PyObj { int refcnt; void *type; int pad; void *dict; };
 struct PyEnt { char pad[0x378]; PyObj *pyEntity; };
