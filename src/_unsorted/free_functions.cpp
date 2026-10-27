@@ -73246,6 +73246,18 @@ void CUnknown101f3d80::sub_101f3d80(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f4150 size=0xe
+struct CUnknown101f4150 { int sub_101f4150(); };
+int CUnknown101f4150::sub_101f4150()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 4) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f4170 size=0x25
 #include "CUnknown101f40f0.h"
 #include "CUnknown101f5150.h"
