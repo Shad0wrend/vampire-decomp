@@ -67922,6 +67922,15 @@ void CBitfieldSet::sub_101da9b0(unsigned int bit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101da9e0 size=0x18
+struct CUnknown101da9e0 { void * sub_101da9e0(int); };
+void * CUnknown101da9e0::sub_101da9e0(int a0)
+{
+    *(int *)this = (*(int *)this) & (~(1 << a0));
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101daa10 size=0x89
 #include "CUnknown101daec0.h"
 #include "CStatDefault3List.h"
