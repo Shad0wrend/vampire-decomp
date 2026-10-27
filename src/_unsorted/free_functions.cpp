@@ -106120,6 +106120,12 @@ CGlobalEntityList_Ent *__fastcall sub_103166b0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316700 size=0x3
+void __stdcall sub_10316700(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103167f0 size=0x72
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 struct Ent {
