@@ -99367,6 +99367,14 @@ void __fastcall sub_102dcec0(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dcf50 size=0x3
+struct CUnknown102dcf50 { void * sub_102dcf50(); };
+void * CUnknown102dcf50::sub_102dcf50()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dcf70 size=0xeb
 #include "CUnknown102dcf70.h"
 extern "C++" __declspec(dllimport) void DevWarning(const char *fmt, ...);
