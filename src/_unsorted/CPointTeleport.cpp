@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1018d9b0 size=0x6
+#include "CPointTeleport.h"
+namespace lifted {
+extern char g_1058cbf8;
+}
+datamap_t * CPointTeleport::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1058cbf8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018da40 size=0x154
 #include "CPointTeleport.h"
 #include "CEHandleGet.h"
