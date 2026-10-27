@@ -42882,6 +42882,53 @@ extern "C" CBaseEntity *prop_clockhand()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012dbd0 size=0x1a6
+#include "CBaseEntity.h"
+#include "CPropClockHand.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "engineserver.h"
+#include "globalvars.h"
+
+extern Vector g_1070d9d0;
+
+struct CClockSourceView {
+	char m_pad0000[0x468];
+	float m_f468;
+	char m_pad46c[0x480 - 0x46c];
+	float m_f480;
+};
+
+static inline float anglemod(float a)
+{
+	a = (360.0f / 65536) * ((int)(a * (65536.0f / 360.0f)) & 65535);
+	return a;
+}
+
+void CPropClockHand::sub_1012dbd0()
+{
+	if (m_nTick748 == engine->vfunc120())
+		return;
+	m_nTick748 = engine->vfunc120();
+	float flTime;
+	if (m_hSource750.Get()) {
+		CClockSourceView *pSource = (CClockSourceView *)m_hSource750.Get();
+		flTime = pSource->m_f468 - pSource->m_f480;
+	} else {
+		flTime = gpGlobals->curtime - m_flSpawnTime;
+	}
+	if (m_nMode75c == 2)
+		flTime *= 0.00027777778f;
+	else if (m_nMode75c == 1)
+		flTime *= 0.016666668f;
+	m_flAngle = g_1070d9d0;
+	m_flAngle[m_iAxis] = (360.0f / (float)m_nDivisor760) * flTime;
+	m_flAngle[m_iAxis] = anglemod(m_flAngle[m_iAxis]);
+	Vector vecAngles = m_flAngle + m_vecBaseAngle;
+	((CEntityVSlots *)this)->slot218(&vecAngles);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e150 size=0x129
 #include "SendProp.h"
 
