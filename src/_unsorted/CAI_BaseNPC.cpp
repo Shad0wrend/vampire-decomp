@@ -477,6 +477,82 @@ char CAI_BaseNPC::vfunc562(int a, int b, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026fcf0 size=0x195
+#include "CAI_BaseNPC.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CGameTrace.h"
+
+struct CNPCOriginView {
+	char m_pad0000[0x184];
+	Vector m_vecOrigin184;	// 0x184
+};
+
+struct CNPCTargetView {
+	char m_pad0000[0x9c];
+	int m_n9c;	// 0x9c
+};
+
+class CEngineTraceView {
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void TraceRay(Ray_t *pRay, int mask, CTraceFilterSimple *pFilter, CGameTrace *pTrace);	// slot 4
+};
+
+class CUnknown10738964 {
+public:
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad04[0x2c - 4];
+	int m_n2c;
+};
+
+class CUnknown10924a6c {
+public:
+	virtual void v0();
+	virtual void vfunc1();
+};
+
+extern CEngineTraceView *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+extern CUnknown10924a6c *g_10924a6c;
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int bNoDepth, float flDuration);
+
+char CAI_BaseNPC::vfunc573(const Vector *pOffset, const float *pEnd, char bSetCondition)
+{
+	Vector vecSum;
+	VectorAdd(((CNPCOriginView *)this)->m_vecOrigin184, *pOffset, vecSum);
+	Vector vecStart = vecSum;
+	Ray_t ray;
+	ray.sub_1004f7a0(&vecStart.x, pEnd);
+	CTraceFilterSimple filter(this, 0);
+	CGameTrace tr;
+	g_1070b254->TraceRay(&ray, 0x46004003, &filter, &tr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570(&tr.m_startpos[0], &tr.m_endpos[0], 0xff, 0, 0, 1, -1.0f);
+	if (tr.m_fraction == 1.0)
+		return 1;
+	CBaseEntity *pEnt = tr.m_pEnt;
+	if ((int)pEnt == vfunc167())
+		return 1;
+	if (pEnt && ((CNPCTargetView *)pEnt)->m_n9c) {
+		int r = vfunc404(pEnt);
+		if (r == 1)
+			return r;
+		if (bSetCondition) {
+			g_10924a6c->vfunc1();
+			sub_10269a20(0x63);
+			return 0;
+		}
+	} else if (bSetCondition) {
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x66);
+		sub_10270aa0(pEnt);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10272400 size=0x6e
 #include "CAI_BaseNPC.h"
 
