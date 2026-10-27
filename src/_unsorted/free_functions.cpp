@@ -68565,6 +68565,17 @@ bool CUnknown101dce30::sub_101dce30(CUnknown101dc5a0Keys *pKeys, const char *psz
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dd3a0 size=0x10
+namespace lifted {
+struct C10011e8c { int sub_10011e8c(int); };
+}
+struct CUnknown101dd3a0 { int sub_101dd3a0(int, int); };
+int CUnknown101dd3a0::sub_101dd3a0(int a0, int a1)
+{
+    return ((lifted::C10011e8c *)(this + 0xc))->sub_10011e8c(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dd3c0 size=0x90
 #include "CUnknown101e0f00.h"
 
