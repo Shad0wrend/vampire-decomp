@@ -55769,6 +55769,12 @@ int CUnit101a7540::sub_101a7540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a75e0 size=0x1
+void sub_101a75e0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7760 size=0x2e
 // TARGET: CCineNPC::sub_101a7760
 #include "CAI_BaseNPC.h"
