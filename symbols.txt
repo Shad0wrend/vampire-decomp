@@ -5733,6 +5733,7 @@
 0x1000faa1 func   ??0CUtlBuffer@@QAE@HHH@Z CUtlBuffer::CUtlBuffer
 0x1000faab func   ?sub_103a6f70@TLeader@@QAEXHH@Z TLeader::sub_103a6f70
 0x1000fabf func   ?vfunc2@CSave@@UAEXPAXPBD@Z CSave::vfunc2
+0x1000fac4 func   ?vfunc82@CPhysicsPropContested@@UAEPAUdatamap_t@@XZ CPhysicsPropContested::vfunc82
 0x1000fac9 func   ??0CUnknown10076da0TimingTag@@QAE@ABU0@@Z CUnknown10076da0TimingTag::CUnknown10076da0TimingTag
 0x1000face func   ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z CBaseEntity::sub_100ab450
 0x1000fad3 func   ?sub_102a9570@@YIMPAVVector@@H0@Z sub_102a9570

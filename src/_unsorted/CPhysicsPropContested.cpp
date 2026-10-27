@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101929d0 size=0x6
+#include "CPhysicsPropContested.h"
+namespace lifted {
+extern char g_1058da80;
+}
+datamap_t * CPhysicsPropContested::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1058da80);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192ab0 size=0x39
 #include "CPhysicsPropContested.h"
 #include "IPhysicsObject.h"
