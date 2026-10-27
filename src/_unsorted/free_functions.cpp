@@ -53020,6 +53020,16 @@ bool CUtlRBTree12::sub_10194e40(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10195390 size=0x6
+namespace lifted {
+extern int g_1072b370;
+}
+int sub_10195390()
+{
+    return lifted::g_1072b370;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101953d0 size=0xf5
 struct PyObj { int refcnt; void *type; int pad; void *dict; };
 struct PyEnt { char pad[0x378]; PyObj *pyEntity; };
