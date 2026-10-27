@@ -43,6 +43,14 @@ SSave *SSave::sub_1019f980(unsigned char flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fa10 size=0x7
+#include "CSave.h"
+int CSave::vfunc0()
+{
+    return *(int *)((char *)(*(int *)((char *)this + 0x18)) + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fa80 size=0x14
 #include "CSave.h"
 
