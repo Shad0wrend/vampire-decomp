@@ -180,7 +180,10 @@ public:
 	char m_flag1474;
 	char m_pad1475[0x1488 - 0x1475];
 	float m_flFrenzyRate;	// 0x1488
-	char m_pad148c[0x1568 - 0x148c];
+	bool sub_103395f0();	// "CBaseCombatCharacter::CanFeed": scope trace (entity name); needs sub_10337f30, then true without a live target (handle +0x149c), else true when the target's stat list 0 gives a non-zero bounded stat 12 and the target's slot 158 holds
+	char m_pad148c[0x149c - 0x148c];
+	EHANDLE m_h149c;	// 0x149c: the feeding target
+	char m_pad14a0[0x1568 - 0x14a0];
 	int m_field1568;	// 0x1568
 	char m_pad156c[0x1574 - 0x156c];
 	int m_field1574;
