@@ -75,6 +75,12 @@ void CRagdollProp::vfunc270(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155440 size=0x3
+void CRagdollProp::vfunc271(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155ae0 size=0xf1
 #include "CRagdollProp.h"
 #include <string.h>
