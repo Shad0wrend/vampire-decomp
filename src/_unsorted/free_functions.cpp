@@ -135650,6 +135650,16 @@ int __stdcall sub_1042f110(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042f130 size=0x8
+namespace lifted {
+int sub_10010dde();
+}
+int __stdcall sub_1042f130(int a0)
+{
+    return lifted::sub_10010dde();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042fb20 size=0x22
 extern int g_106af554;
 extern int g_106af5dc;
