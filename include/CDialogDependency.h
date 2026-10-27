@@ -2,6 +2,9 @@
 // Only the members decompiled code needs.
 #pragma once
 
+class CDialog;
+class CBaseEntity;
+
 struct CDialogDependencyBlock	// the 16 byte block at +4 (class not known yet)
 {
 	void sub_10230ed0();	// called through the stub at 0x1001067c by the constructor
