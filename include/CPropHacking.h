@@ -51,6 +51,11 @@ public:
 	void sub_1021a5b0(CBaseEntity *pPlayer);	// slot 39 "CPropHacking::OnUse"-like (CBaseTerminal::vfunc39 override, ret 4): sub_1021a1c0, the terminal base (sub_102181a0), sub_1021a2f0, ThinkSet(0, 0, 0), sub_1021aca0, sub_1021b410, makes the player a camera cinematic watching this terminal (sub_10070470 "Hacking", then CBasePlayer::sub_1017cef0), then the feat list default (id 2) value for the player (CVFeatSet::Find(2)->sub_101e56e0)
 	void sub_102181a0(CBaseEntity *pPlayer);	// CBaseTerminal::vfunc39 (stub 0x1000f515), called directly
 	void sub_1021aca0();	// stub 0x10002fae
+	void sub_1021bd80();	// stub 0x10001df7, run first by the screen refresh
+	char sub_1021a4b0(int record);	// stub 0x1000a6e6: a test on the record, asked by the screen refresh for each listed record
+	void sub_10218b90();	// stub 0x100068c0
+	void sub_10218ca0();	// stub 0x100156c7
+	void sub_10219120();	// stub 0x1000aa1f, tail called by the screen refresh
 	void sub_1021c040();	// stub 0x10014f5b / 0x1021c040: tail of the sub_1021c000 and sub_1021b9c0 paths (the screen refresh), called with this
 	void sub_1021c000();	// stub-less member: m_n0a0c = min(m_n0a04 / 10, m_n0a0c + 1), then sub_1021c040()
 
