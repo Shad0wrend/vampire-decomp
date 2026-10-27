@@ -113790,6 +113790,16 @@ int sub_1033d990()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d9b0 size=0xb
+namespace lifted {
+int __stdcall sub_10012b61(int);
+}
+int sub_1033d9b0()
+{
+    return lifted::sub_10012b61(0x200);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d9d0 size=0x107
 #include "ScopeTrace.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
