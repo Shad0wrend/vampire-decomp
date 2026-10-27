@@ -80498,6 +80498,16 @@ void CPropHaunted::sub_10214300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10214700 size=0x8
+namespace lifted {
+int sub_100122f6();
+}
+int __stdcall sub_10214700(int a0)
+{
+    return lifted::sub_100122f6();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10214780 size=0x11f
 #include "CPropHaunted.h"
 #include "CEHandleGet.h"
