@@ -59934,6 +59934,14 @@ struct CUnknown101c2a10 { char p[0x40]; int a; void sub_101c2a10(int v); };
 void CUnknown101c2a10::sub_101c2a10(int v) { a = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101c2a30 size=0x4
+struct CUnknown101c2a30 { int sub_101c2a30(); };
+int CUnknown101c2a30::sub_101c2a30()
+{
+    return *(int *)((char *)this + 0x40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2a50 size=0xa
 struct CUnknown101c2a50 { char p[0x44]; int a; void sub_101c2a50(int v); };
 // TARGET: CUnknown101c2a50::sub_101c2a50
