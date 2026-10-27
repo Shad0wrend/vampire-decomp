@@ -38,7 +38,12 @@ public:
 	int m_n474;	// 0x0474
 	int m_n478;	// 0x0478: set to 1 by Create
 	char m_bCreatedFromMapFile;	// 0x047c
-	char m_padRope047d[0x490 - 0x47d];
+	char m_padRope047d[0x480 - 0x47d];
+	float m_flRemoveTime480;	// 0x0480: the rope removes itself when this time (when set) has passed
+	char m_padRope0484[0x48c - 0x484];
+	bool m_bStartPointValid;	// 0x048c
+	bool m_bEndPointValid;	// 0x048d
+	char m_padRope048e[0x490 - 0x48e];
 	unsigned int m_hStartPoint;	// 0x0490
 	unsigned int m_hEndPoint;	// 0x0494
 	short m_iStartAttachment;	// 0x0498
