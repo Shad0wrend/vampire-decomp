@@ -87498,6 +87498,14 @@ int sub_102456b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245700 size=0x7
+struct CUnknown10245700 { int sub_10245700(); };
+int CUnknown10245700::sub_10245700()
+{
+    return *(int *)((char *)(*(int *)((char *)this + 4)) + 0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245720 size=0x38
 struct CUnknown10245720Node
 {

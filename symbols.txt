@@ -7055,6 +7055,7 @@
 0x10013cff func   ?sub_1019f980@SSave@@QAEPAU1@E@Z SSave::sub_1019f980
 0x10013d09 func   ?sub_1015d680@CBasePlayer@@QAEPAVCBaseEntity@@H@Z CBasePlayer::sub_1015d680
 0x10013d0e func   ??0CVariantCopy@@QAE@ABU0@@Z CVariantCopy::CVariantCopy
+0x10013d13 func   ?sub_10245700@CUnknown10245700@@QAEHXZ CUnknown10245700::sub_10245700
 0x10013d18 func   ?sub_100b04d0@@YAXXZ sub_100b04d0
 0x10013d1d func   ?vfunc4@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc4
 0x10013d27 func   ?sub_10138cc0@@YAXABUS10138cc0Mat3@@0AAU1@@Z sub_10138cc0
