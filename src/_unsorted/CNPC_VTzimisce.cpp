@@ -331,6 +331,58 @@ void CNPC_VTzimisce::vfunc487()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ba020 size=0x199
+#include <math.h>
+#include "CNPC_VTzimisce.h"
+
+#define S103BA_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S103BA_V100(p) S103BA_V10(p##0) S103BA_V10(p##1) S103BA_V10(p##2) S103BA_V10(p##3) S103BA_V10(p##4) \
+	S103BA_V10(p##5) S103BA_V10(p##6) S103BA_V10(p##7) S103BA_V10(p##8) S103BA_V10(p##9)
+
+struct S103ba020Slots
+{
+	S103BA_V100(a0) S103BA_V100(a1)
+	S103BA_V10(b0) S103BA_V10(b1) S103BA_V10(b2) S103BA_V10(b3)
+	virtual void c0(); virtual void c1();
+	virtual float GetSpeed();	// slot 242
+};
+
+struct S103ba020View
+{
+	char m_pad0000[0xfec];
+	int m_nActivity;	// 0xfec
+	char m_pad0ff0[0x5d8c - 0xff0];
+	unsigned int m_nFlags;	// 0x5d8c
+};
+
+extern CNPC_VTzimisceConVar *g_1093c9fc;
+extern float g_104454c0;
+
+float CNPC_VTzimisce::vfunc516()
+{
+	S103ba020View *pView = (S103ba020View *)this;
+	if (pView->m_nFlags & 0x2000) {
+		float flSpeed = ((S103ba020Slots *)this)->GetSpeed();
+		float flScale = g_1093c9fc->vfunc1() ? 0.0f : g_1093c9fc->m_f28;
+		float flResult = fabs(flSpeed) * flScale;
+		if (flResult > g_104454c0)
+			return flResult;
+		return g_104454c0;
+	}
+	switch (pView->m_nActivity) {
+	case 1:
+	case 0xfc:
+	case 0xfd:
+		return 5.0f;
+	case 0x13:
+		return 30.0f;
+	default:
+		return 11.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ba640 size=0xf9
 #include "CNPC_VTzimisce.h"
 #include "CUnknown1027d990.h"
