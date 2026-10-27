@@ -19,7 +19,7 @@ public:
 	virtual void vfunc3();
 	virtual void vfunc4();
 	virtual void vfunc5();
-	virtual void vfunc6(int edict, int clientIndex);	// "ClientSettingsChanged": logs a name change of the player entity of the edict and stores the new name
+	virtual void vfunc6(CServerGameClients_Edict *pEdict, int clientIndex);	// "ClientSettingsChanged": logs a name change of the player entity of the edict and stores the new name
 	virtual void vfunc7(int edictA, int edictB, int c);	// takes two edicts (edict +0x40 is the networkable, slot 4 gives the entity); a position from entity A's slot 193 (else B's, after its slot 430) is passed to every entity in the global list at 0x10709680
 	virtual void vfunc8();
 	virtual void vfunc9();
