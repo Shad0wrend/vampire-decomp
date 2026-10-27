@@ -16,6 +16,38 @@ void CHudEntity::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ebb0 size=0x1b3
+#include "CHudEntity.h"
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *pDest, unsigned int maxLen, const char *pFormat, ...);
+void sub_101434b0(int nEntity, int nLine, const char *pszText, int nDuration, int r, int g, int b, int a);
+
+inline int ENTINDEX(int pEdict)
+{
+	return engine->vfunc35(pEdict);
+}
+
+int CHudEntity::vfunc124()
+{
+	char buf[256];
+	int line = sub_100a02b0();
+	if (m_bDebugOverlays224 & 1) {
+		Q_snprintf(buf, 255, "Frame: %i", m_nFrame45c);
+		sub_101434b0(ENTINDEX(m_nEdict2e0), line, buf, 0, 255, 255, 255, 255);
+		line++;
+		Q_snprintf(buf, 255, "Pos: %5.2f %5.2f", m_flX460, m_flY464);
+		sub_101434b0(ENTINDEX(m_nEdict2e0), line, buf, 0, 255, 255, 255, 255);
+		line++;
+		Q_snprintf(buf, 255, "XSize: %5.2f %5.2f", m_flW468, m_flH46c);
+		sub_101434b0(ENTINDEX(m_nEdict2e0), line, buf, 0, 255, 255, 255, 255);
+		line++;
+		Q_snprintf(buf, 255, "Color: %i %i %i", m_r1a0, m_g1a1, m_b1a2);
+		sub_101434b0(ENTINDEX(m_nEdict2e0), line, buf, 0, 255, 255, 255, 255);
+		line++;
+	}
+	return line;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ede0 size=0x1e
 #include "CHudEntity.h"
 
