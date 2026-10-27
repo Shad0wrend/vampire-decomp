@@ -117751,6 +117751,51 @@ CEntityVSlots *CNPC_VSheriffMan::sub_103b0ab0(char bUseSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b10f0 size=0x199
+#include "CNPC_VSheriffMan.h"
+#include "CLogicRelay.h"
+#include "CBaseCombatCharacter.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "inputdata_t.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList g_106eb5d8;
+void *sub_101cda50();
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int isReference);
+extern char g_10538764[];	// CBaseEntity type descriptor
+extern char g_1057930c[];	// CLogicRelay type descriptor
+extern char g_106511cc[];	// CNPC_VSheriffMan type descriptor
+
+void CNPC_VSheriffMan::sub_103b10f0()
+{
+	ScopeTrace trace("CNPC_VSheriffMan::KillSheriff", g_106b8540);
+	CBaseEntity *pRelayEnt = g_106eb5d8.sub_100f7770(0, "logic_zap_player", 0, 0);
+	CLogicRelay *pRelay = (CLogicRelay *)__RTDynamicCast(pRelayEnt, 0, g_10538764, g_1057930c, 0);
+	CBaseEntity *pSheriffEnt = g_106eb5d8.sub_100f7770(0, "sheriff", 0, 0);
+	CNPC_VSheriffMan *pSheriff = (CNPC_VSheriffMan *)__RTDynamicCast(pSheriffEnt, 0, g_10538764, g_106511cc, 0);
+	if (pRelay && pSheriff) {
+		inputdata_t data;
+		data.value.iValue = 0;
+		data.value.eVal = 0xffffffff;
+		data.value.fieldType = 0;
+		data.pActivator = sub_101cda50();
+		pRelay->sub_101364e0(&data);
+	}
+	CBaseEntity *pWeapon = (CBaseEntity *)((CBaseCombatCharacter *)this)->sub_1032e7b0();
+	if (pWeapon) {
+		((CEntityVSlots *)pWeapon)->slot66();
+		pWeapon->m_nEffectFlags |= 0x20;
+		{
+			ScopeTrace trace2("CBaseEntity::AddSolidFlags", pWeapon->m_name26c ? pWeapon->m_name26c : g_106b8540);
+			((CCollisionProperty *)((char *)pWeapon + 0x270))->AddSolidFlags(4);
+		}
+		pWeapon->sub_100b3b00();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b1300 size=0x11c
 #include "CNPC_VAsianVampire.h"
 #include "CEntityVSlots.h"
