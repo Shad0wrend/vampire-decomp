@@ -104065,6 +104065,17 @@ struct CUnknown102ee600 { char pad[0x30]; CInner1000a704 *m_pInner; int sub_102e
 int CUnknown102ee600::sub_102ee600() { return m_pInner->sub_1000a704(); }
 // END FUNCTION
 
+// FUNCTION: 0x102ee620 size=0x8
+namespace lifted {
+struct C100113d8 { int sub_100113d8(); };
+}
+struct CUnknown102ee620 { int sub_102ee620(); };
+int CUnknown102ee620::sub_102ee620()
+{
+    return ((lifted::C100113d8 *)(*(int *)((char *)this + 0x30)))->sub_100113d8();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eeba0 size=0xa
 struct CUnknown102eeba0 { int p[6]; int a; void sub_102eeba0(int v); };
 // TARGET: CUnknown102eeba0::sub_102eeba0
