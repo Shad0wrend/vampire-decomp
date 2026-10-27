@@ -1329,6 +1329,16 @@ unsigned int CAI_BaseNPC::vfunc423()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280bb0 size=0x7
+namespace lifted {
+extern float g_1049949c;
+}
+float CAI_BaseNPC::vfunc516()
+{
+    return lifted::g_1049949c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10289d10 size=0x167
 #include "CAI_BaseNPC.h"
 #include "CAI_Motor.h"
