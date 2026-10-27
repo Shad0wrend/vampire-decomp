@@ -58233,6 +58233,17 @@ int CUnit101a7540::sub_101a7540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a75c0 size=0xf
+namespace lifted {
+extern char g_10015b68;
+int __stdcall sub_10007fe5(int, int, int);
+}
+int sub_101a75c0()
+{
+    return lifted::sub_10007fe5((int)&lifted::g_10015b68, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a75e0 size=0x1
 void sub_101a75e0()
 {
