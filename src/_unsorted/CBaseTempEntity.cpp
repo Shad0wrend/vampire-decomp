@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10050620 size=0x6
+namespace lifted {
+extern char g_106bdca0;
+}
+ServerClass * CBaseTempEntity::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106bdca0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050810 size=0x1e
 #include "CBaseTempEntity.h"
 
