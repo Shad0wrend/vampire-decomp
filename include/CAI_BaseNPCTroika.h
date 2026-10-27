@@ -217,9 +217,11 @@ public:
 	char m_b6495;
 	char m_pad6496[0x64bc - 0x6496];
 	int m_n64bc;
-	char m_pad64c0[0x64cc - 0x64c0];
+	char m_b64c0;
+	char m_pad64c1[0x64cc - 0x64c1];
 	float m_f64cc;
-	char m_pad64d0[0x6554 - 0x64d0];
+	char m_pad64d0[0x6550 - 0x64d0];
+	float m_f6550;	// 0x6550: the volume of the sound sub_102c2680 plays
 	unsigned int m_h6554;
 	char m_pad6558[0x65a8 - 0x6558];
 	struct CTakeDamageInfo *m_pDamageRecords;	// 0x65a8: the NPC's damage record vector (memory pointer), count at +0x65b4
