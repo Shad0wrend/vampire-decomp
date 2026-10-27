@@ -98034,6 +98034,18 @@ void CAI_BaseNPCTroika::sub_102b2730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5bb0 size=0x11
+namespace lifted {
+extern char g_1070d1b0;
+int __stdcall sub_100015dc(int, int, int);
+}
+char sub_102b5bb0()
+{
+    lifted::sub_100015dc((int)&lifted::g_1070d1b0, -1, 1);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5be0 size=0x3
 char sub_102b5be0()
 {
