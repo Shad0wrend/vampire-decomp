@@ -11,6 +11,21 @@ char CWeaponGravityGun::vfunc316(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014aa80 size=0x67
+#include "CWeaponGravityGun.h"
+#include "CEHandleGet.h"
+
+void *CWeaponGravityGun::vfunc285()
+{
+	unsigned int &h = *(unsigned int *)((char *)this + 0x918);
+	if (EHandle_Get(h)) {
+		unsigned int h2 = *(volatile unsigned int *)&h;
+		return EHandle_Get(h2);
+	}
+	return sub_1014a1b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ab10 size=0x9c
 #include "CWeaponGravityGun.h"
 
