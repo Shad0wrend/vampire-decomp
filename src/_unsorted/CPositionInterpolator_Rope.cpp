@@ -16,3 +16,14 @@ CPositionInterpolator_Rope::CPositionInterpolator_Rope() : m_flSlack(0), m_bChan
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012fd40 size=0x8
+#include "CPositionInterpolator_Rope.h"
+namespace lifted {
+int sub_10430964(int);
+}
+void CPositionInterpolator_Rope::vfunc0()
+{
+    lifted::sub_10430964((int)this);
+}
+// END FUNCTION
