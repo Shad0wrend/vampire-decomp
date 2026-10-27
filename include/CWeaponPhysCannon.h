@@ -25,12 +25,30 @@ public:
 	void sub_1040dde0(CBaseEntity *pEnt, void *pPlayer, int a);	// stub 0x10007adb, called when picking an object up
 	CUnknown101bc140 *sub_104112d0();	// the hold sound, created on the first call and cached in +0x968
 
-	char m_pad0898[0x911 - 0x898];
+	CWeaponPhysCannon();	// 0x1040d9e0: base constructor, fourteen handles cleared to -1, the grab controller, then the plain fields
+
+	char m_pad0898[0x910 - 0x898];
+	char m_b910;	// 0x910
 	char m_bGrab911;	// 0x911
-	char m_pad0912[0x928 - 0x912];
+	char m_pad0912[0x918 - 0x912];
+	int m_n918;	// 0x918
+	char m_pad091c[0x928 - 0x91c];
 	float m_flGlow928;	// 0x928: the glow value, eased towards m_flGlowTarget92c
 	float m_flGlowTarget92c;	// 0x92c
-	char m_pad0930[0x968 - 0x930];
+	EHANDLE m_h930;	// 0x930 .. 0x967: fourteen handles
+	EHANDLE m_h934;
+	EHANDLE m_h938;
+	EHANDLE m_h93c;
+	EHANDLE m_h940;
+	EHANDLE m_h944;
+	EHANDLE m_h948;
+	EHANDLE m_h94c;
+	EHANDLE m_h950;
+	EHANDLE m_h954;
+	EHANDLE m_h958;
+	EHANDLE m_h95c;
+	EHANDLE m_h960;
+	EHANDLE m_h964;
 	CUnknown101bc140 *m_pHoldSound;	// 0x968: "Weapon_PhysCannon.HoldSound", cached
 	CUnknown1040cb60 m_grab;	// 0x96c: the grab controller, its entity handle is at +0xab8
 };
