@@ -51655,6 +51655,15 @@ void __fastcall sub_10181600(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10181620 size=0x15
+struct CUnknown10181620 { int sub_10181620(int); };
+int CUnknown10181620::sub_10181620(int a0)
+{
+    *(int *)((char *)this + 0x1d60) = (*(int *)((char *)this + 0x1d60)) ^ a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101816c0 size=0x8f
 #include "CBasePlayer.h"
 
