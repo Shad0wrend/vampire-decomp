@@ -165,7 +165,9 @@ public:
 #include "CBaseCombatCharacter_ext.h"
 #include "CBaseCombatCharacter_ext2.h"
 
-	char m_pad03e0[0x1064 - 0x3e0];
+	char m_pad03e0[0xff8 - 0x3e0];
+	EHANDLE m_hFireEmitters[18];	// 0xff8: the body fire emitters, one per hit box
+	char m_pad1040[0x1064 - 0x1040];
 	float m_flPoseValue[2];	// 0x1064: last pose parameter values set through slot 346
 	int m_nPoseIndex[2];	// 0x106c: the pose parameter indices they belong to
 	char m_pad1074[0x1084 - 0x1074];
