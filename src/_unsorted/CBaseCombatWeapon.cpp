@@ -650,6 +650,13 @@ void CBaseCombatWeapon::vfunc332()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10254fd0 size=0x6
+int CBaseCombatWeapon::vfunc328()
+{
+    return 0xbc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10255030 size=0x8
 #include "CBaseCombatWeapon.h"
 
