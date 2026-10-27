@@ -2,6 +2,7 @@
 #pragma once
 
 #include "ehandle.h"
+#include "globalvars.h"
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CAI_Hint.h"
