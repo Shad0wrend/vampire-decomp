@@ -115284,6 +115284,13 @@ char sub_10373620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103747c0 size=0x5
+char __stdcall sub_103747c0(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10374f40 size=0x98
 #include "CBaseEntity.h"
 #include "CNPC_VDog.h"

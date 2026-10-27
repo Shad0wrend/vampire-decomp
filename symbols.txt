@@ -3657,6 +3657,7 @@
 0x1000b05f func   ?sub_101f95d0@@YAXH@Z sub_101f95d0
 0x1000b069 func   ?sub_101852f0@@YIXPAH@Z sub_101852f0
 0x1000b06e func   ?vfunc103@CFuncIllusionary@@UAEXXZ CFuncIllusionary::vfunc103
+0x1000b078 func   ?sub_103747c0@@YGDH@Z sub_103747c0
 0x1000b082 func   ?vfunc393@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc393
 0x1000b087 func   ?sub_101fcf50@CVStatAction_t@@QAE_NXZ CVStatAction_t::sub_101fcf50
 0x1000b08c func   ?sub_101b5290@CUnit101b5290@@QAEPADH@Z CUnit101b5290::sub_101b5290
