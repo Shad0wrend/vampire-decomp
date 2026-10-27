@@ -40214,6 +40214,19 @@ int sub_10114820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114aa0 size=0xb
+namespace lifted {
+extern char g_104612ac;
+int sub_1000cb8a();
+}
+struct CUnknown10114aa0 { int sub_10114aa0(); };
+int CUnknown10114aa0::sub_10114aa0()
+{
+    *(int *)this = (int)&lifted::g_104612ac;
+    return lifted::sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114f20 size=0x93
 #include "SendTable.h"
 
