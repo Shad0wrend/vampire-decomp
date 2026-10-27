@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1018e1a0 size=0x1
+#include "CActivityCopyProp.h"
+void CActivityCopyProp::vfunc104()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e210 size=0x1e
 #include "CActivityCopyProp.h"
 
