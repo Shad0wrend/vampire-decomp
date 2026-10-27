@@ -172,7 +172,8 @@ public:
 	char m_pad1040[0x1064 - 0x1040];
 	float m_flPoseValue[2];	// 0x1064: last pose parameter values set through slot 346
 	int m_nPoseIndex[2];	// 0x106c: the pose parameter indices they belong to
-	char m_pad1074[0x1084 - 0x1074];
+	Vector m_vecHeadAxis1074;	// 0x1074: the head bone's axis (0, -1, 0) rotated by the bone's pose-to-bone matrix
+	int m_nHeadBone1080;	// 0x1080: the Bip01_Head bone index
 	int m_nStealthModifier;	// 0x1084
 	char m_pad1088[0x10d4 - 0x1088];
 	char m_b10d4;	// camera target flag
