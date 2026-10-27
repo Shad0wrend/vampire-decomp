@@ -168,7 +168,9 @@ public:
 	char m_pad14A9[0x1538 - 0x14a9];	// 0x14A9 .. 0x1537
 	unsigned int m_h1538;	// entity handle
 	int m_n153C;
-	char m_pad1540[0x24];	// 0x1540 .. 0x1563
+	char m_pad1540[0x1c];	// 0x1540 .. 0x155B
+	EHANDLE m_h155C;	// 0x155C
+	char m_pad1560[4];	// 0x1560 .. 0x1563
 	float m_f1564;
 	char m_pad1568[0x19b8 - 0x1568];	// 0x1568 .. 0x19B7
 	float m_flFadeStart19B8;	// 0x19B8: when the fade began
