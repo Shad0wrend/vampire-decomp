@@ -76,7 +76,22 @@ public:
 	Vector vfunc574(const Vector &vecPos, int a, int b);	// slot 574 (plain member, Vector by value): the unit direction from vecPos to the point sub_10278650 finds for (vecPos, a, b), raised by 20.0f
 	void sub_10278650(Vector *pOut, const Vector *pPos, int a, int b);	// stub 0x1001592e, called directly by vfunc574 (this stays in ecx)
 
-	char m_pad03e0[0x6290 - 0x3e0];
+	void sub_1026dc00(int nFlags);	// stub 0x10012855: called twice first by vfunc103 (0x4000000, 0x200000)
+	void sub_10298d30();	// CAI_BaseNPCTroika::vfunc103 (stub 0x1000303a), called directly
+	void sub_1033c6b0(int nFlags);	// CBaseCombatCharacter::sub_1033c6b0 (stub 0x100153a7), called directly
+	void sub_10398800();	// stub 0x10004160
+	float sub_10397f70();	// stub 0x10011d42: the delay of the next tentacle slot
+	CBaseEntity *sub_10336f20();	// CBaseCombatCharacter::sub_10336f20 (stub 0x10005dbc)
+	CBaseEntity *vfunc309();	// slot 309 (+0x4d4): an entity this NPC is bound to
+	void vfunc388(int a, int b);	// slot 388 (+0x610)
+	void sub_1009b060(Vector *pVec);	// CBaseEntity::sub_1009b060 (stub 0x10001a50), called directly with a size vector
+	virtual void vfunc103();	// slot 103 (spawn-like): the base flags, the Troika base, resets the tentacle slots (six handles, flags, times), the owner handles +0x667c / +0x6680, the mode and the target fields
+
+	char m_pad03e0[0x1482 - 0x3e0];
+	char m_b1482;	// +0x1482
+	char m_pad1483[0x1574 - 0x1483];
+	float m_f1574;	// +0x1574
+	char m_pad1578[0x6290 - 0x1578];
 	Vector m_vecAxis6290;	// +0x6290
 	Vector m_vecExtent629c;	// +0x629c
 	char m_pad62a8[0x6670 - 0x62a8];
