@@ -86759,6 +86759,18 @@ void sub_1023b3a0(CStateHolder *pHolder)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023bb60 size=0xa
+namespace lifted {
+int sub_10004836();
+int sub_1001486c();
+}
+int sub_1023bb60()
+{
+    lifted::sub_1001486c();
+    return lifted::sub_10004836();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023bb80 size=0x1
 void sub_1023bb80()
 {

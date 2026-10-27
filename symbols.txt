@@ -7494,6 +7494,7 @@
 0x10014b82 func   ?sub_1021a740@CPropHacking@@QAEXXZ CPropHacking::sub_1021a740
 0x10014b8c func   ?sub_102e1c10@CAI_Motor@@QAEXMM@Z CAI_Motor::sub_102e1c10
 0x10014b96 func   ?sub_1034e610@@YGXPAUInputLike@@@Z sub_1034e610
+0x10014b9b func   ?sub_1023bb60@@YAHXZ sub_1023bb60
 0x10014ba0 func   ?vfunc347@CBaseCombatCharacter@@QAE_NHPADPAM111@Z CBaseCombatCharacter::vfunc347
 0x10014ba5 func   ?sub_101eccd0@CUnknown101eccd0@@QAEXXZ CUnknown101eccd0::sub_101eccd0
 0x10014bb4 func   ?sub_103f5cf0@@YAHXZ sub_103f5cf0
