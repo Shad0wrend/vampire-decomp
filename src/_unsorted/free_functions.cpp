@@ -65444,6 +65444,12 @@ void CUnknown101dbc60::sub_101dbc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dbdf0 size=0x1
+void sub_101dbdf0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dbe30 size=0x73
 #include "CUnknown101dbe30.h"
 
