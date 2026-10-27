@@ -97270,6 +97270,16 @@ int CLazyTroikaView::sub_1029f730(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a0b90 size=0x1b
+struct CUnknown102a0b90 { int sub_102a0b90(int); };
+int CUnknown102a0b90::sub_102a0b90(int a0)
+{
+    *(int *)((char *)this + 0x14b8) = (*(int *)((char *)this + 0x14b8)) | 4;
+    *(int *)((char *)this + 0x630c) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0eb0 size=0xb
 void __fastcall sub_100037e2(void *);
 void __fastcall sub_102a0eb0(char *self)
