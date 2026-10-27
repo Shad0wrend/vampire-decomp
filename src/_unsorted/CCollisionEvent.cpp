@@ -86,6 +86,92 @@ void CCollisionEvent::vfunc0(void *pEventArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030510 size=0x19a
+#include "CCollisionEvent.h"
+#include "Vector.h"
+#include "ScopeTrace.h"
+
+#define FR_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CFrContactData {
+	virtual void v0();
+	virtual void GetContactPoint(Vector &out);
+};
+
+struct CFrEntity {
+	FR_SLOTS10(a0) FR_SLOTS10(a1) FR_SLOTS10(a2) FR_SLOTS10(a3) FR_SLOTS10(a4) FR_SLOTS10(a5) FR_SLOTS10(a6) FR_SLOTS10(a7) FR_SLOTS10(a8) FR_SLOTS10(a9)
+	FR_SLOTS10(b0) FR_SLOTS10(b1) FR_SLOTS10(b2) FR_SLOTS10(b3) FR_SLOTS10(b4) FR_SLOTS10(b5) FR_SLOTS10(b6) FR_SLOTS10(b7) FR_SLOTS10(b8) FR_SLOTS10(b9)
+	FR_SLOTS10(c0) FR_SLOTS10(c1) FR_SLOTS10(c2)
+	virtual void slot230(); 
+	virtual void slot231(void *pObject, float energy, int surfaceProps, int surfacePropsHit);
+};
+
+struct CFrObject {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5();
+	virtual CFrEntity *GetGameData();
+	FR_SLOTS10(b0) FR_SLOTS10(b1) FR_SLOTS10(b2)
+	virtual void b37(); virtual void b38(); virtual void b39(); virtual void b40(); virtual void b41();
+	virtual void GetVelocityAtPoint(const Vector &point, Vector *pVelocity);
+};
+
+struct CFrSurface {
+	char m_pad0000[0x70];
+	unsigned short m_nGameMaterial;
+};
+
+struct CFrSurfaceProps {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual CFrSurface *GetSurfaceData(int index);
+};
+
+struct CFrEffects {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
+	virtual void slot4(const Vector &pos, const Vector &vel, float flScale, float flRadius);
+	virtual void a5();
+	virtual void slot6(const Vector &pos, const Vector &vel);
+};
+
+extern CFrSurfaceProps *g_10723944;
+extern CFrEffects *g_10566258;
+
+void CCollisionEvent::vfunc2(void *pObjectIn, float energy, int surfaceProps, int surfacePropsHit, void *pDataIn)
+{
+	ScopeTrace trace("CCollisionEvent::Friction", g_106b8540);
+	CFrObject *pObject = (CFrObject *)pObjectIn;
+	CFrContactData *pData = (CFrContactData *)pDataIn;
+	CFrSurface *pSurf = g_10723944->GetSurfaceData(surfaceProps);
+	CFrSurface *pHit = g_10723944->GetSurfaceData(surfacePropsHit);
+	Vector vecPos;
+	Vector vecVel;
+	pData->GetContactPoint(vecPos);
+	pObject->GetVelocityAtPoint(vecPos, &vecVel);
+	vecVel = -vecVel;
+	VectorNormalize(vecVel);
+	switch (pHit->m_nGameMaterial) {
+	case 'C':
+		if (!(energy < 7840.0f))
+			g_10566258->slot4(vecPos, vecVel, 1.0f, 16.0f);
+		break;
+	case 'D':
+		if (!(energy < 2250.0f))
+			g_10566258->slot4(vecPos, vecVel, 1.0f, 16.0f);
+		break;
+	}
+	if (energy > 12250.0f && (pSurf->m_nGameMaterial == 'M' || pSurf->m_nGameMaterial == 'G')) {
+		switch (pHit->m_nGameMaterial) {
+		case 'C':
+		case 'M':
+			g_10566258->slot6(vecPos, vecVel);
+			break;
+		}
+	}
+	CFrEntity *pEntity = pObject->GetGameData();
+	if (pEntity)
+		pEntity->slot231(pObject, energy, surfaceProps, surfacePropsHit);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100315c0 size=0xe5
 #include "CCollisionEvent.h"
 #include "ScopeTrace.h"
