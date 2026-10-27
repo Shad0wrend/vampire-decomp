@@ -50,6 +50,13 @@ int CAI_BaseNPC::vfunc457()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6720 size=0x7
+int CAI_BaseNPC::vfunc464()
+{
+    return *(int *)((char *)this + 0x5cc0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6740 size=0x3
 void CAI_BaseNPC::vfunc465(int a0)
 {
