@@ -64558,6 +64558,12 @@ void sub_101d79e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d7bf0 size=0x1
+void sub_101d7bf0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d7c50 size=0x25
 // TARGET: sub_101d7c50
 void __fastcall sub_101d7c50(int *pThis)
