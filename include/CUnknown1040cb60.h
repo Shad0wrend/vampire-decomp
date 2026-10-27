@@ -2,6 +2,9 @@
 #pragma once
 
 #include "Vector.h"
+#include "CGrabController.h"
+
+inline void *operator new(unsigned int, void *p) { return p; }
 
 class CBaseEntity;
 
