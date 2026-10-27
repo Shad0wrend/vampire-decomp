@@ -62362,6 +62362,18 @@ char CUnknown101c2b30::sub_101c2b30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2c30 size=0x1c
+namespace lifted {
+extern char g_1070d1b0;
+extern char g_1072cb10;
+struct C1000b96a { int sub_1000b96a(int, int, int, int, int, int, int); };
+}
+int sub_101c2c30()
+{
+    return ((lifted::C1000b96a *)((int)&lifted::g_1072cb10))->sub_1000b96a(0, 0, 0, (int)&lifted::g_1070d1b0, 0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2c60 size=0x85
 #include "CVDmg_t.h"
 #include "CGlobalEntityList.h"
