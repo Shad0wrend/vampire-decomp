@@ -85828,6 +85828,13 @@ void CUnknown102457d0::sub_102457d0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245980 size=0x3
+int sub_10245980()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102461b0 size=0xd
 void CUnknown102461b0::sub_102461b0()
 {
