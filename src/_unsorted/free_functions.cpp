@@ -68976,6 +68976,12 @@ CUnknown101ed9e0 *CUnknown101ed9e0::sub_101ed9e0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eda00 size=0x1
+void sub_101eda00()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eda90 size=0x36
 int sub_10431c2f(char *buffer, const char *format, ...);
 void sub_10203dd0(const char *pszText);
