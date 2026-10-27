@@ -118425,6 +118425,46 @@ bool CNPC_VAndreiBlood::sub_1035e030(const Vector *pPos, float flMinDistance)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035e1a0 size=0x1ac
+#include "CNPC_VAndreiBlood.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+extern const float g_1070d9d0[3];
+CEntityVSlots *sub_100fbc90(const char *pszName, const float *pPos, const float *pVec, float flLifetime);
+void sub_101cd940(CBaseEntity *pEnt);
+
+struct CBloodEmitterView
+{
+	void sub_100faf60(CNPC_VAndreiBlood *pOwner);
+	virtual void v0(); virtual void v1();
+};
+
+void CNPC_VAndreiBlood::sub_1035e1a0(const char *pszEmitter)
+{
+	ScopeTrace trace("CNPC_VAndreiBlood::StartBloodEmitter", g_106b8540);
+	if (pszEmitter)
+	{
+		if (EHandle_Get(m_h66e0))
+		{
+			sub_101cd940((CBaseEntity *)EHandle_Get(m_h66e0));
+			m_h66e0 = 0xffffffff;
+		}
+		CEntityVSlots *pEmitter = sub_100fbc90(pszEmitter, &((CEntityVSlots *)this)->slot217()->x, g_1070d9d0, -1.0f);
+		if (pEmitter)
+			m_h66e0 = *((CGlobalEntityList_Ent *)pEmitter)->v1();
+		else
+			m_h66e0 = 0xffffffff;
+		if (EHandle_Get(m_h66e0))
+		{
+			((CBloodEmitterView *)EHandle_Get(m_h66e0))->sub_100faf60(this);
+			((CEntityVSlots *)EHandle_Get(m_h66e0))->slot241();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035e5f0 size=0xa5
 #include "CNPC_VAndreiBlood.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
