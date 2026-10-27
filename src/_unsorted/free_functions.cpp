@@ -11938,6 +11938,14 @@ void CUnknown100737d0::sub_100737d0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100737f0 size=0x7
+struct CUnknown100737f0 { char sub_100737f0(); };
+char CUnknown100737f0::sub_100737f0()
+{
+    return *(char *)((char *)this + 0x98);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100738a0 size=0x3
 struct CUnknown100738a0 { void * sub_100738a0(); };
 void * CUnknown100738a0::sub_100738a0()
