@@ -917,6 +917,16 @@ void *CUnknown100a1d20::sub_100a1d20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2290 size=0x6
+namespace lifted {
+extern char g_10552e18;
+}
+datamap_t * CBaseEntity::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10552e18);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a49d0 size=0xde
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
