@@ -7175,6 +7175,7 @@
 0x10014312 func   ?vfunc3@CTEFogRipple@@UAEXPBVVector@@0@Z CTEFogRipple::vfunc3
 0x10014326 func   ?sub_101a7540@CUnit101a7540@@QAEHXZ CUnit101a7540::sub_101a7540
 0x10014330 func   ?sub_101eda00@@YAXXZ sub_101eda00
+0x10014335 func   ?sub_101e8b10@CUnknown101e8b10@@QAEMXZ CUnknown101e8b10::sub_101e8b10
 0x1001433a func   ?vfunc365@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc365
 0x10014344 func   ?vfunc103@CTriggerProximity@@UAEXXZ CTriggerProximity::vfunc103
 0x1001434e func   ?sub_100657e0@@YAHXZ sub_100657e0
