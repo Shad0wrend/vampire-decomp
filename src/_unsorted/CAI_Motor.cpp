@@ -122,3 +122,38 @@ void CAI_Motor::vfunc9()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x102e2180 size=0x1a6
+#include "CAI_Motor.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+
+struct CUnknown102d8bc0 { float sub_102d8bc0(); };
+struct CUnknown102d8a90 { Vector *sub_102d8a90(); };
+struct CAI_InterestTargetUnit : CAI_InterestTarget { bool sub_102d8b50(); };
+
+#define QUEUE (*(CUtlVector<CAI_InterestTarget> *)&m_54)
+
+float CAI_Motor::vfunc15(Vector &vecDir)
+{
+	float flTotalInterest = 0.0f;
+	vecDir.Init(0.0f, 0.0f, 0.0f);
+	int i;
+	for (i = 0; i < QUEUE.Count(); ) {
+		if (!((CAI_InterestTargetUnit *)&QUEUE[i])->sub_102d8b50())
+			QUEUE.Remove(i);
+		else
+			i++;
+	}
+	for (i = 0; i < QUEUE.Count(); i++) {
+		float flInterest = ((CUnknown102d8bc0 *)&QUEUE[i])->sub_102d8bc0();
+		CEntityVSlots *pOuter = (CEntityVSlots *)m_pOuter;
+		Vector vecTarget = *((CUnknown102d8a90 *)&QUEUE[i])->sub_102d8a90() - *pOuter->slot217();
+		VectorNormalize(vecTarget);
+		vecDir = vecDir * (1.0f - flInterest) + vecTarget * flInterest;
+		flTotalInterest = 1.0f - (1.0f - flTotalInterest) * (1.0f - flInterest);
+		VectorNormalize(vecDir);
+	}
+	return flTotalInterest;
+}
+// END FUNCTION
