@@ -146,6 +146,103 @@ void CWeaponRanged::vfunc374()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10239350 size=0x1ad
+#include "CWeaponRanged.h"
+#include "CBaseCombatWeapon.h"
+#include "CUnknown1070b244.h"
+#include "globalvars.h"
+
+struct CWRTimeView
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x28];
+	int m_n2c;
+};
+
+struct CWeaponRangedView
+{
+	char m_pad0000[0x730];
+	float m_flTimes730[2];
+	char m_pad738[0x74c - 0x738];
+	int m_nClip74c;
+	char m_pad750[0x854 - 0x750];
+	int m_nPending854;
+	char m_pad858[0x86c - 0x858];
+	int m_nState86c;
+};
+
+extern CWRTimeView *g_107520a4;
+extern int g_10752954;
+extern int g_10751a54;
+extern int g_105bf918[];
+extern CUnknown1070b244 *g_1070b244;
+char __fastcall sub_102506a0(CBaseCombatWeapon *pWeapon);
+void __fastcall sub_10253110(CBaseCombatWeapon *pWeapon);
+
+void CWeaponRanged::vfunc321()
+{
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)this;
+	CWeaponRangedView *pView = (CWeaponRangedView *)this;
+	if (!pWeapon->vfunc309())
+		return;
+	if (!g_107520a4->vfunc1() && g_107520a4->m_n2c)
+	{
+		g_10752954++;
+		if (g_10752954 > g_10751a54)
+			g_10752954 = 0;
+		pWeapon->vfunc307(g_105bf918[g_10752954]);
+		return;
+	}
+	if (pView->m_nPending854 == -1)
+	{
+		if (!sub_102506a0(pWeapon) && g_1070b244->vfunc2(0, 100) <= 5)
+		{
+			switch (pView->m_nState86c)
+			{
+			case 0:
+				pWeapon->vfunc307(0xb7);
+				return;
+			case 1:
+				pWeapon->vfunc307(0xda);
+				return;
+			}
+			return;
+		}
+		switch (pView->m_nState86c)
+		{
+		case 0:
+			if (pWeapon->vfunc277(0) && pView->m_nClip74c <= 0)
+			{
+				pWeapon->vfunc307(0xd8);
+				return;
+			}
+			pWeapon->vfunc307(0xb6);
+			return;
+		case 1:
+			if (pWeapon->vfunc277(0) && pView->m_nClip74c <= 0)
+			{
+				pWeapon->vfunc307(0xd9);
+				return;
+			}
+			pWeapon->vfunc307(0xdf);
+			return;
+		}
+	}
+	else
+	{
+		sub_10253110(pWeapon);
+		pWeapon->vfunc307(pView->m_nPending854);
+		pView->m_nPending854 = -1;
+		void *pOwner = pWeapon->sub_102521f0();
+		if (pOwner)
+			*(float *)((char *)pOwner + 0x1564) = pWeapon->vfunc311();
+		for (int i = 0; i < 2; i++)
+			pView->m_flTimes730[i] = gpGlobals->curtime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10239570 size=0x3f
 #include "CWeaponRanged.h"
 
