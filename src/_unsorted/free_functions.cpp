@@ -8599,6 +8599,19 @@ void sub_1005df40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005dfe0 size=0xb
+namespace lifted {
+extern char g_1044dd24;
+int sub_100021d0();
+}
+struct CUnknown1005dfe0 { int sub_1005dfe0(); };
+int CUnknown1005dfe0::sub_1005dfe0()
+{
+    *(int *)this = (int)&lifted::g_1044dd24;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005e330 size=0x17b
 #include "SendProp.h"
 
