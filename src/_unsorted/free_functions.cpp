@@ -4140,6 +4140,13 @@ bool sub_10041b90(int *a, int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10041bc0 size=0x7
+int sub_10041bc0(int a0)
+{
+    return *(int *)((char *)a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041be0 size=0x16
 bool sub_10041be0(int *a, int *b)
 {
