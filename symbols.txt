@@ -1420,6 +1420,7 @@
 0x10005196 func   _npc_VTzimisceHeadClaw npc_VTzimisceHeadClaw
 0x100051a0 func   ?vfunc4@CTEExplosion@@QAEXPAXH@Z CTEExplosion::vfunc4
 0x100051a5 func   ?sub_10031270@CCollisionEvent@@QAEHH@Z CCollisionEvent::sub_10031270
+0x100051af func   ?sub_101b7430@CUnknown101b7430@@QAEHXZ CUnknown101b7430::sub_101b7430
 0x100051b9 func   ?vfunc300@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc300
 0x100051be func   ??0CUnknown100735a0@@QAE@XZ CUnknown100735a0::CUnknown100735a0
 0x100051d7 func   ?sub_10152400@@YAHXZ sub_10152400

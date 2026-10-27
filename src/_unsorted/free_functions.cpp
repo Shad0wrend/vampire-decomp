@@ -58104,6 +58104,14 @@ void CUnknown101b7370::sub_101b7370(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b7430 size=0x3
+struct CUnknown101b7430 { int sub_101b7430(); };
+int CUnknown101b7430::sub_101b7430()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b7df0 size=0xcf
 #include "CUnknown101b9140.h"
 
