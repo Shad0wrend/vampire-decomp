@@ -70,3 +70,10 @@ void CNPCMaker::vfunc139(CBaseEntity *pEnt)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1034bd30 size=0x1
+#include "CNPCMaker.h"
+void CNPCMaker::vfunc123()
+{
+}
+// END FUNCTION

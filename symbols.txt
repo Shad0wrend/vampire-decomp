@@ -1335,6 +1335,7 @@
 0x1000489a func   ?sub_100b2770@CBaseEntity@@QAEXABVVector@@@Z CBaseEntity::sub_100b2770
 0x100048ae func   ?sub_1040cce0@CUnknown1040cce0@@QAEMPAX@Z CUnknown1040cce0::sub_1040cce0
 0x100048b8 func   ?vfunc491@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc491
+0x100048cc func   ?vfunc123@CNPCMaker@@UAEXXZ CNPCMaker::vfunc123
 0x100048d6 func   ?sub_101fc220@CVStatCost_t@@QAE_NPAUCVStatKV@@@Z CVStatCost_t::sub_101fc220
 0x100048db func   ?sub_1009bb40@CBaseEntity@@QAEXHHI@Z CBaseEntity::sub_1009bb40
 0x100048e0 func   ?sub_10183100@CUnknown10183100@@QAEXH@Z CUnknown10183100::sub_10183100
