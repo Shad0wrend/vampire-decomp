@@ -39554,6 +39554,16 @@ extern char g_1070b264;
 void sub_1011a430() { g_1070b264 = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x1011a540 size=0x6
+namespace lifted {
+extern char g_1070b266;
+}
+char sub_1011a540()
+{
+    return lifted::g_1070b266;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a580 size=0x7d
 #include "UtlMem.h"
 
