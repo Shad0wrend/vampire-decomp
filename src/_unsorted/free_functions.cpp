@@ -8772,6 +8772,19 @@ CTEBSPDecal *CTEBSPDecal::sub_1005ee50(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005eec0 size=0xb
+namespace lifted {
+extern char g_1044dd6c;
+int sub_100021d0();
+}
+struct CUnknown1005eec0 { int sub_1005eec0(); };
+int CUnknown1005eec0::sub_1005eec0()
+{
+    *(int *)this = (int)&lifted::g_1044dd6c;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f380 size=0xd5
 #include "SendProp.h"
 
