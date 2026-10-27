@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101cb650 size=0x6
+#include "CTriggerCheckVolume.h"
+namespace lifted {
+extern char g_1059e768;
+}
+datamap_t * CTriggerCheckVolume::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1059e768);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cb7d0 size=0x9f
 #include "CTriggerCheckVolume.h"
 #include "CCollisionProperty.h"
