@@ -46555,6 +46555,53 @@ bool CUnk101672d0::sub_101672d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10167fd0 size=0x16a
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CBaseCombatWeapon.h"
+#include "CEHandleGet.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+#define PV_V(n) virtual void v##n();
+#define PV_V10(p) PV_V(p##0) PV_V(p##1) PV_V(p##2) PV_V(p##3) PV_V(p##4) PV_V(p##5) PV_V(p##6) PV_V(p##7) PV_V(p##8) PV_V(p##9)
+struct CUseEntX {
+    PV_V10(0) PV_V10(1) PV_V10(2)
+    PV_V(30) PV_V(31) PV_V(32) PV_V(33) PV_V(34) PV_V(35)
+    virtual const char *vfunc36();
+    PV_V(37) PV_V(38) PV_V(39) PV_V(40) PV_V(41)
+    virtual void vfunc42(CBasePlayer *pPlayer);
+    char m_pad0004[0x8c - 4];
+    int m_n008c;
+};
+struct CPlayerUnit : CBasePlayer {
+    CUseEntX *GetUse()
+    {
+        unsigned int h = *(volatile unsigned int *)((char *)this + 0x1040);
+        return (CUseEntX *)EHandle_Get(h);
+    }
+    void sub_10167fd0();
+};
+
+// TARGET: CPlayerUnit::sub_10167fd0
+void CPlayerUnit::sub_10167fd0()
+{
+    CBaseCombatWeapon *pWeapon;
+    if (EHandle_Get(*(unsigned int *)((char *)this + 0x1040))) {
+        GetUse()->vfunc42(this);
+        GetUse()->m_n008c = -1;
+        pWeapon = (CBaseCombatWeapon *)sub_1032e7b0();
+        if (pWeapon)
+            pWeapon->vfunc307(0xb6);
+        if (GetUse()->vfunc36() && pWeapon) {
+            const char *s2 = GetUse()->vfunc36();
+            const char *s1 = ((CBaseEntity *)pWeapon)->sub_1009f200();
+            if (!_strcmpi(s1, s2))
+                vfunc456();
+        }
+        *(unsigned int *)((char *)this + 0x1040) = 0xffffffff;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101681a0 size=0x125
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
