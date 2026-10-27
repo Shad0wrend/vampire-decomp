@@ -12040,6 +12040,14 @@ void CUnknown10073b20::sub_10073b20(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073b40 size=0x7
+struct CUnknown10073b40 { int sub_10073b40(); };
+int CUnknown10073b40::sub_10073b40()
+{
+    return *(int *)((char *)this + 0x84);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10073b60 size=0xd
 void CUnknown10073b60::sub_10073b60(int value)
 {
