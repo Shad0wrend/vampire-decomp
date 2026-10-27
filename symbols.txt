@@ -567,6 +567,7 @@
 0x100029f0 func   ?vfunc477@CHL2_Player@@UAEXPAI@Z CHL2_Player::vfunc477
 0x100029ff func   ?vfunc5@CLogicVisible@@QAEPAV1@I@Z CLogicVisible::vfunc5
 0x10002a09 func   ?sub_1013e800@CUnknown1013e7e0@@QAEXH@Z CUnknown1013e7e0::sub_1013e800
+0x10002a18 func   ?sub_100deab0@CUnknown100deab0@@QAEMXZ CUnknown100deab0::sub_100deab0
 0x10002a1d func   ?sub_10399c70@@YIXPAD@Z sub_10399c70
 0x10002a27 func   ?sub_102d08e0@CPhysBox@@QAEXH@Z CPhysBox::sub_102d08e0
 0x10002a2c func   ?sub_103facd0@@YAHXZ sub_103facd0

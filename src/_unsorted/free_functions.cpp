@@ -31246,6 +31246,14 @@ void CUnknown100dea90::sub_100dea90(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100deab0 size=0x3
+struct CUnknown100deab0 { float sub_100deab0(); };
+float CUnknown100deab0::sub_100deab0()
+{
+    return *(float *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dead0 size=0x2a
 #include "CBasePlayer.h"
 
