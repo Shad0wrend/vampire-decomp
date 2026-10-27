@@ -12,6 +12,17 @@ CAI_CondOwner * CNPC_VChangBros::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036a1d0 size=0x6
+#include "CNPC_VChangBros.h"
+namespace lifted {
+extern int g_1062fe1c;
+}
+const char * CNPC_VChangBros::vfunc451()
+{
+    return (const char *)lifted::g_1062fe1c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036a3f0 size=0x1d
 #include "CNPC_VChangBros.h"
 struct A { int sub_10012300(int); };
