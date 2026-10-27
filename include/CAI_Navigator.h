@@ -149,7 +149,7 @@ public:
 	bool sub_102f13a0(char *pbDone);	// stub 0x100029fa
 	int sub_102ecc00();	// the dword at +0x5d3c of the owner (stub 0x10013011)
 	void sub_102ee6a0();	// stub 0x10012963
-	int sub_102ee160();	// stub 0x10015906: a handle-like value compared with the one the entity list gives for the NPC's handle at +0x5ce0
+	CBaseEntity *sub_102ee160();	// stub 0x10015906: the entity the navigator is after, compared with the one the entity list gives for the NPC's handle at +0x5ce0
 	void sub_102ed310(CBaseEntity *pEnt, const Vector *pPosition);	// stub 0x10008abc
 	int sub_102ee620();	// stub 0x100037e2: the navigation type (8 is the one the Moleman / Combatman schedule selection waits for)
 	char sub_102ee2e0();	// stub 0x10009c23: whether the navigator is busy with a move that the alternate-action end has to stop
