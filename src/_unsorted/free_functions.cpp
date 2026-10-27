@@ -87669,6 +87669,13 @@ int sub_102464d0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102464f0 size=0x7
+int sub_102464f0(int a0, int a1)
+{
+    return *(int *)((char *)a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246870 size=0xfe
 #include "SendProp.h"
 
