@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101cb8c0 size=0x6
+#include "CStealthModifier.h"
+namespace lifted {
+extern char g_1059e804;
+}
+datamap_t * CStealthModifier::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1059e804);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cba00 size=0x2d
 struct CStealthUnit101cba00 {
     char pad[0x598];
