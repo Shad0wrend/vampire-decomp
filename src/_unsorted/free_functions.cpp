@@ -89953,6 +89953,16 @@ bool CUnknown10258580::sub_10258580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102587f0 size=0x6
+namespace lifted {
+extern char g_1055ef2c;
+}
+int sub_102587f0()
+{
+    return (int)&lifted::g_1055ef2c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258870 size=0x8
 #define V5(n) virtual void a##n(); virtual void b##n(); virtual void c##n(); virtual void d##n(); virtual void e##n();
 #define V25(n) V5(n##0) V5(n##1) V5(n##2) V5(n##3) V5(n##4)
