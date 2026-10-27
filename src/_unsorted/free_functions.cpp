@@ -95816,6 +95816,16 @@ CBaseHandle &CBaseHandle::sub_1028ac80(IHandleEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028ad00 size=0xe
+namespace lifted {
+int __stdcall sub_10012a0d(int, int);
+}
+int __stdcall sub_1028ad00(int a0)
+{
+    return lifted::sub_10012a0d(a0, a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028ae60 size=0x8c
 #include "CAI_BaseNPC.h"
 

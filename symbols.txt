@@ -860,6 +860,7 @@
 0x10003512 func   ?sub_10218080@@YIXPADHH@Z sub_10218080
 0x10003526 func   ??0CUnknown10076da0TimingTag@@QAE@HPBDM_N@Z CUnknown10076da0TimingTag::CUnknown10076da0TimingTag
 0x1000352b func   _npc_VTzimisce npc_VTzimisce
+0x10003530 func   ?sub_1028ad00@@YGHH@Z sub_1028ad00
 0x1000353a func   ?sub_10383e50@@YGII@Z sub_10383e50
 0x1000353f func   ?vfunc440@CNPC_VChangBros@@QAEHH@Z CNPC_VChangBros::vfunc440
 0x10003544 func   ??0CEntryZ@@QAE@H@Z CEntryZ::CEntryZ
