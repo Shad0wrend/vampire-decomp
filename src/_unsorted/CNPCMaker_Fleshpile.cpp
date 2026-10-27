@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1034bdc0 size=0x6
+#include "CNPCMaker_Fleshpile.h"
+namespace lifted {
+extern char g_106250f0;
+}
+datamap_t * CNPCMaker_Fleshpile::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_106250f0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034c020 size=0x105
 #include "CNPCMaker_Fleshpile.h"
 #include "CCollisionProperty.h"
