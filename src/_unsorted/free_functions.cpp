@@ -27745,6 +27745,47 @@ void CEventQueue::sub_100cdda0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdf10 size=0xe1
+#include "CEventQueue.h"
+#include "CBaseEntity.h"
+#include "CVDmg_t.h"
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+struct CGlobalVarsX {
+	char m_pad[0xc];
+	float m_flCurTime;
+};
+extern CGlobalVarsX *g_1070b228;
+
+void CEventQueue::sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, int nExtra)
+{
+	CEQEvent *pEvent = new CEQEvent;
+	memset(pEvent, 0, 0x50);
+	pEvent->m_n34 = 0;
+	pEvent->m_n3c = nExtra;
+	pEvent->m_flFireTime = fireDelay + g_1070b228->m_flCurTime;
+	pEvent->m_pszTarget = 0;
+	if (pTarget)
+		pEvent->m_hTarget = *pTarget->vfunc1();
+	else
+		pEvent->m_hTarget = -1;
+	pEvent->m_pszTargetInput = *pszAction ? pszAction : 0;
+	if (pActivator)
+		pEvent->m_hActivator = *pActivator->vfunc1();
+	else
+		pEvent->m_hActivator = -1;
+	if (pCaller)
+		pEvent->m_hCaller = *pCaller->vfunc1();
+	else
+		pEvent->m_hCaller = -1;
+	pEvent->m_n3c = 0;
+	*(CVariantCopy *)&pEvent->m_n20 = Value;
+	pEvent->m_nOutputID = nOutputID;
+	((CVDmgBlock16_t *)pEvent->m_block40)->sub_10204270();
+	sub_100ce210(pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce210 size=0x79
 #include "CEventQueue.h"
 
