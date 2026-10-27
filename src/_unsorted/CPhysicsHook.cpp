@@ -46,6 +46,96 @@ bool CPhysicsHook::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002d930 size=0x19f
+#include "CPhysicsHook.h"
+#include "CUnknown106b89bc.h"
+#include "ScopeTrace.h"
+
+extern char g_10539aa8[];
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct S10723934
+{
+	virtual void *vfunc0();
+	virtual void v1();
+	virtual void v2();
+	virtual int vfunc3();
+};
+
+struct S10723940
+{
+	virtual void v0();
+	virtual void vfunc1(int a);
+	virtual void vfunc2();
+	virtual void vfunc3(float *pGravity);
+	PV10(a0) PV10(a1) virtual void a20();
+	virtual void v25(void *p);
+	virtual void v26(); virtual void v27(); virtual void v28();
+	virtual void v29(float f);
+	virtual void v30(); virtual void v31();
+	virtual void v32(void *p);
+	virtual void v33(void *p);
+	virtual void v34(void *p);
+	PV10(b0) virtual void b10(); virtual void b11();
+	virtual void v47(int a);
+};
+
+struct S109ef2d4
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad04[0x28 - 4];
+	float m_f28;
+};
+
+extern S10723934 *g_10723934;
+extern S10723940 *g_10723940;
+extern int g_10723948;
+extern int g_10723938;
+extern S109ef2d4 *g_109ef2d4;
+extern CUnknown106b89bc *g_106b89bc;
+extern char g_106b86dc[];
+extern char g_106b86d8[];
+extern char g_106b8694[];
+extern void *g_10539010;
+extern int g_106b85b8;
+extern float g_104454c4;
+void sub_1000fdc1(int *pOut);
+int sub_1023bd00();
+int sub_1002e140(int a);
+
+void CPhysicsHook::vfunc2()
+{
+	ScopeTrace trace(g_10539aa8, g_106b8540);
+	float vecGravity[3];
+	int nSettings[3];
+	g_10723940 = (S10723940 *)g_10723934->vfunc0();
+	g_10723948 = g_10723934->vfunc3();
+	sub_1000fdc1(nSettings);
+	g_10723940->vfunc1(nSettings[0]);
+	g_10723940->v47(1);
+	g_10723940->v25(g_106b86dc);
+	g_10723940->v32(g_106b86d8);
+	g_10723940->v34(g_10539010);
+	g_10723940->v33(g_106b8694);
+	g_10723940->v29(0.015f);
+	float flGravity;
+	if (g_109ef2d4->vfunc1())
+		flGravity = g_104454c4;
+	else
+		flGravity = g_109ef2d4->m_f28;
+	vecGravity[0] = 0;
+	vecGravity[1] = 0;
+	vecGravity[2] = -flGravity;
+	g_10723940->vfunc3(vecGravity);
+	g_106b85b8 = 0;
+	g_10723938 = sub_1002e140(sub_1023bd00());
+	g_106b89bc = new CUnknown106b89bc;
+	m_18 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002db40 size=0x5c
 #include "CPhysicsHook.h"
 struct ScopeEntry { const char *name; const char *a; const char *b; };
