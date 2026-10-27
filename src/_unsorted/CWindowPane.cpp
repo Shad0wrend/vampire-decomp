@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1010f560 size=0x6
+#include "CWindowPane.h"
+namespace lifted {
+extern char g_1056f060;
+}
+datamap_t * CWindowPane::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1056f060);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f5f0 size=0xb6
 #include "CWindowPane.h"
 #include "CCollisionProperty.h"
