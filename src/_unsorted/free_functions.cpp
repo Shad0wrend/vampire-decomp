@@ -14032,6 +14032,14 @@ void *CUnknown1007a2c0::sub_1007a2c0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a2f0 size=0x4
+struct CUnknown1007a2f0 { int sub_1007a2f0(); };
+int CUnknown1007a2f0::sub_1007a2f0()
+{
+    return *(int *)((char *)this + 0x34);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a340 size=0x33
 int __stdcall sub_1000d701();
 int __stdcall sub_1000a470(int i);
