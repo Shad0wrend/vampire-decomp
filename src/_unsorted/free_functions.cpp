@@ -130711,6 +130711,13 @@ void CPlayerPickupController::sub_1040d0a0(char bThrow)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040d930 size=0x3
+char sub_1040d930()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040d950 size=0x1
 void sub_1040d950()
 {

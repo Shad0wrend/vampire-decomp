@@ -4100,6 +4100,7 @@
 0x1000c536 func   ?vfunc144@CPropDestructable@@UAEXPBUCPropDestructableDamage@@@Z CPropDestructable::vfunc144
 0x1000c53b func   ?sub_101970f0@@YAPAUPyObj@@PAXPAU1@@Z sub_101970f0
 0x1000c54a func   ?vfunc5@CTEFizz@@QAEXXZ CTEFizz::vfunc5
+0x1000c54f func   ?sub_1040d930@@YADXZ sub_1040d930
 0x1000c563 func   ?sub_102c0f70@CAI_BaseNPCTroika@@QAEXPBDH@Z CAI_BaseNPCTroika::sub_102c0f70
 0x1000c568 func   ?sub_103eee60@CUnknown103eee60@@QAEXXZ CUnknown103eee60::sub_103eee60
 0x1000c572 func   ?vfunc104@CAmbientGeneric@@QAEXXZ CAmbientGeneric::vfunc104
