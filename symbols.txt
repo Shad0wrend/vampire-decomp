@@ -3066,6 +3066,7 @@
 0x100090fc func   ??0CBaseEntity@@QAE@D@Z CBaseEntity::CBaseEntity
 0x100090fc func   ??0CConstraintAnchorBase@@QAE@H@Z CConstraintAnchorBase::CConstraintAnchorBase
 0x100090fc func   ??0CPointEntityBase@@QAE@D@Z CPointEntityBase::CPointEntityBase
+0x1000910b func   ?sub_101a2020@@YGHH@Z sub_101a2020
 0x1000911a func   ?sub_10256200@@YIEPAE@Z sub_10256200
 0x1000911f func   ?sub_1028b190@CUnknown1028b190@@QAEXPAX@Z CUnknown1028b190::sub_1028b190
 0x10009129 func   ?sub_10135420@CUnknown10135420@@QAEXPAH@Z CUnknown10135420::sub_10135420

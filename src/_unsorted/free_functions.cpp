@@ -57672,6 +57672,16 @@ int CUnknown101a1f70::sub_101a1f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2020 size=0xf
+namespace lifted {
+int __stdcall sub_1000fe9d(int, int);
+}
+int __stdcall sub_101a2020(int a0)
+{
+    return lifted::sub_1000fe9d(0, a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2820 size=0x198
 #include "CRestore.h"
 #include "CUnknown1070b22c.h"
