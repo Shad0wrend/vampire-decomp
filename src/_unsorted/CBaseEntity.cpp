@@ -2310,6 +2310,56 @@ float *CBaseEntity::vfunc214()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2300 size=0x194
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+void sub_10138760(const float *pVec, int column, float *pMatrix);
+void sub_10138130(const float *pIn, const float *pMatrix, float *pOut);
+
+inline void VectorITransform(const Vector &in1, const float *in2, Vector &out)
+{
+	sub_10138130(&in1.x, in2, &out.x);
+}
+
+struct CEntAbsView {
+	char m_pad0000[0x130];
+	float m_matCoordinateFrame[12];	// 0x130
+	char m_pad0160[0x25c - 0x160];
+	unsigned int m_hMoveParent;	// 0x25c
+	char m_pad0260[0x268 - 0x260];
+	unsigned int m_flags268;
+	char m_pad026c[0x404 - 0x26c];
+	Vector m_vecAbsOrigin;	// 0x404
+	char m_pad0410[0x41c - 0x410];
+	Vector m_vecOrigin;	// 0x41c
+};
+
+void CBaseEntity::vfunc216(const Vector &absOrigin)
+{
+	ScopeTrace trace("CBaseEntity::SetAbsOrigin", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CEntAbsView *v = (CEntAbsView *)this;
+	vfunc98();
+	sub_100b5340(0x10800, 0);
+	sub_100b52a0();
+	v->m_flags268 &= ~0x800;
+	v->m_vecAbsOrigin = absOrigin;
+	sub_10138760(&absOrigin.x, 3, v->m_matCoordinateFrame);
+	Vector vecNewOrigin;
+	if (!EHandle_Get(v->m_hMoveParent)) {
+		vecNewOrigin = absOrigin;
+	} else {
+		float tempMat[12];
+		VectorITransform(absOrigin, sub_100b2150(tempMat), vecNewOrigin);
+	}
+	if (v->m_vecOrigin != vecNewOrigin) {
+		v->m_vecOrigin = vecNewOrigin;
+		*((char *)this + 0x1b1) = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2be0 size=0xdd
 #include "ScopeTrace.h"
 
