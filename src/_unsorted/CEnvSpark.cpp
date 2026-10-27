@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10103c20 size=0x6
+#include "CEnvSpark.h"
+namespace lifted {
+extern char g_1056a578;
+}
+datamap_t * CEnvSpark::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1056a578);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103e00 size=0x81
 #include "CEnvSpark.h"
 
