@@ -671,6 +671,13 @@ char CAI_BaseNPC::vfunc573(const Vector *pOffset, const float *pEnd, char bSetCo
 }
 // END FUNCTION
 
+// FUNCTION: 0x10271f50 size=0x7
+int CAI_BaseNPC::vfunc375(int a0)
+{
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10272400 size=0x6e
 #include "CAI_BaseNPC.h"
 
