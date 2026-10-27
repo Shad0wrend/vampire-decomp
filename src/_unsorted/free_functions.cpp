@@ -104680,6 +104680,14 @@ float *CBaseCineCam::sub_1030be50(float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030be80 size=0x5
+struct CUnknown1030be80 { void sub_1030be80(); };
+void CUnknown1030be80::sub_1030be80()
+{
+    *(char *)((char *)this + 0x10) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030bec0 size=0x69
 extern int g_1070d1b0, g_1070d1b4, g_1070d1b8;
 
