@@ -84345,6 +84345,12 @@ void sub_1023b3a0(CStateHolder *pHolder)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023bb80 size=0x1
+void sub_1023bb80()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023cde0 size=0xed
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
     virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
