@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100b8210 size=0x6
+#include "CBaseViewModel.h"
+namespace lifted {
+extern char g_1055a118;
+}
+datamap_t * CBaseViewModel::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1055a118);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b7f0 size=0x2d
 #include "CBaseViewModel.h"
 
