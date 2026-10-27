@@ -6759,6 +6759,7 @@
 0x100123aa func   ?sub_1017c830@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017c830
 0x100123af func   ?sub_1028d610@@YIXPAVCAI_BaseNPCTroika@@@Z sub_1028d610
 0x100123b9 func   ?sub_101dc410@CItemVec@@QAEXPBU1@@Z CItemVec::sub_101dc410
+0x100123be func   ?vfunc82@CMoverKeyFrame@@UAEPAUdatamap_t@@XZ CMoverKeyFrame::vfunc82
 0x100123c3 func   ?sub_100dc770@CCollisionProperty@@QAEXPBM0@Z CCollisionProperty::sub_100dc770
 0x100123dc func   ?sub_102007f0@CVStatList_t@@QAEXHPAHH@Z CVStatList_t::sub_102007f0
 0x100123e6 func   ?vfunc42@CFuncMonitor@@QAEXPAX@Z CFuncMonitor::vfunc42

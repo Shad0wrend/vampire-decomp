@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10222fd0 size=0x6
+#include "CMoverKeyFrame.h"
+namespace lifted {
+extern char g_105b19d0;
+}
+datamap_t * CMoverKeyFrame::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105b19d0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102230b0 size=0x51
 #include "CMoverKeyFrame.h"
 extern char g_106b8540[];
