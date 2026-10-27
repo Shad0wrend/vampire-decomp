@@ -86972,6 +86972,14 @@ CNamedNode_102489c0 *CNamedNode_102489c0::sub_102489c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248a10 size=0x4
+struct CUnknown10248a10 { int sub_10248a10(); };
+int CUnknown10248a10::sub_10248a10()
+{
+    return *(int *)((char *)this + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248a50 size=0xa
 struct CUnknown10248a50 { int p[4]; int a; void sub_10248a50(int v); };
 // TARGET: CUnknown10248a50::sub_10248a50

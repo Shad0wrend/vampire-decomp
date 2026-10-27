@@ -1327,6 +1327,7 @@
 0x10004c5f func   ?sub_100c83a0@CMem4c_t@@QAEXH@Z CMem4c_t::sub_100c83a0
 0x10004c7d func   ?vfunc246@CBaseDoor@@UAEXHPAHH@Z CBaseDoor::vfunc246
 0x10004c87 func   ?sub_1007b9e0@@YIXPAUCNameOwnerView@@@Z sub_1007b9e0
+0x10004c8c func   ?sub_10248a10@CUnknown10248a10@@QAEHXZ CUnknown10248a10::sub_10248a10
 0x10004c91 func   ?sub_101e8820@CUnknown10739d08@@QAEMPAVCBaseCombatCharacter@@@Z CUnknown10739d08::sub_101e8820
 0x10004ca0 func   ?vfunc546@CNPC_VBrujah@@QAEHH@Z CNPC_VBrujah::vfunc546
 0x10004caa func   ?AddRecipientsByPAS@CRecipientFilter@@QAEXABVVector@@@Z CRecipientFilter::AddRecipientsByPAS
