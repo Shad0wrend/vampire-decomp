@@ -62999,6 +62999,16 @@ CBaseEntity *sub_101c7690(const char *pLandmarkName, CChangeLevel *pCaller)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7870 size=0xd
+namespace lifted {
+int __stdcall sub_1000faba(int);
+}
+int __stdcall sub_101c7870(int a0, int a1, int a2, int a3)
+{
+    return lifted::sub_1000faba(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7b80 size=0x195
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
