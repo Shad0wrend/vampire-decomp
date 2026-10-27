@@ -122674,6 +122674,51 @@ char sub_103a5da0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a9540 size=0x1a9
+#include <math.h>
+#include "CNPC_VSabbatLeader.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+extern CNPC_VSabbatLeaderHint *g_10925450;
+void sub_10139970(const float *pDir, float *pAngles);
+float sub_1013d580(float a, float b);
+
+CNPC_VSabbatLeaderHint *CNPC_VSabbatLeader::sub_103a9540()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::SelectTeleportArchway", g_106b8540);
+	CEntityVSlots *pPlayer = (CEntityVSlots *)EHandle_Get(m_hPlayer);
+	if (!pPlayer)
+		return 0;
+	CNPC_VSabbatLeaderHint *pBest = 0;
+	float flBest = 3.402823466e+38f;
+	for (CNPC_VSabbatLeaderHint *pHint = g_10925450; pHint; pHint = pHint->m_pNext)
+	{
+		if (pHint->m_hintType == 0x3e82)
+		{
+			const Vector *pHintOrigin = ((CEntityVSlots *)pHint)->slot217();
+			Vector vecDelta = *pPlayer->slot217() - *pHintOrigin;
+			Vector vecDir = vecDelta;
+			vecDir.z = 0;
+			if (vecDir.Length2D() >= 24.0f)
+			{
+				float ang[3];
+				sub_10139970(&vecDir.x, ang);
+				float flYaw = pPlayer->slot219()->y;
+				float flDiff = (float)fabs(sub_1013d580(flYaw, ang[1]));
+				if (flDiff < flBest)
+				{
+					flBest = flDiff;
+					pBest = pHint;
+				}
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a9d90 size=0xa5
 #include "CNPC_VSabbatLeader.h"
 #include "ScopeTrace.h"
