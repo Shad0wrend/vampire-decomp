@@ -62543,6 +62543,17 @@ void __fastcall sub_101c4660(char *dest, int unusedEdx, const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4690 size=0xf
+struct CUnknown101c4690 { void * sub_101c4690(); };
+void * CUnknown101c4690::sub_101c4690()
+{
+    *(int *)((char *)this + 4) = (int)this;
+    *(int *)this = (int)this;
+    *(int *)((char *)this + 8) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4790 size=0xa
 struct CUnknown101c4790 { CUnknown101c4790 *a; CUnknown101c4790 *b; CUnknown101c4790* sub_101c4790(int x); };
 // TARGET: CUnknown101c4790::sub_101c4790
