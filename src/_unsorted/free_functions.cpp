@@ -28656,6 +28656,16 @@ int CEventQueue::sub_100cfda0(IEQRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cffa0 size=0x6
+namespace lifted {
+extern char g_106e70a8;
+}
+int sub_100cffa0()
+{
+    return (int)&lifted::g_106e70a8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1250 size=0x27
 struct SListNode_t {
     int unk0;
