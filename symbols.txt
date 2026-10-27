@@ -6763,6 +6763,7 @@
 0x100133f4 func   ?vfunc225@CBaseEntity@@QAEXXZ CBaseEntity::vfunc225
 0x10013403 func   ?sub_102496d0@CUnknown102496d0@@QAEXM@Z CUnknown102496d0::sub_102496d0
 0x1001340d func   ?sub_102345e0@@YAHXZ sub_102345e0
+0x10013417 func   ?sub_10077750@CUnknown10077750@@QAEDXZ CUnknown10077750::sub_10077750
 0x10013426 func   ?sub_103160a0@CUnknown103160a0@@QAEHXZ CUnknown103160a0::sub_103160a0
 0x1001342b func   ?sub_1008d520@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d520
 0x10013430 func   ?vfunc5@CInstancedSceneEntity@@QAEPAV1@I@Z CInstancedSceneEntity::vfunc5

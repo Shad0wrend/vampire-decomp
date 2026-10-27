@@ -13234,6 +13234,14 @@ void CUnknown10077730::sub_10077730(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077750 size=0x7
+struct CUnknown10077750 { char sub_10077750(); };
+char CUnknown10077750::sub_10077750()
+{
+    return *(char *)((char *)this + 0x328);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077770 size=0x23
 struct CUnknownSlot0Obj {
 	virtual void vfunc0(int a, int b, void *c);
