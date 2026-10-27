@@ -182,7 +182,9 @@ public:
 	char m_pad13a4[0x13bc - 0x13a4];
 	int m_nStatLists;
 	CVStatList_t **m_pStatLists;
-	char m_pad13c4[0x146c - 0x13c4];
+	char m_pad13c4[0x13cc - 0x13c4];
+	int m_nHasLegs13cc;	// 0x13cc: the model has no flag 0x100 in its header flags (stat 0xb of the active stat list)
+	char m_pad13d0[0x146c - 0x13d0];
 	int m_field146c;
 	char m_pad1470[0x1474 - 0x1470];
 	char m_flag1474;
