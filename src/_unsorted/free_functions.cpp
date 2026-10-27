@@ -40301,6 +40301,17 @@ void sub_1011e010(Vector *a, Vector *b, Vector *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e200 size=0x7
+namespace lifted {
+extern char g_104628f8;
+}
+struct CUnknown1011e200 { void sub_1011e200(); };
+void CUnknown1011e200::sub_1011e200()
+{
+    *(int *)this = (int)&lifted::g_104628f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e290 size=0x5
 char __stdcall sub_1011e290(int a0)
 {
