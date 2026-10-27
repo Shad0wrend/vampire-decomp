@@ -2276,6 +2276,46 @@ const char *CBaseCombatCharacter::vfunc244()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103409a0 size=0x1b8
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "CBCCSlotViews.h"
+#include "ScopeTrace.h"
+
+extern char g_105387dc[];
+void sub_101381b0(const float *pIn, const float *pMatrix, float *pOut);
+
+class CCombatChar138SlotView
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT10(10) VIEW_SLOT10(11) VIEW_SLOT10(12)
+	VIEW_SLOT(130) VIEW_SLOT(131) VIEW_SLOT(132) VIEW_SLOT(133) VIEW_SLOT(134) VIEW_SLOT(135) VIEW_SLOT(136) VIEW_SLOT(137)
+	virtual void *vfunc138();
+};
+
+void CBaseCombatCharacter::vfunc105(const char *pszModel)
+{
+	ScopeTrace trace("CBaseCombatCharacter::SetModel", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_100b5ab0(pszModel);
+	char *pHdr = (char *)sub_100952d0(-1);
+	if (pHdr) {
+		int bLegs = (~*(unsigned int *)(pHdr + 0xe4) >> 8) & 1;
+		GetActiveStatList()->sub_102008e0(11, bLegs);
+		m_nHasLegs13cc = bLegs;
+		if (((CCombatChar138SlotView *)this)->vfunc138())
+			sub_10106c40();
+		m_nPoseIndex[0] = ((CBaseAnimating *)this)->sub_10092270("aim_pitch");
+		m_nPoseIndex[1] = ((CBaseAnimating *)this)->sub_10092270("aim_yaw");
+		m_nHeadBone1080 = sub_10092550((int)"Bip01 Head");
+		if (m_nHeadBone1080 >= 0) {
+			Vector vecAxis(0.0f, -1.0f, 0.0f);
+			sub_101381b0(&vecAxis.x, (float *)(pHdr + m_nHeadBone1080 * 0xa0 + *(int *)(pHdr + 0xf4) + 0x58), &m_vecHeadAxis1074.x);
+		}
+		m_nVSoundTableIdx = -1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103412b0 size=0x8c
 #include "inputdata_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

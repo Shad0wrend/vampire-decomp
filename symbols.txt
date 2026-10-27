@@ -493,6 +493,7 @@
 0x1000244b func   ?sub_104014c0@@YAHXZ sub_104014c0
 0x10002450 func   ?sub_100f8960@@YIXH@Z sub_100f8960
 0x10002455 func   ?sub_102a9690@CUnknown102a9690@@QAEXH@Z CUnknown102a9690::sub_102a9690
+0x1000245f func   ?vfunc105@CBaseCombatCharacter@@UAEXPBD@Z CBaseCombatCharacter::vfunc105
 0x1000246e func   ?sub_101b2070@UtlMem@@QAEXXZ UtlMem::sub_101b2070
 0x10002482 func   ?sub_1005a1a0@@YAHXZ sub_1005a1a0
 0x1000248c func   _env_message env_message
