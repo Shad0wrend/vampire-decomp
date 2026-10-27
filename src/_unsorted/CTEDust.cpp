@@ -25,3 +25,14 @@ CTEDust *CTEDust::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10114160 size=0x6
+#include "CTEDust.h"
+namespace lifted {
+extern char g_1070a4f4;
+}
+ServerClass * CTEDust::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_1070a4f4);
+}
+// END FUNCTION

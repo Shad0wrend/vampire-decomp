@@ -472,6 +472,7 @@
 0x100023ce func   ?sub_10087550@@YAHXZ sub_10087550
 0x100023dd func   ?vfunc420@CNPC_VBaseBoss@@UAEXXZ CNPC_VBaseBoss::vfunc420
 0x100023e7 func   ?sub_10175290@CBasePlayer@@QAEHXZ CBasePlayer::sub_10175290
+0x100023fb func   ?vfunc0@CTEDust@@UAEPAUServerClass@@XZ CTEDust::vfunc0
 0x1000240a func   _item_k_carson_apartment_key item_k_carson_apartment_key
 0x10002423 func   _prop_slashable prop_slashable
 0x10002428 func   ?sub_10097bd0@CBaseTransmitProxy@@QAEXXZ CBaseTransmitProxy::sub_10097bd0
