@@ -4814,6 +4814,7 @@
 0x1000e0bb func   ?sub_101f2360@CUnknown101f2360@@QAEXPAPBDPAX@Z CUnknown101f2360::sub_101f2360
 0x1000e0c0 func   _item_g_hatters_screenplay item_g_hatters_screenplay
 0x1000e0ca func   ?sub_10170cb0@CUnknown10170cb0@@QAEXHH@Z CUnknown10170cb0::sub_10170cb0
+0x1000e0d4 func   ?sub_102456b0@@YAHXZ sub_102456b0
 0x1000e0d9 func   ?vfunc5@CFilterMass@@QAEPAV1@I@Z CFilterMass::vfunc5
 0x1000e0de func   ?sub_102dcec0@@YIXPAUMem4@@HH@Z sub_102dcec0
 0x1000e0e3 func   ?sub_101bbd10@CUnknown101bbd10@@QAEXXZ CUnknown101bbd10::sub_101bbd10

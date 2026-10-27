@@ -86566,6 +86566,16 @@ CUnk10245660Node *sub_10245660(const char *pName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102456b0 size=0x6
+namespace lifted {
+extern int g_10753434;
+}
+int sub_102456b0()
+{
+    return lifted::g_10753434;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245720 size=0x38
 struct CUnknown10245720Node
 {
