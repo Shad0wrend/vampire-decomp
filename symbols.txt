@@ -3004,6 +3004,7 @@
 0x10009999 func   ?sub_1004c4c0@CUtlRBTree36@@QBE_NG@Z CUtlRBTree36::sub_1004c4c0
 0x1000999e func   ?sub_103d6280@CNPC_VWerewolf@@QAEXPAX@Z CNPC_VWerewolf::sub_103d6280
 0x100099a8 func   ?sub_10430280@@YAII@Z sub_10430280
+0x100099ad func   ?sub_1042ab80@CBaseGrenade@@QAEXPAVCBaseEntity@@@Z CBaseGrenade::sub_1042ab80
 0x100099b2 func   ?vfunc113@CLogicSquadCondition@@QAEXXZ CLogicSquadCondition::vfunc113
 0x100099c6 func   ?vfunc133@CFuncElevator@@QAEXXZ CFuncElevator::vfunc133
 0x100099cb func   ?vfunc276@CBaseCombatWeapon@@UAEHI@Z CBaseCombatWeapon::vfunc276

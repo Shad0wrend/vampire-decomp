@@ -131076,6 +131076,33 @@ extern "C" CBaseEntity *grenade()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ab80 size=0x108
+#include "CBaseGrenade.h"
+#include "CEHandleGet.h"
+#include "TestBit.h"
+
+// TARGET: CBaseGrenade::sub_1042ab80
+void CBaseGrenade::sub_1042ab80(CBaseEntity *pEnt)
+{
+	if (pEnt != (CBaseEntity *)EHandle_Get(m_hHeld19b0))
+	{
+		if (sub_100b3700() & 1)
+		{
+			if (TestBit(m_flags268, 12))
+				sub_100b1d10();
+			Vector vecVelocity = m_vecVelocity3bc * 0.95f;
+			sub_100b2e30(&vecVelocity.x);
+			if (TestBit(m_flags268, 12))
+				sub_100b1d10();
+			if (m_vecVelocity3bc.x == 0.0f && TestBit(m_flags268, 12))
+				sub_100b1d10();
+		}
+		else
+			vfunc408();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b110 size=0x38
 #include "CAI_BaseNPCTroika.h"
 
