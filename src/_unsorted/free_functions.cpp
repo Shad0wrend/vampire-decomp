@@ -46456,6 +46456,16 @@ void sub_10158b40(void *pA, void *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158c40 size=0x6
+namespace lifted {
+extern char g_10580418;
+}
+int sub_10158c40()
+{
+    return (int)&lifted::g_10580418;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158d40 size=0x1
 void sub_10158d40()
 {
