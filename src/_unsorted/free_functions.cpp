@@ -113141,6 +113141,12 @@ void S::sub_1035bee0(int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035bf90 size=0x3
+void __stdcall sub_1035bf90(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035c3b0 size=0x33
 void sub_1000831e();
 void sub_10007db0();
