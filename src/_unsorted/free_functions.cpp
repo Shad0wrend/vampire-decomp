@@ -34220,6 +34220,16 @@ void CUnknown100f5600::sub_100f5620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f5bd0 size=0x6
+namespace lifted {
+extern char g_106eb584;
+}
+int sub_100f5bd0()
+{
+    return (int)&lifted::g_106eb584;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6bb0 size=0xed
 extern "C" void *memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(unsigned int);
