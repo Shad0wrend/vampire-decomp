@@ -79232,6 +79232,97 @@ int sub_102038e0(int a, IObj102038e0 *obj, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10203990 size=0x1a9
+extern int g_1074edd4;
+extern char g_1074e968[], g_1074e658[], g_1074e4f0[], g_1074e098[], g_1074e5f8[], g_10739d08[], g_10738d10[];
+extern char g_10739140[], g_1073a9a0[], g_1074df78[], g_1073a28c[], g_10739194[], g_1073a2c8[], g_1073a31c[];
+extern char g_1073a2ac[], g_1073a2e4[], g_1073a354[], g_1073a300[], g_1073a338[], g_1073a370[], g_10739a4c[];
+extern char g_1073a7c0[], g_1074f004[], g_1074f8f8[], g_10750930[], g_10738cf0[];
+
+void __fastcall sub_10202c80(void *p);
+void sub_10203bb0();
+void sub_101f66c0();
+void __fastcall sub_101ff540(void *p);
+void __fastcall sub_101e6040(void *p);
+void __fastcall sub_101d59f0(void *p);
+void __fastcall sub_101d7cd0(void *p);
+void __fastcall sub_101f14a0(void *p);
+void __fastcall sub_101f7f70(void *p);
+void __fastcall sub_101e9c50(void *p);
+void __fastcall sub_101d92b0(void *p);
+void __fastcall sub_101ead30(void *p);
+void __fastcall sub_101eb380(void *p);
+void __fastcall sub_101eb9f0(void *p);
+void __fastcall sub_101ec180(void *p);
+void __fastcall sub_101ec7c0(void *p);
+void __fastcall sub_101ecde0(void *p);
+void __fastcall sub_101ed6c0(void *p);
+void __fastcall sub_101edae0(void *p);
+void __fastcall sub_101e0df0(void *p);
+void __fastcall sub_101f0490(void *p);
+void __fastcall sub_102066d0(void *p);
+void __fastcall sub_10221000(void *p);
+void __fastcall sub_10222300(void *p);
+void __fastcall sub_101ff850(void *p);
+void __fastcall sub_101d6de0(void *p);
+void __fastcall sub_101e6310(void *p);
+void __fastcall sub_101d5b90(void *p);
+void __fastcall sub_101f81c0(void *p);
+void __fastcall sub_101f1750(void *p);
+void __fastcall sub_101e9e20(void *p);
+void __fastcall sub_101e0f00(void *p);
+void __fastcall sub_101d6ef0(void *p);
+void sub_10202140();
+
+void sub_10203990()
+{
+	if (g_1074edd4)
+		g_1074edd4 = 0;
+	sub_10202c80(g_1074e968);
+	sub_10203bb0();
+	sub_101f66c0();
+	sub_101ff540(g_1074e658);
+	sub_101ff540(g_1074e4f0);
+	sub_101ff540(g_1074e098);
+	sub_101ff540(g_1074e5f8);
+	sub_101e6040(g_10739d08);
+	sub_101d59f0(g_10738d10);
+	sub_101d7cd0(g_10739140);
+	sub_101f14a0(g_1073a9a0);
+	sub_101f7f70(g_1074df78);
+	sub_101e9c50(g_1073a28c);
+	sub_101d92b0(g_10739194);
+	sub_101ead30(g_1073a2c8);
+	sub_101eb380(g_1073a31c);
+	sub_101eb9f0(g_1073a2ac);
+	sub_101ec180(g_1073a2e4);
+	sub_101ec7c0(g_1073a354);
+	sub_101ecde0(g_1073a300);
+	sub_101ed6c0(g_1073a338);
+	sub_101edae0(g_1073a370);
+	sub_101e0df0(g_10739a4c);
+	sub_101f0490(g_1073a7c0);
+	sub_102066d0(g_1074f004);
+	sub_10221000(g_1074f8f8);
+	sub_10222300(g_10750930);
+	sub_101ff850(g_1074e658);
+	sub_101ff850(g_1074e4f0);
+	sub_101ff850(g_1074e098);
+	sub_101ff850(g_1074e5f8);
+	sub_101d6de0(g_10738cf0);
+	sub_101e6310(g_10739d08);
+	sub_101d5b90(g_10738d10);
+	sub_101f81c0(g_1074df78);
+	sub_101d5b90(g_10738d10);
+	sub_101f1750(g_1073a9a0);
+	sub_101e9e20(g_1073a28c);
+	sub_101e0f00(g_10739a4c);
+	sub_101d6ef0(g_10738cf0);
+	sub_10202140();
+	g_1074edd4 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10203bb0 size=0x31
 // TARGET: sub_10203bb0
 void __cdecl sub_10203c00(const char *a, const char *b);
