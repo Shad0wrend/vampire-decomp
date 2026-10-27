@@ -152,7 +152,11 @@ public:
 	int m_n03E0;	// 0x03E0: the move type
 	char m_pad03E4[0xea4 - 0x3e4];	// 0x03E4 .. 0x0EA3
 	unsigned int m_hEnt0EA4;	// entity handle
-	char m_pad0EA8[0x1475 - 0xea8];	// 0x0EA8 .. 0x1474
+	char m_pad0EA8[0xfe8 - 0xea8];	// 0x0EA8 .. 0x0FE7
+	EHANDLE m_hDialogPartnerFE8;	// 0x0FE8
+	char m_pad0FEC[0x1040 - 0xfec];	// 0x0FEC .. 0x103F
+	EHANDLE m_hUseEnt1040;	// 0x1040
+	char m_pad1044[0x1475 - 0x1044];	// 0x1044 .. 0x1474
 	char m_b1475;
 	char m_pad1476[0x1478 - 0x1476];
 	float m_f1478;	// 0x1478: the time the fade of the feeding started / ends
