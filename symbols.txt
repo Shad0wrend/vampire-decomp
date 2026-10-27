@@ -4611,6 +4611,7 @@
 0x1000d09e func   ?sub_10316e80@@YAXXZ sub_10316e80
 0x1000d0a3 func   ?sub_10106a40@@YIHPAVCBaseAnimating@@HH@Z sub_10106a40
 0x1000d0a8 func   ?vfunc495@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc495
+0x1000d0ad func   ?vfunc273@CBaseCombatWeapon@@UAEPADXZ CBaseCombatWeapon::vfunc273
 0x1000d0b2 func   ?sub_10260a50@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10260a50
 0x1000d0b7 func   ?sub_10135840@CLogicNPCCondition@@QAE_NXZ CLogicNPCCondition::sub_10135840
 0x1000d0bc func   ?sub_100e1880@CDialog@@QAEPADH@Z CDialog::sub_100e1880
