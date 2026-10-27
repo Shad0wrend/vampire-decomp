@@ -2732,6 +2732,7 @@
 0x10008922 func   ?sub_1009d5e0@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d5e0
 0x10008936 func   ?sub_10073ae0@CUnknown10073ae0@@QAEPAXXZ CUnknown10073ae0::sub_10073ae0
 0x10008940 func   ?vfunc5@CPhysImpact@@UAEPAV1@I@Z CPhysImpact::vfunc5
+0x10008945 func   ?sub_100deb30@CUnknown100deb30@@QAEDXZ CUnknown100deb30::sub_100deb30
 0x1000894f func   ?sub_10248b60@@YIPADPAD@Z sub_10248b60
 0x1000895e func   ?sub_100738a0@CUnknown100738a0@@QAEPAXXZ CUnknown100738a0::sub_100738a0
 0x1000896d func   ?vfunc483@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc483

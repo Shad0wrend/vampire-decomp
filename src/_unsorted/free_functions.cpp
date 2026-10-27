@@ -31441,6 +31441,14 @@ void __fastcall sub_100deb10(char *self, int, char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100deb30 size=0x4
+struct CUnknown100deb30 { char sub_100deb30(); };
+char CUnknown100deb30::sub_100deb30()
+{
+    return *(char *)((char *)this + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100deb50 size=0x11
 void sub_100deb50(int *dst, const int *src)
 {
