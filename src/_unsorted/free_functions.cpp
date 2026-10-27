@@ -95462,6 +95462,14 @@ void CAI_BaseNPCTroika::sub_1029ed90(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029f2e0 size=0x7
+struct CUnknown1029f2e0 { char sub_1029f2e0(); };
+char CUnknown1029f2e0::sub_1029f2e0()
+{
+    return *(char *)((char *)this + 0x6080);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f370 size=0xbc
 #include "CAI_BaseNPCTroika.h"
 
