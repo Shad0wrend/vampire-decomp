@@ -46,6 +46,13 @@ void CAI_BaseNPC::vfunc465(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6780 size=0x5
+bool CAI_BaseNPC::vfunc468(CBaseEntity * a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6840 size=0xb
 void CAI_BaseNPC::vfunc483(int unused)
 {
