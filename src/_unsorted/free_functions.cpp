@@ -37363,6 +37363,21 @@ void CUnknown100fde30::sub_100fe1e0(float flSpeed)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fe580 size=0x1f
+namespace lifted {
+extern float g_10709088;
+extern int g_1070908c;
+extern int g_10709090;
+}
+int sub_100fe580(int a0, int a1)
+{
+    *(float *)((char *)a1) = lifted::g_10709088;
+    *(int *)((char *)a1 + 4) = lifted::g_1070908c;
+    *(int *)((char *)a1 + 8) = lifted::g_10709090;
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100feae0 size=0x43
 #include "CEnvBeam.h"
 void *sub_100aa720(int size);

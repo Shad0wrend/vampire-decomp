@@ -3194,6 +3194,7 @@
 0x1000957a func   ?sub_101af420@CSpeakerUnit@@QAEXXZ CSpeakerUnit::sub_101af420
 0x10009589 func   ?sub_103c1220@CNPC_VTzimisceHeadClaw@@QAEPAV1@XZ CNPC_VTzimisceHeadClaw::sub_103c1220
 0x10009598 func   ?vfunc223@CFuncMoveLinear@@QAE_NXZ CFuncMoveLinear::vfunc223
+0x1000959d func   ?sub_100fe580@@YAHHH@Z sub_100fe580
 0x100095bb func   ?sub_10080b00@CSceneEntity@@QAEXPAUCSceneEvent@@@Z CSceneEntity::sub_10080b00
 0x100095c5 func   ?sub_1033d380@S1033d380@@QAEHH@Z S1033d380::sub_1033d380
 0x100095cf func   ?sub_100433b0@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_100433b0
