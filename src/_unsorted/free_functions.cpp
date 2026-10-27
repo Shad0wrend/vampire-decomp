@@ -64676,6 +64676,12 @@ char CUnknown101d7ec0::sub_101d7fb0(CBaseCombatCharacter *pChar, const CUnknown1
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d8170 size=0x1
+void sub_101d8170()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8190 size=0x7c
 #include <stdio.h>
 #include "CUnknown101d82d0.h"
