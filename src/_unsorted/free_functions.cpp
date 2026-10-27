@@ -25497,6 +25497,14 @@ void __fastcall sub_100be000(char *self, int, char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be020 size=0x4
+struct CUnknown100be020 { int sub_100be020(); };
+int CUnknown100be020::sub_100be020()
+{
+    return *(int *)((char *)this + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be040 size=0xa
 void CUnknown100be040::sub_100be040(int value)
 {
