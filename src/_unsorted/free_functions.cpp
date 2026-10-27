@@ -123621,6 +123621,12 @@ CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f10c0 size=0x3
+void __stdcall sub_103f10c0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f15b0 size=0x72
 #include "SendProp.h"
 

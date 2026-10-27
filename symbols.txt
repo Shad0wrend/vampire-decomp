@@ -372,6 +372,7 @@
 0x10002121 func   ?sub_10236a30@@YAHXZ sub_10236a30
 0x10002126 func   ?sub_10103f80@CThis10103f80@@QAEXXZ CThis10103f80::sub_10103f80
 0x1000212b func   _item_k_shrekhub_three_key item_k_shrekhub_three_key
+0x10002130 func   ?sub_103f10c0@@YGXH@Z sub_103f10c0
 0x1000213a func   ?vfunc276@CPropKeypad@@QAEXXZ CPropKeypad::vfunc276
 0x10002144 func   ?vfunc587@CAI_BaseHumanoid@@QAEDABVVector@@@Z CAI_BaseHumanoid::vfunc587
 0x10002149 func   ?sub_101c7690@@YAPAVCBaseEntity@@PBDPAVCChangeLevel@@@Z sub_101c7690
