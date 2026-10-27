@@ -6785,6 +6785,7 @@
 0x10014169 func   ?vfunc310@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc310
 0x10014187 func   _logic_npc_condition logic_npc_condition
 0x100141aa func   ?sub_10046b40@@YA_NPBI0@Z sub_10046b40
+0x100141af func   ?vfunc14@CGameRules@@UAEXXZ CGameRules::vfunc14
 0x100141b4 func   ?sub_103134b0@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_103134b0
 0x100141c8 func   ??_GCReliableSingleUserRecipientFilter@@UAEPAXI@Z ??_GCReliableSingleUserRecipientFilter@@UAEPAXI@Z
 0x100141cd func   ?sub_1006a7b0@@YAHXZ sub_1006a7b0
