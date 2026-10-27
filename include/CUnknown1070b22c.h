@@ -54,7 +54,7 @@ public:
 	virtual void a63(); virtual void a64();
 	virtual void vfunc65(CRecipientFilter *pFilter, int msgType); virtual void vfunc66(); virtual void vfunc67(int value); virtual void vfunc68(int value); virtual void vfunc69(int value);
 	virtual void a70(); virtual void a71(); virtual void vfunc72(int value); virtual void a73(); virtual void a74();
-	virtual void a75(); virtual void a76(); virtual void a77(); virtual void vfunc78(const char *pszValue); virtual void a79();
+	virtual void vfunc75(const float *pVec); virtual void a76(); virtual void a77(); virtual void vfunc78(const char *pszValue); virtual void a79();
 	virtual void a80(); virtual void a81();
 	virtual int vfunc82(const char *pszName, int size);
 	virtual void a83();
