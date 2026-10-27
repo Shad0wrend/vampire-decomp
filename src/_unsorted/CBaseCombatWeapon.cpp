@@ -21,6 +21,13 @@ CWeaponActivityRecord * CBaseCombatWeapon::vfunc362()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149ec0 size=0x3
+int CBaseCombatWeapon::vfunc363()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f030 size=0x64
 struct CNameObj_t { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual const char *GetName(); };
 struct CNameSrc_t { virtual void v0(); virtual void v1(); virtual void v2(); virtual CNameObj_t *Get(); };
