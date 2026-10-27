@@ -13466,6 +13466,14 @@ int CUnknown10078610::sub_10078610()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078630 size=0x7
+struct CUnknown10078630 { int sub_10078630(); };
+int CUnknown10078630::sub_10078630()
+{
+    return *(int *)((char *)this + 0x1a8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078860 size=0xb
 void __fastcall sub_10078860(char *self)
 {
