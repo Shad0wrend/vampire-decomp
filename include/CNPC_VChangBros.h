@@ -30,6 +30,8 @@ public:
 	float sub_103c6830();	// CNPC_VVampireBoss member (stub 0x10002b58), a float value compared with 0.5f
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x209000
 	void sub_10014876();	// CNPC_VVampire::vfunc103, called directly
+	int vfunc438();	// "CNPC_VChangBros::SelectSchedule": scope trace (no entity name), ideal state (+0x1b2c) = 10, then the schedules 0x15a .. 0x15e picked by the convars at 0x1093aa2c / 0x1093a984 / 0x1093a9cc and the conditions 0x7c / 0x79 / 0x7a / 0x59 while the enemy (handle +0x628c) is gone or slot 404 answers 1, else the human implementation
+	int sub_10015ad2();	// CNPC_VHuman::vfunc438, called directly (stub 0x10015ad2)
 	int sub_10011225();	// CNPC_VHuman::vfunc461, called directly
 	void sub_100052d6();	// CNPC_VVampireBoss::vfunc431, called directly
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
