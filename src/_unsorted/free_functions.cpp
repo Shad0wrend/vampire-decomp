@@ -124994,6 +124994,71 @@ CForwardHintX *CWerewolfUnit::sub_103d7090(CForwardHintX *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d7210 size=0x19c
+#include "CNPC_VWerewolf.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+extern Vector g_10713de0;
+extern float g_104454c4;
+float sub_101d2c70(Vector *pDir);
+
+#define HV_V(n) virtual void v##n();
+#define HV_V10(p) HV_V(p##0) HV_V(p##1) HV_V(p##2) HV_V(p##3) HV_V(p##4) HV_V(p##5) HV_V(p##6) HV_V(p##7) HV_V(p##8) HV_V(p##9)
+
+struct CForwardHintView
+{
+	HV_V10(0) HV_V10(1) HV_V10(2) HV_V10(3) HV_V10(4) HV_V10(5) HV_V10(6) HV_V10(7) HV_V10(8) HV_V10(9)
+	HV_V10(10) HV_V10(11) HV_V10(12) HV_V10(13) HV_V10(14) HV_V10(15) HV_V10(16) HV_V10(17) HV_V10(18) HV_V10(19)
+	HV_V10(20)
+	HV_V(210) HV_V(211) HV_V(212) HV_V(213) HV_V(214) HV_V(215) HV_V(216)
+	virtual Vector *vfunc217();
+	HV_V(218)
+	virtual Vector *vfunc219();
+	char m_pad04[0x5dc - 4];
+	int m_nType;
+};
+
+struct CWerewolfUnit : CNPC_VWerewolf
+{
+	CForwardHintView *sub_103d7090(CForwardHintView *pHint);
+};
+
+float CNPC_VWerewolf::sub_103d7210(CBaseEntity *pHint)
+{
+	ScopeTrace trace("CNPC_VWerewolf::GetForwardYawForHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CForwardHintView *pView = (CForwardHintView *)pHint;
+	CForwardHintView *pEnt = (CForwardHintView *)sub_103d6390(pHint);
+	Vector vecDir = g_10713de0;
+	CForwardHintView *pFwd = ((CWerewolfUnit *)this)->sub_103d7090(pView);
+	int type = pView->m_nType;
+	vecDir = *pEnt->vfunc217() - *pFwd->vfunc217();
+	VectorNormalize(vecDir);
+	float flYaw = sub_101d2c70(&vecDir);
+	switch (type)
+	{
+	case 0x3aa3:
+	case 0x3aa5:
+		flYaw = pView->vfunc219()->y;
+		break;
+	case 0x3a9a:
+	case 0x3a9d:
+		flYaw += 90.0f;
+		break;
+	case 0x3a9b:
+	case 0x3a9e:
+		flYaw -= 90.0f;
+		break;
+	}
+	if (flYaw > 360.0f)
+		return flYaw - 360.0f;
+	if (flYaw < g_104454c4)
+		flYaw += 360.0f;
+	return flYaw;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d7420 size=0x189
 #include "CNPC_VWerewolf.h"
 #include "CHintData_WW.h"
