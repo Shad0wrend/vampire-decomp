@@ -262,3 +262,13 @@ bool CRagdollProp::vfunc32(int a)
     return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101580c0 size=0xe
+namespace lifted {
+int sub_10010ec9(int);
+}
+void CRagdollProp::vfunc39(CBaseEntity * a0)
+{
+    lifted::sub_10010ec9(*(int *)&a0);
+}
+// END FUNCTION

@@ -496,6 +496,7 @@
 0x1000248c func   _env_message env_message
 0x10002496 func   ?sub_10274ca0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10274ca0
 0x1000249b func   ?vfunc5@CInspectionNode@@QAEPAV1@I@Z CInspectionNode::vfunc5
+0x100024a0 func   ?vfunc39@CRagdollProp@@UAEXPAVCBaseEntity@@@Z CRagdollProp::vfunc39
 0x100024a5 func   ?sub_100cfd00@Queue@@QAEHPAUSaveX@@@Z Queue::sub_100cfd00
 0x100024aa func   ?sub_1027a780@@YIHPAX@Z sub_1027a780
 0x100024b9 func   ?sub_100963d0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_100963d0
