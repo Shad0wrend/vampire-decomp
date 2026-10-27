@@ -116664,6 +116664,17 @@ void CNPC_Crow::sub_103581b0(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10358f70 size=0xb
+namespace lifted {
+extern char g_10628bb4;
+int __stdcall sub_10005c59(int);
+}
+int sub_10358f70()
+{
+    return lifted::sub_10005c59((int)&lifted::g_10628bb4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10359190 size=0x33
 void sub_1000b15e();
 void sub_1000215d();
