@@ -24530,6 +24530,14 @@ void sub_100b7c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7c40 size=0x4
+struct CUnknown100b7c40 { int sub_100b7c40(); };
+int CUnknown100b7c40::sub_100b7c40()
+{
+    return *(int *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7c60 size=0xa
 void CUnknown100b7c60::sub_100b7c60(int value)
 {
