@@ -476,6 +476,16 @@ void __stdcall sub_1002ad20(CUnkVT1002ad20 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002af70 size=0x8
+namespace lifted {
+int sub_1000986d();
+}
+int __stdcall sub_1002af70(int a0)
+{
+    return lifted::sub_1000986d();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002af90 size=0x91
 #include "CPhysConstraint.h"
 

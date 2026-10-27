@@ -5511,6 +5511,7 @@
 0x1000f9b6 func   ?vfunc304@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc304
 0x1000f9cf func   ?sub_1019fb20@CSaveFwd2@@QAEXPBD@Z CSaveFwd2::sub_1019fb20
 0x1000f9de func   ?vfunc68@CAI_BaseNPCTroika@@QAE_NPAX@Z CAI_BaseNPCTroika::vfunc68
+0x1000f9e8 func   ?sub_1002af70@@YGHH@Z sub_1002af70
 0x1000f9f7 func   ?sub_103acac0@CNPC_VScurrying@@QAEDPAVCBaseEntity@@@Z CNPC_VScurrying::sub_103acac0
 0x1000fa0b func   ?sub_1027a310@CAI_BaseNPC@@QAEPAVCBaseEntity@@PBDVVector@@1@Z CAI_BaseNPC::sub_1027a310
 0x1000fa1a func   ?vfunc516@CGenericSabbat_NPC@@UAEMXZ CGenericSabbat_NPC::vfunc516
