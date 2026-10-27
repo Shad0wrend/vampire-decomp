@@ -260,5 +260,6 @@ public:
 	Vector vfunc574(const Vector &vecPos, int a, int b);	// slot 574 (plain member): the unit direction from vecPos to the point sub_10278650 finds for (vecPos, a, b): (point - vecPos) normalised, returned by value
 	Vector sub_10278650(const Vector &vecPos, int a, int b);	// stub 0x1001592e, called directly by vfunc574, returns a Vector by value
 	float vfunc515(const Vector *pTarget);	// slot 515 "CAI_BaseNPC::GetYawTo"-like (declared as a plain overload of the placeholder slot): the yaw (sub_101d2c70, stub 0x1000612c) of the vector from the NPC's origin (slot 220) to pTarget; while the navigator (+0x5d34) reports task 0x37 / 0x38 the target's x / y are swapped (0x37 also negates the new x) and its z is left unset
+	CBaseEntity *sub_1026a930();	// the first grenade (CBaseGrenade, not exploded) of the memory list (slot 541) that this NPC sees (slot 201): within 200 units, or flying (velocity direction) toward the NPC (dot above 0.85); null when there is none
 	void sub_1028e980(CBaseEntity *pEnt);	// called by vfunc433: while the navigator (+0x5d34) is neither in mode 1 nor 3 and has a navigation type, hands pEnt's slot 220 position to the navigator (sub_102ee220, stub 0x1000481d) once the point the route heads for is farther than the threshold at 0x104454c8 from it
 };
