@@ -69,4 +69,6 @@ public:
 	int sub_100ec360(int index, void *pNpc);	// stub 0x10006d3e: an int of the entry for the NPC
 	int sub_100ec2e0(int index, void *pNpc);	// stub 0x1000509c: an int of the entry for the NPC
 	float sub_100ec3d0(int index);	// stub 0x10013cc3: a float of the entry
+	void sub_100ece60(int index, int *pOutA, int *pOutB);	// stub 0x1001109f: two ints of the entry (a random range)
+	int sub_100ecc60(int index, int n);	// stub 0x100103f7: an int of the entry (the same function as EntryTable::sub_100ecc60)
 };
