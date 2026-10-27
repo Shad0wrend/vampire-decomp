@@ -50,6 +50,13 @@ TFilterX *TFilterX::sub_1019ce40(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019cf50 size=0x5
+void CRecipientFilter::MakeReliable()
+{
+    *(char *)((char *)this + 4) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019cff0 size=0x3e
 #include "vampire.h"
 #include "CRecipientFilter.h"
