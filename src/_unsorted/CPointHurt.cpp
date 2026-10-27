@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1018d5d0 size=0x1
+#include "CPointHurt.h"
+void CPointHurt::vfunc104()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018d910 size=0x1e
 #include "CPointHurt.h"
 
