@@ -4544,6 +4544,7 @@
 0x1000c707 func   ?vfunc5@CWeaponUnarmed@@QAEPAV1@I@Z CWeaponUnarmed::vfunc5
 0x1000c71b func   ?sub_10106b30@CBaseCombatCharacter@@QAEXPBDPADH@Z CBaseCombatCharacter::sub_10106b30
 0x1000c720 func   ?vfunc32@CRagdollProp@@UAE_NH@Z CRagdollProp::vfunc32
+0x1000c725 func   ?sub_1006dec0@Ray_t@@QAEXABVVector@@PBM11DD@Z Ray_t::sub_1006dec0
 0x1000c72a func   ?sub_10140710@CBaseMoveBehavior@@QAE_NXZ CBaseMoveBehavior::sub_10140710
 0x1000c74d func   ?sub_101063a0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_101063a0
 0x1000c752 func   ?sub_101c2fc0@@YAHXZ sub_101c2fc0
