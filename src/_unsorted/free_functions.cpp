@@ -8988,6 +8988,19 @@ CTEDecal *CTEDecal::sub_10060380(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100603f0 size=0xb
+namespace lifted {
+extern char g_1044dddc;
+int sub_100021d0();
+}
+struct CUnknown100603f0 { int sub_100603f0(); };
+int CUnknown100603f0::sub_100603f0()
+{
+    *(int *)this = (int)&lifted::g_1044dddc;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10060880 size=0x135
 #include "SendProp.h"
 
