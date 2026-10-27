@@ -5489,6 +5489,7 @@
 0x1000fc3b func   ?vfunc5@COccultThaumDamage@@QAEPAV1@I@Z COccultThaumDamage::vfunc5
 0x1000fc40 func   ?sub_101d77d0@@YAXXZ sub_101d77d0
 0x1000fc45 func   ?vfunc13@CAI_Navigator@@UAEHH@Z CAI_Navigator::vfunc13
+0x1000fc4a func   ?sub_10078560@CUnknown10078560@@QAEHXZ CUnknown10078560::sub_10078560
 0x1000fc5e func   ?vfunc109@CBaseEntity@@UAE_NPBDM@Z CBaseEntity::vfunc109
 0x1000fc63 func   ?sub_101f24c0@CUnknown101f24c0@@QAEHXZ CUnknown101f24c0::sub_101f24c0
 0x1000fc6d func   ?sub_100d1250@@YIXPAUSListOwner_t@@@Z sub_100d1250
