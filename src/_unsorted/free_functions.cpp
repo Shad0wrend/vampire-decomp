@@ -33920,6 +33920,14 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eedd0 size=0x7
+struct CUnknown100eedd0 { char sub_100eedd0(); };
+char CUnknown100eedd0::sub_100eedd0()
+{
+    return *(char *)((char *)this + 0x624);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eef10 size=0x29
 #include "CUnknown100eef10.h"
 
