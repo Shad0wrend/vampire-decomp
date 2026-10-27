@@ -54297,6 +54297,34 @@ void CRopeKeyframe::sub_1019e310()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e5d0 size=0xf7
+#include "CRopeKeyframe.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+static inline float LengthG(const Vector &v)
+{
+	float s = v.z * v.z;
+	s += v.x * v.x;
+	s += v.y * v.y;
+	return FastSqrt(s);
+}
+
+void CRopeKeyframe::sub_1019e5d0()
+{
+	if (EHandle_Get(m_hEndPoint))
+	{
+		CEntityVSlots *pStart = (CEntityVSlots *)EHandle_Get(m_hStartPoint);
+		CEntityVSlots *pEnd = (CEntityVSlots *)EHandle_Get(m_hEndPoint);
+		Vector *pEndPos = pEnd->slot217();
+		Vector *pStartPos = pStart->slot217();
+		m_n474 = (int)LengthG(*pStartPos - *pEndPos);
+	}
+	else
+		m_n474 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019e740 size=0x6b
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
