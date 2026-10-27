@@ -116,3 +116,9 @@ float CAI_Motor::vfunc16()
     return 10.0f;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102e1420 size=0x1
+void CAI_Motor::vfunc9()
+{
+}
+// END FUNCTION
