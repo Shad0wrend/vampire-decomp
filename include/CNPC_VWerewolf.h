@@ -129,6 +129,7 @@ public:
 	int m_n6708;	// 0x6708
 	int m_n670c;	// 0x670c
 
+	bool sub_103d1e50();	// both doors are valid and close together (door state 2 is always true)
 	int sub_10366490(int key);
 	bool sub_10366400(int key);
 
