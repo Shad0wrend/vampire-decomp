@@ -24634,6 +24634,14 @@ void CFoo::sub_100b4ad0(int *param_2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4b20 size=0x7
+struct CUnknown100b4b20 { char sub_100b4b20(); };
+char CUnknown100b4b20::sub_100b4b20()
+{
+    return *(char *)((char *)this + 0x43c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4e10 size=0x6
 namespace lifted {
 extern int g_10552818;
