@@ -147,3 +147,14 @@ bool CPhysicsProp::vfunc32(int a)
 	return this == sub_104115b0(a, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101917f0 size=0xe
+#include "CPhysicsProp.h"
+namespace lifted {
+int sub_10010ec9(int);
+}
+void CPhysicsProp::vfunc39(CBaseEntity * a0)
+{
+    lifted::sub_10010ec9(*(int *)&a0);
+}
+// END FUNCTION
