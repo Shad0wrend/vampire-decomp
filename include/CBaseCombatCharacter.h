@@ -165,7 +165,10 @@ public:
 #include "CBaseCombatCharacter_ext.h"
 #include "CBaseCombatCharacter_ext2.h"
 
-	char m_pad03e0[0x1084 - 0x3e0];
+	char m_pad03e0[0x1064 - 0x3e0];
+	float m_flPoseValue[2];	// 0x1064: last pose parameter values set through slot 346
+	int m_nPoseIndex[2];	// 0x106c: the pose parameter indices they belong to
+	char m_pad1074[0x1084 - 0x1074];
 	int m_nStealthModifier;	// 0x1084
 	char m_pad1088[0x10d4 - 0x1088];
 	char m_b10d4;	// camera target flag
