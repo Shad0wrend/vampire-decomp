@@ -9709,6 +9709,19 @@ void sub_10064df0(void *pFilter, int delay, int *pA, int *pB, int a5, int a6, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065030 size=0xb
+namespace lifted {
+extern char g_1044df68;
+int sub_100021d0();
+}
+struct CUnknown10065030 { int sub_10065030(); };
+int CUnknown10065030::sub_10065030()
+{
+    *(int *)this = (int)&lifted::g_1044df68;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065070 size=0x3
 void __stdcall sub_10065070(int a0, int a1)
 {

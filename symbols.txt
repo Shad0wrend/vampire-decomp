@@ -4229,6 +4229,7 @@
 0x1000c18a func   ?vfunc359@CNPC_VGargoyle@@UAEHH@Z CNPC_VGargoyle::vfunc359
 0x1000c199 func   ?sub_10197b00@@YAPAUPyObj@@PAX0@Z sub_10197b00
 0x1000c1a3 func   ?sub_100732f0@UtlMem5@@QAEXH@Z UtlMem5::sub_100732f0
+0x1000c1a8 func   ?sub_10065030@CUnknown10065030@@QAEHXZ CUnknown10065030::sub_10065030
 0x1000c1c6 func   ?sub_103a9340@CNPC_VSabbatLeader@@QAEDPAUCNPC_VSabbatLeaderHint@@@Z CNPC_VSabbatLeader::sub_103a9340
 0x1000c1cb func   ?sub_100ce630@CUnknown100ce630@@QAE_NM@Z CUnknown100ce630::sub_100ce630
 0x1000c1da func   ?sub_1007dfe0@CUnknown1007dfe0@@QAEXH@Z CUnknown1007dfe0::sub_1007dfe0
