@@ -48,3 +48,14 @@ bool CPointCamera::vfunc86(int a, int b, int c, int d, int e)
 	return ((CUnknown101ab800 *)((char *)this + 0x2d4))->sub_101ab8f0(b, (const unsigned char *)c, d, e);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1018c7a0 size=0x6
+#include "CPointCamera.h"
+namespace lifted {
+extern char g_1058be60;
+}
+datamap_t * CPointCamera::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1058be60);
+}
+// END FUNCTION
