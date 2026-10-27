@@ -113151,6 +113151,12 @@ char sub_10362d40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10365840 size=0x1
+void sub_10365840()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10366190 size=0x26
 #include "inputdata_t.h"
 #include "CNPC_VVampireBoss.h"
