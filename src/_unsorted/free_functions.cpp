@@ -13508,6 +13508,14 @@ void CUnknown100792c0::sub_100792e0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079300 size=0x4
+struct CUnknown10079300 { int sub_10079300(); };
+int CUnknown10079300::sub_10079300()
+{
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079320 size=0xaa
 extern "C" int printf(const char *, ...);
 extern "C" __declspec(dllimport) void __stdcall OutputDebugStringA(const char *msg);
