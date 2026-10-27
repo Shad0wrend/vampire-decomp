@@ -39535,6 +39535,12 @@ void CGameMovement::sub_10121000(Vector &wishdir, float wishspeed, float accel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10122170 size=0x1
+void sub_10122170()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10122590 size=0xd8
 #include "CGameMovement.h"
 struct SVarA { virtual void v0(); virtual bool v1(); char pad[0x24]; float f28; };
