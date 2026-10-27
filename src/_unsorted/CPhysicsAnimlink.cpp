@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1014edb0 size=0x6
+#include "CPhysicsAnimlink.h"
+namespace lifted {
+extern char g_1057c1d8;
+}
+datamap_t * CPhysicsAnimlink::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1057c1d8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ef80 size=0x1e
 #include "CPhysicsAnimlink.h"
 
