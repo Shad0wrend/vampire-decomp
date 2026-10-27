@@ -100319,6 +100319,38 @@ void sub_102c9d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c9e10 size=0x1a7
+#include "CAI_DebugRecord.h"
+#include "CBaseEntity.h"
+#include "globalvars.h"
+
+extern char g_106b8540[];
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+void sub_10142aa0(const float *pOrigin, const float *pMins, const float *pMaxs, int r, int g, int b, int a, int duration);
+void sub_10143710(const float *pPos, const char *pszText, int unused, int nValue);
+
+void CAI_DebugRecord::sub_102c9e10(unsigned char flags)
+{
+	if (flags & 1)
+	{
+		Vector vecMaxs(5.0f, 5.0f, 5.0f);
+		Vector vecMins(-5.0f, -5.0f, -5.0f);
+		sub_10142aa0(&m_vecPos.x, &vecMins.x, &vecMaxs.x, 0xff, 0x80, 0x80, 0x28, 0);
+	}
+	if (flags & 2)
+	{
+		const char *pszType = "Criminal";
+		if (m_nType == 2)
+			pszType = "Supernatural";
+		const char *pszSecond = m_hSecond.Get() ? m_hSecond.Get()->sub_1000b5cd() : "Unknown";
+		const char *pszFirst = m_hFirst.Get() ? m_hFirst.Get()->sub_1000b5cd() : "Unknown";
+		char szText[128];
+		Q_snprintf(szText, sizeof(szText), "%s %f %s %s", pszType, (double)(m_flExpireTime - gpGlobals->curtime), pszFirst, pszSecond);
+		sub_10143710(&m_vecPos.x, szText, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ca030 size=0x36
 void sub_100107c1();
 void *sub_104312d5(unsigned int size);
