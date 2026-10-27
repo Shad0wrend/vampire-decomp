@@ -7,6 +7,7 @@ class CBaseAnimating;
 class CPhysicsAnimlink : public CBaseEntity
 {
 public:
+	void vfunc103();	// slot 103 \"CPhysicsAnimlink::Activate\": finds the animating entity (m_psz450) and the bone (m_psz454), then the physics object (the entity m_psz458, or the ragdoll body named m_psz45c), and attaches them (sub_1014f210)
 	CPhysicsAnimlink *vfunc5(unsigned int flags);
 	void sub_1000144c();
 	CPhysicsAnimlink *sub_1014eef0();	// as in CKeepUpright (transplant)
