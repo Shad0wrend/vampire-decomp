@@ -172,6 +172,7 @@
 0x100017da func   _npc_VRat npc_VRat
 0x100017df func   ?sub_102a9800@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a9800
 0x100017e9 func   _npc_crow npc_crow
+0x100017ee func   ?vfunc1@CTraceFilterNoCharacterCollide@@UAEHXZ CTraceFilterNoCharacterCollide::vfunc1
 0x100017fd func   ?sub_1009c5f0@CBaseEntity@@QAEXHPBDPBHH@Z CBaseEntity::sub_1009c5f0
 0x10001811 func   ?vfunc5@CNPC_VCameraSecurity@@QAEPAV1@I@Z CNPC_VCameraSecurity::vfunc5
 0x10001816 func   ?vfunc3@CEffectsServer@@UAEXPBMHHH@Z CEffectsServer::vfunc3
