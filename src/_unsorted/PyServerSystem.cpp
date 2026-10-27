@@ -72,3 +72,10 @@ void sub_1019a490()
     sub_1019be10("__main__", sub_1019b380(0), &g_1059195c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1019a8c0 size=0x1
+#include "PyServerSystem.h"
+void PyServerSystem::vfunc4()
+{
+}
+// END FUNCTION
