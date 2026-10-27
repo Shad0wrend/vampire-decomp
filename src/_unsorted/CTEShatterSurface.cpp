@@ -42,3 +42,14 @@ CTEShatterSurface *CTEShatterSurface::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10063400 size=0x6
+#include "CTEShatterSurface.h"
+namespace lifted {
+extern char g_106c3858;
+}
+ServerClass * CTEShatterSurface::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c3858);
+}
+// END FUNCTION
