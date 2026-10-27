@@ -54989,6 +54989,14 @@ void CUnk1019d1c0::sub_1019d1c0(unsigned int mask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d450 size=0x4
+struct CUnknown1019d450 { char sub_1019d450(); };
+char CUnknown1019d450::sub_1019d450()
+{
+    return *(char *)((char *)this + 0x28);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d490 size=0xa
 void CUnknown1019d490::sub_1019d490(char value)
 {
