@@ -5778,6 +5778,7 @@
 0x1000fbe6 func   ?sub_10211550@CTriggerBombSite@@QAEXUCBombState@@0@Z CTriggerBombSite::sub_10211550
 0x1000fbff func   ?vfunc267@CBaseViewModel@@QAEPAVCBaseEntity@@XZ CBaseViewModel::vfunc267
 0x1000fc04 func   ?sub_10130740@@YGHH@Z sub_10130740
+0x1000fc0e func   ?vfunc82@CVampireProjectile@@UAEPAUdatamap_t@@XZ CVampireProjectile::vfunc82
 0x1000fc1d func   ?vfunc2@CTEBreakModel@@UAEPAV1@I@Z CTEBreakModel::vfunc2
 0x1000fc27 func   ?sub_100737b0@CUnknown100737b0@@QAEXH@Z CUnknown100737b0::sub_100737b0
 0x1000fc36 func   ?vfunc3@CTEShowLine@@UAEXPBVVector@@0@Z CTEShowLine::vfunc3

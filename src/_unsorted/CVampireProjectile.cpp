@@ -30,6 +30,16 @@ void CVampireProjectile::vfunc134()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee250 size=0x6
+namespace lifted {
+extern char g_105a4c58;
+}
+datamap_t * CVampireProjectile::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105a4c58);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee3a0 size=0x1e
 #include "CVampireProjectile.h"
 
