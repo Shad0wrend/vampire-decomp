@@ -10655,6 +10655,19 @@ CTEUserTracer *CTEUserTracer::sub_1006aa10(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006aa90 size=0xb
+namespace lifted {
+extern char g_1044e184;
+int sub_100021d0();
+}
+struct CUnknown1006aa90 { int sub_1006aa90(); };
+int CUnknown1006aa90::sub_1006aa90()
+{
+    *(int *)this = (int)&lifted::g_1044e184;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006ac90 size=0x11a
 #include "SendProp.h"
 
