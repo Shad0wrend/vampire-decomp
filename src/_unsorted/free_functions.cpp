@@ -6931,6 +6931,17 @@ int sub_100507c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050840 size=0x7
+namespace lifted {
+extern char g_1044ba10;
+}
+struct CUnknown10050840 { void sub_10050840(); };
+void CUnknown10050840::sub_10050840()
+{
+    *(int *)this = (int)&lifted::g_1044ba10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050860 size=0xd
 #include "CUnknown10050860.h"
 
