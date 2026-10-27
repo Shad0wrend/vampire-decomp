@@ -16,4 +16,5 @@ public:
 	void sub_1035f650(int *pTask);	// slot 442 implementation (stub 0x10009b06): the task start handler of the animal NPCs, called directly by the dog
 	int vfunc440(int activity);	// slot 440 (the base implementation, stub 0x10012283, 0x1035fe60): tail called by CNPC_VDog::vfunc440
 	void vfunc103();	// slot 103 (stub 0x100117ca): the base implementation, called by CNPC_VScurrying::vfunc103
+	int vfunc482(char bDisregardState, int interruptLevel);	// slot 482 (CanPlaySequence-like), same as CNPC_VHuman::vfunc482
 };
