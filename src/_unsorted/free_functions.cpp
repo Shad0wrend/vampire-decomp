@@ -98454,6 +98454,18 @@ int CUnknown102beab0::sub_102beab0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102beae0 size=0x1f
+namespace lifted {
+extern char g_10577ca0;
+struct C1000a948 { int sub_1000a948(int, int, int, int); };
+}
+struct CUnknown102beae0 { int sub_102beae0(int, int, int); };
+int CUnknown102beae0::sub_102beae0(int a0, int a1, int a2)
+{
+    return ((lifted::C1000a948 *)(this + 0x30))->sub_1000a948(a0, a1, (int)&lifted::g_10577ca0, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102beb10 size=0x6
 namespace lifted {
 extern char g_109203cc;
