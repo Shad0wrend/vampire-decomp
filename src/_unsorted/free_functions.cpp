@@ -32212,6 +32212,49 @@ int CDialog::sub_100e8100(char *pPacket)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e82d0 size=0x198
+#include "CDialog.h"
+#include "ScopeTrace.h"
+
+extern "C" void *bsearch(const void *, const void *, unsigned int, unsigned int, int (*)(const void *, const void *));
+int sub_100e77f0(const void *, const void *);
+struct CDebugLog { virtual char v0(); virtual char v1(); char pad[0x28]; int m_x2c; };
+extern CDebugLog *g_106e9514;
+extern char g_10563724[];
+extern char g_105636ec[];
+void sub_100dfaf0(int, const char *, ...);
+char sub_100df010(CDialogEntry_t *);
+char sub_100df240(CDialogEntry_t *);
+
+int CDialog::sub_100e82d0(int *pChoices)
+{
+	ScopeTrace trace("CDialog::get_pc_responses", g_106b8540);
+	CDialogEntry_t key;
+	key.m_data[0] = m_nChoices;
+	CDialogEntry_t *pFound = (CDialogEntry_t *)bsearch(&key, m_pTable->m_pEntries, m_pTable->m_nEntries, 0x34, sub_100e77f0);
+	if (!pFound)
+		return 0;
+	if (!g_106e9514->v1() && g_106e9514->m_x2c) {
+		sub_100dfaf0(2, g_10563724, m_nChoices);
+		sub_100dfaf0(1, g_105636ec, m_nChoices);
+	}
+	int n = 0;
+	int i = pFound - m_pTable->m_pEntries + 1;
+	do {
+		if (i >= m_pTable->m_nEntries) break;
+		CDialogEntry_t *p = m_pTable->m_pEntries + i;
+		if (sub_100df010(p)) break;
+		if (sub_100df240(p)) break;
+		if (!p->m_data[4] || sub_100e8980(p->m_data[4], p->m_data[5])) {
+			pChoices[n] = p->m_data[0];
+			n++;
+		}
+		i++;
+	} while (n < 4);
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e84e0 size=0x27
 bool __stdcall sub_100e84e0(int flags, char *pThis)
 {
