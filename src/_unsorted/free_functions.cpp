@@ -103111,6 +103111,17 @@ void CSymTabUnit102e9fe0::sub_102e9fe0(int a, int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea050 size=0x7
+namespace lifted {
+struct C1000cc2a { int sub_1000cc2a(); };
+}
+struct CUnknown102ea050 { int sub_102ea050(); };
+int CUnknown102ea050::sub_102ea050()
+{
+    return ((lifted::C1000cc2a *)(*(int *)this))->sub_1000cc2a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ea070 size=0x4
 struct CUnknown102ea070 { int sub_102ea070(); };
 int CUnknown102ea070::sub_102ea070()
