@@ -104003,6 +104003,17 @@ struct CUnknown102ee4f0 { char pad[0x30]; CInner100016b3 *m_pInner; void sub_102
 void CUnknown102ee4f0::sub_102ee4f0() { m_pInner->sub_100016b3(); }
 // END FUNCTION
 
+// FUNCTION: 0x102ee510 size=0x8
+namespace lifted {
+struct C10001b77 { int sub_10001b77(); };
+}
+struct CUnknown102ee510 { int sub_102ee510(); };
+int CUnknown102ee510::sub_102ee510()
+{
+    return ((lifted::C10001b77 *)(*(int *)((char *)this + 0x30)))->sub_10001b77();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ee550 size=0x2c
 struct CVecTarget102ee550 {
     void sub_1000745a(float *pVec);
