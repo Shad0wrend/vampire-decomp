@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101297e0 size=0x6
+#include "CGib.h"
+namespace lifted {
+extern char g_10572f18;
+}
+datamap_t * CGib::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10572f18);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b6b0 size=0x1e
 #include "CGib.h"
 
