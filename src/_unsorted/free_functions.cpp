@@ -60096,6 +60096,14 @@ bool __fastcall sub_101c4580(void *self, int unused, IFile101c4580 *pFS, const c
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4640 size=0x3
+struct CUnknown101c4640 { void * sub_101c4640(); };
+void * CUnknown101c4640::sub_101c4640()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4660 size=0x17
 extern char *(__cdecl *g_109f3890)(char *, const char *, int);
 
