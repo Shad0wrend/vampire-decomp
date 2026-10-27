@@ -69234,6 +69234,17 @@ int CUnknown101dfe20::sub_101dfe20(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dfe50 size=0x1f
+namespace lifted {
+struct C1001554b { int sub_1001554b(int, int, int, int); };
+}
+struct CUnknown101dfe50 { int sub_101dfe50(int, int, int); };
+int CUnknown101dfe50::sub_101dfe50(int a0, int a1, int a2)
+{
+    return ((lifted::C1001554b *)(this + 0x2b8))->sub_1001554b(a0, a1, a2, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dff00 size=0xf7
 #include "CUnknown101dff00.h"
 extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
