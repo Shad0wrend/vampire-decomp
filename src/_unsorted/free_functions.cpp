@@ -40073,6 +40073,27 @@ bool sub_1012ca50(Ent *target, Ent *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012caf0 size=0x88
+struct CHolder260 {
+	char pad[0x260];
+	EHANDLE m_h;
+};
+struct COut12 {
+	int a, b, c, d;
+};
+void sub_1012cbb0(CBaseEntity *pEnt, COut12 *pOut);
+
+// TARGET: sub_1012caf0
+int sub_1012caf0(CHolder260 *p, COut12 *pOut)
+{
+	if (!p->m_h.Get())
+		return 0;
+	CBaseEntity *e = p->m_h.Get();
+	sub_1012cbb0(e, pOut);
+	return pOut->d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cbb0 size=0x105
 #include "CUtlVector4.h"
 #include "CEHandleGet.h"

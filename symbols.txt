@@ -6372,6 +6372,7 @@
 0x10013309 func   ?vfunc103@CPropDestructable@@UAEXXZ CPropDestructable::vfunc103
 0x10013327 func   ?vfunc5@CResearchBook_LG_COMP@@QAEPAV1@I@Z CResearchBook_LG_COMP::vfunc5
 0x10013331 func   ?vfunc599@CNPC_VTzimisceRunner@@UAE_NPAX@Z CNPC_VTzimisceRunner::vfunc599
+0x10013345 func   ?sub_1012caf0@@YAHPAUCHolder260@@PAUCOut12@@@Z sub_1012caf0
 0x1001334f func   ?sub_102edc80@CAI_Navigator@@QAE_NPBVVector@@MHHPAV2@H@Z CAI_Navigator::sub_102edc80
 0x10013368 func   ?sub_103394a0@CBaseCombatCharacter@@QAEXDHH@Z CBaseCombatCharacter::sub_103394a0
 0x1001336d func   ?sub_1022b4d0@S1022b4d0@@QAEXAAUinputdata_t@@@Z S1022b4d0::sub_1022b4d0
