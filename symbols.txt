@@ -2834,6 +2834,7 @@
 0x10008d0f func   ?sub_1014f210@CPhysicsAnimlink@@QAEXPAVCBaseAnimating@@HPAXHH@Z CPhysicsAnimlink::sub_1014f210
 0x10008d14 func   _info_landmark info_landmark
 0x10008d19 func   ?sub_10249400@CUnknown10249400@@QAEMXZ CUnknown10249400::sub_10249400
+0x10008d1e func   ?sub_101e1990@@YGHHH@Z sub_101e1990
 0x10008d28 func   ?sub_1033f3f0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033f3f0
 0x10008d32 func   ?vfunc5@CItemGHattersScreenplay@@QAEPAV1@I@Z CItemGHattersScreenplay::vfunc5
 0x10008d5a func   ?sub_1011a430@@YAXXZ sub_1011a430
