@@ -31,6 +31,51 @@ int CInstancedSceneEntity::vfunc267(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10084ec0 size=0x88
+#include "CInstancedSceneEntity.h"
+
+#define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLOTS100(p) SLOTS10(p##0) SLOTS10(p##1) SLOTS10(p##2) SLOTS10(p##3) SLOTS10(p##4) \
+	SLOTS10(p##5) SLOTS10(p##6) SLOTS10(p##7) SLOTS10(p##8) SLOTS10(p##9)
+
+struct CSceneRequestObject
+{
+	SLOTS100(a) SLOTS100(b) SLOTS100(c) SLOTS100(d) SLOTS100(e)
+	SLOTS10(f0) SLOTS10(f1) SLOTS10(f2) SLOTS10(f3) SLOTS10(f4)
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4();
+	virtual void g5(); virtual void g6(); virtual void g7(); virtual void g8();
+	virtual int vfunc559(int a);
+};
+
+struct CSceneFollowEnt
+{
+	char pad[0x94];
+	CSceneRequestObject *m_pObj94;
+};
+
+struct CInstancedView580
+{
+	char pad[0x580];
+	CHandle<CSceneFollowEnt> m_h580;
+};
+
+int CInstancedSceneEntity::vfunc269(int a)
+{
+	CInstancedView580 *v = (CInstancedView580 *)this;
+	if (v->m_h580.Get()) {
+		CSceneFollowEnt *ent = v->m_h580.Get();
+		CSceneRequestObject *obj = ent->m_pObj94;
+		if (obj) {
+			int r = obj->vfunc559(a);
+			if (r)
+				return r;
+		}
+	}
+	return sub_10083cd0(a, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084f80 size=0x1e
 #include "CInstancedSceneEntity.h"
 
