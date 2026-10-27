@@ -39660,6 +39660,19 @@ int sub_1010ce30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010d0b0 size=0xb
+namespace lifted {
+extern char g_1045e8ac;
+int sub_100156b8();
+}
+struct CUnknown1010d0b0 { int sub_1010d0b0(); };
+int CUnknown1010d0b0::sub_1010d0b0()
+{
+    *(int *)this = (int)&lifted::g_1045e8ac;
+    return lifted::sub_100156b8();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010d4b0 size=0xb0
 struct ISaveRestoreOps;
 struct datamap_t;
