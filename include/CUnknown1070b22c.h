@@ -37,7 +37,7 @@ public:
 	virtual int vfunc17(int a, int b);
 	virtual void *vfunc18(int modelIndex); virtual void a19();
 	virtual int vfunc20(const char *pszModel); virtual int vfunc21(int modelIndex); virtual void a22(); virtual void a23(); virtual void a24();
-	virtual void a25(); virtual int vfunc26(int a); virtual void a27(); virtual void a28(); virtual void a29();
+	virtual void a25(); virtual int vfunc26(int a); virtual void a27(); virtual const char *vfunc28(int index); virtual void a29();
 	virtual int vfunc30(const float *pPos); virtual void vfunc31(int cluster, int size, char *pBuffer); virtual char vfunc32(const float *pPos, void *pData); virtual void a33(); virtual void a34();
 	virtual int vfunc35(int edict);
 	virtual void a36(); virtual void a37();
