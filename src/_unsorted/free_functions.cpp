@@ -130251,6 +130251,12 @@ void CPlayerPickupController::sub_1040d0a0(char bThrow)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040d950 size=0x1
+void sub_1040d950()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dcf0 size=0xb3
 #include "CBaseEntity.h"
 #include "CBaseCombatWeapon.h"

@@ -2584,6 +2584,7 @@
 0x10008454 func   ?vfunc448@CBasePlayer@@UAEXXZ CBasePlayer::vfunc448
 0x1000845e func   ?vfunc113@CWorldEvents@@UAEXXZ CWorldEvents::vfunc113
 0x1000849a func   ?sub_10201190@CVStatList_t@@QAEHH@Z CVStatList_t::sub_10201190
+0x1000849f func   ?sub_1040d950@@YAXXZ sub_1040d950
 0x100084a4 func   ?vfunc5@CNPC_VGuard1@@QAEPAV1@I@Z CNPC_VGuard1::vfunc5
 0x100084b3 func   ?sub_101bdde0@CUtlVector4@@QAEXHH@Z CUtlVector4::sub_101bdde0
 0x100084b8 func   ?sub_10221000@QuestJournal@@QAEXXZ QuestJournal::sub_10221000
