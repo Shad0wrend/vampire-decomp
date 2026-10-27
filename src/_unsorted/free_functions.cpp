@@ -12425,6 +12425,14 @@ void CUnknown10075aa0::sub_10075aa0(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075b70 size=0x3
+struct CUnknown10075b70 { int sub_10075b70(); };
+int CUnknown10075b70::sub_10075b70()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075b90 size=0x24
 struct CUnknown10075b90
 {
