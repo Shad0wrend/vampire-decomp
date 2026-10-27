@@ -413,6 +413,12 @@ bool CBasePlayer::vfunc360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101621f0 size=0x1
+void CBasePlayer::vfunc448()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163630 size=0xd9
 #include "CBasePlayer.h"
 #define GV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
