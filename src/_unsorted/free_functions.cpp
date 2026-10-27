@@ -26632,6 +26632,16 @@ void bf_write::sub_100bdd20(unsigned int curData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bde00 size=0xf
+namespace lifted {
+int __stdcall sub_10001ef1(int, int);
+}
+int __stdcall sub_100bde00(int a0)
+{
+    return lifted::sub_10001ef1(a0, 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bde40 size=0x14
 #include "CUnknown100bde40.h"
 
