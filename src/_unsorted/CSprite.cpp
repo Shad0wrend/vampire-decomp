@@ -1,6 +1,35 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1042e8c0 size=0xe5
+#include "CEHandleGet.h"
+#include "CUnknown1042e8c0.h"
+
+void CUnknown1042e8c0::sub_1042e8c0()
+{
+	int dummy;
+	if (*vfunc9(&dummy) != 0) {
+		const char *pName = *vfunc9(&dummy);
+		if (!pName)
+			pName = "";
+		sub_100adfd0(pName);
+	}
+	if (EHandle_Get(*(unsigned int *)((char *)this + 0x37c)) != 0) {
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(*(unsigned int *)((char *)this + 0x37c));
+		int attachment = m_nAttachment;
+		if (pEnt != 0) {
+			m_hAttachedTo = pEnt;
+			m_nAttachment = attachment;
+			sub_1009ee80(pEnt);
+			vfunc93(0xb, 0);
+		}
+	} else {
+		m_hAttachedTo = (CBaseEntity *)0;
+		m_nAttachment = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042f030 size=0x3f
 #include "vampire.h"
 #include "CSprite.h"
