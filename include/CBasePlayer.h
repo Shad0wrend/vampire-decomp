@@ -151,9 +151,16 @@ public:
 	int m_n03E0;	// 0x03E0: the move type
 	char m_pad03E4[0xea4 - 0x3e4];	// 0x03E4 .. 0x0EA3
 	unsigned int m_hEnt0EA4;	// entity handle
-	char m_pad0EA8[0x148c - 0xea8];	// 0x0EA8 .. 0x148B
+	char m_pad0EA8[0x1475 - 0xea8];	// 0x0EA8 .. 0x1474
+	char m_b1475;
+	char m_pad1476[0x1478 - 0x1476];
+	float m_f1478;	// 0x1478: the time the fade of the feeding started / ends
+	float m_f147C;	// 0x147C
+	char m_pad1480[0x148c - 0x1480];	// 0x1480 .. 0x148B
 	float m_f148C;	// 0x148C
-	char m_pad1490[0x1538 - 0x1490];	// 0x1490 .. 0x1537
+	char m_pad1490[0x14a8 - 0x1490];	// 0x1490 .. 0x14A7
+	char m_b14A8;
+	char m_pad14A9[0x1538 - 0x14a9];	// 0x14A9 .. 0x1537
 	unsigned int m_h1538;	// entity handle
 	int m_n153C;
 	char m_pad1540[0x24];	// 0x1540 .. 0x1563
