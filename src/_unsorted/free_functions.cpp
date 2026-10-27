@@ -39453,6 +39453,14 @@ void CFuncMonitor::sub_101150f0(const char *szName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115180 size=0x7
+struct CUnknown10115180 { int sub_10115180(); };
+int CUnknown10115180::sub_10115180()
+{
+    return *(int *)((char *)this + 0x45c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101151a0 size=0xa
 struct CUnknown101151a0 { char p[0x204]; unsigned int a; unsigned int sub_101151a0(); };
 // TARGET: CUnknown101151a0::sub_101151a0
