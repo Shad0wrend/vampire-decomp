@@ -286,6 +286,19 @@ void CSave::vfunc27(const Vector *pValues, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0fc0 size=0x89
+#include "CSave.h"
+
+void CSave::vfunc37(const char *pszName, void *pData, int count)
+{
+	int entityArray[256];
+	EHANDLE *pEHandles = (EHANDLE *)pData;
+	for (int i = 0; i < count; i++)
+		entityArray[i] = sub_101a08f0(pEHandles[i].Get());
+	vfunc9(pszName, entityArray, count);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1080 size=0x81
 #include "CSave.h"
 
