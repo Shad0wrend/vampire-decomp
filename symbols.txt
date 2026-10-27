@@ -4456,6 +4456,7 @@
 0x1000c491 func   ?sub_10077710@CUnknown10077710@@QAEDXZ CUnknown10077710::sub_10077710
 0x1000c496 func   ?sub_1024b150@@YA_NPBUSym@@0@Z sub_1024b150
 0x1000c49b func   ?vfunc176@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc176
+0x1000c4a0 func   ?vfunc82@CNPC_VVampire@@UAEPAUdatamap_t@@XZ CNPC_VVampire::vfunc82
 0x1000c4be func   _npc_payphone npc_payphone
 0x1000c4c3 func   ?sub_1024c630@@YAXPAM@Z sub_1024c630
 0x1000c4cd func   ?sub_102641b0@CUtlVector56@@QAEXH@Z CUtlVector56::sub_102641b0
