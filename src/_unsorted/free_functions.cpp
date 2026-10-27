@@ -37312,6 +37312,14 @@ CParamsExplosion *CParamsExplosion::sub_10104320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104510 size=0x7
+struct CUnknown10104510 { char * sub_10104510(); };
+char * CUnknown10104510::sub_10104510()
+{
+    return (char *)this + 0x45c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104630 size=0x8
 void sub_1000c586();
 void __stdcall sub_10104630(int) { sub_1000c586(); }
