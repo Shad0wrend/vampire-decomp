@@ -11,7 +11,7 @@ class CBaseEntity;
 class CUnknown1040cb60
 {
 public:
-	CUnknown1040cb60() { new (this) CGrabController; }	// this object is a CGrabController (constructor 0x1040bed0, stub 0x100052e0)
+	CUnknown1040cb60() { ((CGrabController *)this)->CGrabController::CGrabController(); }	// this object is a CGrabController (constructor 0x1040bed0, stub 0x100052e0)
 
 	char m_pad0000[4];
 	float m_vPos[3];	// 0x04
