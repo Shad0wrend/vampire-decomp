@@ -101085,6 +101085,14 @@ void CAI_InterestingPlaceConverstation::sub_102db740(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102db760 size=0x7
+struct CUnknown102db760 { int sub_102db760(); };
+int CUnknown102db760::sub_102db760()
+{
+    return *(int *)((char *)this + 0x608);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dbfb0 size=0x164
 #include "CUnknown102dca60.h"
 #include "CUnknown102dc2c0.h"

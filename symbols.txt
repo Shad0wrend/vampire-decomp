@@ -6071,6 +6071,7 @@
 0x10011220 func   ?vfunc574@CAI_BaseNPC@@QAE?AVVector@@ABV2@HH@Z CAI_BaseNPC::vfunc574
 0x1001122a func   ?sub_1022d380@@YIXPAUMem4@@HH@Z sub_1022d380
 0x1001122f func   ?sub_102457d0@CUnknown102457d0@@QAEXH@Z CUnknown102457d0::sub_102457d0
+0x10011239 func   ?sub_102db760@CUnknown102db760@@QAEHXZ CUnknown102db760::sub_102db760
 0x1001123e func   ?sub_100fdcc0@@YIXPADHH@Z sub_100fdcc0
 0x10011243 func   ?sub_100ae090@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100ae090
 0x10011248 func   ?sub_1007cbe0@@YIXPAUCChoreoSaverView@@HPAXHPAUCChoreoChannelView@@@Z sub_1007cbe0
