@@ -113048,6 +113048,13 @@ char sub_1035ac30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035b060 size=0x3
+int sub_1035b060()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b1c0 size=0x8
 struct CUnknown1035b1c0 { int sub_1035b1c0(int, int, int, int); };
 int CUnknown1035b1c0::sub_1035b1c0(int, int, int, int) { return 1; }
