@@ -10583,6 +10583,19 @@ void __cdecl sub_1006a370(CUnknown1019d130 *pFilter, int a, TERecipientX *pTarge
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006a470 size=0xb
+namespace lifted {
+extern char g_1044e160;
+int sub_100021d0();
+}
+struct CUnknown1006a470 { int sub_1006a470(); };
+int CUnknown1006a470::sub_1006a470()
+{
+    *(int *)this = (int)&lifted::g_1044e160;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006a7b0 size=0xe1
 #include "SendProp.h"
 
