@@ -119662,6 +119662,17 @@ char sub_10388150()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388c40 size=0xd
+namespace lifted {
+extern char g_1063bc28;
+int __stdcall sub_1000421e(int, int);
+}
+int sub_10388c40()
+{
+    return lifted::sub_1000421e((int)&lifted::g_1063bc28, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388d30 size=0x43
 #include "CNPC_VLasombra.h"
 void *sub_100aa720(int size);

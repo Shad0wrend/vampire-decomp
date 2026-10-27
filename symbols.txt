@@ -3608,6 +3608,7 @@
 0x1000a6e1 func   ?sub_1013dc40@CUnknown1013dc40@@QAEHXZ CUnknown1013dc40::sub_1013dc40
 0x1000a6e6 func   ?sub_1021a4b0@CUnknown1021a4b0@@QAE_NH@Z CUnknown1021a4b0::sub_1021a4b0
 0x1000a6fa func   ?sub_10175180@@YI_NPAUHolder@@@Z sub_10175180
+0x1000a6ff func   ?sub_10388c40@@YAHXZ sub_10388c40
 0x1000a704 func   ?sub_1030bc20@CUnknown1030bc20@@QAEHXZ CUnknown1030bc20::sub_1030bc20
 0x1000a70e func   ?vfunc266@CSceneEntity@@UAEXHPBD@Z CSceneEntity::vfunc266
 0x1000a718 func   ?sub_1011a620@@YAXXZ sub_1011a620
