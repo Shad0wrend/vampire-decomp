@@ -107,6 +107,7 @@ public:
 	void sub_10272650(int a);	// CAI_BaseNPC member (stub 0x100097d2), called with 0x113e
 	void sub_10273070(int a);	// CAI_BaseNPC member (stub 0x1000dc29), called with 1
 	void sub_103c60a0();	// CNPC_VVampireBoss::vfunc618 (stub 0x10014df3), called directly
+	CNPC_VSabbatLeaderHint *sub_103a9ad0();	// "CNPC_VSabbatLeader::SelectDiveOut...": scope trace, like sub_103a9540 for the hints of type 0x3e85: at least a constant away on the ground plane, the best (lowest) of that distance plus the yaw difference to the player's facing
 	CNPC_VSabbatLeaderHint *sub_103a9540();	// "CNPC_VSabbatLeader::SelectTeleportHint": scope trace, with the player entity (handle at +0x628c) live, the teleport hint (type 0x3e82, global list at 0x10925450 via +0x5d8) at least a constant away on the ground plane whose direction to the player is closest to the player's facing yaw; 0 when none
 	void sub_103aad40();	// "CNPC_VSabbatLeader::SetJumpVelocityTowardPlayer": scope trace, with the player entity (handle at +0x628c) live, the jump velocity toward a point 25 units short of the player on the horizontal line between the two
 	void sub_10009a57(Vector *pVelocity, const Vector *pStart, const Vector *pEnd);	// CAI_BaseNPCTroika member (stub 0x10009a57, body 0x102c4cc0): fills the x / y of pVelocity (z in) for a ballistic jump from pStart to pEnd
