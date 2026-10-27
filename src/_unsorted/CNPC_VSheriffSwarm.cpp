@@ -27,3 +27,14 @@ int CNPC_VSheriffSwarm::vfunc546(int x)
     return g_10936c74.sub_1000aed4(g_1093c680.sub_10012300(x));
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b2280 size=0x6
+#include "CNPC_VSheriffSwarm.h"
+namespace lifted {
+extern char g_1065194c;
+}
+datamap_t * CNPC_VSheriffSwarm::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1065194c);
+}
+// END FUNCTION
