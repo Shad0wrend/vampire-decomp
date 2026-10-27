@@ -93957,6 +93957,14 @@ float __fastcall sub_102a9570(Vector *a, int unused, Vector *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a95c0 size=0x3
+struct CUnknown102a95c0 { void * sub_102a95c0(); };
+void * CUnknown102a95c0::sub_102a95c0()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a95e0 size=0xa
 struct CUnknown102a95e0 { int a[1]; int *sub_102a95e0(int i); };
 // TARGET: CUnknown102a95e0::sub_102a95e0
