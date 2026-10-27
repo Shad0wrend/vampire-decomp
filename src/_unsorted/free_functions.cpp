@@ -11704,6 +11704,14 @@ void S10073260::sub_10073260(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073290 size=0x7
+struct CUnknown10073290 { char * sub_10073290(); };
+char * CUnknown10073290::sub_10073290()
+{
+    return (char *)this + 0x94;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100732b0 size=0xd
 void CUnknown100732b0::sub_100732b0(char value)
 {
