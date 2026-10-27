@@ -60,6 +60,13 @@ float *CCollisionProperty::vfunc10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc810 size=0x4
+float * CCollisionProperty::vfunc1()
+{
+    return (float *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc920 size=0x8
 // TARGET: CCollisionProperty::vfunc6
 int CCollisionProperty::vfunc6()
