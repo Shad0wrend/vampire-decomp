@@ -96,7 +96,11 @@ public:
 	Vector m_vecExtent629c;	// +0x629c
 	char m_pad62a8[0x6670 - 0x62a8];
 	unsigned int m_hOwner6670;	// +0x6670: the handle of the owner entity
-	char m_pad6674[0x6684 - 0x6674];
+	int m_n6674;	// +0x6674: the slot index of a tentacle
+	char m_b6678;	// +0x6678
+	char m_pad6679[3];
+	EHANDLE m_h667c;	// +0x667c
+	EHANDLE m_h6680;	// +0x6680
 	char m_bSlotFlag[6];	// +0x6684
 	char m_pad668a[2];
 	int m_hSlotNew[6];	// +0x668c
