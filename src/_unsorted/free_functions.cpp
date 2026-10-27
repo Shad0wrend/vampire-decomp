@@ -90644,6 +90644,58 @@ void * CUnknown10247e20::sub_10247e20(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247e40 size=0x1b0
+#include "CUnknown10248a50.h"
+#include <string.h>
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *pDest, unsigned int maxLen, const char *pFormat, ...);
+
+void CUnknown10248a50::sub_10247e40(const CUnknown10248a50 *pSrc)
+{
+	char buf[256];
+	CUnknown10248a50 *pDst = this;
+	for (;;) {
+		pDst->m_pszName = new char[strlen(pSrc->m_pszName) + 1];
+		strcpy(pDst->m_pszName, pSrc->m_pszName);
+
+		if (!pSrc->m_pSub) {
+			pDst->m_iDataType = pSrc->m_iDataType;
+			switch (pSrc->m_iDataType) {
+			case 0:
+				if (pSrc->m_pszString) {
+					pDst->m_pszString = new char[strlen(pSrc->m_pszString) + 1];
+					strcpy(pDst->m_pszString, pSrc->m_pszString);
+				}
+				break;
+			case 1:
+				Q_snprintf(buf, sizeof(buf), "%d", pDst->m_iValue = pSrc->m_iValue);
+				pDst->m_pszString = new char[strlen(buf) + 1];
+				strcpy(pDst->m_pszString, buf);
+				break;
+			case 2:
+				Q_snprintf(buf, sizeof(buf), "%f", pDst->m_flValue = pSrc->m_flValue);
+				pDst->m_pszString = new char[strlen(buf) + 1];
+				strcpy(pDst->m_pszString, buf);
+				break;
+			case 3:
+				pDst->m_pValue = pSrc->m_pValue;
+				break;
+			}
+		}
+
+		if (pSrc->m_pSub) {
+			pDst->m_pSub = new CUnknown10248a50(0);
+			pDst->m_pSub->sub_10011153(pSrc->m_pSub);
+		}
+
+		if (!pSrc->m_pPeer)
+			return;
+		pDst->m_pPeer = new CUnknown10248a50(0);
+		pSrc = pSrc->m_pPeer;
+		pDst = pDst->m_pPeer;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102480b0 size=0x3
 struct CUnknown102480b0 { int sub_102480b0(); };
 int CUnknown102480b0::sub_102480b0()
