@@ -1743,6 +1743,7 @@
 0x10005844 func   ?vfunc255@CBaseAnimatingOverlay@@QAEXPAX0H@Z CBaseAnimatingOverlay::vfunc255
 0x10005853 func   ?sub_10071cd0@@YAXPAMPBD@Z sub_10071cd0
 0x10005858 func   ?sub_100f8490@@YGPAVCBaseEntity@@PAV1@IPBVVector@@M@Z sub_100f8490
+0x10005867 func   ?vfunc82@CNPC_VPedestrian@@UAEPAUdatamap_t@@XZ CNPC_VPedestrian::vfunc82
 0x1000586c func   ?sub_1002fb00@CCollisionEventSolver@@QAEHPAX0PAVCBaseEntity@@1M@Z CCollisionEventSolver::sub_1002fb00
 0x10005876 func   ?sub_102e8250@@YIXPAM@Z sub_102e8250
 0x1000587b func   ?vfunc14@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHH@Z CTempEntsSystem::vfunc14
