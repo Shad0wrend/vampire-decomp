@@ -152,6 +152,28 @@ bool CNPC_VTzimisceRunner::vfunc600(void *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3a70 size=0x2f
+#include "CNPC_VTzimisceRunner.h"
+#include "CUnknown1025ddd0.h"
+
+struct CUnknown10924edcView
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+};
+
+extern CUnknown10924edcView *g_10924edc;
+
+// TARGET: CNPC_VTzimisceRunner::vfunc601
+void CNPC_VTzimisceRunner::vfunc601(int unused)
+{
+	g_10924edc->vfunc1();
+	((EHANDLE *)&m_h6678)->Set((CBaseEntity *)0);
+	m_b6078 = 0;
+	m_pBehaviour65e8->sub_1025ddd0(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3d80 size=0x6e
 #include "CNPC_VTzimisceRunner.h"
 int CNPC_VTzimisceRunner::vfunc310(int act)
