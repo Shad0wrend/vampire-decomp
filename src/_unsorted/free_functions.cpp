@@ -106941,6 +106941,13 @@ void __fastcall sub_103159d0(Squad *self, int, Ent *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10315a60 size=0x6
+int __stdcall sub_10315a60(int a0)
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10315a80 size=0xe3
 #include "CUnknown103160c0.h"
 #include "CBaseEntity.h"
