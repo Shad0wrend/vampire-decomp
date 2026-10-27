@@ -54724,6 +54724,16 @@ void sub_1019a980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b360 size=0x6
+namespace lifted {
+extern char g_1072b354;
+}
+int sub_1019b360()
+{
+    return (int)&lifted::g_1072b354;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019b3d0 size=0x9c
 extern "C" int _strcmpi(const char *, const char *);
 extern "C" __declspec(dllimport) int *PyInt_FromLong(long);
