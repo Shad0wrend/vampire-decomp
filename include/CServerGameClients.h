@@ -1,6 +1,15 @@
 // class CServerGameClients (RTTI .?AVCServerGameClients@@), primary vtable 0x10462798, 14 slots.
 #pragma once
 
+class CGlobalEntityList_Ent;
+
+struct CServerGameClients_Edict	// the engine's edict: the entity's unknown at +0x40, a flag byte at +0x44
+{
+	char m_pad0000[0x40];
+	CGlobalEntityList_Ent *m_pUnk;	// 0x40
+	char m_bFlag;	// 0x44
+};
+
 class CServerGameClients
 {
 public:
