@@ -26215,6 +26215,16 @@ int sub_100bef30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100befe0 size=0x8
+namespace lifted {
+int __stdcall sub_10003e4f(int);
+}
+int sub_100befe0()
+{
+    return lifted::sub_10003e4f(0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf030 size=0x14
 #include "CUnknown100bf030.h"
 
