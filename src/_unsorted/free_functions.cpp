@@ -85721,6 +85721,12 @@ SendProp sub_10246ef0(int a1, int a2, const char *pszName, int a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247010 size=0x1
+void sub_10247010()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247030 size=0xc2
 #include "SendProp.h"
 
