@@ -85740,6 +85740,12 @@ SendProp sub_10247030(const char *pszDataTableName, const char *pszPropName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247220 size=0x1
+void sub_10247220()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247240 size=0x29
 struct CUnknown10247240 {
     int m_a;
