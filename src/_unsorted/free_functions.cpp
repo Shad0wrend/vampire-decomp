@@ -43247,6 +43247,18 @@ int *sub_10131490()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131750 size=0xf
+namespace lifted {
+int sub_1000c1b2();
+}
+struct CUnknown10131750 { int sub_10131750(); };
+int CUnknown10131750::sub_10131750()
+{
+    *(int *)((char *)this + 0x498) = 0;
+    return lifted::sub_1000c1b2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101317d0 size=0x64
 struct COutputX {
     char m_pad[0x18];
