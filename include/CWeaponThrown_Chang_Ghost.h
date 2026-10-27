@@ -29,9 +29,14 @@ public:
 	int m_n06f8;	// 0x6f8
 	char m_pad06fc[0x8a8 - 0x6fc];
 	int m_n08a8;	// 0x8a8
-	char m_pad08ac[0x914 - 0x8ac];
+	char m_pad08ac[0x910 - 0x8ac];
+	float m_f0910;	// 0x910
 	int m_n0914;	// 0x914
-	char m_pad0918[4];
+	char m_b0918;	// 0x918
+	char m_pad0919[3];
 	float m_flThrowSpeed;	// 0x91c
 	float m_flExpireTime;	// 0x920
+	float m_f0924;	// 0x924
+	float m_f0928;	// 0x928
+	EHANDLE m_hEmitter92c;	// 0x92c: the bone tree emitter entity
 };
