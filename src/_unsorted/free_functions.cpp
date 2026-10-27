@@ -5796,6 +5796,16 @@ bool sub_100454d0(const SortItem *a, const SortItem *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10045700 size=0x6
+namespace lifted {
+extern char g_106bda60;
+}
+int sub_10045700()
+{
+    return (int)&lifted::g_106bda60;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045a90 size=0x3
 struct CUnknown10045a90 { void * sub_10045a90(); };
 void * CUnknown10045a90::sub_10045a90()
