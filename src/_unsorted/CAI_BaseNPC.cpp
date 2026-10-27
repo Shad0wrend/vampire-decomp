@@ -40,6 +40,12 @@ int CAI_BaseNPC::vfunc457()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6740 size=0x3
+void CAI_BaseNPC::vfunc465(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6840 size=0xb
 void CAI_BaseNPC::vfunc483(int unused)
 {

@@ -5441,6 +5441,7 @@
 0x1001028a func   ?sub_10096600@@YIHPAD@Z sub_10096600
 0x1001028f func   ?sub_100cafb0@CMomentaryRotButton@@QAEXXZ CMomentaryRotButton::sub_100cafb0
 0x10010299 func   ?sub_100ed500@Mem44@@QAEXH@Z Mem44::sub_100ed500
+0x100102a3 func   ?vfunc465@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc465
 0x100102a8 func   ?vfunc244@CBaseCombatCharacter@@UAEPBDXZ CBaseCombatCharacter::vfunc244
 0x100102b2 func   ?sub_102ea280@CRangeNode_102ea280@@QAEHH@Z CRangeNode_102ea280::sub_102ea280
 0x100102b7 func   ?vfunc266@CVampireProjectile_MingXiaoSpit@@UAEXPAVCBaseEntity@@@Z CVampireProjectile_MingXiaoSpit::vfunc266
