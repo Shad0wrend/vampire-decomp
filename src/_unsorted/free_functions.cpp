@@ -76500,6 +76500,12 @@ bool CUnknown102064b0::sub_102064b0(CUnknown102064b0Keys *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102066b0 size=0x1
+void sub_102066b0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206980 size=0x7a
 extern "C" int sprintf(char *, const char *, ...);
 extern "C" int _strcmpi(const char *, const char *);
