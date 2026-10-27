@@ -63959,6 +63959,12 @@ void CPartListUnit::sub_101d66a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6730 size=0x1
+void sub_101d6730()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6750 size=0xf1
 #include "CUnknown101d6750.h"
 
