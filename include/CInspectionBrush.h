@@ -13,6 +13,12 @@ struct CInspectionBrushEdict	// the engine edict handed to slot 86: its server u
 class CInspectionBrush
 {
 public:
+	char m_pad0000[0x454];
+	int m_iParticleIndex;	// 0x454
+	char m_pad0458[0x484 - 0x458];
+	int m_unk484;	// 0x484
+	char m_pad0488[0x4c0 - 0x488];
+	int m_nMinFeat;	// 0x4c0: the least feat value the character needs
 	CInspectionBrush *vfunc5(unsigned int flags);
 	void sub_10011ac7();
 	void vfunc104();	// slot 104: precaches the two inspection brush emitters (the ids go to the globals at 0x10708e44 / 0x10708e48) and keeps the first one at +0x454
