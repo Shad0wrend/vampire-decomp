@@ -45746,6 +45746,17 @@ void __fastcall sub_1013dbb0(Pool *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013dc40 size=0x9
+namespace lifted {
+int __stdcall sub_1000bbd6(int);
+}
+struct CUnknown1013dc40 { int sub_1013dc40(); };
+int CUnknown1013dc40::sub_1013dc40()
+{
+    return lifted::sub_1000bbd6(*(int *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013dd10 size=0x5
 char __stdcall sub_1013dd10(int a0)
 {
