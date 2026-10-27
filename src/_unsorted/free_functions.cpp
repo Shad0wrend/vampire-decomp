@@ -45769,6 +45769,16 @@ int __stdcall sub_1013e3e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e400 size=0x8
+namespace lifted {
+int sub_1000f3b2();
+}
+int __stdcall sub_1013e400(int a0)
+{
+    return lifted::sub_1000f3b2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e4a0 size=0x6c
 #include "CBaseEntity.h"
 
