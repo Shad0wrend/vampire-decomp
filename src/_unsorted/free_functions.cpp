@@ -54113,6 +54113,12 @@ void __stdcall sub_1019a900(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019a940 size=0x3
+void __stdcall sub_1019a940(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019a980 size=0xe8
 #include "CAI_BaseNPCTroika.h"
 
