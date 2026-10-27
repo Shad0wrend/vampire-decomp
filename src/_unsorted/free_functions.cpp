@@ -25117,6 +25117,19 @@ UtlMem *UtlMem::sub_100b4650(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4710 size=0x15
+struct CUnknown100b4710 { int sub_100b4710(); };
+int CUnknown100b4710::sub_100b4710()
+{
+    *(int *)((char *)this + 0xc) = -1;
+    *(int *)((char *)this + 0x10) = -1;
+    *(int *)((char *)this + 0x14) = -1;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b47e0 size=0x8
 void __fastcall sub_100b47e0(int *p) { p[3] = 0; }
 // END FUNCTION
