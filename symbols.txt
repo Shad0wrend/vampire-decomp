@@ -5497,6 +5497,7 @@
 0x1000f79f func   ?sub_103f5ff0@@YAHXZ sub_103f5ff0
 0x1000f7ae func   ?sub_1008d8b0@CBaseAnimating@@QAEXPAUinputdata_t@@@Z CBaseAnimating::sub_1008d8b0
 0x1000f7b3 func   ?vfunc34@CPropSign@@UAE_NH@Z CPropSign::vfunc34
+0x1000f7b8 func   ?sub_1042f110@@YGHH@Z sub_1042f110
 0x1000f7bd func   ?sub_1005f380@@YAHXZ sub_1005f380
 0x1000f7c7 func   ?sub_10311710@CUnknown10311a20@@QAE_NPBUCUnknown10311a20_Record@@@Z CUnknown10311a20::sub_10311710
 0x1000f7f4 func   _item_i_written item_i_written
