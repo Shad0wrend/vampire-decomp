@@ -165,7 +165,15 @@ public:
 	int m_n153C;
 	char m_pad1540[0x24];	// 0x1540 .. 0x1563
 	float m_f1564;
-	char m_pad1568[0x48e];	// 0x1568 .. 0x19F5
+	char m_pad1568[0x19b8 - 0x1568];	// 0x1568 .. 0x19B7
+	float m_flFadeStart19B8;	// 0x19B8: when the fade began
+	float m_flFadeDuration19BC;	// 0x19BC: its length (negative fades out)
+	EHANDLE m_hFadeEnt19C0;	// 0x19C0
+	char m_pad19C4[0x19cc - 0x19c4];	// 0x19C4 .. 0x19CB
+	EHANDLE m_hFadeEnt19CC;	// 0x19CC
+	char m_pad19D0[0x19e4 - 0x19d0];	// 0x19D0 .. 0x19E3
+	int m_nFade19E4;	// 0x19E4
+	char m_pad19E8[0x19f6 - 0x19e8];	// 0x19E8 .. 0x19F5
 	bool m_b19F6;
 	char m_pad19F7[0x1b70 - 0x19f7];	// 0x19F7 .. 0x1B6F
 	int m_nRangeStart1B70;	// 0x1B70: low half of the value of the selected command slot (type 1)
