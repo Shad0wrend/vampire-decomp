@@ -75,7 +75,7 @@ public:
 	virtual int vfunc376(int act);	// the next activity of the fallback chain
 	CAI_NPC_V(377) CAI_NPC_V(378)
 	virtual bool vfunc379(CBaseEntity *pEnt, int b, int c, int d, int e, int f, int g);	// slot 379 (ret 0x1c: seven stack arguments): the Troika override damages pEnt with its damage records first
-	CAI_NPC_V(380)
+	virtual void vfunc380();	// slot 380: hands the entity of the handle at +0x1538 (when the dword at +0x153c is set) to the container at +0x5bf0, then CBaseCombatCharacter::vfunc380, slot 416(0) and sub_10007ea0
 	virtual int vfunc381(int act);	// resolves an activity to the sequence/activity the model really has
 	CAI_NPC_V(382)
 	virtual void vfunc383(void *pWeapon, int a);	// "Weapon_Equip"-like: equips the given weapon (the Spawn of the NPCs equips the weapon named by the field at +0x5dec)
