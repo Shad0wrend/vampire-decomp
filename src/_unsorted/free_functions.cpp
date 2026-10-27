@@ -92374,6 +92374,12 @@ void __fastcall sub_1028d610(CAI_BaseNPCTroika *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028d7e0 size=0x1
+void sub_1028d7e0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e360 size=0xd7
 #include "CAI_BaseNPCTroika.h"
 struct EntInfo { CBaseEntity *ent; int serial; int pad; };
