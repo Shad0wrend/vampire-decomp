@@ -82573,6 +82573,13 @@ int sub_1022f580(CBaseCombatCharacter *pChar, int a, unsigned char b, int nDice)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230220 size=0x3
+char sub_10230220()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230280 size=0x75
 struct H { int v; H(const H &); };
 struct R { void sub_10204270(); void sub_102042d0(int t, int v); };
