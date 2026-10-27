@@ -84591,6 +84591,17 @@ int sub_10232400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10232480 size=0x7
+namespace lifted {
+extern char g_1048f060;
+}
+struct CUnknown10232480 { void sub_10232480(); };
+void CUnknown10232480::sub_10232480()
+{
+    *(int *)this = (int)&lifted::g_1048f060;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232520 size=0xa
 void __fastcall sub_10232520(int *self, int, int value)
 {
