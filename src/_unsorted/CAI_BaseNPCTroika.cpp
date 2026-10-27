@@ -247,6 +247,47 @@ void CAI_BaseNPCTroika::vfunc489()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10294070 size=0x19a
+#include "CAI_BaseNPCTroika.h"
+#include "StatDefault.h"
+
+struct StatOwner
+{
+	StatDefault *sub_1006cff0(int id);
+	int sub_1000fb46(const char *pszName);
+};
+extern StatOwner g_106c7c34;
+
+struct CDialogPartnerView
+{
+	char m_pad0000[0xfe8];
+	EHANDLE m_hfe8;
+};
+
+bool CAI_BaseNPCTroika::vfunc510()
+{
+	if (sub_102c1170())
+		return false;
+	if (m_h1538.Get() && m_n153c != -1)
+		return false;
+	if (((CBaseCombatCharacter *)this)->sub_10341aa0())
+		return false;
+	if (m_flags14b8 & 0x20000)
+		return false;
+	if (m_n5cc4 != 1 || m_n5cc0 != 1)
+		return false;
+	if (!m_h628c.Get())
+		return false;
+	if (((CDialogPartnerView *)m_h628c.Get())->m_hfe8.Get())
+		return false;
+	static int id = g_106c7c34.sub_1000fb46("Float_Sound_Info");
+	static float v = g_106c7c34.sub_1006cff0(id)->sub_1006caa0(0);
+	if (!(m_f6264 > v))
+		return CAI_BaseNPC::vfunc510();
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10294280 size=0x8a
 #include "CAI_BaseNPCTroika.h"
 
