@@ -11226,6 +11226,16 @@ CCameraAnimatedUnit *CCameraAnimatedUnit::sub_10071220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071470 size=0x8
+namespace lifted {
+int sub_10013b65();
+}
+int __stdcall sub_10071470(int a0)
+{
+    return lifted::sub_10013b65();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071660 size=0xc5
 #include "CUnk10071840.h"
 #include "CEHandleGet.h"
