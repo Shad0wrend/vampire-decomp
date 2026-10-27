@@ -26,6 +26,13 @@ int CUnknown101a65e0View::sub_101a65e0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a66c0 size=0x3
+CAI_BehaviorBase ** CAI_BaseNPC::vfunc456()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6840 size=0xb
 void CAI_BaseNPC::vfunc483(int unused)
 {

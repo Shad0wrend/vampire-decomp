@@ -2071,6 +2071,7 @@
 0x10006e8d func   ?sub_10185600@@YIXPAH@Z sub_10185600
 0x10006ea6 func   ?sub_1005ee50@CTEBSPDecal@@QAEPAV1@H@Z CTEBSPDecal::sub_1005ee50
 0x10006eba func   ?vfunc328@CWeaponIGeneric@@QAEHXZ CWeaponIGeneric::vfunc328
+0x10006ebf func   ?vfunc456@CAI_BaseNPC@@UAEPAPAVCAI_BehaviorBase@@XZ CAI_BaseNPC::vfunc456
 0x10006ec4 func   ?sub_10071220@CCameraAnimatedUnit@@QAEPAU1@XZ CCameraAnimatedUnit::sub_10071220
 0x10006ec9 func   ?sub_10036d40@CPhysicsPushedEntities@@QAEXDH@Z CPhysicsPushedEntities::sub_10036d40
 0x10006ed3 func   ?sub_1012f850@@YAMM@Z sub_1012f850
