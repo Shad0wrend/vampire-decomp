@@ -8,6 +8,8 @@ class CBaseEntity;
 class CUnknown1040cb60
 {
 public:
+	CUnknown1040cb60();	// the CGrabController constructor (0x1040bed0, stub 0x100052e0)
+
 	char m_pad0000[4];
 	float m_vPos[3];	// 0x04
 	char m_pad0010[0x24 - 0x10];
