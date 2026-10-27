@@ -47243,6 +47243,12 @@ void sub_1016e650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016ebb0 size=0x1
+void sub_1016ebb0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016fed0 size=0x15b
 #include "ConVar.h"
 #include "CChangeLevel.h"
