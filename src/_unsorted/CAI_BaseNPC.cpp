@@ -33,6 +33,13 @@ CAI_BehaviorBase ** CAI_BaseNPC::vfunc456()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a66e0 size=0x3
+int CAI_BaseNPC::vfunc457()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6840 size=0xb
 void CAI_BaseNPC::vfunc483(int unused)
 {
