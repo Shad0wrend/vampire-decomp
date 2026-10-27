@@ -39,11 +39,14 @@ public:
 	int m_pEdict;	// 0x2e0
 	char m_pad02e4[0x450 - 0x2e4];
 	IPhysicsSpringStub *m_pSpring;	// 0x450: IPhysicsSpring, destroyed with the environment
-	char m_pad0454[4];
+	char m_bStartEndFixed;	// 0x454
+	char m_pad0455[3];
 	float m_flSpringConstant;	// 0x458
 	float m_flLength;	// 0x45c
 	float m_flDamping;	// 0x460
-	char m_pad0464[0x470 - 0x464];
+	float m_flRelativeDamping;	// 0x464
+	const char *m_pszStartName;	// 0x468
+	const char *m_pszEndName;	// 0x46c
 	Vector m_vecStart;	// 0x470
 	Vector m_vecEnd;	// 0x47c
 };
