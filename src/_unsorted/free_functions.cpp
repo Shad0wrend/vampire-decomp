@@ -24607,6 +24607,14 @@ char * CUnknown100b7d80::sub_100b7d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7e10 size=0x5
+struct CUnknown100b7e10 { void sub_100b7e10(); };
+void CUnknown100b7e10::sub_100b7e10()
+{
+    *(char *)((char *)this + 0x15) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b8520 size=0x117
 #include "SendProp.h"
 
