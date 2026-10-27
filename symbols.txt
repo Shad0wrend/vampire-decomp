@@ -127,6 +127,7 @@
 0x10001578 func   ?sub_102b5bb0@@YADXZ sub_102b5bb0
 0x1000157d func   ?sub_103b15e0@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::sub_103b15e0
 0x10001582 func   ?sub_101b2630@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_101b2630
+0x10001587 func   ?vfunc362@CWeaponMelee_TzimisceMelee@@UAEPAUCWeaponActivityRecord@@XZ CWeaponMelee_TzimisceMelee::vfunc362
 0x10001591 func   ?sub_1002f190@@YGHH@Z sub_1002f190
 0x100015a5 func   ?sub_101e9f40@CUnk101e9f40@@QAEHPAX@Z CUnk101e9f40::sub_101e9f40
 0x100015aa func   ?vfunc368@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc368
