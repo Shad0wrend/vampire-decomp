@@ -1,6 +1,58 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10357440 size=0x1a6
+#include "CNPC_Crow.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "CUnknown1070b244.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+
+struct CCrowTimeView
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char pad[0x24];
+	float m_flFrameTime;	// 0x28
+};
+
+extern CCrowTimeView *g_1093a08c;
+extern CUnknown1070b244 *g_1070b244;
+
+static inline void Crow_SetSolid(CNPC_Crow *pCrow, int solid)
+{
+	ScopeTrace trace("CBaseEntity::SetSolid", pCrow->m_name26c ? pCrow->m_name26c : g_106b8540);
+	((CCollisionProperty *)((char *)pCrow + 0x270))->sub_100dc480(solid);
+}
+
+void CNPC_Crow::vfunc103()
+{
+	CEntityVSlots *pThis = (CEntityVSlots *)this;
+	sub_10273200();
+	pThis->slot104();
+	pThis->slot105("models/crow.mdl");
+	m_n210 = (int)(g_1093a08c->vfunc1() ? 0.0f : g_1093a08c->m_flFrameTime);
+	m_n1568 = 4;
+	m_n156c = 4;
+	sub_10273070(0);
+	Crow_SetSolid(this, 2);
+	pThis->slot93(4, 0);
+	m_f1574 = -1.0f;
+	Vector vecOffset(6.0f, 0.0f, 11.0f);
+	sub_1009f380(&vecOffset);
+	m_f5f48 = g_1070b244->vfunc1(0.0f, 5.0f) + gpGlobals->curtime;
+	sub_10327960(0xf7);
+	m_n5cc0 = 0;
+	m_n5f50 = g_1070b244->vfunc2(0, 12);
+	sub_100aaa40(0x11);
+	sub_1026dc60();
+	sub_103580d0((m_flags204 >> 4) & 1);
+	sub_10332aa0(0xe, 4, 0);
+	pThis->slot420();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10357680 size=0xac
 #include "CNPC_Crow.h"
 
