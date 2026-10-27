@@ -91160,6 +91160,74 @@ void __fastcall sub_1024d2c0(void *self, int unusedEdx, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024d2f0 size=0x19b
+#include <math.h>
+
+bool sub_1024d2f0(const float *src, float *dst)
+{
+	int iRow, i, j, iTemp, iTest;
+	float mul, fTest, fLargest;
+	float mat[4][8];
+	int rowMap[4], iLargest;
+	float *pOut, *pRow, *pScaleRow;
+
+	for (i = 0; i < 4; i++) {
+		const float *pIn = src + i * 4;
+		pOut = mat[i];
+		for (j = 0; j < 4; j++)
+			pOut[j] = pIn[j];
+		pOut[4] = 0.0f;
+		pOut[5] = 0.0f;
+		pOut[6] = 0.0f;
+		pOut[7] = 0.0f;
+		pOut[i + 4] = 1.0f;
+		rowMap[i] = i;
+	}
+
+	for (iRow = 0; iRow < 4; iRow++) {
+		fLargest = 0.001f;
+		iLargest = -1;
+		for (iTest = iRow; iTest < 4; iTest++) {
+			fTest = (float)fabs(mat[rowMap[iTest]][iRow]);
+			if (fTest > fLargest) {
+				iLargest = iTest;
+				fLargest = fTest;
+			}
+		}
+		if (iLargest == -1)
+			return false;
+
+		iTemp = rowMap[iLargest];
+		rowMap[iLargest] = rowMap[iRow];
+		rowMap[iRow] = iTemp;
+
+		pRow = mat[rowMap[iRow]];
+		mul = 1.0f / pRow[iRow];
+		for (j = 0; j < 8; j++)
+			pRow[j] *= mul;
+		pRow[iRow] = 1.0f;
+
+		for (i = 0; i < 4; i++) {
+			if (i == iRow)
+				continue;
+			pScaleRow = mat[rowMap[i]];
+			mul = -pScaleRow[iRow];
+			for (j = 0; j < 8; j++)
+				pScaleRow[j] += pRow[j] * mul;
+			pScaleRow[iRow] = 0.0f;
+		}
+	}
+
+	for (i = 0; i < 4; i++) {
+		const float *pIn = mat[rowMap[i]] + 4;
+		pOut = dst + i * 4;
+		for (j = 0; j < 4; j++)
+			pOut[j] = pIn[j];
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024d670 size=0xf4
 #include "VMatrix.h"
 Vector VMatrix::sub_1024d670() const
