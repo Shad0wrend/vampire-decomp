@@ -64578,6 +64578,13 @@ S101d61e0 *CUnknown101d6750::sub_101d6750()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d6a30 size=0x5
+char __stdcall sub_101d6a30(int a0, int a1)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d6a50 size=0x3c
 #include "CUnknown101d7520.h"
 #include "CBaseCombatCharacter.h"
