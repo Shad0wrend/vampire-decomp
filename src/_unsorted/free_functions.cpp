@@ -79455,6 +79455,14 @@ float CPropSwitch::sub_1020df00(int sequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e020 size=0x7
+struct CUnknown1020e020 { char sub_1020e020(); };
+char CUnknown1020e020::sub_1020e020()
+{
+    return *(char *)((char *)this + 0x7a4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e060 size=0xa
 void CUnknown1020e060::sub_1020e060(int unused)
 {
