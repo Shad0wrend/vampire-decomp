@@ -7120,6 +7120,7 @@
 0x10015339 func   ?sub_10359190@@YADXZ sub_10359190
 0x10015366 func   ?sub_1012d5e0@CUnknown1012d740@@QAEXH@Z CUnknown1012d740::sub_1012d5e0
 0x10015370 func   ?vfunc51@CMultiplayRules@@UAE?AVVector@@PAVCBaseEntity@@@Z CMultiplayRules::vfunc51
+0x1001537a func   ?vfunc103@CWeaponThrown_Chang_Ghost@@QAEXXZ CWeaponThrown_Chang_Ghost::vfunc103
 0x1001537f func   ?vfunc35@CItemContainer@@QAEIH@Z CItemContainer::vfunc35
 0x10015384 func   ?sub_1029f370@CAI_BaseNPCTroika@@QAEHPBD@Z CAI_BaseNPCTroika::sub_1029f370
 0x10015389 func   ?vfunc31@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHH@Z CTempEntsSystem::vfunc31

@@ -1,6 +1,72 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103f0770 size=0x194
+#include "CWeaponThrown_Chang_Ghost.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+#define GS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CGhostSlots {
+	GS10(a0) GS10(a1) GS10(a2) GS10(a3) GS10(a4) GS10(a5) GS10(a6) GS10(a7) GS10(a8)
+	virtual void a90(); virtual void a91(); virtual void a92();
+	virtual void slot93(int moveType, int moveCollide);
+	virtual void a94(); virtual void a95(); virtual void a96(); virtual void a97(); virtual void a98(); virtual void a99();
+	GS10(b0) GS10(b1) GS10(b2) GS10(b3) GS10(b4) GS10(b5) GS10(b6) GS10(b7) GS10(b8) GS10(b9)
+	GS10(c0) GS10(c1) GS10(c2) GS10(c3)
+	virtual void c40(); virtual void c41(); virtual void c42();
+	virtual void slot243(CBaseEntity *pParent, int bFollow, const char *pszBone);
+};
+
+struct CGhostView {
+	char m_pad0000[0x26c];
+	const char *m_name26c;
+	CCollisionProperty m_Collision;
+
+	void SetSolid(int val)
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		m_Collision.sub_100dc480(val);
+	}
+	void AddSolidFlags(int flags)
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		m_Collision.AddSolidFlags(flags);
+	}
+};
+
+struct CGhostGlobals {
+	float m_f00, m_f04, m_f08;
+	float m_curtime;	// 0x0c
+};
+
+extern CGhostGlobals *g_1070b228;
+extern Vector g_1070d1b0;
+extern Vector g_1070d9d0;
+CBaseEntity *sub_100fbc90(const char *pszName, const Vector *pOrigin, const Vector *pAngles, float flParam);
+
+void CWeaponThrown_Chang_Ghost::vfunc103()
+{
+	sub_100047be();
+	m_f0910 = 128.0f;
+	m_b0918 = 0;
+	((CGhostSlots *)this)->slot93(9, 0);
+	CGhostView *v = (CGhostView *)this;
+	v->AddSolidFlags(4);
+	v->SetSolid(0);
+	m_f0924 = g_1070b228->m_curtime;
+	m_f0928 = g_1070b228->m_curtime;
+	((CBaseEntity *)this)->sub_100b3b00();
+	CBaseEntity *pEmitter = sub_100fbc90("chang_ghost_bone_tree_emitter", &g_1070d1b0, &g_1070d9d0, -1.0f);
+	if (pEmitter)
+		((CGhostSlots *)pEmitter)->slot243((CBaseEntity *)this, 1, "Bip01 Spine");
+	m_hEmitter92c = pEmitter;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f10e0 size=0x133
 #include "CWeaponThrown_Chang_Ghost.h"
 #include "CUnknown1070b244.h"
