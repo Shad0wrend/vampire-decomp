@@ -753,6 +753,19 @@ void CBaseCombatWeapon::vfunc288()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10257930 size=0x3d
+#include "CEHandleGet.h"
+unsigned int __fastcall sub_10006703(CBaseCombatWeapon *p);
+
+// TARGET: CBaseCombatWeapon::vfunc117
+unsigned int CBaseCombatWeapon::vfunc117()
+{
+	if (!EHandle_Get(m_hOwner))
+		return sub_10006703(this) | 8;
+	return sub_10006703(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258320 size=0x82
 struct CRollTable {
 	virtual void vfunc0();
