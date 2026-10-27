@@ -105413,6 +105413,46 @@ void CBaseCombatCharacter::sub_10325c10(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10325cb0 size=0xba
+#include "CBaseCombatCharacter.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_109f3680;
+extern TraceEntry *g_109f3620;
+extern char g_106b8540[];
+extern char g_105387dc[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_109f3620[*g_109f3680].a = a;
+        g_109f3620[*g_109f3680].b = b;
+        g_109f3620[*g_109f3680].c = c;
+        ++*g_109f3680;
+    }
+    ~ScopeTrace() { --*g_109f3680; }
+};
+
+void CBaseCombatCharacter::sub_10325cb0(void *ent, int a)
+{
+    const char *name;
+    if (this) {
+        name = m_name26c;
+        if (!name) name = g_106b8540;
+    } else {
+        name = g_105387dc;
+    }
+    ScopeTrace trace("CBaseCombatCharacter::SetScriptedEyeTarget", name, g_106b8540);
+    unsigned int *pHandle = (unsigned int *)((char *)this + 0xe64);
+    int *pMode = (int *)((char *)this + 0xe68);
+    if (ent && a) {
+        unsigned int h = *((CBaseEntity *)ent)->vfunc1();
+        *pHandle = h;
+        *pMode = a;
+    } else {
+        *pHandle = 0xffffffff;
+        *pMode = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10325da0 size=0x95
 #include "Vector.h"
 #include "CBaseCombatCharacter.h"
