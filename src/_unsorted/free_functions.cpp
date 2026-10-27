@@ -45808,6 +45808,12 @@ void sub_10158b40(void *pA, void *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158d40 size=0x1
+void sub_10158d40()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158d60 size=0x8
 typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_10158d60(void **p) { ((Fn *)*p)[243](p); }
