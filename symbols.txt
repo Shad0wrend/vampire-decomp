@@ -4826,6 +4826,7 @@
 0x1000d6a7 func   _prop_clockhand prop_clockhand
 0x1000d6ac func   ?sub_101fbc40@CVStatSubCost_t@@QAEHH_N@Z CVStatSubCost_t::sub_101fbc40
 0x1000d6b6 func   ?sub_1011d2e0@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1011d2e0
+0x1000d6bb func   ?vfunc44@CSingleplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CSingleplayRules::vfunc44
 0x1000d6ca func   ?vfunc197@CBasePlayer@@QAE?AVVector@@ABV2@DD@Z CBasePlayer::vfunc197
 0x1000d6cf func   _npc_VAnimal npc_VAnimal
 0x1000d6de func   ?sub_1030fff0@CUnknown1030fe50@@QAEHH@Z CUnknown1030fe50::sub_1030fff0
