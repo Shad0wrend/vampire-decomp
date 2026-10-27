@@ -40014,6 +40014,30 @@ void sub_1012c600(CBaseEntity *pParent, void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c6c0 size=0xa2
+struct CMoveEnt
+{
+	char m_pad0000[0x260];
+	EHANDLE m_hMoveChild;	// 0x260
+	EHANDLE m_hMovePeer;	// 0x264
+};
+
+void sub_1012c6c0(CMoveEnt *pParent, CMoveEnt *pChild)
+{
+	CMoveEnt *pCurChild = (CMoveEnt *)pParent->m_hMoveChild.Get();
+	EHANDLE *pPrev = &pParent->m_hMoveChild;
+	for (; pCurChild; ) {
+		CMoveEnt *pNext = (CMoveEnt *)pCurChild->m_hMovePeer.Get();
+		if (pCurChild == pChild) {
+			*pPrev = (CBaseEntity *)pNext;
+			return;
+		}
+		pPrev = &pCurChild->m_hMovePeer;
+		pCurChild = pNext;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c840 size=0x82
 #include "CGlobalEntityList.h"
 
