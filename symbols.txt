@@ -2536,6 +2536,7 @@
 0x10007ed2 func   ?sub_101c1af0@@YAMEPBM0@Z sub_101c1af0
 0x10007ed7 func   _phys_motor phys_motor
 0x10007edc func   ?sub_102f92b0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102f92b0
+0x10007ee6 func   ?sub_1017f770@CUnknown1017f770@@QAEHXZ CUnknown1017f770::sub_1017f770
 0x10007eff func   _func_monitor func_monitor
 0x10007f0e func   ?sub_10077650@CUnknown10077430@@QAEXXZ CUnknown10077430::sub_10077650
 0x10007f18 func   ??0CUnknown102029c0@@QAE@H@Z CUnknown102029c0::CUnknown102029c0

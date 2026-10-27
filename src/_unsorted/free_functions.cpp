@@ -50124,6 +50124,14 @@ void CNPC_VCopUnit::sub_1017f650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017f770 size=0x7
+struct CUnknown1017f770 { int sub_1017f770(); };
+int CUnknown1017f770::sub_1017f770()
+{
+    return *(int *)((char *)this + 0x1d10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f980 size=0x27
 // TARGET: CUnknown1017f980::sub_1017f980
 #include "CUnknown1017f980.h"
