@@ -106,6 +106,17 @@ void CAI_StandoffGoal::vfunc241(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c8980 size=0x6
+#include "CAI_StandoffGoal.h"
+namespace lifted {
+extern char g_1060190c;
+}
+datamap_t * CAI_StandoffGoal::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1060190c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cd2d0 size=0x27
 // TARGET: CAI_StandoffGoal::vfunc103
 #include "CAI_StandoffGoal.h"
