@@ -4841,6 +4841,7 @@
 0x1000e228 func   ?sub_1007a060@CUnknown1007a060@@QAEPAVCUnknown1007a060Elem@@XZ CUnknown1007a060::sub_1007a060
 0x1000e232 func   ?sub_1042df70@@YG_NHH@Z sub_1042df70
 0x1000e237 func   _npc_VMercurio npc_VMercurio
+0x1000e246 func   ?sub_1013d3a0@@YADXZ sub_1013d3a0
 0x1000e24b func   ?sub_100be040@CUnknown100be040@@QAEXH@Z CUnknown100be040::sub_100be040
 0x1000e250 func   _item_g_vampyr_apocrypha item_g_vampyr_apocrypha
 0x1000e25f func   ?vfunc511@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc511
