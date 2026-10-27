@@ -53,3 +53,15 @@ void CSoundScheme::vfunc113()
     ((CSoundCallView *)this)->sub_100ac4e0(0, 0.0f, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1022a350 size=0x11
+#include "CSoundScheme.h"
+namespace lifted {
+int sub_1000fe5c();
+}
+void CSoundScheme::vfunc129()
+{
+    *(char *)((char *)this + 0x454) = *(char *)((char *)this + 0x455);
+    lifted::sub_1000fe5c();
+}
+// END FUNCTION
