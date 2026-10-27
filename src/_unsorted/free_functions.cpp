@@ -97487,6 +97487,16 @@ CAI_DynamicLink *CAI_DynamicLink::sub_102cce60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ccf50 size=0x6
+namespace lifted {
+extern char g_106093e8;
+}
+int sub_102ccf50()
+{
+    return (int)&lifted::g_106093e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cd310 size=0x71
 #include "inputdata_t.h"
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
