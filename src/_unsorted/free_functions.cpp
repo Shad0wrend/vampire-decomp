@@ -116377,6 +116377,19 @@ void CUnk1034f9e0::sub_1034f9e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10351510 size=0xb
+namespace lifted {
+extern char g_104a271c;
+int sub_100017d5();
+}
+struct CUnknown10351510 { int sub_10351510(); };
+int CUnknown10351510::sub_10351510()
+{
+    *(int *)this = (int)&lifted::g_104a271c;
+    return lifted::sub_100017d5();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352e90 size=0x25
 #include "CUnknown1070b22c.h"
 
