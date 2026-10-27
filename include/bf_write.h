@@ -22,6 +22,8 @@ public:
 	void sub_100bc600(unsigned int curData, int numbits);	// range checked variant, called through the stub at 0x10001ef1
 	void sub_100bc860(unsigned int curData, int numbits, bool bCheckRange);	// \"WriteUBitLong\" (older copy): with bCheckRange forwards to sub_100bc600, else as sub_100bd450
 	void sub_100bd090(float fAngle, int numbits);	// \"WriteBitAngle\": writes (int)((1 << numbits) * fAngle) / 360 masked to numbits bits
+	void sub_100bd620(const Vector &fa);	// "WriteBitVec3Coord": a flag bit each for x, y, z (|v| >= 1/16), then WriteBitCoord of the flagged components
+	void sub_100bd1d0(float f);	// "WriteBitCoord" (stub 0x1000740f)
 	void sub_100bd9b0(const Vector &fa);	// "WriteBitVec3Normal": a flag bit each for x and y (|v| >= 1/2047), the sign bit of z, then WriteBitNormal of x and y when flagged
 	void sub_100bd840(float f);	// \"WriteBitNormal\": a sign bit (f <= -1/2047), then |(int)(f * 2047)| clamped to 2047 in 11 bits (WriteOneBit and WriteUBitLong inlined)
 	void sub_100bc460();	// default constructor body (stub 0x1000cd24): data 0, sizes 0, bits -1, current bit 0, no overflow, assert on overflow, no name
