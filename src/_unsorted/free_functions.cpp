@@ -68355,6 +68355,12 @@ void CUnknown101eac50::sub_101eac50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eb030 size=0x1
+void sub_101eb030()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eb050 size=0xff
 #include "CUnknown101eb050.h"
 #include "CEntryY.h"
