@@ -3411,6 +3411,7 @@
 0x1000a308 func   ?vfunc5@CItemGWirelessCamera1@@QAEPAV1@I@Z CItemGWirelessCamera1::vfunc5
 0x1000a317 func   ?sub_101ceef0@@YAXMVVector@@000M@Z sub_101ceef0
 0x1000a335 func   ?sub_10429240@@YAPBDH@Z sub_10429240
+0x1000a344 func   ?sub_1007ed30@CUnknown1007ed30@@QAEHXZ CUnknown1007ed30::sub_1007ed30
 0x1000a349 func   ?sub_1013d830@@YAXABVVector@@00AAV1@AAM@Z sub_1013d830
 0x1000a353 func   ?sub_1036d600@CNPC_VChangBros@@QAEXXZ CNPC_VChangBros::sub_1036d600
 0x1000a358 func   ?sub_10381be0@CUnknown10381be0@@QAE_NXZ CUnknown10381be0::sub_10381be0
