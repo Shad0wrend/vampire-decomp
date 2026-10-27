@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10149ca0 size=0x5
+bool CBaseCombatWeapon::vfunc283(CBaseEntity * a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149da0 size=0xd
 struct WeaponField8cc { char pad[0x8cc]; int m; };
 void CBaseCombatWeapon::vfunc297(int value)
