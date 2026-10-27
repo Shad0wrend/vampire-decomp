@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1019dbf0 size=0x6
+#include "CRopeKeyframe.h"
+namespace lifted {
+extern char g_10592258;
+}
+datamap_t * CRopeKeyframe::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10592258);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019dd90 size=0x1e
 #include "CRopeKeyframe.h"
 
