@@ -106371,6 +106371,14 @@ void *CUnknown10315fe0::sub_10315fe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103160a0 size=0x4
+struct CUnknown103160a0 { int sub_103160a0(); };
+int CUnknown103160a0::sub_103160a0()
+{
+    return *(int *)((char *)this + 0x5c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103160c0 size=0xaa
 #include "CUnknown103160c0.h"
 
