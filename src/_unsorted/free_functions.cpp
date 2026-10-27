@@ -70562,6 +70562,13 @@ void CUnknown101f1c70::sub_101f1c70(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f1d80 size=0x5
+int __stdcall sub_101f1d80(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1e20 size=0x67
 extern "C" int __cdecl sprintf(char *, const char *, ...);
 void __cdecl sub_10203dd0(const char *msg);
