@@ -56,3 +56,14 @@ void CTEBloodStream::vfunc3(const Vector &origin, const QAngle &angles)
 	((S_TESlots *)this)->slot4(filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005e230 size=0x6
+#include "CTEBloodStream.h"
+namespace lifted {
+extern char g_106c0cfc;
+}
+ServerClass * CTEBloodStream::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c0cfc);
+}
+// END FUNCTION
