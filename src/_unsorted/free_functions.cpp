@@ -94381,6 +94381,14 @@ int CUnknown10288610::sub_10288610()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10288630 size=0x7
+struct CUnknown10288630 { int sub_10288630(); };
+int CUnknown10288630::sub_10288630()
+{
+    return *(int *)((char *)this + 0x5d34);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102886f0 size=0xa
 struct CUnknown102886f0 { char p[0x40]; int a; void sub_102886f0(int v); };
 // TARGET: CUnknown102886f0::sub_102886f0
