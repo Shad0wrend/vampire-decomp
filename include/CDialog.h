@@ -11,6 +11,21 @@ struct CDialogVec : CUtlVector<int>
 	~CDialogVec() {}
 };
 
+struct CDialogVecs3
+{
+	CUtlVector<int> a;
+	CUtlVector<int> b;
+	CUtlVector<int> c;
+	~CDialogVecs3() {}
+};
+
+struct CDialogVecs2
+{
+	CUtlVector<int> a;
+	CUtlVector<int> b;
+	~CDialogVecs2() {}
+};
+
 struct CDialogEntry_t
 {
 	int m_data[13];	// 0x34 bytes; the first dword is the sort key
