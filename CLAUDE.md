@@ -327,3 +327,14 @@ How to write it:
 `->absoluteframetime` (+0x8), `->maxClients` (+0x14), `->mapname` (+0x24, const char *), `->mapversion` (+0x28),
 `->m_nEdicts` (+0x38). Write `gpGlobals->curtime`, not `extern SomeView *g_1070b228;` with a struct of your own.
 A member not named yet: add it to globalvars.h with edit_context (it lives in `namespace EngineGlobals`).
+
+## Engine interface (engine): use engineserver.h, never a local view of g_1070b22c
+
+`include/engineserver.h` (in the prelude) declares the engine's server interface at g_1070b22c as `engine`. Slot N
+sits at +N*4 of its vtable, so `mov ecx,[0x1070b22c]; ... call [eax+0x150]` is `engine->vfunc84(1)`. Typed slots
+include: vfunc13 PrecacheModel(name, preload), vfunc17 precache an emitter / resource by name, vfunc20 model index of
+a name, vfunc35 IndexOfEdict, vfunc38 PEntityOfEntIndex, vfunc59 ServerCommand, vfunc61 ClientCommand (variadic),
+vfunc65 UserMessageBegin(filter, type) / vfunc66 MessageEnd / vfunc67-72, 78 message writes, vfunc84 Cmd_Argv,
+vfunc85 Cmd_Argc. Write `engine->vfunc84(1)`, not `extern SomeView *g_1070b22c;` with a struct of your own, and do
+not include CUnknown1070b22c.h or IVEngineServer.h in new code. A slot still declared `void vfuncN()`: give it its
+type in engineserver.h with edit_context (it lives in `namespace EngineGlobals`).
