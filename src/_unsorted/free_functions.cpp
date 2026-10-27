@@ -39539,6 +39539,16 @@ void sub_10119900(CUnkVT10119900 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011a0a0 size=0x6
+namespace lifted {
+extern char g_1070b17c;
+}
+int sub_1011a0a0()
+{
+    return (int)&lifted::g_1070b17c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a430 size=0x8
 extern char g_1070b264;
 void sub_1011a430() { g_1070b264 = 1; }
