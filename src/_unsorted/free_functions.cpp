@@ -114235,6 +114235,69 @@ bool CBaseCombatCharacter::sub_103360a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10336170 size=0x1af
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "CUnknown1070b22c.h"
+#include "ScopeTrace.h"
+
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern CUnknown1070b22c *g_1070b22c;
+
+static inline const char *GetClassname(const char *const *ppszClassname)
+{
+	return *ppszClassname ? *ppszClassname : g_106b8540;
+}
+
+struct CInvPlayerView
+{
+	char m_pad0000[0xa8];
+	CBasePlayer *m_pPlayer;
+	char m_pad00ac[0x2e0 - 0xac];
+	int m_pEdict;
+
+	int GetEdict() { return m_pEdict; }
+};
+
+void CBaseCombatCharacter::sub_10336170()
+{
+	CInvPlayerView *pView = (CInvPlayerView *)this;
+	ScopeTrace trace("CBaseCombatCharacter::Inventory_Debug_Print", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char szBuf[128];
+	Msg("Printing inventory for: %s\n", sub_1000b5cd());
+	for (int i = 0; i < 0xe0; i++)
+	{
+		if (sub_1032e8b0(i))
+		{
+			sprintf(szBuf, "%d: (%d) %s\n", i, g_1070b22c->vfunc35(pView->GetEdict()), GetClassname(&((CBaseEntity *)sub_1032e8b0(i))->m_classname11c));
+			Msg(szBuf);
+		}
+	}
+	if (sub_1032e7b0())
+	{
+		sprintf(szBuf, "ActiveWeapon: %s\n", GetClassname(&((CBaseEntity *)sub_1032e7b0())->m_classname11c));
+		Msg(szBuf);
+	}
+	if (sub_10341510())
+	{
+		sprintf(szBuf, "ActiveArmor: %s\n", GetClassname(&((CBaseEntity *)sub_10341510())->m_classname11c));
+		Msg(szBuf);
+	}
+	if (pView->m_pPlayer)
+	{
+		CEntityVSlots *pHands = (CEntityVSlots *)pView->m_pPlayer->sub_1015d680(1);
+		if (pHands)
+		{
+			int nTemp;
+			sprintf(szBuf, "Hands: %s\n", *pHands->slot9(&nTemp));
+			Msg(szBuf);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10336920 size=0xe7
 struct TraceEnt { const char *a; const char *b; const char *c; };
 extern TraceEnt *g_109f3620;
