@@ -5360,6 +5360,7 @@
 0x1000ffd8 func   ?vfunc493@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc493
 0x1000ffdd func   _item_container_lock item_container_lock
 0x1000ffe2 func   ?sub_100f9790@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_100f9790
+0x1000fffb func   ?sub_10045a90@CUnknown10045a90@@QAEPAXXZ CUnknown10045a90::sub_10045a90
 0x1001000a func   ?vfunc113@CFire@@UAEXXZ CFire::vfunc113
 0x1001000f func   _item_k_museum_office_key item_k_museum_office_key
 0x10010019 func   ?vfunc176@CTriggerHurt@@QAEXPAVCBaseEntity@@@Z CTriggerHurt::vfunc176

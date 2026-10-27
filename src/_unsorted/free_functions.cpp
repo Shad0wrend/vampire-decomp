@@ -5789,6 +5789,14 @@ bool sub_100454d0(const SortItem *a, const SortItem *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10045a90 size=0x3
+struct CUnknown10045a90 { void * sub_10045a90(); };
+void * CUnknown10045a90::sub_10045a90()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045d90 size=0x37
 // TARGET: sub_10045d90
 extern unsigned char g_106bda5c;
