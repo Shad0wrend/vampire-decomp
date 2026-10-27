@@ -6889,6 +6889,14 @@ const char *CUnknown10050860::sub_10050860()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050880 size=0x4
+struct CUnknown10050880 { int sub_10050880(); };
+int CUnknown10050880::sub_10050880()
+{
+    return *(int *)((char *)this + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050a40 size=0x22
 struct CUnknown10050a40Node {
 	virtual void s0();
