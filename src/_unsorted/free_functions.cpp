@@ -11288,6 +11288,14 @@ void CUnk10071840::sub_10071840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100718e0 size=0x7
+struct CUnknown100718e0 { float sub_100718e0(); };
+float CUnknown100718e0::sub_100718e0()
+{
+    return *(float *)((char *)this + 0x82c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071970 size=0xab
 #include "CBaseCineCam.h"
 #include "CUnknown1006e890.h"
