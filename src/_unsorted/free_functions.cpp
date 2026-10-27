@@ -89999,6 +89999,17 @@ void CUnknown102491e0::sub_102491e0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10249390 size=0xe
+namespace lifted {
+struct C10013403 { int sub_10013403(int); };
+}
+struct CUnknown10249390 { int sub_10249390(); };
+int CUnknown10249390::sub_10249390()
+{
+    return ((lifted::C10013403 *)(this + 0x20))->sub_10013403(0x3ca3d70a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249400 size=0x4
 struct CUnknown10249400 { float sub_10249400(); };
 float CUnknown10249400::sub_10249400()
