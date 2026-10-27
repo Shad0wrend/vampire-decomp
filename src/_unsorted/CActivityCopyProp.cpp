@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1018e110 size=0x6
+#include "CActivityCopyProp.h"
+namespace lifted {
+extern char g_1058d008;
+}
+datamap_t * CActivityCopyProp::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1058d008);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e1a0 size=0x1
 #include "CActivityCopyProp.h"
 void CActivityCopyProp::vfunc104()
