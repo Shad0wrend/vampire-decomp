@@ -15747,6 +15747,77 @@ void CUnknown1007e5a0::sub_1007e5a0(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e5f0 size=0x1af
+#include "CUnknown1007ec20.h"
+#include "CChoreoScene1007e970.h"
+#include "CUnknown10075aa0.h"
+
+struct SDumpOutput;
+void sub_10079320(SDumpOutput *pOut, int nIndent, const char *pszFormat, ...);
+
+struct CChoreoTagView
+{
+	float sub_10073940();	// the tag's time (stub 0x1000e953)
+};
+
+struct CChoreoEventView : CUnknown10075aa0
+{
+	char sub_10076ef0();	// stub 0x100078f6
+	const char *sub_10076fa0();	// the wave file (stub 0x1000e7a5)
+	const char *sub_10076fc0();	// the tag name (stub 0x1000d463)
+	const char *sub_10075c00();	// the event name (stub 0x1000b0e1)
+	void sub_10076630(float flOffset);	// stub 0x1000ee21
+};
+
+struct CChoreoSceneView : CChoreoScene1007e970
+{
+	int sub_1007a250();	// the number of events (stub 0x1000f2ae)
+	CChoreoEventView *sub_1007a270(int index);	// the event with that index (stub 0x10013c96)
+};
+
+void CUnknown1007ec20::sub_1007e5f0()
+{
+	CChoreoSceneView *pScene = (CChoreoSceneView *)this;
+	for (int i = 0; i < pScene->m_nActors; i++)
+	{
+		CChoreoSceneActor1007e970 *pActor = pScene->m_ppActors[i];
+		if (!pActor)
+			continue;
+		for (int j = 0; j < pActor->sub_10072eb0(); j++)
+		{
+			CChoreoSceneChannel1007e970 *pChannel = pActor->sub_10072ed0(j);
+			if (!pChannel)
+				continue;
+			for (int k = 0; k < pChannel->sub_10073540(); k++)
+			{
+				CChoreoEventView *pEvent = (CChoreoEventView *)pChannel->sub_10073560(k);
+				if (pEvent && pEvent->sub_10076ef0())
+				{
+					CChoreoTagView *pTag = (CChoreoTagView *)pScene->sub_1007e970(pEvent->sub_10076fc0(), (int)pEvent->sub_10076fa0());
+					if (pTag)
+					{
+						float flOffset = pTag->sub_10073940() - pEvent->sub_10075e70();
+						pEvent->sub_10076630(flOffset);
+					}
+					else
+					{
+						sub_10079320((SDumpOutput *)this, 0, "Event %s was missing tag %s for wav %s\n", pEvent->sub_10075c00(), pEvent->sub_10076fc0(), pEvent->sub_10076fa0());
+						pEvent->sub_10076f10(0, "", "");
+					}
+				}
+			}
+		}
+	}
+	*(float *)((char *)this + 0x80) = 0.0f;
+	for (int n = 0; n < pScene->sub_1007a250(); n++)
+	{
+		CChoreoEventView *pEvent = pScene->sub_1007a270(n);
+		if (pEvent && pEvent->sub_10075b70() == 5 && pEvent->sub_10075f10() > *(float *)((char *)this + 0x80))
+			*(float *)((char *)this + 0x80) = pEvent->sub_10075f10();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e810 size=0x103
 extern "C" int _strcmpi(const char *a, const char *b);
 struct SEvent1007e810
