@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10132880 size=0x6
+#include "CEnvGlobal.h"
+namespace lifted {
+extern char g_1057643c;
+}
+datamap_t * CEnvGlobal::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1057643c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132be0 size=0x11e
 #include "CEnvGlobal.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
