@@ -46731,6 +46731,13 @@ bool __fastcall sub_10160ec0(PlayerView *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101611e0 size=0x5
+char __stdcall sub_101611e0(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101618a0 size=0x2d
 #include "CBasePlayer.h"
 
