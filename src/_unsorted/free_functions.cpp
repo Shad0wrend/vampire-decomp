@@ -62782,6 +62782,16 @@ void CTriggerMultiple::sub_101c68e0(CBaseEntity *pActivator)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c6a10 size=0xc
+namespace lifted {
+int __stdcall sub_10007fe5(int, int, int);
+}
+int sub_101c6a10()
+{
+    return lifted::sub_10007fe5(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6a30 size=0x7a
 void *sub_1000db89(int);
 struct GP;
