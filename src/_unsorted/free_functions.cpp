@@ -17092,6 +17092,21 @@ void sub_10085830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100859c0 size=0x18
+namespace lifted {
+extern char g_1054970c;
+extern int g_10552810;
+int sub_1000e048(int);
+int sub_1000f0fb();
+}
+int sub_100859c0()
+{
+    lifted::sub_1000e048((int)&lifted::g_1054970c);
+    lifted::g_10552810 = lifted::sub_1000f0fb();
+    return lifted::g_10552810;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10085a80 size=0x8f
 #include "IVEngineServer.h"
 #include <string.h>
