@@ -48157,6 +48157,12 @@ int sub_10179270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017a290 size=0x1
+void sub_1017a290()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017bf10 size=0x10d
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
