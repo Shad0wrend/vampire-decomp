@@ -1423,6 +1423,7 @@
 0x10004b6a func   ?sub_1009b500@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b500
 0x10004b7e func   ??0CVDmgBlock16_t@@QAE@XZ CVDmgBlock16_t::CVDmgBlock16_t
 0x10004b8d func   ?sub_10004b8d@CNPC_VAsianVampire@@QAE_NPBM@Z CNPC_VAsianVampire::sub_10004b8d
+0x10004b97 func   ?vfunc82@CScriptedTarget@@UAEPAUdatamap_t@@XZ CScriptedTarget::vfunc82
 0x10004b9c func   ?sub_10134f10@@YAPAHXZ sub_10134f10
 0x10004ba1 func   ?vfunc546@CGeneric_NPC_bathack@@QAEHH@Z CGeneric_NPC_bathack::vfunc546
 0x10004ba6 func   ??_GCWeaponList@@UAEPAXI@Z ??_GCWeaponList@@UAEPAXI@Z

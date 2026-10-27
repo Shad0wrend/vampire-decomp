@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1034d430 size=0x6
+#include "CScriptedTarget.h"
+namespace lifted {
+extern char g_106257e8;
+}
+datamap_t * CScriptedTarget::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_106257e8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034d6e0 size=0xdb
 #include "CScriptedTarget.h"
 #include "CCollisionProperty.h"
