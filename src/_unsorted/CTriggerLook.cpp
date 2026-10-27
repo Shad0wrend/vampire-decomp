@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101c6bc0 size=0x6
+#include "CTriggerLook.h"
+namespace lifted {
+extern char g_1059db68;
+}
+datamap_t * CTriggerLook::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1059db68);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c6f80 size=0xae
 #include "CTriggerLook.h"
 #include "IVEngineServer.h"
