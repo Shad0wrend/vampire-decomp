@@ -133773,6 +133773,16 @@ void sub_1040d950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040dbb0 size=0xa
+namespace lifted {
+int __stdcall sub_10005092(int, int);
+}
+int sub_1040dbb0()
+{
+    return lifted::sub_10005092(1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dcf0 size=0xb3
 #include "CBaseEntity.h"
 #include "CBaseCombatWeapon.h"

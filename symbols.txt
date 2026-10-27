@@ -6057,6 +6057,7 @@
 0x10010f82 func   ?sub_10078630@CUnknown10078630@@QAEHXZ CUnknown10078630::sub_10078630
 0x10010f8c func   ?vfunc103@CGeneric_NPC@@UAEXXZ CGeneric_NPC::vfunc103
 0x10010f91 func   ?sub_101f95b0@@YAXH@Z sub_101f95b0
+0x10010f96 func   ?sub_1040dbb0@@YAHXZ sub_1040dbb0
 0x10010f9b func   _npc_VStalker npc_VStalker
 0x10010fa0 func   ?vfunc1@CSolidSetDefaults@@UAEXPAX@Z CSolidSetDefaults::vfunc1
 0x10010fa5 func   ?vfunc4@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc4
