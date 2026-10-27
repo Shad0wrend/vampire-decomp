@@ -12924,6 +12924,14 @@ int sub_dummy_after(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076ab0 size=0x7
+struct CUnknown10076ab0 { char sub_10076ab0(); };
+char CUnknown10076ab0::sub_10076ab0()
+{
+    return *(char *)((char *)this + 0x198);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076ad0 size=0xd
 #include "CUnknown10077730.h"
 
