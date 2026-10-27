@@ -38670,6 +38670,16 @@ void CFire::sub_1010b840(float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bda0 size=0x8
+namespace lifted {
+int sub_10003e9f();
+}
+int __stdcall sub_1010bda0(int a0)
+{
+    return lifted::sub_10003e9f();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010be40 size=0xaf
 struct ISaveRestoreOps;
 struct datamap_t;
