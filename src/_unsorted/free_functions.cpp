@@ -84722,6 +84722,17 @@ void __stdcall sub_10230700(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102308f0 size=0x8
+namespace lifted {
+struct C100026ee { int sub_100026ee(); };
+}
+struct CUnknown102308f0 { int sub_102308f0(); };
+int CUnknown102308f0::sub_102308f0()
+{
+    return ((lifted::C100026ee *)(this + 8))->sub_100026ee();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230fc0 size=0x166
 #include "CVDmg_t.h"
 #include "CVStatList_t.h"
