@@ -44006,6 +44006,18 @@ skipwhite:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136e80 size=0xa
+namespace lifted {
+int sub_100025c2();
+}
+struct CUnknown10136e80 { int sub_10136e80(); };
+int CUnknown10136e80::sub_10136e80()
+{
+    *(int *)((char *)this + 4) = *(int *)this;
+    return lifted::sub_100025c2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136ea0 size=0x4
 struct CUnknown10136ea0 { int sub_10136ea0(); };
 int CUnknown10136ea0::sub_10136ea0()
