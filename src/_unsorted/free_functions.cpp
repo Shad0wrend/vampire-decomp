@@ -50856,6 +50856,49 @@ CGlobalEntityList_Ent *CUnknown1017d680::sub_1017d680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017d900 size=0x1a0
+#include "CBasePlayer.h"
+#include "CUnknown1070b22c.h"
+#include "ehandle.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern float g_104454c4;
+
+float CBasePlayer::sub_1017d900()
+{
+	if (m_flFadeStart19B8 > g_104454c4 && (m_hFadeEnt19C0.Get() || m_hFadeEnt19CC.Get()))
+	{
+		float flNow = g_1070b22c->vfunc119(0);
+		if (m_flFadeDuration19BC == g_104454c4)
+			return 1.0f;
+		if (m_flFadeDuration19BC > g_104454c4)
+		{
+			float flFrac = (flNow - m_flFadeStart19B8) / m_flFadeDuration19BC;
+			if (flFrac > 1.0f)
+				return 1.0f;
+			if (flFrac >= g_104454c4)
+				return flFrac;
+			return g_104454c4;
+		}
+		if (m_flFadeDuration19BC < g_104454c4)
+		{
+			float flFrac = 1.0f - -((flNow - m_flFadeStart19B8) / m_flFadeDuration19BC);
+			if (flFrac > 1.0f)
+				return 1.0f;
+			if (flFrac >= g_104454c4)
+				return flFrac;
+		}
+	}
+	float flResult = g_104454c4;
+	m_flFadeStart19B8 = 0;
+	m_flFadeDuration19BC = 0;
+	m_hFadeEnt19C0 = (CBaseEntity *)0;
+	m_hFadeEnt19CC = (CBaseEntity *)0;
+	m_nFade19E4 = 0;
+	return flResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017deb0 size=0x73
 struct CGameTimeScale {
 	virtual void vfunc0();
