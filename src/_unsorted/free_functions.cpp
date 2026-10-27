@@ -27220,6 +27220,16 @@ int sub_100c6590(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c65b0 size=0x7
+namespace lifted {
+extern float g_104454c4;
+}
+float sub_100c65b0()
+{
+    return lifted::g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c65d0 size=0x3
 int sub_100c65d0()
 {
