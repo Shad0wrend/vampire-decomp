@@ -11,6 +11,17 @@ CSave::CSave(void *pData) : CSaveSections(pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019f930 size=0x13
+#include "CSave.h"
+namespace lifted {
+int __stdcall sub_10008d4b(int, int, int);
+}
+void CSave::vfunc2(void * a0, const char * a1)
+{
+    lifted::sub_10008d4b(*(int *)&a0, *(int *)&a1, *(int *)&a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f980 size=0x68
 extern "C" __declspec(dllimport) void Plat_Free(void *);
 extern int g_104625f4[];
