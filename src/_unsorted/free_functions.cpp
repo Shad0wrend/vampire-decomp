@@ -68326,6 +68326,12 @@ void sub_101eab60(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eabb0 size=0x1
+void sub_101eabb0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eac50 size=0xa3
 #include "CUnknown101eac50.h"
 extern "C" int sprintf(char *, const char *, ...);
