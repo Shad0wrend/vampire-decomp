@@ -7574,6 +7574,7 @@
 0x10015ac8 func   ?vfunc69@CBatSwarm@@QAE_NPAX@Z CBatSwarm::vfunc69
 0x10015ad2 func   ?vfunc438@CNPC_VHuman@@UAEHXZ CNPC_VHuman::vfunc438
 0x10015ad7 func   ?sub_1021c000@CPropHacking@@QAEXXZ CPropHacking::sub_1021c000
+0x10015adc func   ?sub_101e18f0@@YGHH@Z sub_101e18f0
 0x10015ae6 func   ?vfunc5@CLagCompensationManager@@UAEXXZ CLagCompensationManager::vfunc5
 0x10015aeb func   ?sub_100e5c70@CDialog@@QAEXXZ CDialog::sub_100e5c70
 0x10015af5 func   ?vfunc5@CDecal@@QAEPAV1@I@Z CDecal::vfunc5

@@ -67446,6 +67446,13 @@ unsigned int __stdcall sub_101e1870(unsigned int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e18f0 size=0x5
+int __stdcall sub_101e18f0(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1930 size=0x21
 // TARGET: sub_101e1930
 void __declspec(dllimport) DevMsg(const char *pszFormat, ...);
