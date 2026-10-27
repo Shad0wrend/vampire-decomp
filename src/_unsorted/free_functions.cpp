@@ -56142,6 +56142,16 @@ bool __stdcall sub_101a3380(VEnt *ent, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3b00 size=0x6
+namespace lifted {
+extern char g_1072bb44;
+}
+int sub_101a3b00()
+{
+    return (int)&lifted::g_1072bb44;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a55a0 size=0xaa
 #include "CUtlVector4.h"
 
