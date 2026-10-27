@@ -16646,6 +16646,39 @@ char sub_10082520(CBaseEntity *pEnt, CSceneView82520 *pScene)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100826b0 size=0x1ae
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+#include "CSceneEntity.h"
+#include "utlvector.h"
+struct CSceneView82520;
+extern CGlobalEntityList g_106eb5d8;
+extern CUtlVector<EHANDLE> g_106c8a28;
+extern char g_106c8a41;
+char sub_10082520(CBaseEntity *, CSceneView82520 *);
+
+// TARGET: sub_100826b0
+void sub_100826b0(CSceneEntity *pScene)
+{
+	g_106c8a41 = 1;
+	for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt)) {
+		if (sub_10082520(pEnt, (CSceneView82520 *)pScene)) {
+			EHANDLE h(pEnt);
+			if (g_106c8a28.Find(h) == -1)
+				g_106c8a28.AddToTail(h);
+		}
+	}
+	for (int i = 0; i < g_106c8a28.Count(); ) {
+		if (!g_106c8a28[i].Get()) {
+			g_106c8a28.Remove(i);
+		} else {
+			g_106c8a28[i]->vfunc77();
+			i++;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100828d0 size=0xcc
 #define D10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
