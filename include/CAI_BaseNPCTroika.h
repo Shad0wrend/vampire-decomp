@@ -223,7 +223,9 @@ public:
 	float m_f6318;	// 0x6318
 	char m_pad631c[0x63d8 - 0x631c];
 	char m_b63d8;
-	char m_pad63d9[0x6440 - 0x63d9];
+	char m_pad63d9;
+	char m_b63da;
+	char m_pad63db[0x6440 - 0x63db];
 	float m_f6440;
 	CBaseEntity *m_p6444;
 	unsigned int m_h6448;
