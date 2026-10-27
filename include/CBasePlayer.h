@@ -171,7 +171,7 @@ public:
 	unsigned int m_h1538;	// entity handle
 	int m_n153C;
 	char m_pad1540[0x1c];	// 0x1540 .. 0x155B
-	EHANDLE m_h155C;	// 0x155C
+	unsigned int m_h155C;	// 0x155C: entity handle
 	char m_pad1560[4];	// 0x1560 .. 0x1563
 	float m_f1564;
 	char m_pad1568[0x19b8 - 0x1568];	// 0x1568 .. 0x19B7
