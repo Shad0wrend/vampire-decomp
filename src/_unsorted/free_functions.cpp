@@ -7316,6 +7316,44 @@ void CUtlRBTree24::sub_10055f50(int elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056660 size=0x192
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_10247240(SendProp *pProps, int nProps, const char *pName);	// SendTable::Construct (stub 0x1000e8fe)
+};
+
+SendProp sub_10246af0(const char *name, int offset, int size, int bits, int flags, int extra, void *proxy);
+SendProp sub_10246510(const char *name, int offset, int size, int bits, int flags, float low, float high, void *proxy);
+SendProp sub_10246dc0(const char *name, int offset, int pTable, void *proxy);
+void sub_10009539();
+void sub_10006aeb();
+extern SendTable g_106bdddc;
+extern const char *g_1053f33c;
+extern int g_1055282c;
+
+// TARGET: sub_10056660
+int sub_10056660()
+{
+	static SendProp g_SendProps[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1055282c, (void *)sub_10009539),
+		sub_10246af0("m_Flags", 0x451, 1, 2, 1, 0, 0),
+		sub_10246af0("m_LightStyle", 0x452, 1, 4, 1, 0, 0),
+		sub_10246510("m_Radius", 0x454, 4, 0, 4, 0.0f, -121121.121121f, (void *)sub_10006aeb),
+		sub_10246af0("m_Exponent", 0x458, 4, 8, 0, 0, 0),
+		sub_10246510("m_InnerAngle", 0x45c, 4, 8, 0, 0.0f, 360.0f, (void *)sub_10006aeb),
+		sub_10246510("m_OuterAngle", 0x460, 4, 8, 0, 0.0f, 360.0f, (void *)sub_10006aeb),
+		sub_10246510("m_SpotRadius", 0x464, 4, 0, 4, 0.0f, -121121.121121f, (void *)sub_10006aeb),
+		sub_10246af0("m_nAttachment", 0x468, 4, 4, 1, 0, 0),
+	};
+	g_106bdddc.sub_10247240(g_SendProps + 1, 9, g_1053f33c);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10056a60 size=0x14
 #include "CUnknown10056a00.h"
 
