@@ -6700,6 +6700,7 @@
 0x1001236e func   ?sub_100dcea0@CCollisionPropertyUnit@@QAEHPBM@Z CCollisionPropertyUnit::sub_100dcea0
 0x10012378 func   ?vfunc42@CItemContainerLock@@QAEXPAVCBasePlayer@@@Z CItemContainerLock::vfunc42
 0x10012382 func   ?vfunc10@CMoveHelperServer@@UAE_NPBI@Z CMoveHelperServer::vfunc10
+0x1001238c func   ?vfunc82@CFuncAreaPortalWindow@@UAEPAUdatamap_t@@XZ CFuncAreaPortalWindow::vfunc82
 0x10012391 func   ?sub_10239e70@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_10239e70
 0x10012396 func   ?sub_10201470@CVStatList_t@@QAEPBDH@Z CVStatList_t::sub_10201470
 0x1001239b func   ?vfunc142@CPhysBox@@QAEHPAVCBaseEntity@@@Z CPhysBox::vfunc142
