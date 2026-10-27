@@ -114018,6 +114018,12 @@ void sub_103705e0(char *pStart)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370630 size=0x1
+void sub_10370630()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x103706b0 size=0xe9
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
