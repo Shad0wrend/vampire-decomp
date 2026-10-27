@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100f50e0 size=0x6
+#include "CEntityFlame.h"
+namespace lifted {
+extern char g_10565b94;
+}
+datamap_t * CEntityFlame::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10565b94);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5490 size=0x1e
 #include "CEntityFlame.h"
 
