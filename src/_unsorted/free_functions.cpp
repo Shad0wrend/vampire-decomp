@@ -66381,6 +66381,12 @@ void CUnknown101e05e0::sub_101e05e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0630 size=0x1
+void sub_101e0630()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e09c0 size=0x21
 extern char g_106b8540[];
 
