@@ -97676,6 +97676,37 @@ void CUnknown102dc2c0::sub_102dc2c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dc350 size=0x68
+#include "CUnknown102dc350.h"
+#include "CUnknown102db420.h"
+#include "CBaseEntity.h"
+
+namespace block_102dc350 {
+struct CUnknown102db420Unit : CUnknown102db420
+{
+	void sub_102db420(int unused);
+};
+void CUnknown102db420Unit::sub_102db420(int unused)
+{
+	m_bFlag = 1;
+}
+}
+using namespace block_102dc350;
+
+void CUnknown102dc350::sub_102dc350()
+{
+	char buf[32];
+	int i = 0;
+	if (m_nHandles > 0) {
+		do {
+			((CUnknown102db420Unit *)((EHANDLE *)m_pHandles)[i].Get())->sub_102db420((int)buf);
+			i++;
+		} while (i < m_nHandles);
+	}
+	m_bFlag = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dc3e0 size=0x27
 #include "CBaseEntity.h"
 
