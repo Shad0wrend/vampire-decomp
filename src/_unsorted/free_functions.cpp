@@ -32928,6 +32928,12 @@ CTableRecord44_t *CUnknown100ecee0::sub_100ecee0(CTableNpc_t *pNpc, int *pOutA, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ed2c0 size=0x3
+void __stdcall sub_100ed2c0(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ed370 size=0x2e
 // TARGET: sub_100ed370
 extern void (*g_109f3630)(const char *fmt, ...);
