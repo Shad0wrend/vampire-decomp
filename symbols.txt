@@ -7413,6 +7413,7 @@
 0x10014164 func   ?vfunc367@CBaseCombatWeapon@@UAEHHMM@Z CBaseCombatWeapon::vfunc367
 0x10014169 func   ?vfunc310@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc310
 0x10014187 func   _logic_npc_condition logic_npc_condition
+0x100141a5 func   ?vfunc74@CSingleplayRules@@UAEDXZ CSingleplayRules::vfunc74
 0x100141aa func   ?sub_10046b40@@YA_NPBI0@Z sub_10046b40
 0x100141af func   ?vfunc14@CGameRules@@UAEXXZ CGameRules::vfunc14
 0x100141b4 func   ?sub_103134b0@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_103134b0

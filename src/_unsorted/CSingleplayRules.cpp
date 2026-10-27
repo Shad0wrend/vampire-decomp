@@ -146,3 +146,10 @@ int CSingleplayRules::vfunc62(int index)
 	return 12;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101ac110 size=0x3
+char CSingleplayRules::vfunc74()
+{
+    return 1;
+}
+// END FUNCTION
