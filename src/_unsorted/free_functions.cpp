@@ -58258,6 +58258,12 @@ unsigned int sub_101bb310(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bb350 size=0x1
+void sub_101bb350()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bb370 size=0x8e
 #include "CSoundEnt.h"
 #include "CSound.h"
