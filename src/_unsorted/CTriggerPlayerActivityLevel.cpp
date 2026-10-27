@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10210730 size=0x6
+#include "CTriggerPlayerActivityLevel.h"
+namespace lifted {
+extern char g_105ab5dc;
+}
+datamap_t * CTriggerPlayerActivityLevel::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105ab5dc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102108e0 size=0x9a
 #include "CTriggerPlayerActivityLevel.h"
 
