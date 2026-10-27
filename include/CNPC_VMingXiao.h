@@ -16,6 +16,7 @@ public:
 	virtual void vfunc259(int *pEvent);	// slot 259 "HandleAnimEvent": event 0x7f8 (pickup) needs the mode at +0x673c to be 2 (sub_10398db0, else a warning), 0x802 / 0x803 do nothing, 0x834 / 0x835 spawn the debug marker at the origin (slot 220 with 5.0f, 0.6f, 0.2f, 512.0f or 15.0f, 1.0f, 1.5f, 1024.0f), 0xbbd (weapon throw) needs the mode 4 (sub_103990c0, else a warning), 0xbd7 starts the "Ming_xiao_vomit_emitter" at the "Bip01 MouthRoot" attachment (sub_102c42a0) and goes on to the Troika base like every other event
 	void sub_1029b290(int *pEvent);	// CAI_BaseNPCTroika::vfunc259, called directly (stub 0x100146e1)
 	bool sub_10398db0();	// stub 0x1000ea8e: the pickup event of the grabbing mode, false when the target, the animlink, the bone or the physics object is missing
+	int sub_10092550(const char *pszBone);	// CBaseAnimating::LookupBone (stub 0x10002c0c), called directly
 	void sub_103990c0();	// stub 0x10008d69: the throw event of the throwing mode
 	void sub_102c42a0(const char *pszEmitter, CBaseEntity *pParent, const char *pszAttachment, int a);	// stub 0x1000c392: starts a particle emitter on an attachment
 	void sub_102bf340(int a);	// CAI_BaseNPCTroika::vfunc144, called directly (stub 0x1000a62d)
