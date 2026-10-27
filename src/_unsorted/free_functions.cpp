@@ -37561,6 +37561,73 @@ void CFire::sub_1010b470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b5c0 size=0x193
+#include "CBaseEntity.h"
+#include "CFire.h"
+#include "ehandle.h"
+
+struct CFireConVar {
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x24];
+	float m_f28;
+};
+
+struct CFireGlobals {
+	float m_f00, m_f04, m_f08;
+	float m_curtime;	// 0x0c
+};
+
+struct CFireHeatView {
+	char m_pad0000[0x450];
+	EHANDLE m_h450;
+	char m_pad0454[0x464 - 0x454];
+	float m_f464;
+	char m_pad0468[0x46c - 0x468];
+	float m_f46c;
+	float m_f470;
+	char m_pad0474[0x478 - 0x474];
+	float m_f478;
+	char m_pad047c[0x490 - 0x47c];
+	char m_b490;
+};
+
+extern CFireConVar *g_1070942c;
+extern CFireConVar *g_107094bc;
+extern CFireGlobals *g_1070b228;
+extern const float g_104454c4;
+
+void CFire::sub_1010b5c0(float flHeat, char bInstant)
+{
+	CFireHeatView *v = (CFireHeatView *)this;
+	if (v->m_b490) {
+		if (!bInstant && sub_1010a8d0()) {
+			flHeat = (g_1070942c->vfunc1() ? g_104454c4 : g_1070942c->m_f28) * flHeat;
+		}
+		v->m_f464 = g_1070b228->m_curtime + 0.5;
+		bool bWasOut = v->m_f46c <= g_104454c4;
+		if (v->m_f470 > g_104454c4) {
+			float flAmount = (g_107094bc->vfunc1() ? g_104454c4 : g_107094bc->m_f28) * flHeat;
+			if (flAmount > v->m_f470) {
+				float flRate = g_107094bc->vfunc1() ? g_104454c4 : g_107094bc->m_f28;
+				float flLeft = v->m_f470 / flRate;
+				v->m_f470 = 0;
+				flHeat = flHeat - flLeft;
+			} else {
+				v->m_f470 -= flAmount;
+				flHeat = g_104454c4;
+			}
+		}
+		flHeat = flHeat + v->m_f46c;
+		v->m_f46c = flHeat;
+		if (bWasOut && flHeat > g_104454c4 && !v->m_h450.Get())
+			sub_10109e90();
+		if (v->m_f46c > v->m_f478)
+			v->m_f46c = v->m_f478;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b840 size=0x133
 #include "CBaseEntity.h"
 #include "CFire.h"
