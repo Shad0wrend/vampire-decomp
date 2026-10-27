@@ -16,6 +16,17 @@ CPointCamera *CPointCamera::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c290 size=0x8
+#include "CPointCamera.h"
+namespace lifted {
+int sub_100027e8(int);
+}
+void CPointCamera::vfunc113()
+{
+    lifted::sub_100027e8((int)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018c410 size=0x82
 #include "CPointCamera.h"
 #include "CUnknown1070b22c.h"
