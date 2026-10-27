@@ -107511,6 +107511,17 @@ int sub_103079c0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10307aa0 size=0xf
+struct CUnknown10307aa0 { int sub_10307aa0(); };
+int CUnknown10307aa0::sub_10307aa0()
+{
+    *(int *)this = -1;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307b40 size=0x9
 struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 // TARGET: CUnknown10307b40::sub_10307b40
