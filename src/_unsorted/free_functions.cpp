@@ -61861,6 +61861,48 @@ bool CStealthKillRulesUnit::sub_101be500(CBaseEntity *pKiller, CBaseEntity *pVic
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be710 size=0x1ad
+#include "CStealthKillRules.h"
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include "ScopeTrace.h"
+
+struct CRules1072c72c
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad04[0x2c - 4];
+	int m_n2c;
+};
+extern CRules1072c72c *g_1072c72c;
+float sub_1000bb54(const Vector *a, const Vector *b, const Vector *c);
+
+// TARGET: CStealthKillRules::sub_101be710
+bool CStealthKillRules::sub_101be710(CBaseEntity *pListener, CBaseEntity *pTarget)
+{
+	ScopeTrace trace("CStealthKillRules::InDeafZone", g_106b8540, g_106b8540);
+	if (g_1072c72c->vfunc1() || g_1072c72c->m_n2c == 0) {
+		if (((CBaseCombatCharacter *)pListener)->sub_101671a0()) {
+			CEntityVSlots *pL = (CEntityVSlots *)pListener;
+			CEntityVSlots *pT = (CEntityVSlots *)pTarget;
+			Vector vecListener = *pL->slot217();
+			Vector vecTarget = *pT->slot217();
+			Vector vecDir;
+			pT->slot368(&vecDir);
+			vecDir *= -1.0f;
+			float flDot = sub_1000bb54(&vecTarget, &vecListener, &vecDir);
+			if (sub_101be930(pListener) < flDot) {
+				float flDist = (vecListener - vecTarget).Length();
+				if (sub_101bf060(pListener, pTarget) < flDist)
+					return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be930 size=0x10d
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
