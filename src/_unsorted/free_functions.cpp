@@ -60708,6 +60708,15 @@ void CMem4e_t::sub_101c4490(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c4560 size=0x6
+struct CUnknown101c4560 { void * sub_101c4560(); };
+void * CUnknown101c4560::sub_101c4560()
+{
+    *(char *)this = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4580 size=0x87
 struct IFile101c4580
 {
