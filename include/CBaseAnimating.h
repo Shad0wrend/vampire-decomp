@@ -86,6 +86,8 @@ public:
 	const char *sub_1008ff50(int sequence);	// "CBaseAnimating::GetSequenceActivityName": as GetSequenceName with the offset in the second dword, "SEQUENCE_NOT_FOUND" when there is none
 	float sub_10091230(int sequence);	// "CBaseAnimating::GetSequenceCycleRate": scope trace (entity name), 1.0f / sub_10091080(sequence) when that is above 0, else 10.0f
 	float sub_10091080(int sequence);	// sequence duration (stub 0x10009813), returns a float
+	float sub_10091490(int sequence, float flRate);	// "CBaseAnimating::GetSequenceGroundSpeed"-like: scope trace (entity name), the sequence's ground distance times the ground speed scalar (+0x564) over its duration; with the byte at +0x5ac set the speed comes from the interval movement of one frame instead
+	float sub_10094b70(float flInterval, char *pbLooped, float *pvecDelta, float *pvecAngles);	// "CBaseAnimating::GetIntervalMovement" (stub 0x10008d64)
 	float sub_10092190(int iParameter);	// "CBaseAnimating::GetPoseParameter02": scope trace (entity name), the studio helper's value for (GetModelPtr(-1), iParameter, the float at +0x690 + iParameter*4), the file-scope zero for a negative index or no header
 	float sub_100920d0(const char *name);	// "CBaseAnimating::GetPoseParameter01": scope trace (entity name), GetPoseParameter02(LookupPoseParameter(name))
 	float sub_10094dc0(float flCycle);	// "CBaseAnimating::GetMovementFrame...": scope trace (entity name), without a studio header the file-scope zero, else the studio helper's value for (GetModelPtr(-1), the sequence at +0x6f0, the pose parameters at +0x690, flCycle)
