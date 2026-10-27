@@ -82204,6 +82204,12 @@ void sub_1022d8a0(int index, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022ea40 size=0x1
+void sub_1022ea40()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022eb60 size=0x82
 struct TStat { void sub_101fc950(int a, int b); };
 
