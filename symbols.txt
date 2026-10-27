@@ -6098,6 +6098,7 @@
 0x1001117b func   ?sub_101563b0@CRagdollProp@@QAEXHH@Z CRagdollProp::sub_101563b0
 0x1001118f func   ?vfunc461@CNPC_VChangBros@@UAEHXZ CNPC_VChangBros::vfunc461
 0x100111a3 func   ?sub_10238380@@YAXXZ sub_10238380
+0x100111a8 func   ?sub_100b5490@@YAHH@Z sub_100b5490
 0x100111ad func   ?sub_102a9620@CUnknown102a9620@@QAEHXZ CUnknown102a9620::sub_102a9620
 0x100111b2 func   ?vfunc5@CAI_ChangeTarget@@QAEPAV1@I@Z CAI_ChangeTarget::vfunc5
 0x100111b7 func   ?vfunc5@CNPC_VDog@@QAEPAV1@I@Z CNPC_VDog::vfunc5

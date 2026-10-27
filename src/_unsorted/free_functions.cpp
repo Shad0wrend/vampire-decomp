@@ -24760,6 +24760,16 @@ void CBaseEntity::sub_100b5340(unsigned int addFlags, unsigned int propagateFlag
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5490 size=0x9
+namespace lifted {
+struct C10012530 { int sub_10012530(); };
+}
+int sub_100b5490(int a0)
+{
+    return ((lifted::C10012530 *)a0)->sub_10012530();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5620 size=0x105
 #include "SendProp.h"
 
