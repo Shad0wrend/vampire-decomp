@@ -4061,6 +4061,7 @@
 0x1000c446 func   ?sub_100aa5c0@CBaseEntity@@QAEHPAVCRestore@@H@Z CBaseEntity::sub_100aa5c0
 0x1000c44b func   ?vfunc3@CTETracer@@UAEXPBVVector@@0@Z CTETracer::vfunc3
 0x1000c450 func   ?sub_1006e4c0@CBaseCineCam@@QAE_NPBDH@Z CBaseCineCam::sub_1006e4c0
+0x1000c455 func   ?vfunc1@CAI_ExpresserSink@@UAE_NXZ CAI_ExpresserSink::vfunc1
 0x1000c464 func   ?sub_100aaf30@CBaseEntity@@QAEXXZ CBaseEntity::sub_100aaf30
 0x1000c46e func   ?sub_10325b20@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10325b20
 0x1000c473 func   ?sub_102256f0@CBaseVampireSkillEntity@@QAEXPBD@Z CBaseVampireSkillEntity::sub_102256f0
