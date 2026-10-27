@@ -12,6 +12,17 @@ CAI_CondOwner * CNPC_VAndreiBlood::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035c250 size=0x6
+#include "CNPC_VAndreiBlood.h"
+namespace lifted {
+extern int g_1062a460;
+}
+const char * CNPC_VAndreiBlood::vfunc451()
+{
+    return (const char *)lifted::g_1062a460;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035c270 size=0x1e
 #include "CNPC_VAndreiBlood.h"
 
