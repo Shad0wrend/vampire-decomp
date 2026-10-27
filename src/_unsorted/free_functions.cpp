@@ -38479,6 +38479,12 @@ int sub_1010fc80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10112390 size=0x3
+void __stdcall sub_10112390(int a0, int a1, int a2, int a3)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10112420 size=0x36
 struct CUnknown10112420
 {
