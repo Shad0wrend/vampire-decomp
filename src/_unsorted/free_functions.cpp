@@ -10747,6 +10747,19 @@ CTEWorldDecal *CTEWorldDecal::sub_1006af40(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006afb0 size=0xb
+namespace lifted {
+extern char g_1044e1a8;
+int sub_100021d0();
+}
+struct CUnknown1006afb0 { int sub_1006afb0(); };
+int CUnknown1006afb0::sub_1006afb0()
+{
+    *(int *)this = (int)&lifted::g_1044e1a8;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006b440 size=0xb7
 #include "SendProp.h"
 

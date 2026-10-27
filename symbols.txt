@@ -5207,6 +5207,7 @@
 0x1000e9b2 func   ?sub_1036e820@CNPC_VChangBros@@QAE_NXZ CNPC_VChangBros::sub_1036e820
 0x1000e9c6 func   ?vfunc440@CNPC_VHunter@@QAEHH@Z CNPC_VHunter::vfunc440
 0x1000e9d0 func   ?sub_1022b590@CSoundScheme@@QAEXM@Z CSoundScheme::sub_1022b590
+0x1000e9df func   ?sub_1006afb0@CUnknown1006afb0@@QAEHXZ CUnknown1006afb0::sub_1006afb0
 0x1000e9e9 func   _window_pane window_pane
 0x1000e9fd func   ?sub_102e2710@@YIXPAUCOwner@@@Z sub_102e2710
 0x1000ea07 func   ?sub_102f9000@UtlVec8@@QAEXH@Z UtlVec8::sub_102f9000
