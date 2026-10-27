@@ -6,6 +6,8 @@ struct CUnknown1074e098Record
 {
 	char m_pad0000[0xfc];
 	int m_nSlotOrder;	// 0xfc: requested sub slot order (0 = unset)
+	char m_pad0100[0x108 - 0x100];
+	char m_b108;	// 0x108: set when the discipline forbids acting while the player is busy
 };
 
 class CUnknown1074e098
