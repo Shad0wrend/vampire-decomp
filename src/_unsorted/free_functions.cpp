@@ -93141,6 +93141,54 @@ void CAI_BaseNPCTroika::sub_102aab70(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ae310 size=0x130
+#include "CBasePlayer.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseCombatWeapon.h"
+#include "CEHandleGet.h"
+
+struct Flagged
+{
+    char m_pad0000[0x571];
+    char m_b571;
+};
+
+struct Holder
+{
+    char m_pad0000[0x628c];
+    unsigned int m_h628c;
+    char m_pad6290[0x62ec - 0x6290];
+    Flagged *m_p62ec;
+    char m_pad62f0[0x6300 - 0x62f0];
+    Flagged *m_p6300;
+};
+
+void __fastcall sub_102ae310(Holder *p)
+{
+    CAI_BaseNPC *pNPC = (CAI_BaseNPC *)p;
+    CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)((CBasePlayer *)p)->sub_1032e7b0();
+    if (!pWeapon)
+        return;
+    bool bHolster = false;
+    if (!pNPC->vfunc167()) {
+        if ((p->m_p62ec && p->m_p62ec->m_b571) || (p->m_p6300 && p->m_p6300->m_b571))
+            bHolster = true;
+        else if (pNPC->vfunc464() == 1 || pNPC->vfunc464() == 4 || pNPC->vfunc464() == 0xc || pNPC->vfunc464() == 0xd) {
+            if (EHandle_Get(p->m_h628c)) {
+                unsigned int h2 = *(volatile unsigned int *)&p->m_h628c;
+                if (pNPC->vfunc404((CBaseEntity *)EHandle_Get(h2)) != 1)
+                    bHolster = true;
+            }
+        }
+    }
+    if (!bHolster) {
+        if ((*(unsigned int *)((char *)pWeapon + 0x19c) & 0x40) == 0x40)
+            pWeapon->vfunc315();
+    } else if ((*(unsigned int *)((char *)pWeapon + 0x19c) & 0x40) != 0x40)
+        pWeapon->vfunc316(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ae7f0 size=0xd
 void CUnknown102b5dc0::sub_102ae7f0(int value)
 {
