@@ -112019,6 +112019,16 @@ void CBaseCombatCharacter::sub_103387a0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103388e0 size=0x8
+namespace lifted {
+int __stdcall sub_100153a7(int);
+}
+int sub_103388e0()
+{
+    return lifted::sub_100153a7(0x40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10338950 size=0x150
 #include "ScopeTrace.h"
 char CBaseCombatCharacter::sub_10338950()
