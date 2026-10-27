@@ -4500,6 +4500,7 @@
 0x1000cff4 func   ?sub_10406000@@YAHXZ sub_10406000
 0x1000cffe func   _item_p_research_mg_finance item_p_research_mg_finance
 0x1000d003 func   _npc_VManBat npc_VManBat
+0x1000d008 func   ?sub_101e9000@CUnknown101e9000@@QAEHXZ CUnknown101e9000::sub_101e9000
 0x1000d017 func   ?vfunc5@CGameUI@@QAEPAV1@I@Z CGameUI::vfunc5
 0x1000d026 func   ?sub_10078610@CUnknown10078610@@QAEHXZ CUnknown10078610::sub_10078610
 0x1000d030 func   ?sub_1027f610@@YIXPAI@Z sub_1027f610

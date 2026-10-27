@@ -69616,6 +69616,14 @@ float CUnknown101e8fe0::sub_101e8fe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e9000 size=0x7
+struct CUnknown101e9000 { int sub_101e9000(); };
+int CUnknown101e9000::sub_101e9000()
+{
+    return *(int *)((char *)this + 0x390);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9170 size=0xd9
 #include "CVStatList_t.h"
 #include "CUnknown101e9170.h"
