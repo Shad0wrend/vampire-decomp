@@ -91005,6 +91005,21 @@ char CAI_BaseNPCTroika::sub_1028a190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028ac80 size=0x26
+#include "CBaseHandle.h"
+
+// TARGET: CBaseHandle::sub_1028ac80
+CBaseHandle &CBaseHandle::sub_1028ac80(IHandleEntity *pEntity)
+{
+	if (pEntity) {
+		m_Index = *pEntity->vfunc1();
+	} else {
+		m_Index = 0xffffffff;
+	}
+	return *this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028ae60 size=0x8c
 #include "CAI_BaseNPC.h"
 
