@@ -47056,6 +47056,19 @@ int *sub_10148560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148780 size=0xb
+namespace lifted {
+extern char g_1046c920;
+int sub_10008580();
+}
+struct CUnknown10148780 { int sub_10148780(); };
+int CUnknown10148780::sub_10148780()
+{
+    *(int *)this = (int)&lifted::g_1046c920;
+    return lifted::sub_10008580();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148a20 size=0x171
 #include "CGravControllerPoint.h"
 #include "IPhysicsObject.h"
