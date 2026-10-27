@@ -38001,6 +38001,16 @@ void CThis10103f80::sub_10103f80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101041d0 size=0xe
+namespace lifted {
+int __stdcall sub_10007fe5(int, int, int);
+}
+int __stdcall sub_101041d0(int a0)
+{
+    return lifted::sub_10007fe5(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104220 size=0x43
 #include "CParamsExplosion.h"
 void *sub_100aa720(int size);
