@@ -7583,6 +7583,19 @@ CBaseFire *__fastcall sub_10056f10(CBaseFire *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10056f80 size=0xb
+namespace lifted {
+extern char g_1044cce4;
+int sub_1000cb8a();
+}
+struct CUnknown10056f80 { int sub_10056f80(); };
+int CUnknown10056f80::sub_10056f80()
+{
+    *(int *)this = (int)&lifted::g_1044cce4;
+    return lifted::sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057230 size=0x12d
 #include "SendProp.h"
 
