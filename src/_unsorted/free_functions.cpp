@@ -77590,6 +77590,15 @@ void NameSet::sub_10206980(const char *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10206a60 size=0x6
+struct CUnknown10206a60 { void * sub_10206a60(); };
+void * CUnknown10206a60::sub_10206a60()
+{
+    *(char *)this = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206a80 size=0x3
 struct CUnknown10206a80 { char sub_10206a80(); };
 char CUnknown10206a80::sub_10206a80()

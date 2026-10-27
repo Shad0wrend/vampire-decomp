@@ -5550,6 +5550,7 @@
 0x10010122 func   ?vfunc241@CGibShooter@@QAEPAVCGib@@XZ CGibShooter::vfunc241
 0x10010136 func   ?sub_1029f210@CUnknown1029f210View@@QAEXH@Z CUnknown1029f210View::sub_1029f210
 0x10010140 func   ?sub_1024a980@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1024a980
+0x10010145 func   ?sub_10206a60@CUnknown10206a60@@QAEPAXXZ CUnknown10206a60::sub_10206a60
 0x1001014a func   ?sub_10334790@CBaseCombatCharacter@@QAEHPBD@Z CBaseCombatCharacter::sub_10334790
 0x1001015e func   ?vfunc130@CFuncElevator@@QAEXH@Z CFuncElevator::vfunc130
 0x10010163 func   ?sub_1007ee00@@YIXPAH@Z sub_1007ee00
