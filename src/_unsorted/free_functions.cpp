@@ -119149,6 +119149,51 @@ void CNPC_VAndreiBlood::sub_1035e1a0(const char *pszEmitter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035e3c0 size=0x1b6
+#include "CNPC_VAndreiBlood.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+#define EV_(n) virtual void s##n();
+#define EV10_(p) EV_(p##0) EV_(p##1) EV_(p##2) EV_(p##3) EV_(p##4) EV_(p##5) EV_(p##6) EV_(p##7) EV_(p##8) EV_(p##9)
+struct CEmitterView
+{
+	EV_(0) EV_(1) EV_(2) EV_(3) EV_(4) EV_(5) EV_(6) EV_(7) EV_(8) EV_(9)
+	EV10_(1) EV10_(2) EV10_(3) EV10_(4) EV10_(5) EV10_(6) EV10_(7) EV10_(8) EV10_(9)
+	EV10_(10) EV10_(11) EV10_(12) EV10_(13) EV10_(14) EV10_(15) EV10_(16) EV10_(17) EV10_(18) EV10_(19)
+	EV10_(20) EV10_(21) EV10_(22) EV10_(23)
+	EV_(240)
+	virtual void s241();
+	EV_(242)
+	virtual void s243(CEntityVSlots *pParent, int mode, const char *pszAttachment);
+};
+
+extern float g_1070d9d0[3];
+extern char g_1053ec20[];	// "Bip01_R_Hand"
+CEntityVSlots *sub_100fbc90(const char *, const float *, const float *, float);
+void sub_101cd940(void *);
+
+void CNPC_VAndreiBlood::sub_1035e3c0(const char *pszEmitter)
+{
+	ScopeTrace trace("CNPC_VAndreiBlood::StartSummonEmitter", g_106b8540);
+	if (pszEmitter) {
+		if (EHandle_Get(m_h66e4)) {
+			sub_101cd940(EHandle_Get(m_h66e4));
+			m_h66e4 = 0xffffffff;
+		}
+		CEntityVSlots *pEmitter = sub_100fbc90(pszEmitter, (const float *)((CEntityVSlots *)this)->slot217(), g_1070d9d0, -1.0f);
+		if (pEmitter)
+			m_h66e4 = *pEmitter->slot1();
+		else
+			m_h66e4 = 0xffffffff;
+		if (EHandle_Get(m_h66e4)) {
+			((CEmitterView *)EHandle_Get(m_h66e4))->s243((CEntityVSlots *)this, 2, g_1053ec20);
+			((CEmitterView *)EHandle_Get(m_h66e4))->s241();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035e5f0 size=0xa5
 #include "CNPC_VAndreiBlood.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
