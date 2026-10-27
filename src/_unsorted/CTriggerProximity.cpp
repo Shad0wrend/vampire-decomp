@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101c9c90 size=0x6
+#include "CTriggerProximity.h"
+namespace lifted {
+extern char g_1059e208;
+}
+datamap_t * CTriggerProximity::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1059e208);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9ea0 size=0x32
 #include "CTriggerProximity.h"
 
