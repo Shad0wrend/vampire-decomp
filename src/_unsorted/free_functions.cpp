@@ -135620,6 +135620,16 @@ void CUnknown1042e8c0::sub_1042ee50(float frames)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042f080 size=0x8
+namespace lifted {
+int sub_10010dde();
+}
+int __stdcall sub_1042f080(int a0)
+{
+    return lifted::sub_10010dde();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042fb20 size=0x22
 extern int g_106af554;
 extern int g_106af5dc;
