@@ -47,3 +47,15 @@ public:
 	VIEW_SLOT(0) VIEW_SLOT(1) VIEW_SLOT(2) VIEW_SLOT(3)
 	virtual void *vfunc4();
 };
+
+class CCombatCharGibSlotView	// slots 394..397 of a combat character: Event_Gibbed's follow-ups and the gib convar tests
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2)
+	VIEW_SLOT10(30) VIEW_SLOT10(31) VIEW_SLOT10(32) VIEW_SLOT10(33) VIEW_SLOT10(34) VIEW_SLOT10(35) VIEW_SLOT10(36) VIEW_SLOT10(37) VIEW_SLOT10(38)
+	VIEW_SLOT(390) VIEW_SLOT(391) VIEW_SLOT(392) VIEW_SLOT(393)
+	virtual char vfunc394();	// the follow-up Event_Gibbed runs when nothing gibs
+	virtual void vfunc395();	// CorpseFade
+	virtual char vfunc396();	// gibs allowed for humans
+	virtual char vfunc397();	// gibs allowed for aliens
+};
