@@ -7,6 +7,12 @@ void CBaseEntity::vfunc46()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100267f0 size=0x1
+void CBaseEntity::vfunc47()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10026b70 size=0xb
 struct CUnknown10146790 {
 	char m_unk0;
