@@ -71131,6 +71131,14 @@ void CActivityTableX::sub_101f61b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f6370 size=0x3
+struct CUnknown101f6370 { void * sub_101f6370(); };
+void * CUnknown101f6370::sub_101f6370()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f6390 size=0x1
 void sub_101f6390()
 {
