@@ -118,6 +118,7 @@ public:
 	void vfunc491();	// slot 491 (declared as a plain member): when slot 486 holds logs "SPI_TAKE_DAMAGE" with the three convar values (like slot 488) and runs slot 487; then sub_103b9f90(1, 1.0f)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	char vfunc69(void *pOther);	// as in CNPC_VHengeyokai (transplant)
+	float vfunc516();	// slot 516 (plain member): with bit 13 of the flags at +0x5d8c set the speed (slot 242) scaled by the convar at 0x1093c9fc (at least 1.0f); else by the activity at +0xfec: 5.0f for 1 / 0xfc / 0xfd, 30.0f for 0x13, 11.0f otherwise
 	char sub_1029b180(void *pOther);	// as in CNPC_VHengeyokai (transplant)
 	int sub_103bde40(int activity);	// slot 375 (NPC_TranslateActivity): while the 10381be0 check passes, activity 1 / 9 / 0x13 map to 0xfd / 0xff (0xfc / 0xfe when the byte at +0x6688 is set); everything else goes to the base implementation
 	CNPC_VTzimisce *vfunc5(unsigned int flags);	// scalar deleting destructor: destructs the vectors at +0x6690 and +0x665c, the base (sub_1028d610), and frees the object when bit 0 of flags is set
