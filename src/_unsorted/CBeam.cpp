@@ -87,6 +87,31 @@ void CBeam::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc130 size=0x93
+#include "CBeam.h"
+#include "CBaseEntity.h"
+#include "CUnknown1070b22c.h"
+extern CUnknown1070b22c *g_1070b22c;
+
+struct CCheckTransmitInfo_t { char pad[0x10]; unsigned char *m_pPVS; };
+
+// TARGET: CBeam::vfunc87
+void CBeam::vfunc87(void *pCheckTransmitInfo)
+{
+    CCheckTransmitInfo_t *pInfo = (CCheckTransmitInfo_t *)pCheckTransmitInfo;
+    int edict = m_pEdict2e0;
+    int idx = g_1070b22c->vfunc35(edict);
+    if (!(pInfo->m_pPVS[idx >> 3] & (1 << (idx & 7)))) {
+        CBaseEntity::vfunc87(pInfo);
+        EHANDLE *p = (EHANDLE *)&m_hEndEntity;
+        for (int i = 10; i != 0; i--, p++) {
+            if (*p)
+                (*p)->vfunc87(pInfo);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc200 size=0x128
 #include "CBeam.h"
 #include "CUnknown1070b22c.h"
