@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101023b0 size=0x6
+#include "CEnvMicrophone.h"
+namespace lifted {
+extern char g_105698f8;
+}
+datamap_t * CEnvMicrophone::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105698f8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102490 size=0xd1
 #include "CEnvMicrophone.h"
 
