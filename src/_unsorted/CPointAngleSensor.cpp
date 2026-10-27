@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1018cba0 size=0x6
+#include "CPointAngleSensor.h"
+namespace lifted {
+extern char g_1058c1c8;
+}
+datamap_t * CPointAngleSensor::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1058c1c8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018cdf0 size=0xe2
 #include "CPointAngleSensor.h"
 
