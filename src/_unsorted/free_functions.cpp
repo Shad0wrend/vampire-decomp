@@ -98120,6 +98120,17 @@ void sub_102ca080()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ca110 size=0x7
+namespace lifted {
+extern char g_1049b4b0;
+}
+struct CUnknown102ca110 { void sub_102ca110(); };
+void CUnknown102ca110::sub_102ca110()
+{
+    *(int *)this = (int)&lifted::g_1049b4b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ca2a0 size=0x15f
 #include "CBaseEntity.h"
 #include "CAI_CsActList.h"
