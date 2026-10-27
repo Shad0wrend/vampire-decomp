@@ -496,3 +496,79 @@ char CSceneEntity::vfunc251(float a, int b, CSceneEvent *pEvent)
 	return 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100847e0 size=0x16d
+#define NV(n) virtual void vfunc##n();
+#define NV10(p) NV(p##0) NV(p##1) NV(p##2) NV(p##3) NV(p##4) NV(p##5) NV(p##6) NV(p##7) NV(p##8) NV(p##9)
+#define NV100(p) NV10(p##0) NV10(p##1) NV10(p##2) NV10(p##3) NV10(p##4) NV10(p##5) NV10(p##6) NV10(p##7) NV10(p##8) NV10(p##9)
+struct SActor847e0 {
+	char m_bType;
+	const char *sub_10072d90();
+};
+struct SEvent847e0;
+struct SScene847e0 {
+	int sub_1007a2a0();
+	SActor847e0 *sub_1007a2c0(int index);
+	int sub_1007a250();
+	SEvent847e0 *sub_1007a270(int index);
+	char sub_1007ed10();
+};
+struct SEvent847e0 {
+	int sub_10075b70();
+	SScene847e0 *sub_10076710();
+};
+struct SNpc847e0 {
+	NV100(0) NV100(1) NV100(2) NV100(3) NV100(4) NV100(5)
+	NV10(60) NV(610) NV(611) NV(612) NV(613) NV(614)
+	char m_pad0004[0x178 - 4];
+	float m_f178;
+	float m_f17c;
+	char m_pad0180[0xfe8 - 0x180];
+	EHANDLE m_hFe8;
+	char m_pad0fec[0x6554 - 0xfec];
+	EHANDLE m_h6554;
+	void sub_1029f300(char c);
+	void sub_10033f60(int a);
+};
+struct SActorEnt847e0 {
+	char m_pad0000[0x98];
+	SNpc847e0 *m_pNpc98;
+};
+extern struct SGlobals847e0 { char pad[0xc]; float curtime; float frametime; } *g_1070b228;
+extern float g_1044f02c;
+
+void CSceneEntity::sub_100847e0(void *pSceneArg)
+{
+	SScene847e0 *pScene = (SScene847e0 *)pSceneArg;
+	if (pScene) {
+		for (int i = 0; i < pScene->sub_1007a2a0(); i++) {
+			SActor847e0 *pActor = pScene->sub_1007a2c0(i);
+			if (pActor) {
+				SActorEnt847e0 *pEnt = (SActorEnt847e0 *)vfunc267(pActor->sub_10072d90());
+				if (pEnt) {
+					SNpc847e0 *pNpc = pEnt->m_pNpc98;
+					if (pNpc) {
+						if (!pNpc->m_hFe8.Get() && !pNpc->m_h6554.Get()) {
+							pNpc->sub_1029f300(pActor->m_bType);
+							pNpc->vfunc614();
+							pNpc->sub_10033f60(0);
+							if (pNpc->m_f17c <= pNpc->m_f178) {
+								float flFrame = g_1070b228->frametime;
+								pNpc->m_f17c = flFrame * g_1044f02c + g_1070b228->curtime;
+							}
+						}
+					}
+				}
+			}
+		}
+		for (int j = 0; j < pScene->sub_1007a250(); j++) {
+			SEvent847e0 *pEvent = pScene->sub_1007a270(j);
+			if (pEvent && pEvent->sub_10075b70() == 0xb && !pScene->sub_1007ed10()) {
+				SScene847e0 *pSub = pEvent->sub_10076710();
+				if (pSub)
+					sub_1000d97c(pSub);
+			}
+		}
+	}
+}
+// END FUNCTION
