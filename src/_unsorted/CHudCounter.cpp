@@ -16,6 +16,17 @@ bool CHudCounter::vfunc86(int unused, int edict, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012df50 size=0x6
+#include "CHudCounter.h"
+namespace lifted {
+extern char g_10574318;
+}
+datamap_t * CHudCounter::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10574318);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e4c0 size=0x1e
 #include "CHudCounter.h"
 
