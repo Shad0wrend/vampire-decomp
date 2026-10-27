@@ -86980,6 +86980,14 @@ int CUnknown10248a10::sub_10248a10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248a30 size=0x4
+struct CUnknown10248a30 { int sub_10248a30(); };
+int CUnknown10248a30::sub_10248a30()
+{
+    return *(int *)((char *)this + 0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248a50 size=0xa
 struct CUnknown10248a50 { int p[4]; int a; void sub_10248a50(int v); };
 // TARGET: CUnknown10248a50::sub_10248a50
