@@ -3652,6 +3652,7 @@
 0x1000b4ec func   ?sub_1025b5b0@@YAHXZ sub_1025b5b0
 0x1000b4f6 func   ?sub_1008d990@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_1008d990
 0x1000b4fb func   ?vfunc5@CItemGBertramsCD@@QAEPAV1@I@Z CItemGBertramsCD::vfunc5
+0x1000b50f func   ?sub_101daea0@@YAXXZ sub_101daea0
 0x1000b51e func   ?sub_102cce60@CAI_DynamicLink@@QAEPAV1@XZ CAI_DynamicLink::sub_102cce60
 0x1000b532 func   ?sub_1004b990@CMem16b_t@@QAEXH@Z CMem16b_t::sub_1004b990
 0x1000b537 func   ?sub_10348720@@YAXXZ sub_10348720

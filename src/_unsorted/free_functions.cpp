@@ -65115,6 +65115,12 @@ S6 *S6::sub_101dae70(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101daea0 size=0x1
+void sub_101daea0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101daec0 size=0x73
 #include "CUnknown101daec0.h"
 #include "CUnknown101e0940.h"
