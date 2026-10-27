@@ -30140,6 +30140,68 @@ void CUnknown106b89bc::sub_100d13d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1d50 size=0x1af
+#include "CStatDefault3List.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b248 *g_1070b248;
+extern CStatDefault3List g_10738d10;
+extern char g_106b8540[];
+void sub_10352e90();
+
+struct CStatDefault3Name
+{
+	const char *m_psz;
+};
+
+struct CStatDefault3View : StatDefault3
+{
+	CStatDefault3Name sub_101d4e70(int index);	// the name at that index of the first table (stub 0x1001029e), the index is clamped to 0..5
+	CStatDefault3Name sub_101d4eb0(int index);	// the same for the second table (stub 0x1000541b)
+};
+
+void sub_100d1d50()
+{
+	g_1070b22c->vfunc13("cable/cable.vmt", 0);
+	g_1070b22c->vfunc13("cable/cable_lit.vmt", 0);
+	g_1070b22c->vfunc13("cable/chain.vmt", 0);
+	g_1070b22c->vfunc13("cable/rope.vmt", 0);
+	for (int i = 0; i < g_10738d10.m_count; i++)
+	{
+		CStatDefault3View *pItem = (CStatDefault3View *)g_10738d10.sub_101d5e80(i);
+		for (int j = 0; j < 6; j++)
+		{
+			if (pItem->sub_101d4e70(j).m_psz && pItem->m_98[2])
+			{
+				const char *psz = pItem->sub_101d4e70(j).m_psz;
+				if (!psz)
+					psz = g_106b8540;
+				g_1070b22c->vfunc13(psz, 0);
+			}
+			if (pItem->sub_101d4eb0(j).m_psz && pItem->m_98[2])
+			{
+				const char *psz = pItem->sub_101d4eb0(j).m_psz;
+				if (!psz)
+					psz = g_106b8540;
+				g_1070b22c->vfunc13(psz, 0);
+			}
+		}
+	}
+	g_1070b22c->vfunc13("materials/sprites/glowa.vmt", 0);
+	g_1070b22c->vfunc13("materials/sprites/Spread_Indicator_L.vmt", 0);
+	g_1070b22c->vfunc13("materials/sprites/Spread_Indicator_R.vmt", 0);
+	g_1070b248->vfunc0("common/wpn_hudoff.wav", 0);
+	g_1070b248->vfunc0("common/wpn_hudon.wav", 0);
+	g_1070b248->vfunc0("common/wpn_moveselect.wav", 0);
+	g_1070b248->vfunc0("common/wpn_select.wav", 0);
+	g_1070b248->vfunc0("common/wpn_denyselect.wav", 0);
+	g_1070b248->vfunc0("player/stealth_discovered.wav", 0);
+	sub_10352e90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2070 size=0x1a1
 #include <string.h>
 #include "CBaseEntity.h"
