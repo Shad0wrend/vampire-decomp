@@ -94243,6 +94243,70 @@ void CAI_BaseNPCTroika::sub_102bfe10(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c0010 size=0x195
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown100ecee0.h"
+
+struct CTroikaGlobals {
+	float m_f00, m_f04, m_f08;
+	float m_curtime;	// 0x0c
+};
+
+struct CTroikaTableView {
+	char m_pad0000[0xe3c];
+	float m_fe3c;
+	char m_pade40[4];
+	float m_vecE44[3];
+	float m_vecE50[3];
+	char m_pade5c[0x5b94 - 0xe5c];
+	int m_n5b94;
+	char m_pad5b98[0x64d4 - 0x5b98];
+	int m_n64d4;
+	char m_pad64d8[0x6578 - 0x64d8];
+	int m_n6578;
+	float m_f657c;
+	float m_f6580;
+	float m_f6584;
+	float m_f6588;
+};
+
+extern CUnknown100ecee0 g_10924980;
+extern CTroikaGlobals *g_1070b228;
+extern float (__cdecl *g_109f385c)(float flMin, float flMax);
+
+void CAI_BaseNPCTroika::sub_102c0010(int unused)
+{
+	CTroikaTableView *v = (CTroikaTableView *)this;
+	bool bSame = true;
+	for (int i = 0; i < 3; i++) {
+		if ((int)v->m_vecE44[i] != (int)v->m_vecE50[i])
+			bSame = false;
+	}
+	if (bSame) {
+		if (g_1070b228->m_curtime > v->m_f657c) {
+			if (g_1070b228->m_curtime > v->m_f6580) {
+				float flMin, flMax;
+				g_10924980.sub_100ece60(v->m_n64d4, &flMin, &flMax);
+				v->m_fe3c = g_10924980.sub_100ecdf0(v->m_n64d4, 1);
+				v->m_n5b94 = g_10924980.sub_100ecc60(v->m_n64d4, v->m_n6578);
+				v->m_f6580 = g_109f385c(flMin, flMax) + g_1070b228->m_curtime;
+				v->m_n6578++;
+				if (v->m_n5b94 == -1) {
+					v->m_n6578 = 0;
+					v->m_f6580 = 0;
+					v->m_n5b94 = g_10924980.sub_100eccf0(v->m_n64d4);
+					*(int *)&v->m_f657c = 0x7f7fffff;
+				}
+			}
+		} else {
+			v->m_fe3c = g_10924980.sub_100ecdf0(v->m_n64d4, 0);
+			if (*(int *)&v->m_f657c == 0x7f7fffff)
+				v->m_f657c = g_109f385c(v->m_f6584, v->m_f6588) + g_1070b228->m_curtime;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c0270 size=0xbf
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"
