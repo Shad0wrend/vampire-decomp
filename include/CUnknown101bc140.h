@@ -34,6 +34,7 @@ public:
 	char m_Filter[4];	// 0x44: the recipient filter object
 	unsigned int m_nFlags;	// 0x48
 
+	bool sub_101bbde0(float flTime, float flDelta);	// "CSoundPatch::Update": the sound expires (sub_101bbd10, false) once its time at +0x24 has passed; a sound whose entity is gone is removed with a warning (false); else steps its two envelopes (+0x00 volume, +0x10 pitch) by flDelta and, when one of them is active and the sound is playing (bit 0 of +0x48), emits it through the engine; true
 	void sub_101bbc70(float flValue);	// sets m_fl24 to the engine's slot 9 value plus flValue (after sub_100139e4(0, flValue))
 	float sub_101bbcf0();	// m_flPitchScale * m_flScale (stub 0x10007851)
 	void sub_100139e4(int unused, float flValue);	// the member called by sub_101bbc70 first (stub 0x100139e4)
