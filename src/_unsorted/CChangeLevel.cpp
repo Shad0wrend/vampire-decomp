@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101c7290 size=0x6
+#include "CChangeLevel.h"
+namespace lifted {
+extern char g_1059dc88;
+}
+datamap_t * CChangeLevel::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1059dc88);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c74c0 size=0xaf
 #include "CChangeLevel.h"
 #include <string.h>
