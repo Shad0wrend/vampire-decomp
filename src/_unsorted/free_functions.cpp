@@ -24585,6 +24585,14 @@ void CVirtList_100b7cc0::sub_100b7cc0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7d80 size=0x4
+struct CUnknown100b7d80 { char * sub_100b7d80(); };
+char * CUnknown100b7d80::sub_100b7d80()
+{
+    return (char *)this + -4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b8520 size=0x117
 #include "SendProp.h"
 
