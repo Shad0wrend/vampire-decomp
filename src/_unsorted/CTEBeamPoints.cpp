@@ -49,3 +49,14 @@ void CTEBeamPoints::vfunc3(const Vector &origin, const QAngle &angles)
 	vfunc4((int)&filter, 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005c210 size=0x6
+#include "CTEBeamPoints.h"
+namespace lifted {
+extern char g_106bfaec;
+}
+ServerClass * CTEBeamPoints::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106bfaec);
+}
+// END FUNCTION
