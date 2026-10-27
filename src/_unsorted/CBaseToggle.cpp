@@ -27,6 +27,46 @@ CBaseToggle *CBaseToggle::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0ec0 size=0x193
+#include "CBaseToggle.h"
+
+struct CBaseToggleDumpView {
+	char m_pad0000[0x4f8];
+	int m_toggleState;	// 0x4f8
+	int m_flMoveDistance;	// 0x4fc
+	int m_flWait;	// 0x500
+	int m_flLip;	// 0x504
+	Vector m_vecPosition1;	// 0x508
+	Vector m_vecPosition2;	// 0x514
+	Vector m_vecAngle1;	// 0x520
+	Vector m_vecAngle2;	// 0x52c
+	int m_flHeight;	// 0x538
+	EHANDLE m_hActivator;	// 0x53c
+	Vector m_vecFinalDest;	// 0x540
+	Vector m_vecFinalAngle;	// 0x54c
+	int m_movementType;	// 0x558
+};
+
+void CBaseToggle::vfunc31(int pDump)
+{
+	CBaseToggleDumpView *pView = (CBaseToggleDumpView *)this;
+	sub_1009b980(pDump, "m_toggle_state", pView->m_toggleState);
+	sub_1009ba60(pDump, "m_flMoveDistance", pView->m_flMoveDistance);
+	sub_1009ba60(pDump, "m_flWait", pView->m_flWait);
+	sub_1009ba60(pDump, "m_flLip", pView->m_flLip);
+	sub_1009be00(pDump, "m_vecPosition1", pView->m_vecPosition1);
+	sub_1009be00(pDump, "m_vecPosition2", pView->m_vecPosition2);
+	sub_1009bd10(pDump, "m_vecAngle1", pView->m_vecAngle1);
+	sub_1009bd10(pDump, "m_vecAngle2", pView->m_vecAngle2);
+	sub_1009ba60(pDump, "m_flHeight", pView->m_flHeight);
+	sub_1009c000(pDump, "m_hActivator", pView->m_hActivator);
+	sub_1009be00(pDump, "m_vecFinalDest", pView->m_vecFinalDest);
+	sub_1009bd10(pDump, "m_vecFinalAngle", pView->m_vecFinalAngle);
+	sub_1009b980(pDump, "m_movementType", pView->m_movementType);
+	CBaseEntity::vfunc31(pDump);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1480 size=0x72
 #include "CBaseToggle.h"
 
