@@ -87143,6 +87143,16 @@ int CUnknown102478b0::sub_102478b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102478d0 size=0x6
+namespace lifted {
+extern int g_10753734;
+}
+int sub_102478d0()
+{
+    return lifted::g_10753734;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247b80 size=0x1
 void sub_10247b80()
 {
