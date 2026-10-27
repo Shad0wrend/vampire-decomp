@@ -70741,6 +70741,42 @@ bool CUnknown101f5150::sub_101f5150(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f5950 size=0x198
+#include "CVSoundActivityTable_t.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b248.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b248 *g_1070b248;
+extern void (__cdecl *g_109f3650)(int level, const char *pszFormat, ...);
+
+void CVActivitySound::sub_101f5950(int hControl, int nSound, int nMode, float flVolume, float flPitch)
+{
+	CVSoundEnt *pEnt = (CVSoundEnt *)hControl;
+	int nRow = pEnt->sub_1009d5e0();
+	if (nRow >= m_nLists) {
+		hControl = (int)pEnt->m_pEdict;
+		const char *pszName;
+		if (!((CVSoundEdict *)hControl)->m_pUnk40)
+			pszName = g_106b8540;
+		else
+			pszName = ((CVSoundEdict *)hControl)->m_pUnk40->GetObject()->GetName();
+		g_109f3650(1, "ERROR: VSnd: Play: %s Table out of bounds: %d\n", pszName, nRow);
+		return;
+	}
+	const char *pszSample = m_ppLists[nRow]->sub_101f4600(pEnt, nSound);
+	if (pszSample) {
+		g_109f3650(2, "VSnd: Server Playing: %s\n", pszSample);
+		g_1070b248->vfunc0(pszSample, 0);
+		CPASAttenuationFilter filter(pEnt);
+		CVSoundEdict *pEdict = pEnt->m_pEdict;
+		g_1070b248->vfunc3(&filter, g_1070b22c->vfunc35((int)pEdict), nMode, pszSample, flVolume, flPitch, 0, 100, 0, 0, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f5b60 size=0x187
 #include "CPASAttenuationFilter.h"
 #include "CUnknown1070b248.h"

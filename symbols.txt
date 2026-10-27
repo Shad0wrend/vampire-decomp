@@ -5863,6 +5863,7 @@
 0x100119c8 func   ?vfunc245@CFuncPlat@@UAEXXZ CFuncPlat::vfunc245
 0x100119d7 func   ?vfunc5@CPropPadlock@@QAEPAV1@I@Z CPropPadlock::vfunc5
 0x100119e1 func   ?sub_1036e160@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::sub_1036e160
+0x100119fa func   ?sub_101f5950@CVActivitySound@@QAEXHHHMM@Z CVActivitySound::sub_101f5950
 0x10011a13 func   ?sub_100ac920@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100ac920
 0x10011a18 func   ?vfunc5@CEnvFloatingCamera@@QAEPAV1@I@Z CEnvFloatingCamera::vfunc5
 0x10011a1d func   ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z CBaseEntity::vfunc120
