@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1012d850 size=0x6
+#include "CPropClockHand.h"
+namespace lifted {
+extern char g_10573c40;
+}
+datamap_t * CPropClockHand::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10573c40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d9c0 size=0x1e
 #include "CPropClockHand.h"
 

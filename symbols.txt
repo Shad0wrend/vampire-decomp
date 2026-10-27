@@ -4313,6 +4313,7 @@
 0x1000c0db func   ?sub_102f47f0@CUnknown102f47f0@@QAEPAVCUnknown102fc5d0@@PBMH@Z CUnknown102f47f0::sub_102f47f0
 0x1000c0ef func   ?vfunc487@CNPC_VTzimisce@@QAEXXZ CNPC_VTzimisce::vfunc487
 0x1000c0f4 func   ?vfunc433@CNPC_VGhoulCroucher@@QAEXXZ CNPC_VGhoulCroucher::vfunc433
+0x1000c0f9 func   ?vfunc82@CPropClockHand@@UAEPAUdatamap_t@@XZ CPropClockHand::vfunc82
 0x1000c103 func   ?vfunc5@CNPC_VMingXiaoTentacle@@QAEPAV1@I@Z CNPC_VMingXiaoTentacle::vfunc5
 0x1000c126 func   _info_node_cover_low info_node_cover_low
 0x1000c12b func   _weapon_physcannon weapon_physcannon
