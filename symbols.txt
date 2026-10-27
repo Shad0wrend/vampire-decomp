@@ -7382,6 +7382,7 @@
 0x10014ae2 func   ?sub_103cc320@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc320
 0x10014ae7 func   ?vfunc103@CAI_NetworkManager@@UAEXXZ CAI_NetworkManager::vfunc103
 0x10014aec func   ?vfunc5@CWeaponRanged_MingXiao_Spit@@QAEPAV1@I@Z CWeaponRanged_MingXiao_Spit::vfunc5
+0x10014af1 func   ?sub_102271b0@CUnknown102271b0@@QAEDXZ CUnknown102271b0::sub_102271b0
 0x10014afb func   ?sub_1028e980@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_1028e980
 0x10014b05 func   ?sub_101cf2f0@@YAXPAMH@Z sub_101cf2f0
 0x10014b0f func   ?vfunc180@CPropHaunted@@QAEXXZ CPropHaunted::vfunc180

@@ -83004,6 +83004,14 @@ extern "C" CBaseEntity *events_player()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102271b0 size=0x7
+struct CUnknown102271b0 { char sub_102271b0(); };
+char CUnknown102271b0::sub_102271b0()
+{
+    return *(char *)((char *)this + 0x450);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227210 size=0xa
 void CUnknown10227210::sub_10227210(int unused)
 {
