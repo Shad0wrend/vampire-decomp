@@ -40667,6 +40667,45 @@ void CUnknown1012e6a0::sub_1012e6a0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e930 size=0x192
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10007bfd(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_1000bf2d(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10246510(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLow, float fHigh, void *proxy);	// SendPropFloat
+void sub_10009539();
+void sub_10246300();
+
+extern SendTable g_1070c06c;
+extern SendTable *g_1055282c;
+
+// TARGET: sub_1012e930
+int sub_1012e930()
+{
+	static const char *pTableName = "DT_HudEntity";
+	static SendProp props[] = {
+		sub_10007bfd("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_1000bf2d("baseclass", 0, g_1055282c, (void *)sub_10009539),
+		sub_10007bfd("m_nSpriteIndex", 0x458, 4, 10, 1, 0, 0),
+		sub_10007bfd("m_nPlayerIndex", 0x450, 4, 8, 1, 0, 0),
+		sub_10007bfd("m_nFrame", 0x45c, 4, 8, 1, 0, 0),
+		sub_10246510("m_flXPos", 0x460, 4, 0, 4, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10246510("m_flYPos", 0x464, 4, 0, 4, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10246510("m_flXSize", 0x468, 4, 0, 4, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10246510("m_flYSize", 0x46c, 4, 0, 4, 0.0f, -121121.125f, (void *)sub_10246300),
+		sub_10007bfd("m_bIsAdditive", 0x470, 1, 1, 1, 0, 0),
+	};
+	g_1070c06c.sub_1000e8fe(props + 1, 9, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ee70 size=0x7c
 #include "InterfaceReg.h"
 
