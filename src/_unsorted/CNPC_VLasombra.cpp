@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10388ca0 size=0x6
+#include "CNPC_VLasombra.h"
+namespace lifted {
+extern char g_10640600;
+}
+datamap_t * CNPC_VLasombra::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10640600);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388e20 size=0x1e
 #include "CNPC_VLasombra.h"
 
