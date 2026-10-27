@@ -10433,6 +10433,19 @@ void sub_10069980(int pFilter, int delayBits, const float *pOrigin, const float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10069a80 size=0xb
+namespace lifted {
+extern char g_1044e118;
+int sub_100021d0();
+}
+struct CUnknown10069a80 { int sub_10069a80(); };
+int CUnknown10069a80::sub_10069a80()
+{
+    *(int *)this = (int)&lifted::g_1044e118;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10069ca0 size=0xe8
 #include "SendProp.h"
 
