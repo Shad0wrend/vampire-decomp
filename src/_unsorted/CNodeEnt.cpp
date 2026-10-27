@@ -38,6 +38,17 @@ int __fastcall sub_100b1130(CBaseEntity *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d7800 size=0x6
+#include "CNodeEnt.h"
+namespace lifted {
+extern char g_1060aaf8;
+}
+datamap_t * CNodeEnt::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1060aaf8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d7d00 size=0x1e
 #include "CNodeEnt.h"
 
