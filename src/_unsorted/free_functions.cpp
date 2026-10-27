@@ -45735,6 +45735,12 @@ void CRagdollPropSpecial::sub_10157ca0(CBaseEntity *pOwner)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158550 size=0x1
+void sub_10158550()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158570 size=0x6a
 #include <malloc.h>
 
