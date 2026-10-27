@@ -57801,6 +57801,14 @@ void UtlVec8::sub_101b6550(const SElem8 *src, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6630 size=0x3
+struct CUnknown101b6630 { int sub_101b6630(); };
+int CUnknown101b6630::sub_101b6630()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6650 size=0x13
 bool sub_101b6650(unsigned short *a, unsigned short *b)
 {
