@@ -7673,6 +7673,7 @@
 0x10015654 func   ?sub_101c4580@@YI_NPAXHPAUIFile101c4580@@PBD@Z sub_101c4580
 0x1001565e func   ?sub_100b4ad0@CFoo@@QAEXPAH@Z CFoo::sub_100b4ad0
 0x1001566d func   ?sub_1019c6f0@@YAXPAUCRagdollBones@@PAUCBoneSetBase@@1H@Z sub_1019c6f0
+0x10015677 func   ?sub_102dd610@CUnknown102dd610@@QAEDXZ CUnknown102dd610::sub_102dd610
 0x1001567c func   ?vfunc503@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc503
 0x10015695 func   ?sub_10054400@@YAXXZ sub_10054400
 0x100156a4 func   ?vfunc5@CItemGRingGold@@QAEPAV1@I@Z CItemGRingGold::vfunc5

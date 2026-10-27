@@ -101545,6 +101545,14 @@ bool CUnknown102dd450::sub_102dd450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd610 size=0x7
+struct CUnknown102dd610 { char sub_102dd610(); };
+char CUnknown102dd610::sub_102dd610()
+{
+    return *(char *)((char *)this + 0x19c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd630 size=0x2b
 struct CUnkPair102dd630
 {
