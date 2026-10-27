@@ -49347,6 +49347,23 @@ void CUnknown10183100::sub_10183100(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10183330 size=0xbe
+extern char g_106b8540[];
+
+// TARGET: CBasePlayer::sub_10183330
+void CBasePlayer::sub_10183330()
+{
+	if (m_hEnt1DFC.Get() != 0)
+	{
+		CBaseEntity *pEnt = m_hEnt1DFC.Get();
+		CBaseEntity *pEnt2 = m_hEnt1DFC.Get();
+		const char *pszName = pEnt2->m_classname11c ? pEnt2->m_classname11c : g_106b8540;
+		vfunc457(pszName, (*(int (__fastcall **)(CBaseEntity *))(*(int *)pEnt + 0x4a0)) (pEnt));
+	}
+	m_hEnt1DFC.m_Index = 0xffffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10183470 size=0xe1
 #include "CSingleUserRecipientFilter.h"
 #include "CUnknown1070b22c.h"
