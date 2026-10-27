@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1020f850 size=0x6
+#include "CLogicVisible.h"
+namespace lifted {
+extern char g_105ab490;
+}
+datamap_t * CLogicVisible::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105ab490);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020fa30 size=0x78
 #include "CLogicVisible.h"
 #include "UtlMem.h"
