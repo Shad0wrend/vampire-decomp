@@ -113770,6 +113770,16 @@ void CBaseCombatCharacter::sub_1033d8a0(inputdata_t *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d970 size=0xb
+namespace lifted {
+int __stdcall sub_100153a7(int);
+}
+int sub_1033d970()
+{
+    return lifted::sub_100153a7(0x200);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d9d0 size=0x107
 #include "ScopeTrace.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
