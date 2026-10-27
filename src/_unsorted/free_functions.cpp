@@ -269,6 +269,18 @@ int __stdcall sub_10028b60(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028b80 size=0x19
+namespace lifted {
+int __stdcall sub_1000326f(int, int);
+}
+struct CUnknown10028b80 { int sub_10028b80(int); };
+int CUnknown10028b80::sub_10028b80(int a0)
+{
+    *(int *)((char *)this + 0x478) = 0;
+    return lifted::sub_1000326f(-1082130432, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100290c0 size=0x2b
 #include "CUnknown100290c0.h"
 
