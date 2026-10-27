@@ -5,6 +5,8 @@
 #include "Vector.h"
 #include "CVariantCopy.h"
 
+class CEnemiesView;
+
 #define EVS(n) virtual void slot##n();
 #define EVS10(p) EVS(p##0) EVS(p##1) EVS(p##2) EVS(p##3) EVS(p##4) EVS(p##5) EVS(p##6) EVS(p##7) EVS(p##8) EVS(p##9)
 
