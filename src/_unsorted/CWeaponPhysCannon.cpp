@@ -1,6 +1,19 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1040d9e0 size=0x7d
+#include "CWeaponPhysCannon.h"
+
+// TARGET: CWeaponPhysCannon::CWeaponPhysCannon
+CWeaponPhysCannon::CWeaponPhysCannon()
+{
+	m_flGlow928 = 0;
+	m_flGlowTarget92c = 0;
+	m_b910 = 0;
+	m_n918 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dc70 size=0xc
 char __fastcall sub_1040dc70(char *self)
 {
