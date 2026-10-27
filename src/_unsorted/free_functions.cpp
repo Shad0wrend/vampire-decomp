@@ -44798,6 +44798,16 @@ char sub_1013d3c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d3e0 size=0x6
+namespace lifted {
+extern char g_10717dfb;
+}
+char sub_1013d3e0()
+{
+    return lifted::g_10717dfb;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d400 size=0x3f
 // TARGET: sub_1013d400
 float sub_1013d400(float a, float b, float c)
