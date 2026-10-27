@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10193160 size=0x6
+#include "CPropSlashable.h"
+namespace lifted {
+extern char g_1058dba0;
+}
+datamap_t * CPropSlashable::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1058dba0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101932c0 size=0xa0
 #include "CPropSlashable.h"
 #include "CCollisionProperty.h"
