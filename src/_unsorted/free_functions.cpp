@@ -9444,6 +9444,19 @@ int sub_10062c30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10062ec0 size=0xb
+namespace lifted {
+extern char g_1044deb4;
+int sub_100021d0();
+}
+struct CUnknown10062ec0 { int sub_10062ec0(); };
+int CUnknown10062ec0::sub_10062ec0()
+{
+    *(int *)this = (int)&lifted::g_1044deb4;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10062f30 size=0x79
 #include "CTEFootprintDecal.h"
 #include "CUnknown1019d130.h"
