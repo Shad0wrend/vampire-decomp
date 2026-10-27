@@ -13,7 +13,10 @@ public:
 	ESO_SLOTS10(a00) ESO_SLOTS10(a01) ESO_SLOTS10(a02) ESO_SLOTS10(a03) ESO_SLOTS10(a04)
 	ESO_SLOTS10(a05) ESO_SLOTS10(a06) ESO_SLOTS10(a07) ESO_SLOTS10(a08) ESO_SLOTS10(a09)
 	ESO_SLOTS10(a10) ESO_SLOTS10(a11) ESO_SLOTS10(a12) ESO_SLOTS10(a13) ESO_SLOTS10(a14)
-	ESO_SLOTS10(a15) ESO_SLOTS10(a16) ESO_SLOTS10(a17) ESO_SLOTS10(a18) ESO_SLOTS10(a19)
+	ESO_SLOTS10(a15) ESO_SLOTS10(a16) ESO_SLOTS10(a17) ESO_SLOTS10(a18)
+	virtual void a190(); virtual void a191();
+	virtual Vector WorldSpaceCenter();	// slot 192
+	virtual void a193(); virtual void a194(); virtual void a195(); virtual void a196(); virtual void a197(); virtual void a198(); virtual void a199();
 	ESO_SLOTS10(a20) ESO_SLOTS10(a21)
 	virtual const float *GetOrigin();	// slot 220
 	virtual void a221();
