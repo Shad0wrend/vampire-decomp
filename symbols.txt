@@ -1026,6 +1026,7 @@
 0x10003cfb func   ?vfunc110@CLight@@QAE_NPBD0@Z CLight::vfunc110
 0x10003d0f func   ?sub_100db3f0@@YAXXZ sub_100db3f0
 0x10003d14 func   ?sub_103e3f60@CUtlMemory8@@QAEXH@Z CUtlMemory8::sub_103e3f60
+0x10003d19 func   ?sub_102ee2c0@CUnknown102ee2c0@@QAEHXZ CUnknown102ee2c0::sub_102ee2c0
 0x10003d23 func   ?sub_103118e0@CUnknown10311a20@@QAEPAXH@Z CUnknown10311a20::sub_103118e0
 0x10003d37 func   ?vfunc363@CNPC_VCameraSecurity@@QAE_NPAVCBaseEntity@@@Z CNPC_VCameraSecurity::vfunc363
 0x10003d3c func   ?sub_100e4840@CDialog@@QAEHH@Z CDialog::sub_100e4840
