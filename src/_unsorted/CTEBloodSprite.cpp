@@ -64,3 +64,13 @@ void CTEBloodSprite::vfunc4(int a, int b)
 	g_1070b22c->PlaybackTempEntity(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005dbc0 size=0x6
+namespace lifted {
+extern char g_106c0890;
+}
+ServerClass * CTEBloodSprite::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106c0890);
+}
+// END FUNCTION
