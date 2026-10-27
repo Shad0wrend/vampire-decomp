@@ -4748,6 +4748,7 @@
 0x1000e2d2 func   ?sub_100ddc00@CUnk100ddc00@@QAEXXZ CUnk100ddc00::sub_100ddc00
 0x1000e2e1 func   ?sub_101d58b0@Loader@@QAEXPBD@Z Loader::sub_101d58b0
 0x1000e2e6 func   ?vfunc5@CItemMWallet@@QAEPAV1@I@Z CItemMWallet::vfunc5
+0x1000e2f5 func   ?sub_1019a8e0@@YGXHH@Z sub_1019a8e0
 0x1000e2ff func   ?sub_100427c0@UtlMem@@QAEXXZ UtlMem::sub_100427c0
 0x1000e31d func   ?sub_1010ddc0@CBreakable@@QAEXPAX@Z CBreakable::sub_1010ddc0
 0x1000e327 func   ?vfunc504@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc504
