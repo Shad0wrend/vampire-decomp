@@ -12714,6 +12714,14 @@ void S10075c20::sub_10075c20(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10075c50 size=0x7
+struct CUnknown10075c50 { char * sub_10075c50(); };
+char * CUnknown10075c50::sub_10075c50()
+{
+    return (char *)this + 0x84;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075c70 size=0x19
 struct S10075c70 {
 	char m_pad[0x104];
