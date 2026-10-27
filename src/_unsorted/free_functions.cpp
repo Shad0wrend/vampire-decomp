@@ -44829,6 +44829,43 @@ int *sub_10148560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148a20 size=0x171
+#include "CGravControllerPoint.h"
+#include "IPhysicsObject.h"
+#include "IPhysicsEnvironment.h"
+
+extern IPhysicsEnvironment *g_10723940;
+extern Vector g_1070d1b0;
+void sub_1000adc6(int pObjectA, int pObjectB);
+
+// TARGET: CGravControllerPoint::sub_10148a20
+void CGravControllerPoint::sub_10148a20()
+{
+	if (m_hOther7c && m_hAttached78)
+	{
+		int pObjB = m_hAttached78->m_obj36c;
+		int pObjA = m_hOther7c->m_obj36c;
+		sub_1000adc6(pObjA, pObjB);
+	}
+
+	CBaseEntity *pEnt = m_hAttached78.Get();
+	if (pEnt)
+	{
+		IPhysicsObject *pPhys = (IPhysicsObject *)pEnt->m_obj36c;
+		if (pPhys)
+		{
+			pPhys->vfunc2();
+			pPhys->vfunc17(0, &m_vec5c);
+		}
+	}
+	m_hAttached78 = (CBaseEntity *)0;
+	g_10723940->vfunc40(m_pController90);
+	m_pController90 = 0;
+	m_vec10 = g_1070d1b0;
+	m_vec1c = g_1070d1b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148c00 size=0x25
 // TARGET: sub_10148c00
 void sub_10148c00(float *v, float s, float *out)
