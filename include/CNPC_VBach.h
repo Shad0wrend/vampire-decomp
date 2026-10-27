@@ -26,6 +26,8 @@ public:
 	void sub_1026dc30(int a);	// stub 0x1001005f, called directly by Spawn with 1
 	void sub_103c4ef0();	// CNPC_VVampire::vfunc103 (stub 0x10014876), called directly
 	int vfunc604(int arg);	// slot 604 "CNPC_VBach::SelectFailSchedule"-like: picks a schedule from the conditions 0x7b / 0x7a / 0x79 and the active weapon (katana / "item_w_rem_m_700_bach"), recording the source line (+0x1b34) and file (+0x1b30) of the choice; the rest goes to CNPC_VHuman::vfunc604
+	int vfunc605(int arg);	// slot 605: schedule choice by the conditions 0x7b / 0x7a / 0x79 / 0x46 and the active weapon (katana / "item_w_rem_m_700_bach"), recording the source line (+0x1b34) and file (+0x1b30) of the choice; the rest goes to CNPC_VHuman::vfunc605
+	int sub_10386560(int arg);	// CNPC_VHuman::vfunc605 (stub 0x100107b2), called directly
 	int sub_10385e40(int arg);	// CNPC_VHuman::vfunc604 (stub 0x10004462), called directly
 	void sub_103656a0();	// gives the NPC the "item_d_holy_light" discipline weapon (finds it in the inventory or creates and adds it, "Error: Couldn't find space in inventory for Discipline weapon!" otherwise), selects it and completes the task (sub_10272650(5))
 	void *sub_1032e120(const char *pszName);	// stub 0x1000b0b4: creates the named item for the character
