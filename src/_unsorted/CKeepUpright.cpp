@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10029270 size=0x6
+namespace lifted {
+extern char g_10537530;
+}
+datamap_t * CKeepUpright::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10537530);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029680 size=0x1e
 #include "CKeepUpright.h"
 
