@@ -104471,6 +104471,14 @@ int CUnknown1030bc20::sub_1030bc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030bc40 size=0x4
+struct CUnknown1030bc40 { int sub_1030bc40(); };
+int CUnknown1030bc40::sub_1030bc40()
+{
+    return *(int *)((char *)this + 0x60);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030bd50 size=0x13
 struct CInnerFlags28 {
     char pad_0000[0x28];
