@@ -46534,6 +46534,19 @@ void sub_1013da70(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013db10 size=0x15
+struct CUnknown1013db10 { char * sub_1013db10(); };
+char * CUnknown1013db10::sub_1013db10()
+{
+    *(short *)((char *)this + 0x28) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x10) = (int)((char *)this + 0xc);
+    *(int *)((char *)((char *)this + 0xc)) = (int)((char *)this + 0xc);
+    return (char *)this + 0xc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013db40 size=0x2b
 void sub_10431641(void *p);
 void __fastcall sub_1013db10(int *pThis);
