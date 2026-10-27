@@ -463,6 +463,7 @@
 0x10002351 func   ?sub_10181600@@YIXPAD@Z sub_10181600
 0x1000235b func   ?sub_101edfe0@@YAHXZ sub_101edfe0
 0x1000236f func   ?sub_101cb6b0@@YAPAHXZ sub_101cb6b0
+0x10002379 func   ?vfunc82@CNPCMaker_Zombie@@UAEPAUdatamap_t@@XZ CNPCMaker_Zombie::vfunc82
 0x10002392 func   ?sub_1014c2b0@@YAXXZ sub_1014c2b0
 0x10002397 func   ?sub_10311a20@CUnknown10311a20@@QAEXHH@Z CUnknown10311a20::sub_10311a20
 0x1000239c func   ?sub_100353c0@CUnknown100353c0@@QAEPAV1@PBV1@@Z CUnknown100353c0::sub_100353c0
