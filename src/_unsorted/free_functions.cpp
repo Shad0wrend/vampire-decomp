@@ -73588,6 +73588,69 @@ bool TInfo::sub_101fdf40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fe6a0 size=0x198
+#include "CVStatInfo_t.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+int _strcmpi(const char *, const char *);
+void sub_10003ffd();
+void sub_102033e0();
+void sub_10002531();
+void sub_10203440();
+void sub_10010a37();
+void sub_102034a0();
+void sub_10008747();
+void sub_102035c0();
+void sub_10009ee9();
+
+struct CVStatLoadA { void sub_1006cec0(CVStatKV *pKV, void *p); };
+struct CVStatNameTable { int sub_10203020(const char *psz); };
+extern CVStatLoadA g_106c7c34;
+extern CVStatNameTable g_1074e968;
+extern char g_105a7fd0[];
+extern char g_105a7fc4[];
+extern char g_105a7fb4[];
+extern char g_105a7f98[];
+extern char g_105a7f80[];
+extern char g_105a7f68[];
+extern char g_105a7d5c[];
+
+void CVStatInfo_t::sub_101fe6a0(CVStatKV *pKV, void *pDefaults)
+{
+	ScopeTrace trace("CVStatInfo_t::MidLoad", g_106b8540);
+	if (pKV) {
+		g_106c7c34.sub_1006cec0(pKV, pDefaults);
+		const char *psz = pKV->vfunc13(g_105a7fd0, g_106b8540);
+		if (*psz) {
+			m_field0008 = g_1074e968.sub_10203020(psz);
+		} else {
+			psz = pKV->vfunc13(g_105a7fc4, g_106b8540);
+			if (!*psz) {
+				m_field0000 = (int)sub_10003ffd;
+			} else if (!_strcmpi(psz, g_105a7fb4)) {
+				m_field0000 = (int)sub_102033e0;
+				m_field0004 = (int)sub_10002531;
+			} else if (!_strcmpi(psz, g_105a7f98)) {
+				m_field0000 = (int)sub_10203440;
+				m_field0004 = (int)sub_10010a37;
+			} else if (!_strcmpi(psz, g_105a7f80)) {
+				m_field0000 = (int)sub_102034a0;
+				m_field0004 = (int)sub_10008747;
+			} else if (!_strcmpi(psz, g_105a7f68)) {
+				m_field0000 = (int)sub_102035c0;
+				m_field0004 = (int)sub_10009ee9;
+			} else {
+				m_field0000 = (int)sub_10003ffd;
+			}
+		}
+	} else {
+		Msg(g_105a7d5c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fe8b0 size=0x13a
 #include "CVStatInfo_t.h"
 #include "CVStatValue_t.h"
