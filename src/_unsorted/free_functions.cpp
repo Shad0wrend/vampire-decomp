@@ -33532,6 +33532,30 @@ extern "C" GP *func_door_rotating()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3390 size=0x195
+#include "CRotDoor.h"
+#include "CEntitySoundOriginView.h"
+#include "ScopeTrace.h"
+
+void CRotDoor::sub_100f3390(CBaseEntity *pEntity)
+{
+	ScopeTrace trace("CRotDoor::OpenAwayFromEntity", g_106b8540);
+	float flDist1 = (m_vecCenter6b0 - ((CEntitySoundOriginView *)pEntity)->WorldSpaceCenter()).Length();
+	float flDist2 = (m_vecCenter6d4 - ((CEntitySoundOriginView *)pEntity)->WorldSpaceCenter()).Length();
+	bool bAway = false;
+	if (flDist1 < flDist2)
+		bAway = true;
+	if (m_bReverse655)
+		bAway = !bAway;
+	if (bAway) {
+		Vector vecNeg = m_angRotation52c * -1.0f;
+		sub_101c17e0(&vecNeg, m_flSpeed164);
+	} else {
+		sub_101c17e0(&m_angRotation52c, m_flSpeed164);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3860 size=0x73
 struct S100f3860 { float x, y, z; };
 extern "C" double __cdecl fabs(double);
