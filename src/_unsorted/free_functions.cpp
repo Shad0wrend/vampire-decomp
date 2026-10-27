@@ -41559,6 +41559,16 @@ int sub_1012f970()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012faf0 size=0x6
+namespace lifted {
+extern char g_1070c58c;
+}
+int sub_1012faf0()
+{
+    return (int)&lifted::g_1070c58c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130100 size=0xb
 extern void (*g_105751b8[])();
 void sub_10130100(int i)
