@@ -29111,6 +29111,17 @@ int sub_100cf680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cfac0 size=0xa
+namespace lifted {
+extern char g_106e7050;
+struct C100144fc { int sub_100144fc(); };
+}
+int sub_100cfac0()
+{
+    return ((lifted::C100144fc *)((int)&lifted::g_106e7050))->sub_100144fc();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cfd00 size=0x77
 struct SaveX {
     virtual void v0();
