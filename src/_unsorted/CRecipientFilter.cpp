@@ -54,14 +54,13 @@ TFilterX *TFilterX::sub_1019ce40(unsigned char flags)
 #include "vampire.h"
 #include "CRecipientFilter.h"
 
-extern char *g_1070b228;
 void *sub_1000ac8b(int nClient);
 
 // TARGET: CRecipientFilter::AddAllPlayers
 void CRecipientFilter::AddAllPlayers()
 {
     m_Recipients.RemoveAll();
-    for (int i = 1; i <= *(int *)(g_1070b228 + 0x14); i++)
+    for (int i = 1; i <= gpGlobals->maxClients; i++)
     {
         void *pPlayer = sub_1000ac8b(i);
         if (pPlayer)

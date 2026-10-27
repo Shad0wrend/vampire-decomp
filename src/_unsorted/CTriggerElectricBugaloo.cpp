@@ -77,7 +77,6 @@ bool CTriggerElectricBugaloo::vfunc32(void *pOther)
 #include "CTriggerElectricBugaloo.h"
 #include "CAI_BaseNPCTroika.h"
 
-extern char *g_1070b228;
 void __fastcall sub_10011f68(void *self);
 
 void CTriggerElectricBugaloo::vfunc39(void *pOther)
@@ -85,7 +84,7 @@ void CTriggerElectricBugaloo::vfunc39(void *pOther)
     sub_100a4fe0(pOther);
     sub_10011f68(pOther);
     ((CAI_BaseNPCTroika *)pOther)->sub_10181580(1);
-    *(int *)((char *)this + 0x598) = *(int *)(g_1070b228 + 0xc);
+    *(int *)((char *)this + 0x598) = *(int *)&gpGlobals->curtime;
 }
 // END FUNCTION
 

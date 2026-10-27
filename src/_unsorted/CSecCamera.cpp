@@ -32,13 +32,12 @@ void CSecCamera::vfunc103()
 #include "CBreakableProp.h"
 #include "CSecCamera.h"
 
-extern char *g_1070b228;
 void sub_10004c19();
 
 void CSecCamera::vfunc113()
 {
     ((CBreakableProp *)this)->vfunc113();
-    m_flNextThink = *(float *)(g_1070b228 + 0xc) + 0.1;
+    m_flNextThink = gpGlobals->curtime + 0.1;
     m_flNextStateTime7a0 = 0;
     ((CBreakableProp *)this)->sub_10007fe5((void *)sub_10004c19, 0, 0);
 }

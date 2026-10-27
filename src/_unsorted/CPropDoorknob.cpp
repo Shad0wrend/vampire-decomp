@@ -67,7 +67,6 @@ void CPropDoorknob::vfunc103()
 // FUNCTION: 0x10225af0 size=0x36
 #include "CBaseVampireSkillEntity.h"
 
-extern char *g_1070b228;
 
 struct CUnknown10225af0
 {
@@ -88,7 +87,7 @@ void CUnknown10225af0::sub_10225af0()
 	sub_10003e63();
 	const char *pszDoorName = m_pszDoorName;
 	m_n1fc = 0;
-	m_fl17c = *(float *)(g_1070b228 + 0xc) + 0.1;
+	m_fl17c = gpGlobals->curtime + 0.1;
 	((CBaseVampireSkillEntity *)this)->sub_102256f0(pszDoorName);
 }
 // END FUNCTION

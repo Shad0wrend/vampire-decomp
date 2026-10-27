@@ -152,15 +152,14 @@ void CWeaponThrown_Grenade_Frag::vfunc266()
 // FUNCTION: 0x103eec10 size=0x38
 #include "CWeaponThrown_Grenade_Frag.h"
 
-extern char *g_1070b228;
 void sub_1000dcd8();
 
 // TARGET: CWeaponThrown_Grenade_Frag::vfunc373
 void CWeaponThrown_Grenade_Frag::vfunc373(int unused)
 {
     sub_100ac4e0((void *)sub_1000dcd8, 0, 0);
-    *(int *)&m_flTimer91c = *(int *)(g_1070b228 + 0xc);
-    m_flNextThink17c = *(float *)(g_1070b228 + 0xc) + 0.01;
+    *(int *)&m_flTimer91c = *(int *)&gpGlobals->curtime;
+    m_flNextThink17c = gpGlobals->curtime + 0.01;
 }
 // END FUNCTION
 
@@ -271,13 +270,12 @@ CBaseEntity *CWeaponThrown_Grenade_Frag::vfunc372(Vector vecOrigin, Vector vecAn
 #include "CWeaponThrown_Grenade_Frag.h"
 #include "CBaseEntity.h"
 
-extern char *g_1070b228;
 
 // TARGET: CWeaponThrown_Grenade_Frag::vfunc376
 int CWeaponThrown_Grenade_Frag::vfunc376(int a)
 {
     if (*(int *)((char *)this + 0x1fc) == 2) {
-        *(float *)((char *)this + 0x17c) = *(float *)(g_1070b228 + 0xc) + 0.1f;
+        *(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.1f;
         return 1;
     }
     return ((CBaseEntity *)this)->sub_100a1250((const void *)a);

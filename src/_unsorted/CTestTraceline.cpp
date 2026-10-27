@@ -5,7 +5,6 @@
 #include "vampire.h"
 #include "CTestTraceline.h"
 
-extern char *g_1070b228;
 void sub_10003f62();
 
 // TARGET: CTestTraceline::vfunc103
@@ -16,7 +15,7 @@ void CTestTraceline::vfunc103()
     *((unsigned char *)this + 0x1a2) = bColor;
     *((unsigned char *)this + 0x1a1) = bColor;
     *((unsigned char *)this + 0x1a0) = bColor;
-    *(float *)((char *)this + 0x17c) = *(float *)(g_1070b228 + 0xc) + 0.01;
+    *(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.01;
     sub_100ac4e0((void *)sub_10003f62, 0, 0);
 }
 // END FUNCTION

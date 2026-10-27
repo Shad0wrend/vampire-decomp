@@ -93,11 +93,10 @@ void CTriggerHurt::vfunc176(CBaseEntity *pOther)
 // FUNCTION: 0x101c6630 size=0x22
 // TARGET: CTriggerHurt::vfunc175
 #include "CTriggerHurt.h"
-extern char *g_1070b228;
 void CTriggerHurt::vfunc175(CBaseEntity *pOther)
 {
-    if (m_flNextThink < *(float *)(g_1070b228 + 0xc)) {
-        m_flNextThink = *(float *)(g_1070b228 + 0xc);
+    if (m_flNextThink < gpGlobals->curtime) {
+        m_flNextThink = gpGlobals->curtime;
     }
 }
 // END FUNCTION

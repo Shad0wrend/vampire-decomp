@@ -4,7 +4,6 @@
 // FUNCTION: 0x103ef670 size=0x3f
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 
-extern int *g_1070b228;
 
 // TARGET: CWeaponThrown_Chang_Energy_Ball::vfunc103
 void CWeaponThrown_Chang_Energy_Ball::vfunc103()
@@ -12,8 +11,8 @@ void CWeaponThrown_Chang_Energy_Ball::vfunc103()
     sub_100047be();
     *(int *)((char *)this + 0x910) = 0x43800000;
     *((char *)this + 0x91c) = 0;
-    *(int *)((char *)this + 0x938) = *(int *)((char *)g_1070b228 + 0xc);
-    int value = *(int *)((char *)g_1070b228 + 0xc);
+    *(int *)((char *)this + 0x938) = *(int *)&gpGlobals->curtime;
+    int value = *(int *)&gpGlobals->curtime;
     *((char *)this + 0x928) = 1;
     *(int *)((char *)this + 0x93c) = value;
 }

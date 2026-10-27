@@ -10709,12 +10709,11 @@ void CBaseCineCam::sub_1006e770()
 
 // FUNCTION: 0x1006e850 size=0x22
 // TARGET: sub_1006e850
-extern char *g_1070b228;
 void __cdecl sub_101cd940(void *p);
 void __fastcall sub_1006e850(char *p)
 {
     sub_101cd940(p);
-    *(float *)(p + 0x17c) = *(float *)(g_1070b228 + 0xc) + 0.04166f;
+    *(float *)(p + 0x17c) = gpGlobals->curtime + 0.04166f;
 }
 // END FUNCTION
 
@@ -21539,7 +21538,6 @@ unsigned int CUnknown100a8220::sub_100a8220()
 // FUNCTION: 0x100a8340 size=0x3b
 #include "CUnknown100a8340.h"
 
-extern char *g_1070b228;
 
 void CUnknown100a8340::sub_100a8340(CBaseEntity *pEnt, float flTime)
 {
@@ -21548,7 +21546,7 @@ void CUnknown100a8340::sub_100a8340(CBaseEntity *pEnt, float flTime)
     } else {
         *(int *)((char *)this + 0xc8) = -1;
     }
-    *(float *)((char *)this + 0xcc) = flTime + *(float *)(g_1070b228 + 0xc);
+    *(float *)((char *)this + 0xcc) = flTime + gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -27363,14 +27361,13 @@ void CMomentaryRotButton::sub_100cafb0()
 #include "CMomentaryRotButton.h"
 #include "CEntityVSlots.h"
 
-extern char *g_1070b228;
 
 // TARGET: CMomentaryRotButton::sub_100cb110
 void CMomentaryRotButton::sub_100cb110()
 {
 	float fValue = sub_100ca630((float *)((CEntityVSlots *)this)->slot221());
 	sub_100cae20(fValue, 0);
-	*(int *)&m_flNextThink = *(int *)(g_1070b228 + 0xc);
+	*(int *)&m_flNextThink = *(int *)&gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -27417,7 +27414,6 @@ int *sub_100cb670()
 // END FUNCTION
 
 // FUNCTION: 0x100cc0e0 size=0x3d
-extern char *g_1070b228;
 void *sub_1000ac8b(int);
 
 struct CUnk100cc0e0Ent {
@@ -27434,14 +27430,14 @@ void CUnk100cc0e0::sub_100cc0e0(int unused)
     void *pEnt;
 
     i = 1;
-    if (*(int *)(g_1070b228 + 0x14) >= 1) {
+    if (gpGlobals->maxClients >= 1) {
         do {
             pEnt = sub_1000ac8b(i);
             if (pEnt != 0) {
                 ((CUnk100cc0e0Ent *)pEnt)->sub_10012e36(this, 0);
             }
             i++;
-        } while (i <= *(int *)(g_1070b228 + 0x14));
+        } while (i <= gpGlobals->maxClients);
     }
 }
 // END FUNCTION
@@ -30015,7 +30011,6 @@ void sub_100db3f0() { g_106e7e91 = 1; }
 // END FUNCTION
 
 // FUNCTION: 0x100db6c0 size=0x33
-extern char *g_1070b228;
 void *sub_10008d8c();
 
 struct CSpawnedOwnerView {
@@ -30037,7 +30032,7 @@ void sub_100db6c0()
     if (pOwner != 0 && pOwner->m_pSub != 0) {
         CSpawnedSubView *pSub = (CSpawnedSubView *)pOwner->m_pSub;
         pSub->m_n168 = 0x1b;
-        pSub->m_fl5a4 = *(float *)(g_1070b228 + 0xc) + 1.0f;
+        pSub->m_fl5a4 = gpGlobals->curtime + 1.0f;
     }
 }
 // END FUNCTION
@@ -35113,7 +35108,6 @@ void CUnit100fb980::sub_100fb980(float flRate)
 // FUNCTION: 0x100fbaf0 size=0x3a
 #include "CBaseEntity.h"
 
-extern char *g_1070b228;
 void sub_1000f88f();
 
 struct CBaseEntityUnit100fbaf0 : CBaseEntity
@@ -35127,7 +35121,7 @@ void CBaseEntityUnit100fbaf0::sub_100fbaf0(float flTime)
     if (flTime >= 0.0f)
     {
         ((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000f88f, 0, 0);
-        *(float *)((char *)this + 0x17c) = flTime + *(float *)(g_1070b228 + 0xc);
+        *(float *)((char *)this + 0x17c) = flTime + gpGlobals->curtime;
     }
 }
 // END FUNCTION
@@ -39897,13 +39891,12 @@ const char *sub_101273e0(int state)
 // FUNCTION: 0x10128270 size=0x2f
 #include "CGameMovement.h"
 
-extern char *g_1070b228;
 
 // TARGET: CGameMovement::sub_10128270
 float CGameMovement::sub_10128270()
 {
 	char *pPlayer = (char *)m_pPlayer;
-	if (*(float *)(pPlayer + 0xb4) <= *(float *)((char *)g_1070b228 + 0xc) - *(float *)(pPlayer + 0xb8)) {
+	if (*(float *)(pPlayer + 0xb4) <= gpGlobals->curtime - *(float *)(pPlayer + 0xb8)) {
 		return 0.0f;
 	}
 	return 1.0f;
@@ -40568,11 +40561,10 @@ void __fastcall sub_1012d4b0(S *p)
 #include "CBreakableProp.h"
 #include "CUnknown1012d740.h"
 
-extern char *g_1070b228;
 
 void CUnknown1012d740::sub_1012d550(unsigned int flags)
 {
-    *(int *)((char *)this + 0x474) = *(int *)(g_1070b228 + 4);
+    *(int *)((char *)this + 0x474) = gpGlobals->framecount;
     *(char *)((char *)this + 0x470) = 1;
     ((CBreakableProp *)this)->sub_10007fe5(0, 0, 0);
     this->sub_1012d5e0(flags | 0x10);
@@ -48593,7 +48585,6 @@ void __stdcall sub_1017e840(int level)
 // END FUNCTION
 
 // FUNCTION: 0x1017e980 size=0x33
-extern char *g_1070b228;
 extern char g_105882e0[];
 
 struct CPlayerClearView {
@@ -48606,7 +48597,7 @@ struct CPlayerClearView {
 void __fastcall sub_1017e980(CPlayerClearView *p)
 {
     if (*(int *)&p->m_flTime1ce4 != (int)0xbf800000) {
-        if (p->m_flTime1ce4 < *(float *)(g_1070b228 + 0xc))
+        if (p->m_flTime1ce4 < gpGlobals->curtime)
             p->sub_1017df50(0, -1.0f, g_105882e0);
     }
 }
@@ -50555,7 +50546,6 @@ CUnknownCopy1018be10 *CUnknownCopy1018be10::sub_1018be10(const CUnknownCopy1018b
 // END FUNCTION
 
 // FUNCTION: 0x1018be60 size=0x34
-extern char *g_1070b228;
 void *sub_101cd9e0(int index);
 void sub_1018b7e0(void *pEnt);
 
@@ -50563,13 +50553,13 @@ void sub_1018b7e0(void *pEnt);
 void sub_1018be60()
 {
     int i = 1;
-    if (*(int *)(g_1070b228 + 0x14) >= 1) {
+    if (gpGlobals->maxClients >= 1) {
         do {
             void *pEnt = sub_101cd9e0(i);
             if (pEnt != 0)
                 sub_1018b7e0(pEnt);
             i++;
-        } while (i <= *(int *)(g_1070b228 + 0x14));
+        } while (i <= gpGlobals->maxClients);
     }
 }
 // END FUNCTION
@@ -54472,7 +54462,6 @@ bool sub_1019cd10(CBoolListView *p)
 #include "vampire.h"
 #include "CRecipientFilter.h"
 
-extern char *g_1070b228;
 int sub_1000ac8b(int nClient);
 
 // TARGET: CRecipientFilter::sub_1019cf00
@@ -54481,7 +54470,7 @@ void CRecipientFilter::sub_1019cf00()
     if (m_24 == -1)
     {
         m_24 = 0;
-        for (int i = 1; i <= *(int *)(g_1070b228 + 0x14); i++)
+        for (int i = 1; i <= gpGlobals->maxClients; i++)
         {
             if (sub_1000ac8b(i))
             {
@@ -55680,8 +55669,6 @@ void CCineNPC::sub_101a7500(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x101a7540 size=0x2a
-extern char *g_1070b228;
-
 struct CUnit101a7540 {
     int sub_101a7540();
 };
@@ -55690,7 +55677,7 @@ int CUnit101a7540::sub_101a7540()
 {
     int nCount = *(int *)((char *)this + 0x5f70);
     if (nCount <= 0) {
-        if (*(float *)(g_1070b228 + 0xc) >= *(float *)((char *)this + 0x5f74)) {
+        if (gpGlobals->curtime >= *(float *)((char *)this + 0x5f74)) {
             return 1;
         }
     }
@@ -56075,7 +56062,6 @@ int *sub_101a9bd0()
 // FUNCTION: 0x101a9dd0 size=0x3c
 #include "CBaseEntity.h"
 
-extern char *g_1070b228;
 void sub_1000880a();
 
 struct CUnk101a9dd0 {
@@ -56087,7 +56073,7 @@ void CUnk101a9dd0::sub_101a9dd0(int *pValue)
     if (*((char *)this + 0x470) != 0) {
         *(int *)((char *)this + 0x478) = *pValue;
         ((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000880a, 0, 0);
-        *(int *)((char *)this + 0x17c) = *(int *)(g_1070b228 + 0xc);
+        *(int *)((char *)this + 0x17c) = *(int *)&gpGlobals->curtime;
     }
 }
 // END FUNCTION
@@ -56154,7 +56140,6 @@ void CUnknown101aa210::sub_101a9fa0()
 // END FUNCTION
 
 // FUNCTION: 0x101aa0e0 size=0x34
-extern char *g_1070b228;
 void sub_1000880a();
 
 struct CThinkOwnerView {
@@ -56172,7 +56157,7 @@ void __fastcall sub_101aa0e0(CThinkOwnerView *p)
 {
     p->m_b470 = 1;
     if (p->m_name26c == 0)
-        p->m_flNextThink = *(float *)(g_1070b228 + 0xc) + 0.1;
+        p->m_flNextThink = gpGlobals->curtime + 0.1;
     p->sub_100ac4e0((void *)sub_1000880a, 0.0f, 0);
 }
 // END FUNCTION
@@ -84542,7 +84527,6 @@ extern CQueueOwner *g_10752c9c;
 extern CQueuedNode *g_10752ce0[25];
 extern float g_10752d60[25];
 extern char *g_10566458;
-extern char *g_1070b228;
 void sub_1023e720(void *pEnt, int arg);	// stub 0x10004147
 void __cdecl operator delete(void *p);
 
@@ -84553,7 +84537,7 @@ void sub_1023ea20()
 		if (g_10752ce0[i] != 0) {
 			float delay = pOwner->vfunc1() ? 0.0f : g_10752c9c->m_flDelay;
 			pOwner = g_10752c9c;
-			if (delay + g_10752d60[i] < *(float *)(g_1070b228 + 0xc)) {
+			if (delay + g_10752d60[i] < gpGlobals->curtime) {
 				CQueuedNode *pNode = g_10752ce0[i];
 				g_10752ce0[i] = pNode->m_pNext;
 				unsigned int h = pNode->m_hEnt;
@@ -84570,7 +84554,7 @@ void sub_1023ea20()
 				}
 				delete pNode;
 				pOwner = g_10752c9c;
-				g_10752d60[i] = *(float *)(g_1070b228 + 0xc);
+				g_10752d60[i] = gpGlobals->curtime;
 			}
 		}
 	}
@@ -87212,7 +87196,6 @@ struct CUnknown1070ba0c {
 };
 
 extern CUnknown1070ba0c *g_1070ba0c;
-extern char *g_1070b228;
 
 struct CUnknown10250080 {
     char m_pad0000[0x17c];
@@ -87229,7 +87212,7 @@ void CUnknown10250080::sub_10250080()
         sub_1000317a();
         return;
     }
-    m_flNextThink = flTime + *(float *)(g_1070b228 + 0xc);
+    m_flNextThink = flTime + gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -90752,7 +90735,6 @@ void __fastcall sub_102781e0(void *pSelf, int unused, int value)
 // FUNCTION: 0x10279260 size=0x3e
 #include "CBaseEntity.h"
 
-extern char *g_1070b228;
 void sub_100940d0();
 
 void __fastcall sub_10279260(CBaseEntity *param_1)
@@ -90763,7 +90745,7 @@ void __fastcall sub_10279260(CBaseEntity *param_1)
         param_1->sub_100b3b00();
         return;
     }
-    *(float *)((char *)param_1 + 0x17c) = *(float *)((char *)g_1070b228 + 0xc) + 0.1;
+    *(float *)((char *)param_1 + 0x17c) = gpGlobals->curtime + 0.1;
 }
 // END FUNCTION
 
@@ -90958,7 +90940,6 @@ int __fastcall sub_1027a780(void *pSelf)
 
 // FUNCTION: 0x1027cd50 size=0x34
 // TARGET: CUnknown1027cd50::sub_1027cd50
-extern char *g_1070b228;
 extern double g_10499408;
 
 struct CUnknown1027cd50
@@ -90977,7 +90958,7 @@ CUnknown1027cd50 *CUnknown1027cd50::sub_1027cd50(float flInterval, char bNever)
 		m_flTime = (float)g_10499408;
 		return this;
 	}
-	m_flTime = flInterval + *(float *)(g_1070b228 + 0xc);
+	m_flTime = flInterval + gpGlobals->curtime;
 	return this;
 }
 // END FUNCTION
@@ -90989,7 +90970,6 @@ struct CFloatPair1027cda0 {
     void sub_1027cda0(float f, bool b);
 };
 extern double g_10499408;
-extern char *g_1070b228;
 
 // TARGET: sub_1027cda0
 void CFloatPair1027cda0::sub_1027cda0(float f, bool b)
@@ -90999,7 +90979,7 @@ void CFloatPair1027cda0::sub_1027cda0(float f, bool b)
         m_f0 = g_10499408;
         return;
     }
-    m_f0 = f + *(float *)((char *)g_1070b228 + 0xc);
+    m_f0 = f + gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -92333,13 +92313,11 @@ bool CAI_BaseNPCTroika::sub_10290200(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10290660 size=0x23
-extern char *g_1070b228;
-
 // TARGET: sub_10290660
 int __stdcall sub_10290660(float a)
 {
-    float d = a - *(float *)(g_1070b228 + 0xc);
-    if (d <= *(float *)(g_1070b228 + 0x10)) {
+    float d = a - gpGlobals->curtime;
+    if (d <= gpGlobals->frametime) {
         return 1;
     }
     return 0;
@@ -94611,7 +94589,6 @@ const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
 // END FUNCTION
 
 // FUNCTION: 0x102c43b0 size=0x29
-extern char *g_1070b228;
 void *__fastcall sub_1008bf00(void *p);
 
 struct CUnknown102c43b0 {
@@ -94625,7 +94602,7 @@ struct CUnknown102c43b0 {
 void CUnknown102c43b0::sub_102c43b0(float f)
 {
     if (sub_1008bf00(this)) {
-        m_fUnk6458 = f + *(float *)(g_1070b228 + 0xc);
+        m_fUnk6458 = f + gpGlobals->curtime;
         sub_102c43f0();
     }
 }
@@ -95953,7 +95930,6 @@ void CAI_GoalEntity::sub_102cdb70(int a)
 // FUNCTION: 0x102cdca0 size=0x3e
 #include "CBaseEntity.h"
 
-extern char *g_1070b228;
 void sub_10006672();
 
 struct CUnk102cd310 {
@@ -95964,7 +95940,7 @@ void CUnk102cd310::sub_102cdca0(int *param_2)
 {
     if (*(int *)((char *)param_2 + 0x94) != 0) {
         ((CBaseEntity *)((char *)this - 0x450))->sub_100ac4e0((int)sub_10006672, 0, 0);
-        *(float *)((char *)this - 0x2d4) = *(float *)((char *)g_1070b228 + 0xc) + 0.01;
+        *(float *)((char *)this - 0x2d4) = gpGlobals->curtime + 0.01;
     }
 }
 // END FUNCTION
@@ -105367,7 +105343,6 @@ CUnknown103164c0 *CUnknown103164c0::sub_10316560()
 // FUNCTION: 0x10316660 size=0x34
 #include "CUnknown10316660.h"
 
-extern char *g_1070b228;
 
 // TARGET: CUnknown10316660::sub_10316660
 void CUnknown10316660::sub_10316660(CBaseEntity *pEnt)
@@ -105377,18 +105352,17 @@ void CUnknown10316660::sub_10316660(CBaseEntity *pEnt)
     } else {
         m_hEnt70 = -1;
     }
-    m_flTime74 = *(float *)(g_1070b228 + 0xc) + 15.0f;
+    m_flTime74 = gpGlobals->curtime + 15.0f;
 }
 // END FUNCTION
 
 // FUNCTION: 0x103166b0 size=0x3b
 #include "CEHandleGet.h"
 
-extern char *g_1070b228;
 
 CGlobalEntityList_Ent *__fastcall sub_103166b0(char *self)
 {
-    if (*(float *)(g_1070b228 + 0xc) < *(float *)(self + 0x74)) {
+    if (gpGlobals->curtime < *(float *)(self + 0x74)) {
         return EHandle_Get(*(const unsigned int *)(self + 0x70));
     }
     return 0;
@@ -113638,7 +113612,6 @@ extern "C" CBaseEntity *npc_VCop()
 // TARGET: sub_10370560
 extern float g_1093aca8;
 extern int g_1093ac3c;
-extern char *g_1070b228;
 
 struct CVirtObj_10370560 {
     virtual void *vfunc0();
@@ -113648,7 +113621,7 @@ struct CVirtObj_10370560 {
 void sub_10370560(CVirtObj_10370560 *p)
 {
     if (p && *(int *)((char *)p + 0xa8)) {
-        g_1093aca8 = *(float *)(g_1070b228 + 0xc) + 30.0f;
+        g_1093aca8 = gpGlobals->curtime + 30.0f;
         int *r = (int *)p->vfunc1();
         g_1093ac3c = *r;
     }
@@ -114927,7 +114900,6 @@ struct CUnknown10387fd0
     virtual void vfunc0();
     virtual int *vfunc1();
 };
-extern char *g_1070b228;
 extern float g_1093b658;
 extern int g_1093b650;
 // TARGET: sub_10387fd0
@@ -114935,7 +114907,7 @@ void sub_10387fd0(CUnknown10387fd0 *p)
 {
     if (p)
     {
-        g_1093b658 = *(float *)((char *)g_1070b228 + 0xc) + 30.0f;
+        g_1093b658 = gpGlobals->curtime + 30.0f;
         int *pr = p->vfunc1();
         g_1093b650 = *pr;
     }
@@ -118031,8 +118003,6 @@ void CNPC_VVampireBoss::sub_103c63c0()
 // END FUNCTION
 
 // FUNCTION: 0x103c67f0 size=0x25
-extern int *g_1070b228;
-
 struct CUnknown103c67f0
 {
     char sub_103c67f0(float f);
@@ -118041,7 +118011,7 @@ struct CUnknown103c67f0
 // TARGET: CUnknown103c67f0::sub_103c67f0
 char CUnknown103c67f0::sub_103c67f0(float f)
 {
-    float diff = *(float *)((char *)g_1070b228 + 0xc) - *(float *)((char *)this + 0x5d9c);
+    float diff = gpGlobals->curtime - *(float *)((char *)this + 0x5d9c);
     return f < diff;
 }
 // END FUNCTION
@@ -131379,7 +131349,6 @@ int sub_1042b470()
 
 // FUNCTION: 0x1042b710 size=0x33
 // TARGET: sub_1042b710
-extern char *g_1070b228;
 
 struct CFloatOwner_1042b710 {
     char pad0[0x17c];
@@ -131393,7 +131362,7 @@ void CFloatOwner_1042b710::sub_1042b710(float v)
         m_f17c = -1.0f;
         return;
     }
-    m_f17c = v + *(float *)(g_1070b228 + 0xc);
+    m_f17c = v + gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -131794,15 +131763,14 @@ CSprite *sub_1042eb80(int a, int b, int c, int d, bool animate)
 #include "vampire.h"
 #include "CUnknown1042e8c0.h"
 
-extern char *g_1070b228;
 
 // TARGET: CUnknown1042e8c0::sub_1042eca0
 void CUnknown1042e8c0::sub_1042eca0()
 {
     float flScale = *(float *)((char *)this + 0x458);
-    sub_1042ee50((*(float *)((char *)g_1070b228 + 0xc) - *(float *)((char *)this + 0x474)) * flScale);
-    *(float *)((char *)this + 0x17c) = *(float *)((char *)g_1070b228 + 0xc);
-    *(float *)((char *)this + 0x474) = *(float *)((char *)g_1070b228 + 0xc);
+    sub_1042ee50((gpGlobals->curtime - *(float *)((char *)this + 0x474)) * flScale);
+    *(float *)((char *)this + 0x17c) = gpGlobals->curtime;
+    *(float *)((char *)this + 0x474) = gpGlobals->curtime;
 }
 // END FUNCTION
 

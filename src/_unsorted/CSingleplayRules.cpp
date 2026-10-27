@@ -60,11 +60,9 @@ CBaseEntity *CSingleplayRules::vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurre
 // END FUNCTION
 
 // FUNCTION: 0x101abf00 size=0xb
-extern char *g_1070b228;
-
 float CSingleplayRules::vfunc38(int a)
 {
-	return *(float *)(g_1070b228 + 0xc);
+	return gpGlobals->curtime;
 }
 // END FUNCTION
 

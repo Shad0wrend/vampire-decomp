@@ -360,13 +360,12 @@ struct CWerewolfUnit103d4a20 {
     void sub_10009ecb();
     void sub_103d4a20();
 };
-extern char *g_1070b228;
 
 // TARGET: sub_103d4a20
 void CWerewolfUnit103d4a20::sub_103d4a20()
 {
     sub_10009ecb();
-    m_i66ec = *(int *)((char *)g_1070b228 + 0xc);
+    m_i66ec = *(int *)&gpGlobals->curtime;
     *(int *)((char *)this + 0x66d8) = 0;
     *(int *)((char *)this + 0x66d4) = 0;
     *(int *)((char *)this + 0x66a4) = 0;

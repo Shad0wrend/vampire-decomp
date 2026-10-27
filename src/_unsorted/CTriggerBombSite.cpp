@@ -92,13 +92,12 @@ bool CTriggerBombSite::vfunc32(void *pOther)
 #include "CBaseEntity.h"
 #include "CAI_BaseNPCTroika.h"
 
-extern char *g_1070b228;
 void __fastcall sub_1015ef40(CBaseEntity *pThis);
 
 void CTriggerBombSite::vfunc39(CBaseEntity *pOther)
 {
     ((CBaseEntity *)this)->CBaseEntity::vfunc39(pOther);
-    *(int *)((char *)this + 0x598) = *(int *)(g_1070b228 + 0xc);
+    *(int *)((char *)this + 0x598) = *(int *)&gpGlobals->curtime;
     sub_1015ef40(pOther);
     ((CAI_BaseNPCTroika *)pOther)->sub_10181580(1);
 }

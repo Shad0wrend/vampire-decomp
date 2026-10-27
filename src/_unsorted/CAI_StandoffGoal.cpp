@@ -110,12 +110,11 @@ void CAI_StandoffGoal::vfunc241(int a)
 // TARGET: CAI_StandoffGoal::vfunc103
 #include "CAI_StandoffGoal.h"
 
-extern char *g_1070b228;
 void sub_102cd310();
 
 void CAI_StandoffGoal::vfunc103()
 {
 	((CBaseEntity *)this)->sub_100ac4e0((int)(void *)sub_102cd310, 0, 0);
-	*(float *)((char *)this + 0x17c) = *(float *)(g_1070b228 + 0xc) + 0.01;
+	*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.01;
 }
 // END FUNCTION
