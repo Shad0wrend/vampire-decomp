@@ -1,6 +1,8 @@
 // CDialog: a dialog table object (name from the scope trace strings, not from RTTI). Only the lookup is recovered.
 #pragma once
 
+#include "utlvector.h"
+
 struct DialogLine;
 class CBaseEntity;
 
