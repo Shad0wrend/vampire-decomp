@@ -13486,6 +13486,14 @@ void __fastcall sub_100791a0(Mem4 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100792a0 size=0x4
+struct CUnknown100792a0 { int sub_100792a0(); };
+int CUnknown100792a0::sub_100792a0()
+{
+    return *(int *)((char *)this + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100792c0 size=0xa
 void CUnknown100792c0::sub_100792c0(int value)
 {
