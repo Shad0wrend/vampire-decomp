@@ -1224,6 +1224,7 @@
 0x10004782 func   ?vfunc71@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc71
 0x1000478c func   ?vfunc1@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc1
 0x10004791 func   ?sub_102cdd10@CUtlRBTree12@@QBEGPBX@Z CUtlRBTree12::sub_102cdd10
+0x10004796 func   ?sub_1025df20@CUnknown1025df20@@QAEHXZ CUnknown1025df20::sub_1025df20
 0x1000479b func   ?sub_100b9970@CUnknown100b9970@@QAEXHPBH@Z CUnknown100b9970::sub_100b9970
 0x100047aa func   ?RemoveAll@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXXZ CUtlVector<int,CUtlMemory<int> >::RemoveAll
 0x100047aa func   ?sub_10032b00@@YIXPAH@Z sub_10032b00

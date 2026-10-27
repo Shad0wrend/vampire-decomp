@@ -90089,6 +90089,14 @@ bool CUnknown1025ddd0::sub_1025dca0(CBaseEntity *pEntity, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025df20 size=0x4
+struct CUnknown1025df20 { int sub_1025df20(); };
+int CUnknown1025df20::sub_1025df20()
+{
+    return *(int *)((char *)this + 0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025e140 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);
