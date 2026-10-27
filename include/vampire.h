@@ -1,6 +1,7 @@
 // Shared declarations visible to every function. Change it through pcdecomp.
 #pragma once
 
+#include "ehandle.h"
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 #include "CAI_Hint.h"

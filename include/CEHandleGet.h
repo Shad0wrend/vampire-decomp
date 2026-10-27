@@ -11,6 +11,7 @@
 #pragma once
 
 #include "CGlobalEntityList.h"
+#include "ehandle.h"
 
 extern CGlobalEntityList *g_10566458;
 
@@ -32,4 +33,11 @@ static inline CGlobalEntityList_Ent *EHandle_GetBase(const unsigned int &rh)
 static inline CGlobalEntityList_Ent *EHandle_Get(const unsigned int &rh)
 {
 	return EHandle_GetBase(rh);
+}
+
+// The same lookup for a member already declared as EHANDLE / CHandle<T> / CBaseHandle (ehandle.h): matched code that
+// calls EHandle_Get(m_hXxx) keeps compiling when the member's type becomes EHANDLE. New code writes m_hXxx.Get().
+static inline CGlobalEntityList_Ent *EHandle_Get(const CBaseHandle &rh)
+{
+	return (CGlobalEntityList_Ent *)rh.Get();
 }
