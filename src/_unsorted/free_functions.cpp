@@ -40317,6 +40317,16 @@ void CGameMovement::sub_10124ba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10125190 size=0x6
+namespace lifted {
+extern int g_1071a278;
+}
+int sub_10125190()
+{
+    return lifted::g_1071a278;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101251b0 size=0x12
 struct CHolderInner3e0 {
     char pad_0000[0x3e0];
