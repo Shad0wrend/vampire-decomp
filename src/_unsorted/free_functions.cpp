@@ -11619,6 +11619,14 @@ void CUnknown10072e60::sub_10072e60(int a, int b, int c, int d, int e, int f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10072eb0 size=0x7
+struct CUnknown10072eb0 { int sub_10072eb0(); };
+int CUnknown10072eb0::sub_10072eb0()
+{
+    return *(int *)((char *)this + 0x170);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072f10 size=0xce
 #include "CUnknown10072f10.h"
 
