@@ -270,6 +270,7 @@
 0x10001bae func   ?vfunc546@CNPC_VTaxiDriver@@QAEHH@Z CNPC_VTaxiDriver::vfunc546
 0x10001bb8 func   ?sub_10093b10@CBaseAnimating@@QAEXHH@Z CBaseAnimating::sub_10093b10
 0x10001bbd func   ?vfunc315@CWeaponMelee@@UAE_NXZ CWeaponMelee::vfunc315
+0x10001bc7 func   ?sub_101e8e20@CUnknown101e8e20@@QAEMXZ CUnknown101e8e20::sub_101e8e20
 0x10001bcc func   ?sub_1004feb0@@YA_NPAVCBaseEntity@@0@Z sub_1004feb0
 0x10001bd6 func   ?vfunc124@CAI_Hint@@UAEHXZ CAI_Hint::vfunc124
 0x10001be0 func   ?sub_10073a10@CUnknown10073a10@@QAEDXZ CUnknown10073a10::sub_10073a10
