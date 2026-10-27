@@ -94591,6 +94591,49 @@ void CAI_BaseNPCUnit::sub_1026a0f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026a930 size=0x1a7
+#include "CBaseEntity.h"
+#include "CBaseGrenade.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CUnknown102e0150.h"
+#include "CAI_BaseNPC.h"
+
+struct CMemoryNodeView {
+	char m_pad0000[0x24];
+	EHANDLE m_hEnt;
+	char m_pad0028[0x38 - 0x28];
+	CMemoryNodeView *m_pNext;
+};
+
+CBaseEntity *CAI_BaseNPC::sub_1026a930()
+{
+	for (CMemoryNodeView *pNode = (CMemoryNodeView *)vfunc541()->m_pHead; pNode; pNode = pNode->m_pNext) {
+		CBaseGrenade *pGrenade = dynamic_cast<CBaseGrenade *>(pNode->m_hEnt.Get());
+		if (!pGrenade || pGrenade->m_field200 == 2)
+			continue;
+		if (!vfunc201(pGrenade, 0x2804091, 0, 0))
+			continue;
+		CEntityVSlots *pSlots = (CEntityVSlots *)pGrenade;
+		Vector *pMine = (Vector *)vfunc217();
+		Vector *pTheirs = pSlots->slot217();
+		Vector vecDelta = *pTheirs - *pMine;
+		if ((int)FastSqrt(vecDelta.x * vecDelta.x + (vecDelta.y * vecDelta.y + vecDelta.z * vecDelta.z)) <= 200)
+			return pGrenade;
+		Vector *pTheirs2 = pSlots->slot217();
+		Vector *pMine2 = (Vector *)vfunc217();
+		Vector vecToMe = *pMine2 - *pTheirs2;
+		Vector vecVelocity;
+		pSlots->slot199(&vecVelocity, 0);
+		VectorNormalize(vecToMe);
+		VectorNormalize(vecVelocity);
+		if (DotProduct(vecToMe, vecVelocity) > 0.85)
+			return pGrenade;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026c3d0 size=0x11f
 #include "CAI_BaseNPC.h"
 
