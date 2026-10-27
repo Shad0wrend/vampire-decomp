@@ -80029,6 +80029,56 @@ void CUnknown10223800::sub_10223800(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10223820 size=0xd8
+#include "CBaseKeyframedMover.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CGlobalEntityList.h"
+#include "CMoverKeyFrame.h"
+#include "inputdata_t.h"
+#include "ScopeTrace.h"
+
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int isReference);
+extern int g_10538764;
+extern int g_105b1f14;
+extern CGlobalEntityList g_106eb5d8;
+__declspec(dllimport) void Warning(const char *pFormat, ...);
+
+// TARGET: CBaseKeyframedMover::sub_10223820
+void CBaseKeyframedMover::sub_10223820(inputdata_t *pInput)
+{
+	variant_t *pValue = &pInput->value;
+	const char *pszName;
+	if (pValue->fieldType == 2)
+	{
+		pszName = pValue->iszValue;
+		if (!pszName)
+			pszName = g_106b8540;
+	}
+	else
+		pszName = pValue->sub_10008805();
+
+	CBaseEntity *pTarget = (CBaseEntity *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, pszName, 0, 0), 0, &g_10538764, &g_105b1f14, 0);
+	if (pTarget)
+	{
+		m_hKeyframe = *pTarget->vfunc1();
+		CBaseEntity *pKey = (CBaseEntity *)EHandle_Get(m_hKeyframe);
+		((CEntityVSlots *)this)->slot216(((CEntityVSlots *)pKey)->slot217());
+		return;
+	}
+
+	if (pValue->fieldType == 2)
+	{
+		pszName = pValue->iszValue;
+		if (!pszName)
+			pszName = g_106b8540;
+	}
+	else
+		pszName = pValue->sub_10008805();
+	Warning("SnapToKeyframe  on %s got invalid entity: %s\n", sub_100ab4f0(), pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10223a80 size=0xd0
 #include "CBaseKeyframedMover.h"
 #include "COutputEvent.h"
