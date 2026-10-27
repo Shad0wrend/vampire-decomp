@@ -49128,6 +49128,14 @@ void __fastcall sub_101771b0(void *pSelf, int unused, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101771f0 size=0x7
+struct CUnknown101771f0 { int sub_101771f0(); };
+int CUnknown101771f0::sub_101771f0()
+{
+    return *(int *)((char *)this + 0x22c4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177ab0 size=0x74
 #include "CBaseCombatCharacter.h"
 extern "C" int _strcmpi(const char *, const char *);
