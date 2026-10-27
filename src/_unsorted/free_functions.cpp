@@ -95118,6 +95118,18 @@ void sub_1028d7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028d800 size=0xa
+namespace lifted {
+int sub_100027ed();
+int sub_100107c1();
+}
+int sub_1028d800()
+{
+    lifted::sub_100027ed();
+    return lifted::sub_100107c1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e360 size=0xd7
 #include "CAI_BaseNPCTroika.h"
 struct EntInfo { CBaseEntity *ent; int serial; int pad; };
