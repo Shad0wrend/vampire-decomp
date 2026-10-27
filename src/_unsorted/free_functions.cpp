@@ -88952,6 +88952,12 @@ int sub_1025b5d0(unsigned int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025b610 size=0x1
+void sub_1025b610()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025b630 size=0xc8
 #include <string.h>
 extern const char g_105c8664[];

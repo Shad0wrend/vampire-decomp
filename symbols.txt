@@ -3379,6 +3379,7 @@
 0x1000a763 func   ?vfunc546@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc546
 0x1000a768 func   ?vfunc31@CBaseToggle@@UAEXH@Z CBaseToggle::vfunc31
 0x1000a772 func   ?sub_10215b40@CPropButtonX@@QAEHPAX@Z CPropButtonX::sub_10215b40
+0x1000a781 func   ?sub_1025b610@@YAXXZ sub_1025b610
 0x1000a786 func   ?sub_10139b50@@YAXPAH00@Z sub_10139b50
 0x1000a79f func   ?sub_10057510@CFireSmokeUnit10057510@@QAEXH@Z CFireSmokeUnit10057510::sub_10057510
 0x1000a7b3 func   ?sub_10400f60@@YAHXZ sub_10400f60
