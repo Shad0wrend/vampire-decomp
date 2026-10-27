@@ -101976,6 +101976,14 @@ bool CAI_Navigator::sub_102efd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f05b0 size=0x4
+struct CUnknown102f05b0 { int sub_102f05b0(); };
+int CUnknown102f05b0::sub_102f05b0()
+{
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f09a0 size=0xc2
 #include "CUnknown102f09a0.h"
 #include "CAI_Waypoint.h"
