@@ -41607,6 +41607,16 @@ void sub_10003a94();
 void __stdcall sub_1012cf90(int) { sub_10003a94(); }
 // END FUNCTION
 
+// FUNCTION: 0x1012cfb0 size=0x8
+namespace lifted {
+int sub_10004c78();
+}
+int __stdcall sub_1012cfb0(int a0)
+{
+    return lifted::sub_10004c78();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012cfd0 size=0x43
 #include "CHudTimer.h"
 void *sub_100aa720(int size);
