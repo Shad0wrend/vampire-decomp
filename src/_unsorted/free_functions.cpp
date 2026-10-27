@@ -36476,6 +36476,19 @@ void CUnknown10081e70::sub_100fa6b0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fae70 size=0xb
+namespace lifted {
+extern char g_10455f1c;
+int sub_1000cb8a();
+}
+struct CUnknown100fae70 { int sub_100fae70(); };
+int CUnknown100fae70::sub_100fae70()
+{
+    *(int *)this = (int)&lifted::g_10455f1c;
+    return lifted::sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fafa0 size=0x11d
 #include "CBaseAnimating.h"
 #include "CUnknown1070b22c.h"
