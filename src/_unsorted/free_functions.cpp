@@ -70867,6 +70867,12 @@ void CActivityTableX::sub_101f61b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f6390 size=0x1
+void sub_101f6390()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f63b0 size=0x121
 #include "FileSystemViews.h"
 
