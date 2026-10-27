@@ -11500,6 +11500,14 @@ void S10072d60::sub_10072d60(const char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10072d90 size=0x4
+struct CUnknown10072d90 { char * sub_10072d90(); };
+char * CUnknown10072d90::sub_10072d90()
+{
+    return (char *)this + 0x14;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072e60 size=0x3f
 #include "vampire.h"
 
