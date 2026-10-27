@@ -11853,6 +11853,14 @@ char * CUnknown10073520::sub_10073520()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10073540 size=0x7
+struct CUnknown10073540 { int sub_10073540(); };
+int CUnknown10073540::sub_10073540()
+{
+    return *(int *)((char *)this + 0x90);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100735a0 size=0xce
 #include "CUnknown100735a0.h"
 
