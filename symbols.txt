@@ -4577,6 +4577,7 @@
 0x1000c9ff func   ?sub_1033f1a0@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::sub_1033f1a0
 0x1000ca04 func   ?vfunc5@CWeaponMelee_Claws_Protean4@@QAEPAV1@I@Z CWeaponMelee_Claws_Protean4::vfunc5
 0x1000ca09 func   ?sub_10222ad0@@YAXXZ sub_10222ad0
+0x1000ca22 func   ?vfunc451@CGenericSabbat_NPC@@UAEPBDXZ CGenericSabbat_NPC::vfunc451
 0x1000ca2c func   ?vfunc5@CAI_NetworkManager@@QAEPAV1@I@Z CAI_NetworkManager::vfunc5
 0x1000ca31 func   ?sub_101c1ba0@CUnknown101c1b60@@QAEXH@Z CUnknown101c1b60::sub_101c1ba0
 0x1000ca36 func   ?vfunc5@CFogController@@QAEPAV1@I@Z CFogController::vfunc5
