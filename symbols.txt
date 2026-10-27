@@ -4760,6 +4760,7 @@
 0x1000dd5f func   ?sub_1019c950@@YAXPAH@Z sub_1019c950
 0x1000dd69 func   ?sub_10359de0@@YADXZ sub_10359de0
 0x1000dd78 func   ?sub_1013cf40@@YAXPBM00PAM1@Z sub_1013cf40
+0x1000dda0 func   ?sub_10041c10@@YAHH@Z sub_10041c10
 0x1000dda5 func   ?vfunc587@CAI_BaseNPCTroika@@UAEDH@Z CAI_BaseNPCTroika::vfunc587
 0x1000ddaf func   ?vfunc366@CNPC_VSabbatLeader@@QAEHHHH@Z CNPC_VSabbatLeader::vfunc366
 0x1000ddd7 func   ?sub_10191130@COrnamentProp@@QAEXPBDPAVCBaseEntity@@@Z COrnamentProp::sub_10191130
