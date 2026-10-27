@@ -165,6 +165,12 @@ const char *CGameRules::vfunc70(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129680 size=0x1
+void CGameRules::vfunc75()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101296a0 size=0x1e
 #include "CGameRules.h"
 
