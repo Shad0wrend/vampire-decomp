@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1010fa80 size=0x6
+#include "CBreakableSurface.h"
+namespace lifted {
+extern char g_1056f0fc;
+}
+datamap_t * CBreakableSurface::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1056f0fc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010fef0 size=0x3a
 #include "CBreakableSurface.h"
 
