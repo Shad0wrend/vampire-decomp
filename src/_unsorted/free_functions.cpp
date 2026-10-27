@@ -78964,6 +78964,17 @@ void CUnknown10206c70::sub_10206c70(int nTemplate, CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10207c20 size=0xa
+namespace lifted {
+extern char g_10738d10;
+struct C10014e57 { int sub_10014e57(); };
+}
+int sub_10207c20()
+{
+    return ((lifted::C10014e57 *)((int)&lifted::g_10738d10))->sub_10014e57();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10208c90 size=0x15c
 #include "CUnknown10208c90.h"
 #include "CBaseCombatCharacter.h"
