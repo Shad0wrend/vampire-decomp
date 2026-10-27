@@ -9244,6 +9244,12 @@ void sub_10064df0(void *pFilter, int delay, int *pA, int *pB, int a5, int a6, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065070 size=0x3
+void __stdcall sub_10065070(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065250 size=0xe1
 #include "SendProp.h"
 
