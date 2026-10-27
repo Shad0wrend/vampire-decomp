@@ -69116,6 +69116,14 @@ float CUnknown101e7db0::sub_101e7db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e7e40 size=0x7
+struct CUnknown101e7e40 { float sub_101e7e40(); };
+float CUnknown101e7e40::sub_101e7e40()
+{
+    return *(float *)((char *)this + 0x3f0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e7fb0 size=0x93
 #include "CUnknown101e56e0.h"
 
