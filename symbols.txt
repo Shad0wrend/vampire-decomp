@@ -7094,6 +7094,7 @@
 0x10013499 func   ?sub_1042fc60@@YAXXZ sub_1042fc60
 0x1001349e func   ?sub_1042da60@CUnknown1042da60@@QAEHXZ CUnknown1042da60::sub_1042da60
 0x100134ad func   ?sub_1028d800@@YAHXZ sub_1028d800
+0x100134b7 func   ?vfunc82@CPhysBox@@UAEPAUdatamap_t@@XZ CPhysBox::vfunc82
 0x100134c1 func   ?sub_100dea90@CUnknown100dea90@@QAEXH@Z CUnknown100dea90::sub_100dea90
 0x100134d0 func   ?sub_1042ffb0@@YAXXZ sub_1042ffb0
 0x100134d5 func   ?sub_103ddaa0@@YG_NPAD@Z sub_103ddaa0
