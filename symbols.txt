@@ -721,6 +721,7 @@
 0x10002f6d func   ?sub_10408060@CKeyringUnit@@QAEXH@Z CKeyringUnit::sub_10408060
 0x10002f95 func   ?sub_101fc950@TStat@@QAEXHH@Z TStat::sub_101fc950
 0x10002fc7 func   ?vfunc226@CPhysBox@@QAEXH@Z CPhysBox::vfunc226
+0x10002fcc func   ?sub_101e8e80@CUnknown101e8e80@@QAEHXZ CUnknown101e8e80::sub_101e8e80
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
 0x10002fdb func   ?sub_1009ad70@@YIPADPAD@Z sub_1009ad70
 0x10002ff4 func   ?sub_101fee50@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101fee50
