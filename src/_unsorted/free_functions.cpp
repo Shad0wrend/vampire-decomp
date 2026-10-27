@@ -91982,6 +91982,12 @@ const char * __stdcall sub_1027f1e0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027f270 size=0x3
+void __stdcall sub_1027f270(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027f5d0 size=0x28
 #include <stdarg.h>
 
