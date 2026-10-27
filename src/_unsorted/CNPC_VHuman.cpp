@@ -12,6 +12,17 @@ CAI_CondOwner * CNPC_VHuman::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10384080 size=0x6
+#include "CNPC_VHuman.h"
+namespace lifted {
+extern int g_1063f630;
+}
+const char * CNPC_VHuman::vfunc451()
+{
+    return (const char *)lifted::g_1063f630;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384690 size=0x39
 #include "CNPC_VHuman.h"
 
