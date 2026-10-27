@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101cbc60 size=0x6
+#include "CSmallHullTrigger.h"
+namespace lifted {
+extern char g_1059e8e8;
+}
+datamap_t * CSmallHullTrigger::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1059e8e8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cbda0 size=0x21
 struct CSmallHullTriggerX
 {
