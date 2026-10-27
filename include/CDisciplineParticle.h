@@ -37,5 +37,5 @@ public:
 	char m_pad004[0x4b0];
 	char m_b4b4;	// 0x4b4
 	char m_pad4b5[3];
-	unsigned int m_hUser;	// 0x4b8
+	EHANDLE m_hUser;	// 0x4b8
 };
