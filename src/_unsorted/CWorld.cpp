@@ -1,6 +1,16 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1023aeb0 size=0x6
+namespace lifted {
+extern char g_105c2660;
+}
+datamap_t * CWorld::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105c2660);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023b620 size=0xd
 void CWorld::vfunc130(int a)
 {
