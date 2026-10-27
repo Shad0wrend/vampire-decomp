@@ -25598,6 +25598,12 @@ void sub_100bf420(int *p, int count, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf460 size=0x3
+void __stdcall sub_100bf460(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf480 size=0xe7
 #include "CBitString.h"
 
