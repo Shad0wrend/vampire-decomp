@@ -35,13 +35,9 @@ public:
 	char m_pad091c[0x928 - 0x91c];
 	float m_flGlow928;	// 0x928: the glow value, eased towards m_flGlowTarget92c
 	float m_flGlowTarget92c;	// 0x92c
-	EHANDLE m_h930;	// 0x930 .. 0x967: fourteen handles
-	EHANDLE m_h934;
-	EHANDLE m_h938;
-	EHANDLE m_h93c;
+	EHANDLE m_ah930[4];	// 0x930 .. 0x967: fourteen handles
 	EHANDLE m_ah940[6];
-	EHANDLE m_h958;
-	EHANDLE m_h95c;
+	EHANDLE m_ah958[2];
 	EHANDLE m_h960;
 	EHANDLE m_h964;
 	CUnknown101bc140 *m_pHoldSound;	// 0x968: "Weapon_PhysCannon.HoldSound", cached
