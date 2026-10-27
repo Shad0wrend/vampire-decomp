@@ -70,6 +70,11 @@ public:
 	CBaseGrenade *sub_1042b2b0();	// as in CKeepUpright (transplant)
 	void sub_1042ab80(CBaseEntity *pEnt);	// not in this class's vtable (the class is not known): unless pEnt is the entity behind the handle at +0x19b0, a grenade with flag bit 0 gets its velocity (+0x3bc) scaled by 0.95f (sub_100b2e30) with the bit-12 position refresh around it, any other calls slot 408
 
-	char m_pad19b0[0x19b0 - sizeof(CBaseEntity)];
+	void sub_1042a540();	// the grenade's think: removes it when sub_100a9510 refuses; else shows the effect (sub_101babc0) at the origin plus half a second of travel for the speed, thinks again 0.2 seconds later and, with the object at +0x3e0 set, hands it half the velocity (sub_100b2e30)
+	bool sub_100a9510();	// stub 0x10013fde, asked by the think
+	void sub_101babc0(int type, const Vector &vecPos, int nSpeed, float flScale, int nFlags);	// free function in the game (cdecl); see the think
+
+	int m_n03e0;	// 0x3e0: an object (pointer)
+	char m_pad03e4[0x19b0 - 0x3e4];
 	unsigned int m_hHeld19b0;	// 0x19b0: handle of the entity the grenade is checked against (slot 407)
 };
