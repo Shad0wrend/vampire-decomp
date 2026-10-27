@@ -68492,6 +68492,12 @@ void CUnknown101eb820::sub_101eb820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ebd10 size=0x1
+void sub_101ebd10()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ebe60 size=0x91
 #include "CUnknown101ebe60.h"
 #include "CUnknown101eb7f0.h"
