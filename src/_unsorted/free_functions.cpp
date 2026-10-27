@@ -94467,6 +94467,13 @@ void CAI_BaseNPCTroika::sub_102b2730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5be0 size=0x3
+char sub_102b5be0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5dc0 size=0xd
 void CUnknown102b5dc0::sub_102b5dc0(int value)
 {
