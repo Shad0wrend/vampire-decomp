@@ -28,7 +28,9 @@ public:
 	void sub_100bbe70(float *pStart, const float *pEnd);	// stub 0x10004b3d
 	void sub_100bbef0(void *pTrace);	// stub 0x1001326e
 
-	char m_pad0004[0x4b8 - 4];
+	char m_pad0004[0x17c - 4];
+	float m_flLastThink17c;	// 0x17c: the time of the last update
+	char m_pad0180[0x4b8 - 0x180];
 	float m_flWidth;	// 0x4b8
 	char m_pad04bc[0x4c8 - 0x4bc];
 	float m_flNoiseAmplitude;	// 0x4c8
