@@ -19,6 +19,16 @@ CAI_CondOwner * CAI_BaseNPCTroika::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa7b0 size=0x6
+namespace lifted {
+extern int g_105d1060;
+}
+const char * CAI_BaseNPCTroika::vfunc451()
+{
+    return (const char *)lifted::g_105d1060;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028d6e0 size=0x66
 #include "CAI_BaseNPCTroika.h"
 
