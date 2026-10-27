@@ -25281,6 +25281,14 @@ int __fastcall sub_100ba030(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba070 size=0x7
+struct CUnknown100ba070 { int sub_100ba070(); };
+int CUnknown100ba070::sub_100ba070()
+{
+    return *(int *)((char *)this + 0x734);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ba120 size=0xd
 // TARGET: CUnknown100ba120::sub_100ba120
 void CUnknown100ba120::sub_100ba120(char value)
