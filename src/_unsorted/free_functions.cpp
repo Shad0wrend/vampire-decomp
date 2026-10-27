@@ -15934,6 +15934,16 @@ void sub_10085070(int *dst, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100850a0 size=0x6
+namespace lifted {
+extern char g_10549388;
+}
+int sub_100850a0()
+{
+    return (int)&lifted::g_10549388;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10085130 size=0x37
 #include "CBaseAnimating.h"
 
