@@ -47716,6 +47716,43 @@ char CBaseCombatCharacter::sub_10146a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146b20 size=0x1b5
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "CStatDefault3List.h"
+
+extern CStatDefault3List g_10738d10;
+
+bool CBaseCombatCharacter::sub_10146b20(CBaseCombatCharacter *pOther)
+{
+	if (pOther) {
+		if (!sub_10146a80())
+			return true;
+		if (CVStatListSet::Of(pOther)->Find(3)->sub_102012d0(14) > 0)
+			return true;
+		if (CVStatListSet::Of(pOther)->Find(3)->sub_102012d0(1) > 0)
+			return true;
+		if (g_10738d10.sub_101d5f10(pOther)->m_8c[11]) {
+			int range = g_10738d10.sub_101d5f10(pOther)->m_ac;
+			if (!range)
+				return true;
+			Vector *pMine = ((CEntityVSlots *)this)->slot217();
+			Vector *pTheirs = ((CEntityVSlots *)pOther)->slot217();
+			float dx = pTheirs->x - pMine->x;
+			float dy = pTheirs->y - pMine->y;
+			float dz = pTheirs->z - pMine->z;
+			float flSqr = dz * dz;
+			flSqr += dx * dx;
+			flSqr += dy * dy;
+			float flDist = FastSqrt(flSqr);
+			if (flDist <= range)
+				return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146d50 size=0x9a
 #include "CBaseCombatCharacter.h"
 extern int g_1046bae8[];
