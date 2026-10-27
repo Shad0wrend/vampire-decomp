@@ -98,3 +98,10 @@ void CEntitySaveRestoreBlockHandler::vfunc3(CSave *pSave)
         save->WriteFields("ETABLE", block->m_pEntries + i * 0x30, 0, g_10592b18, g_10592b1c);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a39e0 size=0x1
+#include "CEntitySaveRestoreBlockHandler.h"
+void CEntitySaveRestoreBlockHandler::vfunc4()
+{
+}
+// END FUNCTION
