@@ -1473,6 +1473,31 @@ int CBaseCombatCharacter::sub_10333700(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103338c0 size=0x19c
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+
+Vector CBaseCombatCharacter::vfunc389(const Vector &vecSrc)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Weapon_ShootPosition", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBaseAnimating *pWeapon = (CBaseAnimating *)sub_1032e7b0();
+	if (pWeapon) {
+		Vector vecPos;
+		Vector vecDummy;
+		if ((char)pWeapon->sub_10092e20((int)"muzzleflash", (int)&vecPos, (int)&vecDummy))
+			return vecPos;
+	}
+	Vector forward, right, up;
+	::sub_10139610(*(const QAngle *)((CEntityVSlots *)this)->slot221(), &forward, &right, &up);
+	return forward * m_f157c + vecSrc + right * m_f1578 + up * m_f1580;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10334a50 size=0x86
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntitySlots.h"
