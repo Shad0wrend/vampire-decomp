@@ -24,6 +24,17 @@ CAI_CondOwner * CGeneric_NPC::vfunc580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10359f20 size=0x6
+#include "CGeneric_NPC.h"
+namespace lifted {
+extern int g_10629a40;
+}
+const char * CGeneric_NPC::vfunc451()
+{
+    return (const char *)lifted::g_10629a40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a090 size=0x13e
 #include "CGeneric_NPC.h"
 #include "CCollisionProperty.h"
