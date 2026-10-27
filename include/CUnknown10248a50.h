@@ -7,7 +7,18 @@ struct IFileSys;
 class CUnknown10248a50
 {
 public:
-	char m_pad0000[0x1c];
+	char *m_pszName;	// 0x00
+	char *m_pszString;	// 0x04
+	union
+	{
+		int m_iValue;
+		float m_flValue;
+		void *m_pValue;
+	};	// 0x08
+	int m_iDataType;	// 0x0c: 0 string, 1 int, 2 float, 3 pointer
+	CUnknown10248a50 *m_pPeer;	// 0x10
+	CUnknown10248a50 *m_pSub;	// 0x14
+	char m_pad0018[4];
 
 	CUnknown10248a50(const char *pszName);	// 0x10247ba0 (stub 0x1000e363): clears the first field, then names the node
 	~CUnknown10248a50();	// 0x10247da0 (stub 0x100046f1)
