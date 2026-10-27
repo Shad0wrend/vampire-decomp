@@ -865,6 +865,7 @@
 0x100033b4 func   ?vfunc11@CGameRules@@UAEXXZ CGameRules::vfunc11
 0x100033cd func   ?vfunc416@CAI_BaseNPCTroika@@UAEXD@Z CAI_BaseNPCTroika::vfunc416
 0x100033d2 func   ?sub_10325f00@@YI_NPAVCBaseEntity@@@Z sub_10325f00
+0x100033d7 func   ?sub_102f49c0@CAI_NodeGraph@@QAEXXZ CAI_NodeGraph::sub_102f49c0
 0x100033dc func   ?vfunc5@CPhysBallSocket@@UAEPAV1@I@Z CPhysBallSocket::vfunc5
 0x100033e1 func   ?sub_102e8270@CUnknown102e83e0@@QAEXHH@Z CUnknown102e83e0::sub_102e8270
 0x100033e6 func   ?vfunc5@CCameraKeyFrame@@QAEPAV1@I@Z CCameraKeyFrame::vfunc5

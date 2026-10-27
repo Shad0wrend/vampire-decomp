@@ -107410,6 +107410,71 @@ bool NodeGraph::sub_102f48b0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f49c0 size=0x1af
+#include "CAI_NodeGraph.h"
+#include "UtlVec8.h"
+#include "CMem4_t.h"
+void sub_102f9300(int *, const int *);
+
+struct CUtlVector4Ins : CUtlVector4
+{
+	int InsertBefore(int elem, const int *src)
+	{
+		int num = 1;
+		if (m_size + num > m_allocationCount)
+			((CMem4_t *)this)->sub_102f9330(m_size + num - m_allocationCount);
+		m_pElements = m_pMemory;
+		m_size += num;
+		int numToMove = m_size - elem - num;
+		if (numToMove > 0)
+			memmove(m_pMemory + elem + num, m_pMemory + elem, numToMove * 4);
+		sub_102f9300(m_pMemory + elem, src);
+		return elem;
+	}
+};
+
+void CAI_NodeGraph::sub_102f49c0()
+{
+	if (m_nNodes != 0) {
+		CUtlVector4Ins *v = (CUtlVector4Ins *)&m_Counts;
+		int zero = 0;
+		int i;
+		int idx = v->m_size;
+		v->sub_102f91f0(1);
+		((UtlVec8 *)v)->sub_102f92b0(idx, 1);
+		sub_102f9300(v->m_pMemory + idx, &zero);
+		idx = v->m_size;
+		v->sub_102f91f0(1);
+		((UtlVec8 *)v)->sub_102f92b0(idx, 1);
+		sub_102f9300(v->m_pMemory + idx, &zero);
+		idx = v->m_size;
+		v->sub_102f91f0(1);
+		((UtlVec8 *)v)->sub_102f92b0(idx, 1);
+		sub_102f9300(v->m_pMemory + idx, &zero);
+		idx = v->m_size;
+		v->sub_102f91f0(1);
+		((UtlVec8 *)v)->sub_102f92b0(idx, 1);
+		sub_102f9300(v->m_pMemory + idx, &zero);
+		for (i = 0; i < m_nNodes; i++) {
+			CAI_Node *p = m_ppNodes[i];
+			if (p->m_n78 == 0) {
+				p->m_n94 = 1;
+				v->m_pMemory[1]++;
+			}
+		}
+		int group = 4;
+		for (i = 0; i < m_nNodes; i++) {
+			if (m_ppNodes[i]->m_n94 == 0) {
+				sub_102f4940(m_ppNodes[i], group);
+				group++;
+				v->InsertBefore(v->m_size, &zero);
+			}
+			v->m_pMemory[m_ppNodes[i]->m_n94]++;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f4e00 size=0x7c
 #include "CAI_NodeGraph.h"
 
