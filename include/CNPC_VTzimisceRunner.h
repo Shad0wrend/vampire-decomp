@@ -4,6 +4,7 @@
 #pragma once
 
 class CAI_Motor;
+class CUnknown1025ddd0;
 
 class CNPC_VTzimisceRunner
 {
