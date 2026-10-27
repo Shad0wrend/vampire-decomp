@@ -54800,6 +54800,52 @@ void CUnknown1018f960::sub_1018f960(inputdata_t &data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101900a0 size=0x1b7
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_1058d4f8[2];
+void sub_100019ec();
+void sub_10014646();
+void sub_1000d2ce();
+void sub_10009395();
+
+int *sub_101900a0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 5, "m_bRandomAnimator", {0x7c4, 0}, 1, 6, "RandomAnimation" },
+        { 15, "m_flNextRandAnim", {0x7c8, 0}, 1, 2 },
+        { 1, "m_flMinRandAnimTime", {0x7cc, 0}, 1, 6, "MinAnimTime" },
+        { 1, "m_flMaxRandAnimTime", {0x7d0, 0}, 1, 6, "MaxAnimTime" },
+        { 2, "m_iszSequenceName", {0x7d4, 0}, 1, 6, "LoopSequence" },
+        { 2, "InputSetAnimation", {0, 0}, 1, 8, "SetAnimation", 0, (void *)sub_100019ec },
+        { 4, "InputSetSkin", {0, 0}, 1, 8, "SetSkin", 0, (void *)sub_10014646 },
+        { 10, "m_pOutputAnimBegun", {0x77c, 0}, 1, 0x16, "OnAnimationBegun", g_1055dc70 },
+        { 10, "m_pOutputAnimOver", {0x794, 0}, 1, 0x16, "OnAnimationDone", g_1055dc70 },
+        { 10, "m_pOutputAnimLoop", {0x7ac, 0}, 1, 0x16, "OnAnimationLoop", g_1055dc70 },
+        { 0, "CDynamicPropAnimThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000d2ce },
+        { 0, "CDynamicPropStartAnimThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10009395 },
+    };
+    g_1058d4f8[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_1058d4f8[0] = (int)&dataDesc[1];
+    return g_1058d4f8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190440 size=0x72
 #include "SendProp.h"
 
