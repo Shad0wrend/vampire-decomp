@@ -2,6 +2,8 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+#include "CWeaponIArmor.h"	// CWeaponIArmorOwner / CWeaponIArmorTarget
+
 class CWeaponIWritten : public CBaseEntity
 {
 public:
