@@ -35,6 +35,16 @@ int CBaseCombatWeapon::vfunc363()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102347a0 size=0x7
+namespace lifted {
+extern float g_104492dc;
+}
+float CBaseCombatWeapon::vfunc278()
+{
+    return lifted::g_104492dc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f030 size=0x64
 struct CNameObj_t { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual const char *GetName(); };
 struct CNameSrc_t { virtual void v0(); virtual void v1(); virtual void v2(); virtual CNameObj_t *Get(); };
