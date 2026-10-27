@@ -69396,6 +69396,12 @@ int * __fastcall sub_101f0270(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0290 size=0x1
+void sub_101f0290()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0330 size=0xca
 #include "CUnknown101f0330.h"
 
