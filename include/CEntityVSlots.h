@@ -140,7 +140,8 @@ public:
 	EVS(338) EVS(339)
 	EVS(340) EVS(341) EVS(342) EVS(343) EVS(344) EVS(345)
 	virtual unsigned char slot346();	// weapon: a flag byte (bit 3 = may be held twice)
-	EVS(347) EVS(348) EVS(349)
+	EVS(347) virtual const char *slot348();	// weapon: its class name
+	EVS(349)
 	EVS10(35)
 	virtual unsigned int slot360();	// weapon: its flag word (bits 0x18000 mark the special kinds)
 	EVS(361) EVS(362) EVS(363) EVS(364) EVS(365) EVS(366) EVS(367)
