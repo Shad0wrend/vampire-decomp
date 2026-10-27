@@ -9871,6 +9871,19 @@ int CUnknown100659e0::sub_100659e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10065df0 size=0x1e
+namespace lifted {
+extern char g_106c4994;
+extern int g_106c49a0;
+struct C1000b1c7 { int sub_1000b1c7(int, int); };
+}
+int sub_10065df0(int a0, int a1, int a2)
+{
+    lifted::g_106c49a0 = a2;
+    return ((lifted::C1000b1c7 *)((int)&lifted::g_106c4994))->sub_1000b1c7(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065e20 size=0x37
 #include "CTEMuzzleFlash.h"
 
