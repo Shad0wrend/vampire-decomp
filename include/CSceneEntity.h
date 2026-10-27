@@ -114,6 +114,7 @@ public:
 	void sub_100845a0(void *pScene);	// the twin of sub_10084170 (recursive over the scene's sub-scenes): hands every actor of the scene that is an animating entity its slot 246
 	void sub_10084260(void *pScene);	// stub 0x10002cfc: the twin of sub_10084170 that resets each actor entity (an NPC: back to the idle sequence check; else the weighted sequence 1 and a restarted playback), recursive over the sub-scenes
 	void sub_100847e0(void *pScene);	// stub 0x1000d97c: the twin of sub_10084260 that wakes each actor NPC of the scene (recursive over the sub-scenes)
+	void sub_1000d97c(void *pScene);	// the jump stub of sub_100847e0
 	void sub_100843d0(void *pScene);	// stub 0x10008a8f, run on the scene when it starts
 	void sub_10081ed0();	// stub 0x100114b4, run when the scene starts
 	void sub_10082c90();	// stub 0x10003080, run when the scene starts
