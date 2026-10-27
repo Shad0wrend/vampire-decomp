@@ -66449,6 +66449,57 @@ void CTraceEntList::sub_101d3430(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d3510 size=0x1ad
+#include "CEntityVSlots.h"
+#include "CUnknown1070b254.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "Vector.h"
+
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+extern CUnknown1070b254 *g_1070b254;
+
+struct CRayInit
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	char m_IsRay;
+	char m_IsSwept;
+	char m_b32;
+	char m_b33;
+	int m_n34;
+};
+
+void sub_101d3510(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, CEntityVSlots *pEnt, int group, CGameTrace *pTrace)
+{
+	if (pEnt) {
+		if (pEnt->slot91(group, -1)) {
+			CRayInit ray;
+			VectorSubtract(end, start, ray.m_Delta);
+			int bSwept = ray.m_Delta.x * ray.m_Delta.x + ray.m_Delta.y * ray.m_Delta.y + ray.m_Delta.z * ray.m_Delta.z != 0;
+			VectorSubtract(maxs, mins, ray.m_Extents);
+			ray.m_IsSwept = bSwept;
+			ray.m_Extents *= 0.5f;
+			int bRay = ray.m_Extents.x * ray.m_Extents.x + ray.m_Extents.y * ray.m_Extents.y + ray.m_Extents.z * ray.m_Extents.z < 1e-6;
+			VectorAdd(mins, maxs, ray.m_StartOffset);
+			ray.m_IsRay = bRay;
+			ray.m_b32 = 0;
+			ray.m_StartOffset *= 0.5f;
+			ray.m_b33 = 0;
+			ray.m_n34 = 0;
+			VectorAdd(start, ray.m_StartOffset, ray.m_Start);
+			ray.m_StartOffset *= -1.0f;
+			g_1070b254->vfunc2((Ray_t *)&ray, -1, (CBaseEntity *)pEnt, pTrace);
+			return;
+		}
+	}
+	memset(pTrace, 0, sizeof(CGameTrace));
+	pTrace->m_fraction = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4ca0 size=0x3d
 #include <string.h>
 
