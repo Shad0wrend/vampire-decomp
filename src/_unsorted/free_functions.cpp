@@ -9318,6 +9318,19 @@ CTEFizz *CTEFizz::sub_10061f70(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10061fe0 size=0xb
+namespace lifted {
+extern char g_1044de6c;
+int sub_100021d0();
+}
+struct CUnknown10061fe0 { int sub_10061fe0(); };
+int CUnknown10061fe0::sub_10061fe0()
+{
+    *(int *)this = (int)&lifted::g_1044de6c;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100622d0 size=0xcd
 #include "SendProp.h"
 
