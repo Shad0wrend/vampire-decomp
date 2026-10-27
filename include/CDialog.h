@@ -54,9 +54,14 @@ public:
 	char m_pad283c[0x30e9 - 0x283c];
 	char m_bNoReply;	// 0x30e9: set when a response could not be built
 	char m_pad30ea[0x32f8 - 0x30ea];
-	CDialogVecs3 m_vecsA;	// 0x32f8
-	CDialogVecs3 m_vecsB;	// 0x3334
-	CDialogVecs2 m_vecsC;	// 0x3370
+	CUtlVector<int> m_vec32f8;	// 0x32f8 (the game's type differs: own RemoveAll 0x100eb130 / Purge 0x100eb1a0)
+	CUtlVector<int> m_vec330c;	// 0x330c
+	CUtlVector<int> m_vec3320;	// 0x3320
+	CUtlVector<int> m_vec3334;	// 0x3334
+	CUtlVector<int> m_vec3348;	// 0x3348
+	CUtlVector<int> m_vec335c;	// 0x335c
+	CUtlVector<int> m_vec3370;	// 0x3370
+	CUtlVector<int> m_vec3384;	// 0x3384
 	char m_pad3398[0x33ad - 0x3398];
 	char m_szWhisper[1];	// 0x33ad: the pending whisper text (empty when none)
 
