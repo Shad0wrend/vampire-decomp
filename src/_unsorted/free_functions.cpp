@@ -4168,6 +4168,13 @@ bool sub_10041c30(int *a, int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10041c60 size=0x7
+int sub_10041c60(int a0)
+{
+    return *(int *)((char *)a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041c80 size=0x80
 #include "UtlHash8.h"
 #include "CUtlVector20.h"
