@@ -87610,6 +87610,14 @@ void CUnknown102461b0::sub_102461b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10246270 size=0x7
+struct CUnknown10246270 { int sub_10246270(); };
+int CUnknown10246270::sub_10246270()
+{
+    return *(int *)((char *)(*(int *)((char *)this + 4)) + 0x1c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10246300 size=0xd
 void sub_10246300(int unused, int *src, int *dst)
 {

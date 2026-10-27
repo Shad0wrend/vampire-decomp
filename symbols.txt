@@ -4759,6 +4759,7 @@
 0x1000da67 func   ?sub_1036cbd0@CNPC_VChangBros@@QAE_NXZ CNPC_VChangBros::sub_1036cbd0
 0x1000da76 func   ?sub_1003e4b0@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1003e4b0
 0x1000daa8 func   ?vfunc7@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc7
+0x1000dabc func   ?sub_10246270@CUnknown10246270@@QAEHXZ CUnknown10246270::sub_10246270
 0x1000dac1 func   ?sub_100a04e0@CBaseEntity@@QAEXPBDPAV1@@Z CBaseEntity::sub_100a04e0
 0x1000dac6 func   ?sub_101ebe60@CUnknown101ebe60@@QAEXHH@Z CUnknown101ebe60::sub_101ebe60
 0x1000dacb func   ?sub_100f4410@@YAXPBDHH@Z sub_100f4410
