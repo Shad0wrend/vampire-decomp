@@ -87941,6 +87941,47 @@ extern "C" CBaseEntity *worldspawn()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b0b0 size=0x1a2
+#include "SendProp.h"
+
+class SendTable
+{
+public:
+	void sub_1000e8fe(SendProp *pProps, int nProps, const char *pNetTableName);	// Init
+};
+
+SendProp sub_10246af0(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, int arg6, void *proxy);	// SendPropInt
+SendProp sub_10246dc0(const char *pVarName, int offset, SendTable *pTable, void *proxy);	// SendPropDataTable
+SendProp sub_10246510(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, int varProxy);	// SendPropFloat
+SendProp sub_10246700(const char *pVarName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, int varProxy);	// SendPropVector
+void sub_102464d0();
+void sub_10246300();
+void sub_10003012();
+
+extern SendTable g_10752e68;
+extern SendTable *g_1055282c;
+
+// TARGET: sub_1023b0b0
+int sub_1023b0b0()
+{
+	static const char *pTableName = "DT_WORLD";
+	static SendProp props[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1055282c, (void *)sub_102464d0),
+		sub_10246510("m_flWaveHeight", 0x45c, 4, 8, 0x10, 0.0f, 8.0f, (int)sub_10246300),
+		sub_10246700("m_WorldMins", 0x460, 12, -1, 2, 0.0f, -121121.125f, (int)sub_10003012),
+		sub_10246700("m_WorldMaxs", 0x46c, 12, -1, 2, 0.0f, -121121.125f, (int)sub_10003012),
+		sub_10246af0("m_nAreaType", 0x49c, 4, 2, 1, 0, 0),
+		sub_10246af0("m_bNosferatuTolerant", 0x4a8, 1, 1, 1, 0, 0),
+		sub_10246510("m_flWetnessFadeTarget", 0x518, 4, -1, 4, 0.0f, -121121.125f, (int)sub_10246300),
+		sub_10246510("m_flWetnessFadeIn", 0x51c, 4, -1, 4, 0.0f, -121121.125f, (int)sub_10246300),
+		sub_10246510("m_flWetnessFadeOut", 0x520, 4, -1, 4, 0.0f, -121121.125f, (int)sub_10246300),
+	};
+	g_10752e68.sub_1000e8fe(props + 1, 9, pTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023b3a0 size=0x82
 struct CPlayerLike
 {
