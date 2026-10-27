@@ -3209,6 +3209,23 @@ bool CPushBlockerEnum::sub_10037750(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10037950 size=0x1a
+namespace lifted {
+extern char g_10449308;
+}
+struct CUnknown10037950 { void * sub_10037950(); };
+void * CUnknown10037950::sub_10037950()
+{
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)this = (int)&lifted::g_10449308;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003b850 size=0x36
 #include "Vector.h"
 
