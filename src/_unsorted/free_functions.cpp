@@ -134186,6 +134186,19 @@ extern "C" CBaseEntity *item_i_written()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040bf70 size=0xb
+namespace lifted {
+extern char g_10514edc;
+int sub_100143ee();
+}
+struct CUnknown1040bf70 { int sub_1040bf70(); };
+int CUnknown1040bf70::sub_1040bf70()
+{
+    *(int *)this = (int)&lifted::g_10514edc;
+    return lifted::sub_100143ee();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040bfc0 size=0x84
 #include "CUnknown1040cb60.h"
 
