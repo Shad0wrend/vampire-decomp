@@ -9829,6 +9829,19 @@ void sub_10065930(CRecipientFilter *pFilter, float flDelay, const int *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100659e0 size=0xb
+namespace lifted {
+extern char g_1044dfb0;
+int sub_100021d0();
+}
+struct CUnknown100659e0 { int sub_100659e0(); };
+int CUnknown100659e0::sub_100659e0()
+{
+    *(int *)this = (int)&lifted::g_1044dfb0;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065e20 size=0x37
 #include "CTEMuzzleFlash.h"
 
