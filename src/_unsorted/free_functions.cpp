@@ -8044,6 +8044,19 @@ CTEBeamEntPoint *CTEBeamEntPoint::sub_1005ac10(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005ac90 size=0xb
+namespace lifted {
+extern char g_1044dbf8;
+int sub_1000d08f();
+}
+struct CUnknown1005ac90 { int sub_1005ac90(); };
+int CUnknown1005ac90::sub_1005ac90()
+{
+    *(int *)this = (int)&lifted::g_1044dbf8;
+    return lifted::sub_1000d08f();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005aff0 size=0xfc
 #include "SendProp.h"
 
