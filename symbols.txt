@@ -1470,6 +1470,7 @@
 0x10004fb1 func   ?sub_10063a20@CUnknown10063a20@@QAEHXZ CUnknown10063a20::sub_10063a20
 0x10004fbb func   ?sub_10191170@COrnamentProp@@QAEXPAVCBaseEntity@@@Z COrnamentProp::sub_10191170
 0x10004fc5 func   ?sub_102f67a0@@YA_NPBD@Z sub_102f67a0
+0x10004fca func   ?sub_10113cf0@CUnknown10113cf0@@QAEHXZ CUnknown10113cf0::sub_10113cf0
 0x10004fde func   ?sub_1007f510@@YAXPAHPBH@Z sub_1007f510
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
 0x10004fe8 func   ?vfunc5@CWeaponMelee_Tzimisce3Claw@@QAEPAV1@I@Z CWeaponMelee_Tzimisce3Claw::vfunc5

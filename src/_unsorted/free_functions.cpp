@@ -40121,6 +40121,19 @@ extern "C" GP *func_dustcloud()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113cf0 size=0xb
+namespace lifted {
+extern char g_1046096c;
+int sub_1000cb8a();
+}
+struct CUnknown10113cf0 { int sub_10113cf0(); };
+int CUnknown10113cf0::sub_10113cf0()
+{
+    *(int *)this = (int)&lifted::g_1046096c;
+    return lifted::sub_1000cb8a();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114260 size=0xe5
 #include "SendProp.h"
 
