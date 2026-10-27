@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1022a060 size=0x6
+#include "CSoundScheme.h"
+namespace lifted {
+extern char g_105b4090;
+}
+datamap_t * CSoundScheme::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105b4090);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022a1d0 size=0x1e
 #include "CSoundScheme.h"
 
