@@ -79030,6 +79030,16 @@ void CUnknown10208e50::sub_10208e50(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10208fa0 size=0x8
+namespace lifted {
+int sub_1000289c();
+}
+int __stdcall sub_10208fa0(int a0)
+{
+    return lifted::sub_1000289c();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209a20 size=0x7c
 #include "CItemContainer.h"
 struct Sub { void *pEnt; unsigned int serial; };
