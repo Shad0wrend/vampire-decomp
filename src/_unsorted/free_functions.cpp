@@ -5341,6 +5341,12 @@ void CUtlMemory20::sub_10043870(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10044a70 size=0x3
+void __stdcall sub_10044a70(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044a90 size=0x140
 #include "CUnknown10044a90.h"
 

@@ -5699,6 +5699,7 @@
 0x10010ed3 func   ?vfunc534@CAI_BaseNPC@@UAEPAVCBaseEntity@@XZ CAI_BaseNPC::vfunc534
 0x10010edd func   ?sub_10258b00@@YAXPAVCUnknown10258b00@@@Z sub_10258b00
 0x10010ee2 func   ?vfunc11@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc11
+0x10010eec func   ?sub_10044a70@@YGXH@Z sub_10044a70
 0x10010efb func   ?sub_1010be40@@YAPAHXZ sub_1010be40
 0x10010f14 func   _beam beam
 0x10010f23 func   ??1CVStatAction_t@@QAE@XZ CVStatAction_t::~CVStatAction_t
