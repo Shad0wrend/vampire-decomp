@@ -1127,6 +1127,7 @@
 0x100043db func   ?AddRecipientsByPVS@CRecipientFilter@@QAEXABVVector@@@Z CRecipientFilter::AddRecipientsByPVS
 0x100043e0 func   ?sub_10125200@CGameMovement@@QAEHABVVector@@@Z CGameMovement::sub_10125200
 0x100043ef func   ?sub_100a9800@@YIDPAVCBaseEntity@@@Z sub_100a9800
+0x100043f9 func   ?vfunc12@CGameRules@@UAEXXZ CGameRules::vfunc12
 0x10004417 func   ?vfunc2@CTEUserTracer@@UAEPAV1@I@Z CTEUserTracer::vfunc2
 0x10004426 func   _item_k_chinese_theatre_key item_k_chinese_theatre_key
 0x10004430 func   _item_p_research_mg_melee item_p_research_mg_melee
