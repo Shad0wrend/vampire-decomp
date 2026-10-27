@@ -94598,6 +94598,14 @@ void * CUnknown102a9f00::sub_102a9f00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9f20 size=0x4
+struct CUnknown102a9f20 { int sub_102a9f20(); };
+int CUnknown102a9f20::sub_102a9f20()
+{
+    return *(int *)((char *)this + 0x24);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102aab70 size=0x126
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_Motor.h"

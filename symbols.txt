@@ -6146,6 +6146,7 @@
 0x10011e41 func   ?sub_10206c30@CUnknown10206c70@@QAEXPBDPAVCBaseCombatCharacter@@@Z CUnknown10206c70::sub_10206c30
 0x10011e46 func   ?sub_102008e0@CVStatList_t@@QAEXHH@Z CVStatList_t::sub_102008e0
 0x10011e4b func   ?sub_1042d9f0@@YIIPAI@Z sub_1042d9f0
+0x10011e50 func   ?sub_102a9f20@CUnknown102a9f20@@QAEHXZ CUnknown102a9f20::sub_102a9f20
 0x10011e55 func   ?sub_10257280@CWeaponRanged@@QAEHPAX0H@Z CWeaponRanged::sub_10257280
 0x10011e5f func   ?sub_1042d720@@YIIPAI@Z sub_1042d720
 0x10011e78 func   ?sub_102699e0@@YAXVVector@@HM@Z sub_102699e0
