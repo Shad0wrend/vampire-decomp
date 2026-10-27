@@ -26574,6 +26574,13 @@ int sub_100c6590(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c65d0 size=0x3
+int sub_100c65d0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c73b0 size=0x9f
 struct SPoseHdr;
 
