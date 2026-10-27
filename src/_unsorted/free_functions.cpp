@@ -47774,6 +47774,20 @@ void CBasePlayer::sub_1017bf10(int mode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c1d0 size=0xf0
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "utlvector.h"
+
+void CBasePlayer::sub_1017c1d0(CBaseEntity *pEnt)
+{
+	if (pEnt) {
+		EHANDLE h(pEnt);
+		((CUtlVector<EHANDLE> *)&m_SimulationList)->FindAndRemove(h);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c600 size=0x77
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"

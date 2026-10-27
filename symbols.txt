@@ -1235,6 +1235,7 @@
 0x10004a0c func   ?sub_103830e0@CUnknown103830e0@@QAEXXZ CUnknown103830e0::sub_103830e0
 0x10004a1b func   ?sub_100bd840@bf_write@@QAEXM@Z bf_write::sub_100bd840
 0x10004a48 func   ?vfunc5@CNPC_VGhoulCroucher@@QAEPAV1@I@Z CNPC_VGhoulCroucher::vfunc5
+0x10004a52 func   ?sub_1017c1d0@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::sub_1017c1d0
 0x10004a5c func   ?sub_1038f290@CNPC_VManBat@@QAE_NXZ CNPC_VManBat::sub_1038f290
 0x10004a61 func   ?sub_103f8230@@YAHXZ sub_103f8230
 0x10004a75 func   ?Purge@?$CUtlMemory@UCUnknown102cff90Elem@@@@QAEXXZ CUtlMemory<CUnknown102cff90Elem>::Purge
