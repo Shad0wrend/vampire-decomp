@@ -34230,6 +34230,16 @@ int sub_100f5bd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6ae0 size=0x6
+namespace lifted {
+extern int g_10703660;
+}
+int sub_100f6ae0()
+{
+    return lifted::g_10703660;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6bb0 size=0xed
 extern "C" void *memmove(void *, const void *, unsigned int);
 extern void *(__cdecl *g_109f3634)(unsigned int);
