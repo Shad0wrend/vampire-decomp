@@ -90479,6 +90479,18 @@ void CUnknown10249450::sub_10249450(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10249470 size=0x1f
+namespace lifted {
+extern int g_105c532c;
+struct C100086a7 { int sub_100086a7(int, int, int, int, int); };
+}
+struct CUnknown10249470 { int sub_10249470(int); };
+int CUnknown10249470::sub_10249470(int a0)
+{
+    return ((lifted::C100086a7 *)(this + 0x20))->sub_100086a7(*(int *)((char *)this + 8), *(int *)((char *)this + 0xc), (int)this, a0, lifted::g_105c532c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102496a0 size=0x11
 #include "CUnknown102496a0.h"
 CUnknown102496a0 *CUnknown102496a0::sub_102496a0()

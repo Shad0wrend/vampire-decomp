@@ -1909,6 +1909,7 @@
 0x100060b4 func   _item_w_claws_protean4 item_w_claws_protean4
 0x100060b9 func   _item_w_claws_protean5 item_w_claws_protean5
 0x100060be func   ?vfunc494@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc494
+0x100060c3 func   ?sub_10249470@CUnknown10249470@@QAEHH@Z CUnknown10249470::sub_10249470
 0x100060d7 func   ?sub_102dcf70@CUnknown102dcf70@@QAE_NPAVCKeyValuesX@@PAHPAUCUnknown102dcf70Entry@@@Z CUnknown102dcf70::sub_102dcf70
 0x100060dc func   ?sub_101e1610@CStatusFlagList@@QAEIH@Z CStatusFlagList::sub_101e1610
 0x100060e1 func   ?sub_101eda90@CUnknown101eda90@@QAEXXZ CUnknown101eda90::sub_101eda90
