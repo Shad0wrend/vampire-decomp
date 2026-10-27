@@ -72,6 +72,53 @@ void CNPC_VGargoyle::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103786c0 size=0x195
+#include "CNPC_VGargoyle.h"
+#include "CEntityVSlots.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b22c.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b22c *g_1070b22c;
+extern CUnknown1070b248 *g_1070b248;
+void sub_101cdba0(const float *center, float amplitude, float frequency, float duration, float radius, int eCommand, bool bAirShake);
+
+struct S103786c0Event
+{
+	int m_nEvent;
+};
+
+struct S103786c0View
+{
+	char m_pad0000[0x2e0];
+	int m_pEdict2e0;
+};
+
+void CNPC_VGargoyle::vfunc259(void *pEvent)
+{
+	switch (((S103786c0Event *)pEvent)->m_nEvent) {
+	case 1:
+		break;
+	case 2: {
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		filter.MakeReliable();
+		int edict = ((S103786c0View *)this)->m_pEdict2e0;
+		g_1070b248->vfunc3(&filter, g_1070b22c->vfunc35(edict), 4, "character/monster/gargoyle/roar2.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		break;
+	}
+	case 0x802:
+	case 0x803:
+		sub_101cdba0(((CEntitySoundOriginView *)this)->GetOrigin(), 2.0f, 0.2f, 0.2f, 1024.0f, 0, false);
+		((CEntityVSlots *)this)->slot617();
+		break;
+	default:
+		sub_100076bc(pEvent);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10378a30 size=0xf0
 #include "CNPC_VHuman.h"
 
