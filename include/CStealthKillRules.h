@@ -17,6 +17,7 @@ public:
 	int m_aTable2[32];	// 0xb4
 	int m_aTable3[32];	// 0x134
 
+	bool sub_101be710(CBaseEntity *pListener, CBaseEntity *pTarget);	// "CStealthKillRules::InDeafZone": scope trace; true when the listener (sub_101671a0) is outside the arc and the distance to the target is below the min depth
 	float sub_101be1d0(CBaseEntity *pEntity);
 	float sub_101bea90(CBaseEntity *pEntity);	// "CStealthKillRules::GetDeafZoneArc": scope trace, the arc of table 0 (+0x00) at the entity's feat value - 1 (feat of the active weapon's kind, 10 or else 9), 0.0f when there is no weapon or the index is out of range
 	float sub_101be930(CBaseEntity *pEntity);	// "CStealthKillRules::GetDeafZoneArcDot": same lookup in table 1 (+0x50), else the constant at 0x104454c0
