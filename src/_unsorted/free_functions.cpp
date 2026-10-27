@@ -31691,6 +31691,19 @@ void sub_100dc140(int *p, int unused, int *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc200 size=0xb
+namespace lifted {
+extern char g_10454154;
+int sub_1000e2d2();
+}
+struct CUnknown100dc200 { int sub_100dc200(); };
+int CUnknown100dc200::sub_100dc200()
+{
+    *(int *)this = (int)&lifted::g_10454154;
+    return lifted::sub_1000e2d2();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc220 size=0xaa
 #include "CCollisionProperty.h"
 

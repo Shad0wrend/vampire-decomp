@@ -5782,6 +5782,7 @@
 0x10010226 func   ?sub_100697a0@@YAHXZ sub_100697a0
 0x1001022b func   ?sub_101b9880@@YIXPAH@Z sub_101b9880
 0x10010244 func   ?sub_10199240@@YAPAUPyObj@@PAU1@0@Z sub_10199240
+0x1001024e func   ?sub_100dc200@CUnknown100dc200@@QAEHXZ CUnknown100dc200::sub_100dc200
 0x10010253 func   ?sub_10315ec0@CUnknown10315ec0@@QAE_NPAUCUnknown10315ec0Ent@@@Z CUnknown10315ec0::sub_10315ec0
 0x10010258 func   ?sub_102f47b0@CUnknown102f47b0@@QAEMH@Z CUnknown102f47b0::sub_102f47b0
 0x1001025d func   ?sub_101f4170@CUnknown101f40f0@@QAEXPAVCUnknown101f5150@@PBD@Z CUnknown101f40f0::sub_101f4170
