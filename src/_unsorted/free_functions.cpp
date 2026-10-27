@@ -8544,6 +8544,19 @@ void sub_1005d830(void *pFilter, float delay, int nPoints, Vector *pPoints)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005d970 size=0xb
+namespace lifted {
+extern char g_1044dd00;
+int sub_100021d0();
+}
+struct CUnknown1005d970 { int sub_1005d970(); };
+int CUnknown1005d970::sub_1005d970()
+{
+    *(int *)this = (int)&lifted::g_1044dd00;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005dcc0 size=0x16f
 #include "SendProp.h"
 
