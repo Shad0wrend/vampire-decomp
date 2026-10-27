@@ -104087,6 +104087,17 @@ int CUnknown102ee640::sub_102ee640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ee660 size=0x8
+namespace lifted {
+struct C1000c6f3 { int sub_1000c6f3(); };
+}
+struct CUnknown102ee660 { int sub_102ee660(); };
+int CUnknown102ee660::sub_102ee660()
+{
+    return ((lifted::C1000c6f3 *)(*(int *)((char *)this + 0x30)))->sub_1000c6f3();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eeba0 size=0xa
 struct CUnknown102eeba0 { int p[6]; int a; void sub_102eeba0(int v); };
 // TARGET: CUnknown102eeba0::sub_102eeba0
