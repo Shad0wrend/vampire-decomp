@@ -105245,6 +105245,16 @@ TObj *TObj::sub_1030bec0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030c390 size=0x6
+namespace lifted {
+extern char g_10936b5c;
+}
+int sub_1030c390()
+{
+    return (int)&lifted::g_10936b5c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030c560 size=0x35
 // TARGET: CUnknown1030c560::sub_1030c560
 extern void (*g_109f366c)(const char *pszFormat, ...);

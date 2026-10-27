@@ -5693,6 +5693,7 @@
 0x100106d1 func   ??0CAI_Navigator@@QAE@H@Z CAI_Navigator::CAI_Navigator
 0x100106ea func   ?vfunc3@CTESpriteSpray@@UAEXPBVVector@@0@Z CTESpriteSpray::vfunc3
 0x10010712 func   ?vfunc495@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc495
+0x10010721 func   ?sub_1030c390@@YAHXZ sub_1030c390
 0x1001072b func   ?vfunc4@CTEBloodSprite@@UAEXHH@Z CTEBloodSprite::vfunc4
 0x10010758 func   ?sub_101dddb0@CUnknown101dddb0@@QAEXXZ CUnknown101dddb0::sub_101dddb0
 0x1001075d func   ?vfunc6@CEQ_SaveRestoreBlockHandler@@UAEXPAVIRestoreRead@@@Z CEQ_SaveRestoreBlockHandler::vfunc6
