@@ -54331,6 +54331,13 @@ void __stdcall sub_1019a900(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019a920 size=0x5
+char __stdcall sub_1019a920(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019a940 size=0x3
 void __stdcall sub_1019a940(int a0)
 {
