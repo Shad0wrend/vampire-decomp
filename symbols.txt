@@ -7030,6 +7030,7 @@
 0x10014d99 func   ?sub_10247030@@YA?AVSendProp@@PBD0@Z sub_10247030
 0x10014da3 func   ?sub_10230320@@YAXXZ sub_10230320
 0x10014dad func   ?vfunc618@CNPCMaker_Zombie@@QAEDD@Z CNPCMaker_Zombie::vfunc618
+0x10014dc1 func   ?vfunc3@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc3
 0x10014dd5 func   _item_w_remington_m_700 item_w_remington_m_700
 0x10014de4 func   ?sub_1038fa50@CUnknown1038fa50@@QAEXH@Z CUnknown1038fa50::sub_1038fa50
 0x10014dee func   ?sub_10304020@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@HPBMHHHHHHHH@Z CAI_Pathfinder::sub_10304020

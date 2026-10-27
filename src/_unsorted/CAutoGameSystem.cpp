@@ -13,6 +13,12 @@ void CAutoGameSystem::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029c70 size=0x1
+void CAutoGameSystem::vfunc3()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c290 size=0x1e
 #include "CDirtySpatialPartitionEntityList.h"
 
