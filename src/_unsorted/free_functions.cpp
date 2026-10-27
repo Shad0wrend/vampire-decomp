@@ -86602,6 +86602,12 @@ void CUnknown102496d0::sub_102496d0(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10249940 size=0x1
+void sub_10249940()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249960 size=0xb
 unsigned int __fastcall sub_10249960(char **self)
 {
