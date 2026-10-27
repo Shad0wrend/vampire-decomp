@@ -114763,6 +114763,32 @@ void CBaseCombatCharacter::sub_10338440(const int *pStat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10338570 size=0x1b1
+#include "CBaseCombatCharacter.h"
+#include "CUnknown10205030.h"
+#include "CUnknown102043a0.h"
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+extern void (*g_109f3650)(int level, const char *fmt, ...);
+int sub_10202780(int kind);
+
+bool CBaseCombatCharacter::sub_10338570(const int *pStat)
+{
+	ScopeTrace trace("CBaseCombatCharacter::VStatSell", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_109f3650(4, "VStatSell: %s %d\n", ((CUnknown102043a0 *)pStat)->sub_102043a0(), 1);
+	int cost = ((CUnknown10205030 *)pStat)->sub_10205240(this);
+	if (cost > 0) {
+		int id = pStat[1];
+		CVStatList_t *pList = CVStatListSet::Of(this)->Find(sub_10202780(pStat[0]));
+		if (pList->sub_10200ea0(id)) {
+			GetActiveStatList()->sub_10200fc0(0x22, cost);
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103387a0 size=0xf9
 #include "ScopeTrace.h"
 void sub_100138c2(void *p, int a, int b);
