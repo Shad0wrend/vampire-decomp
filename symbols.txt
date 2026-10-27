@@ -4806,6 +4806,7 @@
 0x1000dd5a func   ?sub_10385ab0@CNPC_VHumanUnit@@QAEDH@Z CNPC_VHumanUnit::sub_10385ab0
 0x1000dd5f func   ?sub_1019c950@@YAXPAH@Z sub_1019c950
 0x1000dd69 func   ?sub_10359de0@@YADXZ sub_10359de0
+0x1000dd6e func   ?sub_101e8bb0@CUnknown101e8bb0@@QAEMXZ CUnknown101e8bb0::sub_101e8bb0
 0x1000dd78 func   ?sub_1013cf40@@YAXPBM00PAM1@Z sub_1013cf40
 0x1000dda0 func   ?sub_10041c10@@YAHH@Z sub_10041c10
 0x1000dda5 func   ?vfunc587@CAI_BaseNPCTroika@@UAEDH@Z CAI_BaseNPCTroika::vfunc587
