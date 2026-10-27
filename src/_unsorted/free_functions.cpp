@@ -106780,6 +106780,17 @@ void CUnknown1030b8a0::sub_1030b8a0(float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b8e0 size=0xa
+namespace lifted {
+int __stdcall sub_10011298(int);
+}
+struct CUnknown1030b8e0 { int sub_1030b8e0(); };
+int CUnknown1030b8e0::sub_1030b8e0()
+{
+    return lifted::sub_10011298(*(int *)((char *)this + 0x24));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b950 size=0x25
 struct CUnknown1030b950 {
     char m_pad0000[0x34];
