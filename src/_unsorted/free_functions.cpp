@@ -63502,6 +63502,13 @@ void sub_101d4ca0(unsigned int *pFlags, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d4cf0 size=0x3
+char sub_101d4cf0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4e30 size=0x2b
 #include "CBaseEntity.h"
 
