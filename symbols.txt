@@ -1686,6 +1686,7 @@
 0x1000570e func   ?vfunc250@CBaseAnimatingOverlay@@QAEMM@Z CBaseAnimatingOverlay::vfunc250
 0x1000571d func   ?sub_100b12e0@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100b12e0
 0x10005722 func   ?vfunc176@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc176
+0x10005727 func   ?vfunc0@CTEBeamEntPoint@@UAEPAUServerClass@@XZ CTEBeamEntPoint::vfunc0
 0x1000572c func   ?sub_101c0b60@@YAXXZ sub_101c0b60
 0x1000574a func   ?sub_101f9590@@YAXH@Z sub_101f9590
 0x10005768 func   ?sub_10078b10@@YIXPAH@Z sub_10078b10

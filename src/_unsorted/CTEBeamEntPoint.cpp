@@ -13,3 +13,14 @@ CTEBeamEntPoint *CTEBeamEntPoint::vfunc2(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1005aef0 size=0x6
+#include "CTEBeamEntPoint.h"
+namespace lifted {
+extern char g_106bf34c;
+}
+ServerClass * CTEBeamEntPoint::vfunc0()
+{
+    return (ServerClass *)((int)&lifted::g_106bf34c);
+}
+// END FUNCTION
