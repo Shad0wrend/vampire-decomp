@@ -91091,6 +91091,16 @@ void CBaseCombatWeapon::sub_10250c50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10251790 size=0xc
+namespace lifted {
+int sub_10010ea6();
+}
+float sub_10251790()
+{
+    return *(float *)((char *)(lifted::sub_10010ea6()) + 0x4fe6c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102517e0 size=0xb4
 #include "CVDmg_t.h"
 
