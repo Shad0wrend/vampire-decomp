@@ -11,6 +11,16 @@ int __stdcall sub_10027850(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10027870 size=0x8
+namespace lifted {
+int sub_10001a9b();
+}
+int __stdcall sub_10027870(int a0)
+{
+    return lifted::sub_10001a9b();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027890 size=0x31
 struct inputdata_t { char pad[8]; float m_fl; char pad2[0xc]; int m_fieldType; };
 
