@@ -40,6 +40,7 @@
 	int sub_1017f770();	// stub 0x10007ee6
 	int sub_1017f8b0();	// stub 0x100063f7
 	char sub_10175180();	// stub 0x1000a6fa
+	void sub_10181580(unsigned int flags);	// ORs flags into the player's dword at +0x14b8 (as CAI_BaseNPCTroika::sub_102a97a0), stub 0x10013d63
 	void sub_10167e00();	// the use-entity (handle at +0x1040) range check of PlayerUse: the closest point of the entity's world bounds to the player's slot 193 position; out of reach (its slot 37 range not above the 2D distance) the entity gets slot 43(this); else slot 41(this) when it has no weapon name (slot 36) or the active weapon already has that classname, else when the player carries that weapon (sub_10335950) slot 457(name, 0) and slot 40(this)
 	void vfunc385(CBaseEntity *pWeapon, int a, char bFlag);	// slot 385 "Weapon_Drop"-like (plain member, ret 0xc): never for the "item_w_unarmed" weapon; the removal path of slot 151 (unless the active weapon is a stack of more than one) and then CBaseCombatCharacter::vfunc385; when the dropped weapon was the active one and the player has no default weapon switch, the entity of the handle a gets slot 66
 	void sub_1032d0c0(CBaseEntity *pWeapon, int a, int b);	// CBaseCombatCharacter::vfunc385 (stub 0x10002815), called directly
