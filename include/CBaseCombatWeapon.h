@@ -103,7 +103,7 @@ public:
 	virtual float vfunc337(int a, int b);
 	virtual void vfunc338(int a, int b);	// "CBaseCombatWeapon::Weapon_SetActivity"-like: called by CBaseCombatCharacter::Weapon_SetActivity with its two arguments (b is a float's bits: the duration the sequence is stretched to)
 	CBCW_V(339)
-	CBCW_V(340) CBCW_V(341)
+	CBCW_V(340) virtual void vfunc341(CBaseEntity *pPlayer);	// the weapon is picked up by pPlayer: its move children go (sub_1012c900), it joins the player's list at +0x8e0 (or +0x8f8 without the player's object at +0xa8), slot 225, becomes a non-solid item (solid flag 4 added, solid flags and solid type 0)
 	virtual int vfunc342(int a);	// the owner object (sub_102517b0) + 0x2188
 	virtual int vfunc343();
 	virtual int vfunc344();	// the owner object (sub_102517b0) + 0x2408
