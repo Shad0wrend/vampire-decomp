@@ -69608,6 +69608,14 @@ int CUnknown101e8f20::sub_101e8f20(CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8fe0 size=0x7
+struct CUnknown101e8fe0 { float sub_101e8fe0(); };
+float CUnknown101e8fe0::sub_101e8fe0()
+{
+    return *(float *)((char *)this + 0x38c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e9170 size=0xd9
 #include "CVStatList_t.h"
 #include "CUnknown101e9170.h"
