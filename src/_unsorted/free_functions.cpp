@@ -11719,6 +11719,14 @@ void CUnknown100732b0::sub_100732b0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100732d0 size=0x7
+struct CUnknown100732d0 { char sub_100732d0(); };
+char CUnknown100732d0::sub_100732d0()
+{
+    return *(char *)((char *)this + 0x178);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100732f0 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
