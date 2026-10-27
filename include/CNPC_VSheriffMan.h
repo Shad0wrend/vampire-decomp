@@ -79,5 +79,6 @@ public:
 	void sub_103b10f0();	// stub 0x1000165e: run instead of the schedule pick while the byte at +0x66e5 is set
 	float sub_103c6a20();	// stub 0x100010d2
 	char sub_103c67f0(float flValue);	// stub 0x1000fe11
+	bool sub_103b0c70(const Vector *pPos, float flMinDist);	// "CNPC_VSheriffMan::PositionClearForTeleport": scope trace (no entity name); false when the position is closer than flMinDist to this entity's origin, closer than 100.0f to the spawn origin (+0x66d4) or, with a live entity behind the handle at +0x628c, closer than flMinDist to that entity's origin; else true
 	void sub_103b1860();	// "CNPC_VSheriffMan::SetTeleportVel": scope trace (no entity name); with a target at +0x5ddc: the velocity towards it (target origin - own origin, normalised) scaled by distance / 1.5 is set as the absolute velocity (sub_100b2770) and the scale is kept at +0x66f0
 };
