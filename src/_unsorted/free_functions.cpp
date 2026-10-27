@@ -96003,6 +96003,17 @@ float CUnknown1028e830::sub_1028e830(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e870 size=0xd
+namespace lifted {
+int __stdcall sub_1000a632(int);
+}
+struct CUnknown1028e870 { int sub_1028e870(); };
+int CUnknown1028e870::sub_1028e870()
+{
+    return lifted::sub_1000a632(*(int *)((char *)this + 0x62cc));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e8b0 size=0x6a
 #include "CAI_BaseNPCTroika.h"
 
