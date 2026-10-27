@@ -3652,6 +3652,7 @@
 0x1000b181 func   ?sub_1011d8e0@@YAXPBD0ZZ sub_1011d8e0
 0x1000b186 func   ?sub_100b3350@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100b3350
 0x1000b190 func   ?vfunc113@CWorld@@UAEXXZ CWorld::vfunc113
+0x1000b19f func   ?sub_100b7a00@CUnknown100b7a00@@QAEPADXZ CUnknown100b7a00::sub_100b7a00
 0x1000b1ae func   ?vfunc6@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHHHHHHHHH@Z CTempEntsSystem::vfunc6
 0x1000b1c2 func   ?sub_1013a9f0@@YAXABVQuaternion@@0AAV1@@Z sub_1013a9f0
 0x1000b1d1 func   ?vfunc1@ConVar@@UAEDXZ ConVar::vfunc1

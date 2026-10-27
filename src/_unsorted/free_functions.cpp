@@ -24456,6 +24456,14 @@ extern "C" CBaseLandmark *info_landmark()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7a00 size=0x4
+struct CUnknown100b7a00 { char * sub_100b7a00(); };
+char * CUnknown100b7a00::sub_100b7a00()
+{
+    return (char *)this + -4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7a40 size=0x12
 struct CVirtSlots14 {
     virtual void vfunc0();
