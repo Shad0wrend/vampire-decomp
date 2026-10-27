@@ -95,7 +95,8 @@ public:
 	EVS(222) EVS(223) EVS(224) EVS(225) EVS(226) EVS(227) EVS(228) EVS(229)
 	EVS(230) EVS(231)
 	virtual void slot232(int a);	// "UpdatePhysicsShadow"
-	EVS(233) EVS(234) EVS(235) EVS(236) EVS(237) EVS(238) EVS(239)
+	virtual int slot233(CEntityVSlots **pOut, int nMax);	// fills the array with the entities it touches / carries, answers their count
+	EVS(234) EVS(235) EVS(236) EVS(237) EVS(238) EVS(239)
 	EVS(240) EVS(241) EVS(242)
 	virtual void slot243(int a, int b);	// door: starts the open / close movement
 	virtual void slot244(int a);	// door: starts the toggle movement
