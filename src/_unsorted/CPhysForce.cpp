@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10026040 size=0x6
+#include "CPhysForce.h"
+namespace lifted {
+extern char g_10536e28;
+}
+datamap_t * CPhysForce::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_10536e28);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027690 size=0x1e
 #include "CPhysForce.h"
 
