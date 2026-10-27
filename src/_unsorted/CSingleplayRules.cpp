@@ -98,6 +98,12 @@ void CSingleplayRules::vfunc44(CBaseEntity * a0, CMPDamageInfo * a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101abf60 size=0x3
+void CSingleplayRules::vfunc45(CBaseEntity * a0, CMPDamageInfo * a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101abf80 size=0x9
 extern float g_104492dc;
 float CSingleplayRules::vfunc49(int a) { return g_104492dc; }
