@@ -2303,6 +2303,14 @@ void UtlMem::sub_10032f50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032f90 size=0x3
+struct CUnknown10032f90 { void * sub_10032f90(); };
+void * CUnknown10032f90::sub_10032f90()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032fb0 size=0x6a
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
