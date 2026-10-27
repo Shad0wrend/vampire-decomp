@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101c4980 size=0x6
+#include "CBaseTrigger.h"
+namespace lifted {
+extern char g_1059d570;
+}
+datamap_t * CBaseTrigger::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1059d570);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4f40 size=0xff
 #include "CBaseTrigger.h"
 #include "ScopeTrace.h"
