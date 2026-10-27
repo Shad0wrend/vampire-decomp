@@ -13975,6 +13975,14 @@ CUnknown1007a060Elem *CUnknown1007a060::sub_1007a060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a250 size=0x4
+struct CUnknown1007a250 { int sub_1007a250(); };
+int CUnknown1007a250::sub_1007a250()
+{
+    return *(int *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a270 size=0x1a
 struct S1007a270 {
 	int *m_pMemory; int m_allocationCount; int m_growSize; int m_size;
