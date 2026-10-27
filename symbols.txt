@@ -7664,6 +7664,7 @@
 0x10015ba4 func   ?sub_102ca030@@YA_NXZ sub_102ca030
 0x10015bae func   ?sub_103e49b0@@YAHXZ sub_103e49b0
 0x10015bb3 func   ?vfunc0@CSolidSetDefaults@@UAEXHPBD0@Z CSolidSetDefaults::vfunc0
+0x10015bb8 func   ?sub_102bec90@@YAHXZ sub_102bec90
 0x10015bc2 func   ?vfunc4@CRestore@@UAEXPAXPAUtypedescription_t@@H@Z CRestore::vfunc4
 0x10015bc7 func   ?sub_10315800@@YAPAVCUnknown103164c0@@PAVCBaseEntity@@PBD@Z sub_10315800
 0x10015bcc func   ?sub_103239a0@CBaseCombatCharacter@@QAEFPBD@Z CBaseCombatCharacter::sub_103239a0

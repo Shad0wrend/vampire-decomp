@@ -95577,6 +95577,16 @@ int sub_102bec60(int *a, int *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bec90 size=0x6
+namespace lifted {
+extern char g_10924248;
+}
+int sub_102bec90()
+{
+    return (int)&lifted::g_10924248;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102becb0 size=0x59
 #include "CUnknown102becb0.h"
 
