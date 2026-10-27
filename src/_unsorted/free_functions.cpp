@@ -9538,6 +9538,19 @@ CTEGlowSprite *CTEGlowSprite::sub_100639b0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10063a20 size=0xb
+namespace lifted {
+extern char g_1044defc;
+int sub_100021d0();
+}
+struct CUnknown10063a20 { int sub_10063a20(); };
+int CUnknown10063a20::sub_10063a20()
+{
+    *(int *)this = (int)&lifted::g_1044defc;
+    return lifted::sub_100021d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10063d70 size=0x11e
 #include "SendProp.h"
 
