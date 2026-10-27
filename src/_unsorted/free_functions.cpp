@@ -92963,6 +92963,13 @@ int __stdcall sub_10290660(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102906e0 size=0x3
+char sub_102906e0()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293d70 size=0x10
 void __fastcall sub_10293d70(int *p)
 {
