@@ -3490,6 +3490,7 @@
 0x1000aa56 func   ?sub_102b57c0@CAI_BaseNPCTroika@@QAEDH@Z CAI_BaseNPCTroika::sub_102b57c0
 0x1000aa5b func   ?vfunc5@CWeaponIGeneric@@QAEPAV1@I@Z CWeaponIGeneric::vfunc5
 0x1000aa7e func   ?sub_10050860@CUnknown10050860@@QAEPBDXZ CUnknown10050860::sub_10050860
+0x1000aa83 func   ?sub_103ee020@@YAHXZ sub_103ee020
 0x1000aaba func   ?sub_10252120@CBaseCombatWeapon@@QAEPADHH@Z CBaseCombatWeapon::sub_10252120
 0x1000aabf func   ?sub_101ec6c0@CUnknown101ec6c0@@QAEXH@Z CUnknown101ec6c0::sub_101ec6c0
 0x1000aac4 func   ?sub_1029fbe0@@YIXPAUThreatNpcView@@HHPAUThreatRecView@@@Z sub_1029fbe0

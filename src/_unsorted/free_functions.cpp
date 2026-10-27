@@ -123272,6 +123272,13 @@ void CWeaponUnit::sub_103ed920()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee020 size=0x3
+int sub_103ee020()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee100 size=0x72
 #include "SendProp.h"
 
