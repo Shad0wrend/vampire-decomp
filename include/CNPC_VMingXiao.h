@@ -91,7 +91,11 @@ public:
 	float m_flSlotValue[6];	// +0x66dc
 	float m_flSlotTimeB[6];	// +0x66f4
 	int m_n670c;	// +0x670c: the count the delay is scaled by (6 - count)
-	char m_pad6710[0x673c - 0x6710];
+	char m_pad6710[8];
+	EHANDLE m_h6718;	// +0x6718: the grabbed target
+	int m_nSide671c;	// +0x671c: 4 for the right tentacle, else the left one
+	char m_pad6720[0x6738 - 0x6720];
+	EHANDLE m_h6738;	// +0x6738: the phys_animlink
 	int m_nMode673c;	// +0x673c: the grabbing (2) / throwing (4) mode
 	char m_pad6740[0x6744 - 0x6740];
 	char m_bActive6744;	// +0x6744
