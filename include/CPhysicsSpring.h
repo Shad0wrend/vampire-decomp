@@ -30,6 +30,9 @@ public:
 	void vfunc103();	// slot 103 (called directly): SetSolid(0) on the collision property, copies the origin to m_vecStart and recomputes the length when it is positive-or-zero
 	void vfunc123();	// slot 123 "CPhysicsSpring::DrawDebugGeometryOverlays": with the overlay bit 4 draws the spring (start to the point at the length along the line, blue; from there to the end, red), then the base's
 	void sub_10005880();	// CBaseEntity::vfunc123 (stub 0x10005880), called directly
+	void vfunc113();	// slot 113 (called directly): the base's slot 113, then looks up the two named entities' physics objects (sub_1004d6a0), orders the end points by their distance to the first object and creates the spring (slot 11 of the physics environment); with no object, or the same one twice, prints \"ERROR: Can't init spring from %s to %s\" and removes the entity
+	void sub_10001226();	// CBaseEntity::vfunc113 (stub 0x10001226), called directly
+	const char *sub_100ab4f0();	// stub 0x1000b5cd: the text of the entity name for a warning
 
 	char m_pad0004[0x224 - 4];
 	unsigned char m_fTextOverlayFlags;	// 0x224: bit 0 = text overlay shown, bit 2 = geometry overlay shown
