@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x102124a0 size=0x6
+#include "CGameSign.h"
+namespace lifted {
+extern char g_105ab98c;
+}
+datamap_t * CGameSign::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_105ab98c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102125c0 size=0x5
 #include "CGameSign.h"
 bool CGameSign::vfunc32(int a0)
