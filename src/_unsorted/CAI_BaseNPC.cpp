@@ -118,6 +118,30 @@ void CAI_BaseNPC::vfunc538()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026ce30 size=0x64
+#include "CAI_BaseNPC.h"
+#include "CCineNPC.h"
+#include "CBaseEntity.h"
+#include "ehandle.h"
+
+struct NPCHandle1538View {
+	char m_pad0000[0x1538];
+	EHANDLE m_h1538;	// 0x1538
+	int m_n153c;	// 0x153c
+	char m_pad1540[0x5bf0 - 0x1540];
+	CCineNPCSlot m_slot5bf0;	// 0x5bf0
+};
+
+void CAI_BaseNPC::vfunc380()
+{
+	NPCHandle1538View *pView = (NPCHandle1538View *)this;
+	pView->m_slot5bf0.sub_100cd660((pView->m_n153c != -1) ? pView->m_h1538.Get() : 0, (CCineNPC *)this, 0);
+	sub_10005d94();
+	vfunc416(0);
+	sub_10007ea0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026d7f0 size=0x75
 struct SHandleEntry { void *p; unsigned serial; int pad; };
 struct SEntList { int pad; SHandleEntry e[1]; };
