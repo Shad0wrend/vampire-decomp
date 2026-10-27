@@ -108,8 +108,6 @@ int CNPC_VHuman::vfunc376(int act)
 #include "CUnknown1025ddd0.h"
 #include "CUnknown1070b244.h"
 
-struct SGlobalVars { char pad[0xc]; float curtime; };
-extern SGlobalVars *g_1070b228;
 extern CUnknown1070b244 *g_1070b244;
 
 struct SDifficulty {
@@ -153,7 +151,7 @@ char CNPC_VHumanUnit::sub_10385ab0(int unused)
 		pView->m_b6078 = 1;
 		return 1;
 	}
-	if (g_1070b228->curtime >= pView->m_f6070) {
+	if (gpGlobals->curtime >= pView->m_f6070) {
 		bool bOK = true;
 		double f = g_10924a1c->s1() ? 0.0f : g_10924a1c->m28;
 		if ((float)(f + f) < pView->m_f6268 && vfunc308())
@@ -163,7 +161,7 @@ char CNPC_VHumanUnit::sub_10385ab0(int unused)
 				pView->m_pGroup->sub_1025db70((CBaseEntity *)this);
 				if ((pView->m_flags5b84 & 0x1000) == 0x1000 || pView->m_pGroup->sub_1025db70((CBaseEntity *)this)) {
 					pView->m_b6078 = 1;
-					pView->m_f6074 = g_1070b244->vfunc1(7.5f, 15.0f) + g_1070b228->curtime;
+					pView->m_f6074 = g_1070b244->vfunc1(7.5f, 15.0f) + gpGlobals->curtime;
 					g_10924edc->s1();
 					return 1;
 				}
@@ -179,8 +177,6 @@ char CNPC_VHumanUnit::sub_10385ab0(int unused)
 #include "CNPC_VHuman.h"
 #include "CBaseCombatWeapon.h"
 
-struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
-extern CGlobalVarsX *g_1070b228;
 
 struct CRandomX {
 	virtual void v0();
@@ -200,7 +196,7 @@ char CNPC_VHuman::vfunc600(int unused)
 	if ((flags & 0x18000) && !*((char *)this + 0x6078)) {
 		if ((*(CAI_NamedThing **)((char *)this + 0x65e8))->sub_1025dca0(this, 0)) {
 			*((char *)this + 0x6078) = 1;
-			*(float *)((char *)this + 0x6074) = g_1070b244->RandomFloat(7.5f, 15.0f) + g_1070b228->m_curtime;
+			*(float *)((char *)this + 0x6074) = g_1070b244->RandomFloat(7.5f, 15.0f) + gpGlobals->curtime;
 			g_10924edc->v1();
 			return 1;
 		}
@@ -220,13 +216,7 @@ struct CHumanTimeScale
 	char m_pad0004[0x24];
 	float m_f28;
 };
-struct CHumanGlobals
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
 extern CHumanTimeScale *g_10924a1c;
-extern CHumanGlobals *g_1070b228;
 extern float g_104454c4;
 char __fastcall sub_1025db50(int *p);
 
@@ -237,7 +227,7 @@ char CNPC_VHuman::vfunc602()
 		return 0;
 	if (((CEntityVSlots *)this)->slot308())
 	{
-		if (g_1070b228->curtime >= m_f6074)
+		if (gpGlobals->curtime >= m_f6074)
 			return 1;
 	}
 	else

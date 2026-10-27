@@ -82,8 +82,6 @@ bool CNPC_Crow::vfunc525(int a)
 // FUNCTION: 0x10358ce0 size=0x17a
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"
-struct CGlobalsView { char pad[0xc]; float curtime; };
-extern CGlobalsView *g_1070b228;
 extern CUnknown1070b244 *g_1070b244;
 
 // TARGET: CNPC_Crow::vfunc438
@@ -95,7 +93,7 @@ int CNPC_Crow::vfunc438()
 		sub_10269b50(0x79);
 		return 0x49;
 	}
-	if (!(sub_100b3700() & 1) && g_1070b228->curtime > 2.0)
+	if (!(sub_100b3700() & 1) && gpGlobals->curtime > 2.0)
 		return 0x49;
 	if (sub_10269aa0(0x6a)) return 0x49;
 	if (sub_10269aa0(0x6d)) return 0x49;
@@ -119,8 +117,8 @@ int CNPC_Crow::vfunc438()
 	}
 	int state = *(int *)((char *)this + 0x5cc0);
 	if (state > 0 && state <= 3 && sub_1027d990() != 2) {
-		if (g_1070b228->curtime > *(float *)((char *)this + 0x5f48))
-			*(float *)((char *)this + 0x5f48) = g_1070b244->vfunc1(10.0f, 20.0f) + g_1070b228->curtime;
+		if (gpGlobals->curtime > *(float *)((char *)this + 0x5f48))
+			*(float *)((char *)this + 0x5f48) = g_1070b244->vfunc1(10.0f, 20.0f) + gpGlobals->curtime;
 		return 0x44;
 	}
 	return sub_1028a380();

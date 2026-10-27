@@ -4,8 +4,6 @@
 // FUNCTION: 0x103e2ad0 size=0x8c
 #include "CWeaponRanged_FlameThrower.h"
 
-struct GlobalVarsT { char pad[0xc]; float curtime; };
-extern GlobalVarsT *g_1070b228;
 
 CWeaponRanged_FlameThrower::CWeaponRanged_FlameThrower() : m_n1530(-1), m_n1554(0), m_n1558(0), m_n155c(0), m_n1560(0), m_n1564(0)
 {
@@ -13,8 +11,8 @@ CWeaponRanged_FlameThrower::CWeaponRanged_FlameThrower() : m_n1530(-1), m_n1554(
 	m_n151c = 0;
 	m_b1518 = 0;
 	m_n1510 = -1;
-	m_f1524 = g_1070b228->curtime;
-	m_f1528 = g_1070b228->curtime;
+	m_f1524 = gpGlobals->curtime;
+	m_f1528 = gpGlobals->curtime;
 	m_n1514 = 0;
 	m_n152c = 0;
 	for (int i = 0; i < 0x2ee; i++)

@@ -59,12 +59,6 @@ void CNPC_VTzimisceRunner::vfunc104()
 #include "CAI_Motor.h"
 #include "CEntityVSlots.h"
 
-struct GlobalVarsView
-{
-	char m_pad0000[0xc];
-	float curtime;	// 0x0c
-};
-extern GlobalVarsView *g_1070b228;
 void __fastcall sub_102e0b40(float *pMotor);
 
 // TARGET: CNPC_VTzimisceRunner::vfunc444
@@ -80,7 +74,7 @@ void CNPC_VTzimisceRunner::vfunc444(int *pTask)
 		Vector vecPos = *((CEntityVSlots *)((CEntityVSlots *)this)->slot167())->slot217();
 		m_pMotor->sub_102e20b0(&vecPos.x, -1.0f);
 	}
-	if (g_1070b228->curtime >= m_flTime5db4) {
+	if (gpGlobals->curtime >= m_flTime5db4) {
 		m_n63ec = 0;
 		sub_10273e80(0);
 	}

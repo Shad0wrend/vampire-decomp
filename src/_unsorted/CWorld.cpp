@@ -18,8 +18,6 @@ void CWorld::vfunc130(int a)
 #include "CUnknown101466e0.h"
 #include "ScopeTrace.h"
 
-struct CWorldCtorGlobals { char pad[0xc]; float curtime; };
-extern CWorldCtorGlobals *g_1070b228;
 extern CUnknown1070b22c *g_1070b22c;
 void sub_104121d0();
 void sub_1028d770();
@@ -30,7 +28,7 @@ CWorld::CWorld() : CBaseEntity(0)
     m_flags268 |= 0x400;
     m_bColdWorld = 0;
     ((CServerNetworkProperty *)((char *)this + 0x2d4))->sub_101ab5c0(g_1070b22c->vfunc38(0));
-    *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.05;
+    *(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.05;
     sub_104121d0();
     ((CUnknown101466e0 *)((char *)this + 0x1b0))->sub_101466e0(1);
     const char *name = m_name26c;
@@ -110,13 +108,7 @@ struct CCvar_1023bc20
 	virtual void v1();
 	virtual ConVar *FindVar(const char *pszName);
 };
-struct CGlobalVars_1023bc20
-{
-	char m_pad0000[0x14];
-	int maxClients;	// 0x14
-};
 extern CCvar_1023bc20 *g_1070b234;
-extern CGlobalVars_1023bc20 *g_1070b228;
 extern int g_10752e9c;
 extern int g_109247e0;
 extern char g_10924fb8;
@@ -132,7 +124,7 @@ void CWorld::vfunc113()
 	int n = m_n49c > 2 ? 2 : (m_n49c < 0 ? 0 : m_n49c);
 	if (n != m_n49c) {
 		m_n49c = n;
-		for (int i = 1; i <= g_1070b228->maxClients; i++) {
+		for (int i = 1; i <= gpGlobals->maxClients; i++) {
 			CWorldPlayer *pPlayer = sub_101cd9e0(i);
 			if (pPlayer)
 				pPlayer->sub_10170750();

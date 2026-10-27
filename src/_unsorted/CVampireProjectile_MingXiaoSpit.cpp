@@ -33,13 +33,8 @@ struct SChar {
 	virtual Vector vfunc192();
 };
 
-struct SGlobals {
-	char pad[0xc];
-	float curtime;
-};
 
 extern CGlobalEntityList *g_10566458;
-extern SGlobals *g_1070b228;
 extern Vector g_1070d9d0;
 extern const float g_104e37a4;
 void sub_101d26b0(Vector origin, const char *name, CBaseEntity *pEnt, int a, int b, int c);
@@ -56,7 +51,7 @@ void CVampireProjectile_MingXiaoSpit::vfunc266(CBaseEntity *pOther)
 		|| pSlot->m_pEntity == 0) {
 		CBaseCombatCharacter *pChar = *(CBaseCombatCharacter **)((char *)pOther + 0x9c);
 		if (pChar) {
-			float t = g_1070b228->curtime;
+			float t = gpGlobals->curtime;
 			m_flExpireTime = t + g_104e37a4;
 			m_hTarget = *((SChar *)pChar)->vfunc1();
 			pChar->sub_103326b0(500.0f);
@@ -82,8 +77,6 @@ void CVampireProjectile_MingXiaoSpit::vfunc266(CBaseEntity *pOther)
 #include "CBaseCombatCharacter.h"
 #include "CVampireProjectile_MingXiaoSpit.h"
 
-struct S_1070b228 { char pad[0xc]; float curtime; };
-extern S_1070b228 *g_1070b228;
 
 struct EntInfo { CBaseEntity *m_pEntity; int m_serial; int m_unused; };
 struct EntInfoList { int m_unused; EntInfo m_entries[1]; };
@@ -100,7 +93,7 @@ static inline CBaseEntity *ResolveHandle(volatile unsigned int *pHandle)
 
 void CVampireProjectile_MingXiaoSpit::vfunc134()
 {
-	if (g_1070b228->curtime >= m_flExpireTime) {
+	if (gpGlobals->curtime >= m_flExpireTime) {
 		*(volatile float *)&m_flExpireTime = 3.4028235e38f;
 		CBaseEntity *pEnt = ResolveHandle(&m_hTarget);
 		if (pEnt && *(CBaseCombatCharacter **)((char *)pEnt + 0x9c)) {

@@ -50,12 +50,6 @@ int CNPC_VCamera::vfunc438()
 #include "CNPC_VCamera.h"
 #include "CEntityVSlots.h"
 
-struct GlobalVarsView
-{
-	char m_pad0000[0xc];
-	float curtime;	// 0x0c
-};
-extern GlobalVarsView *g_1070b228;
 extern char g_1093408c;
 
 struct CameraSlots432
@@ -81,14 +75,14 @@ void CNPC_VCamera::vfunc431()
 		sub_1026a0f0();
 		if (!sub_1026c3d0()) {
 			if (!g_1093408c)
-				m_flNextThink = g_1070b228->curtime + 0.1f;
+				m_flNextThink = gpGlobals->curtime + 0.1f;
 		} else {
 			((CameraSlots432 *)this)->slot432(0);
 			m_flPrev6254[0] = m_flCur6244[0];
 			m_flPrev6254[1] = m_flCur6244[1];
 			m_flPrev6254[2] = m_flCur6244[2];
 			m_flPrev6254[3] = m_flCur6244[3];
-			m_flCur6244[0] = m_flNextThink = g_1070b228->curtime + 0.2;
+			m_flCur6244[0] = m_flNextThink = gpGlobals->curtime + 0.2;
 			m_flCur6244[1] = m_flNextThink;
 			m_flCur6244[2] = m_flNextThink;
 			m_flCur6244[3] = m_flNextThink;

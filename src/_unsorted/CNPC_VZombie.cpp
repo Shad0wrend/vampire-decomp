@@ -39,12 +39,6 @@ void CNPC_VZombie::vfunc104()
 
 __declspec(dllimport) void __cdecl DevMsg(const char *pszFormat, ...);
 
-struct CGlobalVarsView
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;	// 0x0c
-};
-extern CGlobalVarsView *g_1070b228;
 extern CUnknown10739d08 g_10739d08;
 extern CUnknown1070b244 *g_1070b244;
 
@@ -63,13 +57,13 @@ void CNPC_VZombie::vfunc432(int a)
 	}
 	sub_10360160(a);
 	if ((m_nMode6678 == 1 || m_nMode6678 == 0) && m_nState0fec != 0x4b && sub_10269aa0(0x46)) {
-		if (g_10739d08.sub_101e8a90() <= m_flPlayerDist6264 && g_10739d08.sub_101e8ab0() >= m_flPlayerDist6264 && g_1070b228->m_flCurTime >= m_flNextLunge66d8) {
+		if (g_10739d08.sub_101e8a90() <= m_flPlayerDist6264 && g_10739d08.sub_101e8ab0() >= m_flPlayerDist6264 && gpGlobals->curtime >= m_flNextLunge66d8) {
 			CEntityPlayerView *pEnemy = (CEntityPlayerView *)EHandle_Get(m_hEnemy628c);
 			if (pEnemy && pEnemy->m_pPlayer) {
 				int roll = g_1070b244->vfunc2(0, 99);
 				if (g_10739d08.sub_101e8b30() > roll) {
 					sub_102ae750(0x16a, 0);
-					m_flNextLunge66d8 = g_10739d08.sub_101e8c10() + g_1070b228->m_flCurTime;
+					m_flNextLunge66d8 = g_10739d08.sub_101e8c10() + gpGlobals->curtime;
 				}
 			}
 		}

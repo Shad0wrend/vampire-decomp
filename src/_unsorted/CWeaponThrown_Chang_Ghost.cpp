@@ -71,8 +71,6 @@ void CWeaponThrown_Chang_Ghost::vfunc103()
 #include "CWeaponThrown_Chang_Ghost.h"
 #include "CUnknown1070b244.h"
 
-struct CGlobalVarsView { char pad[0xc]; float curtime; };
-extern CGlobalVarsView *g_1070b228;
 extern CUnknown1070b244 *g_1070b244;
 extern float g_104e1614;
 extern float g_104e1624;
@@ -99,8 +97,8 @@ void CWeaponThrown_Chang_Ghost::vfunc372(int a, const Vector *pDir)
     sub_100b2770(&vecDir.x);
     m_pfnTouch = (void *)sub_10002130;
     sub_100ac4e0((int)sub_10011a04, 0, 0);
-    m_flNextThink = g_1070b228->curtime + 0.1f;
-    m_flExpireTime = g_104e1624 + g_1070b228->curtime;
+    m_flNextThink = gpGlobals->curtime + 0.1f;
+    m_flExpireTime = g_104e1624 + gpGlobals->curtime;
 }
 // END FUNCTION
 

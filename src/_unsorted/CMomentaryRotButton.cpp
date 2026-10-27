@@ -7,12 +7,6 @@
 #include "CGlobalEntityList.h"
 #include "CEntityVSlots.h"
 
-struct GlobalVarsView
-{
-	char m_pad0000[0xc];
-	float curtime;	// 0x0c
-};
-extern GlobalVarsView *g_1070b228;
 extern CGlobalEntityList *g_10566458;
 void sub_1000a033();
 
@@ -37,7 +31,7 @@ void CMomentaryRotButton::vfunc173(int a, int b, int c, int d)
 	float flAngle = sub_100ca630((float *)((CEntityVSlots *)this)->slot221());
 	sub_100cacb0(flAngle, bFlag);
 	((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000a033, 0, 0);
-	m_flNextThink = g_1070b228->curtime;
+	m_flNextThink = gpGlobals->curtime;
 }
 // END FUNCTION
 

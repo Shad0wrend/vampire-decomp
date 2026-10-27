@@ -40,8 +40,6 @@ CGameRules *CMultiplayRules::vfunc0(unsigned int flags)
 #include "CMultiplayRules.h"
 #include "ConVar.h"
 
-struct GlobalVarsX { int pad0[3]; float curtime; int pad1; int maxClients; };
-extern GlobalVarsX *g_1070b228;
 extern char g_1070ba2c;
 extern ConVar *g_1070ae7c;
 extern ConVar *g_1070aa8c;
@@ -63,7 +61,7 @@ void CMultiplayRules::vfunc16()
 	sub_10128f50();
 	RulesView10141150 *r = (RulesView10141150 *)this;
 	if (g_1070ba2c) {
-		if (r->m_f08 < g_1070b228->curtime && (r->m_b0c || r->m_f08 + 120.0f < g_1070b228->curtime))
+		if (r->m_f08 < gpGlobals->curtime && (r->m_b0c || r->m_f08 + 120.0f < gpGlobals->curtime))
 			vfunc79();
 	} else {
 		float flTimeLimit = (g_1070ae7c->vfunc1() ? 0.0f : g_1070ae7c->m_fValue) * 60.0f;
@@ -72,12 +70,12 @@ void CMultiplayRules::vfunc16()
 			flFragLimit = 0.0f;
 		else
 			flFragLimit = g_1070aa8c->m_fValue;
-		if (flTimeLimit != 0.0f && g_1070b228->curtime >= flTimeLimit) {
+		if (flTimeLimit != 0.0f && gpGlobals->curtime >= flTimeLimit) {
 			vfunc80();
 			return;
 		}
 		if (flFragLimit != 0.0f) {
-			for (int i = 1; i <= g_1070b228->maxClients; i++) {
+			for (int i = 1; i <= gpGlobals->maxClients; i++) {
 				PlayerView10141150 *p = sub_1000ac8b(i);
 				if (p && (float)p->m_nFrags >= flFragLimit) {
 					vfunc80();
@@ -309,15 +307,9 @@ void CMultiplayRules::vfunc35(CBaseEntity *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x10141a90 size=0xb
-struct Unk1070b228 {
-	char pad[0xc];
-	float m_value;
-};
-extern Unk1070b228 *g_1070b228;
-
 float CMultiplayRules::vfunc38(int a)
 {
-	return g_1070b228->m_value;
+	return gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -414,9 +406,7 @@ int CMultiplayRules::vfunc62(int)
 #include "CReliableBroadcastFilter.h"
 #include "IVEngineServer.h"
 
-struct CGlobalVarsView { char pad[0xc]; float curtime; };
 extern IVEngineServer *g_1070b22c;
-extern CGlobalVarsView *g_1070b228;
 extern char g_1070ba2c;
 
 // TARGET: CMultiplayRules::vfunc80
@@ -426,7 +416,7 @@ void CMultiplayRules::vfunc80()
 		CReliableBroadcastFilter filter;
 		g_1070b22c->vfunc65(&filter, 0x1a);
 		g_1070b22c->vfunc66();
-		*(float *)&m_n08 = g_1070b228->curtime + 6.0f;
+		*(float *)&m_n08 = gpGlobals->curtime + 6.0f;
 		g_1070ba2c = 1;
 		m_b0c = 0;
 	}

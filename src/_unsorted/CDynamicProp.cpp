@@ -44,14 +44,8 @@ struct IEngineRandom
 	virtual float RandomFloat(float flMin, float flMax);
 };
 
-struct SGlobalVars
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;	// 0x0c
-};
 
 extern IEngineRandom *g_1070b244;
-extern SGlobalVars *g_1070b228;
 void sub_1000d2ce();
 void __fastcall sub_10012eef(CDynamicProp *self);
 
@@ -67,7 +61,7 @@ void CDynamicProp::vfunc103()
 	if (bRandom) {
 		((CBaseEntity *)this)->sub_100b3640(0x40000);
 		((CBreakableProp *)this)->sub_10007fe5((void *)sub_1000d2ce, 0, 0);
-		m_flNextAnimTime = g_1070b244->RandomFloat(m_flAnimDelayMin, m_flAnimDelayMax) + g_1070b228->m_flCurTime;
+		m_flNextAnimTime = g_1070b244->RandomFloat(m_flAnimDelayMin, m_flAnimDelayMax) + gpGlobals->curtime;
 		*(float *)((char *)this + 0x17c) = m_flNextAnimTime + 0.1;
 	}
 	((CPropSlots *)this)->vfunc223();

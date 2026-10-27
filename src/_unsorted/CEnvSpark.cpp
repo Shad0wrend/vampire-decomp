@@ -9,8 +9,6 @@ struct CSparkRandom {
     virtual float RandomFloat(float flMin, float flMax);
 };
 extern CSparkRandom *g_1070b244;
-struct CSparkGlobals { char pad[0xc]; float curtime; };
-extern CSparkGlobals *g_1070b228;
 void sub_10002126();
 
 struct CEnvSparkFields {
@@ -31,7 +29,7 @@ void CEnvSpark::vfunc103()
     p->m_n1f0 = 0;
     if (p->m_nSpawnFlags & 0x40)
         sub_100ac4e0((void *)sub_10002126, 0, 0);
-    p->m_flNextThink = g_1070b228->curtime + (g_1070b244->RandomFloat(0, 1.5f) + 0.1);
+    p->m_flNextThink = gpGlobals->curtime + (g_1070b244->RandomFloat(0, 1.5f) + 0.1);
     if (p->m_f450 < 0.0f)
         p->m_f450 = 0;
     vfunc104();

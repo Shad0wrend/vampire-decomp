@@ -6,12 +6,6 @@
 
 extern char g_10569a70[];
 
-struct SMicGlobals
-{
-	char pad[0xc];
-	float curtime;
-};
-extern SMicGlobals *g_1070b228;
 
 void CEnvMicrophone::vfunc103()
 {
@@ -25,7 +19,7 @@ void CEnvMicrophone::vfunc103()
 		m_flSensitivity = 10.0f;
 	m_flSmoothFactor = (m_flSmoothFactor > 0.9) ? 0.9 : ((m_flSmoothFactor < 0.0f) ? 0.0f : m_flSmoothFactor);
 	if (!m_bDisabled)
-		*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
+		*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.1;
 }
 // END FUNCTION
 
@@ -79,13 +73,7 @@ struct CMicSound	// the fields of a sound record used here (see CSoundEntSlot)
 	int m_iNext;	// 0x18
 };
 
-struct CMicGlobals
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;
-};
 
-extern CMicGlobals *g_1070b228;
 extern float g_10459634;	// 0.005f
 int sub_101bb0f0();	// CSoundEnt::ActiveList (stub 0x10012120)
 
@@ -111,6 +99,6 @@ void CEnvMicrophone::vfunc134()
 		else
 			m_SoundLevel.Set((1.0f - m_flSmoothFactor) * flMax + m_SoundLevel.Get() * m_flSmoothFactor, this, this);
 	}
-	m_flNextThink = g_1070b228->m_flCurTime + 0.1;
+	m_flNextThink = gpGlobals->curtime + 0.1;
 }
 // END FUNCTION

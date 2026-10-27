@@ -146,8 +146,6 @@ void CSoundSchemeManager::vfunc5()
 
 struct CSoundLoopRec { char m_pad[0x44]; float m_flVolume; char m_pad48[0x58 - 0x48]; };
 struct CSoundRandRec { char m_pad[0x1c]; float m_flEnd; };
-struct SGlobalVars { char m_pad[0xc]; float m_flCurtime; };
-extern SGlobalVars *g_1070b228;
 
 struct CSoundSchemeManagerView
 {
@@ -159,8 +157,8 @@ struct CSoundSchemeManagerView
 void CSoundSchemeManager::vfunc7()
 {
 	CSoundSchemeManagerView *p = (CSoundSchemeManagerView *)this;
-	float flDelta = g_1070b228->m_flCurtime - m_f0c;
-	m_f0c = g_1070b228->m_flCurtime;
+	float flDelta = gpGlobals->curtime - m_f0c;
+	m_f0c = gpGlobals->curtime;
 	sub_10228e80(sub_10228a80());
 	CSoundFadeItem *pTrack = (CSoundFadeItem *)m_buf14;
 	for (int i = 0; i < 4; i++) {
@@ -176,7 +174,7 @@ void CSoundSchemeManager::vfunc7()
 	}
 	for (int k = 0; k < p->m_Rands.Count(); ) {
 		float flEnd = p->m_Rands[k].m_flEnd;
-		if (flEnd <= g_1070b228->m_flCurtime)
+		if (flEnd <= gpGlobals->curtime)
 			p->m_Rands.Remove(k);
 		else
 			k++;

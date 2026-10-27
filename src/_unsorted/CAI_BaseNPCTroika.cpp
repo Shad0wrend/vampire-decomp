@@ -1275,12 +1275,10 @@ char CAI_BaseNPCTroika::vfunc590()
 
 // FUNCTION: 0x102ad110 size=0x20
 #include "CAI_BaseNPCTroika.h"
-struct CUnknownGlobals1070b228 { int m_pad[3]; float m_curtime; };
-extern CUnknownGlobals1070b228 *g_1070b228;
 void CAI_BaseNPCTroika::vfunc616()
 {
 	sub_10015839(0x30);
-	m_f65bc = g_1070b228->m_curtime + 15.0f;
+	m_f65bc = gpGlobals->curtime + 15.0f;
 }
 // END FUNCTION
 
@@ -1385,8 +1383,6 @@ struct S_Slot610 {
 };
 struct S_Rnd { virtual void s0(); virtual float RandomFloat(float a, float b); };
 extern S_Rnd *g_1070b244;
-struct S_Glob { char pad[0xc]; float curtime; };
-extern S_Glob *g_1070b228;
 struct S_Holder { void sub_100cd660(CBaseEntity *a, CBaseEntity *b, int c); };
 struct S_V {
     char pad0[0x5b80]; char m_b5b80;
@@ -1410,7 +1406,7 @@ void CAI_BaseNPCTroika::vfunc463(int a, int b)
             v->m_b6494 = flag;
             break;
         case 0xb:
-            v->m_f6474 = g_1070b244->RandomFloat(10.0f, 20.0f) + g_1070b228->curtime;
+            v->m_f6474 = g_1070b244->RandomFloat(10.0f, 20.0f) + gpGlobals->curtime;
             v->m_b6494 = flag;
             break;
         case 7:
@@ -1639,8 +1635,6 @@ bool CAI_BaseNPCTroikaUnit54::sub_102b50b0(int a)
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatWeapon.h"
 
-struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
-extern CGlobalVarsX *g_1070b228;
 
 struct CRandomX {
 	virtual void v0();
@@ -1660,7 +1654,7 @@ char CAI_BaseNPCTroika::sub_102b57c0(int unused)
 	if ((flags & 0x18000) && !*((char *)this + 0x6078)) {
 		if ((*(CAI_NamedThing **)((char *)this + 0x65e8))->sub_1025dca0(this, 0)) {
 			*((char *)this + 0x6078) = 1;
-			*(float *)((char *)this + 0x6074) = g_1070b244->RandomFloat(7.5f, 15.0f) + g_1070b228->m_curtime;
+			*(float *)((char *)this + 0x6074) = g_1070b244->RandomFloat(7.5f, 15.0f) + gpGlobals->curtime;
 			g_10924edc->v1();
 			return 1;
 		}
@@ -1673,8 +1667,6 @@ char CAI_BaseNPCTroika::sub_102b57c0(int unused)
 // FUNCTION: 0x102b5900 size=0xab
 #include "CAI_BaseNPCTroika.h"
 
-struct SGlobalVars { char pad[0xc]; float curtime; };
-extern SGlobalVars *g_1070b228;
 
 struct SDifficulty {
 	virtual void s0();
@@ -1691,7 +1683,7 @@ char CAI_BaseNPCTroika::vfunc602()
 	if ((m_flags5b84 & 2) == 2 || vfunc293() != 0 || !NAMED)
 		return 0;
 	if (((CAI_BaseNPC *)this)->vfunc308()) {
-		if (g_1070b228->curtime >= m_f6074)
+		if (gpGlobals->curtime >= m_f6074)
 			return 1;
 	} else {
 		double f = g_10924a1c->s1() ? 0.0f : g_10924a1c->m28;
@@ -1817,11 +1809,6 @@ struct CRandomX
 	virtual float vfunc1(float flMin, float flMax);
 };
 
-struct CGlobalVars1070b228
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
 
 struct CWeaponRangeX
 {
@@ -1829,7 +1816,6 @@ struct CWeaponRangeX
 	float m_fl8c0;
 };
 
-extern CGlobalVars1070b228 *g_1070b228;
 extern CRandomX *g_1070b244;
 int __cdecl sub_102d2980(CAI_BaseNPCTroika *pNPC, int a, int b, float c, int d, int e);
 
@@ -1838,9 +1824,9 @@ int CAI_BaseNPCTroika::vfunc609(char bForce)
 {
 	if (m_p6444 && ((CTroikaSlotsX *)this)->vfunc566(m_p6444))
 		return (int)m_p6444;
-	if (!bForce && !(g_1070b228->curtime >= m_f6440))
+	if (!bForce && !(gpGlobals->curtime >= m_f6440))
 		return 0;
-	m_f6440 = g_1070b244->vfunc1(2.0f, 2.5f) + g_1070b228->curtime;
+	m_f6440 = g_1070b244->vfunc1(2.0f, 2.5f) + gpGlobals->curtime;
 	float range = 1024.0f;
 	if (sub_10007e19())
 		range = ((CWeaponRangeX *)sub_10007e19())->m_fl8c0;
@@ -1927,8 +1913,6 @@ struct TroikaView102bff20 {
 	float m_f6570;
 };
 extern CUnknown1070b244 *g_1070b244;
-struct GlobalVarsX { int pad0[3]; float curtime; };
-extern GlobalVarsX *g_1070b228;
 
 void CAI_BaseNPCTroika::vfunc333(float flInterval)
 {
@@ -1941,7 +1925,7 @@ void CAI_BaseNPCTroika::vfunc333(float flInterval)
 		}
 	}
 	if (EHandle_Get(m_hfe8) != 0)
-		p->m_f5d6c = g_1070b228->curtime + 2.0f;
+		p->m_f5d6c = gpGlobals->curtime + 2.0f;
 	sub_102c0010(flInterval);
 	sub_1026b810(flInterval);
 }
@@ -1959,10 +1943,8 @@ bool __fastcall sub_102c0b60(void *self)
 // FUNCTION: 0x102c12a0 size=0x10b
 #include "CUnknown100ecee0.h"
 
-struct TroikaGlobals { char pad[0xc]; float curtime; };
 extern CUnknown100ecee0 g_10924980;
 extern int (*g_109f3868)(int, int);
-extern TroikaGlobals *g_1070b228;
 struct TroikaView { char pad[0x64e4]; float m_f64e4; };
 
 #define TFIELD(type, off) (*(type *)((char *)this + (off)))
@@ -1984,7 +1966,7 @@ int CAI_BaseNPCTroika::vfunc611()
             result = tbl[TFIELD(int, 0x64c8) + 5];
             TFIELD(char, 0x64e0) = 1;
             TFIELD(char, 0x64e1) = 0;
-        } else if (g_1070b228->curtime - ((TroikaView *)this)->m_f64e4 > fA && iB > pfnRandom(1, 100)) {
+        } else if (gpGlobals->curtime - ((TroikaView *)this)->m_f64e4 > fA && iB > pfnRandom(1, 100)) {
             result = sub_102c1230();
             TFIELD(char, 0x64e0) = 0;
             TFIELD(char, 0x64e1) = 1;

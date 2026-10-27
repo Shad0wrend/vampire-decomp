@@ -21,8 +21,6 @@ CPropClockHand *CPropClockHand::vfunc5(unsigned int flags)
 #include "CCollisionProperty.h"
 #include "CPropClockHand.h"
 
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
-extern CGlobalVarsX *g_1070b228;
 
 #define CPCH_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -45,7 +43,7 @@ void CPropClockHand::vfunc103()
 	*(float *)((char *)this + 0x730) = pAngles[0];
 	*(float *)((char *)this + 0x734) = pAngles[1];
 	*(float *)((char *)this + 0x738) = pAngles[2];
-	*(float *)((char *)this + 0x764) = g_1070b228->curtime;
+	*(float *)((char *)this + 0x764) = gpGlobals->curtime;
 }
 // END FUNCTION
 

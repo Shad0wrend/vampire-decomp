@@ -4,13 +4,7 @@
 // FUNCTION: 0x10056d70 size=0xab
 #include "CTempEntTester.h"
 
-struct CGlobalVarsView
-{
-	char pad[0xc];
-	float curtime;
-};
 
-extern CGlobalVarsView *g_1070b228;
 __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
 extern "C" char *__cdecl _strlwr(char *);
 extern "C" char *__cdecl strstr(const char *, const char *);
@@ -38,7 +32,7 @@ void CTempEntTester::vfunc103()
 		sub_101cd940(this);
 		return;
 	}
-	m_flNextThink = g_1070b228->curtime;
+	m_flNextThink = gpGlobals->curtime;
 }
 // END FUNCTION
 

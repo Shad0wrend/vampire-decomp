@@ -30,8 +30,6 @@ int CNPC_VMingXiaoTentacle::vfunc546(int x)
 
 // FUNCTION: 0x1039c380 size=0x86
 #include "CNPC_VMingXiaoTentacle.h"
-struct CGlobalVarsTime { char pad[0xc]; float curtime; };
-extern CGlobalVarsTime *g_1070b228;
 extern float g_10454110;
 void CNPC_VMingXiaoTentacle::vfunc103()
 {
@@ -45,7 +43,7 @@ void CNPC_VMingXiaoTentacle::vfunc103()
 	m_n6678 = 0;
 	m_n667c = 0;
 	m_n6680 = 0;
-	float now = g_1070b228->curtime;
+	float now = gpGlobals->curtime;
 	float t = now + g_10454110;
 	m_b6688 = 1;
 	m_b6698 = 0;
@@ -104,11 +102,6 @@ bool CNPC_VMingXiaoTentacle::vfunc68(CBaseEntity *pOther)
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CEntityVSlots.h"
 
-struct CGlobalVarsView {
-	char m_pad0000[0xc];
-	float curtime;	// 0xc
-};
-extern CGlobalVarsView *g_1070b228;
 
 struct CDevFlagObject {
 	virtual void v0();
@@ -131,11 +124,11 @@ void CNPC_VMingXiaoTentacle::vfunc433()
 	sub_10269b50(0x77);
 	sub_10269b50(0x79);
 	sub_102b27f0();
-	if (((CEntityVSlots *)this)->slot167() != 0 && g_1070b228->curtime >= p->m_flTime6678 && p->m_f6268 <= 256.0f) {
+	if (((CEntityVSlots *)this)->slot167() != 0 && gpGlobals->curtime >= p->m_flTime6678 && p->m_f6268 <= 256.0f) {
 		g_10924a6c->v1();
 		sub_10269a20(0x77);
 	}
-	if (g_1070b228->curtime >= p->m_flTime6674) {
+	if (gpGlobals->curtime >= p->m_flTime6674) {
 		g_10924a6c->v1();
 		sub_10269a20(0x79);
 	}

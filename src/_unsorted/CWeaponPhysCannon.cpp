@@ -34,12 +34,6 @@ void CWeaponPhysCannon::vfunc291()
 #include "CWeaponPhysCannon.h"
 #include "CUnknown10739d08.h"
 
-struct CGlobalVarsView
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern CGlobalVarsView *g_1070b228;
 extern CUnknown10739d08 g_10739d08;
 
 struct CPhysCannonView
@@ -65,7 +59,7 @@ struct CPhysCannonCharacter
 void CWeaponPhysCannon::vfunc326()
 {
 	CPhysCannonView *v = (CPhysCannonView *)this;
-	if (v->m_flNextTime > g_1070b228->curtime)
+	if (v->m_flNextTime > gpGlobals->curtime)
 		return;
 	CPhysCannonOwner *pOwner = (CPhysCannonOwner *)sub_102521f0();
 	if (!pOwner)
@@ -83,8 +77,6 @@ void CWeaponPhysCannon::vfunc326()
 // FUNCTION: 0x1040e6c0 size=0x113
 #include "CWeaponPhysCannon.h"
 
-struct GlobalVarsX { int pad0[3]; float curtime; };
-extern GlobalVarsX *g_1070b228;
 
 struct CannonView1040e6c0 {
 	char pad0[0x730];
@@ -106,14 +98,14 @@ struct PlayerView1040e6c0 {
 void CWeaponPhysCannon::vfunc327()
 {
 	CannonView1040e6c0 *c = (CannonView1040e6c0 *)this;
-	if (!(c->m_f734 > g_1070b228->curtime)) {
+	if (!(c->m_f734 > gpGlobals->curtime)) {
 		CharView1040e6c0 *pOwner = (CharView1040e6c0 *)sub_102521f0();
 		if (pOwner) {
 			PlayerView1040e6c0 *pPlayer = pOwner->m_pPlayer;
 			if (pPlayer) {
 				if (m_bGrab911 && (pPlayer->m_n208c & 0x800)) {
-					c->m_f730 = g_1070b228->curtime + 0.5;
-					c->m_f734 = g_1070b228->curtime + 0.5;
+					c->m_f730 = gpGlobals->curtime + 0.5;
+					c->m_f734 = gpGlobals->curtime + 0.5;
 					sub_104106a0(1, 0);
 					vfunc307(0xbc);
 					return;
@@ -121,14 +113,14 @@ void CWeaponPhysCannon::vfunc327()
 				switch (sub_1040e9c0()) {
 				case 0:
 					vfunc307(0xbc);
-					c->m_f734 = g_1070b228->curtime + 0.5f;
+					c->m_f734 = gpGlobals->curtime + 0.5f;
 					c->m_n91c |= pPlayer->m_n2088;
 					break;
 				case 1:
-					c->m_f734 = g_1070b228->curtime + 0.1f;
+					c->m_f734 = gpGlobals->curtime + 0.1f;
 					break;
 				case 2:
-					c->m_f734 = g_1070b228->curtime + 0.01f;
+					c->m_f734 = gpGlobals->curtime + 0.01f;
 					break;
 				}
 			}

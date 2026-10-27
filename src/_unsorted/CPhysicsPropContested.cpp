@@ -24,18 +24,12 @@ void CPhysicsPropContested::vfunc103()
 #include "CEntityVSlots.h"
 #include "CVStatList_t.h"
 
-struct CContestedGlobals
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;
-};
 
 struct CContestedCharView
 {
 	void sub_10167fd0();	// stub 0x10014a6a
 };
 
-extern CContestedGlobals *g_1070b228;
 void sub_101cebc0(void *pPlayer, int nMessage, int a);
 
 void CPhysicsPropContested::vfunc39(CBaseEntity *pOther)
@@ -48,7 +42,7 @@ void CPhysicsPropContested::vfunc39(CBaseEntity *pOther)
 			{
 				sub_10192b50(pOther);
 				sub_101917f0(pOther);
-				m_flTime7b0 = g_1070b228->m_flCurTime;
+				m_flTime7b0 = gpGlobals->curtime;
 			}
 			else
 			{

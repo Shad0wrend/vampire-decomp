@@ -63,8 +63,6 @@ void CCineCamFields1006d9a0::sub_1006d9a0()
 struct EntWithEdict { char pad[0x2e0]; int m_edict; };
 struct EntSlot { EntWithEdict *pEnt; unsigned int serial; };
 struct EntListEntry { int pad; EntSlot s; };
-struct Globals { char pad[0xc]; float curtime; };
-extern Globals *g_1070b228;
 extern EntListEntry *g_10566458;
 
 inline EntWithEdict *HGet(unsigned int h)
@@ -79,7 +77,7 @@ inline EntWithEdict *HGet(unsigned int h)
 
 bool CBaseCineCam::sub_1006e6a0(int a, int b, int c, int d, int e)
 {
-    if (m_flTime90 > g_1070b228->curtime)
+    if (m_flTime90 > gpGlobals->curtime)
         return true;
     if (!HGet(m_hTarget5d0))
         return false;

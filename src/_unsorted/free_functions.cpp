@@ -1228,8 +1228,6 @@ bool sub_1002f820(WheelObj_t *pObj, WheelEnt_t *pEnt)
 #include "ScopeTrace.h"
 #include "CCollisionEvent.h"
 
-struct S_1070b228 { char pad[0xc]; float curtime; };
-extern S_1070b228 *g_1070b228;
 
 class CDevConVar
 {
@@ -1260,14 +1258,14 @@ int CCollisionEventSolver::sub_1002fb00(void *pObject0, void *pObject1, CBaseEnt
 		pHigh = pEntity0;
 	}
 	CPenetrateEvent_t *pEvent = Event()->sub_1002f900(pLow, pHigh);
-	if (g_1070b228->curtime - pEvent->m_flLastTime > g_10449258) {
+	if (gpGlobals->curtime - pEvent->m_flLastTime > g_10449258) {
 		pEvent->m_nReported = 1;
 		CDevConVarHolder *pHolder = g_1070af4c;
 		if (!pHolder->m_pVar->vfunc1() && pHolder->m_pVar->m_n2c) {
 			sub_1002fc30(pLow, 10.0f);
 			sub_1002fc30(pHigh, 10.0f);
 		}
-		pEvent->m_flLastTime = g_1070b228->curtime;
+		pEvent->m_flLastTime = gpGlobals->curtime;
 	}
 	return 1;
 }
@@ -1393,8 +1391,6 @@ struct ScopeTrace {
     }
     ~ScopeTrace() { --*g_109f3680; }
 };
-struct Globals { char pad[0xc]; float curtime; };
-extern Globals *g_1070b228;
 extern float g_10449140;
 struct CMem8b_t { void *p; int alloc; int grow; void sub_10033160(int num); };
 struct CEImpl { char pad[0x128]; UtlVec8 v; };
@@ -1405,7 +1401,7 @@ float CCollisionEvent::sub_100309a0(int key)
     CEImpl *p = (CEImpl *)this;
     for (int i = p->v.m_Size - 1; i >= 0; --i) {
         if (((UtlVec8Elem *)p->v.m_pMemory)[i].a == key)
-            return g_1070b228->curtime - ((float *)p->v.m_pMemory)[i * 2 + 1];
+            return gpGlobals->curtime - ((float *)p->v.m_pMemory)[i * 2 + 1];
     }
     UtlVec8 *v = &p->v;
     int n = v->m_Size;
@@ -1415,7 +1411,7 @@ float CCollisionEvent::sub_100309a0(int key)
     v->m_pElements = (UtlVec8Elem *)v->m_pMemory;
     v->sub_10032f00(n, 1);
     ((UtlVec8Elem *)v->m_pMemory)[n].a = key;
-    ((float *)v->m_pMemory)[n * 2 + 1] = g_1070b228->curtime;
+    ((float *)v->m_pMemory)[n * 2 + 1] = gpGlobals->curtime;
     return g_10449140;
 }
 // END FUNCTION
@@ -1430,15 +1426,9 @@ struct ScopeTraceEntry_t
 	const char *m_pszExtra;
 };
 
-struct CGlobalVarsX
-{
-	char m_pad[0xc];
-	float m_curtime;
-};
 
 extern ScopeTraceEntry_t *g_109f3620;
 extern int *g_109f3680;
-extern CGlobalVarsX *g_1070b228;
 
 void CCollisionEvent::sub_10030ae0()
 {
@@ -1448,7 +1438,7 @@ void CCollisionEvent::sub_10030ae0()
 	(*g_109f3680)++;
 	for (int i = 0; i < 8; i++)
 	{
-		if (m_friction[i].m_value && *(float *)&m_friction[i].m_extra < g_1070b228->m_curtime - 0.1f)
+		if (m_friction[i].m_value && *(float *)&m_friction[i].m_extra < gpGlobals->curtime - 0.1f)
 			sub_10012544(&m_friction[i]);
 	}
 	(*g_109f3680)--;
@@ -1776,9 +1766,7 @@ void CCollisionEvent::sub_10031520()
 struct Sub { void *pEnt; unsigned int serial; };
 struct EntInfo { int pad; Sub s; };
 struct Slot { unsigned int handle; float time; };
-struct GlobalVars { char pad[0xc]; float curtime; };
 extern EntInfo *g_10566458;
-extern GlobalVars *g_1070b228;
 extern Slot g_106b8698[8];
 static inline void *Resolve(unsigned int h)
 {
@@ -1793,7 +1781,7 @@ bool sub_10031bd0(void *ent)
 {
     for (Slot *s = g_106b8698; (int)s < (int)(g_106b8698 + 8); s++) {
         if (Resolve(s->handle) == ent) {
-            if (!(g_1070b228->curtime >= s->time))
+            if (!(gpGlobals->curtime >= s->time))
                 return true;
             s->handle = 0xffffffff;
         }
@@ -1812,11 +1800,6 @@ struct EntInfo {
 };
 extern char *g_10566458;
 
-struct Globals_t {
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern Globals_t *g_1070b228;
 extern void (__cdecl *g_109f3630)(const char *, ...);
 extern float g_104454c0;
 
@@ -1844,7 +1827,7 @@ bool sub_10031c70(CBaseEntity *pEnt)
 		EntInfo *e = &((EntInfo *)(g_10566458 + 4))[h & 0x1fff];
 		if (e->m_serial != (int)(h >> 13) || !e->m_pEntity)
 			break;
-		if (g_1070b228->curtime >= g_106b8698[i].m_flExpire)
+		if (gpGlobals->curtime >= g_106b8698[i].m_flExpire)
 			break;
 		i++;
 		if (i >= 8) {
@@ -1853,7 +1836,7 @@ bool sub_10031c70(CBaseEntity *pEnt)
 		}
 	} while (true);
 	g_106b8698[i].Set(pEnt);
-	float t = g_1070b228->curtime;
+	float t = gpGlobals->curtime;
 	t += g_104454c0;
 	g_106b8698[i].m_flExpire = t;
 	return true;
@@ -2609,13 +2592,6 @@ void CBaseEntity::sub_10033aa0(float *a, float *b, float *c)
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
 
-struct CThinkGlobals
-{
-	char m_pad0000[0xc];
-	float curtime;
-	float frametime;
-};
-extern CThinkGlobals *g_1070b228;
 extern float g_104454c4;
 
 struct CBaseEntityThinkUnit : CBaseEntity
@@ -2629,16 +2605,16 @@ bool CBaseEntityThinkUnit::sub_10033de0(float *pNextThink, float *pLastThink, in
 {
 	ScopeTrace trace("CBaseEntity::PhysicsRunSpecificThink", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	float thinktime = *pNextThink;
-	if (thinktime <= g_104454c4 || thinktime > g_1070b228->curtime + g_1070b228->frametime)
+	if (thinktime <= g_104454c4 || thinktime > gpGlobals->curtime + gpGlobals->frametime)
 		return true;
-	if (thinktime < g_1070b228->curtime)
-		thinktime = g_1070b228->curtime;
+	if (thinktime < gpGlobals->curtime)
+		thinktime = gpGlobals->curtime;
 	*pNextThink = 0;
-	float oldtime = g_1070b228->curtime;
-	g_1070b228->curtime = thinktime;
+	float oldtime = gpGlobals->curtime;
+	gpGlobals->curtime = thinktime;
 	sub_10033b80(thinkFunc);
 	*pLastThink = thinktime;
-	g_1070b228->curtime = oldtime;
+	gpGlobals->curtime = oldtime;
 	return ((CEntityVSlots *)this)->slot116() == 0;
 }
 // END FUNCTION
@@ -4003,12 +3979,6 @@ void CBaseEntity::sub_1003eb50()
 #include "ScopeTrace.h"
 #include "ConVar.h"
 
-struct CGlobalVarsGM
-{
-	char pad[0x10];
-	float frametime;
-};
-extern CGlobalVarsGM *g_1070b228;
 extern ConVar *g_109ef2d4;
 extern float g_104454c4;
 
@@ -4021,11 +3991,11 @@ void CBaseEntity::sub_1003ed80(Vector &move)
 		ent_gravity = *(float *)((char *)this + 0x3ec);
 	else
 		ent_gravity = 1.0f;
-	float t0 = ent_gravity * (g_109ef2d4->vfunc1() ? g_104454c4 : g_109ef2d4->m_fValue); float newZVelocity = m_vel3d4[2] - t0 * g_1070b228->frametime;
+	float t0 = ent_gravity * (g_109ef2d4->vfunc1() ? g_104454c4 : g_109ef2d4->m_fValue); float newZVelocity = m_vel3d4[2] - t0 * gpGlobals->frametime;
 	Vector *pBase = (Vector *)((char *)this + 0x3b0);
-	move.x = (m_vel3d4[0] + pBase->x) * g_1070b228->frametime;
-	move.y = (m_vel3d4[1] + pBase->y) * g_1070b228->frametime;
-	move.z = ((m_vel3d4[2] + newZVelocity) * 0.5 + pBase->z) * g_1070b228->frametime;
+	move.x = (m_vel3d4[0] + pBase->x) * gpGlobals->frametime;
+	move.y = (m_vel3d4[1] + pBase->y) * gpGlobals->frametime;
+	move.z = ((m_vel3d4[2] + newZVelocity) * 0.5 + pBase->z) * gpGlobals->frametime;
 	m_vel3d4[2] = newZVelocity;
 	sub_1003eb50();
 }
@@ -10088,12 +10058,6 @@ void sub_1006b5e0(int a, int b, int *v, int c)
 #include "CEntityVSlots.h"
 #include "ConVar.h"
 
-struct CSpinGlobals
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern CSpinGlobals *g_1070b228;
 
 struct CTraceSpinEntity : CBaseEntity
 {
@@ -10106,13 +10070,13 @@ void CTraceSpinEntity::sub_1006bb80()
 	static ConVar traceline_spin("traceline_spin", "1", 0);
 	if (traceline_spin.GetBool())
 	{
-		float s = sin(g_1070b228->curtime);
+		float s = sin(gpGlobals->curtime);
 		Vector ang = *(Vector *)((CEntityVSlots *)this)->slot221();
 		ang.x = (s * s * s + 1.0f + 1.0) * 90.0;
-		ang.y = g_1070b228->curtime * 10.0f;
+		ang.y = gpGlobals->curtime * 10.0f;
 		vfunc64(&ang.x);
 	}
-	m_flNextThink = g_1070b228->curtime + 0.01;
+	m_flNextThink = gpGlobals->curtime + 0.01;
 }
 // END FUNCTION
 
@@ -10709,8 +10673,6 @@ bool CBaseCineCam::sub_1006e4c0(const char *pszPrefix, int unused)
 // FUNCTION: 0x1006e770 size=0xb0
 #include "CBaseCineCam.h"
 
-struct CGlobalVarsC { char pad[0xc]; float curtime; };
-extern CGlobalVarsC *g_1070b228;
 void sub_100079eb();
 void sub_1000f68c();
 void sub_1006fe00();
@@ -10737,11 +10699,11 @@ void CBaseCineCam::sub_1006e770()
         ((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000362f, 0, 0);
         break;
     default:
-        if (m_flTime55c > 0 && m_flTime55c < g_1070b228->curtime)
+        if (m_flTime55c > 0 && m_flTime55c < gpGlobals->curtime)
             ((CBaseEntity *)this)->sub_100ac4e0((int)sub_100034ef, 0, 0);
         break;
     }
-    m_flNextThink17c = g_1070b228->curtime + 0.04166f;
+    m_flNextThink17c = gpGlobals->curtime + 0.04166f;
 }
 // END FUNCTION
 
@@ -11097,8 +11059,6 @@ void CUnk10071840::sub_10071660()
 
 // FUNCTION: 0x10071770 size=0x9c
 #include "CBaseAnimating.h"
-struct CUnk_Globals { char pad[0xc]; float curtime; };
-extern CUnk_Globals *g_1070b228;
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 struct CUnk10071770Sub {
     void sub_10010794(int a, void *b, int c);
@@ -11118,8 +11078,8 @@ void CUnk10071770View::sub_10071770(const char *label)
         sub_100117b1();
         ((CUnk10071770Sub *)((char *)this + 0x7f8))->sub_10010794(0, this, 0);
         sub_100ac4e0((int)sub_100032dd, 0, 0);
-        *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
-        *(float *)((char *)this + 0x170) = *(float *)((char *)this + 0x174) = g_1070b228->curtime;
+        *(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.1;
+        *(float *)((char *)this + 0x170) = *(float *)((char *)this + 0x174) = gpGlobals->curtime;
     } else {
         Msg("%s no sequence named:%s\n", sub_1000b5cd(), label);
         *(int *)((char *)this + 0x6f0) = 0;
@@ -11140,8 +11100,6 @@ struct CUnk10071840Cvar {
     int m_nValue;	// 0x2c
 };
 extern CUnk10071840Cvar *g_106c7fa4;
-struct CUnk10071840Globals { char pad[0xc]; float curtime; };
-extern CUnk10071840Globals *g_1070b228;
 
 static inline int CvarGetInt()
 {
@@ -11172,7 +11130,7 @@ void CUnk10071840::sub_10071840()
     if (m_b65c)
         sub_10013b65();
     else
-        m_flNextThink = g_1070b228->curtime + 0.1;
+        m_flNextThink = gpGlobals->curtime + 0.1;
     m_b828 = CvarGetInt() != 0;
 }
 // END FUNCTION
@@ -15032,12 +14990,6 @@ struct CFileSystemX
 };
 extern CFileSystemX *g_1070b238;
 
-struct CGlobalVarsMap
-{
-	char m_pad0000[0x24];
-	const char *mapname;	// 0x24
-};
-extern CGlobalVarsMap *g_1070b228;
 
 extern void (__cdecl *g_109f364c)(const char *, ...);	// DevWarning
 extern void (__cdecl *g_109f3878)(char *pPath, const char *pExt, int nMax);	// Q_SetExtension
@@ -15060,7 +15012,7 @@ void CSceneEntity::sub_10080b00(CSceneEvent *pEvent)
 	Q_strncpy(szFile, pEvent->sub_10075c50(), 0x104);
 	g_109f3878(szFile, ".lip", 0x104);
 	_strlwr(szFile);
-	const char *pszLine = sub_101d3730("%s\t%s\t%s\n", g_1070b228->mapname ? g_1070b228->mapname : g_106b8540, sub_100ab4f0(), szFile);
+	const char *pszLine = sub_101d3730("%s\t%s\t%s\n", gpGlobals->mapname ? gpGlobals->mapname : g_106b8540, sub_100ab4f0(), szFile);
 	g_1070b238->Write(pszLine, strlen(pszLine), hFile);
 	g_1070b238->Close(hFile);
 }
@@ -16397,14 +16349,9 @@ struct DlgEntView_t {
 	DlgNPC_t *pNPC;
 };
 
-struct DlgGlobals_t {
-	char pad[0xc];
-	float curtime;
-};
 
 extern CUnknown1070b22c *g_1070b22c;
 extern DlgGlobal_t g_10924980;
-extern DlgGlobals_t *g_1070b228;
 DlgPlayerView_t *sub_101193b0();
 DlgEntView_t *sub_10172710(DlgPlayerView_t *pPlayer);
 
@@ -16428,7 +16375,7 @@ void sub_100896c0()
 			if (nSequence > -1) {
 				pNPC->nSequence = nSequence;
 				pNPC->n6f8 = 0;
-				pNPC->flAnimTime = g_1070b228->curtime;
+				pNPC->flAnimTime = gpGlobals->curtime;
 				((CBaseAnimating *)pNPC)->sub_10090950();
 			}
 		}
@@ -17740,11 +17687,9 @@ struct ScopeTraceEntry_t
 	const char *m_pszName;
 	const char *m_pszExtra;
 };
-struct CGlobalVarsLike { int m_pad[3]; float m_curtime; };
 
 extern ScopeTraceEntry_t *g_109f3620;
 extern int *g_109f3680;
-extern CGlobalVarsLike *g_1070b228;
 extern char g_106b8540[];
 
 void CBaseAnimating::sub_10090890(float delay)
@@ -17754,7 +17699,7 @@ void CBaseAnimating::sub_10090890(float delay)
 	g_109f3620[*g_109f3680].m_pszName = name;
 	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
 	(*g_109f3680)++;
-	*(float *)((char *)this + 0x5a4) = delay + g_1070b228->m_curtime;
+	*(float *)((char *)this + 0x5a4) = delay + gpGlobals->curtime;
 	(*g_109f3680)--;
 }
 // END FUNCTION
@@ -20672,10 +20617,8 @@ void CBaseEntity::sub_1009c720(int a, const char *fmt, const CBaseEntityColor32 
 #include "CBaseEntity.h"
 
 struct ScopeEntry { const char *a; const char *b; const char *c; };
-struct SGlobalVars { char pad[0xc]; float curtime; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
-extern SGlobalVars *g_1070b228;
 extern char g_106b8540[];
 extern char g_105387dc[];
 
@@ -20692,7 +20635,7 @@ void CBaseEntity::sub_1009d1e0()
 	g_109f3620[*g_109f3680].b = name;
 	g_109f3620[*g_109f3680].c = g_106b8540;
 	++*g_109f3680;
-	m_flForceTransmitTime = g_1070b228->curtime + 1.0f;
+	m_flForceTransmitTime = gpGlobals->curtime + 1.0f;
 	--*g_109f3680;
 }
 // END FUNCTION
@@ -20977,12 +20920,6 @@ extern const char g_106b8540[];
 extern const char g_105556d4[];
 extern void (*g_109f3890)(char *, const char *, int);
 
-struct SGlobalVars
-{
-    char m_pad[0xc];
-    float m_curtime;
-};
-extern SGlobalVars *g_1070b228;
 
 extern "C" unsigned int strlen(const char *);
 
@@ -21013,8 +20950,8 @@ void CBaseEntity::sub_1009f3c0(const char *msg, int duration)
     int len = strlen(msg);
     p->m_msg = new char[len + 1];
     g_109f3890(p->m_msg, msg, len + 1);
-    p->m_endTime = (int)(duration + g_1070b228->m_curtime);
-    p->m_startTime = (int)g_1070b228->m_curtime;
+    p->m_endTime = (int)(duration + gpGlobals->curtime);
+    p->m_startTime = (int)gpGlobals->curtime;
     p->m_next = (STimedOverlay *)m_pTimedOverlays;
     m_pTimedOverlays = p;
     --*g_109f3680;
@@ -24443,19 +24380,17 @@ extern "C" CBaseEntity *env_swarm_bats()
 #include "ConVar.h"
 #include <math.h>
 
-struct CGlobalsView { char pad[0xc]; float curtime; };
-extern CGlobalsView *g_1070b228;
 
 // TARGET: CBatSwarm::sub_100b8b50
 void CBatSwarm::sub_100b8b50()
 {
-	m_flNextThink = g_1070b228->curtime + 0.01;
+	m_flNextThink = gpGlobals->curtime + 0.01;
 	if (m_mask734) {
 		static ConVar bat_speed("bat_speed", "220", 0);
 		m_flSpeed738 = bat_speed.GetFloat();
 		if (m_bSlow73c)
 			m_flSpeed738 = m_flSpeed738 * 0.3f;
-		float dt = g_1070b228->curtime - *(float *)((char *)this + 0x178);
+		float dt = gpGlobals->curtime - *(float *)((char *)this + 0x178);
 		if (dt > 0.0f) {
 			if (!(dt < 0.2f))
 				dt = 0.2f;
@@ -24474,7 +24409,7 @@ void CBatSwarm::sub_100b8b50()
 			}
 			if (moved)
 				((CCollisionProperty *)((char *)this + 0x270))->sub_100dda20();
-			*(float *)((char *)this + 0x174) = g_1070b228->curtime;
+			*(float *)((char *)this + 0x174) = gpGlobals->curtime;
 		}
 	}
 }
@@ -27090,9 +27025,7 @@ void CBaseButton::sub_100c9560()
 #include "CBaseEntity.h"
 #include "CCameraTrack.h"
 
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
 struct EntInfo { CBaseEntity *ent; int serial; int pad; };
-extern CGlobalVarsX *g_1070b228;
 extern char *g_10566458;
 void sub_10002cd4();
 void sub_10010e6f();
@@ -27112,7 +27045,7 @@ void CUnknown100c96a0::sub_100c96a0()
 				*(void (**)())((char *)this + 0x1ec) = 0;
 		}
 		if (!*((char *)this + 0x55c)) {
-			*(float *)((char *)this + 0x17c) = *(float *)((char *)this + 0x500) + g_1070b228->curtime;
+			*(float *)((char *)this + 0x17c) = *(float *)((char *)this + 0x500) + gpGlobals->curtime;
 			sub_100ac4e0((int)sub_10010e6f, 0, 0);
 		}
 		*(int *)((char *)this + 0x5c0) = 1;
@@ -27162,12 +27095,6 @@ extern double g_10449270;
 void sub_10002cd4();
 void sub_1000fca9();
 
-struct CGlobalVarsPlain
-{
-	char m_pad[0xc];
-	float curtime;
-};
-extern CGlobalVarsPlain *g_1070b228;
 
 struct CHandleLookup
 {
@@ -27194,7 +27121,7 @@ void __fastcall sub_100c98e0(char *self)
 		*(int *)(self + 0x1ec) = 0;
 	if (flags & 0x40) {
 		((CBaseEntity *)self)->sub_100ac4e0((int)sub_1000fca9, 0, 0);
-		*(float *)(self + 0x17c) = g_1070b228->curtime + g_10449270;
+		*(float *)(self + 0x17c) = gpGlobals->curtime + g_10449270;
 	}
 }
 // END FUNCTION
@@ -27386,11 +27313,6 @@ void CMomentaryRotButton::sub_100cae90()
 #include "CBaseEntity.h"
 #include "CMomentaryRotButton.h"
 
-struct CGlobalVarsView {
-    char pad[0xc];
-    float curtime;
-};
-extern CGlobalVarsView *g_1070b228;
 extern Vector g_1070d9d0;
 
 #define SV1(p) virtual void p();
@@ -27432,7 +27354,7 @@ void CMomentaryRotButton::sub_100cafb0()
         CThinkFn think;
         think.pfn = &CMomentaryRotButton::sub_100cb110;
         ((CBaseEntity *)this)->sub_100ac4e0(think.n, 0, 0);
-        m_flNextThink = g_1070b228->curtime + 0.01f;
+        m_flNextThink = gpGlobals->curtime + 0.01f;
     }
 }
 // END FUNCTION
@@ -27527,11 +27449,6 @@ void CUnk100cc0e0::sub_100cc0e0(int unused)
 // FUNCTION: 0x100cc130 size=0x6a
 #include "CUnknown100cc130.h"
 
-struct CGlobalVarsView {
-	char m_pad[0x14];
-	int m_nMaxClients;
-};
-extern CGlobalVarsView *g_1070b228;
 
 struct CPlayerView {
 	CUnknown100cc130 *sub_1017d630();
@@ -27541,7 +27458,7 @@ CPlayerView *sub_101cd9e0(int index);
 
 void CUnknown100cc130::sub_100cc130(inputdata_t *pData)
 {
-	for (int i = 1; i <= g_1070b228->m_nMaxClients; i++) {
+	for (int i = 1; i <= gpGlobals->maxClients; i++) {
 		CPlayerView *pPlayer = sub_101cd9e0(i);
 		if (pPlayer && pPlayer->sub_1017d630() == this) {
 			float f = pData->value.fieldType == 1 ? pData->value.flValue : 0;
@@ -27844,11 +27761,6 @@ void CEventQueue::sub_100cdda0()
 #include "CVDmg_t.h"
 extern "C" void *__cdecl memset(void *, int, unsigned int);
 
-struct CGlobalVarsX {
-	char m_pad[0xc];
-	float m_flCurTime;
-};
-extern CGlobalVarsX *g_1070b228;
 
 void CEventQueue::sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, int nExtra)
 {
@@ -27856,7 +27768,7 @@ void CEventQueue::sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVar
 	memset(pEvent, 0, 0x50);
 	pEvent->m_n34 = 0;
 	pEvent->m_n3c = nExtra;
-	pEvent->m_flFireTime = fireDelay + g_1070b228->m_flCurTime;
+	pEvent->m_flFireTime = fireDelay + gpGlobals->curtime;
 	pEvent->m_pszTarget = 0;
 	if (pTarget)
 		pEvent->m_hTarget = *pTarget->vfunc1();
@@ -27882,18 +27794,13 @@ void CEventQueue::sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVar
 // FUNCTION: 0x100ce210 size=0x79
 #include "CEventQueue.h"
 
-struct EventGlobals {
-	char pad[0xc];
-	float curtime;
-};
-extern EventGlobals *g_1070b228;
 extern float g_106e70e4;
 extern float g_106e70ec;
 
 void CEventQueue::sub_100ce210(CEQEvent *pEvent)
 {
-	if (g_1070b228->curtime < g_106e70e4) {
-		pEvent->m_flFireTime = pEvent->m_flFireTime + ((g_106e70e4 - g_1070b228->curtime) + 0.005);
+	if (gpGlobals->curtime < g_106e70e4) {
+		pEvent->m_flFireTime = pEvent->m_flFireTime + ((g_106e70e4 - gpGlobals->curtime) + 0.005);
 	}
 	CEQEvent *pCurrent = (CEQEvent *)this;
 	while (pCurrent->m_pNext && !(pCurrent->m_pNext->m_flFireTime > pEvent->m_flFireTime))
@@ -27903,7 +27810,7 @@ void CEventQueue::sub_100ce210(CEQEvent *pEvent)
 	pEvent->m_pNext = pCurrent->m_pNext;
 	pCurrent->m_pNext = pEvent;
 	g_106e70ec = pEvent->m_flFireTime;
-	g_106e70e4 = g_1070b228->curtime;
+	g_106e70e4 = gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -28036,8 +27943,6 @@ char __fastcall sub_100ce5c0(void *pSelf, int unused, void *pDst)
 // FUNCTION: 0x100ce630 size=0x64
 #include "CUnknown100ce630.h"
 
-struct Globals { char pad[0xc]; float curtime; };
-extern Globals *g_1070b228;
 
 // TARGET: CUnknown100ce630::sub_100ce630
 bool CUnknown100ce630::sub_100ce630(float delay)
@@ -28061,7 +27966,7 @@ bool CUnknown100ce630::sub_100ce630(float delay)
 	m_pHead = pItem->m_pNext;
 relink:
 	m_pCurrent->m_pNext = 0;
-	m_pCurrent->m_time = delay + g_1070b228->curtime;
+	m_pCurrent->m_time = delay + gpGlobals->curtime;
 	sub_100ce210(m_pCurrent);
 	return true;
 }
@@ -28199,11 +28104,6 @@ struct PyHost
 	char pad[0x2c - 4];
 	int m_f2c;
 };
-struct GlobalVars
-{
-	char pad[0xc];
-	float curtime;
-};
 
 extern PyObject *(__cdecl *g_109f3750)(const char *);
 extern PyObject *(__cdecl *g_109f3754)(PyObject *);
@@ -28214,7 +28114,6 @@ extern int (__cdecl *g_109f3764)();
 extern void (__cdecl *g_109f3768)();
 extern void (__cdecl *g_109f3628)(const char *, ...);
 extern PyHost *g_107318bc;
-extern GlobalVars *g_1070b228;
 
 void __stdcall sub_100ce8a0(const char *code)
 {
@@ -28223,7 +28122,7 @@ void __stdcall sub_100ce8a0(const char *code)
 		if (module) {
 			PyObject *dict = g_109f3754(module);
 			if (!g_107318bc->v1() && g_107318bc->m_f2c)
-				g_109f3628("RUNNING PYTHON AT TIME %f:\n%s\n\n", g_1070b228->curtime, code);
+				g_109f3628("RUNNING PYTHON AT TIME %f:\n%s\n\n", gpGlobals->curtime, code);
 			PyObject *result = g_109f3758(code, 0x100, dict, dict);
 			if (!result) {
 				g_109f375c();
@@ -33382,13 +33281,7 @@ void __fastcall sub_100f0320(char *p) { p[0x55c] = 0; }
 #include "CGlobalEntityList.h"
 #include "CAI_BaseNPC.h"
 
-struct GlobalVarsCurTime
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;
-};
 
-extern GlobalVarsCurTime *g_1070b228;
 extern CGlobalEntityList *g_10566458;
 extern char g_1000f222[];	// think function (stub of sub_100f0f30)
 extern char g_1000abf0[];	// think function (stub)
@@ -33402,7 +33295,7 @@ void CBaseDoor::sub_100f0860()
 		if (m_flags204 & 0x400)
 			m_pfnTouch = (void (CBaseEntity::*)(CBaseEntity *))&CBaseDoor::sub_10012837;
 	} else {
-		*(float *)((char *)this + 0x17c) = g_1070b228->m_flCurTime + *(float *)((char *)this + 0x500);
+		*(float *)((char *)this + 0x17c) = gpGlobals->curtime + *(float *)((char *)this + 0x500);
 		if (m_flags204 & 0x2000)
 			sub_100ac4e0((int)g_1000f222, 0, 0);
 		else
@@ -33796,11 +33689,6 @@ extern "C" CBaseEntity *entityflame()
 #include "CUnknown100f5600.h"
 #include "CEntityVSlots.h"
 
-struct CGlobalVarsView {
-	char m_pad0000[0xc];
-	float curtime;	// 0xc
-};
-extern CGlobalVarsView *g_1070b228;
 
 struct CBoundsView {	// the collision property at +0x270: slot 1 = mins, slot 2 = maxs
 	virtual void v0();
@@ -33826,7 +33714,7 @@ CUnknown100f5600 *sub_100f54c0(CBaseEntity *pTarget)
 	sub_101cf5c0(pFlame, *((CEntityVSlots *)pTarget)->slot217(), 0);
 	pFlame->m_fUnk450 = flSize;
 	pFlame->sub_100ac4e0((int)sub_100f5620, 0, 0);
-	pFlame->m_flNextThink = g_1070b228->curtime + 0.1f;
+	pFlame->m_flNextThink = gpGlobals->curtime + 0.1f;
 	pFlame->sub_100f55d0(pTarget);
 	pFlame->sub_100f5600(2.0f);
 	pFlame->m_flags268 |= 0x80;
@@ -33848,10 +33736,6 @@ void CUnknown100f5600::sub_100f5600(float value)
 #include "CTakeDamageInfo.h"
 #include "CEntityVSlots.h"
 
-struct BurnGlobals_t {
-	char pad[0xc];
-	float curtime;
-};
 
 #define GV(n) virtual void v##n();
 #define GV10(p) GV(p##0) GV(p##1) GV(p##2) GV(p##3) GV(p##4) GV(p##5) GV(p##6) GV(p##7) GV(p##8) GV(p##9)
@@ -33862,23 +33746,22 @@ struct GameRules_t {
 	virtual void RadiusDamage(const CTakeDamageInfo &info, const Vector &vecSrc, float flRadius, int iClassIgnore, void *pEntityIgnore);
 };
 
-extern BurnGlobals_t *g_1070b228;
 extern GameRules_t *g_1070ba0c;
 void sub_101c0b10();
 void sub_10109770(Vector *pOrigin, float flRadius, float flHeat);
 
 void CUnknown100f5600::sub_100f5620()
 {
-	if (m_fUnk454 < g_1070b228->curtime) {
+	if (m_fUnk454 < gpGlobals->curtime) {
 		sub_100ac4e0((int)sub_101c0b10, 0, 0);
-		m_flNextThink = g_1070b228->curtime + 0.1f;
+		m_flNextThink = gpGlobals->curtime + 0.1f;
 		return;
 	}
 	CTakeDamageInfo info;
 	CEntityVSlots *pSelf = (CEntityVSlots *)this;
 	g_1070ba0c->RadiusDamage(*info.sub_101c26d0(this, this, 4.0f, 8, 0, 0, -1), *pSelf->slot217(), 32.0f, 0, 0);
 	sub_10109770(pSelf->slot217(), 32.0f, 2.0f);
-	m_flNextThink = g_1070b228->curtime + 0.1f;
+	m_flNextThink = gpGlobals->curtime + 0.1f;
 }
 // END FUNCTION
 
@@ -35280,8 +35163,6 @@ void CUnknown100fbc50::sub_100fbc50()
 #include "CEnvParticle.h"
 #include "CUnknown1070b22c.h"
 struct CParticleString { int m_i; };
-struct CGlobalVarsTime { char pad[0xc]; float curtime; };
-extern CGlobalVarsTime *g_1070b228;
 extern CUnknown1070b22c *g_1070b22c;
 extern float g_104454c4;
 CEntityVSlots *sub_100a9ab0(const char *pszClass, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
@@ -35303,7 +35184,7 @@ CEntityVSlots *sub_100fbc90(const char *pszEffect, const float *pOrigin, const f
 		sub_101d1280(pEnt);
 		if (flLifetime > g_104454c4) {
 			((CParticleEnt *)pEnt)->sub_100ac4e0(&CParticleEnt::sub_101c0b10, 0, 0);
-			*(float *)((char *)pEnt + 0x17c) = flLifetime + g_1070b228->curtime;
+			*(float *)((char *)pEnt + 0x17c) = flLifetime + gpGlobals->curtime;
 		}
 	}
 	return pEnt;
@@ -35718,8 +35599,6 @@ void CFieldHolder::sub_100feea0(int unused)
 #include "CEnvBeam.h"
 #include "CBeam.h"
 
-struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
-extern CGlobalVarsX *g_1070b228;
 extern float g_104454c4;
 
 struct CBeamY : CBeam {
@@ -35737,11 +35616,11 @@ void CEnvBeam::sub_100fef50()
         CBeamY *pBeam = (CBeamY *)this;
         pBeam->sub_100bbe70(pBeam->sub_100bb270(), pBeam->sub_100bb440());
         sub_100ac4e0((int)sub_10004bec, 0, 0);
-        *(float *)((char *)this + 0x17c) = g_1070b228->m_curtime;
-        *(float *)((char *)this + 0x454) = g_1070b228->m_curtime;
+        *(float *)((char *)this + 0x17c) = gpGlobals->curtime;
+        *(float *)((char *)this + 0x454) = gpGlobals->curtime;
     } else {
         sub_100ac4e0((int)sub_1000752c, 0, 0);
-        *(float *)((char *)this + 0x17c) = g_1070b228->m_curtime;
+        *(float *)((char *)this + 0x17c) = gpGlobals->curtime;
     }
 }
 // END FUNCTION
@@ -35752,13 +35631,7 @@ void CEnvBeam::sub_100fef50()
 #include "CUnknown1070b244.h"
 #include "ScopeTrace.h"
 
-struct CBeamGlobals
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;
-};
 
-extern CBeamGlobals *g_1070b228;
 extern CUnknown1070b244 *g_1070b244;
 __declspec(dllimport) void __cdecl DevMsg(const char *pszFormat, ...);
 
@@ -35773,9 +35646,9 @@ void CEnvBeam::sub_100ff090()
 	{
 		float flNext;
 		if (m_flags204 & 4)
-			flNext = g_1070b244->vfunc1(0, m_flRestrike) + g_1070b228->m_flCurTime;
+			flNext = g_1070b244->vfunc1(0, m_flRestrike) + gpGlobals->curtime;
 		else
-			flNext = m_flRestrike + g_1070b228->m_flCurTime;
+			flNext = m_flRestrike + gpGlobals->curtime;
 		m_flNextThink = flNext + m_flLife;
 	}
 	m_nActive = 1;
@@ -36035,12 +35908,6 @@ void CUnk101019d0::sub_101019d0()
 #include "CEnvLaser.h"
 #include "Vector.h"
 
-struct CGlobalVarsView
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern CGlobalVarsView *g_1070b228;
 
 struct CEnvLaserView
 {
@@ -36062,7 +35929,7 @@ void CEnvLaser::sub_10101a90(void *pTrace)
 	v->m_vecEnd = *pEnd;
 	if (v->m_pSprite)
 		sub_101cf5c0(v->m_pSprite, pEnd, 0);
-	if (g_1070b228->curtime >= v->m_flLastTime + 0.1)
+	if (gpGlobals->curtime >= v->m_flLastTime + 0.1)
 	{
 		sub_100bbef0(pTrace);
 		sub_100bbe70(sub_100bb270(), (const float *)pEnd);
@@ -36148,9 +36015,6 @@ int *sub_10102410()
 // END FUNCTION
 
 // FUNCTION: 0x101026c0 size=0x28
-struct CUnk1070b228 { char pad0000[0xc]; float m_fl0c; };
-extern CUnk1070b228 *g_1070b228;
-
 struct CUnk101026c0
 {
     char pad0000[0x17c];
@@ -36167,7 +36031,7 @@ void CUnk101026c0::sub_101026c0(int unused)
     if (m_b450)
     {
         m_b450 = 0;
-        m_f17c = g_1070b228->m_fl0c + 0.1;
+        m_f17c = gpGlobals->curtime + 0.1;
     }
 }
 // END FUNCTION
@@ -36438,7 +36302,6 @@ extern "C" CBaseEntity *env_spark()
 #include "CPVSFilter.h"
 #include "QAngle.h"
 
-struct SGlobals10103f80 { char pad[0xc]; float curtime; };
 struct SEngine10103f80
 {
 	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
@@ -36449,7 +36312,6 @@ struct SEngine10103f80
 };
 struct SSub10103f80 { void sub_100cd660(void *a, void *b, int c); };
 
-extern SGlobals10103f80 *g_1070b228;
 extern CUnknown1070b244 *g_1070b244;
 extern SEngine10103f80 *g_10540528;
 extern Vector g_1070d1b0;
@@ -36475,7 +36337,7 @@ struct CThis10103f80 : public CEntityVSlots
 // TARGET: CThis10103f80::sub_10103f80
 void CThis10103f80::sub_10103f80()
 {
-	m_f17c = g_1070b244->vfunc1(0.0f, m_f450) + g_1070b228->curtime + 0.1;
+	m_f17c = g_1070b244->vfunc1(0.0f, m_f450) + gpGlobals->curtime + 0.1;
 	Vector vec = g_1070d1b0;
 	if (m_nFlags & 0x200)
 		sub_10139610(*(QAngle *)slot219(), &vec, 0, 0);
@@ -36862,8 +36724,6 @@ extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
 extern char g_105387dc[];
-struct GlobalVars { char pad[0xc]; float curtime; };
-extern GlobalVars *g_1070b228;
 
 struct ExprRecord { char pad[8]; float m_flTime; char pad2[0x20 - 0xc]; };
 
@@ -36880,7 +36740,7 @@ void CBaseCombatCharacter::sub_101063a0()
 	g_109f3620[*g_109f3680].b = name;
 	g_109f3620[*g_109f3680].c = g_106b8540;
 	++*g_109f3680;
-	float now = g_1070b228->curtime;
+	float now = gpGlobals->curtime;
 	int i = 0;
 	for (; i < *(int *)((char *)this + 0x10c8); i++) {
 		float *p = &(*(ExprRecord **)((char *)this + 0x10bc))[i].m_flTime;
@@ -37650,10 +37510,6 @@ void CFire::sub_1010a7f0()
 #include "CFire.h"
 #include "CEHandleGet.h"
 
-struct FireGlobals_t {
-	char pad[0xc];
-	float curtime;
-};
 
 struct FireView_t {
 	char pad[0x450];
@@ -37667,19 +37523,18 @@ struct SmokeView_t {
 	float flLifetime;
 };
 
-extern FireGlobals_t *g_1070b228;
 
 void CFire::sub_1010b470()
 {
 	FireView_t *pFire = (FireView_t *)this;
-	if (pFire->flBurnOutTime < g_1070b228->curtime) {
+	if (pFire->flBurnOutTime < gpGlobals->curtime) {
 		sub_1010b9d0();
 	} else {
 		SmokeView_t *pSmoke = (SmokeView_t *)EHandle_Get(pFire->hSmoke);
 		if (pSmoke)
-			sub_1010a900((pFire->flBurnOutTime - g_1070b228->curtime) / pSmoke->flLifetime);
+			sub_1010a900((pFire->flBurnOutTime - gpGlobals->curtime) / pSmoke->flLifetime);
 	}
-	m_flNextThink = g_1070b228->curtime + 0.1;
+	m_flNextThink = gpGlobals->curtime + 0.1;
 }
 // END FUNCTION
 
@@ -37755,12 +37610,6 @@ void CFire::sub_1010b5c0(float flHeat, char bInstant)
 #include "CFire.h"
 #include "ConVar.h"
 
-struct CGlobalVarsView
-{
-	char m_pad00[0xc];
-	float curtime;
-	float frametime;
-};
 
 struct CFireBurnView
 {
@@ -37777,7 +37626,6 @@ struct CFireBurnView
 	char m_bBurning;
 };
 
-extern CGlobalVarsView *g_1070b228;
 extern ConVar *g_1070954c;
 extern ConVar *g_10709474;
 extern float g_104454c4;
@@ -37788,14 +37636,14 @@ void CFire::sub_1010b840(float flTime)
 	CFireBurnView *pView = (CFireBurnView *)this;
 	if (!pView->m_bBurning)
 		return;
-	pView->m_flBurnOut = g_1070b228->curtime + 0.5;
+	pView->m_flBurnOut = gpGlobals->curtime + 0.5;
 	bool bWasBurning = pView->m_flHeat > g_104454c4;
 	pView->m_flHeat -= flTime;
 	pView->m_flLevel += (g_1070954c->vfunc1() ? g_104454c4 : g_1070954c->m_fValue) * flTime;
 	if ((g_10709474->vfunc1() ? g_104454c4 : g_10709474->m_fValue) < pView->m_flLevel)
 		pView->m_flLevel = g_10709474->vfunc1() ? g_104454c4 : g_10709474->m_fValue;
 	float flTarget = pView->m_flRate * 0.3125f;
-	pView->m_flFade = sub_1013d400(flTarget, pView->m_flFade, g_1070b228->frametime + g_1070b228->frametime);
+	pView->m_flFade = sub_1013d400(flTarget, pView->m_flFade, gpGlobals->frametime + gpGlobals->frametime);
 	if (pView->m_flHeat <= g_104454c4)
 	{
 		pView->m_flHeat = 0;
@@ -39524,13 +39372,8 @@ struct GravityObj {
 	float m_flValue;
 };
 
-struct TimeObj {
-	char m_pad[0x10];
-	float m_flFrameTime;
-};
 
 extern GravityObj *g_109ef2d4;
-extern TimeObj *g_1070b228;
 
 void CGameMovement::sub_1011fa80()
 {
@@ -39542,8 +39385,8 @@ void CGameMovement::sub_1011fa80()
 	float *pVal = &((PlayerData *)m_pPlayer)->m_flValue48;
 	float flGrav = g_109ef2d4->IsZero() ? 0.0f : g_109ef2d4->m_flValue;
 	float flStep = flGrav * flScale;
-	*pVal = *pVal - flStep * g_1070b228->m_flFrameTime * 0.5;
-	((PlayerData *)m_pPlayer)->m_flValue48 = ((PlayerData *)m_pPlayer)->m_flValue54 * g_1070b228->m_flFrameTime + ((PlayerData *)m_pPlayer)->m_flValue48;
+	*pVal = *pVal - flStep * gpGlobals->frametime * 0.5;
+	((PlayerData *)m_pPlayer)->m_flValue48 = ((PlayerData *)m_pPlayer)->m_flValue54 * gpGlobals->frametime + ((PlayerData *)m_pPlayer)->m_flValue48;
 	((PlayerData *)m_pPlayer)->m_flValue54 = 0.0f;
 	sub_10004ebc();
 }
@@ -39552,8 +39395,6 @@ void CGameMovement::sub_1011fa80()
 // FUNCTION: 0x1011ffe0 size=0xa9
 #include "CGameMovement.h"
 
-struct CGlobalVarsW { char pad[0x10]; float frametime; };
-extern CGlobalVarsW *g_1070b228;
 
 struct CMoveW
 {
@@ -39576,7 +39417,7 @@ void CGameMovement::sub_1011ffe0()
         ((CMoveW *)m_pMove)->m_flWaterJumpTime = 10000.0f;
     if (!((CMoveW *)m_pMove)->m_flWaterJumpTime)
         return;
-    ((CMoveW *)m_pMove)->m_flWaterJumpTime -= g_1070b228->frametime * 1000.0f;
+    ((CMoveW *)m_pMove)->m_flWaterJumpTime -= gpGlobals->frametime * 1000.0f;
     if (((CMoveW *)m_pMove)->m_flWaterJumpTime <= 0 || !((CMoveW *)m_pMove)->m_nWaterLevel) {
         ((CMoveW *)m_pMove)->m_flWaterJumpTime = 0;
         ((CBaseEntity *)m_pMove)->sub_100b3640(4);
@@ -39589,10 +39430,8 @@ void CGameMovement::sub_1011ffe0()
 // FUNCTION: 0x10120f30 size=0x91
 #include "CGameMovement.h"
 struct SIface { virtual void v0(); virtual char vfunc1(); };
-struct SGlobalTime { char pad[0x10]; float frametime; };
 struct SGlobalB { void *vt; char pad[0x24]; float value; };
 extern SGlobalB *g_109ef2d4;
-extern SGlobalTime *g_1070b228;
 
 void CGameMovement::sub_10120f30()
 {
@@ -39610,7 +39449,7 @@ void CGameMovement::sub_10120f30()
         v = 0.0f;
     else
         v = g_109ef2d4->value;
-    *pz = *pz - v * g_1070b228->frametime * scale * 0.5;
+    *pz = *pz - v * gpGlobals->frametime * scale * 0.5;
     sub_10004ebc();
 }
 // END FUNCTION
@@ -39618,8 +39457,6 @@ void CGameMovement::sub_10120f30()
 // FUNCTION: 0x10121000 size=0xe0
 #include "CGameMovement.h"
 
-struct S121000Globals { char pad[0x10]; float frametime; };
-extern S121000Globals *g_1070b228;
 
 struct S121000Player
 {
@@ -39651,7 +39488,7 @@ void CGameMovement::sub_10121000(Vector &wishdir, float wishspeed, float accel)
         float addspeed = wishspd - currentspeed;
         if (addspeed <= 0)
             return;
-        float accelspeed = g_1070b228->frametime * m_fieldA0 * wishspeed * accel;
+        float accelspeed = gpGlobals->frametime * m_fieldA0 * wishspeed * accel;
         if (accelspeed > addspeed)
             accelspeed = addspeed;
         for (int i = 0; i < 3; i++) {
@@ -39764,13 +39601,8 @@ struct GravityObj {
 	float m_flValue;
 };
 
-struct TimeObj {
-	char m_pad[0x10];
-	float m_flFrameTime;
-};
 
 extern GravityObj *g_109ef2d4;
-extern TimeObj *g_1070b228;
 
 void CGameMovement::sub_10123e20()
 {
@@ -39782,8 +39614,8 @@ void CGameMovement::sub_10123e20()
 			flScale = 1.0f;
 		float *pVal = &((PlayerData *)m_pPlayer)->m_flValue48;
 		float flGrav = g_109ef2d4->IsZero() ? 0.0f : g_109ef2d4->m_flValue;
-		*pVal = *pVal - flGrav * g_1070b228->m_flFrameTime * flScale;
-		((PlayerData *)m_pPlayer)->m_flValue48 = ((MoveData *)m_pMove)->m_vecBase.z * g_1070b228->m_flFrameTime + ((PlayerData *)m_pPlayer)->m_flValue48;
+		*pVal = *pVal - flGrav * gpGlobals->frametime * flScale;
+		((PlayerData *)m_pPlayer)->m_flValue48 = ((MoveData *)m_pMove)->m_vecBase.z * gpGlobals->frametime + ((PlayerData *)m_pPlayer)->m_flValue48;
 		Vector v = ((MoveData *)m_pMove)->m_vecBase;
 		v.z = 0.0f;
 		((MoveData *)m_pMove)->m_vecBase = v;
@@ -40770,16 +40602,11 @@ void CUnknown1012d740::sub_1012d5e0(int nState)
 // FUNCTION: 0x1012d740 size=0x97
 #include "CUnknown1012d740.h"
 
-struct TimerGlobals_t {
-	char pad[0xc];
-	float curtime;
-};
 
-extern TimerGlobals_t *g_1070b228;
 
 void CUnknown1012d740::sub_1012d740()
 {
-	float flNow = g_1070b228->curtime;
+	float flNow = gpGlobals->curtime;
 	m_flTimeLeft = m_flTimeLeft - (flNow - m_flLastTime);
 	m_flLastTime = flNow;
 	if (m_flTimeLeft <= 0.0f) {
@@ -41177,11 +41004,6 @@ struct EngineSrv {
 };
 extern EngineSrv *g_1070b22c;
 
-struct GlobalVars {
-	char m_pad[0xc];
-	float curtime;
-};
-extern GlobalVars *g_1070b228;
 extern char g_106b8540[];
 
 void CLight::sub_101308d0()
@@ -41206,7 +41028,7 @@ void CLight::sub_101308d0()
 		buf[0] = m_cCurrent;
 		buf[1] = 0;
 		g_1070b22c->LightStyle(m_iStyle, buf);
-		*(float *)((char *)this + 0x17c) = m_flFadeTime + g_1070b228->curtime;
+		*(float *)((char *)this + 0x17c) = m_flFadeTime + gpGlobals->curtime;
 	}
 }
 // END FUNCTION
@@ -42204,9 +42026,7 @@ struct SConsoleVarView {
     int m_nValue;
 };
 
-struct SGlobalsView { char pad[0xc]; float curtime; };
 extern SConsoleVarView *g_107318bc;
-extern SGlobalsView *g_1070b228;
 extern char g_106b8540[];
 extern "C" unsigned int __cdecl strlen(const char *);
 
@@ -42225,7 +42045,7 @@ bool CLogicPythonCheck::sub_10135290()
         const char *code = StrRef(m_pszCode);
         if (code != 0) {
             if (!g_107318bc->IsOff() && g_107318bc->m_nValue != 0)
-                Msg("RUNNING PYTHON AT TIME %f:\n%s\n\n", (double)g_1070b228->curtime, code);
+                Msg("RUNNING PYTHON AT TIME %f:\n%s\n\n", (double)gpGlobals->curtime, code);
         }
         pRes = PyRun_String(StrRef(m_pszCode), 0x102, pDict, pDict);
         if (pRes == 0) {
@@ -45422,13 +45242,7 @@ struct SAnimlinkSub
 {
 	void sub_1014ebd0(CPhysicsAnimlink *pOwner, CBaseAnimating *pAnimating, CBaseEntity *pEntity);	// stub 0x100042ff
 };
-struct SGlobalVarsAL
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
 extern SPhysEnvironment *g_10723940;
-extern SGlobalVarsAL *g_1070b228;
 void sub_10139b50(int a, int b, float *pMatrix);
 void sub_100157bc();
 void CPhysicsAnimlink::sub_1014f210(CBaseAnimating *pAnimating, int nBone, void *pPhysObject, int a, int b)
@@ -45457,7 +45271,7 @@ void CPhysicsAnimlink::sub_1014f210(CBaseAnimating *pAnimating, int nBone, void 
 	pDest[14] = 0;
 	pDest[15] = 1.0f;
 	sub_100ac4e0((int)sub_100157bc, 0, 0);
-	*(float *)((char *)this + 0x17c) = g_1070b228->curtime;
+	*(float *)((char *)this + 0x17c) = gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -45859,8 +45673,6 @@ void CUnknown101578b0::sub_10157910(int value)
 
 // FUNCTION: 0x10157ca0 size=0x6a
 #include "CRagdollPropSpecial.h"
-struct GlobalsL { char pad[0xc]; float curtime; };
-extern GlobalsL *g_1070b228;
 
 void CRagdollPropSpecial::sub_10157ca0(CBaseEntity *pOwner)
 {
@@ -45870,7 +45682,7 @@ void CRagdollPropSpecial::sub_10157ca0(CBaseEntity *pOwner)
         else
             *(unsigned int *)((char *)this + 0x1050) = 0xffffffff;
         sub_100ac4e0(&CRagdollPropSpecial::sub_10015424, 0, 0);
-        *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.001;
+        *(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.001;
         *(int *)((char *)this + 0x1fc) = 0;
         *(int *)((char *)this + 0x200) = 1;
     }
@@ -46518,13 +46330,7 @@ CBaseEntity *CBasePlayer::sub_101618a0()
 extern CGlobalEntityList *g_10566458;
 extern char g_10015b68[];	// think function stub
 
-struct GlobalVarsClock
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;
-};
 
-extern GlobalVarsClock *g_1070b228;
 
 struct PlayerMoveHelper
 {
@@ -46574,7 +46380,7 @@ void CBasePlayer::sub_101618e0(int a, int b)
 			((CEntityVSlots *)this)->slot62((const float *)((CEntityVSlots *)pEnt)->slot217());
 		}
 		pEnt->sub_100ac4e0((int)g_10015b68, 0, 0);
-		*(float *)((char *)pEnt + 0x17c) = g_1070b228->m_flCurTime + 0.01;
+		*(float *)((char *)pEnt + 0x17c) = gpGlobals->curtime + 0.01;
 		*(unsigned int *)((char *)this + 0x1db0) = 0xffffffff;
 	}
 }
@@ -47297,13 +47103,7 @@ int CBasePlayerUnit::sub_1016bb50()
 
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 
-struct CGlobalVars_t
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
 
-extern CGlobalVars_t *g_1070b228;
 extern char *(__cdecl *g_109f386c)(const char *pStr, const char *pSub);
 
 void CBasePlayer::sub_1016bd50()
@@ -47313,7 +47113,7 @@ void CBasePlayer::sub_1016bd50()
 	*(int *)((char *)this + 0x168) = 0;
 	*(int *)((char *)this + 0x16c) = 0;
 	*(char *)((char *)this + 0x1edc) = 0;
-	*(float *)((char *)this + 0x1c68) = g_1070b228->curtime;
+	*(float *)((char *)this + 0x1c68) = gpGlobals->curtime;
 	char *pszModelName = (char *)this + 0x23d4;
 	char *pFound = g_109f386c(pszModelName, (char *)((CBaseAnimating *)this)->sub_100952d0(-1) + 0xc);
 	if (pFound) {
@@ -47487,16 +47287,11 @@ void CBasePlayer::sub_10170cf0(unsigned int flags, char bSet)
 #include "CUnknown101c26d0.h"
 #include <stdlib.h>
 
-struct CGlobalVarsView {
-    char pad[0xc];
-    float curtime;
-};
-extern CGlobalVarsView *g_1070b228;
 
 void CBasePlayer::sub_10170d60()
 {
-    if (!(m_f2148 > g_1070b228->curtime)) {
-        m_f2148 = g_1070b228->curtime + 5.0f;
+    if (!(m_f2148 > gpGlobals->curtime)) {
+        m_f2148 = gpGlobals->curtime + 5.0f;
         *(int *)((char *)this + 0x210) = 0;
         CUnknown101c26d0 info;
         info.sub_101c26d0(this, this, 10.0f, 0x1000, 0, 0, -1);
@@ -47719,11 +47514,6 @@ struct EntV {
 	virtual float *v221();
 };
 
-struct GlobalVars {
-	char m_pad[0xc];
-	float curtime;
-};
-extern GlobalVars *g_1070b228;
 
 void CBloodSplat::sub_101719d0(CBaseEntity *pPlayer)
 {
@@ -47739,7 +47529,7 @@ void CBloodSplat::sub_101719d0(CBaseEntity *pPlayer)
 	self->v62(&copy);
 	self->v64(player->v221());
 	self->v202(player);
-	*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
+	*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.1;
 }
 // END FUNCTION
 
@@ -47887,8 +47677,6 @@ void CFlagSet10174550::sub_10174550(bool v)
 #include "CBaseCombatWeapon.h"
 #include "Vector.h"
 
-struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
-extern CGlobalVarsX *g_1070b228;
 struct CDebugX { char m_pad[0x460]; int m_flag; };
 extern CDebugX *g_1072c464;
 void sub_101cee20(float size, Vector origin, Vector angles, int flags);
@@ -47900,7 +47688,7 @@ void CBaseCombatCharacter::sub_10174c10()
     if (g_1072c464->m_flag)
         sub_101cee20(5.0f, *(Vector *)((PFN_GetVec)(*(void ***)this)[217])(this), *(Vector *)((PFN_GetVec)(*(void ***)this)[219])(this), 0);
     CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e7b0();
-    if (g_1070b228->m_curtime > *(float *)((char *)this + 0x1564) && pWeapon)
+    if (gpGlobals->curtime > *(float *)((char *)this + 0x1564) && pWeapon)
         pWeapon->vfunc318();
 }
 // END FUNCTION
@@ -48077,8 +47865,6 @@ void CTriggerEnvAudio::sub_101753a0(int value)
 
 extern CUnknown1070b22c *g_1070b22c;
 extern int g_1072607c;
-struct CGlobalVarsT { char m_pad0000[0xc]; float curtime; };
-extern CGlobalVarsT *g_1070b228;
 struct CFadeTimer { float sub_101e8bb0(); };
 extern CFadeTimer g_10739d08;
 
@@ -48090,7 +47876,7 @@ void CBasePlayer::sub_10175400(char bFade)
 	int nAmount = 0;
 	unsigned char nFlags;
 	if (bFade) {
-		double flPercent = (*(float *)((char *)this + 0x1478) - g_1070b228->curtime) / g_10739d08.sub_101e8bb0() * 100.0;
+		double flPercent = (*(float *)((char *)this + 0x1478) - gpGlobals->curtime) / g_10739d08.sub_101e8bb0() * 100.0;
 		if (flPercent > 100.0)
 			flPercent = 100.0;
 		else if (flPercent < 1.0)
@@ -48198,8 +47984,6 @@ void CUnknown101780e0::sub_101780e0()
 // FUNCTION: 0x10178170 size=0xcc
 #include "CUnknown101800e0.h"
 
-struct GlobalVarsX { int pad0[3]; float curtime; };
-extern GlobalVarsX *g_1070b228;
 
 struct PlayerView10178170 {
 	char pad0[0x1cf8];
@@ -48216,9 +48000,9 @@ bool CBasePlayer::sub_10178170()
 	if (sub_1017f8d0())
 		return true;
 	float flValue = ((CUnknown101800e0 *)this)->sub_101800e0(1);
-	if (flValue > 0.0f && flValue >= g_1070b228->curtime - 10.0f)
+	if (flValue > 0.0f && flValue >= gpGlobals->curtime - 10.0f)
 		return true;
-	float flTime = g_1070b228->curtime - 10.0f;
+	float flTime = gpGlobals->curtime - 10.0f;
 	if (0.0f > flTime)
 		flTime = 0.0f;
 	if (flTime < v->m_f1dd0)
@@ -48678,12 +48462,6 @@ float __stdcall sub_1017deb0(int a, float b)
 #include "ConVar.h"
 
 __declspec(dllimport) void DevMsg(const char *fmt, ...);
-struct CWeaponGlobals
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern CWeaponGlobals *g_1070b228;
 extern ConVar g_10724ff8;
 extern ConVar *g_107258dc;
 extern char g_106b8540[];
@@ -48706,7 +48484,7 @@ void CBasePlayer::sub_1017df50(int level, float time, const char *pszReason)
 	if (level == 0)
 	{
 		if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
-			DevMsg("CSActs:    %6.1f - Supernatural level %d -> 0 (act - %s)\n", g_1070b228->curtime, FLD(int, 0x1ccc), pszReason);
+			DevMsg("CSActs:    %6.1f - Supernatural level %d -> 0 (act - %s)\n", gpGlobals->curtime, FLD(int, 0x1ccc), pszReason);
 		FLD(int, 0x1ccc) = 0;
 		FLD(float, 0x1ce4) = -1.0f;
 		return;
@@ -48716,16 +48494,16 @@ void CBasePlayer::sub_1017df50(int level, float time, const char *pszReason)
 	{
 		t = self->sub_1017deb0(FLD(int, 0x1ccc), time);
 		if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
-			DevMsg("CSActs:    %6.1f - Supernatural level %d -> %d (%f sec) (act - %s)\n", g_1070b228->curtime, FLD(int, 0x1ccc), level, t, pszReason);
+			DevMsg("CSActs:    %6.1f - Supernatural level %d -> %d (%f sec) (act - %s)\n", gpGlobals->curtime, FLD(int, 0x1ccc), level, t, pszReason);
 		FLD(int, 0x1ccc) = level;
-		FLD(float, 0x1ce4) = t + g_1070b228->curtime;
+		FLD(float, 0x1ce4) = t + gpGlobals->curtime;
 	}
 	else
 	{
 		t = self->sub_1017deb0(FLD(int, 0x1ccc), time);
 		if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
-			DevMsg("CSActs:    %6.1f - Supernatural level %d -> %d (refresh %f sec) (act - %s)\n", g_1070b228->curtime, FLD(int, 0x1ccc), level, t, pszReason);
-		FLD(float, 0x1ce4) = t + g_1070b228->curtime;
+			DevMsg("CSActs:    %6.1f - Supernatural level %d -> %d (refresh %f sec) (act - %s)\n", gpGlobals->curtime, FLD(int, 0x1ccc), level, t, pszReason);
+		FLD(float, 0x1ce4) = t + gpGlobals->curtime;
 	}
 	FLD(int, 0x1cec)++;
 }
@@ -48848,8 +48626,6 @@ int __stdcall sub_1017ec10(int a)
 // FUNCTION: 0x1017ec40 size=0x89
 #include "CBasePlayer.h"
 
-struct GlobalVarsT { char pad[0xc]; float curtime; };
-extern GlobalVarsT *g_1070b228;
 extern char g_106c8a41;
 struct EntInfo { void *ent; int serial; int pad; };
 extern char *g_10566458;
@@ -48857,7 +48633,7 @@ extern char *g_10566458;
 void CBasePlayer::sub_1017ec40()
 {
 	float *pNext = (float *)((char *)this + 0x1cf8);
-	if (g_1070b228->curtime >= *pNext) {
+	if (gpGlobals->curtime >= *pNext) {
 		if (g_106c8a41) {
 			*pNext = *pNext + 5.0f;
 			return;
@@ -48886,12 +48662,6 @@ struct CUnk107258dc
 };
 extern CUnk107258dc *g_107258dc;
 
-struct CGlobalVarsStub
-{
-	char pad[0xc];
-	float m_flCurTime;
-};
-extern CGlobalVarsStub *g_1070b228;
 __declspec(dllimport) void DevMsg(const char *pMsg, ...);
 
 struct CCopSpawnerView
@@ -48917,7 +48687,7 @@ void CBasePlayer::sub_1017f170(void *pSpawnerVoid)
 	CCopSpawnerView *pSpawner = (CCopSpawnerView *)pSpawnerVoid;
 	if (pSpawner) {
 		if (!g_107258dc->vfunc1() && g_107258dc->m_n2c != 0)
-			DevMsg("CSActs:    %6.1f - Immediate spwan of %d cops\n", (double)g_1070b228->m_flCurTime, *(int *)((char *)this + 0x1dcc));
+			DevMsg("CSActs:    %6.1f - Immediate spwan of %d cops\n", (double)gpGlobals->curtime, *(int *)((char *)this + 0x1dcc));
 		switch (*(int *)((char *)this + 0x1dcc)) {
 		case 0:
 			pSpawner->m_Out450.sub_100cd660(pSpawner, pSpawner, 0);
@@ -48953,11 +48723,6 @@ struct CMsgPlayerView;
 void sub_101cebc0(CMsgPlayerView *pPlayer, int a, int b);
 __declspec(dllimport) void DevMsg(const char *pMsg, ...);
 
-struct CGlobalVarsView {
-	char m_pad0000[0xc];
-	float curtime;	// 0xc
-};
-extern CGlobalVarsView *g_1070b228;
 
 struct CCSActsFlag {	// a console variable: slot 1 tells whether it is unset
 	virtual void v0();
@@ -48984,12 +48749,12 @@ void CBasePlayer::sub_1017f2a0(int priority, CBaseEntity *pEntity, const Vector 
 	if (!g_107258dc->IsDefault() && g_107258dc->m_nValue2c) {
 		const char *pszName;
 		if (pEntity) {
-			((CWitnessView *)pEntity)->m_flTime63a4 = g_1070b228->curtime + 20.0f;
+			((CWitnessView *)pEntity)->m_flTime63a4 = gpGlobals->curtime + 20.0f;
 			pszName = pEntity->sub_100ab4f0();
 		} else {
 			pszName = "**UNKNOWN**";
 		}
-		DevMsg("CSActs:    %6.1f - Criminal act witnessed by %s at %f\n", (double)g_1070b228->curtime, pszName, (double)g_1070b228->curtime);
+		DevMsg("CSActs:    %6.1f - Criminal act witnessed by %s at %f\n", (double)gpGlobals->curtime, pszName, (double)gpGlobals->curtime);
 	}
 	CLocalPlayerView *pLocal = sub_1023bd00();
 	if (pLocal && pLocal->m_n49c) {
@@ -49003,11 +48768,6 @@ void CBasePlayer::sub_1017f2a0(int priority, CBaseEntity *pEntity, const Vector 
 #include "CBasePlayer.h"
 #include "ConVar.h"
 
-struct CGlobalVarsView
-{
-	char m_pad[0xc];
-	float curtime;
-};
 struct CLocalPlayerView
 {
 	char m_pad[0x49c];
@@ -49017,7 +48777,6 @@ struct CLocalPlayerView
 extern ConVar *g_107258dc;
 extern ConVar *g_10725804;
 extern ConVar *g_10723984;
-extern CGlobalVarsView *g_1070b228;
 CLocalPlayerView *sub_1023bd00();
 void sub_1022dea0(CBasePlayer *pPlayer, int a);
 __declspec(dllimport) void DevMsg(const char *fmt, ...);
@@ -49029,20 +48788,20 @@ void CBasePlayer::sub_1017f4a0(int priority, CBaseEntity *pEntity, const Vector 
 		const char *pszName;
 		if (pEntity)
 		{
-			*(float *)((char *)pEntity + 0x63a8) = g_1070b228->curtime + 20.0f;
+			*(float *)((char *)pEntity + 0x63a8) = gpGlobals->curtime + 20.0f;
 			pszName = pEntity->sub_100ab4f0();
 		}
 		else
 			pszName = "**UNKNOWN**";
-		DevMsg("CSActs:    %6.1f - Supernatural act witnessed by %s at %f\n", (double)g_1070b228->curtime, pszName, (double)g_1070b228->curtime);
+		DevMsg("CSActs:    %6.1f - Supernatural act witnessed by %s at %f\n", (double)gpGlobals->curtime, pszName, (double)gpGlobals->curtime);
 	}
 	CLocalPlayerView *pLocal = sub_1023bd00();
 	if (pLocal && pLocal->m_n49c)
 	{
-		if (g_1070b228->curtime >= *(float *)((char *)this + 0x1dbc))
+		if (gpGlobals->curtime >= *(float *)((char *)this + 0x1dbc))
 		{
 			::sub_1022dea0(this, 1);
-			*(float *)((char *)this + 0x1dbc) = (g_10723984->vfunc1() ? 0.0f : g_10723984->m_fValue) + g_1070b228->curtime;
+			*(float *)((char *)this + 0x1dbc) = (g_10723984->vfunc1() ? 0.0f : g_10723984->m_fValue) + gpGlobals->curtime;
 		}
 		if (!g_10725804->vfunc1() && g_10725804->m_nValue)
 			sub_1017ed00(priority, pEntity, pPos);
@@ -49078,8 +48837,6 @@ void CUnk_1017f600::sub_1017f600()
 // FUNCTION: 0x1017f650 size=0x6b
 #include "CNPC_VCop.h"
 #include "ConVar.h"
-struct CGlobalsView { char m_pad[0xc]; float curtime; };
-extern CGlobalsView *g_1070b228;
 extern ConVar *g_107258dc;
 __declspec(dllimport) void DevMsg(const char *fmt, ...);
 void sub_10008cdd(void *pNpc);
@@ -49098,7 +48855,7 @@ void CNPC_VCopUnit::sub_1017f650()
     }
     ++*pPursuit;
     if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
-        DevMsg("CSActs:    %6.1f - OnCopPursuitStart - %d in pursuit\n", g_1070b228->curtime, *pPursuit);
+        DevMsg("CSActs:    %6.1f - OnCopPursuitStart - %d in pursuit\n", gpGlobals->curtime, *pPursuit);
 }
 // END FUNCTION
 
@@ -49164,15 +48921,13 @@ struct CEntView1017ff40
 	char m_pad[0x128 - 4];
 	int m_n128;
 };
-struct CGlobals1070b228 { char pad[0xc]; float curtime; };
-extern CGlobals1070b228 *g_1070b228;
 
 void CUnknown1017fd60::sub_1017ff40(CBaseEntity *pEnt, int nKind)
 {
 	CEntView1017ff40 *pView = (CEntView1017ff40 *)pEnt;
 	if (pView && pView->slot138() != 13)
 	{
-		m_flNoticeTime[nKind] = g_1070b228->curtime;
+		m_flNoticeTime[nKind] = gpGlobals->curtime;
 		m_hNoticed[nKind] = *pView->slot1();
 		if (pView->m_n128 == 0 || nKind == 3 || nKind == 4)
 		{
@@ -49698,8 +49453,6 @@ int CAI_BaseNPC::sub_10182a90()
 
 // FUNCTION: 0x10182c40 size=0xe6
 #include "CAI_BaseNPC.h"
-struct Globals { char pad[0xc]; float curtime; };
-extern Globals *g_1070b228;
 extern char *g_10566458;
 extern char g_10724ef0[];
 extern const double g_10449270;
@@ -49720,7 +49473,7 @@ void CAI_BaseNPC::sub_10182c40(const char *text, const char *sound)
         ;
     *(char **)((char *)this + 0x1ca4) = g_10724ef0[0] ? g_10724ef0 : 0;
     float *pTime = (float *)((char *)this + 0x1ca8);
-    *pTime = g_1070b228->curtime - g_10449270;
+    *pTime = gpGlobals->curtime - g_10449270;
     float r;
     unsigned int h = *(unsigned int *)((char *)this + 0xfe8);
     if (h != 0xffffffff) {
@@ -50503,12 +50256,6 @@ void __stdcall sub_10185f90(CBasePlayer *pPlayer, double flFrame)
 // END FUNCTION
 
 // FUNCTION: 0x101871f0 size=0x69
-struct CGlobalVarsStub
-{
-	char pad[0xc];
-	float m_flValue;
-};
-
 #define PV1(p) virtual void p();
 #define PV10(p) PV1(p##0) PV1(p##1) PV1(p##2) PV1(p##3) PV1(p##4) PV1(p##5) PV1(p##6) PV1(p##7) PV1(p##8) PV1(p##9)
 #define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
@@ -50524,7 +50271,6 @@ struct CPlayerTimeStub
 	float m_flTime;
 };
 
-extern CGlobalVarsStub *g_1070b228;
 
 // TARGET: sub_101871f0
 void __stdcall sub_101871f0(CPlayerTimeStub *pPlayer, double dt)
@@ -50533,7 +50279,7 @@ void __stdcall sub_101871f0(CPlayerTimeStub *pPlayer, double dt)
 	if (!(f <= 0.0) && !(pPlayer->m_flTime + dt < f)) {
 		if (pPlayer->m_flTime + 0.0 > f)
 			f = pPlayer->m_flTime;
-		g_1070b228->m_flValue = f;
+		gpGlobals->curtime = f;
 		pPlayer->m_flPending = 0;
 		pPlayer->vfunc134();
 	}
@@ -51318,15 +51064,13 @@ CActivityCopyProp *CActivityCopyProp::sub_1018e1c0()
 
 // FUNCTION: 0x1018e2a0 size=0x67
 #include "CUnknown1018e2a0.h"
-struct GlobalsL { char pad[0xc]; float curtime; };
-extern GlobalsL *g_1070b228;
 
 void CUnknown1018e2a0::sub_1018e2a0(CBaseEntity *pTarget)
 {
     if (pTarget) {
         *(unsigned int *)((char *)this + 0x730) = *pTarget->vfunc1();
         sub_100ac4e0(&CUnknown1018e2a0::sub_10006177, 0, 0);
-        *(float *)((char *)this + 0x17c) = g_1070b228->curtime;
+        *(float *)((char *)this + 0x17c) = gpGlobals->curtime;
         *(int *)((char *)this + 0x73c) = *(int *)((char *)pTarget + 0xfec);
     } else {
         *(unsigned int *)((char *)this + 0x730) = 0xffffffff;
@@ -55084,8 +54828,6 @@ extern char g_10543c6c[];
 extern char g_10538764[];
 extern char g_1059290c[];
 
-struct GlobalsView { char pad[0x38]; int m_nEdicts; };
-extern GlobalsView *g_1070b228;
 
 struct EdictUnknownView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *vfunc4(); };
 struct EdictView { char pad[0x40]; EdictUnknownView *m_pUnk; char pad44[0x4c - 0x44]; char m_bFree; };
@@ -55093,7 +54835,7 @@ struct EdictView { char pad[0x40]; EdictUnknownView *m_pUnk; char pad44[0x4c - 0
 bool CRopeKeyframe::sub_1019ee40()
 {
     sub_1019f1f0(false);
-    for (int i = 1; i < g_1070b228->m_nEdicts; i++) {
+    for (int i = 1; i < gpGlobals->m_nEdicts; i++) {
         EdictView *pEdict = (EdictView *)g_1070b22c->vfunc38(i);
         if (pEdict && !pEdict->m_bFree) {
             CBaseEntity *pEnt;
@@ -55120,22 +54862,16 @@ bool CRopeKeyframe::sub_1019ee40()
 #include "CEntityVSlots.h"
 #include "CGlobalEntityList.h"
 
-struct S1019efb0Globals
-{
-	float m_pad[3];
-	float curtime;
-};
-extern S1019efb0Globals *g_1070b228;
 void sub_101cd940(CBaseEntity *pEntity);
 
 void CRopeKeyframe::sub_1019efb0()
 {
-	if (m_flRemoveTime480 != 0.0f && m_flRemoveTime480 < g_1070b228->curtime) {
+	if (m_flRemoveTime480 != 0.0f && m_flRemoveTime480 < gpGlobals->curtime) {
 		sub_101cd940(this);
 		return;
 	}
 	sub_1019e8b0(0);
-	m_flNextThink = g_1070b228->curtime + 0.2f;
+	m_flNextThink = gpGlobals->curtime + 0.2f;
 	CBaseEntity *pEnts[2];
 	pEnts[0] = (CBaseEntity *)EHandle_Get(m_hStartPoint);
 	pEnts[1] = (CBaseEntity *)EHandle_Get(m_hEndPoint);
@@ -55892,22 +55628,20 @@ struct NpcView101a7390 {
 	char pad[0x5d70];
 	int m_nState;
 };
-struct GlobalVarsX { int pad0[3]; float curtime; };
-extern GlobalVarsX *g_1070b228;
 __declspec(dllimport) void DevMsg(const char *pMsg, ...);
 void sub_1000556f();
 
 void CCineNPC::sub_101a7390(int unused)
 {
 	CineView101a7390 *v = (CineView101a7390 *)this;
-	if (v->m_flNextThink > g_1070b228->curtime) {
+	if (v->m_flNextThink > gpGlobals->curtime) {
 		DevMsg("***WARNING*** Called BeginSequence for '%s' before it had a chance to think.\n", sub_1000b5cd());
-		DevMsg("              Still another %f seconds before we think.\n", (double)(v->m_flNextThink - g_1070b228->curtime));
+		DevMsg("              Still another %f seconds before we think.\n", (double)(v->m_flNextThink - gpGlobals->curtime));
 		DevMsg("              Try delaying your BeginSequence call.\n");
 		v->m_f5f74 = v->m_flNextThink + 0.05;
 		return;
 	}
-	v->m_f5f74 = g_1070b228->curtime + 0.05;
+	v->m_f5f74 = gpGlobals->curtime + 0.05;
 	if (sub_101a7760()) {
 		EntView101a7390 *pEnt = (EntView101a7390 *)EHandle_Get(v->m_hNPC);
 		NpcView101a7390 *pNpc = pEnt ? pEnt->m_pNpc : 0;
@@ -55920,7 +55654,7 @@ void CCineNPC::sub_101a7390(int unused)
 			}
 		} else {
 			sub_100ac4e0((void *)sub_1000556f, 0, 0);
-			v->m_flNextThink = g_1070b228->curtime;
+			v->m_flNextThink = gpGlobals->curtime;
 		}
 	}
 }
@@ -56014,8 +55748,6 @@ void CCineNPC::sub_101a77a0(void *pNpc)
 #include "CBaseEntity.h"
 
 extern char g_106b8540[];
-struct CGlobalVarsLike { char pad[0xc]; float curtime; };
-extern CGlobalVarsLike *g_1070b228;
 extern void (*g_109f3650)(int, const char *, ...);
 struct DebugNameView { const char *sub_100ab4f0(); };
 
@@ -56035,7 +55767,7 @@ void CCineNPC::sub_101a8070()
 	if (!pszTarget)
 		pszTarget = g_106b8540;
 	g_109f3650(2, "script \"%s\" can't find NPC \"%s\"\n", ((DebugNameView *)this)->sub_100ab4f0(), pszTarget);
-	*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 1.0;
+	*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 1.0;
 }
 // END FUNCTION
 
@@ -56365,11 +56097,6 @@ void CUnk101a9dd0::sub_101a9dd0(int *pValue)
 #include "CEHandleGet.h"
 #include "COutputEvent.h"
 
-struct CGlobalVarsView {
-	char m_pad0000[0xc];
-	float curtime;	// 0xc
-};
-extern CGlobalVarsView *g_1070b228;
 extern float g_104454c4;	// 0.0f
 
 #define ES1(n) virtual void s##n();
@@ -56418,10 +56145,10 @@ void CUnknown101aa210::sub_101a9fa0()
 		if (flDuration < g_104454c4)
 			flDuration = 0.0f;
 		p->sub_100ac4e0((int)sub_10003297, 0, 0);
-		p->m_flNextThink = g_1070b228->curtime + p->m_flDelay460 + flDuration;
+		p->m_flNextThink = gpGlobals->curtime + p->m_flDelay460 + flDuration;
 		p->m_b470 = 0;
 	} else {
-		p->m_flNextThink = p->m_flDelay460 + g_1070b228->curtime + 0.5;
+		p->m_flNextThink = p->m_flDelay460 + gpGlobals->curtime + 0.5;
 	}
 }
 // END FUNCTION
@@ -56780,8 +56507,6 @@ void sub_101af0d0(SndSrcView *pSrc, const char *pszSample)
 // END FUNCTION
 
 // FUNCTION: 0x101af880 size=0x86
-struct CGlobalVarsY { char pad[0xc]; float curtime; };
-extern CGlobalVarsY *g_1070b228;
 struct EntNextThink { char pad[0x17c]; float m_flNextThink; };
 
 static inline bool ShouldToggleY(int useType, int currentState)
@@ -56799,13 +56524,13 @@ void __fastcall sub_101af880(EntNextThink *pThis, int unusedEdx, void *pActivato
     int state = pThis->m_flNextThink > 0.0;
     if (ShouldToggleY(useType, state)) {
         if (useType == 1)
-            pThis->m_flNextThink = g_1070b228->curtime + 0.1;
+            pThis->m_flNextThink = gpGlobals->curtime + 0.1;
         else if (useType == 0)
             pThis->m_flNextThink = 0;
         else if (state)
             pThis->m_flNextThink = 0;
         else
-            pThis->m_flNextThink = g_1070b228->curtime + 0.1;
+            pThis->m_flNextThink = gpGlobals->curtime + 0.1;
     }
 }
 // END FUNCTION
@@ -58278,15 +58003,9 @@ struct CSoundSlot
 	int m_pad;
 };
 
-struct CSoundGlobals
-{
-	char m_pad[0xc];
-	float m_flCurTime;
-};
 
 extern CSoundEntData *g_1072c464;
 extern CSoundDebugVar *g_109243ec;
-extern CSoundGlobals *g_1070b228;
 extern CGlobalEntityList *g_10566458;
 extern void (__cdecl *g_109f3630)(const char *fmt, ...);
 
@@ -58328,7 +58047,7 @@ void CSoundEnt::sub_101ba9d0(int iSound, int iPrevious)
 			pszOwner = pHandle->Get()->sub_100ab4f0();
 		else
 			pszOwner = "**UNKNOWN**";
-		g_109f3630("Freeing sound id(%d) type(%d) owner(%s) expire(%.2f) at %f\n", -1, pSound->m_iType, pszOwner, (double)pSound->m_flExpireTime, (double)g_1070b228->m_flCurTime);
+		g_109f3630("Freeing sound id(%d) type(%d) owner(%s) expire(%.2f) at %f\n", -1, pSound->m_iType, pszOwner, (double)pSound->m_flExpireTime, (double)gpGlobals->curtime);
 	}
 	if (iPrevious != -1)
 		g_1072c464->m_SoundPool[iPrevious].m_iNext = g_1072c464->m_SoundPool[iSound].m_iNext;
@@ -58356,11 +58075,6 @@ struct CSoundView
 	void sub_101b9880();
 };
 
-struct CGlobalVarsView
-{
-	char m_pad0000[0x14];
-	int m_nMaxClients;
-};
 
 struct CGameRulesView
 {
@@ -58383,7 +58097,6 @@ struct CSoundEntInitView
 	int sub_101bab50();
 };
 
-extern CGlobalVarsView *g_1070b228;
 extern CGameRulesView *g_1070accc;
 extern void (__cdecl *g_109f3630)(const char *, ...);
 
@@ -58398,7 +58111,7 @@ void CSoundEnt::sub_101baf80()
 		p->m_SoundPool[i].m_iNext = i + 1;
 	}
 	p->m_SoundPool[i - 1].m_iNext = -1;
-	for (i = 0; i < g_1070b228->m_nMaxClients; i++) {
+	for (i = 0; i < gpGlobals->maxClients; i++) {
 		int iSound = p->sub_101bab50();
 		if (iSound == -1) {
 			g_109f3630("Could not AllocSound() for Client Reserve! (DLL)\n");
@@ -60303,18 +60016,12 @@ extern "C" CBaseEntity *trigger_hurt()
 // FUNCTION: 0x101c6390 size=0x27
 #include "CTriggerHurt.h"
 
-struct CGlobalVarsView
-{
-	char pad0000[0xc];
-	float curtime;
-};
-extern CGlobalVarsView *g_1070b228;
 
 // TARGET: CTriggerHurt::sub_101c6390
 void CTriggerHurt::sub_101c6390()
 {
 	if (sub_101c6550(3.0f) > 0)
-		m_flNextThink = g_1070b228->curtime + 3.0f;
+		m_flNextThink = gpGlobals->curtime + 3.0f;
 }
 // END FUNCTION
 
@@ -60335,12 +60042,6 @@ void CTriggerHurt::sub_101c63d0()
 #include "CTriggerHurt.h"
 #include "CGlobalEntityList.h"
 
-struct CGlobalVarsRaw
-{
-	char m_pad0000[0x0c];
-	float m_curtime;
-};
-extern CGlobalVarsRaw *g_1070b228;
 extern CGlobalEntityList *g_10566458;
 
 struct CTouchNode
@@ -60353,7 +60054,7 @@ struct CTouchNode
 int CTriggerHurt::sub_101c6550(float flDamage)
 {
 	flDamage *= m_flDamage;
-	m_flLastDmgTime = g_1070b228->m_curtime;
+	m_flLastDmgTime = gpGlobals->curtime;
 	int nHurt = 0;
 	m_i600 = 0;
 	CTouchNode *pRoot = (CTouchNode *)sub_1003cd50(1);
@@ -60446,11 +60147,6 @@ int *sub_101c67e0()
 #include "CTriggerMultiple.h"
 #include "CEHandleGet.h"
 
-struct TimeObjC {
-	char m_pad[0xc];
-	float m_flCurTime;
-};
-extern TimeObjC *g_1070b228;
 
 struct MultiView {
 	char m_pad[0x500];
@@ -60465,7 +60161,7 @@ void sub_10015b68();
 void CTriggerMultiple::sub_101c68e0(CBaseEntity *pActivator)
 {
 	MultiView *v = (MultiView *)this;
-	if (!(m_flNextThink > g_1070b228->m_flCurTime)) {
+	if (!(m_flNextThink > gpGlobals->curtime)) {
 		if (pActivator)
 			v->m_hActivator = *pActivator->vfunc1();
 		else
@@ -60473,10 +60169,10 @@ void CTriggerMultiple::sub_101c68e0(CBaseEntity *pActivator)
 		m_OnTrigger.sub_100cd660(EHandle_Get(v->m_hActivator), this, 0.0f);
 		if (v->m_flWait > 0.0f) {
 			sub_100ac4e0((int)&sub_1000ae1b, 0, 0);
-			m_flNextThink = g_1070b228->m_flCurTime + v->m_flWait;
+			m_flNextThink = gpGlobals->curtime + v->m_flWait;
 		} else {
 			m_pfnTouch = 0;
-			m_flNextThink = g_1070b228->m_flCurTime + 0.1;
+			m_flNextThink = gpGlobals->curtime + 0.1;
 			sub_100ac4e0((int)&sub_10015b68, 0, 0);
 		}
 	}
@@ -60848,8 +60544,6 @@ CTriggerPush *CTriggerPush::sub_101c88c0()
 // END FUNCTION
 
 // FUNCTION: 0x101c8b60 size=0xa3
-struct S101c8b60Globals { char pad[0xc]; float curtime; };
-extern S101c8b60Globals *g_1070b228;
 float sub_102283a0(float a, float b, float c, float d);
 
 struct CView101c8b60 {
@@ -60867,14 +60561,14 @@ struct CView101c8b60 {
 // TARGET: CView101c8b60::sub_101c8b60
 void CView101c8b60::sub_101c8b60()
 {
-    float dt = g_1070b228->curtime - m_flLastTime;
+    float dt = gpGlobals->curtime - m_flLastTime;
     double v = (dt > 0.2f) ? (double)0.2f : ((dt < 0.001) ? 0.001 : dt);
-    m_f164 = sub_102283a0(m_f164, m_f59c, m_f598, (m_flLastTime = g_1070b228->curtime, (float)v));
+    m_f164 = sub_102283a0(m_f164, m_f59c, m_f598, (m_flLastTime = gpGlobals->curtime, (float)v));
     if (m_f164 == m_flNextThink) {
         ((CBaseEntity *)this)->sub_100ac4e0(0, 0, 0);
         return;
     }
-    m_flNextThink = g_1070b228->curtime + 0.1;
+    m_flNextThink = gpGlobals->curtime + 0.1;
 }
 // END FUNCTION
 
@@ -61904,13 +61598,6 @@ void sub_101cea60(int nValue, CPlayerSlots162 *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x101ceb70 size=0x3b
-struct CUnk1070b228
-{
-    char m_pad0000[0x14];
-    int m_nCount;    // 0x14
-};
-
-extern CUnk1070b228 *g_1070b228;
 void *sub_1000ac8b(int i);
 void sub_101cea60(int a, void *p);
 
@@ -61918,14 +61605,14 @@ void sub_101cea60(int a, void *p);
 void sub_101ceb70(int a)
 {
     int i = 1;
-    if (g_1070b228->m_nCount >= 1) {
+    if (gpGlobals->maxClients >= 1) {
         do {
             void *p = sub_1000ac8b(i);
             if (p) {
                 sub_101cea60(a, p);
             }
             i++;
-        } while (i <= g_1070b228->m_nCount);
+        } while (i <= gpGlobals->maxClients);
     }
 }
 // END FUNCTION
@@ -62662,11 +62349,9 @@ struct CSpawnTable
 	void sub_10057740(const char *name, const char *map, int flag);
 };
 
-struct CGlobalVarsLike { char pad[0x24]; const char *mapname; };
 
 extern CGlobalEntityList *g_10566458;
 extern CSpawnTable g_106be530;
-extern CGlobalVarsLike *g_1070b228;
 extern char g_106b8540[];
 extern int sub_1043e780(const char *, const char *);
 
@@ -62693,7 +62378,7 @@ int sub_101d1280(CBaseEntity *pEnt)
 			if (rec) {
 				if (rec->m_pad60 == 2)
 					return -1;
-				const char *map = g_1070b228->mapname;
+				const char *map = gpGlobals->mapname;
 				if (!map)
 					map = g_106b8540;
 				if (sub_1043e780(map, rec->m_szMap)) {
@@ -62702,7 +62387,7 @@ int sub_101d1280(CBaseEntity *pEnt)
 					return 0;
 				}
 			} else {
-				g_106be530.sub_10057740(CLASSNAME(pEnt), g_1070b228->mapname, 1);
+				g_106be530.sub_10057740(CLASSNAME(pEnt), gpGlobals->mapname, 1);
 			}
 		}
 		pEnt->sub_100b3b00();
@@ -62924,8 +62609,6 @@ struct ViewerEntity
 	EntityHolderProbe *m_pHolder;	// 0x40
 };
 
-struct S_1070b228 { char pad[0xc]; float curtime; };
-extern S_1070b228 *g_1070b228;
 extern CUnknown1070b22c *g_1070b22c;
 extern int g_1073391c;	// the cached entity index
 extern float g_10733920;	// when it was looked up
@@ -62937,10 +62620,10 @@ int sub_101d1960(int nIndex);
 
 CUnknown1070b22c_Edict *sub_101d1800(ViewerEntity *pViewer)
 {
-	float flElapsed = g_1070b228->curtime - g_10733920;
+	float flElapsed = gpGlobals->curtime - g_10733920;
 	if (flElapsed >= g_104493d0 || flElapsed < g_104454c4) {
 		g_1073391c = sub_101d1960(g_1073391c);
-		g_10733920 = g_1070b228->curtime;
+		g_10733920 = gpGlobals->curtime;
 	}
 	CUnknown1070b22c_Edict *pEdict = g_1070b22c->vfunc38(g_1073391c);
 	if (pEdict && pEdict->m_bValid && pEdict->m_pUnknown) {
@@ -69300,8 +68983,6 @@ extern "C" CBaseEntity *vampireprojectile()
 
 extern CGlobalEntityList *g_10566458;
 extern float g_104454c4;
-struct SGlobalVars { char pad[0xc]; float curtime; float frametime; };
-extern SGlobalVars *g_1070b228;
 
 #define EV(n) virtual void s##n();
 #define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
@@ -69341,12 +69022,12 @@ void CThinkUnit::sub_101ee5a0()
 {
 	if (!m_b0758 && !m_b08a4) {
 		((CThinkVirtView *)this)->s250(0);
-		m_flNextThink = g_1070b228->curtime + 0.03;
+		m_flNextThink = gpGlobals->curtime + 0.03;
 	} else {
 		m_f06f4 = 0;
-		m_flNextThink = g_1070b228->curtime + 0.03;
+		m_flNextThink = gpGlobals->curtime + 0.03;
 		if (m_b08a4) {
-			float flNow = g_1070b228->frametime + g_1070b228->curtime;
+			float flNow = gpGlobals->frametime + gpGlobals->curtime;
 			if (m_f0738 != g_104454c4) {
 				if (flNow > m_f0738 - 5.0f && m_n0168 != 5)
 					m_n0168 = 5;
@@ -77337,11 +77018,6 @@ CSecCamera *CSecCamera::sub_1020bf00()
 // FUNCTION: 0x1020c2a0 size=0xe8
 #include "CSecCamera.h"
 
-struct CGlobalVarsView {
-	char m_pad0000[0xc];
-	float curtime;	// 0xc
-};
-extern CGlobalVarsView *g_1070b228;
 
 #define CSV1(n) virtual void s##n();
 #define CSV10(p) CSV1(p##0) CSV1(p##1) CSV1(p##2) CSV1(p##3) CSV1(p##4) CSV1(p##5) CSV1(p##6) CSV1(p##7) CSV1(p##8) CSV1(p##9)
@@ -77370,9 +77046,9 @@ void CSecCamera::sub_1020c2a0()
 	CSecCameraView *p = (CSecCameraView *)this;
 	if (m_b77c) {
 		sub_1020c3d0();
-		if (p->m_flNextCheck7a4 < g_1070b228->curtime) {
+		if (p->m_flNextCheck7a4 < gpGlobals->curtime) {
 			char bResult = sub_1020cd30();
-			p->m_flNextCheck7a4 = g_1070b228->curtime + 0.25;
+			p->m_flNextCheck7a4 = gpGlobals->curtime + 0.25;
 			if (bResult && m_nState79c != 4 && m_nState79c != 6)
 				sub_1020c4f0(4);
 		}
@@ -77387,26 +77063,20 @@ void CSecCamera::sub_1020c2a0()
 			}
 		}
 	}
-	m_flNextThink = g_1070b228->curtime + 0.1;
+	m_flNextThink = gpGlobals->curtime + 0.1;
 }
 // END FUNCTION
 
 // FUNCTION: 0x1020c3d0 size=0xe0
 #include "CSecCamera.h"
 
-struct CGlobalVarsStub
-{
-	char pad[0xc];
-	float m_flCurTime;
-};
 
-extern CGlobalVarsStub *g_1070b228;
 __declspec(dllimport) void DevMsg(const char *pMsg, ...);
 
 // TARGET: CSecCamera::sub_1020c3d0
 void CSecCamera::sub_1020c3d0()
 {
-	if (!(m_flNextStateTime7a0 > g_1070b228->m_flCurTime)) {
+	if (!(m_flNextStateTime7a0 > gpGlobals->curtime)) {
 		switch (m_nState79c) {
 		case 0:
 			sub_1020c4f0(2);
@@ -77574,12 +77244,6 @@ struct CPropSwitchFields
 	int m_seqAfterOn;
 	int m_seqAfterOff;
 };
-struct CGlobalVars1070b228
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern CGlobalVars1070b228 *g_1070b228;
 
 // TARGET: CPropSwitch::sub_1020dd70
 void CPropSwitch::sub_1020dd70()
@@ -77601,7 +77265,7 @@ void CPropSwitch::sub_1020dd70()
 	}
 	if (!p->m_bActive || p->m_bHold) {
 		((CPropSwitchSlotsX *)this)->vfunc250(0);
-		p->m_flNextThink = g_1070b228->curtime + 0.05;
+		p->m_flNextThink = gpGlobals->curtime + 0.05;
 	}
 }
 // END FUNCTION
@@ -77609,8 +77273,6 @@ void CPropSwitch::sub_1020dd70()
 // FUNCTION: 0x1020df00 size=0x85
 #include "CPropSwitch.h"
 
-struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
-extern CGlobalVarsX *g_1070b228;
 void sub_100080b7();	// think function
 
 float CPropSwitch::sub_1020df00(int sequence)
@@ -77620,7 +77282,7 @@ float CPropSwitch::sub_1020df00(int sequence)
 		*pSequence = sequence;
 		sub_10090950();
 		*(int *)((char *)this + 0x6f8) = 0;
-		*(float *)((char *)this + 0x174) = g_1070b228->m_curtime;
+		*(float *)((char *)this + 0x174) = gpGlobals->curtime;
 		sub_100b3640(0x40000);
 	} else {
 		*pSequence = 0;
@@ -77629,7 +77291,7 @@ float CPropSwitch::sub_1020df00(int sequence)
 	sub_100ac4e0((int)sub_100080b7, 0, 0);
 	float *pNextThink = (float *)((char *)this + 0x17c);
 	int seq = *pSequence;
-	*pNextThink = g_1070b228->m_curtime + 0.05;
+	*pNextThink = gpGlobals->curtime + 0.05;
 	return sub_10091080(seq);
 }
 // END FUNCTION
@@ -77755,8 +77417,6 @@ extern "C" void *__cdecl memset(void *, int, unsigned int);
 #pragma intrinsic(memset)
 __declspec(dllimport) void Warning(const char *, ...);
 
-struct ElevTime_t { char pad[0xc]; float curtime; };
-extern ElevTime_t *g_1070b228;
 
 void sub_10003cce();	// the elevator's think function (stub)
 
@@ -77801,7 +77461,7 @@ void CFuncElevator::sub_1020f3f0(inputdata_t *pInput)
 			p->m_n630 = -1;
 			p->m_out638.sub_100cd660(pInput->pActivator, this, 0);
 			p->sub_100ac4e0((int)sub_10003cce, 0, 0);
-			p->m_flNextThink = g_1070b228->curtime + 0.1f;
+			p->m_flNextThink = gpGlobals->curtime + 0.1f;
 			memset(p->m_bFlags, 0, 8);
 			bool bUp = p->m_f548 > flPos;
 			for (int i = 0; i < 8; i++) {
@@ -78360,12 +78020,6 @@ void CPropHaunted::sub_10214080(const char *pszSound)
 #include "IPhysicsObject.h"
 #include "ConVar.h"
 
-struct CGlobalVarsView
-{
-	char m_pad0000[0xc];
-	float m_curtime;
-};
-extern CGlobalVarsView *g_1070b228;
 extern ConVar *g_1074f0c4;
 extern float g_104454c4;
 
@@ -78383,7 +78037,7 @@ void CPropHaunted::sub_10214300()
 			m_bArmed7b8 = 0;
 			return;
 		}
-		m_flNextThink = g_1070b228->m_curtime + 0.05;
+		m_flNextThink = gpGlobals->curtime + 0.05;
 	}
 }
 // END FUNCTION
@@ -78393,8 +78047,6 @@ void CPropHaunted::sub_10214300()
 #include "CEHandleGet.h"
 #include "ScopeTrace.h"
 
-struct GlobalVarsView { char m_pad[0xc]; float curtime; };
-extern GlobalVarsView *g_1070b228;
 __declspec(dllimport) void Warning(const char *pszFormat, ...);
 extern "C" __declspec(dllimport) float RandomFloat(float flMin, float flMax);
 
@@ -78421,8 +78073,8 @@ void CPropHaunted::sub_10214780()
 	ThinkPtr think;
 	think.pfn = &CPropHaunted::sub_102143e0;
 	sub_100ac4e0(think.n, 0, 0);
-	m_flTime77c = RandomFloat(m_flMin78c, m_flMax790) + g_1070b228->curtime;
-	m_flNextThink = g_1070b228->curtime + 0.01;
+	m_flTime77c = RandomFloat(m_flMin78c, m_flMax790) + gpGlobals->curtime;
+	m_flNextThink = gpGlobals->curtime + 0.01;
 	((CPropHauntedSub *)m_sub07ec)->sub_100cd660(this, this, 0);
 	sub_10214080(m_iszSound7cc);
 	if (!EHandle_Get(m_hGhost7d0)) {
@@ -78439,8 +78091,6 @@ void CPropHaunted::sub_10214780()
 #include "CUnknown102148f0.h"
 #include "CGlobalEntityList.h"
 
-struct CGlobalVarsView { char pad[0xc]; float curtime; };
-extern CGlobalVarsView *g_1070b228;
 extern CGlobalEntityList *g_10566458;
 void sub_10010bd1();
 
@@ -78475,7 +78125,7 @@ void CUnknown102148f0::sub_102148f0()
     sub_10260a50(sub_1008f7b0("idle"));
     sub_100ac4e0((void *)sub_10010bd1, 0, 0);
     m_out804.sub_100cd660(this, this, 0);
-    m_flTime780 = g_1070b228->curtime;
+    m_flTime780 = gpGlobals->curtime;
     if (((TargetHandle *)&m_hTarget)->Get() != 0) {
         ((TargetHandle *)&m_hTarget)->Get()->vfunc242();
         ((TargetHandle *)&m_hTarget)->Get()->sub_100fbbb0(5.0f);
@@ -79168,8 +78818,6 @@ bool CUnit1021a4f0::sub_1021a4f0(int index)
 #include "CUnknown10217f50.h"
 #include <string.h>
 
-struct S_Globals { char pad[0xc]; float curtime; };
-extern S_Globals *g_1070b228;
 extern "C" __declspec(dllimport) int RandomInt(int lo, int hi);
 void sub_10217ac0(void *pThis, const char *pszText, ...);
 
@@ -79188,7 +78836,7 @@ void CPropHacking::sub_1021a740()
 		t->sub_10218ca0();
 	sub_10217ac0(this, pszText);
 	t->sub_10218ca0();
-	m_flNextThink = m_flDelay09e4 + g_1070b228->curtime;
+	m_flNextThink = m_flDelay09e4 + gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -81851,8 +81499,6 @@ void S1022b4d0::sub_1022b4d0(inputdata_t &in)
 #include "CSoundScheme.h"
 #include "CAI_BaseNPC.h"
 
-struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
-extern CGlobalVarsX *g_1070b228;
 
 struct CSoundSysX {
     void sub_10229270(float flDelay, void *pA, void *pB, void *pC, void *pD);
@@ -81873,7 +81519,7 @@ void CSoundScheme::sub_1022b590(float flDelay)
         g_10750d78.sub_10229270(flDelay, (char *)this + 0x460, (char *)this + 0x4f0, (char *)this + 0x4a8, (char *)this + 0x538);
         sub_100ac4e0((int)sub_10003a71, 0, 0);
         *((char *)this + 0x455) = 1;
-        float t = g_1070b228->m_curtime;
+        float t = gpGlobals->curtime;
         t += g_104491b4;
         *(float *)((char *)this + 0x17c) = t;
     }
@@ -82754,8 +82400,6 @@ bool CPair10232c70::sub_10232c70(int *pOther)
 
 // FUNCTION: 0x10232cb0 size=0x9d
 #include "CUnknown1070b22c.h"
-struct SMapEdit { char pad[0x24]; const char *m_pszName; int m_nVersion; };
-extern SMapEdit *g_1070b228;
 extern CUnknown1070b22c *g_1070b22c;
 extern char g_106b8540[];
 extern void (__cdecl *g_109f3628)(const char *fmt);
@@ -82764,8 +82408,8 @@ void sub_101ce440(int a, const char *pszMsg, int b, int c, int d, int e);
 
 bool sub_10232cb0()
 {
-    const char *name = g_1070b228->m_pszName ? g_1070b228->m_pszName : g_106b8540;
-    int r = sub_100f4190(name, g_1070b228->m_nVersion, 0);
+    const char *name = gpGlobals->mapname ? gpGlobals->mapname : g_106b8540;
+    int r = sub_100f4190(name, gpGlobals->mapversion, 0);
     if (r == 0)
         return true;
     if (r == 1) {
@@ -84405,13 +84049,6 @@ extern "C" CBaseEntity *worldspawn()
 // END FUNCTION
 
 // FUNCTION: 0x1023b3a0 size=0x82
-struct CGlobalVarsView
-{
-	char m_pad0000[0x14];
-	int m_nMaxClients;
-};
-extern CGlobalVarsView *g_1070b228;
-
 struct CPlayerLike
 {
 	void sub_10170750();	// stub 0x10010a73
@@ -84460,7 +84097,7 @@ void sub_1023b3a0(CStateHolder *pHolder)
 	if (n != pEnt->m_nState)
 	{
 		pEnt->m_nState = n;
-		for (int i = 1; i <= g_1070b228->m_nMaxClients; i++)
+		for (int i = 1; i <= gpGlobals->maxClients; i++)
 		{
 			CPlayerLike *pPlayer = sub_101cd9e0(i);
 			if (pPlayer)
@@ -84655,16 +84292,8 @@ struct S107258dc
 	int m_n2c;
 };
 
-struct S1070b228
-{
-	char m_pad[0xc];
-	float curtime;
-	char m_pad10[4];
-	int maxClients;
-};
 
 extern S107258dc *g_107258dc;
-extern S1070b228 *g_1070b228;
 S1023ddd0World *sub_1023bd00();
 S1023ddd0Player *sub_101cd9e0(int index);
 __declspec(dllimport) void DevMsg(const char *fmt, ...);
@@ -84694,7 +84323,7 @@ void CUnknown1023ddd0::sub_1023ddd0(inputdata_t *inputdata)
 			pszName = "safe";
 		else if (n == 2)
 			pszName = "elysium";
-		DevMsg("CSActs:    %6.1f - Setting World Area Type = %d %s\n", (double)g_1070b228->curtime, n, pszName);
+		DevMsg("CSActs:    %6.1f - Setting World Area Type = %d %s\n", (double)gpGlobals->curtime, n, pszName);
 	}
 	int area;
 	if (n > 2)
@@ -84705,7 +84334,7 @@ void CUnknown1023ddd0::sub_1023ddd0(inputdata_t *inputdata)
 		area = n;
 	if (area != pWorld->m_nAreaType) {
 		pWorld->m_nAreaType = area;
-		for (int i = 1; i <= g_1070b228->maxClients; i++) {
+		for (int i = 1; i <= gpGlobals->maxClients; i++) {
 			S1023ddd0Player *pPlayer = sub_101cd9e0(i);
 			if (pPlayer)
 				pPlayer->sub_10170750();
@@ -84734,15 +84363,9 @@ public:
 	int m_nValue;	// 0x2c
 };
 
-struct CGlobalVarsX
-{
-	char m_pad[0xc];
-	float m_curtime;
-};
 
 CCopOwner_t *sub_1023bd00();
 extern CDevCvar_t *g_107258dc;
-extern CGlobalVarsX *g_1070b228;
 extern void (__cdecl *g_109f3630)(const char *fmt, ...);
 
 static inline char InputBool(inputdata_t *inputdata)
@@ -84762,7 +84385,7 @@ void CUnknown1023df30::sub_1023df30(inputdata_t *inputdata)
 				text = "true";
 			else
 				text = "false";
-			g_109f3630("CSActs:    %6.1f - Cop Wait Area = %s\n", (double)g_1070b228->m_curtime, text);
+			g_109f3630("CSActs:    %6.1f - Cop Wait Area = %s\n", (double)gpGlobals->curtime, text);
 		}
 		cop->m_bWaitArea = InputBool(inputdata);
 	}
@@ -84774,8 +84397,6 @@ void CUnknown1023df30::sub_1023df30(inputdata_t *inputdata)
 
 __declspec(dllimport) void DevMsg(const char *pMsg, ...);
 
-struct CGlobals1070b228 { char pad[0xc]; float m_flCurTime; };
-extern CGlobals1070b228 *g_1070b228;
 
 struct CCopGlobal107258dc {
 	virtual void vfunc0();
@@ -84803,7 +84424,7 @@ void CUnit1023dff0::sub_1023dff0(inputdata_t *pInput)
 		return;
 	if (!g_107258dc->vfunc1() && g_107258dc->m_n2c) {
 		float f = pInput->value.fieldType == 1 ? pInput->value.flValue : 0.0f;
-		DevMsg("CSActs:    %6.1f - Cop Grace Timer = %f\n", g_1070b228->m_flCurTime, f);
+		DevMsg("CSActs:    %6.1f - Cop Grace Timer = %f\n", gpGlobals->curtime, f);
 	}
 	pCop->m_flGraceTimer = pInput->value.fieldType == 1 ? pInput->value.flValue : 0.0f;
 }
@@ -84840,13 +84461,8 @@ struct StateObj {
     float m_f28;
 };
 
-struct GlobalsLike {
-    char m_pad00[0xc];
-    float m_curtime;
-};
 
 extern StateObj *g_10752c9c;
-extern GlobalsLike *g_1070b228;
 extern CGlobalEntityList *g_10566458;
 extern unsigned int g_10753230[25];
 extern SeqNode *g_10752ce0[25];
@@ -84881,7 +84497,7 @@ void sub_1023e4b0(CBaseEntity *pEnt, int value)
             char b = pState->v1();
             pState = g_10752c9c;
             float f = b ? g_104454c4 : pState->m_f28;
-            if (f + g_10752d60[i] < g_1070b228->m_curtime) {
+            if (f + g_10752d60[i] < gpGlobals->curtime) {
                 g_10753230[i] = 0xffffffff;
                 g_10752d60[i] = 0;
                 if (i < best)
@@ -87551,8 +87167,6 @@ void sub_1024eaa0(void *pMat, const Vector *a, const Vector *b)
 #include "CUnknown1070b22c.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown1070b248.h"
-struct CGlobalVarsView { char m_pad0000[0xc]; float curtime; };
-extern CGlobalVarsView *g_1070b228;
 extern CUnknown1070b22c *g_1070b22c;
 extern CUnknown1070b244 *g_1070b244;
 extern CUnknown1070b248 *g_1070b248;
@@ -87565,7 +87179,7 @@ struct CDropEntityUnit : CBaseEntity { void sub_1024fc20(); void sub_1024fe00();
 // TARGET: CDropEntityUnit::sub_1024fc20
 void CDropEntityUnit::sub_1024fc20()
 {
-	m_flNextThink = g_1070b228->curtime + 0.1;
+	m_flNextThink = gpGlobals->curtime + 0.1;
 	char bOk;
 	if (m_obj36c)
 		bOk = ((CPhysObjV *)m_obj36c)->v4();
@@ -87992,14 +87606,6 @@ int CUnknown102522e0::sub_102522e0()
 // END FUNCTION
 
 // FUNCTION: 0x10252410 size=0x2c
-struct CUnkGlobal10252410
-{
-	char m_pad00[0xc];
-	float m_fl0c;
-};
-
-extern CUnkGlobal10252410 *g_1070b228;
-
 struct CUnk10252410
 {
 	char m_pad000[0x730];
@@ -88013,7 +87619,7 @@ bool CUnk10252410::sub_10252410(unsigned int i)
 {
 	if ((int)i <= 2)
 	{
-		if (g_1070b228->m_fl0c >= m_fl730[i])
+		if (gpGlobals->curtime >= m_fl730[i])
 			return true;
 		return false;
 	}
@@ -88188,8 +87794,6 @@ void sub_10252800(CBaseAnimating *pEnt, float flSize)
 // FUNCTION: 0x10253b70 size=0xa6
 #include "CBaseCombatWeapon.h"
 
-struct CGlobalVarsLike { char pad[0xc]; float curtime; };
-extern CGlobalVarsLike *g_1070b228;
 struct CWeaponAI { void sub_10170e80(int a); };
 
 bool CBaseCombatWeapon::sub_10253b70(int a, int b, int c, int d)
@@ -88205,7 +87809,7 @@ bool CBaseCombatWeapon::sub_10253b70(int a, int b, int c, int d)
 		*(int *)((char *)this + 0x854) = c;
 	} else {
 		*(int *)((char *)this + 0x854) = -1;
-		*(float *)(pOwner + 0x1564) = g_1070b228->curtime + 0.2f;
+		*(float *)(pOwner + 0x1564) = gpGlobals->curtime + 0.2f;
 	}
 	*(unsigned int *)((char *)this + 0x19c) &= 0xffffffbf;
 	if (pAI) {
@@ -89940,8 +89544,6 @@ class CBaseEntity;
 struct AIToggleListView { CBaseEntity *sub_100f8370(CBaseEntity *pStart, int mask); };
 extern AIToggleListView g_106eb5d8;
 extern int g_1092053c;
-struct AIToggleGlobals { char pad[0xc]; float curtime; };
-extern AIToggleGlobals *g_1070b228;
 
 struct AIToggleNPC {
     VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2) VIEW_SLOT100(3) VIEW_SLOT100(4) VIEW_SLOT100(5)
@@ -89968,13 +89570,13 @@ void sub_10265680(char bEnable)
                 AIToggleNPC *npc = e->m_pNPC;
                 if (npc) {
                     npc->vfunc614();
-                    npc->m_f178 = g_1070b228->curtime;
-                    npc->m_f6254 = g_1070b228->curtime;
-                    npc->m_f6258 = g_1070b228->curtime;
-                    npc->m_f625c = g_1070b228->curtime;
-                    npc->m_f6260 = g_1070b228->curtime;
+                    npc->m_f178 = gpGlobals->curtime;
+                    npc->m_f6254 = gpGlobals->curtime;
+                    npc->m_f6258 = gpGlobals->curtime;
+                    npc->m_f625c = gpGlobals->curtime;
+                    npc->m_f6260 = gpGlobals->curtime;
                 } else {
-                    e->m_f17c = g_1070b228->curtime - 0.1f;
+                    e->m_f17c = gpGlobals->curtime - 0.1f;
                 }
             }
             DevMsg("AI Enabled.\n");
@@ -90104,12 +89706,6 @@ void CUnk10265a90::sub_10265a90(int a)
 #include "CEntityVSlots.h"
 #include "CAI_BaseNPC.h"
 
-struct CGlobalVarsMaxClients
-{
-	char pad0[0x14];
-	int maxClients;
-};
-extern CGlobalVarsMaxClients *g_1070b228;
 CEntityVSlots *sub_101cd9e0(int index);
 
 char CAI_BaseNPC::sub_10266b10(int a, int b, float f)
@@ -90118,7 +89714,7 @@ char CAI_BaseNPC::sub_10266b10(int a, int b, float f)
 	const Vector *pB = (const Vector *)b;
 	Vector dir = *pB - *pA;
 	float flDist = VectorNormalize(dir);
-	for (int i = 1; i <= g_1070b228->maxClients; i++)
+	for (int i = 1; i <= gpGlobals->maxClients; i++)
 	{
 		Vector dir2 = sub_101cd9e0(i)->slot192() - *pA;
 		float flDist2 = VectorNormalize(dir2);
@@ -90132,8 +89728,6 @@ char CAI_BaseNPC::sub_10266b10(int a, int b, float f)
 // FUNCTION: 0x10266c80 size=0x86
 #include "CEntityVSlots.h"
 
-struct CGlobalVarsView { char pad[0x14]; int maxClients; };
-extern CGlobalVarsView *g_1070b228;
 CEntityVSlots *sub_101cd9e0(int playerIndex);
 
 static inline float DistTo2D(const Vector &a, const Vector &b)
@@ -90146,7 +89740,7 @@ static inline float DistTo2D(const Vector &a, const Vector &b)
 // TARGET: sub_10266c80
 bool __stdcall sub_10266c80(const Vector *pPos, float flRadius)
 {
-    for (int i = 1; i <= g_1070b228->maxClients; i++)
+    for (int i = 1; i <= gpGlobals->maxClients; i++)
     {
         CEntityVSlots *pPlayer = sub_101cd9e0(i);
         if (pPlayer)
@@ -90162,12 +89756,6 @@ bool __stdcall sub_10266c80(const Vector *pPos, float flRadius)
 // FUNCTION: 0x10266d40 size=0x14f
 #include "CAI_BaseNPC.h"
 
-struct RayGlobalsView
-{
-	char m_pad0000[0x14];
-	int m_nMaxClients;	// 0x14
-};
-extern RayGlobalsView *g_1070b228;
 
 struct RayPlayerView
 {
@@ -90186,7 +89774,7 @@ void sub_10266d40(Vector vecStart, Vector vecDir, int nIgnoreEdict)
 {
 	vecDir = vecDir - vecStart;
 	VectorNormalize(vecDir);
-	for (int i = 1; i <= g_1070b228->m_nMaxClients; i++)
+	for (int i = 1; i <= gpGlobals->maxClients; i++)
 	{
 		RayPlayerView *pPlayer = sub_1000ac8b(i);
 		if (pPlayer && *(int *)((char *)pPlayer + 0x2e0) != nIgnoreEdict)
@@ -90225,12 +89813,6 @@ struct CEntFields102695d0
 	char m_pad01a4[0x26c - 0x1a4];
 	const char *m_name26c;
 };
-struct CGlobalVars1070b228
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern CGlobalVars1070b228 *g_1070b228;
 extern float g_1070d9d0[];
 void sub_100152b2();
 
@@ -90250,14 +89832,12 @@ void CAI_BaseNPC::sub_102695d0()
 	}
 	pEnt->sub_100b2f50(g_1070d9d0);
 	pEnt->sub_100b3b00();
-	pFields->m_flNextThink = g_1070b228->curtime + 10.0;
+	pFields->m_flNextThink = gpGlobals->curtime + 10.0;
 	pEnt->sub_100ac4e0((int)sub_100152b2, 0, 0);
 }
 // END FUNCTION
 
 // FUNCTION: 0x102696f0 size=0x8e
-struct Globals { char pad0[0xc]; float curtime; char pad1[4]; int maxclients; };
-extern Globals *g_1070b228;
 extern float g_1044e664;
 #define D5(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4();
 #define D10(p) D5(p##a) D5(p##b)
@@ -90275,10 +89855,10 @@ void sub_10014614(void *);
 // TARGET: sub_102696f0
 void __fastcall sub_102696f0(char *self)
 {
-	for (int i = 0; i < g_1070b228->maxclients; i++) {
+	for (int i = 0; i < gpGlobals->maxClients; i++) {
 		E *p = sub_1000ac8b(i + 1);
 		if (p && p->v363(self) && sub_10015960(self, p) && p->v201(self, 0x2804091, 0, 0)) {
-			float t = g_1070b228->curtime;
+			float t = gpGlobals->curtime;
 			*(float *)(self + 0x17c) = t + g_1044e664;
 			return;
 		}
@@ -90291,8 +89871,6 @@ void __fastcall sub_102696f0(char *self)
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
 
-struct CGlobalVarsView { char pad[0xc]; float curtime; int pad10; int maxClients; };
-extern CGlobalVarsView *g_1070b228;
 CEntityVSlots *sub_101cd9e0(int playerIndex);
 void sub_10139550(const Vector *angles, Vector *forward);
 void sub_101c0b10();
@@ -90308,8 +89886,8 @@ struct DeathThinkView : CEntityVSlots
 // TARGET: sub_102697b0
 void __fastcall sub_102697b0(DeathThinkView *pThis)
 {
-    pThis->m_flNextThink = g_1070b228->curtime + 0.1f;
-    for (int i = 1; i <= g_1070b228->maxClients; i++)
+    pThis->m_flNextThink = gpGlobals->curtime + 0.1f;
+    for (int i = 1; i <= gpGlobals->maxClients; i++)
     {
         CEntityVSlots *pPlayer = sub_101cd9e0(i);
         if (pPlayer)
@@ -90391,13 +89969,7 @@ struct CNpcCondSource	// the record the interrupt conditions are cached from
 	CNpcCondBits m_bitsC;	// 0x28
 };
 
-struct CNpcGlobals
-{
-	char m_pad[0xc];
-	float m_flCurTime;
-};
 
-extern CNpcGlobals *g_1070b228;
 
 struct CAI_BaseNPCUnit : CAI_BaseNPC
 {
@@ -90411,7 +89983,7 @@ void CAI_BaseNPCUnit::sub_1026a0f0()
 	char *pThis = (char *)this;
 	ScopeTrace trace("CAI_BaseNPC::CacheInterruptConditions", this ? (*(const char **)(pThis + 0x26c) ? *(const char **)(pThis + 0x26c) : g_106b8540) : g_105387dc);
 	CNpcCondSource *pSource = *(CNpcCondSource **)(pThis + 0x5c38);
-	*(float *)(pThis + 0x1b24) = g_1070b228->m_flCurTime;
+	*(float *)(pThis + 0x1b24) = gpGlobals->curtime;
 	if (!pSource)
 	{
 		new ((CNpcCondBits *)(pThis + 0x5c74)) CNpcCondBits;
@@ -90446,8 +90018,6 @@ extern char g_1093408c;
 extern int g_105c9798;
 extern float g_10920550;
 extern const float g_10454110;
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
-extern CGlobalVarsX *g_1070b228;
 
 struct CAI_BaseNPCNavX { bool sub_102ee6a0(); };
 
@@ -90495,8 +90065,8 @@ bool __fastcall sub_1026c3d0(CAI_BaseNPC *p)
 		if (g_1093408c)
 			goto call;
 	}
-	if (g_1070b228->curtime >= g_10920550) {
-		float flNext = g_1070b228->curtime;
+	if (gpGlobals->curtime >= g_10920550) {
+		float flNext = gpGlobals->curtime;
 		flNext += g_10454110;
 		CTextParamsX t;
 		t.x = 0.7f;
@@ -90542,15 +90112,13 @@ void CUnknown1026dc60::sub_1026dc60()
 
 // FUNCTION: 0x1026e340 size=0x7d
 #include "CAI_BaseNPC.h"
-struct CNpcGlobals { char pad[0xc]; float curtime; };
-extern CNpcGlobals *g_1070b228;
 extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *pszFormat, ...);
 
 void CAI_BaseNPC::sub_1026e340(int newState)
 {
     int oldState = *(int *)((char *)this + 0x5cc0);
     if (newState != oldState)
-        *(float *)((char *)this + 0x5cc8) = g_1070b228->curtime;
+        *(float *)((char *)this + 0x5cc8) = gpGlobals->curtime;
     switch (newState) {
     case 1:
         if (vfunc167()) {
@@ -90599,15 +90167,13 @@ void CAI_BaseNPC::sub_1026e4f0()
 
 // FUNCTION: 0x1026fb40 size=0x7b
 #include "CAI_BaseNPC.h"
-struct CGlobalVarsTime { char pad[0xc]; float curtime; };
-extern CGlobalVarsTime *g_1070b228;
 extern float g_10452dc4;
 bool CAI_BaseNPC::sub_1026fb40()
 {
 	if (vfunc513() & 0x200000) {
 		float *pNext = (float *)((char *)this + 0x5da0);
-		if (*pNext < g_1070b228->curtime) {
-			float t = g_1070b228->curtime;
+		if (*pNext < gpGlobals->curtime) {
+			float t = gpGlobals->curtime;
 			*pNext = t + g_10452dc4;
 			if (!sub_10007e19()) {
 				float box[3] = { 300.0f, 300.0f, 100.0f };
@@ -91207,12 +90773,6 @@ void __fastcall sub_10279260(CBaseEntity *param_1)
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
 
-struct SGlobalVars
-{
-	char pad[0xc];
-	float curtime;
-};
-extern SGlobalVars *g_1070b228;
 extern float g_1070d1b0[3];
 void sub_101cf390(CBaseEntity *pEnt, const float *a, const float *b);
 void sub_1000b1d6();
@@ -91244,7 +90804,7 @@ void CAI_BaseNPC::sub_102792b0()
 	pEnt->sub_100b3b00();
 	sub_10265a40();
 	pEnt->sub_100ac4e0((int)sub_1000b1d6, 0, 0);
-	*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.5;
+	*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.5;
 }
 // END FUNCTION
 
@@ -91619,13 +91179,7 @@ struct CTroikaNavView
 	char sub_102ee6a0();	// stub 0x10012963
 };
 
-struct CTroikaGlobals
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;
-};
 
-extern CTroikaGlobals *g_1070b228;
 
 void CAI_BaseNPCTroika::sub_1027de00(CBaseEntity *pDoor)
 {
@@ -91639,13 +91193,13 @@ void CAI_BaseNPCTroika::sub_1027de00(CBaseEntity *pDoor)
 			{
 				if (((CTroikaNavView *)m_p5d34)->sub_102ee6a0())
 					((CAI_Navigator *)m_p5d34)->sub_102f1fa0(5.0f, (CAI_NavSource *)pDoor);
-				((CTroikaDoorView *)pDoor)->sub_100f0e30(g_1070b228->m_flCurTime + 5.0f);
+				((CTroikaDoorView *)pDoor)->sub_100f0e30(gpGlobals->curtime + 5.0f);
 			}
 			else
 			{
 				if (((CTroikaNavView *)m_p5d34)->sub_102ee6a0())
 					((CAI_Navigator *)m_p5d34)->sub_102f1fa0(20.0f, (CAI_NavSource *)pDoor);
-				((CTroikaDoorView *)pDoor)->sub_100f0e30(g_1070b228->m_flCurTime + 20.0f);
+				((CTroikaDoorView *)pDoor)->sub_100f0e30(gpGlobals->curtime + 20.0f);
 			}
 		}
 		if (*(int *)((char *)this + 0x5bb0) <= 0 && *(CTroikaSquadView **)((char *)this + 0x5da4))
@@ -91659,7 +91213,7 @@ void CAI_BaseNPCTroika::sub_1027de00(CBaseEntity *pDoor)
 		if (pOther && (pOther->m_n644c == 1 || pOther->m_n644c == 2))
 		{
 			pOther->m_n644c = 3;
-			pOther->m_f6450 = g_1070b228->m_flCurTime + 1.0f;
+			pOther->m_f6450 = gpGlobals->curtime + 1.0f;
 		}
 	}
 }
@@ -92176,8 +91730,6 @@ struct CUnknown1027d990
 {
     int sub_1027d990();
 };
-struct SGlobals { int pad[3]; float curtime; };
-extern SGlobals *g_1070b228;
 extern void (*g_109f3630)(const char *fmt, ...);
 
 void CAI_BaseNPC::sub_10280e50(void *pSchedule)
@@ -92185,7 +91737,7 @@ void CAI_BaseNPC::sub_10280e50(void *pSchedule)
     char *self = (char *)this;
     vfunc435(pSchedule);
     *(char *)(self + 0x5bb8) = 0;
-    float now = g_1070b228->curtime;
+    float now = gpGlobals->curtime;
     *(void **)(self + 0x5c38) = pSchedule;
     *(int *)(self + 0x5c40) = 0;
     *(float *)(self + 0x5c48) = now;
@@ -92545,9 +92097,7 @@ void __fastcall sub_1028d610(CAI_BaseNPCTroika *p)
 // FUNCTION: 0x1028e360 size=0xd7
 #include "CAI_BaseNPCTroika.h"
 struct EntInfo { CBaseEntity *ent; int serial; int pad; };
-struct Globals { char pad[0xc]; float curtime; };
 extern char *g_10566458;
-extern Globals *g_1070b228;
 extern const float g_1044f02c;
 typedef float *(__fastcall *GetAbsOriginFn)(CBaseEntity *);
 
@@ -92565,9 +92115,9 @@ bool CAI_BaseNPCTroika::sub_1028e360()
 {
     if (GetEnt(m_h6088)) {
         if (m_f6084 == -1.0f) {
-            float now = g_1070b228->curtime;
+            float now = gpGlobals->curtime;
             m_f6084 = now + g_1044f02c;
-        } else if (g_1070b228->curtime >= m_f6084) {
+        } else if (gpGlobals->curtime >= m_f6084) {
             *(volatile unsigned int *)&m_h6088 = 0xffffffff;
             CBaseEntity *pEnt = GetEnt(*(volatile unsigned int *)&m_h608c);
             float *v = ((GetAbsOriginFn)(*(void ***)pEnt)[217])(pEnt);
@@ -92749,10 +92299,6 @@ void CUnknown1028fb70::sub_1028fb70()
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"
 
-struct SGlobals {
-	char pad[0xc];
-	float curtime;
-};
 struct STarget {
 	char sub_102ee2e0();
 };
@@ -92761,12 +92307,11 @@ struct SNpcWorker {
 };
 
 extern CGlobalEntityList *g_10566458;
-extern SGlobals *g_1070b228;
 
 bool CAI_BaseNPCTroika::sub_10290200(int unused)
 {
 	sub_102727d0();
-	if (g_1070b228->curtime >= m_f6450) {
+	if (gpGlobals->curtime >= m_f6450) {
 		unsigned int h = m_h5d24;
 		CGlobalEntityList_Slot *pSlot;
 		if (h != (unsigned int)-1
@@ -94180,11 +93725,6 @@ struct CTroikaGlobalView
 	virtual void vfunc1();
 };
 
-struct CTroikaGlobals
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;
-};
 
 struct CTroikaView
 {
@@ -94204,7 +93744,6 @@ struct CTroikaView
 
 extern "C" __declspec(dllimport) int RandomInt(int nMin, int nMax);
 extern CTroikaGlobalView *g_10924a6c;
-extern CTroikaGlobals *g_1070b228;
 
 void CAI_BaseNPCTroika::sub_102b2570()
 {
@@ -94219,7 +93758,7 @@ void CAI_BaseNPCTroika::sub_102b2570()
 		sub_100041b0(9);
 		return;
 	}
-	if (p->m_f606c < p->m_f5d9c || 3.0f / p->m_f1488 + p->m_f606c < g_1070b228->m_flCurTime)
+	if (p->m_f606c < p->m_f5d9c || 3.0f / p->m_f1488 + p->m_f606c < gpGlobals->curtime)
 	{
 		if (sub_10014df8(0x5f) && RandomInt(0, 99) < 20)
 		{
@@ -94232,7 +93771,7 @@ void CAI_BaseNPCTroika::sub_102b2570()
 			sub_100041b0(0xe);
 		}
 	}
-	if (sub_10269c70(0xf) && p->m_f1564 < g_1070b228->m_flCurTime && sub_10014df8(0x5f) && sub_10007e19()
+	if (sub_10269c70(0xf) && p->m_f1564 < gpGlobals->curtime && sub_10014df8(0x5f) && sub_10007e19()
 		&& TestBit(((CEntityVSlots *)sub_10007e19())->slot360(), 30))
 	{
 		g_10924a6c->vfunc1();
@@ -94245,11 +93784,6 @@ void CAI_BaseNPCTroika::sub_102b2570()
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102e0150.h"
 
-struct CGlobalVarsView
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;	// 0x0c
-};
 
 struct CAIRandomView
 {
@@ -94257,7 +93791,6 @@ struct CAIRandomView
 	virtual void v1();
 };
 
-extern CGlobalVarsView *g_1070b228;
 extern CAIRandomView *g_10924a6c;
 extern float g_10451ab4;
 
@@ -94270,7 +93803,7 @@ void CAI_BaseNPCTroika::sub_102b2730()
 		CBaseEntity *pEnemy = vfunc168();
 		if (pEnemy)
 		{
-			if (vfunc541()->sub_102e0150(pEnemy) + g_10451ab4 >= g_1070b228->m_flCurTime)
+			if (vfunc541()->sub_102e0150(pEnemy) + g_10451ab4 >= gpGlobals->curtime)
 			{
 				g_10924a6c->v1();
 				sub_10269a20(0x31);
@@ -95099,14 +94632,6 @@ void CUnknown102c43b0::sub_102c43b0(float f)
 // END FUNCTION
 
 // FUNCTION: 0x102c43f0 size=0x2b
-struct CUnkGlobal102c43f0
-{
-	char m_pad00[0xc];
-	float m_fl0c;
-};
-
-extern CUnkGlobal102c43f0 *g_1070b228;
-
 struct CUnk102c43f0
 {
 	char m_pad0000[0x6458];
@@ -95119,7 +94644,7 @@ struct CUnk102c43f0
 // TARGET: CUnk102c43f0::sub_102c43f0
 void CUnk102c43f0::sub_102c43f0()
 {
-	if (g_1070b228->m_fl0c >= m_fl6458)
+	if (gpGlobals->curtime >= m_fl6458)
 	{
 		sub_1008bd30();
 		m_fl6458 = 3.402823466e+38F;
@@ -95867,13 +95392,8 @@ struct CSActEntry_t {
 	void sub_102c9d70(float flDuration);
 };
 
-struct CSActGlobals_t {
-	char pad[0xc];
-	float curtime;
-};
 
 extern ConVar *g_107258dc;
-extern CSActGlobals_t *g_1070b228;
 __declspec(dllimport) void DevMsg(const char *, ...);
 
 void CAI_CsActList::sub_102ca2a0(int nType, CBaseEntity *pSource, float x, float y, float z, int nLevel, float flDuration, CBaseEntity *pOffender, CBaseEntity *pOwner, char bExternal)
@@ -95904,7 +95424,7 @@ void CAI_CsActList::sub_102ca2a0(int nType, CBaseEntity *pSource, float x, float
 			const char *pszOwner = pOwner ? pOwner->sub_100ab4f0() : "Unknown";
 			const char *pszOffender = pOffender ? pOffender->sub_100ab4f0() : "Unknown";
 			DevMsg("CSActs:    %6.1f - External %s act level %d added at (%f, %f, %f) for %f sec (offender - %s) (owner - %s)\n",
-				(double)g_1070b228->curtime, pszType, nLevel, (double)x, (double)y, (double)z, (double)flDuration, pszOffender, pszOwner);
+				(double)gpGlobals->curtime, pszType, nLevel, (double)x, (double)y, (double)z, (double)flDuration, pszOffender, pszOwner);
 		}
 		m_nActs++;
 	}
@@ -95917,8 +95437,6 @@ void CAI_CsActList::sub_102ca2a0(int nType, CBaseEntity *pSource, float x, float
 #include "CBaseEntity.h"
 #include "ConVar.h"
 
-struct GlobalVarsX { int pad0[3]; float curtime; };
-extern GlobalVarsX *g_1070b228;
 extern ConVar *g_107258dc;
 __declspec(dllimport) void DevMsg(const char *pMsg, ...);
 
@@ -95933,7 +95451,7 @@ void CUnknown102ca630::sub_102ca460(CUnknown102ca630Rec *pRec)
 		const char *pszOwner = EHandle_Get(pRec->m_hOwner)
 			? ((CBaseEntity *)EHandle_Get(pRec->m_hOwner))->sub_100ab4f0() : "Unknown";
 		DevMsg("CSActs:    %6.1f - External %s act level %d removed from (%f, %f, %f) (offender - %s) (owner - %s)\n",
-			(double)g_1070b228->curtime, pszType, pRec->m_nLevel,
+			(double)gpGlobals->curtime, pszType, pRec->m_nLevel,
 			(double)pRec->m_vecPos[0], (double)pRec->m_vecPos[1], (double)pRec->m_vecPos[2],
 			pszOwner, pszOffender);
 	}
@@ -96944,8 +96462,6 @@ bool CAI_BaseNPC::sub_102d1350(CBaseEntity *pEnt)
 struct EntSub { void *ent; unsigned int serial; };
 struct EntInfo { int pad; EntSub s; };
 extern EntInfo *g_10566458;
-struct CGlobalVarsLike { int m_pad[3]; float m_curtime; };
-extern CGlobalVarsLike *g_1070b228;
 
 struct CHandleLike {
 	unsigned int m_index;
@@ -96969,7 +96485,7 @@ public:
 	bool Check(void *pOther)
 	{
 		if (m_hTarget.Get() != pOther) {
-			if (g_1070b228->m_curtime < m_flTime)
+			if (gpGlobals->curtime < m_flTime)
 				return false;
 			if (m_hTarget.Get() != 0)
 				return false;
@@ -98154,12 +97670,6 @@ SVec3 *CUnknown102d8a90::sub_102d8a90()
 #include "CUnknown102d8bc0.h"
 #include <math.h>
 
-struct SInterestGlobals
-{
-	char pad[0xc];
-	float curtime;
-};
-extern SInterestGlobals *g_1070b228;
 extern float g_104454c4;
 
 static inline float SimpleSpline(float value)
@@ -98170,7 +97680,7 @@ static inline float SimpleSpline(float value)
 
 float CUnknown102d8bc0::sub_102d8bc0()
 {
-	float t = (g_1070b228->curtime - m_flStart) / (m_flEnd - m_flStart);
+	float t = (gpGlobals->curtime - m_flStart) / (m_flEnd - m_flStart);
 	if (t < 0.0f || t > 1.0f)
 		return g_104454c4;
 	float flValue;
@@ -98212,8 +97722,6 @@ void CUnknown102d9040::sub_102d8e50(const float *vec, int arg4, float duration, 
 #include "CUnknown102d9040.h"
 #include "CEHandleGet.h"
 
-struct S102d8f20Globals { char pad[0xc]; float curtime; };
-extern S102d8f20Globals *g_1070b228;
 
 struct S102d8f20Entry
 {
@@ -98231,7 +97739,7 @@ void CUnknown102d9040::sub_102d8f20(CBaseEntity *pEnt, const float *vec, float f
         CUnknown102d9040Entry *p = pBase;
         do {
             if (EHandle_Get(p->m_unk4) == (void *)pEnt) {
-                if (p->m_flStart == g_1070b228->curtime && !(((S102d8f20Entry *)p)->m_flValue < flValue)) {
+                if (p->m_flStart == gpGlobals->curtime && !(((S102d8f20Entry *)p)->m_flValue < flValue)) {
                     double d = ((S102d8f20Entry *)p)->m_flValue;
                     flValue = (float)d;
                 }
@@ -98252,11 +97760,6 @@ void CUnknown102d9040::sub_102d8f20(CBaseEntity *pEnt, const float *vec, float f
 // FUNCTION: 0x102d9040 size=0xcf
 #include "CUnknown102d9040.h"
 
-struct SGlobalVars
-{
-    char m_pad[0xc];
-    float m_curtime;
-};
 
 struct SVec3
 {
@@ -98270,7 +97773,6 @@ struct SVec3
     }
 };
 
-extern SGlobalVars *g_1070b228;
 extern "C" void *memmove(void *, const void *, unsigned int);
 
 // TARGET: CUnknown102d9040::sub_102d9040
@@ -98295,8 +97797,8 @@ void CUnknown102d9040::sub_102d9040(int a, CBaseEntity *pEnt, const float *vec, 
         e->m_unk4 = -1;
     *(SVec3 *)e->m_vec = *(const SVec3 *)vec;
     e->m_unk20 = arg4;
-    e->m_flStart = g_1070b228->m_curtime;
-    e->m_flEnd = g_1070b228->m_curtime + duration;
+    e->m_flStart = gpGlobals->curtime;
+    e->m_flEnd = gpGlobals->curtime + duration;
     e->m_flRate = amount / duration;
 }
 // END FUNCTION
@@ -98362,14 +97864,12 @@ extern "C" CBaseEntity *intersting_place()
 // FUNCTION: 0x102d9ed0 size=0x9c
 #include "CUnknown102d9ed0.h"
 
-struct CGlobalVars { char pad[0xc]; float curtime; };
-extern CGlobalVars *g_1070b228;
 
 void CUnknown102d9ed0::sub_102d9ed0(const Vector *start, const Vector *end)
 {
 	if (m_nNextLine >= 4)
 		m_nNextLine = 0;
-	m_lines[m_nNextLine].m_flExpireTime = g_1070b228->curtime + 2.0f;
+	m_lines[m_nNextLine].m_flExpireTime = gpGlobals->curtime + 2.0f;
 	m_lines[m_nNextLine].m_vecStart = *start;
 	m_lines[m_nNextLine].m_vecEnd = *end;
 	++m_nNextLine;
@@ -98789,8 +98289,6 @@ void CAI_InterestingPlaceConverstation::sub_102db740(int value)
 #include "CUnknown102dc2c0.h"
 #include "CEntityVSlots.h"
 
-struct CGlobalVarsView { char m_pad[0xc]; float curtime; };
-extern CGlobalVarsView *g_1070b228;
 
 CEntityVSlots *sub_101cd9e0(int n);
 
@@ -98800,7 +98298,7 @@ void CUnknown102dca60::sub_102dbfb0()
 	CEntityVSlots *pPlayer = sub_101cd9e0(1);
 	if (!pPlayer)
 	{
-		m_flNextThink = g_1070b228->curtime + 0.1;
+		m_flNextThink = gpGlobals->curtime + 0.1;
 		return;
 	}
 	if (sub_102dc8f0())
@@ -98814,16 +98312,16 @@ void CUnknown102dca60::sub_102dbfb0()
 			sub_102dc3e0();
 			return;
 		}
-		if (m_flField460 != 0.0f && m_flField460 < g_1070b228->curtime)
+		if (m_flField460 != 0.0f && m_flField460 < gpGlobals->curtime)
 		{
 			m_OutB.sub_100cd660(this, this, 0.0f);
 			sub_102dc6a0(0);
 		}
 		if (m_bField45d)
 			sub_102dc6a0(1);
-		if (m_flNextTime < g_1070b228->curtime)
+		if (m_flNextTime < gpGlobals->curtime)
 			sub_102dca60();
-		m_flNextThink = g_1070b228->curtime + 0.1;
+		m_flNextThink = gpGlobals->curtime + 0.1;
 	}
 	else
 	{
@@ -98884,19 +98382,14 @@ void CUnknown102dc350::sub_102dc350()
 // FUNCTION: 0x102dc3e0 size=0x27
 #include "CBaseEntity.h"
 
-struct CGlobalVarsView {
-    char m_pad0000[0xc];
-    float curtime;
-};
 
-extern CGlobalVarsView *g_1070b228;
 void sub_100045ac();
 
 // TARGET: sub_102dc3e0
 void __fastcall sub_102dc3e0(CBaseEntity *p)
 {
     p->sub_100ac4e0((int)sub_100045ac, 0, 0);
-    *(float *)((char *)p + 0x17c) = g_1070b228->curtime + 0.5;
+    *(float *)((char *)p + 0x17c) = gpGlobals->curtime + 0.5;
 }
 // END FUNCTION
 
@@ -98973,14 +98466,8 @@ void CUnknown102dca60::sub_102dc520()
 extern "C" __declspec(dllimport) int RandomInt(int, int);
 extern "C" __declspec(dllimport) float RandomFloat(float, float);
 
-struct SGlobalVars
-{
-	char m_pad[0xc];
-	float m_flCurTime;	// 0x0c
-};
 
 extern CGlobalEntityList *g_10566458;
-extern SGlobalVars *g_1070b228;
 
 namespace block_102dca60 {
 	struct CTargetUnit : CUnknown102dca60_Target
@@ -99022,7 +98509,7 @@ void CUnknown102dca60::sub_102dca60()
 					LookupTarget(m_pTargets[i])->sub_102db3b0(1);
 					m_iCurrent = i;
 					m_OnPick.sub_100cd660(this, this, 0);
-					m_flNextTime = RandomFloat(m_flMinDelay, m_flMaxDelay) + g_1070b228->m_flCurTime;
+					m_flNextTime = RandomFloat(m_flMinDelay, m_flMaxDelay) + gpGlobals->curtime;
 					return;
 				}
 			}
@@ -100556,11 +100043,6 @@ struct AutoLevelWeapon
 	WeaponInfoRecords *sub_102517e0();
 };
 
-struct GlobalVarsTime
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;
-};
 
 struct DrawHelperA
 {
@@ -100575,7 +100057,6 @@ struct DrawHelperB
 	virtual void vfunc1();
 };
 
-extern GlobalVarsTime *g_1070b228;
 extern DrawHelperA *g_1070b244;
 extern DrawHelperB *g_10924ab4;
 void __fastcall sub_102e8250(float *p);
@@ -100598,7 +100079,7 @@ void CUnknown102e83e0::sub_102e8270(int a, int b)
 				long y; y = pWeapon->sub_102517e0()->m_n3a8;
 				int x; x = pWeapon->sub_102517e0()->m_n3a4;
 				m_n14 = g_1070b244->vfunc2(x, y);
-				m_f18 = g_1070b228->m_flCurTime + m_f2c;
+				m_f18 = gpGlobals->curtime + m_f2c;
 				g_10924ab4->vfunc1();
 				return;
 			}
@@ -100610,9 +100091,6 @@ void CUnknown102e83e0::sub_102e8270(int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x102e84a0 size=0x8d
-struct Globals { char pad[0xc]; float curtime; };
-extern Globals *g_1070b228;
-
 // TARGET: CUnknown102e83e0::sub_102e84a0
 void CUnknown102e83e0::sub_102e84a0(char flag)
 {
@@ -100632,8 +100110,8 @@ void CUnknown102e83e0::sub_102e84a0(char flag)
         default: return;
         }
     }
-    if (m_f18 < g_1070b228->curtime + 0.3)
-        m_f18 = g_1070b228->curtime + 0.3;
+    if (m_f18 < gpGlobals->curtime + 0.3)
+        m_f18 = gpGlobals->curtime + 0.3;
     p = *(CUnknown102ee120 **)((char *)m_pOuter + 0x5d34);
     p->sub_102ee250(next);
 }
@@ -101040,11 +100518,6 @@ void __fastcall sub_102ecce0(COwner *self)
 // FUNCTION: 0x102ed9c0 size=0xa6
 #include "CAI_Navigator.h"
 
-struct CGlobalVarsView
-{
-	int m_n00;
-	int m_n04;
-};
 
 struct CAI_PathfinderView
 {
@@ -101056,15 +100529,14 @@ struct CAI_PathfinderView
 	int sub_10302e50(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
 };
 
-extern CGlobalVarsView *g_1070b228;
 
 bool CAI_Navigator::sub_102ed9c0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, Vector *pOut)
 {
 	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = g_1070b228->m_n04;
+	m_i0c = gpGlobals->framecount;
 	CAI_PathfinderView *pPathfinder = (CAI_PathfinderView *)sub_102ecc00();
 	pPathfinder->m_i08 = *(int *)(pPathfinder->m_pOuter + 0x156c);
-	pPathfinder->m_i0c = g_1070b228->m_n04;
+	pPathfinder->m_i0c = gpGlobals->framecount;
 	int node = ((CAI_PathfinderView *)sub_102ecc00())->sub_10302e50(a1, a2, a3, a4, a5, a6, a7);
 	if (node == -1)
 		return false;
@@ -101080,22 +100552,16 @@ bool CAI_Navigator::sub_102ed9c0(int a1, int a2, int a3, int a4, int a5, int a6,
 // FUNCTION: 0x102edae0 size=0x92
 #include "CUnknown103008f0.h"
 
-struct CGlobalVarsView
-{
-	int m_pad0000;
-	int m_nFrame;	// 0x04
-};
 
-extern CGlobalVarsView *g_1070b228;
 
 // TARGET: CAI_Navigator::sub_102edae0
 bool CAI_Navigator::sub_102edae0(const Vector *pPosition, float flDistance, int c, Vector *pOut)
 {
 	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = g_1070b228->m_nFrame;
+	m_i0c = gpGlobals->framecount;
 	CUnknown103008f0 *pFinder = (CUnknown103008f0 *)sub_102ecc00();
 	pFinder->m_i08 = *(int *)(pFinder->m_pOuter + 0x156c);
-	pFinder->m_i0c = g_1070b228->m_nFrame;
+	pFinder->m_i0c = gpGlobals->framecount;
 	int nNode = ((CUnknown103008f0 *)sub_102ecc00())->sub_103008f0(pPosition, flDistance, c);
 	if (nNode == -1)
 		return false;
@@ -101108,22 +100574,16 @@ bool CAI_Navigator::sub_102edae0(const Vector *pPosition, float flDistance, int 
 // FUNCTION: 0x102edbb0 size=0x92
 #include "CUnknown103008f0.h"
 
-struct CGlobalVarsView
-{
-	int m_pad0000;
-	int m_nFrame;	// 0x04
-};
 
-extern CGlobalVarsView *g_1070b228;
 
 // TARGET: CAI_Navigator::sub_102edbb0
 bool CAI_Navigator::sub_102edbb0(const Vector *pPosition, float flDistance, int c, Vector *pOut)
 {
 	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = g_1070b228->m_nFrame;
+	m_i0c = gpGlobals->framecount;
 	CUnknown103008f0 *pFinder = (CUnknown103008f0 *)sub_102ecc00();
 	pFinder->m_i08 = *(int *)(pFinder->m_pOuter + 0x156c);
-	pFinder->m_i0c = g_1070b228->m_nFrame;
+	pFinder->m_i0c = gpGlobals->framecount;
 	int nNode = ((CUnknown103008f0 *)sub_102ecc00())->sub_10301010(pPosition, flDistance, c);
 	if (nNode == -1)
 		return false;
@@ -101136,21 +100596,15 @@ bool CAI_Navigator::sub_102edbb0(const Vector *pPosition, float flDistance, int 
 // FUNCTION: 0x102edc80 size=0x9c
 #include "CUnknown103008f0.h"
 
-struct CGlobalVarsView
-{
-	int m_pad0000;
-	int m_nFrame;	// 0x04
-};
 
-extern CGlobalVarsView *g_1070b228;
 
 bool CAI_Navigator::sub_102edc80(const Vector *pPosition, float flDistance, int c, int d, Vector *pOut, int e)
 {
 	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = g_1070b228->m_nFrame;
+	m_i0c = gpGlobals->framecount;
 	CUnknown103008f0 *pFinder = (CUnknown103008f0 *)sub_102ecc00();
 	pFinder->m_i08 = *(int *)(pFinder->m_pOuter + 0x156c);
-	pFinder->m_i0c = g_1070b228->m_nFrame;
+	pFinder->m_i0c = gpGlobals->framecount;
 	int nNode = ((CUnknown103008f0 *)sub_102ecc00())->sub_10301720(pPosition, flDistance, c, d, e);
 	if (nNode == -1)
 		return false;
@@ -101163,22 +100617,16 @@ bool CAI_Navigator::sub_102edc80(const Vector *pPosition, float flDistance, int 
 // FUNCTION: 0x102edd50 size=0xa1
 #include "CUnknown103008f0.h"
 
-struct CGlobalVarsView
-{
-	int m_pad0000;
-	int m_nFrame;	// 0x04
-};
 
-extern CGlobalVarsView *g_1070b228;
 
 // TARGET: CAI_Navigator::sub_102edd50
 bool CAI_Navigator::sub_102edd50(const Vector *pPosition, float flDistance, int c, int d, int e, Vector *pOut, int f)
 {
 	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = g_1070b228->m_nFrame;
+	m_i0c = gpGlobals->framecount;
 	CUnknown103008f0 *pFinder = (CUnknown103008f0 *)sub_102ecc00();
 	pFinder->m_i08 = *(int *)(pFinder->m_pOuter + 0x156c);
-	pFinder->m_i0c = g_1070b228->m_nFrame;
+	pFinder->m_i0c = gpGlobals->framecount;
 	int nNode = ((CUnknown103008f0 *)sub_102ecc00())->sub_10302320(pPosition, flDistance, c, d, e, f);
 	if (nNode == -1)
 		return false;
@@ -101497,12 +100945,7 @@ struct NavSelfView_t {
 	float flArg;
 };
 
-struct NavGlobals_t {
-	char pad[0xc];
-	float curtime;
-};
 
-extern NavGlobals_t *g_1070b228;
 extern float g_1049d988;
 
 bool CAI_Navigator::sub_102f13d0(unsigned char bArg)
@@ -101516,8 +100959,8 @@ bool CAI_Navigator::sub_102f13d0(unsigned char bArg)
 			NavLink_t *pLink = pWp->pLink;
 			if (pLink && pWp->n2c == pLink->n2c && !(pWp->bFlags & 0x2a)) {
 				char bDone = 0;
-				if (pView->flArg != 0.0f || pView->flNext <= g_1070b228->curtime) {
-					pView->flNext = g_1049d988 + g_1070b228->curtime;
+				if (pView->flArg != 0.0f || pView->flNext <= gpGlobals->curtime) {
+					pView->flNext = g_1049d988 + gpGlobals->curtime;
 					if (sub_102f0e80(&bDone))
 						return true;
 					if (bDone)
@@ -101783,33 +101226,31 @@ char CAI_Pathfinder::sub_102f1900(int nodeNum, unsigned int collisionMask)
 #include "CAI_Navigator.h"
 #include "CAI_BaseNPC.h"
 
-struct CGlobalsView2 { int pad0; int framecount; int pad8; float curtime; };
-extern CGlobalsView2 *g_1070b228;
 
 // TARGET: CAI_Navigator::sub_102f1dc0
 bool CAI_Navigator::sub_102f1dc0(int a, int b)
 {
 	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = g_1070b228->framecount;
+	m_i0c = gpGlobals->framecount;
 	CAI_NavComponentData *pPathfinder = (CAI_NavComponentData *)sub_102ecc00();
 	pPathfinder->m_i08 = *(int *)(pPathfinder->m_pOuter + 0x156c);
-	pPathfinder->m_i0c = g_1070b228->framecount;
+	pPathfinder->m_i0c = gpGlobals->framecount;
 	CAI_NavRoute *pRoute = m_p30;
 	pRoute->m_pWaypoint.sub_10319ee0();
 	pRoute->m_nProvider = -1;
 	if (*(unsigned int *)(m_pOuter + 0x5d8c) & 0x20) {
-		if (m_f48 < g_1070b228->curtime) {
+		if (m_f48 < gpGlobals->curtime) {
 			vfunc10(0xc, 1.4012984643e-45f);
 			return false;
 		}
-		if (m_f4c < g_1070b228->curtime) {
+		if (m_f4c < gpGlobals->curtime) {
 			if (sub_102f2330(b)) {
 				*(unsigned int *)(m_pOuter + 0x5d8c) &= ~0x20;
 				if (*((CAI_BaseNPC *)m_pOuter)->sub_1028a150() != 0x6e)
 					vfunc2(0);
 				return true;
 			}
-			m_f4c = g_1070b228->curtime + m_f44;
+			m_f4c = gpGlobals->curtime + m_f44;
 			return false;
 		}
 	} else {
@@ -101824,8 +101265,8 @@ bool CAI_Navigator::sub_102f1dc0(int a, int b)
 			return false;
 		}
 		*(unsigned int *)(m_pOuter + 0x5d8c) |= 0x20;
-		m_f4c = g_1070b228->curtime + m_f44;
-		m_f48 = g_1070b228->curtime + m_f40;
+		m_f4c = gpGlobals->curtime + m_f44;
+		m_f48 = gpGlobals->curtime + m_f40;
 	}
 	return false;
 }
@@ -101833,8 +101274,6 @@ bool CAI_Navigator::sub_102f1dc0(int a, int b)
 
 // FUNCTION: 0x102f1fa0 size=0x90
 #include "CAI_Navigator.h"
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
-extern CGlobalVarsX *g_1070b228;
 extern int g_106c994c;
 
 void CAI_Navigator::sub_102f1fa0(float flDelay, CAI_NavSource *pSource)
@@ -101854,7 +101293,7 @@ void CAI_Navigator::sub_102f1fa0(float flDelay, CAI_NavSource *pSource)
 			CAI_NavEntry *pEntry = pProvider->sub_102f9400(iEntry);
 			if (pEntry) {
 				pEntry->m_flags |= 1;
-				pEntry->m_flTime = flDelay + g_1070b228->curtime;
+				pEntry->m_flTime = flDelay + gpGlobals->curtime;
 				if (pSource)
 					pEntry->m_hHandle = *pSource->vfunc1();
 				else
@@ -101983,18 +101422,12 @@ void CUnknown102f3900::sub_102f3900(CUnknown102f3900Ent *pEnt, Vector vecA, Vect
 #include "CUnknown102f45f0.h"
 #include "Vector.h"
 
-struct CGlobalVarsView
-{
-	char m_pad0000[0xc];
-	float m_curtime;
-};
-extern CGlobalVarsView *g_1070b228;
 
 int CUnknown102f45f0::sub_102f4520(const CachedPos_t *pPos)
 {
 	for (int i = 0; i < 20; i++)
 	{
-		if (!(m_cache[i].m_flTime + 5.0f < g_1070b228->m_curtime) && m_cache[i].m_nField14 == 0x17)
+		if (!(m_cache[i].m_flTime + 5.0f < gpGlobals->curtime) && m_cache[i].m_nField14 == 0x17)
 		{
 			if ((*(Vector *)&m_cache[i].m_vecPos - *(Vector *)pPos).Length() < 24.0)
 				return m_cache[i].m_nNode;
@@ -102007,18 +101440,16 @@ int CUnknown102f45f0::sub_102f4520(const CachedPos_t *pPos)
 // FUNCTION: 0x102f45f0 size=0xa9
 #include "CUnknown102f45f0.h"
 
-struct CGlobalVars { char pad[0xc]; float curtime; };
-extern CGlobalVars *g_1070b228;
 extern void (*g_109f3630)(const char *fmt, ...);
 
 void CUnknown102f45f0::sub_102f45f0(const CachedPos_t *pPos, int node, int field)
 {
-	if (m_cache[m_nNextCache].m_flTime == g_1070b228->curtime)
+	if (m_cache[m_nNextCache].m_flTime == gpGlobals->curtime)
 		g_109f3630("AI NearestNode Cache is full\n");
 	m_cache[m_nNextCache].m_vecPos = *pPos;
 	m_cache[m_nNextCache].m_nNode = node;
 	m_cache[m_nNextCache].m_nField14 = field;
-	m_cache[m_nNextCache].m_flTime = g_1070b228->curtime;
+	m_cache[m_nNextCache].m_flTime = gpGlobals->curtime;
 	m_nNextCache++;
 	if (m_nNextCache == 20)
 		m_nNextCache = 0;
@@ -103020,12 +102451,6 @@ struct SPFOuter
 	char m_pad0000[0x5d34];
 	SPFNavigator *m_pNavigator;
 };
-struct SPFGlobals
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern SPFGlobals *g_1070b228;
 inline SPFNodeList *PFNodes(CAI_Pathfinder *p)
 {
 	return ((SPFOuter *)p->m_pOuter)->m_pNavigator->m_pNodes;
@@ -103034,12 +102459,12 @@ bool CAI_Pathfinder::sub_102fce80(int moveType, CAI_PathfinderLink *pLink)
 {
 	if (!(pLink->m_flags & 1))
 		return false;
-	if (g_1070b228->curtime > pLink->m_timeStaleExpires) {
+	if (gpGlobals->curtime > pLink->m_timeStaleExpires) {
 		pLink->m_flags &= ~1;
 		return false;
 	}
-	if (g_1070b228->curtime != *(float *)((char *)this + 0x14)) {
-		*(float *)((char *)this + 0x14) = g_1070b228->curtime;
+	if (gpGlobals->curtime != *(float *)((char *)this + 0x14)) {
+		*(float *)((char *)this + 0x14) = gpGlobals->curtime;
 		float vecDest[3];
 		float vecSrc[3];
 		int hull1 = m_unk08;
@@ -103424,8 +102849,6 @@ void sub_10307e00()
 // FUNCTION: 0x10308190 size=0xd8
 #include "CUnknown1030a6e0.h"
 #include "CEntityVSlots.h"
-struct SGlobalVars { char m_pad[0xc]; float m_flCurTime; };
-extern SGlobalVars *g_1070b228;
 bool CUnknown1030a6e0::sub_10308190(const Vector *pGoal)
 {
     Vector *pOrigin = ((CEntityVSlots *)m_pOuter)->slot220();
@@ -103434,7 +102857,7 @@ bool CUnknown1030a6e0::sub_10308190(const Vector *pGoal)
     float flDist = d.Length2D();
     if (!(m_vecGoal == *pGoal))
     {
-        m_flBestTime = g_1070b228->m_flCurTime;
+        m_flBestTime = gpGlobals->curtime;
         m_bStuck = 0;
         m_flBestDist = flDist;
         return false;
@@ -103443,11 +102866,11 @@ bool CUnknown1030a6e0::sub_10308190(const Vector *pGoal)
         return true;
     if (m_flBestDist - flDist > 0.0f)
     {
-        m_flBestTime = g_1070b228->m_flCurTime;
+        m_flBestTime = gpGlobals->curtime;
         m_flBestDist = flDist;
         return false;
     }
-    if (g_1070b228->m_flCurTime - m_flBestTime > 0.75)
+    if (gpGlobals->curtime - m_flBestTime > 0.75)
     {
         m_bStuck = 1;
         return true;
@@ -104408,11 +103831,6 @@ haveObj:
 // FUNCTION: 0x1030f940 size=0x85
 #include "CUnknown1030f940.h"
 
-struct CGlobalVarsView {
-	char m_pad[0xc];
-	float m_flCurTime;
-};
-extern CGlobalVarsView *g_1070b228;
 
 int sub_101bb0f0();
 CUnknown1030f940Rec *sub_101bb150(int index);
@@ -104433,7 +103851,7 @@ void CUnknown1030f940::sub_1030f940()
 		}
 	}
 	m_pNpc->vfunc470();
-	m_flLastUpdate = g_1070b228->m_flCurTime;
+	m_flLastUpdate = gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -104655,13 +104073,6 @@ void CUnknown1030fe50::sub_1030fe70(int count, CUtlVector4 *pVec)
 // END FUNCTION
 
 // FUNCTION: 0x1030ff10 size=0x64
-struct CWeaponGlobals
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern CWeaponGlobals *g_1070b228;
-
 #define OV(n) virtual void o##n();
 #define OV10(p) OV(p##0) OV(p##1) OV(p##2) OV(p##3) OV(p##4) OV(p##5) OV(p##6) OV(p##7) OV(p##8) OV(p##9)
 #define OV100(p) OV10(p##0) OV10(p##1) OV10(p##2) OV10(p##3) OV10(p##4) OV10(p##5) OV10(p##6) OV10(p##7) OV10(p##8) OV10(p##9)
@@ -104690,13 +104101,13 @@ struct CUnknown1030fe50Unit
 
 void CUnknown1030fe50Unit::sub_1030ff10(int radius)
 {
-	if (m_flTime != g_1070b228->curtime || radius != m_flRadius)
+	if (m_flTime != gpGlobals->curtime || radius != m_flRadius)
 	{
 		sub_1030fff0(radius);
 		sub_10310130(radius);
 		sub_10310290(radius);
 		m_flRadius = (float)radius;
-		m_flTime = g_1070b228->curtime;
+		m_flTime = gpGlobals->curtime;
 	}
 	m_pOwner->slot469(radius);
 }
@@ -104732,21 +104143,19 @@ struct EntView
 	virtual void x218(); virtual void x219();
 	virtual float *vfunc220();
 };
-struct GlobalVars_t { char pad0[0xc]; float curtime; int pad10; int maxClients; };
-extern GlobalVars_t *g_1070b228;
 extern const double g_10497530;
 EntView *sub_101cd9e0(int index);
 
 int CUnknown1030fe50::sub_1030fff0(int radius)
 {
 	int count = 0;
-	if (g_1070b228->curtime - m_flNextTime > g_10497530)
+	if (gpGlobals->curtime - m_flNextTime > g_10497530)
 	{
-		m_flNextTime = m_flInterval + g_1070b228->curtime;
+		m_flNextTime = m_flInterval + gpGlobals->curtime;
 		sub_1030fe50();
 		float rsq = (float)(radius * radius);
 		float *pOrigin = ((EntView *)m_pOwner)->vfunc220();
-		for (int i = 1; i <= g_1070b228->maxClients; i++)
+		for (int i = 1; i <= gpGlobals->maxClients; i++)
 		{
 			EntView *pEnt = sub_101cd9e0(i);
 			if (pEnt)
@@ -104782,15 +104191,13 @@ struct EntVT10310130 {
 	virtual void s218(); virtual void s219();
 	virtual const float *a220();
 };
-struct GlobalVarsX { int pad0[3]; float curtime; };
-extern GlobalVarsX *g_1070b228;
 extern CUnknown102652d0 g_1090fe10;
 
 int CAI_Senses::sub_10310130(int radius)
 {
 	int count = 0;
-	if (g_1070b228->curtime - m_timer70.m_flNext > -0.001) {
-		m_timer70.m_flNext = m_timer70.m_flInterval + g_1070b228->curtime;
+	if (gpGlobals->curtime - m_timer70.m_flNext > -0.001) {
+		m_timer70.m_flNext = m_timer70.m_flInterval + gpGlobals->curtime;
 		sub_1030fe50();
 		float flRadiusSqr = (float)(radius * radius);
 		const float *pos = ((EntVT10310130 *)m_pOuter)->a220();
@@ -104815,17 +104222,15 @@ int CAI_Senses::sub_10310130(int radius)
 #include "CEntityVSlots.h"
 #include "Vector.h"
 
-struct CGlobalVarsView { char pad[0xc]; float curtime; };
-extern CGlobalVarsView *g_1070b228;
 int sub_101cca80(CBaseEntity **pList, int listMax, const Vector &mins, const Vector &maxs, int flagMask, int partitionMask);
 
 // TARGET: CAI_Senses::sub_10310290
 int CAI_Senses::sub_10310290(int radius)
 {
     int nCount = 0;
-    if (g_1070b228->curtime - m_timer78.m_flNext > -0.001)
+    if (gpGlobals->curtime - m_timer78.m_flNext > -0.001)
     {
-        m_timer78.m_flNext = m_timer78.m_flInterval + g_1070b228->curtime;
+        m_timer78.m_flNext = m_timer78.m_flInterval + gpGlobals->curtime;
         sub_1030fe50();
         Vector vecExtents((float)radius, (float)radius, (float)radius);
         Vector vecMaxs = *((CEntityVSlots *)m_pOuter)->slot217() + vecExtents;
@@ -105170,11 +104575,6 @@ void CUnknown10311a20::sub_10311a20(int key, int value)
 // FUNCTION: 0x103121a0 size=0x67
 #include "CAI_Expresser.h"
 
-struct SpeakGlobals {
-	char pad[0xc];
-	float curtime;
-};
-extern SpeakGlobals *g_1070b228;
 extern float g_10936c40;
 
 void CAI_Expresser::sub_103121a0(float a, float b)
@@ -105183,11 +104583,11 @@ void CAI_Expresser::sub_103121a0(float a, float b)
 	m_n10->vfunc3();
 	if (a <= 0.0f) {
 		a = 0.0f;
-		m_Tail.m_n4c = g_1070b228->curtime + 3.0f;
+		m_Tail.m_n4c = gpGlobals->curtime + 3.0f;
 	} else {
-		m_Tail.m_n4c = a + g_1070b228->curtime;
+		m_Tail.m_n4c = a + gpGlobals->curtime;
 	}
-	g_10936c40 = a + g_1070b228->curtime;
+	g_10936c40 = a + gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -105200,11 +104600,9 @@ void CUnknown10312320::sub_10312320() { m_Sub.sub_10002397(); }
 // FUNCTION: 0x10312360 size=0x17d
 #include "CUnknown10312580.h"
 
-struct GlobalVarsLite { char pad[0xc]; float curtime; };
 struct DiscRecord { int m_0; int m_4; int m_8; int m_c; int m_10; float m_f14; int m_18; unsigned char m_b1c; };
 struct CRecordTree { DiscRecord *sub_103118e0(int key); };
 struct RBProbe { int key; float value; };
-extern GlobalVarsLite *g_1070b228;
 extern const char *g_109f075c;
 extern const float g_104454c4;
 
@@ -105235,7 +104633,7 @@ bool CUnknown10312580::sub_10312360(int key)
 				return false;
 			const float *pv = (const float *)(m_Tree.m_pElements[i].m_Data + 4);
 			if (*(const unsigned int *)pv != 0xbf800000) {
-				if (g_1070b228->curtime < rec->m_f14 + *pv)
+				if (gpGlobals->curtime < rec->m_f14 + *pv)
 					return false;
 			}
 		}
@@ -105347,11 +104745,6 @@ void __fastcall sub_10312b20(char *p)
 extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
 void __fastcall sub_10312b20(char *p);
 
-struct CGlobalVarsStub {
-	char pad[0xc];
-	float curtime;
-};
-extern CGlobalVarsStub *g_1070b228;
 
 namespace block_10312b50 {
 struct CAI_ExpresserUnit : CAI_Expresser {
@@ -105359,7 +104752,7 @@ struct CAI_ExpresserUnit : CAI_Expresser {
 };
 int CAI_ExpresserUnit::sub_10312230()
 {
-	return m_Tail.m_n4c > g_1070b228->curtime;
+	return m_Tail.m_n4c > gpGlobals->curtime;
 }
 }
 using namespace block_10312b50;
@@ -106373,11 +105766,9 @@ void sub_10321ec0(void)
 // FUNCTION: 0x103221b0 size=0xc6
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
-struct SGlobals { int pad[3]; float curtime; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
-extern SGlobals *g_1070b228;
 extern void (*g_109f3630)(const char *fmt, ...);
 
 void CBaseCombatCharacter::sub_103221b0(const char *msg)
@@ -106390,7 +105781,7 @@ void CBaseCombatCharacter::sub_103221b0(const char *msg)
     char defaultMsg[] = "Feed Trace";
     if (!msg)
         msg = defaultMsg;
-    g_109f3630("%f : Feeding - %s\n", (double)g_1070b228->curtime, msg);
+    g_109f3630("%f : Feeding - %s\n", (double)gpGlobals->curtime, msg);
     (*g_109f3680)--;
 }
 // END FUNCTION
@@ -107824,8 +107215,6 @@ float __fastcall sub_10331770(CBaseCombatCharacter *pThis, int, float flDamage)
 #include "CBaseCombatCharacter.h"
 #include "CBasePlayer.h"
 
-struct CGlobalVarsStub { char pad[0x14]; int maxClients; };
-extern CGlobalVarsStub *g_1070b228;
 CBasePlayer *sub_1000ac8b(int index);
 
 void CBaseCombatCharacter::sub_103322e0(int a, int b)
@@ -107833,7 +107222,7 @@ void CBaseCombatCharacter::sub_103322e0(int a, int b)
 	ScopeTrace trace("CBaseCombatCharacter::SetAsCameraTarget", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	m_b10d4 = (char)a;
 	*(int *)((char *)this + 0x10d0) = b;
-	for (int i = 1; i <= g_1070b228->maxClients; i++) {
+	for (int i = 1; i <= gpGlobals->maxClients; i++) {
 		CBasePlayer *pPlayer = sub_1000ac8b(i);
 		if (pPlayer)
 			pPlayer->sub_1017d460((CBaseEntity *)this, 0);
@@ -111871,11 +111260,6 @@ void CUnknown1034b560::sub_1034b560(int) { sub_10001375(); }
 // FUNCTION: 0x1034bbf0 size=0x74
 #include "CNPCMaker.h"
 
-struct CGlobalVarsStub
-{
-	char pad[0xc];
-	float m_flCurTime;
-};
 
 #define MV1(p) virtual void p();
 #define MV10(p) MV1(p##0) MV1(p##1) MV1(p##2) MV1(p##3) MV1(p##4) MV1(p##5) MV1(p##6) MV1(p##7) MV1(p##8) MV1(p##9)
@@ -111888,7 +111272,6 @@ struct CMakerVSlots
 	virtual int vfunc617(int a);
 };
 
-extern CGlobalVarsStub *g_1070b228;
 extern float (__cdecl *g_109f385c)(float flMin, float flMax);
 
 // TARGET: CNPCMaker::sub_1034bbf0
@@ -111897,11 +111280,11 @@ void CNPCMaker::sub_1034bbf0()
 	float *pNextThink = (float *)((char *)this + 0x17c);
 	if (!((CMakerVSlots *)this)->vfunc617(0)) {
 		if (m_n66b4 > 0 && m_n66b0 >= m_n66b4)
-			*pNextThink = m_flSpawnDelay + g_1070b228->m_flCurTime;
+			*pNextThink = m_flSpawnDelay + gpGlobals->curtime;
 		else
-			*pNextThink = g_109f385c(1.0f, 2.0f) + g_1070b228->m_flCurTime;
+			*pNextThink = g_109f385c(1.0f, 2.0f) + gpGlobals->curtime;
 	} else {
-		*pNextThink = m_flSpawnDelay + g_1070b228->m_flCurTime;
+		*pNextThink = m_flSpawnDelay + gpGlobals->curtime;
 	}
 }
 // END FUNCTION
@@ -111991,11 +111374,6 @@ void CNPCMaker::sub_1034cf20(int a, char bNotify)
 // FUNCTION: 0x1034d2d0 size=0x74
 #include "CNPCMaker_Zombie.h"
 
-struct CGlobalVarsStub
-{
-	char pad[0xc];
-	float m_flCurTime;
-};
 
 #define MV1(p) virtual void p();
 #define MV10(p) MV1(p##0) MV1(p##1) MV1(p##2) MV1(p##3) MV1(p##4) MV1(p##5) MV1(p##6) MV1(p##7) MV1(p##8) MV1(p##9)
@@ -112008,7 +111386,6 @@ struct CMakerVSlots
 	virtual int vfunc617(int a);
 };
 
-extern CGlobalVarsStub *g_1070b228;
 extern float (__cdecl *g_109f385c)(float flMin, float flMax);
 
 // TARGET: CNPCMaker_Zombie::sub_1034d2d0
@@ -112017,11 +111394,11 @@ void CNPCMaker_Zombie::sub_1034d2d0()
 	float *pNextThink = (float *)((char *)this + 0x17c);
 	if (!((CMakerVSlots *)this)->vfunc617(0)) {
 		if (m_n66b4 > 0 && m_n66b0 >= m_n66b4)
-			*pNextThink = m_flSpawnDelay + g_1070b228->m_flCurTime;
+			*pNextThink = m_flSpawnDelay + gpGlobals->curtime;
 		else
-			*pNextThink = g_109f385c(1.0f, 2.0f) + g_1070b228->m_flCurTime;
+			*pNextThink = g_109f385c(1.0f, 2.0f) + gpGlobals->curtime;
 	} else {
-		*pNextThink = m_flSpawnDelay + g_1070b228->m_flCurTime;
+		*pNextThink = m_flSpawnDelay + gpGlobals->curtime;
 	}
 }
 // END FUNCTION
@@ -113325,8 +112702,6 @@ void CNPC_VAsianVampire::sub_10361990(CBaseEntity *pHint)
 #include "ScopeTrace.h"
 #include "CNPC_VAsianVampire.h"
 #include "CEntityVSlots.h"
-struct SGlobalVars { char m_pad[0xc]; float m_flCurTime; };
-extern SGlobalVars *g_1070b228;
 void CNPC_VAsianVampire::sub_10362540()
 {
     ScopeTrace trace("CNPC_VAsianVampire::UpdateMovedTimeStamp", g_106b8540);
@@ -113335,7 +112710,7 @@ void CNPC_VAsianVampire::sub_10362540()
     d = *pOrigin - *(Vector *)&m_stationaryPos;
     if (d.Length() > 40.0f)
     {
-        m_flStationaryTime = g_1070b228->m_flCurTime;
+        m_flStationaryTime = gpGlobals->curtime;
         m_stationaryPos = *(StoredHintPos_t *)((CEntityVSlots *)this)->slot217();
     }
 }
@@ -113344,10 +112719,8 @@ void CNPC_VAsianVampire::sub_10362540()
 // FUNCTION: 0x10362670 size=0x81
 #include "CNPC_VAsianVampire.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
-struct GlobalVars { char pad[0xc]; float curtime; };
 extern int *g_109f3680;
 extern TraceEnt *g_109f3620;
-extern GlobalVars *g_1070b228;
 extern char g_1062cfec[];
 extern char g_106b8540[];
 extern float g_104a9318;
@@ -113357,7 +112730,7 @@ bool CNPC_VAsianVampire::sub_10362670()
     g_109f3620[*g_109f3680].b = g_106b8540;
     g_109f3620[*g_109f3680].c = g_106b8540;
     ++*g_109f3680;
-    if (g_1070b228->curtime - m_flStationaryTime >= g_104a9318) {
+    if (gpGlobals->curtime - m_flStationaryTime >= g_104a9318) {
         --*g_109f3680;
         return true;
     }
@@ -113478,12 +112851,6 @@ extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *pMem, unsigned long size);
 
-struct CGlobalVars
-{
-	char m_pad0000[0xc];
-	float curtime;	// 0x0c
-};
-extern CGlobalVars *g_1070b228;
 
 struct TimedElem
 {
@@ -113544,7 +112911,7 @@ struct TimedVector
 
 void CUnknown103662d0::sub_103662d0(int id, float delay)
 {
-	TimedElem e = { id, delay + g_1070b228->curtime };
+	TimedElem e = { id, delay + gpGlobals->curtime };
 	TimedVector *v = (TimedVector *)&m_pTimedMemory;
 	v->InsertBefore(v->m_nSize, e);
 }
@@ -113552,13 +112919,11 @@ void CUnknown103662d0::sub_103662d0(int id, float delay)
 
 // FUNCTION: 0x10366400 size=0x69
 #include "CNPC_VWerewolf.h"
-struct CUnknownGlobals1070b228 { int m_pad[3]; float m_curtime; };
-extern CUnknownGlobals1070b228 *g_1070b228;
 bool CNPC_VWerewolf::sub_10366400(int key)
 {
 	int idx = sub_10366490(key);
 	if (idx != -1) {
-		if (g_1070b228->m_curtime < m_Timers.Element(idx).m_time)
+		if (gpGlobals->curtime < m_Timers.Element(idx).m_time)
 			return true;
 		m_Timers.FastRemove(idx);
 	}
@@ -113781,8 +113146,6 @@ void CNPC_VChangBros::sub_1036c810(int a, int b)
 // FUNCTION: 0x1036cab0 size=0xd9
 #include "CNPC_VChangBros.h"
 #include "ScopeTrace.h"
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
-extern CGlobalVarsX *g_1070b228;
 struct CChangBrosUnit : CNPC_VChangBros {
     float sub_103c6a20();
     bool sub_1036cab0();
@@ -113796,7 +113159,7 @@ bool CChangBrosUnit::sub_1036cab0()
         if (sub_103c6a20() >= 0.1f)
             return true;
         if (sub_1036e2f0() && *(int *)((char *)this + 0x66b8) == 0) {
-            float t = g_1070b228->curtime - *(float *)((char *)this + 0x66d0);
+            float t = gpGlobals->curtime - *(float *)((char *)this + 0x66d0);
             if (sub_1036dc60() <= t)
                 return true;
         }
@@ -113809,11 +113172,6 @@ bool CChangBrosUnit::sub_1036cab0()
 #include "CNPC_VChangBros.h"
 #include "ScopeTrace.h"
 
-struct TimeObjC {
-	char m_pad[0xc];
-	float m_flCurTime;
-};
-extern TimeObjC *g_1070b228;
 extern float g_104ada48;
 
 struct BrosView {
@@ -113825,7 +113183,7 @@ bool CNPC_VChangBros::sub_1036cbd0()
 {
 	ScopeTrace trace("CNPC_VChangBros::CheckForUnited", g_106b8540);
 	CNPC_VChangBros *pOther = sub_1036e2f0();
-	if (pOther && g_1070b228->m_flCurTime >= (g_104ada48 + ((BrosView *)this)->m_flTick)) {
+	if (pOther && gpGlobals->curtime >= (g_104ada48 + ((BrosView *)this)->m_flTick)) {
 		if (!(sub_103c6830() >= 0.5f)) {
 			if (!(pOther->sub_103c6830() >= 0.5f))
 				return false;
@@ -113922,11 +113280,6 @@ struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
-struct Globals_t {
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern Globals_t *g_1070b228;
 extern float g_104ada04;
 
 struct TeleportState_t {
@@ -113942,7 +113295,7 @@ bool CNPC_VChangBros::sub_1036d270(float *pOut)
 	g_109f3620[*g_109f3680].c = g_106b8540;
 	(*g_109f3680)++;
 	TeleportState_t *p = (TeleportState_t *)this;
-	if (g_1070b228->curtime - p->m_flTime > g_104ada04) {
+	if (gpGlobals->curtime - p->m_flTime > g_104ada04) {
 		(*g_109f3680)--;
 		return false;
 	}
@@ -115219,12 +114572,6 @@ extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *pMem, unsigned long size);
 
-struct CGlobalVars
-{
-	char m_pad0000[0xc];
-	float curtime;	// 0x0c
-};
-extern CGlobalVars *g_1070b228;
 
 struct TimedElem
 {
@@ -115285,7 +114632,7 @@ struct TimedVector
 
 void CUnknown10382970::sub_10382970(int id)
 {
-	TimedElem e = { id, g_1070b228->curtime + 20.0f };
+	TimedElem e = { id, gpGlobals->curtime + 20.0f };
 	TimedVector *v = (TimedVector *)&m_pTimedMemory;
 	v->InsertBefore(v->m_nSize, e);
 }
@@ -115293,13 +114640,11 @@ void CUnknown10382970::sub_10382970(int id)
 
 // FUNCTION: 0x10382aa0 size=0x69
 #include "CNPC_VHengeyokai.h"
-struct CUnknownGlobals1070b228 { int m_pad[3]; float m_curtime; };
-extern CUnknownGlobals1070b228 *g_1070b228;
 bool CNPC_VHengeyokai::sub_10382aa0(int key)
 {
 	int idx = sub_10382b30(key);
 	if (idx != -1) {
-		if (g_1070b228->m_curtime < m_Timers.Element(idx).m_time)
+		if (gpGlobals->curtime < m_Timers.Element(idx).m_time)
 			return true;
 		m_Timers.FastRemove(idx);
 	}
@@ -115439,18 +114784,12 @@ int CNPC_VHengeyokai::sub_10382f60()
 #include "CNPC_VHengeyokai.h"
 #include "CVStatList_t.h"
 
-struct CGlobalVarsTime
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;	// 0x0c
-};
 
-extern CGlobalVarsTime *g_1070b228;
 extern float g_104b6808;	// 2.0f
 
 void CNPC_VHengeyokai::sub_10383470()
 {
-	if (g_104b6808 + *(float *)((char *)this + 0x1560) < g_1070b228->m_flCurTime) {
+	if (g_104b6808 + *(float *)((char *)this + 0x1560) < gpGlobals->curtime) {
 		CVStatListSet::Of(this)->Find(0)->sub_10200be0(0xf, 0);
 		*((char *)this + 0x6694) = 1;
 		sub_10273e80(0);
@@ -116066,8 +115405,6 @@ int CNPC_VMingXiao::sub_10395650(int a, void *pWeapon)
 #include "CNPC_VMingXiao.h"
 #include "CBaseAnimatingOverlay.h"
 
-struct CGlobals1070b228 { char pad[0xc]; float m_flCurTime; };
-extern CGlobals1070b228 *g_1070b228;
 
 struct CObj10739d08 {
 	struct CVal { float a; float b; } *sub_101e8da0();
@@ -116082,8 +115419,8 @@ void CNPC_VMingXiao::sub_10397930(int index)
 	m_bSlotFlag[index] = 0;
 	m_hSlotNew[index] = -1;
 	m_flSlotValue[index] = g_10739d08.GetB();
-	m_flSlotTimeA[index] = g_1070b228->m_flCurTime + 10.0f;
-	m_flSlotTimeB[index] = g_1070b228->m_flCurTime + 1.0f;
+	m_flSlotTimeA[index] = gpGlobals->curtime + 10.0f;
+	m_flSlotTimeB[index] = gpGlobals->curtime + 1.0f;
 	((CBaseAnimatingOverlay *)this)->sub_100991b0(index + 0x1124, 1);
 }
 // END FUNCTION
@@ -116096,11 +115433,6 @@ void CNPC_VMingXiao::sub_10397930(int index)
 extern CUnknown10739d08 g_10739d08;
 extern float g_104454c4;
 
-struct TimeObjC {
-	char m_pad[0xc];
-	float m_flCurTime;
-};
-extern TimeObjC *g_1070b228;
 
 struct TentView {
 	char m_pad[0x6674];
@@ -116129,7 +115461,7 @@ void CNPC_VMingXiao::sub_10397a50(void *pTentacle)
 		float flTime = (float)dStep * (6 - m_n670c) + flBase;
 		if (!(flTime > g_104454c4))
 			flTime = g_104454c4;
-		m_flTime66a4 = flTime + g_1070b228->m_flCurTime;
+		m_flTime66a4 = flTime + gpGlobals->curtime;
 		if ((TentView *)EHandle_Get((unsigned int &)m_hSlotNew[pTent->m_nIndex]) == pTent)
 			sub_10397930(pTent->m_nIndex);
 	}
@@ -116139,14 +115471,12 @@ void CNPC_VMingXiao::sub_10397a50(void *pTentacle)
 // FUNCTION: 0x10397b40 size=0xe1
 #include "CNPC_VMingXiao.h"
 struct EntInfo { void *ent; int serial; int pad; };
-struct Globals { char pad[0xc]; float curtime; };
 extern char *g_10566458;
-extern Globals *g_1070b228;
 
 bool CNPC_VMingXiao::sub_10397b40(void *pTentacle)
 {
     char *t = (char *)this;
-    if (pTentacle && !(g_1070b228->curtime < *(float *)(t + 0x66a4))) {
+    if (pTentacle && !(gpGlobals->curtime < *(float *)(t + 0x66a4))) {
         int idx = *(int *)((char *)pTentacle + 0x6660);
         unsigned int h = *(unsigned int *)(t + 0x66a8 + idx * 4);
         void *pEnt;
@@ -116538,15 +115868,13 @@ bool __stdcall sub_10399ef0(void *a1, int a2, char *a3, char *a4, char *a5, int 
 #include "CBaseCombatCharacter.h"
 #include "CAI_BaseNPC.h"
 
-struct CGlobalVarsX { char m_pad[0xc]; float m_curtime; };
-extern CGlobalVarsX *g_1070b228;
 extern float g_10452dc4;
 
 void CNPC_VMingXiao::sub_1039aa20()
 {
     float t = *(float *)((char *)this + 0x1560);
     t += g_10452dc4;
-    if (g_1070b228->m_curtime > t) {
+    if (gpGlobals->curtime > t) {
         ((CBaseCombatCharacter *)this)->GetActiveStatList()->sub_10200be0(0xf, 0);
         ((CAI_BaseNPC *)this)->sub_10273e80(0);
     }
@@ -117265,19 +116593,17 @@ bool CNPC_VSabbatLeader::sub_103a9d90()
 #include "ScopeTrace.h"
 #include "CNPC_VSabbatLeader.h"
 
-struct S_1070b228 { char pad[0xc]; float curtime; };
-extern S_1070b228 *g_1070b228;
 extern float g_104c3cdc;
 
 void CNPC_VSabbatLeader::sub_103aa960()
 {
 	ScopeTrace trace("CNPC_VSabbatLeader::UpdateBloodSplash", g_106b8540);
 	if (!m_b66d5) {
-		if (0 < (*(int *)(0x3e0 + (char *)this)) && (0 == (int)m_n66c4 || g_1070b228->curtime > (g_104c3cdc + m_f66c8))) {
+		if (0 < (*(int *)(0x3e0 + (char *)this)) && (0 == (int)m_n66c4 || gpGlobals->curtime > (g_104c3cdc + m_f66c8))) {
 			sub_1000136b("bloodsplash_emitter", 0);
 			if (m_n66c4 == 0)
 				sub_1000136b("bloodbigsplash_emitter", 0);
-			m_f66c8 = g_1070b228->curtime;
+			m_f66c8 = gpGlobals->curtime;
 		}
 		m_n66c4 = *(int *)(0x3e0 + (char *)this);
 	}
@@ -118261,12 +117587,6 @@ extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned long size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *pMem, unsigned long size);
 
-struct CGlobalVars
-{
-	char m_pad0000[0xc];
-	float curtime;	// 0x0c
-};
-extern CGlobalVars *g_1070b228;
 
 struct TimedElem
 {
@@ -118327,7 +117647,7 @@ struct TimedVector
 
 void CUnknown103bf200::sub_103bf200(int id)
 {
-	TimedElem e = { id, g_1070b228->curtime + 20.0f };
+	TimedElem e = { id, gpGlobals->curtime + 20.0f };
 	TimedVector *v = (TimedVector *)&m_pTimedMemory;
 	v->InsertBefore(v->m_nSize, e);
 }
@@ -118335,13 +117655,11 @@ void CUnknown103bf200::sub_103bf200(int id)
 
 // FUNCTION: 0x103bf330 size=0x69
 #include "CUnknown103bf330.h"
-struct CUnknownGlobals1070b228 { int m_pad[3]; float m_curtime; };
-extern CUnknownGlobals1070b228 *g_1070b228;
 bool CUnknown103bf330::sub_103bf330(int key)
 {
 	int idx = sub_103bf3c0(key);
 	if (idx != -1) {
-		if (g_1070b228->m_curtime < m_Timers.Element(idx).m_time)
+		if (gpGlobals->curtime < m_Timers.Element(idx).m_time)
 			return true;
 		m_Timers.FastRemove(idx);
 	}
@@ -118688,8 +118006,6 @@ char sub_103c51c0()
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"
 
-struct CGlobalVarsTime { int pad0[3]; float curtime; };
-extern CGlobalVarsTime *g_1070b228;
 extern CGlobalEntityList *g_10566458;
 extern float g_104ce8bc;
 extern char g_10538764[];
@@ -118698,7 +118014,7 @@ extern char g_1062a654[];
 void CNPC_VVampireBoss::sub_103c63c0()
 {
 	ScopeTrace trace("CNPC_VVampireBoss::WaitForTransformation", g_106b8540);
-	if (g_104ce8bc + *(float *)((char *)this + 0x1560) < g_1070b228->curtime) {
+	if (g_104ce8bc + *(float *)((char *)this + 0x1560) < gpGlobals->curtime) {
 		CVStatListSet::Of(this)->Find(0)->sub_10200be0(0xf, 0);
 		unsigned int h = *(unsigned int *)((char *)this + 0x66b0);
 		if (h != 0xffffffff) {
@@ -119486,12 +118802,6 @@ void CTriggerWWZone::sub_103cecd0(CBaseEntity *pEnt)
 #include "ScopeTrace.h"
 #include "ConVar.h"
 
-struct CGlobalVarsWW
-{
-	char pad[0xc];
-	float curtime;
-};
-extern CGlobalVarsWW *g_1070b228;
 extern ConVar *g_1093f8ec;
 extern ConVar *g_1093d574;
 extern float g_104454c4;
@@ -119500,7 +118810,7 @@ bool CNPC_VWerewolf::sub_103cf5f0()
 {
 	ScopeTrace trace("CNPC_VWerewolf::ShouldPursueEnemy", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	if ((m_nFlags66e8 & 4) != 4) {
-		float flElapsed = g_104454c4 > (g_1070b228->curtime - *(float *)((char *)this + 0x66ec)) ? 0.0f : (g_1070b228->curtime - *(float *)((char *)this + 0x66ec));
+		float flElapsed = g_104454c4 > (gpGlobals->curtime - *(float *)((char *)this + 0x66ec)) ? 0.0f : (gpGlobals->curtime - *(float *)((char *)this + 0x66ec));
 		if (flElapsed > (g_1093f8ec->vfunc1() ? g_104454c4 : g_1093f8ec->m_fValue)) {
 			float flMax = g_1093d574->vfunc1() ? g_104454c4 : g_1093d574->m_fValue;
 			if (flMax < *(float *)((char *)this + 0x6264))
@@ -123153,8 +122463,6 @@ extern "C" CBaseEntity *item_w_mingxiao_tentacle()
 // END FUNCTION
 
 // FUNCTION: 0x103ed920 size=0x68
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
-extern CGlobalVarsX *g_1070b228;
 struct OwnerX { char pad[0xa8]; void *p; };
 void sub_1000d5f3();
 struct CWeaponUnit : CBaseCombatWeapon {
@@ -123170,7 +122478,7 @@ void CWeaponUnit::sub_103ed920()
         vfunc333(1, 1, 0, 0, 0, 0);
         vfunc307(vfunc328());
         sub_100ac4e0((int)sub_1000d5f3, 0, 0);
-        *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.2f;
+        *(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.2f;
     }
 }
 // END FUNCTION
@@ -123207,11 +122515,6 @@ int sub_103ee100()
 // FUNCTION: 0x103ee660 size=0x70
 #include "CWeaponThrown_Grenade_Frag.h"
 
-struct CGlobalVarsFrag {
-	char m_pad[0xc];
-	float m_flCurTime;
-};
-extern CGlobalVarsFrag *g_1070b228;
 void sub_1000c98c();
 
 struct CFragOwnerObj {
@@ -123221,14 +122524,14 @@ struct CFragOwnerObj {
 
 bool CWeaponThrown_Grenade_Frag::sub_103ee660()
 {
-	if (g_1070b228->m_flCurTime > m_flTimer91c) {
+	if (gpGlobals->curtime > m_flTimer91c) {
 		m_bFinished930 = 1;
 		sub_103ed200();
 		CFragOwnerObj *pOwner = (CFragOwnerObj *)sub_102521f0();
 		if (pOwner && pOwner->m_pAI)
 			sub_103ed830(pOwner->m_pAI);
 		sub_100ac4e0((void *)sub_1000c98c, 0, 0);
-		m_flNextThink17c = g_1070b228->m_flCurTime + 0.2f;
+		m_flNextThink17c = gpGlobals->curtime + 0.2f;
 		return true;
 	}
 	return false;
@@ -123250,7 +122553,6 @@ public:
 	virtual void slot3(const CRecipientFilter *pFilter, int entindex, int channel, const char *pszSample, float flVolume, float flAttenuation, int flags, int pitch, int a, int b, int c, int d);
 };
 
-struct S_Globals { char pad[0xc]; float curtime; };
 
 struct S_EntView
 {
@@ -123273,7 +122575,6 @@ public:
 
 extern S_SoundSystem *g_1070b248;
 extern CUnknown1070b22c *g_1070b22c;
-extern S_Globals *g_1070b228;
 extern char vt_104470dc[];
 extern char vt_104470b0[];
 
@@ -123301,7 +122602,7 @@ void CWeaponThrown_Grenade_Frag::sub_103ee6f0()
 	int edict = ((S_EntView *)this)->m_pEdict;
 	g_1070b248->slot3((CRecipientFilter *)&filter, g_1070b22c->vfunc35(edict), 1, "weapons/ranged/grenade_pineapple/tic.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 	sub_103ee660();
-	m_flNextThink17c = g_1070b228->curtime + 1.0f;
+	m_flNextThink17c = gpGlobals->curtime + 1.0f;
 }
 // END FUNCTION
 
@@ -130617,8 +129918,6 @@ struct DmgInfoRaw
 	int w[19];
 };
 
-struct CGlobalVarsLike { char pad[0xc]; float curtime; };
-extern CGlobalVarsLike *g_1070b228;
 extern void __fastcall sub_101c2690(DmgInfoRaw *);
 extern void sub_101c2c60();
 
@@ -130639,8 +129938,8 @@ void CBaseCombatWeapon::sub_1040dcf0(CBaseEntity *pVictim, const float *pDir, vo
 	pVictim->sub_100a7d00((int)&info, (int)pDir, (int)pTrace);
 	sub_101c2c60();
 	vfunc307(0xc0);
-	*(float *)((char *)this + 0x924) = g_1070b228->curtime + 0.5f;
-	*(float *)((char *)this + 0x918) = g_1070b228->curtime + 0.25f;
+	*(float *)((char *)this + 0x924) = gpGlobals->curtime + 0.5f;
+	*(float *)((char *)this + 0x918) = gpGlobals->curtime + 0.25f;
 }
 // END FUNCTION
 
@@ -130706,14 +130005,8 @@ struct COwnerView
 	char m_pad[0xa8];
 	CBasePlayer *m_pPlayer;
 };
-struct CGlobalVarsView
-{
-	char m_pad[0xc];
-	float curtime;
-};
 
 extern CUnknown101e8480 g_10739d08;
-extern CGlobalVarsView *g_1070b228;
 void sub_101cebc0(CBasePlayer *p, int a, int b);
 typedef float (CUnknown101e8480::*PFN_FLOAT)(CBaseCombatCharacter *);
 
@@ -130743,7 +130036,7 @@ bool CWeaponPhysCannon::sub_1040e880(CBaseEntity *pEnt)
 		((CUnknown100a8340 *)pEnt)->sub_100a8340(0, 0);
 	}
 	m_grab.sub_1040c5d0((CBaseEntity *)pPlayer, pEnt, (int)pPhys);
-	*(float *)((char *)this + 0x734) = g_1070b228->curtime + 0.4f;
+	*(float *)((char *)this + 0x734) = gpGlobals->curtime + 0.4f;
 	return true;
 }
 // END FUNCTION
@@ -131695,13 +130988,7 @@ struct CTimeTableHit
 	int m_nUsed;	// 0x10
 };
 
-struct CTimeTableGlobals
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
 
-extern CTimeTableGlobals *g_1070b228;
 CTimeTable *sub_100c7480(const void *a, const void *b);
 
 // TARGET: sub_104289a0
@@ -131731,7 +131018,7 @@ int sub_104289a0(const void *a, const void *b, CTimeTableHit *pOut, float flFrom
 hit:
 							pOut->m_nUsed = 0;
 							pOut->m_flTime = pRecs[iStart].m_flTime;
-							pOut->m_flStamp = g_1070b228->curtime;
+							pOut->m_flStamp = gpGlobals->curtime;
 							pOut->m_nPriority = pRecs[iStart].m_nPriority;
 							pOut->m_pData = pRecs[iStart].m_data0c;
 							return iStart + 1;
@@ -132522,11 +131809,6 @@ void CUnknown1042e8c0::sub_1042eca0()
 // FUNCTION: 0x1042edb0 size=0x7c
 #include "CBaseEntity.h"
 
-struct FadeGlobals {
-	char pad[0xc];
-	float curtime;
-};
-extern FadeGlobals *g_1070b228;
 
 struct FadeEntView {
 	char m_pad0000[0x164];
@@ -132545,7 +131827,7 @@ struct FadeEntView {
 
 void __fastcall sub_1042edb0(FadeEntView *pThis)
 {
-	float dt = g_1070b228->curtime - pThis->m_f474;
+	float dt = gpGlobals->curtime - pThis->m_f474;
 	pThis->m_f46c = dt * pThis->m_f164 + pThis->m_f46c;
 	int n = (int)(pThis->m_iHealth * dt);
 	if (n > pThis->m_nAlpha) {
@@ -132554,8 +131836,8 @@ void __fastcall sub_1042edb0(FadeEntView *pThis)
 		return;
 	}
 	pThis->m_nAlpha -= n;
-	pThis->m_flNextThink = g_1070b228->curtime;
-	pThis->m_f474 = g_1070b228->curtime;
+	pThis->m_flNextThink = gpGlobals->curtime;
+	pThis->m_f474 = gpGlobals->curtime;
 }
 // END FUNCTION
 

@@ -45,8 +45,6 @@ void CEnvShake::vfunc103()
 #include "CUnknown1070b244.h"
 #include <math.h>
 
-struct CGlobalVarsView { char pad[0xc]; float curtime; float frametime; };
-extern CGlobalVarsView *g_1070b228;
 extern CUnknown1070b244 *g_1070b244;
 
 struct ShakeThinkView
@@ -74,16 +72,16 @@ void CEnvShake::vfunc134()
 {
     ShakeThinkView *p = (ShakeThinkView *)this;
     int i;
-    if (g_1070b228->curtime > p->m_flNextShake)
+    if (gpGlobals->curtime > p->m_flNextShake)
     {
-        p->m_flNextShake = 1.0f / p->Frequency() + g_1070b228->curtime;
+        p->m_flNextShake = 1.0f / p->Frequency() + gpGlobals->curtime;
         for (i = 0; i < 2; i++)
             p->m_vecMaxForce[i] = g_1070b244->vfunc1(-1.0f, 1.0f);
         p->m_vecMaxForce[2] = 4.0f;
         VectorNormalize(p->m_vecMaxForce);
         p->m_vecMaxForce *= p->m_flCurrentAmp * 10.0f;
     }
-    float fraction = (p->m_flStopTime - g_1070b228->curtime) / p->m_flDuration;
+    float fraction = (p->m_flStopTime - gpGlobals->curtime) / p->m_flDuration;
     if (fraction < 0.0f && p->m_pOwner)
     {
         p->m_pOwner->slot6();
@@ -92,12 +90,12 @@ void CEnvShake::vfunc134()
     float freq = 0.0f;
     if (fraction != 0.0f)
         freq = p->m_flFrequency / fraction;
-    float angle = (float)sin(freq * g_1070b228->curtime);
+    float angle = (float)sin(freq * gpGlobals->curtime);
     float flAmp = angle * (fraction * fraction);
     for (i = 0; i < 3; i++)
         p->m_vecShake[i] = flAmp * p->m_vecMaxForce[i];
     float flCurrentAmp = p->m_flCurrentAmp;
-    p->m_flCurrentAmp = flCurrentAmp - (g_1070b228->frametime / (p->Frequency() * p->Duration())) * flCurrentAmp;
-    p->m_flNextThink = g_1070b228->curtime;
+    p->m_flCurrentAmp = flCurrentAmp - (gpGlobals->frametime / (p->Frequency() * p->Duration())) * flCurrentAmp;
+    p->m_flNextThink = gpGlobals->curtime;
 }
 // END FUNCTION

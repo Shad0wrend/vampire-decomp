@@ -107,15 +107,9 @@ struct CVirtSoundB
 	virtual float slot1(float a, float b);
 };
 
-struct CVYukieTimeInfo
-{
-	char m_pad0000[0xc];
-	float m_f0c;	// +0xc
-};
 
 extern CVirtSimpleA *g_10924edc;
 extern CVirtSoundB *g_1070b244;
-extern CVYukieTimeInfo *g_1070b228;
 
 struct CNPC_VYukieView
 {
@@ -130,7 +124,7 @@ char CNPC_VYukie::vfunc599(int unused)
 	CNPC_VYukieView *pView = (CNPC_VYukieView *)this;
 	g_10924edc->slot1();
 	pView->m_b6078 = 1;
-	pView->m_fTime6074 = g_1070b244->slot1(22.5f, 45.0f) + g_1070b228->m_f0c;
+	pView->m_fTime6074 = g_1070b244->slot1(22.5f, 45.0f) + gpGlobals->curtime;
 	return 1;
 }
 // END FUNCTION
@@ -138,10 +132,8 @@ char CNPC_VYukie::vfunc599(int unused)
 // FUNCTION: 0x103dd900 size=0x74
 #include "CNPC_VYukie.h"
 #include "CEntityVSlots.h"
-struct S1070b228 { char pad[0xc]; float curtime; };
 struct IRandomLike { virtual void v0(); virtual float RandomFloat(float lo, float hi); };
 struct ISlot1 { virtual void v0(); virtual void vfunc1(); };
-extern S1070b228 *g_1070b228;
 extern IRandomLike *g_1070b244;
 extern ISlot1 *g_10924edc;
 char CNPC_VYukie::vfunc600(int unused)
@@ -149,7 +141,7 @@ char CNPC_VYukie::vfunc600(int unused)
     unsigned int flags = sub_1032e7b0() ? sub_1032e7b0()->slot360() : 0;
     if ((flags & 0x18000) && !*((char *)this + 0x6078)) {
         *((char *)this + 0x6078) = 1;
-        *(float *)((char *)this + 0x6074) = g_1070b244->RandomFloat(22.5f, 45.0f) + g_1070b228->curtime;
+        *(float *)((char *)this + 0x6074) = g_1070b244->RandomFloat(22.5f, 45.0f) + gpGlobals->curtime;
         g_10924edc->vfunc1();
         return 1;
     }
@@ -160,8 +152,6 @@ char CNPC_VYukie::vfunc600(int unused)
 // FUNCTION: 0x103dda10 size=0x67
 #include "CNPC_VYukie.h"
 #include "CEntityVSlots.h"
-struct CGlobalVarsY { char pad[0xc]; float curtime; };
-extern CGlobalVarsY *g_1070b228;
 struct CGameRulesY { virtual void vfunc0(); virtual char vfunc1(); char pad[0x24]; float f28; };
 extern CGameRulesY *g_10924a1c;
 extern float g_1044f02c;
@@ -171,7 +161,7 @@ char CNPC_VYukie::vfunc602()
 {
     YukieView *v = (YukieView *)this;
     if (((CEntityVSlots *)this)->slot308()) {
-        if (g_1070b228->curtime >= v->m_fNextTime)
+        if (gpGlobals->curtime >= v->m_fNextTime)
             return 1;
     } else {
         double f = g_10924a1c->vfunc1() ? 0.0f : g_10924a1c->f28;

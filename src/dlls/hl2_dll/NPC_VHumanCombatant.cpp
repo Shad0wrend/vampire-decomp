@@ -10,12 +10,6 @@
 extern "C" int strcmp(const char *, const char *);
 #pragma intrinsic(strcmp)
 
-struct SGlobalVars224
-{
-	char pad[0x24];
-	const char *mapname;
-};
-extern SGlobalVars224 *g_1070b228;
 extern char g_106b8540[];
 
 #define SC_V1(n) virtual void f##n();
@@ -62,7 +56,7 @@ int CNPC_VHumanCombatant::vfunc461()
 		}
 		if (pHuman->sub_10269d30(0x3e)) {
 			if (EHandle_Get(v->h628c)) {
-				if (strcmp(g_1070b228->mapname ? g_1070b228->mapname : g_106b8540, "la_empire_2") == 0)
+				if (strcmp(gpGlobals->mapname ? gpGlobals->mapname : g_106b8540, "la_empire_2") == 0)
 					((SCombatSlots *)this)->vfunc597(EHandle_Get(v->h628c), 5);
 			}
 			v->psz1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VHumanCombatant.cpp";

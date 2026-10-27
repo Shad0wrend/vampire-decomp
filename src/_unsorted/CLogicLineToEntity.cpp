@@ -47,11 +47,6 @@ void CLogicLineToEntity::vfunc113()
 #include "CEHandleGet.h"
 #include "CEntityVSlots.h"
 
-struct CGlobalVarsView {
-	char m_pad0000[0xc];
-	float curtime;	// 0xc
-};
-extern CGlobalVarsView *g_1070b228;
 extern Vector g_1070d1b0;
 
 // TARGET: CLogicLineToEntity::vfunc134
@@ -65,11 +60,11 @@ void CLogicLineToEntity::vfunc134()
 		Vector *pTargetOrigin = pTarget->slot217();
 		m_Output.SetVector3D(*pTargetOrigin - *pSourceOrigin);
 		m_Output.sub_100cd300(*(CVariantCopy *)&m_Output, this, this, 0.0f);
-		m_flNextThink = g_1070b228->curtime + 0.01;
+		m_flNextThink = gpGlobals->curtime + 0.01;
 	} else {
 		m_Output.SetVector3D(g_1070d1b0);
 		m_Output.sub_100cd300(*(CVariantCopy *)&m_Output, this, this, 0.0f);
-		m_flNextThink = g_1070b228->curtime + 10.0f;
+		m_flNextThink = gpGlobals->curtime + 10.0f;
 	}
 }
 // END FUNCTION

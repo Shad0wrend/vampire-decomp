@@ -329,15 +329,10 @@ int CBaseCombatWeapon::vfunc347(int a)
 // FUNCTION: 0x102526c0 size=0x1d
 #include "CBaseCombatWeapon.h"
 
-struct CGlobalVarsStub {
-	char pad[0xc];
-	float curtime;
-};
-extern CGlobalVarsStub *g_1070b228;
 
 bool CBaseCombatWeapon::vfunc309()
 {
-	if (g_1070b228->curtime > m_f894)
+	if (gpGlobals->curtime > m_f894)
 		return true;
 	return false;
 }
@@ -413,11 +408,6 @@ struct CWeaponPhysObject
 	virtual void vfunc41(const float *pVelocity, const float *pAngularVelocity);
 };
 
-struct CGlobalVarsX
-{
-	char m_pad0000[0xc];
-	float curtime;	// 0x0c
-};
 
 struct CTraitTable
 {
@@ -425,7 +415,6 @@ struct CTraitTable
 };
 
 extern CTraitTable g_1074df78;
-extern CGlobalVarsX *g_1070b228;
 void sub_100fbd50(CBaseCombatWeapon *pWeapon);
 void sub_10258870();
 
@@ -455,7 +444,7 @@ void CBaseCombatWeapon::vfunc299(const float *pVelocity)
 	} else {
 		sub_100b2770(pVelocity);
 	}
-	sub_100ac610(g_1070b228->curtime + 1.5f, 0);
+	sub_100ac610(gpGlobals->curtime + 1.5f, 0);
 	((CWeaponSlots *)this)->vfunc202(0);
 	m_hOwner = 0xffffffff;
 }
@@ -572,10 +561,8 @@ bool CBaseCombatWeapon::vfunc315()
 // FUNCTION: 0x10253ca0 size=0x17c
 #include "CBaseAnimating.h"
 
-struct GlobalVarsLite { char pad[0xc]; float curtime; };
 struct EntSlot { void *ent; int serial; int pad; };
 struct WeaponHolderObj { char pad[0x1564]; float m_fTimer; };
-extern GlobalVarsLite *g_1070b228;
 extern char *g_10566458;
 
 static inline void *ResolveHandle(unsigned int h)
@@ -600,16 +587,16 @@ char CBaseCombatWeapon::vfunc316(int a)
 	if (owner) {
 		float t;
 		if (*(char **)((char *)owner + 0xa8) == 0) {
-			t = g_1070b228->curtime + 0.2f;
+			t = gpGlobals->curtime + 0.2f;
 		} else {
 			unsigned int h = *(unsigned int *)(ai + 0x1c64);
 			EntSlot *s;
 			if (h != 0xffffffff && (s = (EntSlot *)(g_10566458 + 4) + (h & 0x1fff), s->serial == (int)(h >> 13)) && s->ent && sub_10256220()) {
 				int seq = *(int *)((char *)ResolveHandle(*(volatile unsigned int *)(ai + 0x1c64)) + 0x6f0);
 				CBaseAnimating *ba = (CBaseAnimating *)ResolveHandle(*(volatile unsigned int *)(ai + 0x1c64));
-				t = ba->sub_10091080(seq) + g_1070b228->curtime;
+				t = ba->sub_10091080(seq) + gpGlobals->curtime;
 			} else {
-				t = g_1070b228->curtime + 0.1;
+				t = gpGlobals->curtime + 0.1;
 			}
 		}
 		((WeaponHolderObj *)owner)->m_fTimer = t;
@@ -790,12 +777,7 @@ void CBaseCombatWeapon::vfunc269(CBaseCombatWeapon *pOther, Vector vecDir)
 // FUNCTION: 0x102583e0 size=0x26
 #include "CBaseEntity.h"
 
-struct CGlobalVarsView {
-    char m_pad0000[0xc];
-    float curtime;
-};
 
-extern CGlobalVarsView *g_1070b228;
 void sub_100065d2();
 
 // TARGET: sub_102583e0
@@ -805,7 +787,7 @@ void __fastcall sub_102583e0(CBaseEntity *self)
     int n = 2;
     do {
         n--;
-        *pf = *pf - g_1070b228->curtime;
+        *pf = *pf - gpGlobals->curtime;
         pf++;
     } while (n != 0);
     void (CBaseEntity::*pBase)();

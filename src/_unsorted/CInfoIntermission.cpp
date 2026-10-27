@@ -7,8 +7,6 @@
 #include "CBaseEntitySlots.h"
 #include "ScopeTrace.h"
 
-struct CGlobalVarsLocal { char pad[0xc]; float curtime; };
-extern CGlobalVarsLocal *g_1070b228;
 extern float g_1070d9d0[3];
 
 // TARGET: CInfoIntermission::vfunc103
@@ -21,7 +19,7 @@ void CInfoIntermission::vfunc103()
 	*(unsigned int *)((char *)this + 0x19c) |= 0x40;
 	((CBaseEntitySlots *)this)->slot64(g_1070d9d0);
 	sub_100b3b00();
-	*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 2.0f;
+	*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 2.0f;
 }
 // END FUNCTION
 

@@ -23,8 +23,6 @@ void CEnvFireSource::vfunc103()
 // FUNCTION: 0x1010bc80 size=0x81
 #include "CEnvFireSource.h"
 #include "CFire.h"
-struct CGlobalVarsTime { char pad[0xc]; float curtime; };
-extern CGlobalVarsTime *g_1070b228;
 // The entity's virtual table up to slot 217 (GetAbsOrigin).
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 struct CEnvFireSourceView
@@ -38,7 +36,7 @@ void CEnvFireSource::vfunc134()
 {
 	CFire *pFires[128];
 	if (m_bEnabled) {
-		m_flNextThink = g_1070b228->curtime + 0.25;
+		m_flNextThink = gpGlobals->curtime + 0.25;
 		int n = sub_100095ca(pFires, 0x80, 0, ((CEnvFireSourceView *)this)->vfunc217(), m_flRadius);
 		for (int i = 0; i < n; i++)
 			pFires[i]->sub_1010b5c0(m_flDamage * 0.25, 0);

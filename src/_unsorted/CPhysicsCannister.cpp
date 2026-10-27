@@ -112,9 +112,7 @@ CPhysicsCannister *CPhysicsCannister::vfunc5(unsigned int flags)
 #include "CVDmg_t.h"
 #include "CPhysicsCannister.h"
 struct CRandomHook { virtual void v0(); virtual void v1(); virtual int RandomInt(int lo, int hi); };
-struct CGlobalVarsX { int pad[3]; float curtime; };
 extern CRandomHook *g_1070b244;
-extern CGlobalVarsX *g_1070b228;
 extern char g_1070ba40[];
 
 #define DMGBITS(p) ((p)->m_pDmg ? ((p)->m_pDmg->m_field10 | (p)->m_nDamageType) : (p)->m_nDamageType)
@@ -137,7 +135,7 @@ int CPhysicsCannister::vfunc142(CCannisterTakeInfo *pInfo)
 			sub_10150910(pInfo->m_field2c, g_1070ba40);
 		return 1;
 	}
-	if (g_1070b228->curtime - m_flLeakStart <= 0.1)
+	if (gpGlobals->curtime - m_flLeakStart <= 0.1)
 		return 0;
 	if (DMGBITS(pInfo) & 0x400004a)
 		sub_10150f50();

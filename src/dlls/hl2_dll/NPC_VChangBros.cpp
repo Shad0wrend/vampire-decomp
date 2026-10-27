@@ -29,12 +29,6 @@ bool __stdcall sub_1036b6b0(int sector)
 #include "CEHandleGet.h"
 #include <math.h>
 
-struct FacingGlobalsView
-{
-	char m_pad0000[0xc];
-	float m_flCurTime;	// 0x0c
-};
-extern FacingGlobalsView *g_1070b228;
 
 struct FacingEntView
 {
@@ -75,6 +69,6 @@ void CNPC_VChangBros::sub_1036d600()
 			}
 		}
 	}
-	*(float *)((char *)this + 0x66d0) = g_1070b228->m_flCurTime;
+	*(float *)((char *)this + 0x66d0) = gpGlobals->curtime;
 }
 // END FUNCTION

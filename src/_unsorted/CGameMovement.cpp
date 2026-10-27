@@ -100,12 +100,6 @@ float *CGameMovement::vfunc4(char flag, int unused)
 // FUNCTION: 0x1011e430 size=0xee
 #include "CGameMovement.h"
 
-struct CGlobalVarsMP
-{
-	char m_pad0000[0x14];
-	int m_nMaxClients;	// 0x14
-};
-extern CGlobalVarsMP *g_1070b228;
 
 struct StepVar
 {
@@ -161,7 +155,7 @@ struct MovementSlots
 
 void CGameMovement::vfunc16(void *pSurface, float volume, char bForce)
 {
-	if (g_1070b228->m_nMaxClients > 1) {
+	if (gpGlobals->maxClients > 1) {
 		if (g_109ef094->IsSet())
 			return;
 		if (g_109ef094->m_flValue == 0.0f)
@@ -191,12 +185,6 @@ void CGameMovement::vfunc16(void *pSurface, float volume, char bForce)
 // FUNCTION: 0x1011f520 size=0xe6
 #include "CGameMovement.h"
 
-struct SMoveGlobals
-{
-	char pad[0x10];
-	float frametime;
-};
-extern SMoveGlobals *g_1070b228;
 
 struct SMoveTimers
 {
@@ -209,7 +197,7 @@ struct SMoveTimers
 
 void CGameMovement::vfunc24()
 {
-	float flDelta = g_1070b228->frametime * 1000.0f;
+	float flDelta = gpGlobals->frametime * 1000.0f;
 	if (((SMoveTimers *)m_pMove)->t2328 > 0.0f) {
 		((SMoveTimers *)m_pMove)->t2328 -= flDelta;
 		if (((SMoveTimers *)m_pMove)->t2328 < 0.0f)
@@ -230,15 +218,13 @@ void CGameMovement::vfunc24()
 
 // FUNCTION: 0x1011f650 size=0x70
 #include "CGameMovement.h"
-struct S1070b228 { char pad[0x10]; float m_f10; };
 struct S109ef04c { virtual void v0(); virtual char vfunc1(); char pad[0x28 - 4]; float m_f28; };
-extern S1070b228 *g_1070b228;
 extern S109ef04c *g_109ef04c;
 extern float g_104454c4;
 void __fastcall sub_101251e0(char *);
 void CGameMovement::vfunc1(void *pMove, void *pPlayer)
 {
-    float saved = g_1070b228->m_f10;
+    float saved = gpGlobals->frametime;
     sub_101251e0((char *)this);
     *((char *)this + 0xdc) = 0;
     m_pMove = pMove;
@@ -247,7 +233,7 @@ void CGameMovement::vfunc1(void *pMove, void *pPlayer)
     *(float *)((char *)m_pPlayer + 0x38) = f;
     vfunc5();
     sub_1011f6e0();
-    g_1070b228->m_f10 = saved;
+    gpGlobals->frametime = saved;
 }
 // END FUNCTION
 
@@ -332,12 +318,6 @@ bool CUnit101212a0::sub_101212a0()
 // FUNCTION: 0x101212e0 size=0x98
 #include "CGameMovement.h"
 
-struct CGlobalVarsStub
-{
-	char pad[0x10];
-	float m_flFrameTime;
-};
-extern CGlobalVarsStub *g_1070b228;
 
 #define MOVE_VELOCITY (*(Vector *)((char *)m_pPlayer + 0x40))
 
@@ -349,7 +329,7 @@ void CGameMovement::vfunc10(Vector &wishdir, float wishspeed, float accel)
 	float addspeed = wishspeed - MOVE_VELOCITY.Dot(wishdir);
 	if (addspeed <= 0)
 		return;
-	float accelspeed = g_1070b228->m_flFrameTime * m_fieldA0 * wishspeed * accel;
+	float accelspeed = gpGlobals->frametime * m_fieldA0 * wishspeed * accel;
 	if (accelspeed > addspeed)
 		accelspeed = addspeed;
 	for (int i = 0; i < 3; i++)

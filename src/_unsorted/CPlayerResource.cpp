@@ -5,8 +5,6 @@
 #include "CBaseEntity.h"
 #include "CPlayerResource.h"
 
-struct S_1070b228 { char pad[0xc]; float curtime; };
-extern S_1070b228 *g_1070b228;
 void sub_1010f4e0();
 extern "C" void *memset(void *, int, unsigned int);
 #pragma intrinsic(memset)
@@ -26,8 +24,8 @@ void CPlayerResource::vfunc103()
 	memset(m_tables[10], 0, sizeof(m_tables[10]));
 	memset(m_tables[11], 0, sizeof(m_tables[11]));
 	((CBaseEntity *)this)->sub_100ac4e0((int)sub_1010f4e0, 0, 0);
-	*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 1.0;
-	m_flNextUpdate = g_1070b228->curtime + 1.0;
+	*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 1.0;
+	m_flNextUpdate = gpGlobals->curtime + 1.0;
 }
 // END FUNCTION
 
@@ -45,13 +43,6 @@ void __fastcall sub_1018a210(void *pSelf)
 // FUNCTION: 0x1018a250 size=0x129
 #include "CPlayerResource.h"
 
-struct CGlobalVarsView {
-	char m_pad0000[0xc];
-	float curtime;	// 0xc
-	char m_pad0010[4];
-	int maxClients;	// 0x14
-};
-extern CGlobalVarsView *g_1070b228;
 
 struct CPlayerDataView {
 	char m_pad0000[0x19f6];
@@ -77,7 +68,7 @@ void sub_101cda90(int index, int *pPing, int *pLoss);
 // TARGET: CPlayerResource::vfunc242
 void CPlayerResource::vfunc242()
 {
-	for (int i = 1; i <= g_1070b228->maxClients; i++) {
+	for (int i = 1; i <= gpGlobals->maxClients; i++) {
 		m_tables[10][i] = 0;
 		CPlayerDataView *pPlayer = sub_101cd9e0(i);
 		if (pPlayer) {
@@ -91,7 +82,7 @@ void CPlayerResource::vfunc242()
 			m_tables[7][i] = pPlayer->m_i1a0c;
 			m_tables[8][i] = pPlayer->m_i1a10;
 			m_tables[11][i] = pPlayer->m_b19f6;
-			if (m_flNextUpdate < g_1070b228->curtime) {
+			if (m_flNextUpdate < gpGlobals->curtime) {
 				int *pPing = &m_tables[0][i];
 				sub_101cda90(i, pPing, &m_tables[1][i]);
 				int ping = *pPing;
@@ -101,8 +92,8 @@ void CPlayerResource::vfunc242()
 			}
 		}
 	}
-	if (m_flNextUpdate < g_1070b228->curtime)
-		m_flNextUpdate = g_1070b228->curtime + 2.0;
+	if (m_flNextUpdate < gpGlobals->curtime)
+		m_flNextUpdate = gpGlobals->curtime + 2.0;
 }
 // END FUNCTION
 

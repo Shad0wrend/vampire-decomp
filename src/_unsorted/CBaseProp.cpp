@@ -8,8 +8,6 @@
 extern "C" __declspec(dllimport) void __cdecl Warning(const char *pszFormat, ...);
 extern char g_106b8540[];
 
-struct S_1070b228 { char pad[0xc]; float curtime; };
-extern S_1070b228 *g_1070b228;
 
 void sub_101cd940(CBaseEntity *pEnt);
 
@@ -40,7 +38,7 @@ void CBaseProp::vfunc103()
 		pAnim->vfunc93(0, 0);
 		pAnim->m_nTakeDamage = 0;
 		*(int *)((char *)this + 0x17c) = 0;
-		*(float *)((char *)this + 0x174) = g_1070b228->curtime;
+		*(float *)((char *)this + 0x174) = gpGlobals->curtime;
 		*(int *)((char *)this + 0x6f4) = 0;
 		*(int *)((char *)this + 0x6f8) = 0;
 		int nSequence = pAnim->sub_1008dc40(1, -1);

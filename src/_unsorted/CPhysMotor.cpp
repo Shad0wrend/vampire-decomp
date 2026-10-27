@@ -19,18 +19,16 @@ CPhysMotor *CPhysMotor::vfunc5(unsigned int flags)
 // FUNCTION: 0x10029160 size=0x7a
 #include "CPhysMotor.h"
 
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
-extern CGlobalVarsX *g_1070b228;
 float sub_10008fe9(float a, float b, float c);
 
 void CPhysMotor::vfunc134()
 {
-	float amount = (g_1070b228->curtime - m_flLastTime468) * m_flRate464;
+	float amount = (gpGlobals->curtime - m_flLastTime468) * m_flRate464;
 	float current = m_flCurrent478;
 	float target = m_flTarget460;
 	m_flCurrent478 = sub_10008fe9(target, current, amount);
-	m_flLastTime468 = g_1070b228->curtime;
+	m_flLastTime468 = gpGlobals->curtime;
 	if (m_flCurrent478 != m_flTarget460)
-		sub_100ac610(g_1070b228->curtime, 0);
+		sub_100ac610(gpGlobals->curtime, 0);
 }
 // END FUNCTION

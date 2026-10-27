@@ -114,8 +114,6 @@ bool CAI_BaseHumanoid::vfunc586()
 #include <string.h>
 
 extern CGlobalEntityList *g_10566458;
-struct SGlobalVars { char pad[0xc]; float curtime; };
-extern SGlobalVars *g_1070b228;
 
 struct SLookHandle
 {
@@ -196,8 +194,8 @@ void CAI_BaseHumanoidUnit::sub_1025f760(CBaseEntity *pTarget, float flWeight, fl
 	LOOKQ->Element(iNew).m_n00 = 0;
 	LOOKQ->Element(iNew).m_hTarget.Set(pTarget);
 	LOOKQ->Element(iNew).m_flWeight = flWeight;
-	LOOKQ->Element(iNew).m_flStartTime = g_1070b228->curtime;
-	LOOKQ->Element(iNew).m_flEndTime = flDuration + g_1070b228->curtime;
+	LOOKQ->Element(iNew).m_flStartTime = gpGlobals->curtime;
+	LOOKQ->Element(iNew).m_flEndTime = flDuration + gpGlobals->curtime;
 	LOOKQ->Element(iNew).m_flRate = flRamp / flDuration;
 }
 // END FUNCTION

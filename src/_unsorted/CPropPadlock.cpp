@@ -80,16 +80,11 @@ void CPropPadlock::vfunc113()
 #include "CGlobalEntityList.h"
 #include "ScopeTrace.h"
 
-struct SGlobals {
-	char pad[0xc];
-	float curtime;
-};
 struct SPadlockWorker {
 	void sub_10090950();
 };
 
 extern CGlobalEntityList *g_10566458;
-extern SGlobals *g_1070b228;
 extern float g_104492a4;
 void sub_10011667();
 
@@ -116,7 +111,7 @@ void CPropPadlock::vfunc274()
 	((SPadlockWorker *)this)->sub_10090950();
 	sub_100a5ea0(6, 0, 0, 0);
 	sub_100ac4e0((int)sub_10011667, 0, 0);
-	float t = g_1070b228->curtime;
+	float t = gpGlobals->curtime;
 	*(float *)((char *)this + 0x17c) = t + g_104492a4;
 }
 // END FUNCTION

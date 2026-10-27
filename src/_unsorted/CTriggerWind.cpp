@@ -3,8 +3,6 @@
 
 // FUNCTION: 0x101ca980 size=0x83
 #include "CTriggerWind.h"
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
-extern CGlobalVarsX *g_1070b228;
 #define W_V(n) virtual void w##n();
 #define W_V10(p) W_V(p##0) W_V(p##1) W_V(p##2) W_V(p##3) W_V(p##4) W_V(p##5) W_V(p##6) W_V(p##7) W_V(p##8) W_V(p##9)
 struct CWindSystemX {
@@ -26,25 +24,19 @@ void CTriggerWind::vfunc103()
     m_n05b8 = m_n05b0;
     m_n05c8 = m_n05c0;
     sub_100ac4e0((int)sub_1000d17a, 0, 0);
-    *(float *)((char *)this + 0x17c) = g_1070b228->curtime;
+    *(float *)((char *)this + 0x17c) = gpGlobals->curtime;
 }
 // END FUNCTION
 
 // FUNCTION: 0x101cab20 size=0x26
 #include "CTriggerWind.h"
 
-struct CGlobalVarsView
-{
-	char pad0000[0xc];
-	float curtime;
-};
-extern CGlobalVarsView *g_1070b228;
 
 // TARGET: CTriggerWind::vfunc241
 void CTriggerWind::vfunc241(int a)
 {
 	sub_10012206(a);
-	*(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
+	*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.1;
 }
 // END FUNCTION
 

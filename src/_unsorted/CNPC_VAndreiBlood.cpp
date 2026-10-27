@@ -59,8 +59,6 @@ void CNPC_VAndreiBlood::vfunc104()
 #include "CNPC_VAndreiBlood.h"
 #include "ScopeTrace.h"
 
-struct CGlobalVarsTime { char m_pad[0xc]; float curtime; };
-extern CGlobalVarsTime *g_1070b228;
 
 void CNPC_VAndreiBlood::vfunc103()
 {
@@ -72,7 +70,7 @@ void CNPC_VAndreiBlood::vfunc103()
 	m_b66cc = 0;
 	m_b66cd = 0;
 	m_b66ce = 0;
-	m_f66d0 = g_1070b228->curtime;
+	m_f66d0 = gpGlobals->curtime;
 	m_b66d4 = 1;
 	m_n66d8 = 0;
 	sub_1035e950();

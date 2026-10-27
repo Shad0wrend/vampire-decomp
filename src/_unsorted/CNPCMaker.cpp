@@ -5,8 +5,6 @@
 #include "CNPCMaker.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
-extern CGlobalVarsX *g_1070b228;
 void sub_1000696a();
 void sub_1000572c();
 
@@ -23,7 +21,7 @@ void CNPCMaker::vfunc103()
         m_b66c2 = 1;
     if (!m_b66c0) {
         sub_100ac4e0((int)sub_1000696a, 0, 0);
-        *(float *)((char *)this + 0x17c) = m_flSpawnDelay + g_1070b228->curtime;
+        *(float *)((char *)this + 0x17c) = m_flSpawnDelay + gpGlobals->curtime;
         sub_100b3b00();
         m_n66b8 = 0;
     } else {

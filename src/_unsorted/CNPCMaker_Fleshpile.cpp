@@ -6,8 +6,6 @@
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
 
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
-extern CGlobalVarsX *g_1070b228;
 void sub_10010dd4();
 void sub_1000572c();
 
@@ -23,7 +21,7 @@ void CNPCMaker_Fleshpile::vfunc103()
 		*((char *)this + 0x66c2) = 1;
 	if (!*((char *)this + 0x66c0)) {
 		sub_100ac4e0((int)sub_10010dd4, 0, 0);
-		*(float *)((char *)this + 0x17c) = *(float *)((char *)this + 0x6664) + g_1070b228->curtime;
+		*(float *)((char *)this + 0x17c) = *(float *)((char *)this + 0x6664) + gpGlobals->curtime;
 		sub_100b3b00();
 		*(int *)((char *)this + 0x66b8) = 0;
 	} else {

@@ -9,8 +9,6 @@
 
 __declspec(dllimport) void Warning(const char *pszFormat, ...);
 
-struct SGlobalVars { char pad[0xc]; float curtime; };
-extern SGlobalVars *g_1070b228;
 
 #define EV(n) virtual void e##n();
 #define EV10(p) EV(p##0) EV(p##1) EV(p##2) EV(p##3) EV(p##4) EV(p##5) EV(p##6) EV(p##7) EV(p##8) EV(p##9)
@@ -64,7 +62,7 @@ void CSpeakerUnit::sub_101af420()
 	pView->m_n458 = sub_101ac570(pView->m_n454, (pView->m_spawnflags >> 1) & 1);
 	if (pView->m_n45c == 0 && (!pView->m_pszSoundFile || strlen(pszSoundFile) < 1)) {
 		Warning("SPEAKER with no Level/Sentence! at: %f, %f, %f\n", pVirt->e220()[0], pVirt->e220()[1], pVirt->e220()[2]);
-		pView->m_flNextThink = g_1070b228->curtime + 0.1;
+		pView->m_flNextThink = gpGlobals->curtime + 0.1;
 		sub_100ac4e0((int)sub_10015b68, 0, 0);
 		return;
 	}

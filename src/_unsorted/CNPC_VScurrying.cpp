@@ -71,9 +71,7 @@ int CNPC_VScurrying::vfunc440(int act)
 // FUNCTION: 0x103ac500 size=0xcb
 #include "CNPC_VScurrying.h"
 #include "CEHandleGet.h"
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
 struct CScurryEvt { virtual void vfunc0(); virtual void vfunc1(); };
-extern CGlobalVarsX *g_1070b228;
 extern CScurryEvt *g_10924a6c;
 
 // TARGET: CNPC_VScurrying::vfunc433
@@ -81,7 +79,7 @@ void CNPC_VScurrying::vfunc433()
 {
 	sub_10269b50(0x78);
 	sub_102b27f0();
-	if (g_1070b228->curtime >= m_flTime6678)
+	if (gpGlobals->curtime >= m_flTime6678)
 	{
 		if (!sub_103acac0((CBaseEntity *)EHandle_Get(m_hEnt667c)))
 		{

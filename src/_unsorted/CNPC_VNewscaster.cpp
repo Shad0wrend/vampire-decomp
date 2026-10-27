@@ -43,11 +43,6 @@ void CNPC_VNewscaster::vfunc104() {
 // FUNCTION: 0x103a05b0 size=0x88
 #include "CNPC_VNewscaster.h"
 
-struct CGlobalVarsView {
-	char m_pad[0xc];
-	float m_flCurTime;
-};
-extern CGlobalVarsView *g_1070b228;
 
 struct CDevFlagObj {
 	virtual void v0();
@@ -59,10 +54,10 @@ extern CDevFlagObj *g_1093be8c;
 
 void CNPC_VNewscaster::vfunc431()
 {
-	m_f624c = g_1070b228->m_flCurTime + 1.0f;
-	m_f6250 = g_1070b228->m_flCurTime + 1.0f;
-	m_f625c = g_1070b228->m_flCurTime;
-	m_f6260 = g_1070b228->m_flCurTime;
+	m_f624c = gpGlobals->curtime + 1.0f;
+	m_f6250 = gpGlobals->curtime + 1.0f;
+	m_f625c = gpGlobals->curtime;
+	m_f6260 = gpGlobals->curtime;
 	sub_10292de0();
 	sub_103a0670();
 	if (!g_1093be8c->vfunc1() && g_1093be8c->m_n2c && !(m_bFlags224 & 1))

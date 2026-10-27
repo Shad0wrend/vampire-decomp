@@ -6,11 +6,6 @@
 #include "CEntityVSlots.h"
 #include "COutputEvent.h"
 
-struct CGlobalVarsView {
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern CGlobalVarsView *g_1070b228;
 
 struct CFireHeatView {
 	char m_pad0000[0x46c];
@@ -42,7 +37,7 @@ void CEnvFireSensor::vfunc134()
 		float flInterval = p->m_flTime * 0.25;
 		if (flInterval < 0.1)
 			flInterval = 0.1f;
-		p->m_flNextThink = flInterval + g_1070b228->curtime;
+		p->m_flNextThink = flInterval + gpGlobals->curtime;
 
 		CFireHeatView *pFires[128];
 		float flHeat = 0.0f;

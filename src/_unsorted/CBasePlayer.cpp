@@ -167,8 +167,6 @@ void CBasePlayer::vfunc316(CGlobalEntityList_Ent *pEnt, int a, int b)
 struct HandleEntry { void *ent; unsigned int serial; int pad; };
 struct HandleList { int pad; HandleEntry e[1]; };
 extern HandleList *g_10566458;
-struct GlobalVars { char pad[0xc]; float curtime; };
-extern GlobalVars *g_1070b228;
 
 #define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
@@ -199,9 +197,9 @@ bool CBasePlayer::sub_1015ff40()
 		return true;
 	if (((VehicleHandle *)((char *)this + 0x1c58))->Get() != 0) {
 		if (((VehicleHandle *)((char *)this + 0x1c58))->Get()->s158())
-			*(float *)((char *)this + 0x19b0) = g_1070b228->curtime;
+			*(float *)((char *)this + 0x19b0) = gpGlobals->curtime;
 	}
-	return *(float *)((char *)this + 0x19b0) > 0.0f && *(float *)((char *)this + 0x19b0) + 5.0f > g_1070b228->curtime;
+	return *(float *)((char *)this + 0x19b0) > 0.0f && *(float *)((char *)this + 0x19b0) + 5.0f > gpGlobals->curtime;
 }
 // END FUNCTION
 
@@ -210,8 +208,6 @@ bool CBasePlayer::sub_1015ff40()
 #include "ConVar.h"
 #include "CUnknown1070b244.h"
 #include "CUnknown10739d08.h"
-struct SGlobalVars { char m_pad[0xc]; float m_flCurTime; };
-extern SGlobalVars *g_1070b228;
 extern ConVar *g_107255ec;
 extern ConVar *g_10725634;
 extern ConVar *g_107251ac;
@@ -220,10 +216,10 @@ extern CUnknown10739d08 g_10739d08;
 char CBasePlayer::vfunc321(int unused)
 {
     float flScale = g_107255ec->vfunc1() ? 0.0f : g_107255ec->m_fValue;
-    if (m_f1DA8 <= g_1070b228->m_flCurTime)
+    if (m_f1DA8 <= gpGlobals->curtime)
     {
         flScale = g_10725634->vfunc1() ? 0.0f : g_10725634->m_fValue;
-        m_f1DA8 = g_10739d08.sub_101e7d70() + g_1070b228->m_flCurTime;
+        m_f1DA8 = g_10739d08.sub_101e7d70() + gpGlobals->curtime;
     }
     float flAmount = (g_107251ac->vfunc1() ? 0.0f : g_107251ac->m_fValue) * flScale;
     Vector punch;
@@ -242,11 +238,6 @@ char CBasePlayer::vfunc321(int unused)
 #include "CUnknown103498b0.h"
 #include "CVStatList_t.h"
 
-struct PlayerGlobals {
-	char pad[0xc];
-	float curtime;
-};
-extern PlayerGlobals *g_1070b228;
 extern float g_1046fafc;
 extern float g_1046fb00;
 
@@ -266,7 +257,7 @@ bool CBasePlayer::vfunc318(int a, melee_dice_roll_result *pRoll, int c)
 	}
 	sub_101644f0(nActivity, -1, 1);
 	*(int *)((char *)this + 0x6f4) = *(int *)((char *)this + 0x1488);
-	m_f1564 = flTime + g_1070b228->curtime;
+	m_f1564 = flTime + gpGlobals->curtime;
 	return true;
 }
 // END FUNCTION
@@ -279,11 +270,6 @@ struct melee_dice_roll_result_view
 	int sub_10349830();	// stub 0x100083f0
 };
 
-struct TimeObjP {
-	char m_pad[0xc];
-	float m_flCurTime;
-};
-extern TimeObjP *g_1070b228;
 extern float g_104454c4;
 extern float g_1046faf4;
 extern float g_1046faf8;
@@ -308,18 +294,12 @@ bool CBasePlayerUnit::sub_10160d00(int a, melee_dice_roll_result *pRoll, int c)
 	if (pRoll && ((melee_dice_roll_result_view *)pRoll)->sub_10349830() == 2)
 		flBase = g_1046faf8;
 	float flTime = (PL_F1488(this) > g_1046a5e4) ? (double)flBase / PL_F1488(this) : g_104454c4;
-	m_f1564 = flTime + g_1070b228->m_flCurTime;
+	m_f1564 = flTime + gpGlobals->curtime;
 	return true;
 }
 // END FUNCTION
 
 // FUNCTION: 0x10161200 size=0x12b
-struct CGlobalVarsView {
-	char m_pad0000[0xc];
-	float curtime;	// 0xc
-};
-extern CGlobalVarsView *g_1070b228;
-
 struct CSequenceDescView {
 	char m_pad0000[0x2f8];
 	float m_f2f8;
@@ -340,7 +320,7 @@ bool CBasePlayer::vfunc412()
 	CBasePlayerActView *p = (CBasePlayerActView *)this;
 	int act = p->m_nActivity;
 	if (act == 0x1152 || act == 0x1153 || act == 0x52 || act == 0x1156) {
-		if (g_1070b228->curtime < m_f1564)
+		if (gpGlobals->curtime < m_f1564)
 			return true;
 	} else if (p->m_nSequence >= 0) {
 		if (p->m_flCycle >= 1.0f)
@@ -525,9 +505,7 @@ void CBasePlayer::vfunc442(int a)
 
 // FUNCTION: 0x10163ed0 size=0x7c
 #include "CBasePlayer.h"
-struct CPlayerGlobals { char pad[0xc]; float curtime; };
 struct CPlayerVec { float x, y, z; };
-extern CPlayerGlobals *g_1070b228;
 void sub_101668b0();
 
 void CBasePlayer::vfunc403()
@@ -538,7 +516,7 @@ void CBasePlayer::vfunc403()
     vec.z = 0;
     vfunc64(&vec.x);
     sub_100ac4e0((void *)sub_101668b0, 0, 0);
-    *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1;
+    *(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.1;
     sub_1032bdf0();
 }
 // END FUNCTION
@@ -735,11 +713,6 @@ bool CBasePlayer::sub_10168e10()
 #include "CBasePlayer.h"
 #include "TestBit.h"
 
-struct CGlobalVarsView {
-    char pad[0xc];
-    float curtime;
-};
-extern CGlobalVarsView *g_1070b228;
 
 void CBasePlayer::vfunc434()
 {
@@ -747,7 +720,7 @@ void CBasePlayer::vfunc434()
         if (sub_100b3700() & 1) {
             if (vfunc209()) {
                 vfunc449(2, 0);
-                m_f148C = g_1070b228->curtime;
+                m_f148C = gpGlobals->curtime;
                 CBaseEntity *pEnt = vfunc209();
                 if (pEnt) {
                     if (pEnt->sub_100b3700() & 0x1000) {
@@ -807,13 +780,8 @@ struct SRules {
 	virtual int v64(CBasePlayer *pPlayer, SPlayerSlots *pOther);
 };
 
-struct SGlobals {
-	char pad[0x14];
-	int m_maxClients;
-};
 
 extern IVEngineServer *g_1070b22c;
-extern SGlobals *g_1070b228;
 extern SRules *g_1070ba0c;
 SPlayerSlots *sub_1000ac8b(int index);
 
@@ -821,7 +789,7 @@ void CBasePlayer::vfunc149(int a, int b)
 {
 	int edict = m_n02E0;
 	int me = g_1070b22c->vfunc35(edict);
-	for (int i = 1; i <= g_1070b228->m_maxClients; i++) {
+	for (int i = 1; i <= gpGlobals->maxClients; i++) {
 		SPlayerSlots *pOther = sub_1000ac8b(i);
 		if (pOther && i != me && g_1070ba0c->v64(this, pOther) == 1)
 			pOther->v148(a, b);
@@ -1131,11 +1099,6 @@ void CBasePlayer::vfunc151(CBaseCombatWeapon *pWeapon)
 #include "CGlobalEntityList.h"
 extern CGlobalEntityList *g_10566458;
 
-struct CTimeGlobals {
-	char pad0[0xc];
-	float m_curtime;
-};
-extern CTimeGlobals *g_1070b228;
 
 #define W10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
 #define W100(x) W10(x##0) W10(x##1) W10(x##2) W10(x##3) W10(x##4) W10(x##5) W10(x##6) W10(x##7) W10(x##8) W10(x##9)
@@ -1159,7 +1122,7 @@ void CBasePlayer::vfunc458()
 		m_pVehicle->vfunc10(this);
 		return;
 	}
-	if (!(g_1070b228->m_curtime < m_f1564) && !vfunc412()) {
+	if (!(gpGlobals->curtime < m_f1564) && !vfunc412()) {
 		vfunc450();
 		if (sub_1032e7b0())
 			((WeaponSlots *)sub_1032e7b0())->vfunc319();

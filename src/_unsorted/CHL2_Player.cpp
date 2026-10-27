@@ -173,15 +173,13 @@ void CHL2_Player::vfunc468()
 
 // FUNCTION: 0x103528d0 size=0x70
 #include "CHL2_Player.h"
-struct Globals { char pad[0x10]; float frametime; };
-extern Globals *g_1070b228;
 
 void CHL2_Player::vfunc472()
 {
     if (vfunc479()) {
-        vfunc474(g_1070b228->frametime * 4.2);
+        vfunc474(gpGlobals->frametime * 4.2);
     } else if (m_n252c != 0) {
-        if (!vfunc473(m_f2530 * g_1070b228->frametime)) {
+        if (!vfunc473(m_f2530 * gpGlobals->frametime)) {
             if (vfunc445() != 0)
                 vfunc447();
         }
@@ -261,8 +259,6 @@ void CHL2_Player::vfunc478(unsigned int *pPower)
 #include "ConVar.h"
 #include "CUnknown1070b244.h"
 struct SDamageView { CVDmg_t *m_pDmg; char m_pad[0x2c]; float m_flDamage; };
-struct SGlobalVars { char m_pad[0xc]; float m_flCurTime; };
-extern SGlobalVars *g_1070b228;
 extern ConVar *g_109382cc;
 extern CUnknown1070b244 *g_1070b244;
 int CHL2_Player::vfunc142(const CTakeDamageInfo *pInfo)
@@ -271,7 +267,7 @@ int CHL2_Player::vfunc142(const CTakeDamageInfo *pInfo)
     float flDamage = pDamage->m_pDmg ? (float)pDamage->m_pDmg->sub_101faa70() : pDamage->m_flDamage;
     if (flDamage > 0.0f)
     {
-        m_flLastDamageTime = g_1070b228->m_flCurTime;
+        m_flLastDamageTime = gpGlobals->curtime;
         float flAmount = pDamage->m_pDmg ? (float)pDamage->m_pDmg->sub_101faa70() : pDamage->m_flDamage;
         float flScale = g_109382cc->vfunc1() ? 0.0f : g_109382cc->m_fValue;
         flAmount = flScale * flAmount;

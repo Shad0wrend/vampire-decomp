@@ -14,8 +14,6 @@ CPASAttenuationFilter::CPASAttenuationFilter() {}
 #include "CUnknown1019d130.h"
 #include "ScopeTrace.h"
 
-struct SGlobalVars { char m_pad[0x14]; int m_nMaxClients; };
-extern SGlobalVars *g_1070b228;
 extern CUnknown1070b22c *g_1070b22c;
 extern float g_104454c4;
 
@@ -56,7 +54,7 @@ static inline CBaseEntity *Instance(int iEnt)
 
 void CPASAttenuationFilter::Filter(const Vector &origin, float attenuation)
 {
-	if (g_1070b228->m_nMaxClients == 1)
+	if (gpGlobals->maxClients == 1)
 		return;
 	if (attenuation <= g_104454c4)
 		return;

@@ -3,11 +3,6 @@
 
 // FUNCTION: 0x10053e20 size=0x127
 #include "ScopeTrace.h"
-struct GlobalVarsView {
-    char pad[0xc];
-    float curtime;
-};
-extern GlobalVarsView *g_1070b228;
 struct ShakyFields {
     char pad[0x1044];
     int m_nStamp;
@@ -21,7 +16,7 @@ void __fastcall sub_10053e20(CBaseEntity *self, int unused, float flDelay, float
     ShakyFields *p = (ShakyFields *)self;
     if (stamp >= p->m_nStamp) {
         p->m_nStamp = stamp;
-        p->m_flTime = flDelay + g_1070b228->curtime;
+        p->m_flTime = flDelay + gpGlobals->curtime;
         p->m_flAmount = flAmount > 1.0f ? 1.0f : (flAmount < 0.0f ? 0.0f : flAmount);
     } else if (stamp == -1) {
         p->m_nStamp = -1;
@@ -431,8 +426,6 @@ char CBaseCombatCharacter::sub_10325fa0()
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
-struct CGlobalVarsView { char pad[0xc]; float curtime; };
-extern CGlobalVarsView *g_1070b228;
 extern float g_1070d1b0[3];
 extern float g_1070d9d0[3];
 
@@ -444,7 +437,7 @@ void CBaseCombatCharacter::vfunc395()
     sub_100b2e30(g_1070d1b0);
     vfunc93(0, 0);
     sub_100b2f50(g_1070d9d0);
-    *(float *)((char *)this + 0x174) = g_1070b228->curtime;
+    *(float *)((char *)this + 0x174) = gpGlobals->curtime;
     *(int *)((char *)this + 0x19c) |= 0x10;
     sub_102695d0();
 }
@@ -1067,8 +1060,6 @@ int CBaseCombatCharacter::vfunc348()
 
 // FUNCTION: 0x10330020 size=0x75
 #include "CBaseCombatCharacter.h"
-struct CGlobalsView { char m_pad[0xc]; float curtime; };
-extern CGlobalsView *g_1070b228;
 extern char g_10937cf2;
 struct CDisciplineEntry {
     char m_pad[0x2c];
@@ -1088,7 +1079,7 @@ bool CBaseCombatCharacter::vfunc334(int a, int b)
     int nIndex = g_10739a4c.sub_101e1250(a, b);
     if (nIndex != -1) {
         CDisciplineEntry *pEntry = g_10739a4c.sub_101e11c0(nIndex);
-        float flElapsed = g_1070b228->curtime - ((float *)((char *)this + 0xec0))[nIndex];
+        float flElapsed = gpGlobals->curtime - ((float *)((char *)this + 0xec0))[nIndex];
         float flDuration = pEntry->m_flDuration;
         if (flElapsed < flDuration) {
             g_10937cf2 = 1;
@@ -1794,8 +1785,6 @@ char CBaseCombatCharacter::vfunc342(int unused)
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 
-struct CGlobalVarsLocal { char pad[0xc]; float curtime; };
-extern CGlobalVarsLocal *g_1070b228;
 extern float g_1070d1b0[3];
 
 // TARGET: CBaseCombatCharacter::vfunc356
@@ -1803,7 +1792,7 @@ void CBaseCombatCharacter::vfunc356()
 {
 	ScopeTrace trace("CBaseCombatCharacter::PrayerBegin", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	*(float *)((char *)this + 0x1494) = 2.0f;
-	*(float *)((char *)this + 0x1490) = g_1070b228->curtime + 2.0f;
+	*(float *)((char *)this + 0x1490) = gpGlobals->curtime + 2.0f;
 	*(int *)((char *)this + 0xff0) = 0x131;
 	sub_100b2e30(g_1070d1b0);
 	if (*(int *)((char *)this + 0xa8) != 0)
@@ -2176,21 +2165,13 @@ bool CBaseCombatCharacter::vfunc68(CBaseEntity *pOther)
 #include "CUnknown1070b22c.h"
 #include "ScopeTrace.h"
 
-struct CGlobalVars1070b228
-{
-	int m_pad0;
-	int m_n4;
-	int m_pad8;
-	float m_curtime;
-};
 
-extern CGlobalVars1070b228 *g_1070b228;
 extern CUnknown1070b22c *g_1070b22c;
 
 char CBaseCombatCharacter::vfunc86(int a, int b, int c, int d, int e)
 {
 	ScopeTrace t("CBaseCombatCharacter::ShouldTransmit", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
-	if (m_flForceTransmitTime > g_1070b228->m_curtime)
+	if (m_flForceTransmitTime > gpGlobals->curtime)
 		return 1;
 	int idx = g_1070b22c->vfunc35(b) - 1;
 	if (*((char *)this + 0x14e4 + idx))

@@ -35,12 +35,6 @@ struct CHumanSlots438
 	virtual int slot605(unsigned int flags);
 };
 
-struct CGlobalVars438
-{
-	char pad[0xc];
-	float curtime;
-};
-extern CGlobalVars438 *g_1070b228;
 
 int CNPC_VHuman::vfunc438()
 {
@@ -54,7 +48,7 @@ int CNPC_VHuman::vfunc438()
 			if (s->slot541()->sub_102dfa20(EHandle_Get(v->m_hEnemy))) {
 				float flLastSeen = s->slot541()->sub_102e0150(EHandle_Get(v->m_hEnemy));
 				float flWindow = 1.0f;
-				if (g_1070b228->curtime >= flWindow + flLastSeen) {
+				if (gpGlobals->curtime >= flWindow + flLastSeen) {
 					v->m_pszFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VHuman.cpp";
 					v->m_nLine = 0x261;
 					return 0x56;

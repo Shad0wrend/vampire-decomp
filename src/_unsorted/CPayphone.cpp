@@ -7,15 +7,13 @@
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
 
-struct CGlobalVarsView { char pad[0xc]; float curtime; };
-extern CGlobalVarsView *g_1070b228;
 
 // TARGET: CPayphone::vfunc103
 void CPayphone::vfunc103()
 {
     CCollisionProperty *coll;
     sub_10298d30();
-    *(float *)((char *)this + 0x17c) = g_1070b228->curtime + 0.1f;
+    *(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.1f;
     vfunc93(0, 0);
     {
         ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
@@ -42,12 +40,6 @@ void CPayphone::vfunc103()
 
 extern CGlobalEntityList *g_10566458;
 
-struct CGlobalVars_101aabf0
-{
-	char m_pad0000[0xc];
-	float curtime;	// 0x0c
-};
-extern CGlobalVars_101aabf0 *g_1070b228;
 
 // the entity vtable up to slot 250
 struct CPayphoneSlots250
@@ -98,12 +90,12 @@ void CPayphone::vfunc431()
 			sub_10090950();
 		}
 		F(int, 0x6f8) = pTarget->m_n6f8;
-		F(float, 0x17c) = g_1070b228->curtime + 0.01f;
+		F(float, 0x17c) = gpGlobals->curtime + 0.01f;
 	} else {
 		if (sub_1000b005())
 			sub_102c1400();
 		sub_10272650(1);
-		F(float, 0x17c) = g_1070b228->curtime + 0.25f;
+		F(float, 0x17c) = gpGlobals->curtime + 0.25f;
 	}
 }
 // END FUNCTION

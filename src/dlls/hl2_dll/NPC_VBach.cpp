@@ -6,17 +6,11 @@
 #include "CNPC_VBach.h"
 
 extern "C" int _strcmpi(const char *, const char *);
-struct CGlobalVarsVB
-{
-	char pad[0xc];
-	float curtime;
-};
-extern CGlobalVarsVB *g_1070b228;
 
 int CNPC_VBach::vfunc604(int arg)
 {
 	if (sub_10269aa0(0x7b)) {
-		*(float *)&m_n6690 = g_1070b228->curtime + 15.0f;
+		*(float *)&m_n6690 = gpGlobals->curtime + 15.0f;
 		m_nSchedLine = 0x26e;
 		m_pszSchedFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VBach.cpp";
 		return 0x15a;

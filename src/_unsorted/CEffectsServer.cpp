@@ -293,7 +293,5 @@ void CEffectsServer::vfunc8(const float *pOrigin, int a)
 // END FUNCTION
 
 // FUNCTION: 0x100f6710 size=0x9
-struct CGlobalVars1070b228 { int pad[3]; float curtime; };
-extern CGlobalVars1070b228 *g_1070b228;
-float CEffectsServer::vfunc9() { return g_1070b228->curtime; }
+float CEffectsServer::vfunc9() { return gpGlobals->curtime; }
 // END FUNCTION

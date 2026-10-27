@@ -111,15 +111,13 @@ void CUnknown103639b0::sub_103639b0(int a, int b)
 #include "CNPC_VBach.h"
 #include "CVStatList_t.h"
 
-struct CGlobalVarsLike { char pad[0xc]; float curtime; };
-extern CGlobalVarsLike *g_1070b228;
 
 void CNPC_VBach::vfunc432(int arg)
 {
 	char *p = (char *)this;
 	if (!p[0x66a8])
 		sub_10279a50(0);
-	if (p[0x66a5] && g_1070b228->curtime > *(float *)(p + 0x6684)) {
+	if (p[0x66a5] && gpGlobals->curtime > *(float *)(p + 0x6684)) {
 		CVStatListSet::Of(p)->Find(3)->sub_102008e0(0xd, 0);
 		p[0x66a5] = 0;
 	}

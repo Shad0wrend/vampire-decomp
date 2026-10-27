@@ -149,8 +149,6 @@ extern VPNode_ *(VPNode_::*g_109f3644)(const char *, int, const char *);
 extern void (VProfile_::*g_109f363c)();
 extern void (*g_109f3640)(bool);
 
-struct Globals_ { char pad[0x10]; float frametime; };
-extern Globals_ *g_1070b228;
 
 void sub_1002ea40(float);
 void sub_1000a8cb(void *);
@@ -213,7 +211,7 @@ void CPhysicsHook::vfunc7()
 {
     TraceScope_ trace("CPhysicsHook::FrameUpdatePostEntityThink");
     VPScope_ vp("CPhysicsHook::FrameUpdatePostEntityThink", 0, "Physics");
-    sub_1002ea40(g_1070b228->frametime);
+    sub_1002ea40(gpGlobals->frametime);
     sub_1000a8cb(m_04);
 }
 // END FUNCTION

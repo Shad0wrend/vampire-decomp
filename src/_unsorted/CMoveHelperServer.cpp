@@ -22,8 +22,6 @@ CMoveHelperServer *CMoveHelperServer::vfunc14(unsigned int flags)
 #include "ScopeTrace.h"
 extern CGlobalEntityList g_106eb5d8;
 extern CUnknown1070b22c *g_1070b22c;
-struct EdictY { char pad[0x24]; const char *x; };
-extern EdictY *g_1070b228;
 extern char g_1057a19c[];
 struct EntA { virtual void v0(); virtual void v1(); virtual void v2(); virtual EntA *v3(); virtual CUnknown1070b22c_Edict *v4(); };
 struct EntB { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
@@ -53,8 +51,8 @@ const char *__stdcall sub_1013eee0(unsigned int handle)
         p = 0;
     (*g_109f3680)--;
     if (!g_1070b22c->vfunc35((int)ed)) {
-        if (g_1070b228->x)
-            return g_1070b228->x;
+        if (gpGlobals->mapname)
+            return gpGlobals->mapname;
         return g_106b8540;
     }
     if (p->sub_1009f200())

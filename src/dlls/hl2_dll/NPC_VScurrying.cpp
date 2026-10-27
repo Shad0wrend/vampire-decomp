@@ -5,12 +5,6 @@
 #include "CNPC_VScurrying.h"
 #include "CNPC_VAnimal.h"
 
-struct CGlobalVarsStub
-{
-	char pad[0xc];
-	float m_flCurTime;
-};
-extern CGlobalVarsStub *g_1070b228;
 
 struct CScurryObj
 {
@@ -21,7 +15,7 @@ struct CScurryObj
 int CNPC_VScurrying::vfunc438()
 {
 	m_n1b2c = 0x20;
-	if (g_1070b228->m_flCurTime < m_flTime668c) {
+	if (gpGlobals->curtime < m_flTime668c) {
 		m_nLine1b34 = 0xbe;
 		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VScurrying.cpp";
 		return 0x162;
@@ -33,7 +27,7 @@ int CNPC_VScurrying::vfunc438()
 	}
 	if (sub_10269aa0(0x70)) {
 		m_vec6680 = *((CScurryObj *)m_Obj618c)->sub_101b99d0();
-		m_flTime668c = m_flDelay669c + g_1070b228->m_flCurTime;
+		m_flTime668c = m_flDelay669c + gpGlobals->curtime;
 		m_nLine1b34 = 0xca;
 		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VScurrying.cpp";
 		return 0x162;

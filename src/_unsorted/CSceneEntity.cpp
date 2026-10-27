@@ -59,10 +59,6 @@ void CSceneEntity::vfunc113()
 // FUNCTION: 0x10081020 size=0x118
 #include "CSceneEntity.h"
 
-struct SceneGlobals_t {
-	char pad[0xc];
-	float curtime;
-};
 
 struct SceneAutoView_t {
 	char pad[0x4ac];
@@ -74,7 +70,6 @@ struct SceneAutoView_t {
 	CSceneEntityScene *pScene;
 };
 
-extern SceneGlobals_t *g_1070b228;
 void sub_10081190(const char *pszFormat, ...);
 
 void CSceneEntity::vfunc241()
@@ -97,7 +92,7 @@ void CSceneEntity::vfunc241()
 	} else {
 		if (!pView->bTimed)
 			return;
-		pView->flElapsed = (g_1070b228->curtime - sub_100ac720(0)) + pView->flElapsed;
+		pView->flElapsed = (gpGlobals->curtime - sub_100ac720(0)) + pView->flElapsed;
 		if (pView->flTime > 0.0f && pView->flElapsed < pView->flTime)
 			return;
 		switch (pView->nType) {
@@ -229,14 +224,8 @@ struct CSceneEventX
 	CSceneActorX *m_pActor;
 };
 
-struct CGlobalVars1070b228
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
 
 extern CGlobalEntityList g_106eb5d8;
-extern CGlobalVars1070b228 *g_1070b228;
 
 // TARGET: CSceneEntity::vfunc259
 void CSceneEntity::vfunc259(int unused, void *pEvent, const char *pszTarget)
@@ -256,7 +245,7 @@ void CSceneEntity::vfunc259(int unused, void *pEvent, const char *pszTarget)
 			pActor->m_vOrigin[1] = pOrigin[1];
 			pActor->m_vOrigin[2] = pOrigin[2];
 			pActor->sub_10280de0(0x39);
-			pActor->m_flTime5cf0 = g_1070b228->curtime;
+			pActor->m_flTime5cf0 = gpGlobals->curtime;
 		}
 	}
 }
@@ -313,8 +302,6 @@ void CSceneEntity::vfunc260(int unused, void *pEvent, const char *pszTarget, int
 // FUNCTION: 0x100819b0 size=0x145
 #include "CSceneEntity.h"
 #include "CEHandleGet.h"
-struct CSceneGlobalVars { char m_pad0000[0xc]; float curtime; };
-extern CSceneGlobalVars *g_1070b228;
 struct CSceneObj
 {
 	void *sub_1007a2c0(int index);
@@ -335,15 +322,15 @@ void CSceneEntity::vfunc134()
 	CSceneEventActor *pActor = (CSceneEventActor *)((CSceneObj *)m_pScene4bc)->sub_1007a2c0(0);
 	CSceneActorEntView *pEnt;
 	if (pActor && (pEnt = (CSceneActorEntView *)vfunc267(pActor->sub_10008a99())) != 0 && pEnt->m_pAI98 && EHandle_Get(pEnt->m_pAI98->m_hDialog))
-		m_flNextThink = g_1070b228->curtime;
+		m_flNextThink = gpGlobals->curtime;
 	else
-		m_flNextThink = g_1070b228->curtime;
+		m_flNextThink = gpGlobals->curtime;
 	if (m_bPlaying499) {
 		vfunc241();
 		m_b57c = 0;
 		return;
 	}
-	m_f4a0 = g_1070b228->curtime - m_f4a8;
+	m_f4a0 = gpGlobals->curtime - m_f4a8;
 	((CSceneObj *)m_pScene4bc)->sub_1007e5a0(sub_10080ac0());
 	((CSceneObj *)m_pScene4bc)->sub_1007d7f0(*(int *)&m_f4a0);
 	if (m_pScene4bc) {
@@ -363,12 +350,6 @@ void CSceneEntity::vfunc134()
 #include "CSceneEntity.h"
 #include "CUnknown1007ce20.h"
 
-struct CGlobalVarsView
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern CGlobalVarsView *g_1070b228;
 void sub_100826b0(CSceneEntity *pEnt);
 
 // TARGET: CSceneEntity::vfunc242
@@ -379,14 +360,14 @@ void CSceneEntity::vfunc242()
 		m_bPlaying498 = 1;
 		m_bPlaying499 = 0;
 		m_f4a0 = 0;
-		m_f4a4 = g_1070b228->curtime;
-		m_f4a8 = g_1070b228->curtime;
+		m_f4a4 = gpGlobals->curtime;
+		m_f4a8 = gpGlobals->curtime;
 		((CUnknown1007ce20 *)m_pScene4bc)->sub_1007cfc0(1, 0, 0);
 		sub_10084170(m_pScene4bc);
 		sub_100843d0(m_pScene4bc);
 		sub_10081ed0();
 		sub_10082c90();
-		m_flNextThink = g_1070b228->curtime;
+		m_flNextThink = gpGlobals->curtime;
 		if (m_b57e)
 			sub_100826b0(this);
 		m_list4cc.sub_100cd660(this, this, 0);

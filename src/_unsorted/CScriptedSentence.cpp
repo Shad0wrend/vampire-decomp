@@ -12,12 +12,6 @@ extern double g_10449280;
 extern float g_104454c4;
 void sub_1000880a();
 
-struct CGlobalVarsPlain
-{
-	char m_pad[0xc];
-	float curtime;
-};
-extern CGlobalVarsPlain *g_1070b228;
 
 void CScriptedSentence::vfunc103()
 {
@@ -29,7 +23,7 @@ void CScriptedSentence::vfunc103()
 	*((char *)this + 0x470) = 1;
 	if (!pEntity->m_name26c) {
 		pEntity->sub_100ac4e0((int)sub_1000880a, 0, 0);
-		*(float *)((char *)this + 0x17c) = g_1070b228->curtime + g_10449280;
+		*(float *)((char *)this + 0x17c) = gpGlobals->curtime + g_10449280;
 	}
 	switch (*(int *)((char *)this + 0x468)) {
 	case 1:

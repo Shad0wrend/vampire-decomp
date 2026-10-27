@@ -21,11 +21,6 @@ CEnvParticle *CEnvParticle::vfunc5(unsigned int flags)
 #include "CEntityVSlots.h"
 #include "CEHandleGet.h"
 
-struct CGlobalVarsView {
-	char m_pad0000[0xc];
-	float curtime;	// 0xc
-};
-extern CGlobalVarsView *g_1070b228;
 extern float g_104563b0;
 extern float g_104454c4;	// 0.0f
 extern "C" __declspec(dllimport) void Warning(const char *pMsg, ...);
@@ -63,7 +58,7 @@ void CEnvParticle::vfunc103()
 	if (EHandle_Get(m_hAttachEntity))
 		sub_100faf60(EHandle_Get(m_hAttachEntity));
 	if (m_unk484)
-		p->m_fl488 = g_1070b228->curtime;
+		p->m_fl488 = gpGlobals->curtime;
 }
 // END FUNCTION
 

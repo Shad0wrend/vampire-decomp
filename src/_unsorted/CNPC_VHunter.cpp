@@ -70,8 +70,6 @@ void CNPC_VHunter::vfunc420()
 // FUNCTION: 0x10388bb0 size=0x6d
 #include "CNPC_VHunter.h"
 #include "CGlobalEntityList.h"
-struct S1070b228 { char pad[0xc]; float curtime; };
-extern S1070b228 *g_1070b228;
 extern CGlobalEntityList *g_10566458;
 extern unsigned int g_1093b650;
 extern float g_1093b658;
@@ -86,7 +84,7 @@ int CNPC_VHunter::vfunc404(CBaseEntity *pEnt)
         pTarget = s->m_Serial == (int)(h >> 13) ? s->m_pEntity : 0;
     } else
         pTarget = 0;
-    if ((CGlobalEntityList_Ent *)pEnt == pTarget && g_1070b228->curtime < g_1093b658)
+    if ((CGlobalEntityList_Ent *)pEnt == pTarget && gpGlobals->curtime < g_1093b658)
         return 1;
     return sub_10299da0(pEnt);
 }

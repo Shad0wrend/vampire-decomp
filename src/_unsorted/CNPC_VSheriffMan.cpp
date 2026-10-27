@@ -208,11 +208,6 @@ struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
 extern char g_106b8540[];
-struct CGlobalVarsStub {
-	char pad[0xc];
-	float curtime;
-};
-extern CGlobalVarsStub *g_1070b228;
 extern float g_104c6120;
 
 void CNPC_VSheriffMan::vfunc431()
@@ -222,7 +217,7 @@ void CNPC_VSheriffMan::vfunc431()
 	g_109f3620[*g_109f3680].c = g_106b8540;
 	(*g_109f3680)++;
 	sub_100052d6();
-	*(float *)((char *)this + 0x17c) = g_104c6120 + g_1070b228->curtime;
+	*(float *)((char *)this + 0x17c) = g_104c6120 + gpGlobals->curtime;
 	(*g_109f3680)--;
 }
 // END FUNCTION

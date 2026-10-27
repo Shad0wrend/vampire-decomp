@@ -67,8 +67,6 @@ struct OriginSlots
     virtual void b210(); virtual void b211(); virtual void b212(); virtual void b213(); virtual void b214(); virtual void b215(); virtual void b216();
     virtual StoredHintPos_t *vfunc217();
 };
-struct S1070b228 { char pad[0xc]; float m_curtime; };
-extern S1070b228 *g_1070b228;
 extern char g_1062cc6c[];
 extern float g_104a9300;
 void CNPC_VAsianVampire::vfunc420()
@@ -80,7 +78,7 @@ void CNPC_VAsianVampire::vfunc420()
     m_nNextStoredHint = 0;
     *(int *)((char *)this + 0x5ddc) = 0;
     m_bTaskFailedJump = 0;
-    m_flStationaryTime = g_1070b228->m_curtime;
+    m_flStationaryTime = gpGlobals->curtime;
     *(StoredHintPos_t *)((char *)this + 0x66dc) = *((OriginSlots *)this)->vfunc217();
     *((char *)this + 0x66e8) = 1;
     float flTime = g_104a9300;
@@ -181,11 +179,6 @@ struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern ScopeEntry *g_109f3620;
 extern int *g_109f3680;
 extern char g_106b8540[];
-struct CGlobalVarsStub {
-	char pad[0xc];
-	float curtime;
-};
-extern CGlobalVarsStub *g_1070b228;
 extern float g_104a9304;
 
 void CNPC_VAsianVampire::vfunc431()
@@ -195,7 +188,7 @@ void CNPC_VAsianVampire::vfunc431()
 	g_109f3620[*g_109f3680].c = g_106b8540;
 	(*g_109f3680)++;
 	sub_100052d6();
-	m_flNextThink = g_104a9304 + g_1070b228->curtime;
+	m_flNextThink = g_104a9304 + gpGlobals->curtime;
 	(*g_109f3680)--;
 }
 // END FUNCTION

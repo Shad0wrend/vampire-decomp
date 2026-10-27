@@ -47,9 +47,7 @@ void CWeaponLockpick::vfunc319()
 
 // FUNCTION: 0x103f4f40 size=0x78
 #include "CWeaponLockpick.h"
-struct CLockpickGlobals { char pad[0xc]; float curtime; };
 struct CLockpickOwner { char pad[0xa8]; void *m_p; };
-extern CLockpickGlobals *g_1070b228;
 
 void CWeaponLockpick::vfunc292(int a)
 {
@@ -57,7 +55,7 @@ void CWeaponLockpick::vfunc292(int a)
     if (pOwner && pOwner->m_p) {
         vfunc307(vfunc328());
         vfunc333(1, 1, 0, 0, 0, 0);
-        float t = vfunc332() + g_1070b228->curtime;
+        float t = vfunc332() + gpGlobals->curtime;
         m_f730 = t;
         m_f734 = t;
         vfunc310(t);

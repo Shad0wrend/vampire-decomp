@@ -99,12 +99,6 @@ struct S1026b270Npc
 	float m_flNextCheck;	// 0x5d6c
 };
 
-struct S1026b270Globals
-{
-	float m_pad[3];
-	float curtime;
-};
-extern S1026b270Globals *g_1070b228;
 extern CUnknown1070b244 *g_1070b244;
 
 struct S1026b270Ent
@@ -116,7 +110,7 @@ struct S1026b270Ent
 CBaseEntity *CAI_BaseNPC::vfunc534()
 {
 	S1026b270Npc *pNpc = (S1026b270Npc *)this;
-	if (pNpc->m_flNextCheck < g_1070b228->curtime) {
+	if (pNpc->m_flNextCheck < gpGlobals->curtime) {
 		CBaseEntity *pBest = 0;
 		float flBest = 16384.0f;
 		S1026b270Sphere sphere;
@@ -141,7 +135,7 @@ CBaseEntity *CAI_BaseNPC::vfunc534()
 			sphere.m_nIndex++;
 		}
 		if (pBest) {
-			pNpc->m_flNextCheck = (float)g_1070b244->vfunc2(1, 5) + g_1070b228->curtime;
+			pNpc->m_flNextCheck = (float)g_1070b244->vfunc2(1, 5) + gpGlobals->curtime;
 			pNpc->m_hTarget = pBest;
 		}
 	}

@@ -109,12 +109,6 @@ void CNPC_VCop::vfunc442(int *pEvent)
 extern unsigned int g_1093ac3c;
 extern float g_1093aca8;
 extern CGlobalEntityList *g_10566458;
-struct CGlobalVars_10372b70
-{
-	char m_pad0000[0xc];
-	float curtime;	// 0x0c
-};
-extern CGlobalVars_10372b70 *g_1070b228;
 
 static inline CGlobalEntityList_Ent *LookupHandle(unsigned int h)
 {
@@ -130,7 +124,7 @@ int CNPC_VCop::vfunc404(CNPC_VCopTarget *pEnt)
 {
 	if (!pEnt)
 		return 0;
-	if ((void *)pEnt == (void *)LookupHandle(g_1093ac3c) && g_1070b228->curtime < g_1093aca8)
+	if ((void *)pEnt == (void *)LookupHandle(g_1093ac3c) && gpGlobals->curtime < g_1093aca8)
 		return 1;
 	CNPC_VCopPlayer *pPlayer = pEnt->m_pPlayer;
 	if (pPlayer) {

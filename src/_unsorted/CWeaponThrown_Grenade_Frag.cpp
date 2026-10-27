@@ -36,8 +36,6 @@ void CGrenadeUnit103ee260::sub_103ee260()
 
 // FUNCTION: 0x103ee510 size=0xdb
 #include "CBaseEntity.h"
-struct SGlobals { int pad[3]; float curtime; };
-extern SGlobals *g_1070b228;
 void sub_1000dcd8();
 
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -63,7 +61,7 @@ void CWeaponThrown_Grenade_Frag::vfunc326()
 	char *self = (char *)this;
 	if (sub_103ee8f0()) {
 		*(char *)(self + 0x930) = 0;
-		*(float *)(self + 0x924) = g_1070b228->curtime;
+		*(float *)(self + 0x924) = gpGlobals->curtime;
 		*(int *)(self + 0x920) = 1;
 		char *owner = (char *)sub_102521f0();
 		if (owner) {
@@ -71,15 +69,15 @@ void CWeaponThrown_Grenade_Frag::vfunc326()
 			if (sub)
 				sub->s449(5, 0);
 		}
-		*(float *)(self + 0x91c) = g_1070b228->curtime + 3.3f;
+		*(float *)(self + 0x91c) = gpGlobals->curtime + 3.3f;
 		((SSlots *)this)->s307(0xb8);
 		return;
 	}
-	if (*(int *)(self + 0x920) == 1 && (*(float *)((int)self + 0x924) + 0.3f) < g_1070b228->curtime) {
+	if (*(int *)(self + 0x920) == 1 && (*(float *)((int)self + 0x924) + 0.3f) < gpGlobals->curtime) {
 		*(int *)(self + 0x920) = 3;
-		*(float *)(self + 0x91c) = 3.0f + g_1070b228->curtime;
+		*(float *)(self + 0x91c) = 3.0f + gpGlobals->curtime;
 		((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000dcd8, 0, 0);
-		*(float *)((int)self + 0x17c) = g_1070b228->curtime + 1.0f;
+		*(float *)((int)self + 0x17c) = gpGlobals->curtime + 1.0f;
 	}
 }
 // END FUNCTION
@@ -117,13 +115,7 @@ struct CWeaponUnit
 	void sub_103ed920();
 };
 
-struct CGlobalVars1070b228
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
 
-extern CGlobalVars1070b228 *g_1070b228;
 void sub_1000d62f();
 
 // TARGET: CWeaponThrown_Grenade_Frag::vfunc265
@@ -131,7 +123,7 @@ void CWeaponThrown_Grenade_Frag::vfunc265()
 {
 	CGrenadeStateX *p = (CGrenadeStateX *)this;
 	if (!p->m_bDone) {
-		if (p->m_nState == 3 && p->m_flTime + 0.3f < g_1070b228->curtime) {
+		if (p->m_nState == 3 && p->m_flTime + 0.3f < gpGlobals->curtime) {
 			p->m_nState = 5;
 			((CWeaponUnit *)this)->sub_103ed920();
 			CGrenadeOwnerEntX *pOwner = (CGrenadeOwnerEntX *)sub_102521f0();
@@ -239,12 +231,6 @@ struct CGrenadeProjX
 	char m_pad0180[0x931 - 0x180];
 	char m_b931;
 };
-struct CGlobalVars1070b228
-{
-	char m_pad0000[0xc];
-	float curtime;
-};
-extern CGlobalVars1070b228 *g_1070b228;
 extern float g_1070d9d0[];
 extern void (__cdecl *g_109f3628)(const char *fmt);
 CBaseEntity *sub_100a99d0(const char *classname, const float *origin, const float *angles, CBaseEntity *owner);
@@ -273,8 +259,8 @@ CBaseEntity *CWeaponThrown_Grenade_Frag::vfunc372(Vector vecOrigin, Vector vecAn
 		if (!pThis->m_bNoThrow)
 			pPhys->vfunc41(&vecVelocity.x, &angVelocity.x);
 		pGrenade->sub_100ac4e0((int)sub_1000c568, 0, 0);
-		if (pThis->m_flTimer < g_1070b228->curtime)
-			pThis->m_flTimer = g_1070b228->curtime;
+		if (pThis->m_flTimer < gpGlobals->curtime)
+			pThis->m_flTimer = gpGlobals->curtime;
 		pProj->m_flNextThink = pThis->m_flTimer + 0.01f;
 	}
 	return pGrenade;

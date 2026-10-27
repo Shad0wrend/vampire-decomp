@@ -88,12 +88,7 @@ void CBreakableProp::vfunc103()
 #include "CBaseEntity.h"
 #include "CBreakableProp.h"
 
-struct SGlobalVars {
-	char pad[0xc];
-	float curtime;
-};
 
-extern SGlobalVars *g_1070b228;
 void sub_10014e25();
 
 void CBreakableProp::vfunc144(void *pInfo)
@@ -106,7 +101,7 @@ void CBreakableProp::vfunc144(void *pInfo)
 	else
 		*(unsigned int *)((char *)this + 0x768) = 0xffffffff;
 	sub_10007fe5((void *)sub_10014e25, 0, 0);
-	float fNext = g_1070b228->curtime + 0.001;
+	float fNext = gpGlobals->curtime + 0.001;
 	*(int *)((char *)this + 0x1fc) = 0;
 	*(int *)((char *)this + 0x200) = 1;
 	*(float *)((char *)this + 0x17c) = fNext;

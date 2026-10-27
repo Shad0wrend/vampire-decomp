@@ -18,8 +18,6 @@ CGameSign *CGameSign::vfunc5(unsigned int flags)
 
 // FUNCTION: 0x10212c00 size=0x74
 #include "CGameSign.h"
-struct CGlobalsView { char m_pad[0xc]; float curtime; };
-extern CGlobalsView *g_1070b228;
 extern int g_105abb08;
 struct CSignPlayerView {
     char m_pad[0x2090];
@@ -33,7 +31,7 @@ void CGameSign::vfunc41(void *pPlayer)
     CSignPlayerView *p = (CSignPlayerView *)pPlayer;
     p->sub_10178590(*(Vector *)((char *)this + 0x464));
     if (m_flags204 & 1) {
-        if (g_1070b228->curtime - *(float *)((char *)this + 0x460) > *(float *)((char *)this + 0x458) + 2.0f) {
+        if (gpGlobals->curtime - *(float *)((char *)this + 0x460) > *(float *)((char *)this + 0x458) + 2.0f) {
             if ((p->m_nFlags2090 & g_105abb08) == g_105abb08)
                 p->sub_10167fd0();
         }

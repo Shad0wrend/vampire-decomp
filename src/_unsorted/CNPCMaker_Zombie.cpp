@@ -5,8 +5,6 @@
 #include "CNPCMaker_Zombie.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
-struct CGlobalVarsX { char pad[0xc]; float curtime; };
-extern CGlobalVarsX *g_1070b228;
 extern "C" __declspec(dllimport) float __cdecl RandomFloat(float flMin, float flMax);
 void sub_10015c4e();
 
@@ -23,7 +21,7 @@ void CNPCMaker_Zombie::vfunc103()
         m_b66c2 = 1;
     if (!m_b66c0) {
         sub_100ac4e0((int)sub_10015c4e, 0, 0);
-        *(float *)((char *)this + 0x17c) = RandomFloat(1.0f, 2.0f) + m_flSpawnDelay + g_1070b228->curtime;
+        *(float *)((char *)this + 0x17c) = RandomFloat(1.0f, 2.0f) + m_flSpawnDelay + gpGlobals->curtime;
     } else {
         sub_100ac4e0(0, 0, 0);
     }

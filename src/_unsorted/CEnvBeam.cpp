@@ -20,12 +20,6 @@ CEnvBeam *CEnvBeam::vfunc5(unsigned int flags)
 #include "CEnvBeam.h"
 #include "CEntityVSlots.h"
 
-struct CGlobalVarsEB
-{
-	char pad[0xc];
-	float curtime;
-};
-extern CGlobalVarsEB *g_1070b228;
 extern float g_104454c4;
 void sub_10015b68();
 void sub_10004bec();
@@ -41,8 +35,8 @@ void CEnvBeam::vfunc103()
 	m_fEndWidth = (m_fWidth = m_nBoltWidth) * 0.1;
 	if (m_flLife == g_104454c4 && !(m_flags204 & 8)) {
 		sub_100ac4e0((int)sub_10004bec, 0, 0);
-		m_flNextThink = g_1070b228->curtime;
-		m_flStartTime = g_1070b228->curtime;
+		m_flNextThink = gpGlobals->curtime;
+		m_flStartTime = gpGlobals->curtime;
 		if (m_name26c) {
 			if (!(m_flags204 & 1)) {
 				m_nActive = 0;
@@ -56,7 +50,7 @@ void CEnvBeam::vfunc103()
 		m_nActive = 0;
 		if (!m_name26c || (m_flags204 & 1)) {
 			sub_100ac4e0((int)sub_1000752c, 0, 0);
-			m_flNextThink = g_1070b228->curtime + 1.0;
+			m_flNextThink = gpGlobals->curtime + 1.0;
 		}
 	}
 	if (!m_bFlag5a8) {

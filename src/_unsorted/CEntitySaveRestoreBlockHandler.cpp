@@ -22,11 +22,9 @@ struct EngineX {
     V16(p) V16(q) virtual void m0(); virtual void m1(); virtual void m2();
     virtual int f35(int edict);
 };
-struct GlobalsX { char pad[0x14]; int m_n14; };
 struct SaveEntry { char pad[0x10]; volatile unsigned int m_h10; int m_tick14; volatile int m_delta18; int m_f1c; unsigned __int64 m_flags20; int m_f28; int m_f2c; };
 struct SaveBlock { char pad[0x1318]; int m_nEntries; SaveEntry *m_pEntries; };
 extern EngineX *g_1070b22c;
-extern GlobalsX *g_1070b228;
 static inline CGlobalEntityList_Ent *ResolveHandle(unsigned int h)
 {
     if (h == 0xffffffff)
@@ -52,7 +50,7 @@ void CEntitySaveRestoreBlockHandler::vfunc2(CSave *pSaveArg)
                 e->m_f28 = (int)ent->m_classname11c;
                 if (ent->m_pEdict2e0 && 0 < g_1070b22c->f35(ent->m_pEdict2e0)) {
                     ent = (CBaseEntity *)ent->m_pEdict2e0;
-                    if (g_1070b22c->f35((int)ent) < g_1070b228->m_n14 + 1)
+                    if (g_1070b22c->f35((int)ent) < gpGlobals->maxClients + 1)
                         e->m_flags20 |= 0x8000000000000000ui64;
                 }
             }

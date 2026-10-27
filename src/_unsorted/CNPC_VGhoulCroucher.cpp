@@ -373,13 +373,7 @@ void CNPC_VGhoulCroucher::vfunc24(void *pVictim)
 #include "CNPC_VGhoulCroucher.h"
 #include "ScopeTrace.h"
 
-struct CGlobalVarsGC
-{
-    char pad[0xc];
-    float curtime;
-};
 
-extern CGlobalVarsGC *g_1070b228;
 
 static inline void *GetCharacter(CBaseEntity *pEnt)
 {
@@ -395,8 +389,8 @@ void CNPC_VGhoulCroucher::vfunc174(CBaseEntity *pOther)
     void *pCharacter = GetCharacter(pOther);
     if (pCharacter || *(void **)((char *)pOther + 0x94))
         sub_1037b6e0((int)pOther);
-    if (m_b6665 && pCharacter && g_1070b228->curtime > m_flNext666c) {
-        m_flNext666c = g_1070b228->curtime + 5.0;
+    if (m_b6665 && pCharacter && gpGlobals->curtime > m_flNext666c) {
+        m_flNext666c = gpGlobals->curtime + 5.0;
         sub_1037c090(pCharacter, 5.0f);
     }
 }

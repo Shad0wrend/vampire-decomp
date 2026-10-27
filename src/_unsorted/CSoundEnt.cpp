@@ -7,12 +7,6 @@
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
 
-struct CGlobalVarsRaw
-{
-	char m_pad0000[0x0c];
-	float m_curtime;
-};
-extern CGlobalVarsRaw *g_1070b228;
 
 void CSoundEnt::vfunc103()
 {
@@ -23,7 +17,7 @@ void CSoundEnt::vfunc103()
 	}
 	pEnt->sub_100b3b00();
 	sub_101baf80();
-	*(float *)((char *)pEnt + 0x17c) = g_1070b228->m_curtime + 1.0f;
+	*(float *)((char *)pEnt + 0x17c) = gpGlobals->curtime + 1.0f;
 }
 // END FUNCTION
 
@@ -46,22 +40,16 @@ int CSoundEnt::vfunc127(int a)
 // FUNCTION: 0x101ba890 size=0xd2
 #include "CSoundEnt.h"
 
-struct CGlobalVarsSE
-{
-    char pad[0xc];
-    float curtime;
-};
 
-extern CGlobalVarsSE *g_1070b228;
 extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
 
 void CSoundEnt::vfunc134()
 {
-    m_flNextThink = g_1070b228->curtime + 0.3;
+    m_flNextThink = gpGlobals->curtime + 0.3;
     int iPrevious = -1;
     int iSound = m_iActiveSound;
     while (iSound != -1) {
-        if (*(float *)&m_SoundPool[iSound].m_flExpireTime + 4.0f <= g_1070b228->curtime && m_SoundPool[iSound].m_flExpireTime != 0xbf800000) {
+        if (*(float *)&m_SoundPool[iSound].m_flExpireTime + 4.0f <= gpGlobals->curtime && m_SoundPool[iSound].m_flExpireTime != 0xbf800000) {
             int iNext = m_SoundPool[iSound].m_iNext;
             sub_101ba9d0(iSound, iPrevious);
             iSound = iNext;
