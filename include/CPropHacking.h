@@ -52,7 +52,6 @@ public:
 	void sub_102181a0(CBaseEntity *pPlayer);	// CBaseTerminal::vfunc39 (stub 0x1000f515), called directly
 	void sub_1021aca0();	// stub 0x10002fae
 	void sub_1021bd80();	// stub 0x10001df7, run first by the screen refresh
-	char sub_1021a4b0(int record);	// stub 0x1000a6e6: a test on the record, asked by the screen refresh for each listed record
 	void sub_10218b90();	// stub 0x100068c0
 	void sub_10218ca0();	// stub 0x100156c7
 	void sub_10219120();	// stub 0x1000aa1f, tail called by the screen refresh
