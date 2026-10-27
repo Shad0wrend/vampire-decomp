@@ -33,7 +33,7 @@ public:
 	EVS(80) EVS(81) EVS(82) EVS(83) EVS(84) EVS(85)
 	virtual char slot86(int a, int b, int c, int d, int e);	// takes five arguments, a boolean answer in al (CBaseEntity::vfunc86)
 	EVS(87) EVS(88) EVS(89)
-	EVS(90) EVS(91) EVS(92)
+	EVS(90) virtual char slot91(int a, int b);	/* a boolean answer in al, takes two arguments (the trace's collision group test, passed (group, -1)) */ EVS(92)
 	virtual void slot93(int moveType, int moveCollide);	// "SetMoveType"
 	virtual int slot94();	// the move type
 	EVS(95) EVS(96) EVS(97) EVS(98) EVS(99)
