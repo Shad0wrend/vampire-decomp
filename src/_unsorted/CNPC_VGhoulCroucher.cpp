@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1037a6e0 size=0x6
+#include "CNPC_VGhoulCroucher.h"
+namespace lifted {
+extern char g_1063a9f0;
+}
+datamap_t * CNPC_VGhoulCroucher::vfunc82()
+{
+    return (datamap_t *)((int)&lifted::g_1063a9f0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037a950 size=0x1d
 #include "CNPC_VGhoulCroucher.h"
 struct A { int sub_10012300(int); };
