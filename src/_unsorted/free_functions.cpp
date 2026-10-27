@@ -94582,6 +94582,14 @@ char CAI_BaseNPCTroika::sub_102a9ec0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a9ee0 size=0x4
+struct CUnknown102a9ee0 { int sub_102a9ee0(); };
+int CUnknown102a9ee0::sub_102a9ee0()
+{
+    return *(int *)((char *)this + 0x30);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9f00 size=0x3
 struct CUnknown102a9f00 { void * sub_102a9f00(); };
 void * CUnknown102a9f00::sub_102a9f00()
