@@ -7965,6 +7965,7 @@
 0x10015b95 func   ?sub_100f8370@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@I@Z CGlobalEntityList::sub_100f8370
 0x10015b9f func   ?sub_101c2af0@CUnknown101c2af0@@QAEDXZ CUnknown101c2af0::sub_101c2af0
 0x10015ba4 func   ?sub_102ca030@@YA_NXZ sub_102ca030
+0x10015ba9 func   ?vfunc345@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc345
 0x10015bae func   ?sub_103e49b0@@YAHXZ sub_103e49b0
 0x10015bb3 func   ?vfunc0@CSolidSetDefaults@@UAEXHPBD0@Z CSolidSetDefaults::vfunc0
 0x10015bb8 func   ?sub_102bec90@@YAHXZ sub_102bec90
