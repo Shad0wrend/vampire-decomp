@@ -29936,6 +29936,90 @@ void CUnknown106b89bc::sub_100d13d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2070 size=0x1a1
+#include <string.h>
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+CBaseEntity *sub_10172710(int a1);
+
+struct CFindStr
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual const char *vfunc5();
+};
+
+struct CFindHolder
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual CFindStr *vfunc3();
+};
+
+struct CFindEdict
+{
+	char pad[0x40];
+	CFindHolder *m_p40;
+};
+
+static inline bool FindNameMatches(CBaseEntity *pEnt, const char *pszName, const char *volatile *ppszRaw)
+{
+	const char *p = *ppszRaw;
+	if (!p)
+		p = g_106b8540;
+	if (p == pszName)
+		return true;
+	int len = strlen(pszName);
+	int r;
+	if (len == 0)
+		r = (int)*(const char *volatile *)&pEnt->m_name26c;
+	else if (pszName[len - 1] != '*')
+	{
+		p = *ppszRaw;
+		if (!p)
+			p = g_106b8540;
+		r = _strcmpi(p, pszName);
+	}
+	else
+	{
+		p = *ppszRaw;
+		if (!p)
+			p = g_106b8540;
+		r = _strnicmp(p, pszName, len - 1);
+	}
+	return r == 0;
+}
+
+CBaseEntity *sub_100d2070(int a1, const char *pszName, CBaseEntity *pStart)
+{
+	if (_strcmpi(pszName, g_106b8540) == 0)
+	{
+		if (pStart == 0)
+			return sub_10172710(a1);
+	}
+	else
+	{
+		for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(pStart); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt))
+		{
+			if (FindNameMatches(pEnt, pszName, (const char *volatile *)&pEnt->m_name26c))
+				return pEnt;
+			if (FindNameMatches(pEnt, pszName, (const char *volatile *)&pEnt->m_classname11c))
+				return pEnt;
+			CFindEdict *pEdict = (CFindEdict *)pEnt->m_pEdict2e0;
+			if (!pEdict->m_p40 || pEdict->m_p40->vfunc3()->vfunc5())
+			{
+				pEdict = (CFindEdict *)pEnt->m_pEdict2e0;
+				const char *pszModel = !pEdict->m_p40 ? g_106b8540 : pEdict->m_p40->vfunc3()->vfunc5();
+				if (_strcmpi(pszName, pszModel) == 0)
+					return pEnt;
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d2290 size=0x70
 #include "CGlobalEntityList.h"
 extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
