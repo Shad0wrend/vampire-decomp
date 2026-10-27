@@ -83681,6 +83681,16 @@ void sub_10232090(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10232400 size=0x6
+namespace lifted {
+extern char g_10751750;
+}
+int sub_10232400()
+{
+    return (int)&lifted::g_10751750;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232520 size=0xa
 void __fastcall sub_10232520(int *self, int, int value)
 {
