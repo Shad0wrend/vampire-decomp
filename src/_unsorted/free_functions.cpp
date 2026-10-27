@@ -113959,6 +113959,13 @@ char sub_1035ed00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035fc70 size=0x5
+int __stdcall sub_1035fc70(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035fd20 size=0x3
 int sub_1035fd20()
 {
