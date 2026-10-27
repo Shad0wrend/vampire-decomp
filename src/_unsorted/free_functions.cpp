@@ -43033,6 +43033,14 @@ skipwhite:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136ea0 size=0x4
+struct CUnknown10136ea0 { int sub_10136ea0(); };
+int CUnknown10136ea0::sub_10136ea0()
+{
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136ec0 size=0x3
 struct CUnknown10136ec0 { int sub_10136ec0(); };
 int CUnknown10136ec0::sub_10136ec0()

@@ -2619,6 +2619,7 @@
 0x1000844f func   ?sub_101bd0f0@SFilter@@QAEPAU1@E@Z SFilter::sub_101bd0f0
 0x10008454 func   ?vfunc448@CBasePlayer@@UAEXXZ CBasePlayer::vfunc448
 0x1000845e func   ?vfunc113@CWorldEvents@@UAEXXZ CWorldEvents::vfunc113
+0x1000847c func   ?sub_10136ea0@CUnknown10136ea0@@QAEHXZ CUnknown10136ea0::sub_10136ea0
 0x1000849a func   ?sub_10201190@CVStatList_t@@QAEHH@Z CVStatList_t::sub_10201190
 0x1000849f func   ?sub_1040d950@@YAXXZ sub_1040d950
 0x100084a4 func   ?vfunc5@CNPC_VGuard1@@QAEPAV1@I@Z CNPC_VGuard1::vfunc5
