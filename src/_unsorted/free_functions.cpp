@@ -136084,6 +136084,19 @@ void CFloatOwner_1042b710::sub_1042b710(float v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042b860 size=0xb
+namespace lifted {
+extern char g_1051671c;
+int sub_10004c3c();
+}
+struct CUnknown1042b860 { int sub_1042b860(); };
+int CUnknown1042b860::sub_1042b860()
+{
+    *(int *)this = (int)&lifted::g_1051671c;
+    return lifted::sub_10004c3c();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042b9c0 size=0x2a
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
