@@ -33748,6 +33748,17 @@ void CUnknown100ed370::sub_100ed370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ed3b0 size=0xa
+namespace lifted {
+extern char g_10924980;
+struct C1000e3b8 { int sub_1000e3b8(); };
+}
+int sub_100ed3b0()
+{
+    return ((lifted::C1000e3b8 *)((int)&lifted::g_10924980))->sub_1000e3b8();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ed4d0 size=0x18
 struct CBlock4k
 {
