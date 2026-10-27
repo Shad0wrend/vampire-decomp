@@ -82210,6 +82210,12 @@ void sub_1022ea40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022ea60 size=0x1
+void sub_1022ea60()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022eb60 size=0x82
 struct TStat { void sub_101fc950(int a, int b); };
 
