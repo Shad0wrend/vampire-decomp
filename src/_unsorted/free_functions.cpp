@@ -133588,6 +133588,16 @@ void sub_1042c4a0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042c4c0 size=0x6
+namespace lifted {
+extern int g_109eed64;
+}
+int sub_1042c4c0()
+{
+    return lifted::g_109eed64;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042c4e0 size=0x94
 struct AutoSys {
 	virtual bool Init();
