@@ -59440,6 +59440,16 @@ typedef void (__fastcall *Fn)(void *);
 void __fastcall sub_101bd960(void **p) { void **q = p - 1; ((Fn *)*q)[0](q); }
 // END FUNCTION
 
+// FUNCTION: 0x101bdb50 size=0x6
+namespace lifted {
+extern char g_1072c474;
+}
+int sub_101bdb50()
+{
+    return (int)&lifted::g_1072c474;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bdde0 size=0x21
 // TARGET: CUtlVector4::sub_101bdde0
 #include "CUtlVector4.h"
