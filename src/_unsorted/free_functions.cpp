@@ -132522,6 +132522,14 @@ char CUnknown1042d9a0::sub_1042daa0(CUnknown1042d9a0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042def0 size=0x3
+struct CUnknown1042def0 { void * sub_1042def0(); };
+void * CUnknown1042def0::sub_1042def0()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042e310 size=0x198
 #include "SendTable.h"
 #include "SendProp.h"
