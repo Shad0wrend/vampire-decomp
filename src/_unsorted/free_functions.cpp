@@ -132350,6 +132350,41 @@ char CUnknown1042d9a0::sub_1042daa0(CUnknown1042d9a0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042e310 size=0x198
+#include "SendTable.h"
+#include "SendProp.h"
+
+SendProp sub_10246af0(const char *pName, int offset, int sizeofVar, int nBits, int flags, void *pProxy, int nExtra);
+SendProp sub_10246dc0(const char *pName, int offset, SendTable *pTable, void *pProxy);
+SendProp sub_101ab220(const char *pName, int offset, int sizeofVar);
+SendProp sub_10246510(const char *pName, int offset, int sizeofVar, int nBits, int flags, float fLowValue, float fHighValue, void *pProxy);
+void sub_10246300();
+void sub_10009539();
+
+extern SendTable *g_1055282c;
+extern float g_10516cec;
+extern const char *g_106af060;
+extern SendTable g_109f028c;
+
+int sub_1042e310()
+{
+	static SendProp g_SendProps[] = {
+		sub_10246af0("should_never_see_this", 0, 4, -1, 0, 0, 0),
+		sub_10246dc0("baseclass", 0, g_1055282c, (void *)sub_10009539),
+		sub_101ab220("m_hAttachedToEntity", 0x450, 4),
+		sub_10246af0("m_nAttachment", 0x454, 4, 8, 0, 0, 0),
+		sub_10246510("m_flScaleTime", 0x470, 4, 0, 4, 0.0f, -121121.121121f, (void *)sub_10246300),
+		sub_10246510("m_flSpriteScale", 0x46c, 4, 8, 0x10, 0.0f, g_10516cec, (void *)sub_10246300),
+		sub_10246510("m_flSpriteFramerate", 0x458, 4, 8, 0x10, 0.0f, 60.0f, (void *)sub_10246300),
+		sub_10246510("m_flFrame", 0x45c, 4, 0x14, 8, 0.0f, 256.0f, (void *)sub_10246300),
+		sub_10246510("m_flBrightnessTime", 0x468, 4, 0, 4, 0.0f, -121121.121121f, (void *)sub_10246300),
+		sub_10246af0("m_nBrightness", 0x464, 4, 8, 1, 0, 0),
+	};
+	g_109f028c.sub_10247240(g_SendProps + 1, sizeof(g_SendProps) / sizeof(SendProp) - 1, g_106af060);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042ea40 size=0xf9
 #include "CSprite.h"
 #include "CCollisionProperty.h"
