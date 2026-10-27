@@ -391,6 +391,14 @@ int CNPC_VMingXiao::vfunc482(char bDisregardState, int interruptLevel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10396fb0 size=0x3
+#include "CNPC_VMingXiao.h"
+bool CNPC_VMingXiao::vfunc70()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10396fd0 size=0x18
 #include "CNPC_VMingXiao.h"
 
