@@ -38,4 +38,7 @@ public:
 	int m_i498;
 	int m_i49c;
 	int m_i4a0;
+public:
+    virtual datamap_t * vfunc82();
+    virtual bool vfunc109(const char *, float);
 };

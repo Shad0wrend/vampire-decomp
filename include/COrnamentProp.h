@@ -21,4 +21,6 @@ public:
 	void sub_10191130(const char *szName, CBaseEntity *pSearching);	// finds the entity by name (CGlobalEntityList::FindEntityByName from the list at 0x106eb5d8, no start entity, no activator) and attaches the prop to it (sub_10191170)
 	void sub_10191170(CBaseEntity *pParent);	// attaches the prop to the entity pParent (stub 0x10004fbb), called by the creation helper: slot 67(), SetAimEnt, SetParent, SetOwnerEntity, slot 93(0xb, 0), sub_100b3b00(); without a parent warns "%s could not find entity to attach to, deleting..." and removes itself
 	void sub_100a0670(CBaseEntity *pParent, int iAttachment);	// "CBaseEntity::SetParent" (stub 0x10005650)
+public:
+    virtual datamap_t * vfunc82();
 };

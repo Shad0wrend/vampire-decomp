@@ -30,4 +30,6 @@ public:
 	int m_n44;	// 0x44
 	char m_pad0048[0x58 - 0x48];
 	Vector m_vecEnd;	// 0x58
+public:
+    virtual ServerClass * vfunc0();
 };

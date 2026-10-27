@@ -48,4 +48,6 @@ public:
 	COutputEvent m_Output5b8;	// 0x5b8
 	COutputEvent m_Output5d0;	// 0x5d0
 	COutputEvent m_Output5e8;	// 0x5e8
+public:
+    virtual datamap_t * vfunc82();
 };

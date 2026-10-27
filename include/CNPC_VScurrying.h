@@ -44,4 +44,6 @@ public:
 	char m_b6695;	// 0x6695
 	char m_pad6696[0x669c - 0x6696];
 	float m_flDelay669c;	// 0x669c
+public:
+    virtual datamap_t * vfunc82();
 };

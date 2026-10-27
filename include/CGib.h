@@ -19,4 +19,6 @@ public:
 	int m_n730;	// 0x730
 	char m_pad0734[8];
 	float m_flLife73c;	// 0x73c
+public:
+    virtual datamap_t * vfunc82();
 };

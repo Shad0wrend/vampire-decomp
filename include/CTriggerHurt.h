@@ -34,4 +34,6 @@ public:
 	int m_i5fc;
 	int m_i600;
 	int m_i604;
+public:
+    virtual datamap_t * vfunc82();
 };

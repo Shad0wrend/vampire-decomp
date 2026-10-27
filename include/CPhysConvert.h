@@ -7,4 +7,6 @@ class CPhysConvert : public CBaseEntity
 {
 public:
 	CPhysConvert *sub_100501f0();
+public:
+    virtual datamap_t * vfunc82();
 };

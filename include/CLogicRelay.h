@@ -18,4 +18,6 @@ public:
 	char m_bWaitForRefire;	// 0x451
 	char m_pad0452[2];
 	COutputEvent m_OnTrigger;	// 0x454
+public:
+    virtual datamap_t * vfunc82();
 };

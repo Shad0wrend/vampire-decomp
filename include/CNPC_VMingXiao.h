@@ -95,4 +95,7 @@ public:
 	int m_nMode673c;	// +0x673c: the grabbing (2) / throwing (4) mode
 	char m_pad6740[0x6744 - 0x6740];
 	char m_bActive6744;	// +0x6744
+public:
+    virtual bool vfunc70();
+    virtual datamap_t * vfunc82();
 };

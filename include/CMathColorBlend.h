@@ -22,4 +22,6 @@ public:
 	CMathColorBlendColor32 m_OutMin;	// 0x458
 	CMathColorBlendColor32 m_OutMax;	// 0x45c
 	COutputEvent m_OutValue;	// 0x460
+public:
+    virtual datamap_t * vfunc82();
 };

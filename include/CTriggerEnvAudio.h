@@ -11,4 +11,6 @@ public:
 	void sub_101753a0(int value);	// stores value at +0x1e08, then +0x1e0c = g_1070b22c->vfunc120() (the engine's dword answer)
 
 	int m_i598;	// 0x598: the id of the object the trigger started
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -31,4 +31,6 @@ public:
 	COutputEvent m_OnPressed;	// 0x760
 	COutputEvent m_OnLocked;	// 0x778
 	COutputEvent m_OnState[8];	// 0x790: fired when the state is set
+public:
+    virtual datamap_t * vfunc82();
 };

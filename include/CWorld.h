@@ -37,4 +37,6 @@ public:
     int m_n518;    // 0x0518
     float m_f51c;    // 0x051c
     float m_f520;    // 0x0520
+public:
+    virtual datamap_t * vfunc82();
 };

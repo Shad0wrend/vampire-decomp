@@ -16,4 +16,6 @@ public:
 	const char *m_pCameraName;	// 0x6660
 	unsigned int m_hCamera;	// 0x6664
 	char m_bCameraFound;	// 0x6668
+public:
+    virtual datamap_t * vfunc82();
 };

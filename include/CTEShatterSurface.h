@@ -20,4 +20,6 @@ public:
 	float m_f44;	// 3.0f
 	int m_pad48;
 	unsigned char m_rgba[6];	// 0x004c, all 0xff
+public:
+    virtual ServerClass * vfunc0();
 };

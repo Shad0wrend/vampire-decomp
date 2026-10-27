@@ -7,4 +7,6 @@ class CTriggerDisciplineContext : public CBaseEntity
 {
 public:
 	CTriggerDisciplineContext *sub_10210ce0();
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -43,4 +43,6 @@ public:
 	Vector m_vecMins6bc;	// +0x6bc: the volume for the opposite angles
 	Vector m_vecMaxs6c8;	// +0x6c8
 	Vector m_vecCenter6d4;	// +0x6d4
+public:
+    virtual datamap_t * vfunc82();
 };

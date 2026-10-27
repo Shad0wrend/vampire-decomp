@@ -18,4 +18,12 @@ public:
 	virtual int vfunc62(int index);
 	virtual const char *vfunc63(int index);
 	Vector vfunc51(CBaseEntity *pEnt);	// as in CMultiplayRules (transplant)
+public:
+    virtual void vfunc16();
+    virtual void vfunc28(void *);
+    virtual void vfunc35(CBaseEntity *);
+    virtual void vfunc44(CBaseEntity *, CMPDamageInfo *);
+    virtual void vfunc45(CBaseEntity *, CMPDamageInfo *);
+    virtual char vfunc74();
+    virtual char vfunc19(CBaseEntity *, CBaseEntity *);
 };

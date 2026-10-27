@@ -35,4 +35,6 @@ public:
 	const char *m_iszSpriteName;	// 0x518
 	char m_pad051c[0x5a8 - 0x51c];
 	char m_bFlag5a8;	// 0x5a8
+public:
+    virtual datamap_t * vfunc82();
 };

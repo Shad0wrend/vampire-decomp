@@ -37,4 +37,6 @@ public:
 	COutputEvent m_Output600;
 	COutputEvent m_Output618;
 	COutputEvent m_Output630;
+public:
+    virtual datamap_t * vfunc82();
 };

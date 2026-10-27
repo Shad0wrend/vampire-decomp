@@ -24,4 +24,6 @@ public:
 	char m_pad0480[0x491 - 0x480];
 	char m_szModel491[0x80];	// 0x491
 	char m_szSound511[0x80];	// 0x511
+public:
+    virtual datamap_t * vfunc82();
 };

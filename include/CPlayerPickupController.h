@@ -17,4 +17,6 @@ public:
 	void sub_1040cfd0(CBaseCombatCharacter *pPlayer, CBaseEntity *pObject);	// "PickupObject"-like: unless the player's active weapon agrees (slot 316), drops everything (sub_1040d0a0(0)); else takes pObject (move type 2 when it was 1), sets the carry flag / constant at +0x490 / +0x495, remembers the player and hands both to the carry object (sub_1040c5d0)
 	void sub_100a0670(CBaseEntity *pOwner, int a);	// stub 0x10005650
 	bool sub_1040d440(void *pEntity);	// whether the carried object's handle (+0x59c) resolves to pEntity (stub 0x10002360)
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -24,4 +24,8 @@ public:
 	char m_pad66c1;
 	char m_b66c2;	// 0x66c2
 	char m_b66c3;	// 0x66c3
+public:
+    virtual void vfunc113();
+    virtual void vfunc123();
+    virtual datamap_t * vfunc82();
 };

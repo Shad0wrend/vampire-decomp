@@ -11,4 +11,6 @@ public:
 	void sub_100a53d0(int a);
 	CEnvWind *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
+public:
+    virtual datamap_t * vfunc82();
 };

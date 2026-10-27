@@ -15,4 +15,7 @@ public:
 	char m_bActive;	// 0x0735
 	char m_pad0736[0x740 - 0x736];
 	int m_nActivity;	// 0x0740
+public:
+    virtual void vfunc104();
+    virtual datamap_t * vfunc82();
 };

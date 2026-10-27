@@ -17,4 +17,6 @@ public:
 	float m_flOutMin;	// 0x458
 	float m_flOutMax;	// 0x45c
 	COutputEvent m_OutValue;	// 0x460
+public:
+    virtual datamap_t * vfunc82();
 };

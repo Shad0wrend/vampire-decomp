@@ -14,4 +14,7 @@ public:
 	char m_pad0598[0x5b8 - 0x598];
 	float m_flLookTimeTotal;	// 0x5b8
 	float m_flLookTimeLast;	// 0x5bc
+public:
+    virtual datamap_t * vfunc82();
+    virtual void vfunc103();
 };

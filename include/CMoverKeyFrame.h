@@ -11,4 +11,6 @@ public:
 	void *m_pTargetName;
 	CMoverKeyFrame *m_pNext;
 	CMoverKeyFrame *m_pPrev;
+public:
+    virtual datamap_t * vfunc82();
 };

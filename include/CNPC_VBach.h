@@ -66,4 +66,6 @@ public:
 	char m_b66a6;
 	char m_b66a7;	// 0x66a7
 	char m_b66a8;
+public:
+    virtual datamap_t * vfunc82();
 };

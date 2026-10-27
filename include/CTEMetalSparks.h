@@ -20,4 +20,6 @@ public:
 	char m_pad0004[8];
 	int m_pos[3];	// 0x000c
 	int m_dir[3];	// 0x0018
+public:
+    virtual ServerClass * vfunc0();
 };

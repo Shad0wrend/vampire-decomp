@@ -76,4 +76,6 @@ public:
 	int m_n03e0;	// 0x3e0: an object (pointer)
 	char m_pad03e4[0x19b0 - 0x3e4];
 	unsigned int m_hHeld19b0;	// 0x19b0: handle of the entity the grenade is checked against (slot 407)
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -23,4 +23,6 @@ public:
 	float m_flSensitivity;	// 0x45c
 	float m_flSmoothFactor;	// 0x460
 	COutputFloat m_SoundLevel;	// 0x464
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -41,4 +41,6 @@ public:
 	float m_fEndWidth;	// 0x4bc
 	char m_pad04c0[0x4d8 - 0x4c0];
 	float m_vecEndPos[3];	// 0x4d8
+public:
+    virtual datamap_t * vfunc82();
 };

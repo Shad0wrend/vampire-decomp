@@ -8,4 +8,6 @@ public:
 	COccultRegen *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	COccultRegen *sub_103f90f0();	// as in CKeepUpright (transplant)
+public:
+    virtual datamap_t * vfunc82();
 };

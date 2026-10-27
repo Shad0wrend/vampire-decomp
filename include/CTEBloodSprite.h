@@ -22,4 +22,6 @@ public:
 	int m_24[7];	// 0x0024
 
 	Vector &Origin() { return *(Vector *)m_c; }
+public:
+    virtual ServerClass * vfunc0();
 };

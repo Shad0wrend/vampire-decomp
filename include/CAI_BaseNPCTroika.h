@@ -239,4 +239,7 @@ public:
 	void sub_101815b0(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
 	void sub_102a9830(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
 	void sub_102a98e0(unsigned int flags);	// provisional, like sub_102a97d0 (transplant)
+public:
+    virtual void vfunc465(int);
+    virtual const char * vfunc451();
 };

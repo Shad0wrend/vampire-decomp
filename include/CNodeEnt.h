@@ -12,4 +12,6 @@ public:
 	CNodeEnt *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 	CNodeEnt *sub_102d7cd0();	// as in CKeepUpright (transplant)
+public:
+    virtual datamap_t * vfunc82();
 };

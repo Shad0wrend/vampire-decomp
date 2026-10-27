@@ -25,4 +25,6 @@ public:
 	char m_pad0469[3];
 	COutputEvent m_OnFacingLookat;	// 0x46c
 	COutputEvent m_OnNotFacingLookat;	// 0x484
+public:
+    virtual datamap_t * vfunc82();
 };

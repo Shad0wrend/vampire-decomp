@@ -189,4 +189,6 @@ public:
 	int m_field1574;
 	CBaseCombatCharacter *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100078c4();	// as in CPhysForce (transplant)
+public:
+    virtual datamap_t * vfunc82();
 };

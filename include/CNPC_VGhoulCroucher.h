@@ -90,4 +90,6 @@ public:
 	unsigned int m_h6670;	// +0x6670: entity handle
 	COutputEvent m_Out6674;	// +0x6674
 	COutputEvent m_Out668c;	// +0x668c
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -27,4 +27,6 @@ public:
 	void vfunc101(Vector *pMins, Vector *pMaxs);	// slot 101: bounds of the active bats
 	void sub_100b8b50();	// per-think movement: steps the active bats (mask at +0x734) in up to 10 sub-steps of the time since the last think (+0x178) with sub_100b8d50
 	void sub_100b8d50(int iBat, float flStep);	// moves one bat (stub 0x10007405), called directly
+public:
+    virtual datamap_t * vfunc82();
 };

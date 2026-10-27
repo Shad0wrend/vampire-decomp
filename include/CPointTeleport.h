@@ -10,4 +10,6 @@ public:
 	CPointTeleport *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	virtual void vfunc113();	// "CPointTeleport::Activate": saves origin / angles (+0x450 / +0x45c), warns on a parented or missing target
+public:
+    virtual datamap_t * vfunc82();
 };

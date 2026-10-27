@@ -31,4 +31,6 @@ public:
 	int m_nState5cc0;	// +0x5cc0
 	char m_pad5cc4[0x628c - 0x5cc4];
 	unsigned int m_h628c;	// +0x628c: entity handle
+public:
+    virtual datamap_t * vfunc82();
 };

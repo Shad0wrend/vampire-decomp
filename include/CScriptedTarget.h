@@ -12,4 +12,6 @@ public:
 	char m_pad03e0[0x5f44 - 0x3e0];
 	float m_vecOrigin5f44[3];	// 0x5f44
 	int m_n5f50;	// 0x5f50
+public:
+    virtual datamap_t * vfunc82();
 };

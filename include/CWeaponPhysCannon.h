@@ -42,4 +42,6 @@ public:
 	EHANDLE m_h964;
 	CUnknown101bc140 *m_pHoldSound;	// 0x968: "Weapon_PhysCannon.HoldSound", cached
 	CUnknown1040cb60 m_grab;	// 0x96c: the grab controller, its entity handle is at +0xab8
+public:
+    virtual char vfunc312();
 };

@@ -10,4 +10,6 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VPlaceholder *sub_103a40c0();	// as in CKeepUpright (transplant)
 	void vfunc420();	// slot 420: clears the dword at +0x62ec, calls the base slot 420 (CAI_BaseNPCTroika::vfunc420), sets the byte at +0x1480 and runs CBaseEntity::sub_100ac4e0(0, 0, 0)
+public:
+    virtual datamap_t * vfunc82();
 };

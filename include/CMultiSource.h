@@ -10,4 +10,6 @@ public:
 	virtual void vfunc103();	// slot 103: sets bit 0 of the flags at +0x204, sets the next think to curtime plus the double at 0x104493d0 (stored as a float at +0x17c) and sets the think function 0x100120bc
 	virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// slot 173 "CMultiSource::Use": flips the triggered flag (+0x4d0) of the caller's entry in the member list (+0x450, count +0x568); a caller that is not a member is reported with Warning; when slot 147 says the source is triggered fires the OnTrigger output (+0x550)
 	void sub_100ac4e0(int func, int thinkTime, const char *szContext);	// CBaseEntity::ThinkSet (stub 0x10007fe5)
+public:
+    virtual datamap_t * vfunc82();
 };

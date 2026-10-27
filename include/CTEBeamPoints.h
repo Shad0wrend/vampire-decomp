@@ -29,4 +29,6 @@ public:
 	int m_n40;	// 0x40
 	Vector m_vecStart;	// 0x44
 	Vector m_vecEnd;	// 0x50
+public:
+    virtual ServerClass * vfunc0();
 };

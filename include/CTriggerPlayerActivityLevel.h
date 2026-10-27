@@ -18,4 +18,6 @@ public:
 	int m_nLevelA;	// 0x598
 	int m_nLevelB;	// 0x59c
 	int m_nLevelC;	// 0x5a0
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -19,4 +19,7 @@ public:
 	unsigned int m_hActivator;	// 0x0464
 
 	void sub_1018d5f0();	// "CPointHurt::HurtThink"
+public:
+    virtual void vfunc104();
+    virtual datamap_t * vfunc82();
 };

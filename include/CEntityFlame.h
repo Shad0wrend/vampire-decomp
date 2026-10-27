@@ -8,4 +8,6 @@ public:
 	CEntityFlame *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	CEntityFlame *sub_100f5450();	// as in CKeepUpright (transplant)
+public:
+    virtual datamap_t * vfunc82();
 };

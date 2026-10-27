@@ -24,4 +24,6 @@ public:
 	int m_nPositions;	// 0x740
 	COutputEvent m_OnPressed;	// 0x744
 	COutputEvent m_OnLocked;	// 0x75c
+public:
+    virtual datamap_t * vfunc82();
 };

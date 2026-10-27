@@ -11,4 +11,6 @@ public:
 	void vfunc113();	// 0x101c2560: direction to the target entity, normalised
 	char m_pad03e0[0x450 - 0x3e0];
 	Vector m_vecDir;	// 0x0450
+public:
+    virtual datamap_t * vfunc82();
 };

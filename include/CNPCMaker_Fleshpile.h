@@ -13,4 +13,6 @@ public:
 	void vfunc104();	// slot 104 "Precache": precaches the model name of slot 9 (when it has one) through the engine (slot 13), the base precache and the maker's template (+0x665c); without a model name warns "<name> at (x y z) missing model" and removes the entity
 	void sub_1027bb50();	// CAI_BaseNPC::vfunc104 (stub 0x1000eaf7), called directly
 	const char *sub_100ab4f0();	// the entity's name text for messages (stub 0x1000b5cd)
+public:
+    virtual datamap_t * vfunc82();
 };

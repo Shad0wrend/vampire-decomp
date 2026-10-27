@@ -9,4 +9,6 @@ public:
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VStalker *sub_103b2870();	// as in CKeepUpright (transplant)
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -12,4 +12,7 @@ public:
 	void vfunc226(int a);	// slot 226 override: base implementation, then sets the byte at +0x1b1
 	CPhysicsProp *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
 	bool vfunc223();	// slot 223 override: creates the physics object (CBaseEntity::VPhysicsInitNormal-like), applies the mass / damping at +0x77c / +0x780
+public:
+    virtual datamap_t * vfunc82();
+    virtual void vfunc39(CBaseEntity *);
 };

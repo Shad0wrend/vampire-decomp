@@ -7,4 +7,6 @@ class CPlayerEvents : public CBaseEntity
 {
 public:
 	CPlayerEvents *sub_102270b0();
+public:
+    virtual datamap_t * vfunc82();
 };

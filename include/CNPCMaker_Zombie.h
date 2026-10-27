@@ -36,4 +36,6 @@ public:
 	int m_n76d0;	// 0x76d0
 	char m_pad76d4[4];
 	float m_flRange;	// 0x76d8
+public:
+    virtual datamap_t * vfunc82();
 };

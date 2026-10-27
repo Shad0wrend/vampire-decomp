@@ -31,4 +31,6 @@ public:
     float m_aflPanes[16][16];    // 0x4d0: the pane grid, 0x40 bytes per row
     char m_pad08d0[0x904 - 0x8d0];
     int m_nFaceCheck;    // 0x904
+public:
+    virtual datamap_t * vfunc82();
 };

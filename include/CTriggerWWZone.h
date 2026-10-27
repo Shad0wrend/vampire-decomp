@@ -25,4 +25,6 @@ public:
 
 	char m_pad05a8[0x66c4 - 0x5a8];
 	CBaseEntity *m_pEnt66c4;	// 0x66c4
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -10,4 +10,6 @@ public:
 	CTriggerPush *sub_101c88c0();
 	void sub_101c5080();	// stub 0x1000dfd0
 	void sub_1000350d();	// CBaseEntity::vfunc103 (stub 0x1000350d), called directly
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -53,4 +53,7 @@ public:
 	char m_pad66dc[4];
 	unsigned int m_h66e0;
 	unsigned int m_h66e4;
+public:
+    virtual CAI_CondOwner * vfunc580();
+    virtual const char * vfunc451();
 };

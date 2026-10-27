@@ -23,4 +23,6 @@ public:
 	float m_flAmplitude;	// 0x450
 	float m_flFrequency;	// 0x454
 	COutputEvent m_Output458;	// 0x458
+public:
+    virtual datamap_t * vfunc82();
 };

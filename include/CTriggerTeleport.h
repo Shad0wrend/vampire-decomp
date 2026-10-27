@@ -7,4 +7,6 @@ class CTriggerTeleport : public CBaseEntity
 {
 public:
 	CTriggerTeleport *sub_101c91e0();
+public:
+    virtual datamap_t * vfunc82();
 };

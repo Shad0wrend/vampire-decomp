@@ -36,4 +36,6 @@ public:
 	char m_pad6350[0x6660 - 0x6350];
 	float m_vecMins6660[3];	// 0x6660
 	float m_vecMaxs666c[3];	// 0x666c
+public:
+    virtual datamap_t * vfunc82();
 };

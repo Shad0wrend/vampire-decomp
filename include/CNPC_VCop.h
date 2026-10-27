@@ -38,4 +38,6 @@ public:
 	char m_pad666c[0x6671 - 0x666c];
 	char m_b6671;	// 0x6671
 	char m_b6672;	// 0x6672
+public:
+    virtual datamap_t * vfunc82();
 };

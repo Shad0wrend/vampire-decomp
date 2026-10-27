@@ -72,4 +72,6 @@ public:
 	unsigned int m_hLinked638;	// +0x638
 	const char *m_pszLinked63c;	// +0x63c
 	float m_flTimer640;	// +0x640: the door's timer (the largest time it was set to)
+public:
+    virtual datamap_t * vfunc82();
 };

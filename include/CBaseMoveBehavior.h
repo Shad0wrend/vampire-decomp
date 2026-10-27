@@ -24,4 +24,6 @@ public:
 	void vfunc103();	// slot 103: sets the mover fields, caches the origin / angles at +0x450 / +0x45c, then CPathKeyFrame::vfunc103
 	void vfunc242();	// slot 242 (plain member): ends the move: remembers how far the clock (+0x3f4) is from the keyframe time (+0x498) in +0x4b0 (direction +0x4b4 = 1: time past +0x494, -1: time before +0x498 and +0x4a0 takes +0x4a4), clears the move fields (+0x3fc, +0x4b4, +0x494, +0x498, +0x4a4) and resets the velocity and angular velocity (sub_100b2e30 / sub_100b2f50 with the zero vectors)
 	bool sub_10140710();	// called on the mover itself: true when the object at +0x4a0 answers 0 for index 1 and +0x4a4 is 0
+public:
+    virtual datamap_t * vfunc82();
 };

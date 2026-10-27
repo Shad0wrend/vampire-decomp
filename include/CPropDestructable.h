@@ -43,4 +43,6 @@ public:
     int m_nStageHealth78c;    // 0x78c
     char m_pad0790[0x794 - 0x790];
     int m_hModels794[8];    // 0x794: the model names' indices of the stages, zero ends the list
+public:
+    virtual datamap_t * vfunc82();
 };

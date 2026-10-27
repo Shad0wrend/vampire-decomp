@@ -25,4 +25,6 @@ public:
 	void sub_1010a7f0();	// lights the fire: sizes the entity from the fire size at +0x468 (a box a quarter of it wide and as tall), creates the smoke (sub_1010a370), fires the output at +0x494, installs the think function sub_1010b430 and runs it once
 	void sub_1010b430();	// stub 0x1000d33c: thinks again 0.01 seconds later and refreshes the fire (slot 241)
 	void sub_1010b840(float flTime);	// the fire's burn update (only while the byte at +0x490 is set): burn-out time (+0x464) = curtime + 0.5, heat (+0x46c) falls by flTime, the heat level (+0x470) rises by a convar rate times flTime up to a convar limit, the float at +0x480 follows 0.3125 x the float at +0x478 (sub_1013d400, frametime x 2); once the heat is used up it is zeroed and, if it was still positive before, the fire is put out (sub_1010b9d0)
+public:
+    virtual datamap_t * vfunc82();
 };

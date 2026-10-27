@@ -62,4 +62,7 @@ public:
     int vfunc124();	// slot 124 "CRagdollProp::DrawDebugTextOverlays": the base's line offset, plus one line ("Mass: %.2f kg / %.2f lb (%s)") when the text overlay bit (byte at +0x224) is set and the physics object at +0x36c exists
     int sub_10096100();	// CBaseAnimating::vfunc124 (stub 0x10007d97), called directly
     void sub_101554a0(const float *pOrigin, int a, const float *pAngles, void *pBones, void *pName, int b, int bStatic, int c);	// ragdoll initialiser (stub 0x100062a8)
+public:
+    virtual datamap_t * vfunc82();
+    virtual void vfunc39(CBaseEntity *);
 };

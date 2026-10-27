@@ -107,4 +107,6 @@ public:
 	bool vfunc262(int iAttachment, float *pMatrix);	// slot 262 "CBaseAnimating::GetAttachment03": scope trace (entity name); false for no studio header or an attachment outside 1..count (dword +0x148, 0x3c byte records at +0x14c); else asks slot 256 (the owner's character at +0x9c when the aim entity handle at +0x37c resolves and it knows the bone named by the attachment's bone record, otherwise this entity) for the bone matrix and converts it with the attachment's local matrix (+0xc) into pMatrix; true
 
 #include "CBaseAnimating_ext.h"
+public:
+    virtual datamap_t * vfunc82();
 };

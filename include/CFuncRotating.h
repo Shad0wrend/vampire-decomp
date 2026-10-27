@@ -27,4 +27,6 @@ public:
 	float m_f460;	// 0x460
 	float m_f464;	// 0x464: the damage value of the blocked hit (vfunc178)
 	const char *m_pszNoiseRunning;	// 0x468
+public:
+    virtual datamap_t * vfunc82();
 };

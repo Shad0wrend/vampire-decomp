@@ -14,4 +14,7 @@ public:
 
 	char m_pad08b8[0x910 - 0x8b8];
 	int m_n0910;
+public:
+    virtual CWeaponActivityRecord * vfunc362();
+    virtual int vfunc363();
 };

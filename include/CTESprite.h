@@ -21,4 +21,6 @@ public:
 	int m_nBrightness;	// 0x20
 
 	Vector &Origin() { return *(Vector *)m_c; }
+public:
+    virtual ServerClass * vfunc0();
 };

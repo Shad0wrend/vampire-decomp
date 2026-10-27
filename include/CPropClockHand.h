@@ -16,4 +16,6 @@ public:
 	char m_pad03e0[0x73c - 0x3e0];
 	float m_flAngle[4];	// 0x73c: the angle components (the one in use is selected by m_iAxis)
 	int m_iAxis;	// 0x74c
+public:
+    virtual datamap_t * vfunc82();
 };

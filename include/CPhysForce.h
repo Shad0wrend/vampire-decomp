@@ -48,4 +48,6 @@ public:
 	float m_flTimeout;	// 0x45c
 	unsigned int m_hAttached;	// 0x460: handle of the attached entity
 	CPhysForceMotion m_Motion;	// 0x464
+public:
+    virtual datamap_t * vfunc82();
 };

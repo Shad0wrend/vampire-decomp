@@ -25,4 +25,6 @@ public:
 	int m_nField40;	// 0x40
 
 	Vector &Origin() { return *(Vector *)m_vecOrigin; }
+public:
+    virtual ServerClass * vfunc0();
 };

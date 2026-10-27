@@ -45,4 +45,6 @@ public:
 	CBaseEntity *sub_10141b10(CBaseEntity *pAttacker, CBaseEntity *pInflictor);	// the entity that scores for a kill: the attacker when it is a player (slot 138 == 1), else its scorer interface's answer, else the inflictor's (stub 0x100073b0)
 	void sub_10128f50();	// CGameRules::vfunc16 (stub 0x10013976), called directly
 	void sub_101427f0(int nEdict);	// stub 0x1000d2d8: tells the rules about the new player's edict index
+public:
+    virtual char vfunc74();
 };

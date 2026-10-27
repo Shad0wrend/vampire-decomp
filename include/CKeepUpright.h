@@ -18,4 +18,6 @@ public:
 	void *m_pController;        // 0x46c IPhysicsMotionController*
 	const char *m_nameAttach;   // 0x470
 	unsigned int m_attachedObject; // 0x474 EHANDLE
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -9,4 +9,6 @@ public:
 	virtual void vfunc251(int a);	// slot 251: unless disabled, collects the entities inside the world-space bounds of the collision property and fires the output at +0x598 (activator = the entity, caller = this) for each one that passes sub_101c5460
 
 	COutputEvent m_out598;
+public:
+    virtual datamap_t * vfunc82();
 };

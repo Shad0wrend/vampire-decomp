@@ -27,4 +27,6 @@ public:
 
 	Vector &Origin() { return *(Vector *)m_vecOrigin; }	// the origin as a vector (the members are declared as dwords)
 	Vector &Direction() { return *(Vector *)m_vecDirection; }
+public:
+    virtual ServerClass * vfunc0();
 };

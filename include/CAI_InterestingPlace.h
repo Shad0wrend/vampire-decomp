@@ -31,4 +31,6 @@ public:
 	CAI_IPSlot *m_pSlots;	// 0x580
 	int m_nSlots;	// 0x584
 	int m_n588;	// 0x588
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -15,4 +15,6 @@ public:
 	char m_padWin[0x464 - sizeof(CBaseEntity)];
 	const char *m_pszFadeEntity;	// 0x464
 	int m_nFadeValue;	// 0x468
+public:
+    virtual datamap_t * vfunc82();
 };

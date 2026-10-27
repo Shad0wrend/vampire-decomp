@@ -11,4 +11,6 @@ public:
 
 	const char *m_pszItem;	// 0x598: classname of the item
 	COutputEvent m_out59c;	// 0x59c
+public:
+    virtual datamap_t * vfunc82();
 };

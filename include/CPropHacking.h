@@ -92,4 +92,6 @@ public:
 	char m_pad0aa8[0xc28 - 0xaa8];
 	int m_n0c28;	// 0xc28
 	char m_b0c2c;	// 0xc2c
+public:
+    virtual datamap_t * vfunc82();
 };

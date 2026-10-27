@@ -18,4 +18,6 @@ public:
 	CEntityVSlots *sub_1032e7b0();	// "CBaseCombatCharacter::GetActiveWeapon" (stub 0x10007e19), called directly
 	char sub_1033e2b0();	// CBaseCombatCharacter::IsBusyWithDiscipline (stub 0x1000caae), called directly
 	char sub_10014df8(int condition);	// "HasCondition" (stub 0x10014df8 for 0x10269aa0), called directly
+public:
+    virtual datamap_t * vfunc82();
 };

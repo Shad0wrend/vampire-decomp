@@ -11,4 +11,6 @@ public:
 	void sub_10004c3c();
 	void vfunc104();	// as in CFireSmoke (transplant)
 	virtual void vfunc103();	// slot 103 "CWindowPane::Spawn": slot 104, SetSolid(2) with a scope trace, SetMoveType(6, 0), take-damage mode 2, collision group 4, model "models/gibs/brokenglass_piece.mdl" (slot 105)
+public:
+    virtual datamap_t * vfunc82();
 };

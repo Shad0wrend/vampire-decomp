@@ -17,4 +17,7 @@ public:
 	unsigned int m_hTarget;	// +0x8bc: entity handle of the slowed target
 	float m_flExpireTime;	// +0x8c0
 	unsigned char m_bImpactDone;	// +0x8c4
+public:
+    virtual datamap_t * vfunc82();
+    virtual void vfunc103();
 };

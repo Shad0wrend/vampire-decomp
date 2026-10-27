@@ -49,4 +49,6 @@ public:
 	unsigned int m_hEndPoint;	// 0x0494
 	short m_iStartAttachment;	// 0x0498
 	short m_iEndAttachment;	// 0x049a
+public:
+    virtual datamap_t * vfunc82();
 };

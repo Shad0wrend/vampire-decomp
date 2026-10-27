@@ -27,4 +27,8 @@ public:
 	virtual void vfunc339();	// kicks the owner's target with a random vector
 
 	CWeaponIArmorOwner *sub_102521f0();
+public:
+    virtual CWeaponActivityRecord * vfunc362();
+    virtual int vfunc363();
+    virtual int vfunc328();
 };

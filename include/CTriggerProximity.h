@@ -58,4 +58,6 @@ public:
 	void vfunc103();	// slot 103: sets the distance to 32 while it is 0, then sub_101c5080() and the free function sub_101cf600(this)
 	void sub_101c5080();	// stub 0x1000dfd0, called directly
 	void sub_100113a6();	// CBaseTrigger::vfunc113 (Activate), called directly
+public:
+    virtual datamap_t * vfunc82();
 };

@@ -12,4 +12,6 @@ public:
 	float m_f454;	// 0x454
 	int m_n458;	// 0x458
 	float m_f45c;	// 0x45c
+public:
+    virtual datamap_t * vfunc82();
 };

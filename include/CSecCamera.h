@@ -38,4 +38,6 @@ public:
 	char m_pad07c0[0x7f4 - 0x7c0];
 	COutputEvent m_Output7f4;	// 0x7f4
 	COutputEvent m_Output80c;	// 0x80c
+public:
+    virtual datamap_t * vfunc82();
 };

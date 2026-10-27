@@ -23,4 +23,6 @@ public:
     char m_b7ac;
     char m_pad07ad[0x7b0 - 0x7ad];
     float m_flTime7b0;    // 0x7b0: stamped when the prop was used
+public:
+    virtual datamap_t * vfunc82();
 };

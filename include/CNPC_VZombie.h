@@ -65,4 +65,6 @@ public:
 	char m_pad667c[0x66d8 - 0x667c];
 	float m_flNextLunge66d8;	// 0x66d8
 	float m_flMaxDist66dc;	// 0x66dc
+public:
+    virtual datamap_t * vfunc82();
 };

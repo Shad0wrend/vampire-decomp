@@ -17,4 +17,6 @@ public:
 	float m_fl0018;
 	float m_fl001c;
 	Vector m_vec0020;
+public:
+    virtual ServerClass * vfunc0();
 };

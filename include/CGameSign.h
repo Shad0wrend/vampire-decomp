@@ -19,4 +19,7 @@ public:
 
 	char m_pad03e0[0x464 - 0x3e0];
 	Vector m_vecToucherPos;	// 0x464
+public:
+    virtual bool vfunc32(int);
+    virtual datamap_t * vfunc82();
 };

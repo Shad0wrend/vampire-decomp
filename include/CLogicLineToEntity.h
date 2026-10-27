@@ -15,4 +15,6 @@ public:
 	const char *m_pszSource;	// 0x0468
 	unsigned int m_hSource;	// 0x046c
 	unsigned int m_hTarget;	// 0x0470
+public:
+    virtual datamap_t * vfunc82();
 };

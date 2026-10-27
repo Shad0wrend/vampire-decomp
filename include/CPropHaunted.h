@@ -54,4 +54,6 @@ public:
 	unsigned int m_hGhost7d0;	// 0x7d0: the ghost particle entity handle, -1 when none
 	char m_pad07d4[0x7ec - 0x7d4];
 	char m_sub07ec[4];	// 0x7ec: a CPropHauntedSub
+public:
+    virtual datamap_t * vfunc82();
 };
