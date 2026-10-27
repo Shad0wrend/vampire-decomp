@@ -14473,6 +14473,14 @@ CUnknown1007a060Elem *CUnknown1007b7b0::sub_1007b7b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007b990 size=0x7
+struct CUnknown1007b990 { char * sub_1007b990(); };
+char * CUnknown1007b990::sub_1007b990()
+{
+    return (char *)this + 0xac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b9b0 size=0x19
 struct S1007b9b0 {
 	char m_pad[0xac];
