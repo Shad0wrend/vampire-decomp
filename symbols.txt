@@ -1813,6 +1813,7 @@
 0x10005bb9 func   ?sub_101a17c0@CRestore@@QAEPAUCRestoreField@@PBDPAU2@HPAH@Z CRestore::sub_101a17c0
 0x10005bbe func   ?vfunc0@CTEMetalSparks@@UAEPAUServerClass@@XZ CTEMetalSparks::vfunc0
 0x10005bc3 func   ?sub_102dc2c0@CUnknown102dc2c0@@QAEXXZ CUnknown102dc2c0::sub_102dc2c0
+0x10005bc8 func   ?vfunc82@CTriggerInventory@@UAEPAUdatamap_t@@XZ CTriggerInventory::vfunc82
 0x10005bcd func   ?sub_100a53d0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a53d0
 0x10005bd7 func   ?vfunc144@CBaseEntity@@QAEXPAX@Z CBaseEntity::vfunc144
 0x10005bdc func   ?sub_10346760@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10346760
