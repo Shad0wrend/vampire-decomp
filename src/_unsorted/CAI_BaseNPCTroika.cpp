@@ -1044,6 +1044,12 @@ translated:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10295a60 size=0x3
+void CAI_BaseNPCTroika::vfunc465(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10297560 size=0xa1
 #include "CAI_BaseNPCTroika.h"
 
